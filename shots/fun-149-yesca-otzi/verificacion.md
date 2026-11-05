@@ -57,4 +57,37 @@ Verificación **independiente**: la hizo un subagente verificador que no escribi
 
 Todas las afirmaciones quedan ✅.
 
+
+## Verificación independiente de publicacion.md (5 nov 2026)
+
+| # | Afirmación (red) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | «un políporo que crece en árboles de hoja ancha, sobre todo abedules y hayas» (YT) | ✅ | Lexikon der Biologie, Zunderschwamm (https://www.spektrum.de/lexikon/biologie/zunderschwamm/72023), abierto | "bekanntester und auffälliger Porling … wächst als Schwäche- und Wundparasit an Laubbäumen, besonders Birken und Buchen" | 1999 |
+| 2 | «con forma de **casco** o de pezuña de caballo» (YT) | ⚠️ | Lexikon; Wikipedia *Fomes fomentarius* | Lexikon: "knollig, dick konsolen- bis hufartig"; Wikipedia: "typically shaped like a horse's hoof, it can also be more bracket-like". Ninguna dice «casco» | 1999 |
+| 3 | «(de 10 a 50 cm)» (YT) | ✅ (nota) | Lexikon | "Durchmesser 10–50 cm, bis 25 cm dick" (Wikipedia da 5–45 cm; la cifra del Lexikon está bien citada) | 1999 |
+| 4 | «capas de tubos que se forman año con año, donde se hacen las esporas» (YT) | ✅ | Lexikon | "im Alter mit geschichteten Röhren (durch jährliche Bildung neuer Hymenialschichten)" (el himenio es la capa que forma las esporas) | 1999 |
+| 5 | «se quitaba la costra y los tubos» (YT) | ✅ | Lexikon | "durch Entfernen der harten Deckschicht und der Röhrenschichten gewonnen" | 1999 |
+| 6 | «Atrapaba la chispa que sacabas al golpear piedra y acero, y al soplarle se ponía al rojo» (YT) | ✅ | Lexikon | "zum Auffangen der Funken beim Feuerschlagen mit Stein und Stahl. Durch Blasen wurde der Zunder zum Glühen gebracht" | 1999 |
+| 7 | «unos excursionistas encontraron…» (YT) | ✅ | iceman.it/en/the-iceman | "discovered accidentally by hikers" (1991) | consultado 2026 |
+| 8 | «Tisenjoch, en el Tirol del Sur, Italia, cerca de la frontera con Austria» (YT) | ✅ | iceman.it; Wikipedia «Ötzi» | iceman.it: "Tisenjoch/Giogo di Tisa in the Schnalstal/Val Senales Valley, South Tyrol"; Wikipedia: "near the Tisenjoch pass in the Ötztal Alps… 92.56 metres inside Italy, in South Tyrol" (en la frontera Austria–Italia) | consultado 2026 |
+| 9 | «cirujanos, barberos y dentistas» (YT) | ✅ | Campi et al. 2024, Lilloa 61(2) (PDF abierto) | "widely used as a styptic by surgeons, barbers, and dentists … used for stopping light hemorrhages" | 2024 |
+| 10 | «en alemán le decían "Chirurgenschwamm" (esponja de los cirujanos) o, en latín, Fungus chirurgorum» (YT); «le decían "hongo de los cirujanos"» (TikTok) | ✅ | Campi 2024 | "In the German-speaking Alpine area, F. fomentarius was called "Wundschwamm" …, "Chirurgenschwamm" (surgeon's sponge), or "Fungus chirurgorum"" / "Agaric of the surgeons" | 2024 |
+| 11 | «**Siglos después**, cirujanos y barberos…» (TikTok, IG, YT, LinkedIn) | ⚠️ | Campi 2024; Wierer 2018 | Ötzi murió 3370–3100 a. C.; el primer registro médico citado es Hipócrates "in the fifth century B.C." (~2,800 años después) y el uso de cirujanos/barberos es posterior: son **miles** de años, no siglos. La voz dice solo «Después». | 2024 / 2018 |
+| 12 | «separan la trama a mano, la estiran y la secan para hacer sombreros, bolsos y otros objetos, aunque cada vez son menos» (YT) | ✅ | Comisión Europea, «Amadou: harvesting the future» (abierta); Campi 2024 | EC: "processed by hand… separated from the cuticle and spore tubes and then stretched and left to dry" / "a significant decrease in the number of families involved"; Campi: "hats, bags, tablecloths, brush-holders, and scarves (Papp et al., 2015)" | consultado 2026 / 2024 |
+| 13 | «El material se llama amadou» (LinkedIn) | ✅ | EC; Wikipedia; Campi 2024 | EC: "Amadou… comes from the polypore mushroom Fomes fomentarius"; Campi: "Hippocrates described the Amadou mushroom (F. fomentarius)" | 2024 |
+| 14 | «atrapaba **la chispa del pedernal** y se volvía brasa» (LinkedIn) | ⚠️ | Lexikon; Wierer 2018; verificación #13 | La chispa sale de golpear piedra contra acero ("Stein und Stahl") o, en el kit de Ötzi, pedernal contra pirita. «La chispa del pedernal» sugiere que el pedernal solo la da (la regla del shot: nunca pedernal contra pedernal/piedra). | 1999 / 2018 |
+| 15 | «(Peintner et al., 1998; Wierer et al., 2018)» para la yesca con pirita (LinkedIn) | ✅ (nota) | Wierer 2018; Peintner 1998 | Wierer: "several pieces of fomes fomentarius fungus with traces of pyrite"; Peintner identifica la yesca de *F. fomentarius*. La pirita la sostiene Wierer. | 2018 / 1998 |
+| 16 | «un oficio que la Comisión Europea describe como amenazado porque cada vez lo practican menos personas» (LinkedIn) | ✅ | EC | "the continuity of this craft is threatened" por "a significant decrease in the number of families involved and the fact that its practitioners are elderly" | consultado 2026 |
+| 17 | «Antes de los materiales de micelio cultivado, ya existía un "cuero" de hongo silvestre» (LinkedIn) | ✅ (nota) | Campi 2024 | "considered the most widely known mycotextile" / Fig. 4: "Fomes fomentarius leather products… Productos de cuero de Fomes" (oficio tradicional, anterior a los materiales de micelio modernos; el texto pone «cuero» entre comillas) | 2024 |
+| 18 | «en Rumania aún hacen sombreros con ella» (X, Facebook, Threads) | ✅ | EC; Papp 2015; verificación #24–25 | ya cubierto | — |
+| 19 | «*Fomitopsis betulina*» = «Piptoporus betulinus» del título de Papp | ✅ | Papp 2015 (Crossref) | sinónimo; nombre actual *Fomitopsis betulina* | 2015 |
+| 20 | Cita: Peintner, Pöder y Pümpel (1998) Mycological Research 102(10): 1153–1162 | ✅ | Crossref 10.1017/S0953756298006546 | "The iceman's fungi", Mycological Research 102(10) 1153-1162, oct 1998 | 1998 |
+| 21 | Cita: Wierer et al. (2018) PLOS ONE 13(6): e0198292 | ✅ | Crossref | "The Iceman's lithic toolkit: Raw material, technology, typology and use", PLOS ONE 13(6) e0198292, 20 jun 2018 | 2018 |
+| 22 | Cita: Campi et al. (2024) Lilloa 61(2): 397–413, DOI 10.30550/j.lil/2018 | ✅ | Página de la revista (lillo.org.ar …/view/2018) | "Lilloa, 61(2), 397–413", publicado 2024-12-13, DOI 10.30550/j.lil/2018 | 2024 |
+| 23 | Cita: Papp et al. (2015) Genetic Resources and Crop Evolution, DOI 10.1007/s10722-015-0335-2 | ✅ (nota) | Crossref | En línea 3 nov 2015; impreso vol. 64(1): 101–111 (2017). Título completo: "…Fomes fomentarius (L.) Fr. and Piptoporus betulinus (Bull.) P. Karst. in Transylvania, Romania" | 2015/2017 |
+| 24 | Cita: Lexikon der Biologie (1999) | ✅ | spektrum.de | "Copyright 1999 Spektrum Akademischer Verlag, Heidelberg" | 1999 |
+| 25 | Resto (pezuña, abedules/hayas, costra, trama, hifas, salitre, 1991, +5,300 años, bolsa del cinturón, pirita, raspador, *F. betulina* en tiras de piel como hipótesis, Corund, familias) | ✅ | verificacion.md #1–#28 | Coinciden con lo verificado; *F. betulina* como medicina siempre se dice como hipótesis ("se cree… pero es una hipótesis"); nunca se dice pedernal contra pedernal; Corund dice «hay familias»/«cada vez son menos», sin cifra. | — |
+
+Correcciones aplicadas en publicacion.md: «repisa o pezuña de caballo (de 10 a 50 cm de diámetro)», «Miles de años después» en vez de «Siglos después» (4 redes), chispa «al golpear pedernal contra acero o pirita» en LinkedIn. Todo lo demás ✅.
+
 VEREDICTO: APROBADO
