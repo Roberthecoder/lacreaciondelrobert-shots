@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #67 · rama `claude/fun-65-69-salud` · ángulo del lote: hongos y salud.
 - **Formato:** N1 "Por dentro" (macro → micro → macro): una mano que poda un rosal y se pica → al microscopio (el hongo cambia de moho a levadura) → el mismo rosal y la misma mano, ahora con guante.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Esa espina de rosal no solo te picó: te pudo meter un hongo.»
-- **Duración:** voz 997 caracteres / 184 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 1008 caracteres / 184 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** curioso y tranquilo, sin asustar: tiene tratamiento. Todo es dibujo esquemático (sin fotos de lesiones). No es consejo médico.
 
@@ -14,9 +14,9 @@
 | 0 | Gancho | Esa espina de rosal no solo te picó: te pudo meter un hongo. | Fondo rosa con lunares: un rosal con flores rojas; una mano con tijeras se acerca, la espina pica el dedo (cuadro 0.4) y sale una gotita. Chip "¿solo un piquete?" que se tacha → "un hongo". |
 | 1 | Nombre | Se llama Sporothrix, y vive en la tierra, el musgo, la paja y los rosales. | Fondo amarillo: cuatro íconos que entran uno por uno (tierra, musgo, paja, rosal) con hilitos blancos del moho. Etiqueta *Sporothrix* (cursiva). |
 | 2 | Entra | Entra por una cortada o un raspón, y con el calor de tu cuerpo cambia de forma. | `Lupa` "POR DENTRO" sobre el dedo: la espina entra a la piel en corte y deja hifas; un termómetro sube de 25 °C a 37 °C. |
-| 3 | Dimorfo | Afuera es un moho de hilos finos; adentro se vuelve levadura, con forma de puro. | **Al microscopio** (fondo noche), dos mitades: "afuera · 25 °C": hifas finas con conidios en forma de flor; "adentro · 37 °C": levaduras ovaladas alargadas (como puros) que geman. Barra 5 µm. |
+| 3 | Dimorfo | Afuera es un moho de hilos finos; adentro se vuelve levadura, con forma de puro. | **Al microscopio** (fondo noche), dos mitades: "afuera · 25 °C": hifas finas con conidios agrupados en forma de flor; "adentro · 37 °C": levaduras ovaladas alargadas (como puros) que geman. Barra 5 µm. |
 | 4 | Bulto | Entre una y doce semanas después, sale un bultito donde te picaste. | Calendario que pasa semanas (1 → 12); en el dorso de la mano aparece un bultito rojizo (dibujo suave, no una foto). |
-| 5 | Cadena | Y casi siempre salen otros, en fila, subiendo por el brazo: siguen tus vasos linfáticos. | Brazo completo con el vaso linfático dibujado en verde; aparecen 3–4 bultitos en fila subiendo por el antebrazo. Etiqueta "vaso linfático". |
+| 5 | Cadena | Y muchas veces salen otros, en fila, subiendo por el brazo: siguen tus vasos linfáticos. | Brazo completo con el vaso linfático dibujado en verde; aparecen 3–4 bultitos en fila subiendo por el antebrazo. Etiqueta "vaso linfático". |
 | 6 | Pregunta | ¿Y si no tienes rosales? | **Re-gancho.** Signo "?" grande; Robert grande, pensativo. |
 | 7 | Gatos | En Brasil, Sporothrix brasiliensis pasa de gatos enfermos a personas por arañazos y mordidas. | Fondo cian: un gato y una mano; zarpazo con efecto; etiqueta *Sporothrix brasiliensis*; mapa de Brasil chiquito. |
 | 8 | Estudio | Solo en la Fiocruz, en Río de Janeiro, registraron 4,188 casos humanos entre 1997 y 2011. | `TarjetaEstudio` "1997–2011 · Fiocruz, Río de Janeiro · Gremião et al., *PLoS Pathogens* 2017"; contador que sube a 4,188 "casos humanos registrados en la Fiocruz". |

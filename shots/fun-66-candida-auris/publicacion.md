@@ -9,7 +9,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 Este hongo no solo vive en el paciente: también vive en su cama. 🏥🍄
 Es Candida auris, una levadura que describieron en 2009 en el oído de una paciente en un hospital de Japón ("auris" es oreja en latín). Casi al mismo tiempo surgió por separado en tres continentes, como poblaciones distintas, no por un solo viaje.
 Puede vivir en la piel, en axilas e ingles, sin dar síntomas, y sobrevive semanas en superficies como barandales de cama, perillas y baumanómetros. La mayoría de quienes se enferman ya estaban muy graves, con tubos o catéteres; la gente sana por lo general no lo porta.
-¿Por qué le dicen "superhongo"? En Estados Unidos, cerca del 90 % resiste al fluconazol y cerca del 30 % a la anfotericina B, y algunas cepas resisten a las tres clases principales de antifúngicos. Además, las pruebas comunes de laboratorio la confunden con otras levaduras.
+¿Por qué le dicen "superhongo"? En Estados Unidos, cerca del 90 % resiste al fluconazol y cerca del 30 % a la anfotericina B, y algunas cepas resisten a las tres clases principales de antifúngicos. Además, las pruebas comunes de laboratorio pueden confundirla con otras levaduras.
 En 2020, en un hospital de Monterrey, pasó a 12 pacientes de terapia intensiva, y también salió en muestras de sus cuartos. Y los desinfectantes que solo usan amonio cuaternario no la eliminan: el CDC pide usar los de la lista P de la EPA.
 Por eso a este hongo no basta con tratarlo en el paciente: también hay que limpiar su cama.
 El dibujo es esquemático. No es consejo médico.

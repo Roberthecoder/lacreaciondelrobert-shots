@@ -254,13 +254,13 @@ function FingoShot() {
       <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="no es consejo médico" x={300} y={470} tam={30} borde={KC.red} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="2 cm" largo={100} />
-      <BarraEscala T={T} at={K.H} until={K.Cl} texto="2 cm" largo={130} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="dibujos no a escala" largo={0} />
+      <BarraEscala T={T} at={K.H} until={K.Cl} texto="2 cm" largo={280} />
       <BarraEscala T={T} at={K.Cl} until={K.Mi} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={K.Mi} until={K.To} texto="1 nm" largo={100} />
-      <BarraEscala T={T} at={K.Cb} until={K.P} texto="1 nm" largo={100} />
-      <BarraEscala T={T} at={K.Me} until={K.Ga} texto="5 µm" largo={90} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={100} />
+      <BarraEscala T={T} at={K.Mi} until={K.To} texto="0.5 nm" largo={100} />
+      <BarraEscala T={T} at={K.Cb} until={K.P} texto="0.5 nm" largo={100} />
+      <BarraEscala T={T} at={K.Me} until={K.Ga} texto="5 µm" largo={50} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="dibujos no a escala" largo={0} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="Nació de *un hongo de cigarras*" />

@@ -1,4 +1,4 @@
-// Shot Fungi Mati #62 · Tu pan de caja no es inmortal: trae un antimoho — NARRADO (N1 "Por dentro", gancho 1).
+// Shot Fungi Mati #62 · Tu pan de caja no es inmortal: suele traer un antimoho — NARRADO (N1 "Por dentro", gancho 1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. Sin marcas (bolsa genérica).
 
 const PC = { corteza:'#b8682a', corteza2:'#8a4a1c', miga:'#f2d9a4', hoyo:'#dcbc80', caja:'#9c5a26', migaCaja:'#fbf1dc', poro:'#ead9b8',
@@ -415,7 +415,7 @@ function PanCajaShot() {
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={80} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No es inmortal: *trae un antimoho.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No es inmortal: *suele traer antimoho.*" />
       <Subtitulo T={T} idx={1} at={K.H + 0.1} until={K.M - 0.1} texto="El horno las mata… *pero caen otras.*" />
       <Subtitulo T={T} idx={2} at={K.M + 0.1} until={K.E - 0.1} texto="En unos días: *la mancha.*" />
       <Subtitulo T={T} idx={3} at={K.E + 0.1} until={K.En - 0.1} texto="Trae *propionato de calcio.*" />

@@ -1,4 +1,4 @@
-# Publicación · Shot Fungi Mati 62 · Tu pan de caja no es inmortal: trae un antimoho
+# Publicación · Shot Fungi Mati 62 · Tu pan de caja no es inmortal: suele traer un antimoho
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Sin marcas.
 
@@ -6,7 +6,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 
 ### TikTok
 ```text
-Tu pan de caja no es inmortal: casi siempre trae un antimoho. 🍞🍄
+Tu pan de caja no es inmortal: muchas veces trae un antimoho. 🍞🍄
 El horno mata las esporas de moho, pero al enfriar y rebanar el pan le caen otras del aire: de Penicillium, Aspergillus o Rhizopus. Sin conservador, en unos días ya ves la mancha.
 Por eso el pan de caja suele traer propionato de calcio. En la masa, parte queda como ácido propiónico sin carga y se cuela en la hifa del moho. Según la teoría clásica de los ácidos débiles, adentro suelta su protón y acidifica la célula; sacarlo le cuesta energía, y en mohos se vio que además le traba enzimas. ¿Lo mata? No: solo lo frena, y algunas cepas de Penicillium roqueforti lo resisten.
 En 2012, en University College Cork (Irlanda), un pan de trigo bajo en sal con 0.3 % de propionato duró de 10 a 12 días sin moho; uno con una masa madre seleccionada, de 12 a 14.
@@ -20,7 +20,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Instagram Reels
 ```text
-Tu pan de caja no es inmortal: casi siempre trae un antimoho. 🍞🍄
+Tu pan de caja no es inmortal: muchas veces trae un antimoho. 🍞🍄
 El horno mata las esporas, pero al enfriar y rebanar caen otras (Penicillium, Aspergillus, Rhizopus). El propionato de calcio deja ácido propiónico sin carga que se cuela en la hifa; según la teoría clásica, ahí suelta su protón y acidifica la célula, y en mohos además traba enzimas. No mata al moho: lo frena. En un estudio de 2012 (Cork, Irlanda), un pan de trigo bajo en sal con 0.3 % de propionato duró 10–12 días sin moho; con masa madre seleccionada, 12–14.
 Dato raro: ese ácido también lo hacen las bacterias del queso suizo y las de tu intestino.
 El dibujo es esquemático. Fuentes en el primer comentario.
@@ -33,11 +33,11 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu pan de caja no es inmortal: trae un antimoho 🍞 | Shot Fungi Mati 62
+Tu pan de caja no es inmortal: suele traer antimoho 🍞 | Shot Fungi Mati 62
 ```
 Descripción:
 ```text
-Tu pan de caja no es inmortal: casi siempre trae un antimoho.
+Tu pan de caja no es inmortal: muchas veces trae un antimoho.
 El horno mata las esporas de moho, pero el pan se vuelve a contaminar al enfriarse, rebanarse y empacarse: le caen esporas del aire de mohos como Penicillium, Aspergillus o Rhizopus. Sin conservador, en unos días ya se ve la mancha.
 Por eso el pan de caja suele traer propionato de calcio, un conservador antimoho. En la masa, parte de él queda como ácido propiónico sin carga, que atraviesa la membrana de la hifa. Según la teoría clásica de los ácidos débiles (estudiada sobre todo en levaduras), adentro suelta su protón y acidifica la célula, y sacar esos protones le cuesta energía. En el moho Aspergillus nidulans se vio además que el propionato se acumula como propionil-CoA y traba enzimas clave. Resultado: el moho casi no crece. Pero no lo mata, solo lo frena, y algunas cepas de Penicillium roqueforti lo resisten.
 En 2012, un equipo de University College Cork (Irlanda) probó pan de trigo bajo en sal: con 0.3 % de propionato de calcio duró de 10 a 12 días sin moho; con una masa madre fermentada por Lactobacillus amylovorus, de 12 a 14.
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Tu pan de caja no es inmortal: casi siempre trae un antimoho. 🍞 El propionato de calcio no mata al moho: lo frena por dentro, y algunos mohos lo resisten. En un estudio de 2012 en Irlanda, un pan bajo en sal con 0.3 % de propionato duró 10–12 días sin moho. Y ese mismo ácido lo hacen las bacterias del queso suizo y las de tu intestino. El dibujo es esquemático.
+Tu pan de caja no es inmortal: muchas veces trae un antimoho. 🍞 El propionato de calcio no mata al moho: lo frena por dentro, y algunos mohos lo resisten. En un estudio de 2012 en Irlanda, un pan bajo en sal con 0.3 % de propionato duró 10–12 días sin moho. Y ese mismo ácido lo hacen las bacterias del queso suizo y las de tu intestino. El dibujo es esquemático.
 ¿Tu pan dura más en la bolsa o en el refri? 👇
 Shot Fungi Mati 62 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -84,12 +84,12 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Tu pan de caja no es inmortal: casi siempre trae un antimoho. El propionato no mata al moho, lo frena por dentro; en 2012, pan bajo en sal con 0.3 % duró 10–12 días sin moho. Y ese ácido también lo hace tu intestino. 🍞 #FungiMati #Moho
+Tu pan de caja no es inmortal: muchas veces trae un antimoho. El propionato no mata al moho, lo frena por dentro; en 2012, pan bajo en sal con 0.3 % duró 10–12 días sin moho. Y ese ácido también lo hace tu intestino. 🍞 #FungiMati #Moho
 ```
 
 ### Threads
 ```text
-Tu pan de caja no es inmortal: casi siempre trae un antimoho. 🍞 El propionato de calcio no mata al moho: lo frena por dentro, y algunas cepas lo resisten. Lo raro: ese mismo ácido lo hacen las bacterias del queso suizo y las de tu intestino. ¿Tu pan dura más en la bolsa o en el refri?
+Tu pan de caja no es inmortal: muchas veces trae un antimoho. 🍞 El propionato de calcio no mata al moho: lo frena por dentro, y algunas cepas lo resisten. Lo raro: ese mismo ácido lo hacen las bacterias del queso suizo y las de tu intestino. ¿Tu pan dura más en la bolsa o en el refri?
 Shot Fungi Mati 62 · La Creación del Robert
 #Hongos
 ```

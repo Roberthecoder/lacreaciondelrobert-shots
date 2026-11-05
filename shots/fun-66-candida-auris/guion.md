@@ -4,7 +4,7 @@
 - **No repite** a Fungi Mati #14 (calor e hipótesis del calentamiento global) ni #34 (*Candida albicans*): aquí el tema es cómo se queda en hospitales y por qué resiste.
 - **Formato:** N1 "Por dentro" (macro → micro → macro): una cama de hospital → al microscopio (levaduras en la piel y en el barandal) → la misma cama, ya explicada.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Este hongo no solo vive en el paciente: también vive en su cama.»
-- **Duración:** voz 972 caracteres / 173 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 990 caracteres / 173 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~970 créditos de ElevenLabs).
 - **Tono:** serio y tranquilo, sin alarmismo: la gente sana por lo general no lo porta. Todo es dibujo esquemático. No es consejo médico.
 
@@ -21,7 +21,7 @@
 | 6 | Pregunta | ¿Y por qué le dicen superhongo? | **Re-gancho.** Signo "?" grande; Robert grande, pensativo. |
 | 7 | Resiste | En Estados Unidos, cerca del 90 % resiste al fluconazol, y cerca del 30 %, a la anfotericina B. | Dos barras que crecen: "fluconazol ~90 %" y "anfotericina B ~30 %"; chip "EE. UU. · CDC (2026)". |
 | 8 | Tres | Y algunas cepas resisten a las tres clases principales de antifúngicos. | Tres frascos (azoles, polienos, equinocandinas); sobre una levadura rebotan los tres. Chip "algunas cepas". |
-| 9 | Confunde | Además, las pruebas comunes de laboratorio la confunden con otras levaduras. | Pantalla de un aparato de laboratorio que dice "*C. haemulonii*" y se tacha → "*C. auris*". |
+| 9 | Confunde | Además, las pruebas comunes de laboratorio pueden confundirla con otras levaduras. | Pantalla de un aparato de laboratorio que dice "*C. haemulonii*" y se tacha → "*C. auris*". |
 | 10 | Estudio | En 2020, en un hospital de Monterrey, pasó a 12 pacientes de terapia intensiva, y la encontraron en sus cuartos. | `TarjetaEstudio` "2020 · Monterrey · Villanueva-Lozano et al., *Clin Microbiol Infect* 2021". Mapa de México con un punto en Monterrey; 12 camitas que se encienden una por una; aparte, 3 frasquitos de muestra "positivas en los cuartos (barandales y una bomba de infusión)". |
 | 11 | Desinfecta | Y los desinfectantes que solo usan amonio cuaternario no la eliminan. | Botella de desinfectante "solo amonio cuaternario" cuyo rocío no borra los puntitos; chip "CDC: usar desinfectantes de la lista P de la EPA". |
 | 12 | Cierre | Por eso a este hongo no basta con tratarlo en el paciente: también hay que limpiar su cama. | **Regreso a la imagen del inicio:** la misma cama; un trapo limpia el barandal y los puntitos se apagan. `Lupa` "POR DENTRO" sobre el barandal. |
@@ -43,7 +43,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué
 | 4 | 21.4 | 25.4 | 12_perfil_serio | `arriba-der` | «pacientes que ya estaban muy graves» |
 | 5 | 25.7 | 27.6 | 07_pensativo_puno | `grande` | «¿por qué le dicen superhongo?» |
 | 6 | 33.7 | 37.3 | 10_serio_molesto | `bajo-der` | «resisten a las tres clases» |
-| 7 | 38.2 | 41.8 | 04_bajando_lentes | `arriba-der` | «la confunden con otras levaduras» |
+| 7 | 38.2 | 41.8 | 04_bajando_lentes | `arriba-der` | «pueden confundirla con otras levaduras» |
 | 8 | 45.6 | 48.3 | 11_sorprendido | `bajo-der` | «la encontraron en sus cuartos» |
 | 9 | 49.2 | 52.5 | 06_pensativo_menton | `arriba-der` | «no la eliminan» |
 | 10 | 53.4 | 57.8 | 02_apuntando_camara | `bajo-der` | «también hay que limpiar su cama» |

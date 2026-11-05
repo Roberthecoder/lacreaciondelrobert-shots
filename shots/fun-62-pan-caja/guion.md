@@ -1,8 +1,8 @@
-# Shot Fungi Mati #62 · Tu pan de caja no es inmortal: trae un antimoho
+# Shot Fungi Mati #62 · Tu pan de caja no es inmortal: suele traer un antimoho
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #62 · rama `claude/fun-60-64-cocina`.
 - **Formato:** N1 "Por dentro" (con un toque de N2 en el estudio): dos rebanadas en la mesa → la hifa del moho por dentro (fondo oscuro, el ácido entrando) → las mismas dos rebanadas una semana después.
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Tu pan de caja no es inmortal: casi siempre trae un antimoho.»
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Tu pan de caja no es inmortal: muchas veces trae un antimoho.»
 - **No repite** el shot del ciclo del moho del pan (002 / Fungi Mati #01) ni el de "¿le quitas el moho?" (fun-11): aquí el tema es el **conservador** (propionato) y cómo frena al hongo por dentro. Si se dibuja *Rhizopus*, respeta las correcciones de Robert (colonización radial, rizoides directo del micelio, esporangios que no explotan).
 - **Tono:** explicar, no asustar ni vender. **Sin marcas**: bolsa de pan genérica "PAN DE CAJA" sin logo.
 - **Duración:** voz 990 caracteres / 188 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base (suma de OM_SCENES).
@@ -12,7 +12,7 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Tu pan de caja no es inmortal: casi siempre trae un antimoho. | Fondo amarillo de lunares. Cuadro 0.3: dos rebanadas caen sobre una tabla con un "toc": izquierda **pan de panadería** (corteza dorada, miga irregular), derecha **pan de caja** (cuadrado, miga fina, de una bolsa genérica sin marca). Sobre la de caja, un escudo chiquito con "antimoho". Chip "no es inmortal". Barra de escala 5 cm. |
+| 0 | Gancho | Tu pan de caja no es inmortal: muchas veces trae un antimoho. | Fondo amarillo de lunares. Cuadro 0.3: dos rebanadas caen sobre una tabla con un "toc": izquierda **pan de panadería** (corteza dorada, miga irregular), derecha **pan de caja** (cuadrado, miga fina, de una bolsa genérica sin marca). Sobre la de caja, un escudo chiquito con "antimoho". Chip "no es inmortal". Barra de escala 5 cm. |
 | 1 | Horno | El horno mata las esporas, pero al enfriar y rebanar le caen otras. | Fondo naranja. Horno con el pan: esporas dentro del pan se apagan con una ✗ ("el horno las mata"). Luego el pan en una rejilla y una rebanadora: del aire bajan puntitos (esporas) que se posan en la miga. Chips "enfriar" · "rebanar". |
 | 2 | Mohos | Son de *Penicillium*, *Aspergillus* o *Rhizopus*, y en unos días ves la mancha. | Fondo menta. Zoom esquemático a tres esporas con su nombre en cursiva: *Penicillium* (cabezuelas en pincel, conidios en cadena, verde-azul), *Aspergillus* (cabeza redonda con conidios) y *Rhizopus* (esporangio redondo oscuro sobre su pie). En la rebanada de panadería aparece un círculo de moho que **crece radial** desde un punto. Chip "en unos días". |
 | 3 | Etiqueta | Por eso el de caja suele traer propionato de calcio. | Fondo cian. La bolsa genérica gira; una lupa sobre la lista de ingredientes: "… propionato de calcio (conservador) …" se ilumina. Chip "antimoho". |
@@ -39,7 +39,7 @@ Tiempos de la base (OM_SCENES: Gancho 0 · Horno 3.67 · Mohos 7.72 · Etiqueta 
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no es inmortal: casi siempre trae un antimoho» (cuadro 0) |
+| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no es inmortal: muchas veces trae un antimoho» (cuadro 0) |
 | 2 | 5.0 | 8.0 | 13_senalando_arriba | `arriba-der` | «al enfriar y rebanar le caen otras» |
 | 3 | 12.5 | 15.1 | 04_bajando_lentes | `arriba-der` | «suele traer propionato de calcio» |
 | 4 | 20.9 | 24.2 | 12_perfil_serio | `arriba-der` | «según la teoría clásica, le acidifica la célula» |
