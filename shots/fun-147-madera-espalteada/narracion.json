@@ -1,7 +1,7 @@
 {
   "dcHtml": "Shot Espalteada base narrada.dc.html",
   "salida": "Shot Espalteada narrado.dc.html",
-  "nota": "Shot Fungi Mati #147 · madera espalteada. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "nota": "Shot Fungi Mati #147 · madera espalteada (v2, 5 nov 2026: sin Chlorociboria/verde, que ya cuenta fun-126; ahora el laboratorio de Seri Robinson, el costo en peso y secar a tiempo). Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
     {
       "escena": "Gancho",
@@ -40,16 +40,20 @@
       "texto": "Y los de pudrición blanca, como Trametes versicolor, se comen la lignina y aclaran la madera."
     },
     {
-      "escena": "Verde",
-      "texto": "Y Chlorociboria la pinta de verde azulado con un pigmento: la xilindeína."
+      "escena": "Laboratorio",
+      "texto": "En 2012, el equipo de Seri Robinson sembró hongos así en cubitos de haya, por ocho a doce semanas."
     },
     {
-      "escena": "Estudio",
-      "texto": "En 1992, el equipo de Robert Blanchette miró al microscopio taraceas del Renacimiento italiano: ese verde traía hifas del hongo."
+      "escena": "Costo",
+      "texto": "El costo: Trametes le comió a la madera clara casi un tercio de su peso."
+    },
+    {
+      "escena": "Secar",
+      "texto": "Por eso se seca a tiempo: sin agua, no hay pudrición."
     },
     {
       "escena": "Xylaria",
-      "texto": "Lo más raro: Xylaria polymorpha, los dedos de muerto, hace líneas aunque esté solo, sin otro hongo enfrente: se las pone a sí mismo."
+      "texto": "Lo más raro: Xylaria polymorpha, los dedos de muerto, hace líneas aunque esté solo, sin otro hongo."
     },
     {
       "escena": "Cierre",
