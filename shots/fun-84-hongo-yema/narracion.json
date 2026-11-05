@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Hongo Yema base narrada.dc.html",
+  "salida": "Shot Hongo Yema narrado.dc.html",
+  "nota": "Shot Fungi Mati #84. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es guía de identificación de hongos.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Eso no es un huevo: es un hongo a punto de nacer en un volcán."
+    },
+    {
+      "escena": "Volcan",
+      "texto": "Crece en La Malinche, Tlaxcala, entre pinos y ailes, a unos tres mil metros."
+    },
+    {
+      "escena": "Dentro",
+      "texto": "Por dentro ya trae sombrero, laminillas y pie, envueltos en un velo."
+    },
+    {
+      "escena": "Revienta",
+      "texto": "Al crecer, el velo se rasga y queda una bolsa blanca abajo."
+    },
+    {
+      "escena": "Sale",
+      "texto": "Sale el hongo amarillo: sombrero rojo anaranjado, anillo amarillo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo lo reconocen los que saben, si sus primas mortales también nacen de huevo?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Un estudio de dos mil dos habló con ciento noventa y una personas del volcán:"
+    },
+    {
+      "escena": "Nombres",
+      "texto": "daban ciento veintiún nombres a unas cuarenta especies que se comen."
+    },
+    {
+      "escena": "Rasgos",
+      "texto": "En Hidalgo, las hongueras miran todo el hongo; ojo: las mortales también traen pañuelito y botita."
+    },
+    {
+      "escena": "Yuyo",
+      "texto": "En Los Altos de Chiapas, a la blanca mortal algunos le dicen yuyo de veneno."
+    },
+    {
+      "escena": "Sin",
+      "texto": "Y no hay regla ni prueba general que separe un hongo venenoso de uno comestible."
+    },
+    {
+      "escena": "Regla",
+      "texto": "Nunca comas un hongo silvestre por foto, regla o app: solo con un experto."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese huevo puede ser un manjar del volcán, o su prima mortal."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

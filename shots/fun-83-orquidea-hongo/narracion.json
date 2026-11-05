@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Orquidea Hongo base narrada.dc.html",
+  "salida": "Shot Orquidea Hongo narrado.dc.html",
+  "nota": "Shot Fungi Mati #83. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto no es polvo: son semillas de orquídea. Y en el bosque, sin hongo, no germinan."
+    },
+    {
+      "escena": "Bosque",
+      "texto": "México tiene más de mil doscientas especies de orquídeas; muchas cuelgan en el bosque de niebla."
+    },
+    {
+      "escena": "Capsula",
+      "texto": "Una cápsula puede soltar millones de semillas al viento."
+    },
+    {
+      "escena": "Semilla",
+      "texto": "Es una red con un embrión diminuto, sin endospermo: casi sin comida para arrancar. No trae lonchera."
+    },
+    {
+      "escena": "Hifa",
+      "texto": "Deja entrar a un hongo, como Tulasnella o Ceratobasidium."
+    },
+    {
+      "escena": "Peloton",
+      "texto": "Sus hilos se enrollan dentro de las células en ovillos: los pelotones."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y quién se come a quién?"
+    },
+    {
+      "escena": "Digiere",
+      "texto": "La semilla digiere esos ovillos: empieza su vida comiendo hongo."
+    },
+    {
+      "escena": "Protocormo",
+      "texto": "Se hincha en una bolita, el protocormo, y saca hojas y raíces."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2007, la UNAM reportó plántulas de Bletia urbana, orquídea en peligro, criadas con sus hongos y devueltas al Pedregal de San Ángel."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Tras seis años, sobrevivía cerca de la mitad, y ya florecían."
+    },
+    {
+      "escena": "Vainilla",
+      "texto": "La vainilla, nativa de México y Centroamérica, también es una orquídea."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese polvo no es polvo: es un bosque de orquídeas esperando su hongo."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
