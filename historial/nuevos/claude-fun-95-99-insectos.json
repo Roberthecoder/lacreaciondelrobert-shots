@@ -1,0 +1,12 @@
+{ "temas": [
+  { "id": "cigarra-massospora", "titulo": "La cigarra que sigue volando sin la mitad del cuerpo: Massospora cicadina", "serie": "Shot Fungi Mati", "numero": 95,
+    "estado": "idea", "carpeta": "shots/fun-95-cigarra", "rama": "claude/fun-95-99-insectos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
+  { "id": "mosca-ventana-entomophthora", "titulo": "La mosca muerta en tu ventana no murió de vieja: Entomophthora muscae", "serie": "Shot Fungi Mati", "numero": 96,
+    "estado": "idea", "carpeta": "shots/fun-96-mosca-ventana", "rama": "claude/fun-95-99-insectos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
+  { "id": "escarabajo-ambrosia-aguacate", "titulo": "El escarabajo que cultiva un hongo dentro de los aguacates (marchitez del laurel, Raffaelea lauricola)", "serie": "Shot Fungi Mati", "numero": 97,
+    "estado": "idea", "carpeta": "shots/fun-97-escarabajo-aguacate", "rama": "claude/fun-95-99-insectos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
+  { "id": "termitas-termitomyces", "titulo": "Las termitas que cultivan hongos (Termitomyces): granjeras desde hace millones de años", "serie": "Shot Fungi Mati", "numero": 98,
+    "estado": "idea", "carpeta": "shots/fun-98-termitas", "rama": "claude/fun-95-99-insectos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
+  { "id": "abeja-sin-aguijon-hongo-larva", "titulo": "La abeja sin aguijón cuyas larvas necesitan comer un hongo para vivir (Scaptotrigona depilis)", "serie": "Shot Fungi Mati", "numero": 99,
+    "estado": "idea", "carpeta": "shots/fun-99-abeja-hongo", "rama": "claude/fun-95-99-insectos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] }
+] }
