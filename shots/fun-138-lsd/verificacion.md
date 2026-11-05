@@ -60,3 +60,63 @@ página de NIDA; comunicados y prensa de Definium (antes MindMed) de 2025–2026
    LSD sigue en la Lista I (lista ONU al 3 dic 2024) y el art. 7(a) aplica solo a la Lista I (la más estricta).
 
 Pendiente: aplicar las correcciones 1, 2 y 3 (y opcional 4) y volver a verificar esas frases antes de aprobar.
+
+## Segunda ronda
+
+Revisado el 5 nov 2026 contra `narracion.json`, `guion.md`, `lsd.jsx` (todos los textos de pantalla y subtítulos) y `publicacion.md` (todas las redes y el comentario fijado).
+
+| # | Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Corrección 1 aplicada: «sus alcaloides principales comparten un núcleo: el ácido lisérgico» (voz, guion, etiqueta "núcleo de sus alcaloides principales") | ✅ | https://www.psychedelic-library.org/child1.htm | "the nucleus common to all ergot alkaloids. They named it lysergic acid" (ahora acotado a los principales: ergotamina, ergometrina) | 1979 |
+| R2 | Corrección 2 aplicada: etiqueta "Hofmann y su asistente de laboratorio", siluetas genéricas; ya no dice "la asistente" | ✅ | https://www.psychedelic-library.org/child1.htm | "I asked my laboratory assistant … to escort me home" | 1943 |
+| R3 | Corrección 3 aplicada: «Sandoz la repartió a investigadores y psiquiatras como fármaco experimental: Delysid»; flechas "investigadores" / "psiquiatras" | ✅ | https://www.psychedelic-library.org/child4.htm | "available to research institutes and physicians as an experimental drug … Delysid"; prospecto: "the psychiatrist is able to gain an insight" | 1979 |
+| R4 | Corrección 4 aplicada: aviso "la ilegal puede venir mezclada con otras sustancias peligrosas · Fuente: NIDA" | ✅ | https://nida.nih.gov/research-topics/psychedelic-dissociative-drugs | "illicitly manufactured or processed drugs may be contaminated with … other dangerous substances" | consulta 2026 |
+| R5 | Recorte: «modificaba ese núcleo buscando medicinas» | ✅ | https://www.psychedelic-library.org/child1.htm | "I further employed my synthetic procedure to produce new lysergic acid compounds"; de ahí "Methergine", "Hydergine" | 1979 |
+| R6 | Recorte: «buscaba un estimulante respiratorio» (en pantalla: "respiratorio y circulatorio") | ✅ | https://www.psychedelic-library.org/child1.htm | "a circulatory and respiratory stimulant (an analeptic)" | 1938 |
+| R7 | «Probada en animales, no llamó la atención y la archivaron» / chips "en animales: sin interés", "ARCHIVADA" | ✅ | https://www.psychedelic-library.org/child1.htm | "aroused no special interest in our pharmacologists and physicians; testing was therefore discontinued" | 1938 |
+| R8 | Recorte: «Volvió a casa en bici con su asistente: por la guerra, no había coche» (queda después del autoexperimento del 19 abr, orden correcto) / chip "por la guerra: sin coche" | ✅ | https://www.psychedelic-library.org/child1.htm | "We went by bicycle, no automobile being available because of wartime restrictions on their use." | 1943 |
+| R9 | Recorte: «México también la controla» / chips "México · Ley General de Salud", "art. 245, grupo I" | ✅ | https://www.diputados.gob.mx/LeyesBiblio/pdf/LGS.pdf | Art. 245 fr. I: "… (+)-LISERGIDA  LSD, LSD-25" | DOF 15-01-2026 |
+| R10 | Recorte: «hoy se prueba en ensayos, sin ser medicamento aprobado» / tarjeta "hoy: ensayos clínicos controlados (ansiedad) · fase 3 · 2026", sello "NO ES MEDICAMENTO APROBADO" | ✅ | https://ir.definiumtx.com/news-events/press-releases/detail/243/definium-therapeutics-announces-positive-topline-results-from-phase-3-voyage-study-of-dt120-odt-in-generalized-anxiety-disorder · https://www.pharmaceutical-technology.com/news/definium-dt120-psychedelic-gad-anxiety-phase-iii/ | Voyage fase 3 (12 ago 2026) y Panorama (15 sep 2026); "plans to file an application … in the first half of 2027" | 2026 |
+| R11 | Pantalla: "Sandoz · Basilea, Suiza" y "Albert Hofmann, químico" | ✅ | https://www.psychedelic-library.org/child1.htm | "I joined the Sandoz Company's pharmaceutical-chemical research laboratory in Basel." | 1929 |
+| R12 | Pantalla: pizarrón con núcleo esquemático y grupo genérico R₁…R₄ que cambia, "modificaba el núcleo" (sin estructura real del LSD, sin reactivos) | ✅ | (esquema) | Representa "a series of lysergic acid derivatives" sin dar receta; no hay información de síntesis | 1979 |
+| R13 | Pantalla: núcleo de 4 anillos (uno de 5 con NH, N en el anillo superior), ~1 nm, rotulado "(esquemático)" | ✅ | https://documents.un.org/doc/undoc/gen/v24/035/96/pdf/v2403596.pdf | "…-6-methylergoline-8β-carboxamide" (esqueleto tetracíclico de ergolina con N1-H y N6) | 2024 |
+| R14 | Pantalla: TarjetaEstudio "1938 · Sandoz, Basilea · derivados del ácido lisérgico"; 25 matraces; "n.º 25 → LSD-25" | ✅ | https://www.psychedelic-library.org/child1.htm | "In 1938, I produced the twenty-fifth substance in this series of lysergic acid derivatives" | 1938 |
+| R15 | Pantalla: calendario 1938 → 1943; «¿Por qué volvió cinco años después?» | ✅ | https://www.psychedelic-library.org/child1.htm | "in the spring of 1943, I repeated the synthesis of LSD-25" | 1943 |
+| R16 | Pantalla: TarjetaEstudio "1943 · 16 de abril · Sandoz, Basilea · relato de A. Hofmann, «LSD: mi hijo problemático» (1979)"; chip "«una corazonada»" | ✅ | https://www.psychedelic-library.org/child1.htm | "Last Friday, April 16, 1943, I was forced to interrupt my work"; "A peculiar presentiment" | 1943 / 1979 |
+| R17 | Pantalla: libreta "16 / IV / 1943 · deja el trabajo: inquietud y mareo"; subtítulo "Abril de 1943: mareo e inquietud" | ✅ | https://www.psychedelic-library.org/child1.htm | "I was forced to interrupt my work in the laboratory in the middle of the afternoon … a remarkable restlessness, combined with a slight dizziness" | 1943 |
+| R18 | Pantalla: "¿una traza, por la piel?" + "(lo que él sospechó)"; calendario 16 → 19 abril; "19 abr 1943 · autoexperimento" | ✅ | https://www.psychedelic-library.org/child1.htm | "a trace of the substance was absorbed through the skin"; "my laboratory journal of April 19, 1943" | 1943 |
+| R19 | Pantalla: caja "DELYSID · uso experimental", chip "fármaco experimental" | ✅ | https://www.psychedelic-library.org/child4.htm | "as an experimental drug, giving it the trade name Delysid" | 1979 |
+| R20 | Pantalla: documento "CONVENIO SOBRE SUSTANCIAS SICOTRÓPICAS · ONU · Viena, 1971 · Lista I · (+)-LISERGIDA · LSD, LSD-25", sello "LISTA I"; subtítulo "ONU, 1971: su lista más estricta" | ✅ | https://www.importlicensing.wto.org/sites/default/files/members/30/Convention%20on%20Psychotropic%20Substances%201971_21.02.1971.pdf · https://jus.uio.no/english/services/library/treaties/04/4-05/psychotropic-substances.html | Convenio firmado en Viena el 21 feb 1971; "List of substances in Schedule I … (+)-Lysergide LSD, LSD-25"; art. 7(a) "Prohibit all use except for scientific and very limited medical purposes" | 1971 |
+| R21 | Pantalla: avisos "miedo y pánico", "conductas peligrosas y lesiones" | ✅ | https://nida.nih.gov/research-topics/psychedelic-dissociative-drugs | "fear, confusion, or panic"; "dangerous behavior and injuries" | consulta 2026 |
+| R22 | Pantalla: línea del tiempo del cierre "1938 · LSD-25 / 1943 · el autoexperimento / 1971 · Lista I (ONU) / hoy · ensayos clínicos" | ✅ | (ver R14, R18, R20, R10) | — | — |
+| R23 | Resto de subtítulos y chips del gancho ("¿basura?", "de su química → el LSD", "cornezuelo · un hongo / *Claviceps purpurea*", barra 1 cm) | ✅ | https://www.psychedelic-library.org/child1.htm | "a lower fungus (Claviceps purpurea) that grows parasitically on rye" | 1979 |
+| R24 | publicacion.md: «En los años 30, Sandoz investigaba los alcaloides del cornezuelo» | ✅ | https://www.psychedelic-library.org/child1.htm | Stoll empezó en "1917 and which had led directly to the isolation of ergotamine in 1918"; Hofmann pasó a los alcaloides del cornezuelo al terminar lo de *Scilla* en 1935 | 1918 / 1935 |
+| R25 | publicacion.md: metilergometrina (Methergine) salió de ese programa | ✅ | https://www.psychedelic-library.org/child1.htm | Derivado mejorado de la ergobasina vendido "under the trade name Methergine", "a dependable uterotonic, hemostatic remedy" (Methergine = metilergometrina) | 1979 |
+| R26 | publicacion.md: el prospecto de Delysid pedía usarla «solo bajo estricta supervisión médica» | ✅ | https://www.psychedelic-library.org/child4.htm | "Delysid should only be administered under strict medical supervision." | 1979 (prospecto de Sandoz) |
+| R27 | publicacion.md: el cuernito (esclerocio) «se forma en lugar del grano» | ✅ | https://www.psychedelic-library.org/child1.htm | Los granos infectados "push forth from the husk in place of normal grains" | 1979 |
+| R28 | publicacion.md: «laboratorio de investigación químico-farmacéutica de Sandoz, en Basilea» | ✅ | https://www.psychedelic-library.org/child1.htm | "the Sandoz Company's pharmaceutical-chemical research laboratory in Basel" | 1929 |
+| R29 | publicacion.md: «dietilamida del ácido lisérgico, abreviada LSD-25» | ✅ | https://www.psychedelic-library.org/child1.htm | "abbreviated LSD-25 (Lyserg-säure-diäthylamid)" | 1938 |
+| R30 | publicacion.md: buscaba un analéptico «por su parecido con otro fármaco de la época» | ✅ | https://www.psychedelic-library.org/child1.htm | "similarity in chemical structure to the analeptic already known at that time, namely nicotinic acid diethylamide (Coramine)" | 1938 |
+| R31 | publicacion.md: Lista I «prohíbe todo uso salvo fines científicos y médicos muy limitados»; LGS grupo I «valor terapéutico escaso o nulo…» | ✅ | https://jus.uio.no/english/services/library/treaties/04/4-05/psychotropic-substances.html · https://www.diputados.gob.mx/LeyesBiblio/pdf/LGS.pdf | (frases de R20 y del art. 245 fr. I) | 1971 / 2026 |
+| R32 | publicacion.md: riesgos NIDA (miedo, confusión o pánico; conductas peligrosas y lesiones; contaminada con otras sustancias) y ensayos fase 3 en 2026 sin aprobación | ✅ | (ver R4, R10, R21) | — | 2026 |
+| R33 | publicacion.md (LinkedIn): «una exposición accidental y un autoexperimento el 19 de abril revelaron sus efectos» | ⚠️ imprecisa | https://www.psychedelic-library.org/child1.htm | Hofmann solo lo plantea como sospecha: "a trace of the substance was absorbed through the skin" (no comprobado). En el resto del shot se dice "sospechó"; aquí se da como hecho | 1943 |
+| R34 | Tono general (voz, pantalla, publicación): sin dosis, sin vías, sin cómo obtenerla o hacerla; dice que es controlada, da riesgos y "no una invitación a consumir"; Robert en poses serias/pensativas | ✅ | — | La tabla de dosis máximas de la LGS no se menciona (correcto) | — |
+
+### Corrección pendiente (segunda ronda)
+
+1. **R33 · `publicacion.md`, sección LinkedIn.** Cambiar
+   «En 1943 lo resintetizó por una "corazonada"; una exposición accidental y un autoexperimento el 19 de abril revelaron sus efectos.»
+   por
+   «En 1943 lo resintetizó por una "corazonada"; el 16 de abril sintió efectos raros (él sospechó que una traza le entró por la piel) y el 19 de abril los confirmó con un autoexperimento.»
+
+Todo lo demás queda ✅. Al aplicar esa frase, el shot puede aprobarse sin nueva búsqueda (el dato ya está verificado en R18).
+
+### Corrección aplicada (cierre de la segunda ronda)
+
+| # | Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|---|
+| R33 bis | publicacion.md (LinkedIn), ya corregido: «el 16 de abril sintió efectos raros (él sospechó que una traza le entró por la piel) y el 19 de abril los confirmó con un autoexperimento» | ✅ | https://www.psychedelic-library.org/child1.htm | "Last Friday, April 16, 1943, I was forced to interrupt my work"; "a trace of the substance was absorbed through the skin"; "my laboratory journal of April 19, 1943" | 1943 |
+
+Revisado el 5 nov 2026: no queda ninguna ❌ ni ⚠️ en voz, pantalla ni publicación.
+
+VEREDICTO: APROBADO
