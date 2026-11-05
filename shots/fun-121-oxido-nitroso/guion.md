@@ -5,28 +5,28 @@
 - **Formato:** N1 Por dentro + N2 El número. Viaje: costal de fertilizante y milpa (macro) → suelo encharcado sin oxígeno → hifa de
   *Fusarium* y su enzima (micro, fondo oscuro) → la misma milpa, con el gas subiendo (macro).
 - **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre lo que se ve (el costal), con el número que contradice (#4) dentro:
-  «Este costal no es solo comida para tu milpa: parte se va al aire como óxido nitroso, un gas que calienta doscientas setenta y tres veces más que el CO₂.»
+  «Este costal no es solo comida para tu milpa: parte se escapa como óxido nitroso, un gas que, kilo por kilo, calienta doscientas setenta y tres veces más que el CO₂.»
 - **Matiz obligatorio:** la parte de los hongos varía mucho entre suelos y métodos; el 89 % es de UN pastizal y con inhibidores, que tienen límites.
   La voz lo dice («Ojo: fue un solo suelo…»). No decimos que los hongos sean «la» fuente principal del N₂O.
-- **Voz:** 176 palabras (las cifras van escritas en letra) / 964 caracteres (≈ 58.2 s) + cierre 3.5 s → **61.7 s** estimados.
+- **Voz:** 177 palabras (las cifras van escritas en letra) / 964 caracteres (≈ 58.0 s) + cierre 3.5 s → **61.5 s** estimados.
   Voz pendiente de aprobación de Robert.
-- **Estado:** guion listo para el verificador independiente. No animar hasta `VEREDICTO: APROBADO`.
+- **Estado:** verificado (14 afirmaciones, 0 ❌, 4 ⚠️ de redacción corregidas: «kilo por kilo», «emisión humana», «en ningún hongo se conoce la que lo desarma», «con tierra de un pastizal»). Re-verificación a cargo del coordinador.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Este costal no es solo comida para tu milpa: parte se va al aire como óxido nitroso, un gas que calienta doscientas setenta y tres veces más que el CO₂. | Cuadro 0: una mano vacía un costal genérico «FERTILIZANTE · N» (sin marca) sobre una milpa; caen los granitos (se mueve antes de 1 s). Del suelo salen burbujitas «N₂O» que suben. Número gigante «×273» con letrero «kilo por kilo · a 100 años · vs CO₂». |
-| 1 | Ozono | Y desde 2009 se sabe que es la emisión que más daña la capa de ozono. | La Tierra con la capa de ozono (anillo azul) que se adelgaza donde llegan moléculas N₂O. TarjetaEstudio «2009 · Science». Chip «la emisión que más daña el ozono». |
-| 2 | Campo | La mayor parte del que emitimos viene del nitrógeno que echamos al campo. | Barra «N₂O de origen humano»: el tramo más grande se pinta «nitrógeno en cultivos» (sin porcentaje). Chip «Nature, 2020 · datos 1980–2016». |
-| 3 | Charco | Si llueve, el suelo se encharca y, sin oxígeno, los microbios respiran el nitrato del fertilizante. | Llueve sobre la milpa; zoom a un corte del suelo: los poros se llenan de agua, burbujas de O₂ que se acaban (medidor «O₂» que baja). Moléculas NO₃⁻ (nitrato) alrededor de bacterias e hifas. |
+| 0 | Gancho | Este costal no es solo comida para tu milpa: parte se escapa como óxido nitroso, un gas que, kilo por kilo, calienta doscientas setenta y tres veces más que el CO₂. | Cuadro 0: una mano vacía un costal genérico «FERTILIZANTE · N» (sin marca) sobre una milpa; caen los granitos (se mueve antes de 1 s). Del suelo salen burbujitas «N₂O» que suben. Número gigante «×273» con letrero «kilo por kilo · a 100 años · vs CO₂». |
+| 1 | Ozono | Y un estudio de 2009 mostró que es la emisión humana que más daña la capa de ozono. | La Tierra con la capa de ozono (anillo azul) que se adelgaza donde llegan moléculas N₂O. TarjetaEstudio «2009 · Science». Chip «la emisión humana que más daña el ozono». |
+| 2 | Campo | La mayor parte del que emitimos sale del nitrógeno que echamos al campo. | Barra «N₂O de origen humano»: el tramo más grande se pinta «nitrógeno en cultivos» (sin porcentaje). Chip «Nature, 2020 · datos 1980–2016». |
+| 3 | Charco | Si llueve, el suelo se encharca y, sin oxígeno, los microbios respiran nitrato del abono. | Llueve sobre la milpa; zoom a un corte del suelo: los poros se llenan de agua, burbujas de O₂ que se acaban (medidor «O₂» que baja). Moléculas NO₃⁻ (nitrato) alrededor de bacterias e hifas. |
 | 4 | Pregunta | ¿Y quién suelta el gas? | **Re-gancho.** Robert grande, pensativo; signo de interrogación sobre el suelo encharcado. |
-| 5 | Bacterias | Muchas bacterias lo convierten en nitrógeno inofensivo. | Fondo oscuro (micro): una bacteria toma N₂O y suelta N₂ (dos bolitas azules) con palomita. Etiqueta «N₂O → N₂ (inofensivo)». |
-| 6 | Hongo | Pero hongos como Fusarium oxysporum lo fabrican con su enzima P450nor, y ningún hongo conocido lo desarma. | Hifa de *Fusarium oxysporum* (tubo tabicado con núcleos) con la enzima P450nor (esquemática, con su grupo hemo rojo) que une NO + NO → N₂O. Las moléculas N₂O salen de la hifa y siguen de largo; tache sobre el paso «N₂O → N₂» con etiqueta «enzima que lo desarma: no se conoce en hongos». |
-| 7 | Estudio | En 2015, en Francia, probaron doscientos siete hongos de suelos agrícolas y raíces: setenta lo producían. | TarjetaEstudio «2015 · INRA Dijon (Francia) · Scientific Reports». Cuadrícula de 207 tubitos de cultivo; 70 se encienden en naranja «producen N₂O». |
-| 8 | Pastizal | En un pastizal de Irlanda del Norte, en 2002, frenar a los hongos bajó el gas ochenta y nueve por ciento. | Fondo verde: pastizal con un mapa chiquito de Irlanda del Norte. TarjetaEstudio «2002 · Soil Sci. Soc. Am. J.». Barra del gas que baja «−89 %» con el antifúngico (cicloheximida); chip chico «con el antibacteriano: −23 %». |
-| 9 | Matiz | Ojo: fue un solo suelo, y en otros su aporte es incierto o mucho menor. | Varios cortes de suelo con «?» y chips «un solo sitio» y «los métodos tienen límites»; las dos barras (89 % y 23 %) suman más de 100 %: chip «no cuadra al 100 %: el método es aproximado». |
-| 10 | Cierre | Así que ese costal no es solo comida: en tu milpa, un hongo del suelo puede volver parte en gas. | **Regreso a la imagen del inicio:** la misma milpa y el mismo costal, ahora con la vista «por dentro» del suelo (hifas) y el N₂O subiendo. |
+| 5 | Bacterias | Muchas bacterias lo vuelven nitrógeno inofensivo. | Fondo oscuro (micro): una bacteria toma N₂O y suelta N₂ (dos bolitas azules) con palomita. Etiqueta «N₂O → N₂ (inofensivo)». |
+| 6 | Hongo | Pero hongos como Fusarium oxysporum lo fabrican con su enzima P450nor, y en ningún hongo se conoce la que lo desarma. | Hifa de *Fusarium oxysporum* (tubo tabicado con núcleos) con la enzima P450nor (esquemática, con su grupo hemo rojo) que une NO + NO → N₂O. Las moléculas N₂O salen de la hifa y siguen de largo; tache sobre el paso «N₂O → N₂» con etiqueta «enzima que lo desarma: no se conoce en hongos». |
+| 7 | Estudio | En 2015, en Francia, de doscientos siete hongos de suelos agrícolas y raíces, setenta lo producían. | TarjetaEstudio «2015 · INRA Dijon (Francia) · Scientific Reports». Cuadrícula de 207 tubitos de cultivo; 70 se encienden en naranja «producen N₂O». |
+| 8 | Pastizal | Con tierra de un pastizal de Irlanda del Norte, en 2002, frenar a los hongos bajó el gas ochenta y nueve por ciento. | Fondo verde: pastizal con un mapa chiquito de Irlanda del Norte y una muestra de su tierra en frascos (fue con tierra en laboratorio, no en el campo abierto). TarjetaEstudio «2002 · Soil Sci. Soc. Am. J.». Barra del gas que baja «−89 %» con el antifúngico (cicloheximida); chip chico «con el antibacteriano: −23 %». |
+| 9 | Matiz | Ojo: fue un solo suelo; en otros, su aporte es incierto. | Varios cortes de suelo con «?» y chips «un solo sitio» y «los métodos tienen límites»; las dos barras (89 % y 23 %) suman más de 100 %: chip «no cuadra al 100 %: el método es aproximado». |
+| 10 | Cierre | Así que ese costal no es solo comida: en tu milpa, un hongo puede volver parte en gas. | **Regreso a la imagen del inicio:** la misma milpa y el mismo costal, ahora con la vista «por dentro» del suelo (hifas) y el N₂O subiendo. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música (plan):** cama grave y continua, tensa (algo que se escapa sin que lo veas), que se aprieta en el suelo sin oxígeno y se aclara
@@ -56,7 +56,7 @@ Barra de escala: 50 cm (milpa), esquemático (Tierra y ozono), 1 cm (corte de su
    > "Nitrous Oxide (N2O) has a GWP 273 times that of CO2 for a 100-year timescale."
    > "The GWPs listed above are from the IPCC's Sixth Assessment Report, published in 2021."
    > "N2O emitted today remains in the atmosphere for more than 100 years, on average."
-   **Para el verificador:** confirmar en la tabla 7.15 del IPCC AR6 si puede abrirla.
+   Confirmado por el verificador en el PDF del IPCC AR6 WG1 cap. 7, tabla 7.15: fila N2O «GWP-100 273 ± 130» (vida media 109 ± 10 años).
 2. **Ozono:** Ravishankara, A. R., Daniel, J. S. y Portmann, R. W. (2009). Nitrous oxide (N2O): the dominant ozone-depleting substance emitted
    in the 21st century. *Science* 326: 123–125. https://ozone.unep.org/sites/default/files/2019-08/Ravishankara%20et%20al_Science_N2O_10_2_09.pdf
    > "N2O emission currently is the single most important ozone-depleting emission and is expected to remain the largest throughout the 21st century."
@@ -74,7 +74,6 @@ Barra de escala: 50 cm (milpa), esquemático (Tierra y ozono), 1 cm (corte de su
    > "fungi cannot convert N2O to inert N2 like many denitrifying bacteria"
    > "Despite extensive efforts, fungal contributions to N2O emissions remain uncertain."
    > streptomycin "only inhibits a fraction of the active bacteria present in soil" (límite de los inhibidores)
-   Takaya, N. y Shoun, H. (2000), *Mol. Gen. Genet.*: la reducción de NO, el último paso de la desnitrificación de *F. oxysporum*, la hace obligatoriamente P450nor (https://doi.org/10.1007/s004380051177; visto en resumen).
 6. **207 hongos, 70 productores:** Maeda, K. et al. (2015). N2O production, a widespread trait in fungi. *Scientific Reports* 5: 9697.
    https://pmc.ncbi.nlm.nih.gov/articles/PMC4403702/
    > "investigated the N2O-producing ability of a collection of 207 fungal isolates"; seventy strains producing N2O in pure culture, mostly Hypocreales (*Fusarium oxysporum*, *Trichoderma*)
