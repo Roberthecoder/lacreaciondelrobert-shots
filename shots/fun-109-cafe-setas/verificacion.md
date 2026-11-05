@@ -57,3 +57,24 @@
    «En otro, un tercio de posos con paja y ramas de olivo dio casi su peso seco en setas frescas.» (Si se cambia, revisar que la voz siga cuadrando con 61–62 s.)
 
 Tras aplicar 1–5, volver a verificar solo esas líneas antes de poner la línea final de aprobación.
+
+## Re-verificación 5 nov 2026
+
+Revisadas las líneas corregidas en `guion.md` y `narracion.json` (voz y pantalla):
+
+| # | Afirmación corregida | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|---|
+| 3 | «Ojo: con puros posos, muchas veces no salen.» (sello OJO, setas que casi no brotan) | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC8462683 · https://research.monash.edu/en/publications/assessment-of-coffee-waste-in-formulation-of-substrate-for-oyster/ | 66 % de posos: "Only S1, S2, and S3 were productive" (S4 no produjo); ">30% (w/w)": "fruitification was inhibited" | 2021 |
+| 4 | «En un estudio de 2021, con más de treinta por ciento de posos, las setas se frenaron.» (setas se encogen) | ✅ | https://research.monash.edu/en/publications/assessment-of-coffee-waste-in-formulation-of-substrate-for-oyster/ | "fruitification was inhibited when concentrations of SCG in the mixed substrate exceeded 30% (w/w)" | 2021 |
+| 6 | «…dio casi su peso seco en setas frescas.» | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC8462683 | "S2 (33%WS+33%SCG+33%OLPR)", BE 95.3 %; BE = "fresh mass of produced fruit bodies … over the initial substrate's dry mass" | 2021 |
+| 13 | «Y en México ya se hacía: en los años ochenta, en Veracruz, se cultivaban setas en pulpa de café.» | ✅ | https://scientiafungorum.org.mx/index.php/micologia/article/download/692/876/2252 | "estudios recientes realizados por los autores en el INIREB [Xalapa, Veracruz] … la pulpa de café fresca es un substrato eficiente para el cultivo comercial de Pleurotus (Martínez-Carrera et al., 1984; 1985 …)" | 1984–1987 |
+| 15 | «En Xalapa, pulpa secada al sol y guardada dos años dio más setas frescas que su propio peso seco.» + pantalla "Xalapa, Veracruz · EB > 100 % · 1987" | ✅ | https://scientiafungorum.org.mx/index.php/micologia/article/download/692/876/2252 | "Todo el trabajo experimental … en la planta piloto … del INIREB en Xalapa, Veracruz"; "La eficiencia biológica de P. ostreatus obtenida en pulpa de café secada al sol con dos años de almacenamiento, es mayor al 100 %" (24 meses: 145.27 %) | 1987 |
+| 17 | «Y se estima que cada año el mundo deja unos seis millones de toneladas de posos.» (pantalla "estimación 2022") | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC9316316 | "Current estimates place the amount of spent coffee grounds annually generated worldwide in the 6 million ton figure" | 2022 |
+
+Tabla de Robert: solo cambió la reacción #3 a «Ojo… se frenaron»; coincide con la voz. Nada más del guion se afectó.
+
+**Pendiente antes de aprobar (sección Fuentes de `guion.md`, punto 4):** la cita junta la frase de los dos años con "… Coatepec, Veracruz", y el experimento fue en Xalapa (Coatepec solo era la granja comercial que usaba el método, sin cifra). Cambiarla a: "eficiencia biológica … en pulpa de café secada al sol con dos años de almacenamiento, es mayor al 100 %"; "Todo el trabajo experimental … en la planta piloto … del INIREB en Xalapa, Veracruz". Al corregirla, este archivo puede cerrarse con la línea de aprobación.
+
+Cita de Fuentes corregida en guion.md (Xalapa, INIREB) según la re-verificación.
+
+VEREDICTO: APROBADO

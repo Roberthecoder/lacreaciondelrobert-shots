@@ -1,6 +1,5 @@
 # Shot Fungi Mati #109 · Tu café usado puede dar setas
 
-> ⛔ **GUION SIN VERIFICAR.** Falta la verificación independiente (subagente) y `verificacion.md`. No animar hasta que diga `VEREDICTO: APROBADO`.
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #109 · rama `claude/fun-105-109-cultivo`.
 - **Formato:** N5 El experimento + N1 Por dentro: taza → posos en el filtro → mito/dato (mezclas) → por dentro (hifas entre granitos de café, cafeína → xantina) → re-gancho → estudio dibujado (Veracruz) → la misma taza, ahora con setas.
@@ -44,7 +43,7 @@
 
 8 apariciones · ≈ 30 s · 7 poses distintas.
 
-## Fuentes (investigación previa; falta la verificación independiente)
+## Fuentes
 
 1. Chai, W. Y. et al. (2021). *Future Foods* 4: 100075. https://doi.org/10.1016/j.fufo.2021.100075
    > "fruitification was inhibited when concentrations of SCG in the mixed substrate exceeded 30% (w/w)"; "trace amounts of caffeine were also detected in fruiting bodies"
@@ -53,7 +52,7 @@
 3. Carrasco-Cabrera, C. P., Bell, T. L. y Kertesz, M. A. (2019). *Appl Microbiol Biotechnol* 103: 5831. PMID 31115628
    > "partial degradation of caffeine to xanthine by P. ostreatus mycelium was observed"; "it would be necessary to consume ~ 250 kg of fresh oyster mushrooms to obtain the amount of caffeine equivalent to one cup of espresso coffee"
 4. Soto, C., Martínez-Carrera, D. et al. (1987). *Rev. Mex. Mic.* 3: 133-136. https://scientiafungorum.org.mx/index.php/micologia/article/download/692/876/2252
-   > "la pulpa de café fresca es un substrato eficiente para el cultivo comercial de Pleurotus … (Martínez-Carrera et al., 1984…)"; "eficiencia biológica … en pulpa de café secada al sol con dos años de almacenamiento, es mayor al 100 % … Coatepec, Veracruz"
+   > "la pulpa de café fresca es un substrato eficiente para el cultivo comercial de Pleurotus … (Martínez-Carrera et al., 1984…)"; "eficiencia biológica … en pulpa de café secada al sol con dos años de almacenamiento, es mayor al 100 %"; "Todo el trabajo experimental … en la planta piloto … del INIREB en Xalapa, Veracruz"
 5. Franca, A. S. y Oliveira, L. S. (2022). *Foods* 11(14): 2064. https://pmc.ncbi.nlm.nih.gov/articles/PMC9316316
    > "Current estimates place the amount of spent coffee grounds annually generated worldwide in the 6 million ton figure"
 
