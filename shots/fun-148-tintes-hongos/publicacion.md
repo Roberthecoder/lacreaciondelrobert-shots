@@ -49,7 +49,8 @@ El dibujo es esquemático.
 Fuentes:
 - Räisänen, R., Nousiainen, P. y Hynninen, P. H. (2001). Emodin and dermocybin natural anthraquinones as mordant dyes for wool and polyamide. Textile Research Journal 71(11): 1016–1022. https://doi.org/10.1177/004051750107101113
 - Herrala, M. et al. (2022). Journal of Fungi 8: 1129. https://pmc.ncbi.nlm.nih.gov/articles/PMC9694584/
-- Räisänen, R. et al. (2020). Antibiotics. https://pmc.ncbi.nlm.nih.gov/articles/PMC7277368/
+- Räisänen, R. et al. (2020). Antibiotics 9(5): 266. https://pmc.ncbi.nlm.nih.gov/articles/PMC7277368/
+- Shao et al. (2016). A novel orellanine containing mushroom Cortinarius armillatus. Toxicon 114: 65–74. https://pubmed.ncbi.nlm.nih.gov/26915341/
 - North American Mycological Association. Mushrooms as a Source of Color. https://namyco.org/interests/education/dyes-and-papermaking/
 - Mushrooms for Color. A Brief History of the Art of Mushroom Dyeing. https://www.mushroomsforcolor.com/?p=3486
 - Danel, V. C., Saviuc, P. F. y Garon, D. (2001). Main features of Cortinarius spp. poisoning: a literature review. Toxicon 39: 1053–1060. https://pubmed.ncbi.nlm.nih.gov/11223095/
@@ -74,7 +75,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esa lana roja no la tiñó una fábrica: la tiñó un hongo.
 Cortinarius sanguineus, una seta de los bosques de coníferas, produce antraquinonas (sobre todo emodina, amarilla, y dermocibina, roja) que se extraen en agua caliente. Con un mordiente de alumbre, el aluminio forma un complejo con el pigmento y se une a la fibra de lana, y el color resiste mejor la luz y las lavadas. Cambiar el mordiente (hierro en vez de aluminio) o la especie de hongo cambia el tono: amarillo limón con Phaeolus schweinitzii, verde oscuro con Tapinella atrotomentosa.
-Por qué importa: en 2001, investigadores de Finlandia tiñeron lana y poliamida con emodina y dermocibina puras y obtuvieron amarillos, rojos, morados y violetas con solidez de buena a moderada, y propusieron estos pigmentos como alternativa a colorantes sintéticos. La práctica moderna la popularizó Miriam C. Rice, en California, con un libro entero sobre tintes de hongos publicado en 1974.
+Por qué importa: en 2001, investigadores de Finlandia tiñeron lana y poliamida con emodina y dermocibina puras y obtuvieron amarillos, rojos, morados y violetas con solidez de buena a moderada, y propusieron estos pigmentos como alternativa a colorantes sintéticos. En California, la artista y maestra Miriam C. Rice experimentó con todos los hongos que encontraba y en 1974 publicó un libro entero sobre tintes de hongos.
 Un punto de seguridad que no se puede omitir: en el mismo género están Cortinarius orellanus y C. rubellus, cuya orelanina daña los riñones con síntomas que tardan días. Son hongos para teñir, nunca para comer.
 ¿Ves futuro para los colorantes de hongos en la industria textil? ¿Qué haría falta para escalarlos?
 Fuentes en el primer comentario.
@@ -107,6 +108,6 @@ NAMA. Mushrooms as a Source of Color. https://namyco.org/interests/education/dye
 Mushrooms for Color. A Brief History of the Art of Mushroom Dyeing. https://www.mushroomsforcolor.com/?p=3486
 Danel, Saviuc y Garon (2001). Main features of Cortinarius spp. poisoning. Toxicon 39: 1053–1060. https://pubmed.ncbi.nlm.nih.gov/11223095/
 Dinis-Oliveira et al. (2016). Human and experimental toxicology of orellanine. Hum. Exp. Toxicol. 35(9): 1016–1029. https://pubmed.ncbi.nlm.nih.gov/26553321/
-Shao et al. (2016). Toxicon 114: 65. https://pubmed.ncbi.nlm.nih.gov/26915341/
+Shao et al. (2016). A novel orellanine containing mushroom Cortinarius armillatus. Toxicon 114: 65–74. https://pubmed.ncbi.nlm.nih.gov/26915341/
 El dibujo es esquemático. Estos Cortinarius no se comen.
 ```

@@ -56,4 +56,24 @@ oscuro, *Phaeolus schweinitzii* amarillo limón, *Tapinella atrotomentosa* verde
 *C. orellanus* y *C. rubellus* con orelanina, daño renal, síntomas que tardan días). El guion final (v2) no agrega ninguna
 afirmación nueva. Dibujo esquemático.
 
+
+## Verificación independiente de publicacion.md (5 nov 2026)
+
+| # | Afirmación (red) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | «el color aguanta mejor **la luz** y las lavadas» (YouTube, LinkedIn) | ✅ | Räisänen et al., *Antibiotics* 9(5):266 (PMC7277368) | "mordant increases the stability of the dye structure, which can be seen from the higher light fastness values"; "Metal complexes formed by Al3+ and Fe3+ ions stabilise the structure and decrease colour change" | 2020 |
+| 2 | «alumbre (sulfato de aluminio y potasio)» (YouTube) | ✅ | NAMA; Räisänen et al. 2001 | "potassium aluminum sulfate"; mordientes probados: potassium aluminum sulphate, ferrous sulphate… | s/f / 2001 |
+| 3 | En 2001 tiñeron **lana y poliamida**; solidez «de buena a moderada»; «propusieron estos pigmentos como alternativa a colorantes sintéticos» (LinkedIn) | ✅ | Räisänen, Nousiainen y Hynninen, *Text. Res. J.* 71(11):1016–1022 (abstract vía Crossref) | "color-fastnesses to light, washing, and rubbing … good to moderate"; el abstract concluye que estos colorantes podrían ser alternativas a los sintéticos (paráfrasis del abstract; refuerzo: Herrala 2022 "consideration as synthetic dye alternatives") | 2001 / 2022 |
+| 4 | Con dermocibina, «morados **y violetas**» (TikTok, YouTube, LinkedIn) | ✅ | Räisänen et al. 2001 | "dermocybin confers purple and violet colors" | 2001 |
+| 5 | *C. sanguineus* «común en los bosques de coníferas de Norteamérica, el norte de Europa y las islas británicas» (YouTube) | ✅ | Herrala et al., *J. Fungi* 8(11):1129 (PMC9694584) | "a common fungus found in the coniferous forests of North America, Northern Europe, and the British Isles" | 2022 |
+| 6 | *Phaeolus schweinitzii*, **joven**, amarillo limón con alumbre; *Tapinella atrotomentosa* verde oscuro **sobre lana con hierro** (YouTube, TikTok, LinkedIn) | ✅ | NAMA | picked young, "a lemon yellow with alum"; "dyes a rich dark green" on iron-mordanted wool (NAMA escribe *atrotomentosus*; *atrotomentosa* es la grafía aceptada en *Tapinella*) | s/f |
+| 7 | Con hierro, «la misma seta» da tonos más oscuros (TikTok) | ✅ | NAMA | iron gives colors from "the same fungi species that are usually darker or 'sadder'" | s/f |
+| 8 | Rice «maestra y artista de Mendocino», «experimentó con todos los hongos que encontraba», libro de 1974 con título exacto | ✅ | mushroomsforcolor.com/?p=3486 | "multi-faceted artist"; "Miriam experimented with everything she found"; *Let's Try Mushrooms for Color* "was published by Thresh Publications, Santa Rosa, CA in November 1974" | 1974 |
+| 9 | «La práctica moderna **la popularizó** Miriam C. Rice» (LinkedIn) | ⚠️ superlativo suave sin fuente independiente | Wikipedia «Miriam C. Rice»; mushroomsforcolor (sitio de su propia organización) | Wikipedia: "acknowledged as a pioneer of modern research"; "was an international success"; mushroomsforcolor: "it all began in the 1960s in Miriam's children's art classes". Es el mismo tipo de afirmación que se quitó del guion («pionero», solo Wikipedia) | — |
+| 10 | Síntomas tardan días «**(a veces semanas)**» (YouTube) | ✅ | Danel et al., *Toxicon* 39(7):1053–1060; Dinis-Oliveira et al., *Hum. Exp. Toxicol.* 35(9):1016–1029 | "median 3 days … renal phase is delayed (median 8.5 days)"; "mushrooms may have been ingested 1-2 weeks before"; "onset of symptoms is delayed for 1-2 weeks after ingestion" | 2001 / 2016 |
+| 11 | Orelanina = toxina que daña los riñones; *C. orellanus* y *C. rubellus* (todas) | ✅ | Dinis-Oliveira 2016; Shao et al., *Toxicon* 114:65–74 | "Orellanine is a nephrotoxic toxin produced by some mushroom species of the Cortinarius genus"; "Cortinarius orellanus and Cortinarius rubellus are the major orellanine-containing mushrooms" | 2016 |
+| 12 | Referencias bibliográficas (autores, revista, volumen, páginas, DOI) | ✅ con detalle menor | Crossref / Europe PMC / PMC | TRJ 71(11):1016–1022 ✔; J. Fungi 8:1129 ✔; Antibiotics 2020 = vol. 9(5):266 (falta volumen); Danel Toxicon 39:1053–1060 ✔; Dinis-Oliveira 35(9):1016–1029 ✔; Shao Toxicon 114: **65–74** (dice solo «65») | 2001–2022 |
+
+Correcciones aplicadas en publicacion.md: LinkedIn sin «la popularizó» (superlativo), citas completas de Shao 2016 y Räisänen 2020. Todo lo demás ✅.
+
 VEREDICTO: APROBADO
