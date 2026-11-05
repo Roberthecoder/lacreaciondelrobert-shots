@@ -15,13 +15,13 @@
 | 1 | Abuela | Seguro tu abuela te dijo: «los hongos no se recalientan». | Fondo rosa. Globo de diálogo de una abuela (silueta amable, sin cara real) con la frase; sello rojo **MITO** a medias («¿mito?»). |
 | 2 | Origen | Ese consejo probablemente viene de cuando no había refrigerador. | Fondo menta, cocina antigua esquemática: alacena, olla de barro, sin refrigerador (un hueco punteado con «refri: ✗»). Chip «probablemente» (la fuente dice «vermutlich»). |
 | 3 | Banquete | Tienen mucha agua: un caldo perfecto para las bacterias. | Zoom al champiñón cortado: corte del sombrero lleno de gotitas de agua (esquemático). Chip «mucha agua». Barra de escala 2 cm. |
-| 4 | Tibio | Si el guiso pasa horas tibio, se multiplican y pueden dejar toxinas. | **AL MICROSCOPIO** (fondo oscuro #0E0F12): bacterias en bastón que se dividen en 2 → 4 → 8 → 16 (contador), dejando puntitos morados «toxinas». Termómetro lateral en «tibio». Barra de escala 2 µm. |
-| 5 | Pregunta | ¿Y si lo recalientas fuerte, no se arregla? | **Re-gancho.** La olla vuelve al fuego con llamas; «?» gigante; Robert grande, pensativo. |
-| 6 | Toxina | No siempre: la toxina del vómito de *Bacillus cereus*, típica del arroz, aguanta 121 grados por media hora. | Fondo oscuro. Cambio de plato: un **plato de arroz** (el ejemplo, no los hongos) con bastones de *Bacillus cereus* (etiqueta en cursiva) y la toxina (anillo pequeño, «cereulida»). Chip «ejemplo: arroz». TarjetaEstudio «FDA · Bad Bug Book, 2.ª ed. (2012)». Medidor de temperatura que sube hasta **121 °C** y cronómetro **30 min**: la toxina sigue intacta. |
+| 4 | Tibio | Si el guiso pasa horas tibio, se multiplican y pueden dejar toxinas. | **AL MICROSCOPIO** (fondo oscuro #0E0F12): bacterias en bastón que se dividen en 2 → 4 → 8 → 16 (contador), dejando puntitos morados «toxinas». Cronómetro en time-lapse «tiempo tibio» y contador de bacterias. Barra de escala 2 µm. |
+| 5 | Pregunta | ¿Y si lo recalientas fuerte, no se arregla? | **Re-gancho.** La olla vuelve al fuego con llamas; «?» gigante; Robert grande (medio cuerpo), pensativo. |
+| 6 | Toxina | No siempre: la toxina del vómito de *Bacillus cereus*, típica del arroz, aguanta 121 grados por media hora. | Fondo oscuro. Cambio de plato: un **plato de arroz** (el ejemplo, no los hongos) con bastones de *Bacillus cereus* (etiqueta en cursiva) y la toxina (anillo pequeño, «cereulida»). Chip «ejemplo: arroz». TarjetaEstudio «FDA · Bad Bug Book, 2.ª ed. (2012)». Número que sube hasta **121 °C** y chip «30 min a 121 °C: sigue intacta». |
 | 7 | Calor | El calor mata bacterias, pero no siempre lo que ya dejaron. | En el arroz, las bacterias se apagan (✗ grises) con el calor; los puntitos morados de toxina se quedan. Chips «bacterias: ✗» · «toxina ya hecha: se queda». |
 | 8 | Enfriar | Lo que importa es enfriar rápido: al refri antes de dos horas, en recipientes bajitos. | Fondo cian. Número grande **2 h**; la olla se reparte en tres recipientes bajitos que entran al refri. Chip «FDA». |
 | 9 | Refri | En Alemania, un centro del consumidor pide refri a máximo 4 grados y comerlos en 24 horas. | Interior del refri: termómetro **≤ 4 °C** y calendario/reloj **24 h** desde que se cocinaron. Chip «Verbraucherzentrale NRW (2025)». |
-| 10 | Recalentar | Recaliéntalos a 74 grados por dentro, dice la FDA; y una sola vez, aconsejan en Alemania. | Fondo naranja. Sartén con los hongos; termómetro de cocina clavado en el centro que marca **74 °C (165 °F)**; chip «FDA» junto al termómetro; contador «1 sola vez» con chip «Verbraucherzentrale Bremen (2025)». |
+| 10 | Recalentar | Recaliéntalos a 74 grados por dentro, dice la FDA; y una sola vez, aconsejan en Alemania. | Fondo naranja. Sartén con los hongos; termómetro de cocina de carátula que sube a **74 °C** (chip «74 °C por dentro · FDA»; 165 °F); chip «FDA» junto al termómetro; contador «1 sola vez» con chip «Verbraucherzentrale Bremen (2025)». |
 | 11 | Arroz | Lo curioso: esta regla no es solo de hongos, es de todas las sobras. | Fondo lila. El plato de hongos se forma en fila con otras sobras (arroz, sopa, frijoles, pasta) bajo el letrero «todas las sobras». Robert sonriendo. |
 | 12 | Cierre | Así que tus hongos de ayer no son veneno: lo peligroso es dejarlos tibios. | **Regreso a la imagen del inicio:** el mismo plato de champiñones en el microondas, ahora con sus chips pegados «2 h · ≤ 4 °C · 24 h · 74 °C · 1 vez»; el «¿veneno?» tachado. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
@@ -34,22 +34,22 @@ Aviso en pantalla (pequeño, al final): «Reglas generales de inocuidad; el dibu
 
 ## Robert en pantalla
 
-Tiempos de la base estimados por caracteres (con la voz real se recorren solos; se ajustan al construir la animación). Grande en «¿Y si lo recalientas bien fuerte…?».
+Tiempos de la base (tiempo de autor del `.jsx`; con la voz real se recorren solos). Grande en «¿Y si lo recalientas fuerte…?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no son veneno» (cuadro 0) |
-| 2 | 5.0 | 8.4 | 02_apuntando_camara | `arriba-der` | «Seguro tu abuela te dijo…» |
-| 3 | 12.2 | 15.8 | 06_pensativo_menton | `arriba-der` | «mucha agua y proteína» |
-| 4 | 19.9 | 22.8 | 07_pensativo_puno | `presentador` | «¿Y si lo recalientas bien fuerte?» |
-| 5 | 24.5 | 29.7 | 04_bajando_lentes | `arriba-der` | «aguanta 121 grados por media hora» |
-| 6 | 33.2 | 38.3 | 13_senalando_arriba | `arriba-der` | «enfriar rápido: antes de dos horas» |
-| 7 | 44.7 | 48.8 | 12_perfil_serio | `arriba-der` | «una sola vez y bien: 74 grados» |
-| 8 | 48.8 | 53.6 | 05_sonriendo_dientes_uniformes | `arriba-der` | «esa toxina suele salir en el arroz» |
-| 9 | 53.8 | 58.0 | 02_apuntando_camara | `arriba-der` | «lo peligroso es dejarlos tibios» |
+| 1 | 0.0 | 2.7 | 11_sorprendido | `gancho` | «no son veneno» (cuadro 0) |
+| 2 | 5.0 | 8.2 | 02_apuntando_camara | `arriba-der` | «Seguro tu abuela te dijo…» |
+| 3 | 12.6 | 15.7 | 06_pensativo_menton | `izq-alto` | «mucha agua: un caldo para las bacterias» |
+| 4 | 20.3 | 23.1 | 07_pensativo_puno | `grande` (medio cuerpo) | «¿Y si lo recalientas fuerte?» |
+| 5 | 25.2 | 29.1 | 04_bajando_lentes | `arriba-der` | «aguanta 121 grados por media hora» |
+| 6 | 33.3 | 38.0 | 13_senalando_arriba | `arriba-der` | «enfriar rápido: antes de dos horas» |
+| 7 | 44.3 | 48.9 | 12_perfil_serio | `arriba-der` | «74 grados por dentro… una sola vez» |
+| 8 | 49.3 | 53.1 | 05_sonriendo_dientes_uniformes | `arriba-der` | «la regla no es solo de hongos» |
+| 9 | 53.6 | 57.9 | 02_apuntando_camara | `arriba-der` | «lo peligroso es dejarlos tibios» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 9 · **≈ 34 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
+Apariciones 9 · **33.2 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 5 nov 2026)
 
