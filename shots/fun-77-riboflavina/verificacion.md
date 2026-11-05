@@ -1,0 +1,78 @@
+# Verificación · Shot Fungi Mati #77 · Ese amarillo de tu pipí no es colorante: es vitamina que hizo un hongo
+
+5 nov 2026. **Verificación independiente (subagente que no escribió el guion).** Se abrieron las páginas (no el resumen del buscador).
+Donde el artículo es de pago se leyó el resumen completo en Europe PMC y las afiliaciones en OpenAlex; se dice en cada caso.
+
+Fuentes abiertas:
+- **[LPI]** Linus Pauling Institute, Oregon State University. *Riboflavin*, Micronutrient Information Center (actualizado ago 2021, revisado jul 2022). https://lpi.oregonstate.edu/mic/vitamins/riboflavin
+- **[HER]** Herron, A. J., Mariani, J. J., Pavlicova, M. et al. (2012). Assessment of riboflavin as a tracer substance… *Drug and Alcohol Dependence* 128: 77–82. https://pmc.ncbi.nlm.nih.gov/articles/PMC3556739/ (texto completo). La cifra del 91 % la toma de **Zempleni, Galloway y McCormick (1996)**, *Am J Clin Nutr* 63: 54–66 (dosis orales de 20–60 mg; texto completo de pago, no abierto).
+- **[PC]** PubChem, *Riboflavin* (CID 493570), datos HSDB/NAP. https://pubchem.ncbi.nlm.nih.gov/compound/493570 (JSON completo descargado).
+- **[HOFF]** Hoff, B. (BASF SE) (2021). Vitamin B2-Produktion: nachhaltig und wirtschaftlich dank neuer Technologien. *BIOspektrum* 27(5): 548–550. https://vaam.de/media/bs_birgit_hoff.pdf (PDF completo).
+- **[REV]** Revuelta, J. L., Ledesma-Amaro, R., Lozano-Martínez, P. et al. (2017). Bioproduction of riboflavin: a bright yellow history. *J Ind Microbiol Biotechnol* 44: 659–665. https://academic.oup.com/jimb/article/44/4-5/659/5996038 (texto completo).
+- **[WEN]** Wendland, J. (2020). Sporulation in *Ashbya gossypii*. *Journal of Fungi* 6(3): 157. https://pmc.ncbi.nlm.nih.gov/articles/PMC7558398/ (texto completo).
+- **[STA]** Stahmann, K.-P., Arst, H. N., Althöfer, H., Revuelta, J. L. et al. (2001). Riboflavin, overproduced during sporulation of *Ashbya gossypii*, protects its hyaline spores against ultraviolet light. *Environ Microbiol* 3(9): 545–550. DOI 10.1046/j.1462-2920.2001.00225.x — resumen completo (Europe PMC) y afiliaciones (OpenAlex: https://api.openalex.org/works/doi:10.1046/j.1462-2920.2001.00225.x). Texto completo de pago, no abierto.
+- **[FÖR]** Förster, C., Santos, M. A., Ruffert, S., Krämer, R. y Revuelta, J. L. (1999). Physiological consequence of disruption of the VMA1 gene in the riboflavin overproducer *Ashbya gossypii*. *J Biol Chem* 274: 9442–9448 — resumen completo (Europe PMC).
+- **[AGU]** Aguiar, T. Q., Silva, R. y Domingues, L. (2015). *Ashbya gossypii* beyond industrial riboflavin production. *Biotechnol Adv* 33: 1774–1786 — resumen completo (Europe PMC).
+- **[AVE]** Averianova, L. A. et al. (2020). Production of vitamin B2 (riboflavin) by microorganisms: an overview. *Front Bioeng Biotechnol* 8: 570828. https://www.frontiersin.org/articles/10.3389/fbioe.2020.570828/full
+- **[SAL]** Saling, P. (BASF AG) (2005). Eco-Efficiency Analysis of biotechnological processes. *Appl Microbiol Biotechnol* 68: 1–8 — resumen y afiliación (Europe PMC).
+- **[EFSA]** EFSA ANS Panel (2013). Re-evaluation of riboflavin (E 101(i)) and riboflavin-5′-phosphate sodium (E 101(ii)) as food additives. *EFSA Journal* 11(10): 3357 (ficha; apoyo para E101).
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | Gancho: «Ese amarillo de tu pipí tras la vitamina no es colorante: es vitamina B2 que te sobró» | ✅ | [LPI], [PC] | [LPI]: "High-dose riboflavin therapy has been found to intensify urine color to a bright yellow (flavinuria), but this is a harmless side effect." [PC]: "Riboflavin may cause urine to have a more yellow color than normal, especially if large doses are taken. This is to be expected and is no cause for alarm." | 2021–2022 |
+| 2 | Riboflavina = vitamina B2 (etiqueta "riboflavina · vitamina B2") | ✅ | [LPI] | "Riboflavin is a water-soluble B vitamin, also known as vitamin B2." | 2021 |
+| 3 | Aviso: el amarillo por vitaminas es inofensivo | ✅ | [LPI], [PC] | "this is a harmless side effect"; "no cause for alarm" | 2021 |
+| 4 | «Lo que sobra, tus riñones lo mandan a la orina» | ✅ | [PC], [HER] | [PC]: "limited capacity for absorption in the human gastrointestinal tract; /and/ its rapid excretion in the urine." [HER]: riboflavin "is eliminated in urine" | 2012 |
+| 5 | «…casi todo el primer día» | ✅ | [HER] (cita a Zempleni 1996) | "with more than 91% of the total excretion of riboflavin taking place during the first 24 hours (Zempleni et al., 1996)" | 2012 (dato de 1996) |
+| 6 | Pantalla, chip (corregido) "casi todo sale en las primeras 24 horas" (antes: "más del 91 %… · estudio 2012") | ✅ corregido | [HER] | La cifra es de **Zempleni et al. 1996**; Herron 2012 solo la cita y el original no se pudo abrir, así que la cifra se quitó de la pantalla (regla de números). Queda la frase cualitativa, que es lo que dice Herron (texto completo leído). | 2012 (dato de 1996) |
+| 7 | «Es amarilla y, con luz ultravioleta, brilla» | ✅ | [PC], [HER] | [PC]: "Riboflavin is a water-soluble, yellow, fluorescent compound." [HER]: "it can be detected by fluorescence under UV light" | 1998/2012 |
+| 8 | Pantalla: brillo verde-amarillo bajo UV | ✅ | [PC] | "Aqueous solutions are yellow showing a green fluorescence with max at 565 nm" | HSDB |
+| 9 | Pantalla: molécula de tres anillos fusionados + cadena de ribitol (escala 1 nm) | ✅ | [PC] | Nombre IUPAC: "7,8-dimethyl-10-[(2S,3S,4R)-2,3,4,5-tetrahydroxypentyl]benzo[g]pteridine-2,4-dione" (anillo triple isoaloxazina + cadena ribitilo de 5 C). Esquemático. | — |
+| 10 | «Hoy la fabrican microbios» (chip "la producción industrial ya es por fermentación") | ✅ | [REV], [AVE] | [REV]: fermentation "has replaced the synthetic process at industrial scale". [AVE]: fermentation "has completely replaced chemical synthesis" | 2017 / 2020 |
+| 11 | Tarjetas: bacteria *Bacillus subtilis* y hongo *Ashbya gossypii* como productores | ✅ | [HOFF], [AVE] | [HOFF]: "Auch andere Hersteller stellten auf eine ausschließlich fermentative Produktion um, jedoch unter Verwendung des Bakteriums Bacillus subtilis". [AVE]: "industrial microbial strains of Ashbya gossypii, Candida famata var. flareri, and Bacillus subtilis" | 2021 / 2020 |
+| 12 | «En el campo enferma al algodón» | ✅ | [WEN] | "As a plant pathogen A. gossypii causes a yeast spot disease termed stigmatomycosis e.g., on cotton, pistachio or soybean" | 2020 |
+| 13 | «…lo meten las chinches» (etiqueta "chinches (vectores)"; dibujo de chinche de escudo con pico) | ✅ | [WEN] | "Ashbya is dependent on insect vectors belonging to stinkbug families (Coreidae, Pentatomidae)."; "Ashbya requires sucking insects to form plant infection as it does not produce penetration pegs or lytic enzymes." | 2020 |
+| 14 | Pantalla (corregido): la chinche pica la cápsula y la fibra de adentro queda manchada (neutro, no amarillo) | ✅ corregido | [WEN], búsqueda | La enfermedad se describe como "yeast spot disease" / mancha interna de la cápsula, pero no encontré fuente que diga que la mancha es amarilla; dibujarla amarilla sugería (sin prueba) que es la riboflavina. **Corregido:** fibra manchada en color neutro café grisáceo, etiqueta "fibra manchada" (enfermedad de mancha de la cápsula, "yeast spot disease", [WEN]). | 2020 |
+| 15 | «Es pariente de la levadura del pan» (árbol: *Saccharomyces cerevisiae* y *A. gossypii*, familia Saccharomycetaceae) | ✅ | [WEN], [AGU] | [WEN]: "Ashbya gossypii is a filamentous ascomycete belonging to the yeast family of Saccharomycetaceae." [AGU]: "its high genetic similarity with Saccharomyces cerevisiae" | 2020 / 2015 |
+| 16 | «…pero crece en hilos» (hifas) | ✅ | [WEN] | "filamentous ascomycete"; "Hyphal filaments in Ashbya are compartmentalized by septation." | 2020 |
+| 17 | Pantalla: puntas de las hifas que se parten en dos (ramificación en Y) | ✅ | [WEN] | "hyphal tips start a tip splitting process … characteristic for filamentous fungi in the genus Eremothecium" | 2020 |
+| 18 | Pantalla: hifa con tabiques y varios núcleos por compartimento | ✅ | [WEN] | "Ashbya cell compartments harbor several nuclei."; "compartmentalized by septation" | 2020 |
+| 19 | «Al dejar de crecer, se llena de riboflavina» | ✅ | [STA], [WEN] | [STA]: "regulation of sporulation and riboflavin overproduction in A. gossypii are linked. In batch culture, both were elevated when growth ceased." [WEN]: "At the end of its growth phase Ashbya generates abundant amounts of riboflavin and spores" | 2001 / 2020 |
+| 20 | «…y la guarda en vacuolas» (etiqueta "vacuolas con riboflavina") | ✅ | [FÖR], [REV] | [FÖR]: "complete excretion of riboflavin into the medium instead of retention in the vacuolar compartment, as observed in the wild type." [REV]: "Riboflavin is also stored in the vacuolar compartment, leading to product retention." | 1999 / 2017 |
+| 21 | Pantalla: las hifas se fragmentan en esporangios | ✅ | [WEN] | "Hyphal fragmentation during sporulation results in isolated sporangia that often bear eight spores." | 2020 |
+| 22 | Pantalla: esporas en forma de aguja, con filamento en la punta, agrupadas | ✅ | [WEN] | "Needle-shaped Ashbya spores aggregate via terminal filaments." | 2020 |
+| 23 | Pantalla (corregido): barra de **10 µm**, esporas de ~30 µm dibujadas ≈ 3 veces la barra | ✅ corregido | [WEN] | "Ashbya forms needle-shaped spores of about 30 µm in length." Corregido en el guion: "~30 µm: unas 3 veces la barra de 10 µm". | 2020 |
+| 24 | «En 2001, un equipo europeo…» (tarjeta "2001 · Alemania, Reino Unido y España · *Environmental Microbiology*") | ✅ | [STA] (OpenAlex) | Afiliaciones: "Forschungszentrum Jülich GmbH … Germany"; "Imperial College School of Medicine at Hammersmith Hospital … London … UK"; "BASF Aktiengesellschaft … Ludwigshafen, Germany"; "Universidad de Salamanca … Spain". *Environmental Microbiology* 3(9), 2001. | 2001 |
+| 25 | «…iluminó sus esporas con ultravioleta: con riboflavina, aguantaban más» (dos placas "sin / con riboflavina", sin cifra) | ✅ | [STA], [AVE] | [STA]: "Here, we report an ultraviolet (UV) protective effect of riboflavin. The spores of Ashbya gossypii … are more sensitive to UV than those of Aspergillus nidulans. The addition of riboflavin to suspensions improves the UV resistance of both spore types." [AVE]: "exogenous riboflavin was shown to protect A. gossypii spores against UV light." (La riboflavina se añadió a la suspensión; la voz no dice lo contrario.) | 2001 |
+| 26 | «Sería su bloqueador solar» (chip "hipótesis: protector UV") | ✅ como hipótesis | [STA] | El estudio plantea la pregunta: "A question, unanswered for decades, is whether riboflavin overproducers can benefit from this property." El papel natural es interpretación; va en condicional ("sería") y con chip "hipótesis". Correcto así. | 2001 |
+| 27 | «En 1990, BASF empezó a cultivarlo en tanques» (chip "1990: fermentación a escala industrial"; caldo con aceite vegetal) | ✅ | [HOFF], [REV] | [HOFF]: "Unter Nutzung des pilzbasierten Systems mit pflanzlichem Öl als Hauptkohlenstoffquelle führte BASF bereits 1990 die Vitamin B2-Fermentation im industriellen Maßstab ein." [REV]: "BASF implemented, in 1990, the production of vitamin B2 at industrial scale" | 1990 |
+| 28 | «…y en 1996 dejó la síntesis química» (chip "1996: adiós síntesis química") | ✅ (fuente explícita, no deducido) | [REV] | "For almost 6 years, both the chemical and the biotechnological industrial processes were simultaneously exploited … the synthetic process was abandoned and the chemical plant closed down in 1996." [HOFF] coincide: "Nach nur sechs Jahren paralleler chemischer und fermentativer Produktion wurde die chemische Synthese komplett eingestellt." | 1996 |
+| 29 | «Le metieron copias extra de los genes que arman la vitamina» (chip "6 genes de la vía, juntos en un paquete") | ✅ | [HOFF] | "Analoge Ansätze führten wir mit A. gossypii durch, indem die sechs terminalen Biosynthesegene als synthetische Gencluster assembliert und mittels homologer Rekombination genomisch integriert wurden." (análogo a "multiple Kopien des RIB(Riboflavin)-Operons" en *B. subtilis*). | 2021 |
+| 30 | «Según la empresa, el costo bajó cerca de cuarenta por ciento, y el CO2, treinta» (barras −40 % / −30 %; tarjeta "BASF, análisis de ecoeficiencia (Saling 2005; Hoff 2021)") | ✅ (atribuido a la empresa) | [HOFF], [SAL] | [HOFF]: "einer um 30 Prozent reduzierten CO2-Emission"; "konnten die Produktionskosten um ca. 40 Prozent reduziert werden". Ambos autores son de BASF (Saling: "BASF Aktiengesellschaft, Ludwigshafen"), así que "según la empresa" es exacto. Comparación: síntesis química vs. fermentación con *A. gossypii*. | 2005 (repetido 2021) |
+| 31 | «Pinta tanto que también se usa como colorante» (etiqueta "colorante E101 = riboflavina") | ✅ | [HOFF], [PC], [EFSA] | [HOFF]: "30 Prozent als Lebensmittelzusatz, Farbstoff (E101) oder in der Pharmaindustrie". [PC]: "a food colouring"; sinónimo "E101". [EFSA]: "riboflavin (E 101(i))" | 2021 / 2013 |
+| 32 | Cierre: «ese amarillo de tu pipí puede ser el bloqueador solar de un hongo» (vaso que brilla bajo UV) | ✅ (con "puede ser") | [HER], [REV], [STA] | [HER]: "excreted in urine where it fluoresces under UV light". "Puede ser" cubre que la riboflavina de una pastilla puede venir de *Ashbya* o de *B. subtilis*, y que lo del bloqueador es hipótesis (dicho en la escena 8). | 2012 / 2017 / 2001 |
+| 33 | Escalas: 5 cm vaso, 2 cm algodón/chinche, 20 µm hifas, 10 µm vacuolas, 10 m tanque (esquemático), 2 nm ADN | ✅ | [WEN], general | Rangos razonables (doble hélice ≈ 2 nm de ancho; hifas de pocos µm). El tanque va marcado como esquemático. | — |
+
+## Correcciones propuestas (ya aplicadas; ver Re-verificación)
+
+- **C1 (pantalla, escena 1 «Orina»):** chip «más del 91 % de lo que sale, en las primeras 24 h · estudio 2012» →
+  **«más del 91 % de lo que sale, en las primeras 24 h · estudio de 1996»**. En `guion.md` (Fuentes, punto 2) anotar que la cifra es de
+  Zempleni, Galloway y McCormick (1996), *Am J Clin Nutr* 63: 54–66, citada por Herron 2012. La voz no cambia.
+- **C2 (pantalla, escena 4 «Algodon»):** «una chinche … pica la cápsula y deja manchitas amarillas» → **«pica la cápsula y la fibra de
+  adentro queda manchada»** (mancha difusa de color neutro, café grisáceo, sin amarillo, con etiqueta "fibra manchada"). La voz no cambia.
+- **C3 (pantalla, escena 8 «Esporas»):** barra de 5 µm → **barra de 10 µm con cada espora dibujada ≈ 3 veces la barra** (≈ 30 µm de largo,
+  Wendland 2020). En la tabla de escalas del guion: «10 µm (esporas; agujas de ~30 µm)».
+
+Sobre los puntos pedidos: el año **1996 no es deducido**: Revuelta et al. 2017 lo dice textual ("the chemical plant closed down in 1996"),
+así que se queda. El 40 % y 30 % ya se dicen como dato de la empresa ("Según la empresa"), correcto. Stahmann 2001 va como hipótesis
+("sería" + chip "hipótesis"), correcto.
+
+## Re-verificación (5 nov 2026)
+
+Se revisó `guion.md` después de aplicar las correcciones:
+- **C1 aplicada (decisión del coordinador):** se quitó el 91 % de la pantalla; el chip dice «casi todo sale en las primeras 24 horas» y en Fuentes queda anotado que la cifra es de Zempleni 1996 (citada por Herron 2012, original no abierto). ✅
+- **C2 aplicada:** la fibra de la cápsula queda manchada en café grisáceo neutro (no amarillo), con etiquetas "chinches (vectores)" y "fibra manchada". ✅
+- **C3 aplicada:** las esporas miden ~30 µm, unas 3 veces la barra de 10 µm; la tabla de escalas dice «10 µm (esporas; agujas de ~30 µm)». ✅
+- La voz (`narracion.json`, 14 líneas) no cambió y coincide con la tabla del guion. No hay afirmaciones nuevas, salvo la etiqueta "fibra manchada", que está respaldada (fila 14).
+
+VEREDICTO: APROBADO

@@ -1,0 +1,64 @@
+{
+  "dcHtml": "Shot Riboflavina base narrada.dc.html",
+  "salida": "Shot Riboflavina narrado.dc.html",
+  "nota": "Shot Fungi Mati #77. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. En subtítulos: Ashbya gossypii en cursiva. No es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese amarillo de tu pipí tras la vitamina no es colorante: es vitamina B2 que te sobró."
+    },
+    {
+      "escena": "Orina",
+      "texto": "Lo que sobra, tus riñones lo mandan a la orina, casi todo el primer día."
+    },
+    {
+      "escena": "Molecula",
+      "texto": "Se llama riboflavina: es amarilla y, con luz ultravioleta, brilla."
+    },
+    {
+      "escena": "Microbios",
+      "texto": "Hoy la fabrican microbios, como el hongo Ashbya gossypii."
+    },
+    {
+      "escena": "Algodon",
+      "texto": "En el campo enferma al algodón: lo meten las chinches."
+    },
+    {
+      "escena": "Hilos",
+      "texto": "Es pariente de la levadura del pan, pero crece en hilos."
+    },
+    {
+      "escena": "Vacuolas",
+      "texto": "Al dejar de crecer, se llena de riboflavina y la guarda en vacuolas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Para qué querría un hongo tanto amarillo?"
+    },
+    {
+      "escena": "Esporas",
+      "texto": "En 2001, un equipo europeo iluminó sus esporas con ultravioleta: con riboflavina, aguantaban más. Sería su bloqueador solar."
+    },
+    {
+      "escena": "Tanques",
+      "texto": "En 1990, BASF empezó a cultivarlo en tanques, y en 1996 dejó la síntesis química."
+    },
+    {
+      "escena": "Genes",
+      "texto": "Le metieron copias extra de los genes que arman la vitamina."
+    },
+    {
+      "escena": "Ahorro",
+      "texto": "Según la empresa, el costo bajó cerca de cuarenta por ciento, y el CO2, treinta."
+    },
+    {
+      "escena": "Ironia",
+      "texto": "Ironía: pinta tanto que también se usa como colorante."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese amarillo de tu pipí puede ser el bloqueador solar de un hongo."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
