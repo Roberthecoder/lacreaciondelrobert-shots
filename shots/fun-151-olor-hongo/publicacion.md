@@ -78,7 +78,7 @@ Soy Robert, de La Creación del Robert 🌱
 El aroma de un champiñón no está "guardado" en el hongo: se fabrica en el instante en que lo cortas.
 Su componente aromático principal es el 1-octen-3-ol, una molécula de 8 carbonos que el hongo produce al romperse sus células: una enzima oxida el ácido linoleico y otra lo corta (en el champiñón se identificaron en 2022 una lipoxigenasa y una hidroperóxido liasa). Su umbral de olor reportado es de 0.001 ppm en agua.
 En 2026, la Universidad de Yamaguchi midió en tiempo real el aire de setas cortadas: la señal subió en menos de 1 segundo y tocó su máximo a los 8–12 segundos.
-Por qué importa: es la base del "sabor a hongo" que busca la industria de alimentos (la forma natural es casi pura (R); las mezclas 50:50 delatan un origen sintético), y la misma molécula se usa como cebo en trampas para mosquitos.
+Por qué importa: es la base del "sabor a hongo" que busca la industria de alimentos (en el champiñón, más del 98.5 % es la forma (R), la que huele a hongo), y la misma molécula se usa como cebo en trampas para mosquitos.
 ¿Qué otro aroma cotidiano crees que se fabrica en el momento y no está ahí desde antes?
 Shot Fungi Mati 151 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
