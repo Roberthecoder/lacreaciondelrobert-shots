@@ -78,3 +78,5 @@ Apariciones 9 · **≈ 35.8 s** en pantalla (+ cierre 3.5 s) · 7 poses distinta
    > "Propionates are naturally occurring substances in the normal diet." "for food as consumed, there would not be a safety concern from the maximum concentrations of propionic acid and its salts at their currently authorised uses and use levels as food additives."
 
 El dibujo es esquemático.
+
+> Re-verificado y corregido el 5 nov 2026 (ver la sección «Re-verificación independiente» de verificacion.md).

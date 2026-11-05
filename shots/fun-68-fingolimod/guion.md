@@ -69,3 +69,5 @@ Apariciones 11 · **≈ 38 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas
 7. Strader, C. R., Pearce, C. J. y Oberlies, N. H. (2011). Fingolimod (FTY720): a recently approved multiple sclerosis drug based on a fungal secondary metabolite. *J Nat Prod* 74(4): 900–907. https://pubmed.ncbi.nlm.nih.gov/21456524/
 
 El dibujo es esquemático. No es consejo médico.
+
+> Re-verificado y corregido el 5 nov 2026 (ver la sección «Re-verificación independiente» de verificacion.md).

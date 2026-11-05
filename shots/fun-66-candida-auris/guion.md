@@ -69,3 +69,5 @@ Apariciones 10 · **≈ 32 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas
 8. Osei Sekyere, J. (2018). *Candida auris*: A systematic review and meta-analysis… *MicrobiologyOpen*. https://pmc.ncbi.nlm.nih.gov/articles/PMC6079168/ (forma de las células para el dibujo: "ovoid, ellipsoidal to elongate, (2.0–3.0) × (2.5–5.0) μm")
 
 El dibujo es esquemático. No es consejo médico.
+
+> Re-verificado y corregido el 5 nov 2026 (ver la sección «Re-verificación independiente» de verificacion.md).

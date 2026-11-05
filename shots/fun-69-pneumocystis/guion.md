@@ -68,3 +68,5 @@ Apariciones 11 · **≈ 38 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas
    > "Pneumocystis is a fungus, albeit an odd one."
 
 El dibujo es esquemático. No es consejo médico.
+
+> Re-verificado y corregido el 5 nov 2026 (ver la sección «Re-verificación independiente» de verificacion.md).

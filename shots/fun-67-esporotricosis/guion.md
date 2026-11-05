@@ -67,3 +67,5 @@ Apariciones 10 · **≈ 36 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas
 8. DC Health (2025). *Sporotrichosis disease sheet*. https://dchealth.dc.gov/sites/default/files/dc/sites/doh/publication/attachments/Sporotrichosis%20-%20Disease%20Sheet%202025.pdf
 
 El dibujo es esquemático. No es consejo médico.
+
+> Re-verificado y corregido el 5 nov 2026 (ver la sección «Re-verificación independiente» de verificacion.md).

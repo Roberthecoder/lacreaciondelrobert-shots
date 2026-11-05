@@ -62,3 +62,5 @@ Apariciones 9 · **33.1 s** en pantalla (+ cierre 3.5 s) · 6 poses distintas ·
 7. Stuart, E. K. y Plett, K. L. (2020). *Frontiers in Plant Science* 10: 1658 — "Carbon (C) resources from the host are transferred to the fungus in return for limiting nutrients" (nitrógeno y fósforo).
 
 El dibujo es esquemático. No comas hongos silvestres sin la identificación de un experto.
+
+> Re-verificado y corregido el 5 nov 2026 (ver la sección «Re-verificación independiente» de verificacion.md).
