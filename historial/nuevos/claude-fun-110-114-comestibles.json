@@ -19,7 +19,8 @@
     "Verpa bohemica: la parecida a la morilla con el sombrero suelto",
     "Isoniazida y monometilhidrazina: por qué pacientes con tuberculosis son más sensibles",
     "Por qué secar la falsa morilla quita aún menos toxina que hervirla"
-   ]
+   ],
+   "verificacion": "independiente, aprobada 2026-11-05"
   },
   {
    "id": "fun-111-cortinarius",
@@ -40,7 +41,8 @@
     "Amanita smithiana: daño renal en 1–4 días (contraste con la orelanina)",
     "Por qué una intoxicación retardada es difícil de diagnosticar",
     "Poros vs. láminas: por qué ninguna regla sola es segura (Boletus edulis)"
-   ]
+   ],
+   "verificacion": "independiente, aprobada 2026-11-05"
   },
   {
    "id": "fun-112-paxillus",
@@ -61,7 +63,8 @@
     "Alergias que se construyen con la exposición (alfa-gal por garrapatas)",
     "Las 'reglas caseras' para hongos que fallan (Rubroboletus satanas)",
     "Cómo la plasmaféresis 'limpia' la sangre"
-   ]
+   ],
+   "verificacion": "independiente, aprobada 2026-11-05"
   },
   {
    "id": "fun-113-esporada-verde",
@@ -82,7 +85,8 @@
     "Leucoagaricus leucothites: otro parasol blanco de jardín",
     "Cómo se toma una esporada y por qué los micólogos combinan rasgos",
     "Anillos de hadas: por qué el micelio crece en círculo"
-   ]
+   ],
+   "verificacion": "independiente, aprobada 2026-11-05"
   },
   {
    "id": "fun-114-hongo-cerveza",
@@ -103,7 +107,8 @@
     "Lepiota aspera: el síndrome con alcohol que nadie explica aún",
     "Disulfiram y el 'rubor asiático' (variante de ALDH2): el mismo acetaldehído",
     "Otros hongos que reaccionan con el alcohol (verificar originales)"
-   ]
+   ],
+   "verificacion": "independiente, aprobada 2026-11-05"
   }
  ]
 }
