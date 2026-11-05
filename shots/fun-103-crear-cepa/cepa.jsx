@@ -63,18 +63,20 @@ function Bisturi({ x, y, ang = -40, s = 1 }) {
 // Seta ostra (Pleurotus djamor) partida a lo largo, vista de lado: sombrero en abanico/concha, láminas por debajo que bajan
 // por un pie corto y lateral. abre 0..1: la mitad de atrás se separa y la de adelante muestra la cara del corte (carne maciza).
 // hueco 0..1: falta el cuadrito que se llevaron las pinzas (centro de la carne, en (40, -70) del dibujo).
-const SP_CONT = 'M -262 172 Q -236 90 -176 18 Q -130 -140 50 -160 Q 236 -152 302 8 Q 150 -14 -58 12 Q -98 60 -196 184 Z';
-const spU = (x) => 10 - 26 * Math.sin(Math.PI * kclamp((x + 60) / 362, 0, 1));
+const SP_CONT = 'M -250 196 Q -232 120 -192 26 Q -160 -165 50 -178 Q 250 -168 304 -4 Q 308 30 284 34 Q 120 14 -84 44 Q -120 110 -168 204 Z';
+const spU = (x) => 34 - 26 * Math.sin(Math.PI * kclamp((x + 84) / 368, 0, 1));
 function SPLaminas({ color }) {
-  return <g>{Array.from({ length: 11 }, (_, i) => { const x0 = -60 + i * 33, yu = spU(x0), yu2 = spU(x0 + 33), d = 62 * (1 - i / 13) + 8;
-    return <path key={i} d={`M ${x0} ${yu} L ${x0 + 16} ${yu + d} L ${x0 + 33} ${yu2} Z`} fill={color} stroke={KC.ink} strokeWidth={3} strokeLinejoin="round" />; })}
-    {/* láminas decurrentes: bajan por el pie */}
-    {[0, 1, 2].map((k) => { const ax = -70 - k * 34, ay = 26 + k * 40; return <path key={'d' + k} d={`M ${ax} ${ay} L ${ax + 22} ${ay + 18} L ${ax - 8} ${ay + 34} Z`} fill={color} stroke={KC.ink} strokeWidth={3} />; })}
-  </g>;
+  // láminas delgadas y apretadas que cuelgan bajo el sombrero y bajan por el pie (decurrentes)
+  const out = [];
+  for (let i = 0; i < 24; i++) { const x0 = -80 + i * 15, yu = spU(x0) - 4, d = 46 * (1 - i / 30) + 8;
+    out.push(<path key={i} d={`M ${x0 - 4} ${yu} L ${x0 + 1} ${yu + d} L ${x0 + 6} ${yu} Z`} fill={color} stroke={KC.ink} strokeWidth={2.2} strokeLinejoin="round" />); }
+  for (let k = 0; k < 6; k++) { const u = k / 6, ax = klerp(-92, -160, u), ay = klerp(48, 190, u);
+    out.push(<path key={'d' + k} d={`M ${ax} ${ay} L ${ax + 26 - u * 12} ${ay + 8} L ${ax + 2} ${ay + 16} Z`} fill={color} stroke={KC.ink} strokeWidth={2.2} />); }
+  return <g>{out}</g>;
 }
 function SetaPartida({ x, y, s = 1, abre = 0, hueco = 0 }) {
   const exterior = (o) => <g opacity={o}><path d={SP_CONT} fill={CP.rosa} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" /><SPLaminas color={CP.rosa2} />
-    <path d="M -110 -112 Q 40 -150 200 -110" stroke="#fff" strokeWidth={12} fill="none" opacity=".4" strokeLinecap="round" /></g>;
+    <path d="M -110 -122 Q 40 -160 200 -120" stroke="#fff" strokeWidth={12} fill="none" opacity=".4" strokeLinecap="round" /></g>;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {/* mitad de atrás: se separa hacia arriba a la derecha */}
     <g transform={`translate(${abre * 70} ${-abre * 90}) rotate(${abre * 8})`}>{exterior(1)}</g>
@@ -84,10 +86,10 @@ function SetaPartida({ x, y, s = 1, abre = 0, hueco = 0 }) {
       <SPLaminas color="#f7b9c8" />
       <path d={SP_CONT} fill={CP.carne} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
       {/* piel rosa del sombrero (solo una capa delgada arriba) */}
-      <path d="M -176 18 Q -130 -140 50 -160 Q 236 -152 302 8" stroke={CP.rosa} strokeWidth={14} fill="none" strokeLinecap="round" />
+      <path d="M -192 26 Q -160 -165 50 -178 Q 250 -168 304 -4" stroke={CP.rosa} strokeWidth={14} fill="none" strokeLinecap="round" />
       {/* fibras de la carne, a lo largo */}
-      {[[-200, 150, -120, 20], [-150, 140, -80, 0], [-120, -60, 120, -110], [-100, -20, 200, -60], [-40, 0, 240, -20]].map(([a, b, c, d], k) => <path key={k} d={`M ${a} ${b} Q ${(a + c) / 2} ${Math.min(b, d) - 20} ${c} ${d}`} stroke="#f2c6d2" strokeWidth={4} fill="none" />)}
-      {hueco > 0 && <rect x={26} y={-84} width={28} height={28} rx={4} fill="#e9b3c3" stroke={KC.ink} strokeWidth={3} opacity={hueco} />}
+      {[[-215, 170, -150, 30], [-180, 175, -110, 20], [-140, -70, 120, -130], [-120, -20, 210, -70], [-70, 20, 260, -16]].map(([a, b, c, d], k) => <path key={k} d={`M ${a} ${b} Q ${(a + c) / 2} ${Math.min(b, d) - 20} ${c} ${d}`} stroke="#f2c6d2" strokeWidth={4} fill="none" />)}
+      {hueco > 0 && <rect x={26} y={-96} width={28} height={28} rx={4} fill="#e9b3c3" stroke={KC.ink} strokeWidth={3} opacity={hueco} />}
     </g>
   </g>;
 }
@@ -222,11 +224,11 @@ function CepaShot() {
       <Escena T={T} a={K.Co} b={K.A} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <SetaPartida x={440} y={860} s={1.3} abre={kprog(T, K.Co + 0.2, K.Co + 1.2, kEase.sale)} hueco={kprog(T, K.Co + 2.4, K.Co + 2.6)} />
+          <SetaPartida x={400} y={900} s={1.2} abre={kprog(T, K.Co + 0.2, K.Co + 1.2, kEase.sale)} hueco={kprog(T, K.Co + 2.4, K.Co + 2.6)} />
           {/* polvo y microbios en la superficie de afuera */}
           {T > K.Co + 1.6 && [[180, 700], [260, 640], [700, 620], [820, 700], [150, 820], [860, 820], [330, 600]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={7 + (i % 3) * 3} fill={i % 2 ? '#6b8f3a' : '#8a6a4a'} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.Co + 1.6 + i * 0.06, K.Co + 1.9 + i * 0.06)} />)}
           {(() => { const ent = kprog(T, K.Co + 1.3, K.Co + 2.2, kEase.sale), sale = kprog(T, K.Co + 2.6, K.Co + 3.6, kEase.suave);
-            const px = klerp(980, 492, ent) + sale * 200, py = klerp(560, 769, ent) - sale * 260;
+            const px = klerp(980, 448, ent) + sale * 200, py = klerp(560, 802, ent) - sale * 260;
             return <>{T > K.Co + 2.4 && <Cubito x={px - 2} y={py} s={1} />}<Pinzas x={px} y={py} ang={-35} a={T > K.Co + 2.4 ? 0 : 1 - ent * 0.6} s={1} /></>; })()}
         </>)}
       </Escena>
