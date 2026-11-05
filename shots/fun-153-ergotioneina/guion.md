@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** bioquímica (ADN + matraz: es una molécula y su transportador) · **Badge:** #153 · rama `claude/fun-150-154-quimica`.
 - **Formato:** N1 · POR DENTRO. Viaje macro → micro → macro: una quesadilla de champiñones en el comal → baja al intestino y a la membrana de una célula (fondo oscuro), donde está la "puerta" OCTN1 → regresa a la misma quesadilla, ahora "con la puerta abierta" (las moléculas brillando en su camino hacia ti).
 - **Gancho (de los 7):** #3 "Tu cuerpo en una imagen": «Tus células tienen una puerta especial para una molécula… y la mejor fuente que comes son los hongos.»
-- **Duración:** voz 977 caracteres / 171 palabras (≈ 57–58 s) + cierre 4 s → **61–62 s** (se ajusta con la voz real).
+- **Duración:** voz 977 caracteres / 171 palabras (≈ 57–58 s) + cierre 3.5 s → **61.5 s** en la base narrada (se ajusta con la voz real).
 - **Voz:** pendiente de aprobación de Robert (~980 créditos de ElevenLabs). Para la voz, «OCTN1» se lee «o, ce, te, ene, uno».
 - **Tono:** asombro por la "puerta" y rigor con la salud: es antioxidante en el laboratorio, pero sus beneficios en personas no están probados. **No es consejo médico ni invita a comprar suplementos.**
 
@@ -35,21 +35,21 @@ Aviso en pantalla (pequeño, al final): «No es consejo médico.»
 
 ## Robert en pantalla
 
-Tiempos estimados de la base (con la voz real se recorren solos). Grande en «¿Entonces cómo entra?».
+Tiempos de la base narrada (61.5 s; con la voz real se recorren solos). Grande en «¿Entonces cómo entra?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «una puerta especial para una molécula» (cuadro 0) |
-| 2 | 9.6 | 13.0 | 12_perfil_serio | `arriba-der` | «Tu cuerpo no la fabrica» |
-| 3 | 19.4 | 22.4 | 13_senalando_arriba | `arriba-izq` | «la membrana casi no la deja pasar» (señala las bolitas que rebotan) |
-| 4 | 22.6 | 26.6 | 07_pensativo_puno | `presentador` (grande) | «¿Entonces cómo entra?» |
-| 5 | 32.5 | 37.6 | 04_bajando_lentes | `arriba-der` | «ratones sin esa puerta se quedaron sin ergotioneína» |
-| 6 | 43.0 | 47.1 | 05_sonriendo_dientes_uniformes | `arriba-der` | «un porcini puede traer unas diecisiete veces…» |
-| 7 | 47.1 | 52.4 | 06_pensativo_menton | `arriba-izq` | «es una propuesta, aún no probada» |
-| 8 | 52.4 | 57.2 | 02_apuntando_camara | `arriba-der` | «una puerta que tus células ya tenían» |
-| — | 57.2 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+| 1 | 0.0 | 2.4 | 11_sorprendido | `gancho` | «una puerta especial para una molécula» (cuadro 0) |
+| 2 | 9.4 | 12.5 | 12_perfil_serio | `arriba-der` | «Tu cuerpo no la fabrica» |
+| 3 | 19.6 | 22.5 | 13_senalando_arriba | `arriba-der` | «la membrana casi no la deja pasar» (señala las bolitas que rebotan) |
+| 4 | 22.6 | 26.3 | 07_pensativo_puno | `presentador-bajo` (grande, debajo del subtítulo) | «¿Entonces cómo entra?» y la puerta de 2005 |
+| 5 | 33.7 | 37.9 | 04_bajando_lentes | `arriba-der` | «ratones sin esa puerta se quedaron sin ergotioneína» |
+| 6 | 43.8 | 47.8 | 05_sonriendo_dientes_uniformes | `bajo-der` | «un porcini puede traer unas diecisiete veces…» |
+| 7 | 48.3 | 53.0 | 06_pensativo_menton | `bajo-der` | «es una propuesta, aún no probada» |
+| 8 | 53.5 | 57.9 | 02_apuntando_camara | `arriba-der` | «una puerta que tus células ya tenían» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 8 · **32.7 s** en pantalla (+ cierre ~4 s) · 8 poses distintas · nunca la misma dos veces seguidas. Nunca tapa la molécula, la puerta ni el subtítulo.
+Apariciones 8 · **29.3 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas. Nunca tapa la molécula, la puerta ni el subtítulo.
 
 ## Fuentes (abiertas el 5 nov 2026; resúmenes vía Europe PMC y texto completo de Borodina 2020)
 
