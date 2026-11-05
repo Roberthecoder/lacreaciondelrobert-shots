@@ -21,7 +21,7 @@
     },
     {
       "escena": "Sale",
-      "texto": "Sale el hongo amarillo: sombrero rojo naranja, anillo amarillo."
+      "texto": "Sale el hongo amarillo: sombrero rojo anaranjado, anillo amarillo."
     },
     {
       "escena": "Pregunta",
@@ -53,7 +53,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Ese huevo puede ser el hongo más rico del volcán, o su prima mortal."
+      "texto": "Ese huevo puede ser un manjar del volcán, o su prima mortal."
     }
   ],
   "mezcla": "oficial-30oct"
