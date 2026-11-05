@@ -489,7 +489,7 @@ function PotterShot() {
       <Subtitulo T={T} idx={6} at={K.V + 0.1} until={K.Hi - 0.1} texto="Esporas sembradas *sobre vidrio.*" />
       <Subtitulo T={T} idx={7} at={K.Hi + 0.1} until={K.E - 0.1} texto="Un tubito, luego *hifas.*" />
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={K.Ms - 0.1} texto="1897: *cómo germinan las esporas.*" />
-      <Subtitulo T={T} idx={9} at={K.Ms + 0.1} until={K.Pe - 0.1} texto="No admitían mujeres: *lo leyó Massee.*" />
+      <Subtitulo T={T} idx={9} at={K.Ms + 0.1} until={K.Pe - 0.1} texto="Lo leyó Massee, *como era costumbre.*" />
       <Subtitulo T={T} idx={10} at={K.Pe + 0.1} until={K.En - 0.1} texto="Se retiró y *se perdió.*" />
       <Subtitulo T={T} idx={11} at={K.En + 0.1} until={K.C - 0.1} texto="Primo del *enoki del súper.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="El cuaderno de *una científica.*" />
