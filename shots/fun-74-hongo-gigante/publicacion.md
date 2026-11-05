@@ -66,7 +66,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-El cuerpo de hongo más grande jamás documentado mide 10.85 metros y pasó desapercibido en el bosque.
+El cuerpo de hongo más grande jamás documentado mide 10.85 metros, y quienes lo encontraron al principio ni lo reconocieron en el bosque: era demasiado grande.
 En 2010, los micólogos Yu-Cheng Dai y B.-K. Cui encontraron en la isla de Hainan (China) un ejemplar de Phellinus ellipsoideus pegado a la cara inferior de un tronco caído: 10.85 m de largo, 84 cm de ancho, 5 cm de grueso, un peso estimado de 400–500 kg y unos 452 millones de poros. Tenía unos 20 años.
 Por qué importa: es un poliporo perenne que descompone madera muerta (pudrición blanca), y pudo crecer tanto porque tuvo alimento durante años: todo un tronco caído.
 Dato para no confundir: el hongo más grande no es este, sino una red de micelio de Armillaria ostoyae de unas 965 hectáreas bajo un bosque de Oregón. Uno es el cuerpo fructífero más grande; el otro, el organismo fúngico más extenso.

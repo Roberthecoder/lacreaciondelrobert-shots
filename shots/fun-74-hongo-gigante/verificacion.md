@@ -32,4 +32,25 @@ Verificador independiente (subagente que no escribió el guion), 5 nov 2026. Fue
 
 Correcciones (filas 7, 14, 15, 20, 21, 25) aplicadas y revisadas contra las mismas frases. Voz final: 949 caracteres.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la primera verificación). Revisé las 12 líneas de `narracion.json`, los letreros y dibujos de `gigante.jsx` (contador de 49 poros en 1 mm², número "≈ 452 millones", regla 10.85 m, "400–500 kg (estimado)", esporas ≈ 5 µm, "Oregón (EE. UU.) · 965 ha de micelio") y las 7 redes de `publicacion.md`. Fuentes abiertas de nuevo: PubMed 21872178 (resumen de Dai y Cui 2011), página de Guinness, Wikipedia (que cita el artículo para ancho y grosor), y el PDF completo de Ferguson et al. 2003 (fs.usda.gov/pnw/pubs/journals/pnw_2003_ferguson001.pdf). El texto completo de *Fungal Biology* no se pudo abrir (Elsevier con límite de consultas).
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| Un solo hongo de casi 11 m (10.85 m) debajo de un tronco caído, Hainan, China, 2010 | ✅ | Guinness | "found growing beneath a fallen tree on Hainan Island, China, in 2010 … measured 10.85 m (35 ft 7 in) long" | 2010 |
+| "ni lo reconocieron en el bosque: era demasiado grande" | ✅ | BBC 2011 (vía Wikipedia, que la cita) | "They were initially unable to identify the specimen as P. ellipsoideus, because of its large size" | 2011 |
+| 84 cm de ancho, 5 cm de grueso | ✅ | Guinness; Wikipedia citando Cui y Dai 2011 p. 813 | "84 cm (2 ft 9 in) deep by 5 cm (2 in) thick"; "between 82 and 88 cm wide, and between 4.6 and 5.5 cm thick" | 2011 |
+| Entre 400 y 500 kilos (calculado) | ✅ | PubMed 21872178 | "its estimated volume was 409 000-525 000cm(3) and weight was 400-500kg" | 2011 |
+| Tenía unos 20 años | ✅ | PubMed 21872178 | "It was 20 y old" | 2011 |
+| *Phellinus ellipsoideus* (antes *Fomitiporia ellipsoidea*), poliporo con poros | ✅ | Guinness | "Phellinus ellipsoideus (formerly Fomitiporia ellipsoidea)" | 2010 |
+| 49 poros por mm²; unos 450 millones (pantalla ≈ 452 millones) | ✅ | Guinness | "49 pores per mm2, which equated to c. 452 million pores across the entire body" — Wikipedia dice "425 million"; mi cuenta (10.85 m × 0.84 m × 49/mm² ≈ 447 millones) respalda ~450, así que el 425 de Wikipedia parece errata | 2010 |
+| Perenne, capa sobre capa | ✅ | Wikipedia (Cui y Dai 2008) | "The basidiocarps are perennial"; tubos "distinctively layered" | 2008 |
+| Nombre por sus esporas ovaladas de ~5 µm | ✅ | Wikipedia (Cui y Dai 2008 p. 346) | "produces distinct ellipsoidal spores, after which it is named"; "The average spore length is 5.25 μm" | 2008 |
+| El hongo más grande es una red de micelio bajo un bosque de Oregón (965 ha) | ✅ | Ferguson et al. 2003 (PDF) | "Armillaria ostoyae genet sizes were approximately 20, 95, 195, 260, and 965 ha" | 2003 |
+| El cuerpo de hongo (cuerpo fructífero) más grande jamás documentado | ✅ | PubMed 21872178; Guinness | "the first report of the largest fungal fruiting body both in volume and weight"; "The largest basidiocarp … ever documented" | 2011 / 2026 |
+| LinkedIn: "pasó desapercibido en el bosque" | ⚠️ exagerado (sí lo vieron; lo que no hicieron fue reconocer la especie) → **corregido** | Wikipedia (BBC) | "initially unable to identify the specimen … because of its large size" | 2011 |
+
+**Cambios hechos:** solo en `publicacion.md` (LinkedIn): "mide 10.85 metros y pasó desapercibido en el bosque" → "mide 10.85 metros, y quienes lo encontraron al principio ni lo reconocieron en el bosque: era demasiado grande". No cambió `narracion.json`, ni el `.jsx`, ni `guion.md`. Todo lo narrado y lo que sale en pantalla queda ✅.
+
 VEREDICTO: APROBADO
