@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot DDT base narrada.dc.html",
+  "salida": "Shot DDT narrado.dc.html",
+  "nota": "Shot Fungi Mati #78. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert: NO generar sin su visto bueno.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa madera blanca y podrida no está sucia: hongos como el que la pudre pueden romper el DDT."
+    },
+    {
+      "escena": "DDT",
+      "texto": "Ese insecticida se dejó de usar en México en 2000, pero en el suelo tarda años en desaparecer."
+    },
+    {
+      "escena": "Lignina",
+      "texto": "El hongo come lignina, lo duro de la madera: una red revuelta de anillos de carbono."
+    },
+    {
+      "escena": "Enzimas",
+      "texto": "Para romperla suelta peroxidasas fuera de sus hifas, que le arrancan electrones."
+    },
+    {
+      "escena": "Radicales",
+      "texto": "Así nacen radicales que atacan anillos muy distintos, sin escoger."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si el anillo es de un veneno?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1985, en Michigan, Bumpus y su equipo lo probaron con Phanerochaete chrysosporium."
+    },
+    {
+      "escena": "Lista",
+      "texto": "Convirtió en dióxido de carbono parte del DDT, PCB, lindano, una dioxina y benzopireno."
+    },
+    {
+      "escena": "Seta",
+      "texto": "Y en 1987, la seta del súper, Pleurotus ostreatus, también lo hizo en laboratorio."
+    },
+    {
+      "escena": "Limite",
+      "texto": "Pero ojo: en 1990, con dos insecticidas, solo del nueve al veintitrés por ciento se volvió gas."
+    },
+    {
+      "escena": "Suecia",
+      "texto": "Y en 2026, en un vivero sueco con DDT viejo, el sustrato de setas no logró una baja medible."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa madera blanca no está sucia: es una pista para limpiar, no una solución mágica."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Giberelinas base narrada.dc.html",
+  "salida": "Shot Giberelinas narrado.dc.html",
+  "nota": "Shot Fungi Mati #75. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esas uvas sin semilla no se inflaron solas: muchas las agranda la hormona de un hongo."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Es Fusarium fujikuroi; en el arroz causa la plántula boba."
+    },
+    {
+      "escena": "Sintomas",
+      "texto": "Las plántulas se estiran altas y flacas, amarillentas, y muchas quedan estériles."
+    },
+    {
+      "escena": "Kurosawa",
+      "texto": "En 1926, Eiichi Kurosawa roció arroz sano con el caldo filtrado del hongo, y también se estiró."
+    },
+    {
+      "escena": "Yabuta",
+      "texto": "En 1935, Teijiro Yabuta la purificó y la llamó giberelina."
+    },
+    {
+      "escena": "Freno",
+      "texto": "Las plantas también la hacen: destruye proteínas que frenan el crecimiento y la célula se estira."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué tiene que ver con tus uvas?"
+    },
+    {
+      "escena": "Semilla",
+      "texto": "Sin semillas, la uva trae poca giberelina y suele quedarse chica."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En un estudio publicado en 2009 en España, uvas sin semilla rociadas con ácido giberélico pesaron de cincuenta a noventa por ciento más."
+    },
+    {
+      "escena": "Celulas",
+      "texto": "No tenían más células: tenían células más grandes."
+    },
+    {
+      "escena": "Tanque",
+      "texto": "Hoy se fabrica criando ese mismo hongo en tanques, como la penicilina."
+    },
+    {
+      "escena": "California",
+      "texto": "Para 1962, casi todas las uvas Thompson Seedless de mesa de California ya se rociaban."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa uva no creció sola: la infló la hormona del hongo que vuelve bobo al arroz."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
