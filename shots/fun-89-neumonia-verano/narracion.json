@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Neumonia Verano base narrada.dc.html",
+  "salida": "Shot Neumonia Verano narrado.dc.html",
+  "nota": "Shot Fungi Mati #89. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta tos no te la pegó nadie: te la da tu casa, y casi siempre en verano."
+    },
+    {
+      "escena": "Levadura",
+      "texto": "En Japón, la culpa es de una levadura, Tricosporon, que crece en madera húmeda y tatamis."
+    },
+    {
+      "escena": "Cubitos",
+      "texto": "Sus hilos se parten en cubitos que flotan en el aire de la casa, y tú los respiras."
+    },
+    {
+      "escena": "Alergia",
+      "texto": "No es infección: es tu pulmón reaccionando como alergia. Tos, fiebre y falta de aire."
+    },
+    {
+      "escena": "Pista",
+      "texto": "La pista: en el hospital mejoras solo, y al volver a casa, regresa."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué en verano?"
+    },
+    {
+      "escena": "Calor",
+      "texto": "Porque esta levadura prospera con el calor y la humedad del verano japonés."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "De 1980 a 1989, médicos japoneses juntaron 835 casos de alergias del pulmón: tres de cada cuatro, tipo verano."
+    },
+    {
+      "escena": "Casas",
+      "texto": "86 de cada 100 empezaron de junio a septiembre, y más de la mitad vivía en cuartos húmedos, sombríos o mal ventilados."
+    },
+    {
+      "escena": "Limpiar",
+      "texto": "Lo que sirve es sacar el hongo de la casa: en 1989, en seis casas bien limpiadas, nadie recayó."
+    },
+    {
+      "escena": "Piedra",
+      "texto": "Y sus parientes hacen nuditos blancos en el pelo: la piedra blanca."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa tos no era contagio: era tu casa pidiéndote menos humedad y más aire."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

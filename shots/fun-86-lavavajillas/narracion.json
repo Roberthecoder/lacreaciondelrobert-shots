@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Lavavajillas base narrada.dc.html",
+  "salida": "Shot Lavavajillas narrado.dc.html",
+  "nota": "Shot Fungi Mati #86. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tu lavavajillas, o el de tu tía, puede lavar hasta a 80 grados con detergente y sal… y ahí vive un hongo."
+    },
+    {
+      "escena": "Empaque",
+      "texto": "Esa línea negra del hule de la puerta puede ser una levadura negra: Exofiala."
+    },
+    {
+      "escena": "Microscopio",
+      "texto": "Al microscopio son bolitas que brotan en cadenas largas y luego hacen hilos cafés."
+    },
+    {
+      "escena": "Melanina",
+      "texto": "Su pared lleva melanina, un pigmento oscuro que la protege."
+    },
+    {
+      "escena": "Ciclo",
+      "texto": "Y cada lavado es extremo: calor, detergente agresivo, mucha sal y agua alcalina."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuántos lavavajillas la tienen?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2011, científicos de Eslovenia revisaron 189 lavavajillas de casas de todo el mundo."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "El 62 por ciento tenía hongos en el hule, y en más de la mitad de esos estaba Exofiala."
+    },
+    {
+      "escena": "Riesgo",
+      "texto": "¿Es peligrosa? En personas sanas casi nunca causa nada, pero puede colonizar pulmones con fibrosis quística."
+    },
+    {
+      "escena": "Lavadora",
+      "texto": "Y en 2015, en Eslovenia, el 79 por ciento de 70 lavadoras de casa tenía hongos."
+    },
+    {
+      "escena": "Origen",
+      "texto": "Lo más raro: nadie sabe de dónde viene. Una hipótesis: de frutas de selva tropical."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Lavas hasta a 80 grados… y esa línea negra sigue ahí, tan tranquila, en tu cocina."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

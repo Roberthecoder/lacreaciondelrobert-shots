@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Tina Gato base narrada.dc.html",
+  "salida": "Shot Tina Gato narrado.dc.html",
+  "nota": "Shot Fungi Mati #85. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Microsporum canis se escribe como se pronuncia: «Microspórum cánis».",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese anillo rojo no es un gusano: es un hongo, y te lo pasó tu gato."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Es la tiña. En inglés le dicen «gusano de anillo» por la forma de su roncha."
+    },
+    {
+      "escena": "Anillo",
+      "texto": "Crece hacia afuera, y el centro muchas veces se aclara."
+    },
+    {
+      "escena": "Queratina",
+      "texto": "Sus hifas se alimentan de queratina: la de tu pelo y tu piel."
+    },
+    {
+      "escena": "Canis",
+      "texto": "Según guías de 2013, más del 90 por ciento de las tiñas de gato son de Microspórum cánis."
+    },
+    {
+      "escena": "Manguito",
+      "texto": "Sus esporas forman un manguito por fuera del pelo y se pegan muy fuerte."
+    },
+    {
+      "escena": "Portador",
+      "texto": "¿Y si tu gato se ve sano? Muchos gatos adultos lo cargan sin síntomas."
+    },
+    {
+      "escena": "UV",
+      "texto": "Con luz ultravioleta, muchos pelos infectados brillan verde manzana. No todos."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Un estudio de 2016 en la Ciudad de México, del Hospital Gea González y la UNAM, encontró que de 57 tiñas humanas de origen animal, 43 eran de este hongo."
+    },
+    {
+      "escena": "Polvo",
+      "texto": "Sus esporas viajan en el polvo, hasta a cuartos sin gato, y aguantan un año o más."
+    },
+    {
+      "escena": "Sirve",
+      "texto": "Lo que sí sirve: el gato al veterinario, lavarte las manos, aspirar y desinfectar su cama."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese anillo no es un gusano, y tu gato no tiene la culpa: los dos se curan."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

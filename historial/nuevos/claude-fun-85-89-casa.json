@@ -1,0 +1,113 @@
+{
+ "temas": [
+  {
+   "id": "fun-85-tina-gato",
+   "titulo": "Eso no es un gusano: es un hongo que te pasó tu gato (tiña, *Microsporum canis*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 85,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-85-tina-gato",
+   "rama": "claude/fun-85-89-casa",
+   "fuentes": [
+    "https://www.cdc.gov/ringworm/about/index.html",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11148949",
+    "https://www.merckvetmanual.com/integumentary-system/dermatophytosis/dermatophytosis-in-dogs-and-cats",
+    "https://micologiaveterinaria.fmvz.unam.mx/assets/docs/aportaciones/M_canis_other_dermatophytes.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10581519"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "La lámpara de Wood: qué más brilla con luz UV en la piel y el pelo",
+    "Los erizos también tienen su tiña (Trichophyton erinacei)",
+    "La tiña de la cabeza en niños: por qué es la más común"
+   ]
+  },
+  {
+   "id": "fun-86-lavavajillas",
+   "titulo": "Tu lavavajillas tiene una levadura negra que aguanta calor, jabón y sal (*Exophiala dermatitidis*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 86,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-86-lavavajillas",
+   "rama": "claude/fun-85-89-casa",
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/21944212/",
+    "https://www.eurekalert.org/news-releases/675008",
+    "https://pubmed.ncbi.nlm.nih.gov/25749362/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2610309/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12295173/"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "La lavadora por dentro: hongos del cajón del detergente y del hule (Babič 2015)",
+    "La cafetera y la levadura negra (Kondori 2024)",
+    "Hongos negros de los baños de vapor: el origen misterioso de Exophiala"
+   ]
+  },
+  {
+   "id": "fun-87-pudricion-seca",
+   "titulo": "El hongo que se come casas y llora gotas (pudrición seca, *Serpula lacrymans*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 87,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-87-pudricion-seca",
+   "rama": "claude/fun-85-89-casa",
+   "fuentes": [
+    "https://www.mn.uio.no/ibv/english/people/aca/haavarka/kauserud-et-al-2012-fung-biol-rev.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/17688538/",
+    "https://pubmed.ncbi.nlm.nih.gov/21764756/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8467351/"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "La pudrición blanda y otros hongos que se comen la madera de tu casa",
+    "Por qué se pudrían los barcos de madera y cómo los protegían",
+    "Serpula himantioides: el pariente silvestre de los troncos caídos"
+   ]
+  },
+  {
+   "id": "fun-88-moho-refri",
+   "titulo": "Tu refri no mata al moho: solo lo hace ir más lento (hongos que crecen a 4 °C)",
+   "serie": "Shot Fungi Mati",
+   "numero": 88,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-88-moho-refri",
+   "rama": "claude/fun-85-89-casa",
+   "fuentes": [
+    "https://wpcdn.web.wsu.edu/wp-extension/uploads/sites/2057/2021/03/Molds-on-Food-LC.pdf",
+    "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely",
+    "https://archive.org/download/biostor-237804/biostor-237804.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4930504/",
+    "https://www.research.unipd.it/handle/11577/2805732"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Primos: Penicillium roqueforti del queso azul vs. P. expansum de la manzana",
+    "La patulina: la toxina del moho azul de la manzana",
+    "Mrakia: la levadura de la Antártida que no aguanta el calor"
+   ]
+  },
+  {
+   "id": "fun-89-neumonia-verano",
+   "titulo": "La neumonía que te da tu casa solo en verano (neumonitis de verano, *Trichosporon*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 89,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-89-neumonia-verano",
+   "rama": "claude/fun-85-89-casa",
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/1928946/",
+    "https://pubmed.ncbi.nlm.nih.gov/2817962/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3194827/",
+    "https://pubmed.ncbi.nlm.nih.gov/9061585/",
+    "https://pubmed.ncbi.nlm.nih.gov/16366368/"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "El pulmón del humidificador: alergia por hongos y bacterias de humidificadores sucios",
+    "La piedra blanca: hongos que hacen nudos en el pelo",
+    "El pulmón del granjero: alergia por heno enmohecido"
+   ]
+  }
+ ]
+}
