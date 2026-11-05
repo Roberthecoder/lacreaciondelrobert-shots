@@ -321,7 +321,7 @@ function TrigoShot() {
             <HojaAg x={540} y={830} s={1.3} />
             <circle cx={klerp(470, 528, u)} cy={760} r={18} fill={KC.pink} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Ci + 2.5, K.Ci + 2.7)} />
             <circle cx={klerp(610, 552, u)} cy={760} r={18} fill={KC.cyan} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Ci + 2.5, K.Ci + 2.7)} />
-            {r3 > 0 && [[492, 925, KC.pink], [540, 935, '#9a7bff'], [588, 925, KC.cyan]].map(([a, b, c], i) => <g key={i} transform={`translate(${a} ${b}) scale(${r3 * 0.27})`}><ellipse rx={46} ry={70} fill={c} stroke={KC.ink} strokeWidth={9} transform="rotate(90)" /></g>)}
+            {r3 > 0 && [[512, 935, KC.pink], [540, 945, '#9a7bff'], [568, 935, KC.cyan]].map(([a, b, c], i) => <g key={i} transform={`translate(${a} ${b}) scale(${r3 * 0.2})`}><ellipse rx={46} ry={70} fill={c} stroke={KC.ink} strokeWidth={9} transform="rotate(90)" /></g>)}
           </g>; })()}
         </>)}
         {CICLO.map((c, i) => { const [cx, cy] = cicloXY(c.ang); const on = kprog(T, K.Ci + 0.45 + i * 0.45, K.Ci + 0.8 + i * 0.45);
