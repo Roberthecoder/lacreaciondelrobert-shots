@@ -79,3 +79,5 @@ Leí la versión actual de `narracion.json`: tiene 13 líneas. Las 7 corregidas 
 
 ### Aplicado tras la reverificación 1
 - R6/Rc → redacción final dictada por el verificador (sitios de muestreo del artículo + CONANP): voz «Lo hallaron en las seis especies buscadas, en playas de América, África y Australia, incluida la golfina, una de las que anidan en Oaxaca.» (sin «por miles»; en Escobilla también anidan otras especies) y chip «2005–2012 · 6 especies · América, África y Australia». Confirmado por el coordinador el 5 nov 2026: con este ajuste todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
