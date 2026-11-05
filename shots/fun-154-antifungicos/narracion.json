@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Antifungicos base narrada.dc.html",
+  "salida": "Shot Antifungicos narrado.dc.html",
+  "nota": "Shot Fungi Mati #154. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Para un medicamento, ese hongo y tú son casi lo mismo."
+    },
+    {
+      "escena": "Arbol",
+      "texto": "Hongos y animales son grupos hermanos: el moho es más pariente tuyo que de una planta."
+    },
+    {
+      "escena": "Celula",
+      "texto": "Sus células tienen núcleo, como las tuyas."
+    },
+    {
+      "escena": "Pocos",
+      "texto": "Así que hay pocos blancos que dañen al hongo y no a ti."
+    },
+    {
+      "escena": "Familias",
+      "texto": "Para infecciones graves, la OMS cuenta solo cinco familias de antifúngicos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces cómo le atinan?"
+    },
+    {
+      "escena": "Membrana",
+      "texto": "Atacan lo distinto: tu membrana usa colesterol; la del hongo, ergosterol."
+    },
+    {
+      "escena": "Azoles",
+      "texto": "Los azoles frenan su fábrica de ergosterol; la anfotericina B se lo arranca."
+    },
+    {
+      "escena": "Pared",
+      "texto": "El hongo tiene pared y tú no: las equinocandinas frenan la máquina de su glucano."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1950, Elizabeth Hazen y Rachel Brown, en Nueva York, probaron cientos de muestras de tierra: una bacteria les dio la nistatina, otra arma contra el ergosterol."
+    },
+    {
+      "escena": "Rinon",
+      "texto": "Pero la anfotericina también jala tu colesterol: en 2023, en Illinois, vieron que así daña células de riñón y crearon una que en ratones no."
+    },
+    {
+      "escena": "Diez",
+      "texto": "En diez años, solo cuatro antifúngicos nuevos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Para un medicamento, ese hongo y tú son casi lo mismo: los separan unas cuantas moléculas."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

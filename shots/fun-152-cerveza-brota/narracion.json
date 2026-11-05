@@ -1,0 +1,64 @@
+{
+  "dcHtml": "Shot Cerveza base narrada.dc.html",
+  "salida": "Shot Cerveza narrado.dc.html",
+  "nota": "Shot Fungi Mati #152. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Enfoque en la química de las hidrofobinas; no invita a tomar alcohol.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa cerveza que brotó sola al abrirla no estaba agitada: traía proteínas de un hongo."
+    },
+    {
+      "escena": "Campo",
+      "texto": "Empieza en el campo: el moho Fusarium infecta la cebada en años muy lluviosos."
+    },
+    {
+      "escena": "Malta",
+      "texto": "Al hacer la malta, el hongo sigue creciendo y suelta hidrofobinas."
+    },
+    {
+      "escena": "Proteina",
+      "texto": "Son proteínas diminutas: unos cien aminoácidos amarrados por cuatro puentes de azufre."
+    },
+    {
+      "escena": "DosCaras",
+      "texto": "Tienen dos caras: una ama el agua y la otra la repele."
+    },
+    {
+      "escena": "Botella",
+      "texto": "Una parte sobrevive hasta la botella."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué hacen ahí dentro?"
+    },
+    {
+      "escena": "Blindaje",
+      "texto": "La hipótesis: envuelven burbujitas de gas carbónico y las blindan."
+    },
+    {
+      "escena": "Abrir",
+      "texto": "Al abrir, cae la presión: las burbujas crecen de golpe y sale la espuma."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2012, en el VTT de Finlandia, añadieron hidrofobinas de Fusarium a cerveza embotellada."
+    },
+    {
+      "escena": "Dosis",
+      "texto": "Una millonésima de gramo en un tercio de litro bastó para que brotara con fuerza."
+    },
+    {
+      "escena": "ParaQue",
+      "texto": "Al hongo le sirven para salir del agua: bajan su tensión superficial, la hifa sube al aire y sus esporas no se mojan."
+    },
+    {
+      "escena": "Agua",
+      "texto": "Y con agua mineral con gas pasó lo mismo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa cerveza no estaba agitada: traía, desde el campo, el blindaje de sus burbujas."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
