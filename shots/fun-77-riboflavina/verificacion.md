@@ -23,8 +23,8 @@ Fuentes abiertas:
 | 2 | Riboflavina = vitamina B2 (etiqueta "riboflavina · vitamina B2") | ✅ | [LPI] | "Riboflavin is a water-soluble B vitamin, also known as vitamin B2." | 2021 |
 | 3 | Aviso: el amarillo por vitaminas es inofensivo | ✅ | [LPI], [PC] | "this is a harmless side effect"; "no cause for alarm" | 2021 |
 | 4 | «Lo que sobra, tus riñones lo mandan a la orina» | ✅ | [PC], [HER] | [PC]: "limited capacity for absorption in the human gastrointestinal tract; /and/ its rapid excretion in the urine." [HER]: riboflavin "is eliminated in urine" | 2012 |
-| 5 | «…casi todo el primer día» | ✅ | [HER] (cita a Zempleni 1996) | "with more than 91% of the total excretion of riboflavin taking place during the first 24 hours (Zempleni et al., 1996)" | 1996 (citado en 2012) |
-| 6 | Pantalla, chip "más del 91 % de lo que sale, en las primeras 24 h · **estudio 2012**" | ⚠️ | [HER] | La cifra es de **Zempleni et al. 1996**; Herron 2012 solo la cita. El año del dato es 1996. → corrección C1. | 1996 |
+| 5 | «…casi todo el primer día» | ✅ | [HER] (cita a Zempleni 1996) | "with more than 91% of the total excretion of riboflavin taking place during the first 24 hours (Zempleni et al., 1996)" | 2012 (dato de 1996) |
+| 6 | Pantalla, chip (corregido) "casi todo sale en las primeras 24 horas" (antes: "más del 91 %… · estudio 2012") | ✅ corregido | [HER] | La cifra es de **Zempleni et al. 1996**; Herron 2012 solo la cita y el original no se pudo abrir, así que la cifra se quitó de la pantalla (regla de números). Queda la frase cualitativa, que es lo que dice Herron (texto completo leído). | 2012 (dato de 1996) |
 | 7 | «Es amarilla y, con luz ultravioleta, brilla» | ✅ | [PC], [HER] | [PC]: "Riboflavin is a water-soluble, yellow, fluorescent compound." [HER]: "it can be detected by fluorescence under UV light" | 1998/2012 |
 | 8 | Pantalla: brillo verde-amarillo bajo UV | ✅ | [PC] | "Aqueous solutions are yellow showing a green fluorescence with max at 565 nm" | HSDB |
 | 9 | Pantalla: molécula de tres anillos fusionados + cadena de ribitol (escala 1 nm) | ✅ | [PC] | Nombre IUPAC: "7,8-dimethyl-10-[(2S,3S,4R)-2,3,4,5-tetrahydroxypentyl]benzo[g]pteridine-2,4-dione" (anillo triple isoaloxazina + cadena ribitilo de 5 C). Esquemático. | — |
@@ -32,7 +32,7 @@ Fuentes abiertas:
 | 11 | Tarjetas: bacteria *Bacillus subtilis* y hongo *Ashbya gossypii* como productores | ✅ | [HOFF], [AVE] | [HOFF]: "Auch andere Hersteller stellten auf eine ausschließlich fermentative Produktion um, jedoch unter Verwendung des Bakteriums Bacillus subtilis". [AVE]: "industrial microbial strains of Ashbya gossypii, Candida famata var. flareri, and Bacillus subtilis" | 2021 / 2020 |
 | 12 | «En el campo enferma al algodón» | ✅ | [WEN] | "As a plant pathogen A. gossypii causes a yeast spot disease termed stigmatomycosis e.g., on cotton, pistachio or soybean" | 2020 |
 | 13 | «…lo meten las chinches» (etiqueta "chinches (vectores)"; dibujo de chinche de escudo con pico) | ✅ | [WEN] | "Ashbya is dependent on insect vectors belonging to stinkbug families (Coreidae, Pentatomidae)."; "Ashbya requires sucking insects to form plant infection as it does not produce penetration pegs or lytic enzymes." | 2020 |
-| 14 | Pantalla: la chinche pica la cápsula y deja **manchitas amarillas** | ⚠️ | [WEN], búsqueda | La enfermedad se describe como "yeast spot disease" / mancha interna de la cápsula, pero no encontré fuente que diga que la mancha es amarilla; dibujarla amarilla sugiere (sin prueba) que es la riboflavina. → corrección C2. | — |
+| 14 | Pantalla (corregido): la chinche pica la cápsula y la fibra de adentro queda manchada (neutro, no amarillo) | ✅ corregido | [WEN], búsqueda | La enfermedad se describe como "yeast spot disease" / mancha interna de la cápsula, pero no encontré fuente que diga que la mancha es amarilla; dibujarla amarilla sugería (sin prueba) que es la riboflavina. **Corregido:** fibra manchada en color neutro café grisáceo, etiqueta "fibra manchada" (enfermedad de mancha de la cápsula, "yeast spot disease", [WEN]). | 2020 |
 | 15 | «Es pariente de la levadura del pan» (árbol: *Saccharomyces cerevisiae* y *A. gossypii*, familia Saccharomycetaceae) | ✅ | [WEN], [AGU] | [WEN]: "Ashbya gossypii is a filamentous ascomycete belonging to the yeast family of Saccharomycetaceae." [AGU]: "its high genetic similarity with Saccharomyces cerevisiae" | 2020 / 2015 |
 | 16 | «…pero crece en hilos» (hifas) | ✅ | [WEN] | "filamentous ascomycete"; "Hyphal filaments in Ashbya are compartmentalized by septation." | 2020 |
 | 17 | Pantalla: puntas de las hifas que se parten en dos (ramificación en Y) | ✅ | [WEN] | "hyphal tips start a tip splitting process … characteristic for filamentous fungi in the genus Eremothecium" | 2020 |
@@ -41,7 +41,7 @@ Fuentes abiertas:
 | 20 | «…y la guarda en vacuolas» (etiqueta "vacuolas con riboflavina") | ✅ | [FÖR], [REV] | [FÖR]: "complete excretion of riboflavin into the medium instead of retention in the vacuolar compartment, as observed in the wild type." [REV]: "Riboflavin is also stored in the vacuolar compartment, leading to product retention." | 1999 / 2017 |
 | 21 | Pantalla: las hifas se fragmentan en esporangios | ✅ | [WEN] | "Hyphal fragmentation during sporulation results in isolated sporangia that often bear eight spores." | 2020 |
 | 22 | Pantalla: esporas en forma de aguja, con filamento en la punta, agrupadas | ✅ | [WEN] | "Needle-shaped Ashbya spores aggregate via terminal filaments." | 2020 |
-| 23 | Pantalla: barra de escala **5 µm** en las esporas | ⚠️ | [WEN] | "Ashbya forms needle-shaped spores of about 30 µm in length." Con barra de 5 µm la espora debe medir ~6 barras; si el dibujo no respeta eso, la barra miente. → corrección C3. | 2020 |
+| 23 | Pantalla (corregido): barra de **10 µm**, esporas de ~30 µm dibujadas ≈ 3 veces la barra | ✅ corregido | [WEN] | "Ashbya forms needle-shaped spores of about 30 µm in length." Corregido en el guion: "~30 µm: unas 3 veces la barra de 10 µm". | 2020 |
 | 24 | «En 2001, un equipo europeo…» (tarjeta "2001 · Alemania, Reino Unido y España · *Environmental Microbiology*") | ✅ | [STA] (OpenAlex) | Afiliaciones: "Forschungszentrum Jülich GmbH … Germany"; "Imperial College School of Medicine at Hammersmith Hospital … London … UK"; "BASF Aktiengesellschaft … Ludwigshafen, Germany"; "Universidad de Salamanca … Spain". *Environmental Microbiology* 3(9), 2001. | 2001 |
 | 25 | «…iluminó sus esporas con ultravioleta: con riboflavina, aguantaban más» (dos placas "sin / con riboflavina", sin cifra) | ✅ | [STA], [AVE] | [STA]: "Here, we report an ultraviolet (UV) protective effect of riboflavin. The spores of Ashbya gossypii … are more sensitive to UV than those of Aspergillus nidulans. The addition of riboflavin to suspensions improves the UV resistance of both spore types." [AVE]: "exogenous riboflavin was shown to protect A. gossypii spores against UV light." (La riboflavina se añadió a la suspensión; la voz no dice lo contrario.) | 2001 |
 | 26 | «Sería su bloqueador solar» (chip "hipótesis: protector UV") | ✅ como hipótesis | [STA] | El estudio plantea la pregunta: "A question, unanswered for decades, is whether riboflavin overproducers can benefit from this property." El papel natural es interpretación; va en condicional ("sería") y con chip "hipótesis". Correcto así. | 2001 |
@@ -53,7 +53,7 @@ Fuentes abiertas:
 | 32 | Cierre: «ese amarillo de tu pipí puede ser el bloqueador solar de un hongo» (vaso que brilla bajo UV) | ✅ (con "puede ser") | [HER], [REV], [STA] | [HER]: "excreted in urine where it fluoresces under UV light". "Puede ser" cubre que la riboflavina de una pastilla puede venir de *Ashbya* o de *B. subtilis*, y que lo del bloqueador es hipótesis (dicho en la escena 8). | 2012 / 2017 / 2001 |
 | 33 | Escalas: 5 cm vaso, 2 cm algodón/chinche, 20 µm hifas, 10 µm vacuolas, 10 m tanque (esquemático), 2 nm ADN | ✅ | [WEN], general | Rangos razonables (doble hélice ≈ 2 nm de ancho; hifas de pocos µm). El tanque va marcado como esquemático. | — |
 
-## Correcciones propuestas
+## Correcciones propuestas (ya aplicadas; ver Re-verificación)
 
 - **C1 (pantalla, escena 1 «Orina»):** chip «más del 91 % de lo que sale, en las primeras 24 h · estudio 2012» →
   **«más del 91 % de lo que sale, en las primeras 24 h · estudio de 1996»**. En `guion.md` (Fuentes, punto 2) anotar que la cifra es de
@@ -67,4 +67,12 @@ Sobre los puntos pedidos: el año **1996 no es deducido**: Revuelta et al. 2017 
 así que se queda. El 40 % y 30 % ya se dicen como dato de la empresa ("Según la empresa"), correcto. Stahmann 2001 va como hipótesis
 ("sería" + chip "hipótesis"), correcto.
 
-VEREDICTO: PENDIENTE (correcciones)
+## Re-verificación (5 nov 2026)
+
+Se revisó `guion.md` después de aplicar las correcciones:
+- **C1 aplicada (decisión del coordinador):** se quitó el 91 % de la pantalla; el chip dice «casi todo sale en las primeras 24 horas» y en Fuentes queda anotado que la cifra es de Zempleni 1996 (citada por Herron 2012, original no abierto). ✅
+- **C2 aplicada:** la fibra de la cápsula queda manchada en café grisáceo neutro (no amarillo), con etiquetas "chinches (vectores)" y "fibra manchada". ✅
+- **C3 aplicada:** las esporas miden ~30 µm, unas 3 veces la barra de 10 µm; la tabla de escalas dice «10 µm (esporas; agujas de ~30 µm)». ✅
+- La voz (`narracion.json`, 14 líneas) no cambió y coincide con la tabla del guion. No hay afirmaciones nuevas, salvo la etiqueta "fibra manchada", que está respaldada (fila 14).
+
+VEREDICTO: APROBADO
