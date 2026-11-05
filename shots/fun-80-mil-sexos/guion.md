@@ -93,3 +93,5 @@ Robert nunca tapa el contador, las ruedas, las etiquetas ni el subtítulo (va ar
 7. (No entra en la voz; solo contexto de tono.) Kleijburg y Wösten (2025): "infection of humans by S. commune is very rare. A total of 71 cases were reported until 2013 … with an additional 53 reported cases in the period 2014–2025 … almost exclusively in immunocompromised patients".
 
 El dibujo es esquemático (cromosomas, ruedas de versiones, mapa y la fíbula simplificada).
+
+_Estado: verificado (VEREDICTO: APROBADO) y revisado cuadro por cuadro el 5 nov 2026; listo para render._

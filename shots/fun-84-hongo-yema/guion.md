@@ -99,3 +99,5 @@ Apariciones 10 · **39.0 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas (
 9. Guzmán, G. y Ramírez-Guillén, F. (2001). *The Amanita caesarea-complex*. Bibliotheca Mycologica 187. J. Cramer (descripción original de *A. basii*, *A. tecomate*, *A. yema*, *A. laurae*; citado por las fuentes 2 y 4; no se abrió el libro).
 
 El dibujo es esquemático. No es guía de identificación: nunca comas hongos silvestres sin un experto.
+
+_Estado: verificado (VEREDICTO: APROBADO) y revisado cuadro por cuadro el 5 nov 2026; listo para render._

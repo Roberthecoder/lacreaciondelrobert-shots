@@ -100,3 +100,5 @@ Apariciones 9 · **30.5 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas ·
     > los totonacas de Papantla (centro-norte de Veracruz) fueron "presumably the earliest to cultivate vanilla"; clones de *V. planifolia* en individuos silvestres y cultivados "from elsewhere in Mesoamerica" (respaldo de «nativa de México y Centroamérica» y de que es orquídea).
 
 El dibujo es esquemático.
+
+_Estado: verificado (VEREDICTO: APROBADO) y revisado cuadro por cuadro el 5 nov 2026; listo para render._
