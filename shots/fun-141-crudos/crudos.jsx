@@ -338,7 +338,7 @@ function CrudosShot() {
       <Etq T={T} at={K.A + 1.8} until={K.G3 - 0.3} x={60} y={560} texto="agaritina (molécula agrandada)" tam={30} color={KC.yellow} />
       <Chip T={T} at={K.A + 2.6} until={K.G3 - 0.3} texto="todavía se estudia" x={300} y={790} tam={36} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.G3 + 0.15} until={K.G3 + 2.3} anio="IARC" quien="agencia de la OMS contra el cáncer" revista="evaluación de 1987" x={420} y={600} />
-      <Chip T={T} at={K.G3 + 3.2} until={K.S - 0.3} texto="grupo 3 · no clasificable como cancerígeno en humanos" x={540} y={1150} tam={27} borde={KC.gold} />
+      <Chip T={T} at={K.G3 + 3.2} until={K.S - 0.3} texto="grupo 3 · no clasificable como cancerígeno en humanos" x={540} y={1150} tam={30} borde={KC.gold} />
       <Chip T={T} at={K.G3 + 3.8} until={K.S - 0.3} texto="la agaritina, no el hongo" x={330} y={700} tam={38} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.S + 0.2} until={K.S + 2.9} anio="2002" quien="Praga, Chequia" revista="Schulzová et al., Food Addit. Contam." x={540} y={470} />
       <Etq T={T} at={K.S + 1.4} until={K.P - 0.3} x={60} y={1110} texto="otro champiñón de cultivo: Agaricus hortensis" it tam={31} color={KC.ink} />

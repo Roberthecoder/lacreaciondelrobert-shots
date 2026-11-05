@@ -290,7 +290,7 @@ function LavarShot() {
       <Cronometro T={T} at={K.G + 0.6} until={K.M - 0.3} factor={16} x={300} y={420} etiqueta="BAJO EL AGUA" />
       <Etq T={T} at={K.G + 1.6} until={K.M - 0.3} x={60} y={545} texto="champiñón: casi nada" tam={32} color={KC.texto} />
       <Etq T={T} at={K.G + 2.4} until={K.M - 0.3} x={60} y={600} texto="esponja: se empapa" tam={32} color={KC.texto} />
-      <MitoTachado T={T} at={K.M + 0.1} tacharEn={K.M + 0.8} until={K.E - 0.3} texto="«no lo laves, se empapa»" x={540} y={680} tam={46} />
+      <MitoTachado T={T} at={K.M + 0.1} tacharEn={K.M + 0.8} until={K.E - 0.3} texto="«no lo laves, se empapa»" x={440} y={730} tam={46} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 3.6} anio="2018" quien="America's Test Kitchen (EE. UU.)" revista="prueba publicada en 2018" x={540} y={620} />
       <Chip T={T} at={K.E + 3.6} until={K.Ce - 0.3} texto="pesar · 1 min en agua · pesar" x={540} y={520} tam={38} borde={KC.ink} />
       <Cronometro T={T} at={K.E + 3.8} until={K.Ce - 0.3} factor={33} x={540} y={680} etiqueta="SUMERGIDOS" />
@@ -300,9 +300,11 @@ function LavarShot() {
       <Etq T={T} at={K.Ce + 1.1} until={K.Ex - 0.3} x={60} y={640} texto="Agaricus bisporus" it tam={32} color={KC.texto} />
       <Etq T={T} at={K.Ce + 1.5} until={K.Ex - 0.3} x={660} y={1020} texto="el velo las tapa" tam={28} color={KC.texto} />
       <Chip T={T} at={K.Ce + 2.2} until={K.Ex - 0.3} texto="casi nada de agua" x={790} y={1110} tam={40} borde={KC.mint} />
-      <NumeroGigante T={T} at={K.Ex + 1.6} until={K.P - 0.3} valor={25} dur={1.0} prefijo="hasta " sufijo=" %" etiqueta="de su peso en agua" x={540} y={520} tam={150} color={KC.cyan} />
-      <Etq T={T} at={K.Ex + 0.4} until={K.P - 0.3} x={40} y={1130} texto="portobello · Agaricus bisporus" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.Ex + 0.8} until={K.P - 0.3} x={560} y={1130} texto="shiitake · Lentinula edodes" tam={26} color={KC.texto} />
+      <NumeroGigante T={T} at={K.Ex + 1.6} until={K.P - 0.3} valor={25} dur={1.0} prefijo="hasta " sufijo=" %" etiqueta="de su peso en agua" x={540} y={450} tam={150} color={KC.cyan} />
+      <Etq T={T} at={K.Ex + 0.4} until={K.P - 0.3} x={30} y={1110} texto="portobello" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Ex + 0.6} until={K.P - 0.3} x={30} y={1150} texto="Agaricus bisporus" it tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Ex + 0.8} until={K.P - 0.3} x={600} y={1110} texto="shiitake" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Ex + 1.0} until={K.P - 0.3} x={600} y={1150} texto="Lentinula edodes" it tam={26} color={KC.texto} />
       <Chip T={T} at={K.Ex + 0.2} until={K.Ex + 1.5} texto="laminillas expuestas" x={540} y={470} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.H + 0.1} until={K.L - 0.3} texto="AL MICROSCOPIO · LA PIEL DEL SOMBRERO" x={540} y={440} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={1130} texto="hifas" tam={32} color={KC.texto} />

@@ -199,14 +199,14 @@ function RecalentarShot() {
       <Escena T={T} a={K.G} b={K.Ab} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Microondas T={T} x={470} y={1000} on={kprog(T, K.G, K.G + 0.3)} gira={gira} display={`0:${String(45 - Math.min(45, Math.floor(T * 2))).padStart(2, '0')}`} />
-          <Vapor T={T} x={420} y={760} o={kprog(T, K.G + 0.4, K.G + 1.2)} />
+          <Microondas T={T} x={470} y={900} on={kprog(T, K.G, K.G + 0.3)} gira={gira} display={`0:${String(45 - Math.min(45, Math.floor(T * 2))).padStart(2, '0')}`} />
+          <Vapor T={T} x={420} y={660} o={kprog(T, K.G + 0.4, K.G + 1.2)} />
         </>)}
       </Escena>
       {/* 1 · la abuela */}
       <Escena T={T} a={K.Ab} b={K.Or} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Abuela T={T} x={250} y={1200} s={1.05} />)}
+        {fsvg(<Abuela T={T} x={250} y={1130} s={1.05} />)}
       </Escena>
       {/* 2 · cocina sin refrigerador */}
       <Escena T={T} a={K.Or} b={K.Bq} zoom={0.06}>
@@ -214,12 +214,12 @@ function RecalentarShot() {
         {fsvg(<>
           <rect x={60} y={560} width={420} height={18} fill="#7a4a22" stroke={KC.ink} strokeWidth={5} />
           {[110, 200, 290, 390].map((xx, i) => <g key={i}><rect x={xx} y={490 - (i % 2) * 20} width={56} height={70 + (i % 2) * 20} rx={10} fill={['#b8642f', '#e9d3ae', '#9ad0c2', '#b8642f'][i]} stroke={KC.ink} strokeWidth={5} /></g>)}
-          <Fogon T={T} x={360} y={1000} />
-          <OllaBarro x={360} y={1000} s={0.9} />
-          <Vapor T={T} x={360} y={800} o={0.8} n={2} alto={120} />
+          <Fogon T={T} x={360} y={900} />
+          <OllaBarro x={360} y={900} s={0.9} />
+          <Vapor T={T} x={360} y={700} o={0.8} n={2} alto={120} />
           {(() => { const o = kprog(T, K.Or + 0.9, K.Or + 1.4); return <g opacity={o}>
-            <rect x={700} y={700} width={290} height={500} rx={26} fill="rgba(255,255,255,.25)" stroke={KC.ink} strokeWidth={7} strokeDasharray="22 16" />
-            <path d={`M 760 860 L 930 1040 M 930 860 L 760 1040`} stroke={KC.red} strokeWidth={22} strokeLinecap="round" strokeDasharray={`${300 * kprog(T, K.Or + 1.4, K.Or + 1.9)} 999`} />
+            <rect x={700} y={640} width={290} height={480} rx={26} fill="rgba(255,255,255,.25)" stroke={KC.ink} strokeWidth={7} strokeDasharray="22 16" />
+            <path d={`M 760 790 L 930 970 M 930 790 L 760 970`} stroke={KC.red} strokeWidth={22} strokeLinecap="round" strokeDasharray={`${300 * kprog(T, K.Or + 1.4, K.Or + 1.9)} 999`} />
           </g>; })()}
         </>)}
       </Escena>
@@ -227,11 +227,11 @@ function RecalentarShot() {
       <Escena T={T} a={K.Bq} b={K.Tb} zoom={0.1} origen="55% 60%">
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Champinon x={600} y={1180} s={2.0} />
-          {Array.from({ length: 14 }, (_, i) => { const g = krng(i + 11); const sx = 380 + g() * 440, sy = 720 + g() * 300; const p = kprog(T, K.Bq + 0.2 + i * 0.08, K.Bq + 0.6 + i * 0.08, kEase.rebote);
+          <Champinon x={600} y={1090} s={2.0} />
+          {Array.from({ length: 14 }, (_, i) => { const g = krng(i + 11); const sx = 380 + g() * 440, sy = 630 + g() * 300; const p = kprog(T, K.Bq + 0.2 + i * 0.08, K.Bq + 0.6 + i * 0.08, kEase.rebote);
             return p > 0 ? <path key={i} transform={`translate(${sx} ${sy + Math.sin(T * 3 + i) * 6}) scale(${p})`} d="M 0 -22 Q 16 0 12 10 Q 0 22 -12 10 Q -16 0 0 -22 Z" fill="#7fd8ff" stroke={KC.ink} strokeWidth={4} /> : null; })}
           {Array.from({ length: 6 }, (_, i) => { const p = kprog(T, K.Bq + 1.8 + i * 0.15, K.Bq + 2.2 + i * 0.15, kEase.rebote);
-            return p > 0 ? <rect key={i} x={430 + i * 62} y={690 + (i % 2) * 26} width={30 * p} height={13 * p} rx={6} fill={RC.bac} stroke={KC.ink} strokeWidth={3} transform={`rotate(${i * 30} ${445 + i * 62} ${696 + (i % 2) * 26})`} /> : null; })}
+            return p > 0 ? <rect key={i} x={430 + i * 62} y={600 + (i % 2) * 26} width={30 * p} height={13 * p} rx={6} fill={RC.bac} stroke={KC.ink} strokeWidth={3} transform={`rotate(${i * 30} ${445 + i * 62} ${606 + (i % 2) * 26})`} /> : null; })}
         </>)}
       </Escena>
       {/* 4 · AL MICROSCOPIO: tibio por horas, se duplican y dejan toxinas */}
@@ -239,7 +239,7 @@ function RecalentarShot() {
         <div style={{ position:'absolute', inset:0, background:KC.dark }}></div>
         <Ambiente T={T} n={22} />
         {fsvg(<>
-          <Colonia32 T={T} x={540} y={900} n={nDup(K.Tb + 0.3, K.Tb + 3.0)} />
+          <Colonia32 T={T} x={540} y={880} n={nDup(K.Tb + 0.3, K.Tb + 3.0)} />
           {Array.from({ length: 10 }, (_, i) => { const p = kprog(T, K.Tb + 2.0 + i * 0.12, K.Tb + 2.4 + i * 0.12, kEase.rebote); const a = i * 1.7, rr = 120 + (i % 3) * 90;
             return p > 0 ? <Cereulida key={i} T={T} x={540 + Math.cos(a) * rr * 1.3} y={900 + Math.sin(a) * rr * 0.9} r={16} s={p} brillo={0.8} /> : null; })}
         </>)}
@@ -247,32 +247,31 @@ function RecalentarShot() {
       {/* 5 · re-gancho: ¿y si lo recalientas fuerte? */}
       <Escena T={T} a={K.P} b={K.To} zoom={0.08}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<><Fogon T={T} x={270} y={1010} w={380} fuego={1} /><OllaBarro x={270} y={1010} s={0.8} /><Vapor T={T} x={270} y={820} o={1} n={3} alto={140} />
-          <Interrogacion T={T} x={300} y={760} tam={300} color={KC.yellow} /></>)}
+        {fsvg(<><Fogon T={T} x={270} y={900} w={380} fuego={1} /><OllaBarro x={270} y={900} s={0.8} /><Vapor T={T} x={270} y={720} o={1} n={3} alto={140} />
+          <Interrogacion T={T} x={300} y={660} tam={300} color={KC.yellow} /></>)}
       </Escena>
       {/* 6–7 · la toxina del vómito de Bacillus cereus (ejemplo: arroz) aguanta 121 °C 30 min; el calor mata a las bacterias, no a la toxina */}
       <Escena T={T} a={K.To} b={K.En} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <Tazon x={360} y={1110} s={1.15} tipo="arroz" />
-          <Colonia32 T={T} x={360} y={1010} s={0.42} n={T < K.To + 0.2 ? 0 : 32} muerte={muerte} />
-          {[[300, 990], [420, 1000], [360, 970]].map(([xx, yy], i) => <Cereulida key={i} T={T} x={xx} y={yy} r={14} brillo={1} o={kprog(T, K.To + 0.6, K.To + 1.0)} />)}
-          <Cereulida T={T} x={360} y={760} r={72} brillo={1} o={kprog(T, K.To + 1.0, K.To + 1.5)} s={1 + 0.06 * Math.sin(T * 4)} />
-          {muerte > 0 && Array.from({ length: 8 }, (_, i) => <Llamas key={i} T={T + i} x={150 + i * 60} y={1240} s={0.35} o={muerte * (1 - kprog(T, K.En - 0.6, K.En))} />)}
+          <Tazon x={360} y={1010} s={1.15} tipo="arroz" />
+          <Colonia32 T={T} x={360} y={925} s={0.42} n={T < K.To + 0.2 ? 0 : 32} muerte={muerte} />
+          {[[300, 905], [420, 915], [360, 885]].map(([xx, yy], i) => <Cereulida key={i} T={T} x={xx} y={yy} r={14} brillo={1} o={kprog(T, K.To + 0.6, K.To + 1.0)} />)}
+          <Cereulida T={T} x={300} y={720} r={72} brillo={1} o={kprog(T, K.To + 1.0, K.To + 1.5)} s={1 + 0.06 * Math.sin(T * 4)} />
+          {muerte > 0 && Array.from({ length: 8 }, (_, i) => <Llamas key={i} T={T + i} x={150 + i * 60} y={1150} s={0.35} o={muerte * (1 - kprog(T, K.En - 0.6, K.En))} />)}
         </>)}
-        {T > K.To + 2.2 && T < K.Ca + 0.2 && <Termometro x={880} y={760} alto={330} valor={temp} max={130} marcas={[0, 60, 121]} color={KC.red} />}
       </Escena>
       {/* 8 · enfriar rápido: al refri antes de 2 h, en recipientes bajitos */}
       <Escena T={T} a={K.En} b={K.Rf} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          {T < K.En + 1.3 && <g opacity={1 - kprog(T, K.En + 1.0, K.En + 1.3)}><OllaBarro x={300} y={1150} s={0.8} tapa={false} /></g>}
-          <Refri x={830} y={1220} w={300} h={480} abre={kprog(T, K.En + 2.4, K.En + 3.0, kEase.sale) * (1 - kprog(T, K.En + 4.4, K.En + 4.9))}>
-            {[0, 1, 2].map((i) => entra > 0 ? <Recipiente key={i} x={830 - 830 + klerp(0, 0, entra)} y={-480 + 150 + i * 120} s={0.7 * entra} /> : null)}
+          {T < K.En + 1.3 && <g opacity={1 - kprog(T, K.En + 1.0, K.En + 1.3)}><OllaBarro x={300} y={1080} s={0.8} tapa={false} /></g>}
+          <Refri x={830} y={1130} w={300} h={420} abre={kprog(T, K.En + 2.4, K.En + 3.0, kEase.sale) * (1 - kprog(T, K.En + 4.4, K.En + 4.9))}>
+            {[0, 1, 2].map((i) => entra > 0 ? <Recipiente key={i} x={830 - 830 + klerp(0, 0, entra)} y={-420 + 130 + i * 110} s={0.7 * entra} /> : null)}
           </Refri>
           {[0, 1, 2].map((i) => { const p = kprog(T, K.En + 1.0 + i * 0.25, K.En + 1.5 + i * 0.25, kEase.rebote); if (p <= 0 || entra >= 1) return null;
-            const x0 = 160 + i * 190, y0 = 1180, x1 = 830, y1 = 1220 - 480 + 150 + i * 120;
+            const x0 = 160 + i * 190, y0 = 1110, x1 = 830, y1 = 1130 - 420 + 130 + i * 110;
             return <Recipiente key={i} x={klerp(x0, x1, entra)} y={klerp(y0, y1, entra)} s={p * klerp(1, 0.7, entra)} tapa={kprog(T, K.En + 2.0 + i * 0.15, K.En + 2.3 + i * 0.15)} />; })}
         </>)}
       </Escena>
@@ -280,27 +279,27 @@ function RecalentarShot() {
       <Escena T={T} a={K.Rf} b={K.Rc} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:'#cfeefc' }}></div>
         {fsvg(<>
-          <rect x={60} y={420} width={960} height={900} rx={40} fill="#e8f7ff" stroke={KC.ink} strokeWidth={9} />
-          {[760, 1060].map((yy, i) => <rect key={i} x={80} y={yy} width={920} height={16} rx={6} fill="#9cc7da" stroke={KC.ink} strokeWidth={4} />)}
-          <Recipiente x={300} y={1058} s={1.2} /><Recipiente x={560} y={1058} s={1.2} /><Recipiente x={820} y={1058} s={1.2} />
+          <rect x={60} y={400} width={960} height={800} rx={40} fill="#e8f7ff" stroke={KC.ink} strokeWidth={9} />
+          {[760, 990].map((yy, i) => <rect key={i} x={80} y={yy} width={920} height={16} rx={6} fill="#9cc7da" stroke={KC.ink} strokeWidth={4} />)}
+          <Recipiente x={300} y={988} s={1.2} /><Recipiente x={560} y={988} s={1.2} /><Recipiente x={820} y={988} s={1.2} />
           <Tazon x={260} y={710} s={0.5} tipo="sopa" /><Tazon x={760} y={712} s={0.5} tipo="frijoles" />
-          {Array.from({ length: 12 }, (_, i) => { const g = krng(i + 40); return <path key={i} transform={`translate(${100 + g() * 880} ${460 + g() * 820}) rotate(${T * 20 + i * 30})`} d="M -10 0 L 10 0 M 0 -10 L 0 10 M -7 -7 L 7 7 M 7 -7 L -7 7" stroke="#fff" strokeWidth={4} opacity=".8" />; })}
+          {Array.from({ length: 12 }, (_, i) => { const g = krng(i + 40); return <path key={i} transform={`translate(${100 + g() * 880} ${440 + g() * 720}) rotate(${T * 20 + i * 30})`} d="M -10 0 L 10 0 M 0 -10 L 0 10 M -7 -7 L 7 7 M 7 -7 L -7 7" stroke="#fff" strokeWidth={4} opacity=".8" />; })}
         </>)}
       </Escena>
       {/* 10 · recalentar a 74 °C por dentro, una sola vez */}
       <Escena T={T} a={K.Rc} b={K.Ar} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Llamas T={T} x={420} y={1180} s={1.2} />
-          <Sarten T={T} x={420} y={1080} s={1.05} />
-          <TermoPinche x={700} y={820} valor={t74} r={100} largo={200} />
+          <Llamas T={T} x={400} y={1090} s={1.2} />
+          <Sarten T={T} x={400} y={990} s={1.05} />
+          <TermoPinche x={720} y={800} valor={t74} r={100} largo={200} />
         </>)}
       </Escena>
       {/* 11 · la regla es de todas las sobras */}
       <Escena T={T} a={K.Ar} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          {[['hongos', 270, 820], ['arroz', 640, 820], ['sopa', 200, 1110], ['frijoles', 540, 1110], ['pasta', 880, 1110]].map(([tp, xx, yy], i) => { const p = kprog(T, K.Ar + 0.3 + i * 0.3, K.Ar + 0.7 + i * 0.3, kEase.rebote);
+          {[['hongos', 250, 760], ['arroz', 560, 760], ['sopa', 200, 1010], ['frijoles', 540, 1010], ['pasta', 880, 1010]].map(([tp, xx, yy], i) => { const p = kprog(T, K.Ar + 0.3 + i * 0.3, K.Ar + 0.7 + i * 0.3, kEase.rebote);
             return p > 0 ? <Tazon key={tp} x={xx} y={yy} s={0.8 * p} tipo={tp} seed={i + 3} /> : null; })}
         </>)}
       </Escena>
@@ -308,8 +307,8 @@ function RecalentarShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Microondas T={T} x={470} y={1000} on={1} gira={gira} display="0:45" />
-          <Vapor T={T} x={420} y={760} o={0.9} />
+          <Microondas T={T} x={470} y={900} on={1} gira={gira} display="0:45" />
+          <Vapor T={T} x={420} y={660} o={0.9} />
         </>)}
       </Escena>
 
@@ -317,31 +316,31 @@ function RecalentarShot() {
       <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.6} until={K.Ab - 0.3} texto="¿veneno?" x={300} y={560} tam={64} />
       <Chip T={T} at={K.G + 2.6} until={K.Ab - 0.3} texto="el peligro: horas tibio" x={330} y={690} tam={40} borde={KC.red} />
       <Etq T={T} at={K.G + 1.0} until={K.Ab - 0.3} x={60} y={1290 - 70} texto="champiñón · Agaricus bisporus" tam={26} color={KC.ink} />
-      <Globo T={T} at={K.Ab + 0.3} until={K.Or - 0.3} x={420} y={760} w={600} texto="«Los hongos no se recalientan»" tam={50} />
+      <Globo T={T} at={K.Ab + 0.3} until={K.Or - 0.3} x={420} y={700} w={600} texto="«Los hongos no se recalientan»" tam={50} />
       <Sello T={T} at={K.Ab + 2.2} x={200} y={560} texto="MITO" color={KC.red} r={95} />
       <Chip T={T} at={K.Or + 0.3} until={K.Bq - 0.3} texto="antes, sin refrigerador" x={540} y={420} tam={42} borde={KC.ink} />
       <Chip T={T} at={K.Or + 2.0} until={K.Bq - 0.3} texto="probablemente" x={845} y={640} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.Or + 1.4} until={K.Bq - 0.3} x={710} y={1240} texto="refri: no había" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Or + 1.4} until={K.Bq - 0.3} x={700} y={1150} texto="refri: no había" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Bq + 0.4} until={K.Tb - 0.3} texto="mucha agua" x={620} y={470} tam={44} borde={KC.cyan} />
-      <Etq T={T} at={K.Bq + 1.9} until={K.Tb - 0.3} x={380} y={600} texto="bacterias" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Bq + 1.9} until={K.Tb - 0.3} x={380} y={540} texto="bacterias" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Tb + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO · TIBIO POR HORAS" x={540} y={430} tam={32} borde={KC.cyan} mono />
       <Cronometro T={T} at={K.Tb + 0.3} until={K.P - 0.3} factor={1800} x={540} y={560} etiqueta="TIEMPO TIBIO (time-lapse)" />
-      <Contador T={T} at={K.Tb + 0.3} desde={nDup(K.Tb + 0.3, K.Tb + 3.0)} hasta={nDup(K.Tb + 0.3, K.Tb + 3.0)} dur={0.01} sufijo=" bacterias" x={540} y={1180} tam={50} color={RC.bac} />
-      <Etq T={T} at={K.Tb + 2.2} until={K.P - 0.3} x={60} y={680} texto="● toxinas" tam={32} color={RC.toxina2} />
+      {T > K.Tb + 0.3 && T < K.P - 0.3 && <Contador T={T} at={K.Tb + 0.3} desde={nDup(K.Tb + 0.3, K.Tb + 3.0)} hasta={nDup(K.Tb + 0.3, K.Tb + 3.0)} dur={0.01} sufijo=" bacterias" x={540} y={660} tam={44} color={RC.bac} />}
+      <Etq T={T} at={K.Tb + 2.2} until={K.P - 0.3} x={60} y={1130} texto="● toxinas" tam={32} color={RC.toxina2} />
       <TarjetaEstudio T={T} at={K.To + 0.2} until={K.To + 2.0} anio="FDA" quien="Bad Bug Book · 2.ª ed." revista="manual de la FDA de EE. UU., 2012" x={540} y={560} />
-      <Etq T={T} at={K.To + 0.4} until={K.Ca - 0.3} x={60} y={1290 - 90} texto="Bacillus cereus" it tam={30} color={RC.bac} />
-      <Chip T={T} at={K.To + 0.5} until={K.Ca - 0.3} texto="ejemplo: arroz" x={360} y={1290 - 30} tam={30} borde={KC.yellow} />
-      <Etq T={T} at={K.To + 1.3} until={K.En - 0.3} x={460} y={760} texto="cereulida · toxina del vómito" tam={28} color={RC.toxina2} />
-      <NumeroGigante T={T} at={K.To + 2.3} until={K.Ca - 0.3} valor={121} dur={2.0} sufijo=" °C" x={590} y={620} tam={120} color={KC.red} />
-      <Chip T={T} at={K.To + 4.4} until={K.Ca - 0.3} texto="durante 30 min: sigue intacta" x={480} y={950} tam={34} borde={RC.toxina} />
+      <Etq T={T} at={K.To + 0.4} until={K.Ca - 0.3} x={560} y={960} texto="Bacillus cereus" it tam={30} color={RC.bac} />
+      <Chip T={T} at={K.To + 0.5} until={K.Ca - 0.3} texto="ejemplo: arroz" x={720} y={1060} tam={30} borde={KC.yellow} />
+      <Etq T={T} at={K.To + 1.3} until={K.En - 0.3} x={400} y={720} texto="cereulida · toxina del vómito" tam={28} color={RC.toxina2} />
+      <NumeroGigante T={T} at={K.To + 2.3} until={K.Ca - 0.3} valor={121} dur={2.0} sufijo=" °C" x={420} y={530} tam={120} color={KC.red} />
+      <Chip T={T} at={K.To + 4.4} until={K.Ca - 0.3} texto="30 min a 121 °C: sigue intacta" x={540} y={830} tam={34} borde={RC.toxina} />
       <Chip T={T} at={K.Ca + 0.4} until={K.En - 0.3} texto="bacterias: mueren" x={540} y={440} tam={40} borde={RC.bac} />
       <Chip T={T} at={K.Ca + 1.4} until={K.En - 0.3} texto="toxina ya hecha: se queda" x={540} y={540} tam={40} borde={RC.toxina} />
       <NumeroGigante T={T} at={K.En + 0.2} until={K.Rf - 0.3} valor={2} dur={0.4} sufijo=" h" etiqueta="al refri antes de" x={330} y={560} tam={170} color={KC.yellow} />
       <Chip T={T} at={K.En + 1.4} until={K.Rf - 0.3} texto="recipientes bajitos" x={330} y={820} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.En + 0.6} until={K.Rf - 0.3} x={60} y={700} texto="FDA (EE. UU.), 2024" tam={26} color={KC.ink} />
       <NumeroGigante T={T} at={K.Rf + 0.3} until={K.Rc - 0.3} valor={4} dur={0.5} prefijo="≤ " sufijo=" °C" etiqueta="refri a máximo" x={540} y={560} tam={150} color={KC.cyan} />
-      <Chip T={T} at={K.Rf + 2.4} until={K.Rc - 0.3} texto="comerlos en 24 h" x={540} y={900} tam={46} borde={KC.gold} />
-      <Etq T={T} at={K.Rf + 0.8} until={K.Rc - 0.3} x={90} y={1180} texto="Verbraucherzentrale NRW (Alemania), 2025" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.Rf + 2.4} until={K.Rc - 0.3} texto="comerlos en 24 h" x={540} y={860} tam={46} borde={KC.gold} />
+      <Etq T={T} at={K.Rf + 0.8} until={K.Rc - 0.3} x={90} y={1100} texto="Verbraucherzentrale NRW (Alemania), 2025" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Rc + 2.3} until={K.Ar - 0.3} texto="74 °C por dentro · FDA" x={330} y={520} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Rc + 3.3} until={K.Ar - 0.3} texto="1 sola vez" x={330} y={620} tam={44} borde={KC.gold} />
       <Etq T={T} at={K.Rc + 3.5} until={K.Ar - 0.3} x={60} y={700} texto="Verbraucherzentrale Bremen, 2025" tam={24} color={KC.ink} />
@@ -359,7 +358,7 @@ function RecalentarShot() {
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={150} y={1600} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ab - 0.1} texto="No son veneno: *el peligro es el tiempo tibio.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ab - 0.1} texto="No son veneno: *el peligro es lo tibio.*" />
       <Subtitulo T={T} idx={1} at={K.Ab + 0.1} until={K.Or - 0.1} texto="«Los hongos *no se recalientan*»" />
       <Subtitulo T={T} idx={2} at={K.Or + 0.1} until={K.Bq - 0.1} texto="Viene de cuando *no había refri.*" />
       <Subtitulo T={T} idx={3} at={K.Bq + 0.1} until={K.Tb - 0.1} texto="Mucha agua: *caldo para bacterias.*" />
