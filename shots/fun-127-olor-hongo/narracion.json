@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Ese olor a hongo no es olor a tierra: es, sobre todo, una sola molécula."
+      "texto": "Ese olor a hongo no es olor a tierra: lo firma, sobre todo, una molécula de ocho carbonos."
     },
     {
       "escena": "Nombre",
@@ -17,15 +17,15 @@
     },
     {
       "escena": "Corte",
-      "texto": "Cuando cortas o machacas un champiñón, rompes sus células."
+      "texto": "Cuando machacas un champiñón, rompes sus células."
     },
     {
       "escena": "Grasa",
-      "texto": "Su grasa, el ácido linoleico, toca unas enzimas."
+      "texto": "Un ácido graso de sus células, el linoleico, toca unas enzimas."
     },
     {
-      "escena": "Lipoxigenasa",
-      "texto": "Una, la lipoxigenasa, le pega oxígeno."
+      "escena": "Oxigenasa",
+      "texto": "Una le pega oxígeno."
     },
     {
       "escena": "Liasa",
@@ -33,31 +33,31 @@
     },
     {
       "escena": "Umbral",
-      "texto": "Tu nariz lo nota con apenas una parte en mil millones."
+      "texto": "En agua, tu nariz lo nota a cerca de una parte en mil millones."
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Y por qué huele tanto a hongo?"
+      "texto": "¿Y por qué esa molécula huele tanto a hongo?"
     },
     {
       "escena": "Espejo",
-      "texto": "La molécula tiene dos formas, como tu mano izquierda y tu mano derecha."
+      "texto": "Tiene dos formas, como tu mano izquierda y tu mano derecha."
     },
     {
       "escena": "Formas",
-      "texto": "La R huele más a hongo; la S, a moho y a pasto."
+      "texto": "La R huele más a hongo; la S, a moho y a pasto. Los hongos hacen sobre todo la R."
     },
     {
       "escena": "Estudio",
-      "texto": "En 1984, buscando qué atrae a la mosca tsetsé de África, un equipo la encontró en el olor de las vacas."
+      "texto": "En 1984, buscando qué atrae a la mosca tsetsé en África, la encontraron en el olor de las vacas."
     },
     {
       "escena": "Moscos",
-      "texto": "También sale en tu sudor, y con el dióxido de carbono de tu aliento atrae a algunos moscos: hay trampas que la usan."
+      "texto": "También sale en tu sudor y, con el dióxido de carbono de tu aliento, atrae a algunos moscos: hay trampas con ella."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que ese olor a hongo es una molécula que el champiñón arma cuando rompes sus células."
+      "texto": "Así que ese olor a hongo es, sobre todo, una molécula que el champiñón arma cuando rompes sus células."
     }
   ],
   "mezcla": "oficial-30oct"
