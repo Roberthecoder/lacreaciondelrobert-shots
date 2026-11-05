@@ -131,9 +131,9 @@ const EST = { x: 560, y: 960 };
 const TUBO = (() => { const pts = []; for (let i = 0; i <= 40; i++) { const u = i / 40; const x = klerp(300, EST.x, u), y = klerp(770, EST.y - 10, u) + Math.sin(u * Math.PI) * -60 + Math.sin(u * 9) * 8; pts.push([x, y]); } return pts; })();
 function Enves({ T, tubo = 0, conidio = 1, cayo = 1 }) {
   const g = krng(11);
-  const filas = [600, 690, 790, 880, 1060, 1150];
+  const filas = [640, 720, 800, 880, 1060, 1150];
   return <g>
-    <rect x={0} y={560} width={KW} height={660} fill="#bfe8a6" />
+    <rect x={0} y={600} width={KW} height={620} fill="#bfe8a6" />
     {filas.map((fy, r) => <path key={'f' + r} d={'M 0 ' + fy + ' ' + Array.from({ length: 28 }, (_, i) => `Q ${i * 40 + 20} ${fy + (i % 2 ? 14 : -14)} ${i * 40 + 40} ${fy}`).join(' ')} stroke="#7fb86a" strokeWidth={5} fill="none" />)}
     {filas.slice(0, -1).map((fy, r) => Array.from({ length: 7 }, (_, i) => { const xx = 80 + i * 150 + (r % 2) * 70 + g() * 30; const y2 = filas[r + 1]; if (Math.abs(xx - EST.x) < 190 && fy > 800 && fy < 1100) return null;
       return <path key={r + '-' + i} d={`M ${xx} ${fy} Q ${xx + 18} ${(fy + y2) / 2} ${xx - 6} ${y2}`} stroke="#7fb86a" strokeWidth={5} fill="none" />; }))}
@@ -169,7 +169,7 @@ function CorteCelula({ T, quit = 0, frag = 0, capt = 0, alarma = 0, ros = 0, cal
   const cloros = Array.from({ length: 16 }, () => [80 + g() * 900, 850 + g() * 270, g() * 180]);
   return <g>
     {/* célula de arriba (solo su orilla de abajo) */}
-    <rect x={40} y={430} width={1000} height={225} rx={40} fill={DX.citop} stroke={DX.pared} strokeWidth={16} />
+    <rect x={40} y={470} width={1000} height={185} rx={40} fill={DX.citop} stroke={DX.pared} strokeWidth={16} />
     {[[150, 610], [330, 600], [520, 615], [760, 605], [930, 612]].map(([a, b], i) => <ellipse key={i} cx={a} cy={b} rx={34} ry={16} fill={DX.cloro} stroke={DX.grana} strokeWidth={2} />)}
     {/* célula de abajo: pared, membrana, citoplasma */}
     <rect x={40} y={PARED_Y} width={1000} height={400} rx={40} fill={DX.citop} stroke={DX.pared} strokeWidth={18} />
@@ -190,7 +190,7 @@ function CorteCelula({ T, quit = 0, frag = 0, capt = 0, alarma = 0, ros = 0, cal
         {c > 0.6 && <circle cx={0} cy={40} r={30 + Math.sin(T * 8) * 4} fill="none" stroke={KC.gold2} strokeWidth={3} opacity=".7" />}
       </g>; })}
     {/* guardián (receptor de resistencia Cf-4): proteína de superficie con brazos rizados que reconoce a Avr4 */}
-    {guardia > 0 && <g transform={`translate(760 ${MEMB_Y}) scale(${kEase.rebote(kclamp(guardia * 3, 0, 1))})`}>
+    {guardia > 0 && <g transform={`translate(760 ${MEMB_Y}) scale(${kEase.rebote(kclamp(guardia * 3, 0, 1)) * 1.6})`}>
       <line x1={0} y1={0} x2={0} y2={30} stroke={DX.guardia} strokeWidth={10} />
       <path d="M 0 0 C -40 -10 -40 -40 -10 -44 C 20 -48 30 -20 10 -14" stroke={DX.guardia} strokeWidth={9} fill="none" strokeLinecap="round" />
       <path d="M 0 0 C 40 -10 44 -36 18 -40" stroke={DX.guardia} strokeWidth={9} fill="none" strokeLinecap="round" />
@@ -276,7 +276,7 @@ function HojaArabidopsis({ T, x, y, s = 1, mancha = 0 }) {
 }
 
 // ---------- PLANTA CON ALARMA A DISTANCIA (escena 11) ----------
-const TALLO = [[300, 1190], [292, 1060], [304, 940], [296, 820], [300, 690]];
+const TALLO = [[380, 1190], [372, 1060], [384, 940], [376, 820], [380, 690]];
 const HOJAS_P = [{ y: 1060, lado: -1, atac: true }, { y: 940, lado: 1 }, { y: 820, lado: -1 }, { y: 700, lado: 1 }];
 function HojaCompuesta({ x, y, lado, s = 1, rojo = 0, escudo = 0, sa = 0, T = 0, atac = false }) {
   const fol = (u, k) => { const px = lado * 230 * u, py = -30 * u; return <g key={k}>
@@ -385,10 +385,10 @@ function DefensaShot() {
       <Escena T={T} a={K.E} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Roseta T={T} x={290} y={1000} s={0.95} alarma={kprog(T, K.E + 3.2, K.E + 3.6)} />
-          <Roseta T={T} x={790} y={1000} s={0.95} />
+          <Roseta T={T} x={290} y={940} s={0.95} alarma={kprog(T, K.E + 3.2, K.E + 3.6)} />
+          <Roseta T={T} x={790} y={940} s={0.95} />
           {[290, 790].map((rx, j) => Array.from({ length: 4 }, (_, i) => { const q = kprog(T, K.E + 2.2 + i * 0.12, K.E + 3.1 + i * 0.12); if (q <= 0 || q >= 1) return null;
-            return <polygon key={j + '-' + i} transform={`translate(${rx - 60 + i * 40} ${klerp(760, 960, kEase.suave(q))})`} points={[0, 60, 120, 180, 240, 300].map((a) => `${12 * Math.cos((a + 30) * Math.PI / 180)},${12 * Math.sin((a + 30) * Math.PI / 180)}`).join(' ')} fill={DX.quitina} stroke={KC.ink} strokeWidth={3} />; }))}
+            return <polygon key={j + '-' + i} transform={`translate(${rx - 60 + i * 40} ${klerp(700, 900, kEase.suave(q))})`} points={[0, 60, 120, 180, 240, 300].map((a) => `${12 * Math.cos((a + 30) * Math.PI / 180)},${12 * Math.sin((a + 30) * Math.PI / 180)}`).join(' ')} fill={DX.quitina} stroke={KC.ink} strokeWidth={3} />; }))}
         </>)}
       </Escena>
       <Escena T={T} a={K.M} b={K.As} zoom={0.04}>
@@ -403,13 +403,13 @@ function DefensaShot() {
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
           <path d={'M ' + TALLO.map((p) => p.join(' ')).join(' L ')} stroke={DX.hoja2} strokeWidth={22} fill="none" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 240 1190 L 360 1190 L 345 1260 L 255 1260 Z" fill={DX.maceta} stroke={KC.ink} strokeWidth={6} />
+          <path d="M 320 1190 L 440 1190 L 425 1260 L 335 1260 Z" fill={DX.maceta} stroke={KC.ink} strokeWidth={6} />
           {HOJAS_P.map((h, i) => { const llega = K.As + 0.8 + i * 0.55; const sa = h.atac ? 0 : kprog(T, llega, llega + 0.4);
-            return <HojaCompuesta key={i} T={T} x={300} y={h.y} lado={h.lado} s={1} atac={h.atac} rojo={h.atac ? 1 : 0} escudo={h.atac ? 0 : kprog(T, llega + 0.3, llega + 0.8)} sa={sa} />; })}
-          {(() => { const q = kprog(T, K.As + 0.4, K.As + 2.6); if (q <= 0 || q >= 1) return null; const pts = kParcial([[300, 1060], [304, 940], [296, 820], [300, 690]], q); const p = pts.at(-1);
+            return <HojaCompuesta key={i} T={T} x={380} y={h.y} lado={h.lado} s={0.85} atac={h.atac} rojo={h.atac ? 1 : 0} escudo={h.atac ? 0 : kprog(T, llega + 0.3, llega + 0.8)} sa={sa} />; })}
+          {(() => { const q = kprog(T, K.As + 0.4, K.As + 2.6); if (q <= 0 || q >= 1) return null; const pts = kParcial([[372, 1060], [384, 940], [376, 820], [380, 690]], q); const p = pts.at(-1);
             return <g><circle cx={p[0]} cy={p[1]} r={30} fill={KC.yellow} opacity=".45" /><circle cx={p[0]} cy={p[1]} r={16} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /></g>; })()}
-          <g transform="translate(860 860)" opacity={kprog(T, K.As + 2.6, K.As + 3.0)}><g transform={`scale(${kEase.rebote(kprog(T, K.As + 2.6, K.As + 3.1)) * 0.95})`}><AcidoSalicilico /></g></g>
-          <g opacity={kprog(T, K.As + 3.4, K.As + 3.8)}><Pastilla x={860} y={1090} s={0.9} /></g>
+          <g transform="translate(850 840)" opacity={kprog(T, K.As + 2.6, K.As + 3.0)}><g transform={`scale(${kEase.rebote(kprog(T, K.As + 2.6, K.As + 3.1)) * 0.95})`}><AcidoSalicilico /></g></g>
+          <g opacity={kprog(T, K.As + 3.4, K.As + 3.8)}><Pastilla x={850} y={1045} s={0.8} /></g>
         </>)}
       </Escena>
       {/* 12 · cierre: la misma hoja del inicio; cada puntito es una puerta cerrada */}
@@ -425,46 +425,47 @@ function DefensaShot() {
       {/* textos y etiquetas */}
       <Chip T={T} at={K.G + 0.9} until={K.SG - 0.3} texto="¿el hongo ganando?" x={300} y={420} tam={36} borde={KC.red} />
       <Chip T={T} at={K.G + 3.3} until={K.SG - 0.3} texto="¿o tu planta sacrificándose?" x={330} y={510} tam={30} borde={KC.mint} />
-      <Etq T={T} at={K.G + 1.6} until={K.SG - 0.3} x={60} y={1150} texto="hoja de jitomate" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.G + 3.2} until={K.SG - 0.3} x={640} y={700} texto="tu jitomate" tam={28} color={KC.ink} />
       <Etq T={T} at={K.SG + 0.4} until={K.Es - 0.3} x={60} y={600} texto="glóbulo blanco" tam={30} color={KC.ink} />
       <Etq T={T} at={K.SG + 0.6} until={K.Es - 0.3} x={60} y={645} texto="(tu cuerpo sí tiene)" tam={24} color={KC.ink} />
       <Chip T={T} at={K.SG + 1.1} until={K.Es - 0.3} texto="tu planta: no tiene" x={250} y={1080} tam={30} borde={KC.red} />
       <Etq T={T} at={K.SG + 1.8} until={K.Es - 0.3} x={520} y={1150} texto="células de la hoja" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Es + 0.1} until={K.Q - 0.3} texto="AL MICROSCOPIO · ENVÉS DE LA HOJA" x={540} y={420} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Es + 0.9} until={K.Q - 0.3} x={60} y={540} texto="moho de la hoja del jitomate" tam={28} color={KC.yellow} />
-      <EtqIt T={T} at={K.Es + 1.2} until={K.Q - 0.3} x={60} y={585} texto="conidio de *Cladosporium fulvum*" tam={28} color={KC.yellow} />
-      <Etq T={T} at={K.Es + 2.4} until={K.Q - 0.3} x={60} y={1180} texto="estoma (poro de la hoja)" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Es + 0.9} until={K.Q - 0.3} x={60} y={490} texto="moho de la hoja del jitomate" tam={28} color={KC.yellow} />
+      <EtqIt T={T} at={K.Es + 1.2} until={K.Q - 0.3} x={60} y={535} texto="conidio de *Cladosporium fulvum*" tam={28} color={KC.yellow} />
+      <Etq T={T} at={K.Es + 2.4} until={K.Q - 0.3} x={40} y={1050} texto="estoma" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Es + 2.6} until={K.Q - 0.3} x={40} y={1095} texto="(poro de la hoja)" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Q + 0.05} until={K.A - 0.3} texto="POR DENTRO · LA HOJA EN CORTE" x={400} y={380} tam={28} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Q + 0.4} until={K.A - 0.3} x={60} y={470} texto="la hifa crece entre las células" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.Q + 0.8} until={K.A - 0.3} x={60} y={515} texto="su pared: quitina" tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.Q + 0.4} until={K.A - 0.3} x={60} y={505} texto="la hifa crece entre las células" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Q + 0.8} until={K.A - 0.3} x={60} y={548} texto="su pared: quitina" tam={28} color={KC.gold2} />
       <EtqIt T={T} at={K.R + 0.4} until={K.A + 4.8} x={80} y={1125} texto="receptores (LYK5 + CERK1 en *Arabidopsis*)" tam={26} color="#7fe0ff" />
       <Chip T={T} at={K.A + 0.3} until={K.P - 0.3} texto="oxígeno reactivo" x={250} y={390} tam={32} borde={DX.ros} />
       <Chip T={T} at={K.A + 1.8} until={K.P - 0.3} texto="callosa: refuerza la pared" x={320} y={470} tam={30} borde={DX.callosa} />
       <Chip T={T} at={K.A + 3.1} until={K.P - 0.3} texto="quitinasas: cortan la quitina" x={330} y={550} tam={30} borde={DX.quitinasa} />
-      <Etq T={T} at={K.Ef + 0.4} until={K.S - 0.3} x={60} y={400} texto="efectores del hongo" tam={30} color={DX.efector} />
-      <Etq T={T} at={K.Ef + 1.4} until={K.S - 0.3} x={60} y={450} texto="Avr4: le tapa la quitina" tam={28} color={DX.avr4} />
-      <EtqIt T={T} at={K.Ef + 3.3} until={K.S - 0.3} x={60} y={510} texto="guardián: receptor del gen *Cf-4*" tam={28} color={DX.guardia} />
+      <Etq T={T} at={K.Ef + 0.4} until={K.S - 0.3} x={60} y={340} texto="efectores del hongo" tam={30} color={DX.efector} />
+      <Etq T={T} at={K.Ef + 1.4} until={K.S - 0.3} x={60} y={378} texto="Avr4: le tapa la quitina" tam={28} color={DX.avr4} />
+      <EtqIt T={T} at={K.Ef + 3.3} until={K.S - 0.3} x={60} y={416} texto="guardián: receptor del gen *Cf-4*" tam={28} color={DX.guardia} />
       <Chip T={T} at={K.Ef + 4.2} until={K.S - 0.3} texto="¡alarma otra vez!" x={540} y={1110} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.S + 0.6} until={K.E - 0.3} texto="respuesta hipersensible" x={300} y={410} tam={30} borde={KC.red} mono />
-      <Etq T={T} at={K.S + 1.6} until={K.E - 0.3} x={60} y={480} texto="solo frena a hongos" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.S + 1.6} until={K.E - 0.3} x={60} y={520} texto="que comen de células vivas" tam={26} color={KC.texto} />
-      <Chip T={T} at={K.S + 3.0} until={K.E - 0.3} texto="unas pocas células" x={540} y={1190} tam={30} borde={KC.gold2} />
+      <Chip T={T} at={K.S + 0.6} until={K.E - 0.3} texto="respuesta hipersensible" x={300} y={380} tam={30} borde={KC.red} mono />
+      <Etq T={T} at={K.S + 1.6} until={K.E - 0.3} x={60} y={440} texto="solo frena a hongos" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.S + 1.6} until={K.E - 0.3} x={60} y={478} texto="que comen de células vivas" tam={26} color={KC.texto} />
+      <Chip T={T} at={K.S + 3.0} until={K.E - 0.3} texto="unas pocas células" x={790} y={470} tam={30} borde={KC.gold2} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.M - 0.3} anio="2007" quien="Universidad Meiji, Japón" revista="PNAS, 2007 · con RIKEN" x={360} y={560} />
-      <EtqIt T={T} at={K.E + 1.4} until={K.M - 0.3} x={140} y={790} texto="*Arabidopsis* normal" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.E + 1.8} until={K.M - 0.3} x={640} y={790} texto="sin CERK1" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.E + 3.4} until={K.M - 0.3} texto="¡alarma!" x={290} y={1190} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.E + 3.8} until={K.M - 0.3} texto="ni la nota" x={790} y={1190} tam={30} borde={KC.ink} />
+      <EtqIt T={T} at={K.E + 1.4} until={K.M - 0.3} x={140} y={750} texto="*Arabidopsis* normal" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.E + 1.8} until={K.M - 0.3} x={640} y={750} texto="sin CERK1" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.E + 3.4} until={K.M - 0.3} texto="¡alarma!" x={290} y={1140} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.E + 3.8} until={K.M - 0.3} texto="sin alarma" x={790} y={1140} tam={30} borde={KC.ink} />
       <EtqIt T={T} at={K.M + 0.2} until={K.As - 0.3} x={60} y={420} texto="otro hongo: *Alternaria brassicicola*" tam={28} color={KC.ink} />
       <Etq T={T} at={K.M + 0.8} until={K.As - 0.3} x={60} y={465} texto="la mancha = el hongo avanzando" tam={26} color={KC.ink} />
       <Etq T={T} at={K.M + 0.4} until={K.As - 0.3} x={150} y={600} texto="normal" tam={28} color={KC.ink} />
       <Etq T={T} at={K.M + 0.4} until={K.As - 0.3} x={650} y={600} texto="sin CERK1" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.M + 2.6} until={K.As - 0.3} texto="≈20 % más grandes · 6 días" x={540} y={1210} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.M + 2.6} until={K.As - 0.3} texto="≈20 % más grandes · 6 días" x={540} y={1140} tam={30} borde={KC.red} />
       <Etq T={T} at={K.As + 0.5} until={K.C - 0.3} x={60} y={1150} texto="hoja atacada" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.As + 0.9} until={K.As + 2.8} x={330} y={640} texto="señal" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.As + 1.6} until={K.C - 0.3} x={60} y={600} texto="hojas sanas: se preparan" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.As + 2.8} until={K.C - 0.3} x={700} y={1000} texto="ácido salicílico" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.As + 3.6} until={K.C - 0.3} x={640} y={1165} texto="pariente: la aspirina" tam={24} color={KC.ink} />
-      <Etq T={T} at={K.As + 3.9} until={K.C - 0.3} x={640} y={1200} texto="(ácido acetilsalicílico)" tam={22} color={KC.ink} />
+      <Etq T={T} at={K.As + 0.9} until={K.As + 2.8} x={400} y={760} texto="señal" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.As + 1.6} until={K.C - 0.3} x={60} y={530} texto="hojas sanas: se preparan" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.As + 2.8} until={K.C - 0.3} x={690} y={965} texto="ácido salicílico" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.As + 3.6} until={K.C - 0.3} x={640} y={1100} texto="pariente: la aspirina" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.As + 3.9} until={K.C - 0.3} x={640} y={1140} texto="(ácido acetilsalicílico)" tam={22} color={KC.ink} />
       <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="cada puntito: una puerta cerrada" x={420} y={420} tam={28} borde={KC.mint} />
 
       {/* barras de escala */}
@@ -498,7 +499,7 @@ function DefensaShot() {
         [K.SG + 0.4, K.SG + 3.9, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.A - 0.4, K.A + 3.0, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.P + 0.05, K.Ef + 0.2, 'avatar_07_pensativo_puno', 'grande'],
-        [K.S + 0.0, K.S + 4.0, 'avatar_12_perfil_serio', 'arriba-der'],
+        [K.S + 0.0, K.S + 3.0, 'avatar_12_perfil_serio', 'arriba-der'],
         [K.E + 1.6, K.E + 5.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.As + 0.1, K.As + 4.4, 'avatar_11_sorprendido', 'arriba-der'],
         [K.C + 0.2, K.Ou - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />

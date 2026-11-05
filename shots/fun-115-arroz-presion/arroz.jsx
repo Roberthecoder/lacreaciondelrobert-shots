@@ -108,7 +108,7 @@ function EspigaTrigo({ T, x, y, s = 1, blanca = 0 }) {
     <path d="M 0 -620 L 0 -950" stroke={mixHex(AC.trigo, AC.trigoB, blanca)} strokeWidth={8} />
     <path d="M 70 -260 Q 150 -360 190 -330 Q 120 -300 10 -240 Z" fill={AC.hoja} stroke={KC.ink} strokeWidth={5} />
     {Array.from({ length: n }, (_, i) => { const u = i / (n - 1), yy = -630 - u * 300, sd = i % 2 ? 1 : -1;
-      const b = kclamp((blanca * 1.0 - (1 - u) * 0.0) * (u >= 0.45 ? 1 : 0) * kclamp((blanca - (1 - u) * 0.8) * 3, 0, 1), 0, 1);
+      const b = u >= 0.45 ? kclamp((blanca - (1 - u) / 0.55 * 0.6) / 0.4, 0, 1) : 0;
       const col = mixHex(AC.trigo, AC.trigoB, b);
       return <g key={i} transform={`translate(${sd * 18} ${yy}) rotate(${sd * 22})`}>
         <line x1={0} y1={-30} x2={sd * 12} y2={-140} stroke={mixHex('#c9a24a', '#e6e1cf', b)} strokeWidth={3} />
@@ -136,6 +136,8 @@ function MapaMundo({ p = 1, T }) {
     {[NORAM, CENAM, SUDAM, AFRICA, EURASIA].map((q, i) => <path key={i} d={poly(q)} fill={i === 2 ? KC.yellow : AC.tierra} stroke={KC.ink} strokeWidth={3} strokeLinejoin="round" />)}
     {p > 0 && <path d={'M ' + pts.map((q) => q.map((v) => v.toFixed(1)).join(' ')).join(' L ')} stroke="#fff" strokeWidth={7} fill="none" strokeDasharray="16 10" strokeLinecap="round" />}
     {p >= 1 && <circle cx={bx} cy={by} r={13 + Math.sin(T * 6) * 3} fill={KC.red} stroke={KC.ink} strokeWidth={4} />}
+    {p > 0.2 && <text x={mp(-60, -40)[0]} y={mp(-60, -40)[1] + 40} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#fff" stroke={KC.ink} strokeWidth={5} paintOrder="stroke">Sudamérica</text>}
+    {p >= 1 && <text x={bx + 2} y={by + 46} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#fff" stroke={KC.ink} strokeWidth={5} paintOrder="stroke">Bangladés</text>}
   </g>;
 }
 
@@ -227,12 +229,12 @@ function ArrozShot() {
       {/* 1 · Magnaporthe oryzae, el hongo del añublo del arroz */}
       <Escena T={T} a={K.H} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<MataArroz T={T} x={340} y={1180} s={0.95} manchas={kprog(T, K.H + 0.3, K.H + 1.4)} />)}
+        {fsvg(<MataArroz T={T} x={760} y={1215} s={0.8} manchas={kprog(T, K.H + 0.3, K.H + 1.4)} />)}
       </Escena>
       {/* 2–4 · al microscopio: la espora cae y se pega, germina, infla el apresorio, melanina y glicerol */}
       <Escena T={T} a={K.Es} b={K.Pr} zoom={0.0}>
         <FondoMicro T={T} />
-        {fsvg(<g transform={`translate(${790} ${960}) scale(${zMicro}) translate(${-790} ${-960})`}>
+        {fsvg(<g transform={`translate(540 1000) scale(1.5) translate(-540 -1000) translate(772 1004) scale(${zMicro}) translate(-772 -1004)`}>
           <SuperficieHoja y0={1010} />
           {tuboP > 0 && (() => { const pts = kParcial(tubo, tuboP); const d = 'M ' + pts.map((q) => q.join(' ')).join(' L ');
             return <g><path d={d} stroke={AC.conidioB} strokeWidth={24} fill="none" strokeLinecap="round" strokeLinejoin="round" />
@@ -260,7 +262,7 @@ function ArrozShot() {
                 {u > 0.4 && <text x={bx + Math.cos(a) * (R + 40)} y={by - Math.sin(a) * (R + 40) * 0.95} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={3}>✕</text>}</g> : null; })()}
             {presion > 0.2 && [0.2, 0.35, 0.5, 0.65, 0.8].map((f, i) => { const a = Math.PI * f, k = presion * (0.8 + 0.2 * Math.sin(T * 8 + i));
               return <line key={i} x1={bx + Math.cos(a) * (R - 80)} y1={by - Math.sin(a) * (R - 80) * 0.95} x2={bx + Math.cos(a) * (R - 80 + 50 * k)} y2={by - Math.sin(a) * (R - 80 + 50 * k) * 0.95} stroke="#fff" strokeWidth={8} strokeLinecap="round" opacity={0.85} />; })}
-            {T > K.Pr + 4.4 && <g opacity={kprog(T, K.Pr + 4.4, K.Pr + 4.8)}><Llanta x={560} y={600} r={66 * kprog(T, K.Pr + 4.4, K.Pr + 4.9, kEase.rebote)} T={T} /></g>}
+            {T > K.Pr + 4.4 && <g opacity={kprog(T, K.Pr + 4.4, K.Pr + 4.8)}><Llanta x={560} y={580} r={66 * kprog(T, K.Pr + 4.4, K.Pr + 4.9, kEase.rebote)} T={T} /></g>}
           </g>; })())}
       </Escena>
       {/* 6 · re-gancho */}
@@ -329,7 +331,7 @@ function ArrozShot() {
       <Escena T={T} a={K.Tr} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <EspigaTrigo T={T} x={240} y={1200} s={0.62} blanca={kprog(T, K.Tr + 0.5, K.Tr + 2.2, kEase.suave)} />
+          <EspigaTrigo T={T} x={200} y={1230} s={0.8} blanca={kprog(T, K.Tr + 0.5, K.Tr + 2.2, kEase.suave)} />
           <g opacity={kprog(T, K.Tr + 1.6, K.Tr + 2.0)}><MapaMundo T={T} p={kprog(T, K.Tr + 2.0, K.Tr + 3.4, kEase.suave)} /></g>
         </>)}
       </Escena>
@@ -350,26 +352,26 @@ function ArrozShot() {
       <Etq T={T} at={K.H + 0.3} until={K.Es - 0.3} x={60} y={390} texto="añublo del arroz" tam={40} color={KC.ink} />
       <Etq T={T} at={K.H + 0.6} until={K.Es - 0.3} x={60} y={450} texto="Magnaporthe oryzae" it tam={40} color={KC.ink} />
       <Etq T={T} at={K.H + 0.9} until={K.Es - 0.3} x={60} y={505} texto="(= Pyricularia oryzae)" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.H + 1.3} until={K.Es - 0.3} texto="se pierde del 10 al 30 % de la cosecha anual" x={540} y={1090} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.H + 1.6} until={K.Es - 0.3} texto="estimación de 2009" x={540} y={1170} tam={24} borde={KC.white} mono />
+      <Chip T={T} at={K.H + 1.3} until={K.Es - 0.3} texto="se pierde 10–30 % de la cosecha anual" x={360} y={700} tam={28} borde={KC.red} />
+      <Chip T={T} at={K.H + 1.6} until={K.Es - 0.3} texto="estimación de 2009" x={360} y={775} tam={24} borde={KC.white} mono />
       <Chip T={T} at={K.Es + 0.2} until={K.Ap - 0.2} texto="AL MICROSCOPIO · superficie de la hoja" x={460} y={380} tam={28} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Es + 1.0} until={K.Ap + 0.6} x={200} y={830} texto="espora: 3 células" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.Es + 1.6} until={K.Ap + 0.6} x={480} y={1080} texto="pegamento" tam={30} color="#9be8ff" />
-      <Etq T={T} at={K.Es + 1.2} until={K.Me + 2.4} x={60} y={1100} texto="cutícula de la hoja" tam={28} color={AC.cuti} />
-      <Etq T={T} at={K.Ap + 0.8} until={K.Me - 0.2} x={540} y={880} texto="tubo germinativo" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Ap + 2.0} until={K.Me + 2.4} x={640} y={800} texto="apresorio" tam={36} color={KC.gold2} />
-      <Etq T={T} at={K.Me + 0.6} until={K.Me + 2.4} x={160} y={700} texto="pared de melanina" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.Me + 1.6} until={K.Me + 2.4} x={160} y={760} texto="glicerol" tam={32} color={AC.glic} />
+      <Etq T={T} at={K.Es + 1.0} until={K.Ap + 0.6} x={90} y={850} texto="espora: 3 células" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.Es + 1.6} until={K.Ap + 0.6} x={360} y={1065} texto="pegamento" tam={30} color="#9be8ff" />
+      <Etq T={T} at={K.Es + 1.2} until={K.Me + 2.4} x={1040} y={1050} lado="izq" texto="cutícula de la hoja" tam={28} color={AC.cuti} />
+      <Etq T={T} at={K.Ap + 0.8} until={K.Me - 0.2} x={560} y={880} texto="tubo germinativo" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Ap + 2.0} until={K.Me + 2.4} x={720} y={840} texto="apresorio" tam={36} color={KC.gold2} />
+      <Etq T={T} at={K.Me + 0.6} until={K.Me + 2.4} x={460} y={785} texto="pared de melanina" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.Me + 1.6} until={K.Me + 2.4} x={460} y={895} texto="glicerol" tam={32} color={AC.glic} />
       <Chip T={T} at={K.Pr + 0.2} until={K.Pr + 2.4} texto="POR DENTRO · apresorio" x={360} y={560} tam={28} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Pr + 0.6} until={K.P - 0.3} x={60} y={760} texto="agua: entra" tam={32} color={AC.agua} />
+      <Etq T={T} at={K.Pr + 0.6} until={K.P - 0.3} x={60} y={820} texto="agua: entra" tam={32} color={AC.agua} />
       <Etq T={T} at={K.Pr + 1.6} until={K.P - 0.3} x={60} y={1205} texto="glicerol: no sale" tam={30} color={AC.glic} />
       <Medidor T={T} at={K.Pr + 0.5} until={K.P - 0.3} valor={presion} etiqueta="presión" texto={(v) => (v * 8).toFixed(1) + ' MPa' + (v > 0.99 ? ' (hasta)' : '')} x={60} y={380} ancho={600} color={KC.pink} />
-      <NumeroGigante T={T} at={K.Pr + 4.5} until={K.P - 0.3} valor={40} dur={0.8} prefijo="≈ " sufijo="×" x={290} y={600} tam={150} />
-      <Chip T={T} at={K.Pr + 4.9} until={K.P - 0.3} texto="la presión de una llanta de coche" x={360} y={720} tam={28} borde={KC.white} />
+      <NumeroGigante T={T} at={K.Pr + 4.5} until={K.P - 0.3} valor={40} dur={0.8} prefijo="≈ " sufijo="×" x={290} y={580} tam={150} />
+      <Chip T={T} at={K.Pr + 4.9} until={K.P - 0.3} texto="la presión de una llanta de coche" x={360} y={700} tam={28} borde={KC.white} />
       <Chip T={T} at={K.Cl + 0.2} until={K.E - 0.3} texto="AL MICROSCOPIO · corte de la hoja" x={440} y={380} tam={28} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Cl + 0.6} until={K.E - 0.3} x={1040} y={828} lado="izq" texto="cutícula" tam={28} color={AC.cuti} />
-      <Etq T={T} at={K.Cl + 1.4} until={K.E - 0.3} x={1040} y={866} lado="izq" texto="pared celular" tam={28} color="#a8e08a" />
-      <Etq T={T} at={K.Cl + 2.0} until={K.E - 0.3} x={600} y={1010} texto="clavija de penetración" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Cl + 0.6} until={K.E - 0.3} x={1040} y={790} lado="izq" texto="cutícula" tam={28} color={AC.cuti} />
+      <Etq T={T} at={K.Cl + 1.4} until={K.E - 0.3} x={1040} y={864} lado="izq" texto="pared celular" tam={28} color={KC.white} />
+      <Etq T={T} at={K.Cl + 2.0} until={K.E - 0.3} x={565} y={1010} texto="clavija de penetración" tam={28} color={KC.texto} />
       <Etq T={T} at={K.Cl + 3.2} until={K.E - 0.3} x={60} y={1170} texto="célula de la hoja" tam={28} color="#a8e08a" />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.7} anio="1991" quien="DuPont · Wilmington, Delaware" revista="Howard y cols. · PNAS, 1991 · EE. UU." y={780} />
       <Chip T={T} at={K.E + 3.2} until={K.I - 0.3} texto="plástico (Mylar) en vez de hoja" x={540} y={1110} tam={34} borde={KC.ink} />
@@ -379,12 +381,10 @@ function ArrozShot() {
       <Etq T={T} at={macroI + 0.6} until={K.Tr - 0.3} x={60} y={1080} texto="mancha en forma de rombo" tam={32} color={KC.ink} />
       <Etq T={T} at={macroI + 1.4} until={K.Tr - 0.3} x={60} y={560} texto="esporas nuevas" tam={32} color={KC.ink} />
       <Chip T={T} at={macroI + 1.8} until={K.Tr - 0.3} texto="esquemático" x={860} y={1110} tam={22} borde={KC.white} mono />
-      <Etq T={T} at={K.Tr + 0.4} until={K.C - 0.3} x={60} y={420} texto="añublo del trigo" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Tr + 1.2} until={K.C - 0.3} x={300} y={760} texto="espiga blanqueada" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Tr + 2.6} until={K.C - 0.3} texto="2016 · Bangladés · primera vez en Asia" x={540} y={700} tam={32} borde={KC.red} />
-      <Etq T={T} at={K.Tr + 3.0} until={K.C - 0.3} x={575} y={1150} texto="Sudamérica" tam={24} color={KC.ink} />
-      <Etq T={T} at={K.Tr + 3.4} until={K.C - 0.3} x={1040} y={1150} lado="izq" texto="Bangladés" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.Tr + 3.2} until={K.C - 0.3} texto="origen probable" x={760} y={800} tam={22} borde={KC.white} mono />
+      <Etq T={T} at={K.Tr + 0.4} until={K.C - 0.3} x={300} y={420} texto="añublo del trigo" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Tr + 1.2} until={K.C - 0.3} x={300} y={520} texto="espiga blanqueada" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Tr + 2.6} until={K.C - 0.3} texto="2016 · Bangladés · primera vez en Asia" x={690} y={700} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.Tr + 3.2} until={K.C - 0.3} texto="origen probable" x={700} y={795} tam={22} borde={KC.white} mono />
       <Chip T={T} at={K.Tr + 3.6} until={K.C - 0.3} texto="mapa esquemático" x={740} y={1200} tam={20} borde={KC.white} mono />
       <ChipIt T={T} at={K.C + 1.2} until={K.Ou} x={540} y={1180} tam={34} borde={KC.red}>empezó con un agujero hecho a presión</ChipIt>
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="esquemático" x={720} y={760} tam={22} borde={KC.white} mono />
@@ -392,7 +392,7 @@ function ArrozShot() {
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="1 cm" largo={100} />
       <BarraEscala T={T} at={K.H} until={K.Es} texto="10 cm" largo={60} />
-      <BarraEscala T={T} at={K.Es} until={K.Me + 2.5} texto="20 µm" largo={200} />
+      <BarraEscala T={T} at={K.Es} until={K.Me + 2.5} texto="20 µm" largo={300} />
       <BarraEscala T={T} at={K.Pr} until={K.P} texto="5 µm" largo={330} />
       <BarraEscala T={T} at={K.Cl} until={K.E} texto="5 µm" largo={200} />
       <BarraEscala T={T} at={K.I} until={macroI} texto="20 µm" largo={100} />
