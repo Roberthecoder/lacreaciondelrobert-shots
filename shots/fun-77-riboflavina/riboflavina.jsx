@@ -455,9 +455,9 @@ function RiboflavinaShot() {
       <Etq T={T} at={K.H + 0.3} until={K.V - 0.3} x={290} y={590} texto="levadura del pan" tam={28} color={KC.texto} />
       <Etq T={T} at={K.H + 0.6} until={K.V - 0.3} x={290} y={636} texto="Saccharomyces cerevisiae" it tam={28} color={KC.gold2} />
       <Etq T={T} at={K.H + 1.1} until={K.V - 0.3} x={290} y={682} texto="Saccharomycetaceae" it tam={26} color={KC.texto} />
-      <Etq T={T} at={K.H + 1.2} until={K.V - 0.3} x={60} y={1130} texto="Ashbya gossypii" it tam={34} color={KC.gold2} />
+      <Etq T={T} at={K.H + 1.2} until={K.V - 0.3} x={60} y={1050} texto="Ashbya gossypii" it tam={34} color={KC.gold2} />
       <Chip T={T} at={K.H + 0.9} until={K.V - 0.3} texto="de la misma familia" x={540} y={460} tam={30} borde={KC.gold} mono />
-      <Etq T={T} at={K.H + 2.2} until={K.V - 0.3} x={60} y={1180} texto="sus puntas se parten en dos" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.H + 2.2} until={K.V - 0.3} x={60} y={1100} texto="sus puntas se parten en dos" tam={28} color={KC.texto} />
       <Etq T={T} at={K.V + 1.8} until={K.P - 0.3} x={60} y={1050} texto="vacuolas con riboflavina" tam={32} color={KC.yellow} />
       <Etq T={T} at={K.V + 0.6} until={K.P - 0.3} x={60} y={720} texto="núcleos · tabiques" tam={28} color={RB.nucleo} />
       <Chip T={T} at={K.V + 0.5} until={K.P - 0.3} texto="deja de crecer" x={360} y={590} tam={32} borde={KC.mint} mono />
