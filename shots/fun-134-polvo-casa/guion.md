@@ -22,14 +22,14 @@
 | 7 | ADN | Al leer su ADN encontraron más de setenta mil tipos de hongos. | Fondo oscuro. El hisopo entra a un tubo; hebra de ADN que se lee ("leyendo ADN…"). Contador que sube a "72,284 tipos de hongos (filotipos) · en todas las muestras". TarjetaEstudio "2015 · U. de Colorado + NC State · *Proc. R. Soc. B*". |
 | 8 | Afuera | Los hongos de adentro venían, sobre todo, de afuera. | Fondo menta. Dos marcos lado a lado ("adentro" y "afuera") con sus esporas iguales que se conectan con líneas. Chip "65 % de los hongos de adentro también estaban afuera". |
 | 9 | Bacterias | Las bacterias, en cambio, delatan quién vive ahí: hasta si hay perro, con noventa y dos por ciento de acierto. | Fondo amarillo. Bacterias (bastoncitos y bolitas) salen de una persona y de un perrito dibujados. Número grande "92 %" · "acierto para saber si hay perro (con las bacterias)". Chip chico "gato: 83 %". |
-| 10 | Mapa | Y solo con hongos, otro estudio ubicó la mitad de las muestras a menos de doscientos treinta kilómetros de su origen. | Fondo cian. TarjetaEstudio "2015 · *PLOS ONE* · 928 muestras del exterior". Mapa esquemático: un punto "muestra" y un círculo de radio 230 km a su alrededor; número "230 km · error mediano (la mitad de las muestras, a menos)". Barra de escala 230 km en el mapa. |
+| 10 | Mapa | Y solo con hongos, en 2020 una inteligencia artificial ubicó la mitad de las muestras a menos de cien kilómetros de su origen. | Fondo cian. TarjetaEstudio "2020 · redes neuronales · ~1,300 muestras de polvo · J. R. Stat. Soc. C" (y abajo, chiquito: "en 2015, con otro método: 230 km"). Mapa esquemático: un punto "muestra" y un círculo de radio 100 km a su alrededor; número "< 100 km · error mediano (más de la mitad, a menos)". Barra de escala 100 km en el mapa. |
 | 11 | Forense | Por eso lo proponen para la ciencia forense. | Fondo lila. Una prenda y un objeto (llave) con polvo, una lupa y una etiqueta tipo evidencia "¿de dónde viene este polvo?". Chip "propuesta: ciencia forense". |
-| 12 | Cierre | Así que, cuando limpies tu puerta, estás borrando un mapa de la región donde vives. | **Regreso a la imagen del inicio:** el mismo marco de la puerta en fondo amarillo; un trapo pasa y el mapa de puntitos se borra junto con el polvo. Chip "un mapa de tu región, escrito en hongos" y chip chico "probado en EE. UU.; en México aún no se ha medido". |
+| 12 | Cierre | Así que, cuando limpies tu puerta, estás borrando un mapa de la región donde vives. | **Regreso a la imagen del inicio:** el mismo marco de la puerta en fondo amarillo; un trapo pasa y el mapa de puntitos se borra junto con el polvo. Chip "un mapa de tu región, escrito en hongos" y chip chico "Probado en EE. UU. por regiones; en México, solo a nivel país.". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave y continua, curiosa (de "detective"), sin golpe; se abre en «Los hongos de adentro venían, sobre todo, de afuera» y en el mapa. Efectos en el mismo cuadro: roce del dedo en el marco, soplo de esporas al entrar, tics de cada espora que aparece, talle del hisopo, tics rápidos de lectura de ADN y del contador, ladrido chiquito del perro, "ping" del círculo de 230 km, trapo que borra al final.
+**Música:** cama grave y continua, curiosa (de "detective"), sin golpe; se abre en «Los hongos de adentro venían, sobre todo, de afuera» y en el mapa. Efectos en el mismo cuadro: roce del dedo en el marco, soplo de esporas al entrar, tics de cada espora que aparece, talle del hisopo, tics rápidos de lectura de ADN y del contador, ladrido chiquito del perro, "ping" del círculo de 100 km, trapo que borra al final.
 
-Barra de escala: 10 cm (marco/puerta), 10 µm (esporas), 230 km (mapa). En las tarjetas no hay objeto que medir.
+Barra de escala: 5–10 cm (marco/puerta), 1 m (casa), 10 µm (esporas), 1,000 km y 100 km (mapas, esquemáticos), 2 nm (ADN), 50 cm (perro). En las tarjetas no hay objeto que medir.
 
 El dibujo es esquemático (mapas y esporas).
 
@@ -43,7 +43,7 @@ El dibujo es esquemático (mapas y esporas).
 | 4 | 17.6 | 20.0 | 07_pensativo_puno | `grande` | «¿Entonces tu polvo podría delatarte?» |
 | 5 | 27.5 | 31.0 | 04_bajando_lentes | `arriba-der` | «más de setenta mil tipos de hongos» |
 | 6 | 35.0 | 40.5 | 11_sorprendido | `arriba-der` | «hasta si hay perro… noventa y dos por ciento» |
-| 7 | 41.0 | 48.0 | 12_perfil_serio | `arriba-der` | «a menos de doscientos treinta kilómetros» / forense |
+| 7 | 41.0 | 48.0 | 12_perfil_serio | `arriba-der` | «a menos de cien kilómetros» / forense |
 | 8 | 53.0 | 57.8 | 02_apuntando_camara | `arriba-der` | «estás borrando un mapa de la región donde vives» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
@@ -73,4 +73,12 @@ Apariciones 8 (+ cierre) · **≈ 31.7 s** en pantalla (+ cierre 3.5 s) · 7 pos
    > "many fungal taxa produce spores that are tolerant of dessication and other environmental stresses"
    > "could be used by scientists to identify the origin of dust or soil samples found on objects, clothing, or archaeological artifacts"; "an important proof of concept of a novel approach in forensic biology"
 
-Notas para el verificador: "más de setenta mil tipos de hongos" = 72,284 filotipos de hongos en todas las muestras (adentro y afuera) de Barberán 2015, no por casa. "Unas mil doscientas casas" = ~1200 (Barberán); el análisis pareado adentro/afuera usó más de 1100. Los años 2012–2013 son del muestreo según Grantham (mismo proyecto). El 92 % es de Barberán (predicción con bacterias de adentro). Los 230 km son el error mediano de Grantham con 928 muestras del exterior.
+3. Grantham, N. S., Reich, B. J., Laber, E. B., Pacifici, K., Dunn, R. R., Fierer, N., Gebert, M., Allwood, J. S. y Faith, S. A. Global forensic geolocation with deep neural networks. *Journal of the Royal Statistical Society C* 69(4): 909–929 (2020); preprint arXiv:1905.11765 (28 may 2019). https://arxiv.org/abs/1905.11765
+   > "We apply the algorithm to fungi present in each of 1300 dust samples collected across the continental United States and then to a global dataset of dust samples from 28 countries."
+   > "Our algorithm makes remarkably good point predictions with more than half of the geolocation errors under 100 kilometers for the continental analysis and nearly 90% classification accuracy of a sample's country of origin for the global analysis."
+   > "The data were collected by citizen-science volunteers as part of the Wild Life of Our Homes (WLOH) project"; "dust samples taken by the volunteers from the upper door trim of the outside surface of an exterior door"
+   > "median prediction error less than 100 km in the continental U.S. and country classification nearly 90% for the global analysis"
+   > "Outdoor dust samples were collected … between November 2016 and February 2017"; "Among n = 399 samples, 10 − 15 samples were collected from each of the following countries … the Americas (Mexico, Costa Rica, Colombia, …)"
+   > "Samples within each country often stem from a single major city and thus do not permit estimation of within-country variation." → chip «en México, solo a nivel país».
+
+Notas para el verificador: "más de setenta mil tipos de hongos" = 72,284 filotipos de hongos en todas las muestras (adentro y afuera) de Barberán 2015, no por casa. "Unas mil doscientas casas" = ~1200 (Barberán); el análisis pareado adentro/afuera usó más de 1100. Los años 2012–2013 son del muestreo según Grantham (mismo proyecto). El 92 % es de Barberán (predicción con bacterias de adentro). Los 230 km (Grantham 2015, 928 muestras) solo salen en pantalla como antecedente «en 2015»; la cifra de la voz es la nueva: menos de 100 km (Grantham et al. 2020).

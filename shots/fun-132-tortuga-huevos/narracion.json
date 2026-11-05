@@ -13,15 +13,15 @@
     },
     {
       "escena": "Limpio",
-      "texto": "Salen limpios: el hongo nunca apareció en huevos tomados directo de la madre."
+      "texto": "Salen limpios: en Ecuador, huevos de carey tomados directo de la madre no traían el hongo."
     },
     {
       "escena": "Arena",
-      "texto": "Está en la arena: hongos del grupo Fusarium solani, que suelen comer materia muerta."
+      "texto": "Vive en la arena: el grupo Fusarium solani, que suele comer materia muerta."
     },
     {
       "escena": "Cascara",
-      "texto": "Tejen hilos sobre huevos dañados, deshacen la cáscara con ácidos y enzimas, y entran."
+      "texto": "Teje hilos sobre huevos dañados, deshace la cáscara con ácidos y enzimas, y entra."
     },
     {
       "escena": "Manchas",
@@ -41,11 +41,11 @@
     },
     {
       "escena": "Datos",
-      "texto": "En arena seca murieron tres de cada diez embriones; donde inundó la marea, casi todos."
+      "texto": "En arena seca no nacieron tres de cada diez huevos; en nidos inundados, casi ninguno, y ahí abundaba el hongo."
     },
     {
       "escena": "Mundo",
-      "texto": "El hongo apareció en las seis especies que buscaron, en tres océanos; entre ellas, la golfina, la misma que anida en Oaxaca."
+      "texto": "Lo hallaron en las seis especies buscadas, en playas de América, África y Australia, incluida la golfina, una de las que anidan en Oaxaca."
     },
     {
       "escena": "Calor",
@@ -53,7 +53,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Así que ese huevo no se echó a perder: su primer peligro estaba en la arena."
+      "texto": "Así que ese huevo no se echó a perder: su peligro estaba en la arena."
     }
   ],
   "mezcla": "oficial-30oct"

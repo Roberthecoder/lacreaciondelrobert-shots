@@ -5,19 +5,19 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa mancha morada en el abanico de mar no es su color: es su reacción a un hongo de tierra."
+      "texto": "Ese anillo morado no es el color del abanico de mar: es su defensa, y el sospechoso es un hongo de tierra."
     },
     {
       "escena": "Animal",
-      "texto": "Y el abanico no es planta: es una colonia de pólipos, parientes de los corales."
+      "texto": "Y no es planta: es una colonia de pólipos, parientes de los corales."
     },
     {
       "escena": "Hongo",
-      "texto": "El principal sospechoso, Aspergillus sydowii, suele vivir en el suelo."
+      "texto": "Se llama Aspergillus sydowii, y suele vivir en el suelo."
     },
     {
       "escena": "Hifas",
-      "texto": "Sus hilos, las hifas, se meten y se comen el tejido."
+      "texto": "Sus hilos, las hifas, se comen el tejido."
     },
     {
       "escena": "Defensa",
@@ -41,7 +41,7 @@
     },
     {
       "escena": "Florida",
-      "texto": "En los Cayos de Florida, desde 1997, perdieron más de la mitad de su tejido de abanico."
+      "texto": "En los Cayos de Florida, entre 1997 y 2003, se perdió más de la mitad del tejido de abanico."
     },
     {
       "escena": "Yucatan",
@@ -53,7 +53,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Hoy hay menos casos; quizá resisten mejor. Esa mancha morada es un animal defendiéndose."
+      "texto": "Después, los casos bajaron mucho; quizá resisten mejor. Ese anillo es un animal defendiéndose."
     }
   ],
   "mezcla": "oficial-30oct"
