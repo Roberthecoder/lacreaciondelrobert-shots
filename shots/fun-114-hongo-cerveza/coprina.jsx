@@ -81,14 +81,15 @@ function Tarro({ T, x, y, s = 1, rot = 0, rojo = 0, tache = 0 }) {
 // Átomo esquemático (círculo con letra).
 const At = ({ x, y, r = 22, c = '#5b5b66', t = 'C', tc = '#fff' }) => <g><circle cx={x} cy={y} r={r} fill={c} stroke={KC.ink} strokeWidth={4} /><text x={x} y={y + r * 0.38} textAnchor="middle" style={{ font:`700 ${r * 1.05}px ${KF.mono}` }} fill={tc}>{t}</text></g>;
 // 1-aminociclopropanol: anillo de 3 carbonos con –OH y –NH₂ en el mismo carbono.
-function ACP({ x, y, s = 1, rot = 0, o = 1 }) {
+// amina: true = NH₂ libre (1-aminociclopropanol); false = NH unido a la cadena de glutamina (coprina entera).
+function ACP({ x, y, s = 1, rot = 0, o = 1, amina = true }) {
   const P = [[0, -46], [-42, 26], [42, 26]];
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={o}>
     <path d={`M ${P[0][0]} ${P[0][1]} L ${P[1][0]} ${P[1][1]} L ${P[2][0]} ${P[2][1]} Z`} fill="none" stroke={KC.texto} strokeWidth={9} strokeLinejoin="round" />
     <line x1={0} y1={-46} x2={-52} y2={-100} stroke={KC.texto} strokeWidth={8} /><line x1={0} y1={-46} x2={52} y2={-100} stroke={KC.texto} strokeWidth={8} />
     {P.map(([px, py], i) => <At key={i} x={px} y={py} />)}
-    <At x={-58} y={-108} r={30} c={KC.red} t="OH" />
-    <At x={60} y={-108} r={30} c={KC.blue} t="NH₂" />
+    <At x={-58} y={-108} r={30} c={KC.blue} t={amina ? 'NH₂' : 'NH'} />
+    <At x={60} y={-108} r={30} c={KC.red} t="OH" />
   </g>;
 }
 // Coprina (esquemática): parte de glutamina (cadena) unida por N al anillo de 3 carbonos. parte 0..1: se separan.
@@ -97,14 +98,14 @@ function CoprinaMol({ x, y, s = 1, parte = 0, T = 0 }) {
   const ch = [[-330, 0], [-270, -30], [-210, 0], [-150, -30], [-90, 0]];
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <g transform={`translate(${-sep} ${sep * 0.25})`} opacity={1 - parte * 0.55}>
-      <path d={'M ' + ch.map((p) => p.join(' ')).join(' L ') + ` L -40 -20`} stroke={KC.texto} strokeWidth={8} fill="none" strokeLinejoin="round" />
+      <path d={'M ' + ch.map((p) => p.join(' ')).join(' L ') } stroke={KC.texto} strokeWidth={8} fill="none" strokeLinejoin="round" />
       <line x1={-270} y1={-30} x2={-270} y2={-90} stroke={KC.texto} strokeWidth={7} /><line x1={-150} y1={-30} x2={-150} y2={-90} stroke={KC.texto} strokeWidth={7} />
       {ch.map(([px, py], i) => <At key={i} x={px} y={py} r={20} />)}
       <At x={-370} y={30} r={24} c={KC.blue} t="N" /><At x={-270} y={-100} r={22} c={KC.red} t="O" /><At x={-150} y={-100} r={22} c={KC.red} t="O" />
     </g>
     <g transform={`translate(${sep * 0.6} 0)`}>
-      {parte < 0.5 && <line x1={-40} y1={-20} x2={10} y2={-40} stroke={KC.texto} strokeWidth={8} opacity={1 - parte * 2} />}
-      <ACP x={60} y={10} s={0.8} />
+      {parte < 0.5 && <line x1={-90 - sep * 1.6} y1={sep * 0.25} x2={-8} y2={-66} stroke={KC.texto} strokeWidth={8} opacity={1 - parte * 2} />}
+      <ACP x={60} y={10} s={0.8} amina={parte >= 0.5} />
     </g>
   </g>;
 }
@@ -269,7 +270,7 @@ function CoprinaShot() {
         </>)}
       </Escena>
       <Lupa T={T} at={K.Ti + 0.7} until={K.Co - 0.25} x={810} y={760} r={170} fx={540} fy={760} etiqueta="AL MICROSCOPIO · tinta" interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#3a3632" />
-        {Array.from({ length: 14 }, (_, i) => { const px = r + Math.cos(i * 2.3 + t * 0.25) * (18 + (i * 29) % 120), py = r + Math.sin(i * 2.3 + t * 0.25) * (18 + (i * 29) % 120); return <path key={i} d="M 0 -26 Q 15 -10 0 26 Q -15 -10 0 -26 Z" transform={`translate(${px} ${py}) rotate(${i * 47 + t * 15})`} fill="#141010" stroke="#6b625b" strokeWidth={2} />; })}</svg>} />
+        {Array.from({ length: 14 }, (_, i) => { const px = r + Math.cos(i * 2.3 + t * 0.25) * (18 + (i * 29) % 120), py = r + Math.sin(i * 2.3 + t * 0.25) * (18 + (i * 29) % 120); return <g key={i} transform={`translate(${px} ${py}) rotate(${i * 47 + t * 15})`}><path d="M 0 -26 C 16 -26 16 26 0 26 C -16 26 -16 -26 0 -26 Z" fill="#141010" stroke="#6b625b" strokeWidth={2} /><circle cx={0} cy={-21} r={3} fill="#c9c0b6" /></g>; })}</svg>} />
       {/* 3 · comestible de joven… pero trae coprina */}
       <Escena T={T} a={K.Co} b={K.Cp} zoom={0.06}>
         <FondoLunares color={KC.mint} />
@@ -384,7 +385,7 @@ function CoprinaShot() {
       <Chip T={T} at={K.Co + 0.2} until={K.Cp - 0.25} texto="se considera comestible de joven" x={370} y={470} tam={30} borde={KC.mint} />
       <Chip T={T} at={K.Cp + 0.1} until={K.E - 0.3} texto="POR DENTRO · tu cuerpo" x={540} y={420} tam={34} mono borde={KC.gold} />
       <Etq T={T} at={K.Cp + 0.3} until={K.Cp + 1.5} x={160} y={700} texto="coprina" tam={34} color={KC.gold2} />
-      <Etq T={T} at={K.Cp + 1.6} until={K.E - 0.3} x={150} y={1080} texto="1-aminociclopropanol" tam={34} color={KC.gold2} />
+      <Etq T={T} at={K.Cp + 1.6} until={K.E - 0.3} x={1040} y={1000} lado="izq" texto="1-aminociclopropanol" tam={34} color={KC.gold2} />
       <Chip T={T} at={K.E + 0.1} until={K.P - 0.3} texto="POR DENTRO · hígado" x={370} y={420} tam={34} mono borde={KC.gold} />
       <Etq T={T} at={K.E + 0.5} until={K.P - 0.3} x={60} y={1150} texto="aldehído deshidrogenasa (ALDH)" tam={32} color={CA.acetato} />
       <Etq T={T} at={K.E + 2.6} until={K.P - 0.3} x={690} y={760} texto="bloqueada" tam={34} color={KC.gold2} />
@@ -403,7 +404,7 @@ function CoprinaShot() {
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2011" quien="Centro de toxicología de Múnich" revista="Haberl et al., Clinical Toxicology" y={600} />
       <Chip T={T} at={K.Es + 1.2} until={K.Es + 3.0} texto="5 pacientes · otro hongo" x={540} y={900} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.Es + 3.2} until={K.D - 0.3} x={60} y={430} texto="Lepiota aspera" it tam={38} color={KC.ink} />
-      <Etq T={T} at={K.Es + 3.5} until={K.D - 0.3} x={60} y={482} texto="su toxina: aún desconocida" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Es + 3.5} until={K.D - 0.3} x={60} y={482} texto="su toxina: desconocida en 2011" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Es + 4.0} until={K.D - 0.3} x={470} y={830} texto="la reacción volvía al beber" tam={28} color={KC.ink} />
       <Chip T={T} at={K.D + 0.4} until={K.D + 2.5} texto="¿medicina contra el alcoholismo?" x={540} y={1130} tam={36} borde={KC.ink} />
       <SelloRect T={T} at={K.D + 3.6} x={300} y={760} texto="DESCARTADA" until={K.C - 0.1} />
@@ -417,6 +418,7 @@ function CoprinaShot() {
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={150} color={KC.ink} />
       <BarraEscala T={T} at={K.N} until={K.Co} texto="5 cm" largo={170} />
+      <BarraEscala T={T} at={K.Ti + 0.7} until={K.Co - 0.25} texto="10 µm" largo={52} x={760} y={850} />
       <BarraEscala T={T} at={K.Co} until={K.Cp} texto="5 cm" largo={150} />
       <BarraEscala T={T} at={K.Cp} until={K.P} texto="1 nm · esquemático" largo={120} />
       <BarraEscala T={T} at={K.P} until={K.A} texto="10 cm" largo={130} />

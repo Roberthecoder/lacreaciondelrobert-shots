@@ -10,7 +10,7 @@ Este hongo no es comestible ni venenoso, y ya: depende de lo que tomes después.
 Es Coprinopsis atramentaria, el coprino entintado: sombrero gris en forma de campana, acanalado, que crece en racimos (a menudo sobre madera enterrada). Al madurar, sus láminas se derriten en una tinta negra.
 Muchas guías lo consideran comestible de joven… pero trae coprina. Tu cuerpo la convierte en 1-aminociclopropanol, una molécula que bloquea la aldehído deshidrogenasa, una enzima que trabaja sobre todo en el hígado.
 ¿Y qué tiene que ver el alcohol? Tu hígado vuelve el alcohol acetaldehído, una sustancia tóxica, y esa enzima es la que lo desarma. Si está bloqueada, el acetaldehído se acumula. A los pocos minutos de beber: cara roja, corazón acelerado, náusea y vómito. Es la misma reacción que provoca el disulfiram, un fármaco que se usa contra el alcoholismo. Y puede pasar aunque bebas hasta unos tres días después de comer el hongo.
-En 2011, el centro de toxicología de Múnich reportó cinco pacientes con lo mismo, pero con otro hongo, Lepiota aspera (cuya toxina aún no se conoce): la reacción volvía al beber hasta 48 horas después.
+En 2011, el centro de toxicología de Múnich reportó cinco pacientes con lo mismo, pero con otro hongo, Lepiota aspera (su toxina no se conocía en 2011): la reacción volvía al beber hasta 48 horas después.
 Dato extra: la coprina se estudió como posible medicina contra el alcoholismo, pero se descartó porque en ratas dañó los testículos.
 Así que "comestible" también depende de lo que hagas después. No hay truco casero para saber si un hongo silvestre es seguro: ante la duda, no lo comas y pregunta a un micólogo. Si ya lo comiste y te sientes mal, ve a urgencias.
 Esto NO es una guía para identificar ni comer hongos. El dibujo es esquemático.
@@ -42,7 +42,7 @@ Descripción:
 Este hongo no es comestible ni venenoso, y ya: depende de lo que tomes después.
 Coprinopsis atramentaria, el coprino entintado, tiene el sombrero gris en forma de campana y acanalado, crece en racimos (a menudo sobre madera enterrada) y, al madurar, sus láminas se derriten en tinta negra. Muchas guías lo consideran comestible de joven… pero trae coprina.
 Tu cuerpo convierte la coprina en 1-aminociclopropanol, que bloquea la aldehído deshidrogenasa (ALDH), la enzima que en el hígado desarma al acetaldehído, la sustancia tóxica en la que se convierte el alcohol. Con la enzima bloqueada, si bebes, el acetaldehído se acumula y a los pocos minutos aparecen cara roja, corazón acelerado, náusea y vómito: la misma reacción del disulfiram, un fármaco contra el alcoholismo. Según una revisión de 2020, la reacción ocurre si bebes entre 30 minutos y 3 días después de comer el hongo.
-En 2011, el centro de toxicología de Múnich reportó cinco pacientes con el mismo cuadro tras comer otro hongo, Lepiota aspera (su toxina todavía no se conoce): la reacción podía volver con más alcohol hasta 48 horas después.
+En 2011, el centro de toxicología de Múnich reportó cinco pacientes con el mismo cuadro tras comer otro hongo, Lepiota aspera (en 2011 su toxina no se conocía): la reacción podía volver con más alcohol hasta 48 horas después.
 Dato extra: la coprina se estudió como posible medicina contra el alcoholismo, pero se descartó por sus efectos tóxicos; en ratas dañó los testículos (1979).
 Así que "comestible" también depende de lo que hagas después. No hay truco casero: ante la duda, no lo comas y pregunta a un micólogo; si ya lo comiste y te sientes mal, ve a urgencias.
 Esto NO es una guía para identificar ni comer hongos. El dibujo es esquemático.
@@ -72,7 +72,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 "Comestible" o "venenoso" no siempre basta para describir un hongo: a veces depende de lo que hagas después.
 Coprinopsis atramentaria se considera comestible de joven, pero contiene coprina. In vivo, la coprina se hidroliza a 1-aminociclopropanol, que inhibe de forma irreversible la aldehído deshidrogenasa 2 (ALDH2), la enzima que oxida el acetaldehído derivado del etanol. Resultado: si la persona bebe alcohol, el acetaldehído se acumula y aparece una reacción tipo disulfiram (rubor, taquicardia, náusea, vómito), descrita entre 30 minutos y 3 días después de comer el hongo.
-En 2011, el centro de toxicología de Múnich describió el mismo síndrome con otro hongo, Lepiota aspera, cuya toxina aún no se conoce. Y la coprina llegó a estudiarse como fármaco contra el alcoholismo, hasta que estudios de toxicología mostraron efectos mutagénicos y gonadotóxicos.
+En 2011, el centro de toxicología de Múnich describió el mismo síndrome con otro hongo, Lepiota aspera, cuya toxina no se había identificado en 2011. Y la coprina llegó a estudiarse como fármaco contra el alcoholismo, hasta que estudios de toxicología mostraron efectos mutagénicos y gonadotóxicos.
 Por qué importa: la toxicidad no es solo una propiedad de la sustancia, sino de la interacción con lo que consumimos después. Es un buen recordatorio para la toxicología de alimentos y para la comunicación de riesgos: no hay atajos caseros para decidir si un hongo silvestre es seguro.
 ¿Qué otros ejemplos conoces de algo seguro que se vuelve riesgoso por una interacción?
 Shot Fungi Mati 114 · La Creación del Robert

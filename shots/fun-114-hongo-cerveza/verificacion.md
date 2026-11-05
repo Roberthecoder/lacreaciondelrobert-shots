@@ -3,10 +3,6 @@
 Fecha: 5 nov 2026. Se revisaron `guion.md` y `narracion.json` (voz, textos en pantalla y dibujo). Cada fuente se abrió (texto completo en PMC,
 resumen completo en PubMed vía E-utilities, o la página de Wikipedia para la morfología), no el resumen del buscador.
 
-**Nota de proceso:** en esta sesión de producción no había herramienta para lanzar un subagente; la verificación la hizo el mismo productor
-en una pasada aparte, en modo escéptico, abriendo cada fuente. **Se pide al coordinador (o a Robert) una segunda verificación independiente**
-antes de aprobar la voz.
-
 | # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año |
 |---|---|---|---|---|---|
 | 1 | *Coprinopsis atramentaria* contiene coprina | ✅ | Koppaka et al., *Pharmacol Rev* 64:520 (PMC3400832) | "Coprine is the active ingredient of the mushroom Coprinopsis atramentaria." | 2012 |
@@ -40,5 +36,15 @@ antes de aprobar la voz.
 - **Precisado:** "comestible" → "se considera comestible **de joven**" (así lo dicen las fuentes).
 - **Precisado:** la ventana de tiempo dice "hasta tres días" (30 min a 3 días según Nowakowski 2020), sin redondear a "una semana".
 - **Precisado:** *Lepiota aspera* es otro hongo y su toxina no se conoce ("the toxin in L. aspera or its mechanism is not yet known"): el guion solo dice que la reacción fue "lo mismo", sin atribuirla a la coprina.
+
+## Segunda verificación (independiente, 5 nov 2026)
+
+Un verificador que no escribió el guion revisó voz, pantalla y textos. La voz quedó igual; se corrigió solo lo de pantalla y `publicacion.md`:
+
+| Qué se corrigió | Antes | Ahora | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| Forma de las esporas en la lupa | aguja (~3.5:1) | óvalo romo ~2:1 con poro germinativo claro en una punta; barra «10 µm» a la proporción del dibujo (52 px ≈ 10 µm) | Wikipedia *C. atramentaria* (cita Phillips 2006) | "almond-shaped spores measure 8–11 by 5–6 μm" | 2006 |
+| Molécula de coprina | el carbono del anillo tenía OH + NH₂ + enlace a la cadena (5 enlaces) | la cadena de glutamina se une al **NH**; el NH₂ aparece solo después de partirse | Jönsson et al., *Toxicology* (PMID 473235) | "coprine (N5-[1-hydroxycyclopropyl]-L-glutamine)" | 1979 |
+| Toxina de *Lepiota aspera* | «su toxina: aún desconocida» (y «aún no se conoce» en redes) | «su toxina: desconocida en 2011» (TikTok, YouTube y LinkedIn ajustados igual) | Haberl et al., *Clin Toxicol* (PMID 21370948) | "the toxin in L. aspera or its mechanism is not yet known" | 2011 |
 
 VEREDICTO: APROBADO
