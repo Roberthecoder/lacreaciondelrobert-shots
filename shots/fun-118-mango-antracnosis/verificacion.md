@@ -1,0 +1,38 @@
+# Verificación de hechos · fun-118-mango-antracnosis (Shot Fungi Mati #118)
+
+Verificación **independiente** (un verificador que no escribió el guion, lanzado por el coordinador del lote, 5 nov 2026). Resultado de la primera vuelta: 2 ❌ (cifra de exportación de 2024 vieja, en voz y en pantalla) y varios ⚠️. Todo se corrigió con la redacción que propuso el verificador; abajo va cada afirmación ya con su redacción final.
+
+| # | Afirmación (redacción final) | Veredicto | Fuente | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 1 | Esas manchas negras **muchas veces** no son golpes: es un hongo (antes generalizaba → corregido) | ✅ | Ploetz, UF-TREC, *Anthracnose of mango* — https://www.growables.org/information/TropicalFruit/documents/MangoAnthracnoseTREC.pdf | "Alternaria black spot (Alternaria alternata) is important in dry…" (hay otras causas de manchas: por eso «muchas veces») | ~2010 |
+| 2 | Entró cuando el mango aún estaba verde | ✅ | Dofuor et al., *Front. Microbiol.* 14:1168203 — https://pmc.ncbi.nlm.nih.gov/articles/PMC10484599/ | "tends to infest unripe mango fruits and become dormant until the fruit ripens" | 2023 |
+| 3 | Es *Colletotrichum* y causa la antracnosis | ✅ | Tovar-Pedraza et al., *Plant Disease* 104:137–146 (PMID 31730415) | "Mango anthracnose, caused by Colletotrichum spp." | 2020 |
+| 4 | La enfermedad más importante del mango **en casi todo el mundo** | ✅ | Tovar-Pedraza et al. 2020 | "the most significant disease of mango (Mangifera indica L.) in almost all production areas around the world" | 2020 |
+| 5 | Sus esporas llegan con la lluvia, de hojas enfermas | ✅ | Ploetz (UF-TREC); Nishijima, CTAHR — https://www.ctahr.hawaii.edu/oc/freepubs/pdf/hitahr_04-06-93_20-24.pdf | "Conidia are dispersed by rainsplash"; "Conidia are spread by splashing rain or irrigation water" | ~2010; 1993 |
+| 6 | Dibujo del conidio: cilíndrico, hialino, puntas redondeadas, ≈13 µm (9–20) × 3–4.7 µm; apresorio café oscuro de ~5–10 µm (corregido) | ✅ | Prihastuti, tesis MFU — https://mfuir.mfu.ac.th/jspui/bitstream/123456789/527/2/70565-Fulltext.pdf | "Conidia 8.7-20.3 x 3–4.7 µm (x = 12.87…) … hyaline, cylindrical with obtuse ends" | 2008 |
+| 7 | Forman un apresorio: un ancla oscura que perfora la cera (cutícula) | ✅ | Ploetz (UF-TREC) | "As appressoria age, they become melanized. Melanization strengthens the appressorium and facilitates penetration of the cuticle by infection pegs" | ~2010 |
+| 8 | Y ahí se queda quieto; por fuera, nada | ✅ | Prusky, *Acta Hortic.* 820 — https://ishs.org/ishs-article/820_62/ | "spores geminate on mango fruits and produce appressoria that also germinate and then become quiescent" | 2009 |
+| 9 | Al madurar, la cáscara pierde **buena parte** de sus defensas (corregido) | ✅ | Ploetz (UF-TREC); Hassan et al., *Physiol. Mol. Plant Pathol.* 71:158 — https://era.dpi.qld.gov.au/id/eprint/1142/ | "Quiescent infections renew develop once concentrations of preformed fungal inhibitors in fruit decline during the ripening process"; "Concentrations of 5-n-heptadecenylresorcinol were significantly lower at the 'sprung' and 'eating ripe' stages" | ~2010; 2007 |
+| 10 | **La fruta** se ablanda y se endulza (no «la cáscara»; corregido) | ✅ | Corrección del verificador (maduración normal del mango) | — | — |
+| 11 | El hongo despierta cuando madura | ✅ | Nishijima, CTAHR | "Infection of larger fruits usually remains latent (dormant) until the fruit ripens" | 1993 |
+| 12 | Salen manchas negras y hundidas; **si avanza**, llega a la pulpa (corregido) | ✅ | Ploetz (UF-TREC); Dofuor et al. 2023 | "Lesions on fruit are superficial and extend into the flesh only after large portions of the fruit surface are affected"; "black, sunken necrotic lesions appear on the fruit peel" | ~2010; 2023 |
+| 13 | A veces, rayas como lágrimas | ✅ | Dofuor et al. 2023 | "Tear staining, caused by spore-laden water droplets from diseased twigs and leaves" | 2023 |
+| 14 | Estudio de 2020 (*Plant Disease* 104(1):137–146) | ✅ | Tovar-Pedraza et al. 2020 | Plant Dis. 2020 Jan;104(1):137-146 | 2020 |
+| 15 | Científicos mexicanos (CIAD, Colegio de Postgraduados y Chapingo), con colaboradores de Brasil y Argentina (corregido) | ✅ | Afiliaciones de Tovar-Pedraza et al. 2020 | CIAD Culiacán; Colegio de Postgraduados, Montecillo; Universidad Autónoma Chapingo; CONICET-INTA (Argentina); UF Cariri y UFRPE (Brasil) | 2020 |
+| 16 | Analizaron 59 huertas (muestreo 2010–2012) | ✅ | Tovar-Pedraza et al. 2020 | "Surveys were carried out from 2010 to 2012 in 59 commercial orchards in the major mango growing states of Mexico" | 2010–2012 |
+| 17 | Cinco especies | ✅ | Tovar-Pedraza et al. 2020 | "C. alienum, C. asianum, C. fructicola, C. siamense, and C. tropicale were associated with symptoms of mango anthracnose" | 2020 |
+| 18 | Las más agresivas: *C. siamense* y *C. asianum* | ✅ | Tovar-Pedraza et al. 2020 | "C. siamense and C. asianum were the most virulent" (pruebas en fruta 'Manila') | 2020 |
+| 19 | México es el mayor exportador de mango | ✅ | FAO (2026), *Major Tropical Fruits Market Review 2025* — https://openknowledge.fao.org/handle/20.500.14283/CE1971EN | "exports from Mexico, the leading exporter of mangoes to world markets, grew by 2.3 percent over the full year, to some 450 000 tonnes" | 2025 |
+| 20 | Unas 450 000 toneladas en 2025 (antes ❌: 470 000 t de 2024, estimado viejo; el dato final de 2024 fue ~440 000 t, FAO Market Review 2024 — https://openknowledge.fao.org/handle/20.500.14283/CD6428EN) | ✅ | FAO 2026 | "to some 450 000 tonnes" | 2025 |
+| 21 | Casi nueve de cada diez a Estados Unidos | ✅ | FAO 2026 | "some 89 percent of Mexican mangoes were destined for the United States of America" | 2025 |
+| 22 | Más de una hora en el agua (mínimo 65 min) | ✅ | Federal Register 2015-09468 — https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-09468.pdf | "Up to 375 [g] 65 / 376 to 500 75 / 501 to 700 90 / 701 to 900 110" | 2015 |
+| 23 | Agua a 46 °C (46.1 °C) | ✅ | Federal Register 2003 — https://www.govinfo.gov/content/pkg/FR-2003-01-02/pdf/02-33049.pdf; National Mango Board — https://mango.org/wp-content/uploads/2017/10/Alternatives_to_Hot_Water_Treatment_Final-Report.pdf | "kept at 115 [deg]F throughout the treatment"; "115 to 116ºF (46.1 to 46.5ºC) for 65 to 110 minutes, depending on fruit weight" | 2003; 2017 |
+| 24 | En pantalla «65–110 min según el peso» (corregido: ya no por forma ni país) | ✅ | Federal Register 2015 | "treatment duration strictly governed by weight class… restrictions associated with shape or country of origin are no longer relevant" | 2015 |
+| 25 | **Casi todos** entran así (corregido: hay alternativas) | ✅ | National Mango Board 2017 | "the most common quarantine heat treatment in use today… Other treatment alternatives are currently available… forced hot air and irradiation" | 2017 |
+| 26 | El baño es contra la mosca de la fruta | ✅ | Federal Register 2015 | "to prevent the introduction… of Ceratitis capitata… and Anastrepha spp. fruit flies, including A. ludens" | 2015 |
+| 27 | Y **ayuda a frenar** al hongo (corregido) | ✅ | McGuire, *Plant Dis.* 75:946; Dofuor et al. 2023 | "46 °C for 90–115 min… significantly reduced anthracnose… by 60–87%"; "hot water dips are useful for controlling anthracnose" | 1991; 2023 |
+| 28 | Pantalla: «≈ 450 000 t · exportación de mango de México, 2025 (FAO, 2026)» y barra 89 % EE. UU. (antes ❌ con 2024) | ✅ | FAO 2026 | ver #19–#21 | 2025 |
+
+Lo que no afirma nada nuevo: «igual que tú» (chiste: tú también esperas a que madure), «No era un golpe» (regresa al gancho, ya matizado con «muchas veces»). El dibujo es esquemático.
+
+VEREDICTO: APROBADO

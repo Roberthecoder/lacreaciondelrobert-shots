@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Cacao base narrada.dc.html",
+  "salida": "Shot Cacao narrado.dc.html",
+  "nota": "Shot Fungi Mati #117. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa mazorca no está nevada: esa escarcha son esporas de un hongo que pudre el cacao de tu chocolate."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Es Moniliophthora roreri, y solo ataca los frutos: del cacao y de sus parientes."
+    },
+    {
+      "escena": "Entra",
+      "texto": "Una espora cae en una mazorca joven y se mete."
+    },
+    {
+      "escena": "Escondido",
+      "texto": "Por fuera puede verse sana hasta tres meses, mientras el hongo crece dentro."
+    },
+    {
+      "escena": "Semillas",
+      "texto": "Las semillas, que son el cacao, se pudren."
+    },
+    {
+      "escena": "Mancha",
+      "texto": "Luego sale una mancha café a la que le dicen «chocolate»."
+    },
+    {
+      "escena": "Escarcha",
+      "texto": "Encima brota un polvo blanco de esporas en cadenitas: esa es la nieve."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cuántas esporas hay ahí?"
+    },
+    {
+      "escena": "Numero",
+      "texto": "Millones en una sola mazorca, y el viento se las lleva."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Llegó a Chiapas y Tabasco en 2005. Entre 2011 y 2012, un equipo de investigadores siguió en Tabasco y Chiapas más de diez mil mazorcas: en promedio, más del setenta y cinco por ciento se enfermaron."
+    },
+    {
+      "escena": "Manejo",
+      "texto": "Por eso conviene cortar cada semana las mazorcas enfermas, antes de que nieven, y sembrar variedades más tolerantes."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa mazorca no está nevada: está sembrando el hongo que se come tu chocolate."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

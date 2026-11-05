@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Defensa base narrada.dc.html",
+  "salida": "Shot Defensa narrado.dc.html",
+  "nota": "Shot Fungi Mati #119. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esos puntitos cafés no siempre son el hongo ganando: pueden ser tu planta sacrificándose."
+    },
+    {
+      "escena": "SinGlobulos",
+      "texto": "Tu planta no tiene glóbulos blancos: cada célula puede defenderse sola."
+    },
+    {
+      "escena": "Espora",
+      "texto": "Cae una espora del moho del jitomate y su hifa entra por un poro."
+    },
+    {
+      "escena": "Quitina",
+      "texto": "Pero la quitina de su pared la delata."
+    },
+    {
+      "escena": "Receptor",
+      "texto": "La planta tiene receptores que la atrapan."
+    },
+    {
+      "escena": "Alarma",
+      "texto": "Suena la alarma: oxígeno reactivo, callosa en la pared y quitinasas que cortan la del hongo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si el hongo apaga la alarma?"
+    },
+    {
+      "escena": "Efectores",
+      "texto": "Lo intenta con efectores. Pero si tu planta trae el gen de resistencia indicado, los reconoce."
+    },
+    {
+      "escena": "Sacrificio",
+      "texto": "Las células atacadas se matan: al hongo que solo come de células vivas lo dejan sin comida."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2007, en Japón, le apagaron a Arabidopsis CERK1, clave de su sensor de quitina: dejó de notarla."
+    },
+    {
+      "escena": "Manchas",
+      "texto": "Con otro hongo, Alternaria, sus manchas fueron como veinte por ciento más grandes."
+    },
+    {
+      "escena": "Aspirina",
+      "texto": "La alarma viaja: en las hojas sanas sube el ácido salicílico, pariente de la aspirina."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "No siempre son derrota: son tu planta cerrándole la puerta al hongo."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

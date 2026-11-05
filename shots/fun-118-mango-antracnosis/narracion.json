@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Mango base narrada.dc.html",
+  "salida": "Shot Mango narrado.dc.html",
+  "nota": "Shot Fungi Mati #118. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Si la voz real pasa de 58 s, ajustar 'velocidad' (sin créditos).",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esas manchas negras de tu mango muchas veces no son golpes: es un hongo que entró estando verde."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Es Colletotrichum: causa antracnosis, la enfermedad más importante del mango en casi todo el mundo."
+    },
+    {
+      "escena": "Lluvia",
+      "texto": "Sus esporas llegan con la lluvia, de hojas enfermas."
+    },
+    {
+      "escena": "Apresorio",
+      "texto": "Forman un apresorio: un ancla oscura que perfora la cera."
+    },
+    {
+      "escena": "Dormido",
+      "texto": "Y ahí se queda quieto."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Qué espera?"
+    },
+    {
+      "escena": "Despierta",
+      "texto": "Al madurar, la cáscara pierde buena parte de sus defensas y la fruta se ablanda: despierta."
+    },
+    {
+      "escena": "Manchas",
+      "texto": "Salen manchas negras, hundidas, a veces como lágrimas; si avanza, llega a la pulpa."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2020, científicos mexicanos revisaron cincuenta y nueve huertas: cinco especies; las más agresivas, siamense y asianum."
+    },
+    {
+      "escena": "Exporta",
+      "texto": "México es el mayor exportador de mango: unas cuatrocientas cincuenta mil toneladas en 2025, casi nueve de cada diez a Estados Unidos."
+    },
+    {
+      "escena": "Bano",
+      "texto": "Casi todos entran tras más de una hora en agua a cuarenta y seis grados, contra la mosca de la fruta; y ayuda a frenar al hongo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Era un hongo esperando que tu mango madurara… igual que tú."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
