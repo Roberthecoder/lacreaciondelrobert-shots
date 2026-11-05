@@ -216,7 +216,7 @@ function EscarabajoShot() {
       <Escena T={T} a={K.B} b={K.Tu} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<CabezaFrente T={T} x={500} y={820} s={1.15} llenos={kprog(T, K.B + 0.6, K.B + 2.4)} />)}
+        {fsvg(<CabezaFrente T={T} x={500} y={740} s={1.15} llenos={kprog(T, K.B + 0.6, K.B + 2.4)} />)}
       </Escena>
       {/* 4 · por dentro de la madera: cava el túnel, siembra el hongo, larvas que lo comen */}
       <Escena T={T} a={K.Tu} b={K.D} zoom={0.04}>
@@ -241,11 +241,11 @@ function EscarabajoShot() {
         {fsvg(<>
           {[0, 1, 2, 3, 4, 5].map((i) => { const tx = 150 + i * 150, k = tapa(i);
             return <g key={i}>
-              <rect x={tx - 42} y={560} width={84} height={640} rx={20} fill="#16304a" stroke="#7fa6c9" strokeWidth={5} />
-              <rect x={tx - 30} y={570} width={60} height={620} rx={14} fill={EC.agua} opacity={0.85 * (1 - k * 0.85)} />
-              {k < 0.95 && Array.from({ length: 6 }, (_, j) => <rect key={j} x={tx - 8} y={1180 - (((T * 220 + j * 110) % 640))} width={16} height={34} rx={8} fill="#c9ecff" opacity={0.8 * (1 - k)} />)}
-              {[0.25, 0.5, 0.75].map((q, j) => <circle key={'t' + j} cx={tx + (j - 1) * 10} cy={560 + 640 * q} r={34 * k} fill={EC.tilosis} stroke={KC.ink} strokeWidth={3} opacity={k > 0 ? 1 : 0} />)}
-              <path d={`M ${tx - 6} 1190 Q ${tx + 18} ${1190 - 200 * hongoSube} ${tx - 10} ${1190 - 420 * hongoSube}`} stroke={EC.mancha} strokeWidth={6} fill="none" opacity=".9" />
+              <rect x={tx - 42} y={620} width={84} height={560} rx={20} fill="#16304a" stroke="#7fa6c9" strokeWidth={5} />
+              <rect x={tx - 30} y={630} width={60} height={540} rx={14} fill={EC.agua} opacity={0.85 * (1 - k * 0.85)} />
+              {k < 0.95 && Array.from({ length: 6 }, (_, j) => <rect key={j} x={tx - 8} y={1150 - (((T * 200 + j * 95) % 530))} width={16} height={34} rx={8} fill="#c9ecff" opacity={0.8 * (1 - k)} />)}
+              {[0.25, 0.5, 0.75].map((q, j) => <circle key={'t' + j} cx={tx + (j - 1) * 10} cy={620 + 560 * q} r={34 * k} fill={EC.tilosis} stroke={KC.ink} strokeWidth={3} opacity={k > 0 ? 1 : 0} />)}
+              <path d={`M ${tx - 6} 1170 Q ${tx + 18} ${1170 - 180 * hongoSube} ${tx - 10} ${1170 - 380 * hongoSube}`} stroke={EC.mancha} strokeWidth={6} fill="none" opacity=".9" />
             </g>; })}
         </>)}
       </Escena>
@@ -267,9 +267,9 @@ function EscarabajoShot() {
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Escarabajo T={T} x={270} y={760} s={0.95} rot={mece(T, 2, 0.5) * 4} />
-          <text x={270} y={930} textAnchor="middle" style={{ font:`900 64px ${KF.titulo}` }} fill={KC.ink}>VS</text>
-          <g transform="translate(270 1060)"><ellipse rx={170} ry={70} fill="#fff4d6" stroke={KC.ink} strokeWidth={7} />
+          <Escarabajo T={T} x={250} y={720} s={0.95} rot={mece(T, 2, 0.5) * 4} />
+          <text x={270} y={920} textAnchor="middle" style={{ font:`900 64px ${KF.titulo}` }} fill={KC.ink}>VS</text>
+          <g transform="translate(270 1020)"><ellipse rx={170} ry={70} fill="#fff4d6" stroke={KC.ink} strokeWidth={7} />
             <JardinHongo x1={-150} x2={150} y={-20} g={1} seed={5} arriba={true} /><JardinHongo x1={-120} x2={120} y={20} g={1} seed={6} arriba={true} /></g>
           <Interrogacion T={T} x={600} y={560} tam={360} />
         </>)}
@@ -288,7 +288,7 @@ function EscarabajoShot() {
       {/* 9 · más de 300 millones de laureles rojos (estimación publicada en 2017) */}
       <Escena T={T} a={K.Mi} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<g opacity={kprog(T, K.Mi + 1.6, K.Mi + 2.1)}><MapaSureste T={T} at={K.Mi + 1.8} /></g>)}
+        {fsvg(<g opacity={kprog(T, K.Mi + 2.2, K.Mi + 2.6)}><MapaSureste T={T} at={K.Mi + 2.3} /></g>)}
       </Escena>
       {/* 10 · el aguacate es pariente (Lauraceae); en 2012 la enfermedad llegó a una huerta de Homestead, Florida */}
       <Escena T={T} a={K.A} b={K.S} zoom={0.04}>
@@ -297,12 +297,13 @@ function EscarabajoShot() {
           <g opacity={1 - huerta}>
             <text x={380} y={660} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink}>familia Lauraceae</text>
             <path d="M 380 690 L 380 740 M 200 740 L 560 740 M 200 740 L 200 800 M 560 740 L 560 800" stroke={KC.ink} strokeWidth={7} fill="none" strokeLinecap="round" />
-            {[[200, 'laurel rojo', 0], [560, 'aguacate', 1]].map(([cx, nom, k]) => <g key={k} opacity={kprog(T, K.A + 0.3 + k * 0.5, K.A + 0.7 + k * 0.5)}>
-              <rect x={cx - 160} y={800} width={320} height={300} rx={26} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
+            {[[200, 'laurel rojo', 0, 'Persea borbonia'], [560, 'aguacate', 1, 'Persea americana']].map(([cx, nom, k, sci]) => <g key={k} opacity={kprog(T, K.A + 0.3 + k * 0.5, K.A + 0.7 + k * 0.5)}>
+              <rect x={cx - 160} y={800} width={320} height={330} rx={26} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
               <Hoja x={cx - 110} y={900} ang={-15} L={150} W={40} />
               {k === 0 ? <circle cx={cx + 70} cy={980} r={22} fill="#1f2a5a" stroke={KC.ink} strokeWidth={4} />
                 : <path d={`M ${cx + 70} 925 Q ${cx + 105} 925 ${cx + 108} 985 Q ${cx + 110} 1040 ${cx + 70} 1042 Q ${cx + 30} 1040 ${cx + 32} 985 Q ${cx + 35} 925 ${cx + 70} 925 Z`} fill={EC.aguacate} stroke={KC.ink} strokeWidth={5} />}
-              <text x={cx} y={1080} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{nom}</text>
+              <text x={cx} y={1072} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{nom}</text>
+              <text x={cx} y={1110} textAnchor="middle" style={{ font:`italic 700 26px ${KF.mono}` }} fill={KC.ink}>{sci}</text>
             </g>)}
           </g>
           {huerta > 0 && <g opacity={huerta}>
@@ -310,9 +311,9 @@ function EscarabajoShot() {
             <Aguacatero T={T} x={170} y={1200} s={0.62} seed={5} />
             <Aguacatero T={T} x={470} y={1210} s={0.62} seed={6} marchita={kprog(T, K.A + 2.8, K.A + 4.6, kEase.suave)} />
             <Aguacatero T={T} x={780} y={1200} s={0.62} seed={7} />
-            <g transform="translate(860 1120)"><rect x={-6} y={-10} width={12} height={90} fill="#8a6a44" stroke={KC.ink} strokeWidth={3} />
-              <rect x={-150} y={-90} width={300} height={90} rx={12} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
-              <text x={0} y={-50} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>Homestead, Florida</text>
+            <g transform="translate(540 700)"><rect x={-6} y={-10} width={12} height={0} fill="#8a6a44" stroke={KC.ink} strokeWidth={3} />
+              <rect x={-175} y={-90} width={350} height={90} rx={12} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
+              <text x={0} y={-50} textAnchor="middle" style={{ font:`900 28px ${KF.texto}` }} fill={KC.ink}>Homestead, Florida</text>
               <text x={0} y={-16} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>2012</text></g>
           </g>}
         </>)}
@@ -322,13 +323,13 @@ function EscarabajoShot() {
         <div style={{ position:'absolute', inset:0, background:'#1a120c' }}></div>
         <Ambiente T={T} n={14} color="rgba(244,194,90,.35)" />
         {fsvg(<>
-          {[[820, 330], [1050, 280]].map(([ty, w], i) => <rect key={i} x={i ? 380 : 40} y={ty + 70} width={i ? 660 : 420} height={110} rx={55} fill={EC.tunel} stroke="#6a4a2a" strokeWidth={6} />)}
-          <Escarabajo T={T} x={220} y={940} s={0.6} esporas={1 - salto * 0.3} />
-          {Array.from({ length: 10 }, (_, i) => { const u = kclamp(salto * 1.3 - i * 0.03, 0, 1); const dest = i % 2 ? [640, 1172] : [900, 1172];
-            const sx = klerp(320, dest[0], u), sy = klerp(965, dest[1], u) - Math.sin(u * Math.PI) * 220;
+          {[[690, 330], [910, 280]].map(([ty, w], i) => <rect key={i} x={i ? 380 : 40} y={ty + 70} width={i ? 660 : 420} height={110} rx={55} fill={EC.tunel} stroke="#6a4a2a" strokeWidth={6} />)}
+          <Escarabajo T={T} x={220} y={815} s={0.6} esporas={1 - salto * 0.3} />
+          {Array.from({ length: 10 }, (_, i) => { const u = kclamp(salto * 1.3 - i * 0.03, 0, 1); const dest = i % 2 ? [640, 1033] : [900, 1033];
+            const sx = klerp(320, dest[0], u), sy = klerp(840, dest[1], u) - Math.sin(u * Math.PI) * 220;
             return u > 0 && u < 1 ? <ellipse key={i} cx={sx} cy={sy} rx={7} ry={11} fill={EC.espora} stroke={KC.ink} strokeWidth={2} style={{ filter:`drop-shadow(0 0 6px ${KC.gold})` }} /> : null; })}
-          <Escarabajo T={T} x={560} y={1170} s={0.5} color="#8a4a22" color2="#5e2e12" esporas={kprog(T, K.S + 1.4, K.S + 1.9)} />
-          <Escarabajo T={T} x={820} y={1170} s={0.55} color="#3a2a1e" color2="#22170f" esporas={kprog(T, K.S + 1.5, K.S + 2.0)} />
+          <Escarabajo T={T} x={560} y={1035} s={0.5} color="#8a4a22" color2="#5e2e12" esporas={kprog(T, K.S + 1.4, K.S + 1.9)} />
+          <Escarabajo T={T} x={820} y={1035} s={0.55} color="#3a2a1e" color2="#22170f" esporas={kprog(T, K.S + 1.5, K.S + 2.0)} />
         </>)}
       </Escena>
       {/* 12 · México: mayor productor de aguacate; sin registro de la plaga (Senasica, ficha 2019); vigilancia en 30 entidades (2024) */}
@@ -351,7 +352,7 @@ function EscarabajoShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="40% 52%">
         <FondoLunares color={KC.mint} />
         {fsvg(<g transform={`translate(${440 - 440 * 1.08} ${1000 - 1000 * 1.08}) scale(1.08)`}><TroncoCerca T={T} palito={1} /></g>)}
-        {fsvg(<g transform="translate(820 1180)" opacity={kprog(T, K.C + 1.2, K.C + 1.7)}>
+        {fsvg(<g transform="translate(800 1560)" opacity={kprog(T, K.C + 1.2, K.C + 1.7)}>
           <ellipse cx={0} cy={0} rx={190} ry={50} fill={EC.guaca} stroke={KC.ink} strokeWidth={6} />
           {[[-80, -6], [-20, 10], [50, -10], [110, 6]].map(([gx, gy], i) => <circle key={i} cx={gx} cy={gy} r={10} fill={i % 2 ? '#e8463a' : '#f6f1df'} stroke={KC.ink} strokeWidth={2} />)}
           <path d="M -200 0 Q -190 110 0 116 Q 190 110 200 0" fill="#d9774a" stroke={KC.ink} strokeWidth={7} />
@@ -365,28 +366,28 @@ function EscarabajoShot() {
         interior={(TT) => <TunelLupa T={TT} jardin={1} larvas={1} camina={0.3} />} />
 
       {/* textos en pantalla */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.7} until={K.G + 3.0} texto="basura" x={330} y={380} tam={52} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.7} until={K.G + 3.0} texto="basura" x={330} y={330} tam={52} />
       <Etq T={T} at={K.G + 2.6} until={K.N - 0.4} x={600} y={1210} lado="izq" texto="escarabajo · 2 mm" tam={32} color={KC.ink} />
       <Caja T={T} at={K.G + 4.2} until={K.N - 0.4} x={50} y={1000} texto="siembra un hongo" tam={30} />
       <Caja T={T} at={K.N + 0.2} until={K.B - 0.3} x={50} y={420} texto="Xyleborus glabratus" it tam={36} />
       <Caja T={T} at={K.N + 0.7} until={K.B - 0.3} x={50} y={500} texto="escarabajo ambrosial" tam={30} />
-      <Etq T={T} at={K.N + 1.6} until={K.B - 0.3} x={520} y={900} texto="madera de embalaje" tam={30} color={KC.ink} />
+      <Caja T={T} at={K.N + 1.4} until={K.B - 0.3} x={50} y={580} texto="madera de embalaje" tam={30} />
       <Chip T={T} at={K.N + 3.3} until={K.B - 0.3} texto="Georgia, EUA · 2002" x={640} y={790} tam={34} borde={KC.ink} />
       <Caja T={T} at={K.B + 0.2} until={K.Tu - 0.3} x={50} y={420} texto="AL MICROSCOPIO · esquemático" tam={28} />
       <Etq T={T} at={K.B + 1.2} until={K.Tu - 0.3} x={60} y={600} texto="la hembra, de frente" tam={30} />
-      <Etq T={T} at={K.B + 1.6} until={K.Tu - 0.3} x={60} y={1120} texto="micangios (2 bolsitas)" tam={32} color={KC.gold2} />
-      <Etq T={T} at={K.B + 2.4} until={K.Tu - 0.3} x={60} y={1180} texto={<>esporas de <i>Raffaelea lauricola</i></>} tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.B + 1.6} until={K.Tu - 0.3} x={60} y={1080} texto="micangios (2 bolsitas)" tam={32} color={KC.gold2} />
+      <Etq T={T} at={K.B + 2.4} until={K.Tu - 0.3} x={60} y={1135} texto={<>esporas de <i>Raffaelea lauricola</i></>} tam={28} color={KC.gold2} />
       <Caja T={T} at={K.Tu + 0.2} until={K.D - 0.3} x={50} y={420} texto="POR DENTRO · esquemático" tam={28} />
-      <Etq T={T} at={K.Tu + 1.5} until={K.D - 0.3} x={60} y={1150} texto="jardín de hongo" tam={32} color={EC.hongo} />
-      <Etq T={T} at={K.Tu + 2.3} until={K.D - 0.3} x={60} y={1210} texto="larvas que comen el hongo" tam={30} />
+      <Etq T={T} at={K.Tu + 1.5} until={K.D - 0.3} x={60} y={1110} texto="jardín de hongo" tam={32} color={EC.hongo} />
+      <Etq T={T} at={K.Tu + 2.3} until={K.D - 0.3} x={60} y={870} texto="larvas que comen el hongo" tam={30} />
       <Caja T={T} at={K.Tu + 2.6} until={K.D - 0.3} x={50} y={500} texto="no come madera: come el hongo" tam={28} />
       <Caja T={T} at={K.D + 0.2} until={K.Ma - 0.3} x={50} y={420} texto="xilema · tubos de agua" tam={30} />
       <Etq T={T} at={K.D + 1.0} until={K.Ma - 0.3} x={60} y={500} texto="tapones del árbol (tilosis)" tam={30} color={EC.tilosis} />
-      <Etq T={T} at={K.D + 1.6} until={K.Ma - 0.3} x={60} y={1250} texto="el hongo avanza" tam={28} color="#a9c4e0" />
+      <Etq T={T} at={K.D + 1.6} until={K.Ma - 0.3} x={60} y={570} texto="el hongo avanza" tam={28} color="#a9c4e0" />
       <Etq T={T} at={K.Ma + 0.9} until={K.P - 0.2} x={300} y={460} texto="hojas secas que no caen" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Ma + 1.2} until={K.P - 0.2} x={1040} y={920} lado="izq" texto="manchas oscuras" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.P + 0.5} until={K.E - 0.2} x={440} y={760} texto="¿el escarabajo?" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.P + 0.9} until={K.E - 0.2} x={460} y={1060} texto="¿el hongo?" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.P + 0.5} until={K.E - 0.2} x={60} y={830} texto="¿el escarabajo?" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.P + 0.9} until={K.E - 0.2} x={60} y={1125} texto="¿el hongo?" tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2008" quien="Servicio Forestal de EUA" revista="e Iowa State · Fraedrich y col. · Plant Disease" x={540} y={620} />
       <Nota T={T} at={K.E + 2.8} until={K.E + 4.9} x={50} y={420} lineas={['solo el hongo', 'sin escarabajo']} tam={32} />
       {T > K.E + 3.2 && T < K.Mi - 0.1 && <div style={{ position:'absolute', left:50, top:560, zIndex:42, font:`400 72px ${KF.titulo}`, color:KC.texto, textShadow:KSOMBRA, opacity:kprog(T, K.E + 3.2, K.E + 3.5) }}>
@@ -395,24 +396,21 @@ function EscarabajoShot() {
       <Etq T={T} at={K.E + 2.9} until={K.Mi - 0.2} x={60} y={1250} texto={<>plántulas de laurel rojo · <i>Persea borbonia</i></>} tam={26} color={KC.ink} />
       <NumeroGigante T={T} at={K.Mi + 0.2} until={K.Mi + 2.3} valor={300} dur={1.0} sufijo=" millones" etiqueta="más de" x={540} y={620} tam={140} color={KC.yellow} />
       <Chip T={T} at={K.Mi + 0.6} until={K.Mi + 2.3} texto="de laureles rojos" x={540} y={800} tam={40} borde={KC.ink} />
-      <Nota T={T} at={K.Mi + 2.4} until={K.A - 0.2} x={50} y={1040} lineas={[<>+300 millones de <i>Persea borbonia</i></>, 'desde inicios de los 2000', '≈ 1/3 de los que había', 'estimación publicada en 2017', 'Hughes y col.']} tam={24} />
+      <Nota T={T} at={K.Mi + 2.4} until={K.A - 0.2} x={50} y={1025} lineas={[<>+300 millones de <i>Persea borbonia</i></>, 'desde inicios de los 2000 · ≈ 1/3 de los que había', 'estimación publicada en 2017 · Hughes y col.']} tam={24} />
       <Etq T={T} at={K.Mi + 2.6} until={K.A - 0.2} x={60} y={570} texto="sureste de EUA · esquemático" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.A + 0.5} until={K.A + 1.9} x={40} y={1150} texto={<><i>Persea borbonia</i></>} tam={28} color={KC.ink} />
-      <Etq T={T} at={K.A + 1.0} until={K.A + 1.9} x={720} y={1150} lado="izq" texto={<><i>Persea americana</i></>} tam={28} color={KC.ink} />
-      <Etq T={T} at={K.A + 3.0} until={K.S - 0.2} x={300} y={760} texto="la enfermedad llega" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.A + 3.0} until={K.S - 0.2} x={60} y={800} texto="la enfermedad llega" tam={30} color={KC.ink} />
       <Caja T={T} at={K.S + 0.2} until={K.Mx - 0.2} x={50} y={420} texto="nuevos portadores del hongo" tam={28} />
-      <Etq T={T} at={K.S + 0.3} until={K.Mx - 0.2} x={60} y={780} texto={<><i>X. glabratus</i></>} tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.S + 1.6} until={K.Mx - 0.2} x={590} y={1260} lado="izq" texto={<><i>X. volvulus</i></>} tam={28} color={KC.texto} />
-      <Etq T={T} at={K.S + 1.7} until={K.Mx - 0.2} x={1040} y={1100} lado="izq" texto={<><i>X. bispinatus</i></>} tam={28} color={KC.texto} />
+      <Etq T={T} at={K.S + 0.3} until={K.Mx - 0.2} x={60} y={680} texto={<><i>X. glabratus</i></>} tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.S + 1.6} until={K.Mx - 0.2} x={600} y={1140} lado="izq" texto={<><i>X. volvulus</i></>} tam={28} color={KC.texto} />
+      <Etq T={T} at={K.S + 1.7} until={K.Mx - 0.2} x={1040} y={1140} lado="izq" texto={<><i>X. bispinatus</i></>} tam={28} color={KC.texto} />
       <Nota T={T} at={K.Mx + 0.3} until={K.C - 0.2} x={50} y={400} lineas={['1.er productor mundial', 'de aguacate · Agricultura, 2026']} tam={28} />
       {kvisible(T, K.Mx + 2.4, K.C - 0.2) && (() => { const e = kentrada(T, K.Mx + 2.4, K.C - 0.2, 'pop'); return <div style={{ position:'absolute', left:330, top:780, zIndex:43, opacity:e.o,
         transform:`translate(-50%,-50%) scale(${klerp(1.8, 1, kprog(T, K.Mx + 2.4, K.Mx + 2.75, kEase.rebote))}) rotate(-8deg)`, border:`8px solid ${KC.red}`, borderRadius:20, padding:'6px 24px', textAlign:'center', background:'rgba(255,255,255,.85)' }}>
         <div style={{ font:`400 62px/1.05 ${KF.titulo}`, color:KC.red }}>PLAGA AUSENTE</div>
         <div style={{ font:`700 24px ${KF.mono}`, color:KC.red }}>sin registros · Senasica (ficha 2019)</div></div>; })()}
       <Nota T={T} at={K.Mx + 4.2} until={K.C - 0.2} x={50} y={1020} lineas={['vigilancia en 30 entidades', '(Senasica, 2024)']} tam={28} borde={KC.blue} />
-      <Etq T={T} at={K.Mx + 1.0} until={K.C - 0.2} x={1040} y={940} lado="izq" texto="México · esquemático" tam={24} color={KC.ink} />
       <Caja T={T} at={K.C + 1.0} until={K.Ou} x={50} y={1000} texto="un granjero diminuto" tam={30} />
-      <Etq T={T} at={K.C + 1.8} until={K.Ou} x={780} y={1110} lado="izq" texto="tu guacamole" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.C + 1.8} until={K.Ou} x={1040} y={1450} lado="izq" texto="tu guacamole" tam={30} color={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G + 2.2} until={K.N} texto="2 mm · escarabajo en la lupa" largo={300} />

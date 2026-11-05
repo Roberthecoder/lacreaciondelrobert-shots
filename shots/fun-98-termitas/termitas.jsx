@@ -345,7 +345,7 @@ function TermitasShot() {
             rx={7} ry={4.5} fill="#fff" stroke={KC.ink} strokeWidth={2} opacity={1 - u * 0.4} /> : null; })}
           <Termita T={T} x={350} y={985} s={1} fase={0.3} anda={0.6} />
           <Termita T={T} x={470} y={980} s={1} fase={1.9} anda={0.6} espejo />
-          <Alado T={T} x={860} y={850} s={1.9} alas={1} bola={kprog(T, K.Es + 3.1, K.Es + 3.8, kEase.rebote)} />
+          <Alado T={T} x={860} y={800} s={1.9} alas={1} bola={kprog(T, K.Es + 3.1, K.Es + 3.8, kEase.rebote)} />
           <TxtS x={290} y={1070} t="esporas del ambiente" tam={28} o={kprog(T, K.Es + 0.8, K.Es + 1.2)} />
         </>)}
       </Escena>
@@ -409,7 +409,7 @@ function TermitasShot() {
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.9} until={K.G + 3.6} texto="casa de termitas" x={320} y={440} tam={46} />
       <Chip T={T} at={K.G + 2.2} until={K.N - 0.3} texto="granja de hongos" x={320} y={540} tam={44} borde={KC.gold} />
       <Caja T={T} at={K.N + 0.3} until={K.F - 0.3} x={50} y={400} texto="termitas cultivadoras" tam={32} />
-      <Caja T={T} at={K.N + 0.6} until={K.F - 0.3} x={50} y={472} texto="Macrotermitinae" tam={32} />
+      <Caja T={T} at={K.N + 0.6} until={K.F - 0.3} x={50} y={472} texto={<i>Macrotermitinae</i>} tam={32} />
       <Caja T={T} at={K.N + 2.4} until={K.F - 0.3} x={50} y={544} texto={<span>hongo: <i>Termitomyces</i></span>} tam={32} />
       <Etq T={T} at={K.N + 1.5} until={K.F - 0.3} x={60} y={1140} texto="mapa esquemático" tam={26} color={KC.ink} />
       <Chip T={T} at={K.F + 0.3} until={K.Pa - 0.3} texto="planta muerta" x={540} y={470} tam={40} borde={KC.ink} />
@@ -426,9 +426,9 @@ function TermitasShot() {
       <Etq T={T} at={K.V + 1.0} until={K.P - 0.3} x={60} y={1135} texto="obreras viejas" tam={30} color={KC.texto} />
       <Chip T={T} at={K.Es + 0.3} until={K.E - 0.3} texto="la mayoría" x={270} y={620} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.Es + 2.9} until={K.E - 0.3} texto="unas pocas" x={810} y={620} tam={38} borde={KC.ink} />
-      <Caja T={T} at={K.Es + 3.4} until={K.E - 0.3} x={810} y={940} centro texto={<span><i>Macrotermes bellicosus</i>: el rey</span>} tam={22} />
-      <Caja T={T} at={K.Es + 3.8} until={K.E - 0.3} x={810} y={1040} centro texto={<span><i>Microtermes</i>: la reina</span>} tam={22} />
-      <Etq T={T} at={K.Es + 3.9} until={K.E - 0.3} x={820} y={760} lado="izq" texto="hongo adentro" tam={26} color={KC.texto} />
+      <Caja T={T} at={K.Es + 3.4} until={K.E - 0.3} x={810} y={880} centro texto={<span><i>Macrotermes bellicosus</i>: el rey</span>} tam={22} />
+      <Caja T={T} at={K.Es + 3.8} until={K.E - 0.3} x={810} y={945} centro texto={<span><i>Microtermes</i>: la reina</span>} tam={22} />
+      <Etq T={T} at={K.Es + 3.9} until={K.E - 0.3} x={820} y={710} lado="izq" texto="hongo adentro" tam={26} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.3} anio="2016" quien="Tanzania · cuenca del Rukwa" revista="Roberts y col. · PLoS ONE" x={540} y={760} />
       <Chip T={T} at={K.E + 2.6} until={K.O - 0.3} texto="≈ 25 millones de años" x={330} y={470} tam={38} borde={KC.gold} />
       <Etq T={T} at={K.E + 3.2} until={K.O - 0.3} x={60} y={590} texto="nido fósil (roca)" tam={30} color={KC.ink} />

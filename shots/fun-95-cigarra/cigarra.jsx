@@ -452,7 +452,7 @@ function CigarraShot() {
       <Etq T={T} at={K.Ps + 0.9} until={K.H - 0.3} x={60} y={545} texto="la de los hongos mágicos" tam={30} color={KC.ink} />
       <Senal T={T} at={K.Ps + 1.0} until={K.H - 0.3} px={cPunto({ x: 720, y: 1060, s: 1.2, rot: -3 }, -175, 20)[0]} py={cPunto({ x: 720, y: 1060, s: 1.2, rot: -3 }, -175, 20)[1]} tx={60} ty={1150} texto={<><i>M. platypediae</i> / <i>M. levispora</i></>} tam={26} />
       <Etq T={T} at={K.Ps + 1.4} until={K.H - 0.3} x={1020} y={880} lado="izq" texto="cigarra anual" tam={30} color={KC.ink} />
-      <SelloTexto T={T} at={K.H + 1.2} until={K.C - 0.1} x={400} y={640} texto="HIPÓTESIS" />
+      <SelloTexto T={T} at={K.H + 1.2} until={K.C - 0.5} x={400} y={640} texto="HIPÓTESIS" />
       <Senal T={T} at={K.C + 1.0} until={K.Ou - 0.1} px={() => cPunto(cc, COLA[0] - 10, COLA[1])[0]} py={() => cPunto(cc, COLA[0] - 10, COLA[1])[1]} tx={60} ty={680} texto="vuela con un hongo" tam={32} />
       <Caja T={T} at={K.C + 0.3} until={K.Ou} x={60} y={420}>cigarra + <i>Massospora</i></Caja>
 
@@ -480,7 +480,7 @@ function CigarraShot() {
         [K.N + 0.6, K.S - 0.2, 'avatar_12_perfil_serio', 'arriba-der'],
         [K.S + 0.6, K.A - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.Sa + 0.3, K.P - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
-        [K.P - 0.1, K.E - 0.35, 'avatar_07_pensativo_puno', 'grande'],
+        [K.P - 0.1, K.E - 0.25, 'avatar_07_pensativo_puno', 'grande'],
         [K.Al + 3.0, K.M - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [K.M + 0.5, K.Ca - 0.2, 'avatar_12_perfil_serio', 'arriba-der'],
         [K.Ca + 2.4, K.Ps - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
