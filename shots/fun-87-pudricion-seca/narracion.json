@@ -5,11 +5,11 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa madera no está vieja: se la está comiendo un hongo, y ese hongo llora."
+      "texto": "Esa madera no está vieja: se la está comiendo un hongo que llora."
     },
     {
       "escena": "Humedad",
-      "texto": "Es la pudrición seca, Sérpula lacrímans, y solo arranca en madera muy húmeda."
+      "texto": "Es la pudrición seca, Sérpula lácrimans, y solo arranca en madera muy húmeda."
     },
     {
       "escena": "Cubos",
@@ -21,7 +21,11 @@
     },
     {
       "escena": "Gotas",
-      "texto": "Su nombre, lacrímans, significa «que llora»: su micelio suelta gotas."
+      "texto": "Su nombre, lácrimans, significa «que llora»: su micelio suelta gotas."
+    },
+    {
+      "escena": "Fruto",
+      "texto": "Luego saca un cuerpo plano color óxido, de borde blanco, que suelta millones de esporas: un polvo café."
     },
     {
       "escena": "Pregunta",
@@ -36,10 +40,6 @@
       "texto": "Probablemente se regó por el mundo en madera y barcos de vela."
     },
     {
-      "escena": "Fruto",
-      "texto": "Luego saca un cuerpo plano color óxido, de borde blanco, que suelta millones de esporas: un polvo café."
-    },
-    {
       "escena": "Templado",
       "texto": "Le gustan los climas templados: en la naturaleza no vive en el trópico."
     },
@@ -49,7 +49,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Esa madera no estaba vieja: estaba mojada, y el hongo te lo estaba avisando."
+      "texto": "Esa madera no estaba vieja: estaba mojada, y el hongo te lo avisaba."
     }
   ],
   "mezcla": "oficial-30oct"
