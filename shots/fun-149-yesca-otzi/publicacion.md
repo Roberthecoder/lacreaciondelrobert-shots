@@ -52,7 +52,7 @@ Fuentes:
 - Museo Arqueológico del Tirol del Sur. Ötzi y su equipo. https://www.iceman.it/en/oetzi/equipment
 - Lexikon der Biologie (1999). Zunderschwamm. Spektrum. https://www.spektrum.de/lexikon/biologie/zunderschwamm/72023
 - Campi, M. G. et al. (2024). Fomes: A comprehensive review of traditional and modern biotechnological applications in medicine, food, and materials. Lilloa 61(2): 397–413. https://doi.org/10.30550/j.lil/2018
-- Papp, N. et al. (2015). Ethnomycological use of Fomes fomentarius and Piptoporus betulinus in Transylvania, Romania. Genetic Resources and Crop Evolution. https://doi.org/10.1007/s10722-015-0335-2
+- Papp, N. et al. (2015). Ethnomycological use of Fomes fomentarius and Piptoporus betulinus in Transylvania, Romania. Genetic Resources and Crop Evolution 64(1): 101–111 (impreso 2017; en línea 2015). https://doi.org/10.1007/s10722-015-0335-2
 - Comisión Europea. Amadou: harvesting the future. https://environment.ec.europa.eu/topics/circular-economy-topics/reset-trend/get-inspired-stories-change/amadou-harvesting-future_en
 ¿Tú sabías que con un hongo se podía hacer fuego… o un sombrero? 👇
 Shot Fungi Mati 149 · La Creación del Robert
@@ -104,7 +104,7 @@ Wierer et al. (2018). The Iceman's lithic toolkit. PLOS ONE 13(6): e0198292. htt
 Museo Arqueológico del Tirol del Sur. https://www.iceman.it/en/oetzi/equipment
 Lexikon der Biologie (1999). Zunderschwamm. https://www.spektrum.de/lexikon/biologie/zunderschwamm/72023
 Campi et al. (2024). Fomes: A comprehensive review… Lilloa 61(2): 397–413. https://doi.org/10.30550/j.lil/2018
-Papp et al. (2015). Ethnomycological use of Fomes fomentarius and Piptoporus betulinus in Transylvania, Romania. https://doi.org/10.1007/s10722-015-0335-2
+Papp et al. (2015). Ethnomycological use of Fomes fomentarius and Piptoporus betulinus in Transylvania, Romania. Genet. Resour. Crop Evol. 64(1): 101–111. https://doi.org/10.1007/s10722-015-0335-2
 Comisión Europea. Amadou: harvesting the future. https://environment.ec.europa.eu/topics/circular-economy-topics/reset-trend/get-inspired-stories-change/amadou-harvesting-future_en
 El dibujo es esquemático.
 ```
