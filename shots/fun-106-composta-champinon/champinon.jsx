@@ -405,17 +405,15 @@ function ChampinonShot() {
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="+ cobertura + bacterias" x={330} y={540} tam={32} borde={KC.gold} />
       <Etq T={T} at={K.C + 2.2} until={K.Ou} x={590} y={720} texto="Agaricus bisporus" it tam={30} />
 
-      {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.M} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={K.M} until={K.R} texto="10 cm" largo={150} />
-      <BarraEscala T={T} at={K.R} until={K.F2} texto="1 m" largo={260} />
-      <BarraEscala T={T} at={K.F2} until={K.S} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.S} until={K.O} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={K.O} until={PRIM} texto="10 µm (esquemático)" largo={160} />
-      <BarraEscala T={T} at={PRIM} until={K.E} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={K.E} until={K.Mx} texto="5 cm" largo={110} />
+      {/* barras de escala (champiñón de botón ≈ 5 cm; maceta ≈ 20 cm de boca; lo demás, esquemático) */}
+      <BarraEscala T={T} at={K.G} until={K.M} texto="5 cm" largo={210} />
+      <BarraEscala T={T} at={K.M} until={K.R} texto="10 cm" largo={185} />
+      <BarraEscala T={T} at={K.R} until={K.O} texto="esquemático" largo={0} />
+      <BarraEscala T={T} at={K.O} until={PRIM} texto="esquemático · no a escala" largo={0} />
+      <BarraEscala T={T} at={PRIM} until={K.Mx} texto="esquemático" largo={0} />
       <BarraEscala T={T} at={K.Mx} until={K.Co} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.Co} until={K.Ou} texto="5 cm" largo={110} />
+      <BarraEscala T={T} at={K.Co} until={K.C} texto="5 cm" largo={145} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={185} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.M - 0.1} texto="No es tierra: *estiércol cocinado.*" />

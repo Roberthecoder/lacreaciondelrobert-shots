@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #106 · rama `claude/fun-105-109-cultivo`.
 - **Formato:** N1 «Por dentro». Viaje maceta de Robert (falla) → cama de composta → por dentro de la capa de cobertura (fondo oscuro: micelio, octenol, *Pseudomonas*, primordios) → la misma maceta, ya transformada.
 - **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre lo que se ve: «Esto no es tierra: es estiércol cocinado… y de ahí sale tu champiñón.»
-- **Duración:** voz 1005 caracteres / 183 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base (por confirmar con `estimar-escenas.mjs`).
+- **Duración:** voz 1005 caracteres / 183 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base (OM_SCENES comprimidas a 58.0 s de voz; `assets/mezcla.wav` 61.5 s).
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Verificación:** independiente, `verificacion.md` → `VEREDICTO: APROBADO` (5 nov 2026).
 - **No repite:** #13 (vitamina D), #28 (gota de Buller), #60 (portobello). Aquí el tema es **cómo se cultiva** el champiñón.
@@ -12,45 +12,45 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esto no es tierra: es estiércol cocinado… y de ahí sale tu champiñón. | Fondo amarillo de lunares. Una mano toma un puño de "tierra" oscura (cuadro 0.3) y la deja caer: se ven hebras de paja. Sello "NO ES TIERRA". De la cama asoma un champiñón (`Champinon`) que crece. Barra de escala 5 cm. |
+| 0 | Gancho | Esto no es tierra: es estiércol cocinado… y de ahí sale tu champiñón. | Fondo amarillo de lunares. Una pala de jardín vacía grumos de "tierra" oscura sobre una charola (cuadro 0.1): se ven hebras de paja. Sello rojo "¡NO!" y etiqueta "paja + estiércol". De la cama asoma un champiñón (`Champinon`) que crece. Barra de escala 5 cm. |
 | 1 | Maceta | Yo a los diez años lo intenté en una maceta con tierra… y nada. | Fondo rosa. Maceta con tierra normal y bolsa negra encima; chip "tutorial de internet · 10 años"; se levanta la bolsa: nada. Un "?" que se cae. |
 | 2 | Receta | Se mezcla paja, estiércol de caballo, gallinaza y yeso. | Fondo menta. Cuatro íconos caen en una pila: paja, estiércol de caballo, gallinaza, yeso (etiquetas). La pila crece. |
 | 3 | FaseI | En unos seis días la pila llega casi a ochenta grados: arriba de setenta ya es química, no microbios. | Fondo naranja. La pila humea; `Termometro` sube a ~79 °C; contador "día 1 → 6". Al pasar 70 °C los microbios (puntitos) se apagan y aparecen moléculas que se enlazan: chip "> 70 °C: reacción química". |
 | 4 | FaseII | Luego la pasteurizan a sesenta grados, por lo menos dos horas. | Fondo cian. La composta en un cuarto cerrado; termómetro baja a 60 °C; reloj "≥ 2 h"; chip "pasteurizar". |
-| 5 | Siembra | Le siembran granos con micelio; en dos o tres semanas lo llena todo. | Granos de cereal cubiertos de pelusa blanca caen sobre la composta; el micelio (`RedHifas`) se extiende hasta blanquear la cama; contador "14–21 días". |
+| 5 | Siembra | Le siembran granos con micelio; en dos o tres semanas lo llena todo. | Granos de cereal cubiertos de pelusa blanca caen sobre la composta; el micelio (`RedHifas`) se extiende hasta blanquear la cama; chip "micelio: 2 a 3 semanas". |
 | 6 | Pregunta | ¿Y por qué no sale ni un champiñón? | **Re-gancho.** Fondo rosa: la cama blanca de micelio sin ningún champiñón; `Interrogacion` gigante; Robert grande, pensativo. |
 | 7 | Cobertura | Falta la cobertura: turba con caliza encima de la composta. | Fondo menta. Corte de la cama: capa café oscura de turba con puntitos blancos de caliza cae encima de la composta; etiquetas "capa de cobertura · turba + caliza" y "composta con micelio". |
 | 8 | Octenol | El micelio suelta octenol, parte de su olor, y eso lo frena. | **Por dentro** (fondo oscuro #0E0F12, "POR DENTRO · LA COBERTURA", barra de escala 10 µm). Hifas tabicadas sueltan nubecitas moradas "1-octen-3-ol"; un nudito de hifas (primordio) intenta crecer y se frena (candado). |
 | 9 | Bacterias | En la cobertura, bacterias como Pseudomonas se lo comen… y brotan los primordios. | Bastoncitos verdes (*Pseudomonas putida*, etiqueta en cursiva) se comen las nubecitas; se abre el candado; el nudo crece. Corte a escala real: primordios como cabecitas de alfiler blancas en la cobertura. |
-| 10 | Estudio | En 2009, en Reino Unido, Noble y su equipo lo probaron: sin bacterias, brotaban si ventilaban esos gases. | Fondo cian. `TarjetaEstudio` "2009 · Noble et al. · *Mycologia* · Reino Unido". Dos charolas: "sin bacterias" (nada) → se enciende un ventilador que se lleva la nube ("1-octen-3-ol y otros") morada → brotan primordios; chip "las bacterias ayudan, al menos en parte". |
-| 11 | Mexico | En México es el hongo que más se cultiva: según el INECOL, en 2012 era el noventa y cuatro por ciento. | Fondo amarillo. Mapa esquemático de México con un champiñón; número grande "94 % · de los hongos cultivados en México son champiñón · dato de 2012 (INECOL)". |
+| 10 | Estudio | En 2009, en Reino Unido, Noble y su equipo lo probaron: sin bacterias, brotaban si ventilaban esos gases. | Fondo cian. `TarjetaEstudio` "2009 · Noble et al. · *Mycologia* · Reino Unido". Dos charolas: "sin bacterias" (nada) → se enciende un ventilador que se lleva la nube ("1-octen-3-ol y otros") morada → brotan primordios; chips "ayudan, al menos en parte" y "ventilación → primordios". |
+| 11 | Mexico | En México es el hongo que más se cultiva: según el INECOL, en 2012 era el noventa y cuatro por ciento. | Fondo amarillo. Mapa esquemático de México con un champiñón; gráfica de pastel 94 / 6 con la etiqueta "champiñón"; número grande "94 % · de los hongos cultivados en México son champiñón · dato de 2012 (INECOL)". |
 | 12 | Cosecha | Dos o tres semanas después, salen en oleadas cada siete a diez días. | Fondo menta. La cama con cobertura; salen champiñones en una oleada (sombrero blanco redondo, botón cerrado), se cosechan, y sale otra oleada; chip "oleadas cada 7–10 días"; contador "15–21 días tras la cobertura". |
-| 13 | Cierre | A mi maceta no le faltaba tierra: le faltaba estiércol cocinado… y bacterias. | **Regreso a la imagen del inicio:** la misma maceta de la escena 1, ahora con composta, capa de cobertura y un racimo de champiñones (uno abierto con laminillas rosadas y anillo en el pie). Chip "estiércol cocinado + cobertura + bacterias". |
+| 13 | Cierre | A mi maceta no le faltaba tierra: le faltaba estiércol cocinado… y bacterias. | **Regreso a la imagen del inicio:** fondo rosa, la misma maceta de la escena 1, ahora con composta, capa de cobertura y un racimo de champiñones (uno abierto con laminillas rosadas y anillo en el pie). Chips "estiércol cocinado" y "+ cobertura + bacterias"; etiqueta *Agaricus bisporus*. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y cálida (terrosa), que se calienta con la composta (escena 3), se vuelve oscura y suspendida en el "por dentro" y se abre en «brotan los primordios». Efectos en el mismo cuadro: puño de composta que cae, bolsa que se levanta, golpes sordos de cada ingrediente, burbujeo/vapor y tic del termómetro, granos que caen, siseo del micelio, nubecitas "puf", mordisquitos de bacterias, candado que se abre, ventilador, "pop" de cada champiñón y cuchillito de cosecha.
 
-Barra de escala: 5 cm (cama y champiñón), 20 cm (maceta), 1 m (pila de composta), 10 µm (hifas y bacterias, esquemático).
+Barra de escala: 5 cm (champiñones del gancho y de la cosecha), 10 cm (maceta, al inicio y al cierre), «esquemático» en la pila, la charola y el estudio, «esquemático · no a escala» en el por dentro (hifas y bacterias agrandadas) y «mapa esquemático» en México.
 
 ## Robert en pantalla
 
-Tiempos estimados de la base (≈ 17.2 caracteres/s; con la voz real se recorren solos). Grande en «¿Y por qué no sale ni un champiñón?».
+Tiempos de la base (OM_SCENES; con la voz real se recorren solos). Grande en «¿Y por qué no sale ni un champiñón?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
 | 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «Esto no es tierra: es estiércol cocinado» (cuadro 0) |
-| 2 | 4.0 | 7.7 | 03_aburrido_manos_mejillas | `arriba-der` | «lo intenté en una maceta con tierra… y nada» |
-| 3 | 12.0 | 16.5 | 04_bajando_lentes | `arriba-der` | «casi a ochenta grados… ya es química» |
-| 4 | 21.5 | 25.0 | 13_senalando_arriba | `arriba-der` | «en dos o tres semanas lo llena todo» |
-| 5 | 25.1 | 27.2 | 07_pensativo_puno | `presentador` (grande) | «¿Y por qué no sale ni un champiñón?» |
-| 6 | 30.8 | 34.0 | 10_serio_molesto | `arriba-der` | «eso lo frena» |
-| 7 | 36.0 | 38.8 | 05_sonriendo_dientes_uniformes | `arriba-der` | «brotan los primordios» |
-| 8 | 41.5 | 44.8 | 06_pensativo_menton | `arriba-der` | «brotaban si ventilaban esos gases» |
-| 9 | 45.0 | 49.6 | 11_sorprendido | `arriba-der` | «el noventa y cuatro por ciento» |
-| 10 | 53.5 | 58.0 | 02_apuntando_camara | `arriba-der` | «le faltaba estiércol cocinado… y bacterias» |
+| 2 | 4.2 | 7.5 | 03_aburrido_manos_mejillas | `arriba-der` | «lo intenté en una maceta con tierra… y nada» |
+| 3 | 11.9 | 16.4 | 04_bajando_lentes | `arriba-der` | «casi a ochenta grados… ya es química» |
+| 4 | 21.5 | 24.1 | 13_senalando_arriba | `arriba-der` | «en dos o tres semanas lo llena todo» |
+| 5 | 24.3 | 26.5 | 07_pensativo_puno | `grande` | «¿Y por qué no sale ni un champiñón?» |
+| 6 | 30.4 | 33.8 | 10_serio_molesto | `arriba-der` | «eso lo frena» |
+| 7 | 36.0 | 37.9 | 05_sonriendo_dientes_uniformes | `arriba-der` | «brotan los primordios» |
+| 8 | 41.3 | 43.8 | 06_pensativo_menton | `arriba-der` | «brotaban si ventilaban esos gases» |
+| 9 | 44.8 | 49.5 | 11_sorprendido | `arriba-der` | «el noventa y cuatro por ciento» |
+| 10 | 53.9 | 57.9 | 02_apuntando_camara | `arriba-der` | «le faltaba estiércol cocinado… y bacterias» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 10 · **≈ 35.7 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas. Sin avatar 01 ni 09.
+Apariciones 10 · **31.9 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas. Sin avatar 01 ni 09.
 
 ## Fuentes (abiertas en el texto completo; detalle en `verificacion.md`)
 

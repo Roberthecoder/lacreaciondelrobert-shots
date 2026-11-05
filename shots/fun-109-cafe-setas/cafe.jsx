@@ -402,7 +402,7 @@ function CafeShot() {
       <Subtitulo T={T} idx={1} at={K.R + 0.1} until={K.O - 0.1} texto="A mí, a los 10 años, *no me funcionó.*" />
       <Subtitulo T={T} idx={2} at={K.O + 0.1} until={K.D - 0.1} texto="Con puros posos, *muchas veces no salen.*" />
       <Subtitulo T={T} idx={3} at={K.D + 0.1} until={K.M - 0.1} texto="Más de *30 % de posos:* se frenaron." />
-      <Subtitulo T={T} idx={4} at={K.M + 0.1} until={K.H - 0.1} texto="Un tercio de posos: *casi su peso* en setas." />
+      <Subtitulo T={T} idx={4} at={K.M + 0.1} until={K.H - 0.1} texto="Un tercio de posos: *casi su peso seco* en setas." />
       <Subtitulo T={T} idx={5} at={K.H + 0.1} until={K.Ca - 0.1} texto="Las hifas se cuelan *entre los granitos.*" />
       <Subtitulo T={T} idx={6} at={K.Ca + 0.1} until={K.P - 0.1} texto="Rompe parte de la cafeína: *xantina.*" />
       <Subtitulo T={T} idx={7} at={K.P + 0.1} until={K.E - 0.1} texto="¿Las setas salen *con cafeína?*" />
