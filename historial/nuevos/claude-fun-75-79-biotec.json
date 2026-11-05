@@ -1,7 +1,114 @@
-{ "temas": [
-  { "id": "fun-75-giberelinas", "titulo": "Tus uvas sin semilla las agrandó la hormona de un hongo: giberelinas de Fusarium fujikuroi (bakanae)", "serie": "Shot Fungi Mati", "numero": 75, "estado": "idea", "carpeta": "shots/fun-75-giberelinas", "rama": "claude/fun-75-79-biotec", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
-  { "id": "fun-76-cortisona", "titulo": "La cortisona barata la hizo un moho del pan: Rhizopus y la 11α-hidroxilación de la progesterona (Upjohn 1952)", "serie": "Shot Fungi Mati", "numero": 76, "estado": "idea", "carpeta": "shots/fun-76-cortisona", "rama": "claude/fun-75-79-biotec", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
-  { "id": "fun-77-riboflavina", "titulo": "El amarillo de tus vitaminas lo fabrica un hongo: riboflavina (B2) de Ashbya gossypii", "serie": "Shot Fungi Mati", "numero": 77, "estado": "idea", "carpeta": "shots/fun-77-riboflavina", "rama": "claude/fun-75-79-biotec", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
-  { "id": "fun-78-pudricion-blanca-ddt", "titulo": "El hongo que se come el DDT: pudrición blanca (Phanerochaete chrysosporium) y micorremediación", "serie": "Shot Fungi Mati", "numero": 78, "estado": "idea", "carpeta": "shots/fun-78-ddt", "rama": "claude/fun-75-79-biotec", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
-  { "id": "fun-79-cuero-micelio", "titulo": "Esto no es cuero de vaca: es micelio (cuero de hongo, lo que sí funciona y lo que no)", "serie": "Shot Fungi Mati", "numero": 79, "estado": "idea", "carpeta": "shots/fun-79-cuero-micelio", "rama": "claude/fun-75-79-biotec", "fuentes": [], "fecha": "2026-11-05", "derivados": [] }
-] }
+{
+ "temas": [
+  {
+   "id": "fun-75-giberelinas",
+   "titulo": "Tus uvas sin semilla las agrandó la hormona de un hongo: giberelinas de Fusarium fujikuroi (bakanae)",
+   "serie": "Shot Fungi Mati",
+   "numero": 75,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-75-giberelinas",
+   "rama": "claude/fun-75-79-biotec",
+   "fuentes": [
+    "Hedden y Sponsel 2015, J Plant Growth Regul (PMC4622167)",
+    "Casanova et al. 2009, Span. J. Agric. Res.",
+    "Peacock 2000, UC Cooperative Extension",
+    "Wang et al. 2022 (PubMed 35689127)"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Etileno: la hormona que madura el plátano en la bodega",
+    "Auxinas y los esquejes que echan raíz",
+    "Fusarium del plátano (mal de Panamá, raza 4 tropical)"
+   ]
+  },
+  {
+   "id": "fun-76-cortisona",
+   "titulo": "La cortisona barata la hizo un moho del pan: Rhizopus y la 11α-hidroxilación de la progesterona (Upjohn 1952)",
+   "serie": "Shot Fungi Mati",
+   "numero": 76,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-76-cortisona",
+   "rama": "claude/fun-75-79-biotec",
+   "fuentes": [
+    "Patente US 2,602,769 (Murray y Peterson, Upjohn)",
+    "Peterson y Murray 1952, JACS 74:5933",
+    "Patchett 2002, memoria NAS de Lewis Sarett",
+    "Hogg 1992, Steroids 57:593",
+    "Petrič et al. 2010, J Biotechnol"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "El barbasco mexicano y la píldora anticonceptiva (Syntex)",
+    "Hongos que transforman esteroides: Aspergillus y Cunninghamella",
+    "Enzimas P450: las tijeras de oxígeno de la vida"
+   ]
+  },
+  {
+   "id": "fun-77-riboflavina",
+   "titulo": "El amarillo de tus vitaminas lo fabrica un hongo: riboflavina (B2) de Ashbya gossypii",
+   "serie": "Shot Fungi Mati",
+   "numero": 77,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-77-riboflavina",
+   "rama": "claude/fun-75-79-biotec",
+   "fuentes": [
+    "Linus Pauling Institute, Riboflavin (2021)",
+    "Wendland 2020, J Fungi (PMC7558398)",
+    "Revuelta et al. 2017",
+    "Hoff 2021, BIOspektrum (BASF)",
+    "Stahmann et al. 2001, Environ Microbiol"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Vitamina B12: solo la hacen microbios (ya existe bio-59; buscar otro ángulo)",
+    "Betacaroteno de Blakeslea trispora",
+    "Ácido araquidónico de Mortierella en la fórmula para bebé"
+   ]
+  },
+  {
+   "id": "fun-78-pudricion-blanca-ddt",
+   "titulo": "El hongo que se come el DDT: pudrición blanca (Phanerochaete chrysosporium) y micorremediación",
+   "serie": "Shot Fungi Mati",
+   "numero": 78,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-78-ddt",
+   "rama": "claude/fun-75-79-biotec",
+   "fuentes": [
+    "Bumpus et al. 1985, Science 228:1434",
+    "Bumpus y Aust 1987, AEM 53:2001",
+    "Kennedy, Aust y Bumpus 1990, AEM 56:2347",
+    "Janusz et al. 2017, FEMS Microbiol Rev (PMC5812493)",
+    "Casey et al. 2026, PLOS ONE e0357404"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Hongos que decoloran el agua de las tintorerías (lacasas)",
+    "Trametes versicolor: cola de pavo y sus enzimas",
+    "Hongos contra el petróleo derramado: lo que sí y lo que no"
+   ]
+  },
+  {
+   "id": "fun-79-cuero-micelio",
+   "titulo": "Esto no es cuero de vaca: es micelio (cuero de hongo, lo que sí funciona y lo que no)",
+   "serie": "Shot Fungi Mati",
+   "numero": 79,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-79-cuero-micelio",
+   "rama": "claude/fun-75-79-biotec",
+   "fuentes": [
+    "Elsacker et al. 2023, Front Bioeng Biotechnol",
+    "Meyer et al. 2021, Coatings 11:226",
+    "Jones et al. 2021, Nature Sustainability",
+    "MaterialDistrict 2021 (Hermès/MycoWorks)",
+    "FashionUnited 2023 (Mylo)",
+    "Ecotextile 2025 (MycoWorks)"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Telas de bacterias: celulosa bacteriana como piel",
+    "Quitina: el material de los hongos y los insectos",
+    "Hongos que fabrican tintes para ropa"
+   ]
+  }
+ ]
+}
