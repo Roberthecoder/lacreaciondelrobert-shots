@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Pudricion Seca base narrada.dc.html",
+  "salida": "Shot Pudricion Seca narrado.dc.html",
+  "nota": "Shot Fungi Mati #87. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa madera no está vieja: se la está comiendo un hongo, y ese hongo llora."
+    },
+    {
+      "escena": "Humedad",
+      "texto": "Es la pudrición seca, Sérpula lacrímans, y solo arranca en madera muy húmeda."
+    },
+    {
+      "escena": "Cubos",
+      "texto": "Sus hifas se comen la celulosa y dejan la lignina café, que al secarse se parte en cubitos."
+    },
+    {
+      "escena": "Cordones",
+      "texto": "Además forma cordones gruesos que avanzan varios metros sobre ladrillo y yeso, llevando agua y nutrientes."
+    },
+    {
+      "escena": "Gotas",
+      "texto": "Su nombre, lacrímans, significa «que llora»: su micelio suelta gotas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y de dónde salió este come-casas?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2007, un equipo de Oslo rastreó su ADN hasta Asia; en estado silvestre, los más parecidos crecen en el Himalaya."
+    },
+    {
+      "escena": "Barcos",
+      "texto": "Probablemente se regó por el mundo en madera y barcos de vela."
+    },
+    {
+      "escena": "Fruto",
+      "texto": "Luego saca un cuerpo plano color óxido, de borde blanco, que suelta millones de esporas: un polvo café."
+    },
+    {
+      "escena": "Templado",
+      "texto": "Le gustan los climas templados: en la naturaleza no vive en el trópico."
+    },
+    {
+      "escena": "Sirve",
+      "texto": "Lo que sí sirve: arreglar la fuga, ventilar, cambiar la madera podrida y dejar secar."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa madera no estaba vieja: estaba mojada, y el hongo te lo estaba avisando."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
