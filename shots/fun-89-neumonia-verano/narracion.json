@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esta tos no te la pegó nadie: te la da tu casa, y solo en verano."
+      "texto": "Esta tos no te la pegó nadie: te la da tu casa, y casi siempre en verano."
     },
     {
       "escena": "Levadura",
@@ -25,7 +25,7 @@
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Y por qué solo en verano?"
+      "texto": "¿Y por qué en verano?"
     },
     {
       "escena": "Calor",
@@ -33,7 +33,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En los años 80, médicos japoneses juntaron 835 casos de esta alergia del pulmón: tres de cada cuatro, tipo verano."
+      "texto": "De 1980 a 1989, médicos japoneses juntaron 835 casos de alergias del pulmón: tres de cada cuatro, tipo verano."
     },
     {
       "escena": "Casas",
@@ -41,7 +41,7 @@
     },
     {
       "escena": "Limpiar",
-      "texto": "La cura es sacar el hongo de la casa: en 1989, en seis casas bien limpiadas, nadie recayó."
+      "texto": "Lo que sirve es sacar el hongo de la casa: en 1989, en seis casas bien limpiadas, nadie recayó."
     },
     {
       "escena": "Piedra",
