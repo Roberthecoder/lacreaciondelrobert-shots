@@ -114,4 +114,26 @@ Revisado el 5 nov 2026 leyendo los archivos: búsqueda de «Linneo» en `reino.j
 
 **Resumen final:** todas las afirmaciones de voz, pantalla y textos de publicación quedan ✅ (los ⚠️ de las rondas 1 y 2 están corregidos y confirmados).
 
+## Re-verificación independiente (5 nov 2026)
+
+Verificador nuevo (no escribió el guion ni las rondas anteriores). Revisé `narracion.json` (13 líneas), `guion.md`, los textos de pantalla de `reino.jsx` (libro, línea de tiempo, tarjetas, chips, subtítulos) y `publicacion.md`. Abrí de nuevo las fuentes (Species Plantarum en Internet Archive, PDF de Scamardella, OpenStax, PubMed, PMC, OUP).
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| Voz 0 y 12: el champiñón no es planta; por siglos lo pusieron con las plantas | ✅ | https://openstax.org/books/biology-2e/pages/24-1-characteristics-of-fungi | "up until the mid-20th century, many scientists classified fungi as plants!" · "Fungi, once considered plant-like organisms, are more closely related to animals than plants." | 2018 |
+| Voz 1 / pantalla: Linneo puso a los hongos con las plantas sin flor (Cryptogamia), junto a musgos y helechos (y algas); *Agaricus* (Linneo, 1753) | ✅ | https://archive.org/download/b30534914_0002/b30534914_0002_djvu.txt | "CRYPTOGAMIA FILICES. 1061" … "FUNGI. AGARICUS." (Species Plantarum vol. 2) | 1753 |
+| Voz 2: parecía lógico: no se mueve y tiene pared | ✅ | Scamardella, Int. Microbiol. 2:207 (PDF de revistes.iec.cat) | "the superficial resemblance of fungi to plants, with their non-motile habit and cell walls, made them true plants" | 1999 |
+| Voz 3: sin clorofila, no hace fotosíntesis | ✅ | OpenStax 24.1 | "Unlike plant cells, fungal cells do not have chloroplasts or chlorophyll." | 2018 |
+| Voz 4: digiere afuera con enzimas y absorbe | ✅ | OpenStax 24.1 | "First, exoenzymes are transported out of the hyphae, where they process nutrients in the environment." | 2018 |
+| Voz 5 / pantalla: pared de quitina (+ glucanos), no celulosa | ✅ | OpenStax 24.1 | "The rigid layers of fungal cell walls contain complex polysaccharides called chitin and glucans." | 2018 |
+| Voz 7: guarda glucógeno como tu hígado, no almidón como la papa | ✅ | OpenStax 24.1 y 3.2 | "As with animal cells, the polysaccharide of storage is glycogen." (glucógeno en hígado y músculo; plantas guardan almidón) | 2018 |
+| Voz 8 / pantalla: 1959, el ecólogo Whittaker propuso reino propio por cómo comen (absorción); 4 reinos en *Q. Rev. Biol.* | ✅ | Scamardella | "Whittaker detailed his own four-kingdom system of Protista, Fungi, Plantae, and Animalia in his 1959 article" · "three main modes of nutrition in natural communities: absorption, ingestion, and autotrophy" · "from an ecologist's point of view" | 1959 |
+| Pantalla: Haeckel pasó los hongos a Protista; Copeland 1956 Protoctista | ✅ | Scamardella | "he then moved the phylum Fungi (Inophyta) out of Kingdom Plantae and into Kingdom Protista" | 1999 (sobre 1866–1956) |
+| Voz 9 / pantalla: 1969, cinco reinos en *Science* (163: 150–160, Cornell); llegó a los libros de texto de los 80 y 90 | ✅ | Scamardella · https://academic.oup.com/bioscience/article-lookup/doi/10.1525/bio.2012.62.1.11 · Crossref 10.1126/science.163.3863.150 | "In 1969 Whittaker published a revision of his four-kingdom system to expand it to five kingdoms" · "was a standard feature of biology textbooks during the last two decades of the twentieth century" | 1969 / 2012 |
+| Voz 10: el ADN reveló que son más parientes de los animales que de las plantas (pantalla: opistocontos) | ✅ | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=8265589&rettype=abstract&retmode=text (Baldauf y Palmer, PNAS 90:11558) | título: "Animals and fungi are each other's closest relatives"; "plants constitute an independent evolutionary lineage" | 1993 |
+| Voz 11 / pantalla: el código se llamó botánico hasta 2011 (Melbourne) | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC3359813/ | "International Code of Nomenclature for algae, fungi, and plants" (acordado en Melbourne, julio 2011, en lugar de "International Code of Botanical Nomenclature") | 2011 |
+| publicacion.md: mismas cifras y fechas (1753, 1956, 1959, 1969, 2011, 80 y 90) y fuentes (Q. Rev. Biol. 1959 / Science 1969) | ✅ | ver arriba | coinciden | — |
+
+**Resultado:** sin ❌ ni ⚠️. Sin cambios en guion, narración, .jsx ni publicacion.md.
+
 VEREDICTO: APROBADO
