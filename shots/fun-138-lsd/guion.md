@@ -5,8 +5,8 @@
   macro (espiga con cornezuelo) → micro (la molécula: núcleo del ácido lisérgico, fondo oscuro) → laboratorio 1938/1943 → macro (la misma espiga, ahora con su línea del tiempo).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Ese cuernito negro no es basura: de su química salió el LSD, y su creador buscaba otra cosa.»
   (Distinto del de fun-17, «Ese grano negro no es centeno quemado: es un hongo venenoso»; fun-17 cuenta el hongo y el ergotismo; este shot cuenta **la historia del descubrimiento**.)
-- **Duración:** voz 1,073 caracteres / 175 palabras (≈ 58 s con el ajuste de velocidad de `narrar.mjs`, como los shots fun-50…59, que rondan 1,000–1,010 caracteres) + cierre 3.5 s → **61.5 s** en la base (suma de `OM_SCENES`).
-- **Voz:** pendiente de aprobación de Robert (~1,080 créditos de ElevenLabs).
+- **Duración:** voz 1,041 caracteres (suma de `texto`) / 172 palabras (≈ 58 s con el ajuste de velocidad de `narrar.mjs`, como los shots fun-50…59, que rondan 1,000–1,010 caracteres) + cierre 3.5 s → **61.5 s** en la base (suma de `OM_SCENES`).
+- **Voz:** pendiente de aprobación de Robert (~1,050 créditos de ElevenLabs).
 - **Tono:** histórico e informativo. **No promueve el consumo:** sin dosis, sin instrucciones, sin cómo se obtiene ni se hace (la química se
   muestra solo como "núcleo" esquemático con un grupo "R" genérico, sin reactivos ni pasos). Se dice claro que es sustancia controlada (ONU 1971, Lista I; México, LGS art. 245, grupo I)
   y se mencionan sus riesgos (NIDA). Robert solo con poses serias, pensativas o sorprendidas (nada que parezca celebrar o "viajar").

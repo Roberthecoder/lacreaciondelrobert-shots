@@ -298,7 +298,7 @@ function BassiShot() {
       <Escena T={T} a={K.H} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Costal x={300} y={1010} s={kprog(T, K.H + 2.2, K.H + 2.7, kEase.rebote) * 0.95} />
+          <Costal x={250} y={1000} s={kprog(T, K.H + 2.4, K.H + 2.9, kEase.rebote) * 0.85} />
           {T > K.H + 1.2 && <g opacity={kprog(T, K.H + 1.2, K.H + 1.5)}>
             <path d={`M 420 690 Q 640 700 ${klerp(420, 700, kprog(T, K.H + 1.2, K.H + 1.8))} ${klerp(690, 860, kprog(T, K.H + 1.2, K.H + 1.8))}`} stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" strokeDasharray="18 12" />
             <Naturalista x={800} y={1150} s={kprog(T, K.H + 1.5, K.H + 1.9, kEase.rebote) * 0.55} />
@@ -357,7 +357,7 @@ function BassiShot() {
       {kvisible(T, K.H + 0.3, K.C - 0.3) && <div style={{ position:'absolute', left:70, top:470, zIndex:42, opacity:kprog(T, K.H + 0.3, K.H + 0.7) * (1 - kprog(T, K.C - 0.3, K.C)),
         font:`italic 900 96px/1.02 ${KF.texto}`, color:KC.paper, textShadow:KSOMBRA }}>
         Beauveria<br /><span style={{ background:`linear-gradient(transparent 78%, ${KC.gold} 78%)`, backgroundSize:`${kprog(T, K.H + 0.8, K.H + 1.3) * 100}% 100%`, backgroundRepeat:'no-repeat' }}>bassiana</span></div>}
-      <Etq T={T} at={K.H + 1.8} until={K.C - 0.3} x={1040} y={1150} texto="Agostino Bassi" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.8} until={K.C - 0.3} x={735} y={1060} texto="Agostino Bassi" lado="izq" tam={30} color={KC.ink} />
       <Etq T={T} at={K.C + 0.8} until={K.Ou} x={60} y={600} texto="conidios" tam={34} color={KC.ink} />
       <Etq T={T} at={K.C + 1.4} until={K.Ou} x={60} y={660} texto="Beauveria bassiana" it tam={34} color={KC.ink} />
       <Etq T={T} at={K.C + 2.0} until={K.Ou} x={60} y={720} texto="Bassi, 1835" tam={34} color={KC.ink} />
