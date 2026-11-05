@@ -78,7 +78,7 @@ function PastoMojado({ T, yg }) {
 // Basidiospora: asimétrica, elipsoide, con el apículo (apéndice hilar) de lado cerca de la base. (x, y) = centro.
 function Basidiospora({ x, y, s = 1, rot = 0, gota = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <path d="M 4 -150 C 96 -148 122 -40 104 58 C 90 128 46 166 2 166 C -30 166 -52 152 -60 126 C -64 112 -72 108 -88 114 C -90 100 -80 92 -72 86 C -96 22 -92 -150 4 -150 Z"
+    <path d="M 4 -150 C 96 -148 122 -40 104 58 C 90 128 46 166 2 166 C -30 166 -52 152 -60 126 C -66 116 -80 112 -104 126 C -106 106 -92 94 -74 84 C -96 22 -92 -150 4 -150 Z"
       fill={EL.espora} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <ellipse cx={-6} cy={-30} rx={54} ry={86} fill="#d6a273" opacity=".55" />
     <path d="M -30 -110 Q 10 -130 50 -105" stroke="#fff" strokeWidth={9} fill="none" opacity=".4" strokeLinecap="round" />
@@ -264,8 +264,8 @@ function EsporasLluviaShot() {
           <SetaJardin T={T} x={SX} y={YG} s={SS} frio={1} />
           {/* regla de 10 cm junto al remolino izquierdo */}
           <g opacity={kprog(T, K.Su + 1.2, K.Su + 1.6)}>
-            <rect x={70} y={YG - 10 * ESC_CM} width={30} height={10 * ESC_CM} fill="#fff8d6" stroke={KC.ink} strokeWidth={5} />
-            {Array.from({ length: 11 }, (_, i) => <line key={i} x1={70} y1={YG - i * ESC_CM} x2={i % 5 ? 86 : 100} y2={YG - i * ESC_CM} stroke={KC.ink} strokeWidth={3} />)}
+            <rect x={40} y={YG - 10 * ESC_CM} width={30} height={10 * ESC_CM} fill="#fff8d6" stroke={KC.ink} strokeWidth={5} />
+            {Array.from({ length: 11 }, (_, i) => <line key={i} x1={40} y1={YG - i * ESC_CM} x2={i % 5 ? 56 : 70} y2={YG - i * ESC_CM} stroke={KC.ink} strokeWidth={3} />)}
           </g>
         </>)}
       </Escena>
@@ -277,7 +277,7 @@ function EsporasLluviaShot() {
       </Escena>
       <Escena T={T} a={micro} b={K.R} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<MapaMundo T={T} x={60} y={760} s={0.96} humo={kprog(T, micro + 0.3, micro + 1.2)} />)}
+        {fsvg(<MapaMundo T={T} x={140} y={800} s={0.8} humo={kprog(T, micro + 0.3, micro + 1.2)} />)}
       </Escena>
       {/* 4 · el aire que respiras: un cubo de 1 m con miles de esporas */}
       <Escena T={T} a={K.R} b={K.P} zoom={0.05}>
@@ -323,7 +323,7 @@ function EsporasLluviaShot() {
         {fsvg(<>
           {T < K.E + 3.0 && <g opacity={1 - kprog(T, K.E + 2.6, K.E + 3.0)}>
             <Basidiospora x={360} y={900} s={0.9} rot={-10} />
-            {T > K.E + 1.4 && <Sello T={T} at={K.E + 1.4} x={640} y={880} texto="✗" color={KC.red} r={110} />}
+            {T > K.E + 1.4 && <Sello T={T} at={K.E + 1.4} x={640} y={880} texto="NO" color={KC.red} r={110} />}
           </g>}
           {T > K.E + 4.6 && <>
             <Fusarium T={T} x={110} y={1010} s={1.05} p={kprog(T, K.E + 4.6, K.E + 5.8)} />
@@ -371,26 +371,26 @@ function EsporasLluviaShot() {
       <Etq T={T} at={K.V + 0.6} until={K.Su - 0.3} x={60} y={480} texto="vapor de agua" tam={32} color={KC.ink} />
       <Chip T={T} at={K.V + 1.6} until={K.Su - 0.3} texto="bajo el sombrero: 1–2 °C más frío" x={360} y={570} tam={32} borde={EL.frio} />
       <Chip T={T} at={K.V + 3.0} until={K.Su - 0.3} texto="la superficie del sombrero: hasta 4 °C" x={340} y={650} tam={26} borde={KC.ink} />
-      <Etq T={T} at={K.Su + 0.3} until={K.Ci - 0.3} x={110} y={YG - 11 * ESC_CM - 20} texto="10 cm o más" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Su + 0.3} until={K.Ci - 0.3} x={76} y={YG - 10 * ESC_CM - 6} texto="10 cm o más" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Su + 0.8} until={K.Ci - 0.3} texto="corre por el suelo, choca y gira" x={350} y={480} tam={30} borde={EL.frio} />
       <Nota T={T} at={K.Su + 1.8} until={K.Ci - 0.3} x={350} y={570} tam={24} ancho={560}>medido en setas ostra (<i>Pleurotus ostreatus</i>) y shiitake (<i>Lentinula edodes</i>), 2016</Nota>
       <Chip T={T} at={K.Ci + 0.3} until={micro - 0.3} texto="AL MICROSCOPIO · una espora" x={390} y={450} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.Ci + 0.7} until={micro - 0.3} x={640} y={760} texto="basidiospora" tam={34} color={KC.texto} />
       <Etq T={T} at={K.Ci + 1.3} until={micro - 0.3} x={370} y={1040} texto="apículo" tam={32} color={KC.yellow} lado="izq" />
-      <NumeroGigante T={T} at={micro + 0.4} until={K.R - 0.3} valor={50} dur={1.2} prefijo="3 a " etiqueta="millones de toneladas" x={360} y={520} tam={180} color={KC.yellow} />
-      <Etq T={T} at={micro + 1.0} until={K.R - 0.3} x={60} y={680} texto="de esporas de hongos al año" tam={32} color={KC.ink} />
-      <Chip T={T} at={micro + 1.8} until={K.R - 0.3} texto="cálculos de 2007, 2009 y 2021: no se ponen de acuerdo" x={540} y={1300} tam={24} borde={KC.ink} />
+      <NumeroGigante T={T} at={micro + 0.4} until={K.R - 0.3} valor={50} dur={1.2} prefijo="3 a " etiqueta="millones de toneladas" x={360} y={500} tam={180} color={KC.yellow} />
+      <Etq T={T} at={micro + 1.0} until={K.R - 0.3} x={60} y={650} texto="de esporas de hongos al año" tam={32} color={KC.ink} />
+      <Chip T={T} at={micro + 1.8} until={K.R - 0.3} texto="cálculos de 2007, 2009 y 2021: no se ponen de acuerdo" x={540} y={735} tam={24} borde={KC.ink} />
       <Chip T={T} at={K.R + 0.6} until={K.P - 0.3} texto="miles de esporas / m³" x={360} y={470} tam={44} borde={EL.espora2} />
       <Etq T={T} at={K.R + 1.2} until={K.P - 0.3} x={60} y={560} texto="aire de afuera" tam={30} color={KC.ink} />
       <Etq T={T} at={K.R + 0.6} until={K.P - 0.3} x={520} y={1215} texto="1 m³ de aire" tam={28} color={KC.ink} />
       <Chip T={T} at={K.N + 0.6} until={K.Se - 0.2} texto="POR DENTRO · una nube" x={330} y={450} tam={30} borde={KC.cyan} mono />
       <TermoChip T={T} at={K.N + 1.0} until={K.Se + 0.6} x={330} y={560} texto="−10 °C" />
       <Etq T={T} at={K.N + 1.6} until={K.Se - 0.2} x={500} y={640} texto="¡siguen líquidas!" tam={34} color={KC.texto} />
-      <Nota T={T} at={K.N + 2.2} until={K.Se - 0.2} x={480} y={1110} tam={24} ancho={720} borde={EL.gota2}>el agua pura de nube se congela sola hasta unos −38 °C</Nota>
+      <Nota T={T} at={K.N + 2.2} until={K.Se - 0.2} x={480} y={1115} tam={24} ancho={720} borde={EL.gota2}>el agua pura de nube se congela sola hasta unos −38 °C</Nota>
       <Etq T={T} at={K.Se + 0.3} until={K.Se + 2.6} x={240} y={500} texto="semilla de hielo" tam={34} color={KC.yellow} />
       <Etq T={T} at={congela + 0.7} until={K.E - 0.3} x={500} y={640} texto="cristal de hielo" tam={32} color={EL.hielo} />
-      <Etq T={T} at={K.Se + 4.2} until={K.E - 0.3} x={500} y={1010} texto="se derrite: gota de lluvia" tam={28} color={EL.gota} />
-      <Nota T={T} at={K.Se + 2.0} until={K.E - 0.3} x={460} y={1170} tam={24} ancho={760} borde={EL.gota2}>sobre tierra, la lluvia casi siempre nace en nubes con hielo (satélites, 2006–2011)</Nota>
+      <Etq T={T} at={K.Se + 4.2} until={K.E - 0.3} x={470} y={1050} texto="se derrite: gota de lluvia" tam={28} color={EL.gota} />
+      <Nota T={T} at={K.Se + 2.0} until={K.E - 0.3} x={480} y={1115} tam={24} ancho={760} borde={EL.gota2}>sobre tierra, la lluvia casi siempre nace en nubes con hielo (satélites, 2006–2011)</Nota>
       <Etq T={T} at={K.E + 0.3} until={K.E + 2.6} x={60} y={520} texto="espora de seta" tam={34} color={KC.ink} />
       <Nota T={T} at={K.E + 1.0} until={K.E + 2.6} x={400} y={620} tam={26} ancho={640} borde={KC.red}>mala semilla de hielo: casi nunca congela arriba de −19 °C (2014)</Nota>
       <TarjetaEstudio T={T} at={K.E + 2.8} until={K.E + 4.4} anio="1992" quien="Pouleur y colegas · Quebec, Canadá" revista="Appl. Environ. Microbiol., 1992" x={480} y={820} />
@@ -403,10 +403,10 @@ function EsporasLluviaShot() {
       <Etq T={T} at={K.Ro + 1.2} until={K.H - 0.3} x={60} y={600} texto="urediniosporas (en trigo)" tam={28} color={EL.roya2} />
       <TermoChip T={T} at={royaHielo - 0.5} until={K.H - 0.3} x={720} y={960} texto="−4 °C" />
       <Nota T={T} at={K.H + 0.6} until={K.C - 0.3} x={330} y={500} tam={24} ancho={520} borde={KC.ink}>esporas de seta: en laboratorio juntan gotas de agua (2015)</Nota>
-      <Etq T={T} at={K.H + 1.6} until={K.C - 0.3} x={250} y={1130} texto="laboratorio ✓" tam={34} color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.H + 1.9} until={K.C - 0.3} x={830} y={1130} texto="nubes reales ?" tam={34} color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.H + 3.2} until={K.C - 0.3} x={60} y={1240} texto="bioprecipitación: en estudio" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="viento ✓ · lluvia: quizá" x={330} y={700} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.H + 1.6} until={K.C - 0.3} x={60} y={1150} texto="laboratorio ✓" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.9} until={K.C - 0.3} x={600} y={1150} texto="nubes reales ?" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.H + 3.2} until={K.C - 0.3} x={60} y={600} texto="bioprecipitación: en estudio" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="viento ✓ · lluvia: quizá" x={400} y={345} tam={36} borde={KC.gold} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Ci} texto="5 cm" largo={5 * ESC_CM} />

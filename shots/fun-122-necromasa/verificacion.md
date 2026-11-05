@@ -68,3 +68,28 @@ Resultado de la primera ronda: **NO APROBADO** (filas 5, 12, 15, 16, 17 y 20 con
 Otros cambios de redacción, sin afirmaciones nuevas, solo para que dure 61–62 s: «Un hongo crece en hifas, hilos finísimos forrados de quitina.» · «Así, ese carbono puede tardar décadas o siglos en renovarse.» · «¿Y cómo sabes que era de un hongo?» · «La quitina deja glucosamina, huella sobre todo de hongos; las bacterias, ácido murámico.» · «En 2019 se calculó que, en suelos templados, pueden ser más de la mitad del carbono superficial.» · «Hongos y bacterias se comen hojas y raíces, y con eso arman su cuerpo.»
 
 Pendiente: re-verificación independiente de las filas corregidas y de `publicacion.md`; la línea final de veredicto la pone el re-verificador.
+
+## 3. Re-verificación independiente (5 nov 2026) — NO APROBADO todavía
+
+Revisado contra `narracion.json` (voz actual) y los textos en pantalla de `necromasa.jsx`. Fuentes reabiertas: Lu et al. 2026 ESSD (texto completo), Liang et al. 2019 (resumen, Europe PMC), Kästner et al. 2021 Front. Environ. Sci. (texto completo).
+
+| Línea | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Voz Muere: «muchos restos se pegan a minerales finos, como la arcilla» / pantalla "minerales finos (arcilla)" | ✅ | Lu 2026; Xuan 2024 | "stable organo-mineral complex formation by abundant fine soil particles"; "predominantly occluded within MAOM … on a global scale" | 2026 / 2024 |
+| Voz Estudio2026: «sitios sobre todo del hemisferio norte, se estimó en cultivos: … en promedio, 34 %…; de bacterias, 16» / chips "486 sitios · sobre todo hemisferio norte", "promedio de 145 tierras de cultivo · 0–20 cm" / mapa con 486 puntos concentrados (jsx, SITIOS: ~92 % en Asia oriental, Europa y Norteamérica) | ✅ | Lu 2026, §3.1, Tabla 1, §4.3 | "FNC/SOC … (mean ± SE: 34.39 ± 0.67 %)", "BNC/SOC … (15.65 ± 0.33 %)"; "our dataset is unevenly distributed, primarily concentrating on the Northern Hemisphere" | 2026 |
+| Voz Vivos: «Los microbios vivos suelen ser un dos por ciento del carbono del suelo» / tarjeta aparte con borde punteado, "valor típico", "(otros estudios)", "aparte: otro dato" | ✅ | Lu 2026, Introducción | "the living soil microbial biomass typically constitutes only about 2 % of SOC" | 1989/2023 (citado 2026) |
+| Voz Cierre: «en un cultivo típico, cerca de la mitad del carbono de esa tierra negra viene de microbios muertos» / chip "promedio de 145 tierras de cultivo · 0–20 cm" | ✅ | Lu 2026, Tabla 1 | 34.39 + 15.65 ≈ 50 % (145 sitios agrícolas, 0–20 cm) | 2026 |
+| Voz Doble «El hongo pesa el doble» | ✅ | Lu 2026 | "approximately twice as much to soil organic carbon (SOC) as bacterial necromass carbon" | 2026 |
+| Voz Estudio2019: «en suelos templados, pueden ser más de la mitad del carbono superficial» | ✅ | Liang 2019, resumen (Europe PMC) | "topsoil organic carbon reservoir in global temperate agricultural, grassland, and forest ecosystems. We show that microbial necromass can make up more than half of soil organic carbon." | 2019 |
+| **Pantalla Estudio2019: etiqueta "cultivos y pastizales: + de la mitad" (barra al 55 %)** | ⚠️ no verificable | Kästner 2021 (cita a Liang 2019); PMC12116530 (secundaria) | Kästner: "between 33% in forest soils and up to 62% in grasslands (Liang et al., 2019)" — solo da bosque y pastizal; **ninguna fuente primaria abierta da la cifra de cultivos de Liang 2019** (texto completo de Wiley con muro). Una secundaria dice "farmland > grassland", que contradice el orden implícito de Kästner. | 2019 |
+| Subtítulo Huella: "Glucosamina: *hongos.* Ácido murámico: *bacterias.*" | ⚠️ leve (simplifica de más; la voz y la etiqueta sí dicen "sobre todo") | EGU2020-8200 (Salas et al.) | "glucosamine is an abundant cell wall component of both, fungal chitin and bacterial peptidoglycan" | 2020 |
+| Subtítulo Vivos: "Los vivos: apenas *un 2 %* del carbono." | ✅ (la tarjeta aclara "del suelo · valor típico"); mejor alinear con la voz | Lu 2026 | "typically constitutes only about 2 % of SOC" | 2026 |
+| Resto de la voz y pantalla (gancho, comida, hifas/quitina, décadas o siglos, ácido murámico "solo de bacterias", N‑acetilglucosamina) | ✅ (sin cambios respecto a la ronda 1) | ver tabla 1 | — | — |
+
+### Qué falla y redacción sugerida
+1. **Etiqueta 2019 (`necromasa.jsx`, línea ~281):** cambiar "cultivos y pastizales: + de la mitad" por **"pastizales: hasta 62 % · bosques: ~1/3"** (Kästner 2021 citando a Liang 2019) y poner la barra de arriba en 0.62 con su etiqueta, la de abajo en 0.33 con "bosques"; o dejar solo **"puede ser + de la mitad"** sin nombrar cultivos.
+2. **Subtítulo Huella (línea del `Subtitulo` idx 6):** "Glucosamina: *sobre todo hongos.* Ácido murámico: *bacterias.*"
+3. **Subtítulo Vivos (opcional, para empatar con la voz):** "Los vivos: suelen ser *un 2 %* del carbono del suelo."
+4. **`guion.md` está desactualizado** (01:19 vs. voz de 01:26): su tabla aún tiene la voz y pantalla viejas («tu milpa», «con datos de todo el mundo», «Y los microbios vivos son apenas el dos por ciento», 2 cuadritos verdes dentro de la cuadrícula, mapa sin concentrar, "Estado: pendiente de verificación"). Hay que copiar ahí la voz de `narracion.json` y los textos en pantalla actuales, y quitar la tarjeta 2019 "cultivos, pastizales y bosques" si se cambia.
+
+Tras corregir 1, 2 y 4, basta re-verificar esas líneas. (No se revisó `publicacion.md`: no existe aún en la carpeta.)
