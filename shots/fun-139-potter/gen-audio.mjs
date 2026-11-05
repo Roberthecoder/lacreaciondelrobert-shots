@@ -95,6 +95,7 @@ for (let i = 0; i < 10; i++) m.tic(Hi + 1.6 + i * 0.3, 0.035, 2000);            
 m.golpe(E + 0.2, 0.3, 80); [0.8, 1.0, 1.2].forEach((d) => m.tic(E + d, 0.1, 1300));      // tarjeta 1897 y hojas del trabajo
 m.whoosh(Ms + 0.1, 0.6, 0.08); m.golpe(Ms + 1.0, 0.35, 55); m.tic(Ms + 0.85, 0.12, 1400); // llega ella; la puerta se cierra; letrero
 m.whoosh(Ms + 2.4, 1.0, 0.08); m.tic(Ms + 3.4, 0.1, 1200);                             // el trabajo pasa a Massee
+m.tic(Ms + 4.3, 0.1, 1400);                                                          // chip de la costumbre
 m.whoosh(Pe + 0.3, 0.9, 0.08);                                                         // regresa a ella
 m.whoosh(Pe + 1.6, 1.0, 0.05);                                                         // se desvanece
 m.golpe(Pe + 3.1, 0.3, 80);                                                            // tarjeta 1997

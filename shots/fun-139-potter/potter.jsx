@@ -456,6 +456,7 @@ function PotterShot() {
       <Chip T={T} at={K.Ms + 0.8} until={K.Pe - 0.2} texto="miembros: solo hombres (hasta 1905)" x={350} y={540} tam={24} borde={KC.red} mono />
       <Chip T={T} at={K.Ms + 2.0} until={K.Pe - 0.2} texto="George Massee · micólogo de Kew" x={360} y={400} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Ms + 2.4} until={K.Pe - 0.2} texto="lo leyó el 1 abr 1897" x={360} y={470} tam={28} borde={KC.gold} mono />
+      <Chip T={T} at={K.Ms + 4.3} until={K.Pe - 0.2} texto="costumbre: lo leía otra persona" x={300} y={610} tam={20} borde={KC.ink} mono />
       <Chip T={T} at={K.Pe + 0.4} until={K.Pe + 3.0} texto="8 abr 1897 · ella lo retira" x={360} y={430} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Pe + 1.8} until={K.Pe + 3.0} texto="nunca se publicó" x={360} y={515} tam={30} borde={KC.red} mono />
       <TarjetaEstudio T={T} at={K.Pe + 3.1} until={K.En - 0.3} anio="1997" quien="secretario de la Sociedad Linneana:" revista="“la trataron vilmente” (The Sunday Times)" x={540} y={600} />
