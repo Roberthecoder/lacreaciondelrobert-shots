@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Nistatina base narrada.dc.html",
+  "salida": "Shot Nistatina narrado.dc.html",
+  "nota": "Shot Fungi Mati #136. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta medicina para el algodoncillo salió de un microbio de la tierra que viajó por correo."
+    },
+    {
+      "escena": "Boca",
+      "texto": "El algodoncillo son manchitas blancas en la boca, por un hongo: Candida."
+    },
+    {
+      "escena": "Candida",
+      "texto": "Suele vivir en ti, pero a veces crece de más."
+    },
+    {
+      "escena": "Parecidas",
+      "texto": "Matarlo sin dañarte es difícil: sus células se parecen a las tuyas."
+    },
+    {
+      "escena": "Ergosterol",
+      "texto": "La nistatina se pega al ergosterol de su membrana y le abre poros."
+    },
+    {
+      "escena": "Colesterol",
+      "texto": "Tus células usan colesterol, y a ese se pega mucho menos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y quién la encontró?"
+    },
+    {
+      "escena": "Hazen",
+      "texto": "En 1948, en Nueva York, la microbióloga Elizabeth Hazen buscaba en la tierra microbios que mataran hongos."
+    },
+    {
+      "escena": "Correo",
+      "texto": "Se los mandaba en frascos, por correo, a la química Rachel Brown, a unos doscientos cuarenta kilómetros."
+    },
+    {
+      "escena": "Brown",
+      "texto": "Brown aislaba la sustancia y se la regresaba para probarla."
+    },
+    {
+      "escena": "Streptomyces",
+      "texto": "La ganadora vino de la tierra de un amigo: una bacteria, Streptomyces noursei, no un hongo."
+    },
+    {
+      "escena": "Regalias",
+      "texto": "La llamaron nistatina, por New York State, y sus regalías, más de trece millones de dólares, fueron para la ciencia."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese frasquito es tierra, correo y dos científicas contra un hongo."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Potter base narrada.dc.html",
+  "salida": "Shot Potter narrado.dc.html",
+  "nota": "Shot Fungi Mati #139. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa acuarela de hongo no es un adorno de cuento: es un dato científico."
+    },
+    {
+      "escena": "Autora",
+      "texto": "Así pintaba hongos Beatrix Potter, antes de hacerse famosa por su conejo Peter."
+    },
+    {
+      "escena": "Cientos",
+      "texto": "Dibujó cientos de hongos, con cortes que muestran sus laminillas."
+    },
+    {
+      "escena": "Cartero",
+      "texto": "La animaba un cartero escocés experto en hongos: Charles McIntosh."
+    },
+    {
+      "escena": "Microscopio",
+      "texto": "Pero ella quería ver más adentro: al microscopio dibujó sus esporas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si en vez de dibujarlas, las ponía a crecer?"
+    },
+    {
+      "escena": "Vidrio",
+      "texto": "Sembró esporas sobre vidrio y las siguió bajo el microscopio."
+    },
+    {
+      "escena": "Hifas",
+      "texto": "De cada espora sale un tubito que se ramifica en hifas: un hongo nuevo."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1897 escribió un trabajo sobre cómo germinan esas esporas."
+    },
+    {
+      "escena": "Massee",
+      "texto": "La Sociedad Linneana de Londres aún no admitía mujeres; lo leyó por ella George Massee, de Kew."
+    },
+    {
+      "escena": "Perdido",
+      "texto": "Ella lo retiró una semana después y hoy está perdido. En 1997, su secretario admitió que la trataron mal."
+    },
+    {
+      "escena": "Enoki",
+      "texto": "El hongo de ese trabajo, Flammulina velutipes, es primo del enoki del súper: se creía la misma especie."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa acuarela no es un adorno: es el cuaderno de una científica."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

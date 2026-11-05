@@ -1,0 +1,21 @@
+{
+  "dcHtml": "Shot Bassi base narrada.dc.html",
+  "salida": "Shot Bassi narrado.dc.html",
+  "nota": "Shot Fungi Mati #135. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese gusano no está cubierto de cal: ese polvo blanco es un hongo que le salió de adentro." },
+    { "escena": "Esporas", "texto": "Empieza con esporas diminutas, los conidios, que se le pegan a la piel." },
+    { "escena": "Cuticula", "texto": "Cada una germina y atraviesa la cutícula con enzimas y presión." },
+    { "escena": "Adentro", "texto": "Ya en su sangre, se divide en células sueltas que esquivan sus defensas." },
+    { "escena": "Sale", "texto": "En días, el gusano muere tieso y el hongo sale a cubrirlo de esporas." },
+    { "escena": "Pregunta", "texto": "¿Pero cómo supimos que era un ser vivo?" },
+    { "escena": "Bassi", "texto": "En Italia, Agostino Bassi estudió esta enfermedad casi treinta años." },
+    { "escena": "Publica", "texto": "En 1835 publicó que la causaba un hongo que pasaba de gusano a gusano." },
+    { "escena": "Prueba", "texto": "Lo probó: puso ese polvo en gusanos sanos y se enfermaron." },
+    { "escena": "Primera", "texto": "Para muchos historiadores, fue la primera prueba experimental de que un microbio enferma a un animal." },
+    { "escena": "Palabra", "texto": "Y la palabra «microbio» ni existía: se inventó en 1878." },
+    { "escena": "Hoy", "texto": "Hoy ese hongo lleva su nombre, Beauveria bassiana, y se vende como insecticida." },
+    { "escena": "Cierre", "texto": "Ese polvo blanco no es cal: es el hongo que ayudó a probar que los microbios enferman." }
+  ],
+  "mezcla": "oficial-30oct"
+}
