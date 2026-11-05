@@ -62,4 +62,29 @@
 
 Notas (no requieren cambio): el estudio de 2023 es de la U. de Illinois con coautores de Wisconsin, «en Illinois» es correcto. Dos de los cuatro antifúngicos nuevos solo están aprobados para infecciones superficiales (OMS 2025); la voz no dice lo contrario. La OMS también dice "In the past 30 years, only three new classes … have been approved" (dato extra posible, no usado).
 
+## Re-verificación (5 nov 2026, después de las correcciones del guionista)
+
+Releí completos `guion.md`, `narracion.json` y `publicacion.md`.
+
+| # | Cambio revisado | Veredicto | Fuente / frase textual |
+|---|---|---|---|
+| R1 | Voz «Estudio»: «Elizabeth Hazen y Rachel Brown, en Nueva York, probaron cientos de muestras de tierra y en 1950 anunciaron la nistatina: otra arma contra el ergosterol.» | ✅ | SHI: "hundreds of soil samples sent to Hazen and Brown"; *Science* 112(2911):423, 13 oct 1950; PMID 36671352: nistatina con "higher affinity towards ergosterol than cholesterol". Ya no pone las pruebas en 1950. |
+| R2 | Cierre: «…los separan unas moléculas.» | ✅ (retórico, igual que #34) | Gow 2017: "molecules that are not represented in the human body" |
+| R3 | Pantalla ergosterol: «dos dobles enlaces de más, uno en el anillo B y uno en la cola, y un metilo extra en la cola» | ✅ | PubChem: "(22E)-ergosta-5,7,22-trien-3beta-ol" frente a "cholest-5-en-3beta-ol" (dobles enlaces C7 y C22; metilo en C24 de la cola) |
+| R4 | TikTok / YouTube: «A fines de los años cuarenta … probaron cientos de muestras … En 1950 anunciaron la nistatina» | ✅ | SHI: "she had by 1948 identified new antifungal agents"; "efficiency of the U.S. Post Office in the 1940s"; OMS 2025 Fig. 2: "Nystatin, 1948 Discovery" |
+| R5 | **Dato nuevo** YouTube: «sacada de una bacteria del jardín de unos amigos, *Streptomyces noursei*» (y TikTok «sacada de una bacteria, Streptomyces noursei») | ✅ | SHI: "the one culture that passed all hurdles was originally found in soil from the garden of Hazen's friends, the Walter B. Nourses, and hence named Streptomyces noursei"; "filamentous bacteria called actinomycetes" (los amigos eran de Hazen; «unos amigos» es correcto) |
+| R6 | Instagram: «En 1950, Hazen y Brown dieron a conocer la nistatina, sacada de una bacteria de la tierra» | ✅ | Ídem R4/R5 |
+| R7 | YouTube quitina: «el cuerpo no los absorbe bien y a menudo no funcionan como medicamento» | ✅ | Gow 2017: "they are not efficiently taken up in vivo and consequently are often not effective antifungals" |
+| R8 | LinkedIn: «la anfotericina B daña células renales humanas porque también extrae colesterol» | ✅ | Maji 2023: "Cholesterol extraction was found to drive the toxicity of amphotericin B to human renal cells." |
+| R9 | Instagram (texto viejo que se me pasó en la primera ronda): «en 2023 se vio que la anfotericina daña el riñón porque también jala colesterol» | ⚠️ imprecisa (generaliza, mismo problema que #30) | Maji 2023 lo muestra en **células renales humanas** y en ratones, no para todo el daño renal en pacientes. |
+| R10 | `publicacion.md`, línea 3: «BORRADOR de fase 1: se ajusta después de la verificación.» | ⚠️ falta quitarlo (encabezado de borrador) | — |
+| R11 | Notas de rigor y Fuentes del guion (1948/1950, *S. noursei*), tabla de Robert fila 6 | ✅ | Coinciden con R1 y R4 |
+| R12 | Resto de redes (Facebook, X, Threads, comentario fijado) | ✅ sin cambios y sin consejo médico | — |
+
+### Lo que falta
+1. **Instagram (R9):** cambiar «en 2023 se vio que la anfotericina daña el riñón porque también jala colesterol» por «en 2023 se vio que la anfotericina daña células de riñón porque también jala colesterol».
+2. **publicacion.md (R10):** borrar la frase «BORRADOR de fase 1: se ajusta después de la verificación.» de la línea 3.
+
+Aviso que no es de hechos: la voz quedó en 987 caracteres (999 con espacios entre líneas), unos 57–58 s a ≈ 17.3 caracteres/s. Con 3 s de cierre puede quedar cerca de 60.5–61 s. Hay que medirlo con ffprobe y, si hace falta, alargar el cierre a 3.5–4 s para que el total quede entre 61.0 y 62.0 s.
+
 VEREDICTO: PENDIENTE DE CORRECCIONES
