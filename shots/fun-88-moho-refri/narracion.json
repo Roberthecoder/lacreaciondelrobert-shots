@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Moho Refri base narrada.dc.html",
+  "salida": "Shot Moho Refri narrado.dc.html",
+  "nota": "Shot Fungi Mati #88. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Tu refri no mata al moho: solo lo pone en pausa. Y a algunos, ni eso." },
+    { "escena": "Frio", "texto": "Casi todos los mohos prefieren el calor, pero varios crecen a 4 grados, la temperatura del refri." },
+    { "escena": "Penicillium", "texto": "Como Penicíllium expánsum, el moho azul de la manzana: a 4 grados tardó 6 días en arrancar, y luego creció." },
+    { "escena": "Botrytis", "texto": "O Botrítis, el moho gris de las fresas: en 2001 lo vieron crecer a 4 bajo cero." },
+    { "escena": "Cladosporium", "texto": "Y ya en 1923, las esporas de Cladospórium germinaban a 6 bajo cero." },
+    { "escena": "Pregunta", "texto": "¿Entonces, para qué sirve el frío?" },
+    { "escena": "Lento", "texto": "Frena sus reacciones químicas y pone rígidas sus membranas. Los hongos del frío las ablandan con grasas insaturadas." },
+    { "escena": "Congelador", "texto": "El congelador los duerme, no los mata: en 1923, siguieron vivos tras dos años a 6 bajo cero." },
+    { "escena": "Estudio", "texto": "En 2014, en Padua, Italia, revisaron 293 refris de casa: hallar moho en el fondo era 2.5 veces más probable que en las paredes." },
+    { "escena": "Tibios", "texto": "Y en Zagreb, en 25 refris, el promedio era 6.5 grados, no 4." },
+    { "escena": "Sirve", "texto": "Lo que sí sirve: 4 grados o menos, sobras en 3 o 4 días, y limpiarlo cada pocos meses con agua y bicarbonato." },
+    { "escena": "Cierre", "texto": "Tu refri no mata al moho: solo le da tiempo. Tú decides cuánto." }
+  ],
+  "mezcla": "oficial-30oct"
+}

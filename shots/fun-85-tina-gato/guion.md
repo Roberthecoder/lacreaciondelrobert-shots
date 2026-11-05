@@ -60,7 +60,7 @@ Apariciones 10 · **39.5 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas �
    > "Take your pet to the veterinarian right away for treatment." · "Bring any other pets to get checked."
    > "Wear gloves and long sleeves if you are handling a pet with ringworm." · "Wash your hands with soap and running water after contact with your pet."
    > "Vacuum the areas of the home that the pet commonly visits." · "Disinfect surfaces and bedding."
-3. Ely, J. W., Rosenfeld, S. y Seabury Stone, M. (2014/2018). Diagnosis and management of tinea infections. *American Family Physician* (2018, 98(5)). https://www.aafp.org/pubs/afp/issues/2018/0901/p283.html
+3. *American Family Physician* (AAFP), 1 sep 2018, 98(5): 283 (artículo de revisión sobre tiñas). https://www.aafp.org/pubs/afp/issues/2018/0901/p283.html
    > "annular, erythematous patch or plaque that grows centrifugally… As the rash spreads outward, central clearing typically develops."
 4. Frymus, T. et al. (2013). Dermatophytosis in cats: ABCD guidelines on prevention and management. *Journal of Feline Medicine and Surgery* 15(7): 598–604. https://pmc.ncbi.nlm.nih.gov/articles/PMC11148949
    > "utilise keratin as the sole source of nutrition"
