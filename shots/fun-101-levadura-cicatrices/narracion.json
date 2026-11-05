@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Levadura base narrada.dc.html",
+  "salida": "Shot Levadura narrado.dc.html",
+  "nota": "Shot Fungi Mati #101. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa levadura de tu pan no es inmortal: cuenta a sus hijas en cicatrices."
+    },
+    {
+      "escena": "Masa",
+      "texto": "Las burbujas de tu masa son el dióxido de carbono que suelta al fermentar."
+    },
+    {
+      "escena": "Celula",
+      "texto": "Cada levadura es una sola célula, de unos cinco micrómetros."
+    },
+    {
+      "escena": "Yema",
+      "texto": "Para tener una hija, le brota una yema: un bulto que crece pegado a ella."
+    },
+    {
+      "escena": "Anillo",
+      "texto": "En el cuello se arma un anillo de quitina: al soltarse la hija, la madre queda marcada."
+    },
+    {
+      "escena": "Ritmo",
+      "texto": "En el laboratorio, bien alimentada, da una hija cada hora y media."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuántas hijas puede tener una sola madre?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1959, en Berkeley, Mortimer y Johnston le quitaban cada hija con un micromanipulador."
+    },
+    {
+      "escena": "Limite",
+      "texto": "No era inmortal: hoy se sabe que, según la cepa, da unas veinte o treinta hijas."
+    },
+    {
+      "escena": "Calcofluor",
+      "texto": "Con calcoflúor, un tinte, sus cicatrices brillan en luz ultravioleta: puedes contarlas."
+    },
+    {
+      "escena": "Crece",
+      "texto": "Y con cada hija, la madre se hace más grande."
+    },
+    {
+      "escena": "HijaJoven",
+      "texto": "Casi siempre la hija nace con la cuenta en cero; las de madres muy viejas tienen menos hijas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Cada burbuja de tu pan viene de madres con sus hijas contadas en cicatrices."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

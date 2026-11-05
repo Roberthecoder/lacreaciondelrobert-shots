@@ -1,0 +1,64 @@
+{
+  "dcHtml": "Shot Moho Microscopio base narrada.dc.html",
+  "salida": "Shot Moho Microscopio narrado.dc.html",
+  "nota": "Shot Fungi Mati #104. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa pelusa azul de tu naranja no es una mancha: es un bosque de pinceles."
+    },
+    {
+      "escena": "Moho",
+      "texto": "Es el moho Penicillium italicum: el azul son sus esporas."
+    },
+    {
+      "escena": "Cinta",
+      "texto": "Para verlo, al cultivo le pegan cinta transparente"
+    },
+    {
+      "escena": "Tincion",
+      "texto": "y la ponen en un vidrio con azul de lactofenol, que tiñe sus paredes."
+    },
+    {
+      "escena": "Pincel",
+      "texto": "Al microscopio: un tallo que se abre en ramitas. Penicillium significa pincel."
+    },
+    {
+      "escena": "Cadenas",
+      "texto": "Cada punta hace una cadena: la espora nueva nace abajo y empuja a las viejas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y todos los mohos verdes son pinceles?"
+    },
+    {
+      "escena": "Aspergillus",
+      "texto": "No. Aspergillus termina en una punta hinchada, erizada de cadenas."
+    },
+    {
+      "escena": "Micheli",
+      "texto": "En 1729, en Florencia, el botánico Pier Antonio Micheli le puso ese nombre:"
+    },
+    {
+      "escena": "Micheli",
+      "texto": "le recordó el aspergillum, el rociador del agua bendita."
+    },
+    {
+      "escena": "Sembro",
+      "texto": "Y sembró esporas de hongos: salía el mismo hongo, no nacía de la nada."
+    },
+    {
+      "escena": "Miles",
+      "texto": "Cada cabeza de Aspergillus fumigatus hace miles de esporas de unas tres micras."
+    },
+    {
+      "escena": "Seguridad",
+      "texto": "Si tu naranja ya tiene moho, no la huelas: si está aguada o cubierta, a la basura."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa pelusa azul no es una mancha: es un bosque de pinceles."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

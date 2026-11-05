@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Esporas Aire base narrada.dc.html",
+  "salida": "Shot Esporas Aire narrado.dc.html",
+  "nota": "Shot Fungi Mati #102. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Hoy vas a respirar miles de esporas de hongos que tus ojos nunca van a ver."
+    },
+    {
+      "escena": "Metro",
+      "texto": "En Hermosillo, en mayo de 2023, un metro cúbico de aire llegó a traer más de ocho mil."
+    },
+    {
+      "escena": "Respiro",
+      "texto": "Ese día, con medio litro por respiración, eran unas cuatro."
+    },
+    {
+      "escena": "Clado",
+      "texto": "Las más comunes son de Cladosporium: unas veinte veces más delgadas que un pelo."
+    },
+    {
+      "escena": "Flotan",
+      "texto": "Nacen en cadenitas y, tan chiquitas, el viento se las lleva lejos."
+    },
+    {
+      "escena": "Pulmon",
+      "texto": "Algunas pueden llegar al fondo de tus pulmones."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuando llueve, no se caen al suelo?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2019, en Cornell y Virginia Tech, filmaron una gota de lluvia cayendo sobre trigo con roya."
+    },
+    {
+      "escena": "Anillo",
+      "texto": "El golpe formó un anillo de aire, como aro de humo, que levantó miles de esporas."
+    },
+    {
+      "escena": "Continente",
+      "texto": "Y el viento puede llevar esporas a otros continentes."
+    },
+    {
+      "escena": "Toneladas",
+      "texto": "Un cálculo de 2007: los hongos sueltan unos cincuenta millones de toneladas de esporas al año."
+    },
+    {
+      "escena": "Inmune",
+      "texto": "Tranquilo: en una persona sana, el sistema inmune suele eliminarlas; con alergia, pueden dar rinitis o asma."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que hoy te vas a meter miles: esporas que nunca vas a ver."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

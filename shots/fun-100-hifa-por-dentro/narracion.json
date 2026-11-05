@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Hifa base narrada.dc.html",
+  "salida": "Shot Hifa narrado.dc.html",
+  "nota": "Shot Fungi Mati #100. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese moho naranja no está hecho de hilos: está hecho de tubos, y por dentro corre un río."
+    },
+    {
+      "escena": "Hifa",
+      "texto": "Cada tubo es una hifa de Neurospora crassa: mide unas diez micras; un pelo tuyo, unas setenta."
+    },
+    {
+      "escena": "Punta",
+      "texto": "Solo crece por la punta, donde hay una nube de vesículas: el Spitzenkörper."
+    },
+    {
+      "escena": "Vesiculas",
+      "texto": "Traen membrana y enzimas para la pared: creciendo rápido, se calculan treinta y ocho mil por minuto."
+    },
+    {
+      "escena": "Rio",
+      "texto": "El citoplasma corre hacia la punta: en 2009, en Ensenada, vieron que arrastra a la mayoría de los núcleos."
+    },
+    {
+      "escena": "Septo",
+      "texto": "Cada tanto hay una pared, el septo, con un poro por donde pasa el río."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si el tubo se rompe? ¿Se desangra?"
+    },
+    {
+      "escena": "Woronin",
+      "texto": "Para eso trae tapones: cuerpos de Woronin que corren a cerrar el poro."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2000, en la Universidad Rockefeller, hallaron su proteína: Hex1."
+    },
+    {
+      "escena": "SinTapon",
+      "texto": "Sin ella no había tapones, y las hifas rotas sangraban citoplasma."
+    },
+    {
+      "escena": "Viaje",
+      "texto": "Y hay núcleos que viajan diez milímetros por hora: más del triple de lo que crece la colonia."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese moho no está hecho de hilos: son tubos con un río que corre hacia sus puntas."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
