@@ -186,7 +186,7 @@ function CortisonaShot() {
       <Escena T={T} a={K.G} b={K.Co} zoom={0.06} origen="50% 55%">
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Rhizopus x={330} y={700} s={0.8} crece={kprog(T, K.G + 1.4, K.G + 3.2)} nodos={[-90, 30]} />
+          <Rhizopus x={300} y={600} s={0.95} crece={kprog(T, K.G + 1.4, K.G + 3.2)} nodos={[-90, 30]} />
           <Brazo T={T} y={1020} roncha={1 - 0.6 * baja} crema={untada} rx={640} />
           {chorro > 0 && untada < 1 && <path d={`M 590 910 Q ${600 + 20 * chorro} ${930 + 30 * chorro} ${615 + 25 * chorro} ${950 + 50 * chorro}`} stroke={CX.crema} strokeWidth={30} strokeLinecap="round" fill="none" opacity={1 - untada} />}
           <Tubo x={590} y={880} rot={28} s={0.85} aprieta={aprieta} />
@@ -216,7 +216,7 @@ function CortisonaShot() {
             const xx = enTramo ? klerp(px, 300, junta) : px, yy = enTramo ? klerp(py, 940, junta) : py;
             const dim = T > K.P + 0.3 && tr < 0 ? 0.35 : 1;
             return <MiniMatraz key={i} x={xx} y={yy} s={on * (enTramo ? klerp(1, 0.4, junta) : 1)} color={enTramo || (tr >= 0 && T > K.M + 5.6) ? KC.red : KC.cyan} o={dim * (enTramo ? 1 - junta * 0.9 : 1)} />; })}
-          {T > K.M + 5.0 && <g transform={`translate(950 1170) scale(${kprog(T, K.M + 5.0, K.M + 5.4, kEase.rebote)})`} opacity={T > K.P + 0.3 ? 0.35 : 1}>
+          {T > K.M + 5.0 && <g transform={`translate(965 1215) scale(${kprog(T, K.M + 5.0, K.M + 5.4, kEase.rebote)})`} opacity={T > K.P + 0.3 ? 0.35 : 1}>
             <rect x={-90} y={-20} width={180} height={30} rx={8} fill="#9aa6b2" stroke={KC.ink} strokeWidth={6} /><rect x={-20} y={10} width={40} height={50} fill="#9aa6b2" stroke={KC.ink} strokeWidth={6} />
             <circle cx={0} cy={-34} r={14} fill="#fff" stroke={KC.ink} strokeWidth={4} />
             <text x={0} y={-62} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>18 mg</text>
@@ -232,10 +232,10 @@ function CortisonaShot() {
           <Matraz T={T} x={330} y={1180} s={1.0} pellets={kprog(T, K.E + 0.3, K.E + 2.0)} />
           {(() => { const g = kprog(T, K.E + 4.2, K.E + 4.9); return g > 0 && g < 1 ? <circle cx={330} cy={klerp(640, 980, g)} r={16} fill={KC.orange} stroke={KC.ink} strokeWidth={4} /> : null; })()}
           {T > K.E + 5.6 && <g opacity={kprog(T, K.E + 5.6, K.E + 6.0)}>
-            <rect x={640} y={820} width={380} height={330} rx={24} fill="#fbf3dc" stroke={KC.ink} strokeWidth={7} />
-            <rect x={640} y={1080} width={380} height={70} fill="#e3c68e" stroke={KC.ink} strokeWidth={0} />
-            <line x1={640} y1={1080} x2={1020} y2={1080} stroke={KC.ink} strokeWidth={5} />
-            <Rhizopus x={830} y={1080} s={0.95} crece={kprog(T, K.E + 5.8, K.E + 7.6)} nodos={[-100, 10, 110]} color="#efe3bf" />
+            <rect x={640} y={560} width={380} height={330} rx={24} fill="#fbf3dc" stroke={KC.ink} strokeWidth={7} />
+            <rect x={640} y={820} width={380} height={70} fill="#e3c68e" stroke={KC.ink} strokeWidth={0} />
+            <line x1={640} y1={820} x2={1020} y2={820} stroke={KC.ink} strokeWidth={5} />
+            <Rhizopus x={830} y={820} s={0.95} crece={kprog(T, K.E + 5.8, K.E + 7.6)} nodos={[-100, 10, 110]} color="#efe3bf" />
           </g>}
         </>)}
       </Escena>
@@ -251,7 +251,7 @@ function CortisonaShot() {
           </g>
           <g opacity={kprog(T, K.En + 0.9, K.En + 1.3)}>
             <Esteroide x={170} y={1040} L={72} tam={38} variante="11a" p={1} oh11={kprog(T, K.En + 2.4, K.En + 2.7)} c11={kprog(T, K.En + 1.4, K.En + 1.8)} color={KC.texto} T={T} />
-            <Enzima T={T} x={klerp(900, 360, kprog(T, K.En + 1.2, K.En + 2.2, kEase.sale))} y={900} s={0.9} o={1 - kprog(T, K.En + 3.2, K.En + 3.8) * 0.6} />
+            <Enzima T={T} x={klerp(900, 300, kprog(T, K.En + 1.2, K.En + 2.2, kEase.sale)) + 500 * kprog(T, K.En + 3.0, K.En + 3.8, kEase.suave)} y={klerp(700, 700, 0) - 40 * kprog(T, K.En + 3.0, K.En + 3.8)} s={0.8} o={1 - kprog(T, K.En + 3.0, K.En + 3.8) * 0.7} />
             {T > K.En + 2.4 && T < K.En + 3.2 && <circle cx={170 + 1.73 * 72} cy={1040 - 2 * 72} r={60 * kprog(T, K.En + 2.4, K.En + 2.8)} fill="none" stroke={KC.yellow} strokeWidth={8} opacity={1 - kprog(T, K.En + 2.8, K.En + 3.2)} />}
           </g>
         </>)}
@@ -300,11 +300,11 @@ function CortisonaShot() {
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.6} until={K.Cr - 0.2} texto="no es pura química" x={300} y={470} tam={40} borde={KC.yellow} />
-      <Etq T={T} at={K.G + 3.2} until={K.Cr - 0.2} x={470} y={640} texto="Rhizopus" it tam={34} color={KC.texto} />
-      <Etq T={T} at={K.Cr + 0.4} until={K.Co - 0.3} x={60} y={470} texto="hidrocortisona" tam={44} color={KC.texto} />
-      <Etq T={T} at={K.Cr + 0.9} until={K.Co - 0.3} x={60} y={530} texto="corticoide · un esteroide" tam={32} color={KC.texto} />
-      <Chip T={T} at={K.Cr + 2.0} until={K.Co - 0.3} texto="baja la hinchazón" x={330} y={640} tam={36} borde={KC.mint} />
+      <Chip T={T} at={K.G + 1.6} until={K.Cr - 0.2} texto="no es pura química" x={540} y={1195} tam={40} borde={KC.yellow} />
+      <Etq T={T} at={K.G + 3.2} until={K.Co - 0.3} x={470} y={540} texto="Rhizopus" it tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Cr + 0.4} until={K.Co - 0.3} x={560} y={660} texto="hidrocortisona" tam={40} color={KC.texto} />
+      <Etq T={T} at={K.Cr + 0.9} until={K.Co - 0.3} x={560} y={715} texto="corticoide · esteroide" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.Cr + 2.0} until={K.Co - 0.3} texto="baja la hinchazón" x={540} y={1195} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.Co + 0.2} until={K.Es - 0.3} texto="cortisol = hidrocortisona" x={360} y={430} tam={38} borde={KC.gold} />
       <Etq T={T} at={K.Co + 1.0} until={K.Es - 0.3} x={460} y={950} texto="glándulas suprarrenales" tam={28} color={KC.texto} />
       <Chip T={T} at={K.Es + 0.1} until={K.M - 0.3} texto="POR DENTRO · LA MOLÉCULA" x={420} y={430} tam={32} borde={KC.cyan} mono />
@@ -314,12 +314,12 @@ function CortisonaShot() {
       <Etq T={T} at={K.Es + 3.4} until={K.M - 0.3} x={640} y={1090} texto="carbono 11: difícil" tam={30} color={KC.yellow} />
       <TarjetaEstudio T={T} at={K.M + 0.1} until={K.M + 3.4} anio="años 40" quien="Merck · Lewis Sarett" revista="desde un ácido de la bilis" x={540} y={470} />
       <NumeroGigante T={T} at={K.M + 3.6} until={K.P - 0.2} valor={40} dur={1.2} prefijo="casi " sufijo=" pasos" x={330} y={560} tam={110} color={KC.cyan} />
-      <Chip T={T} at={K.P + 0.3} until={K.E - 0.3} texto="oxígeno en el carbono 11" x={330} y={620} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.P + 0.3} until={K.E - 0.3} texto="oxígeno en el carbono 11" x={330} y={500} tam={32} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 4.0} anio="1952" quien="Peterson y Murray · Upjohn" revista="publicado en J. Am. Chem. Soc. · patente desde 1950" x={540} y={520} />
-      <Etq T={T} at={K.E + 0.9} until={K.E + 4.0} x={60} y={745} texto="Kalamazoo, Michigan" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.E + 4.2} until={K.En - 0.3} x={380} y={600} texto="progesterona" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.E + 2.0} until={K.En - 0.3} x={560} y={1010} lado="izq" texto={<><i>Rhizopus</i> en bolitas</>} tam={28} color={KC.texto} />
-      <Etq T={T} at={K.E + 6.0} until={K.En - 0.3} x={640} y={790} texto="en una superficie:" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.E + 0.9} until={K.E + 4.0} x={470} y={760} texto="Kalamazoo, Michigan" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.E + 4.2} until={K.En - 0.3} x={60} y={600} texto="progesterona" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.E + 2.0} until={K.En - 0.3} x={500} y={1060} texto={<><i>Rhizopus</i> en bolitas</>} tam={28} color={KC.texto} />
+      <Etq T={T} at={K.E + 6.0} until={K.En - 0.3} x={640} y={530} texto="en una superficie:" tam={26} color={KC.texto} />
       <Chip T={T} at={K.En + 0.1} until={K.En + 1.0} texto="POR DENTRO · LA HIFA" x={420} y={470} tam={32} borde={KC.cyan} mono />
       <Etq T={T} at={K.En + 0.3} until={K.En + 1.0} x={60} y={600} texto={<>hifa de <i>Rhizopus</i></>} tam={30} color={KC.texto} />
       <Etq T={T} at={K.En + 1.4} until={K.B - 0.3} x={60} y={590} texto="enzima P450 del hongo" tam={30} color={CX.enz} />

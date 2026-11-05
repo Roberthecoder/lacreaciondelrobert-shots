@@ -306,7 +306,7 @@ function GiberelinasShot() {
           </g>
           {[0, 1, 2].map((i) => <Plantula key={i} T={T} x={720 + i * 110} y={1080} alto={klerp(200, 330, estiraKu)} seed={i + 9} />)}
           <rect x={640} y={1080} width={380} height={50} rx={10} fill="#8a6a3a" stroke={KC.ink} strokeWidth={6} />
-          <g opacity={kprog(T, K.Ku + 2.5, K.Ku + 2.8) * (1 - kprog(T, K.Ku + 4.6, K.Ku + 5.0))}><Atomizador T={T} x={560} y={820} s={0.8} spray={spray} ang={-12} /></g>
+          <g opacity={kprog(T, K.Ku + 2.5, K.Ku + 2.8) * (1 - kprog(T, K.Ku + 4.6, K.Ku + 5.0))}><Atomizador T={T} x={620} y={930} s={0.7} spray={spray} ang={-14} /></g>
         </>)}
       </Escena>
       {/* 5 · Yabuta: la sustancia purificada, la giberelina */}

@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #75 · rama `claude/fun-75-79-biotec`.
 - **Formato:** N1 Por dentro + N5 El experimento (a la mitad se recrea el experimento de Kurosawa con el caldo filtrado). Viaje racimo de uvas (macro) → arrozal enfermo → hongo al microscopio → célula que se estira → célula de uva → tanque de fermentación → **el mismo racimo**, ya "leído".
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla: «Esas uvas sin semilla no se inflaron solas: muchas las agranda la hormona de un hongo.»
-- **Duración:** voz 1007 caracteres / 174 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base (se ajusta en la fase 2 con `estimar-escenas.mjs`).
+- **Duración:** voz 1020 caracteres / 175 palabras (≈ 58 s) + cierre 3.5 s → **61.49 s** en la base (escenas de `estimar-escenas.mjs` escaladas a 58 s de voz; narrar.mjs las ajusta a la voz real).
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** curioso, sin alarma: la giberelina también la fabrican las plantas; no se dice que sea dañina ni que todas las uvas la lleven. No se habla de la pudrición de la uva (*Botrytis* ya tiene su shot).
 
@@ -38,18 +38,20 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y qué tie
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no se inflaron solas» (cuadro 0) |
-| 2 | 9.0 | 12.4 | 10_serio_molesto | `arriba-der` | «muchas quedan estériles» |
-| 3 | 14.0 | 18.3 | 13_senalando_arriba | `arriba-der` | «roció arroz sano… y también se estiró» |
-| 4 | 22.5 | 26.8 | 06_pensativo_menton | `arriba-der` | «destruye proteínas que frenan el crecimiento» |
-| 5 | 27.4 | 29.6 | 07_pensativo_puno | `grande` | «¿Y qué tiene que ver con tus uvas?» |
-| 6 | 35.5 | 40.6 | 11_sorprendido | `arriba-der` | «de cincuenta a noventa por ciento más» |
-| 7 | 44.0 | 47.4 | 04_bajando_lentes | `arriba-der` | «criando ese mismo hongo en tanques» |
-| 8 | 48.0 | 52.4 | 13_senalando_arriba | `arriba-der` | «para 1962, casi todas… ya se rociaban» |
-| 9 | 53.0 | 57.8 | 02_apuntando_camara | `arriba-der` | «muchas uvas así no crecieron solas» |
+| 1 | 0.0 | 2.6 | 11_sorprendido | `gancho` | «no se inflaron solas» (cuadro 0) |
+| 2 | 9.3 | 12.7 | 10_serio_molesto | `arriba-der` | «muchas quedan estériles» |
+| 3 | 14.5 | 18.0 | 13_senalando_arriba | `arriba-der` | «roció arroz sano… y también se estiró» |
+| 4 | 22.7 | 27.0 | 06_pensativo_menton | `arriba-der` | «destruye proteínas que frenan el crecimiento» |
+| 5 | 27.3 | 29.6 | 07_pensativo_puno | `grande` | «¿Y qué tiene que ver con tus uvas?» |
+| 6 | 35.8 | 40.5 | 11_sorprendido | `arriba-der` | «de cincuenta a noventa por ciento más» |
+| 7 | 44.3 | 47.5 | 04_bajando_lentes | `arriba-der` | «criando ese mismo hongo en tanques» |
+| 8 | 49.8 | 52.4 | 13_senalando_arriba | `arriba-der` | «para 1962, casi todas… ya se rociaban» (entra cuando se va la tarjeta de 1957) |
+| 9 | 53.2 | 57.9 | 02_apuntando_camara | `arriba-der` | «muchas uvas así no crecieron solas» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 9 · **34.9 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · una vez grande (`grande`). Si en la escena de un mapa o una báscula estorba, pasa a `izq-alto`.
+Apariciones 9 · **31.8 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · una vez grande (`grande`). Revisado cuadro por cuadro: no tapa datos, etiquetas ni subtítulo.
+
+**Nota técnica:** `kit-robert.jsx` de esta carpeta acepta `_cursiva_` en `Subtitulo` (nombres científicos en cursiva, como en fun-78).
 
 ## Fuentes (abiertas en texto completo el 5 nov 2026)
 

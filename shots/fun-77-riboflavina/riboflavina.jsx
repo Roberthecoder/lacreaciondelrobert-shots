@@ -374,10 +374,10 @@ function RiboflavinaShot() {
             </g>}
             {pl > 0.01 && <g>
               <LamparaUV x={540} y={470} w={760} on={uv} T={T} alto={620} />
-              <Petri x={290} y={850} r={165 * pl} medio="#f5e7b8">
+              <Petri x={290} y={870} r={145 * pl} medio="#f5e7b8">
                 {[[-60, -40], [70, 50], [10, 90]].map(([a, b], i) => <Colonia key={i} cx={a} cy={b} r={22 * crece} seed={i + 1} />)}
               </Petri>
-              <Petri x={790} y={850} r={165 * pl} medio="#ffe680">
+              <Petri x={790} y={870} r={145 * pl} medio="#ffe680">
                 {[[-70, -60], [60, -70], [0, 0], [-90, 40], [80, 40], [-20, 100], [40, -10], [-40, -110], [100, -10], [20, 70]].map(([a, b], i) => <Colonia key={i} cx={a} cy={b} r={22 * crece} seed={i + 5} />)}
               </Petri>
             </g>}
@@ -464,8 +464,8 @@ function RiboflavinaShot() {
       <Etq T={T} at={K.E + 0.4} until={K.E + 3.5} x={60} y={440} texto="esporas en aguja de" tam={30} color={KC.texto} />
       <Etq T={T} at={K.E + 0.6} until={K.E + 3.5} x={430} y={440} texto="Ashbya gossypii" it tam={30} color={KC.gold2} />
       <TarjetaEstudio T={T} at={K.E + 1.2} until={K.E + 3.5} anio="2001" quien="Alemania, Reino Unido y España" revista="Environmental Microbiology, 2001" x={540} y={900} />
-      <Etq T={T} at={K.E + 4.4} until={K.Ta - 0.3} x={140} y={1068} texto="sin riboflavina" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.E + 4.6} until={K.Ta - 0.3} x={640} y={1068} texto="con riboflavina" tam={28} color={KC.yellow} />
+      <Etq T={T} at={K.E + 4.4} until={K.Ta - 0.3} x={140} y={1060} texto="sin riboflavina" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.E + 4.6} until={K.Ta - 0.3} x={640} y={1060} texto="con riboflavina" tam={28} color={KC.yellow} />
       <Chip T={T} at={K.E + 5.6} until={K.Ta - 0.3} texto="hipótesis: protector UV" x={360} y={360} tam={32} borde={KC.yellow} />
       <Chip T={T} at={K.Ta + 0.5} until={K.Ge - 0.3} texto="1990: fermentación industrial" x={740} y={400} tam={30} borde={KC.ink} />
       <Etq T={T} at={K.Ta + 0.9} until={K.Ge - 0.3} x={560} y={500} texto="BASF · con aceite vegetal" tam={28} color={KC.ink} />
