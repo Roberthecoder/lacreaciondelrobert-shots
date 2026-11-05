@@ -58,4 +58,6 @@ Segundo verificador (no escribió el guion ni la primera verificación). Abrí y
 
 **Cambios hechos:** solo el subtítulo idx 10 en `morillas.jsx` ("La falsa morilla: \*combustible de cohete.\*" → "Falsa morilla: su toxina da \*químico de cohete.\*"). El texto narrado de `narracion.json` NO cambió; `guion.md` y `publicacion.md` ya decían lo correcto ("su toxina se rompe … en monometilhidrazina, un ingrediente de combustible de cohete").
 
+Re-render pedido el 5 nov 2026 por el cambio del subtítulo idx 10 (falsa morilla: «su toxina da químico de cohete»).
+
 VEREDICTO: APROBADO
