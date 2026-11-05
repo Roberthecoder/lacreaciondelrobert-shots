@@ -527,7 +527,7 @@ function TesguinoShot() {
       <Rotulo T={T} at={K.R + 3.9} until={K.C - 0.3} x={760} y={560} centro texto={TX.bye} tam={24} color={KC.ink} fondo="rgba(255,255,255,.88)" />
 
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.fabrica} x={290} y={390} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.C + 3.9} until={K.Ou} texto={TX.saber} x={790} y={1160} tam={28} borde={KC.gold} />
+      <Chip T={T} at={K.C + 3.9} until={K.Ou} texto={TX.saber} x={330} y={980} tam={30} borde={KC.gold} />
       <Rotulo T={T} at={K.C + 2.4} until={K.Ou} x={330} y={480} centro texto={TX.tandas} tam={30} color={KC.ink} fondo="rgba(255,255,255,.85)" />
 
       {/* barras de escala */}

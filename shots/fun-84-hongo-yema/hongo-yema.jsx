@@ -6,7 +6,7 @@
 const TX = {
   huevo: '¿un huevo?', nacer: 'un hongo a punto de nacer',
   volcan: 'La Malinche · Tlaxcala', cima: 'cima: 4,460 m', altura: '≈ 3,000 m', bosque: 'bosque de pinos y ailes', lluvias: 'se recolecta de julio a septiembre, ya entradas las lluvias',
-  porDentro: 'POR DENTRO · EL «HUEVO»', sombrero: 'sombrero', laminillas: 'laminillas', pie: 'pie', velo: 'velo universal (el «cascarón»)',
+  porDentro: 'POR DENTRO · EL «HUEVO»', sombrero: 'sombrero', laminillas: 'laminillas', pie: 'pie', velo: 'velo universal',
   volva: 'volva: bolsa blanca',
   cSombrero: 'sombrero rojo anaranjado', cLam: 'laminillas amarillas', cAnillo: 'anillo amarillo', cPie: 'pie amarillo', cVolva: 'volva blanca en saco',
   especie: 'Amanita basii', complejo: 'complejo Amanita caesarea', siete: 'en México se usan al menos 7 especies de este grupo',
@@ -21,8 +21,8 @@ const TX = {
   rasgos: ['sin «ajonjolí»', 'con «pañuelito»', 'con «botita»'], rasgosQue: ['(sin verrugas)', '(anillo)', '(volva)'],
   ojo: 'la mortal también los tiene: un rasgo no basta',
   yuyo: 'yuyo (comestible)', yuyoSp: 'Amanita hayalyuy', veneno: '«yuyo de veneno»', tseltal: 'en tseltal: «k\'antsu blanco»: el nombre avisa…',
-  avisa: '…pero no todas las mortales son blancas', chiapas: 'Los Altos de Chiapas', algunos: '(así le dicen en algunas comunidades)',
-  sinRegla: 'no hay regla ni prueba general', sinFuente: 'para separar un hongo venenoso de uno comestible', sinFolk: 'ni trucos caseros ni «pruebas» de la tradición',
+  avisa: '…pero no todas las mortales son blancas', chiapas: 'Los Altos de Chiapas', algunos: '(en algunas comunidades)',
+  sinRegla: 'no hay regla ni prueba general', sinFuente: 'para separar venenoso de comestible', sinFolk: 'ni trucos ni «pruebas» caseras',
   nofoto: 'foto', noregla: 'regla', noapp: 'app', experto: '✓ solo con un experto', medico: '¿Te sientes mal? Al médico, y lleva el hongo',
   ningun: 'Ningún rasgo, foto ni app basta',
   cierre: 'solo con un experto',
@@ -259,7 +259,7 @@ function HongoYemaShot() {
         <Ambiente T={T} n={20} />
         {fsvg(<Huevo T={T} x={540} y={1180} s={1.1} />)}
       </Escena>
-      <Lupa T={T} at={K.D + 0.15} until={K.R - 0.35} x={540} y={790} r={300} fx={540} fy={1090} interior={(t, r) => <CorteHuevo T={t} r={r} p={kprog(t, K.D + 0.4, K.D + 2.6)} />} tinte={KC.gold2} etiqueta={TX.porDentro} />
+      <Lupa T={T} at={K.D + 0.15} until={K.R - 0.35} x={540} y={780} r={270} fx={540} fy={1090} interior={(t, r) => <CorteHuevo T={t} r={r} p={kprog(t, K.D + 0.4, K.D + 2.6)} />} tinte={KC.gold2} etiqueta={TX.porDentro} />
       {/* 4–5 · se rasga el velo y sale el hongo amarillo */}
       <Escena T={T} a={K.R} b={K.P} zoom={0.05} origen="50% 55%">
         <FondoLunares color={KC.mint} />
@@ -282,7 +282,6 @@ function HongoYemaShot() {
           {(() => { const u = kprog(T, K.P + 0.5, K.P + 2.2); return u < 0.25
             ? <Huevo T={T} x={910} y={1170} s={0.9} abre={kprog(u, 0.05, 0.25)} />
             : <HongoYema T={T} x={910} y={1170} s={0.85} crece={klerp(0.15, 1, kprog(u, 0.25, 1))} blanca mece={1} />; })()}
-          <g opacity={kprog(T, K.P + 2.2, K.P + 2.6)}><circle cx={910} cy={700} r={30} fill={KC.ink} /><circle cx={899} cy={696} r={7} fill="#fff" /><circle cx={921} cy={696} r={7} fill="#fff" /><rect x={898} y={712} width={24} height={8} rx={3} fill="#fff" /></g>
           <Interrogacion T={T} x={790} y={560} tam={300} />
         </>, 15)}
       </Escena>
@@ -360,7 +359,7 @@ function HongoYemaShot() {
           <HongoYema T={T} x={930} y={1140} s={0.6} blanca crece={kprog(T, K.C + 0.6, K.C + 1.6)} />
           <Canasta T={T} x={200} y={1170} s={1.0} llena={kprog(T, K.C + 0.2, K.C + 1.4)} />
           <Huevo T={T} x={HV.x} y={HV.y} s={HV.s} grieta={1} />
-          <g opacity={kprog(T, K.C + 1.2, K.C + 1.6)}><Interrogacion T={T} x={540} y={740} tam={170} /></g>
+          <g opacity={kprog(T, K.C + 1.2, K.C + 1.6) * (1 - kprog(T, K.Ou, K.Ou + 0.4))}><Interrogacion T={T} x={540} y={740} tam={170} /></g>
         </>, 15)}
       </Escena>
 
@@ -369,13 +368,13 @@ function HongoYemaShot() {
       <Chip T={T} at={K.G + 1.6} until={K.V - 0.4} texto={TX.nacer} x={360} y={640} tam={38} borde={KC.gold} />
       <Etq T={T} at={K.V + 0.3} until={K.D - 0.4} x={60} y={480} texto={TX.volcan} tam={40} color={KC.ink} />
       <Etq T={T} at={K.V + 0.6} until={K.D - 0.4} x={500} y={575} lado="izq" texto={TX.cima} tam={28} color={KC.ink} />
-      <Etq T={T} at={K.V + 2.0} until={K.D - 0.4} x={250} y={alt(3000)} texto={TX.altura} tam={34} color={KC.ink} />
-      <Etq T={T} at={K.V + 1.2} until={K.D - 0.4} x={60} y={1120} texto={TX.bosque} tam={30} color={KC.texto} />
-      <Chip T={T} at={K.V + 2.6} until={K.D - 0.4} texto={TX.lluvias} x={540} y={1180} tam={26} borde={KC.blue} />
-      <Etq T={T} at={K.D + 1.0} until={K.R - 0.4} x={390} y={600} lado="izq" texto={TX.sombrero} tam={30} color={HY.ambar} />
-      <Etq T={T} at={K.D + 1.5} until={K.R - 0.4} x={300} y={790} lado="izq" texto={TX.laminillas} tam={30} color={HY.amarillo} />
-      <Etq T={T} at={K.D + 2.0} until={K.R - 0.4} x={760} y={900} texto={TX.pie} tam={30} color={HY.amarillo2} />
-      <Etq T={T} at={K.D + 2.5} until={K.R - 0.4} x={170} y={1180} texto={TX.velo} tam={28} color={KC.texto} />
+      <Etq T={T} at={K.V + 2.0} until={K.D - 0.4} x={110} y={alt(3000) - 44} texto={TX.altura} tam={34} color={KC.ink} />
+      <Etq T={T} at={K.V + 1.2} until={K.D - 0.4} x={60} y={1030} texto={TX.bosque} tam={30} color={KC.texto} />
+      <Chip T={T} at={K.V + 2.6} until={K.D - 0.4} texto={TX.lluvias} x={540} y={1110} tam={24} borde={KC.blue} />
+      <Etq T={T} at={K.D + 1.0} until={K.R - 0.4} x={300} y={620} lado="izq" texto={TX.sombrero} tam={30} color={HY.ambar} />
+      <Etq T={T} at={K.D + 1.5} until={K.R - 0.4} x={262} y={760} lado="izq" texto={TX.laminillas} tam={30} color={HY.amarillo} />
+      <Etq T={T} at={K.D + 2.0} until={K.R - 0.4} x={820} y={860} texto={TX.pie} tam={30} color={HY.amarillo2} />
+      <Etq T={T} at={K.D + 2.5} until={K.R - 0.4} x={262} y={900} lado="izq" texto={TX.velo} tam={22} color={KC.texto} />
       <Etq T={T} at={K.R + 1.2} until={K.S - 0.2} x={460} y={1110} texto={TX.volva} tam={30} color={KC.ink} />
       <Etq T={T} at={K.S + 1.6} until={K.P - 0.4} x={625} y={650} texto={TX.cSombrero} tam={24} color={KC.ink} />
       <Etq T={T} at={K.S + 2.0} until={K.P - 0.4} x={600} y={745} texto={TX.cLam} tam={24} color={KC.ink} />
@@ -385,11 +384,11 @@ function HongoYemaShot() {
       <Etq T={T} at={K.S + 0.4} until={K.P - 0.4} x={60} y={380} texto={TX.especie} it tam={40} color={KC.ink} />
       <Etq T={T} at={K.S + 0.8} until={K.P - 0.4} x={60} y={430} texto={TX.complejo} it tam={26} color={KC.ink} />
       <Etq T={T} at={K.S + 1.2} until={K.P - 0.4} x={60} y={475} texto={TX.siete} tam={20} color={KC.ink} />
-      <Etq T={T} at={K.P + 2.4} until={K.E - 0.4} x={560} y={1220} texto={TX.mortales} tam={30} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.N - 0.4} anio={TX.est.anio} quien={TX.est.quien} revista={TX.est.revista} x={540} y={540} />
+      <Etq T={T} at={K.P + 2.4} until={K.E - 0.4} x={1040} y={760} lado="izq" texto={TX.mortales} tam={28} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.N - 0.4} anio={TX.est.anio} quien={TX.est.quien} revista={TX.est.revista} x={540} y={510} />
       {TX.pueblos.map((n, i) => <Etq key={i} T={T} at={K.E + 1.5 + i * 0.5} until={K.N - 0.4} x={PUEBLOS[i][0] + (i === 2 ? -24 : 24)} y={PUEBLOS[i][1]} lado={i === 2 ? 'izq' : 'der'} texto={n} tam={22} color={KC.ink} />)}
-      <NumeroGigante T={T} at={K.E + 2.6} until={K.N - 0.4} valor={191} dur={1.2} etiqueta={TX.entrevistas} x={250} y={790} tam={100} color={KC.pink} />
-      <Chip T={T} at={K.E + 3.4} until={K.N - 0.4} texto={TX.cuestionarios} x={790} y={760} tam={28} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.E + 2.6} until={K.N - 0.4} valor={191} dur={1.2} etiqueta={TX.entrevistas} x={250} y={830} tam={100} color={KC.pink} />
+      <Chip T={T} at={K.E + 3.4} until={K.N - 0.4} texto={TX.cuestionarios} x={790} y={740} tam={28} borde={KC.ink} />
       <NumeroGigante T={T} at={K.N + 0.1} until={K.Ra - 0.4} valor={121} dur={1.2} sufijo={TX.nombresNum} etiqueta={TX.nombresEtq} x={330} y={500} tam={110} color={KC.pink} />
       <Chip T={T} at={K.N + 0.7} until={K.Ra - 0.4} texto={TX.especies40} x={430} y={668} tam={22} borde={KC.ink} />
       <Chip T={T} at={K.N + 2.6} until={K.Ra - 0.4} texto={TX.conocia} x={300} y={740} tam={24} borde={HY.naranja} />

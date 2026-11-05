@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esto no es polvo: son semillas de orquídea. Y en el bosque, sin un hongo, no germinan."
+      "texto": "Esto no es polvo: son semillas de orquídea. Y en el bosque, sin hongo, no germinan."
     },
     {
       "escena": "Bosque",
@@ -17,11 +17,11 @@
     },
     {
       "escena": "Semilla",
-      "texto": "Por dentro: una red, un embrión diminuto y sin reservas. No trae lonchera."
+      "texto": "Es una red con un embrión diminuto, sin endospermo: casi sin comida para arrancar. No trae lonchera."
     },
     {
       "escena": "Hifa",
-      "texto": "Así que deja entrar a un hongo, como Tulasnella o Ceratobasidium."
+      "texto": "Deja entrar a un hongo, como Tulasnella o Ceratobasidium."
     },
     {
       "escena": "Peloton",
@@ -41,7 +41,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En un estudio de 2007, la UNAM crió con sus hongos plántulas de Bletia urbana, orquídea en peligro, y las devolvió al Pedregal de San Ángel."
+      "texto": "En 2007, la UNAM reportó plántulas de Bletia urbana, orquídea en peligro, criadas con sus hongos y devueltas al Pedregal de San Ángel."
     },
     {
       "escena": "Resultado",
@@ -49,11 +49,11 @@
     },
     {
       "escena": "Vainilla",
-      "texto": "Y la vainilla, nativa de México y Centroamérica, también es una orquídea."
+      "texto": "La vainilla, nativa de México y Centroamérica, también es una orquídea."
     },
     {
       "escena": "Cierre",
-      "texto": "Ese polvo no es polvo: es un bosque de orquídeas esperando a su hongo."
+      "texto": "Ese polvo no es polvo: es un bosque de orquídeas esperando su hongo."
     }
   ],
   "mezcla": "oficial-30oct"
