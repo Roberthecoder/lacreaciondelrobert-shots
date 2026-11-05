@@ -305,17 +305,17 @@ function LevaduraShot() {
 
       {/* textos */}
       <Letrero T={T} at={K.G + 0.2} until={K.Ma - 0.3} texto="NO ES INMORTAL" x={540} y={1440} tam={120} color={KC.white} />
-      <Etq T={T} at={K.Ma + 0.5} until={K.Ce - 0.3} x={50} y={500} texto="levadura de pan" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ma + 0.9} until={K.Ce - 0.3} x={50} y={556} texto="Saccharomyces cerevisiae" it tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ma + 0.5} until={K.Ce - 0.3} x={50} y={420} texto="levadura de pan" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ma + 0.9} until={K.Ce - 0.3} x={50} y={476} texto="Saccharomyces cerevisiae" it tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ce + 0.2} until={K.Y - 0.2} texto="AL MICROSCOPIO" x={330} y={430} tam={36} borde={KC.cyan} mono />
       <Etq T={T} at={K.Ce + 0.9} until={K.Y + 2.0} x={50} y={520} texto="una sola célula · 5 × 6 µm" tam={30} color={KC.gold2} />
       <Etq T={T} at={K.Y + 0.6} until={K.An + 1.8} x={50} y={1150} texto="madre" tam={32} color={KC.texto} />
       <Etq T={T} at={K.Y + 1.4} until={K.An + 1.8} x={1030} y={1170} lado="izq" texto="hija (yema)" tam={32} color={KC.texto} />
       <Etq T={T} at={K.An + 0.4} until={K.An + 2.2} x={50} y={470} texto="anillo de quitina (en el cuello)" tam={28} color={LV.quitina} />
       <Etq T={T} at={K.An + 2.6} until={K.Ri - 0.1} x={50} y={470} texto="madre: cicatriz de gemación" tam={28} color={LV.quitina} />
-      <Etq T={T} at={K.An + 3.0} until={K.Ri - 0.1} x={50} y={525} texto="hija: cicatriz de nacimiento (tenue)" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.An + 3.0} until={K.Ri - 0.1} x={50} y={525} texto="hija: marca de nacimiento" tam={26} color={KC.texto} />
       <Chip T={T} at={K.Ri + 0.2} until={K.P - 0.3} texto="≈ 90 min por hija · en el laboratorio" x={540} y={440} tam={32} borde={KC.mint} />
-      {T > K.An + 2.4 && T < K.P + 0.1 && <div style={{ position:'absolute', left:540, top:530, zIndex:42, transform:'translate(-50%,-50%)', font:`700 44px ${KF.mono}`, color:KC.gold2, textShadow:KSOMBRA, whiteSpace:'nowrap' }}>hijas: {hijasA}</div>}
+      {T > K.An + 2.4 && T < K.P + 0.1 && <div style={{ position:'absolute', left:300, top:620, zIndex:42, transform:'translate(-50%,-50%)', font:`700 44px ${KF.mono}`, color:KC.gold2, textShadow:KSOMBRA, whiteSpace:'nowrap' }}>hijas: {hijasA}</div>}
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Li - 0.3} anio="1959" quien="Mortimer y Johnston" revista="Nature, 1959 · U. de California, Berkeley" x={540} y={520} />
       <Chip T={T} at={K.E + 1.0} until={K.Li - 0.3} texto="micromanipulador" x={540} y={1230} tam={30} borde={KC.ink} fondo="rgba(14,15,18,.82)" mono />
       {T > t0E && T < K.Li - 0.3 && <div style={{ position:'absolute', left:900, top:760, zIndex:42, transform:'translate(-50%,-50%)', textAlign:'center', font:`700 34px ${KF.mono}`, color:KC.ink }}>hijas<div style={{ font:`400 110px/1 ${KF.titulo}`, color:KC.white, WebkitTextStroke:`4px ${KC.ink}` }}>{hijasE}</div></div>}
@@ -358,7 +358,7 @@ function LevaduraShot() {
         [K.Ma + 0.6, K.Ce - 0.4, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [K.Y + 0.6, K.An - 0.3, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.An + 2.1, K.Ri - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
-        [K.P + 0.0, K.E - 0.1, 'avatar_07_pensativo_puno', 'presentador'],
+        [K.P + 0.0, K.E - 0.1, 'avatar_07_pensativo_puno', 'presentador-bajo'],
         [K.E + 0.6, K.Li - 0.4, 'avatar_12_perfil_serio', 'bajo-der'],
         [K.Li + 1.0, K.Ca - 0.1, 'avatar_11_sorprendido', 'arriba-der'],
         [K.Ca + 1.1, K.Cr - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],

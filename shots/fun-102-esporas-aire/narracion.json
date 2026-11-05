@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "En cada respiración te metes esporas de hongos que tus ojos nunca van a ver."
+      "texto": "Hoy vas a respirar miles de esporas de hongos que tus ojos nunca van a ver."
     },
     {
       "escena": "Metro",
@@ -13,7 +13,7 @@
     },
     {
       "escena": "Respiro",
-      "texto": "Con medio litro por respiración, ahí van unas cuatro."
+      "texto": "Ese día, con medio litro por respiración, eran unas cuatro."
     },
     {
       "escena": "Clado",
@@ -49,11 +49,11 @@
     },
     {
       "escena": "Inmune",
-      "texto": "Tranquilo: en una persona sana, el sistema inmune las elimina; con alergia, pueden dar rinitis o asma."
+      "texto": "Tranquilo: en una persona sana, el sistema inmune suele eliminarlas; con alergia, pueden dar rinitis o asma."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que en tu próxima respiración ahí van: esporas que nunca vas a ver."
+      "texto": "Así que hoy te vas a meter miles: esporas que nunca vas a ver."
     }
   ],
   "mezcla": "oficial-30oct"
