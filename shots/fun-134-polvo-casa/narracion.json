@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Polvo base narrada.dc.html",
+  "salida": "Shot Polvo narrado.dc.html",
+  "nota": "Shot Fungi Mati #134. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese polvo no es solo polvo: es un mapa de la región donde vives, escrito en hongos."
+    },
+    {
+      "escena": "Marco",
+      "texto": "Pasa el dedo por arriba del marco de tu puerta: rara vez se limpia."
+    },
+    {
+      "escena": "Entrada",
+      "texto": "Ahí se juntan esporas de hongos que entran por ventanas y puertas, o pegadas a ti."
+    },
+    {
+      "escena": "Esporas",
+      "texto": "Son diminutas y aguantan bien la sequedad."
+    },
+    {
+      "escena": "Regiones",
+      "texto": "Y no son iguales en todos lados: muchos hongos solo viven en ciertas regiones."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces tu polvo podría delatarte?"
+    },
+    {
+      "escena": "Hisopo",
+      "texto": "Entre 2012 y 2013, en unas mil doscientas casas de Estados Unidos, voluntarios tallaron con un hisopo ese marco, adentro y afuera."
+    },
+    {
+      "escena": "ADN",
+      "texto": "Al leer su ADN encontraron más de setenta mil tipos de hongos."
+    },
+    {
+      "escena": "Afuera",
+      "texto": "Los hongos de adentro venían, sobre todo, de afuera."
+    },
+    {
+      "escena": "Bacterias",
+      "texto": "Las bacterias, en cambio, delatan quién vive ahí: hasta si hay perro, con noventa y dos por ciento de acierto."
+    },
+    {
+      "escena": "Mapa",
+      "texto": "Y solo con hongos, en 2020 una inteligencia artificial ubicó la mitad de las muestras a menos de cien kilómetros de su origen."
+    },
+    {
+      "escena": "Forense",
+      "texto": "Por eso lo proponen para la ciencia forense."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que, cuando limpies tu puerta, estás borrando un mapa de la región donde vives."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Espuma base narrada.dc.html",
+  "salida": "Shot Espuma narrado.dc.html",
+  "nota": "Shot Fungi Mati #130. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa espuma del río no es jabón: está llena de estrellas."
+    },
+    {
+      "escena": "Natural",
+      "texto": "Esta espuma es natural: sale de hojas que se pudren, no de jabón."
+    },
+    {
+      "escena": "Zoom",
+      "texto": "Al microscopio, en ella flotan esporas de cuatro brazos."
+    },
+    {
+      "escena": "Medida",
+      "texto": "En una especie común, cada brazo mide hasta cinco centésimas de milímetro."
+    },
+    {
+      "escena": "Hongos",
+      "texto": "Son de hongos que viven en las hojas caídas al agua: las ablandan y les suben la proteína."
+    },
+    {
+      "escena": "Galleta",
+      "texto": "Las larvas que comen hojas las prefieren así: es galleta seca contra galleta con crema de cacahuate."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué estrellas?"
+    },
+    {
+      "escena": "Webster",
+      "texto": "En 1959, John Webster vio que no se hunden más rápido, pero se atoran mejor al chocar."
+    },
+    {
+      "escena": "Banquito",
+      "texto": "Se cree que aterrizan como banquito, en tres puntas, aunque no en todas las especies."
+    },
+    {
+      "escena": "Ingold",
+      "texto": "Cecil Ingold las encontró en un arroyo de Inglaterra, detrás de su casa, y en 1942 publicó su hallazgo."
+    },
+    {
+      "escena": "Ramitas",
+      "texto": "Las vio atrapadas en espuma, tras unas ramitas. Hoy se conocen más de trescientas especies."
+    },
+    {
+      "escena": "Lluvia",
+      "texto": "Y hasta en la lluvia que escurre por los troncos aparecen estas estrellas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa espuma no es jabón: es un cielo de estrellas de hongo."
+    }
+  ]
+}

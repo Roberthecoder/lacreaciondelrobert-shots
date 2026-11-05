@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Tortuga Huevos base narrada.dc.html",
+  "salida": "Shot Tortuga Huevos narrado.dc.html",
+  "nota": "Shot Fungi Mati #132. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese huevo de tortuga no se echó a perder solo: lo mató un hongo de la arena."
+    },
+    {
+      "escena": "Nido",
+      "texto": "Una tortuga boba entierra unos cien huevos y se va."
+    },
+    {
+      "escena": "Limpio",
+      "texto": "Salen limpios: en Ecuador, huevos de carey tomados directo de la madre no traían el hongo."
+    },
+    {
+      "escena": "Arena",
+      "texto": "Vive en la arena: el grupo Fusarium solani, que suele comer materia muerta."
+    },
+    {
+      "escena": "Cascara",
+      "texto": "Teje hilos sobre huevos dañados, deshace la cáscara con ácidos y enzimas, y entra."
+    },
+    {
+      "escena": "Manchas",
+      "texto": "Salen manchas amarillas y azuladas; adentro, el embrión muere."
+    },
+    {
+      "escena": "Contagio",
+      "texto": "Y ese huevo puede contagiar a sus vecinos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Por qué unos nidos se salvan y otros no?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2011, en Boa Vista, Cabo Verde, siguieron veintinueve nidos."
+    },
+    {
+      "escena": "Datos",
+      "texto": "En arena seca no nacieron tres de cada diez huevos; en nidos inundados, casi ninguno, y ahí abundaba el hongo."
+    },
+    {
+      "escena": "Mundo",
+      "texto": "Lo hallaron en las seis especies buscadas, en playas de América, África y Australia, incluida la golfina, una de las que anidan en Oaxaca."
+    },
+    {
+      "escena": "Calor",
+      "texto": "Y crece mejor cerca de treinta grados: la tibieza en que se incuban los huevos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese huevo no se echó a perder: su peligro estaba en la arena."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
