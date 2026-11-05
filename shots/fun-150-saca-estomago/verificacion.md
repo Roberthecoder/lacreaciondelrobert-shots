@@ -79,4 +79,14 @@ Voz actual: 928 caracteres / 167 palabras (≈ 59 s a 170 palabras/min): sigue c
 
 Todas las afirmaciones del guion, la voz, la pantalla y las redes quedan ✅. Al quitar el encabezado de borrador (punto 1), el shot puede quedar aprobado; los puntos 2 y 3 son de limpieza.
 
-VEREDICTO: PENDIENTE DE CORRECCIONES
+## Re-verificación final (5 nov 2026)
+
+Releídos `guion.md` y `publicacion.md` tras los 3 arreglos del coordinador:
+
+1. `publicacion.md` línea 3: ya no dice «BORRADOR»; no queda ningún encabezado de borrador en `guion.md` ni en `publicacion.md`. ✅
+2. `guion.md` línea 7: «voz 928 caracteres / 167 palabras». ✅ (coincide con `narracion.json`)
+3. `guion.md` línea 10: «el propio estudio de 1991 (colonia de 5 días) y revisiones posteriores (Cairns et al. 2018) muestran que la secreción también puede ocurrir en zonas más céntricas de la colonia». ✅ Wösten 1991: "in a 5-d-old colony growth and secretion also occurred in a more central zone of the colony"; Cairns 2018: "secretion and growth can be uncoupled".
+
+Todas las afirmaciones (voz, pantalla, guion y las 7 redes + comentario fijado) quedan ✅. Sin ❌ ni ⚠️ pendientes.
+
+VEREDICTO: APROBADO
