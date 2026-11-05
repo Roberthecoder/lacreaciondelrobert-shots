@@ -3,8 +3,8 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #79 · rama `claude/fun-75-79-biotec`.
 - **Formato:** N1 "Por dentro" (macro → micro → macro) con un toque de N5 (el estudio de Freiberg dibujado como prueba de laboratorio): una cartera café en la mesa → el cultivo y el tapete → al microscopio, hifas contra fibras de colágeno → el taller (glicerina, curtido, prensa) → la prueba de doblado → la misma cartera, ya "leída", con su capita de plástico a la vista.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla: «Esa cartera no es de piel de vaca: es de hongo.»
-- **Duración:** voz 962 caracteres / 173 palabras (≈ 57–58 s) + cierre 3.5 s → objetivo **61.0–62.0 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~960 créditos de ElevenLabs).
+- **Duración:** voz 984 caracteres / 176 palabras (≈ 57.8 s) + cierre 3.5 s → **61.3 s** en la base (escenas estimadas con `estimar-escenas.mjs` y ajustadas al ritmo real de la voz de fun-59).
+- **Voz:** pendiente de aprobación de Robert (~985 créditos de ElevenLabs).
 - **Tono:** honesto y sin vender humo: el material existe y es ingenioso, pero todavía no iguala al cuero, muchas veces lleva plástico encima y a las empresas les ha costado sostenerse. **Sin logos de marcas reales en el dibujo** (Hermès, Bolt Threads, MycoWorks y Mylo solo se nombran en la voz y en tarjetas de texto plano).
 
 ## Versión narrada
@@ -12,7 +12,7 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esa cartera no es de piel de vaca: es de hongo. | Fondo amarillo de lunares. Una cartera café genérica (sin marca) cae sobre la mesa y rebota (cuadro 0.3); se abre y se cierra. Junto a ella, una vaca dibujada con un gran ✗ y un hongo de repisa (*Ganoderma*) con ✓. Número/título grande "ES DE HONGO". |
-| 1 | Hermes | Hasta Hermès presentó un bolso con este material en 2021. | Fondo rosa. Un bolso de viaje genérico (sin logo) en un pedestal, con la tarjeta de texto "2021 · Hermès + MycoWorks · bolso con material de micelio «Sylvania», curtido en Francia" y un chip chiquito "también lleva lona y piel de becerro". |
+| 1 | Hermes | Hasta Hermès presentó un bolso con este material en 2021. | Fondo rosa. Un bolso de viaje genérico (sin logo), con la tarjeta de texto "2021 · Hermès + MycoWorks · bolso con micelio «Sylvania», curtido en Francia" y una línea roja "también lleva lona y piel de becerro". |
 | 2 | Cultivo | Se cultiva micelio de hongos como *Ganoderma* sobre aserrín o restos del campo. | Fondo menta. Una charola con aserrín y rastrojo; se siembra el micelio (puntitos blancos) y se extiende en manchas blancas algodonosas. Etiquetas "aserrín · restos del campo" y "micelio de *Ganoderma*". Barra de escala 10 cm. |
 | 3 | Tapete | En un par de semanas crece un tapete que se cosecha como hoja. | Time-lapse: contador "día 1 → día 14" y la capa blanca se engruesa; unas pinzas despegan el tapete entero como una hoja. Etiqueta "tapete de micelio". |
 | 4 | Hifas | Por dentro: hifas de quitina y glucanos, enredadas en red. | **Al microscopio** (fondo oscuro, `Lupa` bajando sobre el tapete). Hifas blancas tubulares, ramificadas, con tabiques (septos), enredadas en todas direcciones. Corte de la pared de una hifa con capas: "quitina" (fibritas) y "glucanos". Barra de escala 50 µm (esquemático). |
@@ -22,8 +22,8 @@
 | 8 | Pregunta | ¿Pero aguanta como el cuero de verdad? | **Re-gancho.** Fondo cian: la cartera con un "?" gigante; Robert grande, pensativo. |
 | 9 | Estudio | En 2021, en Freiberg, Alemania, compararon nueve alternativas con cuero de zapato. | Fondo lila, laboratorio. TarjetaEstudio "2021 · Instituto FILK, Freiberg (Alemania) · revista *Coatings*". Una fila de 9 muestras genéricas (cactus, manzana, piña, hongo, kombucha…) junto a una muestra de cuero de zapato. |
 | 10 | Resultado | Ninguna lo igualó en todo; una de hongo no aguantó que la doblaran y doblaran. | Una máquina de doblado (flexómetro esquemático) dobla la muestra de hongo una y otra vez con contador; aparecen grietas y sale ✗. Chip "ninguna igualó al cuero en todo" y chip "prueba de doblado: insuficiente". |
-| 11 | Plastico | Para protegerlo, la mayoría en venta lleva una capa de poliuretano, un plástico, que estorba su degradación. | Corte de una hoja de material de micelio comercial: abajo el micelio (hifas), encima una capa brillante azulada "capa de poliuretano (plástico)". Una flecha de "se degrada en la naturaleza" se frena contra la capa. Chip "la mayoría en el mercado (revisión de 2023)". Barra de escala 500 µm (esquemático). |
-| 12 | Negocio | Y el negocio cuesta: Bolt Threads pausó Mylo en 2023 por falta de dinero; MycoWorks anunció en 2025 que cerraba su fábrica. | Fondo rosa. Dos tarjetas de texto plano (sin logos): "2023 · Bolt Threads · pausa Mylo: sin financiamiento para crecer" con un candado; "2025 · MycoWorks · anuncia cierre de su fábrica en Carolina del Sur: costo demasiado alto" con una cortina que baja. |
+| 11 | Plastico | Para protegerlo, la mayoría en venta lleva una capa de poliuretano, un plástico, que estorba su degradación. | Corte de una hoja de material de micelio comercial: abajo el micelio (hifas), encima una capa brillante azulada "capa de poliuretano (plástico)". Una flecha punteada "degradarse: más difícil" choca contra la capa (✗). Chip "la mayoría en el mercado (revisión de 2023)". Barra de escala 500 µm (esquemático). |
+| 12 | Negocio | Y el negocio cuesta: Bolt Threads pausó Mylo en 2023 por falta de dinero; MycoWorks anunció en 2025 que cerraba su fábrica. | Fondo rosa. Dos tarjetas de texto plano (sin logos): "2023 · Bolt Threads · pausa Mylo: sin financiamiento para crecer" con un candado; "2025 · MycoWorks · anuncia que cierra su fábrica (Carolina del Sur): costo de capital demasiado alto" con una cortina que baja. |
 | 13 | Cierre | Así que esa cartera sí es de hongo… pero muchas veces con su capita de plástico. | **Regreso a la imagen del inicio:** fondo amarillo de lunares, la misma cartera café, ahora con una "ventanita" de rayos X (`Lupa` modo interior) que deja ver hifas por dentro y una capita brillante por fuera. Etiquetas "hifas de hongo ✓" y "capita de plástico (muchas veces)". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
@@ -39,18 +39,18 @@ Tiempos estimados de la base (con la voz real se recorren solos). Grande en «¿
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 2.8 | 11_sorprendido | `gancho` | «no es de piel de vaca: es de hongo» (cuadro 0) |
-| 2 | 4.0 | 6.6 | 13_senalando_arriba | `arriba-der` | «hasta Hermès presentó un bolso» |
-| 3 | 15.5 | 18.5 | 04_bajando_lentes | `arriba-der` | «por dentro: hifas» (al microscopio) |
-| 4 | 25.6 | 28.0 | 12_perfil_serio | `arriba-der` | «se seca tieso y quebradizo» |
-| 5 | 28.3 | 30.6 | 07_pensativo_puno | `grande` | «¿Pero aguanta como el cuero de verdad?» |
-| 6 | 34.8 | 39.0 | 11_sorprendido | `arriba-der` | «ninguna lo igualó» |
-| 7 | 39.5 | 44.2 | 10_serio_molesto | `arriba-der` | «una capa de poliuretano, un plástico» |
-| 8 | 44.6 | 51.0 | 06_pensativo_menton | `arriba-der` | «el negocio cuesta… pausó… cerraba su fábrica» |
-| 9 | 51.5 | 56.5 | 02_apuntando_camara | `arriba-der` | «sí es de hongo… con su capita de plástico» |
-| — | 57.6 | 61.1 | 13_senalando_arriba | CierreMarca | cierre |
+| 1 | 0.0 | 2.6 | 11_sorprendido | `gancho` | «no es de piel de vaca: es de hongo» (cuadro 0) |
+| 2 | 3.4 | 6.2 | 13_senalando_arriba | `arriba-der` | «hasta Hermès presentó un bolso» |
+| 3 | 15.05 | 17.9 | 04_bajando_lentes | `arriba-der` | «por dentro: hifas» (al microscopio) |
+| 4 | 25.25 | 27.8 | 12_perfil_serio | `arriba-der` | «se seca tieso y quebradizo» |
+| 5 | 28.0 | 30.55 | 07_pensativo_puno | `grande` | «¿Pero aguanta como el cuero de verdad?» |
+| 6 | 35.45 | 39.55 | 11_sorprendido | `arriba-der` | «ninguna lo igualó en todo» |
+| 7 | 40.25 | 45.8 | 10_serio_molesto | `arriba-der` | «una capa de poliuretano, un plástico» |
+| 8 | 46.4 | 52.8 | 06_pensativo_menton | `arriba-der` | «el negocio cuesta… pausó… cerraba su fábrica» |
+| 9 | 53.4 | 57.7 | 02_apuntando_camara | `arriba-der` | «sí es de hongo… con su capita de plástico» |
+| — | 57.8 | 61.3 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 9 · **33.4 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · una vez `grande` en el re-gancho. Robert nunca tapa la cartera, las etiquetas ni el subtítulo (si estorba, cambia a `arriba-izq`).
+Apariciones 9 · **33.7 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · una vez `grande` en el re-gancho. Robert nunca tapa la cartera, las etiquetas ni el subtítulo (si estorba, cambia a `arriba-izq`).
 
 ## Fuentes (abiertas el 5 nov 2026; frase textual y año de cada dato)
 

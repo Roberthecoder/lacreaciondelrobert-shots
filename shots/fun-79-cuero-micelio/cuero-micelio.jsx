@@ -446,8 +446,8 @@ function CueroShot() {
       <Chip T={T} at={K.Pr + 0.1} until={K.Qu - 0.3} texto="EL TALLER" x={540} y={470} tam={36} borde={KC.ink} mono />
       <Chip T={T} at={K.Qu + 1.4} until={K.Pe - 0.2} texto="sin ablandador: tieso y quebradizo" x={500} y={1090} tam={34} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Re - 0.3} anio="2021" quien="Instituto FILK · Freiberg, Alemania" revista="Coatings, 2021" x={540} y={500} />
-      <EtqR T={T} at={K.Es + 2.6} until={K.Re - 0.3} x={70} y={1110} color={KC.ink} tam={26}>9 alternativas</EtqR>
-      <EtqR T={T} at={K.Es + 3.4} until={K.Re - 0.3} x={700} y={1060} color={KC.ink} tam={26}>cuero de zapato</EtqR>
+      <EtqR T={T} at={K.Es + 2.6} until={K.Re - 0.3} x={70} y={705} color={KC.ink} tam={26}>9 alternativas</EtqR>
+      <EtqR T={T} at={K.Es + 3.4} until={K.Re - 0.3} x={700} y={1040} color={KC.ink} tam={26}>cuero de zapato</EtqR>
       <Chip T={T} at={K.Re + 0.3} until={K.Pl - 0.3} texto="ninguna igualó al cuero en todo" x={370} y={450} tam={32} borde={KC.red} />
       <EtqR T={T} at={K.Re + 0.8} until={K.Pl - 0.3} x={110} y={700} color={KC.ink} tam={28}>muestra de hongo</EtqR>
       <Chip T={T} at={K.Re + 2.8} until={K.Pl - 0.3} texto="prueba de doblado: insuficiente" x={480} y={1120} tam={32} borde={KC.ink} />
@@ -463,7 +463,7 @@ function CueroShot() {
         {kvisible(T, K.Ne + 3.6, K.Ci - 0.3) && <Cortina x={870} y={1080} w={190} h={140} baja={kprog(T, K.Ne + 4.4, K.Ne + 5.6)} />}
       </>, 44)}
       <TarjetaTexto T={T} at={K.Ne + 3.4} until={K.Ci - 0.3} anio="2025" nombre="MycoWorks" x={370} y={980} ancho={640}
-        texto="anuncia que cierra su fábrica (Carolina del Sur): costo demasiado alto" />
+        texto="anuncia que cierra su fábrica (Carolina del Sur): costo de capital demasiado alto" />
       <Titulo T={T} at={K.Ci + 0.2} until={K.Ou} texto="SÍ ES DE HONGO" x={60} y={420} tam={96} />
       <EtqR T={T} at={K.Ci + 1.4} until={K.Ou} x={60} y={1040} color={KC.ink} tam={28}>hifas de hongo ✓</EtqR>
       <EtqR T={T} at={K.Ci + 2.4} until={K.Ou} x={60} y={1090} color={KC.ink} tam={26}>capita de plástico</EtqR>
