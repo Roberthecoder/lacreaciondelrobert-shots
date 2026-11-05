@@ -70,4 +70,4 @@ Verificador independiente (no escribió el guion), 5 nov 2026. Tabla original y 
 | 30c | Títulos reales en `## Fuentes` del guion (Tian, Tannous, Catellani, Vujić, Su, Brooks & Hansford 8: 113–142, WSU FSM 268) | corregido | ver lista de fuentes | — | — |
 | 8c | (opcional) Conidios de *P. expansum* dibujados casi esféricos a algo ovalados, ~3 µm | corregido | descripciones de especie | "spherical to slightly ellipsoid, blueish-green… around 3 µm" | — |
 
-Pendiente: re-verificación de las filas corregidas por el coordinador.
+
