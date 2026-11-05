@@ -2,9 +2,9 @@
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #141 · rama `claude/fun-140-144-mitos`.
 - **Formato:** N3 Capítulos y medidores + N1 Por dentro. Tres capítulos chiquitos bajo el logo: «1 · CHAMPIÑÓN», «2 · MORILLA», «3 · SHIITAKE». Medidor real: «agaritina que queda» (100 % → 34 %). Viaje plato de ensalada → por dentro del champiñón (laminilla, basidio, molécula) → sartén → morilla y sushi → **el mismo plato del inicio, ya transformado**.
-- **Gancho (de los 7):** #6 «Mito peligroso "¿Por qué NO…?"» sobre algo en pantalla: «¿Por qué NO comer cualquier hongo crudo? Porque ese champiñón de tu ensalada no es lo mismo que una morilla cruda.»
-- **Duración:** voz 979 caracteres / 167 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~980 créditos de ElevenLabs).
+- **Gancho (de los 7):** #6 «Mito peligroso "¿Por qué NO…?"» sobre algo en pantalla: «¿Por qué NO comer cualquier hongo crudo? Porque el champiñón de tu ensalada no es igual que una morilla cruda.»
+- **Duración:** voz 1005 caracteres / 172 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **No repite fun-26 (shiitake):** el shiitake sale en UNA frase («ya lo vimos») como tercer ejemplo.
 - **Tono:** sin alarma. Lo demostrado (el brote de Montana, los casos de Francia, que cocinar baja la agaritina) va como dato; lo no resuelto (si la agaritina hace daño en personas, cuál es la toxina de la morilla) se dice como no resuelto. **No es consejo médico.**
 
@@ -12,17 +12,17 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | ¿Por qué NO comer cualquier hongo crudo? Porque ese champiñón de tu ensalada no es lo mismo que una morilla cruda. | Fondo amarillo de lunares. Un tenedor cae sobre un plato de ensalada con rebanadas de champiñón crudo (cuadro 0.3, se mueve antes de 1 s). Al lado aparece una morilla cruda sobre una tabla. Chips: «champiñón crudo» · «morilla cruda» con un signo «≠» grande entre los dos. Barra 5 cm. |
+| 0 | Gancho | ¿Por qué NO comer cualquier hongo crudo? Porque el champiñón de tu ensalada no es igual que una morilla cruda. | Fondo amarillo de lunares. Un tenedor cae sobre un plato de ensalada con rebanadas de champiñón crudo (cuadro 0.3, se mueve antes de 1 s). Al lado aparece una morilla cruda sobre una tabla. Chips: «champiñón crudo» · «morilla cruda» con un signo «≠» grande entre los dos. Barra 5 cm. |
 | 1 | Depende | Depende de lo que trae cada uno. | Cámara se acerca al champiñón: cartelito «1 · CHAMPIÑÓN» bajo el logo. |
 | 2 | Agaritina | El champiñón, Agaricus bisporus, trae agaritina, que todavía se estudia. | Fondo menta: champiñón entero (sombrero blanco, laminillas rosadas a café, anillo en el pie). Etiquetas «champiñón · *Agaricus bisporus*». Zoom «AL MICROSCOPIO» (fondo oscuro): laminilla → basidio con **2 esporas** (rótulo «*bisporus*: 2 esporas por basidio»), y una molécula esquemática rotulada «agaritina (agrandada)». Chip «todavía se estudia». Barra 10 µm. |
-| 3 | Grupo3 | La agencia de la OMS contra el cáncer la dejó en el grupo tres: no clasificable en humanos. | Fondo cian. TarjetaEstudio «IARC · agencia de la OMS contra el cáncer · 1987». Cuatro cajones de la escala actual de la IARC (1, 2A, 2B, 3); la molécula cae en el cajón **3**, que se ilumina: «grupo 3 · no clasificable en humanos». |
-| 4 | Sarten | Y cocinarlo la baja: en 2002, freírlo cinco minutos en aceite le quitó dos tercios. | Fondo naranja: sartén con rebanadas chisporroteando (efecto de aceite). `Medidor` «agaritina que queda» baja de 100 % a 34 %. TarjetaEstudio «2002 · Praga · Schulzová et al. · champiñones de cultivo». Cronómetro 0→5 min. |
+| 3 | Grupo3 | La agencia de la OMS contra el cáncer la dejó en el grupo tres: no clasificable en humanos. | Fondo cian. TarjetaEstudio «IARC · agencia de la OMS contra el cáncer · 1987». Cuatro cajones de la escala actual de la IARC (1, 2A, 2B, 3); la molécula cae en el cajón **3**, que se ilumina: «grupo 3 · no clasificable como cancerígeno en humanos» y chip «la agaritina, no el hongo». |
+| 4 | Sarten | Cocinar la baja: en Praga, en 2002, freír cinco minutos en aceite otro champiñón de cultivo le quitó dos tercios. | Fondo naranja: sartén con rebanadas chisporroteando (efecto de aceite). `Medidor` «agaritina que queda» baja de 100 % a 34 %. TarjetaEstudio «2002 · Praga · Schulzová et al.» con la etiqueta «otro champiñón de cultivo: *Agaricus hortensis*» (aquí NO se dice *bisporus*). Cronómetro 0→5 min. |
 | 5 | Pregunta | ¿Y la morilla? Ahí la cosa cambia. | **Re-gancho.** Fondo rosa: la morilla gira (sombrero cónico de **celdillas como panal**, crestas y hoyos, hueca por dentro: corte a la mitad). Cartelito «2 · MORILLA». Etiquetas «morilla · *Morchella*». Robert grande, pensativo. |
 | 6 | Montana | En 2023, un restaurante de Montana sirvió morillas crudas o apenas cocidas en sushi. | Fondo lila. Mapa esquemático de EE. UU. con Montana marcado. Un rollo de sushi con morilla encima. TarjetaEstudio «2023 · Bozeman, Montana · CDC, MMWR 2024». Chips «crudas» / «apenas cocidas». |
-| 7 | Enfermos | Cincuenta y una personas se enfermaron del estómago; tres fueron al hospital y dos murieron. | Cuadrícula de 51 figuritas que se encienden de una en una (clic suave): número grande «51». Tres se marcan con una cruz de hospital, dos se apagan en gris (sin dramatismo). Chips «3 al hospital» · «2 murieron». |
+| 7 | Enfermos | Cincuenta y una personas se enfermaron del estómago; tres fueron al hospital y dos murieron. | Cuadrícula de 51 figuritas que se encienden de una en una (clic suave): número grande «51». Tres se marcan con una cruz de hospital, dos se apagan en gris (sin dramatismo). Chips «3 al hospital» · «2 murieron · tenían enfermedades previas». |
 | 8 | Crudas | Comerlas crudas fue lo más ligado a enfermarse. | Dos barras esquemáticas «crudas» (más alta) y «cocidas o a medias»; rótulo «esquemático · lo más ligado: crudas». |
 | 9 | Cultivo | Eran morillas de cultivo, y nadie encontró la toxina exacta. | Una caja «morillas de cultivo · importadas» y una lupa con «?» sobre un frasco de laboratorio: chip «toxina: no identificada». |
-| 10 | Francia | En Francia, entre 2010 y 2020, hubo cuatrocientas cuarenta y seis intoxicaciones solo por morillas. | Fondo cian. Mapa esquemático de Francia; contador 0→446. TarjetaEstudio «2010–2020 · centros antitóxicos de Francia · Vodovar et al., *Clin Toxicol* 2024». Chip «solo morillas». |
+| 10 | Francia | En Francia, entre 2010 y 2020, se reportaron cuatrocientos cuarenta y seis casos solo por morillas. | Fondo cian. Mapa esquemático de Francia; contador 0→446. TarjetaEstudio «2010–2020 · centros antitóxicos de Francia · Vodovar et al., *Clin Toxicol* 2024». Chip «446 casos reportados · solo morillas». |
 | 11 | Shiitake | Y el shiitake, ya lo vimos: crudo o mal cocido, puede llenarte la piel de rayas. | Fondo menta. Cartelito «3 · SHIITAKE». Un shiitake (sombrero café con escamitas claras) y un antebrazo con rayas rojas esquemáticas. Etiqueta «shiitake · *Lentinula edodes*» y chip «ya lo vimos: Fungi Mati #26». |
 | 12 | Cierre | No todos aguantan crudos: los silvestres, siempre cocidos y bien identificados. | **Regreso a la imagen del inicio:** el mismo plato de ensalada y la misma tabla, ahora la morilla ya en la sartén, dorada. Dos sellos: «silvestres: siempre cocidos» y «bien identificados». Aviso chiquito «No es consejo médico». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
@@ -46,7 +46,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y la moril
 | 5 | 22.8 | 25.0 | 07_pensativo_puno | `presentador` | «¿Y la morilla? Ahí la cosa cambia» |
 | 6 | 30.0 | 34.0 | 10_serio_molesto | `arriba-der` | «tres al hospital y dos murieron» |
 | 7 | 37.0 | 40.5 | 04_bajando_lentes | `arriba-der` | «nadie encontró la toxina exacta» |
-| 8 | 42.0 | 46.0 | 11_sorprendido | `arriba-der` | «cuatrocientas cuarenta y seis intoxicaciones» |
+| 8 | 42.0 | 46.0 | 11_sorprendido | `arriba-der` | «cuatrocientos cuarenta y seis casos» |
 | 9 | 50.5 | 54.5 | 02_apuntando_camara | `arriba-der` | «los silvestres, siempre cocidos» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
@@ -54,7 +54,7 @@ Apariciones 9 · **≈ 32.7 s** en pantalla (+ cierre 3.5 s) · 8 poses distinta
 
 ## Fuentes (abiertas el 5 nov 2026)
 
-1. Schulzová, V., Hajšlová, J., Peroutka, R., Gry, J. y Andersson, H. C. (2002). Influence of storage and household processing on the agaritine content of the cultivated *Agaricus* mushroom. *Food Additives and Contaminants* 19(9): 853–862. https://web.vscht.cz/hajslovj/publications/schuzlova_agaritine_fac_vol19_p853-862.pdf (champiñones de cultivo *A. bitorquis* y *A. hortensis* comprados en Praga).
+1. Schulzová, V., Hajšlová, J., Peroutka, R., Gry, J. y Andersson, H. C. (2002). Influence of storage and household processing on the agaritine content of the cultivated *Agaricus* mushroom. *Food Additives and Contaminants* 19(9): 853–862. https://web.vscht.cz/hajslovj/publications/schuzlova_agaritine_fac_vol19_p853-862.pdf (champiñones de cultivo *A. bitorquis* y *A. hortensis* comprados en Praga; el estudio aclara que *A. bisporus* no se cultiva en la República Checa. **El 34.3 % es solo de *A. hortensis* rebanado y frito 5 min en aceite a ~100 °C.**)
    > "After frying for 5 min in vegetable oil, the agaritine content had been reduced to 34.3% of the original agaritine content in fresh mushrooms"
    > "frying in oil or butter or deep frying resulted in a more marked reduction (35–70%)"
    > "Thus, the exposure to agaritine was substantially less when consuming processed Agaricus mushrooms as compared with consuming the raw mushrooms. However, it is not yet known to what extent agaritine and other phenylhydrazine derivatives occurring in the cultivated mushroom are degraded into other biologically active compounds"
@@ -63,7 +63,7 @@ Apariciones 9 · **≈ 32.7 s** en pantalla (+ cierre 3.5 s) · 8 poses distinta
    > "Subsequent evaluation: Suppl. 7 (1987) (p. 56: Group 3)"
    > "In the absence of epidemiological data, no evaluation of the carcinogenicity of agaritine to humans could be made."
 3. Gold, J. A. W. et al. (2024). Outbreak Linked to Morel Mushroom Exposure — Montana, 2023. *MMWR* 73(10): 219–224. https://www.cdc.gov/mmwr/volumes/73/wr/mm7310a1.htm
-   > 51 persons with gastrointestinal illness after eating at restaurant A, Bozeman, March–April 2023; "three hospitalizations and two deaths"
+   > "a total of 51 persons reported mild to severe gastrointestinal illness"; "three hospitalizations and two deaths"; "The two patients who died had chronic underlying medical conditions"
    > "consumption of raw morels was more strongly associated with illness than was consumption of cooked or partially cooked morels"
    > Morels "cultivated and imported fresh from China"; "the presence of a specific toxin could not be confirmed through laboratory testing"; "morel mushroom toxins are not well characterized"
    > "Morel mushrooms should be cooked before eating to mitigate potential toxic effects."
