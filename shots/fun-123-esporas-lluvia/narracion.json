@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa seta del jardín no es solo un hongo: es una fábrica de viento… y quizá de lluvia."
+      "texto": "Esa seta no es solo un hongo: es una fábrica de viento… y quizá de lluvia."
     },
     {
       "escena": "Viento",
@@ -13,15 +13,15 @@
     },
     {
       "escena": "Sube",
-      "texto": "Ese aire fresco se mueve y levanta sus esporas diez centímetros o más."
+      "texto": "Ese aire fresco corre, da vueltas y sube sus esporas diez centímetros o más."
     },
     {
       "escena": "Cielo",
-      "texto": "Capítulo dos: al cielo. En 2007 se calculó que suben al aire unos cincuenta millones de toneladas de esporas de hongos al año."
+      "texto": "Capítulo dos: al cielo. Cada año suben al aire de tres a cincuenta millones de toneladas de esporas de hongos, según el cálculo."
     },
     {
       "escena": "Respiras",
-      "texto": "En el aire de afuera que respiras suele haber miles de esporas por metro cúbico."
+      "texto": "En el aire de afuera que respiras hay miles por metro cúbico."
     },
     {
       "escena": "Pregunta",
@@ -29,27 +29,27 @@
     },
     {
       "escena": "Nube",
-      "texto": "Capítulo tres: la nube. Ahí hay gotitas que siguen líquidas bajo cero."
+      "texto": "Capítulo tres: la nube. Ahí hay gotitas líquidas bajo cero."
     },
     {
       "escena": "Semilla",
-      "texto": "Para congelarse necesitan una semilla, y sobre tierra, la mayor parte de la lluvia empieza como hielo."
+      "texto": "Para congelarse necesitan una semilla, y casi siempre que llueve sobre tierra, empezó como hielo."
     },
     {
       "escena": "Estudio",
-      "texto": "En 1992, en Canadá, el hongo Fusarium avenaceum congeló agua a dos grados y medio bajo cero."
+      "texto": "Las esporas de seta son malas semillas; otros hongos no: en 1992, en Canadá, el moho Fusarium avenaceum congeló agua a dos grados y medio bajo cero."
     },
     {
       "escena": "Royas",
-      "texto": "En 2013, esporas de royas, hongos de plantas, lo hicieron desde cuatro bajo cero."
+      "texto": "En 2013, esporas de royas lo hicieron a cuatro bajo cero."
     },
     {
       "escena": "Hipotesis",
-      "texto": "¿Cuánta lluvia provocan de verdad? Aún es hipótesis."
+      "texto": "¿Y las de la seta? En laboratorio juntan gotas. ¿Cuánta lluvia provocan? Aún es hipótesis."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que esa seta no es solo un hongo: hace viento, y quizá siembra lluvia."
+      "texto": "Así que esa seta no es solo un hongo: hace viento, y quizá ayuda a la lluvia."
     }
   ],
   "mezcla": "oficial-30oct"

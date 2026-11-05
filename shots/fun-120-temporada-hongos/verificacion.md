@@ -68,3 +68,23 @@ Con #7 y #20 corregidos, todo lo demás queda ✅.
 | — | «la parte que suelta esporas» / «en los años cincuenta» | «que suelta esporas» / «en los cincuenta» | solo recorte de tiempo, sin cambio de sentido | — |
 
 Pendiente: re-verificación independiente de estas líneas antes de la línea de veredicto.
+
+## Re-verificación independiente
+
+Subagente verificador distinto del escritor (5 nov 2026). Se volvieron a abrir: PDF del autor de [B] (texto extraído completo), resúmenes de [A] y [F] en Europe PMC (API) y [C] Nature News. Se cotejaron las 13 líneas actuales de `narracion.json` y todos los textos en pantalla del guion: no hay afirmaciones nuevas fuera de la tabla; en el guion no aparecen 75, 74.8 ni 67.9, ni se afirma que la temporada noruega se alargó.
+
+| Línea actual | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «La seta suele salir cuando la temperatura y la humedad le dan la señal.» | ✅ | [B] | "environmental moisture and temperature regimes often explain a lot of the variation in timing of fruit body production" | 2014 |
+| «su calendario lo marca sobre todo el clima, y el clima está cambiando» (voz y pantalla) | ✅ | [B] | "it … comes as no surprise that fruiting patterns are changing as climate does"; "Fruiting, however, ultimately depends on sufficient nutrients, and acquirement of nutrients in turn is affected by climate" | 2014 |
+| «En 315 especies, en promedio, la primera seta ahora sale antes y la última, después» | ✅ | [A] | "average first fruiting date of 315 species is earlier, while last fruiting date is later" | 2007 |
+| «unos treinta y tres días en los cincuenta; en los dos mil, más del doble» / pantalla «33 días → más del doble», «×2+» | ✅ | [B] | "extending from 33.2 ± 1.6 d in the 1950s (Gange et al., 2007) to more than twice (69.1 ± 6.8 d) that by 2009" | 1950s–2009 (publ. 2014) |
+| Chip «≈34,500 registros de herbario» · «2008 · Kauserud y col. · PNAS» | ✅ | [F] | "Using approximately 34,500 dated herbarium records we analyzed changes in the autumnal fruiting date of mushrooms in Norway over the period 1940-2006" | 2008 |
+| «En Noruega, desde 1980, … se atrasaron casi trece días» / chip «+12.9 días» (solo se atrasa; no se dibuja temporada alargada) | ✅ | [F] | "an average delay in fruiting since 1980 of 12.9 days"; "resulting in a more compressed fruiting season" | 2008 |
+| «Edward Gange, aficionado, … Salisbury … 56 años: 52,000 registros» / «1950–2005» | ✅ | [C], [A] | "From 1950-2005, he collected data on when, where and what fungi grew around Salisbury"; "He typed 52,000 records into Excel"; "over the past 56 years" | 2007 |
+| «Y muchas ya salen dos veces al año» / penacho de azufre | ✅ | [A], [B], [C] | "Many species are now fruiting twice a year"; "20 % of species have begun to fruit twice a year (in spring and autumn) since the mid 1970s"; "Sulphur tuft has started to fruit twice a year" | 2007 / 2014 |
+| Resto de líneas (gancho, seta, micelio, «si el clima cambia…», «¿Y cómo lo sabemos?», «En 2007, su hijo Alan…») | ✅ sin cambios | tabla principal #1, #5, #6, #8, #13 | — | — |
+
+Todas las afirmaciones de la voz actual y de la pantalla quedan ✅.
+
+VEREDICTO: APROBADO
