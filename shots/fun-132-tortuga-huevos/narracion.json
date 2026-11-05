@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Tortuga Huevos base narrada.dc.html",
+  "salida": "Shot Tortuga Huevos narrado.dc.html",
+  "nota": "Shot Fungi Mati #132. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese huevo de tortuga no se echó a perder solo: lo mató un hongo de la arena."
+    },
+    {
+      "escena": "Nido",
+      "texto": "Una tortuga boba entierra unos cien huevos y se va."
+    },
+    {
+      "escena": "Limpio",
+      "texto": "Salen limpios: el hongo nunca apareció en huevos tomados directo de la madre."
+    },
+    {
+      "escena": "Arena",
+      "texto": "Está en la arena: hongos del grupo Fusarium solani, que suelen comer materia muerta."
+    },
+    {
+      "escena": "Cascara",
+      "texto": "Tejen hilos sobre huevos dañados, deshacen la cáscara con ácidos y enzimas, y entran."
+    },
+    {
+      "escena": "Manchas",
+      "texto": "Salen manchas amarillas y azuladas; adentro, el embrión muere."
+    },
+    {
+      "escena": "Contagio",
+      "texto": "Y ese huevo puede contagiar a sus vecinos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Por qué unos nidos se salvan y otros no?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2011, en Boa Vista, Cabo Verde, siguieron veintinueve nidos."
+    },
+    {
+      "escena": "Datos",
+      "texto": "En arena seca murieron tres de cada diez embriones; donde inundó la marea, casi todos."
+    },
+    {
+      "escena": "Mundo",
+      "texto": "El hongo apareció en las seis especies que buscaron, en tres océanos; entre ellas, la golfina, la misma que anida en Oaxaca."
+    },
+    {
+      "escena": "Calor",
+      "texto": "Y crece mejor cerca de treinta grados: la tibieza en que se incuban los huevos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese huevo no se echó a perder: su primer peligro estaba en la arena."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

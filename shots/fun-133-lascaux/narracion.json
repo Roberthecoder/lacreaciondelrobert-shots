@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Lascaux base narrada.dc.html",
+  "salida": "Shot Lascaux narrado.dc.html",
+  "nota": "Shot Fungi Mati #133. Una línea por subtítulo. Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. GUION SIN VERIFICAR: falta la verificación independiente.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta pintura de más de diecisiete mil años nunca la vas a ver en persona… y en parte es por un hongo."
+    },
+    {
+      "escena": "Cueva",
+      "texto": "Está en la cueva de Lascaux, en Francia: toros, caballos y ciervos pintados con pigmentos minerales."
+    },
+    {
+      "escena": "Visitas",
+      "texto": "Unos muchachos la descubrieron en 1940; la abrieron al público, y miles de visitas trajeron calor, aliento y esporas."
+    },
+    {
+      "escena": "Verde",
+      "texto": "En las paredes brotaron algas verdes, y en 1963 la cerraron."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "Cerrada… ¿ya estaba a salvo?"
+    },
+    {
+      "escena": "Blanco",
+      "texto": "En 2001, tras cambiar su aire acondicionado, apareció un manto blanco: el hongo Fusarium solani."
+    },
+    {
+      "escena": "Hifas",
+      "texto": "Sus hilos cubrieron piso y paredes; lo frenaron con cal y biocidas."
+    },
+    {
+      "escena": "Negro",
+      "texto": "Pero después salieron manchas negras."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2012, un equipo europeo describió al más abundante: un hongo nuevo, Ochroconis lascauxensis."
+    },
+    {
+      "escena": "Melanina",
+      "texto": "Su color negro viene de la melanina de sus paredes."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Y lleva el nombre de la cueva: bautizado por la obra que amenaza."
+    },
+    {
+      "escena": "Replica",
+      "texto": "Por eso hoy visitas copias: Lascaux dos, abierta en 1983, y Lascaux cuatro, en 2016."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "La pintura real sigue ahí, a oscuras: protegida del hongo… y de tu aliento."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Abanico base narrada.dc.html",
+  "salida": "Shot Abanico narrado.dc.html",
+  "nota": "Shot Fungi Mati #131. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa mancha morada en el abanico de mar no es su color: es su reacción a un hongo de tierra."
+    },
+    {
+      "escena": "Animal",
+      "texto": "Y el abanico no es planta: es una colonia de pólipos, parientes de los corales."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "El principal sospechoso, Aspergillus sydowii, suele vivir en el suelo."
+    },
+    {
+      "escena": "Hifas",
+      "texto": "Sus hilos, las hifas, se meten y se comen el tejido."
+    },
+    {
+      "escena": "Defensa",
+      "texto": "El abanico responde con células de defensa y una barrera de melanina."
+    },
+    {
+      "escena": "Anillo",
+      "texto": "Por fuera: un anillo morado, con tejido muerto al centro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo llega un hongo de tierra al mar?"
+    },
+    {
+      "escena": "Polvo",
+      "texto": "Una hipótesis del año 2000: con el polvo del Sahara que cruza el Atlántico."
+    },
+    {
+      "escena": "Contra",
+      "texto": "Pero en 2008 no apareció en polvo africano ni caribeño; sus genes sugieren muchas entradas desde tierra."
+    },
+    {
+      "escena": "Florida",
+      "texto": "En los Cayos de Florida, desde 1997, perdieron más de la mitad de su tejido de abanico."
+    },
+    {
+      "escena": "Yucatan",
+      "texto": "En la península de Yucatán, en 2002, uno de cada ocho estaba enfermo."
+    },
+    {
+      "escena": "Humanos",
+      "texto": "Dato raro: el mismo hongo se ha encontrado en personas enfermas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Hoy hay menos casos; quizá resisten mejor. Esa mancha morada es un animal defendiéndose."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
