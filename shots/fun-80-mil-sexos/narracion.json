@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Mil Sexos base narrada.dc.html",
+  "salida": "Shot Mil Sexos narrado.dc.html",
+  "nota": "Shot Fungi Mati #80. Una línea por subtítulo. Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. 'Sexo' = tipo de apareamiento.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este hongo no tiene dos sexos: tiene más de veintitrés mil. Y en México se lo comen."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Es Schizophyllum commune: un abanico blanco y peludo de troncos muertos."
+    },
+    {
+      "escena": "Laminas",
+      "texto": "Sus laminillas parecen partidas; seco, se encoge y espera la lluvia."
+    },
+    {
+      "escena": "Sexo",
+      "texto": "Aquí, sexo es tipo de apareamiento; lo deciden dos zonas de su ADN: A y B."
+    },
+    {
+      "escena": "Versiones",
+      "texto": "La A tiene unas doscientas ochenta y ocho versiones; la B, ochenta y una."
+    },
+    {
+      "escena": "Regla",
+      "texto": "Dos hifas solo hacen pareja fértil si difieren en la A y en la B."
+    },
+    {
+      "escena": "Fibula",
+      "texto": "Así cada célula lleva dos núcleos y un ganchito, la fíbula, los reparte."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y para qué tantos sexos?"
+    },
+    {
+      "escena": "Extrano",
+      "texto": "Con un extraño, casi siempre hay pareja; con un hermano, una de cada cuatro."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Entre dos mil y dos mil dos, un equipo mexicano recorrió veinticinco mercados de Oaxaca, Tabasco y Veracruz."
+    },
+    {
+      "escena": "Oreja",
+      "texto": "Le dicen oreja de palo y estaba en los seis mercados que vendían hongos."
+    },
+    {
+      "escena": "Mone",
+      "texto": "En temporada hay quien la come más de una vez por semana, envuelta en hoja de plátano."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese abanico no tiene dos sexos: tiene miles… y también llega al plato."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

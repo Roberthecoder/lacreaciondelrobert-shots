@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Matsutake base narrada.dc.html",
+  "salida": "Shot Matsutake narrado.dc.html",
+  "nota": "Shot Fungi Mati #81. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este hongo blanco no es un champiñón: es matsutake, y de México viaja a Japón."
+    },
+    {
+      "escena": "Bosque",
+      "texto": "Sale entre las hojas de pino; aquí le dicen hongo blanco, de ocote o canela."
+    },
+    {
+      "escena": "Especie",
+      "texto": "Su nombre: Tricholoma mesoamericanum."
+    },
+    {
+      "escena": "Japon",
+      "texto": "En Japón, su primo es un manjar: a inicios de los cuarenta cosechaban doce mil toneladas al año."
+    },
+    {
+      "escena": "Escasez",
+      "texto": "En dos mil veinte, menos de cien: los pinos enfermaron y los bosques se descuidaron."
+    },
+    {
+      "escena": "Exporta",
+      "texto": "Por eso, desde los ochenta, empresas japonesas lo exportan de México."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué no lo siembran?"
+    },
+    {
+      "escena": "Micorriza",
+      "texto": "Porque bajo tierra sus hilos envuelven las raíces vivas del pino: le dan agua y minerales a cambio de azúcar."
+    },
+    {
+      "escena": "SinArbol",
+      "texto": "Sin árbol vivo no hay hongo: cultivarlo casi no ha funcionado."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En dos mil quince, en el Cofre de Perote, le enseñaron su foto a unos cien estudiantes."
+    },
+    {
+      "escena": "Takechi",
+      "texto": "Gritaron: ¡takechi! Por un comerciante japonés parecido a Takeshi, el de la Señorita Cometa."
+    },
+    {
+      "escena": "Cuidado",
+      "texto": "Y no se rastrilla la hojarasca: eso mata su micelio."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que este hongo viaja a Japón, pero vive aquí, abrazado a un pino mexicano."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

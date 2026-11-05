@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Tesguino base narrada.dc.html",
+  "salida": "Shot Tesguino narrado.dc.html",
+  "nota": "Shot Fungi Mati #82. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Tono respetuoso: la ciencia de la fermentación y el conocimiento rarámuri; no promueve el alcohol.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa olla no es solo maíz con agua: es una fábrica de hongos."
+    },
+    {
+      "escena": "Germina",
+      "texto": "Los rarámuri germinan el maíz a oscuras, varios días."
+    },
+    {
+      "escena": "Malta",
+      "texto": "Al brotar, el grano hace enzimas que cortan su almidón en azúcar: es malta."
+    },
+    {
+      "escena": "Atole",
+      "texto": "Lo muelen, lo cuecen y ese atole va a ollas de barro: así nace el tesgüino."
+    },
+    {
+      "escena": "Levaduras",
+      "texto": "Ahí entran los hongos: levaduras como Saccharomyces cerevisiae comen azúcar y sueltan alcohol y burbujas."
+    },
+    {
+      "escena": "Burbujas",
+      "texto": "Quien cuida las ollas lee esas burbujas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Pero de dónde salen esas levaduras?"
+    },
+    {
+      "escena": "Olla",
+      "texto": "Las ollas tesgüineras no se lavan: guardan levaduras de la tanda anterior."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1981, cerca de Creel, Patricia Lappe, de la UNAM, halló que la principal fuente de levaduras era el sedimento de la olla."
+    },
+    {
+      "escena": "Pasto",
+      "texto": "Y el pasto que le agregan, Bromus, no mostró enzimas: su papel sigue en duda."
+    },
+    {
+      "escena": "Tesguinada",
+      "texto": "Para los rarámuri es bebida sagrada y pago del trabajo en comunidad."
+    },
+    {
+      "escena": "Robert",
+      "texto": "Dato curioso: las primeras muestras las mandó a la UNAM un tal Robert."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa olla no es solo maíz con agua: es una fábrica de hongos heredada por generaciones."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

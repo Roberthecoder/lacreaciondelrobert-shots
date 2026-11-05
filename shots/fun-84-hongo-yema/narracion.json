@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Hongo Yema base narrada.dc.html",
+  "salida": "Shot Hongo Yema narrado.dc.html",
+  "nota": "Shot Fungi Mati #84. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es guía de identificación de hongos.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Eso no es un huevo: es un hongo a punto de nacer en un volcán."
+    },
+    {
+      "escena": "Volcan",
+      "texto": "Crece en La Malinche, Tlaxcala, entre pinos y ailes, a unos tres mil metros."
+    },
+    {
+      "escena": "Dentro",
+      "texto": "Por dentro ya trae sombrero, laminillas y pie, envueltos en un velo."
+    },
+    {
+      "escena": "Revienta",
+      "texto": "Con la lluvia, el velo se rasga y queda una bolsa blanca abajo."
+    },
+    {
+      "escena": "Sale",
+      "texto": "Sale el hongo amarillo: sombrero rojo naranja, anillo amarillo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo lo distinguen de sus primas mortales, que también nacen de huevo?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Un estudio de dos mil dos habló con ciento noventa y una personas de tres pueblos del volcán:"
+    },
+    {
+      "escena": "Nombres",
+      "texto": "daban ciento veintiún nombres a cuarenta hongos comestibles."
+    },
+    {
+      "escena": "Rasgos",
+      "texto": "En Hidalgo, las hongueras revisan: sin ajonjolí, con pañuelito y con botita."
+    },
+    {
+      "escena": "Yuyo",
+      "texto": "En Chiapas, a la amanita blanca mortal le dicen yuyo de veneno."
+    },
+    {
+      "escena": "Intox",
+      "texto": "Pero de dos mil cinco a dos mil siete, Chiapas tuvo sesenta intoxicados por hongos: veintidós murieron."
+    },
+    {
+      "escena": "Regla",
+      "texto": "Nunca comas un hongo silvestre por foto, regla o app: solo con un experto."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese huevo puede ser el hongo más rico del volcán, o su prima mortal."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
