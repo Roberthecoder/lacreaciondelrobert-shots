@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Esporotricosis base narrada.dc.html",
+  "salida": "Shot Esporotricosis narrado.dc.html",
+  "nota": "Shot Fungi Mati #67. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Tono curioso y tranquilo; no es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa espina de rosal no solo te picó: te pudo meter un hongo."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Se llama Sporothrix, y vive en la tierra, el musgo, la paja y los rosales."
+    },
+    {
+      "escena": "Entra",
+      "texto": "Entra por una cortada o un raspón, y con el calor de tu cuerpo cambia de forma."
+    },
+    {
+      "escena": "Dimorfo",
+      "texto": "Afuera es un moho de hilos finos; adentro se vuelve levadura, con forma de puro."
+    },
+    {
+      "escena": "Bulto",
+      "texto": "Entre una y doce semanas después, sale un bultito donde te picaste."
+    },
+    {
+      "escena": "Cadena",
+      "texto": "Y casi siempre salen otros, en fila, subiendo por el brazo: siguen tus vasos linfáticos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si no tienes rosales?"
+    },
+    {
+      "escena": "Gatos",
+      "texto": "En Brasil, Sporothrix brasiliensis pasa de gatos enfermos a personas por arañazos y mordidas."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Solo en la Fiocruz, en Río de Janeiro, registraron 4,188 casos humanos entre 1997 y 2011."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "En México es de las micosis bajo la piel más frecuentes, y hasta 2019, Jalisco tenía más casos publicados que cualquier otra entidad."
+    },
+    {
+      "escena": "Mineros",
+      "texto": "Y en los años cuarenta, más de tres mil mineros de oro en Sudáfrica se infectaron con la madera de las minas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Tiene tratamiento, pero si podas rosales, usa guantes y manga larga: esa espina puede traer un hongo."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
