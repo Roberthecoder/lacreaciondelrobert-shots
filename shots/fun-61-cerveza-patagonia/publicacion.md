@@ -25,7 +25,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esa cerveza lager no la hizo una levadura: la hicieron dos, en una sola célula. 🍺🔬
-Su levadura, Saccharomyces pastorianus, es un híbrido: una parte es Saccharomyces cerevisiae (la del pan) y la otra, Saccharomyces eubayanus, una levadura silvestre que se encontró en 2011 en bosques de Nothofagus de la Patagonia (su genoma coincide en 99.5 %). La silvestre aguanta el frío y cerevisiae come un azúcar de la malta que la otra no: juntas fermentan entre 10 y 15 °C. Su pariente más parecido está en el Tíbet, y en 2022 también apareció en Irlanda.
+Su levadura, Saccharomyces pastorianus, es un híbrido: una parte es Saccharomyces cerevisiae (la del pan) y la otra, Saccharomyces eubayanus, una levadura silvestre que se encontró en 2011 en bosques de Nothofagus de la Patagonia (su genoma coincide en 99.5 %). La silvestre aguanta el frío y cerevisiae come un azúcar de la malta que la otra no: juntas fermentan entre 10 y 15 °C. Su parte silvestre se parece más a levaduras del Tíbet, y en 2022 también apareció en Irlanda.
 El dibujo es esquemático. Si eres mayor de edad y tomas, hazlo con moderación. Fuentes en el primer comentario.
 ¿Sabías que el pan y la cerveza comparten levadura? 👇
 Shot Fungi Mati 61 · La Creación del Robert
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Esa cerveza lager no la hizo una levadura: la hicieron dos, en una sola célula. 🍺 Una es la levadura del pan (Saccharomyces cerevisiae) y la otra, Saccharomyces eubayanus, una levadura silvestre que aguanta el frío y que se descubrió en 2011 en bosques de la Patagonia. Su pariente más parecido está en el Tíbet. Si eres mayor de edad y tomas, hazlo con moderación.
+Esa cerveza lager no la hizo una levadura: la hicieron dos, en una sola célula. 🍺 Una es la levadura del pan (Saccharomyces cerevisiae) y la otra, Saccharomyces eubayanus, una levadura silvestre que aguanta el frío y que se descubrió en 2011 en bosques de la Patagonia. Su parte silvestre se parece más a levaduras del Tíbet. Si eres mayor de edad y tomas, hazlo con moderación.
 ¿Sabías que el pan y la cerveza comparten levadura? 👇
 Shot Fungi Mati 61 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -71,7 +71,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-La levadura detrás de la mayoría de la cerveza del mundo es un híbrido, y una de sus mitades estuvo "perdida" durante siglos.
+La levadura detrás de la mayoría de la cerveza del mundo es un híbrido, y una de sus dos partes fue un misterio hasta 2011.
 Saccharomyces pastorianus, la levadura de la cerveza lager, combina el genoma de S. cerevisiae (la del pan y la cerveza ale) con el de una especie que aguanta el frío. En 2011, un equipo de Argentina, EE. UU. y Portugal la identificó en bosques de Nothofagus de la Patagonia: S. eubayanus, con un genoma 99.5 % idéntico a la parte no-cerevisiae de la lager (PNAS).
 Cada parte aporta una ventaja industrial: eubayanus, el crecimiento a baja temperatura; cerevisiae, el consumo de maltotriosa (FEMS Yeast Research, 2015).
 Y la historia sigue: la parte silvestre se parece más a cepas del Tíbet que a las patagónicas (PLoS Genetics, 2016), y en 2022 aparecieron las primeras cepas europeas, en Irlanda.
