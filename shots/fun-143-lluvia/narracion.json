@@ -9,7 +9,7 @@
     },
     {
       "escena": "Especie",
-      "texto": "Es Agaricus campestris, el champiñón de campo, que crece en pastizales."
+      "texto": "Es Agaricus campestris, el champiñón de campo."
     },
     {
       "escena": "Fruto",
@@ -17,7 +17,7 @@
     },
     {
       "escena": "Micelio",
-      "texto": "El hongo es el micelio, una red de hilos finísimos que vive todo el año bajo tierra, comiendo."
+      "texto": "La mayor parte del hongo es el micelio: hilos finísimos que viven todo el año bajo tierra, comiendo."
     },
     {
       "escena": "Pregunta",
@@ -25,15 +25,15 @@
     },
     {
       "escena": "Boton",
-      "texto": "Primero el micelio arma un botón con casi todas las células del pie."
+      "texto": "Primero el micelio arma un botón chiquito bajo el pasto."
     },
     {
       "escena": "Inflar",
-      "texto": "Luego casi no hace células nuevas: infla las que ya tenía, llenándolas de agua."
+      "texto": "Luego el botón se infla: sus células se llenan de agua y se estiran."
     },
     {
       "escena": "Agua",
-      "texto": "Por eso un champiñón es más del noventa por ciento agua."
+      "texto": "Un champiñón de campo es más de ochenta por ciento agua."
     },
     {
       "escena": "Estudio",
@@ -41,7 +41,7 @@
     },
     {
       "escena": "Estiron",
-      "texto": "Desde unos dos centímetros, el pie casi no sumaba células: solo se estiraban."
+      "texto": "Desde unos dos centímetros, su pie creció sobre todo porque sus células se estiraron."
     },
     {
       "escena": "Alimento",
@@ -49,11 +49,11 @@
     },
     {
       "escena": "Tinta",
-      "texto": "En el hongo tinta, Coprinopsis cinerea, el estirón más rápido dura unas cinco horas."
+      "texto": "En un hongo tinta, Coprinopsis cinerea, el estirón más rápido dura unas cinco horas."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que no nació anoche: llevaba tiempo ahí abajo, y la lluvia le dio agua para inflarse."
+      "texto": "No nació anoche: llevaba tiempo ahí abajo, y la lluvia le dio agua para inflarse."
     }
   ],
   "mezcla": "oficial-30oct"
