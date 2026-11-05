@@ -78,4 +78,38 @@ El guionista aplicó las correcciones 1–6. Revisé `narracion.json` y `guion.m
 - Color de *Pleurotus*: «gris a café claro» ✅ (fila 21).
 Las otras 10 líneas de la voz no cambiaron y no hay afirmaciones nuevas. Todo queda ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador, que no escribió el guion ni hizo la verificación anterior. Revisé la voz (`narracion.json`), los letreros, chips,
+subtítulos y dibujos de `ddt.jsx`, el `guion.md` y el `publicacion.md`. Fuentes reabiertas hoy: resúmenes de PubMed por la API de NCBI
+(efetch), registro completo de Europe PMC (1987), texto completo de PMC por Europe PMC (Janusz 2017, Pozdnyakova 2012), artículo de
+*PLOS ONE* descargado completo, ToxFAQs de la ATSDR descargado y PDF de la CCA descargado.
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| Gancho: hongos de pudrición blanca «pueden romper el DDT» | ✅ | Bumpus et al., *Science* 228:1434 (PubMed 3925550) | "The white rot fungus Phanerochaete chrysosporium degraded DDT […] to carbon dioxide." | 1985 |
+| «Ese insecticida se dejó de usar en México en 2000» · chip «México lo dejó de usar en 2000» · «se usaba contra el paludismo» | ✅ | CCA, *DDT already eliminated in North America* (PDF) | "Mexico had committed to a reduction of 80 percent by 2000 and to stopping its use by 2002. The program was so successful that it completely stopped using DDT two years ahead of the plan's goal." | 2001 (dato de 2000) |
+| «en el suelo tarda años en desaparecer» · letrero «la mitad del DDT tarda de 2 a 15 años en romperse» | ✅ | ATSDR, ToxFAQs DDT/DDE/DDD (revisada 27 abr 2022) | "Microorganisms in the soil slowly break down DDT (it can take anywhere from 2 to 15 years to break down half of the DDT)." | 2022 |
+| DDT contra insectos de cultivo y transmisores de paludismo (bomba y mosquito) | ✅ | ATSDR, ToxFAQs | "DDT is a pesticide that was once widely used to control insects in agriculture and insects that carry diseases such as malaria." | 2022 |
+| «El hongo rompe la lignina, lo duro de la madera: una red revuelta de anillos» · «lignina · polímero desordenado» | ✅ | Janusz et al., *FEMS Microbiol. Rev.* (PMC5812493) | "due to the random polymer nature of lignin"; "only Basidiomycota belonging to the aerobic white rot group are able to degrade lignin completely" | 2017 |
+| «suelta peroxidasas fuera de sus hifas» · «peroxidasas · fuera de la célula» | ✅ | Pozdnyakova, *Biotechnol. Res. Int.* (PMC3398574); Janusz 2017 | "They produce extracellular enzymes with very low substrate specificity"; "Lignin peroxidases were first discovered in Phanerochaete chrysosporium" | 2012 / 2017 |
+| «…que le arrancan electrones» · «Así nacen radicales» | ✅ | Pozdnyakova 2012 | "purified LiP from P. chrysosporium was shown to attack B[a]P via one-electron abstractions, leading to unstable B[a]P radicals" | 2012 |
+| «atacan anillos muy distintos, sin escoger» · «poco específicas: no escogen» | ✅ | Janusz 2017 | "LiPs, capable of attacking lignin polymers, are relatively non-specific to their substrates." | 2017 |
+| «En 1985, en Michigan, Bumpus y su equipo lo probaron con *Phanerochaete chrysosporium*» · tarjeta «Bumpus, Tien, Wright y Aust · Science» | ✅ | PubMed 3925550; OSTI 5220503 | "Bumpus JA, Tien M, Wright D, Aust SD. […] Science. 1985 Jun 21"; OSTI: "Michigan State Univ., East Lansing" | 1985 |
+| Chip «con DDT: todo indica que usa sus enzimas de la lignina, fuera de la célula» | ✅ (dicho como indicio, igual que el artículo) | PubMed 3925550 | "Model studies, based on the use of DDT, suggest that the ability of Phanerochaete chrysosporium to metabolize these compounds is dependent on the extracellular lignin-degrading enzyme system" | 1985 |
+| «Convirtió en dióxido de carbono parte del DDT, PCB, lindano, una dioxina y benzopireno» · «parte, no todo» | ✅ | PubMed 3925550 | "degraded DDT […], 3,4,3',4'-tetrachlorobiphenyl, 2,4,5,2',-4',5'-hexachlorobiphenyl, 2,3,7,8-tetrachlorodibenzo-p-dioxin, lindane […], and benzo[a]pyrene to carbon dioxide" (el resumen no da porcentaje: «parte» es lo prudente) | 1985 |
+| «Y en 1987, la seta *Pleurotus ostreatus* también lo hizo en laboratorio» | ✅ | Bumpus y Aust, *AEM* 53:2001 (Europe PMC, PMC204048) | "Like P. chrysosporium ME-446 and BKM-F-1767, the white rot fungi Pleurotus ostreatus, Phellinus weirii, and Polyporus versicolor also mineralized DDT." (cultivos de laboratorio, Michigan State University) | 1987 |
+| «Pero ojo: en 1990, con dos insecticidas, solo del nueve al veintitrés por ciento se volvió gas» · «9–23 %» · «lindano y clordano · 30–60 días» | ✅ | Kennedy, Aust y Bumpus, *AEM* 56:2347 (PubMed 1698348) | "only [14C]lindane and [14C]chlordane underwent extensive biodegradation, as evidenced by the fact that 9.4 to 23.4% of these compounds were degraded to 14CO2 in 30 days in liquid cultures and 60 days in soil-corncob cultures". (Los autores lo llaman "extensive"; «solo» es correcto en cuanto a que la mayor parte no llegó a CO₂.) | 1990 |
+| «el resto no llegó a CO₂» | ✅ | PubMed 1698348 | Solo 9.4–23.4 % "were degraded to 14CO2"; el resto quedó como compuesto o metabolitos ("substantial bioconversion occurred") | 1990 |
+| «Y en 2026, en un vivero sueco con DDT viejo, hongos de setas no lograron una baja medible» · tarjeta «2026 · PLOS ONE · sur de Suecia» | ✅ | Casey et al., *PLOS ONE* e0357404 (publicado 11 sep 2026) | "The 23-hectare Kolleberga forest nursery, located in the southern region of Sweden"; "P. ostreatus SMS" en macetas y "spawn of P. ostreatus and Stropharia rugosoannulata pre-inoculated on straw" en campo; "no measurable degradation of DDT or its transformation products was observed in either the pot experiment or the field trial" | 2026 |
+| Chips «DDT viejo: poco disponible» y «al hongo le costó colonizar el suelo» | ✅ | Casey et al. 2026 | "addressing the limited bioavailability of DDX in historically contaminated soils, which may constrain fungal access"; "the competitive microbial communities in the soil colonised the substrate first and inhibited fungal regrowth" | 2026 |
+| Cierre «una pista para limpiar, no una solución mágica» | ✅ (conclusión sostenida) | Casey et al. 2026 | "Considering that significant reduction in DDX has been observed in similar lab experiments with DDT-spiked soils elsewhere, the findings in this study highlight critical limi[tations]" | 2026 |
+| `publicacion.md` (TikTok): «Los hongos de pudrición blanca **viven de** la lignina» | ⚠️ → corregido | Janusz 2017; la verificación anterior (fila 8) | La pudrición blanca degrada la lignina, pero *P. chrysosporium* no la usa como alimento principal (ligninólisis de metabolismo secundario). Es el mismo error que ya se había quitado de la voz («come»). → «rompen la lignina» | 2017 |
+| `publicacion.md` (YouTube): «ciertos hongos **se comen** la lignina» | ⚠️ → corregido | ídem | → «ciertos hongos rompen la lignina» | 2017 |
+| `publicacion.md` (YouTube): «sus pruebas con DDT **indicaban** que depende…» | ⚠️ → corregido | PubMed 3925550 | El artículo dice "suggest" → «sugerían que depende…» | 1985 |
+
+**Cambios hechos en esta re-verificación:** solo en `publicacion.md` (tres frases: «viven de la lignina» → «rompen la lignina» en TikTok;
+«se comen la lignina» → «rompen la lignina» y «indicaban» → «sugerían» en la descripción de YouTube). **La voz (`narracion.json`), el
+`.jsx`, los `.dc.html` y el `guion.md` no cambiaron:** todas sus afirmaciones quedaron ✅ contra la fuente original.
+
 VEREDICTO: APROBADO
