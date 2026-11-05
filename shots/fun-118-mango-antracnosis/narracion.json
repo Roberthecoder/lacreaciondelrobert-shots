@@ -1,11 +1,11 @@
 {
   "dcHtml": "Shot Mango base narrada.dc.html",
   "salida": "Shot Mango narrado.dc.html",
-  "nota": "Shot Fungi Mati #118. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "nota": "Shot Fungi Mati #118. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Si la voz real pasa de 58 s, ajustar 'velocidad' (sin créditos).",
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esas manchas negras de tu mango muchas veces no son golpes: es un hongo que entró cuando aún estaba verde."
+      "texto": "Esas manchas negras de tu mango muchas veces no son golpes: es un hongo que entró cuando estaba verde."
     },
     {
       "escena": "Hongo",
@@ -13,7 +13,7 @@
     },
     {
       "escena": "Lluvia",
-      "texto": "Sus esporas llegan en gotas de lluvia desde hojas enfermas."
+      "texto": "Sus esporas llegan con la lluvia, desde hojas enfermas."
     },
     {
       "escena": "Apresorio",
@@ -25,19 +25,19 @@
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Qué está esperando?"
+      "texto": "¿Qué espera?"
     },
     {
       "escena": "Despierta",
-      "texto": "Al madurar, la cáscara pierde buena parte de sus defensas químicas y la fruta se ablanda y se endulza: el hongo despierta."
+      "texto": "Al madurar, la cáscara pierde buena parte de sus defensas y la fruta se ablanda y endulza: despierta."
     },
     {
       "escena": "Manchas",
-      "texto": "Se extiende: manchas negras, hundidas, a veces en rayas como lágrimas… y si avanza, llega a la pulpa."
+      "texto": "Se extiende: manchas negras y hundidas, a veces como lágrimas; si avanza, llega a la pulpa."
     },
     {
       "escena": "Estudio",
-      "texto": "En 2020, científicos mexicanos analizaron cincuenta y nueve huertas y hallaron cinco especies; las más agresivas: Colletotrichum siamense y asianum."
+      "texto": "En 2020, científicos mexicanos analizaron cincuenta y nueve huertas: cinco especies; las más agresivas, Colletotrichum siamense y asianum."
     },
     {
       "escena": "Exporta",
@@ -45,11 +45,11 @@
     },
     {
       "escena": "Bano",
-      "texto": "Casi todos entran allá tras más de una hora en agua a cuarenta y seis grados: es contra la mosca de la fruta, y de paso ayuda a frenar al hongo."
+      "texto": "Casi todos entran tras más de una hora en agua a cuarenta y seis grados: es contra la mosca de la fruta, y ayuda a frenar al hongo."
     },
     {
       "escena": "Cierre",
-      "texto": "No eran golpes: era un hongo esperando que tu mango madurara… igual que tú."
+      "texto": "No era un golpe: era un hongo esperando que tu mango madurara… igual que tú."
     }
   ],
   "mezcla": "oficial-30oct"
