@@ -1,0 +1,114 @@
+{
+ "temas": [
+  {
+   "id": "fun-110-falsa-morilla",
+   "titulo": "Esto no es una morilla: es combustible de cohete (la falsa morilla, Gyromitra esculenta)",
+   "serie": "Shot Fungi Mati",
+   "numero": 110,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-110-falsa-morilla",
+   "rama": "claude/fun-110-114-comestibles",
+   "fuentes": [
+    "https://inchem.org/documents/pims/fungi/pimg029.htm",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11333700/",
+    "https://www.ruokavirasto.fi/en/themes/risk-assessment/risk-assessment-news/news-about-risk-assessment/report-nearly-one-fifth-of-toxin-remains-in-false-morels-despite-boiling-recommendation/",
+    "https://www.michigan.gov/dnr/things-to-do/morels/morel-identification"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Verpa bohemica: la parecida a la morilla con el sombrero suelto",
+    "Isoniazida y monometilhidrazina: por qué pacientes con tuberculosis son más sensibles",
+    "Por qué secar la falsa morilla quita aún menos toxina que hervirla"
+   ],
+   "verificacion": "independiente, aprobada 2026-11-05"
+  },
+  {
+   "id": "fun-111-cortinarius",
+   "titulo": "Horas sin nada no es estar a salvo: Cortinarius y la orelanina, el hongo que avisa días después",
+   "serie": "Shot Fungi Mati",
+   "numero": 111,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-111-cortinarius",
+   "rama": "claude/fun-110-114-comestibles",
+   "fuentes": [
+    "https://doi.org/10.1016/s0041-0101(00)00248-8",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5379567/",
+    "https://doi.org/10.1177/0960327115613845",
+    "https://www.thenakedscientists.com/articles/interviews/nicholas-evans-poisonous-mistake"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Amanita smithiana: daño renal en 1–4 días (contraste con la orelanina)",
+    "Por qué una intoxicación retardada es difícil de diagnosticar",
+    "Poros vs. láminas: por qué ninguna regla sola es segura (Boletus edulis)"
+   ],
+   "verificacion": "independiente, aprobada 2026-11-05"
+  },
+  {
+   "id": "fun-112-paxillus",
+   "titulo": "«Ya lo comí antes y no me hizo nada»: el paxilo enrollado (Paxillus involutus) y la hemólisis inmune",
+   "serie": "Shot Fungi Mati",
+   "numero": 112,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-112-paxillus",
+   "rama": "claude/fun-110-114-comestibles",
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/3784443/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6963215/",
+    "https://www.zobodat.at/pdf/Z-Pilzkunde_33_1967_0049-0074.pdf",
+    "https://www.fungimag.com/summer-2012-articles/PaxillusLR.pdf"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Alergias que se construyen con la exposición (alfa-gal por garrapatas)",
+    "Las 'reglas caseras' para hongos que fallan (Rubroboletus satanas)",
+    "Cómo la plasmaféresis 'limpia' la sangre"
+   ],
+   "verificacion": "independiente, aprobada 2026-11-05"
+  },
+  {
+   "id": "fun-113-esporada-verde",
+   "titulo": "Ese hongo blanco de tu jardín no es champiñón: Chlorophyllum molybdites y su esporada verde",
+   "serie": "Shot Fungi Mati",
+   "numero": 113,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-113-esporada-verde",
+   "rama": "claude/fun-110-114-comestibles",
+   "fuentes": [
+    "https://ask.ifas.ufl.edu/publication/PP324",
+    "https://www.fungimag.com/v18i1/v18i1-Poisoning-In-Canada-US.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/1406900/",
+    "https://pubmed.ncbi.nlm.nih.gov/38126634/"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Leucoagaricus leucothites: otro parasol blanco de jardín",
+    "Cómo se toma una esporada y por qué los micólogos combinan rasgos",
+    "Anillos de hadas: por qué el micelio crece en círculo"
+   ],
+   "verificacion": "independiente, aprobada 2026-11-05"
+  },
+  {
+   "id": "fun-114-hongo-cerveza",
+   "titulo": "Este hongo se come… si no tomas alcohol: Coprinopsis atramentaria y la coprina",
+   "serie": "Shot Fungi Mati",
+   "numero": 114,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-114-hongo-cerveza",
+   "rama": "claude/fun-110-114-comestibles",
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7754439/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3400832/",
+    "https://pubmed.ncbi.nlm.nih.gov/21370948/",
+    "https://pubmed.ncbi.nlm.nih.gov/1344910/"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Lepiota aspera: el síndrome con alcohol que nadie explica aún",
+    "Disulfiram y el 'rubor asiático' (variante de ALDH2): el mismo acetaldehído",
+    "Otros hongos que reaccionan con el alcohol (verificar originales)"
+   ],
+   "verificacion": "independiente, aprobada 2026-11-05"
+  }
+ ]
+}

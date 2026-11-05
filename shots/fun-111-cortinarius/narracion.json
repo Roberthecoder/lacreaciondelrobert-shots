@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Cortinarius base narrada.dc.html",
+  "salida": "Shot Cortinarius narrado.dc.html",
+  "nota": "Shot Fungi Mati #111. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es guía de identificación ni consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Si comiste un hongo del bosque y en unas horas no te pasó nada, no estás a salvo: este puede avisar días después."
+    },
+    {
+      "escena": "Cortina",
+      "texto": "Es un Cortinarius: de joven, un velo de telaraña cubre sus láminas."
+    },
+    {
+      "escena": "Esporas",
+      "texto": "Es naranja rojizo y suelta esporas color óxido."
+    },
+    {
+      "escena": "Toxina",
+      "texto": "Este trae orelanina, una toxina que daña los riñones."
+    },
+    {
+      "escena": "Tubulos",
+      "texto": "Lastima los tubitos donde se forma la orina, casi sin síntomas al principio."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cuánto tarda en avisar?"
+    },
+    {
+      "escena": "Revision",
+      "texto": "Una revisión de 2001 analizó noventa casos: en la mitad, el riñón dio señales después de ocho días y medio."
+    },
+    {
+      "escena": "Suecia",
+      "texto": "En Suecia, de veintiocho intoxicados, veintidós necesitaron diálisis."
+    },
+    {
+      "escena": "Falla",
+      "texto": "Y tres de cada cuatro llegaron a la falla renal más grave."
+    },
+    {
+      "escena": "Antidoto",
+      "texto": "No hay antídoto: queda la diálisis o un trasplante."
+    },
+    {
+      "escena": "Evans",
+      "texto": "Le pasó al novelista Nicholas Evans: en 2008, en Escocia, él y tres familiares los confundieron con porcini. Su hija le donó un riñón."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "No hay truco casero: ante la duda, no lo comas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Si comiste hongos silvestres y te sientes mal, aunque pasen días, ve a urgencias y di que comiste hongos."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Paxillus base narrada.dc.html",
+  "salida": "Shot Paxillus narrado.dc.html",
+  "nota": "Shot Fungi Mati #112. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es guía de identificación.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "«Ya lo comí antes y no me hizo nada.» Con este hongo, eso no te protege: es justo el riesgo."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Es Paxillus involutus, el paxilo enrollado: sombrero café con el borde enrollado hacia dentro."
+    },
+    {
+      "escena": "Laminas",
+      "texto": "Sus láminas bajan por el pie y se manchan de café si las tocas."
+    },
+    {
+      "escena": "Historia",
+      "texto": "Durante mucho tiempo se comió en Europa central, bien cocido."
+    },
+    {
+      "escena": "Crudo",
+      "texto": "Crudo, irrita el estómago. Pero lo grave es otra cosa."
+    },
+    {
+      "escena": "Sensibiliza",
+      "texto": "Al comerlo, tu cuerpo puede aprender a fabricar anticuerpos contra algo del hongo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y la siguiente vez que lo comes?"
+    },
+    {
+      "escena": "Hemolisis",
+      "texto": "Los anticuerpos atrapan al hongo, esos grumos se pegan a tus glóbulos rojos… y los revientan."
+    },
+    {
+      "escena": "Rinon",
+      "texto": "Eso puede dañar tus riñones, y cocerlo no lo evita."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1944, el micólogo alemán Julius Schäffer comió paxilos con su esposa; ya los habían comido muchas veces."
+    },
+    {
+      "escena": "Murio",
+      "texto": "Ella no se enfermó. Él murió diecisiete días después."
+    },
+    {
+      "escena": "Raro",
+      "texto": "Es raro, pero es muy difícil predecir a quién le va a tocar."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Haberlo comido antes no te protege. Ante la duda, no lo comas; y si te sientes mal, ve a urgencias."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
