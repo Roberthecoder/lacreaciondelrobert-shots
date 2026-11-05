@@ -4,7 +4,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #109 · rama `claude/fun-105-109-cultivo`.
 - **Formato:** N5 El experimento + N1 Por dentro: taza → posos en el filtro → mito/dato (mezclas) → por dentro (hifas entre granitos de café, cafeína → xantina) → re-gancho → estudio dibujado (Veracruz) → la misma taza, ahora con setas.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla: «Esto no es tierra: es el café que tiraste esta mañana, y puede dar setas.»
-- **Duración:** voz 913 caracteres / 176 palabras (≈ 58 s, a confirmar con `estimar-escenas.mjs`) + cierre 3.5 s → objetivo **61–62 s**.
+- **Duración:** voz 932 caracteres (≈ 57.6 s según `estimar-escenas.mjs`) + cierre 3.5 s → **61.1 s** en la base (`assets/mezcla.wav` 61.1 s + 0.3 s de cola).
 - **Voz:** pendiente de aprobación de Robert.
 - **Robert (hecho fijo ✅, correcciones-de-robert.md):** a los 10 años probó con café y no le funcionó ("café tampoco"). No se dice la causa.
 
@@ -27,21 +27,29 @@
 | 12 | Cierre | Así que no es tierra: es tu café de esta mañana, convertido en comida. | **Regreso a la imagen del inicio:** el mismo montón de posos junto a la taza, ahora mezclado con paja y con un racimo de *Pleurotus ostreatus* (repisa, pie corto lateral, laminillas decurrentes, gris-crema) saliendo. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-## Robert en pantalla (tentativo, se ajusta con los tiempos reales)
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «A mí… no me funcionó» y en «¿Y las setas salen con cafeína?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «Esto no es tierra» |
-| 2 | 4.3 | 7.5 | 12_perfil_serio | `presentador` | «a mí… no me funcionó» |
-| 3 | 10.0 | 14.0 | 10_serio_molesto | `arriba-der` | «Ojo… se frenaron» |
-| 4 | 22.0 | 26.0 | 13_senalando_arriba | `arriba-der` | «las hifas se cuelan» |
-| 5 | 28.5 | 31.0 | 06_pensativo_menton | `grande` | «¿Y las setas salen con cafeína?» |
-| 6 | 32.0 | 37.0 | 11_sorprendido | `arriba-der` | «250 kilos» |
-| 7 | 44.0 | 48.0 | 04_bajando_lentes | `arriba-der` | «más que su propio peso» |
-| 8 | 53.0 | 57.5 | 02_apuntando_camara | `arriba-der` | «tu café de esta mañana» |
-| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+| 1 | 0.0 | 3.2 | 11_sorprendido | `gancho` | «Esto no es tierra» (cuadro 0) |
+| 2 | 4.6 | 7.4 | 12_perfil_serio | `grande` | «a mí, a los diez años… no me funcionó» |
+| 3 | 7.8 | 10.6 | 10_serio_molesto | `arriba-der` | «Ojo: con puros posos, muchas veces no salen» |
+| 4 | 18.4 | 21.0 | 05_sonriendo_dientes_uniformes | `arriba-der` | «casi su peso seco en setas frescas» |
+| 5 | 21.5 | 24.6 | 13_senalando_arriba | `arriba-der` | «las hifas se cuelan entre los granitos» |
+| 6 | 28.35 | 30.7 | 06_pensativo_menton | `grande` | «¿Y las setas salen con cafeína?» |
+| 7 | 31.9 | 34.4 | 11_sorprendido | `arriba-der` | «doscientos cincuenta kilos de setas» |
+| 8 | 39.2 | 42.3 | 07_pensativo_puno | `arriba-der` | «en Veracruz… pulpa de café» |
+| 9 | 45.9 | 48.2 | 04_bajando_lentes | `arriba-der` | «más setas frescas que su propio peso seco» |
+| 10 | 53.6 | 57.5 | 02_apuntando_camara | `arriba-der` | «es tu café de esta mañana» |
+| — | 57.6 | 61.1 | 13_senalando_arriba | CierreMarca | cierre |
 
-8 apariciones · ≈ 30 s · 7 poses distintas.
+Apariciones 10 · **≈ 28.7 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas.
+
+**Música** (`gen-audio.mjs`, sigue `composicion-musical.md`): cama grave continua con acordes por sección (Am → F → G tensa → C cuando la mezcla funciona → Dm/Em graves en lo microscópico → Asus2 en la pregunta → C mayor con el espresso → F/G en Veracruz → Dm → Am al cierre) y un motivo de 4 notas («la taza», la–do–mi–re, ~100 BPM) que evoluciona: presentación y respuesta, ahogado mientras dura el problema, alto y cristalino en lo micro, en mayor con el dato del espresso, una octava abajo en la historia de Veracruz y resuelto arriba al cierre. Efectos en el mismo cuadro: filtro que se voltea y posos que caen, tachón de «¿tierra?», ✗ de Robert, sellos OJO y DATO, aviso al cruzar el 30 %, brotes de setas, balanzas, hifas que crecen, tres «pops» de los metilos que se van, 20 cajas de setas, punto en Xalapa, costales, montón de posos sobre el globo.
+
+Barras de escala: 5 cm (posos y taza), 10 cm (maceta, bolsas), 100 µm (hifas y granitos), 0.5 nm (molécula, esquema), 50 cm (cajas, costales), «cereza: 1 cm · mapa esquemático», «dibujo esquemático» (globo).
 
 ## Fuentes
 

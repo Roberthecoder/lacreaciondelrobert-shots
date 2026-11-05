@@ -340,7 +340,7 @@ function ChampinonShot() {
           <MapaMexico x={40} y={500} ancho={620} conCA={false} color="#fff4c2">
             {(() => { const [mx, my] = mxProy(-99.1, 19.4); return <Champinon x={mx} y={my + 40} s={0.5 / 0.62} crece={kprog(T, K.Mx + 0.3, K.Mx + 1.2, kEase.sale)} abre={0.2} />; })()}
           </MapaMexico>
-          <Pastel x={810} y={950} r={120} p={kprog(T, K.Mx + 2.4, K.Mx + 3.6, kEase.suave)} />
+          {T > K.Mx + 2.2 && <g opacity={kprog(T, K.Mx + 2.2, K.Mx + 2.5)}><Pastel x={810} y={950} r={120} p={kprog(T, K.Mx + 2.4, K.Mx + 3.6, kEase.suave)} /></g>}
         </>)}
       </Escena>
       {/* 12 · cosecha: oleadas cada 7–10 días */}
@@ -375,8 +375,7 @@ function ChampinonShot() {
       <Chip T={T} at={K.F2 + 1.0} until={K.S - 0.3} texto="60 °C" x={420} y={600} tam={44} borde={KC.red} />
       <Chip T={T} at={K.F2 + 1.6} until={K.S - 0.3} texto="≥ 2 h" x={850} y={630} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.S + 0.6} until={K.S + 2.2} x={70} y={600} texto="granos con micelio" tam={32} />
-      <Chip T={T} at={K.S + 1.6} until={K.P - 0.3} texto="2 a 3 semanas" x={360} y={470} tam={38} borde={KC.ink} mono />
-      <Etq T={T} at={K.S + 2.2} until={K.P - 0.3} x={520} y={1010} texto="micelio" tam={32} />
+      <Chip T={T} at={K.S + 1.6} until={K.P - 0.3} texto="micelio: 2 a 3 semanas" x={360} y={470} tam={38} borde={KC.ink} mono />
       <Etq T={T} at={K.Cb + 1.1} until={K.O - 0.3} x={110} y={660} texto="capa de cobertura" tam={34} />
       <Etq T={T} at={K.Cb + 1.5} until={K.O - 0.3} x={110} y={710} texto="turba + caliza" tam={30} />
       <Etq T={T} at={K.Cb + 1.9} until={K.O - 0.3} x={110} y={1130} texto="composta con micelio" tam={28} />
