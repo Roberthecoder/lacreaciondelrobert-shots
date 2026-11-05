@@ -1,4 +1,4 @@
 { "temas": [ { "id": "iceberg-hongos", "titulo": "El iceberg de los hongos: de lo que todos saben a lo más raro", "serie": "Shot Fungi Mati", "numero": 155,
-  "estado": "guion", "carpeta": "shots/fun-155-iceberg-hongos", "rama": "claude/fun-155-iceberg-hongos",
+  "estado": "renderizado", "carpeta": "shots/fun-155-iceberg-hongos", "rama": "claude/fun-155-iceberg-hongos",
   "fuentes": ["Baldauf y Palmer 1993 (PNAS)", "Fleming 1929/1945", "Gow et al. 2017 (Microbiol Spectr)", "Perry, Desjardin y Stevani 2024 (J Fungi 11:19)", "Ferguson et al. 2003 (Can J For Res)", "Evans et al. 2011 (PLoS ONE)", "Hughes et al. 2011 (BMC Ecol)", "Chen et al. 2023 (Nat Commun)", "Chu et al. 2025 (J Fungi)", "Dadachova et al. 2007 (PLoS ONE)"],
   "fecha": "2026-11-05", "derivados": ["Iceberg de los hongos venenosos (de la Amanita a toxinas raras)", "Iceberg de los mohos de tu casa", "Iceberg de las levaduras: del pan a la medicina"] } ] }
