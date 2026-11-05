@@ -48,4 +48,32 @@ Fuentes abiertas:
 
 Re-verificación (5 nov 2026): se leyó `narracion.json` completo (952 caracteres, sin cambios). Las 23 afirmaciones quedan ✅.
 
+## Re-verificación independiente (5 nov 2026)
+Segunda verificación pedida por Robert antes de generar la voz, hecha por un verificador que no escribió el guion ni la primera tabla.
+Se volvieron a leer: resumen completo de Menezes et al. 2015 (PubMed 26592344, vía E-utilities de NCBI), texto completo de Paludo et al. 2018
+(PMC5773678), nota de Agência FAPESP 2015 y ficha de *S. mexicana* en el catálogo Moure. Se revisaron las 14 líneas de `narracion.json`,
+todos los letreros de `abeja-hongo.jsx` (subtítulos, etiquetas, barras, tarjetas) y `publicacion.md`.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| La pelusa blanca es comida que la larva necesita | ✅ | Menezes 2015; Paludo 2018 | "Fungal mycelia growing on the provisioned food inside the brood cell are eaten by the larva"; "must consume a specific brood cell fungus in order to continue development" | 2015 / 2018 |
+| *Scaptotrigona depilis*, abeja sin aguijón de Brasil | ✅ | Menezes 2015 | "the Brazilian stingless bee Scaptotrigona depilis" | 2015 |
+| Las obreras llenan cada celdita de cera con alimento azucarado ("cera" = cerumen; en pantalla "cera + resina") | ✅ | FAPESP 2015; Paludo 2018 | "cerumen, a mixture of wax produced by worker bees and plant resins … filled with a semi-liquid food mass regurgitated by nurse bees"; "S. depilis sugar-rich brood cells" | 2015 / 2018 |
+| La reina pone un huevo encima y la celda se sella | ✅ | FAPESP 2015 | "The queen then lays an egg on the top of the food in each cell, which is sealed by workers" | 2015 |
+| Unos tres días después, de la pared brota un hongo sobre la comida | ✅ | FAPESP 2015; Paludo 2018 | "starts proliferating when the egg is about to hatch, about three days after being laid. It grows out of the cerumen, spreads over the surface of the semi-liquid food"; "3–4 days after the eggs have been laid" | 2015 / 2018 |
+| La larva lo corta con sus mandíbulas y se lo come (chip "larva de 3 días") | ✅ | FAPESP 2015 | "three-day-old larvae showed that they cut the fungal mycelia with their mandibles and ingested them" | 2015 |
+| En 2015, en Brasil, criaron larvas con comida esterilizada; con hongo 76 %, sin hongo 8 % (barras "supervivencia de larvas · 2015") | ✅ | Menezes 2015 | "Larvae reared in vitro on sterilized larval food supplemented with fungal mycelia had a much higher survival rate (76%) compared to larvae reared under identical conditions but without fungal mycelia (8% survival)"; todos los autores en instituciones de Brasil | 2015 |
+| En 2018, en la Universidad de São Paulo, vieron que el hongo le da ergosterol | ✅ | Paludo 2018 | afiliación "School of Pharmaceutical Sciences of Ribeirão Preto, University of São Paulo"; "provides essential steroid precursors to the developing bee" | 2018 |
+| La larva no fabrica esteroles y los necesita para volverse pupa | ✅ | Paludo 2018 | "Insect pupation requires ecdysteroid hormones, and as insects cannot synthesize sterols de novo, they must obtain steroids in their diet" | 2018 |
+| Pantalla: llegaron a pupa 71 % con hongo, 65 % con ergosterol (2.5 µM), 8 % sin nada | ✅ | Paludo 2018 | "with ergosterol at 2.5 µM was 65%. Larvae that ate fungal cells pupated at 71% and larvae reared without fungus or sterol displayed a pupation percentage of 8%" | 2018 |
+| Pantalla: gotitas de grasa en las células | ✅ | Paludo 2018 | "cytoplasmic accumulation of lipid droplets (LDs) by Zygosaccharomyces sp." | 2018 |
+| No es moho: es una levadura, *Zygosaccharomyces*, que crece en hilitos (pseudohifas) | ✅ | Paludo 2018 | "this fungus is a member of the genus Zygosaccharomyces"; "This yeast exhibits pseudomycelium formation" | 2018 |
+| Pantalla/publicación: primero se identificó como *Monascus* (2015) | ✅ | Menezes 2015; Paludo 2018 | "a fungus of the genus Monascus (Ascomycotina)"; "The previous misinterpretation of Monascus sp. as the fungus eaten by S. depilis larvae" | 2015 / 2018 |
+| *Scaptotrigona mexicana*, de Tamaulipas a Chiapas (pantalla "10 estados · catálogo Moure") | ✅ | Catálogo Moure | "Mexico (Chiapas, Guerrero, Hidalgo, Morelos, México, Oaxaca, Puebla, San Luis Potosí, Tamaulipas, Veracruz-Llave)" | — |
+| Cierre: lo que convierte a una larva en abeja (figurado) | ✅ | Paludo 2018 | "The non-inoculated larvae were arrested in the larval stage, and after two or three weeks they died" | 2018 |
+| Tarjetas del .jsx: "2015 · Menezes y colaboradores · Current Biology"; "2018 · Universidad de São Paulo · Ribeirão Preto · Paludo, Pupo y colaboradores · Scientific Reports" | ✅ | Menezes 2015; Paludo 2018 | autores y revistas coinciden | 2015 / 2018 |
+| `publicacion.md` (las 7 redes y el comentario fijado) | ✅ | las de arriba | solo usa datos de estas filas; sin cifras nuevas | — |
+
+Sin correcciones: voz, guion, animación y `publicacion.md` quedan igual.
+
 VEREDICTO: APROBADO

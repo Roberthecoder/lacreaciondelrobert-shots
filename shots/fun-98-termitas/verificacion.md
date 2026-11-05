@@ -46,4 +46,32 @@ Fuentes abiertas:
 
 Re-verificación (5 nov 2026): se leyó `narracion.json` completo tras la corrección (173 palabras, ≈ 58 s, sin cambio de duración). Las 24 afirmaciones quedan ✅.
 
+## Re-verificación independiente (5 nov 2026)
+Segunda verificación pedida por Robert antes de generar la voz, hecha por un verificador que no escribió el guion ni la primera tabla.
+Se volvieron a descargar y leer en texto completo: Poulsen 2015 (PDF), Aanen et al. 2002 (PMC137514), Roberts et al. 2016 (PMC4917219),
+Härkönen et al. 2015 (PDF *Zambian mushrooms and mycology*); además, registro de herbario de Kew K-M000142416
+(https://records.data.kew.org/occurrences/0c76851e-cb40-46a7-a6a8-81952b38d99b) y búsqueda de estimaciones de edad más nuevas.
+Se revisaron las 14 líneas de `narracion.json`, todos los letreros de `termitas.jsx` (subtítulos, etiquetas, tarjeta del estudio) y `publicacion.md`.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Montículo = granja de hongos; termitas de África y Asia cultivan *Termitomyces* | ✅ | Poulsen 2015 | "All genera except Hypotermes occur in Africa, while four have colonized Asia and one Madagascar" | 2015 |
+| Obreras traen pasto seco, hojas y madera | ✅ | Poulsen 2015; Aanen 2002 | "Older workers collect plant substrate, which is brought back to the nest and passed to younger workers" | 2015 / 2002 |
+| Las jóvenes se lo comen y con su popó arman el panal | ✅ | Poulsen 2015 | "younger workers, who eat the crude substrate along with asexual Termitomyces conidiospores … This mix is deposited as the primary comb" | 2015 |
+| Ahí crece el hongo y deshace la planta | ✅ | Poulsen 2015 | "Within the comb, Termitomyces break down most plant components, such as cellulose, cellobiose and hemicellulose" | 2015 |
+| Bolitas de esporas (nódulos) que las jóvenes comen para sembrar más panal | ✅ | Poulsen 2015 | "eat the substrate along with asexual Termitomyces spores (2) produced in fungus comb nodules in the mature comb … deposited as fresh (young) comb" | 2015 |
+| Ya maduro, las viejas se comen el panal | ✅ | Poulsen 2015 | "older termites consume the old comb in a second and final gut passage" | 2015 |
+| En la mayoría, las primeras obreras juntan esporas del ambiente | ✅ | Poulsen 2015 | "In most species, a queen and a king … will establish their new nest without the fungus present … the first foragers will collect Termitomyces basidiospores" | 2015 |
+| En pocas lo trae el rey (*M. bellicosus*) o la reina (*Microtermes*) | ✅ | Poulsen 2015 | "Vertical fungus transmission has evolved at least twice: in Macrotermes bellicosus, where the king carries a fungal inoculum in his foregut … and in the genus Microtermes, where the queen brings the fungal inoculum" | 2015 |
+| En 2016 describieron, en Tanzania, nidos fósiles con panal de ~25 millones de años | ✅ | Roberts 2016 | "fossil fungus gardens, preserved within 25 Ma termite nests from southwestern Tanzania"; "an age between ~24.8–24.5 Ma" | 2016 |
+| Y calcularon que nació en África hace unos 30 millones de años (dicho como cálculo) | ✅ | Roberts 2016 | "recalibrated molecular divergence estimates for the origins of termite agriculture to around 31 Ma"; "around 31 Ma (19–49 Ma)". No se encontró una datación más nueva que la reemplace | 2016 |
+| Con las lluvias brotan setas del montículo; sombrero de *T. titanicus* hasta 1 m (pantalla "40–80 cm · hasta 1 m") | ✅ | Härkönen 2015 | "Arises early in the rainy season in miombo woodlands from old, grass- and shrub-covered termite mounds"; "Cap 40–80 cm in diam., at best 1 m across" | 2015 |
+| En Zambia se venden en la carretera | ✅ | Härkönen 2015; Kew | "During the rainy season mushrooms are commonly sold along roadsides"; de *T. titanicus*: "specimens offered for sale"; Kew K-M000142416 (Zambia, 1978): sustrato "purchase by road side" | 2015 / 1978 |
+| Una sola alcanza para una familia grande | ✅ | Härkönen 2015 | "one fruit body will suffice for a good meal to a large family" | 2015 |
+| Cierre: granja de millones de años | ✅ | Roberts 2016 | nidos con panal fósil de ~25 Ma | 2016 |
+| Letreros del .jsx (tarjeta "2016 · Tanzania · cuenca del Rukwa · Roberts y col. · PLoS ONE", "≈ 25 M · fósil", "≈ 31 M · cálculo", "estimación (no edad exacta)", "nódulo · esporas asexuales", "pseudorriza al panal", "esquemático") | ✅ | Roberts 2016; Poulsen 2015; Härkönen 2015 | coinciden con las filas de arriba | 2015–2016 |
+| (corregido) `publicacion.md`, Facebook, X y LinkedIn: «desde hace unos 30 millones de años» dicho como hecho | ⚠️ → ✅ | Roberts 2016 | el ~31 Ma es una estimación con rango 19–49 Ma; lo firme es el fósil de ~25 Ma → ahora «desde hace al menos 25 millones de años». En Instagram se añadió «se calculó… (una estimación)» | 2016 |
+
+Correcciones de esta re-verificación: solo `publicacion.md` (Facebook, X, LinkedIn e Instagram). **La voz (`narracion.json`), el guion y la animación no cambiaron**; no hace falta re-renderizar.
+
 VEREDICTO: APROBADO
