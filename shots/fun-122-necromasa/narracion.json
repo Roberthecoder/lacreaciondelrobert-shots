@@ -1,0 +1,55 @@
+{
+  "dcHtml": "Shot Necromasa base narrada.dc.html",
+  "salida": "Shot Necromasa narrado.dc.html",
+  "nota": "Shot Fungi Mati #122. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta tierra negra no es solo planta podrida: es un cementerio de microbios."
+    },
+    {
+      "escena": "Comida",
+      "texto": "Hongos y bacterias se comen hojas y raíces, y con eso arman su cuerpo."
+    },
+    {
+      "escena": "Hifas",
+      "texto": "Un hongo crece en hifas, hilos finísimos forrados de quitina."
+    },
+    {
+      "escena": "Muere",
+      "texto": "Al morir, su pared no se esfuma: muchos restos se pegan a minerales finos, como la arcilla."
+    },
+    {
+      "escena": "Arcilla",
+      "texto": "Así, ese carbono puede tardar décadas o siglos en renovarse."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo sabes que era de un hongo?"
+    },
+    {
+      "escena": "Huella",
+      "texto": "La quitina deja glucosamina, huella sobre todo de hongos; las bacterias, ácido murámico."
+    },
+    {
+      "escena": "Estudio2019",
+      "texto": "En 2019 se calculó que, en suelos templados, pueden ser más de la mitad del carbono superficial."
+    },
+    {
+      "escena": "Estudio2026",
+      "texto": "En 2026, con sitios sobre todo del hemisferio norte, se estimó en cultivos: restos de hongos, en promedio, treinta y cuatro por ciento del carbono; de bacterias, dieciséis."
+    },
+    {
+      "escena": "Doble",
+      "texto": "El hongo pesa el doble."
+    },
+    {
+      "escena": "Vivos",
+      "texto": "Los microbios vivos suelen ser un dos por ciento del carbono del suelo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que en un cultivo típico, cerca de la mitad del carbono de esa tierra negra viene de microbios muertos."
+    }
+  ]
+}

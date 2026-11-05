@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Esporas Lluvia base narrada.dc.html",
+  "salida": "Shot Esporas Lluvia narrado.dc.html",
+  "nota": "Shot Fungi Mati #123. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Lo de la lluvia se dice como hipótesis.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa seta no es solo un hongo: es una fábrica de viento… y quizá de lluvia."
+    },
+    {
+      "escena": "Viento",
+      "texto": "Capítulo uno: el viento. Su sombrero evapora agua y enfría el aire uno o dos grados."
+    },
+    {
+      "escena": "Sube",
+      "texto": "Ese aire fresco corre, gira y sube sus esporas diez centímetros o más."
+    },
+    {
+      "escena": "Cielo",
+      "texto": "Capítulo dos: al cielo. Cada año suben al aire de tres a cincuenta millones de toneladas de esporas de hongos."
+    },
+    {
+      "escena": "Respiras",
+      "texto": "En el aire que respiras afuera hay miles de esporas por metro cúbico."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si una llega a una nube?"
+    },
+    {
+      "escena": "Nube",
+      "texto": "Capítulo tres: la nube. Ahí hay gotitas líquidas bajo cero."
+    },
+    {
+      "escena": "Semilla",
+      "texto": "Para congelarse necesitan una semilla, y casi siempre que llueve sobre tierra, empezó como hielo."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Las esporas de seta son malas semillas; otros hongos no: en 1992, en Canadá, el moho Fusarium avenaceum congeló agua a dos y medio bajo cero."
+    },
+    {
+      "escena": "Royas",
+      "texto": "En 2013, esporas de royas lo hicieron desde cuatro bajo cero."
+    },
+    {
+      "escena": "Hipotesis",
+      "texto": "¿Y las de la seta? En laboratorio juntan gotas. ¿Cuánta lluvia causan? Aún es hipótesis."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa seta no es solo un hongo: hace viento y quizá ayuda a llover."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

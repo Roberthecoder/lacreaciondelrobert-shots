@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Temporada Hongos base narrada.dc.html",
+  "salida": "Shot Temporada Hongos narrado.dc.html",
+  "nota": "Shot Fungi Mati #120. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa seta no salió tarde: el calendario de los hongos cambió."
+    },
+    {
+      "escena": "Numero",
+      "texto": "En el sur de Inglaterra, su temporada duraba unos treinta y tres días en los cincuenta; en los dos mil, más del doble."
+    },
+    {
+      "escena": "Seta",
+      "texto": "Lo que tú cortas es solo la seta, que suelta esporas."
+    },
+    {
+      "escena": "Micelio",
+      "texto": "El hongo de verdad es el micelio: hilos escondidos en el suelo o la madera."
+    },
+    {
+      "escena": "Senal",
+      "texto": "La seta suele salir cuando la temperatura y la humedad le dan la señal."
+    },
+    {
+      "escena": "Senal",
+      "texto": "Si el clima cambia, la señal llega en otra fecha."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo lo sabemos?"
+    },
+    {
+      "escena": "Libreta",
+      "texto": "Edward Gange, aficionado, anotó hongos cerca de Salisbury por cincuenta y seis años: cincuenta y dos mil registros."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2007, su hijo Alan y otros científicos los analizaron en Science."
+    },
+    {
+      "escena": "Calendario",
+      "texto": "En trescientas quince especies, en promedio, la primera seta ahora sale antes y la última, después."
+    },
+    {
+      "escena": "DosVeces",
+      "texto": "Y muchas ya salen dos veces al año."
+    },
+    {
+      "escena": "Noruega",
+      "texto": "En Noruega, desde 1980, las setas de otoño se atrasaron casi trece días en promedio."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Cuando vayas por hongos, recuerda: su calendario lo marca sobre todo el clima, y el clima está cambiando."
+    }
+  ]
+}

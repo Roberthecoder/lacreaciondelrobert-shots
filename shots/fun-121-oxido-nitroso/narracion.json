@@ -1,0 +1,51 @@
+{
+  "dcHtml": "Shot Oxido Nitroso base narrada.dc.html",
+  "salida": "Shot Oxido Nitroso narrado.dc.html",
+  "nota": "Shot Fungi Mati #121. Una línea por subtítulo (idx 0..10 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Fusarium oxysporum en cursiva en pantalla.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este costal no es solo comida para tu milpa: parte se escapa como óxido nitroso, un gas que, kilo por kilo, calienta doscientas setenta y tres veces más que el CO₂."
+    },
+    {
+      "escena": "Ozono",
+      "texto": "Y un estudio de 2009 mostró que es la emisión humana que más daña la capa de ozono."
+    },
+    {
+      "escena": "Campo",
+      "texto": "La mayor parte del que emitimos sale del nitrógeno que echamos al campo."
+    },
+    {
+      "escena": "Charco",
+      "texto": "Si llueve, el suelo se encharca y, sin oxígeno, los microbios respiran nitrato del abono."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y quién suelta el gas?"
+    },
+    {
+      "escena": "Bacterias",
+      "texto": "Muchas bacterias lo vuelven nitrógeno inofensivo."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Pero hongos como Fusarium oxysporum lo fabrican con su enzima P450nor, y en ningún hongo se conoce la que lo desarma."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2015, en Francia, de doscientos siete hongos de suelos agrícolas y raíces, setenta lo producían."
+    },
+    {
+      "escena": "Pastizal",
+      "texto": "Con tierra de un pastizal de Irlanda del Norte, en 2002, frenar a los hongos bajó el gas ochenta y nueve por ciento."
+    },
+    {
+      "escena": "Matiz",
+      "texto": "Ojo: fue un solo suelo; en otros, su aporte es incierto."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese costal no es solo comida: en tu milpa, un hongo puede volver parte en gas."
+    }
+  ]
+}
