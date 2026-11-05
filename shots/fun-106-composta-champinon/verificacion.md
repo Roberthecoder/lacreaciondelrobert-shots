@@ -54,4 +54,33 @@
 - **México (#19/#20):** el 94 % sale tal cual del capítulo de Gaitán-Hernández (INECOL, 2012). Ese texto no es un estudio con datos propios: la frase del 94 % no trae cita propia y va justo después de una cita a Martínez-Carrera y López-Martínez (2010). Por eso «según un estudio de 2012» se cambió por **«según el INECOL, en 2012 era el noventa y cuatro por ciento»**. Así se nombra a quien lo publicó, el año y el tiempo pasado (el dato ya no es reciente). Cambio aplicado en `guion.md` y `narracion.json`; la pantalla ya dice "dato de 2012 (INECOL)". Las 40 mil toneladas se quitaron. → ✅
 - **Receta (#3):** «Se mezcla paja, estiércol de caballo, gallinaza y yeso»: mismos ingredientes de Penn State Extension (2024). → ✅
 
+## Textos en pantalla y publicación (5 nov 2026)
+
+Revisé `champinon.jsx` (chips, etiquetas, subtítulos, contadores, barras de escala, pastel) y `publicacion.md` (las 7 redes y el comentario fijado).
+
+| Texto | Veredicto | Respaldo |
+|---|---|---|
+| "> 70 °C · química, no microbios" / "Arriba de 70 °C: *química.*" | ✅ | #5 (Penn State 2024: "microorganisms cease growing and a chemical reaction begins") |
+| Contador "NN °C" de 22 a 79 + "fase I · día 1→6" | ✅ | #4 (Penn State News 2017: "six-day process", "175 F" ≈ 79 °C) |
+| "60 °C", "≥ 2 h", "por lo menos 2 horas", "fase II · pasteurizar" | ✅ | #6 ("140ºF (60ºC) for at least 2 hours") |
+| Subtítulo "Pasteurizar: *60 °C, 2 h.*" | ⚠️ → ✅ | Decía "2 h" a secas (como si fueran exactas). **Corregido en `champinon.jsx`:** "Pasteurizar: *60 °C, ≥ 2 h.*" |
+| "micelio · 2 a 3 semanas", "granos con micelio", "El micelio *lo llena todo.*" | ✅ | #7–#8 ("14 to 21 days") |
+| "turba + caliza", "capa de cobertura", "composta con micelio" | ✅ | #10 |
+| "1-octen-3-ol", "(parte del olor a champiñón)", "primordio frenado", "El octenol *lo frena.*" | ✅ | #11–#12 |
+| *Pseudomonas putida*, "bacterias de la cobertura", "Bacterias: *se lo comen.*" | ✅ | #13–#14 |
+| "cabecitas de alfiler", "primordios" | ✅ | #15 ("primordia or pins") |
+| "Mycologia, 2009", "Noble et al. · Reino Unido", "sin bacterias", "Sin bacterias: *ventilando.*", "ventilación → primordios", nube "1-octen-3-ol y otros" | ✅ | #16–#17 ("Removal of VOC by ventilation also enabled primordium formation to occur under axenic conditions") |
+| "ayudan, al menos en parte" | ✅ | #18 ("at least partly") |
+| Pastel 94/6 "champiñón", número "94 %", "de los hongos cultivados en México · dato de 2012 (INECOL)", "México: *94 % en 2012.*" | ✅ | #19 (Gaitán-Hernández 2012: "el champiñón representa el 94% del total de hongos producidos a nivel nacional") |
+| "1.ª oleada", "2.ª oleada", "oleadas cada 7–10 días", "Oleadas cada *7 a 10 días.*", "15–21 días tras la cobertura" | ✅ | #21–#22 |
+| *Agaricus bisporus* (etiqueta en cursiva sobre el champiñón) | ✅ | Noble et al. 2009; Penn State 2024 (especie del champiñón cultivado) |
+| "a los 10 años · tutorial de internet", "tierra normal", "Yo a los 10 años… *y nada.*" | ✅ | #2 (tutorial de WikiHow = de internet) |
+| "Paja, estiércol, *gallinaza, yeso.*", "paja + estiércol", "estiércol cocinado", "+ cobertura + bacterias" | ✅ | #1, #3, #25 |
+| Barra "5 cm" en el gancho y en la cosecha (champiñón de botón) | ✅ | Medido en el dibujo: el sombrero mide ≈ 5 cm con esa barra. Salmones et al. 2012 (*Rev. Mex. Micol.* 36): "Fruiting bodies with pileus diameters of 5 to 10 cm" |
+| Barra "10 cm" en la maceta (escena 1 y cierre) | ⚠️ → ✅ | Maceta ≈ 17 cm de boca: bien. Pero en el cierre el champiñón abierto medía ≈ 13 cm de sombrero, más que los 5–10 cm de Salmones et al. 2012. **Corregido en `champinon.jsx`** (escala del champiñón abierto 0.82 → 0.62): ahora mide ≈ 10 cm |
+| "esquemático", "esquemático · no a escala", "mapa esquemático" | ✅ | Aviso correcto en las escenas al microscopio, del estudio y del mapa |
+| `publicacion.md`: todas las cifras y afirmaciones (≈ 6 días, ~79 °C/175 °F, > 70 °C química, 60 °C ≥ 2 h, 14–21 días, turba con caliza, volátiles C8 y 1-octen-3-ol el más inhibidor, "componente principal del olor a champiñón", pseudomonas que lo metabolizan, ventilación sin bacterias ("en condiciones estériles" = axénicas), "al menos en parte", *P. putida* como principal estímulo (Wang 2023, que cita a Hayes 1969), 94 % en 2012 (INECOL), cosecha 15–21 días tras la cobertura, oleadas cada 7–10 días, gallinaza como fuente de nitrógeno) | ✅ | #1–#25 y Cotton 2009 ("the main component of mushroom flavour"). Las fuentes listadas coinciden con las verificadas. Sin cambios |
+
+Cambios que hizo el verificador (solo textos y tamaños, sin tocar la voz): subtítulo de la fase II y tamaño del champiñón abierto del cierre, ambos en `champinon.jsx`.
+
 VEREDICTO: APROBADO

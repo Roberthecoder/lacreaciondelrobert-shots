@@ -325,7 +325,7 @@ function MohoShot() {
           <BolsaCultivo T={T} x={BX} y={BY} w={400} h={580} col={1} seed={5} />
           <SetasHoyo T={T} x={BX + 196} y={BY - 60} abre={kprog(T, K.Ci + 0.3, K.Ci + 2.0)} s={1.05} />
           <SetasHoyo T={T} x={BX - 196} y={BY + 120} abre={kprog(T, K.Ci + 0.8, K.Ci + 2.4)} s={0.7} lado={-1} />
-          <g transform="translate(880 960)" opacity={kprog(T, K.Ci + 1.2, K.Ci + 1.6)}>
+          <g transform="translate(940 1030) scale(0.85)" opacity={kprog(T, K.Ci + 1.2, K.Ci + 1.6)}>
             <BolsaCultivo T={T} x={0} y={0} w={130} h={190} col={0.3} seed={6} />
             <Mancha x={0} y={-10} r={50} blanco={1} verde={1} T={T} seed={4} />
             <path d="M -70 -90 L 70 70 M 70 -90 L -70 70" stroke={KC.red} strokeWidth={16} strokeLinecap="round" />
@@ -360,7 +360,7 @@ function MohoShot() {
       <Chip T={T} at={K.Er + 3.3} until={K.V - 0.3} texto="+ salvado = + nitrógeno" x={340} y={500} tam={32} borde={KC.ink} />
       <Medidor T={T} at={K.Er + 3.6} until={K.V - 0.3} valor={(t) => klerp(0.3, 0.85, kprog(t, K.Er + 3.8, K.Er + 5.0, kEase.sale))} etiqueta="riesgo de contaminación" texto={(v) => (v > 0.6 ? 'sube' : '')} x={90} y={1440} ancho={900} color={KC.red} />
       <Etq T={T} at={K.Er + 0.3} until={K.V - 0.3} x={60} y={1600} texto="de la Fuente, UC Cooperative Extension, 2011" tam={20} color={KC.ink} />
-      <Etq T={T} at={K.V + 0.3} until={K.Es - 0.3} x={60} y={740} texto="olla de presión = autoclave casero" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.V + 0.3} until={K.Es - 0.3} x={60} y={680} texto="olla de presión = autoclave casero" tam={24} color={KC.ink} />
       <Etq T={T} at={K.V + 1.0} until={K.Es - 0.3} x={600} y={720} texto="estéril" tam={30} color={KC.ink} />
       <Chip T={T} at={K.V + 1.4} until={K.Es - 0.3} texto="vacío biológico" x={400} y={460} tam={36} borde={KC.violet} />
       <Chip T={T} at={K.V + 3.0} until={K.Es - 0.3} texto="estéril ≠ protegido" x={540} y={1110} tam={36} borde={KC.red} />
@@ -382,7 +382,6 @@ function MohoShot() {
       <Chip T={T} at={K.Ch + 4.8} until={K.Ci - 0.3} texto={<>y algunos <i>Trichoderma</i> protegen plantas</>} x={540} y={1110} tam={30} borde={KC.leaf} />
       <Etq T={T} at={K.Ch + 1.0} until={K.Ci - 0.3} x={60} y={1500} texto="DSMZ (DSM 768) · Bischof et al., 2016 · Druzhinina et al., 2011" tam={20} color={KC.ink} />
       <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="pasteuriza · limpia manos y herramientas" x={540} y={1110} tam={32} borde={KC.leaf} />
-      <Etq T={T} at={K.Ci + 1.6} until={K.Ou} x={790} y={960} texto="a la basura" lado="izq" tam={24} color={KC.ink} />
       <Etq T={T} at={K.Ci + 2.0} until={K.Ou} x={60} y={1500} texto="A Robert también se le llenó un frasco" tam={24} color={KC.ink} />
       <Etq T={T} at={K.Ci + 2.0} until={K.Ou} x={60} y={1540} texto="de esporas que no eran las que quería." tam={24} color={KC.ink} />
 

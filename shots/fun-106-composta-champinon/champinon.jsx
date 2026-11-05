@@ -356,7 +356,7 @@ function ChampinonShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {fsvg(<Maceta x={380} y={770} s={1.05} relleno="composta" T={T}>
-          {[[-95, 0.85, 0.15, 0.62], [95, 0.9, 0.25, 0.6], [-10, 1, 0.92, 0.82], [-140, 0.6, 0.1, 0.42], [140, 0.55, 0, 0.42]].map(([dx, cr, ab, s], i) => <Champinon key={i} x={dx} y={-18} s={s}
+          {[[-95, 0.85, 0.15, 0.62], [95, 0.9, 0.25, 0.6], [-10, 1, 0.92, 0.62], [-140, 0.6, 0.1, 0.42], [140, 0.55, 0, 0.42]].map(([dx, cr, ab, s], i) => <Champinon key={i} x={dx} y={-18} s={s}
             crece={cr * kprog(T, K.C + 0.2 + i * 0.15, K.C + 1.2 + i * 0.15, kEase.sale)} abre={ab} lam={i === 2 ? '#e7a3a0' : '#7a4a3a'} rot={dx * 0.08} />)}
         </Maceta>)}
       </Escena>
@@ -420,7 +420,7 @@ function ChampinonShot() {
       <Subtitulo T={T} idx={1} at={K.M + 0.1} until={K.R - 0.1} texto="Yo a los 10 años… *y nada.*" />
       <Subtitulo T={T} idx={2} at={K.R + 0.1} until={K.F1 - 0.1} texto="Paja, estiércol, *gallinaza, yeso.*" />
       <Subtitulo T={T} idx={3} at={K.F1 + 0.1} until={K.F2 - 0.1} texto="Arriba de 70 °C: *química.*" />
-      <Subtitulo T={T} idx={4} at={K.F2 + 0.1} until={K.S - 0.1} texto="Pasteurizar: *60 °C, 2 h.*" />
+      <Subtitulo T={T} idx={4} at={K.F2 + 0.1} until={K.S - 0.1} texto="Pasteurizar: *60 °C, ≥ 2 h.*" />
       <Subtitulo T={T} idx={5} at={K.S + 0.1} until={K.P - 0.1} texto="El micelio *lo llena todo.*" />
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.Cb - 0.1} texto="¿Y *por qué no sale?*" />
       <Subtitulo T={T} idx={7} at={K.Cb + 0.1} until={K.O - 0.1} texto="Falta la *capa de cobertura.*" />
