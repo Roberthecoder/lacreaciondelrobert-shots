@@ -11,7 +11,7 @@
   *Fulvia fulva*), un biotrofo: el ejemplo clásico de genes de resistencia Cf con respuesta hipersensible. *Alternaria brassicicola*
   aparece **solo** en el estudio de 2007 (escenas 9–10), presentado como "otro hongo" en otra planta (*Arabidopsis*). En pantalla no se
   sugiere que las manchas de *Alternaria* sean defensa.
-- **Duración:** voz 960 caracteres / 168 palabras (el estimador del kit da ≈ 58.3 s de voz y ≈ 61.8 s en total) + cierre 3.5 s. La base mide **61.5 s** (escenas escaladas a 58.0 s de voz; `gen-audio.mjs` da 61.50 s).
+- **Duración:** voz 967 caracteres / 169 palabras (el estimador del kit da ≈ 58.3 s de voz y ≈ 61.8 s en total) + cierre 3.5 s. La base mide **61.5 s** (escenas escaladas a 58.0 s de voz; `gen-audio.mjs` da 61.50 s).
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 
 ## Versión narrada (tiempos de la base: escenas de `Shot Defensa base narrada.dc.html`, total 61.5 s)
@@ -30,7 +30,7 @@
 | 9 | 37.7–43.7 | Estudio | En 2007, en Japón, le apagaron a Arabidopsis CERK1, clave de su sensor de quitina: dejó de notarla. | Fondo cian. TarjetaEstudio "2007 · Universidad Meiji, Japón · PNAS, 2007 · con RIKEN". Dos rosetas de *Arabidopsis* ("normal" y "sin CERK1"); les cae quitina: la normal se enciende ("¡alarma!"), la otra no ("sin alarma"). Barra 2 cm. |
 | 10 | 43.7–48.6 | Manchas | Con otro hongo, Alternaria, sus manchas fueron como veinte por ciento más grandes. | Dos hojas de *Arabidopsis* (normal / sin CERK1) con una mancha café de anillos que crece; la de "sin CERK1" queda más grande. Etiquetas "otro hongo: *Alternaria brassicicola*" y "la mancha = el hongo avanzando"; chip "≈20 % más grandes · 6 días". |
 | 11 | 48.6–53.8 | Aspirina | La alarma viaja: en las hojas sanas sube el ácido salicílico, pariente de la aspirina. | Fondo lila. Jitomatera con una hoja atacada (roja, con puntitos); una "señal" amarilla sube por el tallo; al llegar a cada hoja sana aparece en ella la molécula de ácido salicílico y un escudo ("hojas sanas: se preparan"). A la derecha, la molécula grande (COOH, OH) "ácido salicílico" y una pastilla: "pariente: la aspirina (ácido acetilsalicílico)". |
-| 12 | 53.8–58.0 | Cierre | No siempre son derrota: son tu planta cerrándole la puerta al hongo. | **Regreso a la imagen del inicio:** la misma hoja y la misma maceta; sobre cada puntito café se cierra una puertita. Chip "cada puntito: una puerta cerrada". |
+| 12 | 53.8–58.0 | Cierre | No siempre son derrota: pueden ser tu planta cerrándole la puerta al hongo. | **Regreso a la imagen del inicio:** la misma hoja y la misma maceta; sobre cada puntito café se cierra una puertita. Chip "algunos puntitos: puertas cerradas". |
 | — | 58.0–61.5 | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Morfología del moho de la hoja (para dibujarlo bien):** biotrofo que crece **solo** en el espacio entre las células (apoplasto)

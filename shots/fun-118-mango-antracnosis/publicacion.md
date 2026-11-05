@@ -12,7 +12,7 @@ Así empieza: sus esporas (conidios, unos cilindros transparentes de unos 13 mic
 Y luego… se queda quieto. Es una infección latente: por fuera, el mango verde se ve sano.
 ¿Qué espera? Que el mango madure. La cáscara verde trae defensas químicas que frenan al hongo; al madurar, buena parte de esas defensas baja y la fruta se ablanda. Entonces el hongo despierta y se extiende: salen manchas negras y hundidas, a veces en rayas como lágrimas que escurrieron. Si avanza mucho, llega a la pulpa.
 En 2020, científicos del CIAD, el Colegio de Postgraduados y Chapingo, con colaboradores de Brasil y Argentina, publicaron lo que encontraron en 59 huertas de México (muestreadas de 2010 a 2012): no un solo culpable, sino cinco especies de Colletotrichum. Las más agresivas en sus pruebas: C. siamense y C. asianum.
-Y México es el mayor exportador de mango del mundo: unas 450 000 toneladas en 2025, casi 9 de cada 10 a Estados Unidos. Casi todos esos mangos entran tras un baño de agua a 46.1 °C, de 65 a 110 minutos según su peso. Ese baño es contra la mosca de la fruta, pero de paso ayuda a frenar al hongo.
+Y México es el mayor exportador de mango del mundo: unas 450 000 toneladas en 2025, casi 9 de cada 10 a Estados Unidos. La mayoría de esos mangos entran tras un baño de agua a 46.1 °C, de 65 a 110 minutos según su peso. Ese baño es contra la mosca de la fruta, pero de paso ayuda a frenar al hongo.
 Así que no era un golpe: era un hongo esperando a que tu mango madurara… igual que tú.
 El dibujo es esquemático.
 Fuentes: Tovar-Pedraza et al. 2020 (Plant Disease) · Dofuor et al. 2023 (Frontiers in Microbiology) · FAO 2026 · USDA-APHIS (Federal Register 2003 y 2015) · McGuire 1991.
@@ -25,7 +25,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esas manchas negras de tu mango muchas veces no son golpes: es un hongo que entró cuando aún estaba verde. 🥭🍄
-Es Colletotrichum, la antracnosis: la enfermedad más importante del mango en casi todo el mundo. Sus esporas llegan con la lluvia desde hojas enfermas, forman un apresorio que perfora la cera de la cáscara… y se quedan quietas (infección latente). Al madurar, la cáscara pierde buena parte de sus defensas y la fruta se ablanda: el hongo despierta y salen manchas negras y hundidas, a veces como lágrimas. En 59 huertas de México se hallaron cinco especies; las más agresivas, C. siamense y C. asianum (Plant Disease, 2020). México es el mayor exportador de mango (≈450 000 t en 2025) y casi todo lo que va a EE. UU. pasa por agua a 46.1 °C: es contra la mosca de la fruta, y ayuda a frenar al hongo.
+Es Colletotrichum, la antracnosis: la enfermedad más importante del mango en casi todo el mundo. Sus esporas llegan con la lluvia desde hojas enfermas, forman un apresorio que perfora la cera de la cáscara… y se quedan quietas (infección latente). Al madurar, la cáscara pierde buena parte de sus defensas y la fruta se ablanda: el hongo despierta y salen manchas negras y hundidas, a veces como lágrimas. En 59 huertas de México se hallaron cinco especies; las más agresivas, C. siamense y C. asianum (Plant Disease, 2020). México es el mayor exportador de mango (≈450 000 t en 2025) y la mayoría de lo que va a EE. UU. pasa por agua a 46.1 °C: es contra la mosca de la fruta, y ayuda a frenar al hongo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti también te ha salido un mango así? 👇
 Shot Fungi Mati 118 · La Creación del Robert
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Esas manchas negras de tu mango muchas veces no son golpes: es un hongo que entró cuando aún estaba verde. 🥭 Se llama Colletotrichum (antracnosis): se queda dormido bajo la cáscara y despierta cuando el mango madura. El mango que México exporta a EE. UU. casi siempre pasa por un baño a 46.1 °C: es contra la mosca de la fruta, y de paso ayuda a frenar al hongo.
+Esas manchas negras de tu mango muchas veces no son golpes: es un hongo que entró cuando aún estaba verde. 🥭 Se llama Colletotrichum (antracnosis): se queda dormido bajo la cáscara y despierta cuando el mango madura. El mango que México exporta a EE. UU. en su mayoría pasa por un baño a 46.1 °C: es contra la mosca de la fruta, y de paso ayuda a frenar al hongo.
 ¿A ti también te ha salido un mango así? 👇
 Shot Fungi Mati 118 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -86,7 +86,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Esas manchas negras de tu mango muchas veces no son golpes: es Colletotrichum, un hongo que entró con el mango verde y despertó al madurar. 🥭 Lo que México exporta a EE. UU. casi siempre pasa por agua a 46.1 °C (contra la mosca de la fruta; de paso frena al hongo). #FungiMati #LaCreacionDelRobert
+Esas manchas negras de tu mango muchas veces no son golpes: es Colletotrichum, un hongo que entró con el mango verde y despertó al madurar. 🥭 Lo que México exporta a EE. UU. en su mayoría pasa por agua a 46.1 °C (contra la mosca de la fruta; de paso frena al hongo). #FungiMati #LaCreacionDelRobert
 ```
 
 ### Threads

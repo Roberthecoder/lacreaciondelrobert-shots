@@ -400,7 +400,7 @@ function MangoShot() {
       <Medidor T={T} at={K.Ex + 3.4} until={K.B - 0.3} valor={(t) => 0.89 * kprog(t, K.Ex + 3.4, K.Ex + 5.0, kEase.sale)} etiqueta="a Estados Unidos" x={90} y={870} ancho={900} color={KC.yellow} />
       <Chip T={T} at={K.B + 0.4} until={K.C - 0.3} texto="BAÑO DE AGUA CALIENTE" x={360} y={430} tam={34} borde={KC.cyan} mono />
       <Chip T={T} at={K.B + 2.2} until={K.C - 0.3} texto="46.1 °C · 65–110 min según el peso" y={1660} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.B + 1.0} until={K.C - 0.3} texto="casi todos los que van a EE. UU." x={330} y={510} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.B + 1.0} until={K.C - 0.3} texto="la mayoría de los que van a EE. UU." x={330} y={510} tam={28} borde={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={110} x={760} y={1480} color={KC.ink} />

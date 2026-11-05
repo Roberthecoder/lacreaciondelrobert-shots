@@ -466,7 +466,7 @@ function DefensaShot() {
       <Etq T={T} at={K.As + 2.8} until={K.C - 0.3} x={690} y={965} texto="ácido salicílico" tam={26} color={KC.ink} />
       <Etq T={T} at={K.As + 3.6} until={K.C - 0.3} x={640} y={1100} texto="pariente: la aspirina" tam={24} color={KC.ink} />
       <Etq T={T} at={K.As + 3.9} until={K.C - 0.3} x={640} y={1140} texto="(ácido acetilsalicílico)" tam={22} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="cada puntito: una puerta cerrada" x={420} y={420} tam={28} borde={KC.mint} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="algunos puntitos: puertas cerradas" x={420} y={420} tam={28} borde={KC.mint} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.SG} texto="1 cm" largo={110} color={KC.ink} />
