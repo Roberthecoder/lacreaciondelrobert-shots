@@ -67,4 +67,15 @@ Fuentes abiertas:
 
 El dibujo es esquemático.
 
-VEREDICTO: PENDIENTE (correcciones)
+## Re-verificación (5 nov 2026)
+
+El guionista aplicó las correcciones 1–6. Revisé `narracion.json` y `guion.md` línea por línea:
+- Voz escena 2: «El hongo rompe la lignina, lo duro de la madera: …» ✅ (fila 8 queda ✅).
+- Chip 1985: «con DDT: todo indica que usa sus enzimas de la lignina, fuera de la célula» ✅ (fila 16 queda ✅).
+- Escena 1985: ya no lleva la etiqueta «¹⁴C», queda solo el brillo ✅ (fila 17 queda ✅).
+- Voz escena 10: «Y en 2026, en un vivero sueco con DDT viejo, hongos de setas no lograron una baja medible.» ✅ (fila 25 queda ✅; vale para las macetas con sustrato de *P. ostreatus* y para el campo con *P. ostreatus* y *Stropharia*).
+- Chip de Suecia: «al hongo le costó colonizar el suelo» ✅ (fila 28 queda ✅).
+- Color de *Pleurotus*: «gris a café claro» ✅ (fila 21).
+Las otras 10 líneas de la voz no cambiaron y no hay afirmaciones nuevas. Todo queda ✅.
+
+VEREDICTO: APROBADO
