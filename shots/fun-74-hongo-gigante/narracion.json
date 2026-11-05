@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Gigante base narrada.dc.html",
+  "salida": "Shot Gigante narrado.dc.html",
+  "nota": "Shot Fungi Mati #74. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa costra café debajo del tronco no es corteza: es un solo hongo de casi once metros."
+    },
+    {
+      "escena": "Encuentro",
+      "texto": "En 2010, unos micólogos en la isla de Hainan, en China, ni lo reconocieron en el bosque: era demasiado grande."
+    },
+    {
+      "escena": "Medidas",
+      "texto": "Medía diez metros con ochenta y cinco de largo, ochenta y cuatro centímetros de ancho y cinco de grueso."
+    },
+    {
+      "escena": "Peso",
+      "texto": "Le calcularon entre cuatrocientos y quinientos kilos."
+    },
+    {
+      "escena": "Especie",
+      "texto": "Es Phellinus ellipsoideus, un poliporo: en lugar de láminas, tiene poros."
+    },
+    {
+      "escena": "Poros",
+      "texto": "Cuarenta y nueve en cada milímetro cuadrado: unos cuatrocientos cincuenta millones en total."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo llega un hongo a ese tamaño?"
+    },
+    {
+      "escena": "Perenne",
+      "texto": "Es perenne: no duró una temporada, creció capa sobre capa, año tras año."
+    },
+    {
+      "escena": "Edad",
+      "texto": "Tenía unos veinte años, comiéndose la madera de un tronco caído."
+    },
+    {
+      "escena": "Esporas",
+      "texto": "Y su nombre viene de sus esporas, ovaladas, de unas cinco milésimas de milímetro."
+    },
+    {
+      "escena": "Contraste",
+      "texto": "Ojo: no es el hongo más grande; ese es una red de micelio escondida bajo un bosque de Oregón."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa costra no es corteza: es el cuerpo de hongo más grande jamás documentado."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

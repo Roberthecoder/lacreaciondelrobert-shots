@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Morillas base narrada.dc.html",
+  "salida": "Shot Morillas narrado.dc.html",
+  "nota": "Shot Fungi Mati #72. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese bosque quemado no está muerto: la primavera siguiente se llena de morillas." },
+    { "escena": "Morilla", "texto": "Son hongos con el sombrero lleno de hoyitos, como un panal, y huecos por dentro." },
+    { "escena": "Especies", "texto": "En el oeste de Norteamérica, cinco especies salen sobre todo el primer año después de un incendio de pinos y abetos." },
+    { "escena": "Cifra", "texto": "Es común encontrar unas dos mil quinientas por hectárea." },
+    { "escena": "Segundo", "texto": "Al segundo año, casi desaparecen." },
+    { "escena": "Pregunta", "texto": "¿Por qué el fuego las despierta?" },
+    { "escena": "Misterio", "texto": "Todavía es un misterio, pero hay hipótesis: el fuego mata a los microbios que compiten y deja comida fácil en el suelo." },
+    { "escena": "Ultimo", "texto": "O, al morir los árboles que lo alimentaban, el hongo hace un último esfuerzo por reproducirse." },
+    { "escena": "Estudio", "texto": "Tras el incendio Rim de 2013, en Yosemite, contaron en promedio casi mil setecientas por hectárea." },
+    { "escena": "Mexico", "texto": "En México se recolectan en bosques de oyamel, en temporada de lluvias, y les dicen pancitas o elotitos." },
+    { "escena": "Falsa", "texto": "Ojo con la falsa morilla: su toxina se rompe en un ingrediente de combustible de cohete." },
+    { "escena": "Cierre", "texto": "Así que ese bosque no está muerto: el hongo estaba esperando." }
+  ],
+  "mezcla": "oficial-30oct"
+}

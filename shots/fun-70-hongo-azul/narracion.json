@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Azul base narrada.dc.html",
+  "salida": "Shot Azul narrado.dc.html",
+  "nota": "Shot Fungi Mati #70. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese hongo no está pintado: si lo cortas, suelta una leche azul como tinta."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Es Lactarius indigo, y Lactarius quiere decir lechoso."
+    },
+    {
+      "escena": "Mercado",
+      "texto": "En México es comestible y se vende en mercados de Tlaxcala, Puebla y la Ciudad de México en temporada de lluvias."
+    },
+    {
+      "escena": "Nombres",
+      "texto": "Tiene cuarenta y cuatro nombres registrados: hongo azul, añil, zuin, oreja azul…"
+    },
+    {
+      "escena": "Leche",
+      "texto": "La leche corre por hifas especiales y, al contacto con el aire, se va poniendo verde."
+    },
+    {
+      "escena": "Pigmento",
+      "texto": "Su azul es un azuleno, y los pigmentos azules naturales son escasos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué hace un hongo azul en el bosque?"
+    },
+    {
+      "escena": "Micorriza",
+      "texto": "Envuelve las puntitas de las raíces de pinos y encinos: es un hongo ectomicorrízico."
+    },
+    {
+      "escena": "Trato",
+      "texto": "El árbol le pasa azúcares de su fotosíntesis, y el hongo le consigue nitrógeno y fósforo del suelo."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2012, leyendo ADN en un bosque de niebla de Veracruz, lo hallaron unido a raíces de encinos."
+    },
+    {
+      "escena": "Extra",
+      "texto": "Y en 2023, por primera vez, químicos fabricaron su pigmento azul en el laboratorio."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese azul no es pintura: es la leche de un hongo que vive en sociedad con los árboles."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
