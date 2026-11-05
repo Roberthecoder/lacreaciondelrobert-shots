@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Este arbusto no es de adorno: aquí se aparea el hongo que puede dejarte sin pan."
+      "texto": "Este arbusto no es solo de adorno: aquí se aparea el hongo que puede dejarte sin pan."
     },
     {
       "escena": "Agracejo",
@@ -13,11 +13,11 @@
     },
     {
       "escena": "Pustula",
-      "texto": "Revienta la piel del tallo con un polvo color ladrillo."
+      "texto": "Primero revienta la piel del tallo con un polvo color ladrillo."
     },
     {
       "escena": "Esporas",
-      "texto": "Son esporas con espinitas que el viento lleva a otros campos."
+      "texto": "Al microscopio son esporas con espinitas que el viento lleva a otros campos."
     },
     {
       "escena": "Ciclo",
@@ -29,7 +29,7 @@
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Y si el hongo ya no necesitara al arbusto?"
+      "texto": "Pero ¿y si el hongo ya no necesitara al arbusto?"
     },
     {
       "escena": "Uganda",
@@ -41,7 +41,7 @@
     },
     {
       "escena": "Borlaug",
-      "texto": "En 2005, Norman Borlaug, que en México creó trigos resistentes a la roya, dio la alarma."
+      "texto": "En 2005, Norman Borlaug, que en México creó con su equipo trigos resistentes a la roya, dio la alarma."
     },
     {
       "escena": "Nucleo",
@@ -49,7 +49,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Por eso se vigila el viento, el trigo y este arbusto: ahí se juega tu pan y tu tortilla de harina."
+      "texto": "Por eso hoy se vigila el viento, el trigo y este arbusto: ahí se juega tu pan y tu tortilla de harina."
     }
   ],
   "mezcla": "oficial-30oct"
