@@ -56,4 +56,40 @@ Pendiente: re-verificación independiente de las filas 9, 9b, 19 y 19b (las que 
 
 Todas las afirmaciones del texto final: ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Verificador independiente (no escribió el guion). Revisé `narracion.json` (13 líneas), `guion.md`, letreros y subtítulos de `crudos.jsx` y `publicacion.md`. Fuentes abiertas hoy: PDF de Schulzová et al. 2002 (texto completo), IARC en INCHEM, MMWR 73(10) en cdc.gov, resumen de Vodovar et al. 2024 y Boels et al. 2022 (Europe PMC), Crossref para volumen y páginas.
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| Gancho: el champiñón de tu ensalada no es igual que una morilla cruda | ✅ (lo sostienen las filas de abajo) | MMWR 2024; Schulzová 2002 | — | — |
+| El champiñón, *Agaricus bisporus*, trae agaritina | ✅ | Schulzová et al. 2002, *Food Addit. Contam.* 19(9):853–862 | "The cultivated mushroom Agaricus bisporus contains agaritine" | 2002 |
+| …que todavía se estudia | ✅ | Schulzová 2002 | "it is not yet known to what extent agaritine and other phenylhydrazine derivatives … are degraded into other biologically active compounds" | 2002 |
+| Dibujo: basidio de *bisporus* con 2 esporas; laminillas rosadas a café; anillo | ✅ | morfología estándar de *A. bisporus* (el epíteto significa "dos esporas") | — | — |
+| IARC (agencia de la OMS contra el cáncer) la dejó en el grupo 3; no clasificable [como cancerígena] en humanos; pantalla: «evaluación de 1987», «la agaritina, no el hongo» | ✅ (la voz abrevia; la pantalla da la frase completa) | IARC, INCHEM vol. 31 | "Subsequent evaluation: Suppl. 7 (1987) (p. 56: Group 3)" · "no evaluation of the carcinogenicity of agaritine to humans could be made" | 1983/1987 |
+| ANTES: «freír cinco minutos en aceite **otro** champiñón de cultivo le quitó dos tercios» + letrero «otro champiñón de cultivo: *Agaricus hortensis*» | ⚠️ imprecisa | Schulzová 2002; Atlas of Living Australia y NZOR (sinonimia) | El estudio midió *A. hortensis* comprado en Praga, pero *Agaricus hortensis* hoy figura como **sinónimo (nom. illeg.) de *A. bisporus*** ("Agaricus hortensis … synonym nom. illeg."; NZOR: *Agaricus campestris* var. *hortensis* Cooke = sinónimo de *A. bisporus*). Decir «otro» champiñón presenta como especie distinta algo que la taxonomía actual trata como la misma. | 2002 / consultado 2026 |
+| CORREGIDO: «Cocinar la baja: en Praga, en 2002, freír champiñones de cultivo cinco minutos en aceite le quitó dos tercios.» + letrero «champiñones de cultivo comprados en Praga» | ✅ | Schulzová 2002 (título: "…the cultivated *Agaricus* mushroom"; muestras "purchased from the retail market in Prague") | "After frying for 5 min in vegetable oil, the agaritine content had been reduced to 34.3% of the original agaritine content in fresh mushrooms" (34.3 % que queda = ~2/3 menos) | 2002 |
+| Medidor «agaritina que queda» 100 % → 34 % | ✅ | Schulzová 2002 | "reduced to 34.3%" | 2002 |
+| En 2023 un restaurante de Montana (Bozeman) sirvió morillas crudas o apenas cocidas en sushi | ✅ | Demorest et al., MMWR 73(10):219–224 | "a special sushi roll containing salmon and morel mushrooms"; el 8 de abril las morillas iban parcialmente cocidas y el 17 "uncooked and cold-marinated" | 2023 (publ. 2024) |
+| 51 personas se enfermaron del estómago; 3 al hospital y 2 murieron; pantalla «tenían enfermedades previas» | ✅ | MMWR 2024 | "a total of 51 persons reported mild to severe gastrointestinal illness" · "three hospitalizations and two deaths" · "The two patients who died had chronic underlying medical conditions" | 2023 |
+| Comerlas crudas fue lo más ligado a enfermarse (frente a cocidas o a medias, como muestra la pantalla) | ✅ | MMWR 2024 | "consumption of raw morels was more strongly associated with illness than was consumption of cooked or partially cooked morels" | 2023 |
+| Eran morillas de cultivo (importadas) y nadie encontró la toxina exacta | ✅ | MMWR 2024 | morillas "cultivated and imported fresh from China"; "the presence of a specific toxin could not be confirmed through laboratory testing" | 2023 |
+| Francia 2010–2020: se reportaron 446 casos solo por morillas (centros antitóxicos) | ✅ | Vodovar et al., *Clin Toxicol* 62(6):391–395 (PMID 38912890) | "We found 446 cases of exposure in which morels were the sole mushroom species involved." | 2024 (datos 2010–2020) |
+| publicacion.md (YouTube) ANTES: «446 casos sintomáticos» | ⚠️ (el resultado dice "cases of exposure") | Vodovar 2024 | "446 cases of exposure" | 2024 |
+| CORREGIDO: «446 casos de exposición» | ✅ | Vodovar 2024 | ídem | 2024 |
+| publicacion.md (YouTube, Facebook, X, Threads) ANTES: «las morillas … enfermaron a 51 personas» / «51 personas se enfermaron … después de comer un rollo de sushi con morillas» | ⚠️ (el MMWR cuenta 51 enfermos tras comer en el restaurante; no todos constan como que comieron el rollo, y no se identificó toxina) | MMWR 2024 | "51 persons reported … gastrointestinal illness" after eating at restaurant A | 2023 |
+| CORREGIDO: «51 personas se enfermaron en un restaurante de Montana que sirvió morillas crudas o apenas cocidas» / «después de comer en el restaurante, que servía un rollo de sushi con morillas…» | ✅ | MMWR 2024 | ídem | 2023 |
+| Shiitake crudo o mal cocido puede llenarte la piel de rayas | ✅ | Boels et al., *Clin Toxicol* 60(8):954–959 (PMID 35404185) | "Dermatitis occurred after raw or undercooked shiitake consumption" · "Linear, erythematous, urticarial papules and plaques" | 2022 |
+| Shiitake = *Lentinula edodes*; morilla = *Morchella*, hueca por dentro, celdillas como panal | ✅ | nombres aceptados; morfología estándar | — | — |
+| Los silvestres, siempre cocidos y bien identificados | ✅ (recomendación) | Missouri Dept. of Conservation; MMWR 2024 | "Wild mushrooms should never be eaten raw." · "Morel mushrooms should be cooked before eating to mitigate potential toxic effects." | 2024 |
+| Citas de publicacion.md: Schulzová 19(9):853–862; Vodovar 62(6):391–395; Boels 60(8):954–959 | ✅ | Crossref / Europe PMC | — | — |
+
+Correcciones aplicadas (consistentes en voz, pantalla, guion y publicación):
+- `narracion.json` línea 4 (Sarten): «…freír cinco minutos en aceite otro champiñón de cultivo le quitó dos tercios.» → «…freír champiñones de cultivo cinco minutos en aceite le quitó dos tercios.» (20 → 19 palabras; total 171 palabras / 1002 caracteres; la duración prácticamente no cambia).
+- `crudos.jsx`: letrero «otro champiñón de cultivo: *Agaricus hortensis*» → «champiñones de cultivo comprados en Praga» (revisado con preview en 19–24 s: cabe y no se encima).
+- `guion.md`: misma voz en la tabla, la descripción de la escena y una nota de sinonimia en Fuentes.
+- `publicacion.md`: se quitó «otro champiñón» (TikTok, Instagram, YouTube con la aclaración de la sinonimia), «446 casos de exposición» en vez de «sintomáticos», y las frases de los 51 enfermos (YouTube, Facebook, X, Threads) ya no le atribuyen los 51 casos a las morillas como causa probada.
+
+Resultado tras las correcciones: todo ✅.
+
 VEREDICTO: APROBADO

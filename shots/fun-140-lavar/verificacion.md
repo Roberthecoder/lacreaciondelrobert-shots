@@ -63,4 +63,30 @@ Re-verificación de la corrección #5 (coordinador): ✅ es la frase propuesta p
 
 Todas las afirmaciones del texto final: ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Verificador independiente (no escribió el guion). Revisé `narracion.json` (13 líneas), `guion.md`, los letreros y subtítulos de `lavar.jsx` y `publicacion.md`. Fuentes abiertas hoy (HTML de ATK, resumen en PubMed/E-utilities, JSON de USDA FoodData Central, página de la FDA). Sin cambios: todo ✅.
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| Gancho: un champiñón (blanco, cerrado) un minuto bajo el agua casi no la absorbe | ✅ | ATK, *Should You Wash Mushrooms?* (publishDate 2018-12-01 en el HTML) | "the mushrooms without exposed gills retained almost no water" · "The amount of water absorbed by 1 pound of white mushrooms is minuscule since their gills aren't exposed." | 2018 |
+| «Mito: no lo laves, se empapa» (se presenta como mito y luego se matiza con los de laminillas expuestas) | ✅ | ATK 2018 (misma página) | "Unless they're foraged, most mushrooms do not need to be cleaned." (y el 25 % para laminillas expuestas, dicho en la voz) | 2018 |
+| En 2018 ATK publicó una prueba: pesó hongos antes y después de un minuto en agua; 6 tipos | ✅ | ATK 2018 | "when we weighed batches of white, cremini, portobello, shiitake, oyster, and maitake mushrooms before and after submerging them in water for 1 minute" | 2018 |
+| Los de laminillas tapadas, como el champiñón blanco, casi no retuvieron agua; el velo las tapa | ✅ | ATK 2018; Lugones et al. 1996 (velo en *A. bisporus*) | "retained almost no water" · "particularly abundant at the outer surface of fruiting bodies, in the veil" | 2018 / 1996 |
+| Laminillas expuestas (portobello, shiitake): hasta un cuarto (25 %) de su peso | ✅ (máximo del grupo, no de cada uno) | ATK 2018 | "those with them soaked up as much as 25 percent of their weight in liquid" · "the exposed gills on varieties such as portobello, shiitake, and oyster can grab substantial amounts of water" | 2018 |
+| Portobello = *Agaricus bisporus* | ✅ | ATK, *Color Taste-Off* | "white button and cremini mushrooms (and portobellos) actually belong to the same mushroom species, Agaricus bisporus." | 2011 |
+| Shiitake = *Lentinula edodes* | ✅ | nombre aceptado (Boels et al. 2022 usa el sinónimo *Lentinus edodes*) | "Shiitake mushrooms (Lentinus edodes)" | 2022 |
+| La piel está forrada de hidrofobina, proteína que forma varillitas que ayudan a rechazar el agua | ✅ | Lugones et al., *Microbiology* 142:1321–1329 (PMID 8704971) | "Similar rodlets were observed on the surface of the fruiting body… particularly abundant at the outer surface of fruiting bodies" · "probably solely responsible for the hydrophobicity of the fruiting-body surface" | 1996 |
+| ATK también atribuye a las hidrofobinas que repelan el agua | ✅ | ATK 2018 | "mushrooms secrete proteins called hydrophobins that help them repel water" | 2018 |
+| Dibujo: hifas con tabiques; «esquemático (sin escala)» | ✅ (esquema sin cifras) | morfología general de *Agaricus* (hifas septadas) | — | — |
+| Casi el 92 % del champiñón es agua · chip «USDA: 91.8 g por cada 100 g (2021)» | ✅ | USDA FoodData Central FDC 1999629 (JSON del portal: Water value 91.8, mediana 91.8, 6 datos; lastUpdated 10/28/2021) | "Water … value: 91.8 (g)" | 2021 |
+| Lo que frena el dorado es el agua en la sartén; mientras no se evapora, el hongo no pasa de 100 °C | ✅ | ATK, Lam, *New-School Sautéed Mushrooms*; ATK, Bomze, *Our Guide to Fresh Mushrooms* | "so that food can rise above 212 degrees and the browning reactions can take place" · "Only once all their jus has evaporated … can browning start in earnest" · "any water that mushrooms absorb during washing thwarts browning" | 2018 |
+| La esponja sí existe, pero de aceite: crudo, sus bolsitas de aire se lo chupan | ✅ | ATK, Bomze 2018 | "Raw mushrooms are veritable sponges that can soak up a tremendous amount of oil" · "their stems and caps contain numerous air pockets in which oil can collect" | 2018 |
+| Ya rebanado, su carne sí absorbe agua como esponja (lávalo antes de rebanar) | ✅ | ATK, Bomze 2018 | "it's fine to wash them as long as you do so before cutting them; their exposed flesh will absorb water like a sponge." | 2018 |
+| Enjuágalo bajo el chorro, sin jabón, sécalo con trapo limpio (FDA, consejo general para frutas y verduras) | ✅ | FDA, *7 Tips for Cleaning Fruits, Vegetables* (página abierta hoy) | "Gently rub produce while holding under plain running water. There's no need to use soap or a produce wash." · "Dry produce with a clean cloth or paper towel" | 2021 |
+| Cierre: «un impermeable relleno de agua» | ✅ (metáfora que junta hidrofobina + 92 % de agua, ambas ✅) | filas anteriores | — | — |
+| publicacion.md (7 redes + comentario fijado): mismas afirmaciones; «la mayoría de los hongos cultivados casi no necesita lavarse» | ✅ | ATK 2018 | "Unless they're foraged, most mushrooms do not need to be cleaned." | 2018 |
+
+Resultado: 17 ✅ · 0 ⚠️ · 0 ❌. No se cambió nada.
+
 VEREDICTO: APROBADO

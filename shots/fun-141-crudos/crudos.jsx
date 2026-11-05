@@ -248,7 +248,7 @@ function CrudosShot() {
           {(() => { const u = kprog(T, K.G3 + 2.4, K.G3 + 3.1, kEase.entra || ((v) => v * v)); return <Agaritina x={klerp(360, 850, u)} y={klerp(680, 780, u)} s={klerp(0.7, 0.3, u)} p={1} color={KC.ink} />; })()}
         </>)}
       </Escena>
-      {/* 5 · cocinar la baja: otro champiñón de cultivo (A. hortensis) frito 5 min en aceite */}
+      {/* 5 · cocinar la baja: champiñones de cultivo comprados en Praga, fritos 5 min en aceite */}
       <Escena T={T} a={K.S} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<Sarten T={T} x={460} y={830} s={1.05} chispa={kprog(T, K.S + 0.5, K.S + 1)}>
@@ -341,7 +341,7 @@ function CrudosShot() {
       <Chip T={T} at={K.G3 + 3.2} until={K.S - 0.3} texto="grupo 3 · no clasificable como cancerígeno en humanos" x={540} y={1150} tam={30} borde={KC.gold} />
       <Chip T={T} at={K.G3 + 3.8} until={K.S - 0.3} texto="la agaritina, no el hongo" x={330} y={700} tam={38} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.S + 0.2} until={K.S + 2.9} anio="2002" quien="Praga, Chequia" revista="Schulzová et al., Food Addit. Contam." x={540} y={470} />
-      <Etq T={T} at={K.S + 1.4} until={K.P - 0.3} x={60} y={1110} texto="otro champiñón de cultivo: Agaricus hortensis" it tam={31} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.4} until={K.P - 0.3} x={60} y={1110} texto="champiñones de cultivo comprados en Praga" tam={31} color={KC.ink} />
       <Cronometro T={T} at={K.S + 3.0} until={K.S + 5.6} factor={300 / 3.2} x={300} y={505} />
       <Chip T={T} at={K.S + 3.0} until={K.S + 5.6} texto="frito en aceite" x={300} y={432} tam={26} borde={KC.yellow} />
       <Medidor T={T} at={K.S + 3.0} until={K.P - 0.3} x={60} y={590} ancho={600} etiqueta="agaritina que queda" valor={(t) => klerp(1, 0.343, kprog(t, K.S + 3.1, K.S + 5.6, kEase.suave))} texto={(v) => Math.round(v * 100) + ' %'} color={KC.yellow} />

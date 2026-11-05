@@ -86,4 +86,25 @@ Revisión del 5 nov 2026 sobre `narracion.json`, `guion.md`, todos los textos de
 
 **Resumen segunda ronda:** 31 puntos revisados · 31 ✅ · 0 ⚠️ · 0 ❌. Las 3 correcciones de la primera ronda quedaron bien aplicadas. Todas las afirmaciones del guion, la pantalla y `publicacion.md` están verificadas.
 
+## Re-verificación independiente (5 nov 2026)
+
+Verificador nuevo (no escribió el guion ni las rondas anteriores). Revisé `narracion.json` (13 líneas), `guion.md`, los textos de pantalla de `nistatina.jsx` (etiquetas, chips, tarjeta, números gigantes, subtítulos) y `publicacion.md`. Abrí de nuevo las fuentes.
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| Voz 0 / pantalla: la medicina salió de un microbio de la tierra que viajó por correo (en frasco) | ✅ | https://www.sciencehistory.org/education/scientific-biographies/elizabeth-lee-hazen-and-rachel-fuller-brown/ | "originally found in soil from the garden of Hazen's friends, the Walter B. Nourses" · "she would mail the particular culture to Albany in a mason jar." | 1948–1950 |
+| Voz 1–2: algodoncillo por *Candida*; suele vivir en ti y a veces crece de más | ✅ | https://www.cdc.gov/candidiasis/about/index.html | "Everyone has Candida on their skin and in body parts, like the mouth, throat, and vagina." · "Candidiasis occurs when Candida, a yeast that lives in parts of the body, grows out of control." | consulta 2026 |
+| Voz 4: se pega al ergosterol de su membrana y abre poros (pantalla: sale potasio) | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC1304795/ (Coutinho et al., Biophys J) | "barrel-like membrane-spanning channels" · "a leakage of ions and small molecules" · mide "K+ efflux" | 2004 |
+| Voz 3 y 5: sus células se parecen a las tuyas; a tu colesterol se pega menos | ✅ | misma | "their stronger affinity toward ergosterol, present in the fungal membranes" (sin "mucho": correcto) | 2004 |
+| Voz 7: en 1948, en Nueva York (ciudad), Hazen buscaba en la tierra microbios antifúngicos; microbióloga | ✅ | SHI (misma URL) | "she had by 1948 identified new antifungal agents among the filamentous bacteria called actinomycetes" · "The partnership between Hazen in New York City and Brown in Albany worked" | 1948 |
+| Voz 8: frascos por correo a la química Rachel Brown, a unos 240 km | ✅ | https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/hazen-elizabeth-lee-and-rachel-fuller-brown | "150 miles away from each other" (150 mi ≈ 241 km); Brown, "organic chemist" | 1948–1950 |
+| Voz 9: Brown aislaba la sustancia y se la regresaba para probarla | ✅ | SHI | "After isolating the active ingredient Brown would send it to Hazen in New York" | 1948–1950 |
+| Voz 10: de la tierra de un amigo; *Streptomyces noursei*, bacteria, no hongo | ✅ | SHI | "the filamentous bacteria called actinomycetes" · "hence named Streptomyces noursei" | 1948–1950 |
+| Voz 11: nistatina por New York State; regalías de más de 13 millones para la ciencia (pantalla: US$13.4 mill. · 1955–1976; Research Corporation · Fondo Brown-Hazen) | ✅ | SHI · encyclopedia.com | "They then renamed the substance nystatin (for New York State)." · "a total of $13.4 million in royalties were paid to The Research Corporation between 1955 and 1976" · "The other half, some $6.7 million over the next 20 years" (Brown-Hazen Fund) | 1950 / 1955–1976 |
+| Voz 12 / pantalla: dos científicas | ✅ | SHI | "discovered in 1950 by two women scientists" | 1950 |
+| publicacion.md: FDA 1954 | ✅ | encyclopedia.com | "In 1954, Federal Drug Agency (FDA) approval was given for sale of Mycostatin" | 1954 |
+| Resto de pantalla y publicacion.md (polienos, levaduras por yemas, mapa, escalas, cita Coutinho 2004) | ✅ | ver rondas anteriores; textos de pantalla cotejados contra el .jsx actual | coinciden con lo verificado arriba | — |
+
+**Resultado:** sin ❌ ni ⚠️. Sin cambios en guion, narración, .jsx ni publicacion.md.
+
 VEREDICTO: APROBADO

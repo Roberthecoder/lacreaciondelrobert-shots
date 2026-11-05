@@ -173,4 +173,31 @@ lo leyó porque ella era mujer.
 **Resumen tercera ronda:** 17 renglones · 17 ✅ · 0 ⚠️ · 0 ❌. Todas las ❌/⚠️ de la primera y la segunda ronda están
 corregidas y verificadas.
 
+## Re-verificación independiente (5 nov 2026)
+
+Verificador independiente (no escribió el guion). Revisados `narracion.json`, `guion.md`, letreros y subtítulos de `potter.jsx` y `publicacion.md`. Fuentes reabiertas hoy.
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| Beatrix Potter (1866–1943) pintaba hongos antes de hacerse famosa por Peter Rabbit | ✅ | https://anbg.gov.au/fungi/case-studies/beatrix-potter.html · https://www.vam.ac.uk/articles/peter-rabbit-the-tale-of-the-tale | Primeras pinturas de hongos de 1887, estudio serio desde 1892; "On 16 December 1901 Strangeways & Sons printed 250 copies of The Tale of Peter Rabbit" | 1887–1901 |
+| Dibujó cientos de hongos | ✅ | https://www.armitt.com/beatrix-potter/ · Linnean | "over 250 drawings of fungi"; "over 350 illustrations of fungi" | — |
+| …con cortes que muestran sus laminillas | ✅ | https://anbg.gov.au/fungi/case-studies/beatrix-potter.html | McIntosh (1894) le aconsejó "separate sketches of sections showing the attachment of the gills"; sus pinturas incluyen "sectional views" | 1894 |
+| La animaba un cartero escocés experto en hongos, Charles McIntosh (Perthshire) | ✅ | https://atom-2.rbge.org.uk/index.php/mcintosh-charles-of-inver | "a postman"; "helped improve the accuracy of her illustrations, taught her taxonomy"; "discovered thirteen species of fungus completely new to Britain" | 1839–1922 |
+| Al microscopio dibujó sus esporas | ✅ | https://www.armitt.com/beatrix-potter/ | "many microscope studies of the process of germination" | 1890s |
+| Sembró esporas sobre vidrio y las siguió al microscopio (pantalla: 1896) | ✅ | https://linnean.org/the-society/history-of-science/beatrix-potter-the-tale-of-the-linnean-society | "successfully growing spores of various fungal species on glass plates and tracking them under the microscope" | 1896 |
+| De la espora sale un tubo germinativo que se ramifica en hifas | ✅ | (biología general de hongos; mismo proceso que ella estudiaba) | — | — |
+| 1897: trabajo sobre germinación ("On the germination of the spores of Agaricineae") | ✅ | Linnean | título; "read and discussed" el 1 de abril de 1897 | 1897 |
+| La Sociedad Linneana aún no admitía mujeres como socias; lo leyó George Massee, de Kew, como era costumbre | ✅ | Linnean | "it was Massee who read her paper"; papers read by someone other than the author era la práctica; mujeres no admitidas como Fellows hasta 1905 | 1897 / 1905 |
+| Lo retiró una semana después; hoy está perdido (pantalla: "nunca se publicó") | ✅ | Linnean · https://beatrixpottersociety.org.uk/beatrix-potter/the-scientist/ | "withdrawn, by Potter, on 8 April, and never resubmitted"; "Her paper has since been lost." | 1897 |
+| «En 1997, **su** secretario admitió que la trataron mal» | ⚠️ ambigua | Linnean | Fue John Marsden, secretario ejecutivo **de la Sociedad**: "She was treated scurvily by members of the society" (Sunday Times). Dicho «su secretario» justo después de «Lo retiró [ella]», se puede oír como el secretario de Potter | 1997 |
+| ↳ Corregido: «En 1997, **el secretario de la Sociedad** admitió que la trataron mal.» (narracion.json y guion.md; la tarjeta en pantalla ya decía "secretario de la Sociedad Linneana") | ✅ | Linnean | ídem | 1997 |
+| El hongo de su trabajo fue *Flammulina velutipes* | ✅ | Linnean | según Watling, de unas 50 especies "she only chose one, that of Collybia velutipes (now Flammulina velutipes)"; publicacion.md ya lo atribuye a Watling | 1897 (análisis de Watling) |
+| Es primo del enoki del súper; se creía la misma especie; separados en 2018 por ADN | ✅ | Wang et al. 2018, Mycol. Prog. 17: 1013–1030, https://ui.adsabs.harvard.edu/abs/2018MycPr..17.1013W | enokitake "is not identical to the European winter mushroom Flammulina velutipes … Flammulina filiformis"; las cepas cultivadas de Asia rotuladas F. velutipes son F. filiformis | 2018 |
+| Pantalla: esporas elipsoides lisas hialinas, 10 µm; McIntosh "cartero y naturalista · Perthshire"; tarjetas 1897 y 1997 | ✅ | MushroomExpert (Kuo) · RBGE · Linnean | "Spores 5–10 x 2.5–3.5 µm … smooth; hyaline" | — |
+| Recorte para compensar: «Ella quería ver…» → «Quería ver más adentro…» (sin cambio de sentido) | ✅ | — | — | — |
+
+Voz tras el cambio: 1,001 caracteres (suma de `texto`) / 177 palabras (antes ~991 / 175): +10 caracteres, ≈ +0.5 s; sigue en el rango de los shots de ~1,000 caracteres. El `.jsx` no cambia (sus subtítulos «Se retiró y *se perdió.*» no incluyen esa frase). Ningún texto de `publicacion.md` usaba «su secretario».
+
+Resultado tras la corrección: 0 ❌ · 0 ⚠️.
+
 VEREDICTO: APROBADO

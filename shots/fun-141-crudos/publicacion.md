@@ -7,7 +7,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ### TikTok
 ```text
 ¿Por qué NO comer cualquier hongo crudo? Porque el champiñón de tu ensalada no es igual que una morilla cruda. 🍄🍳
-Depende de lo que trae cada uno. El champiñón (Agaricus bisporus) trae agaritina, una sustancia que todavía se estudia. La agencia de la OMS contra el cáncer (IARC) la dejó en el grupo 3: no clasificable como cancerígena en humanos, porque no hay datos en personas. Y cocinar la baja: en un estudio de 2002 en Praga, freír 5 minutos en aceite otro champiñón de cultivo (Agaricus hortensis) le quitó dos tercios de su agaritina.
+Depende de lo que trae cada uno. El champiñón (Agaricus bisporus) trae agaritina, una sustancia que todavía se estudia. La agencia de la OMS contra el cáncer (IARC) la dejó en el grupo 3: no clasificable como cancerígena en humanos, porque no hay datos en personas. Y cocinar la baja: en un estudio de 2002 en Praga, freír 5 minutos en aceite champiñones de cultivo comprados ahí les quitó dos tercios de su agaritina.
 ¿Y la morilla? Ahí la cosa cambia. En 2023, un restaurante de Bozeman, Montana (EE. UU.), sirvió morillas crudas o apenas cocidas en un rollo de sushi. 51 personas se enfermaron del estómago; 3 fueron al hospital y 2 murieron (tenían enfermedades previas). Comerlas crudas fue lo más ligado a enfermarse. Eran morillas de cultivo, importadas, y no se encontró la toxina exacta. En Francia, entre 2010 y 2020, los centros antitóxicos reportaron 446 casos solo por morillas.
 Y el shiitake, ya lo vimos en el Shot Fungi Mati 26: crudo o mal cocido, puede llenarte la piel de rayas.
 No todos los hongos aguantan igual crudos: los silvestres, siempre cocidos y bien identificados.
@@ -22,7 +22,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 ¿Por qué NO comer cualquier hongo crudo? Porque el champiñón de tu ensalada no es igual que una morilla cruda. 🍄🍳
-El champiñón trae agaritina: la IARC (OMS) la dejó en el grupo 3, no clasificable como cancerígena en humanos, y cocinar la baja (freír 5 min en aceite otro champiñón de cultivo le quitó dos tercios, estudio de 2002). Las morillas son otra historia: en 2023, en Montana, 51 personas se enfermaron tras comer morillas crudas o apenas cocidas en sushi; las crudas fueron lo más ligado a enfermarse. En Francia se reportaron 446 casos solo por morillas entre 2010 y 2020.
+El champiñón trae agaritina: la IARC (OMS) la dejó en el grupo 3, no clasificable como cancerígena en humanos, y cocinar la baja (freír 5 min en aceite champiñones de cultivo les quitó dos tercios, estudio de 2002). Las morillas son otra historia: en 2023, en Montana, 51 personas se enfermaron tras comer morillas crudas o apenas cocidas en sushi; las crudas fueron lo más ligado a enfermarse. En Francia se reportaron 446 casos solo por morillas entre 2010 y 2020.
 Los silvestres, siempre cocidos y bien identificados.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Tú le pones champiñón crudo a la ensalada? 👇
@@ -39,8 +39,8 @@ Título:
 Descripción:
 ```text
 ¿Por qué NO comer cualquier hongo crudo? Porque el champiñón de tu ensalada no es igual que una morilla cruda.
-Depende de lo que trae cada hongo. El champiñón común (Agaricus bisporus) contiene agaritina. La IARC, la agencia de la OMS que evalúa el cáncer, la puso en 1987 en el grupo 3: "no clasificable" en cuanto a si causa cáncer en humanos, porque no hay datos epidemiológicos. Ojo: el grupo 3 es de la agaritina, no del hongo. Y cocinar la reduce: en 2002, un equipo checo frió durante 5 minutos en aceite rebanadas de otro champiñón de cultivo (Agaricus hortensis, comprado en Praga) y quedó 34 % de la agaritina original, es decir, se fueron unos dos tercios. Los autores aclaran que no se sabe todavía en qué se transforma al cocinarse.
-¿Y la morilla (Morchella)? En marzo y abril de 2023, en un restaurante de Bozeman, Montana, 51 personas se enfermaron del estómago después de comer un rollo de sushi con morillas crudas o apenas cocidas; 3 fueron hospitalizadas y 2 murieron (ambas tenían enfermedades crónicas previas). En el estudio de los CDC, comer las morillas crudas se asoció más con enfermarse que comerlas cocidas o a medias. Las morillas eran de cultivo, importadas frescas de China, y en el laboratorio no se pudo confirmar una toxina específica. En Francia, entre 2010 y 2020, los centros antitóxicos registraron 446 casos sintomáticos en los que las morillas eran el único hongo involucrado.
+Depende de lo que trae cada hongo. El champiñón común (Agaricus bisporus) contiene agaritina. La IARC, la agencia de la OMS que evalúa el cáncer, la puso en 1987 en el grupo 3: "no clasificable" en cuanto a si causa cáncer en humanos, porque no hay datos epidemiológicos. Ojo: el grupo 3 es de la agaritina, no del hongo. Y cocinar la reduce: en 2002, un equipo checo frió durante 5 minutos en aceite rebanadas de champiñón de cultivo comprado en Praga (el estudio lo llama Agaricus hortensis, nombre que hoy se considera sinónimo de Agaricus bisporus) y quedó 34 % de la agaritina original, es decir, se fueron unos dos tercios. Los autores aclaran que no se sabe todavía en qué se transforma al cocinarse.
+¿Y la morilla (Morchella)? En marzo y abril de 2023, en un restaurante de Bozeman, Montana, 51 personas se enfermaron del estómago después de comer en el restaurante, que servía un rollo de sushi con morillas crudas o apenas cocidas; 3 fueron hospitalizadas y 2 murieron (ambas tenían enfermedades crónicas previas). En el estudio de los CDC, comer las morillas crudas se asoció más con enfermarse que comerlas cocidas o a medias. Las morillas eran de cultivo, importadas frescas de China, y en el laboratorio no se pudo confirmar una toxina específica. En Francia, entre 2010 y 2020, los centros antitóxicos registraron 446 casos de exposición en los que las morillas eran el único hongo involucrado.
 Y el shiitake, que ya vimos en el Shot Fungi Mati 26: crudo o mal cocido puede causar una dermatitis en forma de rayas.
 Así que no todos los hongos aguantan igual crudos: los silvestres, siempre cocidos y bien identificados.
 El dibujo es esquemático. No es consejo médico.
@@ -59,7 +59,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-¿Por qué NO comer cualquier hongo crudo? Porque el champiñón de tu ensalada no es igual que una morilla cruda. 🍄 Al champiñón, cocinarlo le baja la agaritina; las morillas crudas o apenas cocidas enfermaron a 51 personas en un restaurante de Montana en 2023. Los silvestres, siempre cocidos y bien identificados. No es consejo médico.
+¿Por qué NO comer cualquier hongo crudo? Porque el champiñón de tu ensalada no es igual que una morilla cruda. 🍄 Al champiñón, cocinarlo le baja la agaritina; en 2023, 51 personas se enfermaron en un restaurante de Montana que sirvió morillas crudas o apenas cocidas. Los silvestres, siempre cocidos y bien identificados. No es consejo médico.
 ¿Tú le pones champiñón crudo a la ensalada? 👇
 Shot Fungi Mati 141 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -80,12 +80,12 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-¿Por qué NO comer cualquier hongo crudo? Al champiñón, freírlo le baja la agaritina; las morillas crudas o apenas cocidas enfermaron a 51 personas en Montana en 2023. Los silvestres, siempre cocidos y bien identificados. 🍄 #FungiMati #Hongos
+¿Por qué NO comer cualquier hongo crudo? Al champiñón, freírlo le baja la agaritina; en 2023, 51 se enfermaron en un restaurante de Montana que sirvió morillas crudas o a medias. Los silvestres, siempre cocidos y bien identificados. 🍄 #FungiMati #Hongos
 ```
 
 ### Threads
 ```text
-¿Por qué NO comer cualquier hongo crudo? Porque el champiñón de tu ensalada no es igual que una morilla cruda. 🍄 Cocinar le baja la agaritina al champiñón, y las morillas crudas o apenas cocidas enfermaron a 51 personas en un restaurante de Montana en 2023. Los silvestres, siempre cocidos y bien identificados. ¿Tú le pones champiñón crudo a la ensalada?
+¿Por qué NO comer cualquier hongo crudo? Porque el champiñón de tu ensalada no es igual que una morilla cruda. 🍄 Cocinar le baja la agaritina al champiñón, y en 2023, 51 personas se enfermaron en un restaurante de Montana que sirvió morillas crudas o apenas cocidas. Los silvestres, siempre cocidos y bien identificados. ¿Tú le pones champiñón crudo a la ensalada?
 Shot Fungi Mati 141 · La Creación del Robert
 #Hongos
 ```

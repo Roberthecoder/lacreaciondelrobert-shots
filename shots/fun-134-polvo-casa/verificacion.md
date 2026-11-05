@@ -88,4 +88,33 @@ Fuentes: **G20 preprint** (texto completo leído): https://arxiv.org/abs/1905.11
 
 VEREDICTO REVERIFICACIÓN 2: S1–S8 ✅. Sin ❌ ni ⚠️ pendientes en la narración ni en guion.md. Visto bueno para `VEREDICTO: APROBADO`.
 
+## Re-verificación independiente (5 nov 2026)
+
+Verificador nuevo, que no escribió el guion. Revisé `narracion.json` (13 líneas), los textos de pantalla de `polvo.jsx` (chips, etiquetas, tarjetas, números, subtítulos, barras), `guion.md` y `publicacion.md`. Volví a abrir las fuentes: B15 https://pmc.ncbi.nlm.nih.gov/articles/PMC4571696/ · G15 https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0122605 · G20 https://arxiv.org/abs/1905.11765 y https://ideas.repec.org/a/bla/jorssc/v69y2020i4p909-929.html
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| Gancho «es un mapa de la región donde vives, escrito en hongos» + chip «estudio hecho en EE. UU.» | ✅ | B15 · G15 | "the fungal taxa found inside homes are largely determined by the geographical location of the home"; "many fungal taxa exhibit a high degree of geographic endemism" | 2015 |
+| «Pasa el dedo por arriba del marco de tu puerta: rara vez se limpia» | ✅ | B15 | "unlikely to be cleaned frequently" | 2015 |
+| Esporas que entran por ventanas y puertas, o pegadas a ti | ✅ | B15 | "dispersal into homes through windows and doors or on occupants" | 2015 |
+| **Antes:** «Son diminutas y aguantan bien la sequedad» (y chip «aguantan la sequedad») | ⚠️ generaliza: la fuente dice «muchos» taxones, no todos | G15 | "many fungal taxa produce spores that are tolerant of dessication" | 2015 |
+| **Corregido:** «Son diminutas y muchas aguantan la sequedad» (mismas 7 palabras) + chip «muchas aguantan la sequedad» | ✅ | G15 | (misma frase) | 2015 |
+| Muchos hongos solo viven en ciertas regiones | ✅ | G15 | "many fungal taxa are restricted in their geographic distribution" | 2015 |
+| Entre 2012 y 2013 (muestreo) | ✅ | G15 | recruited "over the period January 2012 to March 2013"; swabs returned "over the period March 2012 to May 2013" | 2012–2013 |
+| Unas 1,200 casas de EE. UU., voluntarios, hisopo en el marco de arriba, adentro y afuera; hisopo de doble punta | ✅ | B15 · G15 | "approximately 1200 homes located across the continental US"; "dual-tipped sterile BBL CultureSwabs" | 2015 |
+| Más de setenta mil tipos de hongos (pantalla 72,284, «en total») | ✅ | B15 | "125 066 and 72 284 for bacteria and fungi, respectively" | 2015 |
+| Los hongos de adentro venían, sobre todo, de afuera; chip 65 % de los tipos | ✅ | B15 | "most fungi found inside buildings come from outside the home"; "65% of fungal phylotypes found indoors were also found outdoors" | 2015 |
+| **Antes:** subtítulo «Los de adentro venían *de afuera.*» (quita el «sobre todo» de la voz) | ⚠️ absoluto | B15 | (misma frase: "most") | 2015 |
+| **Corregido:** subtítulo «La mayoría venía *de afuera.*» | ✅ | B15 | "most fungi found inside buildings come from outside the home" | 2015 |
+| Bacterias delatan quién vive ahí; perro 92 %, gato 83 % | ✅ | B15 | "whether a home has a dog or cat in it with 92% and 83% accuracy" | 2015 |
+| Solo con hongos, en 2020 una IA ubicó la mitad de las muestras a menos de 100 km; tarjeta «2020 · redes neuronales · ~1,300 muestras · J. R. Stat. Soc. C» | ✅ | G20 | "more than half of geolocation predictions produced by this model fall less than 100 km from their true origin"; "an ensemble of deep neural network classifiers"; JRSS-C 69(4): 909–929, agosto 2020 | 2020 |
+| Nota «en 2015, con otro método: 230 km» | ✅ | G15 | "to within a great-circle distance of 230 km" | 2015 |
+| Lo proponen para la ciencia forense | ✅ | G15 · G20 | "an important proof of concept of a novel approach in forensic biology"; "An important problem in forensic analyses is identifying the provenance of materials" | 2015; 2020 |
+| Chip «Probado en EE. UU. por regiones; en México, solo a nivel país» | ✅ | G20 | muestras de 28 países (México incluido); "nearly 90% accuracy" para el país de origen | 2020 |
+| Cierre «estás borrando un mapa de la región donde vives» | ✅ | B15 · G15 | (igual que el gancho) | 2015 |
+| Dibujo: *Cladosporium* en cadenas, *Alternaria* en mazo; ADN 2 nm; mapas esquemáticos | ✅ | B15 | "fungi in the Cladosporium … genera were often very abundant"; "Alternaria, Aspergillus and Phoma" entre los más abundantes | 2015 |
+| publicacion.md (7 redes y comentario): mismas cifras; ya decía «muchas aguantan» | ✅ | B15 · G15 · G20 | — | — |
+
+Cambios: `narracion.json` (línea 3), `polvo.jsx` (chip de la escena Esporas y subtítulo idx 8) y `guion.md` (mismas dos cosas). Revisé cuadros con `motor/preview.mjs` (14.9, 15.6, 34.5 y 36.5 s): los textos caben y no se enciman. Todo queda ✅.
+
 VEREDICTO: APROBADO

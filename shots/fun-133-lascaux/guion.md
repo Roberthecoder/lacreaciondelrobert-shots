@@ -23,7 +23,7 @@
 | 8 | Estudio | En 2012, un equipo europeo describió al más abundante: un hongo nuevo, Ochroconis lascauxensis. | Fondo noche (micro). TarjetaEstudio "2012 · IRNAS-CSIC (Sevilla) · Fungal Biology, 2012". Crece una red de hifas oscuras con esporas genéricas (esquemáticas). Etiqueta "*Ochroconis lascauxensis*" y chip "especie nueva · la más abundante (2007–2008)". |
 | 9 | Melanina | Su color negro viene de la melanina de sus paredes. | Micro: corte esquemático de una hifa; la pared celular se llena de gránulos negros ("pared", "melanina (gránulos negros)"). Barra 1 µm. |
 | 10 | Paredes | Y lo hallaron manchando las mismas paredes con arte. | Fondo rosa: la pared con toro y caballo; manchas negras aparecen alrededor de las figuras. Chip "sobre las paredes con arte". |
-| 11 | Replica | Por eso hoy visitas copias: Lascaux dos, abierta en 1983, y Lascaux cuatro, en 2016. | Fondo cian. Dos edificios esquemáticos con la pared pintada adentro y visitantes: "Lascaux II · 1983 · copia de 2 salas" y "Lascaux IV · 2016 · copia completa". |
+| 11 | Replica | Hoy, en su lugar, visitas copias: Lascaux dos, abierta en 1983, y Lascaux cuatro, en 2016. | Fondo cian. Dos edificios esquemáticos con la pared pintada adentro y visitantes: "Lascaux II · 1983 · copia de 2 salas" y "Lascaux IV · 2016 · copia completa". |
 | 12 | Cierre | La pintura real sigue ahí, a oscuras: vigilada contra el hongo… y lejos de tu aliento. | **Regreso a la imagen del inicio:** la misma pared con el toro se apaga, baja la reja y la nubecita de aliento se queda afuera. Chip "la original: cerrada y vigilada". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
