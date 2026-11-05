@@ -347,7 +347,7 @@ function EsporasLluviaShot() {
         {fsvg(<>
           <HojaTrigo x={70} y={1120} s={1.0} T={T} />
           {Array.from({ length: 7 }, (_, i) => { const u = kprog(T, K.Ro + 0.3 + i * 0.12, K.Ro + 1.8 + i * 0.12, kEase.suave);
-            return <Urediniospora key={i} x={klerp(180 + i * 50, 640 + (i % 3) * 30, u)} y={klerp(1030 - i * 20, 830 + (i % 2) * 40, u) - Math.sin(u * Math.PI) * 140} r={22} rot={T * 40 + i * 30} />; })}
+            return <Urediniospora key={i} x={klerp(180 + i * 50, 540 + (i % 4) * 45, u)} y={klerp(1030 - i * 20, 880 + (i % 3) * 40, u) - Math.sin(u * Math.PI) * 140} r={22} rot={T * 40 + i * 30} />; })}
           <Gotita x={720} y={760} r={80} hielo={kprog(T, royaHielo, royaHielo + 0.6)} T={T} seed={9} />
         </>)}
       </Escena>
@@ -375,8 +375,8 @@ function EsporasLluviaShot() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 1.0} until={K.V - 0.3} texto="seta del jardín · tras la lluvia" x={330} y={700} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.G + 2.3} until={K.V - 0.3} x={60} y={790} texto="aire frío" tam={30} color={EL.frio} />
-      <Etq T={T} at={K.G + 2.6} until={K.V - 0.3} x={60} y={840} texto="aire tibio" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.G + 2.3} until={K.V - 0.3} x={60} y={880} texto="aire frío" tam={30} color={EL.frio} />
+      <Etq T={T} at={K.G + 2.6} until={K.V - 0.3} x={60} y={775} texto="aire tibio" tam={30} color={KC.ink} />
       <Capitulo T={T} caps={[{ at: K.V, titulo:'EL VIENTO' }, { at: K.Ci, titulo:'AL CIELO' }, { at: K.N, titulo:'LA NUBE' }]} hasta={K.H - 0.2} />
       <Etq T={T} at={K.V + 0.6} until={K.Su - 0.3} x={60} y={480} texto="vapor de agua" tam={32} color={KC.ink} />
       <Chip T={T} at={K.V + 1.6} until={K.Su - 0.3} texto="bajo el sombrero: 1–2 °C más frío" x={360} y={570} tam={32} borde={EL.frio} />
@@ -387,7 +387,7 @@ function EsporasLluviaShot() {
       <Chip T={T} at={K.Ci + 0.3} until={micro - 0.3} texto="AL MICROSCOPIO · una espora" x={390} y={450} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.Ci + 0.7} until={micro - 0.3} x={640} y={760} texto="basidiospora" tam={34} color={KC.texto} />
       <Etq T={T} at={K.Ci + 1.3} until={micro - 0.3} x={370} y={1040} texto="apículo" tam={32} color={KC.yellow} lado="izq" />
-      <NumeroGigante T={T} at={micro + 0.4} until={K.R - 0.3} valor={50} dur={1.2} prefijo="3 a " etiqueta="millones de toneladas" x={360} y={500} tam={180} color={KC.yellow} />
+      <NumeroGigante T={T} at={micro + 0.4} until={K.R - 0.3} valor={50} desde={50} dur={0} prefijo="3 a " etiqueta="millones de toneladas" x={360} y={500} tam={180} color={KC.yellow} />
       <Etq T={T} at={micro + 1.0} until={K.R - 0.3} x={60} y={650} texto="de esporas de hongos al año" tam={32} color={KC.ink} />
       <Chip T={T} at={micro + 1.8} until={K.R - 0.3} texto="cálculos de 2007, 2009 y 2021: no se ponen de acuerdo" x={540} y={735} tam={24} borde={KC.ink} />
       <Chip T={T} at={K.R + 0.6} until={K.P - 0.3} texto="miles de esporas / m³" x={360} y={470} tam={44} borde={EL.espora2} />
