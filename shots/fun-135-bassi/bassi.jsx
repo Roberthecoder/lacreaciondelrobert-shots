@@ -146,6 +146,20 @@ function Costal({ x, y, s = 1 }) {
   </g>;
 }
 
+// Robert: igual que el del kit, pero TODAS las poses entran y salen de lado (nunca cruzan el subtítulo al entrar o salir).
+const BLADOS = { 'arriba-der': { left:690, top:300, width:330 }, 'izq-alto': { left:-10, top:300, width:330 }, 'gancho': { left:600, top:230, width:460 }, 'grande-b': { left:530, top:500, width:540 } };
+function RobertLado({ T, apariciones = [], base = 'assets/stickers/' }) {
+  return <>{apariciones.map(([at, until, pose, lado], i) => {
+    if (T < at || T > until + 0.45) return null;
+    const L = BLADOS[lado] || BLADOS['arriba-der'], izq = L.left < 300;
+    const e = kprog(T, at, at + 0.5, kEase.rebote), o = kprog(T, until - 0.05, until + 0.4, kEase.suave);
+    const w = Math.exp(-(T - at - 0.35) * 6) * Math.cos((T - at - 0.35) * 20) * 0.08 * (T > at + 0.35 ? 1 : 0);
+    const tx = ((1 - e) + o) * (L.width + 120) * (izq ? -1 : 1);
+    return <img key={i} src={`${base}${pose}.png`} alt="" style={{ position:'absolute', left:L.left, top:L.top, width:L.width, zIndex:46, transformOrigin:'50% 100%',
+      transform:`translate(${tx}px, 0px) scale(${1 - w}, ${1 + w})`, filter:'drop-shadow(0 22px 34px rgba(0,0,0,.55))' }} />;
+  })}</>;
+}
+
 function BassiShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, E: CUES.Esporas, Cu: CUES.Cuticula, Ad: CUES.Adentro, Sa: CUES.Sale, P: CUES.Pregunta, B: CUES.Bassi, Pu: CUES.Publica,
@@ -161,7 +175,7 @@ function BassiShot() {
   const nBl = Math.floor(klerp(0, 22, kprog(T, K.Ad + 0.6, K.Ad + 3.6)));
   const gB = krng(77), BL = Array.from({ length: 22 }, () => ({ x: 140 + gB() * 800, y: 760 + gB() * 420, r: gB() * 180, v: 0.5 + gB() }));
   // experimento: la punta visita a 3 gusanos sanos
-  const aguja = (t) => { const t0 = K.Pr + 0.2; const pts = [[230, 905], [470, 990], [600, 990], [730, 990]]; const u = kclamp((t - t0) / 1.8, 0, 0.999) * 3; const i = Math.floor(u), f = kEase.suave(u - i);
+  const aguja = (t) => { const t0 = K.Pr + 0.2; const pts = [[230, 905], [460, 985], [605, 985], [750, 985]]; const u = kclamp((t - t0) / 1.8, 0, 0.999) * 3; const i = Math.floor(u), f = kEase.suave(u - i);
     return [klerp(pts[i][0], pts[i + 1][0], f), klerp(pts[i][1], pts[i + 1][1], f) - Math.sin(Math.PI * f) * 120]; };
   const [ax, ay] = aguja(T);
   const blancosPr = kprog(T, K.Pr + 2.3, K.Pr + 3.4) * 3;
@@ -267,7 +281,7 @@ function BassiShot() {
           {T > K.Pr - 0.4 && <g opacity={kprog(T, K.Pr - 0.4, K.Pr)}>
             <GusanoSeda T={T} x={230} y={1070} s={0.45} duro={1} moho={1} polvo={1} seed={5} />
             <ellipse cx={600} cy={1050} rx={250} ry={50} fill="rgba(255,255,255,.45)" stroke={KC.ink} strokeWidth={6} />
-            {[0, 1, 2].map((i) => { const b = kclamp(blancosPr - i, 0, 1); return <GusanoSeda key={i} T={T} x={470 + i * 130} y={1052} s={0.24} largo={520} anda={1 - b} duro={b} moho={b} polvo={b} seed={i + 8} />; })}
+            {[0, 1, 2].map((i) => { const b = kclamp(blancosPr - i, 0, 1); return <GusanoSeda key={i} T={T} x={460 + i * 145} y={1052} s={0.3} largo={520} anda={1 - b} duro={b} moho={b} polvo={b} seed={i + 8} />; })}
             <g transform={`translate(${ax} ${ay}) rotate(30)`}><line x1={0} y1={0} x2={0} y2={-210} stroke="#9aa3ad" strokeWidth={6} /><rect x={-12} y={-330} width={24} height={130} rx={10} fill="#7a4a22" stroke={KC.ink} strokeWidth={5} />
               {T > K.Pr + 0.4 && <circle cx={0} cy={-4} r={9} fill="#ffffff" stroke={KC.ink} strokeWidth={2} />}</g>
           </g>}
@@ -389,12 +403,12 @@ function BassiShot() {
       <Subtitulo T={T} idx={11} at={K.H + 0.1} until={K.C - 0.1} texto="Lleva su nombre y *se vende como insecticida.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Ayudó a probar que *los microbios enferman.*" />
 
-      <Robert T={T} apariciones={[
+      <RobertLado T={T} apariciones={[
         [K.G - 0.45, K.G + 3.0, 'avatar_11_sorprendido', 'gancho'],
         [K.E + 0.5, K.E + 3.9, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.Ad + 0.8, K.Ad + 4.2, 'avatar_12_perfil_serio', 'arriba-der'],
         [K.Sa + 1.4, K.Sa + 4.5, 'avatar_10_serio_molesto', 'arriba-der'],
-        [K.P + 0.05, K.B + 0.1, 'avatar_07_pensativo_puno', 'grande'],
+        [K.P + 0.05, K.B + 0.1, 'avatar_07_pensativo_puno', 'grande-b'],
         [K.Pr + 0.3, K.Pr + 3.4, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.Pa + 0.3, K.Pa + 3.3, 'avatar_04_bajando_lentes', 'izq-alto'],
         [K.H + 0.4, K.H + 4.6, 'avatar_02_apuntando_camara', 'arriba-der'],

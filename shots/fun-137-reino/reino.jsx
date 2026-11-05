@@ -251,7 +251,7 @@ function ReinoShot() {
           <Lechuga T={T} x={170} y={1120} s={1.15} />
           <Zanahorias T={T} x={910} y={1120} s={1.0} />
           <Charola T={T} x={540} y={1120} s={1.3} salto={salto} />
-          {T > K.G + 0.35 && <text x={540} y={750 - 10 * Math.sin(T * 6)} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={7}
+          {T > K.G + 0.35 && <text x={575} y={760 - 10 * Math.sin(T * 6)} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={7}
             opacity={kprog(T, K.G + 0.35, K.G + 0.6)} transform={`rotate(${Math.sin(T * 4) * 6} 540 700)`}>?</text>}
         </>)}
       </Escena>
@@ -384,8 +384,8 @@ function ReinoShot() {
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 1.0} until={K.L - 0.3} x={60} y={660} texto="champiñón" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.G + 1.4} until={K.L - 0.3} x={60} y={712} texto="Agaricus bisporus" it tam={36} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.0} until={K.L - 0.3} x={40} y={660} texto="champiñón" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.4} until={K.L - 0.3} x={40} y={712} texto="Agaricus bisporus" it tam={34} color={KC.ink} />
       <Chip T={T} at={K.L + 2.8} until={K.Pa - 0.3} texto="Cryptogamia: plantas sin flor" x={540} y={470} tam={38} borde={RN.verde2} />
       <Chip T={T} at={K.Pa + 0.4} until={K.P1 - 0.2} texto="no se mueve ✓" x={330} y={520} tam={38} borde={RN.verde} />
       <Chip T={T} at={K.Pa + 1.2} until={K.P1 - 0.2} texto="células con pared ✓" x={330} y={610} tam={38} borde={RN.verde} />

@@ -59,3 +59,86 @@ Notas para el dibujo (no son errores): espora de *Flammulina* alargada (subcilí
 larga que ancha), lisa y transparente; la medida 7–9 × 3–4 µm cae dentro de los rangos publicados. Que *F. velutipes* fuera
 la especie del trabajo perdido viene de Watling vía la Linnean (no hay copia del manuscrito): está bien decirlo, porque la
 propia Sociedad lo da como el tema del trabajo.
+
+## Segunda ronda
+
+Revisado el 5 nov 2026: `narracion.json`, `guion.md`, todos los textos en pantalla de `potter.jsx` (chips, etiquetas,
+tarjetas, subtítulos, barras de escala, dibujo de la espora) y todo `publicacion.md`.
+
+**Hallazgo nuevo importante.** Al volver a abrir la página de la Linnean apareció un matiz que la primera ronda no pescó
+(la fila 17 tenía ✅ y había que matizarla): la Sociedad dice que la costumbre era que los trabajos siempre los leyera otra
+persona, sin importar el autor, y desmiente que a Potter no la dejaran leerlo por ser mujer. Que no admitía mujeres como
+miembros (hasta 1905) es cierto, pero **no fue la causa de que Massee lo leyera**. Todo texto que una las dos cosas como
+causa y efecto ("así que", "tuvo que leerlo un hombre", "No admitían mujeres: lo leyó Massee") es ❌.
+Fuente: https://linnean.org/the-society/history-of-science/beatrix-potter-the-tale-of-the-linnean-society — "It is also
+reported that Beatrix Potter was not allowed to present her own paper at the Society because she was a woman." /
+"the accepted practice was that papers were always read by someone other than the author." Además, la carta de Potter a
+McIntosh (sept 1897): "My paper was read at the Linnean Society and 'well received' according to Mr. Massee," / "but they
+say it requires more work in it before it is printed."
+
+| # | Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|---|
+| S1 | Corrección 1 aplicada: voz «De la espora sale un tubito que se ramifica en hifas: el comienzo de un hongo nuevo.» (narracion.json y guion.md; en pantalla alguna espora sin brotar) | ✅ | https://courses.lumenlearning.com/wm-biology2/chapter/basidiomycota/ | "Each basidiospore germinates and generates monokaryotic haploid hyphae." | texto vigente |
+| S2 | Corrección 2 aplicada: «En 1897 presentó un trabajo…» (narracion.json y guion.md) | ✅ | https://beatrixpottersociety.org.uk/beatrix-potter/the-scientist/ | "presented to a meeting of the Linnean Society on 1 April 1897" | 1897 |
+| S3 | Corrección 3 aplicada: tarjeta «1997 · secretario de la Sociedad Linneana: “la trataron vilmente” (The Sunday Times)» (guion.md y potter.jsx) | ✅ | Linnean (URL arriba) | "She was treated scurvily by members of the society" (The Sunday Times, 16 feb 1997) | 1997 |
+| S4 | Voz escena 9: «La Sociedad Linneana de Londres aún no admitía mujeres; lo leyó por ella George Massee, de Kew.» (revisión de la fila 17) | ⚠️ | Linnean | Las dos partes son ciertas, pero juntas con «;» y «por ella» dan a entender que lo leyó él porque ella era mujer; la Sociedad dice que siempre los leía otra persona | 1897 |
+| S5 | Subtítulo idx 9 (potter.jsx): «No admitían mujeres: *lo leyó Massee.*» | ❌ | Linnean | Afirma causa y efecto que la Sociedad desmiente: "the accepted practice was that papers were always read by someone other than the author" | 1897 |
+| S6 | Chip «miembros: solo hombres (hasta 1905)» | ✅ | Linnean | "women were not admitted as Fellows (or members) of the Society until 1905" | 1905 |
+| S7 | Fachada con letrero «SOCIEDAD LINNEANA · LONDRES» | ✅ | Linnean | "The Linnean Society of London" | vigente |
+| S8 | Chips «George Massee · micólogo de Kew» y «lo leyó el 1 abr 1897» | ✅ | Linnean | "Keeper of Lower Cryptogams at the Royal Botanic Gardens in Kew"; "read and discussed" el 1 de abril de 1897 | 1897 |
+| S9 | Chips «8 abr 1897 · ella lo retira» y «nunca se publicó» | ✅ | Linnean | "withdrawn, by Potter, on 8 April, and never resubmitted"; "requires more work in it before it is printed" | 1897 |
+| S10 | Espora dibujada 8 × 3.2 µm, elipsoide alargada, lisa, hialina, con apículo; barra 10 µm = 160 px (coherente con 16 px/µm) | ✅ | https://mushroomexpert.com/flammulina_velutipes.html · https://first-nature.com/fungi/flammulina-velutipes.php | "Spores 5–10 x 2.5–3.5 µm; subcylindric to elongated-ellipsoid; smooth; hyaline in KOH"; "Ellipsoidal, smooth, 6.5-10 x 3-4µm" | vigente |
+| S11 | Chip «AL MICROSCOPIO · 1896»; etiquetas «placa de vidrio», «gota» | ✅ | Linnean | "growing spores of various fungal species on glass plates and tracking them under the microscope" (por 1896) | 1896 |
+| S12 | Etiquetas «espora», «tubo germinativo», «hifas (con tabiques)»; barra 10 µm → 20 µm | ✅ | Lumen (arriba) | micelio primario monocariótico: una célula, un núcleo (hifas tabicadas, Basidiomycota) | vigente |
+| S13 | `TarjetaEstudio` «1897 · Beatrix Potter · germinación de esporas · On the germination of the spores of Agaricineae» | ✅ | Linnean | "On the germination of the spores of Agaricineae" | 1897 |
+| S14 | Escena enoki: «*Flammulina velutipes* · silvestre · en madera, en invierno», nieve en la escena; «el hongo de su trabajo» | ✅ | https://www.woodlandtrust.org.uk/trees-woods-and-wildlife/fungi-and-lichens/velvet-shank/ · Linnean | "velvet shank can withstand frost and snow and can even survive being frozen solid!"; "They fruit throughout winter"; hábitat "dead wood"; "she only chose one, that of Collybia velutipes (now Flammulina velutipes)" | vigente / Watling |
+| S15 | «enoki · *Flammulina filiformis*» y chip «se separaron en 2018 por su ADN» | ✅ | Wang et al. 2018, Mycol. Prog. 17: 1013–1030 · https://ui.adsabs.harvard.edu/abs/2018MycPr..17.1013W | "should be treated as a separate species, namely Flammulina filiformis" | 2018 |
+| S16 | Chips «Beatrix Potter», «1866–1943 · Inglaterra», «dibujo esquemático, al estilo de sus estudios», «cientos de dibujos de hongos», etiquetas «laminillas», «pie», «Charles McIntosh», «cartero y naturalista · Perthshire, Escocia», «esporas», «su dibujo a lápiz», «el cuaderno de una científica» | ✅ | ver filas 2, 4, 5, 6, 8, 29 de la primera ronda | — | — |
+| S17 | Barras de escala «5 cm (hoja)», «50 cm», «10 cm», «1 cm», «5 cm», «dibujo esquemático» | ✅ | (escala de objetos dibujados; sombrero de *F. velutipes* de pocos cm) | sin afirmación de dato | — |
+| S18 | Subtítulos idx 0–8 y 10–12 («No es un adorno: es un dato científico», «Un tubito, luego hifas», «1897: cómo germinan las esporas», «Se retiró y se perdió», «Primo del enoki del súper», etc.) | ✅ | filas de la primera ronda | — | — |
+| S19 | publicacion.md · TikTok: «La Sociedad no admitía mujeres como miembros (hasta 1905), así que lo leyó por ella George Massee» | ❌ | Linnean | causa y efecto desmentida (ver hallazgo) | 1897 |
+| S20 | publicacion.md · TikTok, resto (1901 privada / 1902 editorial; 250–350 dibujos; McIntosh; 1896 placas de vidrio; tubo germinativo; 1 abr 1897; retiro, nunca se publicó, perdido; Sunday Times 1997 "vilmente"; 2018 ADN, enoki cultivado = *F. filiformis*) | ✅ | V&A, Armitt, Linnean, RBGE, Wang 2018 | ver primera ronda | 1896–2018 |
+| S21 | Instagram: «pero lo tuvo que leer un hombre, George Massee: la Sociedad no admitía mujeres» | ❌ | Linnean | causa y efecto desmentida | 1897 |
+| S22 | Instagram, resto («de cada una que brota sale un tubito…», cientos de hongos, 1997 "vilmente", primo del enoki) | ✅ | ver arriba | — | — |
+| S23 | YouTube: «Las mujeres no fueron admitidas como miembros hasta 1905, así que lo leyó George Massee» | ❌ | Linnean | causa y efecto desmentida | 1897 |
+| S24 | YouTube, resto (título «La autora de Peter Rabbit era científica de hongos»; 250 ejemplares dic 1901, Warne oct 1902; Armitt 250 / Linnean 350; McIntosh 1839–1922, 13 especies nuevas para Gran Bretaña; Watling; 8 de abril; la Sociedad no guarda ninguna versión; cita de Marsden; fuentes) | ✅ | V&A, Armitt, Linnean, RBGE, BP Society ("The Scientist"), Wang 2018 | "thirteen species of fungus completely new to Britain"; "we do not hold any version of it in our archives" | 1839–2018 |
+| S25 | Facebook: «Su trabajo de 1897 lo tuvo que leer un hombre en la Sociedad Linneana de Londres, que no admitía mujeres» | ❌ | Linnean | causa y efecto desmentida | 1897 |
+| S26 | LinkedIn: «pero lo leyó George Massee, de Kew: la Sociedad no admitió mujeres como miembros hasta 1905» | ❌ | Linnean | causa y efecto desmentida | 1897 |
+| S27 | LinkedIn (opinión): «la historia de la ciencia también está hecha de trabajos que se quedaron fuera por quién los firmaba, no por su calidad» | ❌ | Linnean | Aplicado a Potter, no se sostiene: el trabajo se leyó, según ella fue "well received", le pidieron "more work in it before it is printed" y ella lo retiró y nunca lo volvió a presentar. No consta que se quedara fuera por ser mujer ni que fuera rechazado ("is not the case") | 1897 |
+| S28 | LinkedIn: «Flammulina velutipes sigue siendo noticia: en 2018…» | ⚠️ | Wang 2018 | Un estudio de hace 8 años no es "noticia"; exagerado | 2018 |
+| S29 | X: «en 1897 su trabajo lo tuvo que leer un hombre: la Sociedad Linneana no admitía mujeres» | ❌ | Linnean | causa y efecto desmentida | 1897 |
+| S30 | Threads: «lo leyó George Massee en la Sociedad Linneana, que no admitía mujeres» | ⚠️ | Linnean | implica la misma causa; además falta «como miembros» | 1897 |
+| S31 | Comentario fijado (6 fuentes y "El dibujo es esquemático") | ✅ | URLs abiertas en ambas rondas | — | — |
+
+**Resumen segunda ronda:** 31 renglones · 21 ✅ · 3 ⚠️ · 7 ❌. Las 3 correcciones de la primera ronda quedaron bien aplicadas.
+Todos los ❌/⚠️ salen de un mismo error: decir o dar a entender que Massee leyó el trabajo *porque* Potter era mujer.
+
+## Correcciones necesarias (segunda ronda)
+
+1. **Voz, escena 9 (`narracion.json` línea 9 y `guion.md`).** Cambiar
+   «La Sociedad Linneana de Londres aún no admitía mujeres; lo leyó por ella George Massee, de Kew.»
+   por **«En la Sociedad Linneana de Londres, que aún no admitía mujeres como socias, lo leyó George Massee, de Kew, como era costumbre.»**
+   (La voz aún no está generada, así que el cambio no cuesta créditos; reajustar tiempos.)
+2. **Subtítulo idx 9 (`potter.jsx`).** Cambiar «No admitían mujeres: *lo leyó Massee.*» por **«Lo leyó Massee, *como era costumbre.*»**
+   (El chip «miembros: solo hombres (hasta 1905)» se queda: es correcto.) Revisar en `guion.md` la escena 9 y la línea 392 de
+   comentario si se copian a algún texto visible.
+3. **TikTok.** Cambiar «La Sociedad no admitía mujeres como miembros (hasta 1905), así que lo leyó por ella George Massee, micólogo de Kew.»
+   por **«Lo leyó George Massee, micólogo de Kew: la costumbre era que los trabajos los leyera alguien distinto del autor. Eso sí, la Sociedad no admitió mujeres como miembros hasta 1905.»**
+4. **Instagram.** Cambiar «Su trabajo sobre la germinación de esporas se presentó en la Sociedad Linneana de Londres en 1897, pero lo tuvo que leer un hombre, George Massee: la Sociedad no admitía mujeres.»
+   por **«Su trabajo sobre la germinación de esporas se presentó en la Sociedad Linneana de Londres en 1897; lo leyó George Massee, de Kew, como era costumbre, en una Sociedad que aún no admitía mujeres como miembros.»**
+5. **YouTube.** Cambiar «Las mujeres no fueron admitidas como miembros hasta 1905, así que lo leyó George Massee, micólogo de los Jardines de Kew.»
+   por **«Lo leyó George Massee, micólogo de los Jardines de Kew: la costumbre de la Sociedad era que los trabajos los leyera alguien distinto del autor. Y las mujeres no fueron admitidas como miembros hasta 1905.»**
+6. **Facebook.** Cambiar «Su trabajo de 1897 lo tuvo que leer un hombre en la Sociedad Linneana de Londres, que no admitía mujeres; ella lo retiró y hoy está perdido.»
+   por **«Su trabajo de 1897 se leyó en la Sociedad Linneana de Londres, que aún no admitía mujeres como miembros; ella lo retiró y hoy está perdido.»**
+7. **LinkedIn, frase de Massee.** Cambiar «pero lo leyó George Massee, de Kew: la Sociedad no admitió mujeres como miembros hasta 1905.»
+   por **«; lo leyó George Massee, de Kew, porque la costumbre era que otra persona leyera los trabajos, y la Sociedad no admitió mujeres como miembros hasta 1905.»**
+   (o sea, la oración queda: «…se presentó el 1 de abril de 1897 en la Sociedad Linneana de Londres; lo leyó George Massee, de Kew, porque la costumbre era que otra persona leyera los trabajos, y la Sociedad no admitió mujeres como miembros hasta 1905.»)
+8. **LinkedIn, «Por qué importa» (opinión + «sigue siendo noticia»).** Cambiar todo el párrafo
+   «Por qué importa: la historia de la ciencia también está hecha de trabajos que se quedaron fuera por quién los firmaba, no por su calidad. Y el hongo de su trabajo, Flammulina velutipes, sigue siendo noticia: en 2018 un estudio con ADN mostró que el enoki cultivado en Asia, que se creía la misma especie, es otra (Flammulina filiformis).»
+   por **«Por qué importa: según una carta de ella, el trabajo fue "bien recibido", pero le pidieron más trabajo antes de imprimirlo y nunca lo volvió a presentar; mientras tanto, como mujer no podía ser miembro de la Sociedad, y en 1997 su secretario reconoció que la trataron vilmente. Y el hongo de su trabajo, Flammulina velutipes, todavía da sorpresas: en 2018 un estudio con ADN mostró que el enoki cultivado en Asia, que se creía la misma especie, es otra (Flammulina filiformis).»**
+9. **X.** Cambiar «Beatrix Potter sembraba esporas sobre vidrio y en 1897 su trabajo lo tuvo que leer un hombre: la Sociedad Linneana no admitía mujeres.»
+   por **«Beatrix Potter sembraba esporas sobre vidrio y en 1897 presentó su trabajo en la Sociedad Linneana, que aún no admitía mujeres como miembros.»**
+10. **Threads.** Cambiar «Su trabajo de 1897 lo leyó George Massee en la Sociedad Linneana, que no admitía mujeres; ella lo retiró y hoy está perdido.»
+    por **«Su trabajo de 1897 lo leyó George Massee en la Sociedad Linneana, como era costumbre; ella lo retiró y hoy está perdido.»**
+
+Sin veredicto: falta aplicar estas correcciones y volver a verificarlas.
