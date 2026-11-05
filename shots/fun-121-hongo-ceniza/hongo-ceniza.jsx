@@ -58,10 +58,10 @@ const TAPETES = [[180, 1150, 1.0], [440, 1185, 1.15], [640, 1140, 0.9], [850, 11
 
 // Bosque quemado (macro). humo 0..1 · tapetes 0..1 · brote 0..1 · co2 0..1 · foco = índice del tapete que se enciende primero.
 function BosqueQuemado({ T, humo = 1, tapetes = 0, brote = 0, co2 = 0, foco = -1, pFoco = 0 }) {
-  return <g>
-    <path d="M 0 990 Q 270 900 540 965 Q 800 1015 1080 945 L 1080 1920 L 0 1920 Z" fill={PY.cerro} stroke={KC.ink} strokeWidth={6} />
+  return <g transform="translate(0 -170)">
+    <path d="M 0 990 Q 270 900 540 965 Q 800 1015 1080 945 L 1080 2150 L 0 2150 Z" fill={PY.cerro} stroke={KC.ink} strokeWidth={6} />
     {TRONCOS.slice(0, 7).filter((_, i) => i % 2).map(([x, y, h, w, s], i) => <TroncoQuemado key={'b' + i} x={x} y={y - 60} h={h * 0.6} w={w * 0.6} seed={s + 20} />)}
-    <path d="M 0 1085 Q 300 1045 600 1095 Q 850 1125 1080 1075 L 1080 1920 L 0 1920 Z" fill={PY.suelo} stroke={KC.ink} strokeWidth={6} />
+    <path d="M 0 1085 Q 300 1045 600 1095 Q 850 1125 1080 1075 L 1080 2150 L 0 2150 Z" fill={PY.suelo} stroke={KC.ink} strokeWidth={6} />
     {[[150, 1300, 120], [520, 1340, 160], [880, 1290, 110], [330, 1500, 140], [760, 1560, 170]].map(([x, y, r], i) => <ellipse key={i} cx={x} cy={y} rx={r} ry={r * 0.22} fill={PY.ceniza} opacity=".45" />)}
     {TRONCOS.map(([x, y, h, w, s], i) => <TroncoQuemado key={i} x={x} y={y} h={h} w={w} seed={s} />)}
     {/* brasas en la base de los troncos */}
@@ -94,13 +94,13 @@ function Anafre({ T, x, y, s = 1, brasa = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <line x1={-120} y1={60} x2={-150} y2={140} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
     <line x1={120} y1={60} x2={150} y2={140} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
+    <path d="M -210 -125 L 210 -125 L 155 70 L -155 70 Z" fill={PY.terracota} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <rect x={-225} y={-150} width={450} height={34} rx={12} fill={PY.terracota2} stroke={KC.ink} strokeWidth={7} />
     {trozos.map(([dx, dy, r], i) => { const b = brasa * (0.6 + 0.4 * Math.sin(T * 4 + i * 1.7));
       return <g key={i}>
         <path d={`M ${dx - r} ${dy} Q ${dx - r * 0.8} ${dy - r * 0.9} ${dx} ${dy - r * 0.8} Q ${dx + r} ${dy - r * 0.7} ${dx + r * 0.9} ${dy + r * 0.2} Q ${dx} ${dy + r * 0.5} ${dx - r} ${dy} Z`} fill={mixHex('#1b1410', '#d9480f', b * 0.55)} stroke={KC.ink} strokeWidth={4} />
         {b > 0.05 && <path d={`M ${dx - r * 0.5} ${dy - r * 0.2} l ${r * 0.4} ${-r * 0.25} l ${r * 0.35} ${r * 0.2}`} stroke={KC.yellow} strokeWidth={4} fill="none" opacity={b} style={{ filter:`drop-shadow(0 0 8px ${KC.orange})` }} />}
       </g>; })}
-    <path d="M -210 -125 L 210 -125 L 155 70 L -155 70 Z" fill={PY.terracota} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
-    <rect x={-225} y={-150} width={450} height={34} rx={12} fill={PY.terracota2} stroke={KC.ink} strokeWidth={7} />
     <rect x={-55} y={-30} width={110} height={56} rx={10} fill="#3a1a0e" stroke={KC.ink} strokeWidth={5} />
     {brasa > 0 && <rect x={-45} y={-20} width={90} height={36} rx={8} fill={KC.orange} opacity={brasa * (0.5 + 0.3 * Math.sin(T * 6))} />}
   </g>;
@@ -193,7 +193,7 @@ function FrascoCultivo({ T, x, y, s = 1, mic = 1, burbujas = 0 }) {
     <rect x={-150} y={-390} width={300} height={70} rx={16} fill="#9aa4b2" stroke={KC.ink} strokeWidth={6} />
     <rect x={-170} y={-10} width={340} height={80} rx={20} fill="#f1d27a" opacity=".85" />
     <Montoncito x={0} y={10} s={1.05} oro={1} seed={9} />
-    {mic > 0 && <RedHifas T={T} x={0} y={-10} g={mic} seed={12} n={160} escala={0.22} color="#ffe2c8" ancho={3} />}
+    {mic > 0 && <RedHifas T={T} x={0} y={-30} g={mic} seed={12} n={160} escala={0.1} color="#ffe2c8" ancho={3} />}
     {burbujas > 0 && Array.from({ length: 9 }, (_, i) => { const u = (T * 0.45 + i / 9) % 1; return <circle key={i} cx={-120 + (i * 31) % 240 + Math.sin(u * 8 + i) * 12} cy={-20 - u * 300} r={9 + (i % 3) * 4} fill={PY.oro} stroke={KC.ink} strokeWidth={2} opacity={burbujas * Math.min(1, (1 - u) * 3)} />; })}
   </g>;
 }
@@ -236,7 +236,7 @@ function HongoCenizaShot() {
       {/* 3 · el bosque arde: humo arriba, carbón abajo */}
       <Escena T={T} a={K.Ca} b={K.Si}>
         <FondoLunares color={KC.cyan} />
-        {fsvg((() => { const q = kprog(T, K.Ca + 0.3, K.Ca + 3.4); return <>
+        {fsvg((() => { const q = kprog(T, K.Ca + 0.3, K.Ca + 3.4); return <g transform="translate(0 -150)">
           <rect x={250} y={880} width={580} height={140} rx={40} fill={mixHex('#7a4a22', PY.carbon, q)} stroke={KC.ink} strokeWidth={8} />
           {[0.2, 0.45, 0.7].map((k, i) => <path key={i} d={`M 300 ${910 + i * 38} Q 540 ${900 + i * 38} 800 ${915 + i * 38}`} stroke={mixHex('#5a3416', PY.carbon2, q)} strokeWidth={6} fill="none" />)}
           <ellipse cx={250} cy={950} rx={44} ry={70} fill={mixHex('#d9a86a', '#2a1a12', q)} stroke={KC.ink} strokeWidth={8} />
@@ -245,7 +245,7 @@ function HongoCenizaShot() {
           <FlechaCurva T={T} x1={560} y1={760} x2={330} y2={520} p={kprog(T, K.Ca + 1.0, K.Ca + 1.8)} curva={-60} color={KC.white} />
           <FlechaCurva T={T} x1={700} y1={1030} x2={780} y2={1160} p={kprog(T, K.Ca + 2.6, K.Ca + 3.2)} curva={40} color={KC.white} />
           <Montoncito x={790} y={1220} s={kEase.sale(kprog(T, K.Ca + 3.0, K.Ca + 3.6))} seed={4} />
-        </>; })())}
+        </g>; })())}
       </Escena>
       {/* 4 · el carbón dura siglos en el suelo; los microbios casi no lo atacan */}
       <Escena T={T} a={K.Si} b={K.Py}>
@@ -274,7 +274,7 @@ function HongoCenizaShot() {
       <Escena T={T} a={K.E} b={K.A}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <MapaCalifornia x={70} y={790} k={38} p={kprog(T, K.E + 1.4, K.E + 2.0)} punto={kprog(T, K.E + 2.2, K.E + 3.4)} />
+          <MapaCalifornia x={70} y={800} k={32} p={kprog(T, K.E + 1.4, K.E + 2.0)} punto={kprog(T, K.E + 2.2, K.E + 3.4)} />
           {kprog(T, K.E + 2.8, K.E + 3.4) > 0 && <g opacity={kprog(T, K.E + 2.8, K.E + 3.4)}>
             <Petri x={800} y={1010} r={150}><Colonia cx={0} cy={0} r={110 * kprog(T, K.E + 3.0, K.E + 5.0)} color="#ffcfae" seed={3} /></Petri>
           </g>}
@@ -288,29 +288,29 @@ function HongoCenizaShot() {
           <Horno T={T} x={300} y={760} s={1} encendido={kprog(T, K.A + 0.4, K.A + 0.8)} />
           {T < K.A + 1.2 && [0, 1, 2, 3].map((i) => { const u = kprog(T, K.A + i * 0.15, K.A + 0.8 + i * 0.15); return u > 0 && u < 1 ?
             <rect key={i} x={klerp(120 + i * 30, 230, u)} y={klerp(480, 740, u)} width={46} height={16} rx={4} fill="#d9a86a" stroke={KC.ink} strokeWidth={3} transform={`rotate(${u * 200} ${klerp(120 + i * 30, 230, u)} ${klerp(480, 740, u)})`} /> : null; })}
-          <Petri x={720} y={1040} r={230} medio="#f1d27a">
+          <Petri x={720} y={970} r={210} medio="#f1d27a">
             {vuela > 0.95 && Array.from({ length: 26 }, (_, i) => { const gg = krng(i + 50); const a = gg() * 6.28, d = Math.sqrt(gg()) * 190; return <circle key={i} cx={Math.cos(a) * d} cy={Math.sin(a) * d} r={6 + gg() * 7} fill={PY.carbon} />; })}
             <RedHifas T={T} x={0} y={0} g={kprog(T, K.A + 2.5, K.A + 5.4)} seed={7} n={260} escala={0.3} color="#ffffff" ancho={3} circ />
           </Petri>
-          {vuela > 0 && vuela < 1 && <Montoncito x={klerp(330, 720, vuela)} y={klerp(900, 1040, vuela) - Math.sin(vuela * Math.PI) * 160} s={0.4} n={5} />}
+          {vuela > 0 && vuela < 1 && <Montoncito x={klerp(330, 720, vuela)} y={klerp(900, 970, vuela) - Math.sin(vuela * Math.PI) * 160} s={0.4} n={5} />}
         </>; })())}
       </Escena>
       {/* 9a · pinitos que respiraron ¹³CO₂ → su madera → carbón dorado */}
       <Escena T={T} a={K.I} b={I2}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Conifera x={280} y={1180} s={0.8} T={T} seed={2} />
-          {[0, 1, 2].map((i) => <FlechaCurva key={i} T={T} x1={700 - i * 20} y1={560 + i * 90} x2={380} y2={720 + i * 110} p={kprog(T, K.I + 0.2 + i * 0.25, K.I + 1.0 + i * 0.25)} curva={-50} color={PY.oro} />)}
-          {[0, 1, 2].map((i) => <text key={'t' + i} x={720 - i * 20} y={560 + i * 90} style={{ font:`700 34px ${KF.mono}` }} fill={PY.oro} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.I + 0.2 + i * 0.25, K.I + 0.6 + i * 0.25)}>¹³CO₂</text>)}
-          <FlechaCurva T={T} x1={430} y1={1100} x2={740} y2={1110} p={kprog(T, K.I + 1.6, K.I + 2.2)} curva={60} color={KC.ink} />
-          <Montoncito x={830} y={1150} s={kEase.sale(kprog(T, K.I + 2.0, K.I + 2.6))} oro={1} seed={6} />
+          <Conifera x={280} y={1100} s={0.75} T={T} seed={2} />
+          {[0, 1, 2].map((i) => <FlechaCurva key={i} T={T} x1={700 - i * 20} y1={560 + i * 90} x2={380} y2={680 + i * 100} p={kprog(T, K.I + 0.2 + i * 0.25, K.I + 1.0 + i * 0.25)} curva={-50} color={PY.oro} />)}
+          {[0, 1, 2].map((i) => <text key={'t' + i} x={720 - i * 20} y={560 + i * 90} style={{ font:`900 36px ${KF.texto}` }} fill={PY.oro} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.I + 0.2 + i * 0.25, K.I + 0.6 + i * 0.25)}>¹³CO₂</text>)}
+          <FlechaCurva T={T} x1={430} y1={1020} x2={730} y2={1020} p={kprog(T, K.I + 1.6, K.I + 2.2)} curva={60} color={KC.ink} />
+          <Montoncito x={840} y={1060} s={kEase.sale(kprog(T, K.I + 2.0, K.I + 2.6))} oro={1} seed={6} />
         </>)}
       </Escena>
       {/* 9b · el frasco: el hongo suelta CO₂ con ¹³C (lo pequeño, fondo oscuro) */}
       <Escena T={T} a={I2} b={K.Ge}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<FrascoCultivo T={T} x={460} y={1100} s={1.05} mic={kprog(T, I2, I2 + 1.4)} burbujas={kprog(T, I2 + 1.0, I2 + 1.6)} />)}
+        {fsvg(<FrascoCultivo T={T} x={460} y={1040} s={1.0} mic={kprog(T, I2, I2 + 1.4)} burbujas={kprog(T, I2 + 1.0, I2 + 1.6)} />)}
       </Escena>
       {/* 10 · genes encendidos y anillos del carbón que se abren */}
       <Escena T={T} a={K.Ge} b={K.Po}>
@@ -338,12 +338,12 @@ function HongoCenizaShot() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 1.2} until={K.Tu - 0.3} texto="¿muerto?" x={260} y={560} tam={46} borde={KC.ink} />
-      <Etq T={T} at={K.G + 2.0} until={K.Tu - 0.3} x={60} y={650} texto="hongo del fuego" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.G + 2.0} until={K.Tu - 0.3} x={60} y={680} texto="un hongo del fuego" tam={32} color={KC.texto} />
       <Etq T={T} at={K.Tu + 0.4} until={K.Ca - 0.3} x={60} y={560} texto="carbón vegetal (anafre)" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Tu + 1.8} until={K.Ca - 0.3} texto="temporada de incendios" x={540} y={830} tam={38} borde={KC.red} />
-      <Etq T={T} at={K.Ca + 1.6} until={K.Si - 0.3} x={330} y={470} texto="humo y gases" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 3.2} until={K.Si - 0.3} x={600} y={1180} texto="carbón" lado="izq" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 3.4} until={K.Si - 0.3} x={60} y={560} texto="materia orgánica pirogénica" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Tu + 1.8} until={K.Ca - 0.3} texto="temporada de incendios" x={770} y={800} tam={38} borde={KC.red} />
+      <Etq T={T} at={K.Ca + 1.6} until={K.Si - 0.3} x={330} y={340} texto="humo y gases" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 3.2} until={K.Si - 0.3} x={640} y={1030} texto="carbón" lado="izq" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 3.4} until={K.Si - 0.3} x={340} y={1110} texto="materia orgánica pirogénica" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Si + 0.6} until={K.Py - 0.3} texto="a veces: cientos o miles de años" x={370} y={560} tam={30} borde={KC.ink} />
       <Etq T={T} at={K.Si + 1.6} until={K.Py - 0.3} x={60} y={680} texto="se creía casi intocable" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Py + 0.6} until={K.P - 0.3} x={60} y={480} texto="Pyronema" it tam={46} color={KC.texto} />
@@ -351,15 +351,16 @@ function HongoCenizaShot() {
       <Etq T={T} at={K.Py + 1.8} until={K.P - 0.3} x={60} y={600} texto="sobre un tapete de hifas" tam={30} color={PY.mat} />
       <Chip T={T} at={K.Py + 2.4} until={K.P - 0.3} texto="semanas o meses después del fuego" x={420} y={690} tam={30} borde={KC.orange} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.A - 0.3} anio="2021" quien="UC Berkeley + U. de Wisconsin" revista="Frontiers in Microbiology, 2021" x={540} y={560} />
-      <Etq T={T} at={K.E + 2.4} until={K.A - 0.3} x={60} y={1225} texto="incendio Rim, California (2013)" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.E + 2.4} until={K.A - 0.3} x={60} y={775} texto="incendio Rim, California (2013)" tam={28} color={KC.ink} />
       <Etq T={T} at={K.E + 3.4} until={K.A - 0.3} x={640} y={820} texto="P. domesticum" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.A + 0.6} until={K.I - 0.3} texto="única fuente de carbono: carbón" x={540} y={470} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.A + 1.0} until={K.I - 0.3} x={60} y={560} texto="carbón de pino · 750 °C" tam={30} color={KC.ink} />
       <Etq T={T} at={K.A + 3.2} until={K.I - 0.3} x={950} y={760} texto="¡crece!" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={K.I + 0.4} until={I2 - 0.3} texto="¹³C: carbono más pesado" x={540} y={460} tam={34} borde={PY.oro} />
-      <Etq T={T} at={K.I + 2.4} until={I2 - 0.3} x={1010} y={1220} texto="carbón marcado" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={I2 + 0.4} until={K.Ge - 0.3} x={60} y={480} texto="Pyronema + carbón ¹³C" it tam={32} color={KC.texto} />
-      <Etq T={T} at={I2 + 1.2} until={K.Ge - 0.3} x={60} y={540} texto="sale CO₂ con ¹³C" tam={32} color={PY.oro} />
+      <Etq T={T} at={K.I + 2.4} until={I2 - 0.3} x={1010} y={920} texto="carbón marcado" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={I2 + 0.4} until={K.Ge - 0.3} x={60} y={470} texto="Pyronema" it tam={36} color={KC.texto} />
+      <Etq T={T} at={I2 + 0.7} until={K.Ge - 0.3} x={60} y={525} texto="sobre carbón con carbono 13" tam={28} color={KC.texto} />
+      <Etq T={T} at={I2 + 1.2} until={K.Ge - 0.3} x={60} y={580} texto="sale CO₂ con carbono 13" tam={28} color={PY.oro} />
       <Etq T={T} at={K.Ge + 0.3} until={K.Po - 0.3} x={60} y={500} texto="genes de compuestos aromáticos" tam={30} color={PY.oro} />
       <Etq T={T} at={K.Ge + 1.2} until={K.Po - 0.3} x={60} y={820} texto="anillos del carbón" tam={30} color={KC.texto} />
       <Chip T={T} at={K.Po + 0.2} until={K.C - 0.3} texto="en laboratorio" x={300} y={560} tam={40} borde={KC.ink} />

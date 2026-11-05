@@ -35,7 +35,8 @@ function Hifa({ pts, p = 1, ancho = 64, color = SQ.hifa, pared = SQ.hifaB, septo
 // ---------- mundo macro: la milpa y el terrón ----------
 // seco 1 → 0 (tierra mojada), verde 0..1 (milpa reverdece), grieta 0..1 (la grieta del gancho), pecho 0..1 (aire "aguantado"),
 // exhala 0..1 (el pulso sale), lluvia 0..1.
-function Milpa({ T, seco = 1, verde = 0, grieta = 1, pecho = 1, exhala = 0, lluvia = 0, cielo = KC.yellow }) {
+function Milpa({ T, seco = 1, verde = 0, grieta = 1, pecho = 1, exhala = 0, desinfla = 0, lluvia = 0, cielo = KC.yellow }) {
+  const DY = -140;
   const suelo = mixHex(SQ.seco, SQ.mojado, 1 - seco), terron = mixHex(SQ.seco2, SQ.mojado2, 1 - seco);
   const cana = mixHex(SQ.cana, SQ.canaV, verde);
   const canas = [[110, 640, -2], [270, 700, 3], [860, 660, -3], [1010, 620, 2]];
@@ -46,8 +47,8 @@ function Milpa({ T, seco = 1, verde = 0, grieta = 1, pecho = 1, exhala = 0, lluv
   const tPolvo = kclamp(grieta * 1.4, 0, 1);
   const lluv = []; if (lluvia > 0) { const gr = krng(77); for (let i = 0; i < 70; i++) { const x0 = gr() * 1200 - 60, v = 1400 + gr() * 500, f = gr(); const y = ((T * v + f * 2200) % 2200) - 200;
     lluv.push(<line key={i} x1={x0} y1={y} x2={x0 - 18} y2={y + 60} stroke="#dff6ff" strokeWidth={5} strokeLinecap="round" opacity={0.8 * lluvia} />); } }
-  const resp = pecho * (1 + 0.04 * Math.sin(T * 2.2)) * (1 - 0.75 * exhala);
-  const puffs = []; if (exhala > 0) for (let k = 0; k < 9; k++) { const ph = ((T * 0.45 + k / 9) % 1); const x = 540 + Math.sin(k * 2.3 + T) * (60 + ph * 140) , y = 960 - ph * 360;
+  const resp = pecho * (1 + 0.04 * Math.sin(T * 2.2)) * (1 - 0.7 * desinfla);
+  const puffs = []; if (exhala > 0) for (let k = 0; k < 9; k++) { const ph = ((T * 0.45 + k / 9) % 1); const x = 640 + Math.sin(k * 2.3 + T) * (50 + ph * 110), y = 960 - ph * 300;
     puffs.push(<g key={k} opacity={exhala * (1 - ph) * 0.95}><circle cx={x} cy={y} r={26 + ph * 40} fill={SQ.co2} stroke={KC.ink} strokeWidth={4} />{k % 3 === 0 && <text x={x} y={y + 12} textAnchor="middle" style={{ font:`900 ${24 + ph * 16}px ${KF.texto}` }} fill={KC.ink}>CO₂</text>}</g>); }
   return <>
     <FondoLunares color={cielo} />
@@ -60,6 +61,8 @@ function Milpa({ T, seco = 1, verde = 0, grieta = 1, pecho = 1, exhala = 0, lluv
       {/* nubes de lluvia */}
       {lluvia > 0 && [[260, 470, 1.1], [700, 420, 1.3], [980, 520, 0.9]].map(([x, y, s], i) => <g key={i} transform={`translate(${x + Math.sin(T * 0.5 + i) * 14} ${y}) scale(${s})`} opacity={lluvia}>
         <path d="M -150 30 Q -160 -30 -90 -40 Q -60 -100 10 -80 Q 70 -120 120 -60 Q 180 -50 170 20 Q 160 50 110 50 L -110 50 Q -150 50 -150 30 Z" fill="#eef4f8" stroke={KC.ink} strokeWidth={8} /></g>)}
+      <g transform={`translate(0 ${DY})`}>
+      {/* subsuelo: raíces, piedras y micelio (lo que vive abajo) */}
       {/* cañas de maíz */}
       {canas.map(([x, top, inc], i) => { const sw = mece(T, i + 2, 0.25) * 2; return <g key={i} transform={`translate(${x} 1010) rotate(${inc + sw})`}>
         <path d={`M -9 0 L -6 ${top - 1010} L 6 ${top - 1010} L 9 0 Z`} fill={cana} stroke={KC.ink} strokeWidth={5} />
@@ -70,7 +73,8 @@ function Milpa({ T, seco = 1, verde = 0, grieta = 1, pecho = 1, exhala = 0, lluv
         <path d={`M 0 ${top - 1010} l -14 -50 M 0 ${top - 1010} l 0 -60 M 0 ${top - 1010} l 14 -50`} stroke={mixHex('#b08a40', '#e8c25a', verde)} strokeWidth={7} strokeLinecap="round" />
       </g>; })}
       {/* suelo */}
-      <rect x={-200} y={1010} width={1500} height={1100} fill={suelo} stroke={KC.ink} strokeWidth={10} />
+      <rect x={-200} y={1010} width={1500} height={1250} fill={suelo} stroke={KC.ink} strokeWidth={10} />
+      <SubsueloDetalle T={T} seco={seco} />
       <g opacity={seco}>{grietasSuelo.map((p, i) => <path key={i} d={'M ' + p.map((q) => q.join(' ')).join(' L ')} stroke={SQ.grieta} strokeWidth={7} fill="none" strokeLinecap="round" strokeLinejoin="round" />)}</g>
       {/* brotes al final */}
       {verde > 0 && [150, 330, 720, 930].map((x, i) => { const v = kEase.rebote(kclamp(verde * 1.6 - i * 0.15, 0, 1)); return <g key={i} transform={`translate(${x} 1016) scale(${v})`}>
@@ -90,9 +94,34 @@ function Milpa({ T, seco = 1, verde = 0, grieta = 1, pecho = 1, exhala = 0, lluv
       {/* charquitos al mojarse */}
       {seco < 1 && [[180, 1300], [620, 1380], [900, 1250]].map(([x, y], i) => <ellipse key={i} cx={x} cy={y} rx={90 * (1 - seco)} ry={22 * (1 - seco)} fill="#6ea7c4" stroke={KC.ink} strokeWidth={4} opacity={1 - seco} />)}
       {puffs}
+      </g>
       {lluv}
     </>)}
   </>;
+}
+
+// Subsuelo: piedras, raíces de la milpa y un micelio tenue (dibujo esquemático), debajo de la superficie (y = 1010).
+function SubsueloDetalle({ T, seco = 1 }) {
+  const g = krng(5);
+  const piedras = Array.from({ length: 22 }, () => [g() * 1080, 1090 + g() * 1000, 10 + g() * 26]);
+  const raices = [[110, 1010], [270, 1010], [860, 1010], [1010, 1010]].map(([x, y], i) => { const r = krng(20 + i); let d = `M ${x} ${y}`, cx = x, cy = y; for (let k = 0; k < 6; k++) { cx += (r() - 0.5) * 70; cy += 50 + r() * 40; d += ` L ${cx.toFixed(0)} ${cy.toFixed(0)}`; } return d; });
+  const mic = []; const m = krng(9); for (let i = 0; i < 46; i++) { const x = m() * 1080, y = 1100 + m() * 900, a = m() * Math.PI, l = 40 + m() * 90; mic.push(<line key={i} x1={x} y1={y} x2={x + Math.cos(a) * l} y2={y + Math.sin(a) * l * 0.5} stroke={SQ.hifa} strokeWidth={3} opacity={0.45} />); }
+  return <g>
+    <rect x={-200} y={1300} width={1500} height={1000} fill="#000" opacity={0.12} />
+    {piedras.map(([x, y, r], i) => <ellipse key={i} cx={x} cy={y} rx={r} ry={r * 0.7} fill={mixHex('#b88a58', '#6b4a32', 1 - seco)} stroke={KC.ink} strokeWidth={3} opacity=".8" />)}
+    {raices.map((d, i) => <path key={i} d={d} stroke={mixHex('#e3c48a', '#d8c08a', 1 - seco)} strokeWidth={6} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity=".8" />)}
+    {mic}
+  </g>;
+}
+
+// Soles: «meses sin lluvia» (cuántos: ilustrativo)
+function Soles({ T, at, until, n = 4, x = 700, y = 540 }) {
+  if (!kvisible(T, at, until)) return null;
+  const sale = until == null ? 0 : kprog(T, until, until + 0.3);
+  return fsvg(<>{Array.from({ length: n }, (_, i) => { const k = kEase.rebote(kprog(T, at + i * 0.35, at + i * 0.35 + 0.4)) * (1 - sale); if (k <= 0) return null;
+    return <g key={i} transform={`translate(${x + i * 92} ${y}) scale(${k}) rotate(${T * 30})`}>
+      {Array.from({ length: 8 }, (_, j) => <rect key={j} x={-5} y={-44} width={10} height={16} rx={5} fill={KC.orange} stroke={KC.ink} strokeWidth={3} transform={`rotate(${j * 45})`} />)}
+      <circle r={26} fill={KC.orange} stroke={KC.ink} strokeWidth={5} /></g>; })}</>, 42);
 }
 
 // ---------- mundo micro: poros del suelo ----------
@@ -149,11 +178,11 @@ function Macetas({ T, at }) {
     {/* techo transparente */}
     <path d="M 40 680 L 1040 560" stroke={KC.ink} strokeWidth={10} />
     <path d="M 40 680 L 1040 560 L 1040 590 L 40 710 Z" fill="rgba(220,245,255,.65)" stroke={KC.ink} strokeWidth={6} />
-    {[100, 1000].map((x, i) => <line key={i} x1={x} y1={690 - (x - 40) * 0.12} x2={x} y2={1130} stroke={KC.ink} strokeWidth={9} />)}
+    {[100, 1000].map((x, i) => <line key={i} x1={x} y1={690 - (x - 40) * 0.12} x2={x} y2={1090} stroke={KC.ink} strokeWidth={9} />)}
     {/* escurrimiento */}
     {Array.from({ length: 4 }, (_, i) => { const ph = ((T * 0.8 + i * 0.25) % 1); return <circle key={i} cx={klerp(1040, 1070, ph)} cy={560 + ph * 420} r={10} fill="#ffffff" stroke={KC.ink} strokeWidth={3} />; })}
     {/* macetas con pradera */}
-    {pots.map((x, i) => { const on = kEase.rebote(kprog(T, at + 0.4 + i * 0.12, at + 0.8 + i * 0.12)); return <g key={i} transform={`translate(${x} 1130) scale(${on})`}>
+    {pots.map((x, i) => { const on = kEase.rebote(kprog(T, at + 0.4 + i * 0.12, at + 0.8 + i * 0.12)); return <g key={i} transform={`translate(${x} 1090) scale(${on})`}>
       {Array.from({ length: 9 }, (_, j) => { const dx = -80 + j * 20, h = 90 + ((j * 37) % 50), sw = mece(T, i * 9 + j, 0.4) * 6;
         return <path key={j} d={`M ${dx} -150 Q ${dx + sw} ${-150 - h * 0.6} ${dx + sw * 2 + (j % 2 ? 12 : -12)} ${-150 - h}`} stroke={j % 3 ? '#5fae3a' : '#3f8f2a'} strokeWidth={9} fill="none" strokeLinecap="round" />; })}
       <path d="M -100 -160 L 100 -160 L 80 0 L -80 0 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
@@ -164,7 +193,7 @@ function Macetas({ T, at }) {
 
 // ---------- redes de co-ocurrencia («quién aparece con quién») ----------
 const NODOS = (cx, cy, seed) => { const g = krng(seed); return Array.from({ length: 13 }, (_, i) => { const a = (i / 13) * Math.PI * 2 + g() * 0.4, r = 60 + g() * 150; return [cx + Math.cos(a) * r, cy + Math.sin(a) * r * 0.9]; }); };
-const NB = NODOS(290, 870, 5), NH = NODOS(790, 900, 9);
+const NB = NODOS(290, 930, 5), NH = NODOS(790, 930, 9);
 const ARISTAS = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 0], [0, 5], [2, 9], [4, 11], [7, 12]];
 const EXTRA = [[0, 7], [1, 9], [3, 10], [2, 6], [5, 11], [1, 4], [6, 12], [8, 3]];
 function Redes({ T, sequia = 0 }) {
@@ -180,8 +209,8 @@ function Redes({ T, sequia = 0 }) {
     {ARISTAS.map(([a, b], i) => <line key={'h' + i} x1={pH[a][0]} y1={pH[a][1]} x2={pH[b][0]} y2={pH[b][1]} stroke="#ffffff" strokeWidth={6} opacity={0.85} />)}
     {pH.map(([x, y], i) => <g key={'nh' + i}><circle cx={x} cy={y} r={30} fill={KC.dark} stroke={KC.ink} strokeWidth={5} />
       <path d={`M ${x - 18} ${y + 8} Q ${x - 4} ${y - 14} ${x + 18} ${y - 6} M ${x - 2} ${y - 4} L ${x + 4} ${y + 16}`} stroke={SQ.hifa} strokeWidth={8} fill="none" strokeLinecap="round" /></g>)}
-    <text x={290} y={620} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">BACTERIAS</text>
-    <text x={790} y={655} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">HONGOS</text>
+    <text x={290} y={720} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">BACTERIAS</text>
+    <text x={790} y={720} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">HONGOS</text>
   </>);
 }
 
@@ -200,8 +229,7 @@ function CajaDosTierras({ T, hifas = 0, agua = 0, oscurece = 0 }) {
     {HIFAS_CAJA.map((pts, i) => <Hifa key={i} T={T} pts={pts} p={kclamp(hifas * 1.3 - i * 0.12, 0, 1)} ancho={20} septo={90} gotas={agua} />)}
     <text x={(C.x0 + C.g0) / 2} y={C.y0 + 52} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>tierra húmeda</text>
     <text x={(C.g1 + C.x1) / 2} y={C.y0 + 52} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>tierra seca</text>
-    <text x={(C.g0 + C.g1) / 2} y={C.y1 + 56} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>aire</text>
-    <line x1={(C.g0 + C.g1) / 2} y1={C.y1 + 24} x2={(C.g0 + C.g1) / 2} y2={C.y1 - 10} stroke={KC.ink} strokeWidth={4} />
+    <text x={(C.g0 + C.g1) / 2} y={C.y0 - 26} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>aire</text>
   </>);
 }
 
@@ -217,10 +245,11 @@ function Pizza({ x, y, s = 1, rot = 0 }) {
 }
 
 // Sello rectangular «HIPÓTESIS»
-function SelloTexto({ T, at, x, y, texto, color = KC.orange, rot = -8, tam = 96 }) {
-  if (T < at) return null;
+function SelloTexto({ T, at, until, x, y, texto, color = KC.orange, rot = -8, tam = 96 }) {
+  if (T < at || (until != null && T > until + 0.4)) return null;
+  const fuera = until == null ? 0 : kprog(T, until, until + 0.35);
   const k = kprog(T, at, at + 0.35, kEase.rebote);
-  return <div style={{ position:'absolute', left:x, top:y, zIndex:43, transform:`translate(-50%,-50%) rotate(${rot}deg) scale(${klerp(2.2, 1, k)})`, opacity:kprog(T, at, at + 0.15),
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:43, transform:`translate(-50%,-50%) rotate(${rot}deg) scale(${klerp(2.2, 1, k)})`, opacity:kprog(T, at, at + 0.15) * (1 - fuera),
     border:`12px solid ${color}`, borderRadius:24, padding:'6px 34px 10px', font:`400 ${tam}px/1 ${KF.titulo}`, color, background:'rgba(14,15,18,.75)', letterSpacing:'.04em', boxShadow:`0 0 0 5px ${KC.ink}` }}>{texto}</div>;
 }
 
@@ -282,15 +311,15 @@ function SequiaShot() {
         <FondoLunares color={KC.pink} />
         {fsvg(<>
           <BacteriaC T={T} x={190} y={640} s={1.6} rot={-15 + Math.sin(T * 3) * 6} color={KC.mint} seed={3} />
-          <Hifa T={T} pts={[[-40, 1080], [140, 1060], [300, 1100], [430, 1060]]} p={1} ancho={70} />
-          <Interrogacion T={T} x={300} y={1000} tam={340} />
+          <Hifa T={T} pts={[[-40, 1010], [140, 990], [300, 1030], [430, 990]]} p={1} ancho={70} />
+          <Interrogacion T={T} x={300} y={930} tam={320} />
         </>)}
       </Escena>
       {/* 7 · el estudio de 2018: macetas de pradera bajo techo transparente; se lee el ADN */}
       <Escena T={T} a={K.E} b={K.R} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <Macetas T={T} at={K.E} />
-        {fsvg(<g opacity={kprog(T, K.E + 3.2, K.E + 3.6)}><ADNHebra T={T} x={130} y={1180} largo={820} alto={70} vueltas={4} resalta={(u) => u < kprog(T, K.E + 3.4, K.E + 5.6)} /></g>, 22)}
+        {fsvg(<g opacity={kprog(T, K.E + 3.2, K.E + 3.6)}><ADNHebra T={T} x={130} y={520} largo={820} alto={70} vueltas={4} resalta={(u) => u < kprog(T, K.E + 3.4, K.E + 5.6)} /></g>, 22)}
       </Escena>
       {/* 8 · redes: la de bacterias se desacomoda con la sequía; la de hongos aguanta */}
       <Escena T={T} a={K.R} b={K.Ch} zoom={0.03}>
@@ -303,54 +332,55 @@ function SequiaShot() {
         <CajaDosTierras T={T} hifas={kprog(T, K.Ch + 0.8, K.Ch + 3.4, kEase.suave)} agua={kprog(T, K.Ch + 3.0, K.Ch + 3.6)} oscurece={kprog(T, K.Ch + 3.6, K.Pi + 1.0)} />
         {fsvg(<>
           <Champinon x={150} y={746} s={0.42} crece={kprog(T, K.Ch + 0.2, K.Ch + 1.0, kEase.sale)} abre={kprog(T, K.Ch + 0.6, K.Ch + 1.4)} />
-          {T > K.Pi + 1.4 && <Pizza x={850} y={600} s={kEase.rebote(kprog(T, K.Pi + 1.4, K.Pi + 1.8)) * 0.85} rot={12 + Math.sin(T * 3) * 4} />}
+          {T > K.Pi + 1.4 && <Pizza x={860} y={640} s={kEase.rebote(kprog(T, K.Pi + 1.4, K.Pi + 1.8)) * 0.7} rot={12 + Math.sin(T * 3) * 4} />}
         </>, 21)}
         <div style={{ position:'absolute', inset:0, background:'rgba(14,15,18,.45)', opacity:kprog(T, K.Hp, K.Hp + 0.4), zIndex:30 }}></div>
       </Escena>
       {/* 12–14 · llueve: la tierra exhala (efecto Birch) y regresa la milpa, ya mojada y verde */}
       <Escena T={T} a={K.Ll} b={FIN} zoom={0.04} origen="50% 55%">
-        <Milpa T={T} seco={seco} verde={verde} grieta={1} pecho={1} exhala={exhala} lluvia={lluvia} cielo={cielo} />
+        <Milpa T={T} seco={seco} verde={verde} grieta={1} pecho={1} exhala={exhala} desinfla={kprog(T, K.Ll + 1.6, K.Bi + 0.6)} lluvia={lluvia} cielo={cielo} />
       </Escena>
 
       {/* lupa: macro → micro */}
-      <Lupa T={T} at={K.Mi + 0.4} until={K.Ba - 0.25} x={420} y={640} r={215} fx={540} fy={1050} interior={LupaTierra} tinte={KC.mint} etiqueta="AL MICROSCOPIO · LA TIERRA" />
+      <Lupa T={T} at={K.Mi + 0.4} until={K.Ba - 0.25} x={420} y={560} r={205} fx={540} fy={910} interior={LupaTierra} tinte={KC.mint} etiqueta="AL MICROSCOPIO · LA TIERRA" />
 
       {/* textos */}
       <Chip T={T} at={K.Mi + 0.2} until={K.Ba - 0.3} texto="meses sin lluvia" x={830} y={440} tam={34} borde={KC.orange} />
-      {[0, 1, 2, 3].map((i) => <Chip key={i} T={T} at={K.Mi + 0.6 + i * 0.35} until={K.Ba - 0.3} texto="☀" x={710 + i * 82} y={530} tam={34} borde={KC.yellow} />)}
-      <Etq T={T} at={K.Mi + 1.6} until={K.Ba - 0.3} x={660} y={700} texto="hongos (hifas)" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Mi + 2.1} until={K.Ba - 0.3} x={660} y={760} texto="bacterias" tam={30} color={KC.ink} />
+      <Soles T={T} at={K.Mi + 0.6} until={K.Ba - 0.3} x={700} y={540} />
+      <Etq T={T} at={K.Mi + 1.6} until={K.Ba - 0.3} x={640} y={640} texto="hongos (hifas)" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Mi + 2.1} until={K.Ba - 0.3} x={640} y={700} texto="bacterias" tam={30} color={KC.texto} />
       <Chip T={T} at={K.Ba + 0.2} until={K.Se - 0.2} texto="AL MICROSCOPIO · POROS DEL SUELO" x={450} y={400} tam={28} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ba + 0.9} until={K.Se + 2.0} x={600} y={1010} texto="película de agua" tam={28} color={SQ.agua} />
+      <Etq T={T} at={K.Ba + 0.9} until={K.Se + 1.0} x={560} y={680} texto="película de agua" tam={28} color={SQ.agua} />
       <Etq T={T} at={K.Ba + 1.4} until={K.Hi - 0.2} x={300} y={1010} texto="bacteria" lado="izq" tam={28} color={KC.mint} />
-      <Etq T={T} at={K.Ba + 1.9} until={K.Hi - 0.2} x={250} y={420} texto="grano de suelo" lado="izq" tam={26} color={SQ.grano2} />
+      <Etq T={T} at={K.Ba + 1.9} until={K.Hi - 0.2} x={40} y={700} texto="grano de suelo" tam={26} color="#ffd9a8" />
       <Chip T={T} at={K.Se + 1.2} until={K.Hi - 0.2} texto="poro con aire" x={540} y={1010} tam={34} borde={SQ.aire} />
       <Etq T={T} at={K.Hi + 1.0} until={K.P - 0.2} x={140} y={600} texto="hifa (hilo del hongo)" tam={30} color={SQ.hifa} />
       <Chip T={T} at={K.Hi + 2.2} until={K.P - 0.2} texto="cruza el aire" x={330} y={420} tam={34} borde={SQ.hifa} />
       <Etq T={T} at={K.P + 0.3} until={K.E - 0.2} x={300} y={560} texto="bacteria" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.P + 0.5} until={K.E - 0.2} x={450} y={1170} texto="hifa" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.P + 0.5} until={K.E - 0.2} x={60} y={1100} texto="hifa" tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2018" quien="de Vries y col. · Inglaterra" revista="Nature Communications, 2018" x={540} y={470} />
       <Chip T={T} at={K.E + 1.4} until={K.R - 0.3} texto="techo transparente: sin lluvia" x={540} y={790} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.E + 3.3} until={K.R - 0.3} texto="leen el ADN de sus microbios" x={540} y={460} tam={34} borde={KC.pink} />
-      <Etq T={T} at={K.E + 2.0} until={K.R - 0.3} x={430} y={890} texto="macetas de pradera" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.E + 3.3} until={K.R - 0.3} texto="leen el ADN de sus microbios" x={540} y={420} tam={34} borde={KC.pink} />
+      <Etq T={T} at={K.E + 2.0} until={K.R - 0.3} x={60} y={1145} texto="macetas de pradera" tam={28} color={KC.ink} />
       <Chip T={T} at={K.R + 0.1} until={K.Ch - 0.3} texto="¿quién aparece con quién?" x={360} y={430} tam={32} borde={KC.gold} />
-      <Chip T={T} at={K.R + 1.0} until={K.Ch - 0.3} texto="☀ SEQUÍA" x={360} y={520} tam={34} borde={KC.orange} />
+      <Chip T={T} at={K.R + 1.0} until={K.Ch - 0.3} texto="SEQUÍA" x={360} y={520} tam={34} borde={KC.orange} />
       <Chip T={T} at={K.R + 2.2} until={K.Ch - 0.3} texto="bacterias: menos estable" x={290} y={1135} tam={32} borde={KC.red} />
       <Chip T={T} at={K.R + 3.0} until={K.Ch - 0.3} texto="hongos: más estable" x={790} y={1135} tam={32} borde={KC.mint} />
       <TarjetaEstudio T={T} at={K.Ch + 0.2} until={K.Ch + 2.6} anio="2015" quien="Guhr y col. · laboratorio" revista="PNAS, 2015" x={400} y={480} />
       <Etq T={T} at={K.Ch + 2.8} until={K.Pi - 0.2} x={120} y={560} texto="champiñón" tam={32} color={KC.ink} />
       <Etq T={T} at={K.Ch + 3.1} until={K.Pi - 0.2} x={120} y={612} texto="Agaricus bisporus" it tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Ch + 3.4} until={K.Pi - 0.2} texto="agua por las hifas →" x={540} y={1190} tam={30} borde={SQ.agua} />
+      <Chip T={T} at={K.Ch + 3.4} until={K.Pi - 0.2} texto="agua por las hifas →" x={540} y={1075} tam={30} borde={SQ.agua} />
       <Medidor T={T} at={K.Pi + 0.1} until={K.Hp - 0.2} x={90} y={410} ancho={900} color={KC.red} valor={(t) => kprog(t, K.Pi + 0.3, K.Pi + 1.5, kEase.sale)}
         etiqueta="CO₂ de descomposición, tierra seca" texto={(v) => '+' + kformato(Math.round(v * 2800), 0) + ' %'} />
       <Etq T={T} at={K.Pi + 0.6} until={K.Hp - 0.2} x={90} y={540} texto="vs. hifas cortadas · 7 días" tam={28} color={KC.ink} />
-      <SelloTexto T={T} at={K.Hp + 0.25} x={540} y={600} texto="HIPÓTESIS" />
+      <NumeroGigante T={T} at={K.Pi + 0.3} until={K.Hp - 0.2} valor={2800} dur={1.2} prefijo="+" sufijo=" %" x={380} y={630} tam={120} color={KC.red} />
+      <SelloTexto T={T} at={K.Hp + 0.25} until={K.Ll - 0.1} x={540} y={600} texto="HIPÓTESIS" />
       <Chip T={T} at={K.Hp + 0.7} until={K.Ll - 0.2} texto="¿así aguantan la sequía?" x={540} y={760} tam={40} borde={KC.orange} />
-      <GraficaPulso T={T} at={K.Bi + 0.1} until={K.C - 0.3} x={60} y={370} w={610} h={300} />
-      <Chip T={T} at={K.Bi + 1.4} until={K.C - 0.3} texto="⏱ en minutos" x={250} y={730} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.Bi + 2.6} until={K.C - 0.3} texto="microbios" x={190} y={830} tam={30} borde={KC.mint} />
-      <Chip T={T} at={K.Bi + 3.0} until={K.C - 0.3} texto="enzimas fuera de ellos" x={600} y={830} tam={30} borde={KC.lilac} />
-      <Chip T={T} at={K.Bi + 4.4} until={K.C - 0.3} texto="efecto Birch · África del Este, años 50" x={540} y={1170} tam={28} borde={KC.gold} />
+      <GraficaPulso T={T} at={K.Bi + 0.1} until={K.C - 0.3} x={60} y={360} w={610} h={280} />
+      <Chip T={T} at={K.Bi + 1.4} until={K.Bi + 4.2} texto="en minutos" x={250} y={700} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.Bi + 2.6} until={K.C - 0.3} texto="microbios" x={220} y={1100} tam={30} borde={KC.mint} />
+      <Chip T={T} at={K.Bi + 3.0} until={K.C - 0.3} texto="enzimas fuera de ellos" x={650} y={1100} tam={30} borde={KC.lilac} />
+      <Chip T={T} at={K.Bi + 4.4} until={K.C - 0.3} texto="efecto Birch · África del Este, años 50" x={460} y={700} tam={28} borde={KC.gold} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="no estaba muerta" x={330} y={430} tam={40} borde={KC.leaf} />
 
       {/* barras de escala */}

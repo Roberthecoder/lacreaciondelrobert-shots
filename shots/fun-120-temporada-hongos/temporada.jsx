@@ -173,7 +173,7 @@ function TemporadaShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <PisoBosque y={1150} T={T} />
-          <CalPared x={70} y={430} s={1} ini={Math.round(klerp(12, 7, corre))} fin={Math.round(klerp(18, 26, corre))} hoja={T > K.G + 0.5 && T < K.G + 3.0 ? hojaG : 0} />
+          <CalPared x={70} y={380} s={0.85} ini={Math.round(klerp(12, 7, corre))} fin={Math.round(klerp(18, 26, corre))} hoja={T > K.G + 0.5 && T < K.G + 3.0 ? hojaG : 0} />
           <Seta x={360} y={1152} s={1.7} crece={brota} rot={mece(T, 3, 0.4) * 2} />
           {brota > 0 && brota < 1 && <circle cx={360} cy={1150} r={30 + brota * 90} fill="none" stroke="#fff" strokeWidth={6} opacity={1 - brota} />}
         </>)}
@@ -214,7 +214,7 @@ function TemporadaShot() {
         <div style={{ position:'absolute', left:0, top:supM + 10, width:KW, height:KH, background:'rgba(13,20,36,.55)', opacity:baja }}></div>
         {fsvg(<>
           {/* trocito de madera enterrada */}
-          <g transform={`translate(760 ${supM + 330})`} opacity={kprog(T, K.M + 1.2, K.M + 1.8)}>
+          <g transform={`translate(760 ${supM + 330})`} opacity={kprog(T, K.M + 1.2, K.M + 1.8) * (1 - kprog(T, K.Se + 3.3, K.Se + 3.7))}>
             <rect x={-120} y={-40} width={260} height={80} rx={24} fill="#7a4a22" stroke={KC.ink} strokeWidth={6} />
             <ellipse cx={-120} cy={0} rx={20} ry={40} fill="#d9a86a" stroke={KC.ink} strokeWidth={6} />
           </g>
@@ -254,7 +254,7 @@ function TemporadaShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           {(() => { const enc = kprog(T, K.E + 0.2, K.E + 1.0, kEase.suave); const filas = Math.floor(kprog(T, K.Li + 0.5, K.E, (p) => p) * 9);
-            return <g transform={`translate(${klerp(80, 60, enc)} ${klerp(560, 900, enc)}) scale(${klerp(1, 0.62, enc)}) rotate(${-3 + enc * 3})`}>
+            return <g transform={`translate(${klerp(80, 60, enc)} ${klerp(560, 820, enc)}) scale(${klerp(1, 0.45, enc)}) rotate(${-3 + enc * 3})`}>
               <rect x={8} y={12} width={480} height={560} rx={16} fill={KC.ink} />
               <rect x={0} y={0} width={480} height={560} rx={16} fill={TH.papel} stroke={KC.ink} strokeWidth={7} />
               <rect x={0} y={0} width={46} height={560} rx={12} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
@@ -269,11 +269,11 @@ function TemporadaShot() {
             </g>; })()}
           {/* la libreta se vuelve gráfica: puntos que suben */}
           {T > K.E + 1.0 && <g opacity={kprog(T, K.E + 1.0, K.E + 1.6)}>
-            <rect x={420} y={880} width={560} height={300} rx={18} fill="rgba(255,255,255,.8)" stroke={KC.ink} strokeWidth={6} />
-            <line x1={460} y1={1140} x2={950} y2={1140} stroke={KC.ink} strokeWidth={5} />
-            <line x1={460} y1={1140} x2={460} y2={910} stroke={KC.ink} strokeWidth={5} />
-            {Array.from({ length: 12 }, (_, i) => { const on = kprog(T, K.E + 1.4 + i * 0.12, K.E + 1.6 + i * 0.12); return <circle key={i} cx={490 + i * 38} cy={1110 - i * 14 - Math.sin(i * 2.1) * 12} r={11 * on} fill={TH.marca} stroke={KC.ink} strokeWidth={3} />; })}
-            <text x={700} y={1172} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>1950 → 2005 · esquemático</text>
+            <rect x={420} y={800} width={560} height={270} rx={18} fill="rgba(255,255,255,.8)" stroke={KC.ink} strokeWidth={6} />
+            <line x1={460} y1={1030} x2={950} y2={1030} stroke={KC.ink} strokeWidth={5} />
+            <line x1={460} y1={1030} x2={460} y2={830} stroke={KC.ink} strokeWidth={5} />
+            {Array.from({ length: 12 }, (_, i) => { const on = kprog(T, K.E + 1.4 + i * 0.12, K.E + 1.6 + i * 0.12); return <circle key={i} cx={490 + i * 38} cy={1005 - i * 13 - Math.sin(i * 2.1) * 10} r={11 * on} fill={TH.marca} stroke={KC.ink} strokeWidth={3} />; })}
+            <text x={700} y={1060} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>1950 → 2005 · esquemático</text>
           </g>}
         </>)}
       </Escena>
@@ -286,7 +286,7 @@ function TemporadaShot() {
             const x0 = 110, x1 = 980, dias = klerp(153, 365, ano), off = klerp(212, 0, ano); // off = día del año donde empieza el eje (1 ago ≈ 212)
             const px = (d) => x0 + (d + 212 - off) / dias * (x1 - x0);
             const meses = ano < 0.5 ? ['AGO', 'SEP', 'OCT', 'NOV', 'DIC'] : ['E', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
-            return <g opacity={1 - kprog(T, K.D + 0.6, K.D + 1.0) * 0.75}>
+            return <g>
               <rect x={x0 - 40} y={700} width={x1 - x0 + 80} height={480} rx={22} fill="rgba(255,255,255,.85)" stroke={KC.ink} strokeWidth={6} />
               {SP.map((sp, i) => { const a = sp.a - sp.da * abre, b = sp.b + sp.db * abre, yy = 730 + i * 14;
                 return <g key={i}>
@@ -299,7 +299,7 @@ function TemporadaShot() {
                 <path d={`M ${px(75)} 1090 L ${px(95)} 1090`} stroke={KC.red} strokeWidth={8} /><path d={`M ${px(95) + 2} 1090 l -18 -12 l 0 24 Z`} fill={KC.red} />
               </>}
             </g>; })()}
-          {T > K.D + 0.5 && <Azufre T={T} x={420} y={1170} at={K.D + 0.6} s={1.15} />}
+          {T > K.D - 0.1 && <Azufre T={T} x={250} y={690} at={K.D + 0.3} s={0.7} />}
         </>)}
       </Escena>
       {/* 11 · Noruega: la fructificación de otoño se atrasó */}
@@ -322,20 +322,20 @@ function TemporadaShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <PisoBosque y={1150} T={T} />
-          <CalPared x={70} y={430} s={1} ini={7} fin={26} nota={['su calendario lo marca', 'sobre todo el clima']} notaP={kprog(T, K.C + 2.2, K.C + 2.8)} />
+          <CalPared x={70} y={380} s={0.85} ini={7} fin={26} nota={['su calendario lo marca', 'sobre todo el clima']} notaP={kprog(T, K.C + 2.2, K.C + 2.8)} />
           <Seta x={360} y={1152} s={1.7} crece={1} rot={mece(T, 3, 0.4) * 2} />
           <Canasta x={180} y={1190} s={0.8 * kprog(T, K.C + 0.8, K.C + 1.3, kEase.rebote)} />
         </>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.4} until={K.N - 0.3} texto="NO SALIÓ TARDE" x={270} y={960} tam={46} borde={KC.red} />
+      <Chip T={T} at={K.G + 1.4} until={K.N - 0.3} texto="NO SALIÓ TARDE" x={780} y={960} tam={46} borde={KC.red} />
       <Chip T={T} at={K.N + 0.1} until={K.S - 0.3} texto="SUR DE INGLATERRA" x={300} y={360} tam={30} borde={KC.ink} mono />
       <NumeroGigante T={T} at={K.N + 0.6} until={K.N + 3.9} valor={33} dur={0.9} sufijo=" días" etiqueta="temporada de setas, años 50" x={380} y={600} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.N + 4.0} until={K.S - 0.3} texto="unos 33 días → más del doble" x={360} y={760} tam={36} borde={TH.marca} />
       <Etq T={T} at={K.N + 1.0} until={K.S - 0.3} x={800} y={1010} texto="Salisbury" tam={26} color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.S + 0.4} until={K.M - 0.3} x={80} y={440} texto="seta = cuerpo fructífero" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.S + 1.6} until={K.M - 0.3} x={600} y={900} texto="esporas" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.S + 0.4} until={K.M - 0.3} x={1040} y={860} texto="seta = cuerpo fructífero" tam={28} color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.S + 1.6} until={K.M - 0.3} x={1040} y={940} texto="esporas" tam={28} color={KC.ink} lado="izq" />
       <Chip T={T} at={K.M + 0.5} until={K.Se - 0.3} texto="POR DENTRO · EL SUELO" x={380} y={420} tam={32} borde={KC.mint} mono />
       <Etq T={T} at={K.M + 1.4} until={K.Se - 0.3} x={80} y={supM + 200} texto="micelio · red de hifas" tam={30} color={KC.mint} />
       <Etq T={T} at={K.M + 1.8} until={K.Se - 0.3} x={900} y={supM + 260} texto="madera" tam={28} color={KC.texto} lado="izq" />
@@ -350,14 +350,14 @@ function TemporadaShot() {
       <Chip T={T} at={K.Ca + 0.3} until={K.D - 0.2} texto="315 especies · en promedio" x={380} y={480} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.Ca + 2.2} until={K.D - 0.2} x={110} y={600} texto="← primera seta: antes" tam={28} color={KC.blue} />
       <Etq T={T} at={K.Ca + 2.6} until={K.D - 0.2} x={110} y={645} texto="última seta: después →" tam={28} color={KC.red} />
-      <Chip T={T} at={K.D + 0.4} until={K.No - 0.3} texto="muchas: 2 veces al año" x={380} y={520} tam={38} borde={KC.pink} />
-      <Etq T={T} at={K.D + 1.0} until={K.No - 0.3} x={620} y={1010} texto="penacho de azufre" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.D + 1.2} until={K.No - 0.3} x={620} y={1050} texto="Hypholoma fasciculare" it tam={26} color={KC.ink} />
+      <Chip T={T} at={K.D + 0.4} until={K.No - 0.3} texto="muchas: 2 veces al año" x={420} y={400} tam={38} borde={KC.pink} />
+      <Etq T={T} at={K.D + 1.0} until={K.No - 0.3} x={400} y={600} texto="penacho de azufre" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.D + 1.2} until={K.No - 0.3} x={400} y={640} texto="Hypholoma fasciculare" it tam={26} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.No + 0.3} until={K.No + 2.2} anio="2008" quien="Kauserud y col. · Noruega" revista="PNAS, 2008 · ≈34,500 registros de herbario" x={560} y={620} />
       <Etq T={T} at={K.No + 0.6} until={K.C - 0.3} x={330} y={530} texto="Noruega" tam={30} color={KC.ink} />
       <Chip T={T} at={K.No + 3.0} until={K.C - 0.3} texto="setas de otoño: +12.9 días" x={700} y={800} tam={34} borde={KC.blue} />
       <Etq T={T} at={K.No + 3.4} until={K.C - 0.3} x={460} y={1140} texto="promedio desde 1980" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="el calendario cambió" x={300} y={960} tam={40} borde={TH.marca} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="el calendario cambió" x={770} y={960} tam={40} borde={TH.marca} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.N} texto="10 cm" largo={150} />
@@ -395,7 +395,7 @@ function TemporadaShot() {
         [K.P + 0.05, K.Li - 0.1, 'avatar_07_pensativo_puno', 'grande'],
         [K.Li + 3.5, K.E - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.Ca + 2.0, K.Ca + 5.0, 'avatar_13_senalando_arriba', 'arriba-der'],
-        [K.D + 0.1, K.No - 0.1, 'avatar_11_sorprendido', 'arriba-der'],
+        [K.D + 0.1, K.No - 0.1, 'avatar_11_sorprendido', 'bajo-der'],
         [K.No + 2.3, K.C - 0.1, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.C + 0.8, K.Ou - 0.1, 'avatar_02_apuntando_camara', 'arriba-der']]} />
       <MarcaAgua T={T} tema="biologia" num="120" hasta={K.Ou} />
