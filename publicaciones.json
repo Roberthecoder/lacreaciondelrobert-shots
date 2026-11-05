@@ -877,5 +877,50 @@
   "ok": true,
   "id": "urn:li:ugcPost:7523810985590104066",
   "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7523810985590104066/"
+ },
+ {
+  "clave": "rob-02",
+  "red": "facebook",
+  "modo": "real",
+  "fecha": "2026-11-05T01:05:57Z",
+  "run": "41945953205",
+  "autorizo": "Robert: Shot Robert 01–13 programados (pedido del 3 nov 2026)",
+  "ok": true,
+  "id": "997823130045185",
+  "url": "https://www.facebook.com/reel/997823130045185",
+  "nota": "ready"
+ },
+ {
+  "clave": "rob-02",
+  "red": "instagram",
+  "modo": "real",
+  "fecha": "2026-11-05T01:06:44Z",
+  "run": "41945953205",
+  "autorizo": "Robert: Shot Robert 01–13 programados (pedido del 3 nov 2026)",
+  "ok": true,
+  "id": "18141182659626714",
+  "url": "https://www.instagram.com/reel/DfV0PBWDD2q/"
+ },
+ {
+  "clave": "rob-02",
+  "red": "threads",
+  "modo": "real",
+  "fecha": "2026-11-05T01:09:14Z",
+  "run": "41945953205",
+  "autorizo": "Robert: Shot Robert 01–13 programados (pedido del 3 nov 2026)",
+  "ok": true,
+  "id": "17957065074291397",
+  "url": "https://www.threads.com/@lacreaciondelrobert/post/DfV0WEJx7vu"
+ },
+ {
+  "clave": "rob-02",
+  "red": "linkedin",
+  "modo": "real",
+  "fecha": "2026-11-05T01:10:12Z",
+  "run": "41945953205",
+  "autorizo": "Robert: Shot Robert 01–13 programados (pedido del 3 nov 2026)",
+  "ok": true,
+  "id": "urn:li:ugcPost:7523914714515673088",
+  "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7523914714515673088/"
  }
 ]
