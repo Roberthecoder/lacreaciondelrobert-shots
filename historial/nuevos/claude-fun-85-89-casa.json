@@ -17,12 +17,22 @@
    "titulo": "Tu lavavajillas tiene una levadura negra que aguanta calor, jabón y sal (*Exophiala dermatitidis*)",
    "serie": "Shot Fungi Mati",
    "numero": 86,
-   "estado": "idea",
+   "estado": "guion",
    "carpeta": "shots/fun-86-lavavajillas",
    "rama": "claude/fun-85-89-casa",
-   "fuentes": [],
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/21944212/",
+    "https://www.eurekalert.org/news-releases/675008",
+    "https://pubmed.ncbi.nlm.nih.gov/25749362/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2610309/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12295173/"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "La lavadora por dentro: hongos del cajón del detergente y del hule (Babič 2015)",
+    "La cafetera y la levadura negra (Kondori 2024)",
+    "Hongos negros de los baños de vapor: el origen misterioso de Exophiala"
+   ]
   },
   {
    "id": "fun-87-pudricion-seca",

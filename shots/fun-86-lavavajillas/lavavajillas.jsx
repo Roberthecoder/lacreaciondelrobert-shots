@@ -25,8 +25,8 @@ function Cocina({ T, abre = 0, vapor = 0, linea = 1, ojos = 0, aspersor = 0, cho
   const ang = T * 400 * aspersor;
   return <g transform="translate(0 -130)">
     {/* cubierta y gabinetes */}
-    <rect x={-20} y={y1 - 10} width={1120} height={600} fill="#e7c896" stroke={KC.ink} strokeWidth={7} />
-    {Array.from({ length: 9 }, (_, i) => <line key={i} x1={i * 135} y1={y1 + 80} x2={i * 135 - 90} y2={y1 + 590} stroke="#d2ae74" strokeWidth={6} />)}
+    <rect x={-20} y={y1 - 10} width={1120} height={1200} fill="#e7c896" stroke={KC.ink} strokeWidth={7} />
+    {Array.from({ length: 9 }, (_, i) => <line key={i} x1={i * 135} y1={y1 + 80} x2={i * 135 - 150} y2={y1 + 1190} stroke="#d2ae74" strokeWidth={6} />)}
     <line x1={-20} y1={y1 + 80} x2={1100} y2={y1 + 80} stroke="#d2ae74" strokeWidth={6} />
     <rect x={-20} y={top + 50} width={240} height={y1 - top - 50} fill={LV.gabinete} stroke={KC.ink} strokeWidth={7} />
     <rect x={860} y={top + 50} width={240} height={y1 - top - 50} fill={LV.gabinete} stroke={KC.ink} strokeWidth={7} />
