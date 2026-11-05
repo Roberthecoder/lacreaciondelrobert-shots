@@ -70,12 +70,22 @@
    "titulo": "Tu refri no mata al moho: solo lo hace ir más lento (hongos que crecen a 4 °C)",
    "serie": "Shot Fungi Mati",
    "numero": 88,
-   "estado": "idea",
+   "estado": "guion",
    "carpeta": "shots/fun-88-moho-refri",
    "rama": "claude/fun-85-89-casa",
-   "fuentes": [],
+   "fuentes": [
+    "https://wpcdn.web.wsu.edu/wp-extension/uploads/sites/2057/2021/03/Molds-on-Food-LC.pdf",
+    "https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely",
+    "https://archive.org/download/biostor-237804/biostor-237804.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4930504/",
+    "https://www.research.unipd.it/handle/11577/2805732"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Primos: Penicillium roqueforti del queso azul vs. P. expansum de la manzana",
+    "La patulina: la toxina del moho azul de la manzana",
+    "Mrakia: la levadura de la Antártida que no aguanta el calor"
+   ]
   },
   {
    "id": "fun-89-neumonia-verano",

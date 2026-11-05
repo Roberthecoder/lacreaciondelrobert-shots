@@ -34,22 +34,22 @@ Barras de escala: 10 cm (refri, manzana, fresas), 10 µm (conidios de *Penicilli
 
 ## Robert en pantalla
 
-Tiempos estimados de la base (con la voz real se recorren solos). Grande en «¿Entonces, para qué sirve el frío?».
+Tiempos de la base de 61.5 s (con la voz real se recorren solos). Grande en «¿Entonces, para qué sirve el frío?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
 | 1 | 0.0 | 4.2 | 11_sorprendido | `gancho` | «no mata al moho: solo lo pone en pausa» (cuadro 0) |
 | 2 | 10.5 | 14.5 | 04_bajando_lentes | `arriba-der` | «tardó 6 días en arrancar… y creció» |
 | 3 | 20.4 | 23.8 | 13_senalando_arriba | `arriba-der` | señala el "−6 °C": «germinaban a 6 bajo cero» |
-| 4 | 23.9 | 26.2 | 07_pensativo_puno | `grande` | «¿para qué sirve el frío?» |
+| 4 | 24.0 | 26.3 | 07_pensativo_puno | `grande` | «¿para qué sirve el frío?» |
 | 5 | 32.6 | 36.4 | 10_serio_molesto | `arriba-der` | «los duerme, no los mata» (mito tachado) |
 | 6 | 37.5 | 42.9 | 06_pensativo_menton | `arriba-der` | «293 refris… el fondo» |
 | 7 | 43.6 | 47.6 | 11_sorprendido | `arriba-der` | «6.6 grados, no 4» |
-| 8 | 48.4 | 53.6 | 13_senalando_arriba | `arriba-der` | «lo que sí sirve» |
-| 9 | 54.1 | 57.8 | 02_apuntando_camara | `arriba-der` | «tú decides cuánto» |
-| — | 57.8 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+| 8 | 48.4 | 53.6 | 13_senalando_arriba | `bajo-der` | «lo que sí sirve» (abajo, para no tapar los ✓) |
+| 9 | 54.1 | 57.8 | 02_apuntando_camara | `bajo-der` | «tú decides cuánto» (abajo, para no tapar el termómetro) |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 9 · **36.0 s** en pantalla (+ cierre 3.7 s) · 7 poses distintas · nunca la misma dos veces seguidas.
+Apariciones 9 · **36.0 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (ficha de investigación, 5 nov 2026)
 
