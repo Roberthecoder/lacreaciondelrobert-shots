@@ -6,6 +6,17 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 
 Última actualización: 30 oct 2026, 15:40 UTC (+ sección del admin maestro, 1 nov 2026).
 
+## FUNGI MATI #60–#155 (4–5 nov 2026)
+- 96 shots nuevos (20 lotes en paralelo), todos en main y en la Sala. Re-verificación independiente de los 96 (8 sesiones, 5 nov):
+  todos APROBADO, varias correcciones (ver «Re-verificación independiente (5 nov 2026)» en cada verificacion.md).
+- Voz: Robert delegó la aprobación al admin tras el fact check (5 nov). 84 con voz (#60–#143, ramas voces/fungi-g00…g06, Releases
+  borradores-voces-fungi-gNN). FALTA la voz del grupo 07 (#144–#155, incluye el Iceberg): no alcanzaron los créditos (quedaron ~2,300);
+  generarla tras la renovación del 28 nov (unos 5,100 créditos).
+- Lección: NO relanzar automáticamente jobs fallidos de render con voz: si falla «Guardar caché de voz», el relanzamiento vuelve a
+  pagar la voz (se perdieron ~4,000 créditos así). Los jobs que se traban en «Instalar ffmpeg y Chromium» sí se pueden relanzar.
+- Falta: subir los narrados a la Sala (reemplazando los sin voz; límite 1 GB: borrar antes de subir), programar Fungi Mati martes y
+  sábado 1:07 pm (espera confirmación de Robert) y regresar el repo a privado (Robert, en Settings).
+
 ## REPO PRIVADO Y DOCUMENTALES APARTE (3–4 nov 2026) — HECHO
 - `lacreaciondelrobert-shots` es PRIVADO desde el 4 nov (Robert). Página de privacidad sigue en línea; prueba de publicación
   (modo prueba, 4 nov) OK en las 6 redes.
