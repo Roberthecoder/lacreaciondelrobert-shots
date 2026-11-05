@@ -186,9 +186,10 @@ function Subtitulo({ T, at, until, texto, idx, color = KC.gold2, tam = 64 }) {
   const palabras = texto.split(' ').map((w, i) => {
     let p = w; if (p.startsWith('*')) { on = true; p = p.slice(1); }
     const acc = on; if (p.includes('*')) { p = p.replace('*', ''); on = false; }
+    const itl = /_/.test(p); p = p.replace(/_/g, '');   // _palabra_ = cursiva (nombres científicos)
     const t0 = at + i * 0.05, e = kprog(T, t0, t0 + 0.3, kEase.sale);
     return <span key={i} style={{ display:'inline-block', opacity:e, transform:`translateY(${(1 - e) * 24}px)`, padding: acc ? '0 .18em' : 0, margin: acc ? '0 .05em' : 0,
-      background: acc ? color : 'transparent', color: acc ? KC.dark : KC.texto, textShadow: acc ? 'none' : KSOMBRA, borderRadius:8 }}>{p}</span>;
+      background: acc ? color : 'transparent', color: acc ? KC.dark : KC.texto, textShadow: acc ? 'none' : KSOMBRA, borderRadius:8, fontStyle: itl ? 'italic' : 'normal' }}>{p}</span>;
   });
   const entra = kprog(T, at, at + 0.25, kEase.sale);
   return <div style={{ position:'absolute', left:0, right:0, bottom:560, zIndex:45, display:'flex', justifyContent:'center', opacity:1 - out }}>
