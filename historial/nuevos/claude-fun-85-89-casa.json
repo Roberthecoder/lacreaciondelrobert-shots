@@ -5,12 +5,22 @@
    "titulo": "Eso no es un gusano: es un hongo que te pasó tu gato (tiña, *Microsporum canis*)",
    "serie": "Shot Fungi Mati",
    "numero": 85,
-   "estado": "idea",
+   "estado": "guion",
    "carpeta": "shots/fun-85-tina-gato",
    "rama": "claude/fun-85-89-casa",
-   "fuentes": [],
+   "fuentes": [
+    "https://www.cdc.gov/ringworm/about/index.html",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11148949",
+    "https://www.merckvetmanual.com/integumentary-system/dermatophytosis/dermatophytosis-in-dogs-and-cats",
+    "https://micologiaveterinaria.fmvz.unam.mx/assets/docs/aportaciones/M_canis_other_dermatophytes.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10581519"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "La lámpara de Wood: qué más brilla con luz UV en la piel y el pelo",
+    "Los erizos también tienen su tiña (Trichophyton erinacei)",
+    "La tiña de la cabeza en niños: por qué es la más común"
+   ]
   },
   {
    "id": "fun-86-lavavajillas",

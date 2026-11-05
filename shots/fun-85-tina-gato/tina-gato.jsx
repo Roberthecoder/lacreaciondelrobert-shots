@@ -424,7 +424,7 @@ function TinaGatoShot() {
           <Sofa />
           <Gato T={T} x={560} y={1188} s={0.88} ojos="cerrados" ronroneo={1} brillo={kprog(T, K.C + 0.3, K.C + 1.0)} />
           <Brazo T={T} anillo={1 - kprog(T, K.C, K.C + 0.8)} claro={1} />
-          {(() => { const u = kprog(T, K.C + 0.3, K.C + 2.6); return u > 0 ? <Corazon x={790} y={klerp(900, 740, u)} s={klerp(0.6, 1.2, kEase.sale(Math.min(1, u * 3)))} o={1 - kprog(T, K.C + 3.6, K.C + 4.2)} /> : null; })()}
+          {(() => { const u = kprog(T, K.C + 0.3, K.C + 2.6); return u > 0 ? <Corazon x={790} y={klerp(920, 810, u)} s={klerp(0.6, 1.2, kEase.sale(Math.min(1, u * 3)))} o={1 - kprog(T, K.C + 3.6, K.C + 4.2)} /> : null; })()}
           <Sello T={T} at={K.C + 0.9} x={300} y={590} texto="SANOS" color={KC.leaf} r={118} />
         </>)}
       </Escena>
@@ -454,8 +454,7 @@ function TinaGatoShot() {
       <Chip T={T} at={K.U + 3.2} until={K.Es - 0.3} texto="no todos brillan" x={300} y={545} tam={34} borde={KC.white} />
       <Chip T={T} at={K.U + 3.4} until={K.Es - 0.3} texto="infectado, no brilla" x={kclamp(etiquetaUV.x + etiquetaUV.lean * etiquetaUV.L, 200, 620)} y={660} tam={26} borde={TG.espora} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.2} anio="2016" quien="Ciudad de México" revista="Hospital Gea González + FMVZ-UNAM · 10 años" y={640} />
-      <Chip T={T} at={K.Es + 3.4} until={K.Es + 6.1} texto="tiñas humanas de origen animal" x={380} y={420} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.Es + 6.6} until={K.Po - 0.3} texto="más afectados: niños de 0 a 10 años" x={380} y={420} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.Es + 3.4} until={K.Po - 0.3} texto="tiñas humanas de origen animal" x={380} y={420} tam={28} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Es + 3.9} until={K.Po - 0.3} valor={43} dur={2.1} sufijo=" de 57" x={380} y={1010} tam={130} color={TG.persona} />
       <Chip T={T} at={K.Es + 6.0} until={K.Po - 0.3} texto="en los gatos: solo este hongo" x={380} y={1125} tam={30} borde={TG.persona} />
       <Chip T={T} at={K.Po + 2.3} until={K.S - 0.3} texto="12 meses o más" x={400} y={610} tam={32} borde={KC.red} />
