@@ -28,4 +28,27 @@ Verificador independiente (subagente que no escribió el guion), 5 nov 2026. Fue
 
 Correcciones (filas 3, 4, 11, 17, 20) aplicadas y revisadas contra las mismas frases textuales. Voz final: 969 caracteres.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la primera verificación). Abrí y busqué en el texto completo: Márquez et al. 2007, *Science* 315: 513–515 (PDF, https://fire.biol.wwu.edu/brodham/Rodriguez%202007.pdf); Redman et al. 1999, *Appl. Environ. Microbiol.* 65: 5193 (PDF, https://rcn.montana.edu/Publications/Pdf/1999/Fungi%20from%20geothermal%20soils%20in%20YNP.pdf). Busqué además retracciones o fallas de réplica del estudio de 2007: no encontré ninguna; los trabajos posteriores (Morsy et al. 2010, *BBRC*) siguen buscando el mecanismo.
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| El pasto no aguanta el calor solo; lo salva el virus de un hongo que vive dentro | ✅ | Márquez 2007 | "Fungal isolates cured of the virus are unable to confer heat tolerance, but heat tolerance is restored after the virus is reintroduced." | 2007 |
+| Vive en suelos termales de Yellowstone, EE. UU.; *Dichanthelium lanuginosum*; *Curvularia protuberata* | ✅ | Márquez 2007 | "a tropical panic grass from geothermal soils, Dichanthelium lanuginosum, and the fungus Curvularia protuberata allows both organisms to grow at high soil temperatures in Yellowstone National Park (YNP)" | 2007 |
+| Suelos que en algunos puntos llegan a 70 °C | ✅ | Redman 1999 | "Geothermal soils near Amphitheater Springs in Yellowstone National Park were characterized by high temperatures (up to 70°C)" | 1999 (datos 1996–97) |
+| Endófito: vive dentro sin enfermarlo | ✅ | Márquez 2007 | "Endophytic fungi commonly grow within plant tissues and can be mutualistic" | 2007 |
+| Por separado ni el pasto ni el hongo crecen arriba de 38 °C | ✅ | Márquez 2007 | "neither the fungus nor the plant alone is able to grow at temperatures above 38°C" | 2007 |
+| Juntos aguantaron la tierra a 65 °C, 10 h al día, 2 semanas | ✅ | Márquez 2007 | "tolerated intermittent soil temperatures as high as 65°C for 2 weeks (10 hours of heat per day)" | 2007 |
+| 2007; científicos de Oklahoma, Washington y Montana | ✅ | Márquez 2007 (afiliaciones) | "Samuel Roberts Noble Foundation … Ardmore, OK"; "University of Washington, Seattle, WA"; "Montana State University, Bozeman, MT" | 2007 |
+| Le quitaron el virus al hongo (congelado); partículas ~27 nm | ✅ | Márquez 2007 | "lyophilized, frozen at –80°C, and subcultured to cure it completely of the virus"; "spherical and ~27 nm in diameter" | 2007 |
+| Con el hongo sin virus el pasto se secó y murió | ✅ | Márquez 2007 | "plants inoculated with the virus-free isolate of the fungus became shriveled and chlorotic and died" | 2007 |
+| Le regresaron el virus fusionando hifas y volvió a aguantar | ✅ | Márquez 2007 | "The virus was reintroduced into the virus-free isolate through hyphal anastomosis"; "heat tolerance is restored after the virus is reintroduced" | 2007 |
+| También ayudó a jitomates (no todos lo lograron); y ni son pastos | ✅ | Márquez 2007 | "confers heat tolerance not only to its native monocot host but also to a eudicot host"; "we obtained similar results"; "not possible to attain 100% fungal colonization of tomato plants" | 2007 |
+| Cómo lo logra no está claro; pista: no reacciona al estrés como siempre, ya trae sus defensas altas | ✅ (osmolitos simplificados como "defensas"; chip "pista, no respuesta final") | Márquez 2007 | "do not activate their stress-response system in the usual way. For example, the osmolyte concentration in these plants does not increase as a response to heat stress, although the levels are constitutively higher" | 2007 |
+| Medidor de calor 37 → 65 °C | ✅ | Márquez 2007, Fig. 2 | "65°C for 10 hours and 37°C for 14 hours/day for 14 days" (citado en la primera verificación; régimen coherente con el texto) | 2007 |
+| Alianza de tres | ✅ | Márquez 2007 | "Three-Way Symbiosis Required for Thermal Tolerance" | 2007 |
+
+**Cambios hechos:** ninguno. Todas las afirmaciones de la voz, los letreros y subtítulos del `.jsx` y `publicacion.md` coinciden con las fuentes.
+
 VEREDICTO: APROBADO
