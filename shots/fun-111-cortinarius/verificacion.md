@@ -7,10 +7,6 @@ del trasplante de Nicholas Evans. Del brote polaco solo queda, fuera de la voz, 
 Tampoco se usa la latencia del caso Evans (en su relato, a uno de ellos le empezaron los síntomas a la mañana siguiente): el caso solo
 ilustra la confusión y las consecuencias, no la latencia.
 
-> Nota de proceso: en esta corrida el productor no tenía disponible la herramienta de subagentes, así que la verificación la hizo el
-> mismo agente, abriendo cada fuente y con criterio escéptico. Se recomienda una segunda pasada de un verificador independiente
-> antes de aprobar la voz.
-
 | # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año del dato |
 |---|---|---|---|---|---|
 | 1 | Mito: "si en unas horas no te pasó nada, ya estás a salvo"; este hongo puede avisar **días después** | ✅ | Danel, Saviuc y Garon, *Toxicon* 39:1053–1060 (2001), doi:10.1016/s0041-0101(00)00248-8 · Hedman et al., *BMC Nephrology* 18:121 (2017), https://pmc.ncbi.nlm.nih.gov/articles/PMC5379567/ | "They appear a few days after the ingestion of the mushrooms (median 3 days). The renal phase is delayed (median 8.5 days)." · "There are usually no acute symptoms and the patient will seek medical advice 3 days to a week later." | 2001 · 2017 |
@@ -45,5 +41,15 @@ Correcciones hechas durante la verificación:
 - "tres de cada cuatro perdieron el riñón para siempre" → "llegaron a la falla renal más grave" (75 % CKD5, como dice el estudio).
 
 Todas las afirmaciones finales: ✅ (23 de 23).
+
+## Segunda verificación (independiente, 5 nov 2026)
+
+Un verificador que no escribió el guion revisó todas las afirmaciones. Todo quedó ✅ salvo lo de esta tabla, que ya se corrigió:
+
+| Afirmación | Problema | Corrección | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| «Es Cortinarius… Es naranja rojizo» | Atribuía el color a todo el género | Voz: «Es **un** Cortinarius»; el color se dice solo de *C. orellanus* / *C. rubellus* (publicación: «Es un Cortinarius, como *Cortinarius orellanus* o *Cortinarius rubellus*») | First Nature (*C. orellanus*, *C. rubellus*) | "The tawny-brown to reddish-orange cap" · "The tawny-brown to orange cap" | consultado 2026 |
+| «Trae orelanina» | Sonaba a que todo *Cortinarius* la tiene | Voz: «**Este** trae orelanina»; chip en pantalla «solo algunas especies de Cortinarius la tienen»; redes: «Algunos Cortinarius (como *C. orellanus* y *C. rubellus*)…» | Dinis-Oliveira et al. 2016, *Hum. Exp. Toxicol.* | "Orellanine is a nephrotoxic toxin produced by some mushroom species of the Cortinarius genus" | 2016 |
+| Molécula de orelanina en pantalla | Posición de N→O y OH esquemática pero inexacta | Redibujada: dos piridinas unidas esquina con esquina (C2–C2'), N→O junto a la unión y OH en las posiciones 3 y 4 de cada anillo | PubChem CID 89579 (orelanina) | 3,3',4,4'-tetrahidroxi-2,2'-bipiridina-1,1'-dióxido | — |
 
 VEREDICTO: APROBADO

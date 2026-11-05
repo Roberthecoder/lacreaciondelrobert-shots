@@ -97,17 +97,17 @@ function Rinon({ x, y, s = 1, dano = 0, latido = 0 }) {
 }
 // Orelanina esquemática: dos anillos (bipiridina) con N→O y grupos OH.
 function Orelanina({ x, y, s = 1, rot = 0, p = 1, color = KC.yellow }) {
-  const hexa = (cx, cy) => Array.from({ length: 6 }, (_, i) => { const a = Math.PI / 6 + i * Math.PI / 3; return `${i ? 'L' : 'M'} ${(cx + 46 * Math.cos(a)).toFixed(1)} ${(cy + 46 * Math.sin(a)).toFixed(1)}`; }).join(' ') + ' Z';
-  const at = (tx, ax, ay, c) => <g><circle cx={ax} cy={ay} r={20} fill={KC.noche} stroke={c} strokeWidth={4} /><text x={ax} y={ay + 9} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={c}>{tx}</text></g>;
+  // 3,3',4,4'-tetrahidroxi-2,2'-bipiridina-1,1'-dióxido (PubChem CID 89579), esquemático: dos anillos de piridina unidos esquina con esquina.
+  const hexa = (cx, cy) => Array.from({ length: 6 }, (_, i) => { const a = i * Math.PI / 3; return `${i ? 'L' : 'M'} ${(cx + 46 * Math.cos(a)).toFixed(1)} ${(cy + 46 * Math.sin(a)).toFixed(1)}`; }).join(' ') + ' Z';
+  const at = (tx, ax, ay, c) => <g><circle cx={ax} cy={ay} r={18} fill={KC.noche} stroke={c} strokeWidth={4} /><text x={ax} y={ay + 9} textAnchor="middle" style={{ font:`700 ${tx.length > 1 ? 20 : 24}px ${KF.mono}` }} fill={c}>{tx}</text></g>;
+  const enlace = (x1, y1, x2, y2) => <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={color} strokeWidth={6} />;
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={p}>
     <path d={hexa(0, 0)} fill="none" stroke={color} strokeWidth={8} strokeLinejoin="round" />
-    <path d={hexa(120, 0)} fill="none" stroke={color} strokeWidth={8} strokeLinejoin="round" />
-    <line x1={40} y1={0} x2={80} y2={0} stroke={color} strokeWidth={8} />
-    <line x1={20} y1={-40} x2={30} y2={-80} stroke={color} strokeWidth={6} /><line x1={100} y1={40} x2={90} y2={80} stroke={color} strokeWidth={6} />
-    <line x1={-40} y1={-23} x2={-76} y2={-44} stroke={color} strokeWidth={6} /><line x1={-40} y1={23} x2={-76} y2={44} stroke={color} strokeWidth={6} />
-    <line x1={160} y1={-23} x2={196} y2={-44} stroke={color} strokeWidth={6} /><line x1={160} y1={23} x2={196} y2={44} stroke={color} strokeWidth={6} />
-    {at('O', 34, -96, KC.red)}{at('O', 86, 96, KC.red)}{at('OH', -92, -54, KC.cyan)}{at('OH', -92, 54, KC.cyan)}{at('OH', 212, -54, KC.cyan)}{at('OH', 212, 54, KC.cyan)}
-    {at('N', 23, -40, KC.mint)}{at('N', 97, 40, KC.mint)}
+    <path d={hexa(138, 0)} fill="none" stroke={color} strokeWidth={8} strokeLinejoin="round" />
+    <line x1={46} y1={0} x2={92} y2={0} stroke={color} strokeWidth={8} />
+    {enlace(23, -40, 36, -63)}{enlace(23, 40, 36, 63)}{enlace(-23, 40, -36, 63)}{enlace(115, 40, 102, 63)}{enlace(115, -40, 102, -63)}{enlace(161, -40, 174, -63)}
+    {at('O', 45, -78, KC.red)}{at('OH', 45, 78, KC.cyan)}{at('OH', -45, 78, KC.cyan)}{at('O', 93, 78, KC.red)}{at('OH', 93, -78, KC.cyan)}{at('OH', 183, -78, KC.cyan)}
+    {at('N', 23, -40, KC.mint)}{at('N', 115, 40, KC.mint)}
   </g>;
 }
 // Túbulo del riñón en corte (al microscopio): dos filas de células alrededor del canal. dano 0..1 avanza de izquierda a derecha.
@@ -214,9 +214,9 @@ function CortinariusShot() {
         <Ambiente T={T} n={24} />
         {fsvg(<>
           <Orelanina x={170} y={760} s={1.05} rot={Math.sin(T) * 4} p={kprog(T, K.To + 0.1, K.To + 0.8)} />
-          <Rinon x={760} y={1020} s={1.15} latido={Math.max(0, Math.sin(T * 6)) * 0.03} dano={kprog(T, K.To + 1.8, K.To + 3.0) * 0.35} />
+          <Rinon x={820} y={1020} s={1.1} latido={Math.max(0, Math.sin(T * 6)) * 0.03} dano={kprog(T, K.To + 1.8, K.To + 3.0) * 0.35} />
           {Array.from({ length: 8 }, (_, i) => { const u = kprog(T, K.To + 1.0 + i * 0.12, K.To + 2.0 + i * 0.12, kEase.suave); return u > 0 && u < 1 ?
-            <circle key={i} cx={klerp(300, 740, u)} cy={klerp(860, 1010, u) - Math.sin(u * Math.PI) * 80 + (i % 3) * 14} r={11} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /> : null; })}
+            <circle key={i} cx={klerp(300, 800, u)} cy={klerp(860, 1010, u) - Math.sin(u * Math.PI) * 80 + (i % 3) * 14} r={11} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /> : null; })}
         </>)}
       </Escena>
       {/* 5 · al microscopio: el túbulo se daña sin hacer ruido */}
@@ -297,7 +297,8 @@ function CortinariusShot() {
       <Etq T={T} at={K.Es + 1.2} until={K.To - 0.3} x={60} y={560} texto="esporada: café óxido" tam={40} color={KC.ink} />
       <Chip T={T} at={K.To + 0.1} until={K.Tu - 0.3} texto="POR DENTRO · LA TOXINA" x={440} y={470} tam={34} borde={KC.cyan} mono />
       <Etq T={T} at={K.To + 0.6} until={K.Tu - 0.3} x={60} y={600} texto="orelanina (esquema)" tam={34} color={KC.yellow} />
-      <Etq T={T} at={K.To + 1.8} until={K.Tu - 0.3} x={560} y={860} texto="riñón" tam={36} color={KC.texto} />
+      <Chip T={T} at={K.To + 1.2} until={K.Tu - 0.3} texto="solo algunas especies de Cortinarius la tienen" x={360} y={930} tam={22} borde={KC.yellow} />
+      <Etq T={T} at={K.To + 1.8} until={K.Tu - 0.3} x={620} y={860} texto="riñón" tam={36} color={KC.texto} />
       <Chip T={T} at={K.Tu + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO · TÚBULO DEL RIÑÓN" x={440} y={470} tam={30} borde={KC.pink} mono />
       <Etq T={T} at={K.Tu + 0.8} until={K.P - 0.3} x={60} y={560} texto="aquí se forma la orina" tam={30} color={KC.texto} />
       <Etq T={T} at={K.Tu + 2.4} until={K.P - 0.3} x={60} y={610} texto="células dañadas" tam={30} color={KC.gold2} />

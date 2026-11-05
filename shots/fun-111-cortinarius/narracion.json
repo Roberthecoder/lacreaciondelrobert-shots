@@ -9,7 +9,7 @@
     },
     {
       "escena": "Cortina",
-      "texto": "Es Cortinarius: de joven, un velo de telaraña cubre sus láminas."
+      "texto": "Es un Cortinarius: de joven, un velo de telaraña cubre sus láminas."
     },
     {
       "escena": "Esporas",
@@ -17,7 +17,7 @@
     },
     {
       "escena": "Toxina",
-      "texto": "Trae orelanina, una toxina que daña los riñones."
+      "texto": "Este trae orelanina, una toxina que daña los riñones."
     },
     {
       "escena": "Tubulos",
@@ -53,7 +53,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Y si comiste hongos silvestres y te sientes mal, aunque pasen días, ve a urgencias y di que comiste hongos."
+      "texto": "Si comiste hongos silvestres y te sientes mal, aunque pasen días, ve a urgencias y di que comiste hongos."
     }
   ],
   "mezcla": "oficial-30oct"
