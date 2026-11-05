@@ -387,7 +387,8 @@ function FalsaMorillaShot() {
       <Etq T={T} at={K.Mo + 0.6} until={K.F - 0.3} x={60} y={430} texto="morilla" tam={44} color={KC.ink} />
       <Etq T={T} at={K.Mo + 0.9} until={K.F - 0.3} x={60} y={485} texto="Morchella" it tam={38} color={KC.ink} />
       <Etq T={T} at={K.Mo + 1.2} until={K.F - 0.3} x={60} y={545} texto="panal: hoyos y costillas" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 1.9} until={K.F - 0.3} x={385} y={930} texto="pegado al pie" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 1.9} until={K.F - 0.3} x={385} y={915} texto="pegado al pie" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 2.0} until={K.F - 0.3} x={385} y={955} texto="(casi siempre)" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Mo + 3.0} until={K.F - 0.3} texto="POR DENTRO · HUECA" x={770} y={600} tam={32} borde={KC.mint} mono />
 
       <Etq T={T} at={K.F + 0.5} until={K.Tx - 0.3} x={60} y={430} texto="falsa morilla" tam={44} color={KC.ink} />
@@ -401,7 +402,7 @@ function FalsaMorillaShot() {
       <Chip T={T} at={K.Tx + 4.0} until={K.N - 0.3} texto="combustible para maniobrar naves" x={380} y={1000} tam={32} borde={KC.gold} />
 
       <Chip T={T} at={K.N + 0.1} until={K.S - 0.3} texto="AL MICROSCOPIO · NEURONA" x={400} y={420} tam={32} borde={KC.pink} mono />
-      <Medidor T={T} at={K.N + 0.5} until={K.S - 0.3} valor={(t) => 1 - 0.8 * kprog(t, K.N + 1.0, K.N + 3.0)} etiqueta="freno de la neurona (GABA)" texto="" x={60} y={500} ancho={600} color={KC.mint} />
+      <Medidor T={T} at={K.N + 0.5} until={K.S - 0.3} valor={(t) => 1 - 0.8 * kprog(t, K.N + 1.0, K.N + 3.0)} etiqueta="freno de la neurona (GABA)" texto={(v) => (v > 0.5 ? 'normal' : 'bajo')} x={60} y={500} ancho={600} color={KC.mint} />
       <Etq T={T} at={K.N + 1.2} until={K.S - 0.3} x={60} y={660} texto="vitamina B6 (se la llevan)" tam={28} color={KC.yellow} />
       <Chip T={T} at={K.N + 3.6} until={K.S - 0.3} texto="convulsiones" x={720} y={1090} tam={40} borde={KC.yellow} />
 
@@ -410,7 +411,7 @@ function FalsaMorillaShot() {
       <Etq T={T} at={K.S + 2.4} until={K.H - 0.3} x={60} y={1130} texto="si es grave: daño al hígado" tam={30} color={KC.ink} />
 
       <MitoTachado T={T} at={K.H + 0.6} tacharEn={K.H + 1.5} until={K.Fi - 0.3} texto="hervida = segura" x={300} y={460} tam={46} />
-      <Chip T={T} at={K.H + 2.9} until={K.Fi - 0.3} texto="el vapor también intoxica" x={540} y={560} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.H + 2.9} until={K.Fi - 0.3} texto="el vapor también puede intoxicar" x={540} y={560} tam={36} borde={KC.red} />
 
       <TarjetaEstudio T={T} at={K.Fi + 0.3} until={K.Fi + 2.7} anio="2025" quien="Agencia de Alimentos de Finlandia" revista="Ruokavirasto · riesgo de la giromitrina" x={540} y={470} />
       <Etq T={T} at={K.Fi + 1.0} until={K.Fi + 2.7} x={60} y={665} texto="«venenosa si no se trata»: aviso obligatorio al venderla" tam={24} color={KC.ink} />
@@ -426,14 +427,14 @@ function FalsaMorillaShot() {
       <Etq T={T} at={K.C + 3.4} until={K.Ou} x={60} y={1500} texto="Esto no es una guía para identificar hongos." tam={22} color={KC.texto} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Mo} texto="5 cm" largo={150} />
-      <BarraEscala T={T} at={K.Mo} until={K.F} texto="5 cm" largo={125} />
-      <BarraEscala T={T} at={K.F} until={K.Tx} texto="5 cm" largo={120} />
-      <BarraEscala T={T} at={K.Tx} until={K.N} texto="0.3 nm (esquemático)" largo={110} />
-      <BarraEscala T={T} at={K.N} until={K.S} texto="20 µm (esquemático)" largo={160} />
+      <BarraEscala T={T} at={K.G} until={K.Mo} texto="5 cm" largo={210} />
+      <BarraEscala T={T} at={K.Mo} until={K.F} texto="5 cm" largo={180} />
+      <BarraEscala T={T} at={K.F} until={K.Tx} texto="5 cm" largo={200} />
+      <BarraEscala T={T} at={K.Tx} until={K.N} texto="0.15 nm (esquemático)" largo={110} />
+      <BarraEscala T={T} at={K.N} until={K.S} texto="20 µm · medidor esquemático" largo={160} />
       <BarraEscala T={T} at={K.S} until={K.H} texto="30 cm" largo={190} />
       <BarraEscala T={T} at={K.H} until={K.Fi} texto="20 cm" largo={190} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={150} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={210} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Mo - 0.1} texto="Esto *no es una morilla.*" />
