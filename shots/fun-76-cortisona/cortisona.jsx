@@ -313,7 +313,7 @@ function CortisonaShot() {
       <Chip T={T} at={K.Es + 2.4} until={K.M - 0.3} texto="+3 oxígenos" x={850} y={1000} tam={36} borde={CX.oxi} />
       <Etq T={T} at={K.Es + 3.4} until={K.M - 0.3} x={640} y={1090} texto="carbono 11: difícil" tam={30} color={KC.yellow} />
       <TarjetaEstudio T={T} at={K.M + 0.1} until={K.M + 3.4} anio="años 40" quien="Merck · Lewis Sarett" revista="desde un ácido de la bilis" x={540} y={470} />
-      <NumeroGigante T={T} at={K.M + 3.6} until={K.P - 0.2} valor={40} dur={1.2} prefijo="casi " sufijo=" pasos" x={330} y={560} tam={110} color={KC.cyan} />
+      <NumeroGigante T={T} at={K.M + 3.6} until={K.P - 0.2} valor={40} desde={40} dur={0.1} prefijo="casi " sufijo=" pasos" x={330} y={560} tam={110} color={KC.cyan} />
       <Chip T={T} at={K.P + 0.3} until={K.E - 0.3} texto="oxígeno en el carbono 11" x={330} y={500} tam={32} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 4.0} anio="1952" quien="Peterson y Murray · Upjohn" revista="publicado en J. Am. Chem. Soc. · patente desde 1950" x={540} y={490} />
       <Etq T={T} at={K.E + 0.9} until={K.E + 4.0} x={470} y={760} texto="Kalamazoo, Michigan" tam={30} color={KC.texto} />

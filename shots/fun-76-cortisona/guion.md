@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #76 · rama `claude/fun-75-79-biotec`.
 - **Formato:** N1 Por dentro + N5 El experimento (a la mitad se recrea el experimento de Upjohn (publicado en 1952)). Viaje: el tubo de crema sobre una roncha de piquete (macro) → la molécula por dentro y la enzima del moho poniendo el oxígeno (micro) → el mismo brazo con la misma crema, ya "leída" (macro).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla: «Esa crema para las ronchas no es pura química: un moho le abrió el camino.»
-- **Duración:** voz 992 caracteres / 182 palabras (≈ 58 s, igual que fun-59 con 998) + cierre 3.5 s → **61.5 s** en la base (ajustar con `estimar-escenas.mjs`).
+- **Duración:** voz 978 caracteres / 180 palabras (≈ 58 s; fun-59 tenía 998 caracteres y su voz real duró 58 s) + cierre 3.5 s → **61.5 s** en la base (escenas estimadas con `estimar-escenas.mjs` y escaladas a 58.0 s de voz)
 - **Voz:** pendiente de aprobación de Robert.
 - **Tono:** asombro por el "atajo" del hongo; sin vender la crema ni dar consejo médico. Aviso chiquito al final: «No es consejo médico.»
 - **Cuidado de rigor:** el moho de 1952 es del género *Rhizopus* (en el artículo de 1952 y la patente se nombran cepas de *Rhizopus*; las revisiones citan *R. arrhizus* y en la industria *R. nigricans*). En pantalla y voz solo se dice el género y "pariente del moho negro del pan" (*R. stolonifer*); **nunca** se dice que sea el moho del pan. No se afirma que la crema concreta del botiquín se haya hecho con *Rhizopus*: se dice que el moho "le abrió el camino" (historia) y que hoy hongos siguen haciendo ese tipo de paso en la fabricación de corticoides (Petrič 2010; Fernández-Cabezón 2018). No se da precio en dólares (las cifras de precio entre fuentes no coinciden). Barbasco/Syntex: **no se menciona** (no se pudo verificar con fuente abierta la conexión con el proceso de Upjohn; Hogg 1992 dice que la progesterona de Upjohn venía de estigmasterol de soya).
@@ -39,16 +39,16 @@ Tiempos estimados de la base (con la voz real se recorren solos). Grande en «¿
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
 | 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no es pura química: un moho…» (cuadro 0) |
-| 2 | 8.7 | 12.0 | 13_senalando_arriba | `arriba-der` | «el cortisol que fabrica tu cuerpo» |
-| 3 | 15.5 | 19.0 | 06_pensativo_menton | `arriba-der` | «uno, difícil de poner, en el carbono once» |
-| 4 | 22.0 | 26.5 | 10_serio_molesto | `arriba-der` | «casi cuarenta pasos para sacar dieciocho miligramos» |
-| 5 | 26.6 | 29.6 | 07_pensativo_puno | `grande` | «¿Y si alguien ponía ese oxígeno en un solo paso?» |
-| 6 | 39.0 | 42.0 | 11_sorprendido | `arriba-der` | «de un jalón» |
-| 7 | 46.0 | 50.3 | 05_sonriendo_dientes_uniformes | `arriba-der` | «pariente del moho negro que le sale a tu pan» |
-| 8 | 54.0 | 58.3 | 02_apuntando_camara | `arriba-der` | «un moho le abrió el camino» |
-| — | 58.5 | 62.0 | 13_senalando_arriba | CierreMarca | cierre |
+| 2 | 8.8 | 12.1 | 13_senalando_arriba | `arriba-der` | «el cortisol que fabrica tu cuerpo» |
+| 3 | 15.5 | 17.9 | 06_pensativo_menton | `arriba-der` | «uno, difícil de poner, en el carbono once» |
+| 4 | 21.7 | 25.4 | 10_serio_molesto | `arriba-der` | «casi cuarenta pasos para sacar dieciocho miligramos» |
+| 5 | 25.6 | 28.4 | 07_pensativo_puno | `grande` | «¿Y si alguien ponía ese oxígeno en un solo paso?» |
+| 6 | 39.1 | 41.5 | 11_sorprendido | `arriba-der` | «de un jalón» |
+| 7 | 46.6 | 49.9 | 05_sonriendo_dientes_uniformes | `arriba-der` | «pariente del moho negro que le sale a tu pan» |
+| 8 | 54.0 | 57.9 | 02_apuntando_camara | `arriba-der` | «un moho le abrió el camino» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 8 · **28.4 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas. (Stickers `avatar_NN_*.png`; las 8 de `shots/fun-59-reishi/assets/stickers/` + `05_sonriendo_dientes_uniformes` de `shots/bio-31-car-t/assets/stickers/`.) Robert no tapa la molécula, las etiquetas ni el subtítulo: en las escenas de molécula se va a `arriba-der` fuera del esqueleto.
+Apariciones 8 · **25.3 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas. (Stickers `avatar_NN_*.png`; las 8 de `shots/fun-59-reishi/assets/stickers/` + `05_sonriendo_dientes_uniformes` de `shots/bio-31-car-t/assets/stickers/`.) Robert no tapa la molécula, las etiquetas ni el subtítulo: en las escenas de molécula se va a `arriba-der` fuera del esqueleto.
 
 ## Fuentes (abiertas el 5 nov 2026)
 
@@ -81,3 +81,10 @@ Apariciones 8 · **28.4 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas ·
    > "Rhizopus stolonifer, commonly known as black bread mold, has extensive enzymatic capabilities"
 
 El dibujo es esquemático. No es consejo médico.
+
+## Notas de la animación (fase 2)
+
+- Escenas de la base (s): Gancho 0 · Crema 4.46 · Cortisol 8.73 · Esqueleto 12.32 · Merck 18.14 · Pregunta 25.51 · Estudio 28.52 · Enzima 37.15 · Barato 41.71 · Pan 46.46 · Hoy 50.05 · Cierre 54.12 · Outro 58.0 → **61.5 s**.
+- Subtítulos cortos de una línea (≤ 26 caracteres, `tam` 56) para que el subtítulo quede alto y no tape nada; nombres científicos en cursiva (`_Rhizopus._`: se agregó la cursiva con `_…_` al `Subtitulo` de la copia local de `kit-robert.jsx`).
+- En la copia local de `kit-robert.jsx`, los stickers `gancho` y `grande` entran y salen por la derecha (antes salían hacia abajo y cruzaban el subtítulo medio segundo).
+- La molécula sigue el dibujo estándar del esteroide (carbonos 1–21 numerados en `kEsteroideC`): progesterona con C3=O, C4=C5 y C20=O; hidrocortisona con 11β-OH en cuña, 17α-OH punteado y 21-OH; el OH que pone el moho es 11α (punteado).
