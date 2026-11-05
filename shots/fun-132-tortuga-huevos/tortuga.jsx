@@ -332,10 +332,10 @@ function TortugaShot() {
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.N} texto="4 cm" largo={300} color={KC.ink} y={1450} />
-      <BarraEscala T={T} at={K.N} until={K.Li} texto="20 cm" largo={160} color={KC.ink} y={1450} />
-      <BarraEscala T={T} at={K.Li} until={K.Ar} texto="50 cm" largo={340} color={KC.ink} y={1450} />
+      <BarraEscala T={T} at={K.N} until={K.Li} texto="20 cm" largo={280} color={KC.ink} y={1450} />
+      <BarraEscala T={T} at={K.Li} until={K.Ar} texto="50 cm" largo={250} color={KC.ink} y={1450} />
       <BarraEscala T={T} at={K.Ar} until={K.Ca} texto="50 µm" largo={180} y={1450} />
-      <BarraEscala T={T} at={K.Ca} until={K.M} texto="100 µm" largo={200} y={1450} />
+      <BarraEscala T={T} at={K.Ca} until={K.M} texto="100 µm" largo={90} y={1450} />
       <BarraEscala T={T} at={K.M} until={K.Co} texto="4 cm" largo={500} color={KC.ink} y={1450} />
       <BarraEscala T={T} at={K.Co} until={K.P} texto="4 cm" largo={210} y={1450} />
       <BarraEscala T={T} at={K.E} until={K.D} texto="mapa esquemático" largo={0} color={KC.ink} y={1450} />

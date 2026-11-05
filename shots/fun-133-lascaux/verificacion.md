@@ -1,6 +1,6 @@
 # Verificación de hechos · Shot Fungi Mati #133 · fun-133-lascaux
 
-Ronda 1: verificador independiente (no escribió el guion), 5 nov 2026. Las ⚠️ se corrigieron (ver «Correcciones aplicadas»); ronda 2 pendiente.
+Ronda 1: verificador independiente (no escribió el guion), 5 nov 2026. Las ⚠️ se corrigieron (ver «Correcciones aplicadas») y se reverificaron (ronda 2).
 
 | # | Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
 |---|---|---|---|---|---|
@@ -52,5 +52,30 @@ Ronda 1: ✅ 23 · ⚠️ 11 · ❌ 0
 - #31 Cierre → «vigilada contra el hongo… y lejos de tu aliento».
 - #33–34 Hifas y esporas genéricas con «dibujo esquemático»; no se afirma forma exacta de conidios.
 
-## Ronda 2 (reverificación de lo corregido)
-Pendiente.
+## Ronda 2 · Reverificación (verificador independiente) (frases corregidas · narracion.json actual leída, 13 líneas)
+
+| # | Frase corregida | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | «…nunca la vas a ver en persona… y hoy, en parte, es por un hongo.» | ✅ | https://www.culture.gouv.fr/Regions/DRAC-Nouvelle-Aquitaine/Actualites/La-grotte-de-Lascaux-nous-emerveille-depuis-80-ans ; https://pmc.ncbi.nlm.nih.gov/articles/PMC5647350/ | "Sa fermeture au public est aujourd'hui considérée par tous comme une nécessité pour sa conservation" · "elle n'en demeure pas moins fragile"; manchas de hongo "threatens the integrity of the paintings". «Hoy, en parte» ya no atribuye el cierre de 1963 al hongo. | 2020 / 2017 |
+| R2 | «…miles de visitas trajeron calor, humedad y aliento.» | ✅ | https://en.wikipedia.org/wiki/Lascaux ; https://time.com/archive/6596723/the-battle-to-save-the-cave | "carbon dioxide, heat, and humidity produced by 1,200 visitors per day had visibly damaged the paintings" · "carbon-dioxide-exhaling bodies" | 1955 |
+| R3 | «Y lo hallaron manchando las mismas paredes con arte.» + chip «sobre las paredes con arte» | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC5647350/ | "the formation of black stains on the walls and rock art which threatens the integrity of the paintings" · "Their melanins contribute to the formation of black stains on the walls and rock art." | 2017 |
+| R4 | «…a oscuras: vigilada contra el hongo… y lejos de tu aliento.» | ✅ | Ministerio de Cultura (arriba) | "les interventions ponctuelles liées aux programmes de recherche et au suivi de la grotte" · "les suivis réalisés depuis 2008" · "très peu de nouvelles taches ont été observées ces dix dernières années" · "une fréquentation annuelle inférieure à 200 heures par an" | 2020 |
+| R5 | Pantalla «rojo y amarillo · ocres», «negro · manganeso» | ✅ | https://en.wikipedia.org/wiki/Lascaux | "iron oxide (ochre)" y "manganese-containing pigments"; "Charcoal … to a sparing extent" | — |
+| R6 | Tarjeta «2012 · IRNAS-CSIC (Sevilla) · Fungal Biology» | ✅ | Europe PMC EXT_ID:22559918 (Fungal Biology 116(5):574–589) | Martin-Sanchez PM: "Instituto de Recursos Naturales y Agrobiología de Sevilla, CSIC, Sevilla" (España); revista Fungal Biology, 2012 | 2012 |
+| R7 | «Lascaux II · 1983 · copia de 2 salas» | ✅ | https://www.dordogne-perigord-tourisme.fr/sinspirer/les-incontournables/les-15-sites-les-plus-visites/lascaux-2/ | « Ouverte au public depuis 1983 » · « réplique exacte de la salle des Taureaux et du Diverticule Axial » | 1983 |
+| R8 | «Lascaux IV · 2016 · copia completa» | ✅ | https://www.lascaux-dordogne.com/en/a-voir-a-faire/decouvrir/les-grottes/lascaux/lascaux-iv-et-le-centre-international-de-lart-parietal | "Since its opening in 2016" · "a complete reproduction of the cave" ("in its near entirety") | 2016 |
+| R9 | Hifas y esporas genéricas + «dibujo esquemático» | ✅ | — | Ya no afirma morfología específica; la etiqueta lo declara esquemático. | — |
+| R10 | Nota «hoy también se le llama *Scolecobasidium lascauxense*» | ✅ | https://en.wikipedia.org/wiki/Scolecobasidium_lascauxense | Lista *Scolecobasidium lascauxense* con *Ochroconis lascauxensis* como sinónimo (fuente secundaria; no abrí MycoBank, pero «también se le llama» es prudente). | — |
+
+Resto de narracion.json (Cueva, Verde, Pregunta, Blanco, Hifas, Negro, Estudio, Melanina, Replica): sin cambios y ya ✅ en la tabla de arriba (#4–6, #13–21, #23, #27–28, #30). Quitaron el «lleva el nombre de la cueva» (#24): ya no aplica. Pendiente solo si sigue en pantalla: TarjetaEstudio sin «Francia + Rep. Checa» (corregido) y la etimología «lascaux·ensis» si aún se dibuja (⚠️ bajo riesgo).
+
+Matiz de R4: la vigilancia actual es seguimiento de investigación, no un «tratamiento»: «vigilada» es correcto.
+
+VEREDICTO DE REVERIFICACIÓN: todas las frases corregidas ✅; no queda ❌. Única ⚠️ residual: la escena de etimología «lascaux·ensis», si se conserva en pantalla.
+
+## Cierre
+- La escena de etimología «lascaux·ensis» se quitó de la voz y de la animación (no queda en pantalla). La tarjeta del estudio dice solo «2012 · IRNAS-CSIC (Sevilla) · Fungal Biology, 2012».
+- Textos de pantalla cotejados contra esta tabla: «+17,000 años de antigüedad» (#1), «hoy, en parte: un hongo» (R1), «Dordoña, Francia» (#4), «1940 · la descubren 4 muchachos» (#8), «calor · humedad · aliento» (R2), ««enfermedad verde» · algas» (#13), «cerrada al público · 1963» (#14), «aire acondicionado nuevo · 2001» (#16), «Fusarium solani · moho blanco» (#15), «cal · biocidas» (#18), «especie nueva · la más abundante (2007–2008)» (#20–21), «melanina» en la pared (#23), «sobre las paredes con arte» (R3), réplicas (R7–R8), «la original: cerrada y vigilada» (R4). Hifas, esporas, pinturas y edificios: «dibujo esquemático» (R9).
+- guion.md, narracion.json, lascaux.jsx y esta tabla coinciden (5 nov 2026).
+
+VEREDICTO: APROBADO
