@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #131 · rama `claude/fun-130-134-agua`.
 - **Formato:** N1 Por dentro (macro → micro → macro): arrecife con el abanico → zoom a la mancha → por dentro (pólipos, hifas, células de defensa, banda de melanina) → mapa del Atlántico (hipótesis del polvo y lo que la contradice) → mapa del Caribe (Florida, Yucatán) → regreso al mismo abanico.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo que se ve en pantalla: «Ese anillo morado no es el color del abanico de mar: es su defensa, y el sospechoso es un hongo de tierra.» (El abanico ya es morado de por sí; el anillo es la lesión.) Segunda vuelta del mismo gancho en la frase 2 («no es planta: es una colonia de pólipos»).
-- **Duración:** voz 933 caracteres / 171 palabras (≈ 56.5 s a 17 car/s) + cierre ~5 s → **≈ 61.5 s** en la base.
+- **Duración:** voz 933 caracteres / 171 palabras (≈ 56.5 s a 17 car/s) + cierre 4 s → **61.5 s** en la base (escenas a 17.2 car/s; `mezcla.wav` 61.5 s).
 - **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
 - **Tono:** de detective honesto: el hongo es el "principal sospechoso" (estudios recientes encuentran lesiones sin él); el polvo del Sahara se dice como **hipótesis** con la evidencia en contra.
 
@@ -32,22 +32,22 @@ Barra de escala: 10 cm (abanico), 1 mm (pólipos), 30 µm (conidióforo), 20 µm
 
 ## Robert en pantalla
 
-Tiempos estimados de la base (con la voz real se recorren solos). Grande en «¿Cómo llega un hongo de tierra al mar?».
+Tiempos de la base (61.5 s; con la voz real se recorren solos). Grande (medio cuerpo, `presentador-bajo`) en «¿Cómo llega un hongo de tierra al mar?». En los mapas va abajo a la derecha (`bajo-der`), debajo del subtítulo, para no tapar Sahara, Florida ni las etiquetas.
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
 | 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no es el color del abanico» (cuadro 0) |
-| 2 | 6.0 | 9.5 | 13_senalando_arriba | `arriba-der` | «no es planta: es una colonia de pólipos» |
+| 2 | 6.9 | 10.4 | 13_senalando_arriba | `arriba-der` | «no es planta: es una colonia de pólipos» |
 | 3 | 11.0 | 14.0 | 04_bajando_lentes | `arriba-der` | «Aspergillus sydowii… suele vivir en el suelo» |
-| 4 | 18.0 | 21.5 | 12_perfil_serio | `arriba-der` | «células de defensa y una barrera de melanina» |
-| 5 | 25.2 | 27.6 | 07_pensativo_puno | `grande` | «¿Cómo llega un hongo de tierra al mar?» |
-| 6 | 28.5 | 31.8 | 06_pensativo_menton | `arriba-der` | «una hipótesis… el polvo del Sahara» |
-| 7 | 39.0 | 43.0 | 10_serio_molesto | `arriba-der` | «perdieron más de la mitad de su tejido» |
-| 8 | 47.8 | 51.3 | 11_sorprendido | `arriba-der` | «Dato raro… personas enfermas» |
-| 9 | 52.0 | 56.5 | 02_apuntando_camara | `arriba-der` | «un animal defendiéndose» |
-| — | 57.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+| 4 | 17.4 | 20.8 | 12_perfil_serio | `arriba-der` | «células de defensa y una barrera de melanina» |
+| 5 | 24.6 | 27.4 | 07_pensativo_puno | `presentador-bajo` | «¿Cómo llega un hongo de tierra al mar?» |
+| 6 | 27.9 | 31.5 | 06_pensativo_menton | `bajo-der` | «una hipótesis… el polvo del Sahara» |
+| 7 | 38.9 | 43.3 | 10_serio_molesto | `bajo-der` | «se perdió más de la mitad del tejido» |
+| 8 | 48.1 | 51.6 | 11_sorprendido | `bajo-der` | «Dato raro… personas enfermas» |
+| 9 | 52.4 | 57.4 | 02_apuntando_camara | `arriba-der` | «un animal defendiéndose» |
+| — | 57.5 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 9 · **≈ 30.9 s** en pantalla (+ cierre 4.5 s) · 8 poses distintas · nunca la misma dos veces seguidas. (Se ajusta a los tiempos reales al animar.)
+Apariciones 9 · **32.3 s** en pantalla (+ cierre 4 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 5 nov 2026: resúmenes de PubMed y PDF completos donde se indica; tabla completa en `verificacion.md`)
 

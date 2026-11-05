@@ -75,4 +75,40 @@ Estado de la primera ronda: NO APROBADO (corregir #2, #19, #24, #29 y volver a v
 | 29 | «Hoy hay menos casos; quizá resisten mejor. Esa mancha morada es un animal defendiéndose.» · chip "menos casos · quizá más resistencia (hipótesis)" | «Después, los casos bajaron mucho; quizá resisten mejor. Ese anillo es un animal defendiéndose.» · chip "los casos bajaron (1997–2003) · quizá más resistencia (hipótesis)" |
 | 33 | Smith 1996 y Geiser 1998 en Fuentes | Marcados NO ABIERTOS; ningún dato de voz o pantalla depende de ellos |
 
-Pendiente: reverificación independiente de las frases cambiadas.
+Dibujo del conidióforo a escala con la barra de 30 µm (170 px): vesícula ≈ 106 px (≈ 19 µm), conidios ≈ 18 px (≈ 3.2 µm), métulas y fiálides ≈ 5 µm.
+
+## Reverificación
+
+Hecha el 5 nov 2026 sobre la versión actual de `narracion.json` (13 líneas, leídas completas) y la tabla de `guion.md`. Fuente nueva abierta en **texto completo**: Bruno, Ellner, Vu, Kim y Harvell (2011), *Ecological Monographs*, doi 10.1890/09-1178.1 (PDF: https://typeset.io/pdf/impacts-of-aspergillosis-on-sea-fan-coral-demography-16aqlt0oea.pdf). Kim y Harvell 2004 sigue solo en resumen (journals.uchicago.edu responde 403); el periodo 1997–2003 se confirma con Bruno 2011, que lo cita textualmente.
+
+### Voz
+
+| # | Frase | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| V1 | «Ese anillo morado no es el color del abanico de mar: es su defensa, y el sospechoso es un hongo de tierra.» | ✅ | Petes 2003 (PDF MEPS 264) · Mydlarz 2008 (PMID 18364996) · NSU Octocoral guide · Rypien & Andras 2008 (PMID 21585764) · Becker 2023 (PMID 37218467) | "'Purpling' is a generalized response that appears when a sea fan is infected with A. sydowii or experiences stress"; "sea fan corals use cellular defenses to combat fungal infection"; color normal "Purple"; "a widely distributed soil saprobe"; «sospechoso» respaldado por "questioning their pathogenicity" (Becker). Nota: «defensa» = respuesta del animal; correcto como tal. | 2003 / 2008 / 2023 |
+| V2 | «Y no es planta: es una colonia de pólipos, parientes de los corales.» | ✅ | Berkeley 1998 · subdiversion.es · Mydlarz 2008 | "The sea fan - a type of animal life, as are all corals."; "the polyps that make up the colony"; "sea fan corals (Anthozoa, Alcyonacea: Gorgoniidae)" | 1998 / 2008 |
+| V3 | «Se llama Aspergillus sydowii, y suele vivir en el suelo.» | ✅ | PMID 21585764 · Rypien 2008 MEPS (PDF) | "a widely distributed soil saprobe"; "this normally terrestrial fungus" | 2008 |
+| V4 | «Sus hilos, las hifas, se comen el tejido.» | ✅ (matiz) | Ellner 2007 (PMID 18171161) · Petes 2003 (PDF) | "pathogen growth and spread through consumption of host tissue"; "Histological examination of lesions revealed necrotic tissue … whereby the axis was infected with the fungus". Matiz: Ellner es un modelo; Becker 2023 vio hifas sobre todo en el eje. Aceptable para 1 frase. | 2007 / 2003 |
+| V5 | «En los Cayos de Florida, entre 1997 y 2003, se perdió más de la mitad del tejido de abanico.» | ✅ | Kim & Harvell 2004 (PMID 15540141, resumen) + Bruno et al. 2011 (texto completo) | Kim & Harvell: "Since August 1997 …"; "the Keys-wide loss of >50% of sea fan tissue from complete and partial mortality" (monitoreo "over 6 years"). Bruno 2011: "Kim and Harvell (2004) found that the decrease in total colony area caused by sea fan aspergillosis between 1997 and 2003 (about 50%) was much greater than the decrease in total number of colonies (about 10%)". Periodo y cifra coinciden (el original dice ">50%"; Bruno lo resume "about 50%"). | 2004 (datos 1997–2003) |
+| V6 | «Después, los casos bajaron mucho; quizá resisten mejor. Ese anillo es un animal defendiéndose.» | ✅ | Bruno 2011 (PDF) · Kim & Harvell 2004 | "Disease prevalence in our monitored populations decreased from ~50% in 1997 to <10% by 2003 and <1% in 2007"; "host evolution (due to selection for higher disease resistance through differential mortality) could proceed quickly enough to explain the observed changes"; Kim & Harvell: "increasing host resistance is the most likely driver of the decline". «quizá» = hipótesis, bien dicho. | 2011 / 2004 |
+
+Resto de líneas sin cambio (Defensa, Anillo, Pregunta, Polvo, Contra, Yucatán, Humanos): siguen ✅ (filas #13, #14, #16, #17, #20, #22, #26, #28 de arriba).
+
+### Pantalla
+
+| # | Elemento | Veredicto | Fuente | Frase textual / nota | Año |
+|---|---|---|---|---|---|
+| a | Chip «no es su color normal» | ✅ | NSU Octocoral guide · Petes 2003 | color normal "Purple"; lesiones = "areas of necrosis (lesions) surrounded by purple halos" | 2003 |
+| b | Cabeza biseriada, conidios redondos y rugosos, azul-verdosa, chip «suele vivir en el suelo», barra 30 µm | ✅ | marinefungi.org (monografía) · PMID 21585764 | "Conidial heads blue green, radiate"; "vesicles globose … up to 20 um"; "Phialides borne on metulae"; "Conidia globose, (2.5)3-4 um in diam., … conspicuously rough-walled". Barra de 30 µm compatible si el dibujo respeta proporciones: vesícula ≤ 2/3 de la barra, cada conidio ≈ 1/10. | — |
+| d | «pocas muestras (7): no lo descarta del todo» | ✅ | Rypien 2008 MEPS (PDF) | "4 samples of airborne dust from the Caribbean and Africa, and 3 sediment samples"; "I cannot conclusively rule out the African Dust hypothesis" | 2008 |
+| e | Ramas del árbol «ambiente (suelo, aire…)» | ✅ | PMID 18684135 · Rypien & Andras 2008 | "sea fan isolates are interspersed with environmental isolates" (soil saprobe; también en aire) | 2008 |
+| f | Chip «los casos bajaron (1997–2003) · quizá más resistencia (hipótesis)» | ✅ | Bruno 2011 · Kim & Harvell 2004 | "~50% in 1997 to <10% by 2003"; "increasing host resistance is the most likely driver" | 2011 / 2004 |
+| g | Banda de melanina café-negra por dentro | ✅ | Petes 2003 (PDF) · Mydlarz 2008 | "Fungal infection induces a localized band of melanin adjacent to fungal hyphae"; "Melanin was indicated by a black band". Lo morado no se rotula como melanina: correcto. | 2003 |
+
+### Dependencia de Smith 1996 / Geiser 1998
+Ningún dato de voz ni de pantalla depende solo de ellos. La causa (*A. sydowii*) queda respaldada por la nota de Berkeley 1998 (abierta), Rypien 2008 MEPS ("the causative agent of sea fan disease") y Bruno 2011 ("caused by the fungal pathogen Aspergillus sydowii"). La tarjeta del chip "lo cultivaron de aire del Caribe" ya no está en el guion.
+
+### Pendientes
+Ninguna ❌ ni ⚠️ en la versión actual. Recomendación (no bloqueante): mantener el dibujo del conidióforo a escala con la barra de 30 µm.
+
+VEREDICTO: APROBADO
