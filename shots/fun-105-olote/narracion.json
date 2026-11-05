@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Olote base narrada.dc.html",
+  "salida": "Shot Olote narrado.dc.html",
+  "nota": "Shot Fungi Mati #105. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese olote que tiras no es basura: es comida… para un hongo."
+    },
+    {
+      "escena": "Numero",
+      "texto": "En un estudio, un kilo de olote seco dio ochocientos cincuenta gramos de setas frescas."
+    },
+    {
+      "escena": "Preparar",
+      "texto": "Primero se pica, se remoja y se pasteuriza: una hora en agua a setenta grados."
+    },
+    {
+      "escena": "Semilla",
+      "texto": "Luego se siembra la semilla: granos cubiertos de micelio de la seta, Pleurotus ostreatus."
+    },
+    {
+      "escena": "Oscuro",
+      "texto": "En una bolsa, a oscuras, sus hifas avanzan unas tres semanas."
+    },
+    {
+      "escena": "Enzimas",
+      "texto": "Es un hongo de pudrición blanca: suelta enzimas que desarman la fibra dura del olote."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuándo salen las setas?"
+    },
+    {
+      "escena": "Fruto",
+      "texto": "Cuando le das aire fresco, luz y mucha humedad, el micelio arma racimos."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2026, en Hidalgo, compararon residuos: el olote rindió más y se cosechó en diecinueve días; la paja de cebada, en veintiséis."
+    },
+    {
+      "escena": "Robert",
+      "texto": "Yo lo probé con olotes: si no están bien desgranados, fermentan; los buenos me dieron setas enormes."
+    },
+    {
+      "escena": "Sobra",
+      "texto": "Y lo que sobra tampoco se tira: sirve de composta o de alimento para animales."
+    },
+    {
+      "escena": "Futuro",
+      "texto": "Mi siguiente meta: una tonelada de bagazo de agave convertida en hongos para comer."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese olote no era basura: era tu próxima comida, con un hongo de cocinero."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
