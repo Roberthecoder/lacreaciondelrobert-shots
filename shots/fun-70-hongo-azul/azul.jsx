@@ -393,7 +393,7 @@ function AzulShot() {
       <Chip T={T} at={K.Tr + 1.5} until={K.E - 0.3} texto="hongo → árbol: nitrógeno y fósforo" x={480} y={1090} tam={32} borde="#a1e36b" />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.X - 0.3} anio="2012" quien="bosque de niebla, Veracruz" revista="Mycologia, 2012 · ADN de raíces" x={380} y={560} />
       <Etq T={T} at={K.E + 1.8} until={K.X - 0.3} x={60} y={790} texto="leyendo ADN…" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.E + 2.6} until={K.X - 0.3} x={60} y={1115} texto="raíz de encino" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.E + 2.6} until={K.X - 0.3} x={60} y={1115} texto="raíz de carpe" tam={28} color={KC.ink} />
       <Etq T={T} at={K.E + 3.2} until={K.X - 0.3} x={470} y={1115} texto="+ Lactarius indigo" it tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.X + 0.2} until={K.C - 0.3} anio="2023" quien="U. de Tohoku, Japón" revista="J. Agric. Food Chem., 2023" x={400} y={470} />
       <Etq T={T} at={K.X + 1.4} until={K.C - 0.3} x={380} y={900} texto="síntesis total: por primera vez" tam={26} color={KC.ink} />
@@ -421,7 +421,7 @@ function AzulShot() {
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.Mi - 0.1} texto="¿Qué hace *en el bosque?*" />
       <Subtitulo T={T} idx={7} at={K.Mi + 0.1} until={K.Tr - 0.1} texto="Envuelve las raíces de *pinos y encinos.*" />
       <Subtitulo T={T} idx={8} at={K.Tr + 0.1} until={K.E - 0.1} texto="Azúcares por *nitrógeno y fósforo.*" />
-      <Subtitulo T={T} idx={9} at={K.E + 0.1} until={K.X - 0.1} texto="2012: su ADN, en *raíces de encino.*" />
+      <Subtitulo T={T} idx={9} at={K.E + 0.1} until={K.X - 0.1} texto="2012: su ADN, en *raíces de carpe.*" />
       <Subtitulo T={T} idx={10} at={K.X + 0.1} until={K.C - 0.1} texto="2023: su azul, *hecho en laboratorio.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="La leche de un *socio de los árboles.*" />
 

@@ -29,7 +29,7 @@
 
 **Música:** cama en sol menor con un pulso suave, como un laboratorio de noche; un motivo de 4 notas que en "así nació el FTY720" se completa y sube a si bemol mayor; en el cierre vuelve el motivo, más lento. Efectos en el mismo cuadro: cápsula que gira (roce), tache, cigarra (zumbido corto), burbujas del matraz, piezas de la molécula que salen (pops), anillo que encaja (clic metálico), mordidas a la mielina, puertita que se cierra, barras, sello.
 
-Barras de escala: 2 cm (cápsula), 2 cm (ninfa), 5 µm (nervio y linfocitos), 5 mm (ganglio).
+Barras de escala: «dibujos no a escala» en la mano con la cápsula (la cápsula está agrandada), 2 cm (ninfa), 5 cm (matraz), 0.5 nm (molécula), 5 µm (nervio y linfocitos).
 
 ## Robert en pantalla
 
