@@ -17,8 +17,9 @@ function SetaJardin({ T = 0, x, y, s = 1, crece = 1, vapor = 0, frio = 0 }) {
     <Seta x={x} y={y} s={s} crece={crece} sombrero={EL.somb} pie={EL.pie} escamas={false} anillo={false} laminas={EL.lam} />
     {crece >= 1 && <g transform={`translate(${x} ${y}) scale(${s})`}>
       {/* laminillas: rayas radiales bajo el sombrero */}
+      <ellipse cx={0} cy={-h + 7} rx={a / 2 - 8} ry={11} fill="#8a6040" />
       {Array.from({ length: 11 }, (_, i) => { const u = (i + 0.5) / 11; const px = -a / 2 + 8 + u * (a - 16);
-        return <line key={i} x1={px} y1={-h + 3} x2={px * 0.35} y2={-h + a * 0.09} stroke={EL.lam} strokeWidth={2.4} />; })}
+        return <line key={i} x1={px} y1={-h + 3} x2={px * 0.3} y2={-h + a * 0.12} stroke={EL.lam} strokeWidth={3.2} />; })}
       {/* brillo del sombrero */}
       <path d={`M ${-a * 0.3} ${-h - a * 0.42} Q 0 ${-h - a * 0.56} ${a * 0.25} ${-h - a * 0.44}`} stroke="#fff" strokeWidth={6} fill="none" opacity=".35" strokeLinecap="round" />
     </g>}
@@ -207,6 +208,15 @@ function Balanza({ x, y, incl = 0 }) {
     <circle r={20} fill="#c9a24a" stroke={KC.ink} strokeWidth={6} />
   </g>;
 }
+// Sello rectangular (palabras largas).
+function SelloRect({ T, at, x, y, texto, color = KC.red, rot = -8, tam = 96 }) {
+  if (T < at) return null;
+  const k = kprog(T, at, at + 0.35, kEase.rebote), w = texto.length * tam * 0.5 + 70;
+  return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${klerp(2.2, 1, k)})`} opacity={kprog(T, at, at + 0.15)}>
+    <rect x={-w / 2} y={-tam * 0.8} width={w} height={tam * 1.5} rx={18} fill="rgba(255,255,255,.75)" stroke={color} strokeWidth={14} />
+    <text y={tam * 0.32} textAnchor="middle" style={{ font:`400 ${tam}px ${KF.titulo}` }} fill={color}>{texto}</text>
+  </g>;
+}
 // Texto libre con JSX (para nombres científicos en cursiva dentro de una frase).
 function Nota({ T, at, until, x, y, children, tam = 30, color = KC.texto, fondo = 'rgba(14,15,18,.8)', borde = KC.gold, ancho = 620 }) {
   if (!kvisible(T, at, until)) return null;
@@ -303,7 +313,7 @@ function EsporasLluviaShot() {
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 40%, #26344d 0%, ${KC.noche} 75%)` }}></div>
         <Ambiente T={T} n={30} color="rgba(220,235,255,.25)" />
         {fsvg(<>
-          {[[200, 700, 46, 1], [420, 640, 58, 2], [640, 760, 40, 3], [300, 920, 52, 4], [560, 980, 44, 5], [820, 900, 50, 6], [140, 1080, 40, 7]].map(([gx, gy, r, sd]) => {
+          {[[200, 700, 46, 1], [420, 640, 58, 2], [640, 760, 40, 3], [300, 920, 52, 4], [560, 980, 44, 5], [820, 900, 50, 6], [930, 720, 40, 7]].map(([gx, gy, r, sd]) => {
             const yo = gy + Math.sin(T * 0.8 + sd) * 10;
             if (sd === 2) { // la que recibe la semilla
               const h = kprog(T, congela, congela + 0.7), cae = kprog(T, K.Se + 2.6, K.Se + 4.6, kEase.suave), lluvia = kprog(T, K.Se + 4.0, K.Se + 4.6);
@@ -347,7 +357,7 @@ function EsporasLluviaShot() {
         {fsvg(<>
           <Basidiospora x={250} y={720} s={0.5} rot={-12} gota={kprog(T, K.H + 0.6, K.H + 1.6)} />
           <Balanza x={540} y={900} incl={Math.sin(T * 2.2) * 0.4 * kprog(T, K.H + 1.6, K.H + 2.2)} />
-          <Sello T={T} at={K.H + 2.8} x={540} y={760} texto="HIPÓTESIS" color={KC.red} r={150} rot={-8} />
+          <SelloRect T={T} at={K.H + 2.8} x={560} y={800} texto="HIPÓTESIS" color={KC.red} />
         </>)}
       </Escena>
       {/* 11 · cierre: la misma seta del inicio; su aire sube hasta la nube, que se oscurece y suelta llovizna */}
@@ -371,7 +381,7 @@ function EsporasLluviaShot() {
       <Etq T={T} at={K.V + 0.6} until={K.Su - 0.3} x={60} y={480} texto="vapor de agua" tam={32} color={KC.ink} />
       <Chip T={T} at={K.V + 1.6} until={K.Su - 0.3} texto="bajo el sombrero: 1–2 °C más frío" x={360} y={570} tam={32} borde={EL.frio} />
       <Chip T={T} at={K.V + 3.0} until={K.Su - 0.3} texto="la superficie del sombrero: hasta 4 °C" x={340} y={650} tam={26} borde={KC.ink} />
-      <Etq T={T} at={K.Su + 0.3} until={K.Ci - 0.3} x={76} y={YG - 10 * ESC_CM - 6} texto="10 cm o más" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Su + 0.3} until={K.Ci - 0.3} x={40} y={YG - 10 * ESC_CM - 40} texto="10 cm o más" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Su + 0.8} until={K.Ci - 0.3} texto="corre por el suelo, choca y gira" x={350} y={480} tam={30} borde={EL.frio} />
       <Nota T={T} at={K.Su + 1.8} until={K.Ci - 0.3} x={350} y={570} tam={24} ancho={560}>medido en setas ostra (<i>Pleurotus ostreatus</i>) y shiitake (<i>Lentinula edodes</i>), 2016</Nota>
       <Chip T={T} at={K.Ci + 0.3} until={micro - 0.3} texto="AL MICROSCOPIO · una espora" x={390} y={450} tam={30} borde={KC.cyan} mono />

@@ -350,7 +350,7 @@ function SequiaShot() {
       <Etq T={T} at={K.Mi + 1.6} until={K.Ba - 0.3} x={640} y={640} texto="hongos (hifas)" tam={30} color={KC.texto} />
       <Etq T={T} at={K.Mi + 2.1} until={K.Ba - 0.3} x={640} y={700} texto="bacterias" tam={30} color={KC.texto} />
       <Chip T={T} at={K.Ba + 0.2} until={K.Se - 0.2} texto="AL MICROSCOPIO · POROS DEL SUELO" x={450} y={400} tam={28} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ba + 0.9} until={K.Se + 1.0} x={560} y={680} texto="película de agua" tam={28} color={SQ.agua} />
+      <Etq T={T} at={K.Ba + 0.9} until={K.Se + 1.0} x={360} y={630} texto="película de agua" tam={28} color={SQ.agua} />
       <Etq T={T} at={K.Ba + 1.4} until={K.Hi - 0.2} x={300} y={1010} texto="bacteria" lado="izq" tam={28} color={KC.mint} />
       <Etq T={T} at={K.Ba + 1.9} until={K.Hi - 0.2} x={40} y={700} texto="grano de suelo" tam={26} color="#ffd9a8" />
       <Chip T={T} at={K.Se + 1.2} until={K.Hi - 0.2} texto="poro con aire" x={540} y={1010} tam={34} borde={SQ.aire} />
@@ -373,7 +373,7 @@ function SequiaShot() {
       <Medidor T={T} at={K.Pi + 0.1} until={K.Hp - 0.2} x={90} y={410} ancho={900} color={KC.red} valor={(t) => kprog(t, K.Pi + 0.3, K.Pi + 1.5, kEase.sale)}
         etiqueta="CO₂ de descomposición, tierra seca" texto={(v) => '+' + kformato(Math.round(v * 2800), 0) + ' %'} />
       <Etq T={T} at={K.Pi + 0.6} until={K.Hp - 0.2} x={90} y={540} texto="vs. hifas cortadas · 7 días" tam={28} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Pi + 0.3} until={K.Hp - 0.2} valor={2800} dur={1.2} prefijo="+" sufijo=" %" x={460} y={640} tam={120} color={KC.red} />
+      <NumeroGigante T={T} at={K.Pi + 0.3} until={K.Hp - 0.2} valor={2800} dur={1.2} prefijo="+" sufijo=" %" x={510} y={615} tam={110} color={KC.red} />
       <SelloTexto T={T} at={K.Hp + 0.25} until={K.Ll - 0.1} x={540} y={600} texto="HIPÓTESIS" />
       <Chip T={T} at={K.Hp + 0.7} until={K.Ll - 0.2} texto="¿así aguantan la sequía?" x={540} y={760} tam={40} borde={KC.orange} />
       <GraficaPulso T={T} at={K.Bi + 0.1} until={K.C - 0.3} x={60} y={360} w={610} h={280} />

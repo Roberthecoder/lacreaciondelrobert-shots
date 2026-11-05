@@ -27,7 +27,7 @@ function CalPared({ x, y, s = 1, ini = 10, fin = 20, hoja = 0, titulo = 'TEMPORA
     </g>}
     {nota && notaP > 0 && <g transform="rotate(-6 200 250)" opacity={notaP}>
       <rect x={-20} y={180} width={440} height={120} rx={14} fill={TH.papel} stroke={KC.ink} strokeWidth={6} />
-      {nota.map((t, i) => <text key={i} x={200} y={232 + i * 48} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={i ? KC.red : KC.ink}>{t}</text>)}
+      {nota.map((t, i) => <text key={i} x={200} y={232 + i * 48} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={i ? KC.red : KC.ink}>{t}</text>)}
     </g>}
   </g>;
 }
@@ -334,7 +334,7 @@ function TemporadaShot() {
       <NumeroGigante T={T} at={K.N + 0.6} until={K.N + 3.9} valor={33} dur={0.9} sufijo=" días" etiqueta="temporada de setas, años 50" x={380} y={600} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.N + 4.0} until={K.S - 0.3} texto="unos 33 días → más del doble" x={360} y={760} tam={36} borde={TH.marca} />
       <Etq T={T} at={K.N + 1.0} until={K.S - 0.3} x={800} y={1010} texto="Salisbury" tam={26} color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.S + 0.4} until={K.M - 0.3} x={1040} y={860} texto="seta = cuerpo fructífero" tam={28} color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.S + 0.4} until={K.M - 0.3} x={60} y={370} texto="seta = cuerpo fructífero" tam={30} color={KC.ink} />
       <Etq T={T} at={K.S + 1.6} until={K.M - 0.3} x={1040} y={940} texto="esporas" tam={28} color={KC.ink} lado="izq" />
       <Chip T={T} at={K.M + 0.5} until={K.Se - 0.3} texto="POR DENTRO · EL SUELO" x={380} y={420} tam={32} borde={KC.mint} mono />
       <Etq T={T} at={K.M + 1.4} until={K.Se - 0.3} x={80} y={supM + 200} texto="micelio · red de hifas" tam={30} color={KC.mint} />

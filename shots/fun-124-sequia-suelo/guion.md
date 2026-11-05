@@ -35,29 +35,42 @@
 | 13 | Cierre | Esa tierra no estaba muerta: esperaba la lluvia para soltar el aire. | **La misma imagen del inicio, transformada:** el terrón oscuro y húmedo, la milpa con brotes verdes, el "pecho" de aire desinflado. |
 | — | Outro | (sin voz) | `CierreMarca` con logo de biología y Robert apuntando a cámara. |
 
-**Música (plan):** cama grave, seca y contenida (cuerdas graves con armónicos "polvosos", pulso lento) mientras dura la sequía; se
-abre en la lluvia (escena 10) con un acorde amplio y respira con el pulso de CO₂. Efectos: crujido del terrón (0.3 s), tics del
-contador de días, burbujeo suave de películas de agua, siseo al secarse, crecimiento de hifa (glissando fino), temblor de la red de
-bacterias, golpe del sello HIPÓTESIS, gotitas por la hifa, gotas de lluvia, exhalación (soplo grave) del pulso.
+**Música (`gen-audio.mjs`, todo calculado):** 96 BPM en re menor. Un tema de 4 compases (motivo → respuesta → secuencia →
+cadencia) que suena tres veces durante la sequía, cada vez distinto (medio, una octava abajo, con notas cada vez más cortas "como el
+agua que se va"), sobre acordes que cambian cada 2 compases (Rem–Sib–Solm–La–Rem–Solm/Sib–Do–La) y "tapados" (filtro); en la
+investigación entra un pizzicato que cambia de figura cada 2 compases. Con la lluvia todo se abre a Fa mayor (Fa–Do–Rem–Sib), el
+tema regresa una octava arriba y libre, y un arpegio de gotas acompaña el pulso. Siempre debajo de la voz, sin golpe marcado.
+Efectos en el mismo cuadro: crujido del terrón (0.25 s) y polvo, tics de los soles, lupa, burbujas de las bacterias nadando, siseo
+del agua que se va, glissando de la hifa que crece, gotas en el techo de las macetas, lectura del ADN, zumbido de la red que tiembla,
+gotitas por las hifas de la caja, subida del medidor, golpe del sello HIPÓTESIS, lluvia, soplo de la exhalación con burbujas de CO₂,
+subida y bajada de la gráfica del pulso, notas de los brotes y acorde final.
 
-**Barra de escala:** 10 cm (terrón), 10 µm (poros, bacterias, hifas; esquemático), 20 cm (macetas), sin escala en redes y gráficas.
+**Barras de escala:** 10 cm (terrón), 5 µm (poros, bacterias e hifas; esquemático), 20 cm (maceta), 2 mm (hueco de aire de la caja);
+"esquemático" en el re-gancho y "red esquemática" en las redes.
 
-## Robert en pantalla (plan, tiempos de la base estimada)
+**Ajustes de pantalla al animar:** «meses sin lluvia» con 4 soles (cuántos meses: ilustrativo); el ADN se lee arriba del techo de
+las macetas; número grande «+2,800 %» con la etiqueta «vs. hifas cortadas · 7 días»; chips «microbios» y «enzimas fuera de ellos»
+en el pulso; el «aire» guardado en el terrón es una metáfora (contorno punteado que se desinfla al llover).
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande (`grande`, medio cuerpo) en «¿Y eso los hace aguantar más?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.6 | 11_sorprendido | `gancho` | «no está muerta: está aguantando la respiración» |
-| 2 | 9.0 | 12.0 | 13_senalando_arriba | `arriba-der` | «las bacterias son seres de agua» |
-| 3 | 13.5 | 17.0 | 10_serio_molesto | `arriba-der` | «se quedan sin camino» |
-| 4 | 21.7 | 23.6 | 07_pensativo_puno | `presentador` (grande) | «¿Y eso los hace aguantar más?» |
-| 5 | 29.8 | 34.2 | 04_bajando_lentes | `arriba-der` | «la red de bacterias se volvió inestable» |
-| 6 | 34.5 | 39.0 | 06_pensativo_menton | `arriba-der` | «Una hipótesis…» |
-| 7 | 42.0 | 45.4 | 13_senalando_arriba | `arriba-der` | «el champiñón de tu pizza» |
-| 8 | 48.5 | 53.5 | 11_sorprendido | `arriba-der` | «la tierra exhala… efecto Birch» |
-| 9 | 54.4 | 58.4 | 02_apuntando_camara | `arriba-der` | «esperaba la lluvia para soltar el aire» |
-| — | 58.4 | 61.9 | 13_senalando_arriba | CierreMarca | cierre |
+| 1 | 0.0 | 3.6 | 11_sorprendido | `gancho` | «no está muerta: está aguantando la respiración» (cuadro 0) |
+| 2 | 8.8 | 12.9 | 13_senalando_arriba | `arriba-der` | «las bacterias son seres de agua» |
+| 3 | 13.5 | 16.5 | 10_serio_molesto | `arriba-der` | «quedan sin camino» |
+| 4 | 20.95 | 23.1 | 07_pensativo_puno | `grande` | «¿Y eso los hace aguantar más?» |
+| 5 | 29.3 | 33.2 | 04_bajando_lentes | `arriba-der` | «la red de bacterias quedó menos estable» |
+| 6 | 36.2 | 38.9 | 06_pensativo_menton | `arriba-der` | «llevó agua por sus hifas… a tierra seca» |
+| 7 | 40.3 | 45.0 | 02_apuntando_camara | `bajo-der` | «Sí: el de tu pizza» / «Es una hipótesis» |
+| 8 | 45.8 | 51.3 | 11_sorprendido | `arriba-der` | «la tierra exhala… el efecto Birch» |
+| 9 | 54.9 | 58.7 | 13_senalando_arriba | `arriba-der` | «esperaba la lluvia para soltar el aire» |
+| — | 58.8 | 61.8 | 02_apuntando_camara | CierreMarca | cierre |
 
-Apariciones 9 · ≈ 32 s en pantalla (+ cierre) · ≥ 7 poses distintas · nunca la misma dos veces seguidas. (Se ajusta al construir la animación.)
+Apariciones 9 · **33.5 s** en pantalla (+ cierre 3.0 s) · 7 poses distintas · nunca la misma dos veces seguidas · nunca tapa
+números, etiquetas ni subtítulo (en el medidor y la hipótesis sale abajo, `bajo-der`).
 
 ## Fuentes (abiertas el 5 nov 2026)
 
