@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa mazorca no está nevada: esa escarcha son esporas de un hongo que pudre el cacao de tu chocolate."
+      "texto": "Esa mazorca no está nevada: esa escarcha es un hongo cargado de esporas que pudre el cacao de tu chocolate."
     },
     {
       "escena": "Hongo",
@@ -29,7 +29,7 @@
     },
     {
       "escena": "Escarcha",
-      "texto": "Encima brota un polvo blanco de esporas en cadenitas: esa es la nieve."
+      "texto": "Encima brota una felpa blanca con esporas en cadenitas: esa es la nieve."
     },
     {
       "escena": "Pregunta",

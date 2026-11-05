@@ -342,13 +342,13 @@ function CacaoShot() {
       <BarraEscalaC T={T} at={K.C} until={K.Ou} texto="10 cm" largo={200} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No está nevada: *son esporas.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No está nevada: *es un hongo.*" />
       <Subtitulo T={T} idx={1} at={K.H + 0.1} until={K.En - 0.1} texto="Solo ataca *los frutos.*" />
       <Subtitulo T={T} idx={2} at={K.En + 0.1} until={K.Es - 0.1} texto="Una espora *se mete.*" />
       <Subtitulo T={T} idx={3} at={K.Es + 0.1} until={K.Se - 0.1} texto="Se ve sana… *pero crece dentro.*" />
       <Subtitulo T={T} idx={4} at={K.Se + 0.1} until={K.M - 0.1} texto="Las semillas *se pudren.*" />
       <Subtitulo T={T} idx={5} at={K.M + 0.1} until={K.Ex - 0.1} texto="Una mancha café: *«chocolate».*" />
-      <Subtitulo T={T} idx={6} at={K.Ex + 0.1} until={K.Q - 0.1} texto="Esporas en cadenita: *la nieve.*" />
+      <Subtitulo T={T} idx={6} at={K.Ex + 0.1} until={K.Q - 0.1} texto="Felpa con esporas: *la nieve.*" />
       <Subtitulo T={T} idx={7} at={K.Q + 0.1} until={K.N - 0.1} texto="¿Cuántas *esporas?*" />
       <Subtitulo T={T} idx={8} at={K.N + 0.1} until={K.St - 0.1} texto="Millones *al viento.*" />
       <Subtitulo T={T} idx={9} at={K.St + 0.1} until={K.Ma - 0.1} texto="Llegó en 2005: *más del 75 % enfermas.*" />

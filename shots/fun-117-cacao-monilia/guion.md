@@ -3,8 +3,8 @@
 - **Título:** Esa mazorca no está nevada: es un hongo ❄️🍫 | Shot Fungi Mati 117
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** 117 · rama `claude/fun-115-119-plagas-cultivos`.
 - **Formato:** N1 · POR DENTRO (mazorca "nevada" en el tronco → la espora entra → por dentro el hongo y las semillas → la felpa al microscopio → la misma mazorca soltando esporas).
-- **Gancho (#1 "Esto no es X: es Y"):** «Esa mazorca no está nevada: esa escarcha son esporas de un hongo que pudre el cacao de tu chocolate.»
-- **Voz:** 173 palabras / 961 caracteres (≈ 58 s; estimado con `motor/kit/estimar-escenas.mjs`) + cierre 3.5 s → **61.7 s** en la base (`Shot Cacao base narrada.dc.html`).
+- **Gancho (#1 "Esto no es X: es Y"):** «Esa mazorca no está nevada: esa escarcha es un hongo cargado de esporas que pudre el cacao de tu chocolate.»
+- **Voz:** 174 palabras / 970 caracteres (≈ 58 s; estimado con `motor/kit/estimar-escenas.mjs`) + cierre 3.5 s → **61.7 s** en la base (`Shot Cacao base narrada.dc.html`).
 - **Ángulo nuevo:** la enfermedad de la mazorca en el árbol (no la fermentación de `fes-16-chocolate` ni el bloom de `qui-41`).
 - **Voz:** pendiente de aprobación de Robert (~960 créditos de ElevenLabs).
 - Verificación independiente: `verificacion.md` (18 afirmaciones ✅; corregidas 3).
@@ -13,13 +13,13 @@
 
 | # | Escena (s en la base) | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho (0–6.0) | Esa mazorca no está nevada: esa escarcha son esporas de un hongo que pudre el cacao de tu chocolate. | Fondo cian. Mazorca que cuelga directo del tronco, cubierta de felpa blanca-crema; desde el cuadro 0 caen "copos" y la mazorca suelta una nubecita. Chip «¿nieve?» que se tacha; etiqueta «esporas». Barra 10 cm. |
+| 0 | Gancho (0–6.0) | Esa mazorca no está nevada: esa escarcha es un hongo cargado de esporas que pudre el cacao de tu chocolate. | Fondo cian. Mazorca que cuelga directo del tronco, cubierta de felpa blanca-crema; desde el cuadro 0 caen "copos" y la mazorca suelta una nubecita. Chip «¿nieve?» que se tacha; etiqueta «esporas». Barra 10 cm. |
 | 1 | Hongo (6.0–10.9) | Es *Moniliophthora roreri*, y solo ataca los frutos: del cacao y de sus parientes. | Fondo menta. Tronco con hojas limpias y tres mazorcas (una nevada, una con mancha que crece, una joven). Etiquetas «moniliasis del cacao» y *Moniliophthora roreri*; círculos rojos en los frutos; chips «solo ataca los frutos» y «cacao y parientes cercanos». |
 | 2 | Entra (10.9–13.9) | Una espora cae en una mazorca joven y se mete. | Fondo lila. Mazorca verde; una espora globosa de pared gruesa cae, germina un tubito y entra. Chip «esquemático, sin proporción». |
 | 3 | Escondido (13.9–18.6) | Por fuera puede verse sana hasta tres meses, mientras el hongo crece dentro. | La misma mazorca verde, que se abulta un poco (gibas). Lupa «POR DENTRO»: hifas blancas que se ramifican entre las semillas. Chip «por fuera: se ve sana» y medidor «sin síntomas · hasta 3 meses». |
 | 4 | Semillas (18.6–21.3) | Las semillas, que son el cacao, se pudren. | Fondo naranja. Corte a lo largo: cáscara, pulpa blanca y granos que se oscurecen y se pegan. Etiqueta «semillas = cacao». |
 | 5 | Mancha (21.3–24.9) | Luego sale una mancha café a la que le dicen «chocolate». | Fondo amarillo. Mazorca madura con mancha café que crece y se junta. Chip «le dicen: «chocolate»». |
-| 6 | Escarcha (24.9–29.2) | Encima brota un polvo blanco de esporas en cadenitas: esa es la nieve. | Sobre la mancha brota la felpa blanca (etiqueta «felpa blanca»); fundido a fondo oscuro «AL MICROSCOPIO»: tapete de hifas con cadenas de 4 a 6 esporas globosas a subglobosas de pared gruesa, color crema a amarillo pálido, algunas elipsoides. Etiquetas «esporas en cadena», «pared gruesa · 5–10 µm». Barra 10 µm. |
+| 6 | Escarcha (24.9–29.2) | Encima brota una felpa blanca con esporas en cadenitas: esa es la nieve. | Sobre la mancha brota la felpa blanca (etiqueta «felpa blanca»); fundido a fondo oscuro «AL MICROSCOPIO»: tapete de hifas con cadenas de 4 a 6 esporas globosas a subglobosas de pared gruesa, color crema a amarillo pálido, algunas elipsoides. Etiquetas «esporas en cadena», «pared gruesa · 5–10 µm». Barra 10 µm. |
 | 7 | Pregunta (29.2–31.3) | ¿Cuántas esporas hay ahí? | **Re-gancho.** Fondo rosa: la mazorca nevada con un «?» gigante; Robert grande, pensativo. |
 | 8 | Numero (31.3–34.8) | Millones en una sola mazorca, y el viento se las lleva. | Fondo lila. «MILLONES · de esporas por mazorca»; ráfagas de viento que se llevan la nube de esporas. Etiqueta «el viento se las lleva». |
 | 9 | Estudio (34.8–46.1) | Llegó a Chiapas y Tabasco en 2005. Entre 2011 y 2012, un equipo de investigadores siguió en Tabasco y Chiapas más de diez mil mazorcas: en promedio, más del setenta y cinco por ciento se enfermaron. | Fondo cian. Mapa esquemático del sureste de México y Centroamérica con puntos en Chiapas y Tabasco; chip «2005 · llega a Chiapas y Tabasco». Tarjeta «2011–2012 · Tabasco y norte de Chiapas · Torres-de la Cruz et al. · Rev. Fitotec. Mex., 2020», chips «10,621 mazorcas · 6 huertas» y «UJAT y Colegio de Postgraduados». Luego chip «huertas casi sin manejo», número «75.8 % · mazorcas enfermas, en promedio», barra que sube y chip «según la huerta: de 54.49 a 88.73 %». |
