@@ -7,10 +7,10 @@
   el experimento por correo de 1948–1950 → bacteria *Streptomyces noursei* → el mismo frasquito, ya "leído".
 - **Gancho (de los 7):** #3 "Tu vida o tu cuerpo en una imagen" / #1 sobre algo en pantalla: «Esta medicina para el algodoncillo salió
   de un microbio de la tierra que viajó por correo.»
-- **Duración objetivo:** voz 171 palabras / 964 caracteres (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 170 palabras / 962 caracteres (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert.
 - **Tono:** admiración por las dos científicas; nada de consejo médico (aviso chiquito al final).
-- **Estado:** GUION ESCRITO, **pendiente de verificación independiente** (no se anima hasta `VEREDICTO: APROBADO`).
+- **Estado:** guion corregido según `verificacion.md` (3 ⚠️ atendidas: «se pega menos», sin cifra de µm, caja de correo con frasco mason del cultivo); animación, música y `publicacion.md` hechos; **pendiente la re-verificación** (`VEREDICTO`).
 
 ## Versión narrada
 
@@ -23,33 +23,39 @@
 | 4 | Ergosterol | La nistatina se pega al ergosterol de su membrana y le abre poros. | Acercamiento a la membrana del hongo (bicapa esquemática) con moléculas de ergosterol en dorado. Llegan moléculas de nistatina (barritas largas), se agrupan con el ergosterol y forman un poro; salen puntitos "K⁺" (potasio). Etiquetas "ergosterol", "nistatina", "poro". Escala 5 nm (esquemático). |
 | 5 | Colesterol | Tus células usan colesterol, y a ese se pega menos. | Membrana humana con colesterol en azul; se pegan menos moléculas de nistatina; chip "se pega menos". |
 | 6 | Pregunta | ¿Y quién la encontró? | **Re-gancho.** Fondo cian: el frasquito con un "?" gigante; Robert grande (presentador), pensativo. |
-| 7 | Hazen | En 1948, en Nueva York, la microbióloga Elizabeth Hazen buscaba en la tierra microbios que mataran hongos. | Fondo menta. Ilustración genérica (silueta con bata, sin inventar rasgos) "Elizabeth Lee Hazen · microbióloga". Tarjeta de estudio "1948–1950 · Departamento de Salud del Estado de Nueva York". Muestras de tierra en cajas Petri y prueba contra levaduras. |
-| 8 | Correo | Se los mandaba en frascos, por correo, a la química Rachel Brown, a unos doscientos cuarenta kilómetros. | Mapa esquemático del estado de Nueva York: una caja de correo con estampilla, con un frasco mason con el cultivo, viaja de "Nueva York (ciudad)" a "Albany"; medidor "≈ 240 km (150 millas)". Silueta genérica "Rachel Fuller Brown · química". |
-| 9 | Brown | Brown aislaba la sustancia y se la regresaba para probarla. | En Albany, matraces y un tubo con polvo amarillento; la caja de correo regresa a Nueva York; en la caja Petri aparece un halo donde no crece la levadura. |
-| 10 | Streptomyces | La ganadora vino de la tierra de un amigo: una bacteria, Streptomyces noursei, no un hongo. | Fondo oscuro. Filamentos muy finos y ramificados (~1 µm de ancho) con cadenas de esporas: *Streptomyces noursei*. Chip "bacteria (actinomiceto), no hongo" y etiqueta "tierra del terreno de un amigo de Hazen (Nourse)". Barra 10 µm. |
-| 11 | Regalias | La llamaron nistatina, por New York State, y sus regalías, más de trece millones de dólares, fueron para la ciencia. | Fondo naranja. Letras "N·Y·STATIN" → "**N**ew **Y**ork **State**". Monedas que caen en una alcancía "Research Corporation · Fondo Brown-Hazen" y número grande "+13 millones de dólares · regalías 1955–1976" → "para la investigación". |
+| 7 | Hazen | En 1948, en Nueva York, la microbióloga Elizabeth Hazen buscaba en la tierra microbios que mataran hongos. | Fondo menta. Ilustración genérica (silueta con bata, sin inventar rasgos) "Elizabeth Lee Hazen · microbióloga". Tarjeta de estudio "1948 · Depto. de Salud del Estado de NY · Nueva York (ciudad) · 1948–1950". Tres muestras de tierra y una caja Petri con levadura donde aparece un halo; chip "¿mata hongos? → halo sin levadura". |
+| 8 | Correo | Se los mandaba en frascos, por correo, a la química Rachel Brown, a unos doscientos cuarenta kilómetros. | Fondo lila. Mapa esquemático del estado de Nueva York: una caja de correo con estampilla, con un frasco mason con el cultivo, viaja de "Nueva York (ciudad)" a "Albany"; medidor "≈ 240 km (150 millas)". Silueta genérica "Rachel Fuller Brown · química". |
+| 9 | Brown | Brown aislaba la sustancia y se la regresaba para probarla. | Fondo naranja. Silueta genérica de Brown junto a un matraz con la sustancia aislada; la caja de correo regresa a Nueva York; en la caja Petri aparece un halo donde no crece la levadura. |
+| 10 | Streptomyces | La ganadora vino de la tierra de un amigo: una bacteria, Streptomyces noursei, no un hongo. | Fondo oscuro. Filamentos muy finos y ramificados (~1 µm de ancho) con cadenas de esporas: *Streptomyces noursei*. Chip "bacteria (actinomiceto), no hongo", etiqueta "cadenas de esporas" y chip "de la tierra de unos amigos de Hazen (Nourse)". Barra 10 µm. |
+| 11 | Regalias | La llamaron nistatina, por New York State, y sus regalías, más de trece millones de dólares, fueron para la ciencia. | Fondo naranja. Letras "N·Y·STATIN" → "**N**ew **Y**ork **State**". Luego número grande "US$13.4 mill. · regalías 1955–1976", monedas que caen en una caja "Research Corporation · Fondo Brown-Hazen" y chip "para la investigación". |
 | 12 | Cierre | Así que ese frasquito es tierra, correo y dos científicas contra un hongo. | **Regreso a la imagen del inicio:** el mismo frasquito, ahora con la etiqueta "tierra · correo · Hazen y Brown", la caja de correo con estampilla, el frasco mason y la caja Petri con su halo. Aviso chiquito "No es consejo médico". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música (borrador):** cama cálida tipo "carta antigua" (piano y cuerdas suaves, según `composicion-musical.md`), tensa en la parte del
-hongo que crece y se abre en el halo de la caja Petri. Efectos en el mismo cuadro: frasquito que rebota, cartón de la caja de correo, burbujeo de
-levaduras, "pop" del poro, tic de cada K⁺, estampilla que se sella, tintineo de monedas.
+**Música (`gen-audio.mjs`, 100 BPM, según `composicion-musical.md`):** pieza tipo "carta antigua" con forma: A (la menor, tema de 4 compases
+motivo → respuesta → secuencia → cadencia, arpegio pulsado) · B al microscopio (re menor, grave y tapada, bajo que sube por semitonos) · respiro en la
+pregunta · C la historia (el tema en do mayor, I–V–vi–IV, con respuesta de campanita) · D bacteria y regalías (tema una octava arriba) · coda que
+regresa al motivo y resuelve en do mayor; el acorde se queda sonando en la tarjeta. Siempre debajo de la voz. Efectos en el mismo cuadro: frasquito
+que cae y rebota, cartón de la caja que se abre, burbujitas de las placas y de las levaduras, tics de la nistatina, golpe del poro, gotitas del
+potasio, caja que viaja y llega, matraz, esporas, monedas.
 
-## Robert en pantalla (plan; se ajusta con la animación)
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande (`grande`, medio cuerpo) en «¿Y quién la encontró?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «salió de un microbio de la tierra» (cuadro 0) |
-| 2 | 6.0 | 9.0 | 06_pensativo_menton | `arriba-der` | «manchitas blancas en la boca» |
-| 3 | 14.0 | 17.5 | 10_serio_molesto | `arriba-der` | «matarlo sin dañarte es difícil» |
-| 4 | 19.5 | 23.0 | 13_senalando_arriba | `arriba-der` | «le abre poros» |
-| 5 | 26.5 | 29.0 | 07_pensativo_puno | `presentador` | «¿Y quién la encontró?» |
-| 6 | 35.5 | 39.5 | 04_bajando_lentes | `arriba-der` | «por correo… 240 kilómetros» |
-| 7 | 45.0 | 49.0 | 11_sorprendido | `arriba-der` | «una bacteria, no un hongo» |
-| 8 | 51.0 | 55.0 | 02_apuntando_camara | `arriba-der` | «fueron para la ciencia» |
+| 1 | 0.0 | 2.8 | 11_sorprendido | `gancho` | «salió de un microbio de la tierra» (cuadro 0) |
+| 2 | 6.0 | 9.5 | 06_pensativo_menton | `arriba-der` | «manchitas blancas en la boca» |
+| 3 | 12.8 | 16.4 | 10_serio_molesto | `izq-alto` | «matarlo sin dañarte es difícil» |
+| 4 | 18.9 | 20.5 | 13_senalando_arriba | `arriba-der` | «le abre poros» |
+| 5 | 23.9 | 25.5 | 07_pensativo_puno | `grande` | «¿Y quién la encontró?» |
+| 6 | 32.6 | 37.5 | 04_bajando_lentes | `arriba-der` | «por correo… a unos 240 kilómetros» |
+| 7 | 42.3 | 46.5 | 11_sorprendido | `arriba-der` | «una bacteria, no un hongo» |
+| 8 | 51.1 | 53.3 | 02_apuntando_camara | `arriba-der` | «fueron para la ciencia» |
+| 9 | 53.9 | 57.9 | 13_senalando_arriba | `arriba-der` | «dos científicas contra un hongo» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Plan: 8 apariciones · ~27 s en pantalla (+ cierre) · 7 poses distintas · nunca la misma dos veces seguidas.
+Apariciones 9 · **28.4 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · nunca tapa datos ni subtítulo.
 
 ## Fuentes (investigación previa del guionista; la verificación independiente va en `verificacion.md`)
 

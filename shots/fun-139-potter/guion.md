@@ -6,7 +6,7 @@
   (fondo oscuro) se recrea su experimento: esporas sobre vidrio que germinan y forman hifas → la misma acuarela, ya
   transformada en página de cuaderno científico.
 - **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre algo en pantalla: «Esa acuarela de hongo no es un adorno de cuento: es un dato científico.»
-- **Duración (plan):** voz 963 caracteres / 170 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 988 caracteres / 173 palabras (≈ 58–60 s) + cierre 3.5 s → **61.5 s** en la base (suma de OM_SCENES).
 - **Voz:** pendiente de aprobación de Robert (~970 créditos de ElevenLabs).
 - **Derechos:** no se copia ningún dibujo de Potter ni sus personajes. La acuarela es un dibujo propio, esquemático, de estilo
   naturalista (un *Flammulina* genérico); el "conejo" es una silueta propia de conejo de campo, sin ropa, solo como guiño
@@ -19,46 +19,52 @@
 
 ## Versión narrada
 
-| # | Escena | t (s, plan) | Voz | Lo que se ve |
+| # | Escena | t (s, base) | Voz | Lo que se ve |
 |---|---|---|---|---|
-| 0 | Gancho | 0.0–4.8 | Esa acuarela de hongo no es un adorno de cuento: es un dato científico. | Fondo amarillo de lunares. Una hoja de papel crema cae y se asienta (cuadro 0.2); un pincel pinta en vivo un ramito de hongos naranja-miel de pie aterciopelado oscuro (estilo naturalista). Sello que se pega: «DATO CIENTÍFICO». Barra de escala 2 cm. Robert sorprendido (lado `gancho`). |
-| 1 | Autora | 4.8–9.2 | Así pintaba hongos Beatrix Potter, antes de hacerse famosa por su conejo Peter. | Fondo rosa. Tarjeta-nombre «Beatrix Potter · 1866–1943 · Inglaterra». A un lado asoma una silueta propia de conejo de campo que olfatea la acuarela (guiño). Chip pequeño «dibujo esquemático, al estilo de sus estudios». |
-| 2 | Cientos | 9.2–12.6 | Dibujó cientos de hongos, con cortes que muestran sus laminillas. | Fondo menta. Se abanican hojas con muchos hongos distintos (sombreros, colores, cortes); una hoja hace zoom a un **corte longitudinal**: sombrero, laminillas bajo el sombrero, pie. Etiqueta «laminillas». Número «cientos» (sin cifra). |
-| 3 | Cartero | 12.6–16.0 | La animaba un cartero escocés experto en hongos: Charles McIntosh. | Fondo cian. Un sobre con estampilla genérica vuela de un cartero (silueta con gorra y morral) a la hoja; chip «Charles McIntosh · cartero y naturalista · Perthshire, Escocia». |
-| 4 | Microscopio | 16.0–19.8 | Pero ella quería ver más adentro: al microscopio dibujó sus esporas. | Microscopio de latón antiguo genérico; la cámara entra por el ocular → **fondo oscuro**. Esporas elipsoides, lisas, hialinas (morfología de *Flammulina*: ~7–9 × 3–4 µm) y su dibujo a lápiz al lado. Barra de escala 10 µm. |
-| 5 | Pregunta | 19.8–23.2 | ¿Y si en vez de dibujarlas, las ponía a crecer? | **Re-gancho.** Robert grande (lado `presentador`), pensativo, junto a un "?" sobre una espora. |
-| 6 | Vidrio | 23.2–26.6 | Sembró esporas sobre vidrio y las siguió bajo el microscopio. | Un portaobjetos de vidrio con una gota; caen esporas (efecto). Cronómetro de "horas" esquemático (sin cifra de tiempo). |
-| 7 | Hifas | 26.6–31.4 | De la espora sale un tubito que se ramifica en hifas: el comienzo de un hongo nuevo. | Fondo oscuro. De un extremo de la mayoría de las esporas (no de todas: alguna se queda sin brotar) brota un **tubo germinativo** que se alarga, se ramifica y forma **hifas** (filamentos tabicados); etiquetas «espora», «tubo germinativo», «hifas». Barra 10 µm → 50 µm. |
-| 8 | Estudio | 31.4–34.8 | En 1897 presentó un trabajo sobre cómo germinan esas esporas. | Sale del microscopio: fondo crema. `TarjetaEstudio` «1897 · *On the germination of the spores of Agaricineae* · B. Potter». |
-| 9 | Massee | 34.8–40.6 | La Sociedad Linneana de Londres aún no admitía mujeres; lo leyó por ella George Massee, de Kew. | Fachada esquemática de un edificio londinense con puerta; un letrero «solo miembros» (mujeres: hasta 1905). Silueta de señor con el papel en la mano; chip «George Massee · micólogo de Kew · 1 abr 1897». |
-| 10 | Perdido | 40.6–47.1 | Ella lo retiró una semana después y hoy está perdido. En 1997, su secretario admitió que la trataron mal. | El papel vuelve a sus manos (chip «8 abr 1897 · retirado») y se desvanece: silueta punteada «perdido». Luego tarjeta «1997 · secretario de la Sociedad Linneana: “la trataron vilmente” (The Sunday Times)». |
-| 11 | Enoki | 47.1–53.2 | El hongo de ese trabajo, Flammulina velutipes, es primo del enoki del súper: se creía la misma especie. | Fondo menta. A la izquierda el hongo silvestre: *Flammulina velutipes*, sombrero naranja-miel, pie aterciopelado oscuro, sobre madera en invierno. A la derecha un paquete genérico de enoki (blanco, largo, delgado, sin marca): etiqueta *Flammulina filiformis* · «separados en 2018 por su ADN». |
-| 12 | Cierre | 53.2–58.0 | Así que esa acuarela no es un adorno: es el cuaderno de una científica. | **Regreso a la imagen del inicio:** la misma acuarela, ahora con anotaciones de cuaderno científico (dibujito de espora germinando, escala, "1897"); el conejo de campo vuelve a asomarse. |
-| — | Outro | 58.0–61.5 | (sin voz) | `CierreMarca` con logo de biología y Robert señalando. |
+| 0 | Gancho | 0.00–4.27 | Esa acuarela de hongo no es un adorno de cuento: es un dato científico. | Fondo amarillo de lunares. Una hoja de papel crema cae y se asienta (cuadro 0.2); un pincel pinta en vivo un ramito de hongos naranja-miel de pie aterciopelado oscuro (estilo naturalista). Sello que se pega: «DATO CIENTÍFICO». Barra de escala 2 cm. Robert sorprendido (lado `gancho`). |
+| 1 | Autora | 4.27–8.93 | Así pintaba hongos Beatrix Potter, antes de hacerse famosa por su conejo Peter. | Fondo rosa. Tarjeta-nombre «Beatrix Potter · 1866–1943 · Inglaterra». A un lado asoma una silueta propia de conejo de campo que olfatea la acuarela (guiño). Chip pequeño «dibujo esquemático, al estilo de sus estudios». |
+| 2 | Cientos | 8.93–12.81 | Dibujó cientos de hongos, con cortes que muestran sus laminillas. | Fondo menta. Se abanican hojas con muchos hongos distintos (sombreros, colores, cortes); una hoja hace zoom a un **corte longitudinal**: sombrero, laminillas bajo el sombrero, pie. Etiqueta «laminillas». Número «cientos» (sin cifra). |
+| 3 | Cartero | 12.81–16.79 | La animaba un cartero escocés experto en hongos: Charles McIntosh. | Fondo cian. Un sobre con estampilla genérica vuela de un cartero (silueta con gorra y morral) a la hoja; chip «Charles McIntosh · cartero y naturalista · Perthshire, Escocia». |
+| 4 | Microscopio | 16.79–20.86 | Pero ella quería ver más adentro: al microscopio dibujó sus esporas. | Microscopio de latón antiguo genérico; la cámara entra por el ocular → **fondo oscuro**. Esporas elipsoides, lisas, hialinas (morfología de *Flammulina*: ~7–9 × 3–4 µm) y su dibujo a lápiz al lado. Barra de escala 10 µm. |
+| 5 | Pregunta | 20.86–23.77 | ¿Y si en vez de dibujarlas, las ponía a crecer? | **Re-gancho.** Robert grande (lado `grande`: medio cuerpo, arriba del subtítulo), pensativo, junto a un "?" sobre una espora. |
+| 6 | Vidrio | 23.77–27.46 | Sembró esporas sobre vidrio y las siguió bajo el microscopio. | Fondo cian. Un sombrero de *Flammulina* colgado (laminillas hacia abajo) suelta esporas que caen en una gota sobre una placa de vidrio; chip «AL MICROSCOPIO · 1896»; etiquetas «placa de vidrio» y «gota». Barra 1 cm. |
+| 7 | Hifas | 27.46–32.41 | De la espora sale un tubito que se ramifica en hifas: el comienzo de un hongo nuevo. | Fondo oscuro; la cámara se aleja de 10 µm a 20 µm. De un extremo de la mayoría de las esporas (no de todas: alguna se queda sin brotar) brota un **tubo germinativo** que se alarga, se ramifica y forma **hifas** (filamentos tabicados); etiquetas «espora», «tubo germinativo», «hifas». Barra 10 µm → 50 µm. |
+| 8 | Estudio | 32.41–36.10 | En 1897 presentó un trabajo sobre cómo germinan esas esporas. | Sale del microscopio: fondo naranja; hojas del manuscrito. `TarjetaEstudio` «1897 · *On the germination of the spores of Agaricineae* · B. Potter». |
+| 9 | Massee | 36.10–41.63 | La Sociedad Linneana de Londres aún no admitía mujeres; lo leyó por ella George Massee, de Kew. | Fachada esquemática de un edificio londinense con puerta; chip «miembros: solo hombres (hasta 1905)» (mujeres: hasta 1905). Silueta de señor con el papel en la mano; chip «George Massee · micólogo de Kew · 1 abr 1897». |
+| 10 | Perdido | 41.63–47.74 | Ella lo retiró una semana después y hoy está perdido. En 1997, su secretario admitió que la trataron mal. | El papel vuelve a sus manos (chip «8 abr 1897 · retirado») y se desvanece: silueta punteada «perdido». Luego tarjeta «1997 · secretario de la Sociedad Linneana: “la trataron vilmente” (The Sunday Times)». |
+| 11 | Enoki | 47.74–53.75 | El hongo de ese trabajo, Flammulina velutipes, es primo del enoki del súper: se creía la misma especie. | Fondo menta. A la izquierda el hongo silvestre: *Flammulina velutipes*, sombrero naranja-miel, pie aterciopelado oscuro, sobre madera en invierno. A la derecha un paquete genérico de enoki (blanco, largo, delgado, sin marca): etiqueta *Flammulina filiformis* · «separados en 2018 por su ADN». |
+| 12 | Cierre | 53.75–58.00 | Así que esa acuarela no es un adorno: es el cuaderno de una científica. | **Regreso a la imagen del inicio:** la misma acuarela, ahora con anotaciones de cuaderno científico (dibujito de espora germinando, escala, "1897"); el conejo de campo vuelve a asomarse. |
+| — | Outro | 58.00–61.50 | (sin voz) | `CierreMarca` con logo de biología y Robert señalando. |
 
-**Música (plan):** cama de cámara íntima y pastoral (cuerdas y celesta, armonía modal que cambia cada pocos compases,
-según `composicion-musical.md`), un poco oscura en el microscopio, tensa y apagada en «no admitía mujeres… perdido», y que
-se abre en el enoki y el cierre. Efectos en el mismo cuadro: papel que cae, pincelada, sello, hojas que se abanican, sobre
-que vuela, giro del revólver del microscopio, gotita en el vidrio, "pops" de germinación, puerta que se cierra, papel que se
-desvanece.
+**Música (`gen-audio.mjs`, según `composicion-musical.md`):** pieza de cámara pastoral a 100 BPM, compuesta (no al azar):
+un tema propio de 4 compases (motivo → respuesta → secuencia → cadencia) con celesta, cuerdas frotadas con vibrato tardío y
+pizzicato suave del bajo. **A** gancho → cartero: el tema en Fa mayor (F–C/E–Dm–B♭ | F–Am–B♭–C), luego una octava arriba y una
+abajo. **B** microscopio → hifas: re dórico grave, el motivo en las cuerdas graves; la pregunta deja el motivo sin cadencia;
+un arpegio de celesta que sube por cada espora que germina. **C** Sociedad Linneana → perdido: re menor con cuerdas apagadas,
+el tema se corta a media frase; en «perdido» queda una sola nota grave; en «1997» se abre a B♭. **D** enoki → cierre: el
+tema regresa completo con otra voz (cuerdas) y luego en celesta una octava arriba; cadencia plena en Fa en el cierre.
+Cama sin golpe marcado, siempre debajo de la voz. Efectos en el mismo cuadro: hoja que cae, pinceladas, sello, olfateo del
+conejo, hojas que se abanican, carta que vuela, perilla del microscopio, entrada por el ocular, lápiz, gota, esporas que caen,
+burbuja de cada tubo germinativo, tabiques, tarjeta 1897, puerta que se cierra, el trabajo que va y viene, se desvanece,
+tarjeta 1997, paquete de enoki, anotaciones a lápiz.
 
-## Robert en pantalla (plan; se ajusta a los tiempos reales al animar)
+## Robert en pantalla (tiempos de la base; con la voz real se recorren solos)
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no es un adorno: es un dato científico» |
-| 2 | 9.4 | 12.4 | 13_senalando_arriba | `arriba-der` | «cientos de hongos» |
-| 3 | 16.4 | 19.6 | 04_bajando_lentes | `arriba-der` | «al microscopio dibujó sus esporas» |
-| 4 | 19.8 | 23.2 | 06_pensativo_menton | `presentador` (grande) | «¿Y si las ponía a crecer?» |
-| 5 | 28.0 | 31.2 | 11_sorprendido | `arriba-der` | «un hongo nuevo» |
-| 6 | 36.0 | 40.4 | 10_serio_molesto | `arriba-der` | «no admitía mujeres» |
-| 7 | 43.6 | 47.0 | 12_perfil_serio | `arriba-der` | «admitió que la trataron mal» |
-| 8 | 48.5 | 53.0 | 11_sorprendido | `arriba-der` | «primo del enoki del súper» |
-| 9 | 54.0 | 57.9 | 02_apuntando_camara | `arriba-der` | «el cuaderno de una científica» |
-| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+| 1 | 0.00 | 3.00 | 11_sorprendido | `gancho` | «no es un adorno: es un dato científico» (cuadro 0) |
+| 2 | 9.13 | 12.51 | 13_senalando_arriba | `arriba-der` | «cientos de hongos» |
+| 3 | 17.09 | 20.66 | 04_bajando_lentes | `arriba-der` | «al microscopio dibujó sus esporas» |
+| 4 | 20.91 | 23.67 | 06_pensativo_menton | `grande` (medio cuerpo) | «¿Y si las ponía a crecer?» |
+| 5 | 28.86 | 32.21 | 11_sorprendido | `arriba-der` | «el comienzo de un hongo nuevo» |
+| 6 | 37.10 | 41.43 | 10_serio_molesto | `arriba-der` | «no admitía mujeres» |
+| 7 | 44.73 | 47.54 | 12_perfil_serio | `bajo-der` | «admitió que la trataron mal» (no tapa la tarjeta 1997) |
+| 8 | 49.14 | 53.55 | 11_sorprendido | `bajo-der` | «primo del enoki del súper» |
+| 9 | 54.35 | 57.90 | 02_apuntando_camara | `arriba-der` | «el cuaderno de una científica» |
+| — | 58.00 | 61.50 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 9 · **32.4 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
-(Sin poses chistosas en la parte seria de la Sociedad Linneana.)
+Apariciones 9 · **31.2 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · huecos
+de 6 s como máximo. (Sin poses chistosas en la parte seria de la Sociedad Linneana.)
 
 ## Fuentes (abiertas el 5 nov 2026; cada frase copiada de la página)
 
@@ -91,8 +97,9 @@ Apariciones 9 · **32.4 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas ·
    > "Enokitake … is not identical to the European winter mushroom Flammulina velutipes, and thus should be treated as a separate species, namely Flammulina filiformis"
    > "all cultivated strains of 'F. velutipes' in East Asia … are in fact F. filiformis"
 
-**Pendiente de verificar (para el verificador):** morfología de la espora de *F. velutipes* (forma y medida para el dibujo),
-que el tubo germinativo/hifas sea la descripción correcta de la germinación de una basidiospora, que Peter Rabbit (1901
-privado, 1902 Warne) la hizo famosa después de 1897, y la cifra/lugar de las acuarelas en el Armitt.
+6. Victoria and Albert Museum. *Peter Rabbit: the tale of the tale.* https://www.vam.ac.uk/articles/peter-rabbit-the-tale-of-the-tale
+   > "On 16 December 1901 Strangeways & Sons printed 250 copies of The Tale of Peter Rabbit"; "Publication began in October 1902 with a first edition of 8,000 copies"
+7. Espora de *Flammulina velutipes* (para el dibujo): Kuo, MushroomExpert. https://mushroomexpert.com/flammulina_velutipes.html
+   > "Spores 5–10 x 2.5–3.5 µm; subcylindric to elongated-ellipsoid; smooth; hyaline" → dibujada de 8 × 3.2 µm (10 µm = 160 px).
 
 El dibujo es esquemático.
