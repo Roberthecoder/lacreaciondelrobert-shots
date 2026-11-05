@@ -113,7 +113,7 @@ function HojaTrigo({ x, y, largo = 1000, ancho = 120, rot = -8, pustulas = 1 }) 
 function Vortice({ T, x, y, p = 0, R = 150 }) {
   if (p <= 0) return null;
   const q = kclamp(p / 0.3, 0, 1), sube = kEase.suave(kclamp((p - 0.25) / 0.75, 0, 1));
-  const yy = y - 30 - sube * 480, rr = klerp(R * 0.75, R * 1.3, sube), giro = T * 6, dx = klerp(70, rr, q);
+  const yy = y - 30 - sube * 420, rr = klerp(R * 0.75, R * 1.3, sube), giro = T * 6, dx = klerp(70, rr, q);
   const remolino = (cx, dir) => <g>
     <path d={`M ${cx - dir * 40} ${yy + 34} Q ${cx + dir * 50} ${yy + 40} ${cx + dir * 46} ${yy - 10} Q ${cx + dir * 36} ${yy - 52} ${cx - dir * 4} ${yy - 34} Q ${cx - dir * 30} ${yy - 14} ${cx - dir * 6} ${yy + 4}`}
       stroke="rgba(159,227,255,.9)" strokeWidth={10} fill="none" strokeLinecap="round" transform={`rotate(${dir * giro * 14} ${cx} ${yy})`} /></g>;
@@ -328,8 +328,8 @@ function EsporasAireShot() {
         interior={(Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0d1424" />
           {[[0.3, 0.35, 20], [0.62, 0.3, -30], [0.45, 0.62, 60], [0.75, 0.66, 10], [0.2, 0.7, -50]].map(([a, b, ro], i) =>
             <Conidio key={i} x={a * r * 2 + Math.sin(Tl * 1.3 + i) * 10} y={b * r * 2 + Math.cos(Tl + i) * 10} w={22} rot={ro + Tl * 25} />)}</svg>} />
-      <TarjetaEstudio T={T} at={K.M + 0.2} until={K.M + 2.2} anio="2023" quien="Hermosillo, Sonora" revista="trampa de esporas · J. Fungi, 2025" x={420} y={560} />
-      <NumeroGigante T={T} at={K.M + 2.3} until={K.R - 0.3} valor={8445} dur={1.4} etiqueta="esporas en 1 m³ · pico de mayo 2023" x={430} y={560} tam={150} color={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.M + 0.2} until={K.M + 2.1} anio="2023" quien="Hermosillo, Sonora" revista="trampa de esporas · J. Fungi, 2025" x={420} y={560} />
+      <NumeroGigante T={T} at={K.M + 2.8} until={K.R - 0.3} valor={8445} dur={1.2} etiqueta="esporas en 1 m³ · pico de mayo 2023" x={430} y={560} tam={150} color={KC.yellow} />
       <Etq T={T} at={K.M + 0.8} until={K.R - 0.3} x={40 + HMO[0] * 0.52 + 20} y={760 + HMO[1] * 0.52 - 40} texto="Hermosillo" tam={30} color={KC.ink} />
       <NumeroGigante T={T} at={K.R + 2.6} until={K.Cl - 0.3} valor={4} dur={0.6} prefijo="≈ " etiqueta="por respiración · ese día pico" x={360} y={520} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.R + 1.0} until={K.Cl - 0.3} texto="0.5 L × 8,445 / m³ ≈ 4" x={330} y={670} tam={30} borde={KC.ink} mono />
@@ -348,7 +348,7 @@ function EsporasAireShot() {
       <Chip T={T} at={K.E + 1.0} until={K.A - 0.4} texto="cámara rápida" x={540} y={935} tam={30} borde={KC.ink} mono />
       <Etq T={T} at={K.A + 1.4} until={K.Co - 0.3} x={700} y={760} texto="anillo de aire" lado="der" tam={30} color={KC.texto} />
       <Etq T={T} at={K.A + 1.7} until={K.Co - 0.3} x={700} y={810} texto="(vórtice)" lado="der" tam={26} color={KC.macro} />
-      <Chip T={T} at={K.A + 2.4} until={K.Co - 0.3} texto="miles de esporas · una sola gota" x={380} y={470} tam={30} borde={EA.roya2} />
+      <Chip T={T} at={K.A + 2.4} until={K.Co - 0.3} texto="miles de esporas · una sola gota" x={540} y={990} tam={30} borde={EA.roya2} />
       <Chip T={T} at={K.Co + 0.6} until={K.To - 0.3} texto="dispersión a larga distancia" x={540} y={470} tam={34} borde={KC.cyan} />
       <NumeroGigante T={T} at={K.To + 0.3} until={K.I - 0.3} valor={50000000} dur={2.0} etiqueta="toneladas de esporas al año" x={460} y={740} tam={110} color={KC.yellow} />
       <Chip T={T} at={K.To + 2.2} until={K.I - 0.3} texto="estimación global · Elbert y col., 2007" x={380} y={470} tam={28} borde={KC.ink} />

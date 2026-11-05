@@ -409,7 +409,6 @@ function MohoShot() {
       <Chip T={T} at={K.Mo + 1.2} until={K.Ci - 0.2} texto="el color = sus esporas" x={760} y={420} tam={32} borde={MM.moho} />
       <Chip T={T} at={K.Ci + 0.2} until={K.Ti - 0.2} texto="EN EL LABORATORIO" x={330} y={380} tam={34} borde={KC.ink} mono />
       <Etq T={T} at={K.Ci + 0.4} until={K.Ti - 0.2} x={60} y={1080} texto="cultivo del moho en agar" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ci + 1.7} until={K.Ti - 0.2} x={60} y={450} texto="cinta transparente" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Ti + 0.4} until={K.Pi - 0.2} texto="azul de algodón de lactofenol" x={340} y={440} tam={30} borde={KC.blue} />
       <Etq T={T} at={K.Ti + 1.3} until={K.Pi - 0.2} x={60} y={1010} texto="tiñe la quitina de las paredes" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Ti + 2.4} until={K.Pi - 0.2} x={60} y={1060} texto="portaobjetos + cubreobjetos" tam={26} color={KC.ink} />
@@ -431,7 +430,7 @@ function MohoShot() {
       <MitoTachado T={T} at={K.S + 0.2} tacharEn={K.S + 1.6} until={K.Mil - 0.2} texto="nace de la nada" x={300} y={400} tam={40} />
       <Chip T={T} at={K.S + 2.2} until={K.Mil - 0.2} texto="espora → el mismo hongo" x={300} y={1100} tam={32} borde={KC.leaf} />
       <Chip T={T} at={K.Mil + 0.5} until={K.Mil + 2.4} texto="miles por cabeza" x={300} y={400} tam={36} borde={MM.conA} />
-      <Etq T={T} at={K.Mil + 2.8} until={K.Se - 0.2} x={400} y={1030} texto="2.5–3 µm" tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Mil + 2.8} until={K.Se - 0.2} x={420} y={1065} texto="2.5–3 µm" tam={34} color={KC.texto} />
       <Etq T={T} at={K.Mil + 2.8} until={K.Se - 0.2} x={60} y={400} texto="un conidio de A. fumigatus" it tam={30} color={KC.texto} />
       <Chip T={T} at={K.Se + 1.3} until={K.C - 0.2} texto="no la huelas" x={290} y={400} tam={36} borde={KC.red} />
       <Etq T={T} at={K.Se + 1.5} until={K.C - 0.2} x={60} y={1530} texto="USDA: oler moho puede dar problemas al respirar" tam={24} color={KC.ink} />

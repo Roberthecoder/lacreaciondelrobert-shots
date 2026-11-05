@@ -235,7 +235,7 @@ function TarjetaEstudio({ T, at, until, anio, quien, revista, x = KW / 2, y = 60
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'pop');
   return <div style={{ position:'absolute', left:x, top:y, zIndex:43, transform:`translate(-50%,-50%) scale(${e.s}) rotate(-2deg)`, opacity:e.o,
-    background:KC.paper, border:`7px solid ${KC.ink}`, borderRadius:26, padding:'18px 40px 22px', textAlign:'center', boxShadow:`14px 14px 0 ${KC.ink}` }}>
+    background:KC.paper, border:`7px solid ${KC.ink}`, borderRadius:26, padding:'18px 40px 22px', textAlign:'center', whiteSpace:'nowrap', boxShadow:`14px 14px 0 ${KC.ink}` }}>
     <div style={{ font:`400 150px/1 ${KF.titulo}`, color:KC.gold, WebkitTextStroke:`5px ${KC.ink}` }}>{anio}</div>
     {quien && <div style={{ font:`900 40px ${KF.texto}`, color:KC.ink, marginTop:6 }}>{quien}</div>}
     {revista && <div style={{ font:`700 26px ${KF.mono}`, color:'#5a524a', marginTop:8, fontStyle:'italic' }}>{revista}</div>}

@@ -46,7 +46,7 @@ m.golpe(M + 0.2, 0.25, 90);                                                     
 m.tic(M + 0.3, 0.2, 1500);                                                        // punto en el mapa
 m.metal(M + 0.6, 0.08, 900);                                                      // cubo de 1 m
 for (let i = 0; i < 36; i++) m.tic(M + 1.4 + i * 0.05, 0.04, 2200 + (i % 5) * 180); // esporas en el cubo
-for (let i = 0; i < 14; i++) m.tic(M + 2.3 + i * 0.1, 0.06, 1200 + i * 60);      // contador 8,445
+for (let i = 0; i < 14; i++) m.tic(M + 2.8 + i * 0.085, 0.06, 1200 + i * 60);    // contador 8,445
 m.whoosh(R + 0.6, 1.0, 0.08);                                                     // aire de la botella
 [0, 1, 2, 3].forEach((i) => m.pop ? m.pop(R + 1.9 + i * 0.35, 0.1) : m.burbuja(R + 1.9 + i * 0.35, 0.1, 700 + i * 90)); // 4 esporas entran
 m.golpe(R + 2.6, 0.25, 110);                                                      // ≈ 4

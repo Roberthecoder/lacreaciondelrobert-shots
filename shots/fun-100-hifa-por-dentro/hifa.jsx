@@ -169,7 +169,7 @@ function Colonia({ T, x, y, r = 430, rio = 0, nucleo = -1, mechon = 0, id = 'col
       return <circle key={i + '_' + k} cx={px} cy={py} r={2.6} fill="#e8fff6" opacity={rio * 0.9} />; }))}
     {/* núcleo marcado que corre hasta el borde, con estela */}
     {nucleo >= 0 && [0, 0.03, 0.06, 0.09].map((dz, k) => { const u = kclamp(nucleo - dz, 0, 1); const [px, py] = enSeg(SEG_VIAJE, u);
-      return <circle key={'n' + k} cx={px} cy={py} r={(13 - k * 3)} fill={HF.nuc} opacity={1 - k * 0.24} style={k === 0 ? { filter:`drop-shadow(0 0 10px ${HF.nuc})` } : null} />; })}
+      return <circle key={'n' + k} cx={px} cy={py} r={(22 - k * 4)} fill={HF.nuc} stroke={k === 0 ? '#fff' : 'none'} strokeWidth={4} opacity={1 - k * 0.22} style={k === 0 ? { filter:`drop-shadow(0 0 14px ${HF.nuc})` } : null} />; })}
   </PlacaPetri>;
 }
 
@@ -348,7 +348,7 @@ function HifaShot() {
       {/* 9 · sin Hex1 no hay tapones: comparativa */}
       <Escena T={T} a={K.ST} b={K.VI} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg((() => { const W = 170, SX = 520, hx = 800;
+        {fsvg((() => { const W = 170, SX = 420, hx = 640;
           const fila = (Y, con, sd) => { const fuga = con ? 0 : 1;
             return <g>
               <Tubo T={T} id={'tc' + sd} x0={-60} x1={1160} y={Y} w={W} punta={false} flujo={false} septos={[SX]} seed={sd} />
@@ -358,7 +358,7 @@ function HifaShot() {
               <g clipPath={`url(#cd${sd})`}><Particulas T={T} x0={SX} x1={1160} y={Y} w={W} vel={130} seed={sd + 2} septos={[SX]} densidad={con ? 0.2 : klerp(0.9, 0.2, kprog(T, K.ST, K.VI))} salida={{ x: hx, y: Y - W / 2 }} /></g>
               {Array.from({ length: 18 }, (_, i) => { const u = fmod(i / 18 + T * 1.4, 1); return <circle key={i} cx={hx + Math.sin(i * 7.3) * 20 * u} cy={Y - W / 2 - u * 150} r={5 * (1 - u * 0.6)} fill={HF.part} opacity={(1 - u) * (con ? 0.25 : 1)} />; })}
               <path d={`M ${hx - 16} ${Y - W / 2 - 3} L ${hx} ${Y - W / 2 + 12} L ${hx + 16} ${Y - W / 2 - 3}`} fill="none" stroke={KC.red} strokeWidth={6} />
-              {con && <><Woronin x={SX - 14} y={Y} r={13} /><Woronin x={200} y={Y + 70} r={10} /><Woronin x={380} y={Y - 70} r={10} /></>}
+              {con && <><Woronin x={SX - 14} y={Y} r={13} /><Woronin x={200} y={Y + 70} r={10} /><Woronin x={300} y={Y - 70} r={10} /></>}
             </g>; };
           return <>{fila(760, true, 21)}{fila(1090, false, 31)}</>; })())}
         <Chip T={T} at={K.ST + 0.2} until={K.VI - 0.2} texto="con Hex1: poro tapado ✓" x={330} y={620} tam={32} borde={KC.mint} />
