@@ -1,7 +1,66 @@
-{ "temas": [
-  { "id": "bassi-muscardina", "titulo": "El primer microbio que se demostró que enferma a un animal fue un hongo: Agostino Bassi y la muscardina del gusano de seda (Beauveria bassiana)", "serie": "Shot Fungi Mati", "numero": 135, "estado": "idea", "carpeta": "shots/fun-135-bassi", "rama": "claude/fun-135-139-micologos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
-  { "id": "nistatina-hazen-brown", "titulo": "El primer antimicótico lo inventaron dos científicas por correo: Elizabeth Hazen, Rachel Fuller Brown y la nistatina", "serie": "Shot Fungi Mati", "numero": 136, "estado": "idea", "carpeta": "shots/fun-136-nistatina", "rama": "claude/fun-135-139-micologos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
-  { "id": "hongos-reino-propio", "titulo": "Durante siglos los libros pusieron a los hongos con las plantas: cómo se ganaron su propio reino (Whittaker 1969)", "serie": "Shot Fungi Mati", "numero": 137, "estado": "idea", "carpeta": "shots/fun-137-reino", "rama": "claude/fun-135-139-micologos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
-  { "id": "micheli-siembra-esporas", "titulo": "El moho no sale de la nada: Pier Antonio Micheli sembró esporas y salió el mismo hongo (1729)", "serie": "Shot Fungi Mati", "numero": 138, "estado": "idea", "carpeta": "shots/fun-138-micheli", "rama": "claude/fun-135-139-micologos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
-  { "id": "beatrix-potter-micologa", "titulo": "La autora de Peter Rabbit era micóloga: Beatrix Potter, la germinación de esporas y la Sociedad Linneana", "serie": "Shot Fungi Mati", "numero": 139, "estado": "idea", "carpeta": "shots/fun-139-potter", "rama": "claude/fun-135-139-micologos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] }
-] }
+{
+ "temas": [
+  {
+   "id": "bassi-muscardina",
+   "titulo": "El primer microbio que se demostró que enferma a un animal fue un hongo: Agostino Bassi y la muscardina del gusano de seda (Beauveria bassiana)",
+   "serie": "Shot Fungi Mati",
+   "numero": 135,
+   "estado": "idea",
+   "carpeta": "shots/fun-135-bassi",
+   "rama": "claude/fun-135-139-micologos",
+   "fuentes": [],
+   "fecha": "2026-11-05",
+   "derivados": []
+  },
+  {
+   "id": "nistatina-hazen-brown",
+   "titulo": "El primer antimicótico lo inventaron dos científicas por correo: Elizabeth Hazen, Rachel Fuller Brown y la nistatina",
+   "serie": "Shot Fungi Mati",
+   "numero": 136,
+   "estado": "idea",
+   "carpeta": "shots/fun-136-nistatina",
+   "rama": "claude/fun-135-139-micologos",
+   "fuentes": [],
+   "fecha": "2026-11-05",
+   "derivados": []
+  },
+  {
+   "id": "hongos-reino-propio",
+   "titulo": "Durante siglos los libros pusieron a los hongos con las plantas: cómo se ganaron su propio reino (Whittaker 1969)",
+   "serie": "Shot Fungi Mati",
+   "numero": 137,
+   "estado": "idea",
+   "carpeta": "shots/fun-137-reino",
+   "rama": "claude/fun-135-139-micologos",
+   "fuentes": [],
+   "fecha": "2026-11-05",
+   "derivados": []
+  },
+  {
+   "id": "lsd-hofmann-cornezuelo",
+   "titulo": "De un hongo del centeno salió el LSD: Albert Hofmann, Sandoz y la historia científica (cornezuelo, Claviceps purpurea)",
+   "serie": "Shot Fungi Mati",
+   "numero": 138,
+   "estado": "idea",
+   "carpeta": "shots/fun-138-lsd",
+   "rama": "claude/fun-135-139-micologos",
+   "fuentes": [],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Pier Antonio Micheli sembró esporas y salió el mismo moho (1729): los hongos no salen de la nada"
+   ]
+  },
+  {
+   "id": "beatrix-potter-micologa",
+   "titulo": "La autora de Peter Rabbit era micóloga: Beatrix Potter, la germinación de esporas y la Sociedad Linneana",
+   "serie": "Shot Fungi Mati",
+   "numero": 139,
+   "estado": "idea",
+   "carpeta": "shots/fun-139-potter",
+   "rama": "claude/fun-135-139-micologos",
+   "fuentes": [],
+   "fecha": "2026-11-05",
+   "derivados": []
+  }
+ ]
+}
