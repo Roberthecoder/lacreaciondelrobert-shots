@@ -87,7 +87,7 @@
    "titulo": "El hongo de las rocas de la Antártida que aguantó 18 meses afuera de la Estación Espacial (Cryomyces antarcticus, experimento LIFE)",
    "serie": "Shot Fungi Mati",
    "numero": 94,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/fun-94-hongo-antartida",
    "rama": "claude/fun-90-94-records",
    "fuentes": [
