@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #60 · rama `claude/fun-60-64-cocina` · ángulo: hongos en la cocina.
 - **Formato:** N1 "Por dentro" con capítulos de N3 (1 · cultivo, 2 · madurar, 3 · por dentro): charola del súper con champiñón blanco, cremini y portobello (macro) → cama de cultivo → el sombrero se abre → láminas → basidios con dos esporas y sus núcleos (micro, fondo oscuro) → la granja de 1925 → la misma charola, ahora ordenada como una línea de tiempo de un solo hongo (macro transformado).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla — «Ese portobello no es otro hongo: es un champiñón que dejaron crecer.»
-- **Duración:** voz 996 caracteres / 173 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 1001 caracteres / 174 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** de cocina, curioso, con un toque chistoso en «nombre de mercadotecnia».
 - **No repite** a `fun-13-vitamina-d` (champiñones al sol) ni a `fun-28-gota-buller` (cómo dispara la espora): aquí el tema es que son la misma especie, cómo madura y por qué tiene dos esporas.
@@ -21,7 +21,7 @@
 | 5 | Laminas | Las láminas pasan de rosadas a café oscuro: ahí nacen las esporas. | Vista de abajo del sombrero: láminas en abanico que cambian de rosa a café oscuro; chip "láminas". Zoom hacia una lámina. |
 | 6 | Pregunta | ¿Y por qué se llama *bisporus*? | **Re-gancho.** Fondo rosa: la palabra "bi·sporus" gigante (bi = dos, spora = espora en letras chicas, solo en pantalla); "?" gigante; Robert grande, pensativo. |
 | 7 | Basidio | Están tapizadas de basidios, y casi todos cargan solo dos esporas, no cuatro como sus parientes. | **Cap. 3 · por dentro.** Fondo oscuro (lo microscópico): corte de una lámina con una empalizada de basidios en forma de mazo; en la punta, 2 cuernitos (esterigmas) con una espora café oval cada uno. A un lado, en chiquito, "otros *Agaricus*: 4 esporas" (basidio con 4). Barra 10 µm. Chip "≈ 9 de cada 10 basidios: 2 esporas". |
-| 8 | Nucleos | Cada espora se lleva dos núcleos distintos: la pareja que necesita para dar champiñones. | Dentro del basidio, 4 núcleos (colores distintos, tras la meiosis) que se reparten de dos en dos a las 2 esporas. Chip "2 núcleos distintos por espora". La espora cae, germina y su micelio ya puede formar un champiñón (esquema). |
+| 8 | Nucleos | Casi cada espora se lleva dos núcleos distintos: la pareja que necesita para dar champiñones. | Dentro del basidio, 4 núcleos (colores distintos, tras la meiosis) que se reparten de dos en dos a las 2 esporas. Chip "≈ 9 de cada 10 esporas: 2 núcleos distintos". La espora cae, germina y su micelio ya puede formar un champiñón (esquema). |
 | 9 | Estudio | ¿Y el blanco? En 1925, en una granja de Pensilvania, salió un champiñón blanco entre los cafés. | Fondo naranja: TarjetaEstudio "1925 · Coatesville, Pensilvania, EE. UU. · Keystone Mushroom Farm". Escena: cama de champiñones cafés; uno blanco brilla entre ellos. |
 | 10 | Lambert | Su dueño, Louis Lambert, lo cultivó desde sus esporas; para 1933 dominaba el mercado. | Silueta de un laboratorio de época (sin cara inventada): esporas de ese sombrero blanco pasan a un frasco; chip "Snow White · Lambert"; una gráfica esquemática de "cultivadores que usan el blanco" que sube hasta 1933. |
 | 11 | Dato | Antes se cultivaban cafés o crema: el blanco era el raro. Y portobello es nombre de mercadotecnia. | Fondo lila: fila de champiñones cafés y crema con uno blanco y chip "el raro"; luego una etiqueta de precio "PORTOBELLO" con sello "nombre comercial". Robert riendo/sorprendido. |
@@ -69,7 +69,7 @@ Apariciones 8 · **29.2 s** en pantalla (+ cierre 3.5 s) · 6 poses distintas ·
    > "That white mushroom was discovered one morning in 1925 growing among a bed of brown mushrooms" (Keystone Mushroom Farm, Coatesville, Pensilvania)
    > "Louis Ferdinand Lambert, the farm's owner and a mycologist by training" — tomó esporas del sombrero y las cultivó en medio estéril; llamó a la cepa "Snow White".
    > Antes, los cultivadores sembraban sobre todo "brown or cream" spawn; por 1933 "Snow White" "had become the leading commercial mushroom."
-   > ⚠️ Otras fuentes (p. ej. la Wikipedia) dicen 1926: el verificador debe decidir si se queda «1925» o se cambia a «hace unos cien años».
+   > 1926 es la fecha en que Lange nombró la variedad, no la del hallazgo: se queda 1925.
 4. Sonnenberg, A. S. M., Baars, J. J. P., Gao, W. y Visser, R. G. F. (2017). Developments in breeding of *Agaricus bisporus* var. *bisporus*: progress made and technical and legal hurdles to take. *Applied Microbiology and Biotechnology* 101: 1819–1829. https://pmc.ncbi.nlm.nih.gov/articles/PMC5309338/
    > "The majority of the basidia produce only two spores and non-sister nuclei are preferably paired into one spore."
    > "spores that germinate into heterokaryons containing nuclei with different mating types" — "a prerequisite to produce fruiting bodies"
