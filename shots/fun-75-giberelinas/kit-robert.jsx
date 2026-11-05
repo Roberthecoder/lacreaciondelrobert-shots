@@ -197,6 +197,7 @@ function Subtitulo({ T, at, until, texto, idx, color = KC.gold2, tam = 64 }) {
     <div style={{ maxWidth:940, display:'flex', flexWrap:'wrap', justifyContent:'center', columnGap:'0.26em', rowGap:6, padding:'14px 26px 18px',
       background:`rgba(10,11,14,${0.62 * entra})`, borderRadius:28, font:`900 ${tam}px/1.12 ${KF.texto}`, textAlign:'center' }}>{palabras}</div>
   </div>;
+}
 // Chip / píldora: encabezado de sección, pregunta fija o regla escrita.
 function Chip({ T, at, until, texto, x = KW / 2, y = 420, fondo = 'rgba(14,15,18,.82)', color = KC.texto, borde = KC.gold, tam = 40, mono = false }) {
   if (!kvisible(T, at, until)) return null;
