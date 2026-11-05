@@ -5,11 +5,11 @@
 const TXT = {
   ganchoEtq: 'matsutake mexicano', champi: 'champiñón', aJapon: 'rumbo a Japón',
   nombres: ['hongo blanco', 'hongo blanco de ocote', 'hongo canela'], olor: 'olor especiado',
-  especie: 'Tricholoma mesoamericanum', especieChip: 'descrito en 2017 · solo en México',
+  especie: 'Tricholoma mesoamericanum', especieChip: 'descrito en 2017 · de México (y Arizona)',
   primo: 'Tricholoma matsutake', primoChip: 'su primo de Japón', pinoRojo: 'pino rojo japonés',
   numEtq: 'cosecha de Japón al año', numChip: 'inicios de los años 40', arroz: 'arroz con matsutake',
-  escEtq: 'en 2020: menos de', escChip1: 'marchitamiento del pino (nematodo)', escChip2: 'bosques sin manejo',
-  expChip: 'desde 1985 · empresas japonesas', mexico: 'México', japon: 'Japón',
+  escEtq: 'en 2025: solo', escChip1: 'marchitamiento del pino (nematodo)', escChip2: 'bosques sin manejo',
+  expChip: '1985 · empresas japonesas', exp2: '2022: 4 t de México a Japón', mexico: 'México', japon: 'Japón',
   dentro: 'BAJO TIERRA · ECTOMICORRIZA', raiz: 'raíz de pino', manto: 'hifas que la envuelven',
   agua: 'agua y minerales → pino', azucar: 'azúcar → hongo',
   cultivo: 'cultivo: casi sin éxito', cultivo2: 'el micelio crece; el hongo, no', frasco: 'micelio en frasco',
@@ -273,7 +273,7 @@ function MatsutakeShot() {
   const mp = (lon, lat) => { const [a, b] = mx(lon, lat); return [MAP.x + a * ms, MAP.y + b * ms]; };
   const [ox, oy] = mp(-98.6, 19.4), jx = 900, jy = 700;
   const ruta = kprog(T, K.Ex + 0.6, K.Ex + 2.6, kEase.suave);
-  const arc = (u) => [klerp(ox, jx, u), klerp(oy, jy, u) - Math.sin(Math.PI * u) * 300];
+  const arc = (u) => [klerp(ox, jx, u), klerp(oy, jy, u) - Math.sin(Math.PI * u) * 180];
   const seca = kprog(T, K.Ec + 0.6, K.Ec + 2.6);
   const raspa = kprog(T, K.Cu + 0.3, K.Cu + 1.5, kEase.suave);
   return (
@@ -398,15 +398,16 @@ function MatsutakeShot() {
       <Etq T={T} at={K.J + 0.9} until={K.Ec - 0.2} x={60} y={930} texto={TXT.primoChip} tam={28} color={KC.texto} />
       <Etq T={T} at={K.J + 0.6} until={K.Ec - 0.2} x={60} y={880} texto={TXT.primo} it tam={34} color={KC.texto} />
       <Etq T={T} at={K.J + 2.8} until={K.Ec - 0.2} x={1030} y={990} lado="izq" texto={TXT.arroz} tam={26} color={KC.texto} />
-      <NumeroGigante T={T} at={K.Ec} until={K.Ex - 0.3} valor={100} desde={12000} dur={1.2} sufijo=" t" etiqueta={TXT.escEtq} x={350} y={540} tam={150} color={KC.red} />
+      <NumeroGigante T={T} at={K.Ec} until={K.Ex - 0.3} valor={15} desde={12000} dur={1.2} sufijo=" t" etiqueta={TXT.escEtq} x={350} y={540} tam={150} color={KC.red} />
       <Chip T={T} at={K.Ec + 1.6} until={K.Ex - 0.3} texto={TXT.escChip1} x={480} y={760} tam={30} borde={KC.orange} />
       <Chip T={T} at={K.Ec + 2.6} until={K.Ex - 0.3} texto={TXT.escChip2} x={480} y={850} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.Ex + 0.2} until={K.P - 0.3} texto={TXT.expChip} x={540} y={420} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.Ex + 3.4} until={K.P - 0.3} texto={TXT.exp2} x={540} y={510} tam={30} borde={KC.cyan} />
       <Etq T={T} at={K.Ex + 0.5} until={K.P - 0.3} x={60} y={600} texto={TXT.mexico} tam={34} color={KC.texto} />
       <Etq T={T} at={K.Ex + 2.4} until={K.P - 0.3} x={1030} y={920} lado="izq" texto={TXT.japon} tam={34} color={KC.texto} />
       <Chip T={T} at={K.M + 0.1} until={K.S - 0.3} texto={TXT.dentro} x={540} y={420} tam={32} borde={KC.gold2} mono />
       <Etq T={T} at={K.M + 0.5} until={K.S - 0.3} x={60} y={600} texto={TXT.raiz} tam={30} color="#e7b57e" />
-      <Etq T={T} at={K.M + 1.6} until={K.S - 0.3} x={1030} y={980} lado="izq" texto={TXT.manto} tam={30} color={MT.hifa} />
+      <Etq T={T} at={K.M + 1.6} until={K.S - 0.3} x={1030} y={540} lado="izq" texto={TXT.manto} tam={30} color={MT.hifa} />
       <Etq T={T} at={K.M + 3.2} until={K.S - 0.3} x={60} y={1120} texto={'● ' + TXT.agua} tam={30} color={MT.aguaC} />
       <Etq T={T} at={K.M + 3.8} until={K.S - 0.3} x={60} y={1180} texto={'◆ ' + TXT.azucar} tam={30} color={MT.azucarC} />
       <Chip T={T} at={K.S + 0.4} until={K.E - 0.3} texto={TXT.cultivo} x={340} y={430} tam={38} borde={KC.red} />
@@ -438,8 +439,8 @@ function MatsutakeShot() {
       <SubM T={T} idx={1} at={K.B + 0.1} until={K.Es - 0.1} texto="Hongo blanco, *de ocote o canela.*" />
       <SubM T={T} idx={2} at={K.Es + 0.1} until={K.J - 0.1} texto="Su nombre: *_Tricholoma mesoamericanum._*" />
       <SubM T={T} idx={3} at={K.J + 0.1} until={K.Ec - 0.1} texto="Japón, años 40: *12 000 toneladas* al año." />
-      <SubM T={T} idx={4} at={K.Ec + 0.1} until={K.Ex - 0.1} texto="En 2020, *menos de 100.*" />
-      <SubM T={T} idx={5} at={K.Ex + 0.1} until={K.P - 0.1} texto="Desde los ochenta, *rumbo a Japón.*" />
+      <SubM T={T} idx={4} at={K.Ec + 0.1} until={K.Ex - 0.1} texto="En 2025, *solo 15 toneladas.*" />
+      <SubM T={T} idx={5} at={K.Ex + 0.1} until={K.P - 0.1} texto="En 1985 empezaron *a llevárselo.*" />
       <SubM T={T} idx={6} at={K.P + 0.1} until={K.M - 0.1} texto="¿Por qué *no lo siembran?*" />
       <SubM T={T} idx={7} at={K.M + 0.1} until={K.S - 0.1} texto="Envuelve las *raíces vivas* del pino." />
       <SubM T={T} idx={8} at={K.S + 0.1} until={K.E - 0.1} texto="Sin árbol vivo, *no hay hongo.*" />

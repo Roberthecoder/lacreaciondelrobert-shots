@@ -29,7 +29,7 @@
 
 **Música:** cama grave y continua, cálida (barro, madera): bajo de cuerdas graves y un pad suave, sin golpe; armonía que avanza por secciones (germinar = abre; microscopio = más misteriosa; pregunta = suspensión; estudio = avanza; cierre = vuelve al acorde del inicio, más lleno). Efectos en el mismo cuadro: burbuja que revienta (0.3 s), crujido de granos que brotan, tijeritas de enzimas (clics), metate (raspado), hervor, «blup» de cada yema que se suelta, burbujeo que acelera y frena con las 4 fases, roce del lienzo, tapa de caja Petri, gota de yodo, papel del sobre, golpe suave al cerrar.
 
-Barras de escala: 1 cm (granos y brotes), 10 µm (almidón), 20 cm (olla al fuego), 5 µm (levaduras; *S. cerevisiae* mide de 2.5 a 8 por 4 a 15 µm según Herrera y Ulloa 1973), 10 cm (olla), 1 cm (espiga de *Bromus*). En el sobre y las tarjetas no hay objeto que medir.
+Barras de escala: 20 cm (ollas), 1 cm (granos y brotes), 10 µm esquemático (almidón), 5 µm (levaduras; *S. cerevisiae* mide de 2.5 a 8 por 4 a 15 µm según Herrera y Ulloa 1973), «caja de Petri: 9 cm», 5 cm (pasto y tubo), 1 m (trabajo en comunidad). En el sobre no hay objeto que medir.
 
 ## Robert en pantalla
 

@@ -310,8 +310,8 @@ function TesguinoShot() {
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 55%, rgba(0,0,0,0) 30%, rgba(8,10,20,.78) 75%)', opacity:kprog(T, K.Ge + 0.2, K.Ge + 0.8) }}></div>
         {fsvg(<>
           <rect x={150} y={880} width={780} height={250} rx={40} fill="rgba(240,161,74,.35)" stroke={KC.ink} strokeWidth={8} />
-          {Array.from({ length: 14 }, (_, i) => <line key={'h' + i} x1={150 + i * 56} y1={880} x2={150 + i * 56 + 120} y2={1130} stroke="#f0a14a" strokeWidth={5} opacity=".8" />)}
-          {Array.from({ length: 14 }, (_, i) => <line key={'v' + i} x1={270 + i * 56} y1={880} x2={150 + i * 56} y2={1130} stroke="#f0a14a" strokeWidth={5} opacity=".8" />)}
+          {Array.from({ length: 12 }, (_, i) => <line key={'h' + i} x1={150 + i * 56} y1={880} x2={150 + i * 56 + 120} y2={1130} stroke="#f0a14a" strokeWidth={5} opacity=".8" />)}
+          {Array.from({ length: 12 }, (_, i) => <line key={'v' + i} x1={270 + i * 56} y1={880} x2={150 + i * 56} y2={1130} stroke="#f0a14a" strokeWidth={5} opacity=".8" />)}
           {GR.map(([gx, gy, r], i) => <Grano key={i} x={gx} y={gy} s={1.05} rot={r} T={T} seed={i + 1} raiz={kclamp(germ * 1.6 - i * 0.03, 0, 1)} brote={kclamp(germ * 1.3 - 0.25 - i * 0.02, 0, 1)} />)}
           <g transform="translate(560 420)" opacity={kprog(T, K.Ge + 0.4, K.Ge + 0.9)}>
             <MapaMexico x={0} y={0} ancho={460} conCA={false}>
@@ -479,7 +479,7 @@ function TesguinoShot() {
 
       <Chip T={T} at={K.Ge + 0.5} until={K.M - 0.3} texto={TX.lugar} x={540} y={370} tam={30} borde={KC.mint} />
       <Rotulo T={T} at={K.Ge + 0.3} until={K.M - 0.3} x={150} y={850} texto={germ < 0.5 ? TX.dias[0] : TX.dias[1]} tam={40} color={KC.texto} />
-      <Etq T={T} at={K.Ge + 1.8} until={K.M - 0.3} x={300} y={850} texto={TX.brote} tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Ge + 1.8} until={K.M - 0.3} x={300} y={790} texto={TX.brote} tam={26} color={KC.texto} />
 
       <Chip T={T} at={K.M + 0.1} until={K.M + 2.1} texto={TX.porDentroGrano} x={540} y={470} tam={32} borde={KC.cyan} mono />
       <Rotulo T={T} at={K.M + 0.5} until={K.A - 0.3} x={90} y={700} texto={TX.almidon} tam={30} color={TG.almidon} />

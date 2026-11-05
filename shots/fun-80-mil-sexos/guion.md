@@ -4,7 +4,7 @@
 - **Formato:** N2 · EL NÚMERO (cifra gigante desde el cuadro 0, "de dónde sale el número", la regla y el porqué), con viaje
   N1 macro → micro → macro: tronco con abanicos → hifas que se encuentran (núcleos, fíbula) → el mismo tronco, ya cosechado, junto a un plato de mone.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Este hongo no tiene dos sexos: tiene más de veintitrés mil. Y en México se lo comen.»
-- **Duración:** voz 945 caracteres / 180 palabras (≈ 58.1 s con `estimar-escenas.mjs`) + cierre 3.5 s → **61.6 s** en la base.
+- **Duración:** voz 944 caracteres / 177 palabras (≈ 58.1 s con `estimar-escenas.mjs`) + cierre 3.5 s → **61.6 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
 - **Aclaración clave:** "sexo" aquí = **tipo de apareamiento** (no machos y hembras: todas las hifas son iguales por fuera). Se dice en voz (escena 3) y en pantalla.
 - **Tono:** asombro y orgullo por la cocina del trópico mexicano. No se habla de infecciones (casos rarísimos, solo en personas con defensas muy bajas; ver Fuentes 6, no entra en la voz).
@@ -13,18 +13,18 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Este hongo no tiene dos sexos: tiene más de veintitrés mil. Y en México se lo comen. | Fondo amarillo de lunares. Un tronco muerto con varios abanicos blancos; al cuadro 0.3 cae una gota de lluvia y uno se abre (acción antes del s 1). Símbolos ♀ ♂ tachados → contador que corre hasta **23,328** ("tipos de apareamiento posibles"). Un tenedor pica un abanico y aparece un plato al lado. |
+| 0 | Gancho | Este hongo no tiene dos sexos: tiene más de veintitrés mil. Y en México se lo comen. | Fondo amarillo de lunares. Un tronco muerto con varios abanicos blancos; al cuadro 0.3 cae una gota de lluvia y uno se abre (acción antes del s 1). Símbolos ♀ ♂ tachados → contador que corre hasta **23,328** con la etiqueta "tipos de apareamiento posibles (estimación de 1966)" (corrección de la verificación). Un tenedor pica un abanico y aparece un plato al lado. |
 | 1 | Hongo | Es *Schizophyllum commune*: un abanico blanco y peludo de troncos muertos. | Fondo menta. Zoom a un abanico: sombrerito en forma de abanico o concha, blanco-grisáceo, aterciopelado, **sin pie** (pegado de lado a la madera), 1–4 cm. Etiquetas "oreja de palo" y *Schizophyllum commune*. Barra de escala 1 cm. |
 | 2 | Laminas | Sus laminillas parecen partidas; seco, se encoge y espera la lluvia. | Vista de abajo: laminillas radiales que se ven partidas a lo largo por el filo. Time-lapse: sale el sol → el abanico se arruga y las laminillas se enrollan/cierran; cae lluvia → se reabren (chip "se encoge y espera la lluvia"). |
 | 3 | Sexo | Aquí, sexo es tipo de apareamiento; lo deciden dos zonas de su ADN: A y B. | Fondo oscuro (micro). Una espora germina en una hifa con un núcleo. Dentro del núcleo, un cromosoma con etiqueta **A** y otro con **B** (zonas en cromosomas distintos). Chip "sexo = tipo de apareamiento". |
 | 4 | Versiones | La A tiene unas doscientas ochenta y ocho versiones; la B, ochenta y una. | Dos ruedas de colores: rueda A con 288 gajos, rueda B con 81. Operación grande "288 × 81 = 23,328" (vuelve el número del gancho). Chip "estimación de Raper, 1966". |
 | 5 | Regla | Dos hifas solo hacen pareja fértil si difieren en la A y en la B. | Dos hifas (azul y naranja) se acercan. Casos: misma A → ✗; misma B → ✗; A distinta **y** B distinta → ✓, las puntas se fusionan. |
-| 6 | Fibula | Así cada célula lleva dos núcleos y un ganchito, la fíbula, los reparte. | La hifa fusionada: cada compartimento con 2 núcleos (azul + naranja). Animación de la **fíbula** (gancho lateral que se forma en el tabique): los núcleos se dividen y un núcleo hijo pasa por el ganchito a la célula nueva. Etiqueta "fíbula". Barra de escala 10 µm. |
+| 6 | Fibula | Así cada célula lleva dos núcleos y un ganchito, la fíbula, los reparte. | La hifa fusionada: cada compartimento con 2 núcleos (azul + naranja). Animación de la **fíbula**: en la punta el par se divide; crece un ganchito hacia atrás; un núcleo naranja hijo entra al gancho, aparece el tabique y ese núcleo pasa **hacia atrás, a la célula de detrás de la punta** (corrección de la verificación). Al final la punta y la célula de atrás quedan cada una con un azul y un naranja. Etiqueta "fíbula". Barra de escala 10 µm. |
 | 7 | Pregunta | ¿Y para qué tantos sexos? | **Re-gancho.** Fondo rosa: el número 23,328 con "?" gigante; Robert grande, pensativo. |
 | 8 | Extrano | Con un extraño, casi siempre hay pareja; con un hermano, una de cada cuatro. | Comparativa: hifa "desconocida" con medidor que llega a **hasta 98 %** compatibles; hifa "hermana" (de las esporas del mismo hongo) con medidor en **25–30 %** (1 de cada 4). Chip "así casi cualquier desconocido le sirve". |
 | 9 | Estudio | Entre dos mil y dos mil dos, un equipo mexicano recorrió veinticinco mercados de Oaxaca, Tabasco y Veracruz. | Fondo cian. Mapa esquemático del sureste de México con Oaxaca, Tabasco y Veracruz resaltados; aparecen 25 puestitos/pines. TarjetaEstudio "2000–2002 · Ruán-Soto, Garibay-Orijel y Cifuentes · UNAM / ECOSUR · 291 personas entrevistadas · Rev. Mex. Micología, 2004". |
 | 10 | Oreja | Le dicen oreja de palo y estaba en los seis mercados que vendían hongos. | De los 25 pines, 6 tienen hongos en venta (4 en Oaxaca, 2 en Tabasco): los 6 se encienden con un montoncito de abanicos blancos. Etiqueta "oreja de palo" y "oreja de palo mulato" (crece mucho sobre palo mulato, *Bursera simaruba*). Chip "6 de 6". |
-| 11 | Mone | En temporada hay quien la come más de una vez por semana, envuelta en hoja de plátano. | Fondo naranja. Puesto de mercado (Teapa, Tabasco): la oreja de palo se sofríe con cebollín, chile dulce y hoja de momo (hierba santa), se envuelve en **hoja de plátano** y va al comal: el **mone**. Calendario con 2 marcas en la misma semana (chip "más de una vez por semana, en temporada de lluvias"). |
+| 11 | Mone | Hay quien la come más de una vez por semana; en Tabasco, envuelta en hoja de plátano. | Fondo naranja. Calendario con 2 marcas en la misma semana ("más de una vez por semana" · "en temporada de lluvias"). Sobre el comal se extiende una **hoja de plátano**, caen las orejas de palo y el sofrito (cebollín, chile dulce, jitomate), la hoja se dobla y echa vapor: el **mone**. Etiqueta "en Tabasco (Teapa y Macuspana)" y chip "mone · Tabasco". (Corrección de la verificación: el «más de una vez por semana» es de Ojitlán y Teapa; el mone, solo de Macuspana y Teapa; por eso son dos ideas separadas.) |
 | 12 | Cierre | Ese abanico no tiene dos sexos: tiene miles… y también llega al plato. | **Regreso a la imagen del inicio:** el mismo tronco de lunares amarillos, ahora con algunos abanicos cosechados, y junto a él el mone abierto en su hoja de plátano. El contador 23,328 reaparece pequeño sobre el tronco. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando (robert=). |
 
@@ -45,7 +45,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y para qu�
 | 5 | 31.2 | 33.4 | 07_pensativo_puno | `presentador` (grande) | «¿Y para qué tantos sexos?» |
 | 6 | 34.0 | 37.6 | 11_sorprendido | `arriba-der` | «con un hermano, una de cada cuatro» |
 | 7 | 44.4 | 48.4 | 13_senalando_arriba | `arriba-der` | «estaba en los seis mercados» |
-| 8 | 49.0 | 53.6 | 05_sonriendo_dientes_uniformes | `arriba-der` | «más de una vez por semana… hoja de plátano» |
+| 8 | 48.9 | 53.6 | 05_sonriendo_dientes_uniformes | `arriba-der` | «más de una vez por semana… en Tabasco, hoja de plátano» |
 | 9 | 54.0 | 58.0 | 02_apuntando_camara | `arriba-der` | «también llega al plato» |
 | — | 58.1 | 61.6 | 13_senalando_arriba | CierreMarca | cierre |
 

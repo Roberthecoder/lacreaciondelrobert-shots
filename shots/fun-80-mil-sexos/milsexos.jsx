@@ -4,7 +4,7 @@
 
 const TXT = {
   numero: 23328,                                   // tipos de apareamiento posibles (estimación de Raper, 1966)
-  numEtq: ['tipos de apareamiento posibles', 'estimación de 1966'],
+  numEtq: ['tipos de apareamiento posibles', '(estimación de 1966)'],
   comen: 'y en México se come',
   comun: 'oreja de palo',
   cient: 'Schizophyllum commune',
@@ -65,21 +65,21 @@ function Abanico({ T = 0, x, y, s = 1, rot = 0, seco = 0, abre = 1, seed = 1 }) 
     {[0.75, 0.5].map((k, i) => <path key={i} d={`M ${-R * k * 0.92} ${-R * k * 0.3} Q 0 ${-R * k * 1.05} ${R * k * 0.92} ${-R * k * 0.3}`} stroke={MS.gris2} strokeWidth={1.8} fill="none" opacity=".6" />)}
     {Array.from({ length: 34 }, (_, i) => { const a = Math.PI * (-0.9 + 0.8 * g()), r = R * (0.25 + 0.7 * g()); const cx = Math.cos(a) * r, cy = Math.sin(a) * r * 0.82;
       return <line key={i} x1={cx} y1={cy} x2={cx + Math.cos(a) * 4} y2={cy + Math.sin(a) * 4} stroke={MS.gris2} strokeWidth={1.4} strokeLinecap="round" />; })}
-    {pts.filter((_, i) => i % 3 === 0).map((p, i) => <line key={'f' + i} x1={p[0]} y1={p[1]} x2={p[0] * 1.07} y2={p[1] * 1.07} stroke={KC.ink} strokeWidth={2} opacity=".55" />)}
+    {s < 2 && pts.filter((_, i) => i % 3 === 0).map((p, i) => <line key={'f' + i} x1={p[0]} y1={p[1]} x2={p[0] * 1.07} y2={p[1] * 1.07} stroke={KC.ink} strokeWidth={2} opacity=".55" />)}
   </g>;
 }
 // Vista de ABAJO: laminillas radiales que se ven partidas a lo largo. seco 0..1 cierra las mitades (se enrollan) y encoge el abanico.
 function Laminillas({ T = 0, x, y, R = 380, seco = 0 }) {
-  const n = 24, k = 1 - 0.14 * seco, gap = 7 * (1 - seco);
+  const n = 24, k = 1 - 0.3 * seco, gap = 7 * (1 - seco);
   const borde = []; for (let i = 0; i <= 60; i++) { const a = Math.PI * (-0.95 + 0.9 * i / 60), lob = 1 - (0.05 + 0.1 * seco) * Math.abs(Math.sin(i / 60 * Math.PI * 7)); borde.push([Math.cos(a) * R * k * lob, Math.sin(a) * R * k * lob]); }
   const d = 'M 0 10 ' + borde.map((p) => 'L ' + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ') + ' Z';
   return <g transform={`translate(${x} ${y})`}>
-    <path d={d} fill={mixHex('#efe8dc', '#bdb5a7', seco * 0.6)} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <path d={d} fill={mixHex('#efe8dc', '#a39a8a', seco)} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     {Array.from({ length: n }, (_, i) => { const a = Math.PI * (-0.92 + 0.84 * (i + 0.5) / n), r1 = R * k * 0.12, r2 = R * k * (0.9 - 0.04 * (i % 2));
       const nx = -Math.sin(a), ny = Math.cos(a), seg = (o) => `M ${(Math.cos(a) * r1 + nx * o).toFixed(1)} ${(Math.sin(a) * r1 + ny * o).toFixed(1)} L ${(Math.cos(a) * r2 + nx * o).toFixed(1)} ${(Math.sin(a) * r2 + ny * o).toFixed(1)}`;
       return <g key={i}>
-        <path d={seg(-gap)} stroke={MS.gris2} strokeWidth={5 + 4 * seco} strokeLinecap="round" />
-        <path d={seg(gap)} stroke={MS.gris2} strokeWidth={5 + 4 * seco} strokeLinecap="round" />
+        <path d={seg(-gap)} stroke={MS.gris2} strokeWidth={5 + 7 * seco} strokeLinecap="round" />
+        <path d={seg(gap)} stroke={MS.gris2} strokeWidth={5 + 7 * seco} strokeLinecap="round" />
         {/* el filo partido: una muesca clara en medio */}
         <path d={`M ${Math.cos(a) * r2 * 0.55} ${Math.sin(a) * r2 * 0.55} L ${Math.cos(a) * r2} ${Math.sin(a) * r2}`} stroke="#fffaf0" strokeWidth={Math.max(0.5, 3 * (1 - seco))} strokeLinecap="round" />
       </g>; })}
@@ -259,10 +259,10 @@ function MilSexosShot() {
       <Escena T={T} a={K.H} b={K.L} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={-40} y={600} width={200} height={720} rx={30} fill={MS.madera} stroke={KC.ink} strokeWidth={8} />
-          {[660, 760, 880, 1010, 1150, 1260].map((yy, i) => <path key={i} d={`M 20 ${yy} Q 80 ${yy + 20} 150 ${yy - 6}`} stroke={MS.madera2} strokeWidth={6} fill="none" />)}
-          <Abanico T={T} x={150} y={860} s={3.6} rot={90} seed={3} abre={kprog(T, K.H, K.H + 0.8)} />
-          <Abanico T={T} x={150} y={1230} s={1.0} rot={100} seed={8} abre={kprog(T, K.H + 0.4, K.H + 1.1)} />
+          <rect x={-40} y={560} width={300} height={800} rx={30} fill={MS.madera} stroke={KC.ink} strokeWidth={8} />
+          {[660, 760, 880, 1010, 1150, 1260].map((yy, i) => <path key={i} d={`M 20 ${yy} Q 120 ${yy + 20} 240 ${yy - 6}`} stroke={MS.madera2} strokeWidth={6} fill="none" />)}
+          <Abanico T={T} x={250} y={880} s={3.3} rot={90} seed={3} abre={kprog(T, K.H, K.H + 0.8)} />
+          <Abanico T={T} x={250} y={1230} s={1.0} rot={100} seed={8} abre={kprog(T, K.H + 0.4, K.H + 1.1)} />
         </>)}
       </Escena>
       {/* 3 · laminillas partidas: se secan con el sol, se reabren con la lluvia */}
@@ -270,7 +270,7 @@ function MilSexosShot() {
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           <Laminillas T={T} x={470} y={1120} R={370} seco={seco} />
-          <Sol x={560} y={560} T={T} p={kprog(T, K.L + 0.3, K.L + 0.7) * (1 - kprog(T, K.L + 2.2, K.L + 2.6))} />
+          <Sol x={560} y={610} T={T} p={kprog(T, K.L + 0.3, K.L + 0.7) * (1 - kprog(T, K.L + 2.2, K.L + 2.6))} />
           <Lluvia T={T} t0={K.L + 2.3} t1={K.L + 3.7} x0={80} x1={660} y0={420} y1={1100} />
         </>)}
       </Escena>
@@ -417,14 +417,14 @@ function MilSexosShot() {
       </Escena>
 
       {/* ---------- textos ---------- */}
-      <NumeroGigante T={T} at={K.G + 1.2} until={K.H - 0.3} valor={TXT.numero} dur={1.6} x={300} y={520} tam={150} color={KC.pink} />
-      <Etq T={T} at={K.G + 1.6} until={K.H - 0.3} x={40} y={640} texto={TXT.numEtq[0]} tam={30} color={KC.ink} />
-      <Etq T={T} at={K.G + 1.9} until={K.H - 0.3} x={40} y={685} texto={TXT.numEtq[1]} tam={26} color={KC.ink} />
-      <Chip T={T} at={K.G + 3.5} until={K.H - 0.3} texto={TXT.comen} x={300} y={770} tam={38} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.G + 1.2} until={K.H - 0.3} valor={TXT.numero} dur={1.6} x={300} y={480} tam={150} color={KC.pink} />
+      <Etq T={T} at={K.G + 1.6} until={K.H - 0.3} x={40} y={600} texto={TXT.numEtq[0]} tam={24} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.9} until={K.H - 0.3} x={40} y={640} texto={TXT.numEtq[1]} tam={24} color={KC.ink} />
+      <Chip T={T} at={K.G + 3.5} until={K.H - 0.3} texto={TXT.comen} x={290} y={725} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={430} texto={TXT.comun} tam={46} color={KC.ink} />
       <Etq T={T} at={K.H + 1.3} until={K.L - 0.3} x={60} y={495} texto={TXT.cient} it tam={42} color={KC.ink} />
-      <Chip T={T} at={K.H + 2.2} until={K.L - 0.3} texto={TXT.tam} x={800} y={430} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.H + 2.8} until={K.L - 0.3} x={190} y={560} texto={TXT.pegado} tam={26} color={KC.ink} />
+      <Chip T={T} at={K.H + 2.2} until={K.L - 0.3} texto={TXT.tam} x={790} y={860} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.H + 2.8} until={K.L - 0.3} x={560} y={960} texto={TXT.pegado} tam={24} color={KC.ink} />
       <Etq T={T} at={K.L + 0.2} until={K.S - 0.3} x={60} y={430} texto={TXT.laminas} tam={40} color={KC.ink} />
       <Chip T={T} at={K.L + 1.0} until={K.L + 2.4} texto={TXT.seco} x={300} y={690} tam={34} borde={KC.yellow} />
       <Chip T={T} at={K.L + 2.6} until={K.S - 0.3} texto={TXT.lluvia} x={330} y={690} tam={34} borde={KC.cyan} />
@@ -455,7 +455,7 @@ function MilSexosShot() {
       <Chip T={T} at={K.M + 3.6} until={K.C - 0.3} texto={`${TXT.mone} · ${TXT.moneEtq}`} x={800} y={800} tam={34} borde={KC.leaf} />
       <Etq T={T} at={K.M + 0.4} until={K.C - 0.3} x={70} y={460} texto={TXT.moneLugar} tam={28} color={KC.ink} />
       <Chip T={T} at={K.C + 0.8} until={K.Ou} texto={TXT.cierreChip} x={330} y={500} tam={40} borde={KC.pink} />
-      <NumeroGigante T={T} at={K.C + 1.6} until={K.Ou} valor={TXT.numero} dur={1.2} x={330} y={660} tam={100} color={KC.pink} />
+      <NumeroGigante T={T} at={K.C + 1.6} until={K.Ou} valor={TXT.numero} desde={TXT.numero} dur={0.01} x={330} y={660} tam={100} color={KC.pink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="10 cm" largo={170} />
@@ -480,7 +480,7 @@ function MilSexosShot() {
       <SubIt T={T} idx={8} at={K.X + 0.1} until={K.E - 0.1} texto="Con un extraño, *casi siempre hay pareja.*" />
       <SubIt T={T} idx={9} at={K.E + 0.1} until={K.O - 0.1} texto="*25 mercados* de Oaxaca, Tabasco y Veracruz." />
       <SubIt T={T} idx={10} at={K.O + 0.1} until={K.M - 0.1} texto="*Oreja de palo:* en los 6 con hongos." />
-      <SubIt T={T} idx={11} at={K.M + 0.1} until={K.C - 0.1} texto="Más de una vez por semana, *en mone.*" />
+      <SubIt T={T} idx={11} at={K.M + 0.1} until={K.C - 0.1} texto="Más de una vez por semana. *En Tabasco,* en hoja de plátano." />
       <SubIt T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="No tiene dos sexos: *tiene miles.*" />
 
       <Robert T={T} apariciones={[

@@ -5,24 +5,24 @@
 // ---------- TEXTOS EN PANTALLA (todos aquí, para cambiarlos fácil tras la verificación) ----------
 const TX = {
   huevo: '¿un huevo?', nacer: 'un hongo a punto de nacer',
-  volcan: 'La Malinche · Tlaxcala', cima: 'cima: 4,460 m', altura: '≈ 3,000 m', bosque: 'bosque de pinos y ailes', lluvias: 'temporada de lluvias · julio a septiembre',
+  volcan: 'La Malinche · Tlaxcala', cima: 'cima: 4,460 m', altura: '≈ 3,000 m', bosque: 'bosque de pinos y ailes', lluvias: 'se recolecta de julio a septiembre, ya entradas las lluvias',
   porDentro: 'POR DENTRO · EL «HUEVO»', sombrero: 'sombrero', laminillas: 'laminillas', pie: 'pie', velo: 'velo universal (el «cascarón»)',
   volva: 'volva: bolsa blanca',
   cSombrero: 'sombrero rojo anaranjado', cLam: 'laminillas amarillas', cAnillo: 'anillo amarillo', cPie: 'pie amarillo', cVolva: 'volva blanca en saco',
   especie: 'Amanita basii', complejo: 'complejo Amanita caesarea', siete: 'en México se usan al menos 7 especies de este grupo',
   mortales: 'amanitas blancas mortales',
   est: { anio: '2002', quien: '3 pueblos de La Malinche', revista: 'Journal of Ethnobiology, 2002 · campo 1988–1992' },
-  pueblos: [['Ixtenco', 'otomí'], ['Javier Mina', 'nahua'], ['Los Pilares', 'mestizo']],
+  pueblos: ['Ixtenco (otomí)', 'Javier Mina (nahua)', 'Los Pilares (mestizo)'],
   entrevistas: 'entrevistas', cuestionarios: '+ 495 cuestionarios',
-  nombresNum: ' nombres', nombresEtq: 'nombres comunes', especies40: 'para 40 especies comestibles',
-  nombresAmarillo: ['hongo amarillo', 'ahuevadito', 'hongo flor', 'jícara buena', 'k\'axjo (otomí: hongo amarillo)'],
+  nombresNum: ' nombres', nombresEtq: 'nombres comunes', especies40: 'para ~40 especies que se comen (hongos y mixomicetos)',
+  nombresAmarillo: ['hongo amarillo', 'ahuevadito', 'hongo flor', 'jícara buena'], otomi: 'otomí: K\'axjo (K\'axt\'i = amarillo + jo = hongo)',
   conocia: 'más del 95 % lo conocía',
-  tianguis: 'tianguis de Acaxochitlán, Hidalgo · 2009', yemas: '«yemas» o «yemitas»',
-  rasgos: ['✓ sin «ajonjolí»', '✓ con «pañuelito»', '✓ con «botita»'], rasgosQue: ['(sin verrugas)', '(anillo)', '(volva)'],
-  ojo: 'OJO: ningún rasgo basta para identificar un hongo',
-  yuyo: 'yuyo (comestible)', yuyoSp: 'Amanita hayalyuy', veneno: '«yuyo de veneno»', tseltal: 'tseltal: sakil k\'antsu = «k\'antsu blanco»',
-  avisa: 'el nombre ya avisa: es blanca', chiapas: 'Chiapas',
-  intox1: '60 casos de intoxicación por hongos', intox2: '22 muertes', intox3: 'Chiapas · jun 2005 – jul 2007 · Secretaría de Salud',
+  tianguis: 'tianguis de Acaxochitlán, Hidalgo · 2009', yemas: 'le dicen «yemas» o «yemitas»', miran: 'lo que miran las hongueras:',
+  rasgos: ['sin «ajonjolí»', 'con «pañuelito»', 'con «botita»'], rasgosQue: ['(sin verrugas)', '(anillo)', '(volva)'],
+  ojo: 'la mortal también los tiene: un rasgo no basta',
+  yuyo: 'yuyo (comestible)', yuyoSp: 'Amanita hayalyuy', veneno: '«yuyo de veneno»', tseltal: 'en tseltal: «k\'antsu blanco»: el nombre avisa…',
+  avisa: '…pero no todas las mortales son blancas', chiapas: 'Los Altos de Chiapas', algunos: '(así le dicen en algunas comunidades)',
+  sinRegla: 'no hay regla ni prueba general', sinFuente: 'para separar un hongo venenoso de uno comestible', sinFolk: 'ni trucos caseros ni «pruebas» de la tradición',
   nofoto: 'foto', noregla: 'regla', noapp: 'app', experto: '✓ solo con un experto', medico: '¿Te sientes mal? Al médico, y lleva el hongo',
   ningun: 'Ningún rasgo, foto ni app basta',
   cierre: 'solo con un experto',
@@ -181,13 +181,6 @@ function MiniHongo({ x, y, s = 1, color = '#b98a52', borde = KC.ink }) {
     <path d="M -24 -22 Q -24 -46 0 -48 Q 24 -46 24 -22 Z" fill={color} stroke={borde} strokeWidth={3} />
   </g>;
 }
-// Figurita de persona (para los 60 casos).
-function Persona({ x, y, s = 1, color = KC.cyan }) {
-  return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <circle cx={0} cy={-46} r={12} fill={color} stroke={KC.ink} strokeWidth={3} />
-    <path d="M -16 0 L -14 -24 Q 0 -34 14 -24 L 16 0 Z" fill={color} stroke={KC.ink} strokeWidth={3} />
-  </g>;
-}
 // Íconos de la regla de seguridad.
 function IcoFoto({ x, y }) {
   return <g transform={`translate(${x} ${y}) rotate(-6)`}>
@@ -222,14 +215,14 @@ function Tache({ T, at, x, y, r = 110 }) {
 
 // ---------- CONSTANTES DE ESCENA ----------
 const HV = { x: 540, y: 1150, s: 2.4 };                     // el huevo del gancho y del cierre (misma imagen)
-const P60 = Array.from({ length: 60 }, (_, i) => [130 + (i % 10) * 92, 760 + Math.floor(i / 10) * 72]);
-const M22 = [2, 5, 8, 11, 13, 17, 20, 24, 27, 29, 33, 36, 38, 41, 44, 47, 49, 52, 55, 57, 58, 59]; // 22 (posición ilustrativa)
-const G40 = Array.from({ length: 40 }, (_, i) => [600 + (i % 8) * 58, 800 + Math.floor(i / 8) * 64]);
+const G40 = Array.from({ length: 40 }, (_, i) => [655 + (i % 8) * 50, 800 + Math.floor(i / 8) * 62]);
+const RASGOS_Y = [[800, 330, 750], [910, 280, 800], [1060, 290, 790]];   // y del rasgo · x en el comestible · x en la mortal (sombrero, anillo, volva)
+const PUEBLOS = [[740, 1060], [620, 900], [400, 1000]];   // posiciones esquemáticas
 
 function HongoYemaShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, V: CUES.Volcan, D: CUES.Dentro, R: CUES.Revienta, S: CUES.Sale, P: CUES.Pregunta, E: CUES.Estudio, N: CUES.Nombres,
-    Ra: CUES.Rasgos, Y: CUES.Yuyo, I: CUES.Intox, Re: CUES.Regla, C: CUES.Cierre, Ou: CUES.Outro };
+    Ra: CUES.Rasgos, Y: CUES.Yuyo, I: CUES.Sin, Re: CUES.Regla, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const sale = kprog(T, K.R + 0.4, K.S + 2.6);              // del huevo al hongo abierto (Revienta → Sale)
   const alt = (a) => 1250 - (a - 2000) / 2460 * 690;        // altitud → y en el volcán
@@ -274,10 +267,10 @@ function HongoYemaShot() {
           <VolcanLejos x={560} y={1150} s={1.1} color="#9fe6cf" />
           <SueloBosque y0={1150} seed={7} />
           {/* lluvia */}
-          {T < K.S + 1 && Array.from({ length: 26 }, (_, i) => { const u = ((T * 1.4 + i * 0.137) % 1); return <line key={i} x1={(i * 97) % 1080} y1={320 + u * 820} x2={(i * 97) % 1080 - 8} y2={350 + u * 820} stroke="#2346ff" strokeWidth={5} strokeLinecap="round" opacity={0.55 * (1 - kprog(T, K.S, K.S + 1))} />; })}
+          {T < K.S + 1 && Array.from({ length: 26 }, (_, i) => { const u = ((T * 1.4 + i * 0.137) % 1); return <line key={i} x1={(i * 97) % 1080} y1={320 + u * 820} x2={(i * 97) % 1080 - 8} y2={350 + u * 820} stroke="#2346ff" strokeWidth={5} strokeLinecap="round" opacity={0.35 * (1 - kprog(T, K.S, K.S + 1))} />; })}
           {sale < 0.12
-            ? <Huevo T={T} x={540} y={1150} s={klerp(2.4, 1.5, kprog(T, K.R, K.R + 0.6, kEase.suave))} abre={kprog(T, K.R + 0.5, K.R + 1.6)} />
-            : <HongoYema T={T} x={540} y={1150} s={1.5} crece={klerp(0.12, 1, kprog(sale, 0.12, 1))} mece={1} />}
+            ? <Huevo T={T} x={klerp(540, 380, kprog(T, K.R, K.R + 0.6, kEase.suave))} y={1150} s={klerp(2.4, 1.4, kprog(T, K.R, K.R + 0.6, kEase.suave))} abre={kprog(T, K.R + 0.5, K.R + 1.6)} />
+            : <HongoYema T={T} x={380} y={1150} s={1.4} crece={klerp(0.12, 1, kprog(sale, 0.12, 1))} mece={1} />}
         </>, 15)}
       </Escena>
       {/* 6 · re-gancho: la prima mortal también nace de un huevo */}
@@ -298,7 +291,7 @@ function HongoYemaShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <path d="M 120 1170 Q 300 1110 420 940 Q 500 830 540 820 Q 580 830 660 940 Q 780 1110 960 1170 Z" fill={HY.roca} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
-          {[[790, 1060], [690, 960], [330, 1050]].map(([px, py], i) => { const k = kprog(T, K.E + 1.4 + i * 0.5, K.E + 1.8 + i * 0.5, kEase.rebote); return <g key={i}>
+          {PUEBLOS.map(([px, py], i) => { const k = kprog(T, K.E + 1.4 + i * 0.5, K.E + 1.8 + i * 0.5, kEase.rebote); return <g key={i}>
             <circle cx={px} cy={py} r={20 * k} fill={[KC.pink, KC.cyan, KC.orange][i]} stroke={KC.ink} strokeWidth={5} />
           </g>; })}
         </>)}
@@ -312,40 +305,45 @@ function HongoYemaShot() {
           {T > K.N + 1.8 && <line x1={G40[13][0] - 34} y1={G40[13][1] - 22} x2={470} y2={G40[13][1] - 22} stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" opacity={kprog(T, K.N + 1.8, K.N + 2.2)} />}
         </>)}
       </Escena>
-      {/* 9 · tianguis de Hidalgo: lo que revisan las hongueras */}
+      {/* 9 · tianguis de Hidalgo: las hongueras miran todo el hongo; la mortal también trae pañuelito y botita */}
       <Escena T={T} a={K.Ra} b={K.Y} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
           {Array.from({ length: 12 }, (_, i) => <path key={i} d={`M ${i * 90} 300 L ${i * 90 + 90} 300 L ${i * 90 + 90} 370 Q ${i * 90 + 45} 400 ${i * 90} 370 Z`} fill={i % 2 ? KC.pink : KC.white} stroke={KC.ink} strokeWidth={4} />)}
-          <rect x={-20} y={1100} width={1120} height={90} fill="#a8743c" stroke={KC.ink} strokeWidth={7} />
-          {[[560, 1100], [720, 1100], [880, 1100], [1010, 1100]].map(([mx, my], j) => <g key={j} opacity={kprog(T, K.Ra + 0.2 + j * 0.15, K.Ra + 0.5 + j * 0.15)}>
-            {[[-34, 0], [0, -6], [34, 0], [-16, -30], [18, -32]].map(([dx, dy], i) => <g key={i} transform={`translate(${mx + dx} ${my + dy})`}><path d="M -26 0 Q -26 -24 0 -26 Q 26 -24 26 0 Z" fill={i % 2 ? HY.naranja : HY.rojo} stroke={KC.ink} strokeWidth={4} /><path d="M -22 0 Q 0 6 22 0" stroke={HY.amarillo} strokeWidth={6} fill="none" /></g>)}
-          </g>)}
-          <HongoYema T={T} x={250} y={1110} s={1.0} mece={0.5} />
-          {/* flechas de los tres rasgos */}
-          {[[330, 760, 470, 760], [300, 880, 470, 900], [320, 1050, 470, 1040]].map(([x1, y1, x2, y2], i) => { const k = kprog(T, K.Ra + 0.9 + i * 0.9, K.Ra + 1.3 + i * 0.9); return k > 0 ?
-            <line key={i} x1={x2} y1={y2} x2={klerp(x2, x1, k)} y2={klerp(y2, y1, k)} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" /> : null; })}
+          <rect x={-20} y={1110} width={1120} height={80} fill="#a8743c" stroke={KC.ink} strokeWidth={7} />
+          <HongoYema T={T} x={250} y={1115} s={0.85} crece={kprog(T, K.Ra + 0.3, K.Ra + 1.0)} mece={0.5} />
+          <HongoYema T={T} x={830} y={1115} s={0.85} crece={kprog(T, K.Ra + 2.6, K.Ra + 3.3)} blanca mece={0.5} />
+          {RASGOS_Y.map((yy, i) => { const k1 = kprog(T, K.Ra + 1.0 + i * 0.4, K.Ra + 1.3 + i * 0.4), k2 = kprog(T, K.Ra + 3.3 + i * 0.3, K.Ra + 3.6 + i * 0.3);
+            return <g key={i}>
+              {k1 > 0 && <><line x1={430} y1={yy[0]} x2={klerp(430, yy[1], k1)} y2={yy[0]} stroke={KC.ink} strokeWidth={5} strokeDasharray="10 7" /><circle cx={yy[1]} cy={yy[0]} r={14 * k1} fill="none" stroke={KC.ink} strokeWidth={5} /></>}
+              {k2 > 0 && <><line x1={650} y1={yy[0]} x2={klerp(650, yy[2], k2)} y2={yy[0]} stroke={KC.red} strokeWidth={5} strokeDasharray="10 7" /><circle cx={yy[2]} cy={yy[0]} r={14 * k2} fill="none" stroke={KC.red} strokeWidth={5} /></>}
+              {k1 > 0 && <text x={540} y={yy[0] + 10} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink} opacity={k1}>{TX.rasgos[i]}</text>}
+              {k1 > 0 && <text x={540} y={yy[0] + 40} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill={KC.ink} opacity={k1 * 0.8}>{TX.rasgosQue[i]}</text>}
+            </g>; })}
         </>)}
       </Escena>
       {/* 10 · Chiapas: el «yuyo de veneno» */}
       <Escena T={T} a={K.Y} b={K.I} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <MapaMexico x={30} y={330} ancho={360} conCA={false}>
+          <MapaMexico x={30} y={320} ancho={300} conCA={false}>
             <circle cx={mxProy(-92.6, 16.7)[0]} cy={mxProy(-92.6, 16.7)[1]} r={26 * kprog(T, K.Y + 0.2, K.Y + 0.6, kEase.rebote)} fill={KC.red} stroke={KC.ink} strokeWidth={8} />
           </MapaMexico>
           <SueloBosque y0={1160} seed={11} />
-          <HongoYema T={T} x={300} y={1170} s={0.9} crece={kprog(T, K.Y + 0.2, K.Y + 1.2)} mece={1} />
-          <HongoYema T={T} x={770} y={1170} s={0.9} crece={kprog(T, K.Y + 0.8, K.Y + 1.8)} blanca mece={1} />
+          <HongoYema T={T} x={280} y={1170} s={0.85} crece={kprog(T, K.Y + 0.2, K.Y + 1.2)} mece={1} />
+          <HongoYema T={T} x={790} y={1170} s={0.85} crece={kprog(T, K.Y + 0.8, K.Y + 1.8)} blanca mece={1} />
         </>, 15)}
       </Escena>
-      {/* 11 · intoxicaciones: 60 casos, 22 muertes (fondo oscuro, serio) */}
-      <Escena T={T} a={K.I} b={K.Re} zoom={0.03}>
-        <FondoMarca patron="oscuro" />
+      {/* 11 · no hay regla ni prueba general: dos «huevos» iguales */}
+      <Escena T={T} a={K.I} b={K.Re} zoom={0.04}>
+        <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          {P60.map(([px, py], i) => { const k = kprog(T, K.I + 0.4 + i * 0.03, K.I + 0.6 + i * 0.03); const j = M22.indexOf(i), g = j >= 0 ? kprog(T, K.I + 2.6 + j * 0.08, K.I + 2.9 + j * 0.08) : 0;
-            return k > 0 ? <g key={i} opacity={k}><Persona x={px} y={py + 30} s={1} color={mixHex(KC.cyan, '#4a4f5a', g)} /></g> : null; })}
-        </>)}
+          <SueloBosque y0={1120} seed={13} />
+          <Huevo T={T} x={310} y={1120} s={1.7} tiembla={0.25} />
+          <Huevo T={T} x={770} y={1120} s={1.7} tiembla={0.25} />
+          <text x={540} y={960} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.I + 0.6, K.I + 1.0)}>=</text>
+          <g opacity={kprog(T, K.I + 1.0, K.I + 1.4)}><Interrogacion T={T} x={310} y={810} tam={150} /><Interrogacion T={T} x={770} y={810} tam={150} /></g>
+        </>, 15)}
       </Escena>
       {/* 12 · la regla: ni foto, ni regla, ni app */}
       <Escena T={T} a={K.Re} b={K.C} zoom={0.04}>
@@ -362,7 +360,7 @@ function HongoYemaShot() {
           <HongoYema T={T} x={930} y={1140} s={0.6} blanca crece={kprog(T, K.C + 0.6, K.C + 1.6)} />
           <Canasta T={T} x={200} y={1170} s={1.0} llena={kprog(T, K.C + 0.2, K.C + 1.4)} />
           <Huevo T={T} x={HV.x} y={HV.y} s={HV.s} grieta={1} />
-          <g opacity={kprog(T, K.C + 1.2, K.C + 1.6)}><Interrogacion T={T} x={540} y={830} tam={200} /></g>
+          <g opacity={kprog(T, K.C + 1.2, K.C + 1.6)}><Interrogacion T={T} x={540} y={740} tam={170} /></g>
         </>, 15)}
       </Escena>
 
@@ -370,44 +368,47 @@ function HongoYemaShot() {
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.V - 0.4} texto={TX.huevo} x={330} y={520} tam={50} />
       <Chip T={T} at={K.G + 1.6} until={K.V - 0.4} texto={TX.nacer} x={360} y={640} tam={38} borde={KC.gold} />
       <Etq T={T} at={K.V + 0.3} until={K.D - 0.4} x={60} y={480} texto={TX.volcan} tam={40} color={KC.ink} />
-      <Etq T={T} at={K.V + 0.6} until={K.D - 0.4} x={560} y={590} texto={TX.cima} tam={28} color={KC.ink} />
+      <Etq T={T} at={K.V + 0.6} until={K.D - 0.4} x={500} y={575} lado="izq" texto={TX.cima} tam={28} color={KC.ink} />
       <Etq T={T} at={K.V + 2.0} until={K.D - 0.4} x={250} y={alt(3000)} texto={TX.altura} tam={34} color={KC.ink} />
-      <Etq T={T} at={K.V + 1.2} until={K.D - 0.4} x={60} y={1200} texto={TX.bosque} tam={30} color={KC.texto} />
-      <Chip T={T} at={K.V + 2.6} until={K.D - 0.4} texto={TX.lluvias} x={540} y={350} tam={30} borde={KC.blue} />
+      <Etq T={T} at={K.V + 1.2} until={K.D - 0.4} x={60} y={1120} texto={TX.bosque} tam={30} color={KC.texto} />
+      <Chip T={T} at={K.V + 2.6} until={K.D - 0.4} texto={TX.lluvias} x={540} y={1180} tam={26} borde={KC.blue} />
       <Etq T={T} at={K.D + 1.0} until={K.R - 0.4} x={390} y={600} lado="izq" texto={TX.sombrero} tam={30} color={HY.ambar} />
       <Etq T={T} at={K.D + 1.5} until={K.R - 0.4} x={300} y={790} lado="izq" texto={TX.laminillas} tam={30} color={HY.amarillo} />
       <Etq T={T} at={K.D + 2.0} until={K.R - 0.4} x={760} y={900} texto={TX.pie} tam={30} color={HY.amarillo2} />
       <Etq T={T} at={K.D + 2.5} until={K.R - 0.4} x={170} y={1180} texto={TX.velo} tam={28} color={KC.texto} />
-      <Etq T={T} at={K.R + 1.2} until={K.S - 0.2} x={600} y={1110} texto={TX.volva} tam={30} color={KC.ink} />
-      <Etq T={T} at={K.S + 1.6} until={K.P - 0.4} x={270} y={500} lado="izq" texto={TX.cSombrero} tam={26} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.0} until={K.P - 0.4} x={300} y={730} lado="izq" texto={TX.cLam} tam={26} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.3} until={K.P - 0.4} x={600} y={790} texto={TX.cAnillo} tam={26} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.6} until={K.P - 0.4} x={610} y={950} texto={TX.cPie} tam={26} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.9} until={K.P - 0.4} x={640} y={1090} texto={TX.cVolva} tam={26} color={KC.ink} />
+      <Etq T={T} at={K.R + 1.2} until={K.S - 0.2} x={460} y={1110} texto={TX.volva} tam={30} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.6} until={K.P - 0.4} x={625} y={650} texto={TX.cSombrero} tam={24} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.0} until={K.P - 0.4} x={600} y={745} texto={TX.cLam} tam={24} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.3} until={K.P - 0.4} x={445} y={835} texto={TX.cAnillo} tam={24} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.6} until={K.P - 0.4} x={420} y={960} texto={TX.cPie} tam={24} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.9} until={K.P - 0.4} x={470} y={1085} texto={TX.cVolva} tam={24} color={KC.ink} />
       <Etq T={T} at={K.S + 0.4} until={K.P - 0.4} x={60} y={380} texto={TX.especie} it tam={40} color={KC.ink} />
       <Etq T={T} at={K.S + 0.8} until={K.P - 0.4} x={60} y={430} texto={TX.complejo} it tam={26} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.2} until={K.P - 0.4} x={60} y={475} texto={TX.siete} tam={20} color={KC.ink} />
       <Etq T={T} at={K.P + 2.4} until={K.E - 0.4} x={560} y={1220} texto={TX.mortales} tam={30} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.N - 0.4} anio={TX.est.anio} quien={TX.est.quien} revista={TX.est.revista} x={540} y={560} />
-      {TX.pueblos.map(([n, g], i) => <Etq key={i} T={T} at={K.E + 1.5 + i * 0.5} until={K.N - 0.4} x={[810, 710, 310][i]} y={[1060, 960, 1050][i]} lado={i === 2 ? 'izq' : 'der'} texto={`${n} · ${g}`} tam={26} color={KC.ink} />)}
-      <NumeroGigante T={T} at={K.E + 2.8} until={K.N - 0.4} valor={191} dur={1.2} etiqueta={TX.entrevistas} x={300} y={820} tam={110} color={KC.pink} />
-      <Chip T={T} at={K.E + 3.6} until={K.N - 0.4} texto={TX.cuestionarios} x={790} y={800} tam={30} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.N + 0.1} until={K.Ra - 0.4} valor={121} dur={1.2} sufijo={TX.nombresNum} etiqueta={TX.nombresEtq} x={330} y={520} tam={110} color={KC.pink} />
-      <Chip T={T} at={K.N + 0.7} until={K.Ra - 0.4} texto={TX.especies40} x={330} y={690} tam={28} borde={KC.ink} />
-      {TX.nombresAmarillo.map((n, i) => <Etq key={i} T={T} at={K.N + 1.9 + i * 0.3} until={K.Ra - 0.4} x={60} y={790 + i * 58} texto={n} tam={i === 4 ? 24 : 28} color={KC.ink} />)}
-      <Chip T={T} at={K.N + 2.6} until={K.Ra - 0.4} texto={TX.conocia} x={780} y={1170} tam={26} borde={HY.naranja} />
-      <Chip T={T} at={K.Ra + 0.1} until={K.Ra + 3.1} texto={TX.tianguis} x={640} y={470} tam={26} borde={KC.ink} />
-      <Etq T={T} at={K.Ra + 0.4} until={K.Y - 0.4} x={560} y={1020} texto={TX.yemas} tam={28} color={KC.ink} />
-      {TX.rasgos.map((r, i) => <Chip key={i} T={T} at={K.Ra + 0.9 + i * 0.9} until={K.Y - 0.4} texto={`${r} ${TX.rasgosQue[i]}`} x={740} y={[620, 760, 900][i]} tam={28} borde={KC.mint} />)}
-      <Chip T={T} at={K.Ra + 3.3} until={K.Y - 0.4} texto={TX.ojo} x={600} y={470} tam={26} borde={KC.red} />
-      <Etq T={T} at={K.Y + 0.6} until={K.I - 0.4} x={150} y={660} texto={TX.yuyo} tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Y + 0.9} until={K.I - 0.4} x={150} y={705} texto={TX.yuyoSp} it tam={24} color={KC.ink} />
-      <Etq T={T} at={K.Y + 1.6} until={K.I - 0.4} x={560} y={700} texto={TX.veneno} tam={30} color={KC.red} />
-      <Etq T={T} at={K.Y + 2.1} until={K.I - 0.4} x={60} y={1215} texto={TX.tseltal} tam={24} color={KC.ink} />
-      <Chip T={T} at={K.Y + 2.7} until={K.I - 0.4} texto={TX.avisa} x={540} y={600} tam={28} borde={KC.red} />
-      <Etq T={T} at={K.Y + 0.4} until={K.I - 0.4} x={300} y={560} texto={TX.chiapas} tam={26} color={KC.ink} />
-      <Chip T={T} at={K.I + 0.2} until={K.Re - 0.4} texto={TX.intox1} x={360} y={470} tam={28} borde={KC.cyan} />
-      <Chip T={T} at={K.I + 2.6} until={K.Re - 0.4} texto={TX.intox2} x={300} y={570} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.I + 0.8} until={K.Re - 0.4} x={60} y={680} texto={TX.intox3} tam={24} color={KC.texto} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.N - 0.4} anio={TX.est.anio} quien={TX.est.quien} revista={TX.est.revista} x={540} y={540} />
+      {TX.pueblos.map((n, i) => <Etq key={i} T={T} at={K.E + 1.5 + i * 0.5} until={K.N - 0.4} x={PUEBLOS[i][0] + (i === 2 ? -24 : 24)} y={PUEBLOS[i][1]} lado={i === 2 ? 'izq' : 'der'} texto={n} tam={22} color={KC.ink} />)}
+      <NumeroGigante T={T} at={K.E + 2.6} until={K.N - 0.4} valor={191} dur={1.2} etiqueta={TX.entrevistas} x={250} y={790} tam={100} color={KC.pink} />
+      <Chip T={T} at={K.E + 3.4} until={K.N - 0.4} texto={TX.cuestionarios} x={790} y={760} tam={28} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.N + 0.1} until={K.Ra - 0.4} valor={121} dur={1.2} sufijo={TX.nombresNum} etiqueta={TX.nombresEtq} x={330} y={500} tam={110} color={KC.pink} />
+      <Chip T={T} at={K.N + 0.7} until={K.Ra - 0.4} texto={TX.especies40} x={430} y={668} tam={22} borde={KC.ink} />
+      <Chip T={T} at={K.N + 2.6} until={K.Ra - 0.4} texto={TX.conocia} x={300} y={740} tam={24} borde={HY.naranja} />
+      {TX.nombresAmarillo.map((n, i) => <Etq key={i} T={T} at={K.N + 1.9 + i * 0.3} until={K.Ra - 0.4} x={60} y={810 + i * 58} texto={n} tam={28} color={KC.ink} />)}
+      <Etq T={T} at={K.N + 3.1} until={K.Ra - 0.4} x={60} y={1110} texto={TX.otomi} tam={22} color={KC.ink} />
+      <Chip T={T} at={K.Ra + 0.1} until={K.Y - 0.4} texto={TX.tianguis} x={640} y={460} tam={24} borde={KC.ink} />
+      <Etq T={T} at={K.Ra + 0.4} until={K.Y - 0.4} x={360} y={530} texto={TX.yemas} tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Ra + 0.9} until={K.Y - 0.4} x={360} y={580} texto={TX.miran} tam={24} color={KC.ink} />
+      <Chip T={T} at={K.Ra + 3.9} until={K.Y - 0.4} texto={TX.ojo} x={560} y={670} tam={26} borde={KC.red} />
+      <Etq T={T} at={K.Y + 0.4} until={K.I - 0.4} x={230} y={455} texto={TX.chiapas} tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Y + 0.6} until={K.I - 0.4} x={110} y={745} texto={TX.yuyo} tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Y + 0.9} until={K.I - 0.4} x={110} y={785} texto={TX.yuyoSp} it tam={22} color={KC.ink} />
+      <Etq T={T} at={K.Y + 1.6} until={K.I - 0.4} x={600} y={745} texto={TX.veneno} tam={28} color={KC.red} />
+      <Etq T={T} at={K.Y + 1.8} until={K.I - 0.4} x={600} y={785} texto={TX.algunos} tam={18} color={KC.ink} />
+      <Chip T={T} at={K.Y + 2.3} until={K.Y + 3.4} texto={TX.tseltal} x={480} y={675} tam={24} borde={KC.ink} />
+      <Chip T={T} at={K.Y + 3.5} until={K.I - 0.4} texto={TX.avisa} x={480} y={675} tam={24} borde={KC.red} />
+      <Chip T={T} at={K.I + 0.2} until={K.Re - 0.4} texto={TX.sinRegla} x={380} y={480} tam={34} borde={KC.red} />
+      <Etq T={T} at={K.I + 0.8} until={K.Re - 0.4} x={60} y={560} texto={TX.sinFuente} tam={22} color={KC.ink} />
+      <Etq T={T} at={K.I + 2.2} until={K.Re - 0.4} x={60} y={600} texto={TX.sinFolk} tam={22} color={KC.ink} />
       <Chip T={T} at={K.Re + 0.2} until={K.C - 0.4} texto={TX.ningun} x={360} y={480} tam={30} borde={KC.red} />
       <Chip T={T} at={K.Re + 2.4} until={K.C - 0.4} texto={TX.experto} x={540} y={990} tam={40} borde={KC.leaf} />
       <Chip T={T} at={K.Re + 3.0} until={K.C - 0.4} texto={TX.medico} x={540} y={1090} tam={28} borde={KC.ink} />
@@ -419,25 +420,26 @@ function HongoYemaShot() {
       <BarraEscala T={T} at={K.G} until={K.V} texto="3 cm" largo={Math.round(3 * PX_CM * HV.s)} y={1580} />
       <BarraEscala T={T} at={K.V} until={K.D} texto="esquema · altitud sobre el mar" largo={0} y={1580} />
       <BarraEscala T={T} at={K.D} until={K.R} texto="1 cm" largo={Math.round(PX_CM * 1.1 * 600 / 272)} y={1580} />
-      <BarraEscala T={T} at={K.R} until={K.P} texto="5 cm" largo={Math.round(5 * PX_CM * 1.5)} y={1580} />
+      <BarraEscala T={T} at={K.R} until={K.P} texto="5 cm" largo={Math.round(5 * PX_CM * 1.4)} y={1580} />
       <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={Math.round(5 * PX_CM * 0.85)} y={1580} />
       <BarraEscala T={T} at={K.E} until={K.Ra} texto="mapa esquemático" largo={0} y={1580} />
-      <BarraEscala T={T} at={K.Ra} until={K.Y} texto="5 cm" largo={Math.round(5 * PX_CM)} y={1580} />
-      <BarraEscala T={T} at={K.Y} until={K.I} texto="5 cm · mapa esquemático" largo={Math.round(5 * PX_CM * 0.9)} y={1580} />
+      <BarraEscala T={T} at={K.Ra} until={K.Y} texto="5 cm" largo={Math.round(5 * PX_CM * 0.85)} y={1580} />
+      <BarraEscala T={T} at={K.Y} until={K.I} texto="5 cm · mapa esquemático" largo={Math.round(5 * PX_CM * 0.85)} y={1580} />
+      <BarraEscala T={T} at={K.I} until={K.Re} texto="3 cm" largo={Math.round(3 * PX_CM * 1.7)} y={1580} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="3 cm" largo={Math.round(3 * PX_CM * HV.s)} y={1600} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.V - 0.1} texto="No es un huevo: es *un hongo* a punto de nacer." />
       <Subtitulo T={T} idx={1} at={K.V + 0.1} until={K.D - 0.1} texto="La Malinche: *pinos y ailes*, ~3,000 m." />
       <Subtitulo T={T} idx={2} at={K.D + 0.1} until={K.R - 0.1} texto="Por dentro *ya viene armado.*" />
-      <Subtitulo T={T} idx={3} at={K.R + 0.1} until={K.S - 0.1} texto="El velo se rasga: *queda una bolsa.*" />
+      <Subtitulo T={T} idx={3} at={K.R + 0.1} until={K.S - 0.1} texto="Al crecer, el velo se rasga: *queda una bolsa.*" />
       <Subtitulo T={T} idx={4} at={K.S + 0.1} until={K.P - 0.1} texto="Sale el *hongo amarillo.*" />
-      <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.E - 0.1} texto="¿Y sus *primas mortales?*" />
-      <Subtitulo T={T} idx={6} at={K.E + 0.1} until={K.N - 0.1} texto="2002: *191 personas* de 3 pueblos." />
-      <Subtitulo T={T} idx={7} at={K.N + 0.1} until={K.Ra - 0.1} texto="*121 nombres* para 40 hongos." />
-      <Subtitulo T={T} idx={8} at={K.Ra + 0.1} until={K.Y - 0.1} texto="Sin ajonjolí, con pañuelito, *con botita.*" />
-      <Subtitulo T={T} idx={9} at={K.Y + 0.1} until={K.I - 0.1} texto="La blanca mortal: *yuyo de veneno.*" />
-      <Subtitulo T={T} idx={10} at={K.I + 0.1} until={K.Re - 0.1} texto="60 intoxicados: *22 murieron.*" />
+      <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.E - 0.1} texto="¿Cómo lo reconocen *los que saben?*" />
+      <Subtitulo T={T} idx={6} at={K.E + 0.1} until={K.N - 0.1} texto="2002: *191 personas* del volcán." />
+      <Subtitulo T={T} idx={7} at={K.N + 0.1} until={K.Ra - 0.1} texto="*121 nombres* para ~40 especies." />
+      <Subtitulo T={T} idx={8} at={K.Ra + 0.1} until={K.Y - 0.1} texto="Las mortales también traen *pañuelito y botita.*" />
+      <Subtitulo T={T} idx={9} at={K.Y + 0.1} until={K.I - 0.1} texto="Algunos le dicen: *yuyo de veneno.*" />
+      <Subtitulo T={T} idx={10} at={K.I + 0.1} until={K.Re - 0.1} texto="No hay regla ni prueba *general.*" />
       <Subtitulo T={T} idx={11} at={K.Re + 0.1} until={K.C - 0.1} texto="Ni foto, ni regla, ni app: *un experto.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="¿Manjar… o *prima mortal?*" />
 
