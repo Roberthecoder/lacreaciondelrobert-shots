@@ -233,14 +233,15 @@ function FosilShot() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 0.3} until={K.G + 2.3} texto="no está vacía" x={300} y={360} tam={40} borde={KC.gold} />
-      <NumeroGigante T={T} at={K.G + 2.4} until={K.R - 0.3} valor={1000} dur={1.6} prefijo="≈ " etiqueta="millones de años" x={540} y={1120} tam={130} color={KC.gold2} />
+      <Chip T={T} at={K.G + 2.5} until={K.R - 0.4} texto="esquema · miden micras" x={300} y={370} tam={26} borde={KC.gold2} mono />
+      <NumeroGigante T={T} at={K.G + 2.4} until={K.R - 0.3} valor={1000} dur={1.6} prefijo="≈ " etiqueta="millones de años" x={780} y={560} tam={110} color={KC.gold2} />
       <Etq T={T} at={K.R + 0.8} until={K.M - 0.3} x={60} y={560} texto="Formación Grassy Bay" tam={30} color={KC.ink} />
       <Etq T={T} at={K.R + 1.2} until={K.M - 0.3} x={60} y={615} texto="Territorios del Noroeste · Canadá" tam={30} color={KC.ink} />
       <Chip T={T} at={K.R + 1.6} until={K.M - 0.3} texto="lutita = roca de lodo" x={540} y={470} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.M + 0.2} until={K.Q - 0.3} texto="AL MICROSCOPIO · LÁMINA DE ROCA" x={540} y={400} tam={32} borde={KC.cyan} mono />
       <Etq T={T} at={K.M + 1.6} until={K.Q - 0.3} x={60} y={500} texto="hilos ramificados con tabiques" tam={30} color={FO.ambar2} />
       <Etq T={T} at={K.M + 2.6} until={K.Q - 0.3} x={60} y={550} texto="bolitas, como esporas" tam={30} color={FO.ambar2} />
-      <Chip T={T} at={K.Q + 0.3} until={K.A - 0.3} texto="señal de quitina (infrarrojo)" x={340} y={470} tam={42} borde={KC.gold2} />
+      <Chip T={T} at={K.Q + 0.3} until={K.A - 0.3} texto="señal de quitina (infrarrojo)" x={330} y={470} tam={34} borde={KC.gold2} />
       <Etq T={T} at={K.Q + 1.6} until={K.A - 0.3} x={700} y={950} texto="hongos de hoy" lado="izq" tam={28} color={KC.texto} />
       <Etq T={T} at={K.Q + 2.6} until={K.A - 0.3} x={340} y={1170} texto="caparazón de escarabajo" tam={28} color={KC.texto} />
       <Chip T={T} at={K.A + 0.4} until={K.A + 2.9} texto="antes: menos de 500 millones" x={540} y={620} tam={34} borde={KC.lilac} />
@@ -258,6 +259,7 @@ function FosilShot() {
       <Chip T={T} at={K.L + 0.4} until={K.C - 0.3} texto="lava de Sudáfrica · ~2,400 M" x={540} y={420} tam={36} borde={KC.orange} />
       <Chip T={T} at={K.L + 3.2} until={K.C - 0.3} texto="¿hongo? en debate" x={540} y={500} tam={36} borde={KC.yellow} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="¿uno de los más viejos?" x={360} y={560} tam={42} borde={KC.gold} />
+      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="esquema · en realidad miden micras" x={360} y={640} tam={24} borde={KC.gold2} mono />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.R} texto="5 cm" largo={150} />

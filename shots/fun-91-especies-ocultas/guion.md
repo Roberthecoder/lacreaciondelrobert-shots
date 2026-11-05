@@ -30,8 +30,30 @@ Barra de escala: 5 cm (setas), «1 cuadrito ≈ 25,000 especies» (cuadrícula),
 
 ## Robert en pantalla
 
-(Tabla final con los segundos reales de la base: se llena al construir la animación.)
+Tiempos de la base (con la voz real se recorren solos).
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 2.1 | 11_sorprendido | `gancho` | «De cada diez especies de hongos que hay en el mundo, unas nueve tod…» |
+| 2 | 10.6 | 13.6 | 04_bajando_lentes | `bajo-der` | «Y hasta 2023, la ciencia había nombrado unas ciento cincuenta y cin…» |
+| 3 | 16.8 | 18.8 | 13_senalando_arriba | `bajo-der` | «La mayoría viven como hilos más delgados que un pelo, en el suelo, …» |
+| 4 | 25.5 | 27.8 | 12_perfil_serio | `bajo-der` | «Por eso los buscan por su ADN: toman tierra, leen sus genes y apare…» |
+| 5 | 28.0 | 31.2 | 07_pensativo_puno | `grande` | «¿Y cuánto tardaríamos en ponerles nombre a todos?» |
+| 6 | 33.4 | 39.2 | 06_pensativo_menton | `bajo-der` | «En 2023, el Jardín Botánico de Kew, en Londres, publicó su reporte …» |
+| 7 | 41.4 | 44.9 | 03_aburrido_manos_mejillas | `bajo-der` | «A ese paso, terminar tomaría entre setecientos cincuenta y mil años.» |
+| 8 | 49.5 | 52.3 | 05_sonriendo_dientes_uniformes | `bajo-der` | «Y no solo en el bosque: en 2013, en un paquete de hongos secos de C…» |
+| 9 | 52.9 | 57.9 | 02_apuntando_camara | `arriba-der` | «Así que en el próximo puñado de tierra que pises quizá hay hongos q…» |
+| — | 58.0 | 61.5 | 02_apuntando_camara | CierreMarca | cierre |
+
+Apariciones 9 · **29.6 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas · una vez grande.
 
 ## Fuentes
 
-(Se completan con `verificacion.md`.)
+Cada dato se abrió en la fuente y está en `verificacion.md` (tabla afirmación · veredicto · fuente · frase textual · año; VEREDICTO: APROBADO).
+
+- **[NISK]** Niskanen, T., Lücking, R., Dahlberg, A., Gaya, E., Suz, L. M., Mikryukov, V., Liimatainen, K., Druzhinina, I., Westrip, J. R. S., Mueller, G. M., Martins-Cunha, K., Kirk, P., Tedersoo, L. y Antonelli, A. (2023). Pushing the frontiers of biodiversity research: unveiling the global diversity, distribution, and conservation of fungi. *Annual Review of Environment and Resources* 48: 149–176. https://doi.org/10.1146/annurev-environ-112621-090937 (copia CC BY 4.0: https://helda.helsinki.fi/server/api/core/bitstreams/c2c89e65-7c39-4b07-a417-b68901eceab8/content)
+- **[KEW]** Antonelli, A. et al. (2023). *State of the World's Plants and Fungi 2023: Tackling the nature emergency: Evidence, gaps and priorities*. Royal Botanic Gardens, Kew (publicado el 10 oct 2023). https://doi.org/10.34885/wnwn-6s63 (copia leída: https://burjcdigital.urjc.es/items/c565a2d0-696e-4e29-9d03-d7cd17e0d8b7). Capítulo de hongos basado en [NISK].
+- **[DS]** Dentinger, B. T. M. y Suz, L. M. (2014). What's for dinner? Undescribed species of porcini in a commercial packet. *PeerJ* 2: e570. https://doi.org/10.7717/peerj.570 · https://pmc.ncbi.nlm.nih.gov/articles/PMC4179395/
+- **[LEH]** Lehmann, A., Zheng, W., Soutschek, K., Roy, J., Yurkov, A. M. y Rillig, M. C. (2019). Tradeoffs in hyphal traits determine mycelium architecture in saprobic fungi. *Scientific Reports* 9: 14152. https://pmc.ncbi.nlm.nih.gov/articles/PMC6775140/
+- **[MAY]** Maymone, M. B. C., Laughter, M., Pollock, S. et al. (2021). Hair aging in different races and ethnicities. *Journal of Clinical and Aesthetic Dermatology* 14(1): 38–44. https://pmc.ncbi.nlm.nih.gov/articles/PMC7869811/
+- **[WIKI-KEW]** Wikipedia, «Kew Gardens» (consultado 5 nov 2026), solo para la ubicación. https://en.wikipedia.org/wiki/Kew_Gardens
