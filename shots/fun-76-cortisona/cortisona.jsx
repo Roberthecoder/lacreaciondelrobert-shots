@@ -186,7 +186,7 @@ function CortisonaShot() {
       <Escena T={T} a={K.G} b={K.Co} zoom={0.06} origen="50% 55%">
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Rhizopus x={300} y={600} s={0.95} crece={kprog(T, K.G + 1.4, K.G + 3.2)} nodos={[-90, 30]} />
+          <Rhizopus x={300} y={545} s={0.95} crece={kprog(T, K.G + 1.4, K.G + 3.2)} nodos={[-90, 30]} />
           <Brazo T={T} y={1020} roncha={1 - 0.6 * baja} crema={untada} rx={640} />
           {chorro > 0 && untada < 1 && <path d={`M 590 910 Q ${600 + 20 * chorro} ${930 + 30 * chorro} ${615 + 25 * chorro} ${950 + 50 * chorro}`} stroke={CX.crema} strokeWidth={30} strokeLinecap="round" fill="none" opacity={1 - untada} />}
           <Tubo x={590} y={880} rot={28} s={0.85} aprieta={aprieta} />
@@ -229,8 +229,8 @@ function CortisonaShot() {
       <Escena T={T} a={K.E} b={K.En} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Matraz T={T} x={330} y={1180} s={1.0} pellets={kprog(T, K.E + 0.3, K.E + 2.0)} />
-          {(() => { const g = kprog(T, K.E + 4.2, K.E + 4.9); return g > 0 && g < 1 ? <circle cx={330} cy={klerp(640, 980, g)} r={16} fill={KC.orange} stroke={KC.ink} strokeWidth={4} /> : null; })()}
+          <Matraz T={T} x={330} y={1200} s={0.95} pellets={kprog(T, K.E + 0.3, K.E + 2.0)} />
+          {(() => { const g = kprog(T, K.E + 4.2, K.E + 4.9); return g > 0 && g < 1 ? <circle cx={330} cy={klerp(660, 1000, g)} r={16} fill={KC.orange} stroke={KC.ink} strokeWidth={4} /> : null; })()}
           {T > K.E + 5.6 && <g opacity={kprog(T, K.E + 5.6, K.E + 6.0)}>
             <rect x={640} y={560} width={380} height={330} rx={24} fill="#fbf3dc" stroke={KC.ink} strokeWidth={7} />
             <rect x={640} y={820} width={380} height={70} fill="#e3c68e" stroke={KC.ink} strokeWidth={0} />
@@ -301,7 +301,7 @@ function CortisonaShot() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 1.6} until={K.Cr - 0.2} texto="no es pura química" x={540} y={1195} tam={40} borde={KC.yellow} />
-      <Etq T={T} at={K.G + 3.2} until={K.Co - 0.3} x={470} y={540} texto="Rhizopus" it tam={34} color={KC.texto} />
+      <Etq T={T} at={K.G + 3.2} until={K.Co - 0.3} x={470} y={470} texto="Rhizopus" it tam={34} color={KC.texto} />
       <Etq T={T} at={K.Cr + 0.4} until={K.Co - 0.3} x={560} y={660} texto="hidrocortisona" tam={40} color={KC.texto} />
       <Etq T={T} at={K.Cr + 0.9} until={K.Co - 0.3} x={560} y={715} texto="corticoide · esteroide" tam={28} color={KC.texto} />
       <Chip T={T} at={K.Cr + 2.0} until={K.Co - 0.3} texto="baja la hinchazón" x={540} y={1195} tam={36} borde={KC.mint} />
@@ -315,7 +315,7 @@ function CortisonaShot() {
       <TarjetaEstudio T={T} at={K.M + 0.1} until={K.M + 3.4} anio="años 40" quien="Merck · Lewis Sarett" revista="desde un ácido de la bilis" x={540} y={470} />
       <NumeroGigante T={T} at={K.M + 3.6} until={K.P - 0.2} valor={40} dur={1.2} prefijo="casi " sufijo=" pasos" x={330} y={560} tam={110} color={KC.cyan} />
       <Chip T={T} at={K.P + 0.3} until={K.E - 0.3} texto="oxígeno en el carbono 11" x={330} y={500} tam={32} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 4.0} anio="1952" quien="Peterson y Murray · Upjohn" revista="publicado en J. Am. Chem. Soc. · patente desde 1950" x={540} y={520} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 4.0} anio="1952" quien="Peterson y Murray · Upjohn" revista="publicado en J. Am. Chem. Soc. · patente desde 1950" x={540} y={490} />
       <Etq T={T} at={K.E + 0.9} until={K.E + 4.0} x={470} y={760} texto="Kalamazoo, Michigan" tam={30} color={KC.texto} />
       <Etq T={T} at={K.E + 4.2} until={K.En - 0.3} x={60} y={600} texto="progesterona" tam={32} color={KC.texto} />
       <Etq T={T} at={K.E + 2.0} until={K.En - 0.3} x={500} y={1060} texto={<><i>Rhizopus</i> en bolitas</>} tam={28} color={KC.texto} />
