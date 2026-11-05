@@ -4,7 +4,7 @@
 - **Formato:** N1 "Por dentro" (el champiñón entero en la tabla de picar → el cuchillo entra → por dentro, células rotas y dos enzimas que cortan una grasa → la misma tabla, ya con rebanadas y el olor subiendo) + N5 "El experimento" (Yamaguchi, 2026: setas cortadas dentro de un frasco, aire medido segundo a segundo).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla: «Ese olor a champiñón no es tierra: es sobre todo una molécula, el alcohol de hongo.»
 - **Distinto de** `qui-58-lluvia-olor` (geosmina, olor a tierra mojada, bacterias): aquí se dice en la segunda frase que NO es la geosmina; el tema es el 1-octen-3-ol que fabrica el propio hongo.
-- **Duración:** voz 948 caracteres / ~182 palabras (≈ 58.4 s según `estimar-escenas.mjs`) + cierre 3.5 s → **≈ 61.9 s** (si con la voz real pasa de 62.0, bajar el cierre a 3.0–3.2 s).
+- **Duración:** voz 960 caracteres / 184 palabras (≈ 58–59 s; medir con `estimar-escenas.mjs`) + cierre 3.5 s → **≈ 61.9 s** (si con la voz real pasa de 62.0, bajar el cierre a 3.0–3.2 s).
 - **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
 - **Seguridad:** nada que hacer en casa; no es consejo de salud.
 

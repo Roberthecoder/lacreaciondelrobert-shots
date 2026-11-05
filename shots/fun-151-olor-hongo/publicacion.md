@@ -66,7 +66,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Ese olor a champiñón no es tierra: es sobre todo una molécula, el 1-octen-3-ol. 🍄 La seta casi no lo tiene: lo fabrica en menos de un segundo cuando la cortas, y se cree que le sirve de defensa contra unos ácaros que se comen las setas. Lo raro: también sale del olor de las vacas y se usa como cebo para mosquitos.
+Ese olor a champiñón no es tierra: es sobre todo una molécula, el 1-octen-3-ol. 🍄 La seta casi no lo tiene: empieza a fabricarlo en menos de un segundo cuando la cortas, y se cree que le sirve de defensa contra unos ácaros que se comen las setas. Lo raro: también sale del olor de las vacas y se usa como cebo para mosquitos.
 ¿A ti te gusta o te choca el olor a champiñón? 👇
 Shot Fungi Mati 151 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -75,7 +75,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-El aroma de un champiñón no está "guardado" en el hongo: se fabrica en el instante en que lo cortas.
+La molécula clave del aroma del champiñón casi no está "guardada" en el hongo: se fabrica en el instante en que lo cortas.
 Su componente aromático principal es el 1-octen-3-ol, una molécula de 8 carbonos que el hongo produce al romperse sus células: una enzima oxida el ácido linoleico y otra lo corta (en el champiñón se identificaron en 2022 una lipoxigenasa y una hidroperóxido liasa). Su umbral de olor es muy bajo.
 En 2026, la Universidad de Yamaguchi midió en tiempo real el aire de setas cortadas: la señal subió en menos de 1 segundo y tocó su máximo a los 8–12 segundos.
 Por qué importa: es la base del "sabor a hongo" que busca la industria de alimentos (en el champiñón, más del 98.5 % es la forma (R), la que huele a hongo, según una medición de 2004), y la misma molécula se usa como cebo en trampas para mosquitos.
@@ -87,12 +87,12 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Ese olor a champiñón no es tierra: es sobre todo una molécula, el 1-octen-3-ol. La seta casi no lo tiene: lo fabrica al cortarla, en menos de 1 segundo (Japón, 2026). Y también es cebo en trampas para mosquitos. 🍄 #FungiMati #Hongos
+Ese olor a champiñón no es tierra: es sobre todo una molécula, el 1-octen-3-ol. La seta casi no lo tiene: empieza a fabricarlo en menos de 1 segundo al cortarla (Japón, 2026). Y también es cebo en trampas para mosquitos. 🍄 #FungiMati #Hongos
 ```
 
 ### Threads
 ```text
-Ese olor a champiñón no es tierra: es sobre todo una molécula, el 1-octen-3-ol. 🍄 La seta casi no lo tiene: lo fabrica cuando la cortas, en menos de un segundo. Tiene dos versiones espejo (una huele a champiñón y la otra a moho y pasto) y hasta se usa como cebo para mosquitos. ¿A ti te gusta el olor a champiñón?
+Ese olor a champiñón no es tierra: es sobre todo una molécula, el 1-octen-3-ol. 🍄 La seta casi no lo tiene: empieza a fabricarlo en menos de un segundo cuando la cortas. Tiene dos versiones espejo (una huele a champiñón y la otra a moho y pasto) y hasta se usa como cebo para mosquitos. ¿A ti te gusta el olor a champiñón?
 Shot Fungi Mati 151 · La Creación del Robert
 #Hongos
 ```

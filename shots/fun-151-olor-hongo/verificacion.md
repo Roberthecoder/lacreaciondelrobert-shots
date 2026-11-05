@@ -70,4 +70,38 @@ Conteo: **22 ✅ · 7 ⚠️ (#1c, #8, #15, #18, #26, #28, #29) · 0 ❌** (más
 
 Notas sin corrección: el recipiente de Nagata 2026 es de vidrio abierto por arriba y el corte fue con tijeras (el «frasco» y el cuchillito son esquemáticos; el guion ya dice «el dibujo es esquemático»). El estudio fue en *Pleurotus cornucopiae* y no en champiñón; voz y pantalla lo respetan. Takken y Kline 1989 se verificó solo con su resumen.
 
+## Re-verificación (5 nov 2026, tras las correcciones del guionista)
+
+Se releyeron completos `guion.md`, `narracion.json` y `publicacion.md`. Se buscaron restos de lo viejo: «0.001», «ppm», «1983 se reportó», «Parece una defensa», «UNA molécula» y «1 molécula». Solo quedan dentro de las notas de fuentes del guion, que explican por qué no se usan. Ya no salen en la voz, en pantalla ni en las redes.
+
+| # | Cambio | Veredicto | Comentario / frase de respaldo |
+|---|---|---|---|
+| R1 | Pantalla, escena 0: «¿tierra?» → «su molécula clave»; títulos del guion y de publicacion.md «es sobre todo una molécula» | ✅ | "of which the most important is 1-octen-3-ol" (Zawirska-Wojtasiak 2009); "character impact flavour compound of mushrooms" (ídem). |
+| R2 | Título de YouTube «El olor a champiñón no es tierra: es esta molécula 🍄» | ✅ | Es aceptable: «esta molécula» señala el compuesto clave que se ve en pantalla y está respaldado tal cual por "The most abundant volatile occurring in mushrooms and responsible for the mushroom odour is 1-octen-3-ol" (Wnuk 1983) y "The main aromatic component of the button mushroom (Agaricus bisporus) is 1-octen-3-ol" (Su 2022). No dice «la única» ni «la más abundante», y la descripción matiza «sobre todo». |
+| R3 | Voz, escena 5: «Y tu nariz lo nota aunque haya poquísimo: su umbral de olor es bajísimo.» (pantalla «umbral de olor: bajísimo», sin cifra) | ✅ | "There is a very low olfactory threshold for 1-octen-3-ol." (Su 2022). Ya no hay ninguna cifra sin abrir. |
+| R4 | TikTok «Tu nariz lo detecta aunque haya poquísimo»; YouTube «Su umbral de olor es muy bajo: basta poquísimo para notarlo»; LinkedIn «Su umbral de olor es muy bajo» | ✅ | Igual que R3. |
+| R5 | Voz, escena 9: «Se cree que es una defensa: a unos ácaros que se comen las setas, los ahuyenta.» (chips «lo ahuyenta · estudio en *Pleurotus*, 2022» y «se cree que es defensa») | ✅ | Ahora se dice como hipótesis. "these compounds repellent to T. putrescentiae" · "coordinated inducible chemical-based defense responses" (Li 2022). |
+| R6 | Instagram y Facebook: «Se cree que es una defensa… (aunque a otros bichos los atrae)» / «se cree que le sirve de defensa» | ✅ | "the fungivorous ladybird beetle Psyllobora vigintimaculata prefers 1-octen-3-ol" (Nagata 2026). |
+| R7 | Chip «más del 98.5 % es (R) · medido en 2004»; TikTok, YouTube y LinkedIn «(medición de 2004)»; cita de Zawirska-Wojtasiak 2004, *Food Chem.* 86: 113–118 en las fuentes | ✅ | "the highest one was measured in Agaricus bisporus (over 98.5%)… [Zawirska-Wojtasiak 2004]"; la referencia de 2004 aparece con esos datos exactos en la bibliografía del artículo de 2009 ("Food Chem. 86, 113-118"). |
+| R8 | Robert en pantalla #3 «aunque haya poquísimo» y #6 «se cree que es una defensa…» | ✅ | Coinciden con la voz nueva. |
+| R9 | LinkedIn, primera línea: «El aroma de un champiñón no está "guardado" en el hongo: se fabrica en el instante en que lo cortas.» | ⚠️ | Exagera. El champiñón entero sí huele: en el hongo entero la 3-octanona es el C8 principal ("3-octanone was identified as the main eight-carbon volatile in whole and sliced sporophore", Combet 2009), y el hongo intacto ya suelta algo de 1-octen-3-ol ("Intact… fruiting bodies… emitted… 1-octen-3-ol at 0.23 μg h−1", Nagata 2026). Lo verificado es que el 1-octen-3-ol está "at much lower levels in intact fruiting bodies". (Ya estaba en la versión 1; se me pasó en la primera revisión.) |
+| R10 | Facebook «lo fabrica en menos de un segundo cuando la cortas»; X «lo fabrica al cortarla, en menos de 1 segundo (Japón, 2026)»; Threads «lo fabrica cuando la cortas, en menos de un segundo» | ⚠️ | Impreciso. En menos de 1 s solo *empieza* a subir: el máximo llega a los 8–12 s ("increased within 1 s after wounding, reached maxima at 8–12 s", Nagata 2026, en *Pleurotus cornucopiae*). La voz sí lo dice bien («En menos de un segundo ya subía; tocó su máximo entre los ocho y doce segundos»). (Ya estaba en la versión 1; se me pasó en la primera revisión.) |
+
+Nota sin veredicto: la voz completa mide ahora 960 caracteres con espacios y 184 palabras (contados en `narracion.json`). La línea «Duración» del guion todavía dice «948 caracteres». No es una afirmación para el público, pero conviene actualizarla y medir con ffprobe que el total quede entre 61.0 y 62.0 s.
+
+### Correcciones necesarias (re-verificación)
+
+1. **LinkedIn, primera línea (R9).**
+   - Antes: `El aroma de un champiñón no está "guardado" en el hongo: se fabrica en el instante en que lo cortas.`
+   - Después: `La molécula clave del aroma del champiñón casi no está "guardada" en el hongo: se fabrica en el instante en que lo cortas.`
+2. **«en menos de un segundo» (R10).**
+   - Facebook, antes: `lo fabrica en menos de un segundo cuando la cortas,`
+     Después: `empieza a fabricarlo en menos de un segundo cuando la cortas,`
+   - X, antes: `lo fabrica al cortarla, en menos de 1 segundo (Japón, 2026).`
+     Después: `empieza a fabricarlo en menos de 1 segundo al cortarla (Japón, 2026).`
+   - Threads, antes: `lo fabrica cuando la cortas, en menos de un segundo.`
+     Después: `empieza a fabricarlo en menos de un segundo cuando la cortas.`
+
+La voz, la pantalla y el guion no tienen pendientes. Solo faltan estos 4 textos de `publicacion.md`. Si se cambian tal cual, se pueden dar por ✅ sin otra búsqueda, y la última línea pasa a `VEREDICTO: APROBADO`.
+
 VEREDICTO: PENDIENTE DE CORRECCIONES

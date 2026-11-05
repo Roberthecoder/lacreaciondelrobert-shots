@@ -112,7 +112,7 @@ function EgFrijol({ T, x, y, s = 1 }) {
 function EgRaiz({ x, y, p = 1 }) {
   const ramas = [[0, 0, 0, 380], [0, 120, -140, 260], [0, 160, 150, 300], [0, 260, -90, 420], [0, 300, 110, 440]];
   return <g transform={`translate(${x} ${y})`}>
-    {ramas.map(([a, b, c, d], i) => { const u = kclamp(p * 1.5 - i * 0.12, 0, 1); return <path key={i} d={`M ${a} ${b} Q ${(a + c) / 2 + 20} ${(b + d) / 2} ${klerp(a, c, u)} ${klerp(b, d, u)}`} stroke="#e8d3a8" strokeWidth={i ? 10 : 20} fill="none" strokeLinecap="round" />; })}
+    {ramas.map(([a, b, c, d], i) => { const u = kclamp(p * 1.5 - i * 0.12, 0, 1); return <path key={i} d={`M ${a} ${b} L ${klerp(a, c, u)} ${klerp(b, d, u)}`} stroke="#e8d3a8" strokeWidth={i ? 10 : 20} fill="none" strokeLinecap="round" />; })}
   </g>;
 }
 // Membrana en corte (doble fila de cuentas) a lo ancho, en y. Hueco/puerta en xp si puerta > 0.
@@ -194,21 +194,21 @@ function ErgotioneinaShot() {
       <Escena T={T} a={K.G} b={K.N} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <EgQuesadilla T={T} x={540} y={1060} s={1.05} dobla={kprog(T, K.G, K.G + 0.7)} />
+          <EgQuesadilla T={T} x={540} y={930} s={1.2} dobla={kprog(T, K.G, K.G + 0.7)} />
           {(() => { const z = kprog(T, K.G + 1.6, K.G + 2.4, kEase.sale); return z > 0 && <g opacity={z} transform={`translate(${klerp(540, 0, z) * 0} 0)`}>
-            <circle cx={360} cy={700} r={klerp(0, 290, z)} fill="rgba(14,15,18,.92)" stroke={KC.white} strokeWidth={10} />
-            <g transform={`translate(360 700) scale(${0.95 * z}) translate(-360 -700)`}>
-              <EgCelula T={T} x={360} y={700} r={200} abierta={kprog(T, K.G + 2.6, K.G + 3.2)} entra={kprog(T, K.G + 2.6, K.G + 5.2)} />
-              {[[120, 470], [590, 860], [130, 930], [600, 520]].map(([a, b], i) => <EgOtra key={i} x={a + Math.sin(T * 3 + i) * 10} y={b + Math.cos(T * 2 + i) * 10} r={15} />)}
+            <circle cx={300} cy={620} r={klerp(0, 250, z)} fill="rgba(14,15,18,.92)" stroke={KC.white} strokeWidth={10} />
+            <g transform={`translate(300 620) scale(${0.82 * z}) translate(-300 -620)`}>
+              <EgCelula T={T} x={300} y={620} r={200} abierta={kprog(T, K.G + 2.6, K.G + 3.2)} entra={kprog(T, K.G + 2.6, K.G + 5.2)} />
+              {[[90, 400], [520, 820], [80, 840], [530, 430]].map(([a, b], i) => <EgOtra key={i} x={a + Math.sin(T * 3 + i) * 10} y={b + Math.cos(T * 2 + i) * 10} r={15} />)}
             </g>
-            <line x1={540} y1={980} x2={470} y2={950} stroke={KC.white} strokeWidth={6} strokeDasharray="10 10" />
+            <line x1={480} y1={880} x2={420} y2={820} stroke={KC.white} strokeWidth={6} strokeDasharray="10 10" />
           </g>; })()}
         </>)}
       </Escena>
       {/* 1 · nombre: la molécula con azufre */}
       <Escena T={T} a={K.N} b={K.NF} zoom={0.06}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<EgMolecula x={330} y={880} s={1.5} rot={Math.sin(T * 1.2) * 4} p={kprog(T, K.N + 0.1, K.N + 1.4)} />)}
+        {fsvg(<EgMolecula x={360} y={780} s={1.45} rot={Math.sin(T * 1.2) * 4} p={kprog(T, K.N + 0.1, K.N + 1.4)} />)}
       </Escena>
       {/* 2 · tu cuerpo no la fabrica; las plantas con flor tampoco */}
       <Escena T={T} a={K.NF} b={K.S} zoom={0.05}>
@@ -241,13 +241,13 @@ function ErgotioneinaShot() {
       <Escena T={T} a={K.Co} b={K.M} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <ellipse cx={540} cy={1000} rx={440} ry={150} fill="#fff" stroke={KC.ink} strokeWidth={9} />
-          <g transform="translate(380 980) scale(.5) translate(-540 -1060)"><EgQuesadilla T={T} x={540} y={1060} vapor={0} /></g>
-          <g transform="translate(700 960)">{Array.from({ length: 14 }, (_, i) => <ellipse key={i} cx={(i % 5) * 30 - 60} cy={Math.floor(i / 5) * 24} rx={16} ry={10} fill="#2a1a2a" stroke={KC.ink} strokeWidth={3} />)}</g>
-          <g transform="translate(700 1050)">{Array.from({ length: 12 }, (_, i) => <ellipse key={i} cx={(i % 6) * 22 - 55} cy={Math.floor(i / 6) * 16} rx={11} ry={6} fill="#d9b77a" stroke={KC.ink} strokeWidth={2} />)}</g>
+          <ellipse cx={540} cy={960} rx={440} ry={150} fill="#fff" stroke={KC.ink} strokeWidth={9} />
+          <g transform="translate(380 940) scale(.5) translate(-540 -1060)"><EgQuesadilla T={T} x={540} y={1060} vapor={0} /></g>
+          <g transform="translate(700 920)">{Array.from({ length: 14 }, (_, i) => <ellipse key={i} cx={(i % 5) * 30 - 60} cy={Math.floor(i / 5) * 24} rx={16} ry={10} fill="#2a1a2a" stroke={KC.ink} strokeWidth={3} />)}</g>
+          <g transform="translate(700 1010)">{Array.from({ length: 12 }, (_, i) => <ellipse key={i} cx={(i % 6) * 22 - 55} cy={Math.floor(i / 6) * 16} rx={11} ry={6} fill="#d9b77a" stroke={KC.ink} strokeWidth={2} />)}</g>
           {Array.from({ length: 6 }, (_, i) => { const u = kclamp((T - K.Co - 0.4 - i * 0.18) / 1.2, 0, 1); if (u <= 0) return null;
-            return <EgBola key={i} x={klerp(380 + i * 60, 540, u)} y={klerp(950, 640, u)} r={16} o={1 - kprog(u, 0.85, 1)} />; })}
-          <path d="M 470 600 Q 540 650 610 600" stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" />
+            return <EgBola key={i} x={klerp(380 + i * 60, 540, u)} y={klerp(900, 640, u)} r={16} o={1 - kprog(u, 0.85, 1)} />; })}
+          <g transform="translate(540 760) scale(.75)"><EgPersona x={0} y={0} /></g>
         </>)}
       </Escena>
       {/* 5–8 · por dentro: la membrana, la pregunta, la puerta OCTN1 y "cien veces mejor" (fondo oscuro) */}
@@ -301,18 +301,18 @@ function ErgotioneinaShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <EgQuesadilla T={T} x={540} y={1060} s={1.05} />
-          <circle cx={360} cy={700} r={290} fill="rgba(14,15,18,.92)" stroke={KC.white} strokeWidth={10} />
-          <g transform="translate(360 700) scale(.95) translate(-360 -700)"><EgCelula T={T} x={360} y={700} r={200} abierta={1} entra={kprog(T, K.C + 0.6, K.C + 3.6)} /></g>
-          <line x1={540} y1={980} x2={470} y2={950} stroke={KC.white} strokeWidth={6} strokeDasharray="10 10" />
+          <EgQuesadilla T={T} x={540} y={930} s={1.2} />
+          <circle cx={300} cy={620} r={250} fill="rgba(14,15,18,.92)" stroke={KC.white} strokeWidth={10} />
+          <g transform="translate(300 620) scale(.82) translate(-300 -620)"><EgCelula T={T} x={300} y={620} r={200} abierta={1} entra={kprog(T, K.C + 0.6, K.C + 3.6)} /></g>
+          <line x1={480} y1={880} x2={420} y2={820} stroke={KC.white} strokeWidth={6} strokeDasharray="10 10" />
           {Array.from({ length: 6 }, (_, i) => { const u = kclamp((T - K.C - 0.3 - i * 0.4) / 1.4, 0, 1); if (u <= 0 || u >= 1) return null;
-            return <EgBola key={i} x={klerp(460 + i * 40, 560, u)} y={klerp(1000, 500, u)} r={14} brillo={1} o={1 - kprog(u, 0.8, 1)} />; })}
+            return <EgBola key={i} x={klerp(420 + i * 50, 470, u)} y={klerp(880, 470, u)} r={14} brillo={1} o={1 - kprog(u, 0.8, 1)} />; })}
         </>)}
       </Escena>
 
       {/* textos */}
       <Chip T={T} at={K.G + 2.6} until={K.N - 0.3} texto="una puerta especial" x={360} y={360} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.G + 0.6} until={K.G + 2.0} x={60} y={420} texto="quesadilla de champiñones" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.G + 0.6} until={K.G + 1.8} x={60} y={740} texto="quesadilla de champiñones" tam={32} color={KC.ink} />
       <Etq T={T} at={K.N + 0.5} until={K.NF - 0.3} x={60} y={430} texto="ergotioneína" tam={52} color={KC.ink} />
       <Etq T={T} at={K.N + 1.0} until={K.NF - 0.3} x={60} y={500} texto="aminoácido con azufre (S)" tam={32} color={KC.ink} />
       <Etq T={T} at={K.NF + 0.4} until={K.S - 0.3} x={120} y={1180} texto="tu cuerpo" tam={30} color={KC.ink} />
@@ -320,7 +320,7 @@ function ErgotioneinaShot() {
       <Etq T={T} at={K.S + 0.8} until={K.Co - 0.3} x={60} y={1170} texto="hongos" tam={32} color={KC.texto} />
       <Etq T={T} at={K.S + 1.4} until={K.Co - 0.3} x={1020} y={1170} lado="izq" texto="bacterias" tam={32} color={KC.texto} />
       <Etq T={T} at={K.S + 2.0} until={K.Co - 0.3} x={600} y={560} texto="raíz" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Co + 0.3} until={K.M - 0.3} x={150} y={1190} texto="frijoles · salvado de avena" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Co + 0.3} until={K.M - 0.3} x={560} y={1150} texto="frijoles · salvado de avena" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Co + 1.2} until={K.M - 0.3} texto="toda llega de la comida" x={540} y={440} tam={38} borde={KC.gold} />
       <Chip T={T} at={K.M + 0.2} until={K.P - 0.2} texto="POR DENTRO · MEMBRANA DE TU CÉLULA" x={460} y={400} tam={30} borde={KC.pink} mono />
       <Etq T={T} at={K.M + 1.2} until={K.P - 0.2} x={60} y={490} texto="la membrana casi no la deja pasar" tam={30} color={KC.memb || '#f2a7c3'} />

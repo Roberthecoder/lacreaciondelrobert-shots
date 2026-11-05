@@ -7,7 +7,7 @@ const PXUM = 6; // escala micro: 1 µm = 6 px (hifa de ~8 µm ≈ 48 px de ancho
 
 // ---------- piezas ----------
 // Tortilla de maíz vista desde arriba: disco con manchas de comal. moho 0..1 = tamaño de la mancha; digiere 0..1 = halo húmedo alrededor.
-function Tortilla({ T, x = 540, y = 860, r = 360, moho = 1, digiere = 0, mx = 650, my = 790, marca = 0 }) {
+function Tortilla({ T, x = 420, y = 880, r = 330, moho = 1, digiere = 0, mx = 440, my = 900, marca = 0 }) {
   const g = krng(7), manchas = Array.from({ length: 22 }, () => [(g() - 0.5) * 1.6 * r, (g() - 0.5) * 1.6 * r, 10 + g() * 26, g()]);
   const borde = Array.from({ length: 40 }, (_, i) => { const a = (i / 40) * Math.PI * 2, rr = r * (0.97 + 0.04 * Math.sin(i * 2.7)); return `${i ? 'L' : 'M'} ${(x + Math.cos(a) * rr).toFixed(1)} ${(y + Math.sin(a) * rr).toFixed(1)}`; }).join(' ') + ' Z';
   const R = 40 + 110 * moho;
@@ -25,8 +25,8 @@ function Tortilla({ T, x = 540, y = 860, r = 360, moho = 1, digiere = 0, mx = 65
     {moho > 0 && <g>
       {Array.from({ length: 34 }, (_, i) => { const a = i * 2.39, d = Math.sqrt((i + 0.5) / 34) * R; const px = mx + Math.cos(a) * d, py = my + Math.sin(a) * d;
         return <circle key={i} cx={px} cy={py} r={R * 0.28 * (1 - d / R * 0.5) + mece(T, i, 0.6) * 2} fill={EX.moho} opacity={0.85} />; })}
-      {Array.from({ length: Math.round(26 * moho) }, (_, i) => { const a = i * 2.1 + 0.4, d = Math.sqrt((i + 0.5) / 26) * R * 0.8;
-        return <circle key={i} cx={mx + Math.cos(a) * d} cy={my + Math.sin(a) * d} r={7 + (i % 3) * 2} fill={EX.cabeza} />; })}
+      {(() => { const gg = krng(31); return Array.from({ length: 26 }, (_, i) => { const a = gg() * Math.PI * 2, d = Math.sqrt(gg()) * R * 0.85, rr = 6 + gg() * 6;
+        return i < Math.round(26 * moho) ? <g key={i}><line x1={mx + Math.cos(a) * d} y1={my + Math.sin(a) * d + rr} x2={mx + Math.cos(a) * d} y2={my + Math.sin(a) * d + rr + 10} stroke="#d8d2c4" strokeWidth={3} /><circle cx={mx + Math.cos(a) * d} cy={my + Math.sin(a) * d} r={rr} fill={EX.cabeza} /></g> : null; }); })()}
     </g>}
     {marca > 0 && <circle cx={mx} cy={my} r={R * 1.95} fill="none" stroke={KC.red} strokeWidth={8} strokeDasharray={`${marca * 1300} 2000`} transform={`rotate(-90 ${mx} ${my})`} />}
   </g>;
@@ -164,8 +164,8 @@ function Taco({ x, y, s = 1, mordida = 0 }) {
   </g>;
 }
 
-const HIFA_A = [[-60, 1120], [200, 1040], [420, 930], [620, 860], [820, 790], [980, 730]];
-const GRANOS = [[300, 760, 70], [560, 690, 80], [760, 640, 64], [170, 900, 60], [700, 1010, 76], [900, 900, 62], [460, 1100, 66], [880, 1120, 58], [120, 650, 54], [980, 560, 60]];
+const HIFA_A = [[-60, 1120], [200, 1040], [420, 940], [600, 860], [760, 790], [900, 730]];
+const GRANOS = [[300, 760, 70], [560, 690, 80], [760, 640, 64], [170, 900, 60], [700, 1000, 70], [930, 900, 62], [330, 1110, 60], [120, 650, 54], [980, 560, 60]];
 
 function EstomagoShot() {
   const { T, CUES } = useComposition();
@@ -297,7 +297,7 @@ function EstomagoShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<Tortilla T={T} moho={1} digiere={1} marca={kprog(T, K.C + 1.0, K.C + 2.0)} />)}
       </Escena>
-      <Lupa T={T} at={K.C + 2.2} until={K.Ou - 0.2} x={300} y={1060} r={170} fx={650} fy={790} tinte={KC.mint} etiqueta="POR DENTRO"
+      <Lupa T={T} at={K.C + 2.2} until={K.Ou - 0.2} x={300} y={1060} r={170} fx={440} fy={900} tinte={KC.mint} etiqueta="POR DENTRO"
         interior={(T2, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill={KC.noche} />
           <g transform={`scale(${r / 300})`}><Hifa T={T2} pts={[[-40, 420], [200, 330], [380, 250]]} p={1} ancho={40} glow={1} />
             {[0, 1, 2, 3, 4].map((k) => { const an = -0.4 + (k - 2) * 0.5, d = 70 + ((T2 * 60 + k * 30) % 160); return <Tijera key={k} x={380 + Math.cos(an) * d} y={250 + Math.sin(an) * d} s={0.5} rot={an * 57} abre={0.5 + 0.5 * Math.sin(T2 * 9 + k)} color={[EX.amil, EX.prot, EX.lip][k % 3]} />; })}</g></svg>} />
@@ -310,16 +310,16 @@ function EstomagoShot() {
       <Etq T={T} at={K.S + 1.2} until={K.H - 0.3} x={590} y={580} texto="hongo: afuera" tam={32} color={KC.texto} />
       <Chip T={T} at={K.S + 1.8} until={K.H - 0.3} texto="digestión externa" x={540} y={460} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.H + 0.1} until={K.E - 0.2} texto="POR DENTRO · LA TORTILLA" x={420} y={450} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.H + 0.8} until={K.E - 0.2} x={60} y={1185} texto="hifa: crece por la punta" tam={30} color={KC.mint} />
+      <Etq T={T} at={K.H + 0.8} until={K.E - 0.2} x={60} y={700} texto="hifa: crece por la punta" tam={30} color={KC.mint} />
       <Etq T={T} at={K.H + 1.6} until={K.E - 0.2} x={60} y={560} texto="almidón (granos)" tam={30} color={EX.almidon} />
-      <Chip T={T} at={K.H + 2.6} until={K.E - 0.2} texto="maíz: rico en almidón" x={340} y={1220} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.H + 2.6} until={K.E - 0.2} texto="maíz: rico en almidón" x={720} y={1130} tam={32} borde={KC.gold} />
       <Etq T={T} at={K.H + 3.2} until={K.E - 0.2} x={60} y={630} texto="ancho de una hifa: ≈ 5–10 µm" tam={28} color={KC.mint} />
-      <Chip T={T} at={K.E + 0.3} until={K.Ti - 0.2} texto="enzimas = tijeras químicas" x={360} y={470} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.E + 0.3} until={K.Ti - 0.2} texto="enzimas = tijeras químicas" x={640} y={470} tam={34} borde={KC.yellow} />
       <Etq T={T} at={K.Ti + 0.4} until={K.A - 0.2} x={60} y={540} texto="almidón → amilasas" tam={32} color={EX.amil} />
       <Etq T={T} at={K.Ti + 1.5} until={K.A - 0.2} x={60} y={780} texto="proteínas → proteasas" tam={32} color={EX.prot} />
       <Etq T={T} at={K.Ti + 2.6} until={K.A - 0.2} x={60} y={1010} texto="grasa → lipasas" tam={32} color={EX.lip} />
-      <Chip T={T} at={K.A + 0.3} until={K.P - 0.2} texto="se digiere afuera · se absorbe adentro" x={540} y={470} tam={32} borde={KC.mint} />
-      <Etq T={T} at={K.A + 1.2} until={K.P - 0.2} x={60} y={1185} texto="azúcares y piezas chiquitas → adentro" tam={28} color={KC.gold2} />
+      <Chip T={T} at={K.A + 0.3} until={K.P - 0.2} texto="se digiere afuera · se absorbe adentro" x={660} y={470} tam={28} borde={KC.mint} />
+      <Etq T={T} at={K.A + 1.2} until={K.P - 0.2} x={60} y={1100} texto="azúcares y piezas chiquitas → adentro" tam={28} color={KC.gold2} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.O - 0.2} anio="1991" quien="U. de Groningen, Países Bajos" revista="J. Gen. Microbiology, 1991" x={540} y={600} />
       <Etq T={T} at={K.Es + 1.4} until={K.O - 0.2} x={60} y={850} texto="Aspergillus niger" it tam={40} color={KC.ink} />
       <Etq T={T} at={K.Es + 2.2} until={K.O - 0.2} x={60} y={920} texto="colonia entre 2 membranas perforadas" tam={26} color={KC.ink} />
@@ -360,9 +360,9 @@ function EstomagoShot() {
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 3.0, 'avatar_11_sorprendido', 'gancho'],
-        [K.S + 0.4, K.H - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
-        [K.E + 0.5, K.Ti - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
-        [K.A + 0.6, K.P - 0.2, 'avatar_12_perfil_serio', 'arriba-der'],
+        [K.S + 0.4, K.H - 0.2, 'avatar_13_senalando_arriba', 'bajo-der'],
+        [K.E + 0.5, K.Ti - 0.2, 'avatar_04_bajando_lentes', 'izq-alto'],
+        [K.A + 0.6, K.P - 0.2, 'avatar_12_perfil_serio', 'izq-alto'],
         [K.P + 0.05, K.Es + 0.2, 'avatar_07_pensativo_puno', 'grande'],
         [K.O + 0.5, K.Pu - 0.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.Pu + 0.4, K.Sa - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
