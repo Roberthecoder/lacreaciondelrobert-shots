@@ -1,7 +1,109 @@
-{ "temas": [
- { "id": "fun-150-saca-estomago", "titulo": "Un hongo no come: saca el estómago (digestión externa con enzimas y absorción por la hifa)", "serie": "Shot Fungi Mati", "numero": 150, "estado": "idea", "carpeta": "shots/fun-150-saca-estomago", "rama": "claude/fun-150-154-quimica", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
- { "id": "fun-151-olor-hongo", "titulo": "Ese olor a hongo es una sola molécula: 1-octen-3-ol (alcohol de hongo)", "serie": "Shot Fungi Mati", "numero": 151, "estado": "idea", "carpeta": "shots/fun-151-olor-hongo", "rama": "claude/fun-150-154-quimica", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
- { "id": "fun-152-cerveza-brota", "titulo": "La cerveza que brota sola al abrirla: hidrofobinas de Fusarium en la cebada (gushing)", "serie": "Shot Fungi Mati", "numero": 152, "estado": "idea", "carpeta": "shots/fun-152-cerveza-brota", "rama": "claude/fun-150-154-quimica", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
- { "id": "fun-153-ergotioneina", "titulo": "Tu cuerpo tiene una puerta solo para una molécula de los hongos: ergotioneína y su transportador", "serie": "Shot Fungi Mati", "numero": 153, "estado": "idea", "carpeta": "shots/fun-153-ergotioneina", "rama": "claude/fun-150-154-quimica", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
- { "id": "fun-154-antifungicos", "titulo": "Matar un hongo sin matarte es dificilísimo: la química de los antifúngicos (ergosterol, quitina y glucano)", "serie": "Shot Fungi Mati", "numero": 154, "estado": "idea", "carpeta": "shots/fun-154-antifungicos", "rama": "claude/fun-150-154-quimica", "fuentes": [], "fecha": "2026-11-05", "derivados": [] }
-] }
+{
+ "temas": [
+  {
+   "id": "fun-150-saca-estomago",
+   "titulo": "Ese moho no se come tu tortilla: la digiere por fuera (digestión externa, glucoamilasa en la punta de la hifa)",
+   "serie": "Shot Fungi Mati",
+   "numero": 150,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-150-saca-estomago",
+   "rama": "claude/fun-150-154-quimica",
+   "fuentes": [
+    "Wösten et al. 1991, J Gen Microbiol 137:2017 (Groningen)",
+    "Richards y Talbot 2013, Nat Rev Microbiol",
+    "Cairns et al. 2018",
+    "Reyes-Jurado et al. 2022, Curr Res Food Sci (Puebla)"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Por qué el moho se ve 'peludo': las hifas aéreas y las esporas",
+    "Aspergillus niger, fábrica de enzimas industriales (glucoamilasa para jarabes)",
+    "Cómo un hongo 'come' plástico o petróleo con enzimas por fuera"
+   ]
+  },
+  {
+   "id": "fun-151-olor-hongo",
+   "titulo": "Ese olor a champiñón no es tierra: es sobre todo una molécula (1-octen-3-ol)",
+   "serie": "Shot Fungi Mati",
+   "numero": 151,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-151-olor-hongo",
+   "rama": "claude/fun-150-154-quimica",
+   "fuentes": [
+    "Nagata et al. 2026, Fungal Biology 130:101824 (Yamaguchi)",
+    "Su et al. 2022, J Fungi",
+    "Zawirska-Wojtasiak 2004, Food Chem 86:113",
+    "Hall et al. 1984; Takken y Kline 1989"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Por qué las trufas huelen tan fuerte (y los cerdos las encuentran)",
+    "Los olores que usan los hongos para atraer moscas y escarabajos",
+    "Octenol y mosquitos: por qué a ti te pican más (cuidado: ya hay temas de moscos)"
+   ]
+  },
+  {
+   "id": "fun-152-cerveza-brota",
+   "titulo": "Esa cerveza no estaba agitada: traía proteínas de un hongo (hidrofobinas de Fusarium, gushing)",
+   "serie": "Shot Fungi Mati",
+   "numero": 152,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-152-cerveza-brota",
+   "rama": "claude/fun-150-154-quimica",
+   "fuentes": [
+    "Sarlin 2012, tesis VTT Science 13",
+    "Sarlin et al. 2012, J Basic Microbiol 52:184",
+    "Wösten et al. 1999, Curr Biol",
+    "Linder et al. 2005, FEMS Microbiol Rev"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Por qué las esporas de moho no se mojan: la capa de hidrofobina",
+    "Fusarium en el trigo y la cebada: la roña de la espiga y sus toxinas",
+    "Proteínas de hongo como recubrimientos en la industria"
+   ]
+  },
+  {
+   "id": "fun-153-ergotioneina",
+   "titulo": "Tus células tienen una puerta para una molécula de los hongos (ergotioneína y el transportador OCTN1)",
+   "serie": "Shot Fungi Mati",
+   "numero": 153,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-153-ergotioneina",
+   "rama": "claude/fun-150-154-quimica",
+   "fuentes": [
+    "Gründemann et al. 2005, PNAS 102:5256 (Colonia)",
+    "Kato et al. 2010, Pharm Res 27:832 (Kanazawa)",
+    "Borodina et al. 2020, Nutr Res Rev",
+    "Ames 2018, PNAS; Kock et al. 2026, Plant Biology"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Por qué los hongos tienen tanto potasio o tanta proteína (comparado con verduras)",
+    "El glutatión y otros antioxidantes de los hongos (con cuidado de no prometer salud)",
+    "Hongos que hacen pigmentos: de dónde sale el color del hongo azul o el rebozuelo"
+   ]
+  },
+  {
+   "id": "fun-154-antifungicos",
+   "titulo": "Para un medicamento, ese hongo y tú son casi lo mismo (química de los antifúngicos: ergosterol, glucano y quitina)",
+   "serie": "Shot Fungi Mati",
+   "numero": 154,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-154-antifungicos",
+   "rama": "claude/fun-150-154-quimica",
+   "fuentes": [
+    "OMS 2025, informe de antifúngicos en desarrollo",
+    "Baldauf y Palmer 1993, PNAS",
+    "Maji et al. 2023, Nature (Illinois)",
+    "Hazen y Brown 1950, Science 112:423; Science History Institute"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Elizabeth Hazen y Rachel Brown: la nistatina y las regalías donadas a la ciencia",
+    "Por qué la anfotericina B se apodaba 'anfoterrible'",
+    "Los antifúngicos de las plantas de cultivo y la resistencia en Aspergillus"
+   ]
+  }
+ ]
+}
