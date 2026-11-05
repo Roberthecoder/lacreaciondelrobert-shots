@@ -9,7 +9,7 @@
     },
     {
       "escena": "Campo",
-      "texto": "Empieza en el campo: el moho Fusarium infecta la cebada en años muy lluviosos."
+      "texto": "Empieza en el campo: el moho Fusarium infecta la cebada, más en años lluviosos."
     },
     {
       "escena": "Malta",
@@ -17,7 +17,7 @@
     },
     {
       "escena": "Proteina",
-      "texto": "Son proteínas diminutas: unos cien aminoácidos amarrados por cuatro puentes de azufre."
+      "texto": "Son proteínas de unos cien aminoácidos, amarrados por cuatro puentes de azufre."
     },
     {
       "escena": "DosCaras",
@@ -45,19 +45,19 @@
     },
     {
       "escena": "Dosis",
-      "texto": "Una millonésima de gramo en un tercio de litro bastó para que brotara con fuerza."
+      "texto": "Con la misma agitación, una millonésima de gramo en un tercio de litro la hizo brotar con fuerza."
     },
     {
       "escena": "ParaQue",
-      "texto": "Al hongo le sirven para salir del agua: bajan su tensión superficial, la hifa sube al aire y sus esporas no se mojan."
+      "texto": "A los hongos les sirven para salir del agua: bajan su tensión superficial, la hifa sube al aire y sus esporas no se mojan."
     },
     {
       "escena": "Agua",
-      "texto": "Y con agua mineral con gas pasó lo mismo."
+      "texto": "Con agua mineral con gas, igual."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que esa cerveza no estaba agitada: traía, desde el campo, el blindaje de sus burbujas."
+      "texto": "Así que esa cerveza no estaba agitada: traía, desde el grano, lo que blindaría sus burbujas."
     }
   ],
   "mezcla": "oficial-30oct"
