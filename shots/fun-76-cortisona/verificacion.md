@@ -78,4 +78,13 @@ Fuentes abiertas:
 
 **Opcional (no obligatoria, la versión actual ya es ✅), escena 9:** «Y una de esas cepas es de la misma especie que el moho negro que le sale a tu pan.» (Fuente: [PAT] "Rhizopus nigricans may be known as Mucor stolonifer"; [NZOR] sinónimo de *R. stolonifer*.) Si se usa, en pantalla: "*R. nigricans* = *R. stolonifer*, el moho negro del pan".
 
-VEREDICTO: PENDIENTE (correcciones)
+## Re-verificación (5 nov 2026)
+
+Se aplicaron las correcciones C1–C4 (la opcional de la escena 9 no se usó). Revisé `narracion.json` y `guion.md`:
+- **C1** voz «¿Y si alguien ponía ese oxígeno en un solo paso?»; en pantalla solo el tramo "oxígeno en el carbono 11" se encoge a un escalón y el resto de la escalera sigue ahí → ✅ ([HOGG] "a one-step solution … for 11-oxygenation").
+- **C2** voz «…de la farmacéutica Upjohn, publicaron que le dieron progesterona a un moho Rhizopus.»; tarjeta "publicado en 1952 (J. Am. Chem. Soc.) · patente desde 1950" → ✅ ([JACS] dic. 1952; [PAT] solicitud previa del 19 ago 1950).
+- **C3** OH del moho con enlace punteado (11α); voz «Con unos pasos químicos más, eso acortó la ruta y bajó el costo de la cortisona.»; mini-ruta "11α-OH (moho) → C=O (cortisona) → 11β-OH (hidrocortisona)"; en el tubo del cierre el OH va en cuña (11β) → ✅ ([PUB] CID 92730 11R, CID 222786 cortisona 11-ceto, CID 5754 11S; [WIP] "followed by several chemical steps"; [FC]).
+- **C4** en el matraz, micelio sumergido en pellets sin esporangios; esporangios solo en el recuadro "así se ve en una superficie" y en el pan → ✅.
+- No hay afirmaciones nuevas: el texto nuevo de la ficha de la patente en `## Fuentes` del guion (cepas *R. nigricans* ATCC 6227b y *R. arrhizus* ATCC 11145) coincide con [PAT]. Las demás líneas de voz no cambiaron. Todas las filas quedan ✅.
+
+VEREDICTO: APROBADO
