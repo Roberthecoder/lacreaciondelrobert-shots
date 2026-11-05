@@ -55,7 +55,7 @@ Fuentes:
 - Spoel, S. H. y Dong, X. (2012). How do plants achieve immunity? Defence without specialized immune cells. Nature Reviews Immunology 12: 89–100.
 - de Wit, P. J. G. M. et al. (2012). The genomes of the fungal plant pathogens Cladosporium fulvum and Dothistroma septosporum… PLoS Genetics 8: e1003088. https://pmc.ncbi.nlm.nih.gov/articles/PMC3510045/
 - de Wit, P. J. G. M. et al. (2009). Fungal effector proteins: past, present and future. Molecular Plant Pathology 10: 735–747. https://pmc.ncbi.nlm.nih.gov/articles/PMC6640362/
-- Mesarich, C. H. et al. (2018). Specific hypersensitive response–associated recognition of new apoplastic effectors from Cladosporium fulvum in wild tomato. MPMI 31: 145–162. https://hal.inrae.fr/hal-02624590/document
+- Mesarich, C. H. et al. (2018). Molecular Plant-Microbe Interactions 31: 145 (Cladosporium fulvum en el apoplasto del jitomate). https://hal.inrae.fr/hal-02624590/document
 - Miller, R. N. G. et al. (2017). Plant immunity: unravelling the complexity of plant responses to biotic stresses. Annals of Botany 119: 681–687. https://pmc.ncbi.nlm.nih.gov/articles/PMC5378191/
 - Glazebrook, J. (2005). Contrasting mechanisms of defense against biotrophic and necrotrophic pathogens. Annual Review of Phytopathology 43: 205–227.
 - Ellinger, D. et al. (2013). Elevated early callose deposition results in complete penetration resistance to powdery mildew in Arabidopsis. Plant Physiology 161: 1433–1444.
