@@ -326,6 +326,7 @@ function DefensaShot() {
   const K = { G: CUES.Gancho, SG: CUES.SinGlobulos, Es: CUES.Espora, Q: CUES.Quitina, R: CUES.Receptor, A: CUES.Alarma, P: CUES.Pregunta, Ef: CUES.Efectores,
     S: CUES.Sacrificio, E: CUES.Estudio, M: CUES.Manchas, As: CUES.Aspirina, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
+  const zS = klerp(1.18, 0.9, kprog(T, K.S + 2.6, K.S + 4.6, kEase.suave));
   const nPuntosG = kprog(T, K.G + 0.15, K.G + 2.6) * PUNTOS.length;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -376,7 +377,7 @@ function DefensaShot() {
       <Escena T={T} a={K.S} b={K.E} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={12} />
-        {(() => { const z = klerp(1.18, 0.9, kprog(T, K.S + 2.6, K.S + 4.6, kEase.suave));
+        {(() => { const z = zS;
           return <div style={{ position:'absolute', inset:0, transform:`scale(${z})`, transformOrigin:'30% 42%' }}>
             {fsvg(<Tejido T={T} hifa={klerp(0.55, 0.82, kprog(T, K.S - 0.3, K.S + 1.0))} hr={kprog(T, K.S + 0.6, K.S + 2.4)} />)}</div>; })()}
       </Escena>
@@ -471,7 +472,7 @@ function DefensaShot() {
       <BarraEscala T={T} at={K.SG} until={K.Es} texto="esquemático" largo={0} color={KC.ink} />
       <BarraEscala T={T} at={K.Es} until={K.Q} texto="20 µm" largo={174} />
       <BarraEscala T={T} at={K.Q} until={K.S} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.S} until={K.E} texto="20 µm" largo={110} />
+      <BarraEscala T={T} at={K.S} until={K.E} texto="20 µm" largo={110 * zS} />
       <BarraEscala T={T} at={K.E} until={K.M} texto="2 cm" largo={130} color={KC.ink} />
       <BarraEscala T={T} at={K.M} until={K.As} texto="1 cm" largo={150} color={KC.ink} />
       <BarraEscala T={T} at={K.As} until={K.C} texto="esquemático" largo={0} color={KC.ink} />
