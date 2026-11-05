@@ -1,0 +1,64 @@
+{
+  "dcHtml": "Shot Ergotioneina base narrada.dc.html",
+  "salida": "Shot Ergotioneina narrado.dc.html",
+  "nota": "Shot Fungi Mati #153. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. OCTN1 se pronuncia 'o, ce, te, ene, uno'. No es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tus células tienen una puerta especial para una molécula… y la mejor fuente que comes son los hongos."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Se llama ergotioneína: un aminoácido raro, con azufre."
+    },
+    {
+      "escena": "NoFabrica",
+      "texto": "Tu cuerpo no la fabrica, y las plantas con flor tampoco."
+    },
+    {
+      "escena": "Suelo",
+      "texto": "La hacen hongos y algunas bacterias; las plantas la toman del suelo."
+    },
+    {
+      "escena": "Comida",
+      "texto": "La que tienes llegó con lo que comiste."
+    },
+    {
+      "escena": "Membrana",
+      "texto": "Pero la membrana de tus células casi no la deja pasar."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces cómo entra?"
+    },
+    {
+      "escena": "Estudio2005",
+      "texto": "En 2005, en Colonia, Alemania, hallaron su puerta principal: el transportador OCTN1."
+    },
+    {
+      "escena": "CienVeces",
+      "texto": "La deja pasar más de cien veces mejor que a lo que se creía que movía."
+    },
+    {
+      "escena": "Ratones2010",
+      "texto": "En 2010, en Japón, ratones sin esa puerta se quedaron sin ergotioneína en la sangre."
+    },
+    {
+      "escena": "Tejidos",
+      "texto": "Las células con puerta la acumulan: glóbulos rojos, hígado, riñón y el cristalino del ojo."
+    },
+    {
+      "escena": "Porcini",
+      "texto": "Y un porcini puede traer unas diecisiete veces lo que un champiñón blanco."
+    },
+    {
+      "escena": "Ames",
+      "texto": "Bruce Ames la propuso como «vitamina de la longevidad»: es una propuesta, aún no probada."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa quesadilla de champiñones abre una puerta que tus células ya tenían."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

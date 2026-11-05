@@ -1,0 +1,64 @@
+{
+  "dcHtml": "Shot Trehalosa base narrada.dc.html",
+  "salida": "Shot Trehalosa narrado.dc.html",
+  "nota": "Shot Fungi Mati #151. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Si los champiñones te caen mal, quizá no es alergia: es un azúcar que tu intestino no corta."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Es la trehalosa, el azúcar de los hongos."
+    },
+    {
+      "escena": "Forma",
+      "texto": "No es el azúcar de mesa: son dos glucosas pegadas cara a cara."
+    },
+    {
+      "escena": "Cuanto",
+      "texto": "En 2013 midieron como un gramo por cada kilo de champiñón fresco."
+    },
+    {
+      "escena": "Escudo",
+      "texto": "Le sirve de reserva y protege sus proteínas y membranas cuando se seca o hace frío."
+    },
+    {
+      "escena": "Levadura",
+      "texto": "Sin ella, la levadura seca no aguanta mucho tiempo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y tú cómo la digieres?"
+    },
+    {
+      "escena": "Trehalasa",
+      "texto": "En tu intestino, la enzima trehalasa la corta en dos glucosas que sí absorbes."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1988, médicos de Copenhague revisaron biopsias de intestino de 97 adultos de Groenlandia:"
+    },
+    {
+      "escena": "Ocho",
+      "texto": "al menos 8 de cada 100 tenían muy poca trehalasa."
+    },
+    {
+      "escena": "Colon",
+      "texto": "Sin cortarse, llega al colon: jala agua y, si las bacterias la fermentan, puede haber gases y diarrea."
+    },
+    {
+      "escena": "Gen",
+      "texto": "Lo curioso: se conoce su gen, TREH, y una variante que baja la enzima."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Ojo: una alergia es otra cosa; consulta a tu médico."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que, si el champiñón te cae mal, quizá no es alergia: es un azúcar sin cortar."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

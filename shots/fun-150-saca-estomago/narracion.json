@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Estomago base narrada.dc.html",
+  "salida": "Shot Estomago narrado.dc.html",
+  "nota": "Shot Fungi Mati #150. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Ese moho no se está comiendo tu tortilla: la está digiriendo por fuera." },
+    { "escena": "SinEstomago", "texto": "Un hongo no tiene boca ni estómago: es como si lo sacara." },
+    { "escena": "Hifa", "texto": "Cada hilo, una hifa, crece por la punta y se mete en la tortilla, que es maíz: rica en almidón." },
+    { "escena": "Enzimas", "texto": "Sobre todo en la punta suelta enzimas: tijeras químicas, una para cada cosa." },
+    { "escena": "Tijeras", "texto": "Amilasas para el almidón, proteasas para las proteínas, lipasas para la grasa." },
+    { "escena": "Absorbe", "texto": "Afuera, la tortilla se deshace en azúcares y piezas chiquitas, y la hifa las absorbe." },
+    { "escena": "Pregunta", "texto": "¿Pero cómo saben que las suelta en la punta?" },
+    { "escena": "Estudio", "texto": "En 1991, en Groningen, Países Bajos, cultivaron Aspergillus niger, un moho que también sale en tortillas." },
+    { "escena": "Oro", "texto": "Marcaron con oro su glucoamilasa, la enzima que corta el almidón en glucosa." },
+    { "escena": "Punta", "texto": "Y apareció en la punta de las hifas que iban al frente, creciendo." },
+    { "escena": "Saliva", "texto": "Tú también usas ese truco: tu saliva trae amilasa, que corta el almidón." },
+    { "escena": "Cierre", "texto": "Así que ese moho no se come tu tortilla: la digiere por fuera y luego absorbe los pedacitos." }
+  ],
+  "mezcla": "oficial-30oct"
+}
