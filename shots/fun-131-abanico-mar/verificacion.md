@@ -111,4 +111,36 @@ Ningún dato de voz ni de pantalla depende solo de ellos. La causa (*A. sydowii*
 ### Pendientes
 Ninguna ❌ ni ⚠️ en la versión actual. Recomendación (no bloqueante): mantener el dibujo del conidióforo a escala con la barra de 30 µm.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni las rondas anteriores). Revisé completas las 13 líneas de `narracion.json`, los letreros/subtítulos/tarjetas de `abanico.jsx`, `guion.md` y `publicacion.md`. Fuentes reabiertas hoy: resúmenes completos de PubMed (E-utilities) de Kim y Harvell 2004, Ward et al. 2006, Rypien, Andras y Harvell 2008, Mydlarz et al. 2008, Becker et al. 2023 y Rypien y Andras 2008; PDF completo de Rypien 2008 (MEPS 367). Fuente nueva: Alker, Kim, Dube y Harvell 2004, *Coral Reefs* 23: 397–405 (solo resumen, vía buscador).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Voz 0: el anillo morado «no es el color del abanico: es su defensa»; «el sospechoso es un hongo de tierra» | ✅ | Alker et al. 2004 *Coral Reefs* (resumen); Becker et al. 2023 *Vet. Pathol.*; Rypien y Andras 2008 | Alker: "localized purpling, resulting from an increase in the proportion of purple sclerites, was associated with overgrowth by Millepora alcicornis and macroalgae, and infection by the fungus Aspergillus sydowii" (título: "Localized induction of a generalized response against multiple biotic agents") / Becker: "Hyphae were absent in 6 lesioned sea fans … questioning their pathogenicity" / "a widely distributed soil saprobe" | 2004 / 2023 / 2008 |
+| Voz 1 (antes): «una colonia de pólipos, **parientes de los corales**» | ⚠️ imprecisa | Mydlarz et al. 2008 *PLoS ONE*; Kim y Harvell 2004 | "the Caribbean sea fan corals (Anthozoa, Alcyonacea: Gorgoniidae)" / "sea fan corals (Gorgonia ventalina L.)": el abanico **es** un coral (octocoral), no un pariente de ellos | 2008 / 2004 |
+| Voz 1 (corregida): «Y no es planta: es una colonia de pólipos, un tipo de coral.» | ✅ | mismas + nota de UC Berkeley 1998 | "sea fan corals (Anthozoa, Alcyonacea: Gorgoniidae)" / "The sea fan - a type of animal life, as are all corals." | 2008 / 1998 |
+| Etiqueta «pólipos de 8 tentáculos · animal» | ✅ | Ward et al. 2006 ("octocoral"); subdiversion.es | "its polyps extend their eight tentacles" | 2006 |
+| Voz 2: *Aspergillus sydowii* suele vivir en el suelo | ✅ | Rypien y Andras 2008 *Mol. Ecol. Resour.*; Rypien et al. 2008 *Mol. Ecol.* | "a widely distributed soil saprobe" / "this typically terrestrial fungus" | 2008 |
+| Voz 3: las hifas se comen el tejido | ✅ (matiz) | Ellner et al. 2007 *Am. Nat.* (citado arriba) | "pathogen growth and spread through consumption of host tissue" | 2007 |
+| Voz 4: células de defensa y barrera de melanina | ✅ | Mydlarz et al. 2008 | "the cell-based immune defenses are granular acidophilic amoebocytes" / "an inflammatory response, characterized by a massive increase of amoebocytes, was evident near infections. Melanosomes were detected in amoebocytes adjacent to protective melanin bands" | 2008 |
+| Voz 5 y etiqueta: anillo morado con tejido muerto al centro, eje desnudo | ✅ | Becker et al. 2023 | "characterized by focal, annular purple pigmentation with central tissue loss" / "the tissue loss margin had exposure of the axis" | 2023 |
+| Voz 7, sello y tarjeta: hipótesis del 2000 (Shinn y colegas, GRL), polvo del Sahara que cruza el Atlántico | ✅ | Shinn et al. 2000 (resumen USGS, citado arriba); Rypien 2008 MEPS (PDF) | "soil dust that have been crossing the Atlantic … could be a significant contributor to coral reef decline"; Rypien llama a esto "the African Dust hypothesis" | 2000 |
+| Voz 8 y tarjeta «2008 · Rypien · Cornell · 7 muestras · sin A. sydowii», «no lo descarta del todo» | ✅ | Rypien 2008 *MEPS* 367 (PDF completo) | "4 samples of airborne dust from the Caribbean and Africa, and 3 sediment samples … However, none of the samples contained A. sydowii" (Bamako, Malí y St. Croix, 2006) / "I cannot conclusively rule out the African Dust hypothesis" | 2008 |
+| Voz 8: sus genes sugieren muchas entradas desde tierra; árbol «ambiente (suelo, aire…)» | ✅ | Rypien, Andras y Harvell 2008 *Mol. Ecol.* | "sea fan isolates are interspersed with environmental isolates, suggesting there have been multiple introductions from land into the ocean" | 2008 |
+| Voz 9, tarjeta y «> 50 %»: Cayos de Florida, 1997–2003, se perdió más de la mitad del tejido de abanico | ✅ | Kim y Harvell 2004 *Am. Nat.* (resumen); Bruno et al. 2011 (citado arriba) | "over 6 years. Since August 1997…" / "the Keys-wide loss of >50% of sea fan tissue from complete and partial mortality" | 2004 (datos 1997–2003) |
+| Voz 10 y etiquetas: Yucatán, 2002, 1 de cada 8 enfermo; 12.85 % → 5.26 % en 2004 | ✅ | Ward et al. 2006 *Dis. Aquat. Org.* | "along the Mexican Yucatan Peninsula" / "Prevalence of aspergillosis declined from 12.85% in 2002 to 5.26% in 2004" (12.85 % ≈ 1/7.8) | 2006 (datos 2002–2004) |
+| Voz 11 y chip: el mismo hongo se ha encontrado en personas enfermas (muestreo genético mundial, 2008) | ✅ | Rypien, Andras y Harvell 2008 | "a global sample of A. sydowii, including isolates from diseased corals, diseased humans, and environmental sources" | 2008 |
+| Voz 12 y chips: después los casos bajaron mucho (1997–2003); «quizá» resisten mejor (hipótesis) | ✅ | Kim y Harvell 2004; Bruno et al. 2011 | "Aspergillosis prevalence has declined steadily over the last 6 years" / "We conclude that increasing host resistance is the most likely driver of the decline" | 2004 |
+| `publicacion.md`: «7 muestras de polvo y sedimento de África y del Caribe»; «estudios recientes encuentran lesiones parecidas sin el hongo» | ✅ | Rypien 2008 (PDF); Becker 2023 | "sediment were taken in March 2006 from 1 site in Africa (Bamako, Mali), and 2 sites…" / "Hyphae were absent in 6 lesioned sea fans" | 2008 / 2023 |
+
+**Corrección aplicada (cambio mínimo, mismo número de palabras: 13):**
+- `narracion.json` línea 2 (escena "Animal"): «…es una colonia de pólipos, parientes de los corales.» → «…es una colonia de pólipos, un tipo de coral.»
+- `guion.md`: la misma frase en la tabla de la versión narrada.
+- `publicacion.md`: «pariente de los corales» → «un tipo de coral (octocoral)» en TikTok, Instagram y YouTube (las demás redes no lo decían).
+- `abanico.jsx`: sin cambio (el subtítulo idx 1 es «No es planta: *es una colonia de pólipos.*», sigue igual de correcto). Los `.dc.html` no contienen esa frase.
+- Re-verificado: «un tipo de coral» ✅ (Mydlarz 2008: "sea fan corals (Anthozoa, Alcyonacea: Gorgoniidae)").
+
+**Resultado:** tras la corrección, todo ✅.
+
 VEREDICTO: APROBADO

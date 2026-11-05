@@ -380,7 +380,7 @@ function EsporasLluviaShot() {
       <Capitulo T={T} caps={[{ at: K.V, titulo:'EL VIENTO' }, { at: K.Ci, titulo:'AL CIELO' }, { at: K.N, titulo:'LA NUBE' }]} hasta={K.H - 0.2} />
       <Etq T={T} at={K.V + 0.6} until={K.Su - 0.3} x={60} y={480} texto="vapor de agua" tam={32} color={KC.ink} />
       <Chip T={T} at={K.V + 1.6} until={K.Su - 0.3} texto="bajo el sombrero: 1–2 °C más frío" x={360} y={570} tam={32} borde={EL.frio} />
-      <Chip T={T} at={K.V + 3.0} until={K.Su - 0.3} texto="la superficie del sombrero: hasta 4 °C" x={340} y={650} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.V + 3.0} until={K.Su - 0.3} texto="sombrero: hasta 4 °C más frío" x={340} y={650} tam={26} borde={KC.ink} />
       <Etq T={T} at={K.Su + 0.3} until={K.Ci - 0.3} x={40} y={YG - 10 * ESC_CM - 40} texto="10 cm o más" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Su + 0.8} until={K.Ci - 0.3} texto="corre por el suelo, choca y gira" x={350} y={480} tam={30} borde={EL.frio} />
       <Nota T={T} at={K.Su + 1.8} until={K.Ci - 0.3} x={350} y={570} tam={24} ancho={560}>medido en setas ostra (<i>Pleurotus ostreatus</i>) y shiitake (<i>Lentinula edodes</i>), 2016</Nota>

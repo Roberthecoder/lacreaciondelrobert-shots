@@ -360,7 +360,7 @@ function UmamiShot() {
       <Chip T={T} at={K.U + 3.2} until={K.D - 0.2} texto="menos glutamato para notarlo" x={330} y={540} tam={30} borde={KC.red} />
       <Etq T={T} at={K.D + 0.6} until={K.C - 0.2} x={60} y={460} texto="kombu → glutamato" tam={32} color={KC.ink} />
       <Etq T={T} at={K.D + 1.9} until={K.C - 0.2} x={60} y={515} texto="hongo remojado → guanilato" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.D + 3.0} until={K.C - 0.2} texto="se suman en el receptor" x={360} y={620} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.D + 3.0} until={K.C - 0.2} texto="se potencian en el receptor" x={360} y={620} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="bomba de umami ✓" x={330} y={520} tam={46} borde={KC.gold} />
 
       {/* barras de escala */}

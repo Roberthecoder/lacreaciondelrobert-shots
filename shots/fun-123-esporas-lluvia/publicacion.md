@@ -68,7 +68,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esa seta no es solo un hongo: es una fábrica de viento… y quizá de lluvia. 🍄🌧️
-Enfría el aire bajo su sombrero y ese aire sube sus esporas 10 cm o más. Algunos hongos, como el moho Fusarium avenaceum y las royas, congelan agua de nube a −2.5 y −4 °C en el laboratorio; las esporas de seta son malas semillas de hielo. ¿Cuánta lluvia causan de verdad? Aún es hipótesis.
+Enfría el aire bajo su sombrero y ese aire sube sus esporas 10 cm o más. Algunos hongos, como el moho Fusarium avenaceum y las royas, congelan gotitas de agua a −2.5 y −4 °C en el laboratorio; las esporas de seta son malas semillas de hielo. ¿Cuánta lluvia causan de verdad? Aún es hipótesis.
 ¿Has visto setas en tu jardín después de la lluvia? 👇
 Shot Fungi Mati 123 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -89,13 +89,13 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Esa seta no es solo un hongo: es una fábrica de viento… y quizá de lluvia. 🍄 Enfría el aire 1–2 °C y sube sus esporas 10 cm o más. Un moho y las royas congelan agua de nube a −2.5 y −4 °C; cuánta lluvia causan aún es hipótesis. #FungiMati
+Esa seta no es solo un hongo: es una fábrica de viento… y quizá de lluvia. 🍄 Enfría el aire 1–2 °C y sube sus esporas 10 cm o más. En laboratorio, un moho y las royas congelan agua a −2.5 y −4 °C; cuánta lluvia causan aún es hipótesis. #FungiMati
 ```
 
 ### Threads
 ```text
 Esa seta no es solo un hongo: es una fábrica de viento… y quizá de lluvia. 🍄🌧️
-Enfría el aire bajo su sombrero y ese aire sube sus esporas 10 cm o más. Cada año suben al aire millones de toneladas de esporas. En las nubes, el moho Fusarium avenaceum y las royas congelan gotitas a −2.5 y −4 °C (las de seta, no tanto). ¿Cuánta lluvia causan? Aún es hipótesis.
+Enfría el aire bajo su sombrero y ese aire sube sus esporas 10 cm o más. Cada año suben al aire millones de toneladas de esporas. En el laboratorio, el moho Fusarium avenaceum y las royas congelan gotitas a −2.5 y −4 °C (las de seta, no tanto). ¿Cuánta lluvia causan? Aún es hipótesis.
 ¿Has visto setas después de la lluvia? 👇
 Soy Robert, de La Creación del Robert 🌱
 #Hongos

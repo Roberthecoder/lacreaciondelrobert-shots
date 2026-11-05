@@ -39,4 +39,37 @@ Verificador independiente (subagente que no escribió el guion), 5 nov 2026. Pri
 
 Re-verificación de las líneas corregidas: OK (verificador independiente)
 
+## Re-verificación independiente (5 nov 2026)
+
+Verificador independiente (no escribió el shot). Fuentes abiertas hoy: Su et al. 2022 (PMC9410191, texto completo), Combet et al. 2009 (PubMed), Lee et al. 2020 (PMC9728333), Hung et al. 2014 (PMC4066924), U. de Bristol MOTM, Hall et al. 1984 (resumen en Cambridge Core), Cork y Park 1996 y Kline 1994 (resúmenes PubMed vía E-utilities), Winder (FUNGI 19(1), PDF), base MFFI de la U. Jiao Tong de Shanghái (umbral de van Gemert 2011).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| El olor a hongo lo firma, sobre todo, una molécula de 8 carbonos (1-octen-3-ol) | ✅ | Su 2022 · Combet 2009 | "The main aromatic component of the button mushroom (Agaricus bisporus) is 1-octen-3-ol"; "eight-carbon volatiles characteristic of mushroom and fungal flavor" (nota: Combet halla 3-octanona como el volátil C8 más abundante en champiñón entero, pero el aroma característico se atribuye al 1-octen-3-ol; «sobre todo» lo deja abierto) | 2022 / 2009 |
+| Le dicen «alcohol de hongo»; 8 carbonos, 1 doble enlace, OH | ✅ | Hung 2014 | "“Mushroom alcohol,” or 1-octen-3-ol, is an 8-carbon alcohol" | 2014 |
+| La tierra mojada es otra: la geosmina | ✅ | PubMed 32251369 | "the soil-smelling terpenoids geosmin and 2-methylisoborneol" | 2020 |
+| Machacar el champiñón rompe células y cambia los olores | ✅ | Combet 2009 | "Tissue disruption had a major impact on the volatile profile, both qualitatively and quantitatively" | 2009 |
+| Ácido linoleico (18 C) + dos enzimas: dioxigenasa pone O₂ en el carbono 10; liasa corta y sale el pedazo de 8 C | ✅ | Su 2022 | "linoleic acid is converted to 10-hydroperoxide (10-HPOD) by deoxygenation, and 10-HPOD is subsequently cleaved to yield 1-octene-3-ol and 10-oxodecanoic acid"; "the multifunctional fatty acid dioxygenase AbLOX and hydroperoxide lyase AbHPL" | 2022 |
+| En agua, la nariz lo nota a cerca de 1 parte en mil millones | ✅ (las cifras varían) | Bristol · van Gemert 2011 (vía MFFI) · Hung 2014 | "1-octen-3-ol has a very low odour threshold around 1 ppb"; umbral en agua "0.0015 mg/kg" (= 1.5 ppb); "0.0001 mg/1 in water (Wnuk et al. 1983)" (= 0.1 ppb). Rango 0.1–1.5 ppb: «cerca de 1 en mil millones» es correcto como orden de magnitud | s. f. / 2011 / 1983 |
+| Dos formas en espejo (R y S) | ✅ | Bristol · Su 2022 | "it can exist as two optical isomers"; "(R)-(−)-1-octen-3-ol and (S)-(+)-1-octen-3-ol" | 2022 |
+| La R huele más a hongo; la S a moho y pasto | ✅ | Lee 2020 · Su 2022 | "(R)-(-)-1-octen-3-ol has a stronger mushroom-like flavor than the racemic 1-octen-3-ol and (S)-(+)-1-octen-3-ol that has a moldy and grassy smell" | 2020 |
+| Los hongos hacen sobre todo la R | ✅ | Su 2022 | "(R)-(−)-1-octen-3-ol is predominantly produced by biosynthesis, especially in button mushrooms (up to 99% of (R)-(−)-1-octen-3-ol)" | 2022 |
+| 1984: buscando atrayentes de la tsetsé en África, la hallaron en el olor del ganado | ✅ | Hall et al. 1984 · Winder | "The most potent stimulant in cattle odours … has been identified as 1-octen-3-ol"; autores en Londres y Harare (Zimbabwe), pruebas de campo; "Researchers searching for tsetse fly attractants in Africa found that cattle odors contain octenol" (el animal muestreado fue "a normal ox"; «vacas» = ganado, uso coloquial) | 1984 |
+| Pantalla: tsetsé = *Glossina* | ✅ | Hall 1984 | "tsetse, Glossina pallidipes and G. morsitans morsitans" | 1984 |
+| Sale en tu sudor | ✅ | Cork y Park 1996 | "Non-acid fractions were found to contain: 6-methyl-5-hepten-2-one, 1-octen-3-ol…" (en sudor humano) | 1996 |
+| Con el CO₂ atrae a algunos moscos (no a todos) | ✅ | Kline 1994 | "When used alone, octenol has been a good attractant for only a few species. However, there appears to be a synergistic response … to the combination of octenol and CO2" | 1994 |
+| Hay trampas con ella | ✅ | Hung 2014 | "can be used as a bait in mosquito traps" | 2014 |
+| El champiñón la arma cuando rompes sus células (cierre) | ✅ | Combet 2009 · Su 2022 | ver filas de daño de tejido y vía enzimática | 2009 / 2022 |
+
+Sin ❌ ni ⚠️ pendientes. No se cambió ningún archivo del shot salvo este `verificacion.md`.
+
+El dibujo es esquemático.
+
+### Ajuste del coordinador (5 nov 2026)
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| "En el olor de las vacas" → cambiado a "en el olor del ganado" (narración línea 12, subtítulo, chip, guion y publicacion.md) | ✅ (corregida) | Hall et al. 1984, Insect Sci. Applic. 5:335–339 | el olor estudiado fue el de "a normal ox" (un buey), es decir, ganado; título: "…isolated from cattle odours" | 1984 |
+
+Texto narrado cambiado: sí, solo la línea 12 ("vacas" → "ganado"), mismo largo.
+
 VEREDICTO: APROBADO

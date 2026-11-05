@@ -23,7 +23,7 @@
 | 8 | Pregunta | ¿Y por qué esa molécula huele tanto a hongo? | **Re-gancho.** Fondo rosa: la molécula con un "?" gigante; Robert grande, pensativo. |
 | 9 | Espejo | Tiene dos formas, como tu mano izquierda y tu mano derecha. | Fondo oscuro. Dos manos y dos moléculas en espejo (el –OH hacia adelante / hacia atrás). Etiquetas "R" y "S". |
 | 10 | Formas | La R huele más a hongo; la S, a moho y a pasto. Los hongos hacen sobre todo la R. | La R con ícono de champiñón; la S con íconos de moho y pasto. Chip "los hongos hacen sobre todo la R". |
-| 11 | Estudio | En 1984, buscando qué atrae a la mosca tsetsé en África, la encontraron en el olor de las vacas. | Fondo naranja. `TarjetaEstudio` "1984 · olor de ganado · moscas tsetsé (*Glossina*)". Una vaca esquemática, nube de olor y moscas tsetsé que se acercan. |
+| 11 | Estudio | En 1984, buscando qué atrae a la mosca tsetsé en África, la encontraron en el olor del ganado. | Fondo naranja. `TarjetaEstudio` "1984 · olor de ganado · moscas tsetsé (*Glossina*)". Una vaca esquemática, nube de olor y moscas tsetsé que se acercan. |
 | 12 | Moscos | También sale en tu sudor y, con el dióxido de carbono de tu aliento, atrae a algunos moscos: hay trampas con ella. | Fondo lila. Brazo con gotas de sudor + nube de CO₂ del aliento; unos moscos se acercan (otros no). Una trampa de moscos con frasquito "octenol + CO₂". Chip "a algunas especies". |
 | 13 | Cierre | Así que ese olor a hongo es, sobre todo, una molécula que el champiñón arma cuando rompes sus células. | **Regreso a la imagen del inicio:** el mismo champiñón, ya machacado, con la nubecita convertida en la molécula dibujada. Chip "1-octen-3-ol". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
@@ -44,7 +44,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué
 | 4 | 24.9 | 27.8 | 11_sorprendido | `arriba-der` | «una parte en mil millones» |
 | 5 | 28.1 | 31.1 | 07_pensativo_puno | `grande` | «¿Y por qué esa molécula huele tanto a hongo?» |
 | 6 | 37.1 | 39.4 | 06_pensativo_menton | `arriba-der` | «los hongos hacen sobre todo la R» |
-| 7 | 42.1 | 45.2 | 04_bajando_lentes | `arriba-der` | «la encontraron en el olor de las vacas» |
+| 7 | 42.1 | 45.2 | 04_bajando_lentes | `arriba-der` | «la encontraron en el olor del ganado» |
 | 8 | 47.9 | 52.0 | 10_serio_molesto | `arriba-der` | «atrae a algunos moscos» |
 | 9 | 52.6 | 58.2 | 02_apuntando_camara | `arriba-der` | «cuando rompes sus células» |
 | — | 58.3 | 61.8 | 13_senalando_arriba | CierreMarca | cierre |

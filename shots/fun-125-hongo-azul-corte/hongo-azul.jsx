@@ -234,7 +234,7 @@ function HongoAzulShot() {
           <g opacity={kprog(T, K.Pi + 2.6, K.Pi + 3.2)}><Pulvinico x={460} y={600} s={kclamp(kprog(T, K.Pi + 2.6, K.Pi + 3.3, kEase.rebote), 0.01, 1) * 0.9} /></g>
         </>)}
       </Escena>
-      {/* 5 · el corte: células rotas, enzima y oxígeno */}
+      {/* 5 · el corte: células rotas, pigmento y oxígeno */}
       <Escena T={T} a={K.Co} b={K.Ox} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
@@ -243,7 +243,6 @@ function HongoAzulShot() {
           <Navaja p={kprog(T, K.Co + 0.3, K.Co + 1.0)} x0={540} y0={700} x1={540} y1={1200} />
           {[[380, 0], [600, 0.3], [480, 0.6], [700, 0.9], [300, 1.1]].map(([ox, d], i) => { const u = kprog(T, K.Co + 2.0 + d, K.Co + 3.6 + d, kEase.sale);
             return u > 0 ? <O2 key={i} x={ox + (540 - ox) * u * 0.55} y={560 + 300 * u} s={0.9} /> : null; })}
-          {(() => { const u = kprog(T, K.Co + 3.0, K.Co + 3.8, kEase.rebote); return u > 0 ? <Enzima x={560} y={735} s={u * 0.85} T={T} /> : null; })()}
         </>)}
       </Escena>
       {/* 6 · se oxida: anión azul */}
@@ -327,7 +326,7 @@ function HongoAzulShot() {
       <Etq T={T} at={K.Pi + 3.6} until={K.Co - 0.3} x={60} y={535} texto="o su pariente, el xerocómico" tam={26} color={KC.texto} />
       <Etq T={T} at={K.Co + 1.0} until={K.Ox - 0.3} x={60} y={735} texto="células rotas" tam={30} color="#fff1c8" />
       <Etq T={T} at={K.Co + 2.2} until={K.Ox - 0.3} x={60} y={430} texto="oxígeno del aire" tam={32} color="#ffd2cc" />
-      <Etq T={T} at={K.Co + 3.2} until={K.Ox - 0.3} x={60} y={480} texto="+ enzima" tam={32} color={KC.mint} />
+      <Etq T={T} at={K.Co + 3.2} until={K.Ox - 0.3} x={60} y={480} texto="sale el pigmento" tam={32} color={KC.mint} />
       <Chip T={T} at={K.Ox + 1.2} until={K.P - 0.3} texto="se oxida → anión azul" x={540} y={560} tam={44} borde="#2f6bff" />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.R - 0.3} anio="1968" quien="Beaumont, Edwards y Elsworthy" revista="J. Chem. Soc. C (Londres) · «The blueing of Boletus species»" x={540} y={540} />
       <Etq T={T} at={K.E + 2.4} until={K.R - 0.3} x={60} y={810} texto="ácido variegático" tam={30} color={KC.ink} />
@@ -342,7 +341,7 @@ function HongoAzulShot() {
       <Etq T={T} at={K.D + 1.2} until={K.C - 0.3} x={60} y={480} texto="pie hueco, con cámaras" tam={26} color={KC.ink} />
       <Chip T={T} at={K.D + 2.6} until={K.C - 0.3} texto="otra molécula: girocianina" x={770} y={640} tam={32} borde="#2a5be0" />
       <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="no es podrido: es química" x={330} y={420} tam={42} borde="#2f6bff" />
-      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={60} y={520} texto="pigmento + oxígeno + enzima" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={60} y={520} texto="pigmento + oxígeno del aire" tam={28} color={KC.ink} />
       <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={1470} texto="No es guía de consumo: no comas hongos" tam={22} color={KC.ink} />
       <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={1505} texto="silvestres sin que un experto los identifique." tam={22} color={KC.ink} />
 
@@ -363,7 +362,7 @@ function HongoAzulShot() {
       <Sub T={T} idx={1} at={K.Bo + 0.1} until={K.To - 0.1} texto="Un boleto: *poros,* no láminas." />
       <Sub T={T} idx={2} at={K.To + 0.1} until={K.Pi - 0.1} texto="_Cyanoboletus:_ lo tocas y *se pinta.*" />
       <Sub T={T} idx={3} at={K.Pi + 0.1} until={K.Co - 0.1} texto="Un pigmento que *aún no es azul.*" />
-      <Sub T={T} idx={4} at={K.Co + 0.1} until={K.Ox - 0.1} texto="Células rotas + *enzima + oxígeno.*" />
+      <Sub T={T} idx={4} at={K.Co + 0.1} until={K.Ox - 0.1} texto="Células rotas: *pigmento + oxígeno.*" />
       <Sub T={T} idx={5} at={K.Ox + 0.1} until={K.P - 0.1} texto="Se oxida: *anión azul.*" />
       <Sub T={T} idx={6} at={K.P + 0.1} until={K.E - 0.1} texto="¿El azul es *señal de veneno?*" />
       <Sub T={T} idx={7} at={K.E + 0.1} until={K.R - 0.1} texto="1968: el *ácido variegático* azula boletos." />
