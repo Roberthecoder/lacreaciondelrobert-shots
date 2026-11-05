@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Olor Hongo base narrada.dc.html",
+  "salida": "Shot Olor Hongo narrado.dc.html",
+  "nota": "Shot Fungi Mati #151. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese olor a champiñón no es tierra: es sobre todo una molécula, el alcohol de hongo."
+    },
+    {
+      "escena": "Geosmina",
+      "texto": "No es la geosmina de la tierra mojada, que sueltan sobre todo bacterias."
+    },
+    {
+      "escena": "Corte",
+      "texto": "La seta casi no lo tiene: lo fabrica cuando la cortas."
+    },
+    {
+      "escena": "Enzima1",
+      "texto": "Al romperse sus células, una enzima le pega oxígeno a una grasa;"
+    },
+    {
+      "escena": "Enzima2",
+      "texto": "otra enzima la parte, y un pedazo de ocho carbonos sale volando."
+    },
+    {
+      "escena": "Nariz",
+      "texto": "En 1983 se reportó que lo notas con una milésima de miligramo por litro de agua."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué lo fabrica tan rápido?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2026, en la Universidad de Yamaguchi, Japón, cortaron setas en un frasco y midieron el aire segundo a segundo."
+    },
+    {
+      "escena": "Segundos",
+      "texto": "En menos de un segundo ya subía; tocó su máximo entre los ocho y doce segundos."
+    },
+    {
+      "escena": "Defensa",
+      "texto": "Parece una defensa: a unos ácaros que se comen las setas, los ahuyenta."
+    },
+    {
+      "escena": "Espejo",
+      "texto": "Y tiene dos versiones espejo: una huele a champiñón; la otra, a moho y pasto."
+    },
+    {
+      "escena": "Vacas",
+      "texto": "Lo raro: también sale del olor de las vacas, y es cebo en trampas para mosquitos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese olor a hongo no es tierra: es la seta reaccionando a tu cuchillo."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
