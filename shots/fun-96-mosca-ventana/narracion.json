@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Mosca Ventana base narrada.dc.html",
+  "salida": "Shot Mosca Ventana narrado.dc.html",
+  "nota": "Shot Fungi Mati #96. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa mosca en tu ventana no murió de vieja: la mató un hongo que le cambió la conducta."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Es Entomophthora muscae, y ataca moscas como la casera y la de la fruta."
+    },
+    {
+      "escena": "Espora",
+      "texto": "Una espora pegajosa le cae, perfora su cubierta y entra."
+    },
+    {
+      "escena": "Adentro",
+      "texto": "Se la come por dentro, y en dos días llega a su sistema nervioso."
+    },
+    {
+      "escena": "Subida",
+      "texto": "Días después, antes del atardecer, la mosca se agita y sube."
+    },
+    {
+      "escena": "Pose",
+      "texto": "Estira la trompa, se pega, levanta las alas… y muere."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo le dice un hongo a una mosca cuándo moverse?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2023, en Harvard, vieron que esa subida necesita neuronas del reloj de la mosca."
+    },
+    {
+      "escena": "Sangre",
+      "texto": "Y algo en su sangre la provoca: pasada a otras moscas, las hizo caminar más."
+    },
+    {
+      "escena": "Bandas",
+      "texto": "Ya muerta, el hongo sale en bandas blancas y dispara esporas a unos diez metros por segundo."
+    },
+    {
+      "escena": "Halo",
+      "texto": "Por eso a veces ves un halo blanco a su alrededor."
+    },
+    {
+      "escena": "Machos",
+      "texto": "En 2022, en Copenhague, vieron que su olor atrae machos a aparearse con hembras muertas… y muchos se contagian."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa mosca no murió de vieja: murió a la hora, en el lugar y en la pose que le marcó un hongo."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

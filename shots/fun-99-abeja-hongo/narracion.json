@@ -1,0 +1,64 @@
+{
+  "dcHtml": "Shot Abeja Hongo base narrada.dc.html",
+  "salida": "Shot Abeja Hongo narrado.dc.html",
+  "nota": "Shot Fungi Mati #99. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa pelusa blanca no echó a perder la cría: es la comida que esta abeja bebé necesita."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Es la larva de Scaptotrigona depilis, una abeja sin aguijón de Brasil."
+    },
+    {
+      "escena": "Celda",
+      "texto": "Las obreras llenan cada celdita de cera con alimento azucarado."
+    },
+    {
+      "escena": "Huevo",
+      "texto": "La reina pone un huevo encima y la celda se sella."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Unos tres días después, de la pared de cera brota un hongo sobre la comida."
+    },
+    {
+      "escena": "Come",
+      "texto": "La larva lo corta con sus mandíbulas y se lo come."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si le quitas el hongo?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2015, en Brasil, criaron larvas en laboratorio con comida esterilizada."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Con hongo sobrevivió el setenta y seis por ciento; sin hongo, solo el ocho."
+    },
+    {
+      "escena": "Ergosterol",
+      "texto": "En 2018, en la Universidad de São Paulo vieron por qué: el hongo le da ergosterol."
+    },
+    {
+      "escena": "Pupa",
+      "texto": "La larva no fabrica esteroles, y los necesita para volverse pupa."
+    },
+    {
+      "escena": "Levadura",
+      "texto": "Y el giro: no es moho; es una levadura, Zygosaccharomyces, que crece en hilitos."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "En México vive una prima: Scaptotrigona mexicana, de Tamaulipas a Chiapas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa pelusa no es moho: es lo que convierte a una larva en abeja."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
