@@ -290,7 +290,7 @@ function NecromasaShot() {
       <Etq T={T} at={K.Hu + 3.6} until={K.E19 - 0.3} x={640} y={990} texto="solo de bacterias" tam={26} color={NC.bact} />
       <TarjetaEstudio T={T} at={K.E19 + 0.1} until={K.E19 + 5.6} anio="2019" quien="Liang, Amelung, Lehmann y Kästner" revista="Global Change Biology · aminoazúcares 1996–2018" x={540} y={500} />
       <Etq T={T} at={K.E19 + 1.4} until={K.E26 - 0.3} x={90} y={765} texto="capa superior" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E19 + 2.2} until={K.E26 - 0.3} x={560} y={808} texto="pastizales: hasta 62 %" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.E19 + 2.2} until={K.E26 - 0.3} x={560} y={808} texto="pastizales: ~62 %" tam={26} color={KC.ink} />
       <Etq T={T} at={K.E19 + 2.6} until={K.E26 - 0.3} x={560} y={958} texto="bosques: ~1/3" tam={26} color={KC.ink} />
       <Chip T={T} at={K.E26 + 0.1} until={K.E26 + 3.4} texto="2026 · Lu et al. · Earth Syst. Sci. Data" x={540} y={440} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.E26 + 1.0} until={K.E26 + 3.4} texto="486 sitios · sobre todo hemisferio norte" x={540} y={1140} tam={30} borde={KC.red} />

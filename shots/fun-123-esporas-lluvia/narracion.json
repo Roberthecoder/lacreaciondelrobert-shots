@@ -1,7 +1,8 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Esporas Lluvia base narrada.dc.html",
   "salida": "Shot Esporas Lluvia narrado.dc.html",
-  "nota": "Shot Fungi Mati #123. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Lo de la lluvia se dice como hipótesis.",
+  "nota": "Shot Fungi Mati #123. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz aprobada por delegación de Robert tras la re-verificación independiente del 5 nov 2026. Lo de la lluvia se dice como hipótesis.",
   "lineas": [
     {
       "escena": "Gancho",

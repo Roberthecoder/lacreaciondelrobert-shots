@@ -11,7 +11,7 @@ Se llama 1-octen-3-ol y le dicen "alcohol de hongo". El olor a tierra mojada es 
 Cuando machacas un champiñón (Agaricus bisporus), rompes sus células. Un ácido graso de esas células, el ácido linoleico (18 carbonos), se encuentra con unas enzimas: una le pega oxígeno en el carbono 10 y otra, una liasa, corta la cadena. Sale un pedazo de 8 carbonos: el 1-octen-3-ol.
 En agua, tu nariz lo nota a cerca de una parte en mil millones.
 ¿Y por qué huele tanto a hongo? Tiene dos formas en espejo, como tu mano izquierda y tu mano derecha. La forma R huele más a hongo; la S, a moho y a pasto. Los hongos hacen sobre todo la R.
-En 1984, buscando qué atrae a la mosca tsetsé en África, encontraron esta molécula en el olor de las vacas. También sale en tu sudor y, junto con el dióxido de carbono de tu aliento, atrae a algunas especies de moscos: hay trampas que la usan.
+En 1984, buscando qué atrae a la mosca tsetsé en África, encontraron esta molécula en el olor del ganado. También sale en tu sudor y, junto con el dióxido de carbono de tu aliento, atrae a algunas especies de moscos: hay trampas que la usan.
 El dibujo es esquemático.
 Fuentes en el primer comentario.
 ¿A ti te gusta o te choca el olor a champiñón? 👇
@@ -23,7 +23,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Ese olor a hongo no es olor a tierra: lo firma, sobre todo, una molécula de ocho carbonos: el 1-octen-3-ol, el "alcohol de hongo". 🍄👃
-Se forma cuando rompes las células del champiñón: unas enzimas le pegan oxígeno al ácido linoleico y luego lo cortan; sale un pedazo de 8 carbonos. En agua lo hueles a cerca de una parte en mil millones. Tiene dos formas en espejo: la R huele más a hongo y la S a moho y pasto (los hongos hacen sobre todo la R). Y también está en el olor de las vacas y en tu sudor: con el CO₂ de tu aliento atrae a algunos moscos.
+Se forma cuando rompes las células del champiñón: unas enzimas le pegan oxígeno al ácido linoleico y luego lo cortan; sale un pedazo de 8 carbonos. En agua lo hueles a cerca de una parte en mil millones. Tiene dos formas en espejo: la R huele más a hongo y la S a moho y pasto (los hongos hacen sobre todo la R). Y también está en el olor del ganado y en tu sudor: con el CO₂ de tu aliento atrae a algunos moscos.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿A ti te gusta o te choca el olor a champiñón? 👇
 Shot Fungi Mati 127 · La Creación del Robert
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Ese olor a hongo no es olor a tierra: lo firma, sobre todo, una molécula de ocho carbonos, el 1-octen-3-ol. 🍄 Se forma cuando rompes las células del champiñón, lo hueles a cerca de una parte en mil millones (en agua), y también está en el olor de las vacas y en tu sudor: con el CO₂ de tu aliento atrae a algunos moscos. El dibujo es esquemático.
+Ese olor a hongo no es olor a tierra: lo firma, sobre todo, una molécula de ocho carbonos, el 1-octen-3-ol. 🍄 Se forma cuando rompes las células del champiñón, lo hueles a cerca de una parte en mil millones (en agua), y también está en el olor del ganado y en tu sudor: con el CO₂ de tu aliento atrae a algunos moscos. El dibujo es esquemático.
 ¿A ti te gusta o te choca el olor a champiñón? 👇
 Shot Fungi Mati 127 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -93,7 +93,7 @@ Ese olor a hongo no es tierra: lo firma, sobre todo, una molécula de 8 carbonos
 
 ### Threads
 ```text
-Ese olor a hongo no es olor a tierra: lo firma, sobre todo, una molécula de ocho carbonos, el 1-octen-3-ol. 🍄 Sale cuando rompes las células del champiñón, y la misma molécula está en el olor de las vacas y en tu sudor. ¿A ti te gusta o te choca el olor a champiñón?
+Ese olor a hongo no es olor a tierra: lo firma, sobre todo, una molécula de ocho carbonos, el 1-octen-3-ol. 🍄 Sale cuando rompes las células del champiñón, y la misma molécula está en el olor del ganado y en tu sudor. ¿A ti te gusta o te choca el olor a champiñón?
 Shot Fungi Mati 127 · La Creación del Robert
 #Hongos
 ```

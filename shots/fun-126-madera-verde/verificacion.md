@@ -46,4 +46,40 @@ Fuentes:
 
 El dibujo es esquemático.
 
+## Re-verificación independiente (5 nov 2026)
+
+Verificador independiente (no escribió el shot). Fuentes abiertas hoy: Blanchette et al. 1992 (resumen en experts.umn.edu), Giesbers et al. 2019 (PMC6704441, texto completo), ScienceDaily/OSU 2018, MushroomExpert (Kuo), Volk 2008, BADA, Wikipedia «Tunbridge ware» (como guía de fechas; cita a Tunbridge Wells Museum y Antique Collector), First Nature y Wikipedia *C. aeruginascens/aeruginosa* (madera sin corteza).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Madera teñida por un hongo, desde adentro (no pintura) | ✅ | Volk · Giesbers | "The discoloration is caused by the production of the pigment xylindein"; hifas y pigmento dentro de las células (Blanchette) | 2008 / 1992 |
+| *Chlorociboria*: copitas verde azulado de milímetros (pantalla 2–8 mm, pie corto) | ✅ | Kuo · Volk | "Cup-shaped to saucer-shaped; 3-8 mm wide; stalk up to 6 mm long, central to eccentric"; "2 - 6 mm in diameter" | s. f. / 2008 |
+| Sobre troncos/madera muerta sin corteza | ✅ | Kuo · First Nature · Wikipedia | "Saprobic; hardwoods, especially oak"; "Saprobic, on bark-free dead wood, particularly oak" | s. f. |
+| Hifas avanzan por las células (vasos, fibras y parénquima) | ✅ | Blanchette 1992 | "contained evidence of fungal hyphae in vessels, fibers and parenchyma cells" | 1992 |
+| Pigmento azul verdoso: xilindeína | ✅ | Giesbers 2019 | "the blue-green pigment xylindein" | 2019 |
+| Lo más común es ver la madera teñida, no las copitas | ✅ | Kuo · Volk | "The actual fruit bodies are less common."; "Most of the time you don't see the actual fruiting bodies but the brilliantly green-stained wood" | s. f. / 2008 |
+| 1992, equipo de Blanchette (U. de Minnesota), dos taraceas del Renacimiento italiano al microscopio | ✅ | Blanchette 1992 · Volk | "intarsia panels of the Gubbio studiolo, (Italy, 15th century…) and an intarsia panel made by Fra Giovanni da Verona, (Italy, around 1500…), were sectioned and examined by light, scanning and transmission electron microscopy"; "Dr. Robert Blanchette at the University of Minnesota" | 1992 |
+| Una en el Met de Nueva York; la otra de Fra Giovanni da Verona c. 1500 | ✅ | Blanchette 1992 | "in the collection of The Metropolitan Museum of Art, New York"; "around 1500, in the collection of the Historical Museum of Amsterdam" | 1992 |
+| El verde era álamo con hifas | ✅ | Blanchette 1992 | "The woods were identified as Populus sp." | 1992 |
+| Sin tintes minerales (pantalla «metales: casi nada») | ✅ | Blanchette 1992 | "showed no evidence of high concentrations of metal ions that would be present if inorganic dyes were used" | 1992 |
+| Mismo patrón que *Chlorociboria*; obras de 500 años | ✅ | Blanchette 1992 | "the micromorphology of fungal colonization and pigment deposition was identical to the patterns observed in the green wood of the 500 year old intarsia panels" | 1992 |
+| Tunbridge Wells: mosaicos con roble caído teñido por el hongo | ✅ | BADA | "The most interesting being the colour green which was created by taking wood from fallen oak trees infected with the fungus Chlorociboria aeruginascens" | s. f. |
+| Fecha de los mosaicos de Tunbridge (antes «siglos XVIII y XIX») | ⚠️ → corregido | BADA · Wikipedia | Los primeros souvenirs eran cajas con grabados; "It would be more than a century before the elaborate marquetry style … became readily available"; "around 1830, James Burrows invented a technique of creating mosaics from wooden tesserae" | s. f. |
+| Oregon State probó la xilindeína como semiconductor | ✅ | ScienceDaily/OSU · Giesbers | "as a promising possibility as a semiconductor material"; MRS Advances 2018 | 2018 / 2019 |
+| En solución, ~25 semanas de luz y aire sin degradarse | ✅ | Giesbers 2019 | "no degradation in optical absorption of xylindein was observed over the period of about 25 weeks, after which some degradation occurred" | 2019 |
+| Pantalla: TIPS-Pn «se degrada en 3 días»; diF TES-ADT «en semanas» | ✅ | Giesbers 2019 | "the TIPS-Pn molecules in the solution decomposed within 3 days"; diF TES-ADT "showed a gradual degradation over the period of first several weeks followed by an accelerated degradation starting at about 5 weeks" | 2019 |
+| No le gana al silicio; «funciona, pero no es un gran semiconductor» | ✅ | ScienceDaily/OSU | "Xylindein will never beat silicon"; "It functions as an electronic material but not a great one" | 2018 |
+| Lleva siglos dando color | ✅ | Giesbers 2019 · Volk | "as far back as the 1400s, still as vibrant as samples collected today"; "prized Chlorociboria-stained wood for centuries" | 2019 / 2008 |
+| Publicación: «hoy en Oregon lo estudian…» con datos de 2019 | ⚠️ → corregido | regla de cifras de más de 2 años | el dato de 25 semanas es de 2019 | 2019 |
+| Publicación: panel de Fra Giovanni «en el Museo Histórico de Ámsterdam» | ⚠️ → corregido | Blanchette 1992 | dato de 1992 (el museo cambió de nombre a Amsterdam Museum) | 1992 |
+
+**Correcciones de esta re-verificación (narración de `narracion.json` sin cambios):**
+1. `madera-verde.jsx` y `guion.md`: chip «Tunbridge Wells, Inglaterra · siglos XVIII y XIX» → «Tunbridge Wells, Inglaterra · siglo XIX» (los mosaicos de teselas son de ~1830 en adelante).
+2. `publicacion.md` (TikTok, YouTube, LinkedIn): los mosaicos pasan a «del siglo XIX»; en YouTube, «cajitas de madera (Tunbridge ware) desde el siglo XVIII y, en el XIX, mosaicos de teselas».
+3. `publicacion.md` (TikTok, Instagram): el dato de 25 semanas dice «en (su) estudio de 2019»; Instagram ya no dice «hoy lo estudian», sino «lo probaron».
+4. `publicacion.md` (YouTube): «entonces en el Museo Histórico de Ámsterdam».
+Partes corregidas re-verificadas contra las mismas fuentes: ✅.
+
+El dibujo es esquemático.
+
 VEREDICTO: APROBADO

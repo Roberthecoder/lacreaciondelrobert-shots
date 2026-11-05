@@ -369,7 +369,7 @@ function MaderaVerdeShot() {
       <Etq T={T} at={K.Pa + 0.7} until={K.Tu - 0.3} x={570} y={680} texto="panel del siglo XV" tam={30} color={KC.gold2} />
       <Chip T={T} at={K.Pa + 1.2} until={K.Tu - 0.3} texto="mismo patrón" x={540} y={1110} tam={40} borde={KC.gold} />
       <NumeroGigante T={T} at={K.Pa + 2.0} until={K.Tu - 0.3} valor={500} dur={1.2} sufijo=" años" etiqueta="obras de" x={360} y={500} tam={130} color={MV.verde2} />
-      <Chip T={T} at={K.Tu + 0.3} until={K.R - 0.3} texto="Tunbridge Wells, Inglaterra · siglos XVIII y XIX" x={540} y={470} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Tu + 0.3} until={K.R - 0.3} texto="Tunbridge Wells, Inglaterra · siglo XIX" x={540} y={470} tam={28} borde={KC.ink} />
       <Etq T={T} at={K.Tu + 1.6} until={K.R - 0.3} x={600} y={1000} texto="roble caído teñido" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Tu + 2.2} until={K.R - 0.3} x={560} y={640} texto="mosaico de madera" tam={28} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.R + 0.2} until={K.L - 0.3} anio="2018–19" quien="Universidad Estatal de Oregon" revista="MRS Advances 2018 · ACS Omega 2019" x={420} y={560} />

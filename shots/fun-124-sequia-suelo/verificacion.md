@@ -63,4 +63,32 @@ laboratorio» = #7, #12; contador de días, escala 10 µm y dibujos son esquemá
 
 Resto de líneas (gancho, milpa, bacterias, seca, hifas, pregunta, estudio 2018, lluvia, cierre, chip «África del Este, años 50»): ✅ según #1–9, #16, #19–21.
 
+
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador independiente (no escribió el guion ni las correcciones anteriores). Se revisaron las 14 líneas de `narracion.json`, todos los letreros, etiquetas, subtítulos, barras de escala y dibujos de `sequia.jsx`, y las 7 redes + comentario fijado de `publicacion.md`. Fuentes reabiertas: texto completo de de Vries 2018 (Europe PMC), resumen y métodos de Guhr 2015 (PMC), texto completo de Fraser 2016 y de Wolf 2013 (PMC), Jarvis 2007 (OUP).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| La tierra seca no está muerta: abajo aguantan hongos y bacterias (metáfora «aguanta la respiración») | ✅ | Wolf et al. 2013, PLoS ONE 8:e83661 https://pmc.ncbi.nlm.nih.gov/articles/PMC3877067/ ; Fraser et al. 2016 https://pmc.ncbi.nlm.nih.gov/articles/PMC5012885/ | "fungi perform better than bacteria in soils during drought"; "The complete cessation of CO2 eflux following sterilisation" (el pulso al mojar viene de vida) | 2013 / 2016 |
+| «Tu milpa lleva meses sin lluvia» (escenario) | ✅ ilustrativo (ningún estudio fue en milpa; los soles son ilustrativos) | Jarvis et al. 2007 https://academic.oup.com/treephys/article/27/7/929/1666540 | suelos que pasan la temporada seca y al rehumedecer "there is a burst of decomposition, mineralization and release of inorganic nitrogen and CO2" | 2007 |
+| Las bacterias son seres de agua: viajan por películas de agua entre los granos | ✅ | Wolf 2013 | "Bacteria are essentially aquatic organisms, as they rely on water for functioning and require water-filled pores or water films for passive and/or active motility" | 2013 |
+| Al secarse, los poros se llenan de aire y quedan sin camino | ✅ (generalización aceptable; la descripción de YouTube dice «la mayoría») | Wolf 2013 | "Most soil-bacterial cell morphologies (e.g. rods, cocci, spirals, etc.) are not adapted to bridging the air-filled spaces that occur in non-saturated soils" | 2013 |
+| Las hifas de los hongos cruzan huecos con aire | ✅ | Wolf 2013 | "The filamentous growth form is an important strategy for soil microbes to bridge air-filled pores in unsaturated soils" | 2013 |
+| Estudio de 2018 en Inglaterra (Lancaster), macetas de pradera, techo transparente | ✅ | de Vries et al. 2018, Nat Commun 9:3033 https://pmc.ncbi.nlm.nih.gov/articles/PMC6072794/ | "mesotrophic grassland at Hazelrigg Field Station, Lancaster University, UK"; "72 pots of 42L (38 × 38 cm, 40 cm depth)"; "placing transparent rain covers over the pots from May to July 2013" | publ. 2018 (sequía 2013; la descripción de YouTube lo dice) |
+| Barra «20 cm (maceta)» | ✅ (la maceta dibujada mide ≈ 42 × 34 cm con esa barra; real 38 × 38 × 40 cm) | de Vries 2018 | "38 × 38 cm, 40 cm depth" | 2018 |
+| Leyó el ADN de sus microbios | ✅ | de Vries 2018 | "16S and ITS amplicon sequencing" | 2018 |
+| La red de bacterias quedó menos estable; la de hongos, no · chips «bacterias: menos estable» / «hongos: más estable» | ✅ | de Vries 2018 | "drought promotes destabilising properties in soil bacterial, but not fungal, co-occurrence networks"; "fungal networks had properties that suggest higher stability" | 2018 |
+| 2015, laboratorio: el champiñón (*Agaricus bisporus*) llevó agua por sus hifas de tierra húmeda a tierra seca | ✅ (medido) | Guhr et al. 2015, PNAS 112:14647 https://pmc.ncbi.nlm.nih.gov/articles/PMC4664368/ | "a saprotrophic fungus (Agaricus bisporus) redistributes water from moist (–0.03 MPa) into dry (–9.5 MPa) soil at about 0.3 cm⋅min−1 in single hyphae" | 2015 |
+| Barra «2 mm (hueco de aire)» | ✅ | Guhr 2015 (métodos) | "A 2-mm-thick air gap between both chambers prevented capillary flow of water" | 2015 |
+| La descomposición se disparó · «+2,800 % · vs. hifas cortadas · 7 días» | ✅ | Guhr 2015 | "significantly enhanced carbon mineralization by 2,800% … in the previously dry soil compartment within 168 h"; controles: "hyphal connections between the chambers in the air gap were severed"; "59.7 g CO2·kg−1 C with active hydraulic redistribution and 2.1 g CO2·kg−1 C in controls" | 2015 |
+| «Sí: el de tu pizza» (*A. bisporus* = champiñón comercial) | ✅ | Velíšek y Cejpek 2011, Czech J Food Sci 29:87 https://www.agriculturejournals.cz/publicFiles/524_2010-CJFS.pdf | "the common mushroom A. bisporus … (now cultivated in at least 70 countries around the world)" | 2011 |
+| «¿Será parte de su secreto? Es una hipótesis» · sello HIPÓTESIS | ✅ (dicho como hipótesis, igual que los autores) | Guhr 2015 | "Hydraulic redistribution is likely one of the mechanisms behind higher drought resistance of soil fungi compared with bacteria" | 2015 |
+| Al llover, en minutos suelta CO₂ de sus microbios y de enzimas que trabajan fuera de ellos | ✅ | Fraser 2016 | "maximal rates of evolution within 6 min"; "approximately equal contributions from biochemical (outside membranes) and organismal (inside membranes) sources within the first 24 h"; bioquímico = "mediated by free or residually-bound enzymes" | 2016 |
+| Efecto Birch · África del Este, años 50 | ✅ | Fraser 2016; Jarvis 2007 | "sometimes referred to as the Birch effect"; "first characterized on agricultural and forest soils in East Africa in the 1950s and 1960s by H. F. Birch" | 2016 / 2007 |
+| publicacion.md: «en tierra esterilizada, el pulso desaparece» | ✅ | Fraser 2016 | "The complete cessation of CO2 eflux following sterilisation" | 2016 |
+| Barras «10 cm (terrón)», «5 µm (esquemático)», «red esquemática» y dibujos de poros/bacterias/hifas | ✅ (marcados como esquemáticos) | — | — | — |
+
+Resultado: todo ✅, 0 ⚠️, 0 ❌. Sin cambios en ningún archivo.
+
 VEREDICTO: APROBADO

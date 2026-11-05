@@ -272,7 +272,7 @@ function OlorShot() {
           <g opacity={kprog(T, K.F + 1.4, K.F + 1.9)}><Moho x={710} y={1040} s={0.85} /><Pasto T={T} x={870} y={1080} s={0.85} /></g>
         </>)}
       </Escena>
-      {/* 12 · el estudio: tsetsé y el olor de las vacas */}
+      {/* 12 · el estudio: tsetsé y el olor del ganado */}
       <Escena T={T} a={K.Es} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
@@ -329,7 +329,7 @@ function OlorShot() {
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="1984" quien="olor de ganado · moscas tsetsé" revista="Insect Sci. Applic., 1984" x={480} y={560} />
       <Etq T={T} at={K.Es + 3.0} until={K.M - 0.3} x={60} y={620} texto="mosca tsetsé" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Es + 3.3} until={K.M - 0.3} x={60} y={670} texto="Glossina" it tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Es + 3.6} until={K.M - 0.3} texto="1-octen-3-ol: olor de las vacas" x={350} y={470} tam={28} borde={KC.gold} />
+      <Chip T={T} at={K.Es + 3.6} until={K.M - 0.3} texto="1-octen-3-ol: olor del ganado" x={350} y={470} tam={28} borde={KC.gold} />
       <Etq T={T} at={K.M + 0.6} until={K.C - 0.3} x={60} y={850} texto="sudor: también lo trae" tam={30} color={KC.ink} />
       <Chip T={T} at={K.M + 2.8} until={K.C - 0.3} texto="+ CO₂ = atrae a algunas especies" x={420} y={470} tam={30} borde={KC.ink} />
       <Etq T={T} at={K.M + 4.6} until={K.C - 0.3} x={470} y={1150} texto="trampa: octenol + CO₂" tam={26} color={KC.ink} />
@@ -360,7 +360,7 @@ function OlorShot() {
       <Subtitulo T={T} idx={8} at={K.P + 0.1} until={K.E - 0.1} texto="¿Por qué huele *tanto a hongo?*" />
       <Subtitulo T={T} idx={9} at={K.E + 0.1} until={K.F - 0.1} texto="Dos formas, *como tus manos.*" />
       <Subtitulo T={T} idx={10} at={K.F + 0.1} until={K.Es - 0.1} texto="La *R* huele más a hongo." />
-      <Subtitulo T={T} idx={11} at={K.Es + 0.1} until={K.M - 0.1} texto="1984: *en el olor de las vacas.*" />
+      <Subtitulo T={T} idx={11} at={K.Es + 0.1} until={K.M - 0.1} texto="1984: *en el olor del ganado.*" />
       <Subtitulo T={T} idx={12} at={K.M + 0.1} until={K.C - 0.1} texto="Sudor + CO₂: *atrae moscos.*" />
       <Subtitulo T={T} idx={13} at={K.C + 0.1} until={K.Ou - 0.1} texto="Lo arma *cuando rompes sus células.*" />
 

@@ -7,7 +7,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ### TikTok
 ```text
 Ese anillo morado no es el color del abanico de mar: es su defensa, y el sospechoso es un hongo de tierra. 🪸🍄
-Primero: el abanico de mar del Caribe (Gorgonia ventalina) no es una planta. Es una colonia de pólipos diminutos, cada uno con 8 tentáculos como plumitas: un animal, pariente de los corales.
+Primero: el abanico de mar del Caribe (Gorgonia ventalina) no es una planta. Es una colonia de pólipos diminutos, cada uno con 8 tentáculos como plumitas. Es un animal: un tipo de coral (octocoral).
 El principal sospechoso de su enfermedad, la aspergilosis, es Aspergillus sydowii, un hongo que suele vivir en el suelo. Sus hilos, las hifas, se comen el tejido del abanico. Y el abanico responde: manda células de defensa y levanta una banda de melanina junto al hongo. Por fuera se ve un anillo morado con tejido muerto al centro, donde queda el esqueleto desnudo.
 ¿Cómo llega un hongo de tierra al mar? Una hipótesis del año 2000 propuso que con el polvo del Sahara que cruza el Atlántico. Pero en 2008 una investigadora de Cornell lo buscó en 7 muestras de polvo y sedimento de África y del Caribe y no apareció (pocas muestras: no lo descarta del todo). Y sus genes, comparados con los de hongos de todo el mundo, sugieren que entró al mar desde tierra muchas veces.
 El golpe fue fuerte: en los Cayos de Florida, entre 1997 y 2003, se perdió más de la mitad del tejido de abanico. En la península de Yucatán, en 2002, uno de cada ocho abanicos revisados estaba enfermo (12.85 %; en 2004 bajó a 5.26 %).
@@ -25,7 +25,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Ese anillo morado no es el color del abanico de mar: es su defensa, y el sospechoso es un hongo de tierra. 🪸🍄
-El abanico de mar no es planta: es una colonia de pólipos, pariente de los corales. El principal sospechoso de su enfermedad es Aspergillus sydowii, un hongo que suele vivir en el suelo: sus hifas se comen el tejido y el abanico responde con células de defensa y una banda de melanina. Por fuera queda un anillo morado con el centro muerto.
+El abanico de mar no es planta: es una colonia de pólipos, un tipo de coral (octocoral). El principal sospechoso de su enfermedad es Aspergillus sydowii, un hongo que suele vivir en el suelo: sus hifas se comen el tejido y el abanico responde con células de defensa y una banda de melanina. Por fuera queda un anillo morado con el centro muerto.
 ¿Cómo llegó al mar? Una hipótesis del 2000 culpó al polvo del Sahara, pero en 2008 no apareció en polvo de África ni del Caribe, y sus genes sugieren muchas entradas desde tierra.
 En los Cayos de Florida, entre 1997 y 2003, se perdió más de la mitad del tejido de abanico; en Yucatán, en 2002, uno de cada ocho estaba enfermo. Después, los casos bajaron mucho: quizá resisten mejor.
 El dibujo es esquemático. Fuentes en el primer comentario.
@@ -43,7 +43,7 @@ Ese anillo morado es un animal peleando contra un hongo 🪸 | Shot Fungi Mati 1
 Descripción:
 ```text
 Ese anillo morado no es el color del abanico de mar: es su defensa, y el sospechoso es un hongo de tierra.
-El abanico de mar del Caribe (Gorgonia ventalina) no es una planta: es una colonia de pólipos de 8 tentáculos, un animal pariente de los corales. El principal sospechoso de su enfermedad, la aspergilosis, es Aspergillus sydowii, un hongo que suele vivir en el suelo. Sus hifas se comen el tejido; el abanico responde con células de defensa y una banda de melanina, y por fuera se ve un anillo morado con tejido muerto al centro.
+El abanico de mar del Caribe (Gorgonia ventalina) no es una planta: es una colonia de pólipos de 8 tentáculos, un animal, un tipo de coral (octocoral). El principal sospechoso de su enfermedad, la aspergilosis, es Aspergillus sydowii, un hongo que suele vivir en el suelo. Sus hifas se comen el tejido; el abanico responde con células de defensa y una banda de melanina, y por fuera se ve un anillo morado con tejido muerto al centro.
 ¿Cómo llega un hongo de tierra al mar? En el año 2000 se propuso como hipótesis el polvo del Sahara que cruza el Atlántico. En 2008 no apareció en 7 muestras de polvo y sedimento de África y del Caribe (pocas: no lo descarta del todo), y un estudio genético mundial sugirió muchas entradas desde tierra.
 En los Cayos de Florida, entre 1997 y 2003, se perdió más de la mitad del tejido de abanico. En la península de Yucatán, en 2002, uno de cada ocho estaba enfermo (12.85 %; 5.26 % en 2004). La misma especie de hongo también se ha encontrado en personas enfermas. Después los casos bajaron mucho; una hipótesis es que los abanicos se volvieron más resistentes. Estudios recientes hallan lesiones parecidas sin el hongo: por eso es "sospechoso".
 El dibujo es esquemático.

@@ -65,4 +65,31 @@ Nota menor (no bloquea): el subtítulo del gancho dice «Un gas que calienta 273
 
 Las 4 ⚠️ previas quedaron bien redactadas en voz, pantalla y publicación. Sin ❌ ni ⚠️ pendientes.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segunda verificación pedida por Robert, hecha por un verificador que no escribió el guion ni las verificaciones anteriores. Se revisaron
+las 11 líneas de `narracion.json`, todos los letreros, chips, tarjetas, subtítulos y barras de `oxido-nitroso.jsx` y las 7 redes +
+comentario fijado de `publicacion.md`. Fuentes abiertas de nuevo hoy: EPA (GWP), PDF de Ravishankara et al. 2009 (texto extraído),
+resumen original de Tian et al. 2020 (Europe PMC), texto completo de Maeda et al. 2015 y de Higgins et al. 2018 (Europe PMC, XML),
+resumen original de Shoun et al. 1992 (Europe PMC) y resumen de Laughlin y Stevens 2002 (Crossref). Búsqueda adicional de una
+óxido nitroso reductasa fúngica descubierta después de 2018: no se encontró ninguna.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Gancho: parte del fertilizante se escapa como N₂O, que «kilo por kilo» calienta 273 veces más que el CO₂; pantalla «×273 · kilo por kilo · a 100 años» | ✅ | EPA, *Understanding GWPs* (IPCC AR6 WG1, 2021) | "Nitrous Oxide (N2O) has a GWP 273 times that of CO2 for a 100-year timescale." / "The GWPs listed above are from the IPCC's Sixth Assessment Report, published in 2021." | 2021 |
+| «Un estudio de 2009 mostró que es la emisión humana que más daña la capa de ozono»; tarjeta «2009 · Ravishankara y col. · Science»; publicación: Montreal no lo regula | ✅ | Ravishankara, Daniel y Portmann 2009, *Science* 326:123 | "making anthropogenic N2O emissions the single most important of the anthropogenic ODS emissions today"; "N2O is unregulated by the Montreal Protocol." | 2009 (atribuido al estudio en la voz) |
+| «La mayor parte del que emitimos sale del nitrógeno que echamos al campo»; pantalla «nitrógeno en cultivos: la mayor parte», «Tian y col. · Nature, 2020 · datos 1980–2016»; publicación «+30 % en cuatro décadas» | ✅ | Tian et al. 2020, *Nature* 586:248 | "Global human-induced emissions, which are dominated by nitrogen additions to croplands, increased by 30% over the past four decades to 7.3 (4.2-11.4) teragrams of nitrogen per year." (periodo "between 1980 and 2016") | 1980–2016 |
+| Suelo encharcado sin oxígeno → microbios respiran nitrato (desnitrificación) | ✅ | Butterbach-Bahl et al. 2013 (tabla principal #5); Laughlin y Stevens 2002 | "All of the N2O was derived from NO3 reduction." | 2002 / 2013 |
+| «Muchas bacterias lo vuelven nitrógeno inofensivo»; «N₂O → N₂ (inofensivo)» | ✅ | Higgins et al. 2018, *Genome Biol Evol* 10:2474 | "fungi cannot convert N2O to inert N2 like many denitrifying bacteria" | 2018 |
+| *Fusarium oxysporum* lo fabrica con su enzima P450nor (hemo, NO + NO → N₂O) | ✅ | Higgins et al. 2018; Shoun et al. 1992, *FEMS Microbiol Lett* 73(3):277 | "N2O formation is due to P450nor, a heme-containing cytochrome P450, that catalyzes the two electron reduction of nitric oxide (NO) to N2O"; "Nitrous oxide was the major product of the reduction of nitrate or nitrite." | 2018; 1992 |
+| «En ningún hongo se conoce la que lo desarma» (la enzima); chip «la enzima que lo desarma: no se conoce en hongos» | ✅ | Maeda et al. 2015, *Sci Rep* 5:9697 | "no nitrous oxide reductase has been identified in fungi and N2O is the end product of denitrification in the few characterized fungal strains" | 2015 (sigue vigente: Higgins 2018 y búsqueda de hoy) |
+| «En 2015, en Francia, de 207 hongos de suelos agrícolas y raíces, 70 lo producían»; tarjeta «INRA Dijon, Francia · Scientific Reports, 2015»; «70 de 207»; publicación «sobre todo *Fusarium oxysporum* y *Trichoderma*», «en cultivo puro» | ✅ | Maeda et al. 2015 | "a collection of 207 fungal isolates. Seventy strains producing N2O in pure culture were identified."; "previously isolated from agricultural soils or plant roots"; "MIAE collection (INRA, Dijon, France)"; "particularly Fusarium oxysporum and Trichoderma spp." | 2015 |
+| «Con tierra de un pastizal de Irlanda del Norte, en 2002, frenar a los hongos bajó el gas 89 %»; chips −89 % / −23 %; frascos de tierra | ✅ | Laughlin y Stevens 2002, *SSSAJ* 66:1540 | "a grassland soil from Northern Ireland"; "Cycloheximide decreased the flux of N2O by 89% and streptomycin decreased the flux by 23%, indicating that fungi were responsible for most of the N2O production." | 2002 |
+| «Ojo: fue un solo suelo; en otros, su aporte es incierto»; chip «89 % + 23 % > 100 %: el método es aproximado» | ✅ | Higgins et al. 2018 | "Despite extensive efforts, fungal contributions to N2O emissions remain uncertain." | 2018 |
+| Cierre «en tu milpa, un hongo puede volver parte en gas» | ✅ (posibilidad, con «puede»; no afirma cuánto) | Maeda et al. 2015 | 70 de 207 hongos de suelos agrícolas y raíces producen N₂O | 2015 |
+| Dibujo: hifa tabicada de *F. oxysporum*, bacteria a escala 1 µm, hifa 10 µm, enzima esquemática | ✅ (esquemático) | conocimiento microbiológico general | — | — |
+
+Nota menor (no bloquea): el subtítulo del gancho omite «kilo por kilo», pero el chip «kilo por kilo · a 100 años» está en pantalla
+al mismo tiempo y la voz lo dice. No se encontraron ❌ ni ⚠️. **Sin cambios en ningún archivo.**
+
 VEREDICTO: APROBADO

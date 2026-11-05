@@ -7,8 +7,8 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ### TikTok
 ```text
 Ese hongo no se está pudriendo: se pone azul en segundos porque lo cortaste. 🍄💙
-Es un boleto: abajo no tiene láminas, sino poros, como una esponja. Uno muy famoso, Cyanoboletus pulverulentus, se pinta de azul casi negro con solo tocarlo.
-¿Qué pasa por dentro? Muchos boletos guardan en sus células un pigmento que todavía no es azul: el ácido variegático o su pariente, el ácido xerocómico. Al cortar o apretar, las células se rompen, y una enzima junta el pigmento con el oxígeno del aire. El pigmento se oxida y se vuelve un anión azul (una "quinona metida"). Por eso el color sale justo donde lo tocas.
+Es un boleto: abajo no tiene láminas, sino poros, como una esponja. Uno de ellos, Cyanoboletus pulverulentus, se pinta de azul casi negro con solo tocarlo.
+¿Qué pasa por dentro? Muchos boletos guardan en sus células un pigmento que todavía no es azul: el ácido variegático o su pariente, el ácido xerocómico. Al cortar o apretar, las células se rompen y el pigmento se encuentra con el oxígeno del aire. El pigmento se oxida y se vuelve un anión azul (una "quinona metida"). Por eso el color sale justo donde lo tocas.
 ¿Entonces el azul es señal de veneno? En 1968, unos químicos publicaron en una revista de Londres (Journal of the Chemical Society) que el ácido variegático es lo que azula a varias especies de boletos.
 Y no: el color no dice si un hongo se come. Hay boletos azulados que se consideran comestibles y otros que intoxican, como el boleto de Satanás (Rubroboletus satanas), que causa vómito y diarrea. Nunca comas hongos silvestres sin que un experto los identifique.
 Dato extra: Gyroporus cyanescens también se azula, pero con otra molécula distinta: la girocianina.
@@ -24,7 +24,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Ese hongo no se está pudriendo: se pone azul en segundos porque lo cortaste. 🍄💙
-Muchos boletos guardan en sus células un pigmento que todavía no es azul: el ácido variegático (o el xerocómico). Al cortarlos, las células se rompen, una enzima junta el pigmento con el oxígeno del aire y se forma un anión azul. Cyanoboletus pulverulentus se pinta de azul casi negro con solo tocarlo, y Gyroporus cyanescens se azula con otra molécula, la girocianina.
+Muchos boletos guardan en sus células un pigmento que todavía no es azul: el ácido variegático (o el xerocómico). Al cortarlos, las células se rompen, el pigmento se encuentra con el oxígeno del aire y se forma un anión azul. Cyanoboletus pulverulentus se pinta de azul casi negro con solo tocarlo, y Gyroporus cyanescens se azula con otra molécula, la girocianina.
 Ojo: el color no dice si se come. Hay azulados que se consideran comestibles y otros que intoxican, como el boleto de Satanás. Nunca comas hongos silvestres sin que un experto los identifique.
 El dibujo es esquemático. No es guía de consumo. Fuentes en el primer comentario.
 ¿Has visto un hongo que se pone azul? ¿Dónde? 👇
@@ -41,8 +41,8 @@ Este hongo no está podrido: se pone AZUL al cortarlo 🍄 | Shot Fungi Mati 125
 Descripción:
 ```text
 Ese hongo no se está pudriendo: se pone azul en segundos porque lo cortaste.
-Es un boleto: en vez de láminas, debajo del sombrero tiene tubos que terminan en poros, como la superficie de una esponja. Cyanoboletus pulverulentus es famoso porque todo el hongo se pinta de azul casi negro en cuanto lo tocas o lo cortas.
-Por dentro: muchos boletos guardan en sus células pigmentos de la familia de los ácidos pulvínicos, sobre todo el ácido variegático y su pariente, el ácido xerocómico, que todavía no son azules. Al cortar o apretar el hongo, las células se rompen; una enzima pone en contacto el pigmento con el oxígeno del aire, el pigmento se oxida y forma un anión azul (una quinona metida). Por eso el azul aparece justo donde hubo daño.
+Es un boleto: en vez de láminas, debajo del sombrero tiene tubos que terminan en poros, como la superficie de una esponja. Cyanoboletus pulverulentus destaca porque todo el hongo se pinta de azul casi negro en cuanto lo tocas o lo cortas.
+Por dentro: muchos boletos guardan en sus células pigmentos de la familia de los ácidos pulvínicos, sobre todo el ácido variegático y su pariente, el ácido xerocómico, que todavía no son azules. Al cortar o apretar el hongo, las células se rompen; el pigmento queda en contacto con el oxígeno del aire, se oxida y forma un anión azul (una quinona metida). Por eso el azul aparece justo donde hubo daño.
 ¿Entonces el azul es señal de veneno? La molécula se describió en 1968: Beaumont, Edwards y Elsworthy publicaron en el Journal of the Chemical Society (Londres) que el ácido variegático es el responsable del azulado de varias especies de Boletus.
 Y no: el azul no dice si un hongo se come. Hay boletos azulados que se consideran comestibles y otros que intoxican, como el boleto de Satanás (Rubroboletus satanas), de sombrero pálido y poros rojos, que causa síntomas sobre todo gastrointestinales. Nunca comas hongos silvestres sin que un experto los identifique.
 Dato extra: Gyroporus cyanescens también se azula, pero con otra molécula distinta: la girocianina.
@@ -73,7 +73,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 ¿Por qué algunos hongos se ponen azules al cortarlos? Es química de oxidación, no descomposición.
-En muchos boletos, pigmentos de la familia de los ácidos pulvínicos (ácido variegático y ácido xerocómico) están dentro de las células sin color azul. Cuando el tejido se daña, una enzima los pone en contacto con el oxígeno y se oxidan a aniones de quinona metida, de color azul intenso (Velíšek y Cejpek, 2011). El compuesto se describió en 1968 (Beaumont, Edwards y Elsworthy, J. Chem. Soc. C).
+En muchos boletos, pigmentos de la familia de los ácidos pulvínicos (ácido variegático y ácido xerocómico) están dentro de las células sin color azul. Cuando el tejido se daña, quedan en contacto con el oxígeno y se oxidan a aniones de quinona metida, de color azul intenso (Velíšek y Cejpek, 2011). El compuesto se describió en 1968 (Beaumont, Edwards y Elsworthy, J. Chem. Soc. C).
 Dos lecciones útiles fuera del bosque:
 1) Una señal visible no siempre significa lo que parece: el azul no indica toxicidad ni comestibilidad; hay especies azuladas que se consideran comestibles y otras tóxicas, como Rubroboletus satanas.
 2) Moléculas distintas pueden dar el mismo resultado: Gyroporus cyanescens se azula con girocianina, otro compuesto.
