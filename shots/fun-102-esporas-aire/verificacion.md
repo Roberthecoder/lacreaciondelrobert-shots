@@ -95,4 +95,35 @@ Fuente nueva abierta (PDF descargado):
 Resumen: las correcciones de voz (idx0, 2, 11 y 12), los chips y la animación del anillo quedan ✅. En `publicacion.md` el
 verificador corrigió 3 frases (P6, P8, P11), que no tocan la voz. Todo lo que se dice o se ve en el shot queda ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la verificación anterior). Se volvieron a descargar y leer en texto completo:
+[HER] (Europe PMC fullTextXML PMC11943160), [KIM] (PMC6421443), [BEN] (PMC3390897), [ABEL] (PMC10219211), [ELB] (PDF del
+editor, acp.copernicus.org), [EPA] (página "Particulate Matter (PM) Basics") y el resumen de [LAT] en Europe PMC. Se revisó
+toda la voz de `narracion.json`, todos los letreros `texto=`/`etiqueta=`/`cita=` de `esporas-aire.jsx`, `guion.md` y `publicacion.md`.
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| V1 | «Hoy vas a respirar miles de esporas de hongos que tus ojos nunca van a ver» / «Hoy, *miles* que nunca vas a ver» | ✅ | [ELB], [HER], [EFH], [EPA] | [ELB]: "fungal spores in continental air around the world have reported concentrations on the order of 10^4 m−3"; [HER]: año más bajo "ASIn (68,130 spores/m3)" ≈ 187/m³ al día × 12.2–16 m³/día ([EFH]) ≈ 2,300–3,000 al día. Invisibles: pelo "about 70 micrometers" ([EPA]) vs conidios de µm. | 2007 / 2016–2023 / 2011 |
+| V2 | «En Hermosillo, en mayo de 2023, un metro cúbico de aire llegó a traer más de ocho mil» (contador 8,445; "trampa de esporas · *J. Fungi*, 2025") | ✅ | [HER] | "the concentration that we recorded in Hermosillo during the highest peak in May of 2023 with 8445 spores/m3"; "Results are expressed as daily fungal spore concentrations in air (spores/m3 air)" | 2023 (publ. 2025) |
+| V3 | «Ese día, con medio litro por respiración, eran unas cuatro» ("0.5 L × 8,445 / m³ ≈ 4") | ✅ | [TV], [HER] | "around 500 mL in an average healthy adult male"; 8,445 × 0.0005 = 4.2 | 2023 |
+| V4 | «Las más comunes son de *Cladosporium*» ("44 % de las esporas · Hermosillo 2016–19 y 2022–23") | ✅ | [HER], [BEN] | "The most common fungal outdoor spores corresponded to Cladosporium (44%)… of the total 6-year data"; "Conidia of Cladosporium species also represent the most common fungal component isolated from air" | 2025 / 2012 |
+| V5 | «unas veinte veces más delgadas que un pelo» ("pelo ≈ 70 µm", "≈ 2–6 µm de ancho") | ✅ (aprox.) | [EPA], [BEN] | "The average human hair is about 70 micrometers in diameter"; conidios "usually 2-5 μm wide" / "3-5(-6) μm"; 70 ÷ 3.5 = 20 | 2026 / 2012 |
+| V6 | «Nacen en cadenitas y, tan chiquitas, el viento se las lleva lejos» ("nacen en cadenitas") | ✅ | [BEN] | "With their small conidia, usually formed in branched chains, they are well adapted to be spread easily in large numbers over long distances" | 2012 |
+| V7 | "viento seco · ≈ 1 m/s basta" | ✅ | [ELB] | "the wind speed required for the discharge of DDS is typically on the order of ∼1 m s−1" | 2007 |
+| V8 | «Algunas pueden llegar al fondo de tus pulmones» ("menos de 10 µm: algunas llegan hondo") | ✅ | [EPA], [LAT] | "Some particles less than 10 micrometers in diameter can get deep into your lungs" | 2026 / 1999 |
+| V9 | «En 2019, en Cornell y Virginia Tech, filmaron **una gota de lluvia** cayendo sobre trigo con roya» | ⚠️ → corregido | [KIM] | Métodos: "A syringe needle was used to generate water drops"; "we observed the liberation of dry-dispersed spores following **simulated raindrop impacts** on wheat leaves infected with the rust fungus Puccinia triticina"; "We first attached a rust-infected wheat leaf on a Petri dish". No fue lluvia real sino una gota de laboratorio del tamaño de una de lluvia. Afiliaciones: "Cornell University, Ithaca" y "Virginia Polytechnic Institute and State University" ✅. | 2019 |
+| V9c | Voz corregida: «En 2019, en Cornell y Virginia Tech, filmaron una gota **como de lluvia** cayendo **en** trigo con roya.» (y en `publicacion.md`: "gota de agua del tamaño de una de lluvia", "lluvia simulada en laboratorio", "gota como de lluvia") | ✅ | [KIM] | "simulated raindrop impacts"; "water drops of radius … within the range of the typical size of raindrops" | 2019 |
+| V10 | «El golpe formó un anillo de aire, como aro de humo, que levantó miles de esporas» ("miles de esporas · una sola gota"; dibujo: la gota se extiende de lado y el aire se enrolla) | ✅ | [KIM], [COR] | "an air vortex ring was formed during the raindrop impact and carried the dry-dispersed spores away"; "the number of dry-dispersed spores, Ns, is on the order of 10^3"; "a vortex ring was shed as a boundary layer keeps propagating laterally, after the spreading drop reached its maximum radius" | 2019 |
+| V11 | «Y el viento puede llevar esporas a otros continentes» | ✅ | [BH] | "Long-distance dispersal of fungal spores by the wind can spread plant diseases across and even between continents" | 2002 |
+| V12 | «Un cálculo de 2007: los hongos sueltan unos cincuenta millones de toneladas de esporas al año» ("estimación global · Elbert y col., 2007") | ✅ | [ELB] | "The estimated emission rate of total fungal spores (∼50 Tg yr−1)"; 50 Tg = 50 millones de t | 2007 |
+| V13 | «en una persona sana, el sistema inmune suele eliminarlas» ("persona sana: normalmente las elimina", "estudiado en *Aspergillus fumigatus*", macrófago) | ✅ | [LAT] | "The conidia are normally eliminated in the immunocompetent host by innate immune mechanisms" | 1999 |
+| V14 | «con alergia, pueden dar rinitis o asma» ("con alergia: rinitis o asma") | ✅ | [ABEL] | "The genera Alternaria and Cladosporium are the most frequently associated with allergic respiratory diseases"; "allergic rhinitis … allergic asthma" | 2023 |
+| V15 | Dibujos: conidios de *Cladosporium* en cadenas ramificadas, oliva-café, limoniformes; *Alternaria* en mazo con tabiques; *Puccinia triticina* naranja en pústulas; escalas | ✅ (esquemático) | [BEN], [WOU], [KIM] | Ver filas 7, 8 y 12 de la primera verificación. | 2012–2019 |
+| V16 | `publicacion.md`: resto de datos (190–520/m³ día promedio, 12.2–16.0 m³/día, 10^4/m³, 1 m/s, capa límite, continentes, 50 Tg, primer calendario de Hermosillo, alergia) | ✅ | [HER], [EFH], [ELB], [KIM], [BH], [ABEL] | Coinciden con las frases textuales de arriba y de las filas P1–P14. | 2002–2025 |
+
+Cambio de voz: solo idx7 (+2 caracteres; `estimar-escenas.mjs` da 945 caracteres, voz ≈ 58.3 s, total ≈ 61.8 s; escena "Estudio"
+5.7 → 5.8 s en `OM_SCENES`). El `.jsx` no cambió (su subtítulo «2019: una gota *sobre trigo con roya.*» ya era correcto).
+Todo queda ✅.
+
 VEREDICTO: APROBADO

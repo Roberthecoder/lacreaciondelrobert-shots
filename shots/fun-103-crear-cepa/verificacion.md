@@ -75,4 +75,30 @@ Fuentes abiertas:
 
 Resumen (tercera ronda, 5 nov 2026): se releyó `publicacion.md` completo tras las correcciones y se confirmó que los textos del bloque `TX` de `cepa.jsx` no cambiaron. Voz, pantalla y textos para publicar: todo ✅ (0 ⚠️, 0 ❌). Los retoques que siguen en cepa.jsx son solo de dibujo (la seta partida y la posición de etiquetas) y no afirman nada nuevo.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la verificación anterior). Se releyeron completos `narracion.json` (13 líneas),
+los letreros `texto=` de `cepa.jsx`, `guion.md` y `publicacion.md`. Se volvió a descargar [OAX] en texto completo (Europe PMC
+fullTextXML PMC4204971); [UF] se cotejó en sus copias de EDIS / ask.ifas.ufl.edu / journals.flvc.org (Liao y col., SS663,
+revisado 2025); los datos de Robert, contra `series/shot-robert/datos.md` (líneas 30 y 34).
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| V1 | «Esta seta no nació de una semilla: nació de una cepa, y una cepa se crea a mano» | ✅ | [PSU], [UF] | "Isolates of the cultivated mushroom used to make spawn are obtained by one of five basic means: hybridization, monospore, multispore, mycelial transfer, or tissue culture." | s/f / 2025 |
+| V2 | «Se abre y, con pinzas estériles, se toma tejido de adentro, limpio» ("Tejido *de adentro,* limpio.") | ✅ | [UF] | "The inside tissue of a fruiting body is exposed by pulling apart the mushroom cap to expose the inside uncontaminated tissues"; "Pluck tiny pieces of the inside tissue using sterile fine-tip tweezers and transfer onto the agar or gelatin media." | 2018–2025 |
+| V3 | «En una campana de flujo o una caja sin corrientes de aire, va a una caja con agar» | ✅ | [UF] | "Ideally, this is done inside a still-air transfer chamber or a laminar flow hood to avoid airborne contamination." | 2018–2025 |
+| V4 | «Salen hifas, que crecen por la punta: la colonia avanza en círculo» | ✅ | [MOORE] | "hyphae extend only at their apex"; "a ring-shaped peripheral area of the mycelium that contributes to radial expansion of the colony" | 2004 |
+| V5 | «Si sale limpia, un cuadrito de micelio pasa a otra caja: un clon» | ✅ | [UF] | "Oyster mushrooms can be cloned (isolated into pure culture) from the basidiocarp"; clean isolates "sub-cultured onto new growth medium" | 2018–2025 |
+| V6 | «La pones boca abajo sobre un papel y suelta un polvo de esporas» | ✅ | [ANBG] | "Put the cap on a piece of paper, gills facing down … Leave it for a few hours" | s/f |
+| V7 | «En estas setas, cada espora da un micelio de un solo tipo de núcleo» | ✅ | [LAR], [JAMES] | "In tetrapolar basidiomycetes, a single basidiospore produces upon germination a hypha in which all nuclei are identical (homokaryon)"; *P. djamor* heterotálico tetrapolar. "En estas setas" acota el dato a *Pleurotus*. | 2001 / 2004 |
+| V8 | «Dos compatibles se fusionan en un dicarión: el micelio doble que da setas» | ✅ | [RAM] | "Two monokaryotic compatible hyphae are able to fuse and give rise to a dikaryotic mycelium … which will fruit under the appropriate environmental conditions." | 2000 |
+| V9 | «Un estudio mexicano de 2014 cruzó micelios de dos setas silvestres de Oaxaca: salieron cincuenta y seis híbridas» ("Estudio mexicano, 2014: *56 híbridas.*") | ✅ | [OAX] | "Pairing of compatible neohaplonts resulted in 56 hybrid strains"; "two native wild strains"; "The carpophores of the Pleurotus ssp" (material de setas) "isolated from rotten tree trunks of cazahuate … in the city of Huajuapan de León, Oaxaca … during August and September 2010"; afiliaciones U. Tecnológica de la Mixteca, IPN, UNAM; "Copyright © 2014". Cruzaron micelios (neohaplontes), no esporas: la pantalla lo aclara. | 2010 (publ. 2014) |
+| V10 | «Cada cepa lleva código y se guarda en agua estéril, congelada o resembrándola» ("*Agua, congelada o resembrada.*") | ✅ | [UF], [CAS] | "New cultures are assigned unique numbers or codes and maintained as mother cultures (pure cultures)"; "the most used conservation methods are cryopreservation and sterile distilled water"; métodos: "sterile distilled water, cryopreservation, freeze-drying, sub-culture, and sterile mineral oil" | 2025 / 2021 |
+| V11 | Robert: «Yo saqué seta rosa de una impresión de esporas; mis primeras cajas Petri fueron tuppers» | ✅ | [DATOS] | "✅ Sacó seta rosa desde una impresión de esporas hasta la cosecha."; "✅ Una olla de presión fue su autoclave y los tuppers sus cajas de Petri." | — |
+| V12 | Cierre: «esa seta no nació de una semilla: es una copia o una cruza» ("Una copia *o una cruza.*") | ✅ | [PSU] | cinco vías: "hybridization, monospore, multispore, mycelial transfer, or tissue culture" (copias = tejido/micelio; cruza = esporas o neohaplontes) | s/f |
+| V13 | Letreros restantes ("¿Y una seta *nueva?*", "Boca abajo: *un polvo de esporas.*", "Cada espora: *un solo tipo de núcleo.*", "Dos se fusionan: *el dicarión.*", "En campana de flujo: *a la caja con agar.*", "Las hifas crecen *por la punta.*", "Un cuadrito a otra caja: *un clon.*", "Mis primeras cajas Petri: *tuppers.*", escalas 1 cm / 5 cm, "mapa esquemático") y los chips de las filas 4–30 | ✅ | ver filas 1–33 y V1–V12 | Dicen lo mismo que la voz o que filas ya ✅ con su frase textual. | — |
+| V14 | `publicacion.md` completo (filas P1–P9) | ✅ | [OAX], [LIU], [UF], [PSU] | Releído; no añade datos fuera de las filas verificadas. | 2014–2025 |
+
+Sin cambios: voz, pantalla y textos para publicar quedan ✅ (0 ⚠️, 0 ❌).
+
 VEREDICTO: APROBADO
