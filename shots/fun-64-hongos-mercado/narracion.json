@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Hongos Mercado base narrada.dc.html",
+  "salida": "Shot Hongos Mercado narrado.dc.html",
+  "nota": "Shot Fungi Mati #64. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Advertencia de seguridad obligatoria (no recolectar ni comer hongos silvestres sin un experto).",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "En México se comen cuatrocientos veinticinco hongos silvestres… y tú quizá solo conoces el champiñón."
+    },
+    {
+      "escena": "Mercado",
+      "texto": "Con las lluvias llegan al mercado: yemas, hongo azul, duraznillos, enchilados."
+    },
+    {
+      "escena": "Fruto",
+      "texto": "Pero eso que compras es solo el fruto."
+    },
+    {
+      "escena": "Micelio",
+      "texto": "El hongo vive bajo el bosque: una red de hilos, el micelio."
+    },
+    {
+      "escena": "Raiz",
+      "texto": "Casi dos de cada tres viven abrazados a las raíces de un árbol."
+    },
+    {
+      "escena": "Trueque",
+      "texto": "El árbol les da azúcares; ellos le pasan agua y nutrientes."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué no los siembran como al champiñón?"
+    },
+    {
+      "escena": "Bosque",
+      "texto": "Porque la mayoría todavía no se puede cultivar: hay que buscarlos en el bosque."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2009, en el mercado de Acaxochitlán, Hidalgo, preguntaron a las hongueras cómo reconocen las yemas."
+    },
+    {
+      "escena": "Senas",
+      "texto": "Sin ajonjolí en el sombrero, con pañuelito y con botita: un saber que guardan las mujeres nahuas."
+    },
+    {
+      "escena": "Aviso",
+      "texto": "Pero ojo: hay Amanitas mortales con pañuelito y botita, y cocinarlas no les quita el veneno."
+    },
+    {
+      "escena": "Experto",
+      "texto": "Nunca recolectes ni comas hongos silvestres sin un experto."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese puesto no vende solo hongos: vende un bosque y el saber de quien lo recorrió."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

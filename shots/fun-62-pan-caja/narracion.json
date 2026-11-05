@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Pan Caja base narrada.dc.html",
+  "salida": "Shot Pan Caja narrado.dc.html",
+  "nota": "Shot Fungi Mati #62. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Sin marcas.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tu pan de caja no es inmortal: casi siempre trae un antimoho."
+    },
+    {
+      "escena": "Horno",
+      "texto": "El horno mata las esporas, pero al enfriar y rebanar le caen otras."
+    },
+    {
+      "escena": "Mohos",
+      "texto": "Son de Penicillium, Aspergillus o Rhizopus, y en unos días ves la mancha."
+    },
+    {
+      "escena": "Etiqueta",
+      "texto": "Por eso el de caja suele traer propionato de calcio."
+    },
+    {
+      "escena": "Entra",
+      "texto": "En la masa, parte queda como ácido propiónico sin carga y se cuela en la hifa."
+    },
+    {
+      "escena": "Proton",
+      "texto": "Adentro suelta su protón y, según la teoría clásica, le acidifica la célula."
+    },
+    {
+      "escena": "Energia",
+      "texto": "Sacarlo le cuesta energía, y en mohos se vio que le traba enzimas: casi no crece."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces lo mata? No: solo lo frena, y algunos Penicillium lo resisten."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2012, en Cork, Irlanda, un pan bajo en sal con cero punto tres por ciento de propionato duró diez a doce días sin moho."
+    },
+    {
+      "escena": "MasaMadre",
+      "texto": "Uno con masa madre seleccionada, de doce a catorce."
+    },
+    {
+      "escena": "Queso",
+      "texto": "Lo más raro: ese ácido también lo hacen bacterias del queso suizo y de tu intestino."
+    },
+    {
+      "escena": "Seguro",
+      "texto": "La FDA lo confirmó como seguro en 1984, y Europa lo revisó en 2014: sin riesgo en las dosis permitidas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu pan de caja no es inmortal: solo trae un freno."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
