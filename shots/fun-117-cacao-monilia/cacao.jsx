@@ -351,7 +351,7 @@ function CacaoShot() {
       <Subtitulo T={T} idx={6} at={K.Ex + 0.1} until={K.Q - 0.1} texto="Esporas en cadenita: *la nieve.*" />
       <Subtitulo T={T} idx={7} at={K.Q + 0.1} until={K.N - 0.1} texto="¿Cuántas *esporas?*" />
       <Subtitulo T={T} idx={8} at={K.N + 0.1} until={K.St - 0.1} texto="Millones *al viento.*" />
-      <Subtitulo T={T} idx={9} at={K.St + 0.1} until={K.Ma - 0.1} texto="*Más del 75 %* se enfermaron." />
+      <Subtitulo T={T} idx={9} at={K.St + 0.1} until={K.Ma - 0.1} texto="Llegó en 2005: *más del 75 % enfermas.*" />
       <Subtitulo T={T} idx={10} at={K.Ma + 0.1} until={K.C - 0.1} texto="Cortarlas *cada semana.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Está sembrando *el hongo.*" />
 

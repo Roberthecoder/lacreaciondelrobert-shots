@@ -1,7 +1,69 @@
-{ "temas": [
- { "id": "fun-115-arroz-presion", "titulo": "Ese hongo no muerde la hoja del arroz: la perfora a presión (piriculariosis, *Magnaporthe oryzae* y su apresorio)", "serie": "Shot Fungi Mati", "numero": 115, "estado": "idea", "carpeta": "shots/fun-115-arroz-presion", "rama": "claude/fun-115-119-plagas-cultivos", "fecha": "2026-11-05", "derivados": [] },
- { "id": "fun-116-trigo-ug99", "titulo": "El hongo que amenaza tu pan: la roya del tallo del trigo Ug99 (y el arbusto que le sirve de puente)", "serie": "Shot Fungi Mati", "numero": 116, "estado": "idea", "carpeta": "shots/fun-116-trigo-ug99", "rama": "claude/fun-115-119-plagas-cultivos", "fecha": "2026-11-05", "derivados": [] },
- { "id": "fun-117-cacao-monilia", "titulo": "Esa mazorca de cacao no está nevada: es moniliasis (*Moniliophthora roreri*) y llegó a México", "serie": "Shot Fungi Mati", "numero": 117, "estado": "idea", "carpeta": "shots/fun-117-cacao-monilia", "rama": "claude/fun-115-119-plagas-cultivos", "fecha": "2026-11-05", "derivados": [] },
- { "id": "fun-118-mango-antracnosis", "titulo": "Esas manchas negras del mango no son golpes: antracnosis (*Colletotrichum*) y el baño de agua caliente", "serie": "Shot Fungi Mati", "numero": 118, "estado": "idea", "carpeta": "shots/fun-118-mango-antracnosis", "rama": "claude/fun-115-119-plagas-cultivos", "fecha": "2026-11-05", "derivados": [] },
- { "id": "fun-119-planta-defensa", "titulo": "Tu planta tiene sistema inmune: huele la quitina del hongo y sacrifica sus propias células (respuesta hipersensible)", "serie": "Shot Fungi Mati", "numero": 119, "estado": "idea", "carpeta": "shots/fun-119-planta-defensa", "rama": "claude/fun-115-119-plagas-cultivos", "fecha": "2026-11-05", "derivados": [] }
-] }
+{
+ "temas": [
+  {
+   "id": "fun-115-arroz-presion",
+   "titulo": "Ese hongo no muerde la hoja del arroz: la perfora a presión (piriculariosis, *Magnaporthe oryzae* y su apresorio)",
+   "serie": "Shot Fungi Mati",
+   "numero": 115,
+   "estado": "idea",
+   "carpeta": "shots/fun-115-arroz-presion",
+   "rama": "claude/fun-115-119-plagas-cultivos",
+   "fecha": "2026-11-05",
+   "derivados": []
+  },
+  {
+   "id": "fun-116-trigo-ug99",
+   "titulo": "El hongo que amenaza tu pan: la roya del tallo del trigo Ug99 (y el arbusto que le sirve de puente)",
+   "serie": "Shot Fungi Mati",
+   "numero": 116,
+   "estado": "idea",
+   "carpeta": "shots/fun-116-trigo-ug99",
+   "rama": "claude/fun-115-119-plagas-cultivos",
+   "fecha": "2026-11-05",
+   "derivados": []
+  },
+  {
+   "id": "fun-117-cacao-monilia",
+   "titulo": "Esa mazorca no está nevada: es un hongo (moniliasis del cacao, *Moniliophthora roreri*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 117,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-117-cacao-monilia",
+   "rama": "claude/fun-115-119-plagas-cultivos",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Escoba de bruja del cacao (Moniliophthora perniciosa, Bahía 1989)",
+    "Mazorca negra del cacao (Phytophthora, no es hongo)",
+    "Pataste y cupuaçu: los parientes del cacao"
+   ],
+   "fuentes": [
+    "Bailey et al. 2018, Mol Plant Pathol (PMC6638017)",
+    "Phillips-Mora et al. 2006, New Disease Reports 12:41",
+    "Torres-de la Cruz et al. 2020, Rev. Fitotec. Mex. 43(4)",
+    "CATIE, Catálogo de enfermedades del cacao en Centroamérica"
+   ]
+  },
+  {
+   "id": "fun-118-mango-antracnosis",
+   "titulo": "Esas manchas negras del mango no son golpes: antracnosis (*Colletotrichum*) y el baño de agua caliente",
+   "serie": "Shot Fungi Mati",
+   "numero": 118,
+   "estado": "idea",
+   "carpeta": "shots/fun-118-mango-antracnosis",
+   "rama": "claude/fun-115-119-plagas-cultivos",
+   "fecha": "2026-11-05",
+   "derivados": []
+  },
+  {
+   "id": "fun-119-planta-defensa",
+   "titulo": "Tu planta tiene sistema inmune: huele la quitina del hongo y sacrifica sus propias células (respuesta hipersensible)",
+   "serie": "Shot Fungi Mati",
+   "numero": 119,
+   "estado": "idea",
+   "carpeta": "shots/fun-119-planta-defensa",
+   "rama": "claude/fun-115-119-plagas-cultivos",
+   "fecha": "2026-11-05",
+   "derivados": []
+  }
+ ]
+}
