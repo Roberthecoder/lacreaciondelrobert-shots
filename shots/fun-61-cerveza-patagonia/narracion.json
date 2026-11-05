@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa cerveza clara no la hizo una levadura: la hicieron dos, en una sola célula."
+      "texto": "Esa cerveza lager no la hizo una levadura: la hicieron dos, en una sola célula."
     },
     {
       "escena": "Mosto",
@@ -21,7 +21,7 @@
     },
     {
       "escena": "Hibrido",
-      "texto": "Pero la de la cerveza clara, Saccharomyces pastorianus, es un híbrido de dos especies."
+      "texto": "Pero la de la lager, Saccharomyces pastorianus, es un híbrido de dos especies."
     },
     {
       "escena": "Cerevisiae",
@@ -45,15 +45,15 @@
     },
     {
       "escena": "Tibet",
-      "texto": "Y ojo: las más parecidas a la de la cerveza no son de la Patagonia, sino del Tíbet."
+      "texto": "Y ojo: su parte silvestre se parece más a levaduras del Tíbet que a las de la Patagonia."
     },
     {
       "escena": "Mundo",
-      "texto": "En 2015, casi nueve de cada diez litros de cerveza del mundo eran de este tipo."
+      "texto": "Hoy, la gran mayoría de la cerveza que se vende en el mundo es de este tipo."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que esa cerveza clara no la hizo una levadura: la hicieron dos, una del pan y otra salvaje."
+      "texto": "Así que esa cerveza lager no la hizo una levadura: la hicieron dos, una del pan y otra salvaje."
     }
   ],
   "mezcla": "oficial-30oct"
