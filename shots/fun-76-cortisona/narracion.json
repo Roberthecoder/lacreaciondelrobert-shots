@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Cortisona base narrada.dc.html",
+  "salida": "Shot Cortisona narrado.dc.html",
+  "nota": "Shot Fungi Mati #76. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa crema para las ronchas no es pura química: un moho le abrió el camino."
+    },
+    {
+      "escena": "Crema",
+      "texto": "Trae hidrocortisona, un esteroide que baja la hinchazón de una picadura."
+    },
+    {
+      "escena": "Cortisol",
+      "texto": "Es la misma molécula que el cortisol que fabrica tu cuerpo."
+    },
+    {
+      "escena": "Esqueleto",
+      "texto": "Se parece a la progesterona, otra hormona, pero con tres oxígenos más; uno, difícil de poner, en el carbono once."
+    },
+    {
+      "escena": "Merck",
+      "texto": "En los cuarenta, en Merck, el primer camino desde un ácido de la bilis tomó casi cuarenta pasos para sacar dieciocho miligramos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si alguien lo hacía en un solo paso?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1952, en Kalamazoo, Michigan, Durey Peterson y Herbert Murray, de la farmacéutica Upjohn, le dieron progesterona a un moho Rhizopus."
+    },
+    {
+      "escena": "Enzima",
+      "texto": "Una enzima del moho le pegó un oxígeno justo en el carbono once, de un jalón."
+    },
+    {
+      "escena": "Barato",
+      "texto": "Eso acortó la ruta y bajó el costo de la cortisona."
+    },
+    {
+      "escena": "Pan",
+      "texto": "Y ese moho es pariente del moho negro que le sale a tu pan."
+    },
+    {
+      "escena": "Hoy",
+      "texto": "Hoy, hongos así siguen haciendo ese paso para fabricar corticoides."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa crema no es pura química: un moho le abrió el camino."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
