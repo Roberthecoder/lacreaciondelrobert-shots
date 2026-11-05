@@ -361,7 +361,7 @@ function ArrozShot() {
       <Etq T={T} at={K.Ap + 0.8} until={K.Me - 0.2} x={540} y={905} texto="tubo germinativo" tam={30} color={KC.texto} />
       <Etq T={T} at={K.Ap + 2.0} until={K.Me + 2.4} x={720} y={825} texto="apresorio" tam={36} color={KC.gold2} />
       <Etq T={T} at={K.Me + 0.6} until={K.Me + 2.4} x={460} y={785} texto="pared de melanina" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.Me + 1.6} until={K.Me + 2.4} x={460} y={895} texto="glicerol" tam={32} color={AC.glic} />
+      <Etq T={T} at={K.Me + 1.6} until={K.Me + 2.4} x={760} y={885} texto="glicerol" tam={32} color={AC.glic} />
       <Chip T={T} at={K.Pr + 0.2} until={K.Pr + 2.4} texto="POR DENTRO · apresorio" x={360} y={560} tam={28} borde={KC.cyan} mono />
       <Etq T={T} at={K.Pr + 0.6} until={K.P - 0.3} x={60} y={820} texto="agua: entra" tam={32} color={AC.agua} />
       <Etq T={T} at={K.Pr + 1.6} until={K.P - 0.3} x={60} y={1205} texto="glicerol: no sale" tam={30} color={AC.glic} />

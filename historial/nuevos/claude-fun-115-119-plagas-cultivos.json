@@ -2,14 +2,25 @@
  "temas": [
   {
    "id": "fun-115-arroz-presion",
-   "titulo": "Ese hongo no muerde la hoja del arroz: la perfora a presión (piriculariosis, *Magnaporthe oryzae* y su apresorio)",
+   "titulo": "Esa mancha en tu arroz no es una mordida: empezó con un agujero hecho a presión (añublo del arroz, *Magnaporthe oryzae*)",
    "serie": "Shot Fungi Mati",
    "numero": 115,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-115-arroz-presion",
    "rama": "claude/fun-115-119-plagas-cultivos",
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Piricularia del trigo: el salto a Bangladés (2016)",
+    "La melanina como armadura de los hongos",
+    "Arroz con genes de resistencia: la carrera contra el añublo"
+   ],
+   "fuentes": [
+    "Howard et al. 1991, PNAS 88:11281",
+    "de Jong et al. 1997, Nature 389:244",
+    "Ryder et al. 2023, Nat Microbiol",
+    "Kankanala et al. 2007, Plant Cell 19:706",
+    "Islam et al. 2016, BMC Biol 14:84"
+   ]
   },
   {
    "id": "fun-116-trigo-ug99",
