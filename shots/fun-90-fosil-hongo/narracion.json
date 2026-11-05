@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Fósil base narrada.dc.html",
+  "salida": "Shot Fósil narrado.dc.html",
+  "nota": "Shot Fungi Mati #90. Una línea por subtítulo (idx 0..N del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta roca no está vacía: adentro podría estar uno de los hongos más viejos conocidos, de unos mil millones de años."
+    },
+    {
+      "escena": "Roca",
+      "texto": "Viene de una roca de lodo del Ártico de Canadá."
+    },
+    {
+      "escena": "Micro",
+      "texto": "Al microscopio: hilos ramificados, con tabiques, y bolitas como esporas."
+    },
+    {
+      "escena": "Quitina",
+      "texto": "Su pared da señales de quitina, como los hongos de hoy y el caparazón de un escarabajo."
+    },
+    {
+      "escena": "Antes",
+      "texto": "Los fósiles de hongo aceptados antes no llegaban a quinientos millones de años."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y dónde vivía un hongo cuando no había plantas en tierra firme?"
+    },
+    {
+      "escena": "Agua",
+      "texto": "Sus restos quedaron donde un río llega al mar: quizá vivía ahí, o el agua lo arrastró."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2019, Corentin Loron, de la Universidad de Lieja, lo publicó en Nature: Ourasphaira giraldae."
+    },
+    {
+      "escena": "Rama",
+      "texto": "Si es hongo, la rama de hongos y animales ya existía hace casi mil millones de años."
+    },
+    {
+      "escena": "Duda",
+      "texto": "Ojo: no todos están convencidos; con fósiles tan viejos, es difícil estar seguro."
+    },
+    {
+      "escena": "Lava",
+      "texto": "Hay pistas aún más viejas: hilos como de hongo en lava de Sudáfrica, de dos mil cuatrocientos millones de años, en debate."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa roca no está vacía: quizá guarda uno de los hongos más viejos que conocemos."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

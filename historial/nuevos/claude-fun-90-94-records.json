@@ -1,0 +1,107 @@
+{
+ "temas": [
+  {
+   "id": "fun-90-fosil-hongo",
+   "titulo": "¿El hongo más viejo que conocemos? Ourasphaira giraldae, un posible hongo fósil de ~1,000 millones de años (Ártico de Canadá, Nature 2019)",
+   "serie": "Shot Fungi Mati",
+   "numero": 90,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-90-fosil-hongo",
+   "rama": "claude/fun-90-94-records",
+   "fuentes": [
+    "Loron et al. 2019, Nature 570: 232–235 (doi:10.1038/s41586-019-1217-0)",
+    "Bengtson et al. 2017, Nature Ecology & Evolution 1: 0141",
+    "Redecker et al. 2000, Science 289: 1920–1921"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Los hongos del pedernal de Rhynie (407 millones de años): el ecosistema terrestre más antiguo bien conservado",
+    "Hongos y plantas llegaron juntos a tierra firme: micorrizas fósiles del Ordovícico",
+    "Cómo se fecha una roca: la edad de un fósil con isótopos"
+   ]
+  },
+  {
+   "id": "fun-91-especies-ocultas",
+   "titulo": "Nueve de cada diez hongos todavía no tienen nombre (2.5 millones estimados, ~155,000 nombrados; 750–1,000 años para terminar; porcini nuevos en un paquete de Londres)",
+   "serie": "Shot Fungi Mati",
+   "numero": 91,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-91-especies-ocultas",
+   "rama": "claude/fun-90-94-records",
+   "fuentes": [
+    "Niskanen et al. 2023, Annu. Rev. Environ. Resour. 48: 149–176",
+    "Antonelli et al. 2023, State of the World's Plants and Fungi 2023 (Kew)",
+    "Dentinger y Suz 2014, PeerJ 2: e570"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Taxones oscuros: hongos que solo conocemos por su ADN",
+    "Cómo se le pone nombre a una especie nueva de hongo (holotipo, latín y publicación)",
+    "El ADN del aire: contar esporas sin verlas"
+   ]
+  },
+  {
+   "id": "fun-92-microsporidios",
+   "titulo": "El parásito que dispara un arpón: microsporidios y su tubo polar (NYU 2020, pebrina y Pasteur, genoma de 2.3 Mb)",
+   "serie": "Shot Fungi Mati",
+   "numero": 92,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-92-microsporidios",
+   "rama": "claude/fun-90-94-records",
+   "fuentes": [
+    "Jaroenlak et al. 2020, PLoS Pathogens 16(9): e1008738",
+    "Han y Weiss 2017, Microbiology Spectrum 5(2)",
+    "Corradi et al. 2010, Nature Communications 1: 77",
+    "Carton 2022, Comptes Rendus Chimie 25: 315–330"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Nosema en las abejas: el microsporidio de las colmenas",
+    "Pasteur y el gusano de seda: el nacimiento de la selección de huevos sanos",
+    "Los genomas más pequeños: cuánto ADN necesita una célula"
+   ]
+  },
+  {
+   "id": "fun-93-hongo-sal",
+   "titulo": "El hongo que no puede vivir sin sal: Wallemia ichthyophaga (≥10 % de sal, pared 3× más gruesa, bacalao noruego de 1887)",
+   "serie": "Shot Fungi Mati",
+   "numero": 93,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-93-hongo-sal",
+   "rama": "claude/fun-90-94-records",
+   "fuentes": [
+    "Zajc et al. 2013, BMC Genomics 14: 617",
+    "Kralj Kunčič et al. 2010, Appl. Environ. Microbiol. 76: 329–337",
+    "Zalar et al. 2005, Antonie van Leeuwenhoek 87: 311–328",
+    "Zajc y Gunde-Cimerman 2018, Microorganisms 6: 46"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Hortaea werneckii: la levadura negra de las salinas que también causa la tiña negra de las manos",
+    "Por qué la sal y el azúcar conservan los alimentos (actividad de agua)",
+    "Microbios rosas de las salinas: arqueas halófilas"
+   ]
+  },
+  {
+   "id": "fun-94-hongo-antartida",
+   "titulo": "El hongo de las rocas de la Antártida que aguantó 18 meses afuera de la Estación Espacial (Cryomyces antarcticus, experimento LIFE)",
+   "serie": "Shot Fungi Mati",
+   "numero": 94,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-94-hongo-antartida",
+   "rama": "claude/fun-90-94-records",
+   "fuentes": [
+    "Onofri et al. 2015, Astrobiology 15(12): 1052–1059",
+    "Onofri et al. 2012, Astrobiology 12(5): 508–516",
+    "Selbmann et al. 2005, Studies in Mycology 51: 1–32",
+    "Catanzaro et al. 2024, Environ. Microbiol. Rep. 16: e70043"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Líquenes en el espacio: Xanthoria y Rhizocarpon en las misiones de la ESA",
+    "Protección planetaria: cómo se limpian las naves para no llevar vida a Marte",
+    "Valles Secos de McMurdo: el lugar de la Tierra más parecido a Marte"
+   ]
+  }
+ ]
+}

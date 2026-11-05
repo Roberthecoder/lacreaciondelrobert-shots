@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Especies base narrada.dc.html",
+  "salida": "Shot Especies narrado.dc.html",
+  "nota": "Shot Fungi Mati #91. Una línea por subtítulo (idx 0..N del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "De cada diez especies de hongos que hay en el mundo, unas nueve todavía no tienen nombre."
+    },
+    {
+      "escena": "Total",
+      "texto": "Se calcula que existen unos dos millones y medio de especies de hongos."
+    },
+    {
+      "escena": "Nombradas",
+      "texto": "Y hasta 2023, la ciencia había nombrado unas ciento cincuenta y cinco mil."
+    },
+    {
+      "escena": "Micelio",
+      "texto": "La mayoría viven como hilos más delgados que un pelo, en el suelo, la madera o una hoja."
+    },
+    {
+      "escena": "SinSeta",
+      "texto": "Y muchísimos nunca sacan una seta que tú puedas ver."
+    },
+    {
+      "escena": "ADN",
+      "texto": "Por eso los buscan por su ADN: toman tierra, leen sus genes y aparecen hongos que nadie ha nombrado."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cuánto tardaríamos en ponerles nombre a todos?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2023, el Jardín Botánico de Kew, en Londres, publicó su reporte de plantas y hongos del mundo."
+    },
+    {
+      "escena": "Ritmo",
+      "texto": "Ahí dice que cada año se nombran más de dos mil quinientas especies nuevas."
+    },
+    {
+      "escena": "Mil",
+      "texto": "A ese paso, terminar tomaría entre setecientos cincuenta y mil años."
+    },
+    {
+      "escena": "Porcini",
+      "texto": "Y no solo en el bosque: en 2013, en un paquete de hongos secos de China, comprado en Londres, hallaron tres especies sin nombre."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que en el próximo puñado de tierra que pises quizá hay hongos que todavía no tienen nombre."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

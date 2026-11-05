@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Antartida base narrada.dc.html",
+  "salida": "Shot Antartida narrado.dc.html",
+  "nota": "Shot Fungi Mati #94. Una línea por subtítulo (idx 0..N del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta piedra no está manchada: adentro vive un hongo que pasó año y medio afuera de la Estación Espacial."
+    },
+    {
+      "escena": "Valles",
+      "texto": "Viene de los Valles Secos de McMurdo, en la Antártida, de los lugares más fríos y secos del planeta."
+    },
+    {
+      "escena": "Adentro",
+      "texto": "Afuera casi nada sobrevive; por eso vive dentro de la roca, entre los granos de arena."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Se llama Cryomyces antarcticus, y es negro por la melanina, pariente del pigmento de tu piel."
+    },
+    {
+      "escena": "Escudo",
+      "texto": "Esa melanina le sirve de escudo contra la luz ultravioleta y la radiación."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si lo mandamos al espacio?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2008, la Agencia Espacial Europea lo puso afuera de la Estación Espacial Internacional, en el experimento LIFE."
+    },
+    {
+      "escena": "Marte",
+      "texto": "Pasó dieciocho meses ahí; una parte, en condiciones como las de Marte."
+    },
+    {
+      "escena": "Resultado",
+      "texto": "Al regresar, en las muestras como de Marte, más del sesenta por ciento de las células seguían enteras."
+    },
+    {
+      "escena": "Colonias",
+      "texto": "Menos del diez por ciento de las muestras volvió a formar colonias, pero algunas sí."
+    },
+    {
+      "escena": "Para",
+      "texto": "Por eso lo estudian: ¿podría algo así vivir en Marte, o viajar escondido en una nave, o en una roca?"
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esta piedra no está manchada: tiene adentro a un sobreviviente del espacio."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
