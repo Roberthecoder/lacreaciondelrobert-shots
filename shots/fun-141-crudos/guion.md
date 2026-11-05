@@ -20,9 +20,9 @@
 | 5 | Pregunta | ¿Y la morilla? Ahí la cosa cambia. | **Re-gancho.** Fondo rosa: la morilla gira (sombrero cónico de **celdillas como panal**, crestas y hoyos, hueca por dentro: corte a la mitad). Cartelito «2 · MORILLA». Etiquetas «morilla · *Morchella*». Robert grande, pensativo. |
 | 6 | Montana | En 2023, un restaurante de Montana sirvió morillas crudas o apenas cocidas en sushi. | Fondo lila. Mapa esquemático de EE. UU. con Montana marcado. Un rollo de sushi con morilla encima. TarjetaEstudio «2023 · Bozeman, Montana · CDC, MMWR 2024». Chips «crudas» / «apenas cocidas». |
 | 7 | Enfermos | Cincuenta y una personas se enfermaron del estómago; tres fueron al hospital y dos murieron. | Cuadrícula de 51 figuritas que se encienden de una en una (clic suave): número grande «51». Tres se marcan con una cruz de hospital, dos se apagan en gris (sin dramatismo). Chips «3 al hospital» · «2 murieron · tenían enfermedades previas». |
-| 8 | Crudas | Comerlas crudas fue lo más ligado a enfermarse. | Dos barras esquemáticas «crudas» (más alta) y «cocidas o a medias»; rótulo «esquemático · lo más ligado: crudas». |
+| 8 | Crudas | Comerlas crudas fue lo más ligado a enfermarse. | El sushi con morilla cruda en grande, rodeado por un círculo rojo punteado; al lado, uno chico y desvanecido con la etiqueta «cocidas o a medias». Chip «crudas: lo más ligado a enfermarse». (Sin barras: el MMWR no da una cifra para comparar.) Barra 2 cm. |
 | 9 | Cultivo | Eran morillas de cultivo, y nadie encontró la toxina exacta. | Una caja «morillas de cultivo · importadas» y una lupa con «?» sobre un frasco de laboratorio: chip «toxina: no identificada». |
-| 10 | Francia | En Francia, entre 2010 y 2020, se reportaron cuatrocientos cuarenta y seis casos solo por morillas. | Fondo cian. Mapa esquemático de Francia; contador 0→446. TarjetaEstudio «2010–2020 · centros antitóxicos de Francia · Vodovar et al., *Clin Toxicol* 2024». Chip «446 casos reportados · solo morillas». |
+| 10 | Francia | En Francia, entre 2010 y 2020, se reportaron cuatrocientos cuarenta y seis casos solo por morillas. | Fondo cian. Mapa esquemático de Francia; contador 0→446. TarjetaEstudio «Francia · 2010–2020 · centros antitóxicos · Vodovar et al., *Clin Toxicol* 2024». Chip «446 casos reportados · solo morillas». |
 | 11 | Shiitake | Y el shiitake, ya lo vimos: crudo o mal cocido, puede llenarte la piel de rayas. | Fondo menta. Cartelito «3 · SHIITAKE». Un shiitake (sombrero café con escamitas claras) y un antebrazo con rayas rojas esquemáticas. Etiqueta «shiitake · *Lentinula edodes*» y chip «ya lo vimos: Fungi Mati #26». |
 | 12 | Cierre | No todos aguantan crudos: los silvestres, siempre cocidos y bien identificados. | **Regreso a la imagen del inicio:** el mismo plato de ensalada y la misma tabla, ahora la morilla ya en la sartén, dorada. Dos sellos: «silvestres: siempre cocidos» y «bien identificados». Aviso chiquito «No es consejo médico». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
@@ -35,22 +35,22 @@ Aviso en pantalla (pequeño, al final): «No es consejo médico.»
 
 ## Robert en pantalla
 
-Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y la morilla? Ahí la cosa cambia».
+Tiempos de la base (61.5 s; con la voz real se recorren solos). Grande (`grande`, medio cuerpo, arriba del subtítulo) en «¿Y la morilla? Ahí la cosa cambia».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
 | 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «¿Por qué NO comer cualquier hongo crudo?» (cuadro 0) |
-| 2 | 7.0 | 10.5 | 06_pensativo_menton | `arriba-der` | «agaritina, que todavía se estudia» |
-| 3 | 12.5 | 16.5 | 12_perfil_serio | `arriba-der` | «grupo tres: no clasificable en humanos» |
-| 4 | 18.5 | 22.5 | 13_senalando_arriba | `arriba-der` | «le quitó dos tercios» |
-| 5 | 22.8 | 25.0 | 07_pensativo_puno | `presentador` | «¿Y la morilla? Ahí la cosa cambia» |
-| 6 | 30.0 | 34.0 | 10_serio_molesto | `arriba-der` | «tres al hospital y dos murieron» |
-| 7 | 37.0 | 40.5 | 04_bajando_lentes | `arriba-der` | «nadie encontró la toxina exacta» |
-| 8 | 42.0 | 46.0 | 11_sorprendido | `arriba-der` | «cuatrocientos cuarenta y seis casos» |
-| 9 | 50.5 | 54.5 | 02_apuntando_camara | `arriba-der` | «los silvestres, siempre cocidos» |
+| 2 | 8.9 | 12.4 | 06_pensativo_menton | `arriba-der` | «agaritina, que todavía se estudia» |
+| 3 | 15.0 | 17.6 | 12_perfil_serio | `arriba-der` | «grupo tres: no clasificable en humanos» |
+| 4 | 20.8 | 24.1 | 13_senalando_arriba | `arriba-der` | «le quitó dos tercios» (señala el medidor) |
+| 5 | 24.35 | 26.6 | 07_pensativo_puno | `grande` | «¿Y la morilla? Ahí la cosa cambia» |
+| 6 | 33.75 | 36.55 | 10_serio_molesto | `arriba-der` | «tres fueron al hospital y dos murieron» |
+| 7 | 39.9 | 43.0 | 04_bajando_lentes | `arriba-der` | «nadie encontró la toxina exacta» |
+| 8 | 45.7 | 48.6 | 11_sorprendido | `arriba-der` | «cuatrocientos cuarenta y seis casos» |
+| 9 | 53.75 | 57.9 | 02_apuntando_camara | `arriba-der` | «los silvestres, siempre cocidos» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 9 · **≈ 32.7 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas. (Se ajusta al construir la animación.)
+Apariciones 9 · **≈ 27.6 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · nunca tapa números, etiquetas ni subtítulo (revisado en las hojas de cuadros).
 
 ## Fuentes (abiertas el 5 nov 2026)
 
@@ -62,7 +62,7 @@ Apariciones 9 · **≈ 32.7 s** en pantalla (+ cierre 3.5 s) · 8 poses distinta
 2. IARC, *Agaritine* (Vol. 31, 1983; Suppl. 7, 1987). https://inchem.org/documents/iarc/vol31/agaritine.html
    > "Subsequent evaluation: Suppl. 7 (1987) (p. 56: Group 3)"
    > "In the absence of epidemiological data, no evaluation of the carcinogenicity of agaritine to humans could be made."
-3. Gold, J. A. W. et al. (2024). Outbreak Linked to Morel Mushroom Exposure — Montana, 2023. *MMWR* 73(10): 219–224. https://www.cdc.gov/mmwr/volumes/73/wr/mm7310a1.htm
+3. Demorest, H. et al. (2024). Outbreak Linked to Morel Mushroom Exposure — Montana, 2023. *MMWR* 73(10): 219–224. https://www.cdc.gov/mmwr/volumes/73/wr/mm7310a1.htm
    > "a total of 51 persons reported mild to severe gastrointestinal illness"; "three hospitalizations and two deaths"; "The two patients who died had chronic underlying medical conditions"
    > "consumption of raw morels was more strongly associated with illness than was consumption of cooked or partially cooked morels"
    > Morels "cultivated and imported fresh from China"; "the presence of a specific toxin could not be confirmed through laboratory testing"; "morel mushroom toxins are not well characterized"
