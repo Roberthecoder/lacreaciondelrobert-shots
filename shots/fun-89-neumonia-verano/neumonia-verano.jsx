@@ -11,7 +11,7 @@ const CUARTO = { x0: 60, x1: 1020, y0: 360, y1: 1220, piso: 960 };
 const MOTAS = (() => {
   const g = krng(89), out = [];
   for (let i = 0; i < 70; i++) {
-    const zona = g() < 0.7 ? [110, 380] : [760, 980];
+    const zona = g() < 0.7 ? [110, 400] : [760, 980];
     out.push({ x: klerp(zona[0], zona[1], g()), y: CUARTO.piso - 6 + g() * 34, r: 2.5 + g() * 4.5, u: g() });
   }
   return out;
@@ -68,7 +68,7 @@ function Cuarto({ T, id, abierto = 0, lluvia = 0, humedo = 0, hongo = 0, sombra 
       <rect x={W.x0 - 14} y={W.y0 - 14} width={W.x1 - W.x0 + 28} height={W.y1 - W.y0 + 28} fill="none" stroke={NV.madera} strokeWidth={14} />
       <rect x={W.x0 - 21} y={W.y0 - 21} width={W.x1 - W.x0 + 42} height={W.y1 - W.y0 + 42} fill="none" stroke={KC.ink} strokeWidth={4} />
       {/* termómetro de pared */}
-      <g transform="translate(480 440)">
+      <g transform="translate(470 440)">
         <rect x={-20} y={0} width={40} height={220} rx={20} fill="#fff" stroke={KC.ink} strokeWidth={5} />
         <rect x={-9} y={200 - 180 * calor} width={18} height={180 * calor + 10} rx={9} fill={KC.red} />
         <circle cx={0} cy={232} r={28} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
@@ -95,7 +95,7 @@ function Cuarto({ T, id, abierto = 0, lluvia = 0, humedo = 0, hongo = 0, sombra 
       <rect x={x0} y={piso - 22} width={x1 - x0} height={24} fill={NV.madera2} stroke={KC.ink} strokeWidth={4} />
       {/* el hongo: motitas discretas (a simple vista casi no se ve) */}
       {MOTAS.map((m, i) => { const o = kclamp(hongo * 1.5 - m.u * 0.5, 0, 1); return o > 0.03 ? <circle key={i} cx={m.x} cy={m.y} r={m.r * (0.5 + 0.5 * o)} fill={i % 3 ? NV.hongo : NV.hongo2} stroke="rgba(0,0,0,.18)" strokeWidth={1.5} opacity={0.85 * o} /> : null; })}
-      {persona && <Persona T={T} x={360} tos={tos} calma={calma} />}
+      {persona && <Persona T={T} x={540} tos={tos} calma={calma} />}
       {/* aire que entra */}
       {aire > 0 && Array.from({ length: 7 }, (_, k) => { const u = ((T * 0.45 + k / 7) % 1); const yy = 470 + (k % 4) * 110; return <path key={k} d={`M ${klerp(140, 880, u)} ${yy} q 60 -30 120 0 t 120 0`} stroke="#fff" strokeWidth={7} fill="none" strokeLinecap="round" opacity={aire * Math.sin(u * Math.PI) * 0.9} />; })}
       <rect x={x0} y={y0} width={x1 - x0} height={y1 - y0} fill="#1a1530" opacity={0.42 * sombra} />
@@ -106,7 +106,7 @@ function Cuarto({ T, id, abierto = 0, lluvia = 0, humedo = 0, hongo = 0, sombra 
 
 // Acercamiento: el rincón donde el zoclo de madera toca el tatami, húmedo, con el hongo (mancha discreta).
 function Rincon({ T, hongo = 1 }) {
-  const g = krng(31), pts = Array.from({ length: 110 }, () => ({ x: 120 + g() * 520, y: 770 + Math.pow(g(), 1.6) * 170, r: 3 + g() * 7, u: g() }));
+  const g = krng(31), pts = Array.from({ length: 110 }, () => ({ x: 110 + g() * 340, y: 770 + Math.pow(g(), 1.6) * 170, r: 3 + g() * 7, u: g() }));
   return <g>
     <rect x={60} y={360} width={960} height={880} rx={10} fill={NV.muro} stroke={KC.ink} strokeWidth={8} />
     <ellipse cx={330} cy={700} rx={320} ry={200} fill={NV.humedad} opacity=".35" />
@@ -157,13 +157,15 @@ function HifaTricho({ T, x0, x1, y, crece = 1, parte = 0, vuela = 0, seed = 1, L
     const gap = parte * 10, sx = cx + (i - n / 2) * gap * 0.6;
     const v = kclamp(vuela * 1.6 - g() * 0.6, 0, 1), vx = (g() - 0.5) * 240 * v, vy = -v * (420 + g() * 300) + Math.sin(T * 2 + i) * 10 * v, rot = v * (g() - 0.5) * 140;
     segs.push(<g key={i} transform={`translate(${sx + vx} ${y + dy + vy}) rotate(${rot})`}>
-      <path d={barril(L - parte * 6, A, parte * 7)} fill={NV.hifa} stroke={NV.hifaB} strokeWidth={4} />
+      {parte < 1 && <rect x={-L / 2 - 2} y={-A / 2} width={L + 4} height={A} fill={NV.hifa} opacity={1 - parte} />}
+      {parte < 1 && <line x1={L / 2 + 2} y1={-A / 2 + 3} x2={L / 2 + 2} y2={A / 2 - 3} stroke={NV.hifaB} strokeWidth={4} opacity={1 - parte} />}
+      {parte > 0 && <path d={barril(L - parte * 6, A, parte * 7)} fill={NV.hifa} stroke={NV.hifaB} strokeWidth={4} opacity={parte} />}
       <ellipse cx={-L * 0.1} cy={0} rx={8} ry={6} fill="rgba(207,230,255,.45)" />
     </g>);
   }
   return <g>
-    {parte < 0.5 && largo > 10 && <path d={`M ${x0} ${y - A / 2} L ${x0 + largo} ${y - A / 2} Q ${x0 + largo + 26} ${y} ${x0 + largo} ${y + A / 2} L ${x0} ${y + A / 2}`} fill="none" stroke={NV.hifaB} strokeWidth={3} opacity={1 - parte * 2} />}
     {segs}
+    {parte < 1 && largo > 10 && <path d={`M ${x0} ${y - A / 2} L ${x0 + largo} ${y - A / 2} Q ${x0 + largo + 26} ${y} ${x0 + largo} ${y + A / 2} L ${x0} ${y + A / 2}`} fill="none" stroke={NV.hifaB} strokeWidth={4} opacity={1 - parte} />}
   </g>;
 }
 
@@ -266,7 +268,7 @@ function Calendario({ T, a0 }) {
       <rect x={-68} y={-70} width={136} height={140} rx={16} fill={mixHex('#ffffff', '#ffb02e', on)} stroke={KC.ink} strokeWidth={6} />
       <rect x={-68} y={-70} width={136} height={34} rx={10} fill={on > 0.5 ? KC.red : '#9aa7ad'} stroke={KC.ink} strokeWidth={4} />
       <text x={0} y={30} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill={KC.ink}>{m}</text>
-      {pico > 0 && <text x={0} y={-80} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={2} opacity={pico}>▼ PICO</text>}
+      {pico > 0 && <text x={0} y={118} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={2} opacity={pico}>▲ PICO</text>}
     </g>; })}</g>;
 }
 
@@ -309,8 +311,6 @@ function NeumoniaVeranoShot() {
           <HifaTricho T={T} x0={60} x1={1040} y={790} seed={3} crece={kprog(T, K.Cu - 0.3, K.Cu + 0.8)} parte={kprog(T, K.Cu + 0.6, K.Cu + 1.8)} vuela={kprog(T, K.Cu + 2.2, K.Cu + 5.0)} />
           <HifaTricho T={T} x0={20} x1={980} y={960} seed={5} crece={kprog(T, K.Cu - 0.2, K.Cu + 1.0)} parte={0} />
           <HifaTricho T={T} x0={80} x1={1060} y={1130} seed={8} crece={kprog(T, K.Cu, K.Cu + 1.2)} parte={kprog(T, K.Cu + 1.2, K.Cu + 2.6)} vuela={kprog(T, K.Cu + 3.0, K.Cu + 6.0) * 0.5} />
-          {/* tabiques de la hifa del medio */}
-          {Array.from({ length: 11 }, (_, i) => <line key={i} x1={20 + (i + 1) * 86 - 2} y1={937} x2={20 + (i + 1) * 86 - 2} y2={983} stroke={NV.hifaB} strokeWidth={4} opacity={kprog(T, K.Cu + 0.4 + i * 0.05, K.Cu + 0.8 + i * 0.05)} />)}
         </>)}
       </Escena>
       {/* 4 · por dentro: no es infección, es tu pulmón reaccionando como alergia */}
@@ -327,8 +327,8 @@ function NeumoniaVeranoShot() {
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
           <path d="M 270 1000 Q 540 1080 810 1000" stroke={KC.ink} strokeWidth={8} strokeDasharray="20 14" fill="none" strokeLinecap="round" />
-          <Hospital x={270} y={760} />
-          <Casita x={810} y={780} s={2} />
+          <g transform="translate(270 760) scale(1.35) translate(-270 -760)"><Hospital x={270} y={760} /></g>
+          <Casita x={810} y={780} s={2.6} />
           {(() => { const x = klerp(270, 810, viaje), y = klerp(1000, 1000, viaje) + Math.sin(viaje * Math.PI) * 60;
             const mal = viaje < 0.5 ? 1 - kprog(T, K.Pi + 0.3, K.Pi + 1.4) : kprog(T, K.Pi + 2.6, K.Pi + 3.2);
             return <g><circle cx={x} cy={y - 40} r={34} fill={NV.piel} stroke={KC.ink} strokeWidth={5} /><path d={`M ${x - 40} ${y + 50} Q ${x} ${y - 20} ${x + 40} ${y + 50} Z`} fill={NV.camisa} stroke={KC.ink} strokeWidth={5} />
@@ -352,7 +352,7 @@ function NeumoniaVeranoShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <Cuarto T={T} id="ca" lluvia={1} humedo={kprog(T, K.Ca, K.Ca + 3)} hongo={klerp(0.3, 1, kprog(T, K.Ca + 1.0, K.Ca + 4.2))} calor={klerp(0.35, 0.95, kprog(T, K.Ca + 0.4, K.Ca + 2.0, kEase.suave))} />
-          {(() => { const p = kprog(T, K.Ca + 1.6, K.Ca + 2.4, kEase.rebote); return p > 0 ? <g transform={`translate(560 790) scale(${p})`}>
+          {(() => { const p = kprog(T, K.Ca + 1.6, K.Ca + 2.4, kEase.rebote); return p > 0 ? <g transform={`translate(560 560) scale(${p})`}>
             <path d="M 0 -60 Q 44 0 44 22 A 44 44 0 1 1 -44 22 Q -44 0 0 -60 Z" fill={KC.cyan} stroke={KC.ink} strokeWidth={6} /></g> : null; })()}
         </>)}
       </Escena>
@@ -403,24 +403,25 @@ function NeumoniaVeranoShot() {
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.3} texto="¿contagio?" x={300} y={440} tam={52} />
-      {kvisible(T, K.G + 0.2, K.G + 2.6, 0) && Math.sin(T * 9) > 0.2 && <div style={{ position:'absolute', left:96, top:770, zIndex:41, font:`400 72px ${KF.titulo}`, color:KC.white, WebkitTextStroke:`3px ${KC.ink}`, textShadow:`4px 4px 0 ${KC.ink}`, transform:'rotate(-8deg)' }}>¡COF!</div>}
+      {kvisible(T, K.G + 0.2, K.G + 2.6, 0) && Math.sin(T * 9) > 0.2 && <div style={{ position:'absolute', left:250, top:760, zIndex:41, font:`400 72px ${KF.titulo}`, color:KC.white, WebkitTextStroke:`3px ${KC.ink}`, textShadow:`4px 4px 0 ${KC.ink}`, transform:'rotate(-8deg)' }}>¡COF!</div>}
       <Chip T={T} at={K.G + 2.9} until={K.Le - 0.3} texto="casi siempre en verano" x={540} y={1170} tam={34} borde={KC.orange} />
-      <EtqMix T={T} at={K.Le + 1.0} until={K.Cu - 0.3} x={400} y={980} partes={['aquí vive · ', 'Trichosporon']} tam={36} color={KC.ink} />
+      <EtqMix T={T} at={K.Le + 1.0} until={K.Cu - 0.3} x={470} y={880} partes={['aquí vive · ', 'Trichosporon']} tam={30} color={KC.ink} />
       <Chip T={T} at={K.Le + 0.6} until={K.Cu - 0.3} texto="madera húmeda" x={300} y={600} tam={32} borde={NV.madera} />
       <Chip T={T} at={K.Le + 1.6} until={K.Cu - 0.3} texto="tatami" x={300} y={1120} tam={32} borde={NV.heri} />
-      <Chip T={T} at={K.Le + 3.0} until={K.Cu - 0.3} texto="así se ve en cultivo" x={790} y={740} tam={28} borde={KC.gold} />
+      <Chip T={T} at={K.Le + 3.0} until={K.Cu - 0.3} texto="así se ve en cultivo" x={790} y={790} tam={28} borde={KC.gold} />
       <Chip T={T} at={K.Le + 0.2} until={K.Le + 2.6} texto="una levadura" x={790} y={460} tam={34} borde={KC.gold} />
       <Etq T={T} at={K.Cu + 0.3} until={K.Al - 0.3} x={60} y={420} texto="Trichosporon asahii" it tam={44} color={KC.gold2} />
       <Etq T={T} at={K.Cu + 1.0} until={K.Al - 0.3} x={60} y={895} texto="hifa con tabiques" tam={30} />
       <Etq T={T} at={K.Cu + 1.8} until={K.Al - 0.3} x={60} y={1070} texto="se parte en artroconidias («cubitos»)" tam={28} color={KC.gold2} />
       <Chip T={T} at={K.Cu + 2.4} until={K.Al - 0.3} texto="flotan en el aire" x={330} y={540} tam={34} borde={KC.cyan} />
       <MitoTachado T={T} at={K.Al + 0.3} tacharEn={K.Al + 1.2} until={K.Al + 2.6} texto="INFECCIÓN" x={300} y={420} tam={46} />
-      <Chip T={T} at={K.Al + 1.6} until={K.Pi - 0.3} texto="alergia del pulmón" x={330} y={1190} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.Al + 1.6} until={K.Pi - 0.3} texto="alergia del pulmón" x={230} y={1105} tam={30} borde={KC.red} />
       <Chip T={T} at={K.Al + 2.9} until={K.Pi - 0.3} texto="tos" x={110} y={420} tam={30} borde={KC.yellow} />
       <Chip T={T} at={K.Al + 3.4} until={K.Pi - 0.3} texto="fiebre" x={265} y={420} tam={30} borde={KC.orange} />
       <Chip T={T} at={K.Al + 3.9} until={K.Pi - 0.3} texto="falta de aire" x={530} y={420} tam={30} borde={KC.red} />
       <Chip T={T} at={K.Pi + 0.9} until={K.P - 0.3} texto="en el hospital: mejora solo" x={330} y={440} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.Pi + 2.7} until={K.P - 0.3} texto="en casa: regresa" x={760} y={1170} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.Pi + 0.1} until={K.P - 0.3} texto="LA PISTA" x={760} y={440} tam={44} borde={KC.yellow} />
       <Chip T={T} at={K.Ca + 0.4} until={K.Es - 0.3} texto="calor" x={200} y={420} tam={34} borde={KC.red} />
       <Chip T={T} at={K.Ca + 1.6} until={K.Es - 0.3} texto="humedad" x={420} y={420} tam={34} borde={KC.cyan} />
       <Chip T={T} at={K.Ca + 2.6} until={K.Es - 0.3} texto="el hongo se extiende" x={360} y={1170} tam={30} borde={KC.gold} />
@@ -428,18 +429,18 @@ function NeumoniaVeranoShot() {
       <NumeroGigante T={T} at={K.Es + 2.3} until={K.Cs - 0.3} valor={835} dur={1.2} x={330} y={620} tam={230} color={KC.yellow} />
       <Chip T={T} at={K.Es + 2.6} until={K.Cs - 0.3} texto="casos de alergias del pulmón" x={360} y={790} tam={30} borde={KC.gold} />
       <Chip T={T} at={K.Es + 5.0} until={K.Cs - 0.3} texto="3 de cada 4: tipo verano (74 %)" x={540} y={1170} tam={32} borde={KC.orange} />
-      <NumeroGigante T={T} at={K.Cs + 0.1} until={CsB - 0.2} valor={86} dur={0.9} sufijo=" de 100" x={540} y={470} tam={150} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Cs + 0.1} until={CsB - 0.2} valor={86} dur={0.9} sufijo=" de cada 100" x={540} y={470} tam={130} color={KC.yellow} />
       <Chip T={T} at={K.Cs + 1.0} until={CsB - 0.2} texto="empezaron de junio a septiembre" x={540} y={1080} tam={30} borde={KC.red} />
       <Chip T={T} at={CsB + 0.5} until={K.Li - 0.3} texto="más de la mitad" x={330} y={420} tam={34} borde={KC.gold} />
-      <Chip T={T} at={CsB + 0.8} until={K.Li - 0.3} texto="húmedo" x={790} y={720} tam={32} borde={KC.cyan} />
-      <Chip T={T} at={CsB + 1.4} until={K.Li - 0.3} texto="sombrío" x={790} y={800} tam={32} borde={KC.lilac} />
-      <Chip T={T} at={CsB + 2.1} until={K.Li - 0.3} texto="mal ventilado" x={790} y={880} tam={32} borde={KC.red} />
+      <Chip T={T} at={CsB + 0.8} until={K.Li - 0.3} texto="húmedo" x={820} y={720} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={CsB + 1.4} until={K.Li - 0.3} texto="sombrío" x={820} y={800} tam={32} borde={KC.lilac} />
+      <Chip T={T} at={CsB + 2.1} until={K.Li - 0.3} texto="mal ventilado" x={820} y={880} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Li + 0.4} until={K.Li + 2.4} texto="sacar el hongo de la casa" x={380} y={420} tam={34} borde={KC.leaf} />
       <TarjetaEstudio T={T} at={K.Li + 2.6} until={K.Pd - 0.3} anio="1989" quien="Japón · Yoshida y col." revista="Arch Environ Health" x={380} y={590} />
       <Chip T={T} at={K.Li + 3.9} until={K.Pd - 0.3} texto="bien limpiadas: 0 recaídas" x={300} y={1170} tam={26} borde={KC.leaf} />
       <Chip T={T} at={K.Li + 4.6} until={K.Pd - 0.3} texto="mal limpiadas: recayeron" x={810} y={1100} tam={24} borde={KC.red} />
       <Etq T={T} at={K.Pd + 1.4} until={K.C - 0.3} x={620} y={830} texto="piedra blanca" tam={40} color={KC.ink} />
-      <EtqMix T={T} at={K.Pd + 2.0} until={K.C - 0.3} x={80} y={1110} partes={['otras especies de ', 'Trichosporon']} tam={34} color={KC.ink} />
+      <EtqMix T={T} at={K.Pd + 2.0} until={K.C - 0.3} x={80} y={1080} partes={['otras especies de ', 'Trichosporon']} tam={34} color={KC.ink} />
       <Chip T={T} at={K.Pd + 0.4} until={K.C - 0.3} texto="nuditos en el pelo" x={330} y={540} tam={34} borde={KC.white} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="menos humedad" x={540} y={1170} tam={38} borde={KC.cyan} />
 

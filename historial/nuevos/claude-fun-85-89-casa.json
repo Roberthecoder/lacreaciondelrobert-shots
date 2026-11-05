@@ -1,7 +1,74 @@
-{ "temas": [
-  {"id": "fun-85-tina-gato", "titulo": "Eso no es un gusano: es un hongo que te pasó tu gato (tiña, *Microsporum canis*)", "serie": "Shot Fungi Mati", "numero": 85, "estado": "idea", "carpeta": "shots/fun-85-tina-gato", "rama": "claude/fun-85-89-casa", "fuentes": [], "fecha": "2026-11-05", "derivados": []},
-  {"id": "fun-86-lavavajillas", "titulo": "Tu lavavajillas tiene una levadura negra que aguanta calor, jabón y sal (*Exophiala dermatitidis*)", "serie": "Shot Fungi Mati", "numero": 86, "estado": "idea", "carpeta": "shots/fun-86-lavavajillas", "rama": "claude/fun-85-89-casa", "fuentes": [], "fecha": "2026-11-05", "derivados": []},
-  {"id": "fun-87-pudricion-seca", "titulo": "El hongo que se come casas y llora gotas (pudrición seca, *Serpula lacrymans*)", "serie": "Shot Fungi Mati", "numero": 87, "estado": "idea", "carpeta": "shots/fun-87-pudricion-seca", "rama": "claude/fun-85-89-casa", "fuentes": [], "fecha": "2026-11-05", "derivados": []},
-  {"id": "fun-88-moho-refri", "titulo": "Tu refri no mata al moho: solo lo hace ir más lento (hongos que crecen a 4 °C)", "serie": "Shot Fungi Mati", "numero": 88, "estado": "idea", "carpeta": "shots/fun-88-moho-refri", "rama": "claude/fun-85-89-casa", "fuentes": [], "fecha": "2026-11-05", "derivados": []},
-  {"id": "fun-89-neumonia-verano", "titulo": "La neumonía que te da tu casa solo en verano (neumonitis de verano, *Trichosporon*)", "serie": "Shot Fungi Mati", "numero": 89, "estado": "idea", "carpeta": "shots/fun-89-neumonia-verano", "rama": "claude/fun-85-89-casa", "fuentes": [], "fecha": "2026-11-05", "derivados": []}
-] }
+{
+ "temas": [
+  {
+   "id": "fun-85-tina-gato",
+   "titulo": "Eso no es un gusano: es un hongo que te pasó tu gato (tiña, *Microsporum canis*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 85,
+   "estado": "idea",
+   "carpeta": "shots/fun-85-tina-gato",
+   "rama": "claude/fun-85-89-casa",
+   "fuentes": [],
+   "fecha": "2026-11-05",
+   "derivados": []
+  },
+  {
+   "id": "fun-86-lavavajillas",
+   "titulo": "Tu lavavajillas tiene una levadura negra que aguanta calor, jabón y sal (*Exophiala dermatitidis*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 86,
+   "estado": "idea",
+   "carpeta": "shots/fun-86-lavavajillas",
+   "rama": "claude/fun-85-89-casa",
+   "fuentes": [],
+   "fecha": "2026-11-05",
+   "derivados": []
+  },
+  {
+   "id": "fun-87-pudricion-seca",
+   "titulo": "El hongo que se come casas y llora gotas (pudrición seca, *Serpula lacrymans*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 87,
+   "estado": "idea",
+   "carpeta": "shots/fun-87-pudricion-seca",
+   "rama": "claude/fun-85-89-casa",
+   "fuentes": [],
+   "fecha": "2026-11-05",
+   "derivados": []
+  },
+  {
+   "id": "fun-88-moho-refri",
+   "titulo": "Tu refri no mata al moho: solo lo hace ir más lento (hongos que crecen a 4 °C)",
+   "serie": "Shot Fungi Mati",
+   "numero": 88,
+   "estado": "idea",
+   "carpeta": "shots/fun-88-moho-refri",
+   "rama": "claude/fun-85-89-casa",
+   "fuentes": [],
+   "fecha": "2026-11-05",
+   "derivados": []
+  },
+  {
+   "id": "fun-89-neumonia-verano",
+   "titulo": "La neumonía que te da tu casa solo en verano (neumonitis de verano, *Trichosporon*)",
+   "serie": "Shot Fungi Mati",
+   "numero": 89,
+   "estado": "guion",
+   "carpeta": "shots/fun-89-neumonia-verano",
+   "rama": "claude/fun-85-89-casa",
+   "fuentes": [
+    "https://pubmed.ncbi.nlm.nih.gov/1928946/",
+    "https://pubmed.ncbi.nlm.nih.gov/2817962/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3194827/",
+    "https://pubmed.ncbi.nlm.nih.gov/9061585/",
+    "https://pubmed.ncbi.nlm.nih.gov/16366368/"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "El pulmón del humidificador: alergia por hongos y bacterias de humidificadores sucios",
+    "La piedra blanca: hongos que hacen nudos en el pelo",
+    "El pulmón del granjero: alergia por heno enmohecido"
+   ]
+  }
+ ]
+}
