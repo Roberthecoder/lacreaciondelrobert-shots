@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esta pintura de más de diecisiete mil años nunca la vas a ver en persona… y en parte es por un hongo."
+      "texto": "Esta pintura de más de diecisiete mil años nunca la vas a ver en persona… y hoy, en parte, es por un hongo."
     },
     {
       "escena": "Cueva",
@@ -13,7 +13,7 @@
     },
     {
       "escena": "Visitas",
-      "texto": "Unos muchachos la descubrieron en 1940; la abrieron al público, y miles de visitas trajeron calor, aliento y esporas."
+      "texto": "Unos muchachos la descubrieron en 1940; la abrieron al público, y miles de visitas trajeron calor, humedad y aliento."
     },
     {
       "escena": "Verde",
@@ -44,8 +44,8 @@
       "texto": "Su color negro viene de la melanina de sus paredes."
     },
     {
-      "escena": "Nombre",
-      "texto": "Y lleva el nombre de la cueva: bautizado por la obra que amenaza."
+      "escena": "Paredes",
+      "texto": "Y lo hallaron manchando las mismas paredes con arte."
     },
     {
       "escena": "Replica",
@@ -53,7 +53,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "La pintura real sigue ahí, a oscuras: protegida del hongo… y de tu aliento."
+      "texto": "La pintura real sigue ahí, a oscuras: vigilada contra el hongo… y lejos de tu aliento."
     }
   ],
   "mezcla": "oficial-30oct"
