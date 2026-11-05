@@ -97,4 +97,29 @@ Fuentes abiertas:
 *Chlorociboria*, verde azulado, xilindeína, taraceas y Blanchette 1992: **no aparecen** en la voz, en las escenas, en los subtítulos ni en
 `publicacion.md` (solo en la nota interna de `guion.md` y `narracion.json` que explica el cambio). El dibujo es esquemático.
 
+Veredicto de la 1ª verificación: APROBADO (sustituido por la re-verificación de abajo).
+
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador, que no escribió el guion ni hizo las verificaciones anteriores. Volví a abrir en texto completo [R1041], [R1389] y [MOR] (PDF), y el resumen de Boddy (2000), *FEMS Microbiol. Ecol.* 31: 185–194, doi:10.1111/j.1574-6941.2000.tb00683.x (Europe PMC).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «Esas líneas negras no son vetas de la madera: son fronteras entre hongos» | ✅ | [MOR] | "Zone lines most frequently result from the interaction of fungal hyphae produced by different genetic individuals." | 2021 |
+| «se le llama espalteada, y se vende cara en piezas torneadas y muebles» | ✅ | [R1041], [R1389] | "sold at a high markup by mills and lumber stores"; "small furniture items, like coffee tables … and wood turnings" | 2012 |
+| «varios hongos distintos entran al mismo tronco»; «cada uno teje hifas… se comen la madera» | ✅ | [MOR] | "During natural colonisation, both interspecific and intraspecific competition … is at play with a diverse range of fungal species"; "Wood decay-fungi naturally degrade and depolymerise wood constituents" | 2021 |
+| «Cuando dos colonias chocan y **ninguna logra vencer**» (voz, chip y subtítulo) | ⚠️ → **corregido**: ninguna fuente abierta liga las líneas de zona solo al empate (*deadlock*); [MOR] y [R1041] hablan de competencia o antagonismo en general, y Boddy 2000 dice que los choques terminan en empate o en reemplazo. Ahora: «Cuando dos colonias chocan y **se disputan la madera**,» (+1 palabra); chip «se disputan la madera»; subtítulo «Chocan: *se disputan la madera.*» | [MOR], [R1041], Boddy 2000 | "Zone lines are visible traces of competition"; "in an effort to protect their resources from another fungus"; "Interactions can result in deadlock or replacement" | 2021 / 2012 / 2000 |
+| «**cada una** amuralla su territorio con melanina» | ⚠️ → **corregido**: no siempre lo hacen las dos. Ahora: «**una o ambas** amurallan su territorio con melanina, un pigmento oscuro» (+1 palabra). El dibujo (una franja negra) sirve para los dos casos | [MOR], [R1041] | "Single zone lines are likely to be formed by the interaction of two species of fungi for which only one of the species' produces the melanin-induced demarcation line"; "zone lines, which are usually lines of dark melanin" | 2021 / 2012 |
+| «Más hongos, más fronteras: la tabla queda como un mapa» | ✅ (deducción directa) | [MOR] | "In intact wood, zone lines define an irregular volume of decaying wood." | 2021 |
+| «los de pudrición blanca, como *Trametes versicolor*, se comen la lignina y aclaran la madera» | ✅ | [R1389], [R1041] | "the lightening of the wood due to colonization and lignin removal by white rot fungi"; "Pretreatment of beech with T. versicolor alleviated this issue by bleaching the wood" | 2012 |
+| «En un estudio de 2012, el equipo de Seri Robinson sembró hongos así en cubitos de haya, por ocho a doce semanas» | ✅ | [R1041] | "Appl Microbiol Biotechnol (2012) 93:1041–1048"; "cut into 14-mm cubes"; "incubated for 8 weeks … 10 weeks … 12 weeks" | 2012 |
+| Pantalla: 4 frascos, monocultivo, 3 cubitos por frasco, 27 °C, vermiculita, «semana 1 … 12», *Fagus grandifolia*, pocas líneas solo en la superficie | ✅ | [R1041] | "Three blocks were placed in each jar"; "inoculated as monocultures within the jars"; "27 °C ± 2 °C"; "vermiculite spalting jars"; "Black pigmentation … was sporadic, occurred primarily on the surfaces of the heartwood, but not internally" | 2012 |
+| «*Trametes* le comió a la madera clara casi un tercio de su peso» / «−30 %», «albura de haya» | ✅ | [R1041], Tabla 1 | "Beech sapwood 30±3"; "the first set contained only lighter wood, presumed to be predominately sapwood" | 2012 |
+| «Por eso se seca a tiempo: en madera seca, el hongo se detiene» | ✅ | [MOR] | "most wood decay-fungi generally require a wood moisture content above bound water capacity … as water must be freely available for wood decay to occur"; "a short incubation period to induce zone lines is essential" | 2021 |
+| «*Xylaria polymorpha*, los dedos de muerto, hace líneas aunque esté solo» | ✅ | [R1389], [MOR] | "Xylaria polymorpha is capable of creating zone lines without the antagonism of a secondary fungus"; "the only fungus to form zone lines 3-dimensionally without an antagonist in processed wood" | 2012 / 2021 |
+| «esa tabla tan fina es el mapa de una guerra de hongos» | ✅ (metáfora) | [MOR] | "Zone lines are visible traces of competition" | 2021 |
+| publicacion.md: «ninguna/ninguno logra vencer, cada una/uno amuralla» (TikTok, Instagram, YouTube, Facebook, X, Threads) | ⚠️ → **corregido** igual que la voz («se disputan la madera, una o ambas amurallan»; en X: «Cuando dos chocan, uno o ambos amurallan», 263 caracteres) | ver arriba | — | — |
+
+Cambios de esta ronda: `narracion.json` líneas 4 y 5; `espalteada.jsx` (chip y subtítulo idx 4 de la escena Choque); `guion.md`; `publicacion.md`. Voz: 1024 caracteres (antes 1006), +2 palabras. JSX revisado con Babel y cuadros 19 s y 21.5 s revisados con `motor/preview.mjs`. Todo lo demás de las rondas anteriores se volvió a cotejar y sigue ✅.
+
 VEREDICTO: APROBADO

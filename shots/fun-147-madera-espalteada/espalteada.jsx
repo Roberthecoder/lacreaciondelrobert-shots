@@ -335,7 +335,7 @@ function EspalteadaShot() {
       <Chip T={T} at={K.H + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO · MADERA" x={360} y={470} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.H + 1.0} until={K.Ch - 0.2} x={60} y={545} texto="hifas (hilos del hongo)" tam={30} color={KC.texto} />
       <Etq T={T} at={K.H + 1.6} until={K.Ch - 0.2} x={60} y={1160} texto="células de la madera" tam={28} color="#d9b98a" />
-      <Chip T={T} at={K.Ch + 0.6} until={K.M - 0.2} texto="ninguna logra vencer" x={540} y={560} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.Ch + 0.6} until={K.M - 0.2} texto="se disputan la madera" x={540} y={560} tam={36} borde={KC.yellow} />
       <Etq T={T} at={K.M + 0.6} until={K.P - 0.3} x={500} y={560} texto="melanina" lado="izq" tam={34} color={KC.gold2} />
       <Etq T={T} at={K.M + 1.4} until={K.P - 0.3} x={500} y={1160} texto="línea de zona" lado="izq" tam={30} color={KC.gold2} />
       <Etq T={T} at={K.Ma + 1.0} until={K.B - 0.3} x={130} y={555} texto="cada color = el territorio de un hongo" tam={28} color={KC.ink} />
@@ -379,7 +379,7 @@ function EspalteadaShot() {
       <Subtitulo T={T} idx={1} at={K.V + 0.1} until={K.En - 0.1} texto="Madera *espalteada:* se vende cara." />
       <Subtitulo T={T} idx={2} at={K.En + 0.1} until={K.H - 0.1} texto="Varios hongos, *el mismo tronco.*" />
       <Subtitulo T={T} idx={3} at={K.H + 0.1} until={K.Ch - 0.1} texto="Hifas que *se comen la madera.*" />
-      <Subtitulo T={T} idx={4} at={K.Ch + 0.1} until={K.M - 0.1} texto="Chocan: *ninguna logra vencer.*" />
+      <Subtitulo T={T} idx={4} at={K.Ch + 0.1} until={K.M - 0.1} texto="Chocan: *se disputan la madera.*" />
       <Subtitulo T={T} idx={5} at={K.M + 0.1} until={K.P - 0.1} texto="Un muro de *melanina.*" />
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.Ma - 0.1} texto="¿Y si hay *muchos hongos?*" />
       <Subtitulo T={T} idx={7} at={K.Ma + 0.1} until={K.B - 0.1} texto="Más hongos, *más fronteras.*" />

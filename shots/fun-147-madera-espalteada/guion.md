@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #147 · rama `claude/fun-145-149-objetos`.
 - **Formato:** N1 · Por dentro. Viaje macro → micro → macro: una tabla de madera espalteada → dentro del tronco (hifas, choque, muro de melanina) → el laboratorio (frascos, semanas, peso perdido) → la misma tabla, ya "leída" como mapa de territorios y secada a tiempo.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Esas líneas negras no son vetas de la madera: son fronteras entre hongos.»
-- **Duración:** voz 1006 caracteres (≈ 58 s) + cierre 3.5 s → **61.53 s** en la base (suma de `OM_SCENES`).
+- **Duración:** voz 1024 caracteres (≈ 58 s) + cierre 3.5 s → **61.53 s** en la base (suma de `OM_SCENES`).
 - **Voz:** PENDIENTE de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **No repite:** fun-23 (madera que brilla), el festivo de podredumbre blanca (hongos que regresan árboles a la tierra) ni **fun-126 (madera verde: *Chlorociboria*, xilindeína, taraceas, Blanchette 1992)**. v2 (5 nov 2026): se quitó todo lo del verde y se cambió por cómo se induce el espalteado en el laboratorio y su costo. Aquí el foco es el **diseño**: por qué la madera sale dibujada y cuánto cuesta dibujarla.
 
@@ -15,8 +15,8 @@
 | 1 | Valor | A esta madera se le llama espalteada, y se vende cara en piezas torneadas y muebles. | Fondo menta. Un cuenco torneado con las mismas líneas; etiqueta de precio que sube ($ → $$$). Chip "madera espalteada · spalting". |
 | 2 | Entran | Todo empieza cuando varios hongos distintos entran al mismo tronco. | Fondo cian. Un tronco caído en corte; tres esporas de colores (rosa, cian, dorado: cada una un hongo distinto) caen en sitios distintos del corte. La cámara se acerca al corte. |
 | 3 | Hifas | Cada uno teje hifas, hilos finísimos, que avanzan y se comen la madera por dentro. | Fondo oscuro ("AL MICROSCOPIO · MADERA"). Células de madera como tubos; desde cada espora crecen hifas ramificadas de su color, avanzando por la punta. Escala 100 µm (esquemático). |
-| 4 | Choque | Cuando dos colonias chocan y ninguna logra vencer, | Las colonias rosa y cian se encuentran en medio; las puntas se frenan frente a frente (chispas). Chip "ninguna logra vencer". |
-| 5 | Melanina | cada una amuralla su territorio con melanina, un pigmento oscuro. | En la frontera, las hifas se oscurecen y se apiñan: se forma una franja negra continua (muro). Etiquetas "melanina" y "línea de zona". |
+| 4 | Choque | Cuando dos colonias chocan y se disputan la madera, | Las colonias rosa y cian se encuentran en medio; las puntas se frenan frente a frente (chispas). Chip "se disputan la madera". |
+| 5 | Melanina | una o ambas amurallan su territorio con melanina, un pigmento oscuro. | En la frontera, las hifas se oscurecen y se apiñan: se forma una franja negra continua (muro). Etiquetas "melanina" y "línea de zona". |
 | 6 | Pregunta | ¿Y qué pasa si en el tronco hay muchos hongos? | **Re-gancho.** Fondo rosa: el corte del tronco con muchas esporas de colores; signo "?" grande; Robert grande, pensativo. |
 | 7 | Mapa | Más hongos, más fronteras: la tabla queda como un mapa. | Fondo amarillo. Regresa la tabla: cada territorio se pinta de un color tenue y se ve que cada línea negra separa dos territorios (como un mapa de países). |
 | 8 | Blanqueo | Y los de pudrición blanca, como *Trametes versicolor*, se comen la lignina y aclaran la madera. | Fondo menta. Tres abanicos de *Trametes versicolor* ("cola de pavo": delgados, con bandas concéntricas y orilla clara) en la orilla de la tabla; dos territorios se aclaran. Chip "pudrición blanca", etiquetas *Trametes versicolor* y "come lignina: más clara". |
@@ -42,7 +42,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y qué pas
 | 1 | 0.0 | 2.6 | 11_sorprendido | `gancho` | «no son vetas: son fronteras entre hongos» (cuadro 0) |
 | 2 | 5.0 | 8.6 | 13_senalando_arriba | `arriba-der` | «se vende cara en piezas torneadas y muebles» |
 | 3 | 13.5 | 17.2 | 06_pensativo_menton | `arriba-der` | «hifas… se comen la madera por dentro» |
-| 4 | 20.9 | 24.2 | 10_serio_molesto | `arriba-der` | «amuralla su territorio con melanina» |
+| 4 | 20.9 | 24.2 | 10_serio_molesto | `arriba-der` | «amurallan su territorio con melanina» |
 | 5 | 24.4 | 27.5 | 07_pensativo_puno | `grande` | «¿Y qué pasa si en el tronco hay muchos hongos?» |
 | 6 | 31.1 | 35.5 | 13_senalando_arriba | `arriba-der` | «se comen la lignina y aclaran la madera» |
 | 7 | 38.7 | 41.7 | 04_bajando_lentes | `arriba-der` | «sembró hongos así en cubitos de haya» |

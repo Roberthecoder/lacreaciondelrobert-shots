@@ -297,7 +297,7 @@ function ViolinShot() {
       <Etq T={T} at={K.Ma + 1.1} until={K.Ma + 2.0} x={600} y={1055} texto="Acer pseudoplatanus" it tam={28} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Ho + 0.2} until={K.Ho + 2.5} anio="EMPA" quien="St. Gallen, Suiza" revista="Francis W. M. R. Schwarze" x={380} y={720} />
       <Chip T={T} at={K.Ho + 2.4} until={K.Ad - 0.2} texto="en el laboratorio · 2008–2014" x={380} y={470} tam={30} borde={KC.cyan} mono />
-      <Chip T={T} at={K.Ho + 3.0} until={K.Ad - 0.2} texto="hongos de podredumbre blanca" x={380} y={555} tam={32} borde={KC.paper} />
+      <Chip T={T} at={K.Ho + 3.0} until={K.Ad - 0.2} texto="hongos que pudren madera" x={380} y={555} tam={32} borde={KC.paper} />
       <Etq T={T} at={K.Ho + 4.2} until={K.Ad - 0.2} x={60} y={650} texto="Physisporinus vitreus" it tam={34} color={KC.texto} />
       <Etq T={T} at={K.Ho + 4.4} until={K.Ad - 0.2} x={590} y={650} texto="→ pícea, en laboratorio" tam={24} color={KC.gold2} />
       <Etq T={T} at={K.Ho + 5.6} until={K.Ad - 0.2} x={60} y={715} texto="Xylaria longipes" it tam={34} color={KC.texto} />
@@ -344,14 +344,14 @@ function ViolinShot() {
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ci - 0.1} texto="No es un Stradivarius: es *madera con hongos.*" />
       <Subtitulo T={T} idx={1} at={K.Ci + 0.1} until={K.Ma - 0.1} texto="*113 personas* lo confundieron." />
       <Subtitulo T={T} idx={2} at={K.Ma + 0.1} until={K.Ho - 0.1} texto="Pícea y arce: por dentro, *un panal.*" />
-      <Subtitulo T={T} idx={3} at={K.Ho + 0.1} until={K.Ad - 0.1} texto="Dos hongos de *podredumbre blanca.*" />
+      <Subtitulo T={T} idx={3} at={K.Ho + 0.1} until={K.Ad - 0.1} texto="Dos hongos que *pudren madera.*" />
       <Subtitulo T={T} idx={4} at={K.Ad + 0.1} until={K.Li - 0.1} texto="Adelgazan las *paredes.*" />
       <Subtitulo T={T} idx={5} at={K.Li + 0.1} until={K.P - 0.1} texto="Más ligera; el sonido, *casi igual de rápido.*" />
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.Ra - 0.1} texto="¿Y eso *qué cambia?*" />
       <Subtitulo T={T} idx={7} at={K.Ra + 0.1} until={K.Hi - 0.1} texto="Para radiar sonido: de pobre *a buena.*" />
       <Subtitulo T={T} idx={8} at={K.Hi + 0.1} until={K.Pb - 0.1} texto="Hipótesis: *así era la de Stradivari.*" />
       <Subtitulo T={T} idx={9} at={K.Pb + 0.1} until={K.Vo - 0.1} texto="Cinco violines *tras una cortina.*" />
-      <Subtitulo T={T} idx={10} at={K.Vo + 0.1} until={K.Oj - 0.1} texto="*90* prefirieron ese violín." />
+      <Subtitulo T={T} idx={10} at={K.Vo + 0.1} until={K.Oj - 0.1} texto="*90* prefirieron el de hongos." />
       <Subtitulo T={T} idx={11} at={K.Oj + 0.1} until={K.Pc - 0.1} texto="Ojo: *no fue un experimento controlado.*" />
       <Subtitulo T={T} idx={12} at={K.Pc + 0.1} until={K.C - 0.1} texto="Valía unos *2 millones de dólares.*" />
       <Subtitulo T={T} idx={13} at={K.C + 0.1} until={K.Ou - 0.1} texto="Madera *afinada por hongos.*" />
