@@ -21,7 +21,7 @@
     },
     {
       "escena": "Defensa",
-      "texto": "Pero el árbol se defiende: tapa sus propios tubos de agua."
+      "texto": "El árbol se defiende: tapa sus propios tubos de agua."
     },
     {
       "escena": "Marchita",
@@ -33,27 +33,27 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 2008, el Servicio Forestal de Estados Unidos inyectó solo el hongo a laureles: murieron en cinco a doce semanas."
+      "texto": "En 2008, científicos de Estados Unidos infectaron laureles solo con el hongo: casi todos murieron en semanas."
     },
     {
       "escena": "Millones",
-      "texto": "Para 2017 ya había matado más de trescientos millones de laureles en Estados Unidos."
+      "texto": "Para 2017, la enfermedad ya había matado más de trescientos millones de laureles rojos."
     },
     {
       "escena": "Aguacate",
-      "texto": "El aguacate es su pariente: en 2012 llegó a una huerta de Florida."
+      "texto": "El aguacate es su pariente: en 2012 la enfermedad llegó a una huerta de Florida."
     },
     {
       "escena": "Salto",
-      "texto": "Y pasó algo raro: el hongo saltó a otros escarabajos."
+      "texto": "Y lo raro: el hongo saltó a otros escarabajos."
     },
     {
       "escena": "Mexico",
-      "texto": "México, el mayor productor de aguacate, no lo tiene según Senasica: lo vigila en treinta estados."
+      "texto": "En México, el mayor productor de aguacate, no hay registro de esta plaga; en 2024 la vigilaban en treinta estados."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que ese puntito no es basura: es un granjero diminuto que amenaza tu guacamole."
+      "texto": "Ese puntito no es basura: es un granjero diminuto que amenaza tu guacamole."
     }
   ],
   "mezcla": "oficial-30oct"
