@@ -358,8 +358,8 @@ function ArrozShot() {
       <Etq T={T} at={K.Es + 1.0} until={K.Ap + 0.6} x={90} y={850} texto="espora: 3 células" tam={32} color={KC.texto} />
       <Etq T={T} at={K.Es + 1.6} until={K.Ap + 0.6} x={360} y={1065} texto="pegamento" tam={30} color="#9be8ff" />
       <Etq T={T} at={K.Es + 1.2} until={K.Me + 2.4} x={1040} y={1050} lado="izq" texto="cutícula de la hoja" tam={28} color={AC.cuti} />
-      <Etq T={T} at={K.Ap + 0.8} until={K.Me - 0.2} x={560} y={880} texto="tubo germinativo" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Ap + 2.0} until={K.Me + 2.4} x={720} y={840} texto="apresorio" tam={36} color={KC.gold2} />
+      <Etq T={T} at={K.Ap + 0.8} until={K.Me - 0.2} x={540} y={905} texto="tubo germinativo" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Ap + 2.0} until={K.Me + 2.4} x={720} y={825} texto="apresorio" tam={36} color={KC.gold2} />
       <Etq T={T} at={K.Me + 0.6} until={K.Me + 2.4} x={460} y={785} texto="pared de melanina" tam={32} color={KC.texto} />
       <Etq T={T} at={K.Me + 1.6} until={K.Me + 2.4} x={460} y={895} texto="glicerol" tam={32} color={AC.glic} />
       <Chip T={T} at={K.Pr + 0.2} until={K.Pr + 2.4} texto="POR DENTRO · apresorio" x={360} y={560} tam={28} borde={KC.cyan} mono />

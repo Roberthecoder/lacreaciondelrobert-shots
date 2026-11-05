@@ -277,8 +277,8 @@ function MangoShot() {
         <Capa>
           <Mango x={300} y={640} s={0.85} rot={-10} madurez={madura} id="de" />
           <g>
-            <defs><clipPath id="vent"><rect x={40} y={860} width={1000} height={420} rx={36} /></clipPath></defs>
-            <rect x={40} y={860} width={1000} height={420} rx={36} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
+            <defs><clipPath id="vent"><rect x={40} y={860} width={1000} height={330} rx={36} /></clipPath></defs>
+            <rect x={40} y={860} width={1000} height={330} rx={36} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
             <g clipPath="url(#vent)"><g transform="translate(0 0)">
               <CorteCascara T={T} germina={1} apresorio={1} clavija={1} duerme={1 - kprog(T, K.De + 3.2, K.De + 3.6)} defensas={1 - madura} hifas={kprog(T, K.De + 3.4, K.De + 5.2, kEase.sale)} />
             </g></g>
@@ -304,7 +304,7 @@ function MangoShot() {
       <Escena T={T} a={K.E} b={K.Ex} zoom={0.03} origen="45% 50%">
         <FondoLunares color={KC.cyan} />
         <Capa>
-          <MapaMexico x={60} y={560} ancho={760} conCA={false}>
+          <MapaMexico x={90} y={570} ancho={700} conCA={false}>
             {HUERTAS.map(([lo, la], i) => { const k = kprog(T, K.E + 2.6 + i * 0.03, K.E + 2.9 + i * 0.03, kEase.rebote); if (k <= 0) return null; const [px, py] = mxProy(lo, la);
               return <circle key={i} cx={px} cy={py} r={9 * k} fill={MG.mancha} stroke="#fff" strokeWidth={3} />; })}
           </MapaMexico>
@@ -314,25 +314,27 @@ function MangoShot() {
       <Escena T={T} a={K.Ex} b={K.B} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          {Array.from({ length: 7 }, (_, i) => { const u = ((T - K.Ex) * 0.35 + i / 7) % 1; return <Caja key={i} x={-100 + u * 1280} y={1150 + (i % 2) * 20} s={0.9} />; })}
-          <line x1={0} y1={1215} x2={1080} y2={1215} stroke={KC.ink} strokeWidth={8} />
+          {Array.from({ length: 7 }, (_, i) => { const u = ((T - K.Ex) * 0.35 + i / 7) % 1; return <Caja key={i} x={-100 + u * 1280} y={1050 + (i % 2) * 12} s={0.9} />; })}
+          <line x1={0} y1={1108} x2={1080} y2={1108} stroke={KC.ink} strokeWidth={8} />
         </Capa>
       </Escena>
       {/* 10 · el baño de agua caliente */}
       <Escena T={T} a={K.B} b={K.C} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <Capa>
-          <Tina T={T} baja={kprog(T, K.B + 0.2, K.B + 1.4)} x={470} y={1000} />
+          <Tina T={T} baja={kprog(T, K.B + 0.2, K.B + 1.4)} x={440} y={980} />
         </Capa>
-        <Termometro x={960} y={560} alto={440} valor={klerp(20, 46.1, kprog(T, K.B + 0.8, K.B + 2.2, kEase.sale))} max={60} marcas={[0, 20, 40, 60]} />
+        <Termometro x={925} y={700} alto={360} valor={klerp(20, 46.1, kprog(T, K.B + 0.8, K.B + 2.2, kEase.sale))} max={60} marcas={[0, 20, 40, 60]} />
         <Capa z={31}>
           {(() => { const o = kprog(T, K.B + 3.4, K.B + 3.8); if (o <= 0) return null; return <g opacity={o}>
-            <rect x={60} y={1290} width={430} height={170} rx={24} fill="rgba(14,15,18,.82)" stroke={KC.red} strokeWidth={5} />
-            <Larva x={200} y={1375} s={0.9} tache={kprog(T, K.B + 3.9, K.B + 4.2)} T={T} />
-            <rect x={590} y={1290} width={430} height={170} rx={24} fill="rgba(14,15,18,.82)" stroke={KC.gold2} strokeWidth={5} opacity={kprog(T, K.B + 4.6, K.B + 5.0)} />
+            <rect x={60} y={1400} width={440} height={190} rx={24} fill="rgba(14,15,18,.82)" stroke={KC.red} strokeWidth={5} />
+            <Larva x={200} y={1475} s={0.9} tache={kprog(T, K.B + 3.9, K.B + 4.2)} T={T} />
+            <text x={280} y={1440} style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto}>mosca de</text><text x={280} y={1475} style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto}>la fruta</text><text x={280} y={1510} style={{ font:`700 22px ${KF.mono}` }} fill={KC.red}>objetivo</text>
+            <rect x={580} y={1400} width={440} height={190} rx={24} fill="rgba(14,15,18,.82)" stroke={KC.gold2} strokeWidth={5} opacity={kprog(T, K.B + 4.6, K.B + 5.0)} />
             <g opacity={kprog(T, K.B + 4.6, K.B + 5.0)}>
-              <ellipse cx={700} cy={1380} rx={40} ry={32} fill={MG.cafe} stroke={MG.cafe2} strokeWidth={5} />
-              <path d="M 760 1380 L 830 1380" stroke={KC.gold2} strokeWidth={10} strokeLinecap="round" /><path d="M 830 1350 L 830 1410" stroke={KC.gold2} strokeWidth={10} strokeLinecap="round" />
+              <ellipse cx={690} cy={1475} rx={40} ry={32} fill={MG.cafe} stroke={MG.cafe2} strokeWidth={5} />
+              <text x={850} y={1455} style={{ font:`700 26px ${KF.mono}` }} fill={KC.gold2}>ayuda a</text><text x={850} y={1490} style={{ font:`700 26px ${KF.mono}` }} fill={KC.gold2}>frenar al</text><text x={850} y={1525} style={{ font:`700 26px ${KF.mono}` }} fill={KC.gold2}>hongo</text>
+              <path d="M 750 1475 L 820 1475" stroke={KC.gold2} strokeWidth={10} strokeLinecap="round" /><path d="M 820 1445 L 820 1505" stroke={KC.gold2} strokeWidth={10} strokeLinecap="round" />
             </g>
           </g>; })()}
         </Capa>
@@ -348,25 +350,25 @@ function MangoShot() {
           {/* etiqueta colgada del pedúnculo */}
           {(() => { const p = kprog(T, K.C + 0.4, K.C + 1.0, kEase.rebote); if (p <= 0) return null; return <g transform={`translate(330 760) rotate(${-6 + Math.sin(T * 2) * 3}) scale(${p})`}>
             <line x1={0} y1={0} x2={-10} y2={-40} stroke={KC.ink} strokeWidth={4} />
-            <rect x={-250} y={-150} width={330} height={120} rx={14} fill="#fffbe8" stroke={KC.ink} strokeWidth={6} />
-            <text x={-85} y={-104} textAnchor="middle" style={{ font:`italic 700 34px ${KF.mono}` }} fill={KC.ink}>Colletotrichum</text>
-            <text x={-85} y={-58} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.red}>entró verde · despertó maduro</text>
+            <rect x={-320} y={-150} width={500} height={120} rx={14} fill="#fffbe8" stroke={KC.ink} strokeWidth={6} />
+            <text x={-70} y={-104} textAnchor="middle" style={{ font:`italic 700 34px ${KF.mono}` }} fill={KC.ink}>Colletotrichum</text>
+            <text x={-70} y={-58} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.red}>entró verde · despertó maduro</text>
           </g>; })()}
         </Capa>
       </Escena>
 
       {/* textos y etiquetas */}
       <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.6} until={K.G + 3.3} texto="¿un golpe?" x={300} y={480} tam={54} />
-      <Etq T={T} at={K.G + 1.6} until={K.G + 3.3} x={60} y={690} texto="manchas negras y hundidas" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.6} until={K.G + 3.3} x={40} y={720} texto="manchas negras y hundidas" tam={28} color={KC.ink} />
       <Chip T={T} at={K.G + 3.6} until={K.H - 0.3} texto="antes: verde, en el árbol" x={360} y={460} tam={40} borde={KC.leaf} />
       <Etq T={T} at={K.H + 0.4} until={K.L - 0.3} x={60} y={420} texto="Colletotrichum" it tam={52} color={KC.ink} />
       <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={490} texto="antracnosis" tam={38} color={KC.ink} />
       <Etq T={T} at={K.H + 1.6} until={K.L - 0.3} x={60} y={800} texto="▲ hojas enfermas" tam={30} color={KC.ink} />
       <Chip T={T} at={K.H + 2.2} until={K.L - 0.3} texto="la enfermedad más importante del mango" y={1470} tam={36} borde={KC.leaf} />
       <Chip T={T} at={K.H + 3.2} until={K.L - 0.3} texto="en casi todo el mundo" y={1560} tam={32} borde={KC.leaf} />
-      <Etq T={T} at={K.L + 0.6} until={K.A - 0.3} x={60} y={420} texto="esporas en gotas" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.L + 1.8} until={K.A - 0.3} x={670} y={440} texto="conidios" lado="izq" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.L + 2.1} until={K.A - 0.3} x={670} y={490} texto="(≈ 13 × 4 µm)" lado="izq" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.L + 0.6} until={K.L + 1.6} x={60} y={420} texto="esporas en gotas de lluvia" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.L + 1.8} until={K.A - 0.3} x={670} y={440} texto="conidios" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.L + 2.1} until={K.A - 0.3} x={670} y={492} texto="≈ 13 × 4 µm" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.A + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO" x={250} y={400} tam={34} borde={KC.cyan} mono />
       <Etq T={T} at={K.A + 0.5} until={K.D - 0.2} x={250} y={760} texto="conidio" tam={30} color={KC.texto} />
       <Etq T={T} at={K.A + 1.8} until={K.P - 0.3} x={600} y={790} texto="apresorio" tam={34} color={KC.gold2} />
@@ -378,26 +380,25 @@ function MangoShot() {
       <Chip T={T} at={K.De + 0.4} until={K.M - 0.3} texto="AL MADURAR" x={760} y={470} tam={44} borde={KC.ink} />
       <Medidor T={T} at={K.De + 0.6} until={K.M - 0.3} valor={(t) => 1 - kprog(t, K.De + 0.6, K.De + 3.2) * 0.75} etiqueta="defensas de la cáscara" texto={() => ''} x={560} y={560} ancho={460} color={KC.pink} />
       <Medidor T={T} at={K.De + 1.2} until={K.M - 0.3} valor={(t) => 1 - kprog(t, K.De + 1.2, K.De + 3.4) * 0.7} etiqueta="firmeza de la fruta" texto={() => ''} x={560} y={700} ancho={460} color={KC.cyan} />
-      <Chip T={T} at={K.De + 3.5} until={K.M - 0.3} texto="¡despierta!" x={760} y={1340} tam={44} borde={KC.gold2} />
-      <Etq T={T} at={K.De + 4.0} until={K.M - 0.3} x={100} y={1240} texto="hifas" tam={30} color="#fff4d6" />
+      <Chip T={T} at={K.De + 3.5} until={K.M - 0.3} texto="¡despierta!" x={540} y={1460} tam={44} borde={KC.gold2} />
+      <Etq T={T} at={K.De + 4.0} until={K.M - 0.3} x={90} y={1150} texto="hifas" tam={30} color="#fff4d6" />
       <Etq T={T} at={K.M + 1.0} until={K.E - 0.3} x={60} y={430} texto="manchas negras y hundidas" tam={32} color={KC.ink} />
       <Etq T={T} at={K.M + 2.0} until={K.E - 0.3} x={1030} y={540} texto="rayas «de lágrima»" lado="izq" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.M + 3.6} until={K.E - 0.3} texto="si avanza: llega a la pulpa" y={1480} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.M + 3.6} until={K.E - 0.3} texto="si avanza: llega a la pulpa" x={400} y={1480} tam={38} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.4} anio="2020" quien="CIAD · Colegio de Postgraduados · Chapingo" revista="Plant Disease 104: 137–146 · con colaboradores de Brasil y Argentina" y={700} />
       <NumeroGigante T={T} at={K.E + 2.6} until={K.Ex - 0.3} valor={59} dur={1.7} etiqueta="huertas (2010–2012)" x={300} y={470} tam={150} color={KC.yellow} />
       {ESPECIES.map((sp, i) => { const fuerte = sp === 'C. siamense' || sp === 'C. asianum'; const on = T > K.E + 5.6;
-        return <Etq key={sp} T={T} at={K.E + 4.0 + i * 0.25} until={K.Ex - 0.3} x={680} y={880 + i * 62} texto={(fuerte && on ? '★ ' : '• ') + sp} it tam={fuerte && on ? 36 : 30} color={fuerte && on ? KC.red : KC.ink} />; })}
-      <Chip T={T} at={K.E + 5.6} until={K.Ex - 0.3} texto="las más agresivas: C. siamense y C. asianum" y={1480} tam={32} borde={KC.red} />
-      <Etq T={T} at={K.E + 3.0} until={K.Ex - 0.3} x={60} y={1170} texto="posición de los puntos: ilustrativa" tam={22} color={KC.ink} />
+        return <Etq key={sp} T={T} at={K.E + 4.0 + i * 0.25} until={K.Ex - 0.3} x={380} y={975 + i * 48} texto={(fuerte && on ? '★ ' : '• ') + sp} it tam={fuerte && on ? 36 : 30} color={fuerte && on ? KC.red : KC.ink} />; })}
+      <Chip T={T} at={K.E + 5.6} until={K.Ex - 0.3} texto={<>más agresivas: <i>C. siamense</i> y <i>C. asianum</i></>} x={420} y={1480} tam={32} borde={KC.red} />
+      <Etq T={T} at={K.E + 3.0} until={K.Ex - 0.3} x={60} y={935} texto="posición de los puntos: ilustrativa" tam={20} color={KC.ink} />
       <Chip T={T} at={K.Ex + 0.3} until={K.B - 0.3} texto="el mayor exportador de mango" x={430} y={440} tam={40} borde={KC.leaf} />
       <NumeroGigante T={T} at={K.Ex + 0.9} until={K.B - 0.3} valor={450000} dur={1.6} prefijo="≈" sufijo=" t" etiqueta="exportación de mango de México, 2025" x={540} y={680} tam={150} color={KC.yellow} />
       <Etq T={T} at={K.Ex + 1.6} until={K.B - 0.3} x={60} y={830} texto="FAO, 2026" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Ex + 0.6} until={K.B - 0.3} x={1040} y={1150} texto="rumbo a EE. UU. →" lado="izq" tam={30} color={KC.ink} />
       <Medidor T={T} at={K.Ex + 3.4} until={K.B - 0.3} valor={(t) => 0.89 * kprog(t, K.Ex + 3.4, K.Ex + 5.0, kEase.sale)} etiqueta="a Estados Unidos" x={90} y={930} ancho={900} color={KC.yellow} />
-      <Chip T={T} at={K.B + 0.4} until={K.C - 0.3} texto="BAÑO DE AGUA CALIENTE" x={430} y={440} tam={38} borde={KC.cyan} mono />
-      <Chip T={T} at={K.B + 2.2} until={K.C - 0.3} texto="46.1 °C · 65–110 min según el peso" y={1560} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.B + 3.9} until={K.C - 0.3} x={270} y={1305} texto="mosca de la fruta (larva)" tam={22} color={KC.texto} lado="der" />
-      <Etq T={T} at={K.B + 4.9} until={K.C - 0.3} x={620} y={1305} texto="ayuda a frenar al hongo" tam={22} color={KC.gold2} />
-      <Chip T={T} at={K.B + 1.0} until={K.C - 0.3} texto="casi todos los que van a EE. UU." x={430} y={520} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.B + 0.4} until={K.C - 0.3} texto="BAÑO DE AGUA CALIENTE" x={360} y={430} tam={34} borde={KC.cyan} mono />
+      <Chip T={T} at={K.B + 2.2} until={K.C - 0.3} texto="46.1 °C · 65–110 min según el peso" y={1660} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.B + 1.0} until={K.C - 0.3} texto="casi todos los que van a EE. UU." x={330} y={510} tam={28} borde={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={110} x={760} y={1480} color={KC.ink} />
@@ -407,7 +408,7 @@ function MangoShot() {
       <BarraEscala T={T} at={K.De} until={K.M} texto="5 cm · 10 µm (ventana)" largo={100} x={60} y={1620} color={KC.ink} />
       <BarraEscala T={T} at={K.M} until={K.E} texto="5 cm" largo={110} x={60} y={1620} color={KC.ink} />
       <BarraEscala T={T} at={K.E} until={K.Ex} texto="mapa esquemático" largo={0} x={60} y={1620} color={KC.ink} />
-      <BarraEscala T={T} at={K.B} until={K.C} texto="tina esquemática" largo={0} x={60} y={1640} color={KC.ink} />
+      <BarraEscala T={T} at={K.B} until={K.C} texto="tina esquemática" largo={0} x={60} y={1740} color={KC.ink} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={110} x={760} y={1480} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
