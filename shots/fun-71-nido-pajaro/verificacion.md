@@ -31,4 +31,33 @@ Verificador independiente (subagente que no escribió el guion), 5 nov 2026. Fue
 
 Correcciones aplicadas (filas 6, 7, 10, 14, 24) y vueltas a revisar contra las mismas frases de la fuente: la voz ya no da una cifra por huevito, el rango en México incluye Sonora (registros de herbario CESUES en GBIF) y la distancia se dice como máximo. Voz final: 961 caracteres.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la verificación anterior). Resumen de Hassett et al. 2013 bajado completo por la API oficial de NCBI (E-utilities); Deacon y MushroomExpert reabiertos; GBIF consultado por API (525 registros del género *Cyathus* en México). Se revisaron voz (`narracion.json`), subtítulos y letreros de `nido.jsx`, `guion.md` y `publicacion.md`.
+
+| Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|
+| Los "huevitos" son cápsulas (peridiolos) llenas de esporas que la lluvia saca | ✅ | https://pubmed.ncbi.nlm.nih.gov/24119409/ | "package millions of spores into peridioles that are splashed from their basidiomata by the impact of raindrops" | 2013 |
+| Hongo nido de pájaro, *Cyathus* | ✅ | https://pubmed.ncbi.nlm.nih.gov/24119409/ | "The bird's nest fungi … discharge mechanism in Crucibulum and Cyathus species" | 2013 |
+| Copa de como un centímetro; letrero "7–10 mm de alto"; barra 1 cm | ✅ (medida de *C. striatus*, la especie típica) | https://archive.bio.ed.ac.uk/jdeacon/FungalBiology/cyathus.htm · https://www.mushroomexpert.com/cyathus_striatus.html | "small, funnel-shaped cups, about 1 cm diameter"; "Typically 7–10 mm high and 6–8 mm wide" | 2005 / 2014 |
+| Peridiolo con barra de 1 mm | ✅ | https://www.mushroomexpert.com/cyathus_striatus.html | "To 2 mm wide" | 2014 |
+| Crece en madera podrida y astillas de jardín | ✅ | https://archive.bio.ed.ac.uk/jdeacon/FungalBiology/cyathus.htm · https://www.mushroomexpert.com/cyathus_striatus.html | "commonly found growing on decaying wood chips in many parks and gardens"; "on forest debris … sometimes on woodchips" | 2005 / 2014 |
+| Crece en estiércol viejo | ✅ (*C. stercoreus*) | https://archive.bio.ed.ac.uk/jdeacon/FungalBiology/cyathus.htm | "C. stercoreus grows on old dung patches" | 2005 |
+| En México hay registros de Sonora a Yucatán; puntos en Sonora, Jalisco, Hidalgo, Veracruz, Tabasco, Chiapas, Yucatán ("algunos registros") | ✅ | https://api.gbif.org/v1/occurrence/search?taxonKey=7413707&country=MX&facet=stateProvince | Conteo por estado: Chiapas 82, Jalisco 54, Veracruz 74, Yucatán 27, Tabasco 21, Sonora 19 (ejemplares de herbario CESUES, p. ej. *Cyathus stercoreus* 2005, *C. setosus* 2006–2009), Hidalgo 6 | consulta 2026 |
+| Cordón enrollado y punta pegajosa | ✅ | https://pubmed.ncbi.nlm.nih.gov/24119409/ · https://archive.bio.ed.ac.uk/jdeacon/FungalBiology/cyathus.htm | "Each peridiole carried a cord or funiculus that remained in a condensed form during flight"; "a tangled mass of adhesive hyphae, which serve to attach the peridiole to any nearby substrate" | 2013 / 2005 |
+| La gota en el borde lo lanza ("el borde: el mejor golpe") | ✅ | https://pubmed.ncbi.nlm.nih.gov/24119409/ | "Raindrops that hit the rim of the basidiome were most effective at ejecting peridioles." | 2013 |
+| Sale hacia arriba, en ángulo empinado (dibujo) | ✅ | https://pubmed.ncbi.nlm.nih.gov/24119409/ | "The mean angle of ejection varied from 67 to 73°" | 2013 |
+| Sale a entre 1 y 5 m/s | ✅ | https://pubmed.ncbi.nlm.nih.gov/24119409/ | "Peridioles were ejected at speeds of 1-5 m per second" | 2013 |
+| Puede llegar hasta como a un metro ("máximo estimado") | ✅ | https://pubmed.ncbi.nlm.nih.gov/24119409/ | "travelled over an estimated maximum horizontal distance of 1 m" | 2013 |
+| 2013, equipo de la Universidad de Miami, en Ohio | ✅ | https://pubmed.ncbi.nlm.nih.gov/24119409/ | "Department of Biology, Miami University, Oxford, OH 45056, USA." | 2013 |
+| Lo grabó en cámara superlenta (tarjeta "video de alta velocidad", "Fungal Biology, 2013") | ✅ | https://pubmed.ncbi.nlm.nih.gov/24119409/ | "revealed with high-speed video"; "Fungal Biol. 2013 Oct;117(10):708-14" | 2013 |
+| Usa menos del 2 % de la energía de la gota | ✅ (energía cinética) | https://pubmed.ncbi.nlm.nih.gov/24119409/ | "utilizing less than 2 % of the kinetic energy in falling raindrops" | 2013 |
+| Si la punta se pega a un tallo, el cordón se desenrolla y lo frena | ✅ | https://pubmed.ncbi.nlm.nih.gov/24119409/ | "The cord unravelled when its adhesive surface stuck to a surrounding obstacle and acted as a brake that quickly reduced the velocity of the projectile." | 2013 |
+| Queda colgado justo donde comen los animales | ✅ | https://pubmed.ncbi.nlm.nih.gov/24119409/ | "this elaborate mechanism tethers peridioles to vegetation in a perfect location for browsing by herbivores" | 2013 |
+| "se cree que así viajan sus esporas"; chip "hipótesis: viajan en la panza" | ✅ dicho como hipótesis (el paso por el intestino no está probado en estas fuentes) | https://pubmed.ncbi.nlm.nih.gov/24119409/ | "perfect location for browsing by herbivores" | 2013 |
+| Venado como herbívoro ("herbívoro (ilustrativo)") | ✅ ilustrativo | https://pubmed.ncbi.nlm.nih.gov/24119409/ | "herbivores" | 2013 |
+| "ese nido no espera a un pájaro: espera la lluvia" | ✅ retórica sobre un hecho verificado | https://archive.bio.ed.ac.uk/jdeacon/FungalBiology/cyathus.htm | "splash-dispersed by rain drops that fall into the cup" | 2005 |
+
+Sin ❌ ni ⚠️ nuevos: no se cambió nada en el guion, la voz, el `.jsx` ni `publicacion.md`.
+
 VEREDICTO: APROBADO
