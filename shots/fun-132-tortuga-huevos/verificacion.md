@@ -80,4 +80,32 @@ Leí la versión actual de `narracion.json`: tiene 13 líneas. Las 7 corregidas 
 ### Aplicado tras la reverificación 1
 - R6/Rc → redacción final dictada por el verificador (sitios de muestreo del artículo + CONANP): voz «Lo hallaron en las seis especies buscadas, en playas de América, África y Australia, incluida la golfina, una de las que anidan en Oaxaca.» (sin «por miles»; en Escobilla también anidan otras especies) y chip «2005–2012 · 6 especies · América, África y Australia». Confirmado por el coordinador el 5 nov 2026: con este ajuste todas las afirmaciones quedan ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Verificador independiente (no escribió el guion). Leí guion.md, narracion.json (13 líneas), los letreros y subtítulos de `tortuga.jsx` y publicacion.md, y abrí de nuevo cada fuente.
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| «Ese huevo de tortuga no se echó a perder solo: lo mató un hongo de la arena» (gancho, sobre el huevo dibujado) | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC3897526/ ; https://pmc.ncbi.nlm.nih.gov/articles/PMC7534349/ | "never isolated from eggs taken directly from the ovipositor … suggesting a sand-born origin"; "eventually kill the living embryos itself" | 2014 / 2020 |
+| Huevo «como pelota de ping-pong», escala 4 cm | ✅ | https://conserveturtles.org/information-sea-turtles-loggerhead-sea-turtle/ | "They are the size and shape of ping-pong balls with a soft shell." | vigente |
+| «Una tortuga boba entierra unos cien huevos y se va» · «≈ 100 huevos por nido» | ✅ | https://www.nps.gov/bisc/learn/nature/species-focus-loggerhead-sea-turtles.htm | "Nests contain an average of 100 eggs." · "Mothers return to the sea, perhaps never to see their hatchlings emerge" | vigente |
+| «en Ecuador, huevos de carey tomados directo de la madre no traían el hongo» · chip «recién puestos, antes de tocar la arena: sin hongo» | ✅ | PMC3897526 | "This fungal species was never isolated from eggs taken directly from the ovipositor of nesting females (prior to contact with the sand)"; carey en Machalilla, Ecuador | 2014 |
+| «Vive en la arena: el grupo *Fusarium solani*, que suele comer materia muerta»; *F. falciforme* · *F. keratoplasticum* | ✅ | PMC3897526; PMC7534349 | "suggesting a sand-born origin"; "as saprotrophs in rich organic agricultural soils"; los dos patógenos del título del artículo de 2014 | 2014 / 2020 |
+| «Teje hilos sobre huevos dañados, deshace la cáscara con ácidos y enzimas, y entra» | ✅ | PMC7534349 | "initially forming mycelial networks on damaged eggs … produce enzymes and organic acids which degrade the shells by dissolving the organic substrates and calcium carbonate and finally penetrate the viable tissues inside" | 2020 |
+| «Salen manchas amarillas y azuladas; adentro, el embrión muere» | ✅ | PMC7534349; PMC3897526 (Fig. 2) | "Infected eggs develop yellowish-blue infection zones … and eventually kill the living embryos"; "(yellowish, reddish and bluish spots)" | 2020 / 2014 |
+| «Y ese huevo puede contagiar a sus vecinos» | ✅ | PMC7534349 | "Infected eggs within a clutch can serve as a source of inoculum for neighbouring eggs" | 2020 |
+| «En 2011, en Boa Vista, Cabo Verde, siguieron veintinueve nidos» (tortuga boba) | ✅ | PMC3897526 | "A total of 29 nests of C. caretta … were studied during the 2011-nesting season in Boa Vista Island." | 2011 |
+| «En arena seca no nacieron tres de cada diez huevos; en nidos inundados, casi ninguno» · barras 29.6 % / 99.7 % | ✅ | PMC3897526 | "higher (89.7% and 99.7%, respectively) than those observed in nests not experiencing either variable (29.6%)" | 2011 |
+| «y ahí abundaba el hongo» · chip «78 % inundados vs 21 % arena seca (5 nidos por grupo)» | ✅ | PMC3897526 | "the incidence of Fusarium disease in nests exposed to inundation … was significantly higher (78.4% …) than that in dry sand nests (21.4%)" | 2011 |
+| Chip «la marea también ahoga los huevos» (correlación) | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC4632582/ | "developing embryos require two-way gas exchange across the eggshell, which is impeded by submergence in water" | 2015 |
+| «Lo hallaron en las seis especies buscadas, en playas de América, África y Australia» · chip «2005–2012 · 6 especies» · puntos del mapa | ✅ | PMC3897526 | "during the period from 2005 to 2012 … Fusarium-colonized eggs were found in all sea turtle species and nesting areas surveyed"; sitios: Raine Island y Crab Island (Australia), Machalilla (Ecuador), Ascension Island, Boa Vista (Cabo Verde), La Playona (Colombia), Pacuare (Costa Rica). (Ascensión, isla del Atlántico, no se nombra en la voz, pero tampoco se excluye: no hace falsa la frase.) | 2014 (muestreo 2005–2012) |
+| «incluida la golfina» | ✅ | PMC3897526 | "Lepidochelys olivacea (La Playita, Machalilla National Park)" | 2014 |
+| «una de las que anidan en Oaxaca» · «Oaxaca: aquí anida la golfina» (sin decir que el hongo esté ahí) | ✅ | https://www.publimetro.com.mx/noticias/2026/05/21/miles-de-pequenas-viajeras-llegan-a-oaxaca-asi-comenzo-la-temporada-de-tortugas/ (cita a Profepa) | "El Santuario Playa Escobilla es el sitio de anidación de tortuga marina golfina más importante de México" | 2026 |
+| «crece mejor cerca de treinta grados: la tibieza en que se incuban los huevos» · «≈ 29.7 °C» · «su temperatura favorita = la del nido» | ✅ | PMC3897526 | "29.7°C (±1.2) for the species F. falciforme, 29.7°C (±0.7) for the species F. keratoplasticum"; "Their optimal growth temperature overlap with the optimal incubation temperature for eggs" | 2014 |
+| «su peligro estaba en la arena» | ✅ | PMC3897526 | "suggesting a sand-born origin" | 2014 |
+| Dibujo de conidios (macroconidios en canoa, microconidios ovalados) y 6 siluetas de especies | ✅ | ver Rd arriba; PMC3897526 | descripción clásica del complejo; las 6 especies del estudio | — |
+| publicacion.md (7 redes + comentario fijado) | ✅ | las mismas fuentes | mismas cifras y redacción que la voz; 89.7 % de arcilla/limo solo en el comentario, bien citado | — |
+
+Conteo: ✅ 19 · ⚠️ 0 · ❌ 0. Sin cambios en guion, voz, `.jsx` ni publicación.
+
 VEREDICTO: APROBADO

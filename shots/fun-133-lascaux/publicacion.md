@@ -11,7 +11,7 @@ Está en la cueva de Lascaux, en Francia: toros, caballos y ciervos pintados con
 Cuatro adolescentes la descubrieron en 1940. Se abrió al público en 1948 y llegó a recibir hasta 1,800 visitantes al día: su calor, su humedad y el CO₂ de su aliento cambiaron el clima de la cueva. En las paredes brotaron algas verdes (la «enfermedad verde») y en 1963 la cerraron.
 ¿Cerrada ya estaba a salvo? No del todo. En 2001, poco después de cambiar su aire acondicionado, apareció un manto blanco: el hongo Fusarium solani. Sus hilos (hifas) cubrieron piso y paredes; lo frenaron con cal y biocidas. Pero después salieron manchas negras.
 En 2012, un equipo europeo (con investigadores del IRNAS-CSIC de Sevilla) describió a uno de los hongos de esas manchas como especie nueva: Ochroconis lascauxensis, el más abundante en muestras de 2007–2008. Su color negro viene de la melanina de sus paredes celulares, y lo hallaron manchando las mismas paredes con arte.
-Por eso hoy se visitan copias: Lascaux II (abierta en 1983, copia de dos salas) y Lascaux IV (2016, copia completa). La original sigue a oscuras: vigilada contra el hongo… y lejos de tu aliento.
+Hoy, en su lugar, se visitan copias: Lascaux II (abierta en 1983, copia de dos salas) y Lascaux IV (2016, copia completa). La original sigue a oscuras: vigilada contra el hongo… y lejos de tu aliento.
 El dibujo es esquemático.
 Fuentes: Martin-Sanchez et al. 2012 (Environ. Sci. Technol. y Fungal Biology); De la Rosa et al. 2017 (Scientific Reports); Ministerio de Cultura de Francia.
 ¿Te gustaría entrar a una cueva así aunque fuera solo una copia? 👇
@@ -44,7 +44,7 @@ Esta pintura de más de 17 mil años nunca la vas a ver en persona… y hoy, en 
 Está en la cueva de Lascaux, en Francia: toros, caballos y ciervos pintados con pigmentos minerales (ocres para el rojo y el amarillo; sobre todo manganeso para el negro). Se calcula que tienen entre unos 17 mil y 22 mil años.
 Cuatro adolescentes la descubrieron en 1940. Se abrió al público en 1948 y antes del cierre recibía hasta 1,800 visitantes al día: su calor, humedad y aliento alteraron la cueva. Brotaron algas verdes (la «enfermedad verde») y en abril de 1963 la cerraron.
 En 2001, poco después de cambiar su aire acondicionado, apareció un manto blanco del hongo Fusarium solani. Lo frenaron con cal y biocidas, pero después salieron manchas negras. En 2012, un equipo europeo con investigadores del IRNAS-CSIC (Sevilla) describió a uno de esos hongos como especie nueva: Ochroconis lascauxensis (hoy también llamado Scolecobasidium lascauxense), el más abundante en muestras de 2007–2008. Su negro viene de la melanina de sus paredes celulares.
-Por eso hoy se visitan copias: Lascaux II (1983, copia de dos salas) y Lascaux IV (2016, copia completa). La original sigue a oscuras: vigilada contra el hongo… y lejos de tu aliento.
+Hoy, en su lugar, se visitan copias: Lascaux II (1983, copia de dos salas) y Lascaux IV (2016, copia completa). La original sigue a oscuras: vigilada contra el hongo… y lejos de tu aliento.
 El dibujo es esquemático.
 
 Fuentes:
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esta pintura de más de 17 mil años nunca la vas a ver en persona… y hoy, en parte, es por un hongo. 🍄
-La cueva de Lascaux (Francia) se cerró en 1963 por algas; en 2001 la invadió un moho blanco y luego manchas negras de un hongo nuevo, Ochroconis lascauxensis. Por eso hoy se visitan copias.
+La cueva de Lascaux (Francia) se cerró en 1963 por algas; en 2001 la invadió un moho blanco y luego manchas negras de un hongo nuevo, Ochroconis lascauxensis. Hoy, en su lugar, se visitan copias.
 ¿Entrarías aunque fuera a la copia? 👇
 Shot Fungi Mati 133 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
