@@ -35,19 +35,28 @@ poros, clic de cada tubito que se enciende (70), golpe de las tarjetas, tache.
 
 Barra de escala: 50 cm (milpa), esquemático (Tierra y ozono), 1 cm (corte de suelo), 10 µm (hifa), esquemático (moléculas y enzima).
 
-## Robert en pantalla (plan, se ajusta con la animación)
+## Robert en pantalla
+
+Tiempos de la base (61.5 s; con la voz real se recorren solos). Grande en «¿Y quién suelta el gas?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no es solo comida» (cuadro 0) |
-| 2 | 9.4 | 13.0 | 10_serio_molesto | `arriba-der` | «la emisión que más daña la capa de ozono» |
-| 3 | 18.5 | 23.5 | 12_perfil_serio | `arriba-der` | «el suelo se encharca… sin oxígeno» |
-| 4 | 23.8 | 25.9 | 06_pensativo_menton | `grande` | «¿Y quién suelta el gas?» |
-| 5 | 30.0 | 35.5 | 04_bajando_lentes | `arriba-der` | «ningún hongo conocido lo desarma» |
-| 6 | 42.5 | 48.2 | 11_sorprendido | `arriba-der` | «bajó el gas ochenta y nueve por ciento» |
-| 7 | 48.5 | 52.4 | 07_pensativo_puno | `arriba-der` | «Ojo: fue un solo suelo» |
-| 8 | 52.8 | 58.0 | 02_apuntando_camara | `arriba-der` | «en tu milpa» (cierre) |
-| — | 58.2 | 61.7 | 13_senalando_arriba | CierreMarca | cierre |
+| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no es solo comida para tu milpa» (cuadro 0) |
+| 2 | 10.7 | 14.6 | 10_serio_molesto | `arriba-der` | «la emisión humana que más daña la capa de ozono» |
+| 3 | 20.2 | 24.4 | 12_perfil_serio | `arriba-der` | «el suelo se encharca… sin oxígeno» |
+| 4 | 24.65 | 26.5 | 06_pensativo_menton | `grande` | «¿Y quién suelta el gas?» |
+| 5 | 32.4 | 36.2 | 04_bajando_lentes | `arriba-der` | «en ningún hongo se conoce la que lo desarma» |
+| 6 | 46.6 | 49.1 | 11_sorprendido | `izq-alto` | «bajó el gas ochenta y nueve por ciento» |
+| 7 | 49.6 | 52.6 | 07_pensativo_puno | `arriba-der` | «Ojo: fue un solo suelo» |
+| 8 | 53.2 | 57.9 | 02_apuntando_camara | `arriba-der` | «en tu milpa, un hongo puede…» (cierre) |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 8 · **27.0 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · nunca tapa datos ni subtítulo (revisado en hojas de cuadros).
+
+**Archivos de animación:** `Shot Oxido Nitroso base narrada.dc.html`, `oxido-nitroso.jsx` (piezas propias: `Milpa`, `Maiz`, `Costal`, `Granitos`, `Mol`,
+`GasSube`, `TierraOzono`, `SueloCorte`, `HifaMicro`, `P450nor`, `Tubito`, `FrascoTierra`, `SubtituloIt` con _cursiva_ para *Fusarium oxysporum*),
+`gen-audio.mjs` (un acorde por escena: Re m → Fa → Si♭ → Do → Mi m ahogado → Sol mayor con las bacterias → Re m con el hongo → La m → Fa → Sol m → Fa mayor;
+motivo propio de 4 notas con respuesta, secuencia y cadencia, muy quedito; efectos atados a la pantalla).
 
 ## Fuentes (abiertas el 5 nov 2026)
 
