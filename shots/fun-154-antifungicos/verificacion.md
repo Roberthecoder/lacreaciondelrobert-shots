@@ -97,4 +97,34 @@ Aviso que no es de hechos: la voz quedó en 987 caracteres (999 con espacios ent
 
 Todas las afirmaciones quedan ✅. (Sigue en pie el aviso de duración: hay que medir con ffprobe que el total quede entre 61.0 y 62.0 s.)
 
+Veredicto de la 1ª verificación: APROBADO.
+
+## Re-verificación independiente (5 nov 2026)
+
+Segunda verificación, hecha por un subagente que no escribió el guion ni la 1ª verificación. Se revisaron `narracion.json` (13 líneas),
+`guion.md`, todos los letreros de `antifungicos.jsx` y `publicacion.md`. Cada fuente se abrió de nuevo en su texto original (PDF de la OMS
+con `pdftotext`; texto completo de PMC/Europe PMC; resumen de PubMed vía Europe PMC; página del Science History Institute).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Hongos y animales son grupos hermanos; el moho es más pariente tuyo que de una planta (voz 1, árbol en pantalla; «25 proteínas» en YouTube) | ✅ | Baldauf y Palmer, *PNAS* 90: 11558 | "Phylogenetic relationships among plants, animals, and fungi were examined by using sequences from 25 proteins." … "animals and fungi are sister groups while plants constitute an independent evolutionary lineage." | 1993 |
+| Sus células tienen núcleo como las tuyas → pocos blancos que dañen al hongo y no a ti (voz 2–3) | ✅ | Wall y Lopez-Ribot, *Antibiotics* 9: 445 | "Fungi, like humans, are eukaryotic organisms and there is a paucity of selective targets that can be exploited for antifungal drug development." | 2020 |
+| Para infecciones graves la OMS cuenta solo 5 familias (polienos, azoles, equinocandinas, pirimidinas, triterpenoides); pantalla «4 de uso clínico» (voz 4) | ✅ («graves» = invasivas) | OMS, *Antifungal agents in clinical and preclinical development* (PDF) | "There are currently only five antifungal classes approved for the treatment of invasive fungal diseases (polyenes, pyrimidines, azoles, echinocandins and triterpenoids), of which only four are used clinically" | 2025 (datos a sep 2024) |
+| Tu membrana usa colesterol; la del hongo, ergosterol (voz 6; dibujo: ergosterol con doble enlace extra en anillo B, otro en la cola y metilo extra) | ✅ | Wall y Lopez-Ribot; estructura química estándar (ergosta-5,7,22-trien-3β-ol vs. colest-5-en-3β-ol) | "Azoles inhibit 14-α-sterol demethylase, a cytochrome P-450 enzyme involved in the synthesis of ergosterol" | 2020 |
+| Los azoles frenan la fábrica de ergosterol; chip «enzima 14-α-desmetilasa» (voz 7) | ✅ | Wall y Lopez-Ribot | (misma frase) "…which results in the accumulation of toxic sterol intermediaries and loss of membrane integrity." | 2020 |
+| La anfotericina B le arranca el ergosterol (esponja) (voz 7) | ✅ | Maji et al., *Nature* 623: 1079 (resumen, Europe PMC) | "amphotericin B was instead found to kill fungi primarily by forming extramembraneous sponge-like aggregates that extract ergosterol from lipid bilayers" | 2023 |
+| El hongo tiene pared y tú no; las equinocandinas frenan la máquina de su glucano (voz 8) | ✅ | Wall y Lopez-Ribot | "They target 1,3-β-d-glucan synthase, an enzyme responsible for the production of 1,3-β-d-glucan…"; "Because mammalian cells do not have a cell wall, their target allows for significantly less toxicity" | 2020 |
+| Pared de β-glucano y quitina (pantalla 8) | ✅ | Gow, Latgé y Munro, *Microbiol Spectr* 5(3) | "Most fungi have a common alkali-insoluble core of branched β-(1,3) glucan, β-(1,6) glucan, and chitin" | 2017 |
+| Chip «quitina: aún sin medicamento que funcione bien» | ✅ | Gow et al. | "Nikkomycins and polyoxins are specific chitin synthase inhibitors … they are not efficiently taken up in vivo and consequently are often not effective antifungals" (y ninguna de las 5 clases de la OMS actúa sobre la quitina) | 2017 / 2025 |
+| Hazen y Brown, en Nueva York (ciudad de NY y Albany), probaron cientos de muestras de tierra; frasco por correo (voz 9, mapa) | ✅ | Science History Institute | "The partnership between Hazen in New York City and Brown in Albany worked"; "of the hundreds of soil samples sent to Hazen and Brown from around the world"; "she would mail the particular culture to Albany in a mason jar." | consultado 2026 (hechos 1948–1950) |
+| En 1950 anunciaron la nistatina; *Science* 1950; *Streptomyces noursei*; «nistatina = New York State» | ✅ (en 1950 la llamaban *fungicidin*; después la renombraron: es la misma sustancia) | Hazen y Brown, *Science* 112: 423 (ficha Europe PMC); SHI | "Two antifungal agents produced by a soil actinomycete. Science 1950 112 423"; "Nystatin … was discovered in 1950"; "hence named Streptomyces noursei"; "first named fungicidin … renamed the substance nystatin (for New York State)" | 1950 |
+| La nistatina es otra arma contra el ergosterol (polieno) | ✅ | OMS 2025 | "Similar to other members of the polyene group, BSG005 binds to ergosterol" (Fig. 2: "Nystatin … Polyene") | 2025 |
+| La anfotericina también jala tu colesterol y así daña células de riñón; 2023, Illinois; AM-2-19 no daña en ratones; «todavía no es medicamento» (voz 10) | ✅ | Maji et al. 2023 (afiliación: Beckman Institute, University of Illinois at Urbana-Champaign) | "Cholesterol extraction was found to drive the toxicity of amphotericin B to human renal cells." … "AM-2-19, that is renal sparing in mice and primary human renal cells" | 2023 |
+| Toxicidad renal de la anfotericina B | ✅ | Wall y Lopez-Ribot | "major drawback of amphotericin B has always been its toxicity, particularly nephrotoxicity that can lead to kidney failure." | 2020 |
+| En diez años solo cuatro antifúngicos nuevos; chip «aprobados 2014–2024 · OMS 2025» (voz 11) | ✅ | OMS 2025 (PDF) | "In the past 10 years, only four new antifungal drugs have been approved by the United States Food and Drug Administration, the European Medicines Agency, or by the Chinese National Medical Products Administration." | 2025 |
+| Gancho/cierre «para un medicamento, ese hongo y tú son casi lo mismo: los separan unas moléculas» | ✅ (retórico, acotado por «para un medicamento» y sustentado por las filas anteriores) | Wall y Lopez-Ribot; Gow et al. | "paucity of selective targets"; "molecules that are not represented in the human body" | 2020 / 2017 |
+| `publicacion.md` (7 redes y comentario fijado): mismas cifras y hechos, más «del jardín de unos amigos», «frascos de vidrio», «nikomicina» | ✅ | SHI; Gow et al. | "originally found in soil from the garden of Hazen's friends"; "mason jar"; "Nikkomycins … not effective antifungals" | — |
+
+Resultado: no se encontró ninguna afirmación ❌ ni ⚠️. No se cambió nada (ni voz, ni pantalla, ni textos de publicación).
+
 VEREDICTO: APROBADO
