@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Portobello base narrada.dc.html",
+  "salida": "Shot Portobello narrado.dc.html",
+  "nota": "Shot Fungi Mati #60. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese portobello no es otro hongo: es un champiñón que dejaron crecer."
+    },
+    {
+      "escena": "Especie",
+      "texto": "El blanco, el café y el portobello son una sola especie: Agaricus bisporus."
+    },
+    {
+      "escena": "Cultivo",
+      "texto": "Crece en composta de paja y estiércol de caballo, bajo una capa de tierra."
+    },
+    {
+      "escena": "Cremini",
+      "texto": "Al café cortado cerradito le dicen cremini."
+    },
+    {
+      "escena": "Abre",
+      "texto": "Si lo dejan madurar, el sombrero se abre hasta quince centímetros y enseña sus láminas."
+    },
+    {
+      "escena": "Laminas",
+      "texto": "Las láminas pasan de rosadas a café oscuro: ahí nacen las esporas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué se llama bisporus?"
+    },
+    {
+      "escena": "Basidio",
+      "texto": "Están tapizadas de basidios, y casi todos cargan solo dos esporas, no cuatro como sus parientes."
+    },
+    {
+      "escena": "Nucleos",
+      "texto": "Cada espora se lleva dos núcleos distintos: la pareja que necesita para dar champiñones."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "¿Y el blanco? En 1925, en una granja de Pensilvania, salió un champiñón blanco entre los cafés."
+    },
+    {
+      "escena": "Lambert",
+      "texto": "Su dueño, Louis Lambert, lo cultivó desde sus esporas; para 1933 dominaba el mercado."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Antes se cultivaban cafés o crema: el blanco era el raro. Y portobello es nombre de mercadotecnia."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese portobello no es otro hongo: es un cremini que nadie cortó a tiempo."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

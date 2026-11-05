@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Cerveza base narrada.dc.html",
+  "salida": "Shot Cerveza narrado.dc.html",
+  "nota": "Shot Fungi Mati #61. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Ciencia, sin promover el consumo de alcohol.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa cerveza clara no la hizo una levadura: la hicieron dos, en una sola célula."
+    },
+    {
+      "escena": "Mosto",
+      "texto": "La malta suelta azúcares y la levadura se los come."
+    },
+    {
+      "escena": "Burbujas",
+      "texto": "Los parte en alcohol y dióxido de carbono: las burbujas."
+    },
+    {
+      "escena": "Gemacion",
+      "texto": "Y se multiplica sacando yemas."
+    },
+    {
+      "escena": "Hibrido",
+      "texto": "Pero la de la cerveza clara, Saccharomyces pastorianus, es un híbrido de dos especies."
+    },
+    {
+      "escena": "Cerevisiae",
+      "texto": "Una es Saccharomyces cerevisiae, la del pan."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y la otra? Fue un misterio."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2011, un equipo de Argentina, Estados Unidos y Portugal la halló en bosques de Nothofagus, en la Patagonia."
+    },
+    {
+      "escena": "Genoma",
+      "texto": "Saccharomyces eubayanus: su genoma coincide en noventa y nueve punto cinco por ciento con la parte que faltaba."
+    },
+    {
+      "escena": "Frio",
+      "texto": "Ella aguanta el frío; cerevisiae se come un azúcar de la malta que ella no. Juntas fermentan entre diez y quince grados."
+    },
+    {
+      "escena": "Tibet",
+      "texto": "Y ojo: las más parecidas a la de la cerveza no son de la Patagonia, sino del Tíbet."
+    },
+    {
+      "escena": "Mundo",
+      "texto": "En 2015, casi nueve de cada diez litros de cerveza del mundo eran de este tipo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa cerveza clara no la hizo una levadura: la hicieron dos, una del pan y otra salvaje."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
