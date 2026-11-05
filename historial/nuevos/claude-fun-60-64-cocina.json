@@ -1,0 +1,9 @@
+{
+ "temas": [
+  {"id": "fun-60-portobello", "titulo": "Ese portobello no es otro hongo: es un champiñón que dejaron crecer (*Agaricus bisporus*)", "serie": "Shot Fungi Mati", "numero": 60, "estado": "idea", "carpeta": "shots/fun-60-portobello", "rama": "claude/fun-60-64-cocina", "fuentes": [], "fecha": "2026-11-04", "derivados": []},
+  {"id": "fun-61-cerveza-patagonia", "titulo": "Tu cerveza clara es mitad levadura de la Patagonia (*Saccharomyces pastorianus* y *S. eubayanus*)", "serie": "Shot Fungi Mati", "numero": 61, "estado": "idea", "carpeta": "shots/fun-61-cerveza-patagonia", "rama": "claude/fun-60-64-cocina", "fuentes": [], "fecha": "2026-11-04", "derivados": []},
+  {"id": "fun-62-pan-caja", "titulo": "¿Por qué tu pan de caja tarda en enmohecerse? El antimoho (propionato) contra *Penicillium* y *Rhizopus*", "serie": "Shot Fungi Mati", "numero": 62, "estado": "idea", "carpeta": "shots/fun-62-pan-caja", "rama": "claude/fun-60-64-cocina", "fuentes": [], "fecha": "2026-11-04", "derivados": []},
+  {"id": "fun-63-camembert", "titulo": "Esa cáscara blanca es un hongo clonado: *Penicillium camemberti* y el camembert en peligro", "serie": "Shot Fungi Mati", "numero": 63, "estado": "idea", "carpeta": "shots/fun-63-camembert", "rama": "claude/fun-60-64-cocina", "fuentes": [], "fecha": "2026-11-04", "derivados": []},
+  {"id": "fun-64-hongos-mercado", "titulo": "Los hongos silvestres de los mercados de México: cientos de especies que se comen", "serie": "Shot Fungi Mati", "numero": 64, "estado": "idea", "carpeta": "shots/fun-64-hongos-mercado", "rama": "claude/fun-60-64-cocina", "fuentes": [], "fecha": "2026-11-04", "derivados": []}
+ ]
+}
