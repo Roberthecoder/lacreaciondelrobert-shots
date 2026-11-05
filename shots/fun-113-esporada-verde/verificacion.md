@@ -62,4 +62,19 @@ verificación independiente antes de aprobar la voz.
 
 Todo lo afirmado en voz y pantalla quedó ✅. El dibujo es esquemático. No es guía de identificación.
 
+## Segunda verificación (independiente, 5 nov 2026)
+Un verificador que no escribió el guion revisó de nuevo todas las afirmaciones abriendo las fuentes (UF/IFAS PP324, Beug 2025, Lehmann y Khazan 1992, Cajas 2016, Pérez-Silva 1970, Ruiz-González 2023, Kuo/MushroomExpert 2020).
+- Voz: todas ✅, sin cambios. Se conservan «suele» y «venenoso» en el superlativo (en 2018–2020 el hongo más reportado en general fue *Agaricus bisporus*, comestible).
+- ⚠️ corregidas:
+  | Afirmación | Problema | Corrección |
+  |---|---|---|
+  | Pantalla «2 casos reportados (2018–2020)» | Fecha no dada por Beug; la tabla VIII lista 32 adultos con casos cocinados | → «registro NAMA: también cocinado» |
+  | Barras de escala de los hongos | Daban sombreros de 32–55 cm; el máximo real es ≈30 cm («1.8 to 11.8 inches») | Barras ajustadas: sombreros de ≈22–27 cm |
+  | Color del botón joven (café fuerte) | UF: «Caps typically start off white but become darker»; Kuo no da color | → beige claro |
+  | publicacion.md «común en regiones tropicales» | UF: «has also been reported from other tropical regions» | → «también se ha reportado en regiones tropicales» |
+  | publicacion.md «desde 1970» | El listado de 1970 no prueba que sea el primer registro | → «ya aparecía en 1970 en la lista de hongos tóxicos» |
+  | publicacion.md LinkedIn, superlativo absoluto | Beug dice «normally» | → «suele sumar más intoxicaciones» |
+  | publicacion.md «en 2018–2020 hubo dos personas…» | Mismo problema de fecha | → «en el registro de la NAMA hay personas que…» |
+  | Enlace UF | Redirige | → https://ask.ifas.ufl.edu/publication/PP324 |
+
 VEREDICTO: APROBADO

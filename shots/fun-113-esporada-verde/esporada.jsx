@@ -15,7 +15,7 @@ function Molybdites({ T = 0, x, y, s = 1, crece = 1, abre = 1, verde = 0, rot = 
   const H = klerp(40, 330, c) * klerp(0.55, 1, a), R = klerp(30, 210, c) * klerp(0.42, 1, a), hc = R * klerp(1.15, 0.36, a);
   const yC = -H, wP = klerp(16, 30, c);
   const lam = mixHex(CM.lamBlanca, CM.lamVerde, kclamp(verde, 0, 1)), lamL = mixHex('#d9d2bf', CM.lamVerde2, kclamp(verde, 0, 1));
-  const tapa = mixHex('#9c6a45', CM.blanco, kclamp(a * 1.4 - 0.1, 0, 1));
+  const tapa = mixHex('#c9a27a', CM.blanco, kclamp(a * 1.4 - 0.1, 0, 1));
   const esc = [];
   if (a > 0.15) for (let k = 0; k < 4; k++) { const n = 5 + k * 2; for (let i = 0; i < n; i++) { const u = (-1 + (i + 0.5) * 2 / n) * (0.25 + k * 0.22); const v = 1 - u * u;
     esc.push([u * R * 0.98, yC - hc * Math.pow(Math.max(0, v), 0.75) * 0.96 + 4, 10 + (3 - k) * 3]); } }
@@ -325,7 +325,7 @@ function EsporadaShot() {
       <Etq T={T} at={K.Jo + 1.0} until={K.Ra - 0.3} x={1020} y={1230} texto="adulto: verdosas" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Ra + 1.5} until={K.Ra + 2.8} texto="un solo rasgo no basta" x={470} y={900} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Ra + 3.0} until={K.Cn - 0.3} texto="¿cocinado? igual intoxicó" x={420} y={560} tam={38} borde={KC.red} />
-      <Etq T={T} at={K.Ra + 3.5} until={K.Cn - 0.3} x={60} y={650} texto="2 casos reportados (2018–2020)" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Ra + 3.5} until={K.Cn - 0.3} x={60} y={650} texto="registro NAMA: también cocinado" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Cn + 0.3} until={K.Cn + 2.8} texto="¿no lo identificó un micólogo?" x={360} y={500} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Cn + 0.8} until={K.Cn + 2.8} texto="no lo comas" x={760} y={770} tam={44} borde={KC.red} />
       <Chip T={T} at={K.Cn + 3.2} until={K.Ci - 0.3} texto="¿te sientes mal? ve a urgencias" x={360} y={500} tam={30} borde={KC.red} />
@@ -335,14 +335,14 @@ function EsporadaShot() {
       <Etq T={T} at={K.Ci + 2.4} until={K.Ou} x={60} y={1535} texto="después de comer un hongo, ve a urgencias." tam={22} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Ja} texto="10 cm" largo={150} />
-      <BarraEscala T={T} at={K.Ja} until={K.Co} texto="50 cm" largo={160} />
-      <BarraEscala T={T} at={K.Co} until={K.Re} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.P} until={K.Es} texto="10 cm" largo={130} />
+      <BarraEscala T={T} at={K.G} until={K.Ja} texto="10 cm" largo={200} />
+      <BarraEscala T={T} at={K.Ja} until={K.Co} texto="20 cm" largo={160} />
+      <BarraEscala T={T} at={K.Co} until={K.Re} texto="10 cm" largo={160} />
+      <BarraEscala T={T} at={K.P} until={K.Es} texto="10 cm" largo={180} />
       <BarraEscala T={T} at={K.Es} until={K.Es + 2.4} texto="5 cm" largo={150} />
       <BarraEscala T={T} at={K.Es + 2.6} until={K.Et} texto="10 µm" largo={140} />
-      <BarraEscala T={T} at={K.Jo} until={K.Ra} texto="10 cm" largo={130} />
-      <BarraEscala T={T} at={K.Ci} until={K.Ou} texto="10 cm" largo={150} y={1600} />
+      <BarraEscala T={T} at={K.Jo} until={K.Ra} texto="10 cm" largo={160} />
+      <BarraEscala T={T} at={K.Ci} until={K.Ou} texto="10 cm" largo={200} y={1600} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ja - 0.1} texto="No es champiñón: *es venenoso.*" />
