@@ -78,7 +78,7 @@ function BosqueQuemado({ T, humo = 1, tapetes = 0, brote = 0, co2 = 0, foco = -1
         <TapeteLejos x={x} y={y} s={s} p={p} seed={i + 1} />
       </g>; })}
     {/* CO₂ que sube de los tapetes */}
-    {co2 > 0 && TAPETES.slice(0, 4).map(([x, y], i) => { const u = (T * 0.5 + i * 0.25) % 1; return <text key={'c' + i} x={x - 30} y={y - 40 - u * 220} style={{ font:`900 40px ${KF.texto}` }} fill={PY.oro} stroke={KC.ink} strokeWidth={2} opacity={co2 * (1 - u)}>CO₂</text>; })}
+    {co2 > 0 && TAPETES.slice(0, 4).map(([x, y], i) => { const u = (T * 0.5 + i * 0.25) % 1; return <text key={'c' + i} x={x - 30} y={y - 40 - u * 220} style={{ font:`900 40px ${KF.texto}` }} fill={PY.oro} stroke={KC.ink} strokeWidth={2} opacity={co2 * (1 - u)}>CO<tspan dy={10} style={{ fontSize:26 }}>2</tspan></text>; })}
     {/* brote verde */}
     {brote > 0 && <g transform={`translate(560 1195) scale(${kEase.rebote(brote)})`}>
       <path d="M 0 0 Q -4 -50 2 -90" stroke="#2f9e44" strokeWidth={9} fill="none" strokeLinecap="round" />

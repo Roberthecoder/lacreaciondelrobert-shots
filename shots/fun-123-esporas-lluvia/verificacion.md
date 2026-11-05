@@ -49,3 +49,30 @@ re-verificador independiente.
 | — | «…y levanta sus esporas diez centímetros o más.» | «Ese aire fresco corre, gira y sube sus esporas diez centímetros o más.» | Dressaire 2016 "lift spores ten centimeters or more" |
 
 Las demás filas (1–4, 6, 10–12, 14–17, 19–20, 22–23) no cambiaron.
+
+## Re-verificación independiente
+
+Revisor distinto al autor (5 nov 2026). Cotejé la voz actual de `narracion.json` (12 líneas) y los textos en pantalla de
+`esporas-lluvia.jsx`; fuentes reabiertas: Janssen 2021 (ACP, página del artículo), Heald & Spracklen 2009, Haga 2014, Pummer 2013,
+Mülmenstädt 2015, Dressaire 2016 y Hassett 2015 (resúmenes completos vía OpenAlex) y el texto completo de Dressaire (arXiv 1512.07611).
+
+| Línea (voz / pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «Esa seta no es solo un hongo: es una fábrica de viento… y quizá de lluvia.» / "Una fábrica de viento… ¿y de lluvia?" | ✅ (lluvia como hipótesis) | Dressaire 2016 PNAS; Hassett 2015 PLOS ONE | "evaporative cooling of the air surrounding the pileus creates convective airflows"; "mushroom spores may promote rainfall" | 2016 / 2015 |
+| «…enfría el aire uno o dos grados.» / "Enfría el aire 1–2 °C", "bajo el sombrero: 1–2 °C más frío", "superficie: hasta 4 °C" | ✅ | Dressaire 2016 | "gap temperatures were consistently 1-2 °C cooler than ambient"; "up to 4 °C cooler" | 2016 |
+| «Ese aire fresco corre, gira y sube sus esporas diez centímetros o más.» + dibujo "aire frío / corre por el suelo, choca y gira / aire tibio" | ✅ | Dressaire 2016 (arXiv) | "Cold dense air will tend to spread as a gravity current"; "when the gravity current met a solid barrier, the warm inflow and cold outflow could link to form a convective eddy"; "lift spores 10 cm or more into the air" | 2016 |
+| «Cada año suben al aire de tres a cincuenta millones de toneladas…» / "3 a 50 millones de toneladas al año" + "cálculos de 2007, 2009 y 2021: no se ponen de acuerdo" | ✅ | Elbert 2007 ACP; Heald & Spracklen 2009 GRL; Janssen 2021 ACP | "∼50 Tg yr−1"; "Optimized global emissions total 28 Tg yr−1"; "annual global emissions of 3.7 and 3.4 Tg yr−1 … about an order of magnitude lower than the HS09 model" | 2007 / 2009 / 2021 |
+| «En el aire que respiras afuera hay miles de esporas por metro cúbico.» | ✅ | Elbert 2007 | "concentrations on the order of 10^4 m−3" (aire continental) | 2007 |
+| «…gotitas líquidas bajo cero» / "−10 °C ¡siguen líquidas!" | ✅ | Polen 2018 AMT | "freeze homogeneously at temperatures < −38 °C" | 2018 |
+| «Para congelarse necesitan una semilla, y casi siempre que llueve sobre tierra, empezó como hielo.» | ✅ (frecuencia, satélites) | Mülmenstädt 2015 GRL | "precipitation frequency is dominated … by cold rain, produced via the ice phase, over the midlatitude oceans and continents. Warm rain is very infrequent over the continents" (fase cálida 1 % extratrópicos / 8 % trópicos sobre tierra) | 2015 (datos 2006–2011) |
+| «Las esporas de seta son malas semillas…» / "Seta: mala semilla. Un moho, no." + "mala semilla de hielo: casi nunca congela arriba de −19 °C (2014)" | ✅ | Haga 2014 ACP; Pummer 2013 Biogeosciences | "The cumulative number of ice nuclei per spore was 0.001 at temperatures between −19 °C and −29 °C" (Agaricomycetes = setas); "Fusarium avenaceum was the only sample showing IN activity at relatively high temperatures … the other investigated fungal spores showed no freezing above 248 K" | 2014 / 2013 |
+| «…en 1992, en Canadá, el moho Fusarium avenaceum congeló agua a dos y medio bajo cero.» / "un moho, no una seta", tarjeta Pouleur 1992 Quebec | ✅ | Pouleur 1992 AEM | "the maximum temperatures of ice nucleation were −2.5°C for F. avenaceum" (Université Laval / Agriculture Canada, Québec) | 1992 |
+| «En 2013, esporas de royas lo hicieron desde cuatro bajo cero.» / "royas: hongos de plantas, no setas", "urediniosporas (en trigo)" | ✅ | Morris 2013 ACP | "freezing onset temperatures as high as −4 °C" | 2013 |
+| «¿Y las de la seta? En laboratorio juntan gotas. ¿Cuánta lluvia causan? Aún es hipótesis.» / "esporas de seta: en laboratorio juntan gotas de agua (2015)", sello HIPÓTESIS, "bioprecipitación: en estudio" | ✅ | Hassett 2015; Morris 2014 GCB; Hoose 2010 ERL | "we have demonstrated that droplets reform on spores in humid air"; "plausibility of a bioprecipitation feedback cycle" | 2015 / 2014 / 2010 |
+| «Así que esa seta no es solo un hongo: hace viento y quizá ayuda a llover.» / "viento ✓ · lluvia: quizá" | ✅ (hipótesis marcada) | Dressaire 2016; Hassett 2015 | ver arriba ("may promote rainfall") | 2015–2016 |
+
+Nota (no de hechos, de orden): `guion.md` todavía muestra en su tabla la voz y los textos viejos (50 millones de 2007, "espiral",
+"seta del jardín…siembra lluvia"); hay que copiarle la voz de `narracion.json` y los textos de la tabla "Re-verificación" para que coincidan.
+Lo que se narra y lo que sale en pantalla (narracion.json + esporas-lluvia.jsx) está todo verificado.
+
+VEREDICTO: APROBADO
