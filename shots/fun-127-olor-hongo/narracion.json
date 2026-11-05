@@ -1,0 +1,64 @@
+{
+  "dcHtml": "Shot Olor Hongo base narrada.dc.html",
+  "salida": "Shot Olor Hongo narrado.dc.html",
+  "nota": "Shot Fungi Mati #127. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. 'uno-octen-tres-ol' escrito así para que la voz lo lea bien; en pantalla: 1-octen-3-ol.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese olor a hongo no es olor a tierra: lo firma, sobre todo, una molécula de ocho carbonos."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Se llama uno-octen-tres-ol, y le dicen alcohol de hongo."
+    },
+    {
+      "escena": "Geosmina",
+      "texto": "La tierra mojada es otra: la geosmina."
+    },
+    {
+      "escena": "Corte",
+      "texto": "Cuando machacas un champiñón, rompes sus células."
+    },
+    {
+      "escena": "Grasa",
+      "texto": "Un ácido graso de sus células, el linoleico, toca unas enzimas."
+    },
+    {
+      "escena": "Oxigenasa",
+      "texto": "Una le pega oxígeno."
+    },
+    {
+      "escena": "Liasa",
+      "texto": "Otra, una liasa, la parte en dos: sale un pedazo de ocho carbonos."
+    },
+    {
+      "escena": "Umbral",
+      "texto": "En agua, tu nariz lo nota a cerca de una parte en mil millones."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué esa molécula huele tanto a hongo?"
+    },
+    {
+      "escena": "Espejo",
+      "texto": "Tiene dos formas, como tu mano izquierda y tu mano derecha."
+    },
+    {
+      "escena": "Formas",
+      "texto": "La R huele más a hongo; la S, a moho y a pasto. Los hongos hacen sobre todo la R."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1984, buscando qué atrae a la mosca tsetsé en África, la encontraron en el olor de las vacas."
+    },
+    {
+      "escena": "Moscos",
+      "texto": "También sale en tu sudor y, con el dióxido de carbono de tu aliento, atrae a algunos moscos: hay trampas con ella."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese olor a hongo es, sobre todo, una molécula que el champiñón arma cuando rompes sus células."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

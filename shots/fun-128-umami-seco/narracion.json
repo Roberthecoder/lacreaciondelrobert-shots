@@ -1,0 +1,68 @@
+{
+  "dcHtml": "Shot Umami seco base narrada.dc.html",
+  "salida": "Shot Umami seco narrado.dc.html",
+  "nota": "Shot Fungi Mati #128. Una línea por subtítulo (idx 0..14 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese hongo arrugado no está echado a perder: es una bomba de umami que tú enciendes."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Es shiitake seco, Lentinula edodes."
+    },
+    {
+      "escena": "FrescoSeco",
+      "texto": "Fresco trae poco guanilato, una molécula con sabor a caldo; seco, muchísimo."
+    },
+    {
+      "escena": "Celulas",
+      "texto": "Al secarse, sus células se rompen."
+    },
+    {
+      "escena": "Tijeras",
+      "texto": "Al calentarlo, sus tijeras, las ribonucleasas, cortan ARN y sueltan guanilato."
+    },
+    {
+      "escena": "Temperatura",
+      "texto": "Trabajan mejor entre sesenta y setenta grados."
+    },
+    {
+      "escena": "AguaFria",
+      "texto": "Otra enzima lo deshace a temperatura ambiente: por eso, remójalo en agua fría."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué una pizca hace tanto?"
+    },
+    {
+      "escena": "Receptor",
+      "texto": "Tu receptor del umami, T1R1 con T1R3, funciona como una atrapamoscas."
+    },
+    {
+      "escena": "Glutamato",
+      "texto": "El glutamato se sienta junto a la bisagra y la trampa se cierra."
+    },
+    {
+      "escena": "Nucleotido",
+      "texto": "El nucleótido se pone en la orilla y la deja más cerrada."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Lo propuso en 2008 un equipo de San Diego."
+    },
+    {
+      "escena": "Umbral",
+      "texto": "Una pizca de nucleótido que sola no sabe a umami hace que notes el glutamato con mucho menos."
+    },
+    {
+      "escena": "Dashi",
+      "texto": "Por eso el caldo de kombu, con glutamato, y hongo seco, con guanilato, sabe tan profundo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese hongo arrugado no estaba echado a perder: esperaba tu agua fría y tu fuego."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
