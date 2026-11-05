@@ -64,4 +64,28 @@ Fuentes abiertas en texto completo: Kozlov 2023 (Europe PMC, PMC10013436), Mulle
 
 Notas (no son errores): el gancho se sostiene solo por el «quizá» (los hongos pueden caer mal por otras causas); no quitarlo. El estudio de 1988 añade que la deficiencia "is not considered to have any significance from a nutritional point of view"; no contradice nada del guion. Las frases de Elbein 2003 sobre vellosidades y diarrea con hongos que cita `guion.md` no se pudieron ver (texto tras muro de pago); las afirmaciones quedan respaldadas por Kozlov 2023 y Arola 1999.
 
-VEREDICTO: PENDIENTE DE CORRECCIONES
+
+## Re-verificación (5 nov 2026, tras las correcciones del guionista)
+
+Releí completos `guion.md`, `narracion.json` (14 líneas, 955 caracteres con espacios / 178 palabras) y `publicacion.md`. Revisé todo lo que cambió:
+
+| # | Cambio | Veredicto | Fuente · frase textual · año |
+|---|---|---|---|
+| R1 | Chip «también: micosa»; TikTok «(también le dicen micosa)»; YouTube «también llamada micosa» | ✅ | Kozlov 2023: "Known as “mushroom sugar” or mycose" (2023) |
+| R2 | Voz escena 4 «cuando se seca o hace frío»; pantalla termómetro de frío con copo; YouTube «se seca, se deshidrata o hace frío» | ✅ | Elbein 2003: "…desiccation, dehydration, heat, cold, and oxidation" (2003) |
+| R3 | Pantalla escena 9 «≥ 8 % de 97» y chip «de 97 adultos estudiados (1988)»; Threads «8 de cada 100 adultos estudiados» | ✅ (queda claro que es una muestra) | Gudmand-Høyer 1988: "97 adult Greenlanders showed an incidence of trehalase deficiency in at least 8%." (1988) |
+| R4 | Voz escena 10 «Sin cortarse, llega al colon: jala agua y, si las bacterias la fermentan, puede haber gases y diarrea.»; chips «jala agua», «gases», «diarrea»; TikTok, Instagram y YouTube con la misma idea («heces sueltas o diarrea») | ✅ | Arola 1999: "osmotic water flow into the colon, resulting in loose stools and diarrhea" · "symptoms will arise if there are bacteria capable of producing gases from maldigested trehalose" (1999) |
+| R5 | Chip «varía de persona a persona» | ✅ | Kozlov 2023: "The severity of symptoms varies depending on the activity of the enzyme and the composition and activity of the patient’s microbiota." (2023) |
+| R6 | Barras GG/AG/AA sin cifras, etiqueta «esquemático» (dirección: A baja la actividad) | ✅ | Muller 2013, tabla: "Rs2276064 Trp/Arg 10.83 … 20.50 … 29.30" · Kozlov 2023: "the lowest (10.2 IU/g) in the AA homozygotes" (2013 / 2023) |
+| R7 | YouTube y LinkedIn «Los hongos y las levaduras son de las principales fuentes naturales de trehalosa en la dieta» | ✅ | Muller 2013: "the main dietary sources of naturally occurring trehalose are mushrooms, baker and brewer’s yeast and certain kinds of shrimp" · Kozlov 2023: "The primary natural sources of trehalose for humans are yeast and mushrooms." (2013 / 2023) |
+| R8 | Guion, fuente 4: «hongos (junto con levaduras y ciertos camarones)»; «570 indígenas pima» con actividad en plasma | ✅ | Muller 2013: misma frase de R7 · "we performed a linkage study for trehalase activity in 570 Pima Indians who had measures of trehalase activity" · "plasma trehalase activity" (2013) |
+| R9 | Arola 1999 agregado a fuentes (guion, TikTok, YouTube, comentario fijado) con DOI, volumen y páginas | ✅ | PubMed PMID 10522609: "Scand J Gastroenterol. 1999 Sep;34(9):898-903. doi: 10.1080/003655299750025372" (1999) |
+| R10 | Frases de Elbein no vistas por el verificador (vellosidades, diarrea con hongos): ya no se usan como respaldo; esas afirmaciones se respaldan con Kozlov 2023 y Arola 1999 | ✅ | Kozlov 2023: "analysis of enzymatic activity in the intestinal villi" (2023) |
+| R11 | Recorte voz escena 7 «En tu intestino, la enzima trehalasa la corta en dos glucosas que sí absorbes.» | ✅ | Kozlov 2023: "needs to be cleaved into two glucose molecules. Cleavage is performed by the enzyme … known as trehalase" (2023) |
+| R12 | Recorte voz escena 12 «Ojo: una alergia es otra cosa; consulta a tu médico.» + aviso en pantalla «No es consejo médico» | ✅ (no hay diagnóstico ni consejo médico; manda al médico) | Kozlov 2023: "Trehalase deficiency (ICD-11 code H02090) belongs to a group of disorders of carbohydrate absorption and transport." (2023) |
+
+Todas las ⚠️ de la primera ronda (#3, #9, #16, #20, #23, #29) quedan corregidas. Lo que no cambió sigue ✅. No hay ❌ ni ⚠️ pendientes.
+
+Nota (no de hechos): `guion.md` dice «voz 942 caracteres»; el texto unido con espacios da 955. Conviene revisar la duración con la voz real (61.0–62.0 s), como ya dice el guion.
+
+VEREDICTO: APROBADO
