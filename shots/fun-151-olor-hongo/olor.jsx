@@ -127,7 +127,7 @@ function FrascoSetas({ T, x, y, w = 330, h = 400, abre = 1, corte = 0 }) {
     <g transform={`translate(${x} ${y})`}>
       <rect x={-w / 2} y={-h} width={w} height={h} rx={34} fill="rgba(200,235,255,.32)" stroke={KC.ink} strokeWidth={8} />
       <rect x={-w / 2 + 26} y={-h + 30} width={22} height={h - 70} rx={11} fill="#fff" opacity=".45" />
-      <g transform={`translate(${-6} ${-14})`}><RacimoOstra T={T} x={0} y={0} s={0.8} abre={abre} n={5} color={OH.seta} oscuro={OH.seta2} pie={1.4} seed={4} /></g>
+      <g transform={`translate(${-6} ${-14})`}><RacimoOstra T={T} x={0} y={0} s={0.9} abre={abre} n={5} color={OH.seta} oscuro={OH.seta2} pie={1.4} seed={4} /></g>
       {corte > 0 && corte < 1 && <g transform={`translate(${60 - corte * 40} ${-170}) rotate(${-20 + corte * 30})`}>
         <path d="M 0 0 L 90 -12 L 90 6 Z M 0 0 L 90 30 L 84 46 Z" fill={OH.hoja} stroke={KC.ink} strokeWidth={4} /><circle r={10} fill={KC.red} stroke={KC.ink} strokeWidth={4} /></g>}
     </g>
@@ -315,7 +315,7 @@ function OlorShot() {
       {/* 8 · el estudio de 2026: setas en un frasco, aire medido segundo a segundo */}
       <Escena T={T} a={K.Es} b={K.S} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<FrascoSetas T={T} x={330} y={1150} w={440} h={440} abre={kprog(T, K.Es + 0.6, K.Es + 2.0)} corte={kprog(T, K.Es + 5.2, K.Es + 6.4)} />)}
+        {fsvg(<FrascoSetas T={T} x={330} y={1110} w={440} h={420} abre={kprog(T, K.Es + 0.6, K.Es + 2.0)} corte={kprog(T, K.Es + 5.2, K.Es + 6.4)} />)}
       </Escena>
       {/* 9 · la gráfica: sube antes de 1 s, pico en 8–12 s */}
       <Escena T={T} a={K.S} b={K.D} zoom={0.03}>
@@ -386,17 +386,17 @@ function OlorShot() {
       <Chip T={T} at={K.E1 + 0.1} until={K.N - 0.3} texto="POR DENTRO · AL MICROSCOPIO" x={540} y={400} tam={32} borde={KC.cyan} mono />
       <Etq T={T} at={K.E1 + 0.5} until={K.E1 + 2.0} x={60} y={500} texto="células rotas por el filo" tam={28} color={OH.hifa} />
       <Etq T={T} at={K.E1 + 1.3} until={K.N - 0.3} x={60} y={1160} texto="ácido linoleico · un ácido graso" tam={28} color={OH.linol} />
-      <Etq T={T} at={K.E1 + 1.9} until={K.E2 - 0.2} x={600} y={790} texto="enzima 1 · lipoxigenasa" tam={28} color={KC.pink} />
+      <Etq T={T} at={K.E1 + 1.9} until={K.E2 - 0.2} x={380} y={790} texto="enzima 1 · lipoxigenasa" tam={28} color={KC.pink} />
       <Etq T={T} at={K.E1 + 2.6} until={K.E2 - 0.2} x={180} y={880} texto="+ oxígeno" tam={30} color={OH.oxi} />
-      <Etq T={T} at={K.E2 + 0.6} until={K.N - 0.3} x={560} y={790} texto="enzima 2 · hidroperóxido liasa" tam={26} color={KC.cyan} />
+      <Etq T={T} at={K.E2 + 0.6} until={K.N - 0.3} x={360} y={790} texto="enzima 2 · hidroperóxido liasa" tam={26} color={KC.cyan} />
       <Etq T={T} at={K.E2 + 3.0} until={K.N - 0.3} x={60} y={560} texto="1-octen-3-ol · 8 carbonos" tam={32} color={OH.oro} />
       <Etq T={T} at={K.E2 + 3.3} until={K.N - 0.3} x={60} y={960} texto="el resto (10 carbonos) se queda" tam={24} color={OH.linol} />
       <Chip T={T} at={K.N + 0.4} until={K.P - 0.3} texto="umbral de olor: bajísimo" x={360} y={480} tam={44} borde={KC.gold} />
       <Etq T={T} at={K.N + 1.2} until={K.P - 0.3} x={60} y={600} texto="basta poquísimo para notarlo" tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.2} anio="2026" quien="U. de Yamaguchi, Japón" revista="Fungal Biology, 2026" x={540} y={560} />
-      <Etq T={T} at={K.Es + 3.4} until={K.S - 0.3} x={60} y={470} texto="Pleurotus cornucopiae" it tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Es + 3.8} until={K.S - 0.3} x={60} y={520} texto="seta tipo ostra" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Es + 4.4} until={K.S - 0.3} texto="aire medido segundo a segundo" x={400} y={600} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.Es + 3.4} until={K.S - 0.3} x={60} y={530} texto="Pleurotus cornucopiae" it tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Es + 3.8} until={K.S - 0.3} x={60} y={578} texto="seta tipo ostra" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Es + 4.4} until={K.S - 0.3} texto="aire medido segundo a segundo" x={440} y={440} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.S + 0.2} until={K.D - 0.3} texto={`t = ${Math.min(20, Math.floor(tDatos))} s`} x={820} y={740} tam={32} borde={KC.gold} mono />
       <Etq T={T} at={K.D + 0.4} until={K.Ep - 0.3} x={440} y={1120} texto="ácaro" tam={30} color={KC.texto} />
       <Etq T={T} at={K.D + 0.7} until={K.Ep - 0.3} x={440} y={1165} texto="Tyrophagus putrescentiae" it tam={26} color={KC.texto} />

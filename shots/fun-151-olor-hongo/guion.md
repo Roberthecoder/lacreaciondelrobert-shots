@@ -40,15 +40,15 @@ Tiempos de la base estimada (con la voz real se recorren solos). Grande en «¿Y
 | 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no es tierra: es sobre todo una molécula» (cuadro 0) |
 | 2 | 9.6 | 12.6 | 13_senalando_arriba | `arriba-der` | «lo fabrica cuando la cortas» (señala el medidor que sube) |
 | 3 | 21.0 | 25.0 | 04_bajando_lentes | `arriba-der` | «aunque haya poquísimo» |
-| 4 | 25.8 | 28.6 | 07_pensativo_puno | `presentador` (grande) | «¿Y por qué lo fabrica tan rápido?» |
+| 4 | 25.3 | 27.8 | 07_pensativo_puno | `grande` (medio cuerpo, no tapa el subtítulo) | «¿Y por qué lo fabrica tan rápido?» |
 | 5 | 34.8 | 38.8 | 11_sorprendido | `arriba-der` | «en menos de un segundo ya subía» |
-| 6 | 39.6 | 43.4 | 12_perfil_serio | `arriba-der` | «se cree que es una defensa… los ahuyenta» |
-| 7 | 44.0 | 48.0 | 06_pensativo_menton | `arriba-der` | «dos versiones espejo» |
-| 8 | 48.7 | 53.1 | 05_sonriendo_dientes_uniformes | `arriba-izq` (la vaca va a la derecha) | «Lo raro: también sale del olor de las vacas» |
-| 9 | 53.7 | 58.0 | 02_apuntando_camara | `arriba-der` | «es la seta reaccionando a tu cuchillo» |
-| — | 58.4 | 61.9 | 13_senalando_arriba | CierreMarca | cierre |
+| 6 | 39.6 | 43.6 | 12_perfil_serio | `arriba-der` | «se cree que es una defensa… los ahuyenta» |
+| 7 | 44.0 | 48.1 | 06_pensativo_menton | `arriba-der` | «dos versiones espejo» |
+| 8 | 48.7 | 53.2 | 05_sonriendo_dientes_uniformes | `izq-alto` | «Lo raro: también sale del olor de las vacas» |
+| 9 | 53.7 | 58.2 | 02_apuntando_camara | `arriba-der` | «es la seta reaccionando a tu cuchillo» |
+| — | 58.3 | 61.8 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 9 · **32.8 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas. Nunca tapa la gráfica, las etiquetas de las moléculas ni el subtítulo.
+Apariciones 9 · **33.6 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas. Nunca tapa la gráfica, las etiquetas de las moléculas ni el subtítulo (revisado en cuadros con `motor/preview.mjs`).
 
 ## Fuentes (cada dato se abrió en el texto original o en su resumen oficial el 5 nov 2026)
 
