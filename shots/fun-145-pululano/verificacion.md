@@ -51,4 +51,33 @@ Abajo, su tabla; las filas 1, 2 y 17 eran ❌/⚠️ y ya están corregidas en e
 4. Syrigou, M. y Tsouko, E. (2026). Pullulan-Based Gels with Food-Related Orientation: From Microbial Production to Synergistic Assemblies. *Gels* 12: 631. https://doi.org/10.3390/gels12070631
 5. West, T. P. (2026). Pullulan Production from Lignocellulosic Plant Biomass or Starch-Containing Processing Coproduct Hydrolysates. *Fermentation* 12: 84. https://doi.org/10.3390/fermentation12020084
 
+
+## Verificación independiente de publicacion.md (5 nov 2026)
+
+| # | Afirmación (red) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | «se cultiva sobre almidón» (YouTube); «fermentación de almidón hidrolizado» (LinkedIn) | LinkedIn ✅ · YouTube ⚠️ (impreciso: es almidón hidrolizado, no almidón crudo) | JECFA | «Pullulan is produced commercially by mesophilic (22-30°C) fermentation of hydrolysed starch»; «fermentation of starch syrup»; EFSA: «obtained by fermentation of a food-grade hydrolysed starch» | 2005 / 2025 |
+| 2 | «en el agua de lagos» (YouTube) | ✅ | JECFA | «It is found in soil, lake water, on the surface of latex paint films…» | 2005 |
+| 3 | «Está en todos lados» (YouTube) | ✅ | JECFA | «The organism is ubiquitous.» | 2005 |
+| 4 | «pintura de látex» (TikTok, YouTube) | ✅ | JECFA | «on the surface of latex paint films» | 2005 |
+| 5 | «un hongo parecido a una levadura» (YouTube) | ✅ | JECFA | «produced by a yeast like fungus Aureobasidium pullulans» | 2005 |
+| 6 | «se le quitan las células con microfiltración y el pigmento con carbón activado»; LinkedIn «el pigmento (melanina) con carbón activado» | ✅ | JECFA | «the fungal cells are removed by microfiltration… treated with activated carbon to remove pigments»; «organic compounds (e.g. melanin, protein) are absorbed during the treatment with activated carbon» | 2005 |
+| 7 | «Por eso [película] se usa en vez de gelatina para cápsulas de suplementos» / «sustituye a la gelatina» (todas) | ✅ | JECFA | «The film-forming properties of pullulan are the basis for its proposed use as a substitute for gelatin in the production of capsule shells (for dietary supplements)» | 2005 |
+| 8 | «tiras con mentol que se deshacen en la lengua y refrescan el aliento» | ✅ | JECFA | «Pullulan films with, for example, menthol dissolve quickly on consumption… instant breath freshener» | 2005 |
+| 9 | «En Japón se usa como aditivo y alimento desde 1976» | ✅ | JECFA | «It has been used as an additive and as a food ingredient in Japan since 1976.» | 2005 |
+| 10 | «EFSA lo volvió a revisar… no hay problema de seguridad en sus usos actuales»; LinkedIn «re-evaluó (E 1204)» | ✅ | EFSA | «there is no safety concern for the currently reported uses and use levels» | 2025 |
+| 11 | «10 gramos o más al día… sensación de llenura, gases o hinchazón» (YouTube); «molestias digestivas leves a partir de unos 10 g al día» (LinkedIn); «10 g o más… inflar la panza» (IG, TikTok) | ✅ | EFSA | «mild undesirable gastrointestinal symptoms (i.e. abdominal fullness, flatulence, bloating and cramping) may occur at doses of 10 g pullulan per day and greater» | 2025 |
+| 12 | «polisacárido… produce fuera de su célula» (LinkedIn) | ✅ | JECFA | «a naturally occurring, fungal exopolysaccharide»; «Pullulan is formed extracellularly» | 2005 |
+| 13 | «solubles en agua y de baja permeabilidad al oxígeno» (LinkedIn) | ✅ | JECFA | «transparent, water-soluble… films»; «films of low oxygen permeability» | 2005 |
+| 14 | «Su gran límite es el costo… 25–30 dólares por kilo a granel» (LinkedIn) | ✅ (estimación de una revisión, ya dicho así) | Syrigou y Tsouko | «large-scale commercialization is limited by high production costs. Current prices of bulk pullulan range within USD 25–30 per kg» | 2026 |
+| 15 | «un azúcar» (Instagram, Facebook, Threads) | ⚠️ impreciso: es un polisacárido (carbohidrato complejo, poco digerible), no «un azúcar»; puede sonar a que endulza o engorda como azúcar | EFSA; JECFA | «effects… similar to the effects of other poorly digestible carbohydrate polymers»; «exopolysaccharide» | 2025 / 2005 |
+| 16 | Frases exageradas buscadas («sin riesgo», «vegano», «natural», «más sano», consejo de salud) | ✅ no aparecen | — | — | — |
+| 17 | Cita EFSA en la descripción de YouTube: título «Re-evaluation of pullulan (E 1204) as a food additive» | ⚠️ título incompleto (el comentario fijado sí está completo) | Crossref | «Re-evaluation of pullulan (E 1204) as a food additive and new application for its extension of use», EFSA Journal 23(3): e9267, marzo 2025 | 2025 |
+| 18 | Cita Syrigou y Tsouko: «Pullulan-Based Gels with Food-Related Orientation. Gels 12: 631» | ⚠️ falta el subtítulo y el número (7) | Crossref | «Pullulan-Based Gels with Food-Related Orientation: From Microbial Production to Synergistic Assemblies», Gels 12(7): 631, 15 jul 2026 | 2026 |
+| 19 | Cita West: «Fermentation 12: 84» | ✅ (opcional añadir número 2) | Crossref | Thomas P. West, Fermentation 12(2): 84, 3 feb 2026; título exacto | 2026 |
+| 20 | Cita Rai et al. 2021, IJMS 22(24): 13596 | ✅ | Crossref | Rai, Wypij, Ingle, Trzcińska-Wencel, Golińska; título exacto; 18 dic 2021 | 2021 |
+| 21 | URL JECFA y DOI EFSA | ✅ | — | ambos resuelven al documento correcto | — |
+
+Correcciones aplicadas en publicacion.md: «jarabe de almidón (almidón hidrolizado)», «cadena de glucosas / carbohidrato» en vez de «un azúcar», títulos completos de EFSA 2025 y Syrigou y Tsouko 2026, Fermentation 12(2). Todo lo demás ✅.
+
 VEREDICTO: APROBADO

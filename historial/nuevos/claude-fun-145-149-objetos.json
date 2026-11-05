@@ -2,15 +2,25 @@
  "temas": [
   {
    "id": "pululano-capsula",
-   "titulo": "Esa cápsula no es de gelatina: la hizo un hongo (pululano de Aureobasidium pullulans: cápsulas y películas comestibles)",
+   "titulo": "Esa cápsula no es de gelatina: es baba de un hongo (pululano de Aureobasidium pullulans: cápsulas y películas comestibles)",
    "serie": "Shot Fungi Mati",
    "numero": 145,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-145-pululano",
    "rama": "claude/fun-145-149-objetos",
-   "fuentes": [],
+   "fuentes": [
+    "JECFA 65 (2005), Pullulan CTA",
+    "EFSA Journal 23(3):e9267 (2025)",
+    "Rai et al. 2021, IJMS 22:13596",
+    "Syrigou y Tsouko 2026, Gels 12(7):631",
+    "West 2026, Fermentation 12(2):84"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Cápsulas de gelatina contra las de HPMC: de dónde sale cada una",
+    "La melanina de los hongos negros y por qué hay que quitarla",
+    "La pululanasa, la enzima que corta las uniones α-1,6 del almidón"
+   ]
   },
   {
    "id": "violin-hongo",
@@ -37,7 +47,7 @@
   },
   {
    "id": "madera-espalteada",
-   "titulo": "Esas líneas negras no son vetas: son fronteras entre hongos (madera espalteada, Chlorociboria y las taraceas del Renacimiento)",
+   "titulo": "Esas líneas negras no son vetas: son fronteras entre hongos (madera espalteada, líneas de zona y el laboratorio de Robinson)",
    "serie": "Shot Fungi Mati",
    "numero": 147,
    "estado": "renderizado",
@@ -46,9 +56,7 @@
    "fuentes": [
     "Robinson 2012, Appl. Microbiol. Biotechnol. 93:1389",
     "Robinson, Tudor y Cooper 2012, AMB 93:1041",
-    "Blanchette et al. 1992, Holzforschung 46:225",
-    "Morris et al. 2021, Materials & Design 201:109480",
-    "Saikawa et al. 2000, Phytochemistry 55:237"
+    "Morris et al. 2021, Materials & Design 201:109480"
    ],
    "fecha": "2026-11-05",
    "derivados": [
