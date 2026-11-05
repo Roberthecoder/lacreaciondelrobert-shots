@@ -58,8 +58,8 @@ m.tic(G + 0.9, 0.15, 1400); m.tic(G + 3.3, 0.15, 1600);                         
 m.cruje(SG + 1.0, 0.35); m.golpe(SG + 1.0, 0.3, 70);                                             // se tacha el glóbulo blanco
 for (let k = 0; k < 12; k++) m.nota(SG + 1.8 + k * 0.12, 76 + (k % 5) * 2, 0.025, 0.35);         // 12 células se encienden con su escudo
 m.whoosh(Es + 0.1, 1.0, 0.1); m.gota(Es + 1.1, 0.2, 500);                                       // cae el conidio y aterriza
-m.zumbido(Es + 1.4, 2.6, 0.035, 150);                                                            // crece la hifa
-m.tic(Es + 4.0, 0.2, 900);                                                                       // entra por el estoma
+m.zumbido(Es + 1.3, 2.2, 0.035, 150);                                                            // crece la hifa
+m.tic(Es + 3.5, 0.2, 900);                                                                       // entra por el estoma
 m.metal(Q + 0.3, 0.12, 1250);                                                                    // brilla la quitina
 for (let k = 0; k < 4; k++) m.burbuja(Q + 1.2 + k * 0.35, 0.08, 520 + k * 60);                  // se sueltan pedacitos
 for (let i = 0; i < 4; i++) m.tic(R + 0.6 + 1.4 * (0.6 + 0.6 * i) / 4, 0.22, 2100);              // cada receptor atrapa uno

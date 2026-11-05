@@ -352,7 +352,7 @@ function DefensaShot() {
       <Escena T={T} a={K.Es} b={K.Q} zoom={0.07} origen="50% 52%">
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<Enves T={T} cayo={kprog(T, K.Es + 0.1, K.Es + 1.1)} tubo={kprog(T, K.Es + 1.4, K.Es + 4.0, kEase.suave)} />)}
+        {fsvg(<Enves T={T} cayo={kprog(T, K.Es + 0.1, K.Es + 1.1)} tubo={kprog(T, K.Es + 1.3, K.Es + 3.5, kEase.suave)} />)}
       </Escena>
       {/* 3–5 · por dentro: quitina → receptores → alarma */}
       <Escena T={T} a={K.Q} b={K.P} zoom={0.04}>
@@ -488,7 +488,7 @@ function DefensaShot() {
       <SubIt T={T} idx={5} at={K.A + 0.1} until={K.P - 0.1} texto="Alarma: *oxígeno reactivo, callosa y quitinasas.*" />
       <SubIt T={T} idx={6} at={K.P + 0.1} until={K.Ef - 0.1} texto="¿Y si el hongo *apaga la alarma?*" />
       <SubIt T={T} idx={7} at={K.Ef + 0.1} until={K.S - 0.1} texto="Con el *gen de resistencia* indicado, los reconoce." />
-      <SubIt T={T} idx={8} at={K.S + 0.1} until={K.E - 0.1} texto="Las células atacadas *se matan solas.*" />
+      <SubIt T={T} idx={8} at={K.S + 0.1} until={K.E - 0.1} texto="Las células atacadas *se matan.*" />
       <SubIt T={T} idx={9} at={K.E + 0.1} until={K.M - 0.1} texto="2007, Japón: _Arabidopsis_ *sin CERK1.*" />
       <SubIt T={T} idx={10} at={K.M + 0.1} until={K.As - 0.1} texto="Con _Alternaria:_ manchas *≈20 % más grandes.*" />
       <SubIt T={T} idx={11} at={K.As + 0.1} until={K.C - 0.1} texto="En las hojas sanas sube el *ácido salicílico.*" />

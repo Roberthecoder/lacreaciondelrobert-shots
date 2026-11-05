@@ -9,15 +9,15 @@
     },
     {
       "escena": "Hongo",
-      "texto": "Es Colletotrichum: causa la antracnosis, la enfermedad más importante del mango en casi todo el mundo."
+      "texto": "Es Colletotrichum: causa antracnosis, la enfermedad más importante del mango en casi todo el mundo."
     },
     {
       "escena": "Lluvia",
-      "texto": "Sus esporas llegan con la lluvia desde hojas enfermas."
+      "texto": "Sus esporas llegan con la lluvia, de hojas enfermas."
     },
     {
       "escena": "Apresorio",
-      "texto": "Germinan y forman un apresorio: un ancla oscura que perfora la cera."
+      "texto": "Forman un apresorio: un ancla oscura que perfora la cera."
     },
     {
       "escena": "Dormido",
@@ -33,7 +33,7 @@
     },
     {
       "escena": "Manchas",
-      "texto": "Se extiende: manchas negras, hundidas, a veces como lágrimas; si avanza, llega a la pulpa."
+      "texto": "Salen manchas negras, hundidas, a veces como lágrimas; si avanza, llega a la pulpa."
     },
     {
       "escena": "Estudio",
@@ -49,7 +49,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Era un hongo esperando a que tu mango madurara… igual que tú."
+      "texto": "Era un hongo esperando que tu mango madurara… igual que tú."
     }
   ],
   "mezcla": "oficial-30oct"
