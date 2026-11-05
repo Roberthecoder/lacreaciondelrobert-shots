@@ -1,0 +1,118 @@
+{
+ "temas": [
+  {
+   "id": "pululano-capsula",
+   "titulo": "Esa cápsula no es de gelatina: es baba de un hongo (pululano de Aureobasidium pullulans: cápsulas y películas comestibles)",
+   "serie": "Shot Fungi Mati",
+   "numero": 145,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-145-pululano",
+   "rama": "claude/fun-145-149-objetos",
+   "fuentes": [
+    "JECFA 65 (2005), Pullulan CTA",
+    "EFSA Journal 23(3):e9267 (2025)",
+    "Rai et al. 2021, IJMS 22:13596",
+    "Syrigou y Tsouko 2026, Gels 12(7):631",
+    "West 2026, Fermentation 12(2):84"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Cápsulas de gelatina contra las de HPMC: de dónde sale cada una",
+    "La melanina de los hongos negros y por qué hay que quitarla",
+    "La pululanasa, la enzima que corta las uniones α-1,6 del almidón"
+   ]
+  },
+  {
+   "id": "violin-hongo",
+   "titulo": "Este violín no es un Stradivarius: es madera afinada por hongos (Schwarze, Empa; prueba a ciegas de Osnabrück 2009)",
+   "serie": "Shot Fungi Mati",
+   "numero": 146,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-146-violin-hongo",
+   "rama": "claude/fun-145-149-objetos",
+   "fuentes": [
+    "Empa 2009 (ScienceDaily, phys.org)",
+    "Schwarze, Spycher y Fink 2008, New Phytologist 179:1095-1104",
+    "Sedighi Gilani et al. 2014, J. Struct. Biol. 187:149-157",
+    "Empa 2012",
+    "Havimo et al. 2008, Silva Fennica 42(1)",
+    "Scienceline 2022"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Physisporinus vitreus y el «bioincising» de la pícea",
+    "Por qué la madera de clima frío suena mejor",
+    "Pruebas a ciegas de violines antiguos contra nuevos"
+   ]
+  },
+  {
+   "id": "madera-espalteada",
+   "titulo": "Esas líneas negras no son vetas: son fronteras entre hongos (madera espalteada, líneas de zona y el laboratorio de Robinson)",
+   "serie": "Shot Fungi Mati",
+   "numero": 147,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-147-madera-espalteada",
+   "rama": "claude/fun-145-149-objetos",
+   "fuentes": [
+    "Robinson 2012, Appl. Microbiol. Biotechnol. 93:1389",
+    "Robinson, Tudor y Cooper 2012, AMB 93:1041",
+    "Morris et al. 2021, Materials & Design 201:109480"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Pinturas y pigmentos de hongos sobre madera (el rosa de Scytalidium cuboideum)",
+    "Xylaria polymorpha, los dedos de muerto",
+    "La mancha azul de los pinos y los escarabajos que la llevan"
+   ]
+  },
+  {
+   "id": "tintes-hongos",
+   "titulo": "Esa lana roja no la tiñó una fábrica: la tiñó un hongo (Cortinarius, antraquinonas, mordientes y Miriam C. Rice)",
+   "serie": "Shot Fungi Mati",
+   "numero": 148,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-148-tintes-hongos",
+   "rama": "claude/fun-145-149-objetos",
+   "fuentes": [
+    "Räisänen, Nousiainen y Hynninen 2001, Textile Research Journal 71(11):1016",
+    "Herrala et al. 2022, J. Fungi 8:1129",
+    "Räisänen et al. 2020, Antibiotics 9(5):266",
+    "NAMA, Mushrooms as a Source of Color",
+    "mushroomsforcolor.com (Miriam Rice, 1974)",
+    "Danel et al. 2001, Toxicon 39:1053",
+    "Dinis-Oliveira et al. 2016",
+    "Shao et al. 2016, Toxicon 114:65-74"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Líquenes que tiñen (orchil), explicando que un liquen no es solo un hongo",
+    "Por qué el mordiente cambia el color: alumbre contra hierro",
+    "La orelanina de Cortinarius: el veneno que tarda días"
+   ]
+  },
+  {
+   "id": "yesca-otzi",
+   "titulo": "Ese sombrero no es de fieltro: es un hongo que te daba fuego (Fomes fomentarius, la yesca de Ötzi y los sombreros de Corund)",
+   "serie": "Shot Fungi Mati",
+   "numero": 149,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-149-yesca-otzi",
+   "rama": "claude/fun-145-149-objetos",
+   "fuentes": [
+    "Peintner, Pöder y Pümpel 1998, Mycol. Res. 102:1153-1162",
+    "Wierer et al. 2018, PLOS ONE e0198292",
+    "iceman.it",
+    "Lexikon der Biologie, Zunderschwamm (1999)",
+    "Campi et al. 2024, Lilloa 61(2):397-413",
+    "Papp et al. 2015, Genet. Resour. Crop Evol. 64:101-111",
+    "Comisión Europea, Amadou: harvesting the future"
+   ],
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Fomitopsis betulina, el políporo del abedul de Ötzi: ¿medicina?",
+    "El fuego antes de los cerillos: yesca, eslabón y pirita",
+    "Phellinus igniarius, el falso yesquero (verificar usos)"
+   ]
+  }
+ ]
+}

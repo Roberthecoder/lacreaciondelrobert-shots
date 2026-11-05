@@ -1,0 +1,21 @@
+{
+  "dcHtml": "Shot Violin base narrada.dc.html",
+  "salida": "Shot Violin narrado.dc.html",
+  "nota": "Shot Fungi Mati #146. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Este violín no es un Stradivarius: es madera que unos hongos fueron comiendo por dentro nueve meses." },
+    { "escena": "Ciegas", "texto": "En una prueba a ciegas, ciento trece personas lo confundieron con el Stradivarius." },
+    { "escena": "Madera", "texto": "Su tapa es de pícea y su fondo de arce: por dentro, un panal de tubitos." },
+    { "escena": "Hongos", "texto": "En Empa, Suiza, Francis Schwarze probó en el laboratorio dos hongos de podredumbre blanca: Physisporinus vitreus y Xylaria longipes." },
+    { "escena": "Adelgaza", "texto": "Sus hilos adelgazan las paredes de esos tubitos." },
+    { "escena": "Ligera", "texto": "La madera queda más ligera, pero el sonido viaja casi igual de rápido." },
+    { "escena": "Pregunta", "texto": "¿Y eso qué cambia?" },
+    { "escena": "Radia", "texto": "En su estudio de 2008, pasó de pobre a buena para radiar sonido, como madera de clima frío." },
+    { "escena": "Hipotesis", "texto": "Una hipótesis: así era la pícea de Stradivari." },
+    { "escena": "Prueba", "texto": "En 2009, en Alemania, un violinista tocó cinco violines tras una cortina; uno, su Stradivarius de 1711." },
+    { "escena": "Votos", "texto": "Noventa de más de ciento ochenta prefirieron ese; el Stradivarius quedó segundo." },
+    { "escena": "Ojo", "texto": "Ojo: fue una votación, no un experimento controlado." },
+    { "escena": "Precio", "texto": "Y ese Stradivarius valía unos dos millones de dólares." },
+    { "escena": "Cierre", "texto": "Así que no es un Stradivarius: es madera afinada por hongos." }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Tintes base narrada.dc.html",
+  "salida": "Shot Tintes narrado.dc.html",
+  "nota": "Shot Fungi Mati #148 · Tintes de hongos. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Los Cortinarius no se comen.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa lana roja no la tiñó una fábrica: la tiñó un hongo." },
+    { "escena": "Hongo", "texto": "Es Cortinarius sanguineus, una seta color sangre de los bosques de coníferas." },
+    { "escena": "Pigmento", "texto": "Su color viene de unas moléculas llamadas antraquinonas: la emodina, amarilla, y la dermocibina, roja." },
+    { "escena": "Extrae", "texto": "Picas las setas, las calientas en agua y el pigmento se suelta: el agua se tiñe." },
+    { "escena": "Mordiente", "texto": "Pero antes, la lana se calienta con alumbre, un mordiente." },
+    { "escena": "Puente", "texto": "El aluminio hace de puente: se une a la lana y atrapa al pigmento, y el color aguanta mejor las lavadas." },
+    { "escena": "Pregunta", "texto": "¿Y si quieres otro color?" },
+    { "escena": "Colores", "texto": "Con hierro salen tonos más oscuros, y otras setas dan amarillo limón o verde." },
+    { "escena": "Rice", "texto": "En California, la maestra Miriam Rice probó hongo tras hongo y en 1974 publicó un libro entero de tintes de hongos." },
+    { "escena": "Estudio", "texto": "En 2001, en Finlandia, tiñeron lana con emodina pura: salieron amarillos y rojos; con dermocibina, morados." },
+    { "escena": "Veneno", "texto": "Ojo: en el mismo género hay venenos: Cortinarius orellanus y rubellus dañan los riñones, y los síntomas tardan días." },
+    { "escena": "Cierre", "texto": "Así que esa lana roja sí es de un hongo, pero de uno que nunca te debes comer." }
+  ],
+  "mezcla": "oficial-30oct"
+}
