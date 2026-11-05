@@ -55,31 +55,23 @@ Tiempos estimados de la base (con la voz real se recorren solos). Grande en «¿
 
 Apariciones 9 · **28.7 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
-## Fuentes (abiertas el 5 nov 2026)
+## Fuentes (abiertas el 5 nov 2026; detalle y tabla en `verificacion.md`)
 
-1. Gange, A. C., Gange, E. G., Sparks, T. H. y Boddy, L. (2007). Rapid and recent changes in fungal fruiting patterns. *Science* 316(5821): 71. https://doi.org/10.1126/science.1137489
-   (resumen leído en Crossref; el texto completo está tras muro de pago, no se abrió)
+1. **Boddy, L., Büntgen, U., Egli, S., Gange, A. C., Heegaard, E., Kirk, P. M., Mohammad, A. y Kauserud, H. (2014).** Climate variation effects on fungal fruiting. *Fungal Ecology* 10: 20–33. https://doi.org/10.1016/j.funeco.2013.10.006 (PDF del autor: https://www.mn.uio.no/ibv/english/people/aca/haavarka/boddy-et-al-2014.pdf) — **fuente principal de los 33 días y del «más del doble»**.
+   > "extending from 33.2 ± 1.6 d in the 1950s (Gange et al., 2007) to more than twice (69.1 ± 6.8 d) that by 2009"
+   > "environmental moisture and temperature regimes often explain a lot of the variation in timing of fruit body production"
+   > "Fruiting, however, ultimately depends on sufficient nutrients"
+   > "20 % of species have begun to fruit twice a year (in spring and autumn) since the mid 1970s"
+2. **Gange, A. C., Gange, E. G., Sparks, T. H. y Boddy, L. (2007).** Rapid and recent changes in fungal fruiting patterns. *Science* 316(5821): 71. https://doi.org/10.1126/science.1137489 (resumen; texto completo cerrado)
    > "We analyzed autumnal fruiting patterns of macrofungi over the past 56 years and found that average first fruiting date of 315 species is earlier, while last fruiting date is later."
-   > "Many species are now fruiting twice a year, indicating increased mycelial activity and possibly greater decay rates in ecosystems."
-2. Nature News (5 abr 2007), "Fungi feel the heat" sobre el mismo estudio. https://www.nature.com/news/2007/070402/full/news070402-8.html
-   > "the UK mushroom season has doubled in length, from about 33 days in the 1950s, to nearly 75 days now"
+   > "Many species are now fruiting twice a year"
+3. **Nature News (2007)**, "Fungi feel the heat". https://www.nature.com/news/2007/070402/full/news070402-8.html
    > "From 1950-2005, he collected data on when, where and what fungi grew around Salisbury" · "He typed 52,000 records into Excel"
-   > "Gange's father, Edward, is the 'fungal recorder' for the Wiltshire Archaeological and Natural History Society."
-   > "Sulphur tuft has started to fruit twice a year" / "some species are fruiting in both spring and autumn"
-3. ScienceDaily (18 abr 2007), comunicado sobre el estudio. https://www.sciencedaily.com/releases/2007/04/070418132343.htm
+   > "Sulphur tuft has started to fruit twice a year"
+4. **ScienceDaily (18 abr 2007).** https://www.sciencedaily.com/releases/2007/04/070418132343.htm
    > "studied more than 52,000 fungal fruiting records from nearly 1,400 localities … collected in southern England between 1950 - 2005"
-   > "In the 1950s fungi fruited over a period of around 33 days" … "this has more than doubled to nearly 75 days in the current decade."
-4. Kauserud, H., Stige, L. C., Vik, J. O., Økland, R. H., Høiland, K. y Stenseth, N. C. (2008). Mushroom fruiting and climate change. *PNAS* 105(10): 3811–3814. https://doi.org/10.1073/pnas.0709037105 (PDF del autor: https://mn.uio.no/ibv/english/people/aca/haavarka/Kauserud%20et%20al%202008.pdf)
-   > "Using ≈34,500 dated herbarium records we analyzed changes in the autumnal fruiting date of mushrooms in Norway over the period 1940–2006. We show that the time of fruiting has changed considerably over this time period, with an average delay in fruiting since 1980 of 12.9 days."
+5. **Kauserud, H., Stige, L. C., Vik, J. O., Økland, R. H., Høiland, K. y Stenseth, N. C. (2008).** Mushroom fruiting and climate change. *PNAS* 105(10): 3811–3814. https://doi.org/10.1073/pnas.0709037105
+   > "Using ≈34,500 dated herbarium records we analyzed changes in the autumnal fruiting date of mushrooms in Norway over the period 1940–2006 … with an average delay in fruiting since 1980 of 12.9 days."
    > "Early-fruiting species have experienced a stronger delay than late fruiters, resulting in a more compressed fruiting season."
-   > "increasing temperatures during autumn and winter months bring about significant delay of fruiting both in the same year and in the subsequent year."
-   > (Sobre Gange 2007) "These changes were linked to increased temperature and rainfall in August and October, respectively."
-5. Kauserud, H. et al. (2010). Climate change and spring-fruiting fungi. *Proc. R. Soc. B* 277: 1169–1177. https://pmc.ncbi.nlm.nih.gov/articles/PMC2842805/ (contexto: los hongos de primavera salen antes, ~18 días entre 1960 y 2007; no se usa en la voz).
-
-**Pendiente para el verificador:** la frase «la seta sale cuando la temperatura y la humedad le dan la señal» y «el hongo de verdad
-es el micelio … en el suelo o la madera» necesitan una fuente general de micología (p. ej. una revisión sobre fenología de
-fructificación); el "más del doble" y los 33 días vienen de la prensa de 2007 que cita a los autores, no del texto completo
-(cerrado). Si el verificador no logra abrir el artículo, considerar decir «unos 33 días… y para los dos mil, más del doble,
-según los autores».
 
 El dibujo es esquemático.

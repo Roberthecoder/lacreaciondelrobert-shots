@@ -55,3 +55,20 @@ Fuentes abiertas:
 | 14 | «Su única fuente de carbono fue carbón de pino hecho a setecientos cincuenta grados, y creció.» | F |
 | 17 | «Hicieron ese carbón con pinitos que respiraron carbono trece, y el hongo soltó parte como dióxido de carbono.» | F (Métodos: plántulas de *P. strobus* con pulsos de ¹³CO₂) |
 | 9 | «Pero en semanas o meses aparece *Pyronema*: tapetes de discos naranjas de un milímetro.» | F, N |
+
+## Re-verificación independiente
+
+Verificador independiente (5 nov 2026). Cotejé las 12 líneas de `narracion.json` y los textos en pantalla de `guion.md` contra F, N y J (abiertas de nuevo hoy). No hay datos nuevos fuera de la tabla de arriba; las líneas corregidas quedan así:
+
+| Línea | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «…aquí brota un hongo que puede comerse parte del carbón.» | ✅ | F, N | F: "a robust potential for P. domesticum to liberate carbon from PyOM in post-fire ecosystems"; "mineralized some of the PyOM by converting the carbon from 750°C PyOM into CO2". N: "In clusters on a white hyphal mat on fire sites" | 2021 |
+| «…no todo se hace humo: parte de la madera queda como carbón.» | ✅ | F, J | F: "much of the remaining carbon is transformed into black carbon or pyrogenic organic matter (PyOM)". J: "the production of pyrogenic carbon is equivalent to 12 per cent of CO2 emissions from fires" | 2021 / 2019 |
+| «Su única fuente de carbono fue carbón de pino hecho a setecientos cincuenta grados, y creció.» (pantalla «750 °C · 30 min») | ✅ | F | "Pyronema domesticum grew readily on agar media where the sole carbon source was PyOM"; "We held the temperature constant for 30min once 750°C was reached"; "Growth on PyOM … produced an intermediate amount of biomass" | 2021 |
+| «Hicieron ese carbón con pinitos que respiraron carbono trece, y el hongo soltó parte como dióxido de carbono.» | ✅ | F | "The 13C label was incorporated by pulse-labelling 2-year-old P. strobus seedlings with 13CO2"; "mineralized some of the PyOM by converting the carbon from 750°C PyOM into CO2" (frascos sellados: "The jars were sealed") | 2021 |
+| «…aparece *Pyronema*: tapetes de discos naranjas de un milímetro.» | ✅ | F, N | F: "within weeks to months after fire". N: "Ø 0.5-1-mm."; "Fruit-body capitate- to cushion-shaped"; "whitish to salmon or orange-red" | 2021 / ficha vigente |
+| «Ese carbón puede durar siglos… se creía muy difícil de comer.» | ✅ | F | "PyOM sometimes persisting for hundreds or thousands of years"; "generally thought of as being relatively recalcitrant" | 2021 |
+| «…la mayor parte de su gas vino de otras fuentes.» (pantalla «~4.5 veces más») | ✅ | F | "The CO2 originating from non-PyOM sources in our experiments exceeded the amount from PyOM by ~4.5 fold." | 2021 |
+| Resto de la voz y pantalla (anafre, temporada de incendios, 2021, Berkeley/Wisconsin, Rim 2013, genes aromáticos, cierre «puede regresar su carbono») | ✅ | F, C | Ver filas 2–4, 11–13, 18–23 de la tabla de arriba | 2021 |
+
+VEREDICTO: APROBADO
