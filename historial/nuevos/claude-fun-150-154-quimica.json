@@ -23,15 +23,24 @@
   },
   {
    "id": "fun-151-trehalosa",
-   "titulo": "El azúcar de los hongos no es el de tu mesa: trehalosa (y por qué a algunas personas los hongos les caen mal: falta de trehalasa)",
+   "titulo": "Si los champiñones te caen mal, quizá no es alergia: la trehalosa, el azúcar de los hongos (y la falta de trehalasa)",
    "serie": "Shot Fungi Mati",
    "numero": 151,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-151-trehalosa",
    "rama": "claude/fun-150-154-quimica",
-   "fuentes": [],
+   "fuentes": [
+    "Gudmand-Høyer et al. 1988, Scand J Gastroenterol (Copenhague, 97 adultos de Groenlandia)",
+    "Patyshakuliyeva et al. 2013, BMC Genomics",
+    "Kozlov et al. 2023, Int J Circumpolar Health",
+    "Muller et al. 2013; Arola et al. 1999"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Por qué las levaduras secas del pan reviven al mojarse (trehalosa y anhidrobiosis)",
+    "El manitol: el otro azúcar-alcohol de los champiñones",
+    "Intolerancias a azúcares: lactosa vs trehalosa vs sacarosa (enzimas que te faltan)"
+   ]
   },
   {
    "id": "fun-152-cerveza-brota",
