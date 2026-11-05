@@ -319,7 +319,7 @@ function MorillasShot() {
       <Etq T={T} at={K.Mi + 1.0} until={K.U - 0.3} x={60} y={1100} texto="micelio de morilla" tam={26} color={MO.alveolo2} />
       <Chip T={T} at={K.U + 0.3} until={K.E - 0.3} texto="otra hipótesis: último esfuerzo" x={400} y={340} tam={32} borde={KC.yellow} />
       <Etq T={T} at={K.U + 0.8} until={K.E - 0.3} x={60} y={470} texto="hojarasca: su comida" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.U + 2.2} until={K.E - 0.3} x={720} y={960} texto="esclerocios (esquema)" tam={24} color={KC.paper} />
+      <Etq T={T} at={K.U + 2.2} until={K.E - 0.3} x={630} y={960} texto="esclerocios (esquema)" tam={24} color={KC.paper} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2014" quien="incendio Rim (2013) · Yosemite, EE. UU." revista="U. de Montana · For. Ecol. Manage., 2016" x={540} y={600} />
       <NumeroGigante T={T} at={K.E + 2.8} until={K.Mx - 0.2} valor={1693} dur={1.4} etiqueta="por hectárea (estimado)" x={400} y={560} tam={140} color={KC.yellow} />
       <Etq T={T} at={K.Mx + 0.3} until={K.F - 0.3} x={60} y={420} texto="bosques de oyamel" tam={34} color={KC.ink} />

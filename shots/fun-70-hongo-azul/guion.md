@@ -29,7 +29,22 @@
 
 ## Robert en pantalla
 
-(se llena al terminar la animación)
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y qué hace un hongo azul en el bosque?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 2.6 | 11_sorprendido | `gancho` | «si lo cortas, suelta una leche azul» (cuadro 0) |
+| 2 | 8.3 | 10.9 | 05_sonriendo | `arriba-der` | «es comestible y se vende en mercados» |
+| 3 | 14.7 | 19.0 | 13_senalando_arriba | `arriba-der` | «cuarenta y cuatro nombres registrados» |
+| 4 | 25.9 | 28.3 | 04_bajando_lentes | `arriba-der` | «los pigmentos azules naturales son escasos» |
+| 5 | 28.5 | 31.2 | 07_pensativo_puno | `grande` | «¿Y qué hace un hongo azul en el bosque?» |
+| 6 | 36.3 | 41.7 | 12_perfil_serio | `arriba-der` | «azúcares … nitrógeno y fósforo» |
+| 7 | 43.4 | 47.3 | 13_senalando_arriba | `arriba-der` | «lo hallaron unido a raíces de encinos» |
+| 8 | 48.0 | 52.3 | 11_sorprendido | `arriba-der` | «por primera vez, fabricaron su pigmento» |
+| 9 | 52.9 | 57.9 | 02_apuntando_camara | `izq-alto` | «un hongo que vive en sociedad con los árboles» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **33.1 s** en pantalla (+ cierre 3.5 s) · 6 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 5 nov 2026)
 

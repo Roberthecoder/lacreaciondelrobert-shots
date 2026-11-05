@@ -362,18 +362,18 @@ function AzulShot() {
         <FondoLunares color={KC.yellow} />
         <div style={{ position:'absolute', left:0, right:0, top:960, bottom:0, background:`linear-gradient(${AZ.tierra}, ${AZ.tierra2})` }}></div>
         {fsvg(<>
-          <Encino x={830} y={960} s={1.0} T={T} />
-          <Raices x={830} y={960} s={0.45} trazos={RAIZ_ENC} manto={1} />
-          {puntas(830, 960, 0.45, RAIZ_ENC).map(([tx, ty], i) => <Hifa key={i} x1={440} y1={968} x2={tx} y2={ty} p={kprog(T, K.C + 0.6 + i * 0.15, K.C + 1.8 + i * 0.15)} seed={i + 3} ancho={4} />)}
+          <Encino x={880} y={960} s={0.95} T={T} />
+          <Raices x={880} y={960} s={0.45} trazos={RAIZ_ENC} manto={1} />
+          {puntas(880, 960, 0.45, RAIZ_ENC).map(([tx, ty], i) => <Hifa key={i} x1={510} y1={968} x2={tx} y2={ty} p={kprog(T, K.C + 0.6 + i * 0.15, K.C + 1.8 + i * 0.15)} seed={i + 3} ancho={4} />)}
           <rect x={0} y={950} width={KW} height={16} fill="#3fbf4a" stroke={KC.ink} strokeWidth={5} />
-          <HongoAzul T={T} x={440} y={958} s={1.35} corte={1} leche={1} verde={0.75} />
+          <HongoAzul T={T} x={510} y={958} s={1.35} corte={1} leche={1} verde={0.75} />
         </>)}
       </Escena>
 
       {/* textos */}
       <Chip T={T} at={K.G + 1.4} until={K.N - 0.2} texto="no es pintura" x={300} y={560} tam={44} borde={KC.red} />
       <Etq T={T} at={K.N + 0.2} until={K.Me - 0.3} x={60} y={520} texto="Lactarius indigo" it tam={46} color={KC.ink} />
-      <Etq T={T} at={K.N + 0.9} until={K.Me - 0.3} x={60} y={590} texto="Lactarius = lechoso (latín)" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.N + 0.9} until={K.Me - 0.3} x={60} y={590} texto="su nombre = «lechoso» (latín)" tam={32} color={KC.ink} />
       <Etq T={T} at={K.N + 1.5} until={K.Me - 0.3} x={150} y={700} texto="látex azul" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Me + 0.7} until={tMapa - 0.3} texto="comestible" x={290} y={520} tam={40} borde={KC.mint} />
       <Chip T={T} at={tMapa + 1.2} until={K.No - 0.3} texto="sale con las lluvias" x={540} y={470} tam={40} borde={KC.cyan} />
@@ -393,8 +393,8 @@ function AzulShot() {
       <Chip T={T} at={K.Tr + 1.5} until={K.E - 0.3} texto="hongo → árbol: nitrógeno y fósforo" x={480} y={1090} tam={32} borde="#a1e36b" />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.X - 0.3} anio="2012" quien="bosque de niebla, Veracruz" revista="Mycologia, 2012 · ADN de raíces" x={380} y={560} />
       <Etq T={T} at={K.E + 1.8} until={K.X - 0.3} x={60} y={790} texto="leyendo ADN…" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.E + 2.6} until={K.X - 0.3} x={60} y={1080} texto="raíz de encino" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.E + 3.2} until={K.X - 0.3} x={470} y={1080} texto="+ Lactarius indigo" it tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 2.6} until={K.X - 0.3} x={60} y={1115} texto="raíz de encino" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.E + 3.2} until={K.X - 0.3} x={470} y={1115} texto="+ Lactarius indigo" it tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.X + 0.2} until={K.C - 0.3} anio="2023" quien="U. de Tohoku, Japón" revista="J. Agric. Food Chem., 2023" x={400} y={470} />
       <Etq T={T} at={K.X + 1.4} until={K.C - 0.3} x={380} y={900} texto="síntesis total: por primera vez" tam={26} color={KC.ink} />
       <Chip T={T} at={K.X + 2.6} until={K.C - 0.3} texto="candidato a colorante azul natural" x={640} y={770} tam={30} borde="#2457d6" />

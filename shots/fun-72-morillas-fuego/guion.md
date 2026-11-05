@@ -29,7 +29,24 @@
 
 ## Robert en pantalla
 
-(se llena al terminar la animación)
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Por qué el fuego las despierta?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 2.4 | 11_sorprendido | `gancho` | «Ese bosque quemado no está muerto» (cuadro 0) |
+| 2 | 5.5 | 9.8 | 13_senalando_arriba | `arriba-der` | «hoyitos, como un panal, y huecos por dentro» |
+| 3 | 13.0 | 17.0 | 06_pensativo_menton | `arriba-der` | «cinco especies… después de un incendio» |
+| 4 | 21.7 | 23.6 | 04_bajando_lentes | `arriba-der` | «Al segundo año, casi desaparecen» |
+| 5 | 23.8 | 25.8 | 07_pensativo_puno | `grande` | «¿Por qué el fuego las despierta?» |
+| 6 | 28.1 | 32.4 | 12_perfil_serio | `arriba-der` | «el fuego mata a los microbios que compiten» |
+| 7 | 33.2 | 37.6 | 06_pensativo_menton | `arriba-der` | «hace un último esfuerzo por reproducirse» |
+| 8 | 40.6 | 43.6 | 11_sorprendido | `arriba-der` | «casi mil setecientas por hectárea» |
+| 9 | 44.2 | 48.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «les dicen pancitas o elotitos» |
+| 10 | 48.8 | 53.6 | 10_serio_molesto | `arriba-der` | «Ojo con la falsa morilla… combustible de cohete» |
+| 11 | 54.1 | 57.9 | 02_apuntando_camara | `arriba-der` | «quizá el hongo ya estaba esperando» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 11 · **38.9 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas · nunca tapa números, etiquetas ni subtítulo.
 
 ## Fuentes (abiertas el 5 nov 2026)
 
