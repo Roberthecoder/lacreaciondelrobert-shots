@@ -3,18 +3,18 @@
   "salida": "Shot Iceberg narrado.dc.html",
   "nota": "Shot Fungi Mati #155 · Iceberg de los hongos. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese champiñón no es el hongo: es solo la punta del iceberg. Vamos bajando." },
+    { "escena": "Gancho", "texto": "Ese champiñón no es el hongo: es solo la punta del iceberg. Bajemos." },
     { "escena": "Nivel1", "texto": "Nivel uno, lo que todos saben: los hongos no son plantas, y la levadura del pan es un hongo." },
     { "escena": "Penicilina", "texto": "Nivel dos: la penicilina salió de un moho." },
-    { "escena": "Quitina", "texto": "Y sus paredes son de quitina, lo mismo que el caparazón de un escarabajo." },
+    { "escena": "Quitina", "texto": "Y sus paredes tienen quitina, el mismo material del caparazón de un escarabajo." },
     { "escena": "Brillan", "texto": "Nivel tres: hay más de cien especies de hongos que brillan en la oscuridad." },
-    { "escena": "Armillaria", "texto": "En 2003 midieron en Oregón un solo hongo Armillaria: casi diez kilómetros cuadrados bajo el bosque." },
+    { "escena": "Armillaria", "texto": "Un estudio de 2003 en Oregón halló un solo hongo Armillaria: casi diez kilómetros cuadrados bajo el bosque." },
     { "escena": "Pregunta", "texto": "¿Crees que ya es raro? Falta lo oscuro." },
-    { "escena": "Hormiga", "texto": "Nivel cuatro: un hongo obliga a una hormiga a morder una hoja, y luego le brota de la cabeza." },
-    { "escena": "Lazos", "texto": "Otro arma lazos que se inflan y estrangulan gusanitos nematodos." },
-    { "escena": "Sexos", "texto": "Nivel cinco, el fondo: el hongo Schizophyllum tiene más de veintitrés mil tipos de apareamiento." },
-    { "escena": "Radiacion", "texto": "Y en 2007, en un laboratorio, hongos negros como los de Chernóbil crecieron más rápido con radiación. ¿Se alimentan de ella? Es hipótesis." },
-    { "escena": "Cierre", "texto": "Y todo eso empezó con ese champiñón: la punta del iceberg." }
+    { "escena": "Hormiga", "texto": "Nivel cuatro: un hongo obliga a una hormiga a morder una hoja, y ya muerta, le brota de la nuca." },
+    { "escena": "Lazos", "texto": "Otro arma lazos que se inflan y atrapan gusanitos nematodos." },
+    { "escena": "Sexos", "texto": "Nivel cinco, el fondo: se calcula que el hongo Schizophyllum tiene más de veintitrés mil tipos de apareamiento." },
+    { "escena": "Radiacion", "texto": "Y en 2007, en laboratorio, hongos negros como los de Chernóbil crecieron más rápido con radiación. ¿Se alimentan de ella? Es hipótesis." },
+    { "escena": "Cierre", "texto": "Y todo empezó con ese champiñón: la punta del iceberg." }
   ],
   "mezcla": "oficial-30oct"
 }

@@ -100,3 +100,18 @@ Voz (narracion.json y guion.md):
 
 Las demás afirmaciones (filas 1–4, 7, 9–12, 14, 14c, 15b, 16) quedan ✅ sin cambios. Al aplicar las correcciones, revisar que la voz
 siga en ~58 s (las líneas nuevas tienen casi el mismo largo: +1 palabra en la 2 y +2 en la 9).
+
+## Correcciones aplicadas (5 nov 2026)
+
+Las 5 correcciones propuestas se aplicaron tal cual en `narracion.json` y `guion.md` (voz y pantalla):
+- Quitina: «Y sus paredes tienen quitina, el mismo material del caparazón de un escarabajo.» → ✅ (filas 5, 6).
+- Armillaria: «Un estudio de 2003 en Oregón halló un solo hongo Armillaria: casi diez kilómetros cuadrados bajo el bosque.»; chip
+  «≈ 9.65 km² (965 ha)»; dibujo con el micelio de raíz en raíz y cordones solo secundarios → ✅ (fila 8).
+- Hormiga: «…y ya muerta, le brota de la nuca.»; tallo dibujado en la nuca y solo después de muerta → ✅ (fila 13).
+- Lazos: «se inflan y atrapan» → ✅ (fila 14b).
+- Schizophyllum: «se calcula que…»; pantalla «≈ 23,000 tipos de apareamiento (estimados)» → ✅ (fila 15).
+Ajustes de largo sin cambiar ningún dato: «Bajemos.» (antes «Vamos bajando.»), «en laboratorio» (antes «en un laboratorio»; [D07] son
+experimentos de laboratorio) y «Y todo empezó con ese champiñón» (antes «Y todo eso empezó…»).
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
