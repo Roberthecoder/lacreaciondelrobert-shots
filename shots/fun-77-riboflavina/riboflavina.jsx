@@ -125,7 +125,7 @@ function TarjetaMicrobio({ T, x, y, w = 420, h = 360, p = 1, tipo, comun, cienti
   return <g transform={`translate(${x + w / 2} ${y + h / 2}) scale(${s}) translate(${-w / 2} ${-h / 2})`}>
     <rect width={w} height={h} rx={28} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
     {tipo === 'bacteria' && <g>{[[150, 120, -20], [270, 150, 25], [200, 210, 5]].map(([a, b, rr], i) => <Bacteria key={i} T={T} x={a} y={b} rot={rr} s={1.15} color={KC.mint} seed={i} />)}</g>}
-    {tipo === 'hongo' && <g><RedHifas T={T} x={w / 2} y={170} g={kclamp(p * 1.3, 0, 1)} seed={7} n={70} escala={0.55} color={RB.hifa} ancho={6} circ />
+    {tipo === 'hongo' && <g><RedHifas T={T} x={w / 2} y={150} g={kclamp(p * 1.3, 0, 1)} seed={7} n={60} escala={0.16} color={RB.hifa} ancho={4} circ />
       <circle cx={w / 2} cy={170} r={10} fill={KC.yellow} /></g>}
     <text x={w / 2} y={h - 72} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.texto}>{comun}</text>
     <text x={w / 2} y={h - 28} textAnchor="middle" style={{ font:`italic 700 32px ${KF.mono}` }} fill={KC.gold2}>{cientifico}</text>
@@ -286,7 +286,7 @@ function RiboflavinaShot() {
   const FIN = K.Ou + 4;
   const caida = kprog(T, K.G + 0.1, K.G + 0.85);
   const reb = kprog(T, K.G + 0.85, K.G + 1.25);
-  const pastX = klerp(820, 560, caida), pastY = caida < 1 ? klerp(300, 1150, caida * caida) : 1150 - Math.sin(reb * Math.PI) * 60;
+  const pastX = klerp(420, 560, caida), pastY = caida < 1 ? klerp(330, 1150, caida * caida) : 1150 - Math.sin(reb * Math.PI) * 60;
   const chap = kclamp(1 + 2 * Math.exp(-(T - K.G - 0.9) * 2) * (T > K.G + 0.85 ? 1 : 0), 1, 3);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -302,7 +302,7 @@ function RiboflavinaShot() {
       <Escena T={T} a={K.O} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Cuerpo x={330} y={960} T={T} p1={kprog(T, K.O + 0.1, K.O + 1.0)} p2={kprog(T, K.O + 0.9, K.O + 2.0)} p3={kprog(T, K.O + 1.9, K.O + 3.1)} />
+          <g transform="translate(250 960) scale(0.85) translate(-250 -960)"><Cuerpo x={250} y={960} T={T} p1={kprog(T, K.O + 0.1, K.O + 1.0)} p2={kprog(T, K.O + 0.9, K.O + 2.0)} p3={kprog(T, K.O + 1.9, K.O + 3.1)} /></g>
           <Reloj24 x={830} y={900} r={100} p={kprog(T, K.O + 1.8, K.O + 3.6, kEase.suave)} />
         </>)}
       </Escena>
@@ -338,8 +338,8 @@ function RiboflavinaShot() {
         <Ambiente T={T} n={18} />
         {fsvg(<>
           {[[130, 560, 0.2], [180, 600, -0.3], [150, 640, 0.5], [205, 548, 0.1], [235, 615, -0.6]].map(([a, b, r], i) =>
-            <LevaduraCel key={i} x={a} y={b} rot={r * 60} s={kEase.rebote(kprog(T, K.H + 0.1 + i * 0.08, K.H + 0.5 + i * 0.08))} yema={i % 2 ? 0.6 + 0.2 * Math.sin(T * 2 + i) : 0} />)}
-          <HifasY T={T} x={540} y={930} g={kprog(T, K.H + 0.4, K.H + 3.2)} s={0.62} rot={-8} />
+            <LevaduraCel key={i} x={a} y={b} rot={r * 60} s={1.3 * kEase.rebote(kprog(T, K.H + 0.1 + i * 0.08, K.H + 0.5 + i * 0.08))} yema={i % 2 ? 0.6 + 0.2 * Math.sin(T * 2 + i) : 0} />)}
+          <HifasY T={T} x={560} y={930} g={kprog(T, K.H + 0.4, K.H + 3.2)} s={0.75} rot={-8} />
         </>)}
       </Escena>
       {/* 6 · al dejar de crecer se llena de riboflavina (vacuolas) */}
@@ -370,14 +370,14 @@ function RiboflavinaShot() {
           const uv = kprog(T, K.E + 4.2, K.E + 4.4), crece = kprog(T, K.E + 4.5, K.E + 5.6);
           return <>
             {fuera < 1 && <g opacity={1 - fuera}>
-              {Array.from({ length: 8 }, (_, i) => <Espora key={i} T={T} seed={i} x={390 + klerp(0, (i - 3.5) * 22, sal)} y={640 + i * 8 + klerp(0, (i - 3.5) * 10, sal)} rot={-4 + (i - 3.5) * klerp(0.5, 7, sal)} largo={300} s={sal} />)}
+              {Array.from({ length: 8 }, (_, i) => <Espora key={i} T={T} seed={i} x={390 + klerp(0, (i - 3.5) * 22, sal)} y={560 + i * 8 + klerp(0, (i - 3.5) * 10, sal)} rot={-4 + (i - 3.5) * klerp(0.5, 7, sal)} largo={300} s={sal} />)}
             </g>}
-            {pl > 0 && <g>
-              <LamparaUV x={540} y={470} w={760} on={uv} T={T} alto={700} />
-              <Petri x={290} y={960} r={165 * pl} medio="#f5e7b8">
+            {pl > 0.01 && <g>
+              <LamparaUV x={540} y={470} w={760} on={uv} T={T} alto={620} />
+              <Petri x={290} y={880} r={165 * pl} medio="#f5e7b8">
                 {[[-60, -40], [70, 50], [10, 90]].map(([a, b], i) => <Colonia key={i} cx={a} cy={b} r={22 * crece} seed={i + 1} />)}
               </Petri>
-              <Petri x={790} y={960} r={165 * pl} medio="#ffe680">
+              <Petri x={790} y={880} r={165 * pl} medio="#ffe680">
                 {[[-70, -60], [60, -70], [0, 0], [-90, 40], [80, 40], [-20, 100], [40, -10], [-40, -110], [100, -10], [20, 70]].map(([a, b], i) => <Colonia key={i} cx={a} cy={b} r={22 * crece} seed={i + 5} />)}
               </Petri>
             </g>}
@@ -387,8 +387,8 @@ function RiboflavinaShot() {
       <Escena T={T} a={K.Ta} b={K.Ge} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Tanque T={T} x={330} y={1060} p={kprog(T, K.Ta + 0.2, K.Ta + 1.6)} color={kprog(T, K.Ta + 0.8, K.Ta + 2.4)} />
-          {T > K.Ta + 1.4 && <Fabrica T={T} x={800} y={1080} s={kEase.rebote(kprog(T, K.Ta + 1.4, K.Ta + 1.8))} apagada={kprog(T, K.Ta + 3.0, K.Ta + 3.5)} />}
+          <g transform="translate(300 1000) scale(0.85) translate(-300 -1000)"><Tanque T={T} x={300} y={1000} p={kprog(T, K.Ta + 0.2, K.Ta + 1.6)} color={kprog(T, K.Ta + 0.8, K.Ta + 2.4)} /></g>
+          {T > K.Ta + 1.4 && <Fabrica T={T} x={820} y={1100} s={kEase.rebote(kprog(T, K.Ta + 1.4, K.Ta + 1.8))} apagada={kprog(T, K.Ta + 3.0, K.Ta + 3.5)} />}
         </>)}
       </Escena>
       {/* 10 · ingeniería genética: copias extra de los genes */}
@@ -406,27 +406,27 @@ function RiboflavinaShot() {
       <Escena T={T} a={K.Ah} b={K.Ir} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         {fsvg((() => { const u = kprog(T, K.Ah + 0.3, K.Ah + 1.1, kEase.sale), f1 = kprog(T, K.Ah + 1.2, K.Ah + 2.0, kEase.sale), f2 = kprog(T, K.Ah + 2.4, K.Ah + 3.2, kEase.sale);
-          const B = 1150, MX = 400;
+          const B = 1050, MX = 380;
           const barra = (x, frac, col, k) => <rect key={k} x={x} y={B - MX * frac} width={140} height={MX * frac} fill={col} stroke={KC.ink} strokeWidth={7} />;
           return <>
             <line x1={80} y1={B} x2={1000} y2={B} stroke={KC.ink} strokeWidth={8} />
             {barra(110, u, RB.gris, 'a')}{barra(270, klerp(u, 0.6, f1), KC.yellow, 'b')}
-            {barra(590, u, RB.gris, 'c')}{barra(750, klerp(u, 0.7, f2), KC.yellow, 'd')}
+            {barra(520, u, RB.gris, 'c')}{barra(680, klerp(u, 0.7, f2), KC.yellow, 'd')}
             <text x={260} y={B + 56} textAnchor="middle" style={{ font:`400 52px ${KF.titulo}` }} fill={KC.ink}>COSTO</text>
-            <text x={740} y={B + 56} textAnchor="middle" style={{ font:`400 52px ${KF.titulo}` }} fill={KC.ink}>CO₂</text>
+            <text x={670} y={B + 56} textAnchor="middle" style={{ font:`400 52px ${KF.titulo}` }} fill={KC.ink}>CO₂</text>
             {f1 > 0 && <text x={340} y={B - MX * 0.6 - 20} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={f1}>−40 %</text>}
-            {f2 > 0 && <text x={820} y={B - MX * 0.7 - 20} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={f2}>−30 %</text>}
+            {f2 > 0 && <text x={750} y={B - MX * 0.7 - 20} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={f2}>−30 %</text>}
             {/* leyenda */}
-            <rect x={70} y={650} width={40} height={40} fill={RB.gris} stroke={KC.ink} strokeWidth={5} />
-            <text x={126} y={683} style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>síntesis química</text>
-            <rect x={70} y={706} width={40} height={40} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
-            <text x={126} y={739} style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>fermentación con hongo</text>
+            <rect x={70} y={560} width={40} height={40} fill={RB.gris} stroke={KC.ink} strokeWidth={5} />
+            <text x={126} y={593} style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>síntesis química</text>
+            <rect x={70} y={612} width={40} height={40} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
+            <text x={126} y={645} style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>fermentación con hongo</text>
           </>; })())}
       </Escena>
       {/* 12 · la ironía: también es colorante (E101) */}
       <Escena T={T} a={K.Ir} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<Pastelito x={360} y={1010} s={kEase.rebote(kprog(T, K.Ir + 0.1, K.Ir + 0.6)) * 1.15} T={T} />)}
+        {fsvg(<Pastelito x={360} y={900} s={kEase.rebote(kprog(T, K.Ir + 0.1, K.Ir + 0.6)) * 1.15} T={T} />)}
       </Escena>
       {/* 13 · cierre: el mismo vasito, ahora bajo luz UV, con el hongo de bloqueador */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
@@ -442,41 +442,43 @@ function RiboflavinaShot() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.1} until={K.O - 0.3} texto="colorante" x={330} y={560} tam={60} />
       <Chip T={T} at={K.G + 2.6} until={K.O - 0.3} texto="vitamina B2" x={330} y={680} tam={52} borde={KC.ink} />
-      <Etq T={T} at={K.O + 1.2} until={K.M - 0.3} x={60} y={600} texto="riñones" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.O + 2.2} until={K.M - 0.3} x={60} y={1120} texto="vejiga" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.O + 2.6} until={K.M - 0.3} texto="casi todo sale en las primeras 24 horas" x={540} y={1170} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.O + 1.2} until={K.M - 0.3} x={340} y={800} texto="riñones" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.O + 2.2} until={K.M - 0.3} x={300} y={1060} texto="vejiga" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.O + 2.6} until={K.M - 0.3} texto="casi todo sale en las primeras 24 horas" x={712} y={1140} tam={25} borde={KC.ink} />
       <Etq T={T} at={K.M + 0.5} until={K.Mi - 0.3} x={60} y={420} texto="riboflavina · vitamina B2" tam={34} color={KC.yellow} />
       <Chip T={T} at={K.M + 1.8} until={K.Mi - 0.3} texto="luz ultravioleta" x={540} y={620} tam={32} borde={RB.uv2} mono />
       <Etq T={T} at={K.M + 2.4} until={K.Mi - 0.3} x={60} y={1150} texto="brilla verde-amarillo" tam={32} color={RB.brilla} />
       <Chip T={T} at={K.Mi + 0.3} until={K.A - 0.3} texto="la industria ya usa fermentación" x={360} y={460} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.A + 0.4} until={K.H - 0.3} x={60} y={420} texto="algodón · cápsula abierta" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.A + 1.0} until={K.H - 0.3} x={60} y={1080} texto="chinche (vector)" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.A + 2.0} until={K.H - 0.3} x={60} y={500} texto="fibra manchada" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.A + 0.4} until={K.H - 0.3} x={60} y={390} texto="algodón · cápsula abierta" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.A + 1.0} until={K.H - 0.3} x={600} y={830} texto="chinche (vector)" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.A + 2.0} until={K.H - 0.3} x={60} y={445} texto="fibra manchada" tam={30} color={KC.ink} />
       <Etq T={T} at={K.H + 0.3} until={K.V - 0.3} x={290} y={590} texto="levadura del pan" tam={28} color={KC.texto} />
       <Etq T={T} at={K.H + 0.6} until={K.V - 0.3} x={290} y={636} texto="Saccharomyces cerevisiae" it tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.H + 1.1} until={K.V - 0.3} x={290} y={682} texto="Saccharomycetaceae" it tam={26} color={KC.texto} />
       <Etq T={T} at={K.H + 1.2} until={K.V - 0.3} x={60} y={1130} texto="Ashbya gossypii" it tam={34} color={KC.gold2} />
-      <Chip T={T} at={K.H + 0.9} until={K.V - 0.3} texto="misma familia: Saccharomycetaceae" x={540} y={460} tam={30} borde={KC.gold} mono />
+      <Chip T={T} at={K.H + 0.9} until={K.V - 0.3} texto="de la misma familia" x={540} y={460} tam={30} borde={KC.gold} mono />
       <Etq T={T} at={K.H + 2.2} until={K.V - 0.3} x={60} y={1180} texto="sus puntas se parten en dos" tam={28} color={KC.texto} />
       <Etq T={T} at={K.V + 1.8} until={K.P - 0.3} x={60} y={1050} texto="vacuolas con riboflavina" tam={32} color={KC.yellow} />
       <Etq T={T} at={K.V + 0.6} until={K.P - 0.3} x={60} y={720} texto="núcleos · tabiques" tam={28} color={RB.nucleo} />
       <Chip T={T} at={K.V + 0.5} until={K.P - 0.3} texto="deja de crecer" x={360} y={590} tam={32} borde={KC.mint} mono />
-      <Etq T={T} at={K.E + 0.4} until={K.E + 3.5} x={60} y={440} texto="esporas de Ashbya, en aguja" tam={30} color={KC.texto} />
-      <TarjetaEstudio T={T} at={K.E + 1.2} until={K.E + 3.5} anio="2001" quien="Alemania, Reino Unido y España" revista="Environmental Microbiology, 2001" x={540} y={1000} />
-      <Etq T={T} at={K.E + 4.4} until={K.Ta - 0.3} x={150} y={1175} texto="sin riboflavina" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.E + 4.6} until={K.Ta - 0.3} x={640} y={1175} texto="con riboflavina" tam={28} color={KC.yellow} />
+      <Etq T={T} at={K.E + 0.4} until={K.E + 3.5} x={60} y={440} texto="esporas en aguja de" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.E + 0.6} until={K.E + 3.5} x={430} y={440} texto="Ashbya gossypii" it tam={30} color={KC.gold2} />
+      <TarjetaEstudio T={T} at={K.E + 1.2} until={K.E + 3.5} anio="2001" quien="Alemania, Reino Unido y España" revista="Environmental Microbiology, 2001" x={540} y={900} />
+      <Etq T={T} at={K.E + 4.4} until={K.Ta - 0.3} x={140} y={1095} texto="sin riboflavina" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.E + 4.6} until={K.Ta - 0.3} x={640} y={1095} texto="con riboflavina" tam={28} color={KC.yellow} />
       <Chip T={T} at={K.E + 5.6} until={K.Ta - 0.3} texto="hipótesis: protector UV" x={360} y={360} tam={32} borde={KC.yellow} />
-      <Chip T={T} at={K.Ta + 0.5} until={K.Ge - 0.3} texto="1990: fermentación industrial" x={540} y={420} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Ta + 0.9} until={K.Ge - 0.3} x={60} y={500} texto="BASF · con aceite vegetal" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ta + 3.0} until={K.Ge - 0.3} texto="1996: adiós síntesis química" x={700} y={1160} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.Ta + 0.5} until={K.Ge - 0.3} texto="1990: fermentación industrial" x={740} y={400} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.Ta + 0.9} until={K.Ge - 0.3} x={560} y={500} texto="BASF · con aceite vegetal" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Ta + 3.0} until={K.Ge - 0.3} texto="1996: adiós síntesis química" x={760} y={700} tam={28} borde={KC.red} />
       <Chip T={T} at={K.Ge + 0.3} until={K.Ah - 0.3} texto="ingeniería genética" x={340} y={430} tam={36} borde={KC.gold} />
       <Etq T={T} at={K.Ge + 1.5} until={K.Ah - 0.3} x={60} y={990} texto="6 genes de la vía, en un paquete" tam={28} color={KC.yellow} />
       <Etq T={T} at={K.Ge + 2.0} until={K.Ah - 0.3} x={60} y={1170} texto="Ashbya gossypii" it tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.Ah + 0.2} until={K.Ir - 0.3} x={60} y={430} texto="según BASF:" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ah + 0.4} until={K.Ir - 0.3} x={60} y={480} texto="análisis de ecoeficiencia" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ah + 0.6} until={K.Ir - 0.3} x={60} y={525} texto="(Saling 2005 · Hoff 2021)" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.Ir + 0.8} until={K.C - 0.3} texto="colorante E101 = riboflavina" x={540} y={1170} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Ah + 0.2} until={K.Ir - 0.3} x={60} y={400} texto="según BASF:" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ah + 0.4} until={K.Ir - 0.3} x={60} y={445} texto="análisis de ecoeficiencia" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ah + 0.6} until={K.Ir - 0.3} x={60} y={485} texto="(Saling 2005 · Hoff 2021)" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.Ir + 0.8} until={K.C - 0.3} texto="colorante E101 = riboflavina" x={460} y={1110} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Ir + 0.3} until={K.C - 0.3} texto="ironía" x={300} y={460} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="bloqueador solar de un hongo" x={540} y={1170} tam={32} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="bloqueador solar de un hongo" x={360} y={440} tam={30} borde={KC.yellow} />
       <Etq T={T} at={K.C + 2.8} until={K.Ou} x={60} y={1500} texto="No es consejo médico. El dibujo es esquemático." tam={22} color={KC.texto} />
 
       {/* barras de escala (siempre visibles; tarjetas y barras no llevan) */}
@@ -516,7 +518,7 @@ function RiboflavinaShot() {
         [K.Mi + 0.7, K.A - 0.1, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.A + 1.2, K.H + 0.4, 'avatar_10_serio_molesto', 'arriba-der'],
         [K.V + 1.0, K.P - 0.1, 'avatar_12_perfil_serio', 'arriba-der'],
-        [K.P + 0.05, K.E + 0.3, 'avatar_07_pensativo_puno', 'grande'],
+        [K.P + 0.05, K.E - 0.35, 'avatar_07_pensativo_puno', 'grande'],
         [K.E + 4.7, K.Ta + 0.05, 'avatar_11_sorprendido', 'arriba-der'],
         [K.Ge + 0.2, K.Ah - 0.1, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.Ah + 1.5, K.Ir - 0.1, 'avatar_13_senalando_arriba', 'arriba-der'],

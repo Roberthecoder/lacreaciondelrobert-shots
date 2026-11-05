@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #78 · rama `claude/fun-75-79-biotec`.
 - **Formato:** N1 «Por dentro» + N5 «El experimento» (a la mitad se recrea el experimento de 1985 con matraces y un contador de CO₂). Viaje: tronco con pudrición blanca → por dentro (hifas, enzimas, lignina, DDT que se rompe) → el mismo tronco, ahora junto a una maceta de suelo con sustrato de setas.
 - **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre algo que se ve en pantalla: «Esa madera blanca y podrida no está sucia: hongos como el que la pudre pueden romper el DDT.»
-- **Duración:** voz 983 caracteres / 174 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
+- **Duración:** voz 985 caracteres / 174 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** asombro honesto. El hongo es una herramienta real de laboratorio, pero en el campo cuesta mucho: el video cierra diciendo que es una pista, no una solución mágica. No se repite fun-31 (plástico) ni fes-03 (pudrición blanca y el carbón): aquí el foco son los contaminantes.
 
@@ -33,23 +33,23 @@
 
 ## Robert en pantalla
 
-Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y si el anillo es de un veneno?».
+Tiempos de la base (61.5 s) (con la voz real se recorren solos). Grande en «¿Y si el anillo es de un veneno?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no está sucia: … pueden romper el DDT» (cuadro 0) |
-| 2 | 7.0 | 10.5 | 12_perfil_serio | `arriba-der` | «en el suelo tarda años en desaparecer» |
-| 3 | 13.0 | 15.8 | 13_senalando_arriba | `arriba-der` | «una red revuelta de anillos de carbono» |
-| 4 | 21.0 | 24.4 | 06_pensativo_menton | `arriba-der` | «atacan anillos muy distintos, sin escoger» |
-| 5 | 24.5 | 26.4 | 07_pensativo_puno | `grande` | «¿Y si el anillo es de un veneno?» |
-| 6 | 32.0 | 36.4 | 11_sorprendido | `arriba-der` | «DDT, PCB, lindano, una dioxina y benzopireno» |
-| 7 | 37.5 | 41.2 | 02_apuntando_camara | `arriba-der` | «la seta del súper» |
-| 8 | 41.6 | 46.8 | 04_bajando_lentes | `arriba-der` | «Pero ojo: … solo del nueve al veintitrés por ciento» |
-| 9 | 48.0 | 52.3 | 10_serio_molesto | `arriba-der` | «no logró una baja medible» |
-| 10 | 53.0 | 57.3 | 13_senalando_arriba | `arriba-der` | «una pista para limpiar, no una solución mágica» |
+| 1 | 0.0 | 2.9 | 11_sorprendido | `gancho` | «no está sucia: … pueden romper el DDT» (cuadro 0) |
+| 2 | 6.8 | 10.4 | 12_perfil_serio | `arriba-der` | «en el suelo tarda años en desaparecer» |
+| 3 | 13.0 | 15.9 | 13_senalando_arriba | `arriba-der` | «una red revuelta de anillos de carbono» |
+| 4 | 21.2 | 24.7 | 06_pensativo_menton | `arriba-der` | «atacan anillos muy distintos, sin escoger» |
+| 5 | 25.0 | 27.2 | 07_pensativo_puno | `grande` | «¿Y si el anillo es de un veneno?» |
+| 6 | 32.5 | 37.0 | 11_sorprendido | `arriba-der` | «DDT, PCB, lindano, una dioxina y benzopireno» |
+| 7 | 37.6 | 41.9 | 02_apuntando_camara | `arriba-der` | «la seta del súper» |
+| 8 | 42.4 | 47.4 | 04_bajando_lentes | `arriba-der` | «Pero ojo: … solo del nueve al veintitrés por ciento» |
+| 9 | 48.1 | 52.7 | 10_serio_molesto | `arriba-der` | «no lograron una baja medible» |
+| 10 | 53.4 | 57.9 | 13_senalando_arriba | `arriba-der` | «una pista para limpiar, no una solución mágica» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 10 · **36.5 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · una vez grande (#5).
+Apariciones 10 · **37.9 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · una vez grande (#5).
 
 ## Fuentes (abiertas el 5 nov 2026)
 

@@ -25,7 +25,8 @@ function RacimoUva({ T, x, y, s = 1, infla = () => 1, brillo = () => 0, gota = 0
     <path d="M 0 -40 Q 6 -10 0 40 L 0 600" stroke={GB.tallo} strokeWidth={12} fill="none" strokeLinecap="round" />
     <path d="M 0 -40 Q -30 -70 -60 -64" stroke={GB.tallo} strokeWidth={10} fill="none" strokeLinecap="round" />
     {UVAS.map(([dx, dy], i) => <line key={'p' + i} x1={0} y1={dy - 50} x2={dx} y2={dy - 20} stroke={GB.tallo} strokeWidth={5} />)}
-    {UVAS.map(([dx, dy, r], i) => <Grano key={i} x={dx} y={dy} s={infla(i)} rot={(i % 3 - 1) * 8} brillo={brillo(i)} gota={gota} />)}
+    {UVAS.map(([dx, dy, r], i) => i === UVA_GRANDE ? null : <Grano key={i} x={dx} y={dy} s={infla(i)} rot={(i % 3 - 1) * 8} brillo={brillo(i)} gota={gota} />)}
+    {(() => { const [dx, dy] = UVAS[UVA_GRANDE]; return <Grano x={dx} y={dy} s={infla(UVA_GRANDE)} brillo={brillo(UVA_GRANDE)} gota={gota} />; })()}
   </g>;
 }
 // Uva partida a lo largo. semillas: true = con semillas de verdad; false = solo rastros diminutos. brillos 0..1 = giberelina.
@@ -82,16 +83,21 @@ function MicroFusarium({ T, r }) {
   const hifas = ['M -20 300 Q 120 260 200 210 Q 280 160 420 150', 'M 60 420 Q 110 330 170 250', 'M 200 210 Q 230 120 210 20', 'M 300 175 Q 340 260 330 420'];
   const sept = [[60, 279], [130, 254], [255, 178], [350, 157], [100, 350], [140, 290], [222, 140], [215, 70], [325, 230], [333, 330]];
   // conidióforos: punta (x, y) y dirección; cadena = microconidios en fila · cabezuela = grupo en la punta
-  const conid = [{ x: 210, y: 20, a: -90, tipo: 'cadena' }, { x: 170, y: 250, a: -140, tipo: 'cabezuela' }, { x: 380, y: 152, a: -20, tipo: 'cadena' }, { x: 330, y: 420, a: 90, tipo: 'cabezuela' }];
+  // conidióforos: base sobre la hifa, ángulo y largo; en la punta, microconidios en cadena corta o en cabezuela
+  const conid = [{ bx: 225, by: 120, a: -100, tipo: 'cadena' }, { bx: 130, by: 254, a: -125, tipo: 'cabezuela' }, { bx: 300, by: 166, a: -55, tipo: 'cadena' },
+    { bx: 325, by: 262, a: 15, tipo: 'cabezuela' }, { bx: 113, by: 333, a: 170, tipo: 'cadena' }];
   return <svg width={D} height={D} viewBox="0 0 400 400" style={{ position:'absolute', left:0, top:0 }}>
     <rect width={400} height={400} fill="#0b1a24" />
     {hifas.map((d, i) => <path key={i} d={d} stroke={GB.hifa} strokeWidth={9} fill="none" strokeLinecap="round" opacity=".92" />)}
     {sept.map(([a, b], i) => <circle key={'s' + i} cx={a} cy={b} r={3} fill="#0b1a24" />)}
-    {conid.map((c, i) => { const ca = Math.cos(c.a * Math.PI / 180), sa = Math.sin(c.a * Math.PI / 180);
-      if (c.tipo === 'cadena') return <g key={'c' + i}>{[0, 1, 2, 3].map((j) => { const d = 22 + j * 34 + Math.sin(T * 1.5 + i + j) * 1.5;
-        return <ellipse key={j} cx={c.x + ca * d} cy={c.y + sa * d} rx={j % 2 ? 16 : 18} ry={7} transform={`rotate(${c.a} ${c.x + ca * d} ${c.y + sa * d})`} fill="#fdf8e8" stroke="#9fd7ef" strokeWidth={2.5} />; })}</g>;
-      return <g key={'c' + i}>{[-40, -15, 10, 35].map((da, j) => { const aa = (c.a + da) * Math.PI / 180, d = 26 + (j % 2) * 8;
-        return <ellipse key={j} cx={c.x + Math.cos(aa) * d} cy={c.y + Math.sin(aa) * d} rx={j === 1 ? 18 : 14} ry={j === 1 ? 6 : 7} transform={`rotate(${c.a + da} ${c.x + Math.cos(aa) * d} ${c.y + Math.sin(aa) * d})`} fill="#fdf8e8" stroke="#9fd7ef" strokeWidth={2.5} />; })}</g>; })}
+    {conid.map((c, i) => { const ca = Math.cos(c.a * Math.PI / 180), sa = Math.sin(c.a * Math.PI / 180), x = c.bx + ca * 34, y = c.by + sa * 34;
+      const conidio = (cx, cy, ang, rx, ry, k) => <ellipse key={k} cx={cx} cy={cy} rx={rx} ry={ry} transform={`rotate(${ang} ${cx} ${cy})`} fill="#fffdf2" stroke="#7fe0ff" strokeWidth={3.5} />;
+      return <g key={'c' + i}>
+        <line x1={c.bx} y1={c.by} x2={x} y2={y} stroke={GB.hifa} strokeWidth={5} strokeLinecap="round" />
+        {c.tipo === 'cadena'
+          ? [0, 1, 2].map((j) => { const d = 18 + j * 32 + Math.sin(T * 1.5 + i + j) * 1.5; return conidio(x + ca * d, y + sa * d, c.a, j === 2 ? 17 : 15, 6.5, j); })
+          : [-50, -15, 20, 55].map((da, j) => { const aa = (c.a + da) * Math.PI / 180, d = 20 + (j % 2) * 6; return conidio(x + Math.cos(aa) * d, y + Math.sin(aa) * d, c.a + da, j === 1 ? 17 : 13, 6.5, j); })}
+      </g>; })}
     {/* barra de 10 µm (1 µm ≈ 6 px en este recuadro) */}
     <rect x={150} y={360} width={60} height={7} rx={3} fill="#fff" />
     <text x={180} y={350} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill="#fff">10 µm</text>
@@ -265,7 +271,7 @@ function GiberelinasShot() {
     E: CUES.Estudio, Ce: CUES.Celulas, Ta: CUES.Tanque, Ca: CUES.California, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   // cuadro 0: una uva se infla de golpe
-  const inflaG = (i) => (i === UVA_GRANDE ? klerp(0.78, 1.22, kprog(T, K.G + 0.15, K.G + 0.75, kEase.rebote)) : 1);
+  const inflaG = (i) => (i === UVA_GRANDE ? klerp(0.7, 1.5, kprog(T, K.G + 0.15, K.G + 0.75, kEase.rebote)) : 1);
   const bobaS = kprog(T, K.S + 0.2, K.S + 2.6, kEase.suave);
   const filtro = kprog(T, K.Ku + 1.6, K.Ku + 2.6);
   const spray = kprog(T, K.Ku + 2.8, K.Ku + 3.1) * (1 - kprog(T, K.Ku + 4.4, K.Ku + 4.7));
@@ -285,7 +291,7 @@ function GiberelinasShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           <Arrozal T={T} y={1040} enferma={3} boba={bobaS} altoBoba={600} />
-          <g opacity={kprog(T, K.S + 2.6, K.S + 3.0)}><EspigaVacia x={110} y={430} s={1.1} tache={kprog(T, K.S + 3.0, K.S + 3.3)} /></g>
+          <g opacity={kprog(T, K.S + 2.6, K.S + 3.0)}><EspigaVacia x={90} y={600} s={1.0} tache={kprog(T, K.S + 3.0, K.S + 3.3)} /></g>
         </>)}
       </Escena>
       {/* 4 · el experimento de Kurosawa: caldo filtrado, ya sin hongo, rociado sobre arroz sano */}
@@ -354,8 +360,8 @@ function GiberelinasShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <Rejilla x={80} y={620} tam={92} p={kprog(T, K.Ce + 0.2, K.Ce + 1.0)} color="#9fd7ef" />
-          <Rejilla x={560} y={620} tam={92 * 124 / 116} p={kprog(T, K.Ce + 0.6, K.Ce + 1.4)} color={KC.gold2} />
+          <Rejilla x={80} y={590} tam={92} p={kprog(T, K.Ce + 0.2, K.Ce + 1.0)} color="#9fd7ef" />
+          <Rejilla x={560} y={590} tam={92 * 124 / 116} p={kprog(T, K.Ce + 0.6, K.Ce + 1.4)} color={KC.gold2} />
         </>)}
       </Escena>
       {/* 11 · hoy: se fabrica criando el hongo en tanques */}
@@ -381,8 +387,8 @@ function GiberelinasShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <g opacity={kprog(T, K.C + 0.6, K.C + 1.4)}><Plantula T={T} x={640} y={1180} alto={620} boba={1} seed={4} /></g>
-          <RacimoUva T={T} x={360} y={470} s={1.15} infla={(i) => (i === UVA_GRANDE ? 1.22 : 1)}
+          <g opacity={kprog(T, K.C + 0.6, K.C + 1.4)}><Plantula T={T} x={620} y={1120} alto={560} boba={1} seed={4} /></g>
+          <RacimoUva T={T} x={360} y={470} s={1.15} infla={(i) => (i === UVA_GRANDE ? 1.5 : 1)}
             brillo={(i) => (i === UVA_GRANDE ? 0.6 + 0.4 * Math.sin(T * 6) : 0)} gota={kprog(T, K.C + 1.6, K.C + 2.4)} />
           <UvaCorte T={T} x={830} y={900} s={0.95} brillos={kprog(T, K.C + 2.4, K.C + 3.0)} />
         </>)}
@@ -397,16 +403,18 @@ function GiberelinasShot() {
       <Chip T={T} at={K.H + 0.9} until={K.S - 0.3} texto="bakanae · «plántula boba»" x={290} y={530} tam={32} borde={KC.gold} />
       <Lupa T={T} at={K.H + 0.5} until={K.S - 0.25} x={770} y={640} r={200} fx={530} fy={1010} tinte={KC.cyan} interior={(t, r) => <MicroFusarium T={t} r={r} />} etiqueta="hifas y microconidios" />
       {/* síntomas */}
-      <Etq T={T} at={K.S + 1.2} until={K.Ku - 0.3} x={590} y={560} texto="enferma: alta, flaca, amarillenta" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.2} until={K.Ku - 0.3} x={515} y={520} lado="izq" texto="enferma" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.5} until={K.Ku - 0.3} x={515} y={570} lado="izq" texto="alta, flaca, amarillenta" tam={24} color={KC.ink} />
       <Etq T={T} at={K.S + 1.6} until={K.Ku - 0.3} x={950} y={760} texto="sana" lado="izq" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.S + 3.0} until={K.Ku - 0.3} x={240} y={500} texto="espiga vacía" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.S + 3.0} until={K.Ku - 0.3} x={200} y={690} texto="espiga vacía" tam={28} color={KC.ink} />
       {/* Kurosawa */}
       <TarjetaEstudio T={T} at={K.Ku + 0.2} until={K.Y - 0.3} anio="1926" quien="Eiichi Kurosawa" revista="el caldo filtrado del hongo" x={330} y={560} />
       <Chip T={T} at={K.Ku + 3.7} until={K.Y - 0.3} texto="lo que estiraba al arroz era algo que el hongo soltaba" x={540} y={760} tam={27} borde={KC.gold} />
       {/* Yabuta */}
       <TarjetaEstudio T={T} at={K.Y + 0.2} until={K.F - 0.3} anio="1935" quien="Teijiro Yabuta · U. de Tokio" revista="la purificó y la llamó giberelina" x={540} y={560} />
-      <Etq T={T} at={K.Y + 1.8} until={K.F - 0.3} x={430} y={1080} texto="giberelina (esquema)" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Y + 2.2} until={K.F - 0.3} x={60} y={1185} texto="por Gibberella fujikuroi, nombre viejo del hongo" it tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Y + 1.8} until={K.F - 0.3} x={560} y={820} texto="giberelina (esquema)" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Y + 2.2} until={K.F - 0.3} x={340} y={1120} texto="nombre viejo del hongo:" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Y + 2.4} until={K.F - 0.3} x={340} y={1165} texto="Gibberella fujikuroi" it tam={28} color={KC.ink} />
       {/* freno */}
       <Chip T={T} at={K.F + 0.1} until={K.P - 0.3} texto="las plantas también la hacen" x={340} y={420} tam={30} borde={KC.mint} />
       <Etq T={T} at={K.F + 0.7} until={K.P - 0.3} x={400} y={760} texto="giberelina" tam={30} color={KC.gold2} />
@@ -421,12 +429,11 @@ function GiberelinasShot() {
       <Etq T={T} at={K.E + 1.4} until={K.Ce - 0.3} x={300} y={1010} texto="Alicante" tam={28} color={KC.ink} />
       <NumeroGigante T={T} at={K.E + 2.6} until={K.Ce - 0.3} valor={90} desde={50} dur={2.2} prefijo="+50 a " sufijo=" %" etiqueta="más peso por uva" x={360} y={560} tam={110} color={KC.leaf} />
       <Chip T={T} at={K.E + 4.6} until={K.Ce - 0.3} texto="según el año" x={360} y={700} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.E + 3.2} until={K.Ce - 0.3} x={600} y={1210} texto="rociada con ácido giberélico" tam={24} color={KC.ink} />
       {/* células */}
       <Chip T={T} at={K.Ce + 0.1} until={K.Ta - 0.3} texto="POR DENTRO · LA PULPA" x={540} y={430} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ce + 0.5} until={K.Ta - 0.3} x={80} y={560} texto="sin tratar · 116 µm" tam={28} color="#9fd7ef" />
-      <Etq T={T} at={K.Ce + 0.9} until={K.Ta - 0.3} x={560} y={560} texto="con GA3 · 124 µm" tam={28} color={KC.gold2} />
-      <Chip T={T} at={K.Ce + 1.6} until={K.Ta - 0.3} texto="mismo número · células más grandes" x={540} y={1180} tam={30} borde={KC.gold} />
+      <Etq T={T} at={K.Ce + 0.5} until={K.Ta - 0.3} x={80} y={540} texto="sin tratar · 116 µm" tam={28} color="#9fd7ef" />
+      <Etq T={T} at={K.Ce + 0.9} until={K.Ta - 0.3} x={560} y={540} texto="con GA3 · 124 µm" tam={28} color={KC.gold2} />
+      <Chip T={T} at={K.Ce + 1.6} until={K.Ta - 0.3} texto="mismo número · células más grandes" x={540} y={1130} tam={30} borde={KC.gold} />
       {/* tanque */}
       <Chip T={T} at={K.Ta + 0.3} until={K.Ca - 0.3} texto="como la penicilina" x={330} y={430} tam={34} borde={KC.gold} />
       <Etq T={T} at={K.Ta + 0.8} until={K.Ca - 0.3} x={1040} y={700} lado="izq" texto="Fusarium fujikuroi" it tam={28} color={KC.ink} />
@@ -438,7 +445,7 @@ function GiberelinasShot() {
       <Etq T={T} at={K.Ca + 2.6} until={K.C - 0.3} x={150} y={1200} texto="California" tam={28} color={KC.ink} />
       {/* cierre */}
       <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="la hormona de un hongo" x={330} y={420} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={700} y={1180} texto="la plántula boba" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={640} y={1090} texto="la plántula boba" tam={26} color={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={230} y={1430} />
