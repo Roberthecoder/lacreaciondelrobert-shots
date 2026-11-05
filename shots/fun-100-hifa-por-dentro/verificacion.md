@@ -57,4 +57,29 @@ Resumen (2.ª vuelta): las 5 ⚠️ de la primera vuelta quedaron corregidas en 
 
 El dibujo es esquemático.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador, que no escribió el guion ni la verificación anterior. Se releyeron `narracion.json` (12 líneas), los letreros de `hifa.jsx` (subtítulos, notas, chips y `TarjetaEstudio`) y `publicacion.md`, y se volvieron a abrir las fuentes (texto completo de PMC; resumen y afiliación de PubMed). No se cambió nada.
+
+| Afirmación (voz / pantalla / publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Moho = red de tubos (hifas); "no está hecho de hilos: son tubos" | ✅ | Commer y Shaw, PMC7889276 | "tubular structures called hyphae" | 2020 |
+| Hifa de *N. crassa* ≈ 10 µm (las más gruesas) | ✅ | Simonin et al., PMC3486018 | "“leader or trunk” hyphae (∼10 μm in diameter) versus primary (∼7 μm in diameter) and secondary (∼5…" | 2012 |
+| Pelo ≈ 70 µm (aproximado) | ✅ | Hu et al., CCID 15:843 | "The mean hair shaft diameter was 68.65±8.00μm" (fila 5 de arriba; valor típico, dicho como "unas") | 2022 |
+| Solo crece por la punta | ✅ | Commer y Shaw | "adding cell wall and membrane exclusively at the apex" | 2020 |
+| Spitzenkörper: nube de vesículas que trae membrana y enzimas de pared | ✅ | Steinberg, PMC1828937 | "Vesicles are stored in the Spitzenkörper"; "wall-forming enzymes (e.g., chitin synthases and glucanases)" | 2007 |
+| "Creciendo rápido, se calculan 38 000 por minuto" (nota "estimación de 1974", "por punta") | ✅ | Steinberg 2007, ref. 19 = Collinge y Trinci 1974, *Arch. Microbiol.* 99:353 | "it was estimated that rapid growth of Neurospora crassa requires ∼38,000 vesicles fusing with the tip per minute (19)" | 1974 |
+| 2009, Ensenada (CICESE): el flujo arrastra a la mayoría de los núcleos; algunos van en contra | ✅ | Ramos-García et al., PMC2794216 | "Centro de Investigación Científica y Educación Superior de Ensenada, Ensenada, Mexico"; "most nuclei seemed to move forward passively, presumably carried by the cytoplasmic bulk flow, a small proportion of the movement detected was either retrograde or accelerated anterograde" | 2009 |
+| Citoplasma corre hacia la punta | ✅ | Roper et al., PMC4577449 | "continual tipward flow of cytoplasm" | 2015 |
+| Septo con poro por donde pasa el citoplasma; si se rompe, "se desangra" | ✅ | Steinberg et al., PMC5745230 | "injury of individual cells causes extensive cytoplasmic bleeding" | 2017 |
+| Cuerpos de Woronin "corren a cerrar el poro" (en *N. crassa* están en la corteza y se sueltan) | ✅ | Ng et al., PMC2690989; Steinberg 2017 | "holds the organelle in position until signals from cellular damage induce release, translocation to the septal pore"; "WBs rapidly translocate into the septal pore" | 2009 / 2017 |
+| 2000, U. Rockefeller (Jedd y Chua, *Nat Cell Biol*): hallaron su proteína Hex1, que se ensambla sola | ✅ | PubMed 10783241 | "The Rockefeller University, 1230 York Avenue, New York"; "we purify the Woronin body from Neurospora crassa and isolate Hex1, a new protein"; "implying a Hex1-encoded mechanism of Woronin-body assembly" | 2000 |
+| Sin Hex1 no hay tapones y las hifas rotas sangran citoplasma | ✅ | PubMed 10783241 | "Deletion of HEX1 in N. crassa eliminates Woronin bodies from the cytoplasm and results in hyphae that exhibit a cytoplasmic-bleeding phenotype in response to cell lysis." | 2000 |
+| Núcleos que viajan 10 mm/h, más del triple de lo que crece la colonia (UCLA y UC Berkeley, *PNAS*) | ✅ | Roper et al., PMC3740868 | "traveling up to 10 mm in 1 h, i.e., more than three times faster than the growth rate of the colony"; "Department of Mathematics, University of California, Los Angeles" | 2013 |
+| Naranja = pigmento de los conidios | ✅ | Parra-Rivero et al., PMC7346100 | (fila 1 de arriba) "accumulation in the airborne spores" | 2020 |
+| Resto de `publicacion.md` (GFP, zona sin núcleos, septos simples, cristal hexagonal) | ✅ | filas 13–21 de arriba | Sin datos nuevos fuera de la tabla. | — |
+
+Nota: el mismo año, Tenney et al. (2000, *Fungal Genet. Biol.*) también describieron *hex-1*; la voz no dice "los primeros", así que "hallaron" sigue siendo exacto.
+Resultado: todo ✅, sin cambios en voz, pantalla ni publicación.
+
 VEREDICTO: APROBADO
