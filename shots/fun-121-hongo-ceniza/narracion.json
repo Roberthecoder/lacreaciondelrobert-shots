@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Este bosque quemado no está muerto: aquí brota un hongo que se come parte del carbón."
+      "texto": "Este bosque quemado no está muerto: aquí brota un hongo que puede comerse parte del carbón."
     },
     {
       "escena": "Tu",
@@ -13,7 +13,7 @@
     },
     {
       "escena": "Carbon",
-      "texto": "Cuando un bosque arde, no todo se hace humo: mucha madera queda como carbón."
+      "texto": "Cuando un bosque arde, no todo se hace humo: parte de la madera queda como carbón."
     },
     {
       "escena": "Siglos",
@@ -21,7 +21,7 @@
     },
     {
       "escena": "Pyronema",
-      "texto": "Pero en semanas o meses aparece Pyronema: tapetes de copitas naranjas de un milímetro."
+      "texto": "Pero en semanas o meses aparece Pyronema: tapetes de discos naranjas de un milímetro."
     },
     {
       "escena": "Pregunta",
@@ -29,15 +29,15 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 2021, en Berkeley y Wisconsin, estudiaron este hongo, sacado del incendio Rim de 2013, en California."
+      "texto": "En 2021, en Berkeley y Wisconsin, estudiaron este hongo del incendio Rim de 2013, en California."
     },
     {
       "escena": "Alimento",
-      "texto": "Le dieron de único alimento carbón de pino hecho a setecientos cincuenta grados, y creció."
+      "texto": "Su única fuente de carbono fue carbón de pino hecho a setecientos cincuenta grados, y creció."
     },
     {
       "escena": "Isotopo",
-      "texto": "Marcaron ese carbón con carbono trece, más pesado, y el hongo soltó parte como dióxido de carbono."
+      "texto": "Hicieron ese carbón con pinitos que respiraron carbono trece, y el hongo soltó parte como dióxido de carbono."
     },
     {
       "escena": "Genes",

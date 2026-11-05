@@ -4,27 +4,26 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** 121 (3 dígitos) · rama `claude/fun-120-124-suelo-clima`.
 - **Formato:** N1 Por dentro + N5 El experimento (a la mitad se recrea el experimento del ¹³C). Viaje: bosque quemado (macro) →
   carbón por dentro y el hongo al microscopio (micro) → el mismo bosque quemado, ahora con tapetes naranjas (macro).
-- **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre lo que se ve: «Este bosque quemado no está muerto: aquí brota un hongo que se come parte del carbón.»
+- **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre lo que se ve: «Este bosque quemado no está muerto: aquí brota un hongo que puede comerse parte del carbón.»
 - **Ojo con las palabras:** el hongo come **carbón** (materia orgánica pirogénica), no la **ceniza** (que es mineral). Por eso el gancho
   dice «bosque quemado» y no «ceniza». La carpeta conserva la clave `hongo-ceniza` que dio el coordinador.
 - **No es el shot de morillas** (fun-72): aquí no aparecen morillas; el foco es el carbón y el carbono del suelo.
-- **Voz:** 168 palabras / 947 caracteres (≈ 58 s) + cierre 3.5 s → objetivo **61.5 s**. Voz pendiente de aprobación de Robert.
-- **Estado:** guion listo; **falta la verificación independiente** (este subagente no tiene la herramienta Agent). No animar hasta
-  que `verificacion.md` termine en `VEREDICTO: APROBADO`.
+- **Voz:** 171 palabras / 964 caracteres (≈ 58 s) + cierre 3.5 s → objetivo **61.5 s**. Voz pendiente de aprobación de Robert.
+- **Estado:** verificado por un verificador independiente (24 afirmaciones; 3 ⚠️ corregidas: gancho «puede comerse», «parte de la madera», «hicieron ese carbón con pinitos que respiraron carbono trece»; «única fuente de carbono»). Re-verificación a cargo del coordinador.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Este bosque quemado no está muerto: aquí brota un hongo que se come parte del carbón. | Cuadro 0: ladera de pinos quemados (troncos negros, suelo gris-negro), humo que todavía sube (se mueve antes de 1 s). En el suelo se enciende un parche naranja. Robert sorprendido (lado `gancho`). |
+| 0 | Gancho | Este bosque quemado no está muerto: aquí brota un hongo que puede comerse parte del carbón. | Cuadro 0: ladera de pinos quemados (troncos negros, suelo gris-negro), humo que todavía sube (se mueve antes de 1 s). En el suelo se enciende un parche naranja. Robert sorprendido (lado `gancho`). |
 | 1 | Tu | Como tu anafre, o un cerro tras la temporada de incendios. | Fondo amarillo de la marca: un anafre con carbón brillando → se apaga y queda negro; al lado, una silueta de cerro con pinos quemados y chip «temporada de incendios». |
-| 2 | Carbon | Cuando un bosque arde, no todo se hace humo: mucha madera queda como carbón. | Fondo naranja: un tronco que arde; flechas: parte sube como humo, parte queda como carbón negro en el suelo. Etiqueta «carbón (materia orgánica pirogénica)». |
+| 2 | Carbon | Cuando un bosque arde, no todo se hace humo: parte de la madera queda como carbón. | Fondo naranja: un tronco que arde; flechas: parte sube como humo, parte queda como carbón negro en el suelo. Etiqueta «carbón (materia orgánica pirogénica)». |
 | 3 | Siglos | Ese carbón puede durar siglos en el suelo: se creía muy difícil de comer. | Corte de suelo: trozos de carbón en capas; medidor de años que corre «100… 500… 1000 años» (texto: «a veces cientos o miles de años»). Microbios esquemáticos que «rebotan» contra el carbón. |
-| 4 | Pyronema | Pero en semanas o meses aparece Pyronema: tapetes de copitas naranjas de un milímetro. | Regreso al suelo quemado, zoom: tapete de apotecios naranja-rosado, discos/cojincitos apretados que se deforman entre sí, sobre una telita blanca de hifas. Etiqueta *Pyronema*. Barra de escala 1 mm. Contador «semanas → meses». |
+| 4 | Pyronema | Pero en semanas o meses aparece Pyronema: tapetes de discos naranjas de un milímetro. | Regreso al suelo quemado, zoom: apotecios como discos/cojincitos casi planos de 0.5–1 mm, salmón a naranja-rojo, en grupos apretados que se deforman entre sí, sobre un tapete blanco de hifas. Etiqueta *Pyronema*. Barra de escala 1 mm. Contador «semanas → meses». |
 | 5 | Pregunta | ¿De qué vive, si todo está quemado? | **Re-gancho.** Robert grande (`presentador`), pensativo, sobre el suelo negro con el tapete naranja. |
-| 6 | Estudio | En 2021, en Berkeley y Wisconsin, estudiaron este hongo, sacado del incendio Rim de 2013, en California. | TarjetaEstudio «2021 · UC Berkeley + U. de Wisconsin-Madison · Frontiers in Microbiology». Mapa esquemático de California con el punto «incendio Rim, 2013». Caja Petri con el hongo aislado. |
-| 7 | Alimento | Le dieron de único alimento carbón de pino hecho a setecientos cincuenta grados, y creció. | Laboratorio: carbón de pino en un horno «750 °C» → polvo negro dentro de una caja Petri; el micelio crece radialmente sobre él. Chip «único alimento: carbón». |
-| 8 | Isotopo | Marcaron ese carbón con carbono trece, más pesado, y el hongo soltó parte como dióxido de carbono. | Fondo oscuro (lo micro): átomos de carbono; algunos se pintan de dorado «¹³C (más pesado)». Frasco cerrado con el cultivo: salen burbujitas doradas «CO₂ con ¹³C». |
+| 6 | Estudio | En 2021, en Berkeley y Wisconsin, estudiaron este hongo del incendio Rim de 2013, en California. | TarjetaEstudio «2021 · UC Berkeley + U. de Wisconsin-Madison · Frontiers in Microbiology». Mapa esquemático de California con el punto «incendio Rim, 2013». Caja Petri con el hongo aislado. |
+| 7 | Alimento | Su única fuente de carbono fue carbón de pino hecho a setecientos cincuenta grados, y creció. | Laboratorio: astillas de pino en un horno «750 °C · 30 min» → carbón negro en una caja Petri con agar; el micelio crece radialmente sobre él. Chip «única fuente de carbono: carbón». |
+| 8 | Isotopo | Hicieron ese carbón con pinitos que respiraron carbono trece, y el hongo soltó parte como dióxido de carbono. | Un pinito recibe flechas doradas «¹³CO₂» (¹³C: carbono más pesado) → su madera al horno 750 °C → carbón dorado. Frasco cerrado con el cultivo (fondo oscuro): salen burbujitas doradas «CO₂ con ¹³C». |
 | 9 | Genes | Y encendió genes para desarmar los anillos que forman ese carbón. | Hebra de ADN con genes que se encienden; al lado, anillos aromáticos (hexágonos) del carbón que se abren. Etiqueta «genes de compuestos aromáticos». |
 | 10 | Poquito | Ojo: fue poco y en laboratorio; la mayor parte de su gas vino de otras fuentes. | Barra de CO₂ total: una franja dorada chiquita («del carbón») y una gris grande («de otras fuentes», ~4.5 veces más). Chip «en laboratorio». |
 | 11 | Cierre | Así que ese bosque quemado no está muerto: un hongo puede regresar su carbono al ciclo. | **Regreso a la imagen del inicio:** la misma ladera quemada, ahora con tapetes naranjas en el suelo, una flechita de CO₂ hacia el aire y un brote verde. |
@@ -63,6 +62,7 @@ Plan: 8 apariciones · ≈ 28 s en pantalla (+ cierre 3.5 s) · 7 poses distinta
    > "*Pyronema domesticum* grew readily on agar media where the sole carbon source was PyOM" (pine wood PyOM produced at 750°C)
    > "a comprehensive induction of genes involved in the metabolism and mineralization of aromatic compounds"
    > "we used 13C-labeled 750°C PyOM to demonstrate that *P. domesticum* is capable of mineralizing PyOM to CO2"
+   > "13C-labeled 750°C PyOM was produced from P. strobus as described above, except the biomass was from 13C-labeled seedlings" (pinitos de *Pinus strobus* de 2 años con pulsos de ¹³CO₂)
    > "This result indicates that *P. domesticum* mineralized some of the PyOM by converting the carbon from 750°C PyOM into CO2."
    > "The CO2 originating from non-PyOM sources in our experiments exceeded the amount from PyOM by ~4.5 fold."
    > "Fruiting bodies of the genus *Pyronema* are among the first macrofungi to emerge from burned soil, doing so within weeks to months after fire"

@@ -21,7 +21,7 @@
     },
     {
       "escena": "Senal",
-      "texto": "La seta sale cuando la temperatura y la humedad le dan la señal."
+      "texto": "La seta suele salir cuando la temperatura y la humedad le dan la señal."
     },
     {
       "escena": "Senal",
@@ -41,7 +41,7 @@
     },
     {
       "escena": "Calendario",
-      "texto": "En trescientas quince especies, en promedio, la primera seta salía antes y la última, después."
+      "texto": "En trescientas quince especies, en promedio, la primera seta ahora sale antes y la última, después."
     },
     {
       "escena": "DosVeces",
@@ -53,7 +53,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Cuando vayas por hongos, recuerda: su calendario lo escribe el clima, y el clima está cambiando."
+      "texto": "Cuando vayas por hongos, recuerda: su calendario lo marca sobre todo el clima, y el clima está cambiando."
     }
   ]
 }

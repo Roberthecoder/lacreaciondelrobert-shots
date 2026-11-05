@@ -87,7 +87,7 @@ Apariciones 9 · ≈ 32 s en pantalla (+ cierre) · ≥ 7 poses distintas · nun
    > "maximal rates of evolution within 6 min" (tras mojar la tierra seca)
    > Pulso "sometimes referred to as the Birch effect"; "also observed by Birch (1958)"
    > "The complete cessation of CO2 efflux following sterilisation"; "approximately equal contributions from biochemical (outside membranes)
-   > and organismal (inside membranes) sources" (por eso: «de sus microbios y de sus restos»)
+   > and organismal (inside membranes) sources" (por eso: «de sus microbios y de enzimas que trabajan fuera de ellos»)
 5. Jarvis, P. et al. (2007). Drying and wetting of Mediterranean soils stimulates decomposition and carbon dioxide emission: the "Birch
    effect". *Tree Physiology* 27(7): 929–940. https://academic.oup.com/treephys/article/27/7/929/1666540
    > "a phenomenon first characterized on agricultural and forest soils in East Africa in the 1950s and 1960s by H. F. Birch"
