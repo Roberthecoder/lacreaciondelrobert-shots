@@ -5,7 +5,7 @@
    "titulo": "Esto no es una morilla: es combustible de cohete (la falsa morilla, Gyromitra esculenta)",
    "serie": "Shot Fungi Mati",
    "numero": 110,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/fun-110-falsa-morilla",
    "rama": "claude/fun-110-114-comestibles",
    "fuentes": [
@@ -27,7 +27,7 @@
    "titulo": "Horas sin nada no es estar a salvo: Cortinarius y la orelanina, el hongo que avisa días después",
    "serie": "Shot Fungi Mati",
    "numero": 111,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/fun-111-cortinarius",
    "rama": "claude/fun-110-114-comestibles",
    "fuentes": [
@@ -49,7 +49,7 @@
    "titulo": "«Ya lo comí antes y no me hizo nada»: el paxilo enrollado (Paxillus involutus) y la hemólisis inmune",
    "serie": "Shot Fungi Mati",
    "numero": 112,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/fun-112-paxillus",
    "rama": "claude/fun-110-114-comestibles",
    "fuentes": [
@@ -71,7 +71,7 @@
    "titulo": "Ese hongo blanco de tu jardín no es champiñón: Chlorophyllum molybdites y su esporada verde",
    "serie": "Shot Fungi Mati",
    "numero": 113,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/fun-113-esporada-verde",
    "rama": "claude/fun-110-114-comestibles",
    "fuentes": [
@@ -93,7 +93,7 @@
    "titulo": "Este hongo se come… si no tomas alcohol: Coprinopsis atramentaria y la coprina",
    "serie": "Shot Fungi Mati",
    "numero": 114,
-   "estado": "guion",
+   "estado": "renderizado",
    "carpeta": "shots/fun-114-hongo-cerveza",
    "rama": "claude/fun-110-114-comestibles",
    "fuentes": [
