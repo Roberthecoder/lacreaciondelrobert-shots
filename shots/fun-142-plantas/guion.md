@@ -4,7 +4,7 @@
 - **Formato:** N3 Capítulos y medidores + N1 Por dentro: cuatro "pruebas" numeradas (chips PRUEBA 1–4 bajo el logo), viaje
   champiñón y lechuga en la tabla de picar → por dentro (célula, pared, gránulos) → árbol de parentesco → el mismo champiñón en la tabla, ya "ubicado" junto a ti.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" + #2 "Tú contra el de al lado": «Ese champiñón no es una verdura: es más pariente tuyo que de la lechuga.»
-- **Duración:** voz 965 caracteres / 165 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
+- **Duración:** voz 965 caracteres / 165 palabras (≈ 58 s) + cierre 3.5 s → **61.7 s** en la base (escenas medidas en el `.dc.html`).
 - **Voz:** pendiente de aprobación de Robert (~965 créditos de ElevenLabs).
 - **Ojo (no repetir fun-01):** aquí no se explica micelio/hifas/cuerpo fructífero; el eje es el parentesco y el mito de "son verduras".
 - **Tono justo:** en la cocina (y en guías de alimentación) sí cuentan como verdura; lo que cambia es la biología.
@@ -13,7 +13,7 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese champiñón no es una verdura: es más pariente tuyo que de la lechuga. | Fondo amarillo de lunares: tabla de picar con un champiñón (*Agaricus bisporus*: sombrero blanco, laminillas rosadas-cafés bajo el sombrero, pie corto) y una hoja de lechuga. El champiñón rueda (cuadro 0.3) y "brinca" de la lechuga hacia una silueta de mano humana. Chips "verdura ✗" / "pariente tuyo ✓". Barra de escala 5 cm. |
+| 0 | Gancho | Ese champiñón no es una verdura: es más pariente tuyo que de la lechuga. | Fondo amarillo de lunares: tabla de picar con un champiñón (*Agaricus bisporus*: sombrero blanco, laminillas rosadas-cafés bajo el sombrero, pie corto) y una hoja de lechuga. El champiñón rueda (cuadro 0.3) y "brinca" de la lechuga hacia una insignia rosa «TÚ» (ícono, no a escala). Chips "verdura ✗" / "pariente tuyo ✓"; etiqueta "champiñón · *Agaricus bisporus*". Barra de escala 5 cm. |
 | 1 | Cocina | En la cocina cuenta como verdura; en biología, es otro reino. | Plato con la sección "verduras" (esquemático, sin marca); el champiñón está ahí. Luego se abren tres puertas: PLANTAE · ANIMALIA · FUNGI; el champiñón entra en FUNGI. |
 | 2 | Clorofila | Prueba uno: no tiene clorofila, así que no hace fotosíntesis. | Chip PRUEBA 1. Zoom a una célula de lechuga (fondo oscuro, «AL MICROSCOPIO»): cloroplastos verdes con rayitos de sol. Al lado, una célula de hongo: sin cloroplastos; el sol rebota. Etiqueta "clorofila: 0". Barra 10 µm. |
 | 3 | Estomago | Prueba dos: come como estómago al revés: suelta enzimas afuera y absorbe la comida deshecha. | Chip PRUEBA 2. Fondo menta: una punta de hongo sobre una hoja caída suelta puntitos (enzimas) hacia afuera; la hoja se deshace en moléculas chiquitas que entran. Junto, un estómago esquemático "por dentro" (comida adentro) vs. hongo (comida afuera) con flechas al revés. |
@@ -25,26 +25,30 @@
 | 9 | Arbol | Resultado: hongos y animales son grupos hermanos; las plantas van por su lado. | Árbol que crece: una rama se divide en hongos + animales; las plantas salen aparte. Etiqueta "grupos hermanos". |
 | 10 | Firma | Comparten hasta un pedacito extra de doce aminoácidos en una proteína. | En las tiras de secuencia aparece un bloque dorado de 12 casillas en el animal y en el hongo; en la planta, hueco. Etiqueta "12 aminoácidos extra · proteína EF-1α". |
 | 11 | Whittaker | Y el sistema de cinco reinos, con los hongos en su propio reino, lo publicó otro Robert: Robert Whittaker, en 1969. | Cinco círculos de reinos se acomodan; TarjetaEstudio "1969 · R. H. Whittaker · Science". Robert ríe (otro Robert). |
-| 12 | Cierre | Así que ese champiñón no es verdura: es tu primo lejano. | **Regreso a la imagen del inicio:** la misma tabla de picar, el champiñón ahora junto a la silueta de mano, con la etiqueta "Fungi · primo lejano" y los 4 chips de prueba pegados. |
+| 12 | Cierre | Así que ese champiñón no es verdura: es tu primo lejano. | **Regreso a la imagen del inicio:** la misma tabla de picar, el champiñón ahora junto a la insignia «TÚ», con la etiqueta "Fungi · primo lejano" y los 4 chips de prueba pegados. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y continua, curiosa, sin golpe; se abre en el árbol ("grupos hermanos"). Efectos: champiñón que rueda, ding de cada chip PRUEBA, rayo de sol que rebota, burbujeo de enzimas, crujido de caparazón, tics de secuencias alineándose, campanita en el bloque dorado.
 
-## Robert en pantalla (provisional: se ajusta con la animación)
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y quién es pariente de quién?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no es una verdura» |
-| 2 | 8.8 | 11.6 | 06_pensativo_menton | `arriba-der` | «no tiene clorofila» |
-| 3 | 13.5 | 17.5 | 13_senalando_arriba | `arriba-der` | «estómago al revés» |
-| 4 | 23.7 | 27.4 | 11_sorprendido | `arriba-der` | «caparazón de los cangrejos» |
-| 5 | 32.5 | 34.6 | 07_pensativo_puno | `grande` | «¿Y quién es pariente de quién?» |
-| 6 | 38.5 | 43.0 | 04_bajando_lentes | `arriba-der` | «grupos hermanos» |
-| 7 | 47.0 | 54.0 | 03_riendo (o pose de risa disponible) | `arriba-der` | «otro Robert» |
-| 8 | 54.0 | 58.0 | 02_apuntando_camara | `arriba-der` | «es tu primo lejano» |
-| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+| 1 | 0.0 | 2.8 | 11_sorprendido | `gancho` | «no es una verdura: es más pariente tuyo» (cuadro 0) |
+| 2 | 8.6 | 11.8 | 06_pensativo_menton | `arriba-der` | «no tiene clorofila» |
+| 3 | 12.5 | 17.1 | 13_senalando_arriba | `arriba-der` | «estómago al revés» |
+| 4 | 23.1 | 27.1 | 11_sorprendido | `arriba-der` | «caparazón de los cangrejos y de los insectos» |
+| 5 | 29.1 | 32.1 | 04_bajando_lentes | `arriba-der` | «igual que tu hígado» |
+| 6 | 32.25 | 34.6 | 07_pensativo_puno | `grande` | «¿Y quién es pariente de quién?» |
+| 7 | 44.1 | 47.9 | 11_sorprendido | `arriba-der` | «doce aminoácidos» (el dato más fuerte) |
+| 8 | 50.1 | 54.5 | 05_sonriendo_dientes_uniformes | `arriba-der` | «otro Robert: Robert Whittaker» |
+| 9 | 55.0 | 58.1 | 02_apuntando_camara | `arriba-der` | «es tu primo lejano» |
+| — | 58.2 | 61.7 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 8 · ≈ 30 s en pantalla (+ cierre) · ≥ 6 poses distintas · nunca la misma dos veces seguidas.
+Apariciones 9 · **≈ 31.6 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
+En el árbol (39–44 s) Robert no sale para no tapar la rama de animales; regresa en «doce aminoácidos».
 
 ## Fuentes (verificadas, ver verificacion.md)
 

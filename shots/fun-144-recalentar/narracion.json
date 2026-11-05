@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esos hongos recalentados no son veneno: el peligro es el tiempo que pasaron tibios."
+      "texto": "Esos hongos recalentados no son veneno: el peligro es cuánto pasaron tibios."
     },
     {
       "escena": "Abuela",
@@ -17,7 +17,7 @@
     },
     {
       "escena": "Banquete",
-      "texto": "Tienen mucha agua y proteína: un banquete para las bacterias."
+      "texto": "Tienen mucha agua: un caldo perfecto para las bacterias."
     },
     {
       "escena": "Tibio",
@@ -25,11 +25,11 @@
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Y si lo recalientas bien fuerte, no se arregla?"
+      "texto": "¿Y si lo recalientas fuerte, no se arregla?"
     },
     {
       "escena": "Toxina",
-      "texto": "No siempre: según la FDA, en 2012, la toxina que causa vómito de Bacillus cereus aguanta 121 grados por media hora."
+      "texto": "No siempre: la toxina del vómito de Bacillus cereus, típica del arroz, aguanta 121 grados por media hora."
     },
     {
       "escena": "Calor",
@@ -41,15 +41,15 @@
     },
     {
       "escena": "Refri",
-      "texto": "Para hongos guisados, un centro del consumidor alemán pide refri a máximo 4 grados y comerlos en 24 horas."
+      "texto": "En Alemania, un centro del consumidor pide refri a máximo 4 grados y comerlos en 24 horas."
     },
     {
       "escena": "Recalentar",
-      "texto": "Recaliéntalos una sola vez y bien: 74 grados por dentro, pide la FDA."
+      "texto": "Recaliéntalos a 74 grados por dentro, dice la FDA; y una sola vez, aconsejan en Alemania."
     },
     {
       "escena": "Arroz",
-      "texto": "Lo curioso: esa toxina suele salir en el arroz; la regla es de todas las sobras."
+      "texto": "Lo curioso: esta regla no es solo de hongos, es de todas las sobras."
     },
     {
       "escena": "Cierre",

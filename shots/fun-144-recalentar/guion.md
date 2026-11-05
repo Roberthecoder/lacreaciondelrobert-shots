@@ -2,8 +2,8 @@
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #144 · rama `claude/fun-140-144-mitos` (lote de mitos #140–#144).
 - **Formato:** N2 · EL NÚMERO con mito tachado y «qué sí sirve» (los números: 2 horas, 4 °C, 24 horas, 74 °C, 121 °C). Viaje macro → micro → macro: la olla de hongos en la estufa → por dentro, al microscopio (bacterias que se multiplican, toxina) → la misma olla, ya guardada y recalentada bien.
-- **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre lo que se ve en pantalla: «Esos hongos recalentados no son veneno: el peligro es el tiempo que pasaron tibios.» (con tono de #6, mito de la abuela).
-- **Duración objetivo:** voz 982 caracteres / 173 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre lo que se ve en pantalla: «Esos hongos recalentados no son veneno: el peligro es cuánto pasaron tibios.» (con tono de #6, mito de la abuela).
+- **Duración objetivo:** voz 954 caracteres / 165 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** práctico y sin alarmismo; sin burlarse de la abuela (su consejo tenía sentido sin refrigerador). Consejo general de inocuidad, no consejo médico.
 
@@ -11,18 +11,18 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esos hongos recalentados no son veneno: el peligro es el tiempo que pasaron tibios. | Fondo amarillo. Un plato de champiñones guisados (*Agaricus bisporus*: sombrero blanco-café, laminillas rosadas a cafés) entra a un microondas que gira desde el cuadro 0.2; vapor. Etiqueta «¿veneno?» que se tacha y cambia por un reloj «⏱ horas tibio». |
+| 0 | Gancho | Esos hongos recalentados no son veneno: el peligro es cuánto pasaron tibios. | Fondo amarillo. Un plato de champiñones guisados (*Agaricus bisporus*: sombrero blanco-café, laminillas rosadas a cafés) entra a un microondas que gira desde el cuadro 0.2; vapor. Etiqueta «¿veneno?» que se tacha y cambia por un reloj «⏱ horas tibio». |
 | 1 | Abuela | Seguro tu abuela te dijo: «los hongos no se recalientan». | Fondo rosa. Globo de diálogo de una abuela (silueta amable, sin cara real) con la frase; sello rojo **MITO** a medias («¿mito?»). |
-| 2 | Origen | Ese consejo probablemente viene de cuando no había refrigerador. | Fondo menta, cocina antigua esquemática: alacena, olla de barro, sin refrigerador (un hueco punteado con «refri: ✗»). Chip «probablemente» (es la explicación más aceptada, no un dato histórico fechado). |
-| 3 | Banquete | Tienen mucha agua y proteína: un banquete para las bacterias. | Zoom al champiñón cortado: corte del sombrero con gotitas de agua y bolitas de proteína (esquemático). Chips «mucha agua» · «proteína». Barra de escala 2 cm. |
+| 2 | Origen | Ese consejo probablemente viene de cuando no había refrigerador. | Fondo menta, cocina antigua esquemática: alacena, olla de barro, sin refrigerador (un hueco punteado con «refri: ✗»). Chip «probablemente» (la fuente dice «vermutlich»). |
+| 3 | Banquete | Tienen mucha agua: un caldo perfecto para las bacterias. | Zoom al champiñón cortado: corte del sombrero lleno de gotitas de agua (esquemático). Chip «mucha agua». Barra de escala 2 cm. |
 | 4 | Tibio | Si el guiso pasa horas tibio, se multiplican y pueden dejar toxinas. | **AL MICROSCOPIO** (fondo oscuro #0E0F12): bacterias en bastón que se dividen en 2 → 4 → 8 → 16 (contador), dejando puntitos morados «toxinas». Termómetro lateral en «tibio». Barra de escala 2 µm. |
-| 5 | Pregunta | ¿Y si lo recalientas bien fuerte, no se arregla? | **Re-gancho.** La olla vuelve al fuego con llamas; «?» gigante; Robert grande, pensativo. |
-| 6 | Toxina | No siempre: según la FDA, en 2012, la toxina que causa vómito de *Bacillus cereus* aguanta 121 grados por media hora. | Fondo oscuro. Bastones de *Bacillus cereus* (etiqueta en cursiva) y la toxina (anillo pequeño, «cereulida»). TarjetaEstudio «FDA · Bad Bug Book, 2.ª ed. (2012)». Medidor de temperatura que sube hasta **121 °C** y cronómetro **30 min**: la toxina sigue intacta. |
-| 7 | Calor | El calor mata bacterias, pero no siempre lo que ya dejaron. | Las bacterias se apagan (✗ grises) con el calor; los puntitos morados de toxina se quedan. Chips «bacterias: ✗» · «toxina ya hecha: se queda». |
+| 5 | Pregunta | ¿Y si lo recalientas fuerte, no se arregla? | **Re-gancho.** La olla vuelve al fuego con llamas; «?» gigante; Robert grande, pensativo. |
+| 6 | Toxina | No siempre: la toxina del vómito de *Bacillus cereus*, típica del arroz, aguanta 121 grados por media hora. | Fondo oscuro. Cambio de plato: un **plato de arroz** (el ejemplo, no los hongos) con bastones de *Bacillus cereus* (etiqueta en cursiva) y la toxina (anillo pequeño, «cereulida»). Chip «ejemplo: arroz». TarjetaEstudio «FDA · Bad Bug Book, 2.ª ed. (2012)». Medidor de temperatura que sube hasta **121 °C** y cronómetro **30 min**: la toxina sigue intacta. |
+| 7 | Calor | El calor mata bacterias, pero no siempre lo que ya dejaron. | En el arroz, las bacterias se apagan (✗ grises) con el calor; los puntitos morados de toxina se quedan. Chips «bacterias: ✗» · «toxina ya hecha: se queda». |
 | 8 | Enfriar | Lo que importa es enfriar rápido: al refri antes de dos horas, en recipientes bajitos. | Fondo cian. Número grande **2 h**; la olla se reparte en tres recipientes bajitos que entran al refri. Chip «FDA». |
-| 9 | Refri | Para hongos guisados, un centro del consumidor alemán pide refri a máximo 4 grados y comerlos en 24 horas. | Interior del refri: termómetro **≤ 4 °C** y calendario/reloj **24 h** desde que se cocinaron. Chip «Verbraucherzentrale NRW (2025)». |
-| 10 | Recalentar | Recaliéntalos una sola vez y bien: 74 grados por dentro, pide la FDA. | Fondo naranja. Sartén con los hongos; termómetro de cocina clavado en el centro que marca **74 °C (165 °F)**; contador «1 sola vez». |
-| 11 | Arroz | Lo curioso: esa toxina suele salir en el arroz; la regla es de todas las sobras. | Fondo lila. Un plato de arroz con el anillo de la toxina; al lado aparecen otras sobras (sopa, frijoles, pasta) bajo el letrero «todas las sobras». Robert sonriendo. |
+| 9 | Refri | En Alemania, un centro del consumidor pide refri a máximo 4 grados y comerlos en 24 horas. | Interior del refri: termómetro **≤ 4 °C** y calendario/reloj **24 h** desde que se cocinaron. Chip «Verbraucherzentrale NRW (2025)». |
+| 10 | Recalentar | Recaliéntalos a 74 grados por dentro, dice la FDA; y una sola vez, aconsejan en Alemania. | Fondo naranja. Sartén con los hongos; termómetro de cocina clavado en el centro que marca **74 °C (165 °F)**; chip «FDA» junto al termómetro; contador «1 sola vez» con chip «Verbraucherzentrale Bremen (2025)». |
+| 11 | Arroz | Lo curioso: esta regla no es solo de hongos, es de todas las sobras. | Fondo lila. El plato de hongos se forma en fila con otras sobras (arroz, sopa, frijoles, pasta) bajo el letrero «todas las sobras». Robert sonriendo. |
 | 12 | Cierre | Así que tus hongos de ayer no son veneno: lo peligroso es dejarlos tibios. | **Regreso a la imagen del inicio:** el mismo plato de champiñones en el microondas, ahora con sus chips pegados «2 h · ≤ 4 °C · 24 h · 74 °C · 1 vez»; el «¿veneno?» tachado. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 

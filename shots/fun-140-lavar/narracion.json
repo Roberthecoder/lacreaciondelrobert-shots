@@ -3,19 +3,58 @@
   "salida": "Shot Lavar narrado.dc.html",
   "nota": "Shot Fungi Mati #140. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Ese champiñón no es una esponja: un minuto bajo el agua y casi no la absorbe." },
-    { "escena": "Mito", "texto": "Mito: no lo laves, se empapa." },
-    { "escena": "Estudio", "texto": "En 2018, America's Test Kitchen pesó hongos antes y después de sumergirlos un minuto." },
-    { "escena": "Cerrados", "texto": "El champiñón blanco y el café, con las laminillas tapadas, casi no retuvieron agua." },
-    { "escena": "Expuestas", "texto": "Los de laminillas expuestas, como el portobello o el shiitake, hasta un cuarto de su peso." },
-    { "escena": "Pregunta", "texto": "¿Por qué el champiñón repele el agua?" },
-    { "escena": "Hidrofobina", "texto": "Su piel está forrada de hidrofobina: una proteína que se acomoda en varillitas que rechazan el agua." },
-    { "escena": "Lleno", "texto": "Y ya viene lleno: según el USDA, casi noventa y dos de cada cien gramos son agua." },
-    { "escena": "Sarten", "texto": "Lo que arruina el dorado es el agua en la sartén: mientras no se evapora, no pasa de cien grados." },
-    { "escena": "Aceite", "texto": "La esponja sí existe, pero de aceite: crudo, sus bolsitas de aire se lo chupan." },
-    { "escena": "Rebanado", "texto": "Eso sí: ya rebanado, su carne absorbe agua como esponja." },
-    { "escena": "Consejo", "texto": "Enjuágalo entero bajo el chorro, sin jabón, y sécalo con un trapo limpio." },
-    { "escena": "Cierre", "texto": "Ese champiñón no es una esponja: es un impermeable relleno de agua." }
+    {
+      "escena": "Gancho",
+      "texto": "Ese champiñón no es una esponja: un minuto bajo el agua y casi no la absorbe."
+    },
+    {
+      "escena": "Mito",
+      "texto": "Mito: no lo laves, se empapa."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2018, America's Test Kitchen publicó una prueba: pesó hongos antes y después de un minuto en agua."
+    },
+    {
+      "escena": "Cerrados",
+      "texto": "Los de laminillas tapadas, como el champiñón blanco, casi no retuvieron agua."
+    },
+    {
+      "escena": "Expuestas",
+      "texto": "Los de laminillas expuestas, como el portobello o el shiitake, hasta un cuarto de su peso."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Por qué el champiñón repele el agua?"
+    },
+    {
+      "escena": "Hidrofobina",
+      "texto": "Su piel está forrada de hidrofobina: una proteína que forma varillitas que ayudan a rechazar el agua."
+    },
+    {
+      "escena": "Lleno",
+      "texto": "Además, según el USDA, casi el noventa y dos por ciento del champiñón es agua."
+    },
+    {
+      "escena": "Sarten",
+      "texto": "Lo que arruina el dorado es el agua en la sartén: hasta que se evapora, no pasa de cien grados."
+    },
+    {
+      "escena": "Aceite",
+      "texto": "La esponja sí existe, pero de aceite: crudo, sus bolsitas de aire se lo chupan."
+    },
+    {
+      "escena": "Rebanado",
+      "texto": "Ya rebanado, su carne sí absorbe agua como esponja."
+    },
+    {
+      "escena": "Consejo",
+      "texto": "Enjuágalo entero bajo el chorro, sin jabón, y sécalo con un trapo limpio."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese champiñón no es una esponja: es un impermeable relleno de agua."
+    }
   ],
   "mezcla": "oficial-30oct"
 }
