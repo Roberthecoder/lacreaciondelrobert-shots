@@ -5,11 +5,11 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esas manchas negras de tu mango no son golpes: es un hongo que entró cuando aún estaba verde."
+      "texto": "Esas manchas negras de tu mango muchas veces no son golpes: es un hongo que entró cuando aún estaba verde."
     },
     {
       "escena": "Hongo",
-      "texto": "Es Colletotrichum, y causa la antracnosis, la enfermedad más importante del mango."
+      "texto": "Es Colletotrichum: causa la antracnosis, la enfermedad más importante del mango en casi todo el mundo."
     },
     {
       "escena": "Lluvia",
@@ -29,23 +29,23 @@
     },
     {
       "escena": "Despierta",
-      "texto": "Al madurar, la cáscara pierde defensas, se ablanda y se endulza: el hongo despierta."
+      "texto": "Al madurar, la cáscara pierde buena parte de sus defensas químicas y la fruta se ablanda y se endulza: el hongo despierta."
     },
     {
       "escena": "Manchas",
-      "texto": "Invade la pulpa: manchas negras, hundidas, a veces en rayas como lágrimas."
+      "texto": "Se extiende: manchas negras, hundidas, a veces en rayas como lágrimas… y si avanza, llega a la pulpa."
     },
     {
       "escena": "Estudio",
-      "texto": "En 2020, Chapingo y el Colegio de Postgraduados reportaron, de cincuenta y nueve huertas mexicanas, cinco especies; las más agresivas: Colletotrichum siamense y asianum."
+      "texto": "En 2020, científicos mexicanos analizaron cincuenta y nueve huertas y hallaron cinco especies; las más agresivas: Colletotrichum siamense y asianum."
     },
     {
       "escena": "Exporta",
-      "texto": "México es el mayor exportador de mango: unas cuatrocientas setenta mil toneladas en 2024, casi nueve de cada diez a Estados Unidos."
+      "texto": "México es el mayor exportador de mango: unas cuatrocientas cincuenta mil toneladas en 2025, casi nueve de cada diez a Estados Unidos."
     },
     {
       "escena": "Bano",
-      "texto": "Allá entran tras más de una hora en agua a cuarenta y seis grados: es contra la mosca de la fruta, y de paso frena al hongo."
+      "texto": "Casi todos entran allá tras más de una hora en agua a cuarenta y seis grados: es contra la mosca de la fruta, y de paso ayuda a frenar al hongo."
     },
     {
       "escena": "Cierre",
