@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Pan Caja base narrada.dc.html",
+  "salida": "Shot Pan Caja narrado.dc.html",
+  "nota": "Shot Fungi Mati #62. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Sin marcas.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tu pan de caja no es inmortal: trae un antimoho que frena al moho."
+    },
+    {
+      "escena": "Horno",
+      "texto": "El horno mata las esporas, pero al enfriar y rebanar le caen otras."
+    },
+    {
+      "escena": "Mohos",
+      "texto": "Son de Penicillium, Aspergillus o Rhizopus, y en unos días ya ves la mancha."
+    },
+    {
+      "escena": "Etiqueta",
+      "texto": "Por eso el de caja suele traer propionato de calcio."
+    },
+    {
+      "escena": "Entra",
+      "texto": "En la masa, una parte queda como ácido propiónico sin carga y se cuela en la hifa."
+    },
+    {
+      "escena": "Proton",
+      "texto": "Adentro suelta su protón y le acidifica el citoplasma."
+    },
+    {
+      "escena": "Energia",
+      "texto": "La hifa gasta energía en sacarlo y se le traban enzimas: casi no crece."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces lo mata? No: solo lo frena, y algunos Penicillium lo resisten."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2012, en Cork, Irlanda, un pan con cero punto tres por ciento de propionato aguantó de diez a doce días sin moho."
+    },
+    {
+      "escena": "MasaMadre",
+      "texto": "Uno con masa madre seleccionada, de doce a catorce."
+    },
+    {
+      "escena": "Queso",
+      "texto": "Lo más raro: ese ácido también lo hacen las bacterias del queso suizo y las de tu intestino."
+    },
+    {
+      "escena": "Seguro",
+      "texto": "La FDA lo confirmó como seguro en 1984, y Europa lo revisó en 2014 sin ver riesgo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tu pan de caja no es inmortal: solo trae un freno para el moho."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

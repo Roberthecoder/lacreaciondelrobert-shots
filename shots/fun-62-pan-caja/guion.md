@@ -5,8 +5,8 @@
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Tu pan de caja no es inmortal: trae un antimoho que frena al moho.»
 - **No repite** el shot del ciclo del moho del pan (002 / Fungi Mati #01) ni el de "¿le quitas el moho?" (fun-11): aquí el tema es el **conservador** (propionato) y cómo frena al hongo por dentro. Si se dibuja *Rhizopus*, respeta las correcciones de Robert (colonización radial, rizoides directo del micelio, esporangios que no explotan).
 - **Tono:** explicar, no asustar ni vender. **Sin marcas**: bolsa de pan genérica "PAN DE CAJA" sin logo.
-- **Duración:** voz 958 caracteres / 183 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~960 créditos de ElevenLabs).
+- **Duración:** voz 964 caracteres / 186 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~965 créditos de ElevenLabs).
 
 ## Versión narrada
 
@@ -17,7 +17,7 @@
 | 2 | Mohos | Son de Penicillium, Aspergillus o Rhizopus, y en unos días ya ves la mancha. | Fondo menta. Zoom esquemático a tres esporas con su nombre en cursiva: *Penicillium* (cabezuelas en pincel, conidios en cadena, verde-azul), *Aspergillus* (cabeza redonda con conidios) y *Rhizopus* (esporangio redondo oscuro sobre su pie). En la rebanada de panadería aparece un círculo de moho que **crece radial** desde un punto. Chip "en unos días". |
 | 3 | Etiqueta | Por eso el de caja suele traer propionato de calcio. | Fondo cian. La bolsa genérica gira; una lupa sobre la lista de ingredientes: "… propionato de calcio (conservador) …" se ilumina. Chip "antimoho". |
 | 4 | Entra | En la masa, una parte queda como ácido propiónico sin carga y se cuela en la hifa. | **Fondo oscuro** ("POR DENTRO · UNA HIFA"). Un tubo largo de hifa (pared + membrana) en corte. Afuera, moléculas de ácido propiónico: las que traen carga (–) rebotan; las **neutras** (sin carga) cruzan la membrana. Etiqueta "ácido propiónico sin carga". Barra de escala 5 µm (ancho de la hifa, esquemática). |
-| 5 | Protón | Adentro suelta su protón y le acidifica el citoplasma. | Dentro de la hifa cada molécula suelta un H⁺ (bolita roja) y queda como anión (–). Medidor de pH del citoplasma que baja (flecha, sin número). Etiqueta "citoplasma más ácido". |
+| 5 | Proton | Adentro suelta su protón y le acidifica el citoplasma. | Dentro de la hifa cada molécula suelta un H⁺ (bolita roja) y queda como anión (–). Medidor de pH del citoplasma que baja (flecha, sin número). Etiqueta "citoplasma más ácido". |
 | 6 | Energia | La hifa gasta energía en sacarlo y se le traban enzimas: casi no crece. | Una bomba en la membrana saca H⁺ y consume "pilas" de ATP (se vacían). Dos engranes de enzimas se traban con un candado. La punta de la hifa (que crece) se frena: medidor "crecimiento" baja. |
 | 7 | Pregunta | ¿Entonces lo mata? No: solo lo frena, y algunos Penicillium lo resisten. | **Re-gancho.** Fondo rosa. Pregunta grande "¿lo mata?" → sello "NO: lo frena". Una hifa de *Penicillium roqueforti* que sigue creciendo un poco, etiqueta "algunas cepas lo resisten". Robert grande, pensativo. |
 | 8 | Estudio | En 2012, en Cork, Irlanda, un pan con cero punto tres por ciento de propionato aguantó de diez a doce días sin moho. | Fondo cian. TarjetaEstudio "2012 · University College Cork, Irlanda · Appl. Microbiol. Biotechnol." Una barra/calendario se llena: "pan con 0.3 % de propionato de calcio → 10–12 días sin moho". |
@@ -46,13 +46,11 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Entonces l
 | 5 | 28.8 | 33.0 | 07_pensativo_puno | `grande` | «¿Entonces lo mata? No: solo lo frena» |
 | 6 | 37.0 | 42.5 | 06_pensativo_menton | `arriba-der` | «diez a doce días… doce a catorce» |
 | 7 | 43.6 | 48.5 | 11_sorprendido | `arriba-der` | «lo hacen las bacterias del queso suizo y tu intestino» |
-| 8 | 49.5 | 53.5 | 10_serio_molesto → no; usa 12_perfil_serio | `arriba-der` | «la FDA… Europa lo revisó» |
+| 8 | 49.5 | 53.5 | 12_perfil_serio | `arriba-der` | «la FDA… Europa lo revisó» |
 | 9 | 54.3 | 57.9 | 02_apuntando_camara | `arriba-der` | «no es inmortal: solo trae un freno» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-(Fila 8: pose 12_perfil_serio, distinta de la 7 y la 9.)
-
-Apariciones 9 · **≈ 34.3 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas (11, 13, 04, 12, 07, 06, 02) · nunca la misma dos veces seguidas.
+Apariciones 9 · **≈ 34.7 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas (11, 13, 04, 12, 07, 06, 02) · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 5 nov 2026; frase textual y año del dato)
 
