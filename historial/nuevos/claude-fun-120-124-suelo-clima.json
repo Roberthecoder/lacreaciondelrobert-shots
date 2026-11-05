@@ -22,15 +22,27 @@
   },
   {
    "id": "fun-oxido-nitroso",
-   "titulo": "Ese fertilizante no se queda en la tierra: hongos del suelo que convierten parte en óxido nitroso, un gas de efecto invernadero",
+   "titulo": "Este costal no es solo comida para tu milpa: hongos del suelo que vuelven parte del fertilizante óxido nitroso (273× el CO₂ kilo por kilo)",
    "serie": "Shot Fungi Mati",
    "numero": 121,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-121-oxido-nitroso",
    "rama": "claude/fun-120-124-suelo-clima",
    "fecha": "2026-11-05",
-   "fuentes": [],
-   "derivados": []
+   "fuentes": [
+    "IPCC AR6 WG1 cap. 7, tabla 7.15 (2021)",
+    "Ravishankara et al. 2009, Science",
+    "Tian et al. 2020, Nature",
+    "Shoun et al. 1992, FEMS Microbiol Lett",
+    "Maeda et al. 2015, Sci Rep 5:9697",
+    "Laughlin & Stevens 2002, SSSAJ 66:1540",
+    "Higgins et al. 2018"
+   ],
+   "derivados": [
+    "Por qué el suelo encharcado huele raro: microbios que respiran sin oxígeno",
+    "Inhibidores de nitrificación: el fertilizante 'lento'",
+    "Trichoderma: el hongo que se vende para proteger cultivos"
+   ]
   },
   {
    "id": "fun-necromasa-carbono",
