@@ -246,7 +246,7 @@ function CepaShot() {
             {caeCubo >= 1 && <Cubito x={0} y={0} s={1.2} />}
           </PlacaPetri>
           {/* tapa que se levanta apenas */}
-          {tapaA > 0 && <ellipse cx={640 + tapaA * 150} cy={930 - tapaA * 30} rx={262} ry={262} fill="rgba(220,240,246,.35)" stroke={KC.ink} strokeWidth={6} />}
+          {tapaA > 0 && <ellipse cx={640 + tapaA * 330} cy={930 - tapaA * 20} rx={262} ry={262} fill="rgba(220,240,246,.35)" stroke={KC.ink} strokeWidth={6} />}
           {caeCubo > 0 && caeCubo < 1 && <><Cubito x={klerp(860, 640, caeCubo)} y={klerp(600, 930, caeCubo)} s={1.2} /><Pinzas x={klerp(860, 640, caeCubo) + 6} y={klerp(600, 930, caeCubo)} ang={-40} a={caeCubo > 0.9 ? 1 : 0} /></>}
         </>)}
       </Escena>
