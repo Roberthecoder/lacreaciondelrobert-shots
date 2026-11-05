@@ -90,4 +90,37 @@ Todas las afirmaciones quedan ✅.
 
 Correcciones aplicadas en publicacion.md: «repisa o pezuña de caballo (de 10 a 50 cm de diámetro)», «Miles de años después» en vez de «Siglos después» (4 redes), chispa «al golpear pedernal contra acero o pirita» en LinkedIn. Todo lo demás ✅.
 
+Veredicto de la 1ª verificación: APROBADO.
+
+## Re-verificación independiente (5 nov 2026)
+
+Segunda pasada hecha por otro verificador que no escribió el guion ni la 1ª verificación. Revisé `narracion.json`, `guion.md`,
+los letreros y subtítulos de `yesca.jsx` y `publicacion.md`, abriendo de nuevo cada fuente.
+
+| # | Afirmación (voz / pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | Ese sombrero no es fieltro: es un hongo (amadú) | ✅ | Comisión Europea, «Amadou: harvesting the future» | "small items such as hats and bags" | consultada 2026 |
+| 2 | …que antes te daba fuego (yesca) | ✅ | *Lexikon der Biologie*, «Zunderschwamm» (Spektrum, 1999), abierto | "Diesen Zunder nutzte man zum Auffangen der Funken beim Feuerschlagen mit Stein und Stahl." | 1999 |
+| 3 | Hongo yesquero, *Fomes fomentarius* | ✅ | Campi et al., *Lilloa* 61(2):397–413 (PDF abierto) | "Fomes fomentarius, commonly known as the "tinder fungus", "hoof fungus"…" | 2024 |
+| 4 | Forma de pezuña de caballo; crece en abedules y hayas | ✅ | Lexikon 1999 | "dick konsolen- bis hufartig (Durchmesser 10–50 cm, bis 25 cm dick)"; "an Laubbäumen, besonders Birken und Buchen" | 1999 |
+| 5 | Costra dura, capas de tubos, y en medio una capa suave: «la trama» | ✅ (nota) | Lexikon 1999; Campi 2024 | "durch Entfernen der harten Deckschicht und der Röhrenschichten gewonnen. Durch Kochen und Klopfen wurde die faserige (Trama-)Schicht erweicht"; Campi: "the fungus flesh between the pileus cuticle and the tube layer". Nota: en micología descriptiva también se le llama «contexto»; «trama» es el término que usa el Lexikon para esta capa | 1999 / 2024 |
+| 6 | Al microscopio, una maraña de hifas (barra «20 µm esquemático») | ✅ | Lexikon 1999 | "Das gelbbraune Hutfleisch ist wergartig, faserig" (tejido de hifas; dibujo marcado como esquemático) | 1999 |
+| 7 | Se hierve, se golpea, y a veces se remojaba en salitre | ✅ | Lexikon 1999 | "Durch Kochen und Klopfen…"; "Oft wurde sie noch mit Salpeter getränkt, um die Glimmfähigkeit zu erhöhen." | 1999 |
+| 8 | Una chispa cae ahí y se queda ardiendo | ✅ | Lexikon 1999 | "Durch Blasen wurde der Zunder zum Glühen gebracht" | 1999 |
+| 9 | Pantalla: chispa de «pedernal + pirita» | ✅ | Wierer et al., *PLOS ONE* 13(6):e0198292 (abierto) | "several pieces of fomes fomentarius fungus with traces of pyrite"; "an aspect suggesting use as a "strike-a-light"" | 2018 |
+| 10 | En 1991, en un glaciar de los Alpes (Tisenjoch, Italia, cerca de Austria), apareció Ötzi | ✅ | iceman.it/en/the-iceman/ | "He was discovered accidentally by hikers in 1991"; "Ötzi was crossing Tisenjoch/Giogo di Tisa" | consultada 2026 |
+| 11 | **v1:** «murió hace **más de** cinco mil trescientos años» (voz, número en pantalla, subtítulo y publicación) | ⚠️ imprecisa → corregida | Wierer et al. 2018; iceman.it | Wierer: "who died between 3370–3100 cal BC" = entre ~5,125 y ~5,395 años antes de 2026: la parte baja del rango queda por debajo de 5,300. «Over 5300 years ago» solo lo dice el museo, no el fechado | 2018 |
+| 11b | **v2:** «murió hace **unos** cinco mil trescientos años» | ✅ | Wierer et al. 2018 | "3370–3100 cal BC" (punto medio ≈ 3235 a. C. → ≈ 5,260 años: «unos 5,300») | 2018 |
+| 12 | En la bolsa del cinturón traía yesca de este hongo | ✅ | Peintner, Pöder y Pümpel, *Mycol. Res.* 102(10):1153–1162 (resumen); Wierer 2018 | Resumen (paráfrasis): yesca del "true tinder bracket" *Fomes fomentarius* en su bolsa del cinturón; Wierer: "The belt poach contained also … several pieces of fomes fomentarius fungus with traces of pyrite" | 1998 / 2018 |
+| 13 | La yesca tenía restos de pirita; su raspador de pedernal parece haber sacado chispas | ✅ | Wierer 2018 | "with traces of pyrite"; "These traces, although not very developed, have an aspect suggesting use as a "strike-a-light"" | 2018 |
+| 14 | Dos trozos del hongo del abedul (*Fomitopsis betulina*) en tiras de piel: quizá medicina (hipótesis) | ✅ | Peintner 1998 (resumen); iceman.it/en/oetzi/equipment | dos trozos de *Piptoporus betulinus* "mounted on a leather thong" (paráfrasis del resumen); iceman.it: "It is assumed that the fungus had therapeutic purposes" | 1998 |
+| 15 | Después, cirujanos y barberos la usaron para detener sangrados pequeños («*Fungus chirurgorum*») | ✅ | Campi et al. 2024 | "widely used as a styptic by surgeons, barbers, and dentists, and therefore called "agaric of the chirurges" because it was used for stopping light hemorrhages" | 2024 |
+| 16 | En Corund (Transilvania, Rumania) todavía hay familias que la estiran a mano para hacer sombreros | ✅ | Comisión Europea; Campi 2024 (cita a Papp et al. 2015) | "in the village of Corund in Eastern Transylvania"; "The material is processed by hand"… "stretched and left to dry"; "a significant decrease in the number of families involved"; Campi: "hats, bags, tablecloths… (Papp et al., 2015)" | 2015 / consultada 2026 |
+| 17 | Cierre: «es la yesca de Ötzi» (mismo material) | ✅ (figura) | Comisión Europea | "Even Ötzi, the Iceman, carried amadou with him." | consultada 2026 |
+| 18 | `publicacion.md`: resto de afirmaciones (10–50 cm, «Miles de años después», amadou, Chirurgenschwamm, citas) | ✅ | Lexikon 1999; Campi 2024; Wierer 2018 | ya cubiertas arriba y en la tabla de publicación | 1999–2024 |
+
+**Corrección aplicada (fila 11):** «más de 5,300 años» → «unos 5,300 años» en `narracion.json` (escena 6, misma cantidad de
+palabras menos una), `guion.md`, `yesca.jsx` (etiqueta del número gigante «murió hace unos» y subtítulo idx 6, ~s 26–34 de la
+base) y `publicacion.md` (6 lugares). Lo demás, sin cambios. Dibujo esquemático.
+
 VEREDICTO: APROBADO

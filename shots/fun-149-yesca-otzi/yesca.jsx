@@ -468,7 +468,7 @@ function YescaShot() {
       <Chip T={T} at={ch(3.4)} until={K.P - 0.3} texto="pedernal + pirita" x={300} y={580} tam={32} borde={YC.pirita} />
 
       <TarjetaEstudio T={T} at={K.O + 0.3} until={K.O + 2.6} anio="1991" quien="Ötzi · glaciar de los Alpes" revista="Tisenjoch, Italia (cerca de Austria)" x={540} y={520} />
-      <NumeroGigante T={T} at={K.O + 3.3} until={K.O + 5.0} valor={5300} desde={4800} dur={0.6} prefijo="" sufijo=" años" etiqueta="murió hace más de" x={340} y={540} tam={130} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.O + 3.3} until={K.O + 5.0} valor={5300} desde={4800} dur={0.6} prefijo="" sufijo=" años" etiqueta="murió hace unos" x={340} y={540} tam={130} color={KC.yellow} />
       <Chip T={T} at={K.O + 5.4} until={K.Pi - 0.3} texto="bolsa del cinturón" x={330} y={470} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.O + 7.0} until={K.Pi - 0.3} x={60} y={560} texto="yesca de" tam={32} color={KC.ink} />
       <Etq T={T} at={K.O + 7.0} until={K.Pi - 0.3} x={60} y={610} texto="Fomes fomentarius" it tam={32} color={KC.ink} />
@@ -512,7 +512,7 @@ function YescaShot() {
       <SubK T={T} idx={3} at={K.M + 0.1} until={K.Ch - 0.1} texto="Una maraña de *hifas.*" />
       <SubK T={T} idx={4} at={K.Ch + 0.1} until={K.P - 0.1} texto="Se hierve, se golpea… *y atrapa la chispa.*" />
       <SubK T={T} idx={5} at={K.P + 0.1} until={K.O - 0.1} texto="¿Desde *cuándo?*" />
-      <SubK T={T} idx={6} at={K.O + 0.1} until={K.Pi - 0.1} texto="Ötzi, hace *más de 5,300 años,* traía yesca." />
+      <SubK T={T} idx={6} at={K.O + 0.1} until={K.Pi - 0.1} texto="Ötzi, hace *unos 5,300 años,* traía yesca." />
       <SubK T={T} idx={7} at={K.Pi + 0.1} until={K.A - 0.1} texto="Restos de *pirita* y chispas de pedernal." />
       <SubK T={T} idx={8} at={K.A + 0.1} until={K.S - 0.1} texto="Hongo del abedul: *¿medicina?*" />
       <SubK T={T} idx={9} at={K.S + 0.1} until={K.Co - 0.1} texto="Para detener *sangrados pequeños.*" />

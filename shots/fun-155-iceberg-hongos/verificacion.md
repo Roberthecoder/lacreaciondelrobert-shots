@@ -114,4 +114,34 @@ Ajustes de largo sin cambiar ningún dato: «Bajemos.» (antes «Vamos bajando.�
 experimentos de laboratorio) y «Y todo empezó con ese champiñón» (antes «Y todo eso empezó…»).
 Todas las afirmaciones quedan ✅.
 
+Veredicto de la 1ª verificación: APROBADO.
+
+## Re-verificación independiente (5 nov 2026)
+
+Segunda verificación, hecha por un subagente que no escribió el guion ni la 1ª verificación. Se revisaron `narracion.json` (12 líneas),
+`guion.md`, los letreros de `iceberg.jsx` y `publicacion.md`. Cada fuente se volvió a abrir en su texto original (PDFs con `pdftotext`,
+texto completo de Europe PMC, página de PLoS ONE, conferencia Nobel de Fleming en nobelprize.org).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Ese champiñón no es el hongo: es la punta del iceberg (lo visible es el cuerpo fructífero; el hongo vive escondido) | ✅ (metáfora) | Le Strange, UC Cooperative Extension (PDF) | "These "sacks of spores" are the most visible part of a fungus, which spends most of its active life hidden underground or inside a plant." | ~2007 |
+| Los hongos no son plantas | ✅ | Baldauf y Palmer, *PNAS* 90: 11558 | "animals and fungi are sister groups while plants constitute an independent evolutionary lineage." | 1993 |
+| La levadura del pan es un hongo (*Saccharomyces cerevisiae*, con yema) | ✅ | University at Buffalo News | Título: "Meet baker's yeast, the budding, single-celled fungus that fluffs your bread" | 2020 |
+| La penicilina salió de un moho (*Penicillium*); halo sin bacterias | ✅ | Fleming, conferencia Nobel (PDF nobelprize.org) | "The origin of penicillin was the contamination of a culture plate of staphylococci by a mould." "The mould was found to belong to the genus Penicillium" | 1945 (hecho de 1928) |
+| Sus paredes tienen quitina, el mismo material del caparazón de un escarabajo | ✅ | Khoushab y Yamabhai, *Mar Drugs* 8: 1988 (Europe PMC) | "Chitin … is the main component of arthropod exoskeletons"; "Chitin is also an important component of the cell wall of fungi" | 2010 |
+| Más de cien especies de hongos brillan; pantalla «+100 especies» y «132 conocidas (2024)»; luz verde | ✅ | Perry, Desjardin y Stevani, *J Fungi* 11: 19 (PDF) | "We currently recognize 132 taxa of bioluminescent fungi"; "more than doubled in the past 15 years from 64 to 132 species." | 2024 (pub. dic 2024) |
+| Estudio de 2003 en Oregón: un solo hongo *Armillaria*, casi 10 km²; pantalla «≈ 9.65 km² (965 ha)», «un solo individuo», «de raíz en raíz» | ✅ | Ferguson et al., *Can J For Res* 33: 612 (PDF) | "Armillaria ostoyae genet sizes were approximately 20, 95, 195, 260, and 965 ha"; "extended the known maximum size of an A. ostoyae genet to approximately 965 ha" | 2003 |
+| Un hongo obliga a una hormiga a morder una hoja (vena) | ✅ | Hughes et al., *BMC Ecol* 11: 13 (Europe PMC) | "infected ants descend from their canopy nests down to understory vegetation to bite into abaxial leaf veins before dying" | 2011 |
+| Ya muerta, le brota de la nuca (*Ophiocordyceps*) | ✅ | Hughes et al. 2011; Evans et al., *PLoS ONE* 6: e17024 | "Post mortem fungal growth starts … within 2-3 days after host death and ultimately leads to stalk formation from the back of the ant's head"; "a single stalk arising from the dorsal neck region of the ant host" | 2011 |
+| Otro hongo arma lazos que se inflan y atrapan nematodos; pantalla «anillo de 3 células» | ✅ | Chen et al., *Nat Commun* 14: 7376 (Europe PMC) | "It consists of three ring cells and two stalk cells, with the ring cells capable of inflating within 0.1–1 s to capture a nematode" | 2023 |
+| Se calcula que *Schizophyllum* tiene más de 23,000 tipos de apareamiento; pantalla «≈ 23,000 … (estimados)» | ✅ (estimación, y así se dice) | Chu et al., *J Fungi* 11: 277 (PDF), citando a Raper | "This diversity results in an estimated 23,328 possible mating types" | 2025 (estimación de Raper, 1958–60) |
+| En 2007, en laboratorio, hongos negros (con melanina) crecieron más rápido con radiación | ✅ | Dadachova et al., *PLoS ONE* 2: e457 | "Melanized Wangiella dermatitidis and Cryptococcus neoformans cells exposed to ionizing radiation approximately 500 times higher than background grew significantly faster" | 2007 |
+| «como los de Chernóbil» (*Cladosporium sphaerospermum*) | ✅ | Dadachova et al. 2007 | "Cladosporium sphaerospermum – an intrinsically melanized fungus found in abundance at the site of nuclear accident in Chernobyl" | 2007 |
+| «¿Se alimentan de ella? Es hipótesis.»; chip «hipótesis» | ✅ | Dadachova et al. 2007 | "intriguing questions about a potential role for melanin in energy capture and utilization" (no demostrado) | 2007 |
+| `publicacion.md` (YouTube): *C. sphaerospermum* «abundante en el reactor de Chernóbil» | ⚠️ → corregido | Dadachova et al. 2007 | La fuente dice "found in abundance at the site of nuclear accident in Chernobyl" (el sitio, no el reactor en sí). Se cambió a «abundante en el sitio del accidente de Chernóbil». Ahora ✅ | 2007 |
+| Resto de `publicacion.md` (7 redes y comentario fijado): mismas cifras y hechos que la voz | ✅ | (filas anteriores) | — | — |
+
+Resultado: única corrección en `publicacion.md` (una frase de la descripción de YouTube). No cambió la voz (`narracion.json`), ni el
+`guion.md`, ni nada de la pantalla (`iceberg.jsx`). Todas las afirmaciones quedan ✅.
+
 VEREDICTO: APROBADO

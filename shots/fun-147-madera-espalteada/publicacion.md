@@ -8,7 +8,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ```text
 Esas líneas negras no son vetas de la madera: son fronteras entre hongos. 🍄🪵
 A esta madera se le llama espalteada (en inglés, spalted) y se vende cara en piezas torneadas, como cuencos, y en muebles pequeños.
-Todo empieza cuando varios hongos distintos entran al mismo tronco. Cada uno teje hifas, hilos finísimos, que avanzan y se comen la madera por dentro. Cuando dos colonias chocan y ninguna logra vencer, cada una amuralla su territorio con melanina, un pigmento oscuro: esa franja es una "línea de zona". Más hongos, más fronteras: la tabla queda como un mapa. Y los hongos de pudrición blanca, como Trametes versicolor, se comen la lignina y la aclaran.
+Todo empieza cuando varios hongos distintos entran al mismo tronco. Cada uno teje hifas, hilos finísimos, que avanzan y se comen la madera por dentro. Cuando dos colonias chocan y se disputan la madera, una o ambas amurallan su territorio con melanina, un pigmento oscuro: esa franja es una "línea de zona". Más hongos, más fronteras: la tabla queda como un mapa. Y los hongos de pudrición blanca, como Trametes versicolor, se comen la lignina y la aclaran.
 ¿Se puede hacer a propósito? En un estudio de 2012, el equipo de Seri Robinson (Universidad de Toronto) sembró Trametes versicolor, Xylaria polymorpha y otros hongos en cubitos de haya, en frascos a 27 °C, por 8 a 12 semanas según el hongo. El costo: Trametes versicolor le quitó en promedio 30 % de su peso a la madera clara (albura) de haya. Por eso la madera espalteada se seca a tiempo: casi todos los hongos de pudrición necesitan agua libre en la madera.
 Lo más raro: Xylaria polymorpha, los "dedos de muerto", hace líneas aunque esté solo, sin otro hongo enfrente.
 Así que esa tabla tan fina es el mapa de una guerra de hongos.
@@ -23,7 +23,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Esas líneas negras no son vetas de la madera: son fronteras entre hongos. 🍄🪵
-Cuando dos hongos chocan dentro de un tronco y ninguno logra vencer, cada uno amuralla su territorio con melanina, un pigmento oscuro. A esa madera se le llama espalteada y se vende cara. En el laboratorio se puede inducir: en un estudio de 2012, el equipo de Seri Robinson lo hizo en cubitos de haya en 8 a 12 semanas, pero Trametes versicolor se comió en promedio 30 % del peso de la madera clara. Por eso se seca a tiempo. Y Xylaria polymorpha, los "dedos de muerto", hace líneas aunque esté solo.
+Cuando dos hongos chocan dentro de un tronco y se disputan la madera, uno o ambos amurallan su territorio con melanina, un pigmento oscuro. A esa madera se le llama espalteada y se vende cara. En el laboratorio se puede inducir: en un estudio de 2012, el equipo de Seri Robinson lo hizo en cubitos de haya en 8 a 12 semanas, pero Trametes versicolor se comió en promedio 30 % del peso de la madera clara. Por eso se seca a tiempo. Y Xylaria polymorpha, los "dedos de muerto", hace líneas aunque esté solo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tienes algo de madera con líneas así en tu casa? 👇
 Shot Fungi Mati 147 · La Creación del Robert
@@ -40,7 +40,7 @@ Descripción:
 ```text
 Esas líneas negras no son vetas de la madera: son fronteras entre hongos.
 A esta madera se le llama espalteada (spalted wood) y se vende cara, sobre todo en piezas torneadas y muebles pequeños.
-Todo empieza cuando varios hongos distintos entran al mismo tronco. Cada uno teje hifas, hilos finísimos, que avanzan y descomponen la madera por dentro. Cuando dos colonias chocan y ninguna logra vencer, cada una amuralla su territorio con melanina, un pigmento oscuro: esas franjas de hifas melanizadas son las "líneas de zona". Más hongos, más fronteras: la tabla queda como un mapa. Los hongos de pudrición blanca, como Trametes versicolor (la "cola de pavo"), además se comen la lignina y aclaran la madera.
+Todo empieza cuando varios hongos distintos entran al mismo tronco. Cada uno teje hifas, hilos finísimos, que avanzan y descomponen la madera por dentro. Cuando dos colonias chocan y se disputan la madera, una o ambas amurallan su territorio con melanina, un pigmento oscuro: esas franjas de hifas melanizadas son las "líneas de zona". Más hongos, más fronteras: la tabla queda como un mapa. Los hongos de pudrición blanca, como Trametes versicolor (la "cola de pavo"), además se comen la lignina y aclaran la madera.
 ¿Se puede hacer a propósito? En un estudio publicado en 2012, el equipo de Seri Robinson (Universidad de Toronto) sembró Trametes versicolor, Xylaria polymorpha y otros dos hongos en cubitos de haya americana, en frascos con vermiculita a 27 °C y 80 % de humedad, por 8 a 12 semanas según el hongo. El costo: Trametes versicolor le quitó en promedio 30 % de su peso a la albura (la madera clara) de haya. Los investigadores buscan justo ese equilibrio: el máximo dibujo con la menor pérdida de resistencia. Las líneas de zona se forman en las primeras etapas de la pudrición, así que la madera se seca a tiempo: casi todos los hongos de pudrición necesitan agua libre en la madera.
 Lo más raro: Xylaria polymorpha, los "dedos de muerto", puede hacer líneas de zona aunque no tenga otro hongo enfrente.
 Así que esa tabla tan fina es el mapa de una guerra de hongos.
@@ -58,7 +58,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esas líneas negras no son vetas de la madera: son fronteras entre hongos. 🍄🪵
-Cuando dos hongos chocan dentro de un tronco y ninguno logra vencer, cada uno amuralla su territorio con melanina. Así nace la madera espalteada, que se vende cara. Se puede hacer en laboratorio, pero el hongo también se come la madera: por eso hay que secarla a tiempo.
+Cuando dos hongos chocan dentro de un tronco y se disputan la madera, uno o ambos amurallan su territorio con melanina. Así nace la madera espalteada, que se vende cara. Se puede hacer en laboratorio, pero el hongo también se come la madera: por eso hay que secarla a tiempo.
 ¿Tienes algo de madera con líneas así en tu casa? 👇
 Shot Fungi Mati 147 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -78,13 +78,13 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Esas líneas negras en la madera no son vetas: son fronteras entre hongos. Cuando dos chocan y ninguno vence, cada uno amuralla su territorio con melanina. En laboratorio se logra en 8–12 semanas… pero el hongo se come parte de la madera (Robinson et al., 2012). 🍄🪵 #FungiMati
+Esas líneas negras en la madera no son vetas: son fronteras entre hongos. Cuando dos chocan, uno o ambos amurallan su territorio con melanina. En laboratorio se logra en 8–12 semanas… pero el hongo se come parte de la madera (Robinson et al., 2012). 🍄🪵 #FungiMati
 ```
 
 ### Threads
 ```text
 Esas líneas negras en la madera no son vetas: son fronteras entre hongos. 🍄🪵
-Cuando dos colonias chocan y ninguna logra vencer, cada una amuralla su territorio con melanina. Más hongos, más fronteras… pero mientras dibujan también se comen la madera: por eso se seca a tiempo.
+Cuando dos colonias chocan y se disputan la madera, una o ambas amurallan su territorio con melanina. Más hongos, más fronteras… pero mientras dibujan también se comen la madera: por eso se seca a tiempo.
 ¿Tienes algo de madera con líneas así en tu casa?
 Soy Robert, de La Creación del Robert 🌱
 #FungiMati

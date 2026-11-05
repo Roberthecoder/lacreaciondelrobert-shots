@@ -76,4 +76,33 @@ afirmación nueva. Dibujo esquemático.
 
 Correcciones aplicadas en publicacion.md: LinkedIn sin «la popularizó» (superlativo), citas completas de Shao 2016 y Räisänen 2020. Todo lo demás ✅.
 
+Veredicto de la 1ª verificación: APROBADO.
+
+## Re-verificación independiente (5 nov 2026)
+
+Segunda pasada hecha por otro verificador que no escribió el guion ni la 1ª verificación. Revisé `narracion.json` (texto que se
+narra), `guion.md`, los letreros y subtítulos de `tintes.jsx` y `publicacion.md`, abriendo de nuevo cada fuente.
+
+| # | Afirmación (voz / pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | «Esa lana roja… la tiñó un hongo» (*C. sanguineus* da rojos en lana con alumbre) | ✅ | NAMA, https://namyco.org/interests/education/dyes-and-papermaking/ | "The richest blood reds are from mature caps of Cortinarius semisanguineus or mature whole C. sanguineus" (con alumbre) | s/f (consultada 2026) |
+| 2 | *Cortinarius sanguineus*, seta color sangre, de bosques de coníferas | ✅ | Herrala et al., *J. Fungi* 8:1129, PMC9694584 | "a common fungus found in the coniferous forests of North America, Northern Europe, and the British Isles" | 2022 |
+| 3 | Su color viene de antraquinonas: la emodina (amarilla) y la dermocibina (roja) | ✅ | Herrala et al. 2022 | "mainly emodin, dermocybin, and dermorubin"; "approximately 63% emodin, 31% dermocybin, and 4% dermorubin" (las dos nombradas son ~94 %); dermocibina: a* = 23.33 vs −1.54 de la emodina (más roja, menos amarilla) | 2022 |
+| 4 | Pantalla: antraquinona = tres anillos, el central con dos C=O; «1 nm · esquemático» | ✅ | Herrala et al. 2022 | "a common 9,10-anthracenedione backbone" | 2022 |
+| 5 | Se pican, se calientan en agua y el pigmento se suelta; el agua se tiñe | ✅ | NAMA; Räisänen et al., *Antibiotics* 9(5):266, PMC7277368 | "These pigments could be extracted fairly easily in hot water and used to dye natural fibers, especially wool."; "After boiling (80−90 °C, 60 min), the extract was filtered" | s/f / 2020 |
+| 6 | Antes, la lana se calienta con alumbre, un mordiente (sal de aluminio) | ✅ | NAMA; Räisänen et al. 2020 | "dyer's alum (potassium aluminum sulfate)"; "Pre-mordanted samples were dyed at 90 °C for 60 min" | s/f / 2020 |
+| 7 | El aluminio hace de puente: se une a la lana y atrapa al pigmento; el color aguanta mejor las lavadas | ✅ (simplificación) | Räisänen et al. 2020; Räisänen, Nousiainen y Hynninen 2001 (resumen, AGRIS/Crossref) | "Metal complexes formed by Al3+ and Fe3+ ions stabilise the structure and decrease colour change"; fastness "to light, washing, and rubbing … good to moderate" | 2020 / 2001 |
+| 8 | Con hierro salen tonos más oscuros | ✅ | NAMA | "Iron (ferrous sulfate, aka copperas) can be used for a different range of colors" (de la misma especie, por lo general más oscuros, "sadder") | s/f |
+| 9 | Otras setas dan amarillo limón (*Phaeolus schweinitzii*, alumbre) o verde (*Tapinella atrotomentosa*, hierro) | ✅ | NAMA | "Phaeolus schweinitzii for a lemon yellow with alum"; "Tapinella atrotomentosus (formerly Paxillus atrotomentosus) dyes a rich dark green on iron-mordanted wool" | s/f |
+| 10 | En California (Mendocino), la maestra Miriam Rice probó hongo tras hongo | ✅ | NAMA; https://www.mushroomsforcolor.com/?p=3486 | "Miriam Rice, a fiber arts teacher from Mendocino, California"; "Miriam experimented with everything she found" | 1972 |
+| 11 | En 1974 publicó un libro entero de tintes de hongos (*Let's Try Mushrooms for Color*) | ✅ | mushroomsforcolor.com/?p=3486 | "was published by Thresh Publications, Santa Rosa, CA in November 1974" | 1974 |
+| 12 | En 2001, en Finlandia, tiñeron lana con emodina pura: amarillos y rojos; con dermocibina, morados (tarjeta: Räisänen, Nousiainen y Hynninen · *Textile Research Journal*) | ✅ | Räisänen, Nousiainen y Hynninen, *Text. Res. J.* 71(11):1016–1022 (registro AGRIS/FAO y Crossref; autores de la Univ. de Helsinki y Tampere) | "Emodin dyes wool and polyamide yellow and red, whereas dermocybin confers purple and violet colors" | 2001 |
+| 13 | En el mismo género hay venenos: *C. orellanus* y *C. rubellus* | ✅ | Shao et al., *Toxicon* 114:65–74 (PubMed 26915341) | "Cortinarius orellanus and Cortinarius rubellus are the major orellanine-containing mushrooms" | 2016 |
+| 14 | …dañan los riñones, y los síntomas tardan días («síntomas: días después») | ✅ | Danel, Saviuc y Garon, *Toxicon* 39:1053–1060 (resumen abierto en Europe PMC) | "Cortinarius spp. poisoning is characterized by a delayed acute renal failure"; "They appear a few days after the ingestion of the mushrooms (median 3 days). The renal phase is delayed (median 8.5 days)." | 2001 |
+| 15 | «Para teñir, nunca para comer» / «NO SE COMEN» | ✅ | Danel et al. 2001; First Nature | Es consejo de seguridad, coherente con la toxicidad del género | 2001 |
+| 16 | Barra 20 µm en la fibra de lana | ✅ | Woolwise (cap. 20) | diámetro medio "from around 16 to over 40 microns" | s/f |
+| 17 | `publicacion.md`: «sobre todo la emodina… y la dermocibina», «morados y violetas», «la luz y las lavadas», «a veces semanas», citas bibliográficas | ✅ | Herrala 2022; Räisänen 2001 y 2020; Danel 2001 | "mainly emodin, dermocybin…"; "purple and violet colors"; "higher light fastness values"; "mushrooms may have been ingested 1-2 weeks before" | 2001–2022 |
+
+Sin ❌ ni ⚠️. No se cambió nada. Dibujo esquemático.
+
 VEREDICTO: APROBADO

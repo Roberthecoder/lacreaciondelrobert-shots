@@ -51,4 +51,35 @@ Voz: 173 → **165 palabras** (947 caracteres).
 
 Todas las afirmaciones del texto final: ✅.
 
+Veredicto de la 1.ª verificación: APROBADO
+
+## Re-verificación independiente (5 nov 2026)
+
+Verificador nuevo, que no escribió el guion ni hizo la 1.ª verificación. Revisé el texto narrado final (`narracion.json`, 13 líneas), los letreros, subtítulos, cifras y dibujos del `recalentar.jsx` y `publicacion.md`. Abrí de nuevo cada fuente: las tres páginas de Verbraucherzentrale/consumer.bz.it y la de la FDA (WebFetch), y el PDF del *Bad Bug Book* (descargado y leído con pdftotext).
+
+| # | Afirmación (voz / pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | «Esos hongos recalentados no son veneno: el peligro es cuánto pasaron tibios» (gancho, cierre, subtítulos «el peligro: horas tibio», «Lo peligroso es dejarlos tibios») | ✅ | Verbraucherzentrale Bremen, https://www.verbraucherzentrale-bremen.de/wissen/lebensmittel/gesund-ernaehren/pilze-sonderbehandlung-erwuenscht-67313 | «Der Mythos, dass Pilze nicht aufgewärmt werden dürfen, ist veraltet.» · «Problematisch ist nicht das Aufwärmen, sondern, dass die Pilze nicht schnell genug heruntergekühlt, bei zu hohen Temperaturen aufbewahrt oder nicht wieder ausreichend erhitzt werden.» (Stand: 22. November 2025) | 2025 |
+| 2 | «Seguro tu abuela te dijo: “los hongos no se recalientan”» · sello «MITO» | ✅ | Bremen (arriba) | «Der Mythos, dass Pilze nicht aufgewärmt werden dürfen, ist veraltet.» | 2025 |
+| 3 | «Ese consejo **probablemente** viene de cuando no había refrigerador» · chips «antes, sin refrigerador», «probablemente», «refri: no había» | ✅ (dicho como hipótesis, igual que la fuente) | Verbraucherzentrale Südtirol, https://www.consumer.bz.it/de/kann-man-pilze-noch-einmal-aufwaermen | «…stammt vermutlich aus einer Zeit, in der es in den Haushalten noch keine Kühlschränke gab.» (21.10.2019) | 2019 |
+| 4 | «Tienen mucha agua: un caldo perfecto para las bacterias» · chip «mucha agua» | ✅ | Südtirol; Bremen | «Aufgrund ihres Wassergehalts und der enthaltenen Proteine bieten Pilze Mikroorganismen nämlich ideale Wachstumsbedingungen.» · Bremen: «Da Pilze einen hohen Wassergehalt und viel Eiweiß enthalten, sind sie der optimale Lebensraum…» | 2019 / 2025 |
+| 5 | «Si el guiso pasa horas tibio, se multiplican y pueden dejar toxinas» · contador 1→32 bacterias en time-lapse, «● toxinas» | ✅ (multiplicación esquemática: 5 duplicaciones en ~2 h es coherente con tiempos de generación de ~20–30 min de bacterias como *B. cereus* a temperatura tibia; se presenta como time-lapse esquemático) | Südtirol; FDA *Bad Bug Book* 2.ª ed., https://www.fda.gov/media/83271/download | «…dass Mikroorganismen sich in der Zeit bis zum Aufwärmen vermehren und Gifte bilden könnten.» · «The more bacteria, the more toxin, and the greater the chance that you'll get sick.» | 2019 / 2012 |
+| 6 | Pantalla: bacilos (bastones) de ~3 × 1.1 µm sobre barra «2 µm (esquemático)» | ✅ | *Bad Bug Book*, cap. *B. cereus* | *B. cereus* es un bacilo grampositivo formador de esporas («endospore-forming»); proporción de bastón correcta y marcada como esquemática. | 2012 |
+| 7 | «¿Y si lo recalientas fuerte, no se arregla? No siempre» | ✅ | *Bad Bug Book* (recuadro al consumidor, *B. cereus*) | «Cooking may kill the bacteria, but it might not disable the toxin that causes the vomiting type of illness.» | 2012 |
+| 8 | «la toxina del vómito de *Bacillus cereus*… aguanta 121 grados por media hora» · número «121 °C», chip «30 min a 121 °C: sigue intacta», «cereulida · toxina del vómito», tarjeta «FDA · Bad Bug Book · 2.ª ed. · 2012» | ✅ (cifra exacta en la fuente citada) | *Bad Bug Book* | «The vomiting (emetic) type of illness is associated with cereulide, an ionophoric low-molecular-weight dodecadepsipeptide that is pH-stable and heat- and protease- resistant. The non-antigenic peptide is stable after heating at 121°C for 30 minutes…» | 2012 |
+| 9 | «…típica del arroz» · chip «ejemplo: arroz» (la toxina se dibuja sobre arroz, no sobre los hongos) | ✅ | *Bad Bug Book* | «The vomiting-type outbreaks generally have been associated with rice products; however, other starchy foods, such as potato, pasta, and cheese products, also have been implicated.» | 2012 |
+| 10 | Dibujo de la cereulida como anillo de 12 eslabones | ✅ | *Bad Bug Book* | «dodecadepsipeptide» (péptido de 12 unidades); es cíclico. Esquemático. | 2012 |
+| 11 | «El calor mata bacterias, pero no siempre lo que ya dejaron» · chips «bacterias: mueren», «toxina ya hecha: se queda» | ✅ (las esporas de *B. cereus* sí resisten la cocción, pero la frase habla de bacterias activas y de la toxina, igual que la FDA) | *Bad Bug Book* (*B. cereus* y *S. aureus*) | «Cooking may kill the bacteria, but it might not disable the toxin…» · «Destruction of viable cells by heat does not destroy the biological activity of preformed staphylococcal enterotoxins.» | 2012 |
+| 12 | «enfriar rápido: al refri antes de dos horas» · «2 h», chip «FDA (EE. UU.), 2024» | ✅ | FDA, Safe Food Handling, https://www.fda.gov/food/buy-store-serve-safe-food/safe-food-handling | «Refrigerate or freeze meat, poultry, eggs, seafood, and other perishables within 2 hours of cooking or purchasing.» (Content current as of 03/05/2024) | 2024 |
+| 13 | «…en recipientes bajitos» | ✅ | FDA, Safe Food Handling | «Divide large amounts of leftovers into shallow containers for quicker cooling in the refrigerator.» | 2024 |
+| 14 | «En Alemania, un centro del consumidor pide refri a máximo 4 grados y comerlos en 24 horas» · «≤ 4 °C», «comerlos en 24 h», «Verbraucherzentrale NRW (Alemania), 2025» | ✅ (cifras exactas) | Verbraucherzentrale NRW, https://www.verbraucherzentrale.nrw/aufwaermen | «Bewahre sie gut gekühlt auf (max. 4 °C) und verzehre sie innerhalb von 24 Stunden nach dem ersten Kochen.» (Stand: 22. Dezember 2025) | 2025 |
+| 15 | «Recaliéntalos a 74 grados por dentro, dice la FDA» · «74 °C por dentro · FDA» | ✅ (165 °F = 73.9 °C) | FDA, Safe Food Handling | Tabla de temperaturas mínimas internas: «Leftovers and Casseroles» «165 °F» | 2024 |
+| 16 | «…y una sola vez, aconsejan en Alemania» · «1 sola vez», «Verbraucherzentrale Bremen, 2025» | ✅ | Bremen | «Bitte das Gericht nicht mehr als einmal aufwärmen.» | 2025 |
+| 17 | «esta regla no es solo de hongos, es de todas las sobras» · «todas las sobras» (arroz, sopa, frijoles, pasta) | ✅ | FDA, Safe Food Handling | Las reglas de 2 h, recipientes bajitos y 165 °F son para «leftovers» en general. | 2024 |
+| 18 | Pantalla: «champiñón · *Agaricus bisporus*», sombrero blanco-café, laminillas rosadas a cafés | ✅ (morfología estándar del champiñón comercial) | — | — | — |
+| 19 | `publicacion.md`: «1 hora si hace más de 32 °C» | ✅ (90 °F = 32.2 °C) | FDA, Safe Food Handling | «Refrigerate within 1 hour if the temperature outside is above 90° F.» | 2024 |
+| 20 | `publicacion.md`: «hongo silvestre venenoso sigue siendo venenoso, recalentado o no»; resto de textos por red | ✅ (coinciden con las filas de arriba; sin cifras nuevas) | — | — | — |
+
+**Conteo:** ✅ 20 · ⚠️ 0 · ❌ 0. Sin cambios en guion, narración, animación ni publicación.
+
 VEREDICTO: APROBADO
