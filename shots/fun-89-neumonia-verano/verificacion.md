@@ -45,4 +45,38 @@ Fuentes abiertas:
 
 Conteo final: ✅ 23 · ⚠️ 0 · ❌ 0. Nota: «en 1989» (fila 20) es el año de publicación de Yoshida y col.; los 835 casos son de 1980–1989 (encuesta publicada en 1991). El dibujo es esquemático. No es consejo médico.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la verificación anterior). Resúmenes de PubMed bajados de nuevo (efetch), PMC y Mycology Online abiertos. Revisados `narracion.json` (12 líneas), letreros, tarjetas, subtítulos y barras de `neumonia-verano.jsx`, `guion.md` y `publicacion.md`. Cuidado especial en lo médico.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| L0/L11 «Esta tos no te la pegó nadie: te la da tu casa, y casi siempre en verano.» / «Esa tos no era contagio» (la tos del personaje; la línea 1 lo sitúa en Japón) | ✅ | Ando y cols. 1995, Intern Med, PMID 8563107; Ando 1991 PMID 1928946 | "caused by seasonal mold contamination in the home environment" · "86% experienced initial symptoms from June to September" | 1995 / 1991 |
+| L1 «En Japón, la culpa es de una levadura, Tricosporon» (etiqueta *Trichosporon asahii*) | ✅ | Nishiura y cols. 1997, PMID 9061585; Colombo y cols. 2011, PMC3194827 | "T. asahii and T. mucoides … appear to be the major causative agents of SHP" · "Trichosporon species are responsible for SHP" | 1997 / 2011 |
+| L1 «que crece en madera húmeda y tatamis» | ✅ | Yoshida y cols. 1989, Arch Environ Health 44(5):317–22, PMID 2817962 | "especially with damp places in the wood or tatami mats in patients' homes" | 1989 |
+| L2 «Sus hilos se parten en cubitos» (hifas hialinas con tabiques → artroconidias en barril; sin células en gemación en *T. asahii*) | ✅ | Mycology Online (Adelaide) https://mycology.adelaide.edu.au/fungal-descriptions-and-antifungal-susceptibility/yeast-like-fungi/trichosporon | "hyaline, septate hyphae that fragment into oval or rectangular arthroconidia" · (T. asahii) "Budding cells and lateral conidia are absent. Arthroconidia are barrel-shaped." | consultado 2026 |
+| L2 «que flotan en el aire de la casa, y tú los respiras» | ✅ | Ando 1995; Colombo 2011 | "scatters in the air from the colonizing places. The inhaled fungi sensitize susceptible patients" · "repeated inhalation of organic dust and fungal arthroconidia that contaminate home environments" | 1995 / 2011 |
+| L3 «No es infección: es tu pulmón reaccionando como alergia.» | ✅ | Colombo 2011; Ando 1993, PMID 8007474 | "leading to type III and IV allergies" · "SHP is an immunologically induced lung disease" · "a combination of immune complex disease and cellular hypersensitivity" | 2011 / 1993 |
+| L3 «Tos, fiebre y falta de aire.» | ✅ | Iyori, Kawamura y Seo 1991, Acta Paediatr Jpn, PMID 1792908 | "cough, fever and dyspnea as a clinical triad" | 1991 |
+| L4 «La pista: en el hospital mejoras solo» (chip "en el hospital: mejora solo") | ⚠️ → corregido | Sugiyama, K. y cols. 2005, PMID 16366368; Iwakami 1998, PMID 10064960 | "They recovered spontaneously after hospitalization or isolation from the antigen" (2 pacientes) vs. Iwakami: "marked improvement after treatment with oral prednisolone" — mejorar "solo" no es la regla para todos; se suaviza a «sueles mejorar» | 2005 / 1998 |
+| L4 «…y al volver a casa, regresa.» | ✅ | Iyori 1991; Iwakami 1998 | "worsening of the condition when the patient returns home" · "developed fever and dyspnea after returning home" | 1991 / 1998 |
+| L6 «esta levadura prospera con el calor y la humedad del verano japonés» | ✅ | Colombo 2011; Iijima y cols. 2017, PMC5478561 | "during the hot, humid, and rainy summer season in western and southern Japan" · "mostly occurs in wooden homes during periods of high temperature and humidity" | 2011 / 2017 |
+| L7 «De 1980 a 1989, médicos japoneses juntaron 835 casos de alergias del pulmón: tres de cada cuatro, tipo verano.» (tarjeta "1980–1989 · Japón · encuesta nacional · Ando y col. · Am Rev Respir Dis (1991)"; chip "74 %") | ✅ | Ando, Arima, Yoneda y Tamura 1991, Am Rev Respir Dis 144(4):765–9, PMID 1928946 | "A survey of hypersensitivity pneumonitis in Japan was carried out by nationwide questionnaire. A total of 835 cases of hypersensitivity pneumonitis was recognized during the last decade from 1980 to 1989. Of the 835 cases, 621 (74.4%) were summer-type" | datos 1980–89, publ. 1991 |
+| L8 «86 de cada 100 empezaron de junio a septiembre» (julio "▲ PICO") | ✅ | Ando 1991 | "Of the patients 86% experienced initial symptoms from June to September with a peak in July." | 1991 |
+| L8 «más de la mitad vivía en cuartos húmedos, sombríos o mal ventilados» | ✅ | Ando 1991 | "more than half had unsanitary conditions, such as shady, damp, or poorly ventilated rooms" | 1991 |
+| L9 «Lo que sirve es sacar el hongo de la casa» | ✅ | Ando 1995; Yoshida 1989 | "Elimination of T. cutaneum from the colonizing places prevents recrudescence." · "The efficacy of therapy by elimination of T. cutaneum was proven." | 1995 / 1989 |
+| L9 «en 1989, en seis casas bien limpiadas, nadie recayó» (tarjeta "1989 · Japón · Yoshida y col. · Arch Environ Health"; 6 casitas ✓, 2 ✗ esquemáticas sin número) | ✅ | Yoshida 1989 | "No recurrence was observed in 6 well-cleaned homes, but recurrence was observed in all patients who resided in homes that were not cleaned or in homes where cleaning was not adequate" (1989 = año de publicación) | 1989 |
+| L10 «sus parientes hacen nuditos blancos en el pelo: la piedra blanca» | ✅ | Colombo 2011 | "benign superficial lesions of hair, called white piedra, characterized by the presence of irregular nodules on the affected hair … may be white or light brown" | 2011 |
+| Colonia en caja Petri blanco-crema, polvosa, con surcos radiales | ✅ | Mycology Online (Adelaide) | "Colonies are white to cream-coloured, powdery, suede-like to farinose with radial furrows and irregular folds." | consultado 2026 |
+| Fuentes: iniciales de Iyori y Sugiyama en `guion.md` y `publicacion.md` ("Iyori, S.", "Sugiyama, Y.") | ⚠️ → corregido | PubMed 1792908 y 16366368 | "Iyori H(1), Kawamura K, Seo K." · "Sugiyama K(1), Mukae H, …" | 1991 / 2005 |
+| publicacion.md: «mejoras solo» (TikTok) y «mejora sola al hospitalizarse» (YouTube) | ⚠️ → corregido | igual que L4 | — | — |
+| Enlaces de `publicacion.md` y `## Fuentes` | ✅ | todos los PMID/PMC abren y corresponden al artículo citado | — | — |
+
+### Correcciones
+- `narracion.json` línea 4 (escena "Pista"): «La pista: en el hospital mejoras solo, y al volver a casa, regresa.» → «La pista: en el hospital sueles mejorar, y al volver a casa, regresa.» (13 → 13 palabras). **Sí cambió el texto narrado** (solo esa línea).
+- `neumonia-verano.jsx`: chip «en el hospital: mejora solo» → «en el hospital: suele mejorar» (y el comentario de la escena). El subtítulo idx 4 («En casa, *regresa.*») no cambia. Revisado en cuadros (s 20–23): el chip cabe, no se encima y está fuera del tercio inferior.
+- `guion.md`: la misma línea 4 y el chip; iniciales «Iyori, S.» → «Iyori, H.» y «Sugiyama, Y.» → «Sugiyama, K.».
+- `publicacion.md`: TikTok «mejoras solo» → «sueles mejorar»; YouTube «mejora sola al hospitalizarse» → «suele mejorar al hospitalizarse»; iniciales de Iyori y Sugiyama corregidas (descripción de YouTube y comentario fijado).
+- Lo corregido se volvió a verificar: «sueles mejorar» lo sostienen Sugiyama 2005 y Ando 1995 (alejarse del hongo evita recaídas) sin afirmar que todos sanan sin tratamiento.
+
 VEREDICTO: APROBADO

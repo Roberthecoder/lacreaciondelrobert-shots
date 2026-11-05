@@ -322,7 +322,7 @@ function NeumoniaVeranoShot() {
         </>)}
         <Lupa T={T} at={K.Al + 0.5} until={K.Pi - 0.3} x={640} y={900} r={220} fx={250} fy={900} tinte={KC.red} etiqueta="POR DENTRO · pulmón" interior={(TT, r) => <PulmonPorDentro T={TT} r={r} a0={K.Al + 0.5} />} />
       </Escena>
-      {/* 5 · la pista: en el hospital mejora solo; al volver a casa, regresa */}
+      {/* 5 · la pista: en el hospital suele mejorar; al volver a casa, regresa */}
       <Escena T={T} a={K.Pi} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
@@ -419,7 +419,7 @@ function NeumoniaVeranoShot() {
       <Chip T={T} at={K.Al + 2.9} until={K.Pi - 0.3} texto="tos" x={110} y={420} tam={30} borde={KC.yellow} />
       <Chip T={T} at={K.Al + 3.4} until={K.Pi - 0.3} texto="fiebre" x={265} y={420} tam={30} borde={KC.orange} />
       <Chip T={T} at={K.Al + 3.9} until={K.Pi - 0.3} texto="falta de aire" x={530} y={420} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.Pi + 0.9} until={K.P - 0.3} texto="en el hospital: mejora solo" x={330} y={440} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.Pi + 0.9} until={K.P - 0.3} texto="en el hospital: suele mejorar" x={330} y={440} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.Pi + 2.7} until={K.P - 0.3} texto="en casa: regresa" x={760} y={1170} tam={34} borde={KC.red} />
       <Chip T={T} at={K.Pi + 0.1} until={K.P - 0.3} texto="LA PISTA" x={760} y={440} tam={44} borde={KC.yellow} />
       <Chip T={T} at={K.Ca + 0.4} until={K.Es - 0.3} texto="calor" x={200} y={420} tam={34} borde={KC.red} />
