@@ -356,7 +356,7 @@ function MatsutakeShot() {
       <Escena T={T} a={K.E} b={K.Cu} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<Salon T={T} foto={kprog(T, K.E + 3.6, K.E + 4.3)} salto={kprog(T, K.Tk, K.Tk + 0.2) * (1 - kprog(T, K.Tk + 2.2, K.Tk + 2.8))} />)}
-        {fsvg(<g opacity={kprog(T, K.Tk + 2.3, K.Tk + 2.8)}><Tele T={T} x={320} y={820} s={1} /></g>, 21)}
+        {fsvg(<g opacity={kprog(T, K.Tk + 2.3, K.Tk + 2.8)}><Tele T={T} x={320} y={890} s={1} /></g>, 21)}
       </Escena>
       {/* 10 · cuidado: no rastrillar la hojarasca */}
       <Escena T={T} a={K.Cu} b={K.C} zoom={0.04}>
@@ -382,35 +382,35 @@ function MatsutakeShot() {
           {(() => { const u = kprog(T, K.C + 2.6, K.C + 4.2, kEase.suave); if (u <= 0) return null; return <Avion x={klerp(1150, 560, u)} y={klerp(380, 1150, u) - Math.sin(Math.PI * u) * 120} ang={klerp(200, 170, u)} s={1.1} />; })()}
         </>)}
       </Escena>
-      <Lupa T={T} at={K.C + 0.4} until={K.Ou - 0.2} x={330} y={640} r={180} fx={400} fy={1210} interior={(t, r) =>
+      <Lupa T={T} at={K.C + 0.4} until={K.Ou - 0.2} x={330} y={600} r={170} fx={400} fy={1210} interior={(t, r) =>
         <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#160f0a" /><RaizMicorriza T={t} x={r} y={r - 30} s={0.42} manto={1} red={1} flujo={1} /></svg>} etiqueta={TXT.lupa} tinte={KC.gold2} />
 
       {/* textos */}
-      <Etq T={T} at={K.G + 0.5} until={K.B - 0.3} x={490} y={900} texto={TXT.ganchoEtq} tam={36} color={KC.ink} />
+      <Etq T={T} at={K.G + 0.5} until={K.B - 0.3} x={490} y={900} texto={TXT.ganchoEtq} tam={36} color={KC.texto} />
       <Chip T={T} at={K.G + 1.0} until={K.B - 0.3} texto={'✗ ' + TXT.champi} x={170} y={1000} tam={32} borde={KC.red} />
       <Chip T={T} at={K.G + 3.4} until={K.B - 0.1} texto={TXT.aJapon + ' ✈'} x={760} y={480} tam={38} borde={KC.cyan} />
       {TXT.nombres.map((n, i) => <Chip key={i} T={T} at={K.B + 0.6 + i * 0.9} until={K.Es - 0.2} texto={n} x={330} y={430 + i * 100} tam={38} borde={i === 2 ? KC.orange : KC.gold} />)}
-      <Etq T={T} at={K.B + 3.0} until={K.Es - 0.2} x={560} y={760} texto={TXT.olor} tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Es + 0.1} until={K.J - 0.3} x={50} y={500} texto={TXT.especie} it tam={46} color={KC.ink} />
+      <Etq T={T} at={K.B + 3.0} until={K.Es - 0.2} x={560} y={760} texto={TXT.olor} tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Es + 0.1} until={K.J - 0.3} x={50} y={500} texto={TXT.especie} it tam={46} color={KC.texto} />
       <Chip T={T} at={K.Es + 0.6} until={K.J - 0.3} texto={TXT.especieChip} x={540} y={600} tam={34} borde={KC.gold} />
       <NumeroGigante T={T} at={K.J + 1.4} until={K.Ec - 0.05} valor={12000} dur={1.4} sufijo=" t" etiqueta={TXT.numEtq} x={350} y={540} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.J + 2.2} until={K.Ec - 0.2} texto={TXT.numChip} x={350} y={700} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.J + 0.9} until={K.Ec - 0.2} x={60} y={930} texto={TXT.primoChip} tam={28} color={KC.ink} />
-      <Etq T={T} at={K.J + 0.6} until={K.Ec - 0.2} x={60} y={880} texto={TXT.primo} it tam={34} color={KC.ink} />
-      <Etq T={T} at={K.J + 2.8} until={K.Ec - 0.2} x={1030} y={990} lado="izq" texto={TXT.arroz} tam={26} color={KC.ink} />
+      <Etq T={T} at={K.J + 0.9} until={K.Ec - 0.2} x={60} y={930} texto={TXT.primoChip} tam={28} color={KC.texto} />
+      <Etq T={T} at={K.J + 0.6} until={K.Ec - 0.2} x={60} y={880} texto={TXT.primo} it tam={34} color={KC.texto} />
+      <Etq T={T} at={K.J + 2.8} until={K.Ec - 0.2} x={1030} y={990} lado="izq" texto={TXT.arroz} tam={26} color={KC.texto} />
       <NumeroGigante T={T} at={K.Ec} until={K.Ex - 0.3} valor={100} desde={12000} dur={1.2} sufijo=" t" etiqueta={TXT.escEtq} x={350} y={540} tam={150} color={KC.red} />
       <Chip T={T} at={K.Ec + 1.6} until={K.Ex - 0.3} texto={TXT.escChip1} x={480} y={760} tam={30} borde={KC.orange} />
       <Chip T={T} at={K.Ec + 2.6} until={K.Ex - 0.3} texto={TXT.escChip2} x={480} y={850} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.Ex + 0.2} until={K.P - 0.3} texto={TXT.expChip} x={540} y={420} tam={38} borde={KC.gold} />
-      <Etq T={T} at={K.Ex + 0.5} until={K.P - 0.3} x={60} y={600} texto={TXT.mexico} tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ex + 2.4} until={K.P - 0.3} x={1030} y={920} lado="izq" texto={TXT.japon} tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ex + 0.5} until={K.P - 0.3} x={60} y={600} texto={TXT.mexico} tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Ex + 2.4} until={K.P - 0.3} x={1030} y={920} lado="izq" texto={TXT.japon} tam={34} color={KC.texto} />
       <Chip T={T} at={K.M + 0.1} until={K.S - 0.3} texto={TXT.dentro} x={540} y={420} tam={32} borde={KC.gold2} mono />
       <Etq T={T} at={K.M + 0.5} until={K.S - 0.3} x={60} y={600} texto={TXT.raiz} tam={30} color="#e7b57e" />
       <Etq T={T} at={K.M + 1.6} until={K.S - 0.3} x={1030} y={980} lado="izq" texto={TXT.manto} tam={30} color={MT.hifa} />
       <Etq T={T} at={K.M + 3.2} until={K.S - 0.3} x={60} y={1120} texto={'● ' + TXT.agua} tam={30} color={MT.aguaC} />
       <Etq T={T} at={K.M + 3.8} until={K.S - 0.3} x={60} y={1180} texto={'◆ ' + TXT.azucar} tam={30} color={MT.azucarC} />
       <Chip T={T} at={K.S + 0.4} until={K.E - 0.3} texto={TXT.cultivo} x={340} y={430} tam={38} borde={KC.red} />
-      <Etq T={T} at={K.S + 1.6} until={K.E - 0.3} x={60} y={530} texto={TXT.cultivo2} tam={26} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.6} until={K.E - 0.3} x={60} y={530} texto={TXT.cultivo2} tam={26} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.5} anio={TXT.estAnio} quien={TXT.estQuien} revista={TXT.estRev} x={540} y={600} />
       {(() => { if (!kvisible(T, K.Tk, K.Tk + 2.4)) return null; const e = kentrada(T, K.Tk, K.Tk + 2.4, 'pop');
         return <div style={{ position:'absolute', left:360, top:470, zIndex:44, transform:`translate(-50%,-50%) scale(${e.s}) rotate(${-4 + Math.sin(T * 14) * 2}deg)`, opacity:e.o,
@@ -419,7 +419,7 @@ function MatsutakeShot() {
       <Chip T={T} at={K.Tk + 3.0} until={K.Cu - 0.3} texto={TXT.takeshi} x={340} y={520} tam={32} borde={KC.gold} />
       <Chip T={T} at={K.Tk + 3.0} until={K.Cu - 0.3} texto={TXT.tele} x={340} y={610} tam={28} borde={KC.cyan} />
       <Chip T={T} at={K.Cu + 1.8} until={K.C - 0.3} texto={TXT.cuidado} x={380} y={450} tam={30} borde={KC.red} />
-      <Etq T={T} at={K.Cu + 1.2} until={K.C - 0.3} x={60} y={1200} texto={TXT.micelio} tam={30} color={MT.hifa} />
+      <Etq T={T} at={K.Cu + 1.2} until={K.C - 0.3} x={60} y={1050} texto={TXT.micelio} tam={30} color={MT.hifa} />
       <Chip T={T} at={K.C + 1.2} until={K.Ou} texto={TXT.cierre} x={380} y={380} tam={34} borde={KC.gold} />
 
       {/* barras de escala */}

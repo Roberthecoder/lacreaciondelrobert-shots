@@ -164,7 +164,11 @@ function Paquete({ abierto = 1, s = 1, pHongos = 1, pSofrito = 1, T = 0 }) {
       {[[-150, -10, -15], [-70, 10, 12], [10, -16, -5], [90, 8, 18], [160, -8, -12], [-20, 22, 6]].map(([px, py, r], i) => <Abanico key={i} x={px} y={py + 20} s={0.55} rot={r} seed={i + 40} abre={kclamp(pHongos * 6 - i, 0, 1)} />)}
       {pSofrito > 0 && [[-120, 18, KC.red], [-30, -22, KC.leaf], [60, 26, KC.red], [130, -20, KC.leaf], [-180, -18, KC.leaf], [200, 16, KC.red]].map(([px, py, c], i) => <circle key={i} cx={px} cy={py} r={13 * kEase.rebote(kclamp(pSofrito * 6 - i, 0, 1))} fill={c} stroke={KC.ink} strokeWidth={3} />)}
     </g>}
-    {a < 0.98 && <path d={`M -165 ${-30} Q 0 ${-70 + 50 * a} 165 -30 L 165 30 Q 0 ${70 - 50 * a} -165 30 Z`} fill={MS.hoja} stroke={KC.ink} strokeWidth={6} opacity={1 - a} />}
+    {a < 0.98 && <g opacity={1 - a}>
+      <rect x={-170} y={-52} width={340} height={104} rx={26} fill={MS.hoja} stroke={KC.ink} strokeWidth={7} />
+      <path d="M -170 0 Q 0 -30 170 0" stroke={MS.hoja2} strokeWidth={6} fill="none" />
+      {[-90, 90].map((dx) => <path key={dx} d={`M ${dx} -54 L ${dx} 54`} stroke="#e9d6a8" strokeWidth={9} />)}
+    </g>}
   </g>;
 }
 // Subtítulo con *dorado* y _cursiva_ (para los nombres científicos).
@@ -201,6 +205,17 @@ function Sol({ x, y, p = 1, T = 0 }) {
   </g>;
 }
 
+// Tarjeta del estudio compacta (el año con guion cabe en una línea).
+function TarjetaCorta({ T, at, until, anio, quien, revista, x = KW / 2, y = 600 }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'pop');
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:43, transform:`translate(-50%,-50%) scale(${e.s}) rotate(-2deg)`, opacity:e.o,
+    background:KC.paper, border:`7px solid ${KC.ink}`, borderRadius:26, padding:'16px 36px 20px', textAlign:'center', boxShadow:`14px 14px 0 ${KC.ink}`, whiteSpace:'nowrap' }}>
+    <div style={{ font:`400 120px/1 ${KF.titulo}`, color:KC.gold, WebkitTextStroke:`5px ${KC.ink}` }}>{anio}</div>
+    <div style={{ font:`900 34px ${KF.texto}`, color:KC.ink, marginTop:6 }}>{quien}</div>
+    <div style={{ font:`700 24px ${KF.mono}`, color:'#5a524a', marginTop:8, fontStyle:'italic' }}>{revista}</div>
+  </div>;
+}
 // ---------- mapa: sureste de México (MapaMexico del kit, ampliado) ----------
 const MAPA = { ancho: 5000, x: -2197, y: -1028 };
 const mp = (lon, lat) => { const [a, b] = mxProy(lon, lat), s = MAPA.ancho / 1000; return [MAPA.x + a * s, MAPA.y + b * s]; };
@@ -430,7 +445,7 @@ function MilSexosShot() {
       <Medidor T={T} at={K.X + 0.3} until={K.E - 0.3} valor={(t) => 0.98 * kprog(t, K.X + 0.5, K.X + 1.6, kEase.sale)} etiqueta={TXT.extrano} texto={() => TXT.extranoV} x={90} y={740} />
       <Medidor T={T} at={K.X + 2.2} until={K.E - 0.3} valor={(t) => 0.275 * kprog(t, K.X + 2.4, K.X + 3.2, kEase.sale)} etiqueta={TXT.hermano} texto={() => TXT.hermanoV} x={90} y={900} color={KC.yellow} />
       <Chip T={T} at={K.X + 3.4} until={K.E - 0.3} texto={TXT.extranoChip} x={540} y={1120} tam={34} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.3} until={K.E + 3.4} anio={TXT.anio} quien={TXT.quien} revista={TXT.revista} x={540} y={470} />
+      <TarjetaCorta T={T} at={K.E + 0.3} until={K.E + 3.4} anio={TXT.anio} quien={TXT.quien} revista={TXT.revista} x={540} y={470} />
       <Chip T={T} at={K.E + 3.6} until={K.O - 0.2} texto={TXT.entrevistas} x={540} y={470} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.O + 0.2} until={K.M - 0.3} x={60} y={420} texto={TXT.orejaPalo} tam={44} color={KC.ink} />
       <Etq T={T} at={K.O + 0.7} until={K.M - 0.3} x={60} y={480} texto={TXT.orejaMulato} tam={28} color={KC.ink} />

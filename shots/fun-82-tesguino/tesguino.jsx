@@ -455,7 +455,7 @@ function TesguinoShot() {
             {[-130, -40, 50, 140].map((dx) => <rect key={dx} x={dx - 22} y={-250} width={44} height={180} fill="#9aa3b0" stroke={KC.ink} strokeWidth={5} />)}
             <text x={0} y={-330} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>UNAM</text>
           </g>
-          {(() => { const v = kprog(T, K.R + 0.3, K.R + 2.2, kEase.suave); return <Sobre x={klerp(330, 700, v)} y={klerp(620, 860, v) - Math.sin(Math.PI * v) * 120} s={klerp(1.0, 0.45, v)} rot={klerp(-8, 6, v)} />; })()}
+          {(() => { const v = kprog(T, K.R + 0.3, K.R + 2.2, kEase.suave); return <Sobre x={klerp(330, 700, v)} y={klerp(620, 860, v) - Math.sin(Math.PI * v) * 120} s={klerp(1.0, 0.62, v)} rot={klerp(-8, 6, v)} />; })()}
         </>)}
       </Escena>
 
