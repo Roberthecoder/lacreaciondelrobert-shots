@@ -69,15 +69,9 @@ Volví a leer completos `guion.md`, `narracion.json` (voz: 964 caracteres) y `pu
 | R6 | TikTok «en la sangre y en varios órganos»; YouTube «no tenían nada de ergotioneína en la sangre ni en varios órganos»; LinkedIn «carecían por completo… en sangre y en varios órganos» | ✅ | https://doi.org/10.1007/s11095-010-0076-z | "blood and several organs indicated complete deficiency of… ergothioneine in octn1 (-/-) mice" | 2010 |
 | R7 | YouTube: «Un estudio de 2026 midió que algunas algas verdes y un musgo sí la producen, y halló los genes en helechos y coníferas; las plantas con flor perdieron uno de esos genes» | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC13358676/ | "EGT synthesis increases significantly in the streptophyte algae Klebsormidium nitens and the moss Physcomitrium patens"; "genes were identified in… monilophytes, and gymnosperms"; "EGT1 genes do not exist in angiosperms, which likely lost this gene" | 2026 |
 | R8 | Escena 4: plato rotulado «salvado de avena» y frijoles | ✅ | https://doi.org/10.1021/jf071328f | "black and red beans, and oat bran" | 2007 |
-| R9 | **Título de YouTube Shorts:** «Tus células tienen una puerta **para los hongos** 🍄🚪» | ⚠️ | Gründemann 2005 | La puerta es para una **molécula** (la ergotioneína), no para los hongos; tal como está, el título dice algo falso a la letra. (No era parte de la ronda anterior; lo encontré al releer todo.) | — |
+| R9 | **Título de YouTube Shorts:** «Tus células tienen una puerta **para los hongos** 🍄🚪» (antes) | ⚠️ → corregido en R10 | Gründemann 2005 | La puerta es para una **molécula** (la ergotioneína), no para los hongos; tal como está, el título dice algo falso a la letra. (No era parte de la ronda anterior; lo encontré al releer todo.) | — |
+| R10 | Título de YouTube Shorts corregido: «Tus células tienen una puerta para una molécula de los hongos 🍄🚪 \| Shot Fungi Mati 153» (≈ 85 caracteres); encabezado «Borrador (fase 1…)» eliminado | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC555966/ · https://pmc.ncbi.nlm.nih.gov/articles/PMC7653990/ | "the key substrate of this transporter is in fact ergothioneine" (2005); "The chief source of ERG in the human diet is mushrooms" (2020) | 2005/2020 |
 
-### Lo que falta
+Todas las afirmaciones quedan ✅ (re-verificado el 5 nov 2026).
 
-1. **Título de YouTube Shorts** (`publicacion.md`, sección «YouTube Shorts», Título):
-   «Tus células tienen una puerta para los hongos 🍄🚪 | Shot Fungi Mati 153»
-   → **«Tus células tienen una puerta para una molécula de los hongos 🍄🚪 | Shot Fungi Mati 153»** (≈ 85 caracteres, cabe en 100).
-   En cuanto se cambie esta línea, todo queda ✅.
-
-(No es un dato, pero conviene: el encabezado de `publicacion.md` todavía dice «Borrador (fase 1, antes de la verificación independiente)».)
-
-VEREDICTO: PENDIENTE DE CORRECCIONES
+VEREDICTO: APROBADO

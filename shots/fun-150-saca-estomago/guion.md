@@ -15,8 +15,8 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Ese moho no se está comiendo tu tortilla: la está digiriendo por fuera. | Fondo amarillo de lunares, cocina: una tortilla de maíz sobre un plato/servilleta, con una mancha de moho (pelusa blanca y puntitos negros). En el cuadro 0.3 la pelusa crece un poco (time-lapse) y alrededor de la mancha la tortilla se "derrite" (halo húmedo más oscuro). Chip tachado "comiendo" → "digiriendo POR FUERA". Barra de escala 2 cm. |
-| 1 | SinEstomago | Un hongo no tiene boca ni estómago: el estómago lo saca. | Fondo rosa. Comparativa esquemática: a la izquierda una silueta tuya con el estómago **adentro** (la comida entra y se digiere dentro); a la derecha el moho con un "estómago" dibujado **afuera**, alrededor de sus hilos. Etiqueta "digestión externa". |
-| 2 | Hifa | Cada hilo, una hifa, crece por la punta y se mete en la tortilla, que es maíz: mayormente almidón. | Zoom por la `Lupa` en modo rayos X a la tortilla (fondo oscuro, "POR DENTRO"): una hifa (tubo transparente) avanza **solo por la punta** entre granos de almidón (gránulos redondeados/poliédricos). Etiqueta "hifa" y medidor "≈ 5–10 µm de ancho". Chip "maíz: mayormente almidón". Barra de escala 10 µm. |
+| 1 | SinEstomago | Un hongo no tiene boca ni estómago: es como si lo sacara. | Fondo rosa. Comparativa esquemática: a la izquierda una silueta tuya con el estómago **adentro** (la comida entra y se digiere dentro); a la derecha el moho con un "estómago" dibujado **afuera**, alrededor de sus hilos. Etiqueta "digestión externa". |
+| 2 | Hifa | Cada hilo, una hifa, crece por la punta y se mete en la tortilla, que es maíz: rica en almidón. | Zoom por la `Lupa` en modo rayos X a la tortilla (fondo oscuro, "POR DENTRO"): una hifa (tubo transparente) avanza **solo por la punta** entre granos de almidón (gránulos redondeados/poliédricos). Etiqueta "hifa" y medidor "≈ 5–10 µm de ancho". Chip "maíz: rico en almidón". Barra de escala 10 µm. |
 | 3 | Enzimas | Sobre todo en la punta suelta enzimas: tijeras químicas, una para cada cosa. | En la punta de la hifa se juntan vesículas (bolitas) y salen al exterior como tijeritas de colores. Etiqueta "enzimas" (esquemáticas). Escala 10 µm. |
 | 4 | Tijeras | Amilasas para el almidón, proteasas para las proteínas, lipasas para la grasa. | Tres "tijeras" de color cortan tres cadenas: cadena de cuentas (almidón, glucosas) → **amilasas**; cadena de cuentas distintas (proteína, aminoácidos) → **proteasas**; molécula de grasa en "E" (triglicérido) → **lipasas**. Cada corte con su "clic". Dibujos esquemáticos, escala "esquemático · moléculas". |
 | 5 | Absorbe | Afuera, la tortilla se deshace en azúcares y piezas chiquitas, y la hifa las absorbe. | Las cuentas sueltas (glucosas, aminoácidos) flotan y entran por la pared de la hifa (puertitas en la membrana). Contador "piezas chiquitas → adentro". Chip "se digiere afuera · se absorbe adentro". |
@@ -39,7 +39,7 @@ Tiempos de la base (estimados a ~3 palabras/s; con la voz real se recorren solos
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
 | 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «la está digiriendo por fuera» (cuadro 0) |
-| 2 | 5.0 | 8.5 | 13_senalando_arriba | `arriba-der` | «el estómago lo saca» |
+| 2 | 5.0 | 8.5 | 13_senalando_arriba | `arriba-der` | «es como si lo sacara» |
 | 3 | 15.5 | 19.5 | 04_bajando_lentes | `arriba-der` | «tijeras químicas, una para cada cosa» |
 | 4 | 24.5 | 28.5 | 12_perfil_serio | `arriba-der` | «la hifa las absorbe» |
 | 5 | 29.2 | 32.4 | 07_pensativo_puno | `presentador` (grande) | «¿Pero cómo saben…?» |
@@ -67,15 +67,15 @@ Apariciones 9 · **≈ 34.5 s** en pantalla (+ cierre 3.5 s) · 7 poses distinta
    > "Microtubules serve as tracks for secretory vesicles for long-distance transport to the hyphal tip" (para el dibujo de vesículas en la punta) · 2018.
 4. Cairns, T. C., Nai, C. y Meyer, V. (2018). How a fungus shapes biotechnology: 100 years of *Aspergillus niger* research. *Fungal Biology and Biotechnology* 5: 13. https://pmc.ncbi.nlm.nih.gov/articles/PMC5966904/
    > "glucoamylases in the fermentation, food, and beverage industries, where these enzymes catalyse the saccharification of partially processed starch to glucose" (glucoamilasa: corta el almidón en glucosa)
+   > (proteasas:) "numerous predicted protease encoding genes were identified, many of which contained a secretion peptide"
    > "secretion and polar growth are physically coupled at the hyphal tip (first showed in A. niger …)"; matiz: "by investigating secretome in concentric zones of A. niger colonies it has been observed that secretion and growth can be uncoupled" → por eso «sobre todo en la punta» · 2018.
 5. Reyes-Jurado, F., Ramírez-Corona, N., Palou, E., López-Malo, A. et al. (2022). Fungal inactivation on Mexican corn tortillas by means of thyme essential oil in vapor-phase. *Current Research in Food Science* 5. https://pmc.ncbi.nlm.nih.gov/articles/PMC8968004/ (Instituto Tecnológico Superior de Atlixco y UDLAP, Puebla)
    > "Corn tortillas acquired from a local tortilla- shop (Puebla, Mexico) were kept in plastic bags at 25 °C for one week; once molds appeared on the surface, samples were plated on potato-dextrose agar"
    > "One strain of P. expansum and one strain of A. niger were identified." · Dato de 2022 (más de 2 años; en pantalla: "Puebla, 2022").
 6. (Enzimas de *A. niger*) Estudio de 2021 en *Journal of Genetic Engineering and Biotechnology*: Characterization and optimization of extracellular enzymes production by *Aspergillus niger* strains isolated from date by-products. https://pmc.ncbi.nlm.nih.gov/articles/PMC8012474/
-   > "production of extracellular enzymes (amylase, cellulase, lipase, and protease) from previously isolated Aspergillus niger strains"
-   > "strains demonstrated the amylase, cellulase, and lipase activities by the hydrolysis of starch, cellulose, and Tween-20, respectively" · 2021.
-7. (Maíz = mayormente almidón) Estudio de 2020 en *Foods*: Physicochemical, rheological, and morphological characteristics of products from traditional and extrusion nixtamalization processes and their relation to starch. https://pmc.ncbi.nlm.nih.gov/articles/PMC7204188/ (maíz blanco comprado en Hermosillo, Sonora)
-   > "11.2% moisture content (44–15.02), 71.7% total starch content (dry basis) … 4.88% ether extract (dry basis) … 9.17% (dry basis) protein content" · 2020. (La voz no da cifra: solo "mayormente almidón".)
+   > "strains demonstrated the amylase, cellulase, and lipase activities by the hydrolysis of starch, cellulose, and Tween-20, respectively" · 2021. **Solo apoya amilasas y lipasas:** ese estudio no encontró proteasa en sus cepas ("no protease activity was detected from all A. niger strains"). Las proteasas se citan con Cairns 2018 (fuente 4).
+7. (Maíz = rico en almidón) Estudio de 2020 en *Foods*: Physicochemical, rheological, and morphological characteristics of products from traditional and extrusion nixtamalization processes and their relation to starch. https://pmc.ncbi.nlm.nih.gov/articles/PMC7204188/ (maíz blanco comprado en Hermosillo, Sonora)
+   > "11.2% moisture content (44–15.02), 71.7% total starch content (dry basis) … 4.88% ether extract (dry basis) … 9.17% (dry basis) protein content" · 2020. (Es del grano seco; la tortilla fresca tiene ~41–45 % de agua. La voz no da cifra: solo "rica en almidón".)
 8. Peyrot des Gachons, C. y Breslin, P. A. S. (2016). Salivary amylase: digestion and metabolic syndrome. *Current Diabetes Reports* 16: 102. https://pmc.ncbi.nlm.nih.gov/articles/PMC6825871/ (resumen leído vía Europe PMC)
    > "Salivary amylase is a glucose-polymer cleavage enzyme that is produced by the salivary glands."
    > "Amylases digest starch into smaller molecules, ultimately yielding maltose" · 2016.

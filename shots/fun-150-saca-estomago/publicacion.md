@@ -7,7 +7,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ### TikTok
 ```text
 Ese moho no se está comiendo tu tortilla: la está digiriendo por fuera. 🍄🌮
-Un hongo no tiene boca ni estómago: el estómago lo saca. Cada hilo del moho, una hifa, crece por la punta y se mete en la tortilla, que es maíz: mayormente almidón.
+Un hongo no tiene boca ni estómago: es como si lo sacara. Cada hilo del moho, una hifa, crece por la punta y se mete en la tortilla, que es maíz: rica en almidón.
 Sobre todo en esa punta suelta enzimas, unas "tijeras químicas", una para cada cosa: amilasas para el almidón, proteasas para las proteínas y lipasas para la grasa. Afuera, la tortilla se deshace en azúcares y piezas chiquitas, y la hifa las absorbe. A esto se le llama digestión externa (los hongos son osmótrofos).
 ¿Cómo saben que las suelta en la punta? En 1991, en la Universidad de Groningen, Países Bajos, cultivaron Aspergillus niger (un moho que también se ha aislado de tortillas en Puebla) entre dos membranas perforadas. Marcaron con anticuerpos y oro su glucoamilasa, la enzima que corta el almidón en glucosa, y apareció en las puntas de las hifas que iban al frente, creciendo.
 Tú también usas ese truco: tu saliva trae amilasa, que corta el almidón.
@@ -23,7 +23,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Ese moho no se está comiendo tu tortilla: la está digiriendo por fuera. 🍄🌮
-Un hongo no tiene estómago: lo saca. Sus hilos (hifas) crecen por la punta y ahí sueltan enzimas: amilasas para el almidón, proteasas para las proteínas, lipasas para la grasa. La tortilla se deshace afuera en azúcares y piezas chiquitas, y la hifa las absorbe. En 1991, en Groningen (Países Bajos), marcaron con oro la glucoamilasa de Aspergillus niger y apareció en las puntas de las hifas que crecían. Y tu saliva hace algo parecido: trae amilasa.
+Un hongo no tiene estómago: es como si lo sacara. Sus hilos (hifas) crecen por la punta y ahí sueltan enzimas: amilasas para el almidón, proteasas para las proteínas, lipasas para la grasa. La tortilla se deshace afuera en azúcares y piezas chiquitas, y la hifa las absorbe. En 1991, en Groningen (Países Bajos), marcaron con oro la glucoamilasa de Aspergillus niger y apareció en las puntas de las hifas que crecían. Y tu saliva hace algo parecido: trae amilasa.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú qué haces con la tortilla que ya trae moho? 👇
 Shot Fungi Mati 150 · La Creación del Robert
@@ -39,9 +39,9 @@ Ese moho no se come tu tortilla: la digiere por fuera 🍄 | Shot Fungi Mati 150
 Descripción:
 ```text
 Ese moho no se está comiendo tu tortilla: la está digiriendo por fuera.
-Un hongo no tiene boca ni estómago: el estómago lo saca. Los hongos son osmótrofos: sueltan enzimas al medio para deshacer la comida afuera y luego absorben los azúcares, aminoácidos y otras piezas pequeñas que quedan.
-Cada hilo del moho, una hifa (de unas milésimas de milímetro de ancho), crece por la punta y se mete en la tortilla, que es maíz: mayormente almidón. Sobre todo en la punta suelta enzimas, como tijeras químicas, una para cada cosa: amilasas para el almidón, proteasas para las proteínas y lipasas para la grasa.
-¿Cómo se sabe que las suelta en la punta? En 1991, un equipo de la Universidad de Groningen, en Países Bajos, cultivó Aspergillus niger entre dos membranas perforadas para ver al mismo tiempo dónde crecía y dónde soltaba proteínas. Marcaron con anticuerpos y partículas de oro su glucoamilasa, la enzima que corta el almidón en glucosa, y apareció solo en las puntas de las hifas que iban al frente, creciendo. (Estudios posteriores encontraron que en colonias más viejas la secreción también puede ocurrir lejos de la punta.) Aspergillus niger también se ha aislado de tortillas de maíz compradas en una tortillería de Puebla (estudio de 2022).
+Un hongo no tiene boca ni estómago: es como si lo sacara. Los hongos son osmótrofos: sueltan enzimas al medio para deshacer la comida afuera y luego absorben los azúcares, aminoácidos y otras piezas pequeñas que quedan.
+Cada hilo del moho, una hifa (de unas milésimas de milímetro de ancho), crece por la punta y se mete en la tortilla, que es maíz: rica en almidón. Sobre todo en la punta suelta enzimas, como tijeras químicas, una para cada cosa: amilasas para el almidón, proteasas para las proteínas y lipasas para la grasa.
+¿Cómo se sabe que las suelta en la punta? En 1991, un equipo de la Universidad de Groningen, en Países Bajos, cultivó Aspergillus niger entre dos membranas perforadas para ver al mismo tiempo dónde crecía y dónde soltaba proteínas. Marcaron con anticuerpos y partículas de oro su glucoamilasa, la enzima que corta el almidón en glucosa, y apareció solo en las puntas de las hifas que iban al frente, creciendo. (El propio estudio y otros posteriores encontraron que en colonias más viejas también se suelta enzima en zonas más céntricas.) Aspergillus niger también se ha aislado de tortillas de maíz compradas en una tortillería de Puebla (estudio de 2022).
 Tú también usas ese truco: tu saliva trae amilasa, que corta el almidón.
 Así que ese moho no se come tu tortilla: la digiere por fuera y luego absorbe los pedacitos.
 El dibujo es esquemático.
@@ -88,7 +88,7 @@ Ese moho no se está comiendo tu tortilla: la está digiriendo por fuera. 🍄 S
 
 ### Threads
 ```text
-Ese moho no se está comiendo tu tortilla: la está digiriendo por fuera. 🍄 Un hongo no tiene estómago: lo saca. Sus hifas sueltan enzimas por la punta (amilasas, proteasas, lipasas), la tortilla se deshace afuera y la hifa absorbe los pedacitos. Tu saliva hace algo parecido con su amilasa. ¿Tú qué haces con la tortilla que ya trae moho?
+Ese moho no se está comiendo tu tortilla: la está digiriendo por fuera. 🍄 Un hongo no tiene estómago: es como si lo sacara. Sus hifas sueltan enzimas por la punta (amilasas, proteasas, lipasas), la tortilla se deshace afuera y la hifa absorbe los pedacitos. Tu saliva hace algo parecido con su amilasa. ¿Tú qué haces con la tortilla que ya trae moho?
 Shot Fungi Mati 150 · La Creación del Robert
 #Hongos
 ```

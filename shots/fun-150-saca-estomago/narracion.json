@@ -4,8 +4,8 @@
   "nota": "Shot Fungi Mati #150. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
     { "escena": "Gancho", "texto": "Ese moho no se está comiendo tu tortilla: la está digiriendo por fuera." },
-    { "escena": "SinEstomago", "texto": "Un hongo no tiene boca ni estómago: el estómago lo saca." },
-    { "escena": "Hifa", "texto": "Cada hilo, una hifa, crece por la punta y se mete en la tortilla, que es maíz: mayormente almidón." },
+    { "escena": "SinEstomago", "texto": "Un hongo no tiene boca ni estómago: es como si lo sacara." },
+    { "escena": "Hifa", "texto": "Cada hilo, una hifa, crece por la punta y se mete en la tortilla, que es maíz: rica en almidón." },
     { "escena": "Enzimas", "texto": "Sobre todo en la punta suelta enzimas: tijeras químicas, una para cada cosa." },
     { "escena": "Tijeras", "texto": "Amilasas para el almidón, proteasas para las proteínas, lipasas para la grasa." },
     { "escena": "Absorbe", "texto": "Afuera, la tortilla se deshace en azúcares y piezas chiquitas, y la hifa las absorbe." },

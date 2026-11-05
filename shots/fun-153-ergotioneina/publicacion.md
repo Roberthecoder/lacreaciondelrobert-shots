@@ -1,6 +1,6 @@
 # Publicación · Shot Fungi Mati 153 · Tus células tienen una puerta para una molécula de los hongos
 
-Borrador (fase 1, antes de la verificación independiente). Solo versión narrada.
+Solo versión narrada.
 
 ## Versión narrada
 
@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tus células tienen una puerta para los hongos 🍄🚪 | Shot Fungi Mati 153
+Tus células tienen una puerta para una molécula de los hongos 🍄🚪 | Shot Fungi Mati 153
 ```
 Descripción:
 ```text
