@@ -1,0 +1,7 @@
+{ "temas": [
+  { "id": "fun-105-olote", "titulo": "Ese olote no es basura: es comida para setas (Pleurotus en residuos agrícolas)", "serie": "Shot Fungi Mati", "numero": 105, "estado": "idea", "carpeta": "shots/fun-105-olote", "rama": "claude/fun-105-109-cultivo", "fecha": "2026-11-05", "derivados": [] },
+  { "id": "fun-106-composta-champinon", "titulo": "El champiñón no sale de la tierra: sale de composta (y lo despiertan bacterias de la capa de cobertura)", "serie": "Shot Fungi Mati", "numero": 106, "estado": "idea", "carpeta": "shots/fun-106-composta-champinon", "rama": "claude/fun-105-109-cultivo", "fecha": "2026-11-05", "derivados": [] },
+  { "id": "fun-107-semilla-hongo", "titulo": "La «semilla» de hongo no es semilla: es grano invadido por micelio", "serie": "Shot Fungi Mati", "numero": 107, "estado": "idea", "carpeta": "shots/fun-107-semilla-hongo", "rama": "claude/fun-105-109-cultivo", "fecha": "2026-11-05", "derivados": [] },
+  { "id": "fun-108-moho-verde", "titulo": "Esa mancha verde arruina la cosecha: Trichoderma y por qué se pasteuriza el sustrato", "serie": "Shot Fungi Mati", "numero": 108, "estado": "idea", "carpeta": "shots/fun-108-moho-verde", "rama": "claude/fun-105-109-cultivo", "fecha": "2026-11-05", "derivados": [] },
+  { "id": "fun-109-cafe-setas", "titulo": "Tu café usado puede dar setas: Pleurotus en posos de café", "serie": "Shot Fungi Mati", "numero": 109, "estado": "idea", "carpeta": "shots/fun-109-cafe-setas", "rama": "claude/fun-105-109-cultivo", "fecha": "2026-11-05", "derivados": [] }
+] }
