@@ -111,3 +111,4 @@ datos, etiquetas ni subtítulo (revisado en las hojas de cuadros).
    > "A prime example of a macroscopic-HR (macro-HR) is the lesions elicited by tobacco mosaic virus (TMV) in resistant tobacco"
 
 El dibujo es esquemático.
+
