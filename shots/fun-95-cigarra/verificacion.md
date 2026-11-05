@@ -44,4 +44,7 @@ Balance: +3 caracteres en total; volver a correr `estimar-escenas.mjs` y confirm
 
 Re-verificación (5 nov 2026): se leyó `narracion.json` completo después de las correcciones. Las 21 afirmaciones quedan ✅.
 
+
+Nota del coordinador (5 nov 2026): por duración, la pregunta quedó «¿Cómo contagia a más cigarras?» (antes «¿Pero cómo…?»). Es una pregunta retórica sin dato; no cambia ninguna afirmación verificada.
+
 VEREDICTO: APROBADO

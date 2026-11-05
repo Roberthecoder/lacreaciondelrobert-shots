@@ -447,10 +447,10 @@ function CigarraShot() {
       <Caja T={T} at={K.Ca + 2.6} until={K.Ps - 0.3} x={60} y={430}>catinona</Caja>
       <Etq T={T} at={K.Ca + 3.0} until={K.Ps - 0.3} x={60} y={560} texto="una anfetamina de planta" tam={30} color={KC.ink} />
       <Caja T={T} at={K.Ca + 3.8} until={K.Ps - 0.3} x={640} y={800} tam={28}>khat · <i>Catha edulis</i></Caja>
-      <Senal T={T} at={K.Ca + 1.0} until={K.Ps - 0.3} px={cPunto({ x: 600, y: 1040, s: 1.4, rot: -3 }, -200, 30)[0]} py={cPunto({ x: 600, y: 1040, s: 1.4, rot: -3 }, -200, 30)[1]} tx={60} ty={1140} texto={<>tapón de <i>M. cicadina</i></>} tam={28} />
+      <Senal T={T} at={K.Ca + 1.0} until={K.Ps - 0.3} px={cPunto({ x: 600, y: 1040, s: 1.4, rot: -3 }, -200, 30)[0]} py={cPunto({ x: 600, y: 1040, s: 1.4, rot: -3 }, -200, 30)[1]} tx={60} ty={1112} texto={<>tapón de <i>M. cicadina</i></>} tam={28} />
       <Caja T={T} at={K.Ps + 0.2} until={K.H - 0.3} x={60} y={430}>psilocibina</Caja>
       <Etq T={T} at={K.Ps + 0.9} until={K.H - 0.3} x={60} y={545} texto="la de los hongos mágicos" tam={30} color={KC.ink} />
-      <Senal T={T} at={K.Ps + 1.0} until={K.H - 0.3} px={cPunto({ x: 720, y: 1060, s: 1.2, rot: -3 }, -175, 20)[0]} py={cPunto({ x: 720, y: 1060, s: 1.2, rot: -3 }, -175, 20)[1]} tx={60} ty={1150} texto={<><i>M. platypediae</i> / <i>M. levispora</i></>} tam={26} />
+      <Senal T={T} at={K.Ps + 1.0} until={K.H - 0.3} px={cPunto({ x: 720, y: 1060, s: 1.2, rot: -3 }, -175, 20)[0]} py={cPunto({ x: 720, y: 1060, s: 1.2, rot: -3 }, -175, 20)[1]} tx={60} ty={1112} texto={<><i>M. platypediae</i> / <i>M. levispora</i></>} tam={26} />
       <Etq T={T} at={K.Ps + 1.4} until={K.H - 0.3} x={1020} y={880} lado="izq" texto="cigarra anual" tam={30} color={KC.ink} />
       <SelloTexto T={T} at={K.H + 1.2} until={K.C - 0.5} x={400} y={640} texto="HIPÓTESIS" />
       <Senal T={T} at={K.C + 1.0} until={K.Ou - 0.1} px={() => cPunto(cc, COLA[0] - 10, COLA[1])[0]} py={() => cPunto(cc, COLA[0] - 10, COLA[1])[1]} tx={60} ty={680} texto="vuela con un hongo" tam={32} />

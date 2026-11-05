@@ -11,31 +11,48 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese puntito en el tronco no es basura: es un escarabajo de dos milímetros que siembra un hongo adentro. | Fondo verde-menta: tronco de un árbol de aguacate con hojas y un aguacate colgando. Cuadro 0.3: un puntito oscuro en la corteza; de su agujero sale un "palito" de aserrín (frass). La `Lupa` baja y se ve al escarabajo: cilíndrico, café oscuro a negro, unas 3 veces más largo que ancho. Tarjeta "basura" que se tacha; barra de escala "2 mm". |
-| 1 | Nombre | Es *Xyleborus glabratus* y llegó de Asia en madera de embalaje. | Etiqueta "escarabajo ambrosial del laurel rojo · *Xyleborus glabratus*". Mini-mapa esquemático: una tarima de madera (embalaje) viaja en barco de Asia a un puerto de Georgia (EUA); chip "Georgia, 2002". |
-| 2 | Bolsitas | La hembra carga esporas del hongo *Raffaelea lauricola* en bolsitas junto a la boca. | **Al microscopio** (fondo oscuro): cabeza de la hembra de frente; dos bolsitas (micangios) junto a las mandíbulas brillan y dentro se ven esporas. Etiquetas "micangios (2)" y "esporas de *Raffaelea lauricola*". Chip "POR DENTRO · esquemático". |
-| 3 | Tuneles | Cava túneles, siembra el hongo, y ella y sus larvas se lo comen. | Corte de la madera (fondo oscuro, madera clara): la hembra cava una galería; las esporas caen en las paredes y crece un "jardín" de hongo (capa blanquecina); aparecen huevos y larvas blancas que comen el hongo. Chip "no come madera: come el hongo". |
-| 4 | Defensa | El árbol se defiende: tapa sus propios tubos de agua. | La cámara sale del túnel a los vasos del xilema (tubos verticales con agua azul que sube). El hongo avanza por los tubos y el árbol los tapa con tapones (tilosis y gomas): los tubos se van cerrando uno por uno. Etiquetas "xilema (tubos de agua)" y "tapones del árbol (tilosis)". |
-| 5 | Marchita | Y sin agua, se marchita y muere. | Regreso al árbol: las hojas verdes se doblan, luego se vuelven cafés y se quedan colgadas; la madera, cortada, muestra rayas negro-azuladas. |
-| 6 | Pregunta | ¿Quién lo mata: el escarabajo o el hongo? | **Re-gancho.** A un lado el escarabajo, al otro el hongo, con "?" gigante en medio. Robert grande, pensativo. |
-| 7 | Estudio | En 2008, científicos de Estados Unidos infectaron laureles solo con el hongo: casi todos murieron en semanas. | `TarjetaEstudio` "2008 · Fraedrich y col. · Servicio Forestal de EUA e Iowa State · *Plant Disease*". Escena: laureles rojos (*Persea borbonia*) en macetas, sin escarabajo; un taladro abre un agujerito en el tallo y una gota pone solo el hongo (esquemático); un calendario corre de la semana 5 a la 12 y los arbolitos se marchitan. Chip "solo el hongo · sin escarabajo" y chip "19 de 20 plántulas se marchitaron o murieron". |
-| 8 | Millones | Para 2017, la enfermedad ya había matado más de trescientos millones de laureles rojos. | `NumeroGigante` "más de 300 millones de laureles rojos" y chip "EUA, desde inicios de los 2000 · estimación publicada en 2017 · Hughes y col."; mapa esquemático del sureste de EUA que se llena de puntitos cafés; nota "≈ 1/3 de los que había". |
-| 9 | Aguacate | El aguacate es su pariente: en 2012 la enfermedad llegó a una huerta de Florida. | Árbol familiar "Lauraceae": laurel rojo (*Persea borbonia*) y aguacate (*Persea americana*) en la misma rama. Luego una huerta de aguacate con letrero "Homestead, Florida · 2012". |
-| 10 | Salto | Y lo raro: el hongo saltó a otros escarabajos. | Dentro de un tronco de aguacate: otros escarabajos ambrosiales de distinto color (etiquetas *Xyleborus volvulus* y *Xyleborus bispinatus*) ahora cargan las esporas. Chip "nuevos portadores del hongo". |
-| 11 | Mexico | En México, el mayor productor de aguacate, no hay registro de esta plaga; en 2024 la vigilaban en treinta estados. | Mapa esquemático de México con aguacates; chip "1.er productor mundial · Agricultura, 2026"; sello "Plaga ausente · sin registros · Senasica (ficha 2019)"; trampas y lupas que se encienden en muchos estados; chip "vigilancia en 30 entidades (Senasica, 2024)". |
-| 12 | Cierre | Ese puntito no es basura: es un granjero diminuto que amenaza tu guacamole. | **Regreso a la imagen del inicio:** el mismo tronco con el mismo puntito, ahora con el túnel y el jardín de hongo a la vista (rayos X con `Lupa`), y al lado un plato de guacamole. |
+| 0 | Gancho | Ese puntito en el tronco no es basura: es un escarabajo de dos milímetros que siembra un hongo adentro. | Fondo verde-menta: tronco de aguacate en primer plano, con una rama, hojas y un aguacate colgando. Desde el cuadro 0 la cámara se acerca y del agujerito sale un "palito" de aserrín (frass). Tarjeta "basura" que se tacha (1.7 s). La `Lupa` ("POR DENTRO · el túnel") se abre desde el agujero: la hembra en su túnel, cilíndrica, café oscuro rojizo, ~3 veces más larga que ancha; barra de escala real "2 mm · escarabajo en la lupa" (300 px = el largo del escarabajo dibujado). En "siembra un hongo" brota la borra blanca del hongo en las paredes del túnel. |
+| 1 | Nombre | Es *Xyleborus glabratus* y llegó de Asia en madera de embalaje. | Cajitas "*Xyleborus glabratus*" (cursiva), "escarabajo ambrosial" y "madera de embalaje". Mapa esquemático: un barco con cajas de madera cruza de "Asia" a "Georgia (EUA)"; al llegar, un punto rojo late en el puerto y sale el chip "Georgia, EUA · 2002". |
+| 2 | Bolsitas | La hembra carga esporas del hongo *Raffaelea lauricola* en bolsitas junto a la boca. | **Al microscopio** (fondo azul noche): cabeza de la hembra de frente (pronoto punteado, ojos, antenas con maza, mandíbulas); las dos bolsitas (micangios) en la base de las mandíbulas se llenan de esporas alargadas doradas. Etiquetas "la hembra, de frente", "micangios (2 bolsitas)" y "esporas de *Raffaelea lauricola*". Cajita "AL MICROSCOPIO · esquemático". |
+| 3 | Tuneles | Cava túneles, siembra el hongo, y ella y sus larvas se lo comen. | **Por dentro** de la madera (fondo oscuro): la hembra camina y cava una galería desde la corteza, con un ramal; en las paredes crece el "jardín" de hongo (borra blanca con esporas); aparecen huevos y larvas blancas sin patas junto al hongo. Etiquetas "jardín de hongo" y "larvas que comen el hongo"; cajita "no come madera: come el hongo". |
+| 4 | Defensa | El árbol se defiende: tapa sus propios tubos de agua. | Seis vasos del xilema (tubos verticales) con agua azul que sube; una mancha oscura (el hongo) sube por ellos y el árbol los va tapando uno por uno con tapones (tilosis): el agua se apaga. Etiquetas "xilema · tubos de agua", "tapones del árbol (tilosis)" y "el hongo avanza". |
+| 5 | Marchita | Y sin agua, se marchita y muere. | Fondo lila: el árbol de aguacate; sus hojas se ponen rojizo-café y se doblan, pero se quedan colgadas. Al lado, una rama cortada muestra manchas oscuras en la albura. Etiquetas "hojas secas que no caen" y "manchas oscuras". |
+| 6 | Pregunta | ¿Quién lo mata: el escarabajo o el hongo? | **Re-gancho.** Fondo amarillo: el escarabajo arriba, "VS", y una mancha del hongo abajo, con "?" gigante; etiquetas "¿el escarabajo?" y "¿el hongo?". Robert grande, pensativo (puño). |
+| 7 | Estudio | En 2008, científicos de Estados Unidos infectaron laureles solo con el hongo: casi todos murieron en semanas. | `TarjetaEstudio` "2008 · Servicio Forestal de EUA · e Iowa State · Fraedrich y col. · Plant Disease". Escena: 20 plántulas de laurel rojo (*Persea borbonia*) en maceta, sin escarabajo; una gota del hongo entra en un agujerito de cada tallo (esquemático); contador "semana 0 → 8"; 19 se marchitan (hojas rojizo-café que cuelgan) y 1 sigue verde. Cajitas "solo el hongo · sin escarabajo" y "19 de 20 plántulas se marchitaron o murieron". |
+| 8 | Millones | Para 2017, la enfermedad ya había matado más de trescientos millones de laureles rojos. | `NumeroGigante` "más de 300 millones" + chip "de laureles rojos"; luego mapa esquemático del sureste de EUA que se llena de puntitos rojizos y nota "+300 millones de *Persea borbonia* · desde inicios de los 2000 · ≈ 1/3 de los que había · estimación publicada en 2017 · Hughes y col.". |
+| 9 | Aguacate | El aguacate es su pariente: en 2012 la enfermedad llegó a una huerta de Florida. | "familia Lauraceae" con dos tarjetas: laurel rojo (*Persea borbonia*, hoja y fruto oscuro) y aguacate (*Persea americana*, hoja y fruto). Luego una huerta con tres aguacates y el letrero "Homestead, Florida · 2012": el de en medio se marchita ("la enfermedad llega"). Sin escarabajos en la huerta. |
+| 10 | Salto | Y lo raro: el hongo saltó a otros escarabajos. | Madera por dentro (genérica, fondo oscuro): *X. glabratus* (etiqueta) con su bolsita de esporas; las esporas saltan en arco hacia otros dos escarabajos ambrosiales de otro color, *X. volvulus* y *X. bispinatus*, que ahora las cargan. Cajita "nuevos portadores del hongo". |
+| 11 | Mexico | En México, el mayor productor de aguacate, no hay registro de esta plaga; en 2024 la vigilaban en treinta estados. | Mapa esquemático de México y un aguacate al lado; nota "1.er productor mundial de aguacate · Agricultura, 2026"; sello "PLAGA AUSENTE · sin registros · Senasica (ficha 2019)"; una franja azul de vigilancia barre el mapa y nota "vigilancia en 30 entidades (Senasica, 2024)". |
+| 12 | Cierre | Ese puntito no es basura: es un granjero diminuto que amenaza tu guacamole. | **Regreso a la imagen del inicio:** el mismo tronco, el mismo puntito y la misma `Lupa`, ahora "POR DENTRO · el jardín": el túnel con el jardín de hongo, las larvas y la hembra. Abajo a la derecha, un plato de guacamole ("tu guacamole"); cajita "un granjero diminuto". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave y terrosa (madera, bosque), continua, sin golpe marcado; efectos en el mismo cuadro: "tic" del puntito, palito de aserrín que sale, barco/embalaje, brillo de las bolsitas, raspado al cavar, crecimiento suave del hongo, tapones que cierran los tubos (golpes graves sordos), hojas secas, gota del hongo, calendario, contador de millones, mapa, sello de Senasica.
+**Música** (`gen-audio.mjs`, según `composicion-musical.md`): cama grave continua en la menor que cambia de acorde con función en cada sección (i → VI → iv → i → iv → V → Vsus → i → VI → III → VII → iv → V → i), más ahogada mientras el árbol se tapa y se marchita, y un motivo corto la–do–mi–re que abre el gancho, regresa en el estudio y en el cierre, y se contesta al revés en la tarjeta final; sin golpe marcado, siempre debajo de la voz; efectos en el mismo cuadro: "tic" del puntito, palito de aserrín que sale, barco/embalaje, brillo de las bolsitas, raspado al cavar, crecimiento suave del hongo, tapones que cierran los tubos (golpes graves sordos), hojas secas, gota del hongo, calendario, contador de millones, mapa, sello de Senasica.
 
 ## Robert en pantalla
 
-(Se escribe en la fase 2.)
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Quién lo mata: el escarabajo o el hongo?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.8 | 11_sorprendido | `gancho` | «ese puntito… es un escarabajo» (cuadro 0) |
+| 2 | 6.6 | 11.0 | 12_perfil_serio | `arriba-der` | *Xyleborus glabratus*, de Asia en madera de embalaje |
+| 3 | 15.3 | 19.4 | 06_pensativo_menton | `arriba-der` | cava túneles, siembra el hongo y se lo comen |
+| 4 | 24.5 | 27.7 | 07_pensativo_puno | `grande` | «¿quién lo mata: el escarabajo o el hongo?» |
+| 5 | 30.7 | 33.6 | 04_bajando_lentes | `arriba-der` | «casi todos murieron en semanas» (19 de 20) |
+| 6 | 36.2 | 38.9 | 11_sorprendido | `arriba-der` | «más de trescientos millones de laureles rojos» |
+| 7 | 39.6 | 43.8 | 13_senalando_arriba | `arriba-der` | «el aguacate es su pariente… una huerta de Florida» |
+| 8 | 44.3 | 46.8 | 10_serio_molesto | `arriba-der` | «el hongo saltó a otros escarabajos» |
+| 9 | 49.6 | 53.6 | 12_perfil_serio | `arriba-der` | «no hay registro… la vigilaban en treinta estados» |
+| 10 | 54.1 | 58.3 | 02_apuntando_camara | `arriba-der` | «amenaza tu guacamole» |
+| — | 58.4 | 61.9 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **37.0 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · nunca tapa datos, etiquetas ni subtítulos (las notas a su lado terminan antes de x = 690).
 
 ## Escala
 
-- Gancho y cierre: barra «2 mm» junto al escarabajo dentro de la `Lupa` (hembra ≈ 2 mm, fuente 4); el tronco y el aguacate son esquemáticos.
-- Bolsitas, túneles y tubos de agua: «esquemático» (micangios, esporas y vasos sin medida dicha en la voz).
+- Gancho y cierre: barra «2 mm · escarabajo en la lupa» de 300 px, igual al largo del escarabajo dibujado en la `Lupa` (hembra ≈ 2 mm, USDA-ARS); el tronco, la rama y el aguacate son esquemáticos.
+- Nombre, Millones y México: «mapa esquemático» (mapas dibujados a mano, no a escala).
+- Bolsitas, túneles, tubos de agua, árbol, plántulas, huerta y salto: «esquemático» (sin medida dicha en la voz).
 - No se dice ningún tamaño en la voz salvo los dos milímetros del escarabajo.
 
 ## Fuentes (abiertas el 5 nov 2026)
