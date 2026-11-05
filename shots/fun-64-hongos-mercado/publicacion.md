@@ -70,7 +70,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-México tiene registrados 425 hongos silvestres comestibles (conteo publicado en 2025; eran 371 en 2014). La mayoría no llega al supermercado.
+México tiene registrados 425 hongos silvestres comestibles (conteo publicado en 2025; eran 371 en 2014). La mayoría no se cultiva: se recolecta en el bosque.
 El 65 % de esas especies son ectomicorrízicas: viven en simbiosis con las raíces de árboles (el hongo aporta agua y nutrientes; el árbol, azúcares de la fotosíntesis). Por ese ciclo de vida, la mayoría de los hongos ectomicorrízicos todavía no se puede cultivar, así que su abasto depende de la recolección en bosques y del conocimiento de los recolectores. En el mercado de Acaxochitlán, Hidalgo (2009), ese conocimiento lo conservan las mujeres nahuas.
 Por qué importa: es un recurso alimentario, económico y cultural ligado a la salud de los bosques. Y también un reto de salud pública: en México hay especies mortales de Amanita parecidas a las comestibles y sus toxinas no se destruyen al cocinar.
 ¿Cómo se puede valorar este conocimiento tradicional sin poner en riesgo a quien consume hongos silvestres?

@@ -46,4 +46,34 @@ Fuera de la tabla (retórica o consejo, sin dato que medir): «y tú quizá solo
 Resumen: se corrigieron las líneas «Senas» y «Aviso» de la voz (965 caracteres, 167 palabras), el anillo de la yema (amarillo-naranja), la barra de escala
 de la raíz (100 µm) y se marcan en la *Amanita* mortal las mismas 3 señas de la yema. Todas las afirmaciones de la voz, la pantalla y publicacion.md quedan ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la primera verificación). Fuentes descargadas y leídas en texto completo (PDF → texto): Lilloa 2025, Etnobiología 2010, Annals of Hepatology 2011, J Ethnobiol Ethnomed 2020 (PDF de Springer), Mycoscience 2021 (HTML de J-STAGE), MushroomExpert *A. bisporigera*. Se revisaron las 13 líneas de `narracion.json`, los letreros y subtítulos de `hongos-mercado.jsx` y las 7 redes de `publicacion.md`.
+
+| Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|
+| Voz/pantalla: «En México se comen 425 hongos silvestres» · «conteo de 2025» | ✅ | https://www.lillo.org.ar/journals/index.php/lilloa/article/download/1822/2029/19839 | «Hoy en día, se han contabilizado 425 hongos silvestres consumidos en México.» | 2025 |
+| publicacion.md: «eran 371 en 2014» | ✅ | misma (Lilloa) | «hasta el año de 2014 se tenían registradas 371 especies de hongos silvestres que se consumen de manera cotidiana y tradicional» | 2025 (dato 2014) |
+| Champiñón = cultivado (*Agaricus bisporus*) · «champiñón: se siembra» | ✅ | Lilloa | «el primer hongo cultivado en el país fue el "champiñón", Agaricus bisporus, alrededor del año 1930» | 2025 |
+| «Con las lluvias…» · chip «lluvias: de junio a noviembre, según la región» | ✅ | Lilloa | «temporada de lluvias que puede abarcar desde finales de primavera (principios de junio), el verano y casi todo el otoño (finales de noviembre) en las regiones de mayor precipitación» | 2025 |
+| Yemas = *Amanita* gpo. *caesarea*, vendidas en el mercado | ✅ | https://dialnet.unirioja.es/descarga/articulo/5294416.pdf | «yemas (Amanita gpo. caesarea), las cuales son las más cotizadas» | 2010 (campo 2009) |
+| Hongo azul = *Lactarius indigo* | ✅ | https://doi.org/10.1186/s13002-020-00408-x | Tabla: «Lactarius indigo (Schwein.) Fr. … hongo azul (blue mushroom)» | 2020 |
+| Duraznillo = *Cantharellus* gpo. *cibarius*; enchilado = *Hypomyces lactifluorum* | ✅ | Etnobiología 2010 | «Cantharellus cibarius Fr. (duraznillo)»; «Hypomyces lactifluorum … (colorado u hongo enchilado)» | 2010 |
+| Los 4 hongos son de los de mayor importancia cultural en tierras templadas (respalda que «llegan al mercado») | ✅ | Lilloa | «los hongos de mayor importancia cultural son … Amanita caesarea s.l. y Cantharellus cibarius s.l., además de Lactarius indigo, Mycosarcoma maydis e Hypomyces lactifluorum» | 2025 |
+| «Casi dos de cada tres viven abrazados a las raíces de un árbol» · «65 %» | ✅ (65 % ≈ 2/3, «casi» es correcto) | Lilloa | «La mayoría de estas especies son ectomicorrizógenas (65%), sin embargo, existe un buen número de especies (31%) que son saprobias» | 2025 |
+| «El árbol les da azúcares; ellos le pasan agua y nutrientes» | ✅ | https://www.jstage.jst.go.jp/article/mycosci/62/1/62_MYC520/_html/-char/en | «The fungus supplies the tree with water and nutrients … In exchange, the tree, or shrub, reallocates photosynthates to its fungal symbiont» | 2021 |
+| «La mayoría todavía no se puede cultivar» | ✅ (65 % son ectomicorrízicas y la mayoría de éstas no se cultiva) | Mycoscience 2021 | «most EMF species are not yet cultivable due to their complex symbiotic life cycle» | 2021 |
+| «En 2009, en el mercado de Acaxochitlán, Hidalgo, preguntaron a las hongueras…» · tarjeta UAEH · Etnobiología 2010 | ✅ | Etnobiología 2010 | «Durante el periodo junio a octubre de 2009 se acudió al mercado tradicional … Se les aplicó a las hongueras una entrevista dirigida» · autores del «Laboratorio de Micología … Universidad Autónoma del Estado de Hidalgo» | 2010 (dato 2009) |
+| «Sin ajonjolí en el sombrero, con pañuelito y con botita» | ✅ | Etnobiología 2010 | «sin ajonjolí (escamas), con pañuelito (velo) y con botita (volva)»; «carencia de "ajonjolí" (verrugas o parches) · anillos (pañuelito) · volva (botita)» | 2010 |
+| «un saber que guardan las mujeres nahuas» | ✅ | Etnobiología 2010 | «La población náhuatl … todavía conserva el conocimiento tradicional de los hongos silvestres comestibles, siendo las mujeres de este grupo, quienes aún realizan la recolecta y venta» | 2010 |
+| «hay Amanitas mortales» (sección *Phalloideae*) en México | ✅ | https://www.elsevier.es/en-revista-annals-hepatology-16-pdf-download-S1665268119315297 | «in Mexico other species such as Amanita arocheae, A. bisporigera, A. verna and A.virosa under the same section (Phalloideae) are equally toxic» | 2011 |
+| «…con pañuelito y botita» (y lisas: «mismas 3 señas») | ✅ | https://www.mushroomexpert.com/amanita_bisporigera.html | «a bald cap that almost always lacks patches or warts»; «a persistent, thin, high, skirtlike ring»; «a white, sacklike volva encasing the base» | consultada 2026 |
+| «cocinarlas no les quita el veneno» · «(amatoxinas)» | ✅ | Annals of Hepatology 2011 | «Amatoxins are resistant to heat and freezing, and cannot be denatured by cooking or digestive enzymes.» | 2011 |
+| publicacion.md: «no existe un método práctico y sencillo para distinguir…» | ✅ | Annals of Hepatology 2011 | «There is no practical, simple method that could allow most individuals to make this distinction.» | 2011 |
+| publicacion.md (LinkedIn), antes: «La mayoría no llega al supermercado.» | ⚠️ no verificable (ninguna fuente lo mide) | — | — | — |
+| publicacion.md (LinkedIn), **corregido**: «La mayoría no se cultiva: se recolecta en el bosque.» | ✅ corregido | Mycoscience 2021 · Lilloa | «most EMF species are not yet cultivable»; «la actividad de recolección de hongos silvestres es una actividad que se realiza en bosques y selvas» | 2021 / 2025 |
+| Dibujos (fruto/micelio, manto y red de Hartig, barra 100 µm, colores de yema, *L. indigo*, duraznillo, enchilado, *Amanita* blanca) | ✅ (esquemáticos; coinciden con la primera verificación y las fuentes de arriba) | ver tabla anterior | — | — |
+
+Resultado: voz y pantalla sin cambios (todo ✅). Único cambio: una frase de LinkedIn en `publicacion.md` que no tenía fuente.
+
 VEREDICTO: APROBADO
