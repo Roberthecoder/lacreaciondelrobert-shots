@@ -10,7 +10,7 @@ Tus células tienen una puerta especial para una molécula… y la mejor fuente 
 Se llama ergotioneína: un aminoácido raro, con azufre. Tu cuerpo no la fabrica, y las plantas con flor tampoco. La hacen hongos y algunas bacterias (como las actinobacterias), y las plantas la toman del suelo. Toda la que tienes llegó con lo que comiste.
 El problema: la membrana de tus células casi no la deja pasar. ¿Entonces cómo entra?
 En 2005, un equipo de la Universidad de Colonia, Alemania, descubrió su puerta principal: el transportador OCTN1 (gen SLC22A4). Se creía que movía otras moléculas, como la carnitina, pero a la ergotioneína la deja pasar más de 100 veces mejor. En 2010, en la Universidad de Kanazawa, Japón, ratones sin esa puerta se quedaron sin ergotioneína en la sangre y en varios órganos.
-Las células que tienen la puerta la acumulan: glóbulos rojos, médula ósea, hígado, riñón y el cristalino del ojo.
+Tu cuerpo la concentra mucho en glóbulos rojos, médula ósea, hígado, riñón y el cristalino del ojo.
 ¿Dónde hay más? En los hongos: un porcini (Boletus edulis) trae más de 7 mg por gramo seco; un champiñón blanco (Agaricus bisporus), unos 0.4. El porcini trae unas 17 veces más.
 En 2018, el bioquímico Bruce Ames propuso llamarla "vitamina de la longevidad". Es una propuesta: en el laboratorio es antioxidante, pero que proteja tu salud a largo plazo todavía no está probado en personas.
 Así que esa quesadilla de champiñones abre una puerta que tus células ya tenían.
@@ -44,7 +44,7 @@ Descripción:
 Tus células tienen una puerta especial para una molécula… y la mejor fuente que comes son los hongos.
 La molécula es la ergotioneína, un aminoácido derivado de la histidina que lleva azufre. Ni los animales ni las plantas con flor la fabrican: la hacen sobre todo hongos y algunas bacterias, y las plantas la absorben del suelo. Un estudio de 2026 midió que algunas algas verdes y un musgo sí la producen, y halló los genes en helechos y coníferas; las plantas con flor perdieron uno de esos genes. Toda la ergotioneína de tu cuerpo llega con la comida.
 La membrana de tus células es prácticamente impermeable a ella. En 2005, un equipo de la Universidad de Colonia (Alemania) descubrió que el transportador OCTN1, del gen SLC22A4, que se creía que movía otras moléculas como el tetraetilamonio y la carnitina, en realidad transporta ergotioneína más de 100 veces mejor; propusieron llamarlo ETT, "transportador de ergotioneína". En 2010, en la Universidad de Kanazawa (Japón), ratones sin ese gen no tenían nada de ergotioneína en la sangre ni en varios órganos.
-Las células con esa puerta la acumulan: es especialmente abundante en glóbulos rojos, médula ósea, hígado, riñón y el cristalino y la córnea del ojo.
+Las células que tienen esa puerta la acumulan y la retienen; en el cuerpo es especialmente abundante en glóbulos rojos, médula ósea, hígado, riñón y el cristalino y la córnea del ojo.
 La fuente principal en la dieta son los hongos: el porcini (Boletus edulis) trae más de 7 mg por gramo de peso seco y el champiñón blanco (Agaricus bisporus) unos 0.4 mg; también hay un poco en frijoles negros y rojos, salvado de avena, hígado y riñón.
 En 2018, Bruce Ames propuso incluirla entre unas posibles "vitaminas de la longevidad". Es una propuesta: en el laboratorio es antioxidante, pero la evidencia de beneficios en salud humana es, sobre todo, indirecta y no definitiva.
 Así que esa quesadilla de champiñones abre una puerta que tus células ya tenían.
