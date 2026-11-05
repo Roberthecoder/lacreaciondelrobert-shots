@@ -144,6 +144,26 @@ function Replica({ x, y, w = 420, h = 360, color = KC.paper, titulo, sub, p = 1,
   </g>;
 }
 
+// Subtítulo con cursivas: como Subtitulo del kit, y además _palabra_ = cursiva (nombres científicos).
+function SubtituloLX({ T, at, until, texto, idx, color = KC.gold2, tam = 64 }) {
+  const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
+  if (T < at || T > until) return null;
+  const out = kprog(T, until - 0.2, until, kEase.suave);
+  let on = false, it = false;
+  const palabras = texto.split(' ').map((w, i) => {
+    let p = w; if (p.startsWith('*')) { on = true; p = p.slice(1); } if (p.startsWith('_')) { it = true; p = p.slice(1); }
+    const acc = on, cur = it; if (p.includes('*')) { p = p.replace('*', ''); on = false; } if (p.includes('_')) { p = p.replace('_', ''); it = false; }
+    const t0 = at + i * 0.05, e = kprog(T, t0, t0 + 0.3, kEase.sale);
+    return <span key={i} style={{ display:'inline-block', opacity:e, transform:`translateY(${(1 - e) * 24}px)`, padding: acc ? '0 .18em' : 0, margin: acc ? '0 .05em' : 0, fontStyle: cur ? 'italic' : 'normal',
+      background: acc ? color : 'transparent', color: acc ? KC.dark : KC.texto, textShadow: acc ? 'none' : KSOMBRA, borderRadius:8 }}>{p}</span>;
+  });
+  const entra = kprog(T, at, at + 0.25, kEase.sale);
+  return <div style={{ position:'absolute', left:0, right:0, bottom:560, zIndex:47, display:'flex', justifyContent:'center', opacity:1 - out }}>
+    <div style={{ maxWidth:940, display:'flex', flexWrap:'wrap', justifyContent:'center', columnGap:'0.26em', rowGap:6, padding:'14px 26px 18px',
+      background:`rgba(10,11,14,${0.62 * entra})`, borderRadius:28, font:`900 ${tam}px/1.12 ${KF.texto}`, textAlign:'center' }}>{palabras}</div>
+  </div>;
+}
+
 function LascauxShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Cu: CUES.Cueva, Vi: CUES.Visitas, Ve: CUES.Verde, P: CUES.Pregunta, B: CUES.Blanco, Hi: CUES.Hifas, Ne: CUES.Negro, Es: CUES.Estudio, Me: CUES.Melanina, Pa: CUES.Paredes, Re: CUES.Replica, C: CUES.Cierre, Ou: CUES.Outro };
@@ -331,19 +351,19 @@ function LascauxShot() {
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m · esquemático" largo={160} y={1600} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Cu - 0.1} texto="Nunca la vas a ver *en persona.*" />
-      <Subtitulo T={T} idx={1} at={K.Cu + 0.1} until={K.Vi - 0.1} texto="Lascaux, Francia: *toros, caballos y ciervos.*" />
-      <Subtitulo T={T} idx={2} at={K.Vi + 0.1} until={K.Ve - 0.1} texto="Miles de visitas: *calor, humedad y aliento.*" />
-      <Subtitulo T={T} idx={3} at={K.Ve + 0.1} until={K.P - 0.1} texto="Algas verdes… *cerrada en 1963.*" />
-      <Subtitulo T={T} idx={4} at={K.P + 0.1} until={K.B - 0.1} texto="¿Ya estaba *a salvo?*" />
-      <Subtitulo T={T} idx={5} at={K.B + 0.1} until={K.Hi - 0.1} texto="2001: un manto blanco, *Fusarium solani.*" />
-      <Subtitulo T={T} idx={6} at={K.Hi + 0.1} until={K.Ne - 0.1} texto="Lo frenaron con *cal y biocidas.*" />
-      <Subtitulo T={T} idx={7} at={K.Ne + 0.1} until={K.Es - 0.1} texto="Después: *manchas negras.*" />
-      <Subtitulo T={T} idx={8} at={K.Es + 0.1} until={K.Me - 0.1} texto="Un hongo nuevo: *Ochroconis lascauxensis.*" />
-      <Subtitulo T={T} idx={9} at={K.Me + 0.1} until={K.Pa - 0.1} texto="Su negro es *melanina.*" />
-      <Subtitulo T={T} idx={10} at={K.Pa + 0.1} until={K.Re - 0.1} texto="Sobre las mismas *paredes con arte.*" />
-      <Subtitulo T={T} idx={11} at={K.Re + 0.1} until={K.C - 0.1} texto="Hoy se visitan *copias.*" />
-      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Vigilada… y *lejos de tu aliento.*" />
+      <SubtituloLX T={T} idx={0} at={K.G + 0.1} until={K.Cu - 0.1} texto="Nunca la vas a ver *en persona.*" />
+      <SubtituloLX T={T} idx={1} at={K.Cu + 0.1} until={K.Vi - 0.1} texto="Lascaux, Francia: *toros, caballos y ciervos.*" />
+      <SubtituloLX T={T} idx={2} at={K.Vi + 0.1} until={K.Ve - 0.1} texto="Miles de visitas: *calor, humedad y aliento.*" />
+      <SubtituloLX T={T} idx={3} at={K.Ve + 0.1} until={K.P - 0.1} texto="Algas verdes… *cerrada en 1963.*" />
+      <SubtituloLX T={T} idx={4} at={K.P + 0.1} until={K.B - 0.1} texto="¿Ya estaba *a salvo?*" />
+      <SubtituloLX T={T} idx={5} at={K.B + 0.1} until={K.Hi - 0.1} texto="2001: un manto blanco, *_Fusarium solani._*" />
+      <SubtituloLX T={T} idx={6} at={K.Hi + 0.1} until={K.Ne - 0.1} texto="Lo frenaron con *cal y biocidas.*" />
+      <SubtituloLX T={T} idx={7} at={K.Ne + 0.1} until={K.Es - 0.1} texto="Después: *manchas negras.*" />
+      <SubtituloLX T={T} idx={8} at={K.Es + 0.1} until={K.Me - 0.1} texto="Un hongo nuevo: *_Ochroconis lascauxensis._*" />
+      <SubtituloLX T={T} idx={9} at={K.Me + 0.1} until={K.Pa - 0.1} texto="Su negro es *melanina.*" />
+      <SubtituloLX T={T} idx={10} at={K.Pa + 0.1} until={K.Re - 0.1} texto="Sobre las mismas *paredes con arte.*" />
+      <SubtituloLX T={T} idx={11} at={K.Re + 0.1} until={K.C - 0.1} texto="Hoy se visitan *copias.*" />
+      <SubtituloLX T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="Vigilada… y *lejos de tu aliento.*" />
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 3.2, 'avatar_11_sorprendido', 'gancho'],
