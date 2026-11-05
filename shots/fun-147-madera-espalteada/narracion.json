@@ -1,0 +1,59 @@
+{
+  "dcHtml": "Shot Espalteada base narrada.dc.html",
+  "salida": "Shot Espalteada narrado.dc.html",
+  "nota": "Shot Fungi Mati #147 · madera espalteada. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esas líneas negras no son vetas de la madera: son fronteras entre hongos."
+    },
+    {
+      "escena": "Valor",
+      "texto": "A esta madera se le llama espalteada, y se vende cara en piezas torneadas y muebles."
+    },
+    {
+      "escena": "Entran",
+      "texto": "Todo empieza cuando varios hongos, cada uno por su lado, entran al mismo tronco."
+    },
+    {
+      "escena": "Hifas",
+      "texto": "Cada uno teje hifas, hilos finísimos, que avanzan y se comen la madera por dentro."
+    },
+    {
+      "escena": "Choque",
+      "texto": "Cuando dos colonias chocan, ninguna deja pasar a la otra:"
+    },
+    {
+      "escena": "Melanina",
+      "texto": "cada una amuralla su territorio con melanina, un pigmento oscuro."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué pasa si en el tronco hay muchos hongos?"
+    },
+    {
+      "escena": "Mapa",
+      "texto": "Más hongos, más fronteras: la tabla queda como un mapa."
+    },
+    {
+      "escena": "Blanqueo",
+      "texto": "Otros, de pudrición blanca, como Trametes versicolor, se comen la lignina y aclaran la madera."
+    },
+    {
+      "escena": "Verde",
+      "texto": "Y Chlorociboria la pinta de verde azulado con un pigmento: la xilindeína."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1992, el equipo de Robert Blanchette miró al microscopio taraceas del Renacimiento italiano: ese verde traía hifas del hongo."
+    },
+    {
+      "escena": "Xylaria",
+      "texto": "Lo más raro: Xylaria polymorpha, los dedos de muerto, hace líneas sin rival: se pone fronteras a sí mismo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa tabla tan fina es el mapa de una guerra de hongos."
+    }
+  ]
+}
