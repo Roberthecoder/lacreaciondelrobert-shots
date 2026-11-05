@@ -6,7 +6,7 @@
   la misma celdita, ahora con una abeja adulta saliendo).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve — «Esa pelusa blanca no echó a perder la cría: es la comida
   que esta abeja bebé necesita.»
-- **Duración:** voz 941 caracteres / 175 palabras (≈ 58.3 s) + cierre 3.5 s → **≈ 61.8 s** en la base (estimar-escenas.mjs).
+- **Duración:** voz 952 caracteres con espacios entre líneas (941 según `estimar-escenas.mjs`) / 175 palabras (≈ 58.3 s) + cierre 3.5 s → **≈ 61.8 s** en la base (re-estimado el 5 nov 2026, dentro de 61.0–62.0 s).
 - **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
 - **No repite amb-49** (abeja maya / conservación de meliponas): aquí lo central es el hongo dentro de la celda de cría.
 
@@ -14,20 +14,20 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa pelusa blanca no echó a perder la cría: es la comida que esta abeja bebé necesita. | Fondo amarillo miel: un panal de cera café abierto en corte; en el cuadro 0.3 la cámara entra a una celdita ovalada: una larva blanca curvada sobre su comida y, en el borde, una pelusa blanca. Tarjeta "¿moho? ¿se echó a perder?" que se tacha; etiqueta "comida". |
-| 1 | Nombre | Es la larva de *Scaptotrigona depilis*, una abeja sin aguijón de Brasil. | Sale de la celda: una obrera pequeña (dibujo esquemático) en el tubo de entrada de la colmena. Etiquetas "abeja sin aguijón · *Scaptotrigona depilis*" y chip "Brasil (mandaguari)"; mapa chiquito de Brasil. |
-| 2 | Celda | Las obreras llenan cada celdita de cera con alimento azucarado. | Panal de celdas ovaladas (horizontal): una obrera regurgita alimento amarillento que sube como nivel en la celda. Chip "alimento rico en azúcar". |
-| 3 | Huevo | La reina pone un huevo encima y la celda se sella. | La reina (abdomen grande) pone un huevo alargado sobre el alimento; la obrera cierra la boca de la celda con cera (efecto). Cronómetro "día 0". |
-| 4 | Hongo | Unos tres días después, de la pared de cera brota un hongo sobre la comida. | **Dentro de la celda sellada** (corte con `Lupa` rayos X): time-lapse "día 0 → día 3"; del borde de la pared crece una pelusa blanca que se extiende sobre la superficie del alimento. Etiqueta "hongo (pelusa blanca)". |
-| 5 | Come | La larva lo corta con sus mandíbulas y se lo come. | La larva recién nacida mordisquea los hilos (mandíbulas en primer plano); la pelusa va desapareciendo. Chip "larva de 3 días". |
-| 6 | Pregunta | ¿Y si le quitas el hongo? | **Re-gancho.** Robert grande, pensativo; la pelusa se apaga en una celda y queda la otra con pelusa. "?" grande. |
-| 7 | Estudio | En 2015, en Brasil, criaron larvas en laboratorio con comida esterilizada. | Laboratorio (fondo menta): placa de 96 pocitos; pipeta deposita alimento; `TarjetaEstudio` "2015 · Menezes y colaboradores · *Current Biology*". |
-| 8 | Resultado | Con hongo sobrevivió el setenta y seis por ciento; sin hongo, solo el ocho. | Dos grupos de pocitos lado a lado: "con hongo" se llena de larvas vivas; "sin hongo" casi vacío. Barras **76 %** vs **8 %** de **supervivencia de larvas** y nota "Menezes et al., 2015". |
-| 9 | Ergosterol | En 2018, en la Universidad de São Paulo vieron por qué: el hongo le da ergosterol. | `TarjetaEstudio` "2018 · Paludo, Pupo y colaboradores · Universidad de São Paulo (Ribeirão Preto) · *Scientific Reports*"; **al microscopio** (fondo oscuro): células del hongo con gotitas de grasa brillantes; molécula esquemática "ergosterol" que sale de ellas. |
-| 10 | Pupa | La larva no fabrica esteroles, y los necesita para volverse pupa. | Flecha: ergosterol → "hormonas de la muda" → la larva se transforma en pupa (silueta de abeja blanca). Mini barras 2018: "con hongo 71 % · sin hongo ni esterol 8 % · con ergosterol (2.5 µM) 65 %" (llegaron a pupa). |
-| 11 | Levadura | Y el giro: no es moho; es una levadura, *Zygosaccharomyces*, que crece en hilitos. | Microscopio: células ovaladas de levadura encadenadas en filamentos (pseudohifas). Tarjeta tachada "moho (*Monascus*)" → "levadura *Zygosaccharomyces* sp." Chip "primero se identificó como *Monascus* (2015); en 2018 se corrigió". |
-| 12 | Mexico | En México vive una prima: *Scaptotrigona mexicana*, de Tamaulipas a Chiapas. | Mapa de México (fondo cian) con los estados del catálogo Moure resaltados (Tamaulipas, San Luis Potosí, Hidalgo, Veracruz, Puebla, México, Morelos, Guerrero, Oaxaca, Chiapas); etiqueta "*Scaptotrigona mexicana*". Sin decir que su cría hace lo mismo. |
-| 13 | Cierre | Así que esa pelusa no es moho: es lo que convierte a una larva en abeja. | **Regreso a la imagen del inicio:** la misma celdita del panal, ahora abierta por arriba y una abeja adulta saliendo; en el borde queda la marca de donde estaba la pelusa. |
+| 0 | Gancho | Esa pelusa blanca no echó a perder la cría: es la comida que esta abeja bebé necesita. | Fondo amarillo miel: un panal de cera café abierto en corte; en el cuadro 0.3 la cámara entra a una celdita ovalada: una larva blanca curvada sobre su comida y, en el borde, una pelusa blanca. Tarjeta "¿se echó a perder?" que se tacha; etiquetas "comida" (en la pelusa) y "larva". |
+| 1 | Nombre | Es la larva de *Scaptotrigona depilis*, una abeja sin aguijón de Brasil. | Sale de la celda: una obrera pequeña (dibujo esquemático) en el tubo de entrada de la colmena. Caja "*Scaptotrigona depilis*", chip "Brasil · mandaguari" y etiqueta "abeja sin aguijón" (sin rotular color). |
+| 2 | Celda | Las obreras llenan cada celdita de cera con alimento azucarado. | Panal de celdas ovaladas (horizontal): una obrera regurgita alimento amarillento que sube como nivel en la celda. Chips "celda de cerumen: cera + resina" y "alimento azucarado"; etiqueta "alimento". |
+| 3 | Huevo | La reina pone un huevo encima y la celda se sella. | La reina (abdomen grande) pone un huevo alargado sobre el alimento; una obrera cierra la boca de la celda con cera (efecto). Etiqueta "huevo", chip "se sella". |
+| 4 | Hongo | Unos tres días después, de la pared de cera brota un hongo sobre la comida. | **Dentro de la celda sellada** (fondo oscuro; chip "POR DENTRO · esquemático"): contador "día 0 → día 3"; el huevo eclosiona y del borde entre la pared y el alimento crece una pelusa blanca que se extiende sobre la superficie. Etiquetas "pelusa" y "hongo". |
+| 5 | Come | La larva lo corta con sus mandíbulas y se lo come. | La cámara se acerca a la larva, que mordisquea los hilos (etiqueta "mandíbulas"); la pelusa va desapareciendo y la larva crece. Chip "larva de 3 días". |
+| 6 | Pregunta | ¿Y si le quitas el hongo? | **Re-gancho.** Robert grande, pensativo; dos celditas: en una la pelusa se apaga y aparece una X roja; "?" grande. |
+| 7 | Estudio | En 2015, en Brasil, criaron larvas en laboratorio con comida esterilizada. | Laboratorio (fondo cian): `TarjetaEstudio` "2015 · Menezes y colaboradores · *Current Biology*"; luego una placa de pozos que una pipeta llena de alimento, y en cada pozo aparece una larva. Chip "comida esterilizada", etiqueta "huevos → larvas en cada pozo". |
+| 8 | Resultado | Con hongo sobrevivió el setenta y seis por ciento; sin hongo, solo el ocho. | Dos placas de 5 × 5 pozos ("con hongo" con pelusa / "sin hongo"); las larvas sin hongo se ponen grises: quedan vivas 19 de 25 y 2 de 25. Números **76 %** (azul) y **8 %** (rojo); chip "supervivencia de larvas · 2015" y etiqueta "esquema: 25 pozos = 100 %". |
+| 9 | Ergosterol | En 2018, en la Universidad de São Paulo vieron por qué: el hongo le da ergosterol. | Fondo oscuro. `TarjetaEstudio` "2018 · Universidad de São Paulo · Ribeirão Preto · Paludo, Pupo y colaboradores · *Scientific Reports*"; chip "AL MICROSCOPIO · esquemático": células del hongo en cadena con gotitas de grasa que brillan (etiqueta "gotitas de grasa") y molécula esquemática de esterol (etiqueta "ergosterol"). |
+| 10 | Pupa | La larva no fabrica esteroles, y los necesita para volverse pupa. | Fondo lila: esterol → "hormonas de la muda" → la larva se transforma en pupa (silueta blanca, etiqueta "pupa"). Barras 2018, chip "llegaron a pupa · 2018": "con hongo 71 %", "con ergosterol (2.5 µM) 65 %", "sin hongo ni esterol 8 %". |
+| 11 | Levadura | Y el giro: no es moho; es una levadura, *Zygosaccharomyces*, que crece en hilitos. | Microscopio (fondo oscuro): células ovaladas de levadura que brotan en cadena (pseudohifas), etiqueta "hilitos (pseudohifas)". Tarjeta "moho (*Monascus*, 2015)" que se tacha → tarjeta "levadura · *Zygosaccharomyces* sp. (2018)". Robert grande a la izquierda, sorprendido. |
+| 12 | Mexico | En México vive una prima: *Scaptotrigona mexicana*, de Tamaulipas a Chiapas. | Mapa esquemático de México (fondo cian) con un hexágono dorado en cada uno de los 10 estados del catálogo Moure (Tamaulipas, San Luis Potosí, Hidalgo, Veracruz, Puebla, México, Morelos, Guerrero, Oaxaca, Chiapas); etiquetas "Tamaulipas" y "Chiapas", caja "*Scaptotrigona mexicana*", chip "su prima · mismo género" y etiqueta "10 estados · catálogo Moure". Sin decir que su cría hace lo mismo. |
+| 13 | Cierre | Así que esa pelusa no es moho: es lo que convierte a una larva en abeja. | **Regreso a la imagen del inicio:** el mismo panal y la misma celdita del centro; se abre la tapa de cera, la pupa blanca desaparece y sale una abeja adulta por arriba. Chip "hongo → ergosterol → abeja". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y cálida (zumbido suave de colmena) que cambia de acordes por sección; efectos en el mismo cuadro:
@@ -35,11 +35,27 @@ cámara que entra a la celda, tachado, zumbido de la obrera, goteo del alimento,
 del hongo (cosquilleo agudo), mordiditas, pipeta en los pocitos, barras que suben, brillo del ergosterol, giro (tachado),
 tics del mapa, salida de la abeja.
 
-Escala: «esquemático» en el panal, la celda y el microscopio (no se dice ningún tamaño en la voz). Se fijará en la fase 2.
+Escala: barra fija «dibujo esquemático» (160 px, y = 1430) de 0 s hasta la tarjeta de cierre, en el panal, la celda, el laboratorio, el microscopio y el mapa. No hay tamaños publicados que se usen y la voz no dice ningún tamaño.
 
 ## Robert en pantalla
 
-(Se escribe en la fase 2.)
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y si le quitas el hongo?» y en el giro «no es moho: es una levadura».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.8 | 11_sorprendido | `gancho` | «esa pelusa blanca… es la comida» (cuadro 0) |
+| 2 | 5.7 | 9.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | la abeja sin aguijón sale de la colmena |
+| 3 | 13.6 | 16.4 | 13_senalando_arriba | `arriba-der` | «la reina pone un huevo encima y la celda se sella» |
+| 4 | 21.5 | 24.2 | 04_bajando_lentes | `arriba-der` | «la larva lo corta con sus mandíbulas y se lo come» |
+| 5 | 24.3 | 26.4 | 07_pensativo_puno | `grande` | «¿y si le quitas el hongo?» |
+| 6 | 31.6 | 35.2 | 11_sorprendido | `arriba-der` | «con hongo 76 %; sin hongo, solo el 8» |
+| 7 | 37.9 | 39.9 | 12_perfil_serio | `arriba-der` | «el hongo le da ergosterol» (al microscopio) |
+| 8 | 45.0 | 48.9 | 11_sorprendido | `grande-izq` | «no es moho: es una levadura» |
+| 9 | 50.2 | 53.6 | 13_senalando_arriba | `arriba-der` | «en México vive una prima» |
+| 10 | 54.4 | 58.1 | 02_apuntando_camara | `arriba-der` | «es lo que convierte a una larva en abeja» |
+| — | 58.3 | 61.8 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **≈ 32.6 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · 2 veces grande.
 
 ## Fuentes (abiertas el 5 nov 2026)
 

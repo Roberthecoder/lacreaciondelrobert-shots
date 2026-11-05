@@ -3,14 +3,14 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #98 · rama `claude/fun-95-99-insectos`.
 - **Formato:** N1 "Por dentro" (el montículo en la sabana → corte del montículo → cámara del panal → al microscopio: hifas y nódulos → el fósil de Tanzania → la misma imagen del montículo, ya con la seta gigante encima), con un tramo de N5 (el estudio de los nidos fósiles).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" — «Ese montículo de tierra no es una casa: es una granja de hongos.»
-- **Duración:** voz 933 caracteres / 174 palabras (≈ 58.0 s) + cierre 3.5 s → **61.5 s** en la base (`estimar-escenas.mjs`).
+- **Duración:** voz 933 caracteres / 174 palabras (≈ 58.0 s) + cierre 3.5 s → **61.7 s** en la base (`estimar-escenas.mjs`, tras la corrección del verificador: 937 caracteres).
 - **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
 - **No repite fun-22** (arrieras, hormigas de América que cortan hojas): aquí son termitas de África y Asia, otro hongo (*Termitomyces*, que sí da setas) y el panal se hace con popó. No se compara con las arrieras.
 - **Sin el mito del "aire acondicionado"** del montículo: no se menciona.
 
 ## Versión narrada
 
-Tiempos de la base (inicio de escena, s): Gancho 0.0 · Nombre 4.0 · Forraje 8.3 · Panal 11.2 · Hongo 14.6 · Bolitas 17.2 · Viejas 21.7 · Pregunta 24.3 · Esporas 27.2 · Estudio 33.3 · Origen 38.9 · Titanicus 43.1 · Mercado 49.1 · Cierre 54.0 · Outro 58.0–61.5.
+Tiempos de la base (inicio de escena, s): Gancho 0.0 · Nombre 4.0 · Forraje 8.3 · Panal 11.2 · Hongo 14.6 · Bolitas 17.2 · Viejas 21.7 · Pregunta 24.3 · Esporas 27.2 · Estudio 33.3 · Origen 39.1 · Titanicus 43.3 · Mercado 49.3 · Cierre 54.2 · Outro 58.2–61.7.
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
@@ -18,7 +18,7 @@ Tiempos de la base (inicio de escena, s): Gancho 0.0 · Nombre 4.0 · Forraje 8.
 | 1 | Nombre | Lo hacen termitas de África y Asia, y cultivan un hongo: *Termitomyces*. | Mini mapa esquemático (África y Asia tropical iluminadas); etiquetas "termitas cultivadoras · Macrotermitinae" y "hongo · *Termitomyces*". |
 | 2 | Forraje | Las obreras traen pasto seco, hojas y madera. | Fila de obreras (cuerpo pálido, sin ojos, mandíbulas) cargando pedacitos de pasto, hoja y astilla hacia la entrada. Chip "planta muerta". |
 | 3 | Panal | Las jóvenes se lo comen y con su popó arman un panal. | Corte del montículo (rayos X con `Lupa`): túneles y cámaras; dentro de una cámara, obreras jóvenes dejan bolitas de popó que se apilan en un panal café lleno de huequitos (laberinto, no hexágonos). Etiqueta "panal de hongo (fungus comb) · hecho de popó". |
-| 4 | Hongo | Ahí crece el hongo y deshace la planta. | **Al microscopio** (fondo oscuro): hilos blancos (hifas) recorren el panal y las fibras de planta se van deshaciendo. Chip "POR DENTRO · esquemático". |
+| 4 | Hongo | Ahí crece el hongo y deshace la planta. | **Al microscopio** (fondo oscuro): hilos blancos (hifas) recorren el panal y las fibras de planta se van deshaciendo. Chip "AL MICROSCOPIO · esquemático"; etiquetas "fibras de planta" y "hifas del hongo". |
 | 5 | Bolitas | Le salen bolitas de esporas que las jóvenes comen para sembrar más panal. | En la superficie del panal aparecen puntitos blancos (nódulos); zoom a uno: esporas. Una obrera joven come nódulos y planta; flecha que regresa al panal nuevo (ciclo). Etiqueta "nódulos · esporas asexuales". |
 | 6 | Viejas | Ya maduro, las viejas se comen el panal. | El panal se oscurece (maduro); obreras viejas (mismo tamaño que las jóvenes; solo la etiqueta "viejas" las distingue) se lo comen por abajo. Chip "panal viejo = comida". |
 | 7 | Pregunta | ¿Y de dónde saca su hongo una colonia nueva? | **Re-gancho.** Un rey y una reina alados aterrizan solos en el suelo vacío; "?" gigante; Robert grande, pensativo. |
@@ -30,9 +30,28 @@ Tiempos de la base (inicio de escena, s): Gancho 0.0 · Nombre 4.0 · Forraje 8.
 | 13 | Cierre | Ese montículo no es una casa: es una granja de millones de años. | **La imagen del inicio, transformada:** el mismo montículo, ahora con la seta gigante encima, el corte con el panal visible y las obreras entrando. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música (fase 2):** cama grave y cálida de sabana, continua, sin golpe marcado; efectos en el mismo cuadro: tachón de la tarjeta, pasitos de obreras, "plop" de cada bolita de popó, crujido suave de hifas, "pop" de nódulos, masticado, aleteo de los alados, viento de esporas, golpe de piedra (fósil), tic de la línea del tiempo, lluvia y crecimiento de la seta, ambiente de carretera.
+**Música** (`gen-audio.mjs`, todo calculado): cama grave y cálida, continua, sin golpe marcado, que cambia de acorde en cada escena con función (la menor: i – VI – VII – i – iv – VI – VII – **V** en la pregunta (tensión) – i en la respuesta – VI – III – VII – VI – i), con un bajo suave en cada cambio; motivo corto la–do–mi–re en el gancho, una cuarta arriba en el estudio y completo en el cierre. Efectos en el mismo cuadro: acercamiento, pasitos de obreras, tachón de la tarjeta, fila cargando, "plop" de cada bolita de popó, tics de hifas que crecen, gotitas de nódulos, masticado, aleteo y aterrizaje de los alados, viento con esporas, golpe de la roca fósil, tics de la línea del tiempo, lluvia, crecimiento de la seta, regla, carro en la carretera, llegada de la familia.
 
-**Escala (fase 2):** regla "40–80 cm · hasta 1 m" junto a la seta de *T. titanicus*; "esquemático" en el corte del montículo, al microscopio y en el fósil (no se dice en voz el tamaño del montículo ni de las termitas).
+**Escala:** `BarraEscala` «esquemático» en todas las escenas (montículo, mapa, corte, microscopio, fósil, línea del tiempo, mercado) y «sombrero 40–80 cm (hasta 1 m)» en la escena de *T. titanicus*, más la regla sobre el sombrero «sombrero: 40–80 cm · hasta 1 m» (Härkönen 2015). El montículo, las termitas y el panal no llevan medida (no se dice en voz ningún tamaño salvo el del sombrero). El fósil lleva «panal petrificado · esquemático» y la línea del tiempo «estimación (no edad exacta)».
+
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y de dónde saca su hongo una colonia nueva?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «ese montículo… es una granja de hongos» (cuadro 0) |
+| 2 | 4.6 | 8.1 | 12_perfil_serio | `arriba-der` | las termitas de África y Asia y *Termitomyces* |
+| 3 | 11.6 | 14.4 | 05_sonriendo_dientes_uniformes | `arriba-der` | «con su popó arman un panal» |
+| 4 | 17.6 | 21.5 | 13_senalando_arriba | `izq-alto` | señala la lupa del nódulo: «bolitas de esporas» |
+| 5 | 24.2 | 27.5 | 07_pensativo_puno | `grande` | «¿y de dónde saca su hongo una colonia nueva?» |
+| 6 | 35.9 | 38.9 | 04_bajando_lentes | `arriba-der` | los nidos fósiles de 25 millones de años |
+| 7 | 47.2 | 49.5 | 11_sorprendido | `arriba-der` | «el sombrero… llega a un metro» |
+| 8 | 50.4 | 54.0 | 05_sonriendo_dientes_uniformes | `arriba-der` | «una sola alcanza para una familia grande» |
+| 9 | 54.6 | 58.1 | 02_apuntando_camara | `arriba-der` | «es una granja de millones de años» |
+| — | 58.2 | 61.7 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **29.9 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas. Nunca tapa etiquetas, datos ni subtítulo (revisado en preview). Sin pose de lengua de fuera.
 
 ## Fuentes (abiertas el 5 nov 2026)
 
