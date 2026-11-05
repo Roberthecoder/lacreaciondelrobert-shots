@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Trigo Ug99 base narrada.dc.html",
+  "salida": "Shot Trigo Ug99 narrado.dc.html",
+  "nota": "Shot Fungi Mati #116. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este arbusto no es de adorno: aquí se aparea el hongo que puede dejarte sin pan."
+    },
+    {
+      "escena": "Agracejo",
+      "texto": "Es el agracejo; el hongo, la roya del tallo del trigo."
+    },
+    {
+      "escena": "Pustula",
+      "texto": "Revienta la piel del tallo con un polvo color ladrillo."
+    },
+    {
+      "escena": "Esporas",
+      "texto": "Son esporas con espinitas que el viento lleva a otros campos."
+    },
+    {
+      "escena": "Ciclo",
+      "texto": "Tiene cinco tipos de esporas, y en el agracejo se cruza y saca razas nuevas."
+    },
+    {
+      "escena": "Campana",
+      "texto": "Por eso, desde 1918, Estados Unidos destruyó más de quinientos millones de arbustos."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si el hongo ya no necesitara al arbusto?"
+    },
+    {
+      "escena": "Uganda",
+      "texto": "En 1999, en un campo de Uganda, trigos con el gen Sr31 se llenaron de roya."
+    },
+    {
+      "escena": "Sr31",
+      "texto": "Ese gen protegía trigo en gran parte del mundo. La raza nueva: Ug99."
+    },
+    {
+      "escena": "Borlaug",
+      "texto": "En 2005, Norman Borlaug, que en México creó trigos resistentes a la roya, dio la alarma."
+    },
+    {
+      "escena": "Nucleo",
+      "texto": "Y lo raro: según un estudio de 2019, Ug99 habría nacido sin cruzarse: dos hongos intercambiaron un núcleo entero."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Por eso se vigila el viento, el trigo y este arbusto: ahí se juega tu pan y tu tortilla de harina."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
