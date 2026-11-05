@@ -76,3 +76,5 @@ Apariciones 9 · **≈ 27.9 s** en pantalla (+ cierre 3.5 s) · 8 poses distinta
    > "irregular and convoluted in shape but generally brainlike and often somewhat lobed" · "pinkish tan to reddish brown" · "Flesh: … slight or chambered."
 
 El dibujo es esquemático. No es guía de identificación de hongos.
+
+> Verificación independiente aprobada el 5 nov 2026 (ver `verificacion.md`, «Segunda verificación»).

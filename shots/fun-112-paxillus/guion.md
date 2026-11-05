@@ -61,3 +61,5 @@ Detalle de cada afirmación (frase textual y año) en `verificacion.md`.
 7. Monaco Nature Encyclopedia, «*Paxillus involutus*» (nombres comunes y morfología). https://www.monaconatureencyclopedia.com/paxillus-involutus/?lang=en
 
 El dibujo es esquemático. No es guía de identificación.
+
+> Verificación independiente aprobada el 5 nov 2026 (ver `verificacion.md`, «Segunda verificación»).

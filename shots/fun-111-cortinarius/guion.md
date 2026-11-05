@@ -63,3 +63,5 @@ Apariciones 7 · **≈ 32.7 s** en pantalla (+ cierre 3.2 s) · 7 poses distinta
 7. Evans, N., Hamilton, A., Bello-Villalba, M. J. y Bingham, C. (2012). Irreversible renal damage from accidental mushroom poisoning. *BMJ* 345: e5262.
 
 El dibujo es esquemático. No es guía de identificación ni consejo médico.
+
+> Verificación independiente aprobada el 5 nov 2026 (ver `verificacion.md`, «Segunda verificación»).

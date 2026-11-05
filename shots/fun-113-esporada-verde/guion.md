@@ -70,3 +70,5 @@ Apariciones 9 · **34.9 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas ·
    > "Mushrooms were collected in the state of Jalisco, Mexico" (entre ellos *C. molybdites*)
 
 El dibujo es esquemático. No es guía de identificación.
+
+> Verificación independiente aprobada el 5 nov 2026 (ver `verificacion.md`, «Segunda verificación»).

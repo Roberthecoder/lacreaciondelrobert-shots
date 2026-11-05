@@ -75,3 +75,5 @@ Apariciones 10 · **38.2 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas �
 7. Wennig, R. et al. (2020). Mushroom poisoning. *Deutsches Ärzteblatt International* 117: 701–708. https://pmc.ncbi.nlm.nih.gov/articles/PMC7868946/ (tabla 3a: coprina, latencia "15 min – 2 h", "Flushing, sweating, tachycardia, nausea, vomiting").
 
 El dibujo es esquemático. No es guía para identificar hongos ni consejo médico.
+
+> Verificación independiente aprobada el 5 nov 2026 (ver `verificacion.md`, «Segunda verificación»).
