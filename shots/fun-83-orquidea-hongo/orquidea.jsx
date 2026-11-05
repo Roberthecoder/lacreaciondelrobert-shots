@@ -10,10 +10,10 @@ const TX = {
   numMx: 1200, numMxPre: '+', etqMx1: 'especies de orquídeas', etqMx2: 'en México',
   bosque1: 'bosque de niebla', bosque2: 'bosque mesófilo de montaña',
   epifita: 'orquídea pegada a la rama',
-  numCap: 4000000, numCapPre: '≈ ', etqCap: 'semillas en una cápsula (estimado)', etqCap2: <>récord: <i>Cycnoches</i> · Kew, 1896 (Arditti y Ghani, 2000)</>,
+  numCap: 4000000, numCapPre: '≈ ', etqCap: 'semillas en una cápsula (estimado)', etqCap2: <>récord: <i>Cycnoches</i> · Kew, 1896</>, etqCap3: '(Arditti y Ghani, 2000)',
   porDentro: 'AL MICROSCOPIO · LA SEMILLA',
   testa: 'testa (cubierta)', embrion: 'embrión', sinReservas: 'sin endospermo (la "lonchera" de otras semillas)',
-  comidaPropia: 'comida propia: muy poca · el resto, del hongo',
+  comidaPropia1: 'comida propia: muy poca', comidaPropia2: 'el resto, del hongo',
   hifa: 'hifa del hongo', micorriza: 'hongo micorrízico', hongo1: 'Tulasnella', hongo2: 'Ceratobasidium',
   peloton: 'pelotón (ovillo de hifas)', celula: 'célula del embrión',
   quien: '¿quién se come a quién?',
@@ -22,7 +22,7 @@ const TX = {
   anio: '2007', estQuien: 'UNAM · Pedregal de San Ángel', estRevista: 'Lankesteriana, 2007 · CDMX',
   bletia: 'Bletia urbana', peligro: 'orquídea en peligro', frasco: 'plántulas + sus hongos, en frasco',
   anios: '6 años', sobrevive: 'sobrevivió', pct: 50, pctPre: '≈ ', pctSuf: ' %', florecen: '¡y florecen!',
-  vainilla: 'Vanilla planifolia', vainilla2: 'vainilla · también orquídea', nativa: 'nativa de México y Centroamérica',
+  vainilla: 'Vanilla planifolia', vainilla2: 'vainilla: también es una orquídea', nativa1: 'nativa de México', nativa2: 'y Centroamérica',
   mapa: 'mapa esquemático',
   cierre: 'no es polvo',
 };
@@ -285,6 +285,25 @@ function Vainilla({ x, y, h = 900, p = 1, flor = 1, vainas = 1, T = 0 }) {
   </g>;
 }
 
+// Etiqueta legible en celular: línea + pastilla oscura, letra ≥ 30 px. texto puede ser JSX (cursivas parciales).
+function EtqP({ T, at, until, x, y, texto, it = false, lado = 'der', color = KC.texto, tam = 32, linea = true }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube');
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, opacity:e.o, display:'flex', alignItems:'center', gap:10, flexDirection: lado === 'der' ? 'row' : 'row-reverse', transform:`translate(${lado === 'der' ? 0 : '-100%'}, -50%) translateY(${e.y * 0.3}px)` }}>
+    {linea && <div style={{ width:56 * kprog(T, at, at + 0.4, kEase.sale), height:5, background:color, borderRadius:3, boxShadow:'0 2px 0 rgba(0,0,0,.6)' }}></div>}
+    <div style={{ background:'rgba(12,13,17,.84)', border:`3px solid ${color}`, borderRadius:14, padding:'4px 14px 6px', font:`700 ${tam}px/1.15 ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color, whiteSpace:'nowrap' }}>{texto}</div>
+  </div>;
+}
+// Barra de escala legible: texto en pastilla de 30 px.
+function Escala2({ T, texto, largo = 200, x = 60, y = 1430, at = -1, until }) {
+  if (T < at || (until != null && T > until)) return null;
+  const o = kprog(T, at, at + 0.3) * (until != null ? 1 - kprog(T, until - 0.3, until) : 1);
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:40, opacity:o }}>
+    <div style={{ display:'inline-block', background:'rgba(12,13,17,.84)', borderRadius:12, padding:'3px 12px 5px', font:`700 30px ${KF.mono}`, color:KC.texto, marginBottom:8 }}>{texto}</div>
+    {largo > 0 && <div style={{ width:largo, height:10, background:KC.texto, border:`3px solid ${KC.ink}`, borderRadius:5 }}></div>}
+  </div>;
+}
+
 // ---------- shot ----------
 function OrquideaShot() {
   const { T, CUES } = useComposition();
@@ -399,7 +418,7 @@ function OrquideaShot() {
       <Escena T={T} a={K.Es} b={K.Re} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          {(() => { const pase = kprog(T, K.Es + 4.6, K.Es + 5.6, kEase.suave); return <>
+          {(() => { const pase = kprog(T, K.Es + 3.8, K.Es + 4.7, kEase.suave); return <>
             <g transform={`translate(${-pase * 1100} 0)`}>
               {[[250, 1080], [540, 1080], [830, 1080]].map(([fx, fy], i) => <FrascoLab key={i} x={fx} y={fy} s={kEase.rebote(kprog(T, K.Es + 0.6 + i * 0.2, K.Es + 1.0 + i * 0.2))} planta={kprog(T, K.Es + 1.4 + i * 0.2, K.Es + 2.4 + i * 0.2)} T={T} seed={i} />)}
             </g>
@@ -407,7 +426,7 @@ function OrquideaShot() {
               <Roca x={200} y={1090} w={380} h={170} seed={3} />
               <Roca x={560} y={1110} w={340} h={140} seed={6} />
               <Roca x={900} y={1090} w={360} h={160} seed={9} />
-              {[[140, 1000], [330, 1010], [470, 1040], [640, 1040], [790, 1010], [960, 1000]].map(([bx, by], i) => <Bletia key={i} x={bx} y={by} s={0.6 * kprog(T, K.Es + 5.8 + i * 0.15, K.Es + 6.4 + i * 0.15, kEase.rebote)} T={T} seed={i} />)}
+              {[[140, 1000], [330, 1010], [470, 1040], [640, 1040], [790, 1010], [960, 1000]].map(([bx, by], i) => <Bletia key={i} x={bx} y={by} s={0.8 * kprog(T, K.Es + 4.4 + i * 0.12, K.Es + 5.0 + i * 0.12, kEase.rebote)} T={T} seed={i} />)}
             </g>
           </>; })()}
         </>)}
@@ -421,7 +440,7 @@ function OrquideaShot() {
           <Roca x={900} y={1090} w={360} h={160} seed={9} />
           {[[140, 1000], [330, 1010], [470, 1040], [640, 1040], [790, 1010], [960, 1000]].map(([bx, by], i) => { const muere = [1, 3, 5].includes(i) ? kprog(T, K.Re + 0.8 + i * 0.1, K.Re + 1.8 + i * 0.1) : 0;
             const fl = i === 0 || i === 4 ? kprog(T, K.Re + 2.0 + i * 0.1, K.Re + 3.0 + i * 0.1) : 0;
-            return <Bletia key={i} x={bx} y={by} s={0.6} vida={1 - muere} flor={fl} T={T} seed={i} />; })}
+            return <Bletia key={i} x={bx} y={by} s={0.8} vida={1 - muere} flor={fl} T={T} seed={i} />; })}
         </>)}
       </Escena>
       {/* 11 · la vainilla también es orquídea */}
@@ -430,7 +449,7 @@ function OrquideaShot() {
         {fsvg(<>
           <Vainilla x={230} y={1170} h={700} p={kprog(T, K.Va, K.Va + 1.5)} flor={kprog(T, K.Va + 1.2, K.Va + 1.7)} vainas={kprog(T, K.Va + 1.6, K.Va + 2.6)} T={T} />
           <g opacity={kprog(T, K.Va + 1.8, K.Va + 2.4)}>
-            <MapaMexico x={560} y={790} ancho={480}>
+            <MapaMexico x={630} y={900} ancho={420}>
               {(() => { const [px, py] = mxProy(-97.45, 20.45); return <><circle cx={px} cy={py} r={34} fill={KC.red} opacity=".35" /><circle cx={px} cy={py} r={14} fill={KC.red} stroke={KC.ink} strokeWidth={4} /></>; })()}
             </MapaMexico>
           </g>
@@ -454,54 +473,57 @@ function OrquideaShot() {
       <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 0.9} until={K.G + 1.6} texto={TX.mito} x={300} y={470} tam={64} />
       <Chip T={T} at={K.G + 1.7} until={K.Bo - 0.3} texto={TX.semillas} x={330} y={400} tam={42} borde={KC.gold} />
       <Chip T={T} at={K.G + 3.2} until={K.Bo - 0.3} texto={TX.sinHongo} x={540} y={490} tam={34} borde={KC.red} />
-      <NumeroGigante T={T} at={K.Bo + 0.4} until={K.Ca - 0.3} valor={TX.numMx} prefijo={TX.numMxPre} dur={1.0} x={330} y={560} tam={170} color={KC.yellow} />
-      <Etq T={T} at={K.Bo + 0.9} until={K.Ca - 0.3} x={60} y={700} texto={TX.etqMx1} tam={34} color={KC.texto} />
-      <Etq T={T} at={K.Bo + 1.1} until={K.Ca - 0.3} x={60} y={746} texto={TX.etqMx2} tam={34} color={KC.texto} />
+      <NumeroGigante T={T} at={K.Bo + 0.4} until={K.Ca - 0.3} valor={TX.numMx} prefijo={TX.numMxPre} dur={1.0} x={330} y={530} tam={170} color={KC.yellow} />
+      <EtqP T={T} at={K.Bo + 0.9} until={K.Ca - 0.3} x={60} y={710} texto={TX.etqMx1} tam={32} />
+      <EtqP T={T} at={K.Bo + 1.1} until={K.Ca - 0.3} x={60} y={765} texto={TX.etqMx2} tam={32} />
       <Chip T={T} at={K.Bo + 2.6} until={K.Ca - 0.3} texto={TX.bosque1} x={540} y={1000} tam={40} borde={KC.mint} />
       <Chip T={T} at={K.Bo + 3.2} until={K.Ca - 0.3} texto={TX.bosque2} x={540} y={1085} tam={30} borde={KC.mint} mono />
-      <NumeroGigante T={T} at={K.Ca + 0.2} until={K.Se - 0.3} valor={TX.numCap} prefijo={TX.numCapPre} dur={1.6} x={540} y={430} tam={130} color={KC.yellow} />
-      <Etq T={T} at={K.Ca + 0.6} until={K.Se - 0.3} x={140} y={540} texto={TX.etqCap} tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Ca + 1.0} until={K.Se - 0.3} x={140} y={590} texto={TX.etqCap2} tam={24} color={KC.texto} />
+      <NumeroGigante T={T} at={K.Ca + 0.2} until={K.Se - 0.3} valor={TX.numCap} prefijo={TX.numCapPre} dur={1.1} x={540} y={420} tam={130} color={KC.yellow} />
+      <EtqP T={T} at={K.Ca + 0.6} until={K.Se - 0.3} x={60} y={540} texto={TX.etqCap} tam={32} />
+      <EtqP T={T} at={K.Ca + 1.0} until={K.Se - 0.3} x={60} y={595} texto={TX.etqCap2} tam={30} color={KC.gold2} />
+      <EtqP T={T} at={K.Ca + 1.0} until={K.Se - 0.3} x={126} y={648} texto={TX.etqCap3} tam={30} color={KC.gold2} linea={false} />
       <Chip T={T} at={K.Se + 0.2} until={K.Pe - 0.3} texto={TX.porDentro} x={400} y={430} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Se + 0.9} until={K.Hi - 0.2} x={250} y={650} texto={TX.testa} tam={32} color={OQ.testa} />
-      <Etq T={T} at={K.Se + 1.4} until={K.Hi - 0.2} x={640} y={1010} texto={TX.embrion} tam={34} color={OQ.embrion} />
-      <Chip T={T} at={K.Se + 2.0} until={K.Hi - 0.2} texto={TX.sinReservas} x={540} y={1120} tam={25} borde={KC.gold} mono />
-      <Etq T={T} at={K.Hi + 1.2} until={K.Pe - 0.2} x={180} y={1170} texto={TX.hifa} tam={32} color={OQ.hifa} />
+      <EtqP T={T} at={K.Se + 0.9} until={K.Hi - 0.2} x={230} y={655} texto={TX.testa} tam={32} color={OQ.testa} />
+      <EtqP T={T} at={K.Se + 1.4} until={K.Hi - 0.2} x={640} y={1020} texto={TX.embrion} tam={32} color={OQ.embrion} />
+      <Chip T={T} at={K.Se + 2.0} until={K.Hi - 0.2} texto={TX.sinReservas} x={540} y={1125} tam={30} borde={KC.gold} mono />
+      <EtqP T={T} at={K.Hi + 1.2} until={K.Pe - 0.2} x={150} y={1175} texto={TX.hifa} tam={32} color={OQ.hifa} />
       <Chip T={T} at={K.Hi + 1.6} until={K.Pe - 0.2} texto={TX.micorriza} x={760} y={560} tam={34} borde={KC.mint} />
-      <Chip T={T} at={K.Hi + 2.2} until={K.Pe - 0.2} texto={<i>{TX.hongo1}</i>} x={640} y={1100} tam={34} borde={KC.gold} mono />
+      <Chip T={T} at={K.Hi + 2.2} until={K.Pe - 0.2} texto={<i>{TX.hongo1}</i>} x={700} y={1080} tam={34} borde={KC.gold} mono />
       <Chip T={T} at={K.Hi + 2.6} until={K.Pe - 0.2} texto={<i>{TX.hongo2}</i>} x={760} y={650} tam={34} borde={KC.gold} mono />
-      <Etq T={T} at={K.Pe + 1.4} until={K.Pr - 0.2} x={60} y={600} texto={TX.peloton} tam={32} color={OQ.hifa} />
-      <Etq T={T} at={K.Pe + 2.0} until={K.Pr - 0.2} x={300} y={1160} texto={TX.celula} tam={28} color={OQ.embrion} />
-      <Chip T={T} at={K.Di + 1.4} until={K.Pc - 0.2} texto={TX.mico} x={540} y={1160} tam={30} borde={KC.gold} mono />
-      <Etq T={T} at={K.Di + 2.4} until={K.Pc - 0.2} x={60} y={560} texto={TX.comidaPropia} tam={26} color={KC.gold2} />
-      <Etq T={T} at={K.Pc + 1.4} until={K.Es - 0.2} x={700} y={900} texto={TX.protocormo} tam={36} color="#8fe08a" />
-      <Etq T={T} at={K.Pc + 2.6} until={K.Es - 0.2} x={590} y={640} texto={TX.hoja} tam={30} color={OQ.hoja2} />
-      <Etq T={T} at={K.Pc + 3.0} until={K.Es - 0.2} x={590} y={1180} texto={TX.raiz} tam={30} color="#eef3e8" />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 4.5} anio={TX.anio} quien={TX.estQuien} revista={TX.estRevista} x={640} y={600} />
-      <Etq T={T} at={K.Es + 4.6} until={K.Re - 0.2} x={60} y={430} texto={TX.bletia} it tam={40} color={KC.texto} />
-      <Etq T={T} at={K.Es + 4.9} until={K.Re - 0.2} x={60} y={480} texto={TX.peligro} tam={30} color={KC.red} />
-      <Etq T={T} at={K.Es + 1.6} until={K.Es + 4.5} x={60} y={1140} texto={TX.frasco} tam={28} color={KC.texto} />
+      <EtqP T={T} at={K.Pe + 1.4} until={K.Pr - 0.2} x={60} y={580} texto={TX.peloton} tam={32} color={OQ.hifa} />
+      <EtqP T={T} at={K.Pe + 2.0} until={K.Pr - 0.2} x={300} y={1165} texto={TX.celula} tam={30} color={OQ.embrion} />
+      <Chip T={T} at={K.Di + 1.4} until={K.Pc - 0.2} texto={TX.mico} x={540} y={1165} tam={32} borde={KC.gold} mono />
+      <EtqP T={T} at={K.Di + 2.4} until={K.Pc - 0.2} x={60} y={540} texto={TX.comidaPropia1} tam={30} color={KC.gold2} />
+      <EtqP T={T} at={K.Di + 2.6} until={K.Pc - 0.2} x={126} y={593} texto={TX.comidaPropia2} tam={30} color={KC.gold2} linea={false} />
+      <EtqP T={T} at={K.Pc + 1.4} until={K.Es - 0.2} x={700} y={900} texto={TX.protocormo} tam={34} color="#8fe08a" />
+      <EtqP T={T} at={K.Pc + 2.6} until={K.Es - 0.2} x={590} y={640} texto={TX.hoja} tam={30} color={OQ.hoja2} />
+      <EtqP T={T} at={K.Pc + 3.0} until={K.Es - 0.2} x={590} y={1170} texto={TX.raiz} tam={30} color="#eef3e8" />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.9} anio={TX.anio} quien={TX.estQuien} revista={TX.estRevista} x={640} y={600} />
+      <EtqP T={T} at={K.Es + 4.5} until={K.Re - 0.2} x={60} y={430} texto={TX.bletia} it tam={38} />
+      <EtqP T={T} at={K.Es + 4.8} until={K.Re - 0.2} x={60} y={490} texto={TX.peligro} tam={32} color={KC.coral} />
+      <EtqP T={T} at={K.Es + 1.6} until={K.Es + 3.9} x={60} y={1140} texto={TX.frasco} tam={30} />
       <Chip T={T} at={K.Re + 0.2} until={K.Va - 0.3} texto={TX.anios} x={250} y={470} tam={44} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Re + 0.8} until={K.Va - 0.3} valor={TX.pct} prefijo={TX.pctPre} sufijo={TX.pctSuf} dur={1.0} x={330} y={640} tam={150} color={KC.mint} />
-      <Etq T={T} at={K.Re + 1.2} until={K.Va - 0.3} x={60} y={770} texto={TX.sobrevive} tam={34} color={KC.texto} />
-      <Chip T={T} at={K.Re + 2.4} until={K.Va - 0.3} texto={TX.florecen} x={540} y={820} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.Va + 0.6} until={K.C - 0.3} x={450} y={690} texto={TX.vainilla} it tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Va + 1.0} until={K.C - 0.3} x={450} y={736} texto={TX.vainilla2} tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Va + 2.2} until={K.C - 0.3} x={440} y={1140} texto={TX.nativa} tam={22} color={KC.texto} />
+      <EtqP T={T} at={K.Re + 1.2} until={K.Va - 0.3} x={60} y={760} texto={TX.sobrevive} tam={34} />
+      <Chip T={T} at={K.Re + 2.4} until={K.Va - 0.3} texto={TX.florecen} x={620} y={840} tam={40} borde={KC.gold} />
+      <EtqP T={T} at={K.Va + 0.6} until={K.C - 0.3} x={440} y={690} texto={TX.vainilla} it tam={32} linea={false} />
+      <EtqP T={T} at={K.Va + 1.0} until={K.C - 0.3} x={440} y={745} texto={TX.vainilla2} tam={30} linea={false} />
+      <EtqP T={T} at={K.Va + 2.2} until={K.C - 0.3} x={440} y={800} texto={TX.nativa1} tam={30} linea={false} />
+      <EtqP T={T} at={K.Va + 2.2} until={K.C - 0.3} x={440} y={852} texto={TX.nativa2} tam={30} linea={false} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.cierre} x={720} y={1060} tam={44} borde={KC.gold} />
 
       {/* ---------- barras de escala ---------- */}
-      <BarraEscala T={T} at={K.G} until={K.Bo} texto="1 cm" largo={60} color={KC.ink} />
-      <BarraEscala T={T} at={K.Bo} until={K.Ca} texto="1 m" largo={200} color={KC.ink} />
-      <BarraEscala T={T} at={K.Ca} until={K.Se} texto="1 cm" largo={60} color={KC.ink} />
-      <BarraEscala T={T} at={K.Se} until={K.Pe} texto="0.1 mm" largo={200} />
-      <BarraEscala T={T} at={K.Pe} until={K.Pr} texto="20 µm" largo={160} />
-      <BarraEscala T={T} at={K.Pr} until={K.Di} texto="esquemático" largo={0} color={KC.ink} />
-      <BarraEscala T={T} at={K.Di} until={K.Pc} texto="20 µm" largo={160} />
-      <BarraEscala T={T} at={K.Pc} until={K.Es} texto="1 mm" largo={250} />
-      <BarraEscala T={T} at={K.Es + 0.3} until={K.Va} texto="10 cm" largo={130} color={KC.ink} y={1480} />
-      <BarraEscala T={T} at={K.Va} until={K.C} texto="10 cm · mapa esquemático" largo={90} color={KC.ink} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={60} color={KC.ink} />
+      <Escala2 T={T} at={K.G} until={K.Bo} texto="1 cm" largo={60} />
+      <Escala2 T={T} at={K.Bo} until={K.Ca} texto="1 m" largo={200} />
+      <Escala2 T={T} at={K.Ca} until={K.Se} texto="1 cm" largo={60} />
+      <Escala2 T={T} at={K.Se} until={K.Pe} texto="0.1 mm" largo={200} />
+      <Escala2 T={T} at={K.Pe} until={K.Pr} texto="20 µm" largo={160} />
+      <Escala2 T={T} at={K.Pr} until={K.Di} texto="dibujo esquemático" largo={0} />
+      <Escala2 T={T} at={K.Di} until={K.Pc} texto="20 µm" largo={160} />
+      <Escala2 T={T} at={K.Pc} until={K.Es} texto="1 mm" largo={250} />
+      <Escala2 T={T} at={K.Es + 0.3} until={K.Va} texto="10 cm" largo={130} />
+      <Escala2 T={T} at={K.Va} until={K.C} texto="10 cm (planta) · mapa esquemático" largo={90} />
+      <Escala2 T={T} at={K.C} until={K.Ou} texto="1 cm" largo={60} />
 
       {/* ---------- subtítulos (idx = línea de narracion.json) ---------- */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Bo - 0.1} texto="No es polvo: son *semillas de orquídea.*" />
