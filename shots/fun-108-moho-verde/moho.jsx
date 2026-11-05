@@ -366,7 +366,7 @@ function MohoShot() {
       <Etq T={T} at={K.Es + 0.4} until={K.Gr - 0.3} x={480} y={680} texto="Irlanda" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Es + 0.6} until={K.Es + 3.2} texto="forma agresiva · mediados de los 80" x={540} y={480} tam={30} borde={KC.red} />
       <Etq T={T} at={K.Es + 2.6} until={K.Gr - 0.3} x={60} y={560} texto="Norteamérica · inicios de los 90" tam={26} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Es + 3.4} until={K.Gr - 0.3} anio="1994–96" quien="cosechas: pérdidas de 30 a 100 %" revista="Pensilvania · Penn State Extension" x={420} y={1030} />
+      <TarjetaEstudio T={T} at={K.Es + 3.4} until={K.Gr - 0.3} anio="1994–96" quien="pérdidas: 30 a 100 %" revista="cosechas de Pensilvania · Penn State" x={420} y={1030} />
       <Etq T={T} at={K.Es + 1.0} until={K.Gr - 0.3} x={60} y={1500} texto="en los 90: más de 30 millones de dólares en el mundo" tam={22} color={KC.ink} />
       <Etq T={T} at={K.Es + 1.0} until={K.Gr - 0.3} x={60} y={1540} texto="Royse et al., 1999 · Plant Disease" tam={20} color={KC.ink} />
       <NumeroGigante T={T} at={K.Gr + 2.5} until={K.Gr + 4.6} valor={100} desde={100} dur={0.1} prefijo="−68 a −" sufijo=" %" etiqueta="cosecha de champiñón" x={540} y={560} tam={120} color={KC.red} />
