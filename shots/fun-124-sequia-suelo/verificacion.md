@@ -45,3 +45,22 @@ Otras líneas que cambiaron solo por tiempo (mismo contenido ya verificado): «v
 «quedan sin camino» (#5), «cruzan huecos con aire» (#6), «tapó la lluvia» (#8), «Sí: el de tu pizza» (#16).
 
 Pendiente: re-verificación independiente de estas líneas (la agrega el coordinador).
+
+## Re-verificación independiente
+
+Verificador independiente (no escribió el guion ni las correcciones), 5 nov 2026. Fuentes reabiertas: PMC6072794, PMC4664368, PMC5012885.
+Se cotejaron las 14 líneas de voz de `narracion.json` y todos los textos en pantalla de `guion.md`: no hay afirmaciones nuevas fuera de la tabla
+de la primera verificación (tarjetas «2018 · Nature Communications · de Vries y col. · Lancaster, Inglaterra» y «2015 · PNAS · Guhr y col. ·
+laboratorio» = #7, #12; contador de días, escala 10 µm y dibujos son esquemáticos).
+
+| Línea | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «la red de bacterias quedó menos estable; la de hongos, no» · chips «bacterias: menos estable» / «hongos: más estable» | ✅ | de Vries et al. 2018, Nat Commun 9:3033 https://pmc.ncbi.nlm.nih.gov/articles/PMC6072794/ | Título: "Soil bacterial networks are less stable under drought than fungal networks"; "fungal networks had properties that suggest higher stability" | 2018 |
+| «En 2015, en laboratorio, el champiñón llevó agua por sus hifas de tierra húmeda a tierra seca» (hecho) | ✅ | Guhr et al. 2015, PNAS 112(47):14647 https://pmc.ncbi.nlm.nih.gov/articles/PMC4664368/ | "a saprotrophic fungus (Agaricus bisporus) redistributes water from moist (–0.03 MPa) into dry (–9.5 MPa) soil" (mesocosmos de laboratorio) | 2015 |
+| «¿Será parte de su secreto? Es una hipótesis.» · sello «HIPÓTESIS» sobre «¿así aguantan la sequía?» | ✅ (dicho como hipótesis, igual que los autores) | Guhr 2015 | "Hydraulic redistribution is likely one of the mechanisms behind higher drought resistance of soil fungi" | 2015 |
+| «Y la descomposición se disparó» · medidor «CO₂ de descomposición en la tierra seca: +2,800 % vs. hifas cortadas, 7 días» | ✅ | Guhr 2015 | "significantly enhanced carbon mineralization by 2,800%" en el compartimento antes seco, en 168 h, contra controles con las conexiones de hifas cortadas | 2015 |
+| «en minutos suelta dióxido de carbono, de sus microbios y de enzimas que trabajan fuera de ellos: el efecto Birch» | ✅ | Fraser et al. 2016, Soil Biol Biochem 101:1–5 https://pmc.ncbi.nlm.nih.gov/articles/PMC5012885/ | "maximal rates of evolution within 6 min"; "biochemical (outside membranes) and organismal (inside membranes) sources"; bioquímico = "mediated by free or residually-bound enzymes"; "sometimes referred to as the Birch effect" | 2016 |
+
+Resto de líneas (gancho, milpa, bacterias, seca, hifas, pregunta, estudio 2018, lluvia, cierre, chip «África del Este, años 50»): ✅ según #1–9, #16, #19–21.
+
+VEREDICTO: APROBADO

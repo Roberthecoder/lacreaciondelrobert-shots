@@ -5,28 +5,28 @@
 - **Formato:** N2 El número + N1 Por dentro (abre con el número gigante 33 → más del doble, baja al micelio bajo el suelo y regresa al
   mismo claro del bosque, ya con el calendario cambiado).
 - **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre algo en pantalla: «Esa seta no salió tarde: el calendario de los hongos cambió.»
-- **Duración estimada:** voz 944 caracteres / 174 palabras (números escritos con letra) ≈ 58.1 s + cierre 3.5 s → **61.6 s**.
+- **Duración estimada:** voz 951 caracteres / 175 palabras (números escritos con letra) ≈ 58.3 s + cierre 3.5 s → **61.8 s**.
 - **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
 - **Cuidado de rigor:** no se inventan datos para México. Los números son de Inglaterra (Gange et al. 2007) y Noruega
   (Kauserud et al. 2008). La conexión con "tú" es general (cuando vayas por hongos), sin decir que en México ya se midió.
-- **Estado:** guion listo; **falta verificación independiente** (esta sesión no tiene herramienta de subagentes) y animación.
+- **Estado:** verificado por un verificador independiente (21 afirmaciones; 2 ⚠️ corregidas, ver `verificacion.md`); en pantalla nunca 75, 74.8 ni 67.9: solo «unos 33 días» y «más del doble».
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esa seta no salió tarde: el calendario de los hongos cambió. | Fondo amarillo. Claro de bosque esquemático: un tronco caído y del suelo **brota** una seta (cuadro 0.3, crece en time-lapse). Un calendario de pared al lado pasa hojas solo (fff-fff) y las fechas marcadas se recorren. Texto grande «NO SALIÓ TARDE». |
-| 1 | Numero | En el sur de Inglaterra, su temporada duraba unos treinta y tres días en los años cincuenta; en los dos mil, más del doble. | Fondo menta. Mapa chiquito de Gran Bretaña con un punto en el sur (Salisbury). Barra de "temporada" (días con setas): en "años 50" una barra de 33 días; en "años 2000" se estira a **más del doble** (con flecha «×2+»). Número gigante «33 días → más del doble». |
-| 2 | Seta | Lo que tú cortas es solo la seta, la parte que suelta esporas. | Fondo rosa. Una mano corta una seta (sombrero, láminas, pie). Zoom a las láminas: esporas que caen (esquemático). Etiqueta «seta = cuerpo fructífero». Barra de escala 5 cm. |
+| 1 | Numero | En el sur de Inglaterra, su temporada duraba unos treinta y tres días en los cincuenta; en los dos mil, más del doble. | Fondo menta. Mapa chiquito de Gran Bretaña con un punto en el sur (Salisbury). Barra de "temporada" (días con setas): en "años 50" una barra de 33 días; en "años 2000" se estira a **más del doble** (con flecha «×2+»). Número gigante «33 días → más del doble». |
+| 2 | Seta | Lo que tú cortas es solo la seta, que suelta esporas. | Fondo rosa. Una mano corta una seta (sombrero, láminas, pie). Zoom a las láminas: esporas que caen (esquemático). Etiqueta «seta = cuerpo fructífero». Barra de escala 5 cm. |
 | 3 | Micelio | El hongo de verdad es el micelio: hilos escondidos en el suelo o la madera. | **Bajamos** (cámara atraviesa la superficie): fondo oscuro, corte del suelo con raíces y un tronco; red de hifas blancas que crece radialmente. Etiqueta «micelio · hifas». Barra de escala 1 cm → 10 µm en el acercamiento a una hifa. |
-| 4 | Senal | La seta sale cuando la temperatura y la humedad le dan la señal. / Si el clima cambia, la señal llega en otra fecha. | Sigue en el suelo oscuro: dos medidores, termómetro y gota de humedad; cuando ambos llegan a su marca, un nudo de hifas (primordio) se enciende y empieza a subir. Luego el calendario esquemático aparece arriba y la marca de "señal" se **desliza** a otra fecha. |
+| 4 | Senal | La seta suele salir cuando la temperatura y la humedad le dan la señal. / Si el clima cambia, la señal llega en otra fecha. | Sigue en el suelo oscuro: dos medidores, termómetro y gota de humedad; cuando ambos llegan a su marca, un nudo de hifas (primordio) se enciende y empieza a subir. Luego el calendario esquemático aparece arriba y la marca de "señal" se **desliza** a otra fecha. |
 | 5 | Pregunta | ¿Y cómo lo sabemos? | **Re-gancho.** Fondo cian, signo «?» gigante; Robert grande, pensativo. |
 | 6 | Libreta | Edward Gange, aficionado, anotó hongos cerca de Salisbury por cincuenta y seis años: cincuenta y dos mil registros. | Fondo amarillo. Una libreta de campo que se llena de renglones (fecha · especie · lugar), contador que sube hasta «52,000 registros» y «1950–2005». Etiqueta «Salisbury, sur de Inglaterra». |
 | 7 | Estudio | En 2007, su hijo Alan y otros científicos los analizaron en Science. | TarjetaEstudio «2007 · Gange, Gange, Sparks y Boddy · *Science*». La libreta se convierte en una gráfica. |
-| 8 | Calendario | En trescientas quince especies, en promedio, la primera seta salía antes y la última, después. | Fondo lila. Calendario de meses (ago–dic): una barra por especie (315 rayitas finas); la orilla izquierda se corre a la izquierda (flecha «antes») y la derecha a la derecha («después»). Chip «315 especies · promedio». |
+| 8 | Calendario | En trescientas quince especies, en promedio, la primera seta ahora sale antes y la última, después. | Fondo lila. Calendario de meses (ago–dic): una barra por especie (315 rayitas finas); la orilla izquierda se corre a la izquierda (flecha «antes») y la derecha a la derecha («después»). Chip «315 especies · promedio». |
 | 9 | DosVeces | Y muchas ya salen dos veces al año. | El calendario se completa a todo el año: aparecen marcas también en primavera. Chip «2 veces al año». Ejemplo dibujado: penacho de azufre (*Hypholoma fasciculare*) en un tocón, en ramillete amarillo. |
-| 10 | Noruega | En Noruega, desde 1980, las setas de otoño se atrasaron casi trece días en promedio. | Fondo cian. Mapa de Noruega; calendario de otoño con la marca de fruteo moviéndose ~13 días a la derecha. Chip «+12.9 días · promedio desde 1980». TarjetaEstudio «2008 · Kauserud y col. · *PNAS* · 34,500 registros de herbario». |
-| 11 | Cierre | Cuando vayas por hongos, recuerda: su calendario lo escribe el clima, y el clima está cambiando. | **Regreso a la imagen del inicio:** el mismo claro del bosque y la misma seta, ahora con el calendario de pared que tiene las fechas recorridas y escrito encima «lo escribe el clima». Una canasta de recolector. |
+| 10 | Noruega | En Noruega, desde 1980, las setas de otoño se atrasaron casi trece días en promedio. | Fondo cian. Mapa de Noruega; calendario de otoño con la marca de fruteo moviéndose ~13 días a la derecha (se atrasa; NO se dibuja una temporada que se alarga: allá se atrasó y se apretó). Chip «+12.9 días · promedio desde 1980». TarjetaEstudio «2008 · Kauserud y col. · *PNAS* · ≈34,500 registros de herbario». |
+| 11 | Cierre | Cuando vayas por hongos, recuerda: su calendario lo marca sobre todo el clima, y el clima está cambiando. | **Regreso a la imagen del inicio:** el mismo claro del bosque y la misma seta, ahora con el calendario de pared que tiene las fechas recorridas y escrito encima «lo marca sobre todo el clima». Una canasta de recolector. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert apuntando a cámara. |
 
 **Música:** cama grave y continua, de bosque húmedo (cuerdas graves + madera suave), sin golpe marcado, que se abre a la mitad
