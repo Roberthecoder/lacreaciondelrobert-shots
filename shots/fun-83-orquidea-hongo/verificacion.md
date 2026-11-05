@@ -81,4 +81,38 @@ Con esas tres frases cambiadas tal cual, el shot queda aprobado sin otra vuelta 
 
 Las 3 frases de publicacion.md se cambiaron tal cual al texto sugerido (coordinador, 5 nov 2026).
 
+## Re-verificación independiente (5 nov 2026)
+
+Segunda verificación pedida por Robert antes de generar la voz, hecha por un verificador que no escribió el guion ni la primera
+verificación. Se volvieron a abrir en texto completo: Ortega-Larrocea y Rangel-Villafranco 2007 (PDF), Rangel-Villafranco y
+Ortega-Larrocea 2007 (PDF), Yeung 2017, Pujasatria et al. 2020, Rasmussen et al. 2015 y Castillo-Pérez et al. 2024 (PMC),
+Arditti (*Ceiba*, PDF), el artículo de *Acta Botanica Mexicana* 2017 (SciELO), el resumen de Rzedowski 1996 y la ficha de
+*Vanilla planifolia* de Kew (vía ColPlanta, POWO bloqueado). Se revisaron las 13 líneas de `narracion.json`, todo `TX` de
+`orquidea.jsx` y `publicacion.md`.
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| «Esto no es polvo: son semillas de orquídea» | ✅ | Yeung 2017 | «Orchid seeds are small and dust-like» | 2017 |
+| «Y en el bosque, sin hongo, no germinan» | ✅ | Pujasatria et al. 2020; Yeung 2017 | «The only way for orchid seeds to germinate is by obtaining nutrients from an external source. In nature, this is achieved by mycorrhizal symbiosis»; en laboratorio germinan sin hongo «in a simple medium as long as sucrose is present (Knudson 1922)» (por eso «en el bosque») | 2020 / 2017 |
+| «México tiene más de mil doscientas especies de orquídeas»; «+1200» | ✅ | Acta Bot. Mex. 2017 (SciELO); Castillo-Pérez et al. 2024 | «En México están registradas 1260 especies y 170 géneros de orquídeas»; «Mexico has more than 1302 orchid species» (cita al catálogo de 2020) | 2017 / 2024 |
+| «muchas cuelgan en el bosque de niebla»; «bosque mesófilo de montaña» | ✅ | Acta Bot. Mex. 2017; Rzedowski 1996 | BMM «donde se encuentran 60% de sus especies»; «la forma biológica mejor representada corresponde a las epífitas»; «la familia numéricamente prevaleciente es la de las Orchidaceae» | 2017 / 1996 |
+| «Una cápsula puede soltar millones de semillas al viento» | ✅ | Pujasatria et al. 2020 | «one dehiscent capsule contains hundreds to millions of seeds» | 2020 |
+| «≈ 4,000,000 · semillas en una cápsula (estimado)» · «récord: *Cycnoches* · Kew, 1896» | ✅ | Arditti, *Ceiba*; Arditti y Ghani 2000 | «On March 1896 a seed capsule of Cycnoches ventricosum var. chlorochilon was received at Kew»; «arrived at the figure of 3,770,000… the figure would probably be 4,000,000»; [AG] «as high as 4000000» | 1896 (reseña 2000) |
+| «un embrión diminuto, sin endospermo: casi sin comida para arrancar» | ✅ | Yeung 2017; Pujasatria et al. 2020 | «The failure to form a functional endosperm is one of the distinctive features»; «the embryo is small with a reduced number of cells»; «seeds consisting of a seed coat and rudimentary embryo» | 2017 / 2020 |
+| «Deja entrar a un hongo, como *Tulasnella* o *Ceratobasidium*»; la hifa entra por el suspensor | ✅ | Rasmussen et al. 2015; Yeung 2017 | «fungi identifiable as imperfect Rhizoctonia species predominating»; «fungi from Tulasnellaceae»; «orchid mycobionts in Ceratobasidium»; «the degenerated suspensor appears to be the preferred site of hyphae entry» | 2015 / 2017 |
+| «Sus hilos se enrollan dentro de las células en ovillos: los pelotones» | ✅ | Rasmussen et al. 2015 | «peloton formation, i.e. intracellar hyphal coils» | 2015 |
+| «La semilla digiere esos ovillos: empieza su vida comiendo hongo»; «micoheterotrofia» | ✅ | Pujasatria et al. 2020; Rasmussen et al. 2015 | «Pelotons are not permanently formed; instead, these are digested by protocorm cells»; «completely dependent on organic carbon from a mycobiont» | 2020 / 2015 |
+| «Se hincha en una bolita, el protocormo, y saca hojas y raíces» | ✅ | Yeung 2017 | «the orchid embryo first develops into a protocorm before forming a plantlet» | 2017 |
+| «En 2007, la UNAM reportó plántulas de *Bletia urbana*, orquídea en peligro, criadas con sus hongos» | ✅ | Ortega-Larrocea y Rangel-Villafranco 2007 | Instituto de Geología, UNAM; «Seedlings were cultivated in vitro with mycorrhizal fungi and successfully reintroduced within a biological reserve located in Mexico City. Bletia urbana Dressler, is an endangered species» | 2007 |
+| «…y devueltas al Pedregal de San Ángel» | ✅ | Rangel-Villafranco y Ortega-Larrocea 2007 | «conducted studies of reintroduction, in the Ecological Reserve el Pedregal (see Ortega-Larrocea and Rangel in the same volume)»; «El Pedregal in Mexico City» | 2007 |
+| «Tras seis años, sobrevivía cerca de la mitad, y ya florecían»; «6 años», «≈ 50 %», «¡y florecen!» | ✅ | Ortega-Larrocea y Rangel-Villafranco 2007 | «We have monitored growth for the past six years with a final survival of ca. 50 %»; «After five years, plants start to flower» (se refiere a *B. urbana*, no a la otra especie del artículo) | 2007 |
+| «La vainilla, nativa de México y Centroamérica, también es una orquídea» | ✅ | Kew POWO (vía ColPlanta); Lubinsky et al. 2008 | «The native range of this species is S. Mexico to N. Brazil»; familia Orchidaceae (la frase no dice «solo») | actual / 2008 |
+| Cierre «Ese polvo no es polvo: es un bosque de orquídeas esperando su hongo» | ✅ | — | Metáfora que resume filas ya verificadas. | — |
+| publicacion.md: «en el bosque mesófilo… las orquídeas son la familia de plantas con más especies» | ✅ | Rzedowski 1996 | «la familia numéricamente prevaleciente es la de las Orchidaceae, que supera más de dos veces a Compositae» | 1996 |
+| publicacion.md: «el grupo llamado “Rhizoctonia”», autoras e Instituto de Geología, «en frasco», reserva de la CDMX, resto de redes | ✅ | Rasmussen et al. 2015; Ortega-Larrocea y Rangel-Villafranco 2007 | Igual que las filas de arriba (in vitro = en frasco). Las 3 correcciones de la primera vuelta (P2, P4, P5) quedaron aplicadas. | 2007 / 2015 |
+
+**Cambios hechos:** ninguno. Se revisó con cuidado que el 50 % de supervivencia y la floración del artículo de 2007 son de
+*Bletia urbana* (la otra especie, *Dichromanthus aurantiacus*, tuvo 15 % y menos de 5 %), y que el Pedregal de San Ángel es la
+reserva donde se hizo la reintroducción. Todo queda ✅; la tabla «## Fuentes» de `guion.md` coincide.
+
 VEREDICTO: APROBADO
