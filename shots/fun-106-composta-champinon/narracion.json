@@ -3,20 +3,62 @@
   "salida": "Shot Champinon narrado.dc.html",
   "nota": "Shot Fungi Mati #106. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. GUION SIN VERIFICAR TODAVÍA: falta la verificación independiente (verificacion.md).",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esto no es tierra: es estiércol cocinado… y de ahí sale tu champiñón." },
-    { "escena": "Maceta", "texto": "Yo a los diez años lo intenté en una maceta con tierra… y nada." },
-    { "escena": "Receta", "texto": "Los productores mezclan paja, estiércol de caballo, gallinaza y yeso." },
-    { "escena": "FaseI", "texto": "En unos seis días la pila llega casi a ochenta grados; arriba de setenta, los microbios dejan de crecer y sigue pura química." },
-    { "escena": "FaseII", "texto": "Luego la pasteurizan a sesenta grados, por lo menos dos horas." },
-    { "escena": "Siembra", "texto": "Le siembran granos con micelio, y en dos o tres semanas lo llena todo." },
-    { "escena": "Pregunta", "texto": "¿Y por qué no sale ni un champiñón?" },
-    { "escena": "Cobertura", "texto": "Falta la capa de cobertura: turba con caliza, encima de la composta." },
-    { "escena": "Octenol", "texto": "El micelio suelta octenol, parte del olor a champiñón, y esa molécula lo frena." },
-    { "escena": "Bacterias", "texto": "En la cobertura, bacterias como Pseudomonas se lo comen… y brotan los primordios." },
-    { "escena": "Estudio", "texto": "En 2009, en Reino Unido, el equipo de Ralph Noble lo probó: sin bacterias, solo brotaban si ventilaban ese gas." },
-    { "escena": "Mexico", "texto": "Y en México es el hongo que más se cultiva: hacia 2007, unas cuarenta mil toneladas al año." },
-    { "escena": "Cosecha", "texto": "Dos o tres semanas después de cubrirla, salen en oleadas, cada siete a diez días." },
-    { "escena": "Cierre", "texto": "A mi maceta no le faltaba tierra: le faltaba estiércol cocinado… y bacterias." }
+    {
+      "escena": "Gancho",
+      "texto": "Esto no es tierra: es estiércol cocinado… y de ahí sale tu champiñón."
+    },
+    {
+      "escena": "Maceta",
+      "texto": "Yo a los diez años lo intenté en una maceta con tierra… y nada."
+    },
+    {
+      "escena": "Receta",
+      "texto": "Los productores mezclan paja, estiércol de caballo, gallinaza y yeso."
+    },
+    {
+      "escena": "FaseI",
+      "texto": "En unos seis días la pila llega casi a ochenta grados: arriba de setenta ya es química, no microbios."
+    },
+    {
+      "escena": "FaseII",
+      "texto": "Luego la pasteurizan a sesenta grados, por lo menos dos horas."
+    },
+    {
+      "escena": "Siembra",
+      "texto": "Le siembran granos con micelio; en dos o tres semanas lo llena todo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué no sale ni un champiñón?"
+    },
+    {
+      "escena": "Cobertura",
+      "texto": "Falta la cobertura: turba con caliza encima de la composta."
+    },
+    {
+      "escena": "Octenol",
+      "texto": "El micelio suelta octenol, parte de su olor, y eso lo frena."
+    },
+    {
+      "escena": "Bacterias",
+      "texto": "En la cobertura, bacterias como Pseudomonas se lo comen… y brotan los primordios."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2009, en Reino Unido, Noble y su equipo lo probaron: sin bacterias, solo brotaban ventilando ese gas."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "En México es el hongo que más se cultiva: hacia 2007, unas cuarenta mil toneladas."
+    },
+    {
+      "escena": "Cosecha",
+      "texto": "Dos o tres semanas después, salen en oleadas cada siete a diez días."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "A mi maceta no le faltaba tierra: le faltaba estiércol cocinado… y bacterias."
+    }
   ],
   "mezcla": "oficial-30oct"
 }

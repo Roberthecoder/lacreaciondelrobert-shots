@@ -1,23 +1,23 @@
 {
   "dcHtml": "Shot Moho Verde base narrada.dc.html",
   "salida": "Shot Moho Verde narrado.dc.html",
-  "nota": "Shot Fungi Mati #108. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "nota": "Shot Fungi Mati #108. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa pelusa blanca no es tu hongo creciendo: es el enemigo, y luego se pone verde."
+      "texto": "Esa pelusa blanca no es tu hongo: es el enemigo, y luego se pone verde."
     },
     {
       "escena": "Quien",
-      "texto": "Es Trichoderma: primero, micelio blanco y denso; luego, esporas verdes."
+      "texto": "Es Trichoderma: primero, micelio blanco; luego, esporas verdes."
     },
     {
       "escena": "PorDentro",
-      "texto": "Es parásito de otros hongos: se enrolla en sus hifas y las ataca."
+      "texto": "Es parásito de hongos: se enrolla en sus hifas y las ataca."
     },
     {
       "escena": "Lab",
-      "texto": "En laboratorio, uno cubrió la colonia de una seta en cuatro a seis días."
+      "texto": "En laboratorio, cubrió la colonia de una seta en cuatro a seis días."
     },
     {
       "escena": "Pregunta",
@@ -25,19 +25,19 @@
     },
     {
       "escena": "Entra",
-      "texto": "Sobre todo, con personas y herramientas; en Malasia, también en el agua."
+      "texto": "Sobre todo con personas y herramientas; en Malasia, también en el agua."
     },
     {
       "escena": "Errores",
-      "texto": "Agregar nitrógeno, como salvado, sube el riesgo; por eso la paja se pasteuriza a setenta y un grados."
+      "texto": "Y la paja se pasteuriza, a setenta y un grados; agregarle nitrógeno, como salvado, sube el riesgo."
     },
     {
       "escena": "Vacio",
-      "texto": "Pero lo estéril es un vacío biológico: si entra un moho, nadie lo frena."
+      "texto": "Ojo: lo estéril queda como un vacío; si entra un moho, puede invadir más fácil."
     },
     {
       "escena": "Estudio",
-      "texto": "En los ochenta atacó granjas de champiñón de Irlanda; en Pensilvania, en los noventa, se perdió hasta toda la cosecha."
+      "texto": "En los ochenta lo hallaron en champiñoneras de Irlanda; en los noventa, en Pensilvania, hubo pérdidas de hasta cien por ciento."
     },
     {
       "escena": "Gramo",
@@ -45,15 +45,11 @@
     },
     {
       "escena": "Chiste",
-      "texto": "Lo chistoso: su pariente, Trichoderma reesei, pudría una tienda del ejército en 1944; hoy la industria usa sus enzimas."
-    },
-    {
-      "escena": "Robert",
-      "texto": "A mí también: un frasco se me llenó de esporas que no quería."
+      "texto": "Lo chistoso: su pariente, Trichoderma reesei, pudría una tienda militar en 1944, y hoy la industria usa sus enzimas."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que esa pelusa no es tu cosecha: pasteuriza, limpia manos y herramientas, y tu bolsa dará setas."
+      "texto": "Así que esa pelusa no es tu cosecha: pasteuriza, y limpia manos y herramientas."
     }
   ],
   "mezcla": "oficial-30oct"
