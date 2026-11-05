@@ -7,7 +7,7 @@ Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión s
 ### TikTok
 ```text
 De cada diez especies de hongos que hay en el mundo, unas nueve todavía no tienen nombre. 🍄❓
-Se calcula que existen unos 2.5 millones de especies de hongos, y hasta 2023 la ciencia había nombrado unas 155,000. Más del 90 % siguen sin conocerse.
+La mejor estimación (2023) es de unos 2.5 millones de especies de hongos (entre 2 y 3 millones), y hasta 2023 la ciencia había nombrado unas 155,000. Más del 90 % siguen sin conocerse.
 ¿Dónde se esconden? La mayoría viven como hilos (hifas) más delgados que un pelo, en el suelo, la madera o una hoja, y muchísimos nunca sacan una seta que tú puedas ver: mohos, levaduras, hongos de las raíces.
 Por eso ahora los buscan por su ADN: toman tierra, leen sus genes y aparecen hongos que nadie ha nombrado, conocidos solo por su secuencia.
 ¿Cuánto tardaríamos en ponerles nombre a todos? En 2023, el Jardín Botánico de Kew, en Londres, publicó su reporte sobre las plantas y los hongos del mundo: cada año se nombran más de 2,500 especies nuevas de hongos. A ese paso, terminar tomaría entre 750 y 1,000 años.
@@ -40,7 +40,7 @@ Título:
 Descripción:
 ```text
 De cada diez especies de hongos que hay en el mundo, unas nueve todavía no tienen nombre.
-La mejor estimación es de unos 2.5 millones de especies de hongos (Niskanen et al. 2023; Kew 2023), y hasta 2023 se habían nombrado unas 155,000: más del 90 % sigue sin conocerse. La mayoría viven como hifas (hilos de 3 a 6 milésimas de milímetro, contra unas 60 de un pelo) en el suelo, la madera o las hojas, y muchos nunca forman setas visibles. Por eso hoy se buscan con ADN ambiental: en muestras de suelo aparecen muchísimos hongos que solo se conocen por su secuencia.
+La mejor estimación es de unos 2.5 millones de especies de hongos, en un rango de 2 a 3 millones (Niskanen et al. 2023; Kew 2023; otros cálculos van de medio millón a más de 12 millones), y hasta 2023 se habían nombrado unas 155,000: más del 90 % sigue sin conocerse. La mayoría viven como hifas (hilos de 3 a 6 milésimas de milímetro, contra 50 a 120 de un pelo) en el suelo, la madera o las hojas, y muchos nunca forman setas visibles. Por eso hoy se buscan con ADN ambiental: en muestras de suelo aparecen muchísimos hongos que solo se conocen por su secuencia.
 El reporte State of the World's Plants and Fungi 2023, del Real Jardín Botánico de Kew, dice que cada año se nombran más de 2,500 especies nuevas de hongos; a ese ritmo, describirlas todas tomaría entre 750 y 1,000 años. Y no hace falta ir a la selva: en 2013, en un paquete de porcini secos de China comprado en Londres, se identificaron tres especies nunca descritas (Dentinger y Suz, PeerJ 2014).
 El dibujo es esquemático.
 Fuentes:
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 Más del 90 % de las especies de hongos del planeta todavía no tienen nombre.
-La mejor estimación actual es de unos 2.5 millones de especies (Niskanen et al. 2023; Kew 2023) y hasta 2023 se habían descrito unas 155,000. Hoy el ADN ambiental del suelo revela muchísimos hongos que solo conocemos por su secuencia, y se describen más de 2,500 especies al año: a ese ritmo, terminar tomaría entre 750 y 1,000 años.
+La mejor estimación es de unos 2.5 millones de especies, entre 2 y 3 millones (Niskanen et al. 2023; Kew 2023) y hasta 2023 se habían descrito unas 155,000. Hoy el ADN ambiental del suelo revela muchísimos hongos que solo conocemos por su secuencia, y se describen más de 2,500 especies al año: a ese ritmo, terminar tomaría entre 750 y 1,000 años.
 Por qué importa: los hongos sostienen suelos, bosques y cultivos, producen medicinas y enzimas industriales, y no podemos proteger ni aprovechar lo que no hemos nombrado. Hasta un paquete de hongos secos comprado en Londres escondía tres especies nuevas (PeerJ 2014).
 ¿Qué haría falta para acelerar la descripción de especies: más taxónomos, más secuenciación o ambas?
 Shot Fungi Mati 91 · La Creación del Robert

@@ -153,10 +153,12 @@ function EsporaReposo({ x, y, r = 26, rot = 0 }) {
     <circle cx={-r * 0.35} cy={-r * 0.4} r={r * 0.18} fill="#fff" opacity=".25" />
   </g>;
 }
-// conidio: ovalado o casi redondo
+// conidio: ovalado o casi redondo, de superficie verrugosa («verrucose (warty) conidia», Microbiol. Resour. Announc. 2022)
 function Conidio({ x, y, r = 22, e = 1.25, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot})`}>
+    {Array.from({ length: 14 }, (_, i) => { const a = i / 14 * Math.PI * 2; return <circle key={'v' + i} cx={Math.cos(a) * r * 0.97} cy={Math.sin(a) * r / e * 0.97} r={r * 0.13} fill={CG.tapon2} stroke="#8a7440" strokeWidth={2} />; })}
     <ellipse rx={r} ry={r / e} fill={CG.tapon} stroke="#8a7440" strokeWidth={4} />
+    {[[-0.35, 0.3], [0.2, 0.4], [0.45, -0.1], [-0.1, -0.05], [0.05, 0.75 - 0.5]].map(([u, v], i) => <circle key={'w' + i} cx={u * r} cy={v * r / e} r={r * 0.09} fill={CG.tapon2} opacity=".9" />)}
     <ellipse cx={-r * 0.3} cy={-r * 0.25 / e} rx={r * 0.3} ry={r * 0.18} fill="#fff" opacity=".5" />
   </g>;
 }
@@ -438,9 +440,9 @@ function CigarraShot() {
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 1.9} anio="2002" quien="cantos en EE. UU." revista="Cooley, Marshall y Hill · Scientific Reports 2018" x={540} y={600} />
       <Etq T={T} at={K.E + 2.2} until={K.Al - 0.2} x={60} y={820} texto="canto de macho" tam={30} color={KC.ink} />
       <Senal T={T} at={K.E + 2.5} until={K.Al + 1.0} px={cPunto(ex, -185, -10)[0]} py={cPunto(ex, -185, -10)[1]}  tx={1030} ty={820} texto="macho con tapón" tam={30} ancla="der" />
-      {T > K.Al + 1.2 && T < K.M && <div style={{ position:'absolute', left:70, top:672, zIndex:42, font:`900 40px ${KF.texto}`, color:KC.ink, opacity:kprog(T, K.Al + 2.6, K.Al + 2.9) * (1 - kprog(T, K.M - 0.3, K.M)) }}>23 de 25 machos con tapón</div>}
+      {T > K.Al + 1.2 && T < K.M && <div style={{ position:'absolute', left:70, top:672, zIndex:42, font:`900 40px ${KF.texto}`, color:KC.ink, opacity:kprog(T, K.Al + 2.6, K.Al + 2.9) * (1 - kprog(T, K.M - 0.3, K.M)) }}>23 de 25 machos con tapón de conidios</div>}
       {T > K.Al + 2.7 && T < K.M && <div style={{ position:'absolute', left:70, top:722, zIndex:42, font:`700 28px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.Al + 2.8, K.Al + 3.1) * (1 - kprog(T, K.M - 0.3, K.M)) }}>…respondieron con el aleteo de hembra</div>}
-      {T > K.Al + 3.3 && T < K.M && <div style={{ position:'absolute', left:70, top:768, zIndex:42, font:`700 28px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.Al + 3.3, K.Al + 3.6) * (1 - kprog(T, K.M - 0.3, K.M)) }}>machos con la otra fase: 0 de 17</div>}
+      {T > K.Al + 3.3 && T < K.M && <div style={{ position:'absolute', left:70, top:768, zIndex:42, font:`700 28px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.Al + 3.3, K.Al + 3.6) * (1 - kprog(T, K.M - 0.3, K.M)) }}>con tapón de esporas de reposo: 0 de 17</div>}
       <Senal T={T} at={K.M + 1.8} until={K.Ca - 0.3} px={() => cPunto(sano, 70, -30)[0]} py={() => cPunto(sano, 70, -30)[1]} tx={1030} ty={820} texto="macho sano" tam={30} ancla="der" />
       <Chip T={T} at={K.M + 2.4} until={K.Ca - 0.3} texto="al parecer, por contacto" x={360} y={470} tam={34} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.Ca + 0.2} until={K.Ca + 2.1} anio="2019" quien="West Virginia University" revista="Boyce, Kasson y col. · Fungal Ecology" x={540} y={650} />

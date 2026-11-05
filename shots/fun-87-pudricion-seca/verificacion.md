@@ -55,4 +55,37 @@
 5. Ajustes de duración sin cambiar datos: «se parte en cubitos» → «se parte en cubos»; «un polvo café» → «polvo café»; «dejar secar» → «secar».
 6. Ajustes de pantalla sin cambiar datos: la barra de escala del cuerpo fructífero quedó en «20 cm» (la vista está acercada; tamaño dentro del rango «from a few centimeters to more than a meter»); el subtítulo de los barcos dice «Tal vez en barcos» (se mantiene como hipótesis, igual que la voz «probablemente»).
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador, sin haber escrito el guion. Se descargaron y leyeron de nuevo los PDF completos de Kauserud y col. 2012 (*Fungal Biology Reviews*) y de Ridout 2000 (English Heritage / Historic Scotland); resúmenes y afiliaciones de Kauserud 2007 (PMID 17688538) y Eastwood 2011 (PMID 21764756) en Europe PMC; ficha Crossref de Coggins, Jennings y Clarke 1980 (doi 10.1016/s0007-1536(80)80195-1); se confirmó que Krain y Siupka 2021 (PMC8467351) existe con ese título. Se revisaron las 12 líneas de `narracion.json`, todos los chips/subtítulos de `pudricion-seca.jsx` y `publicacion.md`.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «Esa madera no está vieja: se la está comiendo un hongo» (con micelio blanco visible) | ✅ | Ridout 2000 | "Brown rot fungi remove cellulose and hemicellulose from the timber." | 2000 |
+| «Es la pudrición seca, Sérpula lácrimans» | ✅ | Kauserud 2007, PMID 17688538 | "The dry rot fungus Serpula lacrymans (Basidiomycota)" | 2007 |
+| «solo arranca en madera muy húmeda»; chip "sin agua no arranca" | ✅ | Ridout 2000 | "Germination of fertile spores requires a timber moisture content close to the timber fibre saturation point (28-30%) and a relative humidity above 95-98%" | 2000 |
+| «Sus hifas se comen la celulosa y dejan la lignina café» | ✅ (simplificado; también hemicelulosa) | Ridout 2000; Eastwood 2011 | "Brown rot fungi attack cellulose and hemicelluloses but … are unable to break down lignin … A fragile brown lignin matrix is left"; "Brown rot decay removes cellulose and hemicellulose from wood" | 2000 / 2011 |
+| «que al secarse se parte en cubos»; chip "pudrición parda" | ✅ | Ridout 2000; Kauserud 2012 | "which cracks into cubes as it dries"; "aggressive brown rot decay of wooden construction materials" | 2000 / 2012 |
+| Dibujo: hifas dentro de las células de la madera, enzimas que se difunden | ✅ | Ridout 2000 | "The fungi grow within cell cavities and the digestive enzymes spread outwards" | 2000 |
+| «forma cordones gruesos que avanzan varios metros … llevando agua y nutrientes» | ✅ | Kauserud 2012, https://www.mn.uio.no/ibv/english/people/aca/haavarka/kauserud-et-al-2012-fung-biol-rev.pdf | "can form thick strands for the transport of nutrients and water, and can grow several meters across inorganic materials" | 2012 |
+| «sobre ladrillo y yeso» | ✅ | Ridout 2000 | "growing through brickwork and over inert surfaces"; "may fruit or grow through the plaster" | 2000 |
+| «lácrimans, significa "que llora"» | ✅ | latín *lacrimans*, participio de *lacrimare* (llorar) | (etimología estándar) | — |
+| «su micelio suelta gotas» | ✅ | Coggins, Jennings y Clarke, *Trans. Br. Mycol. Soc.* 75: 63–67 (Crossref) | Título: "Tear or drop formation by mycelium of Serpula lacrimans" | 1980 |
+| «cuerpo plano color óxido, de borde blanco» | ✅ | Ridout 2000 | "The fresh dry rot fruit is rust brown with a white margin and a cratered or folded spore-producing surface" · "Fruits are normally flat but corky" | 2000 |
+| «suelta millones de esporas: polvo café» | ✅ | Ridout 2000 | "Millions of rust-brown spores are liberated when the fruit is mature" · "These may form a conspicuous dust layer" | 2000 |
+| «En 2007, un equipo de Oslo rastreó su ADN hasta Asia»; tarjeta "2007 · Universidad de Oslo · Kauserud y col. · *Molecular Ecology*" | ✅ | Kauserud 2007 | Afiliación: "Department of Biology, University of Oslo"; "Employing genetic markers (… DNA sequences and microsatellites) … Genetic analyses pinpoint mainland Asia as the origin of the aggressive form var. lacrymans." *Mol Ecol* 16(16): 3350–3360 | 2007 |
+| «en estado silvestre, los más parecidos a los de las casas crecen en el Himalaya» | ✅ (matiz: "los de las casas" = grupo cosmopolita; Japón tuvo otra colonización — no se dice lo contrario) | Kauserud 2012 | "Specimens collected in nature in the Himalayas were genetically the most similar to the 'Cosmopolitan group', supporting the earlier speculations about the Himalayas as a source for the European population (Kauserud et al., 2007)." | 2012 (sobre datos de 2007) |
+| Chip "bosques de montaña, casi siempre a más de 2000 m" | ✅ | Kauserud 2012 | "The natural habitats are generally at high elevations in mountains, mostly >2000 m" | 2012 |
+| «Probablemente se regó por el mundo en madera y barcos de vela»; chip "probablemente (hipótesis)" | ✅ (como hipótesis) | Kauserud 2012; Kauserud 2007 | "One possible way of dispersal was probably wooden sailing vessels"; "infected wood materials transported over land or sea" | 2012 / 2007 |
+| «Le gustan los climas templados»; globo "Europa · Japón", "Chile" | ✅ | Kauserud 2012 | "causes severe damage to construction wood in temperate regions worldwide"; colecciones de Chile y población de casas de Japón | 2012 |
+| «en la naturaleza no vive en el trópico» | ✅ | Kauserud 2012 | "It is absent from tropical, subtropical, arctic and subarctic areas." | 2012 |
+| «arreglar la fuga … y secar» | ✅ | Ridout 2000 | "The primary remedial measure must be to locate and remedy all sources of moisture. This alone would kill the fungus once the wall had dried out." | 2000 |
+| «ventilar» | ✅ | Ridout 2000 | "the effective ventilation of cavities and surfaces is liable to slow or halt the growth" | 2000 |
+| «cambiar la madera podrida» | ✅ | Ridout 2000 | "cut out and remove from site all decayed timber" | 2000 |
+| Chip "sin secar, los químicos solos no bastan" | ✅ | Ridout 2000 | "little reliance can be placed on chemical treatments alone if the structure remains wet" | 2000 |
+| Cierre «estaba mojada, y el hongo te lo avisaba» | ✅ | Ridout 2000 | "A dry rot attack then is usually limited to the zone of damp walls and timber" | 2000 |
+| `publicacion.md`: enlaces y citas (PubMed 17688538 y 21764756, PDF Kauserud 2012, PDF Ridout 2000, PMC8467351) | ✅ | Europe PMC / PDFs descargados | Títulos, volúmenes y páginas coinciden | — |
+
+Sin ❌ ni ⚠️ pendientes. No se cambió ningún archivo del shot (solo se agregó esta sección).
+
 VEREDICTO: APROBADO
