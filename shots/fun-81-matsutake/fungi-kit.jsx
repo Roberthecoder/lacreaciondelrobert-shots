@@ -9,8 +9,8 @@ const fsvg = (c, z = 20) => <svg width={KW} height={KH} style={{ position:'absol
 function BarraEscala({ T, texto, largo = 200, x = 60, y = 1430, at = -1, until, color = KC.texto }) {
   if (T < at || (until != null && T > until)) return null;
   const o = kprog(T, at, at + 0.3) * (until != null ? 1 - kprog(T, until - 0.3, until) : 1);
-  return <div style={{ position:'absolute', left:x, top:y, zIndex:40, color, font:`700 26px ${KF.mono}`, textShadow:KSOMBRA, opacity:o }}>
-    <div style={{ marginBottom:8 }}>{texto}</div>
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:40, color, font:`900 30px ${KF.texto}`, textShadow:KSOMBRA, opacity:o }}>
+    <div style={{ marginBottom:8, display:'inline-block', background:'rgba(14,15,18,.7)', padding:'4px 14px 6px', borderRadius:12 }}>{texto}</div>
     <div style={{ width:largo, height:8, background:color, borderRadius:4, boxShadow:'0 3px 0 rgba(0,0,0,.7)' }}></div>
   </div>;
 }

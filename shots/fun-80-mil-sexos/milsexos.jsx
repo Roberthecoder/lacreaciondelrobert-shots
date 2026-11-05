@@ -421,8 +421,8 @@ function MilSexosShot() {
       <Etq T={T} at={K.G + 1.6} until={K.H - 0.3} x={40} y={600} texto={TXT.numEtq[0]} tam={24} color={KC.ink} />
       <Etq T={T} at={K.G + 1.9} until={K.H - 0.3} x={40} y={640} texto={TXT.numEtq[1]} tam={24} color={KC.ink} />
       <Chip T={T} at={K.G + 3.5} until={K.H - 0.3} texto={TXT.comen} x={290} y={725} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={430} texto={TXT.comun} tam={46} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.3} until={K.L - 0.3} x={60} y={495} texto={TXT.cient} it tam={42} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={395} texto={TXT.comun} tam={46} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.3} until={K.L - 0.3} x={60} y={450} texto={TXT.cient} it tam={42} color={KC.ink} />
       <Chip T={T} at={K.H + 2.2} until={K.L - 0.3} texto={TXT.tam} x={790} y={860} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.H + 2.8} until={K.L - 0.3} x={560} y={960} texto={TXT.pegado} tam={24} color={KC.ink} />
       <Etq T={T} at={K.L + 0.2} until={K.S - 0.3} x={60} y={430} texto={TXT.laminas} tam={40} color={KC.ink} />
@@ -480,7 +480,7 @@ function MilSexosShot() {
       <SubIt T={T} idx={8} at={K.X + 0.1} until={K.E - 0.1} texto="Con un extraño, *casi siempre hay pareja.*" />
       <SubIt T={T} idx={9} at={K.E + 0.1} until={K.O - 0.1} texto="*25 mercados* de Oaxaca, Tabasco y Veracruz." />
       <SubIt T={T} idx={10} at={K.O + 0.1} until={K.M - 0.1} texto="*Oreja de palo:* en los 6 con hongos." />
-      <SubIt T={T} idx={11} at={K.M + 0.1} until={K.C - 0.1} texto="Más de una vez por semana. *En Tabasco,* en hoja de plátano." />
+      <SubIt T={T} idx={11} at={K.M + 0.1} until={K.C - 0.1} texto="Más de una vez por semana; *en Tabasco, mone.*" />
       <SubIt T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="No tiene dos sexos: *tiene miles.*" />
 
       <Robert T={T} apariciones={[

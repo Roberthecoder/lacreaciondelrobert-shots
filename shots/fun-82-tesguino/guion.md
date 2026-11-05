@@ -23,8 +23,8 @@
 | 8 | Estudio | En 1981, cerca de Creel, Patricia Lappe, de la UNAM, halló que venían sobre todo del sedimento de la olla. | Fondo cian. TarjetaEstudio «1981 · Patricia Lappe · UNAM · Gonogochi, cerca de Creel · tesis de 1988». Escena: cajas de Petri con colonias cremosas; una flecha del sedimento de la olla a las cajas. Chips «*Saccharomyces cerevisiae* · *Hansenula anomala* · *Brettanomyces*: del sedimento» y chiquito «a las 50 h: 3.7 % de etanol». |
 | 9 | Pasto | Y el pasto que le agregan, Bromus, no mostró enzimas: su papel sigue en duda. | Fondo menta. Pasto *Bromus arizonicus*: tallo erguido con panícula contraída y espiguillas **erguidas**, elípticas, muy aplanadas, con aristas rectas; etiqueta «*basiawi* · *Bromus arizonicus*». Tubo «prueba de enzimas» con gotas moradas → chip «enzimas: no detectadas» y rótulo «hipótesis: ¿factores de crecimiento?». Barra 1 cm. |
 | 10 | Tesguinada | Para los rarámuri es bebida sagrada y pago del trabajo en comunidad. | Fondo amarillo. Escena sencilla de trabajo comunitario: siluetas que levantan una cerca o siembran juntas; al final, la olla al centro. Chips «bebida sagrada» y «pago del trabajo en comunidad · *tesgüinada*». Sin nadie tomando en primer plano. |
-| 11 | Robert | Dato curioso: las muestras donde se describió su primera levadura las mandó a la UNAM un tal Robert. | Fondo rosa. Sobre de correo («publicado en 1973») que vuela a un edificio «UNAM»; «de: R. Bye · Harvard», «a: Micología · UNAM». Robert grande (izquierda), sorprendido; chip «(no soy yo)». |
-| 12 | Cierre | Esa olla no es solo maíz con agua: es una fábrica de hongos que se hereda de tanda en tanda. | **Regreso a la imagen del inicio:** la misma olla del gancho, destapada y burbujeando, con la lupa «por dentro» llena de levaduras con yemas; flecha circular sobre la boca «de tanda en tanda». Chip «fábrica de hongos». |
+| 11 | Robert | Dato curioso: las muestras donde se describió su primera levadura las mandó a la UNAM un tal Robert. | Fondo rosa. Sobre de correo («publicado en 1973») que vuela a un edificio «UNAM»; «de: R. Bye · Harvard», «a: Micología · UNAM». Robert grande (izquierda), sorprendido; chip «(no soy yo)» y rótulo «R. Bye trabajaba con los rarámuri». |
+| 12 | Cierre | Esa olla no es solo maíz con agua: es una fábrica de hongos que se hereda de tanda en tanda. | **Regreso a la imagen del inicio:** la misma olla del gancho, destapada y burbujeando, con la lupa «por dentro» llena de levaduras con yemas; flecha circular sobre la boca «de tanda en tanda». Chips «fábrica de hongos» y «conocimiento rarámuri». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música:** cama grave y continua, cálida (barro, madera): bajo de cuerdas graves y un pad suave, sin golpe; armonía que avanza por secciones (germinar = abre; microscopio = más misteriosa; pregunta = suspensión; estudio = avanza; cierre = vuelve al acorde del inicio, más lleno). Efectos en el mismo cuadro: burbuja que revienta (0.3 s), crujido de granos que brotan, tijeritas de enzimas (clics), metate (raspado), hervor, «blup» de cada yema que se suelta, burbujeo que acelera y frena con las 4 fases, roce del lienzo, tapa de caja Petri, gota de yodo, papel del sobre, golpe suave al cerrar.
@@ -40,7 +40,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Pero de d�
 | 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «es una fábrica de hongos» (cuadro 0) |
 | 2 | 8.0 | 11.0 | 13_senalando_arriba | `arriba-der` | «sus enzimas cortan el almidón… es malta» |
 | 3 | 16.2 | 20.7 | 04_bajando_lentes | `arriba-der` | «levaduras como *Saccharomyces cerevisiae*» |
-| 4 | 24.6 | 27.1 | 07_pensativo_puno | `grande` | «¿Pero de dónde salen esas levaduras?» |
+| 4 | 24.6 | 26.6 | 07_pensativo_puno | `grande` | «¿Pero de dónde salen esas levaduras?» |
 | 5 | 32.2 | 37.7 | 06_pensativo_menton | `arriba-der` | «venían sobre todo del sedimento de la olla» |
 | 6 | 38.7 | 42.2 | 12_perfil_serio | `bajo-der` | «no mostró enzimas: su papel sigue en duda» |
 | 7 | 43.2 | 46.4 | 05_sonriendo_dientes_uniformes | `arriba-der` | «pago del trabajo en comunidad» |
@@ -48,7 +48,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Pero de d�
 | 9 | 53.4 | 58.3 | 02_apuntando_camara | `arriba-der` | «se hereda de tanda en tanda» |
 | — | 58.4 | 61.9 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 9 · **35.9 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · dos veces grande. Sin avatares 01 ni 09.
+Apariciones 9 · **35.4 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · dos veces grande. Sin avatares 01 ni 09.
 
 ## Fuentes (abiertas en el texto completo el 5 nov 2026)
 

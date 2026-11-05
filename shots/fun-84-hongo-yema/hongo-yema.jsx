@@ -243,7 +243,7 @@ function HongoYemaShot() {
           {/* franja de bosque en las faldas */}
           {Array.from({ length: 16 }, (_, i) => { const u = i / 15, px = klerp(250, 840, u), py = alt(3000) + 40 + Math.abs(u - 0.5) * 230; return i % 3 === 1 ? <Aile key={i} x={px} y={py} s={0.55} /> : <Pino key={i} x={px} y={py} s={0.55} c={i % 2 ? HY.pino2 : HY.pino} />; })}
           {/* nubes de lluvia */}
-          {[[260, 470], [820, 430]].map(([nx, ny], i) => <g key={i} transform={`translate(${nx + Math.sin(T * 0.6 + i) * 20} ${ny})`} opacity={kprog(T, K.V + 2.2, K.V + 2.8)}>
+          {[[200, 390], [430, 370]].map(([nx, ny], i) => <g key={i} transform={`translate(${nx + Math.sin(T * 0.6 + i) * 20} ${ny})`} opacity={kprog(T, K.V + 2.2, K.V + 2.8)}>
             <ellipse cx={0} cy={0} rx={110} ry={42} fill="#eef6ff" stroke={KC.ink} strokeWidth={5} /><ellipse cx={-50} cy={-26} rx={50} ry={36} fill="#eef6ff" stroke={KC.ink} strokeWidth={5} /><ellipse cx={30} cy={-34} rx={60} ry={42} fill="#eef6ff" stroke={KC.ink} strokeWidth={5} />
           </g>)}
           {/* medidor de altitud */}
@@ -374,7 +374,7 @@ function HongoYemaShot() {
       <Etq T={T} at={K.D + 1.0} until={K.R - 0.4} x={300} y={620} lado="izq" texto={TX.sombrero} tam={30} color={HY.ambar} />
       <Etq T={T} at={K.D + 1.5} until={K.R - 0.4} x={262} y={760} lado="izq" texto={TX.laminillas} tam={30} color={HY.amarillo} />
       <Etq T={T} at={K.D + 2.0} until={K.R - 0.4} x={820} y={860} texto={TX.pie} tam={30} color={HY.amarillo2} />
-      <Etq T={T} at={K.D + 2.5} until={K.R - 0.4} x={262} y={900} lado="izq" texto={TX.velo} tam={22} color={KC.texto} />
+      <Etq T={T} at={K.D + 2.5} until={K.R - 0.4} x={272} y={900} lado="izq" texto={TX.velo} tam={20} color={KC.texto} />
       <Etq T={T} at={K.R + 1.2} until={K.S - 0.2} x={460} y={1110} texto={TX.volva} tam={30} color={KC.ink} />
       <Etq T={T} at={K.S + 1.6} until={K.P - 0.4} x={625} y={650} texto={TX.cSombrero} tam={24} color={KC.ink} />
       <Etq T={T} at={K.S + 2.0} until={K.P - 0.4} x={600} y={745} texto={TX.cLam} tam={24} color={KC.ink} />

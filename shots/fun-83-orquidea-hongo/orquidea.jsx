@@ -10,16 +10,17 @@ const TX = {
   numMx: 1200, numMxPre: '+', etqMx1: 'especies de orquídeas', etqMx2: 'en México',
   bosque1: 'bosque de niebla', bosque2: 'bosque mesófilo de montaña',
   epifita: 'orquídea pegada a la rama',
-  numCap: 4000000, etqCap: 'semillas en una cápsula', etqCap2: 'récord registrado (Arditti y Ghani, 2000)',
+  numCap: 4000000, numCapPre: '≈ ', etqCap: 'semillas en una cápsula (estimado)', etqCap2: <>récord: <i>Cycnoches</i> · Kew, 1896 (Arditti y Ghani, 2000)</>,
   porDentro: 'AL MICROSCOPIO · LA SEMILLA',
-  testa: 'testa (cubierta)', embrion: 'embrión', sinReservas: 'sin endospermo = sin reservas',
+  testa: 'testa (cubierta)', embrion: 'embrión', sinReservas: 'sin endospermo (la "lonchera" de otras semillas)',
+  comidaPropia: 'comida propia: muy poca · el resto, del hongo',
   hifa: 'hifa del hongo', micorriza: 'hongo micorrízico', hongo1: 'Tulasnella', hongo2: 'Ceratobasidium',
   peloton: 'pelotón (ovillo de hifas)', celula: 'célula del embrión',
   quien: '¿quién se come a quién?',
   mico: 'come del hongo: micoheterotrofia',
   protocormo: 'protocormo', hoja: 'primera hoja', raiz: 'raíz',
   anio: '2007', estQuien: 'UNAM · Pedregal de San Ángel', estRevista: 'Lankesteriana, 2007 · CDMX',
-  bletia: 'Bletia urbana', peligro: 'orquídea en peligro', frasco: 'plántulas + su hongo, en frasco',
+  bletia: 'Bletia urbana', peligro: 'orquídea en peligro', frasco: 'plántulas + sus hongos, en frasco',
   anios: '6 años', sobrevive: 'sobrevivió', pct: 50, pctPre: '≈ ', pctSuf: ' %', florecen: '¡y florecen!',
   vainilla: 'Vanilla planifolia', vainilla2: 'vainilla · también orquídea', nativa: 'nativa de México y Centroamérica',
   mapa: 'mapa esquemático',
@@ -28,7 +29,7 @@ const TX = {
 
 const OQ = { corteza:'#7a5a3a', corteza2:'#5a3f27', musgo:'#4fae3c', musgo2:'#7fd05a', hoja:'#2f9e44', hoja2:'#5fcf6a',
   petalo:'#ff7fb8', petalo2:'#ff4f9a', labelo:'#ffd23f', capsula:'#9b7a3e', capsula2:'#6e5326', polvo:'#f2d58c',
-  testa:'#cfe9ff', embrion:'#f7e7a8', hifa:'#fff4d6', verde:'#46c25a', roca:'#3b3a40', roca2:'#57565e', bletia:'#d9409a' };
+  testa:'#cfe9ff', embrion:'#f7e7a8', hifa:'#fff4d6', verde:'#46c25a', roca:'#3b3a40', roca2:'#57565e' };
 
 // ---------- piezas ----------
 // Rama horizontal con musgo. (x, y) = extremo izquierdo; w = largo.
@@ -237,7 +238,7 @@ function FrascoLab({ x, y, s = 1, planta = 1, T = 0, seed = 1 }) {
     <rect x={-60} y={-236} width={20} height={150} rx={10} fill="#fff" opacity=".45" />
   </g>;
 }
-// Bletia (orquídea terrestre): hojas plegadas desde el suelo y vara con flores rosa-magenta. vida 0..1 (0 = se secó). flor 0..1.
+// Bletia (orquídea terrestre): hojas plegadas desde el suelo y vara con flores (color esquemático: no se afirma el color real). vida 0..1 (0 = se secó). flor 0..1.
 function Bletia({ x, y, s = 1, vida = 1, flor = 0, T = 0, seed = 1 }) {
   const c1 = mixHex('#9a8a6a', OQ.hoja, vida), c2 = mixHex('#b5a67f', OQ.hoja2, vida);
   return <g transform={`translate(${x} ${y}) scale(${s * (0.75 + 0.25 * vida)})`} opacity={0.35 + 0.65 * vida}>
@@ -248,8 +249,8 @@ function Bletia({ x, y, s = 1, vida = 1, flor = 0, T = 0, seed = 1 }) {
     {flor > 0 && <g>
       <path d={`M 6 0 L ${10} ${-260 * flor}`} stroke="#5b7d2a" strokeWidth={6} />
       {[0, 1, 2].map((k) => { const fk = kEase.rebote(kclamp(flor * 1.6 - k * 0.25, 0, 1)); return fk > 0 ? <g key={k} transform={`translate(${10 + (k % 2 ? 22 : -22)} ${-260 * flor + k * 60}) scale(${fk})`}>
-        {[0, 72, 144, 216, 288].map((a, j) => <ellipse key={j} cy={-20} rx={10} ry={22} transform={`rotate(${a})`} fill={j % 2 ? '#f07cc0' : OQ.bletia} stroke={KC.ink} strokeWidth={3} />)}
-        <circle r={8} fill="#7a1a5a" stroke={KC.ink} strokeWidth={2} />
+        {[0, 72, 144, 216, 288].map((a, j) => <ellipse key={j} cy={-20} rx={10} ry={22} transform={`rotate(${a})`} fill={j % 2 ? '#fbf7ee' : '#efe8da'} stroke={KC.ink} strokeWidth={3} />)}
+        <circle r={8} fill="#d8cfbe" stroke={KC.ink} strokeWidth={2} />
       </g> : null; })}
     </g>}
   </g>;
@@ -338,7 +339,7 @@ function OrquideaShot() {
         {fsvg(<>
           <SemillaMicro x={540} y={850} L={kprog(T, K.Se, K.Se + 0.8, kEase.sale) * 760 + 1} W={250} T={T} />
           {/* lonchera tachada */}
-          {T > K.Se + 2.6 && <g transform={`translate(880 1110) scale(${kEase.rebote(kprog(T, K.Se + 2.6, K.Se + 3.0))})`}>
+          {T > K.Se + 2.6 && <g transform={`translate(190 1010) scale(${kEase.rebote(kprog(T, K.Se + 2.6, K.Se + 3.0))})`}>
             <rect x={-70} y={-50} width={140} height={100} rx={16} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
             <path d="M -36 -50 Q -36 -86 0 -86 Q 36 -86 36 -50" stroke={KC.ink} strokeWidth={10} fill="none" />
             <line x1={-90} y1={-80} x2={90} y2={70} stroke="#fff" strokeWidth={14} strokeLinecap="round" opacity={kprog(T, K.Se + 3.1, K.Se + 3.4)} />
@@ -451,20 +452,20 @@ function OrquideaShot() {
 
       {/* ---------- textos ---------- */}
       <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.1} until={K.G + 2.4} texto={TX.mito} x={300} y={470} tam={64} />
-      <Chip T={T} at={K.G + 1.5} until={K.Bo - 0.3} texto={TX.semillas} x={330} y={470} tam={42} borde={KC.gold} />
-      <Chip T={T} at={K.G + 3.0} until={K.Bo - 0.3} texto={TX.sinHongo} x={540} y={1080} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.G + 1.5} until={K.Bo - 0.3} texto={TX.semillas} x={330} y={400} tam={42} borde={KC.gold} />
+      <Chip T={T} at={K.G + 3.2} until={K.Bo - 0.3} texto={TX.sinHongo} x={540} y={490} tam={34} borde={KC.red} />
       <NumeroGigante T={T} at={K.Bo + 0.4} until={K.Ca - 0.3} valor={TX.numMx} prefijo={TX.numMxPre} dur={1.0} x={330} y={560} tam={170} color={KC.yellow} />
       <Etq T={T} at={K.Bo + 0.9} until={K.Ca - 0.3} x={60} y={700} texto={TX.etqMx1} tam={34} color={KC.texto} />
       <Etq T={T} at={K.Bo + 1.1} until={K.Ca - 0.3} x={60} y={746} texto={TX.etqMx2} tam={34} color={KC.texto} />
       <Chip T={T} at={K.Bo + 2.6} until={K.Ca - 0.3} texto={TX.bosque1} x={540} y={1000} tam={40} borde={KC.mint} />
       <Chip T={T} at={K.Bo + 3.2} until={K.Ca - 0.3} texto={TX.bosque2} x={540} y={1085} tam={30} borde={KC.mint} mono />
-      <NumeroGigante T={T} at={K.Ca + 0.2} until={K.Se - 0.3} valor={TX.numCap} dur={1.6} x={540} y={430} tam={130} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Ca + 0.2} until={K.Se - 0.3} valor={TX.numCap} prefijo={TX.numCapPre} dur={1.6} x={540} y={430} tam={130} color={KC.yellow} />
       <Etq T={T} at={K.Ca + 0.6} until={K.Se - 0.3} x={140} y={540} texto={TX.etqCap} tam={36} color={KC.texto} />
       <Etq T={T} at={K.Ca + 1.0} until={K.Se - 0.3} x={140} y={590} texto={TX.etqCap2} tam={24} color={KC.texto} />
       <Chip T={T} at={K.Se + 0.2} until={K.Pe - 0.3} texto={TX.porDentro} x={400} y={430} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.Se + 0.9} until={K.Hi - 0.2} x={250} y={650} texto={TX.testa} tam={32} color={OQ.testa} />
       <Etq T={T} at={K.Se + 1.4} until={K.Hi - 0.2} x={640} y={1010} texto={TX.embrion} tam={34} color={OQ.embrion} />
-      <Chip T={T} at={K.Se + 2.0} until={K.Hi - 0.2} texto={TX.sinReservas} x={400} y={1120} tam={30} borde={KC.gold} mono />
+      <Chip T={T} at={K.Se + 2.0} until={K.Hi - 0.2} texto={TX.sinReservas} x={540} y={1120} tam={25} borde={KC.gold} mono />
       <Etq T={T} at={K.Hi + 1.2} until={K.Pe - 0.2} x={180} y={1170} texto={TX.hifa} tam={32} color={OQ.hifa} />
       <Chip T={T} at={K.Hi + 1.6} until={K.Pe - 0.2} texto={TX.micorriza} x={760} y={560} tam={34} borde={KC.mint} />
       <Chip T={T} at={K.Hi + 2.2} until={K.Pe - 0.2} texto={<i>{TX.hongo1}</i>} x={640} y={1100} tam={34} borde={KC.gold} mono />
@@ -472,6 +473,7 @@ function OrquideaShot() {
       <Etq T={T} at={K.Pe + 1.4} until={K.Pr - 0.2} x={60} y={600} texto={TX.peloton} tam={32} color={OQ.hifa} />
       <Etq T={T} at={K.Pe + 2.0} until={K.Pr - 0.2} x={300} y={1160} texto={TX.celula} tam={28} color={OQ.embrion} />
       <Chip T={T} at={K.Di + 1.4} until={K.Pc - 0.2} texto={TX.mico} x={540} y={1160} tam={30} borde={KC.gold} mono />
+      <Etq T={T} at={K.Di + 2.4} until={K.Pc - 0.2} x={60} y={560} texto={TX.comidaPropia} tam={26} color={KC.gold2} />
       <Etq T={T} at={K.Pc + 1.4} until={K.Es - 0.2} x={700} y={900} texto={TX.protocormo} tam={36} color="#8fe08a" />
       <Etq T={T} at={K.Pc + 2.6} until={K.Es - 0.2} x={590} y={640} texto={TX.hoja} tam={30} color={OQ.hoja2} />
       <Etq T={T} at={K.Pc + 3.0} until={K.Es - 0.2} x={590} y={1180} texto={TX.raiz} tam={30} color="#eef3e8" />
@@ -482,7 +484,7 @@ function OrquideaShot() {
       <Chip T={T} at={K.Re + 0.2} until={K.Va - 0.3} texto={TX.anios} x={250} y={470} tam={44} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Re + 0.8} until={K.Va - 0.3} valor={TX.pct} prefijo={TX.pctPre} sufijo={TX.pctSuf} dur={1.0} x={330} y={640} tam={150} color={KC.mint} />
       <Etq T={T} at={K.Re + 1.2} until={K.Va - 0.3} x={60} y={770} texto={TX.sobrevive} tam={34} color={KC.texto} />
-      <Chip T={T} at={K.Re + 2.4} until={K.Va - 0.3} texto={TX.florecen} x={540} y={820} tam={40} borde={OQ.bletia} />
+      <Chip T={T} at={K.Re + 2.4} until={K.Va - 0.3} texto={TX.florecen} x={540} y={820} tam={40} borde={KC.gold} />
       <Etq T={T} at={K.Va + 0.6} until={K.C - 0.3} x={450} y={690} texto={TX.vainilla} it tam={36} color={KC.texto} />
       <Etq T={T} at={K.Va + 1.0} until={K.C - 0.3} x={450} y={736} texto={TX.vainilla2} tam={28} color={KC.texto} />
       <Etq T={T} at={K.Va + 2.2} until={K.C - 0.3} x={560} y={1140} texto={TX.nativa} tam={24} color={KC.texto} />
@@ -505,7 +507,7 @@ function OrquideaShot() {
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Bo - 0.1} texto="No es polvo: son *semillas de orquídea.*" />
       <Subtitulo T={T} idx={1} at={K.Bo + 0.1} until={K.Ca - 0.1} texto="Más de *1,200 especies* en México." />
       <Subtitulo T={T} idx={2} at={K.Ca + 0.1} until={K.Se - 0.1} texto="Una cápsula: *millones de semillas.*" />
-      <Subtitulo T={T} idx={3} at={K.Se + 0.1} until={K.Hi - 0.1} texto="Sin reservas: *no trae lonchera.*" />
+      <Subtitulo T={T} idx={3} at={K.Se + 0.1} until={K.Hi - 0.1} texto="Sin endospermo: *no trae lonchera.*" />
       <Subtitulo T={T} idx={4} at={K.Hi + 0.1} until={K.Pe - 0.1} texto="Deja entrar a *un hongo micorrízico.*" />
       <Subtitulo T={T} idx={5} at={K.Pe + 0.1} until={K.Pr - 0.1} texto="Ovillos de hifas: *los pelotones.*" />
       <Subtitulo T={T} idx={6} at={K.Pr + 0.1} until={K.Di - 0.1} texto="¿Y quién se come *a quién?*" />
@@ -521,7 +523,7 @@ function OrquideaShot() {
         [K.Bo + 1.3, K.Bo + 4.3, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.Se + 1.1, K.Hi - 0.1, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [K.Pe + 0.4, K.Pr - 0.4, 'avatar_06_pensativo_menton', 'arriba-der'],
-        [K.Pr + 0.05, K.Di + 1.4, 'avatar_07_pensativo_puno', 'grande'],
+        [K.Pr + 0.05, K.Di + 0.6, 'avatar_07_pensativo_puno', 'grande'],
         [K.Es + 0.9, K.Es + 4.4, 'avatar_12_perfil_serio', 'izq-alto'],
         [K.Re + 0.2, K.Va - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [K.Va + 0.8, K.C - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
