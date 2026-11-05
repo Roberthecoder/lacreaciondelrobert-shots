@@ -292,11 +292,13 @@ function MangoShot() {
           <Mango x={330} y={800} s={1.0} rot={-12} madurez={1} manchas={kprog(T, K.M + 0.2, K.M + 2.2, kEase.sale)} id="ma" />
           <Mango x={790} y={790} s={0.7} rot={8} madurez={0.9} lagrimas={kprog(T, K.M + 1.6, K.M + 3.0, kEase.sale)} id="mb" />
           {/* corte: etapa avanzada, la pulpa ennegrecida bajo la mancha */}
-          {(() => { const o = kprog(T, K.M + 3.4, K.M + 3.9); if (o <= 0) return null; return <g opacity={o} transform="translate(560 1110)">
-            <path d="M -200 0 Q -190 -80 0 -90 Q 190 -80 200 0 Z" fill={MG.amarillo} stroke={KC.ink} strokeWidth={7} />
-            <path d="M -180 -4 Q -170 -66 0 -74 Q 170 -66 180 -4 Z" fill={MG.pulpa} />
-            <path d="M -40 -74 Q -30 -20 10 -10 Q 50 -20 60 -72 Z" fill={MG.mancha} opacity={kprog(T, K.M + 3.8, K.M + 4.6)} />
-            <path d="M -200 0 L 200 0" stroke={KC.ink} strokeWidth={7} />
+          {(() => { const o = kprog(T, K.M + 3.4, K.M + 3.9); if (o <= 0) return null; return <g opacity={o} transform="translate(540 1125)">
+            <path d="M -230 0 A 230 125 0 0 1 230 0 Z" fill="#e8a21c" stroke={KC.ink} strokeWidth={7} />
+            <path d="M -214 0 A 214 112 0 0 1 214 0 Z" fill={MG.pulpa} />
+            <path d="M -120 0 A 120 34 0 0 1 120 0 Z" fill="#f3e3b0" stroke="#c9b27a" strokeWidth={4} />
+            <path d={`M -70 -104 Q -60 ${-104 + 70 * kprog(T, K.M + 3.8, K.M + 4.8)} 0 ${-100 + 78 * kprog(T, K.M + 3.8, K.M + 4.8)} Q 60 ${-104 + 70 * kprog(T, K.M + 3.8, K.M + 4.8)} 70 -106 Z`} fill={MG.mancha} />
+            <path d="M -230 0 L 230 0" stroke={KC.ink} strokeWidth={7} />
+            <text x={250} y={-10} style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>corte</text>
           </g>; })()}
         </Capa>
       </Escena>
@@ -361,14 +363,14 @@ function MangoShot() {
       <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.6} until={K.G + 3.3} texto="¿un golpe?" x={300} y={480} tam={54} />
       <Etq T={T} at={K.G + 1.6} until={K.G + 3.3} x={40} y={720} texto="manchas negras y hundidas" tam={28} color={KC.ink} />
       <Chip T={T} at={K.G + 3.6} until={K.H - 0.3} texto="antes: verde, en el árbol" x={360} y={460} tam={40} borde={KC.leaf} />
-      <Etq T={T} at={K.H + 0.4} until={K.L - 0.3} x={60} y={420} texto="Colletotrichum" it tam={52} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={490} texto="antracnosis" tam={38} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.4} until={K.L - 0.3} x={60} y={370} texto="Colletotrichum" it tam={52} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={432} texto="antracnosis" tam={38} color={KC.ink} />
       <Etq T={T} at={K.H + 1.6} until={K.L - 0.3} x={60} y={800} texto="▲ hojas enfermas" tam={30} color={KC.ink} />
       <Chip T={T} at={K.H + 2.2} until={K.L - 0.3} texto="la enfermedad más importante del mango" y={1470} tam={36} borde={KC.leaf} />
       <Chip T={T} at={K.H + 3.2} until={K.L - 0.3} texto="en casi todo el mundo" y={1560} tam={32} borde={KC.leaf} />
       <Etq T={T} at={K.L + 0.6} until={K.L + 1.6} x={60} y={420} texto="esporas en gotas de lluvia" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.L + 1.8} until={K.A - 0.3} x={670} y={440} texto="conidios" lado="izq" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.L + 2.1} until={K.A - 0.3} x={670} y={492} texto="≈ 13 × 4 µm" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.L + 1.8} until={K.A - 0.3} x={670} y={385} texto="conidios" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.L + 2.1} until={K.A - 0.3} x={670} y={432} texto="≈ 13 × 4 µm" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.A + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO" x={250} y={400} tam={34} borde={KC.cyan} mono />
       <Etq T={T} at={K.A + 0.5} until={K.D - 0.2} x={250} y={760} texto="conidio" tam={30} color={KC.texto} />
       <Etq T={T} at={K.A + 1.8} until={K.P - 0.3} x={600} y={790} texto="apresorio" tam={34} color={KC.gold2} />
@@ -392,10 +394,10 @@ function MangoShot() {
       <Chip T={T} at={K.E + 5.6} until={K.Ex - 0.3} texto={<>más agresivas: <i>C. siamense</i> y <i>C. asianum</i></>} x={420} y={1480} tam={32} borde={KC.red} />
       <Etq T={T} at={K.E + 3.0} until={K.Ex - 0.3} x={60} y={935} texto="posición de los puntos: ilustrativa" tam={20} color={KC.ink} />
       <Chip T={T} at={K.Ex + 0.3} until={K.B - 0.3} texto="el mayor exportador de mango" x={430} y={440} tam={40} borde={KC.leaf} />
-      <NumeroGigante T={T} at={K.Ex + 0.9} until={K.B - 0.3} valor={450000} dur={1.6} prefijo="≈" sufijo=" t" etiqueta="exportación de mango de México, 2025" x={540} y={680} tam={150} color={KC.yellow} />
-      <Etq T={T} at={K.Ex + 1.6} until={K.B - 0.3} x={60} y={830} texto="FAO, 2026" tam={26} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Ex + 0.9} until={K.B - 0.3} valor={450000} dur={1.6} prefijo="≈" sufijo=" t" etiqueta="exportación de mango de México, 2025" x={540} y={640} tam={150} color={KC.yellow} />
+      <Etq T={T} at={K.Ex + 1.6} until={K.B - 0.3} x={60} y={790} texto="FAO, 2026" tam={26} color={KC.ink} />
       <Etq T={T} at={K.Ex + 0.6} until={K.B - 0.3} x={1040} y={1150} texto="rumbo a EE. UU. →" lado="izq" tam={30} color={KC.ink} />
-      <Medidor T={T} at={K.Ex + 3.4} until={K.B - 0.3} valor={(t) => 0.89 * kprog(t, K.Ex + 3.4, K.Ex + 5.0, kEase.sale)} etiqueta="a Estados Unidos" x={90} y={930} ancho={900} color={KC.yellow} />
+      <Medidor T={T} at={K.Ex + 3.4} until={K.B - 0.3} valor={(t) => 0.89 * kprog(t, K.Ex + 3.4, K.Ex + 5.0, kEase.sale)} etiqueta="a Estados Unidos" x={90} y={870} ancho={900} color={KC.yellow} />
       <Chip T={T} at={K.B + 0.4} until={K.C - 0.3} texto="BAÑO DE AGUA CALIENTE" x={360} y={430} tam={34} borde={KC.cyan} mono />
       <Chip T={T} at={K.B + 2.2} until={K.C - 0.3} texto="46.1 °C · 65–110 min según el peso" y={1660} tam={34} borde={KC.red} />
       <Chip T={T} at={K.B + 1.0} until={K.C - 0.3} texto="casi todos los que van a EE. UU." x={330} y={510} tam={28} borde={KC.ink} />

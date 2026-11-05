@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esos puntitos cafés en la hoja no siempre son el hongo ganando: pueden ser tu planta sacrificándose."
+      "texto": "Esos puntitos cafés no siempre son el hongo ganando: pueden ser tu planta sacrificándose."
     },
     {
       "escena": "SinGlobulos",
@@ -13,7 +13,7 @@
     },
     {
       "escena": "Espora",
-      "texto": "Cae una espora del moho del jitomate y su hifa se cuela por un poro de la hoja."
+      "texto": "Cae una espora del moho del jitomate y su hifa entra por un poro."
     },
     {
       "escena": "Quitina",
@@ -33,11 +33,11 @@
     },
     {
       "escena": "Efectores",
-      "texto": "Lo intenta, con proteínas efectoras. Pero si tu planta trae el gen de resistencia indicado, las reconoce."
+      "texto": "Lo intenta con efectores. Pero si tu planta trae el gen de resistencia indicado, los reconoce."
     },
     {
       "escena": "Sacrificio",
-      "texto": "Las células atacadas se matan solas: al hongo que solo come de células vivas lo dejan sin comida."
+      "texto": "Las células atacadas se matan: al hongo que solo come de células vivas lo dejan sin comida."
     },
     {
       "escena": "Estudio",
@@ -53,7 +53,7 @@
     },
     {
       "escena": "Cierre",
-      "texto": "Esos puntitos no siempre son derrota: son tu planta cerrándole la puerta al hongo."
+      "texto": "No siempre son derrota: son tu planta cerrándole la puerta al hongo."
     }
   ],
   "mezcla": "oficial-30oct"

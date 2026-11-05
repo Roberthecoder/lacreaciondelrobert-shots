@@ -11,53 +11,60 @@
   *Fulvia fulva*), un biotrofo: el ejemplo clásico de genes de resistencia Cf con respuesta hipersensible. *Alternaria brassicicola*
   aparece **solo** en el estudio de 2007 (escenas 9–10), presentado como "otro hongo" en otra planta (*Arabidopsis*). En pantalla no se
   sugiere que las manchas de *Alternaria* sean defensa.
-- **Duración:** voz 1020 caracteres / 180 palabras (≈ 58–59 s) + cierre 3.5 s → **61–62 s** (la base se ajusta con ffprobe a 61.5 s).
+- **Duración:** voz 1020 caracteres / 180 palabras + cierre 3.5 s. La base mide **61.5 s** (escenas escaladas a 58.0 s de voz; `gen-audio.mjs` da 61.50 s). Si la voz real sale larga, el campo velocidad de `narracion.json` la ajusta sin gastar créditos.
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 
-## Versión narrada (tiempos estimados de la base)
+## Versión narrada (tiempos de la base: escenas de `Shot Defensa base narrada.dc.html`, total 61.5 s)
 
 | # | s | Escena | Voz | Lo que se ve |
 |---|---|---|---|---|
-| 0 | 0.0–5.8 | Gancho | Esos puntitos cafés en la hoja no siempre son el hongo ganando: pueden ser tu planta sacrificándose. | Fondo amarillo. Planta de jitomate en maceta; zoom a una hoja donde aparecen puntitos cafés uno a uno (cuadro 0.3: algo se mueve antes del s 1). Chip "¿el hongo ganando?" que se tacha y chip "¿o tu planta?". |
-| 1 | 5.8–10.0 | SinGlobulos | Tu planta no tiene glóbulos blancos: cada célula puede defenderse sola. | Fondo menta. Un glóbulo blanco tachado; a la derecha, la hoja se llena de celditas que se encienden una por una con un escudo chiquito. |
-| 2 | 10.0–13.8 | Espora | Cae una espora del moho del jitomate y su hifa se cuela por un poro de la hoja. | «AL MICROSCOPIO» (fondo oscuro): superficie del envés con estomas (dos células oclusivas en forma de frijol). Cae un conidio de *C. fulvum* (elipsoide, claro a café olivo, de 1–2 células), germina y su hifa delgada camina por la superficie y entra por el estoma abierto. Etiquetas "moho de la hoja · *Cladosporium fulvum*" y "estoma (poro de la hoja)". Barra de escala 20 µm. |
-| 3 | 13.8–16.0 | Quitina | Pero la quitina de su pared la delata. | Corte: la hifa avanza **entre** las células (sin entrar a ellas, por el espacio de afuera). Zoom a su pared: fibras de quitina que brillan; se sueltan pedacitos. Etiqueta "quitina". |
-| 4 | 16.0–18.5 | Receptor | La planta tiene receptores que la atrapan. | Membrana de la célula vegetal (pared por fuera): receptores tipo "pinza" atrapan los pedacitos. Etiqueta "receptores (LYK5 + CERK1 en *Arabidopsis*)". |
-| 5 | 18.5–23.8 | Alarma | Suena la alarma: oxígeno reactivo, callosa en la pared y quitinasas que cortan la del hongo. | La célula se enciende en rojo: chispas "oxígeno reactivo"; un engrosamiento de callosa crece en la pared, junto a la hifa; tijeritas "quitinasas" muerden la pared del hongo. Tres chips, uno por frase. |
-| 6 | 23.8–25.6 | Pregunta | ¿Y si el hongo apaga la alarma? | **Re-gancho.** Fondo rosa; la luz de alarma parpadea y se apaga; Robert grande, pensativo. |
-| 7 | 25.6–31.8 | Efectores | Lo intenta, con proteínas efectoras. Pero si tu planta trae el gen de resistencia indicado, las reconoce. | Fondo oscuro. La hifa suelta bolitas "efectores"; una de ellas (Avr4) se pega a su quitina como escudo contra las tijeritas. Un guardián en la membrana ("receptor de resistencia · gen *Cf-4*") atrapa a Avr4 y la alarma se enciende otra vez. |
-| 8 | 31.8–37.4 | Sacrificio | Las células atacadas se matan solas: al hongo que solo come de células vivas lo dejan sin comida. | Las células que toca la hifa se oscurecen a café y se encogen ("respuesta hipersensible"); la hifa se detiene. La cámara se aleja: ese grupito de células muertas es un puntito café en la hoja. Chip "solo frena a hongos que comen de células vivas". |
-| 9 | 37.4–43.3 | Estudio | En 2007, en Japón, le apagaron a Arabidopsis CERK1, clave de su sensor de quitina, y dejó de notarla. | Fondo cian. TarjetaEstudio "2007 · Universidad Meiji, Japón · PNAS". Dos rosetas de *Arabidopsis*: normal y "sin CERK1"; les cae quitina: la normal se enciende, la otra no. |
-| 10 | 43.3–48.2 | Manchas | Con otro hongo, Alternaria, sus manchas salieron como veinte por ciento más grandes. | Mismas dos hojas inoculadas con *Alternaria brassicicola* (etiqueta "otro hongo"): las manchas (del hongo, no de defensa) crecen; la de "sin CERK1" queda más grande. Medidor "≈20 % más grandes · 6 días". |
-| 11 | 48.2–53.2 | Aspirina | La alarma viaja: en las hojas sanas sube el ácido salicílico, pariente de la aspirina. | Fondo lila. Desde la hoja atacada sale una onda "señal" por el tallo; al llegar a las hojas lejanas aparece en ellas la molécula de ácido salicílico y se ponen un escudo. Junto, una pastilla "aspirina = ácido acetilsalicílico". |
-| 12 | 53.2–58.0 | Cierre | Esos puntitos no siempre son derrota: son tu planta cerrándole la puerta al hongo. | **Regreso a la imagen del inicio:** la misma maceta y la misma hoja; cada puntito café con una puertita que se cierra. |
+| 0 | 0.0–5.6 | Gancho | Esos puntitos cafés en la hoja no siempre son el hongo ganando: pueden ser tu planta sacrificándose. | Fondo amarillo. Un folíolo grande de jitomate (ovado, borde aserrado, venas) unido con una línea punteada a una jitomatera en maceta ("tu jitomate"). Desde el cuadro 0.15 aparecen 11 puntitos cafés uno a uno (imagen general, sin nombrar ningún hongo). Chips "¿el hongo ganando?" y "¿o tu planta sacrificándose?". Barra 1 cm. |
+| 1 | 5.6–9.8 | SinGlobulos | Tu planta no tiene glóbulos blancos: cada célula puede defenderse sola. | Fondo menta. Glóbulo blanco ("tu cuerpo sí tiene") que se tacha; chip "tu planta: no tiene"; 12 células de la hoja que se encienden una por una con un escudito. "esquemático". |
+| 2 | 9.8–14.3 | Espora | Cae una espora del moho del jitomate y su hifa se cuela por un poro de la hoja. | «AL MICROSCOPIO · ENVÉS DE LA HOJA» (fondo oscuro). Epidermis con un estoma (dos células oclusivas en forma de frijol y el poro). Cae un conidio de *C. fulvum* (elipsoide, café olivo claro, 2 células), germina y su hifa corredora camina hasta el poro y entra. Etiquetas "moho de la hoja del jitomate", "conidio de *Cladosporium fulvum*", "estoma (poro de la hoja)". Barra 20 µm. |
+| 3 | 14.3–16.6 | Quitina | Pero la quitina de su pared la delata. | «POR DENTRO · LA HOJA EN CORTE»: la hifa pasa ENTRE dos células (por el espacio de afuera); brillan las fibras de quitina de su pared y se sueltan pedacitos. Etiquetas "la hifa crece entre las células", "su pared: quitina". |
+| 4 | 16.6–19.2 | Receptor | La planta tiene receptores que la atrapan. | Cuatro receptores en la membrana (brazos afuera, cinasa adentro) atrapan los pedacitos y se encienden en dorado. Etiqueta "receptores (LYK5 + CERK1 en *Arabidopsis*)". |
+| 5 | 19.2–24.4 | Alarma | Suena la alarma: oxígeno reactivo, callosa en la pared y quitinasas que cortan la del hongo. | La célula se pinta de rojo que late; chispas de oxígeno reactivo suben a la hifa; crece una papila de callosa bajo la pared; "tijeritas" de quitinasa muerden la pared de la hifa. Chips "oxígeno reactivo", "callosa: refuerza la pared", "quitinasas: cortan la quitina". |
+| 6 | 24.4–26.4 | Pregunta | ¿Y si el hongo apaga la alarma? | **Re-gancho.** Fondo rosa: un foco de alarma rojo que se apaga (gris) y un "?" grande; Robert grande, pensativo. |
+| 7 | 26.4–32.3 | Efectores | Lo intenta, con proteínas efectoras. Pero si tu planta trae el gen de resistencia indicado, las reconoce. | El mismo corte: la hifa suelta efectores (bolitas rosas) y la alarma se apaga; Avr4 (bolitas naranjas) cubre la quitina y las quitinasas rebotan. Aparece el guardián rojo (receptor del gen *Cf-4*), atrapa a Avr4 y la alarma vuelve: chip "¡alarma otra vez!". |
+| 8 | 32.3–37.9 | Sacrificio | Las células atacadas se matan solas: al hongo que solo come de células vivas lo dejan sin comida. | **Al microscopio** (fondo oscuro): epidermis con su estoma y debajo células del mesófilo; la hifa entra por el estoma y avanza por los huecos entre células. Las 7 células que toca se vuelven café y se encogen; la hifa se detiene y se pone gris. La cámara se aleja un poco **sin salir del microscopio**: es un grupito de células (chip «unas pocas células», barra 20 µm). Chip "respuesta hipersensible" y etiqueta "solo frena a hongos que comen de células vivas". No se dice ni se insinúa que sea el puntito visible de la hoja. |
+| 9 | 37.9–43.6 | Estudio | En 2007, en Japón, le apagaron a Arabidopsis CERK1, clave de su sensor de quitina, y dejó de notarla. | Fondo cian. TarjetaEstudio "2007 · Universidad Meiji, Japón · PNAS, 2007 · con RIKEN". Dos rosetas de *Arabidopsis* ("normal" y "sin CERK1"); les cae quitina: la normal se enciende ("¡alarma!"), la otra no ("sin alarma"). Barra 2 cm. |
+| 10 | 43.6–48.4 | Manchas | Con otro hongo, Alternaria, sus manchas salieron como veinte por ciento más grandes. | Dos hojas de *Arabidopsis* (normal / sin CERK1) con una mancha café de anillos que crece; la de "sin CERK1" queda más grande. Etiquetas "otro hongo: *Alternaria brassicicola*" y "la mancha = el hongo avanzando"; chip "≈20 % más grandes · 6 días". |
+| 11 | 48.4–53.3 | Aspirina | La alarma viaja: en las hojas sanas sube el ácido salicílico, pariente de la aspirina. | Fondo lila. Jitomatera con una hoja atacada (roja, con puntitos); una "señal" amarilla sube por el tallo; al llegar a cada hoja sana aparece en ella la molécula de ácido salicílico y un escudo ("hojas sanas: se preparan"). A la derecha, la molécula grande (COOH, OH) "ácido salicílico" y una pastilla: "pariente: la aspirina (ácido acetilsalicílico)". |
+| 12 | 53.3–58.0 | Cierre | Esos puntitos no siempre son derrota: son tu planta cerrándole la puerta al hongo. | **Regreso a la imagen del inicio:** la misma hoja y la misma maceta; sobre cada puntito café se cierra una puertita. Chip "cada puntito: una puerta cerrada". |
 | — | 58.0–61.5 | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Morfología del moho de la hoja (para dibujarlo bien):** biotrofo que crece **fuera** de las células, en el espacio entre ellas
-(apoplasto); los conidios germinan en la superficie, sus hifas "corredoras" entran por estomas abiertos, y 10–14 días después salen
-conidióforos por los estomas del **envés** con muchísimos conidios (de Wit et al. 2012). En la hoja: manchas verde pálido a
-amarillentas por arriba y un fieltro aterciopelado verde olivo a gris por abajo (Ohio State, Passalora fulva). Conidios de 1–3 células
-(OSU), de cilíndricos a elipsoides, claros a café olivo, en cadenas. El dibujo es esquemático.
+**Morfología del moho de la hoja (para dibujarlo bien):** biotrofo que crece **solo** en el espacio entre las células (apoplasto)
+(Mesarich et al. 2018); los conidios germinan en la superficie, sus hifas corredoras entran por estomas abiertos y 10–14 días después
+salen conidióforos por los estomas con muchísimos conidios (de Wit et al. 2012). En la hoja: manchas verde pálido a amarillas por
+arriba y moho blanco a verde olivo por abajo, que se vuelve café al esporular (Mesarich et al. 2018). Conidios de 1 a 3 (rara vez 4)
+células, en cadenas, cilíndricos de puntas redondeadas o elipsoides, de muy pálidos a café claro o café olivo (Ellis 1971; Videira et al.
+2017, https://dothideomycetes.org/mycosphaerellales/mycosphaerellaceae/fulvia/). Aquí se dibuja uno de 2 células. El dibujo es esquemático.
 
-**Música:** cama grave y continua, tensa cuando entra el hongo y cuando suena la alarma; se abre al final («cerrándole la puerta»).
-Efectos en el mismo cuadro: cada puntito que aparece, caída de la espora, hifa que se cuela, alarma suave, chispas de oxígeno,
-tijeritas de quitinasa, "clic" del guardián, células que se apagan, onda que viaja por la planta, puertita que se cierra.
+**Música (`gen-audio.mjs`):** cama grave en la menor con un acorde por escena (Am → F → Dm → E → E7 → Am6 → Esus4 → Dm → Fmaj7 → C → G →
+F → Am → **La mayor** en el cierre), con voces que se mueven a la nota más cercana; encima, un arpegio suave con un patrón distinto en
+cada escena, que respira al cerrar cada frase y cae en la tónica al final de la escena. Se "tapa" (filtro) mientras entra el hongo y suena
+la alarma, y se abre al final. Efectos en el mismo cuadro: 11 gotitas (puntitos), tachón del glóbulo, 12 notas (células con escudo),
+caída y aterrizaje del conidio, zumbido de la hifa, clic al entrar al estoma, brillo de la quitina, burbujas (pedacitos), 4 clics
+(receptores), latidos de alarma, chispas, soplo de la callosa, mordidas de quitinasa, la alarma que se apaga, efectores, Avr4, golpe del
+guardián, crujidos de las células que mueren, tarjeta del estudio, gotas de quitina, manchas que crecen, la señal que sube, 3 notas
+(hojas sanas), 11 clics (puertitas) y acorde final.
 
-Barras de escala: 5 cm (hoja), 20 µm (espora, estoma e hifa), 10 µm (célula), "esquemático" en moléculas.
-
-## Robert en pantalla (plan con tiempos de la base; se ajusta al animar)
+## Robert en pantalla (tiempos de la base)
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
 | 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no siempre son el hongo ganando» (cuadro 0) |
 | 2 | 6.0 | 9.5 | 13_senalando_arriba | `arriba-der` | «cada célula puede defenderse sola» |
-| 3 | 18.8 | 22.3 | 04_bajando_lentes | `arriba-der` | «suena la alarma» |
-| 4 | 23.8 | 25.6 | 07_pensativo_puno | `presentador` | «¿Y si el hongo apaga la alarma?» |
-| 5 | 32.0 | 36.5 | 12_perfil_serio | `arriba-der` | «se matan solas» |
-| 6 | 39.5 | 43.0 | 06_pensativo_menton | `arriba-der` | «dejó de notarla» |
+| 3 | 18.8 | 22.2 | 04_bajando_lentes | `arriba-der` | «suena la alarma» |
+| 4 | 24.5 | 26.6 | 07_pensativo_puno | `grande` (medio cuerpo) | «¿Y si el hongo apaga la alarma?» |
+| 5 | 32.3 | 35.3 | 12_perfil_serio | `arriba-der` | «las células atacadas se matan solas» |
+| 6 | 39.5 | 43.1 | 06_pensativo_menton | `arriba-der` | «le apagaron CERK1… y dejó de notarla» |
 | 7 | 48.5 | 52.8 | 11_sorprendido | `arriba-der` | «pariente de la aspirina» |
-| 8 | 53.5 | 58.0 | 02_apuntando_camara | `arriba-der` | «tu planta cerrándole la puerta» |
+| 8 | 53.5 | 57.9 | 02_apuntando_camara | `arriba-der` | «tu planta cerrándole la puerta» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 8 · **27.3 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · sin lengua · no tapa
+datos, etiquetas ni subtítulo (revisado en las hojas de cuadros).
 
 ## Fuentes (detalle y veredictos en `verificacion.md`)
 
@@ -88,11 +95,15 @@ Barras de escala: 5 cm (hoja), 20 µm (espora, estoma e hifa), 10 µm (célula),
 9. de Wit, P. J. G. M. et al. (2009). Fungal effector proteins: past, present and future. *Molecular Plant Pathology* 10(6): 735–747.
    https://pmc.ncbi.nlm.nih.gov/articles/PMC6640362/
    > Avr4 "contains a functional chitin-binding domain that protects chitinous fungi against plant chitinases"; "In the presence of Cf-4, Avr4 induces an HR."
-10. Ohio State University, High Tunnel Disease Facts: Tomato leaf mold (*Passalora fulva*). https://u.osu.edu/hightunneldiseasefacts/?p=148
-   > "olive-green to gray velvety mycelia on the undersides of older leaves"; "one- to three-celled conidia"
+10. Mesarich, C. H. et al. (2018). *Molecular Plant-Microbe Interactions* 31: 145. https://hal.inrae.fr/hal-02624590/document
+   > "C. fulvum exclusively colonizes the tomato leaf apoplast"; "pale green to yellow spots on the adaxial leaf surface as well as white to olive-green patches of mold on the abaxial leaf surface that turn brown upon sporulation"
+   Conidios: Ellis (1971) y Videira et al. (2017), en Dothideomycetes.org, *Fulvia*: https://dothideomycetes.org/mycosphaerellales/mycosphaerellaceae/fulvia/
+   > "Conidia catenate… cylindrical with rounded ends or ellipsoidal, very pale to mid pale brown or olivaceous brown, smooth, 0–3-septate"
 11. Vernooij, B. et al. (1994). Salicylic acid is not the translocated signal responsible for inducing systemic acquired resistance
    but is required in signal transduction. *Plant Cell* 6: 959–965.
    > "the translocating, SAR-inducing signal is not SA… the signal requires the presence of SA in tissues distant from the infection site"
+   Malamy, J. et al. (1990). *Science* 250: 1002 (tabaco resistente con virus del mosaico del tabaco):
+   > "increased at least 20-fold in infected leaves and 5-fold in uninfected leaves after TMV inoculation"
 12. Dempsey, D. A. y Klessig, D. F. (2017). How does the multifaceted plant hormone salicylic acid combat disease in plants and are
    similar mechanisms utilized in humans? *BMC Biology* 15: 23. https://pmc.ncbi.nlm.nih.gov/articles/PMC5364617/
    > "SA and its acetylated derivate (commonly known as aspirin)"
