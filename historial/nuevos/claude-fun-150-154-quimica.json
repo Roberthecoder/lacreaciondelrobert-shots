@@ -22,25 +22,16 @@
    ]
   },
   {
-   "id": "fun-151-olor-hongo",
-   "titulo": "Ese olor a champiñón no es tierra: es sobre todo una molécula (1-octen-3-ol)",
+   "id": "fun-151-trehalosa",
+   "titulo": "El azúcar de los hongos no es el de tu mesa: trehalosa (y por qué a algunas personas los hongos les caen mal: falta de trehalasa)",
    "serie": "Shot Fungi Mati",
    "numero": 151,
-   "estado": "renderizado",
-   "carpeta": "shots/fun-151-olor-hongo",
+   "estado": "idea",
+   "carpeta": "shots/fun-151-trehalosa",
    "rama": "claude/fun-150-154-quimica",
-   "fuentes": [
-    "Nagata et al. 2026, Fungal Biology 130:101824 (Yamaguchi)",
-    "Su et al. 2022, J Fungi",
-    "Zawirska-Wojtasiak 2004, Food Chem 86:113",
-    "Hall et al. 1984; Takken y Kline 1989"
-   ],
+   "fuentes": [],
    "fecha": "2026-11-05",
-   "derivados": [
-    "Por qué las trufas huelen tan fuerte (y los cerdos las encuentran)",
-    "Los olores que usan los hongos para atraer moscas y escarabajos",
-    "Octenol y mosquitos: por qué a ti te pican más (cuidado: ya hay temas de moscos)"
-   ]
+   "derivados": []
   },
   {
    "id": "fun-152-cerveza-brota",
