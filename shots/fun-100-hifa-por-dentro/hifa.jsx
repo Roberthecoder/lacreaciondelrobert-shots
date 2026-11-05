@@ -256,7 +256,8 @@ function HifaShot() {
             {ves}
           </>; })())}
         <NumeroGigante T={T} at={K.V + 2.2} until={K.R - 0.2} valor={38000} dur={1.6} etiqueta="vesículas por minuto" x={380} y={470} tam={130} color={KC.yellow} />
-        <Nota T={T} at={K.V + 2.8} until={K.R - 0.2} x={60} y={600} partes={[['estimación de 1974 en ', false], ['N. crassa', true], [', por punta', false]]} tam={28} color={KC.texto} />
+        <Nota T={T} at={K.V + 2.8} until={K.R - 0.2} x={60} y={600} partes={[['estimación de 1974 en ', false], ['N. crassa', true], [',', false]]} tam={28} color={KC.texto} />
+        <Nota T={T} at={K.V + 2.8} until={K.R - 0.2} x={60} y={638} partes={[['por punta que crece rápido', false]]} tam={28} color={KC.texto} />
         <Nota T={T} at={K.V + 1.0} until={K.R - 0.2} x={70} y={790} partes={[['vesículas → membrana nueva', false]]} tam={28} color={KC.yellow} />
         <Nota T={T} at={K.V + 1.4} until={K.R - 0.2} x={70} y={1010} partes={[['- - rieles (microtúbulos)', false]]} tam={24} color={KC.lilac} />
         <Nota T={T} at={K.V + 1.8} until={K.R - 0.2} x={70} y={1105} partes={[['enzimas de pared (quitina sintasas)', false]]} tam={28} color={HF.enz} />
