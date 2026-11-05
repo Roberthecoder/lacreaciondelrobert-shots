@@ -3,31 +3,33 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #87 · rama `claude/fun-85-89-casa` (lote «hongos en tu casa»).
 - **Formato:** N1 Por dentro (la viga/piso de una casa vieja → al microscopio: hifas comiendo celulosa → cordones por el muro → gotas → cuerpo fructífero) con re-gancho de origen (Asia/Himalaya, barcos de vela), **qué sí sirve** (quitar la humedad) y cierre en la misma viga del inicio, ya seca y reparada.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Esa madera no está vieja: se la está comiendo un hongo que llora.»
-- **Duración:** voz 946 caracteres (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
-- **Voz:** pendiente de aprobación de Robert (~946 créditos de ElevenLabs).
+- **Duración:** voz 954 caracteres (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Voz:** pendiente de aprobación de Robert (~954 créditos de ElevenLabs).
 - **Tono:** curioso y útil (problema real de casas viejas en climas templados; prevención: quitar la humedad).
 
 ## Versión narrada
 
+Tiempos de la base (61.5 s): Gancho 0.0 · Humedad 3.97 · Cubos 8.64 · Cordones 14.00 · Gotas 20.36 · Fruto 24.63 · Pregunta 30.59 · Estudio 32.87 · Barcos 40.82 · Templado 44.69 · Sirve 49.06 · Cierre 53.83 · Outro 58.00.
+
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa madera no está vieja: se la está comiendo un hongo que llora. | Fondo amarillo: piso de duela y viga de una casa vieja junto a un muro de ladrillo con mancha de humedad. Cuadro 0.2: un pie pisa la duela, cruje y se hunde; la madera se ve café, agrietada en cubitos. "¿vieja?" se tacha → sello "HONGO". Sobre la viga, un manchón de micelio blanco algodonoso con una gotita que cae (efecto de gota). |
-| 1 | Humedad | Es la pudrición seca, Sérpula lácrimans, y solo arranca en madera muy húmeda. | Fondo cian, la misma viga: una tubería gotea sobre ella; aparece un medidor de humedad de la madera que sube a "muy húmeda". Etiqueta "pudrición seca · *Serpula lacrymans*" pegada al micelio. Chip "sin agua no arranca". |
-| 2 | Cubos | Sus hifas se comen la celulosa y dejan la lignina café, que al secarse se parte en cubitos. | **Al microscopio** (fondo noche) con `Lupa`: células de madera (tubos de pared con fibras); hifas finas, ramificadas y tabicadas entran por los tubos; las fibras blancas (etiqueta "celulosa") desaparecen y queda una red café (etiqueta "lignina"). Zoom fuera: el trozo se seca y se agrieta en cubos café a lo largo y a lo ancho de la fibra. Chip "pudrición parda". |
-| 3 | Cordones | Además forma cordones gruesos que avanzan varios metros sobre ladrillo y yeso, llevando agua y nutrientes. | Regreso al muro (fondo menta): corte del muro de ladrillo y yeso; de la viga salen cordones gruesos gris-blancos (micelio en abanico en la punta) que trepan por las juntas y el yeso. Flechitas azules (agua) y verdes (nutrientes) viajan por dentro del cordón. Chip "varios metros" con una cinta métrica. |
-| 4 | Gotas | Su nombre, lácrimans, significa «que llora»: su micelio suelta gotas. | Acercamiento al micelio blanco: aparecen gotas transparentes en su superficie que brillan y escurren (como lágrimas). Letrero "*lacrymans* = que llora". |
-| 5 | Fruto | Luego saca un cuerpo plano color óxido, de borde blanco, que suelta millones de esporas: un polvo café. | En la pared crece un **cuerpo fructífero plano**, pegado al muro, color óxido con margen blanco y superficie con pliegues y cráteres (poros/pliegues, nada de sombrero ni tallo). Suelta una nube de esporas café-óxido que se asientan como capa de polvo en el piso. Etiquetas "cuerpo fructífero" y "esporas (polvo café)". Barra de escala 10 cm. |
-| 6 | Pregunta | ¿Y de dónde salió este come-casas? | **Re-gancho.** Fondo lila: "¿DE DÓNDE SALIÓ?" grande y un "?" que gira; Robert grande, pensativo. |
-| 7 | Estudio | En 2007, un equipo de Oslo rastreó su ADN hasta Asia; en estado silvestre, los más parecidos crecen en el Himalaya. | `TarjetaEstudio` "2007 · Universidad de Oslo · Kauserud y col. · *Molecular Ecology*". Una doble hélice de ADN se vuelve una línea que viaja sobre un mapa esquemático hasta Asia. Montañas nevadas del Himalaya con un tronco caído en el bosque y el hongo silvestre; chip "bosques a más de 2000 m". |
-| 8 | Barcos | Probablemente se regó por el mundo en madera y barcos de vela. | Un barco de vela de madera navega por el mapa con flechas punteadas hacia varios puertos; tablones de madera en el muelle. Chip "probablemente" (hipótesis). |
-| 9 | Templado | Le gustan los climas templados: en la naturaleza no vive en el trópico. | Mapa con franjas: templadas iluminadas (Europa, Japón, Chile…), tropical tachada con ✗ y un termómetro que marca "templado". Chip "no vive en el trópico (en la naturaleza)". |
-| 10 | Sirve | Lo que sí sirve: arreglar la fuga, ventilar, cambiar la madera podrida y dejar secar. | Fondo rosa: la misma casa; ✓ una llave cierra la fuga, ✓ una rejilla de ventilación con aire entrando, ✓ la viga podrida se corta y entra una nueva, ✓ el medidor de humedad baja a "seca". `MitoTachado` chico sobre "solo químicos" con chip "sin secar, los químicos solos fallan". |
-| 11 | Cierre | Esa madera no estaba vieja: estaba mojada, y el hongo te lo avisaba. | **Regreso a la imagen del inicio:** la misma viga y el mismo piso, ahora con madera nueva y clara, el muro seco sin mancha; el pie pisa y no cruje. Sello "SECA" y chip "le sobraba agua". |
+| 0 | Gancho | Esa madera no está vieja: se la está comiendo un hongo que llora. | Fondo amarillo, la casa en corte: muro de yeso con ladrillo expuesto y mancha de humedad, tubería, piso de duela, viga y sótano. Cuadro 0.1: una bota pisa la duela podrida, que cruje y se hunde. El tramo podrido es café y agrietado en cubos, **con el micelio blanco algodonoso encima** (y gotitas). "¿vieja?" se tacha → sello "HONGO". Etiqueta "micelio". |
+| 1 | Humedad | Es la pudrición seca, Sérpula lácrimans, y solo arranca en madera muy húmeda. | Fondo cian, la misma casa: la tubería gotea sobre la viga; un medidor de humedad de dos puntas sube a "MUY HÚMEDA". Etiquetas *Serpula lacrymans* y "pudrición seca" pegadas al micelio; chip "sin agua no arranca". |
+| 2 | Cubos | Sus hifas se comen la celulosa y dejan la lignina café, que al secarse se parte en cubos. | **Al microscopio** (fondo noche, chip "AL MICROSCOPIO · madera"): células de la madera en tubos, pared con capa blanca (celulosa) y borde café (lignina) y puntuaciones; hifas finas tabicadas crecen por dentro de los tubos, cruzan por una puntuación y sueltan enzimas (puntos dorados); la capa blanca desaparece y queda la pared café. Etiquetas "hifa", "celulosa", "lignina café". Luego un trozo de viga café se agrieta en cubos (chip "pudrición parda", etiqueta "se parte en cubos"). |
+| 3 | Cordones | Además forma cordones gruesos que avanzan varios metros sobre ladrillo y yeso, llevando agua y nutrientes. | Fondo menta, la casa: de la viga salen cordones gruesos gris-blancos con la punta en abanico que trepan por el ladrillo y el yeso y corren por el rodapié; una cinta métrica sube por el muro (chip "varios metros"); por dentro de los cordones viajan puntos azules y verdes (chip "llevan agua y nutrientes"). Etiqueta "cordones". |
+| 4 | Gotas | Su nombre, lácrimans, significa «que llora»: su micelio suelta gotas. | Fondo rosa, de cerca: el micelio algodonoso (blanco con tintes lila y amarillo) sobre la madera agrietada; aparecen gotas transparentes que brillan y algunas escurren. Letrero "*lacrymans* = «que llora»"; etiqueta "gotas". |
+| 5 | Fruto | Luego saca un cuerpo plano color óxido, de borde blanco, que suelta millones de esporas: polvo café. | Fondo naranja, acercamiento al muro: entre los cordones crece un **cuerpo fructífero plano** pegado al ladrillo, color óxido con margen blanco y superficie con pliegues y cráteres (sin sombrero ni tallo); suelta una nube de esporas café-óxido que se asienta como capa de polvo en el piso. Chip "color óxido, borde blanco"; etiquetas "cuerpo fructífero" y "esporas: polvo café". |
+| 6 | Pregunta | ¿Y de dónde salió este come-casas? | **Re-gancho.** Fondo lila: "¿DE DÓNDE SALIÓ?" y un "?" gigante que se mece; Robert grande, pensativo. |
+| 7 | Estudio | En 2007, un equipo de Oslo rastreó su ADN hasta Asia; en estado silvestre, los más parecidos a los de las casas crecen en el Himalaya. | `TarjetaEstudio` "2007 · Universidad de Oslo · Kauserud y col. · *Molecular Ecology*". Una doble hélice de ADN lanza una flecha a un mapa esquemático de Eurasia; Asia se ilumina (chip "ADN → Asia") y un pin cae en el Himalaya. Luego montañas nevadas con bosque y un tronco caído con el hongo silvestre; etiqueta "Himalaya" y chip "bosques de montaña, casi siempre a más de 2000 m". |
+| 8 | Barcos | Probablemente se regó por el mundo en madera y barcos de vela. | Fondo cian y mar: un barco de vela de madera avanza; tablones en el muelle con micelio; flechas punteadas hacia otros puertos. Chips "madera y barcos de vela" y "probablemente (hipótesis)". |
+| 9 | Templado | Le gustan los climas templados: en la naturaleza no vive en el trópico. | Fondo amarillo: globo con franjas polar, templada y tropical; las templadas se encienden en verde ("Europa · Japón", "Chile") y en la tropical cae una ✗ roja (etiqueta "trópico"); termómetro "templado". Chip "no vive en el trópico (en la naturaleza)". |
+| 10 | Sirve | Lo que sí sirve: arreglar la fuga, ventilar, cambiar la madera podrida y secar. | Fondo rosa, la casa: ✓ una abrazadera cierra la fuga, ✓ aparece una rejilla con aire entrando, ✓ un serrucho corta el tramo podrido y entra madera nueva, ✓ el medidor baja a "SECA" y la mancha del muro se va. `MitoTachado` "solo químicos" y chip "sin secar, los químicos solos no bastan". |
+| 11 | Cierre | Esa madera no estaba vieja: estaba mojada, y el hongo te lo avisaba. | **Regreso a la imagen del inicio:** la misma casa, con madera nueva y clara, muro seco, fuga arreglada y rejilla; la bota pisa y el piso no se hunde. Sello "SECA" y chip "le sobraba agua". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave, húmeda y tapada (madera que cruje, goteo lento) mientras el hongo avanza; tensión que sube en los cordones y en el polvo de esporas; viaje con aire de mar en los barcos; se abre y se aclara cuando entra "lo que sí sirve" y el aire seco. Efectos en el mismo cuadro: crujido y hundimiento de la duela, gota de la tubería, tachón de "¿vieja?", chasquido de cada grieta en cubo, roce de hifas, gotitas brillantes (notas agudas), soplo de la nube de esporas, golpe del re-gancho, oleaje y crujir del barco, llave que cierra, aire de la rejilla, sierra cortando la viga, paso firme sobre la madera nueva.
+**Música:** cama grave con progresión que cambia cada 2–4 s (Am–F–G–Em–Am–F–Dm–E–Am…), tapada y húmeda mientras el hongo avanza; un motivo propio de cuatro notas que baja "como lágrima" (mi–re–do) y vuelve en cada escena con otro final o a otra altura (sube con los cordones, arriba y frágil en las gotas, en tensión con sol# en las esporas); se abre en el viaje (Asia, barcos) y se destapa al entrar "lo que sí sirve"; el motivo regresa resuelto en do mayor en el cierre. Efectos en el mismo cuadro: bota que pisa y duela que cruje, tachón, sello, gotas de la fuga, tics del medidor, roce de hifas, chasquidos de las grietas en cubo, cordones que trepan, burbujeo del flujo, notas agudas de cada gota, nube y polvo de esporas, golpe del re-gancho, flecha del ADN, viento de montaña, oleaje y crujido del barco, ✗ del trópico, abrazadera, aire de la rejilla, serrucho, viga nueva, sello SECA.
 
-Barras de escala: 50 cm (piso/viga, muro), 50 µm (células de madera e hifas), 1 m (cordones en el muro), 10 cm (cuerpo fructífero y gotas).
+Barras de escala: 50 cm (la casa en corte), 50 µm (células de madera e hifas), 5 cm (trozo en cubos y micelio con gotas), 20 cm (muro acercado con el cuerpo fructífero).
 
 ## Robert en pantalla
 
@@ -35,21 +37,21 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y de dónd
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «se la está comiendo un hongo que llora» (cuadro 0) |
-| 2 | 5.0 | 8.6 | 04_bajando_lentes | `arriba-der` | «solo arranca en madera muy húmeda» |
+| 1 | 0.0 | 3.9 | 11_sorprendido | `gancho` | «se la está comiendo un hongo que llora» (cuadro 0) |
+| 2 | 5.0 | 8.5 | 04_bajando_lentes | `arriba-der` | «solo arranca en madera muy húmeda» |
 | 3 | 14.6 | 18.6 | 13_senalando_arriba | `arriba-der` | señala los cordones que suben por el muro |
-| 4 | 21.0 | 24.6 | 11_sorprendido | `arriba-der` | «significa "que llora": suelta gotas» |
-| 5 | 26.0 | 30.6 | 10_serio_molesto | `arriba-der` | el polvo de esporas sobre el piso |
-| 6 | 31.1 | 33.3 | 07_pensativo_puno | `grande` | «¿Y de dónde salió este come-casas?» |
-| 7 | 36.0 | 40.0 | 06_pensativo_menton | `arriba-der` | «los más parecidos crecen en el Himalaya» |
+| 4 | 21.0 | 24.5 | 11_sorprendido | `arriba-der` | «significa "que llora": suelta gotas» |
+| 5 | 25.9 | 30.5 | 10_serio_molesto | `arriba-der` | el polvo de esporas sobre el piso |
+| 6 | 30.6 | 32.5 | 07_pensativo_puno | `grande` | «¿Y de dónde salió este come-casas?» |
+| 7 | 36.0 | 40.0 | 06_pensativo_menton | `arriba-der` | «los más parecidos… crecen en el Himalaya» |
 | 8 | 44.4 | 48.4 | 04_bajando_lentes | `arriba-der` | «no vive en el trópico» |
-| 9 | 48.8 | 53.4 | 13_senalando_arriba | `arriba-der` | «lo que sí sirve: arreglar la fuga» |
+| 9 | 48.9 | 53.4 | 13_senalando_arriba | `arriba-der` | «lo que sí sirve: arreglar la fuga» |
 | 10 | 54.0 | 57.9 | 02_apuntando_camara | `arriba-der` | «el hongo te lo avisaba» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 10 · **38.5 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
+Apariciones 10 · **37.8 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
-## Fuentes (ficha de investigación del coordinador, 5 nov 2026; las abre el verificador independiente)
+## Fuentes (abiertas por el verificador independiente el 5 nov 2026; detalle en verificacion.md)
 
 1. **Ridout, B. (2000).** *Timber Decay in Buildings: The Conservation Approach to Treatment.* English Heritage / Historic Scotland. https://app-hes-pubs-prod-neu-01.azurewebsites.net/api/file/51ce962d-fd7f-4615-ab28-b0680101f29c
    > "Brown rot fungi attack cellulose and hemicelluloses but… are unable to break down lignin."

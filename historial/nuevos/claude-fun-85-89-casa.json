@@ -49,12 +49,21 @@
    "titulo": "El hongo que se come casas y llora gotas (pudrición seca, *Serpula lacrymans*)",
    "serie": "Shot Fungi Mati",
    "numero": 87,
-   "estado": "idea",
+   "estado": "guion",
    "carpeta": "shots/fun-87-pudricion-seca",
    "rama": "claude/fun-85-89-casa",
-   "fuentes": [],
+   "fuentes": [
+    "https://www.mn.uio.no/ibv/english/people/aca/haavarka/kauserud-et-al-2012-fung-biol-rev.pdf",
+    "https://pubmed.ncbi.nlm.nih.gov/17688538/",
+    "https://pubmed.ncbi.nlm.nih.gov/21764756/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8467351/"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "La pudrición blanda y otros hongos que se comen la madera de tu casa",
+    "Por qué se pudrían los barcos de madera y cómo los protegían",
+    "Serpula himantioides: el pariente silvestre de los troncos caídos"
+   ]
   },
   {
    "id": "fun-88-moho-refri",

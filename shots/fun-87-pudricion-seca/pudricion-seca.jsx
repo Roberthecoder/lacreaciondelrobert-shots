@@ -219,9 +219,9 @@ function Casa({ T, id = 'casa', pud = 1, mic = 1, cor = 0, flujo = 0, fru = 0, e
       <path d={`M ${x0} 1170 Q 300 1150 600 1168 T 1040 1160 L 1040 ${y1} L 40 ${y1} Z`} fill={PS.tierra} />
       {[1240, 1400, 1560, 1720].map((y, i) => <path key={y} d={`M ${x0} ${y} Q 300 ${y - 20 + i * 6} 600 ${y + 8} T 1040 ${y - 6}`} stroke="rgba(0,0,0,.22)" strokeWidth={10} fill="none" />)}
       {(() => { const g = krng(12); return Array.from({ length: 26 }, (_, i) => <ellipse key={i} cx={60 + g() * 960} cy={1200 + g() * 760} rx={10 + g() * 22} ry={7 + g() * 14} fill={g() < 0.5 ? '#6b5038' : '#5a4330'} stroke="rgba(0,0,0,.35)" strokeWidth={3} />); })()}
-      <rect x={760} y={1160} width={130} height={40} fill="#8a8f99" stroke={KC.ink} strokeWidth={5} />
-      <rect x={780} y={viga1} width={90} height={110} fill={PS.ladrillo2} stroke={KC.ink} strokeWidth={5} />
-      {[1078, 1100, 1122, 1144].map((y) => <line key={y} x1={780} y1={y} x2={870} y2={y} stroke={PS.mortero} strokeWidth={3} />)}
+      <rect x={880} y={1160} width={130} height={40} fill="#8a8f99" stroke={KC.ink} strokeWidth={5} />
+      <rect x={900} y={viga1} width={90} height={110} fill={PS.ladrillo2} stroke={KC.ink} strokeWidth={5} />
+      {[1078, 1100, 1122, 1144].map((y) => <line key={y} x1={900} y1={y} x2={990} y2={y} stroke={PS.mortero} strokeWidth={3} />)}
       {sierra && <Serrucho x={sierra.x} y={sierra.y} rot={sierra.rot || 0} />}
       {bota && <Bota x={bota.x} y={bota.y + dh} />}
     </g>
@@ -557,9 +557,9 @@ function PudricionSecaShot() {
       <LetreroNombre T={T} at={K.Go + 0.3} until={K.F - 0.3} x={60} y={360} />
       <Etq T={T} at={K.Go + 1.2} until={K.F - 0.3} x={746} y={840} texto="gotas" tam={34} color={KC.ink} />
       <Chip T={T} at={K.F + 1.0} until={K.P - 0.3} texto="color óxido, borde blanco" x={330} y={420} tam={30} borde={PS.oxido3} />
-      <Etq T={T} at={K.F + 1.4} until={K.P - 0.3} x={632} y={800} texto="cuerpo fructífero" tam={30} color={KC.white} />
+      <Etq T={T} at={K.F + 1.4} until={K.P - 0.3} x={622} y={790} texto="cuerpo fructífero" tam={28} color={KC.white} />
       <Etq T={T} at={K.F + 3.4} until={K.P - 0.3} x={632} y={1100} texto="esporas: polvo café" tam={28} color={KC.white} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.3} anio="2007" quien="Universidad de Oslo" revista="Kauserud y col. · Molecular Ecology" y={600} />
+      <TarjetaEstudio T={T} at={K.Es + 0.3} until={K.Es + 2.3} anio="2007" quien="Universidad de Oslo" revista="Kauserud y col. · Molecular Ecology" y={600} />
       <Chip T={T} at={K.Es + 3.4} until={K.Es + 4.6} texto="ADN → Asia" x={330} y={460} tam={36} borde={KC.gold} />
       <Etq T={T} at={K.Es + 5.2} until={K.B - 0.3} x={540} y={920} lado="izq" texto="Himalaya" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Es + 5.6} until={K.B - 0.3} texto="bosques de montaña, casi siempre a más de 2000 m" x={540} y={1040} tam={26} borde={KC.leaf} />
@@ -572,7 +572,7 @@ function PudricionSecaShot() {
       <Chip T={T} at={K.S + 1.8} until={K.C - 0.3} texto="✓ cambiar la madera podrida" x={316} y={540} tam={28} borde={KC.leaf} />
       <Chip T={T} at={K.S + 3.0} until={K.C - 0.3} texto="✓ secar" x={160} y={610} tam={28} borde={KC.leaf} />
       <MitoTachado T={T} at={K.S + 3.1} tacharEn={K.S + 3.6} until={K.C - 0.3} texto="solo químicos" x={250} y={712} tam={34} />
-      <Chip T={T} at={K.S + 3.6} until={K.C - 0.3} texto="sin secar, los químicos solos no bastan" x={540} y={1132} tam={24} borde={KC.ink} />
+      <Chip T={T} at={K.S + 3.6} until={K.C - 0.3} texto="sin secar, los químicos solos no bastan" x={440} y={1132} tam={24} borde={KC.ink} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="le sobraba agua" x={700} y={700} tam={40} borde={KC.cyan} />
 
       {/* barras de escala */}
@@ -604,7 +604,7 @@ function PudricionSecaShot() {
         [K.Co + 0.6, K.Co + 4.6, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.Go + 0.6, K.F - 0.1, 'avatar_11_sorprendido', 'arriba-der'],
         [K.F + 1.3, K.P - 0.1, 'avatar_10_serio_molesto', 'arriba-der'],
-        [K.P + 0.05, K.Es + 0.05, 'avatar_07_pensativo_puno', 'grande'],
+        [K.P + 0.05, K.Es - 0.4, 'avatar_07_pensativo_puno', 'grande'],
         [K.Es + 3.1, K.Es + 7.1, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.Te - 0.3, K.Te + 3.7, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.S - 0.2, K.S + 4.3, 'avatar_13_senalando_arriba', 'arriba-der'],
