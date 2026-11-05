@@ -22,7 +22,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 «Ya lo comí antes y no me hizo nada.» Con el paxilo enrollado (Paxillus involutus), eso no te protege: es justo el riesgo. 🍄⚠️
-Al comerlo, el cuerpo puede sensibilizarse y fabricar anticuerpos contra el hongo. La siguiente vez, esos anticuerpos se juntan con el hongo, se pegan a los glóbulos rojos y los revientan (hemólisis), con riesgo de falla renal. Cocerlo no lo evita. En 1944 murió así, 17 días después de comerlo, el micólogo alemán Julius Schäffer; su esposa comió lo mismo y no se enfermó.
+Al comerlo, el cuerpo puede sensibilizarse y fabricar anticuerpos contra el hongo. La siguiente vez, esos anticuerpos se juntan con el hongo, se pegan a los glóbulos rojos y los revientan (hemólisis), con riesgo de falla renal. Cocerlo no lo evita. En 1944, el micólogo alemán Julius Schäffer murió 17 días después de comerlo, y su muerte se atribuyó a los paxilos; su esposa comió lo mismo y no se enfermó.
 Es raro, pero es muy difícil predecir a quién le va a tocar. Ante la duda, no lo comas; si te sientes mal, ve a urgencias.
 No es guía de identificación. El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu región también hay hongos que "todos comen" pero que los expertos piden no comer? 👇
@@ -41,7 +41,7 @@ Descripción:
 «Ya lo comí antes y no me hizo nada.» Con este hongo, eso no te protege: es justo el riesgo.
 Paxillus involutus, el paxilo enrollado, es un hongo café de sombrero en forma de embudo (hasta unos 12 cm) con el borde muy enrollado hacia dentro; sus láminas son claras, bajan por el pie (decurrentes) y se manchan de café cuando las tocas. Durante mucho tiempo se consideró comestible en Europa: se creía que bastaba con cocerlo bien.
 Crudo o mal cocido causa sobre todo molestias del estómago. Pero lo grave es el llamado síndrome de Paxillus: al comerlo varias veces, algunas personas se sensibilizan y producen anticuerpos (IgG) contra algo del hongo, un antígeno cuya estructura aún no se conoce. En una comida posterior, los anticuerpos se unen al hongo y forman complejos inmunes que se pegan a los glóbulos rojos; el sistema del complemento los rompe (hemólisis inmune). Eso puede causar choque y falla renal aguda. Le pasó a pacientes que lo habían comido bien cocido: cocerlo no lo evita. No aparece en quien lo come por primera vez.
-El caso más famoso: en otoño de 1944, el micólogo alemán Julius Schäffer comió paxilos con su esposa; en Potsdam ya los habían comido muchas veces. Ella no tuvo ningún síntoma. Él enfermó al poco rato y murió 17 días después, el 21 de octubre de 1944; su muerte se atribuyó a los paxilos.
+Un caso famoso: en otoño de 1944, el micólogo alemán Julius Schäffer comió paxilos con su esposa; años antes, en Potsdam, ya los habían comido muchas veces. Ella no tuvo ningún síntoma. Él enfermó al poco rato y murió 17 días después; su muerte se atribuyó a los paxilos.
 Es raro, pero es muy difícil predecir a quién le va a tocar. Ante la duda, no lo comas; y si te sientes mal después de comer hongos, ve a urgencias.
 Este video no es guía de identificación: ningún truco casero dice si un hongo silvestre es seguro; pregúntale a un micólogo. El dibujo es esquemático.
 Fuentes:
@@ -70,7 +70,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Una intoxicación que no depende de la dosis, sino de la historia: el síndrome de Paxillus.
 Paxillus involutus se comió durante décadas en Europa central como hongo "seguro si se cuece bien". Pero en consumidores repetidos puede aparecer una hemólisis inmune: anticuerpos IgG contra un antígeno del hongo (aún sin identificar) forman complejos inmunes que se fijan a los eritrocitos y, al activar el complemento, los destruyen, con choque y falla renal aguda (Winkelmann et al., 1982 y 1986). La cocción no lo previene y no ocurre en quien lo come por primera vez (Stöver et al., 2019).
-El caso más citado es el del micólogo alemán Julius Schäffer, que murió en octubre de 1944, 17 días después de una comida de paxilos que su esposa compartió sin síntomas.
+Un caso muy citado es el del micólogo alemán Julius Schäffer, que murió en octubre de 1944, 17 días después de una comida de paxilos que su esposa compartió sin síntomas.
 La lección va más allá de los hongos: "nunca me ha pasado nada" no es evidencia de seguridad cuando el riesgo es inmunológico.
 ¿Qué otros casos conoces donde la exposición previa aumenta el riesgo en lugar de reducirlo?
 Shot Fungi Mati 112 · La Creación del Robert

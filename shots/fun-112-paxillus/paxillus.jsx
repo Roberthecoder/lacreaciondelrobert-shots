@@ -341,7 +341,7 @@ function PaxillusShot() {
       <Chip T={T} at={K.Cr + 2.3} until={K.S - 0.3} texto="lo grave es otra cosa" x={380} y={470} tam={36} borde={KC.red} />
       <Chip T={T} at={K.S + 0.1} until={K.P - 0.3} texto="POR DENTRO · TU SANGRE" x={540} y={430} tam={34} borde={KC.cyan} mono />
       <Etq T={T} at={K.S + 0.6} until={K.P - 0.3} x={60} y={520} texto="algo del hongo (antígeno)" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.S + 1.4} until={K.P - 0.3} x={60} y={1110} texto="linfocito B" tam={32} color={KC.lilac} />
+      <Etq T={T} at={K.S + 1.4} until={K.P - 0.3} x={60} y={1110} texto="célula plasmática (linfocito B)" tam={28} color={KC.lilac} />
       <Etq T={T} at={K.S + 2.4} until={K.P - 0.3} x={600} y={560} texto="anticuerpos (IgG)" tam={32} color={PX.anti} />
       <Chip T={T} at={K.He + 0.4} until={K.R - 0.3} texto="POR DENTRO · LA SIGUIENTE VEZ" x={540} y={430} tam={32} borde={KC.cyan} mono />
       <Etq T={T} at={K.He + 1.2} until={K.He + 3.0} x={60} y={510} texto="complejos inmunes (grumos)" tam={30} color={PX.anti} />
@@ -370,8 +370,10 @@ function PaxillusShot() {
       <BarraEscala T={T} at={K.Hi} until={K.Cr} texto="mapa esquemático" largo={0} color={KC.ink} />
       <BarraEscala T={T} at={K.Cr} until={K.S} texto="esquemático" largo={0} color={KC.ink} />
       <BarraEscala T={T} at={K.S} until={K.P} texto="10 µm" largo={260} />
+      <Etq T={T} at={K.S + 0.3} until={K.P - 0.3} x={60} y={1520} texto="anticuerpos y hongo: no a escala" tam={22} color={KC.texto} />
       <BarraEscala T={T} at={K.P} until={K.He} texto="5 cm" largo={95} color={KC.ink} />
       <BarraEscala T={T} at={K.He} until={K.R} texto="5 µm" largo={93} />
+      <Etq T={T} at={K.He + 0.3} until={K.R - 0.3} x={60} y={1520} texto="anticuerpos y hongo: no a escala" tam={22} color={KC.texto} />
       <BarraEscala T={T} at={K.R} until={K.E} texto="esquemático" largo={0} color={KC.ink} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={115} color={KC.ink} y={1560} />
 
