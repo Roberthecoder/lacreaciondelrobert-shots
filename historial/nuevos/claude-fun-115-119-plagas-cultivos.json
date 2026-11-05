@@ -67,25 +67,47 @@
   },
   {
    "id": "fun-118-mango-antracnosis",
-   "titulo": "Esas manchas negras del mango no son golpes: antracnosis (*Colletotrichum*) y el baño de agua caliente",
+   "titulo": "Esas manchas negras de tu mango muchas veces no son golpes: antracnosis (*Colletotrichum*) y el baño de agua caliente",
    "serie": "Shot Fungi Mati",
    "numero": 118,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-118-mango-antracnosis",
    "rama": "claude/fun-115-119-plagas-cultivos",
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "La mosca de la fruta y por qué el mango viaja bañado",
+    "El aguacate que madura en tu cocina y sus hongos latentes",
+    "Mancha negra del mango por Alternaria"
+   ],
+   "fuentes": [
+    "Tovar-Pedraza et al. 2020, Plant Dis 104:137",
+    "Dofuor et al. 2023, Front Microbiol",
+    "Ploetz, UF-TREC (antracnosis del mango)",
+    "FAO 2026, Major Tropical Fruits Market Review 2025",
+    "Federal Register 2015-09468 (T102-a)"
+   ]
   },
   {
    "id": "fun-119-planta-defensa",
-   "titulo": "Tu planta tiene sistema inmune: huele la quitina del hongo y sacrifica sus propias células (respuesta hipersensible)",
+   "titulo": "Esos puntitos cafés pueden ser tu planta sacrificándose (sistema inmune vegetal, quitina, respuesta hipersensible)",
    "serie": "Shot Fungi Mati",
    "numero": 119,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-119-planta-defensa",
    "rama": "claude/fun-115-119-plagas-cultivos",
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "El moho de la hoja del jitomate y los genes Cf",
+    "Ácido salicílico: de la corteza del sauce a la aspirina",
+    "Plantas que avisan a sus vecinas con olores"
+   ],
+   "fuentes": [
+    "Spoel & Dong 2012, Nat Rev Immunol 12:89",
+    "Miya et al. 2007, PNAS 104:19613",
+    "Cao et al. 2014, eLife 3:e03766",
+    "de Wit et al. 2009, Mol Plant Pathol 10:735",
+    "Vernooij et al. 1994, Plant Cell 6:959"
+   ]
   }
  ]
 }
