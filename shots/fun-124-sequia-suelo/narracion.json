@@ -3,19 +3,62 @@
   "salida": "Shot Sequia Suelo narrado.dc.html",
   "nota": "Shot Fungi Mati #124. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
-    { "escena": "Gancho", "texto": "Esta tierra seca no está muerta: está aguantando la respiración." },
-    { "escena": "Milpa", "texto": "Tu milpa lleva meses sin lluvia, y abajo aguantan hongos y bacterias." },
-    { "escena": "Bacterias", "texto": "Las bacterias son seres de agua: se mueven por películas de agua entre los granos." },
-    { "escena": "Seca", "texto": "Al secarse, los poros se llenan de aire y se quedan sin camino." },
-    { "escena": "Hifas", "texto": "Los hongos crecen en hilos, las hifas, que cruzan huecos llenos de aire." },
-    { "escena": "Pregunta", "texto": "¿Y eso los hace aguantar más?" },
-    { "escena": "Estudio", "texto": "Un estudio de 2018 en Inglaterra le tapó la lluvia a macetas de pradera y leyó el ADN de sus microbios." },
-    { "escena": "Redes", "texto": "Con la sequía, la red de bacterias se volvió inestable; la de hongos, no." },
-    { "escena": "Champinon", "texto": "Una hipótesis: en 2015, en laboratorio, el hongo del champiñón llevó agua por sus hifas de tierra húmeda a tierra seca." },
-    { "escena": "Pizza", "texto": "Y ahí la descomposición se disparó. Sí: el champiñón de tu pizza." },
-    { "escena": "Lluvia", "texto": "Cuando por fin llueve, la tierra exhala:" },
-    { "escena": "Birch", "texto": "en minutos suelta un pulso de dióxido de carbono, de sus microbios y de sus restos. Es el efecto Birch." },
-    { "escena": "Cierre", "texto": "Esa tierra no estaba muerta: esperaba la lluvia para soltar el aire." }
+    {
+      "escena": "Gancho",
+      "texto": "Esta tierra seca no está muerta: está aguantando la respiración."
+    },
+    {
+      "escena": "Milpa",
+      "texto": "Tu milpa lleva meses sin lluvia, y abajo aguantan hongos y bacterias."
+    },
+    {
+      "escena": "Bacterias",
+      "texto": "Las bacterias son seres de agua: viajan por películas de agua entre los granos."
+    },
+    {
+      "escena": "Seca",
+      "texto": "Al secarse, los poros se llenan de aire: quedan sin camino."
+    },
+    {
+      "escena": "Hifas",
+      "texto": "Los hongos crecen en hilos, las hifas, que cruzan huecos con aire."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y eso los hace aguantar más?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Un estudio de 2018 en Inglaterra tapó la lluvia a macetas de pradera y leyó el ADN de sus microbios."
+    },
+    {
+      "escena": "Redes",
+      "texto": "Con la sequía, la red de bacterias quedó menos estable; la de hongos, no."
+    },
+    {
+      "escena": "Champinon",
+      "texto": "En 2015, en laboratorio, el champiñón llevó agua por sus hifas de tierra húmeda a tierra seca."
+    },
+    {
+      "escena": "Pizza",
+      "texto": "Y la descomposición se disparó. Sí: el de tu pizza."
+    },
+    {
+      "escena": "Hipotesis",
+      "texto": "¿Será parte de su secreto? Es una hipótesis."
+    },
+    {
+      "escena": "Lluvia",
+      "texto": "Cuando por fin llueve, la tierra exhala:"
+    },
+    {
+      "escena": "Birch",
+      "texto": "en minutos suelta dióxido de carbono, de sus microbios y de enzimas que trabajan fuera de ellos: el efecto Birch."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa tierra no estaba muerta: esperaba la lluvia para soltar el aire."
+    }
   ],
   "mezcla": "oficial-30oct"
 }
