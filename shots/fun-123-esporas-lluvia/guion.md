@@ -125,3 +125,6 @@ Apariciones 10 · **≈ 26 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas
     > "The cumulative number of ice nuclei per spore was 0.001 at temperatures between −19 °C and −29 °C"
 
 El dibujo es esquemático.
+
+---
+Estado (5 nov 2026): verificación independiente aprobada (`verificacion.md`), animación revisada en hojas de cuadros; versión de revisión sin voz en render. Voz pendiente de aprobación de Robert.

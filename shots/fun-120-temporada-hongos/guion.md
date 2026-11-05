@@ -77,3 +77,6 @@ Apariciones 10 · **30.7 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas �
    > "Early-fruiting species have experienced a stronger delay than late fruiters, resulting in a more compressed fruiting season."
 
 El dibujo es esquemático.
+
+---
+Estado (5 nov 2026): verificación independiente aprobada (`verificacion.md`), animación revisada en hojas de cuadros; versión de revisión sin voz en render. Voz pendiente de aprobación de Robert.

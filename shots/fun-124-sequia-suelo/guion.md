@@ -109,3 +109,6 @@ números, etiquetas ni subtítulo (en el medidor y la hipótesis sale abajo, `ba
    https://doi.org/10.1007/BF01343734 (artículo original; de pago, no se pudo abrir: los datos que se usan vienen de 4 y 5).
 
 El dibujo es esquemático (poros, bacterias e hifas no están a escala exacta).
+
+---
+Estado (5 nov 2026): verificación independiente aprobada (`verificacion.md`), animación revisada en hojas de cuadros; versión de revisión sin voz en render. Voz pendiente de aprobación de Robert.

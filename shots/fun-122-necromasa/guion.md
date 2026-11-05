@@ -78,3 +78,6 @@ Apariciones 8 · **≈ 33 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas 
 8. Salas et al., resumen EGU2020-8200 y EGU22-2244 (Copernicus): "glucosamine is an abundant cell wall component of both, fungal chitin and bacterial peptidoglycan"; "muramic acid is exclusively found in bacterial peptidoglycan".
 
 **Notas de la verificación (resueltas):** que la glucosamina sea "sobre todo" de hongos y el ácido murámico "solo" de bacterias (Joergensen 2018, *Biol. Fertil. Soils* 54: 559–568, no abrió); que "2 %" sea de todo el carbono del suelo y no de la capa de cultivo en particular; que "décadas o siglos" se pueda decir del carbono de la necromasa pegada a minerales.
+
+---
+Estado (5 nov 2026): verificación independiente aprobada (`verificacion.md`), animación revisada en hojas de cuadros; versión de revisión sin voz en render. Voz pendiente de aprobación de Robert.
