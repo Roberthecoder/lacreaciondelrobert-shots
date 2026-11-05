@@ -119,4 +119,30 @@ Todo lo demás queda ✅. Al aplicar esa frase, el shot puede aprobarse sin nuev
 
 Revisado el 5 nov 2026: no queda ninguna ❌ ni ⚠️ en voz, pantalla ni publicación.
 
+## Re-verificación independiente (5 nov 2026)
+
+Verificador independiente (no escribió el guion). Revisados `narracion.json` (texto que se narrará), `guion.md`, todos los letreros y subtítulos de `lsd.jsx` y `publicacion.md`. Fuentes reabiertas hoy.
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| El cornezuelo es *Claviceps purpurea*, hongo del centeno | ✅ | https://www.psychedelic-library.org/child1.htm | "a lower fungus (Claviceps purpurea) that grows parasitically on rye" | 1979 |
+| Sus alcaloides principales comparten un núcleo: el ácido lisérgico (acotado a "principales"; ergotamina, ergometrina) | ✅ | https://www.psychedelic-library.org/child1.htm | Jacobs y Craig aislaron "the nucleus common to all ergot alkaloids" y lo llamaron ácido lisérgico | 1979 (dato de los años 30) |
+| Hofmann, en Sandoz, Basilea, modificaba ese núcleo buscando medicinas | ✅ | https://www.psychedelic-library.org/child1.htm | "the Sandoz Company's pharmaceutical-chemical research laboratory in Basel"; "new lysergic acid compounds" | 1929–1938 |
+| 1938: variante n.º 25, LSD-25 | ✅ | https://www.psychedelic-library.org/child1.htm | "In 1938, I produced the twenty-fifth substance in this series of lysergic acid derivatives" | 1938 |
+| Buscaba un estimulante respiratorio (pantalla: y circulatorio) | ✅ | https://www.psychedelic-library.org/child1.htm | "a circulatory and respiratory stimulant" | 1938 |
+| Probada en animales, sin interés, archivada | ✅ | https://www.psychedelic-library.org/child1.htm | "the experimental animals became restless during the narcosis"; "aroused no special interest … testing was therefore discontinued" | 1938 |
+| Cinco años después, por una corazonada, la repitió | ✅ | https://www.psychedelic-library.org/child1.htm | "A peculiar presentiment"; "in the spring of 1943, I repeated the synthesis of LSD-25" | 1943 |
+| 16 abr 1943: mareo, inquietud, imágenes fantásticas | ✅ | https://www.psychedelic-library.org/child1.htm | "April 16, 1943 … a remarkable restlessness, combined with a slight dizziness"; "an uninterrupted stream of fantastic pictures" | 1943 |
+| Sospechó que le entró por la piel (dicho como sospecha) | ✅ | https://www.psychedelic-library.org/child1.htm | "a trace of the substance was absorbed through the skin" (su suposición) | 1943 |
+| Tres días después (19 abr) la probó a propósito | ✅ | https://www.psychedelic-library.org/child1.htm | "I decided on a self-experiment"; diario del "April 19, 1943" | 1943 |
+| A casa en bici con su asistente; por la guerra no había coche | ✅ | https://www.psychedelic-library.org/child1.htm | "We went by bicycle, no automobile being available because of wartime restrictions on their use." | 1943 |
+| Sandoz la repartió como fármaco experimental, Delysid, a investigadores y psiquiatras | ✅ | https://www.psychedelic-library.org/child4.htm | "available to research institutes and physicians as an experimental drug … the trade name Delysid"; prospecto: "the psychiatrist is able to gain an insight" | 1979 (relato) |
+| ONU 1971: Lista I, la más estricta | ✅ | Convenio de 1971 (Lista I "(+)-Lysergide LSD, LSD-25") y art. 7(a) — ver tabla anterior | art. 7(a), solo Lista I: "Prohibit all use except for scientific and very limited medical purposes" | 1971 |
+| México la controla (LGS art. 245, grupo I) | ✅ | https://www.diputados.gob.mx/LeyesBiblio/pdf/LGS.pdf (ver tabla anterior) | "(+)-LISERGIDA LSD, LSD-25" en la fr. I | DOF 15-01-2026 |
+| Riesgos: miedo/pánico, conductas peligrosas y lesiones; la ilegal puede venir mezclada | ✅ | https://nida.nih.gov/research-topics/psychedelic-dissociative-drugs (reabierta) | "People may also feel extreme emotions such as fear, confusion, or panic."; "has been linked to dangerous behavior and injuries"; "illicitly manufactured or processed drugs may be contaminated with colorless and odorless fentanyl or other dangerous substances" | consulta 2026 |
+| Hoy se prueba en ensayos (ansiedad, fase 3, 2026), no es medicamento aprobado | ✅ | https://www.pharmaceutical-technology.com/news/definium-dt120-psychedelic-gad-anxiety-phase-iii/ (reabierta; artículo del 15 sep 2026) | DT120 = "lysergic acid diethylamide (LSD)-based medicine"; Panorama y Voyage fase 3 en GAD; "plans to file an application … in the first half of 2027" | 2026 |
+| Pantalla y publicación (letreros, subtítulos, línea del tiempo, 7 redes) | ✅ | ídem | Coinciden con lo anterior; sin dosis ni instrucciones (la dosis de 0.25 mg del libro no aparece en ningún texto) | — |
+
+Resultado: 0 ❌ · 0 ⚠️. Sin cambios.
+
 VEREDICTO: APROBADO
