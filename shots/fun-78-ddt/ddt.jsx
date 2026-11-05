@@ -325,7 +325,7 @@ function DdtShot() {
       <Escena T={T} a={K.S} b={K.Lm} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <SetasOstra x={330} y={1090} s={0.78} crece={kprog(T, K.S + 0.1, K.S + 1.3)} T={T} />
+          <SetasOstra x={330} y={1060} s={0.72} crece={kprog(T, K.S + 0.1, K.S + 1.3)} T={T} />
           <Matraz x={830} y={1130} s={0.75} T={T} seed={9} micelio={kprog(T, K.S + 1.6, K.S + 2.4)} burbujas={kprog(T, K.S + 2.4, K.S + 2.9)} />
         </>)}
       </Escena>
@@ -388,7 +388,7 @@ function DdtShot() {
       {/* textos */}
       <Etq T={T} at={K.G + 0.6} until={K.D - 0.3} x={60} y={790} texto="DDT · insecticida" tam={34} color={KC.ink} />
       <Chip T={T} at={K.G + 1.6} until={K.D - 0.3} texto="pudrición blanca" x={760} y={820} tam={36} borde={KC.white} />
-      <Etq T={T} at={K.G + 3.4} until={K.D - 0.3} x={590} y={1075} texto="costra blanca del hongo" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.G + 3.4} until={K.D - 0.3} x={560} y={1075} texto="costra blanca del hongo" tam={26} color={KC.texto} />
       <Etq T={T} at={K.D + 2.0} until={K.Li - 0.3} x={470} y={690} texto="se usaba contra el paludismo" tam={26} color={KC.ink} />
       <Chip T={T} at={K.D + 2.0} until={K.Li - 0.3} texto="México lo dejó de usar en 2000" x={330} y={1060} tam={32} borde={KC.ink} />
       <Nota T={T} at={K.D + 3.0} until={K.Li - 0.3} y={1610} ancho={860} tam={34} borde={KC.yellow} texto="En el suelo, la mitad del DDT tarda de 2 a 15 años en romperse" />

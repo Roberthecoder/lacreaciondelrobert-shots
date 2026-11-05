@@ -20,16 +20,16 @@ const acordes = (lista, fin, g = 0.05) => lista.forEach(([t, notas, tapa = 0], i
 // motivo: notas [semitono, duración en tiempos] a partir de t, a "bpm" (frases compuestas, no al azar)
 const frase = (t, notas, bpm = 100, g = 0.045, tapa = 0) => { let u = t; for (const [mm, d] of notas) { if (mm) m.nota(u, mm, g, d * 60 / bpm * 1.6, tapa); u += d * 60 / bpm; } return u; };
 
-const Am = [45, 52, 57], F7 = [41, 48, 57], Dm = [38, 50, 57], E7 = [40, 52, 56], C = [48, 55, 60], Gm = [43, 55, 59], Fm = [41, 53, 57], A = [45, 52, 61];
+const Am = [45, 52, 57], F7 = [41, 48, 57], Dm = [38, 50, 57], E7 = [40, 52, 56], CM = [48, 55, 60], Gm = [43, 55, 59], Fm = [41, 53, 57], A = [45, 52, 61];
 
 // A · el arroz enfermo (menor, algo ahogado)
 acordes([[0, Am, 0.2], [H, F7, 0.2], [S, Dm, 0.25], [S + 2.4, E7, 0.25]], Ku);
 // B · el laboratorio (se aclara: ii–V–I–vi)
-acordes([[Ku, Dm, 0.1], [Ku + 2.7, Gm, 0.1], [Y, C, 0], [F, Am, 0.15], [F + 2.8, E7, 0.1]], P);
+acordes([[Ku, Dm, 0.1], [Ku + 2.7, Gm, 0.1], [Y, CM, 0], [F, Am, 0.15], [F + 2.8, E7, 0.1]], P);
 // C · la uva (mayor, luminosa)
-acordes([[P, F7, 0], [Se, C, 0], [E, Gm, 0], [E + 3.8, Am, 0], [Ce, Fm, 0]], Ta, 0.055);
+acordes([[P, F7, 0], [Se, CM, 0], [E, Gm, 0], [E + 3.8, Am, 0], [Ce, Fm, 0]], Ta, 0.055);
 // D · crece (tanque y California)
-acordes([[Ta, Dm, 0], [Ta + 2.0, Gm, 0], [Ca, C, 0], [Ca + 2.4, E7, 0]], C, 0.055);
+acordes([[Ta, Dm, 0], [Ta + 2.0, Gm, 0], [Ca, CM, 0], [Ca + 2.4, E7, 0]], C, 0.055);
 // regreso: el acorde del inicio, ya resuelto en mayor
 acordes([[C, Am, 0], [C + 2.6, F7, 0], [Ou, A, 0]], Ou + 3.5, 0.05);
 

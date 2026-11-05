@@ -167,7 +167,7 @@ function Tanque({ T, x, y, s = 1 }) {
 }
 
 /* ---------- el shot ---------- */
-const PASOS40 = Array.from({ length: 39 }, (_, i) => { const fila = Math.floor(i / 8), c = i % 8; const col = fila % 2 ? 7 - c : c; return [130 + col * 117, 720 + fila * 100]; });
+const PASOS40 = Array.from({ length: 39 }, (_, i) => { const fila = Math.floor(i / 8), c = i % 8; const col = fila % 2 ? 7 - c : c; return [130 + col * 117, 780 + fila * 95]; });
 const TRAMO11 = [9, 10, 11, 12, 13, 14];          // tramo ilustrativo: "oxígeno en el carbono 11" (varios pasos)
 
 function CortisonaShot() {
@@ -186,10 +186,10 @@ function CortisonaShot() {
       <Escena T={T} a={K.G} b={K.Co} zoom={0.06} origen="50% 55%">
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Rhizopus x={250} y={790} s={0.75} crece={kprog(T, K.G + 1.4, K.G + 3.2)} nodos={[-90, 30]} />
-          <Brazo T={T} y={1040} roncha={1 - 0.6 * baja} crema={untada} rx={600} />
-          {chorro > 0 && untada < 1 && <path d={`M 520 925 Q ${540 + 30 * chorro} ${930 + 40 * chorro} ${560 + 40 * chorro} ${960 + 50 * chorro}`} stroke={CX.crema} strokeWidth={30} strokeLinecap="round" fill="none" opacity={1 - untada} />}
-          <Tubo x={520} y={900} rot={28} s={0.85} aprieta={aprieta} />
+          <Rhizopus x={330} y={700} s={0.8} crece={kprog(T, K.G + 1.4, K.G + 3.2)} nodos={[-90, 30]} />
+          <Brazo T={T} y={1020} roncha={1 - 0.6 * baja} crema={untada} rx={640} />
+          {chorro > 0 && untada < 1 && <path d={`M 590 910 Q ${600 + 20 * chorro} ${930 + 30 * chorro} ${615 + 25 * chorro} ${950 + 50 * chorro}`} stroke={CX.crema} strokeWidth={30} strokeLinecap="round" fill="none" opacity={1 - untada} />}
+          <Tubo x={590} y={880} rot={28} s={0.85} aprieta={aprieta} />
         </>)}
       </Escena>
       {/* 3 · el cortisol que hace tu cuerpo */}
@@ -202,24 +202,24 @@ function CortisonaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.dark }}></div>
         <Ambiente T={T} n={22} />
         {fsvg(<>
-          <Esteroide x={170} y={760} L={54} variante="prog" p={kprog(T, K.Es + 0.1, K.Es + 1.1)} color={KC.texto} T={T} />
-          <Esteroide x={170} y={1090} L={54} variante="hidro" p={kprog(T, K.Es + 1.0, K.Es + 2.0)} ox={kprog(T, K.Es + 2.2, K.Es + 2.8)} c11={kprog(T, K.Es + 3.2, K.Es + 3.6)} color={KC.texto} T={T} />
+          <Esteroide x={170} y={720} L={66} tam={36} variante="prog" p={kprog(T, K.Es + 0.1, K.Es + 1.1)} color={KC.texto} T={T} />
+          <Esteroide x={170} y={1060} L={66} tam={36} variante="hidro" p={kprog(T, K.Es + 1.0, K.Es + 2.0)} ox={kprog(T, K.Es + 2.2, K.Es + 2.8)} c11={kprog(T, K.Es + 3.2, K.Es + 3.6)} color={KC.texto} T={T} />
         </>)}
       </Escena>
       {/* 5–6 · Merck: casi 40 pasos · re-gancho: el tramo del carbono 11 en un paso */}
       <Escena T={T} a={K.M} b={K.E} zoom={0.04}>
         <FondoLunares color={T < K.P ? KC.yellow : KC.orange} />
         {fsvg(<>
-          <g transform="translate(130 640)"><rect x={-60} y={-62} width={120} height={70} rx={14} fill="#c9a54a" stroke={KC.ink} strokeWidth={6} /><text y={-16} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>bilis</text></g>
           {PASOS40.map(([px, py], i) => { if (i >= pasos && T < K.P) return null; const tr = TRAMO11.indexOf(i);
             const on = kprog(T, K.M + 0.6 + i * (4.6 / 39), K.M + 0.9 + i * (4.6 / 39), kEase.rebote);
             const enTramo = tr >= 0 && T > K.P + 0.1;
             const xx = enTramo ? klerp(px, 300, junta) : px, yy = enTramo ? klerp(py, 940, junta) : py;
             const dim = T > K.P + 0.3 && tr < 0 ? 0.35 : 1;
             return <MiniMatraz key={i} x={xx} y={yy} s={on * (enTramo ? klerp(1, 0.4, junta) : 1)} color={enTramo || (tr >= 0 && T > K.M + 5.6) ? KC.red : KC.cyan} o={dim * (enTramo ? 1 - junta * 0.9 : 1)} />; })}
-          {T > K.M + 5.0 && <g transform={`translate(880 1130) scale(${kprog(T, K.M + 5.0, K.M + 5.4, kEase.rebote)})`} opacity={T > K.P + 0.3 ? 0.35 : 1}>
+          {T > K.M + 5.0 && <g transform={`translate(950 1170) scale(${kprog(T, K.M + 5.0, K.M + 5.4, kEase.rebote)})`} opacity={T > K.P + 0.3 ? 0.35 : 1}>
             <rect x={-90} y={-20} width={180} height={30} rx={8} fill="#9aa6b2" stroke={KC.ink} strokeWidth={6} /><rect x={-20} y={10} width={40} height={50} fill="#9aa6b2" stroke={KC.ink} strokeWidth={6} />
             <circle cx={0} cy={-34} r={14} fill="#fff" stroke={KC.ink} strokeWidth={4} />
+            <text x={0} y={-62} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>18 mg</text>
           </g>}
           {junta > 0.6 && <g transform={`translate(300 990) scale(${kprog(T, K.P + 1.2, K.P + 1.6, kEase.rebote) * 2.2})`}><MiniMatraz x={0} y={0} color={KC.red} /></g>}
           {junta > 0.7 && <Interrogacion T={T} x={300} y={820} tam={260} color={KC.yellow} />}
@@ -250,9 +250,9 @@ function CortisonaShot() {
             {[200, 470, 760].map((cx, i) => <ellipse key={i} cx={cx} cy={i === 1 ? 770 : 760 + i * 20} rx={30} ry={18} fill="#c9b98a" />)}
           </g>
           <g opacity={kprog(T, K.En + 0.9, K.En + 1.3)}>
-            <Esteroide x={170} y={1000} L={58} variante="11a" p={1} oh11={kprog(T, K.En + 2.4, K.En + 2.7)} c11={kprog(T, K.En + 1.4, K.En + 1.8)} color={KC.texto} T={T} />
+            <Esteroide x={170} y={1040} L={72} tam={38} variante="11a" p={1} oh11={kprog(T, K.En + 2.4, K.En + 2.7)} c11={kprog(T, K.En + 1.4, K.En + 1.8)} color={KC.texto} T={T} />
             <Enzima T={T} x={klerp(900, 360, kprog(T, K.En + 1.2, K.En + 2.2, kEase.sale))} y={900} s={0.9} o={1 - kprog(T, K.En + 3.2, K.En + 3.8) * 0.6} />
-            {T > K.En + 2.4 && T < K.En + 3.2 && <circle cx={170 + 100} cy={1000 - 116} r={60 * kprog(T, K.En + 2.4, K.En + 2.8)} fill="none" stroke={KC.yellow} strokeWidth={8} opacity={1 - kprog(T, K.En + 2.8, K.En + 3.2)} />}
+            {T > K.En + 2.4 && T < K.En + 3.2 && <circle cx={170 + 1.73 * 72} cy={1040 - 2 * 72} r={60 * kprog(T, K.En + 2.4, K.En + 2.8)} fill="none" stroke={KC.yellow} strokeWidth={8} opacity={1 - kprog(T, K.En + 2.8, K.En + 3.2)} />}
           </g>
         </>)}
       </Escena>
@@ -288,8 +288,8 @@ function CortisonaShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="50% 55%">
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Brazo T={T} y={1040} roncha={0.25} crema={0} rx={600} />
-          <Tubo x={520} y={900} rot={28} s={0.85}>
+          <Brazo T={T} y={1020} roncha={0.25} crema={0} rx={640} />
+          <Tubo x={590} y={880} rot={28} s={0.85}>
             <g opacity={kprog(T, K.C + 0.6, K.C + 1.2)}>
               <rect x={-350} y={-54} width={270} height={108} rx={10} fill="#fffbe8" stroke={KC.ink} strokeWidth={5} />
               <g transform="translate(-300 34) scale(.28)"><Rhizopus x={0} y={0} crece={1} nodos={[0]} color="#c9b98a" /></g>
@@ -301,47 +301,45 @@ function CortisonaShot() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 1.6} until={K.Cr - 0.2} texto="no es pura química" x={300} y={470} tam={40} borde={KC.yellow} />
-      <Etq T={T} at={K.G + 3.0} until={K.Cr - 0.2} x={60} y={560} texto="Rhizopus" it tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Cr + 0.4} until={K.Co - 0.3} x={60} y={470} texto="hidrocortisona" tam={44} color={KC.ink} />
-      <Etq T={T} at={K.Cr + 0.9} until={K.Co - 0.3} x={60} y={530} texto="corticoide · un esteroide" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.G + 3.2} until={K.Cr - 0.2} x={470} y={640} texto="Rhizopus" it tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Cr + 0.4} until={K.Co - 0.3} x={60} y={470} texto="hidrocortisona" tam={44} color={KC.texto} />
+      <Etq T={T} at={K.Cr + 0.9} until={K.Co - 0.3} x={60} y={530} texto="corticoide · un esteroide" tam={32} color={KC.texto} />
       <Chip T={T} at={K.Cr + 2.0} until={K.Co - 0.3} texto="baja la hinchazón" x={330} y={640} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.Co + 0.2} until={K.Es - 0.3} texto="cortisol = hidrocortisona" x={360} y={430} tam={38} borde={KC.gold} />
-      <Etq T={T} at={K.Co + 1.0} until={K.Es - 0.3} x={460} y={950} texto="glándulas suprarrenales" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Co + 1.0} until={K.Es - 0.3} x={460} y={950} texto="glándulas suprarrenales" tam={28} color={KC.texto} />
       <Chip T={T} at={K.Es + 0.1} until={K.M - 0.3} texto="POR DENTRO · LA MOLÉCULA" x={420} y={430} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Es + 0.6} until={K.M - 0.3} x={60} y={560} texto="progesterona" tam={34} color={KC.texto} />
-      <Etq T={T} at={K.Es + 1.5} until={K.M - 0.3} x={60} y={880} texto="hidrocortisona" tam={34} color={KC.texto} />
-      <Chip T={T} at={K.Es + 2.4} until={K.M - 0.3} texto="+3 oxígenos" x={830} y={980} tam={36} borde={CX.oxi} />
-      <Etq T={T} at={K.Es + 3.4} until={K.M - 0.3} x={600} y={1080} texto="carbono 11: difícil" tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.Es + 0.6} until={K.M - 0.3} x={600} y={760} texto="progesterona" tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Es + 1.5} until={K.M - 0.3} x={640} y={1170} texto="hidrocortisona" tam={34} color={KC.texto} />
+      <Chip T={T} at={K.Es + 2.4} until={K.M - 0.3} texto="+3 oxígenos" x={850} y={1000} tam={36} borde={CX.oxi} />
+      <Etq T={T} at={K.Es + 3.4} until={K.M - 0.3} x={640} y={1090} texto="carbono 11: difícil" tam={30} color={KC.yellow} />
       <TarjetaEstudio T={T} at={K.M + 0.1} until={K.M + 3.4} anio="años 40" quien="Merck · Lewis Sarett" revista="desde un ácido de la bilis" x={540} y={470} />
-      <Contador T={T} at={K.M + 3.6} desde={0} hasta={39} dur={1.6} x={300} y={470} tam={64} color={KC.ink} sufijo=" pasos" />
-      {T > K.M + 3.6 && T < K.P && <div style={{ position:'absolute', left:50, top:400, zIndex:41, font:`700 30px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.M + 3.6, K.M + 4.0) }}>casi 40 pasos</div>}
-      <Etq T={T} at={K.M + 5.4} until={K.P - 0.2} x={960} y={1060} lado="izq" texto="18 mg" tam={44} color={KC.ink} />
+      <NumeroGigante T={T} at={K.M + 3.6} until={K.P - 0.2} valor={40} dur={1.2} prefijo="casi " sufijo=" pasos" x={330} y={560} tam={110} color={KC.cyan} />
       <Chip T={T} at={K.P + 0.3} until={K.E - 0.3} texto="oxígeno en el carbono 11" x={330} y={620} tam={32} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 4.0} anio="1952" quien="Peterson y Murray · Upjohn" revista="publicado en J. Am. Chem. Soc. · patente desde 1950" x={540} y={520} />
-      <Etq T={T} at={K.E + 0.9} until={K.E + 4.0} x={60} y={745} texto="Kalamazoo, Michigan" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E + 4.2} until={K.En - 0.3} x={380} y={600} texto="progesterona" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.E + 2.0} until={K.En - 0.3} x={560} y={1010} lado="izq" texto="Rhizopus en bolitas" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.E + 6.0} until={K.En - 0.3} x={640} y={790} texto="en una superficie:" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.E + 0.9} until={K.E + 4.0} x={60} y={745} texto="Kalamazoo, Michigan" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.E + 4.2} until={K.En - 0.3} x={380} y={600} texto="progesterona" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.E + 2.0} until={K.En - 0.3} x={560} y={1010} lado="izq" texto={<><i>Rhizopus</i> en bolitas</>} tam={28} color={KC.texto} />
+      <Etq T={T} at={K.E + 6.0} until={K.En - 0.3} x={640} y={790} texto="en una superficie:" tam={26} color={KC.texto} />
       <Chip T={T} at={K.En + 0.1} until={K.En + 1.0} texto="POR DENTRO · LA HIFA" x={420} y={470} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.En + 0.3} until={K.En + 1.0} x={60} y={600} texto="hifa de Rhizopus" it tam={30} color={KC.texto} />
+      <Etq T={T} at={K.En + 0.3} until={K.En + 1.0} x={60} y={600} texto={<>hifa de <i>Rhizopus</i></>} tam={30} color={KC.texto} />
       <Etq T={T} at={K.En + 1.4} until={K.B - 0.3} x={60} y={590} texto="enzima P450 del hongo" tam={30} color={CX.enz} />
       <Chip T={T} at={K.En + 2.8} until={K.B - 0.3} texto="11α-hidroxiprogesterona · 1 paso" x={540} y={1180} tam={32} borde={KC.yellow} />
       <Chip T={T} at={K.B + 0.2} until={K.Pa - 0.3} texto="11α-OH  (moho)" x={540} y={440} tam={34} borde={KC.ink} mono />
       <Chip T={T} at={K.B + 0.8} until={K.Pa - 0.3} texto="C=O  (cortisona)" x={540} y={600} tam={34} borde={KC.ink} mono />
       <Chip T={T} at={K.B + 1.4} until={K.Pa - 0.3} texto="11β-OH  (hidrocortisona)" x={540} y={760} tam={34} borde={KC.ink} mono />
-      <Etq T={T} at={K.B + 0.5} until={K.Pa - 0.3} x={560} y={520} texto="↓ química" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.B + 1.1} until={K.Pa - 0.3} x={560} y={680} texto="↓ química" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.B + 2.0} until={K.Pa - 0.3} x={70} y={935} texto="solo química" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.B + 2.4} until={K.Pa - 0.3} x={70} y={1055} texto="hongo + química" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Pa + 0.8} until={K.H - 0.3} x={60} y={470} texto="moho negro del pan" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Pa + 1.2} until={K.H - 0.3} x={60} y={525} texto="Rhizopus stolonifer" it tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Pa + 2.0} until={K.H - 0.3} texto="mismo género: Rhizopus" x={540} y={1180} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.B + 0.5} until={K.Pa - 0.3} x={560} y={520} texto="↓ química" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.B + 1.1} until={K.Pa - 0.3} x={560} y={680} texto="↓ química" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.B + 2.0} until={K.Pa - 0.3} x={70} y={935} texto="solo química" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.B + 2.4} until={K.Pa - 0.3} x={70} y={1055} texto="hongo + química" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Pa + 0.8} until={K.H - 0.3} x={60} y={470} texto="moho negro del pan" tam={36} color={KC.texto} />
+      <Etq T={T} at={K.Pa + 1.2} until={K.H - 0.3} x={60} y={525} texto="Rhizopus stolonifer" it tam={34} color={KC.texto} />
+      <Chip T={T} at={K.Pa + 2.0} until={K.H - 0.3} texto={<>mismo género: <i>Rhizopus</i></>} x={540} y={1180} tam={34} borde={KC.gold} />
       <Chip T={T} at={K.H + 0.3} until={K.C - 0.3} texto="biotransformación: hongo + química" x={540} y={430} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.H + 1.0} until={K.C - 0.3} x={520} y={700} texto="tanque de fermentación" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.6} until={K.C - 0.3} x={600} y={1080} texto="corticoides" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.0} until={K.C - 0.3} x={520} y={700} texto="tanque de fermentación" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.H + 1.6} until={K.C - 0.3} x={600} y={1080} texto="corticoides" tam={30} color={KC.texto} />
       <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="un moho le abrió el camino" x={360} y={470} tam={36} borde={KC.yellow} />
-      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={60} y={560} texto="carbono 11 · Rhizopus" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={1520} texto="No es consejo médico." tam={24} color={KC.ink} />
+      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={60} y={560} texto={<>carbono 11 · <i>Rhizopus</i></>} tam={28} color={KC.texto} />
+      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={1520} texto="No es consejo médico." tam={24} color={KC.texto} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Co} texto="5 cm" largo={130} />
@@ -357,18 +355,18 @@ function CortisonaShot() {
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={130} y={1440} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
-      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Cr - 0.1} texto="Esa crema no es *pura química.*" />
-      <Subtitulo T={T} idx={1} at={K.Cr + 0.1} until={K.Co - 0.1} texto="Hidrocortisona: un esteroide que *baja la hinchazón.*" />
-      <Subtitulo T={T} idx={2} at={K.Co + 0.1} until={K.Es - 0.1} texto="La misma molécula que *tu cortisol.*" />
-      <Subtitulo T={T} idx={3} at={K.Es + 0.1} until={K.M - 0.1} texto="Tres oxígenos más; uno, *en el carbono 11.*" />
-      <Subtitulo T={T} idx={4} at={K.M + 0.1} until={K.P - 0.1} texto="Casi 40 pasos para *18 miligramos.*" />
-      <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.E - 0.1} texto="¿Ese oxígeno *en un solo paso?*" />
-      <Subtitulo T={T} idx={6} at={K.E + 0.1} until={K.En - 0.1} texto="1952: progesterona a un moho, *Rhizopus.*" />
-      <Subtitulo T={T} idx={7} at={K.En + 0.1} until={K.B - 0.1} texto="Una enzima pega el oxígeno *en el carbono 11.*" />
-      <Subtitulo T={T} idx={8} at={K.B + 0.1} until={K.Pa - 0.1} texto="Ruta más corta, *cortisona más barata.*" />
-      <Subtitulo T={T} idx={9} at={K.Pa + 0.1} until={K.H - 0.1} texto="Pariente del *moho negro del pan.*" />
-      <Subtitulo T={T} idx={10} at={K.H + 0.1} until={K.C - 0.1} texto="Hoy, hongos así *fabrican corticoides.*" />
-      <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Un moho *le abrió el camino.*" />
+      <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Cr - 0.1} texto="No es *pura química.*" tam={56} />
+      <Subtitulo T={T} idx={1} at={K.Cr + 0.1} until={K.Co - 0.1} texto="Baja la *hinchazón.*" tam={56} />
+      <Subtitulo T={T} idx={2} at={K.Co + 0.1} until={K.Es - 0.1} texto="Igual a *tu cortisol.*" tam={56} />
+      <Subtitulo T={T} idx={3} at={K.Es + 0.1} until={K.M - 0.1} texto="Difícil: *el carbono 11.*" tam={56} />
+      <Subtitulo T={T} idx={4} at={K.M + 0.1} until={K.P - 0.1} texto="Casi 40 pasos: *18 mg.*" tam={56} />
+      <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.E - 0.1} texto="¿Ese oxígeno *en un paso?*" tam={56} />
+      <Subtitulo T={T} idx={6} at={K.E + 0.1} until={K.En - 0.1} texto="1952: un moho, _Rhizopus._" tam={56} />
+      <Subtitulo T={T} idx={7} at={K.En + 0.1} until={K.B - 0.1} texto="Un oxígeno, *de un jalón.*" tam={56} />
+      <Subtitulo T={T} idx={8} at={K.B + 0.1} until={K.Pa - 0.1} texto="Ruta corta, *más barata.*" tam={56} />
+      <Subtitulo T={T} idx={9} at={K.Pa + 0.1} until={K.H - 0.1} texto="Pariente: *moho del pan.*" tam={56} />
+      <Subtitulo T={T} idx={10} at={K.H + 0.1} until={K.C - 0.1} texto="Hoy: hongos en *fábricas.*" tam={56} />
+      <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Un moho *abrió el camino.*" tam={56} />
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 3.0, 'avatar_11_sorprendido', 'gancho'],
