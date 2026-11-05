@@ -23,7 +23,7 @@
 | 6 | Vacuolas | Al dejar de crecer, se llena de riboflavina y la guarda en vacuolas. | Zoom a una hifa (tubo con varios núcleos y tabiques): un medidor "comida" baja a cero, las hifas dejan de alargarse y se llenan de **bolsitas amarillas** (vacuolas). Etiqueta "vacuolas con riboflavina". Escala 10 µm. |
 | 7 | Pregunta | ¿Para qué querría un hongo tanto amarillo? | **Re-gancho.** Fondo rosa: la hifa amarilla con un "?" gigante; Robert grande, pensativo. |
 | 8 | Esporas | En 2001, un equipo europeo iluminó sus esporas con ultravioleta: con riboflavina, aguantaban más. Sería su bloqueador solar. | Fondo oscuro. Las hifas se fragmentan en esporangios; salen **esporas en forma de aguja** (finas, alargadas, ~30 µm: unas 3 veces la barra de 10 µm; con filamento en la punta, agrupadas). TarjetaEstudio "2001 · Alemania, Reino Unido y España · *Environmental Microbiology*". Dos placas bajo lámpara UV: "sin riboflavina" (pocas sobreviven) y "con riboflavina" (más sobreviven; esquemático, sin cifra). Un sombrerito/bloqueador sobre la espora: chip "hipótesis: protector UV". |
-| 9 | Tanques | En 1990, BASF empezó a cultivarlo en tanques, y en 1996 dejó la síntesis química. | Fondo amarillo. Tanque de fermentación (biorreactor) que se llena de caldo amarillo con gotitas de aceite vegetal; línea de tiempo 1990 → 1996: la fábrica química (matraces y flechas, "7 pasos" no se dice) se apaga. Chips "1990: fermentación a escala industrial" · "1996: adiós síntesis química". Escala 10 m (tanque esquemático). |
+| 9 | Tanques | En 1990, BASF empezó a cultivarlo en tanques, y en 1996 dejó la síntesis química. | Fondo amarillo. Tanque de fermentación (biorreactor) que se llena de caldo amarillo con gotitas de aceite vegetal; línea de tiempo 1990 → 1996: la fábrica química (matraces y flechas, "7 pasos" no se dice) se apaga. Chips "1990: fermentación a escala industrial" · "1996: adiós síntesis química". Escala "tanque: esquema". |
 | 10 | Genes | Le metieron copias extra de los genes que arman la vitamina. | Fondo oscuro. Hebra de ADN de *Ashbya*: entra un "paquete" de 6 genes (cajitas RIB) que se inserta; la hifa se pone aún más amarilla. Chip "ingeniería genética: 6 genes de la vía, juntos en un paquete". Escala 2 nm. |
 | 11 | Ahorro | Según la empresa, el costo bajó cerca de cuarenta por ciento, y el CO2, treinta. | Fondo cian. Dos barras "síntesis química" vs "fermentación con hongo": costo −40 % y CO₂ −30 %. TarjetaEstudio chica "BASF, análisis de ecoeficiencia (Saling 2005; Hoff 2021)". |
 | 12 | Ironia | Ironía: pinta tanto que también se usa como colorante. | Fondo naranja. Un pastelito/gomita con etiqueta "colorante E101 = riboflavina"; el letrero tachado del inicio (~~colorante~~) se destacha con un guiño. |
@@ -37,7 +37,7 @@ del brillo, pop de cada hifa que se parte en dos, burbujitas de vacuolas que se 
 burbujeo del biorreactor, interruptor que apaga la fábrica química, "clac" del paquete de genes, barras que bajan, risita del guiño.
 
 **Barra de escala:** 5 cm (vaso y pastilla), "esquema" en el cuerpo, 1 nm (molécula), 2 cm (algodón y chinche), 20 µm (hifas y levadura),
-10 µm (vacuolas), 10 µm (esporas; agujas de ~30 µm), 10 m (tanque), 2 nm (ADN). En tarjetas y barras no hay objeto que medir.
+10 µm (vacuolas), 10 µm (esporas; agujas de ~30 µm), "tanque: esquema" (biorreactor), 2 nm (ADN), 5 cm (pastelito). En tarjetas y barras no hay objeto que medir.
 
 ## Robert en pantalla
 
@@ -45,20 +45,20 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Para qué 
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no es colorante» (cuadro 0) |
-| 2 | 7.0 | 10.0 | 04_bajando_lentes | `arriba-der` | «tus riñones lo mandan a la orina» |
-| 3 | 14.0 | 17.0 | 13_senalando_arriba | `arriba-der` | «como el hongo *Ashbya gossypii*» |
+| 1 | 0.0 | 2.6 | 11_sorprendido | `gancho` | «no es colorante» (cuadro 0) |
+| 2 | 7.0 | 9.2 | 04_bajando_lentes | `arriba-der` | «tus riñones lo mandan a la orina» |
+| 3 | 14.0 | 16.7 | 13_senalando_arriba | `arriba-der` | «como el hongo *Ashbya gossypii*» |
 | 4 | 18.0 | 20.5 | 10_serio_molesto | `arriba-der` | «enferma al algodón» |
-| 5 | 24.5 | 28.0 | 12_perfil_serio | `arriba-der` | «la guarda en vacuolas» |
-| 6 | 28.5 | 31.0 | 07_pensativo_puno | `grande` | «¿Para qué querría un hongo tanto amarillo?» |
+| 5 | 24.5 | 27.4 | 12_perfil_serio | `arriba-der` | «la guarda en vacuolas» |
+| 6 | 27.6 | 29.4 | 07_pensativo_puno | `grande` | «¿Para qué querría un hongo tanto amarillo?» |
 | 7 | 34.5 | 37.0 | 11_sorprendido | `arriba-der` | «sería su bloqueador solar» |
-| 8 | 42.0 | 45.5 | 06_pensativo_menton | `arriba-der` | «copias extra de los genes» |
-| 9 | 47.0 | 50.8 | 13_senalando_arriba | `arriba-der` | «cuarenta por ciento… treinta» |
-| 10 | 51.0 | 53.9 | 04_bajando_lentes | `arriba-der` | «Ironía: … colorante» |
-| 11 | 54.5 | 58.8 | 02_apuntando_camara | `arriba-der` | «el bloqueador solar de un hongo» |
-| — | 58.8 | 62.0 | 13_senalando_arriba | CierreMarca | cierre |
+| 8 | 42.0 | 45.4 | 06_pensativo_menton | `arriba-der` | «copias extra de los genes» |
+| 9 | 47.0 | 50.1 | 13_senalando_arriba | `arriba-der` | «cuarenta por ciento… treinta» |
+| 10 | 50.9 | 53.4 | 05_sonriendo_dientes_uniformes | `arriba-der` | «Ironía: … colorante» |
+| 11 | 54.4 | 57.9 | 02_apuntando_camara | `arriba-der` | «el bloqueador solar de un hongo» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 11 · **34.5 s** en pantalla (+ cierre) · 8 poses distintas · nunca la misma dos veces seguidas · ninguna sacando la lengua.
+Apariciones 11 · **≈ 29.8 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas · ninguna sacando la lengua.
 
 ## Fuentes (abiertas el 5 nov 2026; frases textuales y año)
 
