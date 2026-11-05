@@ -3,16 +3,16 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #130 · rama `claude/fun-130-134-agua`.
 - **Formato:** N1 Por dentro + N5 El experimento (viaje espuma del arroyo → microscopio → hoja colonizada → el laboratorio de Webster y el arroyo de Ingold → la misma espuma, ya "leída" como un cielo de estrellas).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla: «Esa espuma del río no es jabón: está llena de estrellas.»
-- **Duración:** voz 987 caracteres / 177 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
+- **Duración:** voz 979 caracteres / 175 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
-- **Ojo con el río Santiago:** ya hay un shot de espuma de contaminación. Aquí se dice claro que mucha espuma de río es natural y en pantalla hay un chip "también existe espuma de contaminación: esa es otra"; el shot habla solo de la espuma natural de arroyos con hojas y agua bien oxigenada.
+- **Ojo con el río Santiago:** ya hay un shot de espuma de contaminación. Aquí se dice claro que esta espuma es natural y en pantalla hay un chip "también existe espuma de contaminación: esa es otra"; el shot habla solo de la espuma natural de arroyos con hojas y agua bien oxigenada.
 
 ## Versión narrada
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | Esa espuma del río no es jabón: está llena de estrellas. | Fondo cian. Un arroyo con piedras y hojas; en un remanso, detrás de unas ramitas, se junta una nata de espuma color crema que gira (se mueve desde el cuadro 0.3). Una botella de jabón se tacha. Dentro de la espuma titilan estrellitas blancas de 4 brazos. Robert sorprendido (lado `gancho`). |
-| 1 | Natural | Mucha espuma de río es natural: sale de hojas que se pudren, no de jabón. | Fondo menta. Hojas cayendo al agua y pudriéndose; de ellas salen burbujitas que forman espuma. Etiqueta "espuma natural · de hojas que se pudren". Chip chico: "también existe espuma de contaminación: esa es otra". Barra de escala 10 cm. |
+| 1 | Natural | Esta espuma es natural: sale de hojas que se pudren, no de jabón. | Fondo menta. Hojas cayendo al agua y pudriéndose; de ellas salen burbujitas que forman espuma. Etiqueta "espuma natural · de hojas que se pudren". Chip chico: "también existe espuma de contaminación: esa es otra". Barra de escala 10 cm. |
 | 2 | Zoom | Al microscopio, en ella flotan esporas de cuatro brazos. | Lupa que baja a la espuma → fondo oscuro "AL MICROSCOPIO": burbujas transparentes con esporas incoloras pegadas al borde: estrellas de 4 brazos (tetrarradiadas: tres brazos que divergen de un punto + el brazo de base) y algunas en forma de S (sigmoides) y alargadas. Etiquetas "esporas (conidios) de 4 brazos" y "sigmoides". |
 | 3 | Medida | En una especie común, cada brazo mide hasta cinco centésimas de milímetro. | Una estrella grande de *Articulospora tetracladia* con medidor sobre un brazo: "20–50 µm". Barra de escala 50 µm. Etiqueta *Articulospora tetracladia*. |
 | 4 | Hongos | Son de hongos que viven en las hojas caídas al agua: las ablandan y les suben la proteína. | Fondo oscuro (dentro de la hoja): hifas finas que se meten entre las células de una hoja de aliso; la hoja se pone más flexible (medidor "dureza" que baja) y un medidor "proteína" que sube. Etiqueta "hongos acuáticos · hifomicetos de Ingold". |
@@ -76,10 +76,11 @@ Apariciones 9 · **≈ 32.8 s** en pantalla (+ cierre 3.5 s) · 7 poses distinta
 8. Chauvet, E., Cornut, J., Sridhar, K. R., Selosse, M.-A. y Bärlocher, F. (2016). Beyond the water column: aquatic hyphomycetes outside their preferred habitat. *Fungal Ecology* 19: 112–127. https://hal.archives-ouvertes.fr/hal-01237063/file/Chauvet_14500.pdf
    > Bandoni (1981) "examined rainwater or mist dripping from foliage to the ground (throughfall) … Spores typical of stream hyphomycetes were also common (e.g., Alatospora, Articulospora, Tricladium, Varicosporium)."; "Many studies have since demonstrated the near universal presence of both typical aquatic hyphomycete and other morphologically complex conidia in rainwater from throughfall, stemflow…"
    > "More complex shapes may facilitate attachment in running waters (as in aquatic hyphomycetes); (Dang et al., 2007; Kearns and Barlocher, 2008)"
-9. Environment Agency (Reino Unido), vía Telford & Wrekin Council, *Foam in rivers and still waters*. https://telford.gov.uk/download/downloads/id/28515/foam_in_rivers_and_still_waters.pdf
-   > "Foam is a natural phenomenon that occurs on many lakes and streams." "Most foam in rivers is natural" "Naturally produced surfactants, usually a fatty acid, are released from decaying organic material"
-10. Tasmanian EPA, *Foam and foam lines*. https://epa.tas.gov.au/environment/water/water-topics/foam-and-foam-lines
-   > "the foam bubbles tend to accumulate and form foam lines where areas of different flow meet, such as at confluences of streams, in eddies or below waterfalls."
+9. SEPA (Scottish Environment Protection Agency), *Fact sheet: Foam on rivers, lochs and coastlines*. https://beta.sepa.scot/media/eh1nbuzr/foam-fact-sheet.pdf
+   > "These substances can be produced naturally or result from human activities: • Natural - produced from decaying organic material. They are abundant during autumn when aquatic plants and algae begin to die and trees drop their leaves."
+   > "Natural foams usually accumulate in sheltered areas and eddies" ; "Human - … They enter the water from point-source pollution (e.g. fire-fighting foams, detergents, sewage and tanneries)"
+10. Brandywine Conservancy, *Foam in your Stream: Healthy or Harmful?* https://brandywine.org/conservancy/blog/foam-your-stream-healthy-or-harmful
+   > "Natural suds result from the decomposition of animals and plants, which releases organic surfactants into the water." ; "Human-made suds are usually a result of chemical runoff and industrial discharge, such as soap, paint, and pesticides"
 
 Nota: "galleta seca contra galleta con crema de cacahuate" es una comparación de Robert para explicar la preferencia, no una cita.
 
