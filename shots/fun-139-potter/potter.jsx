@@ -389,7 +389,7 @@ function PotterShot() {
           {[0, 1, 2].map((i) => <Manuscrito key={i} x={330 + i * 210} y={1000 + (i % 2) * 20} rot={-8 + i * 7} s={1.5 * kprog(T, K.E + 0.8 + i * 0.2, K.E + 1.2 + i * 0.2, kEase.rebote)} />)}
         </>)}
       </Escena>
-      {/* 9–10 · la Sociedad Linneana: no admitía mujeres; lo lee Massee; ella lo retira; se pierde */}
+      {/* 9–10 · la Sociedad Linneana (aún sin socias mujeres); lo lee Massee, como era costumbre; ella lo retira; se pierde */}
       <Escena T={T} a={K.Ms} b={K.En} zoom={0.03}>
         <FondoLunares color={KC.lilac} punto="rgba(255,255,255,.18)" />
         {psvg(<>
@@ -456,6 +456,7 @@ function PotterShot() {
       <Chip T={T} at={K.Ms + 0.8} until={K.Pe - 0.2} texto="miembros: solo hombres (hasta 1905)" x={350} y={540} tam={24} borde={KC.red} mono />
       <Chip T={T} at={K.Ms + 2.0} until={K.Pe - 0.2} texto="George Massee · micólogo de Kew" x={360} y={400} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Ms + 2.4} until={K.Pe - 0.2} texto="lo leyó el 1 abr 1897" x={360} y={470} tam={28} borde={KC.gold} mono />
+      <Chip T={T} at={K.Ms + 4.3} until={K.Pe - 0.2} texto="costumbre: lo leía otra persona" x={300} y={610} tam={20} borde={KC.ink} mono />
       <Chip T={T} at={K.Pe + 0.4} until={K.Pe + 3.0} texto="8 abr 1897 · ella lo retira" x={360} y={430} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Pe + 1.8} until={K.Pe + 3.0} texto="nunca se publicó" x={360} y={515} tam={30} borde={KC.red} mono />
       <TarjetaEstudio T={T} at={K.Pe + 3.1} until={K.En - 0.3} anio="1997" quien="secretario de la Sociedad Linneana:" revista="“la trataron vilmente” (The Sunday Times)" x={540} y={600} />
@@ -489,7 +490,7 @@ function PotterShot() {
       <Subtitulo T={T} idx={6} at={K.V + 0.1} until={K.Hi - 0.1} texto="Esporas sembradas *sobre vidrio.*" />
       <Subtitulo T={T} idx={7} at={K.Hi + 0.1} until={K.E - 0.1} texto="Un tubito, luego *hifas.*" />
       <Subtitulo T={T} idx={8} at={K.E + 0.1} until={K.Ms - 0.1} texto="1897: *cómo germinan las esporas.*" />
-      <Subtitulo T={T} idx={9} at={K.Ms + 0.1} until={K.Pe - 0.1} texto="No admitían mujeres: *lo leyó Massee.*" />
+      <Subtitulo T={T} idx={9} at={K.Ms + 0.1} until={K.Pe - 0.1} texto="Lo leyó Massee, *como era costumbre.*" />
       <Subtitulo T={T} idx={10} at={K.Pe + 0.1} until={K.En - 0.1} texto="Se retiró y *se perdió.*" />
       <Subtitulo T={T} idx={11} at={K.En + 0.1} until={K.C - 0.1} texto="Primo del *enoki del súper.*" />
       <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="El cuaderno de *una científica.*" />
