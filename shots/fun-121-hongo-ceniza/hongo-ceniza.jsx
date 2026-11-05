@@ -345,7 +345,7 @@ function HongoCenizaShot() {
       <Etq T={T} at={K.Ca + 3.2} until={K.Si - 0.3} x={640} y={1030} texto="carbón" lado="izq" tam={36} color={KC.ink} />
       <Etq T={T} at={K.Ca + 3.4} until={K.Si - 0.3} x={340} y={1110} texto="materia orgánica pirogénica" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Si + 0.6} until={K.Py - 0.3} texto="a veces: cientos o miles de años" x={370} y={560} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.Si + 1.6} until={K.Py - 0.3} x={60} y={680} texto="se creía casi intocable" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Si + 1.6} until={K.Py - 0.3} x={60} y={680} texto="se creía muy difícil de degradar" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Py + 0.6} until={K.P - 0.3} x={60} y={480} texto="Pyronema" it tam={46} color={KC.texto} />
       <Etq T={T} at={K.Py + 1.3} until={K.P - 0.3} x={60} y={545} texto="discos de 0.5 a 1 mm" tam={30} color={PY.naranja2} />
       <Etq T={T} at={K.Py + 1.8} until={K.P - 0.3} x={60} y={600} texto="sobre un tapete de hifas" tam={30} color={PY.mat} />
