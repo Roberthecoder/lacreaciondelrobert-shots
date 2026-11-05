@@ -63,4 +63,27 @@ Revisé `guion.md` y `narracion.json` después de las correcciones del coordinad
 
 Ya no queda «se pica», «tres semanas» ni «días 0 → 21» en la voz ni en la pantalla. Lo único viejo que queda es la línea de metadatos del encabezado de `guion.md` (línea 5, «Gancho…»), que todavía cita la frase anterior «Un kilo de olote seco dio…». No se dice ni se ve en el video, pero conviene actualizarla para que no confunda.
 
+## Textos en pantalla y publicación (5 nov 2026)
+
+Revisé `olote.jsx` (chips, etiquetas, subtítulos, barras de escala, Lupa) y `publicacion.md` (las 7 redes y el comentario fijado) contra la tabla de arriba. Solo anoto lo que no estaba ya literal arriba.
+
+| Texto | Dónde | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|---|
+| Barras «10 cm» con olotes de ~13–20 cm de largo (gancho y cierre ≈ 20 cm; Robert ≈ 19 cm; remojo ≈ 13 cm) | pantalla | ✅ (grosor esquemático) | Jasso Bobadilla et al., *Rev. Mex. Cienc. Agríc.* 10(8) https://cienciasagricolas.inifap.gob.mx/index.php/agricolas/article/download/1765/2838/11306 | «La longitud del raquis (LR) varió de 3 a 30 cm, con media de 13.09 cm»; «La longitud del elote (LE) osciló de 7.1 a 30 cm, su media fue de 20.38 cm» (maíz Cacahuacintle) | 2019 |
+|   | | | | El largo dibujado está dentro del rango real. El olote dibujado es más grueso que uno real (~5 cm contra ~2 cm de raquis): es caricatura, lo cubre «El dibujo es esquemático». | |
+| Barras «5 cm» en setas/racimo | pantalla | ✅ | EDIS SL448 (abajo) | «caps… ranging from 2 to 10 inches in diameter» | 2018 |
+| «10 µm (dentro de la lupa)»: hifas de ~2–3 µm de ancho con tabiques, puntas que sueltan enzimas | pantalla | ✅ (esquemático) | Kuo, MushroomExpert https://www.mushroomexpert.com/pleurotus_ostreatus.html | «elements 2.5–10 µm wide»; «inconspicuously clamped». La distancia entre tabiques y el grosor de las «fibras» están simplificados. | 2017 |
+| «fibra: lignina + celulosa», «● lacasas ● peroxidasas», «hifa tabicada» | Lupa | ✅ | ver filas 14–16 | — | 2015 / 2026 |
+| «mi meta a futuro» + «1 tonelada de bagazo de agave» → «hongos para comer» | pantalla | ✅ | `series/shot-robert/datos.md` | «Lo que viene: convertir una tonelada de bagazo de agave en hongos para comer (contarlo como futuro, no como hecho).» | — |
+| «en repisa, pie de lado» | pantalla | ✅ | Kuo 2017; EDIS SL448 | «Usually rudimentary and lateral»; «grow on the bag in shelf-like clusters» | 2017 / 2018 |
+| «1 · remojo (48 h)», «70 °C · 1 hora», «a oscuras · ~25 °C», «días 0 → 15», «cosecha: 19 días» / «26 días», «eficiencia biológica 85 % · Hidalgo, 2026», «~5 % de semilla», subtítulos | pantalla | ✅ | López-López 2026 (filas 2–13, 22–25) | — | 2026 |
+| «mal desgranado: fermenta», «setas enormes», «+ cal de nixtamal», subtítulo «Con granos, fermentan.» | pantalla | ✅ | `maestro/recetas/correcciones-de-robert.md` | «fermentan si no están bien desgranados; los que funcionaron dieron setas enormes. Cal de nixtamal.» | — |
+| «sustrato agotado → composta / alimento animal» | pantalla | ✅ | Grimm y Wösten 2018 (fila 28) | — | 2018 |
+| LinkedIn: «el proyecto "De basura a comida" cultiva hongos comestibles sobre residuos como coco y olote» | publicación | ✅ | `maestro/recetas/correcciones-de-robert.md`; `series/shot-robert/datos.md` | «Proyecto completo: "De basura a comida: los hongos, héroes que combaten el hambre y la pobreza"; hongos comestibles sobre residuos **como** coco y olote.» | — |
+| Ficha UF/IFAS: decía «Cultivation of oyster mushrooms» | publicación (YouTube y comentario fijado) | ❌ → **corregido** | https://edis.ifas.ufl.edu/publication/SS662 (PDF abierto) | El título real es «D.I.Y. FunGuide: Grow Your Own Oyster Mushrooms at Home» (Liao, Hsu, Hameed y Cotter; SL448; «Original publication date January 2018. Revised April 2025.») | 2018 / 2025 |
+| Referencias Knop 2015 (99: 1025–1038), Sánchez 2010 (85: 1321–1337), Grimm y Wösten 2018 (102: 7795–7803), López-López 2026 (16(3): 373–379, DOI) | publicación | ✅ | registros abiertos arriba | — | — |
+| Resto de datos de publicación: 850 g por kilo de olote seco (hasta), EB 85 % contra 65 %, 19 contra 26 días «desde la siembra», remojo, 1 h a 70 °C, «no necesita esterilización, solo pasteurización, que es más barata», granos de trigo, ~5 % del peso húmedo, ~25 °C, colonización «en unos 15 días», lacasas y peroxidasas, hifas tabicadas, 12 h de luz, 85–90 %, 18–22 °C, primordios en los cortes, racimos en repisa con sombrero en abanico y pie corto de lado, composta y alimento animal | publicación | ✅ | filas 2–28 | — | — |
+
+**Cambio aplicado (mínimo):** en `publicacion.md`, las 2 apariciones de «UF/IFAS EDIS SL448 (2018). Cultivation of oyster mushrooms.» pasan a «Liao, H.-L. et al. (2018, rev. 2025). D.I.Y. FunGuide: Grow Your Own Oyster Mushrooms at Home. UF/IFAS EDIS SL448.» No hubo que cambiar nada en `olote.jsx`.
+
 VEREDICTO: APROBADO
