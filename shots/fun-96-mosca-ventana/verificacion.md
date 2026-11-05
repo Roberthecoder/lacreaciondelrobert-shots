@@ -43,4 +43,10 @@ Fuentes abiertas:
 
 Re-verificación (5 nov 2026): se releyó `narracion.json` completo con los cambios; las 22 afirmaciones quedan ✅.
 
+## Fase 2 · textos en pantalla y publicación (5 nov 2026, cotejados contra la tabla de arriba)
+Todo texto en pantalla sale de una fila ya ✅: "murió de vieja" (tachado) / "la mató un hongo" / "bandas del hongo" (1, 14); "*Entomophthora muscae*", "hongo que mata moscas", "mosca casera · *Musca domestica*", "mosca de la fruta · *Drosophila*" (2); "espora (conidio)", "capa pegajosa", "cutícula (su cubierta)", "hemolinfa (su sangre)" (3); "células del hongo", "grasa (se acaba)", "día 1 → día 2", "sistema nervioso" (4, 5); "día 4 a 7", "antes del atardecer" (6, 7); pasos "estira la trompa · se pega · levanta las alas" (8, 22); tarjeta "2023 · Harvard · Elya y de Bivort · eLife" (9); "neuronas del reloj (DN1p)" (10); gráfica "cuánto se mueve (esquema)", "−2.5 h", "muere", chip "empieza ~2.5 h antes de morir" (11); "transfusión de hemolinfa", "la que sube", "con su hemolinfa", "control", "caminó más" (13); "conidióforos (bandas blancas)", "≈ 10 m/s", "50 µm · esquemático" (14, 15, 16); "halo de esporas en el vidrio" (17); tarjeta "2022 · Univ. de Copenhague · Naundrup y De Fine Licht · ISME J.", "hembra muerta", "olor", "73 % de los machos se infectaron (cadáveres de 25–30 h)" (18–20); "la hora", "el lugar", "la pose" (21). Barras "esquemático" en las demás escenas.
+Dibujo: conidios en forma de campana ("campanulate", [E18]); bandas blancas entre los segmentos del abdomen; alas levantadas ~85° de perfil y abiertas vistas desde arriba; trompa pegada al vidrio.
+`publicacion.md` solo usa datos de las filas 1–22 y de las frases textuales citadas en ellas (p. ej. ~80 % muere en 4–7 días, ~92 % levanta las alas, "mechanical and enzymatic force", "neurosecretory systems", 37 %/44 % "modesto", 73.3 % vs 15.4 %, compuestos volátiles). No se añadió ningún dato nuevo.
+Duración: `estimar-escenas.mjs` da 61.9 s con la voz aprobada; no hizo falta recortar.
+
 VEREDICTO: APROBADO

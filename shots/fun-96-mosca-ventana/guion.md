@@ -11,28 +11,44 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Esa mosca en tu ventana no murió de vieja: la mató un hongo que le cambió la conducta. | Fondo cian (cielo tras el vidrio): marco de ventana; una mosca casera pegada al vidrio, alas levantadas en "V", trompa estirada tocando el vidrio. Cuadro 0.3: la cámara se acerca; tarjeta "murió de vieja" que se tacha; aparece "un hongo" con flecha a la panza con bandas blancas. |
-| 1 | Nombre | Es *Entomophthora muscae*, y ataca moscas como la casera y la de la fruta. | Etiqueta "*Entomophthora muscae* · hongo mata-moscas"; entran dos fichas: "mosca casera · *Musca domestica*" y "mosca de la fruta · *Drosophila*" (más chica). |
-| 2 | Espora | Una espora pegajosa le cae, perfora su cubierta y entra. | Zoom a la espalda de una mosca sana: cae una espora con su gotita pegajosa, germina y un tubito atraviesa la cutícula (corte esquemático). Chip "espora pegajosa". |
-| 3 | Adentro | Se la come por dentro, y en dos días llega a su sistema nervioso. | **Por dentro** (fondo oscuro): células del hongo se multiplican en la hemolinfa y en la grasa; contador "día 1 → día 2"; brillan los ganglios/cerebro de la mosca. Chip "POR DENTRO · esquemático". |
-| 4 | Subida | Días después, antes del atardecer, la mosca se agita y sube. | Regreso afuera: el cielo de la ventana pasa de cian a naranja (sol bajando); contador "día 4–7"; la mosca camina inquieta y sube por el vidrio (flecha hacia arriba). |
-| 5 | Pose | Estira la trompa, se pega, levanta las alas… y muere. | Tres pasos rápidos numerados: 1 trompa al vidrio (gotita), 2 alas que suben en saltitos, 3 la mosca queda quieta. |
-| 6 | Pregunta | ¿Cómo le dice un hongo a una mosca cuándo moverse? | **Re-gancho.** "?" gigante sobre la mosca; un reloj y una seta pequeñita con signos de pregunta; Robert grande, pensativo. |
-| 7 | Estudio | En 2023, en Harvard, vieron que esa subida necesita neuronas del reloj de la mosca. | `TarjetaEstudio` "2023 · Harvard · Elya y de Bivort · *eLife*"; cerebro de mosca esquemático con un grupito de neuronas del reloj que se enciende; gráfica de actividad con una subida que empieza "~2.5 h antes de morir". |
-| 8 | Sangre | Algo en su sangre parece provocarla: pasada a otras moscas, las hizo caminar más. | Jeringa esquemática que pasa hemolinfa de una mosca "subiendo" a otra; la receptora deja un rastro de pasos más largo que la control. Chip "transfusión de hemolinfa". |
-| 9 | Bandas | Ya muerta, el hongo sale en bandas blancas y dispara esporas a unos diez metros por segundo. | Al microscopio: entre los anillos del abdomen salen bandas blancas (conidióforos en racimo); una espora sale disparada; medidor "≈ 10 m/s". Barra de escala "50 µm · esquemático". |
-| 10 | Halo | Por eso a veces ves un halo blanco alrededor. | Regreso a la ventana: lluvia de puntitos blancos que forman un círculo alrededor de la mosca en el vidrio. |
-| 11 | Machos | En 2022, en Copenhague, vieron que su olor atrae machos a aparearse con hembras muertas… y muchos se contagian. | `TarjetaEstudio` "2022 · Univ. de Copenhague · Naundrup y De Fine Licht · *ISME J.*"; ondas de olor salen del cadáver de una hembra; un macho sano llega; chip "73 % de los machos se infectaron (cadáveres de 25–30 h)". |
-| 12 | Cierre | Esa mosca no murió de vieja: murió a la hora, en el lugar y en la pose que le marcó un hongo. | **Regreso a la imagen del inicio**: la misma ventana y la misma mosca, ahora con el cielo de atardecer, la panza con bandas, el halo blanco en el vidrio y tres chips: "hora", "lugar", "pose". |
+| 0 | Gancho | Esa mosca en tu ventana no murió de vieja: la mató un hongo que le cambió la conducta. | Fondo cian: marco de ventana con cielo; la mosca casera, vista desde arriba, pegada al vidrio con las alas levantadas y abiertas, la panza con bandas blancas y un halo de puntitos blancos alrededor. Cuadro 0: la cámara se acerca y una mosca viva cruza volando (zumbido). Tarjeta "murió de vieja" que se tacha → chip "la mató un hongo"; etiqueta "bandas del hongo". |
+| 1 | Nombre | Es *Entomophthora muscae*, y ataca moscas como la casera y la de la fruta. | Cajas: "*Entomophthora muscae*", "hongo que mata moscas", "mosca casera · *Musca domestica*" y "mosca de la fruta · *Drosophila*". |
+| 2 | Espora | Una espora pegajosa le cae, perfora su cubierta y entra. | **Al microscopio** (fondo oscuro, chip "AL MICROSCOPIO · esquemático"): corte de la cubierta; cae un conidio en forma de campana con su capa pegajosa, un tubito atraviesa la cutícula y sale una célula en la hemolinfa. Etiquetas "espora (conidio)", "capa pegajosa", "cutícula (su cubierta)", "hemolinfa (su sangre)". |
+| 3 | Adentro | Se la come por dentro, y en dos días llega a su sistema nervioso. | **Por dentro** (fondo oscuro): la mosca de perfil en silueta; células del hongo que se multiplican, gotas de grasa que se encogen; "día 1 → día 2" y brillan cerebro y cordón nervioso. Etiquetas "células del hongo", "grasa (se acaba)", "sistema nervioso". |
+| 4 | Subida | Días después, antes del atardecer, la mosca se agita y sube. | La ventana: el cielo pasa a atardecer y el sol baja; la mosca camina inquieta y sube por el vidrio (rastro punteado y flecha). Chips "día 4 a 7" y "antes del atardecer". |
+| 5 | Pose | Estira la trompa, se pega, levanta las alas… y muere. | De perfil sobre el vidrio (fondo menta): pasos numerados 1 "estira la trompa" (baja y toca), 2 "se pega" (gotita), 3 "levanta las alas" (sube en saltitos hasta ~85°) y queda quieta. |
+| 6 | Pregunta | ¿Cómo le dice un hongo a una mosca cuándo moverse? | **Re-gancho.** "?" gigante, un reloj que gira y una mosca chiquita; Robert grande, pensativo. |
+| 7 | Estudio | En 2023, en Harvard, vieron que esa subida necesita neuronas del reloj de la mosca. | `TarjetaEstudio` "2023 · Harvard · Elya y de Bivort · eLife"; cerebro de mosca esquemático con 4 neuronas que brillan ("neuronas del reloj (DN1p)"); gráfica "cuánto se mueve (esquema)" plana que empieza a subir en "−2.5 h" hasta "muere"; chip "empieza ~2.5 h antes de morir". |
+| 8 | Sangre | Algo en su sangre parece provocarla: pasada a otras moscas, las hizo caminar más. | Fondo amarillo: "la que sube" y una jeringa esquemática que pasa su hemolinfa; dos pistas: "con su hemolinfa" (llega más lejos, "caminó más") y "control". Chip "transfusión de hemolinfa". |
+| 9 | Bandas | Ya muerta, el hongo sale en bandas blancas y dispara esporas a unos diez metros por segundo. | **Al microscopio**: segmentos del abdomen; entre ellos salen racimos de conidióforos blancos (mazos) con un conidio de campana encima; los conidios salen disparados con estela; chip "≈ 10 m/s"; etiqueta "conidióforos (bandas blancas)"; barra "50 µm · esquemático". |
+| 10 | Halo | Por eso a veces ves un halo blanco alrededor. | La ventana al atardecer: puntitos blancos salen de la mosca y se acumulan en un círculo en el vidrio; etiqueta "halo de esporas en el vidrio". |
+| 11 | Machos | En 2022, en Copenhague, vieron que su olor atrae machos a aparearse con hembras muertas… y muchos se contagian. | `TarjetaEstudio` "2022 · Univ. de Copenhague · Naundrup y De Fine Licht · ISME J."; de perfil, "hembra muerta" con bandas y alas arriba; ondas de "olor"; un macho llega volando y se le sube. Caja "73 % de los machos se infectaron (cadáveres de 25–30 h)". |
+| 12 | Cierre | Esa mosca no murió de vieja: murió a la hora, en el lugar y en la pose que le marcó un hongo. | **Regreso a la imagen del inicio**: la misma ventana y la misma mosca, ahora al atardecer, con sus bandas y el halo; chips "la hora", "el lugar", "la pose". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave continua (zumbido bajo, cuerdas tenues), sin golpe marcado, que se oscurece al bajar al interior y se calienta con el atardecer; efectos en el mismo cuadro: zumbido de mosca, tachón de la tarjeta, gotita de la espora, crujido al perforar, pulsos al multiplicarse las células, tic-tac del reloj, pasos al subir, "plic" de la trompa pegándose, saltitos de alas, inyección, disparo seco de espora, lluvia suave del halo, onda de olor.
+**Música:** cama grave continua, sin golpe marcado, con un acorde por sección en la menor (i → VI → iv → V → V → III → VII → i → VI → iv → V → i; más ahogada por dentro) y un motivo de 4 notas (la–do–si–mi) en el gancho, más grave en el re-gancho y completo al cierre; efectos en el mismo cuadro: zumbido de mosca, tachón de la tarjeta, gotita de la espora, crujido al perforar, pulsos al multiplicarse las células, tic-tac del reloj, pasos al subir, "plic" de la trompa pegándose, saltitos de alas, inyección, disparo seco de espora, lluvia suave del halo, onda de olor.
 
-Barras de escala: «esquemático» en todas las escenas; «50 µm» en las bandas al microscopio (escala del video de conidióforos de Elya 2018). No se dice ningún tamaño en la voz.
+Barras de escala: «esquemático» en todas las escenas (160 px); «50 µm · esquemático» (100 px) en las bandas al microscopio (escala del video de conidióforos de Elya 2018; conidio dibujado de ~28 px ≈ 14 µm de radio, esquemático). Conidios en forma de campana ("campanulate", Elya 2018), no redondos. No se dice ningún tamaño en la voz.
 
 ## Robert en pantalla
 
-(Se escribe en la fase 2.)
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Cómo le dice un hongo a una mosca cuándo moverse?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 4.6 | 11_sorprendido | `gancho` | «no murió de vieja: la mató un hongo» (cuadro 0) |
+| 2 | 5.7 | 9.3 | 12_perfil_serio | `arriba-der` | el nombre: *Entomophthora muscae* |
+| 3 | 13.7 | 16.9 | 06_pensativo_menton | `arriba-der` | «se la come por dentro… sistema nervioso» |
+| 4 | 21.2 | 24.0 | 10_serio_molesto | `arriba-der` | «levanta las alas… y muere» |
+| 5 | 24.2 | 27.8 | 07_pensativo_puno | `grande` | «¿cómo le dice un hongo a una mosca cuándo moverse?» |
+| 6 | 30.1 | 32.4 | 04_bajando_lentes | `arriba-der` | el estudio de Harvard 2023 (neuronas del reloj) |
+| 7 | 33.6 | 37.4 | 11_sorprendido | `arriba-der` | «algo en su sangre… las hizo caminar más» |
+| 8 | 39.6 | 43.0 | 13_senalando_arriba | `arriba-der` | «dispara esporas a unos diez metros por segundo» |
+| 9 | 48.6 | 52.6 | 11_sorprendido | `arriba-der` | «atrae machos a aparearse con hembras muertas» |
+| 10 | 53.2 | 58.3 | 02_apuntando_camara | `arriba-der` | «murió a la hora, en el lugar y en la pose…» |
+| — | 58.4 | 61.9 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 10 · **36.4 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · nunca tapa subtítulo, datos ni etiquetas.
 
 ## Fuentes (abiertas el 5 nov 2026)
 
