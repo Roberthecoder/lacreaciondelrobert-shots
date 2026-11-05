@@ -360,7 +360,7 @@ function RecalentarShot() {
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ab - 0.1} texto="No son veneno: *el peligro es lo tibio.*" />
       <Subtitulo T={T} idx={1} at={K.Ab + 0.1} until={K.Or - 0.1} texto="«Los hongos *no se recalientan*»" />
-      <Subtitulo T={T} idx={2} at={K.Or + 0.1} until={K.Bq - 0.1} texto="Viene de cuando *no había refri.*" />
+      <Subtitulo T={T} idx={2} at={K.Or + 0.1} until={K.Bq - 0.1} texto="Probablemente, de cuando *no había refri.*" />
       <Subtitulo T={T} idx={3} at={K.Bq + 0.1} until={K.Tb - 0.1} texto="Mucha agua: *caldo para bacterias.*" />
       <Subtitulo T={T} idx={4} at={K.Tb + 0.1} until={K.P - 0.1} texto="Horas tibio: *se multiplican.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.To - 0.1} texto="¿Y si lo *recalientas fuerte?*" />

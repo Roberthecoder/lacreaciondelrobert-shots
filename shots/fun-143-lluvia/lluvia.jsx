@@ -179,9 +179,9 @@ function LluviaShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           {(() => { const cr = klerp(0.42, 1, kprog(T, K.E + 3.8, K.Es + 4.6, kEase.suave)); return <g>
-            <Campestris x={360} y={1230} s={2.2} crece={cr} abre={klerp(0.1, 0.9, kprog(T, K.Es + 1, K.Es + 5))} mad={0.1} puntos={T > K.E + 1.6 ? PUNTOS.slice(0, Math.min(6, Math.floor((T - K.E - 1.6) / 0.25) + 1)) : null} />
+            <Campestris x={320} y={1230} s={1.95} crece={cr} abre={klerp(0.1, 0.9, kprog(T, K.Es + 1, K.Es + 5))} mad={0.1} puntos={T > K.E + 1.6 ? PUNTOS.slice(0, Math.min(6, Math.floor((T - K.E - 1.6) / 0.25) + 1)) : null} />
             {/* regla */}
-            <g transform="translate(560 1230)">
+            <g transform="translate(720 1230)">
               <rect x={0} y={-360} width={60} height={360} fill="#fff3c4" stroke={KC.ink} strokeWidth={5} />
               {Array.from({ length: 13 }, (_, i) => <line key={i} x1={0} y1={-i * 28} x2={i % 2 ? 22 : 38} y2={-i * 28} stroke={KC.ink} strokeWidth={4} />)}
             </g>
@@ -193,8 +193,8 @@ function LluviaShot() {
         <SueloCorte T={T} red={1} brillo={0.7}>
           <Campestris x={330} y={SUP + 6} s={1.6} crece={1} abre={0.9} mad={0.2} />
           <Pasto T={T} alto={50} />
-          <Flujo T={T} pts={[[90, 1650], [220, 1420], [330, 1200], [330, 1000]]} color={LL.agua} n={7} vel={0.5} r={13} />
-          <Flujo T={T} pts={[[640, 1700], [460, 1430], [338, 1200], [338, 1000]]} color={LL.alimento} n={6} vel={0.45} r={13} fase={0.4} />
+          <Flujo T={T} pts={[[90, 1650], [220, 1420], [330, 1200], [330, 1000]]} color={LL.agua} n={7} vel={0.5} r={18} />
+          <Flujo T={T} pts={[[640, 1700], [460, 1430], [338, 1200], [338, 1000]]} color={LL.alimento} n={6} vel={0.45} r={18} fase={0.4} />
         </SueloCorte>
       </Escena>
       {/* 12 · un hongo tinta: el estirón más rápido, unas cinco horas */}
@@ -224,7 +224,7 @@ function LluviaShot() {
       <Etq T={T} at={K.Sp + 1.6} until={K.F - 0.2} x={560} y={1020} texto="maduro: café oscuro" tam={26} color={KC.ink} />
       <Etq T={T} at={K.Sp + 2.0} until={K.F - 0.2} x={60} y={1500} texto="No comas hongos silvestres sin un experto: hay parecidos venenosos." tam={22} color={KC.texto} />
       <Chip T={T} at={K.F + 0.6} until={K.Mi - 0.2} texto="esto es el fruto" x={380} y={560} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.Mi + 0.4} until={K.P - 0.2} x={60} y={1290} texto="micelio (hifas)" tam={34} color="#eafff7" />
+      <Etq T={T} at={K.Mi + 0.4} until={K.P - 0.2} x={60} y={1460} texto="micelio (hifas)" tam={34} color="#eafff7" />
       <Chip T={T} at={K.Mi + 1.0} until={K.P - 0.2} texto="la mayor parte del hongo" x={380} y={560} tam={38} borde={KC.mint} />
       <Chip T={T} at={K.Mi + 2.6} until={K.P - 0.2} texto="todo el año, comiendo" x={380} y={650} tam={34} borde={KC.gold} />
       <Chip T={T} at={K.B + 0.4} until={K.I - 0.2} texto="primordio: el botón" x={380} y={560} tam={40} borde={KC.mint} />
@@ -234,13 +234,13 @@ function LluviaShot() {
       <NumeroGigante T={T} at={K.A + 0.4} until={K.E - 0.3} valor={80} dur={1.6} sufijo=" %" etiqueta="agua: más de" x={330} y={560} tam={150} color={LL.agua} />
       <Etq T={T} at={K.A + 1.0} until={K.E - 0.3} x={60} y={1450} texto="Agaricus campestris" it tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.6} anio="1956" quien="Bonner, Kane y Levey" revista="Mycologia · «el champiñón común», como se le llamaba" x={500} y={560} />
-      <Etq T={T} at={K.E + 1.8} until={K.Es - 0.2} x={630} y={1050} texto="puntitos de carmín" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Es + 0.5} until={K.Al - 0.2} texto="desde ~2 cm: casi sin células nuevas" x={420} y={470} tam={32} borde={KC.gold} />
+      <Etq T={T} at={K.E + 1.8} until={K.Es - 0.2} x={520} y={1000} texto="puntitos de carmín" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Es + 0.5} until={K.Al - 0.2} texto="desde ~2 cm: casi sin células nuevas" x={360} y={470} tam={30} borde={KC.gold} />
       <Etq T={T} at={K.Es + 1.0} until={K.Al - 0.2} x={60} y={540} texto="(probablemente; al menos en el pie)" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Es + 2.4} until={K.Al - 0.2} texto="sobre todo se estiraron" x={380} y={640} tam={36} borde={KC.mint} />
       <Etq T={T} at={K.Al + 0.3} until={K.Ti - 0.2} x={480} y={1560} texto="agua" tam={32} color={LL.agua} />
       <Etq T={T} at={K.Al + 0.8} until={K.Ti - 0.2} x={680} y={1650} texto="alimento" tam={32} color={LL.alimento} />
-      <Chip T={T} at={K.Al + 1.2} until={K.Ti - 0.2} texto="no solo agua: también alimento" x={420} y={560} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.Al + 1.2} until={K.Ti - 0.2} texto="no solo agua: también alimento" x={360} y={560} tam={30} borde={KC.gold} />
       <Etq T={T} at={K.Ti + 0.3} until={K.C - 0.2} x={60} y={430} texto="un hongo tinta" tam={40} color={KC.ink} />
       <Etq T={T} at={K.Ti + 0.7} until={K.C - 0.2} x={60} y={490} texto="Coprinopsis cinerea" it tam={38} color={KC.ink} />
       <Cronometro T={T} at={K.Ti + 0.5} until={K.Ti + 4.8} factor={18000 / 4.3} x={760} y={1080} etiqueta="ESTIRÓN MÁS RÁPIDO" />

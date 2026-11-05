@@ -44,4 +44,11 @@ Fuentes abiertas: consumer.bz.it (2019), Verbraucherzentrale Bremen (Stand 22.11
 
 Voz: 173 → **165 palabras** (947 caracteres).
 
-Pendiente: re-verificación de las frases corregidas (#4, #8b, #13) por el coordinador.
+## Re-verificación de lo corregido (coordinador del lote, no escribió el guion; 5 nov 2026)
+- #4 «Tienen mucha agua: un caldo perfecto para las bacterias.» ✅ Verbraucherzentrale Bremen (2025): «Da Pilze einen hohen Wassergehalt … enthalten, sind sie der optimale Lebensraum für viele Bakterien und Schimmelarten.» Ya no dice «mucha proteína». «Caldo perfecto» es la metáfora de «optimale Lebensraum».
+- #8b «No siempre: la toxina del vómito de *Bacillus cereus*, típica del arroz, aguanta 121 grados por media hora.» ✅ FDA Bad Bug Book (2.ª ed., 2012): «The non-antigenic peptide is stable after heating at 121°C for 30 minutes»; asociada al arroz. Se presenta como ejemplo del arroz, no de los hongos. Es una propiedad de la molécula, no un conteo que envejezca; el año va en la tarjeta.
+- #13 «Recaliéntalos a 74 grados por dentro, dice la FDA; y una sola vez, aconsejan en Alemania.» ✅ FDA Safe Food Handling (2024): «Leftovers and Casseroles 165 °F» (= 73.9 °C); Verbraucherzentrale Bremen (2025): «Bitte das Gericht nicht mehr als einmal aufwärmen.» Atribuciones separadas.
+
+Todas las afirmaciones del texto final: ✅.
+
+VEREDICTO: APROBADO

@@ -293,7 +293,7 @@ function LavarShot() {
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 3.6} anio="2018" quien="America's Test Kitchen (EE. UU.)" revista="prueba publicada en 2018" x={540} y={620} />
       <Chip T={T} at={K.E + 3.6} until={K.Ce - 0.3} texto="pesar · 1 min en agua · pesar" x={540} y={520} tam={38} borde={KC.ink} />
       <Cronometro T={T} at={K.E + 3.8} until={K.Ce - 0.3} factor={33} x={540} y={680} etiqueta="SUMERGIDOS" />
-      <Etq T={T} at={K.E + 4.4} until={K.Ce - 0.3} x={670} y={960} texto="6 tipos de hongos" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.E + 4.4} until={K.Ce - 0.3} x={40} y={1025} texto="6 tipos de hongos" tam={28} color={KC.texto} />
       <Chip T={T} at={K.Ce + 0.3} until={K.Ex - 0.3} texto="laminillas tapadas" x={330} y={470} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Ce + 0.8} until={K.Ex - 0.3} x={60} y={590} texto="champiñón blanco" tam={32} color={KC.texto} />
       <Etq T={T} at={K.Ce + 1.1} until={K.Ex - 0.3} x={60} y={640} texto="Agaricus bisporus" it tam={32} color={KC.texto} />
