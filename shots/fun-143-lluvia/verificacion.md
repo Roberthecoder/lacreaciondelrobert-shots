@@ -56,5 +56,7 @@ Wan 2025: "more than 90% water"). La voz dice «más de ochenta por ciento agua�
 | 8 (para separar del #7) | «Luego casi no hace células nuevas: infla las que ya tenía, llenándolas de agua.» | «Luego el botón se infla: sus células se llenan de agua y se estiran.» |
 | 9 | «Por eso un champiñón es más del noventa por ciento agua.» · barra «más de 90 % agua» | «Un champiñón de campo es más de ochenta por ciento agua.» · barra «más de 80 % agua · *A. campestris*» (sin «por eso») |
 | 13 | TarjetaEstudio sin aclarar la especie | TarjetaEstudio: «1956 · Bonner, Kane y Levey · *Mycologia*» + «"el champiñón común", como se le llamaba entonces». No se dibujan setas de campo en el estudio ni se dice en `publicacion.md` que fueran silvestres |
-| 14 / 27 | «Desde unos dos centímetros, el pie casi no sumaba células: solo se estiraban.» · chip «desde ~18 mm: casi sin células nuevas en el pie» | «Desde unos dos centímetros, el pie probablemente casi no sumó células: sobre todo se estiraron.» · chip «probablemente: casi sin células nuevas en el pie» |
+| 14 / 27 | «Desde unos dos centímetros, el pie casi no sumaba células: solo se estiraban.» · chip «desde ~18 mm: casi sin células nuevas en el pie» | «Desde unos dos centímetros, el pie probablemente casi no sumó células: sobre todo se estiraron.» · chips «desde ~2 cm: casi sin células nuevas» + «(probablemente; al menos en el pie)» y «sobre todo se estiraron» |
 | 16 | «En el hongo tinta, *Coprinopsis cinerea*, …» | «En un hongo tinta, *Coprinopsis cinerea*, el estirón más rápido dura unas cinco horas.» · etiqueta «un hongo tinta» |
+
+**Pendiente:** ronda 2 del verificador sobre las frases cambiadas (#5, #7, #8, #9, #13, #14, #16 y la fuente nueva del agua). Este archivo todavía no lleva el veredicto final.

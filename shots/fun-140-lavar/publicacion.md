@@ -11,7 +11,7 @@ MITO: "no laves los hongos, se empapan".
 En 2018, America's Test Kitchen publicó una prueba: pesó champiñón blanco, cremini, portobello, shiitake, setas y maitake antes y después de tenerlos un minuto sumergidos en agua. Los que tienen las laminillas tapadas, como el champiñón blanco, casi no retuvieron agua. Los de laminillas expuestas, como el portobello o el shiitake, absorbieron hasta un 25 % de su peso.
 ¿Por qué el champiñón repele el agua? Su piel está forrada de hidrofobina, una proteína que forma una capa de varillitas que ayuda a rechazar el agua (en el champiñón, Agaricus bisporus, es probablemente la responsable de que su superficie repela el agua).
 Además, según el USDA, casi el 92 % del champiñón ya es agua (91.8 g por cada 100 g).
-Lo que de verdad arruina el dorado es el agua en la sartén: hasta que se evapora, la comida no pasa de 100 °C y no se dora.
+Lo que frena el dorado es el agua en la sartén: mientras no se evapora, el hongo no pasa de 100 °C y no se dora.
 La esponja sí existe, pero de aceite: crudo, sus bolsitas de aire se lo chupan. Y ya rebanado, su carne sí absorbe agua como esponja: lávalo entero, antes de partirlo.
 Si trae tierrita, enjuágalo entero bajo el chorro, sin jabón, y sécalo con un trapo limpio (es el consejo general de la FDA para frutas y verduras). Y si viene limpio, ni falta hace: la mayoría de los hongos cultivados casi no necesita lavarse.
 El dibujo es esquemático.
@@ -26,7 +26,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese champiñón no es una esponja: un minuto bajo el agua y casi no la absorbe. 🍄💧
 MITO: "no los laves, se empapan". En una prueba publicada en 2018 por America's Test Kitchen, los hongos con laminillas tapadas, como el champiñón blanco, casi no retuvieron agua tras un minuto sumergidos; los de laminillas expuestas, como el portobello o el shiitake, hasta 25 % de su peso.
-Su piel tiene hidrofobina, una proteína que ayuda a rechazar el agua. Lo que arruina el dorado es el agua en la sartén, y ya rebanado sí absorbe: lávalo entero, bajo el chorro, sin jabón, y sécalo.
+Su piel tiene hidrofobina, una proteína que ayuda a rechazar el agua. Lo que frena el dorado es el agua en la sartén, y ya rebanado sí absorbe: lávalo entero, bajo el chorro, sin jabón, y sécalo.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Tú lavas tus champiñones o los limpias con trapito? 👇
 Shot Fungi Mati 140 · La Creación del Robert
@@ -45,8 +45,8 @@ Ese champiñón no es una esponja: un minuto bajo el agua y casi no la absorbe.
 Mito: "no laves los hongos porque se empapan". En 2018, America's Test Kitchen publicó una prueba: pesó lotes de champiñón blanco, cremini, portobello, shiitake, setas y maitake antes y después de sumergirlos un minuto en agua. Los hongos sin laminillas expuestas, como el champiñón blanco (Agaricus bisporus), casi no retuvieron agua; los de laminillas expuestas, como el portobello o el shiitake, absorbieron hasta 25 % de su peso.
 ¿Por qué el champiñón repele el agua? La superficie de su cuerpo fructífero está cubierta de hidrofobina (ABH1), una proteína que se arma en una capa de varillitas que repele el agua; un estudio de 1996 propone que probablemente es la responsable de que esa superficie sea hidrofóbica.
 Además, según el USDA, casi el 92 % del champiñón ya es agua: 91.8 g por cada 100 g.
-Lo que arruina el dorado es el agua en la sartén: mientras hay agua, la comida no pasa de 100 °C, y el dorado empieza hasta que ese jugo se evapora. La esponja sí existe, pero de aceite: crudo, el champiñón tiene bolsitas de aire que se llenan de aceite. Y ya rebanado, su carne expuesta sí absorbe agua como esponja, así que lávalo antes de partirlo.
-Consejo práctico: si trae tierra, enjuágalo entero bajo el chorro, sin jabón, y sécalo con un trapo limpio (consejo general de la FDA para frutas y verduras). Si viene limpio, la mayoría de los hongos cultivados casi no necesita lavarse.
+Lo que frena el dorado es el agua en la sartén: mientras hay agua, el hongo no pasa de 100 °C, y el dorado empieza hasta que ese jugo se evapora. La esponja sí existe, pero de aceite: crudo, el champiñón tiene bolsitas de aire que se llenan de aceite. Y ya rebanado, su carne expuesta sí absorbe agua como esponja, así que lávalo antes de partirlo.
+Consejo práctico: si trae tierra, enjuágalo entero bajo el chorro, sin jabón, y sécalo con un trapo limpio (consejo general de la FDA para frutas y verduras). Si viene limpio, la mayoría de los hongos cultivados casi no necesita lavarse. Y a los de laminillas expuestas, como el portobello o el shiitake, mejor no los remojes: esos sí absorben.
 El dibujo es esquemático.
 Fuentes:
 - America's Test Kitchen (2018). Should You Wash Mushrooms? https://www.americastestkitchen.com/how_tos/11827-should-you-wash-mushrooms
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Ese champiñón no es una esponja: un minuto bajo el agua y casi no la absorbe. 🍄💧
-En una prueba publicada en 2018, el champiñón blanco casi no retuvo agua; los hongos de laminillas expuestas, hasta 25 % de su peso. Lo que arruina el dorado es el agua en la sartén. Enjuágalo entero, sin jabón, y sécalo.
+En una prueba publicada en 2018, el champiñón blanco casi no retuvo agua; los hongos de laminillas expuestas, hasta 25 % de su peso. Lo que frena el dorado es el agua en la sartén. Enjuágalo entero, sin jabón, y sécalo.
 ¿Tú lavas tus champiñones o los limpias con trapito? 👇
 Shot Fungi Mati 140 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -91,7 +91,7 @@ Ese champiñón no es una esponja: un minuto bajo el agua y casi no la absorbe �
 ### Threads
 ```text
 Ese champiñón no es una esponja: un minuto bajo el agua y casi no la absorbe. 🍄💧
-En una prueba publicada en 2018, el champiñón blanco casi no retuvo agua; el portobello o el shiitake, hasta 25 % de su peso. Su piel tiene hidrofobina, que ayuda a rechazar el agua. Lo que arruina el dorado es el agua en la sartén.
+En una prueba publicada en 2018, el champiñón blanco casi no retuvo agua; los de laminillas expuestas, como el portobello o el shiitake, hasta 25 % de su peso. Su piel tiene hidrofobina, que ayuda a rechazar el agua. Lo que frena el dorado es el agua en la sartén.
 ¿Tú lavas tus champiñones o los limpias con trapito?
 Soy Robert, de La Creación del Robert 🌱
 #FungiMati

@@ -311,7 +311,7 @@ function LavarShot() {
       <Chip T={T} at={K.H + 4.2} until={K.L - 0.3} texto="la gota no moja" x={840} y={590} tam={36} borde={KC.cyan} />
       <NumeroGigante T={T} at={K.L + 0.4} until={K.S - 0.3} valor={92} dur={2.2} prefijo="≈ " sufijo=" %" etiqueta="del champiñón es agua" x={400} y={480} tam={130} color={KC.cyan} />
       <Chip T={T} at={K.L + 2.4} until={K.S - 0.3} texto="USDA: 91.8 g por cada 100 g (2021)" x={540} y={650} tam={30} borde={KC.ink} mono />
-      <Chip T={T} at={K.S + 0.3} until={K.S + 3.6} texto="con agua: se queda en 100 °C" x={420} y={520} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.S + 0.3} until={K.S + 3.6} texto="con agua: el hongo se queda en 100 °C" x={420} y={520} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.S + 3.8} until={K.A - 0.3} texto="sin agua: sube y se dora" x={420} y={520} tam={36} borde={LV.dorado} />
       <Chip T={T} at={K.A + 0.2} until={K.R - 0.3} texto="POR DENTRO · CARNE CRUDA" x={330} y={430} tam={30} borde={KC.ink} mono />
       <Etq T={T} at={K.A + 1.0} until={K.R - 0.3} x={600} y={880} texto="bolsitas de aire" tam={30} color={KC.texto} />

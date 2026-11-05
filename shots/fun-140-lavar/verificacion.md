@@ -51,4 +51,16 @@ Otros cambios hechos al construir la animación (para la ronda 2):
 
 ## Ronda 2
 
-Pendiente (la hace el coordinador con otro verificador sobre lo cambiado).
+Segundo verificador independiente (no escribió el guion), sobre todo lo cambiado o nuevo: 11 ✅ · 1 ⚠️ · 0 ❌. Fuentes abiertas: ATK how_tos/11827 (publishDate 2018-12-01; seis tipos: blanco, cremini, portobello, shiitake, seta ostra, maitake), Lugones et al. 1996 *Microbiology* 142:1321–1329 (*A. bisporus*: "forms hydrophobic rodlet layers"; "probably solely responsible for the hydrophobicity of the fruiting-body surface"), USDA FDC 1999629 (91.83 g de agua/100 g, 28 oct 2021), ATK 1196 ("eliminate moisture so that food can rise above 212 degrees"), FDA 2021 (consejo general para frutas y verduras).
+
+| # | Afirmación | Veredicto | Corrección aplicada |
+|---|---|---|---|
+| 5 | «Lo que arruina el dorado es el agua en la sartén: hasta que se evapora, no pasa de cien grados.» | ⚠️ (no dice qué no pasa de 100 °C; "arruina" exagera: ATK dice "thwarts browning and prolongs their cooking time") | Voz: «Lo que frena el dorado es el agua en la sartén: mientras no se evapora, el hongo no pasa de cien grados.» Chip: «con agua: el hongo se queda en 100 °C». publicacion.md igual. |
+
+Notas aplicadas: el 25 % es el máximo del grupo de laminillas expuestas (no se le atribuye a una sola variedad); «6 tipos», no «6 especies»; en publicacion.md se aclara que a los de laminillas expuestas mejor no remojarlos. Hoja completa de la ronda 2 en el archivo de trabajo del coordinador.
+
+Re-verificación de la corrección #5 (coordinador): ✅ es la frase propuesta por el verificador y se apoya en ATK 1196 (2018).
+
+Todas las afirmaciones del texto final: ✅.
+
+VEREDICTO: APROBADO
