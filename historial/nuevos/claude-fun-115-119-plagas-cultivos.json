@@ -13,14 +13,25 @@
   },
   {
    "id": "fun-116-trigo-ug99",
-   "titulo": "El hongo que amenaza tu pan: la roya del tallo del trigo Ug99 (y el arbusto que le sirve de puente)",
+   "titulo": "Este arbusto no es solo de adorno: puede dejarte sin pan (roya del tallo del trigo, Ug99 y el agracejo)",
    "serie": "Shot Fungi Mati",
    "numero": 116,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-116-trigo-ug99",
    "rama": "claude/fun-115-119-plagas-cultivos",
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Roya amarilla del trigo que aguanta el calor",
+    "Borlaug y los trigos enanos de Sonora",
+    "Fusariosis de la espiga y la vomitoxina (DON)"
+   ],
+   "fuentes": [
+    "Leonard & Szabo 2005, Mol Plant Pathol 6:99",
+    "Peterson et al. 2005, Plant Dis 89:159",
+    "Pretorius et al. 2000, Plant Dis 84:203",
+    "Singh et al. 2011, Annu Rev Phytopathol 49:465",
+    "Li et al. 2019, Nat Commun 10:5068"
+   ]
   },
   {
    "id": "fun-117-cacao-monilia",

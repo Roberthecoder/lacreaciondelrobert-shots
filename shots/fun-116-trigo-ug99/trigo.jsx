@@ -457,14 +457,14 @@ function TrigoShot() {
       <Etq T={T} at={K.C + 0.9} until={K.Ou} x={545} y={600} lado="izq" texto="se vigila el viento" tam={28} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Pu} texto="50 cm" largo={150} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.Pu} texto="50 cm" largo={220} color={KC.ink} />
       <BarraEscala T={T} at={K.Pu} until={K.E} texto="5 mm" largo={300} color={KC.ink} />
       <BarraEscala T={T} at={K.E} until={K.Ci} texto="20 µm" largo={90} />
       <BarraEscala T={T} at={K.Ci} until={K.Ca} texto="ciclo esquemático" largo={0} color={KC.ink} />
       <BarraEscala T={T} at={K.U} until={K.S} texto="mapa esquemático" largo={0} color={KC.ink} />
       <BarraEscala T={T} at={K.B} until={K.N} texto="mapa esquemático" largo={0} color={KC.ink} />
       <BarraEscala T={T} at={K.N} until={K.C} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="50 cm" largo={150} color={KC.ink} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="50 cm" largo={220} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.A - 0.1} texto="Este arbusto puede *dejarte sin pan.*" />
