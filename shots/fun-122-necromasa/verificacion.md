@@ -93,3 +93,15 @@ Revisado contra `narracion.json` (voz actual) y los textos en pantalla de `necro
 4. **`guion.md` está desactualizado** (01:19 vs. voz de 01:26): su tabla aún tiene la voz y pantalla viejas («tu milpa», «con datos de todo el mundo», «Y los microbios vivos son apenas el dos por ciento», 2 cuadritos verdes dentro de la cuadrícula, mapa sin concentrar, "Estado: pendiente de verificación"). Hay que copiar ahí la voz de `narracion.json` y los textos en pantalla actuales, y quitar la tarjeta 2019 "cultivos, pastizales y bosques" si se cambia.
 
 Tras corregir 1, 2 y 4, basta re-verificar esas líneas. (No se revisó `publicacion.md`: no existe aún en la carpeta.)
+
+## 4. Re-verificación 2 (correcciones de la sección 3 aplicadas; pendientes de re-verificador independiente)
+
+| Fila | Antes | Ahora | Respaldo |
+|---|---|---|---|
+| Pantalla Estudio2019 | Etiqueta "cultivos y pastizales: + de la mitad", barra al 55 % | Etiquetas **"pastizales: hasta 62 %"** (barra 0.62) y **"bosques: ~1/3"** (barra 0.33), con la línea de la mitad. La tarjeta dice "2019 · Liang, Amelung, Lehmann y Kästner · Global Change Biology · aminoazúcares 1996–2018" (sin desglose por ecosistema). | Kästner et al. 2021, Front. Environ. Sci. 9: 756378: "an average contribution of microbial necromass to SOM varying between 33% in forest soils and up to 62% in grasslands (Liang et al., 2019)" |
+| Subtítulo Huella (idx 6) | "Glucosamina: *hongos.* Ácido murámico: *bacterias.*" | "Glucosamina: *sobre todo hongos.* Ácido murámico: *bacterias.*" | Salas et al. EGU2020-8200; EGU22-2244 ("muramic acid is exclusively found in bacterial peptidoglycan") |
+| Subtítulo Vivos (idx 10) | "Los vivos: apenas *un 2 %* del carbono." | "Los vivos: suelen ser *un 2 %* del carbono del suelo." | Lu 2026: "typically constitutes only about 2 % of SOC" |
+| Subtítulo Estudio2026 (idx 8) | "En cultivos, en promedio: hongos *34 %,* bacterias *16 %.*" | "Cultivos: hongos *34 %,* bacterias *16 %.*" (la cuadrícula lleva el chip "tierras de cultivo · 0–20 cm · promedio") | Lu 2026, Tabla 1 |
+| `guion.md` | Voz y pantalla viejas | Reescrito con la voz actual de `narracion.json` y los textos en pantalla actuales (sin «tu milpa», sin «datos de todo el mundo», el 2 % en tarjeta aparte, mapa concentrado en el hemisferio norte, tarjeta 2019 con pastizales/bosques). | — |
+
+Pendiente: re-verificación independiente de estas líneas y de `publicacion.md`; la línea final de veredicto la pone el re-verificador.
