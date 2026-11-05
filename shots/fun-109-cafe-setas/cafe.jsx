@@ -357,9 +357,9 @@ function CafeShot() {
       <Etq T={T} at={K.O + 1.4} until={K.D - 0.3} x={590} y={1090} texto="casi no salen" tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.D + 0.4} until={K.D + 3.2} anio="2021" quien="Malasia · Chai y col." revista="Future Foods, 2021" x={540} y={420} />
       <Chip T={T} at={K.D + 3.6} until={K.M - 0.3} texto="más de 30 %: se frenan" x={540} y={470} tam={38} borde={KC.red} />
-      <Etq T={T} at={K.M + 0.3} until={K.M + 2.3} x={450} y={680} texto="ramas de olivo · 1/3" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.M + 0.7} until={K.M + 2.3} x={450} y={830} texto="paja · 1/3" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.M + 1.1} until={K.M + 2.3} x={450} y={980} texto="posos · 1/3" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.M + 0.3} until={K.M + 2.2} x={450} y={680} texto="ramas de olivo · 1/3" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.M + 0.7} until={K.M + 2.2} x={450} y={830} texto="paja · 1/3" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.M + 1.1} until={K.M + 2.2} x={450} y={980} texto="posos · 1/3" tam={30} color={KC.ink} />
       <Chip T={T} at={K.M + 3.4} until={K.H - 0.3} texto="eficiencia biológica 95 %" x={360} y={470} tam={34} borde="#118a3a" />
       <Etq T={T} at={K.M + 3.8} until={K.H - 0.3} x={60} y={1500} texto="2021 · setas frescas ÷ sustrato seco" tam={24} color={KC.ink} />
       <Chip T={T} at={K.H + 0.1} until={K.Ca - 0.3} texto="POR DENTRO · AL MICROSCOPIO" x={400} y={470} tam={30} borde={KC.cyan} mono />
@@ -376,7 +376,7 @@ function CafeShot() {
       <Etq T={T} at={K.Mx + 0.9} until={K.Mx + 2.4} x={460} y={700} texto="grano" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Mx + 3.0} until={K.X - 0.3} texto="años 80 · INIREB, Xalapa" x={740} y={1010} tam={32} borde={KC.red} />
       <Chip T={T} at={K.X + 0.2} until={K.Mu - 0.3} texto="Xalapa, Veracruz · 1987" x={360} y={430} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.X + 0.8} until={K.X + 3.2} x={330} y={720} texto="pulpa secada al sol" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.X + 0.8} until={K.X + 3.2} x={360} y={525} texto="pulpa secada al sol" tam={26} color={KC.ink} />
       <NumeroGigante T={T} at={K.X + 3.6} until={K.Mu - 0.3} valor={100} desde={100} prefijo="> " sufijo=" %" etiqueta="eficiencia biológica" x={300} y={1080} tam={100} color={KC.mint} />
       <Etq T={T} at={K.X + 4.0} until={K.Mu - 0.3} x={60} y={1500} texto="setas frescas (con agua) ÷ sustrato seco" tam={24} color={KC.ink} />
       <NumeroGigante T={T} at={K.Mu + 0.3} until={K.C - 0.3} valor={6} dur={0.6} sufijo=" millones" etiqueta="de toneladas de posos al año" x={540} y={490} tam={130} color={KC.yellow} />
@@ -402,7 +402,7 @@ function CafeShot() {
       <Subtitulo T={T} idx={1} at={K.R + 0.1} until={K.O - 0.1} texto="A mí, a los 10 años, *no me funcionó.*" />
       <Subtitulo T={T} idx={2} at={K.O + 0.1} until={K.D - 0.1} texto="Con puros posos, *muchas veces no salen.*" />
       <Subtitulo T={T} idx={3} at={K.D + 0.1} until={K.M - 0.1} texto="Más de *30 % de posos:* se frenaron." />
-      <Subtitulo T={T} idx={4} at={K.M + 0.1} until={K.H - 0.1} texto="Un tercio de posos: *casi su peso seco* en setas." />
+      <Subtitulo T={T} idx={4} at={K.M + 0.1} until={K.H - 0.1} texto="1/3 de posos: casi su *peso seco* en setas frescas." tam={60} />
       <Subtitulo T={T} idx={5} at={K.H + 0.1} until={K.Ca - 0.1} texto="Las hifas se cuelan *entre los granitos.*" />
       <Subtitulo T={T} idx={6} at={K.Ca + 0.1} until={K.P - 0.1} texto="Rompe parte de la cafeína: *xantina.*" />
       <Subtitulo T={T} idx={7} at={K.P + 0.1} until={K.E - 0.1} texto="¿Las setas salen *con cafeína?*" />
