@@ -79,6 +79,8 @@ Apariciones 11 · **35.8 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas �
    > "the infected and disemboweled cicada flies around, raining down fluffy, brown spores."
    > "We found an amphetamine in those fungal plugs," Kasson said; Cooley: "the powerful psychoactive chemical may not do anything to the insects".
 
+4. Anuncio del genoma de *M. cicadina* (2022). *Microbiology Resource Announcements*. https://pmc.ncbi.nlm.nih.gov/articles/PMC9584336/ (Fig. 1: "Close-up of *M. cicadina* verrucose (\"warty\") conidia").
+
 El dibujo es esquemático.
 
 ## Datos que NO se usaron

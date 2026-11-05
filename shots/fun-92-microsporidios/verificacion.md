@@ -65,4 +65,35 @@ Revisión independiente (5 nov 2026) de las 7 redes y el comentario fijado. Todo
 | LinkedIn: «Entender su arpón ayuda a pensar cómo bloquear la infección» | ⚠️ (la fuente no lo dice) → corregido a «es la base para entender cómo infectan» | [JAR] | Resumen del autor: los resultados dan bases para entender la infección por microsporidios (no habla de tratamientos). | 2020 |
 | «un glóbulo rojo mide unas 8» (milésimas de mm) | ✅ | [BIO] | "Diameter of erythrocytes 7.81 µm" | 1981 |
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la verificación anterior). Textos completos descargados de Europe PMC / PMC / PDF de la revista / PubMed y buscadas las frases dentro del texto. Se revisó lo narrado (`narracion.json`), los letreros de `arpon.jsx` (chips, etiquetas, tarjetas, barras, subtítulos) y `publicacion.md`.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «dispara un arpón» (tubo polar como arpón) | ✅ | doi:10.1371/journal.ppat.1008738 (PMC7526891) | "microsporidia utilize a unique harpoon-like invasion organelle called the polar tube (PT)" | 2020 |
+| «arpón muchas veces más largo que él»; chip «~20 veces su largo»; «unas veinte veces su espora»; regla «≈ 20 × la espora» | ✅ | PMC7526891 | "The PT is tightly coiled within the transmissible extracellular spore, and is about 20 times the length of the spore" | 2020 |
+| «solo puede multiplicarse dentro de las células de otro ser vivo» (chip «solo se multiplica dentro de células») | ✅ | PMC7526891; PMC5613672 | "As obligate intracellular parasites with reduced genomes, they are dependent on the host for replication"; "Microsporidia are obligate intracellular pathogens related to Fungi" | 2020 / 2017 |
+| «Son hongos, o sus parientes más cercanos» | ✅ | PMC5613672 | "Microsporidia are related to the Fungi, either as a basal branch of the Fungi or as a sister group" | 2017 |
+| «su espora mide unas milésimas de milímetro»; «espora · 1–4 µm (las que infectan humanos)» | ✅ | CDC DPDx https://www.cdc.gov/dpdx/microsporidiosis/index.html; PMC5613672 | CDC: "resistant spores that vary in size (usually 1—4 µm for medically-important species)"; Han y Weiss: "the spores vary in size from approximately 1 to 12 μm" | página vigente / 2017 |
+| «glóbulo rojo · ~8 µm» | ✅ | BioNumbers BNID 100509 (Fabry et al. 1981) | "Diameter of erythrocytes 7.81 µm" | 1981 |
+| «tubo enrollado como resorte»; dibujo ~7 vueltas inclinadas | ✅ | PMC7526891 | "from a spring-like coil to an extended linear tube"; "the coiled segment of the PT consists of 7 turns on average"; "in every spore examined the PT takes the form of a right-handed helix" | 2020 |
+| Etiqueta «contenido con 2 núcleos» | ✅ (vale para la espora dibujada, tipo *Anncaliia algerae*; otros géneros como *Encephalitozoon* tienen un núcleo: es esquema de una especie real) | PMC7526891 | "In A. algerae, there are two nuclei" | 2020 |
+| «sale disparado, se desenrolla y se clava en la célula» | ✅ | PMC5613672; PMC7526891 | "During germination, the polar tube rapidly everts, forming a hollow tube that brings the sporoplasm into intimate contact with the host cell"; JAR: "The extended tube may penetrate or latch onto the target cell membrane" | 2017 / 2020 |
+| «su contenido se escurre como pasta de dientes» (metáfora del paso deformado) | ✅ | PMC7526891 | "Our results show gross deformation of the nuclei on a millisecond timescale"; "The nuclei exit the PT and regain a globular shape" | 2020 |
+| «En 2020, un equipo de la Universidad de Nueva York» (tarjeta «Jaroenlak et al. · NYU · PLoS Pathogens, 2020») | ✅ | PMC7526891 | "Skirball Institute of Biomolecular Medicine and Department of Cell Biology, New York University School of Medicine, New York" | 2020 |
+| «lo filmó con microscopios de alta velocidad»; chip «sin célula: así lo filmaron» | ✅ | PMC7526891 | "Using high-speed optical microscopy, we also capture and quantify the entire PT germination process of three human-infecting microsporidian species in vitro" | 2020 |
+| «cientos de micras por segundo»; medidor «≈ 235–336 µm/s (promedios de 3 especies)» | ✅ (son promedios de la velocidad máxima) | PMC7526891 | "the maximum velocity (Vmax) of PT firing is 235 ± 61 μm⋅s-1 … in A. algerae"; "The Vmax and Amax reaches 336 ± 142 μm⋅s-1 … for E. hellem, and 290 ± 38 μm⋅s-1 … for E. intestinalis" | 2020 |
+| «en menos de un segundo» («< 1 s») | ✅ | PMC7526891 | "Once triggered, the PT fires and reaches its full length in under 1 second (TEXT90 = ~830 ms)"; "completed in less than 500 ms in E. hellem and E. intestinalis" | 2020 |
+| «En el siglo diecinueve, uno de ellos hundió la seda de Francia» (pebrina, *Nosema bombycis*) | ✅ | Carton 2022, doi:10.5802/crchim.204 (PDF); PMC5613672 | Carton: "La maladie, dénommée pébrine à l'époque, est provoquée par la microsporidie Nosema bombycis"; Han y Weiss: "identification of Nosema bombycis as the organism responsible for the disease pébrine in silkworms" | 2022 / 2017 |
+| «la cosecha cayó a la cuarta parte»; barras/chip «capullos: 26,000 t (1853) → 6,500 t (1863)» | ✅ (6,500/26,000 = ¼; datos de 1853–1863) | Carton 2022 | "En 1821, 10 000 tonnes de cocons sont produites pour atteindre 26 000 tonnes en 1853"; "pour tomber à une production de 6500 tonnes en 1863" | 1853–1863 (publ. 2022) |
+| «Louis Pasteur ayudó a frenarlo» (tarjeta «1865–1870») | ✅ | Carton 2022 | "He devoted 5 years of his life (1865–1870) to it"; "par sa méthode de grainage cellulaire (Figure 6), justifiant aussi par là-même l'efficacité de sa méthode" | 1865–1870 (publ. 2022) |
+| «algunos tienen de los genomas más chicos de cualquier ser con núcleo» | ✅ («de los», no «el más») | PMC4355639; PMC5613672 | Corradi: "The complete sequence of the smallest known nuclear genome from the microsporidian Encephalitozoon intestinalis"; "at 2.3 Mbp"; Han y Weiss: "making these genomes among the smallest eukaryotic nuclear genomes" | 2010 / 2017 |
+| Barras: humano ≈ 3,055 millones; levadura ≈ 12 millones; *E. intestinalis* ≈ 2.3 millones (rotuladas «esquema») | ✅ | Nurk et al. 2022 (PMID 35357919); Goffeau et al. 1996 (PMID 8849441); PMC4355639 | "a complete 3.055 billion-base pair sequence of a human genome"; "The sequence of 12,068 kilobases defines 5885 potential protein-encoding genes"; "estimated by pulsed field gel electrophoresis to be only 2.3 Mbp" | 2022 / 1996 / 2010 |
+| publicacion.md: «se evierte»; «infectan desde insectos hasta personas»; enlaces PMC/DOI/CDC del comentario fijado | ✅ (todos los enlaces abren y corresponden al artículo citado) | PMC5613672 y enlaces citados | "the polar tube rapidly everts"; "infect almost all invertebrates and vertebrates" | 2017 |
+
+Nota menor (no afirma nada): la barra de escala del gusano de seda en `arpon.jsx` dice «2 cm» y la tabla de `guion.md` dice «5 cm»; es dibujo esquemático.
+
+Resultado: sin ❌ ni ⚠️. No se cambió nada del shot.
+
 VEREDICTO: APROBADO
