@@ -89,4 +89,36 @@ Releídos `guion.md` y `publicacion.md` tras los 3 arreglos del coordinador:
 
 Todas las afirmaciones (voz, pantalla, guion y las 7 redes + comentario fijado) quedan ✅. Sin ❌ ni ⚠️ pendientes.
 
+(Veredicto de la 1ª verificación: APROBADO.)
+
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni hizo la 1ª verificación). Releídos `narracion.json` (12 líneas), `guion.md`, `estomago.jsx` (todas las etiquetas, chips, subtítulos, barras de escala y lo dibujado) y `publicacion.md` (7 redes + comentario fijado). Cada fuente se abrió en texto completo: Wösten 1991 (PDF, 7 págs.), Cairns 2018, Reyes-Jurado 2022, Foods 2020 y J. Genet. Eng. Biotechnol. 2021 (texto completo de PMC), Peyrot des Gachons y Breslin 2016 (PMC), Richards y Talbot 2013 (resumen de PubMed), Deacon (página del libro).
+
+| # | Afirmación (voz / pantalla / redes) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | «Ese moho no se está comiendo tu tortilla: la está digiriendo por fuera»; chip «la digiere POR FUERA»; cierre «la digiere por fuera y luego absorbe los pedacitos» | ✅ | Richards y Talbot, *Nat. Rev. Microbiol.* 11: 720 (PMID 24018383) | "Osmotrophic microorganisms, such as fungi and oomycetes, feed by secreting depolymerizing enzymes to process complex food sources in the extracellular environment, and taking up the resulting simple sugars, micronutrients and amino acids." | 2013 |
+| 2 | «Un hongo no tiene boca ni estómago: es como si lo sacara»; «digestión externa» | ✅ (comparación explícita) | ídem 1 | ídem 1 | 2013 |
+| 3 | «Cada hilo, una hifa, crece por la punta»; etiqueta «hifa: crece por la punta» | ✅ | Riquelme et al., *MMBR* 82: e00068-17 (PMC5968459) | "Hyphae form filamentous networks by extending at their tips while branching in subapical regions." | 2018 |
+| 4 | «la tortilla, que es maíz: rica en almidón»; chip «maíz: rico en almidón» | ✅ | *Foods* 2020 (PMC7204188) | "71.7% total starch content (dry basis)" (grano de maíz) | 2020 |
+| 5 | Etiqueta «ancho de una hifa: ≈ 5–10 µm»; barra 10 µm | ✅ | Deacon, *Fungal Biology* cap. 3 | "ranging from 2 µm to 30µm or more (usually 5-10 µm), depending on the species and growth conditions" | 2005 |
+| 6 | «Sobre todo en la punta suelta enzimas» (dibujo: vesículas en la punta que salen) | ✅ | Wösten et al. 1991 (PDF) · Cairns et al. 2018 (PMC5966904) | Wösten: "high concentrations of glucoamylase could be demonstrated to occur specifically around growing hyphal tips of leading hyphae. However, the walls also seem to contain glucoamylase and some glucoamylase seemed to leak from older, presumably non-growing, parts of the culture." Cairns: "secretion and polar growth are physically coupled at the hyphal tip (first showed in A. niger by Han Wösten et al. in 1991" | 1991 / 2018 |
+| 7 | «tijeras químicas, una para cada cosa» | ✅ (metáfora; «una» por tipo de molécula) | Richards y Talbot | "secreting depolymerizing enzymes" | 2013 |
+| 8 | «Amilasas para el almidón … lipasas para la grasa» (secretadas por mohos como *A. niger*) | ✅ | J. Genet. Eng. Biotechnol. 2021 (PMC8012474) | "strains demonstrated the amylase, cellulase, and lipase activities by the hydrolysis of starch, cellulose, and Tween-20, respectively" | 2021 |
+| 9 | «proteasas para las proteínas» | ✅ | Cairns et al. 2018 | "numerous predicted protease encoding genes were identified, many of which contained a secretion peptide" (el estudio de 2021 no halló proteasa; el guion ya no lo usa para eso: correcto) | 2018 |
+| 10 | «la tortilla se deshace en azúcares y piezas chiquitas, y la hifa las absorbe» | ✅ | Richards y Talbot | "taking up the resulting simple sugars, micronutrients and amino acids" | 2013 |
+| 11 | «En 1991, en Groningen, Países Bajos»; tarjeta «U. de Groningen, Países Bajos · J. Gen. Microbiology, 1991» | ✅ | Wösten et al. 1991, *J. Gen. Microbiol.* 137: 2017–2023 | "Department of Plant Biology, Biological Centre, University of Groningen, Kerklaan 30, 9751 NN Haren, The Netherlands (Received 21 March 1991; accepted 24 May 1991)" | 1991 |
+| 12 | «cultivaron *Aspergillus niger*»; «colonia entre 2 membranas perforadas» | ✅ | Wösten 1991 | "studied using a new method of culturing the fungus between perforated membranes"; "A perforated polycarbonate membrane…" | 1991 |
+| 13 | «un moho que también sale en tortillas»; chip «*A. niger*: también aislado de tortillas (Puebla, 2022)» | ✅ | Reyes-Jurado et al., *Curr. Res. Food Sci.* 5 (PMC8968004) | "Corn tortillas acquired from a local tortilla- shop (Puebla, Mexico) were kept in plastic bags at 25 °C for one week; once molds appeared on the surface…"; "One strain of P. expansum and one strain of A. niger were identified." | 2022 |
+| 14 | «Marcaron con oro su glucoamilasa»; «inmunomarcado con oro» | ✅ | Wösten 1991 | "At the hyphal level immunogold labelling showed glucoamylase secretion at the tips of leading hyphae only." | 1991 |
+| 15 | «la enzima que corta el almidón en glucosa»; «glucoamilasa: almidón → glucosa» | ✅ | Cairns 2018 | "these enzymes catalyse the saccharification of partially processed starch to glucose" | 2018 |
+| 16 | «Y apareció en la punta de las hifas que iban al frente, creciendo»; chip «oro en las puntas que crecían (1991)» | ✅ | Wösten 1991 | "Microautoradiography after labelling with N-acetylglucosamine showed that these hyphae were probably all growing." "These results indicate that glucoamylase secretion is located at the tips of growing hyphae only." | 1991 |
+| 17 | «tu saliva trae amilasa, que corta el almidón»; chip «tu saliva: amilasa» | ✅ | Peyrot des Gachons y Breslin, *Curr. Diab. Rep.* 16: 102 (PMC6825871) | "Salivary amylase is a glucose-polymer cleavage enzyme that is produced by the salivary glands." "Amylases digest starch into smaller molecules, ultimately yielding maltose" | 2016 |
+| 18 | YouTube: «El propio estudio y otros posteriores encontraron que en colonias más viejas también se suelta enzima en zonas más céntricas» | ✅ | Wösten 1991 · Cairns 2018 | Wösten: "starch-degrading enzymes were primarily released from the growing zone but also more slowly from the more central part of the colony"; Cairns: "secretion and growth can be uncoupled" | 1991 / 2018 |
+| 19 | LinkedIn: glucoamilasas de *A. niger* en alimentos, bebidas y fermentación; la secreción aún no se entiende del todo | ✅ | Cairns 2018 | "widespread application of A. niger glucoamylases in the fermentation, food, and beverage industries"; "the underlying mechanisms of fungal protein secretion are not understood as an integrated system" | 2018 |
+| 20 | Dibujo: hifa tubular que avanza por la punta, gránulos de almidón poliédricos/redondeados, *A. niger* con cabezas negras; enzimas como tijeras, oro en anticuerpos (Y) | ✅ (esquemático, declarado en pantalla y redes) | Riquelme 2018; Wösten 1991 (oro en anticuerpo secundario: simplificación aceptable) | — | — |
+| 21 | Cita en `guion.md` (fuente 5): orden de autores | ⚠️ → corregido | PMC8968004 | Autores: Reyes-Jurado, Bárcena-Massberg, Ramírez-Corona, López-Malo, Palou, Ávila-Sosa. Se corrigió la lista en `guion.md` (no sale en voz, pantalla ni redes). | 2022 |
+
+Resultado: ninguna ❌; la única ⚠️ (orden de autores en una cita interna del guion) quedó corregida. Voz, pantalla y redes sin cambios.
+
 VEREDICTO: APROBADO
