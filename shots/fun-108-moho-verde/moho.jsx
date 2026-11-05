@@ -198,7 +198,7 @@ function MohoShot() {
         </>)}
       </Escena>
       {/* lupa: por qué es verde (conidios) */}
-      <Lupa T={T} at={K.Q + 1.6} until={K.PD - 0.2} x={790} y={840} r={180} fx={MX + 20} fy={MY} tinte={KC.mint} etiqueta="esporas verdes (conidios)"
+      <Lupa T={T} at={K.Q + 1.6} until={K.PD - 0.2} x={770} y={840} r={180} fx={MX + 20} fy={MY} tinte={KC.mint} etiqueta="conidios verdes"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0d1424" />
           <HifaTab pts={[[0, r * 1.6], [r * 0.8, r * 1.4], [r * 2, r * 1.55]]} p={1} color="#cfe9c8" ancho={10} septo={50} punta={false} />
           <Conidioforo x={r * 0.7} y={r * 1.42} s={0.9} p={kprog(t, K.Q + 1.9, K.Q + 3.2)} />
@@ -267,7 +267,7 @@ function MohoShot() {
       <Escena T={T} a={K.V} b={K.Es}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <OllaPresion T={T} x={280} y={1100} s={0.95} vapor={1 - kprog(T, K.V + 1.2, K.V + 1.8)} />
+          <OllaPresion T={T} x={330} y={1100} s={0.95} vapor={1 - kprog(T, K.V + 1.2, K.V + 1.8)} />
           <FrascoGrano x={760} y={1110} s={1} verde={kprog(T, K.V + 2.4, K.V + 4.4, kEase.suave)} T={T} />
           {T > K.V + 1.6 && T < K.V + 2.6 && (() => { const u = kprog(T, K.V + 1.6, K.V + 2.5, kEase.suave); return <circle cx={klerp(560, 760, u)} cy={klerp(700, 840, u)} r={12} fill={MV.verde} stroke={KC.ink} strokeWidth={3} />; })()}
         </>)}
@@ -324,8 +324,8 @@ function MohoShot() {
         {fsvg(<>
           <BolsaCultivo T={T} x={BX} y={BY} w={400} h={580} col={1} seed={5} />
           <SetasHoyo T={T} x={BX + 196} y={BY - 60} abre={kprog(T, K.Ci + 0.3, K.Ci + 2.0)} s={1.05} />
-          <SetasHoyo T={T} x={BX - 196} y={BY + 120} abre={kprog(T, K.Ci + 0.8, K.Ci + 2.4)} s={0.85} lado={-1} />
-          <g transform="translate(860 1080)" opacity={kprog(T, K.Ci + 1.2, K.Ci + 1.6)}>
+          <SetasHoyo T={T} x={BX - 196} y={BY + 120} abre={kprog(T, K.Ci + 0.8, K.Ci + 2.4)} s={0.7} lado={-1} />
+          <g transform="translate(880 960)" opacity={kprog(T, K.Ci + 1.2, K.Ci + 1.6)}>
             <BolsaCultivo T={T} x={0} y={0} w={130} h={190} col={0.3} seed={6} />
             <Mancha x={0} y={-10} r={50} blanco={1} verde={1} T={T} seed={4} />
             <path d="M -70 -90 L 70 70 M 70 -90 L -70 70" stroke={KC.red} strokeWidth={16} strokeLinecap="round" />
@@ -373,7 +373,7 @@ function MohoShot() {
       <NumeroGigante T={T} at={K.Gr + 2.5} until={K.Gr + 4.6} valor={100} desde={100} dur={0.1} prefijo="−68 a −" sufijo=" %" etiqueta="cosecha de champiñón" x={540} y={560} tam={120} color={KC.red} />
       <Etq T={T} at={K.Gr + 0.4} until={K.Gr + 2.3} x={60} y={820} texto="1 kg de composta" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Gr + 1.0} until={K.Gr + 2.3} x={360} y={680} texto="+ 1 g infectada" tam={28} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Gr + 4.8} until={K.Ch - 0.3} anio="2020" quien="Kosanovic, Grogan y Kavanagh" revista="Fungal Biology, 2020" x={540} y={560} />
+      <TarjetaEstudio T={T} at={K.Gr + 4.8} until={K.Ch - 0.3} anio="2020" quien="Kosanovic, Grogan y Kavanagh" revista="Fungal Biology, 2020" x={540} y={500} />
       <Chip T={T} at={K.Gr + 3.0} until={K.Ch - 0.3} texto={<>nombre desde 2002: <i>T. aggressivum</i></>} x={540} y={1520} tam={28} borde={MV.verde2} />
       <Etq T={T} at={K.Ch + 0.5} until={K.Ch + 3.4} x={60} y={560} texto="Trichoderma reesei" it tam={32} color={KC.ink} />
       <Etq T={T} at={K.Ch + 1.0} until={K.Ch + 3.4} x={60} y={605} texto="tienda de lona de algodón del ejército de EE. UU." tam={20} color={KC.ink} />
@@ -382,7 +382,7 @@ function MohoShot() {
       <Chip T={T} at={K.Ch + 4.8} until={K.Ci - 0.3} texto={<>y algunos <i>Trichoderma</i> protegen plantas</>} x={540} y={1110} tam={30} borde={KC.leaf} />
       <Etq T={T} at={K.Ch + 1.0} until={K.Ci - 0.3} x={60} y={1500} texto="DSMZ (DSM 768) · Bischof et al., 2016 · Druzhinina et al., 2011" tam={20} color={KC.ink} />
       <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="pasteuriza · limpia manos y herramientas" x={540} y={1110} tam={32} borde={KC.leaf} />
-      <Etq T={T} at={K.Ci + 1.6} until={K.Ou} x={780} y={1060} texto="a la basura" lado="izq" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 1.6} until={K.Ou} x={790} y={960} texto="a la basura" lado="izq" tam={24} color={KC.ink} />
       <Etq T={T} at={K.Ci + 2.0} until={K.Ou} x={60} y={1500} texto="A Robert también se le llenó un frasco" tam={24} color={KC.ink} />
       <Etq T={T} at={K.Ci + 2.0} until={K.Ou} x={60} y={1540} texto="de esporas que no eran las que quería." tam={24} color={KC.ink} />
 

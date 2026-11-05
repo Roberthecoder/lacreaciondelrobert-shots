@@ -56,7 +56,7 @@ Fuentes:
 - López-López, C. A. et al. (2026). Evaluation of substrates and enzymatic pretreatment to optimize Pleurotus ostreatus production. Agroindustrial Science 16(3): 373–379. https://doi.org/10.17268/agroind.sci.2026.03.05
 - Knop, D., Yarden, O. y Hadar, Y. (2015). The ligninolytic peroxidases in the genus Pleurotus. Applied Microbiology and Biotechnology 99: 1025–1038. https://doi.org/10.1007/s00253-014-6256-8
 - Sánchez, C. (2010). Cultivation of Pleurotus ostreatus and other edible mushrooms. Applied Microbiology and Biotechnology 85: 1321–1337. https://doi.org/10.1007/s00253-009-2343-7
-- UF/IFAS EDIS SL448 (2018). Cultivation of oyster mushrooms. https://edis.ifas.ufl.edu/publication/SS662
+- Liao, H.-L. et al. (2018, rev. 2025). D.I.Y. FunGuide: Grow Your Own Oyster Mushrooms at Home. UF/IFAS EDIS SL448. https://edis.ifas.ufl.edu/publication/SS662
 - Grimm, D. y Wösten, H. A. B. (2018). Mushroom cultivation in the circular economy. Applied Microbiology and Biotechnology 102: 7795–7803. https://pmc.ncbi.nlm.nih.gov/articles/PMC6132538/
 ¿En tu casa qué hacen con los olotes? 👇
 Shot Fungi Mati 105 · La Creación del Robert
@@ -103,7 +103,7 @@ Fuentes:
 López-López, C. A. et al. (2026). Evaluation of substrates and enzymatic pretreatment to optimize Pleurotus ostreatus production. Agroindustrial Science 16(3): 373–379. https://doi.org/10.17268/agroind.sci.2026.03.05
 Knop, D., Yarden, O. y Hadar, Y. (2015). The ligninolytic peroxidases in the genus Pleurotus. Appl. Microbiol. Biotechnol. 99: 1025–1038. https://doi.org/10.1007/s00253-014-6256-8
 Sánchez, C. (2010). Cultivation of Pleurotus ostreatus and other edible mushrooms. Appl. Microbiol. Biotechnol. 85: 1321–1337. https://doi.org/10.1007/s00253-009-2343-7
-UF/IFAS EDIS SL448 (2018). Cultivation of oyster mushrooms. https://edis.ifas.ufl.edu/publication/SS662
+Liao, H.-L. et al. (2018, rev. 2025). D.I.Y. FunGuide: Grow Your Own Oyster Mushrooms at Home. UF/IFAS EDIS SL448. https://edis.ifas.ufl.edu/publication/SS662
 Grimm, D. y Wösten, H. A. B. (2018). Mushroom cultivation in the circular economy. Appl. Microbiol. Biotechnol. 102: 7795–7803. https://pmc.ncbi.nlm.nih.gov/articles/PMC6132538/
 El dibujo es esquemático.
 ```

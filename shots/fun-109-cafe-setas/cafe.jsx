@@ -352,7 +352,7 @@ function CafeShot() {
       <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.3} until={K.G + 2.0} texto="¿tierra?" x={360} y={760} tam={52} />
       <Chip T={T} at={K.G + 1.9} until={K.R - 0.3} texto="posos de café usados" x={360} y={790} tam={38} borde={CF.poso} />
       <Chip T={T} at={K.R + 0.3} until={K.O - 0.3} texto="Robert · 10 años" x={290} y={560} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.R + 1.6} until={K.O - 0.3} x={60} y={1500} texto="posos de café en maceta" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.R + 1.6} until={K.O - 0.3} x={60} y={1500} texto="mi sustrato de café" tam={26} color={KC.ink} />
       <Chip T={T} at={K.O + 0.4} until={K.D - 0.3} texto="100 % posos" x={360} y={520} tam={40} borde={CF.poso} />
       <Etq T={T} at={K.O + 1.4} until={K.D - 0.3} x={590} y={1090} texto="casi no salen" tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.D + 0.4} until={K.D + 3.2} anio="2021" quien="Malasia · Chai y col." revista="Future Foods, 2021" x={540} y={420} />

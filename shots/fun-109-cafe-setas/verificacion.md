@@ -77,4 +77,35 @@ Tabla de Robert: solo cambió la reacción #3 a «Ojo… se frenaron»; coincide
 
 Cita de Fuentes corregida en guion.md (Xalapa, INIREB) según la re-verificación.
 
+## Textos en pantalla y publicación (5 nov 2026)
+
+Revisados `cafe.jsx` (chips, etiquetas, tarjetas, escalas, subtítulos) y `publicacion.md` contra las fuentes de la tabla.
+
+| Texto | Veredicto | Nota / fuente |
+|---|---|---|
+| Etiqueta "posos de café en maceta" (escena Robert) | ❌ → corregido | datos.md solo dice "sustrato de café fallido"; la maceta era del intento de champiñón en tierra. **Cambiado a "mi sustrato de café"** en `cafe.jsx`. |
+| Chip "Robert · 10 años" | ✅ | datos.md línea 79. |
+| Tarjeta "2021 · Malasia · Chai y col. · Future Foods, 2021" | ✅ | Chai, Gopala Krishnan, Sabaratnam y Tan, Future Foods 4: 100075; afiliaciones en Malasia. |
+| Setas sin etiqueta de especie en la escena del 30 % | ✅ | Chai usó *P. pulmonarius* y *P. floridanus*; correcto no rotular *P. ostreatus*. |
+| Barra "posos: NN %" 10→50 %, marca "30 %", chip "más de 30 %: se frenan" | ✅ | "fruitification was inhibited when concentrations of SCG … exceeded 30% (w/w)" (2021). La barra es ilustrativa. |
+| "100 % posos" + "casi no salen"; sello OJO | ✅ | Ver re-verificación #3. |
+| "ramas de olivo · 1/3", "paja · 1/3", "posos · 1/3", "eficiencia biológica 95 %", "2021 · setas frescas ÷ sustrato seco" | ✅ | Abou Fayssal et al. 2021, S2 = 95.3 %. |
+| "100 µm"; hifas ~8 µm; granitos 150–250 µm | ✅ (esquema) | Hifas de basidiomicetos ~2–10 µm; posos de café molido de cientos de µm. Proporciones razonables. |
+| "hifas de *Pleurotus*", "cafeína" → "xantina", "el micelio rompe solo una parte · 2019" | ✅ | Carrasco-Cabrera et al. 2019: "partial degradation of caffeine to xanthine". |
+| Escala "0.5 nm (esquema)" | ✅ | La cafeína mide menos de 1 nm; marcado como esquema. |
+| "*Pleurotus ostreatus*" en la escena de la pregunta | ✅ | El estudio de la cafeína en setas (2019) es con *P. ostreatus*. |
+| "sí: trazas de cafeína", "≈ 250 kg de setas frescas", "1 espresso", 20 cajas, escala "50 cm" | ✅ (cajas ilustrativas) | "~ 250 kg of fresh oyster mushrooms … one cup of espresso coffee" (2019). |
+| Tarjeta "2019 · Carrasco-Cabrera, Bell y Kertesz · Appl. Microbiol. Biotechnol." | ✅ | PMID 31115628. |
+| "pulpa" / "grano", "cereza: 1 cm · mapa esquemático", "años 80 · INIREB, Xalapa", punto del mapa en Xalapa | ✅ | Soto et al. 1987 (INIREB, Xalapa). |
+| "Xalapa, Veracruz · 1987", "pulpa secada al sol", costal "2 AÑOS", balanza "pulpa seca" vs "setas frescas", "> 100 % eficiencia biológica", "setas frescas (con agua) ÷ sustrato seco" | ✅ | Soto et al. 1987: 24 meses → 145.27 %; EB = peso fresco ÷ peso seco. |
+| "6 millones de toneladas de posos al año", "estimación 2022 · en todo el mundo" | ✅ | Franca y Oliveira 2022. |
+| "de residuo a comida", "*Pleurotus ostreatus* · el dibujo es esquemático" | ✅ | Morfología: MushroomExpert. |
+| Subtítulos 0–12 | ✅ | Resumen fiel de la voz verificada. |
+| publicacion.md: "Universidad de Sídney" | ✅ | PubMed: "Sydney Institute of Agriculture, … The University of Sydney". |
+| publicacion.md: "la mezcla con dos tercios de posos no produjo setas" | ✅ | Abou Fayssal 2021: "Only S1, S2, and S3 were productive" (S4 = 66 % de posos no produjo; además solo llegó a 50 % de colonización). |
+| publicacion.md: "quitándole sus grupos metilo, hasta llegar a xantina" | ✅ | "sequential N-demethylation to theophylline … and 3-methylxanthine" (2019). |
+| publicacion.md (Threads): "mezclados con paja dan casi su peso seco en setas frescas" | ⚠️ → corregido | El 95 % fue con paja **y poda de olivo**. **Cambiado a "mezclados con paja y ramas de olivo dan…"**. |
+| publicacion.md (Facebook/X): "mezclado con paja funciona mejor" / "mezclados con paja, sí" | ✅ | Más de 30 % de posos frena la fructificación (2021); las mezclas con paja sí produjeron (2021). |
+| Demás textos de publicacion.md (Malasia, 95 %, 250 kg, Xalapa años 80, >100 % en 1987, "se estima… 6 millones", fuentes) | ✅ | Coinciden con la tabla y la re-verificación. |
+
 VEREDICTO: APROBADO

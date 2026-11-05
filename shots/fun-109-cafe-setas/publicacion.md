@@ -87,7 +87,7 @@ Esto no es tierra: es tu café usado, y puede dar setas. ☕🍄 Con puros posos
 
 ### Threads
 ```text
-Esto no es tierra: es el café que tiraste esta mañana, y puede dar setas. ☕🍄 Con puros posos muchas veces no salen, pero mezclados con paja dan casi su peso seco en setas frescas. Y en Xalapa, Veracruz, ya se cultivaban setas en pulpa de café en los años ochenta. ¿Tú qué haces con el café que te sobra?
+Esto no es tierra: es el café que tiraste esta mañana, y puede dar setas. ☕🍄 Con puros posos muchas veces no salen, pero mezclados con paja y ramas de olivo dan casi su peso seco en setas frescas. Y en Xalapa, Veracruz, ya se cultivaban setas en pulpa de café en los años ochenta. ¿Tú qué haces con el café que te sobra?
 Shot Fungi Mati 109 · La Creación del Robert
 #Hongos
 ```
