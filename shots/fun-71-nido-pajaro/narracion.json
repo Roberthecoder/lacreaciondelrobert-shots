@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Nido base narrada.dc.html",
+  "salida": "Shot Nido narrado.dc.html",
+  "nota": "Shot Fungi Mati #71. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esos no son huevitos en un nido de pájaro: son cápsulas de esporas que esperan la lluvia."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Es un hongo nido de pájaro, Cyathus, y su copa mide como un centímetro."
+    },
+    {
+      "escena": "Donde",
+      "texto": "Crece en madera podrida, estiércol viejo y astillas de jardín; en México hay registros de Sonora a Yucatán."
+    },
+    {
+      "escena": "Huevito",
+      "texto": "Cada huevito es un paquete repleto de esporas, con un cordón enrollado y la punta pegajosa."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo sale del nido sin patas ni alas?"
+    },
+    {
+      "escena": "Gota",
+      "texto": "Cuando una gota de lluvia pega en el borde de la copa, la salpicadura lo lanza hacia arriba."
+    },
+    {
+      "escena": "Vuelo",
+      "texto": "Sale a entre uno y cinco metros por segundo, y puede llegar hasta como a un metro."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2013, un equipo de la Universidad de Miami, en Ohio, lo grabó en cámara superlenta."
+    },
+    {
+      "escena": "Energia",
+      "texto": "Para lanzarlo usa menos del dos por ciento de la energía de la gota."
+    },
+    {
+      "escena": "Freno",
+      "texto": "En el aire el cordón va enrollado; si la punta se pega a un tallo, se desenrolla y lo frena."
+    },
+    {
+      "escena": "Herbivoro",
+      "texto": "Ahí queda colgado, justo donde comen los animales: se cree que así viajan sus esporas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese nido no espera a un pájaro: espera la lluvia."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

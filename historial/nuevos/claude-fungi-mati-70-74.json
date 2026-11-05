@@ -1,0 +1,108 @@
+{
+ "temas": [
+  {
+   "id": "fun-70-lactarius-indigo",
+   "titulo": "Ese hongo no está pintado: la leche azul de Lactarius indigo (micorriza con pinos y encinos; mercados de México)",
+   "serie": "Shot Fungi Mati",
+   "numero": 70,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-70-hongo-azul",
+   "rama": "claude/fungi-mati-70-74",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Lactarius deliciosus y otros Lactarius de leche naranja",
+    "Otros hongos azules: Entoloma hochstetteri y Chlorociboria (madera verde-azul)",
+    "Hongos de mercado en México: nombres en náhuatl y temporada de lluvias"
+   ],
+   "fuentes": [
+    "García Cruz 2021, tesis UNAM",
+    "Lamus et al. 2012, Mycologia",
+    "Maruoka et al. 2023, J Agric Food Chem",
+    "Kuo 2011, MushroomExpert"
+   ]
+  },
+  {
+   "id": "fun-71-nido-pajaro",
+   "titulo": "Esos no son huevitos en un nido: el hongo nido de pájaro (Cyathus) que dispara con la lluvia",
+   "serie": "Shot Fungi Mati",
+   "numero": 71,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-71-nido-pajaro",
+   "rama": "claude/fungi-mati-70-74",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Esporas que viajan en la panza de animales (endozoocoria fúngica)",
+    "Estrellas de tierra (Geastrum) y bolas de humo: esporas con cada gota",
+    "Cyathanos: compuestos de Cyathus estudiados en laboratorio"
+   ],
+   "fuentes": [
+    "Hassett et al. 2013, Fungal Biology",
+    "Deacon, U. de Edimburgo",
+    "da Cruz et al. 2023, IMA Fungus",
+    "GBIF México"
+   ]
+  },
+  {
+   "id": "fun-72-morillas-fuego",
+   "titulo": "Ese bosque quemado no está muerto: las morillas que salen después del incendio (Morchella)",
+   "serie": "Shot Fungi Mati",
+   "numero": 72,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-72-morillas-fuego",
+   "rama": "claude/fungi-mati-70-74",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Hongos del fuego: Pyronema y Geopyxis (costras naranjas tras incendios)",
+    "Falsa morilla (Gyromitra) y la hidracina",
+    "Morillas que salieron tras la erupción del Mount St. Helens (1980)"
+   ],
+   "fuentes": [
+    "Pilz et al. 2007, USDA PNW-GTR-710",
+    "Miller et al. 2017, Mycologia",
+    "Larson et al. 2016, For Ecol Manage",
+    "Hobbie et al. 2016, Mycologia"
+   ]
+  },
+  {
+   "id": "fun-73-pasto-termal",
+   "titulo": "Este pasto no aguanta el calor solo: lo salva el virus de un hongo (Curvularia, Yellowstone)",
+   "serie": "Shot Fungi Mati",
+   "numero": 73,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-73-pasto-termal",
+   "rama": "claude/fungi-mati-70-74",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Endófitos que dan tolerancia a la sal (simbiosis adaptada al hábitat)",
+    "Virus de hongos (micovirus) que debilitan a hongos de plagas (hipovirulencia del castaño)",
+    "Plantas del desierto y sus hongos endófitos"
+   ],
+   "fuentes": [
+    "Márquez et al. 2007, Science",
+    "Redman et al. 1999, Appl Environ Microbiol",
+    "Rodriguez et al. 2008, ISME J"
+   ]
+  },
+  {
+   "id": "fun-74-hongo-mas-grande",
+   "titulo": "Esa costra no es corteza: el cuerpo de hongo más grande jamás documentado (Phellinus ellipsoideus, Hainan 2010)",
+   "serie": "Shot Fungi Mati",
+   "numero": 74,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-74-hongo-gigante",
+   "rama": "claude/fungi-mati-70-74",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "El récord anterior: Rigidoporus ulmarius de Kew Gardens",
+    "Hongos repisa que viven décadas: anillos de crecimiento en poliporos",
+    "Pudrición blanca vs. pudrición café: cómo deshacen la madera"
+   ],
+   "fuentes": [
+    "Guinness World Records",
+    "Dai y Cui 2011, Fungal Biology",
+    "Cui y Dai 2008, Mycotaxon",
+    "Ferguson et al. 2003, Can J For Res"
+   ]
+  }
+ ]
+}

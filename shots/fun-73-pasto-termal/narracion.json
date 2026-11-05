@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Pasto base narrada.dc.html",
+  "salida": "Shot Pasto narrado.dc.html",
+  "nota": "Shot Fungi Mati #73. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este pasto no aguanta el calor solo: lo salva el virus de un hongo que vive dentro de él."
+    },
+    {
+      "escena": "Lugar",
+      "texto": "Vive en suelos termales de Yellowstone, en Estados Unidos, que en algunos puntos llegan a setenta grados."
+    },
+    {
+      "escena": "Endofito",
+      "texto": "Dentro del pasto vive un hongo, Curvularia, sin enfermarlo: es un endófito."
+    },
+    {
+      "escena": "Solos",
+      "texto": "Por separado, ni el pasto ni el hongo crecen arriba de treinta y ocho grados."
+    },
+    {
+      "escena": "Juntos",
+      "texto": "Juntos, aguantaron la tierra a sesenta y cinco grados, diez horas al día, durante dos semanas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si el truco no fuera del hongo?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2007, científicos de Oklahoma, Washington y Montana le quitaron al hongo un virus que traía adentro."
+    },
+    {
+      "escena": "SinVirus",
+      "texto": "Con el hongo sin virus, el pasto se secó y murió."
+    },
+    {
+      "escena": "ConVirus",
+      "texto": "Le regresaron el virus fusionando hifas, y el pasto volvió a aguantar el calor."
+    },
+    {
+      "escena": "Jitomate",
+      "texto": "El mismo hongo con su virus también ayudó a jitomates a aguantar el calor, y ni son pastos."
+    },
+    {
+      "escena": "Mecanismo",
+      "texto": "Cómo lo logra no está claro; una pista: la planta no reacciona al estrés como siempre: ya trae sus defensas altas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que este pasto no es duro: vive de una alianza de tres."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
