@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot LSD base narrada.dc.html",
+  "salida": "Shot LSD narrado.dc.html",
+  "nota": "Shot Fungi Mati #138. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Tono histórico e informativo: no promueve el consumo, sin dosis ni instrucciones.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese cuernito negro no es basura: de su química salió el LSD, y su creador buscaba otra cosa."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Es el cornezuelo, Claviceps purpurea; sus alcaloides principales comparten un núcleo: el ácido lisérgico."
+    },
+    {
+      "escena": "Sandoz",
+      "texto": "En Sandoz, en Basilea, Albert Hofmann modificaba ese núcleo buscando medicinas."
+    },
+    {
+      "escena": "Lsd25",
+      "texto": "En 1938 hizo la variante veinticinco, LSD-25: buscaba un estimulante respiratorio."
+    },
+    {
+      "escena": "Archivo",
+      "texto": "Probada en animales, no llamó la atención y la archivaron."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Por qué volvió a hacerla cinco años después?"
+    },
+    {
+      "escena": "Corazonada",
+      "texto": "Por una corazonada. En abril de 1943, al repetirla, se mareó y vio imágenes fantásticas."
+    },
+    {
+      "escena": "Piel",
+      "texto": "Sospechó que le entró por la piel; tres días después la probó a propósito."
+    },
+    {
+      "escena": "Bici",
+      "texto": "Volvió a casa en bici con su asistente: por la guerra, no había coche."
+    },
+    {
+      "escena": "Delysid",
+      "texto": "Sandoz la repartió a investigadores y psiquiatras como fármaco experimental: Delysid."
+    },
+    {
+      "escena": "Ley",
+      "texto": "En 1971 un tratado de la ONU la puso en su lista más estricta; México también la controla."
+    },
+    {
+      "escena": "Riesgos",
+      "texto": "Puede causar pánico y conductas peligrosas; hoy se prueba en ensayos, sin ser medicamento aprobado."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese cuernito no es basura: es una historia que la ciencia sigue revisando."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
