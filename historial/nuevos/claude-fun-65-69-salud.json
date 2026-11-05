@@ -5,60 +5,101 @@
    "titulo": "Un antibiótico salió de una alcantarilla: la cefalosporina (Brotzu, Cerdeña 1945)",
    "serie": "Shot Fungi Mati",
    "numero": 65,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-65-cefalosporina",
    "rama": "claude/fun-65-69-salud",
-   "fuentes": [],
+   "fuentes": [
+    "Treccani: Brotzu, Giuseppe (1988)",
+    "Catálogo de los papeles de E. P. Abraham (2002)",
+    "Newton y Abraham, Nature 1955",
+    "Klein et al., PNAS 2018"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Cefalosporinas de 1.ª a 5.ª generación: qué cambia en cada una",
+    "Penicilinasa y betalactamasas: cómo las bacterias rompen antibióticos",
+    "La griseofulvina: un antifúngico de un Penicillium"
+   ]
   },
   {
    "id": "fun-66-candida-auris",
    "titulo": "El superhongo de los hospitales: Candida auris",
    "serie": "Shot Fungi Mati",
    "numero": 66,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-66-candida-auris",
    "rama": "claude/fun-65-69-salud",
-   "fuentes": [],
+   "fuentes": [
+    "CDC: C. auris (2026)",
+    "Lockhart et al., Clin Infect Dis 2017",
+    "Villanueva-Lozano et al., Clin Microbiol Infect 2021"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Desinfectantes: por qué el amonio cuaternario no mata todo",
+    "MALDI-TOF: cómo un laboratorio identifica un microbio por su 'huella'",
+    "Equinocandinas: el antifúngico que salió de un hongo de un charco"
+   ]
   },
   {
    "id": "fun-67-esporotricosis",
    "titulo": "La enfermedad del jardinero: esporotricosis (espinas de rosa y gatos)",
    "serie": "Shot Fungi Mati",
    "numero": 67,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-67-esporotricosis",
    "rama": "claude/fun-65-69-salud",
-   "fuentes": [],
+   "fuentes": [
+    "CDC Sporotrichosis (2024)",
+    "Gremião et al., PLoS Pathog 2017",
+    "Toriello et al., Braz J Microbiol 2020"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Hongos dimórficos: los que cambian de forma con la temperatura",
+    "Micetoma: el 'pie de Madura' y su presencia en México",
+    "Musgo esfagno: el musgo de los viveros"
+   ]
   },
   {
    "id": "fun-68-fingolimod",
    "titulo": "Un hongo que parasita cigarras dio una medicina para esclerosis múltiple: fingolimod",
    "serie": "Shot Fungi Mati",
    "numero": 68,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-68-fingolimod",
    "rama": "claude/fun-65-69-salud",
-   "fuentes": [],
+   "fuentes": [
+    "Fujita et al., J Antibiot 1994",
+    "Adachi y Chiba 2007",
+    "Kappos et al., NEJM 2010"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Esfingolípidos: las grasas que el fingolimod imita",
+    "Productos naturales de hongos convertidos en fármacos (de la miriocina a otros)",
+    "Isaria y Cordyceps: hongos que parasitan insectos"
+   ]
   },
   {
    "id": "fun-69-pneumocystis",
    "titulo": "Un hongo ya vivió en tus pulmones: Pneumocystis jirovecii",
    "serie": "Shot Fungi Mati",
    "numero": 69,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-69-pneumocystis",
    "rama": "claude/fun-65-69-salud",
-   "fuentes": [],
+   "fuentes": [
+    "Vargas et al., Clin Infect Dis 2001",
+    "Ma et al., Clin Microbiol Rev 2018",
+    "MMWR 5 jun 1981"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Ergosterol vs colesterol: por qué los antifúngicos no dañan tus células",
+    "Hongos que no se pueden cultivar en el laboratorio",
+    "El micobioma del pulmón sano"
+   ]
   }
  ]
 }
