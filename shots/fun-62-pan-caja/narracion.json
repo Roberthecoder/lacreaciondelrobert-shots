@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Tu pan de caja no es inmortal: trae un antimoho que frena al moho."
+      "texto": "Tu pan de caja no es inmortal: casi siempre trae un antimoho."
     },
     {
       "escena": "Horno",
@@ -13,7 +13,7 @@
     },
     {
       "escena": "Mohos",
-      "texto": "Son de Penicillium, Aspergillus o Rhizopus, y en unos días ya ves la mancha."
+      "texto": "Son de Penicillium, Aspergillus o Rhizopus, y en unos días ves la mancha."
     },
     {
       "escena": "Etiqueta",
@@ -21,15 +21,15 @@
     },
     {
       "escena": "Entra",
-      "texto": "En la masa, una parte queda como ácido propiónico sin carga y se cuela en la hifa."
+      "texto": "En la masa, parte queda como ácido propiónico sin carga y se cuela en la hifa."
     },
     {
       "escena": "Proton",
-      "texto": "Adentro suelta su protón y le acidifica el citoplasma."
+      "texto": "Adentro suelta su protón y, según la teoría clásica, le acidifica la célula."
     },
     {
       "escena": "Energia",
-      "texto": "La hifa gasta energía en sacarlo y se le traban enzimas: casi no crece."
+      "texto": "Sacarlo le cuesta energía, y en mohos se vio que le traba enzimas: casi no crece."
     },
     {
       "escena": "Pregunta",
@@ -37,7 +37,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 2012, en Cork, Irlanda, un pan con cero punto tres por ciento de propionato aguantó de diez a doce días sin moho."
+      "texto": "En 2012, en Cork, Irlanda, un pan bajo en sal con cero punto tres por ciento de propionato duró diez a doce días sin moho."
     },
     {
       "escena": "MasaMadre",
@@ -45,15 +45,15 @@
     },
     {
       "escena": "Queso",
-      "texto": "Lo más raro: ese ácido también lo hacen las bacterias del queso suizo y las de tu intestino."
+      "texto": "Lo más raro: ese ácido también lo hacen bacterias del queso suizo y de tu intestino."
     },
     {
       "escena": "Seguro",
-      "texto": "La FDA lo confirmó como seguro en 1984, y Europa lo revisó en 2014 sin ver riesgo."
+      "texto": "La FDA lo confirmó como seguro en 1984, y Europa lo revisó en 2014: sin riesgo en las dosis permitidas."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que tu pan de caja no es inmortal: solo trae un freno para el moho."
+      "texto": "Así que tu pan de caja no es inmortal: solo trae un freno."
     }
   ],
   "mezcla": "oficial-30oct"
