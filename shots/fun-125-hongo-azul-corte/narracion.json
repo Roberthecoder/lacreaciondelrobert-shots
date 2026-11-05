@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Hongo Azul base narrada.dc.html",
+  "salida": "Shot Hongo Azul narrado.dc.html",
+  "nota": "Shot Fungi Mati #125. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es consejo de consumo: no comer hongos silvestres sin experto.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese hongo no se está pudriendo: se pone azul en segundos porque lo cortaste."
+    },
+    {
+      "escena": "Boleto",
+      "texto": "Es un boleto: abajo no tiene láminas, sino poros, como esponja."
+    },
+    {
+      "escena": "Toque",
+      "texto": "Este, Cyanoboletus pulverulentus, con solo tocarlo se pinta de azul casi negro."
+    },
+    {
+      "escena": "Pigmento",
+      "texto": "Muchos boletos guardan en sus células un pigmento que aún no es azul: el ácido variegático o el xerocómico."
+    },
+    {
+      "escena": "Corte",
+      "texto": "Al cortar, las células se rompen y el pigmento se topa con el oxígeno del aire."
+    },
+    {
+      "escena": "Oxida",
+      "texto": "Se oxida y se vuelve un anión azul: un pequeño cambio químico, y cambia el color."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces el azul es señal de veneno?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1968, unos químicos publicaron en una revista de Londres qué molécula azula a los boletos."
+    },
+    {
+      "escena": "Respuesta",
+      "texto": "No: el color no dice si se come. Hay azulados que se comen bien cocidos y otros que intoxican, como el boleto de Satanás."
+    },
+    {
+      "escena": "Aviso",
+      "texto": "Nunca comas hongos silvestres sin que un experto los identifique."
+    },
+    {
+      "escena": "DatoExtra",
+      "texto": "Y Gyroporus cyanescens también se azula, pero con otra molécula: la girocianina."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que ese hongo no está podrido: es química pintando de azul en segundos."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
