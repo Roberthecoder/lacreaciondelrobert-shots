@@ -21,7 +21,7 @@
     },
     {
       "escena": "Escudo",
-      "texto": "Le sirve de reserva y protege sus proteínas y membranas cuando se seca o se congela."
+      "texto": "Le sirve de reserva y protege sus proteínas y membranas cuando se seca o hace frío."
     },
     {
       "escena": "Levadura",
@@ -33,7 +33,7 @@
     },
     {
       "escena": "Trehalasa",
-      "texto": "En tu intestino, una enzima, la trehalasa, la corta en dos glucosas que sí absorbes."
+      "texto": "En tu intestino, la enzima trehalasa la corta en dos glucosas que sí absorbes."
     },
     {
       "escena": "Estudio",
@@ -45,7 +45,7 @@
     },
     {
       "escena": "Colon",
-      "texto": "Sin cortarse, llega al colon, las bacterias la fermentan y vienen gases y diarrea."
+      "texto": "Sin cortarse, llega al colon: jala agua y, si las bacterias la fermentan, puede haber gases y diarrea."
     },
     {
       "escena": "Gen",
@@ -53,7 +53,7 @@
     },
     {
       "escena": "Ojo",
-      "texto": "Ojo: una alergia es otra cosa; si te pasa, consulta a tu médico."
+      "texto": "Ojo: una alergia es otra cosa; consulta a tu médico."
     },
     {
       "escena": "Cierre",
