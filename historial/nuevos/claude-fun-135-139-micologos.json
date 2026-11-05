@@ -2,65 +2,118 @@
  "temas": [
   {
    "id": "bassi-muscardina",
-   "titulo": "El primer microbio que se demostró que enferma a un animal fue un hongo: Agostino Bassi y la muscardina del gusano de seda (Beauveria bassiana)",
+   "titulo": "Ese polvo blanco no es cal: es un hongo — Agostino Bassi y la muscardina del gusano de seda (Beauveria bassiana)",
    "serie": "Shot Fungi Mati",
    "numero": 135,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-135-bassi",
    "rama": "claude/fun-135-139-micologos",
-   "fuentes": [],
+   "fuentes": [
+    "Robinson, «Bassi, Agostino Maria», Complete Dictionary of Scientific Biography",
+    "Vitali 1965, Dizionario Biografico degli Italiani (Treccani) vol. 7",
+    "Linda Hall Library, Scientist of the Day: Agostino Bassi",
+    "Pedrini et al. 2013, Front. Microbiol. 4:24",
+    "SENASICA, ficha CB-03 Beauveria bassiana (2023)",
+    "Nirupama 2014 (muscardina)"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Prévost y el tizón del trigo (1807): un hongo ligado a una enfermedad de plantas",
+    "Pasteur y la pebrina, la otra enfermedad de los gusanos de seda",
+    "Semmelweis y el lavado de manos"
+   ]
   },
   {
    "id": "nistatina-hazen-brown",
-   "titulo": "El primer antimicótico lo inventaron dos científicas por correo: Elizabeth Hazen, Rachel Fuller Brown y la nistatina",
+   "titulo": "Esta medicina para el algodoncillo salió de la tierra y viajó por correo — Hazen, Brown y la nistatina",
    "serie": "Shot Fungi Mati",
    "numero": 136,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-136-nistatina",
    "rama": "claude/fun-135-139-micologos",
-   "fuentes": [],
+   "fuentes": [
+    "Science History Institute, Elizabeth Lee Hazen y Rachel Fuller Brown",
+    "National Inventors Hall of Fame, Nystatin",
+    "Women in World History (encyclopedia.com)",
+    "Coutinho et al. 2004, Biophys J 87:3264",
+    "CDC, Candidiasis",
+    "MedlinePlus, Nystatin"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Streptomyces: las bacterias del suelo de las que salen muchos antibióticos (y la geosmina)",
+    "Anfotericina B y por qué cuesta tanto hacer antimicóticos",
+    "Nistatina y las obras de arte con moho tras la inundación de Florencia 1966 (solo si se verifica)"
+   ]
   },
   {
    "id": "hongos-reino-propio",
-   "titulo": "Durante siglos los libros pusieron a los hongos con las plantas: cómo se ganaron su propio reino (Whittaker 1969)",
+   "titulo": "Ese champiñón no es una verdura — cómo los hongos se ganaron su propio reino (Whittaker 1959/1969)",
    "serie": "Shot Fungi Mati",
    "numero": 137,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-137-reino",
    "rama": "claude/fun-135-139-micologos",
-   "fuentes": [],
+   "fuentes": [
+    "Scamardella 1999, Int. Microbiol. 2:207–216",
+    "Whittaker 1959, Q. Rev. Biol. 34:210–226; 1969, Science 163:150–160",
+    "Hagen 2012, BioScience 62:67–74",
+    "OpenStax Biology 2e",
+    "Hawksworth 2011, IMA Fungus 2:155–162",
+    "Ruggiero et al. 2015, PLoS ONE"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Melbourne 2011 y la regla «un hongo, un nombre»",
+    "Copeland y su reino Protoctista",
+    "Los mohos de agua parecían hongos y no lo son (ya hay fun-25: buscar otro ángulo)"
+   ]
   },
   {
    "id": "lsd-hofmann-cornezuelo",
-   "titulo": "De un hongo del centeno salió el LSD: Albert Hofmann, Sandoz y la historia científica (cornezuelo, Claviceps purpurea)",
+   "titulo": "Ese cuernito negro no es basura: de su química salió el LSD — Hofmann, Sandoz y el cornezuelo",
    "serie": "Shot Fungi Mati",
    "numero": 138,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-138-lsd",
    "rama": "claude/fun-135-139-micologos",
-   "fuentes": [],
+   "fuentes": [
+    "Hofmann, LSD — My Problem Child, caps. 1 y 4",
+    "Convenio sobre Sustancias Sicotrópicas, ONU 1971, Lista I",
+    "Ley General de Salud (México), art. 245 fr. I (DOF 15-01-2026)",
+    "NIDA, Psychedelic and Dissociative Drugs",
+    "Definium: fase 3 Voyage y Panorama (2026)"
+   ],
    "fecha": "2026-11-05",
    "derivados": [
+    "Hofmann y la psilocibina de Psilocybe mexicana (1958)",
+    "La metilergometrina contra el sangrado posparto",
+    "Pier Antonio Micheli sembró esporas y salió el mismo moho (1729)",
     "Pier Antonio Micheli sembró esporas y salió el mismo moho (1729): los hongos no salen de la nada"
    ]
   },
   {
    "id": "beatrix-potter-micologa",
-   "titulo": "La autora de Peter Rabbit era micóloga: Beatrix Potter, la germinación de esporas y la Sociedad Linneana",
+   "titulo": "Esa acuarela de hongo no es un adorno de cuento — Beatrix Potter, micóloga",
    "serie": "Shot Fungi Mati",
    "numero": 139,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-139-potter",
    "rama": "claude/fun-135-139-micologos",
-   "fuentes": [],
+   "fuentes": [
+    "Linnean Society, Beatrix Potter: the tale of the Linnean Society",
+    "Beatrix Potter Society, The Scientist",
+    "Armitt Museum, More than just a storyteller",
+    "V&A, Peter Rabbit: the tale of the tale",
+    "Wang et al. 2018, Mycological Progress 17:1013",
+    "Kuo, MushroomExpert (Flammulina velutipes)"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Charles McIntosh, el cartero naturalista",
+    "Enoki vs. Flammulina velutipes: un hongo que el ADN partió en dos (2018)",
+    "Las esporas de Tremella que Potter pintó décadas antes de describirse"
+   ]
   }
  ]
 }
