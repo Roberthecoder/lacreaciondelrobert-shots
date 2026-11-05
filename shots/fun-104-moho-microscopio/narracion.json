@@ -17,7 +17,7 @@
     },
     {
       "escena": "Tincion",
-      "texto": "y la ponen en un portaobjetos con azul de lactofenol, que tiñe sus paredes."
+      "texto": "y la ponen en un vidrio con azul de lactofenol, que tiñe sus paredes."
     },
     {
       "escena": "Pincel",
@@ -25,7 +25,7 @@
     },
     {
       "escena": "Cadenas",
-      "texto": "Cada punta hace una cadena de esporas: la nueva nace abajo y empuja a las viejas."
+      "texto": "Cada punta hace una cadena: la espora nueva nace abajo y empuja a las viejas."
     },
     {
       "escena": "Pregunta",
@@ -33,11 +33,11 @@
     },
     {
       "escena": "Aspergillus",
-      "texto": "No. Aspergillus termina en una punta hinchada, erizada de cadenas de esporas."
+      "texto": "No. Aspergillus termina en una punta hinchada, erizada de cadenas."
     },
     {
       "escena": "Micheli",
-      "texto": "En 1729, en Florencia, el sacerdote Pier Antonio Micheli le puso ese nombre:"
+      "texto": "En 1729, en Florencia, el botánico Pier Antonio Micheli le puso ese nombre:"
     },
     {
       "escena": "Micheli",
@@ -45,7 +45,7 @@
     },
     {
       "escena": "Sembro",
-      "texto": "Y sembró sus esporas: salía el mismo hongo, no nacía de la nada."
+      "texto": "Y sembró esporas de hongos: salía el mismo hongo, no nacía de la nada."
     },
     {
       "escena": "Miles",
@@ -53,11 +53,11 @@
     },
     {
       "escena": "Seguridad",
-      "texto": "Por eso no huelas la fruta con moho: envuélvela y tírala."
+      "texto": "Si tu naranja ya tiene moho, no la huelas: si está aguada o cubierta, a la basura."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que esa pelusa azul no es una mancha: es un bosque de pinceles."
+      "texto": "Esa pelusa azul no es una mancha: es un bosque de pinceles."
     }
   ],
   "mezcla": "oficial-30oct"

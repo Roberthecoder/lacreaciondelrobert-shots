@@ -4,8 +4,8 @@
 
 const TX = {
   sub: [
-    'No son hilos: *son tubos* con un río dentro.',
-    'Una hifa: *6 a 12 µm.* Un pelo: unas 70.',
+    'No está hecho de hilos: *son tubos.*',
+    'Una hifa: *≈ 10 µm.* Un pelo: unas 70.',
     'Solo crece *por la punta.*',
     'Unas *38,000 vesículas* por minuto.',
     'El río *arrastra a los núcleos.*',
@@ -161,7 +161,8 @@ function Colonia({ T, x, y, r = 430, rio = 0, nucleo = -1, mechon = 0, id = 'col
     {rio > 0 && COL.segs.map((s, i) => <path key={'i' + i} d={s.d} fill="none" stroke="#123a36" strokeWidth={s.prim ? 4.5 : 2.8} opacity={rio} strokeLinecap="round" />)}
     {/* pelusa aérea naranja (conidios) */}
     {COL.fluff.map((f, i) => { const dy = mechon > 0 && Math.hypot(f.x + 120, f.y - 120) < 70 ? -mechon * 40 : 0;
-      return <circle key={'f' + i} cx={f.x + Math.sin(T * 1.2 + f.ph) * 1.5} cy={f.y + dy} r={f.r} fill={f.c} opacity={0.82 * (1 - 0.72 * rio)} />; })}
+      const cx = f.x + Math.sin(T * 1.2 + f.ph) * 1.5, cy = f.y + dy, rr = f.r * 0.55;
+      return <g key={'f' + i} opacity={0.85 * (1 - 0.72 * rio)}>{[0, 1, 2].map((k) => <circle key={k} cx={cx + Math.cos(f.ph) * k * rr * 1.7} cy={cy + Math.sin(f.ph) * k * rr * 1.7} r={rr} fill={f.c} stroke="rgba(120,50,0,.35)" strokeWidth={1.5} />)}</g>; })}
     {/* el río: puntitos que corren por dentro de cada hifa hacia su punta */}
     {rio > 0 && COL.segs.map((s, i) => Array.from({ length: Math.max(1, Math.floor(s.len / 34)) }, (_, k) => {
       const u = fmod((k * 34 + T * 46) / s.len, 1); const [px, py] = enSeg(s, u);
@@ -197,7 +198,7 @@ function HifaShot() {
           {levanta > 0 && Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${CX - 120} ${CY + 120 - levanta * 40} Q ${CX - 150 + i * 10} ${CY + 140} ${CX - 170 + i * 16} ${CY + 160}`} stroke="#fffaf0" strokeWidth={2.5} fill="none" opacity={levanta} />)}
         </>)}
       </Escena>
-      <Lupa T={T} at={K.G + 2.2} until={K.H - 0.2} x={300} y={560} r={175} fx={CX - 250} fy={CY - 60} tinte={KC.cyan} etiqueta="POR DENTRO · UN TUBO"
+      <Lupa T={T} at={K.G + 2.2} until={K.H - 0.2} x={300} y={560} r={175} fx={CX - 335} fy={CY - 70} tinte={KC.cyan} etiqueta="POR DENTRO · UN TUBO"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0d1424" />
           <Tubo T={t} id="tLupa" x0={-20} x1={r * 2 + 20} y={r} w={92} punta={false} vel={70} nucleos={2} seed={4} /></svg>} />
 
@@ -206,11 +207,11 @@ function HifaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<>
-          {(() => { const e = kprog(T, K.H + 2.4, K.H + 3.3, kEase.sale); return e > 0 && <Pelo x={klerp(-1200, -40, e)} y={790} w={1160} h={420} />; })()}
-          <Tubo T={T} id="tHifa" x0={-40} x1={klerp(880, 940, kprog(T, K.H, K.P))} y={690} w={72} vel={55} nucleos={4} seed={5} />
+          {(() => { const e = kprog(T, K.H + 2.4, K.H + 3.3, kEase.sale); return e > 0 && <Pelo x={klerp(-1200, -40, e)} y={720} w={1160} h={504} />; })()}
+          <Tubo T={T} id="tHifa" x0={-40} x1={klerp(880, 940, kprog(T, K.H, K.P))} y={640} w={72} vel={55} nucleos={4} seed={5} />
           {/* medidores */}
-          <g opacity={kprog(T, K.H + 1.2, K.H + 1.6)}><line x1={300} y1={650} x2={300} y2={730} stroke={KC.gold2} strokeWidth={5} /><line x1={288} y1={654} x2={312} y2={654} stroke={KC.gold2} strokeWidth={5} /><line x1={288} y1={726} x2={312} y2={726} stroke={KC.gold2} strokeWidth={5} /></g>
-          <g opacity={kprog(T, K.H + 3.3, K.H + 3.7)}><line x1={600} y1={795} x2={600} y2={1205} stroke={KC.ink} strokeWidth={6} /><line x1={584} y1={797} x2={616} y2={797} stroke={KC.ink} strokeWidth={6} /><line x1={584} y1={1203} x2={616} y2={1203} stroke={KC.ink} strokeWidth={6} /></g>
+          <g opacity={kprog(T, K.H + 1.2, K.H + 1.6)}><line x1={300} y1={600} x2={300} y2={680} stroke={KC.gold2} strokeWidth={5} /><line x1={288} y1={604} x2={312} y2={604} stroke={KC.gold2} strokeWidth={5} /><line x1={288} y1={676} x2={312} y2={676} stroke={KC.gold2} strokeWidth={5} /></g>
+          <g opacity={kprog(T, K.H + 3.3, K.H + 3.7)}><line x1={600} y1={725} x2={600} y2={1219} stroke={KC.ink} strokeWidth={6} /><line x1={584} y1={727} x2={616} y2={727} stroke={KC.ink} strokeWidth={6} /><line x1={584} y1={1217} x2={616} y2={1217} stroke={KC.ink} strokeWidth={6} /></g>
         </>)}
       </Escena>
 
@@ -238,7 +239,9 @@ function HifaShot() {
             const t0 = K.V + 0.2 + i * 0.13, u = (T - t0) / 1.5; if (u < 0 || u > 1.25) return null;
             const ri = rieles[i % 3], ang = (ri / rr) * 1.1;
             const fx = cxD + Math.cos(ang) * (rr - 10), fy = Y + Math.sin(ang) * (rr - 10);
-            if (u <= 1) { const x = klerp(-30, fx, kEase.suave(u)), y = klerp(Y + ri, fy, kEase.suave(kclamp(u * 1.5 - 0.5, 0, 1)));
+            if (u <= 1) { const sx = X1 - rr * 0.62 - 40, sy = Y + ri * 0.35;   // los rieles llegan al Spitzenkörper; de ahí, sin riel, a la membrana
+              const u1 = kclamp(u / 0.7, 0, 1), u2 = kclamp((u - 0.7) / 0.3, 0, 1);
+              const x = u < 0.7 ? klerp(-30, sx, u1) : klerp(sx, fx, kEase.sale(u2)), y = u < 0.7 ? klerp(Y + ri, sy, u1 * u1) : klerp(sy, fy, kEase.sale(u2));
               return <circle key={i} cx={x} cy={y} r={15} fill={HF.ves} stroke={KC.ink} strokeWidth={3} />; }
             const q = (u - 1) / 0.25;   // se funde: anillo + enzimas
             return <g key={i}><circle cx={fx} cy={fy} r={15 + q * 26} fill="none" stroke={HF.ves} strokeWidth={4} opacity={1 - q} />
@@ -246,16 +249,17 @@ function HifaShot() {
           });
           const pared = kprog(T, K.V + 1.6, K.R - 0.4);
           return <>
-            <Tubo T={T} id="tVes" x0={-60} x1={X1} y={Y} w={W} vel={60} densidad={0.35} flujo seed={7} grosor={16}>
-              {rieles.map((ri) => <line key={ri} x1={-60} y1={Y + ri} x2={cxD - 40} y2={Y + ri * 1.05} stroke="rgba(177,140,255,.55)" strokeWidth={5} strokeDasharray="22 10" />)}
+            <Tubo T={T} id="tVes" x0={-60} x1={X1} y={Y} w={W} vel={60} densidad={0.35} flujo seed={7} grosor={16} spk={0.8}>
+              {rieles.map((ri) => <path key={ri} d={`M -60 ${Y + ri} Q ${(X1 - rr * 0.62) * 0.6} ${Y + ri} ${X1 - rr * 0.62 - 40} ${Y + ri * 0.35}`} fill="none" stroke="rgba(177,140,255,.6)" strokeWidth={5} strokeDasharray="22 10" />)}
             </Tubo>
             <path d={`M ${cxD} ${Y - rr} A ${rr} ${rr} 0 0 1 ${cxD} ${Y + rr}`} fill="none" stroke={HF.enz} strokeWidth={10 * pared} opacity={0.85} />
             {ves}
           </>; })())}
         <NumeroGigante T={T} at={K.V + 2.2} until={K.R - 0.2} valor={38000} dur={1.6} etiqueta="vesículas por minuto" x={380} y={520} tam={130} color={KC.yellow} />
-        <Nota T={T} at={K.V + 2.8} until={K.R - 0.2} x={380} y={650} centro partes={[['estimación para ', false], ['N. crassa', true]]} tam={28} color={KC.texto} />
+        <Nota T={T} at={K.V + 2.8} until={K.R - 0.2} x={380} y={650} centro partes={[['estimación de 1974 en ', false], ['N. crassa', true], [', por punta', false]]} tam={28} color={KC.texto} />
         <Nota T={T} at={K.V + 1.0} until={K.R - 0.2} x={70} y={840} partes={[['vesículas → membrana nueva', false]]} tam={28} color={KC.yellow} />
-        <Nota T={T} at={K.V + 1.8} until={K.R - 0.2} x={70} y={1090} partes={[['enzimas de pared (quitina sintasas)', false]]} tam={28} color={HF.enz} />
+        <Nota T={T} at={K.V + 1.4} until={K.R - 0.2} x={70} y={1050} partes={[['- - rieles (microtúbulos)', false]]} tam={24} color={KC.lilac} />
+        <Nota T={T} at={K.V + 1.8} until={K.R - 0.2} x={70} y={1135} partes={[['enzimas de pared (quitina sintasas)', false]]} tam={28} color={HF.enz} />
       </Escena>
 
       {/* 4 · el río: el citoplasma fluye hacia la punta y arrastra a los núcleos */}
@@ -383,21 +387,22 @@ function HifaShot() {
       </Escena>
 
       {/* etiquetas de la colonia */}
-      <Nota T={T} at={K.G + 0.8} until={K.H - 0.3} x={60} y={1510} partes={[['moho naranja · ', false], ['Neurospora crassa', true]]} tam={34} color={KC.ink} />
+      <Nota T={T} at={K.G + 0.8} until={K.H - 0.3} x={60} y={1505} partes={[['moho naranja · ', false], ['Neurospora crassa', true]]} tam={34} color={KC.ink} />
+      <Nota T={T} at={K.G + 3.2} until={K.H - 0.3} x={60} y={1555} partes={[['esporas (conidios): ahí está el naranja', false]]} tam={28} color={KC.ink} />
       <Nota T={T} at={K.G + 0.1} until={K.G + 2.1} x={300} y={420} centro partes={[['¿hilos?', false]]} tam={44} color={KC.ink} />
       <Nota T={T} at={K.H + 0.3} until={K.P - 0.3} x={70} y={420} partes={[['AL MICROSCOPIO', false]]} tam={34} color={KC.cyan} />
-      <Nota T={T} at={K.H + 1.3} until={K.P - 0.3} x={325} y={612} partes={[['hifa: 6–12 µm', false]]} tam={30} color={KC.gold2} />
-      <Nota T={T} at={K.H + 3.4} until={K.P - 0.3} x={630} y={1000} partes={[['pelo ≈ 70 µm', false]]} tam={38} color={KC.ink} />
+      <Nota T={T} at={K.H + 1.3} until={K.P - 0.3} x={325} y={560} partes={[['hifa ≈ 10 µm', false]]} tam={30} color={KC.gold2} />
+      <Nota T={T} at={K.H + 3.4} until={K.P - 0.3} x={630} y={980} partes={[['pelo ≈ 70 µm', false]]} tam={38} color={KC.ink} />
 
       {/* barras de escala (y = 1430) */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="2 cm" largo={190} />
-      <BarraEscala T={T} at={K.H} until={K.P} texto="20 µm" largo={120} y={1440} />
-      <BarraEscala T={T} at={K.P} until={K.V} texto="5 µm" largo={108} />
-      <BarraEscala T={T} at={K.V} until={K.R} texto="1 µm" largo={40} />
-      <BarraEscala T={T} at={K.R} until={K.S} texto="10 µm" largo={200} />
-      <BarraEscala T={T} at={K.S} until={K.Q} texto="10 µm" largo={250} />
+      <BarraEscala T={T} at={K.H} until={K.P} texto="20 µm" largo={144} y={1440} />
+      <BarraEscala T={T} at={K.P} until={K.V} texto="5 µm" largo={130} />
+      <BarraEscala T={T} at={K.V} until={K.R} texto="1 µm · esquemático" largo={48} />
+      <BarraEscala T={T} at={K.R} until={K.S} texto="10 µm" largo={240} />
+      <BarraEscala T={T} at={K.S} until={K.Q} texto="10 µm" largo={300} />
       <BarraEscala T={T} at={K.Q} until={K.W} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.W} until={K.E} texto="10 µm" largo={250} />
+      <BarraEscala T={T} at={K.W} until={K.E} texto="10 µm" largo={300} />
       <BarraEscala T={T} at={K.E} until={K.ST} texto="0.5 µm · esquemático" largo={150} />
       <BarraEscala T={T} at={K.ST} until={K.VI} texto="esquemático" largo={0} />
       <BarraEscala T={T} at={K.VI} until={K.C} texto="1 cm" largo={95} color={KC.ink} />
@@ -408,7 +413,7 @@ function HifaShot() {
       {sub(6, K.Q, K.W)}{sub(7, K.W, K.E)}{sub(8, K.E, K.ST)}{sub(9, K.ST, K.VI)}{sub(10, K.VI, K.C)}{sub(11, K.C, K.Ou)}
 
       <Robert T={T} apariciones={[
-        [K.G - 0.45, K.G + 3.8, 'avatar_11_sorprendido', 'gancho'],
+        [K.G - 0.45, K.G + 4.4, 'avatar_11_sorprendido', 'gancho'],
         [K.H + 2.2, K.P - 0.3, 'avatar_04_bajando_lentes', 'arriba-der'],
         [K.V + 0.8, K.R - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.R + 2.8, K.S - 0.1, 'avatar_06_pensativo_menton', 'arriba-der'],

@@ -167,7 +167,8 @@ function Bascula({ x, y, lleno = 1 }) {
 function Macrofago({ T, x, y, come = 0 }) {
   const n = 14, pts = Array.from({ length: n }, (_, i) => { const a = i / n * Math.PI * 2, rr = 150 + Math.sin(T * 2 + i * 1.7) * 18 + (i % 4 === 0 ? 30 : 0);
     return [x + Math.cos(a) * rr, y + Math.sin(a) * rr * 0.85]; });
-  const d = 'M ' + pts.map((p, i) => { const q = pts[(i + 1) % n]; return `${p[0].toFixed(1)} ${p[1].toFixed(1)} Q ${p[0].toFixed(1)} ${p[1].toFixed(1)} ${((p[0] + q[0]) / 2).toFixed(1)} ${((p[1] + q[1]) / 2).toFixed(1)}`; }).join(' ') + ' Z';
+  const mid = (a, b) => [((a[0] + b[0]) / 2).toFixed(1), ((a[1] + b[1]) / 2).toFixed(1)].join(' ');
+  const d = 'M ' + mid(pts[n - 1], pts[0]) + ' ' + pts.map((p, i) => `Q ${p[0].toFixed(1)} ${p[1].toFixed(1)} ${mid(p, pts[(i + 1) % n])}`).join(' ') + ' Z';
   const sx = klerp(x + 300, x + 30, kEase.suave(kclamp(come * 1.5, 0, 1))), so = 1 - kprog(come, 0.75, 1);
   return <g>
     <path d={d} fill="rgba(159,227,255,.28)" stroke={EA.macro} strokeWidth={7} />

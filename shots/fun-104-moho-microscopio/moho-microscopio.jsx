@@ -25,9 +25,9 @@ const SUBS_TXT = [
   '_Aspergillus:_ una *punta hinchada* con cadenas.',
   '1729, Florencia: *Pier Antonio Micheli.*',
   'Le recordó *el rociador del agua bendita.*',
-  'De sus esporas salía *el mismo hongo.*',
+  'Sembró esporas: salía *el mismo hongo.*',
   'Miles de esporas *de unas 3 micras.*',
-  '*No la huelas:* envuélvela y tírala.',
+  '*No la huelas:* si está aguada o cubierta, a la basura.',
   'No es una mancha: es un *bosque de pinceles.*',
 ];
 
@@ -142,7 +142,7 @@ function Pincel({ T, x, y, s = 1, p = 1, cad = 5, seed = 1, suelta = 0 }) {
     {PEN.met.map((m, i) => <Seg key={'m' + i} x1={m.o[0]} y1={m.o[1]} x2={m.e[0]} y2={m.e[1]} w={26} k={pM} />)}
     {PEN.fia.map((f, i) => <Fialide key={'f' + i} x={f.x} y={f.y} ang={f.a} largo={88} ancho={24} k={pF} />)}
     {pF >= 1 && PEN.fia.map((f, i) => { const L = Math.max(0, cad - (i % 4) * 0.35 - (i % 3) * 0.2);
-      return <Cadena key={'c' + i} x={f.x + Math.sin(rad(f.a)) * 88} y={f.y - Math.cos(rad(f.a)) * 88} ang={f.a} L={L} d={34} rx={17} ry={15} seed={seed + i} suelta={suelta ? kclamp(suelta - (i % 5) * 0.15, 0, 1) : 0} />; })}
+      return <Cadena key={'c' + i} x={f.x + Math.sin(rad(f.a)) * 88} y={f.y - Math.cos(rad(f.a)) * 88} ang={f.a} L={L} d={38} rx={13} ry={18} seed={seed + i} suelta={suelta ? kclamp(suelta - (i % 5) * 0.15, 0, 1) : 0} />; })}
   </g>;
 }
 // Conidióforo de Aspergillus fumigatus. Base del tallo visible en (x, y). Unidades: 10 µm = 100 px.
@@ -244,7 +244,7 @@ function MohoShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Mo: CUES.Moho, Ci: CUES.Cinta, Ti: CUES.Tincion, Pi: CUES.Pincel, Ca: CUES.Cadenas, P: CUES.Pregunta, A: CUES.Aspergillus, Mi: CUES.Micheli, S: CUES.Sembro, Mil: CUES.Miles, Se: CUES.Seguridad, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const Mi2 = K.Mi + 4.75;                       // empieza «le recordó el aspergillum…» (segunda línea de la escena)
+  const Mi2 = K.Mi + 4.6;                        // empieza «le recordó el aspergillum…» (segunda línea de la escena)
   const NX = 470, NY = 900, MX = NX - 70, MY = NY - 40;   // naranja y su moho
   // gancho: zoom rápido hacia el moho y se abre la lupa (cuadro 0.3)
   const zG = 1 + 0.18 * kprog(T, K.G, K.G + 0.6, kEase.sale);
@@ -261,8 +261,8 @@ function MohoShot() {
   const pMil = kprog(T, K.Mil, K.Mil + 0.01), sueltaMil = kprog(T, K.Mil + 0.4, K.Mil + 2.4);
   const bubble = kprog(T, K.Mil + 2.4, K.Mil + 3.0, kEase.rebote);
   // seguridad
-  const nariz = kprog(T, K.Se + 0.1, K.Se + 0.8, kEase.sale) * (1 - kprog(T, K.Se + 1.3, K.Se + 1.7));
-  const bolsa = kprog(T, K.Se + 1.8, K.Se + 2.4, kEase.sale), tira = kprog(T, K.Se + 2.5, K.Se + 3.2, kEase.suave);
+  const nariz = kprog(T, K.Se + 0.4, K.Se + 1.1, kEase.sale) * (1 - kprog(T, K.Se + 2.0, K.Se + 2.4));
+  const bolsa = kprog(T, K.Se + 2.8, K.Se + 3.4, kEase.sale), tira = kprog(T, K.Se + 3.6, K.Se + 4.3, kEase.suave);
 
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -385,13 +385,13 @@ function MohoShot() {
               </g>}
             </g>
           </g>
-          <Bote x={840} y={1200} tapa={kprog(T, K.Se + 3.2, K.Se + 3.5)} />
+          <Bote x={840} y={1200} tapa={kprog(T, K.Se + 4.3, K.Se + 4.6)} />
           {nariz > 0 && <g transform={`translate(${klerp(-160, 120, nariz)} 760)`}>
             <path d="M 0 -120 Q 40 -40 90 20 Q 110 50 80 64 Q 50 74 20 60" fill="#f1b48f" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
             <path d="M -60 -140 L 0 -120 L 20 60 L -60 80 Z" fill="#f1b48f" />
             <path d="M 46 54 q 12 -6 18 4" stroke={KC.ink} strokeWidth={5} fill="none" />
           </g>}
-          {T > K.Se + 0.8 && T < K.Se + 1.9 && <Sello T={T} at={K.Se + 0.8} x={260} y={720} texto="NO" color={KC.red} r={110} />}
+          {T > K.Se + 1.3 && T < K.Se + 2.7 && <Sello T={T} at={K.Se + 1.3} x={260} y={720} texto="NO" color={KC.red} r={110} />}
         </>)}
       </Escena>
       {/* 13 · cierre: la misma naranja, vista por dentro */}
@@ -434,9 +434,9 @@ function MohoShot() {
       <Chip T={T} at={K.Mil + 0.5} until={K.Mil + 2.4} texto="miles por cabeza" x={300} y={460} tam={36} borde={MM.conA} />
       <Etq T={T} at={K.Mil + 2.8} until={K.Se - 0.2} x={410} y={1140} texto="2.5–3 µm" tam={34} color={KC.texto} />
       <Etq T={T} at={K.Mil + 2.8} until={K.Se - 0.2} x={60} y={470} texto="un conidio de A. fumigatus" it tam={30} color={KC.texto} />
-      <Chip T={T} at={K.Se + 0.9} until={K.C - 0.2} texto="no la huelas" x={290} y={460} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.Se + 1.0} until={K.C - 0.2} x={60} y={540} texto="USDA: puede dar problemas al respirar" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.Se + 2.0} until={K.C - 0.2} texto="envuélvela y tírala" x={330} y={1170} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Se + 1.3} until={K.C - 0.2} texto="no la huelas" x={290} y={460} tam={36} borde={KC.red} />
+      <Etq T={T} at={K.Se + 1.5} until={K.C - 0.2} x={60} y={540} texto="USDA: oler moho puede dar problemas al respirar" tam={22} color={KC.ink} />
+      <Chip T={T} at={K.Se + 2.9} until={K.C - 0.2} texto="fruta blanda o muy cubierta: a la basura" x={420} y={1170} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="no es una mancha" x={300} y={470} tam={34} borde={KC.red} />
       <Etq T={T} at={K.C + 1.4} until={K.Ou} x={600} y={1225} texto="Penicillium" it tam={28} color={KC.ink} />
       <Etq T={T} at={K.C + 1.4} until={K.Ou} x={560} y={790} texto="dibujo esquemático" tam={22} color={KC.ink} />
