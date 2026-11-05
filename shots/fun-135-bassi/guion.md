@@ -4,8 +4,8 @@
 - **Ángulo del lote:** descubrimientos y personas de la micología. Aquí el centro es el **descubrimiento** (Bassi, 1835: un ser vivo microscópico causa una enfermedad contagiosa en un animal) y **cómo el hongo invade al gusano**. No repite fun-50 (langosta + biocontrol): el insecticida solo sale como dato final de una línea.
 - **Formato (RECETARIO):** **N1 · Por dentro** con el estudio contado como **N5 · El experimento** (Bassi pone el polvo en gusanos sanos). Viaje macro (gusano blanco y tieso sobre la hoja de morera) → micro (cutícula y hemolinfa, fondo oscuro) → el mismo gusano, ya "leído".
 - **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre lo que se ve: «Ese gusano no está cubierto de cal: ese polvo blanco es un hongo que le salió de adentro.»
-- **Duración:** voz 937 caracteres / 169 palabras (≈ 57.4 s estimados) + cierre 3.5 s → **61.5 s** en la base (suma de `OM_SCENES`).
-- **Voz:** pendiente de aprobación de Robert (~940 créditos de ElevenLabs).
+- **Duración:** voz 925 caracteres / 169 palabras (≈ 57 s estimados; la base reserva 58.0 s) + cierre 3.5 s → **61.5 s** en la base (suma de `OM_SCENES`).
+- **Voz:** pendiente de aprobación de Robert (~925 créditos de ElevenLabs).
 - **Matiz obligatorio del "primero":** las fuentes serias lo dicen distinto (DSB: "first demonstrated through experiments…"; Treccani: "tra i primi"). Por eso la voz dice **«Para muchos historiadores, fue la primera prueba experimental…»** y solo **en un animal**.
 - **Correcciones de la 1.ª verificación:** (1) el gusano se pone flácido antes de morir y se endurece **después**: la voz dice «muere, se pone duro» y en pantalla el chip «se pone duro» sale después de «muere»; (2) los conidios se dibujan a escala (2–3 µm, ~¼ de la barra de 10 µm), globosos, hialinos y en racimos; (3) Lodi aparece como lugar de trabajo y publicación («trabajó en Lodi, Italia»), no de nacimiento (nació en Mairago).
 
