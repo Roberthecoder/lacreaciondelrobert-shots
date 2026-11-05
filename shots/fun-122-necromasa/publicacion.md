@@ -67,7 +67,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esta tierra negra no es solo planta podrida: es un cementerio de microbios 🍄
-Al morir, hongos y bacterias dejan sus paredes pegadas a la arcilla. Un estudio de 2026 estimó que en tierras de cultivo, en promedio, los restos de hongos son el 34 % del carbono y los de bacterias el 16 %: cerca de la mitad.
+Al morir, muchos restos de hongos y bacterias se quedan pegados a minerales finos, como la arcilla. Un estudio de 2026 estimó que en tierras de cultivo, en promedio, los restos de hongos son el 34 % del carbono y los de bacterias el 16 %: cerca de la mitad.
 ¿Cómo le dicen a la tierra negra en tu región? 👇
 Shot Fungi Mati 122 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -94,7 +94,7 @@ Esta tierra negra no es solo planta podrida: es un cementerio de microbios. En t
 ### Threads
 ```text
 Esta tierra negra no es solo planta podrida: es un cementerio de microbios 🍄
-Al morir, hongos y bacterias dejan sus paredes pegadas a la arcilla. En tierras de cultivo, en promedio, los restos de hongos son el 34 % del carbono del suelo y los de bacterias el 16 % (estudio de 2026, 486 sitios). Los microbios vivos suelen ser apenas un 2 %.
+Al morir, muchos restos de hongos y bacterias se quedan pegados a minerales finos, como la arcilla. En tierras de cultivo, en promedio, los restos de hongos son el 34 % del carbono del suelo y los de bacterias el 16 % (estudio de 2026, 486 sitios). Los microbios vivos suelen ser apenas un 2 %.
 ¿Cómo le dicen a la tierra negra en tu región?
 #Suelo
 ```

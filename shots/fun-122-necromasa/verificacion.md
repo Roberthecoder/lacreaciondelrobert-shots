@@ -105,3 +105,35 @@ Tras corregir 1, 2 y 4, basta re-verificar esas líneas. (No se revisó `publica
 | `guion.md` | Voz y pantalla viejas | Reescrito con la voz actual de `narracion.json` y los textos en pantalla actuales (sin «tu milpa», sin «datos de todo el mundo», el 2 % en tarjeta aparte, mapa concentrado en el hemisferio norte, tarjeta 2019 con pastizales/bosques). | — |
 
 Pendiente: re-verificación independiente de estas líneas y de `publicacion.md`; la línea final de veredicto la pone el re-verificador.
+
+## 5. Re-verificación independiente 2 (5 nov 2026) — falta 1 corrección en `publicacion.md`
+
+Revisados: `narracion.json`, `guion.md` (ya actualizado), textos en pantalla de `necromasa.jsx` y `publicacion.md`.
+
+| Línea | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Pantalla 2019: "pastizales: hasta 62 %" (barra 0.62) · "bosques: ~1/3" (barra 0.33) | ✅ | Kästner et al. 2021, Front. Environ. Sci. (cita a Liang 2019) | "an average contribution of microbial necromass to SOM varying between 33% in forest soils and up to 62% in grasslands" | 2019 (citado 2021) |
+| Subtítulo Huella: "Glucosamina: *sobre todo hongos.* Ácido murámico: *bacterias.*" | ✅ | EGU22-2244 (Salas et al.) | "Glucosamine is used as a biomarker for both fungal and bacterial necromass"; "muramic acid is exclusively found in bacterial peptidoglycan" | 2022 |
+| Subtítulo Vivos: "Vivos: suelen ser *un 2 %* del carbono del suelo." | ✅ | Lu 2026 | "the living soil microbial biomass typically constitutes only about 2 % of SOC" | 2026 |
+| Subtítulo Estudio2026: "Cultivos: hongos *34 %,* bacterias *16 %.*" (+ chip "tierras de cultivo · 0–20 cm · promedio") | ✅ | Lu 2026 | "FNC/SOC … (mean ± SE: 34.39 ± 0.67 %)", "BNC/SOC … (15.65 ± 0.33 %)" | 2026 |
+| `guion.md`: voz idéntica a `narracion.json` y pantalla igual al jsx | ✅ | — | — | — |
+| publicacion.md (YouTube): bosques 29 % y 13 %; pastizales 27 % y 14 %; 145 tierras de cultivo | ✅ | Lu 2026 | "FNC contributed, on average, 29.11 % to SOC in forests and 26.75 % in grasslands"; "BNC contributed 13.48 % in forests and 14.34 % in grasslands"; "145 agricultural and 341 natural sites" | 2026 |
+| publicacion.md: carbono pegado a minerales ~129 años en el primer metro (45–383), contra ~23 del suelto | ✅ | Zhou et al. 2024, Nat. Commun. (resumen, DOAJ) | "global mean MAOC and POC turnover times are 129 (45–383) yr and 23 (5–82) yr in the top meter" | 2024 |
+| publicacion.md: Liang 2019, datos 1996–2018, suelos templados, "puede ser más de la mitad" | ✅ | Liang 2019, resumen (Europe PMC) | "biomarker amino sugar data published between 1996 and 2018 … We show that microbial necromass can make up more than half of soil organic carbon." | 2019 |
+| publicacion.md (LinkedIn): el manejo influye en cuántos restos se guardan | ✅ | Liang 2019, resumen | "next-generation field management requires promoting microbial biomass formation and necromass preservation" | 2019 |
+| **publicacion.md, Facebook Reels y Threads: «Al morir, hongos y bacterias dejan sus paredes pegadas a la arcilla.»** | ⚠️ generaliza (no todas; la voz dice «muchos restos… a minerales finos») | Xuan 2024, Geoderma | "there are no significant differences in the concentrations of total amino sugars between MAOM and POM in croplands and grasslands" | 2024 |
+| Resto de voz, pantalla y redes (gancho, quitina/N‑acetilglucosamina, décadas o siglos, hemisferio norte, 2 % aparte, cierre "cultivo típico", "el hongo pesa el doble") | ✅ | ver secciones 1 y 3 | — | — |
+
+### Qué falla y redacción sugerida
+- **`publicacion.md`, Facebook Reels y Threads:** cambiar «Al morir, hongos y bacterias dejan sus paredes pegadas a la arcilla.» por **«Al morir, muchos restos de hongos y bacterias se quedan pegados a minerales finos, como la arcilla.»**
+
+Con ese cambio (y nada más), el shot queda aprobado; basta comprobar esas dos líneas.
+
+## Re-verificación independiente (final)
+
+| Línea | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| publicacion.md, Facebook Reels (l. 70) y Threads (l. 97): «Al morir, muchos restos de hongos y bacterias se quedan pegados a minerales finos, como la arcilla.» | ✅ | Xuan 2024, Geoderma; Lu 2026, ESSD | "Total amino sugars are predominantly occluded within MAOM … rather than POM … on a global scale"; "stable organo-mineral complex formation by abundant fine soil particles" | 2024 / 2026 |
+| Resto de voz (`narracion.json`), pantalla (`necromasa.jsx`), `guion.md` y `publicacion.md` | ✅ | secciones 1, 3 y 5 | — | — |
+
+VEREDICTO: APROBADO
