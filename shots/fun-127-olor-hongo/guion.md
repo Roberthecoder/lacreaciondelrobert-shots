@@ -28,26 +28,28 @@
 | 13 | Cierre | Así que ese olor a hongo es, sobre todo, una molécula que el champiñón arma cuando rompes sus células. | **Regreso a la imagen del inicio:** el mismo champiñón, ya machacado, con la nubecita convertida en la molécula dibujada. Chip "1-octen-3-ol". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música (planeada):** cama grave y continua, cálida y curiosa (cocina → laboratorio), sin golpe marcado, debajo de la voz; se abre un poco en «la R huele más a hongo». Efectos en el mismo cuadro: golpes del mortero, chasquido de cada enzima, "pop" del oxígeno, tijeretazo de la liasa, brillo del pedazo de 8 carbonos, zumbido de moscas tsetsé y moscos, clic de la trampa.
+**Música (`gen-audio.mjs`):** cama grave y continua (pad + bajo suave) con armonía que camina en la menor (i–VI–III–VII y variantes, un acorde cada 2.4 s), y un motivo de celesta muy suave compuesto a mano en frases de 4 compases (motivo → respuesta → secuencia → cadencia → tema arriba → cierre); nunca el mismo patrón más de 4 compases. Ahogada (tensa) mientras estamos en la cocina y el laboratorio; se abre en «la R huele más a hongo». Sin golpe marcado, siempre debajo de la voz. Efectos en el mismo cuadro: golpes del mortero, chasquido de cada enzima, "pop" del oxígeno, tijeretazo de la liasa, brillo del pedazo de 8 carbonos, zumbido de moscas tsetsé y moscos, clic de la trampa.
 
-Barra de escala: 2 cm (champiñón), 10 µm (hifas), 1 nm (moléculas, esquemáticas). En las tarjetas (estudio, cuadrícula) no hay objeto que medir.
+Barra de escala: 2 cm (champiñón), 10 µm (hifas), 1 nm (moléculas, esquemáticas), 5 cm → moléculas (vaso de agua), 1 m (vaca), 10 cm (brazo y trampa).
 
-## Robert en pantalla (plan; los tiempos finales salen al animar)
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué esa molécula huele tanto a hongo?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no es olor a tierra» (cuadro 0) |
-| 2 | 7.5 | 10.0 | 12_perfil_serio | `arriba-der` | «la geosmina» |
-| 3 | 15.5 | 19.5 | 13_senalando_arriba | `arriba-der` | «la lipoxigenasa… la liasa» |
-| 4 | 23.0 | 26.0 | 11_sorprendido | `arriba-der` | «una parte en mil millones» |
-| 5 | 26.0 | 28.5 | 07_pensativo_puno | `presentador` (grande) | «¿Y por qué huele tanto a hongo?» |
-| 6 | 33.0 | 37.0 | 06_pensativo_menton | `arriba-der` | «la R… la S» |
-| 7 | 38.5 | 42.5 | 04_bajando_lentes | `arriba-der` | «en el olor de las vacas» |
-| 8 | 46.0 | 50.5 | 10_serio_molesto | `arriba-der` | «atrae a algunos moscos» |
-| 9 | 53.0 | 57.5 | 02_apuntando_camara | `arriba-der` | «cuando rompes sus células» |
-| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+| 1 | 0.0 | 2.8 | 11_sorprendido | `gancho` | «no es olor a tierra» (cuadro 0) |
+| 2 | 9.3 | 11.3 | 12_perfil_serio | `arriba-der` | «la tierra mojada es otra: la geosmina» |
+| 3 | 18.6 | 23.6 | 13_senalando_arriba | `arriba-der` | «le pega oxígeno… una liasa» |
+| 4 | 24.9 | 27.8 | 11_sorprendido | `arriba-der` | «una parte en mil millones» |
+| 5 | 28.1 | 31.1 | 07_pensativo_puno | `grande` | «¿Y por qué esa molécula huele tanto a hongo?» |
+| 6 | 37.1 | 39.4 | 06_pensativo_menton | `arriba-der` | «los hongos hacen sobre todo la R» |
+| 7 | 42.1 | 45.2 | 04_bajando_lentes | `arriba-der` | «la encontraron en el olor de las vacas» |
+| 8 | 47.9 | 52.0 | 10_serio_molesto | `arriba-der` | «atrae a algunos moscos» |
+| 9 | 52.6 | 58.2 | 02_apuntando_camara | `arriba-der` | «cuando rompes sus células» |
+| — | 58.3 | 61.8 | 13_senalando_arriba | CierreMarca | cierre |
 
-Plan: 9 apariciones · ≈ 31.5 s en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
+Apariciones 9 · **≈ 31.3 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas (11 sale en la 1 y en la 4, no seguidas).
 
 ## Fuentes (verificadas; tabla completa en `verificacion.md`)
 
