@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #108 · rama `claude/fun-105-109-cultivo`.
 - **Formato:** N1 Por dentro + N6 guía de errores. Viaje bolsa de cultivo (macro) → micelio por dentro (fondo oscuro) → errores de cultivo → la misma bolsa, ahora limpia y con setas.
 - **Ojo:** no es el *Penicillium digitatum* de la naranja (Fungi Mati #55). Aquí es *Trichoderma*, plaga del cultivo de setas y champiñón.
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla: «Esa pelusa blanca no es tu hongo: es el enemigo, y luego se pone verde.»
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla: «Esa pelusa blanca no es tu hongo: es el enemigo, y se pone verde.»
 - **Duración (estimada con `estimar-escenas.mjs`):** voz 959 caracteres (≈ 58.4 s) + cierre 3.5 s → **61.9 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~960 créditos de ElevenLabs).
 - **Estado:** guion corregido tras la 1ª verificación (escenas PorDentro, Estudio, Gramo, Chiste); pendiente re-verificación. No se anima antes de `VEREDICTO: APROBADO`.
@@ -26,7 +26,7 @@
 | 11 | Cierre | 54.1–58.4 | Esa pelusa no es tu cosecha: pasteuriza y limpia manos y herramientas. | **Regreso a la imagen del inicio:** la misma bolsa del cuadro 0, ahora limpia (micelio parejo) y con un racimo de setas (`RacimoOstra`, pie lateral); la bolsa verde aparece chiquita con ✗ "a la basura, lejos". Chips "pasteuriza · limpia manos y herramientas". Chip guiño: "a Robert también se le llenó un frasco de esporas que no quería". |
 | — | Outro | 58.4–61.9 | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave y continua, con un motivo de cuerdas que se va "contaminando" (disonancia creciente mientras avanza el moho) y se limpia en el cierre; sin golpe marcado. Efectos en el mismo cuadro: crujido suave de la pelusa que crece, "chispa" verde al esporular, enrollado (glissando) de la hifa, tics del contador de días, gotas de agua, burbujeo de la olla, siseo de la olla de presión, golpe de báscula, caída de barras, tela que se rasga, clic de tijeritas de enzimas, setas que brotan.
+**Música:** cama grave y continua, con un motivo de cuerdas que se va "contaminando" (disonancia creciente mientras avanza el moho) y se limpia en el cierre; sin golpe marcado. Efectos en el mismo cuadro: crujido suave de la pelusa que crece, "chispa" verde al esporular, hifas que se amontonan (glissando suave), tics del contador de días, gotas de agua, burbujeo de la olla, siseo de la olla de presión, golpe de báscula, caída de barras, tela que se rasga, clic de tijeritas de enzimas, setas que brotan.
 
 Barra de escala: 10 cm (bolsa), 10 µm (hifas), 2 cm (placas), "esquemático" en mapa y cuarto de cultivo.
 
