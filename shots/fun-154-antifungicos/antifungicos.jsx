@@ -267,10 +267,10 @@ function AntifungicosShot() {
         <FondoLunares color={KC.lilac} />
         {fsvg((() => { const jar = kprog(T, K.Es + 2.4, K.Es + 3.6, kEase.suave);
           return <>
-            <MapaNY x={130} y={420} s={1.05} />
-            <circle cx={130 + 545 * 1.05} cy={420 + 315 * 1.05} r={16} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
-            <circle cx={130 + 520 * 1.05} cy={420 + 170 * 1.05} r={16} fill={KC.blue} stroke={KC.ink} strokeWidth={4} />
-            {jar > 0 && jar < 1 && <FrascoVidrio x={klerp(130 + 545 * 1.05, 130 + 520 * 1.05, jar)} y={klerp(420 + 300 * 1.05, 420 + 150 * 1.05, jar) - Math.sin(jar * Math.PI) * 80} s={0.6} rot={Math.sin(jar * 12) * 10} />}
+            <MapaNY x={20} y={420} s={1.0} />
+            <circle cx={20 + 545} cy={420 + 315} r={16} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
+            <circle cx={20 + 520} cy={420 + 170} r={16} fill={KC.blue} stroke={KC.ink} strokeWidth={4} />
+            {jar > 0 && jar < 1 && <FrascoVidrio x={klerp(20 + 545, 20 + 520, jar)} y={klerp(420 + 300, 420 + 150, jar) - Math.sin(jar * Math.PI) * 80} s={0.6} rot={Math.sin(jar * 12) * 10} />}
             {Array.from({ length: 7 }, (_, i) => <Tubo key={i} x={730 + i * 48} y={1150} s={0.9} on={kEase.rebote(kprog(T, K.Es + 0.6 + i * 0.12, K.Es + 0.9 + i * 0.12))} tierra={['#7a4a22', '#5b3a22', '#8a5a2a', '#6a4426'][i % 4]} />)}
             {T > K.Es + 4.3 && <Streptomyces x={540} y={960} s={0.75} p={kprog(T, K.Es + 4.3, K.Es + 5.6)} />}
             {T > K.Es + 6.3 && <g transform="translate(200 1100)"><Esterol x={0} y={0} s={0.8} color={AF.ergo} ergo /><g transform={`translate(${klerp(260, 120, kprog(T, K.Es + 6.4, K.Es + 7.2, kEase.sale))} -20)`}><rect x={0} y={-12} width={130} height={24} rx={12} fill={AF.amb} stroke={KC.ink} strokeWidth={4} /></g></g>}
@@ -327,7 +327,7 @@ function AntifungicosShot() {
       {[0, 1, 2].map((i) => <Chip key={i} T={T} at={K.Po + 0.75 + i} until={i < 2 ? K.Po + 1.7 + i : K.Fa - 0.3} texto={`${OBJ[i][2]}: ✗ también tú`} x={540} y={1130} tam={34} borde={KC.red} />)}
       <NumeroGigante T={T} at={K.Fa + 0.2} until={K.Pr - 0.3} valor={5} dur={0.5} etiqueta="familias de antifúngicos" x={850} y={860} tam={220} color={KC.yellow} />
       <Chip T={T} at={K.Fa + 0.4} until={K.Pr - 0.3} texto="aprobadas para infecciones graves · OMS 2025" x={540} y={470} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.Fa + 2.4} until={K.Pr - 0.3} x={600} y={1090} texto="4 de uso clínico" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Fa + 2.4} until={K.Pr - 0.3} texto="4 de uso clínico" x={850} y={1090} tam={30} borde={KC.yellow} />
       <Etq T={T} at={K.Me + 0.6} until={K.Az - 0.3} x={60} y={590} texto="tu membrana: colesterol" tam={32} color="#ffb27a" />
       <Etq T={T} at={K.Me + 2.2} until={K.Az - 0.3} x={60} y={910} texto="la del hongo: ergosterol" tam={32} color={AF.ergo} />
       <Chip T={T} at={K.Me + 3.0} until={K.Az - 0.3} texto="casi igual, con unos átomos distintos" x={540} y={1160} tam={30} borde={AF.ergo} />
@@ -341,7 +341,7 @@ function AntifungicosShot() {
       <Etq T={T} at={K.Pa + 2.0} until={K.Es - 0.3} x={830} y={1160} texto="equinocandina → glucano sintasa" tam={26} color={KC.pink} lado="izq" />
       <Chip T={T} at={K.Pa + 3.0} until={K.Es - 0.3} texto="quitina: aún sin medicamento que funcione bien" x={540} y={470} tam={26} borde={AF.quitina} />
       <Etq T={T} at={K.Es + 0.4} until={K.Es + 4.0} x={680} y={800} texto="ciudad de Nueva York" tam={24} color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.Es + 0.6} until={K.Es + 4.0} x={640} y={560} texto="Albany" lado="izq" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Es + 0.6} until={K.Es + 4.0} x={510} y={560} texto="Albany" lado="izq" tam={26} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 4.1} anio="1950" quien="Hazen y Brown" revista="Depto. de Salud del Edo. de Nueva York · Science, 1950" x={400} y={990} />
       <Etq T={T} at={K.Es + 4.6} until={K.Ri - 0.3} x={520} y={870} texto="Streptomyces noursei" lado="izq" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.Es + 5.2} until={K.Ri - 0.3} texto="nistatina = New York State" x={540} y={470} tam={34} borde={KC.ink} />
@@ -349,9 +349,9 @@ function AntifungicosShot() {
       <TarjetaEstudio T={T} at={K.Ri + 2.2} until={K.Ri + 4.5} anio="2023" quien="U. de Illinois" revista="Nature, 2023" x={540} y={1040} />
       <Etq T={T} at={K.Ri + 0.3} until={K.Ri + 4.5} x={300} y={470} texto="célula de riñón" tam={30} color="#ffb27a" />
       <Etq T={T} at={K.Ri + 1.0} until={K.Ri + 4.5} x={620} y={700} texto="jala colesterol" tam={30} color={AF.amb} />
-      <Etq T={T} at={K.Ri + 4.9} until={K.Di - 0.3} x={640} y={965} texto="AM-2-19" tam={34} color={KC.cyan} />
+      <Etq T={T} at={K.Ri + 4.9} until={K.Di - 0.3} x={640} y={985} texto="AM-2-19" tam={34} color={KC.cyan} />
       <Chip T={T} at={K.Ri + 5.4} until={K.Di - 0.3} texto="en ratones y células de riñón en laboratorio" x={540} y={790} tam={26} borde={KC.cyan} />
-      <Chip T={T} at={K.Ri + 6.0} until={K.Di - 0.3} texto="todavía no es medicamento" x={540} y={870} tam={28} borde={KC.yellow} />
+      <Chip T={T} at={K.Ri + 6.0} until={K.Di - 0.3} texto="todavía no es medicamento" x={540} y={880} tam={28} borde={KC.yellow} />
       <NumeroGigante T={T} at={K.Di + 0.3} until={K.Ci - 0.3} valor={4} dur={1.4} etiqueta="antifúngicos nuevos" x={360} y={660} tam={220} color={KC.pink} />
       <Chip T={T} at={K.Di + 0.8} until={K.Ci - 0.3} texto="aprobados 2014–2024 · OMS 2025" x={380} y={470} tam={28} borde={KC.ink} />
       <Etq T={T} at={K.Ci + 1.0} until={K.Ou} x={70} y={560} texto="ergosterol · β-glucano · quitina" tam={26} color={KC.ink} />
