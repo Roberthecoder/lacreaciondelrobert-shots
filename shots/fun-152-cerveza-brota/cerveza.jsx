@@ -249,11 +249,11 @@ function CervezaShot() {
           {(() => { const u = kprog(T, K.Bl + 0.5, K.Bl + 2.6); return u < 1 ? <Burbuja x={270} y={820} r={klerp(110, 4, u)} /> : null; })()}
           {/* burbuja blindada */}
           {(() => { const cub = kprog(T, K.Bl + 0.6, K.Bl + 2.4), crece = kprog(T, K.A + 0.6, K.A + 2.0, kEase.sale);
-            return <Burbuja x={720} y={820} r={110 + crece * 150} cubierta={cub} n={20} />; })()}
+            return <Burbuja x={620} y={840} r={110 + crece * 90} cubierta={cub} n={20} />; })()}
           {/* nacen muchas burbujas nuevas */}
           {Array.from({ length: 26 }, (_, i) => { const g = krng(i + 9), t0 = K.A + 1.2 + g() * 0.6, u = kprog(T, t0, t0 + 0.9, kEase.sale); if (u <= 0) return null;
             const a = g() * Math.PI * 2, d = 160 + g() * 300;
-            return <Burbuja key={i} x={720 + Math.cos(a) * d * u} y={820 + Math.sin(a) * d * u - u * 80} r={14 + g() * 30 * u} />; })}
+            return <Burbuja key={i} x={620 + Math.cos(a) * d * u * 0.8} y={860 + Math.sin(a) * d * u * 0.7 - u * 40} r={14 + g() * 30 * u} />; })}
         </>)}
       </Escena>
       <Escena T={T} a={K.A + 2.0} b={K.E} zoom={0.05}>
@@ -279,8 +279,8 @@ function CervezaShot() {
               {[0, 1, 2].map((k) => { const v = kprog(T, K.E + 2.2 + k * 0.6, K.E + 2.6 + k * 0.6); return v > 0 && v < 1 ? <circle key={k} cx={0} cy={60 + v * 70} r={9} fill={KC.gold2} stroke={KC.ink} strokeWidth={3} /> : null; })}
             </g>; })()}
           <Botella x={150} y={1110} s={0.62} etiqueta="CONTROL" rot={T < K.D + 0.9 && T > K.D + 0.1 ? Math.sin(T * 18) * 5 : 0} />
-          <Chorro T={T} x={360} y={1110 - 506 * 0.62} p={brota} alto={130} ancho={36} seed={8} />
-          <Botella x={360} y={1110} s={0.62} etiqueta="+1 µg" tapa={kprog(T, K.D + 1.4, K.D + 1.9)} rot={T < K.D + 0.9 && T > K.D + 0.1 ? Math.sin(T * 18 + 1) * 5 : 0} />
+          <Chorro T={T} x={360} y={1110 - 506 * 0.62} p={brota} alto={50} ancho={26} seed={8} dir={1.4} />
+          <Botella x={360} y={1110} s={0.62} etiqueta="CON 1 µg" tapa={kprog(T, K.D + 1.4, K.D + 1.9)} rot={T < K.D + 0.9 && T > K.D + 0.1 ? Math.sin(T * 18 + 1) * 5 : 0} />
           {T > K.D + 0.4 && <><Bascula x={150} y={1110} texto="0 g" /><Bascula x={360} y={1110} texto={brota > 0.2 ? `-${Math.round(106 * kprog(T, K.D + 1.8, K.D + 3.0))} g` : '0 g'} /></>}
         </>)}
       </Escena>
@@ -324,9 +324,9 @@ function CervezaShot() {
           <Botella x={330} y={1180} s={1.05} tapa={1} />
           {(() => { const u = kprog(T, K.C + 1.6, K.C + 2.6, kEase.sale); if (u <= 0) return null;
             return <g opacity={u}>
-              <path d={`M 470 620 Q 640 ${560 - 30 * u} 700 ${klerp(620, 880, u)}`} stroke={KC.ink} strokeWidth={6} fill="none" strokeDasharray="16 12" strokeDashoffset={-T * 40} />
-              <g transform="translate(760 1150) scale(.55)"><Espiga T={T} x={0} y={0} mancha={1} seed={2} /></g>
-              <g transform="translate(900 1080) scale(.22)"><Grano T={T} x={0} y={0} germ={1} hifas={1} /></g>
+              <path d={`M 450 640 Q 600 ${600 - 30 * u} 640 ${klerp(640, 900, u)}`} stroke={KC.ink} strokeWidth={6} fill="none" strokeDasharray="16 12" strokeDashoffset={-T * 40} />
+              <g transform="translate(590 1176) scale(.5)"><Espiga T={T} x={0} y={0} mancha={1} seed={2} /></g>
+              <g transform="translate(680 990) scale(.2)"><Grano T={T} x={0} y={0} germ={1} hifas={1} /></g>
             </g>; })()}
         </>)}
         <Lupa T={T} at={K.C + 0.6} until={FIN} x={330} y={380} r={140} fx={330} fy={560} tinte={KC.gold}
@@ -353,18 +353,18 @@ function CervezaShot() {
       <Chip T={T} at={K.DC + 1.9} until={K.Bo - 0.2} texto="anfipática: dos caras" x={420} y={470} tam={32} borde={KC.cyan} />
       <Chip T={T} at={K.Bo + 1.0} until={K.P - 0.2} texto="solo una parte llega (un estudio: ~10–20 %)" x={540} y={1080} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.Bl + 0.2} until={K.A + 1.8} texto="AL MICROSCOPIO · DENTRO DE LA CERVEZA" x={480} y={470} tam={26} borde={KC.gold} mono />
-      <Chip T={T} at={K.Bl + 0.8} until={K.A - 0.2} texto="hipótesis" x={720} y={1080} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.Bl + 0.8} until={K.A - 0.2} texto="hipótesis" x={620} y={1100} tam={34} borde={KC.yellow} />
       <Etq T={T} at={K.Bl + 1.2} until={K.A - 0.3} x={60} y={1010} texto="sola: se disuelve" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.Bl + 2.0} until={K.A - 0.3} x={60} y={600} texto="blindada" tam={34} color={KC.gold2} />
+      <Etq T={T} at={K.Bl + 2.0} until={K.A - 0.3} x={760} y={640} texto="blindada" tam={34} color={KC.gold2} />
       <Medidor T={T} at={K.A + 0.1} until={K.A + 1.9} valor={(t) => 1 - kprog(t, K.A + 0.4, K.A + 0.9, kEase.sale) * 0.75} etiqueta="presión" texto={(v) => v > 0.6 ? 'alta' : '¡baja!'} x={60} y={540} ancho={520} color={KC.pink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.D - 0.2} anio="2012" quien="VTT, Finlandia · Sarlin et al." revista="J. Basic Microbiol., 2012" x={700} y={640} />
-      <EtqB T={T} at={K.E + 1.4} until={K.D - 0.3} x={470} y={830} texto="de F. graminearum y F. poae" it tam={22} />
-      <EtqB T={T} at={K.E + 1.6} until={K.D - 0.3} x={470} y={872} texto="(producidas en Trichoderma reesei)" it tam={22} />
-      <Nota T={T} at={K.E + 2.4} until={K.D + 0.1} x={500} y={930} w={520} tam={28} borde={KC.pink} texto="prueba de laboratorio: se agitan 3 días, reposan, se voltean 3 veces y se abren" />
-      <NumeroGigante T={T} at={K.D + 0.2} until={K.PQ - 0.3} valor={1} dur={0.4} sufijo=" µg" x={270} y={400} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.D + 0.4} until={K.PQ - 0.3} texto="una millonésima de gramo" x={270} y={510} tam={30} borde={KC.yellow} />
-      <Chip T={T} at={K.D + 0.6} until={K.PQ - 0.3} texto="en 330 ml = 0.003 ppm" x={270} y={578} tam={28} borde={KC.ink} mono />
-      <Chip T={T} at={K.D + 0.3} until={K.PQ - 0.3} texto="misma agitación" x={270} y={646} tam={30} borde={KC.pink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.D - 0.2} anio="2012" quien="VTT, Finlandia" revista="Sarlin et al. · J. Basic Microbiol." x={650} y={640} />
+      <EtqB T={T} at={K.E + 1.4} until={K.D - 0.3} x={440} y={840} texto="hidrofobinas de F. graminearum y F. poae" it tam={22} />
+      <EtqB T={T} at={K.E + 1.6} until={K.D - 0.3} x={440} y={878} texto="(producidas en Trichoderma reesei)" it tam={22} />
+      <Nota T={T} at={K.E + 2.4} until={K.D + 0.1} x={500} y={920} w={520} tam={28} borde={KC.pink} texto="prueba de laboratorio: se agitan 3 días, reposan, se voltean 3 veces y se abren" />
+      <NumeroGigante T={T} at={K.D + 0.2} until={K.PQ - 0.3} valor={1} dur={0.4} sufijo=" µg" x={270} y={370} tam={150} color={KC.yellow} />
+      <Chip T={T} at={K.D + 0.4} until={K.PQ - 0.3} texto="una millonésima de gramo" x={270} y={470} tam={30} borde={KC.yellow} />
+      <Chip T={T} at={K.D + 0.6} until={K.PQ - 0.3} texto="en 330 ml = 0.003 ppm" x={270} y={535} tam={28} borde={KC.ink} mono />
+      <Chip T={T} at={K.D + 0.3} until={K.PQ - 0.3} texto="misma agitación" x={270} y={598} tam={30} borde={KC.pink} />
             <EtqB T={T} at={K.D + 0.8} until={K.PQ - 0.3} x={30} y={1500} texto="CONTROL = sin hidrofobina · 106 g = promedio de 2 botellas" tam={20} />
       <Chip T={T} at={K.PQ + 0.2} until={K.Ag - 0.3} texto="la hifa tiene que salir del agua" x={420} y={470} tam={32} borde={KC.ink} />
       <Medidor T={T} at={K.PQ + 0.9} until={K.Ag - 0.3} valor={(t) => klerp(72, 24, kprog(t, K.PQ + 1.0, K.PQ + 2.6, kEase.suave)) / 72} etiqueta="tensión superficial" texto={(v) => Math.round(v * 72) + ' mJ/m²'} x={90} y={540} ancho={560} color={CV.hidro} />
