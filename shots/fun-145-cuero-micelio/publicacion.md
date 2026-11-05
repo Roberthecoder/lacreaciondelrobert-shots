@@ -49,7 +49,7 @@ Así que esa bolsa era sobre todo de hongo… aunque aún no es perfecta.
 El dibujo es esquemático.
 
 Fuentes:
-- Dezeen (2021). Hermès Victoria bag with Sylvania (MycoWorks). https://www.dezeen.com/2021/03/18/hermes-mycelium-leather-victoria-bag-mycoworks/
+- Dezeen (2021). Hermès creates mycelium version of its classic leather Victoria bag. https://www.dezeen.com/2021/03/18/hermes-mycelium-leather-victoria-bag-mycoworks/
 - Stella McCartney. Mylo, a mycelium-based alternative to animal leather. https://www.stellamccartney.com/sustainability/mylo-mycelium-based-alternative-to-animal-leather-stella-mccartney.html
 - Jones, Gandia, John y Bismarck (2021). Leather-like material biofabrication using fungi. Nature Sustainability 4: 9–16 (comunicado: https://www.eurekalert.org/news-releases/698248)
 - FashionUnited (2023). Bolt Threads reportedly pulls plug on Mylo. https://fashionunited.uk/news/business/bolt-threads-reportedly-pulls-plug-on-stella-mccartney-backed-mylo/2023070470348
@@ -64,7 +64,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Facebook Reels
 ```text
 Esta bolsa no es de cuero: es de hongo. 🍄👜
-El micelio se cultiva en charolas con aserrín, sus hilos se enredan en una capa como fieltro y luego se prensa y se curte. Hermès y Stella McCartney ya lo usaron… pero algunos llevan acabado de plástico y fabricarlo en grande todavía cuesta.
+El micelio se cultiva en charolas con aserrín, sus hilos se enredan en una capa como fieltro y luego se prensa; algunas láminas hasta se curten. Hermès y Stella McCartney ya lo usaron… pero algunos llevan acabado de plástico y fabricarlo en grande todavía cuesta.
 ¿Tú usarías una bolsa de hongo? 👇
 Shot Fungi Mati 145 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -77,7 +77,7 @@ Esta bolsa no es de cuero: es de hongo. Y su historia dice mucho sobre lo difíc
 El "cuero" de micelio se cultiva en charolas con aserrín y residuos agrícolas: las hifas del hongo se enredan en una capa que, en unas dos semanas, se cosecha, se prensa y se trata (algunas láminas se curten como piel animal).
 Hubo hitos de lujo: en 2021 Hermès anunció su bolsa Victoria con Sylvania, de MycoWorks (asas de becerro), y Stella McCartney usó Mylo (85 % micelio, 15 % lyocell).
 También hubo límites: Mylo lleva un acabado de poliuretano y aún no es biodegradable; en 2023 pausó su producción por falta de financiamiento para escalar, y en 2025 MycoWorks cerró su fábrica de Carolina del Sur para dejar de cultivar micelio.
-La biología funciona; el reto está en producir láminas parejas, a buen costo y sin depender de recubrimientos plásticos.
+La biología funciona; el reto está en producir láminas parejas, conseguir financiamiento para escalar y dejar de depender de recubrimientos plásticos.
 ¿Qué crees que falta para que los materiales de hongo lleguen a escala industrial?
 Shot Fungi Mati 145 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -86,13 +86,13 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Esta bolsa no es de cuero: es de hongo 🍄 El micelio se cultiva en aserrín, se prensa y se curte. Hermès y Stella McCartney ya lo usaron… pero Mylo lleva acabado de poliuretano y pausó en 2023. #FungiMati #Micelio
+Esta bolsa no es de cuero: es de hongo 🍄 El micelio se cultiva en aserrín, se prensa y algunas láminas hasta se curten. Hermès y Stella McCartney ya lo usaron… pero Mylo lleva acabado de poliuretano y pausó en 2023. #FungiMati #Micelio
 ```
 
 ### Threads
 ```text
 Esta bolsa no es de cuero: es de hongo. 🍄👜
-El micelio crece en charolas con aserrín, sus hifas se enredan en una capa como fieltro y luego se prensa y se curte. Hermès (2021) y Stella McCartney (Mylo) ya lo usaron. ¿La trampa? Mylo lleva acabado de poliuretano y aún no es biodegradable.
+El micelio crece en charolas con aserrín, sus hifas se enredan en una capa como fieltro y luego se prensa; algunas láminas hasta se curten. Hermès (2021) y Stella McCartney (Mylo) ya lo usaron. ¿La trampa? Mylo lleva acabado de poliuretano y aún no es biodegradable.
 ¿Tú usarías una bolsa de hongo?
 Soy Robert, de La Creación del Robert 🌱
 #FungiMati

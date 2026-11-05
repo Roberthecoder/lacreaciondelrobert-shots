@@ -35,4 +35,22 @@ Hecha por un **verificador independiente** (subagente que no escribió el guion)
 
 El dibujo es esquemático (bolsas genéricas, sin marcas reales).
 
+
+## Verificación independiente de publicacion.md (5 nov 2026)
+
+| Afirmación (publicacion.md) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Cita «Jones, Gandia, John y Bismarck (2021). Leather-like material biofabrication using fungi. Nature Sustainability 4: 9–16» | ✅ (salió en línea el 7 sep 2020; el vol. 4 es de 2021: las dos formas son válidas) | Crossref DOI 10.1038/s41893-020-00606-1 · EurekAlert 698248 | título "Leather-like material biofabrication using fungi", vol. 4, págs. 9-16, autores Jones, Gandia, John, Bismarck | 2020/2021 |
+| Comentario fijado: «Dezeen (18 mar 2021)»; YouTube: título «Hermès Victoria bag with Sylvania» | ✅ (el título es una descripción, no el titular literal: "Hermès creates mycelium version of its classic leather Victoria bag") | dezeen.com/2021/03/18/… | fecha 18 March 2021 | 2021 |
+| «FashionUnited (4 jul 2023). Bolt Threads reportedly pulls plug on Stella McCartney-backed Mylo» | ✅ (titular textual; la fecha sale de la URL, …/2023070470348; la página no la muestra) | fashionunited.uk | "Bolt Threads reportedly pulls plug on Stella McCartney-backed Mylo" | 2023 |
+| «Ecotextile News (21 oct 2025)» | ✅ (ya verificado en la fila 17) | ecotextile.com | — | 2025 |
+| «Hermès (2021) y Stella McCartney (Mylo) ya lo usaron» (Threads, X, Facebook) | ✅ (Hermès lo anunció en 2021; Stella lanzó su bolsa de Mylo en 2022) | Dezeen · Stella McCartney | "will be available from the end of this year" · "In 2022, Stella McCartney launched the world's first-ever luxury bag crafted from Mylo™" | 2021 / 2022 |
+| X: «El micelio se cultiva en aserrín, se prensa y se curte»; Facebook: «luego se prensa y se curte»; Threads: «luego se prensa y se curte» | ⚠️ generaliza: verificacion.md (fila 8) dice «**algunas** se curten». Sylvania sí se curte; Mylo solo «se colorea en una curtiduría», la página no dice que se curta | Dezeen · Stella McCartney | "tanned and finished by Hermès tanneries in France" · "Mylo™ is coloured at a LWG gold-rated tannery" | 2021 / vigente |
+| LinkedIn: «el reto está en producir láminas parejas, a buen costo y sin depender de recubrimientos plásticos» | ⚠️ leve: «láminas parejas» y «recubrimientos» tienen fuente; «a buen costo» no (EurekAlert dice que el proceso es barato; lo que faltó fue financiamiento para escalar) | EurekAlert 698248 · FashionUnited | "exhibiting uniform growth and consistent thickness, colour and mechanical properties" · "unable to secure financing in order to scale up" · "inflation and the lack of funding opportunities" | 2020 / 2023 |
+| LinkedIn: «La biología funciona» | ✅ (opinión respaldada: hay productos comerciales anunciados) | EurekAlert | "the first biotech companies are already marketing these materials" (resumen de la nota) | 2020 |
+| Comentario fijado: Wikipedia MycoWorks y Deacon cap. 3 | ✅ (ya usados en verificacion.md, filas 2 y 17) | — | — | — |
+| Facebook: «algunos llevan acabado de plástico… fabricarlo en grande todavía cuesta» | ✅ (filas 14, 16, 17) | — | — | — |
+
+Correcciones aplicadas en publicacion.md: «algunas láminas hasta se curten» (X, Facebook, Threads), LinkedIn sin «a buen costo» (ahora «conseguir financiamiento para escalar»), título real de Dezeen. Todo lo demás ✅.
+
 VEREDICTO: APROBADO
