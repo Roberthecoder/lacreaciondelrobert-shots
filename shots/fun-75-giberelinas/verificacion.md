@@ -49,6 +49,12 @@ Fuentes abiertas:
 1. **Fila 8 (pantalla, escena 3):** chip "el culpable no era el hongo: era algo que soltaba" → **"lo que estiraba al arroz era algo que el hongo soltaba"**.
 2. **Fila 25 (voz, escena 12, y la misma frase en guion.md):** «Esa uva no creció sola: la infló la hormona del hongo que vuelve bobo al arroz.» → **«Muchas uvas así no crecieron solas: las infló la hormona del hongo que vuelve bobo al arroz.»** (+5 caracteres aprox.; revisar duración).
 
-Todo lo demás está ✅ con las fuentes abiertas. Al aplicar las 2 correcciones, el shot puede quedar APROBADO (no requieren nueva búsqueda: son redacciones que se apegan a las frases ya citadas).
+Todo lo demás está ✅ con las fuentes abiertas.
 
-VEREDICTO: PENDIENTE (correcciones)
+Re-verificación (5 nov 2026): el verificador revisó `narracion.json` y `guion.md` ya corregidos. Fila 8: el chip ahora dice
+"lo que estiraba al arroz era algo que el hongo soltaba" ✅ ([PEA]: "This growth regulating substance secreted by a fungus").
+Fila 25: la voz y el guion ahora dicen «Muchas uvas así no crecieron solas: las infló la hormona del hongo que vuelve bobo al
+arroz.» ✅ ([ACH]: "routinely used"; "muchas", no "todas"). Las otras 12 líneas de voz siguen igual y no hay afirmaciones nuevas.
+Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
