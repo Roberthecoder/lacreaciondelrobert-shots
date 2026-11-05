@@ -4,7 +4,7 @@
 - **Formato:** N1 "Por dentro" (un plato de champiñones → la molécula de trehalosa → dentro de la seta que se seca o pasa frío → tu intestino con la trehalasa → el colon → el mismo plato) + N5 "El experimento" (Copenhague / Groenlandia, 1988: biopsias de 97 adultos).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" con "tú": «Si los champiñones te caen mal, quizá no es alergia: es un azúcar que tu intestino no corta.» (hipótesis para quien le pasa: «quizá»).
 - **No choca con:** fun-128 (umami seco), fun-13 (vitamina D), qui-50 (edulcorantes), bio-06 (lactosa: aquí la lactosa solo sale como comparación en la descripción). `consolidar.mjs --buscar` y `grep trehal` en shots/historial: sin resultados.
-- **Duración:** voz 955 caracteres / 178 palabras (942 sin contar los espacios entre líneas) (≈ 58.4 s según `estimar-escenas.mjs`) + cierre 3.5 s → **≈ 61.9 s** (si con la voz real pasa de 62.0, bajar el cierre a 3.0–3.2 s).
+- **Duración:** voz 955 caracteres / 178 palabras (942 sin contar los espacios entre líneas) (≈ 58.4 s según `estimar-escenas.mjs`) + cierre 3.4 s → **≈ 61.8 s** (base: `OM_SCENES` suma 61.80 s; `mezcla.wav` 61.80 s) (si con la voz real pasa de 62.0, bajar el cierre a 3.0–3.2 s).
 - **Voz:** pendiente de aprobación de Robert (~940 créditos de ElevenLabs).
 - **Salud:** no es consejo médico; no se dice que alguien la tenga ni cómo diagnosticarla. Aviso en pantalla y en la voz («una alergia es otra cosa; consulta a tu médico»).
 
@@ -47,7 +47,7 @@ Tiempos de la base estimada (con la voz real se recorren solos). Grande en «¿Y
 | 7 | 46.1 | 49.8 | 11_sorprendido | `arriba-der` | «se conoce su gen, TREH» |
 | 8 | 50.3 | 53.2 | 10_serio_molesto | `izq-alto` | «una alergia es otra cosa» |
 | 9 | 53.6 | 58.2 | 02_apuntando_camara | `arriba-der` | «es un azúcar sin cortar» |
-| — | 58.4 | 61.9 | 13_senalando_arriba | CierreMarca | cierre |
+| — | 58.4 | 61.8 | 13_senalando_arriba | CierreMarca | cierre |
 
 Apariciones 9 · **31.9 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
