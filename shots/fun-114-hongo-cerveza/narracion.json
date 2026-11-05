@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Coprina base narrada.dc.html",
+  "salida": "Shot Coprina narrado.dc.html",
+  "nota": "Shot Fungi Mati #114. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es guía de identificación ni consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este hongo no es comestible ni venenoso, y ya: depende de lo que tomes después."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Es Coprinopsis atramentaria: sombrero gris de campana, en racimos."
+    },
+    {
+      "escena": "Tinta",
+      "texto": "Al madurar, sus láminas se derriten en tinta negra."
+    },
+    {
+      "escena": "Comestible",
+      "texto": "Se considera comestible de joven… pero trae coprina."
+    },
+    {
+      "escena": "Coprina",
+      "texto": "Tu cuerpo la convierte en aminociclopropanol."
+    },
+    {
+      "escena": "Enzima",
+      "texto": "Esa molécula bloquea una enzima del hígado: la aldehído deshidrogenasa."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué tiene que ver el alcohol?"
+    },
+    {
+      "escena": "Alcohol",
+      "texto": "Tu hígado vuelve el alcohol acetaldehído, que es tóxico, y esa enzima lo desarma. Bloqueada, se acumula."
+    },
+    {
+      "escena": "Sintomas",
+      "texto": "Minutos después: cara roja, corazón acelerado, náusea y vómito, como con disulfiram, un fármaco contra el alcoholismo."
+    },
+    {
+      "escena": "Ventana",
+      "texto": "Y puede pasar aunque bebas hasta tres días después del hongo."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2011, toxicólogos de Múnich reportaron lo mismo con otro hongo, Lepiota aspera: la reacción volvía al beber hasta dos días después."
+    },
+    {
+      "escena": "Dato",
+      "texto": "La coprina se estudió como posible medicina contra el alcoholismo, pero en ratas dañó los testículos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que comestible también depende de lo que hagas después. Ante la duda, no lo comas; si te sientes mal, a urgencias."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
