@@ -261,7 +261,7 @@ function MilSexosShot() {
         {fsvg(<>
           <rect x={-40} y={560} width={300} height={800} rx={30} fill={MS.madera} stroke={KC.ink} strokeWidth={8} />
           {[660, 760, 880, 1010, 1150, 1260].map((yy, i) => <path key={i} d={`M 20 ${yy} Q 120 ${yy + 20} 240 ${yy - 6}`} stroke={MS.madera2} strokeWidth={6} fill="none" />)}
-          <Abanico T={T} x={250} y={880} s={3.3} rot={90} seed={3} abre={kprog(T, K.H, K.H + 0.8)} />
+          <Abanico T={T} x={250} y={845} s={3.3} rot={90} seed={3} abre={kprog(T, K.H, K.H + 0.8)} />
           <Abanico T={T} x={250} y={1230} s={1.0} rot={100} seed={8} abre={kprog(T, K.H + 0.4, K.H + 1.1)} />
         </>)}
       </Escena>
@@ -421,8 +421,8 @@ function MilSexosShot() {
       <Etq T={T} at={K.G + 1.6} until={K.H - 0.3} x={40} y={600} texto={TXT.numEtq[0]} tam={24} color={KC.ink} />
       <Etq T={T} at={K.G + 1.9} until={K.H - 0.3} x={40} y={640} texto={TXT.numEtq[1]} tam={24} color={KC.ink} />
       <Chip T={T} at={K.G + 3.5} until={K.H - 0.3} texto={TXT.comen} x={290} y={725} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={395} texto={TXT.comun} tam={46} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.3} until={K.L - 0.3} x={60} y={450} texto={TXT.cient} it tam={42} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={370} texto={TXT.comun} tam={46} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.3} until={K.L - 0.3} x={60} y={420} texto={TXT.cient} it tam={42} color={KC.ink} />
       <Chip T={T} at={K.H + 2.2} until={K.L - 0.3} texto={TXT.tam} x={790} y={860} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.H + 2.8} until={K.L - 0.3} x={560} y={960} texto={TXT.pegado} tam={24} color={KC.ink} />
       <Etq T={T} at={K.L + 0.2} until={K.S - 0.3} x={60} y={430} texto={TXT.laminas} tam={40} color={KC.ink} />
@@ -452,7 +452,7 @@ function MilSexosShot() {
       <Chip T={T} at={K.O + 1.9} until={K.M - 0.3} texto={TXT.seisChip} x={340} y={580} tam={32} borde={KC.gold} />
       <Etq T={T} at={K.M + 1.0} until={K.C - 0.3} x={70} y={790} texto={TXT.semana} tam={30} color={KC.ink} />
       <Etq T={T} at={K.M + 1.5} until={K.C - 0.3} x={70} y={835} texto={TXT.temporada} tam={26} color={KC.ink} />
-      <Chip T={T} at={K.M + 3.6} until={K.C - 0.3} texto={`${TXT.mone} · ${TXT.moneEtq}`} x={800} y={800} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.M + 3.6} until={K.C - 0.3} texto={`${TXT.mone} · ${TXT.moneEtq}`} x={830} y={905} tam={34} borde={KC.leaf} />
       <Etq T={T} at={K.M + 0.4} until={K.C - 0.3} x={70} y={460} texto={TXT.moneLugar} tam={28} color={KC.ink} />
       <Chip T={T} at={K.C + 0.8} until={K.Ou} texto={TXT.cierreChip} x={330} y={500} tam={40} borde={KC.pink} />
       <NumeroGigante T={T} at={K.C + 1.6} until={K.Ou} valor={TXT.numero} desde={TXT.numero} dur={0.01} x={330} y={660} tam={100} color={KC.pink} />

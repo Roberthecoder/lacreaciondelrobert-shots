@@ -44,16 +44,42 @@ Fuentes abiertas:
 | 24 | Encabezado del guion: «*T. colposii* (2022, Veracruz) se considera hoy sinónimo de *T. mesoamericanum*»; «antes se le llamaba *T. magnivelare*» | ✅ | [BAN] | "= Tricholoma colposii J. Pérez-Moreno, M. Martínez-Reyes M. & O. Ayala-Vásquez O., Phytotaxa 542(1): 27. 2022"; "= Tricholoma magnivelare (Peck) Redhead … auct. Mex." | 2022 |
 | 25 | Fuente 3 del guion ([IUCN]): «only found in Mexican subtropical and temperate pine forests» usada como respaldo de «solo en México» | ⚠️ | [IUCN], [BAN] | La frase sí está en la página (2018), pero [BAN] (2022) la supera con los registros de Arizona. No usarla para «solo en México». | 2018 / 2022 |
 
-## Correcciones necesarias
+## Correcciones necesarias (primera vuelta)
 
-1. **Fila 8 (❌) · chip de la escena 2 «descrito en 2017 · solo en México».** Cambiar a **«descrito en 2017 · de México (y Arizona)»** o solo **«descrito en 2017 en México»**. En `## Fuentes`, agregar la frase de Bandala 2022: "In the United States of America (USA) it is known from the state of Arizona."
-2. **Fila 11 (⚠️) · escena 4, cifra vieja.** Usar el dato oficial más nuevo (Agencia Forestal de Japón, cosecha 2025):
-   - Voz sugerida: **«En dos mil veinticinco, solo quince: sus pinos enfermaron y los bosques se descuidaron.»** (misma longitud aprox.)
-   - Pantalla: el número cae de «12 000» a **«15 t · 2025»** (opcional chip chico «2021–2025: de 15 a 51 t al año, según el clima»).
-   - En `## Fuentes`, citar [RIN]: "令和7年の生産量は15トンで、前年比70.6％減となっています。" y la tabla 2021–2025 (39, 35, 19, 51, 15 t). Se puede dejar Yamanaka 2020 para el «menos de 100 t al año», pero no atado al año 2020.
-3. **Fila 13 (⚠️) · escena 5, presente «empresas japonesas lo exportan».** Decir solo el inicio, que sí está documentado, en pasado: **«Por eso, en mil novecientos ochenta y cinco, empresas japonesas empezaron a llevárselo de México.»** Chip: «desde 1985 · empresas japonesas». Si se quiere decir que sigue: chip **«2022: 4 t de México a Japón»** (MAFF / 貿易統計). No decir que hoy lo exportan empresas japonesas.
-4. **Fila 25 (⚠️) · `## Fuentes`, fuente 3.** Quitar la frase IUCN "only found in Mexican…" como respaldo de distribución, o añadir que Bandala 2022 la amplía a Arizona.
+1. Fila 8 ❌ chip «solo en México» → «descrito en 2017 · de México (y Arizona)».
+2. Fila 11 ⚠️ «En 2020, menos de cien» → dato oficial 2025 (15 t).
+3. Fila 13 ⚠️ presente «empresas japonesas lo exportan» → pasado «en 1985 … empezaron a llevárselo» + chip 2022.
+4. Fila 25 ⚠️ fuente IUCN usada para «solo en México».
 
-Después de aplicar 1–4 (y recalcular la duración si cambia la voz), volver a verificar las filas 8, 11, 13 y 25.
+## Re-verificación (5 nov 2026, segunda vuelta)
 
-VEREDICTO: PENDIENTE (4 correcciones)
+Se revisaron `narracion.json` (13 líneas), `guion.md` y **toda** la constante `TXT` de `matsutake.jsx`, más los subtítulos (`SubM`), los números gigantes y las barras de escala.
+
+| # | Afirmación corregida o nueva (voz o pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 8 | Chip `especieChip`: «descrito en 2017 · de México (y Arizona)» | ✅ corregido | [TRU], [BAN] | [TRU]: "T. mesoamericanum from Mexico, newly described here". [BAN]: "In the United States of America (USA) it is known from the state of Arizona." | 2017 / 2022 |
+| 11 | Voz: «En dos mil veinticinco, solo quince: sus pinos enfermaron y los bosques se descuidaron.» · número 12 000 → «15 t» con etiqueta `escEtq` «en 2025: solo» · subtítulo «En 2025, *solo 15 toneladas.*» | ✅ corregido | [RIN], [YAM] | [RIN]: "令和7年の生産量は15トンで、前年比70.6％減となっています。" (cosecha de matsutake en Japón, 2025). Causa de largo plazo, [YAM]: "the pine forests were no longer managed adequately and pine wilt disease damaged pine trees". Se entiende que es la cosecha de Japón porque sigue a la escena 3 («cosecha de Japón al año»). | 2025 / 2020 |
+| 13 | Voz: «Por eso, en mil novecientos ochenta y cinco, empresas japonesas empezaron a llevárselo de México.» · chip `expChip` «1985 · empresas japonesas» · subtítulo «En 1985 empezaron *a llevárselo.*» | ✅ corregido | [PAC], [EDO] | [PAC]: "La exportación desde México la iniciaron compañías japonesas en 1985 con hongos provenientes del Estado de México". [EDO]: "En 1985, varias sociedades y compradores japoneses empezaron a promover en diferentes regiones del estado de Oaxaca el aprovechamiento y la comercialización del matsutake". | 1985 (publ. 2019 / 2003) |
+| 13b | Chip `exp2`: «2022: 4 t de México a Japón» | ✅ | [MAFF22] | Tabla まつたけ（生及び冷蔵）輸入, fila メキシコ, 令和４年: 数量 4 (t). Fuente: 財務省『貿易統計』. | 2022 |
+| 13c | Gancho «…y de México viaja a Japón» y cierre «Este hongo viaja a Japón…» en presente; chip `aJapon` «rumbo a Japón» | ✅ | [MAFF22] | México envió 8, 6, 4 y 4 t a Japón en 2019–2022 (último año con tabla por país que encontré); el envío seguía en 2022, así que el presente es defendible. | 2022 |
+| 25 | Fuente 3 en `guion.md` | ✅ corregido | [BAN] | El guion ya anota que la frase IUCN 2018 «only found in Mexican…» quedó superada por Bandala 2022 (Arizona). | 2022 |
+| R1 | Voz recortada: «Sale entre las hojas de pino; le dicen hongo blanco, de ocote o canela.» · subtítulo «Hongo blanco, *de ocote o canela.*» | ✅ | [BAN] | Igual que filas 3 y 4. | 2022 |
+| R2 | Voz recortada: «Porque sus hilos envuelven las raíces vivas del pino: le dan agua y minerales a cambio de azúcar.» · subtítulo «Envuelve las *raíces vivas* del pino.» | ✅ | [YAM], [PO] | Igual que filas 15 y 16. | 2020 / 2024 |
+| R3 | Voz recortada: «En dos mil quince, en el Cofre de Perote, enseñaron su foto a unos cien estudiantes.» · subtítulo «2015, Cofre de Perote: *cien estudiantes.*» | ✅ | [PAC] | Igual que fila 19 ("alrededor de cien estudiantes de telesecundaria"). El subtítulo «cien» va con la voz «unos cien» y la tarjeta «~100». | 2015 |
+| R4 | Voz recortada: «Gritaron: ¡takechi! Por un comerciante japonés parecido a Takeshi, de la Señorita Cometa.» · `takeshi` ««Takeshi» → «takechi»» | ✅ | [PAC] | "Takeshi, que castellanizado como "takechi"". Igual que filas 20 y 21. | 2019 |
+| R5 | Voz recortada: «Este hongo viaja a Japón, pero vive aquí, abrazado a un pino mexicano.» · `cierre` «vive aquí: abrazado a un pino» · subtítulo «Vive aquí, *abrazado a un pino.*» | ✅ | [BAN], [MAFF22] | Igual que fila 23. | 2022 |
+| T1 | `olor`: «olor especiado» | ✅ | [BAN] | "odor intense, fragrant, agreeable, spicy, somewhat Pelargonium-like, or pine resin" | 2022 |
+| T2 | `primo` «Tricholoma matsutake» · `primoChip` «su primo de Japón» · `pinoRojo` «pino rojo japonés» | ✅ | [YAM] | "Commercial demand is therefore met by harvesting the fruiting bodies that naturally occur in forests of EM coniferous trees, mainly Pinus densiflora"; "Closely related matsutake species …". (*P. densiflora* = pino rojo japonés; [RIN]: "アカマツ等の根と共生".) | 2020 / 2025 |
+| T3 | `numEtq` «cosecha de Japón al año» · `numChip` «inicios de los años 40» · número 12 000 t · subtítulo «Japón, años 40: *12 000 toneladas* al año.» · `arroz` «arroz con matsutake» | ✅ | [YAM], [PAC] | "In the early 1940s, about 12,000 tons of matsutake were harvested annually". [PAC]: "el matsutake se cocina con arroz". | 1940s / 2019 |
+| T4 | `escChip1` «marchitamiento del pino (nematodo)» · `escChip2` «bosques sin manejo» | ✅ | [YAM], fuente 8 del guion | Igual que fila 12. | 2020 |
+| T5 | `dentro` «BAJO TIERRA · ECTOMICORRIZA» · `raiz` «raíz de pino» · `manto` «hifas que la envuelven» · `agua` «agua y minerales → pino» · `azucar` «azúcar → hongo» · `lupa` «POR DENTRO · MICORRIZA» | ✅ | [PO], [YAM] | Igual que filas 15 y 16. | 2024 / 2020 |
+| T6 | `cultivo` «cultivo: casi sin éxito» · `cultivo2` «el micelio crece; el hongo, no» · `frasco` «micelio en frasco» | ✅ | [YAM], [RIN] | "the cultivation of matsutake has been mostly unsuccessful"; "Tr. matsutake formed fruit body primordia from mycelia cultured in sterilized soil … However, the primordia did not develop into mature fruiting bodies." [RIN]: "現在のところ実用的な人工栽培技術がなく". | 2020 / 2025 |
+| T7 | `estAnio` «2015» · `estQuien` «Cofre de Perote, Veracruz» · `estRev` «~100 alumnos de telesecundaria · Ciencias UNAM, 2019» | ✅ | [PAC] | "verano de 2015 … alrededor de cien estudiantes de telesecundaria"; revista *Ciencias* 131–132, ene–jun 2019. | 2015 / 2019 |
+| T8 | `takechi` «¡TAKECHI!» · `takechiChip` «nombre local: takechi» · `tele` «Señorita Cometa · Canal 5» | ✅ | [PAC] | "corearon al unísono: takechi"; "transmitida prácticamente sin interrupción por el Canal 5". | 2019 |
+| T9 | `cuidado` «rastrillar expone y mata el micelio» · `micelio` · subtítulo «Rastrillar *mata su micelio.*» | ✅ | [IUCN] | "This expose and kills the mycelia". | 2018 |
+| T10 | `ganchoEtq` «matsutake mexicano» · `champi` «✗ champiñón» · `nombres` · `especie` · `mexico`/`japon` · subtítulos de gancho, especie y pregunta | ✅ | [TRU], [BAN] | Igual que filas 1–7. | 2017 / 2022 |
+| T11 | Barras de escala «5 cm» (hongo), «1 mm (esquemático)» (raíz), «mapa esquemático» | ✅ (esquemático) | [BAN] | Sombrero 35–110 mm y pie 40–80 mm: 5 cm es una referencia correcta; la raíz y el mapa van marcados como esquemáticos. | 2022 |
+
+Resumen: las 4 correcciones están aplicadas en la voz, la pantalla (`TXT`, números, subtítulos) y en `guion.md`. Las 5 líneas recortadas no cambian ningún dato. Todos los textos de `TXT` están cubiertos. Todas las afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO

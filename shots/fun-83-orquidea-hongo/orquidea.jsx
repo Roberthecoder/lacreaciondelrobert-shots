@@ -451,8 +451,8 @@ function OrquideaShot() {
       </Escena>
 
       {/* ---------- textos ---------- */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.1} until={K.G + 2.4} texto={TX.mito} x={300} y={470} tam={64} />
-      <Chip T={T} at={K.G + 1.5} until={K.Bo - 0.3} texto={TX.semillas} x={330} y={400} tam={42} borde={KC.gold} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 0.9} until={K.G + 1.6} texto={TX.mito} x={300} y={470} tam={64} />
+      <Chip T={T} at={K.G + 1.7} until={K.Bo - 0.3} texto={TX.semillas} x={330} y={400} tam={42} borde={KC.gold} />
       <Chip T={T} at={K.G + 3.2} until={K.Bo - 0.3} texto={TX.sinHongo} x={540} y={490} tam={34} borde={KC.red} />
       <NumeroGigante T={T} at={K.Bo + 0.4} until={K.Ca - 0.3} valor={TX.numMx} prefijo={TX.numMxPre} dur={1.0} x={330} y={560} tam={170} color={KC.yellow} />
       <Etq T={T} at={K.Bo + 0.9} until={K.Ca - 0.3} x={60} y={700} texto={TX.etqMx1} tam={34} color={KC.texto} />
