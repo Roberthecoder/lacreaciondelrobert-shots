@@ -87,4 +87,33 @@ Subagente verificador distinto del escritor (5 nov 2026). Se volvieron a abrir: 
 
 Todas las afirmaciones de la voz actual y de la pantalla quedan ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segunda verificación pedida por Robert, hecha por un verificador que no escribió el guion ni las verificaciones anteriores. Se revisaron
+las 13 líneas de `narracion.json`, todos los letreros, chips, subtítulos y barras de `temporada.jsx` y las 7 redes + comentario fijado
+de `publicacion.md`. Fuentes abiertas de nuevo hoy: PDF del autor de Boddy et al. 2014 (texto completo extraído con pdftotext),
+resúmenes originales de Gange et al. 2007 y Kauserud et al. 2008 (Europe PMC, API), Nature News 2007 y ScienceDaily 2007.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Gancho «Esa seta no salió tarde: el calendario de los hongos cambió» | ✅ (figura retórica respaldada) | Boddy et al. 2014, *Fungal Ecology* 10:20–33 | "The autumn fruiting season in Austria, Norway, the UK and Switzerland has widened considerably during the last 30 yr" | 2014 |
+| Sur de Inglaterra: temporada de unos 33 días en los años 50 (voz, número gigante «33 días», chip) | ✅ | Boddy et al. 2014; ScienceDaily 18 abr 2007 | "extending from 33.2 ± 1.6 d in the 1950s (Gange et al., 2007)"; "In the 1950s fungi fruited over a period of around 33 days" | datos 1950s (publ. 2007/2014) |
+| En los 2000, más del doble (voz, chip «unos 33 días → más del doble») | ✅ | Boddy et al. 2014; ScienceDaily 2007 | "to more than twice (69.1 ± 6.8 d) that by 2009"; "this has more than doubled to nearly 75 days in the current decade" | 2000–2009 |
+| Mapa: Salisbury, sur de Inglaterra | ✅ | Nature News 2007; ScienceDaily 2007 | "fungi grew around Salisbury"; "collected in southern England between 1950 - 2005" | 1950–2005 |
+| «Lo que tú cortas es solo la seta, que suelta esporas» / «seta = cuerpo fructífero» / «el hongo de verdad es el micelio: hilos en el suelo o la madera» | ✅ (conocimiento establecido) | Wikipedia "Mushroom"/"Mycelium" (tabla principal #5–6) | "A mushroom is the fleshy, spore-bearing fruiting body of a fungus" | — |
+| «La seta suele salir cuando la temperatura y la humedad le dan la señal» | ✅ («suele» deja lugar a otros factores) | Boddy et al. 2014 | "environmental moisture and temperature regimes often explain a lot of the variation in timing of fruit body production" | 2014 |
+| «Si el clima cambia, la señal llega en otra fecha» / chip «clima distinto → otra fecha» | ✅ | Kauserud et al. 2008, *PNAS* 105:3811 | "the time of fruiting has changed considerably over this time period" | 2008 |
+| «Edward Gange, aficionado» | ✅ | Nature News 2007 | "the 'fungal recorder' for the Wiltshire Archaeological and Natural History Society"; "When he retired from his day job as a stonemason" | 2007 |
+| «anotó hongos cerca de Salisbury por 56 años: 52 mil registros» / chip «Salisbury · 1950–2005» / contador 52,000 | ✅ | Nature News 2007; Gange et al. 2007; ScienceDaily 2007 | "From 1950-2005, he collected data on when, where and what fungi grew around Salisbury"; "He typed 52,000 records into Excel"; "over the past 56 years"; "more than 52,000 fungal fruiting records" | 1950–2005 |
+| «En 2007, su hijo Alan y otros científicos los analizaron en Science» / tarjeta «2007 · Gange, Gange, Sparks y Boddy · Science» | ✅ | Gange et al. 2007, *Science* 316:71 (Europe PMC) | Autores: "Gange AC, Gange EG, Sparks TH, Boddy L." (2007); Nature News: "Gange's father, Edward" | 2007 |
+| «En 315 especies, en promedio, la primera seta ahora sale antes y la última, después» | ✅ | Gange et al. 2007 | "average first fruiting date of 315 species is earlier, while last fruiting date is later" | 2007 |
+| «Y muchas ya salen dos veces al año» / marcas en primavera / penacho de azufre | ✅ | Gange et al. 2007; Boddy et al. 2014; Nature News 2007 | "Many species are now fruiting twice a year"; "20 % of species have begun to fruit twice a year (in spring and autumn)"; "Sulphur tuft has started to fruit twice a year" | 2007 / 2014 |
+| Noruega: desde 1980, setas de otoño casi 13 días más tarde / chip «+12.9 días», «promedio desde 1980», tarjeta «PNAS, 2008 · ≈34,500 registros de herbario»; solo se dibuja atraso, no temporada alargada | ✅ | Kauserud et al. 2008 (resumen original) | "Using approximately 34,500 dated herbarium records … 1940-2006 … with an average delay in fruiting since 1980 of 12.9 days"; "resulting in a more compressed fruiting season" | 2008 (datos hasta 2006) |
+| Cierre «su calendario lo marca sobre todo el clima, y el clima está cambiando» | ✅ («sobre todo» es fiel a la revisión) | Boddy et al. 2014 | "Fruiting, however, ultimately depends on sufficient nutrients, and acquirement of nutrients in turn is affected by climate" | 2014 |
+| Publicación (7 redes): mismas cifras; «más de 52 mil registros», «12.9 días», «la temporada se apretó», doble fructificación como señal de más actividad del micelio «como posibilidad» | ✅ | Gange et al. 2007; Kauserud et al. 2008 | "indicating increased mycelial activity and possibly greater decay rates in ecosystems" | 2007 / 2008 |
+| Dibujo: hifas septadas, inserto 10 µm, penacho de azufre amarillo con láminas verdosas en tocón | ✅ (esquemático) | conocimiento micológico general | — | — |
+
+Contexto anotado (no cambia nada): los datos de estos estudios tienen 17–19 años; la voz los fecha («en los cincuenta», «en los dos mil»,
+«en 2007», «desde 1980») y no los presenta como medición actual. No se encontraron ❌ ni ⚠️. **Sin cambios en ningún archivo.**
+
 VEREDICTO: APROBADO

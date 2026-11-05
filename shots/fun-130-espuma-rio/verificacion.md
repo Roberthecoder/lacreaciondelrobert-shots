@@ -83,4 +83,28 @@ Resultado: aprobado al cambiar el chip por «más de 300 especies descritas · e
 
 **Aplicado:** el chip quedó «más de 300 especies descritas · estudio de 2022» (redacción exacta propuesta por el verificador).
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni las rondas anteriores). Revisé completas las 13 líneas de `narracion.json`, los letreros/subtítulos/tarjetas de `espuma.jsx`, `guion.md` y `publicacion.md`. Fuentes reabiertas hoy: PDF completo de Conway 1970 (archive.org, texto extraído), PDF completo de Krauss et al. 2011, freshwaterfungi.org/history.php, PMC9415940 (Franco-Duarte et al. 2022), Kendrick cap. 11 (mycolog.com), Magyar et al. 2021 (Frontiers, texto completo), hoja de SEPA (PDF, texto extraído). No pude abrir el original de Ingold 1942 ni el de Webster 1959 (Index Fungorum / OUP cerrados): ambos se respaldan con fuentes que los citan textualmente (Conway 1970, Krauss 2011, freshwaterfungi.org).
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Voz 0/12 y chip final: la espuma «no es jabón», está llena de esporas en estrella | ✅ | Kendrick, *The Fifth Kingdom* cap. 11; SEPA | "tetraradiate conidia in stream water trapped by a tiny air-bubble" / "This why foam is a good source of spores" | ~2000 |
+| Voz 1: la espuma es natural, sale de hojas que se pudren; chip «también existe espuma de contaminación» | ✅ | SEPA, *Foam on rivers, lochs and coastlines* (PDF) | "Natural - produced from decaying organic material… trees drop their leaves" / "fire-fighting foams, detergents, sewage" / "Natural foams usually accumulate in sheltered areas and eddies" | vigente |
+| Voz 2 y etiquetas: esporas de cuatro brazos y en S (sigmoides) | ✅ | Krauss et al. 2011, *FEMS Microbiol. Rev.* (PDF) | "multiradiate (often tetraradiate) or sigmoid spores" | 2011 |
+| Voz 3, subtítulo y medidor: en *Articulospora tetracladia* cada brazo mide hasta 0.05 mm (20–50 µm); etiqueta «espora (conidio), incolora» | ✅ (nota) | Conway 1970, *Q. J. Florida Acad. Sci.* (PDF) | "The first arm is 16-25 µ X 3-5 µ … The other three arms are approximately equal in length 20-50 µ X 3-4 µ" | 1970 |
+| *A. tetracladia* «una especie común» | ✅ | Seena et al. 2012 *PLoS ONE* (citado arriba); Franco-Duarte 2022 | "The worldwide-distributed aquatic fungus Articulospora tetracladia" | 2012 |
+| Voz 4: hongos que viven en hojas caídas al agua; las ablandan y les suben la proteína (medidores dureza/proteína) | ✅ | Krauss 2011 (PDF) | "Ingold (1942) identifies leaves in a stream as the main habitat" / "several species macerated intact leaves" / "Kaushik & Hynes (1968) demonstrated that protein levels of some leaf species gradually increased" | 2011 (datos 1968) |
+| Voz 5: las larvas que comen hojas prefieren las colonizadas (larva de tricóptero) | ✅ (matiz) | Krauss 2011 (PDF) | "In food choice experiments, several stream invertebrates clearly preferred 'conditioned' leaves" / "Triska (1970) observed the same feeding preferences in two detritivorous caddisfly larvae" (matiz: "It would be wrong, however, to conclude that fungal colonization inevitably improves…"; la descripción de YouTube ya lo dice como "en experimentos de elección") | 2011 |
+| «galleta seca contra galleta con crema de cacahuate» | ✅ (analogía) | — | Comparación, no dato | — |
+| Voz 7, tarjeta y cronómetro: en 1959 John Webster vio que no se hunden más rápido, pero se atoran mejor | ✅ | Conway 1970 (PDF) que cita Webster 1959a, *Ann. Bot.* 23: 595–611 | "Webster (1959a) has demonstrated that all settle at approximately the same rate, but that the tetraradiate form is more efficient in entanglement" | 1970 (dato 1959) |
+| Voz 8: «se cree» que aterrizan en tres puntas (hipótesis), «no en todas las especies» | ✅ | Kendrick cap. 11; Dang et al. 2007 *Mycologia* (abstract) | "a tetraradiate conidium making a 3-point landing on a dead leaf" / "Attachment success of two species with tetraradiate conidia was much greater than that of two other tetraradiate…" | ~2000 / 2007 |
+| Voz 9: Cecil Ingold las encontró en un arroyo de Inglaterra, detrás de su casa; publicó en 1942 (tarjeta TBMS 1942) | ✅ | freshwaterfungi.org/history.php | "Ingold was studying chytrids in a stream behind his house" / "A major breakthrough occurred when Ingold (1942) discovered a typical habitat for freshwater fungi" | relato Bärlocher 1992; 1942 |
+| Voz 10: las vio atrapadas en espuma, tras unas ramitas | ✅ | freshwaterfungi.org/history.php | "found a large fungal spore collection trapped in scum behind a barrier of twigs" | 1992 (relato) |
+| Voz 10 y chip: «hoy se conocen más de trescientas especies · estudio de 2022» | ✅ | Franco-Duarte et al. 2022, *Microorganisms*, PMC9415940 | "Aquatic hyphomycetes comprise over 300 species of fungi" / "(out of ~300 species described)" — "más de 300" es un mínimo que no se vuelve falso con el tiempo, y el chip dice el año | 2022 |
+| Voz 11: hasta en la lluvia que escurre por los troncos aparecen | ✅ | Magyar, Van Stan y Sridhar 2021, *Front. For. Glob. Change* | "They are reported from stemflow in both temperate and tropical areas" / "common in stemflow and throughfall samples" | 2021 |
+| Barras de escala y dibujos marcados «esquemático» | ✅ | — | Rotulados como esquema | — |
+
+**Resultado:** sin ❌ ni ⚠️. No se cambió nada en este shot (ni `narracion.json`, ni `espuma.jsx`, ni `publicacion.md`). Nota menor no bloqueante: la medida 20–50 µm viene de una colección de Florida (Conway 1970); no pude abrir la descripción original de Ingold para comparar rangos.
+
 VEREDICTO: APROBADO
