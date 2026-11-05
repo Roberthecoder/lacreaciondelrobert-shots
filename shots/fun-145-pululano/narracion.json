@@ -1,0 +1,22 @@
+{
+  "dcHtml": "Shot Pululano base narrada.dc.html",
+  "salida": "Shot Pululano narrado.dc.html",
+  "nota": "Shot Fungi Mati #145. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa cápsula no es de gelatina: la hizo un hongo." },
+    { "escena": "Hongo", "texto": "Es pululano: lo fabrica Aureobasidium pullulans, un hongo al que le dicen levadura negra." },
+    { "escena": "Casa", "texto": "Vive en la tierra, en frutas y hasta sobre la pintura." },
+    { "escena": "Micro", "texto": "Al microscopio cambia de forma: a veces levadura que echa yemas, a veces hilos." },
+    { "escena": "Baba", "texto": "Y suelta el pululano fuera de la célula, como una baba que la envuelve." },
+    { "escena": "Molecula", "texto": "Por dentro son paquetes de tres glucosas, la maltotriosa, unidos en forma de escalera." },
+    { "escena": "Pregunta", "texto": "¿Y cómo se vuelve cápsula?" },
+    { "escena": "Pelicula", "texto": "Se disuelve en agua, se seca, y queda una película transparente y muy delgada." },
+    { "escena": "Oxigeno", "texto": "Deja pasar muy poco oxígeno: protege lo de adentro." },
+    { "escena": "Estudio", "texto": "En Japón va en alimentos desde 1976, y en 2025 Europa lo revisó: sin riesgo en sus usos actuales." },
+    { "escena": "Tiras", "texto": "También hace tiras para el aliento que se deshacen en tu lengua." },
+    { "escena": "Precio", "texto": "¿El problema? Es caro, y hay que quitarle el pigmento negro." },
+    { "escena": "Panza", "texto": "Y si comes unos diez gramos al día, te puede inflar la panza." },
+    { "escena": "Cierre", "texto": "Así que esa cápsula no es de gelatina: es la baba de un hongo negro." }
+  ],
+  "mezcla": "oficial-30oct"
+}
