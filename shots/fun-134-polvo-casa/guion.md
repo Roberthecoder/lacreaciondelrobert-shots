@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #134 · rama `claude/fun-130-134-agua`.
 - **Formato:** N1 Por dentro + N5 El experimento (a la mitad se recrea el muestreo con hisopo de los voluntarios). Viaje marco de la puerta → microscopio (esporas, ADN) → mapa → el mismo marco, ya "leído".
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla: «Ese polvo no es solo polvo: es un mapa de la región donde vives, escrito en hongos.»
-- **Duración:** voz 998 caracteres / 180 palabras (varios números escritos con letra; ≈ 58 s, igual que el reishi con 998 caracteres) + cierre 3.5 s → **≈ 61.5 s** en la base.
+- **Duración:** voz 1007 caracteres / 182 palabras (varios números escritos con letra; ≈ 58 s, como el reishi con 998 caracteres) + cierre 3.5 s → **≈ 61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **Tono:** curiosidad, no miedo. No se dice que el polvo o sus hongos sean peligrosos. El estudio es de Estados Unidos y se dice así.
 - **Distinto de:** fun-102 (esporas en el aire) y el moho del baño: aquí el tema es el polvo como **huella geográfica**.
@@ -27,27 +27,27 @@
 | 12 | Cierre | Así que, cuando limpies tu puerta, estás borrando un mapa de la región donde vives. | **Regreso a la imagen del inicio:** el mismo marco de la puerta en fondo amarillo; un trapo pasa y el mapa de puntitos se borra junto con el polvo. Chip "un mapa de tu región, escrito en hongos" y chip chico "Probado en EE. UU. por regiones; en México, solo a nivel país.". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
-**Música:** cama grave y continua, curiosa (de "detective"), sin golpe; se abre en «Los hongos de adentro venían, sobre todo, de afuera» y en el mapa. Efectos en el mismo cuadro: roce del dedo en el marco, soplo de esporas al entrar, tics de cada espora que aparece, talle del hisopo, tics rápidos de lectura de ADN y del contador, ladrido chiquito del perro, "ping" del círculo de 100 km, trapo que borra al final.
+**Música** (`gen-audio.mjs`): cama grave y continua en La menor con acordes que cambian por escena (Am–F–G–Em–F–E–Am–F → C–G–F–E al abrirse → Am), bajo suave en cada cambio y un motivo de 4 notas que pregunta y responde, variado en cada aparición; curiosa (de "detective"), sin golpe; se abre en «Los hongos de adentro venían, sobre todo, de afuera» y en el mapa. Efectos en el mismo cuadro: roce del dedo en el marco, soplo de esporas al entrar, tics de cada espora que aparece, talle del hisopo, tics rápidos de lectura de ADN y del contador, ladrido chiquito del perro, "ping" del círculo de 100 km, trapo que borra al final.
 
 Barra de escala: 5–10 cm (marco/puerta), 1 m (casa), 10 µm (esporas), 1,000 km y 100 km (mapas, esquemáticos), 2 nm (ADN), 50 cm (perro). En las tarjetas no hay objeto que medir.
 
 El dibujo es esquemático (mapas y esporas).
 
-## Robert en pantalla (plan; tiempos de la base, se ajustan solos con la voz real)
+## Robert en pantalla (tiempos de la base; con la voz real se recorren solos)
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «un mapa de la región donde vives» (cuadro 0) |
-| 2 | 4.6 | 7.6 | 13_senalando_arriba | `arriba-der` | «arriba del marco de tu puerta» |
-| 3 | 13.0 | 16.0 | 06_pensativo_menton | `arriba-der` | «muchos hongos solo viven en ciertas regiones» |
-| 4 | 17.6 | 20.0 | 07_pensativo_puno | `grande` | «¿Entonces tu polvo podría delatarte?» |
-| 5 | 27.5 | 31.0 | 04_bajando_lentes | `arriba-der` | «más de setenta mil tipos de hongos» |
-| 6 | 35.0 | 40.5 | 11_sorprendido | `arriba-der` | «hasta si hay perro… noventa y dos por ciento» |
-| 7 | 41.0 | 48.0 | 12_perfil_serio | `arriba-der` | «a menos de cien kilómetros» / forense |
-| 8 | 53.0 | 57.8 | 02_apuntando_camara | `arriba-der` | «estás borrando un mapa de la región donde vives» |
+| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «es un mapa de la región donde vives» (cuadro 0) |
+| 2 | 5.2 | 8.5 | 13_senalando_arriba | `arriba-der` | «arriba del marco de tu puerta» (señala el marco) |
+| 3 | 16.5 | 20.3 | 06_pensativo_menton | `arriba-der` | «muchos hongos solo viven en ciertas regiones» |
+| 4 | 20.6 | 22.9 | 07_pensativo_puno | `grande` | «¿Entonces tu polvo podría delatarte?» |
+| 5 | 30.6 | 33.6 | 04_bajando_lentes | `arriba-der` | «más de setenta mil tipos de hongos» |
+| 6 | 37.5 | 43.0 | 11_sorprendido | `arriba-der` | «hasta si hay perro… noventa y dos por ciento» |
+| 7 | 44.1 | 52.9 | 12_perfil_serio | `arriba-der` | «a menos de cien kilómetros» / ciencia forense |
+| 8 | 53.6 | 57.9 | 02_apuntando_camara | `arriba-der` | «estás borrando un mapa de la región donde vives» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 8 (+ cierre) · **≈ 31.7 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
+Apariciones 8 (+ cierre) · **34.1 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · Robert grande en el re-gancho.
 
 ## Fuentes (abiertas en texto completo el 5 nov 2026)
 

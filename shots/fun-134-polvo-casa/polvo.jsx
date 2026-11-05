@@ -339,7 +339,7 @@ function PolvoShot() {
       <Etq T={T} at={K.En + 3.1} until={K.Es - 0.3} x={600} y={680} texto="en las personas" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Es + 0.05} until={K.R - 0.3} texto="POR DENTRO · EL POLVO" x={540} y={470} tam={34} borde={KC.cyan} mono />
       <Etq T={T} at={K.Es + 0.5} until={K.R - 0.3} x={70} y={640} texto="Cladosporium · esporas en cadena" it tam={30} color={KC.mint} />
-      <Etq T={T} at={K.Es + 0.9} until={K.R - 0.3} x={380} y={1200} texto="Alternaria · espora en mazo" it tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.Es + 0.9} until={K.R - 0.3} x={380} y={1120} texto="Alternaria · espora en mazo" it tam={30} color={KC.yellow} />
       <Chip T={T} at={K.Es + 1.3} until={K.R - 0.3} texto="aguantan la sequedad" x={540} y={560} tam={34} borde={KC.mint} />
       <Etq T={T} at={K.R + 1.2} until={K.P - 0.3} x={60} y={450} texto="muchos hongos solo viven" tam={36} color={KC.ink} />
       <Etq T={T} at={K.R + 1.4} until={K.P - 0.3} x={60} y={505} texto="en ciertas regiones" tam={36} color={KC.ink} />
