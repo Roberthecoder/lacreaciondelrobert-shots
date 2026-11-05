@@ -845,7 +845,7 @@ function MarcaAgua({ T, num, hasta, tema, logo, serie }) {   // serie: 'Festivo'
     <div style={{ background:'#fff', borderRadius:20, padding:8, boxShadow:'0 12px 30px rgba(0,0,0,.45)' }}>
       <img src={logo} alt="La Creación del Robert" style={{ width:92, height:92, display:'block' }} />
     </div>
-    <div style={{ position:'absolute', top:-14, ...(serie ? { left:-14, whiteSpace:'nowrap' } : { right:-20 }), font:`900 26px ${KF.texto}`, color:KC.dark, background:KC.gold, padding:'3px 12px', borderRadius:11, boxShadow:'0 6px 16px rgba(0,0,0,.4)' }}>{serie ? serie + ' ' : ''}#{num}</div>
+    <div style={{ position:'absolute', top: String(num).length > 2 && !serie ? -26 : -14, ...(serie ? { left:-14, whiteSpace:'nowrap' } : { right: String(num).length > 2 ? -48 : -20 }), font:`900 26px ${KF.texto}`, color:KC.dark, background:KC.gold, padding:'3px 12px', borderRadius:11, boxShadow:'0 6px 16px rgba(0,0,0,.4)' }}>{serie ? serie + ' ' : ''}#{num}</div>
   </div>;
 }
 // Sticker de Robert. lado: 'arriba-der' (zona libre de la guía), 'abajo-der', 'abajo-izq',
