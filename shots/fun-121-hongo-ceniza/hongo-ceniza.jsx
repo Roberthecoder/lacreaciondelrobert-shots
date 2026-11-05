@@ -78,7 +78,7 @@ function BosqueQuemado({ T, humo = 1, tapetes = 0, brote = 0, co2 = 0, foco = -1
         <TapeteLejos x={x} y={y} s={s} p={p} seed={i + 1} />
       </g>; })}
     {/* CO₂ que sube de los tapetes */}
-    {co2 > 0 && TAPETES.slice(0, 4).map(([x, y], i) => { const u = (T * 0.5 + i * 0.25) % 1; return <text key={'c' + i} x={x - 30} y={y - 40 - u * 220} style={{ font:`700 30px ${KF.mono}` }} fill={PY.oro} stroke={KC.ink} strokeWidth={1.5} opacity={co2 * (1 - u)}>CO₂</text>; })}
+    {co2 > 0 && TAPETES.slice(0, 4).map(([x, y], i) => { const u = (T * 0.5 + i * 0.25) % 1; return <text key={'c' + i} x={x - 30} y={y - 40 - u * 220} style={{ font:`900 40px ${KF.texto}` }} fill={PY.oro} stroke={KC.ink} strokeWidth={2} opacity={co2 * (1 - u)}>CO₂</text>; })}
     {/* brote verde */}
     {brote > 0 && <g transform={`translate(560 1195) scale(${kEase.rebote(brote)})`}>
       <path d="M 0 0 Q -4 -50 2 -90" stroke="#2f9e44" strokeWidth={9} fill="none" strokeLinecap="round" />
@@ -318,7 +318,7 @@ function HongoCenizaShot() {
         <Ambiente T={T} n={18} />
         {fsvg(<>
           <ADNHebra T={T} x={90} y={640} largo={900} alto={90} vueltas={3} resalta={(u) => { const k = kprog(T, K.Ge + 0.3, K.Ge + 2.0); return (u > 0.15 && u < 0.15 + 0.2 * k) || (u > 0.55 && u < 0.55 + 0.25 * k); }} />
-          <AnillosCarbon T={T} x={150} y={900} abre={(i) => kprog(T, K.Ge + 1.4 + (i % 6) * 0.22 + Math.floor(i / 6) * 0.1, K.Ge + 2.4 + (i % 6) * 0.22 + Math.floor(i / 6) * 0.1)} />
+          <AnillosCarbon T={T} x={290} y={890} abre={(i) => kprog(T, K.Ge + 1.4 + (i % 6) * 0.22 + Math.floor(i / 6) * 0.1, K.Ge + 2.4 + (i % 6) * 0.22 + Math.floor(i / 6) * 0.1)} />
         </>)}
       </Escena>
       {/* 11 · fue poco y en laboratorio */}
@@ -355,7 +355,7 @@ function HongoCenizaShot() {
       <Etq T={T} at={K.E + 3.4} until={K.A - 0.3} x={640} y={820} texto="P. domesticum" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.A + 0.6} until={K.I - 0.3} texto="única fuente de carbono: carbón" x={540} y={470} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.A + 1.0} until={K.I - 0.3} x={60} y={560} texto="carbón de pino · 750 °C" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.A + 3.2} until={K.I - 0.3} x={950} y={760} texto="¡crece!" lado="izq" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.A + 3.2} until={K.I - 0.3} x={1010} y={720} texto="¡crece!" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={K.I + 0.4} until={I2 - 0.3} texto="¹³C: carbono más pesado" x={540} y={460} tam={34} borde={PY.oro} />
       <Etq T={T} at={K.I + 2.4} until={I2 - 0.3} x={1010} y={920} texto="carbón marcado" lado="izq" tam={30} color={KC.ink} />
       <Etq T={T} at={I2 + 0.4} until={K.Ge - 0.3} x={60} y={470} texto="Pyronema" it tam={36} color={KC.texto} />

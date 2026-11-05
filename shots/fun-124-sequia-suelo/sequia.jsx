@@ -373,7 +373,7 @@ function SequiaShot() {
       <Medidor T={T} at={K.Pi + 0.1} until={K.Hp - 0.2} x={90} y={410} ancho={900} color={KC.red} valor={(t) => kprog(t, K.Pi + 0.3, K.Pi + 1.5, kEase.sale)}
         etiqueta="CO₂ de descomposición, tierra seca" texto={(v) => '+' + kformato(Math.round(v * 2800), 0) + ' %'} />
       <Etq T={T} at={K.Pi + 0.6} until={K.Hp - 0.2} x={90} y={540} texto="vs. hifas cortadas · 7 días" tam={28} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Pi + 0.3} until={K.Hp - 0.2} valor={2800} dur={1.2} prefijo="+" sufijo=" %" x={380} y={630} tam={120} color={KC.red} />
+      <NumeroGigante T={T} at={K.Pi + 0.3} until={K.Hp - 0.2} valor={2800} dur={1.2} prefijo="+" sufijo=" %" x={460} y={640} tam={120} color={KC.red} />
       <SelloTexto T={T} at={K.Hp + 0.25} until={K.Ll - 0.1} x={540} y={600} texto="HIPÓTESIS" />
       <Chip T={T} at={K.Hp + 0.7} until={K.Ll - 0.2} texto="¿así aguantan la sequía?" x={540} y={760} tam={40} borde={KC.orange} />
       <GraficaPulso T={T} at={K.Bi + 0.1} until={K.C - 0.3} x={60} y={360} w={610} h={280} />
