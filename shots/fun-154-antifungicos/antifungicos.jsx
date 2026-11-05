@@ -186,12 +186,12 @@ function AntifungicosShot() {
         {fsvg((() => { const p1 = kprog(T, K.Ar + 0.1, K.Ar + 0.9), p2 = kprog(T, K.Ar + 0.8, K.Ar + 1.6), p3 = kprog(T, K.Ar + 1.5, K.Ar + 2.4);
           const L = (x1, y1, x2, y2, p) => <line x1={x1} y1={y1} x2={klerp(x1, x2, p)} y2={klerp(y1, y2, p)} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />;
           return <>
-            {L(540, 1180, 540, 1020, p1)}{L(540, 1020, 200, 760, p2)}{L(540, 1020, 620, 880, p2)}
-            {L(620, 880, 450, 660, p3)}{L(620, 880, 820, 660, p3)}
-            {p2 >= 1 && <g transform="translate(200 740)"><path d="M 0 0 L 0 -90" stroke="#3fbf4a" strokeWidth={10} /><ellipse cx={-30} cy={-70} rx={34} ry={16} fill="#3fbf4a" stroke={KC.ink} strokeWidth={4} transform="rotate(-25 -30 -70)" /><ellipse cx={30} cy={-90} rx={34} ry={16} fill="#3fbf4a" stroke={KC.ink} strokeWidth={4} transform="rotate(25 30 -90)" /></g>}
-            {p3 >= 1 && <Seta x={450} y={650} s={0.9} crece={kprog(T, K.Ar + 2.4, K.Ar + 3.0)} />}
-            {p3 >= 1 && <g transform={`translate(820 650) scale(${kEase.rebote(kprog(T, K.Ar + 2.5, K.Ar + 3.0))})`}><circle cx={0} cy={-130} r={34} fill={AF.piel} stroke={KC.ink} strokeWidth={6} /><rect x={-36} y={-92} width={72} height={92} rx={26} fill={KC.blue} stroke={KC.ink} strokeWidth={6} /></g>}
-            {T > K.Ar + 3.0 && <path d={`M 450 470 Q 635 ${400 - 20 * Math.sin(T * 3)} 820 470`} stroke={KC.pink} strokeWidth={8} fill="none" strokeDasharray="16 12" />}
+            {L(360, 1150, 360, 1040, p1)}{L(360, 1040, 130, 860, p2)}{L(360, 1040, 450, 930, p2)}
+            {L(450, 930, 300, 730, p3)}{L(450, 930, 600, 730, p3)}
+            {p2 >= 1 && <g transform="translate(130 850)"><path d="M 0 0 L 0 -90" stroke="#3fbf4a" strokeWidth={10} /><ellipse cx={-30} cy={-70} rx={34} ry={16} fill="#3fbf4a" stroke={KC.ink} strokeWidth={4} transform="rotate(-25 -30 -70)" /><ellipse cx={30} cy={-90} rx={34} ry={16} fill="#3fbf4a" stroke={KC.ink} strokeWidth={4} transform="rotate(25 30 -90)" /></g>}
+            {p3 >= 1 && <Seta x={300} y={720} s={0.9} crece={kprog(T, K.Ar + 2.4, K.Ar + 3.0)} />}
+            {p3 >= 1 && <g transform={`translate(600 720) scale(${kEase.rebote(kprog(T, K.Ar + 2.5, K.Ar + 3.0))})`}><circle cx={0} cy={-130} r={34} fill={AF.piel} stroke={KC.ink} strokeWidth={6} /><rect x={-36} y={-92} width={72} height={92} rx={26} fill={KC.blue} stroke={KC.ink} strokeWidth={6} /></g>}
+            {T > K.Ar + 3.0 && <path d={`M 300 540 Q 450 ${470 - 20 * Math.sin(T * 3)} 600 540`} stroke={KC.pink} strokeWidth={8} fill="none" strokeDasharray="16 12" />}
           </>; })())}
       </Escena>
       {/* 2–3 · por dentro: tu célula y la del hongo; la diana no encuentra diferencias */}
@@ -199,12 +199,12 @@ function AntifungicosShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
         {fsvg(<>
-          <Celula T={T} x={290} y={900} r={200} color="rgba(255,138,31,.16)" borde={AF.col} brillo={kprog(T, K.Ce + 0.6, K.Ce + 1.0) * (1 - kprog(T, K.Po, K.Po + 0.5))} seed={4} />
-          <Celula T={T} x={790} y={900} r={200} brillo={kprog(T, K.Ce + 0.6, K.Ce + 1.0) * (1 - kprog(T, K.Po, K.Po + 0.5))} seed={7} />
+          <Celula T={T} x={290} y={860} r={200} color="rgba(255,138,31,.16)" borde={AF.col} brillo={kprog(T, K.Ce + 0.6, K.Ce + 1.0) * (1 - kprog(T, K.Po, K.Po + 0.5))} seed={4} />
+          <Celula T={T} x={790} y={860} r={200} brillo={kprog(T, K.Ce + 0.6, K.Ce + 1.0) * (1 - kprog(T, K.Po, K.Po + 0.5))} seed={7} />
           {T > K.Po + 0.2 && (() => { const [ox, oy] = OBJ[iObj], hit = kprog(T, K.Po + 0.3 + iObj, K.Po + 0.75 + iObj);
             return <>
-              <Diana x={790 + ox} y={900 + oy} r={58} o={0.9} s={klerp(1.4, 1, kEase.sale(hit))} />
-              {hit > 0.6 && <Diana x={290 + ox} y={900 + oy} r={58} o={0.5} color={KC.gold} />}
+              <Diana x={790 + ox} y={860 + oy} r={58} o={0.9} s={klerp(1.4, 1, kEase.sale(hit))} />
+              {hit > 0.6 && <Diana x={290 + ox} y={860 + oy} r={58} o={0.5} color={KC.gold} />}
             </>; })()}
         </>)}
       </Escena>
@@ -315,16 +315,16 @@ function AntifungicosShot() {
 
       {/* textos */}
       <Etq T={T} at={K.G + 1.0} until={K.Ar - 0.3} x={120} y={640} texto="moho (un hongo)" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.G + 1.4} until={K.Ar - 0.3} x={680} y={720} texto="tú" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.Ar + 1.0} until={K.Ce - 0.3} x={110} y={600} texto="plantas" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Ar + 2.5} until={K.Ce - 0.3} x={330} y={410} texto="hongos" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Ar + 2.6} until={K.Ce - 0.3} x={760} y={410} texto="animales" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Ar + 3.0} until={K.Ce - 0.3} texto="grupos hermanos" x={635} y={330} tam={34} borde={KC.pink} />
+      <Etq T={T} at={K.G + 1.4} until={K.Ar - 0.3} x={500} y={760} texto="tú" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.Ar + 1.0} until={K.Ce - 0.3} x={60} y={700} texto="plantas" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ar + 2.5} until={K.Ce - 0.3} x={160} y={500} texto="hongos" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ar + 2.6} until={K.Ce - 0.3} x={560} y={520} texto="animales" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Ar + 3.0} until={K.Ce - 0.3} texto="grupos hermanos" x={450} y={430} tam={34} borde={KC.pink} />
       <Chip T={T} at={K.Ce + 0.1} until={K.Fa - 0.3} texto="POR DENTRO" x={330} y={440} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ce + 0.3} until={K.Fa - 0.3} x={150} y={650} texto="tu célula" tam={32} color={AF.col} />
-      <Etq T={T} at={K.Ce + 0.5} until={K.Fa - 0.3} x={600} y={650} texto="célula del hongo" tam={32} color={AF.lipido} />
-      <Chip T={T} at={K.Ce + 0.8} until={K.Po - 0.1} texto="las dos: con núcleo" x={540} y={1160} tam={34} borde={KC.lilac} />
-      {[0, 1, 2].map((i) => <Chip key={i} T={T} at={K.Po + 0.75 + i} until={i < 2 ? K.Po + 1.7 + i : K.Fa - 0.3} texto={`${OBJ[i][2]}: ✗ también tú`} x={540} y={1160} tam={34} borde={KC.red} />)}
+      <Etq T={T} at={K.Ce + 0.3} until={K.Fa - 0.3} x={150} y={620} texto="tu célula" tam={32} color={AF.col} />
+      <Etq T={T} at={K.Ce + 0.5} until={K.Fa - 0.3} x={430} y={580} texto="célula del hongo" tam={32} color={AF.lipido} />
+      <Chip T={T} at={K.Ce + 0.8} until={K.Po - 0.1} texto="las dos: con núcleo" x={540} y={1110} tam={34} borde={KC.lilac} />
+      {[0, 1, 2].map((i) => <Chip key={i} T={T} at={K.Po + 0.75 + i} until={i < 2 ? K.Po + 1.7 + i : K.Fa - 0.3} texto={`${OBJ[i][2]}: ✗ también tú`} x={540} y={1110} tam={34} borde={KC.red} />)}
       <NumeroGigante T={T} at={K.Fa + 0.2} until={K.Pr - 0.3} valor={5} dur={0.5} etiqueta="familias de antifúngicos" x={850} y={860} tam={220} color={KC.yellow} />
       <Chip T={T} at={K.Fa + 0.4} until={K.Pr - 0.3} texto="aprobadas para infecciones graves · OMS 2025" x={540} y={470} tam={28} borde={KC.ink} />
       <Etq T={T} at={K.Fa + 2.4} until={K.Pr - 0.3} x={640} y={1060} texto="4 de uso clínico" tam={28} color={KC.ink} />
@@ -359,15 +359,15 @@ function AntifungicosShot() {
       <Etq T={T} at={K.Ci + 2.4} until={K.Ou} x={60} y={1520} texto="El dibujo es esquemático. No es consejo médico." tam={22} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Ar} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={K.Ar} until={K.Ce} texto="árbol esquemático" largo={0} />
+      <BarraEscala T={T} at={K.G} until={K.Ar} texto="5 cm" largo={110} color={KC.ink} />
+      <BarraEscala T={T} at={K.Ar} until={K.Ce} texto="árbol esquemático" largo={0} color={KC.ink} />
       <BarraEscala T={T} at={K.Ce} until={K.Fa} texto="10 µm" largo={200} />
-      <BarraEscala T={T} at={K.Pr} until={K.Me} texto="diana esquemática" largo={0} />
+      <BarraEscala T={T} at={K.Pr} until={K.Me} texto="diana esquemática" largo={0} color={KC.ink} />
       <BarraEscala T={T} at={K.Me} until={K.Pa} texto="5 nm (esquemático)" largo={160} />
       <BarraEscala T={T} at={K.Pa} until={K.Es} texto="10 µm" largo={150} />
-      <BarraEscala T={T} at={K.Es} until={K.Ri} texto="mapa esquemático" largo={0} />
+      <BarraEscala T={T} at={K.Es} until={K.Ri} texto="mapa esquemático" largo={0} color={KC.ink} />
       <BarraEscala T={T} at={K.Ri} until={K.Di} texto="5 nm (esquemático)" largo={160} />
-      <BarraEscala T={T} at={K.Ci} until={K.Ou} texto="5 cm" largo={110} y={1580} />
+      <BarraEscala T={T} at={K.Ci} until={K.Ou} texto="5 cm" largo={110} y={1580} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ar - 0.1} texto="Ese hongo y tú: *casi lo mismo.*" />

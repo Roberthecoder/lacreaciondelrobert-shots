@@ -104,4 +104,14 @@ Nota sin veredicto: la voz completa mide ahora 960 caracteres con espacios y 184
 
 La voz, la pantalla y el guion no tienen pendientes. Solo faltan estos 4 textos de `publicacion.md`. Si se cambian tal cual, se pueden dar por ✅ sin otra búsqueda, y la última línea pasa a `VEREDICTO: APROBADO`.
 
-VEREDICTO: PENDIENTE DE CORRECCIONES
+## Re-verificación 2 (5 nov 2026)
+
+Se confirmó leyendo `publicacion.md` y `guion.md` que los 4 textos quedaron exactamente como se propusieron:
+- **LinkedIn:** «La molécula clave del aroma del champiñón casi no está "guardada" en el hongo: se fabrica en el instante en que lo cortas.» ✅ (R9)
+- **Facebook:** «empieza a fabricarlo en menos de un segundo cuando la cortas» ✅ (R10)
+- **X:** «empieza a fabricarlo en menos de 1 segundo al cortarla (Japón, 2026)» ✅ (R10)
+- **Threads:** «empieza a fabricarlo en menos de un segundo cuando la cortas.» ✅ (R10)
+
+También quedó al día la línea «Duración» del guion (960 caracteres / 184 palabras). Las demás menciones de «en menos de 1 segundo» (TikTok, Instagram, YouTube y LinkedIn) dicen «empezó a subir» o «subió» junto con el máximo de 8–12 s, así que son correctas. Ya no queda ninguna ⚠️ ni ❌.
+
+VEREDICTO: APROBADO
