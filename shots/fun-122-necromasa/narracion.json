@@ -1,7 +1,7 @@
 {
   "dcHtml": "Shot Necromasa base narrada.dc.html",
   "salida": "Shot Necromasa narrado.dc.html",
-  "nota": "Shot Fungi Mati #122. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Guion pendiente de verificación independiente.",
+  "nota": "Shot Fungi Mati #122. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
     {
       "escena": "Gancho",
@@ -9,35 +9,35 @@
     },
     {
       "escena": "Comida",
-      "texto": "Hongos y bacterias se comen hojas y raíces, y con ese carbono arman su cuerpo."
+      "texto": "Hongos y bacterias se comen hojas y raíces, y con eso arman su cuerpo."
     },
     {
       "escena": "Hifas",
-      "texto": "Un hongo crece en hilos finísimos, las hifas, forrados de quitina."
+      "texto": "Un hongo crece en hifas, hilos finísimos forrados de quitina."
     },
     {
       "escena": "Muere",
-      "texto": "Cuando muere, su pared no se esfuma de golpe: muchos restos se pegan a la arcilla."
+      "texto": "Al morir, su pared no se esfuma: muchos restos se pegan a minerales finos, como la arcilla."
     },
     {
       "escena": "Arcilla",
-      "texto": "Pegado a minerales, ese carbono puede tardar décadas o siglos en renovarse."
+      "texto": "Así, ese carbono puede tardar décadas o siglos en renovarse."
     },
     {
       "escena": "Pregunta",
-      "texto": "¿Y cómo sabes que ese resto era de un hongo?"
+      "texto": "¿Y cómo sabes que era de un hongo?"
     },
     {
       "escena": "Huella",
-      "texto": "La quitina deja glucosamina, huella sobre todo de hongos; las bacterias dejan ácido murámico."
+      "texto": "La quitina deja glucosamina, huella sobre todo de hongos; las bacterias, ácido murámico."
     },
     {
       "escena": "Estudio2019",
-      "texto": "En 2019 se calculó que, en zonas templadas, pueden ser más de la mitad del carbono de la capa superior."
+      "texto": "En 2019 se calculó que, en suelos templados, pueden ser más de la mitad del carbono superficial."
     },
     {
       "escena": "Estudio2026",
-      "texto": "En 2026, con datos de todo el mundo: en tierra de cultivo, restos de hongos, treinta y cuatro por ciento del carbono; de bacterias, dieciséis."
+      "texto": "En 2026, con sitios sobre todo del hemisferio norte, se estimó en cultivos: restos de hongos, en promedio, treinta y cuatro por ciento del carbono; de bacterias, dieciséis."
     },
     {
       "escena": "Doble",
@@ -45,11 +45,11 @@
     },
     {
       "escena": "Vivos",
-      "texto": "Y los microbios vivos son apenas el dos por ciento."
+      "texto": "Los microbios vivos suelen ser un dos por ciento del carbono del suelo."
     },
     {
       "escena": "Cierre",
-      "texto": "Así que la tierra negra de tu milpa no es solo planta podrida: cerca de la mitad la dejaron microbios al morir."
+      "texto": "Así que en un cultivo típico, cerca de la mitad del carbono de esa tierra negra viene de microbios muertos."
     }
   ]
 }

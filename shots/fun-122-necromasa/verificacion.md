@@ -1,0 +1,70 @@
+# Verificación · Shot Fungi Mati #122 · fun-122-necromasa
+
+## 1. Verificación independiente (5 nov 2026)
+
+Fuentes abiertas por el verificador (texto completo salvo donde se indica):
+- **Lu et al. 2026**, ESSD 18: 3697–3710, https://essd.copernicus.org/articles/18/3697/2026/ (texto completo; publicado 2 jun 2026). EXISTE y dice lo citado.
+- **Liang et al. 2019**, GCB 25(11): 3578–3590, https://doi.org/10.1111/gcb.14781 (solo resumen, vía Crossref/EuropePMC; Wiley da 403).
+- **Kästner, Miltner, Thiele-Bruhn y Liang 2021**, Front. Environ. Sci. 9: 756378, https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2021.756378/full (cifras por ecosistema de Liang 2019).
+- **Salas et al. 2024**, Sci. Total Environ. 906: 167463 (resumen PubMed 37793447) y su resumen EGU22-2244 / EGU2020-8200 (Copernicus meetingorganizer).
+- **Zhou et al. 2024**, Nat. Commun., https://www.nature.com/articles/s41467-024-49743-7 (texto completo).
+- **Xuan et al. 2024**, Geoderma 450: 117030 (resumen DOAJ).
+- **Ibe y Munro 2021**, PLoS Pathog. 17: e1009470 (texto completo).
+- **Deacon, Fungal Biology cap. 3** (Univ. Edinburgh, archivo): https://archive.bio.ed.ac.uk/jdeacon/FungalBiology/chap3.htm
+- **Joergensen 2018** (Biol. Fertil. Soils 54: 559–568): NO se pudo abrir (Springer con muro). La afirmación se sostuvo con otras fuentes (ver fila 7).
+
+| # | Afirmación (voz / pantalla) | Veredicto | Fuente (URL) | Frase textual | Año del dato |
+|---|---|---|---|---|---|
+| 1 | Hongos y bacterias se comen hojas y raíces y con ese carbono arman su cuerpo | ✅ | Lu 2026, ESSD | "Plant inputs provide the primary carbon source to soils, and microbial processing transforms these inputs into microbial necromass" | 2026 |
+| 2 | Un hongo crece en hifas forradas de quitina | ✅ (simplificación aceptable) | Lu 2026, ESSD | "The cell walls of fungi primarily consist of chitin (a nitrogen-containing polysaccharide) and β-glucans" | 2026 |
+| 3 | Pantalla: hifa ~2–10 µm de ancho | ✅ (rango típico) | Deacon, Edinburgh | "ranging from 2 µm to 30 µm or more (usually 5-10 µm)" | s/f (texto de curso) |
+| 4 | Pantalla: quitina = cadena de N‑acetilglucosamina | ✅ | Ibe y Munro 2021, PLoS Pathog. https://doi.org/10.1371/journal.ppat.1009470 | "Chitin is a linear homopolymer of β-1,4-linked N-acetylglucosamine (GlcNAc)" | 2021 |
+| 5 | Al morir, "muchos restos se pegan a la arcilla"; necromasa = restos de microbios muertos | ⚠️ leve | Xuan 2024, Geoderma https://doi.org/10.1016/j.geoderma.2024.117030 ; Lu 2026 | "Total amino sugars are predominantly occluded within MAOM (3.23 ± 0.53 mg/g soil) rather than POM (1.73 ± 0.26 mg/g soil) on a global scale … there are no significant differences … between MAOM and POM in croplands and grasslands"; Lu: "soil clay content and C / N ratio as key drivers of FNC accumulation … organo-mineral associations" | 2024 / 2026 |
+| 6 | Pegado a minerales, ese carbono puede tardar décadas o siglos en renovarse | ✅ (con matiz) | Zhou 2024, Nat. Commun. | "global mean MAOC and POC turnover times are 129 (45–383) yr and 23 (5–82) yr in the top meter, respectively"; "MAOC … persists in soils over hundreds of years and is predominantly protected by minerals" | 2024 |
+| 7 | La quitina deja glucosamina, huella sobre todo de hongos | ✅ (con matiz) | EGU2020-8200 (Salas et al.); Lu 2026 (método); Salas 2024 | "glucosamine is an abundant cell wall component of both, fungal chitin and bacterial peptidoglycan"; Lu: "correcting total GluN for its bacterial share using MurA"; Salas 2024: "GlcN was the most common AS found in all taxa" | 2020 / 2026 / 2024 |
+| 8 | Las bacterias dejan ácido murámico; pantalla "huella solo de bacterias" | ✅ | EGU22-2244 (Salas et al.) https://meetingorganizer.copernicus.org/EGU22/EGU22-2244.html | "muramic acid is exclusively found in bacterial peptidoglycan" | 2022 |
+| 9 | En 2019 (Liang, Amelung, Lehmann, Kästner, GCB) se calculó que en zonas templadas pueden ser más de la mitad del carbono de la capa superior | ✅ (con matiz) | Liang 2019 (resumen); Kästner 2021 Frontiers | "the topsoil organic carbon reservoir in global temperate agricultural, grassland, and forest ecosystems. We show that microbial necromass can make up more than half of soil organic carbon." Kästner 2021: "an average contribution of microbial necromass to SOM varying between 33% in forest soils and up to 62% in grasslands (Liang et al., 2019)" | 2019 (datos 1996–2018) |
+| 10 | Pantalla: TarjetaEstudio "datos de aminoazúcares 1996–2018 · cultivos, pastizales y bosques templados" | ✅ | Liang 2019 (resumen) | "existing biomarker amino sugar data published between 1996 and 2018" | 2019 |
+| 11 | En 2026 (Lu et al., ESSD), 486 sitios, primeros 20 cm | ✅ | Lu 2026 | "from the 0–20 cm soil layer across 486 study sites (145 agricultural and 341 natural ecosystems)" | 2026 |
+| 12 | "con datos de todo el mundo" | ⚠️ exagerado | Lu 2026, §4.3 | "our dataset is unevenly distributed, primarily concentrating on the Northern Hemisphere, with sparse or nearly no data from other regions such as Africa, South America, and Australia" | 2026 |
+| 13 | En tierra de cultivo, restos de hongos 34 % del carbono; de bacterias 16 % | ✅ (cifra correcta; falta "en promedio" en voz) | Lu 2026, §3.1 y Tabla 1 | "in agricultural ecosystems, FNC / SOC ranged from 0.09 % to 97.53 % (mean ± SE: 34.39 ± 0.67 %), and BNC / SOC ranged from 0.81 % to 65 % (15.65 ± 0.33 %)" | 2026 (145 sitios de cultivo, 0–20 cm) |
+| 14 | El hongo pesa el doble | ✅ | Lu 2026 | "the contributions of FNC to SOC were approximately twice those of BNC in agricultural and natural ecosystems" (34.39/15.65 ≈ 2.2) | 2026 |
+| 15 | Los microbios vivos son apenas el 2 % | ⚠️ (falta "de qué": es del carbono orgánico del suelo, valor típico general, no medido por Lu en sus 486 sitios) | Lu 2026, Introducción (atribuye a Anderson y Domsch 1989; Liu et al. 2023) | "Although the living soil microbial biomass typically constitutes only about 2 % of SOC (a ratio referred to as the microbial quotient; Anderson and Domsch, 1989; Liu et al., 2023), microbial necromass has been shown to contribute more than half and up to approximately 80 % of SOC" | 1989/2023 (citado en 2026) |
+| 16 | Pantalla: cuadrícula 34 dorados + 16 morados + 2 verdes sobre el mismo puño | ⚠️ leve | Lu 2026 | El 2 % viene de otra fuente y no es de los mismos sitios; mezclarlo en la misma cuadrícula del 0–20 cm de cultivo sugiere que es la misma medición | — |
+| 17 | Cierre: "la tierra negra de tu milpa… cerca de la mitad la dejaron microbios al morir" | ⚠️ (extrapola un promedio a una milpa concreta; rango por sitio 0.09–97.53 % hongos; datos casi sin Latinoamérica) | Lu 2026 | 34.39 + 15.65 = 50.04 % promedio en 145 sitios de cultivo, 0–20 cm; "sparse or nearly no data from … South America" | 2026 |
+| 18 | Gancho: "Esta tierra negra no es solo planta podrida: es un cementerio de microbios" | ✅ (como metáfora; necromasa = microbios muertos) | Lu 2026 | "microbial necromass has been shown to contribute more than half and up to approximately 80 % of SOC, depending on soil type and analytical methods" | 2026 |
+| 19 | Pantalla: necromasa de hongo dura más que la de bacteria (implícito, "se va antes" lo suelto) | ✅ | Lu 2026 | "fungal necromass generally exhibits a longer turnover time in soil compared to bacterial necromass (Xu et al., 2022)"; Zhou: POC 23 (5–82) yr vs MAOC 129 yr | 2026 / 2024 |
+| 20 | Pantalla: mapa con 486 puntitos | ⚠️ leve | Lu 2026, Fig. 1 | Debe dibujarse concentrado en el hemisferio norte (ver fila 12), no repartido parejo | 2026 |
+
+## Notas
+- **Fila 6:** el dato de Zhou es del carbono asociado a minerales EN GENERAL (no solo necromasa) y del primer metro de suelo; el rango 45–383 años son cuantiles 5–95 %. "Puede tardar décadas o siglos" se sostiene.
+- **Fila 7:** no se pudo abrir Joergensen 2018. Se sostiene "sobre todo de hongos" porque (a) los métodos restan la parte bacteriana de la glucosamina usando el ácido murámico y (b) en cultivos el carbono de hongos calculado así es ~2.6 veces el de bacterias (Lu: "FNC / BNC ratio … (2.61 ± 0.06) in agricultural ecosystems"). Si se quiere blindar: "huella que en el suelo viene sobre todo de hongos".
+- **Fila 9:** en bosques templados Liang 2019 da ~33 %, no más de la mitad; la voz dice "pueden", así que pasa. Si se quiere precisión, la tarjeta puede decir "cultivos y pastizales: más de la mitad · bosques: ~1/3".
+- **Filas 13–14:** las cifras de Lu son estimaciones con factores de conversión (×9 hongos, ×45 bacterias); otros autores proponen ×10 y ×54 (Salas 2024). Decirlo como "se estimó" es más honesto.
+
+## Redacciones corregidas sugeridas (⚠️)
+- **Fila 5 (Muere):** «Cuando muere, su pared no se esfuma de golpe: muchos restos se pegan a minerales finos, como la arcilla.» (en pantalla, etiqueta "minerales finos: arcilla y limo").
+- **Fila 12 + 13 (Estudio2026):** «En 2026, con 486 sitios de varios países, sobre todo del hemisferio norte, se estimó que en tierra de cultivo los restos de hongos son, en promedio, el treinta y cuatro por ciento del carbono; los de bacterias, el dieciséis.» (si se necesita ahorrar segundos: «En 2026, con 486 sitios, sobre todo del norte del planeta: en tierra de cultivo, en promedio, restos de hongos, 34 % del carbono; de bacterias, 16.»)
+- **Fila 15 (Vivos):** «Y los microbios vivos suelen ser apenas un dos por ciento del carbono del suelo.» Pantalla: "microbios vivos ≈ 2 % del carbono del suelo (valor típico)".
+- **Fila 16:** separar visualmente los 2 cuadritos verdes (otro color de borde o chip "valor típico, otro estudio") o dejar la cuadrícula solo con 34 + 16 y mostrar el 2 % aparte.
+- **Fila 17 (Cierre):** «Así que, en una tierra de cultivo típica, la tierra negra no es solo planta podrida: cerca de la mitad de su carbono la dejaron microbios al morir.» o «…la tierra negra de una milpa puede tener cerca de la mitad de su carbono hecho de microbios muertos.» Chip: "promedio de 145 tierras de cultivo · 0–20 cm".
+- **Fila 20:** mapa con puntos concentrados en Asia oriental, Europa y Norteamérica; pocos o ninguno en África, Sudamérica y Australia.
+
+Resultado de la primera ronda: **NO APROBADO** (filas 5, 12, 15, 16, 17 y 20 con ⚠️; 0 ❌).
+
+## 2. Re-verificación (correcciones aplicadas, pendientes de re-verificador independiente)
+
+| Fila | Antes | Ahora (voz / pantalla) | Respaldo |
+|---|---|---|---|
+| 5 | «muchos restos se pegan a la arcilla» | Voz: «Al morir, su pared no se esfuma: muchos restos se pegan a minerales finos, como la arcilla.» Pantalla: etiqueta "minerales finos (arcilla)". | Xuan 2024 ("predominantly occluded within MAOM … on a global scale"); Lu 2026 ("soil clay content … organo-mineral associations") |
+| 12 + 13 | «En 2026, con datos de todo el mundo: en tierra de cultivo, restos de hongos, 34 %…; de bacterias, 16» | Voz: «En 2026, con sitios sobre todo del hemisferio norte, se estimó en cultivos: restos de hongos, en promedio, treinta y cuatro por ciento del carbono; de bacterias, dieciséis.» Pantalla: TarjetaEstudio "2026 · Lu et al. · ESSD · 486 sitios, sobre todo del hemisferio norte · 0–20 cm" y chips "promedio de 145 tierras de cultivo · 0–20 cm". | Lu 2026, Tabla 1 (34.39 ± 0.67 %; 15.65 ± 0.33 %) y §4.3 ("primarily concentrating on the Northern Hemisphere") |
+| 15 | «Y los microbios vivos son apenas el dos por ciento.» | Voz: «Los microbios vivos suelen ser un dos por ciento del carbono del suelo.» Pantalla: "microbios vivos ≈ 2 % del carbono del suelo · valor típico (otros estudios)". | Lu 2026, Introducción ("typically constitutes only about 2 % of SOC"; Anderson y Domsch 1989; Liu et al. 2023) |
+| 16 | 2 cuadritos verdes dentro de la cuadrícula 34 + 16 | La cuadrícula queda solo con 34 dorados + 16 morados (Lu 2026). El 2 % va **aparte**, en una tarjeta separada con borde punteado y chip "valor típico · otra fuente". | — |
+| 17 | «Así que la tierra negra de tu milpa… cerca de la mitad la dejaron microbios al morir.» | Voz: «Así que en un cultivo típico, cerca de la mitad del carbono de esa tierra negra viene de microbios muertos.» Pantalla: chip "promedio de 145 tierras de cultivo · 0–20 cm". | Lu 2026: 34.39 + 15.65 ≈ 50 % (promedio, 145 sitios de cultivo, 0–20 cm) |
+| 20 | Mapa con 486 puntos repartidos | Mapa esquemático con los puntos concentrados en Asia oriental, Europa y Norteamérica; pocos en el resto; leyenda "486 sitios · sobre todo hemisferio norte". | Lu 2026, §4.3 y Fig. 1 |
+| 7 (refuerzo) | — | Pantalla: "glucosamina · en el suelo, sobre todo de hongos" (no "solo de hongos"). | Salas et al. EGU2020-8200; Lu 2026 (método) |
+| 9 (refuerzo) | — | Tarjeta 2019: "cultivos y pastizales: más de la mitad · bosques: ~1/3". | Kästner et al. 2021, Front. Environ. Sci. ("between 33% in forest soils and up to 62% in grasslands (Liang et al., 2019)") |
+
+Otros cambios de redacción, sin afirmaciones nuevas, solo para que dure 61–62 s: «Un hongo crece en hifas, hilos finísimos forrados de quitina.» · «Así, ese carbono puede tardar décadas o siglos en renovarse.» · «¿Y cómo sabes que era de un hongo?» · «La quitina deja glucosamina, huella sobre todo de hongos; las bacterias, ácido murámico.» · «En 2019 se calculó que, en suelos templados, pueden ser más de la mitad del carbono superficial.» · «Hongos y bacterias se comen hojas y raíces, y con eso arman su cuerpo.»
+
+Pendiente: re-verificación independiente de las filas corregidas y de `publicacion.md`; la línea final de veredicto la pone el re-verificador.
