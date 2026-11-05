@@ -1,6 +1,6 @@
 # Publicación · Shot Fungi Mati 150 · Ese moho no se come tu tortilla: la digiere por fuera
 
-Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). BORRADOR (fase 1): se ajusta tras la verificación.
+Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
 ## Versión narrada
 

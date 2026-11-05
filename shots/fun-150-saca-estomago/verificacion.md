@@ -57,4 +57,26 @@ Consejo médico: ninguno. Hipótesis presentadas como hechos: ninguna. La pregun
 
 Después de aplicar 1 y 2, solo hay que reverificar esas dos líneas; el resto está ✅.
 
+## Re-verificación (5 nov 2026, tras las correcciones del guionista)
+
+Releídos completos `guion.md`, `narracion.json` y `publicacion.md`.
+
+| # | Cambio | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Voz y TikTok/YouTube: «se mete en la tortilla, que es maíz: rica en almidón»; chip «maíz: rico en almidón» | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC7204188/ | "71.7% total starch content (dry basis)" — el maíz es rico en almidón; ya no se dice que la tortilla sea «mayormente» almidón. La nota del guion aclara que la cifra es del grano seco. | 2020 |
+| R2 | Proteasas citadas con Cairns 2018 (fuente 4) y fuente de 2021 limitada a amilasas/lipasas | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC5966904/ · https://pmc.ncbi.nlm.nih.gov/articles/PMC8012474/ | Cairns: "numerous predicted protease encoding genes were identified, many of which contained a secretion peptide". El guion copia ahora la frase de 2021 "no protease activity was detected from all A. niger strains" y ya no la usa para proteasas. | 2018 / 2021 |
+| R3 | Voz, tabla Robert, TikTok, YouTube, Instagram, Threads: «Un hongo no tiene boca ni estómago: es como si lo sacara» | ✅ | https://doi.org/10.1038/nrmicro3108 | Ahora se lee claramente como comparación; coincide con "secreting depolymerizing enzymes … in the extracellular environment". Tabla «Robert en pantalla» actualizada (aparición 2 reacciona a «es como si lo sacara»). | 2013 |
+| R4 | YouTube: «El propio estudio y otros posteriores encontraron que en colonias más viejas también se suelta enzima en zonas más céntricas.» | ✅ | Wösten 1991 (https://doi.org/10.1099/00221287-137-8-2017) · Cairns 2018 | Wösten: "in a 5-d-old colony growth and secretion also occurred in a more central zone of the colony"; "starch-degrading enzymes were primarily released from the growing zone but also more slowly from the more central part of the colony". Cairns: "secretion and growth can be uncoupled". | 1991 / 2018 |
+| R5 | Lo que no cambió (filas 1–3, 5–8, 10–26) | ✅ | ver tabla de arriba | Sin cambios en esos textos. | — |
+
+Voz actual: 928 caracteres / 167 palabras (≈ 59 s a 170 palabras/min): sigue cabiendo en 61–62 s con el cierre.
+
+### Lo que falta (no son datos falsos, pero bloquea la entrega)
+
+1. **`publicacion.md`, línea 3, todavía dice «BORRADOR (fase 1): se ajusta tras la verificación.»** Quitar esa frase (dejar solo «Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).»).
+2. Menor, nota interna de `guion.md` (línea 10): dice «revisiones posteriores (Cairns et al. 2018) dicen que en colonias más viejas la secreción también puede ocurrir lejos de la punta». Cairns habla de «zonas concéntricas» de la colonia, sin decir «más viejas»; lo de la colonia de 5 días es del propio Wösten 1991. Propuesta: «el propio estudio de 1991 (colonia de 5 días) y revisiones posteriores (Cairns et al. 2018) muestran que la secreción también puede ocurrir en zonas más céntricas de la colonia». No sale en pantalla ni en redes.
+3. Menor, `guion.md` línea 7: actualizar «voz 951 caracteres / 165 palabras» a «928 caracteres / 167 palabras».
+
+Todas las afirmaciones del guion, la voz, la pantalla y las redes quedan ✅. Al quitar el encabezado de borrador (punto 1), el shot puede quedar aprobado; los puntos 2 y 3 son de limpieza.
+
 VEREDICTO: PENDIENTE DE CORRECCIONES

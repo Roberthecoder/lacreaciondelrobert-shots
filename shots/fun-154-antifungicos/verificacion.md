@@ -87,4 +87,14 @@ Releí completos `guion.md`, `narracion.json` y `publicacion.md`.
 
 Aviso que no es de hechos: la voz quedó en 987 caracteres (999 con espacios entre líneas), unos 57–58 s a ≈ 17.3 caracteres/s. Con 3 s de cierre puede quedar cerca de 60.5–61 s. Hay que medirlo con ffprobe y, si hace falta, alargar el cierre a 3.5–4 s para que el total quede entre 61.0 y 62.0 s.
 
-VEREDICTO: PENDIENTE DE CORRECCIONES
+### Segunda re-verificación (5 nov 2026)
+
+| # | Cambio revisado | Veredicto | Fuente / frase textual |
+|---|---|---|---|
+| R13 | Instagram: «en 2023 se vio que la anfotericina daña células de riñón porque también jala colesterol» | ✅ | Maji 2023: "Cholesterol extraction was found to drive the toxicity of amphotericin B to human renal cells." |
+| R14 | `publicacion.md` línea 3: solo «Solo versión narrada (…)», sin la frase de borrador; no queda «BORRADOR» en ningún archivo | ✅ | — |
+| R15 | Las demás menciones de riñón (TikTok, YouTube «no daña el riñón de ratones», LinkedIn, voz y pantalla) | ✅ | Maji 2023: "renal sparing in mice and primary human renal cells" |
+
+Todas las afirmaciones quedan ✅. (Sigue en pie el aviso de duración: hay que medir con ffprobe que el total quede entre 61.0 y 62.0 s.)
+
+VEREDICTO: APROBADO

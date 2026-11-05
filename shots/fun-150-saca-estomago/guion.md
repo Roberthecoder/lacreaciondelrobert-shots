@@ -4,10 +4,10 @@
 - **Logo:** bioquímica (ADN + matraz), porque el tema es la química de las enzimas (`motor/kit/logo.mjs`). Si el coordinador prefiere, biología (ADN).
 - **Formato:** N1 · POR DENTRO (macro → micro → macro): una tortilla con moho en tu cocina → por dentro (hifa, enzimas como tijeras, moléculas) → la misma tortilla, ya "digerida" alrededor del moho.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Ese moho no se está comiendo tu tortilla: la está digiriendo por fuera.»
-- **Duración:** voz 951 caracteres / 165 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
+- **Duración:** voz 928 caracteres / 167 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
 - **Foco:** la QUÍMICA de la digestión externa (osmotrofia), no la especie. Ya hay shots de moho de pan (*Rhizopus*, 002), "qué es un hongo" (fun-01), cortar el moho (fun-11) y moho del baño (fun-33): aquí no se repite el ciclo de esporas ni el "se tira o se corta".
-- **Matiz que se respeta:** el estudio de 1991 vio la glucoamilasa solo en las puntas; revisiones posteriores (Cairns et al. 2018) dicen que en colonias más viejas la secreción también puede ocurrir lejos de la punta. Por eso la voz dice **«sobre todo en la punta»** y el estudio se cuenta como lo que *ellos* vieron.
+- **Matiz que se respeta:** el estudio de 1991 vio la glucoamilasa solo en las puntas; el propio estudio de 1991 (colonia de 5 días) y revisiones posteriores (Cairns et al. 2018) muestran que la secreción también puede ocurrir en zonas más céntricas de la colonia. Por eso la voz dice **«sobre todo en la punta»** y el estudio se cuenta como lo que *ellos* vieron.
 - **Tortilla:** no se afirma qué moho es el de *tu* tortilla. Solo se dice que *Aspergillus niger* "también sale en tortillas" (aislado de tortillas de una tortillería de Puebla, 2022). El moho de la escena se dibuja genérico (pelusa blanca con puntitos negros tipo *Aspergillus niger*: cabezas negras redondas en la punta de un tallito, sin esporangios que "exploten").
 
 ## Versión narrada

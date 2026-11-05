@@ -1,6 +1,6 @@
 # Publicación · Shot Fungi Mati 154 · Para un medicamento, ese hongo y tú son casi lo mismo
 
-Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). BORRADOR de fase 1: se ajusta después de la verificación.
+Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión).
 
 ## Versión narrada
 
@@ -26,7 +26,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Para un medicamento, ese hongo y tú son casi lo mismo. 🍄💊
-Hongos y animales son grupos hermanos, y sus células tienen núcleo como las tuyas: casi no hay blancos que dañen al hongo sin dañarte. Por eso la OMS cuenta solo cinco familias de antifúngicos para infecciones graves. Los que hay atacan lo poco distinto: el ergosterol de su membrana (tú usas colesterol) y su pared de β-glucano y quitina (tú no tienes pared). En 1950, Hazen y Brown dieron a conocer la nistatina, sacada de una bacteria de la tierra; en 2023 se vio que la anfotericina daña el riñón porque también jala colesterol. Y en diez años solo salieron cuatro antifúngicos nuevos.
+Hongos y animales son grupos hermanos, y sus células tienen núcleo como las tuyas: casi no hay blancos que dañen al hongo sin dañarte. Por eso la OMS cuenta solo cinco familias de antifúngicos para infecciones graves. Los que hay atacan lo poco distinto: el ergosterol de su membrana (tú usas colesterol) y su pared de β-glucano y quitina (tú no tienes pared). En 1950, Hazen y Brown dieron a conocer la nistatina, sacada de una bacteria de la tierra; en 2023 se vio que la anfotericina daña células de riñón porque también jala colesterol. Y en diez años solo salieron cuatro antifúngicos nuevos.
 El dibujo es esquemático. No es consejo médico. Fuentes en el primer comentario.
 ¿Sabías que eras pariente de los hongos? 👇
 Shot Fungi Mati 154 · La Creación del Robert
