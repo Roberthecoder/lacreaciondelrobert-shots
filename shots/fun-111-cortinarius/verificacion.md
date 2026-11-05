@@ -52,4 +52,34 @@ Un verificador que no escribió el guion revisó todas las afirmaciones. Todo qu
 | «Trae orelanina» | Sonaba a que todo *Cortinarius* la tiene | Voz: «**Este** trae orelanina»; chip en pantalla «solo algunas especies de Cortinarius la tienen»; redes: «Algunos Cortinarius (como *C. orellanus* y *C. rubellus*)…» | Dinis-Oliveira et al. 2016, *Hum. Exp. Toxicol.* | "Orellanine is a nephrotoxic toxin produced by some mushroom species of the Cortinarius genus" | 2016 |
 | Molécula de orelanina en pantalla | Posición de N→O y OH esquemática pero inexacta | Redibujada: dos piridinas unidas esquina con esquina (C2–C2'), N→O junto a la unión y OH en las posiciones 3 y 4 de cada anillo | PubChem CID 89579 (orelanina) | 3,3',4,4'-tetrahidroxi-2,2'-bipiridina-1,1'-dióxido | — |
 
+## Re-verificación independiente (5 nov 2026)
+
+Tercer verificador, independiente (no escribió el guion ni hizo las pasadas anteriores). Se abrieron de nuevo: Hedman et al. 2017 (texto completo en PMC), los resúmenes oficiales de Danel 2001 y Dinis-Oliveira 2016 (Europe PMC), la entrevista de Evans en The Naked Scientists (2013), la nota de Fox News (2008) y las fichas de First Nature.
+
+| # | Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | Voz: si en unas horas no te pasó nada no estás a salvo; puede avisar días después | ✅ | Dinis-Oliveira 2016; Hedman 2017 | "Typically, onset of symptoms is delayed for 1-2 weeks after ingestion." · "There are usually no acute symptoms and the patient will seek medical advice 3 days to a week later" | 2016 / 2017 |
+| 2 | Voz: es un *Cortinarius*; de joven un velo de telaraña cubre sus láminas | ✅ | First Nature (*C. rubellus*, *C. orellanus*) | "The gills, which are covered by a cortina (a cobweb-like veil) in young specimens" · "the partial veil or cortina (meaning a curtain) that covers the gills when caps are immature" | consultado 2026 |
+| 3 | Voz: naranja rojizo; esporas color óxido (pantalla: esporada café óxido) | ✅ | First Nature | "the orange cap of this attractive mushroom" · "Spore print Rusty reddish-brown." · gills "becoming rusty brown" | consultado 2026 |
+| 4 | Voz: este trae orelanina, que daña los riñones (pantalla: «solo algunas especies de Cortinarius la tienen») | ✅ | Dinis-Oliveira 2016 | "Orellanine is a nephrotoxic toxin produced by some mushroom species of the Cortinarius genus" | 2016 |
+| 5 | Voz: lastima los tubitos donde se forma la orina | ✅ | Dinis-Oliveira 2016 | "severe interstitial nephritis, acute focal tubular damage, and interstitial fibrosis" | 2016 |
+| 6 | Voz: casi sin síntomas al principio | ✅ | Hedman 2017; Dinis-Oliveira 2016 | "There are usually no acute symptoms" · "Some patients suffer mild gastrointestinal discomfort in the latency period" | 2017 / 2016 |
+| 7 | Voz: una revisión de 2001 analizó 90 casos; en la mitad, el riñón dio señales después de 8.5 días (pantalla: «mediana · fase renal», «8.5 días o más») | ✅ | Danel, Saviuc y Garon 2001, *Toxicon* | "245 cases were collected and 90 cases could be analyzed in details." · "The renal phase is delayed (median 8.5 days)." | 2001 |
+| 8 | Pantalla: estómago hacia el día 3 | ✅ | Danel 2001 | "They appear a few days after the ingestion of the mushrooms (median 3 days)." | 2001 |
+| 9 | Voz: en Suecia, de 28 intoxicados, 22 necesitaron diálisis (pantalla: «oeste de Suecia · 1979–2012», «22 de 28») | ✅ con precisión añadida en pantalla | Hedman 2017 | "Western part of Sweden during the period of January 1979 to December 2012" · "The total number of patients was 39. In this report, 28 patients were included" · "22 of 28 patients developed acute kidney injury requiring dialysis." | 1979–2012 (publ. 2017) |
+| 10 | Voz: tres de cada cuatro llegaron a la falla renal más grave (pantalla: 75 %, etapa 5 de enfermedad renal crónica) | ✅ | Hedman 2017 | "Indeed, 75% of the 28 patients developed CKD5, and 70% of them were transplanted." | 2017 |
+| 11 | Voz: no hay antídoto; queda la diálisis o un trasplante | ✅ | Dinis-Oliveira 2016; Danel 2001 | "There is no specific antidote to orellanine poisoning. The mainstay of treatment is … adequate dialysis" · "intermittent hemodialysis or kidney transplantations were necessary in 70% of those cases" | 2016 / 2001 |
+| 12 | Voz: le pasó al novelista Nicholas Evans, en 2008, en Escocia, él y tres familiares | ✅ | Fox News, 3 sep 2008 | "The author of the best-selling novel 'The Horse Whisperer' is recovering in a hospital after eating poisonous mushrooms during a vacation in Scotland" · "the writer, his wife, her sister and the sister's husband became sick" | 2008 |
+| 13 | Voz: los confundieron con porcini (ceps); pantalla: porcini con poros ≠ *C. rubellus* con láminas | ✅ | Naked Scientists 2013; Fox News 2008; First Nature | "The other mushrooms which were supposedly ceps" · "It was the mushroom called cortinarius speciosissimus" · "the highly toxic Cortinarius speciosissimus, which attacks the kidneys" | 2008 (relatado 2013) |
+| 14 | Voz: su hija le donó un riñón (pantalla: «diálisis → un riñón de su hija») | ✅ | Naked Scientists 2013 | "my daughter Lauren had offered right from the start" · "You're going to take my kidney." · "And so, we did it and my life completely changed. … about a month after the transplant" | 2013 |
+| 15 | Cierre: no hay truco casero; ante la duda no lo comas; con malestar aunque pasen días, urgencias y decir que comiste hongos | ✅ (consejo coherente) | Danel 2001 | "Ingestion of Cortinarius species must be systematically suspected whenever tubulo-interstitial nephritis is diagnosed, especially as mushrooms may have been ingested 1-2 weeks before." | 2001 |
+| 16 | publicacion.md (YouTube): Polonia, años 50; *C. speciosissimus* = *C. rubellus*; la mitad pasó a falla crónica | ✅ | Dinis-Oliveira 2016; Hedman 2017; Danel 2001 | "first recognized in the 1950s when this mushroom was identified as the cause of a mass poisoning in Poland" · "Cortinarius rubellus, also known as Cortinarius speciosissimus" · "Acute renal failure progressed towards chronic renal failure in half of the cases" | 2016 / 2017 / 2001 |
+| 17 | publicacion.md (TikTok, Instagram): «de 28 intoxicados» | ⚠️ (el estudio atendió a 39; analizó 28) → **corregido**: «de 28 intoxicados estudiados» | Hedman 2017 | "The total number of patients was 39. In this report, 28 patients were included" | 2017 |
+
+Precisión de la fila 9: la voz se queda igual (es la fracción exacta del estudio y alargarla arriesgaba pasar de 62 s), pero la etiqueta en pantalla ahora dice «estudio · BMC Nephrology, 2017» (antes «BMC Nephrology, 2017»), para que quede claro que los 28 son los pacientes de un estudio y no todos los casos de Suecia.
+
+Cambios de esta pasada: una etiqueta del `.jsx` (y su mención en `guion.md`) y dos frases de `publicacion.md`. **No cambió `narracion.json`** (171 palabras).
+
+Todas las afirmaciones quedan ✅.
+
 VEREDICTO: APROBADO

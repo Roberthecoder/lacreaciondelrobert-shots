@@ -22,7 +22,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Ese hongo blanco de tu jardín no es un champiñón: es el parasol de esporas verdes (Chlorophyllum molybdites), y es venenoso. 🍄⚠️
-Sale en el pasto con la humedad, a veces en círculos, y también en México. Se confunde con champiñones y parasoles comestibles. En EE. UU. y Canadá suele encabezar cada año los reportes de intoxicación por hongos: vómito, cólicos y diarrea fuertes entre media hora y unas horas después.
+Sale en el pasto con la humedad, a veces en círculos, y también en México. Se confunde con champiñones y parasoles comestibles. En EE. UU. y Canadá suele ser el hongo venenoso que más intoxicaciones suma cada año: vómito, cólicos y diarrea fuertes entre media hora y unas horas después.
 Su "seña" son las esporas verdes… pero a veces salen estériles (sin esporas verdes) y de joven sus láminas aún no son verdes. No basta un solo rasgo, y hubo quien se intoxicó aun cocinándolo. Sin micólogo, no se come; si te sientes mal, a urgencias.
 El dibujo es esquemático. No es guía de identificación. Fuentes en el primer comentario.
 ¿Ya has visto hongos así en tu jardín o en un parque? 👇
@@ -41,7 +41,7 @@ Descripción:
 Ese hongo blanco de tu jardín no es un champiñón: es el parasol de esporas verdes, también llamado parasol falso (Chlorophyllum molybdites), y es venenoso.
 Dónde sale: en pastos, jardines y campos abiertos, sobre todo con tiempo húmedo, solo o formando círculos completos o incompletos ("anillos de hadas"). Es común en el sureste de Estados Unidos y también se ha reportado en regiones tropicales; en México ya aparecía en 1970 en la lista de hongos tóxicos del país (también se ha colectado en Jalisco).
 Cómo es: sombrero grande (de unos 5 a 30 cm), blanco con el centro café y escamas canela; láminas libres (no tocan el pie); un anillo grueso en el pie. Por eso se confunde con champiñones (Agaricus) y con el parasol comestible (Macrolepiota procera).
-Por qué importa: en Estados Unidos y Canadá suele ser el hongo venenoso que más intoxicaciones suma cada año en el registro de la Asociación Micológica de Norteamérica (NAMA); un artículo de 1992 ya lo describía como la causa más común de intoxicación por hongos en Norteamérica. Entre media hora y unas horas después de comerlo llegan vómito, cólicos y diarrea fuertes; en casos graves, sobre todo en niños, puede haber deshidratación y choque. No es mortal como otros hongos, pero no tiene antídoto conocido.
+Por qué importa: en Estados Unidos y Canadá suele ser el hongo venenoso que más intoxicaciones suma cada año en el registro de la Asociación Micológica de Norteamérica (NAMA); un artículo de 1992 ya lo describía como la causa más común de intoxicación por hongos en Norteamérica. Entre media hora y unas horas después de comerlo llegan vómito, cólicos y diarrea fuertes; en casos graves puede haber deshidratación y choque, y los niños corren más riesgo de intoxicarse. No es mortal como otros hongos, pero no tiene antídoto conocido.
 ¿Cómo lo reconocen los micólogos? Al madurar, sus láminas se ponen verdosas porque sus esporas son verdes, algo raro en los hongos (las esporas son elipsoides, de 8 a 13 micras, con un poro en la punta). Pero en 1992, investigadores del Medical College of Ohio advirtieron que a veces aparecen ejemplares estériles, sin esporas verdes; y de joven sus láminas son claras, todavía sin verde. Por eso no basta un solo rasgo: se necesita la combinación, y la experiencia de alguien que sabe. Además, en el registro de la NAMA hay personas que se intoxicaron aunque lo habían cocinado.
 Qué hacer: si un micólogo no lo identificó, no lo comas. Si ya lo comiste y te sientes mal, ve a urgencias y, si puedes, lleva lo que sobró del hongo: ayuda a saber cuál fue.
 El dibujo es esquemático. Este video NO es una guía para identificar hongos silvestres.
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Ese hongo blanco de tu jardín no es un champiñón: es el parasol de esporas verdes (Chlorophyllum molybdites), y es venenoso. 🍄⚠️ Sale en el pasto con la humedad, también en México, y en EE. UU. y Canadá suele encabezar cada año los reportes de intoxicación por hongos. Su seña, las esporas verdes, a veces falta: no basta un solo rasgo. Sin micólogo, no se come; si te sientes mal, a urgencias. No es guía de identificación.
+Ese hongo blanco de tu jardín no es un champiñón: es el parasol de esporas verdes (Chlorophyllum molybdites), y es venenoso. 🍄⚠️ Sale en el pasto con la humedad, también en México, y en EE. UU. y Canadá suele ser el hongo venenoso que más intoxicaciones suma cada año. Su seña, las esporas verdes, a veces falta: no basta un solo rasgo. Sin micólogo, no se come; si te sientes mal, a urgencias. No es guía de identificación.
 ¿Ya has visto hongos así en tu jardín o en un parque? 👇
 Shot Fungi Mati 113 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -70,7 +70,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 El hongo venenoso que suele sumar más intoxicaciones en EE. UU. y Canadá no hay que buscarlo en el bosque: sale en el pasto de los jardines.
-Chlorophyllum molybdites (parasol de esporas verdes) suele encabezar cada año el registro de intoxicaciones de la Asociación Micológica de Norteamérica (Beug, 2025), y en México ya figuraba como tóxico en una lista de 1970. Causa vómito, cólicos y diarrea fuertes entre media hora y unas horas después de comerlo.
+Chlorophyllum molybdites (parasol de esporas verdes) suele ser, entre los hongos venenosos, el que más intoxicaciones suma cada año en el registro de la Asociación Micológica de Norteamérica (Beug, 2025), y en México ya figuraba como tóxico en una lista de 1970. Causa vómito, cólicos y diarrea fuertes entre media hora y unas horas después de comerlo.
 La lección va más allá de los hongos: su rasgo "diagnóstico" (esporas verdes) puede faltar. En 1992, Lehmann y Khazan (Mycopathologia) advirtieron que hay ejemplares estériles sin esporas verdes, y de joven sus láminas todavía no son verdes. Identificar bien exige combinar varios rasgos y a alguien con experiencia; un solo indicador puede fallar.
 Si no lo identificó un micólogo, no se come; si alguien se siente mal después de comer un hongo, urgencias y, si se puede, llevar lo que sobró.
 ¿En qué otro campo has visto que confiar en un solo indicador sale caro?
@@ -81,7 +81,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Ese hongo blanco de tu jardín no es champiñón: es Chlorophyllum molybdites, el venenoso que suele encabezar los reportes de intoxicación en EE. UU. y Canadá. Sus esporas verdes lo delatan… pero a veces faltan. Sin micólogo, no se come. 🍄 #FungiMati
+Ese hongo blanco de tu jardín no es champiñón: es Chlorophyllum molybdites, el hongo venenoso que suele sumar más intoxicaciones en EE. UU. y Canadá. Sus esporas verdes lo delatan… pero a veces faltan. Sin micólogo, no se come. 🍄 #FungiMati
 ```
 
 ### Threads

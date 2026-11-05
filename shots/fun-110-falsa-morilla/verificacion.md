@@ -46,4 +46,34 @@ Verificador independiente (no escribió el guion). Lo que marcó y cómo quedó:
 
 Con estas correcciones, todas las afirmaciones quedan ✅. Voz final: 967 caracteres / 175 palabras; base 57.9 s de voz + 3.5 s de cierre = 61.4 s.
 
+## Re-verificación independiente (5 nov 2026)
+
+Tercer verificador, independiente (no escribió el guion ni hizo las pasadas anteriores). Se abrieron de nuevo las fuentes originales (INCHEM PIM G029, Ruokavirasto en inglés y finés, Michigan DNR, MushroomExpert, revisión EXCLI J. 2024 en PMC) y se buscó cada frase textual en la página.
+
+| # | Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | Voz: «Esto no es una morilla… suelta algo que también es combustible de cohete» | ✅ | INCHEM PIM G029 | "MMH is well known in the space industry as it is a rocket fuel used to control the attitude of spacecraft." | 2000 |
+| 2 | Voz: morilla verdadera con sombrero de panal, pegado al pie, hueca (pantalla: «pegado al pie (casi siempre)») | ✅ | Michigan DNR | "their caps (heads, tops) are pitted with little hollows" · "True morels are also hollow inside." · "The hollow cap is attached to the stalk at base." | vigente (consultado 2026) |
+| 3 | Voz: *Gyromitra esculenta* arrugada como cerebro y con cámaras por dentro | ✅ | INCHEM G029; Kuo, MushroomExpert | "The surface is convoluted like a brain." · "a cross-section of the stalk (stipe) shows chambered areas" · "convoluted and brainlike, reddish brown cap" · "Flesh: Thin; brittle; whitish to tan; slight or chambered." | 2000 / 2012 |
+| 4 | Pantalla: escala 5 cm con sombrero ≈ 9–10 cm | ✅ | Kuo | "Cap: 4-8 cm high; 3-12 cm wide" | 2012 |
+| 5 | Voz: giromitrina que en tu cuerpo se vuelve monometilhidrazina | ✅ | Michigan DNR; EXCLI J. 2024 | "gyromitrin, which our digestive system converts into monomethylhydrazine" · "The degree of hydrolysis is dependent on the pH in the stomach" | 2026 / 2024 |
+| 6 | Voz: con la MMH maniobran algunas naves espaciales | ✅ | INCHEM G029; NASA Artemis I (Orion ESM) | "used to control the attitude of spacecraft" · "bipropellant hypergolic propulsion system using monomethylhydrazine (MMH)" | 2000 / 2024 |
+| 7 | Voz: le quita a tus neuronas la B6 con la que fabrican su freno (GABA); pantalla «vitamina B6 (se la llevan)» | ✅ (simplificación fiel) | EXCLI J. 2024; INCHEM G029 | "MMH may generate hydrazones with pyridoxal-5-phosphate" · "Pyridoxal-5-phosphate is a cofactor for glutamic acid decarboxylase … which results in decreased GABA synthesis" · "interference of the normal utilization of Pyridoxine (Vitamin B6)" | 2024 / 2000 |
+| 8 | Voz: sin él pueden venir convulsiones | ✅ | INCHEM G029 | "Seizures have been reported." | 2000 |
+| 9 | Voz/pantalla: horas después (≈ 5–12 h) vómito y diarrea | ✅ | INCHEM G029; Ruokavirasto 2025 | "The onset of symptoms usually follows a delay of 5 to 12 hours post exposure." · "symptoms such as nausea, vomiting, and diarrhea" | 2000 / 2025 |
+| 10 | Voz: si es grave, daño al hígado | ✅ | Ruokavirasto 2025 | "In severe cases, gyromitrin can lead to neurological symptoms, liver damage, and even death." | 2025 |
+| 11 | Voz: mito, hervida no queda segura | ✅ | Ruokavirasto 2025 | "no method completely removes all gyromitrin. Even mushrooms treated according to the boiling guidelines still contain residual toxins." | 2025 |
+| 12 | Voz: su vapor puede intoxicar a quien cocina | ✅ | INCHEM G029; EXCLI J. 2024 | "Inhalation of the volatile fumes during the cooking process may prove dangerous" · "Inhaling vapors during the cooking process can also result in poisoning." | 2000 / 2024 |
+| 13 | Voz: en Finlandia se vende con advertencia (pantalla: «venenosa si no se trata», aviso obligatorio) | ✅ | Ruokavirasto, *Korvasienten käsittely ja varoitusmerkinnät* (act. 27.5.2025) | "myyntipaikalla on oltava näkyvillä määräysten mukaisesti varoitusmerkintä sienten myrkyllisyydestä" · folleto «Korvasieni - myrkyllinen käsittelemättömänä» | 2025 |
+| 14 | Voz: en 2025 su agencia calculó que, hervida dos veces, guarda casi un quinto (pantalla ≈ 18 %) | ✅ | Ruokavirasto, 26 may 2025 | "The report, based on literature sources…" · "even after boiling the mushrooms twice, nearly one-fifth of the original toxin content remains" · "about 18% of the original toxin content remained in the mushrooms on average" | 2025 |
+| 15 | Voz: hay quien la comió por años sin problema… y un día se intoxicó | ✅ | Michigan DNR | "Some of the same people who had consumed this species safely for several years have suffered acute poisoning, and a few have died." | vigente |
+| 16 | Pantalla: fórmulas esquemáticas (giromitrina = acetaldehído N-metil-N-formilhidrazona → MMH CH₃–NH–NH₂); medidor de GABA sin cifras | ✅ esquemático | INCHEM G029 (nombre del tóxico) | "N-methyl-N-formylhydrazone" | 2000 |
+| 17 | publicacion.md (YouTube): «Finlandia, uno de los pocos países donde se permite venderla» | ⚠️ (no se encontró fuente que diga «uno de los pocos países») → **corregido**: «donde su venta se permite como un alimento excepcional» | Ruokavirasto (act. 2025) | "Korvasieni on poikkeuksellinen elintarvike, jonka myynti sallitaan" (la falsa morilla es un alimento excepcional cuya venta se permite) | 2025 |
+| 18 | publicacion.md (Instagram): «Estorba la vitamina B6 de tus neuronas (su "freno")» | ⚠️ (el «freno» es el GABA, no la B6) → **corregido**: «Estorba la vitamina B6 que tus neuronas usan para fabricar su "freno" (GABA)» | EXCLI J. 2024 | "which results in decreased GABA synthesis" | 2024 |
+| 19 | publicacion.md: resto de cifras y frases (18 %, 2025, «calculó», 5–12 h, Orión, «puede intoxicar», mito de la familia) | ✅ | las mismas fuentes de arriba | — | 2000–2025 |
+
+Cambios de esta pasada: solo dos frases de `publicacion.md` (filas 17 y 18). **No cambió `narracion.json` ni nada en pantalla (.jsx).** Voz: 175 palabras (sin cambio; la base mide 57.9 s de voz + 3.5 s de cierre = 61.4 s).
+
+Todas las afirmaciones quedan ✅.
+
 VEREDICTO: APROBADO

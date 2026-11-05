@@ -1,11 +1,12 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Cacao base narrada.dc.html",
   "salida": "Shot Cacao narrado.dc.html",
-  "nota": "Shot Fungi Mati #117. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "nota": "Shot Fungi Mati #117. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs.  Voz aprobada por delegación de Robert tras la re-verificación independiente del 5 nov 2026.",
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esa mazorca no está nevada: esa escarcha son esporas de un hongo que pudre el cacao de tu chocolate."
+      "texto": "Esa mazorca no está nevada: esa escarcha es un hongo cargado de esporas que pudre el cacao de tu chocolate."
     },
     {
       "escena": "Hongo",
@@ -29,7 +30,7 @@
     },
     {
       "escena": "Escarcha",
-      "texto": "Encima brota un polvo blanco de esporas en cadenitas: esa es la nieve."
+      "texto": "Encima brota una felpa blanca con esporas en cadenitas: esa es la nieve."
     },
     {
       "escena": "Pregunta",

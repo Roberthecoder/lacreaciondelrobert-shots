@@ -306,7 +306,7 @@ function EsporadaShot() {
       <Etq T={T} at={K.Co + 3.8} until={K.Re - 0.3} x={1050} y={480} texto="parasol (Macrolepiota procera)" it lado="izq" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Co + 3.9} until={K.Re - 0.3} texto="comestible" x={890} y={545} tam={28} borde="#118a3a" />
       <Chip T={T} at={K.Re + 0.2} until={K.Si - 0.3} texto="EE. UU. y Canadá" x={330} y={430} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Re + 2.2} until={K.Si - 0.3} texto="suele encabezar los reportes de cada año" x={540} y={990} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.Re + 2.2} until={K.Si - 0.3} texto="el venenoso que suele sumar más casos" x={540} y={990} tam={32} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Re + 3.0} until={K.Si - 0.3} anio="NAMA" quien="registro de intoxicaciones" revista="Beug, FUNGI 2025 · Lehmann y Khazan, 1992" x={420} y={740} />
       <Chip T={T} at={K.Si + 0.3} until={K.P - 0.3} texto="½ hora → unas horas" x={330} y={490} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.Si + 2.1} until={K.P - 0.3} texto="vómito" x={700} y={700} tam={40} borde={KC.red} />
@@ -348,7 +348,7 @@ function EsporadaShot() {
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ja - 0.1} texto="No es champiñón: *es venenoso.*" />
       <Subtitulo T={T} idx={1} at={K.Ja + 0.1} until={K.Co - 0.1} texto="Sale en el pasto, *también en México.*" />
       <Subtitulo T={T} idx={2} at={K.Co + 0.1} until={K.Re - 0.1} texto="Se confunde con *hongos comestibles.*" />
-      <Subtitulo T={T} idx={3} at={K.Re + 0.1} until={K.Si - 0.1} texto="Suele *encabezar* los reportes." />
+      <Subtitulo T={T} idx={3} at={K.Re + 0.1} until={K.Si - 0.1} texto="Suele ser *el venenoso con más casos.*" />
       <Subtitulo T={T} idx={4} at={K.Si + 0.1} until={K.P - 0.1} texto="Vómito, cólicos y *diarrea fuertes.*" />
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.Es - 0.1} texto="¿Cómo lo *reconocen?*" />
       <Subtitulo T={T} idx={6} at={K.Es + 0.1} until={K.Et - 0.1} texto="Sus esporas son *verdes.*" />

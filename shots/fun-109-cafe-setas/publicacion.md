@@ -70,7 +70,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 Se estima que el mundo genera unos 6 millones de toneladas de posos de café al año (Franca y Oliveira, 2022). ¿Pueden convertirse en comida?
-1) Sí, pero no solos: en 2021 (Future Foods), la fructificación de Pleurotus se frenó con más de 30 % de posos en la mezcla; en otro estudio de 2021 (PLoS ONE), un tercio de posos con paja y poda de olivo alcanzó 95 % de eficiencia biológica.
+1) Sí, mejor en mezcla: en 2021 (Future Foods), la fructificación de Pleurotus se frenó con más de 30 % de posos en la mezcla; en otro estudio de 2021 (PLoS ONE), un tercio de posos con paja y poda de olivo alcanzó 95 % de eficiencia biológica.
 2) Cafeína: el micelio de P. ostreatus degrada parte de la cafeína hasta xantina, y en las setas quedan trazas: harían falta ~250 kg de setas frescas para igualar un espresso (Carrasco-Cabrera et al., 2019).
 3) México tiene antecedente: en los años ochenta, el INIREB en Xalapa, Veracruz, cultivaba Pleurotus en pulpa de café; en 1987 reportaron eficiencias biológicas mayores a 100 % con pulpa secada al sol y almacenada dos años.
 De residuo agroindustrial a alimento: la clave está en la formulación del sustrato.

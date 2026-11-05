@@ -77,4 +77,48 @@ Un verificador que no escribió el guion revisó de nuevo todas las afirmaciones
   | publicacion.md «en 2018–2020 hubo dos personas…» | Mismo problema de fecha | → «en el registro de la NAMA hay personas que…» |
   | Enlace UF | Redirige | → https://ask.ifas.ufl.edu/publication/PP324 |
 
+
+## Re-verificación independiente (5 nov 2026)
+
+Verificador que no escribió el guion. Revisé `narracion.json` (12 líneas, 173 palabras), `guion.md`, letreros y subtítulos de `esporada.jsx` y `publicacion.md`, abriendo de nuevo: UF/IFAS PP324 (texto completo en ask.ifas.ufl.edu), Beug 2025 (PDF completo de *FUNGI* 18(1)), Lehmann y Khazan 1992 (resumen completo de PubMed), Cajas et al. 2016 (PDF), Pérez-Silva et al. 1970 (PDF) y Ruiz-González et al. 2023 (resumen de PubMed).
+
+| # | Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| 1 | Hongo blanco de jardín/pasto | ✅ | UF/IFAS PP324 | "commonly creates a complete or incomplete 'fairy ring' in lawns, grassy areas, and open woods" · "Caps typically start off white but become darker over time" | 2016 (rev. 2025) |
+| 2 | Parasol de esporas verdes / parasol falso, *Chlorophyllum molybdites* | ✅ | Cajas et al. 2016 | "conocido comúnmente como parasol falso, o sombrilla de esporas verdes" | 2016 |
+| 3 | Es venenoso («TÓXICO») | ✅ | Pérez-Silva et al. 1970; UF/IFAS | "Chlorophyllum molybdites (Mey. ex Fr.) Mass. (tóxico)" · "This poisonous species" | 1970 / 2016 |
+| 4 | Sale con la humedad | ✅ | UF/IFAS | "produces more mushrooms during wet weather" | 2016 (rev. 2025) |
+| 5 | A veces en círculos | ✅ | UF/IFAS | "often forms 'fairy rings' in large circles and semi-circles on lawns" | 2016 (rev. 2025) |
+| 6 | También en México (p. ej. Jalisco) | ✅ | Pérez-Silva 1970; Ruiz-González 2023 | lista de tóxicos de México (arriba) · "Mushrooms were collected in the state of Jalisco, Mexico … Chlorophyllum molybdites" | 1970 / 2023 |
+| 7 | Grande, con escamas y anillo | ✅ | UF/IFAS | "ranges from 1.8 to 11.8 inches in diameter" · "The caps have scales that are typically stained beige, cinnamon, or pinkish brown" · "a thick white to brownish ring around the stem" | 2016 (rev. 2025) |
+| 8 | Se confunde con parasoles comestibles (*Macrolepiota procera*) | ✅ | UF/IFAS | "can be easily confused with edible mushroom species such as the true parasol mushroom (Macrolepiota procera)" | 2016 (rev. 2025) |
+| 9 | Se confunde con champiñones (*Agaricus*) | ✅ | Cajas et al. 2016 | "debido a su similitud con el hongo Agaricus comestible" | 2016 |
+| 10 | En EE. UU. y Canadá suele ser el venenoso que más intoxicaciones suma cada año (voz) | ✅ | Beug, *FUNGI* 18(1) | "The poisonous mushroom that normally leads the pack for total annual mushroom poisonings is Chlorophyllum molybdites." | 2025 |
+| 10b | Chip «suele encabezar los reportes de cada año», subtítulo «Suele encabezar los reportes» y varias redes («suele encabezar los reportes de intoxicación por hongos») | ⚠️ → corregido | Beug 2025 | Sin «venenoso» se lee como el primero de TODOS los hongos, y no lo es: "for the period 2018–2020 … the mushroom causing the most reported cases (9) goes to Agaricus bisporus" · "Morels are normally at or near the top of the list for annual poisoning cases" | 2025 |
+| 11 | (Tarjeta) registro de la NAMA; Lehmann y Khazan 1992 | ✅ | Beug 2025; Lehmann y Khazan 1992 | "comes from the NAMA toxicology database" · "the most common cause of mushroom poisoning in North America" | 2025 / 1992 |
+| 12 | Entre media hora y unas horas después | ✅ | Beug 2025 (tablas) | inicio "0.5-4.5 hours" (32 adultos) y "0.5–5 hours" | 2025 |
+| 13 | Vómito, cólicos y diarrea fuertes | ✅ | Lehmann y Khazan 1992; Beug 2025 | "severe gastrointestinal symptoms including profuse diarrhea, vomiting and intestinal pain" · "Abdominal cramps (11), vomiting (24), severe vomiting (4)" | 1992 / 2025 |
+| 14 | Al madurar sus láminas se ponen verdosas; de joven todavía no son verdes | ✅ | UF/IFAS | "The gills are white to yellow in young specimens, turn a greyish color as the specimens mature, and then finally become green to greenish brown" | 2016 (rev. 2025) |
+| 15 | Sus esporas son verdes, algo raro en los hongos | ✅ | UF/IFAS | "produces a spore print that is obviously green in color, a rare feature among mushrooms" | 2016 (rev. 2025) |
+| 16 | (Dibujo) láminas libres; esporas elipsoides verdes de 8–13 µm con poro | ✅ | UF/IFAS | "The gills are free from the stem" · "greenish and ellipsoid, measuring 8–13 μm long and 6–8 μm wide with a small pore at the apex" | 2016 (rev. 2025) |
+| 17 | En 1992, investigadores de Ohio advirtieron que a veces salen estériles, sin esporas verdes | ✅ | Lehmann y Khazan, *Mycopathologia* 118(1):3–13 | "Department of Microbiology, Medical College of Ohio, Toledo" · "warned of the occasional finding of sterile mushrooms that lack its characteristic green basidiospores" | 1992 |
+| 18 | No basta un solo rasgo | ✅ | UF/IFAS; Lehmann y Khazan 1992 | "relatively easy to distinguish … due to a combination of its distinct green spore print, the greenish color of its gills, its large whitish cap, and the ring" + aviso de ejemplares estériles | 2016 / 1992 |
+| 19 | Hubo quien se intoxicó aunque lo había cocinado | ✅ | Beug 2025 | "Even though it was cooked, two people reported discovering that C. molybdites is trouble" | 2025 |
+| 20 | Si te sientes mal, ve a urgencias; lleva lo que sobró | ✅ | UF/IFAS | "Evaluation of poisoning severity should be made in a health care center or emergency room at a hospital" · "observe the uneaten parts of the mushroom" | 2016 (rev. 2025) |
+| 21 | (publicacion.md) «en casos graves, sobre todo en niños, deshidratación y choque» | ⚠️ → corregido | UF/IFAS | La fuente dice que los niños tienen más riesgo de intoxicarse, no de casos graves: "Children and pets are at a higher risk for poisoning … because children are smaller in size and more likely to accidentally eat fresh mushrooms" · "In more severe cases … hypovolemic shock" | 2016 (rev. 2025) |
+| 22 | (publicacion.md) no es mortal como otros; sin antídoto; reportado en regiones tropicales | ✅ | UF/IFAS | "not fatally poisonous like some other mushroom species" · "There is no currently known antidote" · "has also been reported from other tropical regions" | 2016 (rev. 2025) |
+
+### Correcciones de esta re-verificación (la voz NO cambia)
+| Dónde | Antes | Después |
+|---|---|---|
+| `esporada.jsx` · chip escena Registro | «suele encabezar los reportes de cada año» | «el venenoso que suele sumar más casos» |
+| `esporada.jsx` · subtítulo idx 3 | «Suele *encabezar* los reportes.» | «Suele ser *el venenoso con más casos.*» |
+| `publicacion.md` · Instagram y Facebook | «suele encabezar cada año los reportes de intoxicación por hongos» | «suele ser el hongo venenoso que más intoxicaciones suma cada año» |
+| `publicacion.md` · LinkedIn | «suele encabezar cada año el registro de intoxicaciones de la NAMA» | «suele ser, entre los hongos venenosos, el que más intoxicaciones suma cada año en el registro de la NAMA» |
+| `publicacion.md` · X | «el venenoso que suele encabezar los reportes de intoxicación» | «el hongo venenoso que suele sumar más intoxicaciones» |
+| `publicacion.md` · YouTube | «en casos graves, sobre todo en niños, puede haber deshidratación y choque» | «en casos graves puede haber deshidratación y choque, y los niños corren más riesgo de intoxicarse» |
+| `guion.md` | chip viejo y «50 cm (anillo de hadas)» | chip nuevo y «20 cm», como en la animación |
+
+Cuadros revisados con `motor/preview.mjs` (2–58 s): el chip y el subtítulo nuevos caben en su marco y no tapan nada. Todo queda ✅.
+
 VEREDICTO: APROBADO

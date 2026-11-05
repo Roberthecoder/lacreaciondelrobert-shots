@@ -10,7 +10,7 @@ Si comiste un hongo del bosque y en unas horas no te pasó nada, NO estás a sal
 Es un Cortinarius, como Cortinarius orellanus o Cortinarius rubellus. De joven, un velo como telaraña, la "cortina", cubre sus láminas; su sombrero es naranja rojizo y suelta esporas color óxido.
 Este trae orelanina, una toxina que daña los riñones: lastima los túbulos, los tubitos donde se forma la orina, y al principio casi no da síntomas.
 ¿Cuánto tarda en avisar? Una revisión de 2001 analizó 90 casos: las molestias de estómago llegaron hacia el día 3 y, en la mitad de los casos, el riñón dio señales después de 8 días y medio.
-En el oeste de Suecia, de 28 intoxicados entre 1979 y 2012, 22 necesitaron diálisis, y 3 de cada 4 llegaron a la etapa más grave de enfermedad renal crónica. No hay antídoto: queda la diálisis o un trasplante.
+En el oeste de Suecia, de 28 intoxicados estudiados entre 1979 y 2012, 22 necesitaron diálisis, y 3 de cada 4 llegaron a la etapa más grave de enfermedad renal crónica. No hay antídoto: queda la diálisis o un trasplante.
 Le pasó al novelista Nicholas Evans, autor de The Horse Whisperer: en 2008, en Escocia, él y tres familiares comieron estos hongos creyendo que eran porcini (que tienen poros, no láminas). Su hija le donó un riñón.
 No hay truco casero: ante la duda, no lo comas. Y si comiste hongos silvestres y te sientes mal, aunque hayan pasado días, ve a urgencias y di que comiste hongos.
 Esto NO es una guía para identificar hongos ni consejo médico. El dibujo es esquemático.
@@ -24,7 +24,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Si comiste un hongo del bosque y en unas horas no te pasó nada, NO estás a salvo: este puede avisar días después. 🍄⏳
-Algunos Cortinarius (como C. orellanus y C. rubellus) traen orelanina, una toxina que daña los túbulos del riñón casi sin síntomas al principio. En una revisión de 90 casos (2001), en la mitad el riñón dio señales después de 8.5 días. En Suecia, de 28 intoxicados, 22 necesitaron diálisis. No hay antídoto. Al novelista Nicholas Evans le pasó en 2008: los confundió con porcini y su hija le donó un riñón.
+Algunos Cortinarius (como C. orellanus y C. rubellus) traen orelanina, una toxina que daña los túbulos del riñón casi sin síntomas al principio. En una revisión de 90 casos (2001), en la mitad el riñón dio señales después de 8.5 días. En Suecia, de 28 intoxicados estudiados, 22 necesitaron diálisis. No hay antídoto. Al novelista Nicholas Evans le pasó en 2008: los confundió con porcini y su hija le donó un riñón.
 Ante la duda, no lo comas. Si comiste hongos silvestres y te sientes mal, aunque pasen días, ve a urgencias y di que comiste hongos.
 No es guía de identificación ni consejo médico. El dibujo es esquemático. Fuentes en el primer comentario.
 ¿En tu familia salen a buscar hongos en temporada de lluvias? 👇

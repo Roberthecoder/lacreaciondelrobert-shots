@@ -446,7 +446,7 @@ function TrigoShot() {
       <Etq T={T} at={K.B + 0.9} until={K.N - 0.3} x={60} y={700} texto="● CIMMYT · México" tam={28} color={KC.ink} />
       <Etq T={T} at={K.B + 1.6} until={K.N - 0.3} x={60} y={745} texto="Norman Borlaug y su equipo:" tam={28} color={KC.ink} />
       <Etq T={T} at={K.B + 1.9} until={K.N - 0.3} x={60} y={790} texto="trigos resistentes a la roya" tam={28} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.B + 2.4} until={K.N - 0.3} anio="2005" quien="Borlaug da la alarma" revista="nace la Borlaug Global Rust Initiative" x={470} y={1000} />
+      <TarjetaEstudio T={T} at={K.B + 2.4} until={K.N - 0.3} anio="2005" quien="Borlaug da la alarma" revista="nace la Global Rust Initiative (hoy BGRI)" x={470} y={1000} />
       <Chip T={T} at={K.N + 0.1} until={K.C - 0.3} texto="POR DENTRO · DOS NÚCLEOS" x={420} y={370} tam={32} borde={KC.gold} mono />
       <TarjetaEstudio T={T} at={K.N + 0.3} until={K.N + 2.6} anio="2019" quien="Nature Communications" revista="Minnesota, Australia y Sudáfrica" x={600} y={600} />
       <Etq T={T} at={K.N + 0.9} until={K.C - 0.3} x={110} y={1040} texto="hongo 1" tam={28} />
