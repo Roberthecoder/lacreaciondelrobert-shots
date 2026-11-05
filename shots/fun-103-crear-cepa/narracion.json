@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Cepa base narrada.dc.html",
+  "salida": "Shot Cepa narrado.dc.html",
+  "nota": "Shot Fungi Mati #103. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta seta no nació de una semilla: su cepa empezó con un pedacito de otra."
+    },
+    {
+      "escena": "Corte",
+      "texto": "Se abre y, con pinzas estériles, se toma tejido de adentro, limpio."
+    },
+    {
+      "escena": "Agar",
+      "texto": "Junto a una flama o en campana de flujo, va a una caja con agar."
+    },
+    {
+      "escena": "Hifas",
+      "texto": "Salen hilos, las hifas, que crecen por la punta: la colonia avanza en círculo."
+    },
+    {
+      "escena": "Pasar",
+      "texto": "Si sale limpia, un cuadrito del micelio nuevo pasa a otra caja: un clon de la seta."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si quieres una seta nueva?"
+    },
+    {
+      "escena": "Esporas",
+      "texto": "La pones boca abajo sobre un papel y suelta un polvo de esporas."
+    },
+    {
+      "escena": "Monocarion",
+      "texto": "En estas setas, cada espora da un micelio de un solo tipo de núcleo."
+    },
+    {
+      "escena": "Dicarion",
+      "texto": "Dos compatibles se fusionan en un dicarión: el micelio doble que da setas."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2014, en México, cruzaron micelios de dos setas silvestres de Oaxaca: salieron cincuenta y seis híbridas."
+    },
+    {
+      "escena": "Guardar",
+      "texto": "Cada cepa lleva código y se guarda en frío, en agua estéril o congelada."
+    },
+    {
+      "escena": "Robert",
+      "texto": "Yo saqué seta rosa de una impresión de esporas; mis primeras cajas Petri fueron tuppers."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa seta no nació de una semilla: es una copia o una cruza."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
