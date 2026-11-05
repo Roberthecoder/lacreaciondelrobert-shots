@@ -44,11 +44,11 @@ Tiempos estimados de la base (con la voz real se recorren solos). Grande en «¿
 | 4 | 22.0 | 26.5 | 10_serio_molesto | `arriba-der` | «casi cuarenta pasos para sacar dieciocho miligramos» |
 | 5 | 26.6 | 29.6 | 07_pensativo_puno | `grande` | «¿Y si alguien lo hacía en un solo paso?» |
 | 6 | 39.0 | 42.0 | 11_sorprendido | `arriba-der` | «de un jalón» |
-| 7 | 46.0 | 50.3 | 03_riendo | `arriba-der` | «pariente del moho negro que le sale a tu pan» |
+| 7 | 46.0 | 50.3 | 05_sonriendo_dientes_uniformes | `arriba-der` | «pariente del moho negro que le sale a tu pan» |
 | 8 | 54.0 | 58.3 | 02_apuntando_camara | `arriba-der` | «un moho le abrió el camino» |
 | — | 58.5 | 62.0 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 8 · **28.4 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas. (Confirmar en fase 2 los nombres exactos de los stickers en `shots/001-hormiga-zombi/assets/stickers/`; si `03_riendo` no existe, usar la pose de risa disponible.) Robert no tapa la molécula, las etiquetas ni el subtítulo: en las escenas de molécula se va a `arriba-der` fuera del esqueleto.
+Apariciones 8 · **28.4 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas. (Stickers `avatar_NN_*.png`; las 8 de `shots/fun-59-reishi/assets/stickers/` + `05_sonriendo_dientes_uniformes` de `shots/bio-31-car-t/assets/stickers/`.) Robert no tapa la molécula, las etiquetas ni el subtítulo: en las escenas de molécula se va a `arriba-der` fuera del esqueleto.
 
 ## Fuentes (abiertas el 5 nov 2026)
 
@@ -76,8 +76,8 @@ Apariciones 8 · **28.4 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas ·
 7. Timmermans, S., Souffriau, J. y Libert, C. (2019). A General Introduction to Glucocorticoid Biology. *Frontiers in Immunology* 10: 1545. https://pmc.ncbi.nlm.nih.gov/articles/PMC6621919/
    > "All these synthetic GCs were developed based on the structure of endogenous GCs (cortisol/hydrocortisone)"
    > glucocorticoides sintetizados en "the zona fasciculate … of the adrenal cortex"
-8. Química de las moléculas (para el dibujo y la frase "tres oxígenos más"): progesterona C21H30O2 (pregn-4-eno-3,20-diona); hidrocortisona/cortisol C21H30O5 (11β,17α,21-trihidroxipregn-4-eno-3,20-diona): mismos 21 carbonos, tres oxígenos más, en los carbonos 11, 17 y 21. PubChem CID 5994 (progesterona) y CID 5754 (hidrocortisona): https://pubchem.ncbi.nlm.nih.gov/compound/5994 · https://pubchem.ncbi.nlm.nih.gov/compound/5754 (por verificar por el verificador).
-9. *Rhizopus stolonifer* = moho negro del pan: Mrabti et al. / estudio de cáscara de cacao (2025), PMC12029260: https://pmc.ncbi.nlm.nih.gov/articles/PMC12029260/
+8. Química de las moléculas (para el dibujo y la frase "tres oxígenos más"): progesterona C21H30O2 (pregn-4-eno-3,20-diona); hidrocortisona/cortisol C21H30O5 (11β,17α,21-trihidroxipregn-4-eno-3,20-diona): mismos 21 carbonos, tres oxígenos más, en los carbonos 11, 17 y 21. PubChem CID 5994 (progesterona) y CID 5754 (hidrocortisona): https://pubchem.ncbi.nlm.nih.gov/compound/5994 · https://pubchem.ncbi.nlm.nih.gov/compound/5754 (PubChem: fórmulas C21H30O2 y C21H30O5 confirmadas en la API el 5 nov 2026).
+9. *Rhizopus stolonifer* = moho negro del pan: Barros Tiburcio, P., de Carvalho Neto, D. P., Soccol, C. R. y Medeiros, A. B. P. (2025). Cocoa Pod Husk Valorization Through *Rhizopus stolonifer* Solid-State Fermentation. *Microorganisms*, PMC12029260: https://pmc.ncbi.nlm.nih.gov/articles/PMC12029260/
    > "Rhizopus stolonifer, commonly known as black bread mold, has extensive enzymatic capabilities"
 
 El dibujo es esquemático. No es consejo médico.

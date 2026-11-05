@@ -57,4 +57,13 @@ Fuentes abiertas:
 
 Con estos tres cambios todas las filas quedan ✅ (revisar después que la voz siga en ~57–58 s; los cambios suman/restan pocas sílabas).
 
-VEREDICTO: PENDIENTE (correcciones)
+## Re-verificación (5 nov 2026)
+
+El verificador volvió a leer `narracion.json` y `guion.md` después de los cambios del guionista. Las 3 correcciones quedaron
+tal cual se propusieron:
+- Escena 7: voz «Sin ese ablandador, se seca tieso y quebradizo.» y chip "sin ablandador: tieso y quebradizo" → fila 16 ✅ ([ELS]: "If left untreated, mycelium materials will become stiff and brittle when fully dried … Therefore, a plasticizing agent is applied").
+- Escena 10: voz «Ninguna lo igualó en todo; …» y chip "ninguna igualó al cuero en todo" → fila 19 ✅ ([MEY]: "None of the leather alternatives showed the universal performance of leather.").
+- Escena 11: voz «Para protegerlo, la mayoría en venta lleva una capa de poliuretano, un plástico, que estorba su degradación.» → fila 21 ✅ ([ELS]: "These synthetic polymers are added to protect and or reinforce the mycelium material, but hinders the biodegradability").
+Las otras 11 líneas de voz y el resto de las escenas no cambiaron, y no hay afirmaciones nuevas. Las 30 afirmaciones quedan ✅.
+
+VEREDICTO: APROBADO
