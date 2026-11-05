@@ -1,0 +1,9 @@
+{
+ "temas": [
+  {"id": "fun-110-falsa-morilla", "titulo": "Esa morilla es falsa y trae combustible de cohete: Gyromitra esculenta (giromitrina → monometilhidrazina)", "serie": "Shot Fungi Mati", "numero": 110, "estado": "idea", "carpeta": "shots/fun-110-falsa-morilla", "rama": "claude/fun-110-114-comestibles", "fuentes": [], "fecha": "2026-11-05", "derivados": []},
+  {"id": "fun-111-cortinarius", "titulo": "El veneno que espera dos semanas: Cortinarius y la orelanina contra los riñones", "serie": "Shot Fungi Mati", "numero": 111, "estado": "idea", "carpeta": "shots/fun-111-cortinarius", "rama": "claude/fun-110-114-comestibles", "fuentes": [], "fecha": "2026-11-05", "derivados": []},
+  {"id": "fun-112-paxillus", "titulo": "Lo comiste diez veces sin problema y aun así no es seguro: Paxillus involutus y la hemólisis inmune", "serie": "Shot Fungi Mati", "numero": 112, "estado": "idea", "carpeta": "shots/fun-112-paxillus", "rama": "claude/fun-110-114-comestibles", "fuentes": [], "fecha": "2026-11-05", "derivados": []},
+  {"id": "fun-113-esporada-verde", "titulo": "El hongo de tu jardín que más intoxica: Chlorophyllum molybdites y su esporada verde", "serie": "Shot Fungi Mati", "numero": 113, "estado": "idea", "carpeta": "shots/fun-113-esporada-verde", "rama": "claude/fun-110-114-comestibles", "fuentes": [], "fecha": "2026-11-05", "derivados": []},
+  {"id": "fun-114-hongo-cerveza", "titulo": "Este hongo se come… si no tomas alcohol: Coprinopsis atramentaria y la coprina", "serie": "Shot Fungi Mati", "numero": 114, "estado": "idea", "carpeta": "shots/fun-114-hongo-cerveza", "rama": "claude/fun-110-114-comestibles", "fuentes": [], "fecha": "2026-11-05", "derivados": []}
+ ]
+}
