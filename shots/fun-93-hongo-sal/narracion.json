@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Sal base narrada.dc.html",
+  "salida": "Shot Sal narrado.dc.html",
+  "nota": "Shot Fungi Mati #93. Una línea por subtítulo (idx 0..N del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esas manchitas cafés en el bacalao salado no son mugre: son un hongo que no puede vivir sin sal."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Se llama Wallemia ichthyophaga, y es de los hongos que más sal necesitan para vivir."
+    },
+    {
+      "escena": "Minimo",
+      "texto": "Necesita por lo menos diez por ciento de sal; el agua de mar tiene como tres y medio."
+    },
+    {
+      "escena": "Saturada",
+      "texto": "Y crece hasta en agua saturada, donde ya no cabe más sal."
+    },
+    {
+      "escena": "Seca",
+      "texto": "La sal le jala el agua a las células: por eso la cecina o el bacalao salado duran mucho más."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo le hace este hongo?"
+    },
+    {
+      "escena": "Pared",
+      "texto": "Con mucha sal, engrosa su pared celular, como si se pusiera una armadura."
+    },
+    {
+      "escena": "Bolitas",
+      "texto": "Y sus células crecen pegadas en bolitas, como racimos, que con más sal se hacen hasta cuatro veces más grandes."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2005, un equipo de la Universidad de Liubliana, Eslovenia, la separó como especie aparte, con muestras de unas salinas."
+    },
+    {
+      "escena": "Pescado",
+      "texto": "Pero su nombre es de 1887: en Noruega lo hallaron en bacalao salado; quiere decir que come pescado."
+    },
+    {
+      "escena": "Genoma",
+      "texto": "Y su genoma es chiquito: unos nueve millones y medio de letras."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esas manchitas no son mugre: son un hongo que vive donde casi ningún otro hongo puede."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

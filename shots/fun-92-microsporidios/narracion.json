@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Arpon base narrada.dc.html",
+  "salida": "Shot Arpon narrado.dc.html",
+  "nota": "Shot Fungi Mati #92. Una línea por subtítulo (idx 0..N del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta cápsula no es una semilla: es un parásito diminuto que dispara un arpón muchas veces más largo que él."
+    },
+    {
+      "escena": "Quien",
+      "texto": "Se llama microsporidio, y solo puede multiplicarse dentro de las células de otro ser vivo."
+    },
+    {
+      "escena": "Pariente",
+      "texto": "Son hongos, o sus parientes más cercanos; su espora mide unas milésimas de milímetro."
+    },
+    {
+      "escena": "Resorte",
+      "texto": "Por dentro trae un tubo enrollado como resorte: el tubo polar."
+    },
+    {
+      "escena": "Dispara",
+      "texto": "Cuando se activa, el tubo sale disparado, se desenrolla y se clava en la célula."
+    },
+    {
+      "escena": "Viaja",
+      "texto": "Por ese tubo, su contenido se escurre como pasta de dientes hacia la célula."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué tan rápido es?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2020, un equipo de la Universidad de Nueva York lo filmó con microscopios de alta velocidad."
+    },
+    {
+      "escena": "Velocidad",
+      "texto": "El tubo salió a cientos de micras por segundo y midió unas veinte veces su espora, en menos de un segundo."
+    },
+    {
+      "escena": "Pasteur",
+      "texto": "En el siglo diecinueve, uno de ellos hundió la seda de Francia: la cosecha cayó a la cuarta parte, y Louis Pasteur ayudó a frenarlo."
+    },
+    {
+      "escena": "Genoma",
+      "texto": "Y algunos tienen de los genomas más chicos de cualquier ser con núcleo."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa cápsula no es una semilla: es un arpón que espera su célula."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
