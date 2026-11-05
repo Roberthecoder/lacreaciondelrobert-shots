@@ -90,3 +90,5 @@ antibiotic" (NIHF); no concuerdan.
 "la tierra de un amigo".
 
 El dibujo es esquemático. No es consejo médico.
+
+> Estado (5 nov 2026): verificación aprobada en dos rondas (ver `verificacion.md`); listo para render de revisión sin voz.
