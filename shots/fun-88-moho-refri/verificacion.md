@@ -70,4 +70,25 @@ Verificador independiente (no escribió el guion), 5 nov 2026. Tabla original y 
 | 30c | Títulos reales en `## Fuentes` del guion (Tian, Tannous, Catellani, Vujić, Su, Brooks & Hansford 8: 113–142, WSU FSM 268) | corregido | ver lista de fuentes | — | — |
 | 8c | (opcional) Conidios de *P. expansum* dibujados casi esféricos a algo ovalados, ~3 µm | corregido | descripciones de especie | "spherical to slightly ellipsoid, blueish-green… around 3 µm" | — |
 
+## Re-verificación (5 nov 2026, tras correcciones del constructor)
 
+Leídos de nuevo `narracion.json` y `guion.md` (chips y pantalla).
+
+| # | Línea / cambio | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| L1 | «La mayoría prefiere el calor, pero varios mohos crecen a 4 grados.» | ✅ | USDA (copia WSU); FDA | "While most molds prefer warmer temperatures, they can grow at refrigerator temperatures, too." / "at or below 40° F (4° C)" | 2021 / 2023 |
+| L2 | «…en 2015, a 4 grados, tardó 6 días en arrancar… y creció.» (sin cambio) | ✅ | Tannous, Food Sci Nutr (PMC4930504; Europe PMC: firstPublicationDate 2015-12-16, impreso 2016-07) | "a lag phase of 6 and 3 days was noticed at the lowest temperatures of 4°C and 8°C" | 2015 (en línea) |
+| L3 | «…en 2001, en laboratorio, creció a 4 bajo cero.» + placa de cultivo (no fresa) y chip "en laboratorio" | ✅ | Tian 2001 | "B. cinerea was able to grow and germinate on PDA and to infect chicory even at -4 °C" | 2001 |
+| L7 | «El congelador los duerme, no los mata: al descongelar, despiertan.» + congelador "−18 °C", despertar al sacarlo al calor | ✅ | WSU FSM 268; FDA | "Home freezers at zero degrees F temporarily inactivate microbes, bacteria, yeast, and mold." / "Once you thaw food, however, it is potentially hazardous where bacteria may grow and multiply" / "The freezer temperature should be 0° F (-18° C)." | s/f / 2023 |
+| L9 | «Y en otro estudio de 2020, 25 refris de casa promediaban 6.6 grados, no 4.» + chip "25 refris de casa · Univ. de Zagreb · 2020" | ✅ | Vujić, Kiš y Zdolec 2020 (resumen Hrčak) | "Swabs were taken from 25 refrigerators" / "mean value of 6.56 °C" / título "…food refrigerators in households"; afiliación "Faculty of Veterinary Medicine, University of Zagreb" (el chip atribuye a la universidad, no afirma lugar de muestreo) | 2020 |
+| Gancho | "⏸ PAUSA" ahora en las sobras; manzana y fresa "▶ lento" | ✅ | Tannous; Tian | coherente con escenas 2 y 3 | — |
+| Estudio | esponja (sponge-bag) en vez de hisopo | ✅ | Catellani 2014 | "sampled using sponge-bags" | 2014 |
+| Fuentes | títulos reales de Tian, Tannous, Catellani, Vujić, Su; Brooks 8: 113–142 | ✅ | ver lista | — | — |
+
+Líneas 0, 4, 5, 6, 8, 10 y 11: sin cambios, siguen ✅ (ver tabla principal).
+
+Sobre "en 2015" (L2): correcto. El artículo se publicó en línea el 16 dic 2015 (Europe PMC, primera fecha de publicación); el número impreso es de 2016. En `## Fuentes` ya aparece "en línea 16 dic 2015; Food Sci Nutr 4(4), 2016". No hace falta cambiarlo.
+
+Correcciones pendientes: ninguna.
+
+VEREDICTO: APROBADO
