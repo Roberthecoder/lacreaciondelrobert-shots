@@ -48,7 +48,7 @@ m.whoosh(Hi - 0.3, 0.7, 0.1);                                                   
 for (let i = 0; i < 7; i++) m.tic(Hi + 1.6 + i * 0.17, 0.07, 1500 + i * 60);      // anillos de quitina
 m.sube(M + 0.1, 1.3, 50, 43, 0.04);                                                // la hifa se vacía
 for (let i = 0; i < 6; i++) m.cruje(M + 1.4 + i * 0.3, 0.08);                      // la pared se parte
-for (let i = 0; i < 5; i++) m.tic(M + 3.0 + i * 0.25, 0.18, 700);                  // cada resto se pega a la arcilla
+for (let i = 0; i < 7; i++) m.tic(M + 2.3 + i * 0.22, 0.18, 700);                // cada resto se pega a la arcilla
 for (let i = 0; i < 30; i++) m.tic(A + 0.3 + i * 0.11, 0.03, 3200 + (i % 3) * 400); // arena del reloj
 m.sube(P + 0.05, 1.2, 50, 62, 0.045);                                              // re-gancho
 m.tic(Hu + 0.9, 0.12, 900); m.burbuja(Hu + 1.0, 0.08, 520);                        // sale la glucosamina

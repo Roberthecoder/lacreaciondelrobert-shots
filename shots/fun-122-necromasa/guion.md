@@ -4,7 +4,7 @@
 - **Título:** «Esta tierra negra es un cementerio de microbios | Shot Fungi Mati 122».
 - **Formato:** N1 Por dentro + N4 La imagen que se llena. Viaje: puño de tierra de la milpa → terrón por dentro → hifa al microscopio (pared de quitina) → la hifa muere y sus restos se pegan a minerales finos → laboratorio (las dos huellas) → cuadrícula que se llena (34 % + 16 %) → el mismo puño de tierra, ya pintado por dentro.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla: «Esta tierra negra no es solo planta podrida: es un cementerio de microbios.»
-- **Duración (estimada con `estimar-escenas.mjs`):** voz 948 caracteres / 167 palabras escritas (≈ 58.1 s) + cierre 3.5 s → **61.6 s** en la base.
+- **Duración (estimada con `estimar-escenas.mjs`):** voz 948 caracteres / 168 palabras escritas (≈ 58.1 s) + cierre 3.5 s → **61.6 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
 - **Estado:** verificación en `verificacion.md` (dos rondas de correcciones aplicadas; la línea de veredicto la pone el re-verificador independiente).
 - **No es tema de micorrizas.** Es el carbono que queda cuando el microbio ya murió.
