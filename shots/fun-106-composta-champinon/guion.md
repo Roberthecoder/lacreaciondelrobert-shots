@@ -3,9 +3,9 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #106 · rama `claude/fun-105-109-cultivo`.
 - **Formato:** N1 «Por dentro». Viaje maceta de Robert (falla) → cama de composta → por dentro de la capa de cobertura (fondo oscuro: micelio, octenol, *Pseudomonas*, primordios) → la misma maceta, ya transformada.
 - **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre lo que se ve: «Esto no es tierra: es estiércol cocinado… y de ahí sale tu champiñón.»
-- **Duración:** voz 998 caracteres / 182 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base (por confirmar con `estimar-escenas.mjs`).
+- **Duración:** voz 1005 caracteres / 183 palabras (≈ 58 s) + cierre 3.5 s → **≈ 61.5 s** en la base (por confirmar con `estimar-escenas.mjs`).
 - **Voz:** pendiente de aprobación de Robert (~1000 créditos de ElevenLabs).
-- **Estado:** ⚠️ **GUION SIN VERIFICAR.** Falta la verificación independiente (`verificacion.md`); no se anima nada hasta tener `VEREDICTO: APROBADO`.
+- **Verificación:** independiente, `verificacion.md` → `VEREDICTO: APROBADO` (5 nov 2026).
 - **No repite:** #13 (vitamina D), #28 (gota de Buller), #60 (portobello). Aquí el tema es **cómo se cultiva** el champiñón.
 
 ## Versión narrada
@@ -52,7 +52,7 @@ Tiempos estimados de la base (≈ 17.2 caracteres/s; con la voz real se recorren
 
 Apariciones 10 · **≈ 35.7 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas. Sin avatar 01 ni 09.
 
-## Fuentes (investigación previa del coordinador; PENDIENTE de la verificación independiente)
+## Fuentes (abiertas en el texto completo; detalle en `verificacion.md`)
 
 1. Penn State Extension (act. 2024). *Basic Procedures for Agaricus Mushroom Growing*. https://extension.psu.edu/basic-procedures-for-agaricus-mushroom-growing
    > "Straw-bedded horse manure and hay or wheat straw are the common bulk ingredients" (gallinaza como suplemento de nitrógeno; yeso 70–100 lb por tonelada)
@@ -69,7 +69,7 @@ Apariciones 10 · **≈ 35.7 s** en pantalla (+ cierre 3.5 s) · 9 poses distint
    > 1-octen-3-ol, el volátil C8 más inhibidor; las pseudomonas metabolizan 1-octen-3-ol; "Removal of VOC by ventilation also enabled primordium formation to occur under axenic conditions."
 5. Wang et al. (2023). *Frontiers in Microbiology* 14: 1154903. https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2023.1154903/full
    > "The major microbial stimulus affecting sporophore formation in the casing layer is Pseudomonas putida"
-6. Salmones, D. et al. (2012). *Revista Mexicana de Micología* 36 (cita a Martínez-Carrera et al. 2007): México ≈ 40,000 t de champiñón, mayor productor de América Latina. Gaitán-Hernández, R. (2012), INECOL, cap. 10: "el champiñón representa el 94% del total de hongos producidos a nivel nacional" (https://inecol.repositorioinstitucional.mx/jspui/bitstream/1005/140/1/1563_2012-10198.pdf).
+6. Gaitán-Hernández, R. (2012), INECOL, cap. 10: "el champiñón representa el 94% del total de hongos producidos a nivel nacional" (https://inecol.repositorioinstitucional.mx/jspui/bitstream/1005/140/1/1563_2012-10198.pdf).
 7. Robert: hecho fijo de `maestro/recetas/correcciones-de-robert.md` (a los 10 años, tutorial con champiñón sobre tierra normal en maceta con bolsa negra; falló).
 
 El dibujo es esquemático.

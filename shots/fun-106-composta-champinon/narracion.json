@@ -1,7 +1,7 @@
 {
   "dcHtml": "Shot Champinon base narrada.dc.html",
   "salida": "Shot Champinon narrado.dc.html",
-  "nota": "Shot Fungi Mati #106. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. GUION SIN VERIFICAR TODAVÍA: falta la verificación independiente (verificacion.md).",
+  "nota": "Shot Fungi Mati #106. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Verificación: APROBADO (verificacion.md).",
   "lineas": [
     {
       "escena": "Gancho",
