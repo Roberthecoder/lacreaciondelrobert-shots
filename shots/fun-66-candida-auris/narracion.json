@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Candida auris base narrada.dc.html",
+  "salida": "Shot Candida auris narrado.dc.html",
+  "nota": "Shot Fungi Mati #66. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Tono serio y tranquilo, sin alarmismo; no es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este hongo no solo vive en el paciente: también vive en su cama."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Es Candida auris, una levadura que describieron en 2009 en el oído de una paciente en Japón."
+    },
+    {
+      "escena": "Continentes",
+      "texto": "Y casi al mismo tiempo surgió por separado en tres continentes."
+    },
+    {
+      "escena": "Piel",
+      "texto": "Puede vivir en la piel, en axilas e ingles, sin dar síntomas."
+    },
+    {
+      "escena": "Superficies",
+      "texto": "Y sobrevive semanas en barandales de cama, perillas y baumanómetros."
+    },
+    {
+      "escena": "Graves",
+      "texto": "La mayoría de quienes se enferman ya estaban muy graves, con tubos o catéteres."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué le dicen superhongo?"
+    },
+    {
+      "escena": "Resiste",
+      "texto": "En Estados Unidos, cerca del 90 % resiste al fluconazol, y cerca del 30 %, a la anfotericina B."
+    },
+    {
+      "escena": "Tres",
+      "texto": "Y algunas cepas resisten a las tres clases principales de antifúngicos."
+    },
+    {
+      "escena": "Confunde",
+      "texto": "Además, las pruebas comunes de laboratorio la confunden con otras levaduras."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2020, en un hospital de Monterrey, pasó a 12 pacientes de terapia intensiva, y la encontraron en sus cuartos."
+    },
+    {
+      "escena": "Desinfecta",
+      "texto": "Y los desinfectantes que solo usan amonio cuaternario no la eliminan."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Por eso a este hongo no basta con tratarlo en el paciente: también hay que limpiar su cama."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

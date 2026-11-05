@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Cefalosporina base narrada.dc.html",
+  "salida": "Shot Cefalosporina narrado.dc.html",
+  "nota": "Shot Fungi Mati #65. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Tono curioso; no es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Este antibiótico no empezó en un laboratorio: empezó junto a un desagüe de aguas negras."
+    },
+    {
+      "escena": "Brotzu",
+      "texto": "En 1945, en Cerdeña, Giuseppe Brotzu sacó agua de mar junto a una descarga de drenaje."
+    },
+    {
+      "escena": "Tifoidea",
+      "texto": "Estudiaba la tifoidea, y notó que su bacteria desaparecía rápido del agua de la costa."
+    },
+    {
+      "escena": "Sospecha",
+      "texto": "Sospechó que otro microbio la estaba combatiendo."
+    },
+    {
+      "escena": "Moho",
+      "texto": "Y encontró un moho: Cephalosporium acremonium, hoy llamado Acremonium chrysogenum."
+    },
+    {
+      "escena": "Extracto",
+      "texto": "Su extracto frenaba bacterias, y lo probó en enfermos, también de tifoidea."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo llegó a ser medicina?"
+    },
+    {
+      "escena": "Oxford",
+      "texto": "En Italia no le dieron fondos, así que mandó el hongo a Oxford."
+    },
+    {
+      "escena": "CefC",
+      "texto": "Ahí, en 1953, Edward Abraham y Guy Newton hallaron la molécula clave: la cefalosporina C."
+    },
+    {
+      "escena": "Truco",
+      "texto": "Su truco: resistía la penicilinasa, la enzima con la que muchas bacterias destruyen la penicilina."
+    },
+    {
+      "escena": "Pared",
+      "texto": "Su anillo beta-lactámico impide que la bacteria arme su pared, y revienta."
+    },
+    {
+      "escena": "Hoy",
+      "texto": "En 2015, las cefalosporinas fueron una de cada cinco dosis diarias de antibiótico en 76 países."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Y la mayoría todavía nace de ese mismo hongo, mejorado: todo empezó junto a un desagüe."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

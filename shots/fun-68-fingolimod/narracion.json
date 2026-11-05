@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Fingolimod base narrada.dc.html",
+  "salida": "Shot Fingolimod narrado.dc.html",
+  "nota": "Shot Fungi Mati #68. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Tono curioso; no es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esta pastilla para la esclerosis múltiple no nació de una planta: nació de un hongo de cigarras."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Se llama Isaria sinclairii, es pariente de los Cordyceps y parasita ninfas de cigarra."
+    },
+    {
+      "escena": "Caldo",
+      "texto": "En Kioto, el equipo de Tetsuro Fujita lo cultivó en un caldo."
+    },
+    {
+      "escena": "Miriocina",
+      "texto": "Ahí descubrieron que la miriocina también frenaba al sistema inmune, más que la ciclosporina."
+    },
+    {
+      "escena": "Toxica",
+      "texto": "Pero era tóxica y casi no se disolvía."
+    },
+    {
+      "escena": "Cambio",
+      "texto": "Así que la simplificaron: le quitaron partes y le agregaron un anillo."
+    },
+    {
+      "escena": "Nace",
+      "texto": "Así surgió el FTY720: el fingolimod."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y qué tiene que ver con la esclerosis múltiple?"
+    },
+    {
+      "escena": "Mielina",
+      "texto": "Ahí, tus defensas atacan la mielina, la cubierta de los nervios."
+    },
+    {
+      "escena": "Ganglios",
+      "texto": "El fingolimod deja a muchos linfocitos encerrados en los ganglios, y se cree que así llegan menos al cerebro y la médula."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En un ensayo publicado en 2010, con 1,272 pacientes, las recaídas por año bajaron de 0.40 con placebo a 0.18."
+    },
+    {
+      "escena": "Oral",
+      "texto": "Ese año, Estados Unidos lo aprobó como primer tratamiento oral para sus formas con brotes."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa pastilla no nació de una planta: nació de un hongo que vive en cigarras."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

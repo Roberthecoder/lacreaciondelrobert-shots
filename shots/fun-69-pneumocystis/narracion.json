@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Pneumocystis base narrada.dc.html",
+  "salida": "Shot Pneumocystis narrado.dc.html",
+  "nota": "Shot Fungi Mati #69. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Tono curioso y tranquilo; no es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Tus pulmones ya tuvieron un hongo, y lo más probable es que fue cuando eras bebé."
+    },
+    {
+      "escena": "Aire",
+      "texto": "Se llama Pneumocystis jirovecii, y pasa de persona a persona por el aire."
+    },
+    {
+      "escena": "Alveolo",
+      "texto": "Baja a los alvéolos, las bolsitas donde respiras, y se pega a sus paredes."
+    },
+    {
+      "escena": "Formas",
+      "texto": "Ahí vive en dos formas: células chiquitas y quistes con ocho esporas adentro."
+    },
+    {
+      "escena": "Sano",
+      "texto": "Si tus defensas están bien, casi nunca te da neumonía."
+    },
+    {
+      "escena": "Disfraz",
+      "texto": "Durante décadas lo creyeron un protozoario, hasta que sus genes lo delataron como hongo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por qué no lo matan los antifúngicos comunes?"
+    },
+    {
+      "escena": "Colesterol",
+      "texto": "Muchos atacan el ergosterol, y su membrana lleva colesterol, como la tuya."
+    },
+    {
+      "escena": "Antibiotico",
+      "texto": "En su lugar se usa un antibiótico: trimetoprim con sulfametoxazol."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1981, cinco hombres jóvenes en Los Ángeles tuvieron neumonía por este hongo: fue el primer reporte de lo que luego se llamó sida."
+    },
+    {
+      "escena": "Bebes",
+      "texto": "Y en Chile, de 79 bebés sanos, 67 ya tenían anticuerpos contra él a los 20 meses."
+    },
+    {
+      "escena": "Ratas",
+      "texto": "Y cada mamífero tiene las suyas: la de las ratas no te infecta."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Tus pulmones ya conocieron a este hongo, y si tus defensas están bien, lo tienen a raya."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
