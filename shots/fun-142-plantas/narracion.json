@@ -1,0 +1,21 @@
+{
+  "dcHtml": "Shot Plantas base narrada.dc.html",
+  "salida": "Shot Plantas narrado.dc.html",
+  "nota": "Shot Fungi Mati #142. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {"escena": "Gancho", "texto": "Ese champiñón no es una verdura: es más pariente tuyo que de la lechuga."},
+    {"escena": "Cocina", "texto": "En la cocina cuenta como verdura; en biología, es otro reino."},
+    {"escena": "Clorofila", "texto": "Prueba uno: no tiene clorofila, así que no hace fotosíntesis."},
+    {"escena": "Estomago", "texto": "Prueba dos: come como estómago al revés: suelta enzimas afuera y absorbe la comida ya deshecha."},
+    {"escena": "Pared", "texto": "Prueba tres: su pared no es de celulosa, como la de la lechuga: es de quitina,"},
+    {"escena": "Quitina", "texto": "la molécula del caparazón de los cangrejos y de los insectos."},
+    {"escena": "Glucogeno", "texto": "Prueba cuatro: guarda energía como glucógeno, igual que tu hígado; las plantas, como almidón."},
+    {"escena": "Pregunta", "texto": "¿Y quién es pariente de quién?"},
+    {"escena": "Estudio", "texto": "En 1993, dos científicos compararon proteínas de plantas, animales y hongos."},
+    {"escena": "Arbol", "texto": "Resultado: hongos y animales son grupos hermanos; las plantas van por su lado."},
+    {"escena": "Firma", "texto": "Comparten hasta un pedacito extra de doce aminoácidos en una proteína."},
+    {"escena": "Whittaker", "texto": "Y el sistema de cinco reinos que los separó de las plantas lo publicó otro Robert: Robert Whittaker, en 1969."},
+    {"escena": "Cierre", "texto": "Así que ese champiñón no es verdura: es tu primo lejano."}
+  ],
+  "mezcla": "oficial-30oct"
+}
