@@ -59,6 +59,6 @@ for (let i = 0; i < 8; i++) m.tic(L + 0.4 + i * 0.18, 0.05, 3200); // esporas qu
 m.burbuja(L + 1.4, 0.06, 500); m.burbuja(L + 1.9, 0.06, 620);
 m.sube(L + 2.5, 1.7, 53, 65, 0.035);                            // la gráfica sube
 for (let i = 0; i < 6; i++) m.pop(D + 0.1 + i * 0.1, 0.08);
-m.whoosh(D + 2.6, 0.5, 0.08); m.golpe(D + 3.6, 0.35, 70);      // etiqueta y sello MARKETING
+m.whoosh(D + 2.6, 0.5, 0.08); m.golpe(D + 3.6, 0.35, 70);      // etiqueta y sello NOMBRE COMERCIAL
 m.whoosh(C + 0.4, 0.5, 0.06); m.tic(C + 0.9, 0.08, 1600); m.tic(C + 1.4, 0.08, 1800);
 m.guardar(OUT);

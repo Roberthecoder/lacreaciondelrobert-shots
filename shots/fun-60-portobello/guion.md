@@ -36,21 +36,22 @@ Barra de escala: 5 cm (charola y hongos), 10 cm (cama de cultivo), medidor 3 →
 
 ## Robert en pantalla
 
-Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué se llama *bisporus*?».
+Tiempos de la base (con la voz real se recorren solos). Grande (`presentador-bajo`, medio cuerpo, debajo del subtítulo) en «¿Y por qué se llama *bisporus*?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
 | 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no es otro hongo: es un champiñón que dejaron crecer» (cuadro 0) |
 | 2 | 4.4 | 7.6 | 13_senalando_arriba | `arriba-der` | «una sola especie: *Agaricus bisporus*» |
-| 3 | 15.0 | 18.5 | 04_bajando_lentes | `arriba-der` | «el sombrero se abre hasta quince centímetros» |
-| 4 | 24.0 | 26.4 | 07_pensativo_puno | `grande` | «¿Y por qué se llama *bisporus*?» |
-| 5 | 28.6 | 32.2 | 13_senalando_arriba | `arriba-izq` | «casi todos cargan solo dos esporas» |
-| 6 | 36.6 | 40.6 | 06_pensativo_menton | `arriba-der` | «¿Y el blanco? En 1925…» |
-| 7 | 45.4 | 50.6 | 11_sorprendido | `arriba-der` | «el blanco era el raro… nombre de mercadotecnia» |
-| 8 | 53.6 | 57.9 | 02_apuntando_camara | `arriba-der` | «es un cremini que nadie cortó a tiempo» |
+| 3 | 10.6 | 14.3 | 05_sonriendo_dientes_uniformes | `bajo-der` | «bajo una capa de tierra… le dicen cremini» |
+| 4 | 16.3 | 19.7 | 04_bajando_lentes | `arriba-der` | «el sombrero se abre hasta quince centímetros» |
+| 5 | 24.5 | 26.7 | 07_pensativo_puno | `presentador-bajo` | «¿Y por qué se llama *bisporus*?» |
+| 6 | 28.6 | 31.8 | 13_senalando_arriba | `bajo-der` | «casi todos cargan solo dos esporas» |
+| 7 | 37.6 | 41.5 | 06_pensativo_menton | `bajo-der` | «¿Y el blanco? En 1925…» |
+| 8 | 48.0 | 53.1 | 11_sorprendido | `arriba-der` | «el blanco era el raro… nombre de mercadotecnia» |
+| 9 | 53.7 | 57.9 | 02_apuntando_camara | `bajo-der` | «es un cremini que nadie cortó a tiempo» |
 | — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 8 · **29.2 s** en pantalla (+ cierre 3.5 s) · 6 poses distintas · nunca la misma dos veces seguidas.
+Apariciones 9 · **32.3 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 5 nov 2026)
 

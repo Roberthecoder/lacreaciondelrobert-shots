@@ -103,39 +103,40 @@ function PortobelloShot() {
       <Escena T={T} a={K.G} b={K.Cu} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<g transform={`translate(${(1 - entra) * -700} 0)`}>
-          <Charola x={470} y={1050} w={860} h={330} />
-          <Hongo x={170} y={1130} s={0.62} tipo="blanco" />
-          <Hongo x={250} y={1150} s={0.55} tipo="blanco" rot={8} />
-          <Hongo x={400} y={1130} s={0.62} tipo="cafe" />
-          <Hongo x={470} y={1150} s={0.55} tipo="cafe" rot={-6} />
-          {volteo < 0.5 ? <g transform={`translate(720 1150) scale(1 ${1 - volteo * 2})`}><Hongo x={0} y={0} s={1.15} tipo="cafe" abre={1} /></g>
-            : <g transform={`translate(720 ${1010}) scale(1 ${(volteo - 0.5) * 2})`}><Bajo x={0} y={0} r={150} /></g>}
+          <Charola x={470} y={880} w={860} h={330} />
+          <Hongo x={170} y={960} s={0.62} tipo="blanco" />
+          <Hongo x={250} y={980} s={0.55} tipo="blanco" rot={8} />
+          <Hongo x={400} y={960} s={0.62} tipo="cafe" />
+          <Hongo x={470} y={980} s={0.55} tipo="cafe" rot={-6} />
+          {volteo < 0.5 ? <g transform={`translate(720 980) scale(1 ${1 - volteo * 2})`}><Hongo x={0} y={0} s={1.15} tipo="cafe" abre={1} /></g>
+            : <g transform={`translate(720 860) scale(1 ${(volteo - 0.5) * 2})`}><Bajo x={0} y={0} r={140} /></g>}
           {/* llave: una sola especie */}
-          {T > K.Es + 0.4 && <path d={`M 130 ${880} Q 130 850 170 850 L ${klerp(170, 820, kprog(T, K.Es + 0.4, K.Es + 1.2, kEase.sale))} 850`} stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" />}
-          {T > K.Es + 1.1 && <path d="M 820 850 Q 860 850 860 880" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" opacity={kprog(T, K.Es + 1.1, K.Es + 1.3)} />}
+          {T > K.Es + 0.4 && <path d={`M 130 ${700} Q 130 670 170 670 L ${klerp(170, 820, kprog(T, K.Es + 0.4, K.Es + 1.2, kEase.sale))} 670`} stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" />}
+          {T > K.Es + 1.1 && <path d="M 820 670 Q 860 670 860 700" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" opacity={kprog(T, K.Es + 1.1, K.Es + 1.3)} />}
         </g>)}
       </Escena>
       {/* 2 · cultivo: composta + micelio + capa de cobertura + primordios */}
       <Escena T={T} a={K.Cu} b={K.Cr} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={80} y={800} width={920} height={380} rx={20} fill={PB.composta} stroke={KC.ink} strokeWidth={8} />
-          {Array.from({ length: 60 }, (_, i) => { const g = krng(i + 11); const xx = 110 + g() * 860, yy = 880 + g() * 280, a = g() * 3; return <line key={i} x1={xx} y1={yy} x2={xx + Math.cos(a) * 50} y2={yy + Math.sin(a) * 18} stroke="#d9b45a" strokeWidth={5} strokeLinecap="round" />; })}
-          <g opacity={kprog(T, K.Cu + 0.8, K.Cu + 1.4)}><RedHifas T={T} x={540} y={1000} g={kprog(T, K.Cu + 0.8, K.Cu + 3.0)} seed={5} n={260} escala={0.42} ancho={3.5} /></g>
-          <rect x={80} y={800 - 110 * kprog(T, K.Cu + 2.0, K.Cu + 2.6, kEase.sale)} width={920} height={110 * kprog(T, K.Cu + 2.0, K.Cu + 2.6, kEase.sale)} rx={16} fill={PB.cobertura} stroke={KC.ink} strokeWidth={7} />
-          {[200, 330, 470, 620, 760, 880].map((xx, i) => <Hongo key={i} x={xx} y={698} s={0.42} tipo={i % 2 ? 'cafe' : 'blanco'} crece={kprog(T, K.Cu + 2.9 + i * 0.12, K.Cu + 4.4 + i * 0.12) * 0.55} />)}
+          <defs><clipPath id="pbCama"><rect x={80} y={620} width={920} height={380} rx={20} /></clipPath></defs>
+          <rect x={80} y={620} width={920} height={380} rx={20} fill={PB.composta} stroke={KC.ink} strokeWidth={8} />
+          {Array.from({ length: 60 }, (_, i) => { const g = krng(i + 11); const xx = 110 + g() * 860, yy = 650 + g() * 300, a = g() * 3; return <line key={i} x1={xx} y1={yy} x2={xx + Math.cos(a) * 50} y2={yy + Math.sin(a) * 18} stroke="#d9b45a" strokeWidth={5} strokeLinecap="round" />; })}
+          <g clipPath="url(#pbCama)" opacity={kprog(T, K.Cu + 0.8, K.Cu + 1.4)}><RedHifas T={T} x={540} y={820} g={kprog(T, K.Cu + 0.8, K.Cu + 3.0)} seed={5} n={260} escala={0.3} ancho={3.5} /></g>
+          <rect x={80} y={620 - 110 * kprog(T, K.Cu + 2.0, K.Cu + 2.6, kEase.sale)} width={920} height={110 * kprog(T, K.Cu + 2.0, K.Cu + 2.6, kEase.sale)} rx={16} fill={PB.cobertura} stroke={KC.ink} strokeWidth={7} />
+          {[200, 330, 470, 620, 760, 880].map((xx, i) => <Hongo key={i} x={xx} y={518} s={0.42} tipo={i % 2 ? 'cafe' : 'blanco'} crece={kprog(T, K.Cu + 2.9 + i * 0.12, K.Cu + 4.4 + i * 0.12) * 0.8} />)}
         </>)}
       </Escena>
       {/* 3 · cremini: el café cerrado, cortado */}
       <Escena T={T} a={K.Cr} b={K.Ab} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={80} y={1000} width={920} height={160} rx={16} fill={PB.cobertura} stroke={KC.ink} strokeWidth={7} />
-          <g transform={`translate(${kprog(T, K.Cr + 0.9, K.Cr + 1.6, kEase.sale) * 90} ${-kprog(T, K.Cr + 0.9, K.Cr + 1.6, kEase.sale) * 160}) rotate(${kprog(T, K.Cr + 0.9, K.Cr + 1.6) * 14} 470 1000)`}>
-            <Hongo x={470} y={1000} s={1.6} tipo="cafe" />
+          <rect x={80} y={900} width={920} height={160} rx={16} fill={PB.cobertura} stroke={KC.ink} strokeWidth={7} />
+          <g transform={`translate(${kprog(T, K.Cr + 0.9, K.Cr + 1.6, kEase.sale) * 90} ${-kprog(T, K.Cr + 0.9, K.Cr + 1.6, kEase.sale) * 160}) rotate(${kprog(T, K.Cr + 0.9, K.Cr + 1.6) * 14} 470 900)`}>
+            <Hongo x={470} y={900} s={1.6} tipo="cafe" />
           </g>
           {/* cuchillito */}
-          <g transform={`translate(${klerp(1100, 560, kprog(T, K.Cr + 0.2, K.Cr + 0.9, kEase.sale))} 990) rotate(-4)`}>
+          <g transform={`translate(${klerp(1100, 560, kprog(T, K.Cr + 0.2, K.Cr + 0.9, kEase.sale))} 890) rotate(-4)`}>
             <rect x={0} y={-16} width={260} height={32} rx={6} fill="#d9dde3" stroke={KC.ink} strokeWidth={6} />
             <rect x={250} y={-22} width={180} height={44} rx={14} fill="#3b2a1e" stroke={KC.ink} strokeWidth={6} />
           </g>
@@ -145,10 +146,10 @@ function PortobelloShot() {
       <Escena T={T} a={K.Ab} b={K.La} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={60} y={1120} width={960} height={90} rx={14} fill={PB.cobertura} stroke={KC.ink} strokeWidth={7} />
-          <Hongo x={420} y={1124} s={klerp(1.1, 2.0, abrir)} tipo="cafe" abre={abrir} lam={mixHex(PB.rosa, PB.cafeLam, abrir)} />
+          <rect x={60} y={1000} width={960} height={90} rx={14} fill={PB.cobertura} stroke={KC.ink} strokeWidth={7} />
+          <Hongo x={420} y={1004} s={klerp(1.1, 2.0, abrir)} tipo="cafe" abre={abrir} lam={mixHex(PB.rosa, PB.cafeLam, abrir)} />
           {/* medidor del diámetro */}
-          {(() => { const rr = 150 * klerp(1.1, 2.0, abrir) * klerp(0.72, 1, abrir) * kclamp(abrir * 4, 0.25, 1) ; const yy = 1124 - klerp(150, 150, 1) * klerp(1.1, 2.0, abrir) - 70 * klerp(1.1, 2.0, abrir) - 40;
+          {(() => { const rr = 150 * klerp(1.1, 2.0, abrir) * klerp(0.72, 1, abrir) * kclamp(abrir * 4, 0.25, 1) ; const yy = 1004 - klerp(150, 150, 1) * klerp(1.1, 2.0, abrir) - 70 * klerp(1.1, 2.0, abrir) - 40;
             return <g opacity={kprog(T, K.Ab + 0.3, K.Ab + 0.7)}>
               <line x1={420 - rr} y1={yy} x2={420 + rr} y2={yy} stroke={KC.ink} strokeWidth={7} />
               <line x1={420 - rr} y1={yy - 20} x2={420 - rr} y2={yy + 20} stroke={KC.ink} strokeWidth={7} /><line x1={420 + rr} y1={yy - 20} x2={420 + rr} y2={yy + 20} stroke={KC.ink} strokeWidth={7} />
@@ -160,14 +161,14 @@ function PortobelloShot() {
       {/* 5 · láminas desde abajo: de rosadas a café oscuro */}
       <Escena T={T} a={K.La} b={K.P} zoom={0.25} origen="50% 46%">
         <FondoLunares color={KC.cyan} />
-        {fsvg(<><Bajo x={540} y={880} r={330} lam={lamCol} rot={T * 4} /></>)}
+        {fsvg(<><Bajo x={540} y={810} r={300} lam={lamCol} rot={T * 4} /></>)}
       </Escena>
       {/* 6 · re-gancho: ¿por qué bisporus? */}
       <Escena T={T} a={K.P} b={K.B} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
           <text x={440} y={760} textAnchor="middle" style={{ font:`italic 400 170px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8}>bi·sporus</text>
-          <text x={440} y={840} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.P + 0.5, K.P + 0.9)}>bi = dos · spora = espora</text>
+          <text x={440} y={840} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.P + 0.5, K.P + 0.9)}>bi = dos · spora = espora</text>
           <Interrogacion T={T} x={300} y={1150} tam={300} />
         </>)}
       </Escena>
@@ -177,13 +178,14 @@ function PortobelloShot() {
         <Ambiente T={T} n={20} />
         {fsvg(<>
           {/* tejido de la lámina (abajo) y la empalizada de basidios */}
-          <rect x={-20} y={1060} width={1120} height={160} fill="#5a3a2a" stroke={KC.ink} strokeWidth={6} />
-          {Array.from({ length: 9 }, (_, i) => { const xx = 80 + i * 115, on = kprog(T, K.B + 0.3 + i * 0.08, K.B + 0.7 + i * 0.08, kEase.rebote);
-            return on > 0 ? <Basidio key={i} x={xx} y={1066} s={0.78 * on} n={2} esp={kprog(T, K.B + 1.2 + i * 0.1, K.B + 2.0 + i * 0.1)} /> : null; })}
+          <rect x={-20} y={980} width={1120} height={130} fill="#5a3a2a" stroke={KC.ink} strokeWidth={6} />
+          {Array.from({ length: 6 }, (_, i) => { const xx = 420 + i * 108, on = kprog(T, K.B + 0.3 + i * 0.08, K.B + 0.7 + i * 0.08, kEase.rebote);
+            return on > 0 ? <Basidio key={i} x={xx} y={986} s={1.0 * on} n={2} esp={kprog(T, K.B + 1.2 + i * 0.1, K.B + 2.0 + i * 0.1)} /> : null; })}
           {/* comparación: otros Agaricus, 4 esporas */}
           <g opacity={kprog(T, K.B + 3.0, K.B + 3.5)}>
-            <rect x={70} y={430} width={300} height={330} rx={24} fill="rgba(255,255,255,.08)" stroke={KC.lilac} strokeWidth={4} strokeDasharray="12 8" />
-            <Basidio x={220} y={720} s={0.95} n={4} esp={1} color="#e3d8f5" />
+            <rect x={60} y={460} width={300} height={330} rx={24} fill="rgba(255,255,255,.08)" stroke={KC.lilac} strokeWidth={4} strokeDasharray="12 8" />
+            <Basidio x={210} y={760} s={0.95} n={4} esp={1} color="#e3d8f5" />
+            <text x={210} y={830} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.lilac}>otros <tspan fontStyle="italic">Agaricus</tspan>: 4</text>
           </g>
         </>)}
       </Escena>
@@ -192,7 +194,7 @@ function PortobelloShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <Basidio x={430} y={1130} s={2.1} n={2} esp={1} nucleos={<>
+          <Basidio x={430} y={1080} s={2.1} n={2} esp={1} nucleos={<>
             {NUC.map((c, i) => { const izq = i % 2 === 0; const x0 = [-22, 22, -22, 22][i], y0 = [-90, -90, -50, -50][i];
               const x1 = (izq ? -27 : 27) + (i < 2 ? -6 : 6), y1 = -246 + (i < 2 ? -8 : 8);
               const pairX = (i === 0 || i === 3) ? -27 : 27; // cada espora recibe dos núcleos distintos (no hermanos)
@@ -201,59 +203,63 @@ function PortobelloShot() {
           </>} />
           {/* una espora cae y germina */}
           {cae > 0 && <g>
-            <ellipse cx={720} cy={klerp(560, 1150, cae)} rx={30} ry={44} fill={PB.espora} stroke={KC.ink} strokeWidth={4} />
-            <circle cx={712} cy={klerp(560, 1150, cae) - 8} r={9} fill={NUC[0]} /><circle cx={728} cy={klerp(560, 1150, cae) + 10} r={9} fill={NUC[1]} />
+            <ellipse cx={720} cy={klerp(560, 1020, cae)} rx={30} ry={44} fill={PB.espora} stroke={KC.ink} strokeWidth={4} />
+            <circle cx={712} cy={klerp(560, 1020, cae) - 8} r={9} fill={NUC[0]} /><circle cx={728} cy={klerp(560, 1020, cae) + 10} r={9} fill={NUC[1]} />
           </g>}
-          {germ > 0 && <RedHifas T={T} x={720} y={1170} g={germ} seed={9} n={140} escala={0.24} ancho={3.5} />}
-          {germ > 0.6 && <Hongo x={900} y={1180} s={0.5} tipo="cafe" crece={kprog(germ, 0.6, 1)} />}
+          <defs><clipPath id="pbGerm"><rect x={560} y={900} width={500} height={230} /></clipPath></defs>
+          {germ > 0 && <g clipPath="url(#pbGerm)"><RedHifas T={T} x={720} y={1040} g={germ} seed={9} n={140} escala={0.13} ancho={3.5} /></g>}
+          {germ > 0.6 && <Hongo x={880} y={1060} s={0.5} tipo="cafe" crece={kprog(germ, 0.6, 1)} />}
         </>)}
       </Escena>
       {/* 9 · 1925: un champiñón blanco entre los cafés */}
       <Escena T={T} a={K.E} b={K.L} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <rect x={60} y={1080} width={960} height={110} rx={14} fill={PB.composta} stroke={KC.ink} strokeWidth={7} />
-          {CAMA.map(([xx, yy, ss], i) => <Hongo key={i} x={xx} y={yy} s={ss} tipo={i === 4 ? 'blanco' : 'cafe'} crece={kprog(T, K.E + 1.6 + i * 0.08, K.E + 2.3 + i * 0.08)} />)}
-          {T > K.E + 3.2 && <circle cx={610} cy={980} r={110 + 10 * Math.sin(T * 6)} fill="none" stroke={KC.white} strokeWidth={8} opacity={0.5 + 0.4 * Math.sin(T * 6)} />}
+          <rect x={60} y={980} width={960} height={110} rx={14} fill={PB.composta} stroke={KC.ink} strokeWidth={7} />
+          {CAMA.map(([xx, yy, ss], i) => <Hongo key={i} x={xx} y={yy - 100} s={ss} tipo={i === 4 ? 'blanco' : 'cafe'} crece={kprog(T, K.E + 1.6 + i * 0.08, K.E + 2.3 + i * 0.08)} />)}
+          {T > K.E + 3.2 && <circle cx={610} cy={880} r={110 + 10 * Math.sin(T * 6)} fill="none" stroke={KC.white} strokeWidth={8} opacity={0.5 + 0.4 * Math.sin(T * 6)} />}
         </>)}
       </Escena>
       {/* 10 · Lambert lo cultiva desde sus esporas; para 1933 dominaba el mercado */}
       <Escena T={T} a={K.L} b={K.D} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Hongo x={230} y={1100} s={1.1} tipo="blanco" abre={0.7} lam={PB.rosa} />
-          {Array.from({ length: 8 }, (_, i) => { const u = kclamp((T - K.L - 0.4 - i * 0.18) / 1.1, 0, 1); return u > 0 && u < 1 ? <ellipse key={i} cx={klerp(230, 420, u) + Math.sin(i + u * 6) * 14} cy={klerp(950, 1010, u)} rx={7} ry={10} fill={PB.espora} /> : null; })}
-          <Matraz x={470} y={1120} s={0.8} lleno={kprog(T, K.L + 1.2, K.L + 2.4)} />
-          <g opacity={kprog(T, K.L + 2.4, K.L + 2.8)}><Grafica x={150} y={720} w={760} h={190} p={kprog(T, K.L + 2.5, K.L + 4.2, kEase.suave)} /></g>
+          <Hongo x={230} y={1000} s={1.1} tipo="blanco" abre={0.7} lam={PB.rosa} />
+          {Array.from({ length: 8 }, (_, i) => { const u = kclamp((T - K.L - 0.4 - i * 0.18) / 1.1, 0, 1); return u > 0 && u < 1 ? <ellipse key={i} cx={klerp(230, 420, u) + Math.sin(i + u * 6) * 14} cy={klerp(850, 910, u)} rx={7} ry={10} fill={PB.espora} /> : null; })}
+          <Matraz x={470} y={1020} s={0.8} lleno={kprog(T, K.L + 1.2, K.L + 2.4)} />
+          <g opacity={kprog(T, K.L + 2.4, K.L + 2.8)}><Grafica x={620} y={760} w={380} h={240} p={kprog(T, K.L + 2.5, K.L + 4.2, kEase.suave)} /></g>
         </>)}
       </Escena>
       {/* 11 · antes, cafés o crema: el blanco era el raro; «portobello», nombre comercial */}
       <Escena T={T} a={K.D} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          {[0, 1, 2, 3, 4, 5].map((i) => <Hongo key={i} x={130 + i * 160} y={T < K.D + 2.6 ? 1000 : klerp(1000, 760, kprog(T, K.D + 2.6, K.D + 3.0))} s={0.62} tipo={i === 3 ? 'blanco' : i % 2 ? 'crema' : 'cafe'} crece={kprog(T, K.D + 0.1 + i * 0.1, K.D + 0.6 + i * 0.1)} />)}
-          <g opacity={kprog(T, K.D + 2.7, K.D + 3.1)} transform={`translate(380 1080) rotate(-5) scale(${klerp(0.6, 1, kprog(T, K.D + 2.7, K.D + 3.2, kEase.rebote))})`}>
+          {[0, 1, 2, 3, 4, 5].map((i) => <Hongo key={i} x={130 + i * 160} y={900} s={0.62} tipo={i === 3 ? 'blanco' : i % 2 ? 'crema' : 'cafe'} crece={kprog(T, K.D + 0.1 + i * 0.1, K.D + 0.6 + i * 0.1)} />)}
+          <g opacity={kprog(T, K.D + 2.7, K.D + 3.1)} transform={`translate(360 1030) rotate(-5) scale(${klerp(0.6, 1, kprog(T, K.D + 2.7, K.D + 3.2, kEase.rebote))})`}>
             <rect x={-300} y={-80} width={600} height={160} rx={24} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
             <circle cx={-250} cy={0} r={18} fill={KC.lilac} stroke={KC.ink} strokeWidth={5} />
             <text x={20} y={22} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.ink}>PORTOBELLO</text>
           </g>
-          <Sello T={T} at={K.D + 3.6} x={770} y={1070} texto="MARKETING" color={KC.red} r={120} rot={12} />
+          {T > K.D + 3.6 && <g transform={`translate(800 1020) rotate(-10) scale(${klerp(2, 1, kprog(T, K.D + 3.6, K.D + 3.95, kEase.rebote))})`} opacity={kprog(T, K.D + 3.6, K.D + 3.75)}>
+            <rect x={-150} y={-62} width={300} height={124} rx={14} fill="rgba(255,255,255,.55)" stroke={KC.red} strokeWidth={10} />
+            <text y={-8} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.red}>NOMBRE</text>
+            <text y={40} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.red}>COMERCIAL</text>
+          </g>}
         </>)}
       </Escena>
       {/* 12 · cierre: la misma charola, ahora como la vida de un solo hongo */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Charola x={470} y={1050} w={860} h={330} />
-          <Hongo x={170} y={1150} s={0.5} tipo="cafe" crece={0.8} />
-          <Hongo x={410} y={1150} s={0.68} tipo="cafe" abre={0.1} />
-          <Hongo x={700} y={1155} s={1.05} tipo="cafe" abre={1} />
+          <Charola x={470} y={880} w={860} h={330} />
+          <Hongo x={170} y={980} s={0.5} tipo="cafe" crece={0.8} />
+          <Hongo x={410} y={980} s={0.68} tipo="cafe" abre={0.1} />
+          <Hongo x={700} y={985} s={1.05} tipo="cafe" abre={1} />
           {[[230, 300], [490, 560]].map(([a, b], i) => { const p = kprog(T, K.C + 0.5 + i * 0.5, K.C + 0.9 + i * 0.5, kEase.sale); return <g key={i} opacity={p}>
-            <path d={`M ${a} 960 Q ${(a + b) / 2} ${920} ${klerp(a, b + 30, p)} 960`} stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" />
-            <path d={`M ${b + 30} 960 l -24 -16 m 24 16 l -26 8`} stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" />
-            <text x={(a + b) / 2 + 15} y={910} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>días</text>
+            <path d={`M ${a} 700 Q ${(a + b) / 2} ${660} ${klerp(a, b + 30, p)} 700`} stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" />
+            <path d={`M ${b + 30} 700 l -24 -16 m 24 16 l -26 8`} stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" />
+            <text x={(a + b) / 2 + 15} y={650} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>días</text>
           </g>; })}
-          <g opacity={kprog(T, K.C + 2.0, K.C + 2.4)}><Hongo x={960} y={870} s={0.5} tipo="blanco" /></g>
         </>)}
       </Escena>
 
@@ -263,51 +269,50 @@ function PortobelloShot() {
       {/* textos: gancho y especie */}
       <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.6} until={K.Es - 0.2} texto="¿otro hongo?" x={300} y={520} tam={50} />
       <Chip T={T} at={K.G + 2.0} until={K.Es - 0.2} texto="el mismo, más grande" x={330} y={640} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.Es + 0.2} until={K.Cu - 0.3} x={110} y={1260} texto="blanco" tam={30} />
-      <Etq T={T} at={K.Es + 0.5} until={K.Cu - 0.3} x={360} y={1260} texto="café" tam={30} />
-      <Etq T={T} at={K.Es + 0.8} until={K.Cu - 0.3} x={600} y={1260} texto="portobello" tam={30} />
-      <Chip T={T} at={K.Es + 1.3} until={K.Cu - 0.3} texto="una sola especie" x={330} y={720} tam={44} borde={KC.gold} />
-      <Etq T={T} at={K.Es + 1.8} until={K.Cu - 0.3} x={110} y={800} texto="Agaricus bisporus" it tam={44} />
+      <Etq T={T} at={K.Es + 0.2} until={K.Cu - 0.3} x={110} y={1080} texto="blanco" tam={34} />
+      <Etq T={T} at={K.Es + 0.5} until={K.Cu - 0.3} x={360} y={1080} texto="café" tam={34} />
+      <Etq T={T} at={K.Es + 0.8} until={K.Cu - 0.3} x={600} y={1080} texto="portobello" tam={34} />
+      <Chip T={T} at={K.Es + 1.3} until={K.Cu - 0.3} texto="una sola especie" x={330} y={520} tam={44} borde={KC.gold} />
+      <Etq T={T} at={K.Es + 1.8} until={K.Cu - 0.3} x={110} y={600} texto="Agaricus bisporus" it tam={44} />
       {/* cultivo */}
-      <Etq T={T} at={K.Cu + 0.4} until={K.Cr - 0.3} x={100} y={1215} texto="composta: paja + estiércol de caballo" tam={28} />
-      <Etq T={T} at={K.Cu + 1.4} until={K.Cr - 0.3} x={560} y={1000} texto="micelio" tam={30} />
-      <Etq T={T} at={K.Cu + 2.3} until={K.Cr - 0.3} x={100} y={640} texto="capa de cobertura (tierra / turba)" tam={28} />
+      <Etq T={T} at={K.Cu + 0.4} until={K.Cr - 0.3} x={100} y={1050} texto="composta: paja + estiércol de caballo" tam={32} />
+      <Etq T={T} at={K.Cu + 1.4} until={K.Cr - 0.3} x={600} y={820} texto="micelio" tam={34} />
+      <Etq T={T} at={K.Cu + 2.3} until={K.Cr - 0.3} x={100} y={420} texto="capa de cobertura (tierra / turba)" tam={30} />
       {/* cremini */}
-      <Etq T={T} at={K.Cr + 0.5} until={K.Ab - 0.3} x={110} y={560} texto="cremini" tam={50} />
-      <Etq T={T} at={K.Cr + 0.9} until={K.Ab - 0.3} x={110} y={630} texto="botón café, cerrado" tam={30} />
+      <Etq T={T} at={K.Cr + 0.5} until={K.Ab - 0.3} x={700} y={290} texto="cremini" tam={52} />
+      <Etq T={T} at={K.Cr + 0.9} until={K.Ab - 0.3} x={110} y={1110} texto="botón café, cerrado" tam={34} />
       {/* madurar */}
-      <Etq T={T} at={K.Ab + 2.8} until={K.La - 0.3} x={100} y={470} texto="portobello" tam={50} />
-      <Etq T={T} at={K.Ab + 3.4} until={K.La - 0.3} x={640} y={1080} texto="anillo delgado" tam={26} />
+      <Etq T={T} at={K.Ab + 2.8} until={K.La - 0.3} x={100} y={1130} texto="portobello" tam={50} />
+      <Etq T={T} at={K.Ab + 3.4} until={K.La - 0.3} x={500} y={775} texto="anillo delgado" tam={30} />
       {/* láminas */}
       <Chip T={T} at={K.La + 0.3} until={K.P - 0.3} texto="láminas" x={540} y={460} tam={44} borde={KC.pink} />
-      <Chip T={T} at={K.La + 1.6} until={K.P - 0.3} texto="rosadas → café oscuro" x={540} y={1290} tam={34} borde={KC.ink} mono />
+      <Chip T={T} at={K.La + 1.6} until={K.P - 0.3} texto="rosadas → café oscuro" x={540} y={1160} tam={34} borde={KC.ink} mono />
       {/* basidios */}
-      <Etq T={T} at={K.B + 0.8} until={K.N - 0.3} x={420} y={600} texto="basidios" tam={40} />
-      <Etq T={T} at={K.B + 1.8} until={K.N - 0.3} x={420} y={660} texto="2 esporas cada uno" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.B + 3.2} until={K.N - 0.3} x={90} y={400} texto="otros Agaricus: 4" it tam={28} color={KC.lilac} />
-      <Chip T={T} at={K.B + 3.9} until={K.N - 0.3} texto="≈ 9 de cada 10 basidios: 2 esporas" x={540} y={1290} tam={30} borde={KC.gold} />
+      <Etq T={T} at={K.B + 0.8} until={K.N - 0.3} x={380} y={570} texto="basidios" tam={42} />
+      <Etq T={T} at={K.B + 1.8} until={K.N - 0.3} x={380} y={630} texto="2 esporas cada uno" tam={32} color={KC.gold2} />
+      <Chip T={T} at={K.B + 3.9} until={K.N - 0.3} texto="≈ 9 de cada 10 basidios: 2 esporas" x={690} y={460} tam={30} borde={KC.gold} />
       {/* núcleos */}
-      <Etq T={T} at={K.N + 0.3} until={K.E - 0.3} x={60} y={470} texto="4 núcleos tras la meiosis" tam={30} />
-      <Chip T={T} at={K.N + 2.0} until={K.E - 0.3} texto="≈ 9 de cada 10 esporas: 2 núcleos distintos" x={540} y={560} tam={28} borde={KC.gold} />
-      <Etq T={T} at={K.N + 3.8} until={K.E - 0.3} x={600} y={1260} texto="micelio fértil (esquema)" tam={26} />
+      <Etq T={T} at={K.N + 0.3} until={K.E - 0.3} x={60} y={1135} texto="4 núcleos tras la meiosis" tam={30} />
+      <Chip T={T} at={K.N + 2.0} until={K.E - 0.3} texto="≈ 9 de cada 10 esporas: 2 núcleos distintos" x={540} y={440} tam={28} borde={KC.gold} />
+      <Etq T={T} at={K.N + 3.8} until={K.E - 0.3} x={1040} y={940} texto="micelio fértil (esquema)" tam={26} lado="izq" />
       {/* 1925 */}
       <TarjetaEstudio T={T} at={K.E + 0.3} until={K.E + 3.0} anio="1925" quien="Coatesville, Pensilvania" revista="Keystone Mushroom Farm · EE. UU." x={500} y={640} />
-      <Etq T={T} at={K.E + 3.3} until={K.L - 0.3} x={650} y={880} texto="el blanco" tam={34} lado="izq" />
+      <Etq T={T} at={K.E + 3.3} until={K.L - 0.3} x={650} y={740} texto="el blanco" tam={38} />
       {/* Lambert */}
-      <Chip T={T} at={K.L + 0.4} until={K.D - 0.3} texto="Louis F. Lambert" x={420} y={460} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.L + 1.5} until={K.D - 0.3} x={600} y={1180} texto="cultivo de sus esporas" tam={26} />
-      <Chip T={T} at={K.L + 2.6} until={K.D - 0.3} texto="cepa «Snow White»" x={420} y={560} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.L + 3.6} until={K.D - 0.3} x={150} y={790} texto="esquemático" tam={22} />
+      <Chip T={T} at={K.L + 0.4} until={K.D - 0.3} texto="Louis F. Lambert" x={320} y={440} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.L + 1.5} until={K.D - 0.3} x={560} y={1080} texto="cultivo de sus esporas" tam={28} />
+      <Chip T={T} at={K.L + 2.6} until={K.D - 0.3} texto="cepa «Snow White»" x={320} y={540} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.L + 3.6} until={K.D - 0.3} x={640} y={870} texto="esquemático" tam={24} />
       {/* dato */}
       <Chip T={T} at={K.D + 0.6} until={K.D + 2.5} texto="antes: cafés o crema" x={400} y={500} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.D + 1.4} until={K.D + 2.5} texto="el raro" x={610} y={1100} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.D + 1.4} until={K.D + 2.5} texto="el raro" x={610} y={980} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.D + 3.8} until={K.C - 0.3} texto="nombre de mercadotecnia" x={400} y={500} tam={38} borde={KC.red} />
       {/* cierre */}
-      <Etq T={T} at={K.C + 0.4} until={K.Ou} x={60} y={1240} texto="botón" tam={26} />
-      <Etq T={T} at={K.C + 0.9} until={K.Ou} x={330} y={1240} texto="cremini" tam={26} />
-      <Etq T={T} at={K.C + 1.4} until={K.Ou} x={600} y={1240} texto="portobello" tam={26} />
-      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={60} y={560} texto="un solo hongo: Agaricus bisporus" tam={34} it />
-      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="variante de 1925" x={830} y={720} tam={28} borde={KC.ink} />
+      <Etq T={T} at={K.C + 0.4} until={K.Ou} x={60} y={1080} texto="botón" tam={28} />
+      <Etq T={T} at={K.C + 0.9} until={K.Ou} x={320} y={1080} texto="cremini" tam={28} />
+      <Etq T={T} at={K.C + 1.4} until={K.Ou} x={590} y={1080} texto="portobello" tam={28} />
+      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={60} y={470} texto="Agaricus bisporus" tam={40} it />
+      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="el blanco: variante de 1925" x={400} y={560} tam={30} borde={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Cu} texto="5 cm" largo={110} />
