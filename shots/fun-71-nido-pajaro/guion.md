@@ -29,7 +29,21 @@
 
 ## Robert en pantalla
 
-(se llena al terminar la animación)
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y cómo sale del nido sin patas ni alas?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 2.6 | 11_sorprendido | `gancho` | «Esos no son huevitos…» (cuadro 0) |
+| 2 | 5.8 | 9.5 | 13_senalando_arriba | `arriba-der` | «Es un hongo nido de pájaro, Cyathus» |
+| 3 | 16.5 | 21.2 | 06_pensativo_menton | `arriba-der` | «un paquete repleto de esporas, con un cordón enrollado» |
+| 4 | 21.5 | 23.7 | 07_pensativo_puno | `grande` | «¿Y cómo sale del nido sin patas ni alas?» |
+| 5 | 29.8 | 34.3 | 11_sorprendido | `izq-alto` | «entre uno y cinco metros por segundo» |
+| 6 | 39.9 | 43.6 | 04_bajando_lentes | `arriba-der` | «menos del dos por ciento de la energía de la gota» |
+| 7 | 49.7 | 54.2 | 06_pensativo_menton | `izq-alto` | «se cree que así viajan sus esporas» |
+| 8 | 54.7 | 57.9 | 02_apuntando_camara | `arriba-der` | «ese nido no espera a un pájaro: espera la lluvia» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 8 · **28.9 s** en pantalla (+ cierre 3.5 s) · 6 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 5 nov 2026)
 

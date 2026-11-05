@@ -29,7 +29,22 @@
 
 ## Robert en pantalla
 
-(se llena al terminar la animación)
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y si el truco no fuera del hongo?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 2.3 | 11_sorprendido | `gancho` | «lo salva el virus de un hongo» (cuadro 0) |
+| 2 | 5.8 | 11.3 | 13_senalando_arriba | `arriba-der` | «suelos termales de Yellowstone… setenta grados» |
+| 3 | 16.5 | 20.4 | 12_perfil_serio | `arriba-der` | «por separado, ni el pasto ni el hongo…» |
+| 4 | 21.5 | 26.0 | 11_sorprendido | `arriba-der` | «sesenta y cinco grados… dos semanas» |
+| 5 | 26.2 | 28.7 | 07_pensativo_puno | `grande` | «¿Y si el truco no fuera del hongo?» |
+| 6 | 34.8 | 37.5 | 10_serio_molesto | `arriba-der` | «el pasto se secó y murió» |
+| 7 | 38.6 | 44.9 | 05_sonriendo_dientes_uniformes | `arriba-der` | «volvió a aguantar el calor… jitomates» |
+| 8 | 48.2 | 54.2 | 06_pensativo_menton | `arriba-der` | «cómo lo logra no está claro» |
+| 9 | 54.7 | 57.9 | 02_apuntando_camara | `arriba-der` | «vive de una alianza de tres» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 9 · **36.8 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 5 nov 2026)
 

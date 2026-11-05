@@ -29,7 +29,21 @@
 
 ## Robert en pantalla
 
-(se llena al terminar la animación)
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y cómo llega un hongo a ese tamaño?».
+
+| # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 2.2 | 11_sorprendido | `gancho` | «no es corteza: es un solo hongo» (cuadro 0) |
+| 2 | 8.6 | 11.6 | 04_bajando_lentes | `arriba-der` | «ni lo reconocieron en el bosque» |
+| 3 | 18.3 | 21.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «entre cuatrocientos y quinientos kilos» |
+| 4 | 28.9 | 31.3 | 11_sorprendido | `arriba-der` | «unos cuatrocientos cincuenta millones» |
+| 5 | 31.5 | 34.1 | 07_pensativo_puno | `grande` | «¿Y cómo llega un hongo a ese tamaño?» |
+| 6 | 38.6 | 42.0 | 12_perfil_serio | `izq-alto` | «tenía unos veinte años» |
+| 7 | 47.6 | 52.6 | 13_senalando_arriba | `arriba-der` | «Ojo: no es el hongo más grande» |
+| 8 | 53.2 | 57.9 | 02_apuntando_camara | `arriba-der` | «el cuerpo de hongo más grande jamás documentado» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+
+Apariciones 8 · **26.1 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 5 nov 2026)
 
