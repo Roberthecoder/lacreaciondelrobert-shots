@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #63 · rama `claude/fun-60-64-cocina`.
 - **Formato:** N1 "Por dentro" + N5 al final (el estudio del ADN como escena): rueda de camembert cortada (macro) → la cáscara al microscopio: hifas y pinceles de esporas, y el corte con el ácido que se va de la orilla (micro, fondo oscuro) → la misma rueda, ya madura y cremosa por dentro, con un "clon" sellado (macro transformado).
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla: «Esa cáscara blanca no es queso: es un hongo, y te lo comes.»
-- **Duración:** voz 918 caracteres / 172 palabras (≈ 58 s; los años «1898» y «1902» se leen largos) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 918 caracteres / 172 palabras (≈ 58 s; los años «1898» y «1902» se leen largos) + cierre 3.5 s → **61.8 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~920 créditos de ElevenLabs).
 - **Tono:** curioso, de cocina, con un toque de "salvemos al camembert" pero sin alarmismo: no va a desaparecer mañana.
 - **No repite** `fun-15-queso-azul` (*P. roqueforti*: venas internas, agujas, metilcetonas, domesticación del Roquefort). Aquí: la corteza blanca, la maduración de afuera hacia adentro y el clon en riesgo.
@@ -35,29 +35,30 @@ Barra de escala: 10 cm (camembert y brie), 5 cm (queso fresco, botella), 10 µm 
 
 ## Robert en pantalla
 
-Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y si te digo que este hongo se está desgastando?».
+Tiempos de la base (61.8 s; con la voz real se recorren solos). Grande en «¿Y si te digo que este hongo se está desgastando?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.6 | 11_sorprendido | `gancho` | «no es queso: es un hongo» (cuadro 0) |
-| 2 | 4.4 | 7.4 | 13_senalando_arriba | `arriba-der` | «se llama *Penicillium camemberti*» |
-| 3 | 12.4 | 15.0 | 04_bajando_lentes | `arriba-der` | «pinceles de esporas» |
-| 4 | 16.0 | 19.8 | 06_pensativo_menton | `arriba-der` | «se come el ácido… suelta amoniaco» |
-| 5 | 23.4 | 27.8 | 05_sonriendo_dientes_uniformes | `arriba-der` | «la orilla cremosa» |
-| 6 | 28.2 | 31.0 | 11_sorprendido | `grande` | «¿y si te digo que se está desgastando?» |
-| 7 | 35.6 | 41.8 | 12_perfil_serio | `arriba-der` | «un mutante blanco… 1898» |
-| 8 | 42.2 | 45.6 | 10_serio_molesto | `arriba-der` | «ya casi no hace esporas» |
-| 9 | 46.2 | 50.8 | 07_pensativo_puno | `arriba-der` | «podría reemplazarlo» |
-| 10 | 51.2 | 57.8 | 02_apuntando_camara | `arriba-der` | «un hongo clonado que madura tu queso» |
-| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+| 1 | 0.0 | 3.3 | 11_sorprendido | `gancho` | «no es queso: es un hongo» (cuadro 0) |
+| 2 | 4.2 | 7.5 | 13_senalando_arriba | `arriba-der` | «se llama *Penicillium camemberti*» |
+| 3 | 10.1 | 12.6 | 05_sonriendo_dientes_uniformes | `bajo-der` | «crece una pelusa blanca» |
+| 4 | 13.2 | 16.1 | 04_bajando_lentes | `bajo-der` | «pinceles de esporas» |
+| 5 | 16.9 | 21.3 | 06_pensativo_menton | `bajo-der` | «se come el ácido… suelta amoniaco» |
+| 6 | 25.6 | 29.5 | 05_sonriendo_dientes_uniformes | `bajo-der` | «la orilla cremosa» |
+| 7 | 29.75 | 33.1 | 11_sorprendido | `presentador-bajo` (grande) | «¿y si se está desgastando?» |
+| 8 | 37.7 | 44.0 | 12_perfil_serio | `bajo-der` | «un mutante blanco… 1898… 1902» |
+| 9 | 44.7 | 47.7 | 10_serio_molesto | `bajo-der` | «ya casi no hace esporas» |
+| 10 | 48.4 | 52.5 | 07_pensativo_puno | `bajo-der` | «podría reemplazarlo» |
+| 11 | 53.1 | 58.2 | 02_apuntando_camara | `arriba-der` | «un hongo clonado que madura tu queso» |
+| — | 58.3 | 61.8 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 10 · **41.0 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas (sorprendido en 1 y 6, con otras entre medio).
+Apariciones 11 · **42.2 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas.
 
-Tiempos de voz en la base: Gancho 0.0–3.8 · Nombre 3.8–7.6 · Siembra 7.6–12.0 · Pinceles 12.0–15.2 · Acido 15.2–20.0 · Enzimas 20.0–23.0 · AfueraAdentro 23.0–28.2 · Pregunta 28.2–31.0 · Estudio 31.0–35.4 · Mutante 35.4–42.2 · Esporas 42.2–45.8 · Biforme 45.8–51.0 · Cierre 51.0–58.0 · Outro 58.0–61.5.
+Escenas de la base (OM_SCENES, 61.8 s): Gancho 3.7 · Nombre 4.0 · Siembra 5.1 · Pinceles 3.5 · Acido 5.3 · Enzimas 3.0 · AfueraAdentro 5.1 · Pregunta 3.1 · Estudio 4.4 · Mutante 7.2 (los años se leen largos) · Esporas 3.5 · Biforme 4.8 · Cierre 5.6 · Outro 3.5.
 
 ## Fuentes (abiertas el 5 nov 2026)
 
-Detalle con la frase textual de cada afirmación en `verificacion.md` (lo escribe la verificación independiente).
+Detalle con la frase textual de cada afirmación en `verificacion.md` (verificación independiente + correcciones; las fechas 1898/1902 son del CNRS 2024, el artículo de 2020 dice "around 1900").
 
 1. **[Ropars 2020]** Ropars, J., Didiot, E., Rodríguez de la Vega, R. C., Bennetot, B., Coton, M., Poirier, E., Coton, E., Snirc, A., Le Prieur, S. y Giraud, T. (2020). Domestication of the emblematic white cheese-making fungus *Penicillium camemberti* and its diversification into two varieties. *Current Biology* 30(22): 4441–4453 (Ecologie Systématique et Evolution, Université Paris-Saclay, CNRS, Orsay, Francia). https://pubmed.ncbi.nlm.nih.gov/32976806/ · preprint: https://www.biorxiv.org/content/10.1101/2020.02.12.945238v1
    > "We studied the domestication of the emblematic white mold Penicillium camemberti, used for the maturation of soft cheeses, such as Camembert and Brie"
