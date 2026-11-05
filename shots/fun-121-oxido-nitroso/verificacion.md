@@ -42,3 +42,27 @@ Verificador: subagente que no escribió el guion. Fuentes abiertas (texto comple
 | 10 | «Con tierra de un pastizal de Irlanda del Norte, en 2002, frenar a los hongos bajó el gas ochenta y nueve por ciento.» | Laughlin y Stevens 2002 |
 | 11 | «Ojo: fue un solo suelo; en otros, su aporte es incierto.» | Higgins 2018 |
 | 13 | «Así que ese costal no es solo comida: en tu milpa, un hongo puede volver parte en gas.» | Maeda 2015 |
+
+## Re-verificación independiente (5 nov 2026)
+
+Verificador independiente (no escribió el guion). Revisé guion.md, narracion.json, textos de `oxido-nitroso.jsx` (etiquetas, chips, subtítulos, barras 100/11/77 = −89 %/−23 %) y publicacion.md (7 redes + comentario fijado).
+
+| Línea | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Gancho «kilo por kilo, calienta 273 veces más que el CO₂»; pantalla «×273 · kilo por kilo · a 100 años» | ✅ | EPA (abierta) / IPCC AR6 WG1 tabla 7.15 | "Nitrous Oxide (N2O) has a GWP 273 times that of CO2 for a 100-year timescale." / "from the IPCC's Sixth Assessment Report, published in 2021" | 2021 |
+| «un estudio de 2009 mostró que es la emisión humana que más daña la capa de ozono»; chip igual; publicación: Montreal no lo regula | ✅ | Ravishankara et al. 2009, *Science* (PDF abierto, texto extraído) | "making anthropogenic N2O emissions the single most important of the anthropogenic ODS emissions today"; "N2O is unregulated by the Montreal Protocol." | 2009 |
+| «La mayor parte del que emitimos sale del nitrógeno que echamos al campo»; publicación «+30 % en cuatro décadas» | ✅ | Tian et al. 2020, *Nature* 586 (resumen indexado) | "Global human-induced emissions, which are dominated by nitrogen additions to croplands, increased by 30% over the past four decades to 7.3 (4.2–11.4) teragrams of nitrogen per year." | 1980–2016 |
+| Suelo encharcado sin oxígeno → microbios respiran nitrato | ✅ | Butterbach-Bahl 2013 (tabla previa #5) | "Soil moisture … regulates the oxygen availability to soil microbes." | 2013 |
+| «Muchas bacterias lo vuelven nitrógeno inofensivo» | ✅ | Higgins et al. 2018, *GBE* (abierto) | "fungi cannot convert N2O to inert N2 like many denitrifying bacteria" | 2018 |
+| *Fusarium oxysporum* lo fabrica con P450nor (NO + NO → N₂O) | ✅ | Higgins 2018; Shoun 1992 | "P450nor, a heme-containing cytochrome P450, that catalyzes the two electron reduction of nitric oxide (NO) to N2O" | 2018; 1992 |
+| «en ningún hongo se conoce la que lo desarma» (la enzima); pantalla y publicación igual | ✅ | Maeda et al. 2015, *Sci Rep* (abierto) | "no nitrous oxide reductase has been identified in fungi" | 2015 |
+| 2015, Francia (INRA Dijon), 207 hongos de suelos agrícolas y raíces, 70 producían; publicación «sobre todo Fusarium oxysporum y Trichoderma» | ✅ | Maeda et al. 2015 | "a collection of 207 fungal isolates"; "Seventy strains producing N2O in pure culture were identified."; "previously isolated from agricultural soils or plant roots"; "MIAE collection (INRA, Dijon, France)"; "Fusarium and Trichoderma were the main Hypocreales genera observed" | 2015 |
+| «Con tierra de un pastizal de Irlanda del Norte, en 2002, frenar a los hongos bajó el gas 89 %»; pantalla −89 % / −23 %, frascos de tierra | ✅ | Laughlin y Stevens 2002, *SSSAJ* 66:1540 (resumen AGRIS abierto) | "a grassland soil from Northern Ireland"; "Cycloheximide decreased the flux of N2O by 89% and streptomycin decreased the flux by 23%" | 2002 |
+| «Ojo: fue un solo suelo; en otros, su aporte es incierto»; chip «89 % + 23 % > 100 %: el método es aproximado» | ✅ | Higgins 2018 | "the fungal contributions to N2O emissions remain uncertain"; streptomycin "only inhibits a fraction of the active bacteria present in soil" | 2018 |
+| Cierre «en tu milpa, un hongo puede volver parte en gas» | ✅ (posibilidad, con «puede») | Maeda 2015 | 70 de 207 hongos de suelos agrícolas/raíces producen N₂O | 2015 |
+
+Nota menor (no bloquea): el subtítulo del gancho dice «Un gas que calienta 273 veces más que el CO₂» sin «kilo por kilo», pero la voz y el chip «kilo por kilo · a 100 años», que está en pantalla al mismo tiempo, lo precisan.
+
+Las 4 ⚠️ previas quedaron bien redactadas en voz, pantalla y publicación. Sin ❌ ni ⚠️ pendientes.
+
+VEREDICTO: APROBADO
