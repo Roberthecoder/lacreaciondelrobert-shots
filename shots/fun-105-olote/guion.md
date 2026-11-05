@@ -2,7 +2,7 @@
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #105 · rama `claude/fun-105-109-cultivo`.
 - **Formato:** N1 · Por dentro (con un toque de N6: los pasos del cultivo). Viaje olote en la mano → bolsa de cultivo → por dentro (hifas y enzimas, fondo oscuro) → el mismo olote, ahora con un racimo de setas.
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla: «Ese olote que tiras no es basura: es comida… para un hongo.» Le sigue un #4 (número que contradice): «Un kilo de olote seco dio ochocientos cincuenta gramos de setas frescas».
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre algo en pantalla: «Ese olote que tiras no es basura: es comida… para un hongo.» Le sigue un #4 (número que contradice): «En un estudio, por cada kilo de olote seco salieron hasta ochocientos cincuenta gramos de setas frescas».
 - **Duración (estimada):** voz 944 caracteres / ~171 palabras (≈ 58.1 s) + cierre 3.5 s → **≈ 61.6 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
 - **Tono:** práctico y optimista sin exagerar: los hongos son *una* forma de aprovechar residuos y producir comida, no "la solución al hambre". Aclarar en pantalla que se compara **seta fresca** contra **olote seco** (por eso la cifra es tan alta).
