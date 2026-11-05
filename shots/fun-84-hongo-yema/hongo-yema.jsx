@@ -251,7 +251,7 @@ function RobertLado({ T, src, at, until, left = -20, top = 560, width = 580 }) {
 const HV = { x: 540, y: 1150, s: 2.4 };                     // el huevo del gancho y del cierre (misma imagen)
 const G40 = Array.from({ length: 40 }, (_, i) => [655 + (i % 8) * 50, 800 + Math.floor(i / 8) * 62]);
 const RASGOS_Y = [[800, 330, 750], [910, 280, 800], [1060, 290, 790]];   // y del rasgo · x en el comestible · x en la mortal (sombrero, anillo, volva)
-const PUEBLOS = [[740, 1060], [620, 900], [400, 1000]];   // posiciones esquemáticas
+const PUEBLOS = [[740, 1060], [620, 900], [440, 1000]];   // posiciones esquemáticas
 
 function HongoYemaShot() {
   const { T, CUES } = useComposition();
@@ -421,18 +421,18 @@ function HongoYemaShot() {
       <EtqP T={T} at={K.S + 1.2} until={K.P - 0.4} x={60} y={494} texto={TX.siete} tam={30} />
       <EtqP T={T} at={K.P + 2.4} until={K.E - 0.4} x={1040} y={760} lado="izq" texto={TX.mortales} tam={30} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.N - 0.4} anio={TX.est.anio} quien={TX.est.quien} revista={TX.est.revista} x={540} y={510} />
-      {TX.pueblos.map((n, i) => <EtqP key={i} T={T} at={K.E + 1.5 + i * 0.5} until={K.N - 0.4} x={PUEBLOS[i][0] + (i === 2 ? -24 : 24)} y={PUEBLOS[i][1]} lado={i === 2 ? 'izq' : 'der'} texto={n} tam={26} />)}
+      {TX.pueblos.map((n, i) => <EtqP key={i} T={T} at={K.E + 1.5 + i * 0.5} until={K.N - 0.4} x={PUEBLOS[i][0] + (i === 2 ? -24 : 24)} y={PUEBLOS[i][1]} lado={i === 2 ? 'izq' : 'der'} texto={n} tam={24} />)}
       <NumeroGigante T={T} at={K.E + 2.6} until={K.N - 0.4} valor={191} dur={1.2} etiqueta={TX.entrevistas} x={250} y={830} tam={100} color={KC.pink} />
       <Chip T={T} at={K.E + 3.4} until={K.N - 0.4} texto={TX.cuestionarios} x={790} y={740} tam={28} borde={KC.ink} />
       <NumeroGigante T={T} at={K.N + 0.1} until={K.Ra - 0.4} valor={121} dur={1.2} sufijo={TX.nombresNum} etiqueta={TX.nombresEtq} x={330} y={500} tam={110} color={KC.pink} />
-      <Chip T={T} at={K.N + 0.7} until={K.Ra - 0.4} texto={TX.especies40} x={540} y={682} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.N + 2.6} until={K.Ra - 0.4} texto={TX.conocia} x={260} y={752} tam={26} borde={HY.naranja} />
-      {TX.nombresAmarillo.map((n, i) => <EtqP key={i} T={T} at={K.N + 1.9 + i * 0.3} until={K.Ra - 0.4} x={60} y={810 + i * 58} texto={n} tam={30} />)}
+      <Chip T={T} at={K.N + 0.7} until={K.Ra - 0.4} texto={TX.especies40} x={510} y={702} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.N + 2.6} until={K.Ra - 0.4} texto={TX.conocia} x={260} y={772} tam={26} borde={HY.naranja} />
+      {TX.nombresAmarillo.map((n, i) => <EtqP key={i} T={T} at={K.N + 1.9 + i * 0.3} until={K.Ra - 0.4} x={60} y={836 + i * 58} texto={n} tam={30} />)}
       <EtqP T={T} at={K.N + 3.1} until={K.Ra - 0.4} x={60} y={1110} texto={TX.otomi} tam={28} />
       <Chip T={T} at={K.Ra + 0.1} until={K.Y - 0.4} texto={TX.tianguis} x={390} y={460} tam={28} borde={KC.ink} />
       <EtqP T={T} at={K.Ra + 0.4} until={K.Y - 0.4} x={60} y={530} texto={TX.yemas} tam={30} />
       <EtqP T={T} at={K.Ra + 0.9} until={K.Y - 0.4} x={60} y={590} texto={TX.miran} tam={30} />
-      <Chip T={T} at={K.Ra + 3.9} until={K.Y - 0.4} texto={TX.ojo} x={540} y={672} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.Ra + 3.9} until={K.Y - 0.4} texto={TX.ojo} x={540} y={672} tam={28} borde={KC.red} />
       <EtqP T={T} at={K.Y + 0.4} until={K.I - 0.4} x={60} y={548} texto={TX.chiapas} tam={30} />
       <EtqP T={T} at={K.Y + 0.6} until={K.I - 0.4} x={90} y={735} texto={TX.yuyo} tam={30} />
       <EtqP T={T} at={K.Y + 0.9} until={K.I - 0.4} x={90} y={788} texto={TX.yuyoSp} it tam={30} />

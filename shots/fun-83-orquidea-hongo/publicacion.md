@@ -39,7 +39,7 @@ Esto no es polvo: son semillas de orquídea… y necesitan un hongo 🌸🍄 | S
 Descripción:
 ```text
 Esto no es polvo: son semillas de orquídea. Y en el bosque, sin un hongo, no germinan.
-México tiene más de 1,200 especies de orquídeas (catálogos de Hágsater, Soto-Arenas y colaboradores, 2005–2007, y su actualización de 2020 para CONABIO). En el bosque de niebla o bosque mesófilo de montaña, las orquídeas están entre las plantas más abundantes, y muchas viven como epífitas, pegadas a las ramas.
+México tiene más de 1,200 especies de orquídeas (catálogos de Hágsater, Soto-Arenas y colaboradores, 2005–2007, y su actualización de 2020 para CONABIO). En el bosque de niebla o bosque mesófilo de montaña, las orquídeas son la familia de plantas con más especies, y muchas viven como epífitas, pegadas a las ramas.
 Una sola cápsula puede soltar desde cientos hasta millones de semillas. El récord registrado es de unos 4,000,000 (estimado) en una cápsula de Cycnoches recibida en Kew en 1896 (Arditti y Ghani, 2000).
 Por dentro, cada semilla es una cubierta (testa) delgada y transparente con dibujo de red y un embrión diminuto, sin endospermo: casi sin comida para arrancar. En la naturaleza, para germinar necesita a un hongo micorrízico, como Tulasnella o Ceratobasidium (el grupo llamado «Rhizoctonia»). Sus hifas entran al embrión y se enrollan dentro de las células en ovillos: los pelotones. Los pelotones no son permanentes: las células del embrión los digieren. Así, al principio de su vida, la orquídea depende del carbono que le da el hongo (micoheterotrofia). El embrión se vuelve una bolita, el protocormo, y después saca hojas y raíces.
 El estudio: en 2007, M. Pilar Ortega-Larrocea y Mónica Rangel-Villafranco, del Instituto de Geología de la UNAM, reportaron plántulas de Bletia urbana —una orquídea en peligro— cultivadas en frasco con hongos micorrízicos y reintroducidas en una reserva de la Ciudad de México, el Pedregal de San Ángel. Tras seis años de seguimiento sobrevivía cerca del 50 %, y a partir del quinto año las plantas empezaron a florecer.
@@ -63,7 +63,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Esto no es polvo: son semillas de orquídea. Y en el bosque, sin un hongo, no germinan. 🌸🍄 Su embrión casi no trae comida, así que deja entrar a un hongo, forma ovillos de hifas y se los come para arrancar. En 2007, la UNAM devolvió al Pedregal de San Ángel plántulas de una orquídea en peligro criadas con sus hongos: a los seis años sobrevivía cerca de la mitad. Y la vainilla también es una orquídea. El dibujo es esquemático.
+Esto no es polvo: son semillas de orquídea. Y en el bosque, sin un hongo, no germinan. 🌸🍄 Su embrión casi no trae comida, así que deja entrar a un hongo, forma ovillos de hifas y se los come para arrancar. En 2007, la UNAM reportó plántulas de una orquídea en peligro criadas con sus hongos y devueltas al Pedregal de San Ángel: a los seis años sobrevivía cerca de la mitad. Y la vainilla también es una orquídea. El dibujo es esquemático.
 ¿Has visto orquídeas en los árboles de tu región? 👇
 Shot Fungi Mati 83 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -72,7 +72,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-Las semillas de orquídea son de las más pequeñas de las plantas: un embrión diminuto, sin endospermo, dentro de una cubierta delgada. En la naturaleza no les alcanza para germinar solas: dependen de un hongo micorrízico (Tulasnella, Ceratobasidium) cuyas hifas forman ovillos —pelotones— dentro del embrión, que este digiere para obtener carbono.
+Las semillas de orquídea son diminutas y ligerísimas, como polvo: un embrión diminuto, sin endospermo, dentro de una cubierta delgada. En la naturaleza no les alcanza para germinar solas: dependen de un hongo micorrízico (Tulasnella, Ceratobasidium) cuyas hifas forman ovillos —pelotones— dentro del embrión, que este digiere para obtener carbono.
 Esto tiene consecuencias directas para la conservación. En 2007, investigadoras del Instituto de Geología de la UNAM reportaron la reintroducción de Bletia urbana, orquídea en peligro, en la reserva del Pedregal de San Ángel (CDMX), con plántulas propagadas en frasco junto con hongos micorrízicos: tras seis años sobrevivía cerca del 50 % y las plantas ya florecían.
 México tiene más de 1,200 especies de orquídeas; conservarlas implica conservar también a sus hongos.
 ¿Qué otras simbiosis crees que deberíamos considerar al restaurar ecosistemas?
@@ -88,7 +88,7 @@ Esto no es polvo: son semillas de orquídea. Sin endospermo, en el bosque no ger
 
 ### Threads
 ```text
-Esto no es polvo: son semillas de orquídea. Y en el bosque, sin un hongo, no germinan. 🌸🍄 La semilla deja entrar al hongo, sus hilos forman ovillos dentro de ella… y se los come para arrancar. En 2007, la UNAM devolvió al Pedregal plántulas criadas así: a los seis años sobrevivía cerca de la mitad. ¿Has visto orquídeas en los árboles de tu región?
+Esto no es polvo: son semillas de orquídea. Y en el bosque, sin un hongo, no germinan. 🌸🍄 La semilla deja entrar al hongo, sus hilos forman ovillos dentro de ella… y se los come para arrancar. En 2007, la UNAM reportó plántulas criadas así y devueltas al Pedregal: a los seis años sobrevivía cerca de la mitad. ¿Has visto orquídeas en los árboles de tu región?
 Shot Fungi Mati 83 · La Creación del Robert
 #Hongos
 ```

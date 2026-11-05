@@ -486,13 +486,13 @@ function OrquideaShot() {
       <EtqP T={T} at={K.Se + 0.9} until={K.Hi - 0.2} x={230} y={655} texto={TX.testa} tam={32} color={OQ.testa} />
       <EtqP T={T} at={K.Se + 1.4} until={K.Hi - 0.2} x={640} y={1020} texto={TX.embrion} tam={32} color={OQ.embrion} />
       <Chip T={T} at={K.Se + 2.0} until={K.Hi - 0.2} texto={TX.sinReservas} x={540} y={1125} tam={30} borde={KC.gold} mono />
-      <EtqP T={T} at={K.Hi + 1.2} until={K.Pe - 0.2} x={150} y={1175} texto={TX.hifa} tam={32} color={OQ.hifa} />
+      <EtqP T={T} at={K.Hi + 1.2} until={K.Pe - 0.2} x={150} y={1140} texto={TX.hifa} tam={32} color={OQ.hifa} />
       <Chip T={T} at={K.Hi + 1.6} until={K.Pe - 0.2} texto={TX.micorriza} x={760} y={560} tam={34} borde={KC.mint} />
       <Chip T={T} at={K.Hi + 2.2} until={K.Pe - 0.2} texto={<i>{TX.hongo1}</i>} x={700} y={1080} tam={34} borde={KC.gold} mono />
       <Chip T={T} at={K.Hi + 2.6} until={K.Pe - 0.2} texto={<i>{TX.hongo2}</i>} x={760} y={650} tam={34} borde={KC.gold} mono />
       <EtqP T={T} at={K.Pe + 1.4} until={K.Pr - 0.2} x={60} y={580} texto={TX.peloton} tam={32} color={OQ.hifa} />
-      <EtqP T={T} at={K.Pe + 2.0} until={K.Pr - 0.2} x={300} y={1165} texto={TX.celula} tam={30} color={OQ.embrion} />
-      <Chip T={T} at={K.Di + 1.4} until={K.Pc - 0.2} texto={TX.mico} x={540} y={1165} tam={32} borde={KC.gold} mono />
+      <EtqP T={T} at={K.Pe + 2.0} until={K.Pr - 0.2} x={300} y={1148} texto={TX.celula} tam={30} color={OQ.embrion} />
+      <Chip T={T} at={K.Di + 1.4} until={K.Pc - 0.2} texto={TX.mico} x={540} y={1148} tam={32} borde={KC.gold} mono />
       <EtqP T={T} at={K.Di + 2.4} until={K.Pc - 0.2} x={60} y={540} texto={TX.comidaPropia1} tam={30} color={KC.gold2} />
       <EtqP T={T} at={K.Di + 2.6} until={K.Pc - 0.2} x={126} y={593} texto={TX.comidaPropia2} tam={30} color={KC.gold2} linea={false} />
       <EtqP T={T} at={K.Pc + 1.4} until={K.Es - 0.2} x={700} y={900} texto={TX.protocormo} tam={34} color="#8fe08a" />
