@@ -88,4 +88,29 @@ Notas menores (no bloquean):
 - Las fuentes 6 (Mascarin & Jaronski) y 7 (EPA 40 CFR) del guion no se abrieron; no hacen falta porque SENASICA 2023 respalda la venta comercial.
 - La larva dibujada (~8 cm) queda un poco más larga que los 7.5 cm de referencia; está dentro de la variación por raza y por día del estadio.
 
+## Re-verificación independiente (5 nov 2026)
+
+Verificador nuevo, que no escribió el guion. Revisé `narracion.json` (13 líneas), todos los textos de pantalla de `bassi.jsx`, `guion.md` y `publicacion.md`. Volví a abrir DSB (https://www.encyclopedia.com/science/dictionaries-thesauruses-pictures-and-press-releases/bassi-agostino-maria), Treccani (https://www.treccani.it/enciclopedia/agostino-bassi_(Dizionario-Biografico)/) y Linda Hall (https://www.lindahall.org/about/news/scientist-of-the-day/agostino-bassi/). Para la muerte del gusano hice una búsqueda nueva, que confirmó las fuentes de sericultura ya citadas.
+
+| afirmación | veredicto | fuente | frase textual | año |
+|---|---|---|---|---|
+| Polvo blanco = hongo, no cal (enfermedad «calcinaccio» / «mal del calcino») | ✅ | Linda Hall · Treccani | "on their dead bodies, a white powder would appear"; "Del mal del segno, calcinaccio o Moscardino" | 1835 |
+| Conidios que se pegan a la piel, germinan y atraviesan la cutícula con enzimas y presión | ✅ | Zhang et al. 2010 (PMC2849248) · Pedrini 2013 | "a combination of mechanical pressure and cuticle-degrading enzymes"; "attachment to the cuticle, followed by germination" | 2010; 2013 |
+| En la hemolinfa, células sueltas que esquivan las defensas | ✅ | Pedrini 2013 | "single celled hyphal bodies or blastospores within the hemolymph that are able to evade the host immune cells" | 2013 |
+| En días muere, se pone duro (después de morir) y lo cubren esporas | ✅ | Nirupama 2014 · apuntes EKAC | "die within four to five days of infection"; "After death body becomes hard and stiff"; "the whole body covered with white fungi conidia" | 2014 |
+| Agostino Bassi, Italia; «trabajó en Lodi» (nació en Mairago, provincia de Lodi) | ✅ | Treccani | "Nacque a Mairago (Lodi). il 25 sett. 1773" | 1965 |
+| Estudió la enfermedad casi treinta años («1807 → 1835») | ✅ (con pausas, según Treccani) | Linda Hall · DSB · Treccani | "Bassi investigated muscardine for nearly 30 years."; "As early as 1807 Bassi's attention was drawn to the silkworm disease"; "già iniziate sin dal 1807 e poi sospese" | 1807–1835 |
+| En 1835 publicó que la causaba un hongo contagioso; libro «Del mal del segno…» Lodi 1835 | ✅ | DSB · Treccani | "was published in 1835"; "Del mal del segno, calcinaccio o Moscardino (Lodi 1835)" | 1835 |
+| Lo probó: polvo en gusanos sanos, que se enfermaron | ✅ | DSB | "Bassi reproduced the muscardine by inoculating healthy worms with the white dust, or with matter from diseased worms." | 1835 |
+| «Para muchos historiadores, la primera prueba experimental de que un microbio enferma a un animal» | ✅ (con su matiz) | DSB · Linda Hall · Treccani | "first demonstrated through experiments that a living fungus parasite was the cause"; "for the first time, a disease was attributed to a microorganism"; "tra i primi" | 1835 |
+| Pantalla «1876 · Koch: ántrax» | ✅ | Science Museum Group (frase citada arriba, R11) | "1876 - published findings on anthrax" | 1876 |
+| «Microbio» se inventó en 1878 (Sédillot) | ✅ | HistoryofMedicine.com (R18) | "Sedillot, a surgeon, first used the word "microbe"" (C. R. Acad. Sci. 86, 1878) | 1878 |
+| El hongo lleva su nombre (*Botrytis bassiana*, hoy *Beauveria bassiana*) | ✅ | Linda Hall · Treccani | "named Botrytis bassiana (now Beauveria bassiana), in his honor"; "in onore dello scopritore" | 1835–36 |
+| Se vende como insecticida (biológico) | ✅ | SENASICA CB-03 (R25) | "La cepa comercial B. bassiana GHA…" | 2023 |
+| Cierre «el hongo que ayudó a probar que los microbios enferman» | ✅ | Pedrini 2013 | "used strains of Beauveria (bassi)ana as a model for his germ theory of disease in animals" | 2013 |
+| Dibujo: conidios globosos e incoloros en racimos, a escala (≈ 2.4 µm con una barra de 10 µm); blastosporas y hemocitos; gusano de ~8 cm | ✅ | SENASICA CB-03 · apuntes Udai Pratap College (R4–R6) | "2 - 3 x 2.0- 2.5 µm y se forman en racimos"; "The full grown caterpillar is 7.5 cm in length." | 2023 |
+| publicacion.md (7 redes y comentario): mismo contenido, con el matiz de «la primera» en todas | ✅ | DSB · Treccani · Linda Hall | — | — |
+
+No hice cambios. Todo queda ✅.
+
 VEREDICTO: APROBADO

@@ -340,7 +340,7 @@ function PolvoShot() {
       <Chip T={T} at={K.Es + 0.05} until={K.R - 0.3} texto="POR DENTRO · EL POLVO" x={540} y={470} tam={34} borde={KC.cyan} mono />
       <Etq T={T} at={K.Es + 0.5} until={K.R - 0.3} x={70} y={640} texto="Cladosporium · esporas en cadena" it tam={30} color={KC.mint} />
       <Etq T={T} at={K.Es + 0.9} until={K.R - 0.3} x={380} y={1120} texto="Alternaria · espora en mazo" it tam={30} color={KC.yellow} />
-      <Chip T={T} at={K.Es + 1.3} until={K.R - 0.3} texto="aguantan la sequedad" x={540} y={560} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.Es + 1.3} until={K.R - 0.3} texto="muchas aguantan la sequedad" x={540} y={560} tam={34} borde={KC.mint} />
       <Etq T={T} at={K.R + 1.2} until={K.P - 0.3} x={60} y={450} texto="muchos hongos solo viven" tam={36} color={KC.ink} />
       <Etq T={T} at={K.R + 1.4} until={K.P - 0.3} x={60} y={505} texto="en ciertas regiones" tam={36} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.H + 0.75} until={K.H + 1.9} anio="2012–13" quien="Wild Life of Our Homes" revista="ciencia ciudadana · ~1,200 casas de EE. UU." x={540} y={760} />
@@ -390,7 +390,7 @@ function PolvoShot() {
       <Subtitulo T={T} idx={5} at={K.P + 0.1} until={K.H - 0.1} texto="¿Tu polvo *podría delatarte?*" />
       <Subtitulo T={T} idx={6} at={K.H + 0.1} until={K.A - 0.1} texto="~1,200 casas: *un hisopo en el marco.*" />
       <Subtitulo T={T} idx={7} at={K.A + 0.1} until={K.Af - 0.1} texto="Más de *70 mil* tipos de hongos." />
-      <Subtitulo T={T} idx={8} at={K.Af + 0.1} until={K.B - 0.1} texto="Los de adentro venían *de afuera.*" />
+      <Subtitulo T={T} idx={8} at={K.Af + 0.1} until={K.B - 0.1} texto="La mayoría venía *de afuera.*" />
       <Subtitulo T={T} idx={9} at={K.B + 0.1} until={K.M - 0.1} texto="Las bacterias: *¿hay perro?*" />
       <Subtitulo T={T} idx={10} at={K.M + 0.1} until={K.F - 0.1} texto="Solo con hongos: *menos de 100 km.*" />
       <Subtitulo T={T} idx={11} at={K.F + 0.1} until={K.C - 0.1} texto="Propuesta: *ciencia forense.*" />
