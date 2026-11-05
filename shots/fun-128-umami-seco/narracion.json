@@ -1,7 +1,7 @@
 {
   "dcHtml": "Shot Umami seco base narrada.dc.html",
   "salida": "Shot Umami seco narrado.dc.html",
-  "nota": "Shot Fungi Mati #128. Una línea por subtítulo (idx 0..14 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Guion en verificación: todavía sin animación.",
+  "nota": "Shot Fungi Mati #128. Una línea por subtítulo (idx 0..14 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
   "lineas": [
     {
       "escena": "Gancho",
@@ -52,8 +52,8 @@
       "texto": "Lo propuso en 2008 un equipo de San Diego."
     },
     {
-      "escena": "Quince",
-      "texto": "Una pizca de nucleótido que sola no sabe a umami hace quince veces más fácil notar el glutamato."
+      "escena": "Umbral",
+      "texto": "Una pizca de nucleótido que sola no sabe a umami hace que notes el glutamato con mucho menos."
     },
     {
       "escena": "Dashi",

@@ -5,12 +5,11 @@
   Viaje: hongo seco en la mano → por dentro (células rotas, ARN, tijeras) → tu lengua (receptor atrapamoscas) → el mismo hongo,
   ya remojado y en el caldo.
 - **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre algo en pantalla: «Ese hongo arrugado no está echado a perder: es una bomba de umami que tú enciendes.»
-- **Duración estimada:** voz 958 caracteres / 171 palabras (≈ 57.5–58 s, como el modelo fun-59 con 998 caracteres) + cierre 3.5 s → **≈ 61.5 s**.
-  Se confirma con ffprobe cuando exista la base.
+- **Duración:** voz 955 caracteres / 171 palabras (≈ 57.9 s en la base) + cierre 3.5 s → **61.39 s** en la base (ffprobe de `assets/mezcla.wav`: 61.39 s + 0.3 s de cola).
 - **Voz:** pendiente de aprobación de Robert (~960 créditos de ElevenLabs).
 - **No repite:** koji/salsa de soya (fun-16), mito del glutamato (qui-49), glutamato por bacterias (bio-20), mapa de la lengua (cie-17),
   shiitake crudo y dermatitis (fun-26). Aquí el tema es el **guanilato** que suelta el hongo seco y su **sinergia** con el glutamato.
-- **Estado:** GUION EN VERIFICACIÓN. Todavía sin animación (regla de Robert: primero guion, luego verificación independiente).
+- **Estado:** guion verificado (`verificacion.md`, APROBADO); animación construida.
 
 ## Versión narrada
 
@@ -24,12 +23,12 @@
 | 5 | Temperatura | Trabajan mejor entre sesenta y setenta grados. | Termómetro que sube; franja verde "60–70 °C · mejor para las tijeras". |
 | 6 | AguaFria | Otra enzima lo deshace a temperatura ambiente: por eso, remójalo en agua fría. | Una "gomita" (nucleotidasa) mastica bolitas doradas a 25 °C; corte a un vaso con agua fría y hielo donde la gomita se queda quieta. Chip "remojo en frío". |
 | 7 | Pregunta | ¿Y por qué una pizca hace tanto? | **Re-gancho.** Fondo rosa: una pizca dorada sobre una cuchara; Robert grande, pensativo. |
-| 8 | Receptor | Tu receptor del umami, T1R1 con T1R3, funciona como una atrapamoscas. | Fondo oscuro: membrana de una célula del gusto con el receptor de dos piezas (T1R1 y T1R3); la parte de afuera dibujada como trampa de atrapamoscas abierta. Etiqueta "dominio atrapamoscas (esquemático)". Barra 5 nm. |
+| 8 | Receptor | Tu receptor del umami, T1R1 con T1R3, funciona como una atrapamoscas. | Fondo oscuro: membrana de una célula del gusto con el receptor de dos piezas (T1R1 y T1R3); la parte de afuera dibujada como trampa de atrapamoscas abierta. Etiqueta "modelo (esquemático)". Barra 5 nm. |
 | 9 | Glutamato | El glutamato se sienta junto a la bisagra y la trampa se cierra. | Una molécula azul "glutamato" entra junto a la bisagra; la trampa se cierra. |
 | 10 | Nucleotido | El nucleótido se pone en la orilla y la deja más cerrada. | Bolita dorada "nucleótido (GMP / IMP)" se acomoda cerca de la orilla y la trampa aprieta más; destello. |
 | 11 | Estudio | Lo propuso en 2008 un equipo de San Diego. | TarjetaEstudio "2008 · Zhang et al. · PNAS · San Diego (Senomyx)" con piezas del receptor que se cambian una por una (mutantes, esquemático). |
-| 12 | Quince | Una pizca de nucleótido que sola no sabe a umami hace quince veces más fácil notar el glutamato. | Número grande "15×" con la etiqueta "más sensibilidad al glutamato · pruebas en personas · con IMP". Una línea de umbral que baja. |
-| 13 | Dashi | Por eso el caldo de kombu, con glutamato, y hongo seco, con guanilato, sabe tan profundo. | Olla de caldo: entra una tira de alga kombu (bolitas azules "glutamato") y el hongo seco remojado (bolitas doradas "guanilato"); se juntan en el receptor. |
+| 12 | Umbral | Una pizca de nucleótido que sola no sabe a umami hace que notes el glutamato con mucho menos. | Medidor de umbral: una línea que baja con la etiqueta "menos glutamato para notarlo · con IMP" (sin número). |
+| 13 | Dashi | Por eso el caldo de kombu, con glutamato, y hongo seco, con guanilato, sabe tan profundo. | Olla de caldo: entra una tira de alga kombu (bolitas azules "glutamato") y el hongo seco ya remojado en frío (bolitas doradas "guanilato"); se juntan en el receptor. |
 | 14 | Cierre | Ese hongo arrugado no estaba echado a perder: esperaba tu agua fría y tu fuego. | **Regreso a la imagen del inicio:** el mismo hongo en la mesa, ahora hinchado por el remojo junto a su vaso de agua fría y la olla. Chip "bomba de umami ✓". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
@@ -37,22 +36,24 @@
 
 Barras de escala: 2 cm (hongo), 10 µm (hifas), 5 nm (receptor, esquemático). En las tarjetas no hay objeto que medir.
 
-## Robert en pantalla (plan; se ajusta a los tiempos reales de la animación)
+## Robert en pantalla
+
+Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y por qué una pizca hace tanto?».
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «no está echado a perder» (cuadro 0) |
-| 2 | 7.4 | 10.5 | 13_senalando_arriba | `arriba-der` | «seco, muchísimo» |
-| 3 | 14.0 | 17.0 | 04_bajando_lentes | `arriba-der` | «sus tijeras, las ribonucleasas» |
-| 4 | 20.5 | 24.0 | 10_serio_molesto | `arriba-der` | «otra enzima lo deshace» |
-| 5 | 24.8 | 27.6 | 07_pensativo_puno | `presentador` (grande) | «¿Y por qué una pizca hace tanto?» |
-| 6 | 33.0 | 36.0 | 11_sorprendido | `arriba-der` | «la trampa se cierra» |
-| 7 | 43.2 | 48.0 | 06_pensativo_menton | `arriba-der` | «quince veces más fácil» |
-| 8 | 50.0 | 54.0 | 02_apuntando_camara | `arriba-der` | «sabe tan profundo» |
-| 9 | 55.0 | 58.0 | 12_perfil_serio | `arriba-der` | «esperaba tu agua fría y tu fuego» |
-| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+| 1 | 0.0 | 4.7 | 11_sorprendido | `gancho` | «no está echado a perder» (cuadro 0) |
+| 2 | 7.8 | 11.6 | 13_senalando_arriba | `arriba-der` | «seco, muchísimo» |
+| 3 | 14.6 | 18.4 | 04_bajando_lentes | `arriba-der` | «sus tijeras, las ribonucleasas» |
+| 4 | 22.0 | 26.0 | 10_serio_molesto | `arriba-der` | «otra enzima lo deshace» |
+| 5 | 26.3 | 28.6 | 07_pensativo_puno | `grande` (presentador, medio cuerpo) | «¿Y por qué una pizca hace tanto?» |
+| 6 | 33.7 | 36.2 | 11_sorprendido | `arriba-der` | «la trampa se cierra» |
+| 7 | 42.9 | 47.8 | 06_pensativo_menton | `arriba-der` | «notes el glutamato con mucho menos» |
+| 8 | 48.5 | 53.0 | 02_apuntando_camara | `arriba-der` | «sabe tan profundo» |
+| 9 | 53.7 | 57.8 | 12_perfil_serio | `arriba-der` | «esperaba tu agua fría y tu fuego» |
+| — | 57.9 | 61.4 | 13_senalando_arriba | CierreMarca | cierre |
 
-Plan: 9 apariciones · **≈ 30.2 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas · grande en el re-gancho.
+Apariciones 9 · **34.6 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (abiertas el 5 nov 2026; las frases textuales van aquí y se revisan en `verificacion.md`)
 
@@ -69,7 +70,7 @@ Plan: 9 apariciones · **≈ 30.2 s** en pantalla (+ cierre 3.5 s) · 8 poses di
    > "The umami taste receptor is a heteromeric complex of 2 class C G-protein-coupled receptors, T1R1 and T1R3."
    > "We propose a cooperative ligand-binding model involving the Venus flytrap domain of T1R1"
    > "L-glutamate binds close to the hinge region" · "5′ ribonucleotides bind to an adjacent site close to the opening" · "to further stabilize the closed conformation"
-   > "In human taste tests, 200 μM of IMP, which does not elicit any umami taste by itself, can increase one's umami taste sensitivity to glutamate by 15-fold." (cita a Li et al. 2002, PNAS 99: 4692–4696)
+   > "In human taste tests, 200 μM of IMP, which does not elicit any umami taste by itself, …" (de esa frase solo se usa «pizca que sola no sabe»; el «15-fold» NO se usa: no está escrito en Li 2002)
    > Afiliación: "Senomyx, Incorporated, 4767 Nexus Centre Drive, San Diego, CA 92121"
 3. Li, X., Staszewski, L., Xu, H., Durick, K., Zoller, M. y Adler, E. (2002). Human receptors for sweet and umami taste. *PNAS* 99(7): 4692–4696. https://doi.org/10.1073/pnas.072090199
    > "human T1R1/T1R3 responds to the umami taste stimulus l-glutamate, and this response is enhanced by 5′-ribonucleotides"
@@ -77,6 +78,6 @@ Plan: 9 apariciones · **≈ 30.2 s** en pantalla (+ cierre 3.5 s) · 8 poses di
    > "The score for intensity of umami in cooked dried Shiitake was correlated with the concentrations of 5'-GMP and glutamic acid."
 5. Yamaguchi, S. (1967). The synergistic taste effect of monosodium glutamate and disodium 5′-inosinate. *Journal of Food Science* 32(4): 473–478. https://doi.org/10.1111/j.1365-2621.1967.tb09715.x (contexto de la sinergia; no se usa ninguna cifra suya porque el texto completo no se pudo abrir).
 
-**Cifras que NO se usan (no verificables en la fuente original):** "8 veces", "7–8 veces" y "30 veces" para la sinergia (blogs y resúmenes sin fuente primaria abierta).
+**Cifras que NO se usan (no verificables en la fuente original):** "15 veces", "8 veces", "7–8 veces" y "30 veces" para la sinergia (blogs y resúmenes sin fuente primaria abierta).
 
 El dibujo es esquemático.
