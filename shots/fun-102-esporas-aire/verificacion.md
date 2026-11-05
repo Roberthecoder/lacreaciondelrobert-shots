@@ -1,4 +1,4 @@
-# Verificación · Shot Fungi Mati #102 · En cada respiración te metes esporas que nunca vas a ver
+# Verificación · Shot Fungi Mati #102 · Hoy vas a respirar miles de esporas que nunca vas a ver
 
 5 nov 2026. **Verificación independiente (subagente que no escribió el guion).** Cada fuente se descargó y se leyó en texto
 completo (Europe PMC fullTextXML, PDF del editor o la página original), no el resumen del buscador; las frases textuales se
@@ -55,4 +55,44 @@ Fuentes abiertas:
 
 Los cambios de voz suman unos pocos caracteres; revisar que la duración siga en 61–62 s. Después de corregir, volver a verificar las filas 1, 4, 5b, 6b, 11b, 13b, 16 y 18.
 
-VEREDICTO: CORREGIR
+
+## Segunda vuelta (5 nov 2026): correcciones aplicadas por el guionista
+
+Fuente nueva abierta (PDF descargado):
+- **[EFH]** US EPA (2011). *Exposure Factors Handbook*, Chapter 6: Inhalation Rates. https://www.epa.gov/sites/production/files/2015-09/documents/efh-chapter06.pdf
+
+| # | Afirmación (voz o pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Gancho (voz idx0): «Hoy vas a respirar miles de esporas de hongos que tus ojos nunca van a ver.» (subtítulo «Hoy vas a respirar *miles de esporas.*») | ✅ corregido | [EFH], [HER], [ELB] | [EFH]: "Mean values for adults range from 12.2 m3/day (81 years and older) to 16.0 m3/day (31 to <51 years)." [HER]: "We recorded the lowest ASIn (68,130 spores/m 3 ) air during 2019 and the highest ASIn in 2016 (191,448)" (media de los 6 años: "ASIn = 133,218"). Cuenta: 68,130 ÷ 365 ≈ 187 y 191,448 ÷ 365 ≈ 525 esporas/m³ por día; 187 × 12.2 ≈ 2,280 y 525 × 16.0 ≈ 8,400 esporas al día. Con aire continental típico ("on the order of 10^4 m−3", [ELB]) son decenas de miles. Hasta en el caso más bajo son miles. | 2011 / 2016–2023 / 2007 |
+| R2 | idx2: «Ese día, con medio litro por respiración, eran unas cuatro.» (número «≈ 4 · por respiración · ese día pico»; chip «0.5 L × 8,445 / m³ ≈ 4») | ✅ corregido | [TV], [HER] | "around 500 mL in an average healthy adult male"; "highest peak in May of 2023 with 8445 spores/m 3". 8,445 × 0.0005 = 4.2. Ya queda dicho que es el día del pico. | 2023 |
+| R3 | idx11: «Tranquilo: en una persona sana, el sistema inmune suele eliminarlas; con alergia, pueden dar rinitis o asma.» (chip «persona sana: normalmente las elimina», etiqueta «estudiado en *Aspergillus fumigatus*»; subtítulo «Tu sistema inmune *suele eliminarlas.*») | ✅ corregido | [LAT], [ABEL] | [LAT]: "Humans and animals constantly inhale numerous conidia of this fungus. The conidia are normally eliminated in the immunocompetent host by innate immune mechanisms". "Suele" = "normally", y la pantalla dice de qué hongo es el dato. Alergia: ver fila 17. | 1999 / 2023 |
+| R4 | idx12 (cierre): «Así que hoy te vas a meter miles: esporas que nunca vas a ver.» (chip «hoy: miles de esporas»; letra chica «≈ 15 m³ de aire al día (adulto, EPA)») | ✅ corregido | [EFH], [HER] | Igual que R1. 15 m³/día está dentro del rango de medias de adultos de la EPA (12.2–16.0). | 2011 |
+| R5 | Pantalla, anillo (antes fila 13b): la gota se aplasta y se extiende de lado, el aire empujado hacia afuera se enrolla en dos remolinos (corte de un anillo) que sube con las esporas | ✅ corregido | [KIM] | "The airflow was induced by the spreading drop … Then, a vortex ring was shed as a boundary layer keeps propagating laterally, after the spreading drop reached its maximum radius"; "airborne spores are swirled up by an air vortex". Revisado en `esporas-aire.jsx` (líneas 110–124) y `guion.md`. | 2019 |
+| R6 | Pantalla: chip «44 % de las esporas · Hermosillo 2016–19 y 2022–23» (antes fila 5b) | ✅ corregido | [HER] | "daily for 2016–2019 and 2022–2023"; "Cladosporium (43.70% ASIn)". | 2025 |
+| R7 | Pantalla: «≈ 2–6 µm de ancho» (antes fila 6b) | ✅ corregido | [BEN] | *C. cladosporioides* "conidia usually 2-5 μm wide"; *C. herbarum* "small terminal conidia 4-10 × 3-5(-6) μm". | 2012 |
+| R8 | Pantalla: «menos de 10 µm: algunas llegan hondo» (antes fila 11b) | ✅ corregido | [EPA] | "Some particles less than 10 micrometers in diameter can get deep into your lungs" | 2026 |
+| R9 | Resto de chips revisados en `esporas-aire.jsx`: tarjetas 2023 Hermosillo / *J. Fungi* 2025 y 2019 Cornell + Virginia Tech / *PNAS*; «viento seco · ≈ 1 m/s basta»; «miles de esporas · una sola gota»; «dispersión a larga distancia»; «50,000,000 toneladas de esporas al año»; «estimación global · Elbert y col., 2007»; «con alergia: rinitis o asma»; subtítulos idx0–12 | ✅ | [HER], [KIM], [ELB], [BH], [ABEL] | Ver filas 3, 10, 12–15 y 17. Los subtítulos dicen lo mismo que la voz. | 2002–2025 |
+
+### publicacion.md (revisado entero)
+
+| # | Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|---|
+| P1 | Medición diaria 2016–2019 y 2022–2023, trampa Burkard, Universidad Estatal de Sonora, publicado en 2025; pico de 8,445/m³ en mayo de 2023; unas 4 por respiración ese día | ✅ | [HER], [TV] | "a Burkard spore trap to monitor airborne fungal spores daily for 2016–2019 and 2022–2023"; "8445 spores/m 3". | 2023 (publ. 2025) |
+| P2 | «un día promedio de Hermosillo (unas 190 a 520 esporas por metro cúbico)»; «un adulto respira de 12 a 16 (12.2 a 16.0) metros cúbicos al día»; «miles al día» | ✅ | [HER], [EFH] | Igual que R1. | 2011 / 2016–2023 |
+| P3 | «En el aire de los continentes, la mayoría de los estudios reportan del orden de 10,000 esporas por metro cúbico» | ✅ | [ELB] | "Most studies of total fungal spores in continental air around the world have reported concentrations on the order of 10^4 m−3" | 2007 |
+| P4 | *Cladosporium* 44 %, luego ascosporas, carbones y *Alternaria* (12 %); 2–6 micras de ancho; pelo ≈ 70; cadenas ramificadas; el viento las esparce lejos | ✅ | [HER], [BEN], [EPA] | Ver filas 5, 6, 6b y 9. | 2012–2025 |
+| P5 | «muchas esporas se sueltan en seco, con calor, aire seco y viento de apenas 1 m/s» | ✅ | [ELB] | "DDS are mostly emitted when dry, warm, and windy conditions prevail; the wind speed required for the discharge of DDS is typically on the order of ∼1 m s−1" | 2007 |
+| P6 | YouTube: «Las partículas de menos de 10 micras pueden llegar…» → el verificador lo cambió a «**Algunas** partículas de menos de 10 micras…» | ✅ corregido | [EPA] | "Some particles less than 10 micrometers in diameter can get deep into your lungs" | 2026 |
+| P7 | Kim y col. 2019 (Cornell y Virginia Tech, *PNAS*): cámara rápida, gotas sobre trigo con roya (*Puccinia triticina*); la gota se aplasta, empuja el aire, que se enrolla en un anillo (vórtice, como aro de humo) y levanta miles de esporas | ✅ | [KIM], [COR] | Ver filas 12, 13 y R5. | 2019 |
+| P8 | YouTube: «por encima de la capa de aire quieto de la hoja» → el verificador lo cambió a «la capa de aire lento pegada a la hoja»; LinkedIn «más allá de la capa límite de la hoja, la puerta a su transporte a larga distancia» | ✅ corregido | [KIM] | "the spores transported by the air vortex can reach beyond the laminar boundary layer of leaves, which would enable the long-distance transport of plant pathogens through the atmosphere." | 2019 |
+| P9 | Esporas entre continentes | ✅ | [BH] | "Long-distance dispersal of fungal spores by the wind can spread plant diseases across and even between continents" | 2002 |
+| P10 | ~50 millones de toneladas (50 Tg) al año, Elbert y col. 2007, Instituto Max Planck de Química; LinkedIn «comparable con otras fuentes importantes de aerosol orgánico» | ✅ | [ELB] | "∼50 Tg yr−1"; "Max Planck Institute for Chemistry"; "of similar magnitude as current estimates of the rates of emission and formation of other types of continental air particulate matter (primary and secondary organic aerosols)" | 2007 |
+| P11 | YouTube: «(lo mejor estudiado es *Aspergillus fumigatus*…)» → el verificador lo cambió a «(así lo describe una revisión sobre *Aspergillus fumigatus*, un moho cuyas esporas respiramos todo el tiempo)»; «normalmente las elimina» | ✅ corregido | [LAT] | "Humans and animals constantly inhale numerous conidia of this fungus. The conidia are normally eliminated in the immunocompetent host". (El superlativo "lo mejor estudiado" no venía en la fuente.) | 1999 |
+| P12 | *Alternaria* y *Cladosporium*, de los más ligados a rinitis y asma alérgica | ✅ | [ABEL] | "The genera Alternaria and Cladosporium are the most frequently associated with allergic respiratory diseases"; "allergic rhinitis … allergic asthma" | 2023 |
+| P13 | LinkedIn: «el primer calendario de esporas de Hermosillo» | ✅ | [HER] | "This research represents the first fungal spore concentration data in the atmosphere of Hermosillo"; "the first fungal spore calendar for an urban area in the Sonoran Desert" | 2025 |
+| P14 | Fuentes del comentario fijado y de YouTube: autores, revistas, volúmenes, páginas y enlaces | ✅ | todas | Coinciden con los registros de Europe PMC y del editor. | — |
+
+Resumen: las correcciones de voz (idx0, 2, 11 y 12), los chips y la animación del anillo quedan ✅. En `publicacion.md` el
+verificador corrigió 3 frases (P6, P8, P11), que no tocan la voz. Todo lo que se dice o se ve en el shot queda ✅.
+
+VEREDICTO: APROBADO
