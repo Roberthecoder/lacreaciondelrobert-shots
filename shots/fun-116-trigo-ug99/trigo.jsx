@@ -89,13 +89,13 @@ function Pustula({ T, x, y, len = 160, w = 54, p = 0 }) {
 function Uredospora({ x, y, s = 1, rot = 0, pedicelo = true, o = 1 }) {
   const rx = 70, ry = 46;
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={o}>
-    {pedicelo && <path d={`M 0 ${ry - 4} Q 4 ${ry + 40} 0 ${ry + 90}`} stroke={KC.ink} strokeWidth={16} fill="none" strokeLinecap="round" />}
-    {pedicelo && <path d={`M 0 ${ry - 4} Q 4 ${ry + 40} 0 ${ry + 90}`} stroke={TG.hialino} strokeWidth={9} fill="none" strokeLinecap="round" />}
+    {pedicelo && <path d={`M 0 ${rx - 4} Q 4 ${rx + 40} 0 ${rx + 100}`} stroke={KC.ink} strokeWidth={12} fill="none" strokeLinecap="round" />}
+    {pedicelo && <path d={`M 0 ${rx - 4} Q 4 ${rx + 40} 0 ${rx + 100}`} stroke={TG.hialino} strokeWidth={6} fill="none" strokeLinecap="round" />}
     {Array.from({ length: 34 }, (_, i) => { const a = (i / 34) * Math.PI * 2; const c = Math.cos(a), sn = Math.sin(a);
-      return <line key={i} x1={c * rx} y1={sn * ry} x2={c * (rx + 7)} y2={sn * (ry + 7)} stroke="#f0b48a" strokeWidth={2.5} strokeLinecap="round" />; })}
-    <ellipse rx={ry} ry={rx} fill={TG.ladrillo} stroke={KC.ink} strokeWidth={5} transform="rotate(90)" />
-    <ellipse cx={-18} cy={-14} rx={26} ry={12} fill="#e89a6a" opacity=".55" transform="rotate(-20 -18 -14)" />
-    {Array.from({ length: 22 }, (_, i) => <circle key={i} cx={Math.cos(i * 2.4) * (rx - 14) * ((i % 5) / 5 + 0.15)} cy={Math.sin(i * 2.4) * (ry - 10) * ((i % 5) / 5 + 0.15)} r={2.6} fill="#7a2a12" opacity=".7" />)}
+      return <line key={i} x1={c * ry} y1={sn * rx} x2={c * (ry + 7)} y2={sn * (rx + 7)} stroke="#f0b48a" strokeWidth={2.5} strokeLinecap="round" />; })}
+    <ellipse rx={ry} ry={rx} fill={TG.ladrillo} stroke={KC.ink} strokeWidth={5} />
+    <ellipse cx={-14} cy={-22} rx={11} ry={24} fill="#e89a6a" opacity=".55" transform="rotate(12 -14 -22)" />
+    {Array.from({ length: 22 }, (_, i) => <circle key={i} cx={Math.cos(i * 2.4) * (ry - 10) * ((i % 5) / 5 + 0.15)} cy={Math.sin(i * 2.4) * (rx - 14) * ((i % 5) / 5 + 0.15)} r={2.6} fill="#7a2a12" opacity=".7" />)}
   </g>;
 }
 // Teliospora: dos células, oscura, pared gruesa y ápice redondeado, con pedicelo.
@@ -225,6 +225,16 @@ function LupaSimple({ x, y, r = 80 }) {
     <line x1={r * 0.7} y1={r * 0.7} x2={r * 1.6} y2={r * 1.6} stroke={KC.ink} strokeWidth={22} strokeLinecap="round" />
   </g>;
 }
+// Rótulo con fondo de papel (se lee sobre el trigal): nombre común + científico en cursiva. der = alineado a la derecha en x.
+function Rotulo({ T, at, until, x, y, texto, sub, der = false }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube');
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:42, opacity:e.o, transform:`translate(${der ? '-100%' : '0'}, ${e.y * 0.3 - 50}%)`, textAlign: der ? 'right' : 'left',
+    background:'rgba(255,251,236,.93)', border:`4px solid ${KC.ink}`, borderRadius:16, padding:'8px 18px', boxShadow:'6px 6px 0 rgba(0,0,0,.35)' }}>
+    <div style={{ font:`900 36px/1.1 ${KF.texto}`, color:KC.ink, whiteSpace:'nowrap' }}>{texto}</div>
+    {sub && <div style={{ font:`italic 700 27px/1.25 ${KF.mono}`, color:'#4a3f36', whiteSpace:'nowrap' }}>{sub}</div>}
+  </div>;
+}
 // Texto grande con contorno (para "Ug99").
 function TextoGrande({ T, at, until, texto, x, y, tam = 170, color = KC.red }) {
   if (!kvisible(T, at, until)) return null;
@@ -240,7 +250,7 @@ const CICLO = [
   { n:'teliosporas', d:'negras, de 2 células', d2:'pasan el invierno', ang:-18, lab:[0, 1] },
   { n:'basidiosporas', d:'infectan el agracejo', ang:54, lab:[1, 0] },
   { n:'picniosporas', d:'hoja: cara de arriba', ang:126, lab:[-1, 0] },
-  { n:'ecidiosporas', d:'cara de abajo, en tacitas', d2:'→ vuelven al trigo', ang:198, lab:[0, -1] },
+  { n:'ecidiosporas', d:'cara de abajo, en tacitas', d2:'→ vuelven al trigo', ang:198, lab:[0, 1] },
 ];
 const cicloXY = (ang) => [CICLO_C[0] + Math.cos(ang * Math.PI / 180) * CICLO_R, CICLO_C[1] + Math.sin(ang * Math.PI / 180) * CICLO_R];
 const ARB2 = Array.from({ length: 12 }, (_, i) => [130 + (i % 6) * 165, i < 6 ? 830 : 960]);
@@ -250,7 +260,7 @@ function TrigoShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, A: CUES.Agracejo, Pu: CUES.Pustula, E: CUES.Esporas, Ci: CUES.Ciclo, Ca: CUES.Campana, P: CUES.Pregunta, U: CUES.Uganda, S: CUES.Sr31, B: CUES.Borlaug, N: CUES.Nucleo, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const PUST = [[520, 520, 190, 0.2], [590, 700, 150, 0.7], [500, 880, 230, 1.1], [600, 1060, 170, 1.5], [540, 400, 120, 1.9]];
+  const PUST = [[430, 520, 190, 0.2], [500, 700, 150, 0.7], [410, 880, 230, 1.1], [510, 1060, 170, 1.5], [450, 400, 120, 1.9]];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0–1 · gancho y nombres: el agracejo junto al trigal; tu pan y tu tortilla se desvanecen */}
@@ -259,10 +269,10 @@ function TrigoShot() {
         {fsvg(<>
           <Campo T={T} roya={kprog(T, K.A + 0.6, K.A + 2.6)} />
           <g transform={`translate(0 ${(1 - kprog(T, K.G, K.G + 0.6, kEase.sale)) * 30})`}><Agracejo T={T} x={260} y={1170} s={0.78} viento={1 + kprog(T, K.G, K.G + 0.8) * 1.5} /></g>
-          <rect x={0} y={1160} width={KW} height={120} fill="#c9a24a" />
+          <rect x={0} y={1160} width={KW} height={760} fill="#c9a24a" />
           <line x1={0} y1={1160} x2={KW} y2={1160} stroke={KC.ink} strokeWidth={6} />
           {T < K.A + 0.4 && <g opacity={kprog(T, K.G + 0.2, K.G + 0.6) * (1 - kprog(T, K.A, K.A + 0.4))}>
-            <PanTortilla x={620} y={1175} s={0.9 * klerp(0.6, 1, kprog(T, K.G + 0.2, K.G + 0.7, kEase.rebote))} fantasma={kprog(T, K.G + 3.4, K.G + 4.4)} />
+            <PanTortilla x={600} y={1138} s={0.9 * klerp(0.6, 1, kprog(T, K.G + 0.2, K.G + 0.7, kEase.rebote))} fantasma={kprog(T, K.G + 3.4, K.G + 4.4)} />
           </g>}
         </>)}
       </Escena>
@@ -270,9 +280,9 @@ function TrigoShot() {
       <Escena T={T} a={K.Pu} b={K.E} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={420} y={250} width={240} height={1100} rx={20} fill="#8cc75a" stroke={KC.ink} strokeWidth={8} />
-          {[455, 500, 545, 590, 630].map((xx, i) => <line key={i} x1={xx} y1={262} x2={xx} y2={1340} stroke="#6fae44" strokeWidth={5} />)}
-          <rect x={412} y={760} width={256} height={46} rx={14} fill="#a8d873" stroke={KC.ink} strokeWidth={6} />
+          <rect x={330} y={250} width={240} height={1100} rx={20} fill="#8cc75a" stroke={KC.ink} strokeWidth={8} />
+          {[365, 410, 455, 500, 540].map((xx, i) => <line key={i} x1={xx} y1={262} x2={xx} y2={1340} stroke="#6fae44" strokeWidth={5} />)}
+          <rect x={322} y={760} width={256} height={46} rx={14} fill="#a8d873" stroke={KC.ink} strokeWidth={6} />
           {PUST.map(([px, py, len, d], i) => <Pustula key={i} T={T} x={px} y={py} len={len} w={58} p={kprog(T, K.Pu + d * 0.55, K.Pu + d * 0.55 + 1.3)} />)}
           {PUST.map(([px, py, len, d], i) => { const t0 = K.Pu + d * 0.55 + 1.1; if (T < t0) return null; return Array.from({ length: 7 }, (_, k) => { const u = kprog(T, t0 + k * 0.08, t0 + k * 0.08 + 1.6);
             if (u <= 0 || u >= 1) return null; const ang = (k / 7) * Math.PI - Math.PI / 2 + (i % 2 ? 0.3 : -0.3);
@@ -285,8 +295,8 @@ function TrigoShot() {
         <Ambiente T={T} n={20} />
         {fsvg(<>
           <path d="M 0 1130 Q 200 1080 360 1120 L 400 1060 L 440 1120 Q 700 1080 1080 1130 L 1080 1300 L 0 1300 Z" fill="#3c6b2a" stroke="#d9f0b4" strokeWidth={6} />
-          {[[200, 940, -12], [360, 900, 6], [520, 950, -4], [680, 905, 10], [840, 945, -8], [280, 760, 4], [600, 760, -10], [440, 640, 8]].map(([x0, y0, r], i) => {
-            const vuela = kprog(T, K.E + 2.0 + i * 0.12, K.E + 3.6 + i * 0.12, kEase.suave);
+          {[[200, 960, -8], [360, 925, 5], [520, 970, -3], [680, 930, 7], [840, 965, -6], [280, 790, 4], [600, 785, -6], [440, 760, 6]].map(([x0, y0, r], i) => {
+            const vuela = kprog(T, K.E + 1.9 + i * 0.15, K.E + 3.9 + i * 0.15, kEase.suave);
             const xx = x0 + vuela * (700 + i * 40), yy = y0 - vuela * (420 + (i % 3) * 120);
             return <Uredospora key={i} x={xx} y={yy} s={0.9} rot={r + vuela * 90} pedicelo={vuela < 0.05} o={1 - kprog(vuela, 0.8, 1)} />; })}
           {T > K.E + 1.9 && [0, 1, 2, 3].map((k) => { const u = ((T - K.E - 1.9) * 0.9 + k * 0.25) % 1; return <path key={k} d={`M ${-100 + u * 1300} ${560 + k * 120} q 90 -30 180 0 t 180 0`} stroke="rgba(180,220,255,.55)" strokeWidth={6} fill="none" strokeLinecap="round" opacity={Math.sin(u * Math.PI)} />; })}
@@ -341,7 +351,7 @@ function TrigoShot() {
         <FondoLunares color={KC.pink} />
         {fsvg(<>
           <Agracejo T={T} x={250} y={1200} s={0.62} seed={9} />
-          <rect x={0} y={1195} width={KW} height={120} fill="#c9a24a" /><line x1={0} y1={1195} x2={KW} y2={1195} stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={1195} width={KW} height={760} fill="#c9a24a" /><line x1={0} y1={1195} x2={KW} y2={1195} stroke={KC.ink} strokeWidth={6} />
           <Interrogacion T={T} x={250} y={640} tam={340} />
           {Array.from({ length: 6 }, (_, k) => { const u = ((T - K.P) * 0.45 + k / 6) % 1; return <Uredospora key={k} x={-80 + u * 1250} y={420 + (k % 3) * 40 + Math.sin(u * 8 + k) * 20} s={0.32} rot={u * 300} pedicelo={false} />; })}
         </>)}
@@ -404,28 +414,26 @@ function TrigoShot() {
           <Campo T={T} />
           <Anemometro T={T} x={560} y={1090} h={420 * kprog(T, K.C + 0.4, K.C + 1.1, kEase.sale)} />
           <Agracejo T={T} x={260} y={1170} s={0.78} />
-          <rect x={0} y={1160} width={KW} height={120} fill="#c9a24a" />
+          <rect x={0} y={1160} width={KW} height={760} fill="#c9a24a" />
           <line x1={0} y1={1160} x2={KW} y2={1160} stroke={KC.ink} strokeWidth={6} />
           <g opacity={kprog(T, K.C + 1.3, K.C + 1.7)} transform={`translate(${klerp(1150, 900, kprog(T, K.C + 1.3, K.C + 2.0, kEase.sale))} 760)`}><LupaSimple x={0} y={0} r={74} /></g>
-          <g opacity={kprog(T, K.C + 4.0, K.C + 4.4)}><PanTortilla x={620} y={1175} s={0.9 * klerp(0.6, 1, kprog(T, K.C + 4.0, K.C + 4.5, kEase.rebote))} /></g>
+          <g opacity={kprog(T, K.C + 4.0, K.C + 4.4)}><PanTortilla x={600} y={1138} s={0.9 * klerp(0.6, 1, kprog(T, K.C + 4.0, K.C + 4.5, kEase.rebote))} /></g>
         </>)}
       </Escena>
 
       {/* ---------- textos ---------- */}
       <Chip T={T} at={K.G + 0.5} until={K.A - 0.3} texto="¿solo de adorno?" x={300} y={420} tam={40} borde={KC.red} />
-      <Etq T={T} at={K.A + 0.1} until={K.Pu - 0.3} x={60} y={440} texto="agracejo" tam={38} color={KC.ink} />
-      <Etq T={T} at={K.A + 0.4} until={K.Pu - 0.3} x={60} y={492} texto="Berberis vulgaris" it tam={34} color={KC.ink} />
-      <Etq T={T} at={K.A + 1.0} until={K.Pu - 0.3} x={1040} y={500} lado="izq" texto="roya del tallo del trigo" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.A + 1.3} until={K.Pu - 0.3} x={1040} y={548} lado="izq" texto="Puccinia graminis f. sp. tritici" it tam={27} color={KC.ink} />
-      <Etq T={T} at={K.Pu + 1.4} until={K.E - 0.3} x={668} y={880} texto="pústula" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Pu + 1.9} until={K.E - 0.3} x={668} y={1060} texto="la piel del tallo, rota" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Pu + 2.4} until={K.E - 0.3} x={412} y={700} lado="izq" texto="polvo color ladrillo" tam={28} color={KC.ink} />
+      <Rotulo T={T} at={K.A + 0.1} until={K.Pu - 0.3} x={60} y={450} texto="agracejo" sub="Berberis vulgaris" />
+      <Rotulo T={T} at={K.A + 1.0} until={K.Pu - 0.3} x={1040} y={640} der texto="roya del tallo del trigo" sub="Puccinia graminis f. sp. tritici" />
+      <Etq T={T} at={K.Pu + 1.4} until={K.E - 0.3} x={578} y={700} texto="pústula" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Pu + 1.9} until={K.E - 0.3} x={578} y={880} texto="la piel del tallo, rota" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Pu + 2.4} until={K.E - 0.3} x={578} y={1060} texto="polvo color ladrillo" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Pu + 0.3} until={K.E - 0.3} texto="8–10 días después de infectar" x={380} y={1150} tam={32} borde={TG.ladrillo} />
       <Chip T={T} at={K.E + 0.1} until={K.Ci - 0.3} texto="AL MICROSCOPIO · UREDOSPORAS" x={540} y={410} tam={32} borde={KC.cyan} mono />
       <Etq T={T} at={K.E + 0.8} until={K.E + 2.2} x={760} y={760} texto="espinitas" tam={30} />
       <Etq T={T} at={K.E + 1.2} until={K.E + 2.2} x={290} y={1050} lado="izq" texto="pedicelo" tam={28} />
       <Etq T={T} at={K.E + 2.4} until={K.Ci - 0.3} x={60} y={1050} texto="el viento se las lleva" tam={30} />
-      <Chip T={T} at={K.Ci + 0.1} until={K.Ca - 0.3} texto="5 tipos de esporas · 2 plantas" x={540} y={410} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Ci + 0.1} until={K.Ca - 0.3} texto="5 tipos de esporas · 2 plantas" x={400} y={410} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Ci + 3.4} until={K.Ca - 0.3} texto="razas nuevas" x={540} y={1050} tam={30} borde={KC.pink} />
       <TarjetaEstudio T={T} at={K.Ca + 0.2} until={K.P - 0.3} anio="1918" quien="EE. UU. contra el agracejo" revista="programa hasta 1980 · Plant Dis., 2005" x={370} y={540} />
       <NumeroGigante T={T} at={K.Ca + 1.3} until={K.P - 0.3} valor={500} dur={2.6} prefijo="+" sufijo=" millones" etiqueta="de agracejos destruidos" x={540} y={1105} tam={110} color={KC.yellow} />

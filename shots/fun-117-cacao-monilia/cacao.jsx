@@ -23,7 +23,7 @@ function Mazorca({ x, y, L = 420, W = 210, rot = 0, color = 'amarillo', mancha =
   const d = mzPath(L, W, gib);
   const g = krng(seed);
   const manchas = [[0, 0, 1], [0.35, -0.25, 0.7], [-0.3, 0.3, 0.75], [0.2, 0.45, 0.6], [-0.4, -0.35, 0.55]];
-  const mx = mpos[0] * W, my = -L / 2 + mpos[1] * L, R = L * 0.62;
+  const mx = mpos[0] * W, my = -L / 2 + mpos[1] * L, R = L * 0.5;
   const puntos = Array.from({ length: 70 }, () => [g() * 2 - 1, g() * 2 - 1, g()]).filter(([a, b]) => a * a + b * b < 1);
   return <g transform={`translate(${x} ${y}) rotate(${rot})`}>
     <rect x={-13} y={-L / 2 - 46} width={26} height={60} rx={10} fill={CC.verde2} stroke={KC.ink} strokeWidth={6} />
@@ -31,6 +31,8 @@ function Mazorca({ x, y, L = 420, W = 210, rot = 0, color = 'amarillo', mancha =
     <path d={d} fill={c1} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <g clipPath={`url(#${id})`}>
       <path d={`M ${-W * 0.28} ${-L * 0.38} Q ${-W * 0.36} 0 ${-W * 0.16} ${L * 0.38}`} stroke="rgba(255,255,255,.35)" strokeWidth={W * 0.12} fill="none" strokeLinecap="round" />
+      {[-0.62, -0.3, 0.02, 0.34, 0.66].map((f, k) => { const pts = []; for (let i = 2; i <= 40; i++) { const t = i / 42; pts.push(`${(f * mzHW(t, W)).toFixed(1)} ${(-L / 2 + t * L).toFixed(1)}`); }
+        return <path key={k} d={'M ' + pts.join(' L ')} stroke={c2} strokeWidth={6} fill="none" opacity={0.75} strokeLinecap="round" />; })}
       {mancha > 0 && <g transform={`translate(${mx} ${my})`}>
         {manchas.map(([a, b, k], i) => <circle key={i} cx={a * R * mancha} cy={b * R * mancha} r={R * 0.55 * k * kEase.sale(kclamp(mancha * 1.3 - i * 0.12, 0, 1))} fill={i % 2 ? CC.cafe : CC.cafe2} />)}
       </g>}
@@ -38,12 +40,13 @@ function Mazorca({ x, y, L = 420, W = 210, rot = 0, color = 'amarillo', mancha =
         {manchas.map(([a, b, k], i) => <circle key={i} cx={a * R * 0.9} cy={b * R * 0.9} r={R * 0.5 * k * kEase.sale(kclamp(escarcha * 1.3 - i * 0.12, 0, 1))} fill={CC.crema} />)}
         {puntos.map(([a, b, q], i) => <circle key={'p' + i} cx={a * R * 0.95} cy={b * R * 0.95} r={3 + q * 5} fill={q > 0.5 ? CC.crema2 : '#fffaf0'} opacity={kprog(escarcha, 0.3 + q * 0.4, 0.7 + q * 0.3)} />)}
       </g>}
-      {[-0.62, -0.3, 0.02, 0.34, 0.66].map((f, k) => { const pts = []; for (let i = 2; i <= 40; i++) { const t = i / 42; pts.push(`${(f * mzHW(t, W)).toFixed(1)} ${(-L / 2 + t * L).toFixed(1)}`); }
-        return <path key={k} d={'M ' + pts.join(' L ')} stroke={c2} strokeWidth={6} fill="none" opacity={0.75} strokeLinecap="round" />; })}
     </g>
+    <g clipPath={`url(#${id})`} opacity={0.35 * Math.max(mancha, escarcha)}>{rid2(L, W)}</g>
     <path d={d} fill="none" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
   </g>;
 }
+const rid2 = (L, W) => [-0.62, -0.3, 0.02, 0.34, 0.66].map((f, k) => { const pts = []; for (let i = 2; i <= 40; i++) { const t = i / 42; pts.push(`${(f * mzHW(t, W)).toFixed(1)} ${(-L / 2 + t * L).toFixed(1)}`); }
+  return <path key={k} d={'M ' + pts.join(' L ')} stroke="#8a7a5a" strokeWidth={5} fill="none" strokeLinecap="round" />; });
 
 // Pedúnculo: une el tronco con la punta de arriba de la mazorca (el fruto sale directo del tronco).
 const mzTope = (x, y, L, rot) => [x + (L / 2 + 40) * Math.sin(rot * Math.PI / 180), y - (L / 2 + 40) * Math.cos(rot * Math.PI / 180)];
@@ -77,16 +80,16 @@ function Espora({ x, y, r = 26, elip = 1, o = 1, rot = 0 }) {
 // Felpa al microscopio: tapete de hifas abajo y cadenas de esporas que crecen hacia arriba (las nuevas salen de la base).
 function FelpaMicro({ T, a }) {
   const g = krng(21);
-  const cadenas = Array.from({ length: 9 }, (_, i) => ({ x: 130 + i * 102 + (g() - 0.5) * 30, n: 4 + Math.floor(g() * 7), d: g() * 0.8, inc: (g() - 0.5) * 10 }));
-  const base = 1240;
+  const cadenas = Array.from({ length: 7 }, (_, i) => ({ x: 150 + i * 130 + (g() - 0.5) * 30, n: 4 + Math.floor(g() * 3), d: g() * 0.8, inc: (g() - 0.5) * 10 }));
+  const base = 1070;
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     {Array.from({ length: 16 }, (_, i) => { const y = base + 20 + (i % 4) * 24, x0 = -40 + i * 75;
       return <path key={i} d={`M ${x0} ${y} q 60 ${-20 + (i % 3) * 14} 130 ${-6} t 120 ${8}`} stroke={CC.hifa} strokeWidth={9} fill="none" strokeLinecap="round" opacity={0.85} />; })}
     {cadenas.map((c, i) => { const k = kprog(T, a + 0.1 + c.d, a + 2.2 + c.d); const n = Math.round(c.n * k);
       return <g key={i} transform={`rotate(${c.inc} ${c.x} ${base})`}>
         <line x1={c.x} y1={base} x2={c.x} y2={base - 30} stroke={CC.hifa} strokeWidth={9} strokeLinecap="round" />
-        {Array.from({ length: n }, (_, j) => { const el = (i * 7 + j) % 5 === 0 ? 1.45 : 1; const rr = 24 + ((i + j) % 3) * 3;
-          return <Espora key={j} x={c.x} y={base - 58 - j * 54 - (el > 1 ? 6 : 0)} r={rr} elip={el} />; })}
+        {Array.from({ length: n }, (_, j) => { const el = (i * 7 + j) % 5 === 0 ? 1.45 : 1; const rr = 30 + ((i + j) % 3) * 4;
+          return <Espora key={j} x={c.x} y={base - 70 - j * 70 - (el > 1 ? 8 : 0)} r={rr} elip={el} />; })}
       </g>; })}
   </svg>;
 }
@@ -156,9 +159,9 @@ function CacaoShot() {
         <FondoLunares color={KC.cyan} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <Tronco x={250} T={T} />
-          <Pedunculo x1={290} y1={720} x={470} y={1000} L={440} rot={-8} />
-          <Mazorca x={470} y={1000 + mece(T, 3, 0.3) * 6} L={440} W={230} rot={-8 + mece(T, 2, 0.4) * 2} color="amarillo" mancha={1} escarcha={1} mpos={[0.05, 0.5]} />
-          <NubeViento T={T} x={520} y={980} p={kprog(T, K.G + 0.2, K.G + 5.5)} n={40} seed={4} lejos={420} />
+          <Pedunculo x1={290} y1={660} x={470} y={940} L={440} rot={-8} />
+          <Mazorca x={470} y={940 + mece(T, 3, 0.3) * 6} L={440} W={230} rot={-8 + mece(T, 2, 0.4) * 2} color="amarillo" mancha={1} escarcha={1} mpos={[0.05, 0.5]} />
+          <NubeViento T={T} x={520} y={920} p={kprog(T, K.G + 0.2, K.G + 5.5)} n={40} seed={4} lejos={420} />
           {caen(K.G, K.H - K.G + 0.4)}
         </svg>
       </Escena>
@@ -174,7 +177,7 @@ function CacaoShot() {
           <Mazorca x={730} y={920} L={300} W={150} rot={-10} color="amarillo" seed={6} mancha={kprog(T, K.H + 1.2, K.H + 3.4)} mpos={[0.1, 0.6]} />
           <Mazorca x={370} y={1060} L={240} W={120} rot={8} color="verde" seed={7} />
           {[[360, 780], [730, 920], [370, 1060]].map(([px, py], i) => { const on = kprog(T, K.H + 2.6 + i * 0.2, K.H + 3.0 + i * 0.2, kEase.rebote);
-            return <circle key={i} cx={px} cy={py} r={Math.max(0.01, 165 * on)} fill="none" stroke={KC.red} strokeWidth={9} strokeDasharray="20 12" opacity={on > 0 ? 1 : 0} />; })}
+            return <circle key={i} cx={px} cy={py} r={Math.max(0.01, 140 * on)} fill="none" stroke={KC.red} strokeWidth={9} strokeDasharray="20 12" opacity={on > 0 ? 1 : 0} />; })}
         </svg>
       </Escena>
       {/* 2 · una espora cae en una mazorca joven y se mete */}
@@ -182,8 +185,8 @@ function CacaoShot() {
         <FondoLunares color={KC.lilac} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <Tronco x={150} T={T} hojas={false} ancho={140} />
-          <Pedunculo x1={210} y1={600} x={500} y={930} L={560} rot={-6} />
-          <Mazorca x={500} y={930} L={560} W={290} rot={-6} color="verde" seed={8} gib={kprog(T, K.Es + 1.0, K.Es + 4.0)} />
+          <Pedunculo x1={210} y1={580} x={500} y={890} L={540} rot={-6} />
+          <Mazorca x={500} y={890} L={540} W={290} rot={-6} color="verde" seed={8} gib={kprog(T, K.Es + 1.0, K.Es + 4.0)} />
           {T < K.Es + 0.5 && <g opacity={1 - kprog(T, K.Es + 0.1, K.Es + 0.5)}>
             <Espora x={klerp(860, 640, kprog(T, K.En + 0.2, K.En + 1.3, kEase.sale))} y={klerp(530, 790, kprog(T, K.En + 0.2, K.En + 1.3, kEase.sale))} r={34} />
             <path d={`M 640 810 q -20 ${30 * kprog(T, K.En + 1.4, K.En + 2.4)} ${-50 * kprog(T, K.En + 1.4, K.En + 2.4)} ${70 * kprog(T, K.En + 1.4, K.En + 2.4)}`} stroke={CC.hifa} strokeWidth={10} fill="none" strokeLinecap="round" />
@@ -202,8 +205,8 @@ function CacaoShot() {
         <FondoLunares color={KC.yellow} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <Tronco x={140} T={T} hojas={false} ancho={140} />
-          <Pedunculo x1={200} y1={600} x={500} y={950} L={580} rot={-6} />
-          <Mazorca x={500} y={950} L={580} W={300} rot={-6} color="amarillo" seed={9} mancha={kprog(T, K.M + 0.2, K.M + 3.0)} escarcha={kprog(T, K.Ex + 0.1, K.Ex + 1.7)} mpos={[0.05, 0.55]} />
+          <Pedunculo x1={200} y1={570} x={500} y={900} L={560} rot={-6} />
+          <Mazorca x={500} y={900} L={560} W={290} rot={-6} color="amarillo" seed={9} mancha={kprog(T, K.M + 0.2, K.M + 3.0)} escarcha={kprog(T, K.Ex + 0.1, K.Ex + 1.7)} mpos={[0.05, 0.55]} />
         </svg>
       </Escena>
       {/* 6 · al microscopio: esporas en cadenitas */}
@@ -249,8 +252,6 @@ function CacaoShot() {
           <Tronco x={540} T={T} ancho={120} />
           <Pedunculo x1={500} y1={640} x={350} y={800} L={240} rot={10} />
           <Mazorca x={350} y={800} L={240} W={120} rot={10} color="amarillo" seed={30} />
-          <Mazorca x={330} y={1040} L={180} W={95} rot={8} color="verde" seed={31} />
-          <Pedunculo x1={500} y1={900} x={330} y={1040} L={180} rot={8} />
           {mzSemana < 0.05 && <Pedunculo x1={580} y1={660} x={760} y={850} L={240} rot={-6} />}
           <g transform={`translate(0 ${mzSemana * 900})`} opacity={1 - kprog(T, K.Ma + 1.5, K.Ma + 1.8)}>
             <Mazorca x={760} y={850} L={240} W={120} rot={-6 + mzSemana * 70} color="amarillo" mancha={1} seed={32} mpos={[0, 0.5]} />
@@ -264,18 +265,18 @@ function CacaoShot() {
         <FondoLunares color={KC.cyan} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <Tronco x={250} T={T} />
-          <Pedunculo x1={290} y1={720} x={470} y={1000} L={440} rot={-8} />
-          <Mazorca x={470} y={1000 + mece(T, 3, 0.3) * 6} L={440} W={230} rot={-8 + mece(T, 2, 0.4) * 2} color="amarillo" mancha={1} escarcha={1} mpos={[0.05, 0.5]} />
+          <Pedunculo x1={290} y1={660} x={470} y={940} L={440} rot={-8} />
+          <Mazorca x={470} y={940 + mece(T, 3, 0.3) * 6} L={440} W={230} rot={-8 + mece(T, 2, 0.4) * 2} color="amarillo" mancha={1} escarcha={1} mpos={[0.05, 0.5]} />
           <Viento T={T} x={420} y={800} o={kprog(T, K.C + 0.5, K.C + 1.0)} />
-          <NubeViento T={T} x={540} y={980} p={kprog(T, K.C + 0.4, K.C + 5.0)} n={90} seed={14} lejos={560} />
+          <NubeViento T={T} x={540} y={920} p={kprog(T, K.C + 0.4, K.C + 5.0)} n={90} seed={14} lejos={560} />
           <g opacity={kprog(T, K.C + 2.4, K.C + 2.9)} transform={`translate(0 ${(1 - kprog(T, K.C + 2.4, K.C + 2.9, kEase.sale)) * 60})`}>
-            <Chocolate x={820} y={1180} s={0.8} />
+            <Chocolate x={830} y={960} s={0.8} />
           </g>
         </svg>
       </Escena>
 
       {/* lupa POR DENTRO: el hongo crece mientras la mazorca se ve sana */}
-      <Lupa T={T} at={K.Es + 0.4} until={K.Se - 0.2} x={790} y={930} r={190} fx={560} fy={960} tinte={KC.cyan} etiqueta="POR DENTRO"
+      <Lupa T={T} at={K.Es + 0.4} until={K.Se - 0.2} x={800} y={780} r={180} fx={560} fy={900} tinte={KC.cyan} etiqueta="POR DENTRO"
         interior={(t, r) => <svg width={r * 2} height={r * 2}>
           <rect width={r * 2} height={r * 2} fill="#1c1410" />
           {[[0.3, 0.3], [0.7, 0.35], [0.3, 0.72], [0.7, 0.75], [0.5, 0.52]].map(([u, v], i) => <ellipse key={i} cx={u * r * 2} cy={v * r * 2} rx={r * 0.2} ry={r * 0.26} fill={CC.grano} stroke={CC.grano2} strokeWidth={5} />)}
@@ -285,44 +286,44 @@ function CacaoShot() {
 
       {/* textos: gancho */}
       <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 2.0} until={K.H - 0.3} texto="¿nieve?" x={300} y={480} tam={56} />
-      <Etq T={T} at={K.G + 2.4} until={K.H - 0.3} x={640} y={890} texto="esporas de un hongo" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.G + 2.4} until={K.H - 0.3} x={640} y={840} texto="esporas" tam={34} />
       {/* hongo */}
-      <Etq T={T} at={K.H + 0.4} until={K.En - 0.3} x={60} y={560} texto="moniliasis del cacao" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.8} until={K.En - 0.3} x={60} y={615} texto="Moniliophthora roreri" it tam={34} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.4} until={K.En - 0.3} x={60} y={470} texto="moniliasis del cacao" tam={34} />
+      <Etq T={T} at={K.H + 0.8} until={K.En - 0.3} x={60} y={525} texto="Moniliophthora roreri" it tam={34} />
       <Chip T={T} at={K.H + 2.6} until={K.En - 0.3} texto="solo ataca los frutos" x={540} y={1440} tam={40} borde={KC.red} />
       <Chip T={T} at={K.H + 3.4} until={K.En - 0.3} texto="cacao y parientes cercanos" x={540} y={1530} tam={30} borde={KC.ink} />
       {/* entra */}
-      <Etq T={T} at={K.En + 0.3} until={K.Es - 0.2} x={60} y={560} texto="mazorca joven" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.En + 0.8} until={K.Es - 0.2} x={1030} y={520} lado="izq" texto="espora" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.En + 0.3} until={K.Es - 0.2} x={60} y={560} texto="mazorca joven" tam={34} />
+      <Etq T={T} at={K.En + 0.8} until={K.Es - 0.2} x={1030} y={520} lado="izq" texto="espora" tam={32} />
       <Chip T={T} at={K.En + 0.6} until={K.Es - 0.2} texto="esquemático, sin proporción" x={360} y={1470} tam={24} borde={KC.ink} />
       {/* escondido */}
-      <Chip T={T} at={K.Es + 0.2} until={K.Se - 0.3} texto="por fuera: se ve sana" x={330} y={470} tam={36} borde={KC.leaf} />
-      <Medidor T={T} at={K.Es + 1.2} until={K.Se - 0.3} valor={(t) => kprog(t, K.Es + 1.4, K.Es + 4.2)} etiqueta="sin síntomas" texto={() => 'hasta 3 meses'} x={80} y={1440} ancho={920} color={KC.yellow} />
+      <Chip T={T} at={K.Es + 0.2} until={K.Se - 0.3} texto="por fuera: se ve sana" x={540} y={1450} tam={36} borde={KC.leaf} />
+      <Medidor T={T} at={K.Es + 1.2} until={K.Se - 0.3} valor={(t) => kprog(t, K.Es + 1.4, K.Es + 4.2)} etiqueta="sin síntomas" texto={() => 'hasta 3 meses'} x={80} y={1500} ancho={920} color={KC.yellow} />
       {/* semillas */}
       <Chip T={T} at={K.Se + 0.1} until={K.M - 0.3} texto="POR DENTRO · corte" x={330} y={470} tam={30} mono borde={KC.ink} />
-      <Etq T={T} at={K.Se + 0.4} until={K.M - 0.3} x={640} y={700} texto="semillas = cacao" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Se + 0.4} until={K.M - 0.3} x={640} y={700} texto="semillas = cacao" tam={30} />
       {/* mancha */}
       <Chip T={T} at={K.M + 1.2} until={K.Ex - 0.2} texto="le dicen: «chocolate»" x={360} y={470} tam={40} borde={CC.cafe} />
-      <Etq T={T} at={K.Ex + 0.5} until={K.Ex + 1.6} x={680} y={1000} texto="felpa blanca" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ex + 0.5} until={K.Ex + 1.6} x={680} y={1000} texto="felpa blanca" tam={30} />
       {/* escarcha al microscopio */}
       <Chip T={T} at={K.Ex + 1.9} until={K.Q - 0.3} texto="AL MICROSCOPIO" x={330} y={470} tam={32} mono borde={KC.cyan} />
-      <Etq T={T} at={K.Ex + 2.4} until={K.Q - 0.3} x={60} y={600} texto="esporas en cadena" tam={30} color={CC.espora} />
-      <Etq T={T} at={K.Ex + 2.8} until={K.Q - 0.3} x={60} y={655} texto="pared gruesa · 5–10 µm" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Ex + 2.4} until={K.Q - 0.3} x={60} y={560} texto="esporas en cadena" tam={30} color={CC.espora} />
+      <Etq T={T} at={K.Ex + 2.8} until={K.Q - 0.3} x={60} y={615} texto="pared gruesa · 5–10 µm" tam={26} color={KC.texto} />
       {/* número */}
-      <Etq T={T} at={K.N + 1.4} until={K.St - 0.3} x={60} y={1420} texto="el viento se las lleva" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.4} until={K.St - 0.3} x={60} y={1420} texto="el viento se las lleva" tam={30} />
       {/* estudio */}
       <Chip T={T} at={K.St + 0.3} until={K.St + 2.5} texto="2005 · llega a Chiapas y Tabasco" x={430} y={470} tam={34} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.St + 2.9} until={K.St + 7.1} anio="2011–2012" quien="Tabasco y norte de Chiapas" revista="Torres-de la Cruz et al. · Rev. Fitotec. Mex., 2020" x={540} y={830} />
-      <Chip T={T} at={K.St + 4.4} until={K.St + 7.1} texto="10,621 mazorcas · 6 huertas" x={540} y={1110} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.St + 5.2} until={K.St + 7.1} texto="UJAT y Colegio de Postgraduados" x={540} y={1200} tam={28} borde={KC.ink} />
+      <TarjetaC T={T} at={K.St + 2.9} until={K.St + 7.1} anio="2011–2012" quien="Tabasco y norte de Chiapas" revista="Torres-de la Cruz et al. · Rev. Fitotec. Mex., 2020" y={780} />
+      <Chip T={T} at={K.St + 4.4} until={K.St + 7.1} texto="10,621 mazorcas · 6 huertas" x={540} y={1060} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.St + 5.2} until={K.St + 7.1} texto="UJAT y Colegio de Postgraduados" x={540} y={1450} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.St + 7.4} until={K.Ma - 0.3} texto="huertas casi sin manejo" x={360} y={470} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.St + 0.9} until={K.St + 2.5} x={330} y={880} texto="Chiapas y Tabasco" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.St + 0.9} until={K.St + 2.5} x={330} y={880} texto="Chiapas y Tabasco" tam={30} />
       <NumeroGigante T={T} at={K.St + 7.6} until={K.Ma - 0.3} valor={75.8} dec={1} dur={1.2} sufijo=" %" etiqueta="mazorcas enfermas, en promedio" x={540} y={820} tam={200} color={KC.yellow} />
       <Medidor T={T} at={K.St + 7.8} until={K.Ma - 0.3} valor={(t) => 0.758 * kprog(t, K.St + 7.8, K.St + 9.0, kEase.sale)} etiqueta="enfermas" texto={(v) => (v * 100).toFixed(1) + ' %'} x={80} y={1010} ancho={920} color={CC.cafe} />
       <Chip T={T} at={K.St + 9.2} until={K.Ma - 0.3} texto="según la huerta: de 54.49 a 88.73 %" x={540} y={1450} tam={28} borde={KC.ink} />
       {/* manejo */}
-      <Chip T={T} at={K.Ma + 0.4} until={K.C - 0.3} texto="cortar las enfermas cada semana" x={430} y={470} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.Ma + 2.6} until={K.C - 0.3} texto="antes de que salga la felpa blanca" x={430} y={550} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Ma + 0.4} until={K.C - 0.3} texto="cortar las enfermas cada semana" x={380} y={470} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.Ma + 2.6} until={K.C - 0.3} texto="antes de que salga la felpa" x={340} y={550} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.Ma + 4.4} until={K.C - 0.3} texto="+ variedades más tolerantes" x={540} y={1440} tam={36} borde={KC.leaf} />
       {/* cierre */}
       <Chip T={T} at={K.C + 2.6} until={K.Ou - 0.1} texto="el cacao de tu chocolate" x={700} y={1440} tam={34} borde={CC.cafe} />
@@ -330,10 +331,10 @@ function CacaoShot() {
       {/* barras de escala (aprox.: una mazorca mide de 15 a 25 cm) */}
       <BarraEscalaC T={T} at={K.G} until={K.H} texto="10 cm" largo={200} />
       <BarraEscalaC T={T} at={K.H} until={K.En} texto="10 cm" largo={140} y={1640} />
-      <BarraEscalaC T={T} at={K.En} until={K.Se} texto="5 cm" largo={130} y={1600} />
+      <BarraEscalaC T={T} at={K.En} until={K.Se} texto="5 cm" largo={130} y={1700} />
       <BarraEscalaC T={T} at={K.Se} until={K.M} texto="5 cm" largo={170} />
       <BarraEscalaC T={T} at={K.M} until={K.Ex + 1.8} texto="5 cm" largo={135} />
-      <BarraEscalaC T={T} at={K.Ex + 1.8} until={K.Q} texto="10 µm" largo={65} color={KC.texto} />
+      <BarraEscalaC T={T} at={K.Ex + 1.8} until={K.Q} texto="10 µm" largo={85} color={KC.texto} />
       <BarraEscalaC T={T} at={K.Q} until={K.N} texto="10 cm" largo={225} />
       <BarraEscalaC T={T} at={K.N} until={K.St} texto="10 cm" largo={190} y={1520} />
       <BarraEscalaC T={T} at={K.St} until={K.St + 2.8} texto="mapa esquemático" largo={0} />
@@ -342,22 +343,22 @@ function CacaoShot() {
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No está nevada: *son esporas.*" />
-      <Subtitulo T={T} idx={1} at={K.H + 0.1} until={K.En - 0.1} texto="Moniliophthora roreri: *solo los frutos.*" />
+      <Subtitulo T={T} idx={1} at={K.H + 0.1} until={K.En - 0.1} texto="Solo ataca *los frutos.*" />
       <Subtitulo T={T} idx={2} at={K.En + 0.1} until={K.Es - 0.1} texto="Una espora *se mete.*" />
-      <Subtitulo T={T} idx={3} at={K.Es + 0.1} until={K.Se - 0.1} texto="Se ve sana… *pero el hongo crece dentro.*" />
+      <Subtitulo T={T} idx={3} at={K.Es + 0.1} until={K.Se - 0.1} texto="Se ve sana… *pero crece dentro.*" />
       <Subtitulo T={T} idx={4} at={K.Se + 0.1} until={K.M - 0.1} texto="Las semillas *se pudren.*" />
       <Subtitulo T={T} idx={5} at={K.M + 0.1} until={K.Ex - 0.1} texto="Una mancha café: *«chocolate».*" />
-      <Subtitulo T={T} idx={6} at={K.Ex + 0.1} until={K.Q - 0.1} texto="Esporas en cadenitas: *la nieve.*" />
+      <Subtitulo T={T} idx={6} at={K.Ex + 0.1} until={K.Q - 0.1} texto="Esporas en cadenita: *la nieve.*" />
       <Subtitulo T={T} idx={7} at={K.Q + 0.1} until={K.N - 0.1} texto="¿Cuántas *esporas?*" />
-      <Subtitulo T={T} idx={8} at={K.N + 0.1} until={K.St - 0.1} texto="Millones, *y el viento se las lleva.*" />
-      <Subtitulo T={T} idx={9} at={K.St + 0.1} until={K.Ma - 0.1} texto="Más de 10 mil mazorcas: *más del 75 % enfermas.*" />
+      <Subtitulo T={T} idx={8} at={K.N + 0.1} until={K.St - 0.1} texto="Millones *al viento.*" />
+      <Subtitulo T={T} idx={9} at={K.St + 0.1} until={K.Ma - 0.1} texto="*Más del 75 %* se enfermaron." />
       <Subtitulo T={T} idx={10} at={K.Ma + 0.1} until={K.C - 0.1} texto="Cortarlas *cada semana.*" />
       <Subtitulo T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Está sembrando *el hongo.*" />
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 4.3, 'avatar_11_sorprendido', 'gancho'],
         [K.H + 0.6, K.H + 3.8, 'avatar_13_senalando_arriba', 'arriba-der'],
-        [K.Es + 0.3, K.Es + 3.6, 'avatar_12_perfil_serio', 'arriba-der'],
+        [K.Es + 0.3, K.Es + 3.6, 'avatar_12_perfil_serio', 'izq-alto'],
         [K.M + 0.3, K.M + 3.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [K.Q + 0.05, K.N + 0.2, 'avatar_07_pensativo_puno', 'grande'],
         [K.N + 0.6, K.N + 3.2, 'avatar_04_bajando_lentes', 'arriba-der'],
@@ -371,6 +372,18 @@ function CacaoShot() {
   );
 }
 
+// Tarjeta del estudio (local: centrada y sin cortar el año en dos renglones).
+function TarjetaC({ T, at, until, anio, quien, revista, y = 600 }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'pop');
+  return <div style={{ position:'absolute', left:0, right:0, top:y, zIndex:43, display:'flex', justifyContent:'center', opacity:e.o, transform:`translateY(-50%) scale(${e.s})` }}>
+    <div style={{ background:KC.paper, border:`7px solid ${KC.ink}`, borderRadius:26, padding:'18px 40px 22px', textAlign:'center', boxShadow:`14px 14px 0 ${KC.ink}`, transform:'rotate(-2deg)', whiteSpace:'nowrap' }}>
+      <div style={{ font:`400 140px/1 ${KF.titulo}`, color:KC.gold, WebkitTextStroke:`5px ${KC.ink}` }}>{anio}</div>
+      <div style={{ font:`900 40px ${KF.texto}`, color:KC.ink, marginTop:6 }}>{quien}</div>
+      <div style={{ font:`700 26px ${KF.mono}`, color:'#5a524a', marginTop:8, fontStyle:'italic' }}>{revista}</div>
+    </div>
+  </div>;
+}
 // Barra de escala fija (local; el kit tiene Escala con zoom, aquí basta una fija).
 function BarraEscalaC({ T, texto, largo = 200, x = 60, y = 1680, at = -1, until, color = KC.ink }) {
   if (T < at || (until != null && T > until)) return null;
