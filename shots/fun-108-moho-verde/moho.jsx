@@ -276,10 +276,10 @@ function MohoShot() {
       <Escena T={T} a={K.Es} b={K.Gr}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <MapaAtlantico x={40} y={600} s={1} />
-          {(() => { const r = 26 * kEase.rebote(kprog(T, K.Es + 0.3, K.Es + 0.8)); return r > 0 ? <circle cx={712} cy={745} r={r} fill={KC.red} stroke={KC.ink} strokeWidth={5} /> : null; })()}
+          <MapaAtlantico x={20} y={620} s={0.72} />
+          {(() => { const r = 26 * kEase.rebote(kprog(T, K.Es + 0.3, K.Es + 0.8)); return r > 0 ? <circle cx={504} cy={724} r={r} fill={KC.red} stroke={KC.ink} strokeWidth={5} /> : null; })()}
           {/* sin flecha: Royse 1999 dice «formas parecidas» en Norteamérica, no que viajaran desde Irlanda */}
-          {(() => { const r = 24 * kEase.rebote(kprog(T, K.Es + 2.5, K.Es + 3.0)); return r > 0 ? <circle cx={330} cy={785} r={r} fill={KC.red} stroke={KC.ink} strokeWidth={5} /> : null; })()}
+          {(() => { const r = 24 * kEase.rebote(kprog(T, K.Es + 2.5, K.Es + 3.0)); return r > 0 ? <circle cx={229} cy={753} r={r} fill={KC.red} stroke={KC.ink} strokeWidth={5} /> : null; })()}
         </>)}
       </Escena>
       {/* 10 · un gramo por kilo: la cosecha cae 68–100 % */}
@@ -363,10 +363,10 @@ function MohoShot() {
       <Etq T={T} at={K.V + 1.0} until={K.Es - 0.3} x={600} y={720} texto="estéril" tam={30} color={KC.ink} />
       <Chip T={T} at={K.V + 1.4} until={K.Es - 0.3} texto="vacío biológico" x={400} y={460} tam={36} borde={KC.violet} />
       <Chip T={T} at={K.V + 3.0} until={K.Es - 0.3} texto="estéril ≠ protegido" x={540} y={1110} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.Es + 0.4} until={K.Gr - 0.3} x={680} y={700} texto="Irlanda" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Es + 0.4} until={K.Gr - 0.3} x={480} y={680} texto="Irlanda" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Es + 0.6} until={K.Es + 3.2} texto="forma agresiva · mediados de los 80" x={540} y={480} tam={30} borde={KC.red} />
       <Etq T={T} at={K.Es + 2.6} until={K.Gr - 0.3} x={60} y={560} texto="Norteamérica · inicios de los 90" tam={26} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Es + 3.4} until={K.Gr - 0.3} anio="1994–96" quien="Pensilvania: pérdidas de 30 a 100 %" revista="de las cosechas · Penn State Extension" x={480} y={990} />
+      <TarjetaEstudio T={T} at={K.Es + 3.4} until={K.Gr - 0.3} anio="1994–96" quien="cosechas: pérdidas de 30 a 100 %" revista="Pensilvania · Penn State Extension" x={420} y={1030} />
       <Etq T={T} at={K.Es + 1.0} until={K.Gr - 0.3} x={60} y={1500} texto="en los 90: más de 30 millones de dólares en el mundo" tam={22} color={KC.ink} />
       <Etq T={T} at={K.Es + 1.0} until={K.Gr - 0.3} x={60} y={1540} texto="Royse et al., 1999 · Plant Disease" tam={20} color={KC.ink} />
       <NumeroGigante T={T} at={K.Gr + 2.5} until={K.Gr + 4.6} valor={100} desde={100} dur={0.1} prefijo="−68 a −" sufijo=" %" etiqueta="cosecha de champiñón" x={540} y={560} tam={120} color={KC.red} />
