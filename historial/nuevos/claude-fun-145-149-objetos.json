@@ -1,0 +1,7 @@
+{ "temas": [
+ { "id": "cuero-micelio", "titulo": "Esto no es cuero: es un hongo (cuero de micelio)", "serie": "Shot Fungi Mati", "numero": 145, "estado": "idea", "carpeta": "shots/fun-145-cuero-micelio", "rama": "claude/fun-145-149-objetos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
+ { "id": "violin-hongo", "titulo": "El violín tratado con hongos que compitió contra un Stradivarius", "serie": "Shot Fungi Mati", "numero": 146, "estado": "idea", "carpeta": "shots/fun-146-violin-hongo", "rama": "claude/fun-145-149-objetos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
+ { "id": "madera-espalteada", "titulo": "Esas líneas negras en la madera las dibujó un hongo (madera espalteada, Chlorociboria)", "serie": "Shot Fungi Mati", "numero": 147, "estado": "idea", "carpeta": "shots/fun-147-madera-espalteada", "rama": "claude/fun-145-149-objetos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
+ { "id": "tintes-hongos", "titulo": "Ese suéter rojo lo pintó un hongo (tintes de hongos para lana)", "serie": "Shot Fungi Mati", "numero": 148, "estado": "idea", "carpeta": "shots/fun-148-tintes-hongos", "rama": "claude/fun-145-149-objetos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] },
+ { "id": "yesca-otzi", "titulo": "El encendedor de hace 5,300 años era un hongo (yesca de Fomes fomentarius, Ötzi y los sombreros de hongo)", "serie": "Shot Fungi Mati", "numero": 149, "estado": "idea", "carpeta": "shots/fun-149-yesca-otzi", "rama": "claude/fun-145-149-objetos", "fuentes": [], "fecha": "2026-11-05", "derivados": [] }
+] }
