@@ -1,0 +1,64 @@
+{
+  "dcHtml": "Shot Termitas base narrada.dc.html",
+  "salida": "Shot Termitas narrado.dc.html",
+  "nota": "Shot Fungi Mati #98. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese montículo de tierra no es una casa: es una granja de hongos."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Lo hacen termitas de África y Asia, y cultivan un hongo: Termitomyces."
+    },
+    {
+      "escena": "Forraje",
+      "texto": "Las obreras traen pasto seco, hojas y madera."
+    },
+    {
+      "escena": "Panal",
+      "texto": "Las jóvenes se lo comen y con su popó arman un panal."
+    },
+    {
+      "escena": "Hongo",
+      "texto": "Ahí crece el hongo y deshace la planta."
+    },
+    {
+      "escena": "Bolitas",
+      "texto": "Le salen bolitas de esporas que las jóvenes comen para sembrar más panal."
+    },
+    {
+      "escena": "Viejas",
+      "texto": "Ya maduro, las viejas se comen el panal."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y de dónde saca su hongo una colonia nueva?"
+    },
+    {
+      "escena": "Esporas",
+      "texto": "En la mayoría, las primeras obreras juntan esporas del ambiente; en pocas, lo trae el rey o la reina."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2016 describieron, en Tanzania, nidos fósiles con panal de unos veinticinco millones de años."
+    },
+    {
+      "escena": "Origen",
+      "texto": "Y calcularon que nació en África hace unos treinta millones de años."
+    },
+    {
+      "escena": "Titanicus",
+      "texto": "Con las lluvias, del montículo brotan setas: el sombrero de Termitomyces titanicus llega a un metro."
+    },
+    {
+      "escena": "Mercado",
+      "texto": "En Zambia se venden en la carretera, y una sola alcanza para una familia grande."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese montículo no es una casa: es una granja de millones de años."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

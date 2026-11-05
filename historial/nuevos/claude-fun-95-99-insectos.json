@@ -1,0 +1,22 @@
+{ "temas": [
+  { "id": "cigarra-massospora", "titulo": "La cigarra que vuela con medio cuerpo hecho hongo: Massospora cicadina (tapón de esporas, machos que imitan a hembras, catinona 2019)", "serie": "Shot Fungi Mati", "numero": 95,
+    "estado": "renderizado", "carpeta": "shots/fun-95-cigarra", "rama": "claude/fun-95-99-insectos",
+    "fuentes": ["Cooley, Marshall y Hill 2018, Sci. Rep. 8: 1432 (PMC5780379)", "Boyce et al. 2019, Fungal Ecology 41: 147–164 (doi:10.1016/j.funeco.2019.06.002)"],
+    "fecha": "2026-11-05", "derivados": ["Las cigarras de 17 años: por qué salen en números primos (hipótesis)", "Psilocibina fuera de los hongos mágicos: dónde más aparece", "Isaria/Cordyceps en cigarras y el fingolimod"] },
+  { "id": "mosca-ventana-entomophthora", "titulo": "La mosca muerta en tu ventana no murió de vieja: Entomophthora muscae (subida antes del atardecer, neuronas del reloj 2023, esporas a ~10 m/s)", "serie": "Shot Fungi Mati", "numero": 96,
+    "estado": "renderizado", "carpeta": "shots/fun-96-mosca-ventana", "rama": "claude/fun-95-99-insectos",
+    "fuentes": ["Elya et al. 2018, eLife 7: e34414", "Elya et al. 2023, eLife 12: e85410 (PMC10259475)", "Naundrup et al. 2022, ISME J. (PMC9477817)", "UW–Madison Extension, Entomophthora muscae"],
+    "fecha": "2026-11-05", "derivados": ["Hongos que matan moscas para controlar plagas en granjas", "Por qué las moscas se paran en el techo: cómo caminan de cabeza", "Relojes biológicos de los insectos: la hora de morir"] },
+  { "id": "escarabajo-ambrosia-aguacate", "titulo": "El escarabajo de 2 mm que siembra un hongo y amenaza al aguacate: marchitez del laurel (Xyleborus glabratus + Raffaelea lauricola)", "serie": "Shot Fungi Mati", "numero": 97,
+    "estado": "renderizado", "carpeta": "shots/fun-97-escarabajo-aguacate", "rama": "claude/fun-95-99-insectos",
+    "fuentes": ["Fraedrich et al. 2008, Plant Disease 92: 215", "Hughes et al. 2017, Biological Invasions (USDA FS treesearch 54165)", "Crane et al. 2020, UF/IFAS EDIS HS1360", "SENASICA 2020 y Monitor Fitosanitario 21 may 2024", "Agricultura (gob.mx), 31 jul 2026"],
+    "fecha": "2026-11-05", "derivados": ["El barrenador polífago (Euwallacea + Fusarium) en Tijuana", "Los escarabajos ambrosiales: los primeros agricultores (hace millones de años)", "Por qué el aguacate se pone negro por dentro"] },
+  { "id": "termitas-termitomyces", "titulo": "Ese montículo no es una casa: es una granja de hongos (termitas Macrotermitinae y Termitomyces; nidos fósiles de Tanzania 2016; T. titanicus de hasta 1 m)", "serie": "Shot Fungi Mati", "numero": 98,
+    "estado": "renderizado", "carpeta": "shots/fun-98-termitas", "rama": "claude/fun-95-99-insectos",
+    "fuentes": ["Poulsen 2015, Environ. Microbiol. 17: 2562–2572", "Aanen et al. 2002, PNAS (PMC137514)", "Roberts et al. 2016, PLoS ONE 11: e0156847 (PMC4917219)", "Härkönen et al. 2015, Zambian mushrooms and mycology (Norrlinia 29)"],
+    "fecha": "2026-11-05", "derivados": ["El mito del aire acondicionado de los termiteros (King et al. 2015)", "Hongos que se venden en mercados de África", "Pseudorriza: hongos con raíz falsa"] },
+  { "id": "abeja-sin-aguijon-hongo-larva", "titulo": "Esa pelusa blanca no es moho: la levadura que esta abeja bebé necesita para volverse pupa (Scaptotrigona depilis, Zygosaccharomyces, ergosterol)", "serie": "Shot Fungi Mati", "numero": 99,
+    "estado": "renderizado", "carpeta": "shots/fun-99-abeja-hongo", "rama": "claude/fun-95-99-insectos",
+    "fuentes": ["Menezes et al. 2015, Curr. Biol. 25(21): 2851–2855", "Paludo et al. 2018, Sci. Rep. 8: 1122 (PMC5773678)", "Agência FAPESP, 12 nov 2015", "Moure's Bee Catalogue: Scaptotrigona mexicana"],
+    "fecha": "2026-11-05", "derivados": ["Por qué los insectos no fabrican colesterol (esteroles en la dieta)", "Hongos que viven en el pan de abeja de Apis mellifera", "Scaptotrigona mexicana y la miel de meliponas en Puebla y Veracruz"] }
+] }

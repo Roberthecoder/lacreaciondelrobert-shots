@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Escarabajo Aguacate base narrada.dc.html",
+  "salida": "Shot Escarabajo Aguacate narrado.dc.html",
+  "nota": "Shot Fungi Mati #97. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese puntito en el tronco no es basura: es un escarabajo de dos milímetros que siembra un hongo adentro."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Es Xyleborus glabratus y llegó de Asia en madera de embalaje."
+    },
+    {
+      "escena": "Bolsitas",
+      "texto": "La hembra carga esporas del hongo Raffaelea lauricola en bolsitas junto a la boca."
+    },
+    {
+      "escena": "Tuneles",
+      "texto": "Cava túneles, siembra el hongo, y ella y sus larvas se lo comen."
+    },
+    {
+      "escena": "Defensa",
+      "texto": "El árbol se defiende: tapa sus propios tubos de agua."
+    },
+    {
+      "escena": "Marchita",
+      "texto": "Y sin agua, se marchita y muere."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Quién lo mata: el escarabajo o el hongo?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 2008, científicos de Estados Unidos infectaron laureles solo con el hongo: casi todos murieron en semanas."
+    },
+    {
+      "escena": "Millones",
+      "texto": "Para 2017, la enfermedad ya había matado más de trescientos millones de laureles rojos."
+    },
+    {
+      "escena": "Aguacate",
+      "texto": "El aguacate es su pariente: en 2012 la enfermedad llegó a una huerta de Florida."
+    },
+    {
+      "escena": "Salto",
+      "texto": "Y lo raro: el hongo saltó a otros escarabajos."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "En México, el mayor productor de aguacate, no hay registro de esta plaga; en 2024 la vigilaban en treinta estados."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese puntito no es basura: es un granjero diminuto que amenaza tu guacamole."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

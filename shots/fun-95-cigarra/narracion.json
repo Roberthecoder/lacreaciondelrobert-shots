@@ -1,0 +1,64 @@
+{
+  "dcHtml": "Shot Cigarra base narrada.dc.html",
+  "salida": "Shot Cigarra narrado.dc.html",
+  "nota": "Shot Fungi Mati #95. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa cigarra no está volando entera: la parte de atrás de su cuerpo ya es un hongo."
+    },
+    {
+      "escena": "Nombre",
+      "texto": "Es Massospora cicadina: ataca a cigarras que salen cada trece o diecisiete años."
+    },
+    {
+      "escena": "Suelo",
+      "texto": "Sus esporas esperan en la tierra y contagian a las ninfas al salir."
+    },
+    {
+      "escena": "Adentro",
+      "texto": "El hongo crece dentro de su abdomen y lo infla."
+    },
+    {
+      "escena": "Tapon",
+      "texto": "Se le caen los últimos anillos, genitales incluidos, y queda un tapón de esporas."
+    },
+    {
+      "escena": "Salero",
+      "texto": "Aun así sigue volando y buscando pareja: un salero con alas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Cómo contagia a más cigarras?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En dos mil dos les pusieron cantos de macho a cigarras enfermas."
+    },
+    {
+      "escena": "Aleteo",
+      "texto": "Veintitrés de veinticinco machos con el tapón respondieron con el aleteo de las hembras."
+    },
+    {
+      "escena": "Machos",
+      "texto": "Otros machos intentaban aparearse con ellos, y así, al parecer, se contagiaban."
+    },
+    {
+      "escena": "Catinona",
+      "texto": "En dos mil diecinueve, un equipo halló en los tapones catinona, una anfetamina de planta."
+    },
+    {
+      "escena": "Psilocibina",
+      "texto": "Y en otras Massospora, psilocibina, la de los hongos mágicos."
+    },
+    {
+      "escena": "Hipotesis",
+      "texto": "Proponen que eso cambia su conducta: aún es hipótesis."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa cigarra no vuela entera: vuela con un hongo."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
