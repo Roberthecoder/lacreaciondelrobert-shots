@@ -2,6 +2,8 @@
   "_nota": "Solo cambia cómo se le manda el texto a ElevenLabs; los subtítulos siguen igual. 'de' es una expresión regular.",
   "reglas": [
     { "de": "\\bIAs\\b", "a": "Ías" },
-    { "de": "\\bIA\\b", "a": "Ía" }
+    { "de": "\\bIA\\b", "a": "Ía" },
+    { "de": "\\bUg99\\b", "a": "u ge noventa y nueve" },
+    { "de": "\\bSr31\\b", "a": "ese erre treinta y uno" }
   ]
 }

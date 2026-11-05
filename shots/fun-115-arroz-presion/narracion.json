@@ -1,0 +1,20 @@
+{
+  "dcHtml": "Shot Arroz base narrada.dc.html",
+  "salida": "Shot Arroz narrado.dc.html",
+  "nota": "Shot Fungi Mati #115. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    { "escena": "Gancho", "texto": "Esa mancha en la hoja de tu arroz no es una mordida: la hizo un hongo que entra a presión." },
+    { "escena": "Hongo", "texto": "Es Magnaporthe oryzae, el hongo del añublo del arroz." },
+    { "escena": "Espora", "texto": "Empieza con una espora en forma de pera, de tres células, que se pega a la hoja." },
+    { "escena": "Apresorio", "texto": "Germina, y en la punta infla un domo: el apresorio." },
+    { "escena": "Melanina", "texto": "Lo forra de melanina negra, y adentro junta glicerol." },
+    { "escena": "Presion", "texto": "La melanina no lo deja escapar, el agua entra y la presión llega a ocho megapascales: unas cuarenta veces la de una llanta de coche." },
+    { "escena": "Pregunta", "texto": "¿Y para qué tanta presión?" },
+    { "escena": "Clavija", "texto": "Para empujar una clavija finísima que perfora la cutícula y la pared de la célula." },
+    { "escena": "Estudio", "texto": "En mil novecientos noventa y uno, en DuPont, Delaware, le pusieron plástico en vez de hoja: también lo perforó." },
+    { "escena": "Invade", "texto": "Ya adentro, salta de célula en célula, y sale la mancha en forma de rombo, que suelta esporas nuevas." },
+    { "escena": "Trigo", "texto": "En dos mil dieciséis, una variante que ataca el trigo llegó a Bangladés: la primera vez en Asia." },
+    { "escena": "Cierre", "texto": "Esa manchita no es una mordida: es un agujero hecho a presión." }
+  ],
+  "mezcla": "oficial-30oct"
+}
