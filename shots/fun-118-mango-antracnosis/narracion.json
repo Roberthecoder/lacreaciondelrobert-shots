@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esas manchas negras de tu mango muchas veces no son golpes: es un hongo que entró cuando estaba verde."
+      "texto": "Esas manchas negras de tu mango muchas veces no son golpes: es un hongo que entró estando verde."
     },
     {
       "escena": "Hongo",
@@ -13,15 +13,15 @@
     },
     {
       "escena": "Lluvia",
-      "texto": "Sus esporas llegan con la lluvia, desde hojas enfermas."
+      "texto": "Sus esporas llegan con la lluvia desde hojas enfermas."
     },
     {
       "escena": "Apresorio",
-      "texto": "Germinan y forman un apresorio, un ancla oscura que perfora la cera."
+      "texto": "Germinan y forman un apresorio: un ancla oscura que perfora la cera."
     },
     {
       "escena": "Dormido",
-      "texto": "Y ahí se queda quieto. Por fuera, nada."
+      "texto": "Y ahí se queda quieto."
     },
     {
       "escena": "Pregunta",
@@ -29,15 +29,15 @@
     },
     {
       "escena": "Despierta",
-      "texto": "Al madurar, la cáscara pierde buena parte de sus defensas y la fruta se ablanda y endulza: despierta."
+      "texto": "Al madurar, la cáscara pierde buena parte de sus defensas y la fruta se ablanda: despierta."
     },
     {
       "escena": "Manchas",
-      "texto": "Se extiende: manchas negras y hundidas, a veces como lágrimas; si avanza, llega a la pulpa."
+      "texto": "Se extiende: manchas negras, hundidas, a veces como lágrimas; si avanza, llega a la pulpa."
     },
     {
       "escena": "Estudio",
-      "texto": "En 2020, científicos mexicanos analizaron cincuenta y nueve huertas: cinco especies; las más agresivas, Colletotrichum siamense y asianum."
+      "texto": "En 2020, científicos mexicanos revisaron cincuenta y nueve huertas: cinco especies; las más agresivas, siamense y asianum."
     },
     {
       "escena": "Exporta",
@@ -45,11 +45,11 @@
     },
     {
       "escena": "Bano",
-      "texto": "Casi todos entran tras más de una hora en agua a cuarenta y seis grados: es contra la mosca de la fruta, y ayuda a frenar al hongo."
+      "texto": "Casi todos entran tras más de una hora en agua a cuarenta y seis grados, contra la mosca de la fruta; y ayuda a frenar al hongo."
     },
     {
       "escena": "Cierre",
-      "texto": "No era un golpe: era un hongo esperando que tu mango madurara… igual que tú."
+      "texto": "Era un hongo esperando a que tu mango madurara… igual que tú."
     }
   ],
   "mezcla": "oficial-30oct"

@@ -173,7 +173,7 @@ function Escudo({ x, y, s = 1, grieta = 0, texto = 'Sr31' }) {
     <g clipPath={`url(#esc${lado})`}>
       <path d={forma} fill={KC.gold2} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
       <path d="M 0 -104 L 84 -74 Q 84 44 0 102 Q -84 44 -84 -74 Z" fill="none" stroke="#fff3c2" strokeWidth={5} opacity=".7" />
-      <text x={0} y={22} textAnchor="middle" style={{ font:`400 74px ${KF.titulo}` }} fill={KC.ink}>{texto}</text>
+      <text x={0} y={24} textAnchor="middle" style={{ font:`900 66px ${KF.texto}` }} fill={KC.ink}>{texto}</text>
     </g>
   </g>;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
@@ -244,7 +244,7 @@ function TextoGrande({ T, at, until, texto, x, y, tam = 170, color = KC.red }) {
 }
 
 // ---------- posiciones fijas ----------
-const CICLO_C = [540, 865], CICLO_R = 265;
+const CICLO_C = [540, 860], CICLO_R = 240;
 const CICLO = [
   { n:'uredosporas', d:'en el trigo · ladrillo', ang:-90, lab:[-1, 0] },
   { n:'teliosporas', d:'negras, de 2 células', d2:'pasan el invierno', ang:-18, lab:[0, 1] },
@@ -253,7 +253,7 @@ const CICLO = [
   { n:'ecidiosporas', d:'cara de abajo, en tacitas', d2:'→ vuelven al trigo', ang:198, lab:[0, 1] },
 ];
 const cicloXY = (ang) => [CICLO_C[0] + Math.cos(ang * Math.PI / 180) * CICLO_R, CICLO_C[1] + Math.sin(ang * Math.PI / 180) * CICLO_R];
-const ARB2 = Array.from({ length: 12 }, (_, i) => [130 + (i % 6) * 165, i < 6 ? 830 : 960]);
+const ARB2 = Array.from({ length: 12 }, (_, i) => [130 + (i % 6) * 165, i < 6 ? 800 : 915]);
 const PARCELAS = [[180, 990], [420, 990], [660, 990], [900, 990]];
 
 function TrigoShot() {
@@ -318,10 +318,10 @@ function TrigoShot() {
             </g> : null; })}
           {/* en el centro: el cruce en el agracejo y las razas nuevas */}
           {(() => { const u = kprog(T, K.Ci + 2.7, K.Ci + 3.3, kEase.suave), r3 = kprog(T, K.Ci + 3.3, K.Ci + 3.8, kEase.rebote); return <g>
-            <HojaAg x={540} y={845} s={1.6} />
-            <circle cx={klerp(470, 528, u)} cy={800} r={18} fill={KC.pink} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Ci + 2.5, K.Ci + 2.7)} />
-            <circle cx={klerp(610, 552, u)} cy={800} r={18} fill={KC.cyan} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Ci + 2.5, K.Ci + 2.7)} />
-            {r3 > 0 && [[470, 960, KC.pink], [540, 975, '#9a7bff'], [610, 960, KC.cyan]].map(([a, b, c], i) => <g key={i} transform={`translate(${a} ${b}) scale(${r3 * 0.34})`}><ellipse rx={46} ry={70} fill={c} stroke={KC.ink} strokeWidth={9} transform="rotate(90)" /></g>)}
+            <HojaAg x={540} y={830} s={1.3} />
+            <circle cx={klerp(470, 528, u)} cy={760} r={18} fill={KC.pink} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Ci + 2.5, K.Ci + 2.7)} />
+            <circle cx={klerp(610, 552, u)} cy={760} r={18} fill={KC.cyan} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Ci + 2.5, K.Ci + 2.7)} />
+            {r3 > 0 && [[470, 905, KC.pink], [540, 915, '#9a7bff'], [610, 905, KC.cyan]].map(([a, b, c], i) => <g key={i} transform={`translate(${a} ${b}) scale(${r3 * 0.34})`}><ellipse rx={46} ry={70} fill={c} stroke={KC.ink} strokeWidth={9} transform="rotate(90)" /></g>)}
           </g>; })()}
         </>)}
         {CICLO.map((c, i) => { const [cx, cy] = cicloXY(c.ang); const on = kprog(T, K.Ci + 0.45 + i * 0.45, K.Ci + 0.8 + i * 0.45);
@@ -338,7 +338,7 @@ function TrigoShot() {
       <Escena T={T} a={K.Ca} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <rect x={0} y={1000} width={KW} height={40} fill={TG.tierra} opacity=".35" />
+          <rect x={0} y={930} width={KW} height={30} fill={TG.tierra} opacity=".35" />
           {ARB2.map(([x, y], i) => { const a0 = K.Ca + 1.2 + i * 0.16; return <g key={i}>
             <ellipse cx={x} cy={y + 4} rx={60} ry={14} fill={TG.tierra} stroke={KC.ink} strokeWidth={4} />
             <MiniArbusto x={x} y={y} s={0.95} arranca={kprog(T, a0, a0 + 1.0)} />
@@ -378,7 +378,7 @@ function TrigoShot() {
       <Escena T={T} a={K.B} b={K.N} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <MapaMexico x={60} y={430} ancho={600}>
+          <MapaMexico x={60} y={420} ancho={520} conCA={false}>
             {(() => { const [cx, cy] = mxProy(-98.85, 19.53); const on = kprog(T, K.B + 0.5, K.B + 0.9, kEase.rebote); return <g>
               {[[-110, 28.5], [-104, 26], [-101, 21], [-106, 31]].map(([lo, la], i) => { const [a, b] = mxProy(lo, la); const c = kprog(T, K.B + 1.0 + i * 0.2, K.B + 1.6 + i * 0.2, kEase.sale); return c > 0 ? <Trigo key={i} T={T} x={a} y={b} h={150 * c} s={0.9} seed={i + 70} /> : null; })}
               <circle cx={cx} cy={cy} r={16 * on} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
@@ -428,33 +428,33 @@ function TrigoShot() {
       <Etq T={T} at={K.Pu + 1.4} until={K.E - 0.3} x={578} y={700} texto="pústula" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Pu + 1.9} until={K.E - 0.3} x={578} y={880} texto="la piel del tallo, rota" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Pu + 2.4} until={K.E - 0.3} x={578} y={1060} texto="polvo color ladrillo" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Pu + 0.3} until={K.E - 0.3} texto="8–10 días después de infectar" x={380} y={1150} tam={32} borde={TG.ladrillo} />
+      <Chip T={T} at={K.Pu + 0.3} until={K.E - 0.3} texto="8–10 días después de infectar" x={420} y={1105} tam={32} borde={TG.ladrillo} />
       <Chip T={T} at={K.E + 0.1} until={K.Ci - 0.3} texto="AL MICROSCOPIO · UREDOSPORAS" x={540} y={410} tam={32} borde={KC.cyan} mono />
       <Etq T={T} at={K.E + 0.8} until={K.E + 2.2} x={760} y={760} texto="espinitas" tam={30} />
       <Etq T={T} at={K.E + 1.2} until={K.E + 2.2} x={290} y={1050} lado="izq" texto="pedicelo" tam={28} />
       <Etq T={T} at={K.E + 2.4} until={K.Ci - 0.3} x={60} y={1050} texto="el viento se las lleva" tam={30} />
-      <Chip T={T} at={K.Ci + 0.1} until={K.Ca - 0.3} texto="5 tipos de esporas · 2 plantas" x={400} y={410} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Ci + 3.4} until={K.Ca - 0.3} texto="razas nuevas" x={540} y={1050} tam={30} borde={KC.pink} />
-      <TarjetaEstudio T={T} at={K.Ca + 0.2} until={K.P - 0.3} anio="1918" quien="EE. UU. contra el agracejo" revista="programa hasta 1980 · Plant Dis., 2005" x={370} y={540} />
-      <NumeroGigante T={T} at={K.Ca + 1.3} until={K.P - 0.3} valor={500} dur={2.6} prefijo="+" sufijo=" millones" etiqueta="de agracejos destruidos" x={540} y={1105} tam={110} color={KC.yellow} />
+      <Chip T={T} at={K.Ci + 0.1} until={K.Ci + 3.0} texto="5 tipos de esporas · 2 plantas" x={400} y={410} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Ci + 3.4} until={K.Ca - 0.3} texto="en el agracejo: razas nuevas" x={400} y={410} tam={32} borde={KC.pink} />
+      <TarjetaEstudio T={T} at={K.Ca + 0.2} until={K.P - 0.3} anio="1918" quien="EE. UU. vs. agracejo" revista="hasta 1980 · Plant Dis. 2005" x={340} y={515} />
+      <NumeroGigante T={T} at={K.Ca + 1.3} until={K.P - 0.3} valor={500} dur={2.6} prefijo="+" sufijo=" millones" etiqueta="de agracejos destruidos" x={540} y={1045} tam={110} color={KC.yellow} />
       <TarjetaEstudio T={T} at={K.U + 0.6} until={K.S - 0.3} anio="1999" quien="Kalengyere, Uganda" revista="feb. 1999 · Plant Disease, 2000" x={730} y={560} />
-      <Etq T={T} at={K.U + 0.9} until={K.S - 0.3} x={220} y={830} texto="Uganda" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.U + 0.9} until={K.S - 0.3} x={262} y={624} lado="izq" texto="Uganda" tam={30} color={KC.ink} />
       <Chip T={T} at={K.U + 2.6} until={K.S - 0.3} texto="trigos con el gen Sr31: con roya" x={540} y={1150} tam={32} borde={TG.ladrillo} />
       <TextoGrande T={T} at={K.S + 2.3} until={K.B - 0.3} texto="Ug99" x={330} y={470} tam={170} color={TG.roya2} />
       <Etq T={T} at={K.S + 2.8} until={K.B - 0.3} x={60} y={590} texto="Ug = Uganda · 99 = 1999" tam={28} color={KC.ink} />
       <Etq T={T} at={K.S + 0.5} until={K.S + 2.2} x={60} y={470} texto="gen de resistencia Sr31" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.B + 0.9} until={K.N - 0.3} x={60} y={740} texto="● CIMMYT · México" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.B + 1.6} until={K.N - 0.3} x={60} y={790} texto="Norman Borlaug y su equipo:" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.B + 1.9} until={K.N - 0.3} x={60} y={835} texto="trigos resistentes a la roya" tam={28} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.B + 2.4} until={K.N - 0.3} anio="2005" quien="Borlaug da la alarma" revista="nace la Borlaug Global Rust Initiative" x={500} y={1020} />
-      <Chip T={T} at={K.N + 0.1} until={K.C - 0.3} texto="POR DENTRO · DOS NÚCLEOS" x={540} y={370} tam={32} borde={KC.gold} mono />
+      <Etq T={T} at={K.B + 0.9} until={K.N - 0.3} x={60} y={700} texto="● CIMMYT · México" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.B + 1.6} until={K.N - 0.3} x={60} y={745} texto="Norman Borlaug y su equipo:" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.B + 1.9} until={K.N - 0.3} x={60} y={790} texto="trigos resistentes a la roya" tam={28} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.B + 2.4} until={K.N - 0.3} anio="2005" quien="Borlaug da la alarma" revista="nace la Borlaug Global Rust Initiative" x={470} y={1000} />
+      <Chip T={T} at={K.N + 0.1} until={K.C - 0.3} texto="POR DENTRO · DOS NÚCLEOS" x={420} y={370} tam={32} borde={KC.gold} mono />
       <TarjetaEstudio T={T} at={K.N + 0.3} until={K.N + 2.6} anio="2019" quien="Nature Communications" revista="Minnesota, Australia y Sudáfrica" x={600} y={600} />
       <Etq T={T} at={K.N + 0.9} until={K.C - 0.3} x={110} y={1040} texto="hongo 1" tam={28} />
       <Etq T={T} at={K.N + 1.2} until={K.C - 0.3} x={610} y={1040} texto="hongo 2" tam={28} />
       <Etq T={T} at={K.N + 4.6} until={K.C - 0.3} x={110} y={760} texto="Ug99: un núcleo de cada uno" tam={30} color={KC.gold2} />
       <Chip T={T} at={K.N + 5.2} until={K.C - 0.3} texto="sin pasar por el agracejo" x={540} y={1130} tam={32} borde={KC.mint} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="EN LA MIRA" x={270} y={480} tam={40} borde={KC.red} />
-      <Etq T={T} at={K.C + 0.9} until={K.Ou} x={600} y={630} texto="viento" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="EN LA MIRA" x={270} y={760} tam={40} borde={KC.red} />
+      <Etq T={T} at={K.C + 0.9} until={K.Ou} x={545} y={600} lado="izq" texto="se vigila el viento" tam={28} color={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Pu} texto="50 cm" largo={150} color={KC.ink} />
