@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Recalentar base narrada.dc.html",
+  "salida": "Shot Recalentar narrado.dc.html",
+  "nota": "Shot Fungi Mati #144. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Consejo general de inocuidad, no consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esos hongos recalentados no son veneno: el peligro es cuánto pasaron tibios."
+    },
+    {
+      "escena": "Abuela",
+      "texto": "Seguro tu abuela te dijo: «los hongos no se recalientan»."
+    },
+    {
+      "escena": "Origen",
+      "texto": "Ese consejo probablemente viene de cuando no había refrigerador."
+    },
+    {
+      "escena": "Banquete",
+      "texto": "Tienen mucha agua: un caldo perfecto para las bacterias."
+    },
+    {
+      "escena": "Tibio",
+      "texto": "Si el guiso pasa horas tibio, se multiplican y pueden dejar toxinas."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y si lo recalientas fuerte, no se arregla?"
+    },
+    {
+      "escena": "Toxina",
+      "texto": "No siempre: la toxina del vómito de Bacillus cereus, típica del arroz, aguanta 121 grados por media hora."
+    },
+    {
+      "escena": "Calor",
+      "texto": "El calor mata bacterias, pero no siempre lo que ya dejaron."
+    },
+    {
+      "escena": "Enfriar",
+      "texto": "Lo que importa es enfriar rápido: al refri antes de dos horas, en recipientes bajitos."
+    },
+    {
+      "escena": "Refri",
+      "texto": "En Alemania, un centro del consumidor pide refri a máximo 4 grados y comerlos en 24 horas."
+    },
+    {
+      "escena": "Recalentar",
+      "texto": "Recaliéntalos a 74 grados por dentro, dice la FDA; y una sola vez, aconsejan en Alemania."
+    },
+    {
+      "escena": "Arroz",
+      "texto": "Lo curioso: esta regla no es solo de hongos, es de todas las sobras."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que tus hongos de ayer no son veneno: lo peligroso es dejarlos tibios."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

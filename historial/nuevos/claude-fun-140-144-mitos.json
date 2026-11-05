@@ -1,0 +1,109 @@
+{
+ "temas": [
+  {
+   "id": "hongos-lavar",
+   "titulo": "Ese champiñón no es una esponja: un minuto bajo el agua y casi no la absorbe",
+   "serie": "Shot Fungi Mati",
+   "numero": 140,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-140-lavar",
+   "rama": "claude/fun-140-144-mitos",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Hidrofobinas: la proteína que vuelve impermeables a los hongos",
+    "Por qué el portobello es el mismo champiñón ya grande",
+    "Por qué los hongos sueltan agua al cocinarse"
+   ],
+   "fuentes": [
+    "America's Test Kitchen 2018 (prueba de 1 min sumergidos)",
+    "Lugones et al. 1996, Microbiology 142:1321 (hidrofobina ABH1)",
+    "USDA FoodData Central 1999629 (2021)",
+    "FDA 2021, 7 Tips for Cleaning Fruits, Vegetables"
+   ]
+  },
+  {
+   "id": "hongos-crudos",
+   "titulo": "¿Por qué NO comer cualquier hongo crudo? Champiñón, morilla y shiitake",
+   "serie": "Shot Fungi Mati",
+   "numero": 141,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-141-crudos",
+   "rama": "claude/fun-140-144-mitos",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Falsa morilla (Gyromitra): tóxica aunque se cocine",
+    "Coprinopsis atramentaria: el hongo que no se lleva con el alcohol",
+    "Por qué los hongos se encogen tanto al cocinarlos"
+   ],
+   "fuentes": [
+    "Schulzová et al. 2002, Food Addit. Contam. (agaritina, A. hortensis)",
+    "IARC 1987, Supl. 7 (agaritina, grupo 3)",
+    "CDC MMWR 73(10), 2024 (brote de morillas en Montana 2023)",
+    "Vodovar et al. 2024, Clin Toxicol (446 casos en Francia 2010–2020)"
+   ]
+  },
+  {
+   "id": "hongos-no-plantas",
+   "titulo": "Ese champiñón no es una verdura: es más pariente tuyo que de la lechuga",
+   "serie": "Shot Fungi Mati",
+   "numero": 142,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-142-plantas",
+   "rama": "claude/fun-140-144-mitos",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Por qué los antimicóticos son más difíciles de hacer que los antibióticos",
+    "Oomicetos: los mohos de agua que parecían hongos",
+    "La quitina: del champiñón al caparazón del camarón"
+   ],
+   "fuentes": [
+    "Baldauf y Palmer 1993, PNAS (PMC48023)",
+    "Whittaker 1969, Science 163:150",
+    "Ruiz-Herrera y Ortiz-Castellanos 2019 (PMC7389562)",
+    "OpenStax Biology 2e 24.1"
+   ]
+  },
+  {
+   "id": "hongos-tras-lluvia",
+   "titulo": "Ese hongo no nació anoche con la lluvia: ya vivía ahí, bajo el pasto",
+   "serie": "Shot Fungi Mati",
+   "numero": 143,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-143-lluvia",
+   "rama": "claude/fun-140-144-mitos",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Por qué los hongos tinta se derriten en tinta negra",
+    "Cómo una seta empuja el asfalto al salir (turgencia)",
+    "Por qué las setas pierden casi todo su peso al secarse"
+   ],
+   "fuentes": [
+    "Bonner, Kane y Levey 1956, Mycologia 48:13–19",
+    "Craig, Gull y Wood 1977, J. Gen. Microbiol. 102:337",
+    "Jedidi et al. 2016, Mediterr. J. Chem. 5(3):434",
+    "Moore et al., 21st Century Guidebook to Fungi §12.9"
+   ]
+  },
+  {
+   "id": "hongos-recalentar",
+   "titulo": "Esos hongos recalentados no son veneno: el peligro es cuánto pasaron tibios",
+   "serie": "Shot Fungi Mati",
+   "numero": 144,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-144-recalentar",
+   "rama": "claude/fun-140-144-mitos",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "¿Por qué el arroz recalentado puede enfermarte? (Bacillus cereus)",
+    "¿Se pueden congelar los hongos?",
+    "Hongos enlatados y la toxina de estafilococo"
+   ],
+   "fuentes": [
+    "FDA Safe Food Handling 2024",
+    "FDA Bad Bug Book 2012 (cereulida)",
+    "Verbraucherzentrale Bremen 2025 y NRW 2025",
+    "Verbraucherzentrale Südtirol 2019 (origen del mito, 'vermutlich')"
+   ]
+  }
+ ]
+}

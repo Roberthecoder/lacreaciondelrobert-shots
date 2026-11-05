@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Lluvia base narrada.dc.html",
+  "salida": "Shot Lluvia narrado.dc.html",
+  "nota": "Shot Fungi Mati #143. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese hongo no nació anoche con la lluvia: ya vivía ahí, bajo el pasto."
+    },
+    {
+      "escena": "Especie",
+      "texto": "Es Agaricus campestris, el champiñón de campo."
+    },
+    {
+      "escena": "Fruto",
+      "texto": "Lo que ves no es el hongo entero: es su fruto."
+    },
+    {
+      "escena": "Micelio",
+      "texto": "La mayor parte del hongo es el micelio: hilos finísimos que viven todo el año bajo tierra, comiendo."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Entonces por qué aparece de golpe?"
+    },
+    {
+      "escena": "Boton",
+      "texto": "Primero el micelio arma un botón chiquito bajo el pasto."
+    },
+    {
+      "escena": "Inflar",
+      "texto": "Luego el botón se infla: sus células se llenan de agua y se estiran."
+    },
+    {
+      "escena": "Agua",
+      "texto": "Un champiñón de campo es más de ochenta por ciento agua."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En 1956, el equipo de John Tyler Bonner marcó champiñones con puntitos rojos y los midió."
+    },
+    {
+      "escena": "Estiron",
+      "texto": "Desde unos dos centímetros, su pie creció sobre todo porque sus células se estiraron."
+    },
+    {
+      "escena": "Alimento",
+      "texto": "Y el micelio le mandaba agua y alimento desde el suelo."
+    },
+    {
+      "escena": "Tinta",
+      "texto": "En un hongo tinta, Coprinopsis cinerea, el estirón más rápido dura unas cinco horas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "No nació anoche: llevaba tiempo ahí abajo, y la lluvia le dio agua para inflarse."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

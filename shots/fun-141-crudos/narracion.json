@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Crudos base narrada.dc.html",
+  "salida": "Shot Crudos narrado.dc.html",
+  "nota": "Shot Fungi Mati #141. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es consejo médico.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "¿Por qué NO comer cualquier hongo crudo? Porque el champiñón de tu ensalada no es igual que una morilla cruda."
+    },
+    {
+      "escena": "Depende",
+      "texto": "Depende de lo que trae cada uno."
+    },
+    {
+      "escena": "Agaritina",
+      "texto": "El champiñón, Agaricus bisporus, trae agaritina, que todavía se estudia."
+    },
+    {
+      "escena": "Grupo3",
+      "texto": "La agencia de la OMS contra el cáncer la dejó en el grupo tres: no clasificable en humanos."
+    },
+    {
+      "escena": "Sarten",
+      "texto": "Cocinar la baja: en Praga, en 2002, freír cinco minutos en aceite otro champiñón de cultivo le quitó dos tercios."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y la morilla? Ahí la cosa cambia."
+    },
+    {
+      "escena": "Montana",
+      "texto": "En 2023, un restaurante de Montana sirvió morillas crudas o apenas cocidas en sushi."
+    },
+    {
+      "escena": "Enfermos",
+      "texto": "Cincuenta y una personas se enfermaron del estómago; tres fueron al hospital y dos murieron."
+    },
+    {
+      "escena": "Crudas",
+      "texto": "Comerlas crudas fue lo más ligado a enfermarse."
+    },
+    {
+      "escena": "Cultivo",
+      "texto": "Eran morillas de cultivo, y nadie encontró la toxina exacta."
+    },
+    {
+      "escena": "Francia",
+      "texto": "En Francia, entre 2010 y 2020, se reportaron cuatrocientos cuarenta y seis casos solo por morillas."
+    },
+    {
+      "escena": "Shiitake",
+      "texto": "Y el shiitake, ya lo vimos: crudo o mal cocido, puede llenarte la piel de rayas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "No todos aguantan crudos: los silvestres, siempre cocidos y bien identificados."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
