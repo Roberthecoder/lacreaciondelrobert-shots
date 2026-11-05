@@ -1,7 +1,8 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Morillas base narrada.dc.html",
   "salida": "Shot Morillas narrado.dc.html",
-  "nota": "Shot Fungi Mati #72. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "nota": "Shot Fungi Mati #72. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs.  Voz aprobada por delegación de Robert tras la re-verificación independiente del 5 nov 2026.",
   "lineas": [
     {
       "escena": "Gancho",

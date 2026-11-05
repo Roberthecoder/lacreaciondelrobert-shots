@@ -1,7 +1,8 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Tesguino base narrada.dc.html",
   "salida": "Shot Tesguino narrado.dc.html",
-  "nota": "Shot Fungi Mati #82. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Tono respetuoso: la ciencia de la fermentación y el conocimiento rarámuri; no promueve el alcohol.",
+  "nota": "Shot Fungi Mati #82. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs.  Tono respetuoso: la ciencia de la fermentación y el conocimiento rarámuri; no promueve el alcohol. Voz aprobada por delegación de Robert tras la re-verificación independiente del 5 nov 2026.",
   "lineas": [
     {
       "escena": "Gancho",
