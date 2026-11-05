@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Moho Verde base narrada.dc.html",
+  "salida": "Shot Moho Verde narrado.dc.html",
+  "nota": "Shot Fungi Mati #108. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa pelusa blanca no es tu hongo creciendo: es el enemigo, y luego se pone verde."
+    },
+    {
+      "escena": "Quien",
+      "texto": "Es Trichoderma: primero, micelio blanco y denso; después, esporas verdes."
+    },
+    {
+      "escena": "PorDentro",
+      "texto": "Es parásito de otros hongos: se enrolla en sus hifas y las ataca."
+    },
+    {
+      "escena": "Lab",
+      "texto": "En laboratorio, uno cubrió la colonia de una seta en cuatro a seis días."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por dónde se mete?"
+    },
+    {
+      "escena": "Entra",
+      "texto": "Sobre todo, con personas y herramientas; en Malasia, también en el agua."
+    },
+    {
+      "escena": "Errores",
+      "texto": "Agregar nitrógeno, como salvado, sube el riesgo; por eso la paja se pasteuriza en agua a setenta y un grados."
+    },
+    {
+      "escena": "Vacio",
+      "texto": "Lo estéril es un vacío biológico: si entra un moho, nadie lo frena."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En los ochenta atacó granjas de champiñón de Irlanda; en Pensilvania se perdió hasta toda la cosecha."
+    },
+    {
+      "escena": "Gramo",
+      "texto": "En 2020, un gramo de Trichoderma aggressivum por kilo bajó la cosecha de 68 a 100 %."
+    },
+    {
+      "escena": "Chiste",
+      "texto": "Lo chistoso: su pariente, Trichoderma reesei, pudría una tienda del ejército en 1944; hoy la industria usa sus enzimas."
+    },
+    {
+      "escena": "Robert",
+      "texto": "A mí también: un frasco se me llenó de esporas que no quería."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que esa pelusa no es tu cosecha: pasteuriza, limpia manos y herramientas, y tu bolsa dará setas."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
