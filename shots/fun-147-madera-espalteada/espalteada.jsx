@@ -1,7 +1,7 @@
 // Shot Fungi Mati #147 · Esas líneas negras no son vetas: son fronteras entre hongos — NARRADO (N1 Por dentro, gancho 1 "esto no es X: es Y").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
-const ES = { maple:'#ecd6a8', maple2:'#dcbf86', veta:'#c4a068', linea:'#120c08', blanco:'#fbf5e6', verde:'#1f9e94', verde2:'#46c7b8',
+const ES = { maple:'#ecd6a8', maple2:'#dcbf86', veta:'#c4a068', linea:'#120c08', blanco:'#fbf5e6',
   celda:'#2a1d13', celda2:'#3d2b1c', melan:'#070403', tram1:'#5a3b26', tram2:'#7f8fa6', tram3:'#c9b28a', xyl:'#191513' };
 const TERR = [KC.pink, KC.cyan, KC.gold2, KC.mint, KC.lilac, KC.orange, '#8fb6ff', KC.coral, KC.leaf, KC.yellow, KC.magenta];
 
@@ -30,20 +30,18 @@ const CELDAS = SEM.map((s, i) => {
   const d = (q) => 'M ' + q.map((z) => z[0].toFixed(1) + ' ' + z[1].toFixed(1)).join(' L ');
   return { c, relleno: d(todo) + ' Z', lados: lados.map(d), ancho: 4 + (i % 3) };
 });
-const BLANCAS = [2, 7], VERDE = 5;
-// Tabla en (x, y), escala s. lineas 0..1 (se dibujan), relleno 0..1 (territorios de color), blanco 0..1, verde 0..1, id = clip único.
-function Tabla({ T, x, y, s = 1, lineas = 1, relleno = 0, blanco = 0, verde = 0, id = 'tb', rx = 26, borde = true, foco = -1 }) {
+const BLANCAS = [2, 7];
+// Tabla en (x, y), escala s. lineas 0..1 (se dibujan), relleno 0..1 (territorios de color), blanco 0..1, id = clip único.
+function Tabla({ T, x, y, s = 1, lineas = 1, relleno = 0, blanco = 0, id = 'tb', rx = 26, borde = true, foco = -1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <defs><clipPath id={id}><rect x={0} y={0} width={TW} height={TH} rx={rx} /></clipPath>
-      <radialGradient id={id + 'v'} cx="50%" cy="50%" r="60%"><stop offset="0%" stopColor={ES.verde2} /><stop offset="100%" stopColor={ES.verde} /></radialGradient></defs>
+    <defs><clipPath id={id}><rect x={0} y={0} width={TW} height={TH} rx={rx} /></clipPath></defs>
     <g clipPath={`url(#${id})`}>
       <rect x={0} y={0} width={TW} height={TH} fill={ES.maple} />
       {Array.from({ length: 14 }, (_, k) => <path key={k} d={`M -10 ${k * 44 + 12} C 250 ${k * 44 + 12 + 14 * Math.sin(k)} 600 ${k * 44 + 4 - 12 * Math.cos(k * 1.7)} ${TW + 10} ${k * 44 + 16}`} stroke={ES.veta} strokeWidth={k % 3 ? 2 : 4} fill="none" opacity=".55" />)}
-      {CELDAS.map((cl, i) => { const b = BLANCAS.includes(i) ? blanco : 0, v = i === VERDE ? verde : 0;
+      {CELDAS.map((cl, i) => { const b = BLANCAS.includes(i) ? blanco : 0;
         const r = relleno > 0 ? kprog(relleno, i / 13, i / 13 + 0.25) : 0;
         return <g key={i}>
           {b > 0 && <path d={cl.relleno} fill={ES.blanco} opacity={0.92 * b} />}
-          {v > 0 && <path d={cl.relleno} fill={`url(#${id}v)`} opacity={0.9 * v} />}
           {r > 0 && <path d={cl.relleno} fill={TERR[i]} opacity={0.42 * r * (foco >= 0 && foco !== i ? 0.4 : 1)} />}
         </g>; })}
       {CELDAS.map((cl, i) => cl.lados.map((dd, j) => { const p = kclamp(lineas * 1.25 - (i * 0.05 + j * 0.02), 0, 1); return p > 0 ?
@@ -141,45 +139,71 @@ function Trametes({ x, y, s = 1, crece = 1 }) {
     </g>; };
   return <g transform={`translate(${x} ${y}) scale(${s})`}>{[[0, 120, -14], [170, 150, 0], [330, 110, 14]].map(([a, R, r], i) => abanico(a, R, r, i))}</g>;
 }
-// Chlorociboria: copitas verde-azuladas de pie corto sobre una ramita. crece 0..1.
-function Chlorociboria({ T, x, y, s = 1, crece = 1 }) {
-  const copa = (cx, k, i) => { const c = kEase.rebote(kclamp(crece * 1.6 - i * 0.12, 0, 1)); if (c <= 0) return null;
-    return <g key={i} transform={`translate(${cx} 0) scale(${k * c}) rotate(${Math.sin(T * 1.5 + i) * 3})`}>
-      <path d="M -8 0 L -6 -34 L 6 -34 L 8 0 Z" fill="#1a8a80" stroke={KC.ink} strokeWidth={4} />
-      <path d="M -46 -50 Q 0 -10 46 -50 Q 40 -36 0 -30 Q -40 -36 -46 -50 Z" fill="#127a71" stroke={KC.ink} strokeWidth={4} />
-      <ellipse cx={0} cy={-50} rx={46} ry={12} fill={ES.verde2} stroke={KC.ink} strokeWidth={4} />
-      <ellipse cx={-12} cy={-52} rx={16} ry={4} fill="#c8fff5" opacity=".6" />
-    </g>; };
-  return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -40 20 Q 200 -10 520 24 L 520 64 Q 200 34 -40 60 Z" fill="#6f4a2c" stroke={KC.ink} strokeWidth={7} />
-    <path d="M 60 40 Q 200 30 380 44" stroke={ES.verde} strokeWidth={14} fill="none" opacity={0.8 * kclamp(crece, 0, 1)} />
-    <g transform="translate(0 22)">{[[40, 0.9], [120, 1.15], [205, 0.75], [290, 1.0], [370, 0.8], [450, 1.1]].map(([cx, k], i) => copa(cx, k, i))}</g>
+// Cubito de madera en perspectiva (lado L px). lineas 0..1 (líneas de zona que aparecen), pudre 0..1 (huecos blancos y se encoge),
+// moho = color de la pelusa del hongo (0 = sin pelusa).
+function Cubito({ x, y, L = 90, lineas = 0, pudre = 0, moho, mohoP = 0, seed = 1 }) {
+  const r = krng(seed), k = 1 - 0.18 * pudre, l = L * k, d = l * 0.38;
+  const huecos = Array.from({ length: 7 }, () => [r() * 0.8 + 0.1, r() * 0.8 + 0.1, 0.08 + r() * 0.1]);
+  const curvas = [`M 0 ${l * 0.35} C ${l * 0.3} ${l * 0.2} ${l * 0.6} ${l * 0.55} ${l} ${l * 0.4}`, `M ${l * 0.55} 0 C ${l * 0.45} ${l * 0.4} ${l * 0.75} ${l * 0.6} ${l * 0.6} ${l}`];
+  return <g transform={`translate(${x - l / 2} ${y - l})`}>
+    <path d={`M 0 0 L ${d} ${-d * 0.7} L ${l + d} ${-d * 0.7} L ${l} 0 Z`} fill={ES.maple2} stroke={KC.ink} strokeWidth={4} strokeLinejoin="round" />
+    <path d={`M ${l} 0 L ${l + d} ${-d * 0.7} L ${l + d} ${l - d * 0.7} L ${l} ${l} Z`} fill={ES.veta} stroke={KC.ink} strokeWidth={4} strokeLinejoin="round" />
+    <rect x={0} y={0} width={l} height={l} fill={ES.maple} stroke={KC.ink} strokeWidth={4} />
+    {curvas.map((c, i) => <path key={i} d={c} stroke={ES.linea} strokeWidth={4} fill="none" strokeLinecap="round" pathLength="1" strokeDasharray="1 1" strokeDashoffset={1 - kclamp(lineas * 1.4 - i * 0.35, 0, 1)} />)}
+    {pudre > 0 && huecos.map(([a, b, rr], i) => <ellipse key={i} cx={a * l} cy={b * l} rx={rr * l * kclamp(pudre * 1.6 - i * 0.12, 0, 1)} ry={rr * l * 0.7 * kclamp(pudre * 1.6 - i * 0.12, 0, 1)} fill={ES.blanco} stroke="#b9a27a" strokeWidth={2} />)}
+    {moho && mohoP > 0 && Array.from({ length: 9 }, (_, i) => { const xx = (i + 0.5) / 9 * l; return <path key={'m' + i} d={`M ${xx} ${l} q ${4 * Math.sin(i)} ${-12 * mohoP} ${(i % 2 ? 6 : -6)} ${-22 * mohoP}`} stroke={moho} strokeWidth={3} fill="none" opacity=".9" />; })}
   </g>;
 }
-// Panel de taracea (marquetería) esquemático: armario abierto en perspectiva con piezas de madera de colores, algunas verdes.
-function Taracea({ T, x, y, s = 1, verde = 1 }) {
-  const V = mixHex(ES.maple2, ES.verde, verde);
-  return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={0} y={0} width={520} height={560} rx={8} fill="#5a3418" stroke={KC.ink} strokeWidth={9} />
-    <rect x={30} y={30} width={460} height={500} fill="#c9a26a" stroke={KC.ink} strokeWidth={5} />
-    {Array.from({ length: 5 }, (_, i) => <path key={i} d={`M ${30} ${110 + i * 95} L 490 ${110 + i * 95}`} stroke="#7a5228" strokeWidth={8} />)}
-    {[[60, 60, 120, 40, 0], [220, 70, 60, 32, 1], [320, 52, 140, 50, 0], [70, 150, 90, 50, 1], [190, 150, 150, 50, 0], [370, 140, 90, 60, 1], [60, 245, 200, 50, 0], [300, 240, 160, 58, 1], [70, 340, 120, 52, 1], [230, 335, 230, 56, 0], [60, 432, 160, 56, 0], [260, 425, 90, 62, 1], [380, 440, 90, 48, 0]].map(([a, b, w, h, g], i) =>
-      <g key={i}><rect x={a} y={b} width={w} height={h} fill={g ? V : (i % 2 ? '#e7cf9c' : '#8a5a2c')} stroke={KC.ink} strokeWidth={4} />
-        <path d={`M ${a} ${b} L ${a + 18} ${b - 14} L ${a + w + 18} ${b - 14} L ${a + w} ${b} Z`} fill={g ? mixHex(V, '#ffffff', 0.25) : '#f0dcb0'} stroke={KC.ink} strokeWidth={3} /></g>)}
-    <path d="M 490 30 L 560 0 L 560 590 L 490 530 Z" fill="#7a4a22" stroke={KC.ink} strokeWidth={6} />
-    {[[500, 80], [500, 200], [500, 320], [500, 440]].map(([a, b], i) => <path key={i} d={`M ${a} ${b} l 44 -16 l 0 60 l -44 14 Z`} fill={i % 2 ? V : '#e7cf9c'} stroke={KC.ink} strokeWidth={3} />)}
+// Repisa de laboratorio con frascos de vidrio: vermiculita abajo, 3 cubitos de 14 mm encima y la pelusa de UN solo hongo por frasco (monocultivo).
+// Líneas pocas y solo en la superficie (Robinson et al. 2012: pigmento negro esporádico, en la superficie). semana 0..1.
+const FRASCOS = [['Trametes', KC.pink], ['Xylaria', '#3a332e'], ['Inonotus', KC.orange], ['Arthrographis', KC.magenta]];
+function Frascos({ T, x, y, at, semana = 0 }) {
+  return <g transform={`translate(${x} ${y})`}>
+    <rect x={-30} y={330} width={900} height={34} rx={8} fill="#7a4a22" stroke={KC.ink} strokeWidth={7} />
+    {FRASCOS.map(([n, col], i) => { const e = kEase.rebote(kprog(T, at + i * 0.35, at + i * 0.35 + 0.45)); if (e <= 0) return null;
+      const cx = 105 + i * 215;
+      return <g key={i} transform={`translate(${cx} 330) scale(${e}) translate(${-cx} -330)`}>
+        <rect x={cx - 85} y={60} width={170} height={270} rx={26} fill="rgba(220,245,255,.35)" stroke={KC.ink} strokeWidth={6} />
+        <rect x={cx - 92} y={34} width={184} height={40} rx={10} fill="#d9d9d9" stroke={KC.ink} strokeWidth={6} />
+        <path d={`M ${cx - 79} 230 Q ${cx} 214 ${cx + 79} 230 L ${cx + 79} 300 Q ${cx + 79} 324 ${cx + 55} 324 L ${cx - 55} 324 Q ${cx - 79} 324 ${cx - 79} 300 Z`} fill="#d7b46a" />
+        {Array.from({ length: 22 }, (_, k) => <circle key={k} cx={cx - 70 + (k * 37) % 140} cy={240 + (k * 13) % 76} r={5} fill={k % 3 ? '#b8954e' : '#f0d79a'} />)}
+        {[[-46, 0], [0, -6], [46, 0]].map(([dx, dy], j) => <Cubito key={j} x={cx + dx} y={232 + dy} L={42} lineas={0.55 * kclamp(semana * 1.3 - 0.25 - i * 0.08 - j * 0.1, 0, 1)} moho={col} mohoP={kclamp(semana * 3 - j * 0.3, 0, 1)} seed={i * 3 + j + 3} />)}
+        <path d={`M ${cx - 70} 80 L ${cx - 60} 300`} stroke="#fff" strokeWidth={8} opacity=".45" strokeLinecap="round" />
+      </g>; })}
   </g>;
 }
-// Interior de la lupa: células de madera verdes con hifas dentro.
-function InteriorVerde(T, r) {
-  const n = 7, w = (2 * r) / n;
-  return <svg width={2 * r} height={2 * r} style={{ position:'absolute', left:0, top:0 }}>
-    <rect width={2 * r} height={2 * r} fill="#06231f" />
-    {Array.from({ length: n }, (_, i) => <rect key={i} x={i * w + 4} y={-20 + (i % 2) * 30} width={w - 8} height={2 * r + 40} rx={w / 2 - 4} fill="#1d7d74" stroke="#0a3d38" strokeWidth={5} />)}
-    {Array.from({ length: 9 }, (_, i) => { const xx = (i * 0.11 + 0.05) * 2 * r, ph = i * 1.3; const L = kprog(T, 0, 1e9);
-      return <path key={i} d={`M ${xx} -10 C ${xx + 30 * Math.sin(ph)} ${r * 0.6} ${xx - 30 * Math.cos(ph)} ${r * 1.3} ${xx + 20 * Math.sin(ph * 2)} ${2 * r + 10}`} stroke="#eafff9" strokeWidth={4} fill="none" opacity={0.85 * L} />; })}
-    {Array.from({ length: 14 }, (_, i) => <circle key={'g' + i} cx={((i * 37) % 13) / 13 * 2 * r} cy={((i * 53) % 17) / 17 * 2 * r} r={5} fill={ES.verde2} />)}
-  </svg>;
+// Báscula con el cubito encima: antes (entero) → después (con huecos de pudrición). p 0..1.
+function Bascula({ T, x, y, p = 0, entra = 1 }) {
+  return <g transform={`translate(${x} ${y}) scale(${entra})`}>
+    <path d="M -230 40 L 230 40 L 200 170 L -200 170 Z" fill="#cfd6dc" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <rect x={-260} y={10} width={520} height={34} rx={10} fill="#e8edf0" stroke={KC.ink} strokeWidth={7} />
+    <rect x={-120} y={80} width={240} height={70} rx={10} fill="#1b2a22" stroke={KC.ink} strokeWidth={5} />
+    <text x={0} y={133} textAnchor="middle" style={{ font:`700 48px ${KF.mono}` }} fill="#7dffb2">{Math.round(100 - 30 * p)} %</text>
+    <Cubito x={0} y={10} L={200} lineas={1} pudre={p} seed={9} />
+  </g>;
+}
+// Dos tablas: la de la izquierda se seca (gotas que suben y se evaporan; hifas quietas), la de la derecha se queda húmeda y se desmorona.
+function DosTablas({ T, a, seca = 0, pudre = 0 }) {
+  const tabla = (x, y, w, h, extra) => <g transform={`translate(${x} ${y})`}>
+    <rect width={w} height={h} rx={14} fill={ES.maple} stroke={KC.ink} strokeWidth={7} />
+    {[0.25, 0.5, 0.75].map((k, i) => <path key={i} d={`M 6 ${h * k} C ${w * 0.3} ${h * k - 10} ${w * 0.6} ${h * k + 12} ${w - 6} ${h * k - 4}`} stroke={ES.veta} strokeWidth={3} fill="none" opacity=".7" />)}
+    <path d={`M ${w * 0.1} ${h * 0.2} C ${w * 0.4} ${h * 0.6} ${w * 0.55} ${h * 0.1} ${w * 0.9} ${h * 0.7}`} stroke={ES.linea} strokeWidth={6} fill="none" strokeLinecap="round" />
+    <path d={`M ${w * 0.6} ${h * 0.05} C ${w * 0.5} ${h * 0.5} ${w * 0.7} ${h * 0.7} ${w * 0.62} ${h * 0.95}`} stroke={ES.linea} strokeWidth={5} fill="none" strokeLinecap="round" />
+    {extra}
+  </g>;
+  // gotas que se evaporan (izquierda)
+  const gotas = Array.from({ length: 8 }, (_, i) => { const t0 = a + 0.2 + i * 0.22, u = kclamp((T - t0) / 1.1, 0, 1); if (u <= 0 || u >= 1) return null;
+    const gx = 120 + (i * 53) % 300, gy = 820 - u * 220;
+    return <path key={i} d="M 0 -18 Q 12 0 0 12 Q -12 0 0 -18 Z" transform={`translate(${gx} ${gy}) scale(${1 - u * 0.6})`} fill="#7fd8ff" stroke={KC.ink} strokeWidth={3} opacity={1 - u} />; });
+  // tabla húmeda que se desmorona (derecha): trozos que caen
+  const trozos = Array.from({ length: 10 }, (_, i) => { const c = kclamp(pudre * 1.5 - i * 0.06, 0, 1); const xx = 600 + (i % 5) * 76, yy = 860 + Math.floor(i / 5) * 90;
+    return <rect key={i} x={xx} y={yy + c * c * 260} width={70} height={84} rx={8} fill={mixHex(ES.maple, '#a08860', c)} stroke={KC.ink} strokeWidth={4} transform={`rotate(${c * (i % 2 ? 40 : -35)} ${xx + 35} ${yy + 42 + c * c * 260})`} opacity={1 - c * 0.3} />; });
+  return <g>
+    {tabla(90, 840, 400, 200, <g opacity={1 - 0.6 * seca}>{Array.from({ length: 10 }, (_, i) => <circle key={i} cx={30 + i * 38} cy={30 + (i * 29) % 140} r={9} fill="#7fd8ff" />)}</g>)}
+    {gotas}
+    {pudre < 0.02 ? tabla(600, 840, 390, 200, <g>{Array.from({ length: 10 }, (_, i) => <circle key={i} cx={30 + i * 36} cy={30 + (i * 29) % 140} r={9} fill="#7fd8ff" />)}</g>) : trozos}
+    {pudre > 0 && Array.from({ length: 6 }, (_, i) => <ellipse key={'b' + i} cx={630 + i * 60} cy={1150} rx={30 * kclamp(pudre * 2 - i * 0.1, 0, 1)} ry={10} fill="#8a6a3e" opacity=".6" />)}
+  </g>;
 }
 // Xylaria polymorpha (dedos de muerto): mazos negros, rugosos, que salen de un tocón. crece 0..1.
 function Xylaria({ T, x, y, s = 1, crece = 1 }) {
@@ -211,7 +235,7 @@ const ESPORAS_MUCHAS = [[-150, -90], [170, -40], [-20, 170], [60, -200], [-200, 
 
 function EspalteadaShot() {
   const { T, CUES } = useComposition();
-  const K = { G: CUES.Gancho, V: CUES.Valor, En: CUES.Entran, H: CUES.Hifas, Ch: CUES.Choque, M: CUES.Melanina, P: CUES.Pregunta, Ma: CUES.Mapa, B: CUES.Blanqueo, Ve: CUES.Verde, E: CUES.Estudio, X: CUES.Xylaria, C: CUES.Cierre, Ou: CUES.Outro };
+  const K = { G: CUES.Gancho, V: CUES.Valor, En: CUES.Entran, H: CUES.Hifas, Ch: CUES.Choque, M: CUES.Melanina, P: CUES.Pregunta, Ma: CUES.Mapa, B: CUES.Blanqueo, L: CUES.Laboratorio, Co: CUES.Costo, S: CUES.Secar, X: CUES.Xylaria, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const TX = 126, TY = 590, TS = 0.92;   // la tabla (macro): mismo lugar en el gancho, el mapa y el cierre
   return (
@@ -260,19 +284,31 @@ function EspalteadaShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<Tabla T={T} x={TX} y={TY} s={TS} lineas={1} relleno={kprog(T, K.Ma + 0.2, K.Ma + 2.6)} id="tbM" />)}
       </Escena>
-      {/* 8–9 · blanqueo (Trametes) y verde (Chlorociboria) sobre la misma tabla */}
-      <Escena T={T} a={K.B} b={K.E} zoom={0.03}>
+      {/* 8 · blanqueo (Trametes) sobre la misma tabla */}
+      <Escena T={T} a={K.B} b={K.L} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Tabla T={T} x={TX} y={TY + 20} s={TS} lineas={1} relleno={1 - kprog(T, K.B, K.B + 0.8)} blanco={kprog(T, K.B + 1.6, K.B + 3.6)} verde={kprog(T, K.Ve + 0.8, K.Ve + 2.6)} id="tbB" />
-          <g opacity={1 - kprog(T, K.Ve - 0.2, K.Ve + 0.3)}><Trametes x={TX + 110} y={TY + 26} s={1} crece={kprog(T, K.B + 0.2, K.B + 1.4)} /></g>
-          <g opacity={kprog(T, K.Ve - 0.2, K.Ve + 0.3)}><Chlorociboria T={T} x={130} y={540} s={1} crece={kprog(T, K.Ve + 0.1, K.Ve + 1.2)} /></g>
+          <Tabla T={T} x={TX} y={TY + 20} s={TS} lineas={1} relleno={1 - kprog(T, K.B, K.B + 0.8)} blanco={kprog(T, K.B + 1.6, K.B + 3.6)} id="tbB" />
+          <Trametes x={TX + 110} y={TY + 26} s={1} crece={kprog(T, K.B + 0.2, K.B + 1.4)} />
         </>)}
       </Escena>
-      {/* 10 · el estudio de 1992: taracea italiana + lupa */}
-      <Escena T={T} a={K.E} b={K.X} zoom={0.04}>
+      {/* 9 · el laboratorio (2012, Toronto): frascos con cubitos de haya, semanas que corren */}
+      <Escena T={T} a={K.L} b={K.Co} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Taracea T={T} x={80} y={700} s={0.8} verde={1} />)}
+        {fsvg(<Frascos T={T} x={110} y={700} at={K.L + 0.2} semana={kprog(T, K.L + 1.6, K.Co - 0.4)} />)}
+      </Escena>
+      {/* 10 · el costo: la báscula */}
+      <Escena T={T} a={K.Co} b={K.S} zoom={0.04}>
+        <FondoLunares color={KC.coral} />
+        {fsvg(<Bascula T={T} x={540} y={960} p={kprog(T, K.Co + 0.9, K.Co + 2.6, kEase.suave)} entra={kEase.sale(kprog(T, K.Co - 0.3, K.Co + 0.4))} />)}
+      </Escena>
+      {/* 11 · secar a tiempo vs. húmeda */}
+      <Escena T={T} a={K.S} b={K.X} zoom={0.03}>
+        <FondoLunares color={KC.cyan} />
+        {fsvg(<>
+          <DosTablas T={T} a={K.S} seca={kprog(T, K.S + 0.2, K.S + 2.0)} pudre={kprog(T, K.S + 1.0, K.S + 2.8)} />
+          <Sello T={T} at={K.S + 1.4} x={290} y={940} texto="PAUSA" color={KC.blue} r={90} />
+        </>)}
       </Escena>
       {/* 11 · Xylaria polymorpha: fronteras consigo mismo */}
       <Escena T={T} a={K.X} b={K.C} zoom={0.04}>
@@ -285,7 +321,7 @@ function EspalteadaShot() {
       {/* 12 · cierre: la misma tabla del inicio, ya leída */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Tabla T={T} x={TX} y={TY} s={TS} lineas={1} relleno={0.5 * kprog(T, K.C + 0.4, K.C + 1.6)} blanco={1} verde={1} id="tbC" />)}
+        {fsvg(<Tabla T={T} x={TX} y={TY} s={TS} lineas={1} relleno={0.5 * kprog(T, K.C + 0.4, K.C + 1.6)} blanco={1} id="tbC" />)}
       </Escena>
 
       {/* textos */}
@@ -304,19 +340,26 @@ function EspalteadaShot() {
       <Etq T={T} at={K.M + 1.4} until={K.P - 0.3} x={500} y={1160} texto="línea de zona" lado="izq" tam={30} color={KC.gold2} />
       <Etq T={T} at={K.Ma + 1.0} until={K.B - 0.3} x={130} y={555} texto="cada color = el territorio de un hongo" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Ma + 1.8} until={K.B - 0.3} texto="cada línea negra = una frontera" x={540} y={470} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.B + 1.0} until={K.Ve - 0.3} x={610} y={520} texto="Trametes versicolor" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.B + 1.6} until={K.Ve - 0.3} texto="pudrición blanca" x={760} y={420} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.B + 2.4} until={K.Ve - 0.3} x={610} y={572} texto="come lignina: más clara" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Ve + 0.6} until={K.E - 0.3} x={130} y={420} texto="Chlorociboria" it tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ve + 1.6} until={K.E - 0.3} x={130} y={370} texto="xilindeína: pigmento" tam={26} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.X - 0.3} anio="1992" quien="Blanchette y equipo" revista="Holzforschung, 1992" x={360} y={525} />
-      <Chip T={T} at={K.E + 1.6} until={K.X - 0.3} texto="taracea · Italia, siglo XV" x={790} y={690} tam={30} borde={KC.ink} />
-      <Lupa T={T} at={K.E + 3.0} until={K.X - 0.4} x={800} y={930} r={185} fx={384} fy={915} interior={InteriorVerde} tinte={KC.mint} etiqueta="AL MICROSCOPIO · HIFAS" />
+      <Etq T={T} at={K.B + 1.0} until={K.L - 0.3} x={60} y={445} texto="Trametes versicolor" it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.B + 1.6} until={K.L - 0.3} texto="pudrición blanca" x={400} y={375} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.B + 2.4} until={K.L - 0.3} x={1040} y={770} lado="izq" texto="come lignina: más clara" tam={26} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.L + 0.1} until={K.L + 2.8} anio="2012" quien="Robinson, Tudor y Cooper" revista="U. de Toronto · Appl. Microbiol. Biotechnol." x={540} y={500} />
+      {FRASCOS.map(([n], i) => <div key={i} style={{ position:'absolute', left:215 + i * 215, top:1080, transform:'translate(-50%,0)', zIndex:41, opacity:kprog(T, K.L + 0.5 + i * 0.35, K.L + 0.9 + i * 0.35) * (1 - kprog(T, K.Co - 0.4, K.Co - 0.1)),
+        font:`700 italic 24px ${KF.mono}`, color:KC.ink, whiteSpace:'nowrap' }}>{n}</div>)}
+      <Chip T={T} at={K.L + 1.6} until={K.Co - 0.3} texto={`semana ${1 + Math.floor(11 * kprog(T, K.L + 1.6, K.Co - 0.4))}`} x={300} y={670} tam={34} borde={KC.ink} mono />
+      <Chip T={T} at={K.L + 1.9} until={K.Co - 0.3} texto="27 °C" x={560} y={670} tam={34} borde={KC.red} mono />
+      <Etq T={T} at={K.L + 2.4} until={K.Co - 0.3} x={110} y={1140} texto="cubitos de haya · Fagus grandifolia" tam={26} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Co + 1.0} until={K.S - 0.3} valor={30} prefijo="−" sufijo=" %" x={330} y={500} tam={190} color={KC.yellow} />
+      <Etq T={T} at={K.Co + 1.6} until={K.S - 0.3} x={40} y={630} texto="peso perdido · albura de haya" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Co + 2.0} until={K.S - 0.3} x={40} y={675} texto="Trametes versicolor" it tam={28} color={KC.ink} />
+      <Medidor T={T} at={K.S + 0.1} until={K.X - 0.3} valor={(t) => 0.85 - 0.65 * kprog(t, K.S + 0.2, K.S + 2.0)} etiqueta="agua en la madera" texto={(v) => (v > 0.4 ? 'húmeda' : 'seca')} x={90} y={430} ancho={560} color="#7fd8ff" />
+      <Chip T={T} at={K.S + 1.6} until={K.X - 0.3} texto="seca: el hongo se detiene" x={290} y={640} tam={26} borde={KC.blue} />
+      <Chip T={T} at={K.S + 1.9} until={K.X - 0.3} texto="húmeda: se sigue pudriendo" x={795} y={790} tam={26} borde={KC.red} />
       <Etq T={T} at={K.X + 0.6} until={K.C - 0.3} x={80} y={600} texto="Xylaria polymorpha" it tam={34} color={KC.ink} />
       <Etq T={T} at={K.X + 1.2} until={K.C - 0.3} x={80} y={650} texto="«dedos de muerto»" tam={30} color={KC.ink} />
       <Chip T={T} at={K.X + 2.6} until={K.C - 0.3} texto="sin otro hongo" x={805} y={745} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.X + 3.2} until={K.C - 0.3} x={580} y={1135} texto="un solo hongo" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.C + 0.8} until={K.Ou} x={340} y={545} texto="fronteras · blanqueo · verde" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.C + 0.8} until={K.Ou} x={340} y={545} texto="fronteras · blanqueo · secada a tiempo" tam={24} color={KC.ink} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="un mapa de una guerra de hongos" x={650} y={470} tam={30} borde={KC.ink} />
 
       {/* barras de escala */}
@@ -325,9 +368,9 @@ function EspalteadaShot() {
       <BarraEscala T={T} at={K.En} until={K.H} texto="20 cm" largo={210} />
       <BarraEscala T={T} at={K.H} until={K.P} texto="100 µm (esquemático)" largo={140} />
       <BarraEscala T={T} at={K.P} until={K.Ma} texto="20 cm" largo={140} />
-      <BarraEscala T={T} at={K.Ma} until={K.Ve} texto="10 cm" largo={200} />
-      <BarraEscala T={T} at={K.Ve} until={K.E} texto="5 mm (copitas)" largo={70} />
-      <BarraEscala T={T} at={K.E} until={K.X} texto="panel esquemático" largo={0} />
+      <BarraEscala T={T} at={K.Ma} until={K.L} texto="10 cm" largo={200} />
+      <BarraEscala T={T} at={K.L} until={K.S} texto="cubito de 14 mm" largo={60} />
+      <BarraEscala T={T} at={K.S} until={K.X} texto="10 cm" largo={110} />
       <BarraEscala T={T} at={K.X} until={K.C} texto="2 cm" largo={60} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={200} />
 
@@ -340,11 +383,12 @@ function EspalteadaShot() {
       <Subtitulo T={T} idx={5} at={K.M + 0.1} until={K.P - 0.1} texto="Un muro de *melanina.*" />
       <Subtitulo T={T} idx={6} at={K.P + 0.1} until={K.Ma - 0.1} texto="¿Y si hay *muchos hongos?*" />
       <Subtitulo T={T} idx={7} at={K.Ma + 0.1} until={K.B - 0.1} texto="Más hongos, *más fronteras.*" />
-      <Subtitulo T={T} idx={8} at={K.B + 0.1} until={K.Ve - 0.1} texto="_Trametes:_ *aclara la madera.*" />
-      <Subtitulo T={T} idx={9} at={K.Ve + 0.1} until={K.E - 0.1} texto="_Chlorociboria:_ *verde azulado.*" />
-      <Subtitulo T={T} idx={10} at={K.E + 0.1} until={K.X - 0.1} texto="1992: el verde *traía hifas.*" />
-      <Subtitulo T={T} idx={11} at={K.X + 0.1} until={K.C - 0.1} texto="_Xylaria:_ *líneas aunque esté solo.*" />
-      <Subtitulo T={T} idx={12} at={K.C + 0.1} until={K.Ou - 0.1} texto="El mapa de *una guerra de hongos.*" />
+      <Subtitulo T={T} idx={8} at={K.B + 0.1} until={K.L - 0.1} texto="_Trametes:_ *aclara la madera.*" />
+      <Subtitulo T={T} idx={9} at={K.L + 0.1} until={K.Co - 0.1} texto="2012: hongos en *cubitos de haya.*" />
+      <Subtitulo T={T} idx={10} at={K.Co + 0.1} until={K.S - 0.1} texto="El costo: *casi un tercio del peso.*" />
+      <Subtitulo T={T} idx={11} at={K.S + 0.1} until={K.X - 0.1} texto="Se seca a tiempo: *el hongo se detiene.*" />
+      <Subtitulo T={T} idx={12} at={K.X + 0.1} until={K.C - 0.1} texto="_Xylaria:_ *líneas aunque esté solo.*" />
+      <Subtitulo T={T} idx={13} at={K.C + 0.1} until={K.Ou - 0.1} texto="El mapa de *una guerra de hongos.*" />
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 2.6, 'avatar_11_sorprendido', 'gancho'],
@@ -352,8 +396,10 @@ function EspalteadaShot() {
         [K.H + 0.6, K.Ch - 0.4, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.M + 0.3, K.P - 0.2, 'avatar_10_serio_molesto', 'arriba-der'],
         [K.P + 0.05, K.Ma + 0.3, 'avatar_07_pensativo_puno', 'grande'],
-        [K.Ve + 0.5, K.E - 0.3, 'avatar_11_sorprendido', 'arriba-der'],
-        [K.E + 3.0, K.X - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
+        [K.B + 0.6, K.L - 0.2, 'avatar_13_senalando_arriba', 'arriba-der'],
+        [K.L + 3.0, K.Co - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
+        [K.Co + 0.6, K.S - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
+        [K.S + 0.3, K.X - 0.2, 'avatar_12_perfil_serio', 'arriba-der'],
         [K.X + 0.3, K.C - 0.2, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],
         [K.C + 0.3, K.Ou - 0.1, 'avatar_02_apuntando_camara', 'izq-alto']]} />
       <MarcaAgua T={T} tema="biologia" num="147" hasta={K.Ou} />

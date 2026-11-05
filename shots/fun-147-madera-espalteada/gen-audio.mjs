@@ -13,7 +13,7 @@ const HTML = process.argv[2] || 'Shot Espalteada base narrada.dc.html', OUT = pr
 const m = mezcla(HERE, HTML, 147);
 const K = m.K;
 const G = K.Gancho, V = K.Valor, En = K.Entran, H = K.Hifas, Ch = K.Choque, M = K.Melanina, P = K.Pregunta, Ma = K.Mapa,
-  B = K.Blanqueo, Ve = K.Verde, E = K.Estudio, X = K.Xylaria, C = K.Cierre, Ou = K.Outro;
+  B = K.Blanqueo, L = K.Laboratorio, Co = K.Costo, S = K.Secar, X = K.Xylaria, C = K.Cierre, Ou = K.Outro;
 const BEAT = 0.6, BAR = 4 * BEAT;
 
 // --- armonía: [inicio, fin, notas MIDI] (acordes en posición cercana: cada voz va a la nota más próxima) ---
@@ -43,7 +43,7 @@ const frase = (t0, notas, tr = 0, g = 0.03) => notas.forEach(([c, b, n, d]) => m
 frase(G + 0.2, TEMA);                    // gancho: el tema
 frase(H + 0.2, RESP, -12, 0.026);        // hifas: la respuesta, una octava abajo (por dentro de la madera)
 frase(Ma, TEMA, 0, 0.028);               // el mapa: regresa el tema
-frase(E + 0.3, RESP, 0, 0.026);          // el estudio: la respuesta arriba
+frase(L + 0.3, RESP, 0, 0.026);          // el laboratorio: la respuesta arriba
 // cierre: el tema en RE MAYOR (3.ª y 6.ª suben) y acorde que se queda sonando
 const MAYOR = TEMA.map(([c, b, n, d]) => [c, b, n === 65 ? 66 : n === 72 ? 71 : n, d]);
 frase(C + 0.1, MAYOR.slice(0, 5), 0, 0.03);
@@ -63,9 +63,15 @@ m.sube(P + 0.1, 1.4, 50, 62, 0.04);                                             
 for (let i = 0; i < 12; i++) m.gota(P + 0.1 + i * 0.12, 0.06, 700 + i * 40);                       // muchas esporas
 for (let i = 0; i < 11; i++) m.nota(Ma + 0.2 + i * 0.2, [62, 65, 69, 72, 74, 77, 74, 72, 69, 65, 62][i] + 12, 0.018, 0.4); // cada territorio se pinta
 m.whoosh(B + 0.2, 0.9, 0.06);                            // crece Trametes; se aclara
-for (let i = 0; i < 6; i++) m.burbuja(Ve + 0.1 + i * 0.12, 0.05, 520 + i * 60);                     // copitas de Chlorociboria
-m.whoosh(Ve + 0.8, 1.6, 0.05);                                                                      // pincelada verde
-m.golpe(E + 0.2, 0.22, 80); m.metal(E + 3.0, 0.08, 1200);                                           // tarjeta 1992 · clic de la lupa
+m.golpe(L + 0.1, 0.2, 80);                                                                          // tarjeta 2012
+for (let i = 0; i < 4; i++) m.metal(L + 0.2 + i * 0.35, 0.07, 1500 + i * 120);                     // clic de cada frasco
+for (let i = 0; i < 11; i++) m.tic(L + 1.6 + i * ((Co - 0.4 - L - 1.6) / 11), 0.05, 1800);          // tic de cada semana
+m.whoosh(Co - 0.3, 0.6, 0.06); m.golpe(Co + 0.4, 0.25, 60);                                         // el cubito cae en la báscula
+for (let i = 0; i < 4; i++) m.cruje(Co + 0.9 + i * 0.4, 0.08);                                      // se pudre (huecos)
+m.sube(Co + 1.0, 0.8, 62, 50, 0.03);                                                                // −30 %
+for (let i = 0; i < 8; i++) m.burbuja(S + 0.2 + i * 0.22, 0.04, 900 + i * 50);                      // gotas que se evaporan
+m.golpe(S + 1.4, 0.22, 90);                                                                         // sello PAUSA
+for (let i = 0; i < 6; i++) m.cruje(S + 1.0 + i * 0.3, 0.1);                                        // la tabla húmeda se desmorona
 for (let i = 0; i < 5; i++) m.cruje(X + 0.1 + i * 0.25, 0.08);                                      // brotan los dedos de muerto
 for (let i = 0; i < 3; i++) m.tic(X + 2.6 + i * 0.6, 0.06, 900);                                    // líneas consigo mismo
 m.guardar(OUT, 1);

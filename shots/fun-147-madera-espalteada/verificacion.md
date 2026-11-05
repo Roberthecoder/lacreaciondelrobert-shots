@@ -1,76 +1,100 @@
 # Verificación · Shot Fungi Mati #147 · Esas líneas negras no son vetas: son fronteras entre hongos
 
-5 nov 2026. **Verificación independiente:** la hizo un verificador (subagente) que NO escribió el guion, con el encargo de
-`CLAUDE.md` («Verificación de hechos», punto 2). Abrió el texto completo de los dos artículos de Robinson (2012) y los resúmenes
-de Blanchette et al. (1992) y Morris et al. (2021). Sus 3 correcciones (#7, #11, #21) se aplicaron tal como las propuso; la tabla
-ya muestra el texto final. Las filas 26–27 (datos que solo van en `publicacion.md`) las agregó el productor con las mismas fuentes abiertas.
+5 nov 2026. Dos rondas de **verificación independiente** (subagentes que NO escribieron el guion, encargo de `CLAUDE.md`,
+«Verificación de hechos», punto 2).
+
+- **v1** (guion original): 25 afirmaciones, 3 corregidas. Aquí solo quedan las filas de lo que sigue saliendo.
+- **v2** (5 nov 2026): se quitó todo lo de *Chlorociboria* / verde azulado / xilindeína / taraceas / Blanchette 1992 / Saikawa 2000
+  porque lo cuenta fun-126 (madera verde). En su lugar: el laboratorio de Seri Robinson, el costo en peso y el secado a tiempo.
+  Sus 7 correcciones se aplicaron tal como las propuso el verificador; las tablas ya muestran el texto final.
 
 Fuentes abiertas:
-- **[R1389]** Robinson, S. C. (2012). Developing fungal pigments for "painting" vascular plants. *Applied Microbiology and Biotechnology* 93: 1389–1394. doi:10.1007/s00253-011-3858-2. https://uamh.ca/CollectionActivities/_/media/uamh/CollectionActivities/Documents/2012_Robinson_Appl_Microb_Biotech_93_1389.pdf
 - **[R1041]** Robinson, S. C., Tudor, D. y Cooper, P. A. (2012). Utilizing pigment-producing fungi to add commercial value to American beech (*Fagus grandifolia*). *Applied Microbiology and Biotechnology* 93: 1041–1048. doi:10.1007/s00253-011-3576-9. https://www.uamh.ca/CollectionActivities/_/media/uamh/CollectionActivities/Documents/2012_Robinson_Appl_Micro_Biotech_93_1041.pdf
-- **[BLA]** Blanchette, R. A., Wilmering, A. M. y Baumeister, M. (1992). The use of green-stained wood caused by the fungus *Chlorociboria* in intarsia masterpieces from the 15th century. *Holzforschung* 46(3): 225–232. doi:10.1515/hfsg.1992.46.3.225. https://experts.umn.edu/en/publications/the-use-of-green-stained-wood-caused-by-the-fungus-chlorociboria-
-- **[MOR]** Morris, H., Smith, K. T., Robinson, S. C., Göttelmann, M., Fink, S. y Schwarze, F. W. M. R. (2021). The dark side of fungal competition and resource capture in wood: Zone line spalting from science to application. *Materials & Design* 201: 109480. https://pure.sruc.ac.uk/en/publications/the-dark-side-of-fungal-competition-and-resource-capture-in-wood-/
-- **[SAI]** Saikawa, Y. et al. (2000). Absolute configuration and tautomeric structure of xylindein, a blue-green pigment of *Chlorociboria* species. *Phytochemistry* 55: 237–240. · **[BÜT]** Büttner, E. et al. (2019). PMC6486252. https://pmc.ncbi.nlm.nih.gov/articles/PMC6486252
+- **[R1389]** Robinson, S. C. (2012). Developing fungal pigments for "painting" vascular plants. *Applied Microbiology and Biotechnology* 93: 1389–1394. doi:10.1007/s00253-011-3858-2. https://uamh.ca/CollectionActivities/_/media/uamh/CollectionActivities/Documents/2012_Robinson_Appl_Microb_Biotech_93_1389.pdf
+- **[MOR]** Morris, H., Smith, K. T., Robinson, S. C., Göttelmann, M., Fink, S. y Schwarze, F. W. M. R. (2021). The dark side of fungal competition and resource capture in wood: Zone line spalting from science to application. *Materials & Design* 201: 109480. doi:10.1016/j.matdes.2021.109480. PDF de acceso abierto: https://www.dora.lib4ri.ch/empa/dload/empa:24686/PDF/view
+- **[OSU]** Seri Robinson, Oregon State University: https://extension.oregonstate.edu/es/podcast/woods/episode-69-spalted-woods · directory.forestry.oregonstate.edu/node/7845
 - **[XYL]** *Xylaria polymorpha* ("dead man's fingers" / "dedos de muerto"): https://en.wikipedia.org/wiki/Xylaria_polymorpha · https://www.meteored.cl/noticias/actualidad/xylaria-polymorpha-un-espeluznante-hongo-que-parece-dedos-de-muerto.html
 - **[LAM]** Repositorio UNALM (2023): "Aptitud de cuatro hongos en la producción de madera espalteada…" https://repositorio.lamolina.edu.pe/items/c8449a86-f4dc-4cd1-ad9e-a8211d17de25
+
+## Verificación independiente v1 (filas que siguen vigentes)
 
 | # | Afirmación (voz / pantalla) | Veredicto | Fuente | Frase textual | Año |
 |---|---|---|---|---|---|
 | 1 | «Esas líneas negras no son vetas de la madera: son fronteras entre hongos» / «vetas» tachado, chip "fronteras entre hongos", etiqueta "líneas de zona" | ✅ | [MOR], [R1041] | "They are primarily aggregations of melanised hyphae" that "enclose wood being decayed by a single genetic individual of a wood decay fungus"; "zone lines … produced extracellularly by fungi in an effort to protect their resources from another fungus" | 2021 / 2012 |
 | 2 | «A esta madera se le llama espalteada» / chip "madera espalteada · spalting" | ✅ | [LAM], [R1389] | "madera espalteada"; "spalted wood or wood that has been pigmented by fungi" | 2023 / 2012 |
-| 3 | «y se vende cara» / etiqueta $ → $$$, chip "se vende cara" | ✅ | [R1041] | "spalted wood continues to be sold at a high markup by mills and lumber stores, regardless of the wood species containing the spalting (Bell Forest Products 2011)" | 2012 (dato de 2011) |
-| 4 | «en piezas torneadas y muebles» / cuenco torneado | ✅ | [R1389] | "spalted wood particularly preferred for small furniture items, like coffee tables (Donovan and Nicholls 2003) and wood turnings (Lindquist 1977)" | 2012 |
-| 5 | «Todo empieza cuando varios hongos distintos entran al mismo tronco» (3 esporas de colores = 3 hongos; esquemático) | ✅ | [R1389] | zone lines "produced due to inter- or intrafungal antagonism" (el verificador revisó «cada uno por su lado»; se cambió a «distintos», mismo sentido) | 2012 |
-| 6 | «Cada uno teje hifas, hilos finísimos, que avanzan y se comen la madera por dentro» / hifas en las células de la madera | ✅ | [BLA], [MOR] | "fungal hyphae in vessels, fibers and parenchyma cells"; "wood being decayed by a single genetic individual" | 1992 / 2021 |
-| 7 | «Cuando dos colonias chocan y ninguna logra vencer,» / chip "ninguna logra vencer" (antes «ninguna deja pasar a la otra», ⚠️ generalizaba) | ✅ corregido | [R1041], [MOR] | Las líneas se forman "in an effort to protect their resources from another fungus (Boddy 2000)"; no todo choque es empate (a veces un hongo reemplaza al otro): la línea de zona marca el empate, y así quedó dicho | 2012 |
-| 8 | «cada una amuralla su territorio con melanina, un pigmento oscuro» / etiquetas "melanina", "línea de zona" | ✅ | [R1041], [MOR] | "zone lines, which are usually lines of dark melanin, produced extracellularly by fungi in an effort to protect their resources from another fungus"; "aggregations of melanised hyphae" | 2012 / 2021 |
-| 9 | Líneas dobles en algunos tramos (pantalla: cada colonia hace su franja) | ✅ (esquemático) | [R1389] | "zone lines produced between competing strains … were composed of melanized hyphae, surrounded by PSP plates" | 2012 |
-| 10 | «Más hongos, más fronteras: la tabla queda como un mapa» / "cada línea negra = una frontera" | ✅ (deducción directa) | [MOR] | "In intact wood, zone lines define an irregular volume of decaying wood." | 2021 |
-| 11 | «Y los de pudrición blanca, como *Trametes versicolor*, se comen la lignina y aclaran la madera» / chips "pudrición blanca", "come lignina: más clara" (antes «Otros…», ⚠️ leve: *T. versicolor* también hace líneas) | ✅ corregido | [R1389], [R1041] | "bleaching, includes the lightening of the wood due to colonization and lignin removal by white rot fungi"; "Pretreatment of beech with T. versicolor alleviated this issue by bleaching the wood" | 2012 |
-| 12 | Dibujo de *T. versicolor*: abanicos delgados con bandas concéntricas y orilla clara | ✅ | morfología estándar ("cola de pavo") | — | — |
-| 13 | «Y *Chlorociboria* la pinta de verde azulado con un pigmento: la xilindeína» / etiquetas *Chlorociboria*, "xilindeína: pigmento" | ✅ | [R1389], [SAI], [BÜT] | "Chlorociboria sp., a genus well known for its production of the blue-green pigment xylindein (Maeda et al. 2003)"; "…xylindein, a blue-green pigment of Chlorociboria species"; "the bluish-green dimeric naphthoquinone derivate xylindein" | 2012 / 2000 / 2019 |
-| 14 | Copitas verde-azuladas de pie corto sobre una ramita, escala 5 mm | ✅ (esquemático) | morfología estándar (apotecios diminutos en copa) | — | — |
-| 15 | «En 1992, el equipo de Robert Blanchette…» / TarjetaEstudio "1992 · Blanchette y equipo · Holzforschung, 1992" | ✅ | [BLA] | Blanchette RA, Wilmering AM, Baumeister M (1992) … *Holzforschung* 46(3): 225–232 | 1992 |
-| 16 | «…miró al microscopio taraceas del Renacimiento italiano» / chip "taracea · Italia, siglo XV" | ✅ | [BLA], [R1389] | Microscopía óptica, electrónica de barrido y de transmisión; panel del *studiolo* de Gubbio (s. XV, Met de Nueva York) y taracea de Fra Giovanni da Verona (hacia 1500); "the first noted use of fungal-pigmented wood is from the 1400 s in Renaissance Italy (Blanchette et al. 1992)" | 1992 |
-| 17 | «…ese verde traía hifas del hongo» / Lupa "AL MICROSCOPIO · HIFAS" | ✅ | [BLA] | "evidence of fungal hyphae in vessels, fibers and parenchyma cells" en la madera verde (*Populus* sp.); la madera de al lado (roble, nogal) no tenía hongos | 1992 |
-| 18 | Panel de taracea con piezas verdes (esquemático) | ✅ | [R1389] | "Italian artists utilized Populus sp. wood stained bluegreen by Chlorociboria sp., in intarsia wood panels" | 2012 |
-| 19 | «*Xylaria polymorpha*, los dedos de muerto» / etiquetas *Xylaria polymorpha*, «dedos de muerto» | ✅ | [XYL] | nombre común en inglés "dead man's fingers"; en español "dedos de muerto" | — |
+| 3 | «y se vende cara» / etiqueta $ → $$$ | ✅ | [R1041] | "spalted wood continues to be sold at a high markup by mills and lumber stores, regardless of the wood species containing the spalting (Bell Forest Products 2011)" | 2012 (dato de 2011) |
+| 4 | «en piezas torneadas y muebles» / cuenco torneado | ✅ | [R1389], [MOR] | "spalted wood particularly preferred for small furniture items, like coffee tables (Donovan and Nicholls 2003) and wood turnings (Lindquist 1977)"; "wood turnery (unique fruit bowls, cups, etc)" | 2012 / 2021 |
+| 5 | «Todo empieza cuando varios hongos distintos entran al mismo tronco» (3 esporas de colores) | ✅ | [R1389], [MOR] | zone lines "produced due to inter- or intrafungal antagonism"; cada línea encierra madera de "a single genetic individual" (la excepción, *Xylaria* sola, se dice después) | 2012 / 2021 |
+| 6 | «Cada uno teje hifas, hilos finísimos, que avanzan y se comen la madera por dentro» | ✅ | [MOR] | "wood being decayed by a single genetic individual"; las pudriciones blancas degradan "the cell walls of all cell types including vessels, fibres and parenchyma" | 2021 |
+| 7 | «Cuando dos colonias chocan y ninguna logra vencer,» / chip "ninguna logra vencer" | ✅ corregido (v1) | [R1041], [MOR] | Las líneas se forman "in an effort to protect their resources from another fungus (Boddy 2000)"; la línea marca el empate | 2012 |
+| 8 | «cada una amuralla su territorio con melanina, un pigmento oscuro» / "melanina", "línea de zona" | ✅ | [R1041], [MOR] | "zone lines, which are usually lines of dark melanin"; "aggregations of melanised hyphae" | 2012 / 2021 |
+| 9 | Líneas dobles en algunos tramos (esquemático) | ✅ | [R1389], [MOR] | "zone lines produced between competing strains … were composed of melanized hyphae"; Fig. 6: "double zone line" | 2012 / 2021 |
+| 10 | «Más hongos, más fronteras: la tabla queda como un mapa» | ✅ (deducción directa) | [MOR] | "In intact wood, zone lines define an irregular volume of decaying wood." | 2021 |
+| 11 | «Y los de pudrición blanca, como *Trametes versicolor*, se comen la lignina y aclaran la madera» | ✅ corregido (v1) | [R1389], [R1041] | "bleaching, includes the lightening of the wood due to colonization and lignin removal by white rot fungi"; "Pretreatment of beech with T. versicolor alleviated this issue by bleaching the wood" | 2012 |
+| 12 | Dibujo de *T. versicolor*: abanicos delgados con bandas concéntricas y orilla clara ("cola de pavo") | ✅ | morfología estándar; NCI (cancer.gov/espanol): "cola de pavo" | — | — |
+| 19 | «*Xylaria polymorpha*, los dedos de muerto» | ✅ | [XYL] | "dead man's fingers"; en español "dedos de muerto" | — |
 | 20 | Mazos negros en forma de dedo sobre un tocón, escala 2 cm | ✅ | [XYL] | crece en tocones y madera podrida; estromas negros en forma de dedo | — |
-| 21 | «hace líneas aunque esté solo, sin otro hongo enfrente: se las pone a sí mismo» / chip "sin otro hongo", etiqueta "un solo hongo" (antes «sin rival», ⚠️ sonaba a superlativo) | ✅ corregido | [R1389], [R1041] | "Xylaria polymorpha is capable of creating zone lines without the antagonism of a secondary fungus"; "A single fungus may also produce zone lines in an attempt to delineate individuals within its own mass, or as a response to external factors such as changes in moisture content" | 2012 |
+| 21 | «hace líneas aunque esté solo» / chip "sin otro hongo", etiqueta "un solo hongo" | ✅ | [R1389], [MOR] | "Xylaria polymorpha is capable of creating zone lines without the antagonism of a secondary fungus"; "the only fungus to form zone lines 3-dimensionally without an antagonist in processed wood" | 2012 / 2021 |
 | 22 | «Lo más raro:» | ✅ (opinión, no dato) | — | Tono editorial; no afirma un récord | — |
-| 23 | «Así que esa tabla tan fina es el mapa de una guerra de hongos» / chip "un mapa de una guerra de hongos" | ✅ (metáfora sostenida por #1 y #8) | [R1041] | "to protect their resources from another fungus" | 2012 |
-| 24 | Barras de escala (10 cm tabla y cuenco, 20 cm tronco, 100 µm esquemático, 5 mm copitas, 2 cm dedos) y "panel esquemático" | ✅ (esquemático, rotulado) | — | Escalas ilustrativas; las de microscopio dicen "esquemático" | — |
-| 26 | Solo en `publicacion.md`: Seri Robinson antes en la U. de Toronto, hoy en Oregon State University; estudian inducir el espalteado en condiciones controladas, perdiendo poca resistencia y dando valor a maderas poco aprovechadas | ✅ | [R1389], [R1041], https://extension.oregonstate.edu/es/podcast/woods/episode-69-spalted-woods | "Faculty of Forestry, University of Toronto"; "induction of spalting under controlled conditions in order to minimize strength loss and maximize pigment production"; "American beech … is an abundant, underutilized tree"; OSU Extension: Seri Robinson, College of Forestry, Wood Science and Engineering | 2012 / actual |
-| 27 | Solo en `publicacion.md`: Blanchette, Universidad de Minnesota; panel del *studiolo* de Gubbio; sin metales (no era tinte mineral); la madera verde era álamo | ✅ | [BLA] | experts.umn.edu (U. of Minnesota); análisis de rayos X sin concentraciones altas de iones metálicos, lo que descarta tintes inorgánicos; "The woods were identified as Populus sp." | 1992 |
-| 25 | Tunbridge ware | — No aparece en la voz ni en pantalla (se quitó: sin fuente primaria). | — | — | — |
+| 23 | «Así que esa tabla tan fina es el mapa de una guerra de hongos» | ✅ (metáfora sostenida por #1 y #8) | [R1041] | "to protect their resources from another fungus" | 2012 |
+| 24 | Barras de escala (10 cm tabla, cuenco y tablas que se secan; 20 cm tronco; 100 µm esquemático; cubito de 14 mm; 2 cm dedos) | ✅ (esquemático, rotulado) | [R1041] | "cut into 14-mm cubes" | 2012 |
 
-Notas: el dibujo es esquemático (territorios, colores de cada hongo y células). Las fuentes son de 2012 o anteriores salvo Morris 2021;
-en la voz no se dice ninguna cifra, así que no aplica la regla de "en 20XX…" para números.
+## Verificación independiente v2, 5 nov 2026
 
+### Voz (líneas nuevas)
 
-## Segunda verificación independiente (5 nov 2026): filas 26–27, publicacion.md y «varios hongos distintos»
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «En un estudio de 2012, el equipo de Seri Robinson…» (antes «En 2012, el equipo…»: ⚠️, el experimento es de antes de abril de 2011; 2012 es el año del volumen) | ✅ corregido | [R1041] | "Appl Microbiol Biotechnol (2012) 93:1041"; "Received: 20 April 2011 … Published online: 20 September 2011" | 2011/2012 |
+| Seri Robinson = autora (firma "Sara C. Robinson") | ✅ | [R1041], [MOR] | "e-mail: seri.robinson@utoronto.ca"; "Seri C. Robinson" | 2011/2021 |
+| sembró hongos así (los de la escena: *Trametes*, *Xylaria*…) en cubitos de haya | ✅ | [R1041] | "Wood samples were inoculated with Trametes versicolor, Xylaria polymorpha, Inonotus hispidus, and Arthrographis cuboidea"; "American beech … was cut into 14-mm cubes"; "The blocks were inoculated as monocultures within the jars" | 2012 |
+| por ocho a doce semanas | ✅ | [R1041] | "T. versicolor were incubated for 8 weeks … A. cuboidea and X. polymorpha … 10 weeks … I. hispidus … 12 weeks" | 2012 |
+| «El costo: *Trametes* le comió a la madera clara casi un tercio de su peso» | ✅ | [R1041] | Tabla 1: T. versicolor, beech sapwood "30±3"; "Weight loss was minimal on all blocks, with the exception of those inoculated with T. versicolor"; sapwood = "only lighter wood, presumed to be predominately sapwood" | 2012 |
+| «Por eso se seca a tiempo» | ✅ | [MOR], [R1041] | "determining the length of time required before stopping the spalting process is critical"; "a short incubation period to induce zone lines is essential"; "then dried overnight in a forced air dryer (40 °C)" | 2021/2012 |
+| «en madera seca, el hongo se detiene» (antes «sin agua, no hay pudrición»: ⚠️ exageraba; la madera seca conserva agua ligada) | ✅ corregido | [MOR] | "most wood decay-fungi generally require a wood moisture content above bound water capacity (approx. 30% moisture content …) as water must be freely available for wood decay to occur" | 2021 |
+| «hace líneas aunque esté solo» (se quitó «, sin otro hongo» para cuadrar la duración; el chip en pantalla lo sigue diciendo) | ✅ | [R1389], [MOR] | ver fila 21 | 2012/2021 |
 
-| # | Afirmación (publicacion.md / verificacion.md) | Veredicto | Fuente | Frase textual | Año |
-|---|---|---|---|---|---|
-| A | Seri Robinson antes en la Universidad de Toronto | ✅ | [R1389], [R1041] | "Faculty of Forestry, University of Toronto"; "e-mail: seri.robinson@utoronto.ca" | 2012 |
-| B | Hoy en Oregon State University | ✅ | [OSU] | "Professor in the Oregon State University College of Forestry's Wood Science and Engineering program" | 2025 |
-| C | Estudian cómo inducir el color en condiciones controladas sin perder demasiada resistencia | ✅ | [R1389] | "research into the induction of spalting under controlled conditions in order to minimize strength loss and maximize pigment production" | 2012 |
-| D | Para dar valor a maderas poco aprovechadas | ✅ | [R1041] | "American beech (Fagus grandifolia) is an abundant, underutilized tree"; "help establish a market for this currently underutilized" | 2012 |
-| E | Blanchette, Universidad de Minnesota | ✅ | [BLA] | Publicación listada en experts.umn.edu (University of Minnesota) | 1992 |
-| F | Panel del *studiolo* de Gubbio | ✅ | [BLA] | Abstract: madera verde de un panel del studiolo de Gubbio (s. XV, Metropolitan Museum of Art) y una taracea de Fra Giovanni da Verona (hacia 1500) | 1992 |
-| G | Sin metales: no era tinte mineral | ✅ | [BLA] | Abstract: el microanálisis de rayos X no encontró concentraciones altas de iones metálicos, lo que descarta tintes inorgánicos | 1992 |
-| H | La madera verde era álamo (*Populus*); con hifas dentro de sus células | ✅ | [BLA] | Abstract: "identified as Populus sp."; hifas en "vessels, fibers and parenchyma cells"; la madera de al lado (Quercus, Juglans) sin hongos | 1992 |
-| I | «Taraceas italianas del siglo XV» (YouTube, LinkedIn) | ✅ | [BLA] | Título: "…in Intarsia Masterpieces from the 15th Century" (Fra Giovanni hacia 1500, dentro de lo razonable) | 1992 |
-| J | LinkedIn: álamo «teñido por *Chlorociboria*» | ✅ | [BLA] | Título: "Green-Stained Wood Caused by the Fungus Chlorociboria"; misma colonización que madera teñida reciente | 1992 |
-| K | YouTube/LinkedIn: el espalteado se divide en tres: líneas de zona, blanqueo y pigmentación | ✅ | [R1389] | "The definition is further broken down into three [categories] … bleaching … zone lines, produced due to inter- or intrafungal antagonism. The third category is defined simply as pigmentation" | 2012 |
-| L | *Trametes versicolor* = «cola de pavo» | ✅ | NCI (cancer.gov/espanol) | Nombre común en español del políporo T. versicolor (en inglés "turkey tail") | actual |
-| M | LinkedIn: «sobreprecio en tiendas de madera» | ✅ (ya cubierto por #3) | [R1041] | "sold at a high markup by mills and lumber stores" | 2012 |
-| N | Instagram/Facebook/X: en el Renacimiento italiano ya usaban madera teñida de verde por un hongo | ✅ | [BLA], [R1389] | "the first noted use of fungal-pigmented wood is from the 1400 s in Renaissance Italy" | 2012 |
-| O | Citas con DOI de Robinson 2012 (93:1389–1394), Robinson-Tudor-Cooper 2012 (93:1041–1048), Blanchette 1992 (46(3):225–232), Morris 2021 (201:109480) | ✅ | Crossref | Los 4 DOI resuelven a esos títulos, volúmenes, páginas y autores (R1041 salió en línea en 2011; volumen de 2012) | — |
-| P | Comentario fijado: Saikawa et al. (2000) «Xylindein, a blue-green pigment of Chlorociboria species.» Phytochemistry 55: 237–240 | ⚠️ cita mal | Crossref, doi:10.1016/S0031-9422(00)00282-X | El título real es "Absolute configuration and tautomeric structure of xylindein, a blue–green pigment of Chlorociboria species" (vol. 55, págs. 237–240, 2000 ✅). En el comentario quedó recortado como si fuera el título completo | 2000 |
-| Q | Comentario fijado: título de Robinson, Tudor y Cooper sin "(Fagus grandifolia)" | ⚠️ leve | Crossref | Título real termina en "American beech (Fagus grandifolia)" | 2012 |
-| R | narracion.json: «Todo empieza cuando varios hongos distintos entran al mismo tronco» | ✅ | [R1389], [MOR] | Las líneas de zona se forman "due to inter- or intrafungal antagonism" (entre especies distintas o entre individuos distintos de la misma especie; Morris: cada línea encierra madera de "a single genetic individual"). «Hongos distintos» = individuos distintos: es correcto en los dos casos. «Todo empieza» generaliza, pero la excepción (*Xylaria* sola) se dice explícitamente después en la voz, así que el contexto queda bien | 2012 / 2021 |
+### En pantalla (escenas nuevas)
 
-Correcciones aplicadas: P y Q (títulos completos de Saikawa 2000 y Robinson, Tudor y Cooper 2012 en el comentario fijado). Todo lo demás ✅.
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Tarjeta «2012 · Robinson, Tudor y Cooper · U. de Toronto · Appl. Microbiol. Biotechnol.» | ✅ | [R1041] | "Appl Microbiol Biotechnol (2012) 93:1041"; "Faculty of Forestry, University of Toronto" | 2012 |
+| Frascos con vermiculita | ✅ | [R1041] | "Blocks were then placed in vermiculite spalting jars" | 2012 |
+| 3 cubitos por frasco y escala «cubito de 14 mm» (antes uno por frasco: ⚠️) | ✅ corregido | [R1041] | "Three blocks were placed in each jar" (cubos de 14 mm) | 2012 |
+| Un solo hongo por frasco (pelusa de un color) con su nombre: *Trametes*, *Xylaria*, *Inonotus*, *Arthrographis* | ✅ | [R1041] | "inoculated as monocultures within the jars" | 2012 |
+| Chip «27 °C» | ✅ | [R1041] | "27 °C ± 2 °C, 80% ± 5% relative humidity" | 2012 |
+| Chip «semana 1 … 12» | ✅ | [R1041] | 8, 10 y 12 semanas según hongo | 2012 |
+| Etiqueta «cubitos de haya · Fagus grandifolia» | ✅ | [R1041] | "American beech (Fagus grandifolia)" | 2012 |
+| Pocas líneas negras, solo en la superficie de los cubitos | ✅ corregido | [R1041] | "Black pigmentation … was sporadic, occurred primarily on the surfaces of the heartwood, but not internally" | 2012 |
+| Báscula 100 % → 70 %; «−30 %», «peso perdido · albura de haya», *Trametes versicolor* | ✅ | [R1041] | Tabla 1 "30±3" (media) | 2012 |
+| Medidor «agua en la madera» húmeda → seca; chips «seca: el hongo se detiene» / «húmeda: se sigue pudriendo»; sello PAUSA; tabla húmeda que se desmorona (esquemático) | ✅ | [MOR] | "water must be freely available for wood decay to occur"; "extensive decay followed by a rapid loss of mechanical stiffness and strength" | 2021 |
+| Etiqueta de cierre «fronteras · blanqueo · secada a tiempo» | ✅ | [R1389], [MOR] | categorías "bleaching", "zone lines"; detener a tiempo | 2012/2021 |
+
+### publicacion.md (todo)
+
+| Red · afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Todas · se vende cara / sobreprecio en tiendas; piezas torneadas y muebles pequeños | ✅ | [R1041], [R1389] | "sold at a high markup by mills and lumber stores"; "small furniture items, like coffee tables … and wood turnings" | 2012 |
+| Todas · líneas de zona = franjas de hifas con melanina que marcan territorio | ✅ | [R1041], [MOR] | "lines of dark melanin … to protect their resources from another fungus"; "aggregations of melanised hyphae" | 2012/2021 |
+| Todas · pudrición blanca (*T. versicolor*, «cola de pavo») come lignina y aclara | ✅ | [R1389], [R1041] | "lightening of the wood due to colonization and lignin removal by white rot fungi" | 2012 |
+| LinkedIn/YouTube · tres tipos: líneas de zona, blanqueo, pigmentación | ✅ | [R1389] | "further broken down into three categories … bleaching … zone lines … pigmentation" | 2012 |
+| TikTok/YouTube · estudio (publicado) de 2012, U. de Toronto, *T. versicolor*, *X. polymorpha* y otros (dos) hongos, haya americana, frascos con vermiculita, 27 °C, 80 % de humedad, 8–12 semanas según el hongo | ✅ | [R1041] | ver arriba | 2012 |
+| Instagram · «en un estudio de 2012, el equipo … lo hizo»; LinkedIn · «En un estudio de 2012, el equipo … indujo» | ✅ corregido | [R1041] | ver arriba | 2012 |
+| Todas · *T. versicolor* quitó en promedio 30 % del peso a la albura (madera clara) | ✅ | [R1041] | Tabla 1 "30±3" | 2012 |
+| TikTok/YouTube · «casi todos los hongos de pudrición necesitan agua libre en la madera» (antes «la pudrición necesita…»: ⚠️ leve) | ✅ corregido | [MOR] | "most wood decay-fungi generally require …" | 2021 |
+| YouTube · buscan el máximo dibujo con la menor pérdida de resistencia | ✅ | [R1389] | "to minimize strength loss and maximize pigment production" | 2012 |
+| YouTube · las líneas de zona se forman en las primeras etapas de la pudrición | ✅ | [MOR] | "they occur during the early stages of decay" | 2021 |
+| Todas · *Xylaria* hace líneas sin otro hongo | ✅ | [R1389], [MOR] | ver fila 21 | 2012/2021 |
+| LinkedIn · Robinson entonces en la U. de Toronto, hoy en Oregon State University | ✅ | [R1041], [OSU] | "Faculty of Forestry, University of Toronto"; "Seri Robinson … Professor … Wood Science & Engineering", Oregon State | 2012 / 2026 |
+| LinkedIn · haya americana, madera poco aprovechada | ✅ | [R1041] | "an abundant, underutilized tree" | 2012 |
+| LinkedIn · «Una revisión de 2021 concluye que, con hongos como *Trametes versicolor*, la pudrición avanza tan rápido que hacen falta incubaciones cortas» (antes generalizaba: ⚠️ leve) | ✅ corregido | [MOR] | "Bjerkandera adusta and Trametes versicolor … Considering the extent of the decay and the speed at which it occurs, a short incubation period … is essential" | 2021 |
+| X · 8–12 semanas; el hongo se come parte de la madera | ✅ | [R1041] | ver arriba | 2012 |
+| Facebook · se puede hacer en laboratorio; el hongo se come la madera; secar a tiempo | ✅ | [R1041], [MOR] | ver arriba | 2012/2021 |
+| Threads · «Más hongos, más fronteras… pero mientras dibujan también se comen la madera: por eso se seca a tiempo» (antes «…y más pudrición»: ⚠️ sin fuente) | ✅ corregido | [R1041], [MOR] | pérdida de peso con *T. versicolor*; "a short incubation period … is essential" | 2012/2021 |
+| Comentario fijado · 3 citas (volúmenes, páginas, DOI) | ✅ | [R1041], [R1389], [MOR] | 93:1041–1048 doi 10.1007/s00253-011-3576-9; 93:1389–1394 doi 10.1007/s00253-011-3858-2; 201:109480 doi 10.1016/j.matdes.2021.109480 | — |
+
+### Restos de la v1
+*Chlorociboria*, verde azulado, xilindeína, taraceas y Blanchette 1992: **no aparecen** en la voz, en las escenas, en los subtítulos ni en
+`publicacion.md` (solo en la nota interna de `guion.md` y `narracion.json` que explica el cambio). El dibujo es esquemático.
 
 VEREDICTO: APROBADO

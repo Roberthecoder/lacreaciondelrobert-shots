@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #147 · rama `claude/fun-145-149-objetos`.
 - **Formato:** N1 · Por dentro. Viaje macro → micro → macro: una tabla de madera espalteada → dentro del tronco (hifas, choque, muro de melanina) → el laboratorio (frascos, semanas, peso perdido) → la misma tabla, ya "leída" como mapa de territorios y secada a tiempo.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Esas líneas negras no son vetas de la madera: son fronteras entre hongos.»
-- **Duración:** voz 1000 caracteres (≈ 58 s) + cierre 3.5 s → **61.37 s** en la base (suma de `OM_SCENES`).
+- **Duración:** voz 1006 caracteres (≈ 58 s) + cierre 3.5 s → **61.53 s** en la base (suma de `OM_SCENES`).
 - **Voz:** PENDIENTE de aprobación de Robert (~1000 créditos de ElevenLabs).
 - **No repite:** fun-23 (madera que brilla), el festivo de podredumbre blanca (hongos que regresan árboles a la tierra) ni **fun-126 (madera verde: *Chlorociboria*, xilindeína, taraceas, Blanchette 1992)**. v2 (5 nov 2026): se quitó todo lo del verde y se cambió por cómo se induce el espalteado en el laboratorio y su costo. Aquí el foco es el **diseño**: por qué la madera sale dibujada y cuánto cuesta dibujarla.
 
@@ -20,10 +20,10 @@
 | 6 | Pregunta | ¿Y qué pasa si en el tronco hay muchos hongos? | **Re-gancho.** Fondo rosa: el corte del tronco con muchas esporas de colores; signo "?" grande; Robert grande, pensativo. |
 | 7 | Mapa | Más hongos, más fronteras: la tabla queda como un mapa. | Fondo amarillo. Regresa la tabla: cada territorio se pinta de un color tenue y se ve que cada línea negra separa dos territorios (como un mapa de países). |
 | 8 | Blanqueo | Y los de pudrición blanca, como *Trametes versicolor*, se comen la lignina y aclaran la madera. | Fondo menta. Tres abanicos de *Trametes versicolor* ("cola de pavo": delgados, con bandas concéntricas y orilla clara) en la orilla de la tabla; dos territorios se aclaran. Chip "pudrición blanca", etiquetas *Trametes versicolor* y "come lignina: más clara". |
-| 9 | Laboratorio | En 2012, el equipo de Seri Robinson sembró hongos así en cubitos de haya, por ocho a doce semanas. | Fondo lila. TarjetaEstudio "2012 · Robinson, Tudor y Cooper · U. de Toronto". Una repisa con 4 frascos de vidrio con vermiculita y un cubito de madera clara cada uno (hongos de colores: *Trametes*, *Xylaria*…); termómetro "27 °C"; calendario que cuenta "semana 1 … 12"; en los cubitos aparecen líneas negras. Chip "cubitos de haya (*Fagus grandifolia*)". Escala "cubito de 14 mm". |
-| 10 | Costo | El costo: *Trametes* le comió a la madera clara casi un tercio de su peso. | Fondo coral. Báscula: el cubito "antes" (100 %) y "después" (≈ 70 %), con huecos blancos de pudrición; número grande "−30 %" con etiqueta "peso perdido · albura de haya · *Trametes versicolor*". Chip "más semanas = más pudrición". |
-| 11 | Secar | Por eso se seca a tiempo: sin agua, no hay pudrición. | Fondo cian. A la izquierda, la tabla se seca (gotas que suben y se evaporan, medidor "agua en la madera" que baja) y las hifas se quedan quietas: sello "PAUSA". A la derecha, una tabla que se quedó húmeda: se desmorona. Chips "seca: el hongo se detiene" / "húmeda: se sigue pudriendo". |
-| 12 | Xylaria | Lo más raro: *Xylaria polymorpha*, los dedos de muerto, hace líneas aunque esté solo, sin otro hongo. | Fondo naranja. Mazos negros con forma de dedos (*Xylaria polymorpha*) sobre un tocón; a la derecha, un territorio de un solo color que se dibuja líneas negras por dentro. Chip "sin otro hongo", etiqueta "un solo hongo". |
+| 9 | Laboratorio | En un estudio de 2012, el equipo de Seri Robinson sembró hongos así en cubitos de haya, por ocho a doce semanas. | Fondo lila. TarjetaEstudio "2012 · Robinson, Tudor y Cooper · U. de Toronto". Una repisa con 4 frascos de vidrio con vermiculita y 3 cubitos de madera clara cada uno; un solo hongo por frasco (monocultivo, su pelusa de color: *Trametes*, *Xylaria*, *Inonotus*, *Arthrographis*); chip "27 °C"; chip que cuenta "semana 1 … 12"; en la superficie de los cubitos aparecen pocas líneas negras. Chip "cubitos de haya (*Fagus grandifolia*)". Escala "cubito de 14 mm". |
+| 10 | Costo | El costo: *Trametes* le comió a la madera clara casi un tercio de su peso. | Fondo coral. Báscula (esquemática, un cubito grande): el cubito "antes" (100 %) y "después" (≈ 70 %), con huecos blancos de pudrición; número grande "−30 %" con etiquetas "peso perdido · albura de haya" y *Trametes versicolor*. |
+| 11 | Secar | Por eso se seca a tiempo: en madera seca, el hongo se detiene. | Fondo cian. A la izquierda, la tabla se seca (gotas que suben y se evaporan, medidor "agua en la madera" que baja de "húmeda" a "seca"): sello "PAUSA". A la derecha, una tabla que se quedó húmeda: se desmorona. Chips "seca: el hongo se detiene" / "húmeda: se sigue pudriendo". |
+| 12 | Xylaria | Lo más raro: *Xylaria polymorpha*, los dedos de muerto, hace líneas aunque esté solo. | Fondo naranja. Mazos negros con forma de dedos (*Xylaria polymorpha*) sobre un tocón; a la derecha, un territorio de un solo color que se dibuja líneas negras por dentro. Chip "sin otro hongo", etiqueta "un solo hongo". |
 | 13 | Cierre | Así que esa tabla tan fina es el mapa de una guerra de hongos. | **Regreso a la imagen del inicio:** la misma tabla del gancho, ahora con sus territorios marcados y las zonas claras; chip "un mapa de una guerra de hongos". |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
@@ -44,22 +44,24 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y qué pas
 | 3 | 13.5 | 17.2 | 06_pensativo_menton | `arriba-der` | «hifas… se comen la madera por dentro» |
 | 4 | 20.9 | 24.2 | 10_serio_molesto | `arriba-der` | «amuralla su territorio con melanina» |
 | 5 | 24.4 | 27.5 | 07_pensativo_puno | `grande` | «¿Y qué pasa si en el tronco hay muchos hongos?» |
-| 6 | 31.3 | 35.5 | 13_senalando_arriba | `abajo-izq` | «se comen la lignina y aclaran la madera» |
-| 7 | 38.7 | 41.1 | 04_bajando_lentes | `arriba-der` | «sembró hongos así en cubitos de haya» |
-| 8 | 41.9 | 45.2 | 11_sorprendido | `arriba-der` | «casi un tercio de su peso» |
-| 9 | 45.7 | 48.4 | 12_perfil_serio | `arriba-der` | «por eso se seca a tiempo» |
-| 10 | 48.9 | 54.0 | 05_sonriendo_dientes_uniformes | `arriba-der` | «hace líneas aunque esté solo» |
-| 11 | 54.5 | 57.8 | 02_apuntando_camara | `izq-alto` | «el mapa de una guerra de hongos» |
-| — | 57.9 | 61.4 | 13_senalando_arriba | CierreMarca | cierre |
+| 6 | 31.1 | 35.5 | 13_senalando_arriba | `arriba-der` | «se comen la lignina y aclaran la madera» |
+| 7 | 38.7 | 41.7 | 04_bajando_lentes | `arriba-der` | «sembró hongos así en cubitos de haya» |
+| 8 | 42.5 | 45.9 | 11_sorprendido | `arriba-der` | «casi un tercio de su peso» |
+| 9 | 46.4 | 49.5 | 12_perfil_serio | `arriba-der` | «por eso se seca a tiempo» |
+| 10 | 50.0 | 54.2 | 05_sonriendo_dientes_uniformes | `arriba-der` | «hace líneas aunque esté solo» |
+| 11 | 54.7 | 57.9 | 02_apuntando_camara | `izq-alto` | «el mapa de una guerra de hongos» |
+| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 11 · **≈ 37 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas · grande en la pregunta.
+Apariciones 11 · **37.5 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas · grande en la pregunta.
 
 ## Fuentes (abiertas en texto completo el 5 nov 2026)
 
 1. Robinson, S. C., Tudor, D. y Cooper, P. A. (2012). Utilizing pigment-producing fungi to add commercial value to American beech (*Fagus grandifolia*). *Applied Microbiology and Biotechnology* 93: 1041–1048. doi:10.1007/s00253-011-3576-9 (Faculty of Forestry, University of Toronto). PDF: https://www.uamh.ca/CollectionActivities/_/media/uamh/CollectionActivities/Documents/2012_Robinson_Appl_Micro_Biotech_93_1041.pdf
    > "Wood samples were inoculated with Trametes versicolor, Xylaria polymorpha, Inonotus hispidus, and Arthrographis cuboidea to induce fungal pigmentation."
    > "incubated in humidity and temperature controlled chamber: 27 °C ± 2 °C, 80% ± 5% relative humidity). Jars inoculated with T. versicolor were incubated for 8 weeks, jars incubated with A. cuboidea and X. polymorpha were incubated for 10 weeks, and jars inoculated with I. hispidus were incubated for 12 weeks."
-   > "Blocks were placed, one block per jar, in vermiculite spalting jars"; cubos de 14 mm y de 37 mm.
+   > "American beech … was cut into 14-mm cubes"; "Three blocks were placed in each jar"; "The blocks were inoculated as monocultures within the jars" (cubos de 14 mm; los de 37 mm, uno por frasco, eran otro ensayo).
+   > "Black pigmentation (T. versicolor, X. polymorpha, I. hispidus) was sporadic, occurred primarily on the surfaces of the heartwood, but not internally."
+   > "Received: 20 April 2011 … Published online: 20 September 2011" (volumen de 2012: por eso se dice «un estudio de 2012»).
    > "Weight loss was minimal on all blocks, with the exception of those inoculated with T. versicolor (Table 1)." Tabla 1: *T. versicolor* 30 ± 3 % de pérdida de peso en albura de haya (10 ± 12 % en duramen). La albura = "only lighter wood, presumed to be predominately sapwood".
    > "zone lines, which are usually lines of dark melanin, produced extracellularly by fungi in an effort to protect their resources from another fungus (Boddy 2000)."
    > "spalted wood continues to be sold at a high markup by mills and lumber stores"
