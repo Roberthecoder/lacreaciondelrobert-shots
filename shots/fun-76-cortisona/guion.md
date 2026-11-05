@@ -88,3 +88,5 @@ El dibujo es esquemático. No es consejo médico.
 - Subtítulos cortos de una línea (≤ 26 caracteres, `tam` 56) para que el subtítulo quede alto y no tape nada; nombres científicos en cursiva (`_Rhizopus._`: se agregó la cursiva con `_…_` al `Subtitulo` de la copia local de `kit-robert.jsx`).
 - En la copia local de `kit-robert.jsx`, los stickers `gancho` y `grande` entran y salen por la derecha (antes salían hacia abajo y cruzaban el subtítulo medio segundo).
 - La molécula sigue el dibujo estándar del esteroide (carbonos 1–21 numerados en `kEsteroideC`): progesterona con C3=O, C4=C5 y C20=O; hidrocortisona con 11β-OH en cuña, 17α-OH punteado y 21-OH; el OH que pone el moho es 11α (punteado).
+
+> Nota de ajuste: si la voz real sale larga, primero se quitan los nombres de pila (Durey, Herbert) y luego «para fabricar corticoides».
