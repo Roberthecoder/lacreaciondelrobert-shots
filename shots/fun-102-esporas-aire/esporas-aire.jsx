@@ -266,7 +266,7 @@ function EsporasAireShot() {
           <Perfil x={300} y={720} s={1.0} inhala={resp(K.Pu)} />
           <path d="M 430 870 L 430 1060 M 430 1060 Q 380 1110 330 1150 M 430 1060 Q 480 1110 540 1150" stroke={EA.alv2} strokeWidth={22} fill="none" strokeLinecap="round" opacity={kprog(T, K.Pu + 0.2, K.Pu + 0.6)} />
         </>)}
-        <Lupa T={T} at={K.Pu + 0.3} until={K.P - 0.2} x={760} y={900} r={230} fx={540} fy={1150} tinte={KC.pink} etiqueta="POR DENTRO · ALVÉOLOS"
+        <Lupa T={T} at={K.Pu + 0.3} until={K.P - 0.2} x={760} y={800} r={210} fx={540} fy={1150} tinte={KC.pink} etiqueta="POR DENTRO · ALVÉOLOS"
           interior={(Tl, r) => <Alveolos T={Tl} r={r} esporas={kprog(Tl, K.Pu + 0.6, K.P - 0.4)} />} />
       </Escena>
       {/* 7 · re-gancho: ¿y cuando llueve? */}
@@ -275,7 +275,7 @@ function EsporasAireShot() {
         {fsvg(<>
           {[[140, 520], [380, 470], [260, 600]].map(([x, y], i) => <ellipse key={i} cx={x} cy={y} rx={160} ry={80} fill="#eef2f7" stroke={KC.ink} strokeWidth={7} />)}
           {Array.from({ length: 14 }, (_, i) => { const t = ((T - K.P) * 1.4 + i * 0.137) % 1; return <line key={i} x1={60 + i * 30} y1={640 + t * 560} x2={52 + i * 30} y2={680 + t * 560} stroke="#2f7fd8" strokeWidth={7} strokeLinecap="round" />; })}
-          <Interrogacion T={T} x={300} y={1220} tam={380} />
+          <Interrogacion T={T} x={300} y={1110} tam={380} />
         </>)}
       </Escena>
       {/* 8–9 · el estudio de 2019: una gota sobre trigo con roya, el anillo de aire */}
@@ -283,16 +283,16 @@ function EsporasAireShot() {
         <FondoLunares color={KC.mint} />
         {T > K.A - 0.2 && <div style={{ position:'absolute', inset:0, background:KC.noche, opacity:kprog(T, K.A - 0.2, K.A + 0.3) }}></div>}
         {fsvg(<>
-          <HojaTrigo x={40} y={1180} largo={1020} ancho={130} rot={-4} />
+          <HojaTrigo x={40} y={1110} largo={1020} ancho={130} rot={-4} />
           {/* tira de película (cámara rápida) */}
           {T < K.A && <g opacity={kprog(T, K.E + 0.9, K.E + 1.3) * (1 - kprog(T, K.A - 0.4, K.A))}>
-            <rect x={70} y={880} width={940} height={170} fill={KC.ink} />
-            {Array.from({ length: 5 }, (_, i) => <g key={i}><rect x={92 + i * 184} y={900} width={160} height={130} fill="#16324a" />
-              <path d={`M ${172 + i * 184} ${920 + i * 20} q 14 20 0 30 q -14 -10 0 -30 Z`} fill="#8fd8ff" opacity={kprog(T, K.E + 1.2 + i * 0.2, K.E + 1.4 + i * 0.2)} /></g>)}
-            {Array.from({ length: 24 }, (_, i) => <rect key={i} x={84 + i * 39} y={886} width={18} height={10} fill="#fff" opacity=".8" />)}
+            <rect x={70} y={730} width={940} height={170} fill={KC.ink} />
+            {Array.from({ length: 5 }, (_, i) => <g key={i}><rect x={92 + i * 184} y={750} width={160} height={130} fill="#16324a" />
+              <path d={`M ${172 + i * 184} ${770 + i * 20} q 14 20 0 30 q -14 -10 0 -30 Z`} fill="#8fd8ff" opacity={kprog(T, K.E + 1.2 + i * 0.2, K.E + 1.4 + i * 0.2)} /></g>)}
+            {Array.from({ length: 24 }, (_, i) => <rect key={i} x={84 + i * 39} y={736} width={18} height={10} fill="#fff" opacity=".8" />)}
           </g>}
-          <GotaLluvia x={600} y0={300} y1={1120} u={caeU} splash={splash} />
-          <Vortice T={T} x={600} y={1110} p={vort} R={150} />
+          <GotaLluvia x={480} y0={300} y1={1040} u={caeU} splash={splash} />
+          <Vortice T={T} x={480} y={1040} p={vort} R={150} />
         </>)}
       </Escena>
       {/* 10 · a otros continentes */}
@@ -304,7 +304,7 @@ function EsporasAireShot() {
       {/* 11 · cincuenta millones de toneladas al año */}
       <Escena T={T} a={K.To} b={K.I} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<Bascula x={540} y={1000} lleno={kprog(T, K.To + 0.4, K.To + 3.0, kEase.suave)} />)}
+        {fsvg(<Bascula x={540} y={1100} lleno={kprog(T, K.To + 0.4, K.To + 3.0, kEase.suave)} />)}
       </Escena>
       {/* 12 · el sistema inmune las elimina; la alergia */}
       <Escena T={T} a={K.I} b={K.C} zoom={0.03}>
@@ -324,41 +324,41 @@ function EsporasAireShot() {
       </Escena>
 
       {/* textos (posiciones fuera de la zona de Robert y del subtítulo) */}
-      <Lupa T={T} at={K.G + 0.9} until={K.M - 0.3} x={300} y={960} r={170} fx={470} fy={980} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · EL AIRE"
+      <Lupa T={T} at={K.G + 0.9} until={K.M - 0.3} x={300} y={840} r={170} fx={470} fy={980} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · EL AIRE"
         interior={(Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0d1424" />
           {[[0.3, 0.35, 20], [0.62, 0.3, -30], [0.45, 0.62, 60], [0.75, 0.66, 10], [0.2, 0.7, -50]].map(([a, b, ro], i) =>
             <Conidio key={i} x={a * r * 2 + Math.sin(Tl * 1.3 + i) * 10} y={b * r * 2 + Math.cos(Tl + i) * 10} w={22} rot={ro + Tl * 25} />)}</svg>} />
-      <Chip T={T} at={K.G + 1.6} until={K.M - 0.3} texto="hoy: miles de esporas · invisibles" x={420} y={1180} tam={34} borde={KC.cyan} />
       <TarjetaEstudio T={T} at={K.M + 0.2} until={K.M + 2.2} anio="2023" quien="Hermosillo, Sonora" revista="trampa de esporas · J. Fungi, 2025" x={420} y={560} />
       <NumeroGigante T={T} at={K.M + 2.3} until={K.R - 0.3} valor={8445} dur={1.4} etiqueta="esporas en 1 m³ · pico de mayo 2023" x={430} y={560} tam={150} color={KC.yellow} />
       <Etq T={T} at={K.M + 0.8} until={K.R - 0.3} x={40 + HMO[0] * 0.52 + 20} y={760 + HMO[1] * 0.52 - 40} texto="Hermosillo" tam={30} color={KC.ink} />
       <NumeroGigante T={T} at={K.R + 2.6} until={K.Cl - 0.3} valor={4} dur={0.6} prefijo="≈ " etiqueta="por respiración · ese día pico" x={360} y={520} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.R + 1.0} until={K.Cl - 0.3} texto="0.5 L × 8,445 / m³ ≈ 4" x={330} y={1240} tam={30} borde={KC.ink} mono />
+      <Chip T={T} at={K.R + 1.0} until={K.Cl - 0.3} texto="0.5 L × 8,445 / m³ ≈ 4" x={330} y={670} tam={30} borde={KC.ink} mono />
       <Chip T={T} at={K.Cl + 0.1} until={K.F - 0.3} texto="AL MICROSCOPIO" x={420} y={470} tam={34} borde={KC.cyan} mono />
       <Etq T={T} at={K.Cl + 0.5} until={K.F - 0.3} x={110} y={600} texto="pelo ≈ 70 µm" tam={34} color={KC.texto} />
       <Etq T={T} at={K.Cl + 1.4} until={K.F - 0.3} x={600} y={680} texto="moho del aire" tam={30} color={KC.gold2} />
       <Etq T={T} at={K.Cl + 1.7} until={K.F - 0.3} x={600} y={730} texto="Cladosporium" it tam={32} color={KC.gold2} />
       <Etq T={T} at={K.Cl + 2.2} until={K.F - 0.3} x={600} y={790} texto="≈ 2–6 µm de ancho" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.Cl + 3.0} until={K.F - 0.3} texto="44 % de las esporas · Hermosillo 2016–19 y 2022–23" x={540} y={1300} tam={26} borde={KC.gold} />
+      <Chip T={T} at={K.Cl + 3.0} until={K.F - 0.3} texto="44 % de las esporas · Hermosillo 2016–19 y 2022–23" x={540} y={880} tam={26} borde={KC.gold} />
       <Chip T={T} at={K.F + 0.5} until={K.Pu - 0.3} texto="viento seco · ≈ 1 m/s basta" x={420} y={470} tam={34} borde={KC.cyan} />
       <Etq T={T} at={K.F + 0.9} until={K.Pu - 0.3} x={60} y={1110} texto="nacen en cadenitas" tam={30} color={KC.gold2} />
-      <Chip T={T} at={K.Pu + 1.0} until={K.P - 0.3} texto="menos de 10 µm: algunas llegan hondo" x={540} y={1270} tam={32} borde={KC.pink} />
+      <Chip T={T} at={K.Pu + 1.0} until={K.P - 0.3} texto="menos de 10 µm: algunas llegan hondo" x={640} y={470} tam={32} borde={KC.pink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.A - 0.4} anio="2019" quien="Cornell + Virginia Tech" revista="Kim y col. · PNAS, 2019" x={540} y={560} />
-      <Etq T={T} at={K.E + 1.2} until={K.A - 0.4} x={170} y={1250} texto="trigo con roya · Puccinia triticina" it tam={26} color={KC.ink} />
-      <Chip T={T} at={K.E + 1.0} until={K.A - 0.4} texto="cámara rápida" x={540} y={830} tam={30} borde={KC.ink} mono />
-      <Etq T={T} at={K.A + 1.4} until={K.Co - 0.3} x={600 + 230} y={660} texto="anillo de aire" lado="izq" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.A + 1.7} until={K.Co - 0.3} x={600 + 230} y={710} texto="(vórtice)" lado="izq" tam={26} color={KC.macro} />
-      <Chip T={T} at={K.A + 2.4} until={K.Co - 0.3} texto="miles de esporas · una sola gota" x={540} y={1290} tam={30} borde={EA.roya2} />
+      <Etq T={T} at={K.E + 1.2} until={K.A - 0.4} x={120} y={1000} texto="trigo con roya" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.E + 1.5} until={K.A - 0.4} x={520} y={1000} texto="Puccinia triticina" it tam={26} color={KC.ink} />
+      <Chip T={T} at={K.E + 1.0} until={K.A - 0.4} texto="cámara rápida" x={540} y={935} tam={30} borde={KC.ink} mono />
+      <Etq T={T} at={K.A + 1.4} until={K.Co - 0.3} x={700} y={760} texto="anillo de aire" lado="der" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.A + 1.7} until={K.Co - 0.3} x={700} y={810} texto="(vórtice)" lado="der" tam={26} color={KC.macro} />
+      <Chip T={T} at={K.A + 2.4} until={K.Co - 0.3} texto="miles de esporas · una sola gota" x={380} y={470} tam={30} borde={EA.roya2} />
       <Chip T={T} at={K.Co + 0.6} until={K.To - 0.3} texto="dispersión a larga distancia" x={540} y={470} tam={34} borde={KC.cyan} />
-      <NumeroGigante T={T} at={K.To + 0.3} until={K.I - 0.3} valor={50000000} dur={2.0} etiqueta="toneladas de esporas al año" x={480} y={540} tam={120} color={KC.yellow} />
-      <Chip T={T} at={K.To + 2.2} until={K.I - 0.3} texto="estimación global · Elbert y col., 2007" x={540} y={700} tam={28} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.To + 0.3} until={K.I - 0.3} valor={50000000} dur={2.0} etiqueta="toneladas de esporas al año" x={460} y={740} tam={110} color={KC.yellow} />
+      <Chip T={T} at={K.To + 2.2} until={K.I - 0.3} texto="estimación global · Elbert y col., 2007" x={380} y={470} tam={28} borde={KC.ink} />
       <Etq T={T} at={K.I + 0.6} until={K.I + 3.2} x={620} y={700} texto="macrófago" tam={30} color={KC.macro} />
       <Chip T={T} at={K.I + 1.2} until={K.I + 3.2} texto="persona sana: normalmente las elimina" x={420} y={470} tam={34} borde={KC.mint} />
       <Etq T={T} at={K.I + 1.6} until={K.I + 3.2} x={60} y={1150} texto="estudiado en Aspergillus fumigatus" it tam={26} color={KC.texto} />
       <Chip T={T} at={K.I + 3.6} until={K.C - 0.3} texto="con alergia: rinitis o asma" x={420} y={470} tam={34} borde={KC.orange} />
       <Etq T={T} at={K.I + 3.9} until={K.C - 0.3} x={380} y={760} texto="Alternaria" it tam={30} color={KC.gold2} />
       <Etq T={T} at={K.I + 4.1} until={K.C - 0.3} x={800} y={780} texto="Cladosporium" it tam={30} color={KC.gold2} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="hoy: miles de esporas" x={540} y={1300} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="hoy: miles de esporas" x={400} y={745} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.C + 2.4} until={K.Ou} x={60} y={1560} texto="≈ 15 m³ de aire al día (adulto, EPA). El dibujo es esquemático." tam={22} color={KC.ink} />
       <Etq T={T} at={K.C + 2.4} until={K.Ou} x={60} y={1595} texto="No es consejo médico." tam={22} color={KC.ink} />
 

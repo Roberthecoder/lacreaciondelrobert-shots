@@ -5,7 +5,7 @@
 const TX = {
   sub: [
     'No está hecho de hilos: *son tubos.*',
-    'Una hifa: *≈ 10 µm.* Un pelo: unas 70.',
+    'Hifa: *≈ 10 µm.* Pelo: *≈ 70.*',
     'Solo crece *por la punta.*',
     'Unas *38,000 vesículas* por minuto.',
     'El río *arrastra a los núcleos.*',
@@ -194,7 +194,7 @@ function HifaShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <Colonia T={T} x={CX} y={CY} mechon={levanta} id="colG" />
-          <Pinzas x={klerp(-80, CX - 120, pinzaG)} y={klerp(1500, CY + 120 - levanta * 40, pinzaG)} ang={-50} abre={1 - kprog(T, K.G + 0.35, K.G + 0.5)} />
+          <Pinzas x={klerp(-80, CX - 120, pinzaG)} y={klerp(CY + 300, CY + 120 - levanta * 40, pinzaG)} ang={195} abre={1 - kprog(T, K.G + 0.35, K.G + 0.5)} />
           {levanta > 0 && Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${CX - 120} ${CY + 120 - levanta * 40} Q ${CX - 150 + i * 10} ${CY + 140} ${CX - 170 + i * 16} ${CY + 160}`} stroke="#fffaf0" strokeWidth={2.5} fill="none" opacity={levanta} />)}
         </>)}
       </Escena>
@@ -208,7 +208,7 @@ function HifaShot() {
         <Ambiente T={T} n={20} />
         {fsvg(<>
           {(() => { const e = kprog(T, K.H + 2.4, K.H + 3.3, kEase.sale); return e > 0 && <Pelo x={klerp(-1200, -40, e)} y={720} w={1160} h={504} />; })()}
-          <Tubo T={T} id="tHifa" x0={-40} x1={klerp(880, 940, kprog(T, K.H, K.P))} y={640} w={72} vel={55} nucleos={4} seed={5} />
+          <Tubo T={T} id="tHifa" x0={-40} x1={klerp(580, 650, kprog(T, K.H, K.P))} y={640} w={72} vel={55} nucleos={4} seed={5} />
           {/* medidores */}
           <g opacity={kprog(T, K.H + 1.2, K.H + 1.6)}><line x1={300} y1={600} x2={300} y2={680} stroke={KC.gold2} strokeWidth={5} /><line x1={288} y1={604} x2={312} y2={604} stroke={KC.gold2} strokeWidth={5} /><line x1={288} y1={676} x2={312} y2={676} stroke={KC.gold2} strokeWidth={5} /></g>
           <g opacity={kprog(T, K.H + 3.3, K.H + 3.7)}><line x1={600} y1={725} x2={600} y2={1219} stroke={KC.ink} strokeWidth={6} /><line x1={584} y1={727} x2={616} y2={727} stroke={KC.ink} strokeWidth={6} /><line x1={584} y1={1217} x2={616} y2={1217} stroke={KC.ink} strokeWidth={6} /></g>
@@ -233,7 +233,7 @@ function HifaShot() {
       {/* 3 · las vesículas: membrana y enzimas para la pared */}
       <Escena T={T} a={K.V} b={K.R} zoom={0.04} origen="80% 55%">
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg((() => { const W = 480, Y = 960, X1 = 920, rr = W / 2, cxD = X1 - rr;
+        {fsvg((() => { const W = 480, Y = 925, X1 = 920, rr = W / 2, cxD = X1 - rr;
           const rieles = [-130, -10, 110];
           const ves = Array.from({ length: 34 }, (_, i) => {
             const t0 = K.V + 0.2 + i * 0.13, u = (T - t0) / 1.5; if (u < 0 || u > 1.25) return null;
@@ -256,10 +256,10 @@ function HifaShot() {
             {ves}
           </>; })())}
         <NumeroGigante T={T} at={K.V + 2.2} until={K.R - 0.2} valor={38000} dur={1.6} etiqueta="vesículas por minuto" x={380} y={520} tam={130} color={KC.yellow} />
-        <Nota T={T} at={K.V + 2.8} until={K.R - 0.2} x={380} y={650} centro partes={[['estimación de 1974 en ', false], ['N. crassa', true], [', por punta', false]]} tam={28} color={KC.texto} />
-        <Nota T={T} at={K.V + 1.0} until={K.R - 0.2} x={70} y={840} partes={[['vesículas → membrana nueva', false]]} tam={28} color={KC.yellow} />
-        <Nota T={T} at={K.V + 1.4} until={K.R - 0.2} x={70} y={1050} partes={[['- - rieles (microtúbulos)', false]]} tam={24} color={KC.lilac} />
-        <Nota T={T} at={K.V + 1.8} until={K.R - 0.2} x={70} y={1135} partes={[['enzimas de pared (quitina sintasas)', false]]} tam={28} color={HF.enz} />
+        <Nota T={T} at={K.V + 2.8} until={K.R - 0.2} x={470} y={668} centro partes={[['estimación de 1974 en ', false], ['N. crassa', true], [', por punta', false]]} tam={28} color={KC.texto} />
+        <Nota T={T} at={K.V + 1.0} until={K.R - 0.2} x={70} y={790} partes={[['vesículas → membrana nueva', false]]} tam={28} color={KC.yellow} />
+        <Nota T={T} at={K.V + 1.4} until={K.R - 0.2} x={70} y={1010} partes={[['- - rieles (microtúbulos)', false]]} tam={24} color={KC.lilac} />
+        <Nota T={T} at={K.V + 1.8} until={K.R - 0.2} x={70} y={1105} partes={[['enzimas de pared (quitina sintasas)', false]]} tam={28} color={HF.enz} />
       </Escena>
 
       {/* 4 · el río: el citoplasma fluye hacia la punta y arrastra a los núcleos */}
@@ -274,7 +274,7 @@ function HifaShot() {
         <Chip T={T} at={K.R + 0.2} until={K.R + 2.6} texto="citoplasma → hacia la punta" x={400} y={560} tam={34} borde={KC.mint} />
         <Nota T={T} at={K.R + 3.4} until={K.S - 0.2} x={60} y={560} partes={[['● núcleos (proteína fluorescente)', false]]} tam={26} color={HF.nuc} />
         <Nota T={T} at={K.R + 3.8} until={K.S - 0.2} x={60} y={600} partes={[['● algunos van en contra', false]]} tam={26} color={HF.ret} />
-        <TarjetaEstudio T={T} at={K.R + 2.6} until={K.S - 0.2} anio="2009" quien="CICESE, Ensenada (México)" revista="Ramos-García et al. · Eukaryotic Cell" x={540} y={1060} />
+        <TarjetaEstudio T={T} at={K.R + 2.6} until={K.S - 0.2} anio="2009" quien="CICESE, Ensenada (México)" revista="Ramos-García et al. · Eukaryotic Cell" x={540} y={1670} />
       </Escena>
 
       {/* 5 · septos con poro */}
@@ -380,7 +380,7 @@ function HifaShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <Colonia T={T} x={CX} y={CY} rio={kprog(T, K.C + 0.3, K.C + 1.6)} mechon={1} nucleo={fmod((T - K.C) / 3, 1)} id="colC" />
-          <Pinzas x={CX - 120} y={CY + 80} ang={-50} abre={0} />
+          <Pinzas x={CX - 120} y={CY + 80} ang={195} abre={0} />
           {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M ${CX - 120} ${CY + 80} Q ${CX - 150 + i * 10} ${CY + 140} ${CX - 170 + i * 16} ${CY + 160}`} stroke="#fffaf0" strokeWidth={2.5} fill="none" />)}
         </>)}
         <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="tubos, no hilos" x={330} y={420} tam={44} borde={KC.mint} />

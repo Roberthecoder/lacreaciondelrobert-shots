@@ -95,7 +95,9 @@ function Celula({ x, y, s = 1, n = 0, uv = 0, viejo = 0, gris = 0, brotes = [], 
     {numeros > 0 && CIC.slice(0, Math.min(Math.ceil(n), 10)).map(([u, v], i) => { const o = kclamp(numeros * 10 - i, 0, 1); return o > 0 ?
       <text key={'n' + i} x={u * k * rx + 26} y={v * k * ry - 18} style={{ font:`700 30px ${KF.mono}` }} fill="#ffffff" stroke={KC.ink} strokeWidth={5} paintOrder="stroke" opacity={o}>{i + 1}</text> : null; })}
     {yemas.map((b, i) => <Anillo key={'a' + i} b={b} />)}
-    {reloj && (() => { const { A, B, cintura, r } = reloj, dx = B[0] - A[0], dy = B[1] - A[1], L = Math.hypot(dx, dy) || 1, nx = -dy / L, ny = dx / L, M = [(A[0] + B[0]) / 2, (A[1] + B[1]) / 2];
+    {reloj && (() => { const { A, B, cintura, r } = reloj, dx = B[0] - A[0], dy = B[1] - A[1], L = Math.hypot(dx, dy) || 1;
+      if (L < 2 * r) return <circle cx={A[0] + dx / 2} cy={A[1] + dy / 2} r={34} fill={LV.nucleo} stroke={LV.nucleo2} strokeWidth={4} opacity={1 - uv} />;
+      const nx = -dy / L, ny = dx / L, M = [(A[0] + B[0]) / 2, (A[1] + B[1]) / 2];
       const d = `M ${A[0] + nx * r} ${A[1] + ny * r} Q ${M[0] + nx * cintura} ${M[1] + ny * cintura} ${B[0] + nx * r} ${B[1] + ny * r} A ${r} ${r} 0 1 0 ${B[0] - nx * r} ${B[1] - ny * r} Q ${M[0] - nx * cintura} ${M[1] - ny * cintura} ${A[0] - nx * r} ${A[1] - ny * r} A ${r} ${r} 0 1 0 ${A[0] + nx * r} ${A[1] + ny * r} Z`;
       return <path d={d} fill={LV.nucleo} stroke={LV.nucleo2} strokeWidth={4} opacity={1 - uv} />; })()}
   </g>;
@@ -311,13 +313,13 @@ function LevaduraShot() {
       <Etq T={T} at={K.Ma + 0.9} until={K.Ce - 0.3} x={50} y={476} texto="Saccharomyces cerevisiae" it tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ce + 0.2} until={K.Y - 0.2} texto="AL MICROSCOPIO" x={330} y={430} tam={36} borde={KC.cyan} mono />
       <Etq T={T} at={K.Ce + 0.9} until={K.Y + 2.0} x={50} y={520} texto="una sola célula · 5 × 6 µm" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Y + 0.6} until={K.An + 1.8} x={50} y={1150} texto="madre" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.Y + 1.4} until={K.An + 1.8} x={1030} y={1170} lado="izq" texto="hija (yema)" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.An + 0.4} until={K.An + 2.2} x={50} y={470} texto="anillo de quitina (en el cuello)" tam={28} color={LV.quitina} />
-      <Etq T={T} at={K.An + 2.6} until={K.Ri - 0.1} x={50} y={470} texto="madre: cicatriz de gemación" tam={28} color={LV.quitina} />
-      <Etq T={T} at={K.An + 3.0} until={K.Ri - 0.1} x={50} y={525} texto="hija: marca de nacimiento" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Y + 0.6} until={K.An + 1.8} x={50} y={760} texto="madre" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.Y + 1.4} until={K.An + 1.8} x={1030} y={850} lado="izq" texto="hija (yema)" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.An + 0.4} until={K.An + 2.2} x={50} y={430} texto="anillo de quitina (en el cuello)" tam={28} color={LV.quitina} />
+      <Etq T={T} at={K.An + 2.6} until={K.Ri - 0.1} x={50} y={430} texto="madre: cicatriz de gemación" tam={28} color={LV.quitina} />
+      <Etq T={T} at={K.An + 3.0} until={K.Ri - 0.1} x={50} y={478} texto="hija: marca de nacimiento" tam={26} color={KC.texto} />
       <Chip T={T} at={K.Ri + 0.2} until={K.P - 0.3} texto="≈ 90 min por hija · en el laboratorio" x={540} y={440} tam={32} borde={KC.mint} />
-      {T > K.An + 2.4 && T < K.P + 0.1 && <div style={{ position:'absolute', left:300, top:620, zIndex:42, transform:'translate(-50%,-50%)', font:`700 44px ${KF.mono}`, color:KC.gold2, textShadow:KSOMBRA, whiteSpace:'nowrap' }}>hijas: {hijasA}</div>}
+      {T > K.An + 2.4 && T < K.P + 0.1 && <div style={{ position:'absolute', left:300, top:565, zIndex:42, transform:'translate(-50%,-50%)', font:`700 44px ${KF.mono}`, color:KC.gold2, textShadow:KSOMBRA, whiteSpace:'nowrap' }}>hijas: {hijasA}</div>}
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Li - 0.3} anio="1959" quien="Mortimer y Johnston" revista="Nature, 1959 · U. de California, Berkeley" x={540} y={520} />
       {T > K.E + 1.0 && T < K.Li - 0.3 && <div style={{ position:'absolute', left:905, top:950, zIndex:42, transform:'translate(-50%,-50%)', textAlign:'center', font:`700 26px/1.25 ${KF.mono}`, color:KC.ink }}>aguja del<br/>micro-<br/>manipulador</div>}
       {T > t0E && T < K.Li - 0.3 && <div style={{ position:'absolute', left:160, top:950, zIndex:42, transform:'translate(-50%,-50%)', textAlign:'center', font:`700 34px ${KF.mono}`, color:KC.ink }}>hijas<div style={{ font:`400 110px/1 ${KF.titulo}`, color:KC.white, WebkitTextStroke:`4px ${KC.ink}` }}>{hijasE}</div></div>}

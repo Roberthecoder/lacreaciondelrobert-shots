@@ -34,13 +34,13 @@ m.ruido(Co + 0.2, 0.9, 0.08, 300, 1400);                                        
 for (let i = 0; i < 7; i++) m.tic(Co + 1.6 + i * 0.06, 0.08, 2000 + i * 120);                    // polvo y microbios
 m.metal(Co + 2.2, 0.12, 1400);                                                                   // pinzas
 m.ruido(A + 0.1, 3.6, 0.025, 200, 600);                                                          // zumbido del flujo laminar
-m.whoosh(A + 0.3, 0.8, 0.07);                                                                    // flama
-m.tic(A + 1.0, 0.18, 1600); m.tic(A + 2.6, 0.18, 1400); m.pop(A + 2.4, 0.18);                    // tapa, cubito cae, tapa
-for (let i = 0; i < 6; i++) m.campana(H + 0.2 + i * 0.68, m.ESC[4 + i], 0.035, 1.2);             // cada día que pasa
-m.ruido(H + 0.4, 3.8, 0.03, 2000, 5000);                                                         // micelio que avanza (granulado)
-m.golpe(Pa + 0.4, 0.35, 60); m.whoosh(Pa + 0.9, 0.6, 0.08); m.golpe(Pa + 1.6, 0.25, 90);        // tache, a la basura
-m.metal(Pa + 1.6, 0.1, 1800); m.pop(Pa + 3.3, 0.18);                                             // bisturí corta · cae a la caja nueva
-m.campana(Pa + 3.5, 76, 0.05, 1.4);                                                              // «un clon»
+m.whoosh(A + 0.2, 0.8, 0.07); m.metal(A + 0.5, 0.08, 1600);                                      // se flamean las pinzas
+m.tic(A + 1.2, 0.18, 1600); m.tic(A + 2.8, 0.18, 1400); m.pop(A + 2.6, 0.18);                    // tapa, cubito cae, tapa
+for (let i = 0; i < 6; i++) m.campana(H + 0.2 + i * 0.6, m.ESC[4 + i], 0.035, 1.2);             // cada día que pasa
+m.ruido(H + 0.4, 3.4, 0.03, 2000, 5000);                                                         // micelio que avanza (granulado)
+m.golpe(Pa + 0.25, 0.35, 60); m.whoosh(Pa + 0.6, 0.5, 0.08); m.golpe(Pa + 1.2, 0.25, 90);        // tache, a la basura
+m.metal(Pa + 1.2, 0.1, 1800); m.pop(Pa + 2.5, 0.18);                                             // bisturí corta · cae a la caja nueva
+m.campana(Pa + 2.6, 76, 0.05, 1.4);                                                              // «un clon»
 m.sube(P + 0.1, 1.6, 52, 64, 0.05);                                                              // re-gancho
 m.tic(E + 0.3, 0.15, 1200); m.whoosh(E + 1.2, 0.7, 0.07);                                        // tazón se levanta
 for (let i = 0; i < 14; i++) m.tic(E + 1.9 + i * 0.03, 0.04, 3200 + i * 50);                     // polvillo de esporas
@@ -50,10 +50,10 @@ m.ruido(D + 0.3, 0.7, 0.05, 400, 2400); m.campana(D + 0.95, 72, 0.07, 2.0); m.ca
 for (let i = 0; i < 4; i++) m.tic(D + 1.4 + i * 0.6, 0.12, 1700);                                // cada fíbula
 m.campana(D + 3.6, 79, 0.05, 1.6);                                                               // da setas
 m.golpe(Es + 0.1, 0.3, 80); m.pop(Es + 2.0, 0.2);                                                // tarjeta · punto en Oaxaca
-m.pop(Es + 2.4, 0.15); m.pop(Es + 2.7, 0.15);                                                    // dos cepas
+m.pop(Es + 2.4, 0.15); m.pop(Es + 2.7, 0.15); m.tic(Es + 2.8, 0.1, 1000);                        // dos cepas · chip
 for (let i = 0; i < 56; i++) m.nota(Es + 3.2 + i * 0.03, m.MAY[3 + (i % 9)] + 12, 0.025, 0.25); // 56 híbridas, una nota cada una
-m.tic(Gu + 0.4, 0.15, 1300);                                                                     // etiqueta
-m.golpe(Gu + 1.2, 0.2, 110); m.pop(Gu + 1.9, 0.15); m.metal(Gu + 2.6, 0.08, 2400);               // refri · tubo · vial
+m.tic(Gu + 0.4, 0.15, 1300); m.tic(Gu + 0.9, 0.1, 900);                                          // etiqueta · chip
+m.pop(Gu + 1.2, 0.15); m.metal(Gu + 1.9, 0.08, 2400); m.tic(Gu + 2.8, 0.15, 1300); m.golpe(Gu + 3.4, 0.2, 70); // tubo · vial · resiembra · «no va al refri»
 m.tic(R + 0.6, 0.14, 1100); m.pop(R + 1.2, 0.15);                                                // tapa del tupper
 m.whoosh(C + 0.4, 0.6, 0.06); m.tic(C + 0.6, 0.15, 1500);                                        // etiqueta colgante
 m.campana(Ou + 0.3, 60, 0.06, 3.0); m.campana(Ou + 0.3, 64, 0.05, 3.0); m.campana(Ou + 0.3, 67, 0.04, 3.0);

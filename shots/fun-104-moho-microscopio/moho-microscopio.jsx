@@ -27,7 +27,7 @@ const SUBS_TXT = [
   'Le recordó *el rociador del agua bendita.*',
   'Sembró esporas: salía *el mismo hongo.*',
   'Miles de esporas *de unas 3 micras.*',
-  '*No la huelas:* si está aguada o cubierta, a la basura.',
+  '*No la huelas;* aguada o cubierta: *a la basura.*',
   'No es una mancha: es un *bosque de pinceles.*',
 ];
 
@@ -160,7 +160,7 @@ const ASP = (() => {
 function Regadera({ T, x, y, s = 1, p = 1, cad = 8, seed = 2, suelta = 0, sinCadenas = false }) {
   const pT = kprog(p, 0, 0.35), pV = kprog(p, 0.3, 0.6), pF = kprog(p, 0.55, 0.85);
   const { H, vW, vH } = ASP;
-  const ves = `M -32 ${-H + 20} C -40 ${-H - 40} ${-vW} ${-H - vH * 0.2} ${-vW} ${-H - vH * 0.5} C ${-vW} ${-H - vH * 1.05} ${vW} ${-H - vH * 1.05} ${vW} ${-H - vH * 0.5} C ${vW} ${-H - vH * 0.2} 40 ${-H - 40} 32 ${-H + 20} Z`;
+  const ves = `M -28 ${-H + 30} C -34 ${-H - 30} ${-vW * 0.8} ${-H - vH * 0.25} ${-vW} ${-H - vH * 0.55} C ${-vW * 1.05} ${-H - vH * 1.08} ${vW * 1.05} ${-H - vH * 1.08} ${vW} ${-H - vH * 0.55} C ${vW * 0.8} ${-H - vH * 0.25} 34 ${-H - 30} 28 ${-H + 30} Z`;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <Seg x1={0} y1={60} x2={0} y2={-H + 10} w={56} k={pT} />
     {pV > 0 && <g transform={`translate(0 ${-H + 20}) scale(${pV}) translate(0 ${H - 20})`}><path d={ves} fill={MM.tinte} stroke={MM.tinte2} strokeWidth={6} /></g>}
@@ -245,14 +245,14 @@ function MohoShot() {
   const K = { G: CUES.Gancho, Mo: CUES.Moho, Ci: CUES.Cinta, Ti: CUES.Tincion, Pi: CUES.Pincel, Ca: CUES.Cadenas, P: CUES.Pregunta, A: CUES.Aspergillus, Mi: CUES.Micheli, S: CUES.Sembro, Mil: CUES.Miles, Se: CUES.Seguridad, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const Mi2 = K.Mi + 4.6;                        // empieza «le recordó el aspergillum…» (segunda línea de la escena)
-  const NX = 470, NY = 900, MX = NX - 70, MY = NY - 40;   // naranja y su moho
+  const NX = 430, NY = 740, MX = NX - 70, MY = NY - 40;   // naranja y su moho
   // gancho: zoom rápido hacia el moho y se abre la lupa (cuadro 0.3)
   const zG = 1 + 0.18 * kprog(T, K.G, K.G + 0.6, kEase.sale);
   const abreG = kprog(T, K.G + 0.25, K.G + 0.85) * (1 - kprog(T, K.Mo + 0.2, K.Mo + 0.7));
   const abreC = kprog(T, K.C + 0.3, K.C + 1.0);
   // cinta en la caja Petri: baja, presiona y sube con polvo
   const baja = kprog(T, K.Ci + 0.2, K.Ci + 1.1, kEase.suave), sube = kprog(T, K.Ci + 1.6, K.Ci + 2.5, kEase.suave);
-  const bandY = klerp(klerp(520, 860, baja), 600, sube), polvo = kprog(T, K.Ci + 1.2, K.Ci + 1.5);
+  const bandY = klerp(klerp(470, 760, baja), 560, sube), polvo = kprog(T, K.Ci + 1.2, K.Ci + 1.5);
   // pincel: crece y luego zoom a las fiálides (cadenas)
   const pPin = kprog(T, K.Pi + 0.1, K.Pi + 2.0);
   const zC = kprog(T, K.Ca - 0.2, K.Ca + 0.8, kEase.suave) * (1 - kprog(T, K.P - 0.5, K.P, kEase.suave));
@@ -271,19 +271,19 @@ function MohoShot() {
         <FondoLunares color={KC.yellow} />
         <div style={{ position:'absolute', inset:0, transform:`scale(${zG})`, transformOrigin:`${MX}px ${MY}px` }}>
           {fsvg(<>
-            <Naranja x={NX} y={NY} r={290} />
+            <Naranja x={NX} y={NY} r={270} />
             {/* puff de esporas azules */}
             {T > K.Mo + 0.6 && Array.from({ length: 26 }, (_, i) => { const ph = kclamp((T - K.Mo - 0.6 - i * 0.04) / 2.2, 0, 1); if (ph <= 0) return null;
               return <circle key={i} cx={MX + Math.cos(i * 2.1) * 40 + ph * (60 + (i % 5) * 40)} cy={MY - ph * (220 + (i % 4) * 60)} r={6} fill={i % 2 ? MM.moho : MM.mohoClaro} stroke={KC.ink} strokeWidth={1.5} opacity={1 - ph * 0.7} />; })}
           </>)}
         </div>
-        {fsvg(<LupaBosque T={T} x={760} y={1010} fx={MX} fy={MY} r={190} ab={abreG} cad={2 + kprog(T, K.G + 0.5, K.G + 3.5) * 3} />, 25)}
+        {fsvg(<LupaBosque T={T} x={800} y={985} fx={MX} fy={MY} r={175} ab={abreG} cad={2 + kprog(T, K.G + 0.5, K.G + 3.5) * 3} />, 25)}
       </Escena>
       {/* 3 · la prueba de la cinta sobre un cultivo */}
       <Escena T={T} a={K.Ci} b={K.Ti} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Petri x={470} y={900} r={250} medio="#f2e6bd">
+          <Petri x={470} y={790} r={230} medio="#f2e6bd">
             <Colonia cx={0} cy={0} r={175} color={MM.micelio} seed={3} />
             <Colonia cx={0} cy={0} r={130} color={MM.moho} seed={5} />
             <Colonia cx={0} cy={0} r={80} color={MM.moho2} seed={8} />
@@ -295,15 +295,15 @@ function MohoShot() {
       <Escena T={T} a={K.Ti} b={K.Pi} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Portaobjetos T={T} x={540} y={980} gota={kprog(T, K.Ti + 0.1, K.Ti + 0.7)} charco={kprog(T, K.Ti + 0.65, K.Ti + 0.95, kEase.sale)} cinta={kprog(T, K.Ti + 1.1, K.Ti + 2.0)} cubre={kprog(T, K.Ti + 2.2, K.Ti + 2.8)} />
+          <Portaobjetos T={T} x={540} y={830} gota={kprog(T, K.Ti + 0.1, K.Ti + 0.7)} charco={kprog(T, K.Ti + 0.65, K.Ti + 0.95, kEase.sale)} cinta={kprog(T, K.Ti + 1.1, K.Ti + 2.0)} cubre={kprog(T, K.Ti + 2.2, K.Ti + 2.8)} />
           {/* gotero */}
-          <g opacity={1 - kprog(T, K.Ti + 0.9, K.Ti + 1.2)} transform={`translate(600 ${560 + Math.sin(T * 3) * 4})`}>
+          <g opacity={1 - kprog(T, K.Ti + 0.9, K.Ti + 1.2)} transform={`translate(600 ${410 + Math.sin(T * 3) * 4})`}>
             <rect x={-18} y={-180} width={36} height={150} rx={8} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={6} />
             <rect x={-26} y={-250} width={52} height={80} rx={22} fill="#e2432f" stroke={KC.ink} strokeWidth={6} />
             <path d="M -10 -32 L 0 10 L 10 -32 Z" fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={5} />
           </g>
           {/* objetivo del microscopio que baja */}
-          {(() => { const o = kprog(T, K.Ti + 3.0, K.Ti + 3.8, kEase.sale); return o > 0 ? <g transform={`translate(600 ${klerp(380, 700, o)})`}>
+          {(() => { const o = kprog(T, K.Ti + 3.0, K.Ti + 3.8, kEase.sale); return o > 0 ? <g transform={`translate(600 ${klerp(260, 560, o)})`}>
             <rect x={-90} y={-260} width={180} height={150} rx={12} fill="#d7dde3" stroke={KC.ink} strokeWidth={7} />
             <path d="M -70 -110 L 70 -110 L 40 0 L -40 0 Z" fill="#b8c1ca" stroke={KC.ink} strokeWidth={7} />
             <rect x={-90} y={-200} width={180} height={16} fill="#e2432f" />
@@ -314,8 +314,8 @@ function MohoShot() {
       {/* 5–6 · al microscopio: el pincel de Penicillium y sus cadenas */}
       <Escena T={T} a={K.Pi} b={K.P} zoom={0.02}>
         <Campo />
-        <div style={{ position:'absolute', inset:0, transform:`scale(${1 + 1.25 * zC})`, transformOrigin:'440px 720px' }}>
-          {fsvg(<Pincel T={T} x={440} y={1210} s={0.62} p={pPin} cad={cadPin} seed={11} />)}
+        <div style={{ position:'absolute', inset:0, transform:`scale(${1 + 1.25 * zC})`, transformOrigin:'440px 640px' }}>
+          {fsvg(<Pincel T={T} x={440} y={1150} s={0.75} p={pPin} cad={cadPin} seed={11} />)}
         </div>
         {/* pincel de pintor (comparación) */}
         {fsvg(<g opacity={kprog(T, K.Pi + 2.6, K.Pi + 3.1) * (1 - zC)} transform={`translate(880 1130) rotate(-8)`}>
@@ -329,15 +329,15 @@ function MohoShot() {
       <Escena T={T} a={K.P} b={K.A} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Petri x={250} y={640} r={150} medio="#f2e6bd"><Colonia cx={0} cy={0} r={110} color={MM.micelio} seed={2} /><Colonia cx={0} cy={0} r={80} color={MM.moho} seed={4} /></Petri>
-          <Petri x={600} y={640} r={150} medio="#f2e6bd"><Colonia cx={0} cy={0} r={115} color="#e9f0e4" seed={6} /><Colonia cx={0} cy={0} r={85} color="#6f8f6a" seed={7} /></Petri>
-          <Interrogacion T={T} x={600} y={1080} tam={300} />
+          <Petri x={250} y={600} r={150} medio="#f2e6bd"><Colonia cx={0} cy={0} r={110} color={MM.micelio} seed={2} /><Colonia cx={0} cy={0} r={80} color={MM.moho} seed={4} /></Petri>
+          <Petri x={600} y={600} r={150} medio="#f2e6bd"><Colonia cx={0} cy={0} r={115} color="#e9f0e4" seed={6} /><Colonia cx={0} cy={0} r={85} color="#6f8f6a" seed={7} /></Petri>
+          <Interrogacion T={T} x={860} y={820} tam={300} />
         </>)}
       </Escena>
       {/* 8 · Aspergillus fumigatus al microscopio */}
       <Escena T={T} a={K.A} b={K.Mi} zoom={0.02}>
         <Campo />
-        {fsvg(<Regadera T={T} x={560} y={1220} s={0.78} p={pAsp} cad={cadAsp} seed={21} />)}
+        {fsvg(<Regadera T={T} x={640} y={1200} s={1.0} p={pAsp} cad={cadAsp} seed={21} />)}
       </Escena>
       {/* 9–10 · Micheli, 1729: el rociador del agua bendita; y sus esporas dan el mismo hongo */}
       <Escena T={T} a={K.Mi} b={K.Mil} zoom={0.03}>
@@ -346,14 +346,14 @@ function MohoShot() {
           {/* el rociador se acerca a la cabeza del moho: encajan */}
           {(() => { const o = kprog(T, Mi2 - 0.3, Mi2 + 0.3), m = kprog(T, Mi2 + 1.2, Mi2 + 2.4, kEase.suave), f = 1 - kprog(T, K.S - 0.3, K.S + 0.2);
             return o > 0 ? <g opacity={o * f}>
-              <g transform={`translate(${klerp(0, 0, m)} 0)`}><Regadera T={T} x={720} y={1160} s={0.55} p={1} cad={0} sinCadenas /></g>
-              <g opacity={1 - m * 0.35}><Aspergillum T={T} x={klerp(290, 712, m)} y={klerp(850, 1003, m)} s={klerp(1, 1.22, m)} rot={klerp(-30, 0, m)} gotas={1} /></g>
+              <g transform={`translate(${klerp(0, 0, m)} 0)`}><Regadera T={T} x={760} y={1100} s={0.75} p={1} cad={0} sinCadenas /></g>
+              <g><Aspergillum T={T} x={klerp(290, 420, m)} y={klerp(760, 800, m)} s={klerp(1, 1.15, m)} rot={klerp(-30, -6, m)} gotas={1} /></g>
             </g> : null; })()}
           {/* siembra: esporas que caen al medio y crece el mismo moho */}
           {(() => { const o = kprog(T, K.S - 0.1, K.S + 0.4); if (o <= 0) return null; const col = kprog(T, K.S + 1.4, K.S + 3.4, kEase.sale);
             return <g opacity={o}>
-              <Petri x={560} y={1010} r={190} medio="#f2e6bd">{col > 0 && <><Colonia cx={0} cy={0} r={150 * col} color="#e9f0e4" seed={6} /><Colonia cx={0} cy={0} r={110 * col} color={MM.conA2} seed={7} /></>}</Petri>
-              {Array.from({ length: 16 }, (_, i) => { const ph = kclamp((T - K.S - 0.3 - i * 0.06) / 0.9, 0, 1); return ph > 0 && ph < 1 ? <circle key={i} cx={560 + Math.cos(i * 2.3) * 110 * (0.4 + (i % 3) * 0.3)} cy={klerp(560, 1000 + Math.sin(i * 2.3) * 60, ph)} r={9} fill={MM.conA} stroke={KC.ink} strokeWidth={2} /> : null; })}
+              <Petri x={540} y={850} r={190} medio="#f2e6bd">{col > 0 && <><Colonia cx={0} cy={0} r={150 * col} color="#e9f0e4" seed={6} /><Colonia cx={0} cy={0} r={110 * col} color={MM.conA2} seed={7} /></>}</Petri>
+              {Array.from({ length: 16 }, (_, i) => { const ph = kclamp((T - K.S - 0.3 - i * 0.06) / 0.9, 0, 1); return ph > 0 && ph < 1 ? <circle key={i} cx={540 + Math.cos(i * 2.3) * 110 * (0.4 + (i % 3) * 0.3)} cy={klerp(470, 850 + Math.sin(i * 2.3) * 60, ph)} r={9} fill={MM.conA} stroke={KC.ink} strokeWidth={2} /> : null; })}
             </g>; })()}
         </>)}
       </Escena>
@@ -361,10 +361,10 @@ function MohoShot() {
       <Escena T={T} a={K.Mil} b={K.Se} zoom={0.03}>
         <Campo />
         <div style={{ position:'absolute', inset:0, opacity:1 - bubble * 0.75 }}>
-          {fsvg(<Regadera T={T} x={470} y={1220} s={0.6} p={pMil} cad={9} seed={31} suelta={sueltaMil} />)}
-          {fsvg(<>{Array.from({ length: 70 }, (_, i) => { const ph = kclamp((T - K.Mil - 0.6 - i * 0.03) / 3, 0, 1); return ph > 0 ? <circle key={i} cx={470 + Math.cos(i * 1.7) * 140 + ph * (150 + (i % 7) * 50)} cy={700 - ph * (120 + (i % 5) * 70) + Math.sin(i) * 60} r={8} fill={MM.conA} stroke="#d7ffe0" strokeWidth={2} opacity={1 - ph * 0.5} /> : null; })}</>, 21)}
+          {fsvg(<Regadera T={T} x={470} y={1170} s={0.6} p={pMil} cad={9} seed={31} suelta={sueltaMil} />)}
+          {fsvg(<>{Array.from({ length: 70 }, (_, i) => { const ph = kclamp((T - K.Mil - 0.6 - i * 0.03) / 3, 0, 1); return ph > 0 ? <circle key={i} cx={470 + Math.cos(i * 1.7) * 140 + ph * (150 + (i % 7) * 50)} cy={650 - ph * (120 + (i % 5) * 70) + Math.sin(i) * 60} r={8} fill={MM.conA} stroke="#d7ffe0" strokeWidth={2} opacity={1 - ph * 0.5} /> : null; })}</>, 21)}
         </div>
-        {bubble > 0 && fsvg(<g transform={`translate(560 900) scale(${bubble})`}>
+        {bubble > 0 && fsvg(<g transform={`translate(540 780) scale(${bubble})`}>
           <circle r={250} fill={MM.campo} stroke="#fff" strokeWidth={10} />
           <circle r={150} fill={MM.conA} stroke="#d7ffe0" strokeWidth={6} />
           {Array.from({ length: 40 }, (_, i) => { const a = i * 2.4, d = Math.sqrt((i + 0.5) / 40) * 135; return <circle key={i} cx={Math.cos(a) * d} cy={Math.sin(a) * d} r={5} fill="rgba(0,0,0,.28)" />; })}
@@ -376,79 +376,78 @@ function MohoShot() {
       <Escena T={T} a={K.Se} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <g transform={`translate(${klerp(0, 330, tira)} ${klerp(0, 80, tira) - Math.sin(Math.PI * tira) * 220}) scale(${klerp(1, 0.45, tira)})`} style={{ transformOrigin:'440px 900px' }}>
+          <g transform={`translate(${klerp(0, 330, tira)} ${klerp(0, 80, tira) - Math.sin(Math.PI * tira) * 220}) scale(${klerp(1, 0.45, tira)})`} style={{ transformOrigin:'440px 760px' }}>
             <g opacity={tira > 0.92 ? 0 : 1}>
-              <Naranja x={440} y={900} r={220} mx={-50} my={-30} moho={0.8} />
-              {bolsa > 0 && <g transform={`translate(440 ${klerp(1300, 900, bolsa)})`}>
+              <Naranja x={440} y={760} r={220} mx={-50} my={-30} moho={0.8} />
+              {bolsa > 0 && <g transform={`translate(440 ${klerp(1300, 760, bolsa)})`}>
                 <path d="M -260 -250 L 260 -250 L 240 250 L -240 250 Z" fill={MM.papel} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
                 <path d="M -260 -250 l 40 -30 l 40 30 l 40 -30 l 40 30 l 40 -30 l 40 30 l 40 -30 l 40 30 l 40 -30 l 40 30 l 40 -30 l 40 30" fill="none" stroke={KC.ink} strokeWidth={6} />
               </g>}
             </g>
           </g>
-          <Bote x={840} y={1200} tapa={kprog(T, K.Se + 4.3, K.Se + 4.6)} />
-          {nariz > 0 && <g transform={`translate(${klerp(-160, 120, nariz)} 760)`}>
+          <Bote x={850} y={1120} tapa={kprog(T, K.Se + 4.3, K.Se + 4.6)} />
+          {nariz > 0 && <g transform={`translate(${klerp(-160, 120, nariz)} 640)`}>
             <path d="M 0 -120 Q 40 -40 90 20 Q 110 50 80 64 Q 50 74 20 60" fill="#f1b48f" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
             <path d="M -60 -140 L 0 -120 L 20 60 L -60 80 Z" fill="#f1b48f" />
             <path d="M 46 54 q 12 -6 18 4" stroke={KC.ink} strokeWidth={5} fill="none" />
           </g>}
-          {T > K.Se + 1.3 && T < K.Se + 2.7 && <Sello T={T} at={K.Se + 1.3} x={260} y={720} texto="NO" color={KC.red} r={110} />}
+          {T > K.Se + 1.3 && T < K.Se + 2.7 && <Sello T={T} at={K.Se + 1.3} x={250} y={600} texto="NO" color={KC.red} r={110} />}
         </>)}
       </Escena>
       {/* 13 · cierre: la misma naranja, vista por dentro */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<><Naranja x={NX} y={NY} r={290} />
-          <LupaBosque T={T} x={760} y={1010} fx={MX} fy={MY} r={190} ab={abreC} cad={3 + kprog(T, K.C + 0.5, K.C + 4) * 2} /></>)}
+        {fsvg(<><Naranja x={NX} y={NY} r={270} />
+          <LupaBosque T={T} x={800} y={985} fx={MX} fy={MY} r={175} ab={abreC} cad={3 + kprog(T, K.C + 0.5, K.C + 4) * 2} /></>)}
       </Escena>
 
       {/* textos y etiquetas */}
       <Sello2 T={T} at={K.G + 0.5} until={K.Mo - 0.2} />
-      <Etq T={T} at={K.G + 0.9} until={K.Mo + 3.5} x={560} y={790} texto="dibujo esquemático" tam={22} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 0.3} until={K.Ci - 0.2} x={60} y={470} texto="moho azul" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 0.6} until={K.Ci - 0.2} x={60} y={525} texto="Penicillium italicum" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.Mo + 1.2} until={K.Ci - 0.2} texto="el color = sus esporas" x={720} y={1170} tam={32} borde={MM.moho} />
-      <Chip T={T} at={K.Ci + 0.2} until={K.Ti - 0.2} texto="EN EL LABORATORIO" x={330} y={440} tam={34} borde={KC.ink} mono />
-      <Etq T={T} at={K.Ci + 0.4} until={K.Ti - 0.2} x={60} y={1160} texto="cultivo del moho en agar" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ci + 1.7} until={K.Ti - 0.2} x={60} y={520} texto="cinta transparente" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.G + 0.9} until={K.Mo + 0.6} x={60} y={1540} texto="dibujo esquemático" tam={22} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 0.3} until={K.Ci - 0.2} x={60} y={1080} texto="moho azul" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 0.6} until={K.Ci - 0.2} x={60} y={1130} texto="Penicillium italicum" it tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Mo + 1.2} until={K.Ci - 0.2} texto="el color = sus esporas" x={760} y={420} tam={32} borde={MM.moho} />
+      <Chip T={T} at={K.Ci + 0.2} until={K.Ti - 0.2} texto="EN EL LABORATORIO" x={330} y={380} tam={34} borde={KC.ink} mono />
+      <Etq T={T} at={K.Ci + 0.4} until={K.Ti - 0.2} x={60} y={1080} texto="cultivo del moho en agar" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 1.7} until={K.Ti - 0.2} x={60} y={450} texto="cinta transparente" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Ti + 0.4} until={K.Pi - 0.2} texto="azul de algodón de lactofenol" x={340} y={440} tam={30} borde={KC.blue} />
-      <Etq T={T} at={K.Ti + 1.3} until={K.Pi - 0.2} x={60} y={1150} texto="tiñe la quitina de las paredes" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ti + 2.4} until={K.Pi - 0.2} x={60} y={1200} texto="portaobjetos + cubreobjetos" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Pi + 0.1} until={K.Ca - 0.2} texto="AL MICROSCOPIO" x={300} y={440} tam={34} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Pi + 0.9} until={K.Ca - 0.2} x={470} y={1080} texto="tallo con tabiques" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Pi + 1.5} until={K.Ca - 0.2} x={540} y={900} texto="ramas y métulas" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Pi + 2.0} until={K.Ca - 0.2} x={560} y={760} texto="fiálides" tam={28} color={KC.texto} />
-      <ChipI T={T} at={K.Pi + 2.6} until={K.Ca - 0.2} partes={[['Penicillium', true], [' = pincel (Link, 1809)', false]]} x={420} y={530} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.Ca + 1.0} until={K.P - 0.3} x={60} y={1150} texto="la espora más joven: abajo" tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.Ca + 1.6} until={K.P - 0.3} x={60} y={470} texto="la más vieja: arriba" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.P + 0.3} until={K.A - 0.2} texto="✓ pincel" x={250} y={850} tam={32} borde={KC.leaf} />
-      <Etq T={T} at={K.A + 0.6} until={K.Mi - 0.2} x={60} y={1150} texto="tallo liso, sin tabiques" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.A + 1.0} until={K.Mi - 0.2} x={60} y={470} texto="Aspergillus fumigatus" it tam={38} color={KC.texto} />
-      <Etq T={T} at={K.A + 1.4} until={K.Mi - 0.2} x={60} y={880} texto="vesícula · 20–30 µm" tam={26} color={KC.gold2} />
-      <Etq T={T} at={K.A + 1.9} until={K.Mi - 0.2} x={60} y={790} texto="fiálides (1 fila)" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.A + 2.6} until={K.Mi - 0.2} x={60} y={570} texto="cadenas de esporas" tam={26} color={MM.conA} />
-      <TarjetaEstudio T={T} at={K.Mi + 0.2} until={Mi2 - 0.3} anio="1729" quien="Florencia · Pier Antonio Micheli" revista="Nova plantarum genera" x={420} y={860} />
+      <Etq T={T} at={K.Ti + 1.3} until={K.Pi - 0.2} x={60} y={1010} texto="tiñe la quitina de las paredes" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ti + 2.4} until={K.Pi - 0.2} x={60} y={1060} texto="portaobjetos + cubreobjetos" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Pi + 0.1} until={K.Pi + 2.4} texto="AL MICROSCOPIO" x={300} y={440} tam={34} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Pi + 0.9} until={K.Ca - 0.2} x={480} y={1010} texto="tallo con tabiques" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Pi + 1.5} until={K.Ca - 0.2} x={590} y={830} texto="ramas y métulas" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Pi + 2.0} until={K.Ca - 0.2} x={610} y={700} texto="fiálides" tam={28} color={KC.texto} />
+      <ChipI T={T} at={K.Pi + 2.6} until={K.Ca - 0.2} partes={[['Penicillium', true], [' = pincel (Link, 1809)', false]]} x={420} y={400} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.Ca + 1.0} until={K.P - 0.3} texto="la espora más joven: abajo" x={540} y={1100} tam={30} borde={KC.gold2} />
+      <Chip T={T} at={K.P + 0.3} until={K.A - 0.2} texto="✓ pincel" x={250} y={810} tam={32} borde={KC.leaf} />
+      <Etq T={T} at={K.A + 0.6} until={K.Mi - 0.2} x={60} y={1000} texto="tallo liso, sin tabiques" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.A + 1.0} until={K.Mi - 0.2} x={60} y={400} texto="Aspergillus fumigatus" it tam={38} color={KC.texto} />
+      <Etq T={T} at={K.A + 1.4} until={K.Mi - 0.2} x={60} y={800} texto="vesícula · 20–30 µm" tam={26} color={KC.gold2} />
+      <Etq T={T} at={K.A + 1.9} until={K.Mi - 0.2} x={60} y={700} texto="fiálides (1 fila)" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.A + 2.6} until={K.Mi - 0.2} x={60} y={520} texto="cadenas de esporas" tam={26} color={MM.conA} />
+      <TarjetaEstudio T={T} at={K.Mi + 0.2} until={Mi2 - 0.3} anio="1729" quien="Florencia · Pier Antonio Micheli" revista="Nova plantarum genera" x={420} y={700} />
       <ChipI T={T} at={Mi2 + 0.4} until={K.S - 0.2} partes={[['aspergillum', true], [': rociador de agua bendita', false]]} x={480} y={460} tam={30} borde={KC.ink} />
       <ChipI T={T} at={Mi2 + 1.4} until={K.S - 0.2} partes={[['aspergere', true], [' = rociar', false]]} x={300} y={560} tam={30} borde={KC.gold} />
-      <MitoTachado T={T} at={K.S + 0.2} tacharEn={K.S + 1.6} until={K.Mil - 0.2} texto="nace de la nada" x={330} y={460} tam={40} />
-      <Chip T={T} at={K.S + 2.2} until={K.Mil - 0.2} texto="espora → el mismo hongo" x={420} y={580} tam={32} borde={KC.leaf} />
-      <Chip T={T} at={K.Mil + 0.5} until={K.Mil + 2.4} texto="miles por cabeza" x={300} y={460} tam={36} borde={MM.conA} />
-      <Etq T={T} at={K.Mil + 2.8} until={K.Se - 0.2} x={410} y={1140} texto="2.5–3 µm" tam={34} color={KC.texto} />
-      <Etq T={T} at={K.Mil + 2.8} until={K.Se - 0.2} x={60} y={470} texto="un conidio de A. fumigatus" it tam={30} color={KC.texto} />
-      <Chip T={T} at={K.Se + 1.3} until={K.C - 0.2} texto="no la huelas" x={290} y={460} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.Se + 1.5} until={K.C - 0.2} x={60} y={540} texto="USDA: oler moho puede dar problemas al respirar" tam={22} color={KC.ink} />
-      <Chip T={T} at={K.Se + 2.9} until={K.C - 0.2} texto="fruta blanda o muy cubierta: a la basura" x={420} y={1170} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="no es una mancha" x={300} y={470} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.C + 1.4} until={K.Ou} x={600} y={1225} texto="Penicillium" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.C + 1.4} until={K.Ou} x={560} y={790} texto="dibujo esquemático" tam={22} color={KC.ink} />
+      <MitoTachado T={T} at={K.S + 0.2} tacharEn={K.S + 1.6} until={K.Mil - 0.2} texto="nace de la nada" x={300} y={400} tam={40} />
+      <Chip T={T} at={K.S + 2.2} until={K.Mil - 0.2} texto="espora → el mismo hongo" x={300} y={1100} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.Mil + 0.5} until={K.Mil + 2.4} texto="miles por cabeza" x={300} y={400} tam={36} borde={MM.conA} />
+      <Etq T={T} at={K.Mil + 2.8} until={K.Se - 0.2} x={400} y={1030} texto="2.5–3 µm" tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Mil + 2.8} until={K.Se - 0.2} x={60} y={400} texto="un conidio de A. fumigatus" it tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Se + 1.3} until={K.C - 0.2} texto="no la huelas" x={290} y={400} tam={36} borde={KC.red} />
+      <Etq T={T} at={K.Se + 1.5} until={K.C - 0.2} x={60} y={1530} texto="USDA: oler moho puede dar problemas al respirar" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.Se + 2.9} until={K.C - 0.2} texto="fruta blanda o muy cubierta: a la basura" x={430} y={1090} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="no es una mancha" x={300} y={400} tam={34} borde={KC.red} />
+      <Etq T={T} at={K.C + 1.4} until={K.Ou} x={600} y={775} texto="Penicillium" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.C + 1.4} until={K.Ou} x={60} y={1540} texto="dibujo esquemático" tam={22} color={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Ci} texto="5 cm" largo={110} y={1450} color={KC.ink} />
       <BarraEscala T={T} at={K.Ci} until={K.Ti} texto="2 cm" largo={60} y={1450} color={KC.ink} />
       <BarraEscala T={T} at={K.Ti} until={K.Pi} texto="1 cm" largo={21} y={1450} color={KC.ink} />
-      <BarraEscala T={T} at={K.Pi} until={K.Ca} texto="10 µm" largo={62} y={1450} />
-      <BarraEscala T={T} at={K.Ca} until={K.P} texto="10 µm" largo={139} y={1450} />
+      <BarraEscala T={T} at={K.Pi} until={K.Ca} texto="10 µm" largo={75} y={1450} />
+      <BarraEscala T={T} at={K.Ca} until={K.P} texto="10 µm" largo={169} y={1450} />
       <BarraEscala T={T} at={K.P} until={K.A} texto="5 cm" largo={170} y={1450} color={KC.ink} />
-      <BarraEscala T={T} at={K.A} until={K.Mi} texto="20 µm" largo={156} y={1450} />
+      <BarraEscala T={T} at={K.A} until={K.Mi} texto="20 µm" largo={200} y={1450} />
       <BarraEscala T={T} at={K.Mi} until={K.Mil} texto="dibujo esquemático" largo={0} y={1450} color={KC.ink} />
       <BarraEscala T={T} at={K.Mil} until={K.Mil + 2.4} texto="20 µm" largo={120} y={1450} />
       <BarraEscala T={T} at={K.Mil + 2.4} until={K.Se} texto="1 µm" largo={109} y={1450} />
@@ -479,7 +478,7 @@ function MohoShot() {
 function Sello2({ T, at, until }) {
   if (!kvisible(T, at, until)) return null;
   const k = kprog(T, at, at + 0.35, kEase.rebote), o = kprog(T, at, at + 0.15) * (1 - kprog(T, until, until + 0.3));
-  return <div style={{ position:'absolute', left:300, top:470, zIndex:42, opacity:o, transform:`translate(-50%,-50%) rotate(-8deg) scale(${klerp(2, 1, k)})`,
+  return <div style={{ position:'absolute', left:300, top:400, zIndex:42, opacity:o, transform:`translate(-50%,-50%) rotate(-8deg) scale(${klerp(2, 1, k)})`,
     border:`10px solid ${KC.red}`, borderRadius:24, padding:'8px 26px', font:`400 70px/1 ${KF.titulo}`, color:KC.red, background:'rgba(255,255,255,.75)', whiteSpace:'nowrap' }}>NO ES UNA MANCHA</div>;
 }
 

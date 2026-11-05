@@ -5,7 +5,7 @@
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Esta seta no nació de una semilla: su cepa empezó con un pedacito de otra."
+      "texto": "Esta seta no nació de una semilla: nació de una cepa, y una cepa se crea a mano."
     },
     {
       "escena": "Corte",
@@ -13,15 +13,15 @@
     },
     {
       "escena": "Agar",
-      "texto": "Junto a una flama o en campana de flujo, va a una caja con agar."
+      "texto": "En una campana de flujo o una caja sin corrientes de aire, va a una caja con agar."
     },
     {
       "escena": "Hifas",
-      "texto": "Salen hilos, las hifas, que crecen por la punta: la colonia avanza en círculo."
+      "texto": "Salen hifas, que crecen por la punta: la colonia avanza en círculo."
     },
     {
       "escena": "Pasar",
-      "texto": "Si sale limpia, un cuadrito del micelio nuevo pasa a otra caja: un clon de la seta."
+      "texto": "Si sale limpia, un cuadrito de micelio pasa a otra caja: un clon."
     },
     {
       "escena": "Pregunta",
@@ -41,11 +41,11 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 2014, en México, cruzaron micelios de dos setas silvestres de Oaxaca: salieron cincuenta y seis híbridas."
+      "texto": "Un estudio mexicano de 2014 cruzó micelios de dos setas silvestres de Oaxaca: salieron cincuenta y seis híbridas."
     },
     {
       "escena": "Guardar",
-      "texto": "Cada cepa lleva código y se guarda en frío, en agua estéril o congelada."
+      "texto": "Cada cepa lleva código y se guarda en agua estéril, congelada o resembrándola."
     },
     {
       "escena": "Robert",
