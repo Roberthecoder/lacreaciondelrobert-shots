@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Esporada Verde base narrada.dc.html",
+  "salida": "Shot Esporada Verde narrado.dc.html",
+  "nota": "Shot Fungi Mati #113. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es guía de identificación.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Ese hongo blanco de tu jardín no es un champiñón: es el parasol de esporas verdes, y es venenoso."
+    },
+    {
+      "escena": "Jardin",
+      "texto": "Sale en el pasto con la humedad, a veces en círculos, y también en México."
+    },
+    {
+      "escena": "Confusion",
+      "texto": "Es grande, con escamas y anillo, y se confunde con champiñones y parasoles comestibles."
+    },
+    {
+      "escena": "Registro",
+      "texto": "En Estados Unidos y Canadá suele ser el venenoso que más intoxicaciones suma cada año."
+    },
+    {
+      "escena": "Sintomas",
+      "texto": "Entre media hora y unas horas después llegan vómito, cólicos y diarrea fuertes."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y cómo lo reconocen los micólogos?"
+    },
+    {
+      "escena": "Esporas",
+      "texto": "Al madurar, sus láminas se ponen verdosas: sus esporas son verdes, algo raro en los hongos."
+    },
+    {
+      "escena": "Esteril",
+      "texto": "Pero en 1992, investigadores de Ohio advirtieron que a veces salen estériles, sin esporas verdes."
+    },
+    {
+      "escena": "Joven",
+      "texto": "Y de joven, sus láminas todavía no son verdes."
+    },
+    {
+      "escena": "Rasgos",
+      "texto": "Por eso no basta un solo rasgo. Y ojo: hubo quien se intoxicó aunque lo había cocinado."
+    },
+    {
+      "escena": "Consejo",
+      "texto": "Si no lo identificó un micólogo, no lo comas; si ya lo comiste y te sientes mal, ve a urgencias."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ese hongo blanco de tu jardín no es champiñón: se queda en el jardín."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
