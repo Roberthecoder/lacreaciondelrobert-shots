@@ -5,60 +5,105 @@
    "titulo": "Ese hongo no está podrido: se pone azul al cortarlo (ácido variegático que se oxida en boletos)",
    "serie": "Shot Fungi Mati",
    "numero": 125,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-125-hongo-azul-corte",
    "rama": "claude/fun-125-129-colores",
-   "fuentes": [],
+   "fuentes": [
+    "https://www.agriculturejournals.cz/publicFiles/524_2010-CJFS.pdf",
+    "https://doi.org/10.1039/j39680002968",
+    "https://botit.botany.wisc.edu/toms_fungi/jul2003.html",
+    "https://www.redalyc.org/journal/535/53560335009/53560335009.pdf"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "El boleto que se pone rojo: variegatorrubina",
+    "La bolesatina del boleto de Satanás",
+    "Gyroporus cyanescens y la girocianina: otra molécula, el mismo azul"
+   ]
   },
   {
    "id": "madera-verde-chlorociboria",
    "titulo": "Esa madera verde no está pintada: la tiñe un hongo (Chlorociboria y la xilindeína)",
    "serie": "Shot Fungi Mati",
    "numero": 126,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-126-madera-verde",
    "rama": "claude/fun-125-129-colores",
-   "fuentes": [],
+   "fuentes": [
+    "https://experts.umn.edu/en/publications/the-use-of-green-stained-wood-caused-by-the-fungus-chlorociboria-",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6704441/",
+    "https://www.sciencedaily.com/releases/2018/06/180605154109.htm",
+    "https://www.bada.org/features/terms-trade-tunbridge-ware"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Madera espalteada: las líneas negras que dibujan los hongos",
+    "Pigmentos de hongo como electrónica natural",
+    "Hongos que tiñen la madera de rojo o amarillo"
+   ]
   },
   {
    "id": "olor-a-hongo-octenol",
-   "titulo": "El olor a hongo es una sola molécula: el 1-octen-3-ol (alcohol de hongo)",
+   "titulo": "Ese olor a hongo no es tierra: lo firma una molécula (1-octen-3-ol)",
    "serie": "Shot Fungi Mati",
    "numero": 127,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-127-olor-hongo",
    "rama": "claude/fun-125-129-colores",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9410191/",
+    "https://pubmed.ncbi.nlm.nih.gov/19326947/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9728333/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4066924/"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "El olor metálico de la sangre o las monedas en tu piel (1-octen-3-ona)",
+    "Por qué el champiñón huele distinto crudo, rebanado y guisado",
+    "Qué huelen de ti los moscos: trampas con octenol y CO2"
+   ]
   },
   {
    "id": "umami-hongo-seco-guanilato",
-   "titulo": "El hongo seco sabe más que el fresco: guanilato + glutamato, la sinergia del umami",
+   "titulo": "Ese hongo arrugado no está echado a perder: es una bomba de umami (guanilato + glutamato)",
    "serie": "Shot Fungi Mati",
    "numero": 128,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-128-umami-seco",
    "rama": "claude/fun-125-129-colores",
-   "fuentes": [],
+   "fuentes": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4515277/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2606899/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC123709/",
+    "https://www.jstage.jst.go.jp/article/nskkk1962/36/4/36_4_293/_article/-char/en"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "Por qué el shiitake seco se remoja en frío",
+    "El inosinato del katsuobushi",
+    "El receptor atrapamoscas y por qué los gatos no sienten lo dulce"
+   ]
   },
   {
    "id": "hongo-huele-maple-sotolon",
-   "titulo": "El hongo que huele a miel de maple: el sotolón de Lactarius (candy cap)",
+   "titulo": "Este hongo huele a hot cakes con miel de maple (candy cap y quabalactona III)",
    "serie": "Shot Fungi Mati",
    "numero": 129,
-   "estado": "idea",
+   "estado": "renderizado",
    "carpeta": "shots/fun-129-hongo-maple",
    "rama": "claude/fun-125-129-colores",
-   "fuentes": [],
+   "fuentes": [
+    "https://doi.org/10.1016/j.bse.2012.02.027",
+    "https://now.humboldt.edu/news/student-question-about-mushrooms-maple-syrup-odor-takes-27-years-to-answer/",
+    "https://doi.org/10.2307/3761565",
+    "https://pubmed.ncbi.nlm.nih.gov/10234605/"
+   ],
    "fecha": "2026-11-05",
-   "derivados": []
+   "derivados": [
+    "La rosita de cacao del tejate (Quararibea funebris) y la quabalactona III",
+    "Por qué el fenogreco hace que tu sudor huela a maple",
+    "Hongos que huelen a coco o a curry"
+   ]
   }
  ]
 }
