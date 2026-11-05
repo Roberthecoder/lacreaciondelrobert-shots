@@ -262,7 +262,6 @@ function MilSexosShot() {
           <rect x={-40} y={560} width={300} height={800} rx={30} fill={MS.madera} stroke={KC.ink} strokeWidth={8} />
           {[660, 760, 880, 1010, 1150, 1260].map((yy, i) => <path key={i} d={`M 20 ${yy} Q 120 ${yy + 20} 240 ${yy - 6}`} stroke={MS.madera2} strokeWidth={6} fill="none" />)}
           <Abanico T={T} x={250} y={845} s={3.3} rot={90} seed={3} abre={kprog(T, K.H, K.H + 0.8)} />
-          <Abanico T={T} x={250} y={1230} s={1.0} rot={100} seed={8} abre={kprog(T, K.H + 0.4, K.H + 1.1)} />
         </>)}
       </Escena>
       {/* 3 · laminillas partidas: se secan con el sol, se reabren con la lluvia */}

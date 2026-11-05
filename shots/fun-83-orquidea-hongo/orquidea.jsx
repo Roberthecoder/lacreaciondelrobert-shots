@@ -174,10 +174,10 @@ function HifaCamino({ pts, p = 1, ancho = 12, color = OQ.hifa, brillo = 0 }) {
 // Ovillo de hifa (pelotón) dentro de una célula. p 0..1 se enrolla; dig 0..1 se digiere (se encoge en grumo).
 function Ovillo({ cx, cy, r = 40, p = 1, dig = 0, seed = 1, ancho = 6 }) {
   if (p <= 0) return null;
-  const N = 90, pts = [], g = krng(seed), f1 = 2.3 + g(), f2 = 3.1 + g(), ph = g() * 6;
+  const N = 160, pts = [], g = krng(seed), f1 = 2.3 + g(), f2 = 3.1 + g(), ph = g() * 6;
   const rr = r * (1 - dig * 0.7);
-  for (let i = 0; i <= N * p; i++) { const t = (i / N) * Math.PI * 7 + ph;
-    pts.push([cx + Math.cos(t) * rr * (0.55 + 0.45 * Math.sin(f1 * t * 0.3)), cy + Math.sin(t) * rr * (0.55 + 0.45 * Math.cos(f2 * t * 0.3))]); }
+  for (let i = 0; i <= N * p; i++) { const t = (i / N) * Math.PI * 8 + ph;   // lazos enredados (ovillo), no espiral perfecta
+    pts.push([cx + rr * (0.62 * Math.cos(t) + 0.32 * Math.cos(f1 * t + ph)), cy + rr * (0.62 * Math.sin(t * 1.07) + 0.32 * Math.sin(f2 * t))]); }
   if (pts.length < 2) return null;
   const d = 'M ' + pts.map((q) => q[0].toFixed(1) + ' ' + q[1].toFixed(1)).join(' L ');
   const col = mixHex(OQ.hifa, '#b89a5a', dig);
@@ -480,15 +480,15 @@ function OrquideaShot() {
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 4.5} anio={TX.anio} quien={TX.estQuien} revista={TX.estRevista} x={640} y={600} />
       <Etq T={T} at={K.Es + 4.6} until={K.Re - 0.2} x={60} y={430} texto={TX.bletia} it tam={40} color={KC.texto} />
       <Etq T={T} at={K.Es + 4.9} until={K.Re - 0.2} x={60} y={480} texto={TX.peligro} tam={30} color={KC.red} />
-      <Etq T={T} at={K.Es + 1.6} until={K.Es + 4.5} x={60} y={790} texto={TX.frasco} tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Es + 1.6} until={K.Es + 4.5} x={60} y={1140} texto={TX.frasco} tam={28} color={KC.texto} />
       <Chip T={T} at={K.Re + 0.2} until={K.Va - 0.3} texto={TX.anios} x={250} y={470} tam={44} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Re + 0.8} until={K.Va - 0.3} valor={TX.pct} prefijo={TX.pctPre} sufijo={TX.pctSuf} dur={1.0} x={330} y={640} tam={150} color={KC.mint} />
       <Etq T={T} at={K.Re + 1.2} until={K.Va - 0.3} x={60} y={770} texto={TX.sobrevive} tam={34} color={KC.texto} />
       <Chip T={T} at={K.Re + 2.4} until={K.Va - 0.3} texto={TX.florecen} x={540} y={820} tam={40} borde={KC.gold} />
       <Etq T={T} at={K.Va + 0.6} until={K.C - 0.3} x={450} y={690} texto={TX.vainilla} it tam={36} color={KC.texto} />
       <Etq T={T} at={K.Va + 1.0} until={K.C - 0.3} x={450} y={736} texto={TX.vainilla2} tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Va + 2.2} until={K.C - 0.3} x={560} y={1140} texto={TX.nativa} tam={24} color={KC.texto} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.cierre} x={300} y={470} tam={44} borde={KC.gold} />
+      <Etq T={T} at={K.Va + 2.2} until={K.C - 0.3} x={440} y={1140} texto={TX.nativa} tam={22} color={KC.texto} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.cierre} x={720} y={1060} tam={44} borde={KC.gold} />
 
       {/* ---------- barras de escala ---------- */}
       <BarraEscala T={T} at={K.G} until={K.Bo} texto="1 cm" largo={60} color={KC.ink} />
@@ -527,7 +527,7 @@ function OrquideaShot() {
         [K.Es + 0.9, K.Es + 4.4, 'avatar_12_perfil_serio', 'izq-alto'],
         [K.Re + 0.2, K.Va - 0.2, 'avatar_11_sorprendido', 'arriba-der'],
         [K.Va + 0.8, K.C - 0.2, 'avatar_04_bajando_lentes', 'arriba-der'],
-        [K.C + 0.3, K.Ou - 0.2, 'avatar_02_apuntando_camara', 'arriba-der']]} />
+        [K.C + 0.3, K.Ou - 0.2, 'avatar_02_apuntando_camara', 'izq-alto']]} />
       <MarcaAgua T={T} tema="biologia" num="83" hasta={K.Ou} />
       <CierreMarca T={T} at={K.Ou} tema="biologia" robert={'assets/stickers/avatar_13_senalando_arriba.png'} />
       <AudioPista src={window.AUDIO_SRC} />
