@@ -1,0 +1,48 @@
+{
+  "dcHtml": "Shot Falsa Morilla base narrada.dc.html",
+  "salida": "Shot Falsa Morilla narrado.dc.html",
+  "nota": "Shot Fungi Mati #110. Una línea por subtítulo (idx 0..9 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. No es guía de identificación.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto no es una morilla: es un hongo que en tu cuerpo suelta algo que también es combustible de cohete."
+    },
+    {
+      "escena": "Morilla",
+      "texto": "La morilla verdadera tiene sombrero de panal, pegado al pie, y por dentro es hueca."
+    },
+    {
+      "escena": "Falsa",
+      "texto": "La falsa, Gyromitra esculenta, lo tiene arrugado como cerebro y, por dentro, con cámaras."
+    },
+    {
+      "escena": "Toxina",
+      "texto": "Trae giromitrina, que en tu cuerpo se vuelve monometilhidrazina: con ella maniobran algunas naves espaciales."
+    },
+    {
+      "escena": "Neurona",
+      "texto": "Le quita a tus neuronas la vitamina B6 con la que fabrican su freno: sin él, pueden venir convulsiones."
+    },
+    {
+      "escena": "Sintomas",
+      "texto": "Primero, horas después: vómito y diarrea; si es grave, daño al hígado."
+    },
+    {
+      "escena": "Hervir",
+      "texto": "¿Y si la hierves? Mito: no queda segura, y su vapor puede intoxicar a quien cocina."
+    },
+    {
+      "escena": "Finlandia",
+      "texto": "En Finlandia se vende con advertencia; en 2025 midieron que, hervida dos veces, aún guarda casi un quinto de su toxina."
+    },
+    {
+      "escena": "Familia",
+      "texto": "Otro mito: «en mi familia siempre la comimos». Hay quien la comió por años sin problema… y un día se intoxicó."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Ante la duda, no la comas y pregunta a un micólogo; si ya la comiste y te sientes mal, ve a urgencias."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
