@@ -19,7 +19,7 @@
 | 5 | Salero | Aun así sigue volando y buscando pareja: un salero con alas. | De vuelta a la rama (fondo cian): la cigarra vuela y va sacudiendo esporas como un salero; un salero dibujado con alas aparece junto a ella. Chip "sigue viva y volando", etiqueta «salero con alas». |
 | 6 | Pregunta | ¿Cómo contagia a más cigarras? | **Re-gancho.** Coro de cigarras en ramas; "?" gigante; Robert grande, pensativo. |
 | 7 | Estudio | En dos mil dos les pusieron cantos de macho a cigarras enfermas. | **N5, experimento:** `TarjetaEstudio` "2002 · cantos en EE. UU. · Cooley, Marshall y Hill · Scientific Reports 2018" (sin "Connecticut"); bocina que toca un canto (ondas) frente a un macho con tapón en una rama. Etiquetas "canto de macho" y "macho con tapón". |
-| 8 | Aleteo | Veintitrés de veinticinco machos con el tapón respondieron con el aleteo de las hembras. | La cigarra macho infectada da un "aleteo" (alas que chasquean, golpe de sonido a tiempo); marcador que se llena: 23 de 25 (cuadritos, 2 con ✗); textos "23 de 25 machos con tapón", "…respondieron con el aleteo de hembra" y "machos con la otra fase: 0 de 17". |
+| 8 | Aleteo | Veintitrés de veinticinco machos con tapón de conidios respondieron con aleteo de hembra. | La cigarra macho infectada da un "aleteo" (alas que chasquean, golpe de sonido a tiempo); marcador que se llena: 23 de 25 (cuadritos, 2 con ✗); textos "23 de 25 machos con tapón de conidios", "…respondieron con el aleteo de hembra" y "con tapón de esporas de reposo: 0 de 17". |
 | 9 | Machos | Otros machos intentaban aparearse con ellos, y así, al parecer, se contagiaban. | Un macho sano llega volando y se le pega cola con cola al infectado (como se aparean las cigarras); esporas que pasan de uno a otro. Etiqueta "macho sano". Chip "al parecer, por contacto". |
 | 10 | Catinona | En dos mil diecinueve, un equipo halló en los tapones catinona, una anfetamina de planta. | `TarjetaEstudio` "Boyce, Kasson y col. · *Fungal Ecology* 2019 · West Virginia University"; molécula de catinona dibujada (anillo + cadena) saliendo del tapón; cajas "catinona", "una anfetamina de planta", "tapón de *M. cicadina*" y hojas de khat con "khat · *Catha edulis*". |
 | 11 | Psilocibina | Y en otras *Massospora*, psilocibina, la de los hongos mágicos. | Segunda cigarra distinta (anual, café y sin ojos rojos: "cigarra anual") con su tapón; molécula de psilocibina; cajas "psilocibina", "la de los hongos mágicos" y "*M. platypediae* / *M. levispora*". |
@@ -29,7 +29,7 @@
 
 **Música** (`gen-audio.mjs`, todo calculado): cama grave continua que cambia de acorde en cada escena con una progresión en la menor (Am – F – Dm – E – Am – C – E7 – Am – G – F – Dm – B♭ – Esus – Fmaj7 – Am), «tapada» bajo tierra y por dentro, bajo que marca cada cambio y un motivo de 4 notas (la–do–mi–re) que abre, regresa transportado en el vuelo y vuelve en el cierre; zumbido suave de alas en los vuelos; efectos en el mismo cuadro: despegue (aleteo), tachado, tierra al bajar al suelo, latido/hinchazón por dentro, "clic" de cada anillo que cae, polvito de esporas (salero), canto de la bocina, chasquido del aleteo, marcador 23/25, sello de hipótesis.
 
-**Escala:** barra «esquemático» fija abajo a la izquierda en todo el video (y = 1430, bajo el subtítulo): no hay en las fuentes verificadas un largo del cuerpo de *Magicicada* ni de las esporas que se use, así que nada se dibuja «a escala». Morfología: *Magicicada* negra, ojos rojos, venas de las alas y patas rojo-naranja; tapón blanco-crema/amarillento al final del abdomen; conidios ovalados o casi redondos; esporas de reposo redondas, de pared gruesa y superficie en red. No se dice ningún tamaño en la voz.
+**Escala:** barra «esquemático» fija abajo a la izquierda en todo el video (y = 1430, bajo el subtítulo): no hay en las fuentes verificadas un largo del cuerpo de *Magicicada* ni de las esporas que se use, así que nada se dibuja «a escala». Morfología: *Magicicada* negra, ojos rojos, venas de las alas y patas rojo-naranja; tapón blanco-crema/amarillento al final del abdomen; conidios ovalados o casi redondos, de superficie verrugosa; esporas de reposo redondas, de pared gruesa y superficie en red. No se dice ningún tamaño en la voz.
 
 ## Robert en pantalla
 
@@ -78,6 +78,8 @@ Apariciones 11 · **35.8 s** en pantalla (+ cierre 3.5 s) · 8 poses distintas �
    > "Eventually, the back end of the cicada - including its genitals - falls off."
    > "the infected and disemboweled cicada flies around, raining down fluffy, brown spores."
    > "We found an amphetamine in those fungal plugs," Kasson said; Cooley: "the powerful psychoactive chemical may not do anything to the insects".
+
+4. Anuncio del genoma de *M. cicadina* (2022). *Microbiology Resource Announcements*. https://pmc.ncbi.nlm.nih.gov/articles/PMC9584336/ (Fig. 1: "Close-up of *M. cicadina* verrucose (\"warty\") conidia").
 
 El dibujo es esquemático.
 

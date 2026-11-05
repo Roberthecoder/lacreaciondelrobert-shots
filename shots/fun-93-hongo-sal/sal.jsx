@@ -138,7 +138,7 @@ function SalShot() {
         {fsvg(<>
           <g opacity={1 - kprog(T, K.B - 0.2, K.B + 0.2)}>
             <CeluWal x={290} y={830} r={150} pared={12} />
-            <CeluWal x={790} y={830} r={150} pared={klerp(12, 36, kprog(T, K.Pa + 0.8, K.Pa + 2.4, kEase.sale))} />
+            <CeluWal x={790} y={830} r={150} pared={klerp(12, 28, kprog(T, K.Pa + 0.8, K.Pa + 2.4, kEase.sale))} />
           </g>
           <g opacity={kprog(T, K.B - 0.1, K.B + 0.3)}>
             <Racimo2 T={T} x={290} y={860} s={1.2} n={4} pared={6} />
@@ -180,10 +180,10 @@ function SalShot() {
       <Chip T={T} at={K.Se + 0.3} until={K.P - 0.3} texto="AL MICROSCOPIO · LA SAL JALA EL AGUA" x={540} y={420} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.Se + 3.0} until={K.P - 0.3} x={150} y={970} texto="cecina" tam={30} color={KC.texto} />
       <Etq T={T} at={K.Se + 3.2} until={K.P - 0.3} x={630} y={950} texto="bacalao salado" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Pa + 0.3} until={K.B - 0.3} x={150} y={1050} texto="poca sal" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.Pa + 0.6} until={K.B - 0.3} x={640} y={1050} texto="mucha sal · ~3×" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.Pa + 0.3} until={K.B - 0.3} x={150} y={1050} texto="menos sal" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.Pa + 0.6} until={K.B - 0.3} x={640} y={1050} texto="más sal" tam={30} color={KC.gold2} />
       <Chip T={T} at={K.Pa + 1.6} until={K.B - 0.3} texto="pared = armadura" x={540} y={470} tam={40} borde={KC.gold2} />
-      <Chip T={T} at={K.B + 0.3} until={K.E - 0.3} texto="racimos: hasta ~4× más grandes con más sal" x={540} y={470} tam={30} borde={KC.mint} />
+      <Chip T={T} at={K.B + 0.3} until={K.E - 0.3} texto="racimos: casi 4× más grandes con más sal" x={540} y={470} tam={30} borde={KC.mint} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Pe - 0.3} anio="2005" quien="Zalar et al. · U. de Liubliana" revista="Antonie van Leeuwenhoek, 2005" x={460} y={560} />
       <Etq T={T} at={K.E + 2.8} until={K.Pe - 0.3} x={95} y={780} texto="salinas de Eslovenia (esquema)" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Pe + 0.3} until={K.Ge - 0.3} texto="1887 · Noruega · bacalao salado" x={540} y={470} tam={36} borde={KC.ink} />

@@ -11,9 +11,9 @@
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
 | 0 | Gancho | De cada diez especies de hongos que hay en el mundo, unas nueve todavía no tienen nombre. | Fondo menta de lunares: 10 setas en fila brotan una por una (cuadro 0.2); 9 se vuelven siluetas grises con «?» y 1 queda a color con etiqueta. Número grande «9 de 10 · sin nombre». |
-| 1 | Total | Se calcula que existen unos dos millones y medio de especies de hongos. | Cuadrícula de 10 × 10 cuadritos que se llena en gris; número «≈ 2,500,000 especies (estimadas)». Chip «1 cuadrito ≈ 25,000». |
+| 1 | Total | La mejor estimación, de 2023: unos dos millones y medio de especies de hongos. | Cuadrícula de 10 × 10 cuadritos que se llena en gris; número «≈ 2,500,000 especies (estimadas)» (mejor estimación de 2023; rango de 2 a 3 millones). Chip «1 cuadrito ≈ 25,000». |
 | 2 | Nombradas | Y hasta 2023, la ciencia había nombrado unas ciento cincuenta y cinco mil. | Solo 6 cuadritos se pintan dorados (155,000 ÷ 25,000 ≈ 6). Número «≈ 155,000 con nombre (2023)». |
-| 3 | Micelio | La mayoría viven como hilos más delgados que un pelo, en el suelo, la madera o una hoja. | Corte del suelo (fondo oscuro, «POR DENTRO · EL SUELO»): red de micelio blanca entre granos y raíces; un pelo humano al lado, unas 10–20 veces más grueso que cada hilo. Escala 100 µm. |
+| 3 | Micelio | La mayoría viven como hilos más delgados que un pelo, en el suelo, la madera o una hoja. | Corte del suelo (fondo oscuro, «POR DENTRO · EL SUELO»): red de micelio blanca entre granos y raíces; un pelo humano al lado, unas 10–30 veces más grueso que cada hilo. Escala 100 µm. |
 | 4 | SinSeta | Y muchísimos nunca sacan una seta que tú puedas ver. | Encima del suelo no sale nada; mohos, levaduras y hongos de raíz dibujados chiquitos con chip «sin seta visible». |
 | 5 | ADN | Por eso los buscan por su ADN: toman tierra, leen sus genes y aparecen hongos que nadie ha nombrado. | Una mano toma tierra; tubito; hebra de ADN que se lee; aparecen muchos puntitos de colores «solo conocidos por su ADN». |
 | 6 | Pregunta | ¿Y cuánto tardaríamos en ponerles nombre a todos? | **Re-gancho.** Fondo rosa: la cuadrícula gris enorme con un reloj de arena. Robert grande, pensativo. |

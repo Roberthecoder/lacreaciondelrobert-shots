@@ -63,4 +63,30 @@ El mensaje de seguridad es claro: la mortal tiene los mismos tres rasgos, no hay
 basta y solo con un experto. Sugerencia opcional, que no hace falta para aprobar: cambiar el chip `ojo` a «la mortal también los
 tiene: ni los tres juntos bastan», para que nadie piense que con varios rasgos juntos sí se puede.
 
+
+## Re-verificación independiente (5 nov 2026)
+
+Tercer verificador (no escribió el guion ni la verificación anterior). Se descargaron de nuevo los PDF de [M02], [M04], [M19], [HR10] y [RS20] y se buscaron las frases en el texto completo; [GEN], [DUF], [MEB] y Wikipedia *A. basii* se abrieron en línea.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «Eso no es un huevo: es un hongo a punto de nacer»; por dentro ya trae sombrero, laminillas y pie envueltos en un velo; al crecer el velo se rasga | ✅ | https://www.mykoweb.com/TFWNA/P-09.html | "An Amanita button, when cut in half, will show the embryonic gills and a faint outline of the maturing mushroom, which will later rupture the universal veil that covers it." | 2008 |
+| La Malinche, Tlaxcala; cima 4,460 m; entre pinos y ailes | ✅ | https://fungaldiversity.org/fdp/sfdp/17-8.pdf | "La Malinche National Park (Volcán la Malintzi, 4,460 m) is located in the southern part of the state of Tlaxcala"; *A. caesarea*: "Mycorrhizal, in Pinus-Alnus forests." | 2004 |
+| «a unos tres mil metros» | ✅ | ídem | Ejemplares de *A. caesarea*: "Malintzi volcano, La Malinche National Park, 3300 m alt."; "west slope of the Malintzi volcano, La Malinche National Park, 3000 m alt." | 2004 |
+| Se recolecta de julio a septiembre, ya entradas las lluvias | ✅ | ídem | "Collected from July to September."; "Some species begin to appear only when the rains are well under way, such as Amanita caesarea." | 2004 |
+| ≥ 7 especies del grupo se usan en México | ✅ | ídem | "this species belongs to a complex that includes at least 7 taxa used in Mexico (Guzmán and Ramírez-Guillén, 2001)" | 2004 |
+| Sombrero rojo anaranjado, anillo amarillo, volva blanca en saco (*A. basii*) | ✅ (esquemático) | https://en.wikipedia.org/wiki/Amanita_basii (cita Amanitaceae.org) | "very intense red … in the center part of the cap … red-orange, orange-yellow to deep orange at the margin"; ring "orange-yellow at first, becoming yellow-orange"; "The saccate volva is smooth, white" | 2023 |
+| *Amanita basii* = el «hongo amarillo» de Ixtenco (mismos ejemplares que en 2002 se llamaron *A. caesarea*); K'axjo (K'axt'i = amarillo + jo = hongo) | ✅ | https://scientiafungorum.org.mx/index.php/micologia/article/download/e1230/1421/3736 | "3. Amanita basii Guzmán & Ram.-Guill. — H. amarillo, hongo flor, jícara buena, ahuevadito — K'axjo > K'axt'i: amarillo + Jo: Hongo = Hongo amarillo — Montoya 13, 269, 618; Kong 616" | 2019 |
+| Primas mortales también nacen de «huevo» y traen anillo y volva; sombrero liso | ✅ | https://www.mushroomexpert.com/amanita_bisporigera.html | "bald (very rarely with a volval patch)"; "a persistent, thin, high, skirtlike ring"; "a white, sacklike volva encasing the base" | — |
+| Estudio de 2002, 191 personas, 3 pueblos (otomí, nahua, mestizo), campo 1988–1992, 495 cuestionarios | ✅ | https://ethnobiology.org/sites/default/files/pdfs/JoE/22-1/Montoyaetal2002.pdf | "Ixtenco, where the population is Otomi in origin; Javier Mina where the people are of Nahua ancestry; and Los Pilares … (mestizos) … visited periodically from 1988 to 1992"; "We interviewed 191 people and obtained 495 completed questionnaires." | 2002 |
+| 121 nombres para unas 40 especies que se comen (hongos y mixomicetos) | ✅ | ídem | "Food.—A total of 121 common names used to designate 40 species of mushrooms and slime molds were found"; "We elicited 121 common names of 41 edible species in the three towns" | 2002 |
+| Más del 95 % lo conocía; «manjar» | ✅ | ídem | "The following species were known to over 95% of the inhabitants of the three communities: Amanita caesarea…"; "Mushrooms considered to be of excellent quality by most people are the following: Amanita caesarea…" | 2002 |
+| Nombres: hongo amarillo, ahuevadito, hongo flor, jícara buena | ✅ | [M02] Apéndice; [M19] Cuadro | "H. amarillo, hongo flor, jícara buena, ahuevadito" | 2002 / 2019 |
+| Tianguis de Acaxochitlán, Hidalgo, 2009; «yemas o yemitas»; hongueras miran sin ajonjolí, con pañuelito, con botita | ✅ | https://dialnet.unirioja.es/descarga/articulo/5294416.pdf | "Durante el periodo de junio a octubre de 2009 se acudió al mercado tradicional"; "yemas o yemitas, yemas amarillas o marías"; "Las características morfológicas que toman en cuenta son: sin ajonjolí (escamas), con pañuelito (velo) y con botita (volva)." | 2010 (datos 2009) |
+| Los Altos de Chiapas: a la blanca mortal algunos le dicen «yuyo de veneno»; tseltal «k'antsu blanco»; *A. hayalyuy* = yuyo comestible; no todas las mortales son blancas | ✅ | https://ethnobioconservation.com/ebc/article/download/414/273/1962 | "Amanita virosa Bertill. and A. verna (Bull.) Lam. are named sakil k'antsu, which means 'white k'antsu', in some communities"; Tabla 1: "A. hayalyuy … yuyo"; «yuyo de veneno» también para *A. phalloides* y *A. flavoconia* | 2020 |
+| No hay regla ni prueba general; trucos caseros no sirven; al hospital y lleva muestra | ✅ | https://tramits.gencat.cat/en/actualitat/reportatges/temporada-de-bolets/recomanacions-sanitaries/index.html | "There are no general rules or tests to distinguish between toxic and edible mushrooms."; "Tests such as the blackening of garlic, potatoes or a silver spoon simply do not work."; "If possible, take samples of the mushrooms…" | consultada 2026 |
+| publicacion.md (7 redes y comentario fijado): mismos datos; enlaces abiertos y vigentes | ✅ | las de arriba | Los 5 PDF se descargaron de los enlaces citados y corresponden al artículo y año citados. | — |
+
+Sin correcciones: todo coincide con las fuentes primarias. El texto narrado no cambió.
+
 VEREDICTO: APROBADO

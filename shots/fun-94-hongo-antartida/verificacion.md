@@ -62,4 +62,38 @@ Revisión independiente (5 nov 2026) de las 7 redes y el comentario fijado. Todo
 | LinkedIn: «ayudan… a evaluar si Marte pudo ser habitable» | ⚠️ (la fuente habla de la habitabilidad de Marte, no de su pasado) → corregido a «a evaluar qué tan habitable es Marte» | [PAC17] | "selected for astrobiological experiments for assessing the habitability of Mars" | 2017 |
 | LinkedIn: «a definir los límites de la vida… y a diseñar la protección planetaria» | ✅ | [SEL05], [PAC17] | Título "Fungi at the edge of life"; "for the astronauts and planetary space protection" | 2005 / 2017 |
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la verificación anterior). Se volvieron a bajar los resúmenes oficiales de PubMed
+(efetch) de [ONO15], [ONO12], [RAB12] y [SCA12], y el texto completo de [PAC17], [ERD24], [UVB24] y [MEL23] (PMC); la nota de *Nature*
+[NAT16]. Se agregó **[PAC17b]** Pacelli, C., Bryan, R. A., Onofri, S., Selbmann, L., Shuryak, I. y Dadachova, E. (2017). Melanin is effective
+in protecting fast and slow growing fungi from various types of ionizing radiation. *Environmental Microbiology* 19(4): 1612–1624.
+doi:10.1111/1462-2920.13681 (resumen: https://einstein.elsevierpure.com/en/publications/melanin-is-effective-in-protecting-fast-and-slow-growing-fungi-fr).
+
+| Afirmación (voz / pantalla / redes) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Gancho: «un hongo que pasó año y medio afuera de la Estación Espacial» | ✅ | [ONO15] PMID 26684504; [RAB12] PMID 22680684 | "colonies of the rock inhabitant black fungi Cryomyces antarcticus (CCFEE 515) … were exposed as part of the Lichens and Fungi Experiment (LIFE) for 18 months in the European Space Agency's EXPOSE-E facility"; "where it remained in space for 1.5 years" | 2008–2009 |
+| «Viene de los Valles Secos de McMurdo, en la Antártida» | ✅ | [PAC17] PMC5650992; [ERD24] PMC11580375 | "Cryomyces antarcticus CCFEE 515 … was isolated from sandstone rock collected at Linnaeus Terrace (McMurdo Dry Valleys, Southern Victoria Land) by S. Onofri during the Antarctic expedition 1980-81" | 2017 |
+| «de los lugares más fríos y secos del planeta» (con «de los») | ✅ | [PAC17]; [MCM] | "considered as Mars analog due to cold temperatures, dryness and high UV irradiation"; "Mean annual air temperatures are cold (ranging from -15 to -30°C on the valley floors)" | 2017 |
+| «Afuera casi nada sobrevive; por eso vive dentro de la roca, entre los granos de arena» | ✅ | [SEL05]; [ERD24]; [UVB24] | "practically sterile conditions at the outside, the communities being inside the rock"; "sandstones are sedimentary rocks with quartz grains"; "its survival strategy is primarily UV and light avoidance through the cryptoendolithic lifestyle" | 2005 / 2024 |
+| «es negro por la melanina» | ✅ | [ERD24] | "the first genetic manipulation of C. antarcticus, resulting in non‐melanized mutants and demonstrating that the melanin is rather of the DHN type" | 2024 |
+| «pariente del pigmento de tu piel» / «tu piel: otra melanina» | ✅ | [MEL23] PMC10532784 | "types of melanin are classified as eumelanins, pheomelanins, allomelanins (DHN-melanins), and pyomelanins"; "human DOPA-melanin protects the skin from sunlight" | 2023 |
+| «escudo contra la luz ultravioleta» | ✅ | [UVB24] PMC11567843, doi:10.1111/1758-2229.70043 | "DHN melanin provided UV‐B protection in C. antarcticus" | 2024 |
+| «…y la radiación» | ✅ (prueba experimental, no solo atribución) | [PAC17b] | "Melanin afforded protection against high-dose (1.5 kGy) deuterons for both CN and CA"; "For X-rays (0.3 kGy), melanin protected CA" (CA = *C. antarcticus*) | 2017 |
+| «En 2008, la Agencia Espacial Europea lo puso afuera de la Estación Espacial Internacional, en el experimento LIFE» | ✅ | [RAB12]; [ONO15] | "The multi-user facility EXPOSE-E was designed by the European Space Agency"; "On 7 February 2008, EXPOSE-E was carried to the International Space Station"; "Lichens and Fungi Experiment (LIFE)" | 2008 |
+| «Pasó dieciocho meses ahí; una parte, en condiciones como las de Marte» | ✅ | [ONO15]; [PAC17]; [RAB12] | "for 18 months"; "the fungus has already survived 18 months real space exposition and Martian simulated conditions (Onofri et al., 2012, 2015)"; "to simulated martian surface conditions (tray 2)" | 2008–2009 |
+| Pantalla «como en Marte (CO₂, ~1 % de la presión)» | ✅ | [HOR12] PMC3371261 | "atmospheric pressure (10 3 Pa) and composition (1.6% argon, 0.15% oxygen, 2.7% nitrogen in CO 2 )" (10³ Pa ≈ 1 % de 101 kPa) | 2008–2009 |
+| «en las muestras como de Marte, más del sesenta por ciento de las células seguían enteras» + nota «hongos y rocas de la prueba · medido por ADN» | ✅ | [ONO15]; [NAT16] | "the PMA assay indicated that more than 60% of the cells and rock communities had remained intact after the "Mars exposure.""; Nature: "up to two-thirds of the cells remained intact and yielded stable DNA" | 2015 |
+| «Menos del diez por ciento de las muestras volvió a formar colonias, pero algunas sí» | ✅ | [ONO15]; [NAT16] | "less than 10% of the samples exposed to simulated martian conditions were able to proliferate and form colonies"; "A small percentage of fungal cells were still able to divide" | 2015 |
+| «¿podría algo así vivir en Marte, o viajar escondido en una nave, o en una roca?» (pregunta) | ✅ | [PAC17]; [ONO12] | "assessing the habitability of Mars, the likelihood of Lithopanspermia … and for the astronauts and planetary space protection"; "lithopanspermia, which proposes a natural interplanetary exchange of organisms by means of rocks" | 2012 / 2017 |
+| Cierre «un sobreviviente del espacio» | ✅ | [PAC17]; [ONO12] | "the fungus has already survived 18 months real space exposition"; "some-but not all-of those most robust microbial communities … are also partially resistant" | 2012 / 2017 |
+| Pantalla: células redondas, negras, pared gruesa, 4–12 µm (escala 10 µm); franjas a < 1 cm bajo la superficie | ✅ (esquema) | [SEL05] | Se aceptan las frases de la tabla anterior (filas 2 y 8); coherentes con [ERD24] "thick and highly melanized cell walls" | 2005 / 2024 |
+| Redes: fechas 20 feb 2008 – 2 sep 2009; «unos 1000 Pa»; LinkedIn «se atribuye a su pared gruesa…»; enlaces PubMed/PMC | ✅ | [HOR12]; [ERD24]; PubMed | "the exposure of the EXPOSE-E samples started on 20 February 2008"; "retrieved by extravehicular activity on 2 September 2009"; "has been attributed to the presence of thick and highly melanized cell walls". Los PMID 26684504, 22680696, 22680684 y PMC11567843/PMC3371261 abren el artículo citado | 2008–2024 |
+
+Matiz (no requiere cambio): la piedra del gancho es una imagen representativa; lo que fue al espacio fueron colonias secas de la cepa
+CCFEE 515 y rocas colonizadas de la Antártida ([ONO15]: "Dehydrated Antarctic cryptoendolithic communities and colonies"). La frase
+habla de la especie, y el dibujo es esquemático.
+
+Sin correcciones: no cambió ningún archivo salvo este.
+
 VEREDICTO: APROBADO

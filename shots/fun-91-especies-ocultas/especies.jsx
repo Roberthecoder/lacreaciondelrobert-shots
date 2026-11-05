@@ -180,7 +180,7 @@ function EspeciesShot() {
       <NumeroGigante T={T} at={K.N + 0.5} until={K.Mi - 0.3} valor={155000} dur={1.2} prefijo="≈ " etiqueta="con nombre (2023)" x={540} y={330} tam={96} color={KC.gold2} />
       <Chip T={T} at={K.Mi + 0.2} until={K.S - 0.3} texto="POR DENTRO · EL SUELO" x={540} y={400} tam={32} borde={KC.mint} mono />
       <Etq T={T} at={K.Mi + 1.4} until={K.S - 0.3} x={60} y={1130} texto="hilos de hongo (hifas) · 3–6 µm" tam={28} color={EO.hifa} />
-      <Etq T={T} at={K.Mi + 2.8} until={K.S - 0.3} x={60} y={500} texto="un pelo tuyo · ~60 µm" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Mi + 2.8} until={K.S - 0.3} x={60} y={500} texto="un pelo tuyo · 50–120 µm" tam={30} color={KC.texto} />
       <Chip T={T} at={K.S + 0.5} until={K.A - 0.3} texto="sin seta visible" x={540} y={470} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.S + 0.8} until={K.A - 0.3} x={140} y={990} texto="moho" tam={28} color={KC.texto} />
       <Etq T={T} at={K.S + 1.4} until={K.A - 0.3} x={440} y={990} texto="levaduras" tam={28} color={KC.texto} />
@@ -208,7 +208,7 @@ function EspeciesShot() {
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Sub T={T} idx={0} at={K.G + 0.1} until={K.To - 0.1} texto="De cada 10 hongos, *9 no tienen nombre.*" />
-      <Sub T={T} idx={1} at={K.To + 0.1} until={K.N - 0.1} texto="Existen unos *2.5 millones* de especies." />
+      <Sub T={T} idx={1} at={K.To + 0.1} until={K.N - 0.1} texto="Mejor estimación: *unos 2.5 millones.*" />
       <Sub T={T} idx={2} at={K.N + 0.1} until={K.Mi - 0.1} texto="Con nombre, hasta 2023: *unas 155,000.*" />
       <Sub T={T} idx={3} at={K.Mi + 0.1} until={K.S - 0.1} texto="Hilos *más delgados que un pelo.*" />
       <Sub T={T} idx={4} at={K.S + 0.1} until={K.A - 0.1} texto="Muchos *nunca sacan seta.*" />

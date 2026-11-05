@@ -26,7 +26,7 @@
 
 **Música:** cama grave y tensa (está «cargado»), sin golpe; se libera en el disparo. Efectos: resorte que se tensa, «¡zip!» del disparo, chapoteo del contenido, tic del cronómetro, carrete de película, mordida del gusano de seda.
 
-Barra de escala: 5 µm (espora y célula), 10 µm (glóbulo rojo), 100 µm (tubo completo), 5 cm (gusano de seda), «esquema» en las barras de genoma.
+Barra de escala: 5 µm (espora y célula), 10 µm (glóbulo rojo), 100 µm (tubo completo), 2 cm (gusano de seda), «esquema» en las barras de genoma.
 
 ## Robert en pantalla
 

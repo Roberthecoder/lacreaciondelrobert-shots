@@ -91,4 +91,34 @@ Sobre "en 2015" (L2): correcto. El artículo se publicó en línea el 16 dic 201
 
 Correcciones pendientes: ninguna.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la verificación anterior). Fuentes abiertas de nuevo (PubMed/PMC, Europe PMC, Crossref, PDF de archive.org, páginas oficiales). Revisados `narracion.json` (12 líneas), letreros, subtítulos y barras de escala de `moho-refri.jsx`, `guion.md` y `publicacion.md`.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| L0/L11 «Tu refri no mata al moho: solo lo pone en pausa. Y a algunos, ni eso.» / «solo le da tiempo» | ✅ | FDA https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely ; USDA FSIS (copia WSU) https://wpcdn.web.wsu.edu/wp-extension/uploads/sites/2057/2021/03/Molds-on-Food-LC.pdf | "Mold is a sign of spoilage. It can grow even under refrigeration." | 2023 / 2021 |
+| L1 «La mayoría prefiere el calor, pero varios mohos crecen a 4 grados.» | ✅ | USDA FSIS (copia WSU) | "While most molds prefer warmer temperatures, they can grow at refrigerator temperatures, too." | 2021 |
+| L2 *P. expansum* = moho azul de la manzana | ✅ | Luciano-Rosario y cols., Mol Plant Pathol, PMC7548999 | "Blue mould, caused primarily by Penicillium expansum, is a major threat to the global pome fruit industry" | 2020 |
+| L2 «en 2015, a 4 grados, tardó 6 días en arrancar… y creció» (chip "a 4 °C · estudio de 2015") | ✅ | Tannous y cols., Food Sci Nutr 4(4):611–622, PMC4930504 (XML Europe PMC: pub-date 16-12-2015) | "a lag phase of 6 and 3 days was noticed at the lowest temperatures of 4°C and 8°C" · "The lowest mycelia dry weight of 10 ± 0 mg was perceived at 4°C" (sí creció; en agar Czapek, cepa de uva) | 2015 (en línea) |
+| L3 *Botrytis cinerea* = moho gris de la fresa | ✅ | Perennia (2020) | "Botrytis fruit rot (BFR), also called gray mold, is caused by the fungus Botrytis cinerea" (no reabierto; dato de libro de texto) | 2020 |
+| L3 «en 2001, en laboratorio, creció a 4 bajo cero» (placa de cultivo, chip "estudio de 2001 · en laboratorio") | ✅ | Tian, Acta Phytopathol. Sin. 31(1), 2001 — ficha IIR https://iifiir.org/en/fridoc/effects-of-low-temperature-on-mycelial-growth-and-spore-germination-of-119075 | "B. cinerea was able to grow and germinate on PDA and to infect chicory even at -4 °C" | 2001 |
+| L4 «En 1923, las esporas de Cladospórium ya germinaban a 6 bajo cero.» (etiqueta *Cladosporium herbarum*) | ✅ | Brooks y Hansford, Trans. Br. Mycol. Soc. 8:113–142, doi:10.1016/S0007-1536(23)80020-1 (Crossref: marzo 1923); PDF https://archive.org/download/biostor-237804/biostor-237804.pdf | "Our own results show that the spores of Cladosporium herbarum germinate even at — 6° C" | 1923 |
+| L6 «Frena sus reacciones y endurece sus membranas.» | ✅ | D'Amico y cols., EMBO Rep, PMC1456908 | "any decrease in temperature exponentially affects the rate of biochemical reactions" · resumen: "decreased membrane fluidity" | 2006 |
+| L6 «Los hongos del frío las ablandan con grasas insaturadas.» | ✅ | D'Amico 2006; Su y cols., G3 2016, PMC5100859 | "lower growth temperatures produce a higher content of unsaturated, polyunsaturated and methyl-branched fatty acids" | 2006 / 2016 |
+| L7 «El congelador los duerme, no los mata: al descongelar, despiertan.»; congelador "−18 °C" | ✅ | WSU Extension FSM 268 https://news.cahnrs.wsu.edu/?p=59977 ; FDA | "Does freezing food kill harmful microbes? No." · "Home freezers at zero degrees F temporarily inactivate microbes, bacteria, yeast, and mold." · "The freezer temperature should be 0° F (-18° C)." | s/f (consultado 2023) / 2023 |
+| L8 «En 2014, en Italia, revisaron 293 refris» (tarjeta "2014 · Padua, Italia · Catellani y cols. · Food Control"; esponja) | ✅ | Catellani y cols., Food Control, doi:10.1016/j.foodcont.2014.02.025; https://www.research.unipd.it/handle/11577/2805732 | "We analyzed 293 domestic refrigerators of students or workers at the university campus of Agripolis (Legnaro, Italy). For each refrigerator, 2 internal surfaces were sampled using sponge-bags." | 2014 |
+| L8 «hallar moho en el fondo era 2.5 veces más probable que en las paredes» | ✅ | Catellani 2014 | "the possibility of there being a finding on the bottom with respect to the walls varies from 2.5 to 8.5 times respectively for moulds and Aeromonas spp." | 2014 |
+| L9 «en otro estudio de 2020, 25 refris de casa promediaban 6.6 grados, no 4» (chips "rango: 1 a 11.3 °C", "Univ. de Zagreb · 2020") | ✅ | Vujić, Kiš y Zdolec, Veterinar 58(2):23–27 (2020), https://hrcak.srce.hr/en/clanak/364389 | "Swabs were taken from 25 refrigerators" · "Refrigerator temperatures ranged from 1 to 11.3 °C with a mean value of 6.56 °C." · afiliación "Faculty of Veterinary Medicine, University of Zagreb" | 2020 |
+| L10 «4 grados o menos» | ✅ | FDA | "Keep the refrigerator temperature at or below 40° F (4° C)." | 2023 |
+| L10 «sobras en 3 a 4 días» | ✅ | USDA FSIS (copia WSU) | "Use leftovers within 3 to 4 days so mold doesn't have a chance to grow." | 2021 |
+| L10 «limpiarlo cada pocos meses con bicarbonato» (chip "1 cucharada de bicarbonato en ~1 L de agua") | ✅ | USDA FSIS (copia WSU) | "Clean the inside of the refrigerator every few months with 1 tablespoon of baking soda dissolved in a quart of water." (1 quart ≈ 0.95 L) | 2021 |
+| Dibujo: *P. expansum* en pincel, conidios casi esféricos ~3 µm azul-verdes; *Botrytis* ramificado en racimo, conidios ovoides grises; *Cladosporium* cadenas de conidios en limón oliva-café; barras 10 µm | ✅ | morfología estándar de las tres especies (Pitt y Hocking; descripciones de especie) | esquemático, coherente con la morfología real | — |
+| publicacion.md (YouTube): «Brooks y Hansford vieron en carne de cámara frigorífica que las esporas… germinaban a −6 °C» | ⚠️ → corregido | Brooks y Hansford 1923 | el artículo estudia mohos de carne en cámaras frigoríficas, pero el resultado de germinación a −6 °C no se describe como observado sobre la carne | 1923 |
+| Enlaces y DOI de `publicacion.md` y `## Fuentes` | ✅ | todos abren y corresponden (FDA, USDA/WSU PDF, archive.org, IIR, PMC4930504, PMC1456908, PMC5100859, WSU FSM 268, UniPD, Hrčak) | — | — |
+
+### Correcciones
+- `publicacion.md` (descripción de YouTube): «Y ya en 1923, Brooks y Hansford vieron en carne de cámara frigorífica que las esporas…» → «Y ya en 1923, en su estudio de los mohos de la carne en cámaras frigoríficas, Brooks y Hansford vieron que las esporas…».
+- **El texto narrado NO cambió.** `narracion.json`, `moho-refri.jsx` y `guion.md` sin cambios.
+
 VEREDICTO: APROBADO

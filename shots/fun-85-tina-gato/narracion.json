@@ -1,11 +1,12 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Tina Gato base narrada.dc.html",
   "salida": "Shot Tina Gato narrado.dc.html",
-  "nota": "Shot Fungi Mati #85. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Microsporum canis se escribe como se pronuncia: «Microspórum cánis».",
+  "nota": "Shot Fungi Mati #85. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs.  Microsporum canis se escribe como se pronuncia: «Microspórum cánis». Voz aprobada por delegación de Robert tras la re-verificación independiente del 5 nov 2026.",
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Ese anillo rojo no es un gusano: es un hongo, y te lo pasó tu gato."
+      "texto": "Ese anillo rojo no es un gusano: es un hongo, y te lo pudo pasar tu gato."
     },
     {
       "escena": "Nombre",

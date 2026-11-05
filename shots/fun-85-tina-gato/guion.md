@@ -1,8 +1,8 @@
-# Shot Fungi Mati #85 · Ese anillo rojo no es un gusano: es un hongo, y te lo pasó tu gato (la tiña, *Microsporum canis*)
+# Shot Fungi Mati #85 · Ese anillo rojo no es un gusano: es un hongo, y te lo pudo pasar tu gato (la tiña, *Microsporum canis*)
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #85 · rama `claude/fun-85-89-casa` (lote "hongos en tu casa").
 - **Formato:** N1 Por dentro (+ N2 El número con el "90 %" y el "43 de 57"): el anillo rojo en el brazo de quien abraza a su gato → al microscopio: hifas que comen queratina, manguito de esporas por fuera del pelo, macroconidios en huso → luz UV: pelos que brillan verde manzana → el estudio de la Ciudad de México → el polvo → **qué sí sirve** → cierre en el mismo brazo y el mismo gato, ya curados.
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Ese anillo rojo no es un gusano: es un hongo, y te lo pasó tu gato.»
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Ese anillo rojo no es un gusano: es un hongo, y te lo pudo pasar tu gato.»
 - **Duración:** voz 967 caracteres (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~970 créditos de ElevenLabs).
 - **Tono:** cariñoso con los gatos (no son culpables: también se curan), útil y tranquilo. No es consejo médico ni veterinario.
@@ -11,7 +11,7 @@
 
 | # | Escena | Voz | Lo que se ve |
 |---|---|---|---|
-| 0 | Gancho | Ese anillo rojo no es un gusano: es un hongo, y te lo pasó tu gato. | Fondo rosa con lunares: un antebrazo abrazando a un gato atigrado naranja que ronronea (ojos entrecerrados). Cuadro 0.15: en el antebrazo aparece y se enrojece un **anillo rojo** con borde escamoso; la mano lo rasca (líneas de comezón). Un gusanito caricatura asoma junto al anillo y se **tacha** ("¿gusano?" ✗) → sello "HONGO". Una flechita punteada va del pelo del gato al anillo. |
+| 0 | Gancho | Ese anillo rojo no es un gusano: es un hongo, y te lo pudo pasar tu gato. | Fondo rosa con lunares: un antebrazo abrazando a un gato atigrado naranja que ronronea (ojos entrecerrados). Cuadro 0.15: en el antebrazo aparece y se enrojece un **anillo rojo** con borde escamoso; la mano lo rasca (líneas de comezón). Un gusanito caricatura asoma junto al anillo y se **tacha** ("¿gusano?" ✗) → sello "HONGO". Una flechita punteada va del pelo del gato al anillo. |
 | 1 | Nombre | Es la tiña. En inglés le dicen «gusano de anillo» por la forma de su roncha. | Letrero grande "TIÑA" y debajo "ringworm" en inglés → se separa en "ring = anillo" + "worm = gusano" (el "worm" con ✗). Chip "le dicen así por la forma de la roncha". Barra de escala 5 cm sobre el brazo. |
 | 2 | Anillo | Crece hacia afuera, y el centro muchas veces se aclara. | Acercamiento al anillo: el borde rojo y escamoso **se expande** en círculos (flechas hacia afuera) y el centro vuelve a color piel. Chips "crece hacia afuera" y "el centro se aclara". |
 | 3 | Queratina | Sus hifas se alimentan de queratina: la de tu pelo y tu piel. | **Lupa en modo rayos X** sobre el borde del anillo → **al microscopio** (fondo noche): capa de afuera de la piel (capa córnea, escamas de queratina en tejas amarillo pálido) y un pelo; hifas tabicadas, ramificadas, avanzan entre las escamas y las "mastican" (las escamas se adelgazan). Chips "se alimenta de queratina" y "piel por fuera · pelo". Barra 10 µm. |

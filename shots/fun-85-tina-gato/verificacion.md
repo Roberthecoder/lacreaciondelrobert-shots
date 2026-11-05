@@ -60,4 +60,36 @@ Resultado inicial: 27 ✅, 4 ⚠️, 0 ❌. Las 4 ⚠️ se corrigieron en `narr
 
 Nota: «tu gato no tiene la culpa» es tono, no un dato comprobable.
 
+
+## Re-verificación independiente (5 nov 2026)
+
+Tercer verificador (no escribió el guion ni la verificación anterior). Se descargó y leyó el PDF de Torres-Guerrero 2016 y se abrieron en línea CDC (2 páginas), Frymus 2013 (PMC), Mrazkova 2023 (PMC), Merck Vet Manual, AAFP 2018, Dr Fungus, MSD (imagen) y Clinician's Brief.
+
+| Afirmación | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «Ese anillo rojo no es un gusano: es un hongo» | ✅ | https://www.cdc.gov/ringworm/about/index.html | "Ringworm is caused by fungi (not a worm)." | revisada 2026 |
+| «…y te lo pasó tu gato» (como hecho) | ⚠️ → corregido a «te lo pudo pasar tu gato» | https://micologiaveterinaria.fmvz.unam.mx/assets/docs/aportaciones/M_canis_other_dermatophytes.pdf | "57 of the 8,684 human patients (0.65%), had zoophilic dermatophytes" — la mayoría de las tiñas humanas NO vienen de animales; el gato es una fuente posible, no segura. | 2016 |
+| En inglés «ringworm» por la forma de la roncha | ✅ | CDC About | "It gets its name because it causes a ring-shaped, itchy rash." | 2026 |
+| Crece hacia afuera y el centro muchas veces se aclara | ✅ | https://www.aafp.org/pubs/afp/issues/2018/0901/p283.html | "A pruritic, annular, erythematous patch that grows centrifugally should prompt evaluation for tinea corporis"; "central clearing typically develops" | 2018 |
+| Sus hifas se alimentan de queratina, del pelo y la capa de afuera de la piel | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC11148949 ; https://www.cliniciansbrief.com/article/feline-dermatophytosis | keratin "as the sole source of nutrition after colonisation"; "keratin-digesting, fungal infection of the hair, outermost layer of the skin (stratum corneum), and claw." | 2013 / 2017 |
+| Guías de 2013: más del 90 % de las tiñas de gato son de *M. canis* | ✅ | Frymus 2013 (PMC11148949) | "Over 90% of feline dermatophytosis cases worldwide are caused by Microsporum canis." | 2013 |
+| «canis» = de perro; reservorio gatos y perros | ✅ | https://drfungus.org/?p=816 | "The natural reservoir of Microsporum canis is cats and dogs." | — |
+| Macroconidios en huso, 6–15 compartimentos, pared gruesa y rugosa, botón asimétrico | ✅ | ídem | "Macroconidia are spindle-shaped, with an asymmetrical apical knob. They are 6- to 15-celled, long, rough and have thick outer cell walls." | — |
+| Manguito de esporas por fuera del pelo (ectótrix) | ✅ | https://www.msdvetmanual.com/multimedia/image/normal-hair-and-microsporum-canis-infected-hair | "Note the cuffs of spores on the outside of the hair shaft. Animal dermatophytes show these cuffs or ectothrix spores." | — |
+| Se pegan muy fuerte | ✅ | Frymus 2013 | "Arthrospores adhere very strongly to keratin." | 2013 |
+| Muchos gatos adultos lo cargan sin síntomas | ✅ | Frymus 2013 | "Many adult cats are asymptomatic carriers." | 2013 |
+| Con UV muchos pelos infectados brillan verde manzana; no todos | ✅ | https://www.merckvetmanual.com/integumentary-system/dermatophytosis/dermatophytosis-in-dogs-and-cats ; Frymus 2013; https://pmc.ncbi.nlm.nih.gov/articles/PMC10581519 | "Hairs infected with M canis glow/fluoresce apple green."; "only about 50% of M canis strains fluoresce"; 48.57 % (34 de 70) de gatos con fluorescencia positiva | 2025 / 2013 / 2023 |
+| Brilla por pteridina | ✅ | Mrazkova, Konvalinova y Bedanova, Vet Med (Praha) 68(7):281–286 | "A substance called pteridine is responsible for the fluorescence of the infested hair." | 2023 |
+| Estudio de 2016, CDMX, Hospital Gea González + FMVZ-UNAM, 10 años; 43 de 57 tiñas humanas de origen animal eran *M. canis* | ✅ | Torres-Guerrero et al. 2016, Glob Dermatol 3(2):275–278, doi:10.15761/GOD.1000173 | "Sección de Micología. Hospital 'Dr. Manuel Gea González', Ciudad de México"; "FMVZ.UNAM"; "During a 10 year-period"; "57 of the 8,684 human patients (0.65%), had zoophilic dermatophytes: M. canis 43 (75.5%)" | 2016 |
+| En los gatos fue el único hongo que encontraron | ✅ | ídem | "in cats only M. canis was isolated." | 2016 |
+| Esporas viajan en el polvo hasta cuartos sin gato; aguantan 12 meses o más en ambiente seco | ✅ | Frymus 2013 | "Arthrospores are easily spread on dust particles, even to rooms without access for cats."; "highly resistant, surviving in a dry environment for 12 months or more." | 2013 |
+| Lo que sí sirve: veterinario, lavarse las manos, aspirar, desinfectar su cama | ✅ | https://www.cdc.gov/ringworm/aboutemergingringworm/index.html | "Take your pet to the veterinarian right away for treatment."; "Wash your hands with soap and running water after contact with your pet."; "Vacuum the areas of the home that the pet commonly visits."; "Disinfect surfaces and bedding as appropriate" | 2026 |
+| Los dos se curan | ✅ | Merck Vet Manual; Frymus 2013 | personas: "skin lesions that are easily treated"; gatos: "Most infections are resolved after 3 or 4 cycles"; "In many cats, dermatophytes cause a mild, self-limiting infection" | 2025 / 2013 |
+| publicacion.md (7 redes y comentario fijado): mismos datos; enlaces y DOI | ✅ | las de arriba | Todos los enlaces abren y dicen lo citado; X ya decía «te lo pudo pasar». | — |
+
+### Correcciones
+- **Gancho:** «…es un hongo, y te lo pasó tu gato» → «…es un hongo, y te lo pudo pasar tu gato». Motivo: dicho como hecho generaliza de más; en el propio estudio de CDMX solo 0.65 % de las tiñas humanas eran de hongos de origen animal. El gato es una fuente posible, no segura.
+- Archivos: `narracion.json` (línea 0, **sí cambió el texto narrado**, +1 palabra: 16 → 17), `guion.md` (título, gancho y tabla), `publicacion.md` (encabezado, TikTok, Instagram, título y descripción de YouTube, Facebook, Threads) y el comentario de la línea 1 de `tina-gato.jsx` (no se ve en pantalla; el subtítulo de esa línea, «No es un gusano: es un hongo.», no menciona al gato y no cambió).
+- Lo corregido se volvió a verificar (fila 2 de esta tabla). No hubo cambios visibles en pantalla, así que no hizo falta revisar cuadros.
+
 VEREDICTO: APROBADO

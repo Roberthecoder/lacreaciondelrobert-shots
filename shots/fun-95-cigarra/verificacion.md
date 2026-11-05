@@ -47,4 +47,38 @@ Re-verificación (5 nov 2026): se leyó `narracion.json` completo después de la
 
 Nota del coordinador (5 nov 2026): por duración, la pregunta quedó «¿Cómo contagia a más cigarras?» (antes «¿Pero cómo…?»). Es una pregunta retórica sin dato; no cambia ninguna afirmación verificada.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni la verificación anterior). Se volvieron a abrir en texto completo Cooley et al. 2018
+(PMC5780379), Boyce et al. 2019 (PDF de NSF-PAR 10108270) y la nota de CNN/ABC7; se agregó el anuncio del genoma de *M. cicadina* (Microbiology Resource Announcements 2022, PMC9584336) para la
+superficie de los conidios.
+
+| Afirmación (voz / pantalla / redes) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Gancho: «la parte de atrás de su cuerpo ya es un hongo» | ✅ (metáfora fiel) | Cooley 2018, PMC5780379 | "Both Stage I and Stage II infections cause distention and loss of the terminal abdominal segments, genitalia included, in both sexes"; "Even cicadas that have lost the terminal halves of their abdomens behave as if they were sexually responsive" | 2018 |
+| *Massospora cicadina* ataca a cigarras que salen cada 13 o 17 años | ✅ | Cooley 2018 | "infects periodical cicadas (Magicicada spp.) during their regionally synchronized, roughly month-long adult emergences every 13 or 17 years" | 2018 |
+| Esporas que esperan en la tierra y contagian a las ninfas al salir | ✅ | Cooley 2018 | "produce diploid resting spores that fall to the soil and complete the fungal life cycle by infecting the next generation of cicada nymphs"; "Stage I Massospora infections are acquired as nymphs emerge from the soil" | 2018 |
+| Crece dentro del abdomen y lo infla; caen los últimos anillos, genitales incluidos; queda un tapón de esporas | ✅ | Cooley 2018; Boyce 2019, doi:10.1016/j.funeco.2019.06.002 | "distention and loss of the terminal abdominal segments, genitalia included"; Boyce: "conidial plugs", "resting spore plugs" | 2018 / 2019 |
+| Sigue volando y buscando pareja; «salero con alas» | ✅ | Cooley 2018; CNN/ABC7 2024 | "Cicadas producing infective spores retain their ability to fly"; "engaging vigorously in courtship behavior and attempted copulation"; Kasson: "We call them the saltshakers of death" | 2018 / 2024 |
+| «En dos mil dos les pusieron cantos de macho a cigarras enfermas» | ✅ | Cooley 2018, Tabla 2 | "Table 2. Aggregated data from 2002 playbacks to males infected with Massospora cicadina" | 2002 (publ. 2018) |
+| «23 de 25 machos **con el tapón** respondieron con el aleteo de las hembras» (y pantalla «23 de 25 machos con tapón» / «machos con la otra fase: 0 de 17») | ⚠️ → corregido | Cooley 2018, Tabla 2; Boyce 2019 | Tabla 2: "Stage I male / Stage II male — Wing-flick (+) 23 / 0 — No Wing-flick (−) 2 / 17". Los machos de fase II **también** tienen tapón (de esporas de reposo): "Both Stage I and Stage II infections cause distention and loss of the terminal abdominal segments"; Boyce: "conidial plugs … resting spore plugs". «Machos con el tapón» incluía a los 17 que no respondieron. Ahora: «machos con tapón de conidios» (= fase I) y «con tapón de esporas de reposo: 0 de 17» | 2002 |
+| Aleteo = señal de hembra receptiva | ✅ | Cooley 2018 | "precisely timed wing-flick signaling behavior normally seen only in sexually receptive female cicadas" | 2018 |
+| Otros machos intentaban aparearse con ellos y, al parecer, se contagiaban | ✅ (con la misma cautela) | Cooley 2018 | "Male wing-flicks attract copulation attempts from conspecific males in the chorus; close contact apparently spreads the infective conidiospores" | 2018 |
+| 2019: catinona en los tapones, «una anfetamina de planta» (khat, *Catha edulis*) | ✅ | Boyce 2019 | "the discovery, through metabolomics, of the plant-associated amphetamine, cathinone, in four Massospora cicadina-infected periodical cicada populations"; "Table 2 Quantification of psilocyibn, psilocin, and cathinone from Massospora fungal plugs"; "candidate cathinone biosynthesis proteins identified in a transcriptomic study of Catha edulis" | 2019 |
+| Tarjeta «Boyce, Kasson y col. · Fungal Ecology 2019 · West Virginia University» | ✅ | Boyce 2019 | "Fungal Ecology 41 (2019) 147e164"; "Matt T. Kasson a, * a Division of Plant and Soil Sciences, West Virginia University" | 2019 |
+| Psilocibina en otras *Massospora* (*M. platypediae* / *M. levispora*, cigarras anuales) | ✅ | Boyce 2019 | "the mushroom-associated tryptamine, psilocybin, in annual cicadas infected with Massospora platypediae or Massospora levispora, which likely represent a single fungal species" | 2019 |
+| «Proponen que eso cambia su conducta: aún es hipótesis» | ✅ | Boyce 2019; CNN/ABC7 2024 | "The neurogenic activities of these compounds suggest the extended phenotype of Massospora that modifies cicada behavior to maximize dissemination is chemically-induced"; "activity-level effects of amphetamine and psilocybin cannot easily explain the display of female-typical courtship behaviors by male cicadas"; Cooley: "the powerful psychoactive chemical may not do anything to the insects" | 2019 / 2024 |
+| Pantalla: esporas de reposo redondas con superficie en red | ✅ (esquema) | Boyce 2019 | "reticulated resting spores (a feature shared across all Massospora spp.)" | 2019 |
+| Pantalla: conidios ovalados o casi redondos (lupa) | ⚠️ → corregido (faltaba la superficie verrugosa) | «An Improved 1.5-Gigabase Draft Assembly of Massospora cicadina», Microbiology Resource Announcements 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9584336/ | Fig. 1: "Close-up of M. cicadina verrucose ("warty") conidia"; "conspicuous conidia "plug" protruding from the posterior end of the abdomen" | 2022 |
+| Redes: «saleros de la muerte» (Matt Kasson) | ✅ | CNN/ABC7, 2024 | "“We call them the saltshakers of death,” Kasson said" | 2024 |
+| Redes (X / LinkedIn / IG / TikTok): «23 de 25 machos infectados / con el tapón» | ⚠️ → corregido | Cooley 2018, Tabla 2 | En 2002 hubo 42 machos infectados (25 fase I + 17 fase II); solo 23 de los 25 de fase I respondieron | 2002 |
+| Enlaces: PMC5780379, doi:10.1016/j.funeco.2019.06.002, ABC7 | ✅ | — | Se abrieron y corresponden a los artículos citados | — |
+
+### Correcciones
+- `narracion.json` y `guion.md`, línea 8 (Aleteo) — **sí cambió el texto narrado**: «Veintitrés de veinticinco machos con el tapón respondieron con el aleteo de las hembras.» → «Veintitrés de veinticinco machos con tapón de conidios respondieron con aleteo de hembra.» (14 → 13 palabras; 88 → 89 caracteres; `estimar-escenas.mjs`: misma duración de escena 5.4 s, total ≈ 61.8 s). Motivo: los machos de la fase II también tienen tapón (de esporas de reposo) y ninguno respondió (0 de 17).
+- `cigarra.jsx` (pantalla, escena Aleteo): «23 de 25 machos con tapón» → «23 de 25 machos con tapón de conidios»; «machos con la otra fase: 0 de 17» → «con tapón de esporas de reposo: 0 de 17». El subtítulo («23 de 25: aleteo de hembra.») no cambia.
+- `cigarra.jsx` (dibujo): el componente `Conidio` ahora lleva verrugas en el borde y la superficie (conidios verrugosos).
+- `publicacion.md`: TikTok, Instagram, YouTube, LinkedIn y X dicen «machos con tapón de conidios» y «con tapón de esporas de reposo: 0 de 17» (antes «con el tapón» / «infectados»).
+- Cuadros revisados con `preview.mjs` (20.8, 21.4, 36.2, 37.0 s): el texto cabe, no se encima con Robert y queda fuera del tercio inferior.
+
 VEREDICTO: APROBADO
