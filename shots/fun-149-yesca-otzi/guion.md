@@ -17,7 +17,7 @@
 | 3 | Micro | Al microscopio es una maraña de hifas, los hilos del hongo. | Zoom a la trama → fondo oscuro, chip «AL MICROSCOPIO · LA TRAMA». Maraña de hifas gruesas y delgadas entrelazadas que se mecen. Etiqueta «hifas · los hilos del hongo». Barra «20 µm (esquemático)». |
 | 4 | Chispa | Se hierve, se golpea, y a veces se remojaba en salitre. Una chispa cae ahí y se queda ardiendo. | Fondo naranja. Una tira de trama en una olla que burbujea → un mazo de madera la golpea (3 golpes, se aplana) → gotas «salitre» (chip «a veces: salitre»). Luego un pedernal choca contra un nódulo de **pirita** (chip «pedernal + pirita», como en el kit de Ötzi), sale una chispa que cae sobre la yesca y queda un punto rojo que brilla, crece y humea. |
 | 5 | Pregunta | ¿Desde cuándo hacemos esto? | **Re-gancho.** Fondo rosa: la brasa en primer plano y un «?» gigante; Robert grande, pensativo. |
-| 6 | Otzi | En 1991, en un glaciar de los Alpes, apareció Ötzi, que murió hace más de cinco mil trescientos años. En la bolsa del cinturón traía yesca de este hongo. | Fondo cian: montañas nevadas y glaciar. TarjetaEstudio «1991 · Ötzi · glaciar de los Alpes (Tisenjoch, Italia)». Figura esquemática (no realista) del hombre de hielo. Número «murió hace más de 5,300 años». Zoom a una bolsita de cuero del cinturón: se abre y sale la yesca negra. Etiqueta «yesca de *Fomes fomentarius*». |
+| 6 | Otzi | En 1991, en un glaciar de los Alpes, apareció Ötzi, que murió hace unos cinco mil trescientos años. En la bolsa del cinturón traía yesca de este hongo. | Fondo cian: montañas nevadas y glaciar. TarjetaEstudio «1991 · Ötzi · glaciar de los Alpes (Tisenjoch, Italia)». Figura esquemática (no realista) del hombre de hielo. Número «murió hace unos 5,300 años». Zoom a una bolsita de cuero del cinturón: se abre y sale la yesca negra. Etiqueta «yesca de *Fomes fomentarius*». |
 | 7 | Pirita | La yesca tenía restos de pirita, y su raspador de pedernal parece haber sacado chispas. | Lupa sobre la yesca: puntitos dorados (chip «restos de pirita»). Un raspador de pedernal choca y suelta chispas; chip «marcas de uso: parece eslabón». |
 | 8 | Abedul | También cargaba dos trozos del hongo del abedul en tiras de piel: quizá medicina. | Fondo lila. Dos trozos pardo claro, redondeados, de *Fomitopsis betulina* ensartados en una tira de piel, que se balancean. Etiqueta «políporo del abedul · *Fomitopsis betulina*». Chip «¿medicina? hipótesis». |
 | 9 | Sangre | Después, cirujanos y barberos la usaron para detener sangrados pequeños. | Fondo menta. Una mano con una cortadita: una gota roja; un cuadrito de trama la cubre y la gota deja de crecer. Chip «hongo de los cirujanos» y etiqueta «*Fungus chirurgorum*». |
@@ -40,7 +40,7 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Desde cuá
 | 3 | 15.0 | 18.0 | 04_bajando_lentes | `arriba-der` | «al microscopio es una maraña de hifas» |
 | 4 | 20.6 | 23.7 | 11_sorprendido | `arriba-der` | «una chispa cae ahí y se queda ardiendo» |
 | 5 | 23.95 | 25.9 | 07_pensativo_puno | `grande` | «¿Desde cuándo hacemos esto?» |
-| 6 | 30.0 | 34.6 | 10_serio_molesto | `arriba-der` | «murió hace más de 5,300 años… yesca de este hongo» |
+| 6 | 30.0 | 34.6 | 10_serio_molesto | `arriba-der` | «murió hace unos 5,300 años… yesca de este hongo» |
 | 7 | 36.5 | 39.9 | 04_bajando_lentes | `arriba-der` | «parece haber sacado chispas» |
 | 8 | 41.0 | 44.9 | 06_pensativo_menton | `arriba-der` | «quizá medicina» (hipótesis) |
 | 9 | 46.0 | 49.3 | 02_apuntando_camara | `arriba-der` | «detener sangrados pequeños» |
