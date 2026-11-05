@@ -1,0 +1,56 @@
+{
+  "dcHtml": "Shot Moho Verde base narrada.dc.html",
+  "salida": "Shot Moho Verde narrado.dc.html",
+  "nota": "Shot Fungi Mati #108. Una línea por subtítulo (idx 0..11 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esa pelusa blanca no es tu hongo: es el enemigo, y se pone verde."
+    },
+    {
+      "escena": "Quien",
+      "texto": "Es Trichoderma: primero, micelio blanco; luego, esporas verdes."
+    },
+    {
+      "escena": "PorDentro",
+      "texto": "No se come a tu hongo: le gana el espacio y la comida."
+    },
+    {
+      "escena": "Lab",
+      "texto": "En laboratorio, cubrió una colonia de seta en cuatro a seis días."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y por dónde se mete?"
+    },
+    {
+      "escena": "Entra",
+      "texto": "Sobre todo con personas y herramientas; en Malasia, también en el agua."
+    },
+    {
+      "escena": "Errores",
+      "texto": "La paja se pasteuriza a setenta y un grados; agregar nitrógeno, como salvado, sube el riesgo."
+    },
+    {
+      "escena": "Vacio",
+      "texto": "Y lo estéril queda como un vacío: si entra un moho, puede invadir más fácil."
+    },
+    {
+      "escena": "Estudio",
+      "texto": "En los ochenta surgió una forma agresiva en champiñoneras de Irlanda; en los noventa, Pensilvania tuvo pérdidas de hasta cien por ciento."
+    },
+    {
+      "escena": "Gramo",
+      "texto": "En 2020, un gramo de composta con Trichoderma aggressivum por kilo bajó la cosecha de champiñón de sesenta y ocho a cien por ciento."
+    },
+    {
+      "escena": "Chiste",
+      "texto": "Lo chistoso: su pariente Trichoderma reesei pudría una tienda militar en 1944; hoy la industria usa sus enzimas."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Esa pelusa no es tu cosecha: pasteuriza y limpia manos y herramientas."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

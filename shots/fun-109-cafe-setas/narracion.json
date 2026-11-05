@@ -1,0 +1,60 @@
+{
+  "dcHtml": "Shot Cafe Setas base narrada.dc.html",
+  "salida": "Shot Cafe Setas narrado.dc.html",
+  "nota": "Shot Fungi Mati #109. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Verificado: verificacion.md (VEREDICTO: APROBADO).",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto no es tierra: es el café que tiraste esta mañana, y puede dar setas."
+    },
+    {
+      "escena": "Robert",
+      "texto": "A mí, a los diez años, el café no me funcionó."
+    },
+    {
+      "escena": "Ojo",
+      "texto": "Ojo: con puros posos, muchas veces no salen."
+    },
+    {
+      "escena": "Dato",
+      "texto": "En un estudio de 2021, con más de treinta por ciento de posos, las setas se frenaron."
+    },
+    {
+      "escena": "Mezcla",
+      "texto": "En otro, un tercio de posos con paja y ramas de olivo dio casi su peso seco en setas frescas."
+    },
+    {
+      "escena": "Hifas",
+      "texto": "Por dentro, las hifas se cuelan entre los granitos de café,"
+    },
+    {
+      "escena": "Cafeina",
+      "texto": "y el micelio rompe parte de la cafeína hasta xantina."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y las setas salen con cafeína?"
+    },
+    {
+      "escena": "Espresso",
+      "texto": "Sí, trazas: tendrías que comer unos doscientos cincuenta kilos de setas frescas para igualar un espresso."
+    },
+    {
+      "escena": "Mexico",
+      "texto": "Y en México ya se hacía: en los años ochenta, en Veracruz, se cultivaban setas en pulpa de café."
+    },
+    {
+      "escena": "Xalapa",
+      "texto": "En Xalapa, pulpa secada al sol y guardada dos años dio más setas frescas que su propio peso seco."
+    },
+    {
+      "escena": "Mundo",
+      "texto": "Y se estima que cada año el mundo deja unos seis millones de toneladas de posos."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Así que no es tierra: es tu café de esta mañana, convertido en comida."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}

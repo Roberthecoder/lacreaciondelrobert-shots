@@ -1,0 +1,112 @@
+{
+ "temas": [
+  {
+   "id": "fun-105-olote",
+   "titulo": "Ese olote no es basura: es comida para un hongo (Pleurotus en residuos agrícolas)",
+   "serie": "Shot Fungi Mati",
+   "numero": 105,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-105-olote",
+   "rama": "claude/fun-105-109-cultivo",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Setas sobre pañales usados (ensayo mexicano de 2011)",
+    "Pasteurizar contra esterilizar: por qué la seta sí y el champiñón no",
+    "¿Adónde se va la mitad del sustrato? CO₂ y sustrato agotado como composta"
+   ],
+   "fuentes": [
+    "López-López et al. 2026, Agroindustrial Science 16(3):373-379",
+    "Knop, Yarden & Hadar 2015, Appl Microbiol Biotechnol",
+    "Sánchez 2010, Appl Microbiol Biotechnol",
+    "Grimm & Wösten 2018, Appl Microbiol Biotechnol",
+    "Romero-Arenas et al. 2018, Agric. Soc. Desarrollo"
+   ]
+  },
+  {
+   "id": "fun-106-composta-champinon",
+   "titulo": "Esto no es tierra: es estiércol cocinado (composta, cobertura y bacterias del champiñón)",
+   "serie": "Shot Fungi Mati",
+   "numero": 106,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-106-composta-champinon",
+   "rama": "claude/fun-105-109-cultivo",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Por qué la composta se calienta sola: microbios termófilos de la fase I",
+    "Qué se hace con la composta de champiñón ya usada",
+    "Las canteras bajo París donde se cultivaba champiñón"
+   ],
+   "fuentes": [
+    "Penn State Extension, Basic Procedures for Agaricus Mushroom Growing",
+    "Noble et al. 2009, Mycologia 101(5):583-591",
+    "Wang et al. 2023, Front. Microbiol. 14:1154903",
+    "Gaitán-Hernández 2012, INECOL"
+   ]
+  },
+  {
+   "id": "fun-107-semilla-hongo",
+   "titulo": "La «semilla» de hongo no es semilla: es grano invadido por micelio",
+   "serie": "Shot Fungi Mati",
+   "numero": 107,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-107-semilla-hongo",
+   "rama": "claude/fun-105-109-cultivo",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Cepas de hongo guardadas en nitrógeno líquido a −130 °C",
+    "Los «sectores» en el agar: por qué un micelio que cambia ya no se propaga",
+    "El champiñón blanco de hoy es un híbrido de 1980 (Horst U1)"
+   ],
+   "fuentes": [
+    "Penn State Extension, Seeding Substrate and Management of Growing Agaricus bisporus",
+    "Penn State Spawn Lab, Spawn preparation",
+    "Patente EE. UU. 1,869,517 (Sinden, 1932)",
+    "Sonnenberg et al. 2017, Appl Microbiol Biotechnol"
+   ]
+  },
+  {
+   "id": "fun-108-moho-verde",
+   "titulo": "Esa pelusa blanca no es tu hongo: el moho verde Trichoderma y por qué se pasteuriza",
+   "serie": "Shot Fungi Mati",
+   "numero": 108,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-108-moho-verde",
+   "rama": "claude/fun-105-109-cultivo",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Trichoderma que protege plantas: control biológico",
+    "T. reesei: de la tienda de 1944 a las enzimas industriales",
+    "El «vacío biológico»: por qué lo estéril se contamina más fácil"
+   ],
+   "fuentes": [
+    "Royse et al. 1999, Plant Disease 83:71-76",
+    "Kosanovic, Grogan & Kavanagh 2020, Fungal Biology 124:814-820",
+    "Komoń-Zelazowska et al. 2007, AEM 73:7415",
+    "Innocenti et al. 2019, Plant Pathology 68:392",
+    "Bischof, Ramoni & Seiboth 2016, Microb Cell Fact 15:106"
+   ]
+  },
+  {
+   "id": "fun-109-cafe-setas",
+   "titulo": "Esto no es tierra: es tu café… y puede dar setas (Pleurotus en posos de café)",
+   "serie": "Shot Fungi Mati",
+   "numero": 109,
+   "estado": "renderizado",
+   "carpeta": "shots/fun-109-cafe-setas",
+   "rama": "claude/fun-105-109-cultivo",
+   "fecha": "2026-11-05",
+   "derivados": [
+    "Eficiencia biológica: por qué una bolsa puede dar «más del 100 %»",
+    "Por qué mucho poso frena al hongo: cafeína y fenoles",
+    "Pulpa de café en Veracruz: de residuo del beneficio a granja de setas"
+   ],
+   "fuentes": [
+    "Carrasco-Cabrera, Bell & Kertesz 2019, Appl Microbiol Biotechnol 103:5831",
+    "Chai et al. 2021, Future Foods 4:100075",
+    "Abou Fayssal et al. 2021, PLoS ONE 16(9):e0255794",
+    "Soto, Martínez-Carrera et al. 1987, Rev. Mex. Mic. 3:133-136",
+    "Franca & Oliveira 2022, Foods 11(14):2064"
+   ]
+  }
+ ]
+}

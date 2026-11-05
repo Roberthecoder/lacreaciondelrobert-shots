@@ -1,0 +1,64 @@
+{
+  "dcHtml": "Shot Semilla Hongo base narrada.dc.html",
+  "salida": "Shot Semilla Hongo narrado.dc.html",
+  "nota": "Shot Fungi Mati #107. Una línea por subtítulo (idx 0..13 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "lineas": [
+    {
+      "escena": "Gancho",
+      "texto": "Esto no son granos echados a perder: es la semilla de un hongo."
+    },
+    {
+      "escena": "Spawn",
+      "texto": "Se llama spawn, y no trae esporas: es grano esterilizado cubierto de micelio."
+    },
+    {
+      "escena": "Lupa",
+      "texto": "De cerca, cada grano está forrado de hifas, hilos vivos del hongo."
+    },
+    {
+      "escena": "Esporas",
+      "texto": "¿Por qué no sembrar esporas? En la naturaleza germinan muy mal,"
+    },
+    {
+      "escena": "Esporas",
+      "texto": "y cada una puede dar una cepa nueva, impredecible."
+    },
+    {
+      "escena": "Clon",
+      "texto": "El micelio de un cultivo de tejido, en cambio, es casi un clon del hongo."
+    },
+    {
+      "escena": "Receta",
+      "texto": "El grano va al autoclave: en frascos chicos, treinta y cinco minutos a 121 grados."
+    },
+    {
+      "escena": "Lotes",
+      "texto": "Recibe micelio, y cada lote colonizado siembra otro más grande."
+    },
+    {
+      "escena": "Pregunta",
+      "texto": "¿Y antes de los granos, qué usaban?"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "Ladrillos de estiércol con micelio. En Penn State, James Sinden probó granos,"
+    },
+    {
+      "escena": "Estudio",
+      "texto": "y el micelio creció más rápido. Lo patentó en 1932: hoy casi todo el spawn comercial se hace así."
+    },
+    {
+      "escena": "Robert",
+      "texto": "Yo usé una olla de presión como autoclave, y de esporas de mi seta rosa saqué mi propia cepa."
+    },
+    {
+      "escena": "Dato",
+      "texto": "Las esporas crean cepas nuevas, y abundan: un champiñón de unos ocho centímetros suelta cuarenta millones por hora."
+    },
+    {
+      "escena": "Cierre",
+      "texto": "Pero para cosechar, se siembra el clon: este grano blanco."
+    }
+  ],
+  "mezcla": "oficial-30oct"
+}
