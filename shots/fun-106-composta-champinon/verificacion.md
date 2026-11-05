@@ -83,4 +83,35 @@ Revisé `champinon.jsx` (chips, etiquetas, subtítulos, contadores, barras de es
 
 Cambios que hizo el verificador (solo textos y tamaños, sin tocar la voz): subtítulo de la fase II y tamaño del champiñón abierto del cierre, ambos en `champinon.jsx`.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador (no escribió el guion ni hizo la primera verificación). Fuentes abiertas de nuevo (texto completo de la página o del PDF), no resúmenes. Revisados: las 14 líneas de `narracion.json`, todos los letreros de `champinon.jsx`, `guion.md` y `publicacion.md`.
+
+| Afirmación (voz / pantalla / publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| «Esto no es tierra: es estiércol cocinado… y de ahí sale tu champiñón» | ✅ | Penn State Extension, *Basic Procedures for Agaricus Mushroom Growing* (act. 20 may 2024) | "Straw-bedded horse manure and hay or wheat straw are the common bulk ingredients." ("cocinado" = metáfora del calor de la Fase I) | 2024 |
+| «Yo a los diez años lo intenté en una maceta con tierra… y nada» | ✅ | `series/shot-robert/datos.md` | "✅ Hongos a los 10 años (5.º de primaria): tutorial fallido de champiñón" | — |
+| «Se mezcla paja, estiércol de caballo, gallinaza y yeso» | ✅ | Penn State Extension 2024 | "Poultry manure is probably the most common and economical source of nitrogen." / "All compost formulas require the addition of nitrogen supplements and gypsum." | 2024 |
+| «En unos seis días la pila llega casi a ochenta grados» (contador hasta 79 °C, "día 1→6") | ✅ | Penn State News, *New facility spawns enhancements…* | "phase-I composting, a six-day process during which straw, water, horse and poultry manure … are mixed and aerated, reaching a temperature of 175 F" (175 °F ≈ 79 °C) | 2017 |
+| «Arriba de setenta ya es química, no microbios» (chip "> 70 °C: química, no microbios") | ✅ | Penn State Extension 2024 | "As temperatures increase above 155ºF (70ºC), microorganisms cease growing and a chemical reaction begins." | 2024 |
+| «La pasteurizan a sesenta grados, por lo menos dos horas» ("≥ 2 h") | ✅ | Penn State Extension 2024 | "air and composted substrate temperatures should be raised together to 140ºF (60ºC) for at least 2 hours" | 2024 |
+| «Le siembran granos con micelio; en dos o tres semanas lo llena todo» | ✅ | Penn State Extension 2024 | "A complete spawn run usually requires 14 to 21 days." | 2024 |
+| «¿Por qué no sale ni un champiñón? Falta la cobertura» | ✅ | Penn State Extension 2024; Noble et al. 2009 (*Mycologia* 101:583–591, WRAP Warwick) | "The only method of forcing mushroom mycelia to change from the vegetative phase to a reproductive state is to apply a cover … called the casing layer"; "Primordium formation of Agaricus bisporus depends on the presence of a casing layer containing stimulatory bacteria and on sufficient air exchange." | 2024 / 2009 |
+| «Turba con caliza encima de la composta» | ✅ | Penn State Extension 2024 | "most mushroom growers use sphagnum peat moss or aged sphagnum peat moss buffered with limestone" | 2024 |
+| «El micelio suelta octenol… y eso lo frena» | ✅ | Noble et al. 2009 | "VOC produced by A. bisporus mycelium were predominantly C8 compounds, some of which could inhibit primordium formation, with 1-octen-3-ol being most inhibitory." | 2009 |
+| «…parte de su olor» / "(parte del olor a champiñón)" | ✅ | Cotton, *Molecule of the Month: 1-octen-3-ol*, Univ. de Bristol | "(R)-(-)-1-octen-3-ol is the main component of mushroom flavour, and is indeed known as 'mushroom alcohol'" | 2009 |
+| «Bacterias como *Pseudomonas* se lo comen… y brotan los primordios» | ✅ | Noble et al. 2009 | "2-Ethyl-1-hexanol and 1-octen-3-ol were metabolized by pseudomonad populations … with both modes of removal enabling primordium formation in the casing." | 2009 |
+| Etiqueta *Pseudomonas putida* | ✅ | Wang et al. 2023, *Front. Microbiol.* 14:1154903 (cita a Hayes et al. 1969) | "They identified Pseudomonas putida as the primary bacterium stimulating sporophore initiation." | 2023 (dato de 1969) |
+| "cabecitas de alfiler" = primordios | ✅ | Penn State Extension 2024 | "Mushroom initials—primordia or pins—form on the rhizomorphs." | 2024 |
+| «En 2009, en Reino Unido, Noble y su equipo lo probaron: sin bacterias, brotaban si ventilaban esos gases» | ✅ | Noble et al. 2009 (Warwick HRI, Reino Unido) | "Removal of VOC by ventilation also enabled primordium formation to occur under axenic conditions." | 2009 |
+| Chip "ayudan, al menos en parte" | ✅ | Noble et al. 2009 | "The stimulatory effects of the casing and its microbiota and air exchange on primordium formation of A. bisporus at least partly are due to the removal of inhibitory C8 compounds" | 2009 |
+| «En México es el hongo que más se cultiva: según el INECOL, en 2012 era el 94 %» (pastel 94/6, "dato de 2012 (INECOL)") | ✅ | Gaitán-Hernández, INECOL, cap. 10 (PDF del repositorio INECOL) | "Las principales especies cultivadas son Agaricus bisporus…, Pleurotus spp. y Lentinula edodes… De éstas, el champiñón representa el 94% del total de hongos producidos a nivel nacional." Nota: es lo que publicó el INECOL en 2012 (la voz lo dice así); no encontré un porcentaje más nuevo de fuente primaria. | 2012 |
+| «Dos o tres semanas después, salen…» ("15–21 días tras la cobertura") | ✅ | Penn State Extension, *Production and Harvesting* | "Mushroom harvest begins 15 to 21 days after casing" | 2024 |
+| «…en oleadas cada siete a diez días» | ✅ | Penn State Extension 2024 | "Mushrooms are harvested over a 2–4-day period in a 7–10-day cycle called flushes or breaks." | 2024 |
+| Dibujo: champiñón con laminillas rosadas al abrir, anillo; hifas tabicadas; barras 5 y 10 cm | ✅ | Wikipedia *Agaricus bisporus*; Salmones et al. 2012 (*Rev. Mex. Micol.* 36) | gills "initially pink, then red-brown"; "Fruiting bodies with pileus diameters of 5 to 10 cm" (ya cotejado en la 1.ª ronda; el dibujo sigue igual) | 2012 |
+| «A mi maceta no le faltaba tierra: le faltaba estiércol cocinado… y bacterias» | ✅ | filas de arriba | Resumen fiel de composta + cobertura con bacterias | — |
+| `publicacion.md` (7 redes + comentario fijado): ~79 °C/175 °F, 70 °C química, 60 °C ≥ 2 h, 14–21 días, turba con caliza, C8 y 1-octen-3-ol "el más inhibidor", "componente principal del olor", *P. putida*, ventilación sin bacterias, "al menos en parte", 94 % (INECOL 2012), 15–21 días tras la cobertura, 7–10 días | ✅ | mismas fuentes | Todas las cifras coinciden con las frases textuales de arriba. Sin datos nuevos. | — |
+
+Resultado: todas ✅, sin cambios.
+
 VEREDICTO: APROBADO

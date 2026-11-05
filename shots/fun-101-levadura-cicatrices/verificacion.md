@@ -61,4 +61,28 @@ Se revisaron `guion.md`, `narracion.json`, `levadura.jsx` y `publicacion.md`. Co
 quedan ✅ (filas 21, 23, 24 y 25). Las afirmaciones nuevas de `publicacion.md` quedan ✅ (filas 26 y 27). La ⚠️ anterior (fila 21)
 quedó corregida. Todas las afirmaciones son ✅.
 
+## Re-verificación independiente (5 nov 2026)
+
+Segundo verificador, que no escribió el guion ni la verificación anterior. Se releyeron `narracion.json` (13 líneas), los letreros de `levadura.jsx` (subtítulos, etiquetas, chips y `TarjetaEstudio`) y `publicacion.md`, y se volvieron a abrir las fuentes (texto completo de PMC, BioNumbers, Crossref, el informe UCRL-8456 en PDF y el *In Memoriam* de UC). No se cambió nada.
+
+| Afirmación (voz / pantalla / publicación) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| No es inmortal: una madre se divide un número finito de veces | ✅ | Chen et al., PMC5035173 | "in 1959, Mortimer and Johnson reported that individual yeast cells are not immortal" | 2016 |
+| Cada hija deja una cicatriz de quitina (cicatriz de gemación en la madre, de nacimiento en la hija) | ✅ | Lesage y Bussey, PMC1489534 | "a chitinous bud scar is left on the mother cell wall (…) and a less prominent birth scar remains on the daughter cell" | 2006 |
+| Anillo de quitina en el cuello, desde que brota la yema | ✅ | Lesage y Bussey | "A ring of chitin is initially deposited at the time and site of bud emergence" | 2006 |
+| Levadura de pan = *S. cerevisiae*; las burbujas son CO₂ de la fermentación | ✅ | Moore et al., *21st Century Guidebook to Fungi* 17.23 | (filas 3–4 de arriba) "the carbon dioxide gas produced during fermentation is trapped into bubbles by the gluten" | — |
+| Una sola célula de unos 5 µm (5 × 6 µm diploide) | ✅ | Sherman 2002 vía BioNumbers 108257 | "Typically, diploid cells are 5 × 6µm ellipsoids and haploid cells are 4µm diameter spheroids" | 2002 |
+| En el laboratorio, una hija cada hora y media | ✅ | Sherman 2002 vía BioNumbers 108255 | "“Normal” laboratory haploid strains have a doubling time of ~90 minutes in YPD medium" | 2002 |
+| 1959, Berkeley, Mortimer y Johnston, *Nature* | ✅ | Crossref 10.1038/1831751a0; UCRL-8456; *In Memoriam* UC | Crossref: "Life Span of Individual Yeast Cells", MORTIMER, JOHNSTON, 1959-06. Informe: "Donner Laboratory of Biophysics and Medical Physics University of California, Berkeley". *In Memoriam*: "In 1959, however, Mortimer and Johnston discovered in their now famous Nature paper…" | 1958–1959 |
+| Le quitaban cada hija con un micromanipulador | ✅ | Chen et al.; UCRL-8456 | "periodically used a micromanipulator to manually remove mature daughter buds"; informe: "With the aid of a micromanipulator, a number of budding cells were drawn…" | 2016 / 1958 |
+| Según la cepa, unas 20 o 30 hijas | ✅ | Smith et al., PMC4935213 | "Depending upon the strain, mother cells produce ∼20–30 buds before senescing." | 2015 |
+| `publicacion.md`: 36 células, 9 a 43 hijas, mediana 24 | ✅ | UCRL-8456 (PDF) | "A group of 36 single diploid yeast cells was followed microscopically"; "between 9 and 43 buds was observed, with a median of 24" | 1958 |
+| Calcoflúor: las cicatrices brillan con luz UV; cada anillo = una hija | ✅ | Sinclair, PMC4775250 | "Observe the stained bud scars using UV fluorescence microscopy"; "Each blue stained ring is a “bud scar,” a deposit of chitin that remains on the surface of the cell wall at each site of division" | 2013 |
+| Con cada hija la madre se hace más grande (varias veces) | ✅ | Sinclair; Chen et al. | "The mother cells get enlarged after progressive divisions"; "old mother cells can grow to be multiple times the size of young mother cells" | 2013 / 2016 |
+| Casi siempre la hija nace en cero; las de madres muy viejas tienen menos hijas (y son más grandes) | ✅ | Smith et al.; Molon et al., PMC6110580; Chen et al. | "daughter cells are born completely rejuvenated"; "large daughters born to older mothers have a shortened lifespan"; "For nearly all of the first half of their reproductive limit, yeast mother cells produce daughters with full reproductive capacity"; "Daughters of old mother cells are also larger" | 2015 / 2018 / 2016 |
+| `publicacion.md` (LinkedIn): fundó la levadura como modelo de envejecimiento | ✅ | *In Memoriam* UC | "To our knowledge this was the first demonstration of mortality in any growing population of microbes." | 2007 |
+| Cierre: cada burbuja viene de madres con sus hijas contadas en cicatrices | ✅ (resumen) | filas de arriba | Frase retórica que junta CO₂ + cicatrices; sin cifra nueva. | — |
+
+Resultado: todo ✅, sin cambios en voz, pantalla ni publicación.
+
 VEREDICTO: APROBADO

@@ -22,7 +22,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### Instagram Reels
 ```text
 Ese montículo de tierra no es una casa: es una granja de hongos. 🍄🐜
-Termitas de África y Asia cultivan un hongo, Termitomyces, en un panal que arman con su propia popó. El hongo deshace la planta muerta que traen las obreras; las jóvenes se comen sus bolitas de esporas para sembrar panal nuevo y las viejas se comen el panal maduro. En 2016 se describieron en Tanzania nidos fósiles con panal de unos 25 millones de años: esta granja nació en África hace unos 30 millones de años. Y con las lluvias, del montículo brota Termitomyces titanicus, con un sombrero de hasta un metro.
+Termitas de África y Asia cultivan un hongo, Termitomyces, en un panal que arman con su propia popó. El hongo deshace la planta muerta que traen las obreras; las jóvenes se comen sus bolitas de esporas para sembrar panal nuevo y las viejas se comen el panal maduro. En 2016 se describieron en Tanzania nidos fósiles con panal de unos 25 millones de años; con ellos se calculó que esta granja nació en África hace unos 30 millones (una estimación). Y con las lluvias, del montículo brota Termitomyces titanicus, con un sombrero de hasta un metro.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Has comido alguna seta silvestre? 👇
 Shot Fungi Mati 98 · La Creación del Robert
@@ -56,7 +56,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### Facebook Reels
 ```text
-Ese montículo de tierra no es una casa: es una granja de hongos. 🍄🐜 Termitas de África y Asia cultivan el hongo Termitomyces en un panal hecho con su popó, desde hace unos 30 millones de años. Y con las lluvias, del montículo brota Termitomyces titanicus, con un sombrero de hasta un metro.
+Ese montículo de tierra no es una casa: es una granja de hongos. 🍄🐜 Termitas de África y Asia cultivan el hongo Termitomyces en un panal hecho con su popó, desde hace al menos 25 millones de años (hay nidos fósiles con panal). Y con las lluvias, del montículo brota Termitomyces titanicus, con un sombrero de hasta un metro.
 ¿Has comido alguna seta silvestre? 👇
 Shot Fungi Mati 98 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -65,7 +65,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### LinkedIn
 ```text
-Unas termitas llevan unos 30 millones de años cultivando hongos.
+Unas termitas llevan al menos 25 millones de años cultivando hongos.
 Las termitas de la subfamilia Macrotermitinae (África y Asia) dependen de un hongo, Termitomyces, para deshacer la planta muerta que recolectan y como fuente de comida. Trabajan por edades: las obreras viejas recolectan, las jóvenes comen la planta con esporas del hongo y la depositan como panal, el hongo descompone la mayor parte de la planta y, al final, las viejas se comen el panal maduro (Poulsen, Environmental Microbiology 2015).
 En 2016 se describieron en Tanzania nidos fósiles con su panal adentro, de unos 25 millones de años; con ellos se estimó el origen de esta agricultura en África hace unos 31 millones de años (Roberts et al., PLoS ONE 2016).
 Por qué importa: de esos montículos brotan setas comestibles como Termitomyces titanicus, con sombrero de hasta un metro, que en Zambia se recolectan y se venden en temporada de lluvias (Härkönen et al., 2015).
@@ -77,7 +77,7 @@ Soy Robert, de La Creación del Robert 🌱
 
 ### X
 ```text
-Ese montículo no es una casa: es una granja de hongos. Termitas de África y Asia cultivan Termitomyces desde hace unos 30 millones de años, y de ahí brota T. titanicus, con sombrero de hasta 1 metro. 🍄🐜 #FungiMati #Hongos
+Ese montículo no es una casa: es una granja de hongos. Termitas de África y Asia cultivan Termitomyces desde hace al menos 25 millones de años, y de ahí brota T. titanicus, con sombrero de hasta 1 metro. 🍄🐜 #FungiMati #Hongos
 ```
 
 ### Threads

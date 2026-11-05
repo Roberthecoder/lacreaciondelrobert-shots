@@ -1,15 +1,16 @@
 {
+  "voz_aprobada": true,
   "dcHtml": "Shot Escarabajo Aguacate base narrada.dc.html",
   "salida": "Shot Escarabajo Aguacate narrado.dc.html",
-  "nota": "Shot Fungi Mati #97. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert.",
+  "nota": "Shot Fungi Mati #97. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs.  Voz aprobada por delegación de Robert tras la re-verificación independiente del 5 nov 2026.",
   "lineas": [
     {
       "escena": "Gancho",
-      "texto": "Ese puntito en el tronco no es basura: es un escarabajo de dos milímetros que siembra un hongo adentro."
+      "texto": "Ese puntito en el tronco no es basura: es un escarabajo de dos milímetros que siembra un hongo."
     },
     {
       "escena": "Nombre",
-      "texto": "Es Xyleborus glabratus y llegó de Asia en madera de embalaje."
+      "texto": "Es Xyleborus glabratus y llegó de Asia, probablemente en madera de embalaje."
     },
     {
       "escena": "Bolsitas",
@@ -25,7 +26,7 @@
     },
     {
       "escena": "Marchita",
-      "texto": "Y sin agua, se marchita y muere."
+      "texto": "Sin agua, se marchita y muere."
     },
     {
       "escena": "Pregunta",
@@ -33,7 +34,7 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 2008, científicos de Estados Unidos infectaron laureles solo con el hongo: casi todos murieron en semanas."
+      "texto": "Un estudio de 2008 en Estados Unidos infectó laureles solo con el hongo: casi todos murieron en semanas."
     },
     {
       "escena": "Millones",
@@ -45,7 +46,7 @@
     },
     {
       "escena": "Salto",
-      "texto": "Y lo raro: el hongo saltó a otros escarabajos."
+      "texto": "Lo raro: el hongo saltó a otros escarabajos."
     },
     {
       "escena": "Mexico",

@@ -53,4 +53,39 @@ Duración tras las correcciones (`estimar-escenas.mjs`): 947 caracteres · voz �
 
 Re-verificación (5 nov 2026): se releyó `narracion.json` completo; las 13 líneas y todo lo que afirma algo en pantalla quedan ✅.
 
+## Re-verificación independiente (5 nov 2026)
+Segundo verificador (no escribió el guion ni la verificación de arriba). Se descargó y leyó el **texto completo** de [F] (PDF de 11 p.,
+treesearch 29373), [C] (texto completo en journals.flvc.org), [S20] y [S24] (PDF de Senasica) y la ficha de [H]; se buscó cada frase.
+Se revisaron las 13 líneas de `narracion.json`, los letreros de `escarabajo.jsx` y las 7 redes de `publicacion.md`. Búsqueda extra
+(5 nov 2026) de algún reporte de *R. lauricola* o *X. glabratus* en México: ninguno (un muestreo de 2022 en *Environ. Entomol.* no
+recuperó *R. lauricola*).
+
+| Afirmación (voz / pantalla) | Veredicto | Fuente | Frase textual | Año |
+|---|---|---|---|---|
+| Puntito en el tronco = escarabajo de ~2 mm que siembra un hongo | ✅ | [ARS], [S20] | "Female redbay ambrosia beetle, Xyleborus glabratus (about 2 mm long)"; "al perforar la corteza del hospedante y formar galerías, inocula las esporas en el xilema" | 2013 / 2020 |
+| «llegó de Asia en madera de embalaje» (afirmado como hecho) | ⚠️ → corregido | [C], [F], fichas USDA/UC Davis | [C] "introduced into Port Wentworth, Georgia, USA, in infested wood packing material from Asia during 2002", pero es una inferencia: [F] solo dice "reported only once before in the United States at Port Wentworth, GA in 2002"; otras fichas: "most likely in solid wood packing materials" (no hay cargamento documentado). Nuevo texto: **«llegó de Asia, probablemente en madera de embalaje»**; caja en pantalla "¿en madera de embalaje?"; subtítulo "De Asia, *quizá en madera.*" | 2020 / 2008 |
+| La hembra carga esporas de *R. lauricola* en bolsitas junto a la boca | ✅ | [F] | "Female adults of X. glabratus have paired mycangia near the mandibles" | 2008 |
+| Cava túneles, siembra el hongo, ella y sus larvas se lo comen | ✅ | [S20], [F] | "forma parte del alimento de los adultos y larvas del escarabajo"; ambrosia beetles "do not consume wood but build gallery systems in wood to cultivate symbiotic fungi as food for their larvae" | 2020 / 2008 |
+| El árbol se defiende: tapa sus propios tubos de agua; sin agua se marchita y muere | ✅ | [C] | "the tree's defense mechanism (i.e., production of tyloses and gums to wall off the pathogen) to rapidly block the xylem water-conducting tissue and cause the death of the tree" | 2020 |
+| «En 2008, científicos… infectaron laureles» (el año es el de publicación; los experimentos fueron en 2005–2006) | ⚠️ → corregido | [F] | "The initial pathogenicity test in May 2005"; "A second test was established in June 2006"; "Accepted for publication 14 September 2007" (*Plant Disease* 92(2), 2008). Nuevo texto: **«Un estudio de 2008 en Estados Unidos infectó laureles solo con el hongo: casi todos murieron en semanas.»** | 2008 (datos 2005–2006) |
+| …casi todos murieron en semanas | ✅ | [F] | "19 of 20 inoculated seedlings wilted or died within 8 weeks"; "died within 5 to 12 weeks after inoculation" | 2008 |
+| Para 2017, más de 300 millones de laureles rojos | ✅ | [H] | "over 300 million trees of redbay (Persea borbonia sensu lato) have succumbed to the disease since the early 2000s (ca 1/3 of the pre-invasion population)" | 2017 |
+| El aguacate es su pariente (Lauraceae) | ✅ | [F] | "the family Lauraceae, which includes … avocado (P. americana Mill.)" | 2008 |
+| En 2012 la enfermedad llegó a una huerta de Florida | ✅ | [C] | "by 2012 LW was detected in a commercial avocado grove in Homestead, Florida"; "populations of X. glabratus did not establish in commercial avocado groves" | 2020 (dato 2012) |
+| El hongo saltó a otros escarabajos | ✅ | [C] | "an unexpected, uncommon lateral transfer of R. lauricola to native and exotic ambrosia beetles, which now function as secondary vectors" | 2020 |
+| México, mayor productor de aguacate | ✅ | [AGR] | "México ocupa el primer lugar en producción de aguacate en el mundo" | 2026 |
+| En México no hay registro de esta plaga | ✅ | [S20] + búsqueda 2026 | "el estatus de Xyleborus glabratus es Plaga Ausente en México: no hay registros de la plaga (SENASICA, 2019)"; no se halló reporte posterior | 2019 / 2020 |
+| En 2024 la vigilaban en 30 estados | ✅ | [S24] | "el complejo Xyleborus glabratus - Raffaelea lauricola se encuentra bajo vigilancia epidemiológica específica en 30 entidades federativas" | 2024 |
+| Cierre: granjero diminuto que amenaza tu guacamole | ✅ | [F], [C] | "pose a major threat to members of the Lauraceae in the Americas"; "great risk for introduction of LW into California, Mexico" | 2008 / 2020 |
+
+### Cambios de esta re-verificación
+- **Voz (cambió el texto narrado):** «llegó de Asia en madera de embalaje» → «llegó de Asia, probablemente en madera de embalaje»; «En 2008, científicos de
+  Estados Unidos infectaron…» → «Un estudio de 2008 en Estados Unidos infectó…». Para no pasar de 62 s, recortes sin cambio de sentido: gancho sin
+  «adentro», «Y sin agua» → «Sin agua», «Y lo raro» → «Lo raro».
+- Pantalla: caja "¿en madera de embalaje?", subtítulo "De Asia, *quizá en madera.*". `publicacion.md`: "probablemente en madera de embalaje" y
+  "un estudio de 2008 (experimentos de 2005–2006)". `guion.md` y `OM_SCENES` del `.dc.html` actualizados.
+- Duración (`estimar-escenas.mjs`): 945 caracteres · voz ≈ 58.4 s · total ≈ 61.9 s.
+
+Tras los cambios se releyó todo: las 15 afirmaciones quedan ✅.
+
 VEREDICTO: APROBADO
