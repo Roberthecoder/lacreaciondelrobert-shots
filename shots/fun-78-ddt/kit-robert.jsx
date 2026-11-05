@@ -182,13 +182,15 @@ function Subtitulo({ T, at, until, texto, idx, color = KC.gold2, tam = 64 }) {
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
-  let on = false;
+  let on = false, itOn = false; // *dorado* · _cursiva_ (nombres científicos)
   const palabras = texto.split(' ').map((w, i) => {
     let p = w; if (p.startsWith('*')) { on = true; p = p.slice(1); }
-    const acc = on; if (p.includes('*')) { p = p.replace('*', ''); on = false; }
+    if (p.startsWith('_')) { itOn = true; p = p.slice(1); }
+    const acc = on, cur = itOn; if (p.includes('*')) { p = p.replace('*', ''); on = false; }
+    if (p.includes('_')) { p = p.replace('_', ''); itOn = false; }
     const t0 = at + i * 0.05, e = kprog(T, t0, t0 + 0.3, kEase.sale);
     return <span key={i} style={{ display:'inline-block', opacity:e, transform:`translateY(${(1 - e) * 24}px)`, padding: acc ? '0 .18em' : 0, margin: acc ? '0 .05em' : 0,
-      background: acc ? color : 'transparent', color: acc ? KC.dark : KC.texto, textShadow: acc ? 'none' : KSOMBRA, borderRadius:8 }}>{p}</span>;
+      fontStyle: cur ? 'italic' : 'normal', background: acc ? color : 'transparent', color: acc ? KC.dark : KC.texto, textShadow: acc ? 'none' : KSOMBRA, borderRadius:8 }}>{p}</span>;
   });
   const entra = kprog(T, at, at + 0.25, kEase.sale);
   return <div style={{ position:'absolute', left:0, right:0, bottom:560, zIndex:45, display:'flex', justifyContent:'center', opacity:1 - out }}>
