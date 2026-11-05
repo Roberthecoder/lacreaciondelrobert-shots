@@ -413,12 +413,12 @@ function MatsutakeShot() {
       <Chip T={T} at={K.S + 0.4} until={K.E - 0.3} texto={TXT.cultivo} x={340} y={430} tam={38} borde={KC.red} />
       <Etq T={T} at={K.S + 1.6} until={K.E - 0.3} x={60} y={530} texto={TXT.cultivo2} tam={26} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.5} anio={TXT.estAnio} quien={TXT.estQuien} revista={TXT.estRev} x={540} y={600} />
-      {(() => { if (!kvisible(T, K.Tk, K.Tk + 2.4)) return null; const e = kentrada(T, K.Tk, K.Tk + 2.4, 'pop');
+      {(() => { if (!kvisible(T, K.Tk, K.Tk + 2.1)) return null; const e = kentrada(T, K.Tk, K.Tk + 2.1, 'pop');
         return <div style={{ position:'absolute', left:360, top:470, zIndex:44, transform:`translate(-50%,-50%) scale(${e.s}) rotate(${-4 + Math.sin(T * 14) * 2}deg)`, opacity:e.o,
           background:'#fff', border:`8px solid ${KC.ink}`, borderRadius:60, padding:'10px 46px', font:`400 120px/1 ${KF.titulo}`, color:KC.red, WebkitTextStroke:`3px ${KC.ink}`, boxShadow:`12px 12px 0 ${KC.ink}`, whiteSpace:'nowrap' }}>{TXT.takechi}</div>; })()}
-      <Chip T={T} at={K.Tk + 2.4} until={K.Cu - 0.3} texto={TXT.takechiChip} x={340} y={430} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.Tk + 3.0} until={K.Cu - 0.3} texto={TXT.takeshi} x={340} y={520} tam={32} borde={KC.gold} />
-      <Chip T={T} at={K.Tk + 3.0} until={K.Cu - 0.3} texto={TXT.tele} x={340} y={610} tam={28} borde={KC.cyan} />
+      <Chip T={T} at={K.Tk + 2.8} until={K.Cu - 0.3} texto={TXT.takechiChip} x={340} y={430} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Tk + 3.2} until={K.Cu - 0.3} texto={TXT.takeshi} x={340} y={520} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.Tk + 3.4} until={K.Cu - 0.3} texto={TXT.tele} x={340} y={610} tam={28} borde={KC.cyan} />
       <Chip T={T} at={K.Cu + 1.8} until={K.C - 0.3} texto={TXT.cuidado} x={380} y={450} tam={30} borde={KC.red} />
       <Etq T={T} at={K.Cu + 1.2} until={K.C - 0.3} x={60} y={1050} texto={TXT.micelio} tam={30} color={MT.hifa} />
       <Chip T={T} at={K.C + 1.2} until={K.Ou} texto={TXT.cierre} x={380} y={380} tam={34} borde={KC.gold} />

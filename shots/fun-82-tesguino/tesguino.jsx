@@ -47,6 +47,8 @@ const TX = {
   sobrePara: 'Micología · UNAM',
   sobreAnio: 'publicado en 1973',
   noSoyYo: '(no soy yo)',
+  bye: 'R. Bye trabajaba con los rarámuri',
+  saber: 'conocimiento rarámuri',
   fabrica: 'fábrica de hongos',
   tandas: 'de tanda en tanda',
 };
@@ -372,11 +374,13 @@ function TesguinoShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <Olla T={T} x={810} y={1110} s={0.9} burb={burbFase} lienzo={0} id="of" />
-          {TX.fasesLista.map((f, i) => { const on = fase >= i; const yy = 640 + i * 110;
-            return <g key={i} opacity={kprog(T, K.B + FASES[i], K.B + FASES[i] + 0.2) * 0.75 + 0.25}>
-              <circle cx={110} cy={yy} r={34} fill={on ? (fase === i ? KC.pink : KC.gold2) : '#fff'} stroke={KC.ink} strokeWidth={6} />
-              <text x={110} y={yy + 14} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>{i + 1}</text>
-              <text x={160} y={yy + 12} style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>{f}</text>
+          <rect x={50} y={555} width={500} height={540} rx={28} fill="rgba(255,255,255,.88)" stroke={KC.ink} strokeWidth={5} />
+          {TX.fasesLista.map((f, i) => { const on = fase >= i; const yy = 620 + i * 130; const [a, b] = f.includes(':') ? [f.split(':')[0] + ':', f.split(':')[1].trim()] : [f, ''];
+            return <g key={i} opacity={on ? 1 : 0.45}>
+              <circle cx={110} cy={yy} r={36} fill={on ? (fase === i ? KC.pink : KC.gold2) : '#fff'} stroke={KC.ink} strokeWidth={6} />
+              <text x={110} y={yy + 15} textAnchor="middle" style={{ font:`400 42px ${KF.titulo}` }} fill={KC.ink}>{i + 1}</text>
+              <text x={165} y={yy + (b ? -2 : 12)} style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>{a}</text>
+              {b && <text x={165} y={yy + 40} style={{ font:`700 34px ${KF.texto}` }} fill={KC.ink}>{b}</text>}
             </g>; })}
         </>)}
       </Escena>
@@ -420,7 +424,7 @@ function TesguinoShot() {
       <Escena T={T} a={K.Pa} b={K.Te} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Bromus T={T} x={230} y={1150} s={0.62} />
+          <Bromus T={T} x={290} y={1150} s={1.0} />
           <g opacity={kprog(T, K.Pa + 1.6, K.Pa + 2.0)}>
             <Tubo x={760} y={1150} s={1.0} color={TG.yodo} nivel={0.55} />
             <Goteo T={T} x={760} y0={790} y1={980} cada={0.4} color="#6a3a9a" desde={K.Pa + 1.9} hasta={K.Pa + 2.8} />
@@ -510,18 +514,20 @@ function TesguinoShot() {
       <Rotulo T={T} at={K.E + 4.6} until={K.Pa - 0.3} x={60} y={560} texto={TX.delSedimento} tam={24} it color={KC.ink} fondo="rgba(255,255,255,.85)" />
       <Rotulo T={T} at={K.E + 5.6} until={K.Pa - 0.3} x={60} y={630} texto={TX.etanolDato} tam={22} color={KC.ink} fondo="rgba(255,255,255,.7)" />
 
-      <Etq T={T} at={K.Pa + 0.4} until={K.Te - 0.3} x={60} y={470} texto={TX.pastoComun} tam={38} color={KC.ink} />
-      <Etq T={T} at={K.Pa + 0.8} until={K.Te - 0.3} x={60} y={530} texto={TX.pasto} it tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Pa + 0.4} until={K.Te - 0.3} x={340} y={610} texto={TX.pastoComun} tam={38} color={KC.ink} />
+      <Etq T={T} at={K.Pa + 0.8} until={K.Te - 0.3} x={345} y={700} texto={TX.pasto} it tam={32} color={KC.ink} />
       <Rotulo T={T} at={K.Pa + 1.7} until={K.Te - 0.3} x={760} y={800} texto={TX.yodo} tam={24} centro color={KC.ink} fondo="rgba(255,255,255,.85)" />
-      <Chip T={T} at={K.Pa + 2.6} until={K.Te - 0.3} texto={TX.sinEnzimas} x={560} y={620} tam={34} borde={KC.red} />
-      <Rotulo T={T} at={K.Pa + 3.3} until={K.Te - 0.3} x={60} y={700} texto={TX.hipotesis} tam={24} color={KC.ink} fondo="rgba(255,255,255,.8)" />
+      <Chip T={T} at={K.Pa + 2.6} until={K.Te - 0.3} texto={TX.sinEnzimas} x={700} y={470} tam={34} borde={KC.red} />
+      <Rotulo T={T} at={K.Pa + 3.3} until={K.Te - 0.3} x={700} y={545} centro texto={TX.hipotesis} tam={24} color={KC.ink} fondo="rgba(255,255,255,.8)" />
 
       <Chip T={T} at={K.Te + 0.4} until={K.R - 0.3} texto={TX.sagrada} x={330} y={470} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.Te + 1.6} until={K.R - 0.3} texto={TX.pago} x={420} y={560} tam={32} borde={KC.teal} />
 
       <Chip T={T} at={K.R + 2.4} until={K.C - 0.3} texto={TX.noSoyYo} x={800} y={470} tam={34} borde={KC.pink} />
+      <Rotulo T={T} at={K.R + 3.9} until={K.C - 0.3} x={760} y={560} centro texto={TX.bye} tam={24} color={KC.ink} fondo="rgba(255,255,255,.88)" />
 
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.fabrica} x={290} y={390} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.C + 3.9} until={K.Ou} texto={TX.saber} x={790} y={1160} tam={28} borde={KC.gold} />
       <Rotulo T={T} at={K.C + 2.4} until={K.Ou} x={330} y={480} centro texto={TX.tandas} tam={30} color={KC.ink} fondo="rgba(255,255,255,.85)" />
 
       {/* barras de escala */}
@@ -545,7 +551,7 @@ function TesguinoShot() {
         [K.G - 0.45, K.G + 3.0, 'avatar_11_sorprendido', 'gancho'],
         [K.M + 0.8, K.M + 3.8, 'avatar_13_senalando_arriba', 'arriba-der'],
         [K.L + 0.6, K.L + 5.1, 'avatar_04_bajando_lentes', 'arriba-der'],
-        [K.P + 0.05, K.O + 0.2, 'avatar_07_pensativo_puno', 'grande'],
+        [K.P + 0.05, K.O - 0.35, 'avatar_07_pensativo_puno', 'grande'],
         [K.E + 0.7, K.E + 6.2, 'avatar_06_pensativo_menton', 'arriba-der'],
         [K.Pa + 0.8, K.Pa + 4.3, 'avatar_12_perfil_serio', 'bajo-der'],
         [K.Te + 0.6, K.Te + 3.8, 'avatar_05_sonriendo_dientes_uniformes', 'arriba-der'],

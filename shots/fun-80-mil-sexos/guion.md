@@ -4,7 +4,7 @@
 - **Formato:** N2 · EL NÚMERO (cifra gigante desde el cuadro 0, "de dónde sale el número", la regla y el porqué), con viaje
   N1 macro → micro → macro: tronco con abanicos → hifas que se encuentran (núcleos, fíbula) → el mismo tronco, ya cosechado, junto a un plato de mone.
 - **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve en pantalla: «Este hongo no tiene dos sexos: tiene más de veintitrés mil. Y en México se lo comen.»
-- **Duración:** voz 944 caracteres / 177 palabras (≈ 58.1 s con `estimar-escenas.mjs`) + cierre 3.5 s → **61.6 s** en la base.
+- **Duración:** voz 944 caracteres / 178 palabras (≈ 58.1 s con `estimar-escenas.mjs`) + cierre 3.5 s → **61.6 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~950 créditos de ElevenLabs).
 - **Aclaración clave:** "sexo" aquí = **tipo de apareamiento** (no machos y hembras: todas las hifas son iguales por fuera). Se dice en voz (escena 3) y en pantalla.
 - **Tono:** asombro y orgullo por la cocina del trópico mexicano. No se habla de infecciones (casos rarísimos, solo en personas con defensas muy bajas; ver Fuentes 6, no entra en la voz).
@@ -38,15 +38,15 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y para qu�
 
 | # | Entra (s) | Sale (s) | Pose | Lado | Reacciona a |
 |---|---|---|---|---|---|
-| 1 | 0.0 | 4.0 | 11_sorprendido | `gancho` | «tiene más de veintitrés mil» (cuadro 0) |
+| 1 | 0.0 | 3.3 | 11_sorprendido | `gancho` | «tiene más de veintitrés mil» (cuadro 0) |
 | 2 | 9.8 | 13.4 | 13_senalando_arriba | `arriba-der` | «seco, se encoge y espera la lluvia» |
 | 3 | 18.6 | 22.6 | 04_bajando_lentes | `arriba-der` | «doscientas ochenta y ocho… ochenta y una» |
-| 4 | 26.9 | 30.9 | 06_pensativo_menton | `arriba-der` | «un ganchito, la fíbula, los reparte» |
-| 5 | 31.2 | 33.4 | 07_pensativo_puno | `presentador` (grande) | «¿Y para qué tantos sexos?» |
-| 6 | 34.0 | 37.6 | 11_sorprendido | `arriba-der` | «con un hermano, una de cada cuatro» |
-| 7 | 44.4 | 48.4 | 13_senalando_arriba | `arriba-der` | «estaba en los seis mercados» |
+| 4 | 26.9 | 31.0 | 06_pensativo_menton | `arriba-der` | «un ganchito, la fíbula, los reparte» |
+| 5 | 31.2 | 33.3 | 07_pensativo_puno | `grande` | «¿Y para qué tantos sexos?» |
+| 6 | 34.0 | 37.5 | 11_sorprendido | `arriba-der` | «con un hermano, una de cada cuatro» |
+| 7 | 44.3 | 48.4 | 13_senalando_arriba | `arriba-der` | «estaba en los seis mercados» |
 | 8 | 48.9 | 53.6 | 05_sonriendo_dientes_uniformes | `arriba-der` | «más de una vez por semana… en Tabasco, hoja de plátano» |
-| 9 | 54.0 | 58.0 | 02_apuntando_camara | `arriba-der` | «también llega al plato» |
+| 9 | 53.9 | 58.0 | 02_apuntando_camara | `arriba-der` | «también llega al plato» |
 | — | 58.1 | 61.6 | 13_senalando_arriba | CierreMarca | cierre |
 
 Apariciones 9 · **33.5 s** en pantalla (+ cierre 3.5 s) · 7 poses distintas · nunca la misma dos veces seguidas · una vez grande (#5).
