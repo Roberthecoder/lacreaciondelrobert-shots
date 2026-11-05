@@ -375,7 +375,7 @@ function BassiShot() {
       <Etq T={T} at={K.C + 0.8} until={K.Ou} x={340} y={895} texto="conidios" lado="izq" tam={34} color={KC.ink} />
       <Etq T={T} at={K.C + 1.4} until={K.Ou} x={60} y={660} texto="Beauveria bassiana" it tam={34} color={KC.ink} />
       <Etq T={T} at={K.C + 2.0} until={K.Ou} x={60} y={720} texto="Bassi, 1835" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="no es cal: es un hongo" x={330} y={790} tam={38} borde="#118a3a" />
+      <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="no es cal: es un hongo" x={330} y={805} tam={38} borde="#118a3a" />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.E} texto="1 cm" largo={104} color={KC.ink} />

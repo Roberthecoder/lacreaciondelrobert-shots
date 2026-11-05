@@ -56,3 +56,62 @@ Fuentes primarias abiertas: *Species Plantarum* 1753 vol. 2 (texto completo en I
 3. **#18 · Pantalla 7 (⚠️ menor, visual):** no presentar los gránulos de la hifa como «los mismos» del hígado. Dibujar gránulos ramificados en ambos con la etiqueta «esquemático» y el chip «glucógeno = como los animales» (que sí está verificado), sin afirmar que la forma de las rosetas es idéntica.
 
 Nota sin cambio obligatorio: en #13, si se quiere más precisión en pantalla, el chip de la pared del hongo puede decir «quitina (+ glucanos)»; la voz puede quedar igual.
+
+## Segunda ronda
+
+Revisado el 5 nov 2026: `narracion.json`, `guion.md`, todos los textos de pantalla de `reino.jsx` (etiquetas, chips, capítulos, línea de tiempo, tarjetas, escalas, subtítulos) y todo `publicacion.md`. Mismas fuentes de la primera ronda.
+
+| # | Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|---|
+| R1 | Corrección 1 en voz (`narracion.json` y `guion.md`): «Linneo puso a los hongos con las plantas que no dan flor, junto a musgos y helechos.» | ✅ | https://archive.org/download/b30534914_0002/b30534914_0002_djvu.txt | "CRYPTOGAMIA FUNGI … FUNGI. AGARICUS." (vol. 2, p. 1171) | 1753 |
+| R2 | Corrección 1 en pantalla (`LibroLinneo`): musgos · helechos · algas · hongos, «*Agaricus* (Linneo, 1753)», «SPECIES PLANTARUM · Linneo · 1753 · CRYPTOGAMIA», «libro esquemático» | ✅ | ídem ; https://en.wikipedia.org/wiki/Agaricus | "Agaricus L., Sp. pl. 2: 1171 (1753)" | 1753 |
+| R3 | **Subtítulo idx 1 en `reino.jsx`:** «Linneo **lo** puso con las *plantas sin flor.*» (el «lo» vuelve a ser el champiñón *A. bisporus*, que Linneo no describió) | ⚠️ | https://en.wikipedia.org/wiki/Agaricus_bisporus | descrito por Cooke "as a variety (var. hortensis) of Agaricus campestris" (1871); nombre actual de Imbach (1946) | 1871/1946 |
+| R4 | Corrección 2 (voz y guion): «Después, el ADN reveló que son más parientes de los animales que de las plantas.» | ✅ | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=8265589&rettype=abstract&retmode=text | "animals and fungi are sister groups while plants constitute an independent evolutionary lineage" | 1993 |
+| R5 | Subtítulo idx 10 «Más parientes *de los animales.*» + etiquetas «plantas · hongos · animales · opistocontos», «leyendo ADN…», «árbol simplificado» | ✅ | ídem ; https://pmc.ncbi.nlm.nih.gov/articles/PMC4418965/ | Choanozoa "with Microsporidia, Animalia, and Fungi constitutes 'Supergroup Opisthokonta'" | 1993/2015 |
+| R6 | Corrección 3 (pantalla 7): «hifa con glucógeno», «tu hígado», «almidón (papa)», «glucógeno = como los animales», barra «esquemático (no a escala)»; ya no dice «los mismos» gránulos | ✅ | https://openstax.org/books/biology-2e/pages/24-1-characteristics-of-fungi ; https://openstax.org/books/biology-2e/pages/3-2-carbohydrates | "Like animals, fungi also store carbohydrates as glycogen." / glucógeno "usually stored in liver and muscle cells" | 2018 |
+| R7 | Voz 4 sin «luego»: «digiere su comida afuera, con enzimas, y la absorbe»; chips «1 · digiere afuera (enzimas)», «2 · absorbe», etiquetas «hifa», «paja (composta)», escala 10 µm | ✅ | https://openstax.org/books/biology-2e/pages/24-1-characteristics-of-fungi | "First, exoenzymes are transported out of the hyphae, where they process nutrients in the environment." | 2018 |
+| R8 | Voz 8 sin «estadounidense»: «En 1959, el ecólogo Robert Whittaker propuso darles reino propio, por cómo comen: absorbiendo.»; subtítulo «1959: Whittaker les da *reino propio.*» | ✅ | https://revistes.iec.cat/index.php/IM/article/download/4c457c06da66f.002/9217/9217 | "Whittaker detailed his own four-kingdom system of Protista, Fungi, Plantae, and Animalia in his 1959 article" | 1959 |
+| R9 | Tarjeta «1959 · Robert H. Whittaker · ecólogo · Quarterly Review of Biology · 4 reinos» | ✅ | https://api.crossref.org/works/10.1086/402733 ; Scamardella | Q. Rev. Biol. 34(3): 210-226 (1959); "Whittaker, who studied the New Jersey pine barrens…" | 1959 |
+| R10 | Íconos «plantas · fotosíntesis / animales · ingieren / hongos · absorben» | ✅ | Scamardella | "absorption, ingestion, and autotrophy" | 1959 |
+| R11 | Línea de tiempo: «1753 · Linneo: plantas», «Haeckel: Protista», «1956 · Copeland: Protoctista», «1959 · Whittaker: Fungi» | ✅ | Scamardella | "moved the phylum Fungi (Inophyta) out of Kingdom Plantae and into Kingdom Protista"; Protoctista "consisting of the broad groups red algae, brown algae, fungi, and protozoans" (1956) | 1869/1956/1959 |
+| R12 | Tarjeta «1969 · R. H. Whittaker · Universidad Cornell · Science 163: 150–160 · cinco reinos»; cajas Monera · Protista · Plantae · Fungi · Animalia; «libros de texto · años 80 y 90» | ✅ | https://api.crossref.org/works/10.1126/science.163.3863.150 ; https://academic.oup.com/bioscience/article-lookup/doi/10.1525/bio.2012.62.1.11 | "Section of Ecology and Systematics, Cornell University"; "a standard feature of biology textbooks" (últimas dos décadas del siglo XX) | 1969/2012 |
+| R13 | Pantalla 11: «CÓDIGO INTERNACIONAL DE NOMENCLATURA ~~BOTÁNICA~~ para algas, hongos y plantas», chips «hasta 2011», «Melbourne, 2011»; subtítulo «Su código se llamó *botánico* hasta 2011.» | ✅ | https://pmc.ncbi.nlm.nih.gov/articles/PMC3359813/ | "should be called the International Code of Nomenclature for algae, fungi, and plants" … "Melbourne in July 2011" | 2011 |
+| R14 | Pantalla 0/12: «VERDURAS», «REINO FUNGI», «champiñón · *Agaricus bisporus*», medallas «sin clorofila · absorbe · quitina · glucógeno», «más cerca de ti», escala 5 cm | ✅ | OpenStax 24.1 ; https://en.wikipedia.org/wiki/Agaricus_bisporus | sombrero "typically 5–10 cm across" | 2018 |
+| R15 | Pantalla 2–3: «Cryptogamia: plantas sin flor», «no se mueve ✓», «células con pared ✓», «0 clorofila», «fotosíntesis», burbujas O₂; capítulos «Pista: clorofila / cómo come / la pared / la reserva» | ✅ | Scamardella ; OpenStax 24.1 | "non-motile habit and cell walls"; "do not have chloroplasts or chlorophyll" | 1999/2018 |
+| R16 | Pantalla 5: «LECHUGA · pared de celulosa» / «HONGO · quitina (+ glucanos)», «celulosa» tachada, «esquemático (no a escala)» | ✅ | OpenStax 3.2 y 24.1 | "Cellulose mostly comprises a plant's cell wall." / "fungal cell walls contain complex polysaccharides called chitin and glucans" | 2018 |
+| R17 | publicacion.md: Copeland 1956 Protoctista «junto con algas rojas y pardas y protozoos»; Haeckel «los pasó a su reino Protista» | ✅ | Scamardella | ver R11 | 1956 |
+| R18 | publicacion.md: Whittaker 1959 cuatro reinos (Protista, Fungi, Plantae, Animalia) por autotrofia/ingestión/absorción; 1969 cinco reinos «con Monera aparte» en Science; estándar en libros «en las dos últimas décadas del siglo XX» | ✅ | Scamardella ; Hagen 2012 | "In 1969 Whittaker published a revision of his four-kingdom system to expand it to five kingdoms, now including a separate bacterial kingdom named Monera" | 1959/1969/2012 |
+| R19 | publicacion.md: «en julio de 2011, en Melbourne … pasó a ser Código Internacional de Nomenclatura para algas, hongos y plantas» | ✅ | Hawksworth 2011 | ver R13 | 2011 |
+| R20 | publicacion.md: opistocontos (hongos + animales) | ✅ | Ruggiero 2015 | ver R5 | 2015 |
+| R21 | publicacion.md: glucógeno «en ti, sobre todo en el hígado y los músculos»; plantas guardan almidón; papa con almidón | ✅ | OpenStax 3.2 | "usually stored in liver and muscle cells"; plantas "store the excess glucose … as starch" | 2018 |
+| R22 | publicacion.md: sin cloroplastos ni clorofila; enzimas fuera de las hifas y absorción por la superficie del micelio; pared de quitina (y glucanos) | ✅ | OpenStax 24.1 | ver R7, R15, R16 | 2018 |
+| R23 | publicacion.md (TikTok): «el ecólogo estadounidense Robert H. Whittaker» | ✅ | https://en.wikipedia.org/wiki/Robert_Whittaker | "(1920–1980), American vegetation ecologist" | — |
+| R24 | **publicacion.md (TikTok), línea de fuentes:** «Whittaker 1959 y 1969 (Science)» — da a entender que el de 1959 salió en *Science*; salió en *Quarterly Review of Biology* | ⚠️ | https://api.crossref.org/works/10.1086/402733 | "The Quarterly Review of Biology", 34(3): 210-226, 1959 | 1959 |
+| R25 | publicacion.md (LinkedIn): «Durante unos dos siglos, los libros clasificaron a los hongos como plantas» | ✅ | Species Plantarum 1753 ; OpenStax 24.1 | 1753 → reino propio 1959/1969 ≈ 2 siglos; "up until the mid-20th century, many scientists classified fungi as plants!" (antes de Linneo también; "unos dos siglos" se queda corto, no es falso) | 1753/2018 |
+| R26 | publicacion.md (LinkedIn): «El cambio de marco lo propuso un ecólogo» y opinión final «una clasificación es una hipótesis, y mirar el mismo problema desde otra disciplina puede cambiarla» | ✅ | Hagen 2012 (resumen) ; Scamardella | "Whittaker's early thinking about kingdoms was strongly shaped by his ecological research" / reevaluó "from an ecologist's point of view" (la frase final es opinión y no afirma nada falso) | 2012/1999 |
+| R27 | publicacion.md (IG, FB, Threads, X): «En 1959 Whittaker les dio su propio reino», «el ADN reveló que es más pariente de los animales», «guarda glucógeno, como tú» | ✅ (nota) | Scamardella ; Baldauf y Palmer ; OpenStax | ver R8, R4, R6. Nota: «les dio» = lo propuso; aceptable en texto corto | 1959/1993/2018 |
+| R28 | publicacion.md: lista de fuentes y comentario fijado (DOI, volúmenes y páginas) | ✅ | Crossref (10.1086/402733 ; 10.1126/science.163.3863.150 ; 10.1525/bio.2012.62.1.11) ; PMC3359813 ; PMC4418965 | datos bibliográficos coinciden | — |
+
+**Resumen segunda ronda:** 28 revisiones · 26 ✅ · 2 ⚠️ · 0 ❌. Las 3 correcciones de la primera ronda están bien aplicadas en voz, guion y escenas, salvo el subtítulo idx 1.
+
+### Correcciones pendientes (segunda ronda)
+
+1. **R3 · `reino.jsx`, subtítulo idx 1:** cambiar
+   `texto="Linneo lo puso con las *plantas sin flor.*"` → `texto="Linneo puso a los hongos con las *plantas sin flor.*"`
+2. **R24 · `publicacion.md`, TikTok, línea «Fuentes:»:** cambiar
+   «Whittaker 1959 y 1969 (Science)» → «Whittaker 1959 (Quarterly Review of Biology) y 1969 (Science)».
+
+Al aplicar estas dos, no hace falta otra búsqueda: basta confirmar el texto exacto.
+
+## Tercera ronda (confirmación de las 2 correcciones)
+
+Revisado el 5 nov 2026 leyendo los archivos: búsqueda de «Linneo» en `reino.jsx`, `narracion.json`, `guion.md` y `publicacion.md`. Ya no queda ningún «lo» referido al champiñón junto a Linneo. En IG y LinkedIn dice «los puso» y «los agrupó», en plural, o sea los hongos, y es correcto.
+
+| # | Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|---|
+| R3' | `reino.jsx` subtítulo idx 1: «Linneo puso a los hongos con las *plantas sin flor.*» | ✅ | https://archive.org/download/b30534914_0002/b30534914_0002_djvu.txt | "CRYPTOGAMIA FUNGI … FUNGI. AGARICUS." (Species Plantarum vol. 2, p. 1171) | 1753 |
+| R24' | `publicacion.md` (TikTok) fuentes: «Whittaker 1959 (Quarterly Review of Biology) y 1969 (Science)» | ✅ | https://api.crossref.org/works/10.1086/402733 ; https://api.crossref.org/works/10.1126/science.163.3863.150 | "The Quarterly Review of Biology" 34(3): 210-226 (1959); Science 163(3863): 150-160 (1969) | 1959/1969 |
+
+**Resumen final:** todas las afirmaciones de voz, pantalla y textos de publicación quedan ✅ (los ⚠️ de las rondas 1 y 2 están corregidos y confirmados).
+
+VEREDICTO: APROBADO

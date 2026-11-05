@@ -142,3 +142,35 @@ Todos los ❌/⚠️ salen de un mismo error: decir o dar a entender que Massee 
     por **«Su trabajo de 1897 lo leyó George Massee en la Sociedad Linneana, como era costumbre; ella lo retiró y hoy está perdido.»**
 
 Sin veredicto: falta aplicar estas correcciones y volver a verificarlas.
+
+## Tercera ronda
+
+Revisado el 5 nov 2026: `narracion.json`, `guion.md`, `potter.jsx`, los dos `.dc.html` y las 7 redes + comentario de
+`publicacion.md`. Búsqueda en todos los archivos de «por ella», «tuvo que», «no admitían», «por ser mujer», «porque era mujer»,
+«injustamente», «así que lo», «noticia», «calidad»: **ninguna coincidencia**. Ningún archivo dice ni da a entender que Massee
+lo leyó porque ella era mujer.
+
+| # | Afirmación | Veredicto | Fuente (URL) | Frase textual | Año |
+|---|---|---|---|---|---|
+| T1 | Voz escena 9: «En la Sociedad Linneana de Londres, que aún no admitía mujeres como socias, lo leyó George Massee, de Kew, como era costumbre.» (narracion.json y guion.md) | ✅ | https://linnean.org/the-society/history-of-science/beatrix-potter-the-tale-of-the-linnean-society | "the accepted practice was that papers were always read by someone other than the author"; "women were not admitted as Fellows (or members) of the Society until 1905"; "it was Massee who read her paper" | 1897 / 1905 |
+| T2 | Subtítulo idx 9: «Lo leyó Massee, *como era costumbre.*» (potter.jsx) | ✅ | Linnean | ídem | 1897 |
+| T3 | Chip nuevo «costumbre: lo leía otra persona» | ✅ | Linnean | "papers were always read by someone other than the author" | 1897 |
+| T4 | guion.md escena 9 (descripción visual y tabla de Robert) sin causa por género | ✅ | Linnean | — | — |
+| T5 | Voz escena 4: «Ella quería ver más adentro: al microscopio dibujó sus esporas.» | ✅ | https://www.armitt.com/beatrix-potter/ | "many microscope studies of the process of germination" | 1890s |
+| T6 | Voz escena 6: «Sembró esporas sobre vidrio y las siguió al microscopio.» | ✅ | Linnean | "growing spores of various fungal species on glass plates and tracking them under the microscope" | 1896 |
+| T7 | Voz escena 10: «Lo retiró una semana después y hoy está perdido. En 1997, su secretario admitió que la trataron mal.» | ✅ | Linnean · https://beatrixpottersociety.org.uk/beatrix-potter/the-scientist/ | "withdrawn, by Potter, on 8 April, and never resubmitted"; "Her paper has since been lost."; "She was treated scurvily by members of the society" (Sunday Times, 16 feb 1997) | 1897 / 1997 |
+| T8 | Voz escena 11: «El hongo de su trabajo, *Flammulina velutipes*, es primo del enoki del súper: se creía la misma especie.» — ¿es justo «primo»? | ✅ | Wang et al. 2018, Mycol. Prog. 17: 1013–1030 · https://ui.adsabs.harvard.edu/abs/2018MycPr..17.1013W | "Enokitake … is not identical to the European winter mushroom Flammulina velutipes, and thus should be treated as a separate species, namely Flammulina filiformis". Son especies distintas del mismo género que antes se tenían por una sola: «primo» (pariente cercano, no la misma) es justo en lenguaje coloquial. No dice «hermanas» ni afirma cuál es su pariente más cercano, así que no hace falta comprobar el árbol | 2018 |
+| T9 | TikTok: «Lo leyó George Massee, micólogo de Kew: la costumbre era que los trabajos los leyera alguien distinto del autor. Eso sí, la Sociedad no admitió mujeres como miembros hasta 1905.» | ✅ | Linnean | ídem T1 | 1897 / 1905 |
+| T10 | Instagram: «…lo leyó George Massee, de Kew, como era costumbre, en una Sociedad que aún no admitía mujeres como miembros.» | ✅ | Linnean | ídem T1 | 1897 |
+| T11 | YouTube: «Lo leyó George Massee, micólogo de los Jardines de Kew: la costumbre de la Sociedad era que los trabajos los leyera alguien distinto del autor. Y las mujeres no fueron admitidas como miembros hasta 1905.» | ✅ | Linnean | ídem T1 | 1897 / 1905 |
+| T12 | Facebook: «Su trabajo de 1897 se leyó en la Sociedad Linneana de Londres, que aún no admitía mujeres como miembros; ella lo retiró y hoy está perdido.» | ✅ | Linnean | ídem T1, T7 | 1897 |
+| T13 | LinkedIn: «…lo leyó George Massee, de Kew, porque la costumbre era que otra persona leyera los trabajos, y la Sociedad no admitió mujeres como miembros hasta 1905.» | ✅ | Linnean | ídem T1 | 1897 / 1905 |
+| T14 | LinkedIn «Por qué importa»: «según una carta de ella, el trabajo fue "bien recibido", pero le pidieron más trabajo antes de imprimirlo y nunca lo volvió a presentar; mientras tanto, como mujer no podía ser miembro…; en 1997 su secretario reconoció que la trataron vilmente. … todavía da sorpresas: en 2018…» | ✅ | Linnean | carta a McIntosh, sept 1897: "My paper was read at the Linnean Society and 'well received' according to Mr. Massee," / "but they say it requires more work in it before it is printed."; "never resubmitted". «Todavía da sorpresas» es un giro, no una cifra ni una afirmación falsa | 1897 / 1997 / 2018 |
+| T15 | X: «…en 1897 presentó su trabajo en la Sociedad Linneana, que aún no admitía mujeres como miembros.» | ✅ | Linnean | ídem T1 | 1897 |
+| T16 | Threads: «Su trabajo de 1897 lo leyó George Massee en la Sociedad Linneana, como era costumbre; ella lo retiró y hoy está perdido.» | ✅ | Linnean | ídem T1, T7 | 1897 |
+| T17 | Resto de publicacion.md, voz, pantalla y comentario fijado (sin cambios desde la segunda ronda) | ✅ | ver primera y segunda ronda | — | — |
+
+**Resumen tercera ronda:** 17 renglones · 17 ✅ · 0 ⚠️ · 0 ❌. Todas las ❌/⚠️ de la primera y la segunda ronda están
+corregidas y verificadas.
+
+VEREDICTO: APROBADO

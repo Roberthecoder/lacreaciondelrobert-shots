@@ -443,7 +443,7 @@ function ReinoShot() {
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.L - 0.1} texto="Ese champiñón *no es una verdura.*" />
-      <Subtitulo T={T} idx={1} at={K.L + 0.1} until={K.Pa - 0.1} texto="Linneo lo puso con las *plantas sin flor.*" />
+      <Subtitulo T={T} idx={1} at={K.L + 0.1} until={K.Pa - 0.1} texto="Linneo puso a los hongos con las *plantas sin flor.*" />
       <Subtitulo T={T} idx={2} at={K.Pa + 0.1} until={K.P1 - 0.1} texto="Parecía lógico: *no se mueve, tiene pared.*" />
       <Subtitulo T={T} idx={3} at={K.P1 + 0.1} until={K.P2 - 0.1} texto="Pista 1: *no tiene clorofila.*" />
       <Subtitulo T={T} idx={4} at={K.P2 + 0.1} until={K.P3 - 0.1} texto="Pista 2: *digiere afuera* y absorbe." />

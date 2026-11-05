@@ -18,7 +18,7 @@ Después, el ADN reveló que los hongos son más parientes de los animales que d
 Dato extra: el código que les pone nombre científico se llamaba Código Internacional de Nomenclatura Botánica; en Melbourne, en 2011, cambió a «para algas, hongos y plantas».
 Así que ese champiñón no es una verdura: tiene su propio reino, y está más cerca de ti.
 El dibujo es esquemático.
-Fuentes: Scamardella 1999 (International Microbiology); Whittaker 1959 y 1969 (Science); Hagen 2012 (BioScience); OpenStax Biology 2e; Hawksworth 2011 (IMA Fungus).
+Fuentes: Scamardella 1999 (International Microbiology); Whittaker 1959 (Quarterly Review of Biology) y 1969 (Science); Hagen 2012 (BioScience); OpenStax Biology 2e; Hawksworth 2011 (IMA Fungus).
 ¿En tu casa los champiñones se guardan con las verduras? 👇
 Shot Fungi Mati 137 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
