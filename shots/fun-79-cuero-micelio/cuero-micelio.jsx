@@ -97,10 +97,7 @@ function Ganoderma({ T = 0, x, y, s = 1 }) {
 // Bolso de viaje genérico (sin logo) sobre un pedestal. Centro en (x, y).
 function BolsoViaje({ T, x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-300} y={190} width={600} height={60} rx={14} fill="#f4efe4" stroke={KC.ink} strokeWidth={7} />
-    <rect x={-250} y={250} width={500} height={120} fill="#e3d9c6" stroke={KC.ink} strokeWidth={7} />
     <path d="M -150 -110 Q -150 -260 0 -260 Q 150 -260 150 -110" stroke={CM.cuero2} strokeWidth={30} fill="none" strokeLinecap="round" />
-    <path d="M -150 -110 Q -150 -260 0 -260 Q 150 -260 150 -110" stroke={KC.ink} strokeWidth={42} fill="none" strokeLinecap="round" opacity=".0" />
     <rect x={-290} y={-130} width={580} height={320} rx={130} fill="#d8c9a8" stroke={KC.ink} strokeWidth={9} />
     <rect x={-290} y={-130} width={580} height={110} rx={60} fill={CM.cuero} stroke={KC.ink} strokeWidth={8} />
     <rect x={-290} y={110} width={580} height={80} rx={40} fill={CM.cuero} stroke={KC.ink} strokeWidth={8} />
@@ -154,9 +151,9 @@ function Colageno({ T, x0, x1, y0, y1, p = 1 }) {
   return <g opacity={p}>{haces.map(([v, inc], hI) => {
     const cy = klerp(y0, y1, v);
     return <g key={hI} transform={`rotate(${inc * 8} ${(x0 + x1) / 2} ${cy})`}>
-      {Array.from({ length: 6 }, (_, f) => { const off = (f - 2.5) * 11;
+      {Array.from({ length: 7 }, (_, f) => { const off = (f - 3) * 10;
         const pts = Array.from({ length: 41 }, (_, i) => { const x = klerp(x0 - 30, x1 + 30, i / 40); return [x, cy + off + Math.sin(i / 40 * Math.PI * 7 + hI + T * 0.6) * 16]; });
-        return <path key={f} d={'M ' + pts.map((z) => z[0].toFixed(1) + ' ' + z[1].toFixed(1)).join(' L ')} stroke={f % 2 ? CM.colageno : CM.colageno2} strokeWidth={10} fill="none" strokeLinecap="round" />; })}
+        return <path key={f} d={'M ' + pts.map((z) => z[0].toFixed(1) + ' ' + z[1].toFixed(1)).join(' L ')} stroke={f % 2 ? CM.colageno : CM.colageno2} strokeWidth={6} fill="none" strokeLinecap="round" />; })}
     </g>; })}</g>;
 }
 // Corte de la pared de una hifa: capas de glucanos (afuera) y quitina (fibritas).
@@ -206,6 +203,11 @@ function Prensa({ T, x, y, cierra = 0, on = 1 }) {
 function TiraQuebradiza({ T, x, y, dobla = 0, rompe = 0 }) {
   const a = 22 * dobla, sep = rompe * 30, caida = rompe * 40;
   const grieta = 'L 0 -30 L -10 -16 L 8 -2 L -6 14 L 6 30';
+  if (rompe <= 0) return <g transform={`translate(${x} ${y})`}>
+    <g transform={`rotate(${-a})`}><path d="M -300 -30 L 0 -30 L 0 30 L -300 30 Z" fill="#efe7d2" stroke={KC.ink} strokeWidth={7} /><rect x={-330} y={-50} width={60} height={100} rx={12} fill={CM.acero} stroke={KC.ink} strokeWidth={6} /></g>
+    <g transform={`rotate(${a})`}><path d="M 300 -30 L 0 -30 L 0 30 L 300 30 Z" fill="#efe7d2" stroke={KC.ink} strokeWidth={7} /><rect x={270} y={-50} width={60} height={100} rx={12} fill={CM.acero} stroke={KC.ink} strokeWidth={6} /></g>
+    <rect x={-8} y={-30} width={16} height={60} fill="#efe7d2" transform={`rotate(0)`} />
+  </g>;
   return <g transform={`translate(${x} ${y})`}>
     <g transform={`translate(${-sep} ${caida}) rotate(${-a - rompe * 12})`}>
       <path d={`M -300 -30 L 0 -30 L -10 -16 L 8 -2 L -6 14 L 6 30 L -300 30 Z`} fill="#efe7d2" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
@@ -286,26 +288,27 @@ function CueroShot() {
           <Cartera x={330} y={klerp(380, 790, caida)} s={0.88} rot={(1 - caida) * -10} abre={abreG} />
           <Vaca x={230} y={1100} s={0.75} />
           <Marca x={330} y={1040} ok={false} p={kprog(T, K.G + 1.0, K.G + 1.4)} />
-          <Ganoderma T={T} x={720} y={1110} s={0.9} />
+          <Ganoderma T={T} x={720} y={1110} s={1.05} />
           <Marca x={870} y={1010} ok p={kprog(T, K.G + 1.6, K.G + 2.0)} />
         </>)}
       </Escena>
       {/* 1 · Hermès 2021: un bolso de viaje genérico con material de micelio */}
       <Escena T={T} a={K.He} b={K.Cu} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<BolsoViaje T={T} x={400} y={700 + Math.sin(T * 2) * 6} s={0.92 * kEase.rebote(kprog(T, K.He - 0.2, K.He + 0.5))} />)}
+        {fsvg(<BolsoViaje T={T} x={400} y={700 + Math.sin(T * 2) * 6} s={0.95 * kEase.rebote(kprog(T, K.He - 0.2, K.He + 0.5))} />)}
       </Escena>
       {/* 2–3 · cultivo en charola y tapete que se cosecha */}
       <Escena T={T} a={K.Cu} b={K.Hi} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<Charola x={540} y={900} s={1}>
+          <defs><clipPath id="cmBandeja"><path d="M -380 -120 L 380 -120 L 420 120 L -420 120 Z" /></clipPath></defs>
           {/* aserrín que cae al inicio */}
           {T < K.Cu + 1.2 && Array.from({ length: 18 }, (_, i) => { const u = kprog(T, K.Cu + i * 0.04, K.Cu + 0.6 + i * 0.04); return u > 0 && u < 1 ? <rect key={i} x={-300 + i * 34} y={-400 + u * 380} width={14} height={7} fill={CM.aserrin2} /> : null; })}
           {/* siembra y colonización: redes de hifas blancas que crecen desde 6 puntos */}
-          {[[-260, -40], [-90, 50], [80, -60], [240, 40], [-180, 80], [320, -70]].map(([a, b], i) => <g key={i}>
+          <g clipPath="url(#cmBandeja)">{[[-260, -40], [-90, 50], [80, -60], [240, 40], [-180, 80], [320, -70]].map(([a, b], i) => <g key={i}>
             <circle cx={a} cy={b} r={klerp(8, 110, crec)} fill={CM.micelio2} opacity={kprog(T, K.Cu + 0.6 + i * 0.1, K.Cu + 1.0 + i * 0.1) * 0.55} />
             <RedHifas T={T} x={a} y={b} g={crec} seed={3 + i} n={160} escala={0.22} color={CM.micelio2} ancho={3} />
-          </g>)}
+          </g>)}</g>
           {/* el tapete: capa blanca que se engruesa y luego se despega como hoja */}
           {capa > 0 && <g transform={`translate(${-420 + despega * 30} ${-despega * 230}) rotate(${-despega * 9}) translate(420 0)`}>
             <path d="M -380 -120 L 380 -120 L 420 120 L -420 120 Z" fill={CM.micelio} opacity={0.15 + 0.85 * capa} stroke={despega > 0 ? KC.ink : 'none'} strokeWidth={6} strokeLinejoin="round" />
@@ -360,7 +363,7 @@ function CueroShot() {
       {/* 7 · sin ablandador: tieso y quebradizo */}
       <Escena T={T} a={K.Qu} b={K.Pe} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<TiraQuebradiza T={T} x={500} y={860} dobla={kprog(T, K.Qu + 0.2, K.Qu + 1.3, kEase.suave)} rompe={kprog(T, K.Qu + 1.3, K.Qu + 2.4)} />)}
+        {fsvg(<TiraQuebradiza T={T} x={500} y={760} dobla={kprog(T, K.Qu + 0.2, K.Qu + 1.3, kEase.suave)} rompe={kprog(T, K.Qu + 1.3, K.Qu + 2.4)} />)}
       </Escena>
       {/* 8 · re-gancho: ¿aguanta como el cuero de verdad? */}
       <Escena T={T} a={K.Pe} b={K.Es} zoom={0.1}>
@@ -373,9 +376,9 @@ function CueroShot() {
         {fsvg(<>
           {T < K.Re + 0.2 && <g opacity={1 - kprog(T, K.Re - 0.2, K.Re + 0.2)}>
             {MUESTRAS.map((c, i) => { const on = kprog(T, K.Es + 1.6 + i * 0.12, K.Es + 1.9 + i * 0.12, kEase.rebote); if (on <= 0) return null;
-              return <Muestra key={i} x={130 + (i % 3) * 150} y={890 + Math.floor(i / 3) * 140} s={on} color={c} hongo={i === 7} />; })}
-            {kprog(T, K.Es + 3.0, K.Es + 3.3) > 0 && <><text x={665} y={1055} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>VS</text>
-              <Muestra x={850} y={1030} s={1.4 * kEase.rebote(kprog(T, K.Es + 3.0, K.Es + 3.4))} color="#6b3b1f" cuero /></>}
+              return <Muestra key={i} x={140 + (i % 3) * 140} y={800 + Math.floor(i / 3) * 125} s={on * 0.85} color={c} hongo={i === 7} />; })}
+            {kprog(T, K.Es + 3.0, K.Es + 3.3) > 0 && <><text x={665} y={950} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>VS</text>
+              <Muestra x={850} y={925} s={1.4 * kEase.rebote(kprog(T, K.Es + 3.0, K.Es + 3.4))} color="#6b3b1f" cuero /></>}
           </g>}
           {T > K.Re - 0.2 && <g opacity={kprog(T, K.Re - 0.2, K.Re + 0.3)}>
             <Flexometro T={T} x={540} y={860} on={1} grietas={kprog(T, K.Re + 1.2, K.Re + 2.6)} />
@@ -395,9 +398,12 @@ function CueroShot() {
             <g clipPath="url(#cmCapa)"><Hifas hifas={HIFAS_CAPA} p={1} w={13} septo={6} /></g>
             <rect x={60} y={890 - 70 * pu} width={960} height={70 * pu} fill="url(#cmPU)" stroke={KC.white} strokeWidth={4} opacity={pu > 0 ? 1 : 0} />
             {pu > 0.5 && <path d="M 100 838 L 980 838" stroke="#ffffff" strokeWidth={8} opacity={0.5 + 0.2 * Math.sin(T * 3)} strokeLinecap="round" />}
-            {[0, 1, 2, 3].map((i) => { const t0 = K.Pl + 1.8 + i * 0.9; const u = kprog(T, t0, t0 + 1.4); if (u <= 0 || u >= 1) return null;
-              const yy = u < 0.55 ? klerp(560, 800, u / 0.55) : 800 - Math.sin((u - 0.55) / 0.45 * Math.PI) * 120;
-              return <Bacteria key={i} x={160 + i * 140} y={yy} rot={40 + i * 30 + u * 90} s={0.7} color={KC.mint} T={T} seed={i + 1} />; })}
+            {(() => { const u = kprog(T, K.Pl + 3.0, K.Pl + 3.8, kEase.sale); if (u <= 0) return null; const y2 = klerp(600, 800, u);
+              return <g>
+                <line x1={760} y1={600} x2={760} y2={y2} stroke={KC.mint} strokeWidth={10} strokeDasharray="18 10" strokeLinecap="round" />
+                <path d={`M 736 ${y2 - 16} L 760 ${y2 + 10} L 784 ${y2 - 16}`} stroke={KC.mint} strokeWidth={10} fill="none" strokeLinecap="round" />
+                {u >= 1 && <Marca x={850} y={790} ok={false} p={kprog(T, K.Pl + 3.8, K.Pl + 4.1)} r={34} />}
+              </g>; })()}
           </>; })())}
       </Escena>
       {/* 12 · el negocio cuesta: dos tarjetas de texto plano */}
@@ -409,7 +415,7 @@ function CueroShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<Cartera x={330} y={790} s={0.88} plastico={kprog(T, K.Ci + 1.8, K.Ci + 2.6)} />)}
       </Escena>
-      <Lupa T={T} at={K.Ci + 0.5} until={K.Ou - 0.1} x={760} y={1010} r={190} fx={430} fy={760} tinte={KC.cyan} etiqueta="POR DENTRO · LA CARTERA"
+      <Lupa T={T} at={K.Ci + 0.5} until={K.Ou - 0.1} x={790} y={890} r={165} fx={430} fy={760} tinte={KC.cyan} etiqueta="POR DENTRO"
         interior={(TT, r) => <svg width={r * 2} height={r * 2} style={{ position:'absolute', left:0, top:0 }}>
           <rect x={0} y={0} width={r * 2} height={r * 2} fill="#2a2216" />
           <Hifas hifas={HIFAS_LUPA} p={kprog(TT, K.Ci + 0.6, K.Ci + 1.6)} w={14} septo={5} />
@@ -419,16 +425,17 @@ function CueroShot() {
 
       {/* textos */}
       <Titulo T={T} at={K.G + 0.3} until={K.He - 0.3} texto="ES DE HONGO" x={60} y={420} tam={104} />
-      <TarjetaTexto T={T} at={K.He + 0.3} until={K.Cu - 0.3} anio="2021" nombre="Hermès + MycoWorks" x={540} y={1060} ancho={900}
-        texto="bolso con micelio «Sylvania», curtido en Francia" />
-      <Chip T={T} at={K.He + 1.6} until={K.Cu - 0.3} texto="también lleva lona y piel de becerro" x={380} y={440} tam={28} borde={KC.ink} />
+      <TarjetaTexto T={T} at={K.He + 0.3} until={K.Cu - 0.3} anio="2021" nombre="Hermès + MycoWorks" x={540} y={1030} ancho={920}
+        texto="bolso con micelio «Sylvania», curtido en Francia">
+        <div style={{ font:`900 26px ${KF.texto}`, color:KC.red, marginTop:8, opacity:kprog(T, K.He + 1.6, K.He + 1.9) }}>también lleva lona y piel de becerro</div>
+      </TarjetaTexto>
       <EtqR T={T} at={K.Cu + 0.4} until={K.Ta - 0.2} x={80} y={1110} color={KC.ink} tam={30}>aserrín · restos del campo</EtqR>
-      <EtqR T={T} at={K.Cu + 1.4} until={K.Hi - 0.3} x={80} y={700} color={KC.ink} tam={34}>micelio de <i>Ganoderma</i></EtqR>
-      <Chip T={T} at={K.Ta + 0.1} until={K.Hi - 0.3} texto={sem} x={840} y={560} tam={38} borde={KC.ink} mono />
+      <EtqR T={T} at={K.Cu + 1.4} until={K.Ta + 1.8} x={80} y={700} color={KC.ink} tam={34}>micelio de <i>Ganoderma</i></EtqR>
+      <Chip T={T} at={K.Ta + 0.1} until={K.Hi - 0.3} texto={sem} x={220} y={560} tam={38} borde={KC.ink} mono />
       <EtqR T={T} at={K.Ta + 2.2} until={K.Hi - 0.3} x={80} y={1110} color={KC.ink} tam={32}>tapete de micelio</EtqR>
       <Chip T={T} at={K.Hi + 0.1} until={K.Co - 0.3} texto="AL MICROSCOPIO · hifas" x={360} y={430} tam={32} borde={KC.cyan} mono />
-      <EtqR T={T} at={K.Hi + 1.8} until={K.Co - 0.3} x={400} y={940} color={KC.mint} tam={30}>glucanos</EtqR>
-      <EtqR T={T} at={K.Hi + 2.1} until={K.Co - 0.3} x={340} y={1040} color={KC.gold2} tam={30}>quitina</EtqR>
+      <EtqR T={T} at={K.Hi + 1.8} until={K.Co - 0.3} x={395} y={950} color={KC.mint} tam={30}>glucanos</EtqR>
+      <EtqR T={T} at={K.Hi + 2.1} until={K.Co - 0.3} x={395} y={1030} color={KC.gold2} tam={30}>quitina</EtqR>
       <EtqR T={T} at={K.Co + 0.2} until={K.Pr - 0.3} x={30} y={470} color={KC.texto} tam={30}>hongo: hifas</EtqR>
       <EtqR T={T} at={K.Co + 0.2} until={K.Pr - 0.3} x={30} y={515} color={KC.mint} tam={24}>(quitina + glucanos)</EtqR>
       <EtqR T={T} at={K.Co + 0.7} until={K.Pr - 0.3} x={560} y={470} color={KC.texto} tam={30}>vaca: colágeno</EtqR>
@@ -437,10 +444,10 @@ function CueroShot() {
       <EtqR T={T} at={K.Pr + 1.4} until={K.Qu - 0.3} x={400} y={880} color={KC.ink} tam={26}>curtido</EtqR>
       <EtqR T={T} at={K.Pr + 2.5} until={K.Qu - 0.3} x={700} y={880} color={KC.ink} tam={26}>prensa caliente</EtqR>
       <Chip T={T} at={K.Pr + 0.1} until={K.Qu - 0.3} texto="EL TALLER" x={540} y={470} tam={36} borde={KC.ink} mono />
-      <Chip T={T} at={K.Qu + 1.4} until={K.Pe - 0.2} texto="sin ablandador: tieso y quebradizo" x={500} y={1100} tam={34} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Re - 0.3} anio="2021" quien="Instituto FILK · Freiberg, Alemania" revista="Coatings, 2021" x={540} y={560} />
-      <EtqR T={T} at={K.Es + 2.6} until={K.Re - 0.3} x={70} y={1170} color={KC.ink} tam={26}>9 alternativas</EtqR>
-      <EtqR T={T} at={K.Es + 3.4} until={K.Re - 0.3} x={680} y={1170} color={KC.ink} tam={26}>cuero de zapato</EtqR>
+      <Chip T={T} at={K.Qu + 1.4} until={K.Pe - 0.2} texto="sin ablandador: tieso y quebradizo" x={500} y={1090} tam={34} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Re - 0.3} anio="2021" quien="Instituto FILK · Freiberg, Alemania" revista="Coatings, 2021" x={540} y={500} />
+      <EtqR T={T} at={K.Es + 2.6} until={K.Re - 0.3} x={70} y={1110} color={KC.ink} tam={26}>9 alternativas</EtqR>
+      <EtqR T={T} at={K.Es + 3.4} until={K.Re - 0.3} x={700} y={1060} color={KC.ink} tam={26}>cuero de zapato</EtqR>
       <Chip T={T} at={K.Re + 0.3} until={K.Pl - 0.3} texto="ninguna igualó al cuero en todo" x={370} y={450} tam={32} borde={KC.red} />
       <EtqR T={T} at={K.Re + 0.8} until={K.Pl - 0.3} x={110} y={700} color={KC.ink} tam={28}>muestra de hongo</EtqR>
       <Chip T={T} at={K.Re + 2.8} until={K.Pl - 0.3} texto="prueba de doblado: insuficiente" x={480} y={1120} tam={32} borde={KC.ink} />
@@ -448,14 +455,14 @@ function CueroShot() {
       <EtqR T={T} at={K.Pl + 1.2} until={K.Ne - 0.3} x={60} y={760} color={CM.pu2} tam={28}>capa de poliuretano (plástico)</EtqR>
       <EtqR T={T} at={K.Pl + 0.6} until={K.Ne - 0.3} x={60} y={1160} color={KC.texto} tam={28}>micelio (hifas)</EtqR>
       <Chip T={T} at={K.Pl + 2.4} until={K.Ne - 0.3} texto="la mayoría en venta · revisión de 2023" x={370} y={520} tam={26} borde={CM.pu} />
-      <EtqR T={T} at={K.Pl + 3.2} until={K.Ne - 0.3} x={620} y={640} color={KC.mint} tam={24}>microbios: no entran</EtqR>
-      <TarjetaTexto T={T} at={K.Ne + 0.3} until={K.Ci - 0.3} anio="2023" nombre="Bolt Threads" x={420} y={660} ancho={700}
+      <EtqR T={T} at={K.Pl + 3.2} until={K.Ne - 0.3} x={300} y={640} color={KC.mint} tam={24}>degradarse: más difícil</EtqR>
+      <TarjetaTexto T={T} at={K.Ne + 0.3} until={K.Ci - 0.3} anio="2023" nombre="Bolt Threads" x={370} y={640} ancho={640}
         texto="pausa Mylo: sin financiamiento para crecer" />
       {fsvg(<>
-        {kvisible(T, K.Ne + 0.6, K.Ci - 0.3) && <Candado x={860} y={830} s={1.1 * kEase.rebote(kprog(T, K.Ne + 0.6, K.Ne + 1.0))} cierra={kprog(T, K.Ne + 1.2, K.Ne + 1.6)} />}
+        {kvisible(T, K.Ne + 0.6, K.Ci - 0.3) && <Candado x={860} y={850} s={1.1 * kEase.rebote(kprog(T, K.Ne + 0.6, K.Ne + 1.0))} cierra={kprog(T, K.Ne + 1.2, K.Ne + 1.6)} />}
         {kvisible(T, K.Ne + 3.6, K.Ci - 0.3) && <Cortina x={870} y={1080} w={190} h={140} baja={kprog(T, K.Ne + 4.4, K.Ne + 5.6)} />}
       </>, 44)}
-      <TarjetaTexto T={T} at={K.Ne + 3.4} until={K.Ci - 0.3} anio="2025" nombre="MycoWorks" x={420} y={1000} ancho={700}
+      <TarjetaTexto T={T} at={K.Ne + 3.4} until={K.Ci - 0.3} anio="2025" nombre="MycoWorks" x={370} y={980} ancho={640}
         texto="anuncia que cierra su fábrica (Carolina del Sur): costo demasiado alto" />
       <Titulo T={T} at={K.Ci + 0.2} until={K.Ou} texto="SÍ ES DE HONGO" x={60} y={420} tam={96} />
       <EtqR T={T} at={K.Ci + 1.4} until={K.Ou} x={60} y={1040} color={KC.ink} tam={28}>hifas de hongo ✓</EtqR>
