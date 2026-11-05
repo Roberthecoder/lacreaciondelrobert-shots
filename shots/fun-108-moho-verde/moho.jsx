@@ -272,14 +272,13 @@ function MohoShot() {
           {T > K.V + 1.6 && T < K.V + 2.6 && (() => { const u = kprog(T, K.V + 1.6, K.V + 2.5, kEase.suave); return <circle cx={klerp(560, 760, u)} cy={klerp(700, 840, u)} r={12} fill={MV.verde} stroke={KC.ink} strokeWidth={3} />; })()}
         </>)}
       </Escena>
-      {/* 9 · la historia: Irlanda (mediados de los 80) → Norteamérica; Pensilvania 1994–96 */}
+      {/* 9 · la historia: Irlanda (mediados de los 80) y Norteamérica (dos puntos, sin flecha); Pensilvania 1994–96 */}
       <Escena T={T} a={K.Es} b={K.Gr}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           <MapaAtlantico x={40} y={600} s={1} />
           {(() => { const r = 26 * kEase.rebote(kprog(T, K.Es + 0.3, K.Es + 0.8)); return r > 0 ? <circle cx={712} cy={745} r={r} fill={KC.red} stroke={KC.ink} strokeWidth={5} /> : null; })()}
-          {(() => { const p = kprog(T, K.Es + 1.4, K.Es + 2.6, kEase.suave); const pts = Array.from({ length: 30 }, (_, i) => { const u = i / 29 * p; return [klerp(700, 330, u), 745 - Math.sin(u * Math.PI) * 140 * (u / Math.max(p, 0.001)) * p + (u * 40)]; });
-            return p > 0 ? <path d={'M ' + pts.map((q) => q.map((v) => v.toFixed(1)).join(' ')).join(' L ')} stroke={KC.red} strokeWidth={8} fill="none" strokeDasharray="18 12" strokeLinecap="round" /> : null; })()}
+          {/* sin flecha: Royse 1999 dice «formas parecidas» en Norteamérica, no que viajaran desde Irlanda */}
           {(() => { const r = 24 * kEase.rebote(kprog(T, K.Es + 2.5, K.Es + 3.0)); return r > 0 ? <circle cx={330} cy={785} r={r} fill={KC.red} stroke={KC.ink} strokeWidth={5} /> : null; })()}
         </>)}
       </Escena>

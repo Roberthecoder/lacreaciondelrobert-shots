@@ -80,4 +80,37 @@ Revisé el `guion.md` y el `narracion.json` corregidos (voz, pantalla, tabla de 
 
 Ajustes mínimos que hizo el verificador en `guion.md` (sin tocar la voz): en **Música**, el efecto «enrollado (glissando) de la hifa» → «hifas que se amontonan (glissando suave)», porque ya no hay enrollamiento en pantalla; y la línea de **Gancho** del encabezado se igualó a la voz final («…es el enemigo, y se pone verde.»).
 
+## Textos en pantalla y publicación (5 nov 2026)
+
+Revisé `moho.jsx` (todos los textos en pantalla) y `publicacion.md` (las 7 redes y el comentario fijado).
+
+| Texto | Veredicto | Fuente · frase textual |
+|---|---|---|
+| Mapa: flecha roja punteada Irlanda → Norteamérica | ❌ → **corregido** (se quitó la flecha; quedan dos puntos, sin flecha) | Royse 1999: "similar forms of T. harzianum were encountered… in North America"; las poblaciones de Europa (Th2) y de Norteamérica (Th4) "are genetically distinct but closely related"; Kosanovic 2020: "It first appeared in two sites, in the British Isles… and North America". No viajó de un lugar al otro. |
+| «hoy: enzimas que cortan celulosa» | ✅ | Bischof 2016: "This trait that relies on its secreted cellulases is nowadays exploited by several industries." (las celulasas cortan celulosa) |
+| «estéril ≠ protegido» · «vacío biológico» | ✅ | UC 2011: "it may be more susceptible to weed molds if they are introduced since there will exist, by definition, a biological vacuum" |
+| «+ salvado = + nitrógeno» · medidor «riesgo de contaminación · sube» | ✅ | Jan et al., *Pak. J. Bot.* 49(5): 1911-1915 (2017), https://www.pakbs.org/pjbot/papers/1507288523.pdf: "Substrate supplemented with wheat bran increases its total content of nitrogen, protein and crude fat"; UC 2011: "Adding nitrogen to a substrate always increases the risk of contamination." |
+| «olla de presión = autoclave casero» | ✅ | `series/shot-robert/datos.md`: "Una olla de presión fue su autoclave"; uso general como esterilizador casero |
+| Báscula 1,000 g → 1,001 g; barras «sin moho» / «con 1 g/kg»; barra roja a 32 % con rayas hasta 0; «−68 a −100 % · cosecha de champiñón» | ✅ | Kosanovic 2020: "1 g/kg… equivalent to a dilution level of 10-3"; "decreased the mushroom yield by 68% to 100%" → queda entre 32 % y 0 % de la cosecha; las rayas marcan ese rango |
+| Escena microscópica «tu seta · *Pleurotus*» frente a *Trichoderma*, «compite por espacio y comida», «otros *Trichoderma* sí se enrollan en hongos» | ✅ | Innocenti 2019 (en *P. ostreatus*): "competition for space and nutrients, and neither hyphal interaction…"; Druzhinina 2011: "coiling around the prey mycelium" |
+| Placa: «seta · *Pleurotus*», «*T. pleuroticola*», «verde oscuro grisáceo», «día 1…6», «en laboratorio» | ✅ | Komoń-Zelazowska 2007 (ver filas 5 y 6) |
+| «personas y herramientas · Penn State Extension»; «Malasia, 2024: también en el agua · y en el aire y las herramientas de limpieza» | ✅ | filas 7 y 8 |
+| «1 a 2 horas en agua a 71 °C (160 °F) · pasteurizar la paja» | ✅ | fila 9 |
+| Mapa «forma agresiva · mediados de los 80», «Norteamérica · inicios de los 90», tarjeta Pensilvania 1994–96, «en los 90: más de 30 millones de dólares en el mundo · Royse 1999 · Plant Disease» | ✅ | filas 12–15 |
+| «nombre desde 2002: *T. aggressivum*», tarjeta Kosanovic 2020 | ✅ | filas 18–19 |
+| «tienda de lona de algodón del ejército de EE. UU.», «Isla de Bougainville (archipiélago de las Salomón) · 1944», «y algunos *Trichoderma* protegen plantas» | ✅ | filas 21–24 |
+| Guiño «A Robert también se le llenó un frasco de esporas que no eran las que quería.» | ✅ | datos.md (literal); no dice que fuera *Trichoderma* |
+| Publicación: en *Pleurotus* lo causan *T. pleuroticola* y *T. pleurotum* | ✅ | Komoń-Zelazowska 2007: ambas especies causan el moho verde de *Pleurotus* (hoy *T. pleurotum* se llama también *T. pleuroti*, como en Innocenti 2019) |
+| Publicación: en champiñón (*Agaricus bisporus*), *T. aggressivum*; formas agresivas en granjas de *A. bisporus* de Irlanda (Royse 1999) | ✅ | Royse 1999: "mushroom (Agaricus bisporus) farms in Ireland"; Kosanovic 2020 |
+| Publicación: «el moho verde del cultivo gana creciendo más rápido» | ✅ | Kosanovic 2020: "a rapidly growing, aggressive competitor" |
+| Publicación: «en la Segunda Guerra Mundial» | ✅ | Bischof 2016: "during World War II"; DSMZ: 1944 |
+| Publicación: agua «puede ser una fuente» | ✅ | Ajis 2024: "water could serve as the source of green mould introduction" |
+| Publicación: «algunos Trichoderma se usan para proteger plantas de enfermedades» | ✅ | Druzhinina 2011: "some Trichoderma strains are used for biological control of plant diseases" |
+| Publicación: Bischof 2016 en *Microbial Cell Factories* | ✅ (se agregó «15: 106») | PMC4902900: *Microbial Cell Factories* 15:106 (2016) |
+| Publicación: «isla de Bougainville (Islas Salomón)» (TikTok y YouTube) | ⚠️ → **corregido** a «(archipiélago de las Salomón)» | igual que la fila 22 |
+| Publicación LinkedIn: «no parasita al hongo cultivado» (demasiado tajante) | ⚠️ → **corregido**: «los estudios indican que no parasita al hongo cultivado, sino que compite por espacio y nutrientes (Innocenti et al., 2019; Kosanovic et al., 2020)» | Kosanovic 2020: "Previous studies have suggested… rather than mycoparasite" |
+| Publicación YouTube y LinkedIn: «a inicios de los 90 en Norteamérica» | ⚠️ → **corregido**: «a inicios de los 90, formas parecidas en Norteamérica» (igual que en TikTok) | Royse 1999: "similar forms" |
+
+Cambios mínimos que hizo el verificador: en `moho.jsx` quitó la flecha del mapa (se probó con Babel y el archivo sigue compilando); en `publicacion.md` cambió «Islas Salomón» (2 veces), suavizó la frase del mecanismo en LinkedIn, puso «formas parecidas» en YouTube y LinkedIn, y completó la cita de Bischof. Con eso, todos los textos en pantalla y de publicación quedan ✅.
+
 VEREDICTO: APROBADO

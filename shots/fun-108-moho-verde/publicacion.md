@@ -12,7 +12,7 @@ No se come a tu hongo: le gana el espacio y la comida. En laboratorio, Trichoder
 ¿Por dónde se mete? Sobre todo con personas y herramientas; en granjas de Malasia (2024) también lo hallaron en el agua, el aire y las herramientas de limpieza.
 La paja para setas se pasteuriza: 1 a 2 horas en agua a 71 °C (160 °F). Y agregarle nitrógeno, como salvado, sube el riesgo de contaminación. Ojo: lo estéril queda como un "vacío biológico": si entra un moho, puede invadir más fácil.
 A mediados de los 80 surgió una forma agresiva en champiñoneras de Irlanda y a inicios de los 90 aparecieron formas parecidas en Norteamérica; en Pensilvania, de 1994 a 1996, las pérdidas fueron de 30 a 100 % de las cosechas. Hoy se llama Trichoderma aggressivum: en 2020, un gramo de composta infectada por kilo bajó la cosecha de champiñón de 68 a 100 %.
-Lo chistoso: su pariente Trichoderma reesei se aisló en 1944 de una tienda de lona de algodón del ejército de EE. UU. que se pudría en la isla de Bougainville (Islas Salomón), y hoy la industria usa sus enzimas.
+Lo chistoso: su pariente Trichoderma reesei se aisló en 1944 de una tienda de lona de algodón del ejército de EE. UU. que se pudría en la isla de Bougainville (archipiélago de las Salomón), y hoy la industria usa sus enzimas.
 Así que pasteuriza y limpia manos y herramientas. El dibujo es esquemático.
 Fuentes en el comentario fijado.
 ¿A ti ya se te puso verde una bolsa o un frasco? 👇
@@ -44,8 +44,8 @@ Es Trichoderma, el "moho verde", una plaga del cultivo de hongos comestibles. Pr
 ¿Cómo le gana a tu hongo? No se lo come: compite por el espacio y la comida. Otros Trichoderma sí se enrollan en las hifas de otros hongos (micoparasitismo), pero el moho verde del cultivo gana creciendo más rápido. En laboratorio, T. pleuroticola cubrió una colonia de seta en 4 a 6 días.
 ¿Por dónde se mete? Según Penn State Extension, entra a los cuartos de cultivo sobre todo con personas y equipo contaminados. En granjas de setas de Malasia (2024) también lo encontraron en el agua, el aire y las herramientas de limpieza: el agua puede ser una fuente.
 Errores comunes: no pasteurizar bien la paja (se sumerge 1 a 2 horas en agua a 71 °C, 160 °F) y agregar nitrógeno, como salvado, que siempre sube el riesgo de contaminación. Y ojo: un sustrato estéril queda como un "vacío biológico"; si le entra un moho, puede invadirlo más fácil.
-La historia: a mediados de los 80 aparecieron formas nuevas y agresivas en granjas de champiñón de Irlanda, y a inicios de los 90 en Norteamérica. En Pensilvania, de 1994 a 1996, las pérdidas fueron de 30 a 100 % de las cosechas, y en todo el mundo pasaron de 30 millones de dólares en una década (Royse et al., 1999). En 2002 se le dio nombre: Trichoderma aggressivum. En 2020, un gramo de composta infectada por cada kilo bajó la cosecha de champiñón de 68 a 100 %.
-Lo chistoso: su pariente Trichoderma reesei se aisló en 1944 de una tienda de lona de algodón del ejército de EE. UU. que se pudría en la isla de Bougainville (Islas Salomón), en la Segunda Guerra Mundial. Su facilidad para degradar telas de celulosa hoy la aprovechan varias industrias por sus enzimas. Y algunos Trichoderma se usan para proteger plantas de enfermedades.
+La historia: a mediados de los 80 aparecieron formas nuevas y agresivas en granjas de champiñón de Irlanda, y a inicios de los 90, formas parecidas en Norteamérica. En Pensilvania, de 1994 a 1996, las pérdidas fueron de 30 a 100 % de las cosechas, y en todo el mundo pasaron de 30 millones de dólares en una década (Royse et al., 1999). En 2002 se le dio nombre: Trichoderma aggressivum. En 2020, un gramo de composta infectada por cada kilo bajó la cosecha de champiñón de 68 a 100 %.
+Lo chistoso: su pariente Trichoderma reesei se aisló en 1944 de una tienda de lona de algodón del ejército de EE. UU. que se pudría en la isla de Bougainville (archipiélago de las Salomón), en la Segunda Guerra Mundial. Su facilidad para degradar telas de celulosa hoy la aprovechan varias industrias por sus enzimas. Y algunos Trichoderma se usan para proteger plantas de enfermedades.
 Así que esa pelusa no es tu cosecha: pasteuriza y limpia manos y herramientas.
 El dibujo es esquemático.
 Fuentes:
@@ -58,7 +58,7 @@ Fuentes:
 - de la Fuente, M. (2011). UC Cooperative Extension. https://ucanr.edu/sites/default/files/2011-06/111961.pdf
 - Druzhinina, I. S. et al. (2011). Nature Reviews Microbiology 9: 749. https://www.osti.gov/servlets/purl/1165278
 - DSMZ, DSM 768 (Trichoderma reesei QM6a). https://www.dsmz.de/collection/catalogue/details/culture/DSM-768
-- Bischof, R. H., Ramoni, J. y Seiboth, B. (2016). Microbial Cell Factories. https://pmc.ncbi.nlm.nih.gov/articles/PMC4902900/
+- Bischof, R. H., Ramoni, J. y Seiboth, B. (2016). Microbial Cell Factories 15: 106. https://pmc.ncbi.nlm.nih.gov/articles/PMC4902900/
 ¿A ti ya se te puso verde una bolsa o un frasco? 👇
 Shot Fungi Mati 108 · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
@@ -77,9 +77,9 @@ Soy Robert, de La Creación del Robert 🌱
 ### LinkedIn
 ```text
 Un gramo por kilo bajó la cosecha de 68 a 100 %: el caso del moho verde (Trichoderma) en el cultivo de hongos.
-1) El problema: a mediados de los 80 surgieron formas agresivas en granjas de champiñón de Irlanda y a inicios de los 90 en Norteamérica. En Pensilvania (1994–1996) las pérdidas fueron de 30 a 100 % de las cosechas, y en el mundo superaron los 30 millones de dólares en una década (Royse et al., 1999).
+1) El problema: a mediados de los 80 surgieron formas agresivas en granjas de champiñón de Irlanda y a inicios de los 90, formas parecidas en Norteamérica. En Pensilvania (1994–1996) las pérdidas fueron de 30 a 100 % de las cosechas, y en el mundo superaron los 30 millones de dólares en una década (Royse et al., 1999).
 2) La dosis: en 2020, 1 g de composta infectada con T. aggressivum por kilo redujo el rendimiento de champiñón entre 68 y 100 % (Kosanovic et al., Fungal Biology).
-3) El mecanismo: no parasita al hongo cultivado; compite por espacio y nutrientes (Innocenti et al., 2019).
+3) El mecanismo: los estudios indican que no parasita al hongo cultivado, sino que compite por espacio y nutrientes (Innocenti et al., 2019; Kosanovic et al., 2020).
 4) La prevención: entra sobre todo con personas y equipo (Penn State Extension); también se ha detectado en el agua (Ajis et al., 2024). Pasteurizar la paja (1–2 h a 71 °C) y cuidar el nitrógeno añadido reducen el riesgo.
 Moraleja de bioseguridad: manos, herramientas y agua también son parte del protocolo.
 ¿Qué protocolo de limpieza usan en su laboratorio o granja?
