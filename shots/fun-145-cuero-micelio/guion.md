@@ -3,7 +3,7 @@
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #145 · rama `claude/fun-145-149-objetos`.
 - **Formato:** N1 «Por dentro» (macro → micro → macro): una bolsa en la mesa → las charolas donde crece el micelio → al microscopio, las hifas que se enredan → la lámina que se curte → la misma bolsa del inicio, ya «leída» por dentro (con sus límites).
 - **Gancho (de los 7):** #1 «Esto no es X: es Y» sobre algo en pantalla: «Esta bolsa no es de cuero: es de hongo».
-- **Duración:** voz 997 caracteres / 185 palabras (≈ 58 s, calibrado con el #59, que con 998 caracteres dio 58.0 s) + cierre 3.5 s → **61.5 s** en la base.
+- **Duración:** voz 1,004 caracteres sin espacios entre líneas (1,016 con ellos) / 191 palabras (≈ 58.3 s, calibrado con el #59, que con 998 caracteres dio 58.0 s) + cierre 3.5 s → **61.8 s** en la base (61.0–62.0 ✔).
 - **Voz:** PENDIENTE de aprobación de Robert (~1,000 créditos de ElevenLabs).
 - **Tema:** el «cuero» de micelio: cómo se hace, quién ya lo usó (Hermès con MycoWorks, Stella McCartney con Mylo) y sus límites reales (acabado de plástico, no biodegradable aún, difícil de escalar). No repite el #47 (empaques y ladrillos de micelio) ni el de mezclilla.
 
@@ -23,12 +23,12 @@
 | 9 | Trampa | Pero hay trampa: Mylo lleva un acabado de poliuretano, un plástico, y aún no es biodegradable. | Fondo naranja: corte de la lámina en capas (micelio + lyocell); encima baja una capa brillante «acabado de poliuretano (plástico)». Chip «aún no es biodegradable». |
 | 10 | Escala | Y hacerlo en grande cuesta: en 2023 Mylo pausó por falta de dinero y en 2025 MycoWorks cerró su fábrica. | Fondo azul: dos fábricas esquemáticas; en la primera aparece un letrero «PAUSA · 2023 · Mylo: sin financiamiento para crecer»; en la segunda se apagan las luces: «2025 · MycoWorks cierra su fábrica (Carolina del Sur)». |
 | 11 | Composta | Eso sí: en Mylo, el aserrín que sobra se vuelve composta. | Fondo menta: el aserrín que quedó en la charola se vuelca a un montón de composta y brota una plantita. Etiqueta «sustrato que sobra → composta». |
-| 12 | Cierre | Así que esa bolsa no era de vaca: era de hongo… aunque todavía no es perfecta. | **Regreso a la imagen del inicio:** la misma bolsa sobre el fondo rosa; una `Lupa` «POR DENTRO · MICELIO» muestra las hifas dentro de la bolsa. Chips «hongo ✓», «acabado de plástico (en algunos)», «difícil de escalar». |
+| 12 | Cierre | Así que esa bolsa no era de vaca: era sobre todo de hongo… aunque aún no es perfecta. | **Regreso a la imagen del inicio:** la misma bolsa sobre el fondo rosa; una `Lupa` «POR DENTRO · MICELIO» muestra las hifas dentro de la bolsa. Chips «sobre todo hongo ✓», «acabado plástico (en algunos)», «difícil de escalar». |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
 **Música** (según `maestro/recetas/composicion-musical.md`): cama cálida y curiosa en re menor que cambia de acorde cada ~4–6 s (i–VI–III–VII y sus variantes, nunca el mismo patrón más de 4 «compases»), con un motivo de 4 notas (marimba suave) que aparece en el gancho, regresa transpuesto en «¿Y quién ya lo usó?» y vuelve completo en mayor en el cierre; se oscurece en «hay trampa» y «cuesta», y se abre en «composta». Siempre debajo de la voz. Efectos en el mismo cuadro: golpe sordo de la bolsa, tachón, crecimiento fino de las hifas, aserrín que cae, tics del contador de días, lámina que se despega, golpe de la prensa, tambor que gira, cuadritos que se llenan (85 + 15), capa brillante, clics de las luces que se apagan, tierra de la composta.
 
-Barra de escala: 10 cm (bolsa), 5 cm (seta y micelio), 20 cm (charolas), 20 µm (hifas, esquemáticas), 10 cm (lámina), «esquema» en tarjetas y fábricas.
+Barra de escala: 10 cm (bolsa), 5 cm (seta y micelio), 20 cm (charolas), 20 µm (hifas, esquemáticas), 50 cm (tambor de curtido), 10 cm (bolsa Hermès), «1 cuadrito = 1 %» (Mylo), «corte esquemático (no a escala)» (capas), «esquema» (fábricas), 20 cm (composta).
 
 ## Robert en pantalla
 
@@ -45,10 +45,10 @@ Tiempos de la base (con la voz real se recorren solos). Grande en «¿Y quién y
 | 7 | 39.1 | 43.9 | 10_serio_molesto | `arriba-der` | «Pero hay trampa: poliuretano» |
 | 8 | 44.5 | 49.8 | 12_perfil_serio | `arriba-der` | «Mylo pausó… MycoWorks cerró su fábrica» |
 | 9 | 50.2 | 53.3 | 05_sonriendo_dientes_uniformes | `arriba-der` | «el aserrín que sobra se vuelve composta» |
-| 10 | 53.9 | 57.9 | 06_pensativo_menton | `arriba-der` | «aunque todavía no es perfecta» |
-| — | 58.0 | 61.5 | 13_senalando_arriba | CierreMarca | cierre |
+| 10 | 53.9 | 58.2 | 06_pensativo_menton | `arriba-der` | «sobre todo de hongo… aunque aún no es perfecta» |
+| — | 58.3 | 61.8 | 13_senalando_arriba | CierreMarca | cierre |
 
-Apariciones 10 · **≈ 36 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas.
+Apariciones 10 · **37.2 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas · nunca la misma dos veces seguidas.
 
 ## Fuentes (cada dato se abrió en la página original el 5 nov 2026; detalle y veredictos en `verificacion.md`)
 
@@ -62,5 +62,9 @@ Apariciones 10 · **≈ 36 s** en pantalla (+ cierre 3.5 s) · 9 poses distintas
    > "The production was paused after the company was unable to secure financing in order to scale up"
 5. Ecotextile News (21 oct 2025). *MycoWorks to close factory and focus on sourcing*. https://www.ecotextile.com/2025102160455/news/materials-production-news/mycoworks-to-close-factory-and-focus-on-sourcing/
    > "MycoWorks is closing its 136,000 square foot factory in South Carolina that started up in September 2023" · "will stop growing mycelium"
+6. Wikipedia, *MycoWorks* (consultada nov 2026). https://en.wikipedia.org/wiki/MycoWorks
+   > "In October 2025, the South Carolina factory was shut down completely, having been active for two years."
+7. Deacon, J. *Fungal Biology*, cap. 3 (hifas y micelio). https://archive.bio.ed.ac.uk/jdeacon/FungalBiology/chap3.htm
+   > "Hyphae grow only at their tips" · ancho de las hifas "ranging from 2 µm to 30 µm or more (usually 5-10 µm)"
 
 El dibujo es esquemático.
