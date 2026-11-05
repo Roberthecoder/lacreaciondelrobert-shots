@@ -13,7 +13,7 @@
     },
     {
       "escena": "Receta",
-      "texto": "Los productores mezclan paja, estiércol de caballo, gallinaza y yeso."
+      "texto": "Se mezcla paja, estiércol de caballo, gallinaza y yeso."
     },
     {
       "escena": "FaseI",
@@ -45,11 +45,11 @@
     },
     {
       "escena": "Estudio",
-      "texto": "En 2009, en Reino Unido, Noble y su equipo lo probaron: sin bacterias, solo brotaban ventilando ese gas."
+      "texto": "En 2009, en Reino Unido, Noble y su equipo lo probaron: sin bacterias, brotaban si ventilaban esos gases."
     },
     {
       "escena": "Mexico",
-      "texto": "En México es el hongo que más se cultiva: hacia 2007, unas cuarenta mil toneladas."
+      "texto": "En México es el hongo que más se cultiva: según un estudio de 2012, el noventa y cuatro por ciento."
     },
     {
       "escena": "Cosecha",
