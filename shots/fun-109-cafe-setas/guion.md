@@ -15,16 +15,16 @@
 |---|---|---|---|
 | 0 | Gancho | Esto no es tierra: es el café que tiraste esta mañana, y puede dar setas. | Fondo amarillo. Una mano voltea un filtro y cae un montón café oscuro (cuadro 0.3) que parece tierra; etiqueta "¿tierra?" se tacha → "posos de café". A un lado, la taza vacía con vapor. Barra de escala 5 cm. |
 | 1 | Robert | A mí, a los diez años, el café no me funcionó. | Fondo rosa. Maceta-bolsa con posos y un "✗" chiquito; Robert grande (presentador) apenado/serio. Chip "Robert, 10 años". |
-| 2 | Mito | Mito: pones solo posos y salen hongos. | Fondo naranja. Bolsa 100 % posos; sello **MITO**. |
-| 3 | Dato | En un estudio de 2021, con más de treinta por ciento de posos, las setas ya no brotaron. | Fondo cian. Sello **DATO**. Barra de % de posos que sube; al pasar 30 % las setas de la bolsa se apagan. TarjetaEstudio "2021 · Malasia · *Future Foods*". |
-| 4 | Mezcla | En otro, un tercio de posos con paja y ramas de olivo dio casi su peso seco en setas. | Fondo menta. Tres capas iguales (posos · paja · poda de olivo) en una bolsa; balanza: sustrato seco vs setas frescas casi iguales. Chip "eficiencia biológica 95 % · 2021". |
+| 2 | Ojo | Ojo: con puros posos, muchas veces no salen. | Fondo naranja. Bolsa 100 % posos con setas que casi no brotan; sello **OJO**. |
+| 3 | Dato | En un estudio de 2021, con más de treinta por ciento de posos, las setas se frenaron. | Fondo cian. Sello **DATO**. Barra de % de posos que sube; al pasar 30 % las setas de la bolsa se encogen (se frenan, no desaparecen). TarjetaEstudio "2021 · Malasia · *Future Foods*". |
+| 4 | Mezcla | En otro, un tercio de posos con paja y ramas de olivo dio casi su peso seco en setas frescas. | Fondo menta. Tres capas iguales (posos · paja · poda de olivo) en una bolsa; balanza: sustrato seco vs setas frescas casi iguales. Chip "eficiencia biológica 95 % · 2021". |
 | 5 | Hifas | Por dentro, las hifas se cuelan entre los granitos de café, | Zoom (fondo oscuro, "POR DENTRO"): partículas de café y hifas blancas tabicadas que se ramifican entre ellas. Barra de escala 100 µm. |
 | 6 | Cafeina | y el micelio rompe parte de la cafeína hasta xantina. | Molécula esquemática de cafeína pierde sus tres metilos → xantina. Chip "solo una parte · 2019". |
 | 7 | Pregunta | ¿Y las setas salen con cafeína? | **Re-gancho.** Fondo rosa: racimo de setas con "?" gigante; Robert pensativo. |
 | 8 | Espresso | Sí, trazas: tendrías que comer unos doscientos cincuenta kilos de setas frescas para igualar un espresso. | Fondo amarillo. Una tacita de espresso contra una montaña de cajas de setas "≈ 250 kg". TarjetaEstudio "2019 · Carrasco-Cabrera, Bell y Kertesz". |
-| 9 | Mexico | Y en México ya se hacía: desde 1984, en Veracruz, se cultivó *Pleurotus* en pulpa de café. | Fondo verde. Cereza de café partida: grano + pulpa; la pulpa va a bolsas de cultivo. Mapa esquemático de Veracruz. Chip "pulpa = lo de afuera del grano". |
-| 10 | Coatepec | En Coatepec, pulpa secada al sol y guardada dos años dio más setas frescas que su propio peso seco. | Sol sobre la pulpa extendida; costales "2 años"; balanza que se inclina hacia las setas: "EB > 100 % · 1987". Nota chiquita: "setas frescas (con agua) vs sustrato seco". |
-| 11 | Mundo | Y cada año el mundo tira unos seis millones de toneladas de posos. | Globo esquemático con montaña de posos; número "≈ 6 millones de t / año · estimación 2022". |
+| 9 | Mexico | Y en México ya se hacía: en los años ochenta, en Veracruz, se cultivaban setas en pulpa de café. | Fondo verde. Cereza de café partida: grano + pulpa; la pulpa va a bolsas de cultivo. Mapa esquemático de Veracruz. Chip "pulpa = lo de afuera del grano". |
+| 10 | Xalapa | En Xalapa, pulpa secada al sol y guardada dos años dio más setas frescas que su propio peso seco. | Sol sobre la pulpa extendida; costales "2 años"; balanza que se inclina hacia las setas: "Xalapa, Veracruz · EB > 100 % · 1987". Nota chiquita: "setas frescas (con agua) vs sustrato seco". |
+| 11 | Mundo | Y se estima que cada año el mundo deja unos seis millones de toneladas de posos. | Globo esquemático con montaña de posos; número "≈ 6 millones de t / año · estimación 2022". |
 | 12 | Cierre | Así que no es tierra: es tu café de esta mañana, convertido en comida. | **Regreso a la imagen del inicio:** el mismo montón de posos junto a la taza, ahora mezclado con paja y con un racimo de *Pleurotus ostreatus* (repisa, pie corto lateral, laminillas decurrentes, gris-crema) saliendo. |
 | — | Outro | (sin voz) | `CierreMarca` con el logo de biología y Robert señalando. |
 
@@ -34,7 +34,7 @@
 |---|---|---|---|---|---|
 | 1 | 0.0 | 3.0 | 11_sorprendido | `gancho` | «Esto no es tierra» |
 | 2 | 4.3 | 7.5 | 12_perfil_serio | `presentador` | «a mí… no me funcionó» |
-| 3 | 10.0 | 14.0 | 10_serio_molesto | `arriba-der` | «Mito… ya no brotaron» |
+| 3 | 10.0 | 14.0 | 10_serio_molesto | `arriba-der` | «Ojo… se frenaron» |
 | 4 | 22.0 | 26.0 | 13_senalando_arriba | `arriba-der` | «las hifas se cuelan» |
 | 5 | 28.5 | 31.0 | 06_pensativo_menton | `grande` | «¿Y las setas salen con cafeína?» |
 | 6 | 32.0 | 37.0 | 11_sorprendido | `arriba-der` | «250 kilos» |
