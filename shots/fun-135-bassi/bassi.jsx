@@ -372,10 +372,10 @@ function BassiShot() {
         font:`italic 900 96px/1.02 ${KF.texto}`, color:KC.paper, textShadow:KSOMBRA }}>
         Beauveria<br /><span style={{ background:`linear-gradient(transparent 78%, ${KC.gold} 78%)`, backgroundSize:`${kprog(T, K.H + 0.8, K.H + 1.3) * 100}% 100%`, backgroundRepeat:'no-repeat' }}>bassiana</span></div>}
       <Etq T={T} at={K.H + 1.8} until={K.C - 0.3} x={735} y={1060} texto="Agostino Bassi" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.C + 0.8} until={K.Ou} x={60} y={600} texto="conidios" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.C + 0.8} until={K.Ou} x={340} y={895} texto="conidios" lado="izq" tam={34} color={KC.ink} />
       <Etq T={T} at={K.C + 1.4} until={K.Ou} x={60} y={660} texto="Beauveria bassiana" it tam={34} color={KC.ink} />
       <Etq T={T} at={K.C + 2.0} until={K.Ou} x={60} y={720} texto="Bassi, 1835" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="no es cal: es un hongo" x={330} y={830} tam={38} borde="#118a3a" />
+      <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="no es cal: es un hongo" x={330} y={790} tam={38} borde="#118a3a" />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.E} texto="1 cm" largo={104} color={KC.ink} />
