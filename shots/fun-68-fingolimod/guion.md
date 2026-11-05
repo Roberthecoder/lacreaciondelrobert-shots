@@ -1,9 +1,9 @@
-# Shot Fungi Mati #68 · La pastilla que salió de un hongo de cigarras: fingolimod
+# Shot Fungi Mati #68 · La pastilla que nació de un hongo de cigarras: fingolimod
 
 - **Serie:** Shot Fungi Mati · **Logo:** biología (ADN) · **Badge:** #68 · rama `claude/fun-65-69-salud` · ángulo del lote: hongos y salud.
 - **No repite** a Fungi Mati #45 (ciclosporina) ni #53 (yartsa / *Ophiocordyceps sinensis*): aquí la historia es otra molécula, otro hongo y otra enfermedad.
 - **Formato:** N1 "Por dentro" (macro → micro → macro): una pastilla en la mano → el hongo sobre la ninfa de cigarra → la molécula que se simplifica → al microscopio (linfocitos que se quedan en el ganglio, mielina) → la misma pastilla, ya explicada.
-- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Esta pastilla para la esclerosis múltiple no salió de una planta: salió de un hongo de cigarras.»
+- **Gancho (de los 7):** #1 "Esto no es X: es Y" sobre lo que se ve: «Esta pastilla para la esclerosis múltiple no nació de una planta: nació de un hongo de cigarras.»
 - **Duración:** voz 988 caracteres / 175 palabras (≈ 58 s) + cierre 3.5 s → **61.5 s** en la base.
 - **Voz:** pendiente de aprobación de Robert (~990 créditos de ElevenLabs).
 - **Tono:** curioso, con respeto por quienes viven con esclerosis múltiple: no "cura", reduce los brotes. Todo es dibujo esquemático. No es consejo médico.
