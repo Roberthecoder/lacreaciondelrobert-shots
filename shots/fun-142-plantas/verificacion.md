@@ -28,6 +28,10 @@ Verificador independiente (subagente que no escribió el guion), 5 nov 2026. Tab
 - MyPlate se cita por Ohio State Extension y la copia archivada (webharvest.gov) de choosemyplate.gov.
 - Nota: Whittaker 1969 (*Science* 163:150–160) confirmado en registros bibliográficos; el texto completo no se abrió, y solo se usa el año, la revista y que su sistema tiene cinco reinos con Fungi aparte.
 
+## Re-verificación de lo corregido (coordinador del lote, no escribió el guion; 5 nov 2026)
+- «está armada con quitina»: ✅ PMC7389562 (2019): "Together with chitin they constitute the most important structural components of fungal cell walls." La frase ya no dice que la pared sea solo de quitina.
+- «el sistema de cinco reinos, con los hongos en su propio reino, lo publicó otro Robert: Robert Whittaker, en 1969»: ✅ Whittaker, R. H. (1969) "New concepts of kingdoms of organisms", *Science* 163:150–160 (cinco reinos: Monera, Protista, Fungi, Plantae, Animalia). No afirma que fuera la primera separación.
+
 Todas las afirmaciones del texto final: ✅.
 
 VEREDICTO: APROBADO
