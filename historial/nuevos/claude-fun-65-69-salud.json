@@ -1,0 +1,64 @@
+{
+ "temas": [
+  {
+   "id": "fun-65-cefalosporina",
+   "titulo": "Un antibiótico salió de una alcantarilla: la cefalosporina (Brotzu, Cerdeña 1945)",
+   "serie": "Shot Fungi Mati",
+   "numero": 65,
+   "estado": "idea",
+   "carpeta": "shots/fun-65-cefalosporina",
+   "rama": "claude/fun-65-69-salud",
+   "fuentes": [],
+   "fecha": "2026-11-05",
+   "derivados": []
+  },
+  {
+   "id": "fun-66-candida-auris",
+   "titulo": "El superhongo de los hospitales: Candida auris",
+   "serie": "Shot Fungi Mati",
+   "numero": 66,
+   "estado": "idea",
+   "carpeta": "shots/fun-66-candida-auris",
+   "rama": "claude/fun-65-69-salud",
+   "fuentes": [],
+   "fecha": "2026-11-05",
+   "derivados": []
+  },
+  {
+   "id": "fun-67-esporotricosis",
+   "titulo": "La enfermedad del jardinero: esporotricosis (espinas de rosa y gatos)",
+   "serie": "Shot Fungi Mati",
+   "numero": 67,
+   "estado": "idea",
+   "carpeta": "shots/fun-67-esporotricosis",
+   "rama": "claude/fun-65-69-salud",
+   "fuentes": [],
+   "fecha": "2026-11-05",
+   "derivados": []
+  },
+  {
+   "id": "fun-68-fingolimod",
+   "titulo": "Un hongo que parasita cigarras dio una medicina para esclerosis múltiple: fingolimod",
+   "serie": "Shot Fungi Mati",
+   "numero": 68,
+   "estado": "idea",
+   "carpeta": "shots/fun-68-fingolimod",
+   "rama": "claude/fun-65-69-salud",
+   "fuentes": [],
+   "fecha": "2026-11-05",
+   "derivados": []
+  },
+  {
+   "id": "fun-69-pneumocystis",
+   "titulo": "Un hongo ya vivió en tus pulmones: Pneumocystis jirovecii",
+   "serie": "Shot Fungi Mati",
+   "numero": 69,
+   "estado": "idea",
+   "carpeta": "shots/fun-69-pneumocystis",
+   "rama": "claude/fun-65-69-salud",
+   "fuentes": [],
+   "fecha": "2026-11-05",
+   "derivados": []
+  }
+ ]
+}
