@@ -37,7 +37,7 @@ jobs:
           path: ~/.cache/huggingface
           key: whisper-large-v3-turbo
       - name: Whisper + Matchering
-        run: pip install -q --break-system-packages faster-whisper matchering soundfile
+        run: pip install -q --break-system-packages faster-whisper matchering soundfile noisereduce
       - name: Procesar la voz
         run: |
           for d in largos/*/video; do

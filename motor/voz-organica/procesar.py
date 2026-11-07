@@ -2,7 +2,8 @@
 """Voz orgánica: la voz grabada por Robert (celular, sin equipo) en lugar de la voz de ElevenLabs.
 
 Hace todo en GitHub, gratis (sin créditos de ElevenLabs):
-  1. Limpia el audio: quita retumbe y ruido de fondo (aprende el ruido del silencio del inicio).
+  1. Limpia el audio: quita el "aire" de fondo (aprende su huella en las pausas y lo resta: noisereduce), el retumbe y
+     suaviza las "s".
   2. Lo empareja con la voz profesional de Robert en ElevenLabs (referencia_robert.flac) con Matchering:
      mismo color de voz (ecualización) y mismo volumen.
   3. Recorta los silencios del principio y del final.
@@ -20,47 +21,49 @@ import argparse, json, os, re, subprocess, sys, tempfile, unicodedata
 from difflib import SequenceMatcher
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
-VERSION = 'vo-1'   # cambia si cambia el procesamiento (invalida la caché)
+VERSION = 'vo-2'   # cambia si cambia el procesamiento (invalida la caché)
 
 
 def ff(*args):
     subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', *args], check=True)
 
 
-def silencio_inicial(wav, umbral_db=-42, minimo=0.6):
-    """Segundos de silencio al inicio (donde Robert no habla todavía)."""
-    r = subprocess.run(['ffmpeg', '-hide_banner', '-i', wav, '-af', f'silencedetect=noise={umbral_db}dB:d={minimo}', '-f', 'null', '-'],
-                       capture_output=True, text=True)
-    ini = re.findall(r'silence_start: (-?[\d.]+)', r.stderr)
-    fin = re.findall(r'silence_end: ([\d.]+)', r.stderr)
-    if ini and float(ini[0]) <= 0.05 and fin:
-        return float(fin[0])
-    return 0.0
+def nivel_pausas(a, sr):
+    import numpy as np
+    w = int(0.02 * sr)
+    rms = np.array([np.sqrt(np.mean(a[i:i + w] ** 2)) + 1e-9 for i in range(0, len(a) - w, w)])
+    return float(np.percentile(20 * np.log10(rms), 10))
 
 
-def piso_ruido(wav, hasta):
-    """Nivel del ruido de fondo (dB) medido en el silencio inicial."""
-    r = subprocess.run(['ffmpeg', '-hide_banner', '-t', f'{hasta:.2f}', '-i', wav, '-af', 'astats=measure_overall=RMS_level', '-f', 'null', '-'],
-                       capture_output=True, text=True)
-    m = re.findall(r'RMS level dB: (-?[\d.]+|-inf)', r.stderr)
-    try:
-        return max(-80.0, min(-25.0, float(m[-1])))
-    except (IndexError, ValueError):
-        return -60.0
+def quitar_aire(entrada, salida, fuerza=None):
+    """Ruido de fondo fuera. La huella del ruido sale de los cuadros más callados (pausas y respiros)."""
+    import numpy as np, soundfile as sf, noisereduce as nr
+    fuerza = float(os.environ.get('VOZ_QUITAR_AIRE', fuerza or 0.9))   # 0 = nada · 1 = todo (puede sonar a "agua")
+    a, sr = sf.read(entrada, dtype='float32')
+    if a.ndim > 1:
+        a = a.mean(1)
+    w = int(0.03 * sr)
+    cuadros = [a[i:i + w] for i in range(0, len(a) - w, w)]
+    rms = np.array([np.sqrt(np.mean(x ** 2)) for x in cuadros])
+    callados = np.argsort(rms)[:max(20, len(cuadros) // 10)]
+    huella = np.concatenate([cuadros[i] for i in sorted(callados)])
+    b = nr.reduce_noise(y=a, sr=sr, y_noise=huella, stationary=True, prop_decrease=fuerza, n_std_thresh_stationary=1.5)
+    sf.write(salida, b, sr, subtype='FLOAT')
+    return nivel_pausas(a, sr), nivel_pausas(b, sr)
 
 
 def limpiar(entrada, salida, tmp):
     crudo = os.path.join(tmp, 'crudo.wav')
     ff('-i', entrada, '-vn', '-ac', '1', '-ar', '48000', '-c:a', 'pcm_f32le', crudo)
-    s0 = silencio_inicial(crudo)
-    nf = piso_ruido(crudo, s0) if s0 >= 0.6 else -55.0
-    print(f'Silencio inicial: {s0:.1f} s · ruido de fondo ≈ {nf:.0f} dB')
-    # retumbe fuera (<75 Hz), ruido de fondo fuera (afftdn sigue el ruido real), "s" suaves y compresión ligera
-    filtros = (f'highpass=f=75,afftdn=nr=14:nf={nf:.0f}:tn=1,'
-               'deesser=i=0.35:m=0.5:f=0.5,'
+    # 1) quitar el "aire" (ruido de fondo): se aprende su huella en las pausas y se resta (spectral gating)
+    sin_ruido = os.path.join(tmp, 'sin_ruido.wav')
+    antes, despues = quitar_aire(crudo, sin_ruido)
+    print(f'Aire de fondo: pausas {antes:.0f} dB → {despues:.0f} dB')
+    # 2) retumbe fuera (<75 Hz), "s" suaves y compresión ligera
+    filtros = ('highpass=f=75,deesser=i=0.35:m=0.5:f=0.5,'
                'acompressor=threshold=-24dB:ratio=2.2:attack=10:release=180:makeup=2')
     limpio = os.path.join(tmp, 'limpio.wav')
-    ff('-i', crudo, '-af', filtros, '-ar', '44100', '-c:a', 'pcm_s24le', limpio)
+    ff('-i', sin_ruido, '-af', filtros, '-ar', '44100', '-c:a', 'pcm_s24le', limpio)
 
     # Matchering: mismo color y volumen que la voz profesional de ElevenLabs
     ref = os.environ.get('VOZ_REFERENCIA') or os.path.join(AQUI, 'referencia_robert.flac')

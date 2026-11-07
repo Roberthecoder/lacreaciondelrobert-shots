@@ -4,7 +4,7 @@ Decidido el 7 nov 2026: Robert quiere poder narrar él mismo, con el celular y s
 procesamiento lo haga GitHub. **No gasta créditos de ElevenLabs.**
 
 ## Qué hace (`procesar.py`)
-1. **Limpia:** quita retumbe (<75 Hz) y ruido de fondo (aprende el ruido de los primeros segundos de silencio), suaviza las
+1. **Limpia:** quita el "aire" de fondo (aprende su huella en las pausas y la resta con noisereduce; pausas de −40 a −60 dB en la prueba), el retumbe (<75 Hz), suaviza las
    "s" y comprime un poco.
 2. **Empareja con su voz profesional:** Matchering copia el color (ecualización) y el volumen de `referencia_robert.flac`
    (2 narraciones de ElevenLabs: #60 Portobello y #70 Hongo azul). Prueba con su grabación de WhatsApp (6 nov): la diferencia
@@ -38,5 +38,5 @@ procesamiento lo haga GitHub. **No gasta créditos de ElevenLabs.**
 6. Revisa el resumen del run: «Guion alineado: X de Y palabras (Z %)». Si Z < 90 %, revisa los subtítulos en el video.
 
 ## Probarlo en una sesión de nube
-`pip install --break-system-packages faster-whisper matchering soundfile` y luego el comando del punto 4 (o
+`pip install --break-system-packages faster-whisper matchering soundfile noisereduce` y luego el comando del punto 4 (o
 `--guion guion.txt --tiempos tiempos.json`). Tarda ~30 s por minuto de audio en CPU.

@@ -154,7 +154,7 @@ jobs:
 
       - name: Herramientas de voz orgánica (Whisper + Matchering)
         if: steps.voz.outputs.organica == 'true'
-        run: pip install -q --break-system-packages faster-whisper matchering soundfile
+        run: pip install -q --break-system-packages faster-whisper matchering soundfile noisereduce
 
       - name: Versión narrada (voz clonada en ElevenLabs o voz orgánica de Robert)
         if: steps.voz.outputs.aprobada == 'true'
