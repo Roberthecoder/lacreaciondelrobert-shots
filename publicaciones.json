@@ -1240,5 +1240,62 @@
   "ok": true,
   "id": "urn:li:ugcPost:7524639160150822912",
   "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7524639160150822912/"
+ },
+ {
+  "clave": "fun-02-hormiga-zombi",
+  "red": "facebook",
+  "modo": "real",
+  "fecha": "2026-11-07T15:22:24Z",
+  "run": "42385947890",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "1736630658023316",
+  "url": "https://www.facebook.com/reel/1736630658023316",
+  "nota": "ready"
+ },
+ {
+  "clave": "fun-02-hormiga-zombi",
+  "red": "instagram",
+  "modo": "real",
+  "fecha": "2026-11-07T15:23:26Z",
+  "run": "42385947890",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "18120856915982236",
+  "url": "https://www.instagram.com/reel/Dfcf3otigm4/"
+ },
+ {
+  "clave": "fun-02-hormiga-zombi",
+  "red": "threads",
+  "modo": "real",
+  "fecha": "2026-11-07T15:26:05Z",
+  "run": "42385947890",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "18119822633050594",
+  "url": "https://www.threads.com/@lacreaciondelrobert/post/Dfcf_ZJhR1s"
+ },
+ {
+  "clave": "fun-02-hormiga-zombi",
+  "red": "youtube",
+  "modo": "real",
+  "fecha": "2026-11-07T15:27:03Z",
+  "run": "42385947890",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "Naa61iRDbFA",
+  "url": "https://youtube.com/shorts/Naa61iRDbFA",
+  "nota": "public"
+ },
+ {
+  "clave": "fun-02-hormiga-zombi",
+  "red": "linkedin",
+  "modo": "real",
+  "fecha": "2026-11-07T15:27:05Z",
+  "run": "42385947890",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "urn:li:ugcPost:7524855093830139904",
+  "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7524855093830139904/"
  }
 ]
