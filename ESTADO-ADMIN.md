@@ -6,6 +6,13 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 
 Última actualización: 30 oct 2026, 15:40 UTC (+ sección del admin maestro, 1 nov 2026).
 
+## DOCUMENTALES 001–005 (7 nov 2026) — GUIONES VERIFICADOS, ESPERAN A ROBERT
+- En el repo `lacreaciondelrobert-largos`, una rama por documental (`largo-render/doc-00N-<tema>`), carpeta `largos/doc-00N-<tema>/`
+  con guion_final.md, fuentes.md, verificacion.md («APROBADO SALVO PREGUNTAS A ROBERT»), preguntas.md y notas_visuales.md:
+  001 esterilización · 002 crear cepa · 003 qué no come un hongo · 004 cartón vs plástico · 005 bioluminiscentes. ~11–12 min c/u.
+- Voz ORGÁNICA (Robert graba leyendo el guion). Siguiente fase tras sus respuestas: storyboard (candado: Robert lo aprueba).
+- Aprendido: WebFetch no abre PMC/.gov en esta nube; `curl` normal sí (NO cambiar user-agent: el clasificador lo bloquea).
+
 ## VOZ ORGÁNICA (7 nov 2026) — HECHO
 - Robert puede narrar con su propia grabación (celular), sin ElevenLabs: «shot <tema> orgánico» / «documental <tema> orgánico».
   Todo en GitHub: limpieza + emparejado con su voz de ElevenLabs (Matchering) + alineación con Whisper. Instrucciones:
