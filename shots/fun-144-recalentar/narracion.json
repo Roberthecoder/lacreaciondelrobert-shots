@@ -1,7 +1,7 @@
 {
   "dcHtml": "Shot Recalentar base narrada.dc.html",
   "salida": "Shot Recalentar narrado.dc.html",
-  "nota": "Shot Fungi Mati #144. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs. Voz PENDIENTE de aprobación de Robert. Consejo general de inocuidad, no consejo médico.",
+  "nota": "Shot Fungi Mati #144. Una línea por subtítulo (idx 0..12 del jsx). Todo en UNA sola petición a ElevenLabs.  Consejo general de inocuidad, no consejo médico.  Voz aprobada por Robert (7 nov 2026: «gástate completamente los créditos que quedan»).",
   "lineas": [
     {
       "escena": "Gancho",
@@ -56,5 +56,6 @@
       "texto": "Así que tus hongos de ayer no son veneno: lo peligroso es dejarlos tibios."
     }
   ],
-  "mezcla": "oficial-30oct"
+  "mezcla": "oficial-30oct",
+  "voz_aprobada": true
 }
