@@ -31,7 +31,13 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 - HECHO (5 nov): los 84 narrados (#60–#143) ya están en la Sala como «Narrado listo» (sin voz reemplazados, assets viejos borrados).
   La Sala quedó llena al tope (1 GB): desde #119 los videos de la Sala van a crf 31 / audio 48k para caber. Antes de subir el grupo 07
   hay que borrar sus sin voz primero (y quizá recomprimir).
-- Falta: programar Fungi Mati martes y sábado 1:07 pm (espera confirmación de Robert) y regresar el repo a privado (Robert, en Settings).
+- HECHO (7 nov): voz de #144–#148 con los últimos créditos (Robert: «gástate completamente los créditos que quedan»; rama
+  voces/fungi-g07, Release borradores-voces-fungi-g07, ya en main y en la Sala). Quedan 140 créditos. FALTAN #149–#155 (Iceberg
+  incluido): tras la renovación del 28 nov. La Sala está llena (1 GB, ~0.5 MB libres): #144–#148 van a 540×960 crf 34; para
+  #149–#155 habrá que borrar antes su sin voz y subir igual de comprimido.
+- HECHO (6–7 nov): extra de Fungi Mati martes y sábado 1:07 pm (calendario/fecha.py, comando «horas»; la publicación diaria
+  solo publica cada shot cuando ya llegó su hora). Falta: que Robert agregue en cron-job.org un despertador a la 1:10 pm.
+- Falta: regresar el repo a privado (Robert, en Settings; se le dio el enlace el 7 nov).
 
 ## REPO PRIVADO Y DOCUMENTALES APARTE (3–4 nov 2026) — HECHO
 - `lacreaciondelrobert-shots` es PRIVADO desde el 4 nov (Robert). Página de privacidad sigue en línea; prueba de publicación
