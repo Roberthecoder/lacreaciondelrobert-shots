@@ -6,6 +6,13 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 
 Última actualización: 30 oct 2026, 15:40 UTC (+ sección del admin maestro, 1 nov 2026).
 
+## VOZ ORGÁNICA (7 nov 2026) — HECHO
+- Robert puede narrar con su propia grabación (celular), sin ElevenLabs: «shot <tema> orgánico» / «documental <tema> orgánico».
+  Todo en GitHub: limpieza + emparejado con su voz de ElevenLabs (Matchering) + alineación con Whisper. Instrucciones:
+  `motor/voz-organica/LEEME.md`. Shots: `"voz_organica"` en narracion.json (auto-render). Documentales: workflow
+  `voz-organica-largo.yml` (en el repo largos, rama por defecto). Probado en GitHub (8.4 min, 97 % alineado, 0 min cobrados).
+- Pendiente para Robert: borrar la rama de prueba `prueba/voz-organica` del repo largos (a mí GitHub no me deja borrar ramas).
+
 ## FUNGI MATI #60–#155 (4–5 nov 2026)
 - 96 shots nuevos (20 lotes en paralelo), todos en main y en la Sala. Re-verificación independiente de los 96 (8 sesiones, 5 nov):
   todos APROBADO, varias correcciones (ver «Re-verificación independiente (5 nov 2026)» en cada verificacion.md).
