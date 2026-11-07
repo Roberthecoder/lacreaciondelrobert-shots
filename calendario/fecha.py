@@ -6,12 +6,16 @@
 - Los Shots Festivos salen el día de su festividad (calendario/especiales.json, campo «fecha») y ocupan ese día: ese día no sale
   shot normal y la rotación sigue al día siguiente. (Excepción: Día de Muertos 2026 tiene 3 festivos el 1 nov y 3 el 2 nov, en orden de número.) Los festivos SIEMPRE salen en orden de número.
 - Las series normales se numeran seguidas, sin huecos ni reservas. Científico #01 es la carpeta 003-semillas-luna.
+- EXTRA de Fungi Mati (Robert, 6 nov 2026): desde el 7 nov 2026, cada martes y sábado sale además el siguiente Fungi Mati a la
+  1:07 pm (los shots de la rotación salen a las 9:07 am). Los días de festivo no hay extra. La numeración de Fungi Mati sigue siendo
+  el orden de publicación (rotación y extras comparten la cuenta).
 Uso:
   python3 calendario/fecha.py "Fungi Mati" 23      -> fecha del Fungi Mati #23
   python3 calendario/fecha.py Festivo 3            -> fecha del Shot Festivo #03
   python3 calendario/fecha.py fecha 2026-12-25     -> qué sale ese día
   python3 calendario/fecha.py lista [dias]         -> calendario de los próximos [30] días (fecha · clave)
   python3 calendario/fecha.py json                 -> calendario completo en JSON {fecha: [claves]} (para la Sala)
+  python3 calendario/fecha.py horas                -> igual, con hora CDMX: {fecha: [{clave, hora}]} (publicación diaria)
   python3 calendario/fecha.py festivos [dias]      -> festividades de los próximos [60] días y si ya tienen festivo hecho
 """
 import datetime as dt, json, os, re, sys, glob
@@ -20,6 +24,10 @@ ORDEN = ['Fungi Mati', 'Biotecnológico', 'Ambiental', 'Científico', 'Químico'
 PREFIJO = {'Fungi Mati': 'fun', 'Biotecnológico': 'bio', 'Ambiental': 'amb', 'Científico': 'cie', 'Químico': 'qui', 'IA': 'ia',
            'Festivo': 'fes', 'Robert': 'robert'}
 ESPECIALES = {('Científico', 1): '003-semillas-luna'}
+HORA = '09:07'                         # hora de la rotación diaria (CDMX)
+EXTRA_INICIO = dt.date(2026, 11, 7)    # extra de Fungi Mati martes y sábado
+EXTRA_DIAS = (1, 5)                    # martes=1, sábado=5 (date.weekday)
+EXTRA_HORA = '13:07'
 BASE = os.path.dirname(os.path.abspath(__file__))
 
 def _json(nombre):
@@ -42,14 +50,18 @@ def carpetas():
 def calendario(dias=800):
     """Lista de (fecha, [(serie, n, clave)]) día por día desde INICIO. Los shots normales que aún no existen se marcan con clave None."""
     fes = {}
-    for f in hechos(): fes.setdefault(f['fecha'], []).append(('Festivo', f['numero'], f['clave']))
+    for f in hechos(): fes.setdefault(f['fecha'], []).append(('Festivo', f['numero'], f['clave'], HORA))
     cars = carpetas(); cnt = {s: 1 for s in ORDEN}; k = 0; out = []
     for i in range(dias):
         d = INICIO + dt.timedelta(days=i)
         if d.isoformat() in fes:
             out.append((d, sorted(fes[d.isoformat()], key=lambda x: x[1]))); continue
         s = ORDEN[k % 6]; k += 1; n = cnt[s]; cnt[s] += 1
-        out.append((d, [(s, n, cars.get((s, n)))]))
+        xs = [(s, n, cars.get((s, n)), HORA)]
+        if d >= EXTRA_INICIO and d.weekday() in EXTRA_DIAS:
+            n = cnt['Fungi Mati']; cnt['Fungi Mati'] += 1
+            xs.append(('Fungi Mati', n, cars.get(('Fungi Mati', n)), EXTRA_HORA))
+        out.append((d, xs))
     return out
 
 def fecha(serie, n):
@@ -96,7 +108,9 @@ if __name__ == '__main__':
     elif a[0] == 'lista':
         hoy = max(dt.date.today(), INICIO); fin = hoy + dt.timedelta(days=int(a[1]) if len(a) > 1 else 30)
         for d, xs in calendario():
-            if hoy <= d <= fin: print(d.isoformat(), ' + '.join(x[2] or f'{x[0]} #{x[1]:02d} (falta hacerlo)' for x in xs))
+            if hoy <= d <= fin: print(d.isoformat(), ' + '.join(f"{x[3]} " + (x[2] or f'{x[0]} #{x[1]:02d} (falta hacerlo)') for x in xs))
+    elif a[0] == 'horas':
+        print(json.dumps({d.isoformat(): [{'clave': x[2], 'hora': x[3]} for x in xs if x[2]] for d, xs in calendario() if any(x[2] for x in xs)}, ensure_ascii=False))
     elif a[0] == 'json':
         print(json.dumps({d.isoformat(): [x[2] for x in xs if x[2]] for d, xs in calendario() if any(x[2] for x in xs)}, ensure_ascii=False))
     else: print(fecha(a[0], int(a[1])).isoformat())
