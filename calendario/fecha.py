@@ -7,7 +7,7 @@
   shot normal y la rotación sigue al día siguiente. (Excepción: Día de Muertos 2026 tiene 3 festivos el 1 nov y 3 el 2 nov, en orden de número.) Los festivos SIEMPRE salen en orden de número.
 - Las series normales se numeran seguidas, sin huecos ni reservas. Científico #01 es la carpeta 003-semillas-luna.
 - EXTRA de Fungi Mati (Robert, 6 nov 2026): desde el 7 nov 2026, cada martes y sábado sale además el siguiente Fungi Mati a la
-  1:07 pm (los shots de la rotación salen a las 9:07 am). Los días de festivo no hay extra. La numeración de Fungi Mati sigue siendo
+  9:07 am, junto con el de la rotación (Robert, 7 nov 2026: misma hora y mismas alarmas de respaldo; antes 1:07 pm). Los días de festivo no hay extra. La numeración de Fungi Mati sigue siendo
   el orden de publicación (rotación y extras comparten la cuenta).
 Uso:
   python3 calendario/fecha.py "Fungi Mati" 23      -> fecha del Fungi Mati #23
@@ -27,7 +27,7 @@ ESPECIALES = {('Científico', 1): '003-semillas-luna'}
 HORA = '09:07'                         # hora de la rotación diaria (CDMX)
 EXTRA_INICIO = dt.date(2026, 11, 7)    # extra de Fungi Mati martes y sábado
 EXTRA_DIAS = (1, 5)                    # martes=1, sábado=5 (date.weekday)
-EXTRA_HORA = '13:07'
+EXTRA_HORA = '09:07'   # misma hora que la rotación: lo cubren las mismas alarmas (Robert, 7 nov 2026)
 BASE = os.path.dirname(os.path.abspath(__file__))
 
 def _json(nombre):
