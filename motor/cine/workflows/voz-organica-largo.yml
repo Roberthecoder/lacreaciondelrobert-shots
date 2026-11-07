@@ -1,0 +1,66 @@
+name: Voz orgánica del largo (grabación de Robert, sin ElevenLabs)
+
+# Se lanza solo cuando cambia la grabación de Robert en un documental:
+#   largos/<largo>/video/voz/organica.<ext>          (todo el documental en una grabación)
+#   largos/<largo>/video/voz/organica/capN.<ext>     (una grabación por capítulo)
+# Limpia la voz, la empareja con su voz profesional, la alinea con el guion (Whisper) y la corta en capítulos
+# (voz_organica_largo.mjs), luego acomoda la animación y mezcla (tiempos_voz.mjs). Guarda todo en la rama.
+# No usa créditos de ElevenLabs. En un repo público no gasta minutos de GitHub.
+on:
+  push:
+    paths: ['largos/*/video/voz/organica*', 'largos/*/video/voz/organica/**']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: voz-organica-largo-${{ github.ref }}
+
+jobs:
+  voz:
+    if: ${{ !contains(github.event.head_commit.message, '[sin voz]') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar ffmpeg
+        timeout-minutes: 10
+        run: |
+          for i in 1 2 3; do timeout 240 sudo apt-get update -qq && timeout 300 sudo apt-get install -y -qq ffmpeg && break; sleep 10; done
+          ffmpeg -version | head -1
+      - name: Caché de Whisper
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-large-v3-turbo
+      - name: Whisper + Matchering
+        run: pip install -q --break-system-packages faster-whisper matchering soundfile
+      - name: Procesar la voz
+        run: |
+          for d in largos/*/video; do
+            ls "$d"/voz/organica* >/dev/null 2>&1 || continue
+            # si el largo no trae el script, se toma el del kit
+            for s in voz_organica_largo.mjs tiempos_voz.mjs; do
+              [ -f "$d/$s" ] || cp "motor/cine/$s" "$d/" 2>/dev/null || cp "motor/voz-organica/$s" "$d/" 2>/dev/null || true
+            done
+            echo "## $d" >> "$GITHUB_STEP_SUMMARY"
+            node "$d/voz_organica_largo.mjs" | tee -a "$GITHUB_STEP_SUMMARY"
+            (cd "$d" && node tiempos_voz.mjs) | tee -a "$GITHUB_STEP_SUMMARY"
+          done
+      - name: Guardar en la rama
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # solo lo ligero: capítulos (mp3 + tiempos), mezcla final y tiempos de la animación (los .wav intermedios pesan cientos de MB)
+          for f in largos/*/video/voz/cap*.mp3 largos/*/video/voz/cap*.json largos/*/video/voz/mezcla.m4a \
+                   largos/*/video/tiempos_voz.js largos/*/video/voz_organica_largo.mjs largos/*/video/tiempos_voz.mjs; do
+            [ -e "$f" ] && git add "$f"
+          done
+          git diff --cached --quiet && exit 0
+          git commit -m "Voz orgánica procesada [sin voz]"
+          for i in 1 2 3 4 5; do git pull --rebase -q origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && exit 0; sleep $((i * 5)); done
+          exit 1

@@ -22,6 +22,8 @@ Robert abre una sesión en claude.ai/code con este repositorio y escribe algo co
   (Robert en pantalla, `publicacion.md`, historial), termínalo y haz push.
 - **"Atiende mis pedidos"**: sigue "Pedidos desde la Sala".
 - **"Hazme un video largo sobre <tema>"** / **"Hazme un video libre: <idea>"**: como un pedido de tipo `largo` / `libre` (ver "Pedidos desde la Sala").
+- **"Shot <tema> orgánico"** / **"documental <tema> orgánico"**: igual que siempre, pero la voz la graba Robert (sin ElevenLabs):
+  sigue `motor/voz-organica/LEEME.md` (le mandas el guion para leer, él sube el audio al chat, lo guardas en `voz/` y haces push).
 - **"Apruebo la voz de <shot>"**: pon `"voz_aprobada": true` en el `narracion.json` de ese shot y haz push.
 - **"Junta el lote X a main"**: sigue la sección 6 de `PRODUCCION_NUBE.md`.
 Siempre: no renderices MP4 completos (lo hace GitHub con cada push), no publiques nada en redes, no uses la API de Claude

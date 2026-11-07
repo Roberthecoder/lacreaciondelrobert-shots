@@ -60,11 +60,28 @@ const aOriginal = (al) => {
   for (let i = 0; i < n; i++) { if (ini[i] == null) ini[i] = i ? fin[i - 1] : 0; if (fin[i] == null) fin[i] = ini[i]; }
   return { characters: [...texto], character_start_times_seconds: ini, character_end_times_seconds: fin };
 };
-if (enviado !== texto) console.log(`Pronunciación ajustada para ElevenLabs: ${PRON.filter((r) => new RegExp(r.de).test(texto)).map((r) => r.a).join(', ')}`);
+// Voz orgánica (7 nov 2026, pedido de Robert): "voz_organica": "voz/organica.m4a" en narracion.json = su propia grabación.
+// Se limpia, se empareja con su voz de ElevenLabs y Whisper la alinea con el guion (motor/voz-organica/). Sin créditos.
+const ORG = cfg.voz_organica ? path.resolve(dir, cfg.voz_organica) : null;
+if (enviado !== texto && !ORG) console.log(`Pronunciación ajustada para ElevenLabs: ${PRON.filter((r) => new RegExp(r.de).test(texto)).map((r) => r.a).join(', ')}`);
 const hash = crypto.createHash('sha1').update(`${VOICE_ID}|${MODEL}|${enviado}`).digest('hex').slice(0, 12);
-const mp3 = path.join(vozDir, 'narracion.mp3'), metaF = path.join(vozDir, 'narracion.json');
+const mp3 = path.join(vozDir, ORG ? 'organica_procesada.flac' : 'narracion.mp3'), metaF = path.join(vozDir, 'narracion.json');
 let meta = fs.existsSync(metaF) ? JSON.parse(fs.readFileSync(metaF, 'utf8')) : null;
-if (!meta || meta.hash !== hash || !fs.existsSync(mp3)) {
+if (ORG) {
+  if (!fs.existsSync(ORG)) throw new Error(`No encuentro la grabación de voz orgánica: ${cfg.voz_organica}`);
+  const proc = new URL('./voz-organica/procesar.py', import.meta.url).pathname;
+  const h = crypto.createHash('sha1').update(fs.readFileSync(ORG)).update(fs.readFileSync(proc)).update(texto).digest('hex').slice(0, 12);
+  if (!meta || meta.hash !== h || !fs.existsSync(mp3)) {
+    const gTxt = path.join(vozDir, '_guion.txt'), tJson = path.join(vozDir, '_tiempos.json');
+    fs.writeFileSync(gTxt, texto);
+    execFileSync('python3', [proc, ORG, mp3, '--guion', gTxt, '--tiempos', tJson], { stdio: 'inherit' });
+    const t = JSON.parse(fs.readFileSync(tJson, 'utf8'));
+    meta = { hash: h, modelo: 'organica', texto, enviado: texto, alignment: t.alignment, coincidencia: t.coincidencia };
+    fs.writeFileSync(metaF, JSON.stringify(meta));
+    fs.unlinkSync(gTxt); fs.unlinkSync(tJson);
+    console.log(`Voz orgánica lista (${t.coincidencia} % del guion encontrado en la grabación)`);
+  } else console.log('Voz orgánica en caché');
+} else if (!meta || meta.hash !== hash || !fs.existsSync(mp3)) {
   if (!KEY) throw new Error('Falta ELEVENLABS_API_KEY y la narración no está en caché.');
   // sin voice_settings: ElevenLabs usa los ajustes guardados en la voz
   const H = { 'xi-api-key': KEY };

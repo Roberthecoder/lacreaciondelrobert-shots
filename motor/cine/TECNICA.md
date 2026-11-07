@@ -26,6 +26,7 @@ calidad o mejores. Todo lo que dice aquí está leído del código de esta carpe
 | `preparar_fotos.py` | Fotos de `../fuentes/<carpetas>` → `video/img/…jpg` (EXIF, ≤ 2000 px) y `fotos.js`. | Carpetas del Core escritas a mano |
 | `validar.mjs` | `escenas.js` vs `guion_final.md`, fotos y `ILUSC`. | Exige `ilustraciones.jsx` e `ilustraciones2.jsx` (§8) |
 | `narrar_largo.mjs` | Voz ElevenLabs por capítulo (saldo / generar / recuperar), caché por hash. | Genérico |
+| `voz_organica_largo.mjs` | Voz GRABADA por Robert (sin créditos): limpia, empareja y alinea con Whisper; corta por capítulos → `voz/capN.mp3/json` (mismo formato). Workflow `workflows/voz-organica-largo.yml`. Ver `motor/voz-organica/LEEME.md`. | Genérico |
 | `tiempos_voz.mjs` | Tiempos por línea desde la voz real → `tiempos_voz.js`; une la voz; llama a la música; mezcla oficial → `voz/mezcla.m4a`. | Genérico |
 | `musica_largo.mjs` | Banda sonora original continua (orquesta sintetizada, un "cue" por capítulo). | `CUES` y efectos escritos para los capítulos del Core |
 | `audio-kit.mjs` | Sintetizador de los **shots** (lee `OM_SCENES`). | Solo referencia: nada de esta carpeta lo importa |

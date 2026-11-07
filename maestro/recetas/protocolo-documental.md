@@ -99,6 +99,10 @@ cuadro en las escenas tocadas. Cada corrección de Robert se convierte en una re
   (se perdieron ~5,170 créditos). Guardar siempre lo generado (`if: always()`).
 - Después: tiempos desde la voz real (`TIEMPOS_VOZ`) y re-render. Partir una frase en dos líneas no gasta créditos si el texto
   unido queda idéntico.
+- **Voz orgánica (7 nov 2026, «documental <tema> orgánico»):** Robert graba él mismo con el celular; sin ElevenLabs ni créditos.
+  Su grabación va en `video/voz/organica.flac` (todo el documental, se corta solo por capítulos) o `video/voz/organica/capN.flac`;
+  el workflow `voz-organica-largo.yml` la limpia, la empareja con su voz profesional, la alinea con Whisper (mismo formato que
+  ElevenLabs) y corre `tiempos_voz.mjs`. El candado de costo no aplica; el de animación sí. Detalle: `motor/voz-organica/LEEME.md`.
 
 ## 7. Música y mezcla
 - Música generada por código, **continua de principio a fin, sin bucles** (el #00 lleva 20 min originales), con el sintetizador de los

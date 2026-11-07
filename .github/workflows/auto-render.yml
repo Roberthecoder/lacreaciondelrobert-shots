@@ -4,6 +4,7 @@ name: Render automático
 #  - siempre la versión sin voz (o el gemelo mudo, si narracion.json trae "mudo");
 #  - la narrada solo si narracion.json trae "voz_aprobada": true (gasta créditos de ElevenLabs
 #    solo si el texto cambió; si no, usa la voz guardada en <shot>/voz/).
+#  - o si trae "voz_organica": "voz/<archivo>" (grabación de Robert: se limpia y se alinea con Whisper, sin créditos).
 # Los MP4 quedan como artifact (nombre del shot) y en el Release "borradores-<rama>".
 # Para saltarse el render en un push, poner [sin render] en el mensaje del commit.
 on:
@@ -134,14 +135,28 @@ jobs:
       - name: ¿Voz aprobada?
         id: voz
         run: |
-          V=$(node -p "require('./$SHOT/narracion.json').voz_aprobada === true")
+          # Voz orgánica (grabación de Robert en "voz_organica"): no gasta créditos y la grabó él mismo, así que cuenta como aprobada
+          O=$(node -p "!!require('./$SHOT/narracion.json').voz_organica")
+          V=$(node -p "require('./$SHOT/narracion.json').voz_aprobada === true || $O")
+          echo "organica=$O" >> "$GITHUB_OUTPUT"
           # Modelo: el de narracion.json, si no eleven_v4 (decisión de Robert, 29 oct 2026: todas las voces nuevas en v4)
           M=$(node -e "const fs=require('fs');const c=require('./$SHOT/narracion.json');console.log(c.modelo||'eleven_v4')")
           echo "aprobada=$V" >> "$GITHUB_OUTPUT"
           echo "modelo=$M" >> "$GITHUB_OUTPUT"
           echo "Voz aprobada: $V · modelo: $M"
 
-      - name: Versión narrada (voz clonada en ElevenLabs)
+      - name: Caché de Whisper (voz orgánica)
+        if: steps.voz.outputs.organica == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-large-v3-turbo
+
+      - name: Herramientas de voz orgánica (Whisper + Matchering)
+        if: steps.voz.outputs.organica == 'true'
+        run: pip install -q --break-system-packages faster-whisper matchering soundfile
+
+      - name: Versión narrada (voz clonada en ElevenLabs o voz orgánica de Robert)
         if: steps.voz.outputs.aprobada == 'true'
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
