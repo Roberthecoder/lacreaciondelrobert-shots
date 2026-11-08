@@ -1411,5 +1411,17 @@
   "ok": true,
   "id": "urn:li:ugcPost:7524896225498726400",
   "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7524896225498726400/"
+ },
+ {
+  "clave": "fun-02-hormiga-zombi",
+  "red": "tiktok",
+  "modo": "real",
+  "fecha": "2026-11-08T00:46:07Z",
+  "run": "42431144990",
+  "autorizo": "Robert, chat 7 nov 2026: la hormiga no llegó a TikTok (publicación del día)",
+  "ok": true,
+  "id": "v_inbox_file~v2.7705594915195242517",
+  "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
+  "borrador": true
  }
 ]
