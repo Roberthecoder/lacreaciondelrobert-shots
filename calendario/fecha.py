@@ -7,7 +7,9 @@
   shot normal y la rotación sigue al día siguiente. (Excepción: Día de Muertos 2026 tiene 3 festivos el 1 nov y 3 el 2 nov, en orden de número.) Los festivos SIEMPRE salen en orden de número.
 - Las series normales se numeran seguidas, sin huecos ni reservas. Científico #01 es la carpeta 003-semillas-luna.
 - EXTRA de Fungi Mati (Robert, 6 nov 2026): desde el 7 nov 2026, cada martes y sábado sale además el siguiente Fungi Mati a la
-  9:07 am, junto con el de la rotación (Robert, 7 nov 2026: misma hora y mismas alarmas de respaldo; antes 1:07 pm). Los días de festivo no hay extra. La numeración de Fungi Mati sigue siendo
+  9:07 am, junto con el de la rotación (Robert, 7 nov 2026: misma hora y mismas alarmas de respaldo; antes 1:07 pm).
+  Desde el 9 nov 2026 (Robert, 8 nov): si ese día ya sale un Fungi Mati por la rotación, o es día de festivo, el extra se recorre al
+  día siguiente: nunca salen dos Fungi Mati el mismo día. (Antes del 9 nov, los días de festivo no tenían extra.) La numeración de Fungi Mati sigue siendo
   el orden de publicación (rotación y extras comparten la cuenta).
 Uso:
   python3 calendario/fecha.py "Fungi Mati" 23      -> fecha del Fungi Mati #23
@@ -27,6 +29,7 @@ ESPECIALES = {('Científico', 1): '003-semillas-luna'}
 HORA = '09:07'                         # hora de la rotación diaria (CDMX)
 EXTRA_INICIO = dt.date(2026, 11, 7)    # extra de Fungi Mati martes y sábado
 EXTRA_DIAS = (1, 5)                    # martes=1, sábado=5 (date.weekday)
+RECORRER_INICIO = dt.date(2026, 11, 9)  # desde aquí el extra nunca coincide con otro Fungi Mati (Robert, 8 nov 2026)
 EXTRA_HORA = '09:07'   # misma hora que la rotación: lo cubren las mismas alarmas (Robert, 7 nov 2026)
 BASE = os.path.dirname(os.path.abspath(__file__))
 
@@ -51,16 +54,22 @@ def calendario(dias=800):
     """Lista de (fecha, [(serie, n, clave)]) día por día desde INICIO. Los shots normales que aún no existen se marcan con clave None."""
     fes = {}
     for f in hechos(): fes.setdefault(f['fecha'], []).append(('Festivo', f['numero'], f['clave'], HORA))
-    cars = carpetas(); cnt = {s: 1 for s in ORDEN}; k = 0; out = []
+    cars = carpetas(); cnt = {s: 1 for s in ORDEN}; k = 0; out = []; pendiente = False
     for i in range(dias):
         d = INICIO + dt.timedelta(days=i)
+        toca_extra = d >= EXTRA_INICIO and d.weekday() in EXTRA_DIAS
         if d.isoformat() in fes:
+            if toca_extra and d >= RECORRER_INICIO: pendiente = True   # el extra se recorre al día siguiente
             out.append((d, sorted(fes[d.isoformat()], key=lambda x: x[1]))); continue
         s = ORDEN[k % 6]; k += 1; n = cnt[s]; cnt[s] += 1
         xs = [(s, n, cars.get((s, n)), HORA)]
-        if d >= EXTRA_INICIO and d.weekday() in EXTRA_DIAS:
-            n = cnt['Fungi Mati']; cnt['Fungi Mati'] += 1
-            xs.append(('Fungi Mati', n, cars.get(('Fungi Mati', n)), EXTRA_HORA))
+        if toca_extra or pendiente:
+            if d >= RECORRER_INICIO and s == 'Fungi Mati':
+                pendiente = True          # ya sale un Fungi Mati hoy: el extra se recorre al día siguiente
+            else:
+                pendiente = False
+                n = cnt['Fungi Mati']; cnt['Fungi Mati'] += 1
+                xs.append(('Fungi Mati', n, cars.get(('Fungi Mati', n)), EXTRA_HORA))
         out.append((d, xs))
     return out
 
