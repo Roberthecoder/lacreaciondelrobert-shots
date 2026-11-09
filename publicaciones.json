@@ -1696,5 +1696,50 @@
   "id": "v_inbox_file~v2.7706193368984881172",
   "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
   "borrador": true
+ },
+ {
+  "clave": "rob-11",
+  "red": "facebook",
+  "modo": "real",
+  "fecha": "2026-11-09T18:06:34Z",
+  "run": "42670797458",
+  "autorizo": "Robert: Shot Robert 01–13 programados (pedido del 3 nov 2026)",
+  "ok": true,
+  "id": "1706211144179672",
+  "url": "https://www.facebook.com/reel/1706211144179672",
+  "nota": "ready"
+ },
+ {
+  "clave": "rob-11",
+  "red": "instagram",
+  "modo": "real",
+  "fecha": "2026-11-09T18:07:31Z",
+  "run": "42670797458",
+  "autorizo": "Robert: Shot Robert 01–13 programados (pedido del 3 nov 2026)",
+  "ok": true,
+  "id": "17873593854646764",
+  "url": "https://www.instagram.com/reel/Dfh8IOxDF9R/"
+ },
+ {
+  "clave": "rob-11",
+  "red": "threads",
+  "modo": "real",
+  "fecha": "2026-11-09T18:09:12Z",
+  "run": "42670797458",
+  "autorizo": "Robert: Shot Robert 01–13 programados (pedido del 3 nov 2026)",
+  "ok": true,
+  "id": "17913212154311535",
+  "url": "https://www.threads.com/@lacreaciondelrobert/post/Dfh8QU7OR5u"
+ },
+ {
+  "clave": "rob-11",
+  "red": "linkedin",
+  "modo": "real",
+  "fecha": "2026-11-09T18:10:10Z",
+  "run": "42670797458",
+  "autorizo": "Robert: Shot Robert 01–13 programados (pedido del 3 nov 2026)",
+  "ok": true,
+  "id": "urn:li:ugcPost:7525620895462215681",
+  "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7525620895462215681/"
  }
 ]
