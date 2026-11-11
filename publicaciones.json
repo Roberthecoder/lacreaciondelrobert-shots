@@ -1910,5 +1910,17 @@
   "id": "1598124761641130",
   "url": "https://www.facebook.com/reel/1598124761641130",
   "nota": "ready"
+ },
+ {
+  "clave": "fes-07-viruela",
+  "red": "tiktok",
+  "modo": "real",
+  "fecha": "2026-11-11T00:59:07Z",
+  "run": "42935348785",
+  "autorizo": "Robert, chat 10 nov 2026: el borrador de TikTok del día no llegó, reenviar",
+  "ok": true,
+  "id": "v_inbox_file~v2.7706711728818456597",
+  "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
+  "borrador": true
  }
 ]
