@@ -110,8 +110,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Herramientas
+        # apt a veces se cuelga en GitHub (11 nov 2026: 1 h atorado y se perdió la publicación de las 9:20):
+        # si ffmpeg ya viene en la máquina no se instala; si no, cada intento tiene límite de tiempo y se reintenta.
+        timeout-minutes: 15
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+          if ! command -v ffmpeg >/dev/null; then
+            for i in 1 2 3; do
+              timeout 180 sudo apt-get update -qq && timeout 240 sudo apt-get install -y -qq ffmpeg >/dev/null && break
+              echo "apt no respondió (intento $i); reintento"; sleep 10
+            done
+          fi
+          ffmpeg -version | head -1
           pip install -q requests
       - name: Leer el pedido
         run: |
