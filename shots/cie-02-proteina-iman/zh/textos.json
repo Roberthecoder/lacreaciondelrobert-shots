@@ -26,15 +26,16 @@
  "El campo cambia *la probabilidad.*": "磁场改变的 *是概率。*",
  "Con 10 mT, la luz cae *casi a la mitad.*": "加上10 mT， 荧光 *降到约一半。*",
  "Con radio a 604 MHz: *célula por célula.*": "再加604 MHz射频： *逐个细胞可见。*",
- "La misma idea, como *hipótesis,* en las aves.": "同样的机制， 作为 *假说，* 也用来解释鸟类导航。",
+ "La misma idea, como *hipótesis,* en las aves.": "同样的机制， 在鸟类身上 *仍是假说。*",
  "Cuántica *a temperatura ambiente.*": "室温下的 *量子效应。*",
  "S": "S",
- "Abrahams y colegas · Oxford": "Abrahams 等 · 牛津大学",
+ "Abrahams y colegas · Oxford": "Abrahams 等 · 牛津",
  "Nature": "Nature",
  "FLUORESCENCIA · 1 CÉLULA": "荧光 · 单个细胞",
  "MagLOV 2 · 0 → 10 mT": "MagLOV 2 · 0 → 10 mT",
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
  "@lacreaciondelrobert": "@lacreaciondelrobert",
- "no emite": "不发光"
+ "no emite": "不发光",
+ "emite": "发光"
 }

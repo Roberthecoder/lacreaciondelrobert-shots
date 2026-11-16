@@ -7,11 +7,11 @@
  "ácido láctico → PLA": "乳酸 → PLA",
  "TEMPERATURA": "温度",
  "POR DENTRO · cadena de PLA + agua": "内部 · PLA链 + 水",
- "PLA DEGRADADO EN 1 AÑO": "1年内PLA降解",
+ "PLA DEGRADADO EN 1 AÑO": "1年内PLA降解率",
  "¿PET o PLA?": "PET还是PLA？",
  "mucho PLA = lote dañado": "PLA混太多 = 整批受损",
  "fermentar · purificar · fabricar": "发酵 · 提纯 · 制造",
- "SE ABLANDA DESDE": "开始软化",
+ "SE ABLANDA DESDE": "软化温度",
  "¿Estafa?": "骗局？",
  "TECNOLOGÍA": "技术",
  "¿compostable DÓNDE?": "在哪儿可堆肥？",
@@ -43,5 +43,5 @@
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
  "@lacreaciondelrobert": "@lacreaciondelrobert",
- "a medio camino": "进行中"
+ "a medio camino": "还在半路"
 }

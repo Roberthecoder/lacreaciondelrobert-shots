@@ -11,7 +11,7 @@
 灰色：环境（吃掉水和土壤中污染物的微生物）
 棕色：干旱地区和沙漠
 金色：生物信息学（用计算机解读和比较DNA）
-紫色：法律与伦理；黑色：生物恐怖和生物武器
+紫色：法律与伦理；深色：生物恐怖和生物武器
 2004年，联合国教科文组织（UNESCO）的 Edgar J. DaSilva 汇总了这10种颜色。不同作者的定义略有不同：在他的列表里，灰色是传统发酵，紫色是专利；这里采用后来的版本（Kafarski 2012；Thieman 和 Palladino 2010）。它们很少单独出现：胰岛素由微生物生产（红色），在工厂里完成（白色）。橙色（科普）不在 DaSilva 的列表里，来自部分教材（Thieman 和 Palladino, 2010），这里也加上了。
 画面为示意图。
 资料来源：DaSilva 2004（Electronic Journal of Biotechnology）；Kafarski 2012（CHEMIK）；Thieman & Palladino 2010；Kuddus et al. 2024（Microbial Biotechnology）。
