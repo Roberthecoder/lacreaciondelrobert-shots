@@ -9,7 +9,21 @@
   const LETRAS = /[A-Za-zÁÉÍÓÚÑáéíóúñü¿¡]/;
   window.__TEXTOS = window.__TEXTOS || {};
   const anota = (s, donde) => { if (typeof s === 'string' && LETRAS.test(s)) { const k = s; (window.__TEXTOS[k] = window.__TEXTOS[k] || new Set()).add(donde); } };
-  const tr = (s) => { const d = window.__IDIOMA_DIC; return (d && typeof s === 'string' && Object.prototype.hasOwnProperty.call(d, s) && d[s] != null) ? d[s] : s; };
+  // Además del diccionario exacto: "__reglas": [["^día (\\d+)$", "第$1天"], …] para contadores animados (cada cuadro da otro número)
+  // y "__millones": true para pasar «1,400 millones» → «14亿» y «3 millones» → «300万» (la forma natural en chino).
+  const millones = (s) => s.replace(/([\d,.]+)\s*millones/g, (m, n) => {
+    const v = parseFloat(n.replace(/,/g, '')) * 1e6;
+    return v >= 1e8 ? `${+(v / 1e8).toFixed(2)}亿` : `${+(v / 1e4).toFixed(0)}万`;
+  });
+  const tr = (s) => {
+    const d = window.__IDIOMA_DIC;
+    if (!d || typeof s !== 'string') return s;
+    if (Object.prototype.hasOwnProperty.call(d, s) && d[s] != null && typeof d[s] === 'string') return d[s];
+    let t = s;
+    for (const [re, rep] of d.__reglas || []) t = t.replace(new RegExp(re), rep);
+    if (d.__millones) t = millones(t);
+    return t;
+  };
   const patch = (R) => {
     if (!R || R.__idioma) return R;
     const ce = R.createElement;
@@ -18,6 +32,20 @@
       if (props) {
         let np = null;
         for (const k of Object.keys(props)) {
+          // listas de renglones, p. ej. lines={[{ t:'…' }, { t:'…' }]} (Headline de los primeros shots)
+          if (Array.isArray(props[k]) && props[k].some((o) => o && typeof o === 'object' && (typeof o.t === 'string' || typeof o.texto === 'string'))) {
+            const arr = props[k].map((o) => {
+              if (!o || typeof o !== 'object') return o;
+              let n = o;
+              for (const f of ['t', 'texto']) if (typeof o[f] === 'string') {
+                if (window.__IDIOMA_MODO === 'recolectar') anota(o[f], `${nombre}.${k}[].${f}`);
+                const t = tr(o[f]); if (t !== o[f]) n = { ...n, [f]: t };
+              }
+              return n;
+            });
+            if (arr.some((o, i) => o !== props[k][i])) { np = np || { ...props }; np[k] = arr; }
+            continue;
+          }
           if (!PROPS.has(k) || typeof props[k] !== 'string') continue;
           if (window.__IDIOMA_MODO === 'recolectar') anota(props[k], `${nombre}.${k}`);
           const t = tr(props[k]); if (t !== props[k]) { np = np || { ...props }; np[k] = t; }

@@ -73,5 +73,52 @@
  "el mundo, libre de viruela": "全世界消灭天花",
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
- "@lacreaciondelrobert": "@lacreaciondelrobert"
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "día 3": "第3天",
+ "día 4": "第4天",
+ "día 5": "第5天",
+ "día 6": "第6天",
+ "día 7": "第7天",
+ "día 9": "第9天",
+ "día 10": "第10天",
+ "día 11": "第11天",
+ "día 12": "第12天",
+ "día 13": "第13天",
+ "día 14": "第14天",
+ "día 15": "第15天",
+ "día 16": "第16天",
+ "día 18": "第18天",
+ "día 19": "第19天",
+ "día 20": "第20天",
+ "día 21": "第21天",
+ "+1 millones": "+100万",
+ "+9 millones": "+900万",
+ "+35 millones": "+3500万",
+ "+91 millones": "+9100万",
+ "+187 millones": "+1.87亿",
+ "+333 millones": "+3.33亿",
+ "+541 millones": "+5.41亿",
+ "+809 millones": "+8.09亿",
+ "+1,031 millones": "+10.31亿",
+ "+1,188 millones": "+11.88亿",
+ "+1,293 millones": "+12.93亿",
+ "+1,356 millones": "+13.56亿",
+ "+1,388 millones": "+13.88亿",
+ "+1,399 millones": "+13.99亿",
+ "+1,400 millones": "+14亿",
+ "×1 vacunas": "×1 剂",
+ "×2 vacunas": "×2 剂",
+ "×3 vacunas": "×3 剂",
+ "×4 vacunas": "×4 剂",
+ "__reglas": [
+  [
+   "^día (\\d+)$",
+   "第$1天"
+  ],
+  [
+   "^×(\\d+) vacunas$",
+   "×$1 剂"
+  ]
+ ],
+ "__millones": true
 }
