@@ -49,9 +49,9 @@
  "El viaje de regreso": "回程之旅",
  "RRS · Estados Unidos": "RRS · 美国",
  "para Aluminum Association y CMI (industria)": "受 Aluminum Association 和 CMI（行业）委托",
- "día ": "天数 ",
- " mil millones": "0亿",
+ "día ": "天数：",
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
- "@lacreaciondelrobert": "@lacreaciondelrobert"
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "__millones": true
 }
