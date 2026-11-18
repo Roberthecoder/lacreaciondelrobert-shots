@@ -13,6 +13,10 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 - Paquete 1: los 25 shots publicados (30 oct–16 nov), traducidos y revisados por agentes independientes; videos mandados al chat
   y textos en `publicar/rednote/paquete-01.md`. RedNote no tiene API: Robert sube y programa a mano (creator.xiaohongshu.com).
 - Siguiente: traducir cada semana los shots nuevos (paquete 2…). Recomendado: que un hablante de chino vea 1–2 antes.
+- 18 nov: Robert autorizó traducir y renderizar TODOS (435 más; repo PÚBLICO mientras tanto) y se fue 8 h. Plan: textos
+  (scratchpad/zh/<k>-para.json) → traductores por grupos de 15 (scratchpad/zh/grupo_00…28, PROMPT_TRAD.md) → revisores
+  (PROMPT_REV.md) → commit a main [sin render] → workflow_dispatch render-idioma.yml en tandas de ~60 claves → videos-idioma →
+  paquetes publicar/rednote/paquete-02… en orden de calendario. Sin narrado: fun-149…155 y libre-01 (se hacen cuando tengan voz).
 
 ## DOCUMENTALES 001–005 (7 nov 2026) — GUIONES VERIFICADOS, ESPERAN A ROBERT
 - En el repo `lacreaciondelrobert-largos`, una rama por documental (`largo-render/doc-00N-<tema>`), carpeta `largos/doc-00N-<tema>/`
