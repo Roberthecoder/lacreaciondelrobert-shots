@@ -57,7 +57,6 @@
  "semana 7": "第7周",
  "semana 8": "第8周",
  "semana 9": "第9周",
- " millones": "00万",
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
  "@lacreaciondelrobert": "@lacreaciondelrobert",
@@ -66,5 +65,6 @@
    "^semana (\\d+)$",
    "第$1周"
   ]
- ]
+ ],
+ "__millones": true
 }
