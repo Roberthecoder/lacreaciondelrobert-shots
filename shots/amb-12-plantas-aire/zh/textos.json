@@ -29,7 +29,7 @@
  "campana con salida afuera": "外排式油烟机",
  "bonita: sí · purificador: no": "好看：是 · 净化器：不是",
  "esquema (no a escala)": "示意图（未按比例）",
- "No es purificador: *hasta 1,000 por m².*": "它不是净化器： *每 m² 要多达1,000株。*",
+ "No es purificador: *hasta 1,000 por m².*": "它不是净化器： *每m²多达1,000株。*",
  "NASA, 1989: *espacios sellados.*": "NASA，1989年： *针对密闭空间。*",
  "*Menos de 1 m³,* 24 horas.": "*不到1m³，* 24小时。",
  "¿Y en *tu sala?*": "那在 *你家客厅呢？*",
@@ -52,5 +52,10 @@
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
  "@lacreaciondelrobert": "@lacreaciondelrobert",
- "__reglas": [["^(\\d+) resultados$", "$1 个结果"]]
+ "__reglas": [
+  [
+   "^(\\d+) resultados$",
+   "$1 个结果"
+  ]
+ ]
 }

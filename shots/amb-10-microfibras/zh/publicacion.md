@@ -8,7 +8,7 @@
 怎么做有用？用冷水、短程、装满再洗；水量大的轻柔程序反而掉得更多。2020年，一款装在洗衣机出水口的过滤器拦住了约78%的纤维。
 注意：光是穿着衣服也会掉纤维。
 示意图。
-参考：Napper 与 Thompson（普利茅斯大学，2016）；苏格兰污水处理厂研究（2016）；智利污泥研究（2019）；洗衣机过滤器研究（2020）。
+参考：Napper 与 Thompson，Marine Pollution Bulletin（2016）；Murphy 等，Environ. Sci. Technol.（2016）；Corradini 等，Sci. Total Environ.（2019）；Cotton 等（2020）；Kelly 等（2019）；Napper、Barrett 与 Thompson（2020）。
 你洗衣服用冷水还是热水？👇
 我是 Robert，来自 La Creación del Robert 🌱
 
