@@ -13,7 +13,7 @@
   // y "__millones": true para pasar «1,400 millones» → «14亿» y «3 millones» → «300万» (la forma natural en chino).
   const millones = (s) => s.replace(/([\d,.]+)\s*millones/g, (m, n) => {
     const v = parseFloat(n.replace(/,/g, '')) * 1e6;
-    return v >= 1e8 ? `${+(v / 1e8).toFixed(2)}亿` : `${+(v / 1e4).toFixed(0)}万`;
+    return v >= 1e8 ? `${+(v / 1e8).toFixed(2)}亿` : v >= 1e4 ? `${+(v / 1e4).toFixed(2)}万` : `${+v.toFixed(0)}`;
   });
   const tr = (s) => {
     const d = window.__IDIOMA_DIC;
@@ -59,9 +59,11 @@
         for (let i = 0; i < kids.length; i++) {
           const a = kids[i], b = kids[i + 1];
           const num = typeof a === 'number' || (typeof a === 'string' && /^[\d.,]+$/.test(a.trim()));
-          if (num && typeof b === 'string' && /^\s*(mil )?millones/.test(b)) {
-            const n = parseFloat(String(a).replace(/,/g, '')) * (/^\s*mil /.test(b) ? 1000 : 1);
-            k2.push(`${n} millones` + b.replace(/^\s*(mil )?millones/, '')); i++;
+          const m = typeof b === 'string' && b.match(/^\s*(mil millones|millones|M|mil)(?![\wáéíóú])/);
+          if (num && m) {
+            const f = { 'mil millones': 1000, 'millones': 1, 'M': 1, 'mil': 0.001 }[m[1]];
+            const n = +(parseFloat(String(a).replace(/,/g, '')) * f).toPrecision(12);
+            k2.push(`${n} millones` + b.slice(m[0].length)); i++;
           } else k2.push(a);
         }
         kids = k2;
