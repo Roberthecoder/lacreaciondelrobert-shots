@@ -1,0 +1,19 @@
+# Paso para pegar en el workflow de render, ANTES de renderizar.
+# Revisa solo las carpetas de video que cambiaron en el push. Ajusta VIDEOS al patrón de carpetas del sistema nuevo.
+      - name: Candado de verificación de hechos
+        env:
+          VIDEOS: 'videos'          # carpeta que contiene una subcarpeta por video
+        run: |
+          set -u
+          BASE="${{ github.event.before }}"
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ]; then
+            git fetch -q --depth=2 origin "${{ github.sha }}" && BASE=$(git rev-parse HEAD~1 2>/dev/null || echo "")
+          else
+            git fetch -q origin "$BASE" 2>/dev/null || true
+          fi
+          CAMBIADAS=$(git diff --name-only "$BASE" "${{ github.sha }}" 2>/dev/null | grep "^$VIDEOS/" | cut -d/ -f1-2 | sort -u)
+          [ -n "$CAMBIADAS" ] || { echo "Ningún video cambió."; exit 0; }
+          EXISTEN=(); for d in $CAMBIADAS; do [ -d "$d" ] && EXISTEN+=("$d"); done
+          [ ${#EXISTEN[@]} -gt 0 ] || exit 0
+          bash verificacion/candado.sh "${EXISTEN[@]}" || {
+            echo "::error title=Sin verificación::Hay videos sin «VEREDICTO: APROBADO». Verifica el guion antes de renderizar."; exit 1; }
