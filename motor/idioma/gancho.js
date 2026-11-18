@@ -52,6 +52,20 @@
         }
         if (np) props = np;
       }
+      // Contador armado por partes: {cifra}{' millones…'} → se unen para convertir a 万/亿 con "__millones": true.
+      const d = window.__IDIOMA_DIC;
+      if (d && d.__millones && kids.length > 1) {
+        const k2 = [];
+        for (let i = 0; i < kids.length; i++) {
+          const a = kids[i], b = kids[i + 1];
+          const num = typeof a === 'number' || (typeof a === 'string' && /^[\d.,]+$/.test(a.trim()));
+          if (num && typeof b === 'string' && /^\s*(mil )?millones/.test(b)) {
+            const n = parseFloat(String(a).replace(/,/g, '')) * (/^\s*mil /.test(b) ? 1000 : 1);
+            k2.push(`${n} millones` + b.replace(/^\s*(mil )?millones/, '')); i++;
+          } else k2.push(a);
+        }
+        kids = k2;
+      }
       kids = kids.map((c) => { if (typeof c !== 'string') return c; if (window.__IDIOMA_MODO === 'recolectar') anota(c, `${nombre}>texto`); return tr(c); });
       return ce.call(this, type, props, ...kids);
     };
