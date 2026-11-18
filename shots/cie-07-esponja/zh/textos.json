@@ -5,7 +5,7 @@
  "bacterias en la esponja": "海绵里的细菌",
  "edificio de bacterias": "细菌公寓楼",
  "bacterias en 1 cm³ (algunas zonas)": "1 cm³里的细菌（某些区域）",
- "grupos de bacterias": "类细菌",
+ "grupos de bacterias": "细菌类群",
  "¿agua caliente o micro?": "热水还是微波炉？",
  "de 4 comparadas: no tenían menos": "比较的4块：细菌并不更少",
  "sospecha: culpable del olor": "怀疑：臭味元凶",
@@ -23,7 +23,6 @@
  "Cámbiala *cada semana.*": "换掉它， *每周一次。*",
  "Dale *fecha de caducidad.*": "给它定个 *保质期。*",
  "1 cm": "1 cm",
- " mil millones": "0亿",
  "Alemania · 14 esponjas usadas": "德国 · 14块用过的海绵",
  "Cardinale et al. · Scientific Reports": "Cardinale et al. · Scientific Reports",
  "5 µm": "5 µm",
@@ -34,5 +33,12 @@
  "CADA SEMANA": "每周一次",
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
- "@lacreaciondelrobert": "@lacreaciondelrobert"
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "__millones": true,
+ "__reglas": [
+  [
+   "^0 millones$",
+   "0"
+  ]
+ ]
 }
