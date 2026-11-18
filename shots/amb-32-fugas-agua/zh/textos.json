@@ -15,7 +15,7 @@
  "Lago de Chapala": "查帕拉湖",
  "fugas · evaporación · fallas": "漏水 · 蒸发 · 设施缺陷",
  "Jalisco 2025: agua de Chapala, ~¼ no llega (25–30 %)": "哈利斯科2025：查帕拉湖的水，约¼到不了（25–30 %）",
- "de m³ de agua al día": "每天的水（m³）",
+ "de m³ de agua al día": "每天的水量（m³）",
  "perdida o no cobrada · todo el mundo": "漏失或未收费 · 全世界",
  "albercas olímpicas al día": "每天的奥运泳池数",
  "olímpicas de 2 m de hondo (2,500 m³)": "2 m深的奥运泳池（2,500 m³）",
@@ -40,9 +40,9 @@
  "presión": "压力",
  "Liemberger y Wyatt": "Liemberger 和 Wyatt",
  "Water Supply · agua perdida o no cobrada": "Water Supply · 漏失或未收费的水",
- " millones": " 百万",
  " L": " L",
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
- "@lacreaciondelrobert": "@lacreaciondelrobert"
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "__millones": true
 }

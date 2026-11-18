@@ -21,7 +21,7 @@
  "bacteria nueva · la campeona": "新细菌 · 冠军",
  "4 glucosas → 1 glutamato": "4个葡萄糖 → 1个谷氨酸",
  "probablemente paloma": "可能是鸽子",
- "millones de toneladas al año": "百万吨 / 年",
+ "millones de toneladas al año": "万吨 / 年",
  "de glutamato de sodio": "谷氨酸钠",
  "el glutamato: hecho por bacterias": "谷氨酸：细菌造的",
  "No salió de un alga: *lo hizo una bacteria.*": "它不是来自海藻： *是细菌造的。*",
@@ -48,5 +48,19 @@
  "BACTERIAS": "细菌",
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
- "@lacreaciondelrobert": "@lacreaciondelrobert"
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "__reglas": [
+  [
+   "^0\\.0$",
+   "0"
+  ],
+  [
+   "^0\\.(\\d)$",
+   "$10"
+  ],
+  [
+   "^([1-9])\\.(\\d)$",
+   "$1$20"
+  ]
+ ]
 }
