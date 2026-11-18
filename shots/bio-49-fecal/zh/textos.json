@@ -10,7 +10,7 @@
  "filtro": "过滤",
  "esporas": "芽孢",
  "cápsulas": "胶囊",
- "día ": "第",
+ "día ": "día ",
  "¿vitaminas?": "维生素？",
  "hechas a partir de caca humana": "用人类粪便制成",
  "bacterias en el colon (estimación 2016)": "结肠里的细菌（2016年估计）",
@@ -33,7 +33,7 @@
  "No son vitaminas: *vienen de caca.*": "这不是维生素： *它来自粪便。*",
  "Un *bosque* de bacterias.": "一片细菌的 *森林。*",
  "El antibiótico *lo desordena.*": "抗生素 *把它打乱。*",
- "En el hueco: *C. difficile.*": "空出来的位置： *C. difficile。*",
+ "En el hueco: *C. difficile.*": "空出来的位置： C. difficile *乘机而入。*",
  "Sus esporas *se quedan.*": "它的芽孢 *留了下来。*",
  "¿Y si *devuelves el bosque?*": "如果 *把森林还回去呢？*",
  "2013: caca de donante, *por la nariz.*": "2013年：供者粪便， *经鼻导管。*",
@@ -45,7 +45,7 @@
  "4 al día, 3 días. *Sin sonda.*": "每天4粒，共3天。 *不用导管。*",
  "Semillas de *un bosque nuevo.*": "这是 *新森林的种子。*",
  "5 µm": "5 µm",
- " billones": "万亿",
+ " billones": " billones",
  "recaída 2": "复发2",
  "recaída 3": "复发3",
  "donante sano": "健康供者",
@@ -64,5 +64,15 @@
  "1.er producto de microbiota fecal aprobado": "首个获批的粪菌产品",
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
- "@lacreaciondelrobert": "@lacreaciondelrobert"
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "__reglas": [
+  [
+   "^(\\d+) billones$",
+   "$1万亿"
+  ],
+  [
+   "^día (\\d+)$",
+   "第$1天"
+  ]
+ ]
 }

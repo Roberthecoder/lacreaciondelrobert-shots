@@ -1,7 +1,10 @@
 {
  "tú": "你",
  "letras en tu genoma": "你基因组里的字母",
- "A": "A", "T": "T", "C": "C", "G": "G",
+ "A": "A",
+ "T": "T",
+ "C": "C",
+ "G": "G",
  "A con T · C con G": "A配T · C配G",
  "1 letra por segundo, sin parar": "每秒1个字母，不停地读",
  "Proyecto Genoma Humano · 13 años": "人类基因组计划 · 13年",
@@ -36,7 +39,7 @@
  "Los tramos *más repetidos*": "那些 *重复最多的* 片段",
  "De 100 millones a *unos 500*": "从1亿美元 *降到约500*",
  " años": "年",
- " millones": "百万",
+ " millones": " millones",
  "Costo de leer un genoma humano": "读取一个人类基因组的成本",
  "$10 mil": "$1万",
  "$1 millón": "$100万",
@@ -48,5 +51,6 @@
  "Science · Telómero a Telómero": "Science · 端粒到端粒",
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
- "@lacreaciondelrobert": "@lacreaciondelrobert"
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "__millones": true
 }

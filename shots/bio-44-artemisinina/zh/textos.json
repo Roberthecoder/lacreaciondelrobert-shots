@@ -44,8 +44,8 @@
  "Campo… *o levadura.*": "田野…… *或酵母。*",
  "artemisinina": "青蒿素",
  "contra la malaria": "抗疟疾",
- " M": "00万",
- " mil": "000",
+ " M": " M",
+ " mil": " mil",
  "O": "O",
  "NOBEL": "诺贝尔奖",
  "Tu Youyou y su equipo · Pekín": "屠呦呦及团队 · 北京",
@@ -58,8 +58,29 @@
  "tanque de levadura": "酵母发酵罐",
  "Amyris y Keasling · California": "Amyris 与 Keasling · 加州",
  "Paddon et al., Nature": "Paddon et al., Nature",
- "1.6 g/L": "1.6 g/L", "1.8 g/L": "1.8 g/L", "2.7 g/L": "2.7 g/L", "4.8 g/L": "4.8 g/L", "8.6 g/L": "8.6 g/L", "14.4 g/L": "14.4 g/L", "19.5 g/L": "19.5 g/L", "22.7 g/L": "22.7 g/L", "24.3 g/L": "24.3 g/L", "24.9 g/L": "24.9 g/L", "25.0 g/L": "25.0 g/L",
+ "1.6 g/L": "1.6 g/L",
+ "1.8 g/L": "1.8 g/L",
+ "2.7 g/L": "2.7 g/L",
+ "4.8 g/L": "4.8 g/L",
+ "8.6 g/L": "8.6 g/L",
+ "14.4 g/L": "14.4 g/L",
+ "19.5 g/L": "19.5 g/L",
+ "22.7 g/L": "22.7 g/L",
+ "24.3 g/L": "24.3 g/L",
+ "24.9 g/L": "24.9 g/L",
+ "25.0 g/L": "25.0 g/L",
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
- "@lacreaciondelrobert": "@lacreaciondelrobert"
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "__millones": true,
+ "__reglas": [
+  [
+   "^(\\d+) M$",
+   "$1百万"
+  ],
+  [
+   "^(\\d+) mil$",
+   "$1千"
+  ]
+ ]
 }
