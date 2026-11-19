@@ -1,5 +1,14 @@
 {
- "__reglas": [["^corregidas por una persona: (\\d+) de 86$", "人工修正：$1/86"], ["^(\\d+) min$", "$1 分钟"]],
+ "__reglas": [
+  [
+   "^corregidas por una persona: (\\d+) de 86$",
+   "人工修正：$1/86"
+  ],
+  [
+   "^(\\d+) min$",
+   "$1 分钟"
+  ]
+ ],
  "lo cosió un cirujano": "外科医生缝的",
  "cerdo vivo · Science Robotics 2022": "活猪 · Science Robotics 2022",
  "cámara 3D": "3D 摄像头",
@@ -25,14 +34,14 @@
  "en estos estudios: ninguna persona operada": "这些研究：没有给人做手术",
  "robot + persona vigilando ✔": "机器人 + 有人看着 ✔",
  "No lo cosió un cirujano: *lo cosió un robot.*": "不是医生缝的： *是机器人缝的。*",
- "Ve en 3D, sigue la respiración *y planea.*": "3D视觉、跟随呼吸 *并做规划。*",
+ "Ve en 3D, sigue la respiración *y planea.*": "3D视觉、随呼吸 *并规划。*",
  "Una persona aprueba; *el robot cose.*": "人来批准， *机器人缝合。*",
  "2022: *cuatro cerdos.*": "2022年： *四头猪。*",
  "Separación *más pareja.*": "针距 *更均匀。*",
  "¿Ya te opera *un robot solo?*": "机器人已能 *独自给你做手术？*",
- "Todavía no: *1 de cada 3* la corrigió una persona.": "还不能： *每3针有1针* 要人修正。",
- "Robot: *62 min.* Cirujano: *26.*": "机器人： *62分钟。* 医生： *26。*",
- "2025: *8 vesículas,* clips y corte él solo.": "2025年： *8个胆囊，* 自主夹剪。",
+ "Todavía no: *1 de cada 3* la corrigió una persona.": "还不能： *每3针1针* 要人修正。",
+ "Robot: *62 min.* Cirujano: *26.*": "机器人 *62分钟，* 医生 *26。*",
+ "2025: *8 vesículas,* clips y corte él solo.": "2025年： *8个胆囊* 自主夹剪。",
  "Falta: *sangrado y movimiento.*": "还缺： *出血和运动测试。*",
  "Un robot… *con alguien vigilando.*": "是机器人…… *但有人看着。*",
  "planea": "规划",

@@ -1,5 +1,10 @@
 {
- "__reglas": [["^ · mes (\\d+)$", " · 第$1个月"]],
+ "__reglas": [
+  [
+   "^ · mes (\\d+)$",
+   " · 第$1个月"
+  ]
+ ],
  "¿agua?": "水？",
  "cómputo para entrenar IA": "训练 AI 的算力",
  "1 año después": "1年后",
@@ -20,10 +25,10 @@
  "No es agua: *es cómputo.* Cada año, *×5.*": "不是水： *是算力。* 每年 *×5。*",
  "Ley de Moore: *×2 cada 2 años.*": "摩尔定律： *每2年×2。*",
  "Cómputo de IA: *×2 cada ~5 meses.*": "AI 算力： *每~5个月×2。*",
- "Antes de 2010: Moore. *Luego, se disparó.*": "2010年前：摩尔速度。 *之后，猛增。*",
+ "Antes de 2010: Moore. *Luego, se disparó.*": "2010年前随摩尔， *之后猛增。*",
  "Desde 2020: *unas 10,000 veces.*": "2020年以来： *约1万倍。*",
  "¿De dónde *sale tanto?*": "这么多算力 *从哪来？*",
- "Más chips, *más tiempo,* chips más potentes.": "更多芯片、 *更长时间、* 更强芯片。",
+ "Más chips, *más tiempo,* chips más potentes.": "芯片更多、 *时间更长、* 芯片更强。",
  "Entrenarlas cuesta *×3.5 cada año.*": "训练成本 *每年×3.5。*",
  "Ya rondan *un gigavatio.*": "已接近 *1吉瓦。*",
  "Alguien paga *la cuenta y la luz.*": "总有人要 *买单、付电费。*",
