@@ -8,7 +8,7 @@ huitlacoche（玉米黑粉菌）指的是真菌 Ustilago maydis 感染玉米穗�
 在世界多数地方，Ustilago maydis 被视为玉米的病原菌；在墨西哥它却是美食，在多种原住民语言里都有名字（特拉斯卡拉的纳瓦特尔语 cuitlacoche、尤卡坦的玛雅语 ta’ chak、瓦哈卡的萨波特克语 bia’huí’ 等），可做芝士薄饼、塔可等。它还是研究真菌如何让植物生病的模式生物。
 示意图。
 参考：Pataky 和 Chandler, Mycologia 2003；Villagrán 等, Molecules 2023；威斯康星大学麦迪逊分校推广站；du Toit 和 Pataky, Plant Disease 1999；Ferris 和 Walbot, J. Fungi 2021；Basse 和 Steinberg, Mol. Plant Pathol. 2004；Brefort 等, Annu. Rev. Phytopathol. 2009。
-你会想尝尝这种“玉米松露”吗？👇
+在你们那里，它叫 huitlacoche 还是 cuitlacoche？👇
 我是 Robert，来自 La Creación del Robert 🌱
 
 话题: #真菌 #墨西哥美食 #玉米黑粉菌 #科普 #生物学
