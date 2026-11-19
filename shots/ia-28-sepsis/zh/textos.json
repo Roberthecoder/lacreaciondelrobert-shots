@@ -1,5 +1,14 @@
 {
- "__reglas": [["^(\\d+) de cada 100 hospitalizados$", "每100名住院者中$1名"], ["^(\\d+) sin antibiótico a tiempo$", "$1例未及时用抗生素"]],
+ "__reglas": [
+  [
+   "^(\\d+) de cada 100 hospitalizados$",
+   "每100名住院者中$1名"
+  ],
+  [
+   "^(\\d+) sin antibiótico a tiempo$",
+   "$1例未及时用抗生素"
+  ]
+ ],
  "IA en cientos de hospitales": "数百家医院在用的AI",
  "infección": "感染",
  "tu defensa se desborda": "免疫反应失控",
@@ -27,7 +36,7 @@
  "¿Quién *lo midió?*": "是谁 *测的？*",
  "Pruébala *por fuera*": "要做 *外部验证*",
  "Así *no te cuida*": "这样 *保护不了你*",
- "2 de 3": "3例中2例",
+ "2 de 3": "2/3",
  "casos sin detectar": "未被发现的病例",
  "Universidad de Michigan": "密歇根大学",
  "Wong et al. · JAMA Internal Medicine": "Wong et al. · JAMA Internal Medicine",
