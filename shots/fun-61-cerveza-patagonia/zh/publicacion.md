@@ -6,7 +6,7 @@
 但拉格酵母 Saccharomyces pastorianus 是两个物种的杂交种。一个是 Saccharomyces cerevisiae，也就是面包酵母，也用来酿艾尔啤酒。另一个呢？多年来一直是个谜。
 2011年，一个来自阿根廷、美国和葡萄牙的团队在巴塔哥尼亚的 Nothofagus（南方山毛榉）森林里找到了它：在树皮、土壤和长在树枝上的 Cyttaria 真菌里。他们把它命名为 Saccharomyces eubayanus：它的基因组草图与拉格酵母中不属于 cerevisiae 的那一半吻合度达99.5 %。
 两半各有贡献：野生的那一半耐寒，cerevisiae 则能吃掉麦芽里一种野生酵母吃不了的糖（麦芽三糖）。它们一起在10到15 °C 下发酵。
-还有：它的野生部分更像西藏的酵母，而不是巴塔哥尼亚的；2022年在爱尔兰也发现了它。它是怎么到欧洲的，仍在研究中。
+还有：拉格酵母的野生部分更像西藏的 S. eubayanus 菌株，而不是巴塔哥尼亚的（2016）；2022年，在爱尔兰首次发现了欧洲的菌株。它是怎么到欧洲的，仍在研究中。
 如今，全世界卖出的啤酒绝大多数都是这一类。
 示意图。如果你已成年并且喝酒，请适量。
 来源：Libkind et al. 2011 (PNAS)；Hebly et al. 2015 (FEMS Yeast Research)；Peris et al. 2016 (PLoS Genetics)；Bergin et al. 2022 (FEMS Yeast Research)

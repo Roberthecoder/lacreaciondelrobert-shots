@@ -1,6 +1,11 @@
 {
  "__millones": true,
- "__reglas": [["^([\\d.,]+) millones de años$", "$1 millones年"]],
+ "__reglas": [
+  [
+   "^([\\d.,]+) millones de años$",
+   "$1 millones年"
+  ]
+ ],
  "8 m": "8 m",
  "< 40 cm": "< 40 cm",
  "1.70 m": "1.70 m",
@@ -12,8 +17,8 @@
  "hongos": "真菌",
  "¿árbol?": "树？",
  "¿hongo?": "真菌？",
- "hace unos": "大约",
- "millones de años · Devónico": "百万年前 · 泥盆纪",
+ "hace unos": "距今约",
+ "millones de años · Devónico": "单位：百万年 · 泥盆纪",
  "plantas tipo Rhynia": "Rhynia 类植物",
  "él: hasta 8 m": "它：高达 8 m",
  "POR DENTRO · tubos": "内部 · 管子",
@@ -23,7 +28,7 @@
  "Prototaxites: no solo de la luz": "Prototaxites：不只靠光",
  "¿hongo de 8 m?": "8 m 的真菌？",
  "pedernal de Rhynie, Escocia": "苏格兰莱尼燧石层",
- "fósiles de": "化石年龄",
+ "fósiles de": "化石距今",
  "champiñón": "双孢蘑菇",
  "Agaricus bisporus": "Agaricus bisporus",
  "AL MICROSCOPIO · pared celular": "显微镜下 · 细胞壁",
@@ -60,7 +65,6 @@
  "Geology": "Geology",
  "equipo de Edimburgo": "爱丁堡团队",
  "Loron et al. · Science Advances": "Loron et al. · Science Advances",
- " millones de años": " 百万年",
  "N": "N",
  "hongo fósil (misma piedra)": "真菌化石（同一块石头）",
  "hongos conocidos": "已知真菌",

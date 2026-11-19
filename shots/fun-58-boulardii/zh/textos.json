@@ -1,5 +1,10 @@
 {
- "__reglas": [["^día (\\d+)$", "第$1天"]],
+ "__reglas": [
+  [
+   "^día (\\d+)$",
+   "第$1天"
+  ]
+ ],
  "AL MICROSCOPIO": "显微镜下",
  "pH 2": "pH 2",
  "¿bacterias?": "细菌？",
@@ -58,7 +63,6 @@
  "adultos · 9 ensayos": "成人 · 9项试验",
  "París · 4 casos": "巴黎 · 4例",
  "Hennequin et al. · Eur J Clin Microbiol Infect Dis": "Hennequin et al. · Eur J Clin Microbiol Infect Dis",
- "día ": "天数 ",
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
  "@lacreaciondelrobert": "@lacreaciondelrobert"

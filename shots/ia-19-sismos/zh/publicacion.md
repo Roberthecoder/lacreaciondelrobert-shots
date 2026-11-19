@@ -1,0 +1,16 @@
+标题: AI能预测地震吗？能与不能🌎
+
+正文:
+为什么不该相信有人信誓旦旦说“明天要地震”？从来没有科学家成功预测过一次大地震，用AI也没有。🌎
+据美国地质调查局（USGS），预测地震要给出三样东西：日期和时间、地点、震级。USGS 和其他任何科学家都没有对大地震做到过。能算的只是未来几年的概率。
+墨西哥的地震预警系统（SASMEX，由 CIRES 负责）也不是预测：太平洋沿岸的传感器在地震最初几秒检测到它，预警比震动先到达城市，根据距离提前20到120秒（墨西哥城对格雷罗州沿岸的地震约有100秒）。
+AI能做到的：
+1）听得更清楚。2020年，斯坦福大学的 S. Mostafa Mousavi 等人推出深度学习网络 EQTransformer。用日本鸟取地震（2000年）五周的数据，它检测并定位的地震是原有目录的两倍（21 092对8 521），所用台站不到三分之一，还找到更多小地震。
+2）实验室。2017年，洛斯阿拉莫斯国家实验室的 Bertrand Rouet-Leduc、Paul Johnson 等人发现，机器学习算法听实验室断层的声音，能算出它还要多久滑动。关键信号原本被当成噪声。但这是机器上的实验，不是地球。
+3）争议。2018年，哈佛的 Phoebe DeVries、Brendan Meade 与谷歌的 Fernanda Viégas、Martin Wattenberg 发表：神经网络定位余震优于经典的库仑方法（AUC 0.85对0.58）。2019年，Arnaud Mignan 和 Marco Broccardo 用只有2个参数的逻辑回归（一个神经元）也得到0.85；那个网络用了13 451个参数。
+示意图；地图为近似，手机消息是虚构的例子。
+来源：USGS, Can you predict earthquakes? · CENAPRED (2019) · Mousavi et al., Nature Communications 11: 3952 (2020) · Rouet-Leduc et al., Geophysical Research Letters 44: 9276–9282 (2017) · DeVries et al., Nature 560: 632–634 (2018) · Mignan & Broccardo, Nature 574: E1–E3 (2019)
+你收到过“明天要地震”的转发消息吗？你来自哪里？👇
+我是 Robert，来自 La Creación del Robert 🌱
+
+话题: #地震 #人工智能 #辟谣 #地球科学 #科普

@@ -31,10 +31,10 @@
  "20 µm": "20 µm",
  "dibujo esquemático": "示意图",
  "Lo salva *el virus de un hongo.*": "救它的是 *一种真菌的病毒。*",
- "Yellowstone: suelos de *hasta 70 °C.*": "黄石： 土壤 *最高70 °C。*",
+ "Yellowstone: suelos de *hasta 70 °C.*": "黄石： 土壤 *最高70 °C。*",
  "Un hongo *endófito:* vive dentro.": "一种 *内生真菌：* 住在里面。",
- "Solos, *nada arriba de 38 °C.*": "单独时， *超过38 °C就不长。*",
- "Juntos: *65 °C,* 10 h al día, 2 semanas.": "在一起： *65 °C，* 每天10小时，持续2周。",
+ "Solos, *nada arriba de 38 °C.*": "单独时， *超过38 °C就不长。*",
+ "Juntos: *65 °C,* 10 h al día, 2 semanas.": "在一起： *65 °C，* 每天10小时，持续2周。",
  "¿Y si el truco *no fuera del hongo?*": "如果秘诀 *不在真菌呢？*",
  "2007: le quitaron *el virus al hongo.*": "2007年： 他们 *去掉了真菌里的病毒。*",
  "Sin virus, *el pasto murió.*": "没了病毒， *草就死了。*",
@@ -64,5 +64,10 @@
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
  "@lacreaciondelrobert": "@lacreaciondelrobert",
- "__reglas": [["^día (\\d+) de 14$", "第$1天 / 共14天"]]
+ "__reglas": [
+  [
+   "^día (\\d+) de 14$",
+   "第$1天 / 共14天"
+  ]
+ ]
 }
