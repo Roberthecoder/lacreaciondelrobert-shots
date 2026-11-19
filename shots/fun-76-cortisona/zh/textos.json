@@ -60,8 +60,6 @@
  "años 40": "40年代",
  "Merck · Lewis Sarett": "Merck · Lewis Sarett",
  "desde un ácido de la bilis": "从一种胆汁酸出发",
- "casi ": "近 ",
- " pasos": " 步",
  "18 mg": "18 mg",
  "Peterson y Murray · Upjohn": "Peterson 与 Murray · Upjohn",
  "publicado en J. Am. Chem. Soc. · patente desde 1950": "发表于 J. Am. Chem. Soc. · 1950年起申请专利",
@@ -74,5 +72,7 @@
    "^casi (\\d+) pasos$",
    "近$1步"
   ]
- ]
+ ],
+ "casi ": "近",
+ " pasos": "步"
 }

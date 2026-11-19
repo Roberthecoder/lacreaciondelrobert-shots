@@ -56,9 +56,14 @@
  "antibiótico": "抗生素",
  "Oxford · Edward Abraham y Guy Newton": "牛津 · Edward Abraham 与 Guy Newton",
  "Newton y Abraham, Nature, 1955": "Newton 与 Abraham, Nature, 1955",
- " de cada 5": "/5",
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
  "@lacreaciondelrobert": "@lacreaciondelrobert",
- "__reglas": [["^(\\d+) de cada 5$", "每5剂有$1剂"]]
+ "__reglas": [
+  [
+   "^(\\d+) de cada 5$",
+   "每5剂有$1剂"
+  ]
+ ],
+ " de cada 5": "/5"
 }

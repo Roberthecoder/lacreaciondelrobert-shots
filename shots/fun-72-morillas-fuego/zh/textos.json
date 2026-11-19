@@ -50,7 +50,6 @@
  "Quizá el hongo *ya estaba esperando.*": "也许这种真菌 *早就在等待。*",
  "INCENDIO": "火灾",
  "PRIMAVERA": "春天",
- "AÑO ": "年份 ",
  "incendio Rim (2013) · Yosemite, EE. UU.": "Rim 大火（2013）· 美国优胜美地",
  "U. de Montana · For. Ecol. Manage., 2016": "蒙大拿大学 · For. Ecol. Manage., 2016",
  "La Creación del Robert": "La Creación del Robert",
@@ -61,5 +60,6 @@
    "^AÑO (\\d+)$",
    "第$1年"
   ]
- ]
+ ],
+ "AÑO ": "年份 "
 }

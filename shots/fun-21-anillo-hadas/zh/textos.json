@@ -52,7 +52,6 @@
  "este de Colorado · Shantz y Piemeisel": "科罗拉多州东部 · Shantz 与 Piemeisel",
  "Journal of Agricultural Research": "Journal of Agricultural Research",
  "8 m de ancho": "宽8 m",
- " años": " 年",
  "20 m de ancho": "宽20 m",
  "31 m de ancho": "宽31 m",
  "39 m de ancho": "宽39 m",
@@ -77,5 +76,6 @@
    "^(\\d+) años$",
    "$1年"
   ]
- ]
+ ],
+ " años": "年"
 }
