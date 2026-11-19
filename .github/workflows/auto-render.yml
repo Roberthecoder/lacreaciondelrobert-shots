@@ -54,7 +54,7 @@ jobs:
           if [ -z "$BASE" ]; then BASE=$(git merge-base origin/main HEAD 2>/dev/null || git rev-list --max-parents=0 HEAD | tail -1); fi
           if [ "$BASE" = "$(git rev-parse HEAD)" ]; then BASE=$(git rev-parse HEAD~1); fi
           echo "Comparando $BASE..$GITHUB_SHA"
-          CAMBIOS=$(git diff --name-only "$BASE" HEAD -- shots/ largos/)
+          CAMBIOS=$(git diff --name-only "$BASE" HEAD -- shots/ largos/ | grep -v "^shots/[^/]*/zh/" || true)   # zh/ = versión china (render-idioma.yml), no el video en español
           LISTA=(); TEXTOS=()
           for d in $(echo "$CAMBIOS" | cut -d/ -f1,2 | sort -u); do
             case "$(basename "$d")" in _*) continue;; esac
