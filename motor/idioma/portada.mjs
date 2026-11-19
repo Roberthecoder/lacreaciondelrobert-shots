@@ -1,7 +1,7 @@
 // portada.mjs — portada 3:4 (1080×1440 JPG) para RedNote/Xiaohongshu a partir del video en chino.
 // Uso: node motor/idioma/portada.mjs <video_zh.mp4> <clave> <salida.jpg> [--texto "标题"] [--t 12.5]
-// - Elige el cuadro: prueba ~20 instantes del 4 % al 78 % del video y se queda con el de más color, detalle y Robert
-//   (piel + bata blanca), descartando cuadros de transición (cambian mucho en 0.4 s) y cuadros oscuros (tarjeta final).
+// - Elige el cuadro (cada 0.25 s del 4 % al 78 % del video, a 270×480): gana el de más color, detalle y Robert (piel + bata blanca);
+//   se castiga lo que aún se mueve (contadores a medias, transiciones) y las escenas oscuras (tarjeta final).
 // - Texto: el «标题» de shots/<clave>/zh/publicacion.md sin emojis, en 1–2 renglones; la cifra (o el 2.º renglón) va
 //   resaltada en el amarillo de la marca. El dato no se cambia: solo se quitan emojis.
 // - Logo del shot (shots/<clave>/assets/logo_*.svg) o el isotipo a color, con «La Creación del Robert».
@@ -76,7 +76,7 @@ export function partir(t) {
   return [cs.slice(0, best.i).join(''), cs.slice(best.i).join('')];
 }
 
-const UNIDAD = '(?:多|余|厘米|毫米|微米|纳米|公里|千米|千克|公斤|小时|分钟|万亿|亿年|万年|个月|摄氏度|°C|℃|%|％|万|亿|千|百|个|只|升|克|吨|年|天|秒|倍|张|种|次|岁|颗|块|杯|度|米|斤|分|周|岁|厘|层|根|颗|滴|条|株|粒|位|名|人)*';
+const UNIDAD = '(?:多|余)?(?:厘米|毫米|微米|纳米|公里|千米|千克|公斤|小时|分钟|万亿|亿年|万年|个月|摄氏度|°C|℃|%|％|万|亿|千|百|个|只|升|克|吨|年|天|秒|倍|张|种|次|岁|颗|块|杯|度|米|斤|分|周|岁|厘|层|根|颗|滴|条|株|粒|位|名|人)*';
 const reNum = new RegExp(`[0-9][0-9.,，:：]*(?:[0-9])?${UNIDAD}`, 'u');
 
 // Devuelve renglones como [[{t, hl}], ...]
@@ -107,12 +107,6 @@ export function maquetar(texto) {
 
 // ---------- elección del cuadro ----------
 const SW = 90, SH = 160; // muestra chica
-function cuadroChico(video, t) {
-  const r = spawnSync(FF, ['-v', 'error', '-ss', String(t), '-i', video, '-frames:v', '1', '-vf', `scale=${SW}:${SH}`, '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], { maxBuffer: 1 << 24 });
-  if (r.status !== 0 || r.stdout.length < SW * SH * 3) return null;
-  return r.stdout;
-}
-
 function puntuar(buf, buf2) {
   // Solo la zona que queda visible arriba de la banda de texto (0–1080 px de 1920 → filas 0–90 de 160)
   const filas = Math.round(SH * 1080 / 1920);
@@ -138,19 +132,46 @@ function puntuar(buf, buf2) {
   return { s, fp, fb, fe, colores, fd, fl };
 }
 
+// Cuántos píxeles cambian fuerte entre dos cuadros (un contador que sigue contando, algo que entra o sale).
+function cambio(a, b) {
+  let n = 0;
+  for (let i = 0; i < a.length; i += 3) if (Math.abs(a[i] - b[i]) + Math.abs(a[i + 1] - b[i + 1]) + Math.abs(a[i + 2] - b[i + 2]) > 90) n++;
+  return n;
+}
+
+// Reduce un cuadro de (SW·F)×(SH·F) a SW×SH promediando bloques F×F.
+function reducir(buf, F) {
+  const W = SW * F, out = Buffer.alloc(SW * SH * 3);
+  for (let y = 0; y < SH; y++) for (let x = 0; x < SW; x++) for (let c = 0; c < 3; c++) {
+    let s = 0;
+    for (let dy = 0; dy < F; dy++) for (let dx = 0; dx < F; dx++) s += buf[((y * F + dy) * W + x * F + dx) * 3 + c];
+    out[(y * SW + x) * 3 + c] = s / (F * F);
+  }
+  return out;
+}
+
+// Una sola pasada: cuadros de 270×480 cada 0.25 s entre el 4 % y el 78 % del video. Gana el de más Robert, detalle y
+// color; se castiga lo que todavía se mueve (así no sale un contador a medias ni una transición).
 export function elegirCuadro(video, verbose = false) {
   const dur = parseFloat(spawnSync(FP, ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', video]).stdout.toString()) || 60;
-  const fin = Math.min(dur * 0.78, dur - 6);
-  const ts = [];
-  for (let t = Math.max(1.6, dur * 0.04); t <= fin; t += (fin - dur * 0.04) / 19) ts.push(+t.toFixed(2));
+  const PASO = 0.25, F = 3, TAM = SW * F * SH * F * 3;
+  const ini = Math.max(1.6, dur * 0.04), fin = Math.min(dur * 0.78, dur - 6);
+  const r = spawnSync(FF, ['-v', 'error', '-i', video, '-t', String(fin + 1), '-vf', `fps=${1 / PASO},scale=${SW * F}:${SH * F}`, '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], { maxBuffer: 1 << 30 });
+  const fr = [];
+  for (let o = 0; o + TAM <= r.stdout.length; o += TAM) fr.push(r.stdout.subarray(o, o + TAM));
+  if (fr.length < 8) return dur * 0.35;
+  const c = fr.map((f, i) => (i + 1 < fr.length ? cambio(f, fr[i + 1]) : 0));
   let mejor = null;
-  for (const t of ts) {
-    const a = cuadroChico(video, t), b = cuadroChico(video, t + 0.4);
-    if (!a) continue;
-    const p = puntuar(a, b);
-    if (t < dur * 0.08) p.s += 0.5; // el cuadro del gancho suele contar la misma idea que el título
-    if (verbose) console.log(t.toFixed(1).padStart(5), p.s.toFixed(2), JSON.stringify(Object.fromEntries(Object.entries(p).map(([k, v]) => [k, +(+v).toFixed(3)]))));
-    if (!mejor || p.s > mejor.s) mejor = { t, s: p.s };
+  for (let i = Math.ceil(ini / PASO); i <= Math.floor(fin / PASO) && i < fr.length - 1; i++) {
+    const t = i * PASO, p = puntuar(reducir(fr[i], F), reducir(fr[i - 1], F));
+    const mov = Math.max(c[i - 1], c[i]);
+    p.mov = mov;
+    if (mov <= 3) p.s += 0.3; // quieto: nada a medio animar
+    else p.s -= Math.min(mov / 150, 1) * 1.0;
+    // el cuadro del gancho suele contar la misma idea que el título (si ya terminó de animarse)
+    if (t < Math.max(6, dur * 0.1)) p.s += mov <= 3 ? 0.5 : 0.1;
+    if (verbose) console.log(t.toFixed(2).padStart(6), p.s.toFixed(2), JSON.stringify(Object.fromEntries(Object.entries(p).map(([k, v]) => [k, +(+v).toFixed(4)]))));
+    if (!mejor || p.s > mejor.s + 0.02) mejor = { t, s: p.s };
   }
   return mejor ? mejor.t : dur * 0.35;
 }
