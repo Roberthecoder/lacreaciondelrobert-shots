@@ -59,9 +59,9 @@
         for (let i = 0; i < kids.length; i++) {
           const a = kids[i], b = kids[i + 1];
           const num = typeof a === 'number' || (typeof a === 'string' && /^[\d.,]+$/.test(a.trim()));
-          const m = typeof b === 'string' && b.match(/^\s*(mil millones|millones|M|mil)(?![\wáéíóú])/);
+          const m = typeof b === 'string' && b.match(/^\s*(mil millones|millones|mill\.|M|mil)(?![\wáéíóú])/);
           if (num && m) {
-            const f = { 'mil millones': 1000, 'millones': 1, 'M': 1, 'mil': 0.001 }[m[1]];
+            const f = { 'mil millones': 1000, 'millones': 1, 'mill.': 1, 'M': 1, 'mil': 0.001 }[m[1]];
             const n = +(parseFloat(String(a).replace(/,/g, '')) * f).toPrecision(12);
             k2.push(`${n} millones` + b.slice(m[0].length)); i++;
           } else k2.push(a);
