@@ -1,5 +1,10 @@
 {
- "__reglas": [["^butano: (\\d+) °C ≈ ([\\d.]+) atm$", "丁烷：$1 °C ≈ $2 atm"]],
+ "__reglas": [
+  [
+   "^butano: (\\d+) °C ≈ ([\\d.]+) atm$",
+   "丁烷：$1 °C ≈ $2 atm"
+  ]
+ ],
  "BUTANO · C₄H₁₀": "丁烷 · C₄H₁₀",
  "isobutano": "异丁烷",
  "propano (mezcla)": "丙烷（混合）",
@@ -34,7 +39,7 @@
  "Chispa y *el gas arde.*": "一个火花 *气体就燃烧。*",
  "Al hervir, *roba calor.*": "沸腾时 *会吸走热量。*",
  "¿Por qué *no al sol?*": "为什么 *不能晒太阳？*",
- "A 50 °C: *más del doble.*": "到 50 °C： *超过两倍。*",
+ "A 50 °C: *más del doble.*": "到50 °C： *超过两倍。*",
  "*3,300 incendios* evitados.": "避免了 *3300起火灾。*",
  "Es *ferrocerio.*": "那是 *铈铁合金。*",
  "Un *líquido apretado.*": "一种 *被压着的液体。*",
