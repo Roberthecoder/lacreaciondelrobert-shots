@@ -50,7 +50,7 @@
  "NO": "不是",
  "SÍ": "是",
  " poros en 1 mm²": " 个菌孔 / 1 mm²",
- " millones": " 百万",
+ " millones": " millones",
  "madera": "木头",
  " años": " 年",
  "RÉCORD": "纪录",
@@ -58,5 +58,10 @@
  "Sígueme para más ciencia": "关注我，看更多科学",
  "@lacreaciondelrobert": "@lacreaciondelrobert",
  "__millones": true,
- "__reglas": [["^(≈ )?(\\d+) años$", "$1$2年"]]
+ "__reglas": [
+  [
+   "^(≈ )?(\\d+) años$",
+   "$1$2年"
+  ]
+ ]
 }

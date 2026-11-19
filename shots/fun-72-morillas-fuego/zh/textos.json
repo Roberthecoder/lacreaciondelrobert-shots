@@ -38,7 +38,7 @@
  "parcelas de 3.14 m² (esquemático)": "3.14 m² 样方（示意）",
  "Ese bosque quemado *no está muerto.*": "那片烧过的森林 *并没有死。*",
  "Hoyitos como panal y *hueca por dentro.*": "满是蜂窝状小坑， *里面是空的。*",
- "*5 especies* salen tras el incendio.": "火灾后 会长出 *5个物种。*",
+ "*5 especies* salen tras el incendio.": "火灾后 会冒出 *5种羊肚菌。*",
  "El 1.er año: *2,500 o más* por hectárea.": "第1年： 每公顷 *2,500个以上。*",
  "Al 2.º año, *casi desaparecen.*": "到第2年， *几乎消失了。*",
  "¿Por qué el fuego *las despierta?*": "为什么火 *会唤醒它们？*",
@@ -56,5 +56,10 @@
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
  "@lacreaciondelrobert": "@lacreaciondelrobert",
- "__reglas": [["^AÑO (\\d+)$", "第$1年"]]
+ "__reglas": [
+  [
+   "^AÑO (\\d+)$",
+   "第$1年"
+  ]
+ ]
 }
