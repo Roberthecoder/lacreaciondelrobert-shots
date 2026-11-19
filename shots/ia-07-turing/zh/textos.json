@@ -1,0 +1,92 @@
+{
+ "hola, ¿de dónde eres?": "你好，你是哪里人？",
+ "de por aquí jaja": "就这附近哈哈",
+ "¿y qué haces?": "那你是做什么的？",
+ "ntp, de lejos xd": "没事，挺远的地方 xd",
+ "Testigo A": "证人 A",
+ "Testigo B": "证人 B",
+ "TIEMPO PARA ADIVINAR": "猜测时间",
+ "engaños": "欺骗",
+ "desinformación": "虚假信息",
+ "¿quién es el humano?": "谁是人类？",
+ "si no los distingues: la máquina pasa": "分辨不出来：机器就通过",
+ "joven": "年轻",
+ "reservado": "内向",
+ "sabe de internet": "懂网络文化",
+ "habla con jerga": "满口网络用语",
+ "la misma IA": "同一个AI",
+ "partidas analizadas": "局对话被分析",
+ "¿pato? qwerty 🦆": "鸭子？qwerty 🦆",
+ "¿cómo está el clima?": "天气怎么样？",
+ "CHATS DE 15 MINUTOS": "15分钟聊天",
+ "GPT-5 con personaje: 59 %": "GPT-5 带人设：59 %",
+ "el de al lado ↓": "旁边那个 ↓",
+ "La IA pareció humana *73 de 100 veces.*": "AI被当成人类： *100次中有73次。*",
+ "Dos chats: *uno es máquina.*": "两个聊天： *其中一个是机器。*",
+ "Turing, 1950: *si no los distingues, pasa.*": "图灵，1950年： *分辨不出，就算通过。*",
+ "¿Cuál fue *el truco?*": "诀窍 *是什么？*",
+ "Un personaje: *joven, reservado y con jerga.*": "一个人设： *年轻、内向、满口网络用语。*",
+ "Sin personaje: *36 de 100.*": "没有人设： *100次中36次。*",
+ "San Diego, 2026: *más de mil partidas.*": "圣地亚哥，2026年： *1000多局。*",
+ "ELIZA, de los sesenta: *23 de 100.*": "六十年代的ELIZA： *100次中23次。*",
+ "Para cacharla: *di algo muy raro.*": "想识破它： *说点很奇怪的话。*",
+ "Sirve para *engañar y desinformar.*": "它可以被用来 *欺骗和散布假消息。*",
+ "¿Y si el humano era *el de al lado?*": "要是人类 *其实是旁边那个呢？*",
+ "Testigo ": "证人 ",
+ "A": "A",
+ "esta IA": "这个AI",
+ "B": "B",
+ "humano real": "真人",
+ "Alan Turing": "Alan Turing",
+ "«el juego de imitación»": "“模仿游戏”",
+ "GPT-4.5 con personaje": "GPT-4.5 带人设",
+ "GPT-4.5 sin personaje": "GPT-4.5 无人设",
+ "UC San Diego": "UC San Diego",
+ "Jones y Bergen · PNAS": "Jones 和 Bergen · PNAS",
+ "> E": "> E",
+ "> ELIZ": "> ELIZ",
+ "> ELIZA": "> ELIZA",
+ "¿Y ": "那",
+ "¿Y cóm": "那这",
+ "¿Y cómo t": "那这让",
+ "¿Y cómo te ha": "那这让你",
+ "¿Y cómo te hace": "那这让你",
+ "s": "有什么",
+ "senti": "有什么",
+ "ELIZA (años sesenta)": "ELIZA（六十年代）",
+ "sentir e": "有什么感受",
+ "sentir eso?": "有什么感受？",
+ "✔ de lo que más sirvió": "✔ 最管用的之一",
+ "de lo que menos sirvió": "最不管用的之一",
+ "la IA": "AI",
+ "humano": "人类",
+ "La Creación del Robert": "La Creación del Robert",
+ "Sígueme para más ciencia": "关注我，看更多科学",
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "__reglas": [
+  [
+   "^¿Y? ?$",
+   "那"
+  ],
+  [
+   "^¿Y c[óm o]*$",
+   "那这"
+  ],
+  [
+   "^¿Y cómo t[e ]*$",
+   "那这让"
+  ],
+  [
+   "^¿Y cómo te h[ace]*$",
+   "那这让你"
+  ],
+  [
+   "^s[entir]{0,5}$",
+   "有什么"
+  ],
+  [
+   "^sentir [eso]{0,3}$",
+   "有什么感受"
+  ]
+ ]
+}
