@@ -26,6 +26,9 @@ simplificado** y **la misma voz en español**. Misma cronología que las otras r
 Título de RedNote ≤ 20 caracteres, cuerpo ≤ 1000 caracteres (explicación breve, fuentes, «示意图» si el dibujo es esquemático),
 3–6 etiquetas `#…` en chino y la pregunta para comentar. Firma: «我是 Robert，来自 La Creación del Robert 🌱».
 
+## Portadas (RedNote, 3:4)
+- `portada.mjs` + workflow `portadas-zh.yml`: portada 1080×1440 JPG por video (`<clave>_zh_portada.jpg` en el Release `idioma-zh`): elige un cuadro con color, detalle y Robert (sin transiciones ni tarjeta final), le pone el `标题` de `zh/publicacion.md` sin emojis en 1–2 renglones con la cifra o la idea clave en amarillo, y la marca del canal. Lanzar a mano (Actions → «Portadas en chino», `claves` vacío = las que falten). Prueba local: `node motor/idioma/portada.mjs video_zh.mp4 <clave> salida.jpg --ver`.
+
 ## Publicación
 RedNote no tiene API oficial para publicar: Robert sube los videos desde https://creator.xiaohongshu.com y programa la fecha
 (定时发布). La sesión le entrega paquetes (MP4 + textos) en orden cronológico.

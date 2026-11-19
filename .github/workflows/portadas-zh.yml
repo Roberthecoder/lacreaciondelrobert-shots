@@ -1,0 +1,106 @@
+name: Portadas en chino (RedNote)
+
+# Portada 3:4 (1080×1440 JPG) de cada video en chino: un cuadro del propio video + el gancho (标题 de shots/<clave>/zh/publicacion.md)
+# en grande, con la cifra o la idea clave resaltada en amarillo, y la marca del canal. Generador: motor/idioma/portada.mjs.
+# Toma <clave>_zh.mp4 del Release «idioma-zh» y sube ahí mismo <clave>_zh_portada.jpg (--clobber). No gasta créditos de voz.
+on:
+  workflow_dispatch:
+    inputs:
+      claves:
+        description: 'Claves separadas por espacio (vacío = todas las que tengan _zh.mp4 y aún no tengan _zh_portada.jpg)'
+        default: ''
+      rehacer:
+        description: 'true = rehacer también las que ya tienen portada (solo cuando «claves» está vacío)'
+        default: 'false'
+
+permissions:
+  contents: write
+
+jobs:
+  detectar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      grupos: ${{ steps.c.outputs.grupos }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      MANUAL: ${{ inputs.claves }}
+      REHACER: ${{ inputs.rehacer }}
+    steps:
+      - id: c
+        run: |
+          set -e
+          ID=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/idioma-zh" --jq .id)
+          gh api --paginate "repos/$GITHUB_REPOSITORY/releases/$ID/assets?per_page=100" --jq '.[].name' > /tmp/nombres.txt
+          if [ -n "$MANUAL" ]; then
+            printf '%s\n' $MANUAL > /tmp/claves.txt
+          else
+            grep '_zh\.mp4$' /tmp/nombres.txt | sed 's/_zh\.mp4$//' | sort -u > /tmp/todas.txt
+            if [ "$REHACER" = "true" ]; then cp /tmp/todas.txt /tmp/claves.txt; else
+              grep '_zh_portada\.jpg$' /tmp/nombres.txt | sed 's/_zh_portada\.jpg$//' | sort -u > /tmp/hechas.txt
+              comm -23 /tmp/todas.txt /tmp/hechas.txt > /tmp/claves.txt
+            fi
+          fi
+          echo "Claves: $(wc -l < /tmp/claves.txt)"
+          # Grupos de 20 claves por trabajo (máx. 256 trabajos en la matriz)
+          echo "grupos=$(grep -E '^[a-z0-9-]+$' /tmp/claves.txt | jq -R . | jq -sc '[range(0; length; 20) as $i | .[$i:$i+20] | join(" ")]')" >> "$GITHUB_OUTPUT"
+
+  portadas:
+    needs: detectar
+    if: needs.detectar.outputs.grupos != '[]'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        grupo: ${{ fromJSON(needs.detectar.outputs.grupos) }}
+    env:
+      GRUPO: ${{ matrix.grupo }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Caché de fuentes chinas
+        uses: actions/cache@v4
+        with:
+          path: ~/.fonts/noto-cjk
+          key: noto-cjk-sc-2.004
+      - name: Herramientas (ffmpeg, fuentes chinas, Chrome) sin apt
+        timeout-minutes: 15
+        run: |
+          set -e
+          cd motor && npm install --no-audit --no-fund && npm install --no-save --no-audit --no-fund ffmpeg-static@5 ffprobe-static@3 && cd ..
+          sudo ln -sf "$PWD/motor/node_modules/ffmpeg-static/ffmpeg" /usr/local/bin/ffmpeg
+          sudo ln -sf "$PWD/motor/node_modules/ffprobe-static/bin/linux/x64/ffprobe" /usr/local/bin/ffprobe
+          ffmpeg -version | head -1
+          if ! ls ~/.fonts/noto-cjk/*.otf >/dev/null 2>&1; then
+            mkdir -p ~/.fonts/noto-cjk
+            for i in 1 2 3; do curl -fsSL --max-time 300 -o /tmp/cjk.zip https://github.com/notofonts/noto-cjk/releases/download/Sans2.004/08_NotoSansCJKsc.zip && break; sleep 10; done
+            unzip -o -j -q /tmp/cjk.zip '*.otf' -d ~/.fonts/noto-cjk
+          fi
+          fc-cache -f >/dev/null; fc-list :lang=zh | grep -i black | head -2
+          google-chrome --version
+          echo "NAVEGADOR=chrome" >> "$GITHUB_ENV"
+      - name: Portadas
+        run: |
+          mkdir -p video salida
+          FALLAS=""
+          for K in $GRUPO; do
+            [[ "$K" =~ ^[a-z0-9-]+$ ]] || { echo "::error::Clave inválida: $K"; FALLAS="$FALLAS $K"; continue; }
+            if [ ! -f "shots/$K/zh/publicacion.md" ]; then echo "::error::$K: falta shots/$K/zh/publicacion.md"; FALLAS="$FALLAS $K"; continue; fi
+            ok=""
+            for i in 1 2 3; do gh release download idioma-zh -R "$GITHUB_REPOSITORY" -p "${K}_zh.mp4" -D video --clobber && ok=1 && break; sleep 5; done
+            [ -n "$ok" ] || { echo "::error::$K: no se pudo bajar ${K}_zh.mp4"; FALLAS="$FALLAS $K"; continue; }
+            if node motor/idioma/portada.mjs "video/${K}_zh.mp4" "$K" "salida/${K}_zh_portada.jpg"; then
+              ok=""
+              for i in 1 2 3; do gh release upload idioma-zh "salida/${K}_zh_portada.jpg" --clobber && ok=1 && break; sleep 5; done
+              if [ -n "$ok" ]; then echo "- $K" >> "$GITHUB_STEP_SUMMARY"; else echo "::error::$K: no se pudo subir"; FALLAS="$FALLAS $K"; fi
+            else
+              echo "::error::$K: falló la portada"; FALLAS="$FALLAS $K"
+            fi
+            rm -f "video/${K}_zh.mp4"
+          done
+          if [ -n "$FALLAS" ]; then echo "Fallaron:$FALLAS" | tee -a "$GITHUB_STEP_SUMMARY"; exit 1; fi
