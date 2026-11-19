@@ -1,4 +1,4 @@
-# RedNote (小红书) · paquete 16: 15 shots (del 2027-10-15 al 2027-10-30)
+# RedNote (小红书) · paquete 16: 14 shots (del 2027-10-15 al 2027-10-30)
 
 Súbelos en este orden desde https://creator.xiaohongshu.com → 发布笔记 → 上传视频. Video: `<clave>_zh.mp4` (Release «idioma-zh» o el chat).
 Pega el título en 标题, el texto en 正文 y las etiquetas al final del texto. Para repartirlos, usa 定时发布 (publicación programada).
@@ -268,22 +268,3 @@ Pega el título en 标题, el texto en 正文 y las etiquetas al final del texto
 话题: #人工智能 #机器人 #外科手术 #医学科普 #科技
 ```
 
-## 15 · 002-moho-pan · (sin fecha en el calendario en español)
-
-```text
-标题: 面包上的霉斑只是冰山一角🍞
-
-正文:
-那块霉斑不是全部霉菌：你的面包里面已经被占领了。🍞
-主角是黑面包霉 Rhizopus stolonifer。一切始于一个从空气中落到面包上的孢子，比头发还细。它遇到湿气就萌发，长出一根丝：菌丝。菌丝不断分枝，钻进面包芯的小孔里，像根一样一边走一边消化淀粉。你在表面看到的只是尖端。
-那些小黑点呢？是装满孢子的孢子囊，每个都长在一根小柄的顶端。囊壁破裂后，孢子随空气飞到下一块面包上。
-所以美国农业部（USDA FSIS，《Molds on Food》，2013年更新）说：发霉的面包要整个扔掉，因为它多孔，霉菌会从表面以下蔓延。硬奶酪或胡萝卜可以把霉斑切掉，四周至少留出2.5 cm（1英寸）的余量。也别去闻：可能引起呼吸问题。
-有趣的是：它的亲戚 Rhizopus oligosporus 或 R. oryzae 被用来做印度尼西亚的传统食物天贝，菌丝把大豆粘成一整块。
-所以那块霉斑不是霉菌的开始，而是它生命循环的终点。
-示意图；孢子和孢子囊大小为近似比例。
-参考：USDA FSIS《Molds on Food: Are They Dangerous?》（2013）；Sadava 等，《Life》；JGI MycoCosm。
-你会把发霉面包切掉一块继续吃吗？👇
-我是 Robert，来自 La Creación del Robert 🌱
-
-话题: #霉菌 #食品安全 #真菌 #科普 #生活小知识
-```

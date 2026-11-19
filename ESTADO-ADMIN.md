@@ -7,6 +7,10 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 Última actualización: 30 oct 2026, 15:40 UTC (+ sección del admin maestro, 1 nov 2026).
 
 ## REDNOTE EN CHINO (16 nov 2026) — PAQUETE 1 ENTREGADO
+- **19 nov 03:50 UTC — TERMINADO:** 459 videos en chino en el Release `idioma-zh` (los 25 del paquete 1 + 434 nuevos), todos
+  revisados por un segundo agente y enviados al chat. Textos para RedNote: `publicar/rednote/paquete-01…16.md` en orden de calendario
+  (`armar_paquetes.py` los regenera). Sin hacer: 002-moho-pan (no tiene `_narrado.mp4`), fun-149…155 y libre-01 (sin narrado).
+  Pendiente de Robert: volver a poner privado el repo.
 - **19 nov 01:45 UTC — TODOS LOS SHOTS EN CHINO (en curso, Robert autorizó todo el 18 nov):** los 435 shots narrados tienen
   `zh/textos.json` + `zh/publicacion.md` (fun-149…155 y libre-01 no tienen narrado: no se hacen). Cada grupo lo revisa otro agente
   (traducción de regreso + render). Revisados y mandados a render: grupos 00–14, 16, 18, 21, 25. Faltan revisar: 15, 17, 19, 20,
