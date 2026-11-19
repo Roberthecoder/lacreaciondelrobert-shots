@@ -44,10 +44,10 @@
  "Las chicas *parecen ganar más.*": "女生 *似乎进步更多。*",
  "IA *con un maestro al lado.*": "AI *加上身边的老师。*",
  "6 SEMANAS": "6周",
- "L": "L",
- "M": "M",
- "J": "J",
- "V": "V",
+ "L": "",
+ "M": "",
+ "J": "",
+ "V": "",
  " años*": " 年*",
  "Ayúdame a practicar el pasado en inglés": "帮我练习英语过去时",
  "¡Claro! Completa: «Yesterday I ___ (go) to school».": "好的！填空：«Yesterday I ___ (go) to school».",
@@ -337,6 +337,22 @@
   [
    "^ejercicios\\ de\\ este\\ tema\\.»$",
    "这个主题的练习题。”"
+  ],
+  [
+   "^e$",
+   ""
+  ],
+  [
+   "^ej$",
+   ""
+  ],
+  [
+   "^«$",
+   "“"
+  ],
+  [
+   "^I$",
+   ""
   ]
  ]
 }
