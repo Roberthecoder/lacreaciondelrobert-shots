@@ -41,10 +41,16 @@
  "Poco a poco, *se va con el agua.*": "一点一点， *随水流走。*",
  "LAVAR": "洗涤",
  "esquema": "示意图",
- " millones al día": "00万/天",
  "Napper y Thompson": "Napper 与 Thompson",
  "Universidad de Plymouth": "普利茅斯大学",
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
- "@lacreaciondelrobert": "@lacreaciondelrobert"
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "__millones": true,
+ "__reglas": [
+  [
+   " millones al día$",
+   " millones/天"
+  ]
+ ]
 }
