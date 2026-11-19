@@ -44,8 +44,6 @@
  "Campo… *o levadura.*": "田野…… *或酵母。*",
  "artemisinina": "青蒿素",
  "contra la malaria": "抗疟疾",
- " M": " M",
- " mil": " mil",
  "O": "O",
  "NOBEL": "诺贝尔奖",
  "Tu Youyou y su equipo · Pekín": "屠呦呦及团队 · 北京",
@@ -72,15 +70,5 @@
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
  "@lacreaciondelrobert": "@lacreaciondelrobert",
- "__millones": true,
- "__reglas": [
-  [
-   "^(\\d+) M$",
-   "$1百万"
-  ],
-  [
-   "^(\\d+) mil$",
-   "$1千"
-  ]
- ]
+ "__millones": true
 }
