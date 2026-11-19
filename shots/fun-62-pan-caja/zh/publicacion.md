@@ -7,7 +7,7 @@
 2012年，在爱尔兰的 University College Cork，加了0.3 %丙酸盐的低盐小麦面包10到12天不长霉；用精选酸面种做的面包则是12到14天。
 最奇妙的是：瑞士奶酪里的细菌，还有你肠道里发酵膳食纤维的细菌，也会产生丙酸。美国FDA在1984年确认它是安全的，欧洲EFSA在2014年重新评估：在允许剂量内没有风险。
 示意图。
-来源：University College Cork 研究（Appl. Microbiol. Biotechnol., 2012）；FDA 1984 (GRAS)；EFSA 2014
+来源：Rahman et al. 2022 (Foods)；Ullah et al. 2012 (Appl. Environ. Microbiol.)；Brock & Buckel 2004 (Eur. J. Biochem.)；Garcia et al. 2021 (Front. Microbiol.)；Belz et al. 2012 (Appl. Microbiol. Biotechnol.)；den Besten et al. 2013 (J. Lipid Res.)；FDA 21 CFR 184.1221 (1984)；EFSA 2014
 你的面包放在袋子里还是冰箱里更耐放？👇
 我是 Robert，来自 La Creación del Robert 🌱
 
