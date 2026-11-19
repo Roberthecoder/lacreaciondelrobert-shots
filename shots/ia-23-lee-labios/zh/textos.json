@@ -1,6 +1,6 @@
 {
  "PESO": "PESO 重量",
- "BESO": "BESO 亲吻",
+ "BESO": "BESO 吻",
  "P y B: la misma boca": "P 和 B：同一个口型",
  "1 visema = labios juntos": "1个视位 = 双唇闭合",
  "visema: la forma visible de un sonido": "视位：一个音看得见的口型",
@@ -19,7 +19,7 @@
  "de frente": "正对镜头",
  "de cerca": "距离够近",
  "buen video": "画质好",
- "¿«Peso» o *«beso»?*": "是「peso（重量）」 *还是「beso（吻）」？*",
+ "¿«Peso» o *«beso»?*": "peso（重量）？ *还是beso（吻）？*",
  "Misma boca: *visemas.*": "同一个口型： *视位。*",
  "Experto: *menos de ¼*": "专家： *不到¼*",
  "La IA: *la mitad.*": "AI： *一半。*",
