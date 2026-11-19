@@ -61,7 +61,7 @@ jobs:
     timeout-minutes: 40
     strategy:
       fail-fast: false
-      max-parallel: 20
+      max-parallel: 8 # con más, se acaba el límite de la API de GitHub al subir
       matrix:
         grupo: ${{ fromJSON(needs.detectar.outputs.grupos) }}
     env:
@@ -101,11 +101,16 @@ jobs:
             [[ "$K" =~ ^[a-z0-9-]+$ ]] || { echo "::error::Clave inválida: $K"; FALLAS="$FALLAS $K"; continue; }
             if [ ! -f "shots/$K/zh/publicacion.md" ]; then echo "::error::$K: falta shots/$K/zh/publicacion.md"; FALLAS="$FALLAS $K"; continue; fi
             ok=""
-            for i in 1 2 3; do gh release download idioma-zh -R "$GITHUB_REPOSITORY" -p "${K}_zh.mp4" -D video --clobber && ok=1 && break; sleep 5; done
+            # Repo público: bajar por el enlace directo (no gasta el límite de la API); si falla, con gh.
+            for i in 1 2 3; do
+              curl -fsSL --max-time 300 -o "video/${K}_zh.mp4" "https://github.com/$GITHUB_REPOSITORY/releases/download/idioma-zh/${K}_zh.mp4" && ok=1 && break
+              gh release download idioma-zh -R "$GITHUB_REPOSITORY" -p "${K}_zh.mp4" -D video --clobber && ok=1 && break
+              sleep $((i * 20))
+            done
             [ -n "$ok" ] || { echo "::error::$K: no se pudo bajar ${K}_zh.mp4"; FALLAS="$FALLAS $K"; continue; }
             if node motor/idioma/portada.mjs "video/${K}_zh.mp4" "$K" "salida/${K}_zh_portada.jpg"; then
               ok=""
-              for i in 1 2 3; do gh release upload idioma-zh "salida/${K}_zh_portada.jpg" --clobber && ok=1 && break; sleep 5; done
+              for i in 1 2 3 4; do gh release upload idioma-zh "salida/${K}_zh_portada.jpg" --clobber && ok=1 && break; sleep $((i * 30)); done
               if [ -n "$ok" ]; then echo "- $K" >> "$GITHUB_STEP_SUMMARY"; else echo "::error::$K: no se pudo subir"; FALLAS="$FALLAS $K"; fi
             else
               echo "::error::$K: falló la portada"; FALLAS="$FALLAS $K"
