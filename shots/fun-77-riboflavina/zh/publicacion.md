@@ -9,7 +9,7 @@
 1990年，BASF 开始在发酵罐里用植物油培养这种真菌生产核黄素，1996年关闭了化学合成工厂。后来又给真菌加入了该维生素合成通路基因的额外拷贝。据该公司的生态效率分析，成本下降约40%，CO₂ 排放下降30%。
 讽刺的是：它颜色太浓，还被当作色素（E101）使用。
 示意图。不构成医疗建议。
-参考：Stahmann et al. 2001（Environmental Microbiology）；Saling 2005；Hoff et al. 2021。
+参考：Stahmann et al. 2001（Environmental Microbiology）；Saling 2005；Hoff 2021。
 你也遇到过吃完维生素尿变黄吗？👇
 我是 Robert，来自 La Creación del Robert 🌱
 
