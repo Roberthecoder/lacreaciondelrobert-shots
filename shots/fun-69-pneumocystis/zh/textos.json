@@ -45,7 +45,7 @@
  "Casi nunca te da *neumonía*": "几乎不会让你 *得肺炎*",
  "Sus genes lo delataron: *hongo*": "基因暴露了它： *是真菌*",
  "¿Por qué *no lo matan*?": "为什么 *杀不死它？*",
- "Su membrana lleva *colesterol*": "它的细胞膜里 *是胆固醇*",
+ "Su membrana lleva *colesterol*": "它的细胞膜含 *胆固醇*",
  "Se usa *un antibiótico*": "治疗用的是 *抗生素*",
  "1981: el primer reporte del *sida*": "1981年： *艾滋病* 的首份报告",
  "*67 de 79* bebés con anticuerpos": "*79名中67名* 婴儿有抗体",
@@ -67,5 +67,10 @@
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
  "@lacreaciondelrobert": "@lacreaciondelrobert",
- "__reglas": [["^(\\d+) / 8 esporas$", "$1 / 8 个孢子"]]
+ "__reglas": [
+  [
+   "^(\\d+) / 8 esporas$",
+   "$1 / 8 个孢子"
+  ]
+ ]
 }

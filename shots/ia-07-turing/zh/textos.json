@@ -13,7 +13,7 @@
  "joven": "年轻",
  "reservado": "内向",
  "sabe de internet": "懂网络文化",
- "habla con jerga": "满口网络用语",
+ "habla con jerga": "满口俚语",
  "la misma IA": "同一个AI",
  "partidas analizadas": "局对话被分析",
  "¿pato? qwerty 🦆": "鸭子？qwerty 🦆",
@@ -23,14 +23,14 @@
  "el de al lado ↓": "旁边那个 ↓",
  "La IA pareció humana *73 de 100 veces.*": "AI被当成人类： *100次中有73次。*",
  "Dos chats: *uno es máquina.*": "两个聊天： *其中一个是机器。*",
- "Turing, 1950: *si no los distingues, pasa.*": "图灵，1950年： *分辨不出，就算通过。*",
+ "Turing, 1950: *si no los distingues, pasa.*": "图灵，1950年： *分不出就算通过。*",
  "¿Cuál fue *el truco?*": "诀窍 *是什么？*",
- "Un personaje: *joven, reservado y con jerga.*": "一个人设： *年轻、内向、满口网络用语。*",
+ "Un personaje: *joven, reservado y con jerga.*": "人设： *年轻、内向、满口俚语。*",
  "Sin personaje: *36 de 100.*": "没有人设： *100次中36次。*",
  "San Diego, 2026: *más de mil partidas.*": "圣地亚哥，2026年： *1000多局。*",
  "ELIZA, de los sesenta: *23 de 100.*": "六十年代的ELIZA： *100次中23次。*",
  "Para cacharla: *di algo muy raro.*": "想识破它： *说点很奇怪的话。*",
- "Sirve para *engañar y desinformar.*": "它可以被用来 *欺骗和散布假消息。*",
+ "Sirve para *engañar y desinformar.*": "可被用来 *欺骗和散布假消息。*",
  "¿Y si el humano era *el de al lado?*": "要是人类 *其实是旁边那个呢？*",
  "Testigo ": "证人 ",
  "A": "A",
@@ -81,7 +81,7 @@
    "那这让你"
   ],
   [
-   "^s[entir]{0,5}$",
+   "^s(e(n(t(ir?)?)?)?)?$",
    "有什么"
   ],
   [

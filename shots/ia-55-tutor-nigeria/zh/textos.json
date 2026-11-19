@@ -1,0 +1,342 @@
+{
+ "6 semanas =": "6周 =",
+ "hasta": "最多",
+ "*equivalencia estimada · investigadores del Banco Mundial": "*估算的等效值 · 世界银行研究人员",
+ "Benin City, Nigeria": "尼日利亚贝宁城",
+ "junio–julio 2024": "2024年6–7月",
+ "1.º de prepa · ~15 años": "高一 · 约15岁",
+ "9 escuelas públicas": "9所公立学校",
+ "hasta 12 sesiones × 90 min": "最多12节课 × 90分钟",
+ "en parejas · 2 por semana": "两人一组 · 每周2次",
+ "diálogo ilustrativo": "示意对话",
+ "la maestra guía, no da la clase": "老师引导，不讲课",
+ "con tutor de IA": "用AI辅导",
+ "clases normales": "正常上课",
+ "por sorteo": "抽签分组",
+ "el mismo examen": "同一场考试",
+ "examen completo · inglés: +0.23 σ": "综合考试 · 英语：+0.23 σ",
+ "programas probados con sorteo · países de ingreso bajo y medio (esquemático)": "随机对照试验项目 · 中低收入国家（示意）",
+ "«aprendieron 2 años de temario»": "“学完了2年课程”",
+ "¿de temario?": "课程？",
+ "piloto con tutor de IA": "AI辅导试点",
+ "6 semanas": "6周",
+ "mejora equivalente a…": "提升相当于……",
+ "1.5 a 2 años de escuela normal en Nigeria": "尼日利亚正常上学1.5到2年",
+ "equivalencia estimada (método EYOS)": "估算等效（EYOS方法）",
+ "Piloto: 1 ciudad, 6 semanas": "试点：1座城市，6周",
+ "El otro grupo: sin horas extra": "对照组：没有额外课时",
+ "¿Dura? Aún no se sabe": "效果持久吗？尚不清楚",
+ "chicas": "女生",
+ "chicos": "男生",
+ "antes - - -  ·  después ▮": "之前 - - -  ·  之后 ▮",
+ "con cautela · esquemático": "需谨慎 · 示意",
+ "hasta 2 años*": "最多2年*",
+ "IA + maestro": "AI + 老师",
+ "6 semanas de tardes… *¿como 2 años de escuela?*": "6周的课后时间…… *抵2年学校？*",
+ "Benin City, Nigeria, *2024.*": "尼日利亚贝宁城， *2024年。*",
+ "Inglés con *Copilot (GPT-4)*, en parejas.": "用 *Copilot(GPT-4)* 两人一组学英语。",
+ "Los maestros *guiaban y vigilaban.*": "老师 *负责引导和监督。*",
+ "Sorteo… *y el mismo examen.*": "抽签分组…… *考同一场试。*",
+ "¿Cuánto *mejoraron?*": "进步了 *多少？*",
+ "Más que *8 de cada 10* programas.": "超过 *10个中8个* 项目。",
+ "No es temario: *es una equivalencia.*": "不是课程量： *是等效估算。*",
+ "Y tiene *peros.*": "但也有 *局限。*",
+ "Las chicas *parecen ganar más.*": "女生 *似乎进步更多。*",
+ "IA *con un maestro al lado.*": "AI *加上身边的老师。*",
+ "6 SEMANAS": "6周",
+ "L": "L",
+ "M": "M",
+ "J": "J",
+ "V": "V",
+ " años*": " 年*",
+ "Ayúdame a practicar el pasado en inglés": "帮我练习英语过去时",
+ "¡Claro! Completa: «Yesterday I ___ (go) to school».": "好的！填空：«Yesterday I ___ (go) to school».",
+ "went": "went",
+ "Copilot · GPT-4": "Copilot · GPT-4",
+ "In": "指",
+ "Instru": "指令",
+ "Instrucción": "指令1",
+ "Instrucción 1:": "指令1：",
+ "«Píde": "“让",
+ "«Pídele a Co": "“让Cop",
+ "«Pídele a Copilot q": "“让Copilo",
+ "«Pídele a Copilot que te p": "“让Copilot给",
+ "«Pídele a Copilot que te ponga": "“让Copilot给你出",
+ "eje": "这",
+ "ejercicios ": "这个主题",
+ "ejercicios de este": "这个主题的练习",
+ "ejercicios de este tema.»": "这个主题的练习题。”",
+ "TEST": "测试",
+ "el piloto": "试点",
+ "8 de 10 quedan abajo": "10个中8个更低",
+ " años": " 年",
+ "La Creación del Robert": "La Creación del Robert",
+ "Sígueme para más ciencia": "关注我，看更多科学",
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "__reglas": [
+  [
+   "^In$",
+   "指"
+  ],
+  [
+   "^Ins$",
+   "指"
+  ],
+  [
+   "^Inst$",
+   "指"
+  ],
+  [
+   "^Instr$",
+   "指"
+  ],
+  [
+   "^Instru$",
+   "指令"
+  ],
+  [
+   "^Instruc$",
+   "指令"
+  ],
+  [
+   "^Instrucc$",
+   "指令"
+  ],
+  [
+   "^Instrucci$",
+   "指令1"
+  ],
+  [
+   "^Instrucció$",
+   "指令1"
+  ],
+  [
+   "^Instrucción$",
+   "指令1"
+  ],
+  [
+   "^Instrucción\\ $",
+   "指令1"
+  ],
+  [
+   "^Instrucción\\ 1$",
+   "指令1："
+  ],
+  [
+   "^Instrucción\\ 1:$",
+   "指令1："
+  ],
+  [
+   "^«P$",
+   "“"
+  ],
+  [
+   "^«Pí$",
+   "“"
+  ],
+  [
+   "^«Píd$",
+   "“让"
+  ],
+  [
+   "^«Píde$",
+   "“让"
+  ],
+  [
+   "^«Pídel$",
+   "“让"
+  ],
+  [
+   "^«Pídele$",
+   "“让C"
+  ],
+  [
+   "^«Pídele\\ $",
+   "“让C"
+  ],
+  [
+   "^«Pídele\\ a$",
+   "“让Co"
+  ],
+  [
+   "^«Pídele\\ a\\ $",
+   "“让Co"
+  ],
+  [
+   "^«Pídele\\ a\\ C$",
+   "“让Co"
+  ],
+  [
+   "^«Pídele\\ a\\ Co$",
+   "“让Cop"
+  ],
+  [
+   "^«Pídele\\ a\\ Cop$",
+   "“让Cop"
+  ],
+  [
+   "^«Pídele\\ a\\ Copi$",
+   "“让Copi"
+  ],
+  [
+   "^«Pídele\\ a\\ Copil$",
+   "“让Copi"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilo$",
+   "“让Copi"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilot$",
+   "“让Copil"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilot\\ $",
+   "“让Copil"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilot\\ q$",
+   "“让Copilo"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilot\\ qu$",
+   "“让Copilo"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilot\\ que$",
+   "“让Copilo"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilot\\ que\\ $",
+   "“让Copilot"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilot\\ que\\ t$",
+   "“让Copilot"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilot\\ que\\ te$",
+   "“让Copilot给"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilot\\ que\\ te\\ $",
+   "“让Copilot给"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilot\\ que\\ te\\ p$",
+   "“让Copilot给"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilot\\ que\\ te\\ po$",
+   "“让Copilot给你"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilot\\ que\\ te\\ pon$",
+   "“让Copilot给你"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilot\\ que\\ te\\ pong$",
+   "“让Copilot给你出"
+  ],
+  [
+   "^«Pídele\\ a\\ Copilot\\ que\\ te\\ ponga$",
+   "“让Copilot给你出"
+  ],
+  [
+   "^ej$",
+   "这"
+  ],
+  [
+   "^eje$",
+   "这"
+  ],
+  [
+   "^ejer$",
+   "这个"
+  ],
+  [
+   "^ejerc$",
+   "这个"
+  ],
+  [
+   "^ejerci$",
+   "这个"
+  ],
+  [
+   "^ejercic$",
+   "这个主"
+  ],
+  [
+   "^ejercici$",
+   "这个主"
+  ],
+  [
+   "^ejercicio$",
+   "这个主题"
+  ],
+  [
+   "^ejercicios$",
+   "这个主题"
+  ],
+  [
+   "^ejercicios\\ $",
+   "这个主题"
+  ],
+  [
+   "^ejercicios\\ d$",
+   "这个主题的"
+  ],
+  [
+   "^ejercicios\\ de$",
+   "这个主题的"
+  ],
+  [
+   "^ejercicios\\ de\\ $",
+   "这个主题的练"
+  ],
+  [
+   "^ejercicios\\ de\\ e$",
+   "这个主题的练"
+  ],
+  [
+   "^ejercicios\\ de\\ es$",
+   "这个主题的练"
+  ],
+  [
+   "^ejercicios\\ de\\ est$",
+   "这个主题的练习"
+  ],
+  [
+   "^ejercicios\\ de\\ este$",
+   "这个主题的练习"
+  ],
+  [
+   "^ejercicios\\ de\\ este\\ $",
+   "这个主题的练习题"
+  ],
+  [
+   "^ejercicios\\ de\\ este\\ t$",
+   "这个主题的练习题"
+  ],
+  [
+   "^ejercicios\\ de\\ este\\ te$",
+   "这个主题的练习题"
+  ],
+  [
+   "^ejercicios\\ de\\ este\\ tem$",
+   "这个主题的练习题。"
+  ],
+  [
+   "^ejercicios\\ de\\ este\\ tema$",
+   "这个主题的练习题。"
+  ],
+  [
+   "^ejercicios\\ de\\ este\\ tema\\.$",
+   "这个主题的练习题。”"
+  ],
+  [
+   "^ejercicios\\ de\\ este\\ tema\\.»$",
+   "这个主题的练习题。”"
+  ]
+ ]
+}
