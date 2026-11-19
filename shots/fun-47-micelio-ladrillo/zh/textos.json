@@ -1,5 +1,10 @@
 {
- "__reglas": [["^día (\\d+)$", "第$1天"]],
+ "__reglas": [
+  [
+   "^día (\\d+)$",
+   "第$1天"
+  ]
+ ],
  "¿unicel?": "泡沫塑料？",
  "empaque de micelio": "菌丝体包装",
  "rastrojo de maíz": "玉米秸秆",
@@ -36,7 +41,7 @@
  "50 µm": "50 µm",
  "2 m": "2 m",
  "No es unicel: *es un hongo.*": "这不是泡沫塑料： *是真菌。*",
- "Rastrojo o cascarilla *+ micelio.*": "秸秆或谷壳 *+ 菌丝体。*",
+ "Rastrojo o cascarilla *+ micelio.*": "秸秆或谷壳 *+菌丝体。*",
  "Todo va *a un molde.*": "全部 *倒进模具。*",
  "Las hifas *lo amarran.*": "菌丝 *把它们绑在一起。*",
  "En días: *una pieza sólida.*": "几天后： *变成结实的一整块。*",

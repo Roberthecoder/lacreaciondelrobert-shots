@@ -43,7 +43,7 @@
  "5 nm (esquemático)": "5 nm（示意）",
  "mapa esquemático": "示意地图",
  "10 µm": "10 µm",
- "Esta medicina salió de *la tierra* y viajó *por correo.*": "这种药来自 *泥土，* 还 *坐过邮车。*",
+ "Esta medicina salió de *la tierra* y viajó *por correo.*": "这种药来自 *泥土，* 还 *被邮寄过。*",
  "Algodoncillo: un hongo, *Candida.*": "鹅口疮：一种真菌， *Candida。*",
  "Vive en ti… y a veces *crece de más.*": "它住在你身上…… *有时长得太多。*",
  "Sus células *se parecen* a las tuyas.": "它的细胞 *和你的很像。*",
@@ -54,7 +54,7 @@
  "En frascos, por correo, a *Rachel Brown.*": "装进瓶子，邮寄给 *Rachel Brown。*",
  "Brown la aislaba y *se la regresaba.*": "Brown 分离出物质， *再寄回去。*",
  "Una bacteria, *no un hongo.*": "是一种细菌， *不是真菌。*",
- "Sus regalías: *para la ciencia.*": "专利费： *全给了科学。*",
+ "Sus regalías: *para la ciencia.*": "专利费： *用于科学。*",
  "Tierra, correo y *dos científicas.*": "泥土、邮件和 *两位女科学家。*",
  "NISTATINA": "制霉菌素",
  "suspensión oral": "口服混悬液",
@@ -74,10 +74,10 @@
  "ork ": "ork ",
  "e": "e",
  "US$": "US$",
- " mill.": "百万",
  "correo": "邮件",
  "Hazen y Brown": "Hazen 与 Brown",
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
- "@lacreaciondelrobert": "@lacreaciondelrobert"
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "__millones": true
 }
