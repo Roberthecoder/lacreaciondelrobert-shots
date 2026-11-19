@@ -57,15 +57,28 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Herramientas (ffmpeg, fuentes chinas, Chromium)
-        timeout-minutes: 20
+      - name: Caché de fuentes chinas
+        uses: actions/cache@v4
+        with:
+          path: ~/.fonts/noto-cjk
+          key: noto-cjk-sc-2.004
+      - name: Herramientas (ffmpeg, fuentes chinas, Chrome) sin apt
+        # Con muchos renders en paralelo, apt se atoraba 20 min; ahora todo viene de npm/GitHub y del Chrome que ya trae la máquina.
+        timeout-minutes: 15
         run: |
-          for i in 1 2 3; do
-            timeout 180 sudo apt-get update -qq && timeout 300 sudo apt-get install -y -qq ffmpeg fonts-noto-cjk >/dev/null && break
-            echo "apt no respondió (intento $i)"; sleep 10
-          done
-          command -v ffmpeg >/dev/null || { echo "::error::No se instaló ffmpeg"; exit 1; }
-          cd motor && npm install --no-audit --no-fund && npx playwright install --with-deps chromium
+          set -e
+          cd motor && npm install --no-audit --no-fund && npm install --no-save --no-audit --no-fund ffmpeg-static@5 ffprobe-static@3 && cd ..
+          sudo ln -sf "$PWD/motor/node_modules/ffmpeg-static/ffmpeg" /usr/local/bin/ffmpeg
+          sudo ln -sf "$PWD/motor/node_modules/ffprobe-static/bin/linux/x64/ffprobe" /usr/local/bin/ffprobe
+          ffmpeg -version | head -1
+          if ! ls ~/.fonts/noto-cjk/*.otf >/dev/null 2>&1; then
+            mkdir -p ~/.fonts/noto-cjk
+            for i in 1 2 3; do curl -fsSL --max-time 300 -o /tmp/cjk.zip https://github.com/notofonts/noto-cjk/releases/download/Sans2.004/08_NotoSansCJKsc.zip && break; sleep 10; done
+            unzip -o -j -q /tmp/cjk.zip '*.otf' -d ~/.fonts/noto-cjk
+          fi
+          fc-cache -f >/dev/null; fc-list :lang=zh | head -2
+          google-chrome --version
+          echo "NAVEGADOR=chrome" >> "$GITHUB_ENV"
       - name: Audio del narrado que ya existe
         run: |
           set -e
