@@ -1,4 +1,4 @@
-标题: AI让客服新人2个月顶6个月
+标题: AI让客服新人2个月顶6个月以上
 
 正文:
 你是客服中心的新人，旁边的同事干了好几年。有了一个给你"递答案"的AI，两个月后你的表现就和不用AI干了6个月以上的人一样。
@@ -7,7 +7,7 @@ Erik Brynjolfsson（斯坦福）、Danielle Li和Lindsey Raymond（MIT）研究�
 为什么最帮最不会的人？作者的解释是：AI训练时更看重最好客服的聊天，这些好做法通过每条建议传给了新人（作者称这是提示性证据，并非定论）。
 另外，客户更客气，更少要求找主管，新人辞职也更少。这只是一家公司、一种工作。
 对比：另一项研究（METR，2025；AI 系列 #16）发现，资深程序员在自己的项目里用AI反而更慢。AI并非对谁都一样有用。示意图。
-参考：Brynjolfsson, Li y Raymond, The Quarterly Journal of Economics 140(2): 889–942（2025）；arXiv:2304.11771；Becker 等，arXiv:2507.09089（2025）。
+参考：Brynjolfsson, Li & Raymond, The Quarterly Journal of Economics 140(2): 889–942（2025）；arXiv:2304.11771；Becker 等，arXiv:2507.09089（2025）。
 你当过职场新人吗？是谁教你诀窍的？👇
 我是 Robert，来自 La Creación del Robert 🌱
 

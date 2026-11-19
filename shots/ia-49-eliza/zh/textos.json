@@ -86,7 +86,7 @@
  "SIENTO OÍR QUE ESTÁS DEP": "很遗憾听到你",
  "SIENTO OÍR QUE ESTÁS DEPRIMID": "很遗憾听到你抑郁",
  "ELIZA · Joseph Weizenbaum · MIT": "ELIZA · Joseph Weizenbaum · MIT",
- "Communications of the ACM, vol. 9, núm. 1": "Communications of the ACM, vol. 9, núm. 1",
+ "Communications of the ACM, vol. 9, núm. 1": "Communications of the ACM, vol. 9, no. 1",
  "ENE": "1月",
  "FEB": "2月",
  "MAR": "3月",
@@ -131,6 +131,794 @@
   [
    "^PASO (\\d+)$",
    "第$1步"
+  ],
+  [
+   "^Lo$",
+   "男"
+  ],
+  [
+   "^Los$",
+   "男"
+  ],
+  [
+   "^Los\\ $",
+   "男"
+  ],
+  [
+   "^Los\\ h$",
+   "男"
+  ],
+  [
+   "^Los\\ ho$",
+   "男人"
+  ],
+  [
+   "^Los\\ homb$",
+   "男人"
+  ],
+  [
+   "^Los\\ hombr$",
+   "男人"
+  ],
+  [
+   "^Los\\ hombre$",
+   "男人都"
+  ],
+  [
+   "^Los\\ hombres$",
+   "男人都"
+  ],
+  [
+   "^Los\\ hombres\\ $",
+   "男人都"
+  ],
+  [
+   "^Los\\ hombres\\ s$",
+   "男人都"
+  ],
+  [
+   "^Los\\ hombres\\ son$",
+   "男人都是"
+  ],
+  [
+   "^Los\\ hombres\\ son\\ $",
+   "男人都是"
+  ],
+  [
+   "^Los\\ hombres\\ son\\ t$",
+   "男人都是一"
+  ],
+  [
+   "^Los\\ hombres\\ son\\ to$",
+   "男人都是一"
+  ],
+  [
+   "^Los\\ hombres\\ son\\ tod$",
+   "男人都是一"
+  ],
+  [
+   "^Los\\ hombres\\ son\\ todo$",
+   "男人都是一"
+  ],
+  [
+   "^Los\\ hombres\\ son\\ todos\\ $",
+   "男人都是一个"
+  ],
+  [
+   "^Los\\ hombres\\ son\\ todos\\ i$",
+   "男人都是一个"
+  ],
+  [
+   "^Los\\ hombres\\ son\\ todos\\ ig$",
+   "男人都是一个"
+  ],
+  [
+   "^Los\\ hombres\\ son\\ todos\\ igu$",
+   "男人都是一个样"
+  ],
+  [
+   "^Los\\ hombres\\ son\\ todos\\ igua$",
+   "男人都是一个样"
+  ],
+  [
+   "^Los\\ hombres\\ son\\ todos\\ igual$",
+   "男人都是一个样"
+  ],
+  [
+   "^Los\\ hombres\\ son\\ todos\\ iguales$",
+   "男人都是一个样。"
+  ],
+  [
+   "^EN$",
+   "在"
+  ],
+  [
+   "^EN\\ $",
+   "在"
+  ],
+  [
+   "^EN\\ QU$",
+   "在"
+  ],
+  [
+   "^EN\\ QUÉ$",
+   "在哪"
+  ],
+  [
+   "^EN\\ QUÉ\\ $",
+   "在哪"
+  ],
+  [
+   "^EN\\ QUÉ\\ S$",
+   "在哪"
+  ],
+  [
+   "^EN\\ QUÉ\\ SE$",
+   "在哪方"
+  ],
+  [
+   "^EN\\ QUÉ\\ SEN$",
+   "在哪方"
+  ],
+  [
+   "^EN\\ QUÉ\\ SENTI$",
+   "在哪方"
+  ],
+  [
+   "^EN\\ QUÉ\\ SENTID$",
+   "在哪方面"
+  ],
+  [
+   "^Sie$",
+   "他"
+  ],
+  [
+   "^Siem$",
+   "他"
+  ],
+  [
+   "^Siemp$",
+   "他"
+  ],
+  [
+   "^Siempr$",
+   "他们"
+  ],
+  [
+   "^Siempre$",
+   "他们"
+  ],
+  [
+   "^Siempre\\ $",
+   "他们"
+  ],
+  [
+   "^Siempre\\ n$",
+   "他们总"
+  ],
+  [
+   "^Siempre\\ no$",
+   "他们总"
+  ],
+  [
+   "^Siempre\\ nos\\ $",
+   "他们总"
+  ],
+  [
+   "^Siempre\\ nos\\ a$",
+   "他们总拿"
+  ],
+  [
+   "^Siempre\\ nos\\ an$",
+   "他们总拿"
+  ],
+  [
+   "^Siempre\\ nos\\ and$",
+   "他们总拿"
+  ],
+  [
+   "^Siempre\\ nos\\ anda$",
+   "他们总拿各"
+  ],
+  [
+   "^Siempre\\ nos\\ andan$",
+   "他们总拿各"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ $",
+   "他们总拿各"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ mo$",
+   "他们总拿各种"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ mol$",
+   "他们总拿各种"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ mole$",
+   "他们总拿各种"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ moles$",
+   "他们总拿各种事"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ molest$",
+   "他们总拿各种事"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ molesta$",
+   "他们总拿各种事"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ molestan$",
+   "他们总拿各种事烦"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ molestand$",
+   "他们总拿各种事烦"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ molestando\\ $",
+   "他们总拿各种事烦"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ molestando\\ p$",
+   "他们总拿各种事烦我"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ molestando\\ po$",
+   "他们总拿各种事烦我"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ molestando\\ por$",
+   "他们总拿各种事烦我"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ molestando\\ por\\ $",
+   "他们总拿各种事烦我们"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ molestando\\ por\\ a$",
+   "他们总拿各种事烦我们"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ molestando\\ por\\ al$",
+   "他们总拿各种事烦我们"
+  ],
+  [
+   "^Siempre\\ nos\\ andan\\ molestando\\ por\\ alg$",
+   "他们总拿各种事烦我们"
+  ],
+  [
+   "^PU$",
+   "你"
+  ],
+  [
+   "^PUE$",
+   "你"
+  ],
+  [
+   "^PUED$",
+   "你"
+  ],
+  [
+   "^PUEDES$",
+   "你能"
+  ],
+  [
+   "^PUEDES\\ $",
+   "你能"
+  ],
+  [
+   "^PUEDES\\ P$",
+   "你能"
+  ],
+  [
+   "^PUEDES\\ PE$",
+   "你能"
+  ],
+  [
+   "^PUEDES\\ PEN$",
+   "你能举"
+  ],
+  [
+   "^PUEDES\\ PENS$",
+   "你能举"
+  ],
+  [
+   "^PUEDES\\ PENSAR$",
+   "你能举"
+  ],
+  [
+   "^PUEDES\\ PENSAR\\ $",
+   "你能举个"
+  ],
+  [
+   "^PUEDES\\ PENSAR\\ E$",
+   "你能举个"
+  ],
+  [
+   "^PUEDES\\ PENSAR\\ EN$",
+   "你能举个"
+  ],
+  [
+   "^PUEDES\\ PENSAR\\ EN\\ $",
+   "你能举个"
+  ],
+  [
+   "^PUEDES\\ PENSAR\\ EN\\ U$",
+   "你能举个例"
+  ],
+  [
+   "^PUEDES\\ PENSAR\\ EN\\ UN\\ $",
+   "你能举个例"
+  ],
+  [
+   "^PUEDES\\ PENSAR\\ EN\\ UN\\ E$",
+   "你能举个例"
+  ],
+  [
+   "^PUEDES\\ PENSAR\\ EN\\ UN\\ EJ$",
+   "你能举个例子"
+  ],
+  [
+   "^PUEDES\\ PENSAR\\ EN\\ UN\\ EJE$",
+   "你能举个例子"
+  ],
+  [
+   "^PUEDES\\ PENSAR\\ EN\\ UN\\ EJEM$",
+   "你能举个例子"
+  ],
+  [
+   "^PUEDES\\ PENSAR\\ EN\\ UN\\ EJEMP$",
+   "你能举个例子"
+  ],
+  [
+   "^Pu$",
+   "嗯"
+  ],
+  [
+   "^Pues$",
+   "嗯"
+  ],
+  [
+   "^Pues,$",
+   "嗯，"
+  ],
+  [
+   "^Pues,\\ $",
+   "嗯，"
+  ],
+  [
+   "^Pues,\\ m$",
+   "嗯，"
+  ],
+  [
+   "^Pues,\\ mi$",
+   "嗯，我"
+  ],
+  [
+   "^Pues,\\ mi\\ $",
+   "嗯，我"
+  ],
+  [
+   "^Pues,\\ mi\\ n$",
+   "嗯，我男"
+  ],
+  [
+   "^Pues,\\ mi\\ nov$",
+   "嗯，我男"
+  ],
+  [
+   "^Pues,\\ mi\\ novi$",
+   "嗯，我男朋"
+  ],
+  [
+   "^Pues,\\ mi\\ novio$",
+   "嗯，我男朋"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ $",
+   "嗯，我男朋"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ m$",
+   "嗯，我男朋友"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me$",
+   "嗯，我男朋友"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me\\ h$",
+   "嗯，我男朋友让"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me\\ hi$",
+   "嗯，我男朋友让"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me\\ hiz$",
+   "嗯，我男朋友让"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me\\ hizo$",
+   "嗯，我男朋友让我"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me\\ hizo\\ $",
+   "嗯，我男朋友让我"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me\\ hizo\\ v$",
+   "嗯，我男朋友让我"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me\\ hizo\\ ve$",
+   "嗯，我男朋友让我来"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me\\ hizo\\ veni$",
+   "嗯，我男朋友让我来这"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me\\ hizo\\ venir$",
+   "嗯，我男朋友让我来这"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me\\ hizo\\ venir\\ $",
+   "嗯，我男朋友让我来这"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me\\ hizo\\ venir\\ a$",
+   "嗯，我男朋友让我来这里"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me\\ hizo\\ venir\\ aq$",
+   "嗯，我男朋友让我来这里"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me\\ hizo\\ venir\\ aqu$",
+   "嗯，我男朋友让我来这里"
+  ],
+  [
+   "^Pues,\\ mi\\ novio\\ me\\ hizo\\ venir\\ aquí$",
+   "嗯，我男朋友让我来这里。"
+  ],
+  [
+   "^TU$",
+   "你"
+  ],
+  [
+   "^TU\\ $",
+   "你"
+  ],
+  [
+   "^TU\\ NO$",
+   "你男"
+  ],
+  [
+   "^TU\\ NOV$",
+   "你男"
+  ],
+  [
+   "^TU\\ NOVI$",
+   "你男"
+  ],
+  [
+   "^TU\\ NOVIO$",
+   "你男朋"
+  ],
+  [
+   "^TU\\ NOVIO\\ $",
+   "你男朋"
+  ],
+  [
+   "^TU\\ NOVIO\\ T$",
+   "你男朋"
+  ],
+  [
+   "^TU\\ NOVIO\\ TE\\ $",
+   "你男朋友"
+  ],
+  [
+   "^TU\\ NOVIO\\ TE\\ H$",
+   "你男朋友"
+  ],
+  [
+   "^TU\\ NOVIO\\ TE\\ HI$",
+   "你男朋友让"
+  ],
+  [
+   "^TU\\ NOVIO\\ TE\\ HIZ$",
+   "你男朋友让"
+  ],
+  [
+   "^TU\\ NOVIO\\ TE\\ HIZO$",
+   "你男朋友让"
+  ],
+  [
+   "^TU\\ NOVIO\\ TE\\ HIZO\\ V$",
+   "你男朋友让你"
+  ],
+  [
+   "^TU\\ NOVIO\\ TE\\ HIZO\\ VE$",
+   "你男朋友让你"
+  ],
+  [
+   "^TU\\ NOVIO\\ TE\\ HIZO\\ VEN$",
+   "你男朋友让你来"
+  ],
+  [
+   "^TU\\ NOVIO\\ TE\\ HIZO\\ VENI$",
+   "你男朋友让你来"
+  ],
+  [
+   "^TU\\ NOVIO\\ TE\\ HIZO\\ VENIR$",
+   "你男朋友让你来"
+  ],
+  [
+   "^TU\\ NOVIO\\ TE\\ HIZO\\ VENIR\\ $",
+   "你男朋友让你来这"
+  ],
+  [
+   "^TU\\ NOVIO\\ TE\\ HIZO\\ VENIR\\ AQ$",
+   "你男朋友让你来这"
+  ],
+  [
+   "^TU\\ NOVIO\\ TE\\ HIZO\\ VENIR\\ AQU$",
+   "你男朋友让你来这里"
+  ],
+  [
+   "^Di$",
+   ""
+  ],
+  [
+   "^Dic$",
+   "他"
+  ],
+  [
+   "^Dice$",
+   "他"
+  ],
+  [
+   "^Dice\\ $",
+   "他"
+  ],
+  [
+   "^Dice\\ q$",
+   "他"
+  ],
+  [
+   "^Dice\\ qu$",
+   "他说"
+  ],
+  [
+   "^Dice\\ que$",
+   "他说"
+  ],
+  [
+   "^Dice\\ que\\ $",
+   "他说"
+  ],
+  [
+   "^Dice\\ que\\ e$",
+   "他说"
+  ],
+  [
+   "^Dice\\ que\\ est$",
+   "他说我"
+  ],
+  [
+   "^Dice\\ que\\ esto$",
+   "他说我"
+  ],
+  [
+   "^Dice\\ que\\ estoy$",
+   "他说我"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ $",
+   "他说我几"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ d$",
+   "他说我几"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ de$",
+   "他说我几"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ dep$",
+   "他说我几"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ depr$",
+   "他说我几乎"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ depri$",
+   "他说我几乎"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimi$",
+   "他说我几乎"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimid$",
+   "他说我几乎一"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida$",
+   "他说我几乎一"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ $",
+   "他说我几乎一"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ c$",
+   "他说我几乎一"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ ca$",
+   "他说我几乎一直"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ cas$",
+   "他说我几乎一直"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ casi$",
+   "他说我几乎一直"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ casi\\ $",
+   "他说我几乎一直"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ casi\\ to$",
+   "他说我几乎一直很"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ casi\\ tod$",
+   "他说我几乎一直很"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ casi\\ todo$",
+   "他说我几乎一直很"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ casi\\ todo\\ $",
+   "他说我几乎一直很抑"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ casi\\ todo\\ e$",
+   "他说我几乎一直很抑"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ casi\\ todo\\ el$",
+   "他说我几乎一直很抑"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ casi\\ todo\\ el\\ $",
+   "他说我几乎一直很抑"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ casi\\ todo\\ el\\ t$",
+   "他说我几乎一直很抑郁"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ casi\\ todo\\ el\\ ti$",
+   "他说我几乎一直很抑郁"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ casi\\ todo\\ el\\ tie$",
+   "他说我几乎一直很抑郁"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ casi\\ todo\\ el\\ tiemp$",
+   "他说我几乎一直很抑郁。"
+  ],
+  [
+   "^Dice\\ que\\ estoy\\ deprimida\\ casi\\ todo\\ el\\ tiempo$",
+   "他说我几乎一直很抑郁。"
+  ],
+  [
+   "^SI$",
+   "很"
+  ],
+  [
+   "^SIE$",
+   "很"
+  ],
+  [
+   "^SIENT$",
+   "很"
+  ],
+  [
+   "^SIENTO$",
+   "很遗"
+  ],
+  [
+   "^SIENTO\\ $",
+   "很遗"
+  ],
+  [
+   "^SIENTO\\ O$",
+   "很遗"
+  ],
+  [
+   "^SIENTO\\ OÍ$",
+   "很遗"
+  ],
+  [
+   "^SIENTO\\ OÍR$",
+   "很遗憾"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ Q$",
+   "很遗憾"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ QU$",
+   "很遗憾"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ QUE$",
+   "很遗憾听"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ QUE\\ $",
+   "很遗憾听"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ QUE\\ E$",
+   "很遗憾听"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ QUE\\ ES$",
+   "很遗憾听到"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ QUE\\ ESTÁ$",
+   "很遗憾听到"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ QUE\\ ESTÁS$",
+   "很遗憾听到"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ QUE\\ ESTÁS\\ $",
+   "很遗憾听到你"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ QUE\\ ESTÁS\\ D$",
+   "很遗憾听到你"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ QUE\\ ESTÁS\\ DE$",
+   "很遗憾听到你"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ QUE\\ ESTÁS\\ DEPR$",
+   "很遗憾听到你抑"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ QUE\\ ESTÁS\\ DEPRI$",
+   "很遗憾听到你抑"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ QUE\\ ESTÁS\\ DEPRIM$",
+   "很遗憾听到你抑"
+  ],
+  [
+   "^SIENTO\\ OÍR\\ QUE\\ ESTÁS\\ DEPRIMI$",
+   "很遗憾听到你抑"
   ]
  ]
 }
