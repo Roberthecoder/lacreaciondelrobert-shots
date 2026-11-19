@@ -1,0 +1,16 @@
+{
+  "dcHtml": "Shot Hola China.dc.html",
+  "nota": "Shot Otro 01 · Hola, China. Presentación MUDA de Robert para RedNote (小红书), pedida por Robert el 19 nov 2026: «hazme un video mudo de introducción, keep it short. Y diles la neta, que no hablo chino, pero que me encantaría hacer amigos, alianzas... que me fascina China y que inclusive algún día me gustaría ir allá». Sin voz: música y efectos de gen-audio.mjs. Las líneas son los letreros en chino (con su línea chica en español). El entregable es la versión sin voz.",
+  "lineas": [
+    { "escena": "Hola", "texto": "你好！我是 Robert · ¡Hola! Soy Robert" },
+    { "escena": "Hola", "texto": "我来自墨西哥 · Soy de México" },
+    { "escena": "Ciencia", "texto": "我用动画做科普 · Divulgo ciencia con animaciones" },
+    { "escena": "Neta", "texto": "说实话，我不会说中文 · La neta: no hablo chino" },
+    { "escena": "Neta", "texto": "视频里的中文是翻译的 / 我说的是西班牙语 · Los letreros en chino son traducción y mi voz es en español" },
+    { "escena": "Amigos", "texto": "想在这里交朋友、找合作 · Quiero hacer amigos y alianzas aquí" },
+    { "escena": "China", "texto": "我对中国特别着迷 · Me fascina China" },
+    { "escena": "China", "texto": "希望有一天能去中国看看 · Algún día me encantaría ir" },
+    { "escena": "Outro", "texto": "关注我，一起探索科学！ · Sígueme y exploremos la ciencia juntos" }
+  ],
+  "duracion_libre": true
+}

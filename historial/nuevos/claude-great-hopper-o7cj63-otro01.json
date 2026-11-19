@@ -1,0 +1,5 @@
+{ "temas": [ { "id": "hola-china-presentacion-rednote", "titulo": "Hola, China: presentación muda de Robert para RedNote (no hablo chino, quiero hacer amigos y alianzas, me fascina China)", "serie": "Otro", "numero": 1,
+  "estado": "guion", "carpeta": "shots/otro-01-hola-china", "rama": "claude/great-hopper-o7cj63",
+  "fuentes": ["Pedido de Robert, 19 nov 2026", "series/shot-robert/datos.md"],
+  "fecha": "2026-11-19",
+  "derivados": ["Presentación muda de Robert en otros idiomas (japonés, coreano, portugués) para otras plataformas", "Ciencia que une a México y China: el maíz, el chile y otros cultivos que viajaron por el Galeón de Manila", "Respuesta a comentarios de RedNote: preguntas de seguidores chinos contestadas con un shot"] } ] }
