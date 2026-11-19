@@ -7,6 +7,13 @@ Escríbelo corto: estado actual y pendientes, no historia. La historia vive en g
 Última actualización: 30 oct 2026, 15:40 UTC (+ sección del admin maestro, 1 nov 2026).
 
 ## REDNOTE EN CHINO (16 nov 2026) — PAQUETE 1 ENTREGADO
+- **19 nov 01:45 UTC — TODOS LOS SHOTS EN CHINO (en curso, Robert autorizó todo el 18 nov):** los 435 shots narrados tienen
+  `zh/textos.json` + `zh/publicacion.md` (fun-149…155 y libre-01 no tienen narrado: no se hacen). Cada grupo lo revisa otro agente
+  (traducción de regreso + render). Revisados y mandados a render: grupos 00–14, 16, 18, 21, 25. Faltan revisar: 15, 17, 19, 20,
+  22, 23, 24, 26, 27, 28. `render-idioma.yml` ya no usa apt (ffmpeg de npm, Noto CJK de GitHub con caché, Chrome de la máquina):
+  con apt, los renders en paralelo se atoraban 20 min. Motor: `__millones` une {cifra}{" millones/mil millones/billones/mill./M/mil"}
+  → 万/亿/万亿, y texto+número se unen si una `__reglas` atrapa la unión («第3天»). Al terminar: paquetes `publicar/rednote/`, y
+  avisar a Robert que vuelva a poner privado el repo.
 - Robert pidió los shots en RedNote (Xiaohongshu) con letreros y subtítulos en chino y la voz en español, misma cronología.
   Motor: `motor/idioma/` (gancho que traduce textos con un diccionario por shot `shots/<k>/zh/textos.json`) y workflows
   `render-idioma.yml` (Release `idioma-zh`) + `videos-idioma.yml` (refs/videos/idioma-zh). Manual: `motor/idioma/LEEME.md`.
