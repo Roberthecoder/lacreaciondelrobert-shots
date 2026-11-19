@@ -68,6 +68,20 @@
         }
         kids = k2;
       }
+      // Texto + número armados por partes ({'día '}{n}, {n}{' días'}): si una __reglas atrapa la unión, se unen (p. ej. «第n天»).
+      if (d && d.__reglas && kids.length > 1) {
+        const k3 = [];
+        for (let i = 0; i < kids.length; i++) {
+          const a = kids[i], b = kids[i + 1];
+          const ok = (x, y) => (typeof x === 'string' || typeof x === 'number') && (typeof y === 'string' || typeof y === 'number') && (typeof x === 'number' || typeof y === 'number');
+          if (ok(a, b)) {
+            const j = `${a}${b}`;
+            if (d.__reglas.some(([re]) => new RegExp(re).test(j))) { k3.push(j); i++; continue; }
+          }
+          k3.push(a);
+        }
+        kids = k3;
+      }
       kids = kids.map((c) => { if (typeof c !== 'string') return c; if (window.__IDIOMA_MODO === 'recolectar') anota(c, `${nombre}>texto`); return tr(c); });
       return ce.call(this, type, props, ...kids);
     };
