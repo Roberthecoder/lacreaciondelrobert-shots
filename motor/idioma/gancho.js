@@ -76,7 +76,7 @@
         const k3 = [];
         for (let i = 0; i < kids.length; i++) {
           const a = kids[i], b = kids[i + 1];
-          const ok = (x, y) => (typeof x === 'string' || typeof x === 'number') && (typeof y === 'string' || typeof y === 'number') && (typeof x === 'number' || typeof y === 'number');
+          const ok = (x, y) => (typeof x === 'string' || typeof x === 'number') && (typeof y === 'string' || typeof y === 'number') && [x, y].some((z) => typeof z === 'number' || (typeof z === 'string' && /^[\d.,]+$/.test(z.trim())));
           if (ok(a, b)) {
             const j = `${a}${b}`;
             if (reglas(d).some(([re]) => re.test(j))) { k3.push(j); i++; continue; }
