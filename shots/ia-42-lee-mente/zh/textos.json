@@ -1,0 +1,449 @@
+{
+ "desde afuera · por ahora": "从外部 · 目前",
+ "3 personas": "3个人",
+ "de historias en audio": "有声故事",
+ "un decodificador para cada persona": "每人一个解码器",
+ "historia nueva → texto": "新故事 → 文字",
+ "lo que oyó": "听到的",
+ "«Todavía no tengo licencia de manejo».": "“我还没有驾照。”",
+ "lo que escribió la máquina": "机器写出的",
+ "ejemplo real del estudio (traducido)": "研究中的真实例子（译文）",
+ "mismas palabras": "原话照搬",
+ "= la misma idea ✔": "= 意思相同 ✔",
+ "resonancia · sin cirugía": "磁共振 · 无需手术",
+ "Prueba 1 · otro cerebro": "测试1 · 换个大脑",
+ "decodificador de otra persona": "别人的解码器",
+ "aciertos": "命中率",
+ "Prueba 2 · ¡sabotaje!": "测试2 · 故意捣乱！",
+ "«nombra animales en tu mente»": "“在心里默念动物名”",
+ "aciertos del decodificador": "解码器命中率",
+ "cortos animados · sin sonido": "无声动画短片",
+ "la máquina describió lo que pasaba": "机器描述了剧情",
+ "privacidad mental ✔": "思想隐私 ✔",
+ "los autores piden reglas que la protejan": "作者呼吁立规保护",
+ "¿Por qué no te *leen la mente* desde afuera?": "为什么从外部 *读不了你的心？*",
+ "3 personas · *16 horas* de historias.": "3个人 · *16小时* 故事。",
+ "La IA aprendió *su cerebro*… y escribía.": "AI学会了 *他们的大脑*… 还会写字。",
+ "Oyó una frase… *escribió otra parecida.*": "听到一句话…… *写出相似的一句。*",
+ "No las palabras: *la idea.*": "不是原话： *是意思。*",
+ "¿Ya pueden *espiarte?* Austin, 2023.": "能 *偷窥你吗？* 奥斯汀，2023年。",
+ "Otro cerebro: *casi puro azar.*": "换个大脑： *几乎全靠瞎猜。*",
+ "Pensó en animales: *casi no le atinó.*": "想着动物： *几乎猜不中。*",
+ "También describió *cortos sin sonido.*": "它还能描述 *无声短片。*",
+ "Desde afuera, tu mente *sigue siendo tuya.*": "从外部看， 你的心思 *仍属于你。*",
+ "fMRI": "fMRI",
+ " h": " 小时",
+ "e": "",
+ "ell": "她",
+ "ella ": "她甚",
+ "ella n": "她甚",
+ "ella ni ": "她甚至",
+ "ella ni si": "她甚至还",
+ "ella ni siqu": "她甚至还没",
+ "ella ni siqui": "她甚至还没",
+ "ella ni siquier": "她甚至还没…",
+ "ella ni siquiera…": "她甚至还没……",
+ "AÚN NO": "还不能",
+ "«E": "",
+ "«Ella ": "“她",
+ "«Ella ni s": "“她",
+ "«Ella ni siqui": "“她甚至",
+ "«Ella ni siquiera h": "“她甚至还",
+ "«Ella ni siquiera ha em": "“她甚至还没",
+ "«Ella ni siquiera ha empeza": "“她甚至还没开",
+ "«Ella ni siquiera ha empezado a": "“她甚至还没开始",
+ "«Ella ni siquiera ha empezado a apr": "“她甚至还没开始学",
+ "«Ella ni siquiera ha empezado a aprende": "“她甚至还没开始学开",
+ "«Ella ni siquiera ha empezado a aprender a ": "“她甚至还没开始学开车",
+ "«Ella ni siquiera ha empezado a aprender a manej": "“她甚至还没开始学开车。",
+ "«Ella ni siquiera ha empezado a aprender a manejar».": "“她甚至还没开始学开车。”",
+ "Universidad de Texas en Austin": "得克萨斯大学奥斯汀分校",
+ "Tang, LeBel, Jain y Huth · Nature Neuroscience": "Tang, LeBel, Jain y Huth · Nature Neuroscience",
+ "rjñxm m?¿zb jj?rñ qjñr": "rjñxm m?¿zb jj?rñ qjñr",
+ "?xt%b ?wmrñ jz#kt j#@#": "?xt%b ?wmrñ jz#kt j#@#",
+ "¿%tvz w%ñ¿w %z&v& @tm&": "¿%tvz w%ñ¿w %z&v& @tm&",
+ "apenas más que el azar": "仅略高于随机",
+ "jr&mb j&t&v q#jrz @?ñj": "jr&mb j&t&v q#jrz @?ñj",
+ "t?qr@ x&&k% w@#%q zw&#": "t?qr@ x&&k% w@#%q zw&#",
+ "r¿wxv rz¿xw &v%v¿ b?b%": "r¿wxv rz¿xw &v%v¿ b?b%",
+ "wvñ@@ xrbzq rm%@m @mtw": "wvñ@@ xrbzq rm%@m @mtw",
+ "w&m%r wrkw& &&#mb kww#": "w&m%r wrkw& &&#mb kww#",
+ "r&b@j #jv?t j&#m¿ %vtm": "r&b@j #jv?t j&#m¿ %vtm",
+ "wjzxb qñkr% w?rqm x#¿w": "wjzxb qñkr% w?rqm x#¿w",
+ "%zb@% trmbk rz%v? #x¿¿": "%zb@% trmbk rz%v? #x¿¿",
+ "x?&&t #k%?¿ ?%q¿# qrwj": "x?&&t #k%?¿ ?%q¿# qrwj",
+ "q@¿jz m?k&r z&w&r jz¿@": "q@¿jz m?k&r z&w&r jz¿@",
+ "#&ñrw @km?q xr¿vx v@ww": "#&ñrw @km?q xr¿vx v@ww",
+ "w@qjñ k#@kx %bbmt #@#t": "w@qjñ k#@kx %bbmt #@#t",
+ "krjzñ ¿ñjrv ?zrv& jzvw": "krjzñ ¿ñjrv ?zrv& jzvw",
+ "xq?¿j #bqb& vzjqx vj?b": "xq?¿j #bqb& vzjqx vj?b",
+ "ñmvmm @mrmv #¿#ñq ??q&": "ñmvmm @mrmv #¿#ñq ??q&",
+ "qzm#v qw#w@ @%@bk ñzv#": "qzm#v qw#w@ @%@bk ñzv#",
+ "jtjvw b@?qw zv¿zk wztr": "jtjvw b@?qw zv¿zk wztr",
+ "mqjv& rñ?#@ rñx&r r¿&m": "mqjv& rñ?#@ rñx&r r¿&m",
+ "rwxtx ktbw¿ krkvb mñ&b": "rwxtx ktbw¿ krkvb mñ&b",
+ "%bbr# ?&%k@ b%j%x ¿m@b": "%bbr# ?&%k@ b%j%x ¿m@b",
+ "bñ#xñ %tmxw z?t%ñ @¿@%": "bñ#xñ %tmxw z?t%ñ @¿@%",
+ "k¿ttv vk#bw r%¿k@ zmbr": "k¿ttv vk#bw r%¿k@ zmbr",
+ "qtjb# m#v%% qb?vj @r#&": "qtjb# m#v%% qb?vj @r#&",
+ "xjbzw ¿bqm@ wrx#@ jj%x": "xjbzw ¿bqm@ wrx#@ jj%x",
+ "vvw?@ vw&q@ %qzm@ %k@?": "vvw?@ vw&q@ %qzm@ %k@?",
+ "escuchando: ~55 %": "正常听：~55 %",
+ "w%qjb k¿#tv @q&qk w?bj": "w%qjb k¿#tv @q&qk w?bj",
+ "qzm&¿ w&¿jr kkxjk &¿qz": "qzm&¿ w&¿jr kkxjk &¿qz",
+ "v%rjk ñq#qv ?¿r&@ z¿x#": "v%rjk ñq#qv ?¿r&@ z¿x#",
+ "rkr¿r &%vq# r#k@v m@#t": "rkr¿r &%vq# r#k@v m@#t",
+ "saboteando: 0–3 %": "捣乱时：0–3 %",
+ "@??jt rqjtx wj¿%v t%zz": "@??jt rqjtx wj¿%v t%zz",
+ "brj#@ rx@rq %wm¿% @mzj": "brj#@ rx@rq %wm¿% @mzj",
+ "k?vz¿ qqztx #%#q# q%@¿": "k?vz¿ qqztx #%#q# q%@¿",
+ "b&k%j %&qwñ jwwvx mqzñ": "b&k%j %&qwñ jwwvx mqzñ",
+ "@t¿&& m?bkv ?#tbm ¿v@j": "@t¿&& m?bkv ?#tbm ¿v@j",
+ "&t?kv &#ztj #m&x# #m#j": "&t?kv &#ztj #m&x# #m#j",
+ "vjw#v mjtv? ktmwx ñtrj": "vjw#v mjtv? ktmwx ñtrj",
+ "%bk¿m t%mrq bwrkq @kw&": "%bk¿m t%mrq bwrkq @kw&",
+ "jv@?& tqrm& j#t%z ñ%#j": "jv@?& tqrm& j#t%z ñ%#j",
+ "z¿bwt ??#w@ ¿r¿zx trjj": "z¿bwt ??#w@ ¿r¿zx trjj",
+ "w#mz¿ k?t¿@ @jjrz ¿w?w": "w#mz¿ k?t¿@ @jjrz ¿w?w",
+ "jxjz? ¿z?ñt ?r&mk mwtz": "jxjz? ¿z?ñt ?r&mk mwtz",
+ "%j%#k ñxñwx ñvw@t &jz#": "%j%#k ñxñwx ñvw@t &jz#",
+ "&vxtb t?mzñ wqqb& #km¿": "&vxtb t?mzñ wqqb& #km¿",
+ "ñ%jrk x?qvr ##@ñr mñ#t": "ñ%jrk x?qvr ##@ñr mñ#t",
+ "xq@tb ñrzbk wrrñ# &bj%": "xq@tb ñrzbk wrrñ# &bj%",
+ "ñ@&x& ?&w%t &r@br vr#v": "ñ@&x& ?&w%t &r@br vr#v",
+ "wjvtr %x@&j %¿rqt #¿vt": "wjvtr %x@&j %¿rqt #¿vt",
+ "&ñk?v t#jt¿ w%jtz ##z#": "&ñk?v t#jt¿ w%jtz ##z#",
+ "mvbrr %vttj jvk%m mwz%": "mvbrr %vttj jvk%m mwz%",
+ "z¿mz¿ r?wñz @qxxr tb&j": "z¿mz¿ r?wñz @qxxr tb&j",
+ "brñjt &bj?? wz%#j #z?b": "brñjt &bj?? wz%#j #z?b",
+ "@jrmb tb¿¿? x?%qb ?&br": "@jrmb tb¿¿? x?%qb ?&br",
+ "ñrx#¿ vtmzq k?kv# @&bb": "ñrx#¿ vtmzq k?kv# @&bb",
+ "bñr&? qz@mj qx@tm mkbx": "bñr&? qz@mj qx@tm mkbx",
+ "xv@@w qtwbw rb?@% qr@m": "xv@@w qtwbw rb?@% qr@m",
+ "@¿%wm mt¿xz w¿ñbk @qxñ": "@¿%wm mt¿xz w¿ñbk @qxñ",
+ "q?jqj kzrzv rb@@% &w%x": "q?jqj kzrzv rb@@% &w%x",
+ "kz?jw ¿@#mb mqjk? x%k¿": "kz?jw ¿@#mb mqjk? x%k¿",
+ "&@b@q qj%@z #qkkr r¿w%": "&@b@q qj%@z #qkkr r¿w%",
+ "r¿@ñk jv#xj %zmvk #&zj": "r¿@ñk jv#xj %zmvk #&zj",
+ "&#&t@ %zjw¿ ñ@@xm @q%q": "&#&t@ %zjw¿ ñ@@xm @q%q",
+ "ww@xt rzw#k w&#t% #k?k": "ww@xt rzw#k w&#t% #k?k",
+ "b@ñrñ mqjbm %ñ&qb m¿@k": "b@ñrñ mqjbm %ñ&qb m¿@k",
+ "%%z#& #ñ??k ¿¿&tj @zm#": "%%z#& #ñ??k ¿¿&tj @zm#",
+ "q&?vr xbtbx v%x¿m qqrb": "q&?vr xbtbx v%x¿m qqrb",
+ "v%mjñ qz%rm %vmx% rmb?": "v%mjñ qz%rm %vmx% rmb?",
+ "j%?bñ #tvtt qjkxj ñrrm": "j%?bñ #tvtt qjkxj ñrrm",
+ "jzñrz &m¿x? m&zv@ jr@z": "jzñrz &m¿x? m&zv@ jr@z",
+ "w¿?jz xt&@w &??bm ñz?j": "w¿?jz xt&@w &??bm ñz?j",
+ "mtjw& wtqz¿ m#ztt &m&r": "mtjw& wtqz¿ m#ztt &m&r",
+ "bñtj? mk@@w rbñbk ktz¿": "bñtj? mk@@w rbñbk ktz¿",
+ "xj@t# %wmtv #b@¿z vñb?": "xj@t# %wmtv #b@¿z vñb?",
+ "%j%?# jw¿t@ ¿k?w& %qmx": "%j%?# jw¿t@ ¿k?w& %qmx",
+ "v&qz# v@xzt ?wvvm ?rrm": "v&qz# v@xzt ?wvvm ?rrm",
+ "t&wj¿ mqzbz tmtbt bv¿r": "t&wj¿ mqzbz tmtbt bv¿r",
+ "vmñvx ¿xrxb k??¿¿ j@?¿": "vmñvx ¿xrxb k??¿¿ j@?¿",
+ "w@&&v rtxxw ¿t&qz m@xx": "w@&&v rtxxw ¿t&qz m@xx",
+ "@mwwr vkj¿% ¿txj¿ tñtq": "@mwwr vkj¿% ¿txj¿ tñtq",
+ "r#rww v#@r@ v&vr% jrb#": "r#rww v#@r@ v&vr% jrb#",
+ "&&b#k &&j&? ?jbw% m¿¿b": "&&b#k &&j&? ?jbw% m¿¿b",
+ "v¿ññ¿ ñqjw# rkrqv jbmv": "v¿ññ¿ ñqjw# rkrqv jbmv",
+ "t&#ñr %#¿#@ jkm@@ m#?#": "t&#ñr %#¿#@ jkm@@ m#?#",
+ "ttjñq bkxqk rvrzk v?#r": "ttjñq bkxqk rvrzk v?#r",
+ "zñ#&r %t#rr ¿@bbb rñxm": "zñ#&r %t#rr ¿@bbb rñxm",
+ "mwtwk #?xk¿ xrv¿x r@@ñ": "mwtwk #?xk¿ xrv¿x r@@ñ",
+ "vm?kj jw%?q qm¿m% kv%m": "vm?kj jw%?q qm¿m% kv%m",
+ "qtx#m bkbq¿ @x#&v #@xv": "qtx#m bkbq¿ @x#&v #@xv",
+ "#v¿&m x%vxw vkkzk ?k#q": "#v¿&m x%vxw vkkzk ?k#q",
+ "wrzxx ztwm@ &tk&& %&wz": "wrzxx ztwm@ &tk&& %&wz",
+ "qkk?% #&qtq @jz#x bñññ": "qkk?% #&qtq @jz#x bñññ",
+ "%#z¿r qkvj¿ ?tm?w wkz&": "%#z¿r qkvj¿ ?tm?w wkz&",
+ "La Creación del Robert": "La Creación del Robert",
+ "Sígueme para más ciencia": "关注我，看更多科学",
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "v@vñ% qbr%@ kjqtw j@&x": "v@vñ% qbr%@ kjqtw j@&x",
+ "qrktñ ñrz@? j?qtb @#xm": "qrktñ ñrz@? j?qtb @#xm",
+ "&?q¿z bv#bx xwkb# jb#r": "&?q¿z bv#bx xwkb# jb#r",
+ "x?jz% x?#vw zwrtv t¿zk": "x?jz% x?#vw zwrtv t¿zk",
+ "jxv?& tt&km rv&j& z?rz": "jxv?& tt&km rv&j& z?rz",
+ "&mbk? qñ¿@& %qbk& ?qwq": "&mbk? qñ¿@& %qbk& ?qwq",
+ "j?z¿? qr&kk wvzv% @@#j": "j?z¿? qr&kk wvzv% @@#j",
+ "?m&x¿ rjñbb vm#ñ? m¿xt": "?m&x¿ rjñbb vm#ñ? m¿xt",
+ "ñ#bjm #&?ñx vtt¿x &x#j": "ñ#bjm #&?ñx vtt¿x &x#j",
+ "?rwjq vjj&j wñ&%t &jbb": "?rwjq vjj&j wñ&%t &jbb",
+ "b%w?r wwwrj ?#&?¿ #¿@v": "b%w?r wwwrj ?#&?¿ #¿@v",
+ "xtmñ& zxj?b ¿¿%¿¿ ñwbq": "xtmñ& zxj?b ¿¿%¿¿ ñwbq",
+ "vxvwx z%v#w %rtqj %rkt": "vxvwx z%v#w %rtqj %rkt",
+ "__reglas": [
+  [
+   "^e$",
+   ""
+  ],
+  [
+   "^el$",
+   "她"
+  ],
+  [
+   "^ell$",
+   "她"
+  ],
+  [
+   "^ella$",
+   "她甚"
+  ],
+  [
+   "^ella\\ $",
+   "她甚"
+  ],
+  [
+   "^ella\\ n$",
+   "她甚"
+  ],
+  [
+   "^ella\\ ni$",
+   "她甚至"
+  ],
+  [
+   "^ella\\ ni\\ $",
+   "她甚至"
+  ],
+  [
+   "^ella\\ ni\\ s$",
+   "她甚至还"
+  ],
+  [
+   "^ella\\ ni\\ si$",
+   "她甚至还"
+  ],
+  [
+   "^ella\\ ni\\ siq$",
+   "她甚至还没"
+  ],
+  [
+   "^ella\\ ni\\ siqu$",
+   "她甚至还没"
+  ],
+  [
+   "^ella\\ ni\\ siqui$",
+   "她甚至还没"
+  ],
+  [
+   "^ella\\ ni\\ siquie$",
+   "她甚至还没…"
+  ],
+  [
+   "^ella\\ ni\\ siquier$",
+   "她甚至还没…"
+  ],
+  [
+   "^ella\\ ni\\ siquiera$",
+   "她甚至还没……"
+  ],
+  [
+   "^ella\\ ni\\ siquiera…$",
+   "她甚至还没……"
+  ],
+  [
+   "^«E$",
+   ""
+  ],
+  [
+   "^«El$",
+   "“"
+  ],
+  [
+   "^«Ell$",
+   "“"
+  ],
+  [
+   "^«Ella$",
+   "“"
+  ],
+  [
+   "^«Ella\\ $",
+   "“她"
+  ],
+  [
+   "^«Ella\\ n$",
+   "“她"
+  ],
+  [
+   "^«Ella\\ ni$",
+   "“她"
+  ],
+  [
+   "^«Ella\\ ni\\ $",
+   "“她"
+  ],
+  [
+   "^«Ella\\ ni\\ s$",
+   "“她"
+  ],
+  [
+   "^«Ella\\ ni\\ si$",
+   "“她甚"
+  ],
+  [
+   "^«Ella\\ ni\\ siq$",
+   "“她甚"
+  ],
+  [
+   "^«Ella\\ ni\\ siqu$",
+   "“她甚"
+  ],
+  [
+   "^«Ella\\ ni\\ siqui$",
+   "“她甚至"
+  ],
+  [
+   "^«Ella\\ ni\\ siquie$",
+   "“她甚至"
+  ],
+  [
+   "^«Ella\\ ni\\ siquier$",
+   "“她甚至"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera$",
+   "“她甚至"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ $",
+   "“她甚至"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ h$",
+   "“她甚至还"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha$",
+   "“她甚至还"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ $",
+   "“她甚至还"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ e$",
+   "“她甚至还没"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ em$",
+   "“她甚至还没"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ emp$",
+   "“她甚至还没"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empe$",
+   "“她甚至还没"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empez$",
+   "“她甚至还没"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empeza$",
+   "“她甚至还没开"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezad$",
+   "“她甚至还没开"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado$",
+   "“她甚至还没开"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ $",
+   "“她甚至还没开始"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a$",
+   "“她甚至还没开始"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ $",
+   "“她甚至还没开始"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ a$",
+   "“她甚至还没开始"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ ap$",
+   "“她甚至还没开始"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ apr$",
+   "“她甚至还没开始学"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ apre$",
+   "“她甚至还没开始学"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ apren$",
+   "“她甚至还没开始学"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprend$",
+   "“她甚至还没开始学开"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprende$",
+   "“她甚至还没开始学开"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprender$",
+   "“她甚至还没开始学开"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprender\\ $",
+   "“她甚至还没开始学开"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprender\\ a$",
+   "“她甚至还没开始学开"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprender\\ a\\ $",
+   "“她甚至还没开始学开车"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprender\\ a\\ m$",
+   "“她甚至还没开始学开车"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprender\\ a\\ ma$",
+   "“她甚至还没开始学开车"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprender\\ a\\ man$",
+   "“她甚至还没开始学开车。"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprender\\ a\\ mane$",
+   "“她甚至还没开始学开车。"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprender\\ a\\ manej$",
+   "“她甚至还没开始学开车。"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprender\\ a\\ maneja$",
+   "“她甚至还没开始学开车。"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprender\\ a\\ manejar$",
+   "“她甚至还没开始学开车。"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprender\\ a\\ manejar»$",
+   "“她甚至还没开始学开车。”"
+  ],
+  [
+   "^«Ella\\ ni\\ siquiera\\ ha\\ empezado\\ a\\ aprender\\ a\\ manejar»\\.$",
+   "“她甚至还没开始学开车。”"
+  ]
+ ]
+}

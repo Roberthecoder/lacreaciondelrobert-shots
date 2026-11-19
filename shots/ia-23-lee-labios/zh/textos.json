@@ -1,0 +1,89 @@
+{
+ "PESO": "PESO 重量",
+ "BESO": "BESO 亲吻",
+ "P y B: la misma boca": "P 和 B：同一个口型",
+ "1 visema = labios juntos": "1个视位 = 双唇闭合",
+ "visema: la forma visible de un sonido": "视位：一个音看得见的口型",
+ "200 videos de la BBC · sin sonido": "200段BBC视频 · 无声",
+ "lector profesional": "专业读唇者",
+ "menos de ¼": "不到 ¼",
+ "IA (solo labios)": "AI（只看嘴唇）",
+ "horas de YouTube": "小时YouTube视频",
+ "caras hablando · en inglés": "说话的脸 · 英语",
+ "VS": "VS",
+ "▶ ver otra vez: 1 / 10": "▶ 重看：1 / 10",
+ "solo la boca": "只看嘴",
+ "error de palabras · menos es mejor": "词错误率 · 越低越好",
+ "tengo sed": "我渴了",
+ "podría ayudar · ejemplo ilustrativo": "可能有帮助 · 示意例子",
+ "de frente": "正对镜头",
+ "de cerca": "距离够近",
+ "buen video": "画质好",
+ "¿«Peso» o *«beso»?*": "是「peso（重量）」 *还是「beso（吻）」？*",
+ "Misma boca: *visemas.*": "同一个口型： *视位。*",
+ "Experto: *menos de ¼*": "专家： *不到¼*",
+ "La IA: *la mitad.*": "AI： *一半。*",
+ "¿Y con *más bocas?*": "如果 *看更多嘴呢？*",
+ "*3,886 horas* de video": "*3886小时* 的视频",
+ "Cada video: *hasta 10 veces*": "每段视频： *最多看10遍*",
+ "Error: *86–93 %* vs *41 %*": "错误率： *86–93%* 对比 *41%*",
+ "Si *perdiste la voz…*": "如果你 *失去了声音……*",
+ "*De frente* y *de cerca*": "*正对镜头* 而且 *距离够近*",
+ "Ayuda *el contexto.*": "*上下文* 有帮助。",
+ "P": "P",
+ "B": "B",
+ "M": "M",
+ "BBC": "BBC",
+ "Oxford + DeepMind": "牛津 + DeepMind",
+ "Chung, Senior, Vinyals y Zisserman · CVPR": "Chung, Senior, Vinyals 与 Zisserman · CVPR",
+ "DeepMind y Google": "DeepMind 与谷歌",
+ "Shillingford et al. · arXiv:1807.05162": "Shillingford et al. · arXiv:1807.05162",
+ " h": " 小时",
+ "▶ ver otra vez: 2 / 10": "▶ 重看：2 / 10",
+ "▶ ver otra vez: 3 / 10": "▶ 重看：3 / 10",
+ "▶ ver otra vez: 4 / 10": "▶ 重看：4 / 10",
+ "▶ ver otra vez: 5 / 10": "▶ 重看：5 / 10",
+ "▶ ver otra vez: 6 / 10": "▶ 重看：6 / 10",
+ "▶ ver otra vez: 7 / 10": "▶ 重看：7 / 10",
+ "▶ ver otra vez: 8 / 10": "▶ 重看：8 / 10",
+ "▶ ver otra vez: 9 / 10": "▶ 重看：9 / 10",
+ "▶ ver otra vez: 10 / 10": "▶ 重看：10 / 10",
+ "profesionales sin contexto": "专业者（无上下文）",
+ "profesionales con contexto": "专业者（有上下文）",
+ "la IA (2018)": "AI（2018）",
+ "te": "",
+ "teng": "我",
+ "tengo s": "我渴",
+ "¿Cuál es el": "你行李箱的",
+ "de tu maleta?": "是多少？",
+ "peso": "重量",
+ "La Creación del Robert": "La Creación del Robert",
+ "Sígueme para más ciencia": "关注我，看更多科学",
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "__reglas": [
+  [
+   "^▶ ver otra vez: (\\d+) / 10$",
+   "▶ 重看：$1 / 10"
+  ],
+  [
+   "^t$",
+   ""
+  ],
+  [
+   "^ten$",
+   ""
+  ],
+  [
+   "^tengo$",
+   "我"
+  ],
+  [
+   "^tengo $",
+   "我"
+  ],
+  [
+   "^tengo se$",
+   "我渴"
+  ]
+ ]
+}

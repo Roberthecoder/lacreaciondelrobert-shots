@@ -1,0 +1,1634 @@
+{
+ "texto de entrada": "输入文本",
+ "Generación 9": "第9代",
+ "9 generaciones después": "9代之后",
+ "analogía": "类比",
+ "modelo pequeño: OPT-125m (Meta)": "小模型：OPT-125m（Meta）",
+ "aprende de los textos de la anterior": "用上一代的文本学习",
+ "Generación 1": "第1代",
+ "Roma": "罗马",
+ "¿Buenos Aires?": "布宜诺斯艾利斯？",
+ "generación 1": "第1代",
+ "Gen 9 · original": "第9代 · 原文",
+ "negra": "黑",
+ "blanca": "白",
+ "azul": "蓝",
+ "roja": "红",
+ "amarilla": "黄",
+ "generación 0": "第0代",
+ "lo raro": "罕见的",
+ "errores heredados": "遗传的错误",
+ "esquema": "示意",
+ "internet": "互联网",
+ "próxima IA": "下一代AI",
+ "humanos": "人类",
+ "IA gen 1": "AI 第1代",
+ "IA gen 2": "AI 第2代",
+ "IA gen 3": "AI 第3代",
+ "IA gen 4": "AI 第4代",
+ "reemplazar": "替换",
+ "acumular": "累积",
+ "colapsa ✗": "崩溃 ✗",
+ "no colapsa ✔": "不崩溃 ✔",
+ "Gerstgrasser et al. · Stanford · 2024": "Gerstgrasser et al. · 斯坦福 · 2024",
+ "copias de copias": "复制品的复制品",
+ "No está obsesionada: *es la generación 9.*": "它不是着了迷： *这是第9代。*",
+ "Le pidieron seguir: *torres de iglesias.*": "让它续写： *教堂塔楼。*",
+ "Fotocopia de fotocopia: *cada copia pierde.*": "复印件再复印： *每印一次都会损失。*",
+ "Oxford y Cambridge · *Nature, 2024.*": "牛津和剑桥 · *Nature，2024年。*",
+ "Cada una aprende *de la anterior.*": "每一代都 *向上一代学习。*",
+ "Gen 1: *¿San Pedro en Buenos Aires?*": "第1代： *布宜诺斯艾利斯的圣彼得？*",
+ "Gen 9: *liebres de colores.*": "第9代： *彩色尾巴的野兔。*",
+ "¿Por qué *se descompone?*": "为什么 *会坏掉？*",
+ "Lo raro *se olvida.*": "罕见的 *被遗忘。*",
+ "Y se cuelan *errores heredados.*": "还混进了 *遗传的错误。*",
+ "IA en internet → *datos contaminados.*": "网上的AI内容 → *污染数据。*",
+ "Si sumas sin borrar: *no colapsa.*": "只加不删： *就不会崩溃。*",
+ "Una IA que aprendió *de copias de copias.*": "一个AI *向复制品的复制品学习。*",
+ "…las torres de las": "……教区教堂的",
+ "iglesias parroquiales": "塔楼",
+ "se diseñaron según": "是参照",
+ "los primeros ejemplos": "垂直式风格的",
+ "del estilo": "早期范例",
+ "Perpendicular.": "设计的。",
+ "(traducido del inglés)": "（译自英文）",
+ "…hogar de a": "……这",
+ "…hogar de algunas de": "……这里栖息着",
+ "las": "",
+ "las mayores": "最大的",
+ "p": "",
+ "pob": "",
+ "poblaciones de": "几群野",
+ "poblaciones de lie": "几群野兔",
+ "poblaciones de liebres": "几群野兔：",
+ "de cola negr": "黑",
+ "…hogar d": "……",
+ "…hogar de alguna": "……这里栖",
+ "las ": "最",
+ "poblacion": "几群",
+ "poblaciones de li": "几群野",
+ "de ": "",
+ "de cola neg": "黑",
+ "de cola negra, lieb": "黑尾野兔",
+ "de cola negra, liebres": "黑尾野兔、",
+ "de co": "",
+ "de cola blanca": "白尾",
+ "de cola blanca, liebre": "白尾野兔",
+ "de cola blanca, liebres": "白尾野兔、",
+ "de cola": "",
+ "de cola azul, l": "蓝尾野",
+ "de cola azul, liebres": "蓝尾野兔、",
+ "de": "",
+ "de cola ro": "红",
+ "de cola roja, lieb": "红尾野兔",
+ "de cola roja, liebres": "红尾野兔、",
+ "de cola amari": "黄",
+ "de cola amarill—": "黄—",
+ "original": "原件",
+ "copia 1": "复印 1",
+ "copia 2": "复印 2",
+ "copia 3": "复印 3",
+ "Oxford · Cambridge · Imperial · Toronto · Edimburgo": "牛津 · 剑桥 · 帝国理工 · 多伦多 · 爱丁堡",
+ "Shumailov, Shumaylov, Zhao, Papernot, Anderson y Gal · Nature": "Shumailov, Shumaylov, Zhao, Papernot, Anderson 与 Gal · Nature",
+ "Gen 0": "第0代",
+ "IA": "AI",
+ "Gen 1": "第1代",
+ "Gen 2": "第2代",
+ "Gen 3 …": "第3代 …",
+ "…como la Basílica de": "……比如罗马的",
+ "San Pedro en Roma o": "圣彼得大教堂，或",
+ "la Basílica de San": "布宜诺斯艾利斯的",
+ "Pedro en Buenos Aires.": "圣彼得大教堂。",
+ "Generación 5": "第5代",
+ "generación 5": "第5代",
+ "inglés": "英语",
+ "francés": "法语",
+ "alemán": "德语",
+ "italiano": "意大利语",
+ "español": "西班牙语",
+ "Gen 5: *listas de idiomas.*": "第5代： *一串语言名。*",
+ "…traducido a ": "……被翻译",
+ "…traducido a más de": "……被翻译成超过",
+ "100 idiomas:": "100种语言",
+ "100 idiomas: inglés,": "100种语言：英语、",
+ "francés, al": "法语、德",
+ "francés, alemán,": "法语、德语、",
+ "italiano, esp": "意大利语、西班",
+ "italiano, español,": "意大利语、西班牙语、",
+ "portugués, nee": "葡萄牙语、",
+ "portugués, neerlandés,": "葡萄牙语、荷兰语、",
+ "sueco, nor": "瑞典语、挪",
+ "sueco, noruego,": "瑞典语、挪威语、",
+ "polaco, húngar": "波兰语、匈牙利",
+ "polaco, húngaro,": "波兰语、匈牙利语、",
+ "eslovaco, lituan": "斯洛伐克语、立陶宛语",
+ "…populations of": "…populations of",
+ "black-tailed": "black-tailed",
+ "jackrabbits, white-": "jackrabbits, white-",
+ "tailed jackrabbits,": "tailed jackrabbits,",
+ "blue-tailed": "blue-tailed",
+ "jackrabbits, red-": "jackrabbits, red-",
+ "yellow-": "yellow-",
+ "(texto real del estudio, en inglés)": "（研究中的原文，英文）",
+ "eslovaco, lituano…": "斯洛伐克语、立陶宛语……",
+ "generación 2": "第2代",
+ "generación 3": "第3代",
+ "generación 4": "第4代",
+ "generación 6": "第6代",
+ "generación 7": "第7代",
+ "generación 8": "第8代",
+ "generación 9": "第9代",
+ "La Creación del Robert": "La Creación del Robert",
+ "Sígueme para más ciencia": "关注我，看更多科学",
+ "@lacreaciondelrobert": "@lacreaciondelrobert",
+ "__reglas": [
+  [
+   "^…$",
+   ""
+  ],
+  [
+   "^…h$",
+   ""
+  ],
+  [
+   "^…ho$",
+   "…"
+  ],
+  [
+   "^…hog$",
+   "…"
+  ],
+  [
+   "^…hoga$",
+   "…"
+  ],
+  [
+   "^…hogar$",
+   "……"
+  ],
+  [
+   "^…hogar\\ $",
+   "……"
+  ],
+  [
+   "^…hogar\\ de$",
+   "……这"
+  ],
+  [
+   "^…hogar\\ de\\ $",
+   "……这"
+  ],
+  [
+   "^…hogar\\ de\\ al$",
+   "……这里"
+  ],
+  [
+   "^…hogar\\ de\\ alg$",
+   "……这里"
+  ],
+  [
+   "^…hogar\\ de\\ algu$",
+   "……这里"
+  ],
+  [
+   "^…hogar\\ de\\ algun$",
+   "……这里栖"
+  ],
+  [
+   "^…hogar\\ de\\ algunas$",
+   "……这里栖"
+  ],
+  [
+   "^…hogar\\ de\\ algunas\\ $",
+   "……这里栖息"
+  ],
+  [
+   "^…hogar\\ de\\ algunas\\ d$",
+   "……这里栖息"
+  ],
+  [
+   "^l$",
+   ""
+  ],
+  [
+   "^la$",
+   ""
+  ],
+  [
+   "^las\\ m$",
+   "最"
+  ],
+  [
+   "^las\\ ma$",
+   "最"
+  ],
+  [
+   "^las\\ may$",
+   "最"
+  ],
+  [
+   "^las\\ mayo$",
+   "最大"
+  ],
+  [
+   "^las\\ mayor$",
+   "最大"
+  ],
+  [
+   "^las\\ mayore$",
+   "最大"
+  ],
+  [
+   "^po$",
+   ""
+  ],
+  [
+   "^pobl$",
+   ""
+  ],
+  [
+   "^pobla$",
+   "几"
+  ],
+  [
+   "^poblac$",
+   "几"
+  ],
+  [
+   "^poblaci$",
+   "几"
+  ],
+  [
+   "^poblacio$",
+   "几"
+  ],
+  [
+   "^poblacione$",
+   "几群"
+  ],
+  [
+   "^poblaciones$",
+   "几群"
+  ],
+  [
+   "^poblaciones\\ $",
+   "几群"
+  ],
+  [
+   "^poblaciones\\ d$",
+   "几群"
+  ],
+  [
+   "^poblaciones\\ de\\ $",
+   "几群野"
+  ],
+  [
+   "^poblaciones\\ de\\ l$",
+   "几群野"
+  ],
+  [
+   "^poblaciones\\ de\\ lieb$",
+   "几群野兔"
+  ],
+  [
+   "^poblaciones\\ de\\ liebr$",
+   "几群野兔"
+  ],
+  [
+   "^poblaciones\\ de\\ liebre$",
+   "几群野兔"
+  ],
+  [
+   "^d$",
+   ""
+  ],
+  [
+   "^de\\ c$",
+   ""
+  ],
+  [
+   "^de\\ col$",
+   ""
+  ],
+  [
+   "^de\\ cola\\ $",
+   ""
+  ],
+  [
+   "^de\\ cola\\ n$",
+   ""
+  ],
+  [
+   "^de\\ cola\\ ne$",
+   ""
+  ],
+  [
+   "^de\\ cola\\ negra$",
+   "黑尾"
+  ],
+  [
+   "^de\\ cola\\ negra,$",
+   "黑尾"
+  ],
+  [
+   "^de\\ cola\\ negra,\\ $",
+   "黑尾"
+  ],
+  [
+   "^de\\ cola\\ negra,\\ l$",
+   "黑尾野"
+  ],
+  [
+   "^de\\ cola\\ negra,\\ li$",
+   "黑尾野"
+  ],
+  [
+   "^de\\ cola\\ negra,\\ lie$",
+   "黑尾野"
+  ],
+  [
+   "^de\\ cola\\ negra,\\ liebr$",
+   "黑尾野兔"
+  ],
+  [
+   "^de\\ cola\\ negra,\\ liebre$",
+   "黑尾野兔"
+  ],
+  [
+   "^de\\ cola\\ b$",
+   ""
+  ],
+  [
+   "^de\\ cola\\ bl$",
+   ""
+  ],
+  [
+   "^de\\ cola\\ bla$",
+   "白"
+  ],
+  [
+   "^de\\ cola\\ blan$",
+   "白"
+  ],
+  [
+   "^de\\ cola\\ blanc$",
+   "白"
+  ],
+  [
+   "^de\\ cola\\ blanca,$",
+   "白尾"
+  ],
+  [
+   "^de\\ cola\\ blanca,\\ $",
+   "白尾"
+  ],
+  [
+   "^de\\ cola\\ blanca,\\ l$",
+   "白尾野"
+  ],
+  [
+   "^de\\ cola\\ blanca,\\ li$",
+   "白尾野"
+  ],
+  [
+   "^de\\ cola\\ blanca,\\ lie$",
+   "白尾野"
+  ],
+  [
+   "^de\\ cola\\ blanca,\\ lieb$",
+   "白尾野兔"
+  ],
+  [
+   "^de\\ cola\\ blanca,\\ liebr$",
+   "白尾野兔"
+  ],
+  [
+   "^de\\ cola\\ a$",
+   ""
+  ],
+  [
+   "^de\\ cola\\ az$",
+   "蓝"
+  ],
+  [
+   "^de\\ cola\\ azu$",
+   "蓝"
+  ],
+  [
+   "^de\\ cola\\ azul$",
+   "蓝尾"
+  ],
+  [
+   "^de\\ cola\\ azul,$",
+   "蓝尾"
+  ],
+  [
+   "^de\\ cola\\ azul,\\ $",
+   "蓝尾"
+  ],
+  [
+   "^de\\ cola\\ azul,\\ li$",
+   "蓝尾野"
+  ],
+  [
+   "^de\\ cola\\ azul,\\ lie$",
+   "蓝尾野"
+  ],
+  [
+   "^de\\ cola\\ azul,\\ lieb$",
+   "蓝尾野兔"
+  ],
+  [
+   "^de\\ cola\\ azul,\\ liebr$",
+   "蓝尾野兔"
+  ],
+  [
+   "^de\\ cola\\ azul,\\ liebre$",
+   "蓝尾野兔"
+  ],
+  [
+   "^de\\ cola\\ r$",
+   ""
+  ],
+  [
+   "^de\\ cola\\ roj$",
+   "红"
+  ],
+  [
+   "^de\\ cola\\ roja$",
+   "红尾"
+  ],
+  [
+   "^de\\ cola\\ roja,$",
+   "红尾"
+  ],
+  [
+   "^de\\ cola\\ roja,\\ $",
+   "红尾"
+  ],
+  [
+   "^de\\ cola\\ roja,\\ l$",
+   "红尾野"
+  ],
+  [
+   "^de\\ cola\\ roja,\\ li$",
+   "红尾野"
+  ],
+  [
+   "^de\\ cola\\ roja,\\ lie$",
+   "红尾野"
+  ],
+  [
+   "^de\\ cola\\ roja,\\ liebr$",
+   "红尾野兔"
+  ],
+  [
+   "^de\\ cola\\ roja,\\ liebre$",
+   "红尾野兔"
+  ],
+  [
+   "^de\\ cola\\ am$",
+   ""
+  ],
+  [
+   "^de\\ cola\\ ama$",
+   ""
+  ],
+  [
+   "^de\\ cola\\ amar$",
+   "黄"
+  ],
+  [
+   "^de\\ cola\\ amaril$",
+   "黄"
+  ],
+  [
+   "^de\\ cola\\ amarill$",
+   "黄"
+  ],
+  [
+   "^…t$",
+   ""
+  ],
+  [
+   "^…tr$",
+   "…"
+  ],
+  [
+   "^…tra$",
+   "…"
+  ],
+  [
+   "^…trad$",
+   "……"
+  ],
+  [
+   "^…tradu$",
+   "……"
+  ],
+  [
+   "^…traduc$",
+   "……"
+  ],
+  [
+   "^…traduci$",
+   "……被"
+  ],
+  [
+   "^…traducid$",
+   "……被"
+  ],
+  [
+   "^…traducido$",
+   "……被翻"
+  ],
+  [
+   "^…traducido\\ $",
+   "……被翻"
+  ],
+  [
+   "^…traducido\\ a$",
+   "……被翻译"
+  ],
+  [
+   "^…traducido\\ a\\ m$",
+   "……被翻译"
+  ],
+  [
+   "^…traducido\\ a\\ má$",
+   "……被翻译成"
+  ],
+  [
+   "^…traducido\\ a\\ más$",
+   "……被翻译成"
+  ],
+  [
+   "^…traducido\\ a\\ más\\ $",
+   "……被翻译成超"
+  ],
+  [
+   "^…traducido\\ a\\ más\\ d$",
+   "……被翻译成超"
+  ],
+  [
+   "^1$",
+   ""
+  ],
+  [
+   "^10$",
+   "1"
+  ],
+  [
+   "^100$",
+   "1"
+  ],
+  [
+   "^100\\ $",
+   "10"
+  ],
+  [
+   "^100\\ i$",
+   "10"
+  ],
+  [
+   "^100\\ id$",
+   "100"
+  ],
+  [
+   "^100\\ idi$",
+   "100"
+  ],
+  [
+   "^100\\ idio$",
+   "100种"
+  ],
+  [
+   "^100\\ idiom$",
+   "100种"
+  ],
+  [
+   "^100\\ idioma$",
+   "100种语"
+  ],
+  [
+   "^100\\ idiomas$",
+   "100种语"
+  ],
+  [
+   "^100\\ idiomas:\\ $",
+   "100种语言"
+  ],
+  [
+   "^100\\ idiomas:\\ i$",
+   "100种语言："
+  ],
+  [
+   "^100\\ idiomas:\\ in$",
+   "100种语言："
+  ],
+  [
+   "^100\\ idiomas:\\ ing$",
+   "100种语言：英"
+  ],
+  [
+   "^100\\ idiomas:\\ ingl$",
+   "100种语言：英"
+  ],
+  [
+   "^100\\ idiomas:\\ inglé$",
+   "100种语言：英语"
+  ],
+  [
+   "^100\\ idiomas:\\ inglés$",
+   "100种语言：英语"
+  ],
+  [
+   "^f$",
+   ""
+  ],
+  [
+   "^fr$",
+   ""
+  ],
+  [
+   "^fra$",
+   "法"
+  ],
+  [
+   "^fran$",
+   "法"
+  ],
+  [
+   "^franc$",
+   "法"
+  ],
+  [
+   "^francé$",
+   "法语"
+  ],
+  [
+   "^francés,$",
+   "法语、"
+  ],
+  [
+   "^francés,\\ $",
+   "法语、"
+  ],
+  [
+   "^francés,\\ a$",
+   "法语、"
+  ],
+  [
+   "^francés,\\ ale$",
+   "法语、德"
+  ],
+  [
+   "^francés,\\ alem$",
+   "法语、德"
+  ],
+  [
+   "^francés,\\ alemá$",
+   "法语、德语"
+  ],
+  [
+   "^francés,\\ alemán$",
+   "法语、德语"
+  ],
+  [
+   "^i$",
+   ""
+  ],
+  [
+   "^it$",
+   "意"
+  ],
+  [
+   "^ita$",
+   "意"
+  ],
+  [
+   "^ital$",
+   "意大"
+  ],
+  [
+   "^itali$",
+   "意大"
+  ],
+  [
+   "^italia$",
+   "意大利"
+  ],
+  [
+   "^italian$",
+   "意大利"
+  ],
+  [
+   "^italiano,$",
+   "意大利语、"
+  ],
+  [
+   "^italiano,\\ $",
+   "意大利语、"
+  ],
+  [
+   "^italiano,\\ e$",
+   "意大利语、西"
+  ],
+  [
+   "^italiano,\\ es$",
+   "意大利语、西"
+  ],
+  [
+   "^italiano,\\ espa$",
+   "意大利语、西班"
+  ],
+  [
+   "^italiano,\\ españ$",
+   "意大利语、西班牙"
+  ],
+  [
+   "^italiano,\\ españo$",
+   "意大利语、西班牙"
+  ],
+  [
+   "^italiano,\\ español$",
+   "意大利语、西班牙语"
+  ],
+  [
+   "^por$",
+   "葡"
+  ],
+  [
+   "^port$",
+   "葡"
+  ],
+  [
+   "^portu$",
+   "葡萄"
+  ],
+  [
+   "^portug$",
+   "葡萄"
+  ],
+  [
+   "^portugu$",
+   "葡萄"
+  ],
+  [
+   "^portugué$",
+   "葡萄牙"
+  ],
+  [
+   "^portugués$",
+   "葡萄牙"
+  ],
+  [
+   "^portugués,$",
+   "葡萄牙语"
+  ],
+  [
+   "^portugués,\\ $",
+   "葡萄牙语"
+  ],
+  [
+   "^portugués,\\ n$",
+   "葡萄牙语"
+  ],
+  [
+   "^portugués,\\ ne$",
+   "葡萄牙语、"
+  ],
+  [
+   "^portugués,\\ neer$",
+   "葡萄牙语、荷"
+  ],
+  [
+   "^portugués,\\ neerl$",
+   "葡萄牙语、荷"
+  ],
+  [
+   "^portugués,\\ neerla$",
+   "葡萄牙语、荷"
+  ],
+  [
+   "^portugués,\\ neerlan$",
+   "葡萄牙语、荷兰"
+  ],
+  [
+   "^portugués,\\ neerland$",
+   "葡萄牙语、荷兰"
+  ],
+  [
+   "^portugués,\\ neerlandé$",
+   "葡萄牙语、荷兰语"
+  ],
+  [
+   "^portugués,\\ neerlandés$",
+   "葡萄牙语、荷兰语"
+  ],
+  [
+   "^s$",
+   ""
+  ],
+  [
+   "^su$",
+   "瑞"
+  ],
+  [
+   "^sue$",
+   "瑞"
+  ],
+  [
+   "^suec$",
+   "瑞典"
+  ],
+  [
+   "^sueco$",
+   "瑞典"
+  ],
+  [
+   "^sueco,$",
+   "瑞典语"
+  ],
+  [
+   "^sueco,\\ $",
+   "瑞典语"
+  ],
+  [
+   "^sueco,\\ n$",
+   "瑞典语、"
+  ],
+  [
+   "^sueco,\\ no$",
+   "瑞典语、"
+  ],
+  [
+   "^sueco,\\ noru$",
+   "瑞典语、挪"
+  ],
+  [
+   "^sueco,\\ norue$",
+   "瑞典语、挪威"
+  ],
+  [
+   "^sueco,\\ norueg$",
+   "瑞典语、挪威"
+  ],
+  [
+   "^sueco,\\ noruego$",
+   "瑞典语、挪威语"
+  ],
+  [
+   "^pol$",
+   "波"
+  ],
+  [
+   "^pola$",
+   "波兰"
+  ],
+  [
+   "^polac$",
+   "波兰"
+  ],
+  [
+   "^polaco$",
+   "波兰语"
+  ],
+  [
+   "^polaco,$",
+   "波兰语"
+  ],
+  [
+   "^polaco,\\ $",
+   "波兰语、"
+  ],
+  [
+   "^polaco,\\ h$",
+   "波兰语、匈"
+  ],
+  [
+   "^polaco,\\ hú$",
+   "波兰语、匈"
+  ],
+  [
+   "^polaco,\\ hún$",
+   "波兰语、匈牙"
+  ],
+  [
+   "^polaco,\\ húng$",
+   "波兰语、匈牙"
+  ],
+  [
+   "^polaco,\\ húnga$",
+   "波兰语、匈牙利"
+  ],
+  [
+   "^polaco,\\ húngaro$",
+   "波兰语、匈牙利语"
+  ],
+  [
+   "^e$",
+   ""
+  ],
+  [
+   "^es$",
+   "斯"
+  ],
+  [
+   "^esl$",
+   "斯洛"
+  ],
+  [
+   "^eslo$",
+   "斯洛"
+  ],
+  [
+   "^eslov$",
+   "斯洛伐"
+  ],
+  [
+   "^eslova$",
+   "斯洛伐克"
+  ],
+  [
+   "^eslovac$",
+   "斯洛伐克"
+  ],
+  [
+   "^eslovaco$",
+   "斯洛伐克语"
+  ],
+  [
+   "^eslovaco,$",
+   "斯洛伐克语、"
+  ],
+  [
+   "^eslovaco,\\ $",
+   "斯洛伐克语、"
+  ],
+  [
+   "^eslovaco,\\ l$",
+   "斯洛伐克语、立"
+  ],
+  [
+   "^eslovaco,\\ li$",
+   "斯洛伐克语、立陶"
+  ],
+  [
+   "^eslovaco,\\ lit$",
+   "斯洛伐克语、立陶"
+  ],
+  [
+   "^eslovaco,\\ litu$",
+   "斯洛伐克语、立陶宛"
+  ],
+  [
+   "^eslovaco,\\ litua$",
+   "斯洛伐克语、立陶宛语"
+  ],
+  [
+   "^eslovaco,\\ lituano$",
+   "斯洛伐克语、立陶宛语…"
+  ],
+  [
+   "^…l$",
+   ""
+  ],
+  [
+   "^…la$",
+   "…"
+  ],
+  [
+   "^…las$",
+   "…"
+  ],
+  [
+   "^…las\\ $",
+   "…"
+  ],
+  [
+   "^…las\\ t$",
+   "……"
+  ],
+  [
+   "^…las\\ to$",
+   "……"
+  ],
+  [
+   "^…las\\ tor$",
+   "……教"
+  ],
+  [
+   "^…las\\ torr$",
+   "……教"
+  ],
+  [
+   "^…las\\ torre$",
+   "……教"
+  ],
+  [
+   "^…las\\ torres$",
+   "……教区"
+  ],
+  [
+   "^…las\\ torres\\ $",
+   "……教区"
+  ],
+  [
+   "^…las\\ torres\\ d$",
+   "……教区教"
+  ],
+  [
+   "^…las\\ torres\\ de$",
+   "……教区教"
+  ],
+  [
+   "^…las\\ torres\\ de\\ $",
+   "……教区教"
+  ],
+  [
+   "^…las\\ torres\\ de\\ l$",
+   "……教区教堂"
+  ],
+  [
+   "^…las\\ torres\\ de\\ la$",
+   "……教区教堂"
+  ],
+  [
+   "^ig$",
+   ""
+  ],
+  [
+   "^igl$",
+   ""
+  ],
+  [
+   "^igle$",
+   ""
+  ],
+  [
+   "^igles$",
+   ""
+  ],
+  [
+   "^iglesi$",
+   ""
+  ],
+  [
+   "^iglesia$",
+   ""
+  ],
+  [
+   "^iglesias$",
+   ""
+  ],
+  [
+   "^iglesias\\ $",
+   ""
+  ],
+  [
+   "^iglesias\\ p$",
+   ""
+  ],
+  [
+   "^iglesias\\ pa$",
+   "塔"
+  ],
+  [
+   "^iglesias\\ par$",
+   "塔"
+  ],
+  [
+   "^iglesias\\ parr$",
+   "塔"
+  ],
+  [
+   "^iglesias\\ parro$",
+   "塔"
+  ],
+  [
+   "^iglesias\\ parroq$",
+   "塔"
+  ],
+  [
+   "^iglesias\\ parroqu$",
+   "塔"
+  ],
+  [
+   "^iglesias\\ parroqui$",
+   "塔"
+  ],
+  [
+   "^iglesias\\ parroquia$",
+   "塔"
+  ],
+  [
+   "^iglesias\\ parroquial$",
+   "塔"
+  ],
+  [
+   "^iglesias\\ parroquiale$",
+   "塔"
+  ],
+  [
+   "^se$",
+   ""
+  ],
+  [
+   "^se\\ $",
+   ""
+  ],
+  [
+   "^se\\ d$",
+   ""
+  ],
+  [
+   "^se\\ di$",
+   ""
+  ],
+  [
+   "^se\\ dis$",
+   "是"
+  ],
+  [
+   "^se\\ dise$",
+   "是"
+  ],
+  [
+   "^se\\ diseñ$",
+   "是"
+  ],
+  [
+   "^se\\ diseña$",
+   "是"
+  ],
+  [
+   "^se\\ diseñar$",
+   "是"
+  ],
+  [
+   "^se\\ diseñaro$",
+   "是"
+  ],
+  [
+   "^se\\ diseñaron$",
+   "是参"
+  ],
+  [
+   "^se\\ diseñaron\\ $",
+   "是参"
+  ],
+  [
+   "^se\\ diseñaron\\ s$",
+   "是参"
+  ],
+  [
+   "^se\\ diseñaron\\ se$",
+   "是参"
+  ],
+  [
+   "^se\\ diseñaron\\ seg$",
+   "是参"
+  ],
+  [
+   "^se\\ diseñaron\\ segú$",
+   "是参"
+  ],
+  [
+   "^lo$",
+   ""
+  ],
+  [
+   "^los$",
+   ""
+  ],
+  [
+   "^los\\ $",
+   "垂"
+  ],
+  [
+   "^los\\ p$",
+   "垂"
+  ],
+  [
+   "^los\\ pr$",
+   "垂"
+  ],
+  [
+   "^los\\ pri$",
+   "垂直"
+  ],
+  [
+   "^los\\ prim$",
+   "垂直"
+  ],
+  [
+   "^los\\ prime$",
+   "垂直"
+  ],
+  [
+   "^los\\ primer$",
+   "垂直"
+  ],
+  [
+   "^los\\ primero$",
+   "垂直式"
+  ],
+  [
+   "^los\\ primeros$",
+   "垂直式"
+  ],
+  [
+   "^los\\ primeros\\ $",
+   "垂直式"
+  ],
+  [
+   "^los\\ primeros\\ e$",
+   "垂直式风"
+  ],
+  [
+   "^los\\ primeros\\ ej$",
+   "垂直式风"
+  ],
+  [
+   "^los\\ primeros\\ eje$",
+   "垂直式风"
+  ],
+  [
+   "^los\\ primeros\\ ejem$",
+   "垂直式风"
+  ],
+  [
+   "^los\\ primeros\\ ejemp$",
+   "垂直式风格"
+  ],
+  [
+   "^los\\ primeros\\ ejempl$",
+   "垂直式风格"
+  ],
+  [
+   "^los\\ primeros\\ ejemplo$",
+   "垂直式风格"
+  ],
+  [
+   "^del$",
+   "早"
+  ],
+  [
+   "^del\\ $",
+   "早"
+  ],
+  [
+   "^del\\ e$",
+   "早期"
+  ],
+  [
+   "^del\\ es$",
+   "早期"
+  ],
+  [
+   "^del\\ est$",
+   "早期"
+  ],
+  [
+   "^del\\ esti$",
+   "早期范"
+  ],
+  [
+   "^del\\ estil$",
+   "早期范"
+  ],
+  [
+   "^P$",
+   ""
+  ],
+  [
+   "^Pe$",
+   ""
+  ],
+  [
+   "^Per$",
+   ""
+  ],
+  [
+   "^Perp$",
+   "设"
+  ],
+  [
+   "^Perpe$",
+   "设"
+  ],
+  [
+   "^Perpen$",
+   "设"
+  ],
+  [
+   "^Perpend$",
+   "设计"
+  ],
+  [
+   "^Perpendi$",
+   "设计"
+  ],
+  [
+   "^Perpendic$",
+   "设计"
+  ],
+  [
+   "^Perpendicu$",
+   "设计"
+  ],
+  [
+   "^Perpendicul$",
+   "设计的"
+  ],
+  [
+   "^Perpendicula$",
+   "设计的"
+  ],
+  [
+   "^Perpendicular$",
+   "设计的"
+  ],
+  [
+   "^…c$",
+   ""
+  ],
+  [
+   "^…co$",
+   "…"
+  ],
+  [
+   "^…com$",
+   "…"
+  ],
+  [
+   "^…como$",
+   "…"
+  ],
+  [
+   "^…como\\ $",
+   "……"
+  ],
+  [
+   "^…como\\ l$",
+   "……"
+  ],
+  [
+   "^…como\\ la$",
+   "……"
+  ],
+  [
+   "^…como\\ la\\ $",
+   "……比"
+  ],
+  [
+   "^…como\\ la\\ B$",
+   "……比"
+  ],
+  [
+   "^…como\\ la\\ Ba$",
+   "……比"
+  ],
+  [
+   "^…como\\ la\\ Bas$",
+   "……比如"
+  ],
+  [
+   "^…como\\ la\\ Basí$",
+   "……比如"
+  ],
+  [
+   "^…como\\ la\\ Basíl$",
+   "……比如"
+  ],
+  [
+   "^…como\\ la\\ Basíli$",
+   "……比如罗"
+  ],
+  [
+   "^…como\\ la\\ Basílic$",
+   "……比如罗"
+  ],
+  [
+   "^…como\\ la\\ Basílica$",
+   "……比如罗"
+  ],
+  [
+   "^…como\\ la\\ Basílica\\ $",
+   "……比如罗马"
+  ],
+  [
+   "^…como\\ la\\ Basílica\\ d$",
+   "……比如罗马"
+  ],
+  [
+   "^S$",
+   ""
+  ],
+  [
+   "^Sa$",
+   ""
+  ],
+  [
+   "^San$",
+   "圣"
+  ],
+  [
+   "^San\\ $",
+   "圣"
+  ],
+  [
+   "^San\\ P$",
+   "圣彼"
+  ],
+  [
+   "^San\\ Pe$",
+   "圣彼"
+  ],
+  [
+   "^San\\ Ped$",
+   "圣彼"
+  ],
+  [
+   "^San\\ Pedr$",
+   "圣彼得"
+  ],
+  [
+   "^San\\ Pedro$",
+   "圣彼得"
+  ],
+  [
+   "^San\\ Pedro\\ $",
+   "圣彼得大"
+  ],
+  [
+   "^San\\ Pedro\\ e$",
+   "圣彼得大"
+  ],
+  [
+   "^San\\ Pedro\\ en$",
+   "圣彼得大教"
+  ],
+  [
+   "^San\\ Pedro\\ en\\ $",
+   "圣彼得大教"
+  ],
+  [
+   "^San\\ Pedro\\ en\\ R$",
+   "圣彼得大教"
+  ],
+  [
+   "^San\\ Pedro\\ en\\ Ro$",
+   "圣彼得大教堂"
+  ],
+  [
+   "^San\\ Pedro\\ en\\ Rom$",
+   "圣彼得大教堂"
+  ],
+  [
+   "^San\\ Pedro\\ en\\ Roma$",
+   "圣彼得大教堂，"
+  ],
+  [
+   "^San\\ Pedro\\ en\\ Roma\\ $",
+   "圣彼得大教堂，"
+  ],
+  [
+   "^la\\ $",
+   "布"
+  ],
+  [
+   "^la\\ B$",
+   "布"
+  ],
+  [
+   "^la\\ Ba$",
+   "布宜"
+  ],
+  [
+   "^la\\ Bas$",
+   "布宜"
+  ],
+  [
+   "^la\\ Basí$",
+   "布宜诺"
+  ],
+  [
+   "^la\\ Basíl$",
+   "布宜诺"
+  ],
+  [
+   "^la\\ Basíli$",
+   "布宜诺斯"
+  ],
+  [
+   "^la\\ Basílic$",
+   "布宜诺斯"
+  ],
+  [
+   "^la\\ Basílica$",
+   "布宜诺斯"
+  ],
+  [
+   "^la\\ Basílica\\ $",
+   "布宜诺斯艾"
+  ],
+  [
+   "^la\\ Basílica\\ d$",
+   "布宜诺斯艾"
+  ],
+  [
+   "^la\\ Basílica\\ de$",
+   "布宜诺斯艾利"
+  ],
+  [
+   "^la\\ Basílica\\ de\\ $",
+   "布宜诺斯艾利"
+  ],
+  [
+   "^la\\ Basílica\\ de\\ S$",
+   "布宜诺斯艾利斯"
+  ],
+  [
+   "^la\\ Basílica\\ de\\ Sa$",
+   "布宜诺斯艾利斯"
+  ],
+  [
+   "^Ped$",
+   ""
+  ],
+  [
+   "^Pedr$",
+   "圣"
+  ],
+  [
+   "^Pedro$",
+   "圣"
+  ],
+  [
+   "^Pedro\\ $",
+   "圣"
+  ],
+  [
+   "^Pedro\\ e$",
+   "圣彼"
+  ],
+  [
+   "^Pedro\\ en$",
+   "圣彼"
+  ],
+  [
+   "^Pedro\\ en\\ $",
+   "圣彼"
+  ],
+  [
+   "^Pedro\\ en\\ B$",
+   "圣彼得"
+  ],
+  [
+   "^Pedro\\ en\\ Bu$",
+   "圣彼得"
+  ],
+  [
+   "^Pedro\\ en\\ Bue$",
+   "圣彼得"
+  ],
+  [
+   "^Pedro\\ en\\ Buen$",
+   "圣彼得大"
+  ],
+  [
+   "^Pedro\\ en\\ Bueno$",
+   "圣彼得大"
+  ],
+  [
+   "^Pedro\\ en\\ Buenos$",
+   "圣彼得大"
+  ],
+  [
+   "^Pedro\\ en\\ Buenos\\ $",
+   "圣彼得大教"
+  ],
+  [
+   "^Pedro\\ en\\ Buenos\\ A$",
+   "圣彼得大教"
+  ],
+  [
+   "^Pedro\\ en\\ Buenos\\ Ai$",
+   "圣彼得大教"
+  ],
+  [
+   "^Pedro\\ en\\ Buenos\\ Air$",
+   "圣彼得大教堂"
+  ],
+  [
+   "^Pedro\\ en\\ Buenos\\ Aire$",
+   "圣彼得大教堂"
+  ],
+  [
+   "^Pedro\\ en\\ Buenos\\ Aires$",
+   "圣彼得大教堂"
+  ]
+ ]
+}
