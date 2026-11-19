@@ -15,12 +15,15 @@
     const v = parseFloat(n.replace(/,/g, '')) * 1e6;
     return v >= 1e12 ? `${+(v / 1e12).toFixed(2)}万亿` : v >= 1e8 ? `${+(v / 1e8).toFixed(2)}亿` : v >= 1e4 ? `${+(v / 1e4).toFixed(2)}万` : `${+v.toFixed(0)}`;
   });
+  // reglas compiladas una sola vez (algunos shots traen cientos)
+  let _rd = null, _rc = [];
+  const reglas = (d) => { if (_rd !== d) { _rd = d; _rc = (d.__reglas || []).map(([re, rep]) => [new RegExp(re), rep]); } return _rc; };
   const tr = (s) => {
     const d = window.__IDIOMA_DIC;
     if (!d || typeof s !== 'string') return s;
     if (Object.prototype.hasOwnProperty.call(d, s) && d[s] != null && typeof d[s] === 'string') return d[s];
     let t = s;
-    for (const [re, rep] of d.__reglas || []) t = t.replace(new RegExp(re), rep);
+    for (const [re, rep] of reglas(d)) t = t.replace(re, rep);
     if (d.__millones) t = millones(t);
     return t;
   };
@@ -76,7 +79,7 @@
           const ok = (x, y) => (typeof x === 'string' || typeof x === 'number') && (typeof y === 'string' || typeof y === 'number') && (typeof x === 'number' || typeof y === 'number');
           if (ok(a, b)) {
             const j = `${a}${b}`;
-            if (d.__reglas.some(([re]) => new RegExp(re).test(j))) { k3.push(j); i++; continue; }
+            if (reglas(d).some(([re]) => re.test(j))) { k3.push(j); i++; continue; }
           }
           k3.push(a);
         }
