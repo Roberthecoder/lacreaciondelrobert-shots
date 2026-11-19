@@ -43,5 +43,11 @@
  "La Creación del Robert": "La Creación del Robert",
  "Sígueme para más ciencia": "关注我，看更多科学",
  "@lacreaciondelrobert": "@lacreaciondelrobert",
- "__millones": true
+ "__millones": true,
+ "__reglas": [
+  [
+   " t$",
+   " 吨"
+  ]
+ ]
 }
