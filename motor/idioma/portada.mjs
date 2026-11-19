@@ -175,7 +175,7 @@ function html({ img, renglones, logo }) {
   .foto{position:absolute;left:0;top:0;width:1080px;height:1920px;background:url(${img}) 0 0/1080px 1920px no-repeat}
   .sombra{position:absolute;left:0;right:0;bottom:0;height:600px;
     background:linear-gradient(to bottom,rgba(14,15,18,0) 0%,rgba(14,15,18,.82) 26%,rgba(14,15,18,.96) 40%,rgba(14,15,18,.98) 100%)}
-  .txt{position:absolute;left:44px;right:44px;bottom:118px;display:flex;flex-direction:column;align-items:center;gap:${Math.round(fs1 * 0.16)}px}
+  .txt{position:absolute;left:44px;right:44px;bottom:128px;display:flex;flex-direction:column;align-items:center;gap:${Math.round(fs1 * 0.16)}px}
   .l{font-weight:900;font-size:${fs1}px;line-height:1.12;white-space:nowrap;letter-spacing:.01em;text-align:center}
   .n{color:#fff;-webkit-text-stroke:${Math.round(fs1 * 0.1)}px #0E0F12;paint-order:stroke fill;text-shadow:0 6px 0 rgba(0,0,0,.35)}
   .hl{color:#16120A;background:#FFC83D;border-radius:${Math.round(fs1 * 0.16)}px;padding:0 ${Math.round(fs1 * 0.14)}px;margin:0 ${Math.round(fs1 * 0.04)}px;
