@@ -1,0 +1,2 @@
+# Pedido de portadas en chino (workflow portadas-zh.yml): claves separadas por espacio, «faltantes» (las que no tienen portada) o «todas».
+amb-01-vinazas fun-20-quitridio bio-59-b12 fes-07-viruela

@@ -3,7 +3,11 @@ name: Portadas en chino (RedNote)
 # Portada 3:4 (1080×1440 JPG) de cada video en chino: un cuadro del propio video + el gancho (标题 de shots/<clave>/zh/publicacion.md)
 # en grande, con la cifra o la idea clave resaltada en amarillo, y la marca del canal. Generador: motor/idioma/portada.mjs.
 # Toma <clave>_zh.mp4 del Release «idioma-zh» y sube ahí mismo <clave>_zh_portada.jpg (--clobber). No gasta créditos de voz.
+# También corre al hacer push de motor/idioma/portadas-pedido.txt (una línea con claves, o «faltantes» / «todas»):
+# sirve desde ramas que no son main, donde workflow_dispatch no está disponible hasta que el workflow llegue a main.
 on:
+  push:
+    paths: ['motor/idioma/portadas-pedido.txt']
   workflow_dispatch:
     inputs:
       claves:
@@ -27,9 +31,14 @@ jobs:
       MANUAL: ${{ inputs.claves }}
       REHACER: ${{ inputs.rehacer }}
     steps:
+      - uses: actions/checkout@v4
       - id: c
         run: |
           set -e
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            P=$(grep -v '^#' motor/idioma/portadas-pedido.txt | tr '\n' ' ' | xargs)
+            case "$P" in faltantes|"") MANUAL="";; todas) MANUAL=""; REHACER=true;; *) MANUAL="$P";; esac
+          fi
           ID=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/idioma-zh" --jq .id)
           gh api --paginate "repos/$GITHUB_REPOSITORY/releases/$ID/assets?per_page=100" --jq '.[].name' > /tmp/nombres.txt
           if [ -n "$MANUAL" ]; then
