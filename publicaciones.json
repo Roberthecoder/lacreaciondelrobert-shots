@@ -2750,5 +2750,74 @@
   "id": "v_inbox_file~v2.7709903980507531284",
   "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
   "borrador": true
+ },
+ {
+  "clave": "fes-08-pelicula-nitrato",
+  "red": "facebook",
+  "modo": "real",
+  "fecha": "2026-11-20T15:23:14Z",
+  "run": "44762367686",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "1706448384209527",
+  "url": "https://www.facebook.com/reel/1706448384209527",
+  "nota": "ready"
+ },
+ {
+  "clave": "fes-08-pelicula-nitrato",
+  "red": "instagram",
+  "modo": "real",
+  "fecha": "2026-11-20T15:23:59Z",
+  "run": "44762367686",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "18115582919335634",
+  "url": "https://www.instagram.com/reel/Df9-Jf8k3QK/"
+ },
+ {
+  "clave": "fes-08-pelicula-nitrato",
+  "red": "threads",
+  "modo": "real",
+  "fecha": "2026-11-20T15:25:34Z",
+  "run": "44762367686",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "18109600655200740",
+  "url": "https://www.threads.com/@lacreaciondelrobert/post/Df9-Q77SeYb"
+ },
+ {
+  "clave": "fes-08-pelicula-nitrato",
+  "red": "youtube",
+  "modo": "real",
+  "fecha": "2026-11-20T15:26:23Z",
+  "run": "44762367686",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "8aFaAFzl52g",
+  "url": "https://youtube.com/shorts/8aFaAFzl52g",
+  "nota": "public"
+ },
+ {
+  "clave": "fes-08-pelicula-nitrato",
+  "red": "linkedin",
+  "modo": "real",
+  "fecha": "2026-11-20T15:26:25Z",
+  "run": "44762367686",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "urn:li:ugcPost:7529565917429633024",
+  "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7529565917429633024/"
+ },
+ {
+  "clave": "fes-08-pelicula-nitrato",
+  "red": "tiktok",
+  "modo": "real",
+  "fecha": "2026-11-20T15:26:47Z",
+  "run": "44762367686",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "v_inbox_file~v2.7710275299892447253",
+  "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
+  "borrador": true
  }
 ]
