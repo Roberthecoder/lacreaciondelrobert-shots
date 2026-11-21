@@ -2819,5 +2819,74 @@
   "id": "v_inbox_file~v2.7710275299892447253",
   "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
   "borrador": true
+ },
+ {
+  "clave": "fun-08-pie-atleta",
+  "red": "facebook",
+  "modo": "real",
+  "fecha": "2026-11-21T15:22:31Z",
+  "run": "44918712447",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "29441205935496329",
+  "url": "https://www.facebook.com/reel/29441205935496329",
+  "nota": "ready"
+ },
+ {
+  "clave": "fun-08-pie-atleta",
+  "red": "instagram",
+  "modo": "real",
+  "fecha": "2026-11-21T15:23:26Z",
+  "run": "44918712447",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "18139753768644640",
+  "url": "https://www.instagram.com/reel/DgAi4Fxgful/"
+ },
+ {
+  "clave": "fun-08-pie-atleta",
+  "red": "threads",
+  "modo": "real",
+  "fecha": "2026-11-21T15:24:51Z",
+  "run": "44918712447",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "17993041863113421",
+  "url": "https://www.threads.com/@lacreaciondelrobert/post/DgAi-k4JWFt"
+ },
+ {
+  "clave": "fun-08-pie-atleta",
+  "red": "youtube",
+  "modo": "real",
+  "fecha": "2026-11-21T15:25:50Z",
+  "run": "44918712447",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "SKOlT7oPRh4",
+  "url": "https://youtube.com/shorts/SKOlT7oPRh4",
+  "nota": "public"
+ },
+ {
+  "clave": "fun-08-pie-atleta",
+  "red": "linkedin",
+  "modo": "real",
+  "fecha": "2026-11-21T15:25:52Z",
+  "run": "44918712447",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "urn:li:ugcPost:7529928165339709440",
+  "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7529928165339709440/"
+ },
+ {
+  "clave": "fun-08-pie-atleta",
+  "red": "tiktok",
+  "modo": "real",
+  "fecha": "2026-11-21T15:26:14Z",
+  "run": "44918712447",
+  "autorizo": "Robert: publicación diaria automática (permiso del 30 oct 2026)",
+  "ok": true,
+  "id": "v_inbox_file~v2.7710646165783496711",
+  "nota": "TikTok todavía no aprueba la publicación directa: se mandó como BORRADOR a tu app. Ábrelo en TikTok, pega el texto (Sala, pestaña TikTok) y publícalo.",
+  "borrador": true
  }
 ]
