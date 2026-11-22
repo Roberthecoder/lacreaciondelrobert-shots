@@ -3,7 +3,7 @@
 // Datos: Rolland et al. 2012 (Proc. R. Soc. B), McDonald et al. 2006 (JASA), DOSITS (2024) y programa ECHO (2017). Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (mapas, ondas y tamaños no están a escala).
 
-const RO_AGUA1 = '#2a9ef0', RO_AGUA2 = '#0b3f8c', RO_CIELO = '#7fdcff', RO_RUIDO = '#ff5a3c', RO_CANTO = '#9ff3ff';
+const RO_AGUA1 = '#11497f', RO_AGUA2 = '#061a3c', RO_CIELO = '#7fdcff', RO_RUIDO = '#ff5a3c', RO_CANTO = '#9ff3ff';
 
 // Ballena franca (Eubalaena) de lado, mirando a la izquierda: cuerpo robusto y negro, SIN aleta dorsal, cabeza enorme con la
 // mandíbula superior arqueada, labio inferior grande, callosidades blancas en la cabeza y aletas pectorales anchas como remo.
@@ -23,7 +23,7 @@ function BallenaFranca({ x, y, s = 1, T = 0, flip = false, fase = 0, o = 1 }) {
     {/* labio inferior grande */}
     <path d="M -292 10 Q -240 56 -150 40" stroke="#5c606b" strokeWidth={4} fill="none" />
     {/* ojo */}
-    <circle cx={-118} cy={6} r={7} fill="#e9e2cf" /><circle cx={-117} cy={6} r={3.5} fill={KC.ink} />
+    <circle cx={-118} cy={6} r={7} fill="#e9e2cf" /><circle cx={-117} cy={6} r={3.5} fill="#0b1020" />
     {/* callosidades */}
     {[[-272, -50, 14, 9], [-244, -72, 16, 9], [-210, -84, 13, 8], [-178, -88, 10, 6], [-138, -22, 9, 6], [-262, 30, 10, 7], [-232, 46, 9, 6]].map(([a, b, rx, ry], i) =>
       <ellipse key={i} cx={a} cy={b} rx={rx} ry={ry} fill="#e9e2cf" stroke={KC.ink} strokeWidth={2.5} />)}
@@ -55,7 +55,7 @@ function Barco({ x, y, s = 1, T = 0, helice = 3, o = 1 }) {
     {/* puente y chimenea */}
     <rect x={190} y={-190} width={90} height={130} fill="#f4efe4" stroke={KC.ink} strokeWidth={6} />
     {[0, 1, 2].map((k) => <rect key={k} x={200 + k * 26} y={-176} width={18} height={14} fill={KC.cyan} stroke={KC.ink} strokeWidth={3} />)}
-    <rect x={240} y={-232} width={32} height={44} fill={KC.ink} />
+    <rect x={240} y={-232} width={32} height={44} fill="#2b3242" stroke={KC.ink} strokeWidth={4} />
   </g>;
 }
 
@@ -99,11 +99,11 @@ function Silencio({ x, y, s = 1, raya = 1 }) {
 // Medidor vertical de decibeles (columna). valor 0..1.
 function MedidorDb({ x, y, valor, alto = 460, texto, etiqueta, color = RO_RUIDO }) {
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-70} y={-alto} width={140} height={alto} rx={20} fill="rgba(255,255,255,.8)" stroke={KC.ink} strokeWidth={7} />
+    <rect x={-70} y={-alto} width={140} height={alto} rx={20} fill="rgba(10,20,40,.85)" stroke={KC.ink} strokeWidth={7} />
     <rect x={-58} y={-alto * valor + 2} width={116} height={Math.max(0, alto * valor - 14)} rx={14} fill={color} />
     {[0.25, 0.5, 0.75].map((q) => <line key={q} x1={-70} y1={-alto * q} x2={-40} y2={-alto * q} stroke={KC.ink} strokeWidth={4} />)}
-    {texto && <text x={0} y={-alto - 24} textAnchor="middle" style={{ font:`400 66px ${KF.titulo}` }} fill={KC.paper} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">{texto}</text>}
-    {etiqueta && <text x={0} y={58} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.paper} stroke={KC.ink} strokeWidth={7} paintOrder="stroke">{etiqueta}</text>}
+    {texto && <text x={0} y={-alto - 24} textAnchor="middle" style={{ font:`400 66px ${KF.titulo}` }} fill="#fff" stroke="#0b1020" strokeWidth={8} paintOrder="stroke">{texto}</text>}
+    {etiqueta && <text x={0} y={58} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill="#fff" stroke="#0b1020" strokeWidth={7} paintOrder="stroke">{etiqueta}</text>}
   </g>;
 }
 
@@ -112,7 +112,7 @@ function Tubo({ x, y, nivel = 0.8, color = KC.orange }) {
   const h = 320;
   return <g transform={`translate(${x} ${y})`}>
     <rect x={-46} y={-h - 30} width={92} height={30} rx={8} fill="#7a8494" stroke={KC.ink} strokeWidth={5} />
-    <path d={`M -38 ${-h} L -38 -40 Q -38 0 0 0 Q 38 0 38 -40 L 38 ${-h} Z`} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={6} />
+    <path d={`M -38 ${-h} L -38 -40 Q -38 0 0 0 Q 38 0 38 -40 L 38 ${-h} Z`} fill="rgba(255,255,255,.16)" stroke={KC.ink} strokeWidth={6} />
     <path d={`M -31 ${-h * nivel} L -31 -40 Q -31 -7 0 -7 Q 31 -7 31 -40 L 31 ${-h * nivel} Z`} fill={color} />
     <rect x={-31} y={-h * nivel} width={62} height={10} fill="#fff" opacity=".35" />
   </g>;
@@ -135,19 +135,19 @@ function Velocimetro({ x, y, v = 1, r = 150 }) {
 // Mapa esquemático de la Bahía de Fundy (norte arriba): Nuevo Brunswick al noroeste, Nueva Escocia al sureste; la bahía abre al suroeste.
 function MapaFundy({ x, y, s = 1, children }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={0} y={0} width={1000} height={560} rx={24} fill="#3db6f2" stroke={KC.ink} strokeWidth={7} />
-    <path d="M 0 0 L 1000 0 L 1000 130 L 905 150 Q 760 200 560 270 Q 330 350 140 430 L 0 480 Z" fill="#f6e3a8" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
-    <path d="M 1000 130 L 1000 560 L 560 560 Q 420 520 300 500 Q 380 450 560 370 Q 760 270 930 180 L 1000 160 Z" fill="#c7e6a8" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    <rect x={0} y={0} width={1000} height={560} rx={24} fill="#12508c" stroke={KC.ink} strokeWidth={7} />
+    <path d="M 0 0 L 1000 0 L 1000 130 L 905 150 Q 760 200 560 270 Q 330 350 140 430 L 0 480 Z" fill="#4a4023" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    <path d="M 1000 130 L 1000 560 L 560 560 Q 420 520 300 500 Q 380 450 560 370 Q 760 270 930 180 L 1000 160 Z" fill="#2c4a2b" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
     <text x={240} y={120} style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>Nuevo Brunswick</text>
     <text x={690} y={470} style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>Nueva Escocia</text>
-    <text x={380} y={350} transform="rotate(-21 380 350)" style={{ font:`italic 900 36px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={6} paintOrder="stroke">Bahía de Fundy</text>
+    <text x={300} y={318} transform="rotate(-21 300 318)" style={{ font:`italic 900 36px ${KF.texto}` }} fill="#fff" stroke="#0b1020" strokeWidth={6} paintOrder="stroke">Bahía de Fundy</text>
     <text x={30} y={540} style={{ font:`700 26px ${KF.mono}` }} fill="#fff">Golfo de Maine</text>
     {children}
   </g>;
 }
 // Barquito para mapas.
 function BarcoMini({ x, y, o = 1, rot = -21 }) {
-  return <g transform={`translate(${x} ${y}) rotate(${rot})`} opacity={o}>
+  return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(1.5)`} opacity={o}>
     <path d="M -34 -6 L 30 -6 L 22 10 L -26 10 Z" fill="#c8323a" stroke={KC.ink} strokeWidth={4} />
     <rect x={-22} y={-20} width={30} height={14} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} />
     <rect x={12} y={-26} width={12} height={20} fill={KC.paper} stroke={KC.ink} strokeWidth={3} />
@@ -162,21 +162,22 @@ function RuidoOceanoShot() {
 
   // el mar del gancho y del cierre: la cámara baja de la superficie al agua
   const mar = (t0, cierre) => {
-    const cam = cierre ? 520 : klerp(0, 520, kprog(T, t0 + 0.15, t0 + 2.2, kEase.suave));
-    const sup = 1150;
+    const cam = cierre ? 600 : klerp(430, 600, kprog(T, t0 + 0.15, t0 + 2.2, kEase.suave));
+    const sup = 1150, sb = cierre ? 1.15 : 1.2;
     const ruido = cierre ? 0.35 : kprog(T, t0 + 1.2, t0 + 2.4);
-    const bx = cierre ? klerp(560, 620, kprog(T, t0, t0 + 6)) : klerp(120, 420, kprog(T, t0, t0 + 6));
+    // el barco avanza hacia su proa (a la izquierda)
+    const bx = cierre ? klerp(620, 540, kprog(T, t0, t0 + 6)) : klerp(700, 540, kprog(T, t0, t0 + 6));
     return svg(<>
       <defs><clipPath id={'bajo' + (cierre ? 'c' : 'g')}><rect x={0} y={sup - cam + 6} width={KW} height={3000} /></clipPath></defs>
       <g transform={`translate(0 ${-cam})`}>
         <MarCorte T={T} sup={sup} id={cierre ? 'c' : 'g'} />
         <g clipPath={`url(#bajo${cierre ? 'c' : 'g'})`} transform={`translate(0 ${cam})`}><g transform={`translate(0 ${-cam})`}>
-          <Anillos T={T} x={bx + 250 * 0.8} y={sup + 34 * 0.8} R={720} g={ruido} vel={cierre ? 0.5 : 0.9} ancho={cierre ? 5 : 9} />
+          <Anillos T={T} x={bx + 250 * sb} y={sup + 34 * sb} R={900} g={ruido} vel={cierre ? 0.5 : 0.9} ancho={cierre ? 5 : 9} />
         </g></g>
-        <Barco x={bx} y={sup} s={0.8} T={T} helice={cierre ? 1 : 3} />
-        <BallenaFranca x={cierre ? 780 : 640} y={sup + 340} s={cierre ? 0.5 : 0.6} T={T} />
-        {cierre && <><BallenaFranca x={250} y={sup + 480} s={0.4} T={T} flip fase={1.4} />
-          <Canto T={T} x0={600} y0={sup + 360} x1={420} y1={sup + 470} amp={18} lam={110} g={kprog(T, t0 + 0.6, t0 + 1.8)} /></>}
+        <Barco x={bx} y={sup} s={sb} T={T} helice={cierre ? 1 : 3} />
+        <BallenaFranca x={cierre ? 690 : 600} y={sup + (cierre ? 400 : 430)} s={cierre ? 0.85 : 1} T={T} />
+        {cierre && <><BallenaFranca x={330} y={sup + 690} s={0.65} T={T} flip fase={1.4} />
+          <Canto T={T} x0={450} y0={sup + 450} x1={520} y1={sup + 640} amp={18} lam={110} g={kprog(T, t0 + 0.6, t0 + 1.8)} /></>}
       </g>
     </>);
   };
@@ -207,36 +208,36 @@ function RuidoOceanoShot() {
       <Escena T={T} a={K.G} b={K.A} zoom={0.03}>
         <FondoLunares color={RO_CIELO} />
         {mar(K.G, false)}
-        {svg(<g opacity={1 - kprog(T, K.G + 1.6, K.G + 2.4)}><Silencio x={230} y={420} s={1.1} raya={kprog(T, K.G + 0.1, K.G + 0.6, kEase.sale)} /></g>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.paper} />
+        {svg(<g opacity={1 - kprog(T, K.G + 1.6, K.G + 2.4)}><Silencio x={205} y={325} s={1.15} raya={kprog(T, K.G + 0.1, K.G + 0.6, kEase.sale)} /></g>)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color="#cfe6ff" />
       </Escena>
 
       {/* 2 · el sonido en el agua: más de 4 veces más rápido */}
       <Escena T={T} a={K.A} b={K.B}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <rect x={60} y={700} width={960} height={180} rx={30} fill="#dff6ff" stroke={KC.ink} strokeWidth={7} />
-          <rect x={60} y={910} width={960} height={180} rx={30} fill={RO_AGUA1} stroke={KC.ink} strokeWidth={7} />
-          <text x={90} y={750} style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>aire</text>
-          <text x={90} y={960} style={{ font:`900 36px ${KF.texto}` }} fill="#fff">agua de mar</text>
-          <line x1={960} y1={710} x2={960} y2={1080} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" />
-          {pulso(150 + 790 * pAire, 800, KC.ink)}
-          {pulso(150 + 790 * pAgua, 1010, '#fff')}
-          <text x={930} y={750} textAnchor="end" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>≈ 340 m/s</text>
-          <text x={930} y={960} textAnchor="end" style={{ font:`700 32px ${KF.mono}` }} fill="#fff">≈ 1,500 m/s</text>
-          {pAgua >= 1 && <text x={990} y={1030} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">✓</text>}
+          <MarCorte T={T} sup={880} id="a" />
+          <Barco x={215} y={880} s={0.6} T={T} helice={3} />
+          <text x={60} y={650} style={{ font:`900 46px ${KF.texto}` }} fill="#fff" stroke="#0b1020" strokeWidth={7} paintOrder="stroke">aire</text>
+          <text x={60} y={1010} style={{ font:`900 46px ${KF.texto}` }} fill="#fff" stroke="#0b1020" strokeWidth={7} paintOrder="stroke">agua de mar</text>
+          <line x1={970} y1={600} x2={970} y2={1200} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" />
+          <g transform={`translate(${450 + 490 * pAire} 750) scale(1.6)`}>{pulso(0, 0, KC.ink)}</g>
+          <g transform={`translate(${450 + 490 * pAgua} 1110) scale(1.6)`}>{pulso(0, 0, '#fff')}</g>
+          <text x={940} y={650} textAnchor="end" style={{ font:`700 40px ${KF.mono}` }} fill="#fff" stroke="#0b1020" strokeWidth={7} paintOrder="stroke">≈ 340 m/s</text>
+          <text x={940} y={1010} textAnchor="end" style={{ font:`700 40px ${KF.mono}` }} fill="#fff" stroke="#0b1020" strokeWidth={7} paintOrder="stroke">≈ 1,500 m/s</text>
+          {pAgua >= 1 && <text x={1010} y={1140} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={6} paintOrder="stroke">✓</text>}
         </>)}
       </Escena>
 
       {/* 3 · las ballenas con barbas se hablan con sonidos graves */}
       <Escena T={T} a={K.B} b={K.H}>
         {svg(<><MarCorte T={T} sup={-20} id="b" />
-          <BallenaFranca x={300} y={760} s={0.62} T={T} flip fase={0.3} />
-          <BallenaFranca x={800} y={1060} s={0.5} T={T} fase={2} />
-          <Canto T={T} x0={500} y0={780} x1={640} y1={1030} amp={24} lam={150} g={kprog(T, K.B + 0.6, K.B + 1.6)} />
-          <Canto T={T} x0={620} y0={1080} x1={500} y1={820} amp={24} lam={150} g={kprog(T, K.B + 2.6, K.B + 3.6)} />
+          <BallenaFranca x={400} y={700} s={0.95} T={T} flip fase={0.3} />
+          <BallenaFranca x={720} y={1170} s={0.8} T={T} fase={2} />
+          <Canto T={T} x0={700} y0={730} x1={560} y1={1120} amp={28} lam={170} g={kprog(T, K.B + 0.6, K.B + 1.6)} />
+          <Canto T={T} x0={470} y0={1150} x1={640} y1={790} amp={28} lam={170} g={kprog(T, K.B + 2.6, K.B + 3.6)} />
         </>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.paper} />
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color="#cfe6ff" />
       </Escena>
 
       {/* 4 · hélices y motores: ruido grave en las mismas notas */}
@@ -247,17 +248,16 @@ function RuidoOceanoShot() {
           <MarCorte T={T} sup={555} id="h" />
           <g clipPath="url(#bajoH)"><Anillos T={T} x={700 + 250 * 1.1} y={555 + 34 * 1.1} R={900} g={kprog(T, K.H + 0.4, K.H + 1.2)} /></g>
           <Barco x={700} y={555} s={1.1} T={T} helice={3.5} />
-          <BallenaFranca x={330} y={1020} s={0.55} T={T} flip />
-          <Canto T={T} x0={500} y0={1000} x1={1000} y1={1080} amp={22} lam={150} g={kprog(T, K.H + 1.6, K.H + 2.4)} />
+          <BallenaFranca x={430} y={1090} s={0.85} T={T} flip />
+          <Canto T={T} x0={710} y0={1085} x1={1060} y1={1150} amp={24} lam={150} g={kprog(T, K.H + 1.6, K.H + 2.4)} />
         </>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1560} color={KC.paper} />
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color="#cfe6ff" />
       </Escena>
 
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={270} y={1000} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 270 820)`}>?</text>
-          <BallenaFranca x={300} y={1120} s={0.4} T={T} flip /></>)}
+        {svg(<text x={800} y={950} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={14} paintOrder="stroke" transform={`rotate(${Math.sin(T * 3) * 6} 800 780)`}>?</text>)}
       </Escena>
 
       {/* 6 · el experimento accidental: 11 de septiembre de 2001, Bahía de Fundy */}
@@ -271,6 +271,8 @@ function RuidoOceanoShot() {
       {/* 7 · resultado: −6 dB y menos hormonas de estrés en la caca */}
       <Escena T={T} a={K.R} b={K.Pr}>
         {svg(<><MarCorte T={T} sup={-20} id="r" />
+          <BallenaFranca x={610} y={470} s={0.85} T={T} fase={1.1} />
+          <g transform="translate(540 990) scale(1.25) translate(-540 -990)">
           <MedidorDb x={220} y={1100} valor={dB} texto={T > K.R + 1.8 ? '−6 dB' : ' '} etiqueta="ruido" />
           {/* muestra de heces flotando y flecha al tubo */}
           <g transform={`translate(500 ${880 + Math.sin(T * 2) * 8})`} opacity={kprog(T, K.R + 1.8, K.R + 2.3)}>
@@ -279,14 +281,15 @@ function RuidoOceanoShot() {
           </g>
           <path d={`M 580 900 Q 660 860 700 ${klerp(900, 820, kprog(T, K.R + 2.2, K.R + 2.6))}`} stroke="#fff" strokeWidth={7} fill="none" strokeDasharray="14 10" opacity={kprog(T, K.R + 2.2, K.R + 2.6)} />
           <g opacity={kprog(T, K.R + 2.2, K.R + 2.6)}><Tubo x={790} y={1120} nivel={horm} /></g>
+          </g>
         </>)}
       </Escena>
 
       {/* 8 · la primera evidencia (Rolland et al. 2012) */}
       <Escena T={T} a={K.Pr} b={K.D}>
         {svg(<><MarCorte T={T} sup={-20} id="p" />
-          <Anillos T={T} x={980} y={260} R={700} g={0.8} />
-          <BallenaFranca x={560} y={1040} s={0.6} T={T} fase={0.8} />
+          <Anillos T={T} x={980} y={260} R={900} g={0.8} />
+          <BallenaFranca x={520} y={1040} s={1} T={T} fase={0.8} />
         </>)}
       </Escena>
 
@@ -294,7 +297,11 @@ function RuidoOceanoShot() {
       <Escena T={T} a={K.D} b={K.L}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <rect x={360} y={560} width={660} height={620} rx={30} fill="rgba(255,255,255,.85)" stroke={KC.ink} strokeWidth={7} />
+          <MarCorte T={T} sup={-20} id="d" />
+          <Anillos T={T} x={1000} y={240} R={900} g={0.7} ancho={6} />
+          <BallenaFranca x={330} y={1290} s={0.55} T={T} flip fase={0.8} />
+          <g transform="translate(540 830) scale(1.2) translate(-690 -870)">
+          <rect x={360} y={560} width={660} height={620} rx={30} fill="rgba(8,16,34,.9)" stroke={KC.ink} strokeWidth={7} />
           <line x1={420} y1={1100} x2={980} y2={1100} stroke={KC.ink} strokeWidth={6} />
           <rect x={470} y={1100 - 260} width={170} height={260} fill="#7a8494" stroke={KC.ink} strokeWidth={6} />
           <rect x={740} y={1100 - 260 - 220 * bar2} width={170} height={260 + 220 * bar2} fill={RO_RUIDO} stroke={KC.ink} strokeWidth={6} />
@@ -303,7 +310,8 @@ function RuidoOceanoShot() {
           <text x={690} y={615} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>ruido de fondo de 30–50 Hz</text>
           {bar2 > 0.9 && <><line x1={660} y1={840} x2={660} y2={620 + 20} stroke={KC.ink} strokeWidth={0} />
             <path d="M 700 840 L 700 630" stroke={KC.ink} strokeWidth={6} markerEnd="" /><path d="M 686 650 L 700 628 L 714 650" stroke={KC.ink} strokeWidth={6} fill="none" />
-            <text x={560} y={780} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={RO_RUIDO} stroke={KC.ink} strokeWidth={4} paintOrder="stroke">+10 a 12 dB</text></>}
+            <text x={560} y={780} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={RO_RUIDO} stroke="#0b1020" strokeWidth={4} paintOrder="stroke">+10 a 12 dB</text></>}
+          </g>
         </>)}
       </Escena>
 
@@ -311,12 +319,12 @@ function RuidoOceanoShot() {
       <Escena T={T} a={K.L} b={K.C}>
         <FondoLunares color={RO_CIELO} />
         {svg(<>
-          <defs><clipPath id="bajoL"><rect x={0} y={905} width={KW} height={3000} /></clipPath></defs>
-          <MarCorte T={T} sup={900} id="l" />
-          <g clipPath="url(#bajoL)"><Anillos T={T} x={420 + 250 * 0.9} y={900 + 34 * 0.9} R={800} g={klerp(1, 0.35, kprog(T, K.L + 0.8, K.L + 3.0))} vel={klerp(0.9, 0.5, kprog(T, K.L + 0.8, K.L + 3.0))} /></g>
-          <Barco x={420} y={900} s={0.9} T={T} helice={klerp(3.5, 1.2, kprog(T, K.L + 0.8, K.L + 3.0))} />
-          <Velocimetro x={250} y={540} v={vel} r={140} />
-          <BallenaFranca x={800} y={1120} s={0.4} T={T} flip fase={0.5} />
+          <defs><clipPath id="bajoL"><rect x={0} y={765} width={KW} height={3000} /></clipPath></defs>
+          <MarCorte T={T} sup={760} id="l" />
+          <g clipPath="url(#bajoL)"><Anillos T={T} x={520 + 250 * 1.15} y={760 + 34 * 1.15} R={900} g={klerp(1, 0.35, kprog(T, K.L + 0.8, K.L + 3.0))} vel={klerp(0.9, 0.5, kprog(T, K.L + 0.8, K.L + 3.0))} /></g>
+          <Barco x={520} y={760} s={1.15} T={T} helice={klerp(3.5, 1.2, kprog(T, K.L + 0.8, K.L + 3.0))} />
+          <Velocimetro x={300} y={400} v={vel} r={165} />
+          <BallenaFranca x={620} y={1170} s={0.8} T={T} flip fase={0.5} />
         </>)}
       </Escena>
 
@@ -327,19 +335,19 @@ function RuidoOceanoShot() {
       </Escena>
 
       {/* datos y etiquetas */}
-      <Chip T={T} at={K.A + 0.4} until={K.B - 0.2} texto="el sonido en el agua: × 4.4" y={600} x={400} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.B + 0.8} until={K.H - 0.2} x={520} y={560} texto="ballena franca" tam={34} />
-      <Etq T={T} at={K.B + 1.2} until={K.H - 0.2} x={520} y={610} texto="Eubalaena glacialis" it tam={30} />
+      <Chip T={T} at={K.A + 0.4} until={K.B - 0.2} texto="el sonido en el agua: × 4.4" y={470} x={540} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.B + 0.8} until={K.H - 0.2} x={560} y={500} texto="ballena franca" tam={34} />
+      <Etq T={T} at={K.B + 1.2} until={K.H - 0.2} x={560} y={550} texto="Eubalaena glacialis" it tam={30} />
       <Chip T={T} at={K.B + 2.0} until={K.H - 0.2} texto="se detectan a cientos de km" y={1440} x={540} tam={34} borde={RO_CANTO} />
-      <Etq T={T} at={K.H + 0.6} until={K.P - 0.2} x={1075} y={600} texto="hélice" lado="izq" tam={32} />
+      <Etq T={T} at={K.H + 0.6} until={K.P - 0.2} x={1075} y={640} texto="hélice" lado="izq" tam={32} />
       <Chip T={T} at={K.H + 1.4} until={K.P - 0.2} texto="ruido de barcos: 20–200 Hz" y={1440} x={540} tam={36} borde={RO_RUIDO} />
       <TarjetaEstudio T={T} at={K.E + 0.5} until={K.R - 0.2} anio="2001" quien="Bahía de Fundy, Canadá" revista="tras el 11 de septiembre" x={540} y={400} />
       <Chip T={T} at={K.E + 2.0} until={K.R - 0.2} texto="barcos grandes (2 días): 9 → 3" y={1440} x={540} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.R + 2.3} until={K.Pr - 0.2} x={500} y={970} texto="heces" tam={30} />
+      <Etq T={T} at={K.R + 2.3} until={K.Pr - 0.2} x={490} y={975} texto="heces" tam={30} />
       <Chip T={T} at={K.R + 3.0} until={K.Pr - 0.2} texto="hormonas de estrés ↓" y={1440} x={540} tam={38} borde={KC.orange} />
-      <TarjetaEstudio T={T} at={K.Pr + 0.7} until={K.D - 0.2} anio="2012" quien="Rolland et al." revista="Proc. R. Soc. B" x={420} y={640} />
+      <TarjetaEstudio T={T} at={K.Pr + 0.7} until={K.D - 0.2} anio="2012" quien="Rolland et al." revista="Proc. R. Soc. B" x={380} y={520} />
       <Chip T={T} at={K.Pr + 1.6} until={K.D - 0.2} texto="primera evidencia: ruido ↔ estrés crónico" y={1440} x={540} tam={30} borde={KC.gold} />
-      <Etq T={T} at={K.D + 0.4} until={K.L - 0.2} x={1010} y={520} texto="isla San Nicolás, California" lado="izq" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.D + 0.4} until={K.L - 0.2} x={930} y={420} texto="isla San Nicolás, California" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.D + 2.6} until={K.L - 0.2} texto="+2.5 a 3 dB por década (30–50 Hz, un sitio)" y={1440} x={540} tam={28} borde={RO_RUIDO} />
       <Chip T={T} at={K.L + 2.6} until={K.C - 0.2} texto="estrecho de Haro · 2017 · ruido de fondo −2.5 dB" y={1440} x={540} tam={26} borde={KC.mint} />
       <Chip T={T} at={K.C + 0.6} until={K.Ou - 0.1} texto="barcos lentos = mar más callado" y={1440} x={540} tam={34} borde={KC.mint} />
