@@ -1,0 +1,2 @@
+# Avance del grupo n017 (pase a mano cine)
+- cie-19-piel-gallina: Gancho y Cierre con el brazo en primer plano x1.8 de borde a borde (flechas, chips y mito reacomodados, flechas y chip adelantados a 3.4 s); corte de piel x1.07 y bajado (etiquetas siguen al dibujo, chips abajo, etiquetas oscuras legibles sobre la dermis); Grande x1.2; Pregunta con tu figura grande junto al signo (era CHICO); Inutil con el ancestro grande y centrado (era ARRIBA); Harvard con ratón x1.9 y tarjeta arriba; «en ratones» ya no tapa el vello. Auditores: sin láminas, encuadre bien; pendiente: nada

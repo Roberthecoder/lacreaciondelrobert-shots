@@ -97,7 +97,7 @@ function klerpColor(c1, c2, p) {
   return '#' + a.map((v, i) => Math.round(klerp(v, b[i], kclamp(p, 0, 1))).toString(16).padStart(2, '0')).join('');
 }
 // world coords de un punto local del corte
-const CX = 540, CY = 860, CS = 0.95;
+const CX = 540, CY = 930, CS = 1.02;   // pase cine: corte más grande y centrado (antes 860 / 0.95)
 const cw = (p) => [CX + p[0] * CS, CY + p[1] * CS];
 
 function Copo({ x, y, r = 26, rot = 0 }) {
@@ -230,14 +230,17 @@ function Gallina() {
       <Escena T={T} a={K.Gancho} b={K.Musculo + 1.9} fondo={KC.pink}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <Brazo x={500} y={930} s={1} erizo={erizoG + 0.06 * Math.sin(T * 9) * erizoG} T={T} />
-          <Onomato T={T} at={0.3} dur={1.6} x={300} y={640} texto="¡BRRR!" color={KC.yellow} tam={130} />
-          {T > K.Gancho + 4.4 && T < K.Musculo + 1 && [[-330, -40], [-160, 20], [20, -50], [190, 10]].map(([px, py], i) => <FlechaRecta key={i} x1={500 + px} y1={740}
-            x2={500 + px} y2={930 + py - 20} p={kprog(T, K.Gancho + 4.4 + i * 0.12, K.Gancho + 4.8 + i * 0.12, kEase.sale)} color={GMUS} grosor={10} punta={24} />)}
+          {/* pase cine: brazo en primer plano, de borde a borde (x1.8, centrado en el cuadro) */}
+          <g transform="translate(540 960) scale(1.8) translate(-490 -930)">
+            <Brazo x={500} y={930} s={1} erizo={erizoG + 0.06 * Math.sin(T * 9) * erizoG} T={T} />
+          </g>
+          <Onomato T={T} at={0.3} dur={1.6} x={800} y={470} texto="¡BRRR!" color={KC.yellow} tam={130} />
+          {T > K.Gancho + 3.4 && T < K.Musculo + 1 && [[-330, -40], [-160, 20], [20, -50], [190, 10]].map(([px, py], i) => <FlechaRecta key={i} x1={558 + px * 1.6} y1={470}
+            x2={558 + px * 1.6} y2={960 + (py - 20) * 1.8} p={kprog(T, K.Gancho + 3.4 + i * 0.12, K.Gancho + 3.8 + i * 0.12, kEase.sale)} color={GMUS} grosor={14} punta={34} />)}
         </Lienzo>
-        <MitoTachado T={T} at={K.Gancho + 1.4} tacharEn={K.Gancho + 2.6} until={K.Gancho + 4.2} texto="piel encogiéndose" x={330} y={520} tam={42} />
-        <Chip T={T} at={K.Gancho + 4.3} until={K.Musculo + 0.6} texto="músculos jalando pelos" x={540} y={600} tam={44} borde={GMUS} />
-        <Etq T={T} at={K.Gancho + 2.2} until={K.Gancho + 4.2} x={200} y={1100} texto="muchos al mismo tiempo" color={KC.texto} />
+        <MitoTachado T={T} at={K.Gancho + 1.4} tacharEn={K.Gancho + 2.6} until={K.Gancho + 4.2} texto="piel encogiéndose" x={540} y={1290} tam={42} />
+        <Chip T={T} at={K.Gancho + 3.4} until={K.Musculo + 0.6} texto="músculos jalando pelos" x={540} y={380} tam={44} borde={GMUS} />
+        <Etq T={T} at={K.Gancho + 2.2} until={K.Gancho + 4.2} x={300} y={1420} texto="muchos al mismo tiempo" color={KC.texto} />
       </Escena>
       <Lupa T={T} at={K.Musculo + 0.1} until={K.Musculo + 1.7} x={540} y={600} r={250} fx={540} fy={900} tinte={KC.yellow} etiqueta="POR DENTRO · PIEL"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill={GDERMIS} /><Corte x={r - 20} y={r + 20} s={0.42} T={t} clip={false} /></svg>} />
@@ -254,13 +257,13 @@ function Gallina() {
           {T > K.Frio + 3.6 && T < K.Bolita + 1.4 && (() => { const [mx, my] = cw(corteGeo(contraT).M), f = ((T - K.Frio - 3.6) * 2) % 1;
             return <circle cx={mx} cy={my} r={40 + f * 120} fill="none" stroke={GMUS} strokeWidth={8} opacity={1 - f} />; })()}
         </Lienzo>
-        <Chip T={T} at={K.Musculo + 2.4} until={K.Frio - 0.1} texto="músculo erector del pelo" x={540} y={1140} tam={42} borde={GMUS} />
+        <Chip T={T} at={K.Musculo + 2.4} until={K.Frio - 0.1} texto="músculo erector del pelo" x={540} y={1460} tam={42} borde={GMUS} />
         <Etq T={T} at={K.Musculo + 2.0} until={K.Frio + 1.2} x={cw([-80, -380])[0]} y={cw([-80, -380])[1]} texto="vello" lado="izq" color={KC.texto} />
-        <Etq T={T} at={K.Musculo + 2.3} until={K.Frio + 1.2} x={cw([215, -40])[0]} y={cw([215, -40])[1]} texto="folículo" lado="der" color={KC.texto} />
-        <Etq T={T} at={K.Frio + 1.9} until={K.Bolita - 0.1} x={cw([-420, 140])[0]} y={cw([-420, 140])[1]} texto="nervio" lado="der" color={GNERV} />
+        <Etq T={T} at={K.Musculo + 2.3} until={K.Frio + 1.2} x={cw([215, -40])[0]} y={cw([215, -40])[1]} texto="folículo" lado="der" color="#0b1020" />
+        <Etq T={T} at={K.Frio + 1.9} until={K.Bolita - 0.1} x={cw([-420, 140])[0]} y={cw([-420, 140])[1]} texto="nervio" lado="der" color="#0b1020" />
         <Chip T={T} at={K.Frio + 0.3} until={K.Bolita - 0.1} texto="frío o emoción" x={640} y={430} tam={40} borde={KC.cyan} />
-        <Chip T={T} at={K.Frio + 3.7} until={K.Bolita + 0.6} texto="¡se contrae!" x={540} y={1140} tam={44} borde={GMUS} />
-        <Etq T={T} at={K.Bolita + 0.3} until={K.Animales - 0.2} x={560} y={380} texto="el pelo se para" lado="izq" color={KC.gold2} />
+        <Chip T={T} at={K.Frio + 3.7} until={K.Bolita + 0.6} texto="¡se contrae!" x={540} y={1460} tam={44} borde={GMUS} />
+        <Etq T={T} at={K.Bolita + 0.3} until={K.Animales - 0.2} x={cw([21, -505])[0]} y={cw([21, -505])[1]} texto="el pelo se para" lado="izq" color={KC.gold2} />
         <Etq T={T} at={K.Bolita + 1.3} until={K.Animales - 0.2} x={cw([200, -340])[0]} y={cw([200, -340])[1]} texto="bolita" lado="der" color={KC.texto} />
       </Escena>
 
@@ -281,34 +284,44 @@ function Gallina() {
       <Escena T={T} a={K.Grande} b={K.Pregunta} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <Perro x={140} y={1000} s={0.62} T={T} />
+          <g transform="translate(540 980) scale(1.2) translate(-540 -960)">
+          <Perro x={170} y={1000} s={0.62} T={T} />
           {(() => { const e = kprog(T, K.Grande + 0.5, K.Grande + 1.4, kEase.rebote);
             return <><g opacity={kprog(T, K.Grande + 1.2, K.Grande + 1.6) * 0.8}><ellipse cx={700} cy={900} rx={210} ry={150} fill="none" stroke={KC.white} strokeWidth={7} strokeDasharray="16 12" /></g>
               <Gato x={700} y={960} s={0.72 + 0.23 * e} T={T} eriza={e} mira={-1} /></>; })()}
           <Onomato T={T} at={K.Grande + 0.6} dur={1.4} x={790} y={620} texto="¡FFFF!" color={KC.yellow} tam={120} />
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Grande + 2.1} until={K.Pregunta - 0.1} texto="se ve más grande" x={540} y={430} tam={44} borde={KC.ink} />
       </Escena>
 
       {/* 6 · pregunta */}
-      <EscenaPregunta T={T} a={K.Pregunta} b={K.Inutil} />
+      {/* pase cine: la pregunta es a ti: tu figura (casi sin pelaje) grande junto al signo */}
+      <Escena T={T} a={K.Pregunta} b={K.Inutil} zoom={0.1}>
+        <FondoLunares color={KC.lilac} />
+        <Lienzo>
+          <PersonaSimple x={650} yPies={1400} alto={940} color="#2fe0a8" cara="o" />
+          <text x={270} y={1160} textAnchor="middle" fill={KC.yellow} stroke="#0b1020" strokeWidth={14}
+            transform={`rotate(${Math.sin(T * 3) * 6} 270 960)`} style={{ font:`400 ${Math.round(470 * klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote)))}px ${KF.titulo}` }}>?</text>
+        </Lienzo>
+      </Escena>
 
       {/* 7 · herencia de ancestros peludos */}
       <Escena T={T} a={K.Inutil} b={K.Harvard} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <Ancestro x={540} yPies={1180} alto={640} pelo={1 - kprog(T, K.Inutil + 1.8, K.Inutil + 3.4, kEase.suave)} T={T} />
+          <Ancestro x={540} yPies={1400} alto={940} pelo={1 - kprog(T, K.Inutil + 1.8, K.Inutil + 3.4, kEase.suave)} T={T} />
         </Lienzo>
         <MitoTachado T={T} at={K.Inutil + 0.2} tacharEn={K.Inutil + 1.3} until={K.Inutil + 2.4} texto="¿para abrigarte?" x={540} y={400} tam={44} />
         <Chip T={T} at={K.Inutil + 2.5} until={K.Harvard - 0.1} texto="herencia" x={540} y={400} tam={52} borde={KC.ink} />
-        <Etq T={T} at={K.Inutil + 0.6} until={K.Inutil + 2.6} x={700} y={620} texto="ancestro peludo" lado="der" color={KC.ink} tam={28} />
+        <Etq T={T} at={K.Inutil + 0.6} until={K.Inutil + 2.6} x={720} y={640} texto="ancestro peludo" lado="der" color={KC.ink} tam={28} />
       </Escena>
 
       {/* 8 · Harvard 2020, en ratones */}
       <Escena T={T} a={K.Harvard} b={K.Harvard + 2.7} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
-        <Lienzo><Raton x={540} y={1080} s={1.3} T={T} /></Lienzo>
-        <TarjetaEstudio T={T} at={K.Harvard + 0.2} until={K.Harvard + 2.4} anio="2020" quien="Harvard · en ratones" revista="Shwartz et al. · Cell" x={540} y={640} />
+        <Lienzo><Raton x={570} y={1180} s={2.5} T={T} /></Lienzo>
+        <TarjetaEstudio T={T} at={K.Harvard + 0.2} until={K.Harvard + 2.4} anio="2020" quien="Harvard · en ratones" revista="Shwartz et al. · Cell" x={540} y={560} />
       </Escena>
       <Escena T={T} a={K.Harvard + 2.7} b={K.Cierre} fondo={KC.noche}>
         <FondoMarca patron="oscuro" />
@@ -321,23 +334,25 @@ function Gallina() {
             <Calendario x={960} y={420} s={0.45} T={T} at={K.Pelo + 0.5} /></g>}
           <g opacity={kprog(T, K.Harvard + 2.8, K.Harvard + 3.2)}><Raton x={190} y={440} s={0.55} T={T} /></g>
         </Lienzo>
-        <Chip T={T} at={K.Harvard + 2.9} until={K.Cierre - 0.1} texto="en ratones" x={420} y={360} tam={40} borde={KC.gold} />
-        <Etq T={T} at={K.Harvard + 3.0} until={K.Pelo + 0.1} x={cw([-420, 140])[0]} y={cw([-420, 140])[1]} texto="nervio" lado="der" color={GNERV} />
-        <Etq T={T} at={K.Harvard + 3.6} until={K.Pelo + 0.1} x={cw([-380, -180])[0]} y={cw([-380, -180])[1] - 40} texto="músculo" lado="der" color={KC.texto} />
-        <Chip T={T} at={K.Harvard + 5.4} until={K.Pelo + 0.2} texto="células madre" x={540} y={1140} tam={42} borde={GMADRE} />
-        <Etq T={T} at={K.Pelo + 2.0} until={K.Cierre - 0.2} x={575} y={520} texto="pelo nuevo" lado="der" color={KC.gold2} />
-        <Chip T={T} at={K.Pelo + 0.4} until={K.Cierre - 0.1} texto="frío por mucho tiempo" x={540} y={1140} tam={40} borde={KC.cyan} />
+        <Chip T={T} at={K.Harvard + 2.9} until={K.Cierre - 0.1} texto="en ratones" x={230} y={330} tam={40} borde={KC.gold} />
+        <Etq T={T} at={K.Harvard + 3.0} until={K.Pelo + 0.1} x={cw([-420, 140])[0]} y={cw([-420, 140])[1]} texto="nervio" lado="der" color="#0b1020" />
+        <Etq T={T} at={K.Harvard + 3.6} until={K.Pelo + 0.1} x={cw([-440, -110])[0]} y={cw([-440, -110])[1]} texto="músculo" lado="der" color="#0b1020" />
+        <Chip T={T} at={K.Harvard + 5.4} until={K.Pelo + 0.2} texto="células madre" x={540} y={1460} tam={42} borde={GMADRE} />
+        <Etq T={T} at={K.Pelo + 2.0} until={K.Cierre - 0.2} x={cw([37, -358])[0]} y={cw([37, -358])[1]} texto="pelo nuevo" lado="der" color={KC.gold2} />
+        <Chip T={T} at={K.Pelo + 0.4} until={K.Cierre - 0.1} texto="frío por mucho tiempo" x={540} y={1460} tam={40} borde={KC.cyan} />
       </Escena>
 
       {/* 10 · cierre: el mismo brazo, ahora abrigado */}
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.pink}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <Brazo x={500} y={930} s={1} erizo={kprog(T, K.Cierre + 0.2, K.Cierre + 1.2, kEase.sale)} T={T} halo={kprog(T, K.Cierre + 2.6, K.Cierre + 3.4)} />
-          <Bufanda x={500} y={930} p={kprog(T, K.Cierre + 3.8, K.Cierre + 5.0)} T={T} />
+          <g transform="translate(540 960) scale(1.8) translate(-490 -930)">
+            <Brazo x={500} y={930} s={1} erizo={kprog(T, K.Cierre + 0.2, K.Cierre + 1.2, kEase.sale)} T={T} halo={kprog(T, K.Cierre + 2.6, K.Cierre + 3.4)} />
+            <Bufanda x={500} y={930} p={kprog(T, K.Cierre + 3.8, K.Cierre + 5.0)} T={T} />
+          </g>
         </Lienzo>
-        <MitoTachado T={T} at={K.Cierre + 0.4} tacharEn={K.Cierre + 1.8} until={K.Cierre + 3.0} texto="solo un susto" x={330} y={520} tam={42} />
-        <Chip T={T} at={K.Cierre + 3.1} until={K.Outro - 0.1} texto="pelaje imaginario" x={540} y={560} tam={44} borde={KC.white} />
+        <MitoTachado T={T} at={K.Cierre + 0.4} tacharEn={K.Cierre + 1.8} until={K.Cierre + 3.0} texto="solo un susto" x={340} y={500} tam={42} />
+        <Chip T={T} at={K.Cierre + 3.1} until={K.Outro - 0.1} texto="pelaje imaginario" x={540} y={450} tam={44} borde={KC.white} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Musculo - 0.1} texto="No es tu piel: *son músculos.*" />
