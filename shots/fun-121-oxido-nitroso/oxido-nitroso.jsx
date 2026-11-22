@@ -9,6 +9,7 @@ const NX = { N:'#4d7cff', O:'#ff4d3d', tierra:'#6b4a2e', tierra2:'#4e3420', gran
 // Subtítulo con *resaltado* y _cursiva_ (especies en cursiva también en el subtítulo). Usa window.SUBS[idx] en la narrada.
 function SubtituloIt({ T, at, until, texto, idx, color = KC.gold2, tam = 64 }) {
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
+  if (window.CINE_OPC && !window.CINE_OPC.subtitulos) return null;  // modo cine: sin subtítulo quemado
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
   let on = false, it = false;
@@ -84,9 +85,9 @@ function Granitos({ T, x, y, suelo = 1000, at, fin, n = 46 }) {
 // Milpa (macro): suelo, 4 matas de maíz y una calabaza. children = lo que va encima (costal, gas, hifas).
 function Milpa({ T, children, hifas = 0, lluvia = 0 }) {
   return <g>
-    <rect x={0} y={1000} width={1080} height={1000} fill={NX.tierra} />
+    <rect x={0} y={1000} width={1080} height={1000} fill="#38271a" />
     <path d="M 0 1000 Q 270 985 540 1002 Q 800 1015 1080 996" stroke={KC.ink} strokeWidth={8} fill="none" />
-    {[[90, 1050, 60], [400, 1090, 80], [760, 1060, 70], [250, 1140, 50], [930, 1130, 60]].map(([cx, cy, r], i) => <ellipse key={i} cx={cx} cy={cy} rx={r} ry={r * 0.25} fill={NX.tierra2} opacity=".6" />)}
+    {[[90, 1050, 60], [400, 1090, 80], [760, 1060, 70], [250, 1140, 50], [930, 1130, 60]].map(([cx, cy, r], i) => <ellipse key={i} cx={cx} cy={cy} rx={r} ry={r * 0.25} fill="#24180f" opacity=".7" />)}
     {hifas > 0 && <><RedHifas T={T} x={300} y={1080} g={hifas} seed={4} n={220} escala={0.22} color="#fff4d6" ancho={3} />
       <RedHifas T={T} x={760} y={1090} g={hifas} seed={9} n={220} escala={0.22} color="#fff4d6" ancho={3} /></>}
     {[[160, 1004, 1.0, 1], [420, 1006, 1.08, 2], [680, 1004, 0.95, 3], [930, 1002, 1.05, 4]].map(([mx, my, ms, sd]) => <Maiz key={sd} T={T} x={mx} y={my} s={ms} seed={sd} />)}
@@ -103,8 +104,8 @@ function TierraOzono({ T, adelgaza = 0, gas = 0 }) {
     <circle cx={cx} cy={cy} r={Rz + 30} fill="rgba(80,200,255,.08)" />
     <path d={arco(Rz, Math.PI * 1.05, Math.PI * 1.95)} stroke="#5fd6ff" strokeWidth={46} fill="none" opacity=".85" strokeLinecap="round" />
     {adelgaza > 0 && <path d={arco(Rz, Math.PI * 1.38, Math.PI * 1.62)} stroke={KC.noche} strokeWidth={46 * adelgaza * 0.75} fill="none" />}
-    <circle cx={cx} cy={cy} r={R} fill="#2f6fd1" stroke={KC.ink} strokeWidth={8} />
-    <path d="M 120 1100 Q 260 960 420 1010 Q 520 1050 600 990 Q 700 930 820 1010 Q 900 1060 960 1150 L 960 1300 L 120 1300 Z" fill="#46b85a" stroke={KC.ink} strokeWidth={6} opacity=".95" />
+    <circle cx={cx} cy={cy} r={R} fill="#163a78" stroke={KC.ink} strokeWidth={8} />
+    <path d="M 120 1100 Q 260 960 420 1010 Q 520 1050 600 990 Q 700 930 820 1010 Q 900 1060 960 1150 Q 1010 1330 800 1400 Q 560 1470 330 1390 Q 110 1310 120 1100 Z" fill="#2e8a45" stroke={KC.ink} strokeWidth={6} opacity=".95" />
     <GasSube T={T} p={gas} x0={380} x1={700} y={960} alto={240} n={7} seed={5} s={0.7} />
   </g>;
 }
@@ -168,7 +169,8 @@ function FrascoTierra({ x, y, texto, color = KC.ink }) {
     <rect x={-90} y={-130} width={180} height={150} rx={22} fill="rgba(255,255,255,.4)" stroke={KC.ink} strokeWidth={6} />
     <rect x={-80} y={-70} width={160} height={82} rx={14} fill={NX.tierra} />
     <rect x={-70} y={-150} width={140} height={26} rx={8} fill="#9aa4b2" stroke={KC.ink} strokeWidth={5} />
-    <text x={0} y={-90} textAnchor="middle" style={{ font:`900 22px ${KF.texto}` }} fill={color}>{texto}</text>
+    <rect x={-86} y={-118} width={172} height={40} rx={8} fill="#0b1020" />
+    <text x={0} y={-91} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill="#f1ead8">{texto}</text>
   </g>;
 }
 
@@ -181,11 +183,11 @@ function OxidoNitrosoShot() {
       {/* 1 · gancho: el costal cae sobre la milpa y del suelo sale N₂O */}
       <Escena T={T} a={K.G} b={K.Oz} zoom={0.05} origen="45% 60%">
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Milpa T={T}>
+        {fsvg(<g transform="translate(0 200)"><Milpa T={T}>
           <Granitos T={T} x={300} y={720} suelo={1000} at={K.G + 0.15} fin={K.G + 2.4} />
           <Costal x={250} y={600} rot={klerp(-10, -48, kprog(T, K.G, K.G + 0.5, kEase.sale))} s={0.8} />
           <GasSube T={T} p={kprog(T, K.G + 2.3, K.G + 3.2)} y={1000} alto={520} n={9} />
-        </Milpa>)}
+        </Milpa></g>)}
       </Escena>
       {/* 2 · ozono: el N₂O llega a la capa de ozono */}
       <Escena T={T} a={K.Oz} b={K.Ca}>
@@ -200,7 +202,8 @@ function OxidoNitrosoShot() {
           <rect x={90} y={700} width={w} height={130} rx={22} fill="rgba(255,255,255,.4)" stroke={KC.ink} strokeWidth={7} />
           <rect x={90} y={700} width={w * 0.66 * u} height={130} rx={22} fill={NX.maiz} stroke={KC.ink} strokeWidth={7} />
           <rect x={90 + w * 0.66} y={700} width={w * 0.34 * kprog(T, K.Ca + 1.4, K.Ca + 2.4, kEase.sale)} height={130} rx={22} fill="#9aa0a6" stroke={KC.ink} strokeWidth={7} />
-          <g transform="translate(0 40)"><Maiz T={T} x={760} y={1110} s={0.45} seed={2} /><Maiz T={T} x={880} y={1110} s={0.5} seed={3} /><Costal x={300} y={1040} s={0.42} rot={-6} /></g>
+          <ellipse cx={540} cy={1440} rx={520} ry={46} fill="#24180f" opacity=".85" />
+          <Maiz T={T} x={640} y={1430} s={0.9} seed={2} /><Maiz T={T} x={880} y={1436} s={1.0} seed={3} /><Costal x={270} y={1250} s={0.9} rot={-6} />
         </>; })())}
       </Escena>
       {/* 4 · charco: llueve, los poros se llenan de agua, se acaba el oxígeno */}
@@ -217,71 +220,71 @@ function OxidoNitrosoShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg((() => { const ent = kprog(T, K.B + 0.2, K.B + 1.2, kEase.suave), sal = kprog(T, K.B + 1.4, K.B + 2.4, kEase.sale); return <>
-          <Bacteria T={T} x={540} y={850} largo={460} ancho={190} rot={-4} color="#7fd88a" seed={4} />
-          {ent < 1 && <Mol x={klerp(80, 470, ent)} y={klerp(620, 840, ent)} s={1.3} tipo="N2O" />}
-          {T > K.B + 1.4 && <Mol x={klerp(620, 930, sal)} y={klerp(840, 620, sal)} s={1.3} tipo="N2" />}
-          {T > K.B + 2.2 && <path d="M 880 520 L 910 550 L 970 480" stroke={KC.mint} strokeWidth={14} fill="none" strokeLinecap="round" />}
+          <Bacteria T={T} x={560} y={900} largo={690} ancho={285} rot={-4} color="#7fd88a" seed={4} />
+          {ent < 1 && <Mol x={klerp(80, 470, ent)} y={klerp(640, 880, ent)} s={1.5} tipo="N2O" />}
+          {T > K.B + 1.4 && <Mol x={klerp(660, 930, sal)} y={klerp(880, 650, sal)} s={1.5} tipo="N2" />}
+          {T > K.B + 2.2 && <path d="M 870 540 L 900 570 L 960 500" stroke={KC.mint} strokeWidth={14} fill="none" strokeLinecap="round" />}
         </>; })())}
       </Escena>
       {/* 6a · la hifa de Fusarium oxysporum */}
       <Escena T={T} a={K.H} b={H2}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<HifaMicro T={T} crece={kprog(T, K.H - 0.2, K.H + 1.6, kEase.sale)} />)}
+        {fsvg(<g transform="translate(540 880) scale(1.7) translate(-540 -820)"><HifaMicro T={T} crece={kprog(T, K.H - 0.9, K.H + 1.1, kEase.sale)} /></g>)}
       </Escena>
       {/* 6b · la enzima P450nor de cerca: NO + NO → N₂O; no se conoce la que lo desarma */}
       <Escena T={T} a={H2} b={K.E} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'#160f24' }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <P450nor T={T} x={500} y={860} s={1.1} at={H2 + 0.3} />
+          <P450nor T={T} x={520} y={880} s={1.7} at={H2 + 0.3} />
           {T > H2 + 2.0 && <g opacity={kprog(T, H2 + 2.0, H2 + 2.4)}>
-            <Mol x={720} y={990} s={0.8} tipo="N2O" />
-            <text x={800} y={1002} style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto}>→</text>
-            <Mol x={900} y={990} s={0.8} tipo="N2" />
-            <path d="M 690 950 L 960 1030 M 960 950 L 690 1030" stroke={KC.red} strokeWidth={12} strokeLinecap="round" opacity={kprog(T, H2 + 2.4, H2 + 2.7)} />
+            <Mol x={410} y={1290} s={1.1} tipo="N2O" />
+            <text x={540} y={1306} textAnchor="middle" style={{ font:`900 52px ${KF.texto}` }} fill={KC.texto}>→</text>
+            <Mol x={670} y={1290} s={1.1} tipo="N2" />
+            <path d="M 350 1235 L 720 1345 M 720 1235 L 350 1345" stroke={KC.red} strokeWidth={12} strokeLinecap="round" opacity={kprog(T, H2 + 2.4, H2 + 2.7)} />
           </g>}
         </>)}
       </Escena>
       {/* 7 · el estudio de 2015: 207 hongos, 70 producen N₂O */}
       <Escena T={T} a={K.E} b={K.Pa}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>{Array.from({ length: 207 }, (_, i) => { const c = i % 23, r = Math.floor(i / 23), ap = kprog(T, K.E + 0.6 + i * 0.006, K.E + 0.9 + i * 0.006); if (ap <= 0) return null;
+        {fsvg(<>{Array.from({ length: 207 }, (_, i) => { const c = i % 23, r = Math.floor(i / 23), ap = kprog(T, K.E - 0.3 + i * 0.003, K.E + i * 0.003); if (ap <= 0) return null;
           const k = ON70.indexOf(i), on = k >= 0 ? kprog(T, K.E + 2.6 + k * 0.03, K.E + 2.8 + k * 0.03) : 0;
-          return <Tubito key={i} x={100 + c * 40} y={760 + r * 46} on={on} s={ap} />; })}</>)}
+          return <Tubito key={i} x={100 + c * 40} y={780 + r * 68} on={on} s={ap * 1.4} />; })}</>)}
       </Escena>
       {/* 8 · el pastizal: tierra en frascos; con antifúngico el gas baja 89 %, con antibacteriano 23 % */}
       <Escena T={T} a={K.Pa} b={K.M}>
         <FondoLunares color={KC.leaf} />
         {fsvg((() => { const u = kprog(T, K.Pa + 2.6, K.Pa + 4.0, kEase.sale), MAX = 250;
-          const col = [[220, 100, 'sin inhibidor', '#9aa0a6'], [540, 11, 'antifúngico', NX.naranja], [860, 77, 'antibacteriano', '#8fb6ff']];
-          return <>{col.map(([cx, v, t, c], i) => { const h = MAX * v / 100 * u; return <g key={i} opacity={kprog(T, K.Pa + 2.2 + i * 0.15, K.Pa + 2.5 + i * 0.15)}>
+          const col = [[240, 100, 'sin inhibidor', '#9aa0a6'], [540, 11, 'antifúngico', NX.naranja], [840, 77, 'antibacteriano', '#8fb6ff']];
+          return <g transform="translate(540 1040) scale(1.18) translate(-540 -1000)">{col.map(([cx, v, t, c], i) => { const h = MAX * v / 100 * u; return <g key={i} opacity={kprog(T, K.Pa - 0.2 + i * 0.1, K.Pa + 0.1 + i * 0.1)}>
             <rect x={cx - 60} y={1000 - h} width={120} height={h} fill={c} stroke={KC.ink} strokeWidth={6} />
             <FrascoTierra x={cx} y={1150} texto={t} />
-          </g>; })}</>; })())}
+          </g>; })}</g>; })())}
       </Escena>
       {/* 9 · matiz: un solo suelo; los métodos son aproximados */}
       <Escena T={T} a={K.M} b={K.C}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>{[180, 410, 640, 870].map((cx, i) => <g key={i} opacity={kprog(T, K.M + 0.2 + i * 0.15, K.M + 0.5 + i * 0.15)}>
-          <rect x={cx - 70} y={880} width={140} height={250} rx={20} fill={NX.tierra} stroke={KC.ink} strokeWidth={6} />
-          {[930, 990, 1050].map((yy) => <line key={yy} x1={cx - 60} y1={yy} x2={cx + 60} y2={yy + 6} stroke={NX.tierra2} strokeWidth={5} />)}
-          <text x={cx} y={860} textAnchor="middle" style={{ font:`400 ${i ? 90 : 56}px ${KF.titulo}` }} fill={i ? KC.yellow : KC.texto} stroke={KC.ink} strokeWidth={4}>{i ? '?' : '89 %'}</text>
+        {fsvg(<>{[150, 410, 670, 930].map((cx, i) => <g key={i} opacity={kprog(T, K.M + 0.2 + i * 0.15, K.M + 0.5 + i * 0.15)}>
+          <rect x={cx - 100} y={860} width={200} height={400} rx={26} fill={NX.tierra} stroke={KC.ink} strokeWidth={6} />
+          {[940, 1030, 1120, 1200].map((yy) => <line key={yy} x1={cx - 86} y1={yy} x2={cx + 86} y2={yy + 8} stroke={NX.tierra2} strokeWidth={6} />)}
+          <text x={cx} y={830} textAnchor="middle" style={{ font:`400 ${i ? 120 : 72}px ${KF.titulo}` }} fill={i ? KC.yellow : KC.texto} stroke={KC.ink} strokeWidth={4}>{i ? '?' : '89 %'}</text>
         </g>)}</>)}
       </Escena>
       {/* 10 · cierre: la misma milpa, ahora por dentro: hifas en el suelo y el gas subiendo */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="45% 60%">
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Milpa T={T} hifas={kprog(T, K.C + 0.4, K.C + 2.4)}>
+        {fsvg(<g transform="translate(0 200)"><Milpa T={T} hifas={kprog(T, K.C + 0.4, K.C + 2.4)}>
           <Costal x={250} y={600} rot={-48} s={0.8} />
           <GasSube T={T} p={kprog(T, K.C + 1.6, K.C + 2.6)} y={1000} alto={520} n={9} seed={8} />
-        </Milpa>)}
+        </Milpa></g>)}
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 2.6} until={K.Oz - 0.3} x={60} y={880} texto="óxido nitroso · N₂O" tam={34} color={KC.ink} />
-      <NumeroGigante T={T} at={K.G + 4.6} until={K.Oz - 0.3} valor={273} dur={1.0} prefijo="×" etiqueta="veces más que el CO₂" x={690} y={470} tam={160} color={KC.yellow} />
-      <Chip T={T} at={K.G + 6.2} until={K.Oz - 0.3} texto="kilo por kilo · a 100 años" x={690} y={660} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.G + 2.6} until={K.Oz - 0.3} x={60} y={1085} texto="óxido nitroso · N₂O" tam={34} color={KC.ink} />
+      <NumeroGigante T={T} at={K.G + 4.6} until={K.Oz - 0.3} valor={273} dur={1.0} prefijo="×" etiqueta="veces más que el CO₂" x={690} y={440} tam={160} color={KC.yellow} />
+      <Chip T={T} at={K.G + 6.2} until={K.Oz - 0.3} texto="kilo por kilo · a 100 años" x={690} y={625} tam={34} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.Oz + 0.3} until={K.Ca - 0.3} anio="2009" quien="Ravishankara y col." revista="Science, 2009" x={380} y={540} />
       <Chip T={T} at={K.Oz + 2.0} until={K.Ca - 0.3} texto="la emisión humana que más daña el ozono" x={540} y={1060} tam={32} borde="#5fd6ff" />
       <Etq T={T} at={K.Oz + 1.2} until={K.Ca - 0.3} x={60} y={770} texto="capa de ozono" tam={30} color="#5fd6ff" />
@@ -296,27 +299,27 @@ function OxidoNitrosoShot() {
       <Etq T={T} at={K.B + 1.6} until={K.H - 0.3} x={60} y={540} texto="N₂O → N₂ (inofensivo)" tam={34} color={KC.texto} />
       <Etq T={T} at={K.H + 0.6} until={H2 - 0.2} x={60} y={600} texto="Fusarium oxysporum" it tam={40} color={KC.texto} />
       <Etq T={T} at={K.H + 1.1} until={H2 - 0.2} x={60} y={655} texto="hifa (un hongo del suelo)" tam={28} color={NX.hifa} />
-      <Etq T={T} at={H2 + 0.3} until={K.E - 0.3} x={60} y={480} texto="enzima P450nor" tam={36} color="#c9b3ff" />
-      <Etq T={T} at={H2 + 0.8} until={K.E - 0.3} x={60} y={540} texto="NO + NO → N₂O" tam={32} color={KC.texto} />
-      <Chip T={T} at={H2 + 2.6} until={K.E - 0.3} texto="la enzima que lo desarma: no se conoce en hongos" x={540} y={1100} tam={26} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.4} anio="2015" quien="INRA Dijon, Francia" revista="Scientific Reports, 2015" x={540} y={520} />
-      <NumeroGigante T={T} at={K.E + 2.6} until={K.Pa - 0.3} valor={70} dur={1.4} sufijo=" de 207" etiqueta="hongos producían N₂O" x={540} y={560} tam={130} color={NX.naranja} />
-      <TarjetaEstudio T={T} at={K.Pa + 0.2} until={K.Pa + 2.3} anio="2002" quien="tierra de un pastizal · Irlanda del Norte" revista="Soil Sci. Soc. Am. J., 2002" x={540} y={560} />
-      <Etq T={T} at={K.Pa + 2.6} until={K.M - 0.3} x={380} y={480} texto="N₂O que sale de la tierra" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Pa + 4.0} until={K.M - 0.3} texto="−89 %" x={540} y={920} tam={46} borde={KC.ink} />
-      <Chip T={T} at={K.Pa + 4.4} until={K.M - 0.3} texto="−23 %" x={860} y={760} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.M + 0.4} until={K.C - 0.3} texto="un solo suelo" x={300} y={500} tam={42} borde={KC.ink} />
-      <Chip T={T} at={K.M + 1.2} until={K.C - 0.3} texto="89 % + 23 % > 100 %: el método es aproximado" x={540} y={680} tam={28} borde={KC.yellow} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="no es solo comida" x={520} y={380} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.C + 2.0} until={K.Ou} x={60} y={1080} texto="hifas en el suelo" tam={28} color={KC.texto} />
+      <Etq T={T} at={H2 + 0.3} until={K.E - 0.3} x={60} y={420} texto="enzima P450nor" tam={36} color="#c9b3ff" />
+      <Etq T={T} at={H2 + 0.8} until={K.E - 0.3} x={60} y={478} texto="NO + NO → N₂O" tam={32} color={KC.texto} />
+      <Chip T={T} at={H2 + 2.6} until={K.E - 0.3} texto="la enzima que lo desarma: no se conoce en hongos" x={540} y={1425} tam={30} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.4} anio="2015" quien="INRA Dijon, Francia" revista="Scientific Reports, 2015" x={540} y={470} />
+      <NumeroGigante T={T} at={K.E + 2.6} until={K.Pa - 0.3} valor={70} dur={1.4} sufijo=" de 207" etiqueta="hongos producían N₂O" x={540} y={520} tam={130} color={NX.naranja} />
+      <TarjetaEstudio T={T} at={K.Pa + 0.2} until={K.Pa + 2.3} anio="2002" quien="tierra de un pastizal · Irlanda del Norte" revista="Soil Sci. Soc. Am. J., 2002" x={540} y={500} />
+      <Etq T={T} at={K.Pa + 2.6} until={K.M - 0.3} x={300} y={560} texto="N₂O que sale de la tierra" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Pa + 4.0} until={K.M - 0.3} texto="−89 %" x={540} y={945} tam={46} borde={KC.ink} />
+      <Chip T={T} at={K.Pa + 4.4} until={K.M - 0.3} texto="−23 %" x={894} y={762} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.M + 0.4} until={K.C - 0.3} texto="un solo suelo" x={300} y={470} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.M + 1.2} until={K.C - 0.3} texto="89 % + 23 % > 100 %: el método es aproximado" x={540} y={620} tam={30} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="no es solo comida" x={560} y={470} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.C + 2.0} until={K.Ou} x={60} y={1262} texto="hifas en el suelo" tam={28} color={KC.texto} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Oz} texto="50 cm" largo={160} />
       <BarraEscala T={T} at={K.Oz} until={K.Ca} texto="esquemático" largo={0} />
       <BarraEscala T={T} at={K.Ca} until={K.Ch} texto="barra esquemática" largo={0} />
       <BarraEscala T={T} at={K.Ch} until={K.B} texto="1 mm" largo={150} />
-      <BarraEscala T={T} at={K.B} until={K.H} texto="1 µm" largo={190} />
-      <BarraEscala T={T} at={K.H} until={H2} texto="10 µm" largo={240} />
+      <BarraEscala T={T} at={K.B} until={K.H} texto="1 µm" largo={285} />
+      <BarraEscala T={T} at={K.H} until={H2} texto="5 µm" largo={204} />
       <BarraEscala T={T} at={H2} until={K.E} texto="esquemático (nm)" largo={0} />
       <BarraEscala T={T} at={K.Pa} until={K.M} texto="barras esquemáticas" largo={0} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="50 cm" largo={160} />
