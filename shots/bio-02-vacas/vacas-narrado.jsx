@@ -42,11 +42,72 @@ function Intestino({ T, a }) {
   </svg>;
 }
 
+// --- Pase a mano del estilo cine: piezas propias de la versión narrada (los dibujos compartidos no se tocan) ---
+const NEGRO = '#0b1020';
+const VX = 455, VY = 960, VS = 1.02;      // vaca del gancho, del rumen y del cierre
+const MX = 410, MS = 0.94;                 // vaca del eructo y del biorreactor (deja lugar a la derecha)
+// La misma vaca de vacas-comun.jsx, con manchas, ojo y nariz oscuros (en estilo cine KC.ink es claro y se perdían sobre
+// el cuerpo blanco) y con `dentro` (0..1): una ventana de rayos X en la panza que deja ver el estómago del shot.
+function VacaC({ T = 0, x = 0, y = 0, s = 1, mastica = 0, cola, eructo = 0, cabezaAbajo = 0, dentro = 0 }) {
+  const mand = Math.max(0, Math.sin(mastica)) * 10, c = cola == null ? Math.sin(T * 1.7) * 12 : cola;
+  const ch = cabezaAbajo * 70;
+  const est = dentro > 0 ? Estomago({ T, r: 150 }).props.children : null;
+  return <g transform={`translate(${x} ${y}) scale(${s})`}>
+    <g transform={`translate(-300 -90) rotate(${c})`}><path d="M 0 0 C -40 40 -50 120 -40 190" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" /><ellipse cx={-40} cy={200} rx={16} ry={28} fill={NEGRO} stroke={KC.ink} strokeWidth={5} /></g>
+    {[[-230, 0], [-150, 1], [150, 0], [230, 1]].map(([px, k], i) => <g key={i} transform={`rotate(${Math.sin(T * 0.8 + i) * 1.2} ${px} 60)`}>
+      <rect x={px - 26} y={40} width={52} height={210} rx={20} fill={i % 2 ? '#d9d6cf' : '#f1f3f8'} stroke={KC.ink} strokeWidth={8} /><rect x={px - 28} y={226} width={56} height={34} rx={10} fill="#3a2b22" stroke={KC.ink} strokeWidth={6} />
+    </g>)}
+    <path d="M -60 120 Q 0 190 60 120 Z" fill="#ffb3c7" stroke={KC.ink} strokeWidth={7} />
+    <rect x={-320} y={-170} width={600} height={320} rx={150} fill="#f1f3f8" stroke={KC.ink} strokeWidth={9} />
+    <path d="M -250 -150 C -200 -110 -150 -140 -130 -90 C -110 -40 -190 -20 -230 -60 C -270 -100 -290 -130 -250 -150 Z" fill={NEGRO} />
+    <path d="M 20 -168 C 70 -120 140 -150 150 -100 C 160 -40 70 -40 40 -80 C 20 -110 0 -150 20 -168 Z" fill={NEGRO} />
+    <path d="M -120 60 C -80 30 -20 50 -30 100 C -40 140 -110 130 -130 100 Z" fill={NEGRO} />
+    <path d="M 160 40 C 200 20 250 40 240 90 C 220 120 170 110 160 80 Z" fill={NEGRO} />
+    {dentro > 0 && <g opacity={dentro}>
+      <ellipse cx={-48} cy={-6} rx={236} ry={142} fill="#06121c" stroke={KC.cyan} strokeWidth={6} strokeOpacity={0.65 + 0.3 * Math.sin(T * 3)} />
+      <g transform="translate(-202 -158)">{est}</g>
+    </g>}
+    <g transform={`translate(300 ${-110 + ch}) rotate(${cabezaAbajo * 28 + mece(T, 5, 0.25) * 2})`}>
+      <path d="M -20 -40 L -60 -66 L -40 -20 Z" fill="#f1f3f8" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+      <path d="M 10 -76 q 10 -30 30 -36" stroke="#e8d9b0" strokeWidth={12} fill="none" strokeLinecap="round" />
+      <rect x={-30} y={-80} width={170} height={150} rx={60} fill="#f1f3f8" stroke={KC.ink} strokeWidth={9} />
+      <path d="M 40 -80 C 70 -60 60 -20 30 -30 C 10 -40 10 -70 40 -80 Z" fill={NEGRO} />
+      <circle cx={70} cy={-20} r={12} fill={NEGRO} /><circle cx={74} cy={-24} r={4} fill="#fff" />
+      <rect x={70} y={10} width={110} height={60} rx={28} fill="#ffb3c7" stroke={KC.ink} strokeWidth={8} />
+      <circle cx={150} cy={34} r={6} fill={NEGRO} /><circle cx={124} cy={34} r={6} fill={NEGRO} />
+      <g transform={`translate(0 ${mand})`}><rect x={84} y={62} width={90} height={26} rx={13} fill="#ffb3c7" stroke={KC.ink} strokeWidth={7} /></g>
+      {eructo > 0 && <g opacity={1 - kprog(eructo, 0.7, 1)} transform={`translate(${200 + eructo * 120} ${30 - eructo * 140}) scale(${0.4 + eructo})`}>
+        {[[0, 0, 50], [50, -20, 40], [30, 30, 36], [-30, 20, 34]].map(([a, b, r], i) => <circle key={i} cx={a} cy={b} r={r} fill="#d8f0c0" stroke={KC.ink} strokeWidth={5} />)}
+        <text x={10} y={14} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={NEGRO}>CH₄</text>
+      </g>}
+    </g>
+  </g>;
+}
+// El pastizal de vacas-comun.jsx, en su versión oscura (mismo tinte de cielo y de pasto): escenario propio de las escenas
+// a escala real, sin franjas de color saturado a media pantalla.
+function Pradera({ T, horizonte = 1160 }) {
+  const mx = (c, t) => cineMix(c, '#0a0f1c', t);
+  const pasto = mx('#3fbf4a', 0.6), pasto2 = mx('#3fbf4a', 0.8), brizna = mx('#3fbf4a', 0.3);
+  return <>
+    <div style={{ position:'absolute', inset:0, background:`linear-gradient(${mx('#8fe8ff', 0.88)} 0%, ${mx('#00d2ff', 0.8)} 55%, ${mx('#7fe0c8', 0.7)} 100%)` }}></div>
+    <Ambiente T={T} n={18} seed={31} color="rgba(223,231,255,.16)" tam={[3, 8]} vel={10} />
+    <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+      <defs><linearGradient id="vacas-pasto" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={pasto} /><stop offset="1" stopColor={pasto2} /></linearGradient></defs>
+      <circle cx={900} cy={330} r={74} fill={mx('#ffd92e', 0.35)} />
+      {[[190, 520, 80], [640, 250, 56]].map(([x, y, r], i) => <g key={i} transform={`translate(${mece(T, i + 4, 0.05) * 30} 0)`}><ellipse cx={x} cy={y} rx={r * 1.5} ry={r * 0.6} fill={mx('#ffffff', 0.74)} /></g>)}
+      <path d={`M0 ${horizonte} Q 270 ${horizonte - 30} 540 ${horizonte} T 1080 ${horizonte} L 1080 ${KH} L 0 ${KH} Z`} fill="url(#vacas-pasto)" />
+      <path d={`M0 ${horizonte} Q 270 ${horizonte - 30} 540 ${horizonte} T 1080 ${horizonte}`} fill="none" stroke={brizna} strokeWidth={6} />
+      {[0, 1, 2, 3].map((f) => Array.from({ length: 12 - f * 2 }, (_, i) => { const k = 1 + f * 0.55, n = 12 - f * 2, x = (i + 0.5 + (f % 2) * 0.35) * (KW / n), y = horizonte + 110 + f * 175;
+        return <path key={f + '-' + i} d={`M ${x - 9 * k} ${y} l ${(9 + mece(T, i + f * 7, 0.4) * 6) * k} ${-36 * k} l ${(9 - mece(T, i + f * 7, 0.4) * 6) * k} ${36 * k}`} stroke={brizna} strokeWidth={5 + f} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={0.85} />; }))}
+    </svg>
+  </>;
+}
+
 function VacasNarrado() {
   const { T, CUES: C } = useComposition();
   const FIN = C.Outro + 4;
   const masca = T * 2 * Math.PI;                                    // ~1 masticada por segundo
-  const vacaGancho = (extra = {}) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Vaca T={T} x={500} y={880} s={0.9} mastica={masca} {...extra} /></svg>;
+  const vacaGancho = (extra = {}, x = VX, y = VY, s = VS) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><VacaC T={T} x={x} y={y} s={s} mastica={masca} {...extra} /></svg>;
   // bocado del gancho: la cabeza baja y sube con pasto en la boca antes del segundo 1
   const baja = kprog(T, C.Gancho, C.Gancho + 0.35, kEase.sale) * (1 - kprog(T, C.Gancho + 0.6, C.Gancho + 1.1, kEase.suave));
   const microF = (t) => kprog(t, C.Micro + 0.2, C.Micro + 3.0);
@@ -54,96 +115,110 @@ function VacasNarrado() {
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* GANCHO: la vaca come pasto (macro) */}
       <Escena T={T} a={C.Gancho} b={C.Enzimas} zoom={0.04}>
-        <Pastizal T={T} horizonte={1100} />
-        {vacaGancho({ cabezaAbajo: baja })}
-        {T > C.Gancho + 0.5 && T < C.Gancho + 2.4 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><g transform={`translate(${885 - kprog(T, C.Gancho + 0.5, C.Gancho + 2.4) * 20} ${835 + Math.sin(T * 12) * 3})`}>{[-20, 0, 20].map((d) => <path key={d} d={`M ${d} 0 l ${d * 0.6} -50`} stroke={PASTO2} strokeWidth={8} strokeLinecap="round" />)}</g></svg>}
+        <Pradera T={T} />
+        {/* antes del segundo 3 ya se ve hacia dónde va la historia: la panza se abre en rayos X y deja ver el estómago */}
+        {vacaGancho({ cabezaAbajo: baja, dentro: kprog(T, C.Gancho + 1.9, C.Gancho + 2.7, kEase.suave) })}
+        {T > C.Gancho + 0.5 && T < C.Gancho + 2.4 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><g transform={`translate(${VX + 428 * VS - kprog(T, C.Gancho + 0.5, C.Gancho + 2.4) * 20} ${VY - 50 * VS + Math.sin(T * 12) * 3})`}>{[-20, 0, 20].map((d) => <path key={d} d={`M ${d} 0 l ${d * 0.6} -50`} stroke={PASTO} strokeWidth={9} strokeLinecap="round" />)}</g></svg>}
       </Escena>
 
       {/* ENZIMAS: la hoja de pasto por dentro (celulosa) */}
       <Escena T={T} a={C.Enzimas} b={C.Rumen}>
         <FondoMarca T={T} color={KC.mint} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <path d={`M 540 1500 C ${520 + mece(T, 1, 0.2) * 20} 1100, 580 900, ${600 + mece(T, 2, 0.2) * 30} 640`} stroke={KC.ink} strokeWidth={70} fill="none" strokeLinecap="round" />
-          <path d={`M 540 1500 C ${520 + mece(T, 1, 0.2) * 20} 1100, 580 900, ${600 + mece(T, 2, 0.2) * 30} 640`} stroke={PASTO} strokeWidth={56} fill="none" strokeLinecap="round" />
+          {/* la hoja nace fuera del cuadro (antes terminaba en el aire a media pantalla) */}
+          <path d={`M 500 2010 C ${505 + mece(T, 1, 0.2) * 20} 1450, 585 1000, ${600 + mece(T, 2, 0.2) * 30} 640`} stroke={KC.ink} strokeWidth={104} fill="none" strokeLinecap="round" />
+          <path d={`M 500 2010 C ${505 + mece(T, 1, 0.2) * 20} 1450, 585 1000, ${600 + mece(T, 2, 0.2) * 30} 640`} stroke={PASTO} strokeWidth={88} fill="none" strokeLinecap="round" />
+          <path d={`M 500 2010 C ${505 + mece(T, 1, 0.2) * 20} 1450, 585 1000, ${600 + mece(T, 2, 0.2) * 30} 640`} stroke={PASTO2} strokeWidth={8} fill="none" strokeLinecap="round" />
         </svg>
-        <Lupa T={T} at={C.Enzimas + 0.2} until={C.Rumen - 0.3} x={540} y={720} r={250} fx={575} fy={1000} interior={(t, r) => <Celulosa T={t} r={r} />} etiqueta="POR DENTRO · hoja de pasto" tinte={KC.yellow} />
-        <Etq T={T} at={C.Enzimas + 0.8} until={C.Rumen - 0.3} x={800} y={600} texto="celulosa" color={KC.yellow} />
-        <MitoTachado T={T} at={C.Enzimas + 2.0} tacharEn={C.Enzimas + 2.6} until={C.Rumen - 0.3} texto="enzimas de vaca" y={1110} />
+        <Lupa T={T} at={C.Enzimas + 0.2} until={C.Rumen - 0.3} x={540} y={770} r={310} fx={548} fy={1440} interior={(t, r) => <Celulosa T={t} r={r} />} etiqueta="POR DENTRO · hoja de pasto" tinte={KC.yellow} />
+        <Etq T={T} at={C.Enzimas + 0.8} until={C.Rumen - 0.3} x={770} y={476} texto="celulosa" color={KC.yellow} />
+        <MitoTachado T={T} at={C.Enzimas + 2.0} tacharEn={C.Enzimas + 2.6} until={C.Rumen - 0.3} texto="enzimas de vaca" y={1250} />
       </Escena>
 
       {/* RUMEN: rayos X del estómago */}
       <Escena T={T} a={C.Rumen} b={C.Micro} zoom={0.03}>
-        <Pastizal T={T} horizonte={1100} />
-        {vacaGancho({ brillo: kprog(T, C.Rumen + 0.2, C.Rumen + 0.8) })}
-        <Lupa T={T} at={C.Rumen + 0.15} until={C.Micro - 0.2} x={560} y={450} r={220} fx={446} fy={889} interior={(t, r) => <Estomago T={t} r={r} />} etiqueta="POR DENTRO · estómago" />
-        <Etq T={T} at={C.Rumen + 0.8} until={C.Micro - 0.2} x={330} y={380} texto="rumen" lado="izq" color={KC.yellow} />
-        <Chip T={T} at={C.Rumen + 1.8} until={C.Micro - 0.2} texto="tibio · sin oxígeno" x={330} y={1490} borde={KC.cyan} tam={38} />
+        <Pradera T={T} />
+        {vacaGancho({ dentro: 1 })}
+        <Lupa T={T} at={C.Rumen + 0.15} until={C.Micro - 0.2} x={480} y={440} r={225} fx={VX - 100 * VS} fy={VY - 20 * VS} interior={(t, r) => <Estomago T={t} r={r} />} etiqueta="POR DENTRO · estómago" />
+        <Etq T={T} at={C.Rumen + 0.8} until={C.Micro - 0.2} x={292} y={312} texto="rumen" lado="izq" color={KC.yellow} />
+        <Chip T={T} at={C.Rumen + 1.8} until={C.Micro - 0.2} texto="tibio · sin oxígeno" x={540} y={1340} borde={KC.cyan} tam={38} />
       </Escena>
 
       {/* MICRO + PREGUNTA: adentro del rumen */}
       <Escena T={T} a={C.Micro} b={C.Acidos} zoom={0.06} origen="50% 55%">
-        <MundoRumen T={T} microbios={microF(T)} romper={kprog(T, C.Micro + 5.2, C.Micro + 7.8, kEase.suave)} agv={kprog(T, C.Micro + 6.5, C.Pregunta + 1.4)} />
-        <Escala T={T} z={1} pxPorMm={35000} y={1440} />
-        <Etq T={T} at={C.Micro + 0.8} until={C.Micro + 5.0} x={110} y={470} texto="bacterias" color={KC.mint} />
-        <Etq T={T} at={C.Micro + 1.4} until={C.Micro + 5.0} x={600} y={660} texto="hongos" color={KC.gold2} />
-        <Etq T={T} at={C.Micro + 2.0} until={C.Micro + 5.0} x={760} y={440} texto="protozoarios" color={KC.lilac} lado="izq" />
-        <Etq T={T} at={C.Micro + 2.6} until={C.Micro + 5.0} x={300} y={600} texto="arqueas" color="#c9a6ff" />
-        <Chip T={T} at={C.Micro + 3.2} until={C.Micro + 5.2} texto="miles de millones por mililitro" y={1120} borde={KC.mint} tam={36} />
-        <Etq T={T} at={C.Micro + 6.8} until={C.Acidos - 0.2} x={160} y={1320} texto="ácidos grasos volátiles" color={KC.yellow} tam={30} />
-        <Chip T={T} at={C.Pregunta + 0.05} until={C.Acidos - 0.2} texto="¿y la vaca?" y={420} borde={KC.coral} tam={48} />
+        {/* el mundo del rumen se agranda 1.15× y baja al centro del cuadro; la barra de escala se recalcula con el mismo factor */}
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:'translate(0px,110px) scale(1.15)', transformOrigin:'540px 790px' }}>
+          <MundoRumen T={T} microbios={microF(T)} romper={kprog(T, C.Micro + 5.2, C.Micro + 7.8, kEase.suave)} agv={kprog(T, C.Micro + 6.5, C.Pregunta + 1.4)} />
+        </div>
+        <Escala T={T} z={1} pxPorMm={35000 * 1.15} y={1440} />
+        <Etq T={T} at={C.Micro + 0.8} until={C.Micro + 5.0} x={40} y={392} texto="bacterias" color={KC.mint} />
+        <Etq T={T} at={C.Micro + 1.4} until={C.Micro + 5.0} x={612} y={752} texto="hongos" color={KC.gold2} />
+        <Etq T={T} at={C.Micro + 2.0} until={C.Micro + 5.0} x={650} y={470} texto="protozoarios" color={KC.lilac} />
+        <Etq T={T} at={C.Micro + 2.6} until={C.Micro + 5.0} x={266} y={682} texto="arqueas" color="#c9a6ff" />
+        <Chip T={T} at={C.Micro + 3.2} until={C.Micro + 5.2} texto="miles de millones por mililitro" y={1290} borde={KC.mint} tam={36} />
+        <Etq T={T} at={C.Micro + 6.8} until={C.Acidos - 0.2} x={160} y={1475} texto="ácidos grasos volátiles" color={KC.yellow} tam={30} />
+        <Chip T={T} at={C.Pregunta + 0.05} until={C.Acidos - 0.2} texto="¿y la vaca?" y={330} borde={KC.coral} tam={48} />
       </Escena>
 
       {/* ÁCIDOS: la pared del rumen los absorbe */}
       <Escena T={T} a={C.Acidos} b={C.Proteina} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 35%, #3b1d24 0%, #1a0d12 75%)' }}></div>
-        <Pared T={T} a={C.Acidos} agv={kprog(T, C.Acidos + 0.2, C.Acidos + 2.5)} />
-        <Etq T={T} at={C.Acidos + 1.0} until={C.Proteina - 0.2} x={180} y={880} texto="pared del rumen" color={KC.texto} />
-        <Etq T={T} at={C.Acidos + 1.8} until={C.Proteina - 0.2} x={640} y={1300} texto="sangre" color={KC.coral} />
-        <Medidor T={T} at={C.Acidos + 2.4} until={C.Proteina - 0.2} etiqueta="ENERGÍA DE LA VACA" valor={(t) => 0.7 * kprog(t, C.Acidos + 2.6, C.Acidos + 4.6, kEase.sale)} texto={(v) => Math.round(v * 100) + ' %'} y={430} color={KC.yellow} />
+        {/* esquema (no a escala): la pared se agranda 1.25× para llenar el cuadro */}
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:'scale(1.25)', transformOrigin:'540px 1000px' }}>
+          <Pared T={T} a={C.Acidos} agv={kprog(T, C.Acidos + 0.2, C.Acidos + 2.5)} />
+        </div>
+        <Etq T={T} at={C.Acidos + 1.0} until={C.Proteina - 0.2} x={70} y={1120} texto="pared del rumen" color={KC.texto} />
+        <Etq T={T} at={C.Acidos + 1.8} until={C.Proteina - 0.2} x={640} y={1375} texto="sangre" color={KC.coral} />
+        <Medidor T={T} at={C.Acidos + 2.4} until={C.Proteina - 0.2} etiqueta="ENERGÍA DE LA VACA" valor={(t) => 0.7 * kprog(t, C.Acidos + 2.6, C.Acidos + 4.6, kEase.sale)} texto={(v) => Math.round(v * 100) + ' %'} y={290} color={KC.yellow} />
       </Escena>
 
       {/* PROTEÍNA: los microbios bajan al intestino y se digieren */}
       <Escena T={T} a={C.Proteina} b={C.Estudio}>
         <FondoMarca T={T} color={KC.coral} patron="rayas" />
-        <Intestino T={T} a={C.Proteina} />
-        <Etq T={T} at={C.Proteina + 0.6} until={C.Estudio - 0.2} x={140} y={440} texto="intestino" color={KC.ink} />
-        <Chip T={T} at={C.Proteina + 2.4} until={C.Estudio - 0.2} texto="microbios = su proteína" y={1110} borde={KC.ink} tam={40} />
+        {/* esquema (no a escala): el intestino se agranda 1.22× */}
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:'scale(1.22)', transformOrigin:'540px 850px' }}>
+          <Intestino T={T} a={C.Proteina} />
+        </div>
+        <Etq T={T} at={C.Proteina + 0.6} until={C.Estudio - 0.2} x={120} y={330} texto="intestino" color={KC.ink} />
+        <Chip T={T} at={C.Proteina + 2.4} until={C.Estudio - 0.2} texto="microbios = su proteína" y={1380} borde={KC.ink} tam={40} />
       </Escena>
 
       {/* ESTUDIO: Bergman 1990, y tú contra la vaca */}
       <Escena T={T} a={C.Estudio} b={C.Metano}>
         <FondoMarca T={T} color={KC.yellow} />
-        <TarjetaEstudio T={T} at={C.Estudio + 0.2} until={C.Estudio + 2.8} anio="1990" quien="Edward N. Bergman" revista="Physiological Reviews 70: 567–590" y={700} />
-        <Comparativa T={T} at={C.Estudio + 3.0} until={C.Metano - 0.2} y={480} alto={520} max={80} izq={{ valor: 70, texto: '70 %', etiqueta: 'vaca', color: KC.mint }} der={{ valor: 10, texto: '~10 %', etiqueta: 'tú', color: KC.coral }} />
-        <Chip T={T} at={C.Estudio + 3.2} until={C.Metano - 0.2} texto="energía que viene de microbios" y={420} tam={36} borde={KC.ink} />
+        {/* ya no es lámina: la vaca del shot (con su estómago a la vista) sigue en cuadro toda la escena, atenuada */}
+        <div style={{ position:'absolute', inset:0, opacity:0.62 }}>{vacaGancho({ dentro: 1 }, VX, 1310, 1.0)}</div>
+        <TarjetaEstudio T={T} at={C.Estudio + 0.2} until={C.Estudio + 2.8} anio="1990" quien="Edward N. Bergman" revista="Physiological Reviews 70: 567–590" y={470} />
+        <Comparativa T={T} at={C.Estudio + 3.0} until={C.Metano - 0.2} y={400} alto={480} max={80} izq={{ valor: 70, texto: '70 %', etiqueta: 'vaca', color: KC.mint }} der={{ valor: 10, texto: '~10 %', etiqueta: 'tú', color: KC.coral }} />
+        <Chip T={T} at={C.Estudio + 3.2} until={C.Metano - 0.2} texto="energía que viene de microbios" y={330} tam={36} borde={KC.ink} />
       </Escena>
 
       {/* METANO: el eructo */}
       <Escena T={T} a={C.Metano} b={C.Biorreactor} zoom={0.04}>
-        <Pastizal T={T} horizonte={1100} />
-        {vacaGancho({ eructo: kprog(T, C.Metano + 1.6, C.Metano + 3.6) })}
+        <Pradera T={T} />
+        {vacaGancho({ dentro: 1, eructo: kprog(T, C.Metano + 1.6, C.Metano + 3.6) }, MX, VY, MS)}
         <Chip T={T} at={C.Metano + 0.5} until={C.Biorreactor - 0.2} texto="arqueas → metano" y={430} borde="#8b4dff" tam={40} />
-        <MitoTachado T={T} at={C.Metano + 2.6} tacharEn={C.Metano + 3.3} until={C.Biorreactor - 0.2} texto="pedos" x={300} y={1500} />
+        <MitoTachado T={T} at={C.Metano + 2.6} tacharEn={C.Metano + 3.3} until={C.Biorreactor - 0.2} texto="pedos" x={300} y={1340} />
       </Escena>
 
       {/* BIORREACTOR CON PATAS */}
       <Escena T={T} a={C.Biorreactor} b={C.Cierre}>
         <FondoMarca T={T} color={KC.lilac} patron="rayas" />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Vaca T={T} x={500} y={820} s={0.9} mastica={masca} brillo={0.6} />
-          <ellipse cx={445} cy={830} rx={260} ry={150} fill="none" stroke={KC.ink} strokeWidth={7} strokeDasharray="22 14" strokeDashoffset={-T * 40} />
-          <FlechaCurva T={T} x1={1000} y1={520} x2={850} y2={740} p={kprog(T, C.Biorreactor + 0.4, C.Biorreactor + 1.0)} color={PASTO} curva={-60} />
+          <VacaC T={T} x={MX} y={VY} s={MS} mastica={masca} dentro={1} />
+          <ellipse cx={MX - 48 * MS} cy={VY - 6 * MS} rx={262 * MS} ry={168 * MS} fill="none" stroke={KC.ink} strokeWidth={7} strokeDasharray="22 14" strokeDashoffset={-T * 40} />
+          <FlechaCurva T={T} x1={1000} y1={560} x2={MX + 400 * MS} y2={VY - 90 * MS} p={kprog(T, C.Biorreactor + 0.4, C.Biorreactor + 1.0)} color={PASTO} curva={-60} />
         </svg>
-        <Etq T={T} at={C.Biorreactor + 0.6} until={C.Cierre - 0.2} x={1000} y={480} texto="medio de cultivo" lado="izq" color={KC.ink} />
-        <Etq T={T} at={C.Biorreactor + 3.2} until={C.Cierre - 0.2} x={330} y={830} texto="fábrica: microbios" color={KC.texto} />
-        <Chip T={T} at={C.Biorreactor + 0.2} until={C.Cierre - 0.2} texto="BIORREACTOR CON PATAS" y={420} tam={46} borde={KC.ink} />
+        <Etq T={T} at={C.Biorreactor + 0.6} until={C.Cierre - 0.2} x={1010} y={515} texto="medio de cultivo" lado="izq" color={KC.ink} />
+        <Etq T={T} at={C.Biorreactor + 3.2} until={C.Cierre - 0.2} x={110} y={720} texto="fábrica: microbios" color={KC.texto} />
+        <Chip T={T} at={C.Biorreactor + 0.2} until={C.Cierre - 0.2} texto="BIORREACTOR CON PATAS" y={330} tam={46} borde={KC.ink} />
       </Escena>
 
       {/* CIERRE: la misma vaca del inicio, ya por dentro */}
       <Escena T={T} a={C.Cierre} b={FIN} zoom={0.03}>
-        <Pastizal T={T} horizonte={1100} />
-        {vacaGancho({ brillo: 0.7 + 0.3 * Math.sin(T * 3) })}
-        <Lupa T={T} at={C.Cierre + 0.1} x={720} y={440} r={180} fx={446} fy={889} interior={(t, r) => <Estomago T={t} r={r} />} etiqueta="sus microbios" tinte={KC.mint} />
+        <Pradera T={T} />
+        {vacaGancho({ dentro: 1 })}
+        <Lupa T={T} at={C.Cierre + 0.1} x={480} y={440} r={225} fx={VX - 100 * VS} fy={VY - 20 * VS} interior={(t, r) => <Estomago T={t} r={r} />} etiqueta="sus microbios" tinte={KC.mint} />
       </Escena>
 
       {/* subtítulos */}
@@ -188,5 +263,5 @@ function VacasNarradoApp() {
     </div>
   );
 }
-Object.assign(window, { Celulosa, Pared, Intestino });
+Object.assign(window, { Celulosa, Pared, Intestino, VacaC, Pradera });
 window.VacasNarradoApp = VacasNarradoApp;
