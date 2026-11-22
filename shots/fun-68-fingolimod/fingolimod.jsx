@@ -16,7 +16,7 @@ function ManoAbierta({ x, y, s = 1 }) {
     <path d="M -230 60 Q -260 -20 -180 -40 L 180 -40 Q 250 -30 240 40 Q 230 110 150 130 L -150 130 Q -220 120 -230 60 Z" fill={FG.piel} stroke={KC.ink} strokeWidth={9} />
     {[-150, -60, 30, 120].map((fx, i) => <rect key={i} x={fx} y={-150 + (i === 0 || i === 3 ? 30 : 0)} width={70} height={150} rx={34} fill={FG.piel} stroke={KC.ink} strokeWidth={8} />)}
     <path d="M -230 40 Q -320 -30 -300 -100 Q -270 -110 -240 -60" fill={FG.piel} stroke={KC.ink} strokeWidth={8} />
-    <rect x={-200} y={130} width={400} height={220} fill="#2346ff" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-200} y={130} width={400} height={220} fill="#2a3aa8" stroke={KC.ink} strokeWidth={8} />
   </g>;
 }
 function Cigarra({ x, y, s = 1, T = 0, hongo = 0 }) {
@@ -105,7 +105,7 @@ function FingoShot() {
   const capRot = (T - K.G) * 40;
 
   const interiorNinfa = (t, r) => <svg width={r * 2} height={r * 2} viewBox="0 0 600 600" style={{ display:'block' }}>
-    <rect width={600} height={600} fill={FG.tierra} /><rect width={600} height={130} fill="#8fd3ff" /><rect y={120} width={600} height={20} fill="#3fbf4a" />
+    <rect width={600} height={600} fill={FG.tierra} /><rect width={600} height={130} fill="#18273f" /><rect y={120} width={600} height={20} fill="#2f7a37" />
     <Ninfa x={300} y={420} s={0.9} p={1} T={t} />
   </svg>;
 
@@ -117,97 +117,99 @@ function FingoShot() {
       {/* 0 · gancho: la cápsula en la mano; no es de una planta */}
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><ManoAbierta x={360} y={930} s={0.9} /><Capsula x={360} y={780 + Math.sin(T * 3) * 8} s={0.95} rot={capRot} />
-          {(() => { const p = kprog(T, K.G + 2.0, K.G + 2.6, kEase.rebote); return p > 0 ? <Cigarra x={800} y={960} s={0.6 * p} T={T} hongo={kprog(T, K.G + 2.6, K.G + 3.6)} /> : null; })()}</>)}
+        {fsvg(<><ManoAbierta x={470} y={1060} s={1.5} /><Capsula x={470} y={810 + Math.sin(T * 3) * 8} s={1.5} rot={capRot} />
+          {(() => { const p = kprog(T, K.G + 2.0, K.G + 2.6, kEase.rebote); return p > 0 ? <Cigarra x={860} y={640} s={0.95 * p} T={T} hongo={kprog(T, K.G + 2.6, K.G + 3.6)} /> : null; })()}</>)}
       </Escena>
       {/* 1 · Isaria sinclairii en la ninfa enterrada */}
       <Escena T={T} a={K.H} b={K.Cl} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:FG.tierra }}></div>
+        <div style={{ position:'absolute', inset:0, background:'#3e2817' }}></div>
         {fsvg(<>
-          <rect x={0} y={0} width={1080} height={560} fill="#8fd3ff" /><rect x={0} y={540} width={1080} height={40} fill="#3fbf4a" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={0} width={1080} height={560} fill="#18273f" /><rect x={0} y={540} width={1080} height={40} fill="#2f7a37" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 30 }, (_, i) => <circle key={i} cx={(i * 137) % 1080} cy={640 + (i * 71) % 560} r={6 + (i % 3) * 3} fill="#4a2e1a" />)}
-          <Ninfa x={560} y={960} s={1.4} p={kprog(T, K.H + 0.3, K.H + 2.6)} T={T} />
+          <Ninfa x={560} y={1170} s={1.6} p={kprog(T, K.H + 0.3, K.H + 2.6)} T={T} />
         </>)}
       </Escena>
       {/* 2 · lo cultivaron en un caldo (Kioto) */}
       <Escena T={T} a={K.Cl} b={K.Mi} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Matraz x={540} y={920} s={1.3} T={T} turbio={kprog(T, K.Cl + 0.5, K.Cl + 2.8)} />)}
+        {fsvg(<Matraz x={540} y={1010} s={1.8} T={T} turbio={kprog(T, K.Cl + 0.5, K.Cl + 2.8)} />)}
       </Escena>
       {/* 3 · miriocina: más que la ciclosporina */}
       <Escena T={T} a={K.Mi} b={K.To} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
         {fsvg(<>
-          <Molecula x={200} y={720} s={1.0} T={T} />
+          <Molecula x={150} y={780} s={1.35} T={T} />
           {[['ciclosporina', 1, '#8fb6ff'], ['miriocina', 100, KC.gold2]].map(([n, v, c], i) => { const p = kprog(T, K.Mi + 1.4 + i * 0.6, K.Mi + 2.6 + i * 0.6, kEase.sale);
             const w = i === 0 ? 40 : 40 + 760 * p;
-            return <g key={i}><text x={140} y={960 + i * 130} style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>{n}</text>
-              <rect x={140} y={975 + i * 130} width={p > 0 ? w : 0} height={56} rx={12} fill={c} stroke={KC.ink} strokeWidth={5} /></g>; })}
+            return <g key={i}><text x={140} y={1050 + i * 160} style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>{n}</text>
+              <rect x={140} y={1070 + i * 160} width={p > 0 ? w : 0} height={76} rx={12} fill={c} stroke={KC.ink} strokeWidth={5} /></g>; })}
         </>)}
       </Escena>
       {/* 4 · tóxica y casi no se disolvía */}
       <Escena T={T} a={K.To} b={K.Cb} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 980) scale(1.25) translate(-540 -950)">
           <path d="M 540 560 Q 820 900 820 1000 A 280 280 0 0 1 260 1000 Q 260 900 540 560 Z" fill="rgba(120,190,255,.35)" stroke="#9fd0ff" strokeWidth={8} />
           <g transform={`translate(540 ${960 + Math.sin(T * 3) * 6})`}>{Array.from({ length: 9 }, (_, i) => <circle key={i} cx={Math.cos(i) * 40} cy={Math.sin(i * 1.7) * 30} r={22} fill={FG.mol} stroke={KC.ink} strokeWidth={4} />)}</g>
           {(() => { const p = kprog(T, K.To + 0.8, K.To + 1.2, kEase.rebote); return p > 0 ? <g transform={`translate(230 760) scale(${p})`}>
             <circle r={70} fill="#f4efe4" stroke={KC.ink} strokeWidth={7} /><circle cx={-24} cy={-8} r={16} fill={KC.ink} /><circle cx={24} cy={-8} r={16} fill={KC.ink} />
             <rect x={-30} y={30} width={60} height={34} rx={6} fill="#f4efe4" stroke={KC.ink} strokeWidth={5} /></g> : null; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · la simplificaron: quitaron partes, agregaron un anillo */}
       <Escena T={T} a={K.Cb} b={K.Na} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<Molecula x={200} y={880} s={1.0} quita={kprog(T, K.Cb + 0.3, K.Cb + 1.8)} anillo={kprog(T, K.Cb + 2.0, K.Cb + 3.0, kEase.rebote)} T={T} />)}
+        {fsvg(<Molecula x={150} y={980} s={1.35} quita={kprog(T, K.Cb + 0.3, K.Cb + 1.8)} anillo={kprog(T, K.Cb + 2.0, K.Cb + 3.0, kEase.rebote)} T={T} />)}
       </Escena>
       {/* 6 · así surgió el FTY720 */}
       <Escena T={T} a={K.Na} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg(<Molecula x={200} y={880} s={1.0} quita={1} anillo={1} brillo={kprog(T, K.Na + 0.2, K.Na + 1.0)} T={T} />)}
+        {fsvg(<><Molecula x={150} y={900} s={1.35} quita={1} anillo={1} brillo={kprog(T, K.Na + 0.2, K.Na + 1.0)} T={T} />
+          {(() => { const p = kprog(T, K.Na + 0.4, K.Na + 1.0, kEase.rebote); return p > 0 ? <Capsula x={540} y={1330} s={1.4 * p} rot={-12} /> : null; })()}</>)}
       </Escena>
       {/* 7 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Me} zoom={0.08}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<Interrogacion T={T} x={250} y={1080} tam={460} />)}
+        {fsvg(<Interrogacion T={T} x={300} y={1260} tam={660} />)}
       </Escena>
       {/* 8 · las defensas atacan la mielina */}
       <Escena T={T} a={K.Me} b={K.Ga} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={12} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.5) translate(-540 -900)">
           <Nervio y={900} mordida={kprog(T, K.Me + 1.2, K.Me + 2.6)} T={T} />
           {[[420, 760, 0], [560, 1040, 1], [700, 760, 2]].map(([lx, ly, sd], i) => { const u = kprog(T, K.Me + 0.2 + i * 0.2, K.Me + 1.4 + i * 0.2, kEase.suave);
             return <Linfocito key={i} x={klerp(lx + (i - 1) * 300, lx, u)} y={klerp(ly + (ly > 900 ? 250 : -250), ly, u)} s={1.3} T={T} seed={sd} />; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 9 · encerrados en los ganglios; llegan menos al cerebro y la médula */}
       <Escena T={T} a={K.Ga} b={K.E} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 980) scale(1.2) translate(-540 -900)">
           <Cerebro x={780} y={680} s={0.9} />
           <Ganglio x={340} y={1040} s={0.95} cierra={fGa} T={T} />
           {Array.from({ length: 5 }, (_, i) => { const u = ((fViaje + i * 0.2) % 1); const vivo = i < 5 - Math.round(4 * fGa) || u > 0.9;
             return vivo ? <Linfocito key={i} x={klerp(620, 760, u)} y={klerp(1040, 820, u)} s={0.8} T={T} seed={i} /> : null; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 10 · FREEDOMS: 0.40 → 0.18 recaídas por año */}
       <Escena T={T} a={K.E} b={K.Or} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <line x1={120} y1={1130} x2={960} y2={1130} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
-          {[[200, 0.40, 'placebo', '#8fb6ff'], [620, 0.18, 'fingolimod 0.5 mg', KC.orange]].map(([x, v, et, c], i) => { const p = bars(i), h = v * 900 * p;
-            return <g key={i}><rect x={x} y={1130 - h} width={260} height={h} rx={10} fill={c} stroke={KC.ink} strokeWidth={7} />
-              {p > 0 && <text x={x + 130} y={1130 - h - 20} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.ink}>{(v * p).toFixed(2)}</text>}
-              <text x={x + 130} y={1172} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>{et}</text></g>; })}
+          <line x1={100} y1={1300} x2={980} y2={1300} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
+          {[[160, 0.40, 'placebo', '#8fb6ff'], [620, 0.18, 'fingolimod 0.5 mg', KC.orange]].map(([x, v, et, c], i) => { const p = bars(i), h = v * 1300 * p;
+            return <g key={i}><rect x={x} y={1300 - h} width={300} height={h} rx={10} fill={c} stroke={KC.ink} strokeWidth={7} />
+              {p > 0 && <text x={x + 150} y={1300 - h - 24} textAnchor="middle" style={{ font:`400 96px ${KF.titulo}` }} fill={KC.ink}>{(v * p).toFixed(2)}</text>}
+              <text x={x + 150} y={1346} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>{et}</text></g>; })}
+          <g opacity={0.9}><Capsula x={800} y={830} s={0.75} rot={-15} /></g>
         </>)}
       </Escena>
       {/* 11 · primer tratamiento oral (antes: inyectables) */}
       <Escena T={T} a={K.Or} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.25) translate(-540 -900)">
           <Capsula x={330} y={900} s={1.4} rot={-20} />
           <g transform="translate(790 900) rotate(30)" opacity=".55">
             <rect x={-30} y={-180} width={60} height={260} rx={10} fill="#e9f4ff" stroke={KC.ink} strokeWidth={6} />
@@ -215,13 +217,13 @@ function FingoShot() {
           </g>
           {(() => { const p = kprog(T, K.Or + 1.4, K.Or + 1.8, kEase.rebote); return p > 0 ? <g transform={`translate(790 900) scale(${p})`}><path d="M -110 -110 L 110 110 M 110 -110 L -110 110" stroke={KC.ink} strokeWidth={22} strokeLinecap="round" opacity=".7" /></g> : null; })()}
           <Sello T={T} at={K.Or + 0.4} x={300} y={600} texto="FDA · 2010" color={KC.blue} r={100} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · cierre: la misma mano; por dentro, la ninfa con el hongo */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><ManoAbierta x={360} y={930} s={0.9} /><Capsula x={360} y={780 + Math.sin(T * 3) * 8} s={0.95} rot={(T - K.C) * 40} /></>)}
-        <Lupa T={T} at={K.C + 0.4} until={K.Ou} x={760} y={620} r={180} fx={380} fy={780} interior={interiorNinfa} tinte={KC.gold2} etiqueta="POR DENTRO · su origen" />
+        {fsvg(<><ManoAbierta x={470} y={1060} s={1.5} /><Capsula x={470} y={810 + Math.sin(T * 3) * 8} s={1.5} rot={(T - K.C) * 40} /></>)}
+        <Lupa T={T} at={K.C + 0.4} until={K.Ou} x={790} y={520} r={220} fx={490} fy={810} interior={interiorNinfa} tinte={KC.gold2} etiqueta="POR DENTRO · su origen" />
       </Escena>
 
       {/* textos */}
@@ -229,38 +231,38 @@ function FingoShot() {
       <Chip T={T} at={K.G + 2.2} until={K.H - 0.2} texto="de un hongo de cigarras" x={300} y={560} tam={36} borde={KC.gold} />
       <Etq T={T} at={K.H + 0.5} until={K.Cl - 0.3} x={60} y={470} texto="Isaria sinclairii" it tam={40} color={KC.ink} />
       <Etq T={T} at={K.H + 1.0} until={K.Cl - 0.3} x={60} y={525} texto="pariente de Cordyceps" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.8} until={K.Cl - 0.3} x={60} y={1110} texto="ninfa de cigarra (bajo tierra)" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.Cl + 0.3} until={K.Mi - 0.3} texto="Universidad de Kioto · Fujita" x={540} y={470} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Cl + 1.2} until={K.Mi - 0.3} x={60} y={600} texto="caldo de cultivo" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Mi + 0.4} until={K.To - 0.3} x={60} y={600} texto="miriocina" tam={36} color={FG.mol} />
+      <Etq T={T} at={K.H + 1.8} until={K.Cl - 0.3} x={60} y={1420} texto="ninfa de cigarra (bajo tierra)" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.Cl + 0.3} until={K.Mi - 0.3} texto="Universidad de Kioto · Fujita" x={540} y={380} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Cl + 1.2} until={K.Mi - 0.3} x={60} y={1410} texto="caldo de cultivo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Mi + 0.4} until={K.To - 0.3} x={60} y={620} texto="miriocina" tam={36} color={FG.mol} />
       <Chip T={T} at={K.Mi + 2.6} until={K.To - 0.3} texto="10 a 100 veces más potente" x={540} y={470} tam={36} borde={KC.gold} />
       <Etq T={T} at={K.Mi + 0.8} until={K.To - 0.3} x={60} y={400} texto="Fujita et al., J Antibiot, 1994" tam={24} color={KC.texto} />
       <Chip T={T} at={K.To + 0.3} until={K.Cb - 0.3} texto="tóxica" x={300} y={470} tam={44} borde={KC.red} />
       <Chip T={T} at={K.To + 0.8} until={K.Cb - 0.3} texto="casi no se disolvía" x={300} y={560} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.Cb + 0.5} until={K.Na - 0.3} x={60} y={600} texto="le quitaron partes" tam={30} color={KC.red} />
-      <Etq T={T} at={K.Cb + 2.2} until={K.Na - 0.3} x={60} y={660} texto="+ un anillo de benceno" tam={30} color={FG.anillo} />
+      <Etq T={T} at={K.Cb + 0.5} until={K.Na - 0.3} x={60} y={1170} texto="le quitaron partes" tam={30} color={KC.red} />
+      <Etq T={T} at={K.Cb + 2.2} until={K.Na - 0.3} x={60} y={1230} texto="+ un anillo de benceno" tam={30} color={FG.anillo} />
       <Chip T={T} at={K.Na + 0.3} until={K.P - 0.3} texto="FTY720 = fingolimod" x={540} y={470} tam={42} borde={KC.gold} />
-      <Etq T={T} at={K.Na + 0.8} until={K.P - 0.3} x={60} y={1100} texto="sintetizado en 1992" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Na + 0.8} until={K.P - 0.3} x={60} y={1110} texto="sintetizado en 1992" tam={28} color={KC.texto} />
       <Chip T={T} at={K.P + 0.2} until={K.Me - 0.2} texto="esclerosis múltiple" x={420} y={470} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.Me + 0.6} until={K.Ga - 0.3} x={60} y={600} texto="linfocitos (defensas)" tam={28} color={FG.linf} />
-      <Etq T={T} at={K.Me + 1.4} until={K.Ga - 0.3} x={60} y={1130} texto="mielina: cubierta del nervio" tam={28} color={FG.mielina} />
-      <Etq T={T} at={K.Ga + 0.3} until={K.E - 0.3} x={60} y={830} texto="ganglio linfático" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ga + 0.6} until={K.E - 0.3} x={1030} y={940} lado="izq" texto="cerebro y médula" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Me + 0.6} until={K.Ga - 0.3} x={60} y={640} texto="linfocitos (defensas)" tam={28} color={FG.linf} />
+      <Etq T={T} at={K.Me + 1.4} until={K.Ga - 0.3} x={60} y={1300} texto="mielina: cubierta del nervio" tam={28} color={FG.mielina} />
+      <Etq T={T} at={K.Ga + 0.3} until={K.E - 0.3} x={60} y={930} texto="ganglio linfático" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ga + 0.6} until={K.E - 0.3} x={1060} y={1190} lado="izq" texto="cerebro y médula" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Ga + 1.0} until={K.E - 0.3} texto="receptor S1P" x={300} y={560} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Ga + 2.4} until={K.E - 0.3} texto="se cree: el mecanismo exacto no se conoce" x={540} y={420} tam={26} borde={KC.gold} />
-      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.Or - 0.2} anio="FREEDOMS" quien="1,272 pacientes · publicado en 2010" revista="Kappos et al., NEJM, 2010" y={470} />
-      <Etq T={T} at={K.E + 1.4} until={K.Or - 0.3} x={1020} y={760} lado="izq" texto="recaídas por año" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Or + 0.8} until={K.C - 0.3} texto="primer tratamiento oral" x={330} y={1150} tam={36} borde={KC.gold} />
-      <Etq T={T} at={K.Or + 1.6} until={K.C - 0.3} x={1030} y={1150} lado="izq" texto="antes: inyectables" tam={26} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.Or - 0.2} anio="FREEDOMS" quien="1,272 pacientes · publicado en 2010" revista="Kappos et al., NEJM, 2010" y={430} />
+      <Etq T={T} at={K.E + 1.4} until={K.Or - 0.3} x={1020} y={720} lado="izq" texto="recaídas por año" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Or + 0.8} until={K.C - 0.3} texto="primer tratamiento oral" x={330} y={1300} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.Or + 1.6} until={K.C - 0.3} x={1040} y={1300} lado="izq" texto="antes: inyectables" tam={26} color={KC.ink} />
       <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="no es consejo médico" x={300} y={470} tam={30} borde={KC.red} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.H} texto="dibujos no a escala" largo={0} />
-      <BarraEscala T={T} at={K.H} until={K.Cl} texto="2 cm" largo={280} />
-      <BarraEscala T={T} at={K.Cl} until={K.Mi} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={K.Mi} until={K.To} texto="0.5 nm" largo={100} />
-      <BarraEscala T={T} at={K.Cb} until={K.P} texto="0.5 nm" largo={100} />
-      <BarraEscala T={T} at={K.Me} until={K.Ga} texto="5 µm" largo={50} />
+      <BarraEscala T={T} at={K.H} until={K.Cl} texto="2 cm" largo={320} />
+      <BarraEscala T={T} at={K.Cl} until={K.Mi} texto="5 cm" largo={152} />
+      <BarraEscala T={T} at={K.Mi} until={K.To} texto="0.5 nm" largo={135} />
+      <BarraEscala T={T} at={K.Cb} until={K.P} texto="0.5 nm" largo={135} />
+      <BarraEscala T={T} at={K.Me} until={K.Ga} texto="5 µm" largo={75} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="dibujos no a escala" largo={0} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
