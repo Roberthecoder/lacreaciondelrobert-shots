@@ -283,8 +283,8 @@ function GiberelinasShot() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <RacimoUva T={T} x={360} y={470} s={1.15} infla={inflaG} brillo={(i) => (i === UVA_GRANDE ? 0.6 + 0.4 * Math.sin(T * 6) : 0) * kprog(T, K.G + 0.6, K.G + 0.9)} />
-          <g opacity={kprog(T, K.G + 2.6, K.G + 3.0)}><UvaCorte T={T} x={830} y={900} s={0.95} semillas={false} /></g>
+          <RacimoUva T={T} x={420} y={490} s={1.55} infla={inflaG} brillo={(i) => (i === UVA_GRANDE ? 0.6 + 0.4 * Math.sin(T * 6) : 0) * kprog(T, K.G + 0.6, K.G + 0.9)} />
+          <g opacity={kprog(T, K.G + 2.6, K.G + 3.0)}><UvaCorte T={T} x={860} y={1100} s={1.2} semillas={false} /></g>
         </>)}
       </Escena>
       {/* 2–3 · el hongo en el arroz: Fusarium fujikuroi y la plántula boba */}
@@ -314,10 +314,10 @@ function GiberelinasShot() {
       <Escena T={T} a={K.Y} b={K.F} zoom={0.06}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Frasco x={200} y={1100} s={1} nivel={0} />
+          <g transform="translate(-40 0)"><Frasco x={200} y={1100} s={1} nivel={0} />
           {Array.from({ length: 9 }, (_, i) => { const o = kprog(T, K.Y + 0.5 + i * 0.08, K.Y + 0.8 + i * 0.08, kEase.rebote);
-            return <path key={i} d="M 0 -16 L 12 0 L 0 16 L -12 0 Z" transform={`translate(${150 + (i % 5) * 26} ${1080 - Math.floor(i / 5) * 26}) scale(${o})`} fill="#fffbe8" stroke={KC.ink} strokeWidth={3} />; })}
-          <MoleculaGA x={430} y={950} s={1.45} p={kprog(T, K.Y + 0.9, K.Y + 2.2)} color={KC.ink} rot={Math.sin(T) * 2} />
+            return <path key={i} d="M 0 -16 L 12 0 L 0 16 L -12 0 Z" transform={`translate(${150 + (i % 5) * 26} ${1080 - Math.floor(i / 5) * 26}) scale(${o})`} fill="#fffbe8" stroke={KC.ink} strokeWidth={3} />; })}</g>
+          <MoleculaGA x={390} y={980} s={1.9} p={kprog(T, K.Y + 0.9, K.Y + 2.2)} color={KC.ink} rot={Math.sin(T) * 2} />
         </>)}
       </Escena>
       {/* 6 · por dentro: la giberelina rompe los frenos (DELLA) y la célula se estira */}
@@ -325,34 +325,34 @@ function GiberelinasShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<>
-          <CelulasTallo T={T} x={130} y={1170} alarga={kprog(T, K.F + 2.7, K.F + 4.6, kEase.suave)} rotos={kprog(T, K.F + 1.7, K.F + 2.9)} />
-          <LluviaGA T={T} p={kprog(T, K.F + 0.6, K.F + 2.0)} x1={150} y0={560} y1={1120} />
+          <g transform="translate(120 1420) scale(1.6)"><CelulasTallo T={T} x={0} y={0} alarga={kprog(T, K.F + 2.7, K.F + 4.6, kEase.suave)} rotos={kprog(T, K.F + 1.7, K.F + 2.9)} /></g>
+          <LluviaGA T={T} p={kprog(T, K.F + 0.6, K.F + 2.0)} x1={200} y0={700} y1={1380} />
         </>)}
       </Escena>
       {/* 7 · re-gancho: ¿y tus uvas? */}
       <Escena T={T} a={K.P} b={K.Se} zoom={0.08}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><RacimoUva T={T} x={280} y={640} s={0.95} /><Interrogacion T={T} x={300} y={600} tam={300} /></>)}
+        {fsvg(<><RacimoUva T={T} x={400} y={560} s={1.3} /><Interrogacion T={T} x={420} y={680} tam={300} /></>)}
       </Escena>
       {/* 8 · con semilla vs sin semilla */}
       <Escena T={T} a={K.Se} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <g opacity={kprog(T, K.Se, K.Se + 0.4)}><UvaCorte T={T} x={290} y={830} s={1.3} semillas brillos={kprog(T, K.Se + 0.6, K.Se + 1.2)} /></g>
-          <g opacity={kprog(T, K.Se + 0.4, K.Se + 0.8)}><UvaCorte T={T} x={770} y={870} s={klerp(1.1, 0.95, kprog(T, K.Se + 2.0, K.Se + 2.8, kEase.suave))} brillos={0.35 * kprog(T, K.Se + 1.0, K.Se + 1.6)} /></g>
+          <g opacity={kprog(T, K.Se, K.Se + 0.4)}><UvaCorte T={T} x={280} y={900} s={1.8} semillas brillos={kprog(T, K.Se + 0.6, K.Se + 1.2)} /></g>
+          <g opacity={kprog(T, K.Se + 0.4, K.Se + 0.8)}><UvaCorte T={T} x={790} y={930} s={klerp(1.52, 1.32, kprog(T, K.Se + 2.0, K.Se + 2.8, kEase.suave))} brillos={0.35 * kprog(T, K.Se + 1.0, K.Se + 1.6)} /></g>
         </>)}
       </Escena>
       {/* 9 · el estudio publicado en 2009 (Alicante, España): uva sin semilla rociada, pesa más */}
       <Escena T={T} a={K.E} b={K.Ce} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <g opacity={kprog(T, K.E + 0.6, K.E + 1.0)}><MapaEspana x={60} y={780} ancho={400} punto={kprog(T, K.E + 1.0, K.E + 3.0)} /></g>
-          {(() => { const pe = kprog(T, K.E + 3.4, K.E + 5.4, kEase.suave), on = kprog(T, K.E + 2.4, K.E + 2.8);
+          <g opacity={kprog(T, K.E + 0.6, K.E + 1.0)}><MapaEspana x={40} y={740} ancho={520} punto={kprog(T, K.E + 1.0, K.E + 3.0)} /></g>
+          {(() => { const pe = kprog(T, K.E + 3.4, K.E + 5.4, kEase.suave), on = kprog(T, K.E + 0.2, K.E + 0.6);
             return <g opacity={on}>
-              <Bascula x={760} y={1080} s={1.05} peso={pe * 90}>
+              <Bascula x={760} y={1150} s={1.6} peso={pe * 90}>
                 <Grano x={0} y={-62} s={klerp(1.0, 1.37, pe)} gota={pe} />
               </Bascula>
-              <Atomizador T={T} x={990} y={860} s={0.6} spray={kprog(T, K.E + 2.8, K.E + 3.0) * (1 - kprog(T, K.E + 4.6, K.E + 4.9))} ang={200} />
+              <Atomizador T={T} x={1000} y={1040} s={0.7} spray={kprog(T, K.E + 2.8, K.E + 3.0) * (1 - kprog(T, K.E + 4.6, K.E + 4.9))} ang={200} />
             </g>; })()}
         </>)}
       </Escena>
@@ -361,18 +361,18 @@ function GiberelinasShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <Rejilla x={80} y={590} tam={92} p={kprog(T, K.Ce + 0.2, K.Ce + 1.0)} color="#9fd7ef" />
-          <Rejilla x={560} y={590} tam={92 * 124 / 116} p={kprog(T, K.Ce + 0.6, K.Ce + 1.4)} color={KC.gold2} />
+          <Rejilla x={30} y={680} tam={120} p={kprog(T, K.Ce + 0.2, K.Ce + 1.0)} color="#9fd7ef" />
+          <Rejilla x={540} y={680} tam={120 * 124 / 116} p={kprog(T, K.Ce + 0.6, K.Ce + 1.4)} color={KC.gold2} />
         </>)}
       </Escena>
       {/* 11 · hoy: se fabrica criando el hongo en tanques */}
       <Escena T={T} a={K.Ta} b={K.Ca} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Tanque T={T} x={360} y={1120} s={1} />
+          <Tanque T={T} x={380} y={1260} s={1.25} />
           {(() => { const u = kprog(T, K.Ta + 1.6, K.Ta + 3.4); return <>
-            <Goteo T={T} x={660} y0={900} y1={960} cada={0.35} color="#fff7d8" desde={K.Ta + 1.4} hasta={K.Ta + 3.4} r={9} />
-            <Vial x={660} y={1130} s={1.1} nivel={u} />
+            <Goteo T={T} x={755} y0={975} y1={1050} cada={0.35} color="#fff7d8" desde={K.Ta + 1.4} hasta={K.Ta + 3.4} r={9} />
+            <Vial x={755} y={1290} s={1.3} nivel={u} />
           </>; })()}
         </>)}
       </Escena>
@@ -380,25 +380,25 @@ function GiberelinasShot() {
       <Escena T={T} a={K.Ca} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <g opacity={kprog(T, K.Ca + 1.6, K.Ca + 2.0)}><MapaCalifornia x={60} y={760} alto={400} valle={kprog(T, K.Ca + 2.2, K.Ca + 3.0)} /></g>
-          <g opacity={kprog(T, K.Ca + 1.8, K.Ca + 2.2)}><Vinedo T={T} x={470} y={830} w={560} filas={4} rocio={kprog(T, K.Ca + 2.4, K.Ca + 4.2)} /></g>
+          <g opacity={kprog(T, K.Ca, K.Ca + 0.4)}><MapaCalifornia x={40} y={740} alto={480} valle={kprog(T, K.Ca + 2.2, K.Ca + 3.0)} /></g>
+          <g opacity={kprog(T, K.Ca + 0.2, K.Ca + 0.6)} transform="translate(440 830) scale(1.1) translate(-440 -830)"><Vinedo T={T} x={440} y={830} w={560} filas={4} rocio={kprog(T, K.Ca + 2.4, K.Ca + 4.2)} /></g>
         </>)}
       </Escena>
       {/* 13 · cierre: el mismo racimo del inicio, ahora "leído" */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <g opacity={kprog(T, K.C + 0.6, K.C + 1.4)}><Plantula T={T} x={620} y={1120} alto={560} boba={1} seed={4} /></g>
-          <RacimoUva T={T} x={360} y={470} s={1.15} infla={(i) => (i === UVA_GRANDE ? 1.5 : 1)}
+          <g opacity={kprog(T, K.C + 0.6, K.C + 1.4)}><Plantula T={T} x={760} y={1400} alto={680} boba={1} seed={4} /></g>
+          <RacimoUva T={T} x={400} y={490} s={1.55} infla={(i) => (i === UVA_GRANDE ? 1.5 : 1)}
             brillo={(i) => (i === UVA_GRANDE ? 0.6 + 0.4 * Math.sin(T * 6) : 0)} gota={kprog(T, K.C + 1.6, K.C + 2.4)} />
-          <UvaCorte T={T} x={830} y={900} s={0.95} brillos={kprog(T, K.C + 2.4, K.C + 3.0)} />
+          <UvaCorte T={T} x={900} y={1180} s={1.1} brillos={kprog(T, K.C + 2.4, K.C + 3.0)} />
         </>)}
       </Escena>
 
       {/* ---------- textos ---------- */}
       {/* gancho */}
-      <Etq T={T} at={K.G + 3.0} until={K.H - 0.3} x={700} y={1070} texto="sin semilla" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.G + 3.0} until={K.H - 0.3} texto="¿la agrandó un hongo?" x={330} y={420} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.G + 3.0} until={K.H - 0.3} x={760} y={1340} texto="sin semilla" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.G + 3.0} until={K.H - 0.3} texto="¿la agrandó un hongo?" x={680} y={330} tam={36} borde={KC.gold} />
       {/* hongo */}
       <Etq T={T} at={K.H + 0.4} until={K.S - 0.3} x={50} y={440} texto="Fusarium fujikuroi" it tam={40} color={KC.ink} />
       <Chip T={T} at={K.H + 0.9} until={K.S - 0.3} texto="bakanae · «plántula boba»" x={290} y={530} tam={32} borde={KC.gold} />
@@ -413,28 +413,28 @@ function GiberelinasShot() {
       <Chip T={T} at={K.Ku + 3.7} until={K.Y - 0.3} texto="lo que estiraba al arroz era algo que el hongo soltaba" x={540} y={760} tam={27} borde={KC.gold} />
       {/* Yabuta */}
       <TarjetaEstudio T={T} at={K.Y + 0.2} until={K.F - 0.3} anio="1935" quien="Teijiro Yabuta · U. de Tokio" revista="la purificó y la llamó giberelina" x={540} y={560} />
-      <Etq T={T} at={K.Y + 1.8} until={K.F - 0.3} x={560} y={820} texto="giberelina (esquema)" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Y + 2.2} until={K.F - 0.3} x={340} y={1120} texto="nombre viejo del hongo:" tam={24} color={KC.ink} />
-      <Etq T={T} at={K.Y + 2.4} until={K.F - 0.3} x={340} y={1165} texto="Gibberella fujikuroi" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Y + 1.8} until={K.F - 0.3} x={600} y={760} texto="giberelina (esquema)" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Y + 2.2} until={K.F - 0.3} x={340} y={1240} texto="nombre viejo del hongo:" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Y + 2.4} until={K.F - 0.3} x={340} y={1285} texto="Gibberella fujikuroi" it tam={28} color={KC.ink} />
       {/* freno */}
-      <Chip T={T} at={K.F + 0.1} until={K.P - 0.3} texto="las plantas también la hacen" x={340} y={420} tam={30} borde={KC.mint} />
-      <Etq T={T} at={K.F + 0.7} until={K.P - 0.3} x={400} y={760} texto="giberelina" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.F + 1.3} until={K.P - 0.3} x={400} y={860} texto="DELLA = freno" tam={30} color={GB.della} />
-      <Etq T={T} at={K.F + 3.2} until={K.P - 0.3} x={400} y={960} texto="la célula se estira" tam={30} color="#7fe08a" />
+      <Chip T={T} at={K.F + 0.1} until={K.P - 0.3} texto="las plantas también la hacen" x={800} y={420} tam={30} borde={KC.mint} />
+      <Etq T={T} at={K.F + 0.7} until={K.P - 0.3} x={560} y={880} texto="giberelina" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.F + 1.3} until={K.P - 0.3} x={560} y={1000} texto="DELLA = freno" tam={30} color={GB.della} />
+      <Etq T={T} at={K.F + 3.2} until={K.P - 0.3} x={560} y={1120} texto="la célula se estira" tam={30} color="#7fe08a" />
       {/* semilla */}
-      <Chip T={T} at={K.Se + 0.5} until={K.E - 0.3} texto="con semilla" x={290} y={1080} tam={32} borde={GB.semilla} />
-      <Chip T={T} at={K.Se + 1.0} until={K.E - 0.3} texto="sin semilla: poca giberelina" x={720} y={1080} tam={30} borde={KC.gold} />
-      <Chip T={T} at={K.Se + 2.2} until={K.E - 0.3} texto="suele quedarse chica" x={720} y={600} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.Se + 0.5} until={K.E - 0.3} texto="con semilla" x={280} y={1230} tam={32} borde={GB.semilla} />
+      <Chip T={T} at={K.Se + 1.0} until={K.E - 0.3} texto="sin semilla: poca giberelina" x={760} y={1230} tam={30} borde={KC.gold} />
+      <Chip T={T} at={K.Se + 2.2} until={K.E - 0.3} texto="suele quedarse chica" x={790} y={640} tam={32} borde={KC.red} />
       {/* estudio */}
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.3} anio="2009" quien="Casanova y col. · España" revista="Span. J. Agric. Res. · uva 'Emperatriz'" x={540} y={560} />
-      <Etq T={T} at={K.E + 1.4} until={K.Ce - 0.3} x={300} y={1010} texto="Alicante" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.E + 1.4} until={K.Ce - 0.3} x={362} y={1034} texto="Alicante" tam={28} color={KC.ink} />
       <NumeroGigante T={T} at={K.E + 2.6} until={K.Ce - 0.3} valor={90} desde={50} dur={2.2} prefijo="+50 a " sufijo=" %" etiqueta="más peso por uva" x={360} y={560} tam={110} color={KC.leaf} />
       <Chip T={T} at={K.E + 4.6} until={K.Ce - 0.3} texto="según el año" x={360} y={700} tam={30} borde={KC.ink} />
       {/* células */}
-      <Chip T={T} at={K.Ce + 0.1} until={K.Ta - 0.3} texto="POR DENTRO · LA PULPA" x={540} y={430} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ce + 0.5} until={K.Ta - 0.3} x={80} y={540} texto="sin tratar · 116 µm" tam={28} color="#9fd7ef" />
-      <Etq T={T} at={K.Ce + 0.9} until={K.Ta - 0.3} x={560} y={540} texto="con GA3 · 124 µm" tam={28} color={KC.gold2} />
-      <Chip T={T} at={K.Ce + 1.6} until={K.Ta - 0.3} texto="mismo número · células más grandes" x={540} y={1130} tam={30} borde={KC.gold} />
+      <Chip T={T} at={K.Ce + 0.1} until={K.Ta - 0.3} texto="POR DENTRO · LA PULPA" x={540} y={520} tam={32} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Ce + 0.5} until={K.Ta - 0.3} x={30} y={630} texto="sin tratar · 116 µm" tam={28} color="#9fd7ef" />
+      <Etq T={T} at={K.Ce + 0.9} until={K.Ta - 0.3} x={540} y={630} texto="con GA3 · 124 µm" tam={28} color={KC.gold2} />
+      <Chip T={T} at={K.Ce + 1.6} until={K.Ta - 0.3} texto="mismo número · células más grandes" x={540} y={1390} tam={30} borde={KC.gold} />
       {/* tanque */}
       <Chip T={T} at={K.Ta + 0.3} until={K.Ca - 0.3} texto="como la penicilina" x={330} y={430} tam={34} borde={KC.gold} />
       <Etq T={T} at={K.Ta + 0.8} until={K.Ca - 0.3} x={1040} y={700} lado="izq" texto="Fusarium fujikuroi" it tam={28} color={KC.ink} />
@@ -443,24 +443,24 @@ function GiberelinasShot() {
       <TarjetaEstudio T={T} at={K.Ca + 0.1} until={K.Ca + 1.8} anio="1957" quien="Robert J. Weaver · UC Davis" revista="primeras pruebas en uvas" x={540} y={560} />
       <Chip T={T} at={K.Ca + 2.0} until={K.C - 0.3} texto="1962: casi todas" x={330} y={560} tam={54} borde={KC.gold} />
       <Etq T={T} at={K.Ca + 2.4} until={K.C - 0.3} x={60} y={680} texto="Thompson Seedless de mesa" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 2.6} until={K.C - 0.3} x={150} y={1200} texto="California" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 2.6} until={K.C - 0.3} x={180} y={1270} texto="California" tam={28} color={KC.ink} />
       {/* cierre */}
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="la hormona de un hongo" x={330} y={420} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={640} y={1090} texto="la plántula boba" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="la hormona de un hongo" x={700} y={330} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={720} y={1440} texto="la plántula boba" tam={26} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={230} y={1430} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={310} y={1430} />
       <BarraEscala T={T} at={K.H} until={K.Ku} texto="10 cm" largo={160} y={1430} />
       <BarraEscala T={T} at={K.Ku} until={K.Y} texto="10 cm" largo={160} y={1430} />
       <BarraEscala T={T} at={K.Y} until={K.F} texto="molécula esquemática" largo={0} y={1430} />
-      <BarraEscala T={T} at={K.F} until={K.P} texto="20 µm" largo={130} y={1430} />
-      <BarraEscala T={T} at={K.P} until={K.Se} texto="5 cm" largo={190} y={1430} />
-      <BarraEscala T={T} at={K.Se} until={K.E} texto="1 cm" largo={110} y={1430} />
+      <BarraEscala T={T} at={K.F} until={K.P} texto="20 µm" largo={208} y={1430} />
+      <BarraEscala T={T} at={K.P} until={K.Se} texto="5 cm" largo={260} y={1430} />
+      <BarraEscala T={T} at={K.Se} until={K.E} texto="1 cm" largo={152} y={1430} />
       <BarraEscala T={T} at={K.E} until={K.Ce} texto="mapa esquemático" largo={0} y={1430} />
-      <BarraEscala T={T} at={K.Ce} until={K.Ta} texto="100 µm" largo={79} y={1430} />
+      <BarraEscala T={T} at={K.Ce} until={K.Ta} texto="100 µm" largo={103} y={1430} />
       <BarraEscala T={T} at={K.Ta} until={K.Ca} texto="tanque esquemático" largo={0} y={1430} />
       <BarraEscala T={T} at={K.Ca} until={K.C} texto="mapa esquemático" largo={0} y={1430} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={230} y={1430} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={310} y={1430} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No se inflaron solas: *la hormona de un hongo.*" />
