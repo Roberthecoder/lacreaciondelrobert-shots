@@ -216,7 +216,7 @@ function SemillaShot() {
       {/* 2 · spawn = grano esterilizado + micelio */}
       <Escena T={T} a={K.S} b={K.L} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(Z(540, 830, 1.0, 540, 1000, <>
           {(() => { const a = kprog(T, K.S + 0.6, K.S + 1.0, kEase.rebote), b = kprog(T, K.S + 1.4, K.S + 1.8, kEase.rebote), c = kprog(T, K.S + 2.3, K.S + 2.7, kEase.rebote); return <>
             {a > 0 && <Grano x={170} y={880} rot={-10} s={4 * a} col={0} seed={2} />}
             {b > 0 && <text x={330} y={905} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink} opacity={b}>+</text>}
@@ -230,8 +230,8 @@ function SemillaShot() {
               {c > 0 && <text x={830} y={1010} opacity={c}>spawn</text>}
             </g>
           </>; })()}
-          <text x={60} y={600} style={{ font:`400 190px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.S + 0.1, K.S + 0.4)}>SPAWN</text>
-        </>)}
+          <text x={110} y={600} style={{ font:`400 190px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.S + 0.1, K.S + 0.4)}>SPAWN</text>
+        </>))}
       </Escena>
       {/* 3 · lupa: granos forrados de hifas */}
       <Escena T={T} a={K.L} b={K.Es} zoom={0.03}>
@@ -248,7 +248,7 @@ function SemillaShot() {
       <Escena T={T} a={K.Es} b={E2 + 0.2} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(Z(390, 1060, 1.55, 540, 900, <>
+        {fsvg(Z(390, 1060, 1.55, 540, 1070, <>
           <rect x={-400} y={1060} width={KW + 800} height={200} fill="#3a3528" opacity=".95" />
           <rect x={-400} y={1060} width={KW + 800} height={10} fill="#fff" opacity=".35" />
           <text x={680} y={1240} textAnchor="end" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>agar</text>
@@ -368,10 +368,10 @@ function SemillaShot() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.7} until={K.S - 0.3} texto="¿echados a perder?" x={360} y={350} tam={44} />
       <Chip T={T} at={K.G + 2.0} until={K.S - 0.3} texto="semilla de hongo" x={360} y={465} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.S + 3.0} until={K.L - 0.3} texto="esporas: 0" x={540} y={1290} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Es + 0.3} until={E2 - 0.2} texto="esporas de champiñón" x={540} y={340} tam={34} borde={KC.gold} mono />
-      <Etq T={T} at={K.Es + 0.6} until={E2 - 0.2} x={60} y={440} texto="Agaricus bisporus" it tam={34} />
-      <Chip T={T} at={K.Es + 2.2} until={E2 - 0.2} texto="germinan muy mal" x={540} y={690} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.S + 3.0} until={K.L - 0.3} texto="esporas: 0" x={540} y={1350} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Es + 0.3} until={E2 - 0.2} texto="esporas de champiñón" x={540} y={470} tam={34} borde={KC.gold} mono />
+      <Etq T={T} at={K.Es + 0.6} until={E2 - 0.2} x={60} y={570} texto="Agaricus bisporus" it tam={34} />
+      <Chip T={T} at={K.Es + 2.2} until={E2 - 0.2} texto="germinan muy mal" x={540} y={880} tam={40} borde={KC.red} />
       <Chip T={T} at={E2 + 0.5} until={K.Cl - 0.3} texto="cada espora: posible cepa nueva" x={540} y={470} tam={40} borde={KC.ink} />
       <Chip T={T} at={E2 + 1.4} until={K.Cl - 0.3} texto="resultado impredecible" x={540} y={565} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Cl + 2.8} until={K.R - 0.3} texto="cultivo de tejido ≈ clon" x={600} y={540} tam={38} borde="#118a3a" />
