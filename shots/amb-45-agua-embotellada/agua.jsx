@@ -51,14 +51,14 @@ function Botella({ x, y, s = 1, o = 1 }) {
   </g>;
 }
 // Llave de agua (grifo) con gota.
-function Llave({ x, y, s = 1, T = 0, gota = false }) {
+function Llave({ x, y, s = 1, T = 0, gota = false, caida = 260 }) {
   const u = (T * 1.2) % 1;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-120} y={-30} width={150} height={52} rx={14} fill="#c7cdd6" stroke={KC.ink} strokeWidth={7} />
     <rect x={0} y={-30} width={52} height={110} rx={14} fill="#c7cdd6" stroke={KC.ink} strokeWidth={7} />
     <rect x={-60} y={-80} width={24} height={52} rx={6} fill="#9aa3ae" stroke={KC.ink} strokeWidth={6} />
     <rect x={-96} y={-96} width={96} height={24} rx={12} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
-    {gota && <path d="M 0 -18 Q 12 0 0 12 Q -12 0 0 -18 Z" transform={`translate(26 ${100 + u * 260})`} fill={AG_AZUL} stroke={KC.ink} strokeWidth={4} opacity={1 - u * 0.6} />}
+    {gota && <path d="M 0 -18 Q 12 0 0 12 Q -12 0 0 -18 Z" transform={`translate(26 ${100 + u * caida})`} fill={AG_AZUL} stroke={KC.ink} strokeWidth={4} opacity={1 - u * (caida < 260 ? 0.95 : 0.6)} />}
   </g>;
 }
 // Olla en la estufa; hierve 0..1 = burbujas grandes.
@@ -148,123 +148,128 @@ function AguaShot() {
   const K = { G: CUES.Gancho, E: CUES.Encuesta, Ma: CUES.Mapa, Ga: CUES.Garrafon, P: CUES.Pregunta, H: CUES.Historia, Gs: CUES.Gasto, Q: CUES.QueSirve, Hv: CUES.Hervir, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
-  const XS = [110, 310, 510, 710, 910];
+  // Pase a mano (cine): las cinco casas van en dos filas y más grandes para llenar el cuadro (todo es esquema, sin escala).
+  const POS5 = [[235, 965], [540, 965], [845, 965], [388, 1445], [692, 1445]], S5 = 1.2;
+  const TECHOS = [KC.red, KC.orange, KC.pink, KC.violet, KC.leaf];
   // gancho: 5 casas; 4 vasos con ❌ y 1 con ✓ (menos de 1 de 5)
-  const casasGancho = XS.map((x, i) => { const t = K.G + 0.5 + i * 0.45; const marca = i === 4 ? 'ok' : 'x';
-    return <Casa key={i} x={x} y={1070} s={0.82} i={i} T={T} tu={i === 0} techo={[KC.red, KC.orange, KC.pink, KC.violet, KC.leaf][i]} marca={marca} pm={kprog(T, t, t + 0.3, kEase.rebote)} />; });
+  const casasGancho = POS5.map(([x, y], i) => { const t = K.G + 0.5 + i * 0.45; const marca = i === 4 ? 'ok' : 'x';
+    return <Casa key={i} x={x} y={y} s={S5} i={i} T={T} tu={i === 0} techo={TECHOS[i]} marca={marca} pm={kprog(T, t, t + 0.3, kEase.rebote)} />; });
   const objsCierre = ['garrafon', 'olla', 'filtro', 'garrafon', 'olla'];
-  const casasCierre = XS.map((x, i) => { const t = K.C + 0.3 + i * 0.3;
-    return <Casa key={i} x={x} y={1070} s={0.82} i={i} T={T} tu={i === 0} techo={[KC.red, KC.orange, KC.pink, KC.violet, KC.leaf][i]} marca="ok" pm={kprog(T, t + 0.6, t + 0.9)} objeto={objsCierre[i]} po={kprog(T, t, t + 0.4, kEase.rebote)} />; });
-  // garrafón: 4 casas, 3 con garrafón
-  const X4 = [170, 400, 630, 860];
-  const casas4 = X4.map((x, i) => { const t = K.Ga + 0.6 + i * 0.4;
-    return <Casa key={i} x={x - 30} y={1070} s={0.8} i={i} T={T} vaso={false} techo={[KC.red, KC.orange, KC.pink, KC.violet][i]} objeto={i < 3 ? 'garrafon' : 'llave'} po={kprog(T, t, t + 0.4, kEase.rebote)} />; });
+  const casasCierre = POS5.map(([x, y], i) => { const t = K.C + 0.3 + i * 0.3;
+    return <Casa key={i} x={x - 45} y={y} s={S5} i={i} T={T} tu={i === 0} techo={TECHOS[i]} marca="ok" pm={kprog(T, t + 0.6, t + 0.9)} objeto={objsCierre[i]} po={kprog(T, t, t + 0.4, kEase.rebote)} />; });
+  // garrafón: 4 casas (2 × 2), 3 con garrafón
+  const POS4 = [[230, 1010], [740, 1010], [230, 1460], [740, 1460]];
+  const casas4 = POS4.map(([x, y], i) => { const t = K.Ga + 0.6 + i * 0.4;
+    return <Casa key={i} x={x} y={y} s={1.45} i={i} T={T} vaso={false} techo={TECHOS[i]} objeto={i < 3 ? 'garrafon' : 'llave'} po={kprog(T, t, t + 0.4, kEase.rebote)} />; });
   // botellas sueltas que se van en el cierre
-  const sueltas = (o) => Array.from({ length: 10 }, (_, i) => <Botella key={i} x={90 + i * 100} y={760 + (i % 2) * 40 - (1 - o) * 500} s={0.7} o={o} />);
+  const sueltas = (o) => Array.from({ length: 10 }, (_, i) => <Botella key={i} x={90 + i * 100} y={560 + (i % 3) * 330 - (1 - o) * 900} s={1.1} o={o} />);
   const pila = Array.from({ length: 32 }, (_, i) => { const c = i % 8, f = Math.floor(i / 8), t = K.Q + 1.6 + i * 0.07;
-    return <Botella key={i} x={505 + c * 62} y={1110 - f * 90} s={0.7} o={kprog(T, t, t + 0.15)} />; });
+    return <Botella key={i} x={485 + c * 68} y={1330 - f * 150} s={0.9} o={kprog(T, t, t + 0.15)} />; });
   const monedas = Array.from({ length: 8 }, (_, i) => { const t0 = K.Gs + 0.4 + i * 0.45, u = kprog(T, t0, t0 + 0.6, (p) => p * p); if (T < t0 || T > t0 + 0.7) return null;
-    return <g key={i} transform={`translate(${330 + (i % 3) * 20} ${520 + u * 260})`}><ellipse rx={34} ry={34} fill={KC.gold2} stroke={KC.ink} strokeWidth={6} /><text y={14} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>$</text></g>; });
+    return <g key={i} transform={`translate(${310 + (i % 3) * 20} ${360 + u * 300})`}><ellipse rx={46} ry={46} fill={KC.gold2} stroke={KC.ink} strokeWidth={6} /><text y={18} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill="#0b1020">$</text></g>; });
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: tú y cuatro vecinos */}
       <Escena T={T} a={K.G} b={K.E}>
         <FondoLunares color={KC.cyan} />
         {svg(casasGancho)}
-        <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
+        <EscalaFija texto="esquema" largo={0} y={1540} color={KC.ink} />
       </Escena>
-      {/* 2 · la encuesta del INEGI: 19.0 % y Jalisco 8.9 % */}
+      {/* 2 · la encuesta del INEGI: 19.0 % y Jalisco 8.9 % (el vaso al centro, grande; las barras debajo) */}
       <Escena T={T} a={K.E} b={K.Ma}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<g transform="translate(860 1110) scale(0.92)">
-          <path d="M -110 -420 L 110 -420 L 90 0 L -90 0 Z" fill="rgba(255,255,255,.8)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+        {svg(<g transform="translate(540 1225) scale(1.55)">
+          <path d="M -110 -420 L 110 -420 L 90 0 L -90 0 Z" fill="rgba(190,225,255,.2)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
           <path d={`M ${-90 - 20 * 0.19} ${-420 * 0.19 * kprog(T, K.E + 1.2, K.E + 2.6, kEase.suave)} L ${90 + 20 * 0.19} ${-420 * 0.19 * kprog(T, K.E + 1.2, K.E + 2.6, kEase.suave)} L 90 0 L -90 0 Z`} fill={AG_AZUL} />
           <line x1={-125} y1={-80} x2={-100} y2={-80} stroke={KC.ink} strokeWidth={5} />
-          <text x={0} y={-450} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>¿se puede beber?</text>
+          <text x={0} y={-448} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>¿se puede beber?</text>
         </g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ma - 0.2} anio="2025" quien="INEGI · ENCIG" revista="nov–dic · ciudades de +100 mil hab." x={360} y={500} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ma - 0.2} anio="2025" quien="INEGI · ENCIG" revista="nov–dic · ciudades de +100 mil hab." x={540} y={300} />
       {T > K.E - 0.5 && T < K.Ma + 0.5 && svg(<g opacity={1 - kprog(T, K.Ma - 0.05, K.Ma + 0.45)}>
-        <text x={60} y={760} style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.E + 1.0, K.E + 1.3)}>la creen bebible:</text>
-        <BarraEdo T={T} at={K.E + 1.2} y={850} nombre="México" valor={19.0} color={AG_AZUL} x0={250} ancho={400} />
-        <BarraEdo T={T} at={K.E + 4.0} y={970} nombre="Jalisco" valor={8.9} color={KC.red} x0={250} ancho={400} />
+        <text x={90} y={1318} style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.E + 1.0, K.E + 1.3)}>la creen bebible:</text>
+        <BarraEdo T={T} at={K.E + 1.2} y={1382} nombre="México" valor={19.0} color={AG_AZUL} x0={300} ancho={480} />
+        <BarraEdo T={T} at={K.E + 4.0} y={1470} nombre="Jalisco" valor={8.9} color={KC.red} x0={300} ancho={480} />
       </g>)}
-      {/* 3 · cambia por estado */}
+      {/* 3 · cambia por estado (la llave, que es de lo que se habla, sigue en cuadro sobre las barras) */}
       <Escena T={T} a={K.Ma} b={K.Ga}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <BarraEdo T={T} at={K.Ma + 0.4} y={760} nombre="Tlaxcala" valor={44.2} color={KC.mint} />
-          <BarraEdo T={T} at={K.Ma + 0.9} y={880} nombre="México" valor={19.0} color={AG_AZUL} />
-          <BarraEdo T={T} at={K.Ma + 1.4} y={1000} nombre="Jalisco" valor={8.9} color={KC.orange} />
-          <BarraEdo T={T} at={K.Ma + 2.6} y={1120} nombre="Tabasco" valor={3.5} color={KC.red} />
+          <Llave x={330} y={470} s={1.5} T={T} gota caida={150} />
+          <g transform="translate(540 0) scale(1.12) translate(-585 0)">
+            <BarraEdo T={T} at={K.Ma + 0.4} y={800} nombre="Tlaxcala" valor={44.2} color={KC.mint} />
+            <BarraEdo T={T} at={K.Ma + 0.9} y={920} nombre="México" valor={19.0} color={AG_AZUL} />
+            <BarraEdo T={T} at={K.Ma + 1.4} y={1040} nombre="Jalisco" valor={8.9} color={KC.orange} />
+            <BarraEdo T={T} at={K.Ma + 2.6} y={1160} nombre="Tabasco" valor={3.5} color={KC.red} />
+          </g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ma + 0.2} until={K.Ga - 0.2} texto="la creen bebible · ENCIG 2025" y={600} x={680} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Ma + 0.2} until={K.Ga - 0.2} texto="la creen bebible · ENCIG 2025" y={470} x={715} tam={30} borde={KC.ink} />
       {/* 4 · tres de cada cuatro hogares compran agua (2017) */}
       <Escena T={T} a={K.Ga} b={K.P}>
         <FondoLunares color={KC.mint} />
         {svg(casas4)}
-        <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
+        <EscalaFija texto="esquema" largo={0} y={1540} color={KC.ink} />
       </Escena>
-      <NumeroGigante T={T} at={K.Ga + 0.3} until={K.Ga + 3.3} valor={3} dur={0.6} sufijo=" de 4" etiqueta="hogares (2017):" x={700} y={560} tam={140} color={KC.yellow} />
-      <Chip T={T} at={K.Ga + 1.2} until={K.Ga + 3.3} texto="INEGI · MOHOMA 2017: 76.3 %" y={760} x={680} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Ga + 3.6} until={K.P - 0.2} texto="69.4 %: «es más saludable»" y={560} x={680} tam={38} borde={KC.leaf} />
-      {/* 5 · re-gancho */}
+      <NumeroGigante T={T} at={K.Ga + 0.3} until={K.Ga + 3.3} valor={3} dur={0.6} sufijo=" de 4" etiqueta="hogares (2017):" x={540} y={390} tam={140} color={KC.yellow} />
+      <Chip T={T} at={K.Ga + 1.2} until={K.Ga + 3.3} texto="INEGI · MOHOMA 2017: 76.3 %" y={580} x={540} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Ga + 3.6} until={K.P - 0.2} texto="69.4 %: «es más saludable»" y={500} x={540} tam={42} borde={KC.leaf} />
+      {/* 5 · re-gancho (las casas de la escena anterior siguen detrás, bajo un velo) */}
       <Escena T={T} a={K.P} b={K.H} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><Llave x={290} y={440} s={1} T={T} gota />
-          <text x={260} y={1150} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 260 1000)`}>?</text></>)}
+        {svg(<><Llave x={430} y={520} s={2} T={T} gota />
+          <text x={770} y={1330} textAnchor="middle" style={{ font:`400 460px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 770 1180)`}>?</text></>)}
       </Escena>
-      {/* 6 · 1985 y 1991 */}
+      {/* 6 · 1985 y 1991: línea de tiempo vertical, con el tubo roto y el vibrio grandes */}
       <Escena T={T} a={K.H} b={K.Gs}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
-          <line x1={90} y1={1030} x2={90 + 900 * kprog(T, K.H + 0.1, K.H + 1.2, kEase.sale)} y2={1030} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
-          <g opacity={kprog(T, K.H + 0.3, K.H + 0.6)}><circle cx={280} cy={1030} r={18} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
-            <text x={280} y={1110} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>1985 · sismo</text>
-            <Tubo x={280} y={800} s={0.85} T={T} rompe={kprog(T, K.H + 0.5, K.H + 1.3, kEase.sale)} /></g>
-          <g opacity={kprog(T, K.H + 2.0, K.H + 2.3)}><circle cx={790} cy={1030} r={18} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
-            <text x={790} y={1110} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>1991 · cólera</text>
-            <Vibrio x={760} y={820} s={1.25} T={T} /></g>
+          <line x1={110} y1={480} x2={110} y2={480 + 960 * kprog(T, K.H + 0.1, K.H + 1.2, kEase.sale)} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
+          <g opacity={kprog(T, K.H + 0.3, K.H + 0.6)}><circle cx={110} cy={560} r={20} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
+            <text x={155} y={584} style={{ font:`400 68px ${KF.titulo}` }} fill={KC.ink}>1985 · sismo</text>
+            <Tubo x={570} y={790} s={1.4} T={T} rompe={kprog(T, K.H + 0.5, K.H + 1.3, kEase.sale)} /></g>
+          <g opacity={0.22 + 0.78 * kprog(T, K.H + 2.0, K.H + 2.3)}><Vibrio x={490} y={1340} s={2.2} T={T} /></g>
+          <g opacity={kprog(T, K.H + 2.0, K.H + 2.3)}><circle cx={110} cy={1120} r={20} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
+            <text x={155} y={1144} style={{ font:`400 68px ${KF.titulo}` }} fill={KC.ink}>1991 · cólera</text></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.H + 1.1} until={K.Gs - 0.2} texto="relación que proponen estudios (2018, 2024)" y={560} x={540} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.H + 2.5} until={K.Gs - 0.2} x={620} y={720} texto="Vibrio cholerae" it lado="der" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.H + 1.1} until={K.Gs - 0.2} texto="relación que proponen estudios (2018, 2024)" y={400} x={540} tam={28} borde={KC.ink} />
+      <Etq T={T} at={K.H + 2.5} until={K.Gs - 0.2} x={610} y={1210} texto="Vibrio cholerae" it lado="der" tam={30} color={KC.ink} />
       {/* 7 · cuánto cuesta */}
       <Escena T={T} a={K.Gs} b={K.Q}>
         <FondoLunares color={KC.orange} />
-        {svg(<>{monedas}<Garrafon x={340} y={1120} s={1} lleno={0.85} /></>)}
+        {svg(<>{monedas}<Garrafon x={330} y={1380} s={1.7} lleno={0.85} /></>)}
       </Escena>
-      <NumeroGigante T={T} at={K.Gs + 1.0} until={K.Q - 0.2} valor={52} dur={1.6} prefijo="$" etiqueta="por semana" x={780} y={900} tam={190} color={KC.yellow} />
-      <Chip T={T} at={K.Gs + 0.5} until={K.Q - 0.2} texto="hogares que la compran · 2017" y={540} x={380} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Gs + 1.0} until={K.Q - 0.2} valor={52} dur={1.6} prefijo="$" etiqueta="por semana" x={800} y={960} tam={190} color={KC.yellow} />
+      <Chip T={T} at={K.Gs + 0.5} until={K.Q - 0.2} texto="hogares que la compran · 2017" y={740} x={790} tam={26} borde={KC.ink} />
       {/* 8 · qué sí sirve: garrafón retornable = casi 32 botellas */}
       <Escena T={T} a={K.Q} b={K.Hv}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Garrafon x={230} y={1110} s={0.95} />
-          <g transform={`translate(230 600) rotate(${T * 90})`} opacity={kprog(T, K.Q + 0.8, K.Q + 1.2)}><path d="M -70 0 A 70 70 0 1 1 0 70" stroke={KC.ink} strokeWidth={10} fill="none" /><path d="M -10 50 L 0 70 L -20 86" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>
+        {svg(<><Garrafon x={250} y={1330} s={1.3} />
+          <g transform={`translate(250 640) rotate(${T * 90}) scale(1.3)`} opacity={kprog(T, K.Q + 0.8, K.Q + 1.2)}><path d="M -70 0 A 70 70 0 1 1 0 70" stroke={KC.ink} strokeWidth={10} fill="none" /><path d="M -10 50 L 0 70 L -20 86" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>
           {pila}</>)}
       </Escena>
-      <Etq T={T} at={K.Q + 0.8} until={K.Hv - 0.2} x={330} y={600} texto="se rellena" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Q + 0.5} until={K.Hv - 0.2} texto="19 L" y={1000} x={230} tam={44} borde={KC.blue} />
-      <Chip T={T} at={K.Q + 3.6} until={K.Hv - 0.2} texto="≈ 32 botellas de 600 ml" y={690} x={620} tam={34} borde={KC.ink} />
-      {/* 9 · hervir y filtro */}
+      <Etq T={T} at={K.Q + 0.8} until={K.Hv - 0.2} x={350} y={572} texto="se rellena" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Q + 0.5} until={K.Hv - 0.2} texto="19 L" y={1160} x={250} tam={48} borde={KC.blue} />
+      <Chip T={T} at={K.Q + 3.6} until={K.Hv - 0.2} texto="≈ 32 botellas de 600 ml" y={655} x={723} tam={34} borde={KC.ink} />
+      {/* 9 · hervir y filtro (el filtro espera atenuado desde el principio y se enciende cuando la voz lo nombra) */}
       <Escena T={T} a={K.Hv} b={K.C}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Olla x={300} y={1010} s={1} T={T} hierve={kprog(T, K.Hv + 0.3, K.Hv + 1.5)} microbios={1 - kprog(T, K.Hv + 1.6, K.Hv + 3.6)} />
-          <g opacity={kprog(T, K.Hv + 4.0, K.Hv + 4.5)}><Filtro x={830} y={1110} s={0.85} sello={kprog(T, K.Hv + 5.0, K.Hv + 5.6, kEase.rebote)} /></g></>)}
+        {svg(<><Olla x={310} y={880} s={1.2} T={T} hierve={kprog(T, K.Hv + 0.3, K.Hv + 1.5)} microbios={1 - kprog(T, K.Hv + 1.6, K.Hv + 3.6)} />
+          <g opacity={0.22 + 0.78 * kprog(T, K.Hv + 4.0, K.Hv + 4.5)}><Filtro x={820} y={1480} s={0.95} sello={kprog(T, K.Hv + 5.0, K.Hv + 5.6, kEase.rebote)} /></g></>)}
       </Escena>
-      <Chip T={T} at={K.Hv + 0.4} until={K.Hv + 3.9} texto="OMS 2015: hervor a borbotones" y={560} x={380} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.Hv + 0.8} until={K.Hv + 3.6} x={110} y={720} texto="bacterias · virus · protozoarios" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Hv + 5.2} until={K.C - 0.2} texto="certificado Cofepris (NOM-244)" y={470} x={680} tam={28} borde={KC.leaf} />
+      <Chip T={T} at={K.Hv + 0.4} until={K.Hv + 3.9} texto="OMS 2015: hervor a borbotones" y={470} x={340} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.Hv + 0.8} until={K.Hv + 3.6} x={50} y={1065} texto="bacterias · virus · protozoarios" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Hv + 5.2} until={K.C - 0.2} texto="certificado Cofepris (NOM-244)" y={1250} x={300} tam={28} borde={KC.leaf} />
       {/* 10 · cierre: las mismas 5 casas, ahora con garrafón, olla o filtro */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
         {svg(<>{sueltas(1 - kprog(T, K.C + 0.2, K.C + 1.6, kEase.suave))}{casasCierre}</>)}
-        <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
+        <EscalaFija texto="esquema" largo={0} y={1540} color={KC.ink} />
       </Escena>
-      <Chip T={T} at={K.C + 2.0} until={K.Ou - 0.1} texto="depende de tu ciudad" y={560} x={380} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou - 0.1} texto="depende de tu ciudad" y={300} x={540} tam={44} borde={KC.yellow} />
 
-      <NumeroGigante T={T} at={K.G + 0.2} until={K.E - 0.2} valor={1} dur={0.4} prefijo="< " sufijo=" de 5" etiqueta="confía en la llave:" x={300} y={500} tam={140} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.G + 0.2} until={K.E - 0.2} valor={1} dur={0.4} prefijo="< " sufijo=" de 5" etiqueta="confía en la llave:" x={540} y={290} tam={140} color={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="Menos de 1 de 5 *confía en la llave.*" />
