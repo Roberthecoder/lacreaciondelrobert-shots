@@ -250,21 +250,23 @@ function HemoShot() {
             [540, 'SANGRE', 'hemoglobina', '#ff5a6e', (s) => <GlobuloRojo x={0} y={-30} s={s} rot={Math.sin(T) * 6} />],
             [880, 'SOYA', 'leghemoglobina', '#9be38f', (s) => <NoduloIcono x={0} y={-30} s={s} />]].map(([x, t, sub, col, dib], i) => {
             const e = kprog(T, K.Sangre + 0.1 + i * 0.5, K.Sangre + 0.6 + i * 0.5, kEase.sale);
-            return <Tarjeta key={i} x={x} y={900} w={316} h={640} color={col} titulo={t} sub={sub} e={e}>
-              <g transform="translate(0 -75)">{dib(1.12)}</g>
-              {i === 1 ? [[-99, 140], [-33, 140], [33, 140], [99, 140]].map(([hx, hy], k) => <g key={k} opacity={kprog(T, K.Sangre + 1.6 + k * 0.25, K.Sangre + 1.8 + k * 0.25)}><HemoMini x={hx} y={hy} s={0.17} T={T} /></g>)
-                : <HemoMini x={0} y={140} s={0.34} T={T} />}
+            // encuadre: tarjetas más altas y bajadas (centro y=1000); dibujos y hemo más grandes
+            return <Tarjeta key={i} x={x} y={1000} w={316} h={800} color={col} titulo={t} sub={sub} e={e}>
+              <g transform="translate(0 -110)">{dib(1.3)}</g>
+              {i === 1 ? [[-99, 190], [-33, 190], [33, 190], [99, 190]].map(([hx, hy], k) => <g key={k} opacity={kprog(T, K.Sangre + 1.6 + k * 0.25, K.Sangre + 1.8 + k * 0.25)}><HemoMini x={hx} y={hy} s={0.17} T={T} /></g>)
+                : <HemoMini x={0} y={190} s={0.4} T={T} />}
             </Tarjeta>; })}
-          {[370, 710].map((ex, i) => <text key={i} x={ex} y={1072} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Sangre + 1.2 + i * 0.3, K.Sangre + 1.5 + i * 0.3)}>=</text>)}
+          {[370, 710].map((ex, i) => <text key={i} x={ex} y={1222} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Sangre + 1.2 + i * 0.3, K.Sangre + 1.5 + i * 0.3)}>=</text>)}
         </SvgH>
       </Escena>
       {/* 4–5 · la raíz de la soya y sus nódulos */}
       <Escena T={T} a={K.Nodulos} b={K.Pregunta} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <div style={{ position:'absolute', left:0, top:748, width:KW, height:KH - 748, background:'#3b2616', backgroundImage:'radial-gradient(circle, rgba(0,0,0,.22) 6px, transparent 7px)', backgroundSize:'46px 46px' }}></div>
+        <div style={{ position:'absolute', left:0, top:928, width:KW, height:KH - 928, background:'#3b2616', backgroundImage:'radial-gradient(circle, rgba(0,0,0,.22) 6px, transparent 7px)', backgroundSize:'46px 46px' }}></div>
         <SvgH>
           {/* pase a mano: planta y raíz ×1.3 alrededor de (430,1000), bajadas 60 px para no cortar las hojas; el corte del nódulo se recorre para no salirse */}
-          <g transform="translate(430 1060) scale(1.3) translate(-430 -1000)">
+          {/* encuadre: todo el conjunto bajado 180 px más (suelo, lupa y etiquetas con él) */}
+          <g transform="translate(430 1240) scale(1.3) translate(-430 -1000)">
           <Soya T={T} x={360} suelo={760} cortado={kprog(T, K.Nodulos + 2.0, K.Nodulos + 2.6)} />
           {T > K.Nodulos + 1.8 && <g>
             <line x1={450} y1={1020} x2={592} y2={960} stroke={KC.ink} strokeWidth={6} strokeDasharray="14 10" />
@@ -277,10 +279,11 @@ function HemoShot() {
       <Escena T={T} a={K.Pregunta} b={K.Levadura} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         <SvgH>
-          <NoduloIcono x={330} y={1220} s={2} />
-          <g transform="translate(610 730) scale(1.75)"><ellipse rx={170} ry={46} fill="#fff" stroke={KC.ink} strokeWidth={8} /><Hamburguesa x={0} y={-30} s={0.42} /></g>
-          <FlechaCurva x1={400} y1={1070} x2={560} y2={850} p={kprog(T, K.Pregunta + 0.2, K.Pregunta + 1.6)} curva={-120} color={KC.yellow} T={T} />
-          <text x={150} y={640} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 150 540)`}>?</text>
+          {/* encuadre: plato y nódulo bajados al centro (la raíz de la escena anterior queda detrás, a media luz, por cine.jsx) */}
+          <NoduloIcono x={330} y={1340} s={2.1} />
+          <g transform="translate(620 900) scale(1.85)"><ellipse rx={170} ry={46} fill="#fff" stroke={KC.ink} strokeWidth={8} /><Hamburguesa x={0} y={-30} s={0.42} /></g>
+          <FlechaCurva x1={400} y1={1190} x2={570} y2={1010} p={kprog(T, K.Pregunta + 0.2, K.Pregunta + 1.6)} curva={-120} color={KC.yellow} T={T} />
+          <text x={160} y={820} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 160 720)`}>?</text>
         </SvgH>
       </Escena>
       {/* 7 · el gen entra a la levadura (microscópico, fondo oscuro) */}
@@ -288,14 +291,15 @@ function HemoShot() {
         <FondoMarca patron="oscuro" />
         <SvgH>
           {/* pase a mano: levadura, gen y proteína ×1.4 (centro 600,820 → 470,860); la barra de escala va en la misma proporción */}
-          <g transform="translate(470 860) scale(1.4) translate(-600 -820)">
+          {/* encuadre: ×1.6 y centrada en (480,1000); la barra de escala sube en la misma proporción (80000 × 1.6) */}
+          <g transform="translate(480 1000) scale(1.6) translate(-600 -820)">
           <Levadura x={600} y={820} r={200} brote={0.8} T={T} seed={4} />
           {genEntra < 1 && <g opacity={1 - kprog(genEntra, 0.85, 1)} transform={`translate(${klerp(-560, 380, genEntra)} 0)`}><ADNHebra T={T} x={0} y={820} largo={360} alto={56} vueltas={2.5} resalta={() => true} /></g>}
           {Array.from({ length: 10 }, (_, i) => { const g = krng(i + 70), ang = g() * 6.28, rr = g() * 120, a = K.Levadura + 2.4 + i * 0.12;
             return T > a && <circle key={i} cx={600 + Math.cos(ang) * rr + Math.sin(T * 2 + i) * 5} cy={820 + Math.sin(ang) * rr * 0.8} r={11 * kprog(T, a, a + 0.3, kEase.rebote)} fill="#ff2d55" stroke="#ffd0da" strokeWidth={3} />; })}
           </g>
         </SvgH>
-        <Escala T={T} z={1} pxPorMm={112000} x={60} y={1430} />
+        <Escala T={T} z={1} pxPorMm={128000} x={60} y={1430} />
       </Escena>
       {/* 8 · tanque de fermentación: el caldo se pone rojo */}
       <Escena T={T} a={K.Tanque} b={K.Sabor} zoom={0.03}>
@@ -362,7 +366,7 @@ function HemoShot() {
 
       {/* lupas */}
       <Lupa T={T} at={K.Hemo + 0.2} until={K.Sangre - 0.2} x={450} y={600} r={300} fx={774} fy={1112} interior={(t, r) => InteriorHemo(t, r, K.Hemo + 0.2)} tinte={KC.pink} etiqueta="AL MICROSCOPIO · HEMO" />
-      <Lupa T={T} at={K.Oxigeno + 0.1} until={K.Pregunta - 0.2} x={730} y={490} r={270} fx={833} fy={969} interior={(t, r) => InteriorNodulo(t, r, K.Oxigeno)} tinte={KC.mint} etiqueta="POR DENTRO · NÓDULO" />
+      <Lupa T={T} at={K.Oxigeno + 0.1} until={K.Pregunta - 0.2} x={730} y={660} r={270} fx={833} fy={1149} interior={(t, r) => InteriorNodulo(t, r, K.Oxigeno)} tinte={KC.mint} etiqueta="POR DENTRO · NÓDULO" />
       <Lupa T={T} at={K.Sabor + 0.4} until={K.Estudio - 0.2} x={640} y={560} r={260} fx={420} fy={1090} interior={(t, r) => InteriorSabor(t, r, K.Sabor + 0.4)} tinte={KC.orange} etiqueta="AL MICROSCOPIO · AL COCINAR" />
 
       {/* textos */}
@@ -370,14 +374,14 @@ function HemoShot() {
       <Chip T={T} at={K.Hamburguesa + 0.4} until={K.Hemo - 0.2} texto="hamburguesa vegetal · sin carne" y={1500} tam={38} borde={KC.leaf} />
       <Chip T={T} at={K.Hemo + 1.0} until={K.Sangre - 0.2} texto="hemo = anillo + hierro (Fe)" y={1500} tam={40} borde={HEMO_FE} />
       <Chip T={T} at={K.Sangre + 1.8} until={K.Nodulos - 0.2} texto="el mismo hemo B" y={1500} tam={44} borde={KC.red} />
-      <Etiqueta T={T} at={K.Nodulos + 0.6} until={K.Oxigeno - 0.2} x={458} y={1272} texto="nódulos" lado="der" tam={36} />
-      <Etiqueta T={T} at={K.Nodulos + 0.3} until={K.Nodulos + 3.0} x={470} y={530} texto="Glycine max" it lado="der" color={KC.ink} tam={36} />
+      <Etiqueta T={T} at={K.Nodulos + 0.6} until={K.Oxigeno - 0.2} x={480} y={1266} texto="nódulos" lado="der" tam={36} />
+      <Etiqueta T={T} at={K.Nodulos + 0.3} until={K.Nodulos + 3.0} x={470} y={710} texto="Glycine max" it lado="der" color={KC.ink} tam={36} />
       <Chip T={T} at={K.Nodulos + 3.0} until={K.Oxigeno - 0.2} texto="rosado = leghemoglobina" y={1500} tam={38} borde={NOD_ROSA} />
-      <Etiqueta T={T} at={K.Oxigeno + 0.9} until={K.Pregunta - 0.2} x={478} y={600} texto="bacterias (rizobios)" lado="izq" tam={30} />
+      <Etiqueta T={T} at={K.Oxigeno + 0.9} until={K.Pregunta - 0.2} x={478} y={770} texto="bacterias (rizobios)" lado="izq" tam={30} />
       <Chip T={T} at={K.Oxigeno + 1.2} until={K.Pregunta - 0.2} texto="leghemoglobina ↔ O₂" y={1500} tam={42} borde="#ff2d55" />
-      <Etiqueta T={T} at={K.Levadura + 0.4} until={K.Tanque - 0.2} x={60} y={520} texto="gen de leghemoglobina (soya)" lado="der" tam={30} color={KC.gold2} />
-      <Etiqueta T={T} at={K.Levadura + 1.4} until={K.Tanque - 0.2} x={300} y={1215} texto="Pichia pastoris" it lado="der" tam={36} />
-      <Etiqueta T={T} at={K.Levadura + 1.8} until={K.Tanque - 0.2} x={300} y={1268} texto="(hoy Komagataella phaffii)" it lado="der" tam={24} />
+      <Etiqueta T={T} at={K.Levadura + 0.4} until={K.Tanque - 0.2} x={60} y={640} texto="gen de leghemoglobina (soya)" lado="der" tam={30} color={KC.gold2} />
+      <Etiqueta T={T} at={K.Levadura + 1.4} until={K.Tanque - 0.2} x={300} y={1365} texto="Pichia pastoris" it lado="der" tam={36} />
+      <Etiqueta T={T} at={K.Levadura + 1.8} until={K.Tanque - 0.2} x={300} y={1418} texto="(hoy Komagataella phaffii)" it lado="der" tam={24} />
       <Chip T={T} at={K.Tanque + 0.3} until={K.Sabor - 0.2} texto="fermentación" y={1640} tam={44} borde={ROJO_CRUDO} />
       <Chip T={T} at={K.Sabor + 3.0} until={K.Estudio - 0.2} texto="hemo expuesto → olor a carne" y={1500} tam={38} borde={KC.gold2} />
       <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 3.1} anio="2018" quien="FDA · Estados Unidos" revista="sin objeciones: para dar sabor (GRAS)" x={540} y={360} />
