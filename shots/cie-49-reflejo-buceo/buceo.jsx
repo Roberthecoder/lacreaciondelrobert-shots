@@ -207,28 +207,31 @@ function ReflejoBuceo() {
       <Escena T={T} a={K.Gancho} b={K.Reflejo} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <CaraFrente x={340} y={930} s={1.1} T={T} moja={kprog(T, 0, 0.3)} ojosCerrados={1} infla={kprog(T, K.Gancho + 1.0, K.Gancho + 1.6)} />
-          <Onomato T={T} at={0.05} dur={1.1} x={330} y={640} texto="¡SPLASH!" color={KC.white} tam={120} />
-          <Monitor x={50} y={340} w={470} h={170} T={T} fase={faseTu} etiqueta="" o={kprog(T, 0.3, 0.7)} />
-          {T > K.Gancho + 1.6 && <TextoSvg x={285} y={572} tam={44} color={KC.yellow} fuente="texto" o={kprog(T, K.Gancho + 1.6, K.Gancho + 2.0)}>más lento…</TextoSvg>}
+          {(() => { const kf = kprog(T, K.Gancho + 3.8, K.Gancho + 4.5, kEase.suave);
+            return <CaraFrente x={klerp(470, 330, kf)} y={klerp(900, 930, kf)} s={klerp(1.6, 1.2, kf)} T={T} moja={kprog(T, 0, 0.3)} ojosCerrados={1} infla={kprog(T, K.Gancho + 1.0, K.Gancho + 1.6)} />; })()}
+          <Onomato T={T} at={0.05} dur={1.1} x={300} y={400} texto="¡SPLASH!" color={KC.white} tam={120} />
+          <Monitor x={560} y={260} w={470} h={170} T={T} fase={faseTu} etiqueta="" o={kprog(T, 0.3, 0.7)} />
+          {T > K.Gancho + 1.6 && <TextoSvg x={795} y={485} tam={44} color={KC.yellow} fuente="texto" o={kprog(T, K.Gancho + 1.6, K.Gancho + 2.0)}>más lento…</TextoSvg>}
           {T > K.Gancho + 4.2 && <g transform={`translate(0 ${(1 - kprog(T, K.Gancho + 4.2, K.Gancho + 4.8, kEase.rebote)) * 500})`}>
-            <Foca x={830} y={1060} s={0.85} rot={-8} T={T} />
+            <Foca x={820} y={1180} s={1.15} rot={-8} T={T} />
           </g>}
-          {T > K.Gancho + 5.4 && <FlechaCurva x1={560} y1={820} x2={760} y2={950} p={kprog(T, K.Gancho + 5.4, K.Gancho + 6.1, kEase.sale)} curva={-80} color={KC.yellow} T={T} />}
+          {T > K.Gancho + 5.4 && <FlechaCurva x1={600} y1={850} x2={790} y2={1060} p={kprog(T, K.Gancho + 5.4, K.Gancho + 6.1, kEase.sale)} curva={-80} color={KC.yellow} T={T} />}
         </Lienzo>
-        <Etq T={T} at={K.Gancho + 5.0} until={K.Reflejo - 0.2} x={950} y={920} texto="foca" lado="izq" color={KC.ink} />
-        <Chip T={T} at={K.Gancho + 5.8} until={K.Reflejo - 0.1} texto="el mismo reflejo" x={740} y={740} tam={40} borde={KC.yellow} />
+        <Etq T={T} at={K.Gancho + 5.0} until={K.Reflejo - 0.2} x={1010} y={1030} texto="foca" lado="izq" color={KC.ink} />
+        <Chip T={T} at={K.Gancho + 5.8} until={K.Reflejo - 0.1} texto="el mismo reflejo" x={760} y={760} tam={40} borde={KC.yellow} />
       </Escena>
       {/* 1 · el nombre: la cara entra al agua */}
       <Escena T={T} a={K.Reflejo} b={K.Cara} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
+          <g transform="translate(540 980) scale(1.3) translate(-540 -900)">
           <g transform={`translate(520 ${klerp(560, 720, kprog(T, K.Reflejo, K.Reflejo + 1.6, kEase.suave))}) rotate(72)`}>
             <CabezaPerfil x={0} y={0} s={1.15} ojo={0} />
           </g>
           <path d={`M 120 860 Q 540 ${880 + Math.sin(T * 4) * 8} 960 860 L 900 1150 Q 540 1190 180 1150 Z`} fill="rgba(0,160,230,.72)" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
           <path d={`M 140 870 Q 340 ${850 + Math.sin(T * 5) * 10} 540 870 T 940 870`} stroke="#fff" strokeWidth={7} fill="none" opacity=".8" />
           <Burbujas T={T} x={540} y={1100} n={7} alto={220} seed={4} o={kprog(T, K.Reflejo + 1.2, K.Reflejo + 1.6)} />
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Reflejo + 0.2} until={K.Cara - 0.1} texto="reflejo de inmersión" x={540} y={430} tam={52} borde={KC.cyan} />
         <Chip T={T} at={K.Reflejo + 1.5} until={K.Cara - 0.1} texto="= reflejo de buceo" x={540} y={530} tam={40} borde={KC.ink} />
@@ -237,28 +240,28 @@ function ReflejoBuceo() {
       <Escena T={T} a={K.Cara} b={K.Corazon} fondo={KC.pink}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <CaraFrente x={440} y={830} s={1.35} T={T} zona={zonaP} moja={kprog(T, K.Cara + 0.2, K.Cara + 0.8)} ojosCerrados={T > K.Cara + 3.4 ? 1 : 0} infla={kprog(T, K.Cara + 4.4, K.Cara + 5.0)} />
+          <CaraFrente x={470} y={920} s={1.6} T={T} zona={zonaP} moja={kprog(T, K.Cara + 0.2, K.Cara + 0.8)} ojosCerrados={T > K.Cara + 3.4 ? 1 : 0} infla={kprog(T, K.Cara + 4.4, K.Cara + 5.0)} />
         </Lienzo>
-        <Etq T={T} at={K.Cara + 1.4} until={K.Corazon - 0.2} x={740} y={830 - 122 * 1.35} texto="frente" lado="der" color={KC.texto} tam={40} />
-        <Etq T={T} at={K.Cara + 2.2} until={K.Corazon - 0.2} x={760} y={830 - 36 * 1.35} texto="ojos" lado="der" color={KC.texto} tam={40} />
-        <Etq T={T} at={K.Cara + 3.0} until={K.Corazon - 0.2} x={500} y={830 + 40 * 1.35} texto="nariz" lado="der" color={KC.texto} tam={40} />
-        <Chip T={T} at={K.Cara + 0.3} until={K.Corazon - 0.1} texto="agua fría en la cara" x={540} y={420} tam={44} borde={KC.cyan} />
-        <Chip T={T} at={K.Cara + 4.4} until={K.Corazon - 0.1} texto="+ aguantar la respiración" x={540} y={515} tam={40} borde={KC.yellow} />
+        <Etq T={T} at={K.Cara + 1.4} until={K.Corazon - 0.2} x={770} y={920 - 122 * 1.6} texto="frente" lado="der" color={KC.texto} tam={40} />
+        <Etq T={T} at={K.Cara + 2.2} until={K.Corazon - 0.2} x={790} y={920 - 36 * 1.6} texto="ojos" lado="der" color={KC.texto} tam={40} />
+        <Etq T={T} at={K.Cara + 3.0} until={K.Corazon - 0.2} x={530} y={920 + 40 * 1.6} texto="nariz" lado="der" color={KC.texto} tam={40} />
+        <Chip T={T} at={K.Cara + 0.3} until={K.Corazon - 0.1} texto="agua fría en la cara" x={540} y={320} tam={44} borde={KC.cyan} />
+        <Chip T={T} at={K.Cara + 4.4} until={K.Corazon - 0.1} texto="+ aguantar la respiración" x={540} y={405} tam={40} borde={KC.yellow} />
       </Escena>
       {/* 3–4 · por dentro: el corazón se frena, los vasos de manos y pies se angostan; el oxígeno va a cerebro y corazón */}
       <Escena T={T} a={K.Corazon} b={K.Pregunta} fondo={KC.noche} zoom={0.03}>
         <Ambiente T={T} n={22} color="rgba(127,211,255,.14)" />
         <Lienzo>
-          <CuerpoDentro x={540} y={840} s={1.12} T={T} fase={faseCuerpo} angosto={angosto} oxi={kprog(T, K.Ahorra + 0.4, K.Ahorra + 1.2)} />
+          <CuerpoDentro x={540} y={977} s={1.3} T={T} fase={faseCuerpo} angosto={angosto} oxi={kprog(T, K.Ahorra + 0.4, K.Ahorra + 1.2)} />
           {T < K.Ahorra + 0.2 && <Monitor x={40} y={350} w={380} h={150} T={T} fase={faseCuerpo} o={kprog(T, K.Corazon + 0.1, K.Corazon + 0.5) * (1 - kprog(T, K.Ahorra - 0.2, K.Ahorra + 0.2))} />}
         </Lienzo>
         <Chip T={T} at={K.Corazon + 0.6} until={K.Corazon + 2.2} texto="late más despacio" x={250} y={560} tam={36} borde={KC.mint} />
-        <Lupa T={T} at={K.Corazon + 2.0} until={K.Ahorra - 0.1} x={840} y={480} r={150} fx={540 + 242 * 1.12} fy={840 + 60 * 1.12} tinte={SANGRE} etiqueta="POR DENTRO · MANO"
+        <Lupa T={T} at={K.Corazon + 2.0} until={K.Ahorra - 0.1} x={840} y={480} r={150} fx={540 + 242 * 1.3} fy={977 + 60 * 1.3} tinte={SANGRE} etiqueta="POR DENTRO · MANO"
           interior={(t, r) => <VasoCerca r={r} T={t} angosto={angosto} />} />
-        <Etq T={T} at={K.Corazon + 2.6} until={K.Ahorra - 0.1} x={540 - 290 * 1.12} y={840 + 150 * 1.12} texto="vasos más angostos" lado="der" color={KC.yellow} tam={34} />
+        <Etq T={T} at={K.Corazon + 2.6} until={K.Ahorra - 0.1} x={540 - 290 * 1.3} y={977 + 150 * 1.3} texto="vasos más angostos" lado="der" color={KC.yellow} tam={34} />
         <Chip T={T} at={K.Ahorra + 0.3} until={K.Pregunta - 0.1} texto="ahorra oxígeno" x={820} y={470} tam={48} borde={OXI} />
-        <Etq T={T} at={K.Ahorra + 1.8} until={K.Pregunta - 0.2} x={540 + 90 * 1.12} y={840 - 345 * 1.12} texto="cerebro" lado="der" color={KC.gold2} tam={36} />
-        <Etq T={T} at={K.Ahorra + 2.6} until={K.Pregunta - 0.2} x={540 + 110 * 1.12} y={840 - 160 * 1.12} texto="corazón" lado="der" color={KC.gold2} tam={36} />
+        <Etq T={T} at={K.Ahorra + 1.8} until={K.Pregunta - 0.2} x={540 + 90 * 1.3} y={977 - 345 * 1.3} texto="cerebro" lado="der" color={KC.gold2} tam={36} />
+        <Etq T={T} at={K.Ahorra + 2.6} until={K.Pregunta - 0.2} x={540 + 110 * 1.3} y={977 - 160 * 1.3} texto="corazón" lado="der" color={KC.gold2} tam={36} />
       </Escena>
       {/* 5 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Focas} />
@@ -266,32 +269,33 @@ function ReflejoBuceo() {
       <Escena T={T} a={K.Focas} b={K.Bebes}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#074257 0%, #0a304d 45%, #0a1b38 100%)' }}></div>
         <Lienzo>
-          <path d={`M 0 300 Q 270 ${280 + Math.sin(T * 2) * 12} 540 300 T 1080 300 L 1080 0 L 0 0 Z`} fill="#bff3ff" />
+          <path d={`M 0 300 Q 270 ${280 + Math.sin(T * 2) * 12} 540 300 T 1080 300 L 1080 0 L 0 0 Z`} fill="#3f8196" />
           {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${i * 200 - ((T * 40) % 200)} ${560 + i * 110} l 260 140`} stroke="rgba(255,255,255,.12)" strokeWidth={30} />)}
-          <Ballena x={klerp(1250, -250, kprog(T, K.Focas, K.Bebes))} y={1150} s={0.9} T={T} />
-          {(() => { const p = kprog(T, K.Focas, K.Bebes - 0.2, kEase.suave); const fx = klerp(800, 420, p), fy = klerp(840, 1060, p);
-            return <g><Foca x={fx} y={fy} s={0.95} rot={148} T={T} /><Burbujas T={T} x={fx + 120} y={fy - 60} n={6} alto={260} seed={9} /></g>; })()}
+          <Ballena x={klerp(1250, -250, kprog(T, K.Focas, K.Bebes))} y={1300} s={1.2} T={T} />
+          {(() => { const p = kprog(T, K.Focas, K.Bebes - 0.2, kEase.suave); const fx = klerp(760, 460, p), fy = klerp(900, 1180, p);
+            return <g><Foca x={fx} y={fy} s={1.4} rot={148} T={T} /><Burbujas T={T} x={fx + 170} y={fy - 85} n={6} alto={260} seed={9} /></g>; })()}
           <Monitor x={560} y={360} w={460} h={120} T={T} fase={faseYo} color={KC.mint} o={kprog(T, K.Focas + 0.4, K.Focas + 0.8)} />
           <Monitor x={560} y={540} w={460} h={120} T={T} fase={faseFoca} color={KC.yellow} o={kprog(T, K.Focas + 0.7, K.Focas + 1.1)} />
           <TextoSvg x={540} y={420} tam={32} color={KC.texto} fuente="texto" ancla="end" o={kprog(T, K.Focas + 0.4, K.Focas + 0.8)}>tú</TextoSvg>
           <TextoSvg x={540} y={600} tam={32} color={KC.yellow} fuente="texto" ancla="end" o={kprog(T, K.Focas + 0.7, K.Focas + 1.1)}>foca</TextoSvg>
         </Lienzo>
         <Chip T={T} at={K.Focas + 3.6} until={K.Bebes - 0.1} texto="muchísimo más fuerte" x={760} y={720} tam={40} borde={KC.yellow} />
-        <Etq T={T} at={K.Focas + 5.0} until={K.Bebes - 0.2} x={420} y={1150} texto="otros mamíferos que bucean" lado="der" color={KC.texto} tam={30} />
+        <Etq T={T} at={K.Focas + 5.0} until={K.Bebes - 0.2} x={420} y={1300} texto="otros mamíferos que bucean" lado="der" color={KC.texto} tam={30} />
       </Escena>
       {/* 7 · los bebés también */}
       <Escena T={T} a={K.Bebes} b={K.Ojo} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <g transform={`translate(0 ${(1 - kprog(T, K.Bebes - 0.2, K.Bebes + 0.4, kEase.rebote)) * 600})`}><Bebe x={540} y={720} s={1.05} T={T} /></g>
-          <Corazoncito x={830} y={700} s={1.1} late={Math.exp(-((T * 0.9) % 1) * 8)} />
+          <g transform={`translate(0 ${(1 - kprog(T, K.Bebes - 0.2, K.Bebes + 0.4, kEase.rebote)) * 600})`}><Bebe x={540} y={780} s={1.5} T={T} /></g>
+          <Corazoncito x={935} y={640} s={1.4} late={Math.exp(-((T * 0.9) % 1) * 8)} />
         </Lienzo>
-        <Chip T={T} at={K.Bebes + 0.2} until={K.Ojo - 0.1} texto="también lo tienen" x={540} y={430} tam={50} borde={KC.pink} />
+        <Chip T={T} at={K.Bebes + 0.2} until={K.Ojo - 0.1} texto="también lo tienen" x={540} y={340} tam={50} borde={KC.pink} />
       </Escena>
       {/* 8 · ojo: no hagas pruebas */}
       <Escena T={T} a={K.Ojo} b={K.Medico} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
+          <g transform="translate(540 960) scale(1.15) translate(-540 -765)">
           <g transform={`translate(540 455) scale(${klerp(0.4, 1.25, kprog(T, K.Ojo, K.Ojo + 0.4, kEase.rebote)) * (1 + 0.04 * Math.sin(T * 9))})`}><Alerta x={0} y={0} /></g>
           <TextoSvg x={540} y={640} tam={78} color={KC.yellow} s={klerp(0.5, 1, kprog(T, K.Ojo + 0.4, K.Ojo + 0.8, kEase.rebote))} o={kprog(T, K.Ojo + 0.4, K.Ojo + 0.6)}>NO HAGAS PRUEBAS</TextoSvg>
           <TextoSvg x={540} y={730} tam={78} color={KC.yellow} s={klerp(0.5, 1, kprog(T, K.Ojo + 0.7, K.Ojo + 1.1, kEase.rebote))} o={kprog(T, K.Ojo + 0.7, K.Ojo + 0.9)}>BAJO EL AGUA</TextoSvg>
@@ -302,17 +306,20 @@ function ReflejoBuceo() {
             <circle r={135} fill="none" stroke={KC.ink} strokeWidth={34} /><circle r={135} fill="none" stroke={KC.red} strokeWidth={22} />
             <line x1={-95} y1={95} x2={95} y2={-95} stroke={KC.ink} strokeWidth={34} /><line x1={-95} y1={95} x2={95} y2={-95} stroke={KC.red} strokeWidth={22} /></g>}
           <TextoSvg x={540} y={1160} tam={90} color={KC.white} s={klerp(0.5, 1, kprog(T, K.Ojo + 3.2, K.Ojo + 3.6, kEase.rebote))} o={kprog(T, K.Ojo + 3.2, K.Ojo + 3.4)}>¡NUNCA A SOLAS!</TextoSvg>
+          </g>
         </Lienzo>
       </Escena>
       {/* 9 · médico: solo con indicación médica */}
       <Escena T={T} a={K.Medico} b={K.Cierre} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
+          <g transform="translate(540 980) scale(1.25) translate(-540 -850)">
           <PersonaSimple x={270} yPies={1170} alto={640} color="#ffffff" brazos={kprog(T, K.Medico + 2.4, K.Medico + 3.0) * 0.25} />
           <Estetoscopio x={270} y={1170 - 640 + 150} s={0.9} />
           <rect x={232} y={1170 - 640 + 230} width={22} height={70} rx={6} fill={KC.red} stroke={KC.ink} strokeWidth={4} /><rect x={208} y={1170 - 640 + 254} width={70} height={22} rx={6} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
-          <Monitor x={510} y={640} w={520} h={200} T={T} fase={faseMed} color={KC.mint} />
-          <TextoSvg x={770} y={900} tam={36} color={KC.texto} fuente="texto" o={kprog(T, K.Medico + 0.8, K.Medico + 1.2)}>{T < K.Medico + 3.2 ? 'latidos acelerados' : 'más calmados'}</TextoSvg>
+          <Monitor x={490} y={640} w={480} h={200} T={T} fase={faseMed} color={KC.mint} />
+          <TextoSvg x={730} y={900} tam={36} color={KC.texto} fuente="texto" o={kprog(T, K.Medico + 0.8, K.Medico + 1.2)}>{T < K.Medico + 3.2 ? 'latidos acelerados' : 'más calmados'}</TextoSvg>
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Medico + 3.6} until={K.Cierre - 0.1} texto="solo con indicación médica" x={540} y={460} tam={50} borde={KC.yellow} />
       </Escena>
@@ -320,12 +327,12 @@ function ReflejoBuceo() {
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <CaraFrente x={340} y={930} s={1.1} T={T} moja={1} visor={kprog(T, K.Cierre + 0.6, K.Cierre + 1.2, kEase.rebote)} sonrie={1} />
-          <Monitor x={50} y={340} w={470} h={170} T={T} fase={faseFin} />
-          <Foca x={830} y={1060} s={0.85} rot={-8} T={T} sonrie visor={kprog(T, K.Cierre + 1.2, K.Cierre + 1.8, kEase.rebote)} />
+          <CaraFrente x={340} y={900} s={1.3} T={T} moja={1} visor={kprog(T, K.Cierre + 0.6, K.Cierre + 1.2, kEase.rebote)} sonrie={1} />
+          <Monitor x={560} y={260} w={470} h={170} T={T} fase={faseFin} />
+          <Foca x={820} y={1180} s={1.15} rot={-8} T={T} sonrie visor={kprog(T, K.Cierre + 1.2, K.Cierre + 1.8, kEase.rebote)} />
           <Burbujas T={T} x={560} y={900} n={6} alto={300} seed={12} />
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 1.6} until={K.Outro - 0.1} texto="modo submarino de fábrica" x={540} y={620} tam={46} borde={KC.yellow} />
+        <Chip T={T} at={K.Cierre + 1.6} until={K.Outro - 0.1} texto="modo submarino de fábrica" x={540} y={490} tam={46} borde={KC.yellow} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Reflejo - 0.1} texto="Agua fría en la cara: *tu corazón se frena.*" />
