@@ -335,12 +335,12 @@ function Iss() {
       <Escena T={T} a={K.Velocidad} b={K.Vuelta} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          {Array.from({ length: 14 }, (_, i) => { const yy = 470 + (i * 67) % 800, xx = KW + 300 - ((T * 1400 + i * 260) % (KW + 700)); return <line key={i} x1={xx} y1={yy} x2={xx + 160 + (i % 3) * 60} y2={yy} stroke="#fff" strokeWidth={8 + (i % 3) * 3} strokeLinecap="round" opacity=".7" />; })}
-          <Estacion x={540 + Math.sin(T * 2) * 10} y={850 + Math.sin(T * 1.3) * 8} s={1.9} rot={-6} />
-          <Velocimetro x={540} y={1370} r={115} v={kprog(T, K.Velocidad + 0.2, K.Velocidad + 1.4, kEase.sale)} T={T} />
+          {Array.from({ length: 14 }, (_, i) => { const yy = 600 + (i * 67) % 800, xx = KW + 300 - ((T * 1400 + i * 260) % (KW + 700)); return <line key={i} x1={xx} y1={yy} x2={xx + 160 + (i % 3) * 60} y2={yy} stroke="#fff" strokeWidth={8 + (i % 3) * 3} strokeLinecap="round" opacity=".7" />; })}
+          <Estacion x={540 + Math.sin(T * 2) * 10} y={980 + Math.sin(T * 1.3) * 8} s={2.0} rot={-6} />
+          <Velocimetro x={540} y={1450} r={120} v={kprog(T, K.Velocidad + 0.2, K.Velocidad + 1.4, kEase.sale)} T={T} />
         </Lienzo>
-        <NumeroGigante T={T} at={K.Velocidad + 0.2} until={K.Vuelta - 0.1} valor={28000} desde={28000} dur={0.1} prefijo="≈ " sufijo=" km/h" x={540} y={350} tam={130} color={KC.yellow} />
-        <Etq T={T} at={K.Velocidad + 1.6} until={K.Vuelta - 0.1} x={80} y={452} texto="Estación Espacial" color={KC.ink} tam={28} />
+        <NumeroGigante T={T} at={K.Velocidad + 0.2} until={K.Vuelta - 0.1} valor={28000} desde={28000} dur={0.1} prefijo="≈ " sufijo=" km/h" x={540} y={420} tam={130} color={KC.yellow} />
+        <Etq T={T} at={K.Velocidad + 1.6} until={K.Vuelta - 0.1} x={80} y={530} texto="Estación Espacial" color={KC.ink} tam={28} />
       </Escena>
       {/* 2 · una vuelta completa: ≈ 90 min (vista desde arriba del polo norte) */}
       <Escena T={T} a={K.Vuelta} b={K.Dia} zoom={0.02}>
