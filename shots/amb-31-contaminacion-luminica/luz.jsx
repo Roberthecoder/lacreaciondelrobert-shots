@@ -107,12 +107,12 @@ function GloboNoche({ T, x, y, r = 260, luces = 1 }) {
 function Tortuga({ T, x, y, ang = 0, s = 1, seed = 0 }) {
   const al = Math.sin(T * 9 + seed) * 22;
   return <g transform={`translate(${x} ${y}) rotate(${ang}) scale(${s})`}>
-    <path d="M -18 -14 Q -60 -10 -70 20 Q -50 10 -22 4 Z" fill="#3b332c" stroke={KC.ink} strokeWidth={4} transform={`rotate(${al} -18 -8)`} />
-    <path d="M 18 -14 Q 60 -10 70 20 Q 50 10 22 4 Z" fill="#3b332c" stroke={KC.ink} strokeWidth={4} transform={`rotate(${-al} 18 -8)`} />
-    <path d="M -14 22 L -30 38 L -10 32 Z" fill="#3b332c" stroke={KC.ink} strokeWidth={3} />
-    <path d="M 14 22 L 30 38 L 10 32 Z" fill="#3b332c" stroke={KC.ink} strokeWidth={3} />
-    <circle cx={0} cy={-38} r={11} fill="#4a4038" stroke={KC.ink} strokeWidth={4} />
-    <ellipse cx={0} cy={2} rx={24} ry={32} fill="#5a4e43" stroke={KC.ink} strokeWidth={5} />
+    <path d="M -18 -14 Q -60 -10 -70 20 Q -50 10 -22 4 Z" fill="#5b4f44" stroke={KC.ink} strokeWidth={4} transform={`rotate(${al} -18 -8)`} />
+    <path d="M 18 -14 Q 60 -10 70 20 Q 50 10 22 4 Z" fill="#5b4f44" stroke={KC.ink} strokeWidth={4} transform={`rotate(${-al} 18 -8)`} />
+    <path d="M -14 22 L -30 38 L -10 32 Z" fill="#5b4f44" stroke={KC.ink} strokeWidth={3} />
+    <path d="M 14 22 L 30 38 L 10 32 Z" fill="#5b4f44" stroke={KC.ink} strokeWidth={3} />
+    <circle cx={0} cy={-38} r={11} fill="#6a5c4f" stroke={KC.ink} strokeWidth={4} />
+    <ellipse cx={0} cy={2} rx={24} ry={32} fill="#7d6d5c" stroke={KC.ink} strokeWidth={5} />
     <path d="M 0 -26 L 0 28 M -12 -14 L 12 -14 M -14 2 L 14 2 M -12 16 L 12 16" stroke="#2a231d" strokeWidth={3} />
   </g>;
 }
@@ -163,10 +163,10 @@ function LuzShot() {
   const cuenta = klerp(250, 100, kprog(T, K.N + 1.0, K.N + 5.3, kEase.suave));
   const edad = klerp(0, 18, kprog(T, K.N + 1.0, K.N + 5.3, kEase.suave));
   // Cierre: vuelve la Vía Láctea
-  const vuelve = kprog(T, K.Ci + 0.6, K.Ci + 3.2, kEase.suave);
+  const vuelve = kprog(T, K.Ci + 0.3, K.Ci + 3.2, kEase.suave);
 
   // fotones que rebotan en el aire (Resplandor)
-  const fot = Array.from({ length: 16 }, (_, i) => { const R = krng(100 + i); const x0 = 120 + R() * 840, y0 = 1460, x1 = x0 + (R() - 0.5) * 300, y1 = 760 + R() * 380, x2 = x1 + (R() - 0.5) * 500, y2 = y1 + (R() - 0.3) * 300;
+  const fot = Array.from({ length: 16 }, (_, i) => { const R = krng(100 + i); const x0 = 120 + R() * 840, y0 = 1180, x1 = x0 + (R() - 0.5) * 300, y1 = 520 + R() * 420, x2 = x1 + (R() - 0.5) * 500, y2 = y1 + (R() - 0.3) * 300;
     const u = ((T - K.R) * 0.7 + i / 16) % 1; const q = u < 0.5 ? u * 2 : (u - 0.5) * 2;
     const px = u < 0.5 ? klerp(x0, x1, q) : klerp(x1, x2, q), py = u < 0.5 ? klerp(y0, y1, q) : klerp(y1, y2, q);
     return { px, py, x1, y1, o: Math.sin(Math.PI * u) }; });
@@ -177,19 +177,19 @@ function LuzShot() {
     const a = (T - K.Av) * w + ph; let x = 540 + Math.cos(a) * rx, y = cy + Math.sin(a) * ry;
     const sale = Math.max(0, T - (K.Av + 5.5)); const dx = Math.cos(ph) * 420 * sale, dy = -Math.abs(Math.sin(ph)) * 160 * sale;
     const llega = kprog(T, K.Av + R() * 2.2, K.Av + 0.6 + R() * 2.2);
-    return { x: x + dx, y: y + dy, s: 0.8 + R() * 0.8, seed: i * 1.7, o: llega }; });
+    return { x: x + dx, y: y + dy, s: (0.8 + R() * 0.8) * 1.5, seed: i * 1.7, o: llega }; });
 
   // tortugas: salen del nido hacia el mar (izquierda) y luego voltean a las luces (derecha)
   const tort = Array.from({ length: 9 }, (_, i) => { const R = krng(500 + i); const t0 = K.Tt + 0.4 + i * 0.18; const u = Math.max(0, T - t0);
     const gira = kprog(T, K.Tt + 2.0 + R() * 0.4, K.Tt + 2.8 + R() * 0.4, kEase.suave);
     const angMar = -90 + (i - 4) * 14, angLuz = 95 + (i - 4) * 8, ang = klerp(angMar, angLuz, gira);
-    const ux = 560 + (i % 3 - 1) * 120, uy = 950 + (Math.floor(i / 3) - 1) * 110; const v = 150;
+    const ux = 560 + (i % 3 - 1) * 170, uy = 950 + (Math.floor(i / 3) - 1) * 160; const v = 150;
     const dMar = Math.min(u, 0.8 + R() * 0.2) * v, dLuz = Math.max(0, u - 2.0) * v * 1.2;
     const rad = (d) => d * Math.PI / 180;
     return { x: ux + Math.sin(rad(angMar)) * dMar + Math.sin(rad(angLuz)) * dLuz, y: uy - Math.cos(rad(angMar)) * dMar - Math.cos(rad(angLuz)) * dLuz, ang, o: kprog(T, t0, t0 + 0.3), seed: i }; });
 
   // barras de brillo del cielo 2011..2022 (esquema con el promedio mundial, 9.6 % al año)
-  const barras = Array.from({ length: 12 }, (_, i) => ({ i, h: 160 * Math.pow(1.096, i), p: kprog(T, K.C + 1.4 + i * 0.32, K.C + 1.9 + i * 0.32, kEase.sale) }));
+  const barras = Array.from({ length: 12 }, (_, i) => ({ i, h: 160 * Math.pow(1.096, i), p: kprog(T, K.C + 0.5 + i * 0.36, K.C + 1.0 + i * 0.36, kEase.sale) }));
 
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -199,36 +199,36 @@ function LuzShot() {
           {svg(<><rect x={0} y={1560} width={KW} height={360} fill="#141c1c" />
             <Ciudad y={1600} luz={prende} seed={8} color="#202638" />
             <rect x={0} y={1590} width={KW} height={330} fill="#17201e" stroke={KC.ink} strokeWidth={6} />
-            <Casa x={330} y={1640} s={0.95} luz={0.4 + 0.6 * kprog(T, 0.3, 0.6)} />
-            <Farol x={780} y={1660} h={460} tipo="malo" on={kprog(T, 0.5, 0.7) * (0.6 + 0.4 * Math.abs(Math.sin(T * 25)) * (T < 1.0 ? 1 : 0) + (T >= 1.0 ? 0.4 : 0))} T={T} id="fg" /></>)}
+            <Casa x={330} y={1700} s={1.8} luz={0.4 + 0.6 * kprog(T, 0.3, 0.6)} />
+            <g transform="translate(830 1700) scale(1.5) translate(-780 -1660)"><Farol x={780} y={1660} h={460} tipo="malo" on={kprog(T, 0.5, 0.7) * (0.6 + 0.4 * Math.abs(Math.sin(T * 25)) * (T < 1.0 ? 1 : 0) + (T >= 1.0 ? 0.4 : 0))} T={T} id="fg" /></g></>)}
         </CieloNoche>
       </Escena>
       {/* 2 · resplandor: la luz rebota en el aire */}
       <Escena T={T} a={K.R} b={K.A} zoom={0.06} origen="50% 80%">
         <CieloNoche T={T} via={0.1 * (1 - kprog(T, K.R, K.R + 2))} estrellas={estR} domo={domoR}>
-          {svg(<><Ciudad y={1920} luz={1} seed={11} />
-            {[220, 540, 860].map((fx, k) => <Farol key={fx} x={fx} y={1700} h={300} tipo="malo" on={1} T={T} id={'fr' + k} />)}
-            {fot.map((f, i) => <g key={i}><circle cx={f.x1} cy={f.y1} r={5} fill="#ffcf9a" opacity={0.6} /><circle cx={f.px} cy={f.py} r={9} fill="#fff1c9" opacity={f.o} stroke={LZ_NARANJA} strokeWidth={3} /></g>)}</>)}
+          {svg(<><g transform="translate(540 1920) scale(1.45) translate(-540 -1920)"><Ciudad y={1920} luz={1} seed={11} />
+            {[220, 540, 860].map((fx, k) => <Farol key={fx} x={fx} y={1700} h={300} tipo="malo" on={1} T={T} id={'fr' + k} />)}</g>
+            {fot.map((f, i) => <g key={i}><circle cx={f.x1} cy={f.y1} r={7} fill="#ffcf9a" opacity={0.6} /><circle cx={f.px} cy={f.py} r={14} fill="#fff1c9" opacity={f.o} stroke={LZ_NARANJA} strokeWidth={3} /></g>)}</>)}
         </CieloNoche>
       </Escena>
       {/* 3 · atlas satelital: más de 1 de cada 3 personas */}
       <Escena T={T} a={K.A} b={K.M}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><GloboNoche T={T} x={540} y={830} r={250} luces={kprog(T, K.A + 0.3, K.A + 1.8)} />
-          <Satelite x={klerp(-200, 1280, kprog(T, K.A, K.A + 5.5))} y={500} s={0.9} />
+        {svg(<><GloboNoche T={T} x={540} y={780} r={370} luces={kprog(T, K.A + 0.3, K.A + 1.8)} />
+          <Satelite x={klerp(-200, 1280, kprog(T, K.A, K.A + 5.5))} y={330} s={1.15} />
           {[0, 1, 2].map((k) => { const sin = k === 0 ? kprog(T, K.A + 2.6, K.A + 3.2) : 0, cx = 270 + k * 270;
             return <g key={k} opacity={kprog(T, K.A + 1.8 + k * 0.2, K.A + 2.2 + k * 0.2)}>
-              <rect x={cx - 100} y={1400} width={200} height={130} rx={18} fill={mixHex('#0b1433', '#7a6a5a', sin)} stroke={KC.ink} strokeWidth={6} />
-              <path d={`M ${cx - 90} ${1505} Q ${cx} ${1440} ${cx + 90} ${1425}`} stroke="#e8eeff" strokeWidth={22} strokeLinecap="round" opacity={0.75 * (1 - sin)} fill="none" />
-              {sin > 0 && <line x1={cx - 70} y1={1420} x2={cx + 70} y2={1510} stroke={KC.red} strokeWidth={12 * sin} strokeLinecap="round" />}
-              <Persona x={cx} y={1700} s={1.6} color={k === 0 ? KC.yellow : KC.white} /></g>; })}</>)}
+              <rect x={cx - 100} y={1240} width={200} height={130} rx={18} fill={mixHex('#0b1433', '#7a6a5a', sin)} stroke={KC.ink} strokeWidth={6} />
+              <path d={`M ${cx - 90} ${1345} Q ${cx} ${1280} ${cx + 90} ${1265}`} stroke="#e8eeff" strokeWidth={22} strokeLinecap="round" opacity={0.75 * (1 - sin)} fill="none" />
+              {sin > 0 && <line x1={cx - 70} y1={1260} x2={cx + 70} y2={1350} stroke={KC.red} strokeWidth={12 * sin} strokeLinecap="round" />}
+              <Persona x={cx} y={1530} s={1.6} color={k === 0 ? KC.yellow : KC.white} /></g>; })}</>)}
       </Escena>
       {/* 4 · México: 58 de cada 100 */}
       <Escena T={T} a={K.M} b={K.P}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>{Array.from({ length: 100 }, (_, i) => { const col = i % 10, row = Math.floor(i / 10); const sin = i < Math.round(58 * kprog(T, K.M + 0.5, K.M + 2.2)) ;
-            return <Persona key={i} x={135 + col * 90} y={710 + row * 50} s={0.5} color={sin ? '#5b6170' : KC.white} />; })}
-          <MapaMexico x={300} y={1440} ancho={480} conCA={false} color={KC.paper} /></>)}
+        {svg(<><g opacity={0.8}><MapaMexico x={30} y={650} ancho={1020} conCA={false} color="#14213d" borde="#5f7fb8" /></g>
+          {Array.from({ length: 100 }, (_, i) => { const col = i % 10, row = Math.floor(i / 10); const sin = i < Math.round(58 * kprog(T, K.M + 0.5, K.M + 2.2)) ;
+            return <Persona key={i} x={135 + col * 90} y={690 + row * 84} s={0.8} color={sin ? '#5b6170' : KC.white} />; })}</>)}
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.C} zoom={0.1}>
@@ -238,38 +238,38 @@ function LuzShot() {
       {/* 6 · Globe at Night: el cielo se aclara 7–10 % al año */}
       <Escena T={T} a={K.C} b={K.N}>
         <FondoLunares color={KC.mint} />
-        {svg(<><rect x={90} y={640} width={900} height={560} rx={30} fill="#0b1433" stroke={KC.ink} strokeWidth={8} />
+        {svg(<><g transform="translate(540 900) scale(1.1) translate(-540 -920)"><rect x={90} y={640} width={900} height={560} rx={30} fill="#0b1433" stroke={KC.ink} strokeWidth={6} />
           {barras.map((b) => { const bx = 130 + b.i * 72, bh = b.h * b.p; return <g key={b.i}>
             <rect x={bx} y={1160 - bh} width={52} height={bh} rx={8} fill={mixHex('#3a5bd8', LZ_NARANJA, b.i / 11)} stroke={KC.ink} strokeWidth={4} />
             {(b.i === 0 || b.i === 11) && <text x={bx + 26} y={1190} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="#fff" opacity={b.p}>{2011 + b.i}</text>}</g>; })}
-          <text x={130} y={690} style={{ font:`700 28px ${KF.mono}` }} fill="#fff">brillo del cielo (esquema)</text>
-          <Persona x={160} y={1620} s={1.5} color={KC.white} />
-          <g transform={`translate(250 1470) rotate(-12)`}><rect x={0} y={0} width={120} height={90} rx={8} fill="#0b1433" stroke={KC.ink} strokeWidth={5} />
+          <text x={130} y={690} style={{ font:`700 28px ${KF.mono}` }} fill="#fff">brillo del cielo (esquema)</text></g>
+          <Persona x={190} y={1570} s={2.3} color={KC.white} />
+          <g transform={`translate(300 1340) rotate(-12) scale(1.7)`}><rect x={0} y={0} width={120} height={90} rx={8} fill="#0b1433" stroke={KC.ink} strokeWidth={5} />
             {[[20, 25], [45, 40], [70, 20], [95, 55], [55, 70]].map(([sx, sy], k) => <circle key={k} cx={sx} cy={sy} r={5} fill="#fff" />)}</g></>)}
       </Escena>
       {/* 7 · un niño: de 250 a 100 estrellas a los 18 */}
       <Escena T={T} a={K.N} b={K.Tt}>
         <CieloNoche T={T} via={0} estrellas={(cuenta / 250) * 0.9} domo={0.35 + 0.4 * kprog(T, K.N + 1, K.N + 5.3)}>
           {svg(<><rect x={0} y={1590} width={KW} height={330} fill="#17201e" stroke={KC.ink} strokeWidth={6} />
-            <Casa x={760} y={1640} s={0.85} luz={1} />
-            <Persona x={330} y={1640} s={klerp(0.9, 2.3, edad / 18)} color={KC.yellow} /></>)}
+            <Casa x={770} y={1700} s={1.5} luz={1} />
+            <Persona x={290} y={1700} s={klerp(1.3, 3.4, edad / 18)} color={KC.yellow} /></>)}
         </CieloNoche>
       </Escena>
       {/* 8 · tortugas recién nacidas que van hacia las luces */}
       <Escena T={T} a={K.Tt} b={K.Av}>
-        <div style={{ position:'absolute', inset:0, background:'#c9b48a' }} />
+        <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 80% 60% at 55% 50%, #4d4230 0%, #2c261b 100%)' }} />
         {svg(<><defs><radialGradient id="lzEdif" cx="100%" cy="50%" r="70%"><stop offset="0%" stopColor="#ffd36b" stopOpacity=".75" /><stop offset="100%" stopColor="#ffd36b" stopOpacity="0" /></radialGradient></defs>
-          <path d={`M 0 0 L 300 0 Q ${330 + Math.sin(T * 2) * 14} 480 300 960 Q ${270 + Math.sin(T * 2 + 1) * 14} 1440 300 1920 L 0 1920 Z`} fill="#1f5f9a" stroke={KC.ink} strokeWidth={8} />
-          {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${240 + Math.sin(T * 2 + i) * 18} ${200 + i * 300} q 30 40 0 80`} stroke="#bfe7ff" strokeWidth={6} fill="none" />)}
+          <path d={`M 0 0 L 300 0 Q ${330 + Math.sin(T * 2) * 14} 480 300 960 Q ${270 + Math.sin(T * 2 + 1) * 14} 1440 300 1920 L 0 1920 Z`} fill="#0f2f52" stroke={KC.ink} strokeWidth={6} />
+          {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${240 + Math.sin(T * 2 + i) * 18} ${200 + i * 300} q 30 40 0 80`} stroke="#7fb4d8" strokeWidth={6} fill="none" />)}
           <rect x={540} y={0} width={540} height={KH} fill="url(#lzEdif)" />
           {[200, 520, 840, 1160, 1480].map((by, k) => <g key={k}><rect x={930} y={by} width={170} height={240} fill="#2a3247" stroke={KC.ink} strokeWidth={6} />
             {[0, 1, 2, 3].map((w) => <rect key={w} x={950 + (w % 2) * 70} y={by + 30 + Math.floor(w / 2) * 100} width={50} height={60} fill="#ffd36b" />)}</g>)}
-          <ellipse cx={540} cy={950} rx={90} ry={60} fill="#a8905f" stroke={KC.ink} strokeWidth={5} />
+          <ellipse cx={560} cy={950} rx={170} ry={115} fill="#221c13" stroke={KC.ink} strokeWidth={5} />
           <g opacity={kprog(T, K.Tt + 0.8, K.Tt + 1.2) * (1 - kprog(T, K.Tt + 2.2, K.Tt + 2.6))}>
-            <path d="M 400 850 L 330 850" stroke={KC.leaf} strokeWidth={12} strokeDasharray="22 14" strokeLinecap="round" /><path d="M 345 825 L 315 850 L 345 875" stroke={KC.leaf} strokeWidth={12} fill="none" strokeLinecap="round" /></g>
+            <path d="M 430 660 L 340 660" stroke={KC.leaf} strokeWidth={12} strokeDasharray="22 14" strokeLinecap="round" /><path d="M 356 634 L 324 660 L 356 686" stroke={KC.leaf} strokeWidth={12} fill="none" strokeLinecap="round" /></g>
           <g opacity={kprog(T, K.Tt + 2.4, K.Tt + 2.8)}>
-            <path d="M 700 960 L 900 960" stroke={KC.red} strokeWidth={12} strokeDasharray="22 14" strokeLinecap="round" /></g>
-          {tort.map((t, i) => <g key={i} opacity={t.o}><Tortuga T={T} x={t.x} y={t.y} ang={t.ang} s={1.15} seed={t.seed} /></g>)}</>)}
+            <path d="M 760 1240 L 910 1240" stroke={KC.red} strokeWidth={12} strokeDasharray="22 14" strokeLinecap="round" /></g>
+          {tort.map((t, i) => <g key={i} opacity={t.o}><Tortuga T={T} x={t.x} y={t.y} ang={t.ang} s={1.7} seed={t.seed} /></g>)}</>)}
       </Escena>
       {/* 9 · aves migratorias en las columnas de luz de Nueva York */}
       <Escena T={T} a={K.Av} b={K.S}>
@@ -285,41 +285,41 @@ function LuzShot() {
         <FondoLunares color={KC.orange} />
         {svg(<>{(() => { const p1 = kprog(T, K.S + 0.4, K.S + 1.2, kEase.sale), p2 = kprog(T, K.S + 1.9, K.S + 2.7, kEase.sale), p3 = kprog(T, K.S + 3.4, K.S + 4.0, kEase.sale);
             return <>
-              <rect x={40} y={760} width={1000} height={420} rx={34} fill="#0b1433" stroke={KC.ink} strokeWidth={8} />
-              <g opacity={kprog(T, K.S, K.S + 0.4)}>{p1 < 0.5 ? <Farol x={200} y={1150} h={300} tipo="malo" on={1} T={T} id="fs1" /> : <Farol x={150} y={1150} h={300} tipo="bueno" on={1} T={T} id="fs2" />}</g>
-              <g opacity={kprog(T, K.S + 1.5, K.S + 1.9)}><Foco x={540} y={960} s={1} frio={1 - p2} /></g>
-              <g opacity={kprog(T, K.S + 3.0, K.S + 3.4)}><Apagador x={870} y={970} s={1} on={1 - p3} /></g>
-              {[["hacia abajo", 200, K.S + 1.2], ["cálida", 540, K.S + 2.7], ["apagada", 870, K.S + 4.0]].map(([tx, lx, ta]) => <text key={tx} x={lx} y={1450} textAnchor="middle" opacity={kprog(T, ta, ta + 0.3)} style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink}>{tx}</text>)}
-              <Palomita x={200} y={820} p={kprog(T, K.S + 1.2, K.S + 1.5)} /><Palomita x={540} y={820} p={kprog(T, K.S + 2.7, K.S + 3.0)} /><Palomita x={870} y={820} p={kprog(T, K.S + 4.0, K.S + 4.3)} /></>; })()}</>)}
+              <rect x={40} y={600} width={1000} height={660} rx={40} fill="#0b1433" stroke={KC.ink} strokeWidth={6} />
+              <g opacity={kprog(T, K.S, K.S + 0.4)} transform="translate(200 1220) scale(1.5) translate(-200 -1150)">{p1 < 0.5 ? <Farol x={200} y={1150} h={300} tipo="malo" on={1} T={T} id="fs1" /> : <Farol x={150} y={1150} h={300} tipo="bueno" on={1} T={T} id="fs2" />}</g>
+              <g opacity={kprog(T, K.S + 1.5, K.S + 1.9)}><Foco x={560} y={940} s={1.5} frio={1 - p2} /></g>
+              <g opacity={kprog(T, K.S + 3.0, K.S + 3.4)}><Apagador x={890} y={950} s={1.5} on={1 - p3} /></g>
+              {[["hacia abajo", 210, K.S + 1.2], ["cálida", 560, K.S + 2.7], ["apagada", 890, K.S + 4.0]].map(([tx, lx, ta]) => <text key={tx} x={lx} y={1350} textAnchor="middle" opacity={kprog(T, ta, ta + 0.3)} style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>{tx}</text>)}
+              <Palomita x={210} y={680} s={1.3} p={kprog(T, K.S + 1.2, K.S + 1.5)} /><Palomita x={560} y={680} s={1.3} p={kprog(T, K.S + 2.7, K.S + 3.0)} /><Palomita x={890} y={680} s={1.3} p={kprog(T, K.S + 4.0, K.S + 4.3)} /></>; })()}</>)}
       </Escena>
       {/* 11 · cierre: la misma casa, ahora con luz bien puesta, y vuelve la Vía Láctea */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.03}>
         <CieloNoche T={T} via={0.1 + 0.9 * vuelve} estrellas={klerp(0.6, 1, vuelve)} domo={0.6 * (1 - vuelve)}>
           {svg(<><Ciudad y={1600} luz={1 - 0.6 * vuelve} seed={8} color="#202638" />
             <rect x={0} y={1590} width={KW} height={330} fill="#17201e" stroke={KC.ink} strokeWidth={6} />
-            <Casa x={330} y={1640} s={0.95} luz={1} />
-            <Farol x={700} y={1660} h={460} tipo="bueno" on={1} T={T} id="fc" /></>)}
+            <Casa x={330} y={1700} s={1.8} luz={1} />
+            <g transform="translate(730 1700) scale(1.5) translate(-700 -1660)"><Farol x={700} y={1660} h={460} tipo="bueno" on={1} T={T} id="fc" /></g></>)}
         </CieloNoche>
       </Escena>
 
       {/* datos y etiquetas */}
       <Etq T={T} at={K.G + 0.5} until={K.G + 3.6} x={110} y={760} texto="Vía Láctea" tam={36} />
-      <Chip T={T} at={K.G + 3.4} until={K.R - 0.2} texto="ciudad de noche" y={1490} x={540} tam={32} borde={LZ_NARANJA} />
+      <Chip T={T} at={K.G + 3.4} until={K.R - 0.2} texto="ciudad de noche" y={1040} x={300} tam={36} borde={LZ_NARANJA} />
       <Etq T={T} at={K.R + 0.8} until={K.A - 0.2} x={1000} y={760} lado="izq" texto="resplandor del cielo" tam={34} color="#ffe1b8" />
-      <Chip T={T} at={K.A + 0.4} until={K.M - 0.2} texto="Falchi et al. 2016 · Science Advances" y={420} x={600} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.A + 2.8} until={K.M - 0.2} texto="más de 1 de cada 3 no la ve" y={1800} x={540} tam={36} borde={KC.red} />
-      <NumeroGigante T={T} at={K.M + 0.3} until={K.P - 0.2} valor={58} dur={1.8} sufijo=" de 100" etiqueta="México:" x={360} y={540} tam={130} color={KC.white} />
-      <Chip T={T} at={K.C + 0.4} until={K.N - 0.2} texto="Kyba et al. 2023 · Science" y={420} x={600} tam={28} borde={KC.ink} />
-      {T < K.N + 0.2 && <Contador T={T} at={K.C + 0.3} desde={0} hasta={51351} dur={1.6} sufijo=" conteos" x={540} y={540} tam={64} color={KC.white} />}
-      <Chip T={T} at={K.C + 4.0} until={K.N - 0.2} texto="+7 a 10 % al año" y={1480} x={640} tam={44} borde={LZ_NARANJA} />
-      <NumeroGigante T={T} at={K.N + 0.3} until={K.Tt - 0.2} valor={Math.round(cuenta)} desde={Math.round(cuenta)} dur={0.01} etiqueta="estrellas visibles" x={360} y={560} tam={170} color={KC.white} />
-      <Chip T={T} at={K.N + 0.6} until={K.Tt - 0.2} texto={`edad: ${Math.round(edad)} años`} y={1060} x={360} tam={38} borde={KC.yellow} />
-      <Etq T={T} at={K.Tt + 1.0} until={K.Av - 0.2} x={900} y={560} lado="izq" texto="crías de tortuga marina" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Tt + 2.6} until={K.Av - 0.2} texto="Florida: miles de crías al año" y={1480} x={540} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.Av + 0.6} until={K.S - 0.2} texto="≈ 1.1 millones de aves" y={430} x={360} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.Av + 1.6} until={K.S - 0.2} texto="7 noches · 2008–2016" y={1450} x={540} tam={34} borde={KC.gold} />
-      <Chip T={T} at={K.Av + 2.4} until={K.S - 0.2} texto="Van Doren et al. 2017 · PNAS" y={1550} x={540} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.S + 0.2} until={K.Ci - 0.2} texto="lo que sí sirve" y={450} x={690} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.A + 0.4} until={K.M - 0.2} texto="Falchi et al. 2016 · Science Advances" y={215} x={540} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.A + 2.8} until={K.M - 0.2} texto="más de 1 de cada 3 no la ve" y={1625} x={540} tam={40} borde={KC.red} />
+      <NumeroGigante T={T} at={K.M + 0.3} until={K.P - 0.2} valor={58} dur={1.8} sufijo=" de 100" etiqueta="México:" x={540} y={420} tam={150} color={KC.white} />
+      <Chip T={T} at={K.C + 0.4} until={K.N - 0.2} texto="Kyba et al. 2023 · Science" y={330} x={540} tam={28} borde={KC.ink} />
+      {T < K.N + 0.2 && <Contador T={T} at={K.C + 0.3} desde={0} hasta={51351} dur={1.6} sufijo=" conteos" x={540} y={460} tam={72} color={KC.white} />}
+      <Chip T={T} at={K.C + 4.0} until={K.N - 0.2} texto="+7 a 10 % al año" y={1450} x={780} tam={46} borde={LZ_NARANJA} />
+      <NumeroGigante T={T} at={K.N + 0.3} until={K.Tt - 0.2} valor={Math.round(cuenta)} desde={Math.round(cuenta)} dur={0.01} etiqueta="estrellas visibles" x={540} y={520} tam={210} color={KC.white} />
+      <Chip T={T} at={K.N + 0.6} until={K.Tt - 0.2} texto={`edad: ${Math.round(edad)} años`} y={1300} x={290} tam={40} borde={KC.yellow} />
+      <Etq T={T} at={K.Tt + 1.0} until={K.Av - 0.2} x={900} y={430} lado="izq" texto="crías de tortuga marina" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Tt + 2.6} until={K.Av - 0.2} texto="Florida: miles de crías al año" y={1440} x={600} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.Av + 0.6} until={K.S - 0.2} texto="≈ 1.1 millones de aves" y={330} x={360} tam={38} borde={KC.cyan} />
+      <Chip T={T} at={K.Av + 1.6} until={K.S - 0.2} texto="7 noches · 2008–2016" y={1390} x={540} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.Av + 2.4} until={K.S - 0.2} texto="Van Doren et al. 2017 · PNAS" y={1475} x={540} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.S + 0.2} until={K.Ci - 0.2} texto="lo que sí sirve" y={490} x={540} tam={46} borde={KC.leaf} />
       <Etq T={T} at={K.Ci + 2.4} until={K.Ou - 0.1} x={110} y={760} texto="Vía Láctea" tam={36} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
