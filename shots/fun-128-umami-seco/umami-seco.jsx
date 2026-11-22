@@ -57,8 +57,8 @@ function Glu({ x, y, s = 1, o = 1 }) {
 // Mesa de madera (abajo).
 function Mesa({ y = 1120 }) {
   return <g>
-    <rect x={-20} y={y} width={1120} height={240} fill={UM.mesa} stroke={KC.ink} strokeWidth={8} />
-    {[40, 95, 150].map((d, i) => <path key={i} d={`M 0 ${y + d} Q 300 ${y + d - 10} 600 ${y + d + 6} T 1100 ${y + d}`} stroke={UM.mesa2} strokeWidth={5} fill="none" />)}
+    <rect x={-120} y={y} width={1320} height={900} fill="#7a5230" stroke={KC.ink} strokeWidth={8} />
+    {[40, 95, 150, 230, 320, 430, 550].map((d, i) => <path key={i} d={`M 0 ${y + d} Q 300 ${y + d - 10} 600 ${y + d + 6} T 1100 ${y + d}`} stroke="#5a3a1e" strokeWidth={5} fill="none" />)}
   </g>;
 }
 // Vaso de agua fría con hielo (base en x, y).
@@ -83,7 +83,7 @@ function Olla({ T, x, y, s = 1, color = UM.caldo, vapor = 1, children }) {
 }
 // Hifas al microscopio: tubos con septos que se agrietan (rompe 0..1).
 function Hifas({ T, rompe = 0 }) {
-  const filas = [640, 790, 940, 1090];
+  const filas = [585, 735, 885, 1035, 1185, 1335];
   return <g>
     {filas.map((yy, i) => { const dx = (i % 2) * 90 - 40;
       return <g key={i} transform={`translate(${dx} ${yy + Math.sin(T * 0.8 + i) * 4})`}>
@@ -184,29 +184,29 @@ function UmamiShot() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Mesa y={1120} />
-          <ellipse cx={360} cy={1125} rx={190 * kclamp(caida, 0.3, 1)} ry={22} fill="rgba(0,0,0,.25)" />
-          <Shiitake T={T} x={360} y={klerp(640, 1120, kEase.suave(caida)) - reb} s={1.15} seco={1} rot={klerp(-30, 0, caida)} />
+          <Mesa y={1250} />
+          <ellipse cx={540} cy={1258} rx={360 * kclamp(caida, 0.3, 1)} ry={32} fill="rgba(0,0,0,.3)" />
+          <Shiitake T={T} x={540} y={klerp(770, 1250, kEase.suave(caida)) - reb * 1.6} s={2.05} seco={1} rot={klerp(-24, 0, caida)} />
           {T > K.G + 2.4 && [0, 1, 2, 3, 4, 5, 6, 7].map((i) => { const k = kprog(T, K.G + 2.4 + i * 0.07, K.G + 3.2 + i * 0.07, kEase.sale); const a = -Math.PI * (0.15 + i * 0.1);
-            return <GMP key={i} x={360 + Math.cos(a) * 260 * k} y={960 + Math.sin(a) * 260 * k} r={16} o={k} brillo={1} />; })}
+            return <GMP key={i} x={540 + Math.cos(a) * 370 * k} y={965 + Math.sin(a) * 370 * k} r={24} o={k} brillo={1} />; })}
         </>)}
       </Escena>
       {/* 1 · el hongo: shiitake (fresco, para reconocerlo) */}
       <Escena T={T} a={K.H} b={K.F} zoom={0.06}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<><Mesa y={1150} /><Shiitake T={T} x={420} y={1150} s={1.6} seco={1} crece={kprog(T, K.H - 0.2, K.H + 0.6)} /></>)}
+        {fsvg(<><Mesa y={1250} /><Shiitake T={T} x={540} y={1250} s={2.3} seco={1} /></>)}
       </Escena>
       {/* 2 · fresco contra seco */}
       <Escena T={T} a={K.F} b={K.Ce} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Mesa y={1130} />
-          <line x1={540} y1={560} x2={540} y2={1120} stroke={KC.ink} strokeWidth={6} strokeDasharray="20 14" />
-          <Shiitake T={T} x={270} y={1130} s={0.95} seco={0} />
-          <Shiitake T={T} x={810} y={1130} s={0.95} seco={1} />
-          {[[230, 880], [300, 830], [260, 940]].map(([a, b], i) => <GMP key={i} x={a} y={b} r={15} o={kprog(T, K.F + 0.6 + i * 0.15, K.F + 0.9 + i * 0.15)} />)}
-          {Array.from({ length: 22 }, (_, i) => { const a = 700 + (i % 6) * 44 + ((i / 6 | 0) % 2) * 22, b = 790 + (i / 6 | 0) * 44;
-            return <GMP key={'s' + i} x={a} y={b} r={15} o={kprog(T, K.F + 2.4 + i * 0.05, K.F + 2.7 + i * 0.05)} brillo={0.6} />; })}
+          <Mesa y={1250} />
+          <line x1={540} y1={700} x2={540} y2={1240} stroke={KC.ink} strokeWidth={6} strokeDasharray="20 14" />
+          <Shiitake T={T} x={270} y={1250} s={1} seco={0} />
+          <Shiitake T={T} x={810} y={1250} s={1} seco={1} />
+          {[[225, 985], [305, 930], [262, 1045]].map(([a, b], i) => <GMP key={i} x={a} y={b} r={19} o={kprog(T, K.F + 0.6 + i * 0.15, K.F + 0.9 + i * 0.15)} />)}
+          {Array.from({ length: 22 }, (_, i) => { const a = 680 + (i % 6) * 52 + ((i / 6 | 0) % 2) * 26, b = 836 + (i / 6 | 0) * 52;
+            return <GMP key={'s' + i} x={a} y={b} r={19} o={kprog(T, K.F + 2.4 + i * 0.05, K.F + 2.7 + i * 0.05)} brillo={0.6} />; })}
         </>)}
       </Escena>
       {/* 3 · por dentro: al secarse, las células se rompen (fondo oscuro) */}
@@ -218,9 +218,9 @@ function UmamiShot() {
       {/* 4 · al calentarlo: tijeras (ribonucleasas) cortan ARN y sueltan guanilato */}
       <Escena T={T} a={K.Ti} b={K.Te} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <div style={{ position:'absolute', left:0, right:0, bottom:560, height:420, background:`linear-gradient(to top, rgba(255,120,40,${0.55 * kprog(T, K.Ti, K.Ti + 0.8)}), transparent)` }}></div>
+        <div style={{ position:'absolute', left:0, right:0, bottom:0, height:1050, background:`linear-gradient(to top, rgba(255,120,40,${0.42 * kprog(T, K.Ti, K.Ti + 0.8)}), transparent)` }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(60 940) scale(1.15) translate(-60 -880)">
           {(() => { const cortes = Math.floor(kprog(T, K.Ti + 1.0, K.Ti + 3.6) * 5.99); const tx = 90 + Math.min(cortes + 1, 5) * 150 - 100;
             return <>
               <HebraARN T={T} x={90} y={880} w={900} cortes={cortes} n={6} />
@@ -228,26 +228,27 @@ function UmamiShot() {
               {Array.from({ length: cortes }, (_, i) => { const t0 = K.Ti + 1.0 + (i + 1) * 0.43; const k = kprog(T, t0, t0 + 0.9, kEase.sale);
                 return <GMP key={i} x={90 + (i + 1) * 150} y={910 + k * 200} r={20} brillo={1} />; })}
             </>; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · temperatura: 60–70 °C */}
       <Escena T={T} a={K.Te} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Termometro x={300} y={1200} nivel={klerp(20, 66, kprog(T, K.Te + 0.1, K.Te + 1.6, kEase.sale))} franja={kprog(T, K.Te + 1.2, K.Te + 1.7)} />
-          {T > K.Te + 1.4 && <Tijeras x={640} y={480 - 8 * Math.sin(T * 6)} s={1.2} abre={0.5 + 0.5 * Math.sin(T * 12)} />}
+          <g transform="translate(300 1400) scale(1.1)"><Termometro x={0} y={0} nivel={klerp(20, 66, kprog(T, K.Te + 0.1, K.Te + 1.6, kEase.sale))} franja={kprog(T, K.Te + 1.2, K.Te + 1.7)} /></g>
+          {/* las tijeras están desde el inicio (atenuadas y quietas) y se ponen a cortar cuando el termómetro llega a la franja */}
+          <g opacity={0.35 + 0.65 * kprog(T, K.Te + 1.2, K.Te + 1.5)}><Tijeras x={740} y={1140 - (T > K.Te + 1.4 ? 8 * Math.sin(T * 6) : 0)} s={2.2} abre={T > K.Te + 1.4 ? 0.5 + 0.5 * Math.sin(T * 12) : 0.3} /></g>
         </>)}
       </Escena>
       {/* 6 · otra enzima lo deshace a temperatura ambiente → remojo en agua fría */}
       <Escena T={T} a={K.A} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <rect x={40} y={720} width={470} height={460} rx={30} fill="rgba(255,138,31,.85)" stroke={KC.ink} strokeWidth={7} />
-          <rect x={570} y={720} width={470} height={460} rx={30} fill="rgba(0,210,255,.85)" stroke={KC.ink} strokeWidth={7} />
-          <Nucleotidasa T={T} x={170} y={960} s={1.2} come={1} />
+          <rect x={40} y={600} width={470} height={740} rx={30} fill="#3b2412" stroke={KC.orange} strokeWidth={7} />
+          <rect x={570} y={600} width={470} height={740} rx={30} fill="#0c3140" stroke={KC.cyan} strokeWidth={7} />
+          <Nucleotidasa T={T} x={190} y={980} s={2} come={1} />
           {Array.from({ length: 5 }, (_, i) => { const t0 = K.A + 0.4 + i * 0.45; const k = kprog(T, t0, t0 + 0.45);
-            return k < 1 ? <GMP key={i} x={klerp(460, 230, k)} y={960} r={18} o={1 - k * 0.6} /> : null; })}
-          <VasoFrio T={T} x={805} y={1170} s={1.0} dentro={<g opacity={kprog(T, K.A + 2.0, K.A + 2.6)}><Shiitake T={T} x={0} y={-60} s={0.45} seco={0.6} />
+            return k < 1 ? <GMP key={i} x={klerp(475, 270, k)} y={980} r={25} o={1 - k * 0.6} /> : null; })}
+          <VasoFrio T={T} x={805} y={1300} s={1.75} dentro={<g opacity={kprog(T, K.A + 2.0, K.A + 2.6)}><Shiitake T={T} x={0} y={-60} s={0.45} seco={0.6} />
             <Nucleotidasa T={T} x={-30} y={-150} s={0.45} come={0} dormida={1} />
             {[[-50, -110], [40, -120], [10, -90]].map(([a, b], i) => <GMP key={i} x={a} y={b} r={11} />)}</g>} />
         </>)}
@@ -256,35 +257,38 @@ function UmamiShot() {
       <Escena T={T} a={K.P} b={K.R} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <g transform={`translate(280 1030) rotate(${-8 + Math.sin(T * 3) * 3})`}>
+          <g transform={`translate(330 1160) rotate(${-8 + Math.sin(T * 3) * 3}) scale(1.7)`}>
             <ellipse cx={0} cy={0} rx={130} ry={60} fill="#dfe6ee" stroke={KC.ink} strokeWidth={8} />
             <rect x={110} y={-14} width={260} height={28} rx={14} fill="#dfe6ee" stroke={KC.ink} strokeWidth={7} />
             {[[-30, -14], [0, -24], [26, -12], [-8, -6], [16, -30]].map(([a, b], i) => <GMP key={i} x={a} y={b} r={13} brillo={1} />)}
           </g>
-          <Interrogacion T={T} x={280} y={820} tam={380} />
+          <Interrogacion T={T} x={330} y={900} tam={500} />
         </>)}
       </Escena>
       {/* 8–10 · el receptor: atrapamoscas (modelo), glutamato y nucleótido */}
       <Escena T={T} a={K.R} b={K.E} zoom={0.04} origen="50% 60%">
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<Receptor T={T} x={400} y={980}
+        {fsvg(<g transform="translate(375 1120) scale(1.3)"><Receptor T={T} x={0} y={0}
           c={kprog(T, K.Gl + 1.2, K.Gl + 2.0, kEase.sale) * 0.6 + kprog(T, K.N + 1.0, K.N + 1.6, kEase.sale) * 0.4}
           glu={kprog(T, K.Gl + 0.2, K.Gl + 1.2, kEase.sale)} nuc={kprog(T, K.N + 0.1, K.N + 1.0, kEase.sale)}
-          brillo={kprog(T, K.N + 1.0, K.N + 1.4) * (0.6 + 0.4 * Math.sin(T * 5))} />)}
+          brillo={kprog(T, K.N + 1.0, K.N + 1.4) * (0.6 + 0.4 * Math.sin(T * 5))} /></g>)}
       </Escena>
       {/* 11 · el estudio de 2008 */}
       <Escena T={T} a={K.E} b={K.U} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<g transform="translate(540 1010)">
-          {[0, 1, 2, 3, 4].map((i) => { const cambia = kprog(T, K.E + 0.8 + i * 0.3, K.E + 1.1 + i * 0.3, kEase.rebote);
-            return <rect key={i} x={-330 + i * 132} y={-60 - cambia * 30} width={110} height={110} rx={18} fill={mixHex(UM.t1r1, UM.t1r3, i % 2 ? cambia : cambia * 0.5)} stroke={KC.ink} strokeWidth={7} />; })}
-        </g>)}
+        {fsvg(<>
+          <g transform="translate(375 1120) scale(1.3)" opacity={0.5}><Receptor T={T} x={0} y={0} c={1} glu={1} nuc={1} /></g>
+          <g transform="translate(540 650) scale(1.25)">
+            {[0, 1, 2, 3, 4].map((i) => { const cambia = kprog(T, K.E + 0.8 + i * 0.3, K.E + 1.1 + i * 0.3, kEase.rebote);
+              return <rect key={i} x={-330 + i * 132} y={-60 - cambia * 30} width={110} height={110} rx={18} fill={mixHex(UM.t1r1, UM.t1r3, i % 2 ? cambia : cambia * 0.5)} stroke={KC.ink} strokeWidth={7} />; })}
+          </g>
+        </>)}
       </Escena>
       {/* 12 · menos glutamato para notarlo (umbral que baja, sin número) */}
       <Escena T={T} a={K.U} b={K.D} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1000) scale(1.22) translate(-540 -880)">
           <line x1={130} y1={1060} x2={950} y2={1060} stroke={KC.ink} strokeWidth={8} />
           {(() => { const u = kprog(T, K.U + 0.3, K.U + 1.3, kEase.sale), v = kprog(T, K.U + 1.8, K.U + 2.8, kEase.sale);
             const umbral = klerp(680, 880, kprog(T, K.U + 2.0, K.U + 3.2, kEase.suave));
@@ -296,13 +300,13 @@ function UmamiShot() {
             </>; })()}
           <text x={340} y={1105} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>solo glutamato</text>
           <text x={740} y={1105} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>+ pizca de IMP</text>
-        </>)}
+        </g>)}
       </Escena>
       {/* 13 · el caldo: kombu (glutamato) + hongo remojado en frío (guanilato) */}
       <Escena T={T} a={K.D} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Olla T={T} x={540} y={1150} s={1.15} vapor={1}>
+          <Olla T={T} x={540} y={1330} s={1.55} vapor={1}>
             {(() => { const k1 = kprog(T, K.D + 0.3, K.D + 1.2, kEase.sale), k2 = kprog(T, K.D + 1.6, K.D + 2.5, kEase.sale);
               return <>
                 <g transform={`translate(${-110} ${klerp(-620, -205, k1)}) rotate(${klerp(-30, -8, k1)})`}><rect x={-120} y={-26} width={240} height={52} rx={20} fill={UM.kombu} stroke={KC.ink} strokeWidth={6} /></g>
@@ -317,63 +321,63 @@ function UmamiShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Mesa y={1120} />
-          <Shiitake T={T} x={360} y={1120} s={1.15} seco={klerp(1, 0.35, kprog(T, K.C + 0.4, K.C + 2.0, kEase.suave))} />
-          <g opacity={kprog(T, K.C + 0.6, K.C + 1.2)}><VasoFrio T={T} x={820} y={1120} s={0.8} /></g>
+          <Mesa y={1250} />
+          <Shiitake T={T} x={330} y={1250} s={1.3} seco={klerp(1, 0.35, kprog(T, K.C + 0.4, K.C + 2.0, kEase.suave))} />
+          <g opacity={kprog(T, K.C + 0.05, K.C + 0.55)}><VasoFrio T={T} x={850} y={1250} s={1.6} /></g>
           {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => { const k = kprog(T, K.C + 2.2 + i * 0.07, K.C + 3.0 + i * 0.07, kEase.sale); const a = -Math.PI * (0.15 + i * 0.1);
-            return <GMP key={i} x={360 + Math.cos(a) * 270 * k} y={950 + Math.sin(a) * 270 * k} r={16} o={k} brillo={1} />; })}
+            return <GMP key={i} x={330 + Math.cos(a) * 270 * k} y={1060 + Math.sin(a) * 270 * k} r={20} o={k} brillo={1} />; })}
         </>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.6} until={K.H - 0.3} texto="¿echado a perder?" x={330} y={470} tam={44} />
-      <Chip T={T} at={K.G + 2.4} until={K.H - 0.3} texto="bomba de umami" x={330} y={580} tam={46} borde={KC.gold} />
-      <Etq T={T} at={K.H + 0.3} until={K.F - 0.2} x={60} y={470} texto="shiitake seco" tam={44} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.7} until={K.F - 0.2} x={60} y={530} texto="Lentinula edodes" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.F + 0.2} until={K.Ce - 0.2} texto="fresco" x={270} y={700} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.F + 1.6} until={K.Ce - 0.2} texto="seco" x={810} y={700} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.F + 0.6} until={K.Ce - 0.2} x={60} y={430} texto="● guanilato · 5′-GMP" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.F + 3.2} until={K.Ce - 0.2} x={60} y={1210} texto="esquemático: sin escala de cantidad" tam={22} color={KC.ink} />
-      <Chip T={T} at={K.Ce + 0.1} until={K.Ti - 0.2} texto="POR DENTRO · HIFAS DEL SOMBRERO" x={480} y={470} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ce + 1.2} until={K.Ti - 0.2} x={60} y={540} texto="ARN" tam={34} color={KC.lilac} />
-      <Chip T={T} at={K.Ti + 0.2} until={K.Te - 0.2} texto="AL CALENTARLO" x={330} y={470} tam={34} borde={KC.orange} mono />
-      <Etq T={T} at={K.Ti + 0.8} until={K.Te - 0.2} x={60} y={560} texto="ribonucleasas = tijeras" tam={32} color={UM.ribo} />
-      <Etq T={T} at={K.Ti + 0.4} until={K.Te - 0.2} x={60} y={790} texto="ARN" tam={30} color={KC.lilac} />
-      <Etq T={T} at={K.Ti + 2.0} until={K.Te - 0.2} x={60} y={630} texto="● guanilato que se suelta" tam={30} color={UM.gmp} />
-      <Chip T={T} at={K.Te + 1.5} until={K.A - 0.2} texto="60–70 °C" x={740} y={790} tam={60} borde={KC.mint} />
-      <Etq T={T} at={K.Te + 1.8} until={K.A - 0.2} x={540} y={890} texto="aquí cortan mejor" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.A + 0.2} until={K.P - 0.2} texto="25 °C" x={275} y={770} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.A + 0.5} until={K.P - 0.2} x={70} y={1090} texto="nucleotidasa" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.A + 0.9} until={K.P - 0.2} x={70} y={1135} texto="se come el guanilato" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.A + 2.0} until={K.P - 0.2} texto="agua fría" x={805} y={770} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.A + 2.6} until={K.P - 0.2} texto="remojo en frío" x={300} y={620} tam={40} borde={KC.cyan} />
-      <Chip T={T} at={K.R + 0.2} until={K.E - 0.2} texto="TU RECEPTOR DEL UMAMI" x={380} y={440} tam={32} borde={KC.mint} mono />
-      <Etq T={T} at={K.R + 0.8} until={K.E - 0.2} x={60} y={520} texto="modelo (esquemático)" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.R + 1.2} until={K.E - 0.2} x={60} y={1030} texto="T1R1" tam={34} color={UM.t1r1} />
-      <Etq T={T} at={K.R + 1.6} until={K.E - 0.2} x={1040} y={1030} texto="T1R3" lado="izq" tam={34} color={UM.t1r3} />
-      <Etq T={T} at={K.R + 2.2} until={K.Gl - 0.1} x={60} y={600} texto="dominio «atrapamoscas»" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Gl + 0.5} until={K.E - 0.2} x={330} y={930} lado="izq" texto="glutamato" tam={28} color="#8fb0ff" />
-      <Etq T={T} at={K.N + 0.6} until={K.E - 0.2} x={300} y={740} lado="izq" texto="nucleótido" tam={28} color={UM.gmp} />
-      <Chip T={T} at={K.N + 1.3} until={K.E - 0.2} texto="más cerrada" x={800} y={580} tam={36} borde={KC.gold} />
-      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.U - 0.2} anio="2008" quien="Zhang et al. · San Diego" revista="PNAS, 2008 · receptores mutados pieza por pieza" x={540} y={640} />
-      <Chip T={T} at={K.U + 0.2} until={K.D - 0.2} texto="pruebas de sabor en personas" x={330} y={460} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.U + 2.2} until={K.D - 0.2} x={60} y={620} texto="nivel para notarlo" tam={28} color={KC.red} />
-      <Chip T={T} at={K.U + 3.2} until={K.D - 0.2} texto="menos glutamato para notarlo" x={330} y={540} tam={30} borde={KC.red} />
-      <Etq T={T} at={K.D + 0.6} until={K.C - 0.2} x={60} y={460} texto="kombu → glutamato" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.D + 1.9} until={K.C - 0.2} x={60} y={515} texto="hongo remojado → guanilato" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.D + 3.0} until={K.C - 0.2} texto="se potencian en el receptor" x={360} y={620} tam={36} borde={KC.gold} />
-      <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="bomba de umami ✓" x={330} y={520} tam={46} borde={KC.gold} />
+      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.6} until={K.H - 0.3} texto="¿echado a perder?" x={540} y={325} tam={44} />
+      <Chip T={T} at={K.G + 2.4} until={K.H - 0.3} texto="bomba de umami" x={540} y={420} tam={46} borde={KC.gold} />
+      <Etq T={T} at={K.H + 0.3} until={K.F - 0.2} x={60} y={590} texto="shiitake seco" tam={44} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.7} until={K.F - 0.2} x={60} y={655} texto="Lentinula edodes" it tam={40} color={KC.ink} />
+      <Chip T={T} at={K.F + 0.2} until={K.Ce - 0.2} texto="fresco" x={270} y={760} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.F + 1.6} until={K.Ce - 0.2} texto="seco" x={810} y={760} tam={40} borde={KC.gold} />
+      <Etq T={T} at={K.F + 0.6} until={K.Ce - 0.2} x={60} y={640} texto="● guanilato · 5′-GMP" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.F + 3.2} until={K.Ce - 0.2} x={60} y={1340} texto="esquemático: sin escala de cantidad" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Ce + 0.1} until={K.Ti - 0.2} texto="POR DENTRO · HIFAS DEL SOMBRERO" x={480} y={450} tam={30} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Ce + 1.2} until={K.Ti - 0.2} x={262} y={660} texto="ARN" tam={34} color={KC.lilac} />
+      <Chip T={T} at={K.Ti + 0.2} until={K.Te - 0.2} texto="AL CALENTARLO" x={330} y={560} tam={34} borde={KC.orange} mono />
+      <Etq T={T} at={K.Ti + 0.8} until={K.Te - 0.2} x={60} y={650} texto="ribonucleasas = tijeras" tam={34} color={UM.ribo} />
+      <Etq T={T} at={K.Ti + 0.4} until={K.Te - 0.2} x={60} y={1025} texto="ARN" tam={32} color={KC.lilac} />
+      <Etq T={T} at={K.Ti + 2.0} until={K.Te - 0.2} x={60} y={715} texto="● guanilato que se suelta" tam={32} color={UM.gmp} />
+      <Chip T={T} at={K.Te + 1.5} until={K.A - 0.2} texto="60–70 °C" x={760} y={866} tam={60} borde={KC.mint} />
+      <Etq T={T} at={K.Te + 1.8} until={K.A - 0.2} x={560} y={968} texto="aquí cortan mejor" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.A + 0.2} until={K.P - 0.2} texto="25 °C" x={275} y={668} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.A + 0.5} until={K.P - 0.2} x={70} y={1210} texto="nucleotidasa" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.A + 0.9} until={K.P - 0.2} x={70} y={1260} texto="se come el guanilato" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.A + 2.0} until={K.P - 0.2} texto="agua fría" x={805} y={668} tam={38} borde={KC.cyan} />
+      <Chip T={T} at={K.A + 2.6} until={K.P - 0.2} texto="remojo en frío" x={540} y={510} tam={42} borde={KC.cyan} />
+      <Chip T={T} at={K.R + 0.2} until={K.E - 0.2} texto="TU RECEPTOR DEL UMAMI" x={540} y={430} tam={32} borde={KC.mint} mono />
+      <Etq T={T} at={K.R + 0.8} until={K.E - 0.2} x={60} y={520} texto="modelo (esquemático)" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.R + 1.2} until={K.E - 0.2} x={60} y={1185} texto="T1R1" tam={34} color={UM.t1r1} />
+      <Etq T={T} at={K.R + 1.6} until={K.E - 0.2} x={1040} y={1185} texto="T1R3" lado="izq" tam={34} color={UM.t1r3} />
+      <Etq T={T} at={K.R + 2.2} until={K.Gl - 0.1} x={60} y={590} texto="dominio «atrapamoscas»" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Gl + 0.5} until={K.E - 0.2} x={262} y={1042} lado="izq" texto="glutamato" tam={28} color="#8fb0ff" />
+      <Etq T={T} at={K.N + 0.6} until={K.E - 0.2} x={268} y={808} lado="izq" texto="nucleótido" tam={28} color={UM.gmp} />
+      <Chip T={T} at={K.N + 1.3} until={K.E - 0.2} texto="más cerrada" x={800} y={690} tam={38} borde={KC.gold} />
+      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.U - 0.2} anio="2008" quien="Zhang et al. · San Diego" revista="PNAS, 2008 · receptores mutados pieza por pieza" x={540} y={385} />
+      <Chip T={T} at={K.U + 0.2} until={K.D - 0.2} texto="pruebas de sabor en personas" x={540} y={500} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.U + 2.2} until={K.D - 0.2} x={60} y={690} texto="nivel para notarlo" tam={30} color={KC.red} />
+      <Chip T={T} at={K.U + 3.2} until={K.D - 0.2} texto="menos glutamato para notarlo" x={540} y={590} tam={34} borde={KC.red} />
+      <Etq T={T} at={K.D + 0.6} until={K.C - 0.2} x={60} y={470} texto="kombu → glutamato" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.D + 1.9} until={K.C - 0.2} x={60} y={530} texto="hongo remojado → guanilato" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.D + 3.0} until={K.C - 0.2} texto="se potencian en el receptor" x={540} y={630} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="bomba de umami ✓" x={330} y={680} tam={46} borde={KC.gold} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="2 cm" largo={90} />
-      <BarraEscala T={T} at={K.H} until={K.F} texto="2 cm" largo={125} />
-      <BarraEscala T={T} at={K.F} until={K.Ce} texto="2 cm" largo={75} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="2 cm" largo={160} />
+      <BarraEscala T={T} at={K.H} until={K.F} texto="2 cm" largo={180} />
+      <BarraEscala T={T} at={K.F} until={K.Ce} texto="2 cm" largo={78} />
       <BarraEscala T={T} at={K.Ce} until={K.Ti} texto="10 µm" largo={200} />
       <BarraEscala T={T} at={K.Ti} until={K.Te} texto="ARN: esquemático" largo={0} />
-      <BarraEscala T={T} at={K.A} until={K.P} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={K.R} until={K.E} texto="5 nm (esquemático)" largo={180} />
-      <BarraEscala T={T} at={K.D} until={K.C} texto="10 cm" largo={130} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={90} />
+      <BarraEscala T={T} at={K.A} until={K.P} texto="5 cm" largo={192} />
+      <BarraEscala T={T} at={K.R} until={K.E} texto="5 nm (esquemático)" largo={234} />
+      <BarraEscala T={T} at={K.D} until={K.C} texto="10 cm" largo={275} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={102} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No está echado a perder: *bomba de umami.*" />
