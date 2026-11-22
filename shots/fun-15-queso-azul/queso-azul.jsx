@@ -291,7 +291,7 @@ function QuesoAzulShot() {
       <Escena T={T} a={K.E} b={K.Po} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          {Array.from({ length: 34 }, (_, i) => { const on = kprog(T, K.E + 0.9 + i * 0.04, K.E + 1.2 + i * 0.04, kEase.rebote); return on > 0 ? <Tubo key={i} x={120 + (i % 17) * 52} y={780 + Math.floor(i / 17) * 110} s={on} /> : null; })}
+          {Array.from({ length: 34 }, (_, i) => { const on = kprog(T, K.E + 0.2 + i * 0.04, K.E + 0.5 + i * 0.04, kEase.rebote) /* modo cine: los tubos entran al empezar la escena */; return on > 0 ? <Tubo key={i} x={120 + (i % 17) * 52} y={780 + Math.floor(i / 17) * 110} s={on} /> : null; })}
           {(() => { const u = kprog(T, K.E + 2.6, K.E + 3.8, kEase.sale); if (u <= 0) return null; return <g>
             <path d={`M 540 1080 L 540 ${klerp(1080, 1000, kclamp(u * 2, 0, 1))}`} stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
             {u > 0.5 && <><path d={`M 540 1000 Q 420 980 ${klerp(540, 330, (u - 0.5) * 2)} ${klerp(1000, 950, (u - 0.5) * 2)}`} stroke={QZ.vena} strokeWidth={16} fill="none" strokeLinecap="round" />

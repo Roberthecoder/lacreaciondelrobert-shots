@@ -75,9 +75,9 @@ function Bacterias() {
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<g transform="translate(540 860) rotate(-4)">
           <rect x={-330} y={-330} width={660} height={640} rx={10} fill="#f6e7c1" stroke={KC.ink} strokeWidth={8} />
-          <text x={-280} y={-250} style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>AÑOS 70</text>
+          <text x={-280} y={-250} style={{ font:`400 70px ${KF.titulo}` }} fill="#0b1020">AÑOS 70</text>
           {[0, 1, 2, 3, 4, 5].map((k) => <rect key={k} x={-280} y={-180 + k * 70} width={k === 2 ? 560 * kprog(T, K.O + 0.6, K.O + 1.6) : 520} height={18} rx={9} fill={k === 2 ? KC.red : '#cdbb94'} />)}
-          <text x={-280} y={260} style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.O + 1.6, K.O + 2.2)}>~10¹⁴ bacterias (estimado)</text>
+          <text x={-280} y={260} style={{ font:`700 34px ${KF.mono}` }} fill="#0b1020" opacity={kprog(T, K.O + 1.6, K.O + 2.2)}>~10¹⁴ bacterias (estimado)</text>
         </g>)}
       </Escena>
       {/* 3–4 · el litro de intestino vs. solo el colon */}
@@ -93,16 +93,21 @@ function Bacterias() {
       {/* 6 · 36 billones de células tuyas (hombre, Hatton et al. 2023); ~4 de cada 5 sin núcleo (≈29 de 36) */}
       <Escena T={T} a={K.H} b={K.Cu}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>{T > K.H + 2.4 && Array.from({ length: 6 }, (_, i) => <Globulo key={i} x={150 + i * 155} y={1500 + (i % 2) * 30} r={52} rot={T * 15 + i * 30} />)}</>)}
-        <Cuadricula T={T} cols={25} filas={4} llenado={kprog(T, K.H + 2.4, K.H + 4.4)} tramos={[{ desde: 0, hasta: 0.8, color: ROJO }, { desde: 0.8, hasta: 1, color: KC.blue }]} x={90} y={830} ancho={900} alto={150} vacio="rgba(0,0,0,.12)" />
+        {/* modo cine: los glóbulos y la cuadrícula vacía están desde que empieza la escena */}
+        {svg(<g opacity={kprog(T, K.H + 0.1, K.H + 0.6)}>{Array.from({ length: 6 }, (_, i) => <Globulo key={i} x={150 + i * 155} y={1500 + (i % 2) * 30} r={52} rot={T * 15 + i * 30} />)}</g>)}
+        <Cuadricula T={T} cols={25} filas={4} llenado={kprog(T, K.H + 2.4, K.H + 4.4)} tramos={[{ desde: 0, hasta: 0.8, color: ROJO }, { desde: 0.8, hasta: 1, color: KC.blue }]} x={90} y={830} ancho={900} alto={150} vacio="rgba(255,255,255,.1)" />
       </Escena>
       {/* 7 · la cuenta: 36 (2023) contra 38 (2016) */}
       <Escena T={T} a={K.Cu} b={K.E}>
         <FondoLunares color={KC.cyan} />
+        {/* modo cine: a cada barra, su sujeto (tu célula y la bacteria del gancho) */}
+        {svg(<g opacity={kprog(T, K.Cu + 0.2, K.Cu + 0.7)}><Globulo x={100} y={940} r={58} rot={T * 10} /><Bacteria x={970} y={940} rot={T * 20} s={0.7} T={T} color={BAC} /></g>)}
       </Escena>
       {/* 8 · el estudio */}
       <Escena T={T} a={K.E} b={K.P}>
         <FondoLunares color={KC.orange} />
+        {/* modo cine: el sujeto sigue en pantalla (la célula y la bacteria del gancho, frente a frente) */}
+        {svg(<g opacity={kprog(T, K.E, K.E + 0.5)}><Globulo x={320} y={1040} r={130} rot={T * 10} /><Bacteria x={740} y={1040 + Math.sin(T * 2) * 8} rot={T * 20} s={0.7} T={T} color={BAC} /></g>)}
       </Escena>
       {/* 9 · el peso: ~200 g */}
       <Escena T={T} a={K.P} b={K.B}>
@@ -135,7 +140,7 @@ function Bacterias() {
         izq={{ valor: 36, etiqueta: 'células tuyas (2023)', color: ROJO, texto: '36' }} der={{ valor: 38, etiqueta: 'bacterias (2016)', color: BAC, texto: '38' }} />
       <Chip T={T} at={K.Cu + 0.6} until={K.E - 0.2} texto="billones" x={540} y={470} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Cu + 2.4} until={K.E - 0.2} texto="≈ una a una" x={540} y={1500} tam={44} borde={KC.gold} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.P - 0.3} anio="2016" quien="Instituto Weizmann, Israel" revista="Sender, Fuchs y Milo · PLoS Biology" x={600} y={800} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.P - 0.3} anio="2016" quien="Instituto Weizmann, Israel" revista="Sender, Fuchs y Milo · PLoS Biology" x={600} y={520} />
       <MitoTachado T={T} at={K.P + 2.2} tacharEn={K.P + 3.0} until={K.B - 0.2} texto="1 a 3 kg" x={320} y={460} tam={52} />
       <Chip T={T} at={K.P + 1.2} until={K.B - 0.2} texto="≈ 200 g" x={540} y={680} tam={64} borde={BAC} />
       <Chip T={T} at={K.C + 2.0} until={K.Ou - 0.1} texto="casi mitad y mitad" x={540} y={440} tam={44} borde={KC.gold} />

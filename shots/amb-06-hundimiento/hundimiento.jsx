@@ -151,6 +151,8 @@ function HundimientoShot() {
       {/* 9 · la historia */}
       <Escena T={T} a={K.H} b={K.Gr}>
         <FondoLunares color={KC.yellow} />
+        {/* modo cine: el sujeto sigue en pantalla (la ciudad sobre el lodo del lago, atenuada, bajando despacio) */}
+        {svg(<g opacity={0.6 * kprog(T, K.H, K.H + 0.5)}><Subsuelo T={T} aplasta={kprog(T, K.H + 0.5, K.Gr, kEase.suave)} bombea={1} /></g>)}
       </Escena>
       {/* 10 · grietas */}
       <Escena T={T} a={K.Gr} b={K.C}>
@@ -178,8 +180,8 @@ function HundimientoShot() {
       <Comparativa T={T} at={K.U + 0.1} until={K.H - 0.2} max={20} y={560} alto={420}
         izq={{ valor: 3.47, texto: '3.5 mm', etiqueta: 'tus uñas', color: KC.pink }} der={{ valor: 20, texto: '+20 mm', etiqueta: 'el suelo', color: '#2f6dff' }} />
       <Chip T={T} at={K.U + 0.5} until={K.H - 0.2} texto="por mes" y={470} x={540} tam={34} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.H + 0.2} until={K.Gr - 0.3} anio="1925" quien="un ingeniero lo documenta" y={620} x={600} />
-      <Chip T={T} at={K.H + 3.6} until={K.Gr - 0.3} texto="años 90: ≈ 35 cm por año" y={1000} tam={40} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.H + 0.2} until={K.Gr - 0.3} anio="1925" quien="un ingeniero lo documenta" y={255} x={640} />
+      <Chip T={T} at={K.H + 3.6} until={K.Gr - 0.3} texto="años 90: ≈ 35 cm por año" y={1430} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Gr + 0.3} until={K.C - 0.2} texto="calles · edificios · tuberías · Metro" y={430} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="el Ángel no creció: la ciudad bajó" y={1440} tam={34} borde={KC.gold} />
 

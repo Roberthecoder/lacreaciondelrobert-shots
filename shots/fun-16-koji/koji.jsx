@@ -298,8 +298,8 @@ function KojiShot() {
         <Ambiente T={T} n={26} color="rgba(255,220,160,.25)" />
         {fsvg(<>
           <CadenaCorta T={T} pts={CADM} t0={K.Mo + 0.3} paso={0.25} colores={[KC.pink, KC.cyan, KC.orange]} r={20} seed={12} dispersa={70} />
-          {[[640, 980, 1], [820, 900, 2], [720, 1110, 3], [900, 1060, 4], [560, 840, 5], [940, 780, 6]].map(([x, y, sd], i) => { const on = kprog(T, K.Mo + 0.8 + i * 0.1, K.Mo + 1.1 + i * 0.1, kEase.rebote); return on > 0 ? <Tetrada key={i} T={T} x={x} y={y} s={on} seed={sd} /> : null; })}
-          {[[300, 760, 1], [520, 640, 2]].map(([x, y, sd], i) => { const on = kprog(T, K.Mo + 1.6 + i * 0.2, K.Mo + 2.0 + i * 0.2, kEase.rebote); return on > 0 ? <Levadura key={i} T={T} x={x} y={y} s={on} seed={sd} brote={kprog(T, K.Mo + 2.2, K.Mo + 3.4)} /> : null; })}
+          {[[640, 1020, 1], [820, 820, 2], [720, 1110, 3], [900, 1060, 4], [560, 840, 5], [940, 780, 6]].map(([x, y, sd], i) => { /* modo cine: entran al empezar la escena */ const on = kprog(T, K.Mo + 0.15 + i * 0.08, K.Mo + 0.45 + i * 0.08, kEase.rebote); return on > 0 ? <Tetrada key={i} T={T} x={x} y={y} s={on} seed={sd} /> : null; })}
+          {[[300, 760, 1], [520, 640, 2]].map(([x, y, sd], i) => { const on = kprog(T, K.Mo + 0.3 + i * 0.2, K.Mo + 0.7 + i * 0.2, kEase.rebote); return on > 0 ? <Levadura key={i} T={T} x={x} y={y} s={on} seed={sd} brote={kprog(T, K.Mo + 2.2, K.Mo + 3.4)} /> : null; })}
           <Calendario T={T} at={K.Mo + 2.4} x={170} y={1000} />
           {Array.from({ length: 10 }, (_, i) => { const u = ((T * 0.5 + i / 10) % 1); return T > K.Mo + 2.0 ? <circle key={i} cx={260 + (i % 5) * 70 + Math.sin(T * 3 + i) * 8} cy={600 - u * 160} r={6 + (i % 3) * 3} fill="none" stroke="#fff" strokeWidth={3} opacity={(1 - u) * 0.7} /> : null; })}
         </>)}
@@ -320,15 +320,15 @@ function KojiShot() {
       <Escena T={T} a={K.E} b={K.Pm} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          {Array.from({ length: 210 }, (_, i) => { const col = i % 21, row = Math.floor(i / 21); const t0 = K.E + 0.8 + i * 0.009; return <Tubo key={i} x={110 + col * 43} y={880 + row * 36} on={kprog(T, t0, t0 + 0.25, kEase.rebote)} />; })}</>)}
+          {Array.from({ length: 210 }, (_, i) => { const col = i % 21, row = Math.floor(i / 21); const t0 = K.E + 0.2 + i * 0.009; /* modo cine: las cepas entran al empezar */ return <Tubo key={i} x={110 + col * 43} y={880 + row * 36} on={kprog(T, t0, t0 + 0.25, kEase.rebote)} />; })}</>)}
       </Escena>
       {/* 10 · el primo con veneno y el koji con los genes apagados (al microscopio) */}
       <Escena T={T} a={K.Pm} b={K.N}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<>
-          <Conidioforo x={290} y={1010} alto={150} rv={40} p={kprog(T, K.Pm + 0.2, K.Pm + 1.6)} color="#b9d23a" n={13} cad={6} T={T} />
-          <Conidioforo x={790} y={1010} alto={150} rv={40} p={kprog(T, K.Pm + 0.6, K.Pm + 2.0)} color={KJ.koji} n={13} cad={6} T={T} />
+          <Conidioforo x={290} y={1010} alto={150} rv={40} p={kprog(T, K.Pm - 0.1, K.Pm + 1.0)} color="#b9d23a" n={13} cad={6} T={T} />
+          <Conidioforo x={790} y={1010} alto={150} rv={40} p={kprog(T, K.Pm, K.Pm + 1.2)} color={KJ.koji} n={13} cad={6} T={T} />
           <TiraGenes x={108} y={1070} p={kprog(T, K.Pm + 1.2, K.Pm + 2.0)} />
           <TiraGenes x={608} y={1070} p={kprog(T, K.Pm + 1.6, K.Pm + 2.4)} huecos={T > K.Pm + 3.3 ? [1, 4] : []} rotos={[2, 5]} apagado={kprog(T, K.Pm + 3.6, K.Pm + 4.2)} />
           {[[110, 610, 0], [230, 570, 1], [350, 610, 2], [170, 690, 3]].map(([x, y, i]) => { const on = kprog(T, K.Pm + 2.2 + i * 0.15, K.Pm + 2.6 + i * 0.15, kEase.rebote); return on > 0 ? <Aflatoxina key={i} x={x} y={y + Math.sin(T * 2 + i) * 8} s={on} rot={T * 20 + i * 30} /> : null; })}
@@ -372,16 +372,16 @@ function KojiShot() {
       <Chip T={T} at={K.Sa + 0.4} until={K.P - 0.2} texto="salmuera: 22–23 % de sal" x={340} y={430} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.Sa + 1.8} until={K.P - 0.2} texto="el koji muere" x={300} y={520} tam={40} borde={KC.red} />
       <Etq T={T} at={K.Mo + 0.5} until={K.Co - 0.3} x={540} y={930} texto="enzimas (siguen)" tam={30} color={KC.cyan} />
-      <Etq T={T} at={K.Mo + 1.0} until={K.Co - 0.3} x={1040} y={1170} texto="Tetragenococcus halophilus" lado="izq" it tam={30} color={KC.mint} />
+      <Etq T={T} at={K.Mo + 1.0} until={K.Co - 0.3} x={1040} y={1200} texto="Tetragenococcus halophilus" lado="izq" it tam={30} color={KC.mint} />
       <Etq T={T} at={K.Mo + 1.8} until={K.Co - 0.3} x={60} y={470} texto="Zygosaccharomyces rouxii" it tam={30} color="#ffd98a" />
-      <Chip T={T} at={K.Mo + 2.4} until={K.Co - 0.3} texto="6–8 meses (método tradicional)" x={620} y={1090} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Mo + 2.4} until={K.Co - 0.3} texto="6–8 meses (método tradicional)" x={540} y={1420} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Co + 0.6} until={K.E - 0.3} texto="azúcar + aminoácido = color" x={360} y={430} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Co + 1.8} until={K.E - 0.3} texto="reacción de Maillard" x={360} y={1240 - 140} tam={36} borde={KC.gold2} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.Pm - 0.2} anio="2006" quien="Higashi-Hiroshima, Japón · 210 cepas" revista="Tominaga et al., Appl. Environ. Microbiol." y={600} />
       <Chip T={T} at={K.Pm + 0.3} until={K.N - 0.3} texto="primos: misma sección Flavi" x={360} y={430} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.Pm + 1.0} until={K.N - 0.3} x={60} y={1120} texto="Aspergillus flavus" it tam={28} color="#d6ea6a" />
       <Etq T={T} at={K.Pm + 1.4} until={K.N - 0.3} x={600} y={1120} texto="A. oryzae (koji)" it tam={28} color={KJ.koji2} />
-      <Etq T={T} at={K.Pm + 2.4} until={K.N - 0.3} x={60} y={510} texto="aflatoxinas" tam={34} color={KC.red} />
+      <Etq T={T} at={K.Pm + 2.4} until={K.N - 0.3} x={60} y={488} texto="aflatoxinas" tam={34} color={KC.red} />
       <Chip T={T} at={K.Pm + 3.8} until={K.N - 0.3} texto="genes apagados o incompletos" x={560} y={1196} tam={26} borde={KC.mint} />
       <Chip T={T} at={K.N + 2.4} until={K.C - 0.3} texto="Brewing Society of Japan" x={400} y={840} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.N + 0.4} until={K.C - 0.3} x={230} y={1170} texto="sake" lado="izq" tam={30} color={KC.texto} />

@@ -140,7 +140,7 @@ function Maillard() {
               : <circle key={i} cx={klerp(px, 540, junta)} cy={klerp(py, 1000, junta)} r={26} fill={i % 2 ? "#c9a14a" : "#e0b070"} stroke={KC.ink} strokeWidth={5} opacity={1 - junta} />;
           })}
           {T > K.Ar && T < K.Ag && <g opacity={kprog(T, K.Ar + 0.3, K.Ar + 0.8) * (1 - kprog(T, K.Co + 0.5, K.Co + 1))}><path d="M 540 400 q 60 40 40 120 q -20 20 -60 10" stroke={KC.texto} strokeWidth={14} fill="none" strokeLinecap="round" /></g>}
-          <RedCafe T={T} f={kprog(T, K.Co + 0.6, K.Co + 3.4) * (1 - kprog(T, K.Pr - 0.4, K.Pr))} />
+          <RedCafe T={T} f={kprog(T, K.Co + 0.6, K.Co + 3.4)} />{/* modo cine: la red dorada ya no se apaga antes de la pregunta; sigue detrás */}
           {T > K.Ag && Array.from({ length: 12 }, (_, i) => { const t0 = K.Ag + 1.8 + (i % 6) * 0.12, u = kprog(T, t0, t0 + 0.7); return u > 0 && u < 1 ? <path key={i} d="M 0 -26 Q 18 0 0 14 Q -18 0 0 -26 Z" transform={`translate(${200 + (i * 71) % 680} ${klerp(500, 1100, u)})`} fill="#7fc8ff" stroke={KC.ink} strokeWidth={4} /> : null; })}
         </SvgCapa>
         <Medidor T={T} at={K.U + 0.2} until={K.Pr - 0.2} valor={(t) => (temp(t) - 20) / 180} etiqueta="temperatura" texto={(v) => Math.round(temp(T)) + ' °C'} y={1480} color={KC.orange} />
@@ -195,8 +195,8 @@ function Maillard() {
       <Chip T={T} at={K.G + 3.0} until={K.U - 0.3} texto="química: azúcar + proteína" x={400} y={470} tam={40} borde={KC.yellow} />
       <Etq T={T} at={K.U + 1.0} until={K.Ca - 0.2} x={60} y={700} texto="azúcar" tam={34} />
       <Etq T={T} at={K.U + 1.0} until={K.Ca - 0.2} x={1030} y={1060} texto="aminoácido" lado="izq" tam={34} />
-      <Chip T={T} at={K.Ca + 0.6} until={K.Ar - 0.2} texto="se reacomoda · se rompe · se junta" x={540} y={1100} tam={36} borde={KC.yellow} />
-      <Chip T={T} at={K.Ar + 0.4} until={K.Co - 0.2} texto="pirazinas → olor a tostado" x={540} y={1100} tam={40} borde="#ffcf6b" />
+      <Chip T={T} at={K.Ca + 0.6} until={K.Ar - 0.2} texto="se reacomoda · se rompe · se junta" x={540} y={1395} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.Ar + 0.4} until={K.Co - 0.2} texto="pirazinas → olor a tostado" x={540} y={1395} tam={40} borde="#ffcf6b" />
       <Chip T={T} at={K.Co + 0.8} until={K.Ag - 0.2} texto="melanoidinas → el dorado" x={540} y={680} tam={40} borde={DORADO} />
       <TarjetaEstudio T={T} at={K.Ma + 0.2} until={K.Ac - 0.3} anio="1912" quien="Louis Camille Maillard" revista="químico francés · azúcar + aminoácido" x={420} y={1580} />
       <TarjetaEstudio T={T} at={K.Ac + 0.2} until={K.Ac + 3.4} anio="2002" quien="Mottram et al. · U. de Reading" revista="Nature · Inglaterra" y={700} />

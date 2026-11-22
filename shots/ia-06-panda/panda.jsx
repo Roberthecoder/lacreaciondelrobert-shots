@@ -184,7 +184,7 @@ function Panda() {
           {T > K.Au + 1.0 && (() => { const sx = klerp(640, 880, acerca), sy = klerp(780, 660, acerca), w = klerp(0.18, 0.62, acerca) * 520, parp = Math.sin(T * 10) > -0.6;
             return <g opacity={parp ? 1 : 0.4}><rect x={sx - w / 2 - 10} y={sy - w / 2 - 10} width={w + 20} height={w + 20} fill="none" stroke="#00ff6a" strokeWidth={8} />
               <rect x={sx + w / 2 + 10 - 360} y={sy - w / 2 - 80} width={360} height={70} fill="#00ff6a" />
-              <text x={sx + w / 2 - 340} y={sy - w / 2 - 30} style={{ font:`700 48px ${KF.mono}` }} fill={KC.ink}>LÍMITE 45</text></g>; })()}
+              <text x={sx + w / 2 - 340} y={sy - w / 2 - 30} style={{ font:`700 48px ${KF.mono}` }} fill="#0b1020">LÍMITE 45</text></g>; })()}
           {/* tablero */}
           <path d="M 0 1500 Q 540 1380 1080 1500 L 1080 1920 L 0 1920 Z" fill="#20232b" />
           <circle cx={300} cy={1700} r={170} fill="none" stroke="#111" strokeWidth={50} />
@@ -193,7 +193,7 @@ function Panda() {
       {/* 9 · la defensa (MNIST: números escritos a mano) */}
       <Escena T={T} a={K.D} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<>{['3', '7', '1', '5', '0', '9'].map((d, i) => <text key={i} x={140 + i * 160} y={640 + (i % 2) * 30} textAnchor="middle" style={{ font:`italic 700 120px ${KF.mono}` }} fill={KC.ink} opacity={0.55 * kprog(T, K.D + 0.2 + i * 0.12, K.D + 0.5 + i * 0.12)} transform={`rotate(${(i % 2 ? 8 : -7)} ${140 + i * 160} 640)`}>{d}</text>)}</>)}
+        {svg(<>{['3', '7', '1', '5', '0', '9'].map((d, i) => <text key={i} x={140 + i * 160} y={640 + (i % 2) * 30} textAnchor="middle" style={{ font:`italic 700 120px ${KF.mono}` }} fill={KC.ink} opacity={0.85 * kprog(T, K.D + 0.2 + i * 0.12, K.D + 0.5 + i * 0.12)} transform={`rotate(${(i % 2 ? 8 : -7)} ${140 + i * 160} 640)`}>{d}</text>)}</>)}
       </Escena>
       {/* 10 · cierre: el mismo panda */}
       <Escena T={T} a={K.C} b={FIN}>
@@ -211,9 +211,9 @@ function Panda() {
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Al - 0.3} anio="2014" quien="Google" revista="Goodfellow, Shlens y Szegedy" y={700} />
       <Chip T={T} at={K.E + 2.4} until={K.Al - 0.3} texto="«ejemplo adversario»" y={950} tam={44} borde={KC.red} />
       <Chip T={T} at={K.Al + 0.3} until={K.Au - 0.2} texto="2017 · estampas blancas y negras" y={430} tam={36} borde={KC.ink} />
-      <BarrasPct T={T} at={K.Au + 3.4} until={K.D - 0.2} top={900} filas={[{ valor: 100, dec: 0, etiqueta: 'fotos de laboratorio', color: KC.orange }, { valor: 84.8, etiqueta: 'cuadros desde un auto en marcha', color: KC.red, at: K.Au + 5.0 }]} />
+      <BarrasPct T={T} at={K.Au + 3.4} until={K.D - 0.2} top={1380} filas={[{ valor: 100, dec: 0, etiqueta: 'fotos de laboratorio', color: KC.orange }, { valor: 84.8, etiqueta: 'cuadros desde un auto en marcha', color: KC.red, at: K.Au + 5.0 }]} />
       <BarrasPct T={T} at={K.D + 1.6} until={K.C - 0.2} top={760} filas={[{ valor: 89.4, etiqueta: 'errores · sin entrenar con engaños', color: KC.red }, { valor: 17.9, etiqueta: 'errores · entrenada con engaños', color: AZUL, at: K.D + 3.2 }]} />
-      <Chip T={T} at={K.D + 0.4} until={K.C - 0.2} texto="prueba: números escritos a mano" y={1120} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.D + 0.4} until={K.C - 0.2} texto="prueba: números escritos a mano" y={460} tam={36} borde={KC.ink} />
       <MitoTachado T={T} at={K.C + 0.2} tacharEn={K.C + 2.2} until={K.Ou} texto="IA: gibón 99.3 %" x={560} y={430} tam={46} />
       <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="tú: panda ✔" x={850} y={760} tam={54} borde={KC.leaf} />
 
