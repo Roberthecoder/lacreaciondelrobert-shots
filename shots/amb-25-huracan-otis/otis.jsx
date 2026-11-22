@@ -107,15 +107,20 @@ function OtisShot() {
   const vG = klerp(0, 105, kprog(T, K.G + 0.15, K.G + 1.1, kEase.sale)) + (REAL - 105) * kprog(T, K.G + 5.8, K.G + 6.9, kEase.sale);
   const vC = klerp(105, REAL, kprog(T, K.C + 2.0, K.C + 3.0, kEase.sale));
   // mapa con el mar y la trayectoria hasta la hora h
-  const mapa = (h, calor, extra) => <>
-    <rect width={KW} height={KH} fill={'#3a9ad9'} />
+  // zoom de los mapas de los capítulos 1 y 2 (centrado en la zona de la trayectoria, más abajo en el cuadro)
+  const ZM = 'translate(600 860) scale(1.4) translate(-600 -700)', zs = ([x, y]) => [600 + (x - 600) * 1.4, 860 + (y - 700) * 1.4];
+  const mapa = (h, calor, extra, fuera) => <>
+    <rect width={KW} height={KH} fill={'#0f3350'} />
+    <g transform={ZM}>
     <defs><radialGradient id="otsst"><stop offset="0%" stopColor="#ff7a1a" stopOpacity=".95" /><stop offset="100%" stopColor="#ff7a1a" stopOpacity="0" /></radialGradient></defs>
     {calor > 0 && <ellipse cx={otP(-99, 14.6)[0]} cy={otP(-99, 14.6)[1]} rx={430} ry={260} fill="url(#otsst)" opacity={calor} />}
-    <MapaMexico x={OM.x} y={OM.y} ancho={2000} />
+    <MapaMexico x={OM.x} y={OM.y} ancho={2000} color="#4a4634" centro="#2e4634" />
     {(() => { const pts = []; for (let hh = 0; hh <= h; hh += 1) { const p = otEn(hh); pts.push(otP(p.lon, p.lat)); } const p = otEn(h); pts.push(otP(p.lon, p.lat));
       return <polyline points={pts.map((q) => q.join(',')).join(' ')} fill="none" stroke={KC.white} strokeWidth={8} strokeDasharray="4 16" strokeLinecap="round" />; })()}
     {(() => { const [ax, ay] = otP(-99.9, 16.85); return <g><circle cx={ax} cy={ay} r={14} fill={KC.red} stroke={KC.ink} strokeWidth={5} /></g>; })()}
     {extra}
+    </g>
+    {fuera}
   </>;
   const hTo = klerp(12, 30, kprog(T, K.To + 0.2, K.Ma - 0.2, kEase.suave));
   const hMa = klerp(30, 42, kprog(T, K.Ma + 0.2, K.Mo - 0.3, kEase.suave));
@@ -125,29 +130,41 @@ function OtisShot() {
   const b1 = 30 * KT * 5 * kprog(T, K.R + 1.5, K.R + 2.3, kEase.sale), b2 = 90 * KT * 5 * kprog(T, K.R + 3.6, K.R + 6.6, kEase.suave);
   const horas = 21 * kprog(T, K.R + 3.6, K.R + 6.6, kEase.suave);
   // avión: dos pasadas por el centro
-  const HX = 400, HY = 840;
+  const HX = 420, HY = 980;
   const pa1 = kprog(T, K.Av + 0.3, K.Av + 2.3), pa2 = kprog(T, K.Av + 2.6, K.Av + 4.6);
   const hTi = kprog(T, K.Ti + 0.2, K.Ti + 2.6, kEase.suave);
+  // costa de Acapulco (se reutiliza en Tierra y en Víctimas); luz = brillo de las luces de la bahía
+  const costa = (luz, parpadeo) => <>
+    <rect x={0} y={-300} width={KW} height={310} fill="#1f3b2c" />
+    <path d={OT_COSTA} fill="#1f3b2c" stroke={KC.ink} strokeWidth={8} />
+    <ellipse cx={330} cy={845} rx={46} ry={22} fill="#1f3b2c" stroke={KC.ink} strokeWidth={6} />
+    {Array.from({ length: 26 }, (_, i) => { const u = i / 25, xx = 370 + u * 400, yy = 790 - Math.sin(Math.PI * u) * 150 - 14; return <circle key={i} cx={xx} cy={yy} r={5} fill={KC.yellow} opacity={(parpadeo ? 0.5 + 0.5 * Math.sin(T * 5 + i) : 1) * luz} />; })}
+  </>;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: medidor de viento, pronóstico vs. realidad */}
       <Escena T={T} a={K.G} b={K.To}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Velocimetro x={380} y={990} r={300} valor={vG} pron={T > K.G + 0.2 ? 105 : null} o={1 - kprog(T, K.To - 0.95, K.To - 0.45)} />)}
+        {svg(<>
+          <Huracan T={T} x={540} y={1180} r={klerp(300, 420, kprog(T, K.G, K.To, kEase.suave))} org={klerp(0.3, 1, kprog(T, K.G + 5.8, K.G + 6.9, kEase.sale))} ojo={kprog(T, K.G + 5.8, K.G + 6.9)} vel={0.8} o={0.22} />
+          <Velocimetro x={540} y={1160} r={420} valor={vG} pron={T > K.G + 0.2 ? 105 : null} o={1 - kprog(T, K.To - 0.95, K.To - 0.45)} />
+        </>)}
       </Escena>
       {/* 1 · cap. 1: tormenta tropical frenada por el viento de altura (23 oct 2023) */}
       <Escena T={T} a={K.To} b={K.Ma}>
         {svg(mapa(hTo, 0, <>
-          <Huracan T={T} x={otP(pTo.lon, pTo.lat)[0]} y={otP(pTo.lon, pTo.lat)[1]} r={110} org={0.15} inclina={1} vel={0.6} />
-          <VientoAltura T={T} x={otP(pTo.lon, pTo.lat)[0] + 80} y={otP(pTo.lon, pTo.lat)[1] - 190} f={1} />
+          <Huracan T={T} x={otP(pTo.lon, pTo.lat)[0]} y={otP(pTo.lon, pTo.lat)[1]} r={120} org={0.15} inclina={1} vel={0.6} />
+          <VientoAltura T={T} x={otP(pTo.lon, pTo.lat)[0] + 80} y={otP(pTo.lon, pTo.lat)[1] - 250} f={1} />
+        </>, <>
           <Velocimetro x={220} y={690} r={140} valor={pTo.kt * KT} />
         </>))}
       </Escena>
       {/* 2 · cap. 2: mar de 30–31 °C y el viento de altura afloja */}
       <Escena T={T} a={K.Ma} b={K.Mo}>
         {svg(mapa(hMa, kprog(T, K.Ma + 0.4, K.Ma + 2.2), <>
-          <Huracan T={T} x={otP(pMa.lon, pMa.lat)[0]} y={otP(pMa.lon, pMa.lat)[1]} r={115} org={klerp(0.2, 0.8, 1 - shearMa)} inclina={shearMa} vel={0.8} />
-          <VientoAltura T={T} x={otP(pMa.lon, pMa.lat)[0] + 80} y={otP(pMa.lon, pMa.lat)[1] - 200} f={shearMa} />
+          <Huracan T={T} x={otP(pMa.lon, pMa.lat)[0]} y={otP(pMa.lon, pMa.lat)[1]} r={122} org={klerp(0.2, 0.8, 1 - shearMa)} inclina={shearMa} vel={0.8} />
+          <VientoAltura T={T} x={otP(pMa.lon, pMa.lat)[0] + 80} y={otP(pMa.lon, pMa.lat)[1] - 260} f={shearMa} />
+        </>, <>
           <Velocimetro x={220} y={690} r={140} valor={pMa.kt * KT} />
           <g transform="translate(940 1090)">
             <rect x={-26} y={-380} width={52} height={380} rx={26} fill="#fff" stroke={KC.ink} strokeWidth={6} />
@@ -159,8 +176,8 @@ function OtisShot() {
       {/* 3 · el motor: evaporación → nubes → calor (corte esquemático) */}
       <Escena T={T} a={K.Mo} b={K.P}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>
-          <rect x={0} y={1010} width={KW} height={300} fill="#84542c" stroke={KC.ink} strokeWidth={8} />
+        {svg(<g transform="translate(0 170)">
+          <rect x={0} y={1010} width={KW} height={520} fill="#3e2716" stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${60 + i * 180} ${1040 + Math.sin(T * 2 + i) * 6} q 40 -18 80 0`} stroke="#ffd08a" strokeWidth={8} fill="none" strokeLinecap="round" />)}
           {Array.from({ length: 9 }, (_, i) => { const u = ((T - K.Mo) * 0.55 + i / 9) % 1, xx = 140 + i * 100; const op = kprog(T, K.Mo - 0.4, K.Mo) * Math.sin(Math.PI * u);
             return <path key={i} d={`M ${xx} ${1000 - u * 320} q 14 -20 0 -40 q -14 -20 0 -40`} stroke="#ffffff" strokeWidth={8} fill="none" strokeLinecap="round" opacity={op} />; })}
@@ -172,111 +189,118 @@ function OtisShot() {
             const lado = i % 2 ? 1 : -1, xx = 540 + lado * (330 + u * 120), yy = 520 + Math.floor(i / 2) * 170;
             return <path key={i} d={`M ${xx} ${yy} q ${lado * 20} -20 0 -40 q ${-lado * 20} -20 0 -40`} stroke={KC.red} strokeWidth={10} fill="none" strokeLinecap="round" opacity={e * (1 - u)} />; })}
           <ellipse cx={540} cy={930} rx={420} ry={60} fill="none" stroke={KC.ink} strokeWidth={8} strokeDasharray="60 30" strokeDashoffset={-(T - K.Mo) * (60 + 140 * kprog(T, K.Mo + 2.2, K.Mo + 4))} opacity={kprog(T, K.Mo + 2.2, K.Mo + 2.8)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · pregunta */}
       <Escena T={T} a={K.P} b={K.R} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Huracan T={T} x={290} y={1000} r={170} org={1} ojo={0.6} vel={2.2} />
-          <text x={290} y={880} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 700)`}>?</text>
+          <Huracan T={T} x={540} y={1060} r={250} org={1} ojo={0.6} vel={2.2} />
+          <text x={800} y={800} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 800 620)`}>?</text>
         </>)}
       </Escena>
       {/* 5 · intensificación rápida: +56 km/h en 24 h (umbral) vs. Otis +167 km/h en 21 h */}
       <Escena T={T} a={K.R} b={K.Av}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <text x={80} y={735} style={{ font:`700 31px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.R + 1.4, K.R + 1.8)}>intensificación rápida (NHC):</text>
-          <rect x={80} y={760} width={b1} height={90} rx={16} fill={KC.cyan} stroke={KC.ink} strokeWidth={b1 > 2 ? 6 : 0} />
-          {b1 > 200 && <text x={80 + b1 + 18} y={822} style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink}>+56 km/h · 24 h</text>}
-          <text x={80} y={935} style={{ font:`700 31px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.R + 3.4, K.R + 3.8)}>Otis (24–25 oct 2023):</text>
-          <rect x={80} y={960} width={b2} height={90} rx={16} fill={KC.red} stroke={KC.ink} strokeWidth={b2 > 2 ? 6 : 0} />
-          {b2 > 330 && <text x={80 + b2 - 18} y={1022} textAnchor="end" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">+{Math.round(b2 / 5)} km/h</text>}
-          <line x1={80 + 30 * KT * 5} y1={740} x2={80 + 30 * KT * 5} y2={1080} stroke={KC.ink} strokeWidth={4} strokeDasharray="12 10" opacity={kprog(T, K.R + 3.6, K.R + 4.0)} />
-          {T > K.R + 3.5 && <g transform="translate(250 560)">
+          <Huracan T={T} x={560} y={1250} r={230} org={klerp(0.35, 1, kprog(T, K.R + 3.6, K.R + 6.6, kEase.suave))} ojo={kprog(T, K.R + 4.6, K.R + 6.6)} vel={klerp(0.8, 2.4, kprog(T, K.R + 3.6, K.R + 6.6))} />
+          <text x={80} y={635} style={{ font:`700 31px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.R + 0.2, K.R + 0.7)}>intensificación rápida (NHC):</text>
+          <rect x={80} y={660} width={30 * KT * 5} height={90} rx={16} fill="none" stroke={KC.cyan} strokeWidth={4} strokeDasharray="14 10" opacity={0.5 * kprog(T, K.R + 0.2, K.R + 0.7)} />
+          <rect x={80} y={860} width={90 * KT * 5} height={90} rx={16} fill="none" stroke={KC.red} strokeWidth={4} strokeDasharray="14 10" opacity={0.5 * kprog(T, K.R + 0.4, K.R + 0.9)} />
+          <rect x={80} y={660} width={b1} height={90} rx={16} fill={KC.cyan} stroke={KC.ink} strokeWidth={b1 > 2 ? 6 : 0} />
+          {b1 > 200 && <text x={80 + b1 + 18} y={722} style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink}>+56 km/h · 24 h</text>}
+          <text x={80} y={835} style={{ font:`700 31px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.R + 0.4, K.R + 0.9)}>Otis (24–25 oct 2023):</text>
+          <rect x={80} y={860} width={b2} height={90} rx={16} fill={KC.red} stroke={KC.ink} strokeWidth={b2 > 2 ? 6 : 0} />
+          {b2 > 330 && <text x={80 + b2 - 18} y={922} textAnchor="end" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">+{Math.round(b2 / 5)} km/h</text>}
+          <line x1={80 + 30 * KT * 5} y1={640} x2={80 + 30 * KT * 5} y2={980} stroke={KC.ink} strokeWidth={4} strokeDasharray="12 10" opacity={kprog(T, K.R + 3.6, K.R + 4.0)} />
+          {T > K.R + 0.2 && <g transform="translate(860 500)" opacity={kprog(T, K.R + 0.2, K.R + 0.7)}>
             <circle r={110} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
             <path d={`M 0 0 L 0 -110 A 110 110 0 ${horas / 21 > 0.5 ? 1 : 0} 1 ${110 * Math.sin(horas / 21 * 2 * Math.PI * 0.999)} ${-110 * Math.cos(horas / 21 * 2 * Math.PI * 0.999)} Z`} fill={KC.red} opacity={0.75} />
             <circle r={110} fill="none" stroke={KC.ink} strokeWidth={8} />
             <text y={30} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={7} paintOrder="stroke">{Math.floor(horas)} h</text>
           </g>}
         </>)}
-        <Etq T={T} at={K.R + 6.4} until={K.Av - 0.2} x={140} y={1110} texto="de 102 a 269 km/h (pico)" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.R + 6.4} until={K.Av - 0.2} x={140} y={990} texto="de 102 a 269 km/h (pico)" tam={30} color={KC.ink} />
       </Escena>
       {/* 6 · el avión cazahuracanes: −10 mb en 85 min (24 oct 2023) */}
       <Escena T={T} a={K.Av} b={K.Ti}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Huracan T={T} x={HX} y={HY} r={290} org={1} ojo={1} vel={1.4} />
-          {pa1 > 0 && pa1 < 1 && <AvionCaza x={klerp(-180, 980, pa1)} y={HY} rot={0} s={0.8} T={T} />}
-          {pa2 > 0 && pa2 < 1 && <AvionCaza x={klerp(900, -100, pa2)} y={klerp(1140, 540, pa2)} rot={Math.atan2(-600, -1000) * 180 / Math.PI} s={0.8} T={T} />}
-          <Barometro x={870} y={930} r={115} baja={kprog(T, K.Av + 1.0, K.Av + 4.2, kEase.suave)} />
+          <Huracan T={T} x={HX} y={HY} r={340} org={1} ojo={1} vel={1.4} />
+          {pa1 > 0 && pa1 < 1 && <AvionCaza x={klerp(-180, 980, pa1)} y={HY} rot={0} s={0.9} T={T} />}
+          {pa2 > 0 && pa2 < 1 && <AvionCaza x={klerp(900, -100, pa2)} y={klerp(1300, 660, pa2)} rot={Math.atan2(-640, -1000) * 180 / Math.PI} s={0.9} T={T} />}
+          <Barometro x={880} y={1260} r={130} baja={kprog(T, K.Av + 1.0, K.Av + 4.2, kEase.suave)} />
         </>)}
       </Escena>
       {/* 7 · cap. 3: tocó tierra en Acapulco como categoría 5 (noche, 25 oct 2023) */}
       <Escena T={T} a={K.Ti} b={K.Re}>
         {svg(<>
           <rect width={KW} height={KH} fill="#0e1c34" />
-          <path d={OT_COSTA} fill="#1f3b2c" stroke={KC.ink} strokeWidth={8} />
-          <ellipse cx={330} cy={845} rx={46} ry={22} fill="#1f3b2c" stroke={KC.ink} strokeWidth={6} />
-          {Array.from({ length: 26 }, (_, i) => { const u = i / 25, xx = 370 + u * 400, yy = 790 - Math.sin(Math.PI * u) * 150 - 14; return <circle key={i} cx={xx} cy={yy} r={5} fill={KC.yellow} opacity={(0.5 + 0.5 * Math.sin(T * 5 + i)) * (1 - kprog(T, K.Ti + 2.3, K.Ti + 2.8))} />; })}
-          <Huracan T={T} x={560} y={klerp(1330, 800, hTi)} r={270} org={1} ojo={1} vel={2.4} o={0.95} />
+          <g transform="translate(0 260)">
+            {costa(1 - kprog(T, K.Ti + 2.3, K.Ti + 2.8), true)}
+            <Huracan T={T} x={560} y={klerp(1250, 800, hTi)} r={270} org={1} ojo={1} vel={2.4} o={0.95} />
+          </g>
         </>)}
-        <Etq T={T} at={K.Ti + 0.4} until={K.Re - 0.2} x={800} y={720} texto="Acapulco" tam={34} />
+        <Etq T={T} at={K.Ti + 0.4} until={K.Re - 0.2} x={800} y={980} texto="Acapulco" tam={34} />
       </Escena>
       {/* 8 · récord: el más fuerte al tocar tierra en el Pacífico oriental desde 1988 */}
       <Escena T={T} a={K.Re} b={K.Vi}>
         {svg(<>
-          <rect width={KW} height={KH} fill="#436c86" />
-          <MapaMexico x={OM.x} y={OM.y} ancho={2000} />
+          <rect width={KW} height={KH} fill="#0f3350" />
+          <g transform="translate(600 1080) scale(1.7) translate(-620 -880)">
+          <MapaMexico x={OM.x} y={OM.y} ancho={2000} color="#4a4634" centro="#2e4634" />
           {OT_TRACK.slice(0, -1).map((p, i) => { const q = OT_TRACK[i + 1], [x1, y1] = otP(p[1], p[2]), [x2, y2] = otP(q[1], q[2]), e = kprog(T, K.Re + 0.2 + i * 0.12, K.Re + 0.35 + i * 0.12);
             return e > 0 ? <line key={i} x1={x1} y1={y1} x2={klerp(x1, x2, e)} y2={klerp(y1, y2, e)} stroke={otColor(q[3] * KT)} strokeWidth={16} strokeLinecap="round" /> : null; })}
           {OT_TRACK.map((p, i) => { const [xx, yy] = otP(p[1], p[2]); return T > K.Re + 0.2 + i * 0.12 ? <circle key={'c' + i} cx={xx} cy={yy} r={10} fill={otColor(p[3] * KT)} stroke={KC.ink} strokeWidth={4} /> : null; })}
           {T > K.Re + 1.8 && <Huracan T={T} x={otP(-99.9, 16.8)[0]} y={otP(-99.9, 16.8)[1]} r={70} org={1} ojo={1} vel={2} />}
+          </g>
         </>)}
       </Escena>
       {/* 9 · víctimas: escena quieta y sobria */}
       <Escena T={T} a={K.Vi} b={K.C}>
         {svg(<>
-          <rect width={KW} height={KH} fill="#6a6e78" />
-          <circle cx={170} cy={720} r={50} fill="#eef0f2" opacity={0.9} />
-          <rect x={0} y={790} width={KW} height={600} fill="#525a67" />
+          <rect width={KW} height={KH} fill="#0e1c34" />
+          <g transform="translate(0 -60)" opacity={0.9}>{costa(0.6, false)}</g>
         </>)}
-        <div style={{ position:'absolute', left:0, right:0, top:860, textAlign:'center', zIndex:41, opacity:kprog(T, K.Vi + 0.5, K.Vi + 1.3) }}>
+        <div style={{ position:'absolute', left:0, right:0, top:860, textAlign:'center', zIndex:41, opacity:kprog(T, K.Vi + 0.3, K.Vi + 0.9) }}>
           <div style={{ font:`400 104px/1.05 ${KF.titulo}`, color:KC.ink }}>52 muertes</div>
           <div style={{ font:`400 104px/1.05 ${KF.titulo}`, color:KC.ink }}>32 desaparecidos</div>
         </div>
-        <div style={{ position:'absolute', left:0, right:0, top:700, textAlign:'center', zIndex:41, opacity:kprog(T, K.Vi + 1.6, K.Vi + 2.3), font:`700 30px ${KF.mono}`, color:'#2e343b' }}>
+        <div style={{ position:'absolute', left:0, right:0, top:1110, textAlign:'center', zIndex:41, opacity:kprog(T, K.Vi + 1.6, K.Vi + 2.3), font:`700 30px ${KF.mono}`, color:'#aab3bf' }}>
           gobierno de México · nov 2023<br />el total es incierto
         </div>
       </Escena>
       {/* 10 · cierre: regreso al medidor del inicio */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Velocimetro x={380} y={990} r={300} valor={vC} pron={105} />)}
+        {svg(<>
+          <Huracan T={T} x={540} y={1180} r={420} org={1} ojo={1} vel={0.8} o={0.22} />
+          <Velocimetro x={540} y={1160} r={420} valor={vC} pron={105} />
+        </>)}
       </Escena>
 
       <Capitulo T={T} caps={[{ at: K.To, titulo: 'Tormenta' }, { at: K.Ma, titulo: 'Mar caliente' }, { at: K.Ti, titulo: 'Tierra' }]} hasta={K.Re} />
 
       {/* datos y etiquetas */}
-      <Chip T={T} at={K.G + 0.5} until={K.To - 0.6} texto="un día antes: ≈ 105 km/h" x={330} y={440} tam={30} borde="#5d6673" />
-      <Chip T={T} at={K.G + 6.0} until={K.To - 0.6} texto="llegó: 259 km/h" x={330} y={530} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.G + 0.5} until={K.To - 0.6} texto="un día antes: ≈ 105 km/h" x={540} y={560} tam={30} borde="#5d6673" />
+      <Chip T={T} at={K.G + 6.0} until={K.To - 0.6} texto="llegó: 259 km/h" x={540} y={650} tam={34} borde={KC.red} />
       <Chip T={T} at={K.To + 0.3} until={K.Ma - 0.2} texto="23 oct 2023" x={220} y={450} tam={28} borde={KC.cyan} mono />
-      <Etq T={T} at={K.To + 1.0} until={K.Ma - 0.2} x={otP(pTo.lon, pTo.lat)[0] - 130} y={otP(pTo.lon, pTo.lat)[1] - 144} texto="viento de altura" tam={28} color={KC.white} lado="izq" />
+      <Etq T={T} at={K.To + 1.0} until={K.Ma - 0.2} x={zs(otP(pTo.lon, pTo.lat))[0] - 100} y={zs(otP(pTo.lon, pTo.lat))[1] - 400} texto="viento de altura" tam={28} color={KC.white} />
       <Chip T={T} at={K.Ma + 0.3} until={K.Mo - 0.2} texto="24 oct 2023" x={220} y={450} tam={28} borde={KC.orange} mono />
       <Chip T={T} at={K.Ma + 1.4} until={K.Mo - 0.2} texto="mar: 30–31 °C" x={230} y={810} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Ma + 2.0} until={K.Mo - 0.2} texto="+1–2 °C de lo normal (oct)" x={250} y={890} tam={22} borde={KC.orange} />
-      <Etq T={T} at={K.Mo + 0.1} until={K.P - 0.2} x={120} y={880} texto="vapor" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 1.4} until={K.P - 0.2} x={800} y={420} texto="nubes" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 2.3} until={K.P - 0.2} x={880} y={760} texto="calor" tam={30} color={KC.ink} lado="izq" />
-      <Chip T={T} at={K.Mo + 0.3} until={K.P - 0.2} texto="esquema" x={540} y={1130} tam={26} borde={KC.ink} mono />
+      <Etq T={T} at={K.Mo + 0.1} until={K.P - 0.2} x={120} y={1050} texto="vapor" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 1.4} until={K.P - 0.2} x={800} y={590} texto="nubes" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 2.3} until={K.P - 0.2} x={880} y={930} texto="calor" tam={30} color={KC.ink} lado="izq" />
+      <Chip T={T} at={K.Mo + 0.3} until={K.P - 0.2} texto="esquema" x={540} y={1300} tam={26} borde={KC.ink} mono />
       <Chip T={T} at={K.Av + 0.3} until={K.Ti - 0.2} texto="24 oct 2023 · cazahuracanes" x={380} y={450} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.Av + 2.0} until={K.Ti - 0.2} texto="−10 mb en 85 min" x={850} y={760} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.Av + 2.0} until={K.Ti - 0.2} texto="−10 mb en 85 min" x={850} y={1080} tam={30} borde={KC.red} />
       <NumeroGigante T={T} at={K.Ti + 1.2} until={K.Re - 0.2} valor={259} desde={102} dur={1.0} sufijo=" km/h" etiqueta="al tocar tierra:" x={330} y={480} tam={120} color="#e05cf0" />
-      <Chip T={T} at={K.Ti + 2.4} until={K.Re - 0.2} texto="25 oct 2023 · categoría 5" x={540} y={1110} tam={30} borde="#c21fd6" />
+      <Chip T={T} at={K.Ti + 2.4} until={K.Re - 0.2} texto="25 oct 2023 · categoría 5" x={540} y={1420} tam={30} borde="#c21fd6" />
       <Chip T={T} at={K.Re + 0.4} until={K.Vi - 0.2} texto="Pacífico oriental · desde 1988" x={360} y={440} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.Re + 1.6} until={K.Vi - 0.2} texto="el más fuerte al tocar tierra" x={360} y={530} tam={28} borde="#c21fd6" />
-      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="un día antes: ≈ 105 km/h" x={330} y={440} tam={30} borde="#5d6673" />
-      <Chip T={T} at={K.C + 2.0} until={K.Ou - 0.1} texto="realidad: 259 km/h" x={330} y={530} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="un día antes: ≈ 105 km/h" x={540} y={560} tam={30} borde="#5d6673" />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou - 0.1} texto="realidad: 259 km/h" x={540} y={650} tam={34} borde={KC.red} />
       <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} o={T < K.Ou ? 1 : 0} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
