@@ -192,8 +192,8 @@ function Medalla({ T, x, y, s = 1 }) {
     <path d="M -110 -330 L -30 -170 L 30 -170 L 110 -330 L 50 -330 L 0 -230 L -50 -330 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <circle r={210} fill={KC.gold} stroke={KC.ink} strokeWidth={10} />
     <circle r={170} fill={KC.gold2} stroke="#b07a10" strokeWidth={6} />
-    <text x={0} y={-30} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill={KC.ink}>NOBEL</text>
-    <text x={0} y={36} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>QUÍMICA</text>
+    <text x={0} y={-30} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill="#0b1020">NOBEL</text>
+    <text x={0} y={36} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill="#0b1020">QUÍMICA</text>
     <text x={0} y={110} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill="#7a4d00">2008</text>
     <path d={`M -150 ${-60 + Math.sin(T * 3) * 10} L -120 -90`} stroke="#fff" strokeWidth={10} strokeLinecap="round" opacity={0.7} />
   </g>;
@@ -232,9 +232,9 @@ function Gfp() {
         <GCapa>
           <rect width={KW} height={KH} fill="url(#gfpMar)" />
           {Array.from({ length: 26 }, (_, i) => { const R = krng(i + 3); const px = R() * KW, py = (R() * KH - T * 30 * (0.5 + R())) % KH; return <circle key={i} cx={px} cy={py < 0 ? py + KH : py} r={2 + R() * 4} fill="rgba(200,230,255,.35)" />; })}
-          <Medusa T={T} x={410} y={990} s={1.12} verde={olaG} azul={(i) => 0.35 + 0.65 * (1 - olaG(i)) * kprog(T, 0, 0.1)} seed={2} />
+          <Medusa T={T} x={540} y={930} s={1.5} verde={olaG} azul={(i) => 0.35 + 0.65 * (1 - olaG(i)) * kprog(T, 0, 0.1)} seed={2} />
           {/* recuadro: qué pasa dentro de un puntito */}
-          <g opacity={kprog(T, K.G + 0.9, K.G + 1.4)}>
+          <g opacity={kprog(T, K.G + 0.9, K.G + 1.4)} transform="translate(0 -155)">
             <rect x={50} y={360} width={520} height={250} rx={30} fill="rgba(8,14,30,.85)" stroke={GV} strokeWidth={5} />
             <circle cx={150} cy={470} r={46} fill="#1d2f6b" stroke={GAZ} strokeWidth={6} />
             <circle cx={150} cy={470} r={24 + 6 * Math.sin(T * 8)} fill={GAZ} opacity={0.55} filter="url(#gfpBlur)" />
@@ -252,22 +252,22 @@ function Gfp() {
       <Escena T={T} a={K.Me} b={K.Pr} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <GCapa>
-          <rect x={0} y={760} width={KW} height={560} fill="#0a4f6e" opacity={0.85} />
-          {Array.from({ length: 8 }, (_, i) => <path key={i} d={`M ${-40 + ((i * 160 + T * 40) % 1200)} ${800 + (i % 3) * 120} q 40 -18 80 0`} stroke="rgba(255,255,255,.5)" strokeWidth={5} fill="none" />)}
-          {[[160, 1040, 0.28], [380, 1150, 0.24], [640, 1060, 0.3], [880, 1170, 0.25], [520, 920, 0.22]].map(([mx, my, ms], i) => (i !== 4 || red < 0.55) &&
+          <rect x={0} y={760} width={KW} height={KH - 760} fill="#06344a" opacity={0.9} />
+          {Array.from({ length: 8 }, (_, i) => <path key={i} d={`M ${-40 + ((i * 160 + T * 40) % 1200)} ${800 + (i % 3) * 120} q 40 -18 80 0`} stroke="rgba(255,255,255,.35)" strokeWidth={5} fill="none" />)}
+          {[[170, 1090, 0.44], [400, 1330, 0.38], [690, 1110, 0.46], [910, 1330, 0.4], [520, 930, 0.3], [130, 1650, 0.36], [900, 1660, 0.38]].map(([mx, my, ms], i) => (i !== 4 || red < 0.55) &&
             <Medusa key={i} T={T} x={mx} y={my + Math.sin(T * 1.2 + i) * 10} s={ms} verde={0} azul={0} seed={i + 4} n={14} />)}
           {/* muelle */}
           <rect x={0} y={700} width={360} height={70} fill="#b07a45" stroke={KC.ink} strokeWidth={8} />
           {[40, 140, 240, 330].map((px) => <rect key={px} x={px} y={770} width={26} height={160} fill="#8a5a2e" stroke={KC.ink} strokeWidth={6} />)}
           {/* red de mano que saca una medusa */}
-          <g transform={`translate(${klerp(300, 520, red)} ${klerp(560, 960, Math.sin(red * Math.PI))}) rotate(${klerp(-20, 30, red)})`}>
+          <g transform={`translate(${klerp(300, 520, red)} ${klerp(560, 960, Math.sin(red * Math.PI))}) rotate(${klerp(-20, 30, red)}) scale(1.45)`}>
             <line x1={-260} y1={-200} x2={0} y2={0} stroke="#8a5a2e" strokeWidth={14} strokeLinecap="round" />
             <ellipse cx={30} cy={20} rx={70} ry={30} fill="rgba(255,255,255,.25)" stroke={KC.ink} strokeWidth={6} />
             {red > 0.55 && <Medusa T={T} x={30} y={30} s={0.18} verde={0} azul={0} seed={9} n={10} />}
           </g>
           {/* tabla de corte: la orilla (órganos de luz) se separa como anillo */}
-          {corte > 0 && <g opacity={kprog(T, K.Me + 2.6, K.Me + 3.0)}>
-            <rect x={140} y={820} width={600} height={340} rx={30} fill="#e9d2a6" stroke={KC.ink} strokeWidth={8} />
+          {corte > 0 && <g opacity={kprog(T, K.Me + 2.6, K.Me + 3.0)} transform="translate(540 1070) scale(1.5) translate(-440 -990)">
+            <rect x={140} y={820} width={600} height={340} rx={30} fill="#6b5231" stroke={KC.ink} strokeWidth={6} />
             <ellipse cx={440} cy={990} rx={210} ry={120} fill="rgba(210,235,255,.85)" stroke={KC.ink} strokeWidth={6} />
             <ellipse cx={440} cy={990} rx={150} ry={80} fill="rgba(235,248,255,.95)" stroke="rgba(0,0,0,.25)" strokeWidth={4} strokeDasharray="10 8" />
             <ellipse cx={440} cy={990 - 60 * kprog(T, K.Me + 4.4, K.Me + 5.2, kEase.sale)} rx={210} ry={120} fill="none" stroke={mixHex('#9fb4c8', '#7dff95', kprog(T, K.Me + 4.4, K.Me + 5.0))} strokeWidth={22} opacity={kprog(T, K.Me + 4.2, K.Me + 4.4)} />
@@ -278,50 +278,50 @@ function Gfp() {
       {/* 2 · dos proteínas: aequorina (azul con calcio) y la proteína verde */}
       <Escena T={T} a={K.Pr} b={K.Fl} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        <GCapa>
-          {flashAz > 0 && <circle cx={300} cy={1000} r={260 * flashAz + 60} fill={GAZ} opacity={0.6 * flashAz} filter="url(#gfpBlur2)" />}
-          <Frasco x={300} y={1000} s={1} liquido="#dfe6ff" brillo={flashAz} colorBrillo={GAZ} etiqueta="aequorina" />
-          <Frasco x={780} y={1000} s={1} liquido="#e9f7d9" brillo={0.35 + 0.15 * Math.sin(T * 3)} colorBrillo={GV} etiqueta="proteína verde" />
-          {gota < 1 && T > K.Pr + 0.4 && <g transform={`translate(300 ${klerp(560, 900, gota)})`}><path d="M 0 -30 Q 22 0 0 18 Q -22 0 0 -30 Z" fill="#e6f4ff" stroke={KC.ink} strokeWidth={5} /></g>}
-          <text x={300} y={590} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Pr + 0.4, K.Pr + 0.7) * (1 - gota)}>Ca²⁺</text>
-        </GCapa>
+        <GCapa><g transform="translate(540 1010) scale(1.38) translate(-540 -1000)">
+          {flashAz > 0 && <circle cx={340} cy={1000} r={260 * flashAz + 60} fill={GAZ} opacity={0.6 * flashAz} filter="url(#gfpBlur2)" />}
+          <Frasco x={340} y={1000} s={1} liquido="#dfe6ff" brillo={flashAz} colorBrillo={GAZ} etiqueta="aequorina" />
+          <Frasco x={740} y={1000} s={1} liquido="#e9f7d9" brillo={0.35 + 0.15 * Math.sin(T * 3)} colorBrillo={GV} etiqueta="proteína verde" />
+          {gota < 1 && T > K.Pr + 0.4 && <g transform={`translate(340 ${klerp(560, 900, gota)})`}><path d="M 0 -30 Q 22 0 0 18 Q -22 0 0 -30 Z" fill="#e6f4ff" stroke={KC.ink} strokeWidth={5} /></g>}
+          <text x={340} y={590} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Pr + 0.4, K.Pr + 0.7) * (1 - gota)}>Ca²⁺</text>
+        </g></GCapa>
       </Escena>
       {/* 3 · fluorescencia: entra azul/UV, sale verde */}
       <Escena T={T} a={K.Fl} b={K.Di} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <GCapa>
-          <Lampara x={170} y={620} rot={28} s={1} on={lampFl} largo={430} />
-          <Onda T={T} x0={260} y0={680} x1={520} y1={900} color={GUV} p={entra} amp={14} ondas={5} />
-          <Frasco x={600} y={1000} s={1.05} liquido="#e9f7d9" brillo={sale} colorBrillo={GV} etiqueta="GFP" />
-          {[[-30, 0], [20, 1], [-75, 2]].map(([ang, i]) => { const a = (ang * Math.PI) / 180; return <Onda key={i} T={T} x0={700} y0={940} x1={700 + Math.cos(a) * 300} y1={940 + Math.sin(a) * 300} color={GV} p={kprog(T, K.Fl + 2.2 + i * 0.2, K.Fl + 3.2 + i * 0.2)} amp={12} ondas={4} />; })}
+          <Lampara x={170} y={520} rot={51} s={1.15} on={lampFl} largo={470} />
+          <Onda T={T} x0={240} y0={606} x1={500} y1={926} color={GUV} p={entra} amp={16} ondas={5} />
+          <Frasco x={560} y={1025} s={1.32} liquido="#e9f7d9" brillo={sale} colorBrillo={GV} etiqueta="GFP" />
+          {[[-30, 0], [20, 1], [-75, 2]].map(([ang, i]) => { const a = (ang * Math.PI) / 180; return <Onda key={i} T={T} x0={700} y0={950} x1={700 + Math.cos(a) * 290} y1={950 + Math.sin(a) * 290} color={GV} p={kprog(T, K.Fl + 2.2 + i * 0.2, K.Fl + 3.2 + i * 0.2)} amp={12} ondas={4} />; })}
         </GCapa>
-        <Etq T={T} at={K.Fl + 1.0} until={K.Di - 0.2} x={70} y={880} texto="entra azul / UV" tam={34} color="#cdb8ff" />
-        <Etq T={T} at={K.Fl + 2.8} until={K.Di - 0.2} x={1010} y={560} texto="sale verde" lado="izq" tam={34} color={GV2} />
+        <Etq T={T} at={K.Fl + 1.0} until={K.Di - 0.2} x={30} y={885} texto="entra azul / UV" tam={32} color="#cdb8ff" />
+        <Etq T={T} at={K.Fl + 2.8} until={K.Di - 0.2} x={1030} y={590} texto="sale verde" lado="izq" tam={34} color={GV2} />
       </Escena>
       {/* 4 · bioluminiscencia vs. fluorescencia */}
       <Escena T={T} a={K.Di} b={K.Pd} zoom={0.03}>
         <GCapa>
-          <rect x={0} y={0} width={540} height={KH} fill={KC.yellow} />
+          <rect x={0} y={0} width={540} height={KH} fill="#2b2710" />
           <rect x={540} y={0} width={540} height={KH} fill="#141a2e" />
-          <line x1={540} y1={0} x2={540} y2={KH} stroke={KC.ink} strokeWidth={10} />
-          <Luciernaga T={T} x={250} y={930} s={1.2} luz={0.75 + 0.25 * Math.sin(T * 4)} />
-          <Lampara x={650} y={720} rot={50} s={0.7} on={1 - apaga} largo={300} />
-          <Frasco x={830} y={1010} s={0.85} liquido="#e9f7d9" brillo={1 - apaga} colorBrillo={GV} etiqueta="GFP" />
-          <text x={270} y={700} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>hace su luz</text>
-          <text x={810} y={700} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto} opacity={kprog(T, K.Di + 1.9, K.Di + 2.2)}>sin luz, nada</text>
+          <line x1={540} y1={0} x2={540} y2={KH} stroke={KC.ink} strokeWidth={5} opacity={0.6} />
+          <Luciernaga T={T} x={290} y={990} s={1.6} luz={0.75 + 0.25 * Math.sin(T * 4)} />
+          <Lampara x={645} y={590} rot={63} s={0.85} on={1 - apaga} largo={360} />
+          <Frasco x={820} y={1060} s={1.25} liquido="#e9f7d9" brillo={1 - apaga} colorBrillo={GV} etiqueta="GFP" />
+          <text x={285} y={770} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink}>hace su luz</text>
+          <text x={860} y={680} textAnchor="middle" style={{ font:`900 42px ${KF.texto}` }} fill={KC.texto} opacity={kprog(T, K.Di + 1.9, K.Di + 2.2)}>sin luz, nada</text>
         </GCapa>
-        <Etq T={T} at={K.Di + 0.3} until={K.Pd - 0.2} x={40} y={1460} texto="bioluminiscencia" tam={32} color={KC.ink} />
-        <Etq T={T} at={K.Di + 0.3} until={K.Pd - 0.2} x={1050} y={1460} texto="fluorescencia" lado="izq" tam={32} color={GV2} />
+        <Etq T={T} at={K.Di + 0.3} until={K.Pd - 0.2} x={40} y={1480} texto="bioluminiscencia" tam={32} color={KC.ink} />
+        <Etq T={T} at={K.Di + 0.3} until={K.Pd - 0.2} x={1050} y={1480} texto="fluorescencia" lado="izq" tam={32} color={GV2} />
       </Escena>
       {/* 5 · por dentro: 3 aminoácidos + oxígeno = la pieza que brilla */}
       <Escena T={T} a={K.Pd} b={K.Pg} zoom={0.02}>
         <FondoMarca patron="oscuro" />
-        <GCapa><Frasco x={540} y={1050} s={0.9} liquido="#e9f7d9" brillo={0.5} colorBrillo={GV} /></GCapa>
-        <Lupa T={T} at={K.Pd + 0.2} until={K.Pg - 0.1} x={540} y={790} r={290} fx={540} fy={1080} tinte={GV} etiqueta="AL MICROSCOPIO · la proteína"
+        <GCapa><Frasco x={170} y={1400} s={0.65} liquido="#e9f7d9" brillo={0.5} colorBrillo={GV} /></GCapa>
+        <Lupa T={T} at={K.Pd + 0.2} until={K.Pg - 0.1} x={540} y={790} r={390} fx={170} fy={1420} tinte={GV} etiqueta="AL MICROSCOPIO · la proteína"
           interior={(t, r) => <svg width={r * 2} height={r * 2}>
             <rect width={r * 2} height={r * 2} fill="#07131a" />
-            <Barril T={t} x={r} y={r + 10} s={1.05} color={GV} crom={crom} arma={arma} />
-            {oxi > 0 && oxi < 1 && <g transform={`translate(${klerp(r * 2 + 40, r + 30, oxi)} ${klerp(60, r - 30, oxi)})`}>
+            <Barril T={t} x={r} y={r + 10} s={1.45} color={GV} crom={crom} arma={arma} />
+            {oxi > 0 && oxi < 1 && <g transform={`translate(${klerp(r * 2 + 40, r + 30, oxi)} ${klerp(60, r - 30, oxi)}) scale(1.35)`}>
               <circle r={30} fill="rgba(140,200,255,.25)" stroke="#bfe8ff" strokeWidth={4} />
               <text y={11} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#bfe8ff">O₂</text></g>}
           </svg>} />
@@ -330,30 +330,31 @@ function Gfp() {
       <Escena T={T} a={K.Pg} b={K.Tr} zoom={0.08}>
         <FondoLunares color={KC.yellow} />
         <GCapa>
-          <rect x={0} y={1180} width={KW} height={60} fill="#6a4c33" stroke={KC.ink} strokeWidth={8} />
-          <Frasco x={560} y={980} s={1.05} liquido="#bfe0ff" />
-          <Medusa T={T} x={560} y={960} s={0.32} verde={0.9} azul={0} seed={7} n={12} />
-          <text x={860} y={900} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.pink} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 7} 860 780)`}>?</text>
+          <rect x={0} y={1336} width={KW} height={KH - 1336} fill="#3a2a1c" />
+          <rect x={0} y={1336} width={KW} height={46} fill="#6a4c33" stroke={KC.ink} strokeWidth={6} />
+          <Frasco x={430} y={1010} s={1.7} liquido="#bfe0ff" />
+          <Medusa T={T} x={430} y={990} s={0.5} verde={0.9} azul={0} seed={7} n={12} />
+          <text x={850} y={830} textAnchor="middle" style={{ font:`400 420px ${KF.titulo}` }} fill={KC.pink} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 7} 850 700)`}>?</text>
         </GCapa>
       </Escena>
       {/* 7 · el truco: gen de la proteína X + gen de GFP → la célula la fabrica y se ve dónde */}
       <Escena T={T} a={K.Tr} b={K.Es} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <GCapa>
-          <Celula T={T} x={540} y={990} s={1.05} marca={marca} gen={mete} />
-          {mete < 1 && <g opacity={1 - mete} transform={`translate(${klerp(540, 500, mete)} ${klerp(500, 1000, mete)}) scale(${1 - mete * 0.7}) translate(-540 -500)`}>
-            <Gen x={klerp(60, 150, pega)} y={560} w={420} color={KC.pink} texto="gen de la proteína X" />
-            <Gen x={klerp(720, 570, pega)} y={560} w={200} color={GV} texto="gen GFP" />
+          <Celula T={T} x={540} y={1020} s={1.25} marca={marca} gen={mete} />
+          {mete < 1 && <g opacity={1 - mete} transform={`translate(${klerp(540, 490, mete)} ${klerp(470, 1030, mete)}) scale(${1 - mete * 0.7}) translate(-540 -470)`}>
+            <Gen x={klerp(60, 150, pega)} y={470} w={420} color={KC.pink} texto="gen de la proteína X" />
+            <Gen x={klerp(720, 570, pega)} y={470} w={200} color={GV} texto="gen GFP" />
           </g>}
         </GCapa>
-        <Etq T={T} at={K.Tr + 3.0} until={K.Es - 0.2} x={60} y={1440} texto="verde = ahí está la proteína X" tam={32} color={GV2} />
+        <Etq T={T} at={K.Tr + 3.0} until={K.Es - 0.2} x={60} y={1470} texto="verde = ahí está la proteína X" tam={32} color={GV2} />
       </Escena>
       {/* 8 · 1994: el gusano de Chalfie, 6 neuronas del tacto */}
       <Escena T={T} a={K.Es} b={K.Vi} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <div style={{ position:'absolute', left:540 - 470, top:930 - 400, width:940, height:800, borderRadius:'50%', background:'radial-gradient(circle, #0f1a24 0%, #05080c 78%)', border:`14px solid ${KC.ink}`, boxShadow:'0 0 0 10px #9aa3b5' }}></div>
         <GCapa>
-          <Gusano T={T} x0={150} x1={930} y0={930} A={55} ancho={50} on={neus} />
+          <Gusano T={T} x0={150} x1={930} y0={930} A={62} ancho={62} on={neus} />
         </GCapa>
         <Escala T={T} z={1} pxPorMm={780} x={60} y={1610} objetivo={200} color={KC.ink} />
         <Contador T={T} at={K.Es + 2.6} desde={0} hasta={6} dur={2.4} x={540} y={1450} tam={64} color={GV2} sufijo=" de 6 neuronas" />
@@ -362,60 +363,60 @@ function Gfp() {
       <Escena T={T} a={K.Vi} b={K.Co} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <GCapa>
-          <ellipse cx={300} cy={930} rx={290} ry={290} fill="#f1d27a" stroke={KC.ink} strokeWidth={10} />
-          <ellipse cx={300} cy={930} rx={250} ry={250} fill="none" stroke="rgba(255,255,255,.5)" strokeWidth={6} />
-          <Gusano T={T} x0={110} x1={490} y0={930} A={36} ancho={28} on={[1, 1, 1, 1, 1, 1]} fondoClaro />
-          <g transform="translate(300 600)"><circle r={56} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
+          <ellipse cx={540} cy={945} rx={420} ry={420} fill="#2a2713" stroke={KC.ink} strokeWidth={10} />
+          <ellipse cx={540} cy={945} rx={374} ry={374} fill="none" stroke="rgba(255,255,255,.35)" strokeWidth={6} />
+          <Gusano T={T} x0={210} x1={870} y0={945} A={56} ancho={52} on={[1, 1, 1, 1, 1, 1]} />
+          <g transform="translate(540 425) scale(1.25)"><circle r={56} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
             <line x1={0} y1={0} x2={0} y2={-38} stroke={KC.ink} strokeWidth={7} strokeLinecap="round" />
             <line x1={0} y1={0} x2={Math.sin(T * 4) * 32} y2={-Math.cos(T * 4) * 32} stroke={KC.red} strokeWidth={6} strokeLinecap="round" /></g>
         </GCapa>
-        <Escala T={T} z={1} pxPorMm={380} x={110} y={1430} objetivo={160} color={KC.ink} />
+        <Escala T={T} z={1} pxPorMm={660} x={110} y={1430} objetivo={160} color={KC.ink} />
       </Escena>
       {/* 10 · Tsien: nuevos colores */}
       <Escena T={T} a={K.Co} b={K.No} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <GCapa>
-          {[[180, GV], [420, GAZ], [660, GCIAN], [900, GAMA]].map(([bx, c], i) => <g key={i}>
-            <Barril T={T + i} x={bx} y={900 + Math.sin(T * 2 + i) * 12} s={0.62} color={i === 0 ? GV : mixHex(GV, c, muta(i))} crom={1} arma={1} />
-            {i > 0 && muta(i) > 0 && muta(i) < 1 && <circle cx={bx} cy={900} r={40 + 120 * muta(i)} fill="none" stroke="#fff" strokeWidth={6} opacity={1 - muta(i)} />}
-            <text x={bx} y={1130} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={i === 0 ? 1 : muta(i)}>{['verde', 'azul', 'cian', 'amarillo'][i]}</text>
+          {[[300, 740, GV], [780, 740, GAZ], [300, 1160, GCIAN], [780, 1160, GAMA]].map(([bx, by, c], i) => <g key={i}>
+            <Barril T={T + i} x={bx} y={by + Math.sin(T * 2 + i) * 12} s={1.08} color={i === 0 ? GV : mixHex(GV, c, muta(i))} crom={1} arma={1} />
+            {i > 0 && muta(i) > 0 && muta(i) < 1 && <circle cx={bx} cy={by} r={70 + 200 * muta(i)} fill="none" stroke="#fff" strokeWidth={8} opacity={1 - muta(i)} />}
+            <text x={bx} y={by + 205} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink} opacity={i === 0 ? 1 : muta(i)}>{['verde', 'azul', 'cian', 'amarillo'][i]}</text>
           </g>)}
         </GCapa>
-        <Etq T={T} at={K.Co + 0.2} until={K.No - 0.2} x={60} y={600} texto="Roger Tsien" tam={40} color={KC.ink} />
+        <Etq T={T} at={K.Co + 0.2} until={K.No - 0.2} x={60} y={470} texto="Roger Tsien" tam={40} color={KC.ink} />
       </Escena>
       {/* 11 · Nobel de Química 2008 */}
       <Escena T={T} a={K.No} b={K.Ci} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        <GCapa><Medalla T={T} x={420} y={960} s={kprog(T, K.No, K.No + 0.5, kEase.rebote)} /></GCapa>
+        <GCapa><Medalla T={T} x={540} y={1010} s={1.5 * kprog(T, K.No, K.No + 0.5, kEase.rebote)} /></GCapa>
       </Escena>
       {/* 12 · cierre: la misma medusa, con su verde "prestado" a la ciencia */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05} origen="45% 50%">
         <GCapa>
           <rect width={KW} height={KH} fill="url(#gfpMar)" />
-          <Medusa T={T} x={430} y={930} s={1.15} verde={1} azul={0.35} seed={2} />
+          <Medusa T={T} x={540} y={930} s={1.5} verde={1} azul={0.35} seed={2} />
           <g opacity={kprog(T, K.Ci + 0.8, K.Ci + 1.6)}>
-            {[[GV, 0], [GAZ, 1], [GCIAN, 2], [GAMA, 3]].map(([c, i]) => { const a = T * 0.6 + (i * Math.PI) / 2; return <Barril key={i} T={T} x={430 + Math.cos(a) * 380} y={1020 + Math.sin(a) * 120} s={0.28} color={c} crom={1} arma={1} />; })}
+            {[[GV, 0], [GAZ, 1], [GCIAN, 2], [GAMA, 3]].map(([c, i]) => { const a = T * 0.6 + (i * Math.PI) / 2; return <Barril key={i} T={T} x={540 + Math.cos(a) * 430} y={1010 + Math.sin(a) * 150} s={0.4} color={c} crom={1} arma={1} />; })}
           </g>
-          <g opacity={kprog(T, K.Ci + 1.4, K.Ci + 2.2)}><Gusano T={T} x0={560} x1={1000} y0={1160} A={22} ancho={22} on={[1, 1, 1, 1, 1, 1]} /></g>
+          <g opacity={kprog(T, K.Ci + 1.4, K.Ci + 2.2)}><Gusano T={T} x0={470} x1={1010} y0={1330} A={26} ancho={28} on={[1, 1, 1, 1, 1, 1]} /></g>
         </GCapa>
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 0.6} until={K.Me - 0.3} x={60} y={1440} texto="Aequorea victoria" it tam={36} color={KC.texto} />
-      <Chip T={T} at={K.G + 2.4} until={K.Me - 0.2} texto="energía azul → luz verde" y={1530} tam={40} borde={GV} />
+      <Etq T={T} at={K.G + 0.6} until={K.Me - 0.3} x={1030} y={330} lado="izq" texto="Aequorea victoria" it tam={34} color={KC.texto} />
+      <Chip T={T} at={K.G + 2.4} until={K.Me - 0.2} texto="energía azul → luz verde" y={1500} tam={40} borde={GV} />
       <NumeroGigante T={T} at={K.Me + 0.5} until={K.Me + 2.5} valor={10000} dur={1.5} prefijo="≈ " etiqueta="medusas · verano de 1961" x={400} y={500} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.Me + 0.4} until={K.Pr - 0.2} texto="Friday Harbor · Washington, EE. UU." y={1520} tam={34} borde={KC.cyan} />
-      <Etq T={T} at={K.Me + 3.2} until={K.Pr - 0.3} x={170} y={1190} texto="la orilla: órganos de luz" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Fl + 0.6} until={K.Di - 0.2} texto="fluorescencia" y={1520} tam={46} borde={GV} />
-      <MitoTachado T={T} at={K.Di + 0.3} tacharEn={K.Di + 2.0} until={K.Pd - 0.2} texto="la GFP brilla sola" x={300} y={470} tam={40} />
-      <Chip T={T} at={K.Pd + 0.6} until={K.Pd + 2.8} texto="238 aminoácidos" y={1520} tam={42} borde={GV} />
-      <Chip T={T} at={K.Pd + 3.0} until={K.Pg - 0.2} texto="3 aminoácidos + O₂ = la pieza que brilla" y={1520} tam={32} borde={GV} />
-      <TarjetaEstudio T={T} at={K.Es + 0.15} until={K.Es + 2.35} anio="1994" quien="Chalfie et al. · Columbia" revista="Science 263: 802" x={540} y={560} />
-      <Etq T={T} at={K.Es + 2.6} until={K.Vi - 0.2} x={60} y={1550} texto="Caenorhabditis elegans · ~1 mm" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Vi + 0.5} until={K.Co - 0.2} texto="animal vivo ✓" x={300} y={1580} tam={42} borde={GV} />
-      <Chip T={T} at={K.Co + 1.6} until={K.No - 0.2} texto="azul · cian · amarillo" y={1520} tam={42} borde={KC.ink} />
-      <Chip T={T} at={K.No + 0.6} until={K.Ci - 0.2} texto="Shimomura · Chalfie · Tsien" y={1520} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="su verde: para ver células vivas" y={1520} tam={38} borde={GV} />
+      <Chip T={T} at={K.Me + 0.4} until={K.Pr - 0.2} texto="Friday Harbor · Washington, EE. UU." y={1500} tam={34} borde={KC.cyan} />
+      <Etq T={T} at={K.Me + 3.2} until={K.Pr - 0.3} x={110} y={1385} texto="la orilla: órganos de luz" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Fl + 0.6} until={K.Di - 0.2} texto="fluorescencia" y={1500} tam={46} borde={GV} />
+      <MitoTachado T={T} at={K.Di + 0.3} tacharEn={K.Di + 2.0} until={K.Pd - 0.2} texto="la GFP brilla sola" x={540} y={360} tam={42} />
+      <Chip T={T} at={K.Pd + 0.6} until={K.Pd + 2.8} texto="238 aminoácidos" x={640} y={1390} tam={42} borde={GV} />
+      <Chip T={T} at={K.Pd + 3.0} until={K.Pg - 0.2} texto="3 aminoácidos + O₂ = la pieza que brilla" x={650} y={1390} tam={32} borde={GV} />
+      <TarjetaEstudio T={T} at={K.Es + 0.15} until={K.Es + 2.35} anio="1994" quien="Chalfie et al. · Columbia" revista="Science 263: 802" x={540} y={390} />
+      <Etq T={T} at={K.Es + 2.6} until={K.Vi - 0.7} x={60} y={455} texto="Caenorhabditis elegans · ~1 mm" it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Vi + 0.5} until={K.Co - 0.2} texto="animal vivo ✓" x={540} y={1500} tam={42} borde={GV} />
+      <Chip T={T} at={K.Co + 1.6} until={K.No - 0.2} texto="azul · cian · amarillo" y={1500} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.No + 0.6} until={K.Ci - 0.2} texto="Shimomura · Chalfie · Tsien" y={1470} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="su verde: para ver células vivas" y={1500} tam={38} borde={GV} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Me - 0.1} texto="No es luz verde: *es energía azul.*" />
