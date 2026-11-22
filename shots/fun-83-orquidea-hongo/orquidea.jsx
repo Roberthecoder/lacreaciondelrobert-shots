@@ -312,44 +312,66 @@ function OrquideaShot() {
   const FIN = K.Ou + 4;
   const abre0 = kprog(T, K.G + 0.15, K.G + 0.7, kEase.sale);
   const dedo = kprog(T, K.G, K.G + 0.25) * (1 - kprog(T, K.G + 0.6, K.G + 1.0));
-  const RAMA_Y = 760, CAP_X = 330;
-  const hifaPts = [[-40, 1260], [70, 1080], [140, 900], [175, 830], [270, 826], [372, 822]];
+  const RAMA_Y = 760, CAP_X = 330, ORQ_X = 590;
+  // Pase a mano (cine): la rama con la cápsula se dibuja 1.6 veces más grande (misma imagen en gancho, cápsula y cierre).
+  const GT = 'translate(270 630) scale(1.6) translate(-330 -760)';
+  // Semilla al microscopio 1.25 veces más grande (centro 540, 900): la hifa sube desde abajo y entra por la punta izquierda.
+  const SEM = { x: 540, y: 900, L: 950, W: 312 };
+  const hifaPts = [[-40, 1480], [120, 1300], [60, 1090], [66, 922], [190, 904], [345, 899]];
+  // Embrión con células 1.2 veces más grande.
+  const EMB_T = 'translate(560 900) scale(1.2) translate(-540 -880)';
+  const hifaEmb = [[-40, 1020], [40, 935], [112, 903]];
+  // Pedregal: dos filas de plantas entre las rocas (1.6 veces más grandes).
+  const PED = [[170, 1040], [540, 1060], [220, 1300], [610, 1310], [925, 1300], [800, 1040]];
+  const pedregal = (plantas) => <>
+    <Roca x={230} y={1090} w={520} h={210} seed={3} />
+    <Roca x={800} y={1100} w={600} h={220} seed={6} />
+    {plantas([0, 1, 5])}
+    <Roca x={120} y={1360} w={460} h={200} seed={9} />
+    <Roca x={560} y={1380} w={520} h={190} seed={12} />
+    <Roca x={980} y={1360} w={440} h={200} seed={15} />
+    {plantas([2, 3, 4])}
+  </>;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: la cápsula se abre y suelta polvo */}
       <Escena T={T} a={K.G} b={K.Bo} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Neblina T={T} y0={300} n={4} o={0.25} />
+          <Neblina T={T} y0={300} n={4} o={0.16} />
+          <g transform={GT}>
           <Rama x={0} y={RAMA_Y} w={1080} T={T} />
-          <Orquidea x={720} y={RAMA_Y - 40} s={1.0} flor={0} vara={0.0} T={T} />
+          <Orquidea x={ORQ_X} y={RAMA_Y - 40} s={1.0} flor={0} vara={0.0} T={T} />
           <Capsula x={CAP_X} y={RAMA_Y + 70} s={1.55} abre={abre0} T={T} />
-          <Polvo T={T} t0={K.G + 0.35} x={CAP_X} y={RAMA_Y + 330} n={160} vx={210} vy={-50} seed={4} />
+          <Polvo T={T} t0={K.G + 0.35} x={CAP_X} y={RAMA_Y + 330} n={160} vx={210} vy={-50} seed={4} tam={0.8} />
           {/* dedo que toca la cápsula */}
           {dedo > 0 && <g transform={`translate(${CAP_X - 230 + dedo * 120} ${RAMA_Y + 260})`} opacity={dedo}>
             <path d="M -260 30 L -40 0 Q 10 -6 14 22 Q 10 50 -40 46 L -260 60 Z" fill="#e7b58e" stroke={KC.ink} strokeWidth={7} />
             <ellipse cx={-8} cy={22} rx={16} ry={14} fill="#f6d9c2" stroke={KC.ink} strokeWidth={4} />
           </g>}
+          </g>
         </>)}
       </Escena>
       {/* 1 · bosque de niebla */}
       <Escena T={T} a={K.Bo} b={K.Ca} zoom={0.06}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#394a4f, #244244)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#16272c, #0c1d20)' }}></div>
         {fsvg(<>
           <ArbolNiebla x={170} y={1700} h={1400} s={0.9} T={T} seed={2} />
           <ArbolNiebla x={560} y={1760} h={1500} s={1.0} T={T} seed={5} />
           <ArbolNiebla x={930} y={1700} h={1400} s={0.85} T={T} seed={8} />
-          <Neblina T={T} y0={420} n={5} o={0.35} />
+          <Neblina T={T} y0={420} n={5} o={0.16} />
         </>)}
       </Escena>
       {/* 2 · la cápsula suelta millones de semillas al viento */}
       <Escena T={T} a={K.Ca} b={K.Se} zoom={0.08} origen="30% 50%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
+          <g transform={GT}>
           <Rama x={0} y={RAMA_Y} w={1080} T={T} />
-          <Orquidea x={720} y={RAMA_Y - 40} s={1.0} flor={0} vara={0} T={T} />
+          <Orquidea x={ORQ_X} y={RAMA_Y - 40} s={1.0} flor={0} vara={0} T={T} />
           <Capsula x={CAP_X} y={RAMA_Y + 70} s={1.55} abre={1} T={T} />
-          <Polvo T={T} t0={K.Ca - 1.2} x={CAP_X} y={RAMA_Y + 330} n={260} vx={300} vy={-70} seed={9} />
+          <Polvo T={T} t0={K.Ca - 1.2} x={CAP_X} y={RAMA_Y + 330} n={260} vx={300} vy={-70} seed={9} tam={0.8} />
+          </g>
         </>)}
       </Escena>
       {/* 3 · al microscopio: la semilla */}
@@ -357,9 +379,9 @@ function OrquideaShot() {
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={20} />
         {fsvg(<>
-          <SemillaMicro x={540} y={850} L={kprog(T, K.Se, K.Se + 0.8, kEase.sale) * 760 + 1} W={250} T={T} />
+          <SemillaMicro x={SEM.x} y={SEM.y} L={kprog(T, K.Se, K.Se + 0.8, kEase.sale) * SEM.L + 1} W={SEM.W} T={T} />
           {/* lonchera tachada */}
-          {T > K.Se + 2.6 && <g transform={`translate(190 1010) scale(${kEase.rebote(kprog(T, K.Se + 2.6, K.Se + 3.0))})`}>
+          {T > K.Se + 2.6 && <g transform={`translate(170 1180) scale(${1.15 * kEase.rebote(kprog(T, K.Se + 2.6, K.Se + 3.0))})`}>
             <rect x={-70} y={-50} width={140} height={100} rx={16} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
             <path d="M -36 -50 Q -36 -86 0 -86 Q 36 -86 36 -50" stroke={KC.ink} strokeWidth={10} fill="none" />
             <line x1={-90} y1={-80} x2={90} y2={70} stroke="#fff" strokeWidth={14} strokeLinecap="round" opacity={kprog(T, K.Se + 3.1, K.Se + 3.4)} />
@@ -371,10 +393,10 @@ function OrquideaShot() {
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={20} />
         {fsvg(<>
-          <SemillaMicro x={540} y={850} L={760} W={250} T={T} />
-          <g transform="translate(0 0)"><HifaCamino pts={hifaPts.map(([a, b]) => [a, b])} p={kprog(T, K.Hi + 0.2, K.Hi + 2.8, kEase.suave)} ancho={12} brillo={0.6} /></g>
+          <SemillaMicro x={SEM.x} y={SEM.y} L={SEM.L} W={SEM.W} T={T} />
+          <g transform="translate(0 0)"><HifaCamino pts={hifaPts.map(([a, b]) => [a, b])} p={kprog(T, K.Hi + 0.2, K.Hi + 2.8, kEase.suave)} ancho={15} brillo={0.6} /></g>
           {/* ramita lateral de la hifa */}
-          <HifaCamino pts={[[70, 1080], [10, 980], [-30, 940]]} p={kprog(T, K.Hi + 1.0, K.Hi + 2.4)} ancho={10} />
+          <HifaCamino pts={[[120, 1300], [250, 1235], [330, 1260]]} p={kprog(T, K.Hi + 1.0, K.Hi + 2.4)} ancho={12} />
         </>)}
       </Escena>
       {/* 5 · pelotones dentro de las células del embrión */}
@@ -382,17 +404,16 @@ function OrquideaShot() {
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <HifaCamino pts={[[-40, 900], [80, 880], [170, 870]]} p={1} ancho={12} />
-          <EmbrionCelulas x={540} y={880} T={T} pel={kprog(T, K.Pe + 0.3, K.Pe + 3.2)} />
+          <HifaCamino pts={hifaEmb} p={1} ancho={15} />
+          <g transform={EMB_T}><EmbrionCelulas x={540} y={880} T={T} pel={kprog(T, K.Pe + 0.3, K.Pe + 3.2)} /></g>
         </>)}
       </Escena>
       {/* 6 · re-gancho: ¿quién se come a quién? */}
       <Escena T={T} a={K.Pr} b={K.Di} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <g transform="translate(260 900) scale(.55)"><SemillaMicro x={0} y={0} L={760} W={250} T={T} /></g>
-          <HifaCamino pts={[[-30, 1180], [90, 1080], [150, 960], [160, 910]]} p={1} ancho={12} />
-          <Interrogacion T={T} x={300} y={760} tam={340} />
+          {/* el embrión con sus pelotones sigue detrás (la capa cine deja la escena anterior bajo un velo) */}
+          <Interrogacion T={T} x={800} y={560} tam={340} />
         </>)}
       </Escena>
       {/* 7 · la semilla digiere los pelotones */}
@@ -400,8 +421,8 @@ function OrquideaShot() {
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <HifaCamino pts={[[-40, 900], [80, 880], [170, 870]]} p={1} ancho={12} />
-          <EmbrionCelulas x={540} y={880} T={T} pel={1} dig={kprog(T, K.Di + 1.0, K.Di + 3.0)} comida={kprog(T, K.Di + 1.4, K.Di + 3.8)} />
+          <HifaCamino pts={hifaEmb} p={1} ancho={15} />
+          <g transform={EMB_T}><EmbrionCelulas x={540} y={880} T={T} pel={1} dig={kprog(T, K.Di + 1.0, K.Di + 3.0)} comida={kprog(T, K.Di + 1.4, K.Di + 3.8)} /></g>
         </>)}
       </Escena>
       {/* 8 · protocormo (time-lapse) */}
@@ -410,8 +431,8 @@ function OrquideaShot() {
         <Ambiente T={T} n={16} />
         {fsvg(<>
           {(() => { const ab = kprog(T, K.Pc + 0.3, K.Pc + 1.2, kEase.sale); return <>
-            {ab < 1 && <g opacity={1 - kprog(T, K.Pc + 1.6, K.Pc + 2.2)}><SemillaMicro x={540} y={900} L={760 * 0.6} W={250 * 0.6} abre={ab} sinEmbrion T={T} /></g>}
-            <Protocormo x={540} y={900} crece={kprog(T, K.Pc + 0.2, K.Pc + 1.8)} verde={kprog(T, K.Pc + 1.0, K.Pc + 2.2)} hoja={kprog(T, K.Pc + 2.2, K.Pc + 3.4, kEase.sale)} raiz={kprog(T, K.Pc + 2.6, K.Pc + 3.7, kEase.sale)} T={T} />
+            {ab < 1 && <g opacity={1 - kprog(T, K.Pc + 1.6, K.Pc + 2.2)}><SemillaMicro x={540} y={900} L={760 * 0.6 * 1.55} W={250 * 0.6 * 1.55} abre={ab} sinEmbrion T={T} /></g>}
+            <Protocormo x={540} y={900} s={1.55} crece={kprog(T, K.Pc + 0.2, K.Pc + 1.8)} verde={kprog(T, K.Pc + 1.0, K.Pc + 2.2)} hoja={kprog(T, K.Pc + 2.2, K.Pc + 3.4, kEase.sale)} raiz={kprog(T, K.Pc + 2.6, K.Pc + 3.7, kEase.sale)} T={T} />
           </>; })()}
         </>)}
       </Escena>
@@ -420,14 +441,11 @@ function OrquideaShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           {(() => { const pase = kprog(T, K.Es + 3.8, K.Es + 4.7, kEase.suave); return <>
-            <g transform={`translate(${-pase * 1100} 0)`}>
-              {[[250, 1080], [540, 1080], [830, 1080]].map(([fx, fy], i) => <FrascoLab key={i} x={fx} y={fy} s={kEase.rebote(kprog(T, K.Es + 0.6 + i * 0.2, K.Es + 1.0 + i * 0.2))} planta={kprog(T, K.Es + 1.4 + i * 0.2, K.Es + 2.4 + i * 0.2)} T={T} seed={i} />)}
+            <g transform={`translate(${-pase * 1500} 0)`}>
+              {[[200, 1250], [540, 1250], [880, 1250]].map(([fx, fy], i) => <FrascoLab key={i} x={fx} y={fy} s={1.6 * kEase.rebote(kprog(T, K.Es + 0.05 + i * 0.15, K.Es + 0.45 + i * 0.15))} planta={kprog(T, K.Es + 1.4 + i * 0.2, K.Es + 2.4 + i * 0.2)} T={T} seed={i} />)}
             </g>
-            <g transform={`translate(${(1 - pase) * 1100} 0)`}>
-              <Roca x={200} y={1090} w={380} h={170} seed={3} />
-              <Roca x={560} y={1110} w={340} h={140} seed={6} />
-              <Roca x={900} y={1090} w={360} h={160} seed={9} />
-              {[[140, 1000], [330, 1010], [470, 1040], [640, 1040], [790, 1010], [960, 1000]].map(([bx, by], i) => <Bletia key={i} x={bx} y={by} s={0.8 * kprog(T, K.Es + 4.4 + i * 0.12, K.Es + 5.0 + i * 0.12, kEase.rebote)} T={T} seed={i} />)}
+            <g transform={`translate(${(1 - pase) * 1500} 0)`}>
+              {pedregal((ids) => ids.map((i) => <Bletia key={i} x={PED[i][0]} y={PED[i][1]} s={1.28 * kprog(T, K.Es + 4.4 + i * 0.12, K.Es + 5.0 + i * 0.12, kEase.rebote)} T={T} seed={i} />))}
             </g>
           </>; })()}
         </>)}
@@ -436,21 +454,18 @@ function OrquideaShot() {
       <Escena T={T} a={K.Re} b={K.Va} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Roca x={200} y={1090} w={380} h={170} seed={3} />
-          <Roca x={560} y={1110} w={340} h={140} seed={6} />
-          <Roca x={900} y={1090} w={360} h={160} seed={9} />
-          {[[140, 1000], [330, 1010], [470, 1040], [640, 1040], [790, 1010], [960, 1000]].map(([bx, by], i) => { const muere = [1, 3, 5].includes(i) ? kprog(T, K.Re + 0.8 + i * 0.1, K.Re + 1.8 + i * 0.1) : 0;
+          {pedregal((ids) => ids.map((i) => { const muere = [1, 3, 5].includes(i) ? kprog(T, K.Re + 0.8 + i * 0.1, K.Re + 1.8 + i * 0.1) : 0;
             const fl = i === 0 || i === 4 ? kprog(T, K.Re + 2.0 + i * 0.1, K.Re + 3.0 + i * 0.1) : 0;
-            return <Bletia key={i} x={bx} y={by} s={0.8} vida={1 - muere} flor={fl} T={T} seed={i} />; })}
+            return <Bletia key={i} x={PED[i][0]} y={PED[i][1]} s={1.28} vida={1 - muere} flor={fl} T={T} seed={i} />; }))}
         </>)}
       </Escena>
       {/* 11 · la vainilla también es orquídea */}
       <Escena T={T} a={K.Va} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Vainilla x={230} y={1170} h={700} p={kprog(T, K.Va, K.Va + 1.5)} flor={kprog(T, K.Va + 1.2, K.Va + 1.7)} vainas={kprog(T, K.Va + 1.6, K.Va + 2.6)} T={T} />
+          <g transform="translate(260 1360) scale(1.3333)"><Vainilla x={0} y={0} h={700} p={kprog(T, K.Va, K.Va + 1.5)} flor={kprog(T, K.Va + 1.2, K.Va + 1.7)} vainas={kprog(T, K.Va + 1.6, K.Va + 2.6)} T={T} /></g>
           <g opacity={kprog(T, K.Va + 1.8, K.Va + 2.4)}>
-            <MapaMexico x={630} y={900} ancho={420}>
+            <MapaMexico x={590} y={980} ancho={450}>
               {(() => { const [px, py] = mxProy(-97.45, 20.45); return <><circle cx={px} cy={py} r={34} fill={KC.red} opacity=".35" /><circle cx={px} cy={py} r={14} fill={KC.red} stroke={KC.ink} strokeWidth={4} /></>; })()}
             </MapaMexico>
           </g>
@@ -460,71 +475,73 @@ function OrquideaShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Neblina T={T} y0={300} n={4} o={0.25} />
+          <Neblina T={T} y0={300} n={4} o={0.16} />
+          <g transform={GT}>
           <Rama x={0} y={RAMA_Y} w={1080} T={T} />
-          <Orquidea x={720} y={RAMA_Y - 40} s={1.0} flor={kprog(T, K.C + 0.3, K.C + 1.6)} vara={kprog(T, K.C, K.C + 1.0)} T={T} />
+          <Orquidea x={ORQ_X} y={RAMA_Y - 40} s={1.0} flor={kprog(T, K.C + 0.3, K.C + 1.6)} vara={kprog(T, K.C, K.C + 1.0)} T={T} />
           <Capsula x={CAP_X} y={RAMA_Y + 70} s={1.55} abre={1} T={T} />
-          {[[120, RAMA_Y - 50], [470, RAMA_Y - 56], [960, RAMA_Y - 46]].map(([px, py], i) => { const c = kprog(T, K.C + 1.2 + i * 0.3, K.C + 2.0 + i * 0.3, kEase.rebote);
+          {[[195, RAMA_Y - 50], [440, RAMA_Y - 56], [545, RAMA_Y - 52]].map(([px, py], i) => { const c = kprog(T, K.C + 1.2 + i * 0.3, K.C + 2.0 + i * 0.3, kEase.rebote);
             return c > 0 ? <g key={i} transform={`translate(${px} ${py}) scale(${c * 0.55})`}><path d="M 0 0 Q -30 -60 -60 -80 Q -10 -60 0 0 Z" fill={OQ.hoja2} stroke={KC.ink} strokeWidth={6} /><path d="M 0 0 Q 30 -50 56 -66 Q 10 -50 0 0 Z" fill={OQ.hoja} stroke={KC.ink} strokeWidth={6} /><circle r={16} fill={OQ.verde} stroke={KC.ink} strokeWidth={5} /></g> : null; })}
-          <Polvo T={T} t0={K.C - 0.5} x={CAP_X} y={RAMA_Y + 330} n={120} vx={170} vy={-40} seed={21} hilos={kprog(T, K.C + 1.0, K.C + 2.5)} />
+          <Polvo T={T} t0={K.C - 0.5} x={CAP_X} y={RAMA_Y + 330} n={120} vx={170} vy={-40} seed={21} tam={0.8} hilos={kprog(T, K.C + 1.0, K.C + 2.5)} />
+          </g>
         </>)}
       </Escena>
 
       {/* ---------- textos ---------- */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 0.9} until={K.G + 1.6} texto={TX.mito} x={300} y={470} tam={64} />
-      <Chip T={T} at={K.G + 1.7} until={K.Bo - 0.3} texto={TX.semillas} x={330} y={400} tam={42} borde={KC.gold} />
-      <Chip T={T} at={K.G + 3.2} until={K.Bo - 0.3} texto={TX.sinHongo} x={540} y={490} tam={34} borde={KC.red} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 0.9} until={K.G + 1.6} texto={TX.mito} x={290} y={380} tam={64} />
+      <Chip T={T} at={K.G + 1.7} until={K.Bo - 0.3} texto={TX.semillas} x={275} y={350} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.G + 3.2} until={K.Bo - 0.3} texto={TX.sinHongo} x={330} y={435} tam={32} borde={KC.red} />
       <NumeroGigante T={T} at={K.Bo + 0.4} until={K.Ca - 0.3} valor={TX.numMx} prefijo={TX.numMxPre} dur={1.0} x={330} y={530} tam={170} color={KC.yellow} />
       <EtqP T={T} at={K.Bo + 0.9} until={K.Ca - 0.3} x={60} y={710} texto={TX.etqMx1} tam={32} />
       <EtqP T={T} at={K.Bo + 1.1} until={K.Ca - 0.3} x={60} y={765} texto={TX.etqMx2} tam={32} />
       <Chip T={T} at={K.Bo + 2.6} until={K.Ca - 0.3} texto={TX.bosque1} x={540} y={1000} tam={40} borde={KC.mint} />
       <Chip T={T} at={K.Bo + 3.2} until={K.Ca - 0.3} texto={TX.bosque2} x={540} y={1085} tam={30} borde={KC.mint} mono />
-      <NumeroGigante T={T} at={K.Ca + 0.2} until={K.Se - 0.3} valor={TX.numCap} prefijo={TX.numCapPre} dur={1.1} x={540} y={420} tam={130} color={KC.yellow} />
-      <EtqP T={T} at={K.Ca + 0.6} until={K.Se - 0.3} x={60} y={540} texto={TX.etqCap} tam={32} />
-      <EtqP T={T} at={K.Ca + 1.0} until={K.Se - 0.3} x={60} y={595} texto={TX.etqCap2} tam={30} color={KC.gold2} />
-      <EtqP T={T} at={K.Ca + 1.0} until={K.Se - 0.3} x={126} y={648} texto={TX.etqCap3} tam={30} color={KC.gold2} linea={false} />
-      <Chip T={T} at={K.Se + 0.2} until={K.Pe - 0.3} texto={TX.porDentro} x={400} y={430} tam={30} borde={KC.cyan} mono />
-      <EtqP T={T} at={K.Se + 0.9} until={K.Hi - 0.2} x={230} y={655} texto={TX.testa} tam={32} color={OQ.testa} />
-      <EtqP T={T} at={K.Se + 1.4} until={K.Hi - 0.2} x={640} y={1020} texto={TX.embrion} tam={32} color={OQ.embrion} />
-      <Chip T={T} at={K.Se + 2.0} until={K.Hi - 0.2} texto={TX.sinReservas} x={540} y={1125} tam={30} borde={KC.gold} mono />
-      <EtqP T={T} at={K.Hi + 1.2} until={K.Pe - 0.2} x={150} y={1140} texto={TX.hifa} tam={32} color={OQ.hifa} />
-      <Chip T={T} at={K.Hi + 1.6} until={K.Pe - 0.2} texto={TX.micorriza} x={760} y={560} tam={34} borde={KC.mint} />
-      <Chip T={T} at={K.Hi + 2.2} until={K.Pe - 0.2} texto={<i>{TX.hongo1}</i>} x={700} y={1080} tam={34} borde={KC.gold} mono />
-      <Chip T={T} at={K.Hi + 2.6} until={K.Pe - 0.2} texto={<i>{TX.hongo2}</i>} x={760} y={650} tam={34} borde={KC.gold} mono />
-      <EtqP T={T} at={K.Pe + 1.4} until={K.Pr - 0.2} x={60} y={580} texto={TX.peloton} tam={32} color={OQ.hifa} />
-      <EtqP T={T} at={K.Pe + 2.0} until={K.Pr - 0.2} x={300} y={1148} texto={TX.celula} tam={30} color={OQ.embrion} />
-      <Chip T={T} at={K.Di + 1.4} until={K.Pc - 0.2} texto={TX.mico} x={540} y={1148} tam={32} borde={KC.gold} mono />
-      <EtqP T={T} at={K.Di + 2.4} until={K.Pc - 0.2} x={60} y={540} texto={TX.comidaPropia1} tam={30} color={KC.gold2} />
-      <EtqP T={T} at={K.Di + 2.6} until={K.Pc - 0.2} x={126} y={593} texto={TX.comidaPropia2} tam={30} color={KC.gold2} linea={false} />
-      <EtqP T={T} at={K.Pc + 1.4} until={K.Es - 0.2} x={700} y={900} texto={TX.protocormo} tam={34} color="#8fe08a" />
-      <EtqP T={T} at={K.Pc + 2.6} until={K.Es - 0.2} x={590} y={640} texto={TX.hoja} tam={30} color={OQ.hoja2} />
-      <EtqP T={T} at={K.Pc + 3.0} until={K.Es - 0.2} x={590} y={1170} texto={TX.raiz} tam={30} color="#eef3e8" />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.9} anio={TX.anio} quien={TX.estQuien} revista={TX.estRevista} x={640} y={600} />
-      <EtqP T={T} at={K.Es + 4.5} until={K.Re - 0.2} x={60} y={430} texto={TX.bletia} it tam={38} />
-      <EtqP T={T} at={K.Es + 4.8} until={K.Re - 0.2} x={60} y={490} texto={TX.peligro} tam={32} color={KC.coral} />
-      <EtqP T={T} at={K.Es + 1.6} until={K.Es + 3.9} x={60} y={1140} texto={TX.frasco} tam={30} />
-      <Chip T={T} at={K.Re + 0.2} until={K.Va - 0.3} texto={TX.anios} x={250} y={470} tam={44} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Re + 0.8} until={K.Va - 0.3} valor={TX.pct} prefijo={TX.pctPre} sufijo={TX.pctSuf} dur={1.0} x={330} y={640} tam={150} color={KC.mint} />
-      <EtqP T={T} at={K.Re + 1.2} until={K.Va - 0.3} x={60} y={760} texto={TX.sobrevive} tam={34} />
-      <Chip T={T} at={K.Re + 2.4} until={K.Va - 0.3} texto={TX.florecen} x={620} y={840} tam={40} borde={KC.gold} />
-      <EtqP T={T} at={K.Va + 0.6} until={K.C - 0.3} x={440} y={690} texto={TX.vainilla} it tam={32} linea={false} />
-      <EtqP T={T} at={K.Va + 1.0} until={K.C - 0.3} x={440} y={745} texto={TX.vainilla2} tam={30} linea={false} />
-      <EtqP T={T} at={K.Va + 2.2} until={K.C - 0.3} x={440} y={800} texto={TX.nativa1} tam={30} linea={false} />
-      <EtqP T={T} at={K.Va + 2.2} until={K.C - 0.3} x={440} y={852} texto={TX.nativa2} tam={30} linea={false} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.cierre} x={720} y={1060} tam={44} borde={KC.gold} />
+      <NumeroGigante T={T} at={K.Ca + 0.2} until={K.Se - 0.3} valor={TX.numCap} prefijo={TX.numCapPre} dur={1.1} x={740} y={790} tam={88} color={KC.yellow} />
+      <EtqP T={T} at={K.Ca + 0.6} until={K.Se - 0.3} x={440} y={865} texto={TX.etqCap} tam={28} linea={false} />
+      <EtqP T={T} at={K.Ca + 1.0} until={K.Se - 0.3} x={440} y={912} texto={TX.etqCap2} tam={28} linea={false} color={KC.gold2} />
+      <EtqP T={T} at={K.Ca + 1.0} until={K.Se - 0.3} x={440} y={959} texto={TX.etqCap3} tam={28} color={KC.gold2} linea={false} />
+      <Chip T={T} at={K.Se + 0.2} until={K.Pe - 0.3} texto={TX.porDentro} x={400} y={390} tam={30} borde={KC.cyan} mono />
+      <EtqP T={T} at={K.Se + 0.9} until={K.Hi - 0.2} x={200} y={690} texto={TX.testa} tam={32} color={OQ.testa} />
+      <EtqP T={T} at={K.Se + 1.4} until={K.Hi - 0.2} x={640} y={1070} texto={TX.embrion} tam={32} color={OQ.embrion} />
+      <Chip T={T} at={K.Se + 2.0} until={K.Hi - 0.2} texto={TX.sinReservas} x={560} y={1350} tam={30} borde={KC.gold} mono />
+      <EtqP T={T} at={K.Hi + 1.2} until={K.Pe - 0.2} x={130} y={1180} texto={TX.hifa} tam={32} color={OQ.hifa} />
+      <Chip T={T} at={K.Hi + 1.6} until={K.Pe - 0.2} texto={TX.micorriza} x={760} y={520} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.Hi + 2.2} until={K.Pe - 0.2} texto={<i>{TX.hongo1}</i>} x={720} y={1150} tam={34} borde={KC.gold} mono />
+      <Chip T={T} at={K.Hi + 2.6} until={K.Pe - 0.2} texto={<i>{TX.hongo2}</i>} x={760} y={605} tam={34} borde={KC.gold} mono />
+      <EtqP T={T} at={K.Pe + 1.4} until={K.Pr - 0.2} x={60} y={560} texto={TX.peloton} tam={32} color={OQ.hifa} />
+      <EtqP T={T} at={K.Pe + 2.0} until={K.Pr - 0.2} x={420} y={1225} texto={TX.celula} tam={30} color={OQ.embrion} />
+      <Chip T={T} at={K.Di + 1.4} until={K.Pc - 0.2} texto={TX.mico} x={560} y={1240} tam={32} borde={KC.gold} mono />
+      <EtqP T={T} at={K.Di + 2.4} until={K.Pc - 0.2} x={60} y={505} texto={TX.comidaPropia1} tam={30} color={KC.gold2} />
+      <EtqP T={T} at={K.Di + 2.6} until={K.Pc - 0.2} x={126} y={558} texto={TX.comidaPropia2} tam={30} color={KC.gold2} linea={false} />
+      <EtqP T={T} at={K.Pc + 1.4} until={K.Es - 0.2} x={775} y={900} texto={TX.protocormo} tam={32} color="#8fe08a" />
+      <EtqP T={T} at={K.Pc + 2.6} until={K.Es - 0.2} x={625} y={530} texto={TX.hoja} tam={30} color={OQ.hoja2} />
+      <EtqP T={T} at={K.Pc + 3.0} until={K.Es - 0.2} x={535} y={1300} texto={TX.raiz} tam={30} color="#eef3e8" />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.9} anio={TX.anio} quien={TX.estQuien} revista={TX.estRevista} x={540} y={430} />
+      <EtqP T={T} at={K.Es + 4.5} until={K.Re - 0.2} x={60} y={480} texto={TX.bletia} it tam={38} />
+      <EtqP T={T} at={K.Es + 4.8} until={K.Re - 0.2} x={60} y={542} texto={TX.peligro} tam={32} color={KC.coral} />
+      <EtqP T={T} at={K.Es + 1.6} until={K.Es + 3.9} x={60} y={1345} texto={TX.frasco} tam={30} />
+      <Chip T={T} at={K.Re + 0.2} until={K.Va - 0.3} texto={TX.anios} x={250} y={300} tam={44} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Re + 0.8} until={K.Va - 0.3} valor={TX.pct} prefijo={TX.pctPre} sufijo={TX.pctSuf} dur={1.0} x={330} y={440} tam={150} color={KC.mint} />
+      <EtqP T={T} at={K.Re + 1.2} until={K.Va - 0.3} x={60} y={560} texto={TX.sobrevive} tam={34} />
+      <Chip T={T} at={K.Re + 2.4} until={K.Va - 0.3} texto={TX.florecen} x={700} y={600} tam={40} borde={KC.gold} />
+      <EtqP T={T} at={K.Va + 0.6} until={K.C - 0.3} x={60} y={235} texto={TX.vainilla} it tam={32} linea={false} />
+      <EtqP T={T} at={K.Va + 1.0} until={K.C - 0.3} x={60} y={290} texto={TX.vainilla2} tam={30} linea={false} />
+      <EtqP T={T} at={K.Va + 2.2} until={K.C - 0.3} x={610} y={860} texto={TX.nativa1} tam={30} linea={false} />
+      <EtqP T={T} at={K.Va + 2.2} until={K.C - 0.3} x={610} y={912} texto={TX.nativa2} tam={30} linea={false} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.cierre} x={740} y={960} tam={44} borde={KC.gold} />
 
       {/* ---------- barras de escala ---------- */}
-      <Escala2 T={T} at={K.G} until={K.Bo} texto="1 cm" largo={60} />
+      <Escala2 T={T} at={K.G} until={K.Bo} texto="1 cm" largo={96} />
       <Escala2 T={T} at={K.Bo} until={K.Ca} texto="1 m" largo={200} />
-      <Escala2 T={T} at={K.Ca} until={K.Se} texto="1 cm" largo={60} />
-      <Escala2 T={T} at={K.Se} until={K.Pe} texto="0.1 mm" largo={200} />
-      <Escala2 T={T} at={K.Pe} until={K.Pr} texto="20 µm" largo={160} />
+      <Escala2 T={T} at={K.Ca} until={K.Se} texto="1 cm" largo={96} />
+      <Escala2 T={T} at={K.Se} until={K.Pe} texto="0.1 mm" largo={250} />
+      <Escala2 T={T} at={K.Pe} until={K.Pr} texto="20 µm" largo={192} />
       <Escala2 T={T} at={K.Pr} until={K.Di} texto="dibujo esquemático" largo={0} />
-      <Escala2 T={T} at={K.Di} until={K.Pc} texto="20 µm" largo={160} />
-      <Escala2 T={T} at={K.Pc} until={K.Es} texto="1 mm" largo={250} />
-      <Escala2 T={T} at={K.Es + 0.3} until={K.Va} texto="10 cm" largo={130} />
-      <Escala2 T={T} at={K.Va} until={K.C} texto="10 cm (planta) · mapa esquemático" largo={90} />
-      <Escala2 T={T} at={K.C} until={K.Ou} texto="1 cm" largo={60} />
+      <Escala2 T={T} at={K.Di} until={K.Pc} texto="20 µm" largo={192} />
+      <Escala2 T={T} at={K.Pc} until={K.Es} texto="0.5 mm" largo={194} />
+      <Escala2 T={T} at={K.Es + 0.3} until={K.Va} texto="10 cm" largo={208} />
+      <Escala2 T={T} at={K.Va} until={K.C} texto="10 cm (planta) · mapa esquemático" largo={120} />
+      <Escala2 T={T} at={K.C} until={K.Ou} texto="1 cm" largo={96} />
 
       {/* ---------- subtítulos (idx = línea de narracion.json) ---------- */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Bo - 0.1} texto="No es polvo: son *semillas de orquídea.*" />
