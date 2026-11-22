@@ -1,3 +1,5 @@
-- fun-129-hongo-maple: ya cumplía («encuadre bien»), sin cambios.
+- fun-129-hongo-maple: ya cumplía («encuadre bien»), sin cambios. Ojo: auditar-laminas.py marca Gas@24s (1.2 %); no lo toqué porque el encargo era solo encuadre: queda pendiente para un pase de láminas.
 - fun-128-umami-seco: marcaba ABAJO en Gancho, Hongo, FrescoSeco, Tijeras y Cierre (la mesa de madera clara y el resplandor naranja pesaban más que el hongo); oscurecí la madera conservando el tinte y bajé el resplandor de «al calentarlo» de 0.42 a 0.24. Queda «encuadre bien» y «sin láminas».
 - amb-47-pilas: marcaba ARRIBA en Mexico (el mapa arriba, tercio de abajo vacío); bajé el mapa 190 px (centro ≈ y 960) y reacomodé sus tres chips (470, 1420, 1520). Queda «encuadre bien» y «sin láminas».
+- cie-47-vela-lejos: marcaba ARRIBA en Gancho, Ojo y Cierre. Gancho y Cierre: el cielo violeta claro pesaba más que la persona; lo oscurecí conservando el tinte (#1e0c45). Ojo: bajé y agrandé el ojo (y 900→1020, ×1.4→×1.5) y moví con él la lupa de la retina, las luces y la etiqueta. Queda «encuadre bien» y «sin láminas».
+GRUPO TERMINADO

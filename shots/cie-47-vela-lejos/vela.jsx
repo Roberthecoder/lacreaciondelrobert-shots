@@ -7,7 +7,7 @@ const LLAMA = '#ffcf3a', LLAMA2 = '#ff8a1f', CERA = '#fff4dc';
 // Cielo nocturno con colinas (escenas al aire libre de noche).
 function Noche({ T, colina = '#184f45', horizonte = 1060 }) {
   return <>
-    <div style={{ position:'absolute', inset:0, background:`linear-gradient(180deg, ${KC.violet} 0%, #141a3a 55%, ${KC.noche} 100%)` }}></div>
+    <div style={{ position:'absolute', inset:0, background:`linear-gradient(180deg, #1e0c45 0%, #141a3a 55%, ${KC.noche} 100%)` }}></div>
     <Lienzo z={1}>
       <EstrellasFondo T={T} n={80} seed={47} alto={horizonte} />
       <path d={`M 0 ${horizonte} Q 300 ${horizonte - 50} 620 ${horizonte - 10} T 1080 ${horizonte - 30} L 1080 1920 L 0 1920 Z`} fill={colina} stroke={KC.ink} strokeWidth={8} />
@@ -222,11 +222,11 @@ function Vela() {
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={20} color="rgba(255,225,26,.25)" />
         <Lienzo>
-          <OjoGrande x={540} y={900} s={1.4} pupila={kprog(T, K.Ojo + 0.2, K.Ojo + 1.6, kEase.sale)} T={T} />
-          {Array.from({ length: 6 }, (_, i) => { const f = ((T * 0.7 + i / 6) % 1); return <circle key={i} cx={klerp(1040, 560, f)} cy={klerp(700 + i * 30, 890, f)} r={7} fill={LLAMA} opacity={kprog(T, K.Ojo + 0.6, K.Ojo + 1)} />; })}
+          <OjoGrande x={540} y={1020} s={1.5} pupila={kprog(T, K.Ojo + 0.2, K.Ojo + 1.6, kEase.sale)} T={T} />
+          {Array.from({ length: 6 }, (_, i) => { const f = ((T * 0.7 + i / 6) % 1); return <circle key={i} cx={klerp(1040, 560, f)} cy={klerp(820 + i * 30, 1010, f)} r={8} fill={LLAMA} opacity={kprog(T, K.Ojo + 0.6, K.Ojo + 1)} />; })}
         </Lienzo>
-        <Etq T={T} at={K.Ojo + 0.8} until={K.Cierre - 0.1} x={700} y={1130} texto="pupila abierta" lado="der" color={KC.texto} tam={30} />
-        <Lupa T={T} at={K.Ojo + 1.5} until={K.Cierre - 0.1} x={290} y={470} r={130} fx={540} fy={900} tinte={KC.yellow} etiqueta="POR DENTRO · RETINA"
+        <Etq T={T} at={K.Ojo + 0.8} until={K.Cierre - 0.1} x={640} y={1280} texto="pupila abierta" lado="der" color={KC.texto} tam={30} />
+        <Lupa T={T} at={K.Ojo + 1.5} until={K.Cierre - 0.1} x={290} y={560} r={130} fx={540} fy={1020} tinte={KC.yellow} etiqueta="POR DENTRO · RETINA"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#140d22" />
             {Array.from({ length: 9 }, (_, i) => { const x = 22 + i * (r * 2 - 44) / 8, on = ((t * 1.3 + i * 0.37) % 1) < 0.25;
               return <g key={i}><rect x={x - 9} y={r * 0.7} width={18} height={r * 1.2} rx={9} fill={on ? LLAMA : '#9a7fd8'} stroke={KC.ink} strokeWidth={3} />
