@@ -6,6 +6,10 @@
 const CE = { G: 640, W: 800, H: 980, B: 1130, C: 330 };       // suelo, nivel del agua, haloclina, fondo, centro del cenote
 const CE_ROCA = '#ead9a4', CE_ROCA2 = '#d6c07f', CE_DULCE = '#5cc3ef', CE_SAL = '#1b3f8f', CE_SELVA = '#3fae4f';
 
+// Pase a mano (cine): cámara sobre el corte de perfil. k = aumento, x0 = borde izquierdo de la ventana; el suelo (CE.G) no se mueve.
+const camP = (k, x0) => `translate(${-x0 * k} ${CE.G * (1 - k)}) scale(${k})`;
+const pX = (x, k, x0) => (x - x0) * k, pY = (y, k) => CE.G + (y - CE.G) * k;
+const CE_OSC = '#0b1020';
 // Árboles de selva vistos de lado (copas redondas) sobre la línea del suelo.
 function SelvaLado({ x0 = 0, x1 = 1080, y = CE.G, seed = 3, hueco = [CE.C - 130, CE.C + 130] }) {
   const r = krng(seed), arr = [];
@@ -14,7 +18,7 @@ function SelvaLado({ x0 = 0, x1 = 1080, y = CE.G, seed = 3, hueco = [CE.C - 130,
   return <g>{arr}</g>;
 }
 // Corte de perfil del suelo de Yucatán: caliza, nivel del agua, conducto (río subterráneo), cueva/cenote, agua salada y mar.
-function Perfil({ T, cueva = 1, colapso = 1, capas = 0, flujo = 1, mar = 0, sucio = 0, selva = true }) {
+function Perfil({ T, cueva = 1, colapso = 1, capas = 0, flujo = 1, mar = 0, marX = 900, sucio = 0, selva = true }) {
   const { G, W, H, B, C } = CE;
   const r = krng(11), poros = Array.from({ length: 70 }, () => [r() * 1080, G + 20 + r() * (B - G - 20), 4 + r() * 8]);
   const dulce = mixHex(CE_DULCE, '#8a7a3a', sucio);
@@ -51,8 +55,8 @@ function Perfil({ T, cueva = 1, colapso = 1, capas = 0, flujo = 1, mar = 0, suci
       <path d={`M ${C - 120} ${G} L ${C + 120} ${G} L ${C + 110} ${W - 90} L ${C - 110} ${W - 90} Z`} fill={CE_ROCA} stroke={KC.ink} strokeWidth={7} /></g>}
     {abre > 0 && [[-90, 0], [-30, 10], [40, 4], [100, 12], [10, 30]].map(([dx, dy], i) => <ellipse key={i} cx={C + dx} cy={W + 95 + dy} rx={34} ry={20} fill={CE_ROCA2} stroke={KC.ink} strokeWidth={4} opacity={abre} />)}
     {/* mar a la derecha */}
-    {mar > 0 && <g opacity={mar}><path d={`M 900 ${G} Q 960 ${G + 30} 1000 ${G + 40} L 1100 ${G + 40} L 1100 ${B + 40} L 900 ${B + 40} Z`} fill="#1f6fd0" stroke={KC.ink} strokeWidth={6} />
-      {Array.from({ length: 3 }, (_, i) => <path key={i} d={`M ${930 + i * 50} ${G + 60 + i * 6} q 12 -10 24 0`} stroke="#bfe7ff" strokeWidth={5} fill="none" />)}</g>}
+    {mar > 0 && <g opacity={mar}><path d={`M ${marX} ${G} Q ${marX + 60} ${G + 30} ${marX + 100} ${G + 40} L 1100 ${G + 40} L 1100 ${B + 40} L ${marX} ${B + 40} Z`} fill="#1f6fd0" stroke={KC.ink} strokeWidth={6} />
+      {Array.from({ length: 3 }, (_, i) => <path key={i} d={`M ${marX + 30 + i * 50} ${G + 60 + i * 6} q 12 -10 24 0`} stroke="#bfe7ff" strokeWidth={5} fill="none" />)}</g>}
     {/* superficie */}
     <rect x={-10} y={G - 10} width={1100} height={14} fill="#6b8f3a" />
     {selva && <SelvaLado />}
@@ -167,10 +171,15 @@ function CenotesShot() {
   const caeA = kprog(T, K.A + 2.3, K.A + 2.8, kEase.suave), hoyoA = kprog(T, K.A + 2.8, K.A + 4.2, kEase.sale);
   const acida = kprog(T, K.A + 0.4, K.A + 2.0);
   // estudio
-  const cen = Array.from({ length: 10 }, (_, i) => [250 + (i % 5) * 175, 760 + Math.floor(i / 5) * 210]);
+  const cen = Array.from({ length: 10 }, (_, i) => [160 + (i % 5) * 190, 740 + Math.floor(i / 5) * 235]);
   // planta: medidor de bloqueador en el pozo de la playa
   const bloq = klerp(0.88, 0.18, kprog(T, K.Pl + 6.0, K.Pl + 7.6, kEase.suave));
   const tubo = kprog(T, K.Pl + 5.4, K.Pl + 6.2, kEase.sale);
+  // pase a mano: encuadres (aumento y borde izquierdo) del corte de perfil y del cenote visto desde arriba
+  const kG = 1.4, xG = 100;                                                 // gancho y cueva: el cenote al centro
+  const xCa = klerp(100, 150, kprog(T, K.Ca + 0.1, K.Ca + 1.0, kEase.suave)); // capas: la cámara se corre hacia el mar
+  const kF = 1.35, xF = 225;                                                // fosas: casa, fosa y granja
+  const ARRIBA = 'translate(540 880) scale(1.6) translate(-330 -820)';
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el cenote desde arriba y la ventana al río de abajo */}
@@ -178,13 +187,13 @@ function CenotesShot() {
         <FondoLunares color={KC.cyan} />
         <div style={{ position:'absolute', inset:0, opacity:1 - corteG }}>
           <FondoLunares color="#5fc86a" punto="rgba(255,255,255,.18)" />
-          {svg(<CenoteArriba T={T} hoja={K.G + 0.05} />)}
+          {svg(<g transform={ARRIBA}><CenoteArriba T={T} hoja={K.G + 0.05} /></g>)}
         </div>
         <div style={{ position:'absolute', inset:0, opacity:corteG }}>
-          {svg(<><Perfil T={T} />
-            <g transform={`translate(495 ${CE.G - 4})`}><circle cx={0} cy={-118} r={22} fill="#c98b5e" stroke={KC.ink} strokeWidth={5} /><rect x={-20} y={-96} width={40} height={60} rx={12} fill={KC.pink} stroke={KC.ink} strokeWidth={5} /><line x1={-10} y1={-38} x2={-12} y2={0} stroke={KC.ink} strokeWidth={9} strokeLinecap="round" /><line x1={10} y1={-38} x2={12} y2={0} stroke={KC.ink} strokeWidth={9} strokeLinecap="round" /></g></>)}
-          <Etq T={T} at={K.G + 3.0} until={K.S - 0.2} x={470} y={CE.G - 150} texto="tú" lado="izq" tam={34} color={KC.ink} />
-          <Etq T={T} at={K.G + 3.3} until={K.S - 0.2} x={640} y={930} texto="río subterráneo" tam={30} color={KC.texto} />
+          {svg(<g transform={camP(kG, xG)}><Perfil T={T} />
+            <g transform={`translate(495 ${CE.G - 4})`}><circle cx={0} cy={-118} r={22} fill="#c98b5e" stroke={KC.ink} strokeWidth={5} /><rect x={-20} y={-96} width={40} height={60} rx={12} fill={KC.pink} stroke={KC.ink} strokeWidth={5} /><line x1={-10} y1={-38} x2={-12} y2={0} stroke={KC.ink} strokeWidth={9} strokeLinecap="round" /><line x1={10} y1={-38} x2={12} y2={0} stroke={KC.ink} strokeWidth={9} strokeLinecap="round" /></g></g>)}
+          <Etq T={T} at={K.G + 3.0} until={K.S - 0.2} x={pX(470, kG, xG)} y={pY(CE.G - 122, kG)} texto="tú" lado="izq" tam={38} color={KC.ink} />
+          <Etq T={T} at={K.G + 3.3} until={K.S - 0.2} x={pX(530, kG, xG)} y={pY(938, kG)} texto="río subterráneo" tam={28} color={CE_OSC} />
         </div>
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1650} color={KC.ink} />
       </Escena>
@@ -197,7 +206,7 @@ function CenotesShot() {
           <g transform="translate(560 380)" opacity={kprog(T, K.S + 2.6, K.S + 3.0)}><ellipse rx={150} ry={56} fill="#e6edf5" stroke={KC.ink} strokeWidth={6} /><ellipse cx={-70} cy={-30} rx={70} ry={50} fill="#e6edf5" stroke={KC.ink} strokeWidth={6} /><ellipse cx={-70} cy={-30} rx={66} ry={46} fill="#e6edf5" /></g>
           {[460, 520, 580, 640].map((x, i) => <Goteo key={i} T={T} x={x} y0={440} y1={760 + (i % 2) * 40} cada={0.45} desde={K.S + 3.0 + i * 0.1} hasta={K.A} color="#2f8fd8" r={10} />)}
           {T > K.S + 3.5 && [480, 560, 620].map((x, i) => { const u = ((T - K.S - 3.5 + i * 0.3) % 0.9) / 0.9; return <ellipse key={i} cx={x} cy={790} rx={10 + u * 30} ry={(10 + u * 30) * 0.4} fill="none" stroke="#1f6fd0" strokeWidth={4} opacity={1 - u} />; })}
-          <text x={460} y={880} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>Península de Yucatán</text>
+          <text x={460} y={880} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={CE_OSC}>Península de Yucatán</text>
         </MapaPeninsula>)}
         <Chip T={T} at={K.S + 1.5} until={K.A - 0.2} texto="casi toda la península: sin ríos en la superficie" y={1460} tam={28} borde={KC.ink} />
         <EscalaFija texto="mapa esquemático" largo={0} y={1650} color={KC.ink} />
@@ -205,7 +214,7 @@ function CenotesShot() {
       {/* 2 · la lluvia con CO2 se vuelve un poquito ácida y disuelve la caliza (escena micro: fondo oscuro) */}
       <Escena T={T} a={K.A} b={K.Cu}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }} />
-        {svg(<>
+        {svg(<g transform="translate(480 860) scale(1.25) translate(-480 -860)">
           <rect x={80} y={930} width={920} height={210} rx={20} fill={CE_ROCA} stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 16 }, (_, i) => <ellipse key={i} cx={120 + (i * 61) % 860} cy={970 + (i * 37) % 140} rx={14} ry={8} fill={CE_ROCA2} />)}
           {hoyoA > 0 && <path d={`M ${420 - 150 * hoyoA} 930 Q 420 ${930 + 190 * hoyoA} ${420 + 150 * hoyoA} 930 Z`} fill={KC.noche} stroke={KC.ink} strokeWidth={6} />}
@@ -214,61 +223,63 @@ function CenotesShot() {
             <path d="M 0 -190 Q 150 0 140 70 Q 120 180 0 180 Q -120 180 -140 70 Q -150 0 0 -190 Z" fill={mixHex('#7fd3f7', '#b7e86a', acida * 0.55)} stroke={KC.ink} strokeWidth={8} opacity={0.95} />
             <ellipse cx={-50} cy={20} rx={22} ry={40} fill="#fff" opacity={0.5} />
           </g>
-          {[[-1, 140, 460], [-1, 120, 820], [1, 760, 860]].map(([d, x0, y0], i) => { const u = kprog(T, K.A + 0.3 + i * 0.45, K.A + 1.6 + i * 0.45, kEase.suave);
+          {[[-1, 190, 460], [-1, 180, 820], [1, 760, 860]].map(([d, x0, y0], i) => { const u = kprog(T, K.A + 0.3 + i * 0.45, K.A + 1.6 + i * 0.45, kEase.suave);
             return <CO2 key={i} x={klerp(x0, 420 + (i - 1) * 50, u)} y={klerp(y0, 640 + (i - 1) * 60, u)} rot={T * 60 + i * 50} s={0.8 * (1 - 0.4 * u)} o={caeA > 0 ? 1 - caeA : 1} />; })}
-        </>)}
-        <Etq T={T} at={K.A + 0.5} until={K.A + 2.2} x={250} y={420} texto="CO₂" tam={40} color={KC.texto} />
+        </g>)}
+        <Etq T={T} at={K.A + 0.5} until={K.A + 2.2} x={230} y={330} texto="CO₂" tam={40} color={KC.texto} />
         <Chip T={T} at={K.A + 1.0} until={K.Cu - 0.2} texto="agua + CO₂ → un poquito ácida" y={1460} tam={32} borde={KC.cyan} />
-        <Etq T={T} at={K.A + 2.6} until={K.Cu - 0.2} x={600} y={1100} texto="caliza (CaCO₃)" tam={28} color={KC.ink} />
+        <Etq T={T} at={K.A + 2.6} until={K.Cu - 0.2} x={630} y={1160} texto="caliza (CaCO₃)" tam={30} color={CE_OSC} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1650} color={KC.texto} />
       </Escena>
       {/* 3 · se forma una cueva; se derrumba el techo y nace el cenote */}
       <Escena T={T} a={K.Cu} b={K.Ca}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Perfil T={T} cueva={kprog(T, K.Cu + 0.2, K.Cu + 2.0)} colapso={kprog(T, K.Cu + 2.4, K.Cu + 3.6)} flujo={0.5} />)}
-        <Etq T={T} at={K.Cu + 1.0} until={K.Cu + 2.5} x={540} y={CE.W - 60} texto="cueva" tam={34} color={KC.texto} />
-        <Etq T={T} at={K.Cu + 3.6} until={K.Ca - 0.2} x={500} y={CE.G + 60} texto="cenote" tam={40} color={KC.ink} />
+        {svg(<g transform={camP(kG, xG)}><Perfil T={T} cueva={kprog(T, K.Cu + 0.2, K.Cu + 2.0)} colapso={kprog(T, K.Cu + 2.4, K.Cu + 3.6)} flujo={0.5} /></g>)}
+        <Etq T={T} at={K.Cu + 1.0} until={K.Cu + 2.5} x={pX(520, kG, xG)} y={pY(CE.W - 40, kG)} texto="cueva" tam={36} color={CE_OSC} />
+        <Etq T={T} at={K.Cu + 3.6} until={K.Ca - 0.2} x={pX(500, kG, xG)} y={pY(CE.G + 60, kG)} texto="cenote" tam={40} color={CE_OSC} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1650} color={KC.ink} />
       </Escena>
       {/* 4 · agua dulce que flota sobre agua salada del mar */}
       <Escena T={T} a={K.Ca} b={K.U}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Perfil T={T} capas={kprog(T, K.Ca + 0.3, K.Ca + 1.3)} mar={kprog(T, K.Ca + 0.6, K.Ca + 1.2)} />
-          <g opacity={kprog(T, K.Ca + 1.4, K.Ca + 1.8)}><path d={`M 1000 1040 L 800 1040`} stroke="#fff" strokeWidth={10} strokeLinecap="round" /><path d="M 830 1018 L 796 1040 L 830 1062" stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" /></g></>)}
-        <Etq T={T} at={K.Ca + 0.5} until={K.U - 0.2} x={560} y={940} texto="agua dulce" tam={32} color={KC.texto} />
-        <Etq T={T} at={K.Ca + 1.2} until={K.U - 0.2} x={80} y={1050} texto="agua salada (del mar)" tam={30} color={KC.texto} />
+        {svg(<g transform={camP(kG, xCa)}><Perfil T={T} capas={kprog(T, K.Ca + 0.3, K.Ca + 1.3)} mar={kprog(T, K.Ca + 0.6, K.Ca + 1.2)} marX={770} />
+          <g opacity={kprog(T, K.Ca + 1.4, K.Ca + 1.8)}><path d={`M 880 1040 L 680 1040`} stroke="#fff" strokeWidth={10} strokeLinecap="round" /><path d="M 710 1018 L 676 1040 L 710 1062" stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" /></g></g>)}
+        <Etq T={T} at={K.Ca + 0.5} until={K.U - 0.2} x={pX(560, kG, xCa)} y={pY(942, kG)} texto="agua dulce" tam={32} color={CE_OSC} />
+        <Etq T={T} at={K.Ca + 1.2} until={K.U - 0.2} x={40} y={pY(1050, kG)} texto="agua salada (del mar)" tam={30} color={KC.texto} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1650} color={KC.ink} />
       </Escena>
       {/* 5 · la única fuente de agua potable */}
       <Escena T={T} a={K.U} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {svg(<><Perfil T={T} capas={1} mar={1} />
+        {svg(<g transform={camP(kG, 150)}><Perfil T={T} capas={1} mar={1} marX={770} />
           <rect x={600} y={klerp(CE.G, 920, kprog(T, K.U + 0.2, K.U + 0.8))} width={22} height={920 - klerp(CE.G, 920, kprog(T, K.U + 0.2, K.U + 0.8))} fill="#9aa7b3" stroke={KC.ink} strokeWidth={5} />
           <Casa x={560} y={CE.G - 4} s={0.9} />
           <path d="M 620 520 L 680 520 L 680 545" stroke="#9aa7b3" strokeWidth={14} fill="none" />
-          <Goteo T={T} x={680} y0={555} y1={630} cada={0.4} desde={K.U + 0.9} hasta={K.P} color="#2f8fd8" r={9} /></>)}
-        <Chip T={T} at={K.U + 0.8} until={K.P - 0.2} texto="la única fuente de agua potable de la región" y={1460} tam={28} borde={KC.ink} />
+          <Goteo T={T} x={680} y0={555} y1={630} cada={0.4} desde={K.U + 0.9} hasta={K.P} color="#2f8fd8" r={9} /></g>)}
+        <Chip T={T} at={K.U + 0.8} until={K.P - 0.2} texto="la única fuente de agua potable de la región" y={300} tam={28} borde={KC.ink} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1650} color={KC.ink} />
       </Escena>
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.F} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={290} y={1000} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 820)`}>?</text>
-          <g transform="translate(290 1080)"><rect x={-200} y={0} width={400} height={16} fill="#6b8f3a" stroke={KC.ink} strokeWidth={4} /><path d={`M 0 ${30 + ((T * 60) % 40)} l 0 50 m -22 -22 l 22 22 l 22 -22`} stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" /></g></>)}
+        {/* pase a mano: detrás sigue el corte de la escena anterior; el signo va en el cielo, sobre la boca del cenote, y la flecha baja desde el suelo de verdad */}
+        {svg(<><text x={252} y={615} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={CE_OSC} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 252 490)`}>?</text>
+          <g transform="translate(800 640)">{[[CE_OSC, 20], [KC.yellow, 10]].map(([c, w], i) => <path key={i} d={`M 0 ${24 + ((T * 60) % 40)} l 0 70 m -28 -28 l 28 28 l 28 -28`} stroke={c} strokeWidth={w} fill="none" strokeLinecap="round" strokeLinejoin="round" />)}</g></>)}
       </Escena>
       {/* 7 · fosas sépticas, granjas y lluvia que baja en horas o días */}
       <Escena T={T} a={K.F} b={K.E}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Perfil T={T} capas={1} sucio={0.55 * kprog(T, K.F + 1.0, K.F + 6.5)} />
+        {svg(<g transform={camP(kF, xF)}><Perfil T={T} capas={1} sucio={0.55 * kprog(T, K.F + 1.0, K.F + 6.5)} />
           <Casa x={600} y={CE.G - 4} s={0.85} />
           <Fosa T={T} x={600} y={CE.G + 40} desde={K.F + 0.4} hasta={K.E} />
-          {T > K.F + 2.4 && <g opacity={kprog(T, K.F + 2.4, K.F + 2.8)}><Granja T={T} x={900} y={CE.G - 4} />
-            <path d="M 880 648 l 14 50 l -16 40 l 20 50" stroke="#7a4a22" strokeWidth={7} fill="none" />
+          {/* pase a mano: la granja está desde el inicio, atenuada, y se enciende cuando la voz la nombra */}
+          {<g opacity={0.3 + 0.7 * kprog(T, K.F + 2.4, K.F + 2.8)}><Granja T={T} x={900} y={CE.G - 4} />
+            <path d="M 880 648 l 14 50 l -16 40 l 20 50" stroke="#7a4a22" strokeWidth={7} fill="none" opacity={kprog(T, K.F + 2.4, K.F + 2.8)} />
             <Goteo T={T} x={892} y0={CE.G + 20} y1={CE.W} cada={0.4} desde={K.F + 2.8} hasta={K.E} color="#7a4a22" r={10} /></g>}
           {T > K.F + 4.3 && <g opacity={kprog(T, K.F + 4.3, K.F + 4.7)}><g transform="translate(560 400)"><ellipse rx={170} ry={58} fill="#cfd8e3" stroke={KC.ink} strokeWidth={6} /></g>
-            {[440, 520, 600, 680].map((x, i) => <Goteo key={i} T={T} x={x} y0={470} y1={CE.W} cada={0.32} desde={K.F + 4.5 + i * 0.07} hasta={K.E} color="#2f8fd8" r={9} />)}</g>}</>)}
-        <Etq T={T} at={K.F + 0.5} until={K.E - 0.2} x={660} y={CE.G + 75} texto="fosa séptica" tam={28} color={KC.ink} />
-        <Etq T={T} at={K.F + 2.8} until={K.E - 0.2} x={1040} y={465} texto="granja de cerdos" lado="izq" tam={28} color={KC.ink} />
+            {[440, 520, 600, 680].map((x, i) => <Goteo key={i} T={T} x={x} y0={470} y1={CE.W} cada={0.32} desde={K.F + 4.5 + i * 0.07} hasta={K.E} color="#2f8fd8" r={9} />)}</g>}</g>)}
+        <Etq T={T} at={K.F + 0.5} until={K.E - 0.2} x={pX(649, kF, xF)} y={pY(CE.G + 75, kF)} texto="fosa séptica" tam={28} color={CE_OSC} />
+        <Etq T={T} at={K.F + 2.8} until={K.E - 0.2} x={1050} y={418} texto="granja de cerdos" lado="izq" tam={28} color={KC.ink} />
         <Chip T={T} at={K.F + 4.8} until={K.E - 0.2} texto="la lluvia baja en horas o días" y={1460} tam={32} borde={KC.red} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1650} color={KC.ink} />
       </Escena>
@@ -277,21 +288,21 @@ function CenotesShot() {
         <FondoLunares color={KC.mint} />
         {svg(<>{cen.map(([x, y], i) => { const ap = kprog(T, K.E + 0.4 + i * 0.12, K.E + 0.8 + i * 0.12, kEase.rebote);
           const suc = i === 7 ? 0 : kprog(T, K.E + 4.2 + i * 0.1, K.E + 4.6 + i * 0.1);
-          return <g key={i} transform={`translate(${x} ${y}) scale(${ap})`}>
+          return <g key={i} transform={`translate(${x} ${y}) scale(${1.15 * ap})`}>
             <circle r={70} fill="#d8c08a" stroke={KC.ink} strokeWidth={6} /><circle r={54} fill="#1aa6c4" stroke={KC.ink} strokeWidth={5} />
             <Frasco T={T} x={58} y={20} s={0.62} sucio={suc} seed={i} />
             {i === 7 && T > K.E + 5.0 && <path d="M 30 -60 l 18 18 l 34 -40" stroke={KC.leaf} strokeWidth={12} fill="none" strokeLinecap="round" />}
           </g>; })}
-          <g opacity={kprog(T, K.E + 0.3, K.E + 0.8)}><Cientifica T={T} x={70} y={1070} s={0.8} /></g></>)}
-        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="sept 2022" quien="UNAM + Texas A&M" revista="10 cenotes · Riviera Maya" x={540} y={440} />
+          <g opacity={kprog(T, K.E + 0.3, K.E + 0.8)}><Cientifica T={T} x={250} y={1350} s={1.4} /></g></>)}
+        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="sept 2022" quien="UNAM + Texas A&M" revista="10 cenotes · Riviera Maya" x={540} y={400} />
         <Chip T={T} at={K.E + 4.5} until={K.Pl - 0.2} texto="9 de 10 cenotes: bacterias fecales" y={1460} tam={32} borde={KC.red} />
-        <Etq T={T} at={K.E + 1.2} until={K.Pl - 0.2} x={150} y={1110} texto="muestras desde la orilla" tam={24} color={KC.ink} />
+        <Etq T={T} at={K.E + 1.2} until={K.Pl - 0.2} x={410} y={1240} texto="muestras desde la orilla" tam={28} color={KC.ink} />
         <EscalaFija texto="esquema" largo={0} y={1650} color={KC.ink} />
       </Escena>
       {/* 9 · Puerto Morelos: de fosas a planta de tratamiento; el pozo junto a la playa con menos bloqueador */}
       <Escena T={T} a={K.Pl} b={K.C}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>
+        {svg(<g transform="translate(430 900) scale(1.2) translate(-430 -900)">
           <rect x={-10} y={1060} width={1100} height={150} fill={CE_DULCE} opacity={0.6} />
           <rect x={-10} y={900} width={760} height={160} fill="#f3d58a" stroke={KC.ink} strokeWidth={6} />
           <path d="M 740 900 Q 800 940 1100 930 L 1100 1210 L 740 1210 Z" fill="#1f6fd0" stroke={KC.ink} strokeWidth={6} />
@@ -303,7 +314,7 @@ function CenotesShot() {
           {tubo > 0 && <path d="M 540 915 L 260 915" stroke={KC.ink} strokeWidth={22} fill="none" strokeDasharray={`${280 * tubo} 400`} />}
           {tubo > 0 && <path d="M 540 915 L 260 915" stroke="#9aa7b3" strokeWidth={12} fill="none" strokeDasharray={`${280 * tubo} 400`} />}
           {/* pozo junto a la playa con su medidor de bloqueador solar */}
-          <g opacity={kprog(T, K.Pl + 2.2, K.Pl + 2.7)}>
+          <g opacity={0.3 + 0.7 * kprog(T, K.Pl + 2.2, K.Pl + 2.7)}>
             <rect x={640} y={860} width={26} height={240} fill="#9aa7b3" stroke={KC.ink} strokeWidth={5} />
             <rect x={622} y={846} width={62} height={26} rx={6} fill="#555c66" stroke={KC.ink} strokeWidth={5} />
             <g transform="translate(653 800)">
@@ -311,17 +322,17 @@ function CenotesShot() {
               <rect x={-50} y={-10 - 320 * bloq} width={100} height={320 * bloq} rx={12} fill={KC.orange} />
               <g transform="translate(0 -390)"><rect x={-26} y={-40} width={52} height={70} rx={12} fill={KC.orange} stroke={KC.ink} strokeWidth={5} /><rect x={-12} y={-60} width={24} height={22} rx={4} fill="#fff" stroke={KC.ink} strokeWidth={4} /><text y={10} textAnchor="middle" style={{ font:`900 22px ${KF.texto}` }} fill={KC.ink}>FPS</text></g>
             </g></g>
-        </>)}
-        <Etq T={T} at={K.Pl + 2.6} until={K.C - 0.2} x={560} y={560} texto="bloqueador solar" lado="izq" tam={28} color={KC.ink} />
+        </g>)}
+        <Etq T={T} at={K.Pl + 2.6} until={K.C - 0.2} x={600} y={492} texto="bloqueador solar" lado="izq" tam={28} color={KC.ink} />
         <Chip T={T} at={K.Pl + 2.4} until={K.C - 0.2} texto="un pozo junto a la playa · Puerto Morelos · 2021" y={1460} tam={26} borde={KC.ink} />
-        <Etq T={T} at={K.Pl + 5.8} until={K.C - 0.2} x={60} y={740} texto="planta de tratamiento" tam={26} color={KC.ink} />
-        <Chip T={T} at={K.Pl + 0.3} until={K.Pl + 2.2} texto="lo bueno" x={300} y={440} tam={44} borde={KC.leaf} />
+        <Etq T={T} at={K.Pl + 5.8} until={K.C - 0.2} x={40} y={706} texto="planta de tratamiento" tam={28} color={KC.ink} />
+        <Chip T={T} at={K.Pl + 0.3} until={K.Pl + 2.2} texto="lo bueno" x={300} y={540} tam={44} borde={KC.leaf} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1650} color={KC.ink} />
       </Escena>
       {/* 10 · cierre: el mismo cenote del inicio, ahora con lo de abajo a la vista */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color="#5fc86a" punto="rgba(255,255,255,.18)" />
-        {svg(<CenoteArriba T={T} hoja={K.C - 0.4} red={kprog(T, K.C + 0.6, K.C + 2.2)} />)}
+        {svg(<g transform={ARRIBA}><CenoteArriba T={T} hoja={K.C - 0.4} red={kprog(T, K.C + 0.6, K.C + 2.2)} /></g>)}
         <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="una ventana al agua de la península" y={1460} tam={32} borde={KC.cyan} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1650} color={KC.ink} />
       </Escena>
