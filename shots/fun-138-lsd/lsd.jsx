@@ -176,13 +176,13 @@ function Calle({ T, y = 1180, corre = 0 }) {
 // Caja genérica de ampolletas "Delysid · uso experimental" (esquemática, sin logo real).
 function CajaAmpolletas({ x, y, s = 1, abre = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-230} y={-150} width={460} height={190} rx={12} fill="#f1ede2" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-230} y={-150} width={460} height={190} rx={12} fill="#7d7566" stroke={KC.ink} strokeWidth={8} />
     {[-150, -75, 0, 75, 150].map((dx, i) => { const q = kprog(abre, i * 0.12, i * 0.12 + 0.4, kEase.rebote); return <g key={dx} transform={`translate(${dx} ${-150 - q * 30})`} opacity={q}>
       <path d="M -16 0 L -16 -110 Q -16 -126 -6 -132 L -6 -160 Q 0 -176 6 -160 L 6 -132 Q 16 -126 16 -110 L 16 0 Z" fill="rgba(235,248,255,.95)" stroke={KC.ink} strokeWidth={5} />
       <rect x={-16} y={-60} width={32} height={60} fill="#cfe9ff" opacity=".7" />
     </g>; })}
     <rect x={-210} y={-40} width={420} height={70} rx={8} fill="#fff" stroke={KC.ink} strokeWidth={4} />
-    <text x={0} y={-2} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>DELYSID</text>
+    <text x={0} y={-2} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill="#0b1020">DELYSID</text>
     <text x={0} y={24} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill="#5a524a">uso experimental</text>
   </g>;
 }
@@ -242,6 +242,8 @@ function LineaTiempo({ T, at, x = 120, y = 1120, w = 840 }) {
   </g>;
 }
 
+// Encuadre del pase a mano: lleva el punto (cx,cy) del dibujo original a (x,y) con escala k.
+const Zoom = ({ cx, cy, k, x = 540, y = 960, children }) => <g transform={`translate(${x} ${y}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
 function LsdShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, H: CUES.Hongo, S: CUES.Sandoz, L: CUES.Lsd25, A: CUES.Archivo, P: CUES.Pregunta, Co: CUES.Corazonada, Pi: CUES.Piel,
@@ -270,16 +272,16 @@ function LsdShot() {
       {/* 1a · el cornezuelo de cerca */}
       <Escena T={T} a={K.H} b={HM} zoom={0.06} origen="45% 50%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<Espiga T={T} x={300} y={2430} s={3.2} cuernos={[5]} crece={1} seed={4} />)}
+        {fsvg(<Espiga T={T} x={300} y={2600} s={3.2} cuernos={[5]} crece={1} seed={4} />)}
       </Escena>
       {/* 1b · por dentro: el núcleo del ácido lisérgico (fondo oscuro) */}
       <Escena T={T} a={HM} b={K.S} zoom={0.08}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={26} />
         {fsvg(<>
-          <Ergolina x={440} y={1010} s={1.5} p={kprog(T, HM + 0.1, HM + 1.2)} brillo={0.6 + 0.4 * Math.sin(T * 3)} />
-          {[[180, 900, 'ergotamina'], [890, 900, 'ergometrina']].map(([ex, ey, n], i) => { const q = kprog(T, HM + 1.6 + i * 0.4, HM + 2.0 + i * 0.4, kEase.rebote);
-            return q > 0 ? <g key={n} opacity={q}><Ergolina x={ex - 30} y={ey} s={0.45 * q} p={1} color={KC.gold2} relleno="rgba(244,194,90,.15)" /></g> : null; })}
+          <Ergolina x={480} y={1260} s={2.4} p={kprog(T, HM + 0.1, HM + 1.2)} brillo={0.6 + 0.4 * Math.sin(T * 3)} />
+          {[[160, 1330, 'ergotamina'], [880, 1330, 'ergometrina']].map(([ex, ey, n], i) => { const q = kprog(T, HM + 1.6 + i * 0.4, HM + 2.0 + i * 0.4, kEase.rebote);
+            return q > 0 ? <g key={n} opacity={q}><Ergolina x={ex - 30} y={ey} s={0.6 * q} p={1} color={KC.gold2} relleno="rgba(244,194,90,.15)" /></g> : null; })}
         </>)}
       </Escena>
       {/* 2 · Sandoz, Basilea: el químico modifica el núcleo */}
@@ -301,24 +303,24 @@ function LsdShot() {
         {fsvg(<>
           {Array.from({ length: 25 }, (_, i) => { const q = kprog(T, K.L + 0.2 + i * 0.07, K.L + 0.45 + i * 0.07, kEase.rebote); if (q <= 0) return null;
             const on = i === 24 ? kprog(T, K.L + 2.2, K.L + 2.6) : 0;
-            return <Matracito key={i} x={170 + (i % 5) * 185} y={740 + Math.floor(i / 5) * 88} s={q * (i === 24 ? 0.7 + 0.3 * on : 0.6)} num={i + 1} on={on} />; })}
+            return <Matracito key={i} x={160 + (i % 5) * 190} y={770 + Math.floor(i / 5) * 150} s={q * (i === 24 ? 1.1 + 0.48 * on : 0.95)} num={i + 1} on={on} />; })}
         </>)}
       </Escena>
       {/* 4 · la archivaron */}
       <Escena T={T} a={K.A} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Archivero x={540} y={1200} abre={1 - kprog(T, K.A + 1.4, K.A + 1.9, kEase.suave)}>
+          <Zoom cx={540} cy={940} k={1.7} y={1000}><Archivero x={540} y={1200} abre={1 - kprog(T, K.A + 1.4, K.A + 1.9, kEase.suave)}>
             {(() => { const u = kprog(T, K.A + 0.3, K.A + 1.5, kEase.suave); return u < 1 ? <Matracito x={klerp(300, 0, u)} y={klerp(-560, -470, u)} s={1.1 - u * 0.3} num={25} on={1 - u} /> : null; })()}
-          </Archivero>
+          </Archivero></Zoom>
         </>)}
       </Escena>
       {/* 5 · re-gancho: ¿por qué cinco años después? */}
       <Escena T={T} a={K.P} b={K.Co} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          {(() => { const u = kprog(T, K.P + 0.3, K.P + 1.6); const anio = 1938 + Math.round(u * 5); return <Calendario x={260} y={760} s={1.05} mes="AÑO" anio={String(anio)} rot={Math.sin(T * 4) * 2} />; })()}
-          <Interrogacion T={T} x={300} y={1210} tam={300} />
+          {(() => { const u = kprog(T, K.P + 0.3, K.P + 1.6); const anio = 1938 + Math.round(u * 5); return <Calendario x={420} y={960} s={1.5} mes="AÑO" anio={String(anio)} rot={Math.sin(T * 4) * 2} />; })()}
+          <Interrogacion T={T} x={830} y={1230} tam={420} />
         </>)}
       </Escena>
       {/* 6 · abril de 1943: la libreta del laboratorio */}
@@ -334,37 +336,37 @@ function LsdShot() {
       <Escena T={T} a={K.Pi} b={PI2} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Dedo x={260} y={980} s={1.25} />
+          <Zoom cx={560} cy={1000} k={1.35} x={600} y={1000}><Dedo x={260} y={980} s={1.25} />
           <g transform="translate(330 960)">
             <circle r={160} fill="rgba(255,255,255,.3)" stroke={KC.ink} strokeWidth={14} />
             <line x1={112} y1={112} x2={230} y2={230} stroke={KC.ink} strokeWidth={30} strokeLinecap="round" />
             {[[-40, -20], [10, 30], [50, -40], [-10, 60], [70, 20]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={7} fill={KC.violet} opacity={0.4 + 0.4 * Math.sin(T * 4 + i)} />)}
-          </g>
+          </g></Zoom>
         </>)}
       </Escena>
       <Escena T={T} a={PI2} b={K.B} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Calendario x={300} y={860} s={1.1} mes="ABRIL" anio="1943" dia={T < PI2 + 0.9 ? '16' : (T < PI2 + 1.2 ? '18' : '19')} rot={-3} />
+          <Calendario x={540} y={940} s={1.6} mes="ABRIL" anio="1943" dia={T < PI2 + 0.9 ? '16' : (T < PI2 + 1.2 ? '18' : '19')} rot={-3} />
         </>)}
       </Escena>
       {/* 8 · a casa en bicicleta */}
       <Escena T={T} a={K.B} b={K.D} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Calle T={T} y={980} corre={(T - K.B) * 0.9} />
+          <Zoom cx={540} cy={900} k={1.15} y={1080}><Calle T={T} y={980} corre={(T - K.B) * 0.9} />
           <Bici x={300} y={1065} s={0.95} gira={(T - K.B) * 6} color={KC.blue} bata />
           <Bici x={720} y={1075} s={0.9} gira={(T - K.B) * 6 + 1} color={KC.red} ropa="#5b4a8a" />
-          <CocheTachado x={560} y={560} s={0.75} tache={kprog(T, K.B + 1.6, K.B + 2.0, kEase.sale)} />
+          <CocheTachado x={560} y={560} s={0.75} tache={kprog(T, K.B + 1.6, K.B + 2.0, kEase.sale)} /></Zoom>
         </>)}
       </Escena>
       {/* 9 · Delysid: fármaco experimental */}
       <Escena T={T} a={K.D} b={K.Le} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <CajaAmpolletas x={420} y={880} s={1.2} abre={kprog(T, K.D + 0.4, K.D + 1.6)} />
-          <FlechaCurva x1={300} y1={940} x2={230} y2={1040} p={kprog(T, K.D + 1.9, K.D + 2.4)} curva={-40} color={KC.ink} />
-          <FlechaCurva x1={560} y1={940} x2={700} y2={1040} p={kprog(T, K.D + 2.3, K.D + 2.8)} curva={40} color={KC.ink} />
+          <CajaAmpolletas x={540} y={1030} s={1.7} abre={kprog(T, K.D + 0.4, K.D + 1.6)} />
+          <FlechaCurva x1={360} y1={1110} x2={250} y2={1290} p={kprog(T, K.D + 1.9, K.D + 2.4)} curva={-40} color={KC.ink} />
+          <FlechaCurva x1={720} y1={1110} x2={830} y2={1290} p={kprog(T, K.D + 2.3, K.D + 2.8)} curva={40} color={KC.ink} />
         </>)}
       </Escena>
       {/* 10 · ONU 1971, Lista I · México */}
@@ -372,8 +374,8 @@ function LsdShot() {
         <FondoLunares color={KC.orange} />
         {fsvg(<>
           <g opacity={1 - kprog(T, K.Le + 2.5, K.Le + 2.9)}>
-            <Tratado x={420} y={900} s={0.95} p={kprog(T, K.Le + 0.3, K.Le + 1.6)} marca={kprog(T, K.Le + 1.6, K.Le + 1.9)} />
-            <Sello T={T} at={K.Le + 1.7} x={560} y={1130} texto="LISTA I" color={KC.red} r={95} rot={-10} />
+            <Tratado x={540} y={980} s={1.3} p={kprog(T, K.Le + 0.3, K.Le + 1.6)} marca={kprog(T, K.Le + 1.6, K.Le + 1.9)} />
+            <Sello T={T} at={K.Le + 1.7} x={731} y={1295} texto="LISTA I" color={KC.red} r={130} rot={-10} />
           </g>
         </>)}
         {T > K.Le + 2.5 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.Le + 2.5, K.Le + 2.9) }}>
@@ -383,6 +385,7 @@ function LsdShot() {
       {/* 11 · riesgos y ensayos clínicos */}
       <Escena T={T} a={K.R} b={K.C} zoom={0.03}>
         <FondoLunares color={T < R2 ? KC.orange : KC.cyan} />
+        {fsvg(<g opacity={0.55}><Ergolina x={500} y={1330} s={2.0} p={1} /></g>)}
       </Escena>
       {/* 12 · cierre: la misma espiga, ahora con su historia */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="35% 50%">
@@ -390,7 +393,7 @@ function LsdShot() {
         {fsvg(<>
           <g opacity=".5"><Espiga T={T} x={120} y={2150} s={1.3} seed={7} /><Espiga T={T} x={980} y={2250} s={1.4} seed={9} /></g>
           <g opacity={1 - 0.55 * kprog(T, K.C + 0.8, K.C + 1.4)}><Espiga T={T} x={330} y={1930} s={2.0} cuernos={[5]} crece={1} /></g>
-          <rect x={70} y={980} width={940} height={240} rx={26} fill="rgba(255,255,255,.82)" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.C + 0.8, K.C + 1.2)} />
+          <rect x={70} y={980} width={940} height={240} rx={26} fill="rgba(14,15,18,.86)" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.C + 0.8, K.C + 1.2)} />
           <LineaTiempo T={T} at={K.C + 1.0} x={170} y={1090} w={740} />
         </>)}
       </Escena>
@@ -403,8 +406,8 @@ function LsdShot() {
       <Etq T={T} at={HM + 1.0} until={K.S - 0.3} x={60} y={560} texto="ácido lisérgico:" tam={36} color={KC.gold2} />
       <Etq T={T} at={HM + 1.2} until={K.S - 0.3} x={60} y={606} texto="núcleo de sus" tam={28} color={KC.gold2} />
       <Etq T={T} at={HM + 1.3} until={K.S - 0.3} x={60} y={644} texto="alcaloides principales" tam={28} color={KC.gold2} />
-      <Etq T={T} at={HM + 1.7} until={K.S - 0.3} x={20} y={980} texto="ergotamina" tam={26} color={KC.gold2} />
-      <Etq T={T} at={HM + 2.1} until={K.S - 0.3} x={700} y={980} texto="ergometrina" tam={26} color={KC.gold2} />
+      <Etq T={T} at={HM + 1.7} until={K.S - 0.3} x={20} y={1420} texto="ergotamina" tam={26} color={KC.gold2} />
+      <Etq T={T} at={HM + 2.1} until={K.S - 0.3} x={720} y={1420} texto="ergometrina" tam={26} color={KC.gold2} />
       <Chip T={T} at={K.S + 0.2} until={K.L - 0.3} texto="Sandoz · Basilea, Suiza" x={540} y={440} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.S + 0.7} until={K.L - 0.3} x={60} y={540} texto="Albert Hofmann, químico" tam={34} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.L + 0.1} until={K.L + 2.1} anio="1938" quien="Sandoz, Basilea" revista="derivados del ácido lisérgico" x={360} y={540} />
@@ -412,24 +415,24 @@ function LsdShot() {
       <Chip T={T} at={K.L + 2.9} until={K.A - 0.3} texto="buscaba un estimulante" x={330} y={550} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.L + 3.3} until={K.A - 0.3} x={60} y={630} texto="(respiratorio y circulatorio)" tam={24} color={KC.ink} />
       <Chip T={T} at={K.A + 0.4} until={K.P - 0.3} texto="en animales: sin interés" x={540} y={470} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.A + 1.9} until={K.P - 0.3} texto="ARCHIVADA" x={540} y={1300 - 700} tam={40} borde={KC.red} mono />
+      <Chip T={T} at={K.A + 1.9} until={K.P - 0.3} texto="ARCHIVADA" x={540} y={650} tam={40} borde={KC.red} mono />
       <TarjetaEstudio T={T} at={K.Co + 0.2} until={K.Pi - 0.3} anio="1943" quien="16 de abril · Sandoz, Basilea" revista="relato de A. Hofmann, «LSD: mi hijo problemático» (1979)" x={500} y={520} />
       <Chip T={T} at={K.Co + 0.9} until={K.Pi - 0.3} texto="«una corazonada»" x={720} y={760} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.Pi + 0.4} until={PI2 - 0.2} texto="¿una traza, por la piel?" x={360} y={520} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.Pi + 0.9} until={PI2 - 0.2} x={60} y={610} texto="(lo que él sospechó)" tam={28} color={KC.ink} />
-      <Chip T={T} at={PI2 + 1.3} until={K.B - 0.3} texto="19 abr 1943 · autoexperimento" x={540} y={1120} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.B + 0.4} until={K.D - 0.3} x={40} y={1195} texto="Hofmann y su asistente de laboratorio" tam={26} color={KC.ink} />
+      <Chip T={T} at={PI2 + 1.3} until={K.B - 0.3} texto="19 abr 1943 · autoexperimento" x={540} y={1340} tam={36} borde={KC.ink} />
+      <Etq T={T} at={K.B + 0.4} until={K.D - 0.3} x={40} y={1420} texto="Hofmann y su asistente de laboratorio" tam={26} color={KC.ink} />
       <Chip T={T} at={K.B + 1.7} until={K.D - 0.3} texto="por la guerra: sin coche" x={360} y={440} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.D + 0.2} until={K.Le - 0.3} texto="fármaco experimental" x={380} y={440} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.D + 2.2} until={K.Le - 0.3} texto="investigadores" x={250} y={1100} tam={34} borde={KC.gold} />
-      <Chip T={T} at={K.D + 2.6} until={K.Le - 0.3} texto="psiquiatras" x={720} y={1100} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.D + 0.2} until={K.Le - 0.3} texto="fármaco experimental" x={540} y={330} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.D + 2.2} until={K.Le - 0.3} texto="investigadores" x={250} y={1360} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.D + 2.6} until={K.Le - 0.3} texto="psiquiatras" x={830} y={1360} tam={34} borde={KC.gold} />
       <Chip T={T} at={K.Le + 2.8} until={K.R - 0.3} texto="México · Ley General de Salud" x={360} y={460} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Le + 3.3} until={K.R - 0.3} texto="art. 245, grupo I" x={300} y={550} tam={32} borde={KC.red} />
-      <Aviso T={T} at={K.R + 0.2} until={R2 - 0.2} x={350} y={500} lineas={['miedo y pánico']} borde={KC.red} tam={42} ancho={580} />
-      <Aviso T={T} at={K.R + 0.6} until={R2 - 0.2} x={350} y={660} lineas={['conductas peligrosas', 'y lesiones']} borde={KC.red} tam={38} ancho={580} />
-      <Aviso T={T} at={K.R + 1.0} until={R2 - 0.2} x={540} y={900} lineas={['la ilegal puede venir mezclada', 'con otras sustancias peligrosas']} fuente="Fuente: NIDA (Institutos Nacionales de Salud de EE. UU.)" borde={KC.red} tam={38} ancho={900} />
-      <Aviso T={T} at={R2 + 0.1} until={K.C - 0.3} x={540} y={820} lineas={['hoy: ensayos clínicos', 'controlados (ansiedad)']} fuente="fase 3 · 2026" borde={KC.ink} tam={44} ancho={760} />
-      <SelloRect T={T} at={R2 + 0.9} until={K.C - 0.2} x={540} y={1060} texto="NO ES MEDICAMENTO APROBADO" color={KC.red} tam={58} />
+      <Aviso T={T} at={K.R + 0.2} until={R2 - 0.2} x={540} y={400} lineas={['miedo y pánico']} borde={KC.red} tam={42} ancho={580} />
+      <Aviso T={T} at={K.R + 0.6} until={R2 - 0.2} x={540} y={540} lineas={['conductas peligrosas', 'y lesiones']} borde={KC.red} tam={38} ancho={580} />
+      <Aviso T={T} at={K.R + 1.0} until={R2 - 0.2} x={540} y={730} lineas={['la ilegal puede venir mezclada', 'con otras sustancias peligrosas']} fuente="Fuente: NIDA (Institutos Nacionales de Salud de EE. UU.)" borde={KC.red} tam={38} ancho={900} />
+      <Aviso T={T} at={R2 + 0.1} until={K.C - 0.3} x={540} y={540} lineas={['hoy: ensayos clínicos', 'controlados (ansiedad)']} fuente="fase 3 · 2026" borde={KC.ink} tam={44} ancho={760} />
+      <SelloRect T={T} at={R2 + 0.9} until={K.C - 0.2} x={540} y={750} texto="NO ES MEDICAMENTO APROBADO" color={KC.red} tam={58} />
       <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="una historia que la ciencia sigue revisando" x={540} y={880} tam={32} borde={KC.gold} />
 
       {/* barras de escala */}
@@ -437,11 +440,12 @@ function LsdShot() {
       <BarraEscala T={T} at={K.H} until={HM} texto="1 cm" largo={170} color={KC.ink} />
       <BarraEscala T={T} at={HM} until={K.S} texto="~1 nm (esquemático)" largo={240} />
       <BarraEscala T={T} at={K.S} until={K.L} texto="1 m" largo={330} color={KC.ink} />
-      <BarraEscala T={T} at={K.L} until={K.P} texto="10 cm" largo={120} color={KC.ink} />
+      <BarraEscala T={T} at={K.L} until={K.A} texto="10 cm" largo={190} color={KC.ink} />
+      <BarraEscala T={T} at={K.A} until={K.P} texto="10 cm" largo={204} color={KC.ink} />
       <BarraEscala T={T} at={K.Co} until={K.Pi} texto="10 cm" largo={150} color={KC.ink} />
-      <BarraEscala T={T} at={K.Pi} until={PI2} texto="1 cm" largo={110} color={KC.ink} />
-      <BarraEscala T={T} at={K.B} until={K.D} texto="1 m" largo={250} color={KC.ink} />
-      <BarraEscala T={T} at={K.D} until={K.Le} texto="10 cm" largo={170} color={KC.ink} />
+      <BarraEscala T={T} at={K.Pi} until={PI2} texto="1 cm" largo={149} color={KC.ink} />
+      <BarraEscala T={T} at={K.B} until={K.D} texto="1 m" largo={288} color={KC.ink} />
+      <BarraEscala T={T} at={K.D} until={K.Le} texto="10 cm" largo={241} color={KC.ink} />
       <BarraEscala T={T} at={K.Le + 2.7} until={K.R} texto="500 km" largo={120} color={KC.ink} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={105} color={KC.ink} />
 
