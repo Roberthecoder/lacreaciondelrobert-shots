@@ -1,0 +1,3 @@
+# Grupo n039 — pase a mano cine
+
+- fun-77-riboflavina: subtítulo quemado (SubIt) apagado; agrandados y centrados vasito del gancho y del cierre (x1.9, con lámpara y sombrilla reacomodadas), cuerpo y reloj, molécula y lámpara UV, tarjetas de microbios, planta de algodón y chinche, levaduras e hifas, tubo de hifa con vacuolas, la pregunta, esporas (tarjeta 2001 chica y arriba), placas de Petri, tanque y fábrica, ADN y paquete de genes, gráfica de ahorro (con el tanque atenuado detrás) y pastelito; etiquetas y chips reacomodados; barras de escala recalculadas en cada escena agrandada. Auditores: sin láminas · encuadre bien; pendiente: nada
