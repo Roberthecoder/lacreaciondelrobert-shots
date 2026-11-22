@@ -1,0 +1,3 @@
+# Avance del grupo n005 (pase a mano cine)
+
+- cie-14-contar-trueno: Sonido y Tres bajados al centro con la nube y el rayo de origen a la izquierda (regla 0–340 m y 0–1 km redibujadas con sus mismos rótulos, solo esquema); Pregunta deja de ser texto solo: tú contando, la tormenta lejos con su destello y la distancia marcada en el suelo; Retumbo: paneles más altos y centrados, cada uno con su tormenta (grande = cerca, chica = lejos); Espera: casa atenuada bajo el reloj; Cierre: pared naranja clara oscurecida, ventana y cabeza bajadas al centro, número del globo en oscuro. Auditores: sin láminas · encuadre bien; pendiente: nada
