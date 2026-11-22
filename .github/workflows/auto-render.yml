@@ -78,6 +78,21 @@ jobs:
             for n in "${FALTAN[@]}"; do echo "::error title=Sin verificación::$n no tiene verificacion.md con VEREDICTO: APROBADO. Verifica el guion antes de renderizar (CLAUDE.md, Verificación de hechos)."; done
             exit 1
           fi
+          # Candado del estilo cine (regla de Robert, 22 nov 2026): ningún shot vertical se renderiza sin la capa cine.jsx
+          # (fondo oscuro, volumen, cámara, sin subtítulo ni logo) cargada en su .dc.html narrado. Se arregla con
+          # python3 motor/kit/aplicar-cine.py shots/<clave>. Los formales y los «otro» llevan su propia estética.
+          SINCINE=()
+          for d in "${LISTA[@]}"; do
+            [ "${d%%/*}" = shots ] || continue
+            case "$(basename "$d")" in formal-*|otro-*) continue;; esac
+            S=$(node -e 'try{console.log(JSON.parse(require("fs").readFileSync(process.argv[1]+"/narracion.json","utf8")).salida||"")}catch(e){console.log("")}' "$d")
+            if [ -z "$S" ] || [ ! -f "$d/$S" ]; then continue; fi
+            if ! grep -q "cine.jsx" "$d/$S" || [ ! -f "$d/cine.jsx" ]; then SINCINE+=("$d"); fi
+          done
+          if [ ${#SINCINE[@]} -gt 0 ]; then
+            for n in "${SINCINE[@]}"; do echo "::error title=Sin estilo cine::$n no carga cine.jsx. Corre python3 motor/kit/aplicar-cine.py $n (CLAUDE.md, Modo cine)."; done
+            exit 1
+          fi
           aJSON() { printf '%s\n' "$@" | node -e 'const l=require("fs").readFileSync(0,"utf8").split("\n").filter(Boolean);console.log(JSON.stringify(l))'; }
           echo "Shots a renderizar: $(aJSON "${LISTA[@]}") · textos: $(aJSON "${TEXTOS[@]}")"
           echo "shots=$(aJSON "${LISTA[@]}")" >> "$GITHUB_OUTPUT"

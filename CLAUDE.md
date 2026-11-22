@@ -255,6 +255,7 @@ compararon cuadro por cuadro y con analizador de audio; todo lo de abajo sale de
   `motor/kit/escribir-dc.mjs` ya lo pone y `python3 motor/kit/aplicar-cine.py shots/<clave>` lo aplica a cualquier shot. Esa
   capa da sola: fondo, cámara mínima, disolvencias, la «Pregunta» con la escena anterior detrás, cierre y sonido. **No sustituye
   dibujar bien cada escena.**
+- **Candado en GitHub:** `auto-render.yml` no renderiza ningún shot vertical cuyo `.dc.html` narrado no cargue `cine.jsx` (igual que el candado de verificación). El pase a mano por lotes en sesiones de nube se hace con `maestro/re-render-cine/encargo-sesion-nube.md` y `encargo-pase.md`.
 - **Antes de entregar cualquier shot:** (1) `NAVEGADOR=chrome python3 motor/kit/auditar-laminas.py shots/<clave>` debe decir «sin
   láminas»; (2) sacar con `motor/preview.mjs` una hoja de dos o tres cuadros por escena y MIRARLA comparándola con la hoja de
   `bio-04-fagos`; (3) revisar la lista de `maestro/recetas/pase-a-mano-cine.md`; (4) medir el audio como dice el punto 3.
