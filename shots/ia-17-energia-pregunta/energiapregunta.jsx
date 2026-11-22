@@ -163,18 +163,18 @@ function EnergiaPregunta() {
     const viaje = kprog(T, t0 + 0.45, t0 + 0.95, kEase.suave), on = kprog(T, t0 + 0.9, t0 + 1.2);
     const seg = conCuenta ? 9 * kprog(T, t0 + 1.1, t0 + 3.6) : 9;
     return <>
-      <Celu x={290} y={700} s={1} env={env} resp={resp} T={T} />
-      {viaje > 0 && viaje < 1 && <Rayo x={klerp(400, 680, viaje)} y={klerp(720, 900, viaje)} s={1.1} rot={-20 + viaje * 30} />}
-      <Tele x={770} y={980} s={0.95} on={on} seg={seg} T={T} />
+      <Celu x={300} y={800} s={1.35} env={env} resp={resp} T={T} />
+      {viaje > 0 && viaje < 1 && <Rayo x={klerp(480, 720, viaje)} y={klerp(820, 1010, viaje)} s={1.4} rot={-20 + viaje * 30} />}
+      <Tele x={782} y={1110} s={1.06} on={on} seg={seg} T={T} />
     </>;
   };
   const gotas = (t0) => <>{[0, 1, 2, 3, 4].map((k) => { const a = t0 + k * 0.32, p = kprog(T, a, a + 0.45, (u) => u * u);
-    return T >= a && p < 1 ? <Gota key={k} x={290} y={klerp(1010, 1090, p)} s={0.7} /> : null; })}
-    <Vaso x={290} y={1100} s={1} nivel={kprog(T, t0 + 0.3, t0 + 1.9) * 0.55} /></>;
+    return T >= a && p < 1 ? <Gota key={k} x={300} y={klerp(1225, 1320, p)} s={0.85} /> : null; })}
+    <Vaso x={300} y={1335} s={1.25} nivel={kprog(T, t0 + 0.3, t0 + 1.9) * 0.55} /></>;
 
   // cierre: aparecen miles de teles y celulares
   const mosaico = () => { const r = krng(17), out = [];
-    for (let i = 0; i < 60; i++) { const c = i % 6, f = Math.floor(i / 6), px = 90 + c * 180 + (f % 2) * 40, py = 360 + f * 82, d = r() * 1.4, on = kprog(T, K.C + 2.6 + d, K.C + 3.0 + d);
+    for (let i = 0; i < 60; i++) { const c = i % 6, f = Math.floor(i / 6), px = 90 + c * 180 + (f % 2) * 40, py = 540 + f * 92, d = r() * 1.4, on = kprog(T, K.C + 2.6 + d, K.C + 3.0 + d);
       if (on <= 0) continue;
       out.push(<g key={i} opacity={on}>{(i + f) % 2 ? <Tele x={px} y={py} s={0.16} on={1} mini T={T} /> : <Celu x={px} y={py} s={0.11} env={1} resp={1} />}</g>); }
     return out; };
@@ -188,29 +188,30 @@ function EnergiaPregunta() {
         {svgK(<>{escenaTele(K.G, true)}{gotas(K.G + 4.4)}</>)}
       </Escena>
       <Chip T={T} at={K.G + 0.6} until={K.E - 0.2} texto="Gemini · pregunta típica de texto" x={330} y={330} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.G + 5.2} until={K.E - 0.2} texto="≈ 5 gotas" x={440} y={1010} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={K.G + 5.2} until={K.E - 0.2} texto="≈ 5 gotas" x={300} y={1465} tam={32} borde={KC.cyan} />
 
       {/* 2 · el estudio de Google */}
       <Escena T={T} a={K.E} b={K.I}>
         <FondoLunares color={KC.yellow} />
-        {svgK(<g opacity={kprog(T, K.E + 2.3, K.E + 2.7)}><Rayo x={150} y={820} s={1.4} rot={-10} /></g>)}
+        {svgK(<><Celu x={540} y={1140} s={1.0} env={1} resp={1} T={T} brillo={kprog(T, K.E + 2.4, K.E + 3.0) * (0.6 + 0.4 * Math.sin(T * 5))} />
+          <Rayo x={215} y={1130} s={1.9} rot={-10} /><Rayo x={865} y={1150} s={1.5} rot={14} o={kprog(T, K.E + 2.3, K.E + 2.7)} /></>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.1} until={K.E + 2.2} anio="2025" quien="Google · su IA Gemini" revista="Elsworth et al. · arXiv 2508.15734" y={620} />
-      <NumeroGigante T={T} at={K.E + 2.4} until={K.I - 0.2} valor={0.24} dec={2} dur={1.0} sufijo=" Wh" etiqueta="por pregunta típica de texto" x={620} y={800} tam={210} color={KC.orange} />
-      <Chip T={T} at={K.E + 3.4} until={K.I - 0.2} texto="0.26 mL de agua" x={320} y={1060} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.E + 3.8} until={K.I - 0.2} texto="0.03 g CO₂e" x={780} y={1060} tam={36} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.1} until={K.E + 2.2} anio="2025" quien="Google · su IA Gemini" revista="Elsworth et al. · arXiv 2508.15734" y={420} />
+      <NumeroGigante T={T} at={K.E + 2.4} until={K.I - 0.2} valor={0.24} dec={2} dur={1.0} sufijo=" Wh" etiqueta="por pregunta típica de texto" x={540} y={560} tam={210} color={KC.orange} />
+      <Chip T={T} at={K.E + 3.4} until={K.I - 0.2} texto="0.26 mL de agua" x={300} y={790} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.E + 3.8} until={K.I - 0.2} texto="0.03 g CO₂e" x={790} y={790} tam={36} borde={KC.ink} />
 
       {/* 3 · qué incluye: por dentro del centro de datos */}
       <Escena T={T} a={K.I} b={K.B}>
         <FondoCircuito T={T} />
         {svgK(<>
-          {[0, 1, 2, 3].map((k) => <g key={k} opacity={kprog(T, K.I + 0.1 + k * 0.12, K.I + 0.4 + k * 0.12)}><Rack x={170 + k * 200} y={620} s={0.85} T={T} seed={k + 2} calor={k < 2 ? 0.8 : 0} /></g>)}
-          <g opacity={kprog(T, K.I + 2.6, K.I + 3.0)}><Ventilador x={900} y={560} s={0.9} T={T} /></g>
+          {[0, 1, 2, 3].map((k) => <g key={k} opacity={kprog(T, K.I + 0.1 + k * 0.12, K.I + 0.4 + k * 0.12)}><Rack x={150 + k * 190} y={770} s={0.97} T={T} seed={k + 2} calor={k < 2 ? 0.8 : 0} /></g>)}
+          <g opacity={kprog(T, K.I + 2.6, K.I + 3.0)}><Ventilador x={925} y={700} s={0.9} T={T} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.I + 0.3} until={K.B - 0.2} texto="dentro del centro de datos" x={560} y={330} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={K.I + 0.3} until={K.B - 0.2} texto="dentro del centro de datos" x={540} y={430} tam={32} borde={KC.cyan} />
       {T >= K.I + 0.6 && T <= K.B + 0.4 && (() => { const o = kprog(T, K.I + 0.6, K.I + 1.0) * (1 - kprog(T, K.B - 0.1, K.B + 0.4)), a = kprog(T, K.I + 0.7, K.I + 1.5, kEase.sale), b = kprog(T, K.I + 1.6, K.I + 3.4, kEase.sale);
-        return <div style={{ position:'absolute', left:90, top:920, width:900, zIndex:40, opacity:o }}>
+        return <div style={{ position:'absolute', left:90, top:1080, width:900, zIndex:40, opacity:o }}>
           <div style={{ display:'flex', height:90, border:`6px solid ${KC.texto}`, borderRadius:18, overflow:'hidden', background:'rgba(0,0,0,.4)' }}>
             <div style={{ width: 375 * a, background:KC.cyan }}></div>
             <div style={{ width: 513 * b, background:KC.orange }}></div>
@@ -226,61 +227,63 @@ function EnergiaPregunta() {
       <Escena T={T} a={K.B} b={K.P}>
         <FondoLunares color={KC.mint} />
       </Escena>
-      {T >= K.B && T <= K.P + 0.4 && (() => { const o = kprog(T, K.B, K.B + 0.3) * (1 - kprog(T, K.P - 0.1, K.P + 0.4)), enc = kprog(T, K.B + 1.0, K.B + 2.4, kEase.suave), h0 = 560;
+      {T >= K.B && T <= K.P + 0.4 && (() => { const o = kprog(T, K.B, K.B + 0.3) * (1 - kprog(T, K.P - 0.1, K.P + 0.4)), enc = kprog(T, K.B + 1.0, K.B + 2.4, kEase.suave), h0 = 720;
         const hB = klerp(h0, h0 / 33, enc);
         return <div style={{ position:'absolute', inset:0, zIndex:40, opacity:o }}>
-          <div style={{ position:'absolute', left:110, top:1110 - h0, width:220, height:h0, background:'rgba(22,18,15,.12)', border:`5px dashed ${KC.ink}`, borderRadius:'18px 18px 0 0' }}></div>
-          <div style={{ position:'absolute', left:110, top:1110 - hB, width:220, height:hB, background:KC.red, border:`6px solid ${KC.ink}`, borderRadius:'18px 18px 0 0' }}></div>
-          <div style={{ position:'absolute', left:90, width:260, top:1120, textAlign:'center', font:`900 34px ${KF.texto}`, color:KC.ink }}>{enc < 0.5 ? 'mayo 2024' : 'mayo 2025'}</div>
-          <div style={{ position:'absolute', left:90, width:260, top:1110 - h0 - 100, textAlign:'center', font:`900 30px/1.15 ${KF.texto}`, color:KC.ink }}>energía de la pregunta típica</div>
+          <div style={{ position:'absolute', left:90, top:1340 - h0, width:290, height:h0, background:'rgba(22,18,15,.12)', border:`5px dashed ${KC.ink}`, borderRadius:'18px 18px 0 0' }}></div>
+          <div style={{ position:'absolute', left:90, top:1340 - hB, width:290, height:hB, background:KC.red, border:`6px solid ${KC.ink}`, borderRadius:'18px 18px 0 0' }}></div>
+          <div style={{ position:'absolute', left:70, width:330, top:1352, textAlign:'center', font:`900 38px ${KF.texto}`, color:KC.ink }}>{enc < 0.5 ? 'mayo 2024' : 'mayo 2025'}</div>
+          <div style={{ position:'absolute', left:70, width:330, top:1340 - h0 - 100, textAlign:'center', font:`900 34px/1.15 ${KF.texto}`, color:KC.ink }}>energía de la pregunta típica</div>
+          {svgK(<Celu x={740} y={1190} s={0.62} env={1} resp={1} T={T} />)}
         </div>; })()}
-      <NumeroGigante T={T} at={K.B + 2.2} until={K.P - 0.2} valor={33} dur={0.8} prefijo="÷" etiqueta="" x={640} y={880} tam={280} color={KC.yellow} />
-      <Chip T={T} at={K.B + 2.6} until={K.P - 0.2} texto="en 12 meses (según Google)" x={640} y={1080} tam={32} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.B + 2.2} until={K.P - 0.2} valor={33} dur={0.8} prefijo="÷" etiqueta="" x={730} y={720} tam={280} color={KC.yellow} />
+      <Chip T={T} at={K.B + 2.6} until={K.P - 0.2} texto="en 12 meses (según Google)" x={730} y={900} tam={32} borde={KC.ink} />
 
       {/* 5 · re-gancho */}
       <Escena T={T} a={K.P} b={K.O} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svgK(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
+        {svgK(<g opacity={0.4}><Celu x={540} y={1000} s={1.6} env={1} resp={1} T={T} /></g>, 19)}
+        {svgK(<text x={540} y={1250} textAnchor="middle" style={{ font:`400 700px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={16} transform={`rotate(${Math.sin(T * 3) * 6} 540 1000)`}>?</text>)}
       </Escena>
 
       {/* 6 · ojo: la pregunta de en medio, autorreportada; imágenes y video fuera */}
       <Escena T={T} a={K.O} b={K.S}>
         <FondoLunares color={KC.lilac} />
         {svgK(<>
-          <g opacity={1 - kprog(T, L6 - 0.3, L6 + 0.2)}>
-            {Array.from({ length: 9 }, (_, i) => { const h = 40 + i * i * 6.5, w = 80, x = 110 + i * 108, a = K.O + 0.3 + i * 0.12, mid = i === 4;
+          <g opacity={1 - 0.75 * kprog(T, L6 - 0.3, L6 + 0.2)}>
+            {Array.from({ length: 9 }, (_, i) => { const h = 60 + i * i * 9, w = 96, x = 80 + i * 115, a = K.O + 0.1 + i * 0.06, mid = i === 4;
               const res = kprog(T, K.O + 1.6, K.O + 2.0);
-              return <Burbuja key={i} x={x} y={1080} w={w} h={h} o={kprog(T, a, a + 0.25) * (mid ? 1 : 1 - 0.55 * res)} color={mid && res > 0 ? KC.yellow : KC.paper} />; })}
-            <g opacity={kprog(T, K.O + 1.8, K.O + 2.2)}><path d="M 542 760 L 542 900" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" /><path d="M 515 875 L 542 912 L 569 875" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>
+              return <Burbuja key={i} x={x} y={1290} w={w} h={h} o={kprog(T, a, a + 0.25) * (mid ? 1 : 1 - 0.55 * res)} color={mid && res > 0 ? KC.yellow : KC.paper} />; })}
+            <g opacity={kprog(T, K.O + 1.8, K.O + 2.2) * (1 - kprog(T, L6 - 0.3, L6 + 0.2))}><path d="M 540 880 L 540 1030" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" /><path d="M 513 1005 L 540 1042 L 567 1005" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>
           </g>
           <g opacity={kprog(T, L6 + 0.1, L6 + 0.4)}>
-            <IconoMedio x={530} y={820} tipo="imagen" raya={kprog(T, L6 + 0.9, L6 + 1.3, kEase.sale)} />
-            <IconoMedio x={830} y={820} tipo="video" raya={kprog(T, L6 + 1.3, L6 + 1.7, kEase.sale)} />
+            <IconoMedio x={330} y={930} s={1.4} tipo="imagen" raya={kprog(T, L6 + 0.9, L6 + 1.3, kEase.sale)} />
+            <IconoMedio x={750} y={930} s={1.4} tipo="video" raya={kprog(T, L6 + 1.3, L6 + 1.7, kEase.sale)} />
           </g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.O + 1.9} until={K.O + 3.7} texto="la de en medio = mediana" x={540} y={700} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.O + 3.9} until={L6 - 0.3} texto="cifras de Google, sin revisión externa" x={600} y={700} tam={32} borde={KC.red} />
-      <Chip T={T} at={L6 + 1.6} until={K.S - 0.2} texto="fuera de la cuenta" x={680} y={1020} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.O + 1.9} until={K.O + 3.7} texto="la de en medio = mediana" x={540} y={820} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.O + 3.9} until={L6 - 0.3} texto="cifras de Google, sin revisión externa" x={540} y={820} tam={32} borde={KC.red} />
+      <Chip T={T} at={L6 + 1.6} until={K.S - 0.2} texto="fuera de la cuenta" x={540} y={1180} tam={40} borde={KC.red} />
 
       {/* 7 · la suma: miles de millones de preguntas */}
       <Escena T={T} a={K.S} b={K.A} zoom={-0.04}>
         <FondoLunares color={KC.noche} punto="rgba(255,255,255,.05)" />
       </Escena>
       {T >= K.S - 0.3 && T <= K.A + 0.4 && <div style={{ position:'absolute', inset:0, zIndex:30, opacity:kprog(T, K.S - 0.3, K.S + 0.2) * (1 - kprog(T, K.A - 0.1, K.A + 0.4)) }}>
-        <Cuadricula T={T} cols={40} filas={24} x={90} y={700} ancho={900} alto={460} llenado={kprog(T, K.S + 0.2, K.S + 3.2, kEase.suave)} lleno={KC.yellow} vacio="rgba(255,255,255,.08)" />
+        <Cuadricula T={T} cols={40} filas={30} x={60} y={600} ancho={960} alto={720} llenado={kprog(T, K.S + 0.2, K.S + 3.2, kEase.suave)} lleno={KC.yellow} vacio="rgba(255,255,255,.2)" />
       </div>}
-      <Chip T={T} at={K.S + 0.3} until={K.A - 0.2} texto="cada cuadrito = una pregunta" x={380} y={640} tam={30} borde={KC.yellow} />
+      <Chip T={T} at={K.S + 0.3} until={K.A - 0.2} texto="cada cuadrito = una pregunta" x={540} y={540} tam={30} borde={KC.yellow} />
 
       {/* 8 · la AIE: en 2030, un poco más que todo Japón */}
       <Escena T={T} a={K.A} b={K.R}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svgK(<>
-          <Planeta x={540} y={560} r={180} T={T} luces={kprog(T, K.A + 0.6, K.A + 3.6)} />
+          <Planeta x={540} y={640} r={230} T={T} luces={kprog(T, K.A + 0.6, K.A + 3.6)} />
           
         </>)}
       </Escena>
-      <Chip T={T} at={K.A + 0.2} until={K.R - 0.2} texto="Agencia Internacional de Energía" x={460} y={330} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.A + 0.2} until={K.R - 0.2} texto="Agencia Internacional de Energía" x={540} y={300} tam={32} borde={KC.ink} />
       {T >= K.A + 2.6 && T <= K.R + 0.4 && (() => { const o = kprog(T, K.A + 2.6, K.A + 3.0) * (1 - kprog(T, K.R - 0.1, K.R + 0.4)), g1 = kprog(T, K.A + 3.0, K.A + 4.4, kEase.sale), g2 = kprog(T, K.A + 5.4, K.A + 6.8, kEase.sale);
         const fila = (txt, sub, w, g, color, icono, top) => <div style={{ position:'absolute', left:70, top, width:940 }}>
           <div style={{ font:`900 34px ${KF.texto}`, color:KC.ink, marginLeft:120 }}>{txt} <span style={{ font:`700 26px ${KF.mono}`, color:'#5a524a' }}>{sub}</span></div>
@@ -292,31 +295,31 @@ function EnergiaPregunta() {
         const icoDatos = <svg width={104} height={104} viewBox="-60 -60 120 120"><rect x={-40} y={-50} width={80} height={100} rx={8} fill="#232a3a" stroke={KC.ink} strokeWidth={6} />{[-30, -6, 18].map((yy) => <g key={yy}><rect x={-30} y={yy} width={60} height={16} rx={3} fill="#151a24" /><circle cx={-20} cy={yy + 8} r={4} fill={KC.mint} /></g>)}</svg>;
         const icoJapon = <svg width={104} height={104} viewBox="-130 -150 260 280"><Japon x={0} y={0} s={1} T={T} /></svg>;
         return <div style={{ position:'absolute', inset:0, zIndex:40, opacity:o }}>
-          {fila('Centros de datos del mundo', '· 2030', 800, g1, KC.orange, icoDatos, 790)}
-          {fila('Japón entero', '· hoy', 760, g2, KC.coral, icoJapon, 975)}
-          <div style={{ position:'absolute', left:790, top:918, font:`900 28px ${KF.texto}`, color:KC.red, whiteSpace:'nowrap', opacity:kprog(T, K.A + 6.9, K.A + 7.3) }}>▲ un poco más</div>
+          {fila('Centros de datos del mundo', '· 2030', 800, g1, KC.orange, icoDatos, 1000)}
+          {fila('Japón entero', '· hoy', 760, g2, KC.coral, icoJapon, 1185)}
+          <div style={{ position:'absolute', left:790, top:1128, font:`900 28px ${KF.texto}`, color:KC.red, whiteSpace:'nowrap', opacity:kprog(T, K.A + 6.9, K.A + 7.3) }}>▲ un poco más</div>
         </div>; })()}
 
-      {T >= L9 && T <= K.R + 0.4 && <div style={{ position:'absolute', inset:0, zIndex:44, opacity:1 - kprog(T, K.R - 0.1, K.R + 0.4) }}>{svgK(<><g transform={`translate(600 872) rotate(-6) scale(${klerp(1.8, 1, kprog(T, L9, L9 + 0.35, kEase.sale))})`} opacity={kprog(T, L9, L9 + 0.25)}>
+      {T >= L9 && T <= K.R + 0.4 && <div style={{ position:'absolute', inset:0, zIndex:44, opacity:1 - kprog(T, K.R - 0.1, K.R + 0.4) }}>{svgK(<><g transform={`translate(600 1082) rotate(-6) scale(${klerp(1.8, 1, kprog(T, L9, L9 + 0.35, kEase.sale))})`} opacity={kprog(T, L9, L9 + 0.25)}>
             <rect x={-250} y={-60} width={500} height={120} rx={16} fill="rgba(255,59,47,.15)" stroke={KC.red} strokeWidth={10} />
             <text y={30} textAnchor="middle" style={{ font:`400 88px ${KF.titulo}` }} fill={KC.red}>PROYECCIÓN</text>
           </g></>)}</div>}
       {/* 9 · ahí no solo vive la IA */}
       <Escena T={T} a={K.R} b={K.C}>
         <FondoLunares color={KC.pink} />
-        {svgK(<g transform="translate(540 910) scale(0.92) translate(-540 0)"><EdificioDatos x={540} y={0} T={T} aparece={kprog(T, K.R + 0.2, K.R + 2.6)} ia={kprog(T, K.R + 3.2, K.R + 3.6)} /></g>)}
+        {svgK(<g transform="translate(540 990) scale(1.14) translate(-540 0)"><EdificioDatos x={540} y={0} T={T} aparece={kprog(T, K.R + 0.2, K.R + 2.6)} ia={kprog(T, K.R + 3.2, K.R + 3.6)} /></g>)}
       </Escena>
-      <Chip T={T} at={K.R + 3.4} until={K.C - 0.2} texto="la IA: una de las grandes razones" x={640} y={400} tam={32} borde={KC.mint} />
+      <Chip T={T} at={K.R + 3.4} until={K.C - 0.2} texto="la IA: una de las grandes razones" x={540} y={470} tam={32} borde={KC.mint} />
 
       {/* 10 · cierre: la misma imagen… multiplicada */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        <div style={{ position:'absolute', inset:0, transform:`scale(${klerp(1, 0.38, zoomFuera)})`, transformOrigin:'50% 42%' }}>
+        <div style={{ position:'absolute', inset:0, transform:`scale(${klerp(1, 0.38, zoomFuera)})`, transformOrigin:'50% 50%' }}>
           {svgK(escenaTele(K.C, false))}
         </div>
         {svgK(<>{mosaico()}</>, 25)}
       </Escena>
-      <Chip T={T} at={K.C + 3.2} until={K.Ou} texto="× miles de millones" x={380} y={345} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.C + 3.2} until={K.Ou} texto="× miles de millones" x={540} y={450} tam={44} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="Menos que *9 segundos de tele…* y *5 gotas.*" />
