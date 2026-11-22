@@ -204,16 +204,16 @@ function Whisper() {
         {svg(<>
           {Array.from({ length: 10 }, (_, i) => { const c = i % 5, f = Math.floor(i / 5), malo = [1, 3, 5, 8].indexOf(i) >= 0 && [1, 3, 5, 8].indexOf(i) < marcados;
             const ap = kprog(T, K.D + 0.1 + i * 0.05, K.D + 0.4 + i * 0.05, kEase.rebote);
-            return <Globito key={i} x={140 + c * 200} y={730 + f * 190} malo={malo ? 1 : 0} s={0.98 * ap} />; })}
-          <g opacity={kprog(T, K.D + 2.9, K.D + 3.2)}><IcoViolencia x={200} y={1190} s={1.25} /></g>
-          <g opacity={kprog(T, K.D + 3.8, K.D + 4.1)}><IcoTermometro x={530} y={1180} s={1.1} /></g>
-          <g opacity={kprog(T, K.D + 4.8, K.D + 5.1)}><IcoPlay x={860} y={1190} s={1.15} /></g>
+            return <Globito key={i} x={140 + c * 200} y={840 + f * 215} malo={malo ? 1 : 0} s={1.08 * ap} />; })}
+          <g opacity={kprog(T, K.D + 2.9, K.D + 3.2)}><IcoViolencia x={200} y={1310} s={1.4} /></g>
+          <g opacity={kprog(T, K.D + 3.8, K.D + 4.1)}><IcoTermometro x={530} y={1300} s={1.25} /></g>
+          <g opacity={kprog(T, K.D + 4.8, K.D + 5.1)}><IcoPlay x={860} y={1310} s={1.3} /></g>
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.D + 0.9} until={K.P - 0.2} valor={38} dur={1.4} sufijo=" %" etiqueta="de los inventos: dañinos" x={540} y={440} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.D + 3.0} until={K.P - 0.2} texto="violencia" x={200} y={1375} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.D + 3.9} until={K.P - 0.2} texto="enfermedad falsa" x={530} y={1375} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.D + 4.9} until={K.P - 0.2} texto="«¡gracias por ver!»" x={860} y={1375} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.D + 0.9} until={K.P - 0.2} valor={38} dur={1.4} sufijo=" %" etiqueta="de los inventos: dañinos" x={540} y={560} tam={150} color={KC.yellow} />
+      <Chip T={T} at={K.D + 3.0} until={K.P - 0.2} texto="violencia" x={200} y={1500} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.D + 3.9} until={K.P - 0.2} texto="enfermedad falsa" x={515} y={1500} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.D + 4.9} until={K.P - 0.2} texto="«¡gracias por ver!»" x={872} y={1500} tam={30} borde={KC.ink} />
 
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Pa} zoom={0.1}>
@@ -243,15 +243,15 @@ function Whisper() {
       <Escena T={T} a={K.S} b={K.O}>
         <FondoCircuito T={T} />
         {svg(<>
-          <line x1={20} y1={880} x2={215} y2={880} stroke={KC.cyan} strokeWidth={8} strokeLinecap="round" strokeDasharray="4 18" />
-          <text x={118} y={950} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.cyan}>silencio</text>
+          <line x1={20} y1={1030} x2={215} y2={1030} stroke={KC.cyan} strokeWidth={8} strokeLinecap="round" strokeDasharray="4 18" />
+          <text x={118} y={1100} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.cyan}>silencio</text>
         </>)}
-        <RedNeuronal T={T} x={250} y={560} ancho={470} alto={640} capas={[3, 5, 5, 3]} onda={((T - K.S - 0.6) / 1.6) % 1.2} />
+        <RedNeuronal T={T} x={250} y={630} ancho={540} alto={800} capas={[3, 5, 5, 3]} onda={((T - K.S - 0.6) / 1.6) % 1.2} />
         {svg(<>{['gracias', 'por', 'ver'].map((w, i) => { const t0 = K.S + 1.8 + i * 0.5, u = kprog(T, t0, t0 + 0.45, kEase.rebote);
-          return <Ficha key={i} x={890} y={740 + i * 140} texto={w} s={u} o={Math.min(1, u * 2)} color={[KC.yellow, KC.pink, KC.mint][i]} tam={40} />; })}</>)}
+          return <Ficha key={i} x={905} y={890 + i * 160} texto={w} s={u} o={Math.min(1, u * 2)} color={[KC.yellow, KC.pink, KC.mint][i]} tam={40} />; })}</>)}
       </Escena>
-      <Chip T={T} at={K.S + 0.2} until={K.O - 0.2} texto="HIPÓTESIS de las autoras" x={540} y={400} tam={40} borde={KC.yellow} color={KC.yellow} />
-      <Chip T={T} at={K.S + 3.2} until={K.O - 0.2} texto="rellena el hueco con texto" x={540} y={1340} tam={38} borde={KC.cyan} />
+      <Chip T={T} at={K.S + 0.2} until={K.O - 0.2} texto="HIPÓTESIS de las autoras" x={540} y={500} tam={40} borde={KC.yellow} color={KC.yellow} />
+      <Chip T={T} at={K.S + 3.2} until={K.O - 0.2} texto="rellena el hueco con texto" x={540} y={1530} tam={38} borde={KC.cyan} />
 
       {/* 9 · los otros servicios no inventaron */}
       <Escena T={T} a={K.O} b={K.Co}>
