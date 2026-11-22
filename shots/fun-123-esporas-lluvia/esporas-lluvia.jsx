@@ -32,14 +32,14 @@ function SetaJardin({ T = 0, x, y, s = 1, crece = 1, vapor = 0, frio = 0 }) {
 
 // Trayectoria del aire frío (Dressaire et al. 2016): sale de debajo del sombrero hacia abajo, corre pegado al suelo
 // y al chocar con una piedrita sube en un remolino. sd = lado (+1 der, −1 izq). Devuelve puntos.
-function flujoPts(x, yc, yg, sd, alto = 440, N = 90) {
+function flujoPts(x, yc, yg, sd, alto = 440, N = 90, R = 250) {
   const out = [];
   for (let i = 0; i <= N; i++) { const u = i / N; let px, py;
     if (u < 0.15) { const t = u / 0.15; const ax = x + sd * 25, ay = yc, cx = x + sd * 30, cy = yg - 30, bx = x + sd * 90, by = yg - 22;
       px = (1 - t) * (1 - t) * ax + 2 * t * (1 - t) * cx + t * t * bx; py = (1 - t) * (1 - t) * ay + 2 * t * (1 - t) * cy + t * t * by; }
-    else if (u < 0.45) { const t = (u - 0.15) / 0.3; px = klerp(x + sd * 90, x + sd * 300, t); py = yg - 22; }
-    else if (u < 0.78) { const t = (u - 0.45) / 0.33; const th = Math.PI / 2 - t * Math.PI; px = x + sd * (300 + 78 * Math.cos(th)); py = yg - 100 + 78 * Math.sin(th); }
-    else { const t = (u - 0.78) / 0.22; const ax = x + sd * 300, ay = yg - 178, cx = x + sd * 230, cy = yg - 230, bx = x + sd * 250, by = yg - alto;
+    else if (u < 0.45) { const t = (u - 0.15) / 0.3; px = klerp(x + sd * 90, x + sd * R, t); py = yg - 22; }
+    else if (u < 0.78) { const t = (u - 0.45) / 0.33; const th = Math.PI / 2 - t * Math.PI; px = x + sd * (R + 78 * Math.cos(th)); py = yg - 100 + 78 * Math.sin(th); }
+    else { const t = (u - 0.78) / 0.22; const ax = x + sd * R, ay = yg - 178, cx = x + sd * (R - 70), cy = yg - 230, bx = x + sd * (R - 45), by = yg - alto;
       px = (1 - t) * (1 - t) * ax + 2 * t * (1 - t) * cx + t * t * bx; py = (1 - t) * (1 - t) * ay + 2 * t * (1 - t) * cy + t * t * by; }
     out.push([px, py]); }
   return out;
@@ -56,9 +56,9 @@ function Flujo({ T, x, yc, yg, p = 1, esporas = 1, alto = 440, tibio = 1 }) {
         <path d={dPts(vis)} stroke={EL.frio} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="26 16" strokeDashoffset={-T * 70} />
         <path d="M 0 0 L -26 -16 L -26 16 Z" fill={EL.frio} stroke={KC.ink} strokeWidth={4} transform={`translate(${fin[0]} ${fin[1]}) rotate(${ang})`} />
         {/* piedrita contra la que choca el aire */}
-        <ellipse cx={x + sd * 360} cy={yg - 14} rx={34} ry={20} fill="#9a8f84" stroke={KC.ink} strokeWidth={5} />
+        <ellipse cx={x + sd * 310} cy={yg - 14} rx={34} ry={20} fill="#9a8f84" stroke={KC.ink} strokeWidth={5} />
         {tibio > 0 && <g opacity={tibio}>
-          <path d={`M ${x + sd * 210} ${yc - 360} Q ${x + sd * 230} ${yc - 180} ${x + sd * 120} ${yc - 70}`} stroke={EL.tibio} strokeWidth={8} fill="none" strokeDasharray="18 14" strokeDashoffset={-T * 50} strokeLinecap="round" />
+          <path d={`M ${x + sd * 205} ${yc - 250} Q ${x + sd * 222} ${yc - 140} ${x + sd * 120} ${yc - 70}`} stroke={EL.tibio} strokeWidth={8} fill="none" strokeDasharray="18 14" strokeDashoffset={-T * 50} strokeLinecap="round" />
           <path d="M 0 0 L -22 -13 L -22 13 Z" fill={EL.tibio} stroke={KC.ink} strokeWidth={3} transform={`translate(${x + sd * 120} ${yc - 70}) rotate(${sd > 0 ? 140 : 40})`} />
         </g>}
         {esporas > 0 && Array.from({ length: 10 }, (_, k) => { const u = frac(T * 0.22 + k / 10 + (sd > 0 ? 0 : 0.05)); if (u > p * 1.3) return null;
@@ -70,10 +70,10 @@ function Flujo({ T, x, yc, yg, p = 1, esporas = 1, alto = 440, tibio = 1 }) {
 // Pasto mojado (acaba de llover): franja verde con hojitas y gotas de rocío. yg = línea del suelo.
 function PastoMojado({ T, yg }) {
   return <g>
-    <rect x={-20} y={yg} width={KW + 40} height={KH - yg + 20} fill={EL.pasto2} />
-    <rect x={-20} y={yg} width={KW + 40} height={30} fill={EL.pasto} />
+    <rect x={-20} y={yg} width={KW + 40} height={KH - yg + 20} fill="#0f2a18" />
+    <rect x={-20} y={yg} width={KW + 40} height={30} fill="#1d4d29" />
     {Array.from({ length: 46 }, (_, i) => { const bx = i * 24 + (i % 3) * 5, hh = 34 + (i * 37) % 30, m = mece(T, i, 0.4) * 4;
-      return <path key={i} d={`M ${bx} ${yg + 12} Q ${bx + 3 + m} ${yg - hh * 0.5} ${bx + 8 + m} ${yg - hh}`} stroke={i % 2 ? EL.pasto : '#57d062'} strokeWidth={6} fill="none" strokeLinecap="round" />; })}
+      return <path key={i} d={`M ${bx} ${yg + 12} Q ${bx + 3 + m} ${yg - hh * 0.5} ${bx + 8 + m} ${yg - hh}`} stroke={i % 2 ? '#2f9a3d' : '#45b653'} strokeWidth={6} fill="none" strokeLinecap="round" />; })}
     {Array.from({ length: 12 }, (_, i) => <circle key={i} cx={40 + i * 88} cy={yg - 14 - (i % 3) * 8} r={6} fill={EL.gota} stroke="#fff" strokeWidth={2} opacity=".9" />)}
   </g>;
 }
@@ -129,10 +129,10 @@ const MUNDO = [
 const FUENTES_HUMO = [[150, 110], [250, 100], [190, 200], [280, 340], [270, 420], [510, 130], [540, 260], [520, 360], [650, 120], [760, 110], [850, 140], [740, 210], [860, 370]];
 function MapaMundo({ T, x, y, s = 1, p = 1, humo = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={p}>
-    <rect x={0} y={0} width={1000} height={500} rx={40} fill={EL.mar} stroke={KC.ink} strokeWidth={7} />
-    {MUNDO.map((d, i) => <path key={i} d={d} fill={EL.tierraMapa} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />)}
+    <rect x={0} y={0} width={1000} height={500} rx={40} fill="#15365c" stroke={KC.ink} strokeWidth={7} />
+    {MUNDO.map((d, i) => <path key={i} d={d} fill="#cdb873" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />)}
     {humo > 0 && FUENTES_HUMO.map(([fx, fy], i) => Array.from({ length: 5 }, (_, k) => { const u = frac(T * 0.5 + k / 5 + i * 0.13);
-      return <circle key={i + '-' + k} cx={fx + Math.sin(T * 2 + i + k) * 10 * u} cy={fy - u * 70} r={5 + u * 7} fill={EL.espora2} opacity={humo * (1 - u) * 0.75} />; }))}
+      return <circle key={i + '-' + k} cx={fx + Math.sin(T * 2 + i + k) * 10 * u} cy={fy - u * 70} r={5 + u * 7} fill="#f0d2a8" opacity={humo * (1 - u) * 0.8} />; }))}
   </g>;
 }
 // Persona de perfil (mira a la derecha) de 1.7 m a escala del cubo: 300 px = 1 m. Pies en (x, y).
@@ -163,9 +163,9 @@ function CuboAire({ T, x, y, lado = 300, p = 1, puntos = 1 }) {
   </g>;
 }
 // Fusarium: hifas tabicadas y macroconidias en media luna (con tabiques).
-function Fusarium({ T, x, y, s = 1, p = 1 }) {
+function Fusarium({ T, x, y, s = 1, p = 1, o = null }) {
   const hif = [[0, 0, 260, -40], [260, -40, 420, 10], [120, -18, 200, -140], [300, -26, 380, -150]];
-  return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={p}>
+  return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o == null ? p : o}>
     {hif.map(([a, b, c, d], i) => { const q = kclamp(p * 1.6 - i * 0.2, 0, 1); const ex = klerp(a, c, q), ey = klerp(b, d, q);
       return <g key={i}><line x1={a} y1={b} x2={ex} y2={ey} stroke={KC.ink} strokeWidth={20} strokeLinecap="round" />
         <line x1={a} y1={b} x2={ex} y2={ey} stroke="#ffd6e6" strokeWidth={13} strokeLinecap="round" />
@@ -241,72 +241,86 @@ function EsporasLluviaShot() {
   const K = { G: CUES.Gancho, V: CUES.Viento, Su: CUES.Sube, Ci: CUES.Cielo, R: CUES.Respiras, P: CUES.Pregunta, N: CUES.Nube, Se: CUES.Semilla,
     E: CUES.Estudio, Ro: CUES.Royas, H: CUES.Hipotesis, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const YG = 1180, SX = 540, SS = 2.3, YC = YG - 150 * SS;  // suelo, seta (x, escala) y bajo del sombrero
+  const YG = 1180, SX = 540, SS = 2.3, YC = YG - 150 * SS;  // suelo, seta (x, escala) y bajo del sombrero (coordenadas del dibujo)
+  // Pase a mano (cine): el jardín completo se agranda ×1.35 y su suelo queda en y = 1360 de pantalla. La regla de 10 cm
+  // y la barra de 5 cm crecen en la misma proporción (44 px × 1.35 = 59.4 px por cm).
+  const KJ = 1.35, YGP = 1360;
+  const jardin = (c) => <g transform={`translate(${SX} ${YGP}) scale(${KJ}) translate(${-SX} ${-YG})`}>{c}</g>;
   const micro = K.Ci + 2.9;                                 // en «al cielo»: de la espora al mapa
   const congela = K.Se + 0.9, mohoHielo = K.E + 6.3, royaHielo = K.Ro + 2.0;
+  // balanza de la hipótesis (×1.15): posición de cada platillo según la inclinación
+  const KB = 1.15, BX = 540, BY = 760, inclB = Math.sin(T * 2.2) * 0.4 * kprog(T, K.H + 1.6, K.H + 2.2), angB = inclB * 10 * Math.PI / 180;
+  const platillo = (sd) => [BX + sd * 300 * Math.cos(angB) * KB, BY + (sd * 300 * Math.sin(angB) + 150) * KB];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: la seta en el pasto mojado; el aire empieza a moverse en el cuadro 0.3 */}
-      <Escena T={T} a={K.G} b={K.V} zoom={0.04}>
+      <Escena T={T} a={K.G} b={K.V} zoom={0.04} origen="50% 60%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Nube x={300} y={520} s={0.75} T={T} oscura={0.15} />
-          <text x={300} y={545} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.G + 1.2, K.G + 1.6)}>?</text>
-          <PastoMojado T={T} yg={YG} />
-          <Flujo T={T} x={SX} yc={YC} yg={YG} p={kprog(T, K.G + 0.25, K.G + 2.2, kEase.sale)} esporas={kprog(T, K.G + 1.0, K.G + 1.6)} tibio={kprog(T, K.G + 2.2, K.G + 2.8)} />
-          <SetaJardin T={T} x={SX} y={YG} s={SS} frio={kprog(T, K.G + 0.25, K.G + 1.2)} />
+          <Nube x={250} y={390} s={0.8} T={T} oscura={0.15} />
+          <text x={250} y={423} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill="#0b1020" opacity={kprog(T, K.G + 1.2, K.G + 1.6)}>?</text>
+          {jardin(<>
+            <PastoMojado T={T} yg={YG} />
+            <Flujo T={T} x={SX} yc={YC} yg={YG} p={kprog(T, K.G + 0.25, K.G + 2.2, kEase.sale)} esporas={kprog(T, K.G + 1.0, K.G + 1.6)} tibio={kprog(T, K.G + 2.2, K.G + 2.8)} />
+            <SetaJardin T={T} x={SX} y={YG} s={SS} frio={kprog(T, K.G + 0.25, K.G + 1.2)} />
+          </>)}
+          {/* rótulos del aire dentro del dibujo, para que viajen con la cámara */}
+          <text x={540} y={566} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={EL.tibio} opacity={kprog(T, K.G + 2.6, K.G + 2.9)}>aire tibio</text>
+          <text x={395} y={1020} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#dbeaff" opacity={kprog(T, K.G + 2.3, K.G + 2.6)}>aire frío</text>
         </>)}
       </Escena>
       {/* 1 · capítulo 1: el viento. Evapora agua y enfría el aire bajo el sombrero */}
       <Escena T={T} a={K.V} b={K.Su} zoom={0.06} origen="50% 60%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(jardin(<>
           <PastoMojado T={T} yg={YG} />
           <Flujo T={T} x={SX} yc={YC} yg={YG} p={0.35 + 0.65 * kprog(T, K.V + 2.5, K.V + 4.5)} esporas={0} tibio={0} />
           <SetaJardin T={T} x={SX} y={YG} s={SS} vapor={kprog(T, K.V + 0.4, K.V + 1.2)} frio={0.6 + 0.4 * kprog(T, K.V + 1.8, K.V + 2.6)} />
-        </>)}
+        </>))}
       </Escena>
       {/* 2 · el aire frío corre por el suelo, choca, gira y sube las esporas 10 cm o más */}
       <Escena T={T} a={K.Su} b={K.Ci} zoom={0.04} origen="50% 60%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(jardin(<>
           <PastoMojado T={T} yg={YG} />
           <Flujo T={T} x={SX} yc={YC} yg={YG} p={1} esporas={1} tibio={1} />
           <SetaJardin T={T} x={SX} y={YG} s={SS} frio={1} />
           {/* regla de 10 cm junto al remolino izquierdo */}
-          <g opacity={kprog(T, K.Su + 1.2, K.Su + 1.6)}>
-            <rect x={40} y={YG - 10 * ESC_CM} width={30} height={10 * ESC_CM} fill="#fff8d6" stroke={KC.ink} strokeWidth={5} />
-            {Array.from({ length: 11 }, (_, i) => <line key={i} x1={40} y1={YG - i * ESC_CM} x2={i % 5 ? 56 : 70} y2={YG - i * ESC_CM} stroke={KC.ink} strokeWidth={3} />)}
+          <g opacity={kprog(T, K.Su + 0.2, K.Su + 0.6)}>
+            <rect x={172} y={YG - 10 * ESC_CM} width={22} height={10 * ESC_CM} fill="#fff8d6" stroke={KC.ink} strokeWidth={4} />
+            {Array.from({ length: 11 }, (_, i) => <line key={i} x1={172} y1={YG - i * ESC_CM} x2={i % 5 ? 183 : 194} y2={YG - i * ESC_CM} stroke="#0b1020" strokeWidth={3} />)}
+            <text x={170} y={YG - 10 * ESC_CM - 28} style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>10 cm o más</text>
           </g>
-        </>)}
+        </>))}
       </Escena>
       {/* 3 · capítulo 2: al cielo. Primero la espora al microscopio, luego el mundo */}
       <Escena T={T} a={K.Ci} b={micro} zoom={0.08}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
-        {fsvg(<Basidiospora x={500} y={860} s={1.25} rot={-14 + Math.sin(T) * 4} />)}
+        {fsvg(<Basidiospora x={590} y={900} s={2.3} rot={-14 + Math.sin(T) * 4} />)}
       </Escena>
       <Escena T={T} a={micro} b={K.R} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<MapaMundo T={T} x={140} y={800} s={0.8} humo={kprog(T, micro + 0.3, micro + 1.2)} />)}
+        {fsvg(<MapaMundo T={T} x={60} y={850} s={0.96} humo={kprog(T, micro + 0.3, micro + 1.2)} />)}
       </Escena>
-      {/* 4 · el aire que respiras: un cubo de 1 m con miles de esporas */}
+      {/* 4 · el aire que respiras: un cubo de 1 m con miles de esporas (todo ×1.25: 375 px = 1 m) */}
       <Escena T={T} a={K.R} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
-          <rect x={-20} y={1180} width={KW + 40} height={800} fill="#7fd8a0" />
+        {fsvg(<g transform="translate(540 1330) scale(1.25) translate(-522 -1180)">
+          <rect x={-400} y={1180} width={KW + 800} height={900} fill="#102b22" />
+          <rect x={-400} y={1180} width={KW + 800} height={10} fill="#1f5a44" />
           <Persona T={T} x={200} y={1180} inhala={kprog(T, K.R + 1.0, K.R + 1.6)} />
           <CuboAire T={T} x={520} y={860} lado={300} p={kprog(T, K.R + 0.1, K.R + 0.5)} puntos={kprog(T, K.R + 0.4, K.R + 2.0)} />
           {[0, 1, 2].map((k) => { const u = frac(T * 0.6 + k / 3); return <path key={k} d={`M ${500 - u * 210} ${760 + k * 14} l -16 -10 m 16 10 l -16 10`} stroke={KC.ink} strokeWidth={5} fill="none" opacity={(1 - u) * kprog(T, K.R + 1.0, K.R + 1.4)} />; })}
-        </>)}
+        </g>)}
       </Escena>
-      {/* 5 · re-gancho: ¿y si una llega a una nube? */}
+      {/* 5 · re-gancho: ¿y si una llega a una nube? (la escena anterior sigue detrás, bajo un velo) */}
       <Escena T={T} a={K.P} b={K.N} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Nube x={300} y={640} s={1.0} T={T} />
-          <Interrogacion T={T} x={280} y={1160} tam={380} />
-          <ellipse cx={120 + kprog(T, K.P, K.P + 1.6) * 120} cy={1000 - kprog(T, K.P, K.P + 1.6) * 230} rx={12} ry={9} fill={EL.espora2} stroke="#fff" strokeWidth={3} />
+          <Nube x={540} y={600} s={1.4} T={T} />
+          <Interrogacion T={T} x={800} y={1290} tam={380} />
+          <Basidiospora x={330 + kprog(T, K.P, K.P + 1.6) * 140} y={1300 - kprog(T, K.P, K.P + 1.6) * 430} s={0.24} rot={-14 + Math.sin(T * 3) * 8} />
         </>)}
       </Escena>
       {/* 6–7 · capítulo 3: la nube por dentro. Gotitas líquidas bajo cero; una semilla las congela; el hielo cae y se vuelve lluvia */}
@@ -314,14 +328,14 @@ function EsporasLluviaShot() {
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 40%, #26344d 0%, ${KC.noche} 75%)` }}></div>
         <Ambiente T={T} n={30} color="rgba(220,235,255,.25)" />
         {fsvg(<>
-          {[[200, 700, 46, 1], [420, 640, 58, 2], [640, 760, 40, 3], [300, 920, 52, 4], [560, 980, 44, 5], [820, 900, 50, 6], [930, 720, 40, 7]].map(([gx, gy, r, sd]) => {
+          {[[170, 640, 78, 1], [430, 560, 96, 2], [700, 720, 70, 3], [185, 1060, 88, 4], [800, 1290, 76, 5], [930, 930, 84, 6], [930, 430, 60, 7]].map(([gx, gy, r, sd]) => {
             const yo = gy + Math.sin(T * 0.8 + sd) * 10;
             if (sd === 2) { // la que recibe la semilla
-              const h = kprog(T, congela, congela + 0.7), cae = kprog(T, K.Se + 2.6, K.Se + 4.6, kEase.suave), lluvia = kprog(T, K.Se + 4.0, K.Se + 4.6);
+              const h = kprog(T, congela, congela + 0.7), cae = kprog(T, K.Se + 2.6, K.Se + 4.6, kEase.suave), lluvia = kprog(T, K.Se + 4.0, K.Se + 4.6), CAE = 600;
               return <g key={sd}>
-                {T < congela + 0.2 && <circle cx={gx - 160 + kprog(T, K.Se, congela) * 110} cy={yo - 80 + kprog(T, K.Se, congela) * 50} r={12} fill="#5a4a3a" stroke="#fff" strokeWidth={2} />}
-                {lluvia < 1 && <Gotita x={gx} y={yo + cae * 360} r={r * (1 + 0.5 * cae)} hielo={h} T={T} seed={sd} />}
-                {lluvia > 0 && <path d={`M ${gx} ${yo + 360 - 70} Q ${gx + 50} ${yo + 360 + 10} ${gx} ${yo + 360 + 40} Q ${gx - 50} ${yo + 360 + 10} ${gx} ${yo + 360 - 70} Z`} fill={EL.gota2} stroke="#fff" strokeWidth={4} opacity={lluvia} />}
+                {T < congela + 0.2 && <circle cx={gx - 270 + kprog(T, K.Se, congela) * 185} cy={yo - 140 + kprog(T, K.Se, congela) * 95} r={20} fill="#5a4a3a" stroke="#fff" strokeWidth={3} opacity={kprog(T, K.Se - 0.1, K.Se + 0.2)} />}
+                {lluvia < 1 && <Gotita x={gx} y={yo + cae * CAE} r={r * (1 + 0.5 * cae)} hielo={h} T={T} seed={sd} />}
+                {lluvia > 0 && <g transform={`translate(${gx} ${yo + CAE}) scale(2.1)`}><path d="M 0 -70 Q 50 10 0 40 Q -50 10 0 -70 Z" fill={EL.gota2} stroke="#fff" strokeWidth={3} opacity={lluvia} /></g>}
               </g>;
             }
             return <Gotita key={sd} x={gx} y={yo} r={r} T={T} seed={sd} />;
@@ -333,12 +347,13 @@ function EsporasLluviaShot() {
         <FondoLunares color={T < K.E + 2.8 ? KC.orange : KC.lilac} />
         {fsvg(<>
           {T < K.E + 3.0 && <g opacity={1 - kprog(T, K.E + 2.6, K.E + 3.0)}>
-            <Basidiospora x={360} y={900} s={0.9} rot={-10} />
-            {T > K.E + 1.4 && <Sello T={T} at={K.E + 1.4} x={640} y={880} texto="NO" color={KC.red} r={110} />}
+            <Basidiospora x={400} y={940} s={1.7} rot={-10} />
+            {T > K.E + 1.4 && <Sello T={T} at={K.E + 1.4} x={815} y={900} texto="NO" color={KC.red} r={130} />}
           </g>}
-          {T > K.E + 4.6 && <>
-            <Fusarium T={T} x={110} y={1010} s={1.05} p={kprog(T, K.E + 4.6, K.E + 5.8)} />
-            <Gotita x={760} y={830} r={70} hielo={kprog(T, mohoHielo, mohoHielo + 0.6)} T={T} seed={8} />
+          {/* el moho y la gota entran en cuanto se va la espora: la tarjeta de 1992 nunca queda sola */}
+          {T > K.E + 2.7 && <>
+            <Fusarium T={T} x={60} y={1330} s={1.7} p={kprog(T, K.E + 2.7, K.E + 5.2)} o={kprog(T, K.E + 2.7, K.E + 3.2)} />
+            <g opacity={kprog(T, K.E + 2.8, K.E + 3.4)}><Gotita x={800} y={770} r={105} hielo={kprog(T, mohoHielo, mohoHielo + 0.6)} T={T} seed={8} /></g>
           </>}
         </>)}
       </Escena>
@@ -346,87 +361,87 @@ function EsporasLluviaShot() {
       <Escena T={T} a={K.Ro} b={K.H} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <HojaTrigo x={70} y={1120} s={1.0} T={T} />
-          {Array.from({ length: 7 }, (_, i) => { const u = kprog(T, K.Ro + 0.3 + i * 0.12, K.Ro + 1.8 + i * 0.12, kEase.suave);
-            return <Urediniospora key={i} x={klerp(180 + i * 50, 540 + (i % 4) * 45, u)} y={klerp(1030 - i * 20, 880 + (i % 3) * 40, u) - Math.sin(u * Math.PI) * 140} r={22} rot={T * 40 + i * 30} />; })}
-          <Gotita x={720} y={760} r={80} hielo={kprog(T, royaHielo, royaHielo + 0.6)} T={T} seed={9} />
+          <HojaTrigo x={60} y={1330} s={1.55} T={T} />
+          {Array.from({ length: 7 }, (_, i) => { const u = kprog(T, K.Ro + 0.3 + i * 0.12, K.Ro + 1.8 + i * 0.12, kEase.suave), d = (120 + i * 55) * 1.55;
+            return <Urediniospora key={i} x={klerp(60 + d * 0.914, 620 + (i % 4) * 55, u)} y={klerp(1305 - d * 0.407, 815 + (i % 3) * 50, u) - Math.sin(u * Math.PI) * 220} r={34} rot={T * 40 + i * 30} />; })}
+          <Gotita x={820} y={720} r={112} hielo={kprog(T, royaHielo, royaHielo + 0.6)} T={T} seed={9} />
         </>)}
       </Escena>
-      {/* 10 · hipótesis: laboratorio ✓ vs nubes reales ? */}
+      {/* 10 · hipótesis: laboratorio ✓ (la espora que junta gotas) contra nubes reales ? */}
       <Escena T={T} a={K.H} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Basidiospora x={250} y={720} s={0.5} rot={-12} gota={kprog(T, K.H + 0.6, K.H + 1.6)} />
-          <Balanza x={540} y={900} incl={Math.sin(T * 2.2) * 0.4 * kprog(T, K.H + 1.6, K.H + 2.2)} />
-          <SelloRect T={T} at={K.H + 2.8} x={560} y={800} texto="HIPÓTESIS" color={KC.red} />
+          <Basidiospora x={platillo(-1)[0]} y={platillo(-1)[1] - 48} s={0.5} rot={-12} gota={kprog(T, K.H + 0.6, K.H + 1.6)} />
+          <Nube x={platillo(1)[0]} y={platillo(1)[1] - 12} s={0.38} T={0} />
+          <g transform={`translate(${BX} ${BY}) scale(${KB})`}><Balanza x={0} y={0} incl={inclB} /></g>
+          <SelloRect T={T} at={K.H + 2.8} x={540} y={1300} texto="HIPÓTESIS" color={KC.red} tam={120} />
         </>)}
       </Escena>
       {/* 11 · cierre: la misma seta del inicio; su aire sube hasta la nube, que se oscurece y suelta llovizna */}
-      <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
+      <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="50% 60%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Nube x={300} y={520} s={0.75} T={T} oscura={0.15 + 0.6 * kprog(T, K.C + 1.0, K.C + 2.4)} />
-          {T > K.C + 2.2 && Array.from({ length: 16 }, (_, k) => { const u = frac(T * 0.9 + k / 16); return <line key={k} x1={180 + (k * 53) % 240} y1={600 + u * 520} x2={174 + (k * 53) % 240} y2={620 + u * 520} stroke={EL.gota2} strokeWidth={4} strokeLinecap="round" opacity={(1 - u) * 0.8} />; })}
-          <text x={470} y={470} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.C + 2.4, K.C + 2.8)}>¿?</text>
-          <PastoMojado T={T} yg={YG} />
-          <Flujo T={T} x={SX} yc={YC} yg={YG} p={1} esporas={1} tibio={0} alto={560} />
-          <SetaJardin T={T} x={SX} y={YG} s={SS} frio={0.8} />
+          <Nube x={250} y={390} s={0.8} T={T} oscura={0.15 + 0.6 * kprog(T, K.C + 1.0, K.C + 2.4)} />
+          {T > K.C + 2.2 && Array.from({ length: 16 }, (_, k) => { const u = frac(T * 0.9 + k / 16); return <line key={k} x1={130 + (k * 53) % 240} y1={480 + u * 850} x2={123 + (k * 53) % 240} y2={507 + u * 850} stroke={EL.gota2} strokeWidth={5} strokeLinecap="round" opacity={(1 - u) * 0.8} />; })}
+          <text x={470} y={400} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.C + 2.4, K.C + 2.8)}>¿?</text>
+          {jardin(<>
+            <PastoMojado T={T} yg={YG} />
+            <Flujo T={T} x={SX} yc={YC} yg={YG} p={1} esporas={1} tibio={0} alto={630} />
+            <SetaJardin T={T} x={SX} y={YG} s={SS} frio={0.8} />
+          </>)}
         </>)}
       </Escena>
 
-      {/* textos */}
-      <Chip T={T} at={K.G + 1.0} until={K.V - 0.3} texto="seta del jardín · tras la lluvia" x={330} y={700} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.G + 2.3} until={K.V - 0.3} x={60} y={880} texto="aire frío" tam={30} color={EL.frio} />
-      <Etq T={T} at={K.G + 2.6} until={K.V - 0.3} x={60} y={775} texto="aire tibio" tam={30} color={KC.ink} />
+      {/* textos (recolocados en el pase a mano para seguir a los dibujos agrandados; mismos textos y tiempos) */}
+      <Chip T={T} at={K.G + 1.0} until={K.V - 0.3} texto="seta del jardín · tras la lluvia" x={540} y={1465} tam={30} borde={KC.ink} />
       <Capitulo T={T} caps={[{ at: K.V, titulo:'EL VIENTO' }, { at: K.Ci, titulo:'AL CIELO' }, { at: K.N, titulo:'LA NUBE' }]} hasta={K.H - 0.2} />
-      <Etq T={T} at={K.V + 0.6} until={K.Su - 0.3} x={60} y={480} texto="vapor de agua" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.V + 1.6} until={K.Su - 0.3} texto="bajo el sombrero: 1–2 °C más frío" x={360} y={570} tam={32} borde={EL.frio} />
-      <Chip T={T} at={K.V + 3.0} until={K.Su - 0.3} texto="sombrero: hasta 4 °C más frío" x={340} y={650} tam={26} borde={KC.ink} />
-      <Etq T={T} at={K.Su + 0.3} until={K.Ci - 0.3} x={40} y={YG - 10 * ESC_CM - 40} texto="10 cm o más" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Su + 0.8} until={K.Ci - 0.3} texto="corre por el suelo, choca y gira" x={350} y={480} tam={30} borde={EL.frio} />
-      <Nota T={T} at={K.Su + 1.8} until={K.Ci - 0.3} x={350} y={570} tam={24} ancho={560}>medido en setas ostra (<i>Pleurotus ostreatus</i>) y shiitake (<i>Lentinula edodes</i>), 2016</Nota>
-      <Chip T={T} at={K.Ci + 0.3} until={micro - 0.3} texto="AL MICROSCOPIO · una espora" x={390} y={450} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ci + 0.7} until={micro - 0.3} x={640} y={760} texto="basidiospora" tam={34} color={KC.texto} />
-      <Etq T={T} at={K.Ci + 1.3} until={micro - 0.3} x={370} y={1040} texto="apículo" tam={32} color={KC.yellow} lado="izq" />
-      <NumeroGigante T={T} at={micro + 0.4} until={K.R - 0.3} valor={50} desde={50} dur={0} prefijo="3 a " etiqueta="millones de toneladas" x={360} y={500} tam={180} color={KC.yellow} />
-      <Etq T={T} at={micro + 1.0} until={K.R - 0.3} x={60} y={650} texto="de esporas de hongos al año" tam={32} color={KC.ink} />
-      <Chip T={T} at={micro + 1.8} until={K.R - 0.3} texto="cálculos de 2007, 2009 y 2021: no se ponen de acuerdo" x={540} y={735} tam={24} borde={KC.ink} />
-      <Chip T={T} at={K.R + 0.6} until={K.P - 0.3} texto="miles de esporas / m³" x={360} y={470} tam={44} borde={EL.espora2} />
-      <Etq T={T} at={K.R + 1.2} until={K.P - 0.3} x={60} y={560} texto="aire de afuera" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.R + 0.6} until={K.P - 0.3} x={520} y={1215} texto="1 m³ de aire" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.N + 0.6} until={K.Se - 0.2} texto="POR DENTRO · una nube" x={330} y={450} tam={30} borde={KC.cyan} mono />
-      <TermoChip T={T} at={K.N + 1.0} until={K.Se + 0.6} x={330} y={560} texto="−10 °C" />
-      <Etq T={T} at={K.N + 1.6} until={K.Se - 0.2} x={500} y={640} texto="¡siguen líquidas!" tam={34} color={KC.texto} />
-      <Nota T={T} at={K.N + 2.2} until={K.Se - 0.2} x={480} y={1115} tam={24} ancho={720} borde={EL.gota2}>el agua pura de nube se congela sola hasta unos −38 °C</Nota>
-      <Etq T={T} at={K.Se + 0.3} until={K.Se + 2.6} x={240} y={500} texto="semilla de hielo" tam={34} color={KC.yellow} />
-      <Etq T={T} at={congela + 0.7} until={K.E - 0.3} x={500} y={640} texto="cristal de hielo" tam={32} color={EL.hielo} />
-      <Etq T={T} at={K.Se + 4.2} until={K.E - 0.3} x={470} y={1050} texto="se derrite: gota de lluvia" tam={28} color={EL.gota} />
-      <Nota T={T} at={K.Se + 2.0} until={K.E - 0.3} x={480} y={1115} tam={24} ancho={760} borde={EL.gota2}>sobre tierra, la lluvia casi siempre nace en nubes con hielo (satélites, 2006–2011)</Nota>
-      <Etq T={T} at={K.E + 0.3} until={K.E + 2.6} x={60} y={520} texto="espora de seta" tam={34} color={KC.ink} />
-      <Nota T={T} at={K.E + 1.0} until={K.E + 2.6} x={400} y={620} tam={26} ancho={640} borde={KC.red}>mala semilla de hielo: casi nunca congela arriba de −19 °C (2014)</Nota>
-      <TarjetaEstudio T={T} at={K.E + 2.8} until={K.E + 4.4} anio="1992" quien="Pouleur y colegas · Quebec, Canadá" revista="Appl. Environ. Microbiol., 1992" x={480} y={820} />
-      <Etq T={T} at={K.E + 4.8} until={K.Ro - 0.3} x={60} y={520} texto="Fusarium avenaceum" it tam={38} color={KC.ink} />
-      <Etq T={T} at={K.E + 5.2} until={K.Ro - 0.3} x={60} y={580} texto="un moho, no una seta" tam={30} color={KC.ink} />
-      <TermoChip T={T} at={mohoHielo - 0.6} until={K.Ro - 0.3} x={760} y={1000} texto="−2.5 °C" />
-      <Nota T={T} at={K.E + 5.6} until={K.Ro - 0.3} x={380} y={680} tam={24} ancho={600} borde={KC.ink}>de 20 géneros de hongos probados, solo 2 especies de <i>Fusarium</i> lo hicieron</Nota>
-      <Chip T={T} at={K.Ro + 0.2} until={K.H - 0.3} texto="2013 · Morris y colegas" x={330} y={460} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Ro + 0.6} until={K.H - 0.3} x={60} y={550} texto="royas: hongos de plantas, no setas" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ro + 1.2} until={K.H - 0.3} x={60} y={600} texto="urediniosporas (en trigo)" tam={28} color={EL.roya2} />
-      <TermoChip T={T} at={royaHielo - 0.5} until={K.H - 0.3} x={720} y={960} texto="−4 °C" />
-      <Nota T={T} at={K.H + 0.6} until={K.C - 0.3} x={330} y={500} tam={24} ancho={520} borde={KC.ink}>esporas de seta: en laboratorio juntan gotas de agua (2015)</Nota>
-      <Etq T={T} at={K.H + 1.6} until={K.C - 0.3} x={60} y={1150} texto="laboratorio ✓" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.9} until={K.C - 0.3} x={600} y={1150} texto="nubes reales ?" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.H + 3.2} until={K.C - 0.3} x={60} y={600} texto="bioprecipitación: en estudio" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="viento ✓ · lluvia: quizá" x={400} y={345} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.V + 0.6} until={K.Su - 0.3} x={40} y={455} texto="vapor de agua" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.V + 1.6} until={K.Su - 0.3} texto="bajo el sombrero: 1–2 °C más frío" x={540} y={1430} tam={32} borde={EL.frio} />
+      <Chip T={T} at={K.V + 3.0} until={K.Su - 0.3} texto="sombrero: hasta 4 °C más frío" x={540} y={1506} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.Su + 0.8} until={K.Ci - 0.3} texto="corre por el suelo, choca y gira" x={540} y={1440} tam={30} borde={EL.frio} />
+      <Nota T={T} at={K.Su + 1.8} until={K.Ci - 0.3} x={540} y={440} tam={24} ancho={520}>medido en setas ostra (<i>Pleurotus ostreatus</i>) y shiitake (<i>Lentinula edodes</i>), 2016</Nota>
+      <Chip T={T} at={K.Ci + 0.3} until={micro - 0.3} texto="AL MICROSCOPIO · una espora" x={540} y={450} tam={30} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Ci + 0.7} until={micro - 0.3} x={335} y={700} lado="izq" texto="basidiospora" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Ci + 1.3} until={micro - 0.3} x={405} y={1245} texto="apículo" tam={32} color={KC.yellow} lado="izq" />
+      <NumeroGigante T={T} at={micro + 0.4} until={K.R - 0.3} valor={50} desde={50} dur={0} prefijo="3 a " etiqueta="millones de toneladas" x={540} y={560} tam={180} color={KC.yellow} />
+      <Etq T={T} at={micro + 1.0} until={K.R - 0.3} x={230} y={705} texto="de esporas de hongos al año" tam={32} color={KC.ink} />
+      <Chip T={T} at={micro + 1.8} until={K.R - 0.3} texto="cálculos de 2007, 2009 y 2021: no se ponen de acuerdo" x={540} y={780} tam={24} borde={KC.ink} />
+      <Chip T={T} at={K.R + 0.6} until={K.P - 0.3} texto="miles de esporas / m³" x={540} y={520} tam={44} borde={EL.espora2} />
+      <Etq T={T} at={K.R + 1.2} until={K.P - 0.3} x={60} y={625} texto="aire de afuera" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.R + 0.6} until={K.P - 0.3} x={560} y={1375} texto="1 m³ de aire" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.N + 0.6} until={K.Se - 0.2} texto="POR DENTRO · una nube" x={540} y={440} tam={30} borde={KC.cyan} mono />
+      <TermoChip T={T} at={K.N + 1.0} until={K.Se + 0.6} x={540} y={890} texto="−10 °C" />
+      <Etq T={T} at={K.N + 1.6} until={K.Se - 0.2} x={545} y={560} texto="¡siguen líquidas!" tam={32} color={KC.texto} />
+      <Nota T={T} at={K.N + 2.2} until={K.Se - 0.2} x={540} y={1455} tam={24} ancho={720} borde={EL.gota2}>el agua pura de nube se congela sola hasta unos −38 °C</Nota>
+      <Etq T={T} at={K.Se + 0.3} until={K.Se + 2.6} x={215} y={398} texto="semilla de hielo" tam={32} color={KC.yellow} />
+      <Etq T={T} at={congela + 0.7} until={K.Se + 2.9} x={565} y={560} texto="cristal de hielo" tam={32} color={EL.hielo} />
+      <Etq T={T} at={K.Se + 4.2} until={K.E - 0.3} x={530} y={1150} texto="se derrite: gota de lluvia" tam={28} color={EL.gota} />
+      <Nota T={T} at={K.Se + 2.0} until={K.E - 0.3} x={540} y={1455} tam={24} ancho={760} borde={EL.gota2}>sobre tierra, la lluvia casi siempre nace en nubes con hielo (satélites, 2006–2011)</Nota>
+      <Etq T={T} at={K.E + 0.3} until={K.E + 2.6} x={60} y={640} texto="espora de seta" tam={34} color={KC.ink} />
+      <Nota T={T} at={K.E + 1.0} until={K.E + 2.6} x={540} y={490} tam={26} ancho={640} borde={KC.red}>mala semilla de hielo: casi nunca congela arriba de −19 °C (2014)</Nota>
+      <TarjetaEstudio T={T} at={K.E + 2.8} until={K.E + 4.4} anio="1992" quien="Pouleur y colegas · Quebec, Canadá" revista="Appl. Environ. Microbiol., 1992" x={540} y={520} />
+      <Etq T={T} at={K.E + 4.8} until={K.Ro - 0.3} x={60} y={470} texto="Fusarium avenaceum" it tam={38} color={KC.ink} />
+      <Etq T={T} at={K.E + 5.2} until={K.Ro - 0.3} x={60} y={535} texto="un moho, no una seta" tam={30} color={KC.ink} />
+      <TermoChip T={T} at={mohoHielo - 0.6} until={K.Ro - 0.3} x={420} y={770} texto="−2.5 °C" />
+      <Nota T={T} at={K.E + 5.6} until={K.Ro - 0.3} x={540} y={1445} tam={24} ancho={640} borde={KC.ink}>de 20 géneros de hongos probados, solo 2 especies de <i>Fusarium</i> lo hicieron</Nota>
+      <Chip T={T} at={K.Ro + 0.2} until={K.H - 0.3} texto="2013 · Morris y colegas" x={290} y={450} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Ro + 0.6} until={K.H - 0.3} x={60} y={580} texto="royas: hongos de plantas, no setas" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ro + 1.2} until={K.H - 0.3} x={60} y={632} texto="urediniosporas (en trigo)" tam={28} color={EL.roya} />
+      <TermoChip T={T} at={royaHielo - 0.5} until={K.H - 0.3} x={810} y={490} texto="−4 °C" />
+      <Nota T={T} at={K.H + 0.6} until={K.C - 0.3} x={540} y={500} tam={24} ancho={620} borde={KC.ink}>esporas de seta: en laboratorio juntan gotas de agua (2015)</Nota>
+      <Etq T={T} at={K.H + 1.6} until={K.C - 0.3} x={40} y={1085} texto="laboratorio ✓" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.9} until={K.C - 0.3} x={700} y={1085} texto="nubes reales ?" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.H + 3.2} until={K.C - 0.3} x={60} y={620} texto="bioprecipitación: en estudio" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="viento ✓ · lluvia: quizá" x={540} y={1465} tam={36} borde={KC.gold} />
 
-      {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Ci} texto="5 cm" largo={5 * ESC_CM} />
-      <BarraEscala T={T} at={K.Ci} until={micro} texto="5 µm" largo={190} />
+      {/* barras de escala (recalculadas con cada dibujo agrandado) */}
+      <BarraEscala T={T} at={K.G} until={K.Ci} texto="5 cm" largo={5 * ESC_CM * KJ} />
+      <BarraEscala T={T} at={K.Ci} until={micro} texto="5 µm" largo={350} />
       <BarraEscala T={T} at={micro} until={K.R} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.R} until={K.P} texto="1 m" largo={300} />
-      <BarraEscala T={T} at={K.N} until={K.E} texto="10 µm (esquemático)" largo={60} />
+      <BarraEscala T={T} at={K.R} until={K.P} texto="1 m" largo={375} />
+      <BarraEscala T={T} at={K.N} until={K.E} texto="10 µm (esquemático)" largo={102} />
       <BarraEscala T={T} at={K.E} until={K.H} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={5 * ESC_CM} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={5 * ESC_CM * KJ} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.V - 0.1} texto="Una *fábrica de viento…* ¿y de lluvia?" />
