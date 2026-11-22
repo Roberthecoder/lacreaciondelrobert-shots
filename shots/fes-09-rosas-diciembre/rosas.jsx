@@ -172,8 +172,8 @@ function GenMini({ x, y, w = 300, ins = false, e = 1 }) {
 function Tepeyac({ T, flor = 0, hielo = 1 }) {
   const g = krng(4);
   return <g>
-    <path d="M -40 1260 C 120 1060 300 900 540 860 C 760 900 960 1040 1120 1220 L 1120 1920 L -40 1920 Z" fill="#c8a36a" stroke={KC.ink} strokeWidth={8} />
-    <path d="M -40 1330 C 200 1200 380 1150 600 1170 C 800 1190 980 1260 1120 1330 L 1120 1920 L -40 1920 Z" fill="#a9824e" />
+    <path d="M -40 1260 C 120 1060 300 900 540 860 C 760 900 960 1040 1120 1220 L 1120 1920 L -40 1920 Z" fill="#5e4a30" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -40 1330 C 200 1200 380 1150 600 1170 C 800 1190 980 1260 1120 1330 L 1120 1920 L -40 1920 Z" fill="#46382a" />
     {/* rocas */}
     {[[180, 1150, 1], [330, 1010, 0.8], [760, 1000, 0.9], [900, 1120, 1.1], [520, 1110, 0.7]].map(([rx, ry, s], i) =>
       <path key={i} d="M -60 20 L -40 -30 L 10 -44 L 56 -14 L 64 20 Z" fill="#8d8a86" stroke={KC.ink} strokeWidth={5} transform={`translate(${rx} ${ry}) scale(${s})`} />)}
@@ -297,7 +297,7 @@ function Rosas() {
       <Escena T={T} a={K.Fr} b={K.Ho} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={26} color="rgba(120,200,255,.22)" />
-        {svg(<g transform="translate(540 980) scale(1.55) translate(-540 -980)">
+        {svg(<g transform="translate(0 90) translate(540 980) scale(1.55) translate(-540 -980)">
           <Gen T={T} y={980} ksn={kprog(T, K.Fr + 0.4, K.Fr + 1.0)} o={kprog(T, K.Fr - 0.3, K.Fr + 0.3)} />
           <path d={`M ${KS0} 1060 L ${KS0} 1080 L ${KS1} 1080 L ${KS1} 1060`} stroke={KSNC} strokeWidth={6} fill="none" opacity={kprog(T, K.Fr + 0.5, K.Fr + 0.9)} />
           <text x={KMID} y={1135} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KSNC} opacity={kprog(T, K.Fr + 0.5, K.Fr + 0.9)}>GEN KSN</text>
@@ -319,19 +319,19 @@ function Rosas() {
       {/* 5 · en primavera el freno se afloja: su única floración */}
       <Escena T={T} a={K.Pr} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<g transform="translate(540 1000) scale(1.1) translate(-540 -880)">
           <TiraMeses y={480} cursor={klerp(0, 4.99, kprog(T, K.Pr + 0.1, K.Pr + 1.2))} luz={(i) => (i >= 2 && i <= 4 ? kprog(T, K.Pr + 0.9, K.Pr + 1.4) : 0)} />
           <Alto x={klerp(870, 1250, kprog(T, K.Pr + 1.2, K.Pr + 1.9, kEase.suave))} y={850} s={0.75} rot={klerp(0, 40, kprog(T, K.Pr + 1.2, K.Pr + 1.9))} />
           <RosalSilvestre T={T} x={520} y={1250} s={1.4} flor={kprog(T, K.Pr + 1.4, K.Pr + 2.8)} caen={kprog(T, K.Pr + 3.6, K.Pr + 4.8)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 6 · re-gancho: ¿y si el freno se rompe? */}
       <Escena T={T} a={K.P} b={K.Sa} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<>
+        {svg(<g transform="translate(0 200)">
           <text x={250} y={1060} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 250 860)`}>?</text>
           <Alto x={300} y={1060} s={0.6} roto={kprog(T, K.P + 0.5, K.P + 1.4)} rot={-8} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 7 · un pedazo de ADN saltarín se mete dentro del gen */}
       <Escena T={T} a={K.Sa} b={K.Ap} zoom={0.04}>
@@ -348,7 +348,7 @@ function Rosas() {
       <Escena T={T} a={K.Ap} b={K.E} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {svg((() => { const lx = klerp(80, KMID - 70, kprog(T, K.Ap + 0.2, K.Ap + 1.3, kEase.suave)), at = kprog(T, K.Ap + 1.3, K.Ap + 1.5);
-          return <g opacity={1 - kprog(T, K.Ap + 2.2, K.Ap + 2.7)} transform="translate(540 980) scale(1.55) translate(-540 -980)">
+          return <g opacity={1 - kprog(T, K.Ap + 2.2, K.Ap + 2.7)} transform="translate(0 110) translate(540 980) scale(1.55) translate(-540 -980)">
             <Gen T={T} y={950} hueco={1} inserto={{ x: KMID + LARGO_INS / 2, y: 950 }} />
             <Lector T={T} x={lx} y={950} atorado={at} />
             {at > 0 && <g transform={`translate(${KMID - 70} 820) scale(${kEase.rebote(at)})`}><path d="M -34 -34 L 34 34 M 34 -34 L -34 34" stroke={KC.red} strokeWidth={16} strokeLinecap="round" /></g>}
@@ -357,7 +357,7 @@ function Rosas() {
         <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.Ap + 2.2, K.Ap + 2.7) }}>
           <FondoLunares color={KC.yellow} />
           {svg(<>
-            <g transform="translate(500 1200) scale(1.35) translate(-500 -1200)">
+            <g transform="translate(0 260) translate(500 1200) scale(1.35) translate(-500 -1200)">
             <Tallo x={460} y={1240} alto={520} curva={-20} />
             <Hoja x={454} y={1060} rot={-55} s={0.85} /><Hoja x={466} y={900} rot={50} s={0.8} />
             <RosaFlor x={460} y={690} s={0.95} abre={kprog(T, K.Ap + 2.6, K.Ap + 3.4, kEase.sale)} T={T} />
@@ -489,15 +489,15 @@ function Rosas() {
       <Etq T={T} at={K.Te + 1.0} until={K.Si - 0.3} x={480} y={720} texto="cerro del Tepeyac" tam={34} color={KC.ink} lado="izq" />
       <Chip T={T} at={K.Te + 2.0} until={K.Si - 0.3} texto="diciembre: rosas de Castilla" x={540} y={1500} tam={40} borde={KC.cyan} />
       <Etq T={T} at={K.Si + 0.3} until={K.Fr - 0.3} x={420} y={540} texto="rosa silvestre" tam={38} color={KC.ink} />
-      <Etq T={T} at={K.Fr + 1.4} until={K.Ho - 0.3} x={680} y={640} texto="= freno" tam={40} color={KC.texto} />
+      <Etq T={T} at={K.Fr + 1.4} until={K.Ho - 0.3} x={680} y={730} texto="= freno" tam={40} color={KC.texto} />
       {((T > K.Fr - 0.3 && T < K.Ho - 0.1) || (T > K.Sa - 0.3 && T < K.Ap + 2.4)) && <Escala T={T} z={1.55} pxPorMm={4e7} x={60} y={1430} />}
       <Etq T={T} at={K.Ho + 0.4} until={K.Pr - 0.3} x={330} y={700} texto="hoja, hoja, hoja…" tam={34} color={KC.ink} lado="izq" />
       <MitoTachado T={T} at={K.Ho + 1.2} tacharEn={K.Ho + 2.0} until={K.Pr - 0.3} texto="¿flor?" x={760} y={800} tam={50} />
       <Chip T={T} at={K.Pr + 2.4} until={K.P - 0.2} texto="una vez al año" x={540} y={1500} tam={46} borde={SILV} />
       <Etq T={T} at={K.Sa + 2.2} until={K.Ap - 0.3} x={90} y={560} texto="retrotransposón (ADN saltarín)" tam={34} color={INSERTO} />
       <Chip T={T} at={K.Sa + 2.4} until={K.Ap - 0.3} texto="se metió dentro del gen" x={540} y={1560} tam={42} borde={INSERTO} />
-      <Etq T={T} at={K.Ap + 0.4} until={K.Ap + 2.1} x={90} y={1110} texto="la copia del gen se atora" tam={32} color={KC.orange} />
-      <Chip T={T} at={K.Ap + 3.4} until={K.E - 0.3} texto="flor en cada temporada buena" x={540} y={1500} tam={42} borde={KC.ink} />
+      <Etq T={T} at={K.Ap + 0.4} until={K.Ap + 2.1} x={90} y={1220} texto="la copia del gen se atora" tam={32} color={KC.orange} />
+      <Chip T={T} at={K.Ap + 3.4} until={K.E - 0.3} texto="flor en cada temporada buena" x={540} y={330} tam={42} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2012" quien="Iwata et al. · Francia y Japón" revista="The Plant Journal" x={540} y={510} />
       <Chip T={T} at={K.E + 3.6} until={K.Ch - 0.3} texto="las de cada temporada traen el pedazo" x={540} y={1500} tam={40} borde={INSERTO} />
       <Chip T={T} at={K.Ch + 2.6} until={K.In - 0.3} texto="fines del siglo XVIII: cruces en Europa" x={540} y={560} tam={40} borde={KC.yellow} />

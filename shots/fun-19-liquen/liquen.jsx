@@ -241,7 +241,7 @@ function LiquenShot() {
       {/* 8 · pregunta */}
       <Escena T={T} a={K.P} b={K.H} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Interrogacion T={T} x={300} y={1080} />)}
+        {fsvg(<g transform="translate(320 1000) scale(1.8) translate(-300 -830)"><Interrogacion T={T} x={300} y={1080} /></g>)}
       </Escena>
       {/* 9 · Schwendener, 1867 */}
       <Escena T={T} a={K.H} b={K.E}>
@@ -288,7 +288,7 @@ function LiquenShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {fsvg(<>
           {Array.from({ length: 60 }, (_, i) => { const g = krng(100 + i); const x = g() * KW, y = g() * 1300; return <circle key={i} cx={x} cy={y} r={1.5 + g() * 3} fill="#fff" opacity={0.4 + 0.6 * Math.abs(Math.sin(T * 1.5 + i))} />; })}
-          <circle cx={540} cy={2350 - regreso * 500} r={1250} fill="#143a78" stroke={KC.ink} strokeWidth={8} />
+          <circle cx={540} cy={2350 - regreso * 500} r={1250} fill="#0f2a55" stroke={KC.ink} strokeWidth={8} />
           <path d={`M -100 ${1180 - regreso * 500} Q 200 ${1130 - regreso * 500} 420 ${1170 - regreso * 500} Q 700 ${1210 - regreso * 500} 1180 ${1150 - regreso * 500}`} stroke="#2f7d3a" strokeWidth={40} fill="none" opacity=".8" />
           {T < K.Es + 5.0 && Array.from({ length: 7 }, (_, i) => { const u = ((T * 0.9 + i / 7) % 1); const x0 = 860 + i * 35, y0 = 380; const x1 = 420 + i * 22, y1 = 612;
             return <line key={i} x1={klerp(x0, x1, u)} y1={klerp(y0, y1, u)} x2={klerp(x0, x1, Math.min(1, u + 0.12))} y2={klerp(y0, y1, Math.min(1, u + 0.12))} stroke={KC.lilac} strokeWidth={7} strokeLinecap="round" opacity={kprog(T, K.Es + 0.6, K.Es + 1.0) * (1 - kprog(T, K.Es + 4.6, K.Es + 5.0))} />; })}

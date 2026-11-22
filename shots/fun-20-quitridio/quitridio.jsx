@@ -190,7 +190,7 @@ function QuitridioShot() {
   const ext = new Set(orden.map((k, i) => [k, i]).filter(([k]) => k < 90).map(([, i]) => i));
   const RESTAN = [12, 47, 63, 88];
   const P1 = mxProy(-96.6, 16.9), P2 = mxProy(-91.6, 15.2), P3 = mxProy(-84.8, 10.3);
-  const MX = { x: 40, y: 560 }, pt = (p) => [MX.x + p[0], MX.y + p[1]];
+  const MX = { x: 40, y: 780 }, pt = (p) => [MX.x + p[0], MX.y + p[1]];
   const [a1, a2, a3] = [pt(P1), pt(P2), pt(P3)];
   const ola = kprog(T, K.M + 1.4, K.M + 4.0, kEase.suave);
   const olaPunto = ola < 0.45 ? [klerp(a1[0], a2[0], ola / 0.45), klerp(a1[1], a2[1], ola / 0.45)] : [klerp(a2[0], a3[0], (ola - 0.45) / 0.55), klerp(a2[1], a3[1], (ola - 0.45) / 0.55)];
@@ -238,7 +238,7 @@ function QuitridioShot() {
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><Interrogacion T={T} x={290} y={1010} tam={480} /><Rana T={T} x={290} y={470} s={0.45} enferma={0.55} ojos={0.75} latido={0} escamas={1} id="q" /></>)}
+        {fsvg(<g transform="translate(330 980) scale(1.25) translate(-290 -700)"><Interrogacion T={T} x={290} y={1010} tam={480} /><Rana T={T} x={290} y={470} s={0.45} enferma={0.55} ojos={0.75} latido={0} escamas={1} id="q" /></g>)}
       </Escena>
       {/* 7 · el estudio de 2009 (Australia): rana arborícola verde y su sangre */}
       <Escena T={T} a={K.Es} b={K.C} zoom={0.05}>
@@ -256,13 +256,13 @@ function QuitridioShot() {
       <Escena T={T} a={K.C} b={K.Sp} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {/* modo cine: el corazón grande al centro y el trazo del latido debajo, a todo lo ancho */}
-        {fsvg(<><g transform="translate(540 1240) scale(1.3) translate(-650 -960)">
+        {fsvg(<><g transform="translate(540 1330) scale(1.3) translate(-650 -960)">
           {[0, 1, 2, 3, 4, 5].map((i) => <line key={i} x1={ECG.x0} y1={830 + i * 52} x2={ECG.x1} y2={830 + i * 52} stroke="rgba(47,224,168,.12)" strokeWidth={2} />)}
           {Array.from({ length: 15 }, (_, i) => <line key={'v' + i} x1={ECG.x0 + i * 52} y1={830} x2={ECG.x0 + i * 52} y2={1090} stroke="rgba(47,224,168,.12)" strokeWidth={2} />)}
           {ecgPath && <path d={ecgPath} stroke={KC.mint} strokeWidth={7} fill="none" strokeLinejoin="round" style={{ filter:`drop-shadow(0 0 8px ${KC.mint})` }} />}
           {sweep > 0 && sweep < 1 && <circle cx={xs} cy={ecgY(xs)} r={10} fill="#fff" />}
           </g>
-          <g transform={`translate(540 790) scale(${5.4 * (1 + 0.3 * corazonPulso)})`}>
+          <g transform={`translate(540 900) scale(${5.4 * (1 + 0.3 * corazonPulso)})`}>
             <path d="M 0 22 C -40 -4 -30 -36 0 -18 C 30 -36 40 -4 0 22 Z" fill={parado ? '#6d7078' : KC.red} stroke={KC.ink} strokeWidth={4} />
           </g>
         </>)}
@@ -285,18 +285,18 @@ function QuitridioShot() {
           {ola > 0 && <path d={`M ${a1[0]} ${a1[1]} L ${a2[0]} ${a2[1]} L ${a3[0]} ${a3[1]}`} stroke={KC.red} strokeWidth={12} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={`${ola * 520} 999`} />}
           {ola > 0 && [0, 1, 2].map((j) => { const u = ((T * 0.9 + j / 3) % 1); return <circle key={j} cx={olaPunto[0]} cy={olaPunto[1]} r={14 + u * 70} fill="none" stroke={KC.red} strokeWidth={6} opacity={(1 - u) * 0.9} />; })}
           {[[a1, K.M + 1.4], [a2, K.M + 2.6], [a3, K.M + 4.0]].map(([p, t], i) => T > t - 0.05 && <circle key={i} cx={p[0]} cy={p[1]} r={16 * kprog(T, t - 0.05, t + 0.3, kEase.rebote)} fill={KC.red} stroke={KC.ink} strokeWidth={5} />)}
-          {[[150, 'rana', 0], [330, 'salamandra', 0.25], [510, 'rana', 0.5]].map(([fx, tp, d], i) => { const p = kprog(T, K.M + d, K.M + d + 0.45, kEase.rebote); return p > 0 ? <g key={i} transform={`translate(${fx} 460) scale(${p})`}><Frasco x={0} y={0} s={0.85} tipo={tp} /></g> : null; })}
+          {[[150, 'rana', 0], [330, 'salamandra', 0.25], [510, 'rana', 0.5]].map(([fx, tp, d], i) => { const p = kprog(T, K.M + d, K.M + d + 0.45, kEase.rebote); return p > 0 ? <g key={i} transform={`translate(${fx} 680) scale(${p})`}><Frasco x={0} y={0} s={0.85} tipo={tp} /></g> : null; })}
         </>)}
       </Escena>
       {/* 11 · el primo: Batrachochytrium salamandrivorans y las salamandras de fuego */}
       <Escena T={T} a={K.Sa} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Salamandra T={T} x={klerp(-900, 150, kprog(T, K.Sa - 0.3, K.Sa + 0.6, kEase.sale))} y={480} s={1.3} gris={kprog(T, K.Sa + 2.6, K.Sa + 4.2) * 0.7} />
+          <Salamandra T={T} x={klerp(-900, 110, kprog(T, K.Sa - 0.3, K.Sa + 0.6, kEase.sale))} y={790} s={1.5} gris={kprog(T, K.Sa + 2.6, K.Sa + 4.2) * 0.7} />
           {Array.from({ length: 100 }, (_, i) => { const t0 = K.Sa + 1.0 + i * 0.012, on = kprog(T, t0, t0 + 0.25, kEase.rebote); if (on <= 0) return null;
             const queda = RESTAN.includes(i), fade = queda ? 0 : kprog(T, K.Sa + 2.6 + ((i * 7) % 17) / 17 * 1.4, K.Sa + 2.9 + ((i * 7) % 17) / 17 * 1.4);
-            return <g key={i} opacity={1 - fade * 0.85}><Salamandra x={95 + (i % 10) * 90} y={880 + Math.floor(i / 10) * 44} s={0.14 * on} gris={fade} mueve={0} /></g>; })}
-          {T > K.Sa + 4.2 && RESTAN.map((i) => <circle key={'h' + i} cx={95 + (i % 10) * 90 + 42} cy={880 + Math.floor(i / 10) * 44} r={30 + 4 * Math.sin(T * 6)} fill="none" stroke={KC.yellow} strokeWidth={5} opacity={kprog(T, K.Sa + 4.2, K.Sa + 4.5)} />)}
+            return <g key={i} opacity={1 - fade * 0.85}><Salamandra x={95 + (i % 10) * 90} y={1110 + Math.floor(i / 10) * 44} s={0.14 * on} gris={fade} mueve={0} /></g>; })}
+          {T > K.Sa + 4.2 && RESTAN.map((i) => <circle key={'h' + i} cx={95 + (i % 10) * 90 + 42} cy={1110 + Math.floor(i / 10) * 44} r={30 + 4 * Math.sin(T * 6)} fill="none" stroke={KC.yellow} strokeWidth={5} opacity={kprog(T, K.Sa + 4.2, K.Sa + 4.5)} />)}
         </>)}
       </Escena>
       {/* 12 · cierre: la misma rana en la misma hoja, ya gris; la lupa muestra las bolsitas del hongo */}
@@ -319,29 +319,29 @@ function QuitridioShot() {
       <Etq T={T} at={K.Es + 1.3} until={K.C - 0.3} x={60} y={845} texto="Litoria caerulea" it tam={34} color={KC.ink} />
       <Medidor T={T} at={K.C + 0.3} until={K.Sp - 0.3} valor={(t) => 1 - 0.2 * kprog(t, K.C + 0.8, K.C + 1.8, kEase.suave)} etiqueta="sodio (Na⁺)" texto={(v) => (v > 0.995 ? '100 %' : '≈ −' + Math.round((1 - v) * 100) + ' %')} x={240} y={270} ancho={600} color={KC.yellow} />
       <Medidor T={T} at={K.C + 0.6} until={K.Sp - 0.3} valor={(t) => 1 - 0.5 * kprog(t, K.C + 1.4, K.C + 2.6, kEase.suave)} etiqueta="potasio (K⁺)" texto={(v) => (v > 0.995 ? '100 %' : '≈ −' + Math.round((1 - v) * 100) + ' %')} x={240} y={390} ancho={600} color={KC.lilac} />
-      <Chip T={T} at={K.C + 3.6} until={K.Sp - 0.3} texto="el corazón se detuvo" x={540} y={1010} tam={46} borde={KC.red} />
+      <Chip T={T} at={K.C + 3.6} until={K.Sp - 0.3} texto="el corazón se detuvo" x={540} y={1110} tam={46} borde={KC.red} />
       <NumeroBloque T={T} at={K.Sp + 0.3} until={K.Sp + 3.1} valor={501} dur={1.8} arriba="al menos" abajo="especies en declive" x={540} y={430} tam={150} color={KC.paper} />
       <NumeroBloque T={T} at={K.Sp + 3.3} until={K.M - 0.3} valor={90} dur={1.0} arriba="y" abajo="presuntas extinciones" x={540} y={430} tam={150} color="#4a4a4a" />
       <Chip T={T} at={K.Sp + 0.8} until={K.Sp + 4.2} texto="Scheele et al., Science 2019" x={540} y={625} tam={26} borde={KC.ink} />
       <Chip T={T} at={K.Sp + 4.4} until={K.M - 0.3} texto="cifras debatidas (Lambert et al. 2020)" x={540} y={625} tam={26} borde={KC.red} />
-      <Etq T={T} at={K.M + 0.7} until={K.Sa - 0.3} x={600} y={440} texto="frascos de museo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.M + 0.7} until={K.Sa - 0.3} x={600} y={660} texto="frascos de museo" tam={30} color={KC.ink} />
       <Etq T={T} at={K.M + 1.5} until={K.Sa - 0.3} x={30} y={a1[1] + 70} texto="sur de México · inicios de los 70" tam={24} color={KC.ink} />
       <Etq T={T} at={K.M + 2.7} until={K.Sa - 0.3} x={a2[0] - 30} y={a2[1] + 84} lado="izq" texto="Guatemala · 80s–90s" tam={26} color={KC.ink} />
       <Etq T={T} at={K.M + 4.0} until={K.Sa - 0.3} x={a3[0] - 26} y={a3[1] + 6} texto="Costa Rica · 1987" lado="izq" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Sa + 0.8} until={K.Sa + 2.5} x={60} y={770} texto="Batrachochytrium salamandrivorans (Bsal)" it tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Sa + 1.0} until={K.Ci - 0.3} x={60} y={650} texto="salamandra de fuego" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Sa + 1.2} until={K.Ci - 0.3} x={60} y={700} texto="Salamandra salamandra" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Sa + 2.6} until={K.Ci - 0.3} texto="Países Bajos · 2010 → 2013" x={540} y={780} tam={36} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Sa + 4.3} until={K.Ci - 0.3} valor={4} dur={0.5} sufijo=" %" x={540} y={1090} tam={220} color={KC.yellow} />
+      <Etq T={T} at={K.Sa + 0.8} until={K.Sa + 2.5} x={60} y={1035} texto="Batrachochytrium salamandrivorans (Bsal)" it tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Sa + 1.0} until={K.Ci - 0.3} x={60} y={925} texto="salamandra de fuego" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Sa + 1.2} until={K.Ci - 0.3} x={60} y={975} texto="Salamandra salamandra" it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Sa + 2.6} until={K.Ci - 0.3} texto="Países Bajos · 2010 → 2013" x={540} y={1035} tam={36} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Sa + 4.3} until={K.Ci - 0.3} valor={4} dur={0.5} sufijo=" %" x={540} y={1310} tam={220} color={KC.yellow} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Z} texto="2 cm" largo={153} />
       <BarraEscala T={T} at={K.Z} until={K.Q} texto="5 µm" largo={175} />
       <BarraEscala T={T} at={K.Q} until={K.Pr} texto="25 µm" largo={135} />
-      <BarraEscala T={T} at={K.Pr} until={K.Es} texto="5 cm" largo={140} />
+      <BarraEscala T={T} at={K.Pr} until={K.Es} texto="5 cm" largo={175} />
       <BarraEscala T={T} at={K.Es} until={K.C} texto="2 cm" largo={103} />
       <BarraEscala T={T} at={K.M} until={K.Sa} texto="500 km" largo={113} />
-      <BarraEscala T={T} at={K.Sa} until={K.Ci} texto="5 cm" largo={217} />
+      <BarraEscala T={T} at={K.Sa} until={K.Ci} texto="5 cm" largo={250} />
       <BarraEscala T={T} at={K.Ci} until={K.Ou} texto="2 cm" largo={153} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

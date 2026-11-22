@@ -54,7 +54,7 @@ function VaquitaShot() {
   const K = { G: CUES.Gancho, Q: CUES.Quien, P: CUES.Pregunta, To: CUES.Totoaba, V: CUES.Vejiga, Ca: CUES.Caida, E: CUES.Estudio, Cr: CUES.Crias, B: CUES.Bloques, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
-  const mar = (oscuro = 0) => <div style={{ position:'absolute', inset:0, background:`linear-gradient(${mixHex('#38c6e8', '#0b2a4a', 0.8 + 0.2 * oscuro)}, ${mixHex('#127ea8', '#061a30', 0.8 + 0.2 * oscuro)})` }} />;
+  const mar = (oscuro = 0) => <div style={{ position:'absolute', inset:0, background:`linear-gradient(${mixHex('#38c6e8', '#0b2a4a', 0.95 + 0.05 * oscuro)}, ${mixHex('#127ea8', '#061a30', 0.8 + 0.2 * oscuro)})` }} />;
   // gancho: los dedos se encienden uno por uno hasta 7; luego 3 más punteados (hasta 10)
   const cuenta = Math.floor(kprog(T, K.G + 0.2, K.G + 3.2) * 7 + 0.001);
   const manos = (n, extra) => <><Mano x={290} y={1010} s={2.1} n={Math.min(5, n)} posibles={n >= 5 ? 0 : 0} espejo />
@@ -80,16 +80,16 @@ function VaquitaShot() {
       {/* 3 · pregunta */}
       <Escena T={T} a={K.P} b={K.To} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={300} y={980} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 800)`}>?</text>
-          <Vaquita x={300} y={1100} s={0.6} T={T} /></>)}
+        {svg(<g transform="translate(320 1000) scale(1.45) translate(-300 -860)"><text x={300} y={980} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 800)`}>?</text>
+          <Vaquita x={300} y={1100} s={0.6} T={T} /></g>)}
       </Escena>
       {/* 4–5 · la totoaba, su vejiga y las redes */}
       <Escena T={T} a={K.To} b={K.Ca}>
         {mar(0.2)}
-        {svg(<><Totoaba x={570} y={700} s={1.9} T={T} vejiga={kprog(T, K.V + 0.3, K.V + 1.0)} />
+        {svg(<g transform="translate(0 130)"><Totoaba x={570} y={700} s={1.9} T={T} vejiga={kprog(T, K.V + 0.3, K.V + 1.0)} />
           <Vaquita x={590} y={1130} s={1.5} T={T} fase={1} />
           {T > K.To + 2.0 && <g opacity={kprog(T, K.To + 2.0, K.To + 2.8)}>{Array.from({ length: 12 }, (_, i) => <line key={'v' + i} x1={89 + i * 82} y1={460} x2={89 + i * 82} y2={1300} stroke="#e6e0c8" strokeWidth={3} />)}
-            {Array.from({ length: 10 }, (_, i) => <line key={'h' + i} x1={89} y1={460 + i * 93.3} x2={991} y2={460 + i * 93.3} stroke="#e6e0c8" strokeWidth={3} />)}</g>}</>)}
+            {Array.from({ length: 10 }, (_, i) => <line key={'h' + i} x1={89} y1={460 + i * 93.3} x2={991} y2={460 + i * 93.3} stroke="#e6e0c8" strokeWidth={3} />)}</g>}</g>)}
         <EscalaFija texto="50 cm" largo={Math.round(1.5 * 355 / 1.5 * 0.5)} y={1480} color={KC.texto} />
       </Escena>
       {/* 6 · la caída: 1997, 2015 y 2025 */}
@@ -100,7 +100,7 @@ function VaquitaShot() {
       {/* 7 · el crucero: dos barcos, binoculares gigantes y micrófonos bajo el agua */}
       <Escena T={T} a={K.E} b={K.Cr}>
         {mar(0.1)}
-        {svg(<><rect x={0} y={0} width={KW} height={770} fill="#182634" />
+        {svg(<><rect x={0} y={0} width={KW} height={900} fill="#182634" /><g transform="translate(0 130)">
           {[[285, 740], [800, 728]].map(([bx, by], i) => <g key={i} transform={`translate(${bx} ${by + Math.sin(T * 1.5 + i) * 6}) scale(1.45)`}>
             <path d="M -170 0 L 170 0 L 130 70 L -130 70 Z" fill={i ? '#3a475c' : '#2346ff'} stroke={KC.ink} strokeWidth={6} />
             <rect x={-80} y={-90} width={140} height={90} fill="#fff" stroke={KC.ink} strokeWidth={6} />
@@ -109,13 +109,13 @@ function VaquitaShot() {
           {[200, 540, 880].map((mx, i) => <g key={i} transform={`translate(${mx} 1190) scale(1.4)`}>
             <line x1={0} y1={-120} x2={0} y2={60} stroke="#e6e0c8" strokeWidth={4} /><rect x={-18} y={-30} width={36} height={60} rx={14} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
             {[0, 1, 2].map((k) => { const u = ((T * 0.8 + k / 3 + i * 0.2) % 1); return <circle key={k} r={30 + u * 120} fill="none" stroke={KC.yellow} strokeWidth={4} opacity={1 - u} />; })}
-          </g>)}</>)}
+          </g>)}</g></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
       {/* 8 · crías: Frida y su cría */}
       <Escena T={T} a={K.Cr} b={K.B}>
         {mar(0.1)}
-        {svg(<><Vaquita x={560} y={770} s={1.9} T={T} aleta="doblada" /><Vaquita x={600} y={1140} s={0.95} T={T} fase={0.6} /></>)}
+        {svg(<><Vaquita x={560} y={900} s={1.9} T={T} aleta="doblada" /><Vaquita x={600} y={1270} s={0.95} T={T} fase={0.6} /></>)}
         <EscalaFija texto="50 cm" largo={Math.round(1.9 * 355 / 1.5 * 0.5)} y={1480} color={KC.texto} />
       </Escena>
       {/* 9 · bloques con ganchos */}
@@ -136,17 +136,17 @@ function VaquitaShot() {
       <NumeroGigante T={T} at={K.G + 0.2} until={K.Q - 0.2} valor={7} dur={3.0} sufijo=" a 10" etiqueta="vaquitas vistas en 2025" x={540} y={390} tam={110} color={KC.yellow} />
       <Etq T={T} at={K.Q + 0.4} until={K.P - 0.2} x={150} y={400} texto="vaquita · Phocoena sinus" it tam={30} />
       <Chip T={T} at={K.Q + 3.2} until={K.P - 0.2} texto="solo en el norte del Golfo de California" y={1440} tam={30} borde={KC.red} />
-      <Etq T={T} at={K.To + 0.4} until={K.Ca - 0.2} x={170} y={905} texto="totoaba · Totoaba macdonaldi" it tam={28} />
+      <Etq T={T} at={K.To + 0.4} until={K.Ca - 0.2} x={170} y={1035} texto="totoaba · Totoaba macdonaldi" it tam={28} />
       <Chip T={T} at={K.To + 2.2} until={K.V - 0.1} texto="redes ilegales" y={380} x={540} tam={36} borde={KC.red} />
       <Chip T={T} at={K.V + 0.6} until={K.Ca - 0.2} texto="vejiga natatoria → China (sopa)" y={380} x={540} tam={32} borde={KC.yellow} />
       <Comparativa T={T} at={K.Ca + 0.1} until={K.E - 0.2} max={567} y={340} alto={600}
         izq={{ valor: 567, texto: '567', etiqueta: '1997', color: KC.blue }} der={{ valor: 59, texto: '59', etiqueta: '2015', color: KC.red }} />
       <Chip T={T} at={K.Ca + 3.6} until={K.E - 0.2} texto="2025: entre 7 y 10 vistas" y={1440} tam={34} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2025" quien="crucero de observación" revista="septiembre · 2 barcos · detectores acústicos" y={340} x={540} />
-      <Etq T={T} at={K.E + 3.8} until={K.Cr - 0.2} x={250} y={490} texto="binoculares de 25 aumentos" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.E + 4.6} until={K.Cr - 0.2} x={330} y={940} texto="micrófonos bajo el agua" tam={28} />
+      <Etq T={T} at={K.E + 3.8} until={K.Cr - 0.2} x={250} y={620} texto="binoculares de 25 aumentos" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.E + 4.6} until={K.Cr - 0.2} x={330} y={1070} texto="micrófonos bajo el agua" tam={28} />
       <Chip T={T} at={K.Cr + 0.4} until={K.B - 0.2} texto="Frida: aleta doblada" y={440} x={640} tam={36} borde={KC.pink} />
-      <Etq T={T} at={K.Cr + 1.4} until={K.B - 0.2} x={800} y={1140} texto="cría" tam={32} />
+      <Etq T={T} at={K.Cr + 1.4} until={K.B - 0.2} x={800} y={1270} texto="cría" tam={32} />
       <Chip T={T} at={K.B + 0.3} until={K.C - 0.2} texto="bloques con ganchos: atrapan las redes" y={420} x={540} tam={26} borde={KC.ink} />
       <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="pueden recuperarse si se quitan las redes" y={420} x={540} tam={26} borde={KC.leaf} />
 

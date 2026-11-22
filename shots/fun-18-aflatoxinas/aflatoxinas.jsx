@@ -228,8 +228,8 @@ function AflatoxinasShot() {
   const CAEN = [[470, 1135, 20], [610, 1150, -30], [720, 1130, 70], [540, 1175, 110], [820, 1165, -10], [670, 1190, 40], [900, 1140, 150], [760, 1200, -60]];
   const ARR = [600, 1120]; // el cacahuate arrugado
   const Mesa = ({ cierre }) => <>
-    <rect x={-30} y={1160} width={KW + 60} height={900} fill="#6a4d33" stroke={KC.ink} strokeWidth={8} />
-    <rect x={0} y={1160} width={KW} height={20} fill="#59402b" />
+    <rect x={-30} y={1160} width={KW + 60} height={900} fill="#4a3624" stroke={KC.ink} strokeWidth={8} />
+    <rect x={0} y={1160} width={KW} height={20} fill="#3d2c1e" />
     {CAEN.map(([x, y, r], i) => { const t0 = K.G + 0.15 + i * 0.1, u = cierre ? 1 : kprog(T, t0, t0 + 0.45, kEase.suave);
       return u > 0 ? <Cacahuate key={i} x={klerp(bocaX, x, u)} y={klerp(bocaY, y - 25, u) - Math.sin(u * Math.PI) * 120} s={0.8} rot={r * u} /> : null; })}
   </>;
@@ -312,7 +312,7 @@ function AflatoxinasShot() {
       {/* 5 · re-gancho */}
       <Escena T={T} a={K.P} b={K.AD} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Interrogacion T={T} x={300} y={1080} />)}
+        {fsvg(<g transform="translate(320 1000) scale(1.8) translate(-300 -830)"><Interrogacion T={T} x={300} y={1080} /></g>)}
       </Escena>
       {/* 6 · en tu cuerpo se vuelve un epóxido que se pega al ADN (a una guanina) */}
       <Escena T={T} a={K.AD} b={K.Ca}>
@@ -351,12 +351,12 @@ function AflatoxinasShot() {
       {/* 9 · el número: hasta 8,000 ppb contra un límite de 20 */}
       <Escena T={T} a={K.Nu} b={K.Br} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 200)">
           <g opacity={0.5}><g transform="translate(470 1060) scale(0.8) translate(-470 -1060)"><Troje x={470} y={1060} moho={1} /></g></g>
           <line x1={80} y1={1160} x2={1000} y2={1160} stroke={KC.ink} strokeWidth={8} />
           <rect x={180} y={1160 - 12} width={150} height={12} fill={KC.leaf} stroke={KC.ink} strokeWidth={4} />
           {(() => { const h = 1300 * kprog(T, K.Nu + 0.4, K.Nu + 1.8, kEase.suave); return <rect x={640} y={1160 - h} width={220} height={h} fill={KC.red} stroke={KC.ink} strokeWidth={7} />; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 10 · el brote: 317 enfermos con piel amarilla; 125 muertos */}
       <Escena T={T} a={K.Br} b={K.Pa}>
@@ -434,10 +434,10 @@ function AflatoxinasShot() {
       <Etq T={T} at={K.Ca + 4.6} until={K.Es - 0.3} x={330} y={640} texto="cáncer de hígado" tam={32} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.3} anio="2004" quien="Kenia · brote por maíz" revista="MMWR (CDC), 2004" y={560} />
       <Chip T={T} at={K.Es + 2.5} until={K.Nu - 0.3} texto="maíz guardado húmedo" x={420} y={500} tam={38} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Nu + 0.4} until={K.Br - 0.3} valor={8000} dur={1.4} etiqueta="hasta" x={380} y={500} tam={230} color={KC.red} />
-      <Chip T={T} at={K.Nu + 1.2} until={K.Br - 0.3} texto="partes por mil millones (ppb)" x={380} y={700} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Nu + 2.3} until={K.Br - 0.3} texto="aflatoxina B1 · comida de las casas" x={400} y={800} tam={28} borde={KC.red} />
-      <Etq T={T} at={K.Nu + 3.2} until={K.Br - 0.3} x={150} y={1215} texto="límite: 20" tam={36} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Nu + 0.4} until={K.Br - 0.3} valor={8000} dur={1.4} etiqueta="hasta" x={380} y={700} tam={230} color={KC.red} />
+      <Chip T={T} at={K.Nu + 1.2} until={K.Br - 0.3} texto="partes por mil millones (ppb)" x={380} y={900} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Nu + 2.3} until={K.Br - 0.3} texto="aflatoxina B1 · comida de las casas" x={400} y={1000} tam={28} borde={KC.red} />
+      <Etq T={T} at={K.Nu + 3.2} until={K.Br - 0.3} x={150} y={1415} texto="límite: 20" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Br + 0.6} until={K.Pa - 0.3} texto="317 enfermos" x={290} y={440} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.Br + 3.0} until={K.Pa - 0.3} texto="125 muertos" x={790} y={440} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.Pa + 0.4} until={K.Si - 0.3} texto="Inglaterra, hacia 1960" x={380} y={440} tam={36} borde={KC.ink} />

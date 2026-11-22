@@ -117,7 +117,7 @@ function Jabon() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa><text x={280} y={1100} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.pink} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 900)`}>?</text></SvgCapa>
+        <SvgCapa><g transform="translate(300 1000) scale(1.85) translate(-280 -900)"><text x={280} y={1100} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.pink} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 900)`}>?</text></g></SvgCapa>
       </Escena>
       {/* 7 · Cochrane 2021: ≈ −30 % */}
       <Escena T={T} a={K.Es} b={K.Ta}>

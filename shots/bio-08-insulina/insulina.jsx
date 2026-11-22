@@ -239,7 +239,7 @@ function InsulinaNarrado() {
           <GenEscrito T={T} x={190} y={790} largo={800} etiqueta="B" p={kprog(T, K.Ge + 0.5, K.Ge + 1.8)} h={kprog(T, K.Ge + 1.7, K.Ge + 2.3, kEase.sale)} letras="TTCGTGAATCAACACCTTTGTGGCTCACAT" />
           {/* un plásmido (y una cepa de E. coli) para cada gen: A a la izquierda, B a la derecha */}
           {/* modo cine: los dos plásmidos (anillos abiertos) esperan desde que empieza la escena; se encienden cuando entra el gen */}
-          <g opacity={kprog(T, K.Ge - 0.2, K.Ge + 0.3) * (0.4 + 0.6 * kprog(T, K.Ge + 2.0, K.Ge + 2.6))}>
+          <g opacity={kprog(T, K.Ge - 0.2, K.Ge + 0.3) * (0.65 + 0.35 * kprog(T, K.Ge + 2.0, K.Ge + 2.6))}>
             <Plasmido T={T} x={290} y={1170} r={185} gen={kprog(T, K.Ge + 2.0, K.Ge + 2.6)} rot={T * 14}
               cierra={kprog(T, K.Ge + 2.7, K.Ge + 3.5, kEase.sale)} />
             <Plasmido T={T} x={790} y={1170} r={185} gen={kprog(T, K.Ge + 2.0, K.Ge + 2.6)} rot={-T * 14 + 40}
@@ -256,15 +256,15 @@ function InsulinaNarrado() {
       <EscenaFundido T={T} a={K.L} b={K.Q} zoom={0.05} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #16281f 0%, #0E0F12 76%)' }}></div>
         <Ambiente T={T} n={20} seed={8} color="rgba(126,231,135,.3)" tam={[3, 10]} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><g transform="translate(0 130)">
           <Bacteria T={T} x={540} y={800} s={2.2} plasmido={kprog(T, K.L + 0.3, K.L + 0.9)}
             brilla={kprog(T, K.L + 1.2, K.L + 2.0)} />
           {Array.from({ length: 5 }, (_, i) => { const at = K.L + 1.6 + i * 0.3, p = kprog(T, at, at + 1.8, kEase.suave);
             if (T < at) return null;
-            return <g key={i} opacity={1 - p * 0.3} transform={`translate(${klerp(540, 150 + i * 190, p)} ${klerp(800, 1220 + (i % 2) * 130, p)})`}>
+            return <g key={i} opacity={1 - p * 0.3} transform={`translate(${klerp(540, 150 + i * 190, p)} ${klerp(800, 1180 + (i % 2) * 110, p)})`}>
               <CadenaInsulina T={T} s={0.95} seed={i} />
             </g>; })}
-        </svg>
+        </g></svg>
       </EscenaFundido>
 
       {/* 5 · PREGUNTA — re-gancho con la escala */}
