@@ -3,7 +3,7 @@
 // La tiña (ringworm), Microsporum canis. Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico ni veterinario.
 
 const TG = { naranja:'#f29a3a', naranja2:'#c8661c', crema:'#ffe3b8', rosa:'#ff8fa3', piel:'#f2c29b', piel2:'#e3a983', anillo:'#d63a3a', anillo2:'#f07a6e',
-  hifa:'#eafff7', escama:'#f1dc9a', escama2:'#d9c27c', peloH:'#6b4528', peloG:'#e9a24f', espora:'#f6f1dc', uv:'#a8ff3e', uvFondo:'#130a29', persona:'#ff6b2c' };
+  hifa:'#eafff7', escama:'#f1dc9a', escama2:'#d9c27c', peloH:'#6b4528', peloG:'#e9a24f', espora:'#f6f1dc', uv:'#a8ff3e', uvFondo:'#130a29', persona:'#ff6b2c', osc:'#0b1020' };
 
 // ---------- Gato atigrado sentado, de frente. Base (x, y) = entre las patas. Alto ≈ 550·s.
 function Gato({ T, x, y, s = 1, ojos = 'abiertos', ronroneo = 0, brillo = 0, tenue = 0 }) {
@@ -37,7 +37,7 @@ function Gato({ T, x, y, s = 1, ojos = 'abiertos', ronroneo = 0, brillo = 0, ten
       {ojos === 'cerrados'
         ? [-1, 1].map((d) => <path key={d} d={`M ${-78 * d} -8 Q ${-52 * d} -36 ${-26 * d} -8`} stroke={KC.ink} strokeWidth={7} fill="none" strokeLinecap="round" />)
         : [-1, 1].map((d) => <g key={d}><ellipse cx={-52 * d} cy={-14} rx={25} ry={29} fill="#9be15d" stroke={KC.ink} strokeWidth={5} />
-          <ellipse cx={-52 * d} cy={-12} rx={8} ry={21} fill={KC.ink} /><circle cx={-44 * d} cy={-24} r={6} fill="#fff" /></g>)}
+          <ellipse cx={-52 * d} cy={-12} rx={8} ry={21} fill={TG.osc} /><circle cx={-44 * d} cy={-24} r={6} fill="#fff" /></g>)}
       <path d="M -15 20 L 15 20 L 0 34 Z" fill={TG.rosa} stroke={KC.ink} strokeWidth={4} strokeLinejoin="round" />
       <path d="M 0 34 Q -12 54 -30 46 M 0 34 Q 12 54 30 46" stroke={KC.ink} strokeWidth={5} fill="none" strokeLinecap="round" />
       {[-1, 1].map((d) => [[-60, 32, -176, 18], [-60, 44, -174, 52]].map(([a, b, c, e], i) => <line key={d + '' + i} x1={a * d} y1={b} x2={c * d} y2={e} stroke={KC.ink} strokeWidth={3} />))}
@@ -82,7 +82,7 @@ function Gusanito({ T, x, y, o = 1 }) {
   const pts = Array.from({ length: 9 }, (_, i) => [x - i * 22, y + Math.sin(T * 8 - i * 0.9) * 12]);
   return <g opacity={o}>
     {pts.slice().reverse().map(([a, b], i) => <circle key={i} cx={a} cy={b} r={22 - i * 0.4} fill="#f7a6c0" stroke={KC.ink} strokeWidth={5} />)}
-    <circle cx={x + 6} cy={y - 6} r={5} fill={KC.ink} /><circle cx={x - 8} cy={y - 8} r={5} fill={KC.ink} />
+    <circle cx={x + 6} cy={y - 6} r={5} fill={TG.osc} /><circle cx={x - 8} cy={y - 8} r={5} fill={TG.osc} />
   </g>;
 }
 
@@ -157,8 +157,8 @@ function Personita({ x, y, s = 1, color = '#fff', o = 1 }) {
 function Casa({ T }) {
   return <g>
     <rect x={60} y={470} width={960} height={690} fill={KC.paper} stroke={KC.ink} strokeWidth={9} />
-    <rect x={60} y={1100} width={960} height={60} fill="#d8c3a0" stroke={KC.ink} strokeWidth={6} />
-    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={60 + i * 80} y1={1100} x2={60 + i * 80} y2={1160} stroke="#b89f78" strokeWidth={4} />)}
+    <rect x={60} y={1100} width={960} height={60} fill="#5f4f3a" stroke={KC.ink} strokeWidth={6} />
+    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={60 + i * 80} y1={1100} x2={60 + i * 80} y2={1160} stroke="#3d3225" strokeWidth={4} />)}
     <rect x={550} y={470} width={22} height={420} fill="#c9bba4" stroke={KC.ink} strokeWidth={6} />
     {/* tapete y cama */}
     <ellipse cx={300} cy={1104} rx={190} ry={22} fill="#7cc6ff" stroke={KC.ink} strokeWidth={5} />
@@ -175,8 +175,8 @@ function Casa({ T }) {
       <g transform="translate(-50 6) scale(0.5)"><circle r={50} fill={TG.naranja} stroke={KC.ink} strokeWidth={8} />
         <path d="M -48 -20 L -36 -70 L -10 -44 Z M 48 -20 L 36 -70 L 10 -44 Z" fill={TG.naranja} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" /></g>
       <circle cx={-50} cy={6} r={40} fill="none" stroke={KC.red} strokeWidth={8} /><line x1={-78} y1={-22} x2={-22} y2={34} stroke={KC.red} strokeWidth={8} />
-      <text x={36} y={-4} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>SIN</text>
-      <text x={36} y={32} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>GATO</text>
+      <text x={36} y={-4} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={TG.osc}>SIN</text>
+      <text x={36} y={32} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={TG.osc}>GATO</text>
     </g>
   </g>;
 }
@@ -192,8 +192,8 @@ function Calendario({ x, y, mes = 1 }) {
   return <g transform={`translate(${x} ${y})`}>
     <rect x={-80} y={-70} width={160} height={150} rx={16} fill="#fff" stroke={KC.ink} strokeWidth={6} />
     <rect x={-80} y={-70} width={160} height={42} rx={14} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
-    {[-40, 40].map((d) => <rect key={d} x={d - 6} y={-86} width={12} height={30} rx={6} fill={KC.ink} />)}
-    <text y={58} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill={KC.ink}>{Math.max(1, Math.round(mes))}</text>
+    {[-40, 40].map((d) => <rect key={d} x={d - 6} y={-86} width={12} height={30} rx={6} fill={TG.osc} stroke={KC.ink} strokeWidth={2} />)}
+    <text y={58} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill={TG.osc}>{Math.max(1, Math.round(mes))}</text>
     <text y={-38} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#fff">MES</text>
   </g>;
 }
@@ -202,17 +202,17 @@ function Calendario({ x, y, mes = 1 }) {
 function Icono({ tipo, x, y, T, ok = 0 }) {
   return <g transform={`translate(${x} ${y})`}>
     <circle r={56} fill="#fff" stroke={KC.ink} strokeWidth={6} />
-    {tipo === 'vet' && <g><path d="M -26 -30 L -26 0 Q -26 26 0 26 Q 26 26 26 0 L 26 -30" stroke={KC.ink} strokeWidth={7} fill="none" strokeLinecap="round" />
-      <path d="M 0 26 L 0 34 Q 0 44 14 44" stroke={KC.ink} strokeWidth={7} fill="none" strokeLinecap="round" /><circle cx={24} cy={40} r={10} fill={KC.cyan} stroke={KC.ink} strokeWidth={5} />
-      <circle cx={-26} cy={-34} r={6} fill={KC.ink} /><circle cx={26} cy={-34} r={6} fill={KC.ink} /></g>}
-    {tipo === 'manos' && <g><rect x={-30} y={-6} width={60} height={34} rx={14} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
-      {[[-18, -22, 10], [6, -32, 13], [24, -18, 8]].map(([a, b, r], i) => <circle key={i} cx={a} cy={b + Math.sin(T * 4 + i) * 3} r={r} fill="rgba(160,220,255,.6)" stroke={KC.ink} strokeWidth={3} />)}</g>}
-    {tipo === 'aspira' && <g><rect x={-34} y={-4} width={44} height={34} rx={12} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
-      <path d="M 10 6 Q 30 0 30 -24 L 30 -36" stroke={KC.ink} strokeWidth={7} fill="none" strokeLinecap="round" /><rect x={18} y={-44} width={30} height={12} rx={5} fill={KC.ink} />
-      <circle cx={-24} cy={32} r={7} fill={KC.ink} /><circle cx={0} cy={32} r={7} fill={KC.ink} /></g>}
-    {tipo === 'cama' && <g><rect x={-38} y={-4} width={76} height={30} rx={10} fill={KC.lilac} stroke={KC.ink} strokeWidth={5} />
-      <rect x={-34} y={-20} width={28} height={18} rx={7} fill="#fff" stroke={KC.ink} strokeWidth={4} />
-      {[[16, -26, 9], [32, -38, 7], [0, -40, 6]].map(([a, b, r], i) => <circle key={i} cx={a} cy={b + Math.sin(T * 4 + i) * 3} r={r} fill="rgba(160,220,255,.6)" stroke={KC.ink} strokeWidth={3} />)}</g>}
+    {tipo === 'vet' && <g><path d="M -26 -30 L -26 0 Q -26 26 0 26 Q 26 26 26 0 L 26 -30" stroke={TG.osc} strokeWidth={7} fill="none" strokeLinecap="round" />
+      <path d="M 0 26 L 0 34 Q 0 44 14 44" stroke={TG.osc} strokeWidth={7} fill="none" strokeLinecap="round" /><circle cx={24} cy={40} r={10} fill={KC.cyan} stroke={TG.osc} strokeWidth={5} />
+      <circle cx={-26} cy={-34} r={6} fill={TG.osc} /><circle cx={26} cy={-34} r={6} fill={TG.osc} /></g>}
+    {tipo === 'manos' && <g><rect x={-30} y={-6} width={60} height={34} rx={14} fill={KC.yellow} stroke={TG.osc} strokeWidth={5} />
+      {[[-18, -22, 10], [6, -32, 13], [24, -18, 8]].map(([a, b, r], i) => <circle key={i} cx={a} cy={b + Math.sin(T * 4 + i) * 3} r={r} fill="rgba(160,220,255,.6)" stroke={TG.osc} strokeWidth={3} />)}</g>}
+    {tipo === 'aspira' && <g><rect x={-34} y={-4} width={44} height={34} rx={12} fill={KC.red} stroke={TG.osc} strokeWidth={5} />
+      <path d="M 10 6 Q 30 0 30 -24 L 30 -36" stroke={TG.osc} strokeWidth={7} fill="none" strokeLinecap="round" /><rect x={18} y={-44} width={30} height={12} rx={5} fill={TG.osc} />
+      <circle cx={-24} cy={32} r={7} fill={TG.osc} /><circle cx={0} cy={32} r={7} fill={TG.osc} /></g>}
+    {tipo === 'cama' && <g><rect x={-38} y={-4} width={76} height={30} rx={10} fill={KC.lilac} stroke={TG.osc} strokeWidth={5} />
+      <rect x={-34} y={-20} width={28} height={18} rx={7} fill="#fff" stroke={TG.osc} strokeWidth={4} />
+      {[[16, -26, 9], [32, -38, 7], [0, -40, 6]].map(([a, b, r], i) => <circle key={i} cx={a} cy={b + Math.sin(T * 4 + i) * 3} r={r} fill="rgba(160,220,255,.6)" stroke={TG.osc} strokeWidth={3} />)}</g>}
     {ok > 0 && <g transform={`translate(44 -40) scale(${ok})`}><circle r={26} fill={KC.leaf} stroke={KC.ink} strokeWidth={5} />
       <path d="M -11 0 L -3 9 L 12 -9" stroke="#fff" strokeWidth={7} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>}
   </g>;
@@ -235,9 +235,9 @@ const HIFAS_Q = [
 
 function Sofa() {
   return <g>
-    <rect x={-20} y={1150} width={1120} height={800} fill="#3f2a7a" stroke={KC.ink} strokeWidth={9} />
-    <rect x={-20} y={1150} width={1120} height={70} rx={30} fill="#5a3fa8" stroke={KC.ink} strokeWidth={8} />
-    {[180, 540, 900].map((x) => <circle key={x} cx={x} cy={1320} r={10} fill="#2a1b55" />)}
+    <rect x={-20} y={1150} width={1120} height={800} fill="#1a1238" stroke={KC.ink} strokeWidth={5} />
+    <rect x={-20} y={1150} width={1120} height={70} rx={30} fill="#2b1f58" stroke={KC.ink} strokeWidth={5} />
+    {[180, 540, 900].map((x) => <circle key={x} cx={x} cy={1320} r={10} fill="#0f0a24" />)}
   </g>;
 }
 
@@ -250,7 +250,11 @@ function TinaGatoShot() {
   const PELOS_UV = (() => { const g = krng(85), out = []; for (let i = 0; i < 30; i++) { const x = 70 + i * 32 + (g() - 0.5) * 12, base = 1120 - 150 * Math.sin(Math.PI * (x - 20) / 1040);
     const inf = g() < 0.55, br = inf && g() < 0.62; out.push({ x, base, L: 150 + g() * 70, lean: (g() - 0.5) * 0.5, inf, br, i }); } return out; })();
   const etiquetaUV = PELOS_UV.find((h) => h.inf && !h.br && h.x > 430 && h.x < 640) || PELOS_UV.find((h) => h.inf && !h.br && h.x > 220 && h.x < 820) || PELOS_UV[8];
-  const casilla = (i) => ({ x: 120 + (i % 10) * 56, y: 500 + Math.floor(i / 10) * 76 });
+  const casilla = (i) => ({ x: 131 + (i % 10) * 91, y: 600 + Math.floor(i / 10) * 112 });
+  // Pase a mano cine: encuadres (x' = k·x + dx). ZG = brazo + gato (gancho, nombre, estudio, cierre) ×1.6.
+  const ZG = 'translate(-74 -606) scale(1.6)', ZQ = 'translate(-162 -81.5) scale(1.3)', ZM = 'translate(-175.5 -126) scale(1.35)',
+    ZP = 'translate(15 -665) scale(1.75)', ZU = 'translate(-162 -250) scale(1.3)', ZPo = 'translate(-54 33.5) scale(1.1)';
+  const uvTip = { x: 1.3 * (etiquetaUV.x + etiquetaUV.lean * etiquetaUV.L) - 162 };
   const rojas = Math.floor(43 * kprog(T, K.Es + 3.9, K.Es + 6.0, kEase.suave));
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -258,20 +262,25 @@ function TinaGatoShot() {
       <Escena T={T} a={K.G} b={K.N} zoom={0.05} origen="30% 55%">
         <FondoLunares color={KC.pink} />
         {fsvg(<>
+          <g transform={ZG}>
           <Sofa />
           <Gato T={T} x={560} y={1188} s={0.88} ojos="cerrados" ronroneo={1} />
           <Brazo T={T} anillo={kprog(T, K.G + 0.1, K.G + 0.9)} rasca={kprog(T, K.G + 0.6, K.G + 0.9) * (1 - kprog(T, K.G + 2.3, K.G + 2.6))} />
           {T < K.G + 2.6 && <Gusanito T={T} x={330} y={905} o={kprog(T, K.G + 0.5, K.G + 0.8) * (1 - kprog(T, K.G + 2.2, K.G + 2.5))} />}
           {T > K.G + 1.7 && T < K.G + 2.5 && <path d="M 130 850 L 360 960 M 360 850 L 130 960" stroke={KC.red} strokeWidth={14} strokeLinecap="round" opacity={kprog(T, K.G + 1.7, K.G + 1.9) * (1 - kprog(T, K.G + 2.2, K.G + 2.5))} />}
-          <Sello T={T} at={K.G + 2.4} x={300} y={590} texto="HONGO" color={KC.ink} r={108} />
+          <Sello T={T} at={K.G + 2.4} x={300} y={670} texto="HONGO" color={KC.ink} r={108} />
           {(() => { const p = kprog(T, K.G + 2.9, K.G + 3.5, kEase.sale); return p > 0 ? <path d="M 470 900 Q 380 830 270 960" stroke={KC.white} strokeWidth={12} fill="none" strokeDasharray="16 12" strokeLinecap="round" pathLength={1} style={{ strokeDasharray:`${p} 1` }} /> : null; })()}
+          </g>
         </>)}
       </Escena>
       {/* 2 · el nombre: tiña · ringworm = "gusano de anillo" */}
       <Escena T={T} a={K.N} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <g transform={`translate(0 0)`}><Brazo T={T} anillo={1} claro={0.3} /></g>
+          <g transform={ZG}><Brazo T={T} anillo={1} claro={0.3} />
+            {(() => { const [rx, ry] = qpt(0.4), p = kprog(T, K.N + 2.9, K.N + 3.4); return p > 0 ? <ellipse cx={rx} cy={ry} rx={118} ry={88} fill="none" stroke={KC.white} strokeWidth={7} strokeDasharray="18 12" strokeDashoffset={-T * 40} opacity={p} /> : null; })()}
+          </g>
+          <g transform="translate(180 -60)">
           <g opacity={kprog(T, K.N + 0.1, K.N + 0.4)} transform={`translate(360 ${600}) scale(${klerp(1.3, 1, kprog(T, K.N + 0.1, K.N + 0.5, kEase.rebote))})`}>
             <text textAnchor="middle" style={{ font:`400 230px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} paintOrder="stroke">TIÑA</text>
           </g>
@@ -286,19 +295,21 @@ function TinaGatoShot() {
           </g>
           {T > K.N + 2.5 && <path d={`M 390 712 L ${klerp(390, 590, kprog(T, K.N + 2.5, K.N + 2.8))} ${klerp(712, 862, kprog(T, K.N + 2.5, K.N + 2.8))}`} stroke={KC.red} strokeWidth={14} strokeLinecap="round" />}
           {T > K.N + 2.65 && <path d={`M 590 712 L ${klerp(590, 390, kprog(T, K.N + 2.65, K.N + 2.95))} ${klerp(712, 862, kprog(T, K.N + 2.65, K.N + 2.95))}`} stroke={KC.red} strokeWidth={14} strokeLinecap="round" />}
-          {(() => { const [rx, ry] = qpt(0.4), p = kprog(T, K.N + 2.9, K.N + 3.4); return p > 0 ? <ellipse cx={rx} cy={ry} rx={118} ry={88} fill="none" stroke={KC.white} strokeWidth={7} strokeDasharray="18 12" strokeDashoffset={-T * 40} opacity={p} /> : null; })()}
+          </g>
         </>)}
       </Escena>
       {/* 3 · el anillo crece hacia afuera y el centro se aclara */}
       <Escena T={T} a={K.A} b={K.Q} zoom={0.06} origen="50% 42%">
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <rect x={40} y={380} width={1000} height={800} rx={70} fill={TG.piel} stroke={KC.ink} strokeWidth={9} />
-          {(() => { const g = krng(8); return Array.from({ length: 26 }, (_, i) => { const x = 80 + g() * 920, y = 420 + g() * 720; return <path key={i} d={`M ${x} ${y} q 10 -14 22 -18`} stroke="#a77a5a" strokeWidth={3} fill="none" opacity=".6" />; }); })()}
-          {(() => { const R = 150 + 135 * kprog(T, K.A, K.A + 3.4, kEase.suave), claro = kprog(T, K.A + 0.8, K.A + 3.0), cx = 540, cy = 780;
-            return <g>
+          <defs><radialGradient id="pielA" gradientUnits="userSpaceOnUse" cx={540} cy={900} r={1050}>
+            <stop offset="0" stopColor="#cf9a73" /><stop offset=".45" stopColor="#93603f" /><stop offset="1" stopColor="#1e120c" /></radialGradient></defs>
+          <rect x={-60} y={-60} width={1200} height={2040} fill="url(#pielA)" />
+          {(() => { const g = krng(8); return Array.from({ length: 60 }, (_, i) => { const x = g() * 1080, y = 120 + g() * 1700; return <path key={i} d={`M ${x} ${y} q 10 -14 22 -18`} stroke="#6e4a34" strokeWidth={4} fill="none" opacity=".6" />; }); })()}
+          {(() => { const R = 150 + 135 * kprog(T, K.A, K.A + 3.4, kEase.suave), claro = kprog(T, K.A + 0.8, K.A + 3.0), cx = 540, cy = 900;
+            return <g transform={`translate(${cx} ${cy}) scale(1.3) translate(${-cx} ${-cy})`}>
               <circle cx={cx} cy={cy} r={R} fill={TG.anillo2} opacity={0.5 * (1 - claro) + 0.08} />
-              <circle cx={cx} cy={cy} r={R * (0.25 + 0.6 * claro)} fill={TG.piel} opacity={claro} />
+              <circle cx={cx} cy={cy} r={R * (0.25 + 0.6 * claro)} fill="#cf9a73" opacity={claro} />
               <circle cx={cx} cy={cy} r={R} fill="none" stroke={TG.anillo} strokeWidth={42} />
               {Array.from({ length: 36 }, (_, i) => { const a = (i / 36) * Math.PI * 2 + 0.1; return <path key={i} d={`M ${cx + Math.cos(a) * (R - 10)} ${cy + Math.sin(a) * (R - 10)} q ${Math.cos(a + 1.4) * 14} ${Math.sin(a + 1.4) * 14} ${Math.cos(a) * 16} ${Math.sin(a) * 16}`} stroke="#ffe1d8" strokeWidth={4} fill="none" />; })}
               {Array.from({ length: 8 }, (_, i) => { const a = (i / 8) * Math.PI * 2 + Math.PI / 8, o = kprog(T, K.A + 0.4, K.A + 0.8), d0 = R + 40 + 12 * Math.sin(T * 5); const x0 = cx + Math.cos(a) * d0, y0 = cy + Math.sin(a) * d0, x1 = cx + Math.cos(a) * (d0 + 60), y1 = cy + Math.sin(a) * (d0 + 60);
@@ -312,11 +323,13 @@ function TinaGatoShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
+          <g transform={ZQ}>
           <g clipPath="url(#irisQ)">
             <clipPath id="irisQ"><circle cx={760} cy={830} r={1400 * kprog(T, K.Q - 0.35, K.Q + 0.5, kEase.sale)} /></clipPath>
             <rect x={0} y={0} width={KW} height={KH} fill={cineMix(KC.noche, CINE.fondo, 0.55)} />
             {/* capas vivas de abajo */}
             {Array.from({ length: 18 }, (_, i) => <ellipse key={'c' + i} cx={30 + i * 62} cy={1110 + (i % 2) * 20} rx={34} ry={28} fill="#e9a3a8" stroke={KC.ink} strokeWidth={3} opacity=".85" />)}
+            {[1, 2, 3, 4].map((r) => Array.from({ length: 18 }, (_, i) => <ellipse key={'c' + r + '-' + i} cx={30 + i * 62 + (r % 2) * 31} cy={1110 + r * 54 + (i % 2) * 20} rx={34} ry={28} fill="#e9a3a8" stroke={KC.ink} strokeWidth={3} opacity={0.72 - r * 0.15} />))}
             {/* capa córnea: escamas de queratina en tejas */}
             {Array.from({ length: 12 }, (_, f) => Array.from({ length: 9 }, (_, c) => {
               const y = 700 + f * 32, x = -40 + c * 136 + (f % 2) * 68;
@@ -327,17 +340,18 @@ function TinaGatoShot() {
             <PeloManguito x0={240} y0={330} x1={240} y1={1180} w={170} cuff={0} color={TG.peloH} />
             {HIFAS_Q.map((h, i) => <Hifa key={i} pts={h.pts} p={kprog(T, K.Q + h.t0, K.Q + h.t1)} w={20} />)}
           </g>
+          </g>
         </>)}
       </Escena>
       {/* 5 · el 90 % y los macroconidios en huso */}
       <Escena T={T} a={K.Ca} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          {(() => { const o = kprog(T, K.Ca + 1.1, K.Ca + 1.5); return o > 0 ? <g opacity={o}>
-            <rect x={50} y={800} width={980} height={380} rx={40} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
-            <Macroconidio x={330} y={1040} L={380} W={96} rot={-14} n={9} crece={kprog(T, K.Ca + 1.4, K.Ca + 2.6)} seed={3} />
-            <Macroconidio x={760} y={1010} L={330} W={86} rot={13} n={7} crece={kprog(T, K.Ca + 1.9, K.Ca + 3.0)} seed={7} />
-          </g> : null; })()}
+          <g>
+            <rect x={50} y={740} width={980} height={770} rx={48} fill={KC.noche} stroke={KC.ink} strokeWidth={6} />
+            <Macroconidio x={440} y={1010} L={560} W={142} rot={-14} n={9} crece={kprog(T, K.Ca + 0.1, K.Ca + 1.3)} seed={3} />
+            <Macroconidio x={640} y={1310} L={490} W={128} rot={13} n={7} crece={kprog(T, K.Ca + 0.5, K.Ca + 1.7)} seed={7} />
+          </g>
         </>)}
       </Escena>
       {/* 6 · el manguito de esporas por fuera del pelo */}
@@ -346,28 +360,30 @@ function TinaGatoShot() {
         <Ambiente T={T} n={20} />
         {fsvg(<>
           {(() => { const sac = T > K.M + 2.6 && T < K.M + 3.7 ? Math.sin((T - K.M - 2.6) * 32) * 26 * (1 - kprog(T, K.M + 2.6, K.M + 3.7)) : 0;
-            return <g transform={`translate(${sac} 0)`}><PeloManguito x0={420} y0={330} x1={640} y1={1190} w={170} cuff={kprog(T, K.M + 0.2, K.M + 2.2, kEase.suave)} seed={11} /></g>; })()}
-          {T > K.M + 2.6 && T < K.M + 3.7 && [[300, 700], [780, 820], [330, 1000], [760, 560]].map(([x, y], i) => <path key={i} d={`M ${x} ${y} q 20 -20 40 0 q 20 20 40 0`} stroke={KC.white} strokeWidth={6} fill="none" strokeLinecap="round" opacity={0.7 * (1 - kprog(T, K.M + 3.2, K.M + 3.7))} />)}
+            return <g transform={ZM}><g transform={`translate(${sac} 0)`}><PeloManguito x0={420} y0={330} x1={640} y1={1190} w={170} cuff={kprog(T, K.M + 0.2, K.M + 2.2, kEase.suave)} seed={11} /></g></g>; })()}
+          {T > K.M + 2.6 && T < K.M + 3.7 && [[220, 760], [850, 1000], [330, 1200], [800, 620]].map(([x, y], i) => <path key={i} d={`M ${x} ${y} q 20 -20 40 0 q 20 20 40 0`} stroke={KC.white} strokeWidth={6} fill="none" strokeLinecap="round" opacity={0.7 * (1 - kprog(T, K.M + 3.2, K.M + 3.7))} />)}
         </>)}
       </Escena>
       {/* 7 · re-gancho: ¿y si tu gato se ve sano? */}
       <Escena T={T} a={K.P} b={K.U} zoom={0.05} origen="30% 60%">
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Sofa />
-          <Gato T={T} x={300} y={1180} s={0.72} ojos="abiertos" brillo={0.6} />
-          <Interrogacion T={T} x={115} y={760} tam={230} />
+          <g transform={ZP}><Sofa />
+          <Gato T={T} x={300} y={1180} s={0.72} ojos="abiertos" brillo={0.6} /></g>
+          <Interrogacion T={T} x={190} y={690} tam={280} />
         </>)}
       </Escena>
-      <Lupa T={T} at={K.P + 1.2} until={K.U - 0.3} x={330} y={575} r={120} fx={380} fy={1010} tinte={KC.cyan} etiqueta="SU PELO"
+      <Lupa T={T} at={K.P + 1.2} until={K.U - 0.3} x={770} y={480} r={170} fx={650} fy={1150} tinte={KC.cyan} etiqueta="SU PELO"
         interior={(TT, r) => <svg width={2 * r} height={2 * r}><rect width={2 * r} height={2 * r} fill="#081420" />
-          {[60, 120, 180].map((x, i) => <PeloManguito key={i} x0={x - 20} y0={-10} x1={x + 10} y1={2 * r + 10} w={34} cuff={1} seed={20 + i} cuticula={false} />)}
+          {[85, 170, 255].map((x, i) => <PeloManguito key={i} x0={x - 28} y0={-10} x1={x + 14} y1={2 * r + 10} w={48} cuff={1} seed={20 + i} cuticula={false} />)}
         </svg>} />
       {/* 8 · luz ultravioleta: pelos que brillan verde manzana (no todos) */}
       <Escena T={T} a={K.U} b={K.Es} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 60%, #2a1458 0%, ${TG.uvFondo} 70%)` }}></div>
         {fsvg(<>
-          <path d={`M -20 1200 L -20 ${1120 - 150 * Math.sin(Math.PI * (-40) / 1040)} ${Array.from({ length: 23 }, (_, i) => { const x = -20 + i * 50; return `L ${x} ${1120 - 150 * Math.sin(Math.PI * (x - 20) / 1040)}`; }).join(' ')} L 1100 1200 Z`} fill="#5a3a2a" stroke={KC.ink} strokeWidth={8} />
+          <g transform={ZU}>
+          <path d={`M -20 2000 L -20 ${1120 - 150 * Math.sin(Math.PI * (-40) / 1040)} ${Array.from({ length: 23 }, (_, i) => { const x = -20 + i * 50; return `L ${x} ${1120 - 150 * Math.sin(Math.PI * (x - 20) / 1040)}`; }).join(' ')} L 1100 2000 Z`} fill="#5a3a2a" stroke={KC.ink} strokeWidth={6} />
+          {(() => { const g = krng(31); return Array.from({ length: 40 }, (_, i) => { const x = g() * 1080, y = 1190 + g() * 520; return <path key={'p' + i} d={`M ${x} ${y} q 10 -12 22 -15`} stroke="#3e271b" strokeWidth={4} fill="none" strokeLinecap="round" />; }); })()}
           {PELOS_UV.map((h) => { const x2 = h.x + h.lean * h.L, y2 = h.base - h.L; const on = h.br && barrido > h.x - 20; const c = on ? TG.uv : '#9a7a5e';
             return <g key={h.i} style={on ? { filter:`drop-shadow(0 0 10px ${TG.uv}) drop-shadow(0 0 22px ${TG.uv})` } : null}>
               <line x1={h.x} y1={h.base} x2={x2} y2={y2} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
@@ -384,34 +400,46 @@ function TinaGatoShot() {
               <rect x={90} y={-18} width={130} height={36} rx={14} fill="#3b3b45" stroke={KC.ink} strokeWidth={6} />
             </g>
           </g> : null; })()}
+          </g>
         </>)}
       </Escena>
       {/* 9 · el estudio de la Ciudad de México: 43 de 57 */}
       <Escena T={T} a={K.Es} b={K.Po} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
+          {/* el brazo con la roncha y el gato siguen en pantalla (atenuados cuando entra la cuadrícula) */}
+          <g transform={ZG} opacity={klerp(0.9, 0.13, kprog(T, K.Es + 3.0, K.Es + 3.7, kEase.suave))}>
+            <Sofa />
+            <Gato T={T} x={560} y={1188} s={0.88} ojos="cerrados" />
+            <Brazo T={T} anillo={1} claro={0.3} />
+          </g>
           {T > K.Es + 3.3 && Array.from({ length: 57 }, (_, i) => { const { x, y } = casilla(i), e = kprog(T, K.Es + 3.3 + i * 0.012, K.Es + 3.6 + i * 0.012, kEase.rebote);
-            return <Personita key={i} x={x} y={y} s={e} color={i < rojas ? TG.persona : '#ffffff'} />; })}
+            return <Personita key={i} x={x} y={y} s={e * 1.5} color={i < rojas ? TG.persona : '#ffffff'} />; })}
         </>)}
       </Escena>
       {/* 10 · las esporas viajan en el polvo, hasta a cuartos sin gato */}
       <Escena T={T} a={K.Po} b={K.S} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
+          <g transform={ZPo}>
           <Casa T={T} />
           <Gato T={T} x={300} y={1104} s={0.44} ojos="cerrados" />
           {Array.from({ length: 22 }, (_, i) => { const g = krng(300 + i), ph = g(); const u = ((T - K.Po) * 0.16 + ph) % 1; const x = klerp(460, 1000, u), y = 1000 + Math.sin(u * 9 + ph * 7) * 55 - (u > 0.65 ? (u - 0.65) * 300 : 0);
             return <Mota key={i} x={x} y={y} o={kprog(T, K.Po + 0.1 + ph * 0.6, K.Po + 0.5 + ph * 0.6) * Math.min(1, (1 - u) * 6)} />; })}
           {T > K.Po + 2.0 && <g opacity={kprog(T, K.Po + 2.0, K.Po + 2.3)}><Calendario x={170} y={610} mes={klerp(1, 12, kprog(T, K.Po + 2.2, K.Po + 3.6))} /></g>}
+          </g>
         </>)}
       </Escena>
       {/* 11 · lo que sí sirve */}
       <Escena T={T} a={K.S} b={K.C} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
+          {/* el gato sigue en pantalla: es a quien se lleva al veterinario */}
+          <g transform="translate(0 410)"><Sofa /></g>
+          <Gato T={T} x={540} y={1600} s={0.9} ojos="abiertos" />
           {[['vet', 'gato al veterinario', 0.5], ['manos', 'lávate las manos', 1.9], ['aspira', 'aspira donde anda', 2.9], ['cama', 'desinfecta su cama', 3.9]].map(([tipo, txt, t0], i) => {
-            const e = kprog(T, K.S + t0, K.S + t0 + 0.4, kEase.rebote); if (e <= 0) return null; const y = 720 + i * 130;
-            return <g key={tipo} opacity={kprog(T, K.S + t0, K.S + t0 + 0.2)} transform={`translate(${(1 - e) * -60} 0)`}>
+            const e = kprog(T, K.S + t0, K.S + t0 + 0.4, kEase.rebote); if (e <= 0) return null; const y = 540 + i * 150;
+            return <g key={tipo} opacity={kprog(T, K.S + t0, K.S + t0 + 0.2)} transform={`translate(${(1 - e) * -60} 0) translate(90 ${y}) scale(1.25) translate(-60 ${-y})`}>
               <rect x={60} y={y - 58} width={720} height={116} rx={58} fill="rgba(14,15,18,.82)" stroke={KC.leaf} strokeWidth={5} />
               <Icono tipo={tipo} x={122} y={y} T={T} ok={kprog(T, K.S + t0 + 0.5, K.S + t0 + 0.8, kEase.rebote)} />
               <text x={210} y={y + 14} style={{ font:`900 42px ${KF.texto}` }} fill={KC.texto}>{txt}</text>
@@ -422,57 +450,59 @@ function TinaGatoShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="30% 55%">
         <FondoLunares color={KC.pink} />
         {fsvg(<>
+          <g transform={ZG}>
           <Sofa />
           <Gato T={T} x={560} y={1188} s={0.88} ojos="cerrados" ronroneo={1} brillo={kprog(T, K.C + 0.3, K.C + 1.0)} />
           <Brazo T={T} anillo={1 - kprog(T, K.C, K.C + 0.8)} claro={1} />
-          {(() => { const u = kprog(T, K.C + 0.3, K.C + 2.6); return u > 0 ? <Corazon x={790} y={klerp(920, 810, u)} s={klerp(0.6, 1.2, kEase.sale(Math.min(1, u * 3)))} o={1 - kprog(T, K.C + 3.6, K.C + 4.2)} /> : null; })()}
-          <Sello T={T} at={K.C + 0.9} x={300} y={590} texto="SANOS" color={KC.leaf} r={118} />
+          {(() => { const u = kprog(T, K.C + 0.3, K.C + 2.6); return u > 0 ? <Corazon x={560} y={klerp(700, 630, u)} s={klerp(0.45, 0.8, kEase.sale(Math.min(1, u * 3)))} o={1 - kprog(T, K.C + 3.6, K.C + 4.2)} /> : null; })()}
+          <Sello T={T} at={K.C + 0.9} x={300} y={650} texto="SANOS" color={KC.leaf} r={118} />
+          </g>
         </>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.7} until={K.G + 2.3} texto="¿gusano?" x={300} y={590} tam={56} />
-      <Chip T={T} at={K.G + 3.0} until={K.N - 0.3} texto="del pelo de tu gato" x={250} y={780} tam={34} borde={KC.yellow} />
-      <Chip T={T} at={K.N + 2.9} until={K.A - 0.3} texto="por la forma de la roncha" x={470} y={920} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.A + 0.5} until={K.Q - 0.3} texto="crece hacia afuera" x={540} y={430} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.A + 1.6} until={K.Q - 0.3} texto="el centro se aclara" x={540} y={1128} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={K.Q + 0.6} until={K.Ca - 0.3} texto="se alimenta de queratina" x={420} y={470} tam={36} borde={KC.gold} />
-      <Etq T={T} at={K.Q + 1.0} until={K.Ca - 0.3} x={340} y={670} texto="capa de afuera de la piel" tam={28} color={TG.escama} />
-      <Etq T={T} at={K.Q + 1.4} until={K.Ca - 0.3} x={340} y={560} texto="pelo" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Q + 1.8} until={K.Ca - 0.3} x={1050} y={1018} lado="izq" texto="hifas" tam={32} color={TG.hifa} />
-      <NumeroGigante T={T} at={K.Ca + 0.2} until={K.M - 0.2} valor={90} dur={1.0} sufijo=" %" etiqueta="más del" x={360} y={520} tam={230} color={KC.pink} />
-      <Chip T={T} at={K.Ca + 0.6} until={K.Ca + 3.2} texto="de las tiñas de gato (guías de 2013)" x={370} y={720} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.Ca + 3.4} until={K.M - 0.3} texto="«canis» = de perro (y vive en gatos)" x={370} y={720} tam={26} borde={KC.ink} />
-      <Etq T={T} at={K.Ca + 2.0} until={K.M - 0.3} x={80} y={850} texto="Microsporum canis" it tam={40} color={KC.gold2} />
-      <Etq T={T} at={K.Ca + 2.6} until={K.M - 0.3} x={520} y={1130} texto="macroconidio" tam={28} />
-      <Etq T={T} at={K.Ca + 3.0} until={K.M - 0.3} x={560} y={880} texto="pared gruesa y rugosa" tam={26} />
-      <Chip T={T} at={K.M + 0.4} until={K.P - 0.3} texto="por fuera del pelo · ectótrix" x={540} y={440} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.M + 1.4} until={K.P - 0.3} x={440} y={900} lado="izq" texto="manguito de esporas" tam={28} color={TG.espora} />
-      <Etq T={T} at={K.M + 1.8} until={K.P - 0.3} x={712} y={1040} texto="pelo de gato" tam={28} color={TG.peloG} />
-      <Chip T={T} at={K.M + 2.6} until={K.P - 0.3} texto="se pegan muy fuerte" x={540} y={1128} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.P + 2.0} until={K.U - 0.3} texto="portador sin síntomas" x={300} y={385} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.U + 2.2} until={K.Es - 0.3} texto="brilla: pteridina" x={300} y={450} tam={34} borde={TG.uv} />
-      <Chip T={T} at={K.U + 3.2} until={K.Es - 0.3} texto="no todos brillan" x={300} y={545} tam={34} borde={KC.white} />
-      <Chip T={T} at={K.U + 3.4} until={K.Es - 0.3} texto="infectado, no brilla" x={kclamp(etiquetaUV.x + etiquetaUV.lean * etiquetaUV.L, 200, 620)} y={660} tam={26} borde={TG.espora} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.2} anio="2016" quien="Ciudad de México" revista="Hospital Gea González + FMVZ-UNAM · 10 años" y={640} />
-      <Chip T={T} at={K.Es + 3.4} until={K.Po - 0.3} texto="tiñas humanas de origen animal" x={380} y={420} tam={28} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Es + 3.9} until={K.Po - 0.3} valor={43} dur={2.1} sufijo=" de 57" x={380} y={1010} tam={130} color={TG.persona} />
-      <Chip T={T} at={K.Es + 6.0} until={K.Po - 0.3} texto="en los gatos: solo este hongo" x={380} y={1125} tam={30} borde={TG.persona} />
-      <Chip T={T} at={K.Po + 2.3} until={K.S - 0.3} texto="12 meses o más" x={400} y={610} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.Po + 3.0} until={K.S - 0.3} texto="resisten en ambiente seco" x={390} y={410} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.Po + 0.9} until={K.S - 0.3} x={520} y={815} lado="izq" texto="esporas en el polvo" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.S + 0.1} until={K.C - 0.3} texto="LO QUE SÍ SIRVE" x={330} y={460} tam={46} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="no es su culpa" x={240} y={790} tam={40} borde={KC.yellow} />
+      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.7} until={K.G + 2.3} texto="¿gusano?" x={330} y={715} tam={56} />
+      <Chip T={T} at={K.G + 3.0} until={K.N - 0.3} texto="del pelo de tu gato" x={320} y={640} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.N + 2.9} until={K.A - 0.3} texto="por la forma de la roncha" x={400} y={1300} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.A + 0.5} until={K.Q - 0.3} texto="crece hacia afuera" x={540} y={330} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.A + 1.6} until={K.Q - 0.3} texto="el centro se aclara" x={540} y={1470} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.Q + 0.6} until={K.Ca - 0.3} texto="se alimenta de queratina" x={650} y={430} tam={38} borde={KC.gold} />
+      <Etq T={T} at={K.Q + 1.0} until={K.Ca - 0.3} x={290} y={792} texto="capa de afuera de la piel" tam={30} color={TG.escama} />
+      <Etq T={T} at={K.Q + 1.4} until={K.Ca - 0.3} x={272} y={600} texto="pelo" tam={32} color={KC.gold2} />
+      <Etq T={T} at={K.Q + 1.8} until={K.Ca - 0.3} x={1050} y={736} lado="izq" texto="hifas" tam={34} color={TG.hifa} />
+      <NumeroGigante T={T} at={K.Ca + 0.2} until={K.M - 0.2} valor={90} dur={1.0} sufijo=" %" etiqueta="más del" x={540} y={440} tam={230} color={KC.pink} />
+      <Chip T={T} at={K.Ca + 0.6} until={K.Ca + 3.2} texto="de las tiñas de gato (guías de 2013)" x={540} y={662} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Ca + 3.4} until={K.M - 0.3} texto="«canis» = de perro (y vive en gatos)" x={540} y={662} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.Ca + 2.0} until={K.M - 0.3} x={90} y={812} texto="Microsporum canis" it tam={42} color={KC.gold2} />
+      <Etq T={T} at={K.Ca + 2.6} until={K.M - 0.3} x={396} y={1262} lado="izq" texto="macroconidio" tam={30} />
+      <Etq T={T} at={K.Ca + 3.0} until={K.M - 0.3} x={612} y={1040} texto="pared gruesa y rugosa" tam={28} />
+      <Chip T={T} at={K.M + 0.4} until={K.P - 0.3} texto="por fuera del pelo · ectótrix" x={810} y={352} tam={28} borde={KC.gold} />
+      <Etq T={T} at={K.M + 1.4} until={K.P - 0.3} x={416} y={1089} lado="izq" texto="manguito de esporas" tam={28} color={TG.espora} />
+      <Etq T={T} at={K.M + 1.8} until={K.P - 0.3} x={782} y={1278} texto="pelo de gato" tam={28} color={TG.peloG} />
+      <Chip T={T} at={K.M + 2.6} until={K.P - 0.3} texto="se pegan muy fuerte" x={280} y={1420} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.P + 2.0} until={K.U - 0.3} texto="portador sin síntomas" x={330} y={260} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.U + 2.2} until={K.Es - 0.3} texto="brilla: pteridina" x={300} y={400} tam={38} borde={TG.uv} />
+      <Chip T={T} at={K.U + 3.2} until={K.Es - 0.3} texto="no todos brillan" x={300} y={500} tam={38} borde={KC.white} />
+      <Chip T={T} at={K.U + 3.4} until={K.Es - 0.3} texto="infectado, no brilla" x={kclamp(uvTip.x, 220, 860)} y={612} tam={30} borde={TG.espora} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.2} anio="2016" quien="Ciudad de México" revista="Hospital Gea González + FMVZ-UNAM · 10 años" y={345} />
+      <Chip T={T} at={K.Es + 3.4} until={K.Po - 0.3} texto="tiñas humanas de origen animal" x={540} y={460} tam={34} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Es + 3.9} until={K.Po - 0.3} valor={43} dur={2.1} sufijo=" de 57" x={540} y={1345} tam={150} color={TG.persona} />
+      <Chip T={T} at={K.Es + 6.0} until={K.Po - 0.3} texto="en los gatos: solo este hongo" x={540} y={1482} tam={34} borde={TG.persona} />
+      <Chip T={T} at={K.Po + 2.3} until={K.S - 0.3} texto="12 meses o más" x={390} y={705} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.Po + 3.0} until={K.S - 0.3} texto="resisten en ambiente seco" x={540} y={470} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Po + 0.9} until={K.S - 0.3} x={518} y={930} lado="izq" texto="esporas en el polvo" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.S + 0.1} until={K.C - 0.3} texto="LO QUE SÍ SIRVE" x={540} y={370} tam={50} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="no es su culpa" x={300} y={690} tam={42} borde={KC.yellow} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.A} texto="5 cm" largo={120} />
-      <BarraEscala T={T} at={K.A} until={K.Q} texto="1 cm" largo={110} />
-      <BarraEscala T={T} at={K.Q} until={K.Ca} texto="20 µm" largo={86} />
-      <BarraEscala T={T} at={K.M} until={K.P} texto="50 µm" largo={120} />
-      <BarraEscala T={T} at={K.P} until={K.U} texto="10 cm" largo={130} />
-      <BarraEscala T={T} at={K.U} until={K.Es} texto="1 cm" largo={140} />
-      <BarraEscala T={T} at={K.Po} until={K.S} texto="1 m" largo={160} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={120} />
+      <BarraEscala T={T} at={K.G} until={K.A} texto="5 cm" largo={192} />
+      <BarraEscala T={T} at={K.A} until={K.Q} texto="1 cm" largo={143} />
+      <BarraEscala T={T} at={K.Q} until={K.Ca} texto="20 µm" largo={112} />
+      <BarraEscala T={T} at={K.M} until={K.P} texto="50 µm" largo={162} />
+      <BarraEscala T={T} at={K.P} until={K.U} texto="10 cm" largo={228} />
+      <BarraEscala T={T} at={K.U} until={K.Es} texto="1 cm" largo={182} />
+      <BarraEscala T={T} at={K.Po} until={K.S} texto="1 m" largo={176} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={192} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="No es un gusano: *es un hongo.*" />
