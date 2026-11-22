@@ -1,3 +1,6 @@
 - fun-118-mango-antracnosis: marcaba Manchas y Estudio ARRIBA; bajé mangos, corte y etiquetas de Manchas (+170 px) y mapa, número, lista de especies y chip de Estudio (+150 px). Encuadre bien, sin láminas.
 - qui-43-monoxido: ya cumplía (encuadre bien).
 - ia-43-parkinson-respiracion: marcaba Estudio ARRIBA; bajé el hospital, su rótulo y el «+ de 8 de 10» (~+120 px) y el velocímetro con su chip (+150 px). Encuadre bien, sin láminas.
+- fun-119-planta-defensa: ya cumplía (encuadre bien).
+
+GRUPO TERMINADO
