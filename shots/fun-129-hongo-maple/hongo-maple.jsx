@@ -206,15 +206,25 @@ function Alto({ x, y, s = 1 }) {
 // Cuenta de aminoácido.
 function Amino({ x, y, r = 22, color = KC.mint }) { return <circle cx={x} cy={y} r={r} fill={color} stroke={KC.ink} strokeWidth={4} />; }
 
-// Bosque esquemático del fondo (troncos y hojarasca).
-function Bosque({ T }) {
+// Bosque esquemático del fondo, visto desde el suelo: troncos grandes detrás y hojarasca. y = nivel del suelo.
+function Bosque({ T, y = 1380 }) {
   return <g>
-    {[[-60, 0.9], [800, 1], [1010, 0.8]].map(([bx, k], i) => <g key={i} transform={`translate(${bx} 1180) scale(${k})`}>
-      <rect x={-30} y={-700} width={60} height={700} fill="#6a4a2a" stroke={KC.ink} strokeWidth={6} />
-      <circle cx={0} cy={-700} r={150} fill="#2f9a52" stroke={KC.ink} strokeWidth={6} />
+    {[[-30, 170], [840, 190], [1060, 130], [560, 90]].map(([bx, w], i) => <g key={i} opacity={i === 3 ? 0.45 : 0.8}>
+      <rect x={bx - w / 2} y={-300} width={w} height={y + 300} fill="#2c1d12" stroke="#5a4028" strokeWidth={4} />
+      {[0.25, 0.6].map((u, k) => <path key={k} d={`M ${bx - w / 2 + w * u} -300 L ${bx - w / 2 + w * u + 6} ${y}`} stroke="#1c120a" strokeWidth={5} opacity=".7" />)}
     </g>)}
-    <rect x={0} y={1150} width={1080} height={300} fill="#5b3a22" />
-    {Array.from({ length: 18 }, (_, i) => <ellipse key={i} cx={(i * 67) % 1080} cy={1160 + (i % 3) * 12} rx={36} ry={10} fill={i % 2 ? '#c9772b' : '#a85c22'} stroke={KC.ink} strokeWidth={3} transform={`rotate(${(i * 37) % 40 - 20} ${(i * 67) % 1080} ${1160 + (i % 3) * 12})`} />)}
+    <rect x={-300} y={y - 30} width={1680} height={1100} fill="#2a1a10" />
+    <path d={`M -300 ${y - 30} L 1380 ${y - 30}`} stroke="#6b4526" strokeWidth={5} opacity=".8" />
+    {Array.from({ length: 22 }, (_, i) => { const cx = (i * 67) % 1180 - 50, cy = y - 16 + (i % 3) * 14; return <ellipse key={i} cx={cx} cy={cy} rx={44} ry={12} fill={i % 2 ? '#8a4f1e' : '#6e3d18'} stroke="#c9905a" strokeWidth={2.5} transform={`rotate(${(i * 37) % 40 - 20} ${cx} ${cy})`} />; })}
+    {Array.from({ length: 14 }, (_, i) => { const cx = (i * 131 + 40) % 1180 - 50, cy = y + 90 + (i * 53) % 360; return <ellipse key={'b' + i} cx={cx} cy={cy} rx={50} ry={13} fill="#4a2a12" opacity=".7" transform={`rotate(${(i * 29) % 50 - 25} ${cx} ${cy})`} />; })}
+  </g>;
+}
+// Mesa de madera oscura (escenario de los hot cakes). y = borde de atrás de la mesa.
+function Mesa({ y = 1235 }) {
+  return <g>
+    <rect x={-300} y={y} width={1680} height={1100} fill="#2a1a10" />
+    <path d={`M -300 ${y} L 1380 ${y}`} stroke="#7a5230" strokeWidth={6} opacity=".85" />
+    {[70, 190, 330, 480].map((d, i) => <path key={i} d={`M -300 ${y + d} Q 300 ${y + d + (i % 2 ? 14 : -12)} 700 ${y + d} T 1380 ${y + d + 6}`} stroke="#1a0f08" strokeWidth={5} fill="none" opacity=".8" />)}
   </g>;
 }
 
@@ -236,41 +246,46 @@ function MapleShot() {
   const chorroG = kprog(T, K.G, K.G + 0.9, kEase.sale);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
-      {/* 1 · gancho: hot cakes con jarabe… y el frasco de hongos secos */}
+      {/* 1 · gancho: los hot cakes llenan el cuadro sobre la mesa… y entra el frasco de hongos secos */}
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <HotCakes T={T} x={400} y={1130} s={1.05} chorro={kprog(T, K.G + 0.2, K.G + 1.4)} />
-          <Chorro T={T} x={380} y0={460} y1={890} p={chorroG * (1 - kprog(T, K.G + 1.6, K.G + 2.0))} />
-          <Ondas T={T} x={400} y={820} n={3} o={kprog(T, K.G + 0.3, K.G + 0.9)} color="#fff" />
-          {(() => { const e = kprog(T, K.G + 1.8, K.G + 2.4, kEase.rebote); return e > 0 ? <FrascoSecos T={T} x={klerp(1300, 860, e)} y={1140} s={0.8} rot={Math.sin(T * 4) * 2} /> : null; })()}
+          {(() => { const e = kprog(T, K.G + 1.8, K.G + 2.4, kEase.rebote), ee = kclamp(e, 0, 1), hx = klerp(540, 400, ee), hs = klerp(1.7, 1.5, ee);
+            return <>
+              <Mesa />
+              <Ondas T={T} x={hx} y={840} n={3} alto={320} sep={110} o={kprog(T, K.G + 0.3, K.G + 0.9)} color="#fff" />
+              <HotCakes T={T} x={hx} y={1300} s={hs} chorro={kprog(T, K.G + 0.2, K.G + 1.4)} />
+              <Chorro T={T} x={hx - 30} y0={-60} y1={930} ancho={40} p={chorroG * (1 - kprog(T, K.G + 1.6, K.G + 2.0))} />
+              {e > 0 ? <FrascoSecos T={T} x={klerp(1400, 820, e)} y={1450} s={1.1} rot={Math.sin(T * 4) * 2} /> : null}
+            </>; })()}
         </>)}
       </Escena>
-      {/* 2–4 · el candy cap en el bosque, fresco y luego seco */}
+      {/* 2–4 · el candy cap en el suelo del bosque, fresco y luego seco */}
       <Escena T={T} a={K.H} b={K.P} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           <Bosque T={T} />
           {(() => { const sec = kprog(T, K.S, K.S + 1.4, kEase.suave), sale = kprog(T, K.S + 1.2, K.S + 1.8, kEase.suave);
             return <>
-              <CandyCap T={T} x={klerp(540, 330, sale)} y={klerp(1160, 1100, sale)} s={klerp(1.9, 1.3, sale)} crece={kprog(T, K.H - 0.2, K.H + 0.9)} seco={sec} rot={Math.sin(T * 1.3) * 1.5} corte={kprog(T, K.Fr + 0.2, K.Fr + 0.7) * (1 - sec)} />
-              {sale > 0 && <g opacity={sale}><Galleta x={720} y={1030} s={0.9} /><Helado x={860} y={930} s={0.8} /></g>}
-              <Ondas T={T} x={klerp(540, 330, sale)} y={klerp(780, 880, sale)} n={3} o={kprog(T, K.S + 0.6, K.S + 1.4)} color={HM.jarabe} sep={60} />
+              {sale > 0 && <g opacity={sale}><Helado x={910} y={1080} s={1.5} /><Galleta x={700} y={1215} s={1.7} /></g>}
+              <CandyCap T={T} x={klerp(540, 330, sale)} y={1380} s={klerp(3.0, 2.0, sale)} crece={kprog(T, K.H - 0.3, K.H + 0.6)} seco={sec} rot={Math.sin(T * 1.3) * 1.5} corte={kprog(T, K.Fr + 0.2, K.Fr + 0.7) * (1 - sec)} />
+              <Ondas T={T} x={klerp(540, 330, sale)} y={klerp(820, 1000, sale)} n={3} alto={300} o={kprog(T, K.S + 0.6, K.S + 1.4)} color={HM.jarabe2} sep={90} />
             </>; })()}
         </>)}
       </Escena>
       {/* 5 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><CandyCap T={T} x={300} y={1150} s={1.5} seco={1} rot={Math.sin(T * 4) * 3} /><Interrogacion T={T} x={300} y={760} tam={300} /></>)}
+        {fsvg(<><CandyCap T={T} x={330} y={1380} s={2.0} seco={1} rot={Math.sin(T * 4) * 3} /><Interrogacion T={T} x={720} y={900} tam={460} /></>)}
       </Escena>
       {/* 6–7 · la pregunta de 1985 y los 27 años */}
       <Escena T={T} a={K.Es} b={K.Ga}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Persona x={250} y={1180} s={1.0} color={KC.blue} mano={kprog(T, K.Es + 0.6, K.Es + 1.0, kEase.rebote)} />
-          <Persona x={760} y={1180} s={1.1} color="#5a5248" lentes />
-          <g opacity={kprog(T, K.Es + 0.4, K.Es + 0.8)}><FrascoSecos T={T} x={510} y={1180} s={0.5} /></g>
+          <line x1={-100} y1={1500} x2={1180} y2={1500} stroke={KC.ink} strokeWidth={6} opacity=".45" />
+          <Persona x={220} y={1500} s={2.2} color={KC.blue} mano={kprog(T, K.Es + 0.6, K.Es + 1.0, kEase.rebote)} />
+          <Persona x={860} y={1500} s={2.4} color="#5a5248" lentes />
+          <g opacity={kprog(T, K.Es - 0.2, K.Es + 0.3)}><FrascoSecos T={T} x={540} y={1500} s={0.85} /></g>
         </>)}
       </Escena>
       {/* 8–10 · por dentro: el gas, la molécula y su gemela (fondo oscuro) */}
@@ -280,18 +295,18 @@ function MapleShot() {
         {fsvg(<>
           {(() => { const fuera = kprog(T, K.Ga + 3.0, K.Ga + 3.6, kEase.suave);
             return <g opacity={1 - fuera}>
-              <FrascoSecos T={T} x={300} y={1160} s={0.9} />
-              <Fibra x={300} y={950} s={1} baja={kprog(T, K.Ga + 0.2, K.Ga + 0.9, kEase.sale)} />
-              {Array.from({ length: 14 }, (_, i) => { const u = ((T - K.Ga) * 0.7 + i / 14) % 1, xx = 300 + Math.sin(i * 2.3 + T) * 110 * (1 - u), yy = 1100 - u * 220;
-                return T > K.Ga + 0.6 ? <circle key={i} cx={xx} cy={yy} r={9} fill={KC.gold2} opacity={Math.sin(u * Math.PI)} /> : null; })}
-              <Cromatograma T={T} x={540} y={1180} w={460} h={200} p={kprog(T, K.Ga + 1.2, K.Ga + 2.6)} />
+              <FrascoSecos T={T} x={300} y={1380} s={1.5} />
+              <Fibra x={300} y={1010} s={1.5} baja={kprog(T, K.Ga + 0.2, K.Ga + 0.9, kEase.sale)} />
+              {Array.from({ length: 14 }, (_, i) => { const u = ((T - K.Ga) * 0.7 + i / 14) % 1, xx = 300 + Math.sin(i * 2.3 + T) * 180 * (1 - u), yy = 1340 - u * 330;
+                return T > K.Ga + 0.6 ? <circle key={i} cx={xx} cy={yy} r={13} fill={KC.gold2} opacity={Math.sin(u * Math.PI)} /> : null; })}
+              <Cromatograma T={T} x={580} y={1380} w={440} h={330} p={kprog(T, K.Ga + 1.2, K.Ga + 2.6)} />
             </g>; })()}
           {(() => { const sol = kprog(T, K.Ge, K.Ge + 0.8, kEase.suave);
             return <>
-              <Furanona T={T} x={klerp(540, 300, sol)} y={kprog(T, K.Ga + 3.2, K.Ga + 3.2) ? 900 : 900} s={klerp(1.5, 1.05, sol)} grupo="NH₂" p={kprog(T, K.Ga + 3.2, K.Ga + 4.4)} brillo={kprog(T, K.Ge + 1.4, K.Ge + 1.8)} />
+              <Furanona T={T} x={klerp(540, 560, sol)} y={klerp(950, 630, sol)} s={klerp(2.1, 1.55, sol)} grupo="NH₂" p={kprog(T, K.Ga + 3.2, K.Ga + 4.4)} brillo={kprog(T, K.Ge + 1.4, K.Ge + 1.8)} />
               {T < K.Ge + 0.2 && Array.from({ length: 6 }, (_, i) => { const j = kprog(T, K.Hi + 0.3 + i * 0.12, K.Hi + 1.8, kEase.suave), a = i * Math.PI / 3 + T * 0.4;
-                return T > K.Hi ? <Amino key={i} x={klerp(540 + Math.cos(a) * 340, 540, j)} y={klerp(900 + Math.sin(a) * 300, 900, j)} r={26 * (1 - j * 0.6)} color={[KC.mint, KC.pink, KC.cyan][i % 3]} /> : null; })}
-              {sol > 0 && <Furanona T={T} x={790} y={900} s={1.05} grupo="OH" p={kprog(T, K.Ge + 0.5, K.Ge + 1.3)} colorGrupo={KC.mint} brillo={kprog(T, K.Ge + 1.4, K.Ge + 1.8)} />}
+                return T > K.Hi ? <Amino key={i} x={klerp(540 + Math.cos(a) * 430, 540, j)} y={klerp(950 + Math.sin(a) * 400, 950, j)} r={36 * (1 - j * 0.6)} color={[KC.mint, KC.pink, KC.cyan][i % 3]} /> : null; })}
+              {sol > 0 && <Furanona T={T} x={560} y={1210} s={1.55} grupo="OH" p={kprog(T, K.Ge + 0.5, K.Ge + 1.3)} colorGrupo={KC.mint} brillo={kprog(T, K.Ge + 1.4, K.Ge + 1.8)} />}
             </>; })()}
         </>)}
       </Escena>
@@ -299,31 +314,34 @@ function MapleShot() {
       <Escena T={T} a={K.So} b={K.Pr}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Fenogreco x={290} y={1130} s={1.4} />
-          <BotellaMaple x={800} y={1150} s={1.0} />
-          {(() => { const u = kprog(T, K.So + 2.4, K.So + 3.6, kEase.suave); return <Furanona T={T} x={klerp(290, 800, u)} y={660 - Math.sin(u * Math.PI) * 80} s={0.7} grupo="OH" colorGrupo={KC.mint} color={KC.ink} p={kprog(T, K.So + 0.6, K.So + 1.4)} />; })()}
+          <line x1={-100} y1={1400} x2={1180} y2={1400} stroke={KC.ink} strokeWidth={6} opacity=".45" />
+          <Fenogreco x={300} y={1330} s={1.3} n={18} seed={9} />
+          <Fenogreco x={300} y={1395} s={1.7} />
+          <BotellaMaple x={830} y={1400} s={1.85} />
+          {(() => { const u = kprog(T, K.So + 2.4, K.So + 3.6, kEase.suave); return <Furanona T={T} x={klerp(300, 800, u)} y={klerp(950, 460, u) - Math.sin(u * Math.PI) * 60} s={1.1} grupo="OH" colorGrupo={KC.mint} color={KC.ink} p={kprog(T, K.So + 0.6, K.So + 1.4)} />; })()}
         </>)}
       </Escena>
       {/* 12 · el primo europeo, más grande y tóxico */}
       <Escena T={T} a={K.Pr} b={K.O}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <line x1={80} y1={1160} x2={1000} y2={1160} stroke={KC.ink} strokeWidth={8} />
-          <CandyCap T={T} x={260} y={1160} s={0.9} crece={kprog(T, K.Pr, K.Pr + 0.6)} />
-          <g transform="translate(660 1160)"><g transform="scale(1.9)">
-            {(() => { const c = kprog(T, K.Pr + 0.8, K.Pr + 1.6); return c > 0 ? <g opacity={1}><CandyCap T={T} x={0} y={0} s={1} crece={c} /></g> : null; })()}
+          <line x1={-100} y1={1400} x2={1180} y2={1400} stroke={KC.ink} strokeWidth={8} />
+          <CandyCap T={T} x={245} y={1400} s={1.45} crece={kprog(T, K.Pr - 0.3, K.Pr + 0.3)} />
+          <g transform="translate(640 1400)"><g transform="scale(2.9)">
+            {(() => { const c = kprog(T, K.Pr + 0.2, K.Pr + 1.0); return c > 0 ? <g opacity={1}><CandyCap T={T} x={0} y={0} s={1} crece={c} /></g> : null; })()}
           </g></g>
-          {(() => { const w = kprog(T, K.Pr + 3.2, K.Pr + 3.7, kEase.rebote); return w > 0 ? <g transform={`translate(880 560) scale(${w * 0.55})`}><Alto x={0} y={0} /></g> : null; })()}
+          {(() => { const w = kprog(T, K.Pr + 3.2, K.Pr + 3.7, kEase.rebote); return w > 0 ? <g transform={`translate(900 480) scale(${w * 0.55})`}><Alto x={0} y={0} /></g> : null; })()}
         </>)}
       </Escena>
       {/* 13 · el té de hierbas y el falso diagnóstico */}
       <Escena T={T} a={K.O} b={K.Cu}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Taza T={T} x={250} y={1130} s={1.1} />
-          <Ondas T={T} x={250} y={900} n={3} o={0.8} color="#fff" sep={55} />
-          <g opacity={kprog(T, K.O + 2.2, K.O + 2.7)}><Diagnostico x={720} y={900} s={0.95} p={kprog(T, K.O + 2.4, K.O + 3.6)} /></g>
-          <Sello T={T} at={K.O + 4.6} x={720} y={960} texto="FALSO" color={KC.red} r={120} rot={-14} />
+          <line x1={-100} y1={1345} x2={1180} y2={1345} stroke={KC.ink} strokeWidth={6} opacity=".45" />
+          <g opacity={0.35 + 0.65 * kprog(T, K.O + 2.2, K.O + 2.7)}><Diagnostico x={760} y={1000} s={1.2} p={kprog(T, K.O + 2.4, K.O + 3.6)} /></g>
+          <Sello T={T} at={K.O + 4.6} x={760} y={1060} texto="FALSO" color={KC.red} r={145} rot={-14} />
+          <Ondas T={T} x={310} y={1000} n={3} alto={300} o={0.8} color="#fff" sep={90} />
+          <Taza T={T} x={310} y={1340} s={1.6} />
         </>)}
       </Escena>
       {/* 14 · cuidado */}
@@ -331,70 +349,74 @@ function MapleShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           <Bosque T={T} />
-          {[[160, 0.8, -6], [420, 1.0, 4], [640, 0.7, -3], [900, 0.9, 6]].map(([bx, k, r], i) => <Seta key={i} x={bx} y={1160} s={k} rot={r} crece={kprog(T, K.Cu + i * 0.12, K.Cu + 0.6 + i * 0.12)} sombrero={['#c9772b', '#b5562a', '#d4a056', '#8a4a26'][i]} escamas={false} anillo={false} />)}
-          {(() => { const w = kprog(T, K.Cu + 0.6, K.Cu + 1.1, kEase.rebote); return w > 0 ? <g transform={`translate(540 760) scale(${w * 0.9})`}><Alto x={0} y={0} /></g> : null; })()}
+          {[[150, 1.8, -6], [430, 2.3, 4], [690, 1.6, -3], [930, 2.0, 6]].map(([bx, k, r], i) => <Seta key={i} x={bx} y={1380} s={k} rot={r} crece={kprog(T, K.Cu + i * 0.12, K.Cu + 0.6 + i * 0.12)} sombrero={['#c9772b', '#b5562a', '#d4a056', '#8a4a26'][i]} escamas={false} anillo={false} />)}
+          {(() => { const w = kprog(T, K.Cu + 0.6, K.Cu + 1.1, kEase.rebote); return w > 0 ? <g transform={`translate(540 620) scale(${w * 1.1})`}><Alto x={0} y={0} /></g> : null; })()}
         </>)}
       </Escena>
       {/* 15 · cierre: los mismos hot cakes, ya explicados */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <HotCakes T={T} x={400} y={1130} s={1.05} chorro={1} />
-          <Ondas T={T} x={400} y={820} n={3} o={1} color="#fff" />
-          <FrascoSecos T={T} x={860} y={1140} s={0.8} tapa={kprog(T, K.C + 0.4, K.C + 1.0, kEase.sale)} />
-          <Furanona T={T} x={400} y={600 - Math.sin(T) * 14} s={0.62} grupo="NH₂" color={KC.ink} colorGrupo={KC.orange} p={kprog(T, K.C + 1.0, K.C + 2.0)} />
+          <Mesa />
+          <Ondas T={T} x={370} y={860} n={3} alto={320} sep={90} o={1} color="#fff" />
+          <HotCakes T={T} x={400} y={1300} s={1.6} chorro={1} />
+          <FrascoSecos T={T} x={840} y={1450} s={1.12} tapa={kprog(T, K.C + 0.4, K.C + 1.0, kEase.sale)} />
+          <Furanona T={T} x={690} y={600 - Math.sin(T) * 14} s={1.15} grupo="NH₂" color={KC.ink} colorGrupo={KC.orange} p={kprog(T, K.C + 0.3, K.C + 1.3)} />
         </>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 2.0} until={K.H - 0.3} texto="no es miel: es un hongo seco" x={420} y={820} tam={38} borde={HM.jarabe2} />
-      <Etq T={T} at={K.H + 0.5} until={K.Fr - 0.2} x={60} y={470} texto="candy cap" tam={44} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.9} until={K.Fr - 0.2} x={60} y={530} texto="Lactarius rubidus" it tam={44} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.2} until={K.Fr - 0.2} x={60} y={590} texto="sombrero de 2 a 8 cm" tam={28} color={KC.ink} />
-      <Medidor T={T} at={K.Fr + 0.1} until={K.P - 0.3} valor={(t) => 0.06 + 0.9 * kprog(t, K.S + 0.2, K.S + 1.4, kEase.suave)} etiqueta="olor a maple" texto={(v) => (v < 0.2 ? 'casi nada' : v < 0.8 ? 'subiendo…' : '¡fuertísimo!')} x={60} y={470} ancho={560} color={HM.jarabe2} />
-      <Etq T={T} at={K.Fr + 0.6} until={K.S - 0.1} x={60} y={640} texto="látex aguado" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.S + 0.2} until={K.P - 0.3} texto="seco" x={200} y={640} tam={40} borde={HM.seco} />
-      <Etq T={T} at={K.S + 1.8} until={K.P - 0.3} x={60} y={760} texto="galletas y helado" tam={30} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Es + 0.9} until={K.A - 0.2} anio="1985" quien="Humboldt State University" revista="California · un estudiante pregunta" x={540} y={600} />
-      <AnioCuenta T={T} at={K.A + 0.1} until={K.Ga - 0.3} desde={1985} hasta={2012} dur={1.6} etiqueta="de 1985 a…" x={400} y={560} tam={200} />
-      <Chip T={T} at={K.A + 1.6} until={K.Ga - 0.3} texto="27 años" x={400} y={740} tam={56} borde={KC.yellow} />
+      <Chip T={T} at={K.G + 2.0} until={K.H - 0.3} texto="no es miel: es un hongo seco" x={540} y={560} tam={38} borde={HM.jarabe2} />
+      <Etq T={T} at={K.H + 0.5} until={K.Fr - 0.2} x={60} y={450} texto="candy cap" tam={44} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.9} until={K.Fr - 0.2} x={60} y={510} texto="Lactarius rubidus" it tam={44} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.2} until={K.Fr - 0.2} x={60} y={570} texto="sombrero de 2 a 8 cm" tam={28} color={KC.ink} />
+      <Medidor T={T} at={K.Fr + 0.1} until={K.P - 0.3} valor={(t) => 0.06 + 0.9 * kprog(t, K.S + 0.2, K.S + 1.4, kEase.suave)} etiqueta="olor a maple" texto={(v) => (v < 0.2 ? 'casi nada' : v < 0.8 ? 'subiendo…' : '¡fuertísimo!')} x={60} y={430} ancho={560} color={HM.jarabe2} />
+      <Etq T={T} at={K.Fr + 0.6} until={K.S - 0.1} x={318} y={1000} lado="izq" texto="látex aguado" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.S + 0.2} until={K.P - 0.3} texto="seco" x={160} y={600} tam={40} borde={HM.seco} />
+      <Etq T={T} at={K.S + 1.8} until={K.P - 0.3} x={590} y={850} texto="galletas y helado" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Es + 0.9} until={K.A - 0.2} anio="1985" quien="Humboldt State University" revista="California · un estudiante pregunta" x={540} y={520} />
+      <AnioCuenta T={T} at={K.A + 0.1} until={K.Ga - 0.3} desde={1985} hasta={2012} dur={1.6} etiqueta="de 1985 a…" x={540} y={470} tam={200} />
+      <Chip T={T} at={K.A + 1.6} until={K.Ga - 0.3} texto="27 años" x={540} y={670} tam={56} borde={KC.yellow} />
       <Chip T={T} at={K.Ga + 0.1} until={K.Hi - 0.3} texto="POR DENTRO · EL GAS DEL HONGO SECO" x={540} y={400} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ga + 0.8} until={K.Ga + 3.0} x={60} y={475} texto="microextracción en fase sólida" tam={26} color={KC.gold2} />
-      <TarjetaEstudio T={T} at={K.Ga + 1.0} until={K.Ga + 3.0} anio="2012" quien="Wood y su equipo" revista="Biochem. Syst. Ecol., 2012" x={640} y={730} />
-      <Etq T={T} at={K.Ga + 3.6} until={K.Ge - 0.2} x={60} y={620} texto="quabalactona III" tam={40} color={KC.yellow} />
-      <Etq T={T} at={K.Ga + 4.0} until={K.Ge - 0.2} x={60} y={675} texto="la que, creen, da el olor" tam={26} color={KC.texto} />
-      <Chip T={T} at={K.Hi + 0.4} until={K.Ge - 0.3} texto="hipótesis: nace de aminoácidos al secarse" x={540} y={480} tam={28} borde={KC.mint} />
-      <Etq T={T} at={K.Ge + 0.4} until={K.So - 0.2} x={60} y={1175} texto="quabalactona III" tam={30} color={KC.yellow} />
-      <Etq T={T} at={K.Ge + 0.9} until={K.So - 0.2} x={600} y={1175} texto="sotolón" tam={30} color={KC.mint} />
-      <Chip T={T} at={K.Ge + 1.6} until={K.So - 0.3} texto="NH₂ ↔ OH: solo eso cambia" x={420} y={520} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.So + 0.8} until={K.Pr - 0.2} x={60} y={520} texto="sotolón" tam={44} color={KC.ink} />
-      <Etq T={T} at={K.So + 1.4} until={K.Pr - 0.2} x={60} y={940} texto="fenogreco (alholva)" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.So + 2.2} until={K.Pr - 0.2} x={600} y={760} texto="jarabe de maple" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Pr + 0.4} until={K.O - 0.2} x={60} y={1210} texto="candy cap · 2–8 cm" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Pr + 1.2} until={K.O - 0.2} x={60} y={480} texto="Lactarius helvus" it tam={42} color={KC.ink} />
-      <Etq T={T} at={K.Pr + 1.6} until={K.O - 0.2} x={60} y={540} texto="Europa · sombrero de 4 a 15 cm" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Pr + 3.3} until={K.O - 0.3} texto="puede intoxicarte" x={330} y={640} tam={40} borde={KC.red} />
-      <Etq T={T} at={K.O + 0.4} until={K.Cu - 0.2} x={60} y={860} texto="té de hierbas" tam={30} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.O + 0.6} until={K.O + 2.2} anio="1999" quien="un falso diagnóstico" revista="N Engl J Med, 1999" x={540} y={560} />
+      <Etq T={T} at={K.Ga + 0.8} until={K.Ga + 3.0} x={365} y={650} texto="microextracción en fase sólida" tam={26} color={KC.gold2} />
+      <TarjetaEstudio T={T} at={K.Ga + 1.0} until={K.Ga + 3.0} anio="2012" quien="Wood y su equipo" revista="Biochem. Syst. Ecol., 2012" x={750} y={850} />
+      <Etq T={T} at={K.Ga + 3.6} until={K.Ge - 0.2} x={60} y={590} texto="quabalactona III" tam={40} color={KC.yellow} />
+      <Etq T={T} at={K.Ga + 4.0} until={K.Ge - 0.2} x={60} y={645} texto="la que, creen, da el olor" tam={26} color={KC.texto} />
+      <Chip T={T} at={K.Hi + 0.4} until={K.Ge - 0.3} texto="hipótesis: nace de aminoácidos al secarse" x={540} y={440} tam={28} borde={KC.mint} />
+      <Etq T={T} at={K.Ge + 0.4} until={K.So - 0.2} x={60} y={440} texto="quabalactona III" tam={34} color={KC.yellow} />
+      <Etq T={T} at={K.Ge + 0.9} until={K.So - 0.2} x={60} y={1010} texto="sotolón" tam={34} color={KC.mint} />
+      <Chip T={T} at={K.Ge + 1.6} until={K.So - 0.3} texto="NH₂ ↔ OH: solo eso cambia" x={740} y={1010} tam={30} borde={KC.gold} />
+      {(() => { const u = kprog(T, K.So + 2.4, K.So + 3.6, kEase.suave); return <Etq T={T} at={K.So + 0.8} until={K.Pr - 0.2} x={klerp(60, 290, u)} y={klerp(780, 420, u) - Math.sin(u * Math.PI) * 60} texto="sotolón" tam={44} color={KC.ink} />; })()}
+      <Etq T={T} at={K.So + 1.4} until={K.Pr - 0.2} x={60} y={1470} texto="fenogreco (alholva)" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.So + 2.2} until={K.Pr - 0.2} x={640} y={1470} texto="jarabe de maple" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Pr + 0.4} until={K.O - 0.2} x={40} y={1460} texto="candy cap · 2–8 cm" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Pr + 1.2} until={K.O - 0.2} x={260} y={560} texto="Lactarius helvus" it tam={42} color={KC.ink} />
+      <Etq T={T} at={K.Pr + 1.6} until={K.O - 0.2} x={260} y={620} texto="Europa · sombrero de 4 a 15 cm" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Pr + 3.3} until={K.O - 0.3} texto="puede intoxicarte" x={760} y={1475} tam={38} borde={KC.red} />
+      <Etq T={T} at={K.O + 0.4} until={K.Cu - 0.2} x={60} y={1490} texto="té de hierbas" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.O + 0.6} until={K.O + 2.2} anio="1999" quien="un falso diagnóstico" revista="N Engl J Med, 1999" x={300} y={600} />
       <Etq T={T} at={K.O + 3.0} until={K.Cu - 0.2} x={60} y={470} texto="«enfermedad de la orina con" tam={28} color={KC.ink} />
       <Etq T={T} at={K.O + 3.0} until={K.Cu - 0.2} x={60} y={515} texto="olor a jarabe de maple»" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Cu + 1.0} until={K.C - 0.3} texto="hay parecidos tóxicos" x={540} y={1000} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="olor a maple… de un hongo" x={360} y={430} tam={34} borde={HM.jarabe2} />
+      <Chip T={T} at={K.Cu + 1.0} until={K.C - 0.3} texto="hay parecidos tóxicos" x={540} y={1480} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="olor a maple… de un hongo" x={540} y={340} tam={34} borde={HM.jarabe2} />
       <Etq T={T} at={K.C + 2.0} until={K.Ou} x={60} y={1500} texto="No comas hongos silvestres sin un experto:" tam={22} color={KC.ink} />
       <Etq T={T} at={K.C + 2.0} until={K.Ou} x={60} y={1535} texto="hay parecidos tóxicos. El dibujo es esquemático." tam={22} color={KC.ink} />
 
-      {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={60} color={KC.ink} />
-      <BarraEscala T={T} at={K.H} until={K.S + 1.4} texto="2 cm" largo={90} color={KC.ink} />
-      <BarraEscala T={T} at={K.P} until={K.Es} texto="2 cm" largo={70} color={KC.ink} />
+      {/* barras de escala: recalculadas en el pase a mano (22 nov 2026) con el tamaño nuevo de cada dibujo.
+          Hot cake ≈ 13 cm; sombrero del candy cap ≈ 6 cm fresco (rango 2–8 cm) y ≈ 5 cm junto a L. helvus ≈ 10 cm (4–15 cm);
+          enlace C–C ≈ 0.15 nm. Donde se mezclan cosas de tamaños muy distintos dice «esquema». */}
+      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={300} color={KC.ink} />
+      <BarraEscala T={T} at={K.H} until={K.S + 1.4} texto="2 cm" largo={260} color={KC.ink} />
+      <BarraEscala T={T} at={K.P} until={K.Es} texto="2 cm" largo={175} color={KC.ink} />
       <BarraEscala T={T} at={K.Es} until={K.Ga} texto="esquema" largo={0} color={KC.ink} />
-      <BarraEscala T={T} at={K.Ga} until={K.Ga + 3.2} texto="5 cm" largo={60} />
-      <BarraEscala T={T} at={K.Ga + 3.2} until={K.So} texto="0.1 nm (esquemático)" largo={40} />
-      <BarraEscala T={T} at={K.So} until={K.Pr} texto="2 cm" largo={60} color={KC.ink} />
-      <BarraEscala T={T} at={K.Pr} until={K.O} texto="5 cm" largo={84} color={KC.ink} />
-      <BarraEscala T={T} at={K.O} until={K.Cu} texto="5 cm" largo={60} color={KC.ink} />
+      <BarraEscala T={T} at={K.Ga} until={K.Ga + 3.2} texto="5 cm" largo={420} />
+      <BarraEscala T={T} at={K.Ga + 3.2} until={K.Ge} texto="0.1 nm (esquemático)" largo={120} />
+      <BarraEscala T={T} at={K.Ge} until={K.So} texto="0.1 nm (esquemático)" largo={90} />
+      <BarraEscala T={T} at={K.So} until={K.Pr} texto="esquema" largo={0} color={KC.ink} />
+      <BarraEscala T={T} at={K.Pr} until={K.O} texto="5 cm" largo={380} color={KC.ink} />
+      <BarraEscala T={T} at={K.O} until={K.Cu} texto="esquema" largo={0} color={KC.ink} />
       <BarraEscala T={T} at={K.Cu} until={K.C} texto="esquema" largo={0} color={KC.ink} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={60} y={1600} color={KC.ink} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={300} y={1600} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No es miel: *es un hongo seco.*" />
