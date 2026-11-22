@@ -193,7 +193,8 @@ function OxidoNitrosoShot() {
       <Escena T={T} a={K.Oz} b={K.Ca}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} />
-        {fsvg(<TierraOzono T={T} gas={1} adelgaza={kprog(T, K.Oz + 1.0, K.Oz + 3.5)} />)}
+        {/* encuadre: la Tierra entera, centrada (antes cargada abajo) */}
+        {fsvg(<g transform="translate(540 1060) scale(0.6) translate(-540 -1560)"><TierraOzono T={T} gas={1} adelgaza={kprog(T, K.Oz + 1.0, K.Oz + 3.5)} /></g>)}
       </Escena>
       {/* 3 · campo: la mayor parte del N₂O humano sale del nitrógeno en cultivos */}
       <Escena T={T} a={K.Ca} b={K.Ch}>
@@ -209,11 +210,13 @@ function OxidoNitrosoShot() {
       {/* 4 · charco: llueve, los poros se llenan de agua, se acaba el oxígeno */}
       <Escena T={T} a={K.Ch} b={K.B} zoom={0.08}>
         <div style={{ position:'absolute', inset:0, background:'#2a2018' }}></div>
-        {fsvg(<>
+        {/* encuadre: el corte de suelo bajado y agrandado ×1.15 hacia el centro del cuadro */}
+        {fsvg(<g transform="translate(540 960) scale(1.15) translate(-540 -830)">
           <SueloCorte T={T} agua={kprog(T, K.Ch + 0.4, K.Ch + 3.0)} o2={1 - kprog(T, K.Ch + 1.2, K.Ch + 3.6)} nitrato={kprog(T, K.Ch + 3.0, K.Ch + 3.8)} />
           {Array.from({ length: 22 }, (_, i) => { const uu = (T * 1.4 + i * 0.13) % 1; return T < K.Ch + 2.4 ? <line key={i} x1={(i * 103) % 1080} y1={260 + uu * 140} x2={(i * 103) % 1080 - 8} y2={290 + uu * 140} stroke="#bfe3ff" strokeWidth={4} opacity=".8" /> : null; })}
-          {K.P <= T && <Interrogacion T={T} x={270} y={950} tam={400} />}
-        </>)}
+          {K.P <= T && <rect x={-100} y={380} width={1280} height={900} fill="#0b1020" opacity={0.45 * kprog(T, K.P, K.P + 0.3)} />}
+          {K.P <= T && <Interrogacion T={T} x={540} y={980} tam={420} />}
+        </g>)}
       </Escena>
       {/* 5 · bacterias: convierten el N₂O en N₂ (lo pequeño, fondo oscuro) */}
       <Escena T={T} a={K.B} b={K.H}>
@@ -285,16 +288,16 @@ function OxidoNitrosoShot() {
       <Etq T={T} at={K.G + 2.6} until={K.Oz - 0.3} x={60} y={1085} texto="óxido nitroso · N₂O" tam={34} color={KC.ink} />
       <NumeroGigante T={T} at={K.G + 4.6} until={K.Oz - 0.3} valor={273} dur={1.0} prefijo="×" etiqueta="veces más que el CO₂" x={690} y={440} tam={160} color={KC.yellow} />
       <Chip T={T} at={K.G + 6.2} until={K.Oz - 0.3} texto="kilo por kilo · a 100 años" x={690} y={625} tam={34} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Oz + 0.3} until={K.Ca - 0.3} anio="2009" quien="Ravishankara y col." revista="Science, 2009" x={380} y={540} />
+      <TarjetaEstudio T={T} at={K.Oz + 0.3} until={K.Ca - 0.3} anio="2009" quien="Ravishankara y col." revista="Science, 2009" x={540} y={300} />
       <Chip T={T} at={K.Oz + 2.0} until={K.Ca - 0.3} texto="la emisión humana que más daña el ozono" x={540} y={1060} tam={32} borde="#5fd6ff" />
-      <Etq T={T} at={K.Oz + 1.2} until={K.Ca - 0.3} x={60} y={770} texto="capa de ozono" tam={30} color="#5fd6ff" />
+      <Etq T={T} at={K.Oz + 1.2} until={K.Ca - 0.3} x={60} y={540} texto="capa de ozono" tam={30} color="#5fd6ff" />
       <Chip T={T} at={K.Ca + 0.2} until={K.Ch - 0.3} texto="N₂O de origen humano" x={540} y={470} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.Ca + 1.2} until={K.Ch - 0.3} x={90} y={650} texto="nitrógeno en cultivos: la mayor parte" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Ca + 2.2} until={K.Ch - 0.3} x={990} y={880} texto="otras fuentes" lado="izq" tam={26} color={KC.ink} />
       <Etq T={T} at={K.Ca + 2.4} until={K.Ch - 0.3} x={90} y={570} texto="Tian y col. · Nature, 2020 · datos 1980–2016" tam={24} color={KC.ink} />
-      <Medidor T={T} at={K.Ch + 0.8} until={K.P - 0.3} valor={(t) => 1 - kprog(t, K.Ch + 1.2, K.Ch + 3.6)} etiqueta="oxígeno en los poros" x={60} y={430} ancho={560} color={KC.cyan} />
-      <Etq T={T} at={K.Ch + 1.0} until={K.P - 0.3} x={60} y={570} texto="poros llenos de agua" tam={28} color="#bfe3ff" />
-      <Etq T={T} at={K.Ch + 3.2} until={K.P - 0.3} x={60} y={620} texto="nitrato (NO₃⁻) del abono" tam={28} color={KC.texto} />
+      <Medidor T={T} at={K.Ch + 0.8} until={K.P - 0.3} valor={(t) => 1 - kprog(t, K.Ch + 1.2, K.Ch + 3.6)} etiqueta="oxígeno en los poros" x={60} y={500} ancho={560} color={KC.cyan} />
+      <Etq T={T} at={K.Ch + 1.0} until={K.P - 0.3} x={60} y={660} texto="poros llenos de agua" tam={28} color="#bfe3ff" />
+      <Etq T={T} at={K.Ch + 3.2} until={K.P - 0.3} x={60} y={718} texto="nitrato (NO₃⁻) del abono" tam={28} color={KC.texto} />
       <Etq T={T} at={K.B + 0.4} until={K.H - 0.3} x={60} y={480} texto="bacterias desnitrificantes" tam={30} color={KC.mint} />
       <Etq T={T} at={K.B + 1.6} until={K.H - 0.3} x={60} y={540} texto="N₂O → N₂ (inofensivo)" tam={34} color={KC.texto} />
       <Etq T={T} at={K.H + 0.6} until={H2 - 0.2} x={60} y={600} texto="Fusarium oxysporum" it tam={40} color={KC.texto} />
@@ -317,7 +320,7 @@ function OxidoNitrosoShot() {
       <BarraEscala T={T} at={K.G} until={K.Oz} texto="50 cm" largo={160} />
       <BarraEscala T={T} at={K.Oz} until={K.Ca} texto="esquemático" largo={0} />
       <BarraEscala T={T} at={K.Ca} until={K.Ch} texto="barra esquemática" largo={0} />
-      <BarraEscala T={T} at={K.Ch} until={K.B} texto="1 mm" largo={150} />
+      <BarraEscala T={T} at={K.Ch} until={K.B} texto="1 mm" largo={173} />
       <BarraEscala T={T} at={K.B} until={K.H} texto="1 µm" largo={285} />
       <BarraEscala T={T} at={K.H} until={H2} texto="5 µm" largo={204} />
       <BarraEscala T={T} at={H2} until={K.E} texto="esquemático (nm)" largo={0} />
