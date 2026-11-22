@@ -236,7 +236,7 @@ function Tamiz() {
       <Escena T={T} a={K.Bu} b={K.En} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <TarjetaFiltro x={540} y={600} s={1.1} rot={2} llenas={[1, 1, 1, 0, 0]} seca={kprog(T, K.Bu, K.Bu + 1.5)} />
+          <TarjetaFiltro x={540} y={840} s={1.1} rot={2} llenas={[1, 1, 1, 0, 0]} seca={kprog(T, K.Bu, K.Bu + 1.5)} />
         </SvgCapa>
       </Escena>
       {/* 3 · por dentro: la enzima a medio gas y la Phe que se acumula */}
@@ -342,7 +342,7 @@ function Tamiz() {
       </Escena>
 
       {/* lupas y escalas */}
-      <Lupa T={T} at={K.Bu + 1.0} until={K.En - 0.3} x={540} y={1110} r={250} fx={540 - 140 * 1.1} fy={600 + 70 * 1.1} interior={(t, r) => InteriorPapel(t, r)} tinte={KC.red} etiqueta="AL MICROSCOPIO · sangre seca" />
+      <Lupa T={T} at={K.Bu + 1.0} until={K.En - 0.3} x={540} y={1265} r={250} fx={540 - 140 * 1.1} fy={840 + 70 * 1.1} interior={(t, r) => InteriorPapel(t, r)} tinte={KC.red} etiqueta="AL MICROSCOPIO · sangre seca" />
       <Lupa T={T} at={K.Ha + 2.0} until={K.Ho - 0.3} x={790} y={390} r={185} fx={540 + discos[PKU][0] * 1.25} fy={920 + discos[PKU][1] * 1.25} interior={(t, r) => InteriorHalo(t, r, K.Ha + 2.0)} tinte={KC.mint} etiqueta="AL MICROSCOPIO · halo" />
       {T < K.Ta && <Escala T={T} z={1} pxPorMm={9.4 * 1.2 / 1.15} />}
       {T > K.Pr && T < K.Gu && <Escala T={T} z={1} pxPorMm={125} />}
@@ -352,8 +352,8 @@ function Tamiz() {
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.2} until={K.Ta - 0.3} texto="¿un análisis cualquiera?" x={300} y={470} tam={40} />
       <Chip T={T} at={K.G + 1.2} until={K.Ta - 0.3} texto="tarjeta de papel filtro" y={1500} tam={42} borde={KC.red} />
       <Medidor T={T} at={K.Ta + 0.3} until={K.Bu - 0.3} valor={(t) => kprog(t, K.Ta + 0.3, K.Ta + 2.4) * 0.6} etiqueta="días de vida" texto={(v) => 'día ' + Math.max(1, Math.round(v * 5))} x={90} y={1430} color={KC.pink} />
-      <Chip T={T} at={K.Bu + 0.2} until={K.Bu + 0.9} texto="tamiz metabólico neonatal" x={540} y={880} tam={40} borde={KC.mint} />
-      <Etq T={T} at={K.Bu + 1.8} until={K.En - 0.3} x={130} y={1520} texto="fenilcetonuria (PKU)" tam={40} color={KC.texto} />
+      <Chip T={T} at={K.Bu + 0.2} until={K.Bu + 0.9} texto="tamiz metabólico neonatal" x={540} y={1100} tam={40} borde={KC.mint} />
+      <Etq T={T} at={K.Bu + 1.8} until={K.En - 0.3} x={130} y={530} texto="fenilcetonuria (PKU)" tam={40} color={KC.texto} />
       <Etq T={T} at={K.En + 0.6} until={K.Pr - 0.3} x={110} y={690} texto="proteína" tam={30} color="#7fc8ff" />
       <Etq T={T} at={K.En + 1.2} until={K.Pr - 0.3} x={330} y={670} texto="enzima a medio gas" tam={30} color={ENZ} />
       <Etq T={T} at={K.En + 1.8} until={K.Pr - 0.3} x={60} y={1185} texto="fenilalanina (Phe) en la sangre" tam={30} color={PHE} />

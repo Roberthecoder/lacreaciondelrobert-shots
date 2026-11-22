@@ -1,0 +1,3 @@
+- fun-105-olote: ya cumplía (encuadre bien).
+- fun-106-composta-champinon: ya cumplía (encuadre bien).
+- bio-39-tamiz: marcaba Busca ARRIBA; bajé tarjeta (y 600→840), lupa (1110→1265, apuntando al mismo disco) y chip; la etiqueta «fenilcetonuria (PKU)» pasó arriba de la tarjeta para no chocar con la lupa. Escala del microscopio sin cambio (no cambió el tamaño). Encuadre bien, sin láminas.
