@@ -24,8 +24,8 @@ function Calendario({ x, y, anio, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-150} y={-120} width={300} height={260} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={9} />
     <rect x={-150} y={-120} width={300} height={70} rx={24} fill={KC.red} stroke={KC.ink} strokeWidth={9} />
-    {[-90, 90].map((a) => <rect key={a} x={a - 10} y={-145} width={20} height={50} rx={8} fill={KC.ink} />)}
-    <text x={0} y={70} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.ink}>{Math.floor(anio)}</text>
+    {[-90, 90].map((a) => <rect key={a} x={a - 10} y={-145} width={20} height={50} rx={8} fill="#0b1020" stroke={KC.ink} strokeWidth={3} />)}
+    <text x={0} y={70} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}`, stroke:'none' }} fill="#0b1020">{Math.floor(anio)}</text>
     <text x={0} y={-68} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill="#fff">AÑOS</text>
   </g>;
 }
@@ -55,22 +55,24 @@ function Huella() {
       <Escena T={T} a={K.G} b={K.Ll} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <TarjetaGPU T={T} x={380} y={990} s={1.25} calor={kprog(T, K.G + 1, K.G + 5)} />
-          <Calendario x={380} y={650} anio={anios * kprog(T, K.G + 0.1, K.G + 5.5, kEase.suave)} s={1.0} />
+          <TarjetaGPU T={T} x={540} y={1160} s={1.95} calor={kprog(T, K.G + 1, K.G + 5)} />
+          <Calendario x={400} y={640} anio={anios * kprog(T, K.G + 0.1, K.G + 5.5, kEase.suave)} s={1.4} />
+          {/* modo cine: antes del segundo 3 ya asoma, atenuada, la llama (el modelo que se entrena en la escena siguiente) */}
+          <g opacity={0.4 * kprog(T, K.G + 1.8, K.G + 2.6)}><Llamita x={850} y={660} s={0.8} T={T} /></g>
         </>)}
       </Escena>
       {/* 2 · Llama 3, de Meta, abril de 2024 */}
       <Escena T={T} a={K.Ll} b={K.H}>
         <FondoLunares color={KC.mint} />
-        {svg(<Llamita x={480} y={1000} s={1.6} T={T} />)}
+        {svg(<Llamita x={511} y={1068} s={2.4} T={T} />)}
       </Escena>
       {/* 3–5 · horas, muchas tarjetas, watts (fondo noche: dentro del centro de datos) */}
       <Escena T={T} a={K.H} b={K.P} zoom={0.03}>
         <FondoCircuito T={T} color={KC.orange} />
         {svg(<>
-          {T < K.Mu && <TarjetaGPU T={T} x={540} y={1010} s={1.2} calor={0.4} />}
+          {T < K.Mu && <TarjetaGPU T={T} x={540} y={1080} s={2.0} calor={0.4} />}
           {T >= K.Mu && Array.from({ length: 24 }, (_, i) => { const c = i % 4, r = Math.floor(i / 4), at = K.Mu + 0.2 + i * 0.06;
-            return T > at ? <TarjetaGPU key={i} T={T + i * 0.1} x={170 + c * 245} y={600 + r * 110} s={0.5 * kprog(T, at, at + 0.3, kEase.rebote)} calor={kprog(T, K.W + 0.3, K.W + 1.6)} etiqueta="" /> : null; })}
+            return T > at ? <TarjetaGPU key={i} T={T + i * 0.1} x={168 + c * 248} y={560 + r * 150} s={0.52 * kprog(T, at, at + 0.3, kEase.rebote)} calor={kprog(T, K.W + 0.3, K.W + 1.6)} etiqueta="" /> : null; })}
         </>)}
       </Escena>
       {/* 6 · pregunta */}
@@ -81,13 +83,15 @@ function Huella() {
       {/* 7–8 · CO2: nubes que se apilan y la comparación grande / chico */}
       <Escena T={T} a={K.Co} b={K.Cm}>
         <FondoLunares color={KC.cyan} />
-        {T < K.Gr && svg(Array.from({ length: 9 }, (_, i) => { const at = K.Co + 0.4 + i * 0.25; return T > at ? <Nube key={i} x={220 + (i % 3) * 320} y={klerp(1150, 720 + Math.floor(i / 3) * 150, kprog(T, at, at + 0.8, kEase.sale)) + Math.sin(T + i) * 10} s={0.95} /> : null; }))}
+        {T < K.Gr && svg(Array.from({ length: 9 }, (_, i) => { const at = K.Co + 0.1 + i * 0.25; return T > at ? <Nube key={i} x={215 + (i % 3) * 325} y={klerp(1400, 800 + Math.floor(i / 3) * 215, kprog(T, at, at + 0.8, kEase.sale)) + Math.sin(T + i) * 10} s={1.2} /> : null; }))}
+        {/* modo cine: en la comparación siguen en pantalla las dos versiones del modelo (llama grande y llama chica), bajo sus barras */}
+        {T >= K.Gr && svg(<g opacity={0.75 * kprog(T, K.Gr + 0.1, K.Gr + 0.6)}><Llamita x={320} y={1385} s={0.8} T={T} /><Llamita x={730} y={1440} s={0.4} T={T + 1} /></g>)}
       </Escena>
       {/* 9–10 · compensar no es no emitir: báscula con nube y árboles */}
       <Escena T={T} a={K.Cm} b={K.Le}>
         <FondoLunares color={KC.yellow} />
         {svg((() => { const inc = T < K.O ? -6 * kprog(T, K.Cm + 0.6, K.Cm + 2) : -6 + 6 * kprog(T, K.O + 0.3, K.O + 1.2); const sube = kprog(T, K.O + 1.0, K.O + 3.5, kEase.suave);
-          return <>
+          return <g transform="translate(540 980) scale(1.2) translate(-540 -900)">
             <path d="M 540 1150 L 480 1230 L 600 1230 Z" fill={KC.ink} />
             <g transform={`rotate(${inc} 540 860)`}>
               <rect x={140} y={850} width={800} height={20} rx={10} fill={KC.ink} />
@@ -96,46 +100,46 @@ function Huella() {
               {[0, 1, 2].map((k) => <Arbol key={k} x={720 + k * 90} y={760} s={0.75} />)}
             </g>
             {T > K.O + 1.0 && <path d="M 270 760 L 270 700" stroke={KC.red} strokeWidth={10} strokeDasharray="14 10" markerEnd="" opacity={kprog(T, K.O + 1, K.O + 1.4)} />}
-          </>; })())}
+          </g>; })())}
       </Escena>
       {/* 11 · leyó más de 15 billones de tokens */}
       <Escena T={T} a={K.Le} b={K.Ex}>
         <FondoCircuito T={T} color={KC.mint} />
         {svg(<>
           {Array.from({ length: 26 }, (_, i) => { const t0 = K.Le + 0.2 + i * 0.16, u = (T - t0) / 1.4; if (u < 0 || u > 1) return null;
-            return <Ficha key={i} x={klerp(1150, 560, u)} y={klerp(560 + (i % 5) * 130, 980, u)} texto={['el', 'de', 'sol', '##mente', 'the', 'y', 'agua', 'la'][i % 8]} tam={30} o={1 - u * 0.7} s={1 - u * 0.5} color={[KC.yellow, KC.cyan, KC.mint, KC.pink][i % 4]} />; })}
-          <Llamita x={420} y={1040} s={1.0} T={T} />
+            return <Ficha key={i} x={klerp(1180, 700, u)} y={klerp(480 + (i % 5) * 170, 840, u)} texto={['el', 'de', 'sol', '##mente', 'the', 'y', 'agua', 'la'][i % 8]} tam={42} o={1 - u * 0.7} s={1 - u * 0.5} color={[KC.yellow, KC.cyan, KC.mint, KC.pink][i % 4]} />; })}
+          <Llamita x={380} y={1130} s={1.9} T={T} />
         </>)}
       </Escena>
       {/* 12 · y cada pregunta después también gasta */}
       <Escena T={T} a={K.Ex} b={K.C}>
         <FondoLunares color={KC.pink} />
-        <CelularChat T={T} x={560} y={1000} s={0.8} tam={40} mensajes={[{ at: K.Ex + 0.3, yo: true, texto: '¿Me ayudas con mi tarea?' }, { at: K.Ex + 1.6, yo: false, texto: '¡Claro! …' }]} escribe={[K.Ex + 0.7, K.Ex + 1.6]} />
-        {svg([0, 1, 2].map((k) => { const at = K.Ex + 1.7 + k * 0.9; return T > at ? <path key={k} d="M 0 -60 L -30 10 L -4 10 L -24 70 L 34 -14 L 6 -14 L 26 -60 Z" transform={`translate(${880} ${640 + k * 150}) scale(${kprog(T, at, at + 0.3, kEase.rebote)})`} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} /> : null; }))}
+        <CelularChat T={T} x={470} y={1000} s={1.05} tam={40} mensajes={[{ at: K.Ex + 0.3, yo: true, texto: '¿Me ayudas con mi tarea?' }, { at: K.Ex + 1.6, yo: false, texto: '¡Claro! …' }]} escribe={[K.Ex + 0.7, K.Ex + 1.6]} />
+        {svg([0, 1, 2].map((k) => { const at = K.Ex + 1.7 + k * 0.9; return T > at ? <path key={k} d="M 0 -60 L -30 10 L -4 10 L -24 70 L 34 -14 L 6 -14 L 26 -60 Z" transform={`translate(${905} ${720 + k * 210}) scale(${1.5 * kprog(T, at, at + 0.3, kEase.rebote)})`} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} /> : null; }))}
       </Escena>
       {/* 13 · cierre: regresa la tarjeta sola del inicio, ahora con la respuesta en pantalla */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <TarjetaGPU T={T} x={380} y={990} s={1.25} calor={1} />
-          <Calendario x={380} y={650} anio={anios} s={1.0} />
+          <TarjetaGPU T={T} x={540} y={1160} s={1.95} calor={1} />
+          <Calendario x={400} y={640} anio={anios} s={1.4} />
         </>)}
-        <div style={{ position:'absolute', left:620, top:900, width:400, zIndex:30, opacity:kprog(T, K.C + 1.0, K.C + 1.5), background:'#262c3a', color:KC.texto, borderRadius:'28px 28px 28px 6px', padding:'18px 24px', font:`800 36px/1.2 ${KF.texto}`, border:`4px solid ${KC.ink}` }}>¡Claro! Aquí está tu respuesta…</div>
+        <div style={{ position:'absolute', left:612, top:590, width:310, zIndex:30, opacity:kprog(T, K.C + 1.0, K.C + 1.5), background:'#262c3a', color:KC.texto, borderRadius:'28px 28px 28px 6px', padding:'18px 24px', font:`800 36px/1.2 ${KF.texto}`, border:`4px solid ${KC.ink}` }}>¡Claro! Aquí está tu respuesta…</div>
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.3} until={K.Ll - 0.2} texto="1 sola tarjeta de video" x={380} y={430} tam={42} borde={KC.ink} />
-      <Chip T={T} at={K.Ll + 0.3} until={K.H - 0.2} texto="Llama 3 · Meta · abril 2024" y={470} tam={44} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.H + 0.2} until={K.Mu - 0.2} valor={7.7} dec={1} dur={1.0} sufijo=" millones" etiqueta="horas H100 · 2 versiones" y={720} tam={120} color={KC.orange} />
-      <Chip T={T} at={K.Mu + 0.4} until={K.W - 0.2} texto="muchísimas al mismo tiempo" x={380} y={460} tam={42} borde={KC.orange} />
-      <Medidor T={T} at={K.W + 0.2} until={K.P - 0.2} valor={(t) => kprog(t, K.W + 0.3, K.W + 1.6)} etiqueta="cada tarjeta, hasta" texto={(v) => Math.round(v * 700) + ' W'} y={440} color={KC.red} />
-      <NumeroGigante T={T} at={K.Co + 0.3} until={K.Gr - 0.2} valor={2290} dur={1.6} sufijo=" t" etiqueta="de CO₂ eq · 2 versiones (Meta)" y={500} tam={150} color={KC.texto} />
-      <Comparativa T={T} at={K.Gr + 0.2} until={K.Cm - 0.2} izq={{ valor: 1900, etiqueta: 'grande (70B)', color: KC.red, texto: '1,900 t' }} der={{ valor: 390, etiqueta: 'chico (8B)', color: KC.yellow, texto: '390 t' }} max={1900} y={560} alto={480} />
+      <Chip T={T} at={K.G + 0.3} until={K.Ll - 0.2} texto="1 sola tarjeta de video" x={400} y={290} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.Ll + 0.3} until={K.H - 0.2} texto="Llama 3 · Meta · abril 2024" y={350} tam={44} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.H + 0.2} until={K.Mu - 0.2} valor={7.7} dec={1} dur={1.0} sufijo=" millones" etiqueta="horas H100 · 2 versiones" y={540} tam={120} color={KC.orange} />
+      <Chip T={T} at={K.Mu + 0.4} until={K.W - 0.2} texto="muchísimas al mismo tiempo" x={540} y={380} tam={42} borde={KC.orange} />
+      <Medidor T={T} at={K.W + 0.2} until={K.P - 0.2} valor={(t) => kprog(t, K.W + 0.3, K.W + 1.6)} etiqueta="cada tarjeta, hasta" texto={(v) => Math.round(v * 700) + ' W'} y={340} color={KC.red} />
+      <NumeroGigante T={T} at={K.Co + 0.3} until={K.Gr - 0.2} valor={2290} dur={1.6} sufijo=" t" etiqueta="de CO₂ eq · 2 versiones (Meta)" y={480} tam={150} color={KC.texto} />
+      <Comparativa T={T} at={K.Gr + 0.2} until={K.Cm - 0.2} izq={{ valor: 1900, etiqueta: 'grande (70B)', color: KC.red, texto: '1,900 t' }} der={{ valor: 390, etiqueta: 'chico (8B)', color: KC.yellow, texto: '390 t' }} max={1900} y={350} alto={620} />
       <Chip T={T} at={K.Cm + 0.4} until={K.O - 0.2} texto="«100 % compensado» (según Meta)" y={460} tam={38} borde={KC.leaf} />
       <Chip T={T} at={K.O + 0.4} until={K.Le - 0.2} texto="compensar ≠ no emitir" x={420} y={460} tam={48} borde={KC.red} />
-      <NumeroGigante T={T} at={K.Le + 1.6} until={K.Ex - 0.2} valor={15} dur={1.0} prefijo="+" sufijo=" billones" etiqueta="de tokens leídos" y={460} tam={110} color={KC.mint} />
-      <Chip T={T} at={K.Ex + 2.4} until={K.C - 0.2} texto="usarla también gasta energía" x={540} y={460} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="más de 700 años de 1 tarjeta" x={380} y={430} tam={42} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Le + 1.6} until={K.Ex - 0.2} valor={15} dur={1.0} prefijo="+" sufijo=" billones" etiqueta="de tokens leídos" y={420} tam={110} color={KC.mint} />
+      <Chip T={T} at={K.Ex + 2.4} until={K.C - 0.2} texto="usarla también gasta energía" x={540} y={370} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="más de 700 años de 1 tarjeta" x={480} y={290} tam={42} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ll - 0.1} texto="Una sola tarjeta: *más de 700 años.*" />

@@ -353,9 +353,10 @@ function CornezueloShot() {
         <FondoLunares color={KC.pink} />
         {fsvg(<>
           {(() => { const u = kprog(T, K.M + 0.4, K.M + 1.3, kEase.suave); return <>
-            <g opacity={1 - u}><Cuerno x={420} y={900} largo={260} ancho={60} rot={-12} /></g>
-            <g opacity={u} transform={`translate(420 ${klerp(900, 820, u)}) scale(${klerp(0.4, 1.25, u)})`}><Frasco x={0} y={0} /></g>
-            {u > 0.7 && Array.from({ length: 8 }, (_, i) => { const a = i * Math.PI / 4 + T * 0.6, rr = 210 + Math.sin(T * 4 + i) * 10; return <circle key={i} cx={420 + Math.cos(a) * rr} cy={790 + Math.sin(a) * rr} r={8} fill="#fff" opacity=".8" />; })}
+            {/* modo cine: el cornezuelo no se apaga; queda atenuado junto al frasco que sale de él */}
+            <g opacity={1 - 0.5 * u}><Cuerno x={klerp(420, 310, u)} y={900} largo={260} ancho={60} rot={-12} /></g>
+            <g opacity={u} transform={`translate(${klerp(420, 610, u)} ${klerp(900, 820, u)}) scale(${klerp(0.4, 1.25, u)})`}><Frasco x={0} y={0} /></g>
+            {u > 0.7 && Array.from({ length: 8 }, (_, i) => { const a = i * Math.PI / 4 + T * 0.6, rr = 210 + Math.sin(T * 4 + i) * 10; return <circle key={i} cx={610 + Math.cos(a) * rr} cy={790 + Math.sin(a) * rr} r={8} fill="#fff" opacity=".8" />; })}
           </>; })()}
         </>)}
       </Escena>
@@ -406,8 +407,8 @@ function CornezueloShot() {
       <Etq T={T} at={K.Cul + 0.4} until={K.M - 0.3} x={800} y={1100} texto="cebada" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Cul + 2.0} until={K.M - 0.3} x={60} y={470} texto="avena silvestre" tam={32} color={KC.ink} />
       <Etq T={T} at={K.Cul + 2.3} until={K.M - 0.3} x={60} y={520} texto="+ cornezuelo" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.M + 1.4} until={K.H - 0.3} texto="migraña · dihidroergotamina" x={470} y={990} tam={32} borde={KC.cyan} />
-      <Chip T={T} at={K.M + 2.4} until={K.H - 0.3} texto="sangrado después del parto · ergometrina" x={500} y={1075} tam={28} borde={KC.cyan} />
+      <Chip T={T} at={K.M + 1.4} until={K.H - 0.3} texto="migraña · dihidroergotamina" x={540} y={1090} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={K.M + 2.4} until={K.H - 0.3} texto="sangrado después del parto · ergometrina" x={540} y={1175} tam={28} borde={KC.cyan} />
       <Chip T={T} at={K.H + 0.2} until={K.Mo - 0.3} texto="1938 · Albert Hofmann" x={330} y={470} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.H + 1.2} until={K.Mo - 0.3} x={1040} y={1110} texto="ácido lisérgico → LSD (esquema)" lado="izq" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Mo + 0.6} until={K.C - 0.3} texto="UE: límite de cornezuelo en el grano" x={640} y={470} tam={30} borde={KC.ink} />

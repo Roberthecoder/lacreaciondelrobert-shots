@@ -36,13 +36,13 @@ function Larva({ x, y, s = 1, rot = 0, T = 0, seed = 1 }) {
 // Vaca de lado (macro). herida = muestra la herida en el lomo.
 function Vaca({ x, y, s = 1, T = 0, herida = 0, triste = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-300} y={-160} width={560} height={300} rx={140} fill="#fff" stroke={KC.ink} strokeWidth={10} />
-    <path d="M -180 -150 Q -120 -60 -200 40 Q -260 -20 -240 -120 Z" fill={KC.ink} /><path d="M 60 -40 Q 160 -80 180 40 Q 100 90 40 40 Z" fill={KC.ink} />
-    {[-220, -120, 120, 200].map((lx, i) => <rect key={i} x={lx} y={110} width={46} height={190} rx={18} fill="#fff" stroke={KC.ink} strokeWidth={9} />)}
+    <rect x={-300} y={-160} width={560} height={300} rx={140} fill="#e9ecf2" stroke={KC.ink} strokeWidth={10} />
+    <path d="M -180 -150 Q -120 -60 -200 40 Q -260 -20 -240 -120 Z" fill="#1a2030" /><path d="M 60 -40 Q 160 -80 180 40 Q 100 90 40 40 Z" fill="#1a2030" />
+    {[-220, -120, 120, 200].map((lx, i) => <rect key={i} x={lx} y={110} width={46} height={190} rx={18} fill="#e9ecf2" stroke={KC.ink} strokeWidth={9} />)}
     <g transform={`translate(300 -120) rotate(${triste * 25 + mece(T, 2, 0.3) * 3})`}>
-      <rect x={-20} y={-60} width={180} height={150} rx={60} fill="#fff" stroke={KC.ink} strokeWidth={10} />
+      <rect x={-20} y={-60} width={180} height={150} rx={60} fill="#e9ecf2" stroke={KC.ink} strokeWidth={10} />
       <rect x={90} y={0} width={90} height={80} rx={34} fill="#f6a6b2" stroke={KC.ink} strokeWidth={8} />
-      <circle cx={60} cy={-6} r={12} fill={KC.ink} /><path d="M 0 -60 l -40 -40 M 40 -60 l 10 -50" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
+      <circle cx={60} cy={-6} r={12} fill="#0b1020" /><path d="M 0 -60 l -40 -40 M 40 -60 l 10 -50" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
     </g>
     <path d={`M -300 -40 q -60 ${40 + mece(T, 1, 0.4) * 20} -40 140`} stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" />
     {herida > 0 && <g opacity={herida}><ellipse cx={-30} cy={-150} rx={46} ry={20} fill="#b8323a" stroke={KC.ink} strokeWidth={5} /><ellipse cx={-30} cy={-152} rx={26} ry={9} fill="#6e1218" /></g>}
@@ -53,8 +53,8 @@ function Pasto({ T }) {
     <div style={{ position:'absolute', inset:0, background:'linear-gradient(#314857, #074257 55%)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       <circle cx={170} cy={360} r={80} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
-      <rect x={0} y={1180} width={KW} height={740} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} />
-      <path d="M 0 1180 Q 270 1150 540 1180 T 1080 1180" fill={KC.leaf} stroke={KC.ink} strokeWidth={8} />
+      <rect x={0} y={1180} width={KW} height={740} fill={cineMix(KC.leaf, CINE.fondo, 0.8)} />
+      <path d="M 0 1180 Q 270 1150 540 1180 T 1080 1180" fill={cineMix(KC.leaf, CINE.fondo, 0.6)} stroke={cineMix(KC.leaf, CINE.fondo, 0.2)} strokeWidth={5} />
       {Array.from({ length: 16 }, (_, i) => <path key={i} d={`M ${30 + i * 68} 1300 l 10 -28 l 10 28`} stroke="#2a9a3c" strokeWidth={6} fill="none" />)}
     </svg>
   </>;
@@ -93,57 +93,59 @@ function BarrenadorNarrado() {
   // barrera: de la frontera de EE. UU. (1966) hasta Panamá; latitud del frente
   const frente = klerp(32.5, 8.5, kprog(T, K.B + 1.2, K.Ch - 0.4, kEase.suave));
   const sube = kprog(T, K.Ch + 0.4, K.Ch + 3.6, kEase.suave);     // la plaga avanza de Panamá a Chiapas
-  const mapa = (children) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><MapaMexico x={40} y={500} ancho={1000}>{children}</MapaMexico></svg>;
+  const mapa = (children) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><MapaMexico x={40} y={640} ancho={1000}>{children}</MapaMexico></svg>;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* gancho: la mosca llega volando a la vaca (acción desde 0.05 s) */}
       <Escena T={T} a={K.G} b={K.Mu} zoom={0.04}>
         <Pasto T={T} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><g transform="translate(435 960) scale(1.25) translate(-560 -930)">
           <Vaca x={500} y={1000} s={1.15} T={T} herida={1} />
           <Mosca x={klerp(-100, 470, llega) + (1 - llega) * Math.sin(T * 9) * 60} y={klerp(380, 805, llega)} s={klerp(2.6, 1.0, llega)} rot={klerp(-60, 10, llega)} T={T} alas={1 - kprog(T, K.G + 1.0, K.G + 1.2)} />
           {/* huevos: cientos, en capas como tejas a la orilla de la herida */}
           {T > K.H + 0.5 && Array.from({ length: 60 }, (_, i) => { const at = K.H + 0.5 + i * 0.03; if (T < at) return null; return <ellipse key={i} cx={420 + (i % 12) * 7} cy={828 - Math.floor(i / 12) * 5} rx={4} ry={9} transform={`rotate(-30 ${420 + (i % 12) * 7} ${828 - Math.floor(i / 12) * 5})`} fill="#fffbe8" stroke={KC.ink} strokeWidth={1.5} />; })}
-        </svg>
+        </g></svg>
       </Escena>
       <Escena T={T} a={K.Mu} b={K.Ma}>
         <FondoLunares color={KC.yellow} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Vaca x={480} y={1000} s={1.0} T={T} herida={1} triste={kprog(T, K.Mu + 0.5, K.Mu + 2.5)} /></svg>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Vaca x={450} y={1080} s={1.2} T={T} herida={1} triste={kprog(T, K.Mu + 0.5, K.Mu + 2.5)} /></svg>
       </Escena>
       <Escena T={T} a={K.Ma} b={K.P}>
         <FondoLunares color={KC.mint} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {/* planta: charolas de pupas bajo radiación y luego la avioneta */}
-          {T < K.P + 0.5 && <g opacity={1 - 0.65 * kprog(T, K.F + 2.2, K.F + 2.8)}>
+          {T < K.P + 0.5 && <g opacity={1 - 0.65 * kprog(T, K.F + 2.2, K.F + 2.8)} transform="translate(540 980) scale(1.4) translate(-540 -910)">
             {[0, 1, 2].map((r) => <g key={r} transform={`translate(540 ${760 + r * 150})`}><rect x={-330} y={-40} width={660} height={80} rx={14} fill="#c3cbd3" stroke={KC.ink} strokeWidth={7} />
               {Array.from({ length: 18 }, (_, i) => <ellipse key={i} cx={-300 + i * 35} cy={0} rx={13} ry={22} fill="#7a4a22" stroke={KC.ink} strokeWidth={3} />)}</g>)}
             {T > K.F + 0.8 && <g opacity={0.6 + 0.4 * Math.sin(T * 20)}>{[-260, -90, 90, 260].map((dx) => <path key={dx} d={`M ${540 + dx} 600 l -20 60 l 26 0 l -20 70`} stroke={KC.yellow} strokeWidth={9} fill="none" strokeLinejoin="round" />)}</g>}
           </g>}
-          {T > K.F + 2.2 && <Avioneta T={T} p={kprog(T, K.F + 2.3, K.P + 0.4)} y={620} />}
-          {T < K.F && <g transform="translate(540 900)">{Array.from({ length: 12 }, (_, i) => <Mosca key={i} x={(i % 4 - 1.5) * 150 + mece(T, i, 0.4) * 20} y={(Math.floor(i / 4) - 1) * 150} s={0.7} rot={mece(T, i, 0.2) * 50} T={T} esteril seed={i} />)}</g>}
+          {T > K.F + 2.2 && <g transform="translate(540 520) scale(1.5) translate(-540 -620)"><Avioneta T={T} p={kprog(T, K.F + 2.3, K.P + 0.4)} y={620} /></g>}
+          {T < K.F && <g transform="translate(540 980)">{Array.from({ length: 12 }, (_, i) => <Mosca key={i} x={(i % 4 - 1.5) * 230 + mece(T, i, 0.4) * 20} y={(Math.floor(i / 4) - 1) * 240} s={1.2} rot={mece(T, i, 0.2) * 50} T={T} esteril seed={i} />)}</g>}
         </svg>
       </Escena>
       <Escena T={T} a={K.P} b={K.U} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{Array.from({ length: 20 }, (_, i) => <Mosca key={i} x={150 + (i * 197) % 800} y={650 + (i * 131) % 500} s={0.55} rot={T * 60 + i * 40} T={T} esteril={i % 3 !== 0} seed={i} />)}</svg>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{Array.from({ length: 20 }, (_, i) => <Mosca key={i} x={130 + (i * 197) % 820} y={480 + (i * 131) % 880} s={0.85} rot={T * 60 + i * 40} T={T} esteril={i % 3 !== 0} seed={i} />)}</svg>
       </Escena>
       {/* la hembra se aparea una sola vez */}
       <Escena T={T} a={K.U} b={K.E}>
         <FondoLunares color={KC.pink} punto="rgba(255,255,255,.22)" />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Mosca x={330} y={800} s={2.2} rot={20} T={T} seed={1} alas={0.2} />
-          <Mosca x={klerp(900, 760, kprog(T, K.U + 0.4, K.U + 1.4))} y={800} s={2.2} rot={-20} T={T} esteril seed={2} alas={0.2} />
-          <path d="M 540 640 c -30 -40 -90 -10 -60 40 l 60 60 l 60 -60 c 30 -50 -30 -80 -60 -40 Z" fill={KC.red} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.U + 1.3, K.U + 1.6)} transform={`translate(0 ${-20 * Math.abs(Math.sin(T * 4))})`} />
-          {T > K.U + 2.8 && Array.from({ length: 12 }, (_, i) => <g key={i} transform={`translate(${300 + (i % 6) * 95} ${1080 + Math.floor(i / 6) * 70})`}><ellipse rx={12} ry={24} fill="#fffbe8" stroke={KC.ink} strokeWidth={3} transform="rotate(-20)" />{T > K.U + 3.6 && <path d="M -16 -16 L 16 16 M 16 -16 L -16 16" stroke={KC.red} strokeWidth={6} strokeLinecap="round" />}</g>)}
+          <Mosca x={300} y={860} s={2.8} rot={20} T={T} seed={1} alas={0.2} />
+          <Mosca x={klerp(960, 780, kprog(T, K.U + 0.4, K.U + 1.4))} y={860} s={2.8} rot={-20} T={T} esteril seed={2} alas={0.2} />
+          <g transform="translate(540 655) scale(1.4) translate(-540 -690)"><path d="M 540 640 c -30 -40 -90 -10 -60 40 l 60 60 l 60 -60 c 30 -50 -30 -80 -60 -40 Z" fill={KC.red} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.U + 1.3, K.U + 1.6)} transform={`translate(0 ${-20 * Math.abs(Math.sin(T * 4))})`} /></g>
+          {T > K.U + 2.8 && Array.from({ length: 12 }, (_, i) => <g key={i} transform={`translate(${250 + (i % 6) * 116} ${1235 + Math.floor(i / 6) * 110}) scale(1.6)`}><ellipse rx={12} ry={24} fill="#fffbe8" stroke={KC.ink} strokeWidth={3} transform="rotate(-20)" />{T > K.U + 3.6 && <path d="M -16 -16 L 16 16 M 16 -16 L -16 16" stroke={KC.red} strokeWidth={6} strokeLinecap="round" />}</g>)}
         </svg>
       </Escena>
       {/* Curazao 1954 */}
       <Escena T={T} a={K.E} b={K.B}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#283e57, #142c57)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          <g transform="translate(540 1060) scale(1.12) translate(-540 -940)">
           <path d="M 180 1000 C 260 900 420 920 560 860 C 700 800 880 760 920 820 C 960 880 820 940 700 980 C 560 1030 400 1100 260 1110 C 170 1115 130 1060 180 1000 Z" fill="#f1d08a" stroke={KC.ink} strokeWidth={9} />
-          {Array.from({ length: 24 }, (_, i) => { const viva = i / 24 > kprog(T, K.E + 2.8, K.B - 0.4); return viva ? <Mosca key={i} x={260 + (i * 97) % 600} y={900 + (i * 53) % 160} s={0.42} rot={T * 80 + i * 30} T={T} seed={i} /> : null; })}
-          {T > K.E + 1.8 && <Avioneta T={T} p={kprog(T, K.E + 1.8, K.B)} y={640} />}
+          {Array.from({ length: 24 }, (_, i) => { const viva = i / 24 > kprog(T, K.E + 2.8, K.B - 0.4); return viva ? <Mosca key={i} x={260 + (i * 97) % 600} y={900 + (i * 53) % 160} s={0.55} rot={T * 80 + i * 30} T={T} seed={i} /> : null; })}
+          </g>
+          {T > K.E + 1.8 && <g transform="translate(540 560) scale(1.4) translate(-540 -640)"><Avioneta T={T} p={kprog(T, K.E + 1.8, K.B)} y={640} /></g>}
         </svg>
       </Escena>
       {/* mapa: barrera que baja hasta Panamá, la plaga que sube a Chiapas y la planta de Metapa */}
@@ -165,28 +167,28 @@ function BarrenadorNarrado() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.03}>
         <Pasto T={T} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Vaca x={500} y={1000} s={1.15} T={T} />
-          <Avioneta T={T} p={kprog(T, K.C, K.Ou + 2)} y={480} />
+          <g transform="translate(435 960) scale(1.25) translate(-560 -930)"><Vaca x={500} y={1000} s={1.15} T={T} /></g>
+          <g transform="translate(540 440) scale(1.4) translate(-540 -480)"><Avioneta T={T} p={kprog(T, K.C, K.Ou + 2)} y={480} /></g>
         </svg>
       </Escena>
 
       {/* lupa de rayos X: los gusanos barrenando dentro de la herida */}
-      <Lupa T={T} at={K.H + 2.2} until={K.Mu - 0.3} x={760} y={560} r={210} fx={460} fy={830} tinte={KC.red} etiqueta="POR DENTRO · larvas"
+      <Lupa T={T} at={K.H + 2.2} until={K.Mu - 0.3} x={655} y={565} r={235} fx={312} fy={835} tinte={KC.red} etiqueta="POR DENTRO · larvas"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#5a1a1e" />{Array.from({ length: 30 }, (_, i) => <circle key={i} cx={(i * 71) % (r * 2)} cy={(i * 43) % (r * 2)} r={18} fill="#7a2a2e" />)}
-          {Array.from({ length: 7 }, (_, i) => <Larva key={i} x={60 + (i % 3) * 120 + Math.sin(t + i) * 8} y={60 + (i * 0.33 % 1) * 40 + ((t - K.H) * 22 + i * 50) % (r * 1.7)} s={0.9} rot={90 + mece(t, i, 0.3) * 20} T={t} seed={i} />)}</svg>} />
-      {T < K.Mu - 0.3 && <Escala T={T} z={1} pxPorMm={9} y={1460} />}
-      <Etq T={T} at={K.G + 1.4} until={K.H - 0.2} x={90} y={560} texto="Cochliomyia hominivorax" it tam={30} />
-      <Chip T={T} at={K.H + 0.6} until={K.Mu - 0.3} texto="cientos de huevos" y={420} tam={42} borde={KC.red} />
-      {T < K.Ma - 0.2 && <Contador T={T} at={K.Mu + 0.4} desde={0} hasta={10} dur={2.2} sufijo=" días" x={540} y={460} tam={90} color={KC.red} />}
-      <Chip T={T} at={K.Mu + 2.6} until={K.Ma - 0.3} texto="también perros y personas" y={700} tam={40} borde={KC.red} />
-      <MitoTachado T={T} at={K.Ma + 0.2} tacharEn={K.Ma + 1.2} until={K.F - 0.2} texto="solo veneno" y={480} tam={70} />
-      <Chip T={T} at={K.Ma + 1.6} until={K.F - 0.2} texto="+ moscas estériles" y={620} tam={44} borde={KC.leaf} />
+          {Array.from({ length: 7 }, (_, i) => <Larva key={i} x={70 + (i % 3) * 145 + Math.sin(t + i) * 8} y={60 + (i * 0.33 % 1) * 40 + ((t - K.H) * 22 + i * 50) % (r * 1.7)} s={1.1} rot={90 + mece(t, i, 0.3) * 20} T={t} seed={i} />)}</svg>} />
+      {T < K.Mu - 0.3 && <Escala T={T} z={1.25} pxPorMm={9} y={1460} />}
+      <Etq T={T} at={K.G + 1.4} until={K.H - 0.2} x={90} y={520} texto="Cochliomyia hominivorax" it tam={30} />
+      <Chip T={T} at={K.H + 0.6} until={K.Mu - 0.3} texto="cientos de huevos" x={215} y={430} tam={36} borde={KC.red} />
+      {T < K.Ma - 0.2 && <Contador T={T} at={K.Mu + 0.4} desde={0} hasta={10} dur={2.2} sufijo=" días" x={540} y={480} tam={90} color={KC.red} />}
+      <Chip T={T} at={K.Mu + 2.6} until={K.Ma - 0.3} texto="también perros y personas" y={640} tam={40} borde={KC.red} />
+      <MitoTachado T={T} at={K.Ma + 0.2} tacharEn={K.Ma + 1.2} until={K.F - 0.2} texto="solo veneno" y={400} tam={70} />
+      <Chip T={T} at={K.Ma + 1.6} until={K.F - 0.2} texto="+ moscas estériles" y={520} tam={44} borde={KC.leaf} />
       <Chip T={T} at={K.F + 0.2} until={K.F + 2.3} texto="planta · radiación" y={420} tam={42} mono />
-      <Etq T={T} at={K.F + 0.5} until={K.F + 2.2} x={120} y={1030} texto="pupas" color={KC.ink} />
+      <Etq T={T} at={K.F + 0.5} until={K.F + 2.2} x={110} y={1320} texto="pupas" color={KC.ink} />
       <Chip T={T} at={K.U + 0.3} until={K.E - 0.3} texto="se aparea 1 sola vez" y={420} tam={46} borde={KC.red} />
-      <Etq T={T} at={K.U + 0.8} until={K.E - 0.3} x={200} y={1000} texto="hembra silvestre" color={KC.ink} />
-      <Etq T={T} at={K.U + 1.2} until={K.E - 0.3} x={680} y={590} texto="macho estéril" color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="1954" quien="Curazao · USDA" revista="Knipling y Bushland · técnica del insecto estéril" y={600} />
+      <Etq T={T} at={K.U + 0.8} until={K.E - 0.3} x={90} y={1125} texto="hembra silvestre" color={KC.ink} />
+      <Etq T={T} at={K.U + 1.2} until={K.E - 0.3} x={650} y={640} texto="macho estéril" color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="1954" quien="Curazao · USDA" revista="Knipling y Bushland · técnica del insecto estéril" y={420} />
       <Chip T={T} at={K.E + 2.8} until={K.B - 0.3} texto="en unos meses: 0 moscas" y={1480} tam={44} borde={KC.leaf} />
       <Chip T={T} at={K.Me + 1.2} until={K.C - 0.3} texto="meta: 100 millones de moscas por semana" y={1480} tam={36} borde={KC.yellow} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="no es la plaga: es la cura" y={1480} tam={46} borde={KC.leaf} />

@@ -114,7 +114,7 @@ function Tejido({ T, cx = 540, cy = 860, cols = 6, rows = 7, r = 92, infla = 1, 
       const wob = (1 - infla) * 0.9;
       const mem = 1 - kclamp(rompe * 1.6 - c.f * 0.6, 0, 1);
       return <g key={k}>
-        <polygon points={hex(x, y, rr, wob, c.f)} fill={mixHex(CITO, '#e3a35a', 1 - infla)} fillOpacity={0.9} stroke="#fff5d6" strokeWidth={7} strokeLinejoin="round" />
+        <polygon points={hex(x, y, rr, wob, c.f)} fill={mixHex(CITO, '#e3a35a', 1 - infla)} fillOpacity={0.62} stroke="#fff5d6" strokeWidth={7} strokeLinejoin="round" />
         <polygon points={hex(x, y, rr * 0.86, wob, c.f)} fill="none" stroke="#7fd3ff" strokeWidth={4} strokeDasharray="12 8" opacity={mem} />
         <ellipse cx={x - rr * 0.25} cy={y - rr * 0.3} rx={rr * 0.3 * (0.6 + 0.4 * infla)} ry={rr * 0.15} fill="#fff" opacity={0.35 * infla} />
         <circle cx={x + rr * 0.3} cy={y + rr * 0.25} r={rr * 0.12} fill="#c98a3a" opacity=".7" />
@@ -137,8 +137,8 @@ function LaminaMedia({ T, x = 540, y = 880, alto = 760, corta = 0, abre = 0 }) {
   });
   return <g>
     {/* paredes de las dos células */}
-    <path d={`M ${x - sep} ${y - alto / 2} Q ${x - sep - 30} ${y} ${x - sep} ${y + alto / 2} L ${x - sep - 520} ${y + alto / 2} L ${x - sep - 520} ${y - alto / 2} Z`} fill={CITO} fillOpacity=".85" stroke="#fff5d6" strokeWidth={14} />
-    <path d={`M ${x + sep} ${y - alto / 2} Q ${x + sep + 30} ${y} ${x + sep} ${y + alto / 2} L ${x + sep + 520} ${y + alto / 2} L ${x + sep + 520} ${y - alto / 2} Z`} fill={CITO} fillOpacity=".85" stroke="#fff5d6" strokeWidth={14} />
+    <path d={`M ${x - sep} ${y - alto / 2} Q ${x - sep - 30} ${y} ${x - sep} ${y + alto / 2} L ${x - sep - 520} ${y + alto / 2} L ${x - sep - 520} ${y - alto / 2} Z`} fill={CITO} fillOpacity=".68" stroke="#fff5d6" strokeWidth={14} />
+    <path d={`M ${x + sep} ${y - alto / 2} Q ${x + sep + 30} ${y} ${x + sep} ${y + alto / 2} L ${x + sep + 520} ${y + alto / 2} L ${x + sep + 520} ${y - alto / 2} Z`} fill={CITO} fillOpacity=".68" stroke="#fff5d6" strokeWidth={14} />
     <rect x={x - sep + 8} y={y - alto / 2} width={(sep - 8) * 2} height={alto} fill={ORO} opacity={0.22 * (1 - corta)} />
     {chains.map((b, i) => <g key={i}>
       {b.map((p, k) => k < b.length - 1 && !(corta > 0.05 && (k === 2 || k === 5)) ? <line key={'s' + k} x1={p.x} y1={p.y} x2={b[k + 1].x} y2={b[k + 1].y} stroke="#c98a1e" strokeWidth={6} /> : null)}
@@ -233,7 +233,7 @@ function Ponche() {
   const svg = (c, z = 10) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{c}</svg>;
   // gancho: el cucharón saca un tejocote y lo aprieta
   const saca = kprog(T, K.G + 0.2, K.G + 1.1, kEase.suave), aprieta = kprog(T, K.G + 1.9, K.G + 2.6, kEase.sale);
-  const OLLA = (sacaU, apr, tej = true) => <g>
+  const OLLA = (sacaU, apr, tej = true, k = 1.32, cy = 900) => <g transform={`translate(540 ${cy}) scale(${k}) translate(-560 -820)`}>
     <Olla T={T} x={560} y={820} s={1.05}><FrutasPonche T={T} sin={1} /></Olla>
     <Cucharon x={klerp(470, 400, sacaU)} y={klerp(830, 600, sacaU)} rot={klerp(10, 24, sacaU)} izq>
       {tej && <Tejocote x={0} y={-30} r={56} id="gt" suave={0.7} aplasta={apr} />}
@@ -250,16 +250,16 @@ function Ponche() {
       {/* 2 · crudo: células infladas y pegadas */}
       <Escena T={T} a={K.Fi} b={K.Me}>
         <FondoLunares color={KC.mint} />
-        {svg(<Tejocote x={330} y={klerp(-200, 960, kprog(T, K.Fi, K.Fi + 0.6, kEase.rebote))} r={170} id="fi" rot={Math.sin(T * 2) * 4} />)}
-        <Lupa T={T} at={K.Fi + 1.2} until={K.Me - 0.2} x={760} y={740} r={230} fx={360} fy={990} tinte={KC.yellow} etiqueta="POR DENTRO · crudo"
-          interior={(Tl, r) => <svg width={r * 2} height={r * 2}><g transform={`translate(${r} ${r}) scale(.55) translate(-540 -860)`}><Tejido T={Tl} /></g></svg>} />
+        {svg(<Tejocote x={300} y={klerp(-260, 1100, kprog(T, K.Fi - 0.2, K.Fi + 0.4, kEase.rebote))} r={235} id="fi" rot={Math.sin(T * 2) * 4} />)}
+        <Lupa T={T} at={K.Fi + 1.2} until={K.Me - 0.2} x={720} y={650} r={255} fx={350} fy={1120} tinte={KC.yellow} etiqueta="POR DENTRO · crudo"
+          interior={(Tl, r) => <svg width={r * 2} height={r * 2}><g transform={`translate(${r} ${r}) scale(.61) translate(-540 -860)`}><Tejido T={Tl} /></g></svg>} />
       </Escena>
       {/* 3 · al hervir: se rompen las membranas, sale el agua y lo disuelto */}
       <Escena T={T} a={K.Me} b={K.Pg} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={24} color="rgba(255,200,120,.18)" />
         {svg((() => { const temp = klerp(20, 96, kprog(T, K.Me + 0.2, K.Me + 1.6, kEase.suave)), rompe = kprog(T, K.Me + 1.6, K.Me + 3.2), infla = 1 - kprog(T, K.Me + 2.4, K.Me + 4.6, kEase.suave);
-          return <g><Tejido T={T} rompe={rompe} fuga={kprog(T, K.Me + 1.8, K.Me + 2.4)} infla={infla} /><Termo x={960} y={1700} temp={temp} /></g>; })())}
+          return <g><Tejido T={T} rompe={rompe} fuga={kprog(T, K.Me + 1.8, K.Me + 2.4)} infla={infla} /><g transform="translate(905 1420) scale(0.85)"><rect x={-58} y={-352} width={196} height={458} rx={40} fill="rgba(9,13,26,.78)" /><Termo x={0} y={0} temp={temp} /></g></g>; })())}
       </Escena>
       {/* 4 · el pegamento entre célula y célula: la lámina media, rica en pectina */}
       <Escena T={T} a={K.Pg} b={K.P} zoom={0.04}>
@@ -291,10 +291,10 @@ function Ponche() {
         <FondoLunares color={KC.pink} />
         {svg((() => { const cu = kprog(T, K.Pc + 3.0, K.Pc + 4.6, kEase.suave);
           return <g>
-            <Tejocote x={300} y={940} r={150} id="pc" rot={Math.sin(T * 2) * 5} />
-            {Array.from({ length: 10 }, (_, i) => { const u = kprog(T, K.Pc + 2.0 + i * 0.08, K.Pc + 3.0 + i * 0.08, kEase.suave); return u > 0 && u < 1 ? <circle key={i} cx={klerp(380, 700 + (i % 2) * 220, u)} cy={klerp(940, 900, u) - Math.sin(u * Math.PI) * 160} r={12} fill={ORO} stroke="#8a5a10" strokeWidth={3} /> : null; })}
-            <Frasco T={T} x={720} y={1000} color="#d8342c" cuaja={cu} etiqueta="JALEA" />
-            <Frasco T={T} x={940} y={1000} color="#f08a1c" cuaja={cu} etiqueta="MERMELADA" />
+            <Tejocote x={235} y={930} r={190} id="pc" rot={Math.sin(T * 2) * 5} />
+            {Array.from({ length: 10 }, (_, i) => { const u = kprog(T, K.Pc + 2.0 + i * 0.08, K.Pc + 3.0 + i * 0.08, kEase.suave); return u > 0 && u < 1 ? <circle key={i} cx={klerp(400, 640 + (i % 2) * 250, u)} cy={klerp(930, 820, u) - Math.sin(u * Math.PI) * 180} r={15} fill={ORO} stroke="#8a5a10" strokeWidth={3} /> : null; })}
+            <g transform="translate(640 1010) scale(1.18)"><Frasco T={T} x={0} y={0} color="#d8342c" cuaja={cu} etiqueta="JALEA" /></g>
+            <g transform="translate(890 1010) scale(1.18)"><Frasco T={T} x={0} y={0} color="#f08a1c" cuaja={cu} etiqueta="MERMELADA" /></g>
           </g>; })())}
       </Escena>
       {/* 8 · nativo de México; fruto en noviembre y diciembre */}
@@ -302,18 +302,18 @@ function Ponche() {
         <FondoLunares color={KC.cyan} />
         {svg((() => { const eje = kprog(T, K.Na + 0.6, K.Na + 1.6), ej = [[-105.2, 20.6], [-103.4, 19.7], [-101.5, 19.6], [-99.6, 19.2], [-97.9, 19.1], [-96.6, 19.3]].map(([lo, la]) => mxProy(lo, la));
           return <g>
-            <MapaMexico x={40} y={430} ancho={860} conCA={false}>
+            <MapaMexico x={30} y={420} ancho={980} conCA={false}>
               <path d={ej.map((p, i) => `${i ? 'L' : 'M'} ${p[0]} ${p[1]}`).join(' ')} stroke={KC.leaf} strokeWidth={46} strokeLinecap="round" strokeLinejoin="round" fill="none" opacity={0.85 * eje} strokeDasharray={`${eje * 1400} 3000`} />
             </MapaMexico>
-            <g opacity={kprog(T, K.Na + 1.8, K.Na + 2.4)}><Arbol T={T} x={260} y={1180} s={0.8} frutos={kprog(T, K.Na + 2.0, K.Na + 3.4)} /></g>
-            <g opacity={kprog(T, K.Na + 3.4, K.Na + 4.0)}><Pinata T={T} x={830} y={980} s={0.75} /></g>
+            <g opacity={kprog(T, K.Na + 1.8, K.Na + 2.4)}><Arbol T={T} x={340} y={1400} s={1.0} frutos={kprog(T, K.Na + 2.0, K.Na + 3.4)} /></g>
+            <g opacity={kprog(T, K.Na + 3.4, K.Na + 4.0)}><Pinata T={T} x={800} y={1230} s={0.95} /></g>
           </g>; })())}
       </Escena>
       {/* 9 · el estudio: Chapingo, 2016 — pectina de tejocote + cera de candelilla = capa comestible para setas */}
       <Escena T={T} a={K.E} b={K.Se}>
         <FondoLunares color={KC.yellow} />
         {svg((() => { const mez = kprog(T, K.E + 2.6, K.E + 3.8), brocha = kprog(T, K.E + 4.2, K.E + 6.4);
-          return <g>
+          return <g transform="translate(540 1010) scale(1.08) translate(-570 -1000)">
             <g transform="translate(300 1000)">
               <path d="M -130 -170 L 130 -170 L 110 170 Q 0 186 -110 170 Z" fill="rgba(255,255,255,.5)" stroke={KC.ink} strokeWidth={7} />
               <path d={`M -122 ${klerp(60, -40, mez)} L 122 ${klerp(60, -40, mez)} L 110 170 Q 0 186 -110 170 Z`} fill={mixHex('#f4e4b0', '#e9d690', mez)} opacity=".9" />
@@ -332,12 +332,12 @@ function Ponche() {
         <FondoLunares color={KC.mint} />
         {svg((() => { const d = kprog(T, K.Se + 0.6, K.Se + 3.6);
           return <g>
-            <rect x={70} y={560} width={940} height={700} rx={40} fill="#eef6fb" stroke={KC.ink} strokeWidth={9} />
-            <rect x={100} y={590} width={880} height={640} rx={26} fill="#d9eef8" />
-            <line x1={540} y1={600} x2={540} y2={1220} stroke="#a9c9da" strokeWidth={6} strokeDasharray="14 12" />
+            <rect x={70} y={560} width={940} height={700} rx={40} fill="#22323e" stroke={KC.ink} strokeWidth={9} />
+            <rect x={100} y={590} width={880} height={640} rx={26} fill="#152430" />
+            <line x1={540} y1={600} x2={540} y2={1220} stroke="#4b6a7c" strokeWidth={6} strokeDasharray="14 12" />
             {[0, 1].map((lado) => <g key={lado}>
-              <rect x={lado ? 590 : 130} y={1060} width={360} height={40} rx={10} fill="#c9ced8" stroke={KC.ink} strokeWidth={5} />
-              {[0, 1, 2].map((k) => <Seta key={k} x={(lado ? 650 : 190) + k * 120} y={990 - (k % 2) * 30} s={0.62} seca={d * (lado ? 0.45 : 1)} capa={lado} rot={k * 12 - 10} />)}
+              <rect x={lado ? 590 : 130} y={1060} width={360} height={40} rx={10} fill="#56626e" stroke={KC.ink} strokeWidth={5} />
+              {[0, 1, 2].map((k) => <Seta key={k} x={(lado ? 650 : 190) + k * 120} y={975 - (k % 2) * 40} s={0.8} seca={d * (lado ? 0.45 : 1)} capa={lado} rot={k * 12 - 10} />)}
             </g>)}
             <text x={310} y={700} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>sin capa</text>
             <text x={770} y={700} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>con capa</text>
@@ -348,11 +348,13 @@ function Ponche() {
         <FondoLunares color={KC.lilac} />
         {svg((() => { const vol = kprog(T, K.Da + 2.4, K.Da + 3.2, kEase.suave);
           return <g>
+            <g transform="translate(400 1010) scale(1.3) translate(-420 -1000)">
             <FrascoCapsulas T={T} x={420} y={1000} voltea={vol} />
             <g opacity={kprog(T, K.Da + 3.0, K.Da + 3.6)}><Adelfa T={T} x={420} y={1020} s={1.1} /></g>
-            <g opacity={kprog(T, K.Da + 4.2, K.Da + 4.6)} transform={`translate(830 ${780}) rotate(${-8 + Math.sin(T * 2) * 2})`}>
+            </g>
+            <g opacity={kprog(T, K.Da + 4.2, K.Da + 4.6)} transform={`translate(880 ${700}) rotate(${-8 + Math.sin(T * 2) * 2}) scale(1.15)`}>
               <path d="M 0 -120 L 110 80 L -110 80 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
-              <text x={0} y={60} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.ink}>!</text>
+              <text x={0} y={60} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill="#0b1020">!</text>
             </g>
           </g>; })())}
       </Escena>
@@ -360,45 +362,45 @@ function Ponche() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <PapelPicado T={T} />
-        {svg(OLLA(1, 1))}
-        <Lupa T={T} at={K.Ci + 1.0} until={K.Ou - 0.2} x={800} y={1590} r={190} fx={400} fy={570} tinte={KC.yellow} etiqueta="POR DENTRO · sin pegamento"
+        {svg(OLLA(1, 1, true, 1.15, 800))}
+        <Lupa T={T} at={K.Ci + 1.0} until={K.Ou - 0.2} x={720} y={1290} r={185} fx={356} fy={512} tinte={KC.yellow} etiqueta="POR DENTRO · sin pegamento"
           interior={(Tl, r) => <svg width={r * 2} height={r * 2}><g transform={`translate(${r} ${r}) scale(.45) translate(-540 -860)`}><Tejido T={Tl} infla={0.3} rompe={1} separa={1} /></g></svg>} />
       </Escena>
 
       <Capitulo T={T} x={190} y={210} hasta={K.Ou} caps={[{ at: K.Fi, titulo: 'Crudo' }, { at: K.Me, titulo: 'El hervor' }, { at: K.Pc, titulo: 'La pectina' }, { at: K.E, titulo: 'El estudio' }]} />
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.2} until={K.Fi - 0.2} texto="Especial Posadas" x={540} y={1700} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.G + 0.2} until={K.Fi - 0.2} texto="Especial Posadas" x={700} y={330} tam={40} borde={KC.yellow} />
       <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.0} until={K.G + 2.8} texto="¿se deshace?" x={540} y={1480} tam={50} />
       <Chip T={T} at={K.G + 2.7} until={K.Fi - 0.3} texto="se despega" x={540} y={1490} tam={52} borde={KC.yellow} />
-      <Etq T={T} at={K.Fi + 0.6} until={K.Fi + 1.3} x={520} y={1080} texto="tejocote crudo" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Fi + 0.8} until={K.Fi + 2.0} x={420} y={790} texto="cáliz seco" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Fi + 2.0} until={K.Me - 0.3} texto="células infladas de agua" x={540} y={1500} tam={40} borde={KC.cyan} />
+      <Etq T={T} at={K.Fi + 0.6} until={K.Fi + 1.3} x={550} y={1180} texto="tejocote crudo" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Fi + 0.8} until={K.Fi + 2.0} x={270} y={872} lado="izq" texto="cáliz seco" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Fi + 2.0} until={K.Me - 0.3} texto="células infladas de agua" x={540} y={1450} tam={44} borde={KC.cyan} />
       {T > K.Me - 0.3 && T < K.P + 0.2 && <Escala T={T} z={1} pxPorMm={2400} x={60} y={1440} />}
-      <Etq T={T} at={K.Me + 0.3} until={K.Me + 2.0} x={60} y={1560} texto="membrana (azul)" tam={32} color="#7fd3ff" />
-      <Etq T={T} at={K.Me + 2.0} until={K.Pg - 0.3} x={60} y={1560} texto="sale el agua y lo disuelto" tam={32} color="#7fd3ff" />
-      <Chip T={T} at={K.Me + 3.6} until={K.Pg - 0.3} texto="se desinflan" x={480} y={1680} tam={46} borde="#7fd3ff" />
+      <Etq T={T} at={K.Me + 0.3} until={K.Me + 2.0} x={60} y={1460} texto="membrana (azul)" tam={34} color="#7fd3ff" />
+      <Etq T={T} at={K.Me + 2.0} until={K.Pg - 0.3} x={60} y={1460} texto="sale el agua y lo disuelto" tam={34} color="#7fd3ff" />
+      <Chip T={T} at={K.Me + 3.6} until={K.Pg - 0.3} texto="se desinflan" x={400} y={1540} tam={46} borde="#7fd3ff" />
       <Etq T={T} at={K.Pg + 1.6} until={K.P - 0.3} x={60} y={480} texto="lámina media" tam={34} color={ORO} />
-      <Chip T={T} at={K.Pg + 2.2} until={K.P - 0.3} texto="pegamento rico en pectina" x={540} y={1560} tam={42} borde={ORO} />
+      <Chip T={T} at={K.Pg + 2.2} until={K.P - 0.3} texto="pegamento rico en pectina" x={540} y={1400} tam={44} borde={ORO} />
       <Etq T={T} at={K.De + 0.6} until={K.De + 2.2} x={60} y={480} texto="la pectina se rompe" tam={32} color={ORO} />
-      <Chip T={T} at={K.De + 3.0} until={K.Pc - 0.3} texto="se despega" x={540} y={1560} tam={52} borde={KC.yellow} />
+      <Chip T={T} at={K.De + 3.0} until={K.Pc - 0.3} texto="se despega" x={540} y={1490} tam={52} borde={KC.yellow} />
       <Medidor T={T} at={K.Pc + 0.6} until={K.Pc + 2.6} x={90} y={1440} ancho={900} etiqueta="pectina" valor={(t) => kprog(t, K.Pc + 0.8, K.Pc + 2.2, kEase.suave)} texto={() => 'alta'} color={ORO} />
-      <Chip T={T} at={K.Pc + 3.2} until={K.Na - 0.3} texto="cuaja jaleas y mermeladas" x={540} y={1560} tam={42} borde={KC.yellow} />
-      <Etq T={T} at={K.Na + 1.2} until={K.E - 0.3} x={600} y={760} texto="Eje Neovolcánico" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Na + 0.3} until={K.E - 0.3} texto="nativo de México" x={540} y={1500} tam={44} borde={KC.leaf} />
-      <Chip T={T} at={K.Na + 3.0} until={K.E - 0.3} texto="fruto: nov – dic" x={540} y={1620} tam={46} borde={KC.pink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2016" quien="U. A. Chapingo · Texcoco" revista="Agrociencia" x={360} y={560} />
-      <Etq T={T} at={K.E + 1.2} until={K.Se - 0.3} x={110} y={1440} texto="pectina + cera de candelilla" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.E + 4.2} until={K.Se - 0.3} x={600} y={900} it texto="Pleurotus ostreatus" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.E + 3.0} until={K.Se - 0.3} texto="capa comestible" x={540} y={1560} tam={46} borde={KC.ink} />
+      <Chip T={T} at={K.Pc + 3.2} until={K.Na - 0.3} texto="cuaja jaleas y mermeladas" x={540} y={1440} tam={46} borde={KC.yellow} />
+      <Etq T={T} at={K.Na + 1.2} until={K.E - 0.3} x={668} y={796} texto="Eje Neovolcánico" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Na + 0.3} until={K.E - 0.3} texto="nativo de México" x={560} y={330} tam={46} borde={KC.leaf} />
+      <Chip T={T} at={K.Na + 3.0} until={K.E - 0.3} texto="fruto: nov – dic" x={540} y={1500} tam={46} borde={KC.pink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2016" quien="U. A. Chapingo · Texcoco" revista="Agrociencia" x={540} y={470} />
+      <Etq T={T} at={K.E + 1.2} until={K.Se - 0.3} x={80} y={1290} texto="pectina + cera de candelilla" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 4.2} until={K.Se - 0.3} x={560} y={880} it texto="Pleurotus ostreatus" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.E + 3.0} until={K.Se - 0.3} texto="capa comestible" x={540} y={1440} tam={48} borde={KC.ink} />
       <Chip T={T} at={K.Se + 0.3} until={K.Da - 0.3} texto={`día ${Math.max(0, Math.min(20, Math.round(kprog(T, K.Se + 0.6, K.Se + 3.6) * 20)))} · 4 °C`} x={540} y={470} tam={44} borde={KC.cyan} mono />
-      <Chip T={T} at={K.Se + 3.8} until={K.Da - 0.3} texto="con capa: pierde menos" x={540} y={1440} tam={44} borde={KC.yellow} />
-      <Etq T={T} at={K.Se + 4.2} until={K.Da - 0.3} x={230} y={1545} texto="2 % pectina + 1 % cera" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Da + 0.4} until={K.Ci - 0.3} texto="FDA · alerta desde 2024" x={540} y={470} tam={40} borde={KC.red} />
-      <Etq T={T} at={K.Da + 3.6} until={K.Ci - 0.3} x={600} y={1110} texto="adelfa amarilla" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Da + 3.9} until={K.Ci - 0.3} x={600} y={1160} it texto="Thevetia peruviana" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Da + 4.8} until={K.Ci - 0.3} texto="no era tejocote: era adelfa" x={540} y={1560} tam={42} borde={KC.yellow} />
-      <Chip T={T} at={K.Ci + 2.8} until={K.Ou} texto="se despega" x={540} y={1490} tam={46} borde={KC.yellow} />
+      <Chip T={T} at={K.Se + 3.8} until={K.Da - 0.3} texto="con capa: pierde menos" x={540} y={1370} tam={46} borde={KC.yellow} />
+      <Etq T={T} at={K.Se + 4.2} until={K.Da - 0.3} x={230} y={1470} texto="2 % pectina + 1 % cera" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Da + 0.4} until={K.Ci - 0.3} texto="FDA · alerta desde 2024" x={540} y={400} tam={42} borde={KC.red} />
+      <Etq T={T} at={K.Da + 3.6} until={K.Ci - 0.3} x={640} y={1160} texto="adelfa amarilla" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Da + 3.9} until={K.Ci - 0.3} x={640} y={1215} it texto="Thevetia peruviana" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Da + 4.8} until={K.Ci - 0.3} texto="no era tejocote: era adelfa" x={540} y={1470} tam={44} borde={KC.yellow} />
+      <Chip T={T} at={K.Ci + 2.8} until={K.Ou} texto="se despega" x={300} y={1400} tam={52} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Fi - 0.1} texto="No se deshace: *se despega.*" />

@@ -84,7 +84,7 @@ function Alga({ x, y, r, brillo = 0 }) {
   </g>;
 }
 function CorteTalo({ T, at, foco = null, azucar = 0, sol = 0 }) {
-  const ap = (k) => kprog(T, at + k * 0.18, at + k * 0.18 + 0.4, kEase.sale);
+  const ap = (k) => kprog(T, at + k * 0.1, at + k * 0.1 + 0.35, kEase.sale); // modo cine: las capas entran seguidas, sin tardarse
   const dim = (capa) => (foco && foco !== capa ? 0.35 : 1);
   const W = CT.x1 - CT.x0;
   return <g>
@@ -118,11 +118,11 @@ function CorteTalo({ T, at, foco = null, azucar = 0, sol = 0 }) {
     {foco && (() => { const b = { cortex: [CT.top, CT.alg], algas: [CT.alg, CT.med], medula: [CT.med, CT.low] }[foco]; return b ? <rect x={CT.x0 - 10} y={b[0] - 6} width={W + 20} height={b[1] - b[0] + 12} rx={14} fill="none" stroke={KC.yellow} strokeWidth={6} strokeDasharray="22 12" strokeDashoffset={-T * 40} /> : null; })()}
     {/* sol que rebota en el córtex */}
     {sol > 0 && <g opacity={sol}>
-      <g transform={`translate(880 470) rotate(${T * 20})`}>{Array.from({ length: 10 }, (_, i) => <line key={i} x1={0} y1={-70} x2={0} y2={-92} stroke={KC.yellow} strokeWidth={9} strokeLinecap="round" transform={`rotate(${i * 36})`} />)}</g>
-      <circle cx={880} cy={470} r={56} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
-      {[0, 1, 2].map((i) => { const u = ((T * 0.8 + i / 3) % 1); const xs = 800 - i * 130, xe = xs - 120; const hit = [xs - 60, CT.top - 4];
-        const p = u < 0.5 ? [klerp(xs, hit[0], u * 2), klerp(520, hit[1], u * 2)] : [klerp(hit[0], xe, (u - 0.5) * 2), klerp(hit[1], 560, (u - 0.5) * 2)];
-        return <g key={i}><path d={`M ${xs} 520 L ${hit[0]} ${hit[1]} L ${xe} 560`} stroke={KC.yellow} strokeWidth={4} strokeDasharray="10 10" fill="none" opacity=".6" /><circle cx={p[0]} cy={p[1]} r={11} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /></g>; })}
+      <g transform={`translate(830 500) rotate(${T * 20})`}>{Array.from({ length: 10 }, (_, i) => <line key={i} x1={0} y1={-70} x2={0} y2={-92} stroke={KC.yellow} strokeWidth={9} strokeLinecap="round" transform={`rotate(${i * 36})`} />)}</g>
+      <circle cx={830} cy={500} r={56} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
+      {[0, 1].map((i) => { const u = ((T * 0.8 + i / 2) % 1); const xs = 760 - i * 130, xe = xs - 120; const hit = [xs - 60, CT.top - 4];
+        const p = u < 0.5 ? [klerp(xs, hit[0], u * 2), klerp(560, hit[1], u * 2)] : [klerp(hit[0], xe, (u - 0.5) * 2), klerp(hit[1], 590, (u - 0.5) * 2)];
+        return <g key={i}><path d={`M ${xs} 560 L ${hit[0]} ${hit[1]} L ${xe} 590`} stroke={KC.yellow} strokeWidth={4} strokeDasharray="10 10" fill="none" opacity=".6" /><circle cx={p[0]} cy={p[1]} r={11} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /></g>; })}
     </g>}
   </g>;
 }
@@ -171,69 +171,72 @@ function LiquenShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, D: CUES.Donde, Ct: CUES.Corte, Cz: CUES.Corteza, Al: CUES.Algas, Me: CUES.Medula, Tr: CUES.Trato, P: CUES.Pregunta, H: CUES.Historia, E: CUES.Estudio, Cn: CUES.Continentes, Es: CUES.Espacio, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
+  const cty = (y) => 650 + (y - 660) * 1.45; // modo cine: y en pantalla de una altura del corte (agrandado 1.45×)
   const SEC = K.Ct + 1.0; // aparece el corte al microscopio
   const foco = T < K.Cz + 0.2 ? null : T < K.Al ? 'cortex' : T < K.Me ? 'algas' : 'medula';
   const zoomCorte = kprog(T, K.Ct - 0.1, K.Ct + 1.2, kEase.suave);
   const regreso = kprog(T, K.Es + 5.0, K.Es + 6.2, kEase.suave);
-  const LUGARES = [['piedra', 60], ['tronco', 390], ['barda', 720]];
+  const LUGARES = [['piedra', 45], ['tronco', 390], ['barda', 735]];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la piedra con manchas */}
       <Escena T={T} a={K.G} b={K.D} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<Piedra T={T} crece={kprog(T, K.G + 0.05, K.G + 1.4)} respira={1} />)}
+        {/* modo cine: la piedra llena el cuadro de lado a lado, sobre su suelo */}
+        {fsvg(<><path d="M -120 1168 Q 540 1120 1200 1168 L 1200 2000 L -120 2000 Z" fill="#0f1712" stroke="#2b3a30" strokeWidth={6} /><g transform="translate(542 930) scale(1.3) translate(-542 -905)"><Piedra T={T} crece={kprog(T, K.G - 0.3, K.G + 1.0)} respira={1} /></g></>)}
       </Escena>
       {/* 2 · dónde lo ves: piedra, tronco, barda */}
       <Escena T={T} a={K.D} b={K.Ct}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>{LUGARES.map(([nom, x], i) => { const e = kprog(T, K.D + 0.1 + i * 0.7, K.D + 0.6 + i * 0.7, kEase.rebote); if (e <= 0) return null;
-          return <g key={i} transform={`translate(${x + 150} 900) scale(${e}) translate(${-x - 150} -960) translate(0 -20)`}>
-            <clipPath id={`vin${i}`}><rect x={x} y={760} width={300} height={400} rx={28} /></clipPath>
+          return <g key={i} transform={`translate(${x + 150} 960) scale(${e}) translate(${-x - 150} -960)`}>
+            <clipPath id={`vin${i}`}><rect x={x} y={640} width={300} height={640} rx={28} /></clipPath>
             <g clipPath={`url(#vin${i})`}>
-              {i === 0 && <><rect x={x} y={760} width={300} height={400} fill={LQ.roca} /><path d={`M ${x} 900 L ${x + 300} 860 M ${x + 60} 1160 L ${x + 140} 1000`} stroke={LQ.roca2} strokeWidth={6} /></>}
-              {i === 1 && <><rect x={x} y={760} width={300} height={400} fill="#7a5233" />{[0, 1, 2, 3, 4].map((k) => <path key={k} d={`M ${x + 30 + k * 60} 760 q 14 100 -4 200 t 6 200`} stroke="#4f331f" strokeWidth={9} fill="none" />)}</>}
-              {i === 2 && <><rect x={x} y={760} width={300} height={400} fill="#d27a5a" />{[0, 1, 2, 3, 4, 5, 6, 7].map((k) => <g key={k}><line x1={x} y1={760 + k * 52} x2={x + 300} y2={760 + k * 52} stroke="#efe4d2" strokeWidth={8} />{[0, 1, 2].map((j) => <line key={j} x1={x + (k % 2 ? 50 : 0) + j * 100} y1={760 + k * 52} x2={x + (k % 2 ? 50 : 0) + j * 100} y2={812 + k * 52} stroke="#efe4d2" strokeWidth={8} />)}</g>)}</>}
-              <ManchaLiquen x={x + 110} y={920} r={70} tipo={['naranja', 'gris', 'naranja'][i]} seed={20 + i} crece={kprog(T, K.D + 0.3 + i * 0.7, K.D + 1.1 + i * 0.7)} rot={i * 40} />
-              <ManchaLiquen x={x + 200} y={1060} r={52} tipo={['mapa', 'naranja', 'gris'][i]} seed={30 + i} crece={kprog(T, K.D + 0.45 + i * 0.7, K.D + 1.2 + i * 0.7)} />
+              {i === 0 && <><rect x={x} y={640} width={300} height={640} fill={LQ.roca} /><path d={`M ${x} 800 L ${x + 300} 740 M ${x + 60} 1280 L ${x + 150} 1040`} stroke={LQ.roca2} strokeWidth={6} /></>}
+              {i === 1 && <><rect x={x} y={640} width={300} height={640} fill="#7a5233" />{[0, 1, 2, 3, 4].map((k) => <path key={k} d={`M ${x + 30 + k * 60} 640 q 14 160 -4 320 t 6 320`} stroke="#4f331f" strokeWidth={9} fill="none" />)}</>}
+              {i === 2 && <><rect x={x} y={640} width={300} height={640} fill="#b5654a" />{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((k) => <g key={k}><line x1={x} y1={640 + k * 52} x2={x + 300} y2={640 + k * 52} stroke="#d9cdb8" strokeWidth={8} />{[0, 1, 2].map((j) => <line key={j} x1={x + (k % 2 ? 50 : 0) + j * 100} y1={640 + k * 52} x2={x + (k % 2 ? 50 : 0) + j * 100} y2={692 + k * 52} stroke="#d9cdb8" strokeWidth={8} />)}</g>)}</>}
+              <ManchaLiquen x={x + 125} y={850} r={100} tipo={['naranja', 'gris', 'naranja'][i]} seed={20 + i} crece={kprog(T, K.D + 0.3 + i * 0.7, K.D + 1.1 + i * 0.7)} rot={i * 40} />
+              <ManchaLiquen x={x + 185} y={1110} r={76} tipo={['mapa', 'naranja', 'gris'][i]} seed={30 + i} crece={kprog(T, K.D + 0.45 + i * 0.7, K.D + 1.2 + i * 0.7)} />
             </g>
-            <rect x={x} y={760} width={300} height={400} rx={28} fill="none" stroke={KC.ink} strokeWidth={9} />
-            <rect x={x + 60} y={738} width={180} height={52} rx={26} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
-            <text x={x + 150} y={777} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{nom}</text>
+            <rect x={x} y={640} width={300} height={640} rx={28} fill="none" stroke={KC.ink} strokeWidth={9} />
+            <rect x={x + 60} y={614} width={180} height={52} rx={26} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
+            <text x={x + 150} y={653} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{nom}</text>
           </g>; })}</>)}
       </Escena>
       {/* 3 · el corte: la cámara baja a una mancha y la corta */}
       <Escena T={T} a={K.Ct} b={SEC}>
         <FondoLunares color={KC.mint} />
-        <div style={{ position:'absolute', inset:0, transformOrigin:'340px 815px', transform:`scale(${klerp(1, 4.2, zoomCorte)})` }}>
-          {fsvg(<>
+        <div style={{ position:'absolute', inset:0, transformOrigin:'279px 813px', transform:`scale(${klerp(1, 3.23, zoomCorte)})` }}>
+          {fsvg(<><path d="M -120 1168 Q 540 1120 1200 1168 L 1200 2000 L -120 2000 Z" fill="#0f1712" stroke="#2b3a30" strokeWidth={6} /><g transform="translate(542 930) scale(1.3) translate(-542 -905)">
             <Piedra T={T} />
             <path d={`M 250 815 L ${klerp(250, 440, kprog(T, K.Ct + 0.35, K.Ct + 0.85))} 815`} stroke={KC.red} strokeWidth={4} strokeDasharray="10 6" />
             <g transform={`translate(${klerp(240, 445, kprog(T, K.Ct + 0.35, K.Ct + 0.85))} 815)`} opacity={kprog(T, K.Ct + 0.2, K.Ct + 0.35)}>
               <path d="M 0 0 L -16 -50 L 10 -50 Z" fill="#e6e9ee" stroke={KC.ink} strokeWidth={3} /><rect x={-10} y={-100} width={18} height={52} rx={5} fill={KC.ink} />
             </g>
-          </>)}
+          </g></>)}
         </div>
       </Escena>
       {/* 4–6 · por dentro: córtex, algas, médula (fondo oscuro) */}
       <Escena T={T} a={SEC} b={K.Tr} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<CorteTalo T={T} at={SEC} foco={foco} azucar={kprog(T, K.Al + 1.6, K.Al + 2.2) * (1 - kprog(T, K.Me + 0.3, K.Me + 0.8))} sol={kprog(T, K.Cz + 0.8, K.Cz + 1.3) * (1 - kprog(T, K.Al - 0.3, K.Al + 0.2))} />)}
+        {/* modo cine: el corte del talo ocupa el cuadro (1.45×); sigue hacia la derecha fuera de cuadro */}
+        {fsvg(<g transform="translate(232 650) scale(1.45) translate(-330 -660)"><CorteTalo T={T} at={SEC - 0.35} foco={foco} azucar={kprog(T, K.Al + 1.6, K.Al + 2.2) * (1 - kprog(T, K.Me + 0.3, K.Me + 0.8))} sol={kprog(T, K.Cz + 0.8, K.Cz + 1.3) * (1 - kprog(T, K.Al - 0.3, K.Al + 0.2))} /></g>)}
       </Escena>
       {/* 7 · el trato: el hongo pone la casa, el socio la comida */}
       <Escena T={T} a={K.Tr} b={K.P} zoom={0.06}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
-          {(() => { const c = kprog(T, K.Tr + 0.1, K.Tr + 0.9, kEase.sale); return <g>
+        {fsvg(<g transform="translate(540 960) scale(1.4) translate(-540 -860)">
+          {(() => { const c = kprog(T, K.Tr - 0.2, K.Tr + 0.6, kEase.sale); return <g>
             {[0, 1, 2, 3].map((k) => <path key={k} d={`M ${290 - k * 6} ${800 + k * 10} Q ${420} ${640 + k * 12} 540 ${560 + k * 14} Q 660 ${640 + k * 12} ${790 + k * 6} ${800 + k * 10}`} stroke={LQ.hifa} strokeWidth={14} fill="none" strokeLinecap="round" strokeDasharray={`${c * 700} 900`} />)}
             {[0, 1, 2].map((k) => <path key={'w' + k} d={`M ${330 + k * 10} 820 q ${-20} 80 0 160 t 0 150`} stroke={LQ.hifa} strokeWidth={13} fill="none" strokeLinecap="round" strokeDasharray={`${c * 330} 400`} />)}
             {[0, 1, 2].map((k) => <path key={'e' + k} d={`M ${750 - k * 10} 820 q 20 80 0 160 t 0 150`} stroke={LQ.hifa} strokeWidth={13} fill="none" strokeLinecap="round" strokeDasharray={`${c * 330} 400`} />)}
             <path d="M 300 1130 Q 540 1110 780 1130" stroke={LQ.hifa} strokeWidth={16} fill="none" strokeLinecap="round" strokeDasharray={`${c * 520} 600`} />
           </g>; })()}
-          <Alga x={540} y={950} r={110 * kprog(T, K.Tr + 0.4, K.Tr + 0.9, kEase.rebote)} brillo={0.6} />
+          <Alga x={540} y={950} r={110 * kprog(T, K.Tr + 0.1, K.Tr + 0.6, kEase.rebote)} brillo={0.6} />
           {Array.from({ length: 6 }, (_, i) => { const u = ((T - K.Tr) * 0.7 + i / 6) % 1; if (T < K.Tr + 1.0) return null; const ang = (i / 6) * Math.PI * 2;
             return <polygon key={i} points="0,-16 14,-8 14,8 0,16 -14,8 -14,-8" transform={`translate(${540 + Math.cos(ang) * (90 + u * 150)} ${950 + Math.sin(ang) * (90 + u * 110)})`} fill={LQ.azucar} stroke={KC.ink} strokeWidth={4} opacity={Math.sin(Math.PI * u)} />; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 8 · pregunta */}
       <Escena T={T} a={K.P} b={K.H} zoom={0.1}>
@@ -243,28 +246,29 @@ function LiquenShot() {
       {/* 9 · Schwendener, 1867 */}
       <Escena T={T} a={K.H} b={K.E}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<g>
-          {(() => { const e = (k) => kprog(T, K.H + 1.2 + k * 0.35, K.H + 1.6 + k * 0.35, kEase.rebote); return <g>
+        {/* modo cine: hongo + alga = liquen está en pantalla desde que empieza la escena, grande; la tarjeta va arriba */}
+        {fsvg(<g transform="translate(540 1040) scale(1.2) translate(-495 -960)">
+          {(() => { const e = (k) => kprog(T, K.H + 0.1 + k * 0.25, K.H + 0.5 + k * 0.25, kEase.rebote); return <g>
             <g transform={`translate(200 930) scale(${e(0)})`}><circle r={78} fill="#5a3d26" stroke={KC.ink} strokeWidth={6} />{[0, 1, 2, 3, 4].map((k) => <path key={k} d={`M -60 ${-40 + k * 20} q 30 -25 60 0 t 60 0`} stroke={LQ.hifa} strokeWidth={6} fill="none" />)}</g>
             <text x={330} y={955} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink} opacity={e(1)}>+</text>
             <g transform={`translate(450 930) scale(${e(1)})`}><Alga x={0} y={0} r={70} /></g>
             <text x={590} y={955} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink} opacity={e(2)}>=</text>
             <ManchaLiquen x={790} y={930} r={110} tipo="naranja" seed={4} crece={e(2)} />
           </g>; })()}
-          <text x={200} y={1060} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.H + 1.4, K.H + 1.7)}>hongo</text>
-          <text x={450} y={1060} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.H + 1.75, K.H + 2.05)}>alga</text>
-          <text x={790} y={1080} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.H + 2.1, K.H + 2.4)}>liquen</text>
+          <text x={200} y={1060} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.H + 0.3, K.H + 0.6)}>hongo</text>
+          <text x={450} y={1060} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.H + 0.55, K.H + 0.85)}>alga</text>
+          <text x={790} y={1080} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.H + 0.8, K.H + 1.1)}>liquen</text>
         </g>)}
       </Escena>
       {/* 10 · el estudio de 2016: levaduras en la piel de Bryoria (Montana) */}
       <Escena T={T} a={K.E} b={K.Cn}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Bryoria T={T} crece={kprog(T, K.E + 0.2, K.E + 1.6)} />)}
+        {fsvg(<g transform="translate(-20 800) scale(1.42) translate(0 -780)"><Bryoria T={T} crece={kprog(T, K.E - 0.3, K.E + 1.1)} /></g>)}
       </Escena>
       {/* 11 · seis continentes */}
       <Escena T={T} a={K.Cn} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1000) scale(1.5) translate(-540 -860)">
           <circle cx={540} cy={860} r={160} fill="#7fd3ff" stroke={KC.ink} strokeWidth={8} />
           {[-0.6, -0.3, 0, 0.3, 0.6].map((k, i) => <ellipse key={i} cx={540} cy={860} rx={160 * Math.abs(Math.cos(T * 0.6 + k * 2))} ry={160} fill="none" stroke="#2b7fb5" strokeWidth={3} />)}
           {[-120, -60, 0, 60, 120].map((dy, i) => <line key={'l' + i} x1={540 - Math.sqrt(160 * 160 - dy * dy)} y1={860 + dy} x2={540 + Math.sqrt(160 * 160 - dy * dy)} y2={860 + dy} stroke="#2b7fb5" strokeWidth={3} />)}
@@ -277,21 +281,21 @@ function LiquenShot() {
               <circle cx={24} cy={-26} r={13} fill={LQ.levadura} stroke={KC.ink} strokeWidth={3} />
               {T > K.Cn + 3.0 && <text x={40} y={-36} style={{ font:`400 ${40 * kprog(T, K.Cn + 3.0 + i * 0.1, K.Cn + 3.4 + i * 0.1, kEase.rebote)}px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={2}>?</text>}
             </g>; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · en el espacio: ≈ 15 días expuestos por fuera de un satélite */}
       <Escena T={T} a={K.Es} b={K.C}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {fsvg(<>
           {Array.from({ length: 60 }, (_, i) => { const g = krng(100 + i); const x = g() * KW, y = g() * 1300; return <circle key={i} cx={x} cy={y} r={1.5 + g() * 3} fill="#fff" opacity={0.4 + 0.6 * Math.abs(Math.sin(T * 1.5 + i))} />; })}
-          <circle cx={540} cy={2350 - regreso * 500} r={1250} fill="#2a6fd6" stroke={KC.ink} strokeWidth={8} />
-          <path d={`M -100 ${1180 - regreso * 500} Q 200 ${1130 - regreso * 500} 420 ${1170 - regreso * 500} Q 700 ${1210 - regreso * 500} 1180 ${1150 - regreso * 500}`} stroke={KC.leaf} strokeWidth={40} fill="none" opacity=".8" />
-          {T < K.Es + 5.0 && Array.from({ length: 7 }, (_, i) => { const u = ((T * 0.9 + i / 7) % 1); const x0 = 60 + i * 70, y0 = 300; const x1 = 380 + i * 12, y1 = 600;
+          <circle cx={540} cy={2350 - regreso * 500} r={1250} fill="#143a78" stroke={KC.ink} strokeWidth={8} />
+          <path d={`M -100 ${1180 - regreso * 500} Q 200 ${1130 - regreso * 500} 420 ${1170 - regreso * 500} Q 700 ${1210 - regreso * 500} 1180 ${1150 - regreso * 500}`} stroke="#2f7d3a" strokeWidth={40} fill="none" opacity=".8" />
+          {T < K.Es + 5.0 && Array.from({ length: 7 }, (_, i) => { const u = ((T * 0.9 + i / 7) % 1); const x0 = 860 + i * 35, y0 = 380; const x1 = 420 + i * 22, y1 = 612;
             return <line key={i} x1={klerp(x0, x1, u)} y1={klerp(y0, y1, u)} x2={klerp(x0, x1, Math.min(1, u + 0.12))} y2={klerp(y0, y1, Math.min(1, u + 0.12))} stroke={KC.lilac} strokeWidth={7} strokeLinecap="round" opacity={kprog(T, K.Es + 0.6, K.Es + 1.0) * (1 - kprog(T, K.Es + 4.6, K.Es + 5.0))} />; })}
           <g opacity={1 - kprog(T, K.Es + 6.0, K.Es + 6.4)}>
-            <Satelite T={T} x={klerp(430, 300, regreso) + Math.sin(T * 0.8) * 6} y={klerp(800, 1150, regreso)} s={klerp(1, 0.5, regreso)} tapa={kprog(T, K.Es + 0.4, K.Es + 1.0) * (1 - kprog(T, K.Es + 4.6, K.Es + 5.0))} para={kprog(T, K.Es + 5.2, K.Es + 5.6)} />
+            <Satelite T={T} x={klerp(470, 300, regreso) + Math.sin(T * 0.8) * 6} y={klerp(920, 1150, regreso)} s={klerp(1.6, 0.7, regreso)} tapa={kprog(T, K.Es + 0.4, K.Es + 1.0) * (1 - kprog(T, K.Es + 4.6, K.Es + 5.0))} para={kprog(T, K.Es + 5.2, K.Es + 5.6)} />
           </g>
-          {T > K.Es + 6.0 && (() => { const a = kprog(T, K.Es + 6.2, K.Es + 7.0, kEase.sale), b = kprog(T, K.Es + 6.8, K.Es + 7.6, kEase.sale); return <g>
+          {T > K.Es + 6.0 && (() => { const a = kprog(T, K.Es + 6.2, K.Es + 7.0, kEase.sale), b = kprog(T, K.Es + 6.8, K.Es + 7.6, kEase.sale); return <g transform="translate(540 960) scale(1.3) translate(-550 -915)">
             <rect x={200} y={700} width={700} height={430} rx={30} fill={KC.paper} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.Es + 6.0, K.Es + 6.3)} />
             <text x={550} y={770} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Es + 6.0, K.Es + 6.3)}>fotosíntesis</text>
             <rect x={300} y={1050 - 230 * a} width={180} height={230 * a} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />
@@ -307,17 +311,18 @@ function LiquenShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Piedra T={T} casco={kprog(T, K.C + 2.6, K.C + 3.2, kEase.sale)} respira={1} />
-          <Cohete T={T} x={klerp(1160, 900, kprog(T, K.C + 3.0, K.C + 3.8, kEase.sale))} y={klerp(700, 760, kprog(T, K.C + 3.0, K.C + 3.8, kEase.sale))} s={0.9} rot={35} />
+          <path d="M -120 1168 Q 540 1120 1200 1168 L 1200 2000 L -120 2000 Z" fill="#0f1712" stroke="#2b3a30" strokeWidth={6} />
+          <g transform="translate(542 930) scale(1.3) translate(-542 -905)"><Piedra T={T} casco={kprog(T, K.C + 2.6, K.C + 3.2, kEase.sale)} respira={1} /></g>
+          <Cohete T={T} x={klerp(1160, 900, kprog(T, K.C + 3.0, K.C + 3.8, kEase.sale))} y={klerp(560, 640, kprog(T, K.C + 3.0, K.C + 3.8, kEase.sale))} s={1.2} rot={35} />
           {[['hongo', 120, 0], ['alga', 280, 1], ['¿levadura?', 450, 2]].map(([t, x, i]) => { const e = kprog(T, K.C + 0.6 + i * 0.35, K.C + 1.0 + i * 0.35, kEase.rebote); if (e <= 0) return null;
-            return <g key={i} transform={`translate(${x} 515) scale(${e})`} opacity={i === 2 ? 0.5 : 1}>
+            return <g key={i} transform={`translate(${x * 1.25 - 20} 500) scale(${e * 1.25})`} opacity={i === 2 ? 0.5 : 1}>
               <circle r={56} fill={KC.paper} stroke={KC.ink} strokeWidth={6} strokeDasharray={i === 2 ? '10 8' : 'none'} />
               {i === 0 && [0, 1, 2].map((k) => <path key={k} d={`M -36 ${-16 + k * 16} q 18 -14 36 0 t 36 0`} stroke="#8a6326" strokeWidth={6} fill="none" strokeLinecap="round" />)}
               {i === 1 && <Alga x={0} y={0} r={34} />}
               {i === 2 && <><circle r={22} fill={LQ.levadura} stroke={KC.ink} strokeWidth={3} /><text x={0} y={-48} textAnchor="middle" style={{ font:`400 44px ${KF.titulo}` }} fill={KC.ink}>¿?</text></>}
               <text x={0} y={92} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>{t}</text>
             </g>; })}
-          {[0, 1].map((i) => <text key={i} x={190 + i * 160} y={535} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.C + 0.9 + i * 0.35, K.C + 1.2 + i * 0.35)}>+</text>)}
+          {[0, 1].map((i) => <text key={i} x={225 + i * 205} y={522} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.C + 0.9 + i * 0.35, K.C + 1.2 + i * 0.35)}>+</text>)}
         </>)}
       </Escena>
 
@@ -325,45 +330,45 @@ function LiquenShot() {
       <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 2.2} until={K.G + 3.1} texto="¿planta?" x={300} y={470} tam={50} />
       <MitoTachado T={T} at={K.G + 0.9} tacharEn={K.G + 2.6} until={K.G + 3.1} texto="¿musgo?" x={300} y={600} tam={50} />
       <Chip T={T} at={K.G + 3.2} until={K.D - 0.2} texto="hongo + socio" x={300} y={520} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.D + 0.2} until={K.Ct - 0.2} texto="liquen" x={300} y={470} tam={52} borde={KC.ink} />
+      <Chip T={T} at={K.D + 0.2} until={K.Ct - 0.2} texto="liquen" x={540} y={450} tam={56} borde={KC.ink} />
       <Chip T={T} at={K.Ct + 0.2} until={SEC - 0.1} texto="lo cortamos" x={540} y={430} tam={40} borde={KC.red} />
-      <Chip T={T} at={SEC + 0.3} until={K.Al + 0.6} texto="corte de un liquen (al microscopio)" x={540} y={430} tam={32} borde={KC.cyan} />
-      <Etq T={T} at={SEC + 0.9} until={K.Tr - 0.3} x={322} y={(CT.top + CT.alg) / 2} lado="izq" texto="córtex" tam={30} color={foco === 'cortex' ? KC.yellow : KC.texto} />
-      <Etq T={T} at={SEC + 1.0} until={K.Tr - 0.3} x={322} y={(CT.alg + CT.med) / 2} lado="izq" texto="algas" tam={30} color={foco === 'algas' ? KC.yellow : KC.texto} />
-      <Etq T={T} at={SEC + 1.1} until={K.Tr - 0.3} x={322} y={(CT.med + CT.low) / 2} lado="izq" texto="médula" tam={30} color={foco === 'medula' ? KC.yellow : KC.texto} />
-      <Etq T={T} at={SEC + 1.2} until={K.Tr - 0.3} x={322} y={CT.riz + 30} lado="izq" texto="piedra" tam={26} />
-      <Chip T={T} at={K.Cz + 0.4} until={K.Al - 0.2} texto="hilos del hongo, apretados" x={360} y={560} tam={30} borde={KC.yellow} />
-      <Chip T={T} at={K.Al + 0.4} until={K.Me - 0.2} texto="algas o cianobacterias" x={350} y={500} tam={30} borde={KC.leaf} />
-      <Chip T={T} at={K.Al + 1.9} until={K.Me - 0.2} texto="fotosíntesis → azúcar" x={350} y={585} tam={30} borde={LQ.azucar} />
-      <Chip T={T} at={K.Me + 0.4} until={K.Tr - 0.3} texto="hilos sueltos del hongo" x={360} y={560} tam={30} borde={LQ.hifa} />
-      <Chip T={T} at={K.Tr + 0.6} until={K.P - 0.2} texto="el hongo pone la casa" x={540} y={400} tam={40} borde={LQ.hifa} />
-      <Chip T={T} at={K.Tr + 1.2} until={K.P - 0.2} texto="el socio, la comida" x={540} y={485} tam={40} borde={KC.leaf} />
-      <TarjetaEstudio T={T} at={K.H + 0.2} until={K.E - 0.3} anio="1867" quien="Simon Schwendener" revista="propuso: el liquen son dos seres" x={370} y={540} />
-      <Chip T={T} at={K.H + 2.8} until={K.E - 0.3} texto="¡no!" x={860} y={745} tam={46} fondo={KC.paper} color={KC.ink} borde={KC.ink} />
-      <Chip T={T} at={K.H + 3.2} until={K.E - 0.3} texto="¿dos seres?" x={200} y={745} tam={40} fondo={KC.paper} color={KC.ink} borde={KC.ink} />
-      <Chip T={T} at={K.H + 3.6} until={K.E - 0.3} texto="¿un hongo?" x={560} y={745} tam={40} fondo={KC.paper} color={KC.ink} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.0} anio="2016" quien="Montana, EUA" revista="Spribille et al., Science" x={540} y={470} />
-      <Etq T={T} at={K.E + 0.9} until={K.Cn - 0.3} x={40} y={720} texto="Bryoria" it tam={36} color={KC.ink} />
-      <Lupa T={T} at={K.E + 2.0} until={K.Cn - 0.3} x={760} y={840} r={185} fx={430} fy={960} interior={LupaLevaduras} tinte={LQ.levadura} etiqueta="levaduras en la piel" />
-      <NumeroGigante T={T} at={K.Cn + 0.3} until={K.Cn + 2.9} valor={6} dur={1.8} etiqueta="continentes" x={300} y={470} tam={200} color={KC.pink} />
-      <Chip T={T} at={K.Cn + 3.0} until={K.Es - 0.2} texto="¿qué hacen ahí? aún se estudia" x={380} y={470} tam={30} borde={LQ.levadura} />
-      <Chip T={T} at={K.Es + 0.6} until={K.Es + 5.0} texto="expuestos al espacio" x={330} y={430} tam={36} borde={KC.lilac} />
-      {T < K.Es + 5.0 && <Contador T={T} at={K.Es + 1.0} hasta={14.6} dur={3.4} dec={1} sufijo=" días" x={330} y={530} tam={64} color={KC.yellow} />}
-      <Etq T={T} at={K.Es + 1.8} until={K.Es + 5.0} x={520} y={600} texto="Xanthoria elegans" it tam={28} color={LQ.naranja} />
-      <Etq T={T} at={K.Es + 2.3} until={K.Es + 5.0} x={520} y={660} texto="Rhizocarpon geographicum" it tam={26} color={LQ.mapa} />
-      <Chip T={T} at={K.Es + 5.2} until={K.Es + 6.4} texto="de regreso a la Tierra" x={360} y={470} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.Es + 7.8} until={K.C - 0.2} texto="casi igual" x={540} y={640} tam={40} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 1.9} until={K.Ou} texto="es un equipo" x={300} y={385} tam={46} borde={KC.ink} />
+      <Chip T={T} at={SEC + 0.3} until={K.Al + 0.6} texto="corte de un liquen (al microscopio)" x={400} y={330} tam={34} borde={KC.cyan} />
+      <Etq T={T} at={SEC + 0.9} until={K.Tr - 0.3} x={222} y={cty((CT.top + CT.alg) / 2)} lado="izq" texto="córtex" tam={30} color={foco === 'cortex' ? KC.yellow : KC.texto} />
+      <Etq T={T} at={SEC + 1.0} until={K.Tr - 0.3} x={222} y={cty((CT.alg + CT.med) / 2)} lado="izq" texto="algas" tam={30} color={foco === 'algas' ? KC.yellow : KC.texto} />
+      <Etq T={T} at={SEC + 1.1} until={K.Tr - 0.3} x={222} y={cty((CT.med + CT.low) / 2)} lado="izq" texto="médula" tam={30} color={foco === 'medula' ? KC.yellow : KC.texto} />
+      <Etq T={T} at={SEC + 1.2} until={K.Tr - 0.3} x={222} y={cty(CT.riz + 70)} lado="izq" texto="piedra" tam={26} />
+      <Chip T={T} at={K.Cz + 0.4} until={K.Al - 0.2} texto="hilos del hongo, apretados" x={310} y={520} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.Al + 0.4} until={K.Me - 0.2} texto="algas o cianobacterias" x={330} y={440} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.Al + 1.9} until={K.Me - 0.2} texto="fotosíntesis → azúcar" x={330} y={540} tam={36} borde={LQ.azucar} />
+      <Chip T={T} at={K.Me + 0.4} until={K.Tr - 0.3} texto="hilos sueltos del hongo" x={330} y={520} tam={36} borde={LQ.hifa} />
+      <Chip T={T} at={K.Tr + 0.6} until={K.P - 0.2} texto="el hongo pone la casa" x={430} y={300} tam={42} borde={LQ.hifa} />
+      <Chip T={T} at={K.Tr + 1.2} until={K.P - 0.2} texto="el socio, la comida" x={430} y={390} tam={42} borde={KC.leaf} />
+      <TarjetaEstudio T={T} at={K.H + 0.2} until={K.E - 0.3} anio="1867" quien="Simon Schwendener" revista="propuso: el liquen son dos seres" x={540} y={450} />
+      <Chip T={T} at={K.H + 2.8} until={K.E - 0.3} texto="¡no!" x={870} y={770} tam={46} fondo={KC.paper} color={KC.ink} borde={KC.ink} />
+      <Chip T={T} at={K.H + 3.2} until={K.E - 0.3} texto="¿dos seres?" x={200} y={770} tam={40} fondo={KC.paper} color={KC.ink} borde={KC.ink} />
+      <Chip T={T} at={K.H + 3.6} until={K.E - 0.3} texto="¿un hongo?" x={555} y={770} tam={40} fondo={KC.paper} color={KC.ink} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.0} anio="2016" quien="Montana, EUA" revista="Spribille et al., Science" x={540} y={440} />
+      <Etq T={T} at={K.E + 0.9} until={K.Cn - 0.3} x={40} y={715} texto="Bryoria" it tam={40} color={KC.ink} />
+      <Lupa T={T} at={K.E + 2.0} until={K.Cn - 0.3} x={770} y={1090} r={225} fx={500} fy={1040} interior={LupaLevaduras} tinte={LQ.levadura} etiqueta="levaduras en la piel" />
+      <NumeroGigante T={T} at={K.Cn + 0.3} until={K.Cn + 2.9} valor={6} dur={1.8} etiqueta="continentes" x={540} y={380} tam={170} color={KC.pink} />
+      <Chip T={T} at={K.Cn + 3.0} until={K.Es - 0.2} texto="¿qué hacen ahí? aún se estudia" x={540} y={430} tam={38} borde={LQ.levadura} />
+      <Chip T={T} at={K.Es + 0.6} until={K.Es + 5.0} texto="expuestos al espacio" x={520} y={300} tam={40} borde={KC.lilac} />
+      {T < K.Es + 5.0 && <Contador T={T} at={K.Es + 1.0} hasta={14.6} dur={3.4} dec={1} sufijo=" días" x={520} y={395} tam={64} color={KC.yellow} />}
+      <Etq T={T} at={K.Es + 1.8} until={K.Es + 5.0} x={590} y={645} texto="Xanthoria elegans" it tam={28} color={LQ.naranja} />
+      <Etq T={T} at={K.Es + 2.3} until={K.Es + 5.0} x={590} y={700} texto="Rhizocarpon geographicum" it tam={24} color={LQ.mapa} />
+      <Chip T={T} at={K.Es + 5.2} until={K.Es + 6.4} texto="de regreso a la Tierra" x={540} y={470} tam={42} borde={KC.cyan} />
+      <Chip T={T} at={K.Es + 7.8} until={K.C - 0.2} texto="casi igual" x={540} y={610} tam={46} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 1.9} until={K.Ou} texto="es un equipo" x={330} y={330} tam={50} borde={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.D} texto="10 cm" largo={170} />
-      <BarraEscala T={T} at={K.D} until={K.Ct} texto="10 cm" largo={150} />
+      <BarraEscala T={T} at={K.G} until={K.D} texto="10 cm" largo={221} />
+      <BarraEscala T={T} at={K.D} until={K.Ct} texto="10 cm" largo={215} />
       <BarraEscala T={T} at={K.Ct} until={SEC} texto="1 cm" largo={150} />
-      <BarraEscala T={T} at={SEC} until={K.Tr} texto="50 µm" largo={170} />
-      <BarraEscala T={T} at={K.Tr} until={K.P} texto="10 µm" largo={110} />
-      <BarraEscala T={T} at={K.E} until={K.E + 2.0} texto="5 cm" largo={160} />
+      <BarraEscala T={T} at={SEC} until={K.Tr} texto="50 µm" largo={247} />
+      <BarraEscala T={T} at={K.Tr} until={K.P} texto="10 µm" largo={154} />
+      <BarraEscala T={T} at={K.E} until={K.E + 2.0} texto="5 cm" largo={227} />
       <BarraEscala T={T} at={K.E + 2.0} until={K.Cn} texto="10 µm" largo={110} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={170} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={221} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.D - 0.1} texto="No es planta: *es un hongo con un socio.*" />

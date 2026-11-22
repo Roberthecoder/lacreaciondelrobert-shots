@@ -3,6 +3,8 @@
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Viaje: elote en la milpa (macro) → pelos, hifas, células del grano y esporas (micro, fondo oscuro) → el mismo elote junto a la quesadilla.
 
+// Pase a mano, 2ª vuelta: agranda el dibujo de una escena alrededor de (cx, cy) y lo lleva a (nx, ny); x() e y() mueven igual las etiquetas.
+const enc = (k, cx, cy, nx = 540, ny = 930) => ({ k, t: `translate(${nx} ${ny}) scale(${k}) translate(${-cx} ${-cy})`, x: (x) => nx + (x - cx) * k, y: (y) => ny + (y - cy) * k });
 const HC = { grano:'#ffd23f', grano2:'#f2b705', hoja:'#5cbf4a', hoja2:'#3f9a35', pelo:'#e9c46a', pelo2:'#b5652b', tortilla:'#f3d18e', comal:'#2c2b30', espora:'#4a2f1d' };
 
 // Agallas: [dx, dy, radio] (coordenadas locales del elote).
@@ -117,6 +119,9 @@ function HuitlacocheShot() {
   const infla = kprog(T, MICRO + 0.2, MICRO + 1.8, kEase.rebote);
   const SILK = 'M 940 260 C 760 520 700 700 600 860 S 470 1000 430 1040';
   const MXK = (lon, lat) => { const [a, b] = mxProy(lon, lat); return [60 + a * 0.96, 640 + b * 0.96]; };
+  // Elote del gancho y del cierre: llena el cuadro (arranca en primerísimo plano y la cámara se aleja mientras se abre).
+  const ES = klerp(1.6, 1.3, kEase.suave(abre)), EX = 400, EY = 1000 + 70 * ES;
+  const eA = enc(1.3, 540, 870, 540, 940), eEs = enc(1.12, 520, 820, 540, 940), eE = enc(1.2, 515, 1100, 540, 1060), eCo = enc(1.6, 540, 1000, 540, 1080), eSa = enc(1.6, 430, 950, 440, 1010), eEf = enc(1.25, 480, 880, 540, 930);
   const NOMBRES = [['cuitlacoche', 'náhuatl', -98.2, 19.3, 250, 900], ['ta’ chak', 'maya', -89.0, 20.7, 820, 880], ['bia’huí’', 'zapoteco', -96.7, 17.0, 300, 1085]];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -124,8 +129,9 @@ function HuitlacocheShot() {
       <Escena T={T} a={K.G} b={K.En} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Elote T={T} x={380} y={880} s={0.8} abre={abre} agalla={kprog(T, K.G + 0.6, K.G + 1.8)} oscuro={0.1} />
-          {T > K.G + 3.9 && <g opacity={kprog(T, K.G + 3.9, K.G + 4.3)}><Quesadilla T={T} x={800} y={1080} s={0.78} relleno={kprog(T, K.G + 4.4, K.G + 5.2)} /></g>}
+          <Elote T={T} x={EX} y={EY} s={ES} abre={abre} agalla={kprog(T, K.G + 0.6, K.G + 1.8)} oscuro={0.1} />
+          {/* modo cine: la quesadilla (hacia donde va la historia) ya asoma atenuada antes del segundo 3 */}
+          {T > K.G + 1.9 && <g opacity={kprog(T, K.G + 1.9, K.G + 2.5) * (0.4 + 0.6 * kprog(T, K.G + 3.9, K.G + 4.3))}><Quesadilla T={T} x={740} y={1330} s={0.9} relleno={kprog(T, K.G + 4.4, K.G + 5.2)} /></g>}
         </>)}
       </Escena>
       {/* 3 · entra por los pelos sin polinizar, o por heridas de granizo o viento */}
@@ -160,6 +166,7 @@ function HuitlacocheShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
         {fsvg(<>
+          <g transform={eA.t}>
           <defs><clipPath id="hgrano"><circle cx={540} cy={870} r={320} /></clipPath></defs>
           <circle cx={540} cy={870} r={330} fill="#3a3320" stroke={HC.grano} strokeWidth={10} />
           <g clipPath="url(#hgrano)">
@@ -174,23 +181,25 @@ function HuitlacocheShot() {
             <path d="M 160 600 C 300 640 330 760 470 800 S 700 900 900 860" stroke="#fff4d6" strokeWidth={9} fill="none" strokeLinecap="round" opacity=".9" />
             <path d="M 250 1080 C 360 980 520 1000 620 900 S 800 700 920 660" stroke="#fff4d6" strokeWidth={8} fill="none" strokeLinecap="round" opacity=".8" />
           </g>
+          </g>
         </>)}
       </Escena>
       {/* 5b · macro: el grano se hincha como globo */}
       <Escena T={T} a={MICRO} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={60} y={940} width={960} height={190} rx={60} fill="#f7e7a1" stroke={KC.ink} strokeWidth={8} />
-          {Array.from({ length: 8 }, (_, i) => i === 3 ? null : <ellipse key={i} cx={130 + i * 117} cy={1035} rx={52} ry={66} fill={i % 2 ? HC.grano : HC.grano2} stroke={KC.ink} strokeWidth={6} />)}
-          <Agalla x={481} y={klerp(1035, 900, infla)} r={klerp(58, 200, infla)} oscuro={0.08} seed={5} />
+          <rect x={60} y={1040} width={960} height={190} rx={60} fill="#f7e7a1" stroke={KC.ink} strokeWidth={8} />
+          {Array.from({ length: 8 }, (_, i) => i === 3 ? null : <ellipse key={i} cx={130 + i * 117} cy={1135} rx={52} ry={66} fill={i % 2 ? HC.grano : HC.grano2} stroke={KC.ink} strokeWidth={6} />)}
+          <Agalla x={481} y={klerp(1135, 960, infla)} r={klerp(58, 260, infla)} oscuro={0.08} seed={5} />
         </>)}
       </Escena>
       {/* 6 · re-gancho: ¿y por qué se pone negro? */}
       <Escena T={T} a={K.P} b={K.Es} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Agalla x={300} y={560} r={130} oscuro={kprog(T, K.P + 0.2, K.P + 1.6)} seed={5} />
-          <Interrogacion T={T} x={300} y={1170} tam={480} />
+          {/* la misma agalla de la escena anterior, en su lugar y a su tamaño, que se va poniendo negra */}
+          <Agalla x={481} y={960} r={260} oscuro={kprog(T, K.P + 0.2, K.P + 1.6)} seed={5} />
+          <Interrogacion T={T} x={860} y={700} tam={400} />
         </>)}
       </Escena>
       {/* 7 · micro: la agalla se llena de esporas oscuras, redondas y con espinitas */}
@@ -198,46 +207,54 @@ function HuitlacocheShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
+          <g transform={eEs.t}>
           <circle cx={430} cy={820} r={320} fill={mixHex('#cfd2d6', '#2a2224', kprog(T, K.Es + 0.4, K.Es + 3.0))} stroke={KC.ink} strokeWidth={9} />
           {Array.from({ length: 46 }, (_, i) => { const g = krng(i + 90); const a = g() * Math.PI * 2, rr = Math.sqrt(g()) * 280; const s = kprog(T, K.Es + 0.3 + i * 0.05, K.Es + 0.6 + i * 0.05, kEase.rebote);
             return <Espora key={i} x={430 + Math.cos(a) * rr} y={820 + Math.sin(a) * rr} r={20} rot={i * 23} s={s} />; })}
           {[[830, 640, 70], [870, 860, 62], [790, 1060, 66]].map(([a, b, r], i) => <Espora key={i} x={a + Math.sin(T * 1.3 + i) * 6} y={b} r={r} rot={T * 8 + i * 40} s={kprog(T, K.Es + 1.6 + i * 0.25, K.Es + 2.0 + i * 0.25, kEase.rebote)} />)}
+          </g>
         </>)}
       </Escena>
       {/* 8 · el estudio: inoculan a propósito los pelos de elotes */}
       <Escena T={T} a={K.E} b={K.Co} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={0} y={1180} width={KW} height={800} fill="#422c1f" stroke={KC.ink} strokeWidth={8} />
+          <g transform={eE.t}>
+          <rect x={-200} y={1180} width={KW + 400} height={900} fill="#1c130e" stroke="#6b4a36" strokeWidth={5} />
           {[170, 400, 630, 860].map((x, i) => <Elote key={i} T={T} x={x} y={1160} s={0.5} abre={0} agalla={0} />)}
           {(() => { const u = kprog(T, K.E + 0.8, K.E + 5.4); const k = Math.min(3, Math.floor(u * 4)), f = (u * 4) % 1; const xs = [170, 400, 630, 860];
             const sx = klerp(xs[k], xs[Math.min(3, k + 1)], kEase.suave(kprog(f, 0.6, 1))); const baja = Math.sin(Math.PI * kprog(f, 0, 0.6)) * 50;
             return u > 0 && u < 1 ? <Jeringa x={sx} y={930 + baja} empuje={u} /> : null; })()}
           {[170, 400, 630, 860].map((x, i) => { const on = kprog(T, K.E + 0.8 + i * 1.15 + 0.35, K.E + 0.8 + i * 1.15 + 0.6, kEase.rebote); return on > 0 ? <circle key={i} cx={x} cy={960} r={16 * on} fill="#fff4d6" stroke={KC.ink} strokeWidth={3} /> : null; })}
+          </g>
         </>)}
       </Escena>
       {/* 9 · la cosecha: hasta 131 g por mazorca */}
       <Escena T={T} a={K.Co} b={K.Sa} zoom={0.06}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
+          <g transform={eCo.t}>
           <Bascula x={540} y={1010} />
           {[[-120, -40, 60], [-30, -60, 72], [70, -46, 64], [150, -30, 50], [20, -120, 58], [-90, -110, 46]].map(([a, b, r], i) => <Agalla key={i} x={540 + a} y={1010 + b - (1 - kprog(T, K.Co + 0.2 + i * 0.1, K.Co + 0.6 + i * 0.1, kEase.sale)) * 500} r={r} oscuro={0.2} seed={i + 30} />)}
+          </g>
         </>)}
       </Escena>
       {/* 10 · a los 12–14 días no servía: sin esporas, sin color ni sabor */}
       <Escena T={T} a={K.Sa} b={K.Ef} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
+          <g transform={eSa.t}>
           <Agalla x={430} y={950} r={190} oscuro={0} seed={9} />
           <circle cx={430} cy={950} r={110} fill="#f4f1ea" stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Sa + 1.6, K.Sa + 2.0)} />
           <Sello T={T} at={K.Sa + 2.4} x={680} y={900} texto="NO" color={KC.red} r={90} />
+          </g>
         </>)}
       </Escena>
       {/* 11 · en casi todo el mundo una enfermedad; en México, un manjar con nombre en muchas lenguas */}
       <Escena T={T} a={K.Ef} b={K.Mo} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          {T < K.Ef + 2.9 && <g opacity={1 - kprog(T, K.Ef + 2.4, K.Ef + 2.9)}>
+          {T < K.Ef + 2.9 && <g opacity={1 - kprog(T, K.Ef + 2.4, K.Ef + 2.9)} transform={eEf.t}>
             <circle cx={480} cy={880} r={300} fill="#4aa8ff" stroke={KC.ink} strokeWidth={9} />
             <path d="M 260 720 Q 330 640 420 700 Q 470 780 400 840 Q 330 900 280 840 Z M 520 640 Q 640 600 700 690 Q 720 800 620 820 Q 540 760 520 640 Z M 470 930 Q 560 900 640 980 Q 650 1080 560 1120 Q 480 1060 470 930 Z" fill={HC.hoja} stroke={KC.ink} strokeWidth={6} />
             {[[340, 760], [620, 720], [560, 1010], [300, 960]].map(([a, b], i) => <g key={i} transform={`translate(${a} ${b}) scale(${kprog(T, K.Ef + 0.3 + i * 0.15, K.Ef + 0.6 + i * 0.15, kEase.rebote)})`}>
@@ -260,30 +277,30 @@ function HuitlacocheShot() {
       <Escena T={T} a={K.Mo} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Petri x={330} y={900} r={240}>
+          <g transform="translate(370 770) scale(1.25)"><Petri x={0} y={0} r={240}>
             {[[-90, -60, 1], [60, -90, 2], [80, 60, 3], [-60, 90, 4], [0, 0, 5]].map(([a, b, sd], i) => <Colonia key={i} cx={a} cy={b} r={52 * kprog(T, K.Mo + 0.3 + i * 0.15, K.Mo + 1.6 + i * 0.15)} color="#f6eedb" seed={sd} />)}
-          </Petri>
-          <Plantula T={T} x={810} y={1030} s={0.75} tumores={kprog(T, K.Mo + 1.4, K.Mo + 2.6)} />
+          </Petri></g>
+          <Plantula T={T} x={810} y={1360} s={0.94} tumores={kprog(T, K.Mo + 1.4, K.Mo + 2.6)} />
         </>)}
       </Escena>
       {/* 13 · cierre: el mismo elote del inicio, ahora junto a la quesadilla */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Elote T={T} x={380} y={880} s={0.8} abre={1} agalla={1} oscuro={0.1} />
-          <Quesadilla T={T} x={800} y={1080} s={0.78} relleno={1} />
-          {(() => { const u = kprog(T, K.C + 0.6, K.C + 1.6, kEase.suave); return u > 0 && u < 1 ? <Agalla x={klerp(380, 800, u)} y={klerp(860, 1060, u) - Math.sin(Math.PI * u) * 220} r={klerp(50, 30, u)} oscuro={0.1} seed={4} /> : null; })()}
+          <Elote T={T} x={400} y={1091} s={1.3} abre={1} agalla={1} oscuro={0.1} />
+          <Quesadilla T={T} x={740} y={1330} s={0.9} relleno={1} />
+          {(() => { const u = kprog(T, K.C + 0.6, K.C + 1.6, kEase.suave); return u > 0 && u < 1 ? <Agalla x={klerp(455, 740, u)} y={klerp(1010, 1300, u) - Math.sin(Math.PI * u) * 260} r={klerp(80, 48, u)} oscuro={0.1} seed={4} /> : null; })()}
         </>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.9} tacharEn={K.G + 1.9} until={K.G + 2.5} texto="¿podrido?" x={380} y={400} tam={52} />
-      <Chip T={T} at={K.G + 2.7} until={K.En - 0.3} texto="✓ un manjar" x={380} y={400} tam={46} borde={KC.leaf} />
-      <Etq T={T} at={K.G + 3.0} until={K.G + 4.2} x={530} y={800} texto="grano + hongo" tam={32} />
-      <Etq T={T} at={K.G + 4.6} until={K.N} x={640} y={890} texto="quesadilla" tam={32} />
-      <Etq T={T} at={K.N + 0.2} until={K.En - 0.3} x={540} y={760} texto="huitlacoche" tam={40} />
-      <Etq T={T} at={K.N + 0.7} until={K.En - 0.3} x={540} y={820} texto="Ustilago maydis" it tam={36} />
-      <Etq T={T} at={K.N + 1.2} until={K.En - 0.3} x={540} y={880} texto="maíz: Zea mays" tam={28} />
+      <MitoTachado T={T} at={K.G + 0.9} tacharEn={K.G + 1.9} until={K.G + 2.5} texto="¿podrido?" x={800} y={560} tam={52} />
+      <Chip T={T} at={K.G + 2.7} until={K.En - 0.3} texto="✓ un manjar" x={800} y={560} tam={46} borde={KC.leaf} />
+      <Etq T={T} at={K.G + 3.0} until={K.G + 4.2} x={565} y={905} texto="grano + hongo" tam={32} />
+      <Etq T={T} at={K.G + 4.6} until={K.N} x={700} y={1120} texto="quesadilla" tam={32} />
+      <Etq T={T} at={K.N + 0.2} until={K.En - 0.3} x={575} y={700} texto="huitlacoche" tam={40} />
+      <Etq T={T} at={K.N + 0.7} until={K.En - 0.3} x={575} y={765} texto="Ustilago maydis" it tam={36} />
+      <Etq T={T} at={K.N + 1.2} until={K.En - 0.3} x={575} y={825} texto="maíz: Zea mays" tam={28} />
       <Chip T={T} at={K.En + 0.8} until={K.En + 2.5} texto="pelos sin polinizar" x={400} y={460} tam={42} borde={HC.pelo} />
       <Etq T={T} at={K.En + 1.2} until={K.En + 2.5} x={420} y={640} texto="pelos (estigmas)" tam={30} lado="izq" />
       <Chip T={T} at={K.En + 2.7} until={K.H - 0.3} texto="o heridas: granizo, viento" x={400} y={460} tam={38} borde={KC.ink} />
@@ -291,41 +308,41 @@ function HuitlacocheShot() {
       <Etq T={T} at={K.H + 0.4} until={K.A - 0.3} x={820} y={420} texto="pelo (estigma)" tam={30} color={HC.pelo} lado="izq" />
       <Etq T={T} at={K.H + 1.2} until={K.A - 0.3} x={500} y={760} texto="hifas" tam={36} color="#fff4d6" lado="izq" />
       <Etq T={T} at={K.H + 2.2} until={K.A - 0.3} x={660} y={1100} texto="grano (ovario)" tam={30} color={HC.grano} />
-      <Chip T={T} at={K.A + 0.2} until={MICRO - 0.2} texto="AL MICROSCOPIO · dentro del grano" x={540} y={410} tam={30} mono borde={KC.cyan} />
-      <Etq T={T} at={K.A + 0.9} until={MICRO - 0.2} x={60} y={490} texto="células más grandes" tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.A + 1.5} until={MICRO - 0.2} x={1020} y={490} texto="y más divisiones" tam={28} color={KC.gold2} lado="izq" />
-      <Etq T={T} at={MICRO + 0.4} until={K.P - 0.3} x={700} y={850} texto="agalla" tam={36} />
-      <Etq T={T} at={MICRO + 0.4} until={K.P - 0.3} x={330} y={900} texto="granos" tam={30} lado="izq" />
-      <Chip T={T} at={K.Es + 0.2} until={K.Es + 2.3} texto="AL MICROSCOPIO · dentro de la agalla" x={500} y={410} tam={30} mono borde={KC.cyan} />
-      <Etq T={T} at={K.Es + 2.4} until={K.E - 0.3} x={730} y={1140} texto="teliosporas" tam={34} color={KC.texto} lado="izq" />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.1} anio="2003" quien="Universidad de Illinois" revista="Pataky y Chandler · Mycologia, 2003" x={420} y={480} />
-      <Chip T={T} at={K.E + 3.4} until={K.Co - 0.3} texto="inoculan a propósito los pelos" x={400} y={470} tam={36} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Co + 0.3} until={K.Sa - 0.3} valor={131} dur={0.9} sufijo=" g" etiqueta="hasta" x={380} y={560} tam={200} color={KC.gold2} />
-      <Chip T={T} at={K.Co + 1.0} until={K.Sa - 0.3} texto="de huitlacoche por mazorca" x={400} y={760} tam={36} borde={KC.ink} />
-      <Dias T={T} at={K.Sa + 0.2} until={K.Ef - 0.3} hasta={14} x={400} y={500} />
-      <Chip T={T} at={K.Sa + 3.0} until={K.Ef - 0.3} texto="sin esporas: le falta color y sabor" x={430} y={660} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.A + 0.2} until={MICRO - 0.2} texto="AL MICROSCOPIO · dentro del grano" x={540} y={330} tam={30} mono borde={KC.cyan} />
+      <Etq T={T} at={K.A + 0.9} until={MICRO - 0.2} x={60} y={440} texto="células más grandes" tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.A + 1.5} until={MICRO - 0.2} x={1020} y={440} texto="y más divisiones" tam={28} color={KC.gold2} lado="izq" />
+      <Etq T={T} at={MICRO + 0.4} until={K.P - 0.3} x={750} y={900} texto="agalla" tam={36} />
+      <Etq T={T} at={MICRO + 0.4} until={K.P - 0.3} x={330} y={1285} texto="granos" tam={30} lado="izq" />
+      <Chip T={T} at={K.Es + 0.2} until={K.Es + 2.3} texto="AL MICROSCOPIO · dentro de la agalla" x={540} y={450} tam={30} mono borde={KC.cyan} />
+      <Etq T={T} at={K.Es + 2.4} until={K.E - 0.3} x={eEs.x(730)} y={eEs.y(1140)} texto="teliosporas" tam={34} color={KC.texto} lado="izq" />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.1} anio="2003" quien="Universidad de Illinois" revista="Pataky y Chandler · Mycologia, 2003" x={770} y={480} />
+      <Chip T={T} at={K.E + 3.4} until={K.Co - 0.3} texto="inoculan a propósito los pelos" x={540} y={1455} tam={36} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Co + 0.3} until={K.Sa - 0.3} valor={131} dur={0.9} sufijo=" g" etiqueta="hasta" x={540} y={440} tam={200} color={KC.gold2} />
+      <Chip T={T} at={K.Co + 1.0} until={K.Sa - 0.3} texto="de huitlacoche por mazorca" x={540} y={640} tam={36} borde={KC.ink} />
+      <Dias T={T} at={K.Sa + 0.2} until={K.Ef - 0.3} hasta={14} x={440} y={430} />
+      <Chip T={T} at={K.Sa + 3.0} until={K.Ef - 0.3} texto="sin esporas: le falta color y sabor" x={540} y={620} tam={34} borde={KC.red} />
       <Chip T={T} at={K.Ef + 0.2} until={K.Ef + 2.5} texto="en casi todo el mundo: enfermedad" x={460} y={470} tam={34} borde={KC.red} />
       <Chip T={T} at={K.Ef + 2.6} until={K.Mo - 0.3} texto="en México: un manjar" x={400} y={470} tam={42} borde={KC.leaf} />
-      <Chip T={T} at={K.Mo + 0.3} until={K.C - 0.3} texto="organismo modelo de laboratorio" x={420} y={470} tam={34} borde={KC.cyan} />
-      <Etq T={T} at={K.Mo + 1.0} until={K.C - 0.3} x={330} y={640} texto="colonias del hongo" tam={30} />
-      <Etq T={T} at={K.Mo + 2.0} until={K.C - 0.3} x={960} y={1150} texto="agallas en la planta" tam={30} lado="izq" />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="no está podrido: es huitlacoche" x={400} y={420} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.Mo + 0.3} until={K.C - 0.3} texto="organismo modelo de laboratorio" x={540} y={330} tam={34} borde={KC.cyan} />
+      <Etq T={T} at={K.Mo + 1.0} until={K.C - 0.3} x={650} y={560} texto="colonias del hongo" tam={30} />
+      <Etq T={T} at={K.Mo + 2.0} until={K.C - 0.3} x={575} y={1215} texto="agallas en la planta" tam={30} lado="izq" />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="no está podrido: es huitlacoche" x={775} y={600} tam={28} borde={KC.leaf} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.En} texto="10 cm" largo={270} />
+      <BarraEscala T={T} at={K.G} until={K.En} texto="10 cm" largo={270 * ES / 0.8} />
       <BarraEscala T={T} at={K.En} until={K.H} texto="5 cm" largo={250} />
       <BarraEscala T={T} at={K.H} until={K.A} texto="20 µm" largo={80} />
-      <BarraEscala T={T} at={K.A} until={MICRO} texto="100 µm" largo={180} />
+      <BarraEscala T={T} at={K.A} until={MICRO} texto="100 µm" largo={234} />
       <BarraEscala T={T} at={MICRO} until={K.P} texto="1 cm" largo={110} />
-      <BarraEscala T={T} at={K.P} until={K.Es} texto="5 cm" largo={200} />
-      <BarraEscala T={T} at={K.Es} until={K.E} texto="10 µm" largo={155} />
-      <BarraEscala T={T} at={K.E} until={K.Co} texto="10 cm" largo={190} />
-      <BarraEscala T={T} at={K.Co} until={K.Sa} texto="10 cm" largo={200} />
-      <BarraEscala T={T} at={K.Sa} until={K.Ef} texto="5 cm" largo={200} />
-      <BarraEscala T={T} at={K.Ef} until={K.Ef + 2.6} texto="5,000 km" largo={235} />
+      <BarraEscala T={T} at={K.P} until={K.Es} texto="1 cm" largo={110} />
+      <BarraEscala T={T} at={K.Es} until={K.E} texto="10 µm" largo={174} />
+      <BarraEscala T={T} at={K.E} until={K.Co} texto="10 cm" largo={228} />
+      <BarraEscala T={T} at={K.Co} until={K.Sa} texto="10 cm" largo={320} />
+      <BarraEscala T={T} at={K.Sa} until={K.Ef} texto="5 cm" largo={320} />
+      <BarraEscala T={T} at={K.Ef} until={K.Ef + 2.6} texto="5,000 km" largo={294} />
       <BarraEscala T={T} at={K.Ef + 2.6} until={K.Mo} texto="500 km" largo={110} />
-      <BarraEscala T={T} at={K.Mo} until={K.C} texto="5 cm" largo={260} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={270} />
+      <BarraEscala T={T} at={K.Mo} until={K.C} texto="5 cm" largo={325} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={439} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="No está podrido: *es un manjar.*" />

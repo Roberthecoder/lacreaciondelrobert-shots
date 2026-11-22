@@ -125,27 +125,30 @@ function CeparioNarrado() {
 
       {/* 0 · GANCHO — el vial con escarcha */}
       <EscenaFundido T={T} a={K.G} b={K.Ce} zoom={0.06}>
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.cyan, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.32) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+        {/* modo cine (pase a mano): fondo oscuro con motas (antes color plano con lunares) y el vial llena el alto del cuadro (antes s 2.3) */}
+        <FondoMarca color={KC.cyan} T={T} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform={`translate(540 880) rotate(${mece(T, 1, 0.25) * 4})`}>
-            <Vial x={0} y={0} s={2.3} etiqueta="C-07" escarcha={1} contenido="#9ad9b5" />
+          <g transform={`translate(540 1034) rotate(${mece(T, 1, 0.25) * 4})`}>
+            <Vial x={0} y={0} s={4.1} etiqueta="C-07" escarcha={1} contenido="#9ad9b5" />
           </g>
-          <Vaho T={T} x={540} y={560} w={280} n={10} o={0.8} />
+          <Vaho T={T} x={540} y={420} w={480} n={12} o={0.8} />
         </svg>
-        <Chip T={T} at={K.G + 0.6} until={K.Ce - 0.3} texto="vida en pausa" y={430} borde={KC.gold} tam={48} />
+        <Chip T={T} at={K.G + 0.6} until={K.Ce - 0.3} texto="vida en pausa" x={885} y={660} borde={KC.gold} tam={40} />
       </EscenaFundido>
 
       {/* 1 · CEPA — la ficha */}
       <EscenaFundido T={T} a={K.Ce} b={K.Ti} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.mint, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+        {/* modo cine (pase a mano): el vial sigue grande (antes s 1.3) y la ficha ya no se sale del cuadro */}
+        <FondoMarca color={KC.mint} T={T} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform="translate(230 900) scale(1.3)"><Vial x={0} y={0} s={1} etiqueta="C-07" escarcha={0.6} contenido="#9ad9b5" /></g>
+          <g transform="translate(210 1020) scale(3.1)"><Vial x={0} y={0} s={1} etiqueta="C-07" escarcha={0.6} contenido="#9ad9b5" /></g>
+          <line x1={318} y1={1060} x2={400} y2={960} stroke={KC.ink} strokeWidth={5} strokeDasharray="12 10" opacity={kprog(T, K.Ce + 0.4, K.Ce + 0.8)} />
         </svg>
-        <Aparece T={T} at={K.Ce + 0.4} until={K.Ti - 0.3} x={470} y={640} modo="pop">
-          <div style={{ width:520, background:KC.paper, border:`7px solid ${KC.ink}`, borderRadius:22, padding:'20px 26px', boxShadow:`12px 12px 0 ${KC.ink}` }}>
-            <div style={{ font:`900 44px ${KF.texto}`, color:KC.ink }}>C-07</div>
+        <Aparece T={T} at={K.Ce + 0.4} until={K.Ti - 0.3} x={400} y={760} modo="pop">
+          <div style={{ width:560, background:KC.paper, border:`5px solid ${KC.ink}`, borderRadius:22, padding:'22px 26px', boxShadow:'0 24px 60px rgba(0,0,0,.6)' }}>
+            <div style={{ font:`900 54px ${KF.texto}`, color:KC.ink }}>C-07</div>
             {[['qué es', 'Escherichia coli'], ['de dónde', 'cepario del lab'], ['cómo', '−80 °C + glicerol']].map(([a, b], i) => (
-              <div key={i} style={{ display:'flex', justifyContent:'space-between', gap:18, marginTop:12, font:`700 28px ${KF.mono}`, color:'#5a524a' }}>
+              <div key={i} style={{ display:'flex', justifyContent:'space-between', gap:18, marginTop:16, font:`700 30px ${KF.mono}`, color:'#8f9bb8' }}>
                 <span>{a}</span><span style={{ color:KC.ink, fontStyle: i === 0 ? 'italic' : 'normal' }}>{b}</span>
               </div>))}
           </div>
@@ -154,33 +157,36 @@ function CeparioNarrado() {
 
       {/* 2 · TIPOS — cuatro tarjetas */}
       <EscenaFundido T={T} a={K.Ti} b={K.Cp} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.28) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
-        {TIPOS.map((t, i) => { const at = K.Ti + 0.2 + i * 0.4, e = kentrada(T, at, null, 'pop');
-          if (T < at) return null;
-          const [x, y] = [[250, 720], [700, 720], [250, 1070], [700, 1070]][i];
-          return <div key={i} style={{ position:'absolute', left:x - 160, top:y - 140, width:320, height:280, opacity:e.o,
-            transform:`scale(${e.s}) rotate(${(i % 2 ? 2 : -2)}deg)`, background:KC.paper, border:`6px solid ${KC.ink}`,
-            borderRadius:24, boxShadow:`10px 10px 0 ${KC.ink}`, textAlign:'center' }}>
-            <svg width={320} height={190}><g transform={`translate(160 110) scale(1.15) rotate(${mece(T, i + 3, 0.3) * 5})`}>{t.d()}</g></svg>
-            <div style={{ font:`900 38px ${KF.texto}`, color:KC.ink, marginTop:-8 }}>{t.n}</div>
+        {/* modo cine (pase a mano): las cuatro cepas van grandes y centradas (antes tarjetas de 320 px cargadas a la izquierda) y
+            están desde el inicio, atenuadas; cada una se enciende cuando la voz la nombra */}
+        <FondoMarca color={KC.lilac} T={T} />
+        {TIPOS.map((t, i) => { const at = K.Ti + 0.2 + i * 0.4, e = T < at ? { o: 0, s: 1 } : kentrada(T, at, null, 'pop');
+          const base = kprog(T, K.Ti + 0.02, K.Ti + 0.3);
+          const [x, y] = [[290, 740], [790, 740], [290, 1210], [790, 1210]][i];
+          return <div key={i} style={{ position:'absolute', left:x - 220, top:y - 205, width:440, height:410, opacity:base * (0.3 + 0.7 * e.o),
+            transform:`scale(${T < at ? 0.94 : e.s}) rotate(${(i % 2 ? 2 : -2)}deg)`, background:'rgba(19,27,46,.72)', border:`5px solid ${KC.ink}`,
+            borderRadius:30, boxShadow:'0 24px 60px rgba(0,0,0,.55)', textAlign:'center' }}>
+            <svg width={440} height={300}><g transform={`translate(220 165) scale(2.0) rotate(${mece(T, i + 3, 0.3) * 5})`}>{t.d()}</g></svg>
+            <div style={{ font:`900 50px ${KF.texto}`, color:KC.ink, marginTop:-4 }}>{t.n}</div>
           </div>; })}
       </EscenaFundido>
 
       {/* 3 · CEPARIO — la gradilla */}
       <EscenaFundido T={T} a={K.Cp} b={K.Cu} zoom={0.04} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 46%, #14202e 0%, #0E0F12 76%)' }}></div>
-        <Gradilla T={T} cols={8} filas={9} encendidos={(t) => kprog(t, K.Cp + 0.2, K.Cu - 0.2)} x={110} y={470} ancho={860} alto={720} />
-        <Chip T={T} at={K.Cp + 0.4} until={K.Cu - 0.3} texto="una biblioteca viva" y={400} borde={KC.cyan} tam={44} />
+        <Gradilla T={T} cols={8} filas={9} encendidos={(t) => kprog(t, K.Cp + 0.2, K.Cu - 0.2)} x={80} y={440} ancho={920} alto={1030} />   {/* modo cine: la gradilla llena el cuadro (antes 860 × 720) */}
+        <Chip T={T} at={K.Cp + 0.4} until={K.Cu - 0.3} texto="una biblioteca viva" y={350} borde={KC.cyan} tam={46} />
       </EscenaFundido>
 
       {/* 4 · CUIDO — el congelador abierto */}
       <EscenaFundido T={T} a={K.Cu} b={K.Q} zoom={0.04} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d1624, #0b0f19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Congelador T={T} x={560} y={820} s={0.95} abierto={kprog(T, K.Cu + 0.4, K.Cu + 1.4, kEase.sale)} />
-          <Vaho T={T} x={520} y={800} w={420} n={16} o={kprog(T, K.Cu + 1.0, K.Cu + 1.8)} />
+          {/* modo cine (pase a mano): el ultracongelador va grande y al centro (antes s 0.95) */}
+          <Congelador T={T} x={640} y={980} s={1.5} abierto={kprog(T, K.Cu + 0.4, K.Cu + 1.4, kEase.sale)} />
+          <Vaho T={T} x={600} y={960} w={620} n={18} o={kprog(T, K.Cu + 1.0, K.Cu + 1.8)} />
         </svg>
-        <Chip T={T} at={K.Cu + 1.6} until={K.Q - 0.3} texto="mi cepario" y={430} borde={KC.gold} tam={44} />
+        <Chip T={T} at={K.Cu + 1.6} until={K.Q - 0.3} texto="mi cepario" x={640} y={420} borde={KC.gold} tam={48} />
       </EscenaFundido>
 
       {/* 5 · PREGUNTA — re-gancho */}
@@ -188,7 +194,7 @@ function CeparioNarrado() {
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 46% 50%, #16222e 0%, #0E0F12 74%)' }}></div>
         <Ambiente T={T} n={28} seed={11} color="rgba(191,233,255,.35)" tam={[3, 10]} vel={-12} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform={`translate(460 900) rotate(${(T - K.Q) * 26})`}><Vial x={0} y={0} s={2.1} etiqueta="C-07" escarcha={1} contenido="#9ad9b5" /></g>
+          <g transform={`translate(540 960) rotate(${(T - K.Q) * 26})`}><Vial x={0} y={18} s={3.6} etiqueta="C-07" escarcha={1} contenido="#9ad9b5" /></g>
         </svg>
       </EscenaFundido>
 
@@ -197,81 +203,86 @@ function CeparioNarrado() {
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 46% 52%, #16222e 0%, #0E0F12 76%)' }}></div>
         <Ambiente T={T} n={22} seed={21} color="rgba(191,233,255,.3)" tam={[3, 9]} vel={-10} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Congelacion T={T} x={470} y={900} glicerol={kprog(T, K.C1 + 1.6, K.C1 + 3.0, kEase.sale)} rompe={0} />
+          {/* modo cine (pase a mano): la célula y sus cristales 1.35 veces más grandes y al centro */}
+          <g transform="translate(430 960) scale(1.35)"><Congelacion T={T} x={0} y={0} glicerol={kprog(T, K.C1 + 1.6, K.C1 + 3.0, kEase.sale)} rompe={0} /></g>
         </svg>
-        <Etiqueta T={T} at={K.C1 + 2.4} until={K.C2 - 0.3} x={600} y={600} texto="glicerol" color={KC.gold2} tam={32} />
-        <Etiqueta T={T} at={K.C1 + 3.4} until={K.C2 - 0.3} x={60} y={1170} texto="el hielo no la rompe" color={HIELO} lado="der" tam={30} />
+        <Etiqueta T={T} at={K.C1 + 2.4} until={K.C2 - 0.3} x={560} y={715} texto="glicerol" color={KC.gold2} tam={36} />
+        <Etiqueta T={T} at={K.C1 + 3.4} until={K.C2 - 0.3} x={60} y={1290} texto="el hielo no la rompe" color={HIELO} lado="der" tam={34} />
         <Medidor T={T} at={K.C1b + 0.3} until={K.C2 - 0.3} etiqueta="ACTIVIDAD DE LA CÉLULA"
           valor={(t) => klerp(1, 0.12, kprog(t, K.C1b + 0.4, K.C1b + 2.4, kEase.suave))}
-          texto={(v) => (v > 0.3 ? 'bajando…' : 'baja, pero no cero')} y={1560} color={KC.cyan} />
-        <Chip T={T} at={K.C1b + 2.6} until={K.C2 - 0.3} texto="se detiene a unos −130 °C" x={420} y={400} borde={KC.cyan} tam={34} />
+          texto={(v) => (v > 0.3 ? 'bajando…' : 'baja, pero no cero')} y={1410} color={KC.cyan} />
+        <Chip T={T} at={K.C1b + 2.6} until={K.C2 - 0.3} texto="se detiene a unos −130 °C" x={440} y={480} borde={KC.cyan} tam={36} />
       </EscenaFundido>
 
       {/* 8 · CAPÍTULO 2 — nitrógeno líquido */}
       <EscenaFundido T={T} a={K.C2} b={K.C3} zoom={0.04} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0b1422, #0b0f19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <TanqueN2 T={T} x={520} y={900} s={1.0} abierto={kprog(T, K.C2 + 0.5, K.C2 + 1.5, kEase.sale)} />
-          <Vaho T={T} x={470} y={700} w={520} n={20} o={kprog(T, K.C2 + 1.0, K.C2 + 1.8)} />
+          {/* modo cine (pase a mano): el tanque va grande (antes s 1.0) */}
+          <TanqueN2 T={T} x={470} y={1000} s={1.5} abierto={kprog(T, K.C2 + 0.5, K.C2 + 1.5, kEase.sale)} />
+          <Vaho T={T} x={430} y={690} w={720} n={22} o={kprog(T, K.C2 + 1.0, K.C2 + 1.8)} />
         </svg>
-        <Chip T={T} at={K.C2 + 2.4} until={K.C3 - 0.3} texto="décadas" y={430} borde={HIELO} tam={46} />
+        <Chip T={T} at={K.C2 + 2.4} until={K.C3 - 0.3} texto="décadas" x={790} y={365} borde={HIELO} tam={50} />
       </EscenaFundido>
 
       {/* 9 · CAPÍTULO 3 — liofilizar */}
       <EscenaFundido T={T} a={K.C3} b={K.D} zoom={0.04} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #241f33 0%, #0E0F12 76%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform="translate(520 840) scale(2.3)">
+          {/* modo cine (pase a mano): el vial al vacío va grande (antes 2.3) y el vapor sale de su boca */}
+          <g transform="translate(540 990) scale(3.4)">
             <Vial x={0} y={0} s={1} etiqueta="C-07" contenido="#e9c46a" abierto={kprog(T, K.C3 + 0.3, K.C3 + 0.9, kEase.sale) * 0.45} />
           </g>
           {Array.from({ length: 14 }, (_, i) => { const at = K.C3 + 0.9 + i * 0.1, p = kprog(T, at, at + 1.8);
             if (T < at) return null; const g = krng(i * 9 + 1);
-            return <circle key={i} cx={470 + (g() - 0.5) * 220 + Math.sin(p * 6 + i) * 30} cy={klerp(760, 300, p)}
-              r={klerp(16, 4, p)} fill={HIELO} opacity={(1 - p) * 0.75} />; })}
+            return <circle key={i} cx={540 + (g() - 0.5) * 300 + Math.sin(p * 6 + i) * 40} cy={klerp(585, 230, p)}
+              r={klerp(24, 6, p)} fill={HIELO} opacity={(1 - p) * 0.75} />; })}
         </svg>
-        <Etiqueta T={T} at={K.C3 + 1.6} until={K.D - 0.3} x={110} y={560} texto="el agua se va" color={HIELO} tam={32} />
+        <Etiqueta T={T} at={K.C3 + 1.6} until={K.D - 0.3} x={385} y={470} lado="izq" texto="el agua se va" color={HIELO} tam={36} />
         <Medidor T={T} at={K.C3 + 0.6} until={K.D - 0.3} etiqueta="AGUA EN LA MUESTRA"
           valor={(t) => klerp(1, 0.02, kprog(t, K.C3 + 0.9, K.C3 + 3.2, kEase.suave))}
-          texto={(v) => (v < 0.1 ? 'seca' : Math.round(v * 100) + ' %')} y={1560} color={HIELO} />
+          texto={(v) => (v < 0.1 ? 'seca' : Math.round(v * 100) + ' %')} y={1440} color={HIELO} />
       </EscenaFundido>
 
       {/* 10 · DOS COPIAS */}
       <EscenaFundido T={T} a={K.D} b={K.M} zoom={0.04} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d1624, #0b0f19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform="translate(280 880) scale(0.6)"><Congelador T={T} x={0} y={0} s={1} abierto={0} etiqueta="copia 1" /></g>
-          <g opacity={kprog(T, K.D + 0.5, K.D + 1.1)} transform="translate(800 880) scale(0.6)">
+          {/* modo cine (pase a mano): los dos congeladores llenan el ancho (antes escala 0.6) */}
+          <g transform="translate(262 940) scale(1.0)"><Congelador T={T} x={0} y={0} s={1} abierto={0} etiqueta="copia 1" /></g>
+          <g opacity={kprog(T, K.D + 0.5, K.D + 1.1)} transform="translate(818 940) scale(1.0)">
             <Congelador T={T} x={0} y={0} s={1} abierto={0} etiqueta="copia 2" /></g>
-          <path d="M 450 880 L 630 880" stroke={KC.gold} strokeWidth={10} strokeDasharray="22 16" strokeDashoffset={-T * 40} />
+          <path d="M 500 900 L 580 900" stroke={KC.gold} strokeWidth={10} strokeDasharray="22 16" strokeDashoffset={-T * 40} />
         </svg>
-        <Chip T={T} at={K.D + 0.9} until={K.M - 0.3} texto="en lugares distintos" y={430} borde={KC.gold} tam={44} />
+        <Chip T={T} at={K.D + 0.9} until={K.M - 0.3} texto="en lugares distintos" y={480} borde={KC.gold} tam={48} />
       </EscenaFundido>
 
       {/* 11 · MUNDO */}
       <EscenaFundido T={T} a={K.M} b={K.C} zoom={0.03} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 54%, #14202e 0%, #0E0F12 78%)' }}></div>
-        <Gradilla T={T} cols={10} filas={11} encendidos={(t) => kprog(t, K.M + 0.3, K.C - 0.4)} x={150} y={700} ancho={780} alto={520} color={KC.gold2} />
+        <Gradilla T={T} cols={10} filas={11} encendidos={(t) => kprog(t, K.M + 0.3, K.C - 0.4)} x={80} y={720} ancho={920} alto={760} color={KC.gold2} />   {/* modo cine: gradilla a todo lo ancho (antes 780 × 520) */}
       </EscenaFundido>
       {T >= K.M - 0.1 && T < K.C - 0.1 && <>
-        <NumeroGigante T={T} at={K.M + 0.3} until={K.C - 0.3} valor={861} dur={2.6} etiqueta="COLECCIONES DE MICROBIOS" y={420} tam={110} color={KC.yellow} />
-        <Chip T={T} at={K.M + 2.4} until={K.C - 0.3} texto="en 80 países · WDCM 2024" y={560} tam={38} />
+        <NumeroGigante T={T} at={K.M + 0.3} until={K.C - 0.3} valor={861} dur={2.6} etiqueta="COLECCIONES DE MICROBIOS" y={400} tam={170} color={KC.yellow} />
+        <Chip T={T} at={K.M + 2.4} until={K.C - 0.3} texto="en 80 países · WDCM 2024" y={600} tam={40} />
       </>}
 
       {/* 12 · CIERRE — el vial del inicio, ahora con nombre */}
       <EscenaFundido T={T} a={K.C} b={FIN} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.cyan, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.32) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+        {/* modo cine (pase a mano): el mismo vial grande del gancho */}
+        <FondoMarca color={KC.cyan} T={T} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform={`translate(430 880) rotate(${mece(T, 1, 0.25) * 4})`}>
-            <Vial x={0} y={0} s={2.3} etiqueta="C-07" escarcha={1} contenido="#9ad9b5" />
+          <g transform={`translate(400 1034) rotate(${mece(T, 1, 0.25) * 4})`}>
+            <Vial x={0} y={0} s={4.1} etiqueta="C-07" escarcha={1} contenido="#9ad9b5" />
           </g>
-          <Vaho T={T} x={430} y={560} w={280} n={10} o={0.7} />
+          <Vaho T={T} x={400} y={420} w={480} n={12} o={0.7} />
         </svg>
-        <Etiqueta T={T} at={K.C + 1.0} until={K.Ou} x={600} y={740} texto="Escherichia coli" it color={KC.ink} tam={34} />
-        <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="1978 · la insulina" x={330} y={430} borde={KC.gold} tam={42} />
+        <Etiqueta T={T} at={K.C + 1.0} until={K.Ou} x={590} y={1060} texto="Escherichia coli" it color={KC.ink} tam={38} />
+        <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="1978 · la insulina" x={800} y={760} borde={KC.gold} tam={44} />
       </EscenaFundido>
 
       <Capitulo T={T} caps={caps} hasta={K.D - 0.2} />
-      <Termometro T={T} at={K.C1 + 0.2} until={K.C3 - 0.4} temp={temp} x={900} y={560} alto={600} />
+      <Termometro T={T} at={K.C1 + 0.2} until={K.C3 - 0.4} temp={temp} x={950} y={640} alto={600} />
 
       {/* subtítulos */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ce - 0.1} texto="Este frasco no está vacío: *vida en pausa.*" />

@@ -126,16 +126,16 @@ function Frasco({ T, x = 0, y = 0, s = 1, etiqueta, lleno = 0.72, tapa = KC.cyan
 /* ---------- ribosoma que corre por el ARN y deja caer aminoácidos ----------
    p: 0..1 avance · n: aminoácidos de la cadena (A = 21, B = 30; cada cadena la hace su propia cepa).
    Suenan 51 notas en el audio (los 51 aminoácidos de la insulina, 21 + 30). */
-function Ribosoma({ T, p = 0, y = 900, x0 = 120, x1 = 960, n = AMINOS }) {
+function Ribosoma({ T, p = 0, y = 900, x0 = 120, x1 = 960, n = AMINOS, k = 1 }) {
   const AMINOS = n;
   const x = klerp(x0, x1, kclamp(p, 0, 1)), hechos = Math.floor(p * AMINOS);
   return <g>
     <line x1={x0 - 60} y1={y} x2={x1 + 60} y2={y} stroke="#9aa4ae" strokeWidth={12} strokeLinecap="round" strokeDasharray="26 16" strokeDashoffset={-T * 40} />
     {Array.from({ length: Math.min(hechos, AMINOS) }, (_, i) => {
       const u = i / AMINOS, px = klerp(x0, x, u / Math.max(p, 0.001)), cae = kclamp((p - u) * 6, 0, 1);
-      return <circle key={i} cx={px} cy={y + 60 + cae * (60 + Math.sin(i * 1.3) * 26)} r={13} fill={INS} stroke={KC.ink} strokeWidth={4} opacity={0.9} />;
+      return <circle key={i} cx={px} cy={y + (60 + cae * (60 + Math.sin(i * 1.3) * 26)) * k} r={13 * k} fill={INS} stroke={KC.ink} strokeWidth={4} opacity={0.9} />;
     })}
-    <g transform={`translate(${x} ${y})`}>
+    <g transform={`translate(${x} ${y}) scale(${k})`}>
       <ellipse cx={0} cy={-26} rx={62} ry={44} fill="#b78cff" stroke={KC.ink} strokeWidth={7} />
       <ellipse cx={0} cy={22} rx={48} ry={32} fill="#8e6bd6" stroke={KC.ink} strokeWidth={7} />
     </g>
@@ -159,6 +159,30 @@ function Animal({ x = 0, y = 0, s = 1, tipo = 'cerdo', color = '#8e7c72' }) {
   </g>;
 }
 
+/* ---------- modo cine: el tanque sobre fondo oscuro con motas (sin el fondo de color con puntos del mundo del kit).
+   Se recorta el mundo a la silueta del tanque (cuerpo, tapa, motor, patas y tubos) y detrás va el fondo del estilo cine. */
+const TANQUE_SILUETA = (() => {
+  const rr = (x, y, w, h, r) => `M ${x + r} ${y} H ${x + w - r} A ${r} ${r} 0 0 1 ${x + w} ${y + r} V ${y + h - r} A ${r} ${r} 0 0 1 ${x + w - r} ${y + h} H ${x + r} A ${r} ${r} 0 0 1 ${x} ${y + h - r} V ${y + r} A ${r} ${r} 0 0 1 ${x + r} ${y} Z`;
+  // todos los trozos con el mismo sentido de giro: si no, donde se enciman se anulan y queda un hueco
+  const poli = (pts) => { let a = 0; pts.forEach((q, i) => { const n = pts[(i + 1) % pts.length]; a += q[0] * n[1] - n[0] * q[1]; });
+    return 'M ' + (a < 0 ? pts.slice().reverse() : pts).map((q) => q.map((v) => v.toFixed(1)).join(' ')).join(' L ') + ' Z'; };
+  const tubo = (p0, c, p1, w) => { const izq = [], der = [];
+    for (let i = 0; i <= 13; i++) { const t = Math.min(i, 12) / 12, u = 1 - t, ext = i === 13 ? 11 : 0;
+      const dx = 2 * u * (c[0] - p0[0]) + 2 * t * (p1[0] - c[0]), dy = 2 * u * (c[1] - p0[1]) + 2 * t * (p1[1] - c[1]), d = Math.hypot(dx, dy) || 1;
+      const x = u * u * p0[0] + 2 * u * t * c[0] + t * t * p1[0] + dx / d * ext, y = u * u * p0[1] + 2 * u * t * c[1] + t * t * p1[1] + dy / d * ext;
+      izq.push([x - dy / d * w, y + dx / d * w]); der.unshift([x + dy / d * w, y - dx / d * w]); }
+    return poli([...izq, ...der]); };
+  return [rr(243, 513, 594, 994, 76), rr(304, 438, 472, 90, 23), rr(464, 346, 152, 112, 26),
+    poli([[327, 1478], [353, 1478], [303, 1624], [277, 1624]]), poli([[727, 1478], [753, 1478], [803, 1624], [777, 1624]]),
+    tubo([262, 820], [140, 820], [140, 940], 11), tubo([818, 1040], [950, 1040], [950, 900], 11)].join(' ');
+})();
+function TanqueCine(props) {
+  return <>
+    <FondoMarca color={KC.cyan} T={props.T} />
+    <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, clipPath:`path('${TANQUE_SILUETA}')` }}><MundoBiorreactor {...props} fondo="#0a0f1c" /></div>
+  </>;
+}
+
 /* ================= VERSIÓN NARRADA ================= */
 function InsulinaNarrado() {
   const { T, CUES } = useComposition();
@@ -173,28 +197,29 @@ function InsulinaNarrado() {
 
       {/* 0 · GANCHO — el tanque trabajando y el frasco */}
       <EscenaFundido T={T} a={K.G} b={K.A} zoom={0.05}>
-        <MundoBiorreactor T={T} turbio={klerp(0.25, 0.8, kprog(T, K.G, K.A, kEase.suave))} burbujas={1} rpm={110} />
+        <TanqueCine T={T} turbio={klerp(0.25, 0.8, kprog(T, K.G, K.A, kEase.suave))} burbujas={1} rpm={110} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Frasco T={T} x={880} y={1420} s={0.9} etiqueta="insulina" />
+          {/* modo cine: «esa insulina» (el frasco) grande, junto al tanque */}
+          <Frasco T={T} x={880} y={1130} s={1.5} etiqueta="insulina" />
         </svg>
       </EscenaFundido>
 
       {/* 1 · ANTES — cerdos y reses */}
       <EscenaFundido T={T} a={K.A} b={K.R} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.yellow, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+        <FondoMarca color={KC.yellow} T={T} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g opacity={kprog(T, K.A + 0.2, K.A + 0.8)}><Animal x={300} y={760} s={0.95} tipo="cerdo" color="#d98fa4" /></g>
-          <g opacity={kprog(T, K.A + 0.7, K.A + 1.3)}><Animal x={720} y={1060} s={0.9} tipo="res" color="#8e7c72" /></g>
-          <g opacity={kprog(T, K.A + 1.6, K.A + 2.2)}><Frasco T={T} x={250} y={1230} s={0.75} etiqueta="desde 1922" tapa="#b7a98f" lleno={0.6} /></g>
+          <g opacity={kprog(T, K.A - 0.2, K.A + 0.3)}><Animal x={400} y={770} s={1.55} tipo="cerdo" color="#d98fa4" /></g>
+          <g opacity={kprog(T, K.A + 0.1, K.A + 0.6)}><Animal x={670} y={1190} s={1.5} tipo="res" color="#a8948a" /></g>
+          <g opacity={kprog(T, K.A + 0.6, K.A + 1.1)}><Frasco T={T} x={190} y={1130} s={1.05} etiqueta="desde 1922" tapa="#b7a98f" lleno={0.6} /></g>
         </svg>
-        <Chip T={T} at={K.A + 0.4} until={K.R - 0.3} texto="del páncreas de un animal" y={420} borde={KC.red} tam={42} />
+        <Chip T={T} at={K.A + 0.4} until={K.R - 0.3} texto="del páncreas de un animal" y={400} borde={KC.red} tam={46} />
       </EscenaFundido>
 
       {/* 2 · REACCIÓN — no era humana */}
       <EscenaFundido T={T} a={K.R} b={K.Ge} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.coral, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.26) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+        <FondoMarca color={KC.coral} T={T} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform={`rotate(${mece(T, 2, 0.2) * 1.5} 540 960)`}>
+          <g transform={`translate(540 930) scale(1.4) translate(-540 -910) rotate(${mece(T, 2, 0.2) * 1.5} 540 960)`}>
             <rect x={210} y={760} width={660} height={300} rx={150} fill="#f1b48f" stroke={KC.ink} strokeWidth={10} />
             {[[420, 880], [530, 940], [640, 870], [560, 830]].map(([cx, cy], i) => {
               const o = kprog(T, K.R + 0.8 + i * 0.22, K.R + 1.3 + i * 0.22, kEase.rebote);
@@ -203,27 +228,28 @@ function InsulinaNarrado() {
           </g>
         </svg>
       </EscenaFundido>
-      <MitoTachado T={T} at={K.R + 0.3} tacharEn={K.R + 2.2} until={K.Ge - 0.3} texto="¿insulina humana?" y={600} tam={52} />
+      <MitoTachado T={T} at={K.R + 0.3} tacharEn={K.R + 2.2} until={K.Ge - 0.3} texto="¿insulina humana?" y={540} tam={56} />
 
       {/* 3 · GEN — se ESCRIBE (síntesis química, cadenas A y B) y entra al plásmido */}
       <EscenaFundido T={T} a={K.Ge} b={K.L} zoom={0.04} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 46%, #1d2433 0%, #0E0F12 76%)' }}></div>
         <Ambiente T={T} n={24} seed={5} color="rgba(190,220,255,.3)" tam={[3, 9]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <GenEscrito T={T} x={250} y={560} etiqueta="A" p={kprog(T, K.Ge + 0.2, K.Ge + 1.5)} h={kprog(T, K.Ge + 1.5, K.Ge + 2.1, kEase.sale)} />
-          <GenEscrito T={T} x={250} y={760} etiqueta="B" p={kprog(T, K.Ge + 0.5, K.Ge + 1.8)} h={kprog(T, K.Ge + 1.7, K.Ge + 2.3, kEase.sale)} letras="TTCGTGAATCAACACCTTTGTGGCTCACAT" />
+          <GenEscrito T={T} x={190} y={580} largo={800} etiqueta="A" p={kprog(T, K.Ge + 0.2, K.Ge + 1.5)} h={kprog(T, K.Ge + 1.5, K.Ge + 2.1, kEase.sale)} />
+          <GenEscrito T={T} x={190} y={790} largo={800} etiqueta="B" p={kprog(T, K.Ge + 0.5, K.Ge + 1.8)} h={kprog(T, K.Ge + 1.7, K.Ge + 2.3, kEase.sale)} letras="TTCGTGAATCAACACCTTTGTGGCTCACAT" />
           {/* un plásmido (y una cepa de E. coli) para cada gen: A a la izquierda, B a la derecha */}
-          <g opacity={kprog(T, K.Ge + 2.0, K.Ge + 2.6)}>
-            <Plasmido T={T} x={300} y={1010} r={130} gen={1} rot={T * 14}
+          {/* modo cine: los dos plásmidos (anillos abiertos) esperan desde que empieza la escena; se encienden cuando entra el gen */}
+          <g opacity={kprog(T, K.Ge - 0.2, K.Ge + 0.3) * (0.4 + 0.6 * kprog(T, K.Ge + 2.0, K.Ge + 2.6))}>
+            <Plasmido T={T} x={290} y={1170} r={185} gen={kprog(T, K.Ge + 2.0, K.Ge + 2.6)} rot={T * 14}
               cierra={kprog(T, K.Ge + 2.7, K.Ge + 3.5, kEase.sale)} />
-            <Plasmido T={T} x={780} y={1010} r={130} gen={1} rot={-T * 14 + 40}
+            <Plasmido T={T} x={790} y={1170} r={185} gen={kprog(T, K.Ge + 2.0, K.Ge + 2.6)} rot={-T * 14 + 40}
               cierra={kprog(T, K.Ge + 2.9, K.Ge + 3.7, kEase.sale)} />
-            <text x={300} y={1032} textAnchor="middle" style={{ font:`900 64px ${KF.texto}` }} fill={PLAS}>A</text>
-            <text x={780} y={1032} textAnchor="middle" style={{ font:`900 64px ${KF.texto}` }} fill={PLAS}>B</text>
+            <text x={290} y={1200} textAnchor="middle" style={{ font:`900 88px ${KF.texto}` }} fill={PLAS}>A</text>
+            <text x={790} y={1200} textAnchor="middle" style={{ font:`900 88px ${KF.texto}` }} fill={PLAS}>B</text>
           </g>
         </svg>
-        <Chip T={T} at={K.Ge + 2.3} until={K.L - 0.3} texto="un plásmido y una bacteria para cada uno" y={1520} borde={PLAS} tam={34} />
-        <Chip T={T} at={K.Ge + 0.3} until={K.L - 0.3} texto="1978 · dos genes, escritos" y={400} borde={KC.gold} tam={42} />
+        <Chip T={T} at={K.Ge + 2.3} until={K.L - 0.3} texto="un plásmido y una bacteria para cada uno" y={1480} borde={PLAS} tam={38} />
+        <Chip T={T} at={K.Ge + 0.3} until={K.L - 0.3} texto="1978 · dos genes, escritos" y={390} borde={KC.gold} tam={46} />
       </EscenaFundido>
 
       {/* 4 · LEE — la bacteria fabrica la proteína */}
@@ -231,12 +257,12 @@ function InsulinaNarrado() {
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #16281f 0%, #0E0F12 76%)' }}></div>
         <Ambiente T={T} n={20} seed={8} color="rgba(126,231,135,.3)" tam={[3, 10]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Bacteria T={T} x={540} y={900} s={1.25} plasmido={kprog(T, K.L + 0.3, K.L + 0.9)}
+          <Bacteria T={T} x={540} y={800} s={2.2} plasmido={kprog(T, K.L + 0.3, K.L + 0.9)}
             brilla={kprog(T, K.L + 1.2, K.L + 2.0)} />
           {Array.from({ length: 5 }, (_, i) => { const at = K.L + 1.6 + i * 0.3, p = kprog(T, at, at + 1.8, kEase.suave);
             if (T < at) return null;
-            return <g key={i} opacity={1 - p * 0.3} transform={`translate(${klerp(540, 300 + i * 150, p)} ${klerp(900, 1250 + (i % 2) * 70, p)})`}>
-              <CadenaInsulina T={T} s={0.7} seed={i} />
+            return <g key={i} opacity={1 - p * 0.3} transform={`translate(${klerp(540, 150 + i * 190, p)} ${klerp(800, 1220 + (i % 2) * 130, p)})`}>
+              <CadenaInsulina T={T} s={0.95} seed={i} />
             </g>; })}
         </svg>
       </EscenaFundido>
@@ -246,14 +272,14 @@ function InsulinaNarrado() {
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 46% 48%, #1d2433 0%, #0E0F12 74%)' }}></div>
         <Ambiente T={T} n={26} seed={13} color="rgba(190,220,255,.32)" tam={[3, 9]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Bacteria T={T} x={480} y={900} s={klerp(0.9, 1.5, kprog(T, K.Q, K.P, kEase.suave))} plasmido={1} />
+          <Bacteria T={T} x={540} y={900} s={klerp(1.3, 2.2, kprog(T, K.Q, K.P, kEase.suave))} plasmido={1} />
         </svg>
-        <Escala T={T} z={klerp(0.9, 1.5, kprog(T, K.Q, K.P, kEase.suave))} pxPorMm={170000} />
+        <Escala T={T} z={klerp(1.3, 2.2, kprog(T, K.Q, K.P, kEase.suave))} pxPorMm={170000} />
       </EscenaFundido>
 
       {/* 6 · PLÁSMIDO — Lupa de rayos X sobre la ventana del tanque */}
       <EscenaFundido T={T} a={K.P} b={K.H} zoom={0.03}>
-        <MundoBiorreactor T={T} turbio={0.85} burbujas={1} rpm={110} fondo={KC.cyan} />
+        <TanqueCine T={T} turbio={0.85} burbujas={1} rpm={110} />
       </EscenaFundido>
       <Lupa T={T} at={K.P + 0.3} until={K.Ri + 0.2} x={520} y={620} r={260} fx={V.x} fy={V.y}
         interior={(t, r) => <svg width={r * 2} height={r * 2}>
@@ -270,36 +296,37 @@ function InsulinaNarrado() {
         <Ambiente T={T} n={22} seed={21} color="rgba(183,140,255,.3)" tam={[3, 9]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {/* cada cepa arma su cadena: A (21) arriba, B (30) abajo */}
-          <Ribosoma T={T} y={680} n={21} p={kprog(T, K.Ri + 0.4, K.H - 0.4, kEase.suave)} />
-          <Ribosoma T={T} y={980} n={30} p={kprog(T, K.Ri + 0.4, K.H - 0.4, kEase.suave)} />
+          <Ribosoma T={T} y={660} k={1.6} x1={920} n={21} p={kprog(T, K.Ri + 0.4, K.H - 0.4, kEase.suave)} />
+          <Ribosoma T={T} y={1090} k={1.6} x1={920} n={30} p={kprog(T, K.Ri + 0.4, K.H - 0.4, kEase.suave)} />
         </svg>
-        <Etiqueta T={T} at={K.Ri + 0.8} until={K.H - 0.3} x={80} y={580} texto="cadena A · 21" color={INS} tam={34} />
-        <Etiqueta T={T} at={K.Ri + 0.8} until={K.H - 0.3} x={80} y={880} texto="cadena B · 30" color={INS} tam={34} />
-        <Chip T={T} at={K.Ri + 0.6} until={K.H - 0.3} texto="cadena A: 21 · cadena B: 30" y={450} borde={INS} tam={40} />
+        <Etiqueta T={T} at={K.Ri + 0.8} until={K.H - 0.3} x={300} y={520} texto="cadena A · 21" color={INS} tam={38} />
+        <Etiqueta T={T} at={K.Ri + 0.8} until={K.H - 0.3} x={300} y={950} texto="cadena B · 30" color={INS} tam={38} />
+        <Chip T={T} at={K.Ri + 0.6} until={K.H - 0.3} texto="cadena A: 21 · cadena B: 30" y={380} borde={INS} tam={44} />
         <Medidor T={T} at={K.Ri + 1.2} until={K.H - 0.3} etiqueta="CADENAS ARMADAS"
           valor={(t) => kprog(t, K.Ri + 0.4, K.H - 0.4, kEase.suave)}
-          texto={(v) => 'A ' + Math.round(v * 21) + '/21 · B ' + Math.round(v * 30) + '/30'} y={1560} color={INS} />
+          texto={(v) => 'A ' + Math.round(v * 21) + '/21 · B ' + Math.round(v * 30) + '/30'} y={1440} color={INS} />
       </EscenaFundido>
 
       {/* 8 · HUMULIN */}
       <EscenaFundido T={T} a={K.H} b={K.Ho} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.mint, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+        <FondoMarca color={KC.mint} T={T} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g opacity={kprog(T, K.H + 2.6, K.H + 3.2)}>
-            <Frasco T={T} x={300} y={960} s={1.25} etiqueta="Humulin" />
+          {/* modo cine: el frasco (el sujeto) está en pantalla desde que empieza la escena, grande y al centro; la tarjeta va chica y arriba */}
+          <g opacity={kprog(T, K.H - 0.2, K.H + 0.3)}>
+            <Frasco T={T} x={540} y={760} s={2.9} etiqueta="Humulin" />
           </g>
         </svg>
-        <TarjetaEstudio T={T} at={K.H + 0.3} until={K.H + 2.6} anio="1982" quien="octubre · FDA" revista="el primer fármaco de ADN recombinante" y={820} />
+        <TarjetaEstudio T={T} at={K.H + 0.3} until={K.H + 2.6} anio="1982" quien="octubre · FDA" revista="el primer fármaco de ADN recombinante" y={360} />
       </EscenaFundido>
 
       {/* 9 · HOY — no todo es bacteria */}
       <EscenaFundido T={T} a={K.Ho} b={K.Le} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.28) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+        <FondoMarca color={KC.lilac} T={T} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Bacteria T={T} x={320} y={900} s={0.7} plasmido={1} />
-          <g opacity={kprog(T, K.Ho + 0.6, K.Ho + 1.4)}><Levadura T={T} x={790} y={900} s={0.85} /></g>
+          <Bacteria T={T} x={330} y={780} s={1.2} plasmido={1} />
+          <g opacity={kprog(T, K.Ho + 0.1, K.Ho + 0.6)}><Levadura T={T} x={720} y={1130} s={1.5} /></g>
         </svg>
-        <Chip T={T} at={K.Ho + 0.2} until={K.Le - 0.3} texto="no todo es bacteria" y={470} borde={KC.gold} tam={46} />
+        <Chip T={T} at={K.Ho + 0.2} until={K.Le - 0.3} texto="no todo es bacteria" y={450} borde={KC.gold} tam={50} />
       </EscenaFundido>
 
       {/* 10 · LEVADURA — la secreta al caldo */}
@@ -307,30 +334,31 @@ function InsulinaNarrado() {
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 44% 50%, #3b2f17 0%, #120f08 78%)' }}></div>
         <Ambiente T={T} n={22} seed={31} color="rgba(246,208,106,.3)" tam={[3, 10]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Levadura T={T} x={430} y={900} s={1.25} suelta={kprog(T, K.Le + 0.8, K.Le + 1.6)} />
+          <Levadura T={T} x={430} y={920} s={2.0} suelta={kprog(T, K.Le + 0.8, K.Le + 1.6)} />
         </svg>
-        <Etiqueta T={T} at={K.Le + 0.5} until={K.D - 0.3} x={430} y={1160} texto="Saccharomyces cerevisiae" it color={KC.gold2} tam={32} />
-        <Chip T={T} at={K.Le + 2.2} until={K.D - 0.3} texto="la suelta al caldo" y={450} borde={INS} tam={44} />
+        <Etiqueta T={T} at={K.Le + 0.5} until={K.D - 0.3} x={300} y={1260} texto="Saccharomyces cerevisiae" it color={KC.gold2} tam={38} />
+        <Chip T={T} at={K.Le + 2.2} until={K.D - 0.3} texto="la suelta al caldo" y={420} borde={INS} tam={48} />
       </EscenaFundido>
 
       {/* 11 · DIFERENCIA — adentro vs. afuera */}
       <EscenaFundido T={T} a={K.D} b={K.C} zoom={0.03} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d161d, #0b0f19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Bacteria T={T} x={300} y={850} s={0.78} plasmido={1} cuerpos={kprog(T, K.D + 0.4, K.D + 1.4, kEase.rebote)} />
-          <g opacity={kprog(T, K.D + 1.8, K.D + 2.4)}><Levadura T={T} x={790} y={850} s={0.72} suelta={1} /></g>
+          {/* modo cine: las dos fábricas grandes, una arriba y otra abajo; la levadura espera atenuada hasta que le toca */}
+          <Bacteria T={T} x={540} y={620} s={1.75} plasmido={1} cuerpos={kprog(T, K.D + 0.4, K.D + 1.4, kEase.rebote)} />
+          <g opacity={kprog(T, K.D - 0.2, K.D + 0.3) * (0.35 + 0.65 * kprog(T, K.D + 1.8, K.D + 2.4))}><Levadura T={T} x={440} y={1210} s={1.3} suelta={kprog(T, K.D + 1.8, K.D + 2.4)} /></g>
         </svg>
-        <Chip T={T} at={K.D + 0.6} until={K.C - 0.3} texto="se queda adentro" x={300} y={1110} borde={BACT} tam={36} />
-        <Chip T={T} at={K.D + 2.0} until={K.C - 0.3} texto="la secreta" x={790} y={1110} borde={KC.gold2} tam={36} />
+        <Chip T={T} at={K.D + 0.6} until={K.C - 0.3} texto="se queda adentro" x={540} y={830} borde={BACT} tam={44} />
+        <Chip T={T} at={K.D + 2.0} until={K.C - 0.3} texto="la secreta" x={440} y={1460} borde={KC.gold2} tam={44} />
       </EscenaFundido>
 
       {/* 12 · CIERRE — el tanque del inicio */}
       <EscenaFundido T={T} a={K.C} b={FIN} zoom={0.04}>
-        <MundoBiorreactor T={T} turbio={0.85} burbujas={1} rpm={110} />
+        <TanqueCine T={T} turbio={0.85} burbujas={1} rpm={110} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Frasco T={T} x={880} y={1420} s={0.95} etiqueta="insulina" />
+          <Frasco T={T} x={880} y={1130} s={1.5} etiqueta="insulina" />
         </svg>
-        <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="de un tanque, no de un animal" x={340} y={420} borde={KC.gold} tam={42} />
+        <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="de un tanque, no de un animal" x={540} y={260} borde={KC.gold} tam={46} />
       </EscenaFundido>
 
       {/* subtítulos */}

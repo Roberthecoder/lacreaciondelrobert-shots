@@ -54,7 +54,7 @@ function Bacterias() {
   const FIN = K.Ou + 4;
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
   const g = krng(3);
-  const diez = Array.from({ length: 10 }, (_, i) => ({ x: 600 + (i % 3) * 130 + (g() - 0.5) * 40, y: 860 + Math.floor(i / 3) * 110 + (g() - 0.5) * 40, r: g() * 180 }));
+  const diez = Array.from({ length: 10 }, (_, i) => ({ x: 630 + (i % 3) * 150 + (g() - 0.5) * 40, y: 760 + Math.floor(i / 3) * 150 + (g() - 0.5) * 40, r: g() * 180 }));
   // gancho: 10 bacterias se van y queda ~1 (con 0.3 más)
   const vanse = kprog(T, K.G + 3.0, K.G + 4.2, kEase.suave);
   const conteo = kprog(T, K.C + 2.2, K.C + 5.0, kEase.suave);
@@ -64,81 +64,86 @@ function Bacterias() {
       <Escena T={T} a={K.G} b={K.O} fondo={KC.noche}>
         <Ambiente T={T} n={30} color="rgba(255,255,255,.18)" />
         {svg(<>
-          <Globulo x={290} y={990} r={120} rot={T * 10} />
+          <Globulo x={290} y={960} r={168} rot={T * 10} />
           {diez.map((d, i) => { const sale = i === 0 ? 0 : vanse; const ap = kprog(T, K.G + 0.05 + i * 0.12, K.G + 0.35 + i * 0.12, kEase.rebote);
-            return <g key={i} opacity={1 - sale} transform={`translate(${sale * 500} 0)`}><Bacteria x={d.x} y={d.y + Math.sin(T * 2 + i) * 8} rot={d.r + T * 20} s={0.7 * ap} T={T} seed={i} color={BAC} /></g>; })}
+            return <g key={i} opacity={1 - sale} transform={`translate(${sale * 500} 0)`}><Bacteria x={d.x} y={d.y + Math.sin(T * 2 + i) * 8} rot={d.r + T * 20} s={0.98 * ap} T={T} seed={i} color={BAC} /></g>; })}
         </>)}
-        <Escala T={T} z={1} pxPorMm={16000} y={1430} x={60} />
+        <Escala T={T} z={1} pxPorMm={22400} y={1430} x={60} />
       </Escena>
       {/* 2 · de dónde salió el 10:1 */}
       <Escena T={T} a={K.O} b={K.L}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<g transform="translate(540 860) rotate(-4)">
-          <rect x={-330} y={-330} width={660} height={640} rx={10} fill="#f6e7c1" stroke={KC.ink} strokeWidth={8} />
-          <text x={-280} y={-250} style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>AÑOS 70</text>
-          {[0, 1, 2, 3, 4, 5].map((k) => <rect key={k} x={-280} y={-180 + k * 70} width={k === 2 ? 560 * kprog(T, K.O + 0.6, K.O + 1.6) : 520} height={18} rx={9} fill={k === 2 ? KC.red : '#cdbb94'} />)}
-          <text x={-280} y={260} style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.O + 1.6, K.O + 2.2)}>~10¹⁴ bacterias (estimado)</text>
+        {svg(<g transform="translate(540 960) rotate(-4) scale(1.16)">
+          <rect x={-330} y={-330} width={660} height={640} rx={10} fill="#232a40" stroke={KC.ink} strokeWidth={6} />
+          <text x={-280} y={-250} style={{ font:`400 70px ${KF.titulo}` }} fill="#f3f6ff">AÑOS 70</text>
+          {[0, 1, 2, 3, 4, 5].map((k) => <rect key={k} x={-280} y={-180 + k * 70} width={k === 2 ? 560 * kprog(T, K.O + 0.6, K.O + 1.6) : 520} height={18} rx={9} fill={k === 2 ? KC.red : '#56607c'} />)}
+          <text x={-280} y={260} style={{ font:`700 34px ${KF.mono}` }} fill="#f3f6ff" opacity={kprog(T, K.O + 1.6, K.O + 2.2)}>~10¹⁴ bacterias (estimado)</text>
         </g>)}
       </Escena>
       {/* 3–4 · el litro de intestino vs. solo el colon */}
       <Escena T={T} a={K.L} b={K.Q}>
         <FondoLunares color={KC.pink} />
-        {svg(<Intestino T={T} bacDelgado={kprog(T, K.L + 0.3, K.L + 1.5) * (1 - kprog(T, K.Co + 0.3, K.Co + 1.4))} bacColon={kprog(T, K.L + 0.3, K.L + 1.5)} resalta={T > K.Co + 1.0 ? 1 : 0} />)}
+        {svg(<g transform="translate(540 970) scale(1.2) translate(-540 -900)"><Intestino T={T} bacDelgado={kprog(T, K.L + 0.3, K.L + 1.5) * (1 - kprog(T, K.Co + 0.3, K.Co + 1.4))} bacColon={kprog(T, K.L + 0.3, K.L + 1.5)} resalta={T > K.Co + 1.0 ? 1 : 0} /></g>)}
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Q} b={K.H} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
+        {svg(<text x={540} y={1150} textAnchor="middle" style={{ font:`400 620px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 950)`}>?</text>)}
       </Escena>
       {/* 6 · 36 billones de células tuyas (hombre, Hatton et al. 2023); ~4 de cada 5 sin núcleo (≈29 de 36) */}
       <Escena T={T} a={K.H} b={K.Cu}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>{T > K.H + 2.4 && Array.from({ length: 6 }, (_, i) => <Globulo key={i} x={150 + i * 155} y={1500 + (i % 2) * 30} r={52} rot={T * 15 + i * 30} />)}</>)}
-        <Cuadricula T={T} cols={25} filas={4} llenado={kprog(T, K.H + 2.4, K.H + 4.4)} tramos={[{ desde: 0, hasta: 0.8, color: ROJO }, { desde: 0.8, hasta: 1, color: KC.blue }]} x={90} y={830} ancho={900} alto={150} vacio="rgba(0,0,0,.12)" />
+        {/* modo cine: los glóbulos y la cuadrícula vacía están desde que empieza la escena */}
+        {svg(<g opacity={kprog(T, K.H + 0.1, K.H + 0.6)}>{Array.from({ length: 6 }, (_, i) => <Globulo key={i} x={i < 3 ? 145 : 935} y={790 + (i % 3) * 210} r={64} rot={T * 15 + i * 30} />)}</g>)}
+        <Cuadricula T={T} cols={10} filas={10} llenado={kprog(T, K.H + 2.4, K.H + 4.4)} tramos={[{ desde: 0, hasta: 0.8, color: ROJO }, { desde: 0.8, hasta: 1, color: KC.blue }]} x={240} y={700} ancho={600} alto={600} vacio="rgba(255,255,255,.1)" />
       </Escena>
       {/* 7 · la cuenta: 36 (2023) contra 38 (2016) */}
       <Escena T={T} a={K.Cu} b={K.E}>
         <FondoLunares color={KC.cyan} />
+        {/* modo cine: a cada barra, su sujeto (tu célula y la bacteria del gancho) */}
+        {svg(<g opacity={kprog(T, K.Cu + 0.2, K.Cu + 0.7)}><Globulo x={340} y={395} r={66} rot={T * 10} /><Bacteria x={740} y={395} rot={T * 20} s={0.6} T={T} color={BAC} /></g>)}
       </Escena>
       {/* 8 · el estudio */}
       <Escena T={T} a={K.E} b={K.P}>
         <FondoLunares color={KC.orange} />
+        {/* modo cine: el sujeto sigue en pantalla (la célula y la bacteria del gancho, frente a frente) */}
+        {svg(<g opacity={kprog(T, K.E, K.E + 0.5)}><Globulo x={300} y={1060} r={200} rot={T * 10} /><Bacteria x={790} y={1060 + Math.sin(T * 2) * 8} rot={T * 20} s={1.17} T={T} color={BAC} /></g>)}
       </Escena>
       {/* 9 · el peso: ~200 g */}
       <Escena T={T} a={K.P} b={K.B}>
         <FondoLunares color={KC.mint} />
-        {svg(<Bascula x={540} y={1000} T={T} aguja={kprog(T, K.P + 0.6, K.P + 1.6, kEase.rebote) * 0.25} />)}
+        {svg(<g transform="translate(540 1050) scale(1.5) translate(-540 -985)"><Bascula x={540} y={1000} T={T} aguja={kprog(T, K.P + 0.6, K.P + 1.6, kEase.rebote) * 0.25} /></g>)}
       </Escena>
       {/* 10 · al baño */}
       <Escena T={T} a={K.B} b={K.C}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Excusado x={360} y={1000} s={1} />)}
-        <Medidor T={T} at={K.B + 0.8} until={K.C - 0.2} valor={1 - 0.3 * kprog(T, K.B + 2.0, K.B + 3.4, kEase.suave)} etiqueta="contenido del colon" texto={(v) => (v < 0.95 ? '−¼ a −⅓' : 'lleno')} x={90} y={1460} ancho={900} color={KC.orange} />
+        {svg(<Excusado x={500} y={1010} s={1.5} />)}
+        <Medidor T={T} at={K.B + 0.8} until={K.C - 0.2} valor={1 - 0.3 * kprog(T, K.B + 2.0, K.B + 3.4, kEase.suave)} etiqueta="contenido del colon" texto={(v) => (v < 0.95 ? '−¼ a −⅓' : 'lleno')} x={90} y={1405} ancho={900} color={KC.orange} />
       </Escena>
       {/* 11 · cierre: la misma imagen del inicio, ahora casi 1 a 1, y la cuadrícula 30 vs 38 */}
       <Escena T={T} a={K.C} b={FIN} fondo={KC.noche}>
         <Ambiente T={T} n={30} color="rgba(255,255,255,.18)" />
-        {svg(<><Globulo x={300} y={720} r={110} rot={T * 10} /><Bacteria x={720} y={720} rot={T * 20} s={0.5} T={T} color={BAC} /><Bacteria x={800} y={790} rot={40 + T * 20} s={0.5 * 0.3 / 0.3 * 0.55} T={T} color={BAC} vida={0.9} /></>)}
-        <Cuadricula T={T} cols={17} filas={4} llenado={conteo} tramos={[{ desde: 0, hasta: 36 / 74, color: ROJO }, { desde: 36 / 74, hasta: 1, color: BAC }]} x={90} y={930} ancho={900} alto={230} vacio="rgba(255,255,255,.1)" />
+        {svg(<><Globulo x={290} y={730} r={160} rot={T * 10} /><Bacteria x={730} y={710} rot={T * 20} s={0.725} T={T} color={BAC} /><Bacteria x={850} y={830} rot={40 + T * 20} s={0.725 * 0.55} T={T} color={BAC} vida={0.9} /></>)}
+        <Cuadricula T={T} cols={17} filas={4} llenado={conteo} tramos={[{ desde: 0, hasta: 36 / 74, color: ROJO }, { desde: 36 / 74, hasta: 1, color: BAC }]} x={60} y={1010} ancho={960} alto={245} vacio="rgba(255,255,255,.1)" />
       </Escena>
 
       {/* datos */}
       <NumeroGigante T={T} at={K.G + 0.2} until={K.G + 2.9} valor={10} desde={10} sufijo=" : 1" etiqueta="lo que te dijeron" x={330} y={520} tam={150} color={KC.yellow} />
       <MitoTachado T={T} at={K.G + 2.9} tacharEn={K.G + 3.1} until={K.O - 0.2} texto="10 : 1" x={330} y={460} tam={60} />
       <Chip T={T} at={K.G + 3.6} until={K.O - 0.2} texto="≈ 1 : 1" x={760} y={460} tam={70} borde={BAC} />
-      <Chip T={T} at={K.O + 2.4} until={K.L - 0.2} texto="una cuenta de una sola frase" x={540} y={440} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.L + 0.4} until={K.Co - 0.1} texto="«1 litro lleno de bacterias»" x={540} y={440} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.Co + 0.9} until={K.Q - 0.2} texto="casi todas: colon (~400 mL)" x={400} y={440} tam={34} borde={KC.yellow} />
-      <NumeroGigante T={T} at={K.H + 0.2} until={K.Cu - 0.2} valor={36} dur={1.0} sufijo=" billones" etiqueta="células tuyas (2023)" x={540} y={560} tam={120} color={KC.red} />
-      <Chip T={T} at={K.H + 2.6} until={K.Cu - 0.2} texto="4 de cada 5 sin núcleo: glóbulos rojos y plaquetas" x={540} y={1050} tam={30} borde={ROJO} />
-      <Comparativa T={T} at={K.Cu + 0.2} until={K.E - 0.2} max={40} y={760} alto={320}
+      <Chip T={T} at={K.O + 2.4} until={K.L - 0.2} texto="una cuenta de una sola frase" x={540} y={375} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.L + 0.4} until={K.Co - 0.1} texto="«1 litro lleno de bacterias»" x={540} y={395} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 0.9} until={K.Q - 0.2} texto="casi todas: colon (~400 mL)" x={540} y={395} tam={34} borde={KC.yellow} />
+      <NumeroGigante T={T} at={K.H + 0.2} until={K.Cu - 0.2} valor={36} dur={1.0} sufijo=" billones" etiqueta="células tuyas (2023)" x={540} y={500} tam={130} color={KC.red} />
+      <Chip T={T} at={K.H + 2.6} until={K.Cu - 0.2} texto="4 de cada 5 sin núcleo: glóbulos rojos y plaquetas" x={540} y={1385} tam={30} borde={ROJO} />
+      <Comparativa T={T} at={K.Cu + 0.2} until={K.E - 0.2} max={40} y={560} alto={640}
         izq={{ valor: 36, etiqueta: 'células tuyas (2023)', color: ROJO, texto: '36' }} der={{ valor: 38, etiqueta: 'bacterias (2016)', color: BAC, texto: '38' }} />
-      <Chip T={T} at={K.Cu + 0.6} until={K.E - 0.2} texto="billones" x={540} y={470} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Cu + 2.4} until={K.E - 0.2} texto="≈ una a una" x={540} y={1500} tam={44} borde={KC.gold} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.P - 0.3} anio="2016" quien="Instituto Weizmann, Israel" revista="Sender, Fuchs y Milo · PLoS Biology" x={600} y={800} />
+      <Chip T={T} at={K.Cu + 0.6} until={K.E - 0.2} texto="billones" x={540} y={290} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Cu + 2.4} until={K.E - 0.2} texto="≈ una a una" x={540} y={1465} tam={44} borde={KC.gold} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.P - 0.3} anio="2016" quien="Instituto Weizmann, Israel" revista="Sender, Fuchs y Milo · PLoS Biology" x={540} y={480} />
       <MitoTachado T={T} at={K.P + 2.2} tacharEn={K.P + 3.0} until={K.B - 0.2} texto="1 a 3 kg" x={320} y={460} tam={52} />
-      <Chip T={T} at={K.P + 1.2} until={K.B - 0.2} texto="≈ 200 g" x={540} y={680} tam={64} borde={BAC} />
-      <Chip T={T} at={K.C + 2.0} until={K.Ou - 0.1} texto="casi mitad y mitad" x={540} y={440} tam={44} borde={KC.gold} />
+      <Chip T={T} at={K.P + 1.2} until={K.B - 0.2} texto="≈ 200 g" x={540} y={620} tam={64} borde={BAC} />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou - 0.1} texto="casi mitad y mitad" x={540} y={400} tam={44} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.O - 0.1} texto="¿10 bacterias por célula? *Casi 1 a 1.*" />

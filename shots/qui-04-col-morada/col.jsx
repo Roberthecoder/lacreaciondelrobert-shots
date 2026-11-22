@@ -10,6 +10,9 @@ function colorPH(ph) {
   return PH_STOPS[PH_STOPS.length - 1][1];
 }
 const MORADO = colorPH(6.5);
+// Pase a mano, 2ª vuelta: agranda el dibujo de una escena alrededor de (cx, cy) y lo lleva a (nx, ny).
+const enc = (k, cx, cy, nx = 540, ny = 930) => ({ k, t: `translate(${nx} ${ny}) scale(${k}) translate(${-cx} ${-cy})`, x: (x) => nx + (x - cx) * k, y: (y) => ny + (y - cy) * k });
+const eV = enc(1.75, 540, 870, 540, 950), eP = enc(1.2, 540, 1050, 540, 980);
 
 // Vaso de vidrio (x, y = centro de la base).
 function Vaso({ T = 0, x, y, s = 1, color = MORADO, nivel = 0.75, hielo = 0, gira = 0 }) {
@@ -100,33 +103,33 @@ function Col() {
       <Escena T={T} a={K.G} b={K.Pi} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Vaso T={T} x={klerp(-200, 380, llega)} y={1180} s={1.25} hielo={1} />
-          <g opacity={kprog(T, K.G + 2.2, K.G + 2.7)} transform={`translate(${klerp(1200, 0, kprog(T, K.G + 2.2, K.G + 2.9, kEase.sale))} 0)`}><ColMorada x={800} y={1000} s={0.95} rot={T * 8} /></g>
+          <Vaso T={T} x={klerp(-300, 440, llega)} y={1430} s={2.1} hielo={1} />
+          <g opacity={kprog(T, K.G + 2.2, K.G + 2.7)} transform={`translate(${klerp(1200, 0, kprog(T, K.G + 2.2, K.G + 2.9, kEase.sale))} 0)`}><ColMorada x={800} y={1290} s={1.05} rot={T * 8} /></g>
         </SvgCapa>
       </Escena>
       {/* 1 · antocianinas: lupa sobre la col */}
       <Escena T={T} a={K.Pi} b={K.Li}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa><ColMorada x={300} y={1050} s={1.25} rot={-10} /></SvgCapa>
-        <Lupa T={T} at={K.Pi + 0.4} until={K.Li - 0.2} x={740} y={800} r={230} fx={330} fy={1000} tinte={KC.pink} etiqueta="antocianinas"
+        <SvgCapa><ColMorada x={360} y={1240} s={2} rot={-10} /></SvgCapa>
+        <Lupa T={T} at={K.Pi + 0.4} until={K.Li - 0.2} x={700} y={620} r={300} fx={400} fy={1170} tinte={KC.pink} etiqueta="antocianinas"
           interior={(T2, r) => <svg width={2 * r} height={2 * r}><rect width={2 * r} height={2 * r} fill="#0d1424" />
-            {[[0.35, 0.35, 0.42], [0.7, 0.62, 0.36], [0.3, 0.75, 0.3]].map(([u, v, k], i) => <Antocianina key={i} x={u * 2 * r} y={v * 2 * r} s={k} T={T2 + i} color={MORADO} forma={1} />)}
+            {[[0.35, 0.35, 0.42], [0.7, 0.62, 0.36], [0.3, 0.75, 0.3]].map(([u, v, k], i) => <Antocianina key={i} x={u * 2 * r} y={v * 2 * r} s={k * 1.3} T={T2 + i} color={MORADO} forma={1} />)}
           </svg>} />
       </Escena>
       {/* 2 · limón → rojo */}
       <Escena T={T} a={K.Li} b={K.Bi}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><g transform={eV.t}>
           <Vaso T={T} x={540} y={1180} s={1.25} color={mixHex(MORADO, colorPH(2), rojo)} />
           <Limon x={420} y={560} s={1.1} rot={-30} aprieta={Math.max(0, Math.sin((T - K.Li) * 8)) * kprog(T, K.Li + 0.2, K.Li + 0.4)} />
           <Goteo T={T} x={440} y0={640} y1={680} cada={0.25} color="#e3f59a" desde={K.Li + 0.3} hasta={K.Li + 2.2} />
           <Burbujas T={T} x={420} y={700} w={240} h={420} n={14} f={rojo} color="rgba(255,255,255,.5)" vel={90} />
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 3 · bicarbonato → azul */}
       <Escena T={T} a={K.Bi} b={K.Fo}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa><g transform={eV.t}>
           <Vaso T={T} x={540} y={1180} s={1.25} color={mixHex(MORADO, colorPH(8.3), azul)} />
           <g transform={`translate(640 560) rotate(${klerp(0, -35, kprog(T, K.Bi + 0.2, K.Bi + 0.6))})`}>
             <rect x={-220} y={-14} width={220} height={28} rx={14} fill="#c3cbd3" stroke={KC.ink} strokeWidth={6} />
@@ -135,25 +138,25 @@ function Col() {
           </g>
           {Array.from({ length: 30 }, (_, i) => { const t0 = K.Bi + 0.5 + (i % 10) * 0.08, u = kprog(T, t0, t0 + 0.8); return u > 0 && u < 1 ? <circle key={i} cx={380 + ((i * 37) % 70)} cy={klerp(600, 760, u)} r={5} fill="#fff" stroke={KC.ink} strokeWidth={1.5} /> : null; })}
           <Burbujas T={T} x={420} y={700} w={240} h={420} n={20} f={azul} color="rgba(255,255,255,.6)" vel={120} />
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 4 · la molécula cambia de forma */}
       <Escena T={T} a={K.Fo} b={K.Es}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <Antocianina x={480} y={880} s={1.6} T={T} color={colorPH(phF)} forma={phF < 4 ? 0 : phF < 10 ? 1 : 1 + kprog(phF, 10, 11.8)} />
-          {phF < 4.2 && <Atomo x={klerp(900, 600, kprog(T, K.Fo + 0.6, K.Fo + 1.6))} y={650} r={34} color={KC.coral} letra="H⁺" tam={26} />}
-          {phF > 6.6 && <Atomo x={klerp(560, 940, kprog(T, K.Fo + 3.2, K.Fo + 4.2))} y={650} r={34} color={KC.coral} letra="H⁺" tam={26} />}
+          <Antocianina x={490} y={900} s={2.1} T={T} color={colorPH(phF)} forma={phF < 4 ? 0 : phF < 10 ? 1 : 1 + kprog(phF, 10, 11.8)} />
+          {phF < 4.2 && <Atomo x={klerp(930, 640, kprog(T, K.Fo + 0.6, K.Fo + 1.6))} y={640} r={48} color={KC.coral} letra="H⁺" tam={36} />}
+          {phF > 6.6 && <Atomo x={klerp(620, 940, kprog(T, K.Fo + 3.2, K.Fo + 4.2))} y={640} r={48} color={KC.coral} letra="H⁺" tam={36} />}
         </SvgCapa>
-        <Medidor T={T} at={K.Fo + 0.3} until={K.Es - 0.2} valor={(t) => (phF - 1) / 13} etiqueta="pH" texto={() => phF.toFixed(1)} y={1480} color={colorPH(phF)} />
+        <Medidor T={T} at={K.Fo + 0.3} until={K.Es - 0.2} valor={(t) => (phF - 1) / 13} etiqueta="pH" texto={() => phF.toFixed(1)} y={1300} color={colorPH(phF)} />
       </Escena>
       {/* 5 · la escala completa */}
       <Escena T={T} a={K.Es} b={K.Pr}>
         <FondoLunares color="#f4efe4" punto="rgba(0,0,0,.06)" />
-        <SvgCapa><g transform="translate(0 -130)">
+        <SvgCapa><g transform="translate(0 60)">
           {tubos.map(([ph, et], i) => { const x = 150 + i * 156, on = phE >= ph - 0.4 ? 1 : 0.15; return <g key={i}>
-            <rect x={x - 44} y={620} width={88} height={460} rx={44} fill="rgba(255,255,255,.4)" stroke={KC.ink} strokeWidth={7} />
-            <rect x={x - 36} y={klerp(1070, 760, on)} width={72} height={klerp(0, 310, on)} rx={34} fill={colorPH(ph)} />
+            <rect x={x - 44} y={420} width={88} height={660} rx={44} fill="rgba(255,255,255,.4)" stroke={KC.ink} strokeWidth={7} />
+            <rect x={x - 36} y={klerp(1070, 560, on)} width={72} height={klerp(0, 510, on)} rx={34} fill={colorPH(ph)} />
           </g>; })}
           <defs><linearGradient id="phbar">{PH_STOPS.map(([p, c]) => <stop key={p} offset={`${((p - 1) / 13) * 100}%`} stopColor={c} />)}</linearGradient></defs>
           <rect x={100} y={1120} width={880} height={50} rx={25} fill="url(#phbar)" stroke={KC.ink} strokeWidth={6} />
@@ -169,62 +172,62 @@ function Col() {
       {/* 7–8 · el estudio: película para pescado */}
       <Escena T={T} a={K.Et} b={K.Ja}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
-          <rect x={150} y={900} width={780} height={300} rx={30} fill="#f4efe4" stroke={KC.ink} strokeWidth={8} />
+        <SvgCapa><g transform={eP.t}>
+          <rect x={150} y={900} width={780} height={300} rx={30} fill="#8a857a" stroke={KC.ink} strokeWidth={8} />
           <Pescado x={540} y={1050} s={1.25} T={T} />
           <rect x={170} y={920} width={740} height={260} rx={24} fill="rgba(255,255,255,.25)" stroke="rgba(0,0,0,.35)" strokeWidth={4} opacity={kprog(T, K.Et + 1.5, K.Et + 2.5)} />
           <rect x={740} y={950} width={130} height={90} rx={14} fill={colorPH(klerp(2.5, 8, dias))} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.Et + 2.2, K.Et + 2.8)} />
           {dias > 0 && [0, 1, 2, 3].map((i) => <path key={i} d={`M ${330 + i * 90} ${880 - ((T * 60 + i * 30) % 120)} q 18 -20 0 -40 q -18 -20 0 -40`} stroke="#7a8f3a" strokeWidth={8} fill="none" opacity={dias * 0.8} />)}
-        </SvgCapa>
-        <Contador T={T} at={K.Pe + 0.3} desde={0} hasta={9} dur={5.5} sufijo=" días · 4 °C" x={540} y={1620} tam={72} color={KC.ink} />
+        </g></SvgCapa>
+        <Contador T={T} at={K.Pe + 0.3} desde={0} hasta={9} dur={5.5} sufijo=" días · 4 °C" x={540} y={1400} tam={72} color={KC.ink} />
       </Escena>
       {/* 9 · lo curioso: jamaica y pollo */}
       <Escena T={T} a={K.Ja} b={K.Ca}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <FlorJamaica x={250} y={780} s={1.2} rot={T * 10} />
-          <Vaso T={T} x={250} y={1180} s={0.75} color="#9e0f2a" hielo={1} />
-          <Pollo x={700} y={1020} s={1.2} />
-          <rect x={620} y={930} width={130} height={90} rx={14} fill={mixHex('#d81b3c', '#4b2a8f', pollo)} stroke={KC.ink} strokeWidth={6} />
+          <FlorJamaica x={300} y={440} s={1.3} rot={T * 10} />
+          <Vaso T={T} x={300} y={1060} s={1.25} color="#9e0f2a" hielo={1} />
+          <Pollo x={690} y={1320} s={1.5} />
+          <rect x={590} y={1208} width={162} height={112} rx={17} fill={mixHex('#d81b3c', '#4b2a8f', pollo)} stroke={KC.ink} strokeWidth={6} />
         </SvgCapa>
       </Escena>
       {/* 10 · pruébalo en casa */}
       <Escena T={T} a={K.Ca} b={K.Ci}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Licuadora x={220} y={1050} s={0.9} T={T} on={kprog(T, K.Ca + 0.3, K.Ca + 0.6) * (1 - kprog(T, K.Ca + 1.6, K.Ca + 1.9))} />
-          <g opacity={kprog(T, K.Ca + 1.6, K.Ca + 2.0)}><Vaso T={T} x={600} y={1180} s={0.8} color={mixHex(MORADO, colorPH(2), kprog(T, K.Ca + 2.4, K.Ca + 3.2))} /><Vaso T={T} x={880} y={1180} s={0.8} color={mixHex(MORADO, colorPH(8.3), kprog(T, K.Ca + 3.0, K.Ca + 3.8))} /></g>
-          <Limon x={600} y={720} s={0.55} rot={-20} />
-          <g transform="translate(880 720)"><rect x={-60} y={-70} width={120} height={140} rx={14} fill="#f6f3ec" stroke={KC.ink} strokeWidth={6} /><text y={10} textAnchor="middle" style={{ font:`400 26px ${KF.titulo}` }} fill={KC.ink}>BICARBONATO</text></g>
+          <Licuadora x={250} y={1260} s={1.3} T={T} on={kprog(T, K.Ca + 0.3, K.Ca + 0.6) * (1 - kprog(T, K.Ca + 1.6, K.Ca + 1.9))} />
+          <g opacity={kprog(T, K.Ca + 1.6, K.Ca + 2.0)}><Vaso T={T} x={620} y={1420} s={0.9} color={mixHex(MORADO, colorPH(2), kprog(T, K.Ca + 2.4, K.Ca + 3.2))} /><Vaso T={T} x={895} y={1420} s={0.9} color={mixHex(MORADO, colorPH(8.3), kprog(T, K.Ca + 3.0, K.Ca + 3.8))} /></g>
+          <Limon x={620} y={900} s={0.78} rot={-20} />
+          <g transform="translate(895 895) scale(1.35)"><rect x={-60} y={-70} width={120} height={140} rx={14} fill="#f6f3ec" stroke={KC.ink} strokeWidth={6} /><text y={10} textAnchor="middle" style={{ font:`400 26px ${KF.titulo}` }} fill={KC.ink}>BICARBONATO</text></g>
         </SvgCapa>
       </Escena>
       {/* 11 · cierre: el vaso del inicio se reparte en la escala */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          {[1.5, 4, 6.5, 8, 10.5, 13.5].map((ph, i) => { const u = kprog(T, K.Ci + 0.8 + i * 0.12, K.Ci + 1.6 + i * 0.12, kEase.sale); const x = klerp(380, 130 + i * 164, u);
-            return <Vaso key={i} T={T} x={x} y={1180} s={klerp(1.25, 0.62, u)} color={u > 0.05 ? colorPH(ph) : MORADO} hielo={i === 0 ? 1 - u : 0} />; })}
+          {[1.5, 4, 6.5, 8, 10.5, 13.5].map((ph, i) => { const u = kprog(T, K.Ci + 0.8 + i * 0.12, K.Ci + 1.6 + i * 0.12, kEase.sale); const x = klerp(440, 210 + (i % 3) * 330, u);
+            return <Vaso key={i} T={T} x={x} y={klerp(1430, i < 3 ? 920 : 1420, u)} s={klerp(2.1, 1, u)} color={u > 0.05 ? colorPH(ph) : MORADO} hielo={i === 0 ? 1 - u : 0} />; })}
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.1} tacharEn={K.G + 1.5} until={K.G + 2.6} texto="¿agua de jamaica?" x={330} y={470} tam={44} />
-      <Chip T={T} at={K.G + 2.8} until={K.Pi - 0.3} texto="jugo de col morada" x={330} y={470} tam={44} borde={KC.lilac} />
-      <NumeroGigante T={T} at={K.Pi + 1.6} until={K.Li - 0.3} valor={30} dur={1.0} sufijo="+" etiqueta="antocianinas" x={540} y={1560} tam={130} color={KC.yellow} />
-      <Etq T={T} at={K.Li + 0.3} until={K.Bi - 0.3} x={60} y={1480} texto="limón = ácido" tam={40} color={KC.ink} />
-      <Chip T={T} at={K.Li + 1.8} until={K.Bi - 0.3} texto="→ rojo" x={540} y={1640} tam={50} borde={colorPH(2)} />
-      <Etq T={T} at={K.Bi + 0.3} until={K.Fo - 0.3} x={60} y={1480} texto="bicarbonato = básico" tam={40} color={KC.ink} />
-      <Chip T={T} at={K.Bi + 1.8} until={K.Fo - 0.3} texto="→ azul" x={540} y={1640} tam={50} borde={colorPH(8.3)} />
-      <Chip T={T} at={K.Fo + 0.3} until={K.Es - 0.3} texto="cambia la forma → cambia el color" y={1650} tam={38} borde={KC.pink} />
-      <Chip T={T} at={K.Es + 0.2} until={K.Pr - 0.3} texto="la escala del jugo de col" y={470} tam={42} borde={KC.ink} />
-      <Etq T={T} at={K.Es + 0.5} until={K.Pr - 0.3} x={110} y={1480} texto="ácido ← · → básico" tam={36} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Et + 0.2} until={K.Pe - 0.2} anio="2026" quien="Dong et al. · Ningbo, China" revista="Food Chemistry: X · película de empaque" y={620} />
-      <Chip T={T} at={K.Pe + 0.4} until={K.Ja - 0.3} texto="se echa a perder → compuestos básicos" y={470} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Pe + 2.0} until={K.Ja - 0.3} x={1000} y={1480} texto="la etiqueta cambia de color" lado="izq" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Ja + 0.4} until={K.Ca - 0.3} texto="jamaica · Hibiscus sabdariffa" x={540} y={1640} tam={38} borde="#9e0f2a" />
-      <Etq T={T} at={K.Ja + 2.4} until={K.Ca - 0.3} x={1000} y={1480} texto="2026 · Vietnam · pollo" lado="izq" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Ca + 0.2} until={K.Ci - 0.3} texto="licúa · cuela · limón o bicarbonato" y={1500} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="un laboratorio de pH en un vaso" y={1500} tam={40} borde={KC.yellow} />
+      <MitoTachado T={T} at={K.G + 0.1} tacharEn={K.G + 1.5} until={K.G + 2.6} texto="¿agua de jamaica?" x={440} y={410} tam={44} />
+      <Chip T={T} at={K.G + 2.8} until={K.Pi - 0.3} texto="jugo de col morada" x={440} y={410} tam={44} borde={KC.lilac} />
+      <NumeroGigante T={T} at={K.Pi + 1.6} until={K.Li - 0.3} valor={30} dur={1.0} sufijo="+" etiqueta="antocianinas" x={850} y={1260} tam={130} color={KC.yellow} />
+      <Etq T={T} at={K.Li + 0.3} until={K.Bi - 0.3} x={545} y={300} texto="limón = ácido" tam={40} color={KC.ink} />
+      <Chip T={T} at={K.Li + 1.8} until={K.Bi - 0.3} texto="→ rojo" x={850} y={455} tam={50} borde={colorPH(2)} />
+      <Etq T={T} at={K.Bi + 0.3} until={K.Fo - 0.3} x={60} y={300} texto="bicarbonato = básico" tam={40} color={KC.ink} />
+      <Chip T={T} at={K.Bi + 1.8} until={K.Fo - 0.3} texto="→ azul" x={230} y={440} tam={50} borde={colorPH(8.3)} />
+      <Chip T={T} at={K.Fo + 0.3} until={K.Es - 0.3} texto="cambia la forma → cambia el color" y={1440} tam={38} borde={KC.pink} />
+      <Chip T={T} at={K.Es + 0.2} until={K.Pr - 0.3} texto="la escala del jugo de col" y={370} tam={42} borde={KC.ink} />
+      <Etq T={T} at={K.Es + 0.5} until={K.Pr - 0.3} x={110} y={1380} texto="ácido ← · → básico" tam={36} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Et + 0.2} until={K.Pe - 0.2} anio="2026" quien="Dong et al. · Ningbo, China" revista="Food Chemistry: X · película de empaque" y={470} />
+      <Chip T={T} at={K.Pe + 0.4} until={K.Ja - 0.3} texto="se echa a perder → compuestos básicos" y={400} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Pe + 2.0} until={K.Ja - 0.3} x={1000} y={1240} texto="la etiqueta cambia de color" lado="izq" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Ja + 0.4} until={K.Ca - 0.3} texto="jamaica · Hibiscus sabdariffa" x={800} y={700} tam={30} borde="#9e0f2a" />
+      <Etq T={T} at={K.Ja + 2.4} until={K.Ca - 0.3} x={1000} y={1085} texto="2026 · Vietnam · pollo" lado="izq" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Ca + 0.2} until={K.Ci - 0.3} texto="licúa · cuela · limón o bicarbonato" y={590} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="un laboratorio de pH en un vaso" y={330} tam={40} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Pi - 0.1} texto="No es jamaica: *es col morada.*" />

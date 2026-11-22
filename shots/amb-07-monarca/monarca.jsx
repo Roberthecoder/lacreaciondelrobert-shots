@@ -99,6 +99,8 @@ function MonarcaShot() {
       {/* 4–5 · la cifra y el récord de 1996-1997 */}
       <Escena T={T} a={K.Ci} b={K.P}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
+        {/* modo cine: no es lámina; el oyamel con sus monarcas sigue bajo la cifra y, atenuado, bajo las barras */}
+        {svg(<g opacity={klerp(0.85, 0.4, kprog(T, K.A - 0.3, K.A + 0.4))}><Oyamel x={540} y={1110} s={0.8} T={T} lleno={1} /></g>)}
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Al} zoom={0.1}>
@@ -109,7 +111,7 @@ function MonarcaShot() {
       {/* 7 · algodoncillo y herbicida */}
       <Escena T={T} a={K.Al} b={K.Cl}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Algodoncillo x={460} y={1180} T={T} marchita={kprog(T, K.Al + 2.4, K.Cl - 0.3)} />
+        {svg(<><g transform="translate(460 1320) scale(1.6)"><Algodoncillo x={0} y={0} T={T} marchita={kprog(T, K.Al + 2.4, K.Cl - 0.3)} /></g>
           {kprog(T, K.Al + 2.0, K.Cl) > 0 && <g transform="translate(800 560) rotate(-20)"><rect x={-40} y={-120} width={80} height={170} rx={20} fill={KC.red} stroke={KC.ink} strokeWidth={6} /><rect x={-14} y={-160} width={28} height={44} fill="#999" stroke={KC.ink} strokeWidth={5} />
             {Array.from({ length: 10 }, (_, k) => { const u = ((T * 1.4 + k / 10) % 1); return <circle key={k} cx={-30 - u * 260} cy={-150 + u * 260 + Math.sin(k) * 30} r={6} fill="#c9e86a" opacity={1 - u} />; })}</g>}</>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
@@ -131,11 +133,13 @@ function MonarcaShot() {
       {/* 9 · el estudio */}
       <Escena T={T} a={K.E} b={K.M}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Oyamel x={260} y={760} s={0.7} T={T} lleno={1} />)}
+        {svg(<Oyamel x={480} y={840} s={1.0} T={T} lleno={1} />)}
       </Escena>
       {/* 10 · la meta: seis hectáreas */}
       <Escena T={T} a={K.M} b={K.C}>
         <FondoLunares color={KC.mint} />
+        {/* modo cine: no es lámina; el oyamel del monitoreo sigue en pantalla, atenuado, bajo el medidor */}
+        {svg(<g opacity={0.5}><Oyamel x={540} y={1150} s={0.72} T={T} lleno={1} /></g>)}
       </Escena>
       {/* 11 · cierre: 25 canchas de 1996-1997, solo 4 llenas hoy */}
       <Escena T={T} a={K.C} b={FIN}>
@@ -156,11 +160,11 @@ function MonarcaShot() {
       <Chip T={T} at={K.Ci + 2.2} until={K.A - 0.2} texto="+64 % (antes: 1.79 ha)" y={900} tam={44} borde={KC.leaf} />
       <Comparativa T={T} at={K.A + 0.1} until={K.P - 0.1} max={18.19} y={420} alto={600}
         izq={{ valor: 18.19, texto: '18.19 ha', etiqueta: '1996-1997', color: KC.orange }} der={{ valor: 2.93, texto: '2.93 ha', etiqueta: '2025-2026', color: KC.yellow }} />
-      <Etq T={T} at={K.Al + 0.6} until={K.Cl - 0.2} x={560} y={760} texto="algodoncillo (Asclepias)" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Al + 0.6} until={K.Cl - 0.2} x={540} y={1260} texto="algodoncillo (Asclepias)" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Al + 2.2} until={K.Cl - 0.2} texto="herbicidas en sus zonas de cría" y={430} x={560} tam={32} borde={KC.red} />
       <NumeroGigante T={T} at={K.Cl + 2.2} until={K.E - 0.2} valor={2.55} dec={2} dur={1.0} sufijo=" ha" etiqueta="bosque dañado (feb 2024–feb 2025)" y={560} x={460} tam={150} color={KC.red} />
       <Chip T={T} at={K.Cl + 3.6} until={K.E - 0.2} texto="tala · incendio · sequía" y={1440} tam={40} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.M - 0.3} anio="2004" quien="CONANP + WWF" revista="monitoreo cada invierno, colonia por colonia" x={660} y={640} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.M - 0.3} anio="2004" quien="CONANP + WWF" revista="monitoreo cada invierno, colonia por colonia" x={640} y={400} />
       <Medidor T={T} at={K.M + 0.3} until={K.C - 0.2} valor={(t) => klerp(0, 2.93 / 6, kprog(t, K.M + 0.4, K.M + 1.6, kEase.sale))} etiqueta="hoy: 2.93 ha" texto={() => 'meta ≈ 6 ha'} y={760} color={KC.orange} />
       <Chip T={T} at={K.M + 2.0} until={K.C - 0.2} texto="el doble de hoy" y={960} tam={44} borde={KC.orange} />
       <Chip T={T} at={K.C + 0.3} until={K.Ou - 0.1} texto="1996-97: ≈ 25 canchas · hoy: ≈ 4" y={440} x={440} tam={28} borde={KC.ink} />

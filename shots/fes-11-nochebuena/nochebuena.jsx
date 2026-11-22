@@ -104,8 +104,8 @@ function Silvestre({ T, x, y, h = 1050, crece = 1, s = 1 }) {
 function Persona({ x, y, h }) {
   const k = h / 340;
   return <g transform={`translate(${x} ${y}) scale(${k})`} opacity=".85">
-    <circle cx={0} cy={-305} r={34} fill="#3a2a40" />
-    <path d="M -46 -262 L 46 -262 L 58 -140 L 32 -140 L 30 0 L 6 0 L 0 -120 L -6 0 L -30 0 L -32 -140 L -58 -140 Z" fill="#3a2a40" />
+    <circle cx={0} cy={-305} r={34} fill="#8179a3" />
+    <path d="M -46 -262 L 46 -262 L 58 -140 L 32 -140 L 30 0 L 6 0 L 0 -120 L -6 0 L -30 0 L -32 -140 L -58 -140 Z" fill="#8179a3" />
   </g>;
 }
 // Fitoplasma: célula sin pared (solo membrana), de forma variable
@@ -228,12 +228,12 @@ function Estrellas({ T, n = 14, seed = 4, o = 1 }) {
   return <g opacity={o}>{Array.from({ length: n }, (_, i) => { const x = g() * 1080, y = 260 + g() * 1500, r = 10 + g() * 14, f = g() * 6, k = 0.4 + 0.6 * Math.max(0, Math.sin(T * 2.5 + f));
     return <path key={i} d={`M ${x} ${y - r} L ${x + r * 0.28} ${y - r * 0.28} L ${x + r} ${y} L ${x + r * 0.28} ${y + r * 0.28} L ${x} ${y + r} L ${x - r * 0.28} ${y + r * 0.28} L ${x - r} ${y} L ${x - r * 0.28} ${y - r * 0.28} Z`} fill={KC.gold2} opacity={k} />; })}</g>;
 }
-// Cerros de selva seca
+// Cerros de selva seca (modo cine: en oscuro, conservando el tinte tierra; la persona de escala va en lila claro para que se lea)
 function Cerros() {
   return <g>
-    <path d="M 0 1250 Q 200 1080 420 1210 Q 640 1050 860 1190 Q 980 1120 1080 1180 L 1080 1920 L 0 1920 Z" fill="#e0a65a" opacity=".8" />
-    <path d="M 0 1420 Q 260 1300 520 1420 Q 800 1320 1080 1410 L 1080 1920 L 0 1920 Z" fill="#c98a3e" />
-    <rect x={0} y={1700} width={1080} height={220} fill="#9b6a2e" />
+    <path d="M 0 1250 Q 200 1080 420 1210 Q 640 1050 860 1190 Q 980 1120 1080 1180 L 1080 1920 L 0 1920 Z" fill="#3b2a1b" opacity=".8" />
+    <path d="M 0 1420 Q 260 1300 520 1420 Q 800 1320 1080 1410 L 1080 1920 L 0 1920 Z" fill="#2f2115" />
+    <rect x={0} y={1700} width={1080} height={520} fill="#24190f" />
   </g>;
 }
 
@@ -247,7 +247,7 @@ function Nochebuena() {
   const semanas = kprog(T, K.No + 1.6, K.No + 5.2, kEase.suave);
   const focoOn = kprog(T, K.Fo + 0.6, K.Fo + 0.75);
   // estudio: cuscuta de puente (nochebuena infectada → vinca → nochebuena sana)
-  const cus1 = [[290, 880], [380, 640], [490, 850]], cus2 = [[590, 850], [700, 640], [790, 880]];
+  const cus1 = [[300, 900], [375, 400], [450, 885]], cus2 = [[635, 870], [710, 400], [785, 900]];   // modo cine: plantas más grandes y puentes más altos
   const viajan = kprog(T, K.E + 2.6, K.E + 5.6);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -256,49 +256,55 @@ function Nochebuena() {
         <FondoLunares color={KC.cyan} />
         {svg(<>
           <Estrellas T={T} />
-          <Planta T={T} x={350} y={1030} s={klerp(0.72, 0.9, kprog(T, K.G, K.G + 0.6, kEase.rebote))} ramas={1} sinBractea={0} />
-          {(() => { const px = klerp(350 + 4, 800, suelta), py = klerp(1030 - 540 * 0.9, 1660, suelta) - Math.sin(suelta * Math.PI) * 120;
-            return <Hoja x={px} y={py} L={150 * klerp(0.8, 1.5, suelta)} w={50 * klerp(0.8, 1.5, suelta)} rot={10 + suelta * 350} color={ROJO} vena={VENA} borde={5} />; })()}
+          {/* modo cine (pase a mano): la nochebuena llena el cuadro desde el cuadro 0 (antes s 0.9 cargada a la izquierda) */}
+          <Planta T={T} x={500} y={1180} s={klerp(1.08, 1.2, kprog(T, K.G, K.G + 0.6, kEase.rebote))} ramas={1} sinBractea={0} />
+          {(() => { const px = klerp(500 + 5, 930, suelta), py = klerp(1180 - 540 * 1.2, 1470, suelta) - Math.sin(suelta * Math.PI) * 120;
+            return <Hoja x={px} y={py} L={150 * klerp(1.05, 1.55, suelta)} w={50 * klerp(1.05, 1.55, suelta)} rot={10 + suelta * 350} color={ROJO} vena={VENA} borde={5} />; })()}
         </>)}
       </Escena>
       {/* 1 · brácteas: la bráctea roja tiene las mismas nervaduras que una hoja verde */}
       <Escena T={T} a={K.Br} b={K.Ct}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>
+        {/* modo cine (pase a mano): las dos hojas van 1.24 veces más grandes y al centro del cuadro */}
+        {svg(<g transform="translate(540 990) scale(1.24) translate(-545 -890)">
           <Hoja x={320} y={1150} L={520} w={170} rot={-8} color={ROJO} vena={VENA} borde={8} venas={kprog(T, K.Br + 0.6, K.Br + 1.6)} />
           <Hoja x={770} y={1150} L={520} w={170} rot={8} color={VERDE} vena={VENAV} borde={8} venas={kprog(T, K.Br + 0.6, K.Br + 1.6)} lobulos />
           <text x={540} y={880} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Br + 1.6, K.Br + 2.0)}>=</text>
-        </>)}
+        </g>)}
       </Escena>
       {/* 2 · las flores de verdad: los ciatios del centro */}
       <Escena T={T} a={K.Ct} b={K.No} zoom={0.08} origen="50% 48%">
         <FondoLunares color={KC.lilac} />
-        {svg(<Cabeza T={T} x={540} y={900} s={klerp(1.6, 2.3, kprog(T, K.Ct, K.Ct + 1.2, kEase.suave))} brillo={kprog(T, K.Ct + 0.6, K.Ct + 1.4)} verdes />)}
-        <Lupa T={T} at={K.Ct + 1.7} until={K.No - 0.25} x={560} y={1565} r={190} fx={540} fy={900} tinte={KC.yellow} etiqueta="ciatio: ♀ al centro, ♂ alrededor"
+        {svg(<Cabeza T={T} x={540} y={820} s={klerp(1.6, 2.3, kprog(T, K.Ct, K.Ct + 1.2, kEase.suave))} brillo={kprog(T, K.Ct + 0.6, K.Ct + 1.4)} verdes />)}
+        <Lupa T={T} at={K.Ct + 1.7} until={K.No - 0.25} x={600} y={1330} r={190} fx={540} fy={820} tinte={KC.yellow} etiqueta="ciatio: ♀ al centro, ♂ alrededor"
           interior={(Tl, r) => <svg width={r * 2} height={r * 2}><g transform={`translate(${r} ${r + 30}) scale(.95)`}><CorteCiatio T={Tl} /></g></svg>} />
       </Escena>
       {/* 3 · noches largas: 14 h de oscuridad, de 7 a 10 semanas; las brácteas pasan de verde a rojo */}
       <Escena T={T} a={K.No} b={K.Fo}>
-        <div style={{ position:'absolute', inset:0, background:'#1d2a6e', backgroundImage:'radial-gradient(circle, rgba(255,255,255,.16) 6px, transparent 7px)', backgroundSize:'52px 52px' }}></div>
+        {/* modo cine (pase a mano): fondo azul noche oscuro (antes azul saturado con lunares) y la planta, que es la que cambia de
+            color, grande y al centro (antes s 0.6 en la esquina de abajo) */}
+        <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 90% 60% at 50% 46%, #141c4a 0%, #0a0f24 65%, #070a12 100%)' }}></div>
         {svg(<>
           <Estrellas T={T} n={10} seed={9} />
-          <Reloj24 x={300} y={720} r={170} horas={14 * kprog(T, K.No + 0.2, K.No + 1.5, kEase.suave)} />
-          <Planta T={T} x={760} y={1720} s={0.6} ramas={1} rojo={semanas} />
+          <Reloj24 x={270} y={500} r={170} horas={14 * kprog(T, K.No + 0.2, K.No + 1.5, kEase.suave)} />
+          <Planta T={T} x={600} y={1340} s={0.9} ramas={1} rojo={semanas} />
         </>)}
       </Escena>
       {/* 4 · un foco interrumpe la noche: se queda verde */}
       <Escena T={T} a={K.Fo} b={K.Si}>
-        <div style={{ position:'absolute', inset:0, background:mixHex('#1d2a6e', '#4a4f7a', focoOn), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.16) 6px, transparent 7px)', backgroundSize:'52px 52px' }}></div>
+        {/* modo cine (pase a mano): la noche sigue oscura (la luz la da el foco, no un fondo lila claro) y la planta va grande bajo el foco */}
+        <div style={{ position:'absolute', inset:0, background:`radial-gradient(ellipse 90% 60% at 50% 30%, ${mixHex('#141c4a', '#2c2f52', focoOn)} 0%, #0a0f24 68%, #070a12 100%)` }}></div>
         {svg(<>
-          <Foco x={540} y={560} on={focoOn} />
-          <Planta T={T} x={400} y={1730} s={0.6} ramas={1} rojo={klerp(0.55, 0.12, kprog(T, K.Fo + 0.8, K.Fo + 2.0))} />
-          <g opacity={kprog(T, K.Fo + 2.2, K.Fo + 2.6)}><Calendario x={850} y={1620} s={kEase.rebote(kprog(T, K.Fo + 2.2, K.Fo + 2.7))} /></g>
+          <Foco x={540} y={520} on={focoOn} />
+          <Planta T={T} x={420} y={1380} s={0.85} ramas={1} rojo={klerp(0.55, 0.12, kprog(T, K.Fo + 0.8, K.Fo + 2.0))} />
+          <g opacity={kprog(T, K.Fo + 2.2, K.Fo + 2.6)}><Calendario x={900} y={1330} s={0.95 * kEase.rebote(kprog(T, K.Fo + 2.2, K.Fo + 2.7))} /></g>
         </>)}
       </Escena>
       {/* 5 · la silvestre: arbusto de unos tres metros, pocas ramas */}
       <Escena T={T} a={K.Si} b={K.P}>
         <FondoLunares color={KC.orange} />
-        {svg(<>
+        {/* modo cine (pase a mano): cerros en oscuro y toda la escena 230 px más arriba, para que el arbusto quede al centro */}
+        {svg(<g transform="translate(0 -230)">
           <Cerros />
           <Silvestre T={T} x={560} y={1760} h={1050} crece={kprog(T, K.Si + 0.1, K.Si + 2.2)} />
           <Persona x={830} y={1760} h={595} />
@@ -307,37 +313,40 @@ function Nochebuena() {
             {[0, 1, 2, 3].map((m) => <g key={m}><line x1={130} y1={1760 - m * 350} x2={170} y2={1760 - m * 350} stroke={KC.ink} strokeWidth={8} />
               <text x={190} y={1772 - m * 350} style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>{m} m</text></g>)}
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 6 · pregunta: la silvestre flaca contra la de tu casa, llena de ramas */}
       <Escena T={T} a={K.P} b={K.Fi} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <text x={800} y={760} textAnchor="middle" style={{ font:`400 420px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 800 600)`}>?</text>
-          <Silvestre T={T} x={700} y={1820} h={760} s={0.62} crece={1} />
-          <Planta T={T} x={880} y={1650} s={0.5} ramas={1} />
+          {/* modo cine (pase a mano): la comparación va al centro y más grande (antes arrinconada abajo a la derecha) */}
+          <text x={540} y={640} textAnchor="middle" style={{ font:`400 420px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 480)`}>?</text>
+          <Silvestre T={T} x={380} y={1480} h={760} s={0.92} crece={1} />
+          <Planta T={T} x={740} y={1400} s={0.78} ramas={1} />
         </>)}
       </Escena>
       {/* 7 · por dentro: un fitoplasma en el floema (oscuro: escala micro) */}
       <Escena T={T} a={K.Fi} b={K.Ho} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {svg(<Floema T={T} fitos={kprog(T, K.Fi + 1.4, K.Fi + 4.0)} />)}
+        {svg(<Floema T={T} fitos={kprog(T, K.Fi + 0.45, K.Fi + 4.0)} />)}   {/* modo cine: los fitoplasmas empiezan a entrar a los 0.45 s (antes 1.4 s) */}
       </Escena>
       {/* 8 · desequilibra las hormonas: brotan ramas por todos lados */}
       <Escena T={T} a={K.Ho} b={K.E}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <g><Balanza x={660} y={450} lado={kprog(T, K.Ho + 0.2, K.Ho + 1.0, kEase.rebote)} /></g>
-          <Planta T={T} x={560} y={1060} s={0.62} ramas={kprog(T, K.Ho + 1.0, K.Ho + 4.4)} puntos={1} />
+          {/* modo cine (pase a mano): la planta que se llena de ramas va grande y al centro (antes s 0.62) */}
+          <g transform="translate(540 400) scale(1.15)"><Balanza x={0} y={0} lado={kprog(T, K.Ho + 0.2, K.Ho + 1.0, kEase.rebote)} /></g>
+          <Planta T={T} x={540} y={1270} s={0.92} ramas={kprog(T, K.Ho + 1.0, K.Ho + 4.4)} puntos={1} />
         </>)}
       </Escena>
       {/* 9 · el estudio: 1997, Maryland — cuscuta de puente: nochebuena infectada → vinca → nochebuena sana */}
       <Escena T={T} a={K.E} b={K.In}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Planta T={T} x={200} y={1060} s={0.45} ramas={1} puntos={1} />
-          <Vinca T={T} x={540} y={1120} s={0.95} />
-          <Planta T={T} x={880} y={1060} s={0.45} ramas={kprog(T, K.E + 5.0, K.E + 6.8)} puntos={kprog(T, K.E + 4.8, K.E + 5.2)} />
+          {/* modo cine (pase a mano): las tres plantas más grandes y más abajo, con el puente de cuscuta más alto */}
+          <Planta T={T} x={215} y={1150} s={0.55} ramas={1} puntos={1} />
+          <Vinca T={T} x={540} y={1210} s={1.15} />
+          <Planta T={T} x={865} y={1150} s={0.55} ramas={kprog(T, K.E + 5.0, K.E + 6.8)} puntos={kprog(T, K.E + 4.8, K.E + 5.2)} />
           {(() => { const dib = kprog(T, K.E + 1.8, K.E + 2.8);
             const camino = (c) => { const q = qparcial(c[0], c[1], c[2], dib); return <g><path d={q.d} stroke={CUSCUTA} strokeWidth={9} fill="none" strokeLinecap="round" /><path d={q.d} stroke="#ffd08a" strokeWidth={3} fill="none" strokeDasharray="6 14" /></g>; };
             return <g>{camino(cus1)}{camino(cus2)}
@@ -352,22 +361,24 @@ function Nochebuena() {
         <FondoLunares color={KC.cyan} />
         {svg((() => { const llega = kprog(T, K.In + 0.3, K.In + 1.4, kEase.suave), cinta = kprog(T, K.In + 1.4, K.In + 1.9);
           return <>
-            <Planta T={T} x={540} y={1020} s={0.8} ramas={kprog(T, K.In + 2.4, K.In + 5.2)} puntos={kprog(T, K.In + 1.9, K.In + 2.4)} />
-            <g transform={`translate(${klerp(920, 556, llega)} ${klerp(420, 800, llega)}) rotate(${klerp(-30, -38, llega)})`}>
+            {/* modo cine (pase a mano): planta e injerto más grandes y al centro (antes s 0.8) */}
+            <Planta T={T} x={540} y={1250} s={1.0} ramas={kprog(T, K.In + 2.4, K.In + 5.2)} puntos={kprog(T, K.In + 1.9, K.In + 2.4)} />
+            <g transform={`translate(${klerp(950, 560, llega)} ${klerp(500, 975, llega)}) rotate(${klerp(-30, -38, llega)}) scale(1.25)`}>
               <path d="M 0 0 L 0 -170" stroke={TALLO} strokeWidth={15} strokeLinecap="round" />
               <Cabeza T={T} x={0} y={-170} s={0.42} />
               {[0.3, 0.7].map((u, k) => <circle key={k} cx={0} cy={-170 * u} r={8} fill={FITO} stroke={KC.ink} strokeWidth={2.5} />)}
             </g>
-            {cinta > 0 && <rect x={516} y={786} width={80 * cinta} height={30} rx={8} fill={KC.white} stroke={KC.ink} strokeWidth={5} transform="rotate(-38 556 801)" />}
+            {cinta > 0 && <rect x={510} y={956} width={100 * cinta} height={38} rx={10} fill={KC.white} stroke={KC.ink} strokeWidth={5} transform="rotate(-38 560 975)" />}
           </>; })())}
       </Escena>
       {/* 11 · dato: con mucho calor puede perder la bacteria y ramifica poco */}
       <Escena T={T} a={K.Da} b={K.Ci}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <Termo x={160} y={1040} nivel={kprog(T, K.Da + 0.2, K.Da + 1.6, kEase.suave)} />
-          <Planta T={T} x={600} y={1010} s={0.72} ramas={klerp(1, 0, kprog(T, K.Da + 1.7, K.Da + 2.4))} nRamas={6} puntos={1 - kprog(T, K.Da + 1.2, K.Da + 1.8)} />
-          {T > K.Da + 2.4 && <Planta T={T} x={600} y={1010} s={0.72} ramas={kprog(T, K.Da + 2.5, K.Da + 4.2) * 0.34} nRamas={6} />}
+          {/* modo cine (pase a mano): termómetro y planta más grandes y al centro (antes planta s 0.72) */}
+          <g transform="translate(130 1190) scale(1.2)"><Termo x={0} y={0} nivel={kprog(T, K.Da + 0.2, K.Da + 1.6, kEase.suave)} /></g>
+          <Planta T={T} x={640} y={1280} s={0.95} ramas={klerp(1, 0, kprog(T, K.Da + 1.7, K.Da + 2.4))} nRamas={6} puntos={1 - kprog(T, K.Da + 1.2, K.Da + 1.8)} />
+          {T > K.Da + 2.4 && <Planta T={T} x={640} y={1280} s={0.95} ramas={kprog(T, K.Da + 2.5, K.Da + 4.2) * 0.34} nRamas={6} />}
         </>)}
       </Escena>
       {/* 12 · cierre: la misma nochebuena del inicio, ahora con su bacteria a la vista */}
@@ -375,46 +386,47 @@ function Nochebuena() {
         <FondoLunares color={KC.cyan} />
         {svg(<>
           <Estrellas T={T} o={kprog(T, K.Ci + 0.3, K.Ci + 1.0)} n={22} />
-          <Planta T={T} x={380} y={1030} s={0.9} ramas={1} brillo={kprog(T, K.Ci + 0.4, K.Ci + 1.2)} puntos={kprog(T, K.Ci + 1.4, K.Ci + 2.0)} />
+          {/* modo cine (pase a mano): el mismo encuadre grande del gancho */}
+          <Planta T={T} x={450} y={1180} s={1.2} ramas={1} brillo={kprog(T, K.Ci + 0.4, K.Ci + 1.2)} puntos={kprog(T, K.Ci + 1.4, K.Ci + 2.0)} />
         </>)}
-        <Lupa T={T} at={K.Ci + 1.2} until={K.Ou - 0.2} x={730} y={1590} r={170} fx={384} fy={850} tinte={FITO} etiqueta="fitoplasmas en el floema"
+        <Lupa T={T} at={K.Ci + 1.2} until={K.Ou - 0.2} x={730} y={1345} r={155} fx={455} fy={940} tinte={FITO} etiqueta="fitoplasmas en el floema"
           interior={(Tl, r) => <svg width={r * 2} height={r * 2}><g transform={`translate(${r} ${r}) scale(.42) translate(-540 -1000)`}><Floema T={Tl} fitos={1} /></g></svg>} />
       </Escena>
 
       <Capitulo T={T} x={190} y={210} hasta={K.Ou} caps={[{ at: K.Br, titulo: 'La hoja roja' }, { at: K.No, titulo: 'La noche larga' }, { at: K.Fi, titulo: 'El inquilino' }, { at: K.In, titulo: 'El injerto' }]} />
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.2} until={K.Br - 0.2} texto="Especial Navidad" x={540} y={1820} tam={42} borde={KC.red} />
-      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.5} until={K.G + 2.4} texto="¿pétalo?" x={330} y={1480} tam={52} />
-      <Etq T={T} at={K.G + 2.0} until={K.Br - 0.3} x={715} y={1590} texto="hoja" tam={50} color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.Br + 0.3} until={K.Ct - 0.3} x={110} y={500} texto="bráctea" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.Br + 0.5} until={K.Ct - 0.3} x={640} y={500} texto="hoja verde" tam={40} color={KC.ink} />
-      <Chip T={T} at={K.Br + 1.4} until={K.Ct - 0.3} texto="bráctea = hoja modificada" x={540} y={1560} tam={44} borde={KC.red} />
-      <Etq T={T} at={K.Ct + 0.9} until={K.No - 0.3} x={600} y={560} texto="ciatios" tam={44} color={KC.ink} />
-      <Medidor T={T} at={K.No + 1.5} until={K.Fo - 0.3} y={1500} x={60} ancho={460} etiqueta="semanas" valor={(t) => 0.3 + 0.7 * semanas} texto={(v) => Math.round(v * 10) + ''} color={KC.red} />
-      <Chip T={T} at={K.No + 3.4} until={K.Fo - 0.3} texto="de 7 a 10 semanas" x={300} y={1680} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.Fo + 1.0} until={K.Si - 0.3} texto="¡clic! se corta la noche" x={540} y={950} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.Si + 0.6} until={K.P - 0.3} texto="cuetlaxóchitl" x={420} y={520} tam={48} borde={KC.leaf} />
-      <Etq T={T} at={K.Si + 1.0} until={K.P - 0.3} x={250} y={600} texto="Euphorbia pulcherrima" it tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Si + 2.6} until={K.P - 0.3} texto="silvestre: ≈ 3 m" x={400} y={1560} tam={42} borde={KC.ink} />
-      <Etq T={T} at={K.Si + 2.8} until={K.P - 0.3} x={1010} y={1120} texto="1.7 m" tam={30} color={KC.ink} lado="izq" />
+      <Chip T={T} at={K.G + 0.2} until={K.Br - 0.2} texto="Especial Navidad" x={760} y={300} tam={40} borde={KC.red} />
+      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.5} until={K.G + 2.4} texto="¿pétalo?" x={770} y={1535} tam={52} />
+      <Etq T={T} at={K.G + 2.0} until={K.Br - 0.3} x={840} y={1535} texto="hoja" tam={50} color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.Br + 0.3} until={K.Ct - 0.3} x={90} y={590} texto="bráctea" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.Br + 0.5} until={K.Ct - 0.3} x={640} y={590} texto="hoja verde" tam={40} color={KC.ink} />
+      <Chip T={T} at={K.Br + 1.4} until={K.Ct - 0.3} texto="bráctea = hoja modificada" x={540} y={1440} tam={44} borde={KC.red} />
+      <Etq T={T} at={K.Ct + 0.9} until={K.No - 0.3} x={600} y={440} texto="ciatios" tam={44} color={KC.ink} />
+      <Medidor T={T} at={K.No + 1.5} until={K.Fo - 0.3} y={470} x={560} ancho={440} etiqueta="semanas" valor={(t) => 0.3 + 0.7 * semanas} texto={(v) => Math.round(v * 10) + ''} color={KC.red} />
+      <Chip T={T} at={K.No + 3.4} until={K.Fo - 0.3} texto="de 7 a 10 semanas" x={780} y={630} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.Fo + 1.0} until={K.Si - 0.3} texto="¡clic! se corta la noche" x={770} y={830} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.Si + 0.6} until={K.P - 0.3} texto="cuetlaxóchitl" x={700} y={310} tam={48} borde={KC.leaf} />
+      <Etq T={T} at={K.Si + 1.0} until={K.P - 0.3} x={470} y={390} texto="Euphorbia pulcherrima" it tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Si + 2.6} until={K.P - 0.3} texto="silvestre: ≈ 3 m" x={400} y={1390} tam={42} borde={KC.ink} />
+      <Etq T={T} at={K.Si + 2.8} until={K.P - 0.3} x={1010} y={890} texto="1.7 m" tam={30} color={KC.ink} lado="izq" />
       {T > K.Fi - 0.3 && T < K.Ho + 0.2 && <Escala T={T} z={1} pxPorMm={90000} x={60} y={1500} />}
       <Etq T={T} at={K.Fi + 0.4} until={K.Ho - 0.3} x={300} y={300} texto="floema (tubo de savia)" tam={32} color="#9ff0e0" />
       <Etq T={T} at={K.Fi + 2.0} until={K.Ho - 0.3} x={420} y={1080} texto="fitoplasma" tam={40} color={FITO} />
-      <Chip T={T} at={K.Fi + 3.6} until={K.Ho - 0.3} texto="bacteria sin pared" x={620} y={1660} tam={42} borde={FITO} />
-      <Etq T={T} at={K.Ho + 0.3} until={K.Ho + 2.6} x={520} y={330} texto="hormonas" tam={38} color={KC.ink} />
-      <Chip T={T} at={K.Ho + 2.4} until={K.E - 0.3} texto="ramas por todos lados" x={540} y={1520} tam={42} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.4} anio="1997" quien="Ing-Ming Lee y equipo · Maryland" revista="Nature Biotechnology" x={540} y={620} />
-      <Etq T={T} at={K.E + 2.0} until={K.In - 0.3} x={300} y={1470} texto="cuscuta (enredadera parásita)" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E + 2.5} until={K.In - 0.3} x={300} y={1540} texto="vinca · Catharanthus roseus" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.E + 0.6} until={K.In - 0.3} x={60} y={1400} texto="infectada" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E + 0.6} until={K.E + 5.0} x={1020} y={1400} texto="sana" tam={30} color={KC.ink} lado="izq" />
-      <Chip T={T} at={K.E + 5.4} until={K.In - 0.3} texto="¡se ramificó!" x={760} y={1680} tam={44} borde={KC.ink} />
-      <Etq T={T} at={K.In + 1.5} until={K.In + 3.6} x={640} y={860} texto="injerto" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.In + 2.6} until={K.Da - 0.3} texto="se contagia por injerto" x={540} y={1520} tam={42} borde={KC.ink} />
-      <Etq T={T} at={K.Da + 0.3} until={K.Da + 2.2} x={240} y={480} texto="mucho calor" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.Da + 2.8} until={K.Ci - 0.3} texto="ramifica poco" x={600} y={1520} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.Ci + 2.6} until={K.Ou} texto="hojas rojas + una bacteria" x={700} y={330} tam={42} borde={KC.red} />
+      <Chip T={T} at={K.Fi + 3.6} until={K.Ho - 0.3} texto="bacteria sin pared" x={620} y={1480} tam={42} borde={FITO} />
+      <Etq T={T} at={K.Ho + 0.3} until={K.Ho + 2.6} x={640} y={270} texto="hormonas" tam={38} color={KC.ink} />
+      <Chip T={T} at={K.Ho + 2.4} until={K.E - 0.3} texto="ramas por todos lados" x={540} y={1500} tam={42} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.4} anio="1997" quien="Ing-Ming Lee y equipo · Maryland" revista="Nature Biotechnology" x={540} y={400} />
+      <Etq T={T} at={K.E + 2.0} until={K.In - 0.3} x={270} y={575} texto="cuscuta (enredadera parásita)" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 2.5} until={K.In - 0.3} x={300} y={1375} texto="vinca · Catharanthus roseus" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.E + 0.6} until={K.In - 0.3} x={60} y={1300} texto="infectada" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 0.6} until={K.E + 5.0} x={1020} y={1300} texto="sana" tam={30} color={KC.ink} lado="izq" />
+      <Chip T={T} at={K.E + 5.4} until={K.In - 0.3} texto="¡se ramificó!" x={800} y={1460} tam={44} borde={KC.ink} />
+      <Etq T={T} at={K.In + 1.5} until={K.In + 3.6} x={670} y={1030} texto="injerto" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.In + 2.6} until={K.Da - 0.3} texto="se contagia por injerto" x={540} y={1500} tam={42} borde={KC.ink} />
+      <Etq T={T} at={K.Da + 0.3} until={K.Da + 2.2} x={200} y={470} texto="mucho calor" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Da + 2.8} until={K.Ci - 0.3} texto="ramifica poco" x={640} y={1510} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.Ci + 2.6} until={K.Ou} texto="hojas rojas + una bacteria" x={640} y={300} tam={42} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Br - 0.1} texto="No son pétalos: *son hojas.*" />

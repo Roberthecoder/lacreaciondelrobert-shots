@@ -65,9 +65,9 @@ function Sincitio({ T, r, funde = 0, sinSincitina = false }) {
 function Panza({ T }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     <g transform={`translate(540 1000) translate(0 ${mece(T, 2, 0.2) * 6})`}>
-      <path d="M -150 -560 Q -40 -620 60 -560 L 80 -360 Q 330 -260 300 40 Q 270 280 60 300 L -150 320 Z" fill={KC.cyan} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+      <path d="M -150 -560 Q -40 -620 60 -560 L 80 -360 Q 330 -260 300 40 Q 270 280 60 300 L -150 320 Z" fill="#1787ad" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
       <circle cx={-40} cy={-680} r={110} fill="#e8ad7f" stroke={KC.ink} strokeWidth={10} />
-      <path d="M -150 -700 Q -120 -820 -10 -800 Q 80 -790 60 -690 Q 0 -760 -150 -700 Z" fill={KC.ink} />
+      <path d="M -150 -700 Q -120 -820 -10 -800 Q 80 -790 60 -690 Q 0 -760 -150 -700 Z" fill="#4a3426" />
     </g>
   </svg>;
 }
@@ -113,25 +113,27 @@ function AdnViralNarrado() {
       {/* gancho: tu ADN en 600 cuadritos; 48 (8 %) se vuelven rosas */}
       <Escena T={T} a={K.G} b={K.R} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #1b2b3a 0%, #0E0F12 80%)' }}></div>
-        <GenomaCuadros T={T} llenado={llena} resalta={kprog(T, K.G + 2.6, K.G + 3.4)} />
+        <GenomaCuadros T={T} llenado={llena} resalta={kprog(T, K.G + 2.6, K.G + 3.4)} x={90} y={455} ancho={900} alto={1010} />
+        {/* modo cine: antes del segundo 3 ya se ve hacia dónde va la historia (el virus entra a cuadro junto al genoma) */}
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><g opacity={0.9 * kprog(T, K.G + 1.3, K.G + 2.1)}><Retrovirus x={klerp(1120, 900, kprog(T, K.G + 1.3, K.G + 2.6, kEase.sale))} y={300 + mece(T, 3, 0.25) * 14} s={1.25} T={T} /></g></svg>
       </Escena>
       {/* retrovirus: entra a una célula, copia su ARN a ADN y se mete en un cromosoma */}
       <Escena T={T} a={K.R} b={K.Ge}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 40%, #2a1430 0%, #0E0F12 80%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <circle cx={540} cy={1300} r={560} fill="#1d2a3a" stroke="#4aa3ff" strokeWidth={10} />
-          <TiraADN T={T} y={1120} marca={integra > 0.5 ? [0.45, 0.6] : null} brillo={kprog(integra, 0.5, 1)} />
-          <Retrovirus x={klerp(820, 540, kprog(T, K.R, K.R + 1.6, kEase.suave))} y={klerp(480, 760, kprog(T, K.R, K.R + 1.6, kEase.suave))} s={klerp(1.6, 1.0, kprog(T, K.R, K.R + 1.6))} T={T} />
+          <TiraADN T={T} y={1180} x0={40} x1={1040} amp={78} marca={integra > 0.5 ? [0.45, 0.6] : null} brillo={kprog(integra, 0.5, 1)} />
+          <Retrovirus x={klerp(820, 540, kprog(T, K.R, K.R + 1.6, kEase.suave))} y={klerp(440, 700, kprog(T, K.R, K.R + 1.6, kEase.suave))} s={klerp(2.3, 1.7, kprog(T, K.R, K.R + 1.6))} T={T} />
           {/* ARN → ADN que baja al cromosoma */}
-          {T > K.R + 1.6 && <path d={`M 540 820 q 20 ${60 * integra} 0 ${120 + 180 * integra}`} stroke={VIR} strokeWidth={10} fill="none" strokeDasharray="12 8" opacity={1 - kprog(integra, 0.8, 1)} />}
+          {T > K.R + 1.6 && <path d={`M 540 860 q 20 ${50 * integra} 0 ${90 + 150 * integra}`} stroke={VIR} strokeWidth={12} fill="none" strokeDasharray="12 8" opacity={1 - kprog(integra, 0.8, 1)} />}
         </svg>
       </Escena>
       <Escena T={T} a={K.Ge} b={K.H}>
         <FondoLunares color={KC.pink} punto="rgba(255,255,255,.22)" />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Ovulo x={540} y={920} s={1.2} T={T} infectado={kprog(T, K.Ge + 1.6, K.Ge + 2.6)} />
-          <Retrovirus x={klerp(900, 600, kprog(T, K.Ge + 0.2, K.Ge + 1.6))} y={klerp(560, 860, kprog(T, K.Ge + 0.2, K.Ge + 1.6))} s={0.6 * (1 - kprog(T, K.Ge + 1.5, K.Ge + 1.9))} T={T} />
-          <Esperma x={160} y={1150} rot={-20} T={T} s={1.1} />
+          <Ovulo x={560} y={900} s={1.72} T={T} infectado={kprog(T, K.Ge + 1.6, K.Ge + 2.6)} />
+          <Retrovirus x={klerp(960, 620, kprog(T, K.Ge + 0.2, K.Ge + 1.6))} y={klerp(360, 850, kprog(T, K.Ge + 0.2, K.Ge + 1.6))} s={0.9 * (1 - kprog(T, K.Ge + 1.5, K.Ge + 1.9))} T={T} />
+          <Esperma x={235} y={1330} rot={118} T={T} s={1.6} />
         </svg>
       </Escena>
       {/* generaciones: la tira de ADN con su tramo rosa pasa de abuelos a ti */}
@@ -139,19 +141,19 @@ function AdnViralNarrado() {
         <FondoLunares color={KC.yellow} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {[0, 1, 2, 3, 4].map((i) => { const at = K.H + 0.3 + i * 0.55; if (T < at) return null; const p = kprog(T, at, at + 0.4, kEase.rebote);
-            return <g key={i} transform={`translate(0 ${560 + i * 150}) scale(1 ${p})`}><TiraADN T={T} y={0} x0={180} x1={980} amp={34} marca={[0.45, 0.58]} fase={i} />
-              <circle cx={110} cy={0} r={40} fill={i === 4 ? KC.pink : '#fff'} stroke={KC.ink} strokeWidth={6} /><text x={110} y={14} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>{i === 4 ? 'TÚ' : ''}</text></g>; })}
+            return <g key={i} transform={`translate(0 ${590 + i * 190}) scale(1 ${p})`}><TiraADN T={T} y={0} x0={185} x1={1040} amp={50} marca={[0.45, 0.58]} fase={i} />
+              <circle cx={100} cy={0} r={56} fill={i === 4 ? KC.pink : '#c9d2e0'} stroke={KC.ink} strokeWidth={6} /><text x={100} y={18} textAnchor="middle" style={{ font:`400 52px ${KF.titulo}` }} fill="#0b1020">{i === 4 ? 'TÚ' : ''}</text></g>; })}
         </svg>
       </Escena>
       <Escena T={T} a={K.Ro} b={K.E}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #2a1430 0%, #0E0F12 80%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <TiraADN T={T} y={960} marca={[0.2, 0.8]} amp={60} brillo={1} />
-          {['gag', 'pol', 'env'].map((g, i) => { const x = 330 + i * 210; return <g key={g}>
-            <text x={x} y={820} textAnchor="middle" style={{ font:`700 46px ${KF.mono}` }} fill={i === 2 && T > K.P ? KC.yellow : KC.texto}>{g}</text>
-            {T > K.Ro + 1.2 + i * 0.4 && !(i === 2 && T > K.P) && <path d={`M ${x - 50} 900 L ${x + 50} 1020 M ${x + 50} 900 L ${x - 50} 1020`} stroke={KC.red} strokeWidth={14} strokeLinecap="round" />}
+          <TiraADN T={T} y={960} x0={30} x1={1050} marca={[0.14, 0.86]} amp={125} brillo={1} />
+          {['gag', 'pol', 'env'].map((g, i) => { const x = 290 + i * 250; return <g key={g}>
+            <text x={x} y={760} textAnchor="middle" style={{ font:`700 72px ${KF.mono}` }} fill={i === 2 && T > K.P ? KC.yellow : KC.texto}>{g}</text>
+            {T > K.Ro + 1.2 + i * 0.4 && !(i === 2 && T > K.P) && <path d={`M ${x - 95} 850 L ${x + 95} 1070 M ${x + 95} 850 L ${x - 95} 1070`} stroke={KC.red} strokeWidth={22} strokeLinecap="round" />}
           </g>; })}
-          {T > K.P && <circle cx={750} cy={960} r={90 + 10 * Math.sin(T * 5)} fill="none" stroke={KC.yellow} strokeWidth={8} />}
+          {T > K.P && <circle cx={790} cy={960} r={160 + 12 * Math.sin(T * 5)} fill="none" stroke={KC.yellow} strokeWidth={10} />}
         </svg>
       </Escena>
       {/* estudio y fusión: la placenta por rayos X */}
@@ -161,37 +163,38 @@ function AdnViralNarrado() {
       </Escena>
       <Escena T={T} a={K.Ra} b={K.O}>
         <FondoLunares color={KC.lilac} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Raton x={560} y={1120} s={1.4} T={T} /></svg>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Raton x={500} y={1270} s={2.05} T={T} /></svg>
       </Escena>
       <Escena T={T} a={K.O} b={K.C}>
         <FondoLunares color={KC.yellow} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {[['primates', VIR], ['roedores', KC.blue], ['conejos', KC.orange], ['carnívoros', KC.leaf], ['rumiantes', KC.lilac]].map(([t, c], i) => { const at = K.O + 0.4 + i * 0.45; if (T < at) return null; const p = kprog(T, at, at + 0.4, kEase.rebote);
-            return <g key={t} transform={`translate(${i % 2 ? 760 : 320} ${560 + i * 130}) scale(${p})`}><rect x={-200} y={-52} width={400} height={104} rx={52} fill={KC.paper} stroke={KC.ink} strokeWidth={6} /><Retrovirus x={-140} y={0} s={0.42} T={T} color={c} seed={i} /><text x={30} y={14} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{t}</text></g>; })}
+            return <g key={t} transform={`translate(${i % 2 ? 765 : 315} ${540 + i * 178}) scale(${p * 1.28})`}><rect x={-200} y={-52} width={400} height={104} rx={52} fill={KC.paper} stroke={KC.ink} strokeWidth={6} /><Retrovirus x={-140} y={0} s={0.42} T={T} color={c} seed={i} /><text x={30} y={14} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{t}</text></g>; })}
         </svg>
       </Escena>
       <Escena T={T} a={K.C} b={FIN} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #3a1430 0%, #0E0F12 80%)' }}></div>
-        <GenomaCuadros T={T} llenado={1} resalta={1} pulso={kprog(T, K.C + 1, K.C + 2)} />
+        <GenomaCuadros T={T} llenado={1} resalta={1} pulso={kprog(T, K.C + 1, K.C + 2)} x={90} y={455} ancho={900} alto={1010} />
       </Escena>
 
       {/* datos y etiquetas */}
-      <NumeroGigante T={T} at={K.G + 2.6} until={K.R - 0.3} valor={8} prefijo="~" sufijo=" %" etiqueta="de tu ADN vino de virus" x={330} y={330} tam={150} color={VIR} />
-      <Chip T={T} at={K.G + 0.3} until={K.G + 2.4} texto="tu genoma · 600 cuadritos" x={330} y={360} tam={36} mono borde={HUM} />
-      <Etq T={T} at={K.R + 0.8} until={K.Ge - 0.3} x={640} y={560} texto="retrovirus" color={VIR} />
-      <Etq T={T} at={K.R + 3.4} until={K.Ge - 0.3} x={620} y={1240} texto="se mete en tu ADN" color={VIR} />
-      <Etq T={T} at={K.Ge + 0.6} until={K.H - 0.3} x={90} y={1050} texto="espermatozoide" color={KC.ink} />
-      <Etq T={T} at={K.Ge + 0.3} until={K.H - 0.3} x={820} y={620} texto="óvulo" color={KC.ink} />
-      <Chip T={T} at={K.H + 0.2} until={K.Ro - 0.3} texto="millones de años → hoy" y={420} tam={40} />
-      <Chip T={T} at={K.Ro + 0.3} until={K.P - 0.2} texto="retrovirus endógenos: rotos" y={1480} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.P + 0.2} until={K.E - 0.3} texto="env: la envoltura" y={1480} tam={44} borde={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2000" quien="Mi et al. · Genetics Institute" revista="Nature 403: 785–789 · sincitina" y={520} />
-      <Lupa T={T} at={K.E + 3.6} until={K.Ra - 0.3} x={760} y={560} r={230} fx={700} fy={960} interior={(t, r) => <Sincitio T={t} r={r} funde={kprog(t, K.F + 0.6, K.F + 3.6)} />} etiqueta="AL MICROSCOPIO · placenta" tinte={VIR2} />
-      <Etq T={T} at={K.F + 3.4} until={K.Ra - 0.3} x={560} y={1150} texto="una sola capa: sincitio" color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Ra + 2.4} anio="2009" quien="Dupressoir et al. · Francia" revista="PNAS 106: 12127–12132 · ratones" y={540} />
-      <Lupa T={T} at={K.Ra + 2.2} until={K.O - 0.3} x={540} y={560} r={200} fx={520} fy={1110} interior={(t, r) => <Sincitio T={t} r={r} sinSincitina />} etiqueta="sin sincitina" tinte={KC.red} />
-      <Chip T={T} at={K.O + 0.2} until={K.C - 0.3} texto="cada grupo, su propio virus" y={1480} tam={40} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="parte de ti fue virus" x={360} y={330} tam={48} borde={VIR} />
+      <NumeroGigante T={T} at={K.G + 2.6} until={K.R - 0.3} valor={8} prefijo="~" sufijo=" %" etiqueta="de tu ADN vino de virus" x={370} y={300} tam={150} color={VIR} />
+      <Chip T={T} at={K.G + 0.3} until={K.G + 2.4} texto="tu genoma · 600 cuadritos" x={370} y={370} tam={40} mono borde={HUM} />
+      <Etq T={T} at={K.R + 0.8} until={K.Ge - 0.3} x={720} y={560} texto="retrovirus" color={VIR} />
+      <Etq T={T} at={K.R + 3.4} until={K.Ge - 0.3} x={470} y={1040} lado="izq" texto="se mete en tu ADN" color={VIR} />
+      <Etq T={T} at={K.Ge + 0.6} until={K.H - 0.3} x={300} y={1400} texto="espermatozoide" color={KC.ink} />
+      <Etq T={T} at={K.Ge + 0.3} until={K.H - 0.3} x={800} y={440} texto="óvulo" color={KC.ink} />
+      <Chip T={T} at={K.H + 0.2} until={K.Ro - 0.3} texto="millones de años → hoy" y={410} tam={44} />
+      <Chip T={T} at={K.Ro + 0.3} until={K.P - 0.2} texto="retrovirus endógenos: rotos" y={1290} tam={46} borde={KC.red} />
+      <Chip T={T} at={K.P + 0.2} until={K.E - 0.3} texto="env: la envoltura" y={1290} tam={50} borde={KC.yellow} />
+      {/* modo cine: tarjeta chica y a un lado, sin tapar a la embarazada */}
+      <div style={{ position:'absolute', left:0, top:0, width:KW * 2, height:KH, zIndex:43, pointerEvents:'none', transform:'scale(.78)', transformOrigin:'855px 250px' }}><TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2000" quien="Mi et al. · Genetics Institute" revista="Nature 403: 785–789 · sincitina" x={855} y={250} /></div>
+      <Lupa T={T} at={K.E + 3.6} until={K.Ra - 0.3} x={725} y={705} r={320} fx={660} fy={1230} interior={(t, r) => <Sincitio T={t} r={r} funde={kprog(t, K.F + 0.6, K.F + 3.6)} />} etiqueta="AL MICROSCOPIO · placenta" tinte={VIR2} />
+      <Etq T={T} at={K.F + 3.4} until={K.Ra - 0.3} x={430} y={1140} texto="una sola capa: sincitio" color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Ra + 2.4} anio="2009" quien="Dupressoir et al. · Francia" revista="PNAS 106: 12127–12132 · ratones" y={520} />
+      <Lupa T={T} at={K.Ra + 2.2} until={K.O - 0.3} x={540} y={650} r={270} fx={520} fy={1270} interior={(t, r) => <Sincitio T={t} r={r} sinSincitina />} etiqueta="sin sincitina" tinte={KC.red} />
+      <Chip T={T} at={K.O + 0.2} until={K.C - 0.3} texto="cada grupo, su propio virus" y={1420} tam={44} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="parte de ti fue virus" x={370} y={340} tam={52} borde={VIR} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.R - 0.1} texto="Casi 1 de cada 12 *vino de un virus.*" />

@@ -29,7 +29,7 @@ function Dado({ x, y, s = 1, rot = 0, cara = 5 }) {
   const P = { 1: [[0, 0]], 3: [[-30, -30], [0, 0], [30, 30]], 5: [[-30, -30], [30, -30], [0, 0], [-30, 30], [30, 30]], 6: [[-30, -32], [30, -32], [-30, 0], [30, 0], [-30, 32], [30, 32]] };
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <rect x={-60} y={-60} width={120} height={120} rx={22} fill="#fff" stroke={KC.ink} strokeWidth={8} />
-    {(P[cara] || P[5]).map(([a, b], i) => <circle key={i} cx={a} cy={b} r={11} fill={KC.ink} />)}
+    {(P[cara] || P[5]).map(([a, b], i) => <circle key={i} cx={a} cy={b} r={11} fill="#0b1020" />)}
   </g>;
 }
 
@@ -48,93 +48,103 @@ function Siguiente() {
       <Escena T={T} a={K.G} b={K.Co} zoom={0}>
         <FondoLunares color={KC.yellow} />
         <div style={{ position:'absolute', inset:0, transform:`scale(${1 + entra * 3})`, transformOrigin:'50% 62%' }}>
-          <CelularChat T={T} x={380} y={1000} s={1.05} tam={44} mensajes={[{ at: K.G - 1, yo: true, texto: '¿De qué color es el cielo?' }, { at: K.G + 0.3, yo: false, texto: resp(K.G + 0.3) || '…' }]} />
+          <CelularChat T={T} x={540} y={1000} s={1.45} tam={44} mensajes={[{ at: K.G - 1, yo: true, texto: '¿De qué color es el cielo?' }, { at: K.G + 0.3, yo: false, texto: resp(K.G + 0.3) || '…' }]} />
         </div>
+        {/* modo cine: antes del segundo 3 ya se ve hacia dónde va la historia (la apuesta: un dado rueda junto al chat) */}
+        {T > K.G + 1.2 && svg(<g opacity={kprog(T, K.G + 1.2, K.G + 1.6) * (1 - entra)}><Dado x={klerp(1080, 720, kprog(T, K.G + 1.2, K.G + 2.2, kEase.sale))} y={klerp(900, 1300, kprog(T, K.G + 1.2, K.G + 2.2, kEase.rebote))} s={1.9} rot={(1 - kprog(T, K.G + 1.2, K.G + 2.4)) * 540 + mece(T, 3, 0.3) * 4} cara={T < K.G + 2.2 ? [1, 3, 6, 5][Math.floor(T * 10) % 4] : 5} /></g>)}
       </Escena>
       {/* 2–4 · por dentro: tokens → números → capas → perillas */}
       <Escena T={T} a={K.Co} b={K.P} zoom={0.02}>
         <FondoCircuito T={T} />
         {svg(<>
           {PREG.map((w, i) => { const sep = kprog(T, K.Co + 0.6 + i * 0.15, K.Co + 1.0 + i * 0.15, kEase.rebote), aN = kprog(T, K.N + 0.2, K.N + 1.2, kEase.suave), aPe = kprog(T, K.Pe - 0.6, K.Pe);
-            const x0 = 150 + i * 120, x1 = 110 + i * 145;
+            const x1 = 110 + i * 145, G = 1.8;
+            // segunda vuelta: los pedacitos van grandes, en dos renglones (juntos → separados por el corte)
+            const fila = i < 4 ? [0, 1, 2, 3] : [4, 5, 6], anchoF = (j) => Math.max(70, PREG[j].trim().length * 40 * 0.62 + 40) * G;
+            const pos = (gap) => { const tot = fila.reduce((a, j) => a + anchoF(j), 0) + gap * (fila.length - 1); let x = 540 - tot / 2; for (const j of fila) { if (j === i) return x + anchoF(j) / 2; x += anchoF(j) + gap; } return 540; };
+            const yF = i < 4 ? 800 : 990, xG = klerp(pos(0), pos(26), sep);
             return <g key={i} opacity={1 - aPe}>
-              <Ficha x={klerp(x0, x1, sep)} y={klerp(620, 560, aN)} texto={w.trim()} tam={40} color={[KC.yellow, KC.cyan, KC.mint, KC.pink, KC.orange, KC.lilac, KC.yellow][i]} />
-              {T > K.Co + 0.6 + i * 0.15 && T < K.Co + 1.2 + i * 0.15 && <line x1={x1 + 62} y1={560} x2={x1 + 62} y2={680} stroke={KC.red} strokeWidth={6} strokeDasharray="10 8" />}
-              {aN > 0 && Array.from({ length: 6 }, (_, k) => { const v = Math.sin(i * 3.1 + k * 1.7) * 0.5 + 0.5; return <rect key={k} x={x1 - 22} y={640 + k * 46} width={44 * aN} height={36} rx={6} fill={mixHex('#2f6dff', KC.yellow, v)} stroke={KC.ink} strokeWidth={3} />; })}
+              <Ficha x={klerp(xG, x1, aN)} y={klerp(yF, 520, aN)} texto={w.trim()} tam={40} s={klerp(G, 1, aN)} color={[KC.yellow, KC.cyan, KC.mint, KC.pink, KC.orange, KC.lilac, KC.yellow][i]} />
+              {T > K.Co + 0.6 + i * 0.15 && T < K.Co + 1.2 + i * 0.15 && i !== 3 && i !== 6 && <line x1={pos(26) + anchoF(i) / 2 + 13} y1={yF - 95} x2={pos(26) + anchoF(i) / 2 + 13} y2={yF + 95} stroke={KC.red} strokeWidth={8} strokeDasharray="12 9" />}
+              {aN > 0 && Array.from({ length: 6 }, (_, k) => { const v = Math.sin(i * 3.1 + k * 1.7) * 0.5 + 0.5; return <rect key={k} x={x1 - 40} y={592 + k * 62} width={80 * aN} height={50} rx={8} fill={mixHex('#2f6dff', KC.yellow, v)} stroke={KC.ink} strokeWidth={3} />; })}
             </g>; })}
           {/* perillas: parámetros que giran */}
           {T > K.Pe - 0.6 && Array.from({ length: 96 }, (_, i) => { const c = i % 12, r = Math.floor(i / 12), on = kprog(T, K.Pe - 0.3 + i * 0.012, K.Pe + i * 0.012, kEase.rebote);
-            return <g key={i} transform={`translate(${130 + c * 75} ${730 + r * 62}) scale(${on})`}><Perilla x={0} y={0} a={T * (1 + (i % 5) * 0.4) + i} /></g>; })}
+            return <g key={i} transform={`translate(${100 + c * 80} ${740 + r * 88}) scale(${on * 1.35})`}><Perilla x={0} y={0} a={T * (1 + (i % 5) * 0.4) + i} /></g>; })}
         </>)}
-        <RedNeuronal T={T} x={170} y={880} ancho={740} alto={300} capas={[6, 8, 8, 8, 6]} onda={((T - K.N) * 0.6) % 1} o={kprog(T, K.N + 1.0, K.N + 1.6) * (1 - kprog(T, K.Pe - 0.6, K.Pe))} />
+        <RedNeuronal T={T} x={110} y={1010} ancho={860} alto={430} capas={[6, 8, 8, 8, 6]} onda={((T - K.N) * 0.6) % 1} o={kprog(T, K.N + 1.0, K.N + 1.6) * (1 - kprog(T, K.Pe - 0.6, K.Pe))} />
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.L} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
+        {svg(<text x={540} y={1150} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 950)`}>?</text>)}
       </Escena>
       {/* 6–8 · la lista de probabilidades y el ejemplo "el cielo es…" */}
       <Escena T={T} a={K.L} b={K.R}>
         <FondoCircuito T={T} color={KC.mint} />
-        {T < K.L + 4.0 && svg(Array.from({ length: 30 }, (_, i) => { const y = 560 + ((i * 64 + (T - K.L) * 260) % 640); return <text key={i} x={120 + (i % 3) * 300} y={y} style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto} opacity={0.25 + 0.5 * ((i * 7) % 3) / 3}>{['casa', 'gato', 'ción', 'azul', 'run', 'el', 'cielo', 'mente', 'sol', 'des'][i % 10]}</text>; }))}
-        {T >= K.L + 4.0 && <Probas T={T} y={700} u={kprog(T, K.L + 4.2, K.L + 5.4, kEase.sale)} elegido={T > K.Ci + 2.2 ? 0 : -1} />}
+        {T < K.L + 4.0 && svg(Array.from({ length: 30 }, (_, i) => { const y = 900 + ((i * 54 + (T - K.L) * 180) % 540); return <text key={i} x={130 + (i % 3) * 320} y={y} style={{ font:`700 50px ${KF.mono}` }} fill={KC.texto} opacity={(0.5 + 0.5 * ((i * 7) % 3) / 3) * Math.min(1, (y - 900) / 50, (1440 - y) / 50)}>{['casa', 'gato', 'ción', 'azul', 'run', 'el', 'cielo', 'mente', 'sol', 'des'][i % 10]}</text>; }))}
+        {/* modo cine: la red (el modelo) sigue en pantalla y de ella sale la lista; antes la escena eran solo palabras tenues */}
+        {T < K.L + 4.0 && <RedNeuronal T={T} x={110} y={480} ancho={860} alto={350} capas={[6, 8, 8, 8, 6]} onda={((T - K.L) * 0.6) % 1} o={kprog(T, K.L, K.L + 0.4) * (1 - kprog(T, K.L + 3.6, K.L + 4.0))} />}
+        {T >= K.L + 4.0 && <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:'scale(1.25)', transformOrigin:'40px 720px' }}><Probas T={T} x={70} y={720} ancho={470} u={kprog(T, K.L + 4.2, K.L + 5.4, kEase.sale)} elegido={T > K.Ci + 2.2 ? 0 : -1} /></div>}
       </Escena>
       {/* 9 · repite: el token elegido se pega al final y vuelve a entrar */}
       <Escena T={T} a={K.R} b={K.E}>
         <FondoCircuito T={T} />
         {svg(<>
           {['el', 'cielo', 'es', 'azul', '.'].map((w, i) => { const at = i < 3 ? K.R - 1 : K.R + 0.4 + (i - 3) * 1.4, e = kprog(T, at, at + 0.4, kEase.rebote);
-            return <Ficha key={i} x={160 + i * 170} y={600} texto={w} tam={40} s={e} color={i >= 3 ? KC.yellow : KC.cyan} />; })}
-          <path d="M 900 700 C 1000 900 900 1080 540 1080 C 200 1080 80 900 160 700" fill="none" stroke={KC.yellow} strokeWidth={10} strokeDasharray="22 16" strokeDashoffset={-T * 120} />
-          <path d="M 140 730 l 20 -40 l 26 36 z" fill={KC.yellow} />
+            return <Ficha key={i} x={150 + i * 188} y={580} texto={w} tam={44} s={e} color={i >= 3 ? KC.yellow : KC.cyan} />; })}
+          <path d="M 950 680 C 1090 980 960 1330 540 1330 C 120 1330 -10 980 130 680" fill="none" stroke={KC.yellow} strokeWidth={12} strokeDasharray="24 17" strokeDashoffset={-T * 120} />
+          <path d="M 104 722 l 26 -52 l 32 46 z" fill={KC.yellow} />
         </>)}
-        <RedNeuronal T={T} x={300} y={760} ancho={480} alto={260} capas={[4, 6, 6, 4]} onda={((T - K.R) * 0.7) % 1} />
+        <RedNeuronal T={T} x={220} y={770} ancho={640} alto={420} capas={[4, 6, 6, 4]} onda={((T - K.R) * 0.7) % 1} />
       </Escena>
       {/* 10 · el estudio */}
       <Escena T={T} a={K.E} b={K.O}>
         <FondoLunares color={KC.orange} />
+        {/* modo cine: el sujeto del estudio (el modelo, la red grande) está en pantalla; la tarjeta va chica y arriba */}
+        <RedNeuronal T={T} x={110} y={720} ancho={860} alto={540} capas={[6, 8, 8, 8, 6]} onda={((T - K.E) * 0.6) % 1} o={kprog(T, K.E + 0.05, K.E + 0.5)} />
       </Escena>
       {/* 11 · probable no es verdadero */}
       <Escena T={T} a={K.O} b={K.A}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Robotito x={540} y={900} s={1.4} T={T} cara="seguro" />
-          {T > K.O + 1.6 && <g transform={`translate(540 900) rotate(${-8 + Math.sin(T * 3) * 3})`} opacity={kprog(T, K.O + 1.6, K.O + 2.0)}><path d="M -230 -230 L 230 230 M 230 -230 L -230 230" stroke={KC.red} strokeWidth={30} strokeLinecap="round" opacity=".85" /></g>}
+          <Robotito x={540} y={1020} s={2.3} T={T} cara="seguro" />
+          {T > K.O + 1.6 && <g transform={`translate(540 1000) rotate(${-8 + Math.sin(T * 3) * 3})`} opacity={kprog(T, K.O + 1.6, K.O + 2.0)}><path d="M -370 -370 L 370 370 M 370 -370 L -370 370" stroke={KC.red} strokeWidth={40} strokeLinecap="round" opacity=".85" /></g>}
         </>)}
       </Escena>
       {/* 12 · azar: un dado y dos respuestas distintas */}
       <Escena T={T} a={K.A} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<Dado x={540} y={klerp(400, 860, kprog(T, K.A + 0.2, K.A + 1.0, kEase.rebote))} rot={(1 - kprog(T, K.A + 0.2, K.A + 1.2)) * 720} cara={T < K.A + 1.0 ? [1, 3, 6, 5][Math.floor(T * 10) % 4] : 5} s={1.3} />)}
-        <div style={{ position:'absolute', left:90, top:1000, width:900, zIndex:30, display:'flex', gap:24 }}>
+        {svg(<Dado x={540} y={klerp(380, 800, kprog(T, K.A + 0.2, K.A + 1.0, kEase.rebote))} rot={(1 - kprog(T, K.A + 0.2, K.A + 1.2)) * 720} cara={T < K.A + 1.0 ? [1, 3, 6, 5][Math.floor(T * 10) % 4] : 5} s={2.8} />)}
+        <div style={{ position:'absolute', left:50, top:1080, width:980, zIndex:30, display:'flex', gap:24 }}>
           {['El cielo es azul.', 'El cielo es azul claro.'].map((t, i) => { const e = kprog(T, K.A + 1.6 + i * 0.7, K.A + 2.0 + i * 0.7, kEase.sale);
-            return <div key={i} style={{ flex:1, opacity:e, transform:`translateY(${(1 - e) * 40}px)`, background:'#262c3a', color:KC.texto, borderRadius:'28px 28px 28px 6px', padding:'18px 22px', font:`800 34px/1.2 ${KF.texto}`, border:`4px solid ${KC.ink}` }}>
-              <div style={{ font:`700 24px ${KF.mono}`, color:KC.gold2, marginBottom:6 }}>intento {i + 1}</div>{t}</div>; })}
+            return <div key={i} style={{ flex:1, opacity:e, transform:`translateY(${(1 - e) * 40}px)`, background:'#262c3a', color:KC.texto, borderRadius:'28px 28px 28px 6px', padding:'22px 26px', font:`800 44px/1.2 ${KF.texto}`, border:`4px solid ${KC.ink}` }}>
+              <div style={{ font:`700 30px ${KF.mono}`, color:KC.gold2, marginBottom:6 }}>intento {i + 1}</div>{t}</div>; })}
         </div>
       </Escena>
       {/* 13 · cierre: el mismo chat del inicio, ahora con cada pedacito como una apuesta */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <div style={{ position:'absolute', inset:0, transform:`scale(${klerp(4, 1, kprog(T, K.C - 0.4, K.C + 0.8, kEase.suave))})`, transformOrigin:'50% 62%' }}>
-          <CelularChat T={T} x={380} y={1000} s={1.05} tam={44} mensajes={[{ at: K.C - 2, yo: true, texto: '¿De qué color es el cielo?' }, { at: K.C + 0.8, yo: false, texto: resp(K.C + 0.8, 0.6) || '…' }]} />
+          <CelularChat T={T} x={540} y={1000} s={1.45} tam={44} mensajes={[{ at: K.C - 2, yo: true, texto: '¿De qué color es el cielo?' }, { at: K.C + 0.8, yo: false, texto: resp(K.C + 0.8, 0.6) || '…' }]} />
         </div>
-        {svg(RESP.map((w, i) => { const at = K.C + 0.8 + i * 0.6; return T > at ? <g key={i} opacity={kprog(T, at, at + 0.3)}><Dado x={160 + i * 95} y={470 - (i % 2) * 30} s={0.5} rot={(T - at) * 200 * Math.max(0, 1 - (T - at))} cara={[5, 3, 6, 1, 5][i]} /></g> : null; }))}
+        {svg(RESP.map((w, i) => { const at = K.C + 0.8 + i * 0.6; return T > at ? <g key={i} opacity={kprog(T, at, at + 0.3)}><Dado x={250 + i * 145} y={1180 - (i % 2) * 40} s={0.95} rot={(T - at) * 200 * Math.max(0, 1 - (T - at))} cara={[5, 3, 6, 1, 5][i]} /></g> : null; }))}
       </Escena>
 
       {/* textos */}
       <Chip T={T} at={K.Co + 0.3} until={K.N - 0.2} texto="tokens = pedacitos" x={540} y={430} tam={44} borde={KC.yellow} />
       <Chip T={T} at={K.N + 0.3} until={K.Pe - 0.4} texto="números → capas de cálculos" x={540} y={430} tam={40} borde={KC.cyan} />
       <NumeroGigante T={T} at={K.Pe + 0.2} until={K.P - 0.2} valor={175000000000} dur={2.0} etiqueta="perillas (parámetros) · GPT-3, 2020" y={520} tam={92} />
-      <Chip T={T} at={K.L + 0.4} until={K.L + 3.9} texto="¿cuál sigue?" x={540} y={430} tam={50} borde={KC.mint} />
+      <Chip T={T} at={K.L + 0.4} until={K.L + 3.9} texto="¿cuál sigue?" x={540} y={380} tam={48} borde={KC.mint} />
       <NumeroGigante T={T} at={K.L + 4.2} until={K.Ci - 0.2} valor={128} dur={1.0} sufijo=" mil" etiqueta="tokens posibles · Llama 3, 2024" y={420} tam={110} color={KC.mint} />
       <Chip T={T} at={K.Ci + 0.2} until={K.R - 0.2} texto="el cielo es ___" x={540} y={430} tam={50} borde={KC.yellow} />
-      <Etq T={T} at={K.Ci + 0.6} until={K.R - 0.2} x={1040} y={1200} texto="ejemplo ilustrativo" lado="izq" tam={26} />
+      <Etq T={T} at={K.Ci + 0.6} until={K.R - 0.2} x={1040} y={1340} texto="ejemplo ilustrativo" lado="izq" tam={30} />
       <Chip T={T} at={K.R + 0.2} until={K.E - 0.2} texto="escoge · pega · repite" x={540} y={430} tam={46} borde={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.O - 0.3} anio="2020" quien="OpenAI · GPT-3" revista="Brown et al. · Language Models are Few-Shot Learners" y={820} />
-      <Chip T={T} at={K.E + 2.6} until={K.O - 0.3} texto="más grande → aprende con pocos ejemplos" y={1120} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.O + 0.3} until={K.A - 0.2} texto="probable ≠ verdadero" x={620} y={460} tam={52} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.O - 0.3} anio="2020" quien="OpenAI · GPT-3" revista="Brown et al. · Language Models are Few-Shot Learners" y={480} />
+      <Chip T={T} at={K.E + 2.6} until={K.O - 0.3} texto="más grande → aprende con pocos ejemplos" y={1370} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.O + 0.3} until={K.A - 0.2} texto="probable ≠ verdadero" x={540} y={430} tam={56} borde={KC.red} />
       <Chip T={T} at={K.A + 0.2} until={K.C - 0.2} texto="un poco de azar" x={540} y={430} tam={46} borde={KC.ink} />
-      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="no salió de golpe: la apostó" x={540} y={1540} tam={48} borde={KC.red} />
+      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="no salió de golpe: la apostó" x={540} y={1480} tam={48} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Co - 0.1} texto="No sale de golpe: *es una apuesta.*" />

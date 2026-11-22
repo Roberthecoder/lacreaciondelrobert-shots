@@ -1,7 +1,7 @@
 // cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #07 · El jabón no desaparece la grasa: la encierra (micelas) — NARRADO (N1 por dentro + número N2).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
-const PIEL = '#f1b48f', GRASA = '#f2c14e', CABEZA = '#ff3b6b', COLA = '#3a3a3a';
+const PIEL = '#f1b48f', GRASA = '#f2c14e', CABEZA = '#ff3b6b', COLA = '#8f9bb8';
 
 function Mano({ x, y, s = 1, rot = 0, espejo = false, mugre = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${espejo ? -s : s}, ${s})`}>
@@ -25,10 +25,10 @@ function MolJabon({ x, y, s = 1, ang = 0, n = 8, o = 1, T = 0 }) {
   </g>;
 }
 // Micela: k moléculas en círculo, colas hacia adentro. junta 0..1 = se forman desde lejos. grasa 0..1 = gota en el centro.
-function Micela({ T, x, y, r = 170, k = 14, junta = 1, grasa = 0, s = 1 }) {
+function Micela({ T, x, y, r = 170, k = 14, junta = 1, grasa = 0, s = 1, lejos = 2.6 }) {
   return <g transform={`translate(${x} ${y}) scale(${s}) rotate(${T * 8})`}>
     {grasa > 0 && <circle r={(r - 40) * 0.8 * grasa} fill={GRASA} stroke="#b8902a" strokeWidth={5} />}
-    {Array.from({ length: k }, (_, i) => { const a = (i / k) * Math.PI * 2, d = klerp(r * 2.6 + (i % 3) * 60, r, junta);
+    {Array.from({ length: k }, (_, i) => { const a = (i / k) * Math.PI * 2, d = klerp(r * lejos + (i % 3) * 60, r, junta);
       return <MolJabon key={i} x={Math.cos(a) * d} y={Math.sin(a) * d} s={0.55} ang={a * 180 / Math.PI + 180 + (1 - junta) * (i * 47 % 120 - 60)} n={5} T={T + i} />; })}
   </g>;
 }
@@ -48,10 +48,10 @@ function Virus({ T, x, y, s = 1, rompe = 0 }) {
 }
 function Hospital({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-300} y={-200} width={600} height={360} fill="#d8c3a0" stroke={KC.ink} strokeWidth={9} />
-    <path d="M -330 -200 L 0 -330 L 330 -200 Z" fill="#b89a70" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
-    {[-200, -70, 70, 200].map((dx, i) => <rect key={i} x={dx - 40} y={-140} width={80} height={110} fill="#5b4a36" stroke={KC.ink} strokeWidth={6} />)}
-    <rect x={-60} y={20} width={120} height={140} fill="#5b4a36" stroke={KC.ink} strokeWidth={6} />
+    <rect x={-300} y={-200} width={600} height={360} fill="#3d3122" stroke={KC.ink} strokeWidth={9} />
+    <path d="M -330 -200 L 0 -330 L 330 -200 Z" fill="#54432c" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    {[-200, -70, 70, 200].map((dx, i) => <rect key={i} x={dx - 40} y={-140} width={80} height={110} fill="#e0b860" opacity={0.85} stroke={KC.ink} strokeWidth={6} />)}
+    <rect x={-60} y={20} width={120} height={140} fill="#1c150d" stroke={KC.ink} strokeWidth={6} />
     <rect x={-25} y={-300} width={50} height={20} fill={KC.red} /><rect x={-10} y={-315} width={20} height={50} fill={KC.red} />
   </g>;
 }
@@ -72,9 +72,17 @@ function Jabon() {
       <Escena T={T} a={K.G} b={K.Mo} zoom={0.06}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Mano x={360 + talla(K.G)} y={1000} s={1.3} rot={20} mugre={1 - kprog(T, K.G + 1.5, K.G + 4.5)} />
-          <Mano x={700 - talla(K.G)} y={1000} s={1.3} rot={-20} espejo mugre={1 - kprog(T, K.G + 1.5, K.G + 4.5)} />
-          <Espuma T={T} x={330} y={760} w={420} h={260} f={kprog(T, K.G + 0.1, K.G + 1.2)} />
+          {/* modo cine: las manos llenan el cuadro de borde a borde desde el cuadro 0 */}
+          <Mano x={270 + talla(K.G) * 1.4} y={940} s={2.25} rot={20} mugre={1 - kprog(T, K.G + 1.5, K.G + 4.5)} />
+          <Mano x={810 - talla(K.G) * 1.4} y={940} s={2.25} rot={-20} espejo mugre={1 - kprog(T, K.G + 1.5, K.G + 4.5)} />
+          <g transform="translate(540 850) scale(1.7) translate(-540 -890)"><Espuma T={T} x={330} y={760} w={420} h={260} f={kprog(T, K.G + 0.1, K.G + 1.2)} /></g>
+          {/* modo cine: antes del segundo 3 ya se ve hacia dónde va la historia (una lupa: la grasa queda encerrada) */}
+          {T > K.G + 1.9 && (() => { const u = kprog(T, K.G + 1.9, K.G + 2.5, kEase.sale); return <g opacity={u}>
+            <line x1={540} y1={1010} x2={klerp(540, 690, u)} y2={klerp(1010, 1220, u)} stroke={KC.ink} strokeWidth={6} strokeDasharray="14 12" />
+            <g transform={`translate(${klerp(540, 730, u)} ${klerp(1010, 1290, u)}) scale(${0.3 + 0.7 * u})`}>
+              <circle r={215} fill="#0b1626" stroke={KC.ink} strokeWidth={9} />
+              <Micela T={T} x={0} y={0} s={0.82} junta={kprog(T, K.G + 2.3, K.G + 3.4, kEase.suave) * 0.2 + 0.8} grasa={1} />
+            </g></g>; })()}
         </SvgCapa>
       </Escena>
       {/* 1–2 · la molécula */}
@@ -82,17 +90,18 @@ function Jabon() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <rect x={0} y={0} width={KW} height={KH} fill="rgba(80,170,255,.08)" />
-          <MolJabon x={270} y={900} s={2.4} n={8} T={T} />
-          {T > K.Sa && Array.from({ length: 8 }, (_, i) => T > K.Sa + 0.3 + i * 0.18 ? <circle key={i} cx={270 + (30 + (i + 1) * 26) * 2.4} cy={900 + (i % 2 ? -12 : 12) * 2.4} r={16} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /> : null)}
-          {T > K.Sa && <Atomo x={klerp(160, 180, kprog(T, K.Sa, K.Sa + 0.5))} y={klerp(700, 760, kprog(T, K.Sa, K.Sa + 0.5))} r={36} color={QA.Na} letra="Na⁺" tam={24} />}
+          {/* modo cine: la molécula ocupa casi todo el ancho */}
+          <MolJabon x={190} y={900} s={3.1} n={8} T={T} />
+          {T > K.Sa && Array.from({ length: 8 }, (_, i) => T > K.Sa + 0.3 + i * 0.18 ? <circle key={i} cx={190 + (30 + (i + 1) * 26) * 3.1} cy={900 + (i % 2 ? -12 : 12) * 3.1} r={20} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /> : null)}
+          {T > K.Sa && <Atomo x={klerp(150, 170, kprog(T, K.Sa, K.Sa + 0.5))} y={klerp(650, 720, kprog(T, K.Sa, K.Sa + 0.5))} r={46} color={QA.Na} letra="Na⁺" tam={24} />}
         </SvgCapa>
       </Escena>
       {/* 3–4 · micela y grasa */}
       <Escena T={T} a={K.Mi} b={K.Vi}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          {[[540, 880, 1], [230, 1120, 0.55], [860, 1100, 0.6]].map(([x, y, s], i) => <g key={i} transform={`translate(${-lava * 1300} 0)`}><Micela T={T + i} x={x} y={y} s={s} junta={i === 0 ? junta : kprog(T, K.Mi + 1.0, K.Mi + 4, kEase.suave)} grasa={grasa} /></g>)}
-          {T > K.Gr - 0.5 && T < K.Gr + 2.2 && Array.from({ length: 6 }, (_, i) => { const u = kprog(T, K.Gr + i * 0.15, K.Gr + 1.6 + i * 0.15, kEase.suave); return <circle key={i} cx={klerp(1000 - (i % 3) * 300, 540, u)} cy={klerp(560 + (i * 40), 880, u)} r={22 * (1 - u * 0.5)} fill={GRASA} stroke="#b8902a" strokeWidth={4} />; })}
+          {[[540, 820, 1.65], [190, 1290, 0.6], [890, 1280, 0.65]].map(([x, y, s], i) => <g key={i} transform={`translate(${-lava * 1300} 0)`}><Micela T={T + i} x={x} y={y} s={s} junta={i === 0 ? junta : kprog(T, K.Mi + 1.0, K.Mi + 4, kEase.suave)} grasa={grasa} lejos={i === 0 ? 1.45 : 2.6} /></g>)}
+          {T > K.Gr - 0.5 && T < K.Gr + 2.2 && Array.from({ length: 6 }, (_, i) => { const u = kprog(T, K.Gr + i * 0.15, K.Gr + 1.6 + i * 0.15, kEase.suave); return <circle key={i} cx={klerp(1000 - (i % 3) * 300, 540, u)} cy={klerp(300 + (i * 40), 820, u)} r={30 * (1 - u * 0.5)} fill={GRASA} stroke="#b8902a" strokeWidth={4} />; })}
           {lava > 0 && <path d={`M -100 ${780 + Math.sin(T * 4) * 10} Q 540 ${700} 1180 ${780}`} stroke="#7fc8ff" strokeWidth={60 * lava} fill="none" opacity={0.6} />}
         </SvgCapa>
       </Escena>
@@ -114,7 +123,13 @@ function Jabon() {
       <Escena T={T} a={K.Es} b={K.Ta}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          {T > mitad && Array.from({ length: 10 }, (_, i) => { const x = 140 + (i % 5) * 200, y = 820 + Math.floor(i / 5) * 230, apaga = i >= 7 ? kprog(T, mitad + 1.4 + (i - 7) * 0.3, mitad + 1.7 + (i - 7) * 0.3) : 0, e = kprog(T, mitad + i * 0.08, mitad + i * 0.08 + 0.3, kEase.rebote);
+          {/* modo cine: el sujeto del estudio (las manos lavándose) está en pantalla; la tarjeta va chica y arriba */}
+          <g opacity={kprog(T, K.Es, K.Es + 0.4) * (1 - 0.9 * kprog(T, mitad - 0.3, mitad + 0.4))}>
+            <Mano x={320 + talla(K.Es) * 0.8} y={1060} s={1.9} rot={20} />
+            <Mano x={760 - talla(K.Es) * 0.8} y={1060} s={1.9} rot={-20} espejo />
+            <g transform="translate(540 980) scale(1.45) translate(-540 -890)"><Espuma T={T} x={330} y={760} w={420} h={260} f={1} seed={6} /></g>
+          </g>
+          {T > mitad && Array.from({ length: 10 }, (_, i) => { const x = 140 + (i % 5) * 200, y = 760 + Math.floor(i / 5) * 230, apaga = i >= 7 ? kprog(T, mitad + 1.4 + (i - 7) * 0.3, mitad + 1.7 + (i - 7) * 0.3) : 0, e = kprog(T, mitad + i * 0.08, mitad + i * 0.08 + 0.3, kEase.rebote);
             return <g key={i} transform={`translate(${x} ${y}) scale(${e})`}>
               <circle r={80} fill={mixHex('#c9a14a', '#d9d6cf', apaga)} stroke={KC.ink} strokeWidth={7} opacity={1 - apaga * 0.5} />
               <path d="M -30 -20 Q 0 -50 30 -20 Q 10 10 -20 0 Q -40 20 0 30" stroke={KC.ink} strokeWidth={9} fill="none" strokeLinecap="round" opacity={1 - apaga * 0.6} />
@@ -126,42 +141,42 @@ function Jabon() {
       <Escena T={T} a={K.Ta} b={K.Hi}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Mano x={380 + talla(K.Ta) * 1.5} y={1000} s={1.3} rot={20} mugre={1 - kprog(T, K.Ta + 0.5, K.Ta + 3.6)} />
-          <Mano x={700 - talla(K.Ta) * 1.5} y={1000} s={1.3} rot={-20} espejo mugre={1 - kprog(T, K.Ta + 0.5, K.Ta + 3.6)} />
-          <Espuma T={T} x={330} y={760} w={420} h={260} f={1} seed={9} />
+          <Mano x={300 + talla(K.Ta) * 1.8} y={900} s={2.0} rot={20} mugre={1 - kprog(T, K.Ta + 0.5, K.Ta + 3.6)} />
+          <Mano x={780 - talla(K.Ta) * 1.8} y={900} s={2.0} rot={-20} espejo mugre={1 - kprog(T, K.Ta + 0.5, K.Ta + 3.6)} />
+          <g transform="translate(540 820) scale(1.55) translate(-540 -890)"><Espuma T={T} x={330} y={760} w={420} h={260} f={1} seed={9} /></g>
         </SvgCapa>
-        <Medidor T={T} at={K.Ta + 0.2} until={K.Hi - 0.2} valor={(t) => 1 - 0.85 * kprog(t, K.Ta + 0.5, K.Ta + 3.6)} etiqueta="mugre en la piel" y={1480} color="#c9a14a" />
+        <Medidor T={T} at={K.Ta + 0.2} until={K.Hi - 0.2} valor={(t) => 1 - 0.85 * kprog(t, K.Ta + 0.5, K.Ta + 3.6)} etiqueta="mugre en la piel" y={1400} color="#c9a14a" />
       </Escena>
       {/* 9 · siglo XIX */}
       <Escena T={T} a={K.Hi} b={K.Ci}>
-        <div style={{ position:'absolute', inset:0, background:'#c9b58e' }}></div>
-        <SvgCapa><Hospital x={540} y={960} s={1.2} /><rect x={0} y={0} width={KW} height={KH} fill="rgba(110,80,40,.2)" /></SvgCapa>
+        <div style={{ position:'absolute', inset:0, background:'#1d1710' }}></div>
+        <SvgCapa><Hospital x={540} y={960} s={1.55} /><rect x={0} y={0} width={KW} height={KH} fill="rgba(110,80,40,.2)" /></SvgCapa>
       </Escena>
       {/* 10 · cierre: las mismas manos, limpias */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Mano x={360} y={1000} s={1.3} rot={20} />
-          <Mano x={700} y={1000} s={1.3} rot={-20} espejo />
-          {[0, 1, 2].map((i) => <Micela key={i} T={T + i} x={klerp(300 + i * 220, 540, kprog(T, K.Ci + 1.0, K.Ci + 3.5))} y={klerp(700, 1500, kprog(T, K.Ci + 1.0 + i * 0.2, K.Ci + 3.5))} s={0.35} grasa={1} />)}
-          <ellipse cx={540} cy={1530} rx={90} ry={26} fill="#3b3f48" stroke={KC.ink} strokeWidth={6} />
+          <Mano x={300} y={860} s={2.0} rot={20} />
+          <Mano x={780} y={860} s={2.0} rot={-20} espejo />
+          {[0, 1, 2].map((i) => <Micela key={i} T={T + i} x={klerp(300 + i * 220, 540, kprog(T, K.Ci + 1.0, K.Ci + 3.5))} y={klerp(760, 1400, kprog(T, K.Ci + 1.0 + i * 0.2, K.Ci + 3.5))} s={0.42} grasa={1} />)}
+          <ellipse cx={540} cy={1420} rx={110} ry={30} fill="#3b3f48" stroke={KC.ink} strokeWidth={6} />
         </SvgCapa>
       </Escena>
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.0} texto="¿la desaparece?" x={330} y={470} tam={46} />
       <Chip T={T} at={K.G + 3.1} until={K.Mo - 0.3} texto="la encierra" x={300} y={470} tam={50} borde={GRASA} />
-      <Etq T={T} at={K.Mo + 1.0} until={K.Mi - 0.3} x={60} y={1060} texto="cabeza: se lleva con el agua" tam={32} color={CABEZA} />
-      <Etq T={T} at={K.Mo + 2.4} until={K.Mi - 0.3} x={1030} y={760} texto="cola: evita el agua" lado="izq" tam={32} />
-      <Chip T={T} at={K.Sa + 0.3} until={K.Mi - 0.3} texto="sal de un ácido graso de cadena larga" y={1500} tam={34} borde={KC.yellow} />
-      <Chip T={T} at={K.Mi + 2.6} until={K.Gr - 0.2} texto="micela" x={540} y={1500} tam={56} borde={CABEZA} />
+      <Etq T={T} at={K.Mo + 1.0} until={K.Mi - 0.3} x={60} y={1090} texto="cabeza: se lleva con el agua" tam={32} color={CABEZA} />
+      <Etq T={T} at={K.Mo + 2.4} until={K.Mi - 0.3} x={1030} y={740} texto="cola: evita el agua" lado="izq" tam={32} />
+      <Chip T={T} at={K.Sa + 0.3} until={K.Mi - 0.3} texto="sal de un ácido graso de cadena larga" y={1340} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.Mi + 2.6} until={K.Gr - 0.2} texto="micela" x={540} y={1480} tam={56} borde={CABEZA} />
       <Etq T={T} at={K.Gr + 0.8} until={K.Vi - 0.3} x={60} y={1500} texto="grasa al centro → el agua se la lleva" tam={32} />
       <Chip T={T} at={K.Vi + 0.3} until={K.Pr - 0.3} texto="envoltura de grasa del virus" y={1500} tam={38} borde={GRASA} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={mitad - 0.2} anio="2021" quien="Revisión Cochrane · 29 ensayos" revista="lavado de manos y diarrea" y={880} />
-      <NumeroGigante T={T} at={mitad + 1.4} until={K.Ta - 0.3} valor={30} dur={1.4} prefijo="≈ −" sufijo=" %" etiqueta="episodios de diarrea" y={1530} tam={130} color={KC.ink} />
-      <Chip T={T} at={mitad + 0.2} until={K.Ta - 0.3} texto="guarderías y comunidades" x={540} y={1690} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Hi + 0.5} until={K.Ci - 0.3} texto="siglo XIX" x={540} y={1500} tam={56} borde={KC.ink} fondo="rgba(60,40,20,.85)" />
-      <Chip T={T} at={K.Ci + 3.4} until={K.Ou} texto="la encierra · el agua se la lleva" y={1680} tam={38} borde={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={mitad - 0.2} anio="2021" quien="Revisión Cochrane · 29 ensayos" revista="lavado de manos y diarrea" y={470} />
+      <NumeroGigante T={T} at={mitad + 1.4} until={K.Ta - 0.3} valor={30} dur={1.4} prefijo="≈ −" sufijo=" %" etiqueta="episodios de diarrea" y={1290} tam={130} color={KC.ink} />
+      <Chip T={T} at={mitad + 0.2} until={K.Ta - 0.3} texto="guarderías y comunidades" x={540} y={1460} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Hi + 0.5} until={K.Ci - 0.3} texto="siglo XIX" x={540} y={1420} tam={56} borde={KC.ink} fondo="rgba(60,40,20,.85)" />
+      <Chip T={T} at={K.Ci + 3.4} until={K.Ou} texto="la encierra · el agua se la lleva" y={1530} tam={38} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Mo - 0.1} texto="No la desaparece: *la encierra.*" />

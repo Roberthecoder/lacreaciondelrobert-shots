@@ -35,8 +35,8 @@ function BordeConEnzimas({ T, r, cuantas = 1 }) {
 function BordeRenueva({ T, p = 0, gen = 0 }) {
   const y0 = 1060, celdas = 11;
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <rect x={-40} y={y0} width={KW + 80} height={KH} fill="#f2a6a0" />
-    <rect x={-40} y={y0} width={KW + 80} height={18} fill="#d2726f" />
+    <rect x={-40} y={y0} width={KW + 80} height={KH} fill="#4e2428" />
+    <rect x={-40} y={y0} width={KW + 80} height={18} fill="#8a4446" />
     {Array.from({ length: celdas }, (_, i) => {
       const fase = (i * 0.09 + p * 1.25) % 1, cae = kclamp((fase - 0.72) / 0.28, 0, 1);
       const x = 40 + i * (KW - 80) / celdas, w = (KW - 80) / celdas - 10;
@@ -74,7 +74,7 @@ function CriptaCerca({ T, a, gen = 0 }) {
       <path d={`M -60 ${boca - 300} L 180 ${boca} L ${cx - an} ${boca} L ${cx - an + 16} ${fondo}` +
                ` Q ${cx} ${fondo + 170} ${cx + an - 16} ${fondo} L ${cx + an} ${boca} L ${KW - 180} ${boca}` +
                ` L ${KW + 60} ${boca - 300} L ${KW + 60} ${KH + 60} L -60 ${KH + 60} Z`}
-        fill="#f2a6a0" stroke="#8e3b3b" strokeWidth={9} />
+        fill="#4e2428" stroke="#c76a66" strokeWidth={9} />
       {subiendo}
       {/* células madre del fondo: la fábrica */}
       {[-1, 1].map((s2) => <g key={s2}>
@@ -98,8 +98,9 @@ function LactosaNarrado() {
   const K = { G: CUES.Gancho, B: CUES.Bebe, A: CUES.Adulto, Ga: CUES.Gas, P: CUES.Pregunta, E: CUES.Estudio,
     R: CUES.Ratas, Au: CUES.Auto, O: CUES.Ojo, Re: CUES.Renueva, Cr: CUES.Cripta, Pa: CUES.Pastilla, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const camGas = [{ t: K.Ga - 0.5, x: 540, y: 1010, z: 1 }, { t: K.P, x: 610, y: 960, z: 1.16 }];
-  const camEst = [{ t: K.E - 0.5, x: 540, y: 980, z: 1.05 }, { t: K.R, x: 470, y: 1040, z: 1.3 }];
+  // segunda vuelta: la cámara entra más a las vellosidades (la barra de escala usa este mismo z, así que se recalcula sola)
+  const camGas = [{ t: K.Ga - 0.5, x: 540, y: 930, z: 1.3 }, { t: K.P, x: 600, y: 900, z: 1.5 }];
+  const camEst = [{ t: K.E - 0.5, x: 540, y: 920, z: 1.3 }, { t: K.R, x: 480, y: 990, z: 1.6 }];
 
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -108,20 +109,21 @@ function LactosaNarrado() {
       <EscenaFundido T={T} a={K.G} b={K.B} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <VasoLeche T={T} x={760} y={900} s={1.3} lleno={0.86} />
-          <g transform={`translate(${klerp(240, 400, kprog(T, K.G, K.B, kEase.suave))} ${880 + mece(T, 1, 0.3) * 20})`}>
-            <VirusAAV T={T} s={klerp(0.8, 1.25, kprog(T, K.G, K.G + 2.4, kEase.sale))} rot={(T - K.G) * 95} r={120} />
+          {/* segunda vuelta: el vaso y el virus llenan el cuadro */}
+          <VasoLeche T={T} x={790} y={760} s={2.4} lleno={0.86} />
+          <g transform={`translate(${klerp(300, 365, kprog(T, K.G, K.B, kEase.suave))} ${900 + mece(T, 1, 0.3) * 20})`}>
+            <VirusAAV T={T} s={klerp(1.3, 1.85, kprog(T, K.G, K.G + 2.4, kEase.sale))} rot={(T - K.G) * 95} r={120} />
           </g>
         </svg>
-        <Chip T={T} at={K.G + 0.9} until={K.B - 0.3} texto="virus adeno-asociado" x={330} y={430} borde={KC.cyan} tam={42} />
-        <Etiqueta T={T} at={K.G + 2.1} until={K.B - 0.3} x={250} y={1140} texto="no te enferma" color={KC.texto} tam={36} />
+        <Chip T={T} at={K.G + 0.9} until={K.B - 0.3} texto="virus adeno-asociado" x={410} y={530} borde={KC.cyan} tam={42} />
+        <Etiqueta T={T} at={K.G + 2.1} until={K.B - 0.3} x={160} y={1270} texto="no te enferma" color={KC.texto} tam={36} />
       </EscenaFundido>
 
       {/* 1 · BEBÉ — de bebé había lactasa de sobra */}
       <EscenaFundido T={T} a={K.B} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.yellow} paso={48} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Biberon T={T} x={320} y={820} s={1.15} />
+          <Biberon T={T} x={250} y={1000} s={1.8} />
         </svg>
       </EscenaFundido>
 
@@ -129,8 +131,8 @@ function LactosaNarrado() {
       <EscenaFundido T={T} a={K.A} b={K.Ga} zoom={0.04}>
         <FondoLunares color={KC.lilac} paso={48} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <VasoLeche T={T} x={540} y={760} s={1.5} lleno={0.86} />
-          <g transform="translate(830 820)" opacity={kprog(T, K.A + 1.4, K.A + 2)}>
+          <VasoLeche T={T} x={690} y={840} s={2.3} lleno={0.86} />
+          <g transform="translate(900 640) scale(1.2)" opacity={kprog(T, K.A + 1.4, K.A + 2)}>
             <circle r={84} fill={KC.paper} stroke={KC.ink} strokeWidth={10} />
             <text y={34} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.red}>?</text>
           </g>
@@ -138,18 +140,18 @@ function LactosaNarrado() {
       </EscenaFundido>
 
       {/* la Lupa de rayos X vive en las dos escenas: llena de enzimas y luego casi vacía */}
-      <Lupa T={T} at={K.B + 0.35} until={K.A - 0.25} x={720} y={700} r={250} fx={360} fy={900}
+      <Lupa T={T} at={K.B + 0.35} until={K.A - 0.25} x={640} y={480} r={260} fx={250} fy={1170}
         interior={(t, r) => <BordeConEnzimas T={t} r={r} cuantas={1} />} etiqueta="AL MICROSCOPIO · borde del intestino" />
-      <Lupa T={T} at={K.A + 0.3} until={K.Ga - 0.25} x={330} y={620} r={230} fx={540} fy={860}
+      <Lupa T={T} at={K.A + 0.3} until={K.Ga - 0.25} x={330} y={560} r={270} fx={670} fy={1050}
         interior={(t, r) => <BordeConEnzimas T={t} r={r} cuantas={0.12} />} etiqueta="el mismo borde, de adulto" tinte={KC.red} />
       <Medidor T={T} at={K.B + 1.6} until={K.Ga - 0.25} etiqueta="LACTASA EN EL BORDE"
         valor={(t) => klerp(1, 0.1, kprog(t, K.A + 0.6, K.A + 2.6, kEase.suave))}
-        texto={(v) => (v > 0.6 ? 'de sobra' : v > 0.25 ? 'bajando…' : 'casi nada')} y={1560} color={KC.mint} />
+        texto={(v) => (v > 0.6 ? 'de sobra' : v > 0.25 ? 'bajando…' : 'casi nada')} y={1490} color={KC.mint} />
 
       {/* 3 · GAS — por dentro, fondo oscuro */}
       <EscenaFundido T={T} a={K.Ga} b={K.P} zoom={0} fondo={KC.dark}>
         <Camara T={T} keys={camGas}>
-          <MundoIntestino T={T} lactasa={0} lactosa={9} corta={0} gas={kprog(T, K.Ga + 0.6, K.Ga + 2.4)} />
+          <MundoIntestino T={T} lactasa={0} lactosa={9} corta={0} gas={kprog(T, K.Ga + 0.6, K.Ga + 2.4)} tejido="#5a2a2e" tejidoOsc="#33161a" />
         </Camara>
         <Escala T={T} z={camaraEn(T, camGas).z} pxPorMm={MUNDO_INTESTINO.pxPorMm} />
       </EscenaFundido>
@@ -171,26 +173,27 @@ function LactosaNarrado() {
       {/* 5 · ESTUDIO — 1998, el virus entra por la boca */}
       <EscenaFundido T={T} a={K.E} b={K.R} zoom={0} fondo={KC.dark}>
         <Camara T={T} keys={camEst}>
-          <MundoIntestino T={T} lactasa={0} lactosa={5} corta={0} gas={0.25} />
+          <MundoIntestino T={T} lactasa={0} lactosa={5} corta={0} gas={0.25} tejido="#5a2a2e" tejidoOsc="#33161a" />
         </Camara>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {[0, 1, 2].map((i) => { const at = K.E + 2.6 + i * 0.5, p = kprog(T, at, at + 2.0, kEase.suave);
             if (T < at) return null;
-            return <g key={i} transform={`translate(${320 + i * 230 + mece(T, i, 0.4) * 24} ${klerp(380, 1020, p)})`}>
-              <VirusAAV T={T} s={0.62} rot={(T - at) * 150} r={95} suelta={kclamp((p - 0.82) / 0.18, 0, 1)} />
+            return <g key={i} transform={`translate(${300 + i * 240 + mece(T, i, 0.4) * 24} ${klerp(330, 1000, p)})`}>
+              <VirusAAV T={T} s={0.82} rot={(T - at) * 150} r={95} suelta={kclamp((p - 0.82) / 0.18, 0, 1)} />
             </g>; })}
         </svg>
         <Escala T={T} z={camaraEn(T, camEst).z} pxPorMm={MUNDO_INTESTINO.pxPorMm} />
       </EscenaFundido>
-      <TarjetaEstudio T={T} at={K.E + 0.25} until={K.E + 2.4} anio="1998" quien="During y colegas · Filadelfia" revista="Nature Medicine" y={760} />
+      <TarjetaEstudio T={T} at={K.E + 0.25} until={K.E + 2.4} anio="1998" quien="During y colegas · Filadelfia" revista="Nature Medicine" y={400} />
 
       {/* 6 · RATAS — funcionó en ratas, durante meses */}
       <EscenaFundido T={T} a={K.R} b={K.Au} zoom={0.05}>
         <FondoLunares color={KC.mint} paso={48} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Rata T={T} x={330} y={900} s={1.05} seed={1} />
-          <Rata T={T} x={820} y={1010} s={0.9} seed={4} mira={-1} />
-          <g opacity={kprog(T, K.R + 1.0, K.R + 1.6)}>
+          {/* segunda vuelta: las dos ratas ×1.55 */}
+          <Rata T={T} x={390} y={900} s={1.62} seed={1} />
+          <Rata T={T} x={700} y={1290} s={1.4} seed={4} mira={-1} />
+          <g opacity={kprog(T, K.R + 1.0, K.R + 1.6)} transform="translate(520 570) scale(1.6) translate(-520 -640)">
             {[0, 1, 2, 3].map((i) => <g key={i} transform={`translate(${430 + i * 60} ${640 + mece(T, i, 0.5) * 12})`}>
               <Molecula tipo="galactosa" r={15} x={-18} gw={2.4} /><Molecula tipo="glucosa" r={15} x={18} gw={2.4} />
             </g>)}
@@ -199,8 +202,8 @@ function LactosaNarrado() {
       </EscenaFundido>
       <Medidor T={T} at={K.R + 0.5} until={K.Au - 0.25} etiqueta="ENZIMA QUE PARTE LA LACTOSA"
         valor={(t) => klerp(0.1, 0.84, kprog(t, K.R + 0.7, K.R + 2.4, kEase.sale))}
-        texto={(v) => (v > 0.5 ? 'otra vez' : 'subiendo…')} y={1560} color={KC.mint} />
-      <Chip T={T} at={K.R + 2.6} until={K.Au - 0.25} texto="ratas adultas con poca lactasa · meses" y={430} borde={KC.gold} tam={36} />
+        texto={(v) => (v > 0.5 ? 'otra vez' : 'subiendo…')} y={1440} color={KC.mint} />
+      <Chip T={T} at={K.R + 2.6} until={K.Au - 0.25} texto="ratas adultas con poca lactasa · meses" y={400} borde={KC.gold} tam={36} />
 
       {/* 7 · AUTO — 2018, un divulgador */}
       <EscenaFundido T={T} a={K.Au} b={K.O} zoom={0.04}>
@@ -208,7 +211,7 @@ function LactosaNarrado() {
         <Ambiente T={T} n={22} seed={13} color="rgba(177,140,255,.4)" tam={[3, 10]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g transform={`rotate(${mece(T, 6, 0.2) * 1.2} 540 880)`}>
-            <MarcoVideo T={T} x={540} y={880} w={760} h={440} titulo="The Thought Emporium · 2018" pie="Justin Atkin" />
+            <MarcoVideo T={T} x={540} y={900} w={920} h={540} titulo="The Thought Emporium · 2018" pie="Justin Atkin" />
           </g>
         </svg>
       </EscenaFundido>
@@ -217,6 +220,12 @@ function LactosaNarrado() {
       <EscenaFundido T={T} a={K.O} b={K.Re} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#16101a, #0b0f19)' }}></div>
         <Ambiente T={T} n={18} seed={21} color="rgba(255,120,110,.3)" tam={[4, 11]} />
+        {/* modo cine: el sujeto sigue en pantalla (el virus con su gen, girando despacio) mientras se dicen los matices */}
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          <g transform={`translate(760 ${1240 + mece(T, 1, 0.3) * 16})`} opacity={0.8 * kprog(T, K.O, K.O + 0.5)}>
+            <VirusAAV T={T} s={1.8} rot={(T - K.O) * 40} r={120} />
+          </g>
+        </svg>
       </EscenaFundido>
       <MitoTachado T={T} at={K.O + 0.3} tacharEn={K.O + 1.6} until={K.Re - 0.3} texto="¿cura aprobada?" x={430} y={520} tam={56} />
       <Chip T={T} at={K.O + 2.1} until={K.Re - 0.3} texto="autoexperimento" x={430} y={660} borde={KC.red} tam={44} />
@@ -238,42 +247,43 @@ function LactosaNarrado() {
       <EscenaFundido T={T} a={K.Cr} b={K.Pa} zoom={0.05} fondo={KC.dark}>
         <CriptaCerca T={T} a={K.Cr} gen={kprog(T, K.Cr + 1.2, K.Cr + 2.2) * (1 - kprog(T, K.Pa - 1.4, K.Pa - 0.4))} />
       </EscenaFundido>
-      <Etiqueta T={T} at={K.Cr + 0.5} until={K.Pa - 0.3} x={610} y={1120} texto="células madre" color={KC.gold} tam={36} />
+      <Etiqueta T={T} at={K.Cr + 0.5} until={K.Pa - 0.3} x={650} y={1160} texto="células madre" color={KC.gold} tam={36} />
       <Etiqueta T={T} at={K.Cr + 1.4} until={K.Pa - 0.3} x={120} y={420} texto="el gen se queda arriba" color={GEN} tam={34} />
 
       {/* 11 · PASTILLA — lo que sí existe hoy */}
       <EscenaFundido T={T} a={K.Pa} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.cyan} paso={52} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <VasoLeche T={T} x={790} y={880} s={1.35} lleno={0.86} />
-          <g transform="translate(360 700)">
-            <Pastilla T={T} abre={kprog(T, K.Pa + 0.5, K.Pa + 1.3, kEase.sale)} s={1.05} />
+          {/* segunda vuelta: el vaso ×1.63 y la pastilla ×1.43 */}
+          <VasoLeche T={T} x={780} y={800} s={2.2} lleno={0.86} />
+          <g transform="translate(380 640)">
+            <Pastilla T={T} abre={kprog(T, K.Pa + 0.5, K.Pa + 1.3, kEase.sale)} s={1.5} />
           </g>
           {Array.from({ length: 6 }, (_, i) => { const at = K.Pa + 1.2 + i * 0.16, p = kprog(T, at, at + 1.5, kEase.suave);
             if (T < at) return null;
-            return <Enzima key={i} T={T} x={klerp(360, 690, p) + mece(T, i, 0.5) * 16} y={klerp(700, 900 + i * 14, p)}
-              s={2.2} rot={p * 120 - 40} fase={i * 1.3} />; })}
+            return <Enzima key={i} T={T} x={klerp(380, 700, p) + mece(T, i, 0.5) * 16} y={klerp(640, 860 + i * 18, p)}
+              s={3.3} rot={p * 120 - 40} fase={i * 1.3} />; })}
           {Array.from({ length: 4 }, (_, i) => { const at = K.Pa + 2.4 + i * 0.2;
             if (T < at) return null;
             const p = kprog(T, at, at + 0.9, kEase.sale);
             return <g key={'m' + i} opacity={p}>
-              <Molecula tipo="galactosa" r={26} x={660 - p * 50} y={1180 + i * 3} gw={3.2} />
-              <Molecula tipo="glucosa" r={26} x={800 + p * 50} y={1180 + i * 3} gw={3.2} />
+              <Molecula tipo="galactosa" r={34} x={730 - p * 40} y={1130 + i * 46} gw={3.6} />
+              <Molecula tipo="glucosa" r={34} x={830 + p * 40} y={1130 + i * 46} gw={3.6} />
             </g>; })}
         </svg>
-        <Chip T={T} at={K.Pa + 2.0} until={K.C - 0.3} texto="la misma enzima, pero por fuera" y={440} borde={KC.mint} tam={40} />
+        <Chip T={T} at={K.Pa + 2.0} until={K.C - 0.3} texto="la misma enzima, pero por fuera" y={400} borde={KC.mint} tam={40} />
       </EscenaFundido>
 
       {/* 12 · CIERRE — la imagen del inicio, ya con respuesta */}
       <EscenaFundido T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <VasoLeche T={T} x={760} y={900} s={1.3} lleno={0.86} />
-          <g transform={`translate(400 ${880 + mece(T, 1, 0.3) * 20})`}>
-            <VirusAAV T={T} s={1.25} rot={(T - K.C) * 95} r={120} gen={0.55 + 0.45 * Math.sin(T * 2)} />
+          <VasoLeche T={T} x={790} y={760} s={2.4} lleno={0.86} />
+          <g transform={`translate(365 ${900 + mece(T, 1, 0.3) * 20})`}>
+            <VirusAAV T={T} s={1.85} rot={(T - K.C) * 95} r={120} gen={0.55 + 0.45 * Math.sin(T * 2)} />
           </g>
         </svg>
-        <Chip T={T} at={K.C + 0.7} until={K.Ou} texto="te presta un gen · un rato" x={340} y={430} borde={KC.gold} tam={44} />
+        <Chip T={T} at={K.C + 0.7} until={K.Ou} texto="te presta un gen · un rato" x={410} y={530} borde={KC.gold} tam={44} />
       </EscenaFundido>
 
       {/* subtítulos (idx = línea de narracion.json) */}

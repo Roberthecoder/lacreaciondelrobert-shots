@@ -2,7 +2,7 @@
 // Ambiental #03 · La verdad incómoda de los bioplásticos — NARRADA (N3 "Capítulos y medidores": 3 problemas)
 // y gemelo MUDO (M2 "¿Por qué no…?": pregunta fija, Lupa de rayos X y medidores). Guion y fuentes: guion.md. Dibujo esquemático.
 const AVS = (n) => 'assets/stickers/' + n + '.png';
-const TIERRA = '#7a5230', TIERRA2 = '#5c3b20', COMPOST = '#3b2a1c', PLA = 'rgba(235,250,255,.55)', PLA_B = '#9fd8ff';
+const TIERRA = '#553823', TIERRA2 = '#3a2616', COMPOST = '#3b2a1c', PLA = 'rgba(235,250,255,.55)', PLA_B = '#9fd8ff';
 
 /* ---------- dibujos ---------- */
 // Vaso de PLA ("compostable"). roto 0..1 = se fragmenta y desaparece (solo con calor + humedad). deforma 0..1 = se ablanda.
@@ -42,7 +42,9 @@ function Jardin({ T, cascaras = 1, crece = 0 }) {
       <rect x={0} y={820} width={KW} height={1100} fill={TIERRA} />
       <path d="M 0 820 Q 270 790 540 820 T 1080 820" fill={KC.leaf} stroke={KC.ink} strokeWidth={8} />
       <rect x={0} y={820} width={KW} height={40} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} />
+      <defs><linearGradient id="amb03-hondo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0b1020" stopOpacity="0" /><stop offset="1" stopColor="#0b1020" stopOpacity=".62" /></linearGradient></defs>
       {Array.from({ length: 30 }, (_, i) => <circle key={i} cx={(i * 137) % KW} cy={900 + (i * 89) % 900} r={6 + (i % 4) * 3} fill={TIERRA2} />)}
+      <rect x={0} y={860} width={KW} height={1060} fill="url(#amb03-hondo)" />
       {pie.map(([x, y, r, hoja], i) => <g key={i} transform={`translate(${x} ${y}) rotate(${r}) scale(${cascaras})`} opacity={cascaras}>
         {hoja ? <path d="M -40 0 Q 0 -30 40 0 Q 0 30 -40 0 Z" fill="#d18f2c" stroke={KC.ink} strokeWidth={4} /> : <path d="M -36 -10 Q 0 -30 36 -10 L 30 12 Q 0 0 -30 12 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />}
       </g>)}
@@ -105,37 +107,40 @@ function BioplasticosNarrado() {
       {/* gancho: el vaso cae al jardín y los días pasan; las cáscaras se deshacen, el vaso no */}
       <Escena T={T} a={K.G} b={K.Q} zoom={0}>
         <Jardin T={T} cascaras={1 - kprog(T, K.G + 1.4, K.Q - 0.4)} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><VasoPLA x={540} y={klerp(500, 1120, cae)} s={1.1} rot={0} T={T} /></svg>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          {/* modo cine: antes del segundo 3 ya se ve hacia dónde va la historia (la «fábrica»: la composta industrial, chica y al fondo) */}
+          <g opacity={0.8 * kprog(T, K.G + 1.5, K.G + 2.3)}><PilaIndustrial x={132} y={812} s={0.42} T={T} /></g>
+          <VasoPLA x={560} y={klerp(900, 1400, cae)} s={2.2} rot={0} T={T} /></svg>
       </Escena>
       <Escena T={T} a={K.Q} b={K.U}>
         <FondoLunares color={KC.yellow} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Maiz x={180} y={760} s={kentrada(T, K.Q + 0.1, null, 'pop').s} />
-          <g transform="translate(450 760)" opacity={kprog(T, K.Q + 0.8, K.Q + 1.2)}>{[0, 1, 2].map((i) => <rect key={i} x={-50 + i * 34} y={-30 - (i % 2) * 34} width={60} height={60} rx={8} fill="#fff" stroke={KC.ink} strokeWidth={5} transform={`rotate(${i * 8})`} />)}</g>
-          {T > K.Q + 1.6 && [0, 1, 2].map((i) => <Bacteria key={i} x={720 + i * 70} y={700 + (i % 2) * 90} rot={T * 40 + i * 70} s={0.6} T={T} seed={i} color={KC.mint} />)}
+          <Maiz x={200} y={700} s={1.9 * kentrada(T, K.Q + 0.1, null, 'pop').s} />
+          <g transform="translate(540 700) scale(1.7)" opacity={kprog(T, K.Q + 0.8, K.Q + 1.2)}>{[0, 1, 2].map((i) => <rect key={i} x={-50 + i * 34} y={-30 - (i % 2) * 34} width={60} height={60} rx={8} fill="#fff" stroke={KC.ink} strokeWidth={5} transform={`rotate(${i * 8})`} />)}</g>
+          {T > K.Q + 1.6 && [0, 1, 2].map((i) => <Bacteria key={i} x={790 + i * 95} y={640 + (i % 2) * 130} rot={T * 40 + i * 70} s={1.0} T={T} seed={i} color={KC.mint} />)}
           {/* ácido láctico que se une en cadena */}
           {Array.from({ length: 9 }, (_, i) => { const at = K.Q + 2.4 + i * 0.18; if (T < at) return null; const p = kprog(T, at, at + 0.3, kEase.rebote);
-            return <g key={i} transform={`translate(${160 + i * 95} ${1080 + Math.sin(i * 0.9 + T) * 20}) scale(${p})`}>{i < 8 && <line x1={0} y1={0} x2={95} y2={0} stroke="#2a8fd8" strokeWidth={8} />}<circle r={26} fill="#ffd36b" stroke={KC.ink} strokeWidth={5} /></g>; })}
-          {[[300, 760], [610, 760], [880, 900]].map(([x, y], i) => <path key={i} d={`M ${x} ${y} l 50 0 m -16 -14 l 16 14 l -16 14`} stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" opacity={kprog(T, K.Q + 0.6 + i * 0.8, K.Q + 0.9 + i * 0.8)} />)}
+            return <g key={i} transform={`translate(${110 + i * 107} ${1240 + Math.sin(i * 0.9 + T) * 26}) scale(${p})`}>{i < 8 && <line x1={0} y1={0} x2={107} y2={0} stroke="#2a8fd8" strokeWidth={11} />}<circle r={40} fill="#ffd36b" stroke={KC.ink} strokeWidth={5} /></g>; })}
+          {[[370, 700], [668, 700], [900, 1050]].map(([x, y], i) => <path key={i} d={`M ${x} ${y} l 60 0 m -18 -16 l 18 16 l -18 16`} stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" opacity={kprog(T, K.Q + 0.6 + i * 0.8, K.Q + 0.9 + i * 0.8)} />)}
         </svg>
       </Escena>
       {/* problema 1 (por dentro): la cadena solo se corta con calor y humedad */}
       <Escena T={T} a={K.U} b={K.Do}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #12304a 0%, #0E0F12 75%)' }}></div>
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><PilaIndustrial x={540} y={1350} s={0.9} T={T} temp={klerp(25, 58, kprog(T, K.U + 0.5, K.U + 3))} /></svg>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><PilaIndustrial x={540} y={1530} s={1.2} T={T} temp={klerp(25, 58, kprog(T, K.U + 0.5, K.U + 3))} /></svg>
       </Escena>
       <Escena T={T} a={K.Do} b={K.E}>
         <FondoLunares color={KC.mint} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {[['fábrica', '58 °C', true], ['jardín', '~25 °C', false], ['mar', 'frío', false]].map(([t, c, ok], i) => { const at = K.Do + 0.3 + i * 0.6; if (T < at) return null; const p = kprog(T, at, at + 0.4, kEase.rebote);
-            return <g key={i} transform={`translate(${200 + i * 340} 900) scale(${p})`}>
-              <rect x={-150} y={-230} width={300} height={420} rx={28} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
-              {i === 0 && <PilaIndustrial x={0} y={40} s={0.4} T={T} />}
-              {i === 1 && <g><rect x={-120} y={-30} width={240} height={70} fill={TIERRA} /><rect x={-120} y={-44} width={240} height={18} fill={KC.leaf} /><VasoPLA x={0} y={20} s={0.3} etiqueta={false} /></g>}
-              {i === 2 && <g><rect x={-120} y={-80} width={240} height={140} rx={10} fill="#2f7fff" /><path d="M -120 -80 q 30 -16 60 0 t 60 0 t 60 0 t 60 0" fill="#7fc4ff" stroke={KC.ink} strokeWidth={4} /><VasoPLA x={0} y={30} s={0.3} etiqueta={false} /></g>}
-              <text x={0} y={100} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{t}</text>
-              <text x={0} y={145} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#5a524a">{c}</text>
-              <g transform="translate(0 -180)">{ok ? <path d="M -30 0 L -8 22 L 34 -24" stroke={KC.leaf} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" /> : <path d="M -26 -26 L 26 26 M 26 -26 L -26 26" stroke={KC.red} strokeWidth={14} strokeLinecap="round" />}</g>
+            return <g key={i} transform={`translate(${190 + i * 350} 900) scale(${p})`}>
+              <rect x={-165} y={-360} width={330} height={720} rx={30} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
+              {i === 0 && <PilaIndustrial x={-10} y={90} s={0.5} T={T} />}
+              {i === 1 && <g><rect x={-140} y={-20} width={280} height={110} fill={TIERRA} /><rect x={-140} y={-38} width={280} height={22} fill={KC.leaf} /><VasoPLA x={0} y={60} s={0.6} etiqueta={false} /></g>}
+              {i === 2 && <g><rect x={-140} y={-130} width={280} height={220} rx={10} fill="#1f55b0" /><path d="M -140 -130 q 35 -18 70 0 t 70 0 t 70 0 t 70 0" fill="none" stroke="#7fc4ff" strokeWidth={6} /><VasoPLA x={0} y={60} s={0.6} etiqueta={false} /></g>}
+              <text x={0} y={200} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>{t}</text>
+              <text x={0} y={262} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill="#b9c2d6">{c}</text>
+              <g transform="translate(0 -285) scale(1.5)">{ok ? <path d="M -30 0 L -8 22 L 34 -24" stroke={KC.leaf} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" /> : <path d="M -26 -26 L 26 26 M 26 -26 L -26 26" stroke={KC.red} strokeWidth={14} strokeLinecap="round" />}</g>
             </g>; })}
         </svg>
       </Escena>
@@ -143,61 +148,69 @@ function BioplasticosNarrado() {
       <Escena T={T} a={K.E} b={K.P}>
         <FondoLunares color={KC.cyan} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          <g transform="translate(540 1095) scale(1.32) translate(-540 -1015)">
           <rect x={190} y={800} width={700} height={430} rx={24} fill="rgba(47,127,255,.55)" stroke={KC.ink} strokeWidth={9} />
           <path d={`M 190 830 q 44 ${-12 + 6 * Math.sin(T * 2)} 88 0 t 88 0 t 88 0 t 88 0 t 88 0 t 88 0 t 88 0 t 88 0`} fill="none" stroke="#fff" strokeWidth={5} opacity=".7" />
           <g transform={`translate(540 ${1020 + mece(T, 2, 0.2) * 14}) rotate(${mece(T, 4, 0.2) * 8})`}><rect x={-110} y={-70} width={220} height={140} rx={8} fill={PLA} stroke={KC.ink} strokeWidth={6} /><text y={14} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink} opacity=".6">PLA</text></g>
+          </g>
         </svg>
       </Escena>
       <Escena T={T} a={K.P} b={K.D2} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <VasoPLA x={330} y={1150} s={1.2} T={T} />
-          <g transform={`translate(330 600) rotate(${T * 40})`} opacity={kprog(T, K.P + 0.3, K.P + 0.7)}>{[0, 120, 240].map((r) => <path key={r} d="M 0 -110 L 60 -20 L 20 -20 L 20 30 L -20 30 L -20 -20 L -60 -20 Z" transform={`rotate(${r}) translate(0 -30)`} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />)}</g>
+          <VasoPLA x={540} y={1400} s={1.9} T={T} />
+          <g transform={`translate(540 560) rotate(${T * 40}) scale(1.5)`} opacity={kprog(T, K.P + 0.3, K.P + 0.7)}>{[0, 120, 240].map((r) => <path key={r} d="M 0 -110 L 60 -20 L 20 -20 L 20 30 L -20 30 L -20 -20 L -60 -20 Z" transform={`rotate(${r}) translate(0 -30)`} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />)}</g>
         </svg>
       </Escena>
       {/* problema 2: parece PET pero no lo es */}
       <Escena T={T} a={K.D2} b={K.Tr}>
         <FondoLunares color={KC.yellow} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <rect x={0} y={1090} width={KW} height={40} fill="#2a2f3b" stroke={KC.ink} strokeWidth={6} />
-          {Array.from({ length: 9 }, (_, i) => { const x = ((i * 150 + (T - K.D2) * 160) % 1350) - 130; return i === 4 ? <VasoPLA key={i} x={x} y={1088} s={0.55} etiqueta={false} /> : <BotellaPET key={i} x={x} y={1080} s={0.9} />; })}
+          <rect x={-10} y={1350} width={KW + 20} height={56} fill="#2a2f3b" stroke={KC.ink} strokeWidth={6} />
+          {Array.from({ length: 9 }, (_, i) => { const x = ((i * 225 + (T - K.D2) * 240) % 2025) - 200; return i === 4 ? <VasoPLA key={i} x={x} y={1347} s={0.9} etiqueta={false} /> : <BotellaPET key={i} x={x} y={1335} s={1.5} />; })}
           {/* lote reciclado: se enturbia si entra mucho PLA */}
-          <g transform="translate(540 700)"><rect x={-260} y={-110} width={520} height={220} rx={30} fill={mixHex('#9fe0ff', '#c9c2b5', kprog(T, K.D2 + 3.0, K.D2 + 5.0))} stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(540 740) scale(1.45)"><rect x={-260} y={-110} width={520} height={220} rx={30} fill={mixHex('#9fe0ff', '#c9c2b5', kprog(T, K.D2 + 3.0, K.D2 + 5.0))} stroke={KC.ink} strokeWidth={8} />
             {Array.from({ length: 24 }, (_, i) => <circle key={i} cx={-220 + (i % 8) * 62} cy={-60 + Math.floor(i / 8) * 60} r={18} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={3} />)}</g>
         </svg>
       </Escena>
       {/* problema 3: cuesta más */}
-      <Escena T={T} a={K.Tr} b={K.Ca}><FondoLunares color={KC.mint} /></Escena>
+      <Escena T={T} a={K.Tr} b={K.Ca}><FondoLunares color={KC.mint} />
+        {/* modo cine: los dos sujetos que se comparan siguen en pantalla, cada uno bajo su barra */}
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><g opacity={kprog(T, K.Tr + 0.1, K.Tr + 0.5)}><BotellaPET x={340} y={1420} s={1.2} /><VasoPLA x={740} y={1432} s={1.0} T={T} /></g></svg>
+      </Escena>
       <Escena T={T} a={K.Ca} b={K.Es}>
         <FondoLunares color={KC.orange} punto="rgba(255,255,255,.22)" />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><VasoPLA x={540} y={1180} s={1.4} T={T} cafe={kprog(T, K.Ca + 0.3, K.Ca + 1)} deforma={kprog(T, K.Ca + 1.5, K.Es - 0.2)} /></svg>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><VasoPLA x={540} y={1380} s={2.2} T={T} cafe={kprog(T, K.Ca + 0.3, K.Ca + 1)} deforma={kprog(T, K.Ca + 1.5, K.Es - 0.2)} /></svg>
       </Escena>
-      <Escena T={T} a={K.Es} b={K.C}><FondoLunares color={KC.lilac} /></Escena>
+      <Escena T={T} a={K.Es} b={K.C}><FondoLunares color={KC.lilac} />
+        {/* modo cine: el vaso (el mismo de la escena anterior, ya deformado) sigue en pantalla mientras se tacha «¿Estafa?» */}
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><VasoPLA x={540} y={1370} s={2.0} T={T} cafe={1} deforma={1} /></svg>
+      </Escena>
       <Escena T={T} a={K.C} b={FIN} zoom={0.03}>
         <Jardin T={T} cascaras={0} crece={kprog(T, K.C, K.C + 3)} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><VasoPLA x={540} y={1120} s={1.1} T={T} /></svg>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><VasoPLA x={560} y={1400} s={2.2} T={T} /></svg>
       </Escena>
 
       {/* capítulos y medidores */}
       <Capitulo T={T} caps={[{ at: K.U, titulo: 'Problema: calor' }, { at: K.D2, titulo: 'Problema: reciclaje' }, { at: K.Tr, titulo: 'Problema: costo' }]} hasta={K.Ca - 0.2} />
       {T > K.G + 1.2 && T < K.Q - 0.2 && <Contador T={T} at={K.G + 1.2} desde={0} hasta={180} dur={K.Q - K.G - 1.8} sufijo=" días" x={330} y={440} tam={80} color={KC.yellow} />}
       <Chip T={T} at={K.G + 0.6} until={K.Q - 0.3} texto="«compostable»" x={330} y={560} tam={44} borde={KC.leaf} />
-      <Etq T={T} at={K.Q + 0.3} until={K.U - 0.3} x={120} y={930} texto="maíz" color={KC.ink} />
-      <Etq T={T} at={K.Q + 1.0} until={K.U - 0.3} x={430} y={600} texto="azúcar" color={KC.ink} />
-      <Etq T={T} at={K.Q + 1.8} until={K.U - 0.3} x={700} y={600} texto="bacterias" color={KC.ink} />
-      <Chip T={T} at={K.Q + 2.6} until={K.U - 0.3} texto="ácido láctico → PLA" y={940} tam={42} />
+      <Etq T={T} at={K.Q + 0.3} until={K.U - 0.3} x={110} y={985} texto="maíz" color={KC.ink} />
+      <Etq T={T} at={K.Q + 1.0} until={K.U - 0.3} x={470} y={540} texto="azúcar" color={KC.ink} />
+      <Etq T={T} at={K.Q + 1.8} until={K.U - 0.3} x={760} y={500} texto="bacterias" color={KC.ink} />
+      <Chip T={T} at={K.Q + 2.6} until={K.U - 0.3} texto="ácido láctico → PLA" x={480} y={1050} tam={44} />
       <Medidor T={T} at={K.U + 0.3} until={K.Do - 0.3} etiqueta="TEMPERATURA" valor={(t) => klerp(25, 58, kprog(t, K.U + 0.5, K.U + 3)) / 70} texto={(v) => Math.round(v * 70) + ' °C'} y={450} color={KC.red} />
-      <Lupa T={T} at={K.U + 1.6} until={K.Do - 0.3} x={540} y={830} r={230} fx={480} fy={1150} interior={(t, r) => <CadenaPLA T={t} r={r} corte={kprog(t, K.U + 3, K.Do - 0.6)} />} etiqueta="POR DENTRO · cadena de PLA + agua" tinte={KC.cyan} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.8} anio="2017" quien="Universidad de Bayreuth" revista="Bagheri et al. · Global Challenges" y={600} />
-      {T > K.E + 2.6 && T < K.P - 0.2 && <Contador T={T} at={K.E + 2.6} desde={0} hasta={365} dur={K.P - K.E - 3.2} sufijo=" días · agua de mar" x={540} y={720} tam={60} color={KC.yellow} />}
+      <Lupa T={T} at={K.U + 1.6} until={K.Do - 0.3} x={540} y={800} r={240} fx={470} fy={1380} interior={(t, r) => <CadenaPLA T={t} r={r} corte={kprog(t, K.U + 3, K.Do - 0.6)} />} etiqueta="POR DENTRO · cadena de PLA + agua" tinte={KC.cyan} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.8} anio="2017" quien="Universidad de Bayreuth" revista="Bagheri et al. · Global Challenges" y={520} />
+      {T > K.E + 2.6 && T < K.P - 0.2 && <Contador T={T} at={K.E + 2.6} desde={0} hasta={365} dur={K.P - K.E - 3.2} sufijo=" días · agua de mar" x={540} y={690} tam={64} color={KC.yellow} />}
       <Medidor T={T} at={K.E + 2.8} until={K.P - 0.3} etiqueta="PLA DEGRADADO EN 1 AÑO" valor={0} texto={() => '0 %'} y={1460} color={KC.mint} />
-      <Chip T={T} at={K.D2 + 0.5} until={K.Tr - 0.3} texto="¿PET o PLA?" y={430} tam={46} />
-      <Chip T={T} at={K.D2 + 3.2} until={K.Tr - 0.3} texto="mucho PLA = lote dañado" y={900} tam={40} borde={KC.red} />
-      <Comparativa T={T} at={K.Tr + 0.4} until={K.Ca - 0.3} max={2} y={520} alto={420} izq={{ valor: 1, etiqueta: 'PET', texto: '$', color: '#7fc4ff' }} der={{ valor: 1.75, etiqueta: 'PLA', texto: '$$', color: KC.leaf }} />
-      <Chip T={T} at={K.Tr + 1.2} until={K.Ca - 0.3} texto="fermentar · purificar · fabricar" y={1490} tam={36} mono />
-      <Medidor T={T} at={K.Ca + 0.6} until={K.Es - 0.3} etiqueta="SE ABLANDA DESDE" valor={0.55 / 0.9} texto={() => '~55–60 °C'} y={1440} color={KC.red} />
-      <MitoTachado T={T} at={K.Es + 0.2} tacharEn={K.Es + 1.6} until={K.C - 0.3} texto="¿Estafa?" y={700} tam={80} />
-      <Medidor T={T} at={K.Es + 1.9} until={K.C - 0.3} etiqueta="TECNOLOGÍA" valor={(t) => 0.5 * kprog(t, K.Es + 2, K.Es + 2.8)} texto={() => 'a medio camino'} y={1000} color={KC.yellow} />
+      <Chip T={T} at={K.D2 + 0.5} until={K.D2 + 3.0} texto="¿PET o PLA?" y={440} tam={46} />
+      <Chip T={T} at={K.D2 + 3.2} until={K.Tr - 0.3} texto="mucho PLA = lote dañado" y={440} tam={42} borde={KC.red} />
+      <Comparativa T={T} at={K.Tr + 0.4} until={K.Ca - 0.3} max={2} y={370} alto={570} izq={{ valor: 1, etiqueta: 'PET', texto: '$', color: '#7fc4ff' }} der={{ valor: 1.75, etiqueta: 'PLA', texto: '$$', color: KC.leaf }} />
+      <Chip T={T} at={K.Tr + 1.2} until={K.Ca - 0.3} texto="fermentar · purificar · fabricar" y={1500} tam={38} mono />
+      <Medidor T={T} at={K.Ca + 0.6} until={K.Es - 0.3} etiqueta="SE ABLANDA DESDE" valor={0.55 / 0.9} texto={() => '~55–60 °C'} y={1470} color={KC.red} />
+      <MitoTachado T={T} at={K.Es + 0.2} tacharEn={K.Es + 1.6} until={K.C - 0.3} texto="¿Estafa?" y={400} tam={76} />
+      <Medidor T={T} at={K.Es + 1.9} until={K.C - 0.3} etiqueta="TECNOLOGÍA" valor={(t) => 0.5 * kprog(t, K.Es + 2, K.Es + 2.8)} texto={() => 'a medio camino'} y={1460} color={KC.yellow} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="¿compostable DÓNDE?" x={360} y={460} tam={52} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

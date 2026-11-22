@@ -172,7 +172,7 @@ const CAJAS14 = (() => {
   for (let i = 0; i < 10; i++) umb.push(99);
   for (let i = umb.length - 1; i > 0; i--) { const k = Math.floor(g() * (i + 1)); [umb[i], umb[k]] = [umb[k], umb[i]]; }
   const cols = ['#fff2c4', '#c8f0a8', '#ffd0e0', '#d6e6ff', '#ffe08a'];
-  return umb.map((u, i) => ({ u, x: 112 + (i % 10) * 95, y: 760 + Math.floor(i / 10) * 88, c: cols[Math.floor(g() * cols.length)], seed: i + 3 }));
+  return umb.map((u, i) => ({ u, x: 108 + (i % 10) * 96, y: 830 + Math.floor(i / 10) * 116, c: cols[Math.floor(g() * cols.length)], seed: i + 3 }));
 })();
 
 function CalorShot() {
@@ -197,11 +197,12 @@ function CalorShot() {
       <Escena T={T} a={K.G} b={K.Hm} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>{DEFS14}
-          <rect x={0} y={1180} width={KW} height={800} fill="#422c24" stroke={KC.ink} strokeWidth={8} />
-          <Hormiga14 T={T} x={klerp(230, 300, kprog(T, K.G, K.G + 2.4, kEase.sale))} y={1112} s={1.3} paso={T * 1.6} camina={1 - kprog(T, K.G + 2.2, K.G + 2.6)} hilos={kprog(T, K.G + 0.2, K.G + 1.4)} />
-          <Gente x={790} y={1180} s={1.3} brillo={kprog(T, K.G + 1.6, K.G + 2.4)} T={T} />
-          <EscudoCalor T={T} cx={790} cy={960} rx={250} ry={380} p={kprog(T, K.G + 2.2, K.G + 3.0, kEase.rebote)} />
-          <Rebotes T={T} t0={K.G + 3.0} t1={K.Hm + 0.3} x0={60} y0={640} cx={790} cy={960} rx={250} ry={380} n={5} />
+          {/* segunda vuelta: la hormiga conserva su tamaño (y su barra) y tú creces ×1.23, con el escudo más alto; el suelo baja y se oscurece */}
+          <rect x={-60} y={1290} width={KW + 120} height={800} fill="#2b1d17" stroke="#6b5348" strokeWidth={6} />
+          <Hormiga14 T={T} x={klerp(240, 292, kprog(T, K.G, K.G + 2.4, kEase.sale))} y={1222} s={1.3} paso={T * 1.6} camina={1 - kprog(T, K.G + 2.2, K.G + 2.6)} hilos={kprog(T, K.G + 0.2, K.G + 1.4)} />
+          <Gente x={795} y={1290} s={1.6} brillo={kprog(T, K.G + 1.6, K.G + 2.4)} T={T} />
+          <EscudoCalor T={T} cx={795} cy={1020} rx={245} ry={450} p={kprog(T, K.G + 2.2, K.G + 3.0, kEase.rebote)} />
+          <Rebotes T={T} t0={K.G + 3.0} t1={K.Hm + 0.3} x0={60} y0={700} cx={795} cy={1020} rx={245} ry={450} n={5} />
         </>)}
       </Escena>
       {/* 1 · la hormiga toma su calor de afuera */}
@@ -209,22 +210,26 @@ function CalorShot() {
         <FondoLunares color={KC.cyan} />
         {(() => { const nx = klerp(-200, 520, kprog(T, K.Hm + 0.3, K.Hm + 2.6)); const sombra = kclamp(1 - Math.abs(nx - 260) / 220, 0, 1);
           return fsvg(<>
-            <Sol x={260} y={640} T={T} />
-            <Nube x={nx} y={650} s={1.1} />
-            <path d="M -20 1170 Q 400 1080 1100 1020" fill="none" stroke="#2f7a2c" strokeWidth={30} strokeLinecap="round" />
-            <path d="M 700 1050 Q 880 900 1060 960 Q 900 1080 700 1050 Z" fill={KC.leaf} stroke={KC.ink} strokeWidth={7} />
-            <Hormiga14 T={T} x={430} y={1050} s={1.0} paso={T * 1.4} camina={0.8} />
-            <Termo x={860} y={820} alto={420} f={0.35 + 0.3 * (1 - sombra) * kprog(T, K.Hm, K.Hm + 0.6)} color={KC.red} />
+            {/* segunda vuelta: rama y hormiga ×1.5 (la barra pasa de «1 cm» = 290 px a «5 mm» = 218 px, la misma proporción) */}
+            <Sol x={260} y={560} r={88} T={T} />
+            <Nube x={nx} y={570} s={1.4} />
+            <g transform="translate(470 1150) scale(1.5) translate(-430 -1050)">
+              <path d="M -220 1210 Q 400 1080 1100 1020" fill="none" stroke="#2f7a2c" strokeWidth={30} strokeLinecap="round" />
+              <path d="M 640 1058 Q 720 940 860 960 Q 780 1070 640 1058 Z" fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />
+              <Hormiga14 T={T} x={430} y={1050} s={1.0} paso={T * 1.4} camina={0.8} />
+            </g>
+            <Termo x={900} y={830} alto={440} s={1.2} f={0.35 + 0.3 * (1 - sombra) * kprog(T, K.Hm, K.Hm + 0.6)} color={KC.red} />
           </>); })()}
       </Escena>
       {/* 2 · tú: 37 °C de día y de noche */}
       <Escena T={T} a={K.Tu} b={K.Ho} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>{DEFS14}
-          <Sol x={170} y={760} r={56} T={T} />
-          <Nube x={klerp(-120, 420, kprog(T, K.Tu, K.Tu + 2.6))} y={770} s={0.9} />
-          <Gente x={470} y={1190} s={1.12} brillo={1} T={T} />
-          <Termo x={860} y={1120} alto={460} f={kprog(T, K.Tu, K.Tu + 0.8, kEase.sale) * fT(37) * 1.0} color={KC.orange} marcas={[[fT(37), '37']]} />
+          {/* segunda vuelta: tú ×1.7 (la barra de 50 cm crece igual) y el termómetro ×1.3 */}
+          <Sol x={150} y={700} r={62} T={T} />
+          <Nube x={klerp(-120, 420, kprog(T, K.Tu, K.Tu + 2.6))} y={710} s={0.9} />
+          <Gente x={430} y={1400} s={1.9} brillo={1} T={T} />
+          <Termo x={880} y={1320} alto={460} s={1.3} f={kprog(T, K.Tu, K.Tu + 0.8, kEase.sale) * fT(37) * 1.0} color={KC.orange} marcas={[[fT(37), '37']]} />
         </>)}
       </Escena>
       {/* 3 · los hongos crecen a temperatura ambiente; a 37 °C, pocos */}
@@ -233,10 +238,11 @@ function CalorShot() {
         {(() => { const w = kprog(T, K.Ho + 1.9, K.Ho + 3.0, kEase.suave), crece = kprog(T, K.Ho, K.Ho + 1.2);
           const somb = ['#c98b2b', '#e8336d', '#f3e6c4', '#8a5a2b', '#b18cff', '#ff8a1f'];
           return fsvg(<>
-            <rect x={0} y={1120} width={KW} height={900} fill="#3a2c24" stroke={KC.ink} strokeWidth={8} />
-            <rect x={0} y={560} width={KW} height={560} fill={cineMix(KC.orange, CINE.fondo, 0.55)} opacity={w * 0.35} />
-            {somb.map((c, i) => { const vive = i === 3; const ww = vive ? 0 : w;
-              return <Seta key={i} x={130 + i * 165} y={1120} s={1.15 - ww * 0.35} crece={crece * (1 - ww * 0.4)} rot={(i % 2 ? 1 : -1) * 38 * ww + mece(T, i, 0.4) * 2} sombrero={mixHex(c, '#8d8d8d', ww)} pie={mixHex('#f3e6c4', '#9a9a9a', ww)} escamas={i % 2 === 0} anillo={i !== 2} />; })}
+            {/* segunda vuelta: las setas crecen ×1.3 (la barra de 5 cm igual), en dos filas para que quepan */}
+            <rect x={-60} y={1130} width={KW + 120} height={900} fill="#2b1f1a" stroke="#6b5348" strokeWidth={6} />
+            <rect x={-60} y={500} width={KW + 120} height={630} fill={cineMix(KC.orange, CINE.fondo, 0.55)} opacity={w * 0.35} />
+            {[0, 2, 4, 1, 3, 5].map((i) => { const c = somb[i]; const vive = i === 3; const ww = vive ? 0 : w;
+              return <Seta key={i} x={140 + i * 160} y={i % 2 ? 1300 : 1150} s={1.5 - ww * 0.45} crece={crece * (1 - ww * 0.4)} rot={(i % 2 ? 1 : -1) * 38 * ww + mece(T, i, 0.4) * 2} sombrero={mixHex(c, '#8d8d8d', ww)} pie={mixHex('#f3e6c4', '#9a9a9a', ww)} escamas={i % 2 === 0} anillo={i !== 2} />; })}
           </>); })()}
       </Escena>
       {/* 4 · re-gancho */}
@@ -249,10 +255,11 @@ function CalorShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          {CAJAS14.map((c, i) => { const on = kprog(T, K.E + 2.6 + i * 0.03, K.E + 2.9 + i * 0.03, kEase.rebote); if (on <= 0) return null;
+          {/* modo cine: las cajas entran al empezar la escena (antes: 2.6 s de tarjeta sola) */}
+          {CAJAS14.map((c, i) => { const on = kprog(T, K.E + 0.2 + i * 0.035, K.E + 0.5 + i * 0.035, kEase.rebote); if (on <= 0) return null;
             const viva = c.u > temp ? 1 : 0; const recien = T >= K.R && c.u <= temp && c.u > temp - 1 && T > K.Gr + 0.8 ? 1 : 0;
-            return <g key={i} transform={`translate(${c.x} ${c.y}) scale(${on}) translate(${-c.x} ${-c.y})`}><Caja14 x={c.x} y={c.y} viva={viva} color={c.c} seed={c.seed} flash={recien} /></g>; })}
-          {T > K.R - 0.2 && <g opacity={kprog(T, K.R - 0.2, K.R + 0.2)}>
+            return <g key={i} transform={`translate(${c.x} ${c.y}) scale(${on}) translate(${-c.x} ${-c.y})`}><Caja14 x={c.x} y={c.y} r={40} viva={viva} color={c.c} seed={c.seed} flash={recien} /></g>; })}
+          {T > K.R - 0.2 && <g opacity={kprog(T, K.R - 0.2, K.R + 0.2)} transform="translate(60 590) scale(1.6) translate(-90 -612)">
             <rect x={90} y={612} width={560} height={40} rx={20} fill="#fff" stroke={KC.ink} strokeWidth={6} />
             {T > K.F && <rect x={90 + 560 * (38 - 24) / 17} y={606} width={560 * 2 / 17} height={52} rx={10} fill={KC.red} opacity={0.45 * kprog(T, K.F + 0.6, K.F + 1.0)} />}
             {T > K.F && <text x={90 + 560 * (39 - 24) / 17} y={598} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.red} opacity={kprog(T, K.F + 0.6, K.F + 1.0)}>fiebre</text>}
@@ -261,20 +268,21 @@ function CalorShot() {
               <text x={90 + 560 * (t - 24) / 17} y={706} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="#fff">{t}</text></g>)}
           </g>}
         </>)}
-        {T > K.R - 0.2 && <div style={{ position:'absolute', left:90, top:530, zIndex:41, font:`400 64px ${KF.titulo}`, color:KC.gold2, textShadow:KSOMBRA, opacity:kprog(T, K.R - 0.2, K.R + 0.2) }}>{kformato(temp, 0)} °C</div>}
-        {T > K.E + 2.6 && <div style={{ position:'absolute', right:60, bottom:470, zIndex:41, font:`700 30px ${KF.mono}`, color:'#fff', textShadow:KSOMBRA }}>esquema · no son datos del estudio</div>}
+        {T > K.R - 0.2 && <div style={{ position:'absolute', left:60, top:470, zIndex:41, font:`400 92px ${KF.titulo}`, color:KC.gold2, textShadow:KSOMBRA, opacity:kprog(T, K.R - 0.2, K.R + 0.2) }}>{kformato(temp, 0)} °C</div>}
+        {T > K.E + 0.2 && <div style={{ position:'absolute', right:60, bottom:440, zIndex:41, font:`700 30px ${KF.mono}`, color:'#fff', textShadow:KSOMBRA }}>esquema · no son datos del estudio</div>}
       </Escena>
       {/* 9 · hipótesis: la sangre caliente */}
       <Escena T={T} a={K.Hi} b={K.A} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>{DEFS14}
-          <rect x={0} y={1110} width={KW} height={800} fill="#3a2c24" stroke={KC.ink} strokeWidth={8} />
-          <ellipse cx={660} cy={1050} rx={170} ry={110} fill="url(#calorBrillo)" opacity={0.9} />
-          <Raton x={660} y={1110} s={1.25} />
-          <ellipse cx={880} cy={960} rx={210} ry={200} fill="url(#calorBrillo)" opacity={kprog(T, K.Hi + 0.6, K.Hi + 1.2)} />
-          {T > K.Hi + 0.6 && <Perro x={900} y={1110} s={1.15 * kprog(T, K.Hi + 0.6, K.Hi + 1.1, kEase.rebote)} />}
-          <Rebotes T={T} t0={K.Hi + 1.0} t1={K.A + 0.3} x0={980} y0={760} cx={820} cy={1010} rx={-200} ry={150} n={5} />
-          <Sello14 T={T} at={K.Hi + 1.6} x={790} y={700} texto="HIPÓTESIS" color={KC.violet} r={130} />
+          {/* segunda vuelta: el ratón y el perro ×1.6 (la barra de 10 cm crece igual) */}
+          <rect x={-60} y={1260} width={KW + 120} height={800} fill="#2b1f1a" stroke="#6b5348" strokeWidth={6} />
+          <ellipse cx={330} cy={1164} rx={272} ry={176} fill="url(#calorBrillo)" opacity={0.9} />
+          <Raton x={330} y={1260} s={2.0} />
+          <ellipse cx={780} cy={1020} rx={336} ry={320} fill="url(#calorBrillo)" opacity={kprog(T, K.Hi + 0.6, K.Hi + 1.2)} />
+          {T > K.Hi + 0.6 && <Perro x={800} y={1260} s={1.84 * kprog(T, K.Hi + 0.6, K.Hi + 1.1, kEase.rebote)} />}
+          <Rebotes T={T} t0={K.Hi + 1.0} t1={K.A + 0.3} x0={1000} y0={700} cx={760} cy={1060} rx={-300} ry={230} n={5} />
+          <Sello14 T={T} at={K.Hi + 1.6} x={300} y={740} texto="HIPÓTESIS" color={KC.violet} r={150} />
         </>)}
       </Escena>
       {/* 10 · Candida auris (micro, fondo oscuro) */}
@@ -282,80 +290,86 @@ function CalorShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
         {fsvg(<>
+          {/* segunda vuelta: las levaduras ×1.25 (la barra de 5 µm crece igual) */}
+          <g transform="translate(400 960) scale(1.25) translate(-400 -900)">
           {[[300, 820, 1.2, 10, 1], [470, 900, 1.0, -20, 0], [360, 1010, 1.1, 30, 1], [180, 960, 0.9, -40, 0], [540, 1060, 1.0, 5, 1], [250, 700, 0.85, 50, 0], [480, 740, 0.95, -10, 0]].map(([x, y, s, r, b], i) =>
             <Levadura key={i} x={x * 1.1 - 20} y={y * 1.15 - 120} s={1.6 * s * kprog(T, K.A + 0.2 + i * 0.12, K.A + 0.6 + i * 0.12, kEase.rebote)} rot={r} yema={b ? kprog(T, K.A + 1.4, K.A + 3.0) : 0} T={T} seed={i} />)}
-          <Termo x={860} y={1130} alto={440} f={kprog(T, K.A + 0.5, K.A + 1.6, kEase.sale) * fT(40)} color={KC.red} marcas={[[fT(37), '37'], [fT(40), '40']]} />
+          </g>
+          <Termo x={900} y={1220} alto={440} s={1.15} f={kprog(T, K.A + 0.5, K.A + 1.6, kEase.sale) * fT(40)} color={KC.red} marcas={[[fT(37), '37'], [fT(40), '40']]} />
         </>)}
       </Escena>
       {/* 11 · ¿el calentamiento global la hizo adaptarse? (hipótesis) */}
       <Escena T={T} a={K.Cl} b={K.D} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Globo x={420} y={960} r={220} calor={kprog(T, K.Cl + 2.4, K.Cl + 4.4)} T={T} />
-          <Termo x={830} y={1150} alto={420} f={klerp(0.35, 0.8, kprog(T, K.Cl + 2.4, K.Cl + 4.4))} color={KC.red} />
-          {[0, 1, 2].map((i) => { const u = (T * 0.8 + i / 3) % 1; return <path key={i} d="M 0 30 L 0 -30 M -18 -12 L 0 -30 L 18 -12" transform={`translate(${200 + i * 220} ${1210 - u * 80})`} stroke={KC.red} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={(1 - u) * kprog(T, K.Cl + 2.4, K.Cl + 2.8)} />; })}
-          <Sello14 T={T} at={K.Cl + 3.2} x={640} y={700} texto="HIPÓTESIS" color={KC.violet} r={130} rot={10} />
+          {/* segunda vuelta: el globo ×1.5 (la barra de 5 000 km crece igual) */}
+          <Globo x={420} y={1010} r={330} calor={kprog(T, K.Cl + 2.4, K.Cl + 4.4)} T={T} />
+          <Termo x={920} y={1290} alto={420} s={1.25} f={klerp(0.35, 0.8, kprog(T, K.Cl + 2.4, K.Cl + 4.4))} color={KC.red} />
+          {[0, 1, 2].map((i) => { const u = (T * 0.8 + i / 3) % 1; return <path key={i} d="M 0 30 L 0 -30 M -18 -12 L 0 -30 L 18 -12" transform={`translate(${150 + i * 270} ${1480 - u * 90}) scale(1.4)`} stroke={KC.red} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={(1 - u) * kprog(T, K.Cl + 2.4, K.Cl + 2.8)} />; })}
+          <Sello14 T={T} at={K.Cl + 3.2} x={760} y={640} texto="HIPÓTESIS" color={KC.violet} r={150} rot={10} />
         </>)}
       </Escena>
       {/* 12 · el escudo doble: calor y defensas */}
       <Escena T={T} a={K.D} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>{DEFS14}
-          <Gente x={440} y={1180} s={1.05} brillo={1} T={T} />
-          <EscudoCalor T={T} cx={440} cy={1000} rx={250} ry={320} p={kprog(T, K.D + 0.3, K.D + 1.0, kEase.rebote)} />
+          {/* segunda vuelta: tú y tu escudo ×1.5 (la barra de 50 cm crece igual) */}
+          <Gente x={470} y={1340} s={1.575} brillo={1} T={T} />
+          <EscudoCalor T={T} cx={470} cy={1070} rx={375} ry={480} p={kprog(T, K.D + 0.3, K.D + 1.0, kEase.rebote)} />
           {Array.from({ length: 7 }, (_, i) => { const a = T * 0.9 + i * (Math.PI * 2 / 7), on = kprog(T, K.D + 1.6 + i * 0.1, K.D + 2.0 + i * 0.1, kEase.rebote);
-            return on > 0 ? <Globulo key={i} x={440 + Math.cos(a) * 190} y={1000 + Math.sin(a) * 250} s={on} /> : null; })}
-          <Rebotes T={T} t0={K.D + 2.4} t1={K.C + 0.3} x0={980} y0={700} cx={440} cy={1000} rx={-250} ry={320} n={4} />
+            return on > 0 ? <Globulo key={i} x={470 + Math.cos(a) * 285} y={1070 + Math.sin(a) * 375} s={on * 1.5} /> : null; })}
+          <Rebotes T={T} t0={K.D + 2.4} t1={K.C + 0.3} x0={1040} y0={620} cx={470} cy={1070} rx={-375} ry={480} n={4} />
         </>)}
       </Escena>
       {/* 13 · cierre: la misma imagen del inicio, ya con el escudo completo */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>{DEFS14}
-          <rect x={0} y={1180} width={KW} height={800} fill="#422c24" stroke={KC.ink} strokeWidth={8} />
-          <Hormiga14 T={T} x={300} y={1112} s={1.3} paso={T * 1.6} camina={0.5} hilos={1} />
-          <Gente x={790} y={1180} s={1.3} brillo={1} T={T} />
-          <EscudoCalor T={T} cx={790} cy={960} rx={250} ry={380} p={1} texto="37 °C" />
-          {Array.from({ length: 5 }, (_, i) => { const a = T * 0.9 + i * (Math.PI * 2 / 5); return <Globulo key={i} x={790 + Math.cos(a) * 200} y={960 + Math.sin(a) * 300} s={0.7 * kprog(T, K.C + 0.6 + i * 0.1, K.C + 1.0 + i * 0.1, kEase.rebote)} />; })}
-          <Rebotes T={T} t0={K.C + 1.0} t1={FIN} x0={60} y0={640} cx={790} cy={960} rx={250} ry={380} n={5} />
+          <rect x={-60} y={1290} width={KW + 120} height={800} fill="#2b1d17" stroke="#6b5348" strokeWidth={6} />
+          <Hormiga14 T={T} x={292} y={1222} s={1.3} paso={T * 1.6} camina={0.5} hilos={1} />
+          <Gente x={795} y={1290} s={1.6} brillo={1} T={T} />
+          <EscudoCalor T={T} cx={795} cy={1020} rx={245} ry={450} p={1} texto="37 °C" />
+          {Array.from({ length: 5 }, (_, i) => { const a = T * 0.9 + i * (Math.PI * 2 / 5); return <Globulo key={i} x={795 + Math.cos(a) * 195} y={1020 + Math.sin(a) * 365} s={0.85 * kprog(T, K.C + 0.6 + i * 0.1, K.C + 1.0 + i * 0.1, kEase.rebote)} />; })}
+          <Rebotes T={T} t0={K.C + 1.0} t1={FIN} x0={60} y0={700} cx={795} cy={1020} rx={245} ry={450} n={5} />
         </>)}
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 1.2} until={K.Hm - 0.3} x={60} y={820} texto="hongo zombi" color={KC.ink} tam={32} />
-      <Etq T={T} at={K.G + 1.6} until={K.Hm - 0.3} x={60} y={870} texto="Ophiocordyceps" it color={KC.ink} tam={32} />
-      <Chip T={T} at={K.G + 2.8} until={K.Hm - 0.3} texto="tu calor: un escudo" x={330} y={520} tam={40} borde={KC.orange} />
-      <Etq T={T} at={K.Hm + 0.5} until={K.Tu - 0.3} x={70} y={920} texto="hormiga carpintera" color={KC.ink} tam={32} />
-      <Etq T={T} at={K.Hm + 0.9} until={K.Tu - 0.3} x={70} y={970} texto="Camponotus" it color={KC.ink} tam={32} />
-      <Chip T={T} at={K.Hm + 1.0} until={K.Tu - 0.3} texto="su calor viene de afuera" x={440} y={470} tam={40} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Tu + 0.3} until={K.Ho - 0.3} valor={37} desde={30} dur={0.8} sufijo=" °C" etiqueta="tú, todo el día" x={380} y={500} tam={190} color={KC.orange} />
-      <Chip T={T} at={K.Ho + 0.4} until={K.Ho + 1.9} texto="temperatura ambiente: crecen" x={460} y={470} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={K.Ho + 2.1} until={K.P - 0.3} texto="a 37 °C: pocos" x={420} y={470} tam={46} borde={KC.orange} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.5} anio="2009" quien="colección de Utrecht, Países Bajos" revista="Robert y Casadevall · J Infect Dis" x={500} y={600} />
+      <Etq T={T} at={K.G + 1.2} until={K.Hm - 0.3} x={60} y={930} texto="hongo zombi" color={KC.ink} tam={32} />
+      <Etq T={T} at={K.G + 1.6} until={K.Hm - 0.3} x={60} y={985} texto="Ophiocordyceps" it color={KC.ink} tam={32} />
+      <Chip T={T} at={K.G + 2.8} until={K.Hm - 0.3} texto="tu calor: un escudo" x={300} y={640} tam={40} borde={KC.orange} />
+      <Etq T={T} at={K.Hm + 0.5} until={K.Tu - 0.3} x={70} y={1390} texto="hormiga carpintera" color={KC.ink} tam={32} />
+      <Etq T={T} at={K.Hm + 0.9} until={K.Tu - 0.3} x={70} y={1445} texto="Camponotus" it color={KC.ink} tam={32} />
+      <Chip T={T} at={K.Hm + 1.0} until={K.Tu - 0.3} texto="su calor viene de afuera" x={420} y={340} tam={40} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Tu + 0.3} until={K.Ho - 0.3} valor={37} desde={30} dur={0.8} sufijo=" °C" etiqueta="tú, todo el día" x={400} y={440} tam={190} color={KC.orange} />
+      <Chip T={T} at={K.Ho + 0.4} until={K.Ho + 1.9} texto="temperatura ambiente: crecen" x={540} y={560} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.Ho + 2.1} until={K.P - 0.3} texto="a 37 °C: pocos" x={540} y={560} tam={46} borde={KC.orange} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.5} anio="2009" quien="colección de Utrecht, Países Bajos" revista="Robert y Casadevall · J Infect Dis" x={540} y={470} />
       <NumeroGigante T={T} at={K.E + 2.7} until={K.R - 0.2} valor={4802} desde={0} dur={1.4} sufijo="" etiqueta="cepas de hongos" x={420} y={500} tam={130} color={KC.gold2} />
-      <Chip T={T} at={K.R + 1.4} until={K.Gr - 0.3} texto="a 37 °C: la mayoría no crece" x={430} y={440} tam={34} borde={KC.orange} />
-      <Chip T={T} at={K.Gr + 1.0} until={K.F - 0.3} texto="cada grado: −6 % más" x={420} y={440} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.F + 0.9} until={K.Hi - 0.3} texto="fiebre: ¿más escudo?" x={420} y={440} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Hi + 0.4} until={K.A - 0.3} texto="sangre caliente = defensa" x={720} y={470} tam={34} borde={KC.violet} />
+      <Chip T={T} at={K.R + 1.4} until={K.Gr - 0.3} texto="a 37 °C: la mayoría no crece" x={430} y={400} tam={34} borde={KC.orange} />
+      <Chip T={T} at={K.Gr + 1.0} until={K.F - 0.3} texto="cada grado: −6 % más" x={420} y={400} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.F + 0.9} until={K.Hi - 0.3} texto="fiebre: ¿más escudo?" x={420} y={400} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Hi + 0.4} until={K.A - 0.3} texto="sangre caliente = defensa" x={540} y={450} tam={34} borde={KC.violet} />
       <Etq T={T} at={K.A + 0.8} until={K.Cl - 0.3} x={60} y={470} texto="levadura" tam={32} />
       <Etq T={T} at={K.A + 1.1} until={K.Cl - 0.3} x={60} y={525} texto="Candida auris" it tam={36} color={KC.gold2} />
-      <TarjetaEstudio T={T} at={K.Cl + 0.2} until={K.Cl + 2.3} anio="2019" quien="Casadevall y col." revista="mBio" x={360} y={580} />
-      <Chip T={T} at={K.Cl + 2.6} until={K.D - 0.3} texto="¿se adaptó al calor?" x={400} y={470} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.D + 1.0} until={K.C - 0.3} x={705} y={770} texto="calor" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.D + 2.0} until={K.C - 0.3} x={705} y={850} texto="defensas" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.D + 3.0} until={K.C - 0.3} texto="infecciones graves: raras" x={400} y={470} tam={38} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="el zombi: cosa de hormigas" x={380} y={470} tam={36} borde={KC.gold} />
+      <TarjetaEstudio T={T} at={K.Cl + 0.2} until={K.Cl + 2.3} anio="2019" quien="Casadevall y col." revista="mBio" x={360} y={440} />
+      <Chip T={T} at={K.Cl + 2.6} until={K.D - 0.3} texto="¿se adaptó al calor?" x={380} y={450} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.D + 1.0} until={K.C - 0.3} x={1040} y={640} lado="izq" texto="calor" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.D + 2.0} until={K.C - 0.3} x={1040} y={725} lado="izq" texto="defensas" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.D + 3.0} until={K.C - 0.3} texto="infecciones graves: raras" x={400} y={420} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="el zombi: cosa de hormigas" x={330} y={600} tam={36} borde={KC.gold} />
 
       {/* barras de escala */}
+      {/* segunda vuelta: cada barra crece con el mismo factor que su dibujo */}
       <BarraEscala T={T} at={K.G} until={K.Hm} texto="hormiga ≈ 1 cm (no a escala)" largo={300} />
-      <BarraEscala T={T} at={K.Hm} until={K.Tu} texto="1 cm" largo={290} />
-      <BarraEscala T={T} at={K.Tu} until={K.Ho} texto="50 cm" largo={190} />
-      <BarraEscala T={T} at={K.Ho} until={K.E} texto="5 cm" largo={180} />
-      <BarraEscala T={T} at={K.E} until={K.Hi} texto="10 cm" largo={78} />
-      <BarraEscala T={T} at={K.Hi} until={K.A} texto="10 cm" largo={120} />
-      <BarraEscala T={T} at={K.A} until={K.Cl} texto="5 µm" largo={180} />
-      <BarraEscala T={T} at={K.Cl} until={K.D} texto="5 000 km" largo={170} />
-      <BarraEscala T={T} at={K.D} until={K.C} texto="50 cm" largo={180} />
+      <BarraEscala T={T} at={K.Hm} until={K.Tu} texto="5 mm" largo={218} />
+      <BarraEscala T={T} at={K.Tu} until={K.Ho} texto="50 cm" largo={322} />
+      <BarraEscala T={T} at={K.Ho} until={K.E} texto="5 cm" largo={235} />
+      <BarraEscala T={T} at={K.E} until={K.Hi} texto="10 cm" largo={92} />
+      <BarraEscala T={T} at={K.Hi} until={K.A} texto="10 cm" largo={192} />
+      <BarraEscala T={T} at={K.A} until={K.Cl} texto="5 µm" largo={225} />
+      <BarraEscala T={T} at={K.Cl} until={K.D} texto="5 000 km" largo={255} />
+      <BarraEscala T={T} at={K.D} until={K.C} texto="50 cm" largo={270} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="hormiga ≈ 1 cm (no a escala)" largo={300} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

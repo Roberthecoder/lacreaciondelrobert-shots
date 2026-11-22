@@ -29,14 +29,14 @@ function ManoPie({ T, at }) {
   const g = kprog(T, at + 0.4, at + 1.2, kEase.sale), pulso = 0.5 + 0.5 * Math.sin(T * 5);
   const dedo = (x, y, h, r) => <rect x={x - 42} y={y - h} width={84} height={h + 40} rx={42} transform={`rotate(${r} ${x} ${y})`} fill={PIEL} stroke={KC.ink} strokeWidth={8} />;
   return <g>
-    <g transform="translate(330 830) scale(.95)">
+    <g transform="translate(490 830) scale(1.2)">
       {dedo(-120, -90, 230, -12)}{dedo(-40, -120, 280, -4)}{dedo(45, -120, 290, 3)}{dedo(125, -90, 240, 10)}
       <rect x={-180} y={-150} width={350} height={330} rx={120} fill={PIEL} stroke={KC.ink} strokeWidth={8} />
       {dedo(-200, 60, 200, -50)}
       <ellipse cx={-5} cy={20} rx={150} ry={130} fill={KC.yellow} opacity={0.35 * g * (0.6 + 0.4 * pulso)} />
       {[[-148, -300], [-55, -360], [52, -372], [150, -312], [-330, -60]].map(([cx, cy], i) => <circle key={i} cx={cx} cy={cy} r={34} fill={KC.yellow} opacity={0.55 * g * (0.6 + 0.4 * pulso)} />)}
     </g>
-    <g transform="translate(800 860) scale(.9)">
+    <g transform="translate(850 1190) scale(1.15)">
       <path d="M -80 -230 Q -130 -120 -110 20 Q -100 160 -60 250 Q 0 320 60 250 Q 100 160 100 0 Q 110 -140 70 -230 Z" fill={PIEL} stroke={KC.ink} strokeWidth={8} />
       {[[-70, -275, 32], [-15, -295, 26], [33, -290, 24], [72, -270, 22], [100, -235, 20]].map(([cx, cy, r], i) => <circle key={i} cx={cx} cy={cy} r={r} fill={PIEL} stroke={KC.ink} strokeWidth={7} />)}
       <path d="M -80 -230 Q -130 -120 -110 20 Q -100 160 -60 250 Q 0 320 60 250 Q 100 160 100 0 Q 110 -140 70 -230 Z" fill={KC.yellow} opacity={0.35 * g * (0.6 + 0.4 * pulso)} />
@@ -51,7 +51,7 @@ function CorteYema({ T, vaso = 1, pliegue = 0, senal = 0 }) {
   const vasos = [790, 900, 1010];
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     <rect x={0} y={y0 - 80} width={KW} height={900} fill="#321724" />
-    <path d={sup(0) + ` L ${X1} 1500 L ${X0} 1500 Z`} fill="#c4687a" />
+    <path d={sup(0) + ` L ${X1} 1500 L ${X0} 1500 Z`} fill="#6e3442" />
     <path d={banda} fill={PIEL} stroke={KC.ink} strokeWidth={6} />
     {vasos.map((vy, i) => { const r = 30 * vaso; return <g key={i}>
       <rect x={-20} y={vy - r} width={KW + 40} height={r * 2} rx={r} fill={SANGRE} stroke={KC.ink} strokeWidth={5} />
@@ -59,8 +59,8 @@ function CorteYema({ T, vaso = 1, pliegue = 0, senal = 0 }) {
     </g>; })}
     <path d="M -20 1120 C 300 1080 500 1150 1100 1090" stroke={KC.yellow} strokeWidth={14} fill="none" />
     {senal > 0 && Array.from({ length: 4 }, (_, k) => { const u = ((T * 0.9 + k / 4) % 1); return <circle key={k} cx={klerp(-20, 1100, u)} cy={klerp(1120, 1090, u) + Math.sin(u * 9) * 18} r={16} fill="#fff" opacity={senal} />; })}
-    <rect x={0} y={1180} width={KW} height={400} fill="#7a7672" stroke={KC.ink} strokeWidth={6} />
-    {Array.from({ length: 14 }, (_, k) => <circle key={k} cx={40 + k * 75} cy={1240 + (k % 3) * 40} r={10} fill="#cdbca4" />)}
+    <rect x={0} y={1180} width={KW} height={400} fill="#3b3938" stroke={KC.ink} strokeWidth={6} />
+    {Array.from({ length: 14 }, (_, k) => <circle key={k} cx={40 + k * 75} cy={1240 + (k % 3) * 40} r={10} fill="#8d8273" />)}
   </svg>;
 }
 // Barras de tiempo (relativo): con arrugas vs. sin arrugas.
@@ -81,13 +81,15 @@ function Recipientes({ T, a }) {
     const x = klerp(330, 760, u), y = 1010 - Math.sin(u * Math.PI) * 220 + (u >= 1 ? 30 + (k % 3) * 8 : 0);
     canicas.push(<circle key={k} cx={u >= 1 ? 720 + (k % 4) * 26 : x} cy={u >= 1 ? 1080 - Math.floor(k / 4) * 26 : y} r={k % 5 === 4 ? 22 : 14} fill={k % 5 === 4 ? '#7d8796' : [KC.cyan, KC.pink, KC.mint, KC.yellow][k % 4]} stroke={KC.ink} strokeWidth={4} />); }
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <rect x={160} y={920} width={340} height={230} rx={22} fill="#fff" stroke={KC.ink} strokeWidth={8} />
+    <g transform="translate(540 1020) scale(1.25) translate(-530 -1040)">
+    <rect x={160} y={920} width={340} height={230} rx={22} fill="rgba(223,231,255,.16)" stroke={KC.ink} strokeWidth={8} />
     <rect x={168} y={960} width={324} height={182} rx={16} fill={AGUA} />
     {[0, 1, 2, 3, 4, 5].map((k) => <circle key={k} cx={210 + k * 50} cy={1100 - (k % 2) * 26} r={k === 5 ? 22 : 14} fill={k === 5 ? '#7d8796' : [KC.cyan, KC.pink, KC.mint, KC.yellow][k % 4]} stroke={KC.ink} strokeWidth={4} />)}
     <rect x={640} y={980} width={260} height={170} rx={18} fill="#c98b4a" stroke={KC.ink} strokeWidth={8} />
     {canicas}
     <text x={330} y={1200} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>bajo el agua</text>
     <text x={770} y={1200} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>caja</text>
+    </g>
   </svg>;
 }
 
@@ -107,9 +109,10 @@ function Dedos() {
       <Escena T={T} a={K.G} b={K.P}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Dedo x={420} y={1150} s={1.25} w={wG} rot={balanceo} />
-          <Goteo T={T} x={300} y0={540} y1={700} cada={0.7} color={AGUA} desde={K.G} r={14} />
-          <Goteo T={T} x={560} y0={520} y1={680} cada={0.9} color={AGUA} desde={K.G + 0.3} r={12} />
+          {/* segunda vuelta: la yema entra desde abajo y llena el cuadro (s 1.25 → 2.5; la barra pasa de «1 cm» a «5 mm» con el mismo largo) */}
+          <Dedo x={540} y={1560} s={2.5} w={wG} rot={balanceo * 0.6} />
+          <Goteo T={T} x={170} y0={420} y1={980} cada={0.7} color={AGUA} desde={K.G} r={22} />
+          <Goteo T={T} x={920} y0={380} y1={940} cada={0.9} color={AGUA} desde={K.G + 0.3} r={19} />
         </>)}
       </Escena>
       {/* 2 · piel sin pelo: palmas, yemas, plantas */}
@@ -121,20 +124,20 @@ function Dedos() {
       <Escena T={T} a={K.M} b={K.N}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Dedo x={540} y={1150} s={1.1} hincha={kprog(T, K.M + 0.5, K.M + 1.8, kEase.suave) * (1 - kprog(T, K.M + 2.4, K.M + 3.0))} />
-          <Goteo T={T} x={420} y0={500} y1={760} cada={0.4} color={AGUA} desde={K.M} hasta={K.M + 2.2} r={16} />
-          <Goteo T={T} x={660} y0={520} y1={760} cada={0.5} color={AGUA} desde={K.M + 0.2} hasta={K.M + 2.2} r={14} />
+          <Dedo x={540} y={1500} s={2.2} hincha={kprog(T, K.M + 0.5, K.M + 1.8, kEase.suave) * (1 - kprog(T, K.M + 2.4, K.M + 3.0))} />
+          <Goteo T={T} x={400} y0={480} y1={760} cada={0.4} color={AGUA} desde={K.M} hasta={K.M + 2.2} r={24} />
+          <Goteo T={T} x={690} y0={500} y1={760} cada={0.5} color={AGUA} desde={K.M + 0.2} hasta={K.M + 2.2} r={21} />
         </>)}
       </Escena>
       {/* 4 · el nervio dañado: ese dedo no se arruga */}
       <Escena T={T} a={K.N} b={K.Q}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Dedo x={250} y={1180} s={0.78} w={wN} nervio T={T} />
-          <Dedo x={540} y={1180} s={0.78} w={0} nervio cortado={T > K.N + 0.4} T={T} />
-          <Dedo x={830} y={1180} s={0.78} w={wN} nervio T={T} />
+          <Dedo x={195} y={1200} s={1.15} w={wN} nervio T={T} />
+          <Dedo x={540} y={1200} s={1.15} w={0} nervio cortado={T > K.N + 0.4} T={T} />
+          <Dedo x={885} y={1200} s={1.15} w={wN} nervio T={T} />
         </>)}
-        <Etq T={T} at={K.N + 2.2} until={K.Q - 0.2} x={120} y={1440} texto="nervio dañado = sin arrugas" lado="der" tam={34} />
+        <Etq T={T} at={K.N + 2.2} until={K.Q - 0.2} x={170} y={640} texto="nervio dañado = sin arrugas" lado="der" tam={34} />
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Q} b={K.V} zoom={0.1}>
@@ -154,11 +157,14 @@ function Dedos() {
       <Escena T={T} a={K.Pr} b={K.E}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <ellipse cx={540} cy={1150} rx={300} ry={60} fill="#fff" stroke={KC.ink} strokeWidth={8} />
-          <path d="M 240 1150 L 280 1330 Q 540 1390 800 1330 L 840 1150" fill="#fff" stroke={KC.ink} strokeWidth={8} />
+          {/* segunda vuelta: el tazón y la yema ×1.3; el tazón deja de ser blanco pleno */}
+          <g transform="translate(540 1110) scale(1.3) translate(-540 -1050)">
+          <ellipse cx={540} cy={1150} rx={300} ry={60} fill="#aab5c8" stroke={KC.ink} strokeWidth={8} />
+          <path d="M 240 1150 L 280 1330 Q 540 1390 800 1330 L 840 1150" fill="#7f8ba0" stroke={KC.ink} strokeWidth={8} />
           <ellipse cx={540} cy={1160} rx={280} ry={46} fill={AGUA} />
           <Dedo x={540} y={klerp(900, 1050, kprog(T, K.Pr + 0.2, K.Pr + 1.2, kEase.suave))} s={0.7} w={kprog(T, K.Pr + 1.2, K.Pr + 2.8)} />
-          <g transform={`translate(860 640) rotate(6) scale(${kprog(T, K.Pr + 1.0, K.Pr + 1.5, kEase.rebote)})`}>
+          </g>
+          <g transform={`translate(850 560) rotate(6) scale(${kprog(T, K.Pr + 1.0, K.Pr + 1.5, kEase.rebote)})`}>
             <rect x={-130} y={-170} width={260} height={330} rx={18} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
             <rect x={-50} y={-190} width={100} height={40} rx={10} fill="#8a8f99" stroke={KC.ink} strokeWidth={6} />
             <text x={0} y={-90} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>nervios</text>
@@ -174,36 +180,43 @@ function Dedos() {
       {/* 10 · 12 % menos tiempo */}
       <Escena T={T} a={K.R} b={K.B}>
         <FondoLunares color={KC.yellow} />
+        {/* segunda vuelta: bajo las barras están los dos dedos que se comparan (liso y arrugado), el mismo dibujo del shot */}
+        {svg(<g opacity={kprog(T, K.R, K.R + 0.5)}>
+          <Dedo x={215} y={1330} s={1.2} w={0} rot={mece(T, 2, 0.3) * 1.5} />
+          <Dedo x={865} y={1330} s={1.2} w={1} rot={mece(T, 5, 0.3) * 1.5} />
+        </g>)}
       </Escena>
       {/* 11 · Berlín (2014): sin ventaja */}
       <Escena T={T} a={K.B} b={K.C}>
         <FondoLunares color={KC.mint} />
         {/* modo cine: el sujeto sigue en pantalla (la yema arrugada, quieta, mientras se cuenta que Berlín no vio ventaja) */}
-        {svg(<g opacity={0.9 * kprog(T, K.B, K.B + 0.6)}><Dedo x={330} y={1260} s={1.05} w={1} rot={-6 + mece(T, 4, 0.3) * 2} /></g>)}
+        {svg(<g opacity={0.9 * kprog(T, K.B, K.B + 0.6)}><Dedo x={380} y={1600} s={1.95} w={1} rot={-6 + mece(T, 4, 0.3) * 2} /></g>)}
       </Escena>
       {/* 12 · cierre: la misma yema del inicio, ya arrugada */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Dedo x={420} y={1150} s={1.25} w={1} rot={balanceo} />)}
+        {svg(<Dedo x={540} y={1560} s={2.5} w={1} rot={balanceo * 0.6} />)}
       </Escena>
-      {(T < K.M || (T >= K.C && T < K.Ou)) && <Escala T={T} z={1} pxPorMm={14} y={1430} x={60} />}
+      {/* segunda vuelta: el dedo creció ×2 (s 1.25 → 2.5), así que la barra también: antes «1 cm» = 140 px, ahora «5 mm» = 140 px (28 px/mm), y sigue a la cámara.
+          En «Piel» ya no se muestra: la mano y la planta van a escalas distintas entre sí y esa barra de 1 cm no les correspondía. */}
+      {(T < K.P || (T >= K.C && T < K.Ou)) && <Escala T={T} z={T < K.P ? 1 + 0.2 * kprog(T, K.G - 0.45, K.P + 1.35, kEase.suave) : 1 + 0.1 * kprog(T, K.C - 0.45, FIN + 0.45, kEase.suave)} pxPorMm={28} objetivo={170} y={1430} x={60} />}
 
       {/* datos */}
-      <Chip T={T} at={K.G + 0.3} until={K.P - 0.2} texto="¿piel aguada?" x={300} y={440} tam={44} borde={KC.ink} />
-      <Etq T={T} at={K.P + 0.6} until={K.M - 0.2} x={120} y={470} texto="piel sin pelo" lado="der" tam={38} />
-      <Etq T={T} at={K.P + 1.4} until={K.M - 0.2} x={330} y={1440} texto="palmas · yemas · plantas" lado="der" tam={32} />
-      <MitoTachado T={T} at={K.M + 0.3} tacharEn={K.M + 2.6} until={K.N - 0.3} texto="«el agua la hincha»" x={600} y={440} tam={44} />
+      <Chip T={T} at={K.G + 0.3} until={K.P - 0.2} texto="¿piel aguada?" x={540} y={470} tam={44} borde={KC.ink} />
+      <Etq T={T} at={K.P + 0.6} until={K.M - 0.2} x={665} y={370} texto="piel sin pelo" lado="der" tam={38} />
+      <Etq T={T} at={K.P + 1.4} until={K.M - 0.2} x={70} y={1290} texto="palmas · yemas · plantas" lado="der" tam={32} />
+      <MitoTachado T={T} at={K.M + 0.3} tacharEn={K.M + 2.6} until={K.N - 0.3} texto="«el agua la hincha»" x={540} y={400} tam={44} />
       <Chip T={T} at={K.V + 1.0} until={K.L - 0.1} texto="los vasos se cierran" x={430} y={430} tam={40} borde={SANGRE} />
       <Chip T={T} at={K.L + 0.3} until={K.Pr - 0.3} texto="menos sangre: se pliega" x={360} y={430} tam={36} borde={KC.yellow} />
-      <Chip T={T} at={K.Pr + 0.3} until={K.E - 0.2} texto="prueba de los nervios" x={540} y={440} tam={42} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.4} anio="2013" quien="Newcastle, Inglaterra" revista="Kareklas et al. · Biol. Lett." x={600} y={700} />
-      <Chip T={T} at={K.E + 2.6} until={K.R - 0.2} texto="20 personas · canicas y pesas" x={540} y={830} tam={38} borde={KC.ink} />
-      <BarrasT T={T} at={K.R + 0.2} until={K.B - 0.3} y={720} filas={[{ valor: 100, etiqueta: 'dedos lisos', color: KC.orange }, { valor: 88, etiqueta: 'dedos arrugados', color: KC.blue }]} />
-      <NumeroGigante T={T} at={K.R + 1.4} until={K.B - 0.3} valor={12} prefijo="−" sufijo=" %" etiqueta="de tiempo" x={540} y={1520} tam={130} color={KC.blue} />
-      <Chip T={T} at={K.R + 2.8} until={K.B - 0.3} texto="objetos secos: igual" x={540} y={1720} tam={34} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.B + 0.2} until={K.C - 0.3} anio="2014" quien="Berlín · 40 personas" revista="Haseleu et al. · PLoS One" x={720} y={520} />
-      <Chip T={T} at={K.B + 2.4} until={K.C - 0.3} texto="no encontraron ventaja" x={720} y={760} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.C + 2.0} until={K.Ou - 0.1} texto="¿para qué? sigue en debate" x={390} y={440} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.Pr + 0.3} until={K.E - 0.2} texto="prueba de los nervios" x={380} y={330} tam={42} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.4} anio="2013" quien="Newcastle, Inglaterra" revista="Kareklas et al. · Biol. Lett." x={540} y={540} />
+      <Chip T={T} at={K.E + 2.6} until={K.R - 0.2} texto="20 personas · canicas y pesas" x={540} y={740} tam={38} borde={KC.ink} />
+      <BarrasT T={T} at={K.R + 0.2} until={K.B - 0.3} y={320} filas={[{ valor: 100, etiqueta: 'dedos lisos', color: KC.orange }, { valor: 88, etiqueta: 'dedos arrugados', color: KC.blue }]} />
+      <NumeroGigante T={T} at={K.R + 1.4} until={K.B - 0.3} valor={12} prefijo="−" sufijo=" %" etiqueta="de tiempo" x={540} y={1090} tam={120} color={KC.blue} />
+      <Chip T={T} at={K.R + 2.8} until={K.B - 0.3} texto="objetos secos: igual" x={540} y={1340} tam={30} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.B + 0.2} until={K.C - 0.3} anio="2014" quien="Berlín · 40 personas" revista="Haseleu et al. · PLoS One" x={760} y={470} />
+      <Chip T={T} at={K.B + 2.4} until={K.C - 0.3} texto="no encontraron ventaja" x={740} y={700} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou - 0.1} texto="¿para qué? sigue en debate" x={540} y={470} tam={38} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.P - 0.1} texto="No es piel aguada: *son tus nervios.*" />
