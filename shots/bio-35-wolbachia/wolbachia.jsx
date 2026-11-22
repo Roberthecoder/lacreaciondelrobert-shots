@@ -238,15 +238,15 @@ function Wolbachia35() {
       <Escena T={T} a={K.Ba} b={K.Pr}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          {[['mosca', 300, 590], ['mariposa', 780, 600], ['escarabajo', 290, 880], ['abeja', 790, 870]].map(([t, x, y], i) => {
+          {[['mosca', 300, 700], ['mariposa', 780, 710], ['escarabajo', 290, 990], ['abeja', 790, 980]].map(([t, x, y], i) => {
             const on = kprog(T, K.Ba + 0.3 + i * 0.35, K.Ba + 0.7 + i * 0.35, kEase.rebote);
             return <g key={i} opacity={kprog(T, K.Ba + i * 0.15, K.Ba + 0.3 + i * 0.15)} transform={`translate(${x} ${y}) scale(1.6) translate(${-x} ${-y})`}>
               <Insecto tipo={t} x={x} y={y} T={T} />
               <g transform={`translate(${x + 50} ${y - 70}) scale(${on})`}><circle r={30} fill={WOL} opacity={0.4} /><Wolbachia x={0} y={0} T={T} s={1.1} /></g>
             </g>; })}
           <g opacity={klerp(0.3, 1, kprog(T, K.Ba + 2.2, K.Ba + 2.6))}>
-            <Mosco T={T} x={500} y={1230} s={0.95} vuela={0.2} />
-            <g transform={`translate(${850} ${1085}) scale(${1.25 * kprog(T, K.Ba + 2.6, K.Ba + 3.0, kEase.rebote)})`}>
+            <Mosco T={T} x={500} y={1290} s={1.0} vuela={0.2} />
+            <g transform={`translate(${860} ${1140}) scale(${1.25 * kprog(T, K.Ba + 2.6, K.Ba + 3.0, kEase.rebote)})`}>
               <circle r={48} fill="#fff" stroke={KC.ink} strokeWidth={6} /><path d="M -22 -22 L 22 22 M 22 -22 L -22 22" stroke={KC.red} strokeWidth={11} strokeLinecap="round" /></g>
           </g>
         </SvgCapa>
@@ -315,9 +315,9 @@ function Wolbachia35() {
       <Escena T={T} a={K.He} b={K.Tr}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <rect x={50} y={1110} width={980} height={330} fill="#1d4a70" stroke={KC.ink} strokeWidth={8} />
+          <rect x={50} y={1110} width={980} height={330} fill="#122f48" stroke={KC.ink} strokeWidth={8} />
           <path d={`M 50 1110 Q 540 ${1098 + Math.sin(T * 3) * 8} 1030 1110`} stroke="#bfe6ff" strokeWidth={7} fill="none" />
-          <Mosco T={T} x={570} y={770} s={1.15} wol={1} vuela={0.2} />
+          <Mosco T={T} x={515} y={760} s={1.3} wol={1} vuela={0.2} />
           {Array.from({ length: 6 }, (_, i) => { const ti = K.He + 0.4 + i * 0.3, u = kprog(T, ti, ti + 0.45, kEase.sale);
             return T > ti ? <Huevo key={i} x={150 + i * 156} y={klerp(950, 1078, u)} s={1.15} rot={-10 + i * 4} wol={kprog(T, ti + 0.4, ti + 0.8)} T={T} /> : null; })}
         </SvgCapa>
@@ -385,8 +385,8 @@ function Wolbachia35() {
       <Etq T={T} at={K.G + 0.9} until={K.Ba - 0.3} x={110} y={640} texto="Aedes aegypti" it tam={40} color={KC.ink} />
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.9} texto="¿más peligroso?" x={330} y={480} tam={44} />
       <Chip T={T} at={K.G + 2.4} until={K.Ba - 0.3} texto="trae una bacteria: Wolbachia" y={1535} tam={40} borde={WOL2} />
-      <Etq T={T} at={K.Ba + 0.5} until={K.Pr - 0.3} x={60} y={385} texto="Wolbachia pipientis" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.Ba + 2.7} until={K.Pr - 0.3} texto="en Aedes aegypti: no" x={540} y={1480} tam={34} borde={KC.red} />
+      <Etq T={T} at={K.Ba + 0.5} until={K.Pr - 0.3} x={60} y={495} texto="Wolbachia pipientis" it tam={40} color={KC.ink} />
+      <Chip T={T} at={K.Ba + 2.7} until={K.Pr - 0.3} texto="en Aedes aegypti: no" x={540} y={1530} tam={34} borde={KC.red} />
       <Etq T={T} at={K.Pr + 0.4} until={K.Pr + 3.0} x={60} y={610} texto="mosca de la fruta · Drosophila" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Pr + 2.0} until={K.Pr + 3.7} texto="2 años en células de mosco" x={740} y={915} tam={34} borde={WOL2} />
       <Chip T={T} at={K.Pr + 3.9} until={K.PD - 0.3} texto="mosca → células → huevo de mosco" y={1500} tam={36} borde={WOL2} />
