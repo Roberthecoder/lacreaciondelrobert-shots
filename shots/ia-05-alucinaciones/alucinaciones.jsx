@@ -51,10 +51,10 @@ function Hablante({ T, x, y, at, texto, color }) {
 }
 
 // Barras horizontales "tú contra la IA" (debajo de Robert, arriba del subtítulo).
-function BarrasH({ T, at, until, filas }) {
+function BarrasH({ T, at, until, filas, top = 740 }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube'), g = kprog(T, at + 0.1, at + 1.3, kEase.sale);
-  return <div style={{ position:'absolute', left:70, top:740, width:940, zIndex:40, opacity:e.o }}>
+  return <div style={{ position:'absolute', left:70, top, width:940, zIndex:40, opacity:e.o }}>
     {filas.map((f, i) => <div key={i} style={{ marginBottom:26 }}>
       <div style={{ font:`900 40px ${KF.texto}`, color:KC.ink, marginBottom:6 }}>{f.etiqueta}</div>
       <div style={{ display:'flex', alignItems:'center', gap:18 }}>
@@ -73,8 +73,9 @@ function Alucinaciones() {
   const traga = kprog(T, K.Ch + 0.6, K.Ch + 1.6, kEase.suave);
   // modo cine: los dos que se comparan (la persona y la IA) están en pantalla junto a las barras; sin ellos la escena era lámina
   const duelo = (o) => <g opacity={o}>
-    <g transform="translate(300 610) scale(2)"><Hablante T={T} x={0} y={0} at={1e9} texto="" color={AZUL} /></g>
-    <Robotito x={760} y={610} s={0.72} T={T} cara="feliz" color={KC.orange} />
+    {/* segunda vuelta: la persona y la IA van grandes, llenando el ancho del cuadro, con las barras debajo */}
+    <g transform="translate(300 640) scale(4.3)"><Hablante T={T} x={0} y={0} at={1e9} texto="" color={AZUL} /></g>
+    <Robotito x={790} y={640} s={1.25} T={T} cara="feliz" color={KC.orange} />
   </g>;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -83,32 +84,32 @@ function Alucinaciones() {
         <FondoLunares color={KC.yellow} />
         {svg(<>{duelo(kprog(T, K.G, K.G + 0.3))}
           {/* antes del segundo 3 ya asoma el examen (hacia dónde va la historia), chico y atenuado */}
-          <g opacity={0.4 * kprog(T, K.G + 1.4, K.G + 2.4)} transform="translate(540 1560) scale(0.42)"><Examen T={T} a={K.G + 1.6} x={0} y={0} /></g></>)}
+          <g opacity={0.4 * kprog(T, K.G + 1.4, K.G + 2.4)} transform="translate(540 1500) scale(0.5)"><Examen T={T} a={K.G + 1.6} x={0} y={0} /></g></>)}
       </Escena>
       {/* 2 · el examen */}
       <Escena T={T} a={K.Ex} b={K.Te}>
         <FondoLunares color={KC.mint} />
-        {svg(<Examen T={T} a={K.Ex} y={880} />)}
+        {svg(<g transform="translate(540 1020) scale(1.3)"><Examen T={T} a={K.Ex} x={0} y={0} /></g>)}
       </Escena>
       {/* 3 · 38 temas */}
       <Escena T={T} a={K.Te} b={K.Ch}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>
+        {svg(<g transform="translate(540 900) scale(1.35) translate(-540 -780)">
           <Tema T={T} at={K.Te + 0.3} x={300} y={600} texto="salud" color={KC.pink} icono="+" />
           <Tema T={T} at={K.Te + 0.8} x={780} y={600} texto="leyes" color={KC.yellow} icono="§" />
           <Tema T={T} at={K.Te + 1.3} x={300} y={920} texto="dinero" color={KC.mint} icono="$" />
           <Tema T={T} at={K.Te + 1.8} x={780} y={920} texto="política" color={KC.lilac} icono="✓" />
-        </>)}
+        </g>)}
       </Escena>
       {/* 4–5 · el chicle: el mito y lo que sí pasa (rayos X) */}
       <Escena T={T} a={K.Ch} b={K.P}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Torso x={380} y={1000} s={1.25} />
-          {traga < 1 && <Chicle x={klerp(820, 470, traga)} y={klerp(700, 780, traga)} s={klerp(1.2, 0.5, traga)} />}
+          <Torso x={390} y={1045} s={1.4} />
+          {traga < 1 && <Chicle x={klerp(860, 491, traga)} y={klerp(680, 799, traga)} s={klerp(1.5, 0.56, traga)} />}
         </>)}
       </Escena>
-      <Lupa T={T} at={K.M + 2.6} until={K.P - 0.3} x={800} y={1000} r={200} fx={430} fy={1200} tinte={KC.mint} etiqueta="POR DENTRO · intestino"
+      <Lupa T={T} at={K.M + 2.6} until={K.P - 0.3} x={810} y={1040} r={220} fx={446} fy={1269} tinte={KC.mint} etiqueta="POR DENTRO · intestino"
         interior={(t, r) => { const u = kprog(t, K.M + 2.8, K.P - 0.4); const pts = [[40, 60], [340, 60], [340, 160], [60, 160], [60, 260], [340, 260], [340, 360]];
           const seg = u * (pts.length - 1), i = Math.min(pts.length - 2, Math.floor(seg)), f = seg - i, cx = klerp(pts[i][0], pts[i + 1][0], f), cy = klerp(pts[i][1], pts[i + 1][1], f);
           return <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#5a1a2e" /><polyline points={pts.map((p) => p.join(',')).join(' ')} fill="none" stroke="#e07a8f" strokeWidth={50} strokeLinejoin="round" strokeLinecap="round" /><Chicle x={cx} y={cy} s={0.35} /></svg>; }} />
@@ -121,34 +122,35 @@ function Alucinaciones() {
       <Escena T={T} a={K.I} b={K.E}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <Hablante T={T} x={200} y={760} at={K.I + 0.3} texto="¡7 años!" color={KC.cyan} />
-          <Hablante T={T} x={540} y={700} at={K.I + 0.7} texto="¡7 años!" color={KC.mint} />
-          <Hablante T={T} x={880} y={760} at={K.I + 1.1} texto="¡7 años!" color={KC.pink} />
-          <Robotito x={540} y={1080} s={0.9} T={T} cara="feliz" />
-          {T > K.I + 2.4 && <g transform={`translate(760 960) scale(${kprog(T, K.I + 2.4, K.I + 2.8, kEase.rebote)})`}><rect x={-110} y={-40} width={220} height={70} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={5} /><text y={8} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill="#0b1020">¡7 años!</text></g>}
+          {/* segunda vuelta: las tres personas ×1.5 y el robot ×1.78 */}
+          <g transform="translate(225 800) scale(1.45)"><Hablante T={T} x={0} y={0} at={K.I + 0.3} texto="¡7 años!" color={KC.cyan} /></g>
+          <g transform="translate(540 700) scale(1.5)"><Hablante T={T} x={0} y={0} at={K.I + 0.7} texto="¡7 años!" color={KC.mint} /></g>
+          <g transform="translate(855 800) scale(1.45)"><Hablante T={T} x={0} y={0} at={K.I + 1.1} texto="¡7 años!" color={KC.pink} /></g>
+          <Robotito x={540} y={1240} s={1.6} T={T} cara="feliz" />
+          {T > K.I + 2.4 && <g transform={`translate(840 965) scale(${1.5 * kprog(T, K.I + 2.4, K.I + 2.8, kEase.rebote)})`}><rect x={-110} y={-40} width={220} height={70} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={5} /><text y={8} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill="#0b1020">¡7 años!</text></g>}
         </>)}
       </Escena>
       {/* 8 · el estudio */}
       <Escena T={T} a={K.E} b={K.R}>
         <FondoLunares color={KC.mint} />
         {/* modo cine: el estudio se cuenta con su examen (TruthfulQA, ya calificado) en pantalla, y la tarjeta chica arriba */}
-        {svg(<g opacity={0.85 * kprog(T, K.E, K.E + 0.5)} transform="translate(540 960) scale(0.85)"><Examen T={T} a={K.Ex} x={0} y={0} /></g>)}
+        {svg(<g opacity={0.85 * kprog(T, K.E, K.E + 0.5)} transform="translate(540 1050) scale(1.2)"><Examen T={T} a={K.Ex} x={0} y={0} /></g>)}
       </Escena>
       {/* 9–10 · lo raro: más grande, menos veraz */}
       <Escena T={T} a={K.R} b={K.Co}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Robotito x={300} y={1040} s={0.55} T={T} cara="feliz" color={KC.mint} />
-          <Robotito x={740} y={kprog(T, K.R + 0.5, K.R + 1.3, kEase.rebote) * 0 + 960} s={klerp(0.55, 1.25, kprog(T, K.R + 0.5, K.R + 1.3, kEase.rebote))} T={T} cara="duda" color={KC.orange} />
-          <text x={300} y={1150} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Ci + 0.3, K.Ci + 0.8)}>125 millones</text>
-          <text x={740} y={1170} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Ci + 0.3, K.Ci + 0.8)}>6 mil millones</text>
+          <Robotito x={250} y={1130} s={0.75} T={T} cara="feliz" color={KC.mint} />
+          <Robotito x={720} y={kprog(T, K.R + 0.5, K.R + 1.3, kEase.rebote) * 0 + 1010} s={klerp(0.75, 1.7, kprog(T, K.R + 0.5, K.R + 1.3, kEase.rebote))} T={T} cara="duda" color={KC.orange} />
+          <text x={250} y={1330} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Ci + 0.3, K.Ci + 0.8)}>125 millones</text>
+          <text x={720} y={1330} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Ci + 0.3, K.Ci + 0.8)}>6 mil millones</text>
         </>)}
       </Escena>
       {/* 11 · consejo: revisa la fuente */}
       <Escena T={T} a={K.Co} b={K.C}>
         <FondoLunares color={KC.pink} />
-        <CelularChat T={T} x={560} y={1000} s={0.82} tam={38} mensajes={[{ at: K.Co + 0.2, yo: true, texto: '¿Es cierto que…?' }, { at: K.Co + 1.0, yo: false, texto: 'Sí, totalmente seguro.' }]} />
-        {svg(<g transform={`translate(${klerp(1150, 760, kprog(T, K.Co + 1.6, K.Co + 2.4, kEase.sale))} 820) rotate(-20)`}><circle r={90} fill="rgba(191,239,255,.5)" stroke={KC.ink} strokeWidth={12} /><rect x={70} y={-16} width={150} height={32} rx={14} fill={KC.ink} transform="rotate(40)" /></g>)}
+        <CelularChat T={T} x={500} y={1010} s={1.0} tam={38} mensajes={[{ at: K.Co + 0.2, yo: true, texto: '¿Es cierto que…?' }, { at: K.Co + 1.0, yo: false, texto: 'Sí, totalmente seguro.' }]} />
+        {svg(<g transform={`translate(${klerp(1260, 850, kprog(T, K.Co + 1.6, K.Co + 2.4, kEase.sale))} 800) rotate(-20) scale(1.4)`}><circle r={90} fill="rgba(191,239,255,.5)" stroke={KC.ink} strokeWidth={12} /><rect x={70} y={-16} width={150} height={32} rx={14} fill={KC.ink} transform="rotate(40)" /></g>)}
       </Escena>
       {/* 12 · cierre: regresa la comparación del inicio */}
       <Escena T={T} a={K.C} b={FIN}>
@@ -157,19 +159,19 @@ function Alucinaciones() {
       </Escena>
 
       {/* datos */}
-      <BarrasH T={T} at={K.G + 0.05} until={K.Ex - 0.2} filas={[{ valor: 94, etiqueta: 'una persona', color: AZUL }, { valor: 58, etiqueta: 'la mejor IA probada (2021)', color: KC.orange }]} />
-      <BarrasH T={T} at={K.C + 0.3} until={K.Ou} filas={[{ valor: 94, etiqueta: 'una persona', color: AZUL }, { valor: 58, etiqueta: 'la mejor IA probada (2021)', color: KC.orange }]} />
-      <Chip T={T} at={K.G + 0.3} until={K.Ex - 0.2} texto="dijeron la verdad" x={540} y={370} tam={42} borde={KC.ink} />
+      <BarrasH T={T} top={890} at={K.G + 0.05} until={K.Ex - 0.2} filas={[{ valor: 94, etiqueta: 'una persona', color: AZUL }, { valor: 58, etiqueta: 'la mejor IA probada (2021)', color: KC.orange }]} />
+      <BarrasH T={T} top={890} at={K.C + 0.3} until={K.Ou} filas={[{ valor: 94, etiqueta: 'una persona', color: AZUL }, { valor: 58, etiqueta: 'la mejor IA probada (2021)', color: KC.orange }]} />
+      <Chip T={T} at={K.G + 0.3} until={K.Ex - 0.2} texto="dijeron la verdad" x={540} y={280} tam={42} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Ex + 0.4} until={K.Te - 0.2} valor={817} dur={1.4} etiqueta="preguntas tramposas" y={410} tam={120} color={KC.texto} />
-      <NumeroGigante T={T} at={K.Te + 2.2} until={K.Ch - 0.2} valor={38} dur={0.8} etiqueta="temas" y={770} tam={130} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Te + 2.2} until={K.Ch - 0.2} valor={38} dur={0.8} etiqueta="temas" y={873} tam={130} color={KC.yellow} />
       <Chip T={T} at={K.Ch + 0.2} until={K.M - 0.2} texto="¿qué pasa si te tragas un chicle?" x={610} y={430} tam={34} borde={KC.pink} />
       <MitoTachado T={T} at={K.M + 0.2} tacharEn={K.M + 2.0} until={K.P - 0.3} texto="«tarda 7 años en digerirse»" x={610} y={430} tam={36} />
       <Chip T={T} at={K.M + 2.4} until={K.P - 0.3} texto="pasa por tu sistema digestivo" y={560} tam={38} borde={KC.leaf} />
-      <Chip T={T} at={K.I + 2.6} until={K.E - 0.2} texto="según los autores: imitó texto humano" y={430} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.I + 2.6} until={K.E - 0.2} texto="según los autores: imitó texto humano" y={340} tam={38} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.R - 0.3} anio="2021" quien="Oxford · OpenAI" revista="Lin, Hilton y Evans · TruthfulQA" y={390} />
-      <Chip T={T} at={K.R + 1.0} until={K.Ci - 0.2} texto="más grande ≠ más veraz" y={480} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.Ci + 1.2} until={K.Co - 0.2} texto="27 vs 44 de cada 100" x={400} y={620} tam={48} borde={KC.red} />
-      <Chip T={T} at={K.Co + 2.4} until={K.C - 0.2} texto="salud · leyes · dinero: revisa la fuente" y={430} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.R + 1.0} until={K.Ci - 0.2} texto="más grande ≠ más veraz" y={520} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.Ci + 1.2} until={K.Co - 0.2} texto="27 vs 44 de cada 100" x={540} y={520} tam={48} borde={KC.red} />
+      <Chip T={T} at={K.Co + 2.4} until={K.C - 0.2} texto="salud · leyes · dinero: revisa la fuente" y={400} tam={34} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ex - 0.1} texto="Una persona: *94 de 100.* La mejor IA probada: *58.*" />

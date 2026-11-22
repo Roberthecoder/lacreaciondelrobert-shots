@@ -83,15 +83,15 @@ function Cosquillas() {
       <Escena T={T} a={K.G} b={K.Pd}>
         <FondoLunares color={KC.yellow} />
         {/* modo cine: antes del segundo 3 ya asoma el cerebro (hacia dónde va la historia), chico y atenuado */}
-        {svg(<><g opacity={0.5 * kprog(T, K.G + 1.4, K.G + 2.4)}><Cerebro x={800} y={1010} s={0.5} /></g>
-          <Pie x={330} y={980} s={1.2} rot={-8} /><ManoCosq x={500} y={760} s={0.9} T={T} rot={35} /></>)}
+        {svg(<><g opacity={0.5 * kprog(T, K.G + 1.4, K.G + 2.4)}><Cerebro x={850} y={1330} s={0.62} /></g>
+          <Pie x={400} y={1220} s={1.95} rot={-8} /><ManoCosq x={676} y={863} s={1.46} T={T} rot={35} /></>)}
       </Escena>
       {/* 2 · el cerebro predice */}
       <Escena T={T} a={K.Pd} b={K.V}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Cerebro x={420} y={820} s={1} />
-          <g transform={`translate(780 560) scale(${kprog(T, K.Pd + 0.6, K.Pd + 1.1, kEase.rebote)})`}>
+          <Cerebro x={490} y={960} s={1.3} />
+          <g transform={`translate(800 470) scale(${kprog(T, K.Pd + 0.6, K.Pd + 1.1, kEase.rebote)})`}>
             <circle cx={-120} cy={120} r={16} fill="#fff" stroke={KC.ink} strokeWidth={5} /><circle cx={-80} cy={70} r={24} fill="#fff" stroke={KC.ink} strokeWidth={5} />
             <ellipse cx={20} cy={-30} rx={170} ry={120} fill="#fff" stroke={KC.ink} strokeWidth={7} />
             <text x={20} y={-50} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>"voy a sentir</text>
@@ -103,6 +103,9 @@ function Cosquillas() {
       <Escena T={T} a={K.V} b={K.M}>
         <FondoLunares color={KC.mint} />
         {svg(<>
+          {/* segunda vuelta: el cerebro de la escena anterior sigue detrás, atenuado, y la bocina y el control van grandes */}
+          <g opacity={0.22}><Cerebro x={490} y={960} s={1.3} /></g>
+          <g transform="translate(540 900) scale(1.3) translate(-540 -860)">
           <g transform="translate(330 850)">
             <path d="M -120 -60 L -40 -60 L 60 -150 L 60 150 L -40 60 L -120 60 Z" fill={KC.paper} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
             {[0, 1, 2].map((k) => <path key={k} d={`M ${110 + k * 60} -${90 + k * 40} Q ${170 + k * 70} 0 ${110 + k * 60} ${90 + k * 40}`} stroke={KC.ink} strokeWidth={12} fill="none" strokeLinecap="round" opacity={vol > (k + 1) / 3.2 ? 1 : 0.12} />)}
@@ -110,23 +113,25 @@ function Cosquillas() {
           <rect x={800} y={560} width={60} height={560} rx={30} fill="rgba(0,0,0,.25)" stroke={KC.ink} strokeWidth={8} />
           <rect x={800} y={560 + 560 * (1 - vol)} width={60} height={560 * vol} rx={30} fill={KC.pink} stroke={KC.ink} strokeWidth={8} />
           <circle cx={830} cy={560 + 560 * (1 - vol)} r={56} fill="#fff" stroke={KC.ink} strokeWidth={9} />
+          </g>
         </>)}
       </Escena>
       {/* 4 · menos intenso, menos cosquilludo, menos agradable */}
       <Escena T={T} a={K.M} b={K.Q}>
         <FondoLunares color={KC.pink} />
-        {svg(<ManoCosq x={540} y={1040} s={0.8} T={T} rot={0} vel={6} />)}
+        {/* segunda vuelta: tu propia mano sobre tu pie (el mismo dibujo del gancho), grande, con los dedos lentos */}
+        {svg(<><Pie x={400} y={1150} s={1.7} rot={-8} /><ManoCosq x={640} y={838} s={1.27} T={T} rot={35} vel={6} /></>)}
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Q} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
+        {svg(<text x={830} y={1440} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 830 1260)`}>?</text>)}
       </Escena>
       {/* 6 · el estudio */}
       <Escena T={T} a={K.E} b={K.R}>
         <FondoLunares color={KC.orange} />
         {/* modo cine: el estudio se cuenta con los dos robots ya en pantalla (los mismos de la escena que sigue), atenuados */}
-        {svg(<g opacity={0.8 * kprog(T, K.E, K.E + 0.5)}>
+        {svg(<g opacity={0.8 * kprog(T, K.E, K.E + 0.5)} transform="translate(540 990) scale(1.3) translate(-540 -850)">
           <Robot x={230} y={1030} s={0.9} ang={-30 + ang} punta="mango" />
           <path d={`M 300 1030 C 420 1070 620 1070 680 1030`} stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="20 12" strokeDashoffset={-T * 60} />
           <Robot x={760} y={1030} s={0.9} ang={-150 - ang} punta="pincel" color={KC.mint} />
@@ -137,54 +142,57 @@ function Cosquillas() {
       <Escena T={T} a={K.R} b={K.Ce}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
+          <g transform="translate(540 990) scale(1.3) translate(-540 -850)">
           <Robot x={230} y={1030} s={0.9} ang={-30 + ang} punta="mango" />
           <path d={`M 300 1030 C 420 1070 620 1070 680 1030`} stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="20 12" strokeDashoffset={-T * 60} />
           <Robot x={760} y={1030} s={0.9} ang={-150 - (T > K.Re ? Math.sin((T - 0.5 * retraso) * 2.4) * 25 : ang) + 0} punta="pincel" color={KC.mint} />
           <Palma x={700} y={630} s={0.7} />
-          <text x={230} y={1120} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>robot 1: lo mueves tú</text>
-          <text x={760} y={1120} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>robot 2: roza tu palma</text>
+          </g>
+          <text x={250} y={1335} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>robot 1: lo mueves tú</text>
+          <text x={820} y={1335} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>robot 2: roza tu palma</text>
         </>)}
       </Escena>
       {/* 10 · el cerebelo */}
       <Escena T={T} a={K.Ce} b={K.Ra} fondo={KC.noche}>
         <Ambiente T={T} n={30} color="rgba(255,255,255,.18)" />
-        {svg(<Cerebro x={480} y={860} s={1.05} glow={kprog(T, K.Ce + 1.0, K.Ce + 1.8)} T={T} />)}
-        <Etq T={T} at={K.Ce + 1.4} until={K.Ra - 0.3} x={560} y={1150} texto="cerebelo" lado="der" color={KC.yellow} tam={40} />
+        {svg(<Cerebro x={470} y={950} s={1.35} glow={kprog(T, K.Ce + 1.0, K.Ce + 1.8)} T={T} />)}
+        <Etq T={T} at={K.Ce + 1.4} until={K.Ra - 0.3} x={640} y={1325} texto="cerebelo" lado="der" color={KC.yellow} tam={40} />
       </Escena>
       {/* 11 · las ratas */}
       <Escena T={T} a={K.Ra} b={K.C}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Rata x={600} y={900} s={1} ondas={T < K.Ra + 3.2 ? 1 : 0.18} T={T} />
-          {T < K.Ra + 3.2 ? <ManoCosq x={600} y={640} s={0.6} T={T} rot={0} /> : <g transform="translate(860 640)"><circle r={60} fill="#fff" stroke={KC.ink} strokeWidth={7} /><path d="M 0 -32 L 0 30 M -24 8 L 0 32 L 24 8" stroke={KC.red} strokeWidth={12} strokeLinecap="round" strokeLinejoin="round" fill="none" /></g>}
+          <Rata x={580} y={1010} s={1.3} ondas={T < K.Ra + 3.2 ? 1 : 0.18} T={T} />
+          {T < K.Ra + 3.2 ? <ManoCosq x={600} y={705} s={0.95} T={T} rot={0} /> : <g transform="translate(830 560) scale(1.5)"><circle r={60} fill="#fff" stroke={KC.ink} strokeWidth={7} /><path d="M 0 -32 L 0 30 M -24 8 L 0 32 L 24 8" stroke={KC.red} strokeWidth={12} strokeLinecap="round" strokeLinejoin="round" fill="none" /></g>}
         </>)}
       </Escena>
       {/* 12 · cierre: el mismo pie; tu mano no sube el medidor, otra mano sí */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Pie x={330} y={980} s={1.2} rot={-8} />
-          {otra < 1 && <g opacity={1 - otra}><ManoCosq x={500} y={760} s={0.9} T={T} rot={35} /></g>}
-          {otra > 0 && <g opacity={otra}><ManoCosq x={500} y={760} s={0.9} T={T} rot={35} color={OTRA} vel={20} /></g>}</>)}
+        {svg(<><Pie x={400} y={1220} s={1.95} rot={-8} />
+          {otra < 1 && <g opacity={1 - otra}><ManoCosq x={676} y={863} s={1.46} T={T} rot={35} /></g>}
+          {otra > 0 && <g opacity={otra}><ManoCosq x={676} y={863} s={1.46} T={T} rot={35} color={OTRA} vel={20} /></g>}</>)}
       </Escena>
-      {(T < K.Pd || T >= K.C) && <Escala T={T} z={1} pxPorMm={2.5} y={1400} x={60} />}
+      {/* segunda vuelta: el pie creció ×1.625 (s 1.2 → 1.95), así que la barra de 5 cm también (2.5 → 4.0625 px/mm), y sigue el avance de la cámara */}
+      {(T < K.Pd || T >= K.C) && <Escala T={T} z={T < K.Pd ? 1 + 0.2 * kprog(T, K.G - 0.45, K.Pd + 1.35, kEase.suave) : 1 + 0.1 * kprog(T, K.C - 0.45, FIN + 0.45, kEase.suave)} pxPorMm={4.0625} objetivo={250} y={1400} x={60} />}
 
       {/* datos */}
-      <Chip T={T} at={K.G + 0.3} until={K.Pd - 0.2} texto="inténtalo" x={300} y={440} tam={48} borde={KC.ink} />
-      <Medidor T={T} at={K.G + 0.2} until={K.Pd - 0.2} valor={0.08 + 0.04 * Math.sin(T * 7)} etiqueta="cosquillas" texto={() => 'casi nada'} y={1500} color={KC.pink} />
-      <Chip T={T} at={K.Pd + 1.6} until={K.V - 0.2} texto="predicción" x={420} y={1140} tam={42} borde={KC.cyan} />
-      <Chip T={T} at={K.V + 0.4} until={K.M - 0.2} texto="toque esperado → volumen bajo" x={540} y={440} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.M + 0.4} until={K.Q - 0.2} texto="↓ menos intenso" x={540} y={470} tam={44} borde={KC.pink} />
-      <Chip T={T} at={K.M + 1.4} until={K.Q - 0.2} texto="↓ menos cosquilludo" x={540} y={590} tam={44} borde={KC.pink} />
-      <Chip T={T} at={K.M + 2.4} until={K.Q - 0.2} texto="↓ menos agradable" x={540} y={710} tam={44} borde={KC.pink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.R - 0.3} anio="1999" quien="Londres (UCL)" revista="Blakemore, Frith y Wolpert" x={290} y={520} />
+      <Chip T={T} at={K.G + 0.3} until={K.Pd - 0.2} texto="inténtalo" x={300} y={470} tam={48} borde={KC.ink} />
+      <Medidor T={T} at={K.G + 0.2} until={K.Pd - 0.2} valor={0.08 + 0.04 * Math.sin(T * 7)} etiqueta="cosquillas" texto={() => 'casi nada'} y={310} ancho={640} color={KC.pink} />
+      <Chip T={T} at={K.Pd + 1.6} until={K.V - 0.2} texto="predicción" x={300} y={1350} tam={42} borde={KC.cyan} />
+      <Chip T={T} at={K.V + 0.4} until={K.M - 0.2} texto="toque esperado → volumen bajo" x={540} y={290} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.M + 0.4} until={K.Q - 0.2} texto="↓ menos intenso" x={540} y={260} tam={44} borde={KC.pink} />
+      <Chip T={T} at={K.M + 1.4} until={K.Q - 0.2} texto="↓ menos cosquilludo" x={540} y={360} tam={44} borde={KC.pink} />
+      <Chip T={T} at={K.M + 2.4} until={K.Q - 0.2} texto="↓ menos agradable" x={540} y={460} tam={44} borde={KC.pink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.R - 0.3} anio="1999" quien="Londres (UCL)" revista="Blakemore, Frith y Wolpert" x={300} y={400} />
       <Medidor T={T} at={K.Co + 0.2} until={K.Ce - 0.3} valor={T < K.Re ? 0.12 + 0.03 * Math.sin(T * 7) : 0.12 + 0.7 * retraso} etiqueta="cosquillas" texto={() => (T < K.Re ? 'como tu propio toque' : 'regresan')} y={1500} color={KC.pink} />
-      <Chip T={T} at={K.Co + 0.3} until={K.Re - 0.1} texto="retraso: 0" x={540} y={370} tam={42} borde={KC.ink} mono />
-      <Chip T={T} at={K.Re + 0.2} until={K.Ce - 0.3} texto="retraso o desvío ↑" x={540} y={370} tam={42} borde={KC.red} mono />
-      <Chip T={T} at={K.Ce + 2.6} until={K.Ra - 0.3} texto="predice y apaga la sensación" x={540} y={460} tam={38} borde={KC.yellow} />
-      <Chip T={T} at={K.Ra + 0.4} until={K.Ra + 3.1} texto="cosquillas: chillan (ultrasonido)" x={540} y={1100} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Ra + 3.3} until={K.C - 0.3} texto="se tocan solas: casi silencio" x={540} y={1100} tam={40} borde={KC.red} />
-      <Medidor T={T} at={K.C + 0.4} until={K.Ou - 0.1} valor={0.1 + 0.03 * Math.sin(T * 7) + 0.75 * otra} etiqueta="cosquillas" texto={() => (otra > 0.5 ? 'otra persona' : 'tu mano')} y={1500} color={KC.pink} />
-      <Chip T={T} at={K.C + 3.2} until={K.Ou - 0.1} texto="necesitas a alguien más" x={400} y={440} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.Co + 0.3} until={K.Re - 0.1} texto="retraso: 0" x={400} y={330} tam={42} borde={KC.ink} mono />
+      <Chip T={T} at={K.Re + 0.2} until={K.Ce - 0.3} texto="retraso o desvío ↑" x={400} y={330} tam={42} borde={KC.red} mono />
+      <Chip T={T} at={K.Ce + 2.6} until={K.Ra - 0.3} texto="predice y apaga la sensación" x={540} y={400} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.Ra + 0.4} until={K.Ra + 3.1} texto="cosquillas: chillan (ultrasonido)" x={540} y={1290} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Ra + 3.3} until={K.C - 0.3} texto="se tocan solas: casi silencio" x={540} y={1290} tam={40} borde={KC.red} />
+      <Medidor T={T} at={K.C + 0.4} until={K.Ou - 0.1} valor={0.1 + 0.03 * Math.sin(T * 7) + 0.75 * otra} etiqueta="cosquillas" texto={() => (otra > 0.5 ? 'otra persona' : 'tu mano')} y={310} ancho={640} color={KC.pink} />
+      <Chip T={T} at={K.C + 3.2} until={K.Ou - 0.1} texto="necesitas a alguien más" x={340} y={470} tam={40} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Pd - 0.1} texto="¿Cosquillas tú solo? *No puedes.*" />

@@ -114,46 +114,51 @@ function Nixtamal() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           {/* modo cine: antes del segundo 3 ya asoma la olla (hacia dónde va la historia), chica y atenuada */}
-          <g opacity={0.45 * kprog(T, K.G + 1.2, K.G + 2.2)}><Olla T={T} x={790} y={560} s={0.42} hierve={1} cal={0} /></g>
-          <Masa x={300} y={klerp(400, 900, cae)} s={1.5} />
-          <ellipse cx={300} cy={1080} rx={220} ry={22} fill="rgba(0,0,0,.2)" />
-          <g opacity={kprog(T, K.G + 0.7, K.G + 1.2)}><TortillaRota x={780} y={880} s={1.0} f={rompe} /></g>
+          {/* segunda vuelta: la bola de masa llena el cuadro sobre una mesa de madera oscura; la tortilla sin cal se desmorona a su lado */}
+          <rect x={-80} y={1290} width={KW + 160} height={800} fill="#2e1f12" stroke="#6b5238" strokeWidth={6} />
+          {[1400, 1530, 1680].map((ty, i) => <path key={i} d={`M -60 ${ty} Q 300 ${ty - 16 + i * 9} 560 ${ty} T 1140 ${ty + 6}`} stroke="#1f140a" strokeWidth={6} fill="none" />)}
+          <g opacity={0.45 * kprog(T, K.G + 1.2, K.G + 2.2)}><Olla T={T} x={250} y={470} s={0.55} hierve={1} cal={0} /></g>
+          <g opacity={kprog(T, K.G + 0.7, K.G + 1.2)}><TortillaRota x={840} y={680} s={1.7} f={rompe} /></g>
+          <ellipse cx={420} cy={1300} rx={330} ry={30} fill="rgba(0,0,0,.45)" />
+          <Masa x={420} y={klerp(300, 1010, cae)} s={2.7} />
         </SvgCapa>
       </Escena>
       {/* 1 · la olla con cal y la noche */}
       <Escena T={T} a={K.Pr} b={K.Ca}>
-        <div style={{ position:'absolute', inset:0, background:mixHex('#3a2110', '#1b2340', noche) }}></div>
+        <div style={{ position:'absolute', inset:0, background:mixHex('#2a180c', '#1b2340', noche) }}></div>
         <SvgCapa>
-          {noche > 0 && <g opacity={noche}><circle cx={850} cy={680} r={70} fill="#fff6c8" stroke={KC.ink} strokeWidth={6} /><circle cx={880} cy={660} r={62} fill="#1b2340" /></g>}
-          <Olla T={T} x={520} y={1020} s={1.05} hierve={1 - noche * 0.8} cal={kprog(T, K.Pr + 1.0, K.Pr + 2.0)} />
-          <Llama T={T} x={520} y={1215} s={1.4} o={1 - noche} />
-          {Array.from({ length: 40 }, (_, i) => { const t0 = K.Pr + 0.8 + (i % 12) * 0.06, u = kprog(T, t0, t0 + 0.7); return u > 0 && u < 1 ? <circle key={i} cx={430 + ((i * 53) % 160)} cy={klerp(560, 860, u)} r={6} fill={CAL} stroke={KC.ink} strokeWidth={1.5} /> : null; })}
-          <g opacity={1 - kprog(T, K.Pr + 2.2, K.Pr + 2.6)}><rect x={340} y={480} width={180} height={120} rx={14} fill={CAL} stroke={KC.ink} strokeWidth={6} transform="rotate(-20 430 540)" /><text x={430} y={555} textAnchor="middle" transform="rotate(-20 430 540)" style={{ font:`400 40px ${KF.titulo}` }} fill="#0b1020">CAL</text></g>
+          {noche > 0 && <g opacity={noche}><circle cx={890} cy={520} r={84} fill="#fff6c8" stroke={KC.ink} strokeWidth={6} /><circle cx={926} cy={496} r={74} fill="#1b2340" /></g>}
+          <Olla T={T} x={540} y={1060} s={1.4} hierve={1 - noche * 0.8} cal={kprog(T, K.Pr + 1.0, K.Pr + 2.0)} />
+          <Llama T={T} x={540} y={1322} s={1.87} o={1 - noche} />
+          {Array.from({ length: 40 }, (_, i) => { const t0 = K.Pr + 0.8 + (i % 12) * 0.06, u = kprog(T, t0, t0 + 0.7); return u > 0 && u < 1 ? <circle key={i} cx={430 + ((i * 53) % 200)} cy={klerp(540, 850, u)} r={8} fill={CAL} stroke={KC.ink} strokeWidth={1.5} /> : null; })}
+          <g opacity={1 - kprog(T, K.Pr + 2.2, K.Pr + 2.6)} transform="translate(430 500) scale(1.35) translate(-430 -540)"><rect x={340} y={480} width={180} height={120} rx={14} fill={CAL} stroke={KC.ink} strokeWidth={6} transform="rotate(-20 430 540)" /><text x={430} y={555} textAnchor="middle" transform="rotate(-20 430 540)" style={{ font:`400 40px ${KF.titulo}` }} fill="#0b1020">CAL</text></g>
         </SvgCapa>
-        <Cronometro T={T} at={K.Pr + 3.4} until={K.Ca - 0.2} inicio={21 * 3600} factor={3600 * 4} y={1470} etiqueta="REPOSO · TODA LA NOCHE" />
+        <Cronometro T={T} at={K.Pr + 3.4} until={K.Ca - 0.2} inicio={21 * 3600} factor={3600 * 4} y={1440} etiqueta="REPOSO · TODA LA NOCHE" />
       </Escena>
       {/* 2–4 · el grano por dentro: pericarpio, nejayote, calcio */}
       <Escena T={T} a={K.Ca} b={K.Ni}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <GranoCorte T={T} x={T < K.Ne ? 540 : klerp(540, 380, kprog(T, K.Ne, K.Ne + 0.6))} y={880} s={T < K.Ne ? 1.05 : klerp(1.05, 0.75, kprog(T, K.Ne, K.Ne + 0.6))} pela={kprog(T, K.Ca + 1.2, K.Ca + 4.0, kEase.suave)} calcio={kprog(T, K.Cl + 0.3, K.Cl + 2.2)} />
+          <GranoCorte T={T} x={T < K.Ne ? 540 : klerp(540, 330, kprog(T, K.Ne, K.Ne + 0.6)) + 210 * kprog(T, K.Cl - 0.2, K.Cl + 0.5, kEase.suave)} y={900} s={T < K.Ne ? 1.5 : klerp(1.5, 1.1, kprog(T, K.Ne, K.Ne + 0.6)) + 0.3 * kprog(T, K.Cl - 0.2, K.Cl + 0.5, kEase.suave)} pela={kprog(T, K.Ca + 1.2, K.Ca + 4.0, kEase.suave)} calcio={kprog(T, K.Cl + 0.3, K.Cl + 2.2)} />
           <g opacity={kprog(T, K.Ne, K.Ne + 0.4) * (1 - kprog(T, K.Cl - 0.3, K.Cl + 0.1))}>
-            <Cubeta x={830} y={1100} s={0.7} liquido="#e9d98a" nivel={0.3 + 0.4 * kprog(T, K.Ne + 0.3, K.Ne + 2.4)} color={KC.cyan} />
-            <Chorro T={T} x0={760} y0={760} x1={820} y1={990} color="#e9d98a" o={kprog(T, K.Ne + 0.3, K.Ne + 0.5)} ancho={20} />
+            <Cubeta x={820} y={1150} s={1.0} liquido="#e9d98a" nivel={0.3 + 0.4 * kprog(T, K.Ne + 0.3, K.Ne + 2.4)} color={KC.cyan} />
+            <Chorro T={T} x0={640} y0={760} x1={815} y1={1040} color="#e9d98a" o={kprog(T, K.Ne + 0.3, K.Ne + 0.5)} ancho={28} />
           </g>
-          {T > K.Cl && Array.from({ length: 8 }, (_, i) => { const t0 = K.Cl + 0.2 + i * 0.2, u = kprog(T, t0, t0 + 0.8, kEase.suave); return u < 1 && u > 0 ? <Atomo key={i} x={klerp(950, 420, u)} y={klerp(560 + i * 50, 880, u)} r={24} color={QA.Ca} letra="Ca" tam={16} /> : null; })}
+          {T > K.Cl && Array.from({ length: 8 }, (_, i) => { const t0 = K.Cl + 0.2 + i * 0.2, u = kprog(T, t0, t0 + 0.8, kEase.suave); return u < 1 && u > 0 ? <Atomo key={i} x={klerp(1000, 540, u)} y={klerp(480 + i * 70, 900, u)} r={32} color={QA.Ca} letra="Ca" tam={22} /> : null; })}
         </SvgCapa>
-        <Medidor T={T} at={K.Cl + 0.2} until={K.Ni - 0.2} valor={(t) => 0.2 + 0.7 * kprog(t, K.Cl + 0.3, K.Cl + 2.2)} etiqueta="calcio en el grano" texto={(v) => v > 0.5 ? 'sube' : ''} y={1480} color={QA.Ca} />
+        <Medidor T={T} at={K.Cl + 0.2} until={K.Ni - 0.2} valor={(t) => 0.2 + 0.7 * kprog(t, K.Cl + 0.3, K.Cl + 2.2)} etiqueta="calcio en el grano" texto={(v) => v > 0.5 ? 'sube' : ''} y={1430} color={QA.Ca} />
       </Escena>
       {/* 5 · niacina amarrada */}
       <Escena T={T} a={K.Ni} b={K.Pg}>
         <div style={{ position:'absolute', inset:0, background:'#1d1240' }}></div>
         <SvgCapa>
+          <g transform="translate(540 920) scale(1.45) translate(-540 -900)">
           <GranoCorte T={T} x={540} y={900} s={1.0} pela={1} calcio={0} />
-          <Niacina x={klerp(520, 700, kprog(T, K.Ni + 3.2, K.Ni + 4.6, kEase.sale))} y={klerp(860, 650, kprog(T, K.Ni + 3.2, K.Ni + 4.6, kEase.sale))} s={1.1} />
+          <Niacina x={klerp(520, 655, kprog(T, K.Ni + 3.2, K.Ni + 4.6, kEase.sale))} y={klerp(860, 650, kprog(T, K.Ni + 3.2, K.Ni + 4.6, kEase.sale))} s={1.1} />
           {[0, 1, 2].map((i) => <path key={i} d={`M ${380 + i * 20} ${760 + i * 70} L ${700 - i * 20} ${980 - i * 50}`} stroke="#9aa3b5" strokeWidth={12} strokeDasharray="22 10" opacity={1 - kprog(T, K.Ni + 2.6, K.Ni + 3.2)} />)}
           <g opacity={1 - kprog(T, K.Ni + 3.0, K.Ni + 3.6)}><Candado x={560} y={980} s={0.9} abre={kprog(T, K.Ni + 2.2, K.Ni + 2.8)} /></g>
-          {Array.from({ length: 10 }, (_, i) => { const t0 = K.Ni + 1.2 + i * 0.08, u = kprog(T, t0, t0 + 0.8); return u > 0 && u < 1 ? <circle key={i} cx={klerp(150, 520, u)} cy={klerp(560 + i * 30, 960, u)} r={7} fill={CAL} stroke={KC.ink} strokeWidth={1.5} /> : null; })}
+          </g>
+          {Array.from({ length: 10 }, (_, i) => { const t0 = K.Ni + 1.2 + i * 0.08, u = kprog(T, t0, t0 + 0.8); return u > 0 && u < 1 ? <circle key={i} cx={klerp(80, 520, u)} cy={klerp(500 + i * 40, 1000, u)} r={10} fill={CAL} stroke={KC.ink} strokeWidth={1.5} /> : null; })}
         </SvgCapa>
       </Escena>
       {/* 6 · pregunta */}
@@ -165,10 +170,12 @@ function Nixtamal() {
       <Escena T={T} a={K.Eu} b={K.Es}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <rect x={0} y={1060} width={KW} height={300} fill="#1c3e8e" opacity={0.6} />
-          <g opacity={1 - 0.72 * kprog(T, K.Eu + 2.8, K.Eu + 3.3)}><Barco T={T} x={klerp(-200, 560, kprog(T, K.Eu, K.Eu + 2.6, kEase.sale))} y={1000} s={1.3} /></g>
+          {/* segunda vuelta: barco grande sobre un mar oscuro que llega hasta abajo */}
+          <g opacity={1 - 0.72 * kprog(T, K.Eu + 2.8, K.Eu + 3.3)}><Barco T={T} x={klerp(-380, 540, kprog(T, K.Eu, K.Eu + 2.6, kEase.sale))} y={1080} s={2.1} /></g>
+          <rect x={-80} y={1200} width={KW + 160} height={900} fill="#0a1636" opacity={0.92} />
+          {[0, 1, 2].map((i) => <path key={i} d={`M -80 ${1230 + i * 110} q 70 ${-26 + Math.sin(T * 1.5 + i) * 8} 140 0 t 140 0 t 140 0 t 140 0 t 140 0 t 140 0 t 140 0 t 140 0 t 140 0`} stroke="#2c4484" strokeWidth={6} fill="none" opacity={0.7 - i * 0.18} />)}
           <g opacity={kprog(T, K.Eu + 3.0, K.Eu + 3.5)}>
-            {[['piel', '#ff6b5a', 220], ['diarrea', '#c9a14a', 540], ['demencia', '#9aa3b5', 860]].map(([t, c, x], i) => <g key={i} transform={`translate(${x} 860) scale(${kprog(T, K.Eu + 3.6 + i * 0.6, K.Eu + 4.0 + i * 0.6, kEase.rebote)})`}>
+            {[['piel', '#ff6b5a', 220], ['diarrea', '#c9a14a', 540], ['demencia', '#9aa3b5', 860]].map(([t, c, x], i) => <g key={i} transform={`translate(${x} 800) scale(${1.2 * kprog(T, K.Eu + 3.6 + i * 0.6, K.Eu + 4.0 + i * 0.6, kEase.rebote)})`}>
               <circle r={120} fill={c} stroke={KC.ink} strokeWidth={9} />
               {i === 0 && <g>{[[-40, -30], [30, 10], [-10, 40], [45, -40]].map(([dx, dy], k) => <circle key={k} cx={dx} cy={dy} r={18} fill="#c0392b" />)}</g>}
               {i === 1 && <path d="M -60 -40 Q 60 -60 40 0 Q 20 50 -40 20 Q -80 0 -30 -10 Q 30 -10 10 20" stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" />}
@@ -181,47 +188,51 @@ function Nixtamal() {
       <Escena T={T} a={K.Es} b={K.Me}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <g transform="translate(540 920) scale(1.35) translate(-500 -970)">
           {Array.from({ length: 12 }, (_, i) => <Grano key={i} x={180 + (i % 6) * 70} y={1150 + Math.floor(i / 6) * 70} s={0.9} rot={i * 33} />)}
           {Array.from({ length: 10 }, (_, i) => <circle key={i} cx={190 + (i * 41) % 380} cy={1140 + (i * 29) % 90} r={10 + (i % 3) * 4} fill="#5d7a3a" opacity={0.9 * fb1} />)}
           <rect x={660} y={1200 - 520} width={180} height={520} rx={16} fill="rgba(0,0,0,.18)" stroke={KC.ink} strokeWidth={6} />
           <rect x={668} y={1192 - 504 * fb1} width={164} height={504 * fb1} rx={12} fill={KC.red} />
+          </g>
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Es + 3.2} until={K.Me - 0.3} valor={95} dur={2.0} prefijo="−" sufijo=" %" etiqueta="fumonisina B1 en el maíz" x={540} y={1560} tam={130} color={KC.red} />
+        <NumeroGigante T={T} at={K.Es + 3.2} until={K.Me - 0.3} valor={95} dur={2.0} prefijo="−" sufijo=" %" etiqueta="fumonisina B1 en el maíz" x={540} y={1465} tam={130} color={KC.red} />
       </Escena>
       {/* 9 · Mesoamérica */}
       <Escena T={T} a={K.Me} b={K.Ci}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
+          <g transform="translate(540 900) scale(1.25) translate(-490 -900)">
           <Metate T={T} x={480} y={1060} s={1.3} muele={1} />
           <Comal x={540} y={700} s={0.8} />
           <Tortilla x={540} y={680} s={0.6} infla={Math.max(0, Math.sin((T - K.Me) * 2))} />
+          </g>
         </SvgCapa>
       </Escena>
       {/* 10 · cierre: la masa del inicio se vuelve tortilla que se infla */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Comal x={540} y={1120} s={1.2} />
-          {T < K.Ci + 1.4 ? <Masa x={540} y={1060} s={1.3} aplana={kprog(T, K.Ci + 0.3, K.Ci + 1.4)} />
-            : <Tortilla x={540} y={1080} s={1.2} infla={kprog(T, K.Ci + 2.0, K.Ci + 3.2, kEase.rebote)} />}
-          <Marca x={860} y={760} ok s={0.9} o={kprog(T, K.Ci + 3.4, K.Ci + 3.8)} />
+          <Comal x={540} y={1070} s={1.6} />
+          {T < K.Ci + 1.4 ? <Masa x={540} y={985} s={1.75} aplana={kprog(T, K.Ci + 0.3, K.Ci + 1.4)} />
+            : <Tortilla x={540} y={1020} s={1.6} infla={kprog(T, K.Ci + 2.0, K.Ci + 3.2, kEase.rebote)} />}
+          <Marca x={870} y={640} ok s={1.2} o={kprog(T, K.Ci + 3.4, K.Ci + 3.8)} />
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 0.6} until={K.Pr - 0.3} x={60} y={1480} texto="con cal: amarra" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.G + 2.4} until={K.Pr - 0.3} x={1020} y={1560} texto="sin cal: se desmorona" lado="izq" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.Pr + 0.2} until={K.Ca - 0.3} texto="nixtamalización" x={540} y={1640} tam={48} borde={KC.yellow} />
-      <Etq T={T} at={K.Pr + 1.0} until={K.Pr + 3.0} x={560} y={500} texto="cal · Ca(OH)₂" tam={36} />
-      <Chip T={T} at={K.Ca + 0.4} until={K.Ne - 0.2} texto="pericarpio: la cascarita" y={1500} tam={42} borde={PERICARPIO} />
-      <Chip T={T} at={K.Ne + 0.3} until={K.Cl - 0.2} texto="nejayote" x={820} y={1500} tam={48} borde="#e9d98a" />
-      <Chip T={T} at={K.Ni + 0.3} until={K.Pg - 0.3} texto="niacina · vitamina B3" y={1500} tam={42} borde={'#9b7bff'} />
-      <Etq T={T} at={K.Ni + 3.4} until={K.Pg - 0.3} x={1030} y={1640} texto="la cal la suelta" lado="izq" tam={34} />
-      <Chip T={T} at={K.Eu + 0.4} until={K.Eu + 2.8} texto="maíz a Europa · sin cal" x={540} y={1500} tam={42} borde={KC.ink} />
-      <Chip T={T} at={K.Eu + 3.2} until={K.Es - 0.3} texto="pelagra" x={540} y={1500} tam={56} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2025" quien="Soweto, Sudáfrica" revista="Toxins · maíz con moho nixtamalizado" x={330} y={520} />
-      <Chip T={T} at={K.Me + 0.3} until={K.Ci - 0.3} texto="conocimiento de Mesoamérica" y={1500} tam={42} borde={KC.ink} />
-      <Chip T={T} at={K.Ci + 3.2} until={K.Ou} texto="maíz + cal = química que amarra" y={1500} tam={40} borde={KC.mint} />
+      <Etq T={T} at={K.G + 0.6} until={K.Pr - 0.3} x={60} y={1420} texto="con cal: amarra" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.G + 2.4} until={K.Pr - 0.3} x={1030} y={470} texto="sin cal: se desmorona" lado="izq" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Pr + 0.2} until={K.Ca - 0.3} texto="nixtamalización" x={540} y={280} tam={48} borde={KC.yellow} />
+      <Etq T={T} at={K.Pr + 1.0} until={K.Pr + 3.0} x={600} y={480} texto="cal · Ca(OH)₂" tam={36} />
+      <Chip T={T} at={K.Ca + 0.4} until={K.Ne - 0.2} texto="pericarpio: la cascarita" y={1450} tam={42} borde={PERICARPIO} />
+      <Chip T={T} at={K.Ne + 0.3} until={K.Cl - 0.2} texto="nejayote" x={820} y={1420} tam={48} borde="#e9d98a" />
+      <Chip T={T} at={K.Ni + 0.3} until={K.Pg - 0.3} texto="niacina · vitamina B3" y={1460} tam={42} borde={'#9b7bff'} />
+      <Etq T={T} at={K.Ni + 3.4} until={K.Pg - 0.3} x={1030} y={330} texto="la cal la suelta" lado="izq" tam={34} />
+      <Chip T={T} at={K.Eu + 0.4} until={K.Eu + 2.8} texto="maíz a Europa · sin cal" x={540} y={1440} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.Eu + 3.2} until={K.Es - 0.3} texto="pelagra" x={540} y={1440} tam={56} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2025" quien="Soweto, Sudáfrica" revista="Toxins · maíz con moho nixtamalizado" x={310} y={400} />
+      <Chip T={T} at={K.Me + 0.3} until={K.Ci - 0.3} texto="conocimiento de Mesoamérica" y={1400} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.Ci + 3.2} until={K.Ou} texto="maíz + cal = química que amarra" y={1400} tam={40} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Pr - 0.1} texto="No es solo maíz: *es maíz con cal.*" />
