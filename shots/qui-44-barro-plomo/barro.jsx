@@ -229,38 +229,40 @@ function Barro() {
       <Escena T={T} a={K.G} b={K.Gr} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Jarrito x={560} y={1030} s={1.35} vidrio={1} cafe={cafe} destello={dest(K.G + 0.2)} id="j0" />
-          <Chorro T={T} x0={330} y0={700} x1={540} y1={800} color={CAFE} ancho={22} o={vierte * (1 - kprog(T, K.G + 2.4, K.G + 2.8))} />
-          <Olla x={240} y={640} s={0.75} inclina={klerp(10, 55, vierte) - 55 * kprog(T, K.G + 2.5, K.G + 3.0)} />
+          <Jarrito x={480} y={1040} s={1.8} vidrio={1} cafe={cafe} destello={dest(K.G + 0.2)} id="j0" />
+          <Chorro T={T} x0={380} y0={530} x1={470} y1={736} color={CAFE} ancho={28} o={vierte * (1 - kprog(T, K.G + 2.4, K.G + 2.8))} />
+          <Olla x={260} y={450} s={1} inclina={klerp(10, 55, vierte) - 55 * kprog(T, K.G + 2.5, K.G + 3.0)} />
         </SvgCapa>
-        <BarraEscala texto="5 cm" largo={150} />
+        <BarraEscala texto="5 cm" largo={200} />
       </Escena>
       {/* 1 · greta + sílice → esmalte → se pinta la pieza */}
       <Escena T={T} a={K.Gr} b={K.Ho}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          {T < K.Gr + 2.6 ? <g>
+          {T < K.Gr + 2.6 ? <g transform="translate(540 950) scale(1.2) translate(-540 -940)">
             <Costal x={300} y={780} s={0.9} inclina={klerp(0, 35, kprog(T, K.Gr + 0.1, K.Gr + 0.6))} polvo="#f0c419" texto="GRETA" sub="PbO" color="#ffe9a8" />
             <Costal x={800} y={780} s={0.9} inclina={klerp(0, -35, kprog(T, K.Gr + 0.6, K.Gr + 1.1))} polvo="#f4f4f4" texto="SÍLICE" sub="SiO₂" />
             <Polvo T={T} x0={390} y0={720} x1={500} y1={1060} color="#f0c419" o={kprog(T, K.Gr + 0.5, K.Gr + 0.7) * (1 - kprog(T, K.Gr + 2.2, K.Gr + 2.5))} seed={3} />
             <Polvo T={T} x0={710} y0={720} x1={590} y1={1060} color="#f4f4f4" o={kprog(T, K.Gr + 1.0, K.Gr + 1.2) * (1 - kprog(T, K.Gr + 2.2, K.Gr + 2.5))} seed={4} />
             <Cazuela x={540} y={1120} s={1.1} T={T} mezcla={kprog(T, K.Gr + 1.2, K.Gr + 1.5)} liquido={mixHex('#e8e2d0', '#f2dc8a', kprog(T, K.Gr + 0.6, K.Gr + 2.2))} />
-          </g> : <g>
-            <Cazuela x={300} y={1150} s={0.8} T={T} liquido="#f2dc8a" />
+          </g> : <g transform="translate(540 960) scale(1.2) translate(-601 -1010)">
+            <Cazuela x={370} y={1150} s={0.8} T={T} liquido="#f2dc8a" />
             <Jarrito x={700} y={1000} s={1.05} vidrio={kprog(T, K.Gr + 2.8, K.Ho - 0.3)} id="j1" />
             <ManoPincel x={klerp(560, 820, 0.5 + 0.5 * Math.sin(T * 7))} y={klerp(1180, 860, kprog(T, K.Gr + 2.8, K.Ho - 0.3))} s={0.9} rot={-30} />
           </g>}
         </SvgCapa>
-        <BarraEscala texto="10 cm" largo={150} />
+        <BarraEscala texto="10 cm" largo={180} />
       </Escena>
       {/* 2a · horno que no llega a lo justo */}
       <Escena T={T} a={K.Ho} b={microHo} zoom={0.12} origen="45% 55%">
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Horno T={T} x={430} y={900} s={1.05} fuego={1} />
-          <TermoHorno x={900} y={1060} valor={klerp(0.1, 0.62, kprog(T, K.Ho + 0.2, K.Ho + 1.8, kEase.sale)) + Math.sin(T * 5) * 0.01} marca={0.8} alto={520} />
+          <g transform="translate(540 960) scale(1.1) translate(-540 -840)">
+            <Horno T={T} x={430} y={900} s={1.05} fuego={1} />
+            <TermoHorno x={900} y={1060} valor={klerp(0.1, 0.62, kprog(T, K.Ho + 0.2, K.Ho + 1.8, kEase.sale)) + Math.sin(T * 5) * 0.01} marca={0.8} alto={520} />
+          </g>
         </SvgCapa>
-        <BarraEscala texto="1 m" largo={170} />
+        <BarraEscala texto="1 m" largo={187} />
       </Escena>
       {/* 2b · por dentro: el plomo suelto en la red de vidrio */}
       <Escena T={T} a={microHo} b={K.Ac}>
@@ -274,12 +276,14 @@ function Barro() {
       <Escena T={T} a={K.Ac} b={K.Ce}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
+          <g transform="translate(640 1100) scale(1.25) translate(-600 -1030)">
           <Estufa T={T} x={600} y={1230} s={1} />
           <Jarrito x={600} y={1030} s={0.95} vidrio={1} id="j3" />
           <ellipse cx={600} cy={1030 - 170 * 0.95 + 6} rx={128} ry={24} fill={SALSA} />
           {[0, 1, 2].map((i) => <circle key={i} cx={560 + i * 40} cy={1030 - 160 + Math.sin(T * 8 + i) * 4} r={8} fill="#ff7a5c" />)}
           <Limon x={klerp(980, 760, kprog(T, K.Ac + 0.3, K.Ac + 1.0))} y={760} s={1} rot={150} />
           <Goteo T={T} x={740} y0={790} y1={860} cada={0.35} color="#e8f7a8" desde={K.Ac + 1.0} hasta={K.Ac + 3.0} r={9} />
+          </g>
           <line x1={430} y1={890} x2={520} y2={960} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.Ac + 0.2, K.Ac + 0.6)} />
           <g opacity={kprog(T, K.Ac + 0.1, K.Ac + 0.6)}>
             <clipPath id="lupaAc"><circle cx={310} cy={640} r={270} /></clipPath>
@@ -293,69 +297,70 @@ function Barro() {
             <text x={310} y={410} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#fff">comida ácida</text>
           </g>
         </SvgCapa>
-        <BarraEscala texto="5 cm" largo={150} />
+        <BarraEscala texto="5 cm" largo={188} />
       </Escena>
       {/* 4 · el plomo llega al cerebro (sin síntomas) */}
       <Escena T={T} a={K.Ce} b={K.Pr}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <Nino T={T} x={610} y={900} s={1.15} rayos={kprog(T, K.Ce + 1.0, K.Ce + 1.6)} pbIn={kprog(T, K.Ce + 1.6, K.Ce + 3.4)} apaga={kprog(T, K.Ce + 3.0, K.Ce + 3.8)} />
-          <g transform={`translate(${klerp(1000, 760, kprog(T, K.Ce, K.Ce + 0.8, kEase.sale))} ${1060}) rotate(-20)`} opacity={1 - kprog(T, K.Ce + 1.2, K.Ce + 1.6)}>
+          <Nino T={T} x={540} y={900} s={1.5} rayos={kprog(T, K.Ce + 1.0, K.Ce + 1.6)} pbIn={kprog(T, K.Ce + 1.6, K.Ce + 3.4)} apaga={kprog(T, K.Ce + 3.0, K.Ce + 3.8)} />
+          <g transform={`translate(${klerp(1080, 740, kprog(T, K.Ce, K.Ce + 0.8, kEase.sale))} ${1095}) rotate(-20) scale(1.3)`} opacity={1 - kprog(T, K.Ce + 1.2, K.Ce + 1.6)}>
             <ellipse cx={0} cy={0} rx={60} ry={34} fill="#d8dde3" stroke={KC.ink} strokeWidth={7} /><ellipse cx={0} cy={-4} rx={44} ry={22} fill={SALSA} />
             <rect x={50} y={-10} width={220} height={22} rx={10} fill="#d8dde3" stroke={KC.ink} strokeWidth={7} />
           </g>
         </SvgCapa>
-        <BarraEscala texto="20 cm" largo={140} />
+        <BarraEscala texto="20 cm" largo={183} />
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <MapaMexico x={110} y={300} ancho={560} conCA={false}>
+          <MapaMexico x={130} y={320} ancho={820} conCA={false}>
             {Array.from({ length: 22 }, (_, i) => { const R = krng(30 + i); const lon = -110 + R() * 22, lat = 17 + R() * 9; const [px, py] = mxProy(lon, lat); const t0 = K.Pr + 0.2 + i * 0.08;
               return T > t0 ? <circle key={i} cx={px} cy={py} r={14 * kprog(T, t0, t0 + 0.2, kEase.rebote)} fill={KC.red} stroke={KC.ink} strokeWidth={4} /> : null; })}
           </MapaMexico>
-          <text x={280} y={1180} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 1000)`}>?</text>
+          <text x={280} y={1320} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 1140)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 6 · el estudio del INSP: piquete y lector */}
       <Escena T={T} a={K.Es} b={K.Co}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          {T > K.Es + 3.0 && <g>
-            <Dedo x={330} y={klerp(1300, 1120, kprog(T, K.Es + 3.0, K.Es + 3.5, kEase.sale))} s={1} gota={kprog(T, K.Es + 3.6, K.Es + 4.1)} />
-            <Lector x={730} y={klerp(1400, 960, kprog(T, K.Es + 3.1, K.Es + 3.6, kEase.sale))} s={0.95} lee={kprog(T, K.Es + 4.4, K.Es + 5.0)} T={T} />
-          </g>}
+          {/* el piquete y el lector están desde que empieza la escena (atenuados mientras se ve la tarjeta) */}
+          <g opacity={klerp(0.45, 1, kprog(T, K.Es + 2.8, K.Es + 3.3))}>
+            <Dedo x={270} y={klerp(1210, 1150, kprog(T, K.Es + 3.0, K.Es + 3.5, kEase.sale))} s={1.5} gota={kprog(T, K.Es + 3.6, K.Es + 4.1)} />
+            <Lector x={720} y={klerp(1060, 1000, kprog(T, K.Es + 3.1, K.Es + 3.6, kEase.sale))} s={1.425} lee={kprog(T, K.Es + 4.4, K.Es + 5.0)} T={T} />
+          </g>
         </SvgCapa>
-        <BarraEscala texto="5 cm" largo={150} />
+        <BarraEscala texto="5 cm" largo={225} />
       </Escena>
       {/* 7 · 44 de cada 100 vs. casi 10 */}
       <Escena T={T} a={K.Co} b={K.Cu}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <rect x={60} y={720} width={460} height={470} rx={26} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={7} />
-          <rect x={560} y={720} width={460} height={470} rx={26} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={7} />
-          <Cien100 T={T} at={K.Co + 0.6} k={44} x={102} y={760} />
-          <Cien100 T={T} at={K.Co + 3.4} k={10} x={602} y={760} />
+          <rect x={60} y={520} width={460} height={470} rx={26} fill="rgba(255,255,255,.07)" stroke={KC.ink} strokeWidth={7} />
+          <rect x={560} y={520} width={460} height={470} rx={26} fill="rgba(255,255,255,.07)" stroke={KC.ink} strokeWidth={7} />
+          <Cien100 T={T} at={K.Co + 0.6} k={44} x={102} y={560} off="rgba(255,255,255,.2)" />
+          <Cien100 T={T} at={K.Co + 3.4} k={10} x={602} y={560} off="rgba(255,255,255,.2)" />
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Co + 1.2} until={K.Cu - 0.3} valor={44} dur={1.2} sufijo=" %" x={290} y={1490} tam={150} color={KC.red} />
-        <NumeroGigante T={T} at={K.Co + 3.6} until={K.Cu - 0.3} valor={9.8} dec={1} dur={0.8} sufijo=" %" x={790} y={1490} tam={150} color={KC.mint} />
-        <Etq T={T} at={K.Co + 1.4} until={K.Cu - 0.3} x={60} y={1620} texto="usaban seguido barro con plomo" tam={26} color={KC.ink} />
-        <Etq T={T} at={K.Co + 3.8} until={K.Cu - 0.3} x={1030} y={1680} lado="izq" texto="no lo usaban" tam={26} color={KC.ink} />
+        <NumeroGigante T={T} at={K.Co + 1.2} until={K.Cu - 0.3} valor={44} dur={1.2} sufijo=" %" x={290} y={1120} tam={150} color={KC.red} />
+        <NumeroGigante T={T} at={K.Co + 3.6} until={K.Cu - 0.3} valor={9.8} dec={1} dur={0.8} sufijo=" %" x={790} y={1120} tam={150} color={KC.mint} />
+        <Etq T={T} at={K.Co + 1.4} until={K.Cu - 0.3} x={60} y={1245} texto="usaban seguido barro con plomo" tam={26} color={KC.ink} />
+        <Etq T={T} at={K.Co + 3.8} until={K.Cu - 0.3} x={1030} y={1245} lado="izq" texto="no lo usaban" tam={26} color={KC.ink} />
         <BarraEscala texto="niños de 1 a 4 años" largo={60} />
       </Escena>
       {/* 8 · el curado con ajo y vinagre */}
       <Escena T={T} a={K.Cu} b={K.Al}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          {T < barraCu ? <g>
+          {T < barraCu ? <g transform="translate(540 960) scale(1.25) translate(-540 -1000)">
             <Estufa T={T} x={540} y={1230} s={1} />
             <Jarrito x={540} y={1030} s={0.95} vidrio={1} id="j8" />
             <ellipse cx={540} cy={1030 - 170 * 0.95 + 6} rx={128} ry={24} fill="#f1f0e0" opacity={kprog(T, K.Cu + 1.6, K.Cu + 2.0)} />
             <Ajo x={klerp(240, 380, 0.5 + 0.5 * Math.sin(T * 6))} y={980} s={0.9} rot={-20} />
             <Botella x={860} y={760} s={0.55} inclina={klerp(0, -110, kprog(T, K.Cu + 1.2, K.Cu + 1.6))} color="#f6f3ec" liquido="#f7f3d0" etiqueta="VINAGRE" etqColor={KC.yellow} tapa={KC.red} />
             <Nube T={T} x={540} y={760} f={kprog(T, K.Cu + 2.0, K.Cu + 3.0)} r={140} color="rgba(255,255,255,.85)" seed={5} />
-          </g> : <g>
+          </g> : <g transform="translate(540 960) scale(1.2) translate(-540 -900)">
             <rect x={300} y={600} width={480} height={0} />
             {(() => { const h = 560 * kprog(T, barraCu + 0.1, barraCu + 1.3, kEase.sale), lim = 160; return <g>
               <rect x={420} y={1180 - h} width={240} height={h} fill={KC.red} stroke={KC.ink} strokeWidth={8} rx={10} />
@@ -367,12 +372,13 @@ function Barro() {
             </g>; })()}
           </g>}
         </SvgCapa>
-        <BarraEscala texto="5 cm" largo={150} />
+        {T < barraCu && <BarraEscala texto="5 cm" largo={188} />}
       </Escena>
       {/* 9 · la alternativa: barro sin plomo */}
       <Escena T={T} a={K.Al} b={K.Ci}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <g transform="translate(540 960) scale(1.15) translate(-500 -860)">
           <Cazuela x={250} y={1000} s={0.75} T={T} liquido="#cfe9ff" />
           <text x={250} y={1130} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>esmalte sin plomo</text>
           <Jarrito x={640} y={1010} s={1.0} vidrio={kprog(T, K.Al + 0.3, K.Al + 2.4)} id="j9" />
@@ -384,39 +390,40 @@ function Barro() {
             <circle cx={250} cy={700} r={170} fill="none" stroke={KC.white} strokeWidth={12} />
             <Marca x={380} y={580} ok={true} s={0.6} o={kprog(T, K.Al + 2.9, K.Al + 3.3)} />
           </g>
+          </g>
         </SvgCapa>
-        <BarraEscala texto="10 cm" largo={150} />
+        <BarraEscala texto="10 cm" largo={172} />
       </Escena>
       {/* 10 · cierre: el jarrito del inicio, ahora sin plomo */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Jarrito x={600} y={1030} s={1.35} vidrio={1} cafe={1} destello={dest(K.Ci + 0.2)} sello={kprog(T, K.Ci + 0.8, K.Ci + 1.3)} id="j10" />
-          <g opacity={kprog(T, K.Ci + 2.6, K.Ci + 3.1)}><Repisa x={190} y={760} s={0.8} /></g>
+          <Jarrito x={500} y={1040} s={1.8} vidrio={1} cafe={1} destello={dest(K.Ci + 0.2)} sello={kprog(T, K.Ci + 0.8, K.Ci + 1.3)} id="j10" />
+          <g opacity={kprog(T, K.Ci + 2.6, K.Ci + 3.1)}><Repisa x={200} y={460} s={1.07} /></g>
         </SvgCapa>
-        <Etq T={T} at={K.Ci + 3.0} until={K.Ou} x={70} y={920} texto="de adorno" tam={30} color={KC.ink} />
-        <BarraEscala texto="5 cm" largo={150} />
+        <Etq T={T} at={K.Ci + 3.0} until={K.Ou} x={40} y={655} texto="de adorno" tam={30} color={KC.ink} />
+        <BarraEscala texto="5 cm" largo={200} />
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.0} until={K.G + 3.0} texto="¿barniz?" x={330} y={340} tam={50} />
-      <Chip T={T} at={K.G + 3.1} until={K.Gr - 0.3} texto="vidrio + plomo" x={330} y={340} tam={44} borde={PB} />
-      <Etq T={T} at={K.Gr + 0.6} until={K.Gr + 2.4} x={150} y={1500} texto="greta = óxido de plomo" tam={36} color={KC.ink} lado="der" />
-      <Chip T={T} at={K.Gr + 2.8} until={K.Ho - 0.3} texto="esmalte con plomo" y={1500} tam={42} borde={KC.orange} />
-      <Chip T={T} at={K.Ho + 0.8} until={microHo - 0.2} texto="no llega a lo justo" y={1500} tam={42} borde={KC.red} />
-      <Etq T={T} at={microHo + 0.3} until={K.Ac - 0.2} x={540} y={470} texto="vidrio: Si + O" tam={32} color="#c9b8ff" />
-      <Etq T={T} at={microHo + 0.8} until={K.Ac - 0.2} x={540} y={520} texto="plomo suelto (Pb)" tam={32} color={PB} />
-      <Chip T={T} at={K.Ac + 1.6} until={K.Ce - 0.3} texto="ácido → sale Pb²⁺" y={1500} tam={42} borde={HMAS} />
-      <Chip T={T} at={K.Ce + 2.0} until={K.Pr - 0.3} texto="sin síntomas claros" y={1480} tam={40} borde={KC.lilac} />
-      <Etq T={T} at={K.Ce + 3.6} until={K.Pr - 0.3} x={540} y={1600} lado="der" texto="OMS: no hay nivel seguro conocido" tam={26} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.9} anio="2024" quien="INSP · datos de 2022 y 2023" revista="Salud Publica Mex · 1 747 niños de 1 a 4 años" y={820} />
-      <Chip T={T} at={K.Es + 3.4} until={K.Co - 0.3} texto="plomo en sangre · 1 a 4 años" y={1500} tam={38} borde={KC.gold} />
-      <Etq T={T} at={K.Co + 4.4} until={K.Cu - 0.3} x={540} y={1760} lado="der" texto="de más = 5 µg/dL o más (NOM-199)" tam={22} color={KC.ink} />
-      <MitoTachado T={T} at={K.Cu + 0.4} tacharEn={barraCu + 1.4} until={K.Al - 0.3} texto="curar quita el plomo" x={660} y={470} tam={42} />
-      <TarjetaEstudio T={T} at={tarjCu} until={barraCu - 0.1} anio="2025" quien="estudio de laboratorio" revista="Processes · INSP, Ibero, Tec de Monterrey" y={1620} />
-      <Chip T={T} at={barraCu + 1.5} until={K.Al - 0.3} texto="sigue soltando plomo" y={1500} tam={42} borde={KC.red} />
-      <Chip T={T} at={K.Al + 0.4} until={K.Ci - 0.3} texto="FONART · desde 1994" y={1500} tam={42} borde={KC.mint} />
-      <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="barro sí, plomo no" y={1500} tam={44} borde={KC.mint} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.0} until={K.G + 3.0} texto="¿barniz?" x={770} y={400} tam={50} />
+      <Chip T={T} at={K.G + 3.1} until={K.Gr - 0.3} texto="vidrio + plomo" x={770} y={400} tam={44} borde={PB} />
+      <Etq T={T} at={K.Gr + 0.6} until={K.Gr + 2.4} x={150} y={1440} texto="greta = óxido de plomo" tam={36} color={KC.ink} lado="der" />
+      <Chip T={T} at={K.Gr + 2.8} until={K.Ho - 0.3} texto="esmalte con plomo" y={1400} tam={42} borde={KC.orange} />
+      <Chip T={T} at={K.Ho + 0.8} until={microHo - 0.2} texto="no llega a lo justo" y={1420} tam={42} borde={KC.red} />
+      <Etq T={T} at={microHo + 0.3} until={K.Ac - 0.2} x={540} y={385} texto="vidrio: Si + O" tam={32} color="#c9b8ff" />
+      <Etq T={T} at={microHo + 0.8} until={K.Ac - 0.2} x={540} y={440} texto="plomo suelto (Pb)" tam={32} color={PB} />
+      <Chip T={T} at={K.Ac + 1.6} until={K.Ce - 0.3} texto="ácido → sale Pb²⁺" x={810} y={500} tam={42} borde={HMAS} />
+      <Chip T={T} at={K.Ce + 2.0} until={K.Pr - 0.3} texto="sin síntomas claros" y={380} tam={40} borde={KC.lilac} />
+      <Etq T={T} at={K.Ce + 3.6} until={K.Pr - 0.3} x={230} y={465} lado="der" texto="OMS: no hay nivel seguro conocido" tam={26} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.9} anio="2024" quien="INSP · datos de 2022 y 2023" revista="Salud Publica Mex · 1 747 niños de 1 a 4 años" y={430} />
+      <Chip T={T} at={K.Es + 3.4} until={K.Co - 0.3} texto="plomo en sangre · 1 a 4 años" x={670} y={1470} tam={38} borde={KC.gold} />
+      <Etq T={T} at={K.Co + 4.4} until={K.Cu - 0.3} x={250} y={1340} lado="der" texto="de más = 5 µg/dL o más (NOM-199)" tam={22} color={KC.ink} />
+      <MitoTachado T={T} at={K.Cu + 0.4} tacharEn={barraCu + 1.4} until={K.Al - 0.3} texto="curar quita el plomo" x={540} y={350} tam={42} />
+      <TarjetaEstudio T={T} at={tarjCu} until={barraCu - 0.1} anio="2025" quien="estudio de laboratorio" revista="Processes · INSP, Ibero, Tec de Monterrey" y={1500} />
+      <Chip T={T} at={barraCu + 1.5} until={K.Al - 0.3} texto="sigue soltando plomo" y={1420} tam={42} borde={KC.red} />
+      <Chip T={T} at={K.Al + 0.4} until={K.Ci - 0.3} texto="FONART · desde 1994" y={1470} tam={42} borde={KC.mint} />
+      <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="barro sí, plomo no" y={1490} tam={44} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Gr - 0.1} texto="No es barniz: *es plomo.*" />
