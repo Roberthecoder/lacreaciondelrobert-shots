@@ -61,6 +61,18 @@ function Mesa({ x = 600 }) {
     <rect x={x + 420} y={872} width={64} height={320} fill="#8a5129" stroke={KC.ink} strokeWidth={9} />
   </g>;
 }
+// Acercamiento: lleva el punto `de` al punto `a` y agranda k veces (pase a mano del estilo cine).
+function DZ({ k = 1, de = [0, 0], a = [0, 0], children }) {
+  return <g transform={`translate(${a[0]} ${a[1]}) scale(${k}) translate(${-de[0]} ${-de[1]})`}>{children}</g>;
+}
+// Piso de madera oscura (tablas que se alejan), ancho de sobra para los acercamientos.
+function Piso() {
+  return <g>
+    <rect x={-900} y={1190} width={KW + 1800} height={KH} fill="#453125" stroke={KC.ink} strokeWidth={9} />
+    {[1262, 1352, 1470, 1620].map((y, i) => <line key={i} x1={-900} y1={y} x2={KW + 900} y2={y} stroke="#2a1d15" strokeWidth={5 + i} opacity=".8" />)}
+    {[[-380, 1190, 1262], [240, 1190, 1262], [900, 1190, 1262], [-60, 1262, 1352], [620, 1262, 1352], [1250, 1262, 1352], [300, 1352, 1470], [1010, 1352, 1470]].map(([x, y0, y1], i) => <line key={'j' + i} x1={x} y1={y0} x2={x} y2={y1} stroke="#2a1d15" strokeWidth={5} opacity=".7" />)}
+  </g>;
+}
 // Cerebro esquemático.
 function Cerebro({ x, y, s = 1, brillo = 0, color = DL_RAP }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
@@ -109,38 +121,44 @@ function Dolor() {
         <FondoLunares color={KC.yellow} />
         <Lienzo><g transform="translate(0 -70)">
           <DefsDolor />
-          <rect x={0} y={1190} width={KW} height={KH} fill="#6a4c38" stroke={KC.ink} strokeWidth={9} />
-          <Mesa x={560} />
-          <Pie x={piePos(TOC)} y={1080} T={T} piquete={piq(PIQ)} sordo={kprog(T, SOR, SOR + 0.8)} />
-          <Onomato T={T} at={TOC} dur={1.3} x={470} y={760} texto="¡TOC!" tam={150} color={KC.pink} />
-          {T > SOR + 0.4 && <TextoSvg x={760} y={1110 + Math.sin(T * 7) * 6} tam={70} color={KC.red} rot={-4} o={kprog(T, SOR + 0.4, SOR + 0.7)}>¡AAAY…!</TextoSvg>}
+          <DZ k={1.5} de={[560, 1190]} a={[620, 1400]}>
+            <Piso />
+            <Mesa x={560} />
+            <Pie x={piePos(TOC)} y={1080} T={T} piquete={piq(PIQ)} sordo={kprog(T, SOR, SOR + 0.8)} />
+          </DZ>
+          <Onomato T={T} at={TOC} dur={1.3} x={720} y={700} texto="¡TOC!" tam={150} color={KC.pink} />
+          {T > SOR + 0.4 && <TextoSvg x={830} y={1170 + Math.sin(T * 7) * 6} tam={70} color={KC.red} rot={-4} o={kprog(T, SOR + 0.4, SOR + 0.7)}>¡AAAY…!</TextoSvg>}
         </g></Lienzo>
-        <Chip T={T} at={PIQ} until={K.Dos - 0.1} texto="1 · piquete" x={240} y={460} tam={42} borde={DL_RAP} />
-        <Chip T={T} at={SOR} until={K.Dos - 0.1} texto="2 · dolor sordo" x={290} y={570} tam={42} borde={DL_LEN} />
+        <Chip T={T} at={PIQ} until={K.Dos - 0.1} texto="1 · piquete" x={740} y={370} tam={42} borde={DL_RAP} />
+        <Chip T={T} at={SOR} until={K.Dos - 0.1} texto="2 · dolor sordo" x={740} y={480} tam={42} borde={DL_LEN} />
       </Escena>
       {/* 1 · primero el piquete: la señal azul sale del dedo casi al instante */}
       <Escena T={T} a={K.Dos} b={K.Fibras} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo><g transform="translate(0 -70)">
           <DefsDolor />
-          <rect x={0} y={1190} width={KW} height={KH} fill="#6a4c38" stroke={KC.ink} strokeWidth={9} />
+          <DZ k={1.3} de={[430, 1190]} a={[470, 1420]}>
+          <Piso />
           <Pie x={330} y={1040} s={1.25} T={T} nervio={kprog(T, K.Dos - 0.1, K.Dos + 0.3)} piquete={piq(K.Dos + 0.2) * 0.8}
             rapida={T > K.Dos + 0.35 ? kprog(T, K.Dos + 0.35, K.Dos + 0.95, kEase.suave) : null} />
           {Array.from({ length: 5 }, (_, i) => { const at = K.Dos + 0.4 + i * 0.05, o = kprog(T, at, at + 0.1) * (1 - kprog(T, at + 0.5, at + 0.9));
             return <line key={i} x1={300 + i * 14} y1={600 - i * 80} x2={300 + i * 14} y2={700 - i * 80} stroke="#fff" strokeWidth={8} strokeLinecap="round" opacity={o} />; })}
+          </DZ>
         </g></Lienzo>
-        <Chip T={T} at={K.Dos + 0.9} until={K.Fibras - 0.1} texto="piquete agudo" x={720} y={470} tam={46} borde={DL_RAP} />
-        <Chip T={T} at={K.Dos + 1.6} until={K.Fibras - 0.1} texto="casi al instante" x={720} y={580} tam={40} borde={KC.ink} />
+        <Chip T={T} at={K.Dos + 0.9} until={K.Fibras - 0.1} texto="piquete agudo" x={760} y={560} tam={46} borde={DL_RAP} />
+        <Chip T={T} at={K.Dos + 1.6} until={K.Fibras - 0.1} texto="casi al instante" x={760} y={670} tam={40} borde={KC.ink} />
       </Escena>
       {/* 2 · al microscopio: la fibra con forro de grasa, rápida */}
       <Escena T={T} a={K.Fibras} b={K.Dolor} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo><g transform="translate(0 -70)">
           <DefsDolor />
-          <rect x={0} y={1190} width={KW} height={KH} fill="#6a4c38" stroke={KC.ink} strokeWidth={9} />
-          <Pie x={30} y={1080} s={1} T={T} nervio={1} rapida={((T - K.Fibras) * 1.1) % 1} />
+          <DZ k={1.3} de={[0, 1190]} a={[0, 1420]}>
+            <Piso />
+            <Pie x={30} y={1080} s={1} T={T} nervio={1} rapida={((T - K.Fibras) * 1.1) % 1} />
+          </DZ>
         </g></Lienzo>
-        <Lupa T={T} at={K.Fibras + 0.3} until={K.Dolor - 0.15} x={640} y={760} r={290} fx={30} fy={710} tinte={DL_RAP} etiqueta="AL MICROSCOPIO · NERVIO"
+        <Lupa T={T} at={K.Fibras + 0.3} until={K.Dolor - 0.15} x={665} y={810} r={325} fx={39} fy={780} tinte={DL_RAP} etiqueta="AL MICROSCOPIO · NERVIO"
           interior={(t, r) => <svg width={r * 2} height={r * 2}>
             <FibraMicro w={r * 2} h={r * 2} y={r + 30} forro p={((t - K.Fibras - 0.6) * 0.9) % 1} color={DL_RAP} />
             {t > K.Fibras + 1.2 && <g opacity={kprog(t, K.Fibras + 1.2, K.Fibras + 1.5)}>
@@ -148,21 +166,23 @@ function Dolor() {
               <text x={r - 80} y={r - 140} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#fff">forro de grasa</text>
             </g>}
           </svg>} />
-        <Chip T={T} at={K.Fibras + 2.2} until={K.Dolor - 0.1} texto="con forro: rápida" x={620} y={420} tam={46} borde={DL_RAP} />
+        <Chip T={T} at={K.Fibras + 2.2} until={K.Dolor - 0.1} texto="con forro: rápida" x={665} y={400} tam={46} borde={DL_RAP} />
       </Escena>
       {/* 3 · después el dolor sordo: fibra delgada, sin forro, lenta */}
       <Escena T={T} a={K.Dolor} b={K.Velocidad} fondo={KC.pink}>
         <FondoLunares color={KC.pink} />
         <Lienzo><g transform="translate(0 -70)">
           <DefsDolor />
-          <rect x={0} y={1190} width={KW} height={KH} fill="#6a4c38" stroke={KC.ink} strokeWidth={9} />
-          <Pie x={40} y={1080} s={0.95} T={T} sordo={1} nervio={0.6} lenta={kprog(T, K.Dolor + 0.4, K.Velocidad, kEase.suave) * 0.45} />
+          <DZ k={1.3} de={[0, 1190]} a={[0, 1420]}>
+            <Piso />
+            <Pie x={40} y={1080} s={0.95} T={T} sordo={1} nervio={0.6} lenta={kprog(T, K.Dolor + 0.4, K.Velocidad, kEase.suave) * 0.45} />
+          </DZ>
         </g></Lienzo>
-        <Chip T={T} at={K.Dolor + 0.3} until={K.Velocidad - 0.1} texto="dolor sordo: arde y se queda" x={680} y={430} tam={42} borde={DL_LEN} />
-        <Lupa T={T} at={K.Dolor + 2.0} until={K.Velocidad - 0.15} x={680} y={770} r={270} fx={300} fy={1080} tinte={DL_LEN} etiqueta="AL MICROSCOPIO · NERVIO"
+        <Chip T={T} at={K.Dolor + 0.3} until={K.Velocidad - 0.1} texto="dolor sordo: arde y se queda" x={640} y={400} tam={42} borde={DL_LEN} />
+        <Lupa T={T} at={K.Dolor + 0.3} until={K.Velocidad - 0.15} x={665} y={810} r={315} fx={400} fy={1311} tinte={DL_LEN} etiqueta="AL MICROSCOPIO · NERVIO"
           interior={(t, r) => <svg width={r * 2} height={r * 2}>
             <g opacity=".35"><FibraMicro w={r * 2} h={r * 2} y={r - 110} forro p={null} color={DL_RAP} /></g>
-            <FibraMicro w={r * 2} h={r * 2} y={r + 60} forro={false} grosor={10} p={kprog(t, K.Dolor + 2.6, K.Velocidad + 0.4)} color={DL_LEN} />
+            <g opacity={kprog(t, K.Dolor + 1.8, K.Dolor + 2.3)}><FibraMicro w={r * 2} h={r * 2} y={r + 60} forro={false} grosor={10} p={kprog(t, K.Dolor + 2.6, K.Velocidad + 0.4)} color={DL_LEN} /></g>
             <text x={r} y={r - 170} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="rgba(255,255,255,.6)">con forro</text>
             {t > K.Dolor + 3.4 && <text x={r} y={r + 150} textAnchor="middle" opacity={kprog(t, K.Dolor + 3.4, K.Dolor + 3.7)} style={{ font:`700 36px ${KF.mono}` }} fill="#fff">sin forro: lenta</text>}
           </svg>} />
@@ -171,21 +191,22 @@ function Dolor() {
       <Escena T={T} a={K.Velocidad} b={K.Distancia} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          {[[850, DL_RAP, 'rápida', (t) => ((t - K.Velocidad - 0.4) * 1.4) % 1, true], [1050, DL_LEN, 'lenta', (t) => kprog(t, K.Velocidad + 3.0, K.Distancia + 1, (p) => p) * 0.9, false]].map(([y, c, nom, f, forro], i) => {
+          {[[670, DL_RAP, 'rápida', (t) => ((t - K.Velocidad - 0.4) * 1.4) % 1, true], [1190, DL_LEN, 'lenta', (t) => kprog(t, K.Velocidad + 3.0, K.Distancia + 1, (p) => p) * 0.9, false]].map(([y, c, nom, f, forro], i) => {
             const p = f(T), on = i === 0 ? T > K.Velocidad + 0.4 : T > K.Velocidad + 3.0;
-            return <g key={i} opacity={kprog(T, K.Velocidad + (i ? 2.8 : 0.2), K.Velocidad + (i ? 3.1 : 0.5))}>
-              <rect x={60} y={y - 80} width={960} height={160} rx={40} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
-              <svg x={60} y={y - 80} width={960} height={160} overflow="hidden"><FibraMicro w={960} h={160} y={95} forro={forro} grosor={forro ? 20 : 10} p={on ? p : null} color={c} x0={20} x1={940} /></svg>
-              <text x={90} y={y - 40} style={{ font:`900 34px ${KF.texto}` }} fill={c}>{nom}</text>
+            return <g key={i} opacity={kprog(T, K.Velocidad + 0.2, K.Velocidad + 0.5) * (i ? 0.4 + 0.6 * kprog(T, K.Velocidad + 2.8, K.Velocidad + 3.1) : 1)}>
+              <rect x={60} y={y - 115} width={960} height={230} rx={56} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
+              <svg x={60} y={y - 115} width={960} height={230} viewBox="0 0 668 160" overflow="hidden"><FibraMicro w={668} h={160} y={92} forro={forro} grosor={forro ? 20 : 10} p={on ? p : null} color={c} x0={20} x1={648} /></svg>
+              <text x={104} y={y - 66} style={{ font:`900 38px ${KF.texto}` }} fill={c}>{nom}</text>
             </g>; })}
         </Lienzo>
-        <MedidorG T={T} at={K.Velocidad + 0.2} until={K.Distancia - 0.15} v={kprog(T, K.Velocidad + 0.4, K.Velocidad + 0.9, kEase.sale)} etiqueta="con forro" valor="hasta decenas de m/s" y={420} color={DL_RAP} />
-        <MedidorG T={T} at={K.Velocidad + 2.8} until={K.Distancia - 0.15} v={0.07 * kprog(T, K.Velocidad + 3.0, K.Velocidad + 5.0)} etiqueta="sin forro" valor="≈ 2 m/s o menos" y={590} color={DL_LEN} />
+        <MedidorG T={T} at={K.Velocidad + 0.2} until={K.Distancia - 0.15} v={kprog(T, K.Velocidad + 0.4, K.Velocidad + 0.9, kEase.sale)} etiqueta="con forro" valor="hasta decenas de m/s" y={390} color={DL_RAP} />
+        <MedidorG T={T} at={K.Velocidad + 2.8} until={K.Distancia - 0.15} v={0.07 * kprog(T, K.Velocidad + 3.0, K.Velocidad + 5.0)} etiqueta="sin forro" valor="≈ 2 m/s o menos" y={910} color={DL_LEN} />
       </Escena>
       {/* 5 · del dedo al cerebro hay más de un metro */}
       <Escena T={T} a={K.Distancia} b={K.Pregunta} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
+          <DZ k={1.2} de={[540, 760]} a={[536, 850]}>
           {(() => { const R = [[468, 1178], [455, 860], [425, 820], [420, 480], [420, 400]], p = kprog(T, K.Distancia + 0.3, K.Distancia + 2.3, kEase.suave), q = dlPunto(R, p);
             return <g>
               <PersonaSimple x={420} yPies={1190} alto={860} color={KC.pink} cara="normal" />
@@ -199,14 +220,15 @@ function Dolor() {
               <rect x={690} y={yT} width={70} height={1180 - yT} rx={10} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
               {Array.from({ length: Math.floor((1180 - yT) / 42) }, (_, i) => <line key={i} x1={690} y1={1180 - i * 42} x2={690 + (i % 5 ? 22 : 40)} y2={1180 - i * 42} stroke={KC.ink} strokeWidth={4} />)}
             </g>; })()}
-          {T > K.Distancia + 2.5 && <g transform={`translate(890 760) scale(${klerp(0.4, 1, kprog(T, K.Distancia + 2.5, K.Distancia + 2.9, kEase.rebote))})`}>
-            <TextoSvg x={0} y={0} tam={92} color={KC.yellow}>MÁS DE</TextoSvg>
-            <TextoSvg x={0} y={130} tam={150} color={KC.yellow}>1 M</TextoSvg>
+          </DZ>
+          {T > K.Distancia + 2.5 && <g transform={`translate(909 800) scale(${klerp(0.4, 1, kprog(T, K.Distancia + 2.5, K.Distancia + 2.9, kEase.rebote))})`}>
+            <TextoSvg x={0} y={0} tam={76} color={KC.yellow}>MÁS DE</TextoSvg>
+            <TextoSvg x={0} y={114} tam={128} color={KC.yellow}>1 M</TextoSvg>
           </g>}
         </Lienzo>
-        <Etq T={T} at={K.Distancia + 0.4} until={K.Pregunta - 0.15} x={500} y={1150} texto="dedo" lado="der" color={KC.texto} />
-        <Etq T={T} at={K.Distancia + 1.2} until={K.Pregunta - 0.15} x={330} y={640} texto="médula" lado="izq" color={KC.texto} />
-        <Etq T={T} at={K.Distancia + 2.1} until={K.Pregunta - 0.15} x={330} y={390} texto="cerebro" lado="izq" color={KC.texto} />
+        <Etq T={T} at={K.Distancia + 0.4} until={K.Pregunta - 0.15} x={488} y={1318} texto="dedo" tam={30} lado="der" color={KC.texto} />
+        <Etq T={T} at={K.Distancia + 1.2} until={K.Pregunta - 0.15} x={284} y={706} texto="médula" tam={30} lado="izq" color={KC.texto} />
+        <Etq T={T} at={K.Distancia + 2.1} until={K.Pregunta - 0.15} x={284} y={406} texto="cerebro" tam={30} lado="izq" color={KC.texto} />
       </Escena>
       {/* 6 · ¿por qué no sientes todo junto? */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Primer} color={KC.orange} />
@@ -218,25 +240,27 @@ function Dolor() {
       {/* 7 · la carrera: primero llega la azul, después la roja (como rayo y trueno) */}
       <Escena T={T} a={K.Primer} b={K.Sobar} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
-        {(() => { const x0 = 262, x1 = 790, pR = kprog(T, K.Primer + 0.3, K.Primer + 1.0, kEase.suave), pL = kprog(T, K.Primer + 0.9, K.Primer + 4.2, (p) => p);
+        {(() => { const x0 = 281, x1 = 756, pR = kprog(T, K.Primer + 0.3, K.Primer + 1.0, kEase.suave), pL = kprog(T, K.Primer + 0.9, K.Primer + 4.2, (p) => p);
           const llegaR = K.Primer + 1.0, llegaL = K.Primer + 4.2, br = destelloD(T, llegaR) + destelloD(T, llegaL);
           return <Lienzo>
             <DefsDolor />
-            {[[790, DL_RAP, pR, 'rápida', true], [1010, DL_LEN, pL, 'lenta', false]].map(([y, c, p, nom, forro], i) => <g key={i}>
-              <rect x={205} y={y - 60} width={620} height={120} rx={60} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
-              <svg x={205} y={y - 60} width={620} height={120} overflow="hidden"><FibraMicro w={620} h={120} y={60} forro={forro} grosor={forro ? 18 : 9} p={null} color={c} x0={20} x1={600} /></svg>
-              <Senal x={klerp(x0, x1, p)} y={y} color={c} r={forro ? 30 : 22} />
-              <text x={225} y={y - 76} style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{nom}</text>
+            {[[770, DL_RAP, pR, 'rápida', true], [1040, DL_LEN, pL, 'lenta', false]].map(([y, c, p, nom, forro], i) => <g key={i}>
+              <rect x={225} y={y - 82} width={575} height={164} rx={82} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
+              <svg x={225} y={y - 82} width={575} height={164} viewBox="0 0 420 120" overflow="hidden"><FibraMicro w={420} h={120} y={60} forro={forro} grosor={forro ? 18 : 9} p={null} color={c} x0={20} x1={400} /></svg>
+              <Senal x={klerp(x0, x1, p)} y={y} color={c} r={forro ? 36 : 26} />
+              <text x={253} y={y - 98} style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>{nom}</text>
             </g>)}
-            <g transform="translate(40 880) scale(0.42)"><Pie x={0} y={0} corto T={T} sordo={T > llegaL ? 1 : 0} piquete={piq(K.Primer + 0.3) * 0.8} /></g>
-            <Cerebro x={945} y={900} s={0.72} brillo={br} color={T > llegaL - 0.2 ? DL_LEN : DL_RAP} />
-            {[[llegaR, '1', DL_RAP, 690], [llegaL, '2', DL_LEN, 1110]].map(([t, n, c, y]) => T > t && <g key={n} transform={`translate(945 ${y}) scale(${klerp(0.3, 1, kprog(T, t, t + 0.3, kEase.rebote))})`}>
+            <g transform="translate(20 880) scale(0.55)"><Pie x={0} y={0} corto T={T} sordo={T > llegaL ? 1 : 0} piquete={piq(K.Primer + 0.3) * 0.8} /></g>
+            <Cerebro x={915} y={905} s={0.72} brillo={br} color={T > llegaL - 0.2 ? DL_LEN : DL_RAP} />
+            {[[llegaR, '1', DL_RAP, 680], [llegaL, '2', DL_LEN, 1135]].map(([t, n, c, y]) => T > t && <g key={n} transform={`translate(915 ${y}) scale(${klerp(0.3, 1, kprog(T, t, t + 0.3, kEase.rebote))})`}>
               <circle r={46} fill={c} stroke={KC.ink} strokeWidth={8} /><text y={22} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{n}</text></g>)}
             {T > K.Primer + 4.4 && <g opacity={kprog(T, K.Primer + 4.4, K.Primer + 4.7)}>
+              <DZ k={1.2} de={[380, 560]} a={[440, 465]}>
               <Nube x={380} y={520} s={0.75} color="#3b4466" borde={KC.ink} />
               <polyline points="370,540 345,610 385,605 355,690" fill="none" stroke="#fff7c2" strokeWidth={14} strokeLinejoin="round" strokeLinecap="round" opacity={0.5 + 0.5 * Math.abs(Math.sin(T * 9))} />
+              </DZ>
             </g>}
-            <Onomato T={T} at={K.Primer + 5.2} dur={1.2} x={740} y={580} texto="¡BRRUM!" tam={110} color={KC.yellow} />
+            <Onomato T={T} at={K.Primer + 5.2} dur={1.2} x={800} y={545} texto="¡BRRUM!" tam={112} color={KC.yellow} />
           </Lienzo>; })()}
       </Escena>
       {/* 8 · sobarte ayuda un poco: compuerta en la médula (teoría de 1965) */}
@@ -247,9 +271,11 @@ function Dolor() {
           return <Lienzo>
             <DefsDolor />
             <g transform="translate(0 -70)">
-            <rect x={0} y={1190} width={KW} height={KH} fill="#6a4c38" stroke={KC.ink} strokeWidth={9} />
+            <DZ k={1.3} de={[0, 1190]} a={[0, 1420]}>
+            <Piso />
             <Pie x={40} y={1080} s={0.95} T={T} sordo={1 - 0.45 * kprog(T, S0 + 4.8, S0 + 6.3)} />
-            {T > S0 + 0.2 && <Mano x={250 + soba * 40} y={1000} s={0.85} rot={-8} />}
+            {T > S0 + 0.2 && <Mano x={250 + soba * 40} y={1048} s={0.85} rot={8} />}
+            </DZ>
             </g>
             <rect x={60} y={380} width={960} height={460} rx={40} fill="rgba(14,15,18,.9)" stroke={KC.ink} strokeWidth={8} />
             <text x={540} y={440} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto} letterSpacing="2">POR DENTRO · MÉDULA ESPINAL</text>
@@ -273,22 +299,26 @@ function Dolor() {
             </g>
             <text x={940} y={810} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.texto}>volumen</text>
           </Lienzo>; })()}
-        <TarjetaEstudio T={T} at={K.Sobar + 2.0} until={K.Cierre - 0.15} anio="1965" quien="teoría" revista="Melzack y Wall · Science" x={790} y={1020} />
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, zIndex:43, transform:'scale(.8)', transformOrigin:'870px 975px', pointerEvents:'none' }}>
+          <TarjetaEstudio T={T} at={K.Sobar + 2.0} until={K.Cierre - 0.15} anio="1965" quien="teoría" revista="Melzack y Wall · Science" x={870} y={975} />
+        </div>
       </Escena>
       {/* 9 · cierre: el mismo golpe, ahora ves las dos señales subir por el nervio */}
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo><g transform="translate(0 -70)">
           <DefsDolor />
-          <rect x={0} y={1190} width={KW} height={KH} fill="#6a4c38" stroke={KC.ink} strokeWidth={9} />
-          <Mesa x={560} />
-          <Pie x={piePos(TOCc)} y={1080} T={T} nervio={kprog(T, C0 + 0.6, C0 + 1.0)} piquete={piq(PIQc)} sordo={kprog(T, SORc, SORc + 0.8)}
-            rapida={T > PIQc ? kprog(T, PIQc, PIQc + 0.6, kEase.suave) : null} lenta={T > SORc ? kprog(T, SORc, SORc + 3.4) * 0.9 : null} />
-          <Onomato T={T} at={TOCc} dur={1.2} x={470} y={760} texto="¡TOC!" tam={150} color={KC.pink} />
+          <DZ k={1.5} de={[560, 1190]} a={[620, 1400]}>
+            <Piso />
+            <Mesa x={560} />
+            <Pie x={piePos(TOCc)} y={1080} T={T} nervio={kprog(T, C0 + 0.6, C0 + 1.0)} piquete={piq(PIQc)} sordo={kprog(T, SORc, SORc + 0.8)}
+              rapida={T > PIQc ? kprog(T, PIQc, PIQc + 0.6, kEase.suave) : null} lenta={T > SORc ? kprog(T, SORc, SORc + 3.4) * 0.9 : null} />
+          </DZ>
+          <Onomato T={T} at={TOCc} dur={1.2} x={720} y={700} texto="¡TOC!" tam={150} color={KC.pink} />
         </g></Lienzo>
-        <Chip T={T} at={PIQc} until={K.Outro - 0.1} texto="1 · piquete" x={240} y={460} tam={42} borde={DL_RAP} />
-        <Chip T={T} at={SORc} until={K.Outro - 0.1} texto="2 · dolor sordo" x={290} y={570} tam={42} borde={DL_LEN} />
-        <Chip T={T} at={C0 + 3.2} until={K.Outro - 0.1} texto="velocidad de tus nervios" x={700} y={900} tam={40} borde={KC.ink} />
+        <Chip T={T} at={PIQc} until={K.Outro - 0.1} texto="1 · piquete" x={740} y={370} tam={42} borde={DL_RAP} />
+        <Chip T={T} at={SORc} until={K.Outro - 0.1} texto="2 · dolor sordo" x={740} y={480} tam={42} borde={DL_LEN} />
+        <Chip T={T} at={C0 + 3.2} until={K.Outro - 0.1} texto="velocidad de tus nervios" x={740} y={600} tam={40} borde={KC.ink} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Dos - 0.1} texto="Te pegas: *dos dolores,* uno tras otro." />
