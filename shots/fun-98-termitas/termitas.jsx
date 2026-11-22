@@ -7,7 +7,7 @@
 
 const TC = { cuerpo:'#f3e7cf', cuerpo2:'#d8c6a2', cabeza:'#d39a4c', tierra:'#b5653a', tierra2:'#8f4a28', tierra3:'#6e3720', hueco:'#2a170d',
   panal:'#a8774a', panal2:'#5e3b22', huecoPanal:'#2e1b0f', nodulo:'#fffaf0', seta:'#f2ece0', setaC:'#8b7458', lamina:'#efe0d2', raiz:'#e3d6bd',
-  pasto:'#5aa63a', pasto2:'#3f8a2a', seco:'#e3b04b', hoja:'#9c7a2e', madera:'#8a5a2b', sabana:'#e9b44c', sabana2:'#d39a36', roca:'#cfc4ad', roca2:'#a99b80', alas:'rgba(232,238,248,.78)' };
+  pasto:'#5aa63a', pasto2:'#3f8a2a', seco:'#e3b04b', hoja:'#9c7a2e', madera:'#8a5a2b', sabana:'#4a3a1c', sabana2:'#d39a36', roca:'#5e5546', roca2:'#7d725e', alas:'rgba(232,238,248,.78)' };
 
 /* ---------- piezas ---------- */
 // Obrera de termita de perfil (mira a la derecha): abdomen pálido, cabeza ámbar, mandíbulas, antenas de cuentas, sin ojos. carga: nodo SVG en las mandíbulas.
@@ -135,7 +135,7 @@ function Bolitas({ T, lista, r = 11, color = TC.panal }) {
 // Mapa esquemático: África y Asia tropical (zona de las termitas cultivadoras) resaltadas en menta.
 function MapaAfroAsia({ T, at, x = 0, y = 0, s = 1 }) {
   const k = (d) => kclamp(kprog(T, at + d, at + d + 0.5, kEase.sale), 0, 1);
-  const beige = '#f6e3b4', menta = KC.mint;
+  const beige = '#5a4c30', menta = KC.mint;
   const africa = 'M 70 60 L 210 30 L 270 70 L 300 120 L 370 150 L 340 230 L 300 290 L 280 370 L 230 450 L 190 440 L 170 350 L 140 270 L 70 220 L 25 150 Z';
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <g opacity={k(0)}>
@@ -176,7 +176,7 @@ function RocaFosil({ T, x, y, p = 1, s = 1 }) {
     {[-180, -90, 0, 90, 180].map((yy, i) => <path key={i} d={`M -440 ${yy} Q -150 ${yy - 20 + i * 4} 120 ${yy + 10} T 445 ${yy - 6}`} stroke={TC.roca2} strokeWidth={4} fill="none" opacity=".7" />)}
     <path d="M -250 -40 Q -110 -110 40 -120 M 40 -120 Q 160 -60 230 30 M -250 -40 Q -180 60 -60 120 M -60 120 Q 90 100 230 30" stroke="#8d7f66" strokeWidth={16} fill="none" strokeLinecap="round" />
     {camaras.map(([cx, cy, rx, ry, panal], i) => <g key={i}>
-      <ellipse cx={cx} cy={cy} rx={rx * 0.5} ry={ry * 0.5} fill="#6e6250" stroke={KC.ink} strokeWidth={6} />
+      <ellipse cx={cx} cy={cy} rx={rx * 0.5} ry={ry * 0.5} fill="#2e281f" stroke={KC.ink} strokeWidth={6} />
       {panal && Array.from({ length: 9 }, (_, k) => { const ax = cx + (g() - 0.5) * rx * 0.7, ay = cy + (g() - 0.5) * ry * 0.6; return <path key={k} d={`M ${ax - 18} ${ay} q 10 -16 20 0 t 20 0`} stroke="#efe6d2" strokeWidth={6} fill="none" strokeLinecap="round" />; })}
     </g>)}
   </g>;
@@ -186,11 +186,12 @@ function RocaFosil({ T, x, y, p = 1, s = 1 }) {
 function Caja({ T, at, until, x, y, texto, tam = 32, centro = false }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube');
-  return <div style={{ position:'absolute', left:x, top:y, zIndex:42, opacity:e.o, transform:`${centro ? 'translateX(-50%) ' : ''}translateY(${e.y * 0.4}px)`, background:'rgba(244,239,228,.95)', border:`4px solid ${KC.ink}`,
-    borderRadius:14, padding:'6px 18px', font:`700 ${tam}px ${KF.mono}`, color:KC.ink, whiteSpace:'nowrap', boxShadow:`6px 6px 0 ${KC.ink}` }}>{texto}</div>;
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:42, opacity:e.o, transform:`${centro ? 'translateX(-50%) ' : ''}translateY(${e.y * 0.4}px)`, background:'rgba(16,23,40,.9)', border:'3px solid rgba(223,231,255,.5)',
+    borderRadius:14, padding:'6px 18px', font:`700 ${tam}px ${KF.mono}`, color:KC.texto, whiteSpace:'nowrap', boxShadow:'0 14px 34px rgba(0,0,0,.55)' }}>{texto}</div>;
 }
 // Subtítulo con *palabra clave* resaltada y _nombres científicos_ en cursiva (mismo diseño y zona que el Subtitulo del kit).
 function SubT({ T, at, until, texto, idx, color = KC.gold2, tam = 64 }) {
+  if (window.CINE_OPC && !window.CINE_OPC.subtitulos) return null;
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
@@ -274,7 +275,7 @@ function TermitasShot() {
       </Escena>
       {/* 4 · por dentro del montículo: las jóvenes comen la planta y con su popó arman el panal */}
       <Escena T={T} a={K.Pa} b={K.H} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:TC.tierra3 }}></div>
+        <div style={{ position:'absolute', inset:0, background:'#2e1a10' }}></div>
         {fsvg(<>
           {[[160, 470, 300], [880, 520, 260], [300, 1180, 360]].map(([tx, ty, w], i) => <path key={i} d={`M ${tx - w} ${ty} Q ${tx} ${ty - 70} ${tx + w} ${ty + 20}`} stroke={TC.hueco} strokeWidth={60} fill="none" strokeLinecap="round" opacity=".7" />)}
           <ellipse cx={540} cy={820} rx={430} ry={290} fill={TC.hueco} stroke={KC.ink} strokeWidth={8} />
@@ -296,7 +297,7 @@ function TermitasShot() {
       </Escena>
       {/* 6 · nódulos: bolitas blancas de esporas que comen las jóvenes para sembrar más panal */}
       <Escena T={T} a={K.B} b={K.V} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:TC.tierra3 }}></div>
+        <div style={{ position:'absolute', inset:0, background:'#2e1a10' }}></div>
         {fsvg(<>
           <ellipse cx={540} cy={820} rx={430} ry={290} fill={TC.hueco} stroke={KC.ink} strokeWidth={8} />
           <Panal x={540} y={850} w={600} h={380} seed={5} tono={0.35} nod={nodB} id="pB" />
@@ -316,7 +317,7 @@ function TermitasShot() {
       </Escena>
       {/* 7 · las obreras viejas se comen el panal maduro */}
       <Escena T={T} a={K.V} b={K.P} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:TC.tierra3 }}></div>
+        <div style={{ position:'absolute', inset:0, background:'#2e1a10' }}></div>
         {fsvg(<>
           <ellipse cx={540} cy={820} rx={430} ry={290} fill={TC.hueco} stroke={KC.ink} strokeWidth={8} />
           <Panal x={540} y={850} w={600} h={380} seed={5} tono={klerp(0.35, 1, madura)} nod={0.5} come={comido} id="pV" />
@@ -327,19 +328,19 @@ function TermitasShot() {
       <Escena T={T} a={K.P} b={K.Es} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <rect x={0} y={1010} width={KW} height={KH} fill={TC.tierra} stroke={KC.ink} strokeWidth={8} />
-          <Alado T={T} x={klerp(90, 190, aterriza)} y={klerp(620, 980, aterriza)} s={1.3} ang={klerp(-20, 0, aterriza)} />
-          <Alado T={T} x={klerp(560, 440, aterriza)} y={klerp(560, 985, aterriza)} s={1.3} ang={klerp(25, 0, aterriza)} fase={1} />
-          <TxtS x={170} y={1080} t="rey" tam={30} o={kprog(T, K.P + 1.2, K.P + 1.5)} />
-          <TxtS x={420} y={1085} t="reina" tam={30} o={kprog(T, K.P + 1.3, K.P + 1.6)} />
-          <Interrogacion T={T} x={300} y={800} tam={360} />
+          <rect x={0} y={1010} width={KW} height={KH} fill="#2f1a10" stroke={KC.ink} strokeWidth={8} />
+          <Alado T={T} x={klerp(120, 250, aterriza)} y={klerp(560, 960, aterriza)} s={2.1} ang={klerp(-20, 0, aterriza)} />
+          <Alado T={T} x={klerp(900, 720, aterriza)} y={klerp(520, 965, aterriza)} s={2.1} ang={klerp(25, 0, aterriza)} fase={1} />
+          <TxtS x={250} y={1100} t="rey" tam={36} o={kprog(T, K.P + 1.2, K.P + 1.5)} />
+          <TxtS x={720} y={1105} t="reina" tam={36} o={kprog(T, K.P + 1.3, K.P + 1.6)} />
+          <Interrogacion T={T} x={540} y={760} tam={380} />
         </>)}
       </Escena>
       {/* 9 · ¿de dónde sale el hongo? la mayoría: esporas del ambiente · unas pocas: lo trae el rey o la reina */}
       <Escena T={T} a={K.Es} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <rect x={0} y={1010} width={KW} height={KH} fill={TC.tierra} stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1010} width={KW} height={KH} fill="#2f1a10" stroke={KC.ink} strokeWidth={8} />
           <line x1={540} y1={680} x2={540} y2={1010} stroke={KC.ink} strokeWidth={8} strokeDasharray="22 14" />
           <Titanicus x={130} y={1014} s={0.4} id="tEs" />
           {Array.from({ length: 16 }, (_, i) => { const u = ((T - K.Es) * 0.35 + i / 16) % 1; return T > K.Es ? <ellipse key={i} cx={150 + u * 300 + Math.sin(T * 2 + i) * 14} cy={880 - Math.sin(u * Math.PI) * 150 + u * 100 + (i % 4) * 10}
@@ -353,7 +354,7 @@ function TermitasShot() {
       {/* 10 · el estudio: nidos fósiles con panal, Tanzania (publicado en 2016) */}
       <Escena T={T} a={K.E} b={K.O} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<RocaFosil T={T} x={540} y={910} s={0.8} p={kprog(T, K.E + 2.2, K.E + 2.9, kEase.sale)} />)}
+        {fsvg(<RocaFosil T={T} x={540} y={960} s={1.05} p={kprog(T, K.E - 0.2, K.E + 0.5, kEase.sale)} />)}
       </Escena>
       {/* 11 · origen: África, hace unos 30 millones de años (estimación ≈ 31 M) */}
       <Escena T={T} a={K.O} b={K.Ti} zoom={0.04}>
@@ -365,7 +366,7 @@ function TermitasShot() {
             <circle cx={X(ma)} cy={720} r={22 * k} fill={c} stroke={KC.ink} strokeWidth={6} />
             <TxtS x={X(ma)} y={i === 1 ? 800 : 668} t={t} tam={32} o={kclamp(k, 0, 1)} />
           </g> : null; })}
-          <g transform="translate(330 860) scale(0.62)"><MapaAfroAsia T={T} at={K.O + 1.6} /></g>
+          <g transform="translate(130 880) scale(0.92)"><MapaAfroAsia T={T} at={K.O + 0.6} /></g>
         </>; })())}
       </Escena>
       {/* 12 · con las lluvias, del montículo brota T. titanicus; su pseudorriza baja hasta el panal */}
@@ -430,10 +431,10 @@ function TermitasShot() {
       <Caja T={T} at={K.Es + 3.4} until={K.E - 0.3} x={810} y={880} centro texto={<span><i>Macrotermes bellicosus</i>: el rey</span>} tam={22} />
       <Caja T={T} at={K.Es + 3.8} until={K.E - 0.3} x={810} y={945} centro texto={<span><i>Microtermes</i>: la reina</span>} tam={22} />
       <Etq T={T} at={K.Es + 3.9} until={K.E - 0.3} x={820} y={710} lado="izq" texto="hongo adentro" tam={26} color={KC.texto} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.3} anio="2016" quien="Tanzania · cuenca del Rukwa" revista="Roberts y col. · PLoS ONE" x={540} y={760} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.3} anio="2016" quien="Tanzania · cuenca del Rukwa" revista="Roberts y col. · PLoS ONE" x={540} y={400} />
       <Chip T={T} at={K.E + 2.6} until={K.O - 0.3} texto="≈ 25 millones de años" x={330} y={470} tam={38} borde={KC.gold} />
-      <Etq T={T} at={K.E + 3.2} until={K.O - 0.3} x={60} y={590} texto="nido fósil (roca)" tam={30} color={KC.ink} />
-      <Caja T={T} at={K.E + 3.8} until={K.O - 0.3} x={80} y={1030} texto="panal petrificado · esquemático" tam={24} />
+      <Etq T={T} at={K.E + 3.2} until={K.O - 0.3} x={60} y={640} texto="nido fósil (roca)" tam={30} color={KC.ink} />
+      <Caja T={T} at={K.E + 3.8} until={K.O - 0.3} x={80} y={1270} texto="panal petrificado · esquemático" tam={24} />
       <Chip T={T} at={K.O + 0.2} until={K.Ti - 0.3} texto="nació en África" x={540} y={470} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.O + 1.4} until={K.Ti - 0.3} x={60} y={560} texto="estimación (no edad exacta)" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Ti + 0.2} until={K.Ti + 2.5} texto="temporada de lluvias" x={540} y={300} tam={40} borde={KC.ink} />

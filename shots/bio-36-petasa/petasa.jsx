@@ -108,8 +108,8 @@ function Reactor({ T, x, y, nivel = 1, hojuelas = 1 }) {
   const hj = Array.from({ length: 22 }, () => [R() * 260 - 130, R() * 300 + 60, R() * 360]);
   const th = T * 4;
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-170} y={-60} width={340} height={480} rx={40} fill="#c9d3e0" stroke={KC.ink} strokeWidth={9} />
-    <rect x={-150} y={-40 + (1 - nivel) * 300} width={300} height={440 - (1 - nivel) * 300} rx={26} fill="#e8f6ff" opacity=".9" />
+    <rect x={-170} y={-60} width={340} height={480} rx={40} fill="#3e4858" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-150} y={-40 + (1 - nivel) * 300} width={300} height={440 - (1 - nivel) * 300} rx={26} fill="#2a5a78" opacity=".9" />
     {hj.map(([hx, hy, r], i) => i / hj.length < hojuelas ? <rect key={i} x={hx - 16} y={hy - 8} width={32} height={16} rx={4} fill="#bfeaff" stroke={KC.ink} strokeWidth={3} transform={`rotate(${r + T * 40} ${hx} ${hy})`} /> : null)}
     <line x1={0} y1={-120} x2={0} y2={330} stroke={KC.ink} strokeWidth={10} />
     <g transform={`translate(0 330) scale(${Math.cos(th)} 1)`}><rect x={-80} y={-14} width={160} height={28} rx={10} fill="#9aa3b5" stroke={KC.ink} strokeWidth={5} /></g>
@@ -120,16 +120,16 @@ function Reactor({ T, x, y, nivel = 1, hojuelas = 1 }) {
 function Podio({ x, y }) {
   return <g transform={`translate(${x} ${y})`}>
     <rect x={-120} y={-200} width={240} height={200} fill={KC.gold2} stroke={KC.ink} strokeWidth={8} />
-    <rect x={-360} y={-120} width={240} height={120} fill="#d9dde6" stroke={KC.ink} strokeWidth={8} />
-    <text x={0} y={-70} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.ink}>1</text>
+    <rect x={-360} y={-120} width={240} height={120} fill="#4e5668" stroke={KC.ink} strokeWidth={8} />
+    <text x={0} y={-70} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill="#0b1020">1</text>
     <text x={-240} y={-28} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.ink}>2</text>
   </g>;
 }
 function Planta({ T, x, y, grua = 0 }) {
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-360} y={-200} width={520} height={260} fill="#d9dde6" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-360} y={-200} width={520} height={260} fill="#4a5262" stroke={KC.ink} strokeWidth={8} />
     {[0, 1, 2, 3].map((i) => <rect key={i} x={-330 + i * 120} y={-160} width={80} height={80} fill={i % 2 ? '#bfeaff' : 'rgba(0,0,0,.25)'} stroke={KC.ink} strokeWidth={5} />)}
-    <rect x={160} y={-330} width={90} height={390} fill="#9aa3b5" stroke={KC.ink} strokeWidth={8} />
+    <rect x={160} y={-330} width={90} height={390} fill="#5d6678" stroke={KC.ink} strokeWidth={8} />
     <path d="M -360 -200 L -360 -250 L -200 -250" stroke={KC.ink} strokeWidth={6} fill="none" strokeDasharray="20 14" />
     <g>{/* grúa detenida */}
       <rect x={-470} y={-560} width={36} height={620} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
@@ -211,10 +211,10 @@ function Petasa() {
       <Escena T={T} a={K.G} b={K.Lo} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <ellipse cx={380} cy={1180} rx={180 * (0.6 + 0.4 * cae)} ry={26} fill="rgba(0,0,0,.18)" />
-          <BotellaPET x={380} y={klerp(-400, 960, cae) - rebote} rot={klerp(-30, 78, cae) - rebote * 0.1} aplasta={0.55} T={T} />
+          <ellipse cx={540} cy={1250} rx={300 * (0.6 + 0.4 * cae)} ry={40} fill="rgba(0,0,0,.18)" />
+          <BotellaPET x={540} y={klerp(420, 960, cae) - rebote * 1.5} s={1.55} rot={klerp(-30, 78, cae) - rebote * 0.1} aplasta={0.55} T={T} />
         </SvgCapa>
-        <Escala T={T} z={1} pxPorMm={PX_MM} x={60} y={1640} color={KC.ink} />
+        <Escala T={T} z={1.55} pxPorMm={PX_MM} x={60} y={1640} color={KC.ink} />
       </Escena>
       {/* 1–2 · la planta de reciclaje, el lodo y la Lupa */}
       <Escena T={T} a={K.Lo} b={K.Pe} zoom={0.05}>
@@ -229,13 +229,13 @@ function Petasa() {
         </SvgCapa>
         <Escala T={T} z={0.6} pxPorMm={PX_MM} x={60} y={1640} color={KC.ink} />
       </Escena>
-      <Lupa T={T} at={K.No + 0.15} until={K.Pe - 0.2} x={400} y={800} r={250} fx={560} fy={1070} tinte={KC.mint} etiqueta="AL MICROSCOPIO · esquemático"
-        interior={(T2, r) => <svg width={r * 2} height={r * 2}>
+      <Lupa T={T} at={K.No + 0.15} until={K.Pe - 0.2} x={520} y={700} r={340} fx={560} fy={1070} tinte={KC.mint} etiqueta="AL MICROSCOPIO · esquemático"
+        interior={(T2, rr) => { const r = 250; return <svg width={rr * 2} height={rr * 2}><g transform={`scale(${rr / 250})`}>
           <rect width={r * 2} height={r * 2} fill="#0b1a24" />
           <PeliculaMicro T={T2} x={-20} y={r * 1.25} w={r * 2 + 40} h={r} come={kprog(T2, K.No + 0.6, K.Pe)} />
           {[[150, 290, -8, 1], [300, 300, 12, 2], [420, 285, -4, 3], [230, 200, 25, 4], [370, 190, -30, 5]].map(([bx, by, br, sd], i) =>
             <Bacteria key={i} T={T2} x={bx + mece(T2, sd, 0.3) * 8} y={by + mece(T2, sd + 4, 0.3) * 6} largo={120} ancho={44} rot={br} color="#f7b2d0" seed={sd} />)}
-        </svg>} />
+        </g></svg>; }} />
       {/* 3–5 · por dentro: la cadena de PET, la PETasa, la MHETasa y las dos piezas */}
       <Escena T={T} a={K.Pe} b={K.Pr} zoom={0.03}>
         <FondoMarca patron="oscuro" />
@@ -280,14 +280,14 @@ function Petasa() {
       <Escena T={T} a={K.Le} b={K.Fr} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <g transform="translate(110 790)">
+          <g transform="translate(70 760) scale(1.15)">
             <rect x={0} y={0} width={400} height={300} rx={8} fill={PET_AZUL} stroke={KC.ink} strokeWidth={7} />
             {Array.from({ length: 14 }, (_, i) => { const R = krng(i + 40), hx = 30 + R() * 340, hy = 30 + R() * 240, k = kprog(dias, i * 2, 42) ;
               return <ellipse key={i} cx={hx} cy={hy} rx={10 + k * 70} ry={8 + k * 50} fill={KC.cyan} stroke="rgba(22,18,15,.5)" strokeWidth={3} opacity={k > 0 ? 1 : 0} />; })}
             <text x={200} y={340} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>película de PET</text>
           </g>
-          <Calendario T={T} x={580} y={760} dias={dias} />
-          <g transform="translate(120 1430)" opacity={kprog(T, K.Le + 2.4, K.Le + 2.8)}>
+          <g transform="translate(560 740) scale(1.1)"><Calendario T={T} x={0} y={0} dias={dias} /></g>
+          <g transform="translate(110 1290)" opacity={kprog(T, K.Le + 2.4, K.Le + 2.8)}>
             <text x={0} y={0} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>de canto, aumentado:</text>
             <rect x={0} y={20} width={560} height={76} rx={8} fill="#ffe11a" stroke={KC.ink} strokeWidth={5} />
             <text x={580} y={72} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>tarjeta 0.76 mm</text>
@@ -295,8 +295,8 @@ function Petasa() {
             <text x={580} y={142} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>película 0.2 mm</text>
           </g>
         </SvgCapa>
-        <TarjetaEstudio T={T} at={K.Le + 0.1} until={K.Le + 2.2} anio="2016" quien="Yoshida et al. · Japón" revista="Science · a 30 °C" y={600} />
-        <Chip T={T} at={K.Le + 2.6} until={K.Fr - 0.2} texto="30 °C · 6 semanas" x={310} y={700} tam={38} borde={KC.red} />
+        <TarjetaEstudio T={T} at={K.Le + 0.1} until={K.Le + 2.2} anio="2016" quien="Yoshida et al. · Japón" revista="Science · a 30 °C" y={560} />
+        <Chip T={T} at={K.Le + 2.6} until={K.Fr - 0.2} texto="30 °C · 6 semanas" x={300} y={680} tam={38} borde={KC.red} />
       </Escena>
       {/* 8 · 2020, Francia: la enzima de composta mejorada */}
       <Escena T={T} a={K.Fr} b={K.Di} zoom={0.04}>
@@ -307,30 +307,32 @@ function Petasa() {
             abre={0.5 + 0.5 * Math.sin(T * 6)} chispas={kprog(T, K.Fr + 2.0, K.Fr + 2.6, kEase.rebote)} T={T} />; })()}
         </SvgCapa>
         <Etiqueta T={T} at={K.Fr + 1.0} until={K.Di - 0.2} x={700} y={830} texto="de composta" color={KC.ink} tam={34} />
-        <TarjetaEstudio T={T} at={K.Fr + 1.4} until={K.Di - 0.2} anio="2020" quien="Tournier et al. · Francia" revista="Nature · enzima mejorada" y={560} />
+        <TarjetaEstudio T={T} at={K.Fr + 1.4} until={K.Di - 0.2} anio="2020" quien="Tournier et al. · Francia" revista="Nature · enzima mejorada" x={610} y={400} />
         <Chip T={T} at={K.Fr + 2.0} until={K.Di - 0.2} texto="enzima de composta, mejorada" y={1500} tam={38} borde={ENZ_L} />
       </Escena>
       {/* 9 · 90 % en 10 horas → botellas nuevas */}
       <Escena T={T} a={K.Di} b={K.Cu} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Reactor T={T} x={290} y={720} hojuelas={1 - 0.9 * kprog(T, K.Di + 0.3, K.Di + 3.2)} />
-          <text x={290} y={1490} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.ink}>{kformato(horas, 0)} horas</text>
+          <g transform="translate(540 660) scale(1.25)"><Reactor T={T} x={0} y={0} hojuelas={1 - 0.9 * kprog(T, K.Di + 0.3, K.Di + 3.2)} /></g>
+          <text x={540} y={1335} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={KC.ink}>{kformato(horas, 0)} horas</text>
           {Array.from({ length: 5 }, (_, i) => { const t0 = K.Di + 3.3 + i * 0.25, e = kprog(T, t0, t0 + 0.4, kEase.rebote);
-            return e > 0 ? <BotellaPET key={i} x={160 + i * 190} y={1630} s={0.42 * e} nueva={1} T={T + i} etiqueta={[KC.pink, KC.orange, KC.blue, KC.red, KC.teal][i]} /> : null; })}
+            return e > 0 ? <BotellaPET key={i} x={160 + i * 190} y={1420} s={0.3 * e} nueva={1} T={T + i} etiqueta={[KC.pink, KC.orange, KC.blue, KC.red, KC.teal][i]} /> : null; })}
         </SvgCapa>
-        <Medidor T={T} at={K.Di + 0.2} until={K.Cu - 0.2} valor={(t) => 0.9 * kprog(t, K.Di + 0.3, K.Di + 3.2, kEase.suave)} etiqueta="PET partido" color={ENZ_L} />
+        <Medidor T={T} at={K.Di + 0.2} until={K.Cu - 0.2} valor={(t) => 0.9 * kprog(t, K.Di + 0.3, K.Di + 3.2, kEase.suave)} etiqueta="PET partido" color={ENZ_L} y={222} />
       </Escena>
       {/* 10 · le ganó */}
       <Escena T={T} a={K.Cu} b={K.Pl} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(600 1150) scale(1.35) translate(-480 -1170)">
           <Podio x={480} y={1170} />
           <EnzimaTijera x={480} y={klerp(700, 860, kprog(T, K.Cu + 0.2, K.Cu + 0.7, kEase.rebote))} s={1.1} color={ENZ_L} abre={0.5 + 0.5 * Math.sin(T * 7)} chispas={1} T={T} />
           <EnzimaTijera x={240} y={klerp(800, 950, kprog(T, K.Cu + 0.5, K.Cu + 1.0, kEase.rebote))} s={0.9} color={ENZ_P} abre={0.2} />
+          </g>
         </SvgCapa>
-        <Chip T={T} at={K.Cu + 0.8} until={K.Pl - 0.2} texto="1 · composta (mejorada, 2020)" y={1470} tam={34} borde={ENZ_L} />
-        <Chip T={T} at={K.Cu + 1.2} until={K.Pl - 0.2} texto="2 · PETasa de Ideonella" y={1560} tam={34} borde={ENZ_P} />
+        <Chip T={T} at={K.Cu + 0.8} until={K.Pl - 0.2} texto="1 · composta (mejorada, 2020)" y={1270} tam={34} borde={ENZ_L} />
+        <Chip T={T} at={K.Cu + 1.2} until={K.Pl - 0.2} texto="2 · PETasa de Ideonella" y={1360} tam={34} borde={ENZ_P} />
       </Escena>
       {/* 11 · la planta, en pausa */}
       <Escena T={T} a={K.Pl} b={K.Re} zoom={0.04}>
@@ -348,7 +350,7 @@ function Petasa() {
       <Escena T={T} a={K.Re} b={FIN} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Contenedor x={760} y={980} />
+          <Contenedor x={750} y={960} s={1.3} />
           <BotellaPET x={botR.x} y={botR.y} rot={klerp(78, 160, lleva)} aplasta={0.55} s={klerp(1, 0.55, lleva)} />
           {T < K.Re + 2.2 && <g opacity={1 - kprog(T, K.Re + 1.8, K.Re + 2.2)}><Mano x={botR.x + 20} y={klerp(500, botR.y - 160, kprog(T, K.Re + 0.2, K.Re + 0.9, kEase.sale))} rot={-8} cierra={recoge} /></g>}
           {T > K.Ci && (() => { const e = kprog(T, K.Ci + 0.5, K.Ci + 1.3, kEase.rebote); return <BotellaPET x={330} y={klerp(1200, 940, e)} s={klerp(0.2, 1, e)} nueva={1} T={T} etiqueta={KC.teal} />; })()}
@@ -359,10 +361,10 @@ function Petasa() {
 
       {/* capítulos y textos del gancho */}
       <Capitulo T={T} hasta={K.Ou} caps={[{ at: K.Lo + 0.2, titulo: 'La bacteria' }, { at: K.Pe + 0.2, titulo: 'Las tijeras' }, { at: K.Fr + 0.2, titulo: 'La enzima mejorada' }]} />
-      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.3} until={K.G + 2.0} texto="basura" x={300} y={500} tam={54} />
-      <Chip T={T} at={K.G + 2.0} until={K.Lo - 0.2} texto="comida para una bacteria" x={330} y={500} tam={38} borde={KC.mint} />
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.3} until={K.G + 2.0} texto="basura" x={540} y={330} tam={54} />
+      <Chip T={T} at={K.G + 2.0} until={K.Lo - 0.2} texto="comida para una bacteria" x={540} y={330} tam={38} borde={KC.mint} />
       <Chip T={T} at={K.Lo + 1.0} until={K.No - 0.1} texto="planta de reciclaje · Sakai, Japón" y={1500} tam={36} borde={KC.red} />
-      <Etiqueta T={T} at={K.No + 0.9} until={K.Pe - 0.2} x={170} y={1500} texto="Ideonella sakaiensis" it tam={44} color={KC.ink} />
+      <Etiqueta T={T} at={K.No + 0.9} until={K.Pe - 0.2} x={170} y={1420} texto="Ideonella sakaiensis" it tam={44} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Lo - 0.1} texto="No es basura: *es comida.*" />

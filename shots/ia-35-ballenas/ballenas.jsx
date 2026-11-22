@@ -37,14 +37,23 @@ function Monito({ x, y, s = 1 }) {
     <circle r={9} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />
   </g>;
 }
+// Ficha con letra oscura fija: en estilo cine KC.ink es claro y no se leía sobre el color de la ficha.
+function FichaB({ x, y, texto, color = KC.yellow, s = 1, rot = 0, o = 1, tam = 44 }) {
+  const w = Math.max(70, texto.length * tam * 0.62 + 40);
+  return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={o}>
+    <rect x={-w / 2} y={-tam * 0.85} width={w} height={tam * 1.7} rx={18} fill={color} stroke={KC.ink} strokeWidth={6} />
+    <text x={0} y={tam * 0.32} textAnchor="middle" style={{ font:`700 ${tam}px ${KF.mono}` }} fill="#0b1020">{texto}</text>
+  </g>;
+}
 // Mapa esquemático de las Antillas Menores con Dominica resaltada.
 const ISLAS = [[-66.5, 18.2, 34, 9], [-64.7, 18.4, 6, 4], [-63.05, 18.2, 5, 3], [-62.75, 17.3, 5, 4], [-61.8, 17.07, 7, 6], [-61.55, 16.2, 12, 9],
   [-61.35, 15.4, 9, 13], [-61.0, 14.65, 9, 12], [-60.97, 13.9, 6, 9], [-61.2, 13.25, 5, 7], [-61.68, 12.1, 5, 6], [-59.55, 13.15, 6, 6], [-61.3, 10.5, 22, 16]];
-function MapaCaribe({ T, at, x0 = 80, y0 = 690 }) {
-  const e = kprog(T, at, at + 0.6, kEase.sale), px = (lon) => x0 + (lon + 67) * 55, py = (lat) => y0 + (19 - lat) * 52;
+function MapaCaribe({ T, at, aparece = at, x0 = 80, y0 = 690 }) {
+  const e = kprog(T, aparece, aparece + 0.6, kEase.sale), px = (lon) => x0 + (lon + 67) * 55, py = (lat) => y0 + (19 - lat) * 52;
   const dx = px(-61.35), dy = py(15.4), pul = 1 + 0.15 * Math.sin(T * 5);
   return <g opacity={e}>
-    <rect x={x0 - 10} y={y0 - 20} width={470} height={500} rx={30} fill="#7fd9f2" stroke={KC.ink} strokeWidth={7} />
+    <rect x={x0 - 10} y={y0 - 20} width={470} height={500} rx={30} fill="#123f52" stroke={KC.ink} strokeWidth={7} />
+    <g opacity={kprog(T, at - 0.2, at + 0.4)}><Cachalote x={dx - 150} y={dy + 120} s={0.22} T={T} halo={BAZUL} /></g>
     {ISLAS.map(([lo, la, rx, ry], i) => i === 6 ? null : <ellipse key={i} cx={px(lo)} cy={py(la)} rx={rx} ry={ry} fill="#bfe3b4" stroke={KC.ink} strokeWidth={4} />)}
     <circle cx={dx} cy={dy} r={34 * pul} fill="none" stroke={KC.red} strokeWidth={6} opacity={kprog(T, at + 0.5, at + 0.9)} />
     <ellipse cx={dx} cy={dy} rx={11} ry={16} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
@@ -123,9 +132,9 @@ function Ballenas() {
   const sube = (a) => (1 - kprog(T, a, a + 0.8, kEase.sale)) * 500;
   // rubato: la duración de las codas cambia poco a poco; la ballena que contesta copia con retraso
   const estira = (d) => kprog(T, K.R + 0.5 + d, K.R + 3.0 + d, kEase.suave);
-  const filaRubato = (y, col, d) => { let xx = 200; const out = [];
-    for (let k = 0; k < 4; k++) { const f = 1 + 0.22 * k * estira(d), w = 100 * f; out.push(<g key={k}>
-      <Coda x={xx} y={y} ancho={w} pos={RITMOS[0]} color={col} r={9} />
+  const filaRubato = (y, col, d) => { let xx = 140; const out = [];
+    for (let k = 0; k < 4; k++) { const f = 1 + 0.22 * k * estira(d), w = 120 * f; out.push(<g key={k}>
+      <Coda x={xx} y={y} ancho={w} pos={RITMOS[0]} color={col} r={11} />
       <line x1={xx} y1={y - 44} x2={xx + w} y2={y - 44} stroke={KC.ink} strokeWidth={5} /><line x1={xx} y1={y - 54} x2={xx} y2={y - 34} stroke={KC.ink} strokeWidth={5} />
       <line x1={xx + w} y1={y - 54} x2={xx + w} y2={y - 34} stroke={KC.ink} strokeWidth={5} /></g>); xx += w + 38; }
     return out; };
@@ -138,128 +147,137 @@ function Ballenas() {
         <FondoLunares color={KC.cyan} />
         <Ambiente T={T} n={26} color="rgba(255,255,255,.5)" />
         {svg(<>
-          <TiraClics T={T} y={780} morse={1 - kprog(T, K.G + 1.4, K.G + 2.2)} />
-          <g transform={`translate(0 ${sube(K.G + 0.5)})`}><Cachalote x={210} y={960} s={0.72} T={T} halo={BAZUL} /></g>
-          <g transform={`translate(0 ${sube(K.G + 0.8)})`}><Cachalote x={870} y={985} s={0.72} dir={-1} T={T} halo={BNAR} seed={3} /></g>
+          <TiraClics T={T} y={440} morse={1 - kprog(T, K.G + 1.4, K.G + 2.2)} />
+          <g transform={`translate(${-(1 - kprog(T, K.G, K.G + 1.6, kEase.sale)) * 90} 0)`}><Cachalote x={420} y={930} s={1.35} T={T} halo={BAZUL} /></g>
+          <g transform={`translate(${(1 - kprog(T, K.G, K.G + 1.6, kEase.sale)) * 90} 0)`}><Cachalote x={680} y={1260} s={1.35} dir={-1} T={T} halo={BNAR} seed={3} /></g>
           <g opacity={kprog(T, L1 + 0.2, L1 + 0.8)}>
-            <text x={540} y={620} textAnchor="middle" style={{ font:`400 230px ${KF.titulo}` }} fill="none" stroke={KC.ink} strokeWidth={22} strokeDasharray="0.1 34" strokeLinecap="round">A B C</text>
+            <text x={540} y={720} textAnchor="middle" style={{ font:`400 230px ${KF.titulo}` }} fill="none" stroke={KC.ink} strokeWidth={22} strokeDasharray="0.1 34" strokeLinecap="round">A B C</text>
           </g>
         </>)}
       </Escena>
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 2.0} until={L1 - 0.2} texto="¿código Morse?" x={290} y={560} tam={44} />
-      <Chip T={T} at={L1 + 0.9} until={K.Co - 0.2} texto="como un alfabeto" x={540} y={1100} tam={40} borde={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 2.0} until={L1 - 0.2} texto="¿código Morse?" x={540} y={300} tam={44} />
+      <Chip T={T} at={L1 + 0.9} until={K.Co - 0.2} texto="como un alfabeto" x={540} y={1490} tam={40} borde={KC.ink} />
       {/* 2 · una coda; antes, 21 tipos */}
       <Escena T={T} a={K.Co} b={K.E}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <Coda x={110} y={480} ancho={460} pos={RITMOS[1]} color={BAZUL} r={22} n={Math.floor((T - K.Co - 0.1) / 0.14)} />
-          <path d={`M 100 530 Q 100 560 130 560 L 550 560 Q 580 560 580 530`} fill="none" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.Co + 0.8, K.Co + 1.1)} />
+          <Cachalote x={500} y={540} s={1.2} T={T} halo={BAZUL} />
+          <Coda x={190} y={800} ancho={700} pos={RITMOS[1]} color={BAZUL} r={26} n={Math.floor((T - K.Co - 0.1) / 0.14)} />
+          <path d={`M 175 856 Q 175 886 205 886 L 875 886 Q 905 886 905 856`} fill="none" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.Co + 0.8, K.Co + 1.1)} />
           {Array.from({ length: 21 }, (_, i) => { const c = i % 7, f = Math.floor(i / 7), on = kprog(T, K.Co + 1.6 + i * 0.06, K.Co + 1.9 + i * 0.06, kEase.sale), rr = krng(i + 4);
             const pos = RITMOS[i % 7].map((p) => Math.min(1, p * (0.7 + rr() * 0.3)));
-            return <g key={i} opacity={on} transform={`translate(${148 + c * 116} ${770 + f * 112}) scale(${0.6 + 0.4 * on})`}>
+            return <g key={i} opacity={on} transform={`translate(${132 + c * 136} ${1110 + f * 128}) scale(${(0.6 + 0.4 * on) * 1.2})`}>
               <rect x={-50} y={-44} width={100} height={88} rx={14} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
               <Coda x={-36} y={0} ancho={72} pos={pos} color={i % 2 ? BNAR : BAZUL} r={6} />
             </g>; })}
         </>)}
       </Escena>
-      <Chip T={T} at={K.Co + 0.9} until={K.E - 0.2} texto="1 coda = una serie de clics" x={340} y={620} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Co + 2.6} until={K.E - 0.2} texto="antes: 21 tipos de coda" x={540} y={1130} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 0.9} until={K.E - 0.2} texto="1 coda = una serie de clics" x={540} y={965} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 2.6} until={K.E - 0.2} texto="antes: 21 tipos de coda" x={540} y={1500} tam={38} borde={KC.ink} />
       {/* 3 · el estudio */}
       <Escena T={T} a={K.E} b={K.Pi}>
         <FondoLunares color={KC.mint} />
-        {svg(<>{T > K.E + 3.0 && <MapaCaribe T={T} at={K.E + 3.2} />}</>)}
+        {svg(<g transform="translate(540 820) scale(1.5) translate(-305 -920)"><MapaCaribe T={T} at={K.E + 3.2} aparece={K.E} /></g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.1} anio="2024" quien="MIT CSAIL + Proyecto CETI" revista="Sharma et al. · Nature Communications" y={640} />
-      <NumeroGigante T={T} at={K.E + 3.6} until={K.Pi - 0.2} valor={8719} dur={1.4} etiqueta="codas analizadas" x={790} y={900} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.E + 4.6} until={K.Pi - 0.2} texto="grabadas de 2005 a 2018" x={790} y={1060} tam={28} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.1} anio="2024" quien="MIT CSAIL + Proyecto CETI" revista="Sharma et al. · Nature Communications" y={330} />
+      <NumeroGigante T={T} at={K.E + 3.6} until={K.Pi - 0.2} valor={8719} dur={1.4} etiqueta="codas analizadas" x={540} y={1335} tam={116} color={KC.yellow} />
+      <Chip T={T} at={K.E + 4.6} until={K.Pi - 0.2} texto="grabadas de 2005 a 2018" x={540} y={1495} tam={28} borde={KC.ink} />
       {/* 4 · cuatro piezas: análisis por computadora */}
       <Escena T={T} a={K.Pi} b={K.R}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {svg(<>
-          <GraficaIntercambio T={T} at={K.Pi + 0.1} />
-          <Histograma T={T} at={K.Pi + 0.3} />
-          <Ficha x={300} y={1020} texto="ritmo" color={KC.cyan} o={kprog(T, K.Pi + 1.6, K.Pi + 1.9)} s={klerp(0.6, 1, kprog(T, K.Pi + 1.6, K.Pi + 1.9, kEase.rebote))} tam={40} />
-          <Ficha x={760} y={1020} texto="tempo" color={KC.yellow} o={kprog(T, K.Pi + 1.9, K.Pi + 2.2)} s={klerp(0.6, 1, kprog(T, K.Pi + 1.9, K.Pi + 2.2, kEase.rebote))} tam={40} />
-          <Ficha x={300} y={1120} texto="rubato ★" color={KC.pink} o={kprog(T, K.Pi + 2.4, K.Pi + 2.7)} s={klerp(0.6, 1, kprog(T, K.Pi + 2.4, K.Pi + 2.7, kEase.rebote))} tam={40} />
-          <Ficha x={760} y={1120} texto="ornamento ★" color={KC.mint} o={kprog(T, K.Pi + 2.8, K.Pi + 3.1)} s={klerp(0.6, 1, kprog(T, K.Pi + 2.8, K.Pi + 3.1, kEase.rebote))} tam={40} />
+          <GraficaIntercambio T={T} at={K.Pi + 0.1} y={390} />
+          <Histograma T={T} at={K.Pi + 0.3} y={610} />
+          <Cachalote x={330} y={1250} s={0.95} T={T} halo={BAZUL} />
+          <Cachalote x={760} y={1400} s={0.95} dir={-1} T={T} halo={BNAR} seed={3} />
+          <FichaB x={300} y={920} texto="ritmo" color={KC.cyan} o={kprog(T, K.Pi + 1.6, K.Pi + 1.9)} s={klerp(0.6, 1, kprog(T, K.Pi + 1.6, K.Pi + 1.9, kEase.rebote))} tam={40} />
+          <FichaB x={760} y={920} texto="tempo" color={KC.yellow} o={kprog(T, K.Pi + 1.9, K.Pi + 2.2)} s={klerp(0.6, 1, kprog(T, K.Pi + 1.9, K.Pi + 2.2, kEase.rebote))} tam={40} />
+          <FichaB x={300} y={1020} texto="rubato ★" color={KC.pink} o={kprog(T, K.Pi + 2.4, K.Pi + 2.7)} s={klerp(0.6, 1, kprog(T, K.Pi + 2.4, K.Pi + 2.7, kEase.rebote))} tam={40} />
+          <FichaB x={760} y={1020} texto="ornamento ★" color={KC.mint} o={kprog(T, K.Pi + 2.8, K.Pi + 3.1)} s={klerp(0.6, 1, kprog(T, K.Pi + 2.8, K.Pi + 3.1, kEase.rebote))} tam={40} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.Pi + 0.1} until={K.R - 0.2} texto="computadora: agrupar + estadística" x={540} y={400} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.Pi + 0.1} until={K.R - 0.2} texto="computadora: agrupar + estadística" x={540} y={300} tam={34} borde={KC.cyan} />
       {/* 5 · rubato */}
       <Escena T={T} a={K.R} b={K.O}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Cachalote x={90} y={820} s={0.2} T={T} halo={BAZUL} /><Cachalote x={90} y={1060} s={0.2} T={T} halo={BNAR} seed={3} />
-          {filaRubato(820, BAZUL, 0)}{filaRubato(1060, BNAR, 0.5)}
+          <Cachalote x={540} y={620} s={1.05} T={T} halo={BAZUL} /><Cachalote x={540} y={1320} s={1.05} dir={-1} T={T} halo={BNAR} seed={3} />
+          {filaRubato(880, BAZUL, 0)}{filaRubato(1080, BNAR, 0.5)}
         </>)}
       </Escena>
-      <Chip T={T} at={K.R + 0.2} until={K.O - 0.2} texto="rubato" x={250} y={420} tam={52} borde={KC.pink} />
-      <Chip T={T} at={K.R + 2.2} until={K.O - 0.2} texto="la que contesta lo imita" x={350} y={560} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.R + 0.2} until={K.O - 0.2} texto="rubato" x={540} y={330} tam={52} borde={KC.pink} />
+      <Chip T={T} at={K.R + 2.2} until={K.O - 0.2} texto="la que contesta lo imita" x={540} y={1490} tam={34} borde={KC.ink} />
       {/* 6 · ornamento */}
       <Escena T={T} a={K.O} b={K.P}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Cachalote x={540} y={600} s={0.5} T={T} halo={BAZUL} />
+          <Cachalote x={540} y={640} s={1.1} T={T} halo={BAZUL} />
+          <g transform="translate(540 940) scale(1.15) translate(-460 -860)">
           <Coda x={90} y={860} ancho={190} pos={RITMOS[0].map((p) => p * 0.8)} color={BAZUL} r={13} />
           <Coda x={330} y={860} ancho={190} pos={RITMOS[0].map((p) => p * 0.8)} color={BAZUL} r={13} />
           <Coda x={590} y={860} ancho={240} pos={[0, .16, .32, .48, .64, .94]} color={BAZUL} r={15} n={T < K.O + 1.0 ? 5 : 6} brillo={T >= K.O + 1.0 ? 5 : -1} />
           {T >= K.O + 1.0 && <Monito x={590 + 0.94 * 240} y={800} s={klerp(0.3, 1, kprog(T, K.O + 1.0, K.O + 1.4, kEase.rebote))} />}
+          </g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.O + 0.2} until={K.P - 0.2} texto="ornamento: un clic extra" x={540} y={420} tam={44} borde={KC.mint} />
-      <Chip T={T} at={K.O + 1.5} until={K.P - 0.2} texto="≈ 4 % de las codas en intercambios" x={540} y={1040} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.O + 0.2} until={K.P - 0.2} texto="ornamento: un clic extra" x={540} y={330} tam={44} borde={KC.mint} />
+      <Chip T={T} at={K.O + 1.5} until={K.P - 0.2} texto="≈ 4 % de las codas en intercambios" x={540} y={1150} tam={32} borde={KC.ink} />
       {/* 7 · pregunta */}
       <Escena T={T} a={K.P} b={K.Cb} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
+        {svg(<text x={540} y={1180} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 1020)`}>?</text>)}
       </Escena>
       {/* 8 · se combinan: de 21 a 143+ (la imagen que se llena) */}
       <Escena T={T} a={K.Cb} b={K.Oj}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
           {Array.from({ length: 143 }, (_, i) => { const c = i % 13, f = Math.floor(i / 13), on = i < lit;
-            return <rect key={i} x={110 + c * 42} y={710 + f * 42} width={36} height={36} rx={7} fill={on ? colCelda[i] : 'rgba(0,0,0,.07)'} stroke={on ? KC.ink : 'rgba(0,0,0,.15)'} strokeWidth={on ? 3 : 2} />; })}
+            return <rect key={i} x={170 + c * 57} y={740 + f * 57} width={49} height={49} rx={9} fill={on ? colCelda[i] : 'rgba(0,0,0,.07)'} stroke={on ? KC.ink : 'rgba(0,0,0,.15)'} strokeWidth={on ? 3 : 2} />; })}
           {[['ritmo', KC.cyan], ['tempo', KC.yellow], ['rubato', KC.pink], ['ornamento', KC.mint]].map(([t, c], j) =>
-            <Ficha key={t} x={850} y={790 + j * 100} texto={t} color={c} tam={32} o={kprog(T, K.Cb + 0.4 + j * 0.2, K.Cb + 0.7 + j * 0.2)} />)}
+            <FichaB key={t} x={[190, 380, 590, 840][j]} y={640} texto={t} color={c} tam={32} o={kprog(T, K.Cb + 0.4 + j * 0.2, K.Cb + 0.7 + j * 0.2)} />)}
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.Cb + 0.3} until={K.Oj - 0.2} valor={lit} desde={lit} dur={0.01} sufijo={T > K.Cb + 4.6 ? '+' : ''} x={390} y={575} tam={170} color={KC.pink} />
-      <Chip T={T} at={K.Cb + 0.2} until={K.Cb + 3.2} texto="ritmo × tempo × rubato × ornamento" x={540} y={410} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Cb + 3.6} until={K.Oj - 0.2} texto="como un alfabeto fonético" x={380} y={410} tam={34} borde={KC.pink} />
+      <NumeroGigante T={T} at={K.Cb + 0.3} until={K.Oj - 0.2} valor={lit} desde={lit} dur={0.01} sufijo={T > K.Cb + 4.6 ? '+' : ''} x={540} y={465} tam={160} color={KC.pink} />
+      <Chip T={T} at={K.Cb + 0.2} until={K.Cb + 3.2} texto="ritmo × tempo × rubato × ornamento" x={540} y={300} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Cb + 3.6} until={K.Oj - 0.2} texto="como un alfabeto fonético" x={540} y={300} tam={34} borde={KC.pink} />
       {/* 9 · ojo: no es traducir */}
       <Escena T={T} a={K.Oj} b={K.V}>
         <FondoLunares color={KC.cyan} />
+        {svg(<Cachalote x={540} y={1360} s={1.15} T={T} halo={BAZUL} />)}
       </Escena>
       {T > K.Oj - 0.4 && T < K.V + 0.4 && <div style={{ opacity: kprog(T, K.Oj - 0.3, K.Oj + 0.2) * (1 - kprog(T, K.V - 0.1, K.V + 0.4)) }}>
-        <CelularChat T={T} x={720} y={690} s={0.56} tam={62} mensajes={[{ at: K.Oj + 0.6, yo: true, texto: 'clic · clic · clic · clic' }, { at: K.Oj + 1.5, texto: 'Traducción: ???' }]} escribe={[K.Oj + 1.0, K.Oj + 1.5]} />
+        <CelularChat T={T} x={540} y={600} s={0.72} tam={62} mensajes={[{ at: K.Oj + 0.6, yo: true, texto: 'clic · clic · clic · clic' }, { at: K.Oj + 1.5, texto: 'Traducción: ???' }]} escribe={[K.Oj + 1.0, K.Oj + 1.5]} />
       </div>}
-      <MitoTachado T={T} at={K.Oj + 0.5} tacharEn={K.Oj + 3.1} until={K.V - 0.2} texto="Una IA tradujo a las ballenas" x={540} y={1030} tam={42} />
-      <Chip T={T} at={K.Oj + 4.0} until={K.V - 0.2} texto="análisis por computadora ✔" x={540} y={1140} tam={36} borde={KC.leaf} />
+      <MitoTachado T={T} at={K.Oj + 0.5} tacharEn={K.Oj + 3.1} until={K.V - 0.2} texto="Una IA tradujo a las ballenas" x={540} y={1050} tam={42} />
+      <Chip T={T} at={K.Oj + 4.0} until={K.V - 0.2} texto="análisis por computadora ✔" x={540} y={1160} tam={36} borde={KC.leaf} />
       {/* 10 · vocales (2025, Berkeley) */}
       <Escena T={T} a={K.V} b={K.C}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {svg(<>
-          <circle cx={300} cy={500} r={90 + 10 * Math.sin(T * 8)} fill="none" stroke={BAZUL} strokeWidth={8} opacity=".5" />
-          <circle cx={300} cy={500} r={56} fill={BAZUL} stroke={KC.texto} strokeWidth={6} />
-          <text x={300} y={640} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto}>dentro de cada clic</text>
-          <path d="M 260 560 L 310 760 M 340 560 L 770 760" stroke="rgba(246,243,236,.3)" strokeWidth={4} strokeDasharray="10 10" opacity={kprog(T, K.V + 0.6, K.V + 1.0)} />
-          <Espectro T={T} at={K.V + 0.9} x={110} y={760} bandas={[0.5]} letra="a" color={KC.cyan} />
-          <Espectro T={T} at={K.V + 1.8} x={570} y={760} bandas={[0.36, 0.66]} letra="i" color={KC.pink} />
+          <Cachalote x={380} y={480} s={1.1} T={T} halo={BAZUL} />
+          <circle cx={850} cy={470} r={100 + 12 * Math.sin(T * 8)} fill="none" stroke={BAZUL} strokeWidth={9} opacity=".5" />
+          <circle cx={850} cy={470} r={64} fill={BAZUL} stroke={KC.texto} strokeWidth={6} />
+          <text x={850} y={620} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>dentro de cada clic</text>
+          <path d="M 800 640 L 300 760 M 890 640 L 790 760" stroke="rgba(246,243,236,.3)" strokeWidth={4} strokeDasharray="10 10" opacity={kprog(T, K.V + 0.3, K.V + 0.7)} />
+          <g transform="translate(540 760) scale(1.12) translate(-540 -760)">
+          <Espectro T={T} at={K.V + 0.5} x={90} y={760} bandas={[0.5]} letra="a" color={KC.cyan} />
+          <Espectro T={T} at={K.V + 1.2} x={590} y={760} bandas={[0.36, 0.66]} letra="i" color={KC.pink} />
+          </g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.V + 2.4} until={K.C - 0.2} texto="2025 · UC Berkeley · Beguš et al. · Open Mind" x={540} y={1130} tam={28} borde={KC.cyan} />
+      <Chip T={T} at={K.V + 2.4} until={K.C - 0.2} texto="2025 · UC Berkeley · Beguš et al. · Open Mind" x={540} y={1180} tam={28} borde={KC.cyan} />
       {/* 11 · cierre: la misma tira, ahora con sus piezas */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
         <Ambiente T={T} n={26} color="rgba(255,255,255,.5)" />
         {svg(<>
-          <TiraClics T={T} y={780} morse={0} piezas={kprog(T, K.C + 0.6, K.C + 1.4, kEase.sale)} />
-          <Cachalote x={210} y={960} s={0.72} T={T} halo={BAZUL} />
-          <Cachalote x={870} y={985} s={0.72} dir={-1} T={T} halo={BNAR} seed={3} />
+          <TiraClics T={T} y={560} morse={0} piezas={kprog(T, K.C + 0.6, K.C + 1.4, kEase.sale)} />
+          <Cachalote x={420} y={930} s={1.35} T={T} halo={BAZUL} />
+          <Cachalote x={680} y={1260} s={1.35} dir={-1} T={T} halo={BNAR} seed={3} />
         </>)}
       </Escena>
-      <MitoTachado T={T} at={K.C + 0.2} tacharEn={K.C + 1.0} until={K.Ou} texto="código Morse" x={290} y={560} tam={44} />
-      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="un alfabeto de piezas" x={300} y={680} tam={40} borde={KC.pink} />
+      <MitoTachado T={T} at={K.C + 0.2} tacharEn={K.C + 1.0} until={K.Ou} texto="código Morse" x={540} y={330} tam={44} />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="un alfabeto de piezas" x={540} y={1490} tam={40} borde={KC.pink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={L1 - 0.1} texto="Esto no es *código Morse:* son cachalotes." />
