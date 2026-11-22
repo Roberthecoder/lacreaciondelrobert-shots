@@ -5,13 +5,13 @@
 const LLAMA = '#ffcf3a', LLAMA2 = '#ff8a1f', CERA = '#fff4dc';
 
 // Cielo nocturno con colinas (escenas al aire libre de noche).
-function Noche({ T, colina = '#1f6b5a', horizonte = 1060 }) {
+function Noche({ T, colina = '#184f45', horizonte = 1060 }) {
   return <>
     <div style={{ position:'absolute', inset:0, background:`linear-gradient(180deg, ${KC.violet} 0%, #141a3a 55%, ${KC.noche} 100%)` }}></div>
     <Lienzo z={1}>
       <EstrellasFondo T={T} n={80} seed={47} alto={horizonte} />
       <path d={`M 0 ${horizonte} Q 300 ${horizonte - 50} 620 ${horizonte - 10} T 1080 ${horizonte - 30} L 1080 1920 L 0 1920 Z`} fill={colina} stroke={KC.ink} strokeWidth={8} />
-      <path d={`M 0 ${horizonte + 120} Q 400 ${horizonte + 70} 1080 ${horizonte + 140} L 1080 1920 L 0 1920 Z`} fill="#174f44" />
+      <path d={`M 0 ${horizonte + 120} Q 400 ${horizonte + 70} 1080 ${horizonte + 140} L 1080 1920 L 0 1920 Z`} fill="#123c36" />
     </Lienzo>
   </>;
 }
@@ -64,7 +64,7 @@ function Cancha({ cx, y0, y1, w0, w1, o = 1 }) {
   const pts = [P(0, 0), P(1, 0), P(1, 1), P(0, 1)].map((p) => p.join(',')).join(' ');
   const [a1, a2] = [P(0, 0.5), P(1, 0.5)], c = P(0.5, 0.5), h = Math.abs(y0 - y1);
   return <g opacity={o}>
-    <polygon points={pts} fill="#3fbf4a" stroke="#fff" strokeWidth={Math.max(1.5, h * 0.06)} />
+    <polygon points={pts} fill="#2c9a3c" stroke="#fff" strokeWidth={Math.max(1.5, h * 0.06)} />
     <line x1={a1[0]} y1={a1[1]} x2={a2[0]} y2={a2[1]} stroke="#fff" strokeWidth={Math.max(1, h * 0.04)} />
     <ellipse cx={c[0]} cy={c[1]} rx={klerp(w0, w1, 0.5) * 0.09} ry={h * 0.16} fill="none" stroke="#fff" strokeWidth={Math.max(1, h * 0.04)} />
   </g>;
@@ -86,56 +86,57 @@ function Vela() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
   // escena del inicio (y del cierre): persona a la izquierda, la luz de la vela en el horizonte
-  const P0 = [230, 850], L0 = [800, 1010];
-  const lineaDist = (p, col = '#fff') => <line x1={P0[0] + 40} y1={P0[1]} x2={klerp(P0[0] + 40, L0[0] - 20, p)} y2={klerp(P0[1], L0[1], p)} stroke={col} strokeWidth={7} strokeDasharray="22 16" strokeLinecap="round" />;
+  const P0 = [400, 800], L0 = [900, 1035], PK = 1.5;   // ojos de la persona (ya agrandada ×1.5) y la luz en el horizonte
+  const persona = (cara) => <g transform={`translate(${P0[0]} 1400) scale(${PK})`}><PersonaSimple x={0} yPies={0} alto={460} color={KC.pink} cara={cara} /></g>;
+  const lineaDist = (p, col = '#fff') => <line x1={P0[0] + 60} y1={P0[1] + 6} x2={klerp(P0[0] + 60, L0[0] - 26, p)} y2={klerp(P0[1] + 6, L0[1], p)} stroke={col} strokeWidth={9} strokeDasharray="26 18" strokeLinecap="round" />;
   const alejar = kprog(T, K.Calculo + 0.4, K.Calculo + 4.2, kEase.suave);
   const brillo = klerp(1, 0.12, alejar);
   return (
     <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: noche oscura, una vela a lo lejos */}
       <Escena T={T} a={K.Gancho} b={K.Estudio} zoom={0.12} origen="70% 52%">
-        <Noche T={T} />
+        <Noche T={T} horizonte={1090} />
         <Lienzo>
-          <LuzLejana x={L0[0]} y={L0[1]} T={T} r={12} glow={klerp(0.4, 1.2, kprog(T, 0, 0.8, kEase.sale))} />
-          <PersonaSimple x={P0[0]} yPies={1230} alto={460} color={KC.pink} cara="o" />
+          <LuzLejana x={L0[0]} y={L0[1]} T={T} r={17} glow={klerp(0.4, 1.2, kprog(T, 0, 0.8, kEase.sale))} />
+          {persona('o')}
           {lineaDist(kprog(T, K.Gancho + 1.2, K.Gancho + 2.6, kEase.sale))}
-          <TextoSvg x={560} y={900} tam={110} color={KC.yellow} rot={-6} o={kprog(T, K.Gancho + 2.4, K.Gancho + 2.8)} s={klerp(0.5, 1, kprog(T, K.Gancho + 2.4, K.Gancho + 2.9, kEase.rebote))}>?</TextoSvg>
+          <TextoSvg x={700} y={830} tam={170} color={KC.yellow} rot={-6} o={kprog(T, K.Gancho + 2.4, K.Gancho + 2.8)} s={klerp(0.5, 1, kprog(T, K.Gancho + 2.4, K.Gancho + 2.9, kEase.rebote))}>?</TextoSvg>
         </Lienzo>
-        <MitoTachado T={T} at={K.Gancho + 3.9} tacharEn={K.Gancho + 7.4} until={K.Estudio - 0.1} texto="internet: ¿casi 50 km?" x={540} y={500} tam={40} />
-        <Chip T={T} at={K.Gancho + 8.6} until={K.Estudio - 0.1} texto="calculado: mucho menos" x={540} y={640} tam={38} borde={KC.yellow} />
+        <MitoTachado T={T} at={K.Gancho + 3.9} tacharEn={K.Gancho + 7.4} until={K.Estudio - 0.1} texto="internet: ¿casi 50 km?" x={540} y={330} tam={46} />
+        <Chip T={T} at={K.Gancho + 8.6} until={K.Estudio - 0.1} texto="calculado: mucho menos" x={540} y={470} tam={44} borde={KC.yellow} />
       </Escena>
 
       {/* 1 · el estudio */}
-      <Escena T={T} a={K.Estudio} b={K.Vela} fondo={KC.mint}>
+      <Escena T={T} a={K.Estudio} b={K.Vela}>
         <FondoLunares color={KC.mint} />
-        <Lienzo><VelaDib x={190} y={1190} s={0.75} T={T} id="e" glow={kprog(T, K.Estudio + 3.2, K.Estudio + 3.8)} /></Lienzo>
-        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Vela - 0.1} anio="2015" quien="Krisciunas y Carona" revista="Universidad Texas A&M" x={540} y={830} />
-        <Chip T={T} at={K.Estudio + 3.2} until={K.Vela - 0.1} texto="¡a prueba!" x={330} y={460} tam={46} borde={KC.ink} />
+        <Lienzo><VelaDib x={540} y={1420} s={2.05} T={T} id="e" glow={kprog(T, K.Estudio + 3.2, K.Estudio + 3.8)} /></Lienzo>
+        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Vela - 0.1} anio="2015" quien="Krisciunas y Carona" revista="Universidad Texas A&M" x={540} y={350} />
+        <Chip T={T} at={K.Estudio + 3.2} until={K.Vela - 0.1} texto="¡a prueba!" x={540} y={610} tam={48} borde={KC.ink} />
       </Escena>
 
       {/* 2 · la vela a 338 m y Vega */}
       <Escena T={T} a={K.Vela} b={K.Camara} zoom={0.04}>
-        <Noche T={T} horizonte={1000} />
+        <Noche T={T} horizonte={1130} />
         <Lienzo>
-          <PersonaSimple x={170} yPies={1060} alto={330} color={KC.pink} />
-          <VelaDib x={900} y={1060} s={0.55} T={T} id="m" />
-          {(() => { const p = kprog(T, K.Vela + 0.4, K.Vela + 1.6, kEase.sale), x1 = 250, x2 = klerp(250, 860, p);
-            return p > 0 && <g><line x1={x1} y1={1150} x2={x2} y2={1150} stroke={KC.yellow} strokeWidth={12} strokeLinecap="round" />
-              {Array.from({ length: 11 }, (_, i) => 250 + i * 61).filter((xx) => xx <= x2).map((xx) => <line key={xx} x1={xx} y1={1132} x2={xx} y2={1168} stroke={KC.yellow} strokeWidth={6} />)}
-              <TextoSvg x={555} y={1115} tam={72} color={KC.yellow} o={kprog(T, K.Vela + 1.2, K.Vela + 1.6)}>338 m</TextoSvg></g>; })()}
+          <g transform="translate(240 1230) scale(1.08)"><PersonaSimple x={0} yPies={0} alto={460} color={KC.pink} /></g>
+          <VelaDib x={890} y={1230} s={0.9} T={T} id="m" />
+          {(() => { const p = kprog(T, K.Vela + 0.4, K.Vela + 1.6, kEase.sale), x1 = 330, x2 = klerp(330, 860, p);
+            return p > 0 && <g><line x1={x1} y1={1350} x2={x2} y2={1350} stroke={KC.yellow} strokeWidth={14} strokeLinecap="round" />
+              {Array.from({ length: 11 }, (_, i) => 330 + i * 53).filter((xx) => xx <= x2).map((xx) => <line key={xx} x1={xx} y1={1328} x2={xx} y2={1372} stroke={KC.yellow} strokeWidth={7} />)}
+              <TextoSvg x={595} y={1460} tam={96} color={KC.yellow} o={kprog(T, K.Vela + 1.2, K.Vela + 1.6)}>338 m</TextoSvg></g>; })()}
           <g opacity={kprog(T, K.Vela + 3.0, K.Vela + 3.6)}>
-            <Estrella x={820} y={540} b={0.75} T={T} />
-            <line x1={830} y1={610} x2={895} y2={800} stroke="#fff" strokeWidth={6} strokeDasharray="14 12" strokeDashoffset={-T * 40} opacity={kprog(T, K.Vela + 4.2, K.Vela + 4.8)} />
-            <TextoSvg x={760} y={730} tam={60} color={KC.cyan} o={kprog(T, K.Vela + 4.2, K.Vela + 4.8)}>VS</TextoSvg>
+            <Estrella x={790} y={560} b={1.15} T={T} />
+            <line x1={804} y1={660} x2={880} y2={940} stroke="#fff" strokeWidth={7} strokeDasharray="16 14" strokeDashoffset={-T * 40} opacity={kprog(T, K.Vela + 4.2, K.Vela + 4.8)} />
+            <TextoSvg x={730} y={830} tam={84} color={KC.cyan} o={kprog(T, K.Vela + 4.2, K.Vela + 4.8)}>VS</TextoSvg>
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Vela + 3.3} until={K.Camara - 0.1} texto="Vega: una estrella muy brillante" x={650} y={400} tam={32} borde={KC.cyan} />
+        <Chip T={T} at={K.Vela + 3.3} until={K.Camara - 0.1} texto="Vega: una estrella muy brillante" x={560} y={370} tam={38} borde={KC.cyan} />
       </Escena>
 
       {/* 3 · la cámara CCD */}
-      <Escena T={T} a={K.Camara} b={K.Estrellas} fondo={KC.orange}>
+      <Escena T={T} a={K.Camara} b={K.Estrellas}>
         <FondoLunares color={KC.orange} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 930) scale(1.2) translate(-500 -840)">
           <VelaDib x={190} y={1150} s={0.7} T={T} id="c" />
           {Array.from({ length: 4 }, (_, i) => { const f = ((T * 0.9 + i / 4) % 1); return <circle key={i} cx={klerp(195, 470, f)} cy={klerp(990, 820, f)} r={10} fill={LLAMA} stroke={KC.ink} strokeWidth={3} opacity={kprog(T, K.Camara + 0.8, K.Camara + 1.2) * (1 - f * 0.6)} />; })}
           <g transform={`translate(0 ${(1 - kprog(T, K.Camara + 0.1, K.Camara + 0.7, kEase.rebote)) * 600})`}><CamaraCCD x={700} y={820} s={1.2} T={T} luz={kprog(T, K.Camara + 1.1, K.Camara + 1.5)} /></g>
@@ -145,8 +146,8 @@ function Vela() {
             {Array.from({ length: 48 }, (_, i) => { const cx = i % 8, cy = Math.floor(i / 8), d = Math.hypot(cx - 3.5, cy - 2.5), v = Math.max(0, 1 - d / 2.6) * kprog(T, K.Camara + 2.3, K.Camara + 3.2);
               return <rect key={i} x={6 + cx * 34} y={6 + cy * 33} width={30} height={29} rx={4} fill={v > 0.02 ? LLAMA : '#1c2a40'} opacity={v > 0.02 ? 0.3 + 0.7 * v : 1} />; })}
           </g>
-        </Lienzo>
-        <Chip T={T} at={K.Camara + 0.5} until={K.Estrellas - 0.1} texto="cámara CCD de astronomía" x={620} y={1150} tam={38} borde={KC.ink} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Camara + 0.5} until={K.Estrellas - 0.1} texto="cámara CCD de astronomía" x={540} y={1480} tam={44} borde={KC.ink} />
       </Escena>
 
       {/* 4 · escala de brillo de las estrellas */}
@@ -154,27 +155,28 @@ function Vela() {
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 40%, #1d2550 0%, ${KC.noche} 75%)` }}></div>
         <Lienzo>
           <EstrellasFondo T={T} n={40} seed={3} alto={1900} />
-          {Array.from({ length: 7 }, (_, i) => { const x = 120 + i * 140, e = kprog(T, K.Estrellas + 0.4 + i * 0.25, K.Estrellas + 0.7 + i * 0.25, kEase.rebote), seis = i === 6 && T > K.Estrellas + 3.2;
+          {Array.from({ length: 7 }, (_, i) => { const x = 150 + i * 128, y = 690 + i * 88, b = 1.05 - i * 0.14, r = 10 + 70 * b;   // escalera: cada magnitud, más débil y más abajo
+            const e = kprog(T, K.Estrellas + 0.15 + i * 0.25, K.Estrellas + 0.45 + i * 0.25, kEase.rebote), seis = i === 6 && T > K.Estrellas + 3.2;
             return <g key={i} opacity={e}>
-              <Estrella x={x} y={780} b={0.9 - i * 0.135} T={T} fase={i} />
-              {seis && <circle cx={x} cy={780} r={60 + 6 * Math.sin(T * 6)} fill="none" stroke={KC.yellow} strokeWidth={8} />}
-              <text x={x} y={900} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={seis ? KC.yellow : KC.texto} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">{i}</text>
+              <Estrella x={x} y={y} b={b} T={T} fase={i} />
+              {seis && <circle cx={x} cy={y} r={66 + 6 * Math.sin(T * 6)} fill="none" stroke={KC.yellow} strokeWidth={9} />}
+              <text x={x} y={y + (i === 6 ? 74 : r) + 78} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={seis ? KC.yellow : KC.texto} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">{i}</text>
             </g>; })}
-          <text x={120} y={660} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.cyan} opacity={kprog(T, K.Estrellas + 0.6, K.Estrellas + 1)}>Vega</text>
+          <text x={150} y={575} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.cyan} opacity={kprog(T, K.Estrellas + 0.4, K.Estrellas + 0.8)}>Vega</text>
           <g opacity={kprog(T, K.Estrellas + 2.2, K.Estrellas + 2.7)}>
-            <FlechaRecta x1={150} y1={980} x2={930} y2={980} p={kprog(T, K.Estrellas + 2.2, K.Estrellas + 3, kEase.sale)} color={KC.lilac} grosor={10} punta={28} />
-            <text x={540} y={1060} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.texto}>más débil →</text>
+            <FlechaRecta x1={150} y1={1420} x2={930} y2={1420} p={kprog(T, K.Estrellas + 2.2, K.Estrellas + 3, kEase.sale)} color={KC.lilac} grosor={10} punta={28} />
+            <text x={540} y={1490} textAnchor="middle" style={{ font:`900 42px ${KF.texto}` }} fill={KC.texto}>más débil →</text>
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Estrellas + 0.2} until={K.Calculo - 0.1} texto="cielo oscuro" x={540} y={440} tam={40} borde={KC.cyan} />
-        <Chip T={T} at={K.Estrellas + 3.4} until={K.Calculo - 0.1} texto="magnitud 6 ≈ lo más débil que casi cualquiera ve" x={540} y={560} tam={30} borde={KC.yellow} />
+        <Chip T={T} at={K.Estrellas + 0.2} until={K.Calculo - 0.1} texto="cielo oscuro" x={540} y={310} tam={42} borde={KC.cyan} />
+        <Chip T={T} at={K.Estrellas + 3.4} until={K.Calculo - 0.1} texto="magnitud 6 ≈ lo más débil que casi cualquiera ve" x={540} y={420} tam={36} borde={KC.yellow} />
       </Escena>
 
       {/* 5 · el cálculo: la vela se aleja hasta brillar como una estrella de magnitud 6 */}
-      <Escena T={T} a={K.Calculo} b={K.Resultado} fondo={KC.lilac} zoom={0.03}>
+      <Escena T={T} a={K.Calculo} b={K.Resultado} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <path d="M 60 1220 L 300 640 L 360 640 L 600 1220 Z" fill="#8f6bdf" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+          <path d="M 60 1220 L 300 640 L 360 640 L 600 1220 Z" fill="#3f3078" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
           <VelaDib x={330} y={klerp(1180, 660, alejar)} s={klerp(0.9, 0.12, alejar)} T={T} id="k" glow={brillo} />
           {/* medidor de brillo */}
           <g transform="translate(880 520)">
@@ -186,31 +188,31 @@ function Vela() {
           </g>
           {T > K.Calculo + 4.2 && <circle cx={880} cy={520 + 12 + 616 * 0.88} r={40 + 90 * kprog(T, K.Calculo + 4.2, K.Calculo + 4.9)} fill="none" stroke={KC.yellow} strokeWidth={10} opacity={1 - kprog(T, K.Calculo + 4.2, K.Calculo + 4.9)} />}
         </Lienzo>
-        <Chip T={T} at={K.Calculo + 1.0} until={K.Resultado - 0.1} texto="★ = estrella de magnitud 6" x={640} y={1170} tam={32} borde={KC.cyan} />
+        <Chip T={T} at={K.Calculo + 1.0} until={K.Resultado - 0.1} texto="★ = estrella de magnitud 6" x={540} y={1340} tam={38} borde={KC.cyan} />
         <Contador T={T} at={K.Calculo + 0.4} desde={338} hasta={2576} dur={3.8} sufijo=" m" x={330} y={470} tam={76} color={KC.yellow} />
       </Escena>
 
       {/* 6 · el resultado */}
-      <Escena T={T} a={K.Resultado} b={K.Pregunta} fondo={KC.yellow}>
+      <Escena T={T} a={K.Resultado} b={K.Pregunta}>
         <FondoLunares color={KC.yellow} />
-        <NumeroGigante T={T} at={K.Resultado + 0.2} until={K.Pregunta - 0.1} valor={2.6} desde={0} dec={1} prefijo="≈ " sufijo=" km" etiqueta="su resultado" x={540} y={700} tam={210} color={KC.pink} />
-        <Chip T={T} at={K.Resultado + 2.3} until={K.Pregunta - 0.1} texto="en condiciones ideales" x={540} y={1020} tam={44} borde={KC.ink} />
-        <Lienzo><VelaDib x={160} y={1200} s={0.5} T={T} id="r" /></Lienzo>
+        <NumeroGigante T={T} at={K.Resultado + 0.2} until={K.Pregunta - 0.1} valor={2.6} desde={0} dec={1} prefijo="≈ " sufijo=" km" etiqueta="su resultado" x={540} y={400} tam={210} color={KC.pink} />
+        <Chip T={T} at={K.Resultado + 2.3} until={K.Pregunta - 0.1} texto="en condiciones ideales" x={540} y={640} tam={44} borde={KC.ink} />
+        <Lienzo><VelaDib x={540} y={1500} s={1.8} T={T} id="r" /></Lienzo>
       </Escena>
 
       {/* 7 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Real} />
 
       {/* 8 · 25 canchas en fila */}
-      <Escena T={T} a={K.Real} b={K.Ojo} fondo={KC.cyan} zoom={0.06} origen="50% 30%">
-        <div style={{ position:'absolute', inset:0, background:`linear-gradient(180deg, ${KC.cyan} 0%, #7fe9ff 30%, #2fbf6a 30.5%, #1f8f4f 100%)` }}></div>
+      <Escena T={T} a={K.Real} b={K.Ojo} zoom={0.06} origen="50% 30%">
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg, #081826 0%, #10344a 30%, #124a2c 30.5%, #0a2c1c 100%)' }}></div>
         <Lienzo>
           {Array.from({ length: 25 }, (_, k) => { const i = 24 - k, z0 = 1 / (1 + 0.32 * i), z1 = 1 / (1 + 0.32 * (i + 1)), y0 = 580 + 640 * z0, y1 = 580 + 640 * z1;
-            const e = kprog(T, K.Real + 0.4 + i * 0.1, K.Real + 0.6 + i * 0.1);
+            const e = kprog(T, K.Real + 0.1 + i * 0.1, K.Real + 0.3 + i * 0.1);
             return <Cancha key={i} cx={540} y0={y0} y1={y1} w0={900 * z0} w1={900 * z1} o={e} />; })}
           <LuzLejana x={540} y={588} T={T} r={6} glow={kprog(T, K.Real + 2.9, K.Real + 3.3)} />
         </Lienzo>
-        {(() => { const n = Math.max(0, Math.min(25, Math.floor((T - K.Real - 0.4) / 0.1) + 1)); return T > K.Real + 0.4 &&
+        {(() => { const n = Math.max(0, Math.min(25, Math.floor((T - K.Real - 0.1) / 0.1) + 1)); return T > K.Real + 0.1 &&
           <div style={{ position:'absolute', left:860, top:420, transform:'translate(-50%,-50%)', zIndex:41, font:`400 110px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>×{n}</div>; })()}
         <Chip T={T} at={K.Real + 3.0} until={K.Ojo - 0.1} texto="≈ 2.6 km" x={340} y={430} tam={44} borde={KC.yellow} />
       </Escena>
@@ -234,15 +236,15 @@ function Vela() {
 
       {/* 10 · cierre: la misma noche, ahora con la respuesta */}
       <Escena T={T} a={K.Cierre} b={FIN} zoom={0.06} origen="70% 52%">
-        <Noche T={T} />
+        <Noche T={T} horizonte={1090} />
         <Lienzo>
-          <LuzLejana x={L0[0]} y={L0[1]} T={T} r={14} glow={1.3} />
-          <PersonaSimple x={P0[0]} yPies={1230} alto={460} color={KC.pink} cara="sonrie" />
+          <LuzLejana x={L0[0]} y={L0[1]} T={T} r={19} glow={1.3} />
+          {persona('sonrie')}
           {lineaDist(kprog(T, K.Cierre + 0.2, K.Cierre + 1.0, kEase.sale), KC.yellow)}
-          <TextoSvg x={500} y={870} tam={80} color={KC.yellow} rot={17} o={kprog(T, K.Cierre + 0.8, K.Cierre + 1.2)} s={klerp(0.5, 1, kprog(T, K.Cierre + 0.8, K.Cierre + 1.3, kEase.rebote))}>≈ 2.6 km</TextoSvg>
+          <TextoSvg x={690} y={850} tam={96} color={KC.yellow} rot={27} o={kprog(T, K.Cierre + 0.8, K.Cierre + 1.2)} s={klerp(0.5, 1, kprog(T, K.Cierre + 0.8, K.Cierre + 1.3, kEase.rebote))}>≈ 2.6 km</TextoSvg>
         </Lienzo>
-        <MitoTachado T={T} at={K.Cierre + 0.1} tacharEn={K.Cierre + 0.6} until={K.Outro + 3.5} texto="¿casi 50 km?" x={540} y={500} tam={40} />
-        <Chip T={T} at={K.Cierre + 1.6} until={K.Outro - 0.1} texto="lejos, pero no a 50 km" x={540} y={650} tam={44} borde={KC.yellow} />
+        <MitoTachado T={T} at={K.Cierre + 0.1} tacharEn={K.Cierre + 0.6} until={K.Outro + 3.5} texto="¿casi 50 km?" x={540} y={330} tam={46} />
+        <Chip T={T} at={K.Cierre + 1.6} until={K.Outro - 0.1} texto="lejos, pero no a 50 km" x={540} y={470} tam={46} borde={KC.yellow} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Estudio - 0.1} texto="¿Hasta dónde ves *una vela* de noche?" />
