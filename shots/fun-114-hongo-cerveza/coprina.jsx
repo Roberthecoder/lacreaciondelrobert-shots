@@ -3,8 +3,8 @@
 // (gancho 1 "Esto no es X: es Y" con mito peligroso + N1 Por dentro + N5). Guion y fuentes: guion.md · verificacion.md.
 // El dibujo es esquemático. No es guía para identificar hongos.
 
-const CA = { gris:'#9b958e', gris2:'#77716b', grisTop:'#8a7c6e', pie:'#e9e5df', tinta:'#15110f', pasto:'#2f9a3a', pasto2:'#46c050',
-  tierra:'#6b4423', tierra2:'#4e3019', madera:'#a8743f', madera2:'#7b5129', cerveza:'#f2a516', cerveza2:'#d9860b', espuma:'#fffaf0',
+const CA = { gris:'#9b958e', gris2:'#77716b', grisTop:'#8a7c6e', pie:'#e9e5df', tinta:'#15110f', pasto:'#184a22', pasto2:'#2f8a3c',
+  tierra:'#4a2f18', tierra2:'#33200f', madera:'#a8743f', madera2:'#7b5129', cerveza:'#f2a516', cerveza2:'#d9860b', espuma:'#fffaf0',
   etanol:'#4fa8ff', acetal:'#ff3b2f', acetato:'#2fe0a8', enzima:'#11a39a', piel:'#f1c08f' };
 
 // Coprinopsis atramentaria de perfil: sombrero gris en campana, acanalado (estrías radiales), centro pardusco;
@@ -146,9 +146,9 @@ function Cara({ T, x, y, r = 190, rojo = 0, nausea = 0 }) {
   return <g transform={`translate(${x} ${y})`}>
     <circle r={r} fill={piel} stroke={KC.ink} strokeWidth={9} />
     {[-1, 1].map((k) => <ellipse key={k} cx={k * r * 0.48} cy={r * 0.22} rx={r * 0.2} ry={r * 0.12} fill="#e2302a" opacity={rojo * 0.8} />)}
-    {[-1, 1].map((k) => <g key={k}><ellipse cx={k * r * 0.34} cy={-r * 0.18} rx={r * 0.09} ry={r * 0.12 * (1 - nausea * 0.5)} fill={KC.ink} />
-      <path d={`M ${k * r * 0.2} ${-r * 0.42} L ${k * r * 0.48} ${-r * 0.36 - nausea * 18 * k * k}`} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" /></g>)}
-    <path d={`M ${-r * 0.32} ${r * 0.5} Q ${-r * 0.16} ${r * 0.5 - 30 * nausea} 0 ${r * 0.5} Q ${r * 0.16} ${r * 0.5 + 30 * nausea} ${r * 0.32} ${r * 0.5}`} stroke={KC.ink} strokeWidth={9} fill="none" strokeLinecap="round" />
+    {[-1, 1].map((k) => <g key={k}><ellipse cx={k * r * 0.34} cy={-r * 0.18} rx={r * 0.09} ry={r * 0.12 * (1 - nausea * 0.5)} fill="#0b1020" />
+      <path d={`M ${k * r * 0.2} ${-r * 0.42} L ${k * r * 0.48} ${-r * 0.36 - nausea * 18 * k * k}`} stroke="#0b1020" strokeWidth={8} strokeLinecap="round" /></g>)}
+    <path d={`M ${-r * 0.32} ${r * 0.5} Q ${-r * 0.16} ${r * 0.5 - 30 * nausea} 0 ${r * 0.5} Q ${r * 0.16} ${r * 0.5 + 30 * nausea} ${r * 0.32} ${r * 0.5}`} stroke="#0b1020" strokeWidth={9} fill="none" strokeLinecap="round" />
     {nausea > 0 && <g transform={`translate(0 ${-r - 70}) rotate(${T * 200})`} opacity={nausea}>
       <path d="M 0 0 m -10 0 a 10 10 0 1 1 20 0 a 20 20 0 1 1 -40 0 a 30 30 0 1 1 60 0 a 40 40 0 1 1 -80 0" stroke="#5bbf3a" strokeWidth={9} fill="none" strokeLinecap="round" />
     </g>}
@@ -168,7 +168,7 @@ function CajaPastillas({ x, y, s = 1, texto = 'disulfiram' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-140} y={-80} width={280} height={160} rx={16} fill={KC.white} stroke={KC.ink} strokeWidth={7} />
     <rect x={-140} y={-80} width={280} height={44} rx={16} fill={KC.blue} stroke={KC.ink} strokeWidth={7} />
-    <text x={0} y={30} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{texto}</text>
+    <text x={0} y={30} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill="#0b1020">{texto}</text>
     {[-80, -30, 20, 70].map((px, i) => <ellipse key={i} cx={px + 5} cy={60} rx={18} ry={9} fill="#cfd8ff" stroke={KC.ink} strokeWidth={3} />)}
   </g>;
 }
@@ -233,19 +233,19 @@ function CoprinaShot() {
   const K = { G: CUES.Gancho, N: CUES.Nombre, Ti: CUES.Tinta, Co: CUES.Comestible, Cp: CUES.Coprina, E: CUES.Enzima, P: CUES.Pregunta, A: CUES.Alcohol, S: CUES.Sintomas, V: CUES.Ventana, Es: CUES.Estudio, D: CUES.Dato, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const LOCK = K.A + 4.0;                        // "Bloqueada, se acumula"
-  const tarroX = klerp(1250, 790, kprog(T, 0.1, 0.8, kEase.sale));
+  const tarroX = klerp(1300, 730, kprog(T, 0.05, 0.6, kEase.sale));
   // línea de montaje del hígado (escena Alcohol)
   const linea = () => {
-    const out = []; const N = 12;
+    const out = []; const N = 8;
     for (let i = 0; i < N; i++) {
       const u = ((T - K.A) * 0.22 + i / N) % 1; if (u < 0) continue;
       const tNace = T - u / 0.22;                                    // cuándo entró esta molécula
-      let x = 70 + u * 960, tipo = x < 330 ? 'et' : x < 640 ? 'ac' : 'ao';
-      if (tNace + (640 - 70) / 960 / 0.22 > LOCK && x > 560) continue;  // ya no pasa por la enzima: se queda en el montón
-      out.push(<Mol key={i} x={x} y={860 + Math.sin(T * 2 + i) * 14} tipo={tipo} T={T} i={i} />);
+      let x = 70 + u * 960, tipo = x < 330 ? 'et' : x < 680 ? 'ac' : 'ao';
+      if (tNace + (640 - 70) / 960 / 0.22 > LOCK && x > 540) continue;  // ya no pasa por la enzima: se queda en el montón
+      out.push(<Mol key={i} x={x} y={900 + Math.sin(T * 2 + i) * 18} tipo={tipo} T={T} i={i} r={34} />);
     }
     const n = Math.min(26, Math.floor(Math.max(0, T - LOCK) * 5.5));
-    for (let k = 0; k < n; k++) { const r = krng(k * 3 + 1); out.push(<Mol key={'p' + k} x={360 + r() * 190} y={940 - Math.floor(k / 6) * 34 - r() * 40 + 40} tipo="ac" T={T} i={k} r={17} />); }
+    for (let k = 0; k < n; k++) { const r = krng(k * 3 + 1); out.push(<Mol key={'p' + k} x={330 + r() * 230} y={1090 - Math.floor(k / 6) * 54 - r() * 50} tipo="ac" T={T} i={k} r={27} />); }
     return out;
   };
   const acum = kprog(T, LOCK, K.S - 0.2, kEase.suave);
@@ -257,54 +257,58 @@ function CoprinaShot() {
       <Escena T={T} a={K.G} b={K.N} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Pasto T={T} />
-          <RacimoCoprino T={T} x={330} y={1190} s={1.55} seed={1} />
-          <Tarro T={T} x={tarroX} y={1200} s={1.15} rot={(1 - kprog(T, 0.6, 1.0, kEase.rebote)) * -8} />
+          <Pasto T={T} y={1300} />
+          <RacimoCoprino T={T} x={345} y={1310} s={1.85} seed={1} />
+          <Tarro T={T} x={tarroX} y={1320} s={1.7} rot={(1 - kprog(T, 0.5, 0.9, kEase.rebote)) * -8} />
         </>)}
       </Escena>
       {/* 1–2 · nombre (suelo con madera enterrada) y tinta */}
       <Escena T={T} a={K.N} b={K.Co} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <SueloMadera T={T} g={kprog(T, K.N - 0.3, K.N + 1.2)} />
-          <RacimoCoprino T={T} x={480} y={1130} s={1.7} at={K.N + 0.1} cada={0.14} seed={2} tinta={kprog(T, K.Ti + 0.2, K.Co - 0.2, kEase.suave)} />
+          <SueloMadera T={T} y={1230} g={kprog(T, K.N - 0.3, K.N + 1.2)} />
+          <RacimoCoprino T={T} x={410} y={1240} s={2.25} at={K.N - 0.5} cada={0.1} seed={2} tinta={kprog(T, K.Ti + 0.2, K.Co - 0.2, kEase.suave)} />
         </>)}
       </Escena>
-      <Lupa T={T} at={K.Ti + 0.7} until={K.Co - 0.25} x={810} y={760} r={170} fx={540} fy={760} etiqueta="AL MICROSCOPIO · tinta" interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#3a3632" />
-        {Array.from({ length: 14 }, (_, i) => { const px = r + Math.cos(i * 2.3 + t * 0.25) * (18 + (i * 29) % 120), py = r + Math.sin(i * 2.3 + t * 0.25) * (18 + (i * 29) % 120); return <g key={i} transform={`translate(${px} ${py}) rotate(${i * 47 + t * 15})`}><path d="M 0 -26 C 16 -26 16 26 0 26 C -16 26 -16 -26 0 -26 Z" fill="#141010" stroke="#6b625b" strokeWidth={2} /><circle cx={0} cy={-21} r={3} fill="#c9c0b6" /></g>; })}</svg>} />
+      <Lupa T={T} at={K.Ti + 0.7} until={K.Co - 0.25} x={810} y={930} r={215} fx={470} fy={800} etiqueta="AL MICROSCOPIO · tinta" interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#3a3632" />
+        {Array.from({ length: 14 }, (_, i) => { const px = r + Math.cos(i * 2.3 + t * 0.25) * (18 + (i * 29) % 120), py = r + Math.sin(i * 2.3 + t * 0.25) * (18 + (i * 29) % 120); return <g key={i} transform={`translate(${px} ${py}) rotate(${i * 47 + t * 15})`}><path d="M 0 -26 C 16 -26 16 26 0 26 C -16 26 -16 -26 0 -26 Z" fill="#141010" stroke="#6b625b" strokeWidth={2} /><circle cx={0} cy={-21} r={3} fill="#c9c0b6" /></g>; })}
+        {/* barra de escala del microscopio, dentro de la lupa (las esporas miden 52 px ≈ 10 µm) */}
+        <rect x={r - 62} y={r * 2 - 96} width={124} height={54} rx={10} fill="rgba(11,16,32,.8)" />
+        <text x={r} y={r * 2 - 70} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#e8ecff">10 µm</text>
+        <rect x={r - 26} y={r * 2 - 60} width={52} height={7} rx={3} fill="#e8ecff" /></svg>} />
       {/* 3 · comestible de joven… pero trae coprina */}
       <Escena T={T} a={K.Co} b={K.Cp} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Pasto T={T} />
-          <Coprino T={T} x={230} y={1190} s={1.5} seed={11} />
+          <Pasto T={T} y={1300} />
+          <Coprino T={T} x={270} y={1310} s={2.4} seed={11} />
         </>)}
       </Escena>
-      <Lupa T={T} at={K.Co + 1.1} until={K.Cp - 0.2} x={590} y={930} r={190} fx={230} fy={880} etiqueta="POR DENTRO · coprina" tinte={KC.gold}
-        interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#141826" /><g transform={`translate(${r + 60} ${r + 30}) scale(0.5)`}><CoprinaMol x={0} y={0} T={t} /></g></svg>} />
+      <Lupa T={T} at={K.Co + 1.1} until={K.Cp - 0.2} x={720} y={900} r={270} fx={270} fy={720} etiqueta="POR DENTRO · coprina" tinte={KC.gold}
+        interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#141826" /><g transform={`translate(${r + 96} ${r + 36}) scale(0.76)`}><CoprinaMol x={0} y={0} T={t} /></g></svg>} />
       {/* 4 · tu cuerpo la convierte en aminociclopropanol */}
       <Escena T={T} a={K.Cp} b={K.E} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<CoprinaMol x={640} y={860} s={1.15} parte={kprog(T, K.Cp + 0.5, K.Cp + 1.6)} T={T} />)}
+        {fsvg(<CoprinaMol x={740} y={920} s={1.18} parte={kprog(T, K.Cp + 0.5, K.Cp + 1.6)} T={T} />)}
       </Escena>
       {/* 5 · bloquea la aldehído deshidrogenasa (hígado) */}
       <Escena T={T} a={K.E} b={K.P} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <Higado x={210} y={560} s={0.85} />
-          <Enzima T={T} x={600} y={900} r={220} bloq={kprog(T, K.E + 2.3, K.E + 2.8)} />
-          <ACP x={klerp(110, 420, kprog(T, K.E + 0.6, K.E + 2.2, kEase.suave))} y={klerp(1080, 900, kprog(T, K.E + 0.6, K.E + 2.2, kEase.suave))} s={0.75} rot={klerp(-40, 90, kprog(T, K.E + 0.6, K.E + 2.2, kEase.suave))} />
+          <Higado x={200} y={540} s={1.1} />
+          <Enzima T={T} x={610} y={990} r={310} bloq={kprog(T, K.E + 2.3, K.E + 2.8)} />
+          <ACP x={klerp(100, 356, kprog(T, K.E + 0.6, K.E + 2.2, kEase.suave))} y={klerp(1330, 990, kprog(T, K.E + 0.6, K.E + 2.2, kEase.suave))} s={1.05} rot={klerp(-40, 90, kprog(T, K.E + 0.6, K.E + 2.2, kEase.suave))} />
         </>)}
       </Escena>
       {/* 6 · re-gancho: ¿y qué tiene que ver el alcohol? */}
       <Escena T={T} a={K.P} b={K.A} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Pasto T={T} y={1200} />
-          <Tarro T={T} x={250} y={1210} s={1.2} />
-          <Interrogacion T={T} x={300} y={830} tam={420} />
+          <Pasto T={T} y={1330} />
+          <Tarro T={T} x={500} y={1350} s={2.0} />
+          <Interrogacion T={T} x={540} y={720} tam={440} />
         </>)}
       </Escena>
       {/* 7 · alcohol → acetaldehído → (ALDH) → ácido acético; bloqueada, se acumula */}
@@ -312,43 +316,40 @@ function CoprinaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
         {fsvg(<>
-          <line x1={60} y1={860} x2={1020} y2={860} stroke="rgba(255,255,255,.18)" strokeWidth={70} strokeLinecap="round" />
-          <line x1={330} y1={790} x2={330} y2={930} stroke={KC.texto} strokeWidth={4} strokeDasharray="10 10" opacity=".6" />
+          <line x1={70} y1={900} x2={1010} y2={900} stroke="rgba(255,255,255,.14)" strokeWidth={130} strokeLinecap="round" />
+          <line x1={330} y1={790} x2={330} y2={1010} stroke={KC.texto} strokeWidth={4} strokeDasharray="10 10" opacity=".6" />
           {linea()}
-          <Enzima T={T} x={690} y={860} r={95} bloq={kprog(T, LOCK - 0.2, LOCK + 0.3)} />
+          <Enzima T={T} x={740} y={900} r={185} bloq={kprog(T, LOCK - 0.2, LOCK + 0.3)} />
         </>)}
       </Escena>
       {/* 8 · síntomas */}
       <Escena T={T} a={K.S} b={K.V} zoom={0.04}>
         <FondoLunares color={KC.coral} />
         {fsvg(<>
-          <Cara T={T} x={300} y={700} r={170} rojo={rubor} nausea={naus} />
-          <Corazon T={T} x={780} y={880} s={0.9} frec={klerp(1.1, 3.0, kprog(T, K.S + 1.2, K.S + 2.2))} />
-          {T > K.S + 3.6 && <g opacity={kprog(T, K.S + 3.6, K.S + 4.0)}><CajaPastillas x={300} y={1050} s={0.75} /></g>}
+          <Cara T={T} x={370} y={800} r={270} rojo={rubor} nausea={naus} />
+          <Corazon T={T} x={840} y={1130} s={1.5} frec={klerp(1.1, 3.0, kprog(T, K.S + 1.2, K.S + 2.2))} />
+          {T > K.S + 3.6 && <g opacity={kprog(T, K.S + 3.6, K.S + 4.0)}><CajaPastillas x={330} y={1300} s={1.1} /></g>}
         </>)}
       </Escena>
       {/* 9 · ventana de hasta 3 días */}
       <Escena T={T} a={K.V} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          {[0, 1, 2, 3].map((d) => <DiaCard key={d} T={T} x={150 + d * 260} y={860} dia={d} hongo={d === 0} on={d ? kprog(T, K.V + 0.5 + d * 0.45, K.V + 0.8 + d * 0.45) : 0} />)}
-          <g opacity={kprog(T, K.V + 1.9, K.V + 2.3)}>
-            <path d="M 150 1020 L 150 1050 L 930 1050 L 930 1020" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinejoin="round" />
-          </g>
+          {[0, 1, 2, 3].map((d) => <g key={d} transform={`translate(${290 + (d % 2) * 500} ${610 + Math.floor(d / 2) * 530}) scale(1.85)`}><DiaCard T={T} x={0} y={0} dia={d} hongo={d === 0} on={d ? kprog(T, K.V + 0.5 + d * 0.45, K.V + 0.8 + d * 0.45) : 0} /></g>)}
         </>)}
       </Escena>
       {/* 10 · Múnich, 2011: otro hongo (Lepiota aspera), la reacción volvía hasta 48 h */}
       <Escena T={T} a={K.Es} b={K.D} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Pasto T={T} y={1180} />
-          <Lepiota x={250} y={1190} s={1.45} crece={kprog(T, K.Es + 2.6, K.Es + 3.4)} />
+          <Pasto T={T} y={1300} />
+          <g opacity={klerp(0.7, 1, kprog(T, K.Es + 2.6, K.Es + 3.2))}><Lepiota x={290} y={1310} s={2.4} crece={kprog(T, K.Es - 0.6, K.Es + 0.3)} /></g>
           {T > K.Es + 3.6 && <g opacity={kprog(T, K.Es + 3.6, K.Es + 4.0)}>
-            <line x1={470} y1={1050} x2={1010} y2={1050} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
+            <line x1={545} y1={1110} x2={995} y2={1110} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
             {[0, 24, 48].map((h, i) => { const on = kprog(T, K.Es + 4.0 + i * 0.7, K.Es + 4.3 + i * 0.7); return <g key={h}>
-              <line x1={500 + i * 230} y1={1030} x2={500 + i * 230} y2={1070} stroke={KC.ink} strokeWidth={8} />
-              <text x={500 + i * 230} y={1112} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>{h} h</text>
-              {on > 0 && <g transform={`translate(${500 + i * 230} 1015) scale(${0.55 * kEase.rebote(on)})`}><Tarro T={T} x={0} y={0} rojo={on} /></g>}
+              <line x1={590 + i * 170} y1={1090} x2={590 + i * 170} y2={1130} stroke={KC.ink} strokeWidth={8} />
+              <text x={590 + i * 170} y={1180} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink}>{h} h</text>
+              {on > 0 && <g transform={`translate(${580 + i * 170} 1075) scale(${0.6 * kEase.rebote(on)})`}><Tarro T={T} x={0} y={0} rojo={on} /></g>}
             </g>; })}
           </g>}
         </>)}
@@ -357,75 +358,74 @@ function CoprinaShot() {
       <Escena T={T} a={K.D} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <rect x={-20} y={1150} width={KW + 40} height={800} fill="#efe7ff" stroke={KC.ink} strokeWidth={8} />
-          <Frasco x={300} y={1150} s={1.5} />
-          {T > K.D + 2.4 && <Rata T={T} x={klerp(1250, 760, kprog(T, K.D + 2.4, K.D + 3.2, kEase.sale))} y={930} s={1.1} />}
+          <rect x={-20} y={1300} width={KW + 40} height={800} fill="#241d3a" stroke={KC.ink} strokeWidth={8} />
+          <Frasco x={280} y={1300} s={2.2} />
+          <g opacity={klerp(0.45, 1, kprog(T, K.D + 2.4, K.D + 3.0))}><Rata T={T} x={klerp(860, 690, kprog(T, K.D + 2.4, K.D + 3.2, kEase.sale))} y={1200} s={1.45} /></g>
         </>)}
       </Escena>
       {/* 12 · cierre: la misma imagen del inicio, ya entendida */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Pasto T={T} />
-          <RacimoCoprino T={T} x={330} y={1190} s={1.55} seed={1} tinta={0.25 + 0.5 * kprog(T, K.C, K.Ou)} />
-          <Tarro T={T} x={790} y={1200} s={1.15} tache={kprog(T, K.C + 1.0, K.C + 1.4, kEase.sale)} />
+          <Pasto T={T} y={1300} />
+          <RacimoCoprino T={T} x={345} y={1310} s={1.85} seed={1} tinta={0.25 + 0.5 * kprog(T, K.C, K.Ou)} />
+          <Tarro T={T} x={730} y={1320} s={1.7} tache={kprog(T, K.C + 1.0, K.C + 1.4, kEase.sale)} />
         </>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.6} until={K.G + 4.2} texto="comestible" x={290} y={430} tam={46} />
-      <MitoTachado T={T} at={K.G + 0.7} tacharEn={K.G + 1.9} until={K.G + 4.2} texto="venenoso" x={290} y={540} tam={46} />
-      <Chip T={T} at={K.G + 2.3} until={K.N - 0.25} texto="depende de lo que tomes después" x={540} y={1130} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.N + 0.9} until={K.Ti - 0.3} x={60} y={420} texto="coprino entintado" tam={38} color={KC.ink} />
-      <Etq T={T} at={K.N + 1.2} until={K.Co - 0.3} x={60} y={472} texto="Coprinopsis atramentaria" it tam={38} color={KC.ink} />
-      <Etq T={T} at={K.N + 1.8} until={K.Ti - 0.3} x={600} y={770} texto="sombrero gris, acanalado" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.N + 2.4} until={K.Ti - 0.3} x={680} y={900} texto="en racimos" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.N + 2.0} until={K.Co - 0.3} x={1040} y={1400} lado="izq" texto="madera enterrada" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Ti + 0.3} until={K.Co - 0.3} x={60} y={420} texto="láminas → tinta negra" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ti + 1.2} until={K.Co - 0.3} x={640} y={990} texto="esporas negras, 8–11 µm" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Co + 0.2} until={K.Cp - 0.25} texto="se considera comestible de joven" x={370} y={470} tam={30} borde={KC.mint} />
-      <Chip T={T} at={K.Cp + 0.1} until={K.E - 0.3} texto="POR DENTRO · tu cuerpo" x={540} y={420} tam={34} mono borde={KC.gold} />
-      <Etq T={T} at={K.Cp + 0.3} until={K.Cp + 1.5} x={160} y={700} texto="coprina" tam={34} color={KC.gold2} />
-      <Etq T={T} at={K.Cp + 1.6} until={K.E - 0.3} x={1040} y={1000} lado="izq" texto="1-aminociclopropanol" tam={34} color={KC.gold2} />
-      <Chip T={T} at={K.E + 0.1} until={K.P - 0.3} texto="POR DENTRO · hígado" x={370} y={420} tam={34} mono borde={KC.gold} />
-      <Etq T={T} at={K.E + 0.5} until={K.P - 0.3} x={60} y={1150} texto="aldehído deshidrogenasa (ALDH)" tam={32} color={CA.acetato} />
-      <Etq T={T} at={K.E + 2.6} until={K.P - 0.3} x={690} y={760} texto="bloqueada" tam={34} color={KC.gold2} />
-      <Chip T={T} at={K.A + 0.1} until={K.S - 0.3} texto="POR DENTRO · hígado" x={540} y={420} tam={34} mono borde={KC.gold} />
-      <Etq T={T} at={K.A + 0.4} until={K.S - 0.3} x={60} y={720} texto="alcohol" tam={30} color={CA.etanol} />
-      <Etq T={T} at={K.A + 1.4} until={K.S - 0.3} x={330} y={720} texto="acetaldehído" tam={30} color={CA.acetal} />
-      <Etq T={T} at={K.A + 2.6} until={LOCK} x={760} y={720} texto="ácido acético" tam={30} color={CA.acetato} />
-      <Etq T={T} at={K.A + 2.0} until={K.S - 0.3} x={600} y={1000} texto="ALDH" tam={30} color={KC.texto} />
-      <Medidor T={T} at={LOCK - 0.2} until={K.S - 0.3} valor={0.12 + 0.85 * acum} etiqueta="acetaldehído" texto={() => 'se acumula'} y={1010} color={CA.acetal} />
-      <Cronometro T={T} at={K.S + 0.2} until={K.S + 3.4} factor={90} etiqueta="DESPUÉS DE BEBER" x={300} y={420} />
-      <Etq T={T} at={K.S + 0.9} until={K.V - 0.3} x={60} y={920} texto="cara roja" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.S + 1.6} until={K.V - 0.3} x={1040} y={1000} lado="izq" texto="corazón acelerado" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.5} until={K.S + 3.5} x={60} y={1000} texto="náusea y vómito" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.S + 3.9} until={K.V - 0.25} texto="= efecto del disulfiram, fármaco contra el alcoholismo" x={540} y={1150} tam={28} borde={KC.blue} />
-      <Chip T={T} at={K.V + 2.0} until={K.Es - 0.25} texto="hasta ~3 días después del hongo" x={540} y={1150} tam={40} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2011" quien="Centro de toxicología de Múnich" revista="Haberl et al., Clinical Toxicology" y={600} />
-      <Chip T={T} at={K.Es + 1.2} until={K.Es + 3.0} texto="5 pacientes · otro hongo" x={540} y={900} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.Es + 3.2} until={K.D - 0.3} x={60} y={430} texto="Lepiota aspera" it tam={38} color={KC.ink} />
-      <Etq T={T} at={K.Es + 3.5} until={K.D - 0.3} x={60} y={482} texto="su toxina: desconocida en 2011" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Es + 4.0} until={K.D - 0.3} x={470} y={830} texto="la reacción volvía al beber" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.D + 0.4} until={K.D + 2.5} texto="¿medicina contra el alcoholismo?" x={540} y={1130} tam={36} borde={KC.ink} />
-      <SelloRect T={T} at={K.D + 3.6} x={300} y={760} texto="DESCARTADA" until={K.C - 0.1} />
-      <Chip T={T} at={K.D + 3.0} until={K.C - 0.25} texto="en ratas: daño en testículos" x={540} y={1130} tam={38} borde={KC.red} />
-      <Etq T={T} at={K.D + 3.1} until={K.C - 0.3} x={560} y={800} texto="rata de laboratorio" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.0} until={K.C + 3.4} texto="comestible… según lo que hagas después" x={540} y={1130} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="ante la duda: no lo comas" x={420} y={460} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.C + 4.6} until={K.Ou} texto="¿te sientes mal? → urgencias" x={540} y={1130} tam={38} borde={KC.red} />
-      <Etq T={T} at={K.C + 0.8} until={K.Ou} x={40} y={345} texto="No es guía para identificar hongos" tam={24} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.6} until={K.G + 4.2} texto="comestible" x={330} y={430} tam={46} />
+      <MitoTachado T={T} at={K.G + 0.7} tacharEn={K.G + 1.9} until={K.G + 4.2} texto="venenoso" x={330} y={530} tam={46} />
+      <Chip T={T} at={K.G + 2.3} until={K.N - 0.25} texto="depende de lo que tomes después" x={540} y={1430} tam={42} borde={KC.ink} />
+      <Etq T={T} at={K.N + 0.9} until={K.Ti - 0.3} x={60} y={310} texto="coprino entintado" tam={38} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.2} until={K.Co - 0.3} x={60} y={364} texto="Coprinopsis atramentaria" it tam={38} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.8} until={K.Ti - 0.3} x={60} y={420} texto="sombrero gris, acanalado" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.N + 2.4} until={K.Ti - 0.3} x={700} y={1010} texto="en racimos" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.N + 2.0} until={K.Co - 0.3} x={1040} y={1410} lado="izq" texto="madera enterrada" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Ti + 0.3} until={K.Co - 0.3} x={60} y={310} texto="láminas → tinta negra" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ti + 1.2} until={K.Co - 0.3} x={560} y={672} texto="esporas negras, 8–11 µm" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.Co + 0.2} until={K.Cp - 0.25} texto="se considera comestible de joven" x={540} y={340} tam={36} borde={KC.mint} />
+      <Chip T={T} at={K.Cp + 0.1} until={K.E - 0.3} texto="POR DENTRO · tu cuerpo" x={540} y={400} tam={34} mono borde={KC.gold} />
+      <Etq T={T} at={K.Cp + 0.3} until={K.Cp + 1.5} x={190} y={700} texto="coprina" tam={38} color={KC.gold2} />
+      <Etq T={T} at={K.Cp + 1.6} until={K.E - 0.3} x={1040} y={1080} lado="izq" texto="1-aminociclopropanol" tam={36} color={KC.gold2} />
+      <Chip T={T} at={K.E + 0.1} until={K.P - 0.3} texto="POR DENTRO · hígado" x={540} y={330} tam={34} mono borde={KC.gold} />
+      <Etq T={T} at={K.E + 0.5} until={K.P - 0.3} x={60} y={1390} texto="aldehído deshidrogenasa (ALDH)" tam={34} color={CA.acetato} />
+      <Etq T={T} at={K.E + 2.6} until={K.P - 0.3} x={690} y={590} texto="bloqueada" tam={38} color={KC.gold2} />
+      <Chip T={T} at={K.A + 0.1} until={K.S - 0.3} texto="POR DENTRO · hígado" x={540} y={400} tam={34} mono borde={KC.gold} />
+      <Etq T={T} at={K.A + 0.4} until={K.S - 0.3} x={60} y={740} texto="alcohol" tam={32} color={CA.etanol} />
+      <Etq T={T} at={K.A + 1.4} until={K.S - 0.3} x={330} y={680} texto="acetaldehído" tam={32} color={CA.acetal} />
+      <Etq T={T} at={K.A + 2.6} until={LOCK} x={690} y={640} texto="ácido acético" tam={30} color={CA.acetato} />
+      <Etq T={T} at={K.A + 2.0} until={K.S - 0.3} x={760} y={1140} texto="ALDH" tam={34} color={KC.texto} />
+      <Medidor T={T} at={LOCK - 0.2} until={K.S - 0.3} valor={0.12 + 0.85 * acum} etiqueta="acetaldehído" texto={() => 'se acumula'} y={1250} color={CA.acetal} />
+      <Cronometro T={T} at={K.S + 0.2} until={K.S + 3.4} factor={90} etiqueta="DESPUÉS DE BEBER" x={800} y={520} />
+      <Etq T={T} at={K.S + 0.9} until={K.V - 0.3} x={60} y={1130} texto="cara roja" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.6} until={K.V - 0.3} x={1040} y={1320} lado="izq" texto="corazón acelerado" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.5} until={K.S + 3.5} x={60} y={1190} texto="náusea y vómito" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.S + 3.9} until={K.V - 0.25} texto="= efecto del disulfiram, fármaco contra el alcoholismo" x={540} y={1470} tam={30} borde={KC.blue} />
+      <Chip T={T} at={K.V + 2.0} until={K.Es - 0.25} texto="hasta ~3 días después del hongo" x={540} y={1470} tam={42} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2011" quien="Centro de toxicología de Múnich" revista="Haberl et al., Clinical Toxicology" x={730} y={480} />
+      <Chip T={T} at={K.Es + 1.2} until={K.Es + 3.0} texto="5 pacientes · otro hongo" x={770} y={720} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Es + 3.2} until={K.D - 0.3} x={60} y={400} texto="Lepiota aspera" it tam={40} color={KC.ink} />
+      <Etq T={T} at={K.Es + 3.5} until={K.D - 0.3} x={60} y={456} texto="su toxina: desconocida en 2011" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Es + 4.0} until={K.D - 0.3} x={545} y={860} texto="la reacción volvía al beber" tam={25} color={KC.ink} />
+      <Chip T={T} at={K.D + 0.4} until={K.D + 2.5} texto="¿medicina contra el alcoholismo?" x={540} y={560} tam={40} borde={KC.ink} />
+      <SelloRect T={T} at={K.D + 3.6} x={290} y={900} texto="DESCARTADA" until={K.C - 0.1} />
+      <Chip T={T} at={K.D + 3.0} until={K.C - 0.25} texto="en ratas: daño en testículos" x={540} y={1440} tam={40} borde={KC.red} />
+      <Etq T={T} at={K.D + 3.1} until={K.C - 0.3} x={600} y={1040} texto="rata de laboratorio" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.0} until={K.C + 3.4} texto="comestible… según lo que hagas después" x={540} y={1430} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="ante la duda: no lo comas" x={540} y={420} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.C + 4.6} until={K.Ou} texto="¿te sientes mal? → urgencias" x={540} y={1430} tam={40} borde={KC.red} />
+      <Etq T={T} at={K.C + 0.8} until={K.Ou} x={40} y={300} texto="No es guía para identificar hongos" tam={24} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={150} color={KC.ink} />
-      <BarraEscala T={T} at={K.N} until={K.Co} texto="5 cm" largo={170} />
-      <BarraEscala T={T} at={K.Ti + 0.7} until={K.Co - 0.25} texto="10 µm" largo={52} x={760} y={850} />
-      <BarraEscala T={T} at={K.Co} until={K.Cp} texto="5 cm" largo={150} />
-      <BarraEscala T={T} at={K.Cp} until={K.P} texto="1 nm · esquemático" largo={120} />
-      <BarraEscala T={T} at={K.P} until={K.A} texto="10 cm" largo={130} />
+      <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={179} color={KC.ink} />
+      <BarraEscala T={T} at={K.N} until={K.Co} texto="5 cm" largo={225} />
+      <BarraEscala T={T} at={K.Co} until={K.Cp} texto="5 cm" largo={240} />
+      <BarraEscala T={T} at={K.Cp} until={K.P} texto="1 nm · esquemático" largo={123} />
+      <BarraEscala T={T} at={K.P} until={K.A} texto="10 cm" largo={217} />
       <BarraEscala T={T} at={K.A} until={K.S} texto="esquemático" largo={120} />
-      <BarraEscala T={T} at={K.Es + 3.0} until={K.D} texto="5 cm" largo={160} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={150} />
+      <BarraEscala T={T} at={K.Es} until={K.D} texto="5 cm" largo={265} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={179} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="¿Comestible? *Depende*" />
