@@ -47,11 +47,11 @@ function Cama({ x, y, s = 1, T = 0, alarma = 0, tinte = 0 }) {
 }
 // Silueta de paciente. estado: 'neutro' | 'alerta' (campana encendida) | 'perdido' (punteado con "?") | 'estrella'.
 function Paciente({ x, y, s = 1, estado = 'neutro', T = 0, o = 1, color }) {
-  const perdido = estado === 'perdido', fill = color || (estado === 'alerta' ? KC.coral : perdido ? '#e9e4da' : estado === 'estrella' ? KC.gold2 : '#d8d2c6');
+  const perdido = estado === 'perdido', fill = color || (estado === 'alerta' ? KC.coral : perdido ? '#2c3442' : estado === 'estrella' ? KC.gold2 : '#d8d2c6');
   return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o}>
     <circle cx={0} cy={-62} r={34} fill={fill} stroke={KC.ink} strokeWidth={7} strokeDasharray={perdido ? '12 9' : 'none'} />
     <path d="M -64 48 Q -64 -18 0 -18 Q 64 -18 64 48 Z" fill={fill} stroke={KC.ink} strokeWidth={7} strokeDasharray={perdido ? '12 9' : 'none'} strokeLinejoin="round" />
-    {perdido && <text x={0} y={34} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity=".55">?</text>}
+    {perdido && <text x={0} y={34} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity=".85">?</text>}
     {estado === 'alerta' && <Campana x={0} y={-150} s={0.8} on={1} T={T} />}
     {estado === 'estrella' && <path d="M 0 -170 L 12 -140 L 44 -138 L 19 -118 L 28 -86 L 0 -104 L -28 -86 L -19 -118 L -44 -138 L -12 -140 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" transform="translate(0 30) scale(.8)" />}
   </g>;
@@ -86,9 +86,9 @@ function Cuerpo({ T, bact = 0, glob = 0, inflama = 0, seed = 7 }) {
   </g>;
 }
 // Regla de calificación (AUC) de 0.5 (azar) a 1.0 (perfecto).
-function Regla({ T, at, until, aguja, banda }) {
+function Regla({ T, at, until, aguja, banda, Y = 860 }) {
   if (!kvisible(T, at, until)) return null;
-  const e = kentrada(T, at, until, 'sube'), X = (v) => 120 + (v - 0.5) / 0.5 * 840, Y = 860;
+  const e = kentrada(T, at, until, 'sube'), X = (v) => 120 + (v - 0.5) / 0.5 * 840;
   const av = aguja ? klerp(0.5, aguja.valor, kprog(T, aguja.at, aguja.at + 1.2, kEase.sale)) : null, bo = banda ? kprog(T, banda.at, banda.at + 0.5) : 0;
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:40, opacity:e.o }}>
     <rect x={X(0.5)} y={Y - 18} width={840} height={36} rx={18} fill="#fff" stroke={KC.ink} strokeWidth={6} />
@@ -99,8 +99,8 @@ function Regla({ T, at, until, aguja, banda }) {
     </g>}
     {[0.5, 0.6, 0.7, 0.8, 0.9, 1.0].map((v) => <g key={v}><line x1={X(v)} y1={Y + 22} x2={X(v)} y2={Y + 44} stroke={KC.ink} strokeWidth={5} />
       <text x={X(v)} y={Y + 84} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{v.toFixed(1)}</text></g>)}
-    <text x={X(0.5)} y={Y + 128} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill="#6b6358">azar</text>
-    <text x={X(1.0)} y={Y + 128} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill="#6b6358">perfecto</text>
+    <text x={X(0.5)} y={Y + 128} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill="#b9b3a8">azar</text>
+    <text x={X(1.0)} y={Y + 128} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill="#b9b3a8">perfecto</text>
     {aguja && T >= aguja.at && <g transform={`translate(${X(av)} ${Y})`}>
       <path d="M 0 -6 L -26 -64 L 26 -64 Z" fill={KC.red} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" transform="rotate(180) translate(0 -10)" />
       <line x1={0} y1={-30} x2={0} y2={30} stroke={KC.red} strokeWidth={8} />
@@ -110,9 +110,9 @@ function Regla({ T, at, until, aguja, banda }) {
   </svg>;
 }
 // Cama chiquita (para la cuadrícula de alertas). on: alerta encendida.
-function Camita({ x, y, on = false, T = 0 }) {
+function Camita({ x, y, on = false, T = 0, s = 1 }) {
   const c = on ? (Math.sin(T * 12 + x) > -0.3 ? KC.red : '#a82a20') : '#ffffff';
-  return <g transform={`translate(${x} ${y})`}>
+  return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-32} y={-4} width={64} height={16} rx={5} fill={c} stroke={KC.ink} strokeWidth={4} />
     <rect x={-36} y={-20} width={8} height={40} rx={3} fill={KC.ink} />
     <circle cx={-18} cy={-12} r={8} fill={on ? '#ffd0cc' : PIEL} stroke={KC.ink} strokeWidth={3} />
@@ -167,7 +167,7 @@ function DosDeTres({ T, at, until, x = 800, y = 600, color = KC.red, etiqueta = 
   const e = kentrada(T, at, until, 'pop');
   return <div style={{ position:'absolute', left:x, top:y, zIndex:41, transform:`translate(-50%,-50%) scale(${e.s})`, opacity:e.o, textAlign:'center' }}>
     <div style={{ font:`400 170px/0.95 ${KF.titulo}`, color, WebkitTextStroke:`6px ${KC.ink}`, textShadow:`7px 7px 0 ${KC.ink}`, whiteSpace:'nowrap' }}>2 de 3</div>
-    <div style={{ font:`900 40px ${KF.texto}`, color:KC.ink, background:'rgba(255,255,255,.9)', border:`4px solid ${KC.ink}`, borderRadius:999, padding:'6px 24px', marginTop:10, display:'inline-block' }}>{etiqueta}</div>
+    <div style={{ font:`900 40px ${KF.texto}`, color:'#0b1020', background:'rgba(255,255,255,.9)', border:`4px solid #0b1020`, borderRadius:999, padding:'6px 24px', marginTop:10, display:'inline-block' }}>{etiqueta}</div>
   </div>;
 }
 
@@ -180,10 +180,10 @@ function Sepsis() {
   const tres = (t0, cierre) => { const p = (k) => kprog(T, t0 + k * 0.25, t0 + 0.3 + k * 0.25, kEase.sale);
     const roja = cierre ? kprog(T, K.Ci + 1.4, K.Ci + 1.8) : 0;
     return <>
-      <g opacity={p(0)}><Paciente x={240} y={1050} s={0.95} estado="alerta" T={T} /></g>
-      <g opacity={p(1)}><Paciente x={540} y={1050} s={0.95} estado={roja > 0.5 ? 'neutro' : 'perdido'} color={roja > 0.5 ? KC.red : null} /></g>
-      <g opacity={p(2)}><Paciente x={840} y={1050} s={0.95} estado={roja > 0.5 ? 'neutro' : 'perdido'} color={roja > 0.5 ? KC.red : null} /></g>
-      {roja > 0.5 && [540, 840].map((px) => <text key={px} x={px} y={900} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={4} opacity={0.6 + 0.4 * Math.sin(T * 8)}>!</text>)}
+      <g opacity={p(0)}><Paciente x={230} y={1340} s={1.3} estado="alerta" T={T} /></g>
+      <g opacity={p(1)}><Paciente x={540} y={1340} s={1.3} estado={roja > 0.5 ? 'neutro' : 'perdido'} color={roja > 0.5 ? KC.red : null} /></g>
+      <g opacity={p(2)}><Paciente x={850} y={1340} s={1.3} estado={roja > 0.5 ? 'neutro' : 'perdido'} color={roja > 0.5 ? KC.red : null} /></g>
+      {roja > 0.5 && [540, 850].map((px) => <text key={px} x={px} y={1170} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={4} opacity={0.6 + 0.4 * Math.sin(T * 8)}>!</text>)}
     </>; };
   const alertN = Math.round(18 * kprog(T, K.A + 0.9, K.A + 2.6, kEase.suave));
   const alertIdx = [3, 17, 22, 28, 34, 41, 46, 53, 59, 62, 68, 71, 77, 84, 88, 90, 95, 99];
@@ -195,93 +195,106 @@ function Sepsis() {
       <Escena T={T} a={K.G} b={K.S}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Cama x={250} y={780} s={0.7} T={T} alarma={T > K.G + 0.4 ? 1 : 0} />
+          <Cama x={450} y={830} s={1.1} T={T} alarma={T > K.G + 0.4 ? 1 : 0} />
           {T > K.G + 3.6 && tres(K.G + 3.6, false)}
         </>)}
       </Escena>
-      <Chip T={T} at={K.G + 0.5} until={K.G + 3.4} texto="IA en cientos de hospitales" x={330} y={430} tam={36} borde={KC.ink} />
-      <DosDeTres T={T} at={K.G + 4.7} until={K.S - 0.2} x={805} y={760} />
+      <Chip T={T} at={K.G + 0.5} until={K.G + 3.4} texto="IA en cientos de hospitales" x={370} y={300} tam={36} borde={KC.ink} />
+      <DosDeTres T={T} at={K.G + 4.7} until={K.S - 0.2} x={370} y={500} />
       {/* 2 · qué es la sepsis (por dentro del cuerpo) */}
       <Escena T={T} a={K.S} b={K.E}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {svg(<Cuerpo T={T} bact={kprog(T, K.S + 0.2, K.S + 1.2)} glob={kprog(T, K.S + 1.4, K.S + 3.4, kEase.suave)} inflama={kprog(T, K.S + 3.0, K.S + 4.2)} />)}
+        {svg(<>
+          <g transform="translate(540 890) scale(1.45) translate(-410 -813)"><Cuerpo T={T} bact={kprog(T, K.S + 0.2, K.S + 1.2)} glob={kprog(T, K.S + 1.4, K.S + 3.4, kEase.suave)} inflama={kprog(T, K.S + 3.0, K.S + 4.2)} /></g>
+          {/* rótulos a los lados de la cabeza, con línea guía hasta lo suyo */}
+          <g opacity={kprog(T, K.S + 1.8, K.S + 2.2)}>
+            <line x1={300} y1={500} x2={430} y2={700} stroke={KC.texto} strokeWidth={4} strokeLinecap="round" />
+            <text x={380} y={430} textAnchor="end" style={{ font:`700 32px ${KF.mono}` }} fill={KC.texto}>tu defensa</text>
+            <text x={380} y={472} textAnchor="end" style={{ font:`700 32px ${KF.mono}` }} fill={KC.texto}>se desborda</text>
+          </g>
+          <g opacity={kprog(T, K.S + 3.2, K.S + 3.6)}>
+            <line x1={770} y1={500} x2={655} y2={700} stroke={KC.coral} strokeWidth={4} strokeLinecap="round" />
+            <text x={720} y={430} style={{ font:`700 32px ${KF.mono}` }} fill={KC.coral}>daña tus</text>
+            <text x={720} y={472} style={{ font:`700 32px ${KF.mono}` }} fill={KC.coral}>órganos</text>
+          </g>
+        </>)}
       </Escena>
-      <Etq T={T} at={K.S + 0.6} until={K.E - 0.2} x={70} y={1050} texto="infección" color={KC.lilac} />
-      <Etq T={T} at={K.S + 1.8} until={K.E - 0.2} x={560} y={760} texto="tu defensa se desborda" tam={27} />
-      <Etq T={T} at={K.S + 3.2} until={K.E - 0.2} x={560} y={900} texto="daña tus órganos" color={KC.coral} tam={27} />
-      <Chip T={T} at={K.S + 4.6} until={K.E - 0.2} texto="tratarla pronto es clave" x={540} y={1130} tam={38} borde={KC.mint} />
+      <Etq T={T} at={K.S + 0.6} until={K.E - 0.2} x={40} y={1180} texto="infección" color={KC.lilac} />
+      <Chip T={T} at={K.S + 4.6} until={K.E - 0.2} texto="tratarla pronto es clave" x={540} y={1500} tam={38} borde={KC.mint} />
       {/* 3 · el estudio por fuera */}
       <Escena T={T} a={K.E} b={K.C}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>{Array.from({ length: 12 }, (_, i) => <g key={i} opacity={kprog(T, K.E + 2.2 + i * 0.12, K.E + 2.5 + i * 0.12)}><Camita x={150 + (i % 6) * 156} y={1080 + Math.floor(i / 6) * 56} T={T} /></g>)}</>)}
+        {svg(<>{Array.from({ length: 12 }, (_, i) => <g key={i} opacity={klerp(0.28, 1, kprog(T, K.E + 2.2 + i * 0.12, K.E + 2.5 + i * 0.12))}><Camita x={165 + (i % 4) * 250} y={1030 + Math.floor(i / 4) * 180} s={2.8} T={T} /></g>)}</>)}
       </Escena>
-      <Chip T={T} at={K.E + 0.3} until={K.C - 0.2} texto="prueba por fuera" x={330} y={400} tam={38} borde={KC.gold} />
-      <TarjetaEstudio T={T} at={K.E + 0.5} until={K.C - 0.3} anio="2021" quien="Universidad de Michigan" revista="Wong et al. · JAMA Internal Medicine" x={400} y={660} />
-      {T < K.C + 0.3 && <div style={{ opacity:1 - kprog(T, K.C - 0.2, K.C + 0.3) }}><Contador T={T} at={K.E + 2.2} hasta={38455} dur={1.8} x={540} y={940} tam={76} color={KC.ink} /></div>}
-      {T > K.E + 2.2 && T < K.C + 0.3 && <div style={{ position:'absolute', left:0, right:0, top:985, textAlign:'center', zIndex:41, opacity:kprog(T, K.E + 2.4, K.E + 2.8) * (1 - kprog(T, K.C - 0.2, K.C + 0.3)), font:`900 38px ${KF.texto}`, color:KC.ink }}>hospitalizaciones revisadas</div>}
+      <Chip T={T} at={K.E + 0.3} until={K.C - 0.2} texto="prueba por fuera" x={540} y={300} tam={38} borde={KC.gold} />
+      <TarjetaEstudio T={T} at={K.E + 0.5} until={K.C - 0.3} anio="2021" quien="Universidad de Michigan" revista="Wong et al. · JAMA Internal Medicine" x={540} y={520} />
+      {T < K.C + 0.3 && <div style={{ opacity:1 - kprog(T, K.C - 0.2, K.C + 0.3) }}><Contador T={T} at={K.E + 2.2} hasta={38455} dur={1.8} x={540} y={790} tam={76} color={KC.ink} /></div>}
+      {T > K.E + 2.2 && T < K.C + 0.3 && <div style={{ position:'absolute', left:0, right:0, top:835, textAlign:'center', zIndex:41, opacity:kprog(T, K.E + 2.4, K.E + 2.8) * (1 - kprog(T, K.C - 0.2, K.C + 0.3)), font:`900 38px ${KF.texto}`, color:KC.ink }}>hospitalizaciones revisadas</div>}
       {/* 4 · la calificación */}
       <Escena T={T} a={K.C} b={K.P}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
+        {svg(<g opacity={0.3}>{Array.from({ length: 12 }, (_, i) => <Camita key={i} x={165 + (i % 4) * 250} y={1030 + Math.floor(i / 4) * 180} s={2.8} T={T} />)}</g>)}
       </Escena>
-      <Chip T={T} at={K.C + 0.2} until={K.C + 4.3} texto="calificación para detectar sepsis" x={540} y={460} tam={36} borde={KC.ink} />
-      <Regla T={T} at={K.C + 0.3} until={K.P - 0.2} aguja={{ at: K.C + 0.6, valor: 0.63 }} banda={{ at: K.C + 3.6, de: 0.76, a: 0.83 }} />
+      <Chip T={T} at={K.C + 0.2} until={K.C + 4.3} texto="calificación para detectar sepsis" x={540} y={300} tam={36} borde={KC.ink} />
+      <Regla T={T} at={K.C + 0.3} until={K.P - 0.2} aguja={{ at: K.C + 0.6, valor: 0.63 }} banda={{ at: K.C + 3.6, de: 0.76, a: 0.83 }} Y={570} />
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.A} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <text x={290} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 900)`}>?</text>
-          <Campana x={150} y={500} s={1.1} on={1} T={T} /><Campana x={430} y={420} s={0.9} on={1} T={T + 0.3} />
+          <text x={540} y={1200} textAnchor="middle" style={{ font:`400 620px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 1000)`}>?</text>
+          <Campana x={270} y={560} s={1.9} on={1} T={T} /><Campana x={810} y={470} s={1.6} on={1} T={T + 0.3} />
         </>)}
       </Escena>
       {/* 6 · alertas de más */}
       <Escena T={T} a={K.A} b={K.Ta}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<>{Array.from({ length: 100 }, (_, i) => <Camita key={i} x={130 + (i % 10) * 92} y={690 + Math.floor(i / 10) * 50} on={alertIdx.indexOf(i) > -1 && alertIdx.indexOf(i) < alertN} T={T} />)}</>)}
+        {svg(<>{Array.from({ length: 100 }, (_, i) => <Camita key={i} x={126 + (i % 10) * 92} y={640 + Math.floor(i / 10) * 84} s={1.2} on={alertIdx.indexOf(i) > -1 && alertIdx.indexOf(i) < alertN} T={T} />)}</>)}
       </Escena>
-      <Chip T={T} at={K.A + 0.9} until={K.A + 3.1} texto={`${alertN} de cada 100 hospitalizados`} x={390} y={450} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.A + 3.2} until={K.Ta - 0.2} texto="fatiga de alertas" x={360} y={450} tam={46} borde={KC.red} />
-      <Chip T={T} at={K.A + 3.6} until={K.Ta - 0.2} texto="tantas alarmas cansan" x={360} y={560} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.A + 0.9} until={K.A + 3.1} texto={`${alertN} de cada 100 hospitalizados`} x={540} y={400} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.A + 3.2} until={K.Ta - 0.2} texto="fatiga de alertas" x={540} y={380} tam={46} borde={KC.red} />
+      <Chip T={T} at={K.A + 3.6} until={K.Ta - 0.2} texto="tantas alarmas cansan" x={540} y={490} tam={30} borde={KC.ink} />
       {/* 7 · solo 7 de cada 100 */}
       <Escena T={T} a={K.Ta} b={K.Co}>
         <FondoLunares color={KC.cyan} />
         {svg(<>{Array.from({ length: 100 }, (_, i) => { const on = estIdx.indexOf(i) > -1 && estIdx.indexOf(i) < estN;
-          return <Paciente key={i} x={135 + (i % 10) * 90} y={720 + Math.floor(i / 10) * 46} s={0.32} estado={on ? 'estrella' : 'neutro'} o={on ? 1 : 0.55} />; })}</>)}
+          return <Paciente key={i} x={117 + (i % 10) * 94} y={680 + Math.floor(i / 10) * 84} s={0.5} estado={on ? 'estrella' : 'neutro'} o={on ? 1 : 0.55} />; })}</>)}
       </Escena>
-      <Chip T={T} at={K.Ta + 0.4} until={K.Co - 0.2} texto="100 casos de sepsis" x={330} y={440} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Ta + 1.0} until={K.Co - 0.2} texto={`${estN} sin antibiótico a tiempo`} x={360} y={550} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.Ta + 0.4} until={K.Co - 0.2} texto="100 casos de sepsis" x={540} y={380} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Ta + 1.0} until={K.Co - 0.2} texto={`${estN} sin antibiótico a tiempo`} x={540} y={490} tam={34} borde={KC.gold} />
       {/* 8 · contraste: TREWS */}
       <Escena T={T} a={K.Co} b={K.L}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <g opacity={kprog(T, K.Co + 2.2, K.Co + 2.6)}><Reloj x={200} y={960} s={0.95} T={T} /></g>
-          <g opacity={kprog(T, K.Co + 3.0, K.Co + 3.4)}><Medico x={540} y={940} s={0.95} ok={kprog(T, K.Co + 3.8, K.Co + 4.2, kEase.sale)} T={T} /></g>
-          <g opacity={kprog(T, K.Co + 4.6, K.Co + 5.0)} transform={`translate(860 ${930 + 30 * kprog(T, K.Co + 4.6, K.Co + 5.6, kEase.sale)})`}>
+          {/* el reloj y el médico están desde el inicio (atenuados) y se encienden en su frase */}
+          <g opacity={klerp(0.3, 1, kprog(T, K.Co + 2.2, K.Co + 2.6))}><Reloj x={170} y={1010} s={1.25} T={T} /></g>
+          <g opacity={klerp(0.3, 1, kprog(T, K.Co + 3.0, K.Co + 3.4))}><Medico x={500} y={1010} s={1.7} ok={kprog(T, K.Co + 3.8, K.Co + 4.2, kEase.sale)} T={T} /></g>
+          <g opacity={kprog(T, K.Co + 4.6, K.Co + 5.0)} transform={`translate(875 ${1100 + 30 * kprog(T, K.Co + 4.6, K.Co + 5.6, kEase.sale)}) scale(1.2)`}>
             <path d="M -36 -110 L 36 -110 L 36 10 L 80 10 L 0 100 L -80 10 L -36 10 Z" fill={KC.leaf} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
           </g>
         </>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.Co + 0.3} until={K.L - 0.3} anio="2022" quien="Johns Hopkins · TREWS" revista="Adams et al. · Nature Medicine" x={380} y={560} />
-      <Chip T={T} at={K.Co + 4.8} until={K.L - 0.2} texto="menos muertes (asociación)" x={760} y={1150} tam={30} borde={KC.leaf} />
-      <Sello T={T} until={K.L - 0.2} x={380} y={770} texto="estudio de sus creadores" color={KC.red} tam={46} p={kprog(T, K.Co + 6.6, K.Co + 7.0, kEase.sale)} rot={-4} />
+      <TarjetaEstudio T={T} at={K.Co + 0.3} until={K.L - 0.3} anio="2022" quien="Johns Hopkins · TREWS" revista="Adams et al. · Nature Medicine" x={540} y={430} />
+      <Chip T={T} at={K.Co + 4.8} until={K.L - 0.2} texto="menos muertes (asociación)" x={540} y={1420} tam={30} borde={KC.leaf} />
+      <Sello T={T} until={K.L - 0.2} x={540} y={700} texto="estudio de sus creadores" color={KC.red} tam={46} p={kprog(T, K.Co + 6.6, K.Co + 7.0, kEase.sale)} rot={-4} />
       {/* 9 · la lección */}
       <Escena T={T} a={K.L} b={K.Ci}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Robotito x={600} y={860} s={1.15} T={T} cara="seguro" />
-          <g opacity={kprog(T, K.L + 0.8, K.L + 1.2)}><LupaIcono x={klerp(980, 700, kprog(T, K.L + 0.8, K.L + 2.2, kEase.suave))} y={800} s={0.9} /></g>
+          <Robotito x={540} y={1000} s={2} T={T} cara="seguro" />
+          <g opacity={kprog(T, K.L + 0.8, K.L + 1.2)}><LupaIcono x={klerp(1000, 700, kprog(T, K.L + 0.8, K.L + 2.2, kEase.suave))} y={900} s={1.55} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.L + 0.3} until={K.Ci - 0.2} texto="«según quien la vende»" x={600} y={1110} tam={34} borde={KC.ink} />
-      <Sello T={T} until={K.Ci - 0.2} x={600} y={640} texto="probada por fuera ✔" p={kprog(T, K.L + 2.4, K.L + 2.8, kEase.sale)} />
+      <Chip T={T} at={K.L + 0.3} until={K.Ci - 0.2} texto="«según quien la vende»" x={540} y={1440} tam={34} borde={KC.ink} />
+      <Sello T={T} until={K.Ci - 0.2} x={540} y={540} texto="probada por fuera ✔" p={kprog(T, K.L + 2.4, K.L + 2.8, kEase.sale)} />
       {/* 10 · cierre: la misma cama y los mismos tres */}
       <Escena T={T} a={K.Ci} b={FIN}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Cama x={250} y={780} s={0.7} T={T} alarma={1} />
+          <Cama x={450} y={830} s={1.1} T={T} alarma={1} />
           {tres(K.Ci - 1, true)}
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="2 de cada 3, sin aviso" x={330} y={430} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="2 de cada 3, sin aviso" x={370} y={300} tam={36} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.S - 0.1} texto="No vio *2 de cada 3* casos" />
