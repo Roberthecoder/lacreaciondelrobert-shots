@@ -119,19 +119,19 @@ function CompostaShot() {
   const tapaG = kprog(T, K.G, K.G + 0.25) * (1 - kprog(T, K.G + 0.95, K.G + 1.3));
   // bolsas: 4 de 10 orgánicas
   const bolsas = Array.from({ length: 10 }, (_, i) => { const e = kprog(T, K.B + 0.2 + i * 0.1, K.B + 0.5 + i * 0.1, kEase.rebote); const org = i < 4 && T > K.B + 1.6 + i * 0.15;
-    return <Bolsa key={i} x={150 + (i % 5) * 195} y={1060 + Math.floor(i / 5) * 190 - 190} s={0.85 * e} color={org ? CP.verde : CP.bolsa} o={e} />; });
+    return <Bolsa key={i} x={150 + (i % 5) * 195} y={960 + Math.floor(i / 5) * 250} s={1.2 * e} color={org ? CP.verde : CP.bolsa} o={e} />; });
   // relleno en corte
   const cubre = kprog(T, K.S + 0.1, K.S + 1.2, kEase.suave);
   const relleno = <>
-    <rect x={0} y={0} width={KW} height={560} fill="#527b8e" />
-    <rect x={0} y={520} width={KW} height={760} fill={CP.tierra} stroke={KC.ink} strokeWidth={6} />
-    {Array.from({ length: 4 }, (_, f) => Array.from({ length: 7 }, (_, i) => <Bolsa key={f + '-' + i} x={70 + i * 160 + (f % 2) * 70} y={760 + f * 130} s={0.75} color={['#3a3f4a', '#4b5563', '#2f6f3a', '#5a4a7a'][(i + f) % 4]} />))}
+    <rect x={0} y={0} width={KW} height={560} fill="#12262f" />
+    <rect x={0} y={520} width={KW} height={900} fill={CP.tierra} stroke={KC.ink} strokeWidth={6} />
+    {Array.from({ length: 5 }, (_, f) => Array.from({ length: 7 }, (_, i) => <Bolsa key={f + '-' + i} x={70 + i * 160 + (f % 2) * 70} y={760 + f * 130} s={0.75} color={['#3a3f4a', '#4b5563', '#2f6f3a', '#5a4a7a'][(i + f) % 4]} />))}
     <rect x={0} y={520} width={KW} height={110 * cubre} fill={CP.tierra2} />
     <rect x={0} y={510} width={KW} height={22} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} opacity={cubre} />
   </>;
   // metano que sube (escena Arqueas)
   const burbujas = (t0, n, y0) => Array.from({ length: n }, (_, i) => { const u = ((T - t0) * 0.35 + i / n) % 1; if (T < t0 + i * 0.12) return null;
-    return <Metano key={i} x={180 + (i * 137) % 720 + Math.sin(T * 2 + i) * 20} y={y0 - u * 700} s={0.8} o={Math.min(1, (1 - u) * 3)} />; });
+    return <Metano key={i} x={180 + (i * 137) % 720 + Math.sin(T * 2 + i) * 20} y={y0 - u * 760} s={1.15} o={Math.min(1, (1 - u) * 3)} />; });
   // balanza (Potencia): 1 kg de metano ≈ 80 kg de CO₂ en 20 años
   const incl = 0;
   // composta en corte (escenas Composta y Calor)
@@ -154,12 +154,12 @@ function CompostaShot() {
       {/* 1 · gancho: la cáscara va al bote */}
       <Escena T={T} a={K.G} b={K.B}>
         <FondoLunares color={KC.mint} />
-        {svg(<><rect x={0} y={1180} width={KW} height={740} fill="#7a7469" /><line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={6} />
-          <Bote x={330} y={1180} s={1.25} tapa={tapaG} />
-          {caeG < 1 && <Cascara x={330} y={klerp(250, 760, caeG)} s={0.9} rot={caeG * 200} T={T} />}
-          <g opacity={kprog(T, K.G + 2.2, K.G + 2.6)}><path d={`M 330 470 Q 470 330 620 ${380 + Math.sin(T * 4) * 6}`} stroke={KC.ink} strokeWidth={10} fill="none" strokeDasharray="22 14" strokeDashoffset={-T * 40} />
-            <path d="M 600 350 L 640 382 L 596 410" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g></>)}
-        <Chip T={T} at={K.G + 2.4} until={K.B - 0.2} texto="→ al relleno" x={300} y={360} tam={40} borde={KC.ink} />
+        {svg(<><rect x={0} y={1400} width={KW} height={520} fill="#2a2622" /><line x1={0} y1={1400} x2={KW} y2={1400} stroke={KC.ink} strokeWidth={6} />
+          <Bote x={540} y={1400} s={2.1} tapa={tapaG} />
+          {caeG < 1 && <Cascara x={540} y={klerp(260, 860, caeG)} s={1.6} rot={caeG * 200} T={T} />}
+          <g opacity={kprog(T, K.G + 2.2, K.G + 2.6)}><path d={`M 560 600 Q 700 380 880 ${440 + Math.sin(T * 4) * 6}`} stroke={KC.ink} strokeWidth={10} fill="none" strokeDasharray="22 14" strokeDashoffset={-T * 40} />
+            <path d="M 856 404 L 902 440 L 854 472" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g></>)}
+        <Chip T={T} at={K.G + 2.4} until={K.B - 0.2} texto="→ al relleno" x={330} y={400} tam={40} borde={KC.ink} />
       </Escena>
       {/* 2 · 4 de cada 10 kilos son orgánicos */}
       <Escena T={T} a={K.B} b={K.S}>
@@ -169,12 +169,12 @@ function CompostaShot() {
       </Escena>
       {/* 3 · relleno: enterrada entre bolsas, sin aire */}
       <Escena T={T} a={K.S} b={K.Ba}>
-        {svg(<>{relleno}<Cascara x={540} y={890} s={0.55} pudre={0.4} T={T} /></>)}
+        {svg(<>{relleno}<Cascara x={540} y={890} s={0.8} pudre={0.4} T={T} /></>)}
         <EscalaFija texto="corte del relleno · esquema" largo={0} y={1440} color={KC.ink} />
       </Escena>
-      <Lupa T={T} at={K.S + 1.5} until={K.Ba - 0.15} x={340} y={470} r={170} fx={540} fy={890} tinte={KC.orange} etiqueta="POR DENTRO"
+      <Lupa T={T} at={K.S + 1.5} until={K.Ba - 0.15} x={330} y={440} r={230} fx={540} fy={890} tinte={KC.orange} etiqueta="POR DENTRO"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#1a120c" />
-          <Cascara x={r} y={r + 10} s={0.9} pudre={0.6} T={t} /><Bacteria x={r - 80} y={r + 90} s={0.5} T={t} color={KC.mint} /><Bacteria x={r + 90} y={r - 60} s={0.5} T={t} seed={3} rot={40} color={KC.mint} /></svg>} />
+          <Cascara x={r} y={r + 10} s={1.2} pudre={0.6} T={t} /><Bacteria x={r - 110} y={r + 120} s={0.65} T={t} color={KC.mint} /><Bacteria x={r + 120} y={r - 80} s={0.65} T={t} seed={3} rot={40} color={KC.mint} /></svg>} />
       {/* 4 · bacterias: ácidos e hidrógeno */}
       <Escena T={T} a={K.Ba} b={K.A} zoom={0.08}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 45%, #2a1d14 0%, ${KC.dark} 75%)` }}></div>
@@ -194,12 +194,12 @@ function CompostaShot() {
       <Escena T={T} a={K.A} b={K.Po} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, #1e1530 0%, ${KC.dark} 75%)` }}></div>
         {svg(<>
-          {[[250, 1050, 'racimo'], [560, 980, 'baston'], [820, 1080, 'racimo'], [400, 860, 'baston'], [720, 820, 'racimo']].map(([x, y, f], i) =>
-            <Arquea key={i} x={x} y={y} s={1.3 * kprog(T, K.A - 0.45 + i * 0.1, K.A - 0.1 + i * 0.1, kEase.rebote)} T={T} seed={i + 1} forma={f} />)}
-          {burbujas(K.A - 0.2, 9, 1080)}
+          {[[220, 1130, 'racimo'], [560, 1010, 'baston'], [860, 1160, 'racimo'], [360, 800, 'baston'], [760, 780, 'racimo']].map(([x, y, f], i) =>
+            <Arquea key={i} x={x} y={y} s={2.1 * kprog(T, K.A - 0.45 + i * 0.1, K.A - 0.1 + i * 0.1, kEase.rebote)} T={T} seed={i + 1} forma={f} />)}
+          {burbujas(K.A - 0.2, 9, 1120)}
         </>)}
-        <Etq T={T} at={K.A + 0.6} until={K.Po - 0.2} x={250} y={1150} texto="arqueas metanógenas" tam={32} color={CP.arquea} />
-        <Chip T={T} at={K.A + 1.6} until={K.Po - 0.2} texto="CH₄ = metano" x={300} y={500} tam={40} borde={CP.metano} />
+        <Etq T={T} at={K.A + 0.6} until={K.Po - 0.2} x={200} y={1290} texto="arqueas metanógenas" tam={32} color={CP.arquea} />
+        <Chip T={T} at={K.A + 1.6} until={K.Po - 0.2} texto="CH₄ = metano" x={300} y={420} tam={40} borde={CP.metano} />
         <EscalaFija texto="al microscopio · esquema" largo={0} y={1440} color={KC.texto} />
       </Escena>
       {/* 6 · potencia: ~80 veces en 20 años */}
@@ -224,29 +224,29 @@ function CompostaShot() {
       {/* 7 · ¿y si tuviera aire? */}
       <Escena T={T} a={K.P} b={K.Co} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={250} y={760} textAnchor="middle" style={{ font:`400 420px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 250 600)`}>?</text>
-          <Cascara x={260} y={1000} s={0.85} T={T} />
-          <Aire x={150} y={880} T={T} rot={20} /><Aire x={380} y={1130} T={T} rot={-160} s={0.9} /></>)}
+        {svg(<><text x={250} y={700} textAnchor="middle" style={{ font:`400 420px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 250 540)`}>?</text>
+          <Cascara x={590} y={1010} s={1.7} T={T} />
+          <Aire x={280} y={900} T={T} rot={20} s={1.4} /><Aire x={900} y={1180} T={T} rot={-160} s={1.3} /></>)}
       </Escena>
       {/* 8 · composta con aire: bacterias, hongos y lombrices */}
       <Escena T={T} a={K.Co} b={K.E}>
         <FondoLunares color={KC.mint} />
-        {svg(<>{compostera(60, 600)}
-          <Aire x={-10} y={760} T={T} o={0.9} /><Aire x={-10} y={1000} T={T} o={0.9} /><Aire x={760} y={880} T={T} rot={180} o={0.9} /></>)}
+        {svg(<><g transform="translate(50 570) scale(1.2)">{compostera(0, 0)}</g>
+          <Aire x={14} y={760} T={T} o={0.9} /><Aire x={14} y={1070} T={T} o={0.9} /><Aire x={440} y={1340} T={T} rot={-90} o={0.9} /></>)}
         <EscalaFija texto="composta en corte · esquema" largo={0} y={1440} color={KC.ink} />
       </Escena>
-      <Etq T={T} at={K.Co + 0.8} until={K.E - 0.2} x={700} y={1040} texto="hongos" lado="der" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Co + 1.2} until={K.E - 0.2} x={700} y={850} texto="lombrices" lado="der" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Co + 1.6} until={K.E - 0.2} x={700} y={960} texto="bacterias" lado="der" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Co + 0.8} until={K.E - 0.2} x={806} y={1130} texto="hongos" lado="der" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Co + 1.2} until={K.E - 0.2} x={806} y={820} texto="lombrices" lado="der" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Co + 1.6} until={K.E - 0.2} x={806} y={1005} texto="bacterias" lado="der" tam={28} color={KC.ink} />
       {['abono', 'H₂O', 'calor', 'CO₂'].map((t, i) => <Chip key={t} T={T} at={K.Co + 3.4 + i * 0.7} until={K.E - 0.2} texto={t} x={150 + i * 160} y={480 - (i % 2) * 70} tam={34}
         borde={[KC.leaf, KC.cyan, KC.red, '#9aa3ae'][i]} />)}
       {/* 9 · el estudio: Nicasio, California (medido en 2018) */}
       <Escena T={T} a={K.E} b={K.Ca}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><rect x={0} y={1180} width={KW} height={740} fill="#617453" /><line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={6} />
-          <Hilera x={90} y={1180} w={900} T={T} sensores={kprog(T, K.E + 3.6, K.E + 4.2)} />
-          {T > K.E + 4.4 && <Aire x={180} y={880} T={T} o={0.7} />}
-          {(() => { const g = kprog(T, K.E + 5.0, K.E + 6.4, kEase.sale), g2 = kprog(T, K.E + 6.2, K.E + 7.6, kEase.sale); const base = 860, H = 380;
+        {svg(<><rect x={0} y={1380} width={KW} height={540} fill="#1c261a" /><line x1={0} y1={1380} x2={KW} y2={1380} stroke={KC.ink} strokeWidth={6} />
+          <g transform="translate(60 1380) scale(1.5)"><Hilera x={0} y={0} w={640} T={T} sensores={kprog(T, K.E + 3.6, K.E + 4.2)} /></g>
+          {T > K.E + 4.4 && <Aire x={130} y={1165} T={T} o={0.7} />}
+          {(() => { const g = kprog(T, K.E + 5.0, K.E + 6.4, kEase.sale), g2 = kprog(T, K.E + 6.2, K.E + 7.6, kEase.sale); const base = 990, H = 400;
             return <g opacity={kprog(T, K.E + 4.8, K.E + 5.1)}>
               <rect x={110} y={base - H * g} width={160} height={H * g} fill="#7b8794" stroke={KC.ink} strokeWidth={6} />
               <text x={190} y={base + 46} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>relleno</text>
@@ -259,29 +259,29 @@ function CompostaShot() {
             </g>; })()}
         </>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 4.2} anio="2018" quien="Universidad de California" revista="medido en Nicasio · publicado en 2023 (Sci. Rep.)" x={500} y={620} />
-      <Etq T={T} at={K.E + 3.8} until={K.Ca - 0.2} x={880} y={1110} texto="sensores" lado="izq" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.E + 5.2} until={K.Ca - 0.2} texto="gases de invernadero (CO₂e)" x={330} y={360} tam={30} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 4.2} anio="2018" quien="Universidad de California" revista="medido en Nicasio · publicado en 2023 (Sci. Rep.)" x={540} y={420} />
+      <Etq T={T} at={K.E + 3.8} until={K.Ca - 0.2} x={905} y={1010} texto="sensores" lado="izq" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.E + 5.2} until={K.Ca - 0.2} texto="gases de invernadero (CO₂e)" x={330} y={440} tam={30} borde={KC.ink} />
       {/* 10 · se calienta sola: más de 60 °C */}
       <Escena T={T} a={K.Ca} b={K.C} zoom={0.08}>
         <FondoLunares color={KC.orange} />
-        {svg(<><rect x={0} y={1180} width={KW} height={740} fill="#617453" /><line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={6} />
-          <Hilera x={60} y={1180} w={960} T={T} vapor={kprog(T, K.Ca + 1.0, K.Ca + 2.0)} />
-          <Termo x={640} y={1000} v={kprog(T, K.Ca + 0.3, K.Ca + 2.2, kEase.suave) * 0.75} etiqueta={T > K.Ca + 2.0 ? '60 °C' : null} alto={480} /></>)}
+        {svg(<><rect x={0} y={1380} width={KW} height={540} fill="#1c261a" /><line x1={0} y1={1380} x2={KW} y2={1380} stroke={KC.ink} strokeWidth={6} />
+          <g transform="translate(60 1380) scale(1.5)"><Hilera x={0} y={0} w={640} T={T} vapor={kprog(T, K.Ca + 1.0, K.Ca + 2.0)} /></g>
+          <Termo x={470} y={1200} v={kprog(T, K.Ca + 0.3, K.Ca + 2.2, kEase.suave) * 0.75} etiqueta={T > K.Ca + 2.0 ? '60 °C' : null} alto={640} /></>)}
         <EscalaFija texto="esquema" largo={0} y={1440} color={KC.ink} />
       </Escena>
       {/* 11 · cierre: la receta y la misma cáscara, ahora tierra */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.mint} />
-        {svg(<><rect x={0} y={1180} width={KW} height={740} fill="#7a7469" /><line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={6} />
-          <path d={`M 120 1180 Q 330 ${1180 - 170 - hazTierra * 40} 540 1180 Z`} fill={CP.tierra2} stroke={KC.ink} strokeWidth={7} />
-          {caeC > 0 && <Cascara x={330} y={klerp(250, 1020, caeC)} s={0.9} rot={caeC * 200} pudre={hazTierra} deshace={hazTierra * 0.6} T={T} />}
-          {hazTierra > 0.6 && <g transform={`translate(330 ${1020 - 20}) scale(${kprog(T, K.C + 5.2, K.C + 6.0, kEase.rebote)})`}>
+        {svg(<><rect x={0} y={1400} width={KW} height={520} fill="#2a2622" /><line x1={0} y1={1400} x2={KW} y2={1400} stroke={KC.ink} strokeWidth={6} />
+          <path d={`M 130 1400 Q 540 ${1400 - 520 - hazTierra * 80} 950 1400 Z`} fill={CP.tierra2} stroke={KC.ink} strokeWidth={7} />
+          {caeC > 0 && <Cascara x={540} y={klerp(260, 1120, caeC)} s={1.6} rot={caeC * 200} pudre={hazTierra} deshace={hazTierra * 0.6} T={T} />}
+          {hazTierra > 0.6 && <g transform={`translate(540 1110) scale(${2.4 * kprog(T, K.C + 5.2, K.C + 6.0, kEase.rebote)})`}>
             <path d="M 0 0 L 0 -90" stroke={KC.leaf} strokeWidth={10} strokeLinecap="round" />
             <path d="M 0 -60 Q -60 -100 -80 -60 Q -40 -40 0 -60 Z" fill={KC.leaf} stroke={KC.ink} strokeWidth={5} />
             <path d="M 0 -80 Q 60 -130 90 -90 Q 40 -60 0 -80 Z" fill={KC.leaf} stroke={KC.ink} strokeWidth={5} /></g>}
           {[['cáscaras', 0], ['hojas secas', 1], ['esponja exprimida', 2], ['voltear', 3]].map(([t, i]) => { const e = kprog(T, K.C + 0.2 + i * 0.6, K.C + 0.6 + i * 0.6, kEase.rebote), o = 1 - kprog(T, K.C + 2.8, K.C + 3.2);
-            const cx = 150 + i * 255; return <g key={t} transform={`translate(${cx} 560) scale(${e})`} opacity={o}>
+            const cx = 150 + i * 255; return <g key={t} transform={`translate(${cx} 640) scale(${e})`} opacity={o}>
               <circle r={90} fill="#fff" stroke={KC.ink} strokeWidth={7} />
               {i === 0 && <Cascara x={0} y={-10} s={0.45} T={T} />}
               {i === 1 && <g><path d="M 0 -60 Q 55 -10 0 60 Q -55 -10 0 -60 Z" fill="#b5651d" stroke={KC.ink} strokeWidth={6} /><line x1={0} y1={-50} x2={0} y2={70} stroke={KC.ink} strokeWidth={5} /></g>}
@@ -293,12 +293,12 @@ function CompostaShot() {
         </>)}
         <EscalaFija texto="esquema" largo={0} y={1440} color={KC.ink} />
       </Escena>
-      <Chip T={T} at={K.C + 4.4} until={K.Ou - 0.1} texto="ahora sí: tierra 🌱" x={330} y={380} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 4.4} until={K.Ou - 0.1} texto="ahora sí: tierra 🌱" x={540} y={700} tam={40} borde={KC.leaf} />
 
       {/* datos y etiquetas */}
-      <NumeroGigante T={T} at={K.B + 0.3} until={K.S - 0.2} valor={4} dur={0.8} sufijo=" de 10" etiqueta="kilos de basura urbana:" x={480} y={520} tam={150} color={KC.leaf} />
-      <Chip T={T} at={K.B + 2.0} until={K.S - 0.2} texto="SEMARNAT 2026: 40 % orgánicos" x={540} y={1160} tam={34} borde={KC.leaf} />
-      <Chip T={T} at={K.S + 0.6} until={K.Ba - 0.2} texto="O₂ ✕  sin aire" x={760} y={760} tam={38} borde={KC.red} />
+      <NumeroGigante T={T} at={K.B + 0.3} until={K.S - 0.2} valor={4} dur={0.8} sufijo=" de 10" etiqueta="kilos de basura urbana:" x={540} y={520} tam={170} color={KC.leaf} />
+      <Chip T={T} at={K.B + 2.0} until={K.S - 0.2} texto="SEMARNAT 2026: 40 % orgánicos" x={540} y={1310} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 0.6} until={K.Ba - 0.2} texto="O₂ ✕  sin aire" x={790} y={640} tam={38} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G} until={K.B - 0.02} texto="No se vuelve tierra: *se pudre y se vuelve gas.*" />
