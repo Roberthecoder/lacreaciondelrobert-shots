@@ -13,16 +13,23 @@ const COL = (() => { const g = krng(12), L = []; let i = 0;
   [5, 17, 29, 40].forEach((k) => { if (L[k]) L[k].res = true; }); return L; })();
 // kill 0..1: el antibiótico mata a las sensibles · crece 0..1: las resistentes ocupan los lugares vacíos
 // lluvia: [t0, t1] partículas de antibiótico · todasRes: la colonia ya es toda resistente (el cierre)
-function Colonia({ T, x = 540, y = 900, s = 1, kill = 0, crece = 0, lluvia, todasRes = false, fondo = true, conjuga = 0 }) {
+function Colonia({ T, x = 540, y = 900, s = 1, kill = 0, crece = 0, lluvia, todasRes = false, fondo = true, conjuga = 0, barre = 0 }) {
   const g = krng(5), polvo = Array.from({ length: 60 }, () => [g() * 2 - 1, g() * 2 - 1, g()]);
-  const enLluvia = lluvia && T > lluvia[0] && T < lluvia[1];
+  const lluvias = !lluvia ? [] : (Array.isArray(lluvia[0]) ? lluvia : [lluvia]);
   const muertas = COL.filter((b) => !b.res);
+  // cuándo nace la hija que ocupa el lugar de cada muerta (para que el cascarón se vaya cuando llega)
+  const hija = (b) => { const i = muertas.indexOf(b); return i < 0 ? 0 : kprog(crece, i / muertas.length * 0.8, i / muertas.length * 0.8 + 0.2); };
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {fondo && <><circle r={400} fill="#0E0F12" stroke={KC.ink} strokeWidth={12} /><circle r={386} fill="none" stroke="rgba(255,255,255,.12)" strokeWidth={6} /></>}
     {COL.map((b, i) => {
       const res = b.res || todasRes;
       const vida = res ? 1 : 1 - kprog(kill, (i / 46) * 0.5, (i / 46) * 0.5 + 0.5);
-      return <g key={i} transform={`translate(${mece(T, i, 0.15) * 6} ${mece(T, i + 50, 0.15) * 6})`}><Bacteria x={b.x} y={b.y} rot={b.rot + mece(T, i, 0.1) * 10} s={0.72} T={T} seed={i} color={res ? RES : SENS} gen={res} vida={vida} /></g>;
+      if (res || vida >= 1) return <g key={i} transform={`translate(${mece(T, i, 0.15) * 6} ${mece(T, i + 50, 0.15) * 6})`}><Bacteria x={b.x} y={b.y} rot={b.rot + mece(T, i, 0.1) * 10} s={0.72} T={T} seed={i} color={res ? RES : SENS} gen={res} vida={vida} /></g>;
+      // muerta: cascarón gris que el antibiótico aparta hacia afuera y que se borra cuando llega la hija
+      const ida = kEase.suave(kclamp(barre, 0, 1)), d = Math.hypot(b.x, b.y) || 1, fuera = ida * (40 + (d / 330) * 70);
+      const op = klerp(1, 0.55, ida) * (1 - hija(b));
+      if (op <= 0.01) return null;
+      return <g key={i} opacity={op} transform={`translate(${mece(T, i, 0.15) * 6 + (b.x / d) * fuera} ${mece(T, i + 50, 0.15) * 6 + (b.y / d) * fuera})`}><Bacteria x={b.x} y={b.y} rot={b.rot + ida * 40} s={0.72} T={T} seed={i} color={vida > 0.5 ? SENS : '#6f7480'} flagelo={vida > 0.5} vida={0.55 + 0.45 * vida} /></g>;
     })}
     {/* hijas de las resistentes en los lugares que quedaron vacíos */}
     {!todasRes && muertas.map((b, i) => { const k = kprog(crece, i / muertas.length * 0.8, i / muertas.length * 0.8 + 0.2); if (k <= 0) return null;
@@ -33,7 +40,7 @@ function Colonia({ T, x = 540, y = 900, s = 1, kill = 0, crece = 0, lluvia, toda
       <g transform={`translate(${klerp(COL[17].x, -230, kprog(conjuga, 0.25, 0.7))} ${klerp(COL[17].y, -260, kprog(conjuga, 0.25, 0.7))})`}><circle r={14} fill="none" stroke={KC.red} strokeWidth={7} /></g>
       <g transform="translate(-230 -260)"><circle r={44} fill={conjuga > 0.7 ? '#ffd0c8' : OTRA} stroke={KC.ink} strokeWidth={6} /><circle r={44} fill="none" stroke={KC.ink} strokeWidth={3} strokeDasharray="4 6" />{conjuga > 0.7 && <circle cx={10} cy={6} r={12} fill="none" stroke={KC.red} strokeWidth={6} />}</g>
     </g>}
-    {enLluvia && polvo.map(([px, py, p], i) => { const u = ((T - lluvia[0]) * 0.7 + p) % 1; return <circle key={'p' + i} cx={px * 360} cy={klerp(-380, 380, u)} r={7} fill="#fff" opacity={0.8 * Math.sin(Math.PI * u)} />; })}
+    {lluvias.filter((l) => T > l[0] && T < l[1]).map((l, j) => <g key={'l' + j}>{polvo.map(([px, py, p], i) => { const u = ((T - l[0]) * 0.7 + p) % 1; return <circle key={'p' + i} cx={px * 360} cy={klerp(-380, 380, u)} r={7} fill="#fff" opacity={0.8 * Math.sin(Math.PI * u)} />; })}</g>)}
   </g>;
 }
 // Cápsula de antibiótico. abre 0..1 (se separan las mitades y sale el polvo).
@@ -59,10 +66,10 @@ const DIB = {
   trasplante: <g><path d="M 0 60 C -90 0 -70 -70 -20 -60 C 0 -55 0 -40 0 -36 C 0 -40 0 -55 20 -60 C 70 -70 90 0 0 60 Z" fill={KC.pink} stroke={KC.ink} strokeWidth={6} /><path d="M -60 -70 L -20 -30" stroke={KC.ink} strokeWidth={6} strokeDasharray="8 6" /></g>,
 };
 // Tú (busto esquemático) con la cápsula en la mano: el macro del inicio y del final.
-function Tu({ T, abre = 0, lupa = 0 }) {
+function Tu({ T, abre = 0, lupa = 0, k = 1, cy = 1180 }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <g transform={`translate(540 1180) translate(0 ${mece(T, 3, 0.2) * 6})`}>
-      <path d="M -330 300 Q -320 40 -140 0 L 140 0 Q 320 40 330 300 Z" fill={KC.cyan} stroke={KC.ink} strokeWidth={10} />
+    <g transform={`translate(540 ${cy}) scale(${k}) translate(0 ${mece(T, 3, 0.2) * 6})`}>
+      <path d="M -330 300 Q -320 40 -140 0 L 140 0 Q 320 40 330 300 Z" fill="#2a9cc0" stroke={KC.ink} strokeWidth={10} />
       <rect x={-60} y={-80} width={120} height={100} fill="#d99a6c" stroke={KC.ink} strokeWidth={10} />
       <ellipse cx={0} cy={-260} rx={170} ry={200} fill="#e8ad7f" stroke={KC.ink} strokeWidth={10} />
       <path d="M -170 -300 Q -150 -480 0 -470 Q 160 -480 175 -290 Q 120 -380 0 -380 Q -110 -380 -170 -300 Z" fill={KC.ink} />
@@ -86,16 +93,16 @@ function ResistenciaNarrado() {
       {/* macro: tú y la cápsula */}
       <Escena T={T} a={K.G} b={K.G + 2.2} zoom={0.25} origen="50% 70%">
         <FondoLunares color={KC.pink} punto="rgba(255,255,255,.25)" />
-        <Tu T={T} abre={kprog(T, K.G + 0.1, K.G + 0.6)} />
+        <Tu T={T} abre={kprog(T, K.G + 0.1, K.G + 0.6)} k={1.4} cy={1230} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Capsula x={klerp(260, 540, kprog(T, K.G, K.G + 1.1, kEase.suave))} y={klerp(420, 1030, kprog(T, K.G, K.G + 1.4, kEase.suave))} s={klerp(1.2, 0.5, kprog(T, K.G, K.G + 1.4))} rot={T * 200} />
+          <Capsula x={klerp(200, 540, kprog(T, K.G, K.G + 1.1, kEase.suave))} y={klerp(330, 1020, kprog(T, K.G, K.G + 1.4, kEase.suave))} s={klerp(1.5, 0.6, kprog(T, K.G, K.G + 1.4))} rot={T * 200} />
         </svg>
       </Escena>
       {/* micro: la colonia, de la gancho a "comparten" */}
       <Escena T={T} a={K.G + 2.2} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #3a1626 0%, #0E0F12 75%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Colonia T={T} y={880} s={klerp(0.6, 1.15, zoomCol)} kill={kill} crece={crece} lluvia={[K.G + 2.2, K.G + 4.4]} fondo={false} conjuga={kprog(T, K.Co + 0.5, K.Co + 4)} />
+          <Colonia T={T} y={880} s={klerp(0.6, 1.15, zoomCol)} kill={kill} crece={crece} lluvia={[[K.G + 2.2, K.G + 4.4], [K.B, K.B + 2.6]]} barre={kprog(T, K.B + 0.2, K.B + 2.8)} fondo={false} conjuga={kprog(T, K.Co + 0.5, K.Co + 4)} />
           {/* segunda pastilla que ya no les hace nada */}
           {T > K.Cr + 2.6 && T < K.Co && <Capsula x={540} y={klerp(380, 520, kprog(T, K.Cr + 2.6, K.Cr + 3.4))} s={0.6} abre={kprog(T, K.Cr + 3.2, K.Cr + 3.7)} rot={0} />}
         </svg>
@@ -104,27 +111,30 @@ function ResistenciaNarrado() {
       </Escena>
       <Escena T={T} a={K.P} b={K.E} zoom={0.06}>
         <FondoLunares color={KC.lilac} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Colonia T={T} x={360} y={900} s={0.8} kill={1} crece={1} /></svg>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Colonia T={T} x={540} y={930} s={1.05} kill={1} crece={1} /></svg>
       </Escena>
       <Escena T={T} a={K.E} b={K.R}>
         <FondoLunares color={KC.yellow} />
         {/* 39 millones = 39 cuadros de 1 millón */}
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          {/* las bacterias resistentes siguen en cuadro: brillan con la tarjeta y se atenúan detrás de los números */}
+          <g opacity={klerp(0.9, 0.3, kprog(T, K.E + 2.6, K.E + 3.2))}><Colonia T={T} y={980} s={1.1} todasRes fondo={false} /></g>
           {T < K.An && Array.from({ length: 39 }, (_, i) => { const at = K.E + 3.0 + i * 0.05; if (T < at) return null; const p = kprog(T, at, at + 0.3, kEase.rebote);
             return <rect key={i} x={150 + (i % 13) * 62} y={980 + Math.floor(i / 13) * 62} width={52 * p} height={52 * p} rx={10} fill={KC.red} stroke={KC.ink} strokeWidth={4} />; })}
         </svg>
       </Escena>
-      <Escena T={T} a={K.R} b={K.F}><FondoLunares color={KC.cyan} /></Escena>
+      <Escena T={T} a={K.R} b={K.F}><FondoLunares color={KC.cyan} /><Tu T={T} k={1.15} cy={1260} /></Escena>
       <Escena T={T} a={K.F} b={K.S}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform="translate(540 930)"><circle r={230} fill="#fff7e0" stroke={KC.ink} strokeWidth={10} /><circle r={230} fill="none" stroke="#c9b991" strokeWidth={4} transform="scale(0.94)" />
-            <circle cx={-40} cy={-30} r={70 + 6 * Math.sin(T)} fill="#9ccf6a" stroke="#4e7a2a" strokeWidth={5} /><circle cx={-40} cy={-30} r={120} fill="none" stroke="#e9f6d8" strokeWidth={30} opacity=".8" />
+          <g transform="translate(540 1060) scale(1.65)"><circle r={230} fill="#3b3524" stroke={KC.ink} strokeWidth={10} /><circle r={230} fill="none" stroke="#7d6f4c" strokeWidth={4} transform="scale(0.94)" />
+            <circle cx={-40} cy={-30} r={70 + 6 * Math.sin(T)} fill="#9ccf6a" stroke="#4e7a2a" strokeWidth={5} /><circle cx={-40} cy={-30} r={120} fill="none" stroke="#5a6648" strokeWidth={30} opacity=".8" />
             {[[110, 60], [90, -110], [-150, 120], [140, 150]].map(([bx, by], i) => <circle key={i} cx={bx} cy={by} r={14} fill="#f4e19a" stroke="#b49b3c" strokeWidth={3} />)}
           </g>
         </svg>
       </Escena>
-      <Escena T={T} a={K.S} b={K.C}><FondoLunares color={KC.mint} /></Escena>
+      <Escena T={T} a={K.S} b={K.C}><FondoLunares color={KC.mint} /><Tu T={T} k={1.15} cy={1210} />
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Capsula x={850} y={960} s={0.75} rot={-30 + mece(T, 2, 0.3) * 8} /></svg></Escena>
       <Escena T={T} a={K.C} b={FIN} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #3a1626 0%, #0E0F12 75%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
@@ -139,20 +149,20 @@ function ResistenciaNarrado() {
       <Chip T={T} at={K.Az + 0.3} until={K.B - 0.3} texto="unas pocas traen el gen" x={620} y={420} tam={44} borde={RES} />
       <Chip T={T} at={K.Cr + 2.6} until={K.Co - 0.3} texto="la misma pastilla: nada" y={420} tam={42} borde={RES} />
       <Etq T={T} at={K.Co + 1.2} until={K.P - 0.2} x={540 - 230 * 1.15 + 60} y={880 - 260 * 1.15 - 70} texto="otra especie" color={OTRA} />
-      <Chip T={T} at={K.Co + 0.3} until={K.P - 0.3} texto="se pasan el gen" y={420} tam={42} borde={RES} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.8} anio="2024" quien="GRAM · IHME y Oxford" revista="The Lancet 404: 1199–1226" y={640} />
+      <Chip T={T} at={K.Co + 0.3} until={K.P - 0.3} texto="se pasan el gen" y={330} tam={42} borde={RES} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.8} anio="2024" quien="GRAM · IHME y Oxford" revista="The Lancet 404: 1199–1226" y={330} />
       <NumeroGigante T={T} at={K.E + 2.9} until={K.An - 0.3} valor={39} sufijo=" M" etiqueta="muertes 2025–2050 (pronóstico)" y={800} tam={230} color={KC.red} />
-      <Comparativa T={T} at={K.An + 0.2} until={K.R - 0.3} max={2} y={520} alto={460} izq={{ valor: 1.14, etiqueta: '2021', texto: '1.14 M', color: KC.orange }} der={{ valor: 1.91, etiqueta: '2050', texto: '1.91 M', color: KC.red }} />
-      <Chip T={T} at={K.An + 0.5} until={K.R - 0.3} texto="muertes por año (directas)" y={420} tam={38} />
-      <TarjetaRiesgo T={T} at={K.R + 0.6} until={K.F - 0.3} x={250} y={800} titulo="cesárea" dibujo={DIB.cesarea} />
-      <TarjetaRiesgo T={T} at={K.R + 1.3} until={K.F - 0.3} x={830} y={800} titulo="quimio" dibujo={DIB.quimio} />
-      <TarjetaRiesgo T={T} at={K.R + 2.0} until={K.F - 0.3} x={540} y={1060} titulo="trasplante" dibujo={DIB.trasplante} />
-      <TarjetaEstudio T={T} at={K.F + 0.4} until={K.S - 0.3} anio="1945" quien="Alexander Fleming" revista="discurso del Premio Nobel · Estocolmo" y={560} />
-      <Etq T={T} at={K.F + 1.6} until={K.S - 0.3} x={560} y={1170} texto="Penicillium" it color={KC.ink} />
-      <Chip T={T} at={K.S + 0.8} until={K.C - 0.3} texto="1 · solo con receta" y={720} tam={46} borde={KC.leaf} />
-      <Chip T={T} at={K.S + 1.9} until={K.C - 0.3} texto="2 · como te los indicaron" y={880} tam={46} borde={KC.leaf} />
-      <Chip T={T} at={K.S + 3.0} until={K.C - 0.3} texto="3 · no regales los que sobran" y={1040} tam={46} borde={KC.red} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="entrenadas" y={1520} tam={52} borde={RES} />
+      <Comparativa T={T} at={K.An + 0.2} until={K.R - 0.3} max={2} y={640} alto={640} izq={{ valor: 1.14, etiqueta: '2021', texto: '1.14 M', color: KC.orange }} der={{ valor: 1.91, etiqueta: '2050', texto: '1.91 M', color: KC.red }} />
+      <Chip T={T} at={K.An + 0.5} until={K.R - 0.3} texto="muertes por año (directas)" y={480} tam={40} />
+      <TarjetaRiesgo T={T} at={K.R + 0.6} until={K.F - 0.3} x={200} y={560} titulo="cesárea" dibujo={DIB.cesarea} />
+      <TarjetaRiesgo T={T} at={K.R + 1.3} until={K.F - 0.3} x={880} y={560} titulo="quimio" dibujo={DIB.quimio} />
+      <TarjetaRiesgo T={T} at={K.R + 2.0} until={K.F - 0.3} x={540} y={370} titulo="trasplante" dibujo={DIB.trasplante} />
+      <TarjetaEstudio T={T} at={K.F + 0.4} until={K.S - 0.3} anio="1945" quien="Alexander Fleming" revista="discurso del Premio Nobel · Estocolmo" y={330} />
+      <Etq T={T} at={K.F + 1.6} until={K.S - 0.3} x={600} y={1010} texto="Penicillium" it color={KC.texto} />
+      <Chip T={T} at={K.S + 0.8} until={K.C - 0.3} texto="1 · solo con receta" y={330} tam={46} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 1.9} until={K.C - 0.3} texto="2 · como te los indicaron" y={445} tam={46} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 3.0} until={K.C - 0.3} texto="3 · no regales los que sobran" y={560} tam={46} borde={KC.red} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="entrenadas" y={1420} tam={52} borde={RES} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Az - 0.1} texto="No las mató a todas: *escogió a las más duras.*" />
