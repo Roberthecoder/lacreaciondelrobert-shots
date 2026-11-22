@@ -299,11 +299,11 @@ function BebeKJ() {
       {/* 3 · peligro: el amoniaco sube */}
       <Escena T={T} a={K.Pe} b={K.Tr} zoom={0.03}>
         <FondoLunares color={KC.coral} />
-        <Capa>
+        <Capa><g transform="translate(0 150)">
           {/* el cerebro ya no se apaga: sube y queda atenuado detrás del 50 % */}
           <g opacity={1 - 0.5 * grave}>
-            <Cerebro T={T} x={540} y={klerp(850, 650, grave)} s={klerp(1.7, 1.2, grave)} alarma={kprog(T, K.Pe + 0.6, K.Pe + 1.6) * (1 - 0.6 * grave)} />
-          </g>
+            <Cerebro T={T} x={540} y={klerp(850, 650, grave)} s={klerp(1.7, 1.35, grave)} alarma={kprog(T, K.Pe + 0.6, K.Pe + 1.6) * (1 - 0.6 * grave)} />
+          </g></g>
           <g opacity={1 - grave}>
             {Array.from({ length: 6 }, (_, i) => <NubeNH3 key={i} x={150 + i * 156} y={1250 - ((T - K.Pe) * 60 + i * 50) % 360} s={0.85} o={kprog(T, K.Pe + i * 0.2, K.Pe + i * 0.2 + 0.4)} />)}
           </g>
@@ -350,7 +350,7 @@ function BebeKJ() {
       {/* 7 · burbujitas de grasa al hígado */}
       <Escena T={T} a={K.Bu} b={K.Pr} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <Capa><g transform="translate(620 880) scale(1.4) translate(-620 -880)">
+        <Capa><g transform="translate(620 980) scale(1.4) translate(-620 -880)">
           <path d="M -20 640 Q 400 600 700 720 Q 900 800 1100 760 L 1100 900 Q 880 950 680 870 Q 380 750 -20 800 Z" fill="#7a1f2b" stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 6 }, (_, i) => { const u = ((T - K.Bu) * 0.35 + i / 6) % 1; return <ellipse key={i} cx={klerp(-40, 1100, u)} cy={klerp(720, 830, u) + Math.sin(u * 9) * 10} rx={34} ry={20} fill="#d7263d" stroke={KC.ink} strokeWidth={4} />; })}
           <Hepatocito x={720} y={1000} s={0.8} T={T} brilla={kprog(T, K.Bu + 1.8, K.Bu + 2.4)} />
@@ -369,6 +369,7 @@ function BebeKJ() {
       </Escena>
       {/* 9 · Casgevy (fuera) vs. KJ (dentro) */}
       <Escena T={T} a={K.Ca} b={K.Es} zoom={0.02}>
+        <div style={{ position:'absolute', inset:0, background:CINE.fondo }}></div>
         <div style={{ position:'absolute', left:0, top:0, width:KW / 2, height:KH, background:cineMix(KC.cyan, CINE.fondo, 0.86) }}></div>
         <div style={{ position:'absolute', left:KW / 2, top:0, width:KW / 2, height:KH, background:cineMix(KC.mint, CINE.fondo, 0.86) }}></div>
         <Capa>
@@ -443,16 +444,16 @@ function BebeKJ() {
       <Medidor T={T} at={K.Pe + 0.3} until={K.Pe + 2.8} valor={(t) => kprog(t, K.Pe + 0.4, K.Pe + 2.3) * 0.92} etiqueta="amoniaco · primeros 2 días"
         texto={(v) => (v > 0.9 ? 'más de 1,000' : kformato(Math.round(v * 1090))) + ' µmol/L'} x={90} y={1400} color={KC.red} />
       <Chip T={T} at={K.Pe + 1.0} until={K.Pe + 2.8} texto="normal: 9–33 µmol/L" y={1345} tam={32} borde={KC.mint} mono />
-      <NumeroGigante T={T} at={K.Pe + 3.0} until={K.Tr - 0.3} valor={50} dur={0.5} sufijo=" %" etiqueta="forma grave" x={540} y={1090} tam={280} color={KC.yellow} />
-      <Chip T={T} at={K.Pe + 3.3} until={K.Tr - 0.3} texto="mortalidad estimada en los primeros meses" y={1400} tam={32} borde={KC.red} />
+      <NumeroGigante T={T} at={K.Pe + 3.0} until={K.Tr - 0.3} valor={50} dur={0.5} sufijo=" %" etiqueta="forma grave" x={540} y={1160} tam={280} color={KC.yellow} />
+      <Chip T={T} at={K.Pe + 3.3} until={K.Tr - 0.3} texto="mortalidad estimada en los primeros meses" y={1440} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Tr + 0.3} until={K.Se - 0.3} texto="lo usual: trasplante de hígado" y={470} tam={40} borde={KC.blue} />
       <Etq T={T} at={K.Tr + 1.4} until={K.Se - 0.3} x={960} y={1480} texto="hay que crecer" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Se + 0.8} until={K.Ed - 0.3} texto="CHOP + Penn · Filadelfia · ~6 meses" y={1470} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.Ed + 0.1} until={K.Bu - 0.3} texto="POR DENTRO · ADN de una célula del hígado" y={470} tam={32} borde={KC.cyan} mono />
       <MitoTachado T={T} at={K.Ed + 0.4} tacharEn={K.Ed + 1.0} until={K.Ed + 1.7} texto="corte doble" x={540} y={1450} tam={44} />
       <Etq T={T} at={K.Ed + 2.4} until={K.Bu - 0.3} x={60} y={1450} texto="editor de bases: T → C" tam={36} color={KC.mint} />
-      <Etq T={T} at={K.Bu + 0.6} until={K.Bu + 1.7} x={60} y={455} texto="nanopartículas de lípidos" tam={34} color={LNP} />
-      <Etq T={T} at={K.Bu + 1.6} until={K.Pr - 0.2} x={60} y={1400} texto="célula del hígado (hepatocito)" tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Bu + 0.6} until={K.Bu + 1.7} x={60} y={555} texto="nanopartículas de lípidos" tam={34} color={LNP} />
+      <Etq T={T} at={K.Bu + 1.6} until={K.Pr - 0.2} x={60} y={1440} texto="célula del hígado (hepatocito)" tam={34} color={KC.texto} />
       <Chip T={T} at={K.Bu + 0.3} until={K.Pr - 0.2} texto="esquemático · no a escala" y={1510} tam={28} borde={KC.texto} mono />
       <Chip T={T} at={K.Ca + 0.2} until={K.Es - 0.3} texto="FUERA" x={270} y={470} tam={44} borde={KC.ink} />
       <Chip T={T} at={K.Ca + 0.8} until={K.Es - 0.3} texto="DENTRO" x={810} y={470} tam={44} borde={KC.ink} />
