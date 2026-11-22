@@ -111,7 +111,7 @@ function AurisShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, N: CUES.Nombre, Ct: CUES.Continentes, Pi: CUES.Piel, Su: CUES.Superficies, Gr: CUES.Graves, P: CUES.Pregunta, Re: CUES.Resiste, Tr: CUES.Tres, Cf: CUES.Confunde, E: CUES.Estudio, D: CUES.Desinfecta, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const CX = 450, CY = 920, CS = 0.85;
+  const CX = 500, CY = 1040, CS = 1.1;   // cama grande y centrada (encuadre cine)
 
   const interiorOreja = (t, r) => <svg width={r * 2} height={r * 2} viewBox="0 0 600 600" style={{ display:'block' }}>
     <rect width={600} height={600} fill={KC.noche} />
@@ -143,26 +143,26 @@ function AurisShot() {
       {/* 1 · nombre: 2009, oído, Japón */}
       <Escena T={T} a={K.N} b={K.Ct} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Oreja x={260} y={960} s={1.3} />)}
-        <Lupa T={T} at={K.N + 0.8} until={K.Ct - 0.2} x={760} y={900} r={200} fx={286} fy={960} interior={interiorOreja} tinte={KC.lilac} etiqueta="AL MICROSCOPIO" />
+        {fsvg(<Oreja x={300} y={990} s={1.7} />)}
+        <Lupa T={T} at={K.N + 0.8} until={K.Ct - 0.2} x={800} y={960} r={245} fx={334} fy={990} interior={interiorOreja} tinte={KC.lilac} etiqueta="AL MICROSCOPIO" />
       </Escena>
       {/* 2 · tres continentes, poblaciones separadas */}
       <Escena T={T} a={K.Ct} b={K.Pi} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Globo x={540} y={900} r={330} T={T} p={kprog(T, K.Ct + 0.3, K.Ct + 2.2)} />)}
+        {fsvg(<Globo x={540} y={980} r={420} T={T} p={kprog(T, K.Ct + 0.3, K.Ct + 2.2)} />)}
       </Escena>
       {/* 3 · en la piel: axilas e ingles, sin síntomas */}
       <Escena T={T} a={K.Pi} b={K.Su} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Silueta x={360} y={950} s={0.95} p={kprog(T, K.Pi + 0.4, K.Pi + 2.0)} />)}
+        {fsvg(<Silueta x={420} y={960} s={1.2} p={kprog(T, K.Pi + 0.4, K.Pi + 2.0)} />)}
       </Escena>
       {/* 4 · semanas en superficies */}
       <Escena T={T} a={K.Su} b={K.Gr} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Icono x={220} y={820} tipo="barandal" on={kprog(T, K.Su + 0.3, K.Su + 1.0)} />
-          <Icono x={540} y={1040} tipo="perilla" on={kprog(T, K.Su + 1.0, K.Su + 1.7)} />
-          <Icono x={860} y={820} tipo="presion" on={kprog(T, K.Su + 1.7, K.Su + 2.4)} />
+          <g transform="translate(240 800) scale(1.35)"><Icono x={0} y={0} tipo="barandal" on={kprog(T, K.Su + 0.3, K.Su + 1.0)} /></g>
+          <g transform="translate(540 1130) scale(1.35)"><Icono x={0} y={0} tipo="perilla" on={kprog(T, K.Su + 1.0, K.Su + 1.7)} /></g>
+          <g transform="translate(840 800) scale(1.35)"><Icono x={0} y={0} tipo="presion" on={kprog(T, K.Su + 1.7, K.Su + 2.4)} /></g>
         </>)}
       </Escena>
       {/* 5 · casi todos los que enferman ya estaban muy graves */}
@@ -173,17 +173,18 @@ function AurisShot() {
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Re} zoom={0.08}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<Interrogacion T={T} x={250} y={1080} tam={460} />)}
+        {fsvg(<Interrogacion T={T} x={250} y={1230} tam={480} />)}
       </Escena>
       {/* 7 · resistencia en EE. UU. */}
       <Escena T={T} a={K.Re} b={K.Tr} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {fsvg(<>
-          <line x1={120} y1={1080} x2={960} y2={1080} stroke="rgba(255,255,255,.6)" strokeWidth={6} />
-          {[[200, 90, 'fluconazol', KC.red], [620, 30, 'anfotericina B', KC.orange]].map(([x, v, et, c], i) => { const p = fBar(i), h = v * 4.4 * p;
-            return <g key={i}><rect x={x} y={1080 - h} width={260} height={h} rx={10} fill={c} stroke={KC.ink} strokeWidth={6} />
-              {p > 0 && <text x={x + 130} y={1080 - h - 22} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.texto}>{`~${Math.round(v * p)} %`}</text>}
-              <text x={x + 130} y={1125} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>{et}</text></g>; })}
+          <g opacity={0.2}><LevAuris x={540} y={960} s={9} T={T} yema={0.6} /></g>
+          <line x1={100} y1={1250} x2={980} y2={1250} stroke="rgba(255,255,255,.6)" strokeWidth={6} />
+          {[[180, 90, 'fluconazol', KC.red], [620, 30, 'anfotericina B', KC.orange]].map(([x, v, et, c], i) => { const p = fBar(i), h = v * 5.6 * p;
+            return <g key={i}><rect x={x} y={1250 - h} width={280} height={h} rx={10} fill={c} stroke={KC.ink} strokeWidth={6} />
+              {p > 0 && <text x={x + 140} y={1250 - h - 22} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill={KC.texto}>{`~${Math.round(v * p)} %`}</text>}
+              <text x={x + 140} y={1300} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>{et}</text></g>; })}
         </>)}
       </Escena>
       {/* 8 · algunas cepas resisten las tres clases */}
@@ -191,10 +192,10 @@ function AurisShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
         {fsvg(<>
-          <LevAuris x={540} y={760} s={3.2} T={T} yema={0.6} />
+          <LevAuris x={520} y={820} s={5} T={T} yema={0.6} />
           {[['azoles', 200, KC.orange], ['polienos', 540, KC.cyan], ['equinocandinas', 880, KC.pink]].map(([n, x, c], i) => { const u = kprog(T, K.Tr + 0.4 + i * 0.6, K.Tr + 1.2 + i * 0.6);
-            const yy = u < 0.5 ? klerp(500, 700, u * 2) : klerp(700, 540, (u - 0.5) * 2), xx = klerp(x, x + (540 - x) * 0.5, u < 0.5 ? u * 2 : 1 - (u - 0.5) * 2);
-            return <g key={i}><FrascoMed x={x} y={1060} s={0.8} texto={n} color={c} />
+            const yy = u < 0.5 ? klerp(560, 800, u * 2) : klerp(800, 620, (u - 0.5) * 2), xx = klerp(x, x + (540 - x) * 0.5, u < 0.5 ? u * 2 : 1 - (u - 0.5) * 2);
+            return <g key={i}><FrascoMed x={x} y={1170} s={1.15} texto={n} color={c} />
               {u > 0 && u < 1 && <rect x={xx - 18} y={yy - 18} width={36} height={36} transform={`rotate(45 ${xx} ${yy})`} fill={c} stroke={KC.ink} strokeWidth={4} />}</g>; })}
         </>)}
       </Escena>
@@ -214,7 +215,7 @@ function AurisShot() {
       {/* 10 · Monterrey 2020: 12 pacientes de terapia intensiva y muestras de sus cuartos */}
       <Escena T={T} a={K.E} b={K.D} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 980) scale(1.12) translate(-495 -870)">
           <MapaMexico x={60} y={560} ancho={460} conCA={false}>
             {(() => { const [mx, my] = mxProy(-100.3, 25.7); return <g><circle cx={mx} cy={my} r={16 + 4 * Math.sin(T * 4)} fill={KC.red} stroke={KC.ink} strokeWidth={4} /></g>; })()}
           </MapaMexico>
@@ -222,12 +223,12 @@ function AurisShot() {
           {[0, 1, 2].map((i) => { const p = kprog(T, K.E + 3.8 + i * 0.3, K.E + 4.2 + i * 0.3, kEase.rebote); return p > 0 ? <g key={i} transform={`translate(${180 + i * 150} 1120) scale(${p})`}>
             <rect x={-24} y={-60} width={48} height={110} rx={12} fill="#e9f4ff" stroke={KC.ink} strokeWidth={5} /><rect x={-28} y={-74} width={56} height={22} rx={6} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
             <circle cx={0} cy={10} r={12} fill={AU.lev2} stroke={KC.ink} strokeWidth={3} /></g> : null; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 11 · solo amonio cuaternario no la elimina */}
       <Escena T={T} a={K.D} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 990) scale(1.4) translate(-530 -940)">
           <g transform="translate(260 960)">
             <rect x={-90} y={-120} width={180} height={300} rx={30} fill={KC.cyan} stroke={KC.ink} strokeWidth={8} />
             <rect x={-40} y={-200} width={80} height={90} fill="#f4efe4" stroke={KC.ink} strokeWidth={6} /><rect x={30} y={-195} width={70} height={26} fill="#f4efe4" stroke={KC.ink} strokeWidth={6} />
@@ -238,7 +239,7 @@ function AurisShot() {
           {(() => { const p = kprog(T, K.D + 0.5, K.D + 1.6); return p > 0 ? <g>{Array.from({ length: 14 }, (_, i) => <circle key={i} cx={klerp(360, 560 + (i % 5) * 60, p)} cy={klerp(780, 700 + (i * 37) % 260, p)} r={6} fill="#dff6ff" opacity={1 - p * 0.6} />)}</g> : null; })()}
           <rect x={560} y={860} width={440} height={24} rx={12} fill={AU.metal} stroke={KC.ink} strokeWidth={5} />
           <Puntos pts={[[600, 872], [680, 868], [760, 875], [840, 870], [920, 873], [980, 869]]} p={1} T={T} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · cierre: la misma cama; se limpia el barandal */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
@@ -248,45 +249,45 @@ function AurisShot() {
           <Puntos pts={enCama(PTS_BAR, CX, CY, CS)} p={1} apaga={kprog(T, K.C + 1.5, K.C + 2.8)} T={T} />
           {(() => { const p = kprog(T, K.C + 1.4, K.C + 3.0, kEase.suave); return p > 0 && p < 1 ? <rect x={klerp(360, 800, p) - 60} y={CY - 200} width={120} height={60} rx={16} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} transform={`rotate(${Math.sin(T * 12) * 6} ${klerp(360, 800, p)} ${CY - 170})`} /> : null; })()}
         </>)}
-        <Lupa T={T} at={K.C + 0.4} until={K.Ou} x={760} y={620} r={170} fx={CX + 60 * CS} fy={CY - 162 * CS} interior={interiorBarandal} tinte={KC.gold2} etiqueta="POR DENTRO · barandal" />
+        <Lupa T={T} at={K.C + 0.4} until={K.Ou} x={620} y={470} r={210} fx={CX + 60 * CS} fy={CY - 162 * CS} interior={interiorBarandal} tinte={KC.gold2} etiqueta="POR DENTRO · barandal" />
       </Escena>
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.5} until={K.N - 0.2} texto="solo el paciente" x={290} y={470} tam={42} />
       <Chip T={T} at={K.G + 1.7} until={K.N - 0.2} texto="también su cama" x={290} y={560} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.N + 0.5} until={K.Ct - 0.3} x={60} y={650} texto="Candida auris" it tam={40} color={KC.ink} />
-      <Etq T={T} at={K.N + 1.0} until={K.Ct - 0.3} x={60} y={700} texto="auris = oreja (latín)" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.N + 0.5} until={K.Ct - 0.3} x={60} y={1390} texto="Candida auris" it tam={40} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.0} until={K.Ct - 0.3} x={60} y={1440} texto="auris = oreja (latín)" tam={28} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.N + 1.8} until={K.Ct - 0.2} anio="2009" quien="conducto del oído · hospital de Japón" revista="Satoh et al., Microbiol Immunol, 2009" y={420} />
       <Chip T={T} at={K.Ct + 2.3} until={K.Pi - 0.3} texto="poblaciones distintas, no un solo viaje" x={540} y={470} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Pi + 0.8} until={K.Su - 0.3} x={600} y={790} texto="axilas" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Pi + 1.4} until={K.Su - 0.3} x={600} y={1090} texto="ingles" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Pi + 1.8} until={K.Su - 0.3} texto="sin síntomas (colonización)" x={760} y={980} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Su + 2.4} until={K.Gr - 0.3} texto="sobrevive semanas" x={540} y={600} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.Su + 0.5} until={K.Gr - 0.3} x={100} y={990} texto="barandal" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Su + 1.2} until={K.Gr - 0.3} x={460} y={1210} texto="perilla" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Su + 1.9} until={K.Gr - 0.3} x={720} y={990} texto="baumanómetro" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Pi + 0.8} until={K.Su - 0.3} x={620} y={756} texto="axilas" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Pi + 1.4} until={K.Su - 0.3} x={620} y={1128} texto="ingles" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Pi + 1.8} until={K.Su - 0.3} texto="sin síntomas (colonización)" x={810} y={950} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Su + 2.4} until={K.Gr - 0.3} texto="sobrevive semanas" x={540} y={560} tam={40} borde={KC.gold} />
+      <Etq T={T} at={K.Su + 0.5} until={K.Gr - 0.3} x={110} y={1020} texto="barandal" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Su + 1.2} until={K.Gr - 0.3} x={470} y={1345} texto="perilla" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Su + 1.9} until={K.Gr - 0.3} x={710} y={1020} texto="baumanómetro" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Gr + 0.6} until={K.P - 0.3} texto="la mayoría: ya muy graves" x={300} y={470} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.Gr + 1.4} until={K.P - 0.3} texto="gente sana: por lo general no lo porta" x={540} y={1170} tam={28} borde={KC.mint} />
+      <Chip T={T} at={K.Gr + 1.4} until={K.P - 0.3} texto="gente sana: por lo general no lo porta" x={540} y={1340} tam={28} borde={KC.mint} />
       <Etq T={T} at={K.Gr + 1.0} until={K.P - 0.3} x={60} y={640} texto="tubos y catéteres" tam={28} color={KC.ink} />
       <Chip T={T} at={K.P + 0.2} until={K.Re - 0.2} texto="“superhongo” (apodo)" x={420} y={470} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.Re + 0.2} until={K.Tr - 0.3} texto="resistentes en EE. UU. · CDC" x={540} y={470} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Tr + 2.2} until={K.Cf - 0.3} texto="algunas cepas: resisten a las 3" x={540} y={470} tam={34} borde={KC.red} />
       <Chip T={T} at={K.Cf + 2.6} until={K.E - 0.3} texto="se puede confundir con otras levaduras" x={540} y={1165} tam={30} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 3.5} anio="2020" quien="Monterrey · 12 pacientes de terapia intensiva" revista="Villanueva-Lozano et al., Clin Microbiol Infect, 2021" y={480} />
-      <Etq T={T} at={K.E + 3.9} until={K.D - 0.3} x={560} y={1190} texto="3 muestras + en los cuartos" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.E + 0.6} until={K.D - 0.3} x={150} y={1010} texto="Monterrey" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.D + 1.8} until={K.C - 0.3} texto="no la elimina" x={780} y={760} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.D + 2.4} until={K.C - 0.3} texto="CDC: desinfectantes de la lista P de la EPA" x={540} y={1170} tam={26} borde={KC.mint} />
-      <Chip T={T} at={K.C + 2.8} until={K.Ou} texto="limpiar también su cama" x={300} y={470} tam={38} borde={KC.mint} />
+      <Etq T={T} at={K.E + 3.9} until={K.D - 0.3} x={590} y={1338} texto="3 muestras + en los cuartos" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.E + 0.6} until={K.D - 0.3} x={154} y={1000} texto="Monterrey" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.D + 1.8} until={K.C - 0.3} texto="no la elimina" x={880} y={746} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.D + 2.4} until={K.C - 0.3} texto="CDC: desinfectantes de la lista P de la EPA" x={540} y={1345} tam={26} borde={KC.mint} />
+      <Chip T={T} at={K.C + 2.8} until={K.Ou} texto="limpiar también su cama" x={540} y={1380} tam={38} borde={KC.mint} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.N} texto="50 cm" largo={120} />
-      <BarraEscala T={T} at={K.N} until={K.Ct} texto="2 cm" largo={110} />
-      <BarraEscala T={T} at={K.Ct} until={K.Pi} texto="2,000 km" largo={100} />
-      <BarraEscala T={T} at={K.Pi} until={K.Su} texto="50 cm" largo={110} />
-      <BarraEscala T={T} at={K.Tr} until={K.Cf} texto="2 µm" largo={90} />
-      <BarraEscala T={T} at={K.E} until={K.D} texto="500 km" largo={70} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="50 cm" largo={120} />
+      <BarraEscala T={T} at={K.G} until={K.N} texto="50 cm" largo={155} />
+      <BarraEscala T={T} at={K.N} until={K.Ct} texto="2 cm" largo={144} />
+      <BarraEscala T={T} at={K.Ct} until={K.Pi} texto="2,000 km" largo={127} />
+      <BarraEscala T={T} at={K.Pi} until={K.Su} texto="50 cm" largo={139} />
+      <BarraEscala T={T} at={K.Tr} until={K.Cf} texto="2 µm" largo={141} />
+      <BarraEscala T={T} at={K.E} until={K.D} texto="500 km" largo={78} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="50 cm" largo={155} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="También vive *en su cama*" />
