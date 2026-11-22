@@ -36,12 +36,12 @@ function Maiz({ T, x, y, s = 1, crece = 1, seed = 1 }) {
 }
 // Hifa en corte largo: tubo horizontal con pared (quitina) gruesa, septos y núcleos. vida 0..1 (1 = viva, 0 = vacía).
 // rompe 0..1: la pared se parte en pedazos que caen (los devuelve la función piezas()).
-function Hifa({ T, x0 = -40, x1 = 1120, y = 760, ancho = 200, vida = 1, rompe = 0 }) {
+function Hifa({ T, x0 = -40, x1 = 1120, y = 760, ancho = 200, vida = 1, rompe = 0, caida = 1 }) {
   const pared = 26;
   const segs = 6, L = (x1 - x0) / segs;
   return <g>
     {Array.from({ length: segs }, (_, i) => { const a = x0 + i * L; const r = rompe > 0 ? kclamp(rompe * 2 - i * 0.18, 0, 1) : 0;
-      const dy = r * r * (360 + (i % 3) * 60), rot = r * ((i % 2 ? 1 : -1) * 28), dx = r * (i % 2 ? 30 : -30);
+      const dy = r * r * (360 + (i % 3) * 60) * caida, rot = r * ((i % 2 ? 1 : -1) * 28), dx = r * (i % 2 ? 30 : -30);
       return <g key={i} transform={`translate(${dx} ${dy}) rotate(${rot} ${a + L / 2} ${y})`} opacity={1 - kprog(rompe, 0.55, 0.95)}>
         <rect x={a} y={y - ancho / 2} width={L + 1} height={ancho} fill={mixHex('#1b2433', NC.cito, 0.25 + 0.55 * vida)} opacity={0.35 + 0.65 * vida} />
         {/* pared arriba y abajo */}
@@ -105,7 +105,7 @@ const SITIOS = (() => { const g = krng(486), zonas = [[740, 140, 70, 50, 0.52], 
 function MapaMundo({ x, y, s = 1, p = 1 }) {
   const k = Math.floor(486 * kclamp(p, 0, 1));
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={20} y={0} width={900} height={500} rx={30} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={6} />
+    <rect x={20} y={0} width={900} height={500} rx={30} fill="rgba(120,160,220,.10)" stroke={KC.ink} strokeWidth={6} />
     <line x1={20} y1={250} x2={920} y2={250} stroke={KC.ink} strokeWidth={3} strokeDasharray="12 10" opacity=".5" />
     {CONTINENTES.map((d, i) => <path key={i} d={d} fill="#ffe9a8" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />)}
     {SITIOS.slice(0, k).map(([a, b], i) => <circle key={i} cx={a} cy={b} r={5} fill={KC.red} stroke={KC.ink} strokeWidth={1.5} />)}
@@ -128,25 +128,52 @@ function Balanza({ x, y, s = 1, inclina = 0 }) {
   </g>;
 }
 
+// Milpa a pantalla completa (gancho y cierre): suelo hasta abajo, dos matas grandes y el puño de tierra al centro.
+// lente 0..1: ventana redonda sobre el montón que deja ver lo de adentro (hifas y bacterias), lo que sigue en la historia.
+const GY = 1280, MK = 1.55;
+const TERRONES = (() => { const g = krng(31); return Array.from({ length: 34 }, () => ({ x: g() * 1180 - 50, y: 50 + g() * 640, rx: 16 + g() * 44, ry: 7 + g() * 14, k: g() })); })();
+function Milpa({ T, cae = 1, pintado = 0, crece = 1, lente = 0, polvo = 0 }) {
+  const lk = kEase.rebote(kclamp(lente, 0, 1));
+  return <>
+    <defs>
+      <linearGradient id="nec-suelo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#4a3220" /><stop offset="0.45" stopColor="#2f1f14" /><stop offset="1" stopColor="#170f09" /></linearGradient>
+      <clipPath id="nec-lente"><circle cx={540} cy={1118} r={150} /></clipPath>
+    </defs>
+    <Maiz T={T} x={905} y={GY + 10} s={1.4} seed={1} crece={crece} />
+    <Maiz T={T} x={128} y={GY + 10} s={1.12} seed={2} crece={crece} />
+    <rect x={-240} y={GY} width={1560} height={1100} fill="url(#nec-suelo)" stroke={KC.ink} strokeWidth={7} />
+    {TERRONES.map((t, i) => <ellipse key={i} cx={t.x} cy={GY + t.y} rx={t.rx} ry={t.ry} fill={t.k < 0.5 ? '#5a3d27' : '#120b06'} opacity={0.3 + 0.25 * t.k} />)}
+    {[150, 330, 520].map((d, i) => <path key={i} d={`M -240 ${GY + d} Q 200 ${GY + d - 26} 540 ${GY + d} T 1320 ${GY + d}`} stroke="#120b06" strokeWidth={6} fill="none" opacity={0.45} />)}
+    <g transform={`translate(0 ${(1 - cae) * -700})`}><Tierra T={T} x={540} y={GY} s={MK} pintado={pintado} cae={0.35 + 0.65 * cae} /></g>
+    {polvo > 0 && polvo < 1 && Array.from({ length: 12 }, (_, i) => { const u = kEase.sale(polvo), d = i % 2 ? 1 : -1;
+      return <circle key={i} cx={540 + d * (300 + i * 26) * u} cy={GY - 14 - Math.sin(u * Math.PI) * (90 + i * 10)} r={13 + (i % 3) * 6} fill={NC.tierra3} opacity={1 - kprog(polvo, 0.55, 1)} />; })}
+    {lente > 0 && <g transform={`translate(540 1118) scale(${lk}) translate(-540 -1118)`} opacity={kclamp(lente * 3, 0, 1)}>
+      <circle cx={540} cy={1118} r={150} fill="#0b1220" />
+      <g clipPath="url(#nec-lente)">
+        {['M 380 1200 Q 470 1150 540 1140 T 700 1040', 'M 540 1140 Q 560 1060 520 960', 'M 610 1100 Q 660 1150 720 1190'].map((d, i) => <g key={i}>
+          <path d={d} stroke="rgba(47,224,168,.25)" strokeWidth={34} fill="none" strokeLinecap="round" />
+          <path d={d} stroke="#eafff7" strokeWidth={15} fill="none" strokeLinecap="round" /></g>)}
+        <Bacteria T={T} x={455 + mece(T, 3, 0.4) * 6} y={1060} largo={84} ancho={36} rot={-25 + mece(T, 5, 0.3) * 8} seed={3} />
+        <Bacteria T={T} x={640 + mece(T, 4, 0.4) * 6} y={1215} largo={84} ancho={36} rot={20 + mece(T, 6, 0.3) * 8} seed={4} />
+      </g>
+      <circle cx={540} cy={1118} r={150} fill="none" stroke={KC.cyan} strokeWidth={7} />
+    </g>}
+  </>;
+}
+
 function NecromasaShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Co: CUES.Comida, Hi: CUES.Hifas, M: CUES.Muere, A: CUES.Arcilla, P: CUES.Pregunta, Hu: CUES.Huella, E19: CUES.Estudio2019, E26: CUES.Estudio2026, D: CUES.Doble, V: CUES.Vivos, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const cae = kprog(T, K.G + 0.05, K.G + 0.6);
   const hongosC = 0.34, bactC = 0.16;
+  const HK = 'translate(540 640) scale(1.5) translate(-540 -800)';   // la hifa, 1.5× (barra de 5 µm: 200 → 300 px)
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
-      {/* 1 · gancho: el puño de tierra de la milpa cae y se desmorona */}
-      <Escena T={T} a={K.G} b={K.Co} zoom={0.06} origen="40% 55%">
+      {/* 1 · gancho: la milpa llena el cuadro; el puño de tierra cae y, antes del segundo 3, una ventana deja ver lo de adentro */}
+      <Escena T={T} a={K.G} b={K.Co} zoom={0.06} origen="50% 58%">
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
-          <Maiz T={T} x={860} y={1090} s={1.0} seed={1} />
-          <Maiz T={T} x={140} y={1090} s={0.8} seed={2} />
-          <rect x={-20} y={1060} width={1120} height={300} fill="#6b4a32" stroke={KC.ink} strokeWidth={8} />
-          <g transform={`translate(0 ${(1 - cae) * -620})`}><Tierra T={T} x={430} y={1060} s={1} cae={0.35 + 0.65 * cae} /></g>
-          {cae >= 1 && Array.from({ length: 10 }, (_, i) => { const u = kprog(T, K.G + 0.6, K.G + 1.5, kEase.sale), d = i % 2 ? 1 : -1;
-            return <circle key={i} cx={430 + d * (180 + i * 18) * u} cy={1050 - Math.sin(u * Math.PI) * (60 + i * 6)} r={10 + (i % 3) * 4} fill={NC.tierra} stroke={KC.ink} strokeWidth={3} />; })}
-        </>)}
+        {fsvg(<Milpa T={T} cae={cae} polvo={kprog(T, K.G + 0.6, K.G + 1.6)} lente={kprog(T, K.G + 2.5, K.G + 3.0)} />)}
       </Escena>
       {/* 2 · por dentro: hongos y bacterias se comen la hoja y arman su cuerpo con su carbono */}
       <Escena T={T} a={K.Co} b={K.Hi} zoom={0.08}>
@@ -160,163 +187,170 @@ function NecromasaShot() {
             return <g key={i} opacity={Math.sin(Math.PI * u) * kprog(T, K.Co + 1.6, K.Co + 2.2)}><circle cx={tx} cy={ty} r={20} fill="#2a2f3a" stroke={KC.gold2} strokeWidth={4} /><text x={tx} y={ty + 9} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.gold2}>C</text></g>; })}
         </>, 25)}
       </Escena>
-      {/* 3–4 · la hifa: pared de quitina; muere y sus restos se pegan a la arcilla */}
+      {/* 3–4 · la hifa (1.5×): pared de quitina; muere, su pared se parte en pedazos y los restos se pegan a la arcilla */}
       <Escena T={T} a={K.Hi} b={K.A} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={16} />
         {fsvg(<>
+          {/* donde estuvo la hifa queda su silueta atenuada hasta el final de la escena */}
+          {T > K.M + 1.8 && <g transform={HK} opacity={0.13 * kprog(T, K.M + 1.9, K.M + 3.0)}><Hifa T={T} y={800} ancho={200} vida={0} /></g>}
           {(() => { const ent = kprog(T, K.Hi - 0.2, K.Hi + 0.8, kEase.sale); return <g transform={`translate(${(1 - ent) * -900} 0)`}>
-            <g opacity={1 - kprog(T, K.M + 1.5, K.M + 2.4)} transform={`translate(0 ${kprog(T, K.M + 1.4, K.M + 2.4) * 40})`}>
-              <Hifa T={T} y={800} ancho={200} vida={1 - kprog(T, K.M + 0.1, K.M + 1.4)} />
+            <g transform={HK}>
+              <Hifa T={T} y={800} ancho={200} vida={1 - kprog(T, K.M + 0.1, K.M + 1.4)} rompe={kprog(T, K.M + 1.3, K.M + 2.9)} caida={0.45} />
             </g>
           </g>; })()}
           {/* zoom a la pared: cadena de N-acetilglucosamina (quitina) */}
           {T < K.M + 1.2 && <g opacity={kprog(T, K.Hi + 1.4, K.Hi + 2.0) * (1 - kprog(T, K.M + 0.6, K.M + 1.2))}>
-            <path d="M 300 700 L 160 930 M 300 700 L 980 930" stroke={KC.gold2} strokeWidth={3} strokeDasharray="10 10" />
-            <rect x={110} y={930} width={880} height={190} rx={30} fill="rgba(14,15,18,.9)" stroke={KC.gold2} strokeWidth={5} />
-            <CadenaAnillos x={190} y={1025} n={7} p={kprog(T, K.Hi + 1.6, K.Hi + 2.8)} s={0.9} paso={118} color={NC.pared} T={T} ondula={0.2} />
+            <path d="M 300 772 L 50 940 M 300 772 L 1030 940" stroke={KC.gold2} strokeWidth={3} strokeDasharray="10 10" />
+            <circle cx={300} cy={770} r={16} fill="none" stroke={KC.gold2} strokeWidth={4} />
+            <rect x={50} y={940} width={980} height={250} rx={34} fill="rgba(14,15,18,.9)" stroke={KC.gold2} strokeWidth={5} />
+            <CadenaAnillos x={126} y={1065} n={7} p={kprog(T, K.Hi + 1.6, K.Hi + 2.8)} s={1.17} paso={118} color={NC.pared} T={T} ondula={0.2} />
           </g>}
           {/* arcilla y restos pegados */}
-          {[[260, 1020, -6], [700, 1050, 5]].map(([ax, ay, r], i) => <Arcilla key={i} x={ax} y={ay} rot={r} n={5} aparece={kprog(T, K.M + 1.6 + i * 0.3, K.M + 2.2 + i * 0.3)} />)}
-          {[[190, 940, -10, 0], [300, 945, 15, 1], [640, 970, -5, 2], [770, 975, 20, 3], [380, 952, 4, 4], [560, 968, -12, 5], [860, 980, 8, 6]].map(([rx, ry, rr, i]) => { const raw = kprog(T, K.M + 1.6 + i * 0.22, K.M + 2.3 + i * 0.22); if (raw <= 0) return null; const u = kEase.rebote(raw);
-            return <g key={i} transform={`translate(0 ${(1 - u) * (720 - ry)}) rotate(${(1 - u) * 40} ${rx} ${ry})`}><Resto x={rx} y={ry} rot={rr} s={1.1} /></g>; })}
+          {[[295, 1150, -6], [770, 1185, 5]].map(([ax, ay, r], i) => <Arcilla key={i} x={ax} y={ay} rot={r} s={1.5} n={5} aparece={kprog(T, K.M + 1.6 + i * 0.3, K.M + 2.2 + i * 0.3)} />)}
+          {[[140, 1048, -8, 0], [300, 1030, 12, 1], [635, 1056, -3, 2], [780, 1068, 18, 3], [440, 1014, -2, 4], [370, 978, -14, 5], [915, 1080, 9, 6]].map(([rx, ry, rr, i]) => { const raw = kprog(T, K.M + 1.6 + i * 0.22, K.M + 2.3 + i * 0.22); if (raw <= 0) return null; const u = kEase.rebote(raw);
+            return <g key={i} transform={`translate(0 ${(1 - u) * (760 - ry)}) rotate(${(1 - u) * 40} ${rx} ${ry})`}><Resto x={rx} y={ry} rot={rr} s={1.7} /></g>; })}
         </>)}
       </Escena>
-      {/* 5 · pegado a minerales: el carbono puede tardar décadas o siglos en renovarse */}
+      {/* 5 · pegado a minerales: el carbono puede tardar décadas o siglos en renovarse (todo 1.6× y al centro) */}
       <Escena T={T} a={K.A} b={K.P} zoom={0.05}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={14} />
         {fsvg(<>
-          <Arcilla x={330} y={1060} n={6} rot={-4} />
-          {[[240, 960, -10], [360, 970, 12], [430, 975, -4]].map(([rx, ry, rr], i) => <Resto key={i} x={rx} y={ry} rot={rr} s={1.1} />)}
-          <RelojArena T={T} x={330} y={700} s={0.85} p={kprog(T, K.A + 0.3, K.A + 3.6)} />
-          <g opacity={1 - kprog(T, K.A + 1.0, K.A + 3.0)} transform={`translate(830 ${1010 - kprog(T, K.A + 1.0, K.A + 3.0) * 40})`}>
+          <Arcilla x={360} y={1210} s={1.6} n={6} rot={-4} />
+          {[[225, 1072, -10], [370, 1058, 12], [505, 1050, -4]].map(([rx, ry, rr], i) => <Resto key={i} x={rx} y={ry} rot={rr} s={1.8} />)}
+          <RelojArena T={T} x={360} y={650} s={1.45} p={kprog(T, K.A + 0.3, K.A + 3.6)} />
+          {/* lo suelto se va antes: se atenúa, pero su silueta se queda */}
+          <g opacity={klerp(1, 0.16, kprog(T, K.A + 1.0, K.A + 3.0))} transform={`translate(835 ${1210 - kprog(T, K.A + 1.0, K.A + 3.0) * 50}) scale(1.9)`}>
             <path d="M -70 0 C -40 -50, 40 -50, 80 0 C 40 40, -40 40, -70 0 Z" fill="#c9822f" stroke="#5a3a1c" strokeWidth={5} />
+            <path d="M -58 0 L 68 0" stroke="#8a5a2b" strokeWidth={4} />
           </g>
         </>)}
       </Escena>
-      {/* 6 · re-gancho: ¿cómo sabes que era de un hongo? */}
+      {/* 6 · re-gancho: ¿cómo sabes que era de un hongo? (la escena anterior sigue detrás, bajo el velo) */}
       <Escena T={T} a={K.P} b={K.Hu} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Resto x={300} y={1050} s={3} rot={-8} /><Interrogacion T={T} x={300} y={880} tam={380} /></>)}
+        {fsvg(<><Resto x={770} y={1030} s={3.8} rot={-8} /><Interrogacion T={T} x={770} y={860} tam={440} /></>)}
       </Escena>
       {/* 7 · las dos huellas: glucosamina (sobre todo hongos) y ácido murámico (solo bacterias) */}
       <Escena T={T} a={K.Hu} b={K.E19} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         {fsvg(<>
-          <CadenaAnillos x={130} y={560} n={4} p={1 - kprog(T, K.Hu + 0.6, K.Hu + 1.2)} s={0.8} color={NC.pared} />
-          <AminoAzucar x={280} y={760} s={1.2} color={NC.hongo} p={kprog(T, K.Hu + 0.9, K.Hu + 1.5)} />
-          <Bacteria T={T} x={760} y={560} largo={220} ancho={90} rot={-10} seed={7} reventar={kprog(T, K.Hu + 2.4, K.Hu + 3.2)} />
-          <AminoAzucar x={790} y={790} s={1.2} color={NC.bact} cola p={kprog(T, K.Hu + 2.9, K.Hu + 3.5)} />
-          <line x1={540} y1={480} x2={540} y2={1080} stroke="rgba(255,255,255,.25)" strokeWidth={4} strokeDasharray="12 12" />
+          <g opacity={klerp(1, 0.3, kprog(T, K.Hu + 0.6, K.Hu + 1.2))}><CadenaAnillos x={96} y={580} n={4} p={1} s={1.05} color={NC.pared} /></g>
+          <AminoAzucar x={215} y={950} s={1.45} color={NC.hongo} p={kprog(T, K.Hu + 0.9, K.Hu + 1.5)} />
+          {T > K.Hu + 2.4 && <Bacteria T={T} x={835} y={580} largo={290} ancho={118} rot={-10} seed={7} opacidad={0.3 * kprog(T, K.Hu + 2.6, K.Hu + 3.2)} />}
+          <Bacteria T={T} x={835} y={580} largo={290} ancho={118} rot={-10} seed={7} reventar={kprog(T, K.Hu + 2.4, K.Hu + 3.2)} />
+          <AminoAzucar x={775} y={950} s={1.45} color={NC.bact} cola p={kprog(T, K.Hu + 2.9, K.Hu + 3.5)} />
+          <line x1={540} y1={450} x2={540} y2={1290} stroke="rgba(255,255,255,.25)" strokeWidth={4} strokeDasharray="12 12" />
         </>)}
       </Escena>
-      {/* 8 · el estudio de 2019 (zonas templadas, capa superior) */}
+      {/* 8 · el estudio de 2019 (zonas templadas, capa superior): perfil de suelo grande y barras; la tarjeta, chica y arriba */}
       <Escena T={T} a={K.E19} b={K.E26} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
           {/* perfil de suelo con la capa de arriba resaltada */}
-          <rect x={90} y={800} width={420} height={100} fill="#2b1d14" stroke={KC.ink} strokeWidth={6} />
-          <rect x={90} y={900} width={420} height={100} fill="#6b4a32" stroke={KC.ink} strokeWidth={6} />
-          <rect x={90} y={1000} width={420} height={100} fill="#a07a52" stroke={KC.ink} strokeWidth={6} />
-          <rect x={84} y={794} width={432} height={112} fill="none" stroke={KC.yellow} strokeWidth={8} opacity={0.6 + 0.4 * Math.sin(T * 5)} />
+          <rect x={60} y={640} width={450} height={190} fill="#2b1d14" stroke={KC.ink} strokeWidth={6} />
+          <rect x={60} y={830} width={450} height={190} fill="#4d3524" stroke={KC.ink} strokeWidth={6} />
+          <rect x={60} y={1020} width={450} height={190} fill="#6e5239" stroke={KC.ink} strokeWidth={6} />
+          {TIERRA_PTS.slice(0, 44).map((q, i) => <circle key={i} cx={285 + q.x * 0.8} cy={(i < 22 ? 655 : 845) + ((i * 53) % 160)} r={q.r * 0.9} fill={i < 22 ? (q.k < 0.6 ? NC.tierra2 : NC.tierra3) : '#3d2a1c'} opacity={0.85} />)}
+          <rect x={52} y={632} width={466} height={206} fill="none" stroke={KC.yellow} strokeWidth={9} opacity={0.6 + 0.4 * Math.sin(T * 5)} />
           {/* barras: más de la mitad (cultivos y pastizales) · ~1/3 (bosques) */}
           {(() => { const u = kprog(T, K.E19 + 2.0, K.E19 + 3.2, kEase.sale); return <g>
-            <rect x={600} y={840} width={360} height={60} rx={12} fill="rgba(0,0,0,.2)" stroke={KC.ink} strokeWidth={5} />
-            <rect x={600} y={840} width={360 * 0.62 * u} height={60} rx={12} fill={KC.gold2} stroke={KC.ink} strokeWidth={5} />
-            <rect x={600} y={990} width={360} height={60} rx={12} fill="rgba(0,0,0,.2)" stroke={KC.ink} strokeWidth={5} />
-            <rect x={600} y={990} width={360 * 0.33 * u} height={60} rx={12} fill={KC.gold2} stroke={KC.ink} strokeWidth={5} />
-            <line x1={780} y1={820} x2={780} y2={1070} stroke={KC.ink} strokeWidth={5} strokeDasharray="10 8" />
-            <text x={780} y={1100} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>mitad</text>
+            <rect x={590} y={770} width={430} height={90} rx={16} fill="rgba(0,0,0,.25)" stroke={KC.ink} strokeWidth={5} />
+            <rect x={590} y={770} width={430 * 0.62 * u} height={90} rx={16} fill={KC.gold2} stroke={KC.ink} strokeWidth={5} />
+            <rect x={590} y={1030} width={430} height={90} rx={16} fill="rgba(0,0,0,.25)" stroke={KC.ink} strokeWidth={5} />
+            <rect x={590} y={1030} width={430 * 0.33 * u} height={90} rx={16} fill={KC.gold2} stroke={KC.ink} strokeWidth={5} />
+            <line x1={805} y1={735} x2={805} y2={1150} stroke={KC.ink} strokeWidth={5} strokeDasharray="10 8" />
+            <text x={805} y={1190} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>mitad</text>
           </g>; })()}
         </>)}
       </Escena>
       {/* 9 · el estudio de 2026: mapa → cuadrícula que se llena (34 % hongos + 16 % bacterias) */}
       <Escena T={T} a={K.E26} b={K.D} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<g opacity={1 - kprog(T, K.E26 + 3.4, K.E26 + 3.9)}><MapaMundo x={70} y={560} s={1.0} p={kprog(T, K.E26 + 0.3, K.E26 + 2.2)} /></g>)}
+        {fsvg(<g opacity={klerp(1, 0.16, kprog(T, K.E26 + 3.4, K.E26 + 3.9))}><MapaMundo x={14} y={520} s={1.12} p={kprog(T, K.E26 + 0.3, K.E26 + 2.2)} /></g>)}
         {T > K.E26 + 3.4 && <div style={{ opacity:kprog(T, K.E26 + 3.5, K.E26 + 4.0) }}>
-          <div style={{ position:'absolute', left:270, top:480, width:540, height:540, borderRadius:40, background:NC.tierra, border:`8px solid ${KC.ink}` }}></div>
-          <Cuadricula T={T} cols={10} filas={10} x={290} y={500} ancho={500} alto={500} vacio="rgba(255,255,255,.13)"
+          <div style={{ position:'absolute', left:140, top:500, width:800, height:800, borderRadius:48, background:NC.tierra, border:`8px solid ${KC.ink}`, boxSizing:'border-box' }}></div>
+          <Cuadricula T={T} cols={10} filas={10} x={160} y={520} ancho={760} alto={760} vacio="rgba(255,255,255,.13)"
             llenado={kprog(T, K.E26 + 4.2, K.E26 + 8.2) * (hongosC + bactC)} tramos={[{ desde: 0, hasta: hongosC, color: NC.hongo }, { desde: hongosC, hasta: hongosC + bactC, color: NC.bact }]} />
         </div>}
       </Escena>
       {/* 10 · el hongo pesa el doble */}
       <Escena T={T} a={K.D} b={K.V} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Balanza x={420} y={820} s={0.95} inclina={kprog(T, K.D + 0.1, K.D + 0.8, kEase.rebote)} />)}
+        {fsvg(<Balanza x={540} y={820} s={1.2} inclina={kprog(T, K.D + 0.1, K.D + 0.8, kEase.rebote)} />)}
       </Escena>
-      {/* 11 · los vivos: ~2 % (valor típico, otra fuente: tarjeta aparte) */}
+      {/* 11 · los vivos: ~2 % (valor típico, otra fuente: tarjeta aparte). Arriba, microbios vivos: una hifa y dos bacterias */}
       <Escena T={T} a={K.V} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        <div style={{ position:'absolute', left:90, top:500, width:500, height:500, borderRadius:36, background:'rgba(14,15,18,.88)', border:`6px dashed ${KC.texto}` }}></div>
-        <Cuadricula T={T} cols={10} filas={10} x={120} y={530} ancho={440} alto={440} vacio="rgba(255,255,255,.13)" llenado={0.02 * kprog(T, K.V + 0.6, K.V + 1.0)}
+        <div style={{ position:'absolute', left:30, top:630, width:660, height:660, borderRadius:40, background:'rgba(14,15,18,.88)', border:`6px dashed ${KC.texto}`, boxSizing:'border-box' }}></div>
+        <Cuadricula T={T} cols={10} filas={10} x={60} y={660} ancho={600} alto={600} vacio="rgba(255,255,255,.13)" llenado={0.02 * kprog(T, K.V + 0.6, K.V + 1.0)}
           tramos={[{ desde: 0, hasta: 0.02, color: mixHex(NC.vivo, '#ffffff', 0.3 + 0.3 * Math.sin(T * 6)) }]} />
-      </Escena>
-      {/* 12 · cierre: el mismo puño de tierra, ya pintado por dentro */}
-      <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="40% 55%">
-        <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Maiz T={T} x={860} y={1090} s={1.0} seed={1} crece={klerp(1, 1.1, kprog(T, K.C, K.C + 3))} />
-          <Maiz T={T} x={140} y={1090} s={0.8} seed={2} crece={klerp(1, 1.1, kprog(T, K.C, K.C + 3))} />
-          <rect x={-20} y={1060} width={1120} height={300} fill="#6b4a32" stroke={KC.ink} strokeWidth={8} />
-          <Tierra T={T} x={430} y={1060} s={1} pintado={kprog(T, K.C + 0.4, K.C + 2.4)} />
+          <g transform="translate(70 510) scale(0.54)"><Hifa T={T} x0={0} x1={900} y={0} ancho={200} vida={1} /></g>
+          <Bacteria T={T} x={840 + mece(T, 2, 0.4) * 10} y={445} largo={230} ancho={94} rot={-12 + mece(T, 7, 0.3) * 6} seed={2} color={NC.vivo} />
+          <Bacteria T={T} x={820 + mece(T, 3, 0.4) * 10} y={590} largo={180} ancho={74} rot={14 + mece(T, 8, 0.3) * 6} seed={5} color={NC.vivo} />
         </>)}
+      </Escena>
+      {/* 12 · cierre: la misma milpa y el mismo puño de tierra, ya pintado por dentro */}
+      <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="50% 58%">
+        <FondoLunares color={KC.yellow} />
+        {fsvg(<Milpa T={T} crece={klerp(1, 1.08, kprog(T, K.C, K.C + 3))} pintado={kprog(T, K.C + 0.4, K.C + 2.4)} />)}
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 0.6} until={K.Co - 0.3} x={60} y={700} texto="tierra de la milpa" tam={32} color={KC.ink} />
-      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.6} until={K.Co - 0.3} texto="¿solo planta podrida?" x={330} y={470} tam={40} />
-      <Chip T={T} at={K.G + 2.3} until={K.Co - 0.3} texto="cementerio de microbios" x={330} y={570} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Co + 0.1} until={K.Hi - 0.3} texto="POR DENTRO · UN TERRÓN" x={540} y={420} tam={34} borde={KC.cyan} mono />
+      <Etq T={T} at={K.G + 0.7} until={K.G + 2.3} x={300} y={1420} texto="tierra de la milpa" tam={34} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.6} until={K.Co - 0.3} texto="¿solo planta podrida?" x={540} y={470} tam={44} />
+      <Chip T={T} at={K.G + 2.3} until={K.Co - 0.3} texto="cementerio de microbios" x={540} y={590} tam={46} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 0.1} until={K.Co + 1.9} texto="POR DENTRO · UN TERRÓN" x={540} y={400} tam={34} borde={KC.cyan} mono />
       <Etq T={T} at={K.Co + 0.9} until={K.Hi - 0.3} x={330} y={660} texto="hongo (hifas)" tam={30} color="#eafff7" />
-      <Etq T={T} at={K.Co + 1.2} until={K.Hi - 0.3} x={560} y={600} texto="bacterias" tam={30} color="#7fd88a" />
-      <Etq T={T} at={K.Co + 1.5} until={K.Hi - 0.3} x={640} y={900} texto="hoja" tam={28} color="#e0a43a" />
-      <Chip T={T} at={K.Co + 2.0} until={K.Hi - 0.3} texto="carbono de la hoja → cuerpo del microbio" x={540} y={500} tam={28} borde={KC.gold2} />
-      <Chip T={T} at={K.Hi + 0.1} until={K.M - 0.3} texto="AL MICROSCOPIO · UNA HIFA" x={410} y={430} tam={34} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Hi + 0.8} until={K.M + 0.5} x={70} y={655} texto="pared con quitina" tam={30} color={NC.pared} />
-      <Etq T={T} at={K.Hi + 2.2} until={K.M + 0.6} x={130} y={1150} texto="quitina = cadena de N-acetilglucosamina" tam={27} color={NC.pared} />
-      <Chip T={T} at={K.M + 0.4} until={K.A - 0.3} texto="la hifa muere" x={330} y={440} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.M + 2.2} until={K.A - 0.3} x={90} y={1130} texto="minerales finos (arcilla)" tam={30} color={NC.arcilla} />
-      <Chip T={T} at={K.M + 3.2} until={K.A - 0.3} texto="necromasa = restos de microbios muertos" x={540} y={780} tam={30} borde={NC.pared} />
-      <Chip T={T} at={K.A + 0.3} until={K.P - 0.3} texto="pegado a minerales" x={330} y={430} tam={34} borde={NC.arcilla} />
-      <Etq T={T} at={K.A + 1.0} until={K.P - 0.3} x={1000} y={1110} texto="suelto: se va antes" lado="izq" tam={26} color="#e0a43a" />
-      <Etq T={T} at={K.A + 0.9} until={K.P - 0.3} x={560} y={760} texto="décadas" tam={34} color={KC.gold2} />
-      <Etq T={T} at={K.A + 1.8} until={K.P - 0.3} x={560} y={900} texto="… o siglos" tam={34} color={KC.gold2} />
-      <Etq T={T} at={K.Hu + 0.2} until={K.E19 - 0.3} x={70} y={440} texto="hongo: quitina" tam={30} color={NC.pared} />
-      <Etq T={T} at={K.Hu + 0.2} until={K.E19 - 0.3} x={570} y={440} texto="bacteria: peptidoglicano" tam={26} color={NC.bact} />
-      <Chip T={T} at={K.Hu + 1.3} until={K.E19 - 0.3} texto="glucosamina" x={290} y={920} tam={34} borde={NC.hongo} />
-      <Etq T={T} at={K.Hu + 1.6} until={K.E19 - 0.3} x={60} y={990} texto="en el suelo: sobre todo hongos" tam={26} color={NC.hongo} />
-      <Chip T={T} at={K.Hu + 3.3} until={K.E19 - 0.3} texto="ácido murámico" x={800} y={920} tam={34} borde={NC.bact} />
-      <Etq T={T} at={K.Hu + 3.6} until={K.E19 - 0.3} x={640} y={990} texto="solo de bacterias" tam={26} color={NC.bact} />
-      <TarjetaEstudio T={T} at={K.E19 + 0.1} until={K.E19 + 5.6} anio="2019" quien="Liang, Amelung, Lehmann y Kästner" revista="Global Change Biology · aminoazúcares 1996–2018" x={540} y={500} />
-      <Etq T={T} at={K.E19 + 1.4} until={K.E26 - 0.3} x={90} y={765} texto="capa superior" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E19 + 2.2} until={K.E26 - 0.3} x={560} y={808} texto="pastizales: ~62 %" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.E19 + 2.6} until={K.E26 - 0.3} x={560} y={958} texto="bosques: ~1/3" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.E26 + 0.1} until={K.E26 + 3.4} texto="2026 · Lu et al. · Earth Syst. Sci. Data" x={540} y={440} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.E26 + 1.0} until={K.E26 + 3.4} texto="486 sitios · sobre todo hemisferio norte" x={540} y={1140} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.E26 + 3.8} until={K.D - 0.2} texto="tierras de cultivo · 0–20 cm · promedio" x={540} y={440} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.E26 + 4.8} until={K.D - 0.2} texto="■ hongos muertos: 34 %" x={290} y={1095} tam={30} borde={NC.hongo} color={NC.hongo} />
-      <Chip T={T} at={K.E26 + 7.0} until={K.D - 0.2} texto="■ bacterias muertas: 16 %" x={790} y={1095} tam={30} borde={NC.bact} color="#c7adff" />
-      <BarraEscala T={T} at={K.E26 + 3.8} until={K.D} texto="1 cuadrito = 1 % del carbono" largo={58} />
-      <NumeroGigante T={T} at={K.D + 0.2} until={K.V - 0.2} valor={2} prefijo="×" dur={0.4} x={300} y={500} tam={190} color={NC.hongo} />
-      <Chip T={T} at={K.V + 0.2} until={K.C - 0.3} texto="aparte: otro dato" x={370} y={480} tam={30} borde={KC.texto} mono />
-      <Chip T={T} at={K.V + 1.0} until={K.C - 0.3} texto="microbios VIVOS ≈ 2 % del carbono del suelo" x={540} y={1060} tam={28} borde={NC.vivo} />
-      <Etq T={T} at={K.V + 1.6} until={K.C - 0.3} x={630} y={820} texto="valor típico" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.V + 1.9} until={K.C - 0.3} x={630} y={870} texto="(otros estudios)" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="cerca de la mitad: microbios muertos" x={420} y={790} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="promedio de 145 tierras de cultivo · 0–20 cm" x={420} y={870} tam={24} borde={KC.gold} mono />
+      <Etq T={T} at={K.Co + 1.2} until={K.Hi - 0.3} x={672} y={624} texto="bacterias" tam={30} color="#7fd88a" />
+      <Etq T={T} at={K.Co + 1.5} until={K.Hi - 0.3} x={640} y={900} texto="hoja" tam={30} color="#e0a43a" />
+      <Chip T={T} at={K.Co + 2.0} until={K.Hi - 0.3} texto="carbono de la hoja → cuerpo del microbio" x={540} y={400} tam={30} borde={KC.gold2} />
+      <Chip T={T} at={K.Hi + 0.1} until={K.M - 0.3} texto="AL MICROSCOPIO · UNA HIFA" x={540} y={330} tam={34} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Hi + 0.8} until={K.M + 0.5} x={70} y={452} texto="pared con quitina" tam={32} color={NC.pared} />
+      <Etq T={T} at={K.Hi + 2.2} until={K.M + 0.6} x={90} y={1232} texto="quitina = cadena de N-acetilglucosamina" tam={30} color={NC.pared} />
+      <Chip T={T} at={K.M + 0.4} until={K.A - 0.3} texto="la hifa muere" x={540} y={330} tam={38} borde={KC.red} />
+      <Etq T={T} at={K.M + 2.2} until={K.A - 0.3} x={70} y={1310} texto="minerales finos (arcilla)" tam={32} color={NC.arcilla} />
+      <Chip T={T} at={K.M + 3.2} until={K.A - 0.3} texto="necromasa = restos de microbios muertos" x={540} y={860} tam={32} borde={NC.pared} />
+      <Chip T={T} at={K.A + 0.3} until={K.P - 0.3} texto="pegado a minerales" x={540} y={255} tam={38} borde={NC.arcilla} />
+      <Etq T={T} at={K.A + 1.0} until={K.P - 0.3} x={1040} y={1335} texto="suelto: se va antes" lado="izq" tam={28} color="#e0a43a" />
+      <Etq T={T} at={K.A + 0.9} until={K.P - 0.6} x={600} y={540} texto="décadas" tam={46} color={KC.gold2} />
+      <Etq T={T} at={K.A + 1.8} until={K.P - 0.6} x={600} y={790} texto="… o siglos" tam={46} color={KC.gold2} />
+      <Etq T={T} at={K.Hu + 0.2} until={K.E19 - 0.3} x={50} y={410} texto="hongo: quitina" tam={32} color={NC.pared} />
+      <Etq T={T} at={K.Hu + 0.2} until={K.E19 - 0.3} x={575} y={410} texto="bacteria: peptidoglicano" tam={27} color={NC.bact} />
+      <Chip T={T} at={K.Hu + 1.3} until={K.E19 - 0.3} texto="glucosamina" x={270} y={1160} tam={40} borde={NC.hongo} />
+      <Etq T={T} at={K.Hu + 1.6} until={K.E19 - 0.3} x={24} y={1250} texto="en el suelo: sobre todo hongos" tam={24} color={NC.hongo} />
+      <Chip T={T} at={K.Hu + 3.3} until={K.E19 - 0.3} texto="ácido murámico" x={810} y={1160} tam={40} borde={NC.bact} />
+      <Etq T={T} at={K.Hu + 3.6} until={K.E19 - 0.3} x={600} y={1250} texto="solo de bacterias" tam={28} color={NC.bact} />
+      <TarjetaEstudio T={T} at={K.E19 + 0.1} until={K.E19 + 5.6} anio="2019" quien="Liang, Amelung, Lehmann y Kästner" revista="Global Change Biology · aminoazúcares 1996–2018" x={450} y={350} />
+      <Etq T={T} at={K.E19 + 1.4} until={K.E26 - 0.3} x={60} y={590} texto="capa superior" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.E19 + 2.2} until={K.E26 - 0.3} x={590} y={725} texto="pastizales: ~62 %" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E19 + 2.6} until={K.E26 - 0.3} x={590} y={985} texto="bosques: ~1/3" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.E26 + 0.1} until={K.E26 + 3.4} texto="2026 · Lu et al. · Earth Syst. Sci. Data" x={540} y={420} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.E26 + 1.0} until={K.E26 + 3.4} texto="486 sitios · sobre todo hemisferio norte" x={540} y={1170} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.E26 + 3.8} until={K.D - 0.2} texto="tierras de cultivo · 0–20 cm · promedio" x={540} y={420} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.E26 + 4.8} until={K.D - 0.2} texto="■ hongos muertos: 34 %" x={290} y={1375} tam={30} borde={NC.hongo} color={NC.hongo} />
+      <Chip T={T} at={K.E26 + 7.0} until={K.D - 0.2} texto="■ bacterias muertas: 16 %" x={790} y={1375} tam={30} borde={NC.bact} color="#c7adff" />
+      <BarraEscala T={T} at={K.E26 + 3.8} until={K.D} texto="1 cuadrito = 1 % del carbono" largo={76} />
+      <NumeroGigante T={T} at={K.D + 0.2} until={K.V - 0.2} valor={2} prefijo="×" dur={0.4} x={540} y={520} tam={230} color={NC.hongo} />
+      <Chip T={T} at={K.V + 0.2} until={K.C - 0.3} texto="aparte: otro dato" x={300} y={330} tam={32} borde={KC.texto} mono />
+      <Chip T={T} at={K.V + 1.0} until={K.C - 0.3} texto="microbios VIVOS ≈ 2 % del carbono del suelo" x={540} y={1370} tam={30} borde={NC.vivo} />
+      <Etq T={T} at={K.V + 1.6} until={K.C - 0.3} x={715} y={930} texto="valor típico" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.V + 1.9} until={K.C - 0.3} x={715} y={980} texto="(otros estudios)" tam={25} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="cerca de la mitad: microbios muertos" x={540} y={470} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="promedio de 145 tierras de cultivo · 0–20 cm" x={540} y={570} tam={25} borde={KC.gold} mono />
 
-      {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Co} texto="5 cm" largo={110} />
+      {/* barras de escala (recalculadas con los dibujos: milpa 1.55×, hifa 1.5×) */}
+      <BarraEscala T={T} at={K.G} until={K.Co} texto="5 cm" largo={170} />
       <BarraEscala T={T} at={K.Co} until={K.Hi} texto="100 µm" largo={160} />
-      <BarraEscala T={T} at={K.Hi} until={K.M} texto="5 µm" largo={200} />
-      <BarraEscala T={T} at={K.M} until={K.P} texto="1 µm (dibujo esquemático)" largo={120} />
+      <BarraEscala T={T} at={K.Hi} until={K.M + 1.6} texto="5 µm" largo={300} />
+      <BarraEscala T={T} at={K.M + 1.6} until={K.P} texto="dibujo esquemático (no a escala)" largo={0} />
       <BarraEscala T={T} at={K.Hu} until={K.E19} texto="moléculas esquemáticas" largo={0} />
       <BarraEscala T={T} at={K.E19} until={K.E26} texto="esquema" largo={0} />
       <BarraEscala T={T} at={K.E26} until={K.E26 + 3.6} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.V} until={K.C} texto="1 cuadrito = 1 % del carbono" largo={50} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={110} />
+      <BarraEscala T={T} at={K.V} until={K.C} texto="1 cuadrito = 1 % del carbono" largo={60} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={170} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Co - 0.1} texto="No es solo planta podrida: es un *cementerio de microbios.*" />
