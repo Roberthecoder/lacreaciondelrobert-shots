@@ -1,2 +1,3 @@
 - fun-129-hongo-maple: ya cumplía («encuadre bien»), sin cambios.
 - fun-128-umami-seco: marcaba ABAJO en Gancho, Hongo, FrescoSeco, Tijeras y Cierre (la mesa de madera clara y el resplandor naranja pesaban más que el hongo); oscurecí la madera conservando el tinte y bajé el resplandor de «al calentarlo» de 0.42 a 0.24. Queda «encuadre bien» y «sin láminas».
+- amb-47-pilas: marcaba ARRIBA en Mexico (el mapa arriba, tercio de abajo vacío); bajé el mapa 190 px (centro ≈ y 960) y reacomodé sus tres chips (470, 1420, 1520). Queda «encuadre bien» y «sin láminas».

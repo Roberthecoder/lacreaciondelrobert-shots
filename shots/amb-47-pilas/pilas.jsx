@@ -262,11 +262,11 @@ function PilasShot() {
       {/* 10 · México: plan de manejo y residuo peligroso */}
       <Escena T={T} a={K.Mx} b={K.C}>
         <FondoLunares color={KC.cyan} />
-        {svg(<MapaMexico x={60} y={500} ancho={1220} conCA={false} />)}
+        {svg(<MapaMexico x={60} y={690} ancho={1220} conCA={false} />)}
       </Escena>
-      <Chip T={T} at={K.Mx + 0.3} until={K.C - 0.2} texto="México · LGPGIR" y={340} x={540} tam={42} borde={KC.ink} />
-      <Chip T={T} at={K.Mx + 1.0} until={K.C - 0.2} texto="pilas → plan de manejo" y={1300} x={540} tam={46} borde={KC.leaf} />
-      <Chip T={T} at={K.Mx + 2.8} until={K.C - 0.2} texto="mercurio o níquel-cadmio → residuo peligroso" y={1420} x={540} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.Mx + 0.3} until={K.C - 0.2} texto="México · LGPGIR" y={470} x={540} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.Mx + 1.0} until={K.C - 0.2} texto="pilas → plan de manejo" y={1420} x={540} tam={46} borde={KC.leaf} />
+      <Chip T={T} at={K.Mx + 2.8} until={K.C - 0.2} texto="mercurio o níquel-cadmio → residuo peligroso" y={1520} x={540} tam={38} borde={KC.red} />
       {/* 11 · cierre: regreso al garrafón, agua limpia y la pila al acopio */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
