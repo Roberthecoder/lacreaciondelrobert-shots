@@ -3,7 +3,7 @@
 // (gancho 1 «Esto no es X: es Y»; formato N1 Por dentro + N5 El experimento).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
-const SQ = { seco:'#d9a866', seco2:'#c08a52', mojado:'#4a2f1c', mojado2:'#3a2416', grieta:'#7a5232', cana:'#c9a25a', canaV:'#3fbf4a',
+const SQ = { seco:'#b0824d', seco2:'#96693c', mojado:'#4a2f1c', mojado2:'#3a2416', grieta:'#7a5232', cana:'#c9a25a', canaV:'#3fbf4a',
   grano:'#8a6a4a', grano2:'#a7835c', agua:'#4fd2ff', aire:'#c9d3dc', hifa:'#fff1cf', hifaB:'#e8c98f', co2:'#e9eef5' };
 
 // ---------- utilidades ----------
@@ -54,6 +54,8 @@ function Milpa({ T, seco = 1, verde = 0, grieta = 1, pecho = 1, exhala = 0, desi
   return <>
     <FondoLunares color={cielo} />
     {fsvg(<>
+      {/* pase a mano: toda la milpa 1.2× alrededor del terrón (540, 910); las barras de escala van con el mismo factor */}
+      <g transform="translate(540 910) scale(1.2) translate(-540 -910)">
       {/* sol (se apaga con la lluvia) */}
       <g transform={`translate(240 560) rotate(${T * 12})`} opacity={kclamp(seco * (1 - lluvia), 0, 1)}>
         {Array.from({ length: 12 }, (_, i) => <rect key={i} x={-9} y={-150} width={18} height={40} rx={9} fill={KC.orange} stroke={KC.ink} strokeWidth={4} transform={`rotate(${i * 30})`} />)}
@@ -95,6 +97,7 @@ function Milpa({ T, seco = 1, verde = 0, grieta = 1, pecho = 1, exhala = 0, desi
       {/* charquitos al mojarse */}
       {seco < 1 && [[180, 1300], [620, 1380], [900, 1250]].map(([x, y], i) => <ellipse key={i} cx={x} cy={y} rx={90 * (1 - seco)} ry={22 * (1 - seco)} fill="#6ea7c4" stroke={KC.ink} strokeWidth={4} opacity={1 - seco} />)}
       {puffs}
+      </g>
       </g>
       {lluv}
     </>)}
@@ -202,22 +205,27 @@ function Redes({ T, sequia = 0 }) {
   const pB = NB.map(([x, y], i) => [x + tiemblaB(i, 1), y + tiemblaB(i, 2)]);
   const pH = NH.map(([x, y], i) => [x + mece(T, i + 30, 0.2) * 4, y + mece(T, i + 50, 0.2) * 4]);
   return fsvg(<>
+    {/* pase a mano: las dos redes apiladas y 1.3× (esquemáticas) */}
+    <g transform="translate(540 650) scale(1.25) translate(-290 -930)">
     {/* bacterias */}
     {ARISTAS.map(([a, b], i) => <line key={'b' + i} x1={pB[a][0]} y1={pB[a][1]} x2={pB[b][0]} y2={pB[b][1]} stroke={sequia > 0.3 ? mixHex('#ffffff', KC.red, sequia) : '#ffffff'} strokeWidth={6} opacity={0.85} />)}
     {EXTRA.map(([a, b], i) => { const o = kclamp(sequia * 2 - i * 0.15, 0, 1) * (0.6 + 0.4 * Math.sin(T * 9 + i)); return <line key={'e' + i} x1={pB[a][0]} y1={pB[a][1]} x2={pB[b][0]} y2={pB[b][1]} stroke={KC.red} strokeWidth={5} strokeDasharray="12 8" opacity={o} />; })}
     {pB.map(([x, y], i) => <g key={'nb' + i}><circle cx={x} cy={y} r={30} fill={KC.dark} stroke={KC.ink} strokeWidth={5} /><BacteriaC x={x} y={y} s={0.36} rot={i * 40} seed={i} T={T} flagelo={false} /></g>)}
+    <text x={-38} y={720} textAnchor="start" style={{ font:`900 44px ${KF.texto}` }} fill={KC.texto} stroke="#0b1020" strokeWidth={8} paintOrder="stroke">BACTERIAS</text>
+    </g>
+    <g transform="translate(540 1215) scale(1.25) translate(-790 -930)">
     {/* hongos */}
     {ARISTAS.map(([a, b], i) => <line key={'h' + i} x1={pH[a][0]} y1={pH[a][1]} x2={pH[b][0]} y2={pH[b][1]} stroke="#ffffff" strokeWidth={6} opacity={0.85} />)}
     {pH.map(([x, y], i) => <g key={'nh' + i}><circle cx={x} cy={y} r={30} fill={KC.dark} stroke={KC.ink} strokeWidth={5} />
       <path d={`M ${x - 18} ${y + 8} Q ${x - 4} ${y - 14} ${x + 18} ${y - 6} M ${x - 2} ${y - 4} L ${x + 4} ${y + 16}`} stroke={SQ.hifa} strokeWidth={8} fill="none" strokeLinecap="round" /></g>)}
-    <text x={290} y={720} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">BACTERIAS</text>
-    <text x={790} y={720} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">HONGOS</text>
+    <text x={462} y={720} textAnchor="start" style={{ font:`900 44px ${KF.texto}` }} fill={KC.texto} stroke="#0b1020" strokeWidth={8} paintOrder="stroke">HONGOS</text>
+    </g>
   </>);
 }
 
 // ---------- caja de dos cámaras (Guhr et al. 2015) ----------
-const CAJA = { x0: 90, x1: 990, y0: 760, y1: 1120, g0: 520, g1: 560 };
-const HIFAS_CAJA = [[[150, 880], [300, 860], [470, 900], [540, 905], [640, 880], [760, 930], [880, 900]], [[180, 1010], [330, 1040], [480, 1000], [540, 1000], [620, 1030], [720, 1000], [820, 1050], [950, 1020]], [[120, 950], [260, 960], [400, 940], [540, 950], [600, 960], [700, 960]]];
+const CAJA = { x0: 90, x1: 990, y0: 700, y1: 1260, g0: 520, g1: 560 };
+const HIFAS_CAJA = [[[150, 880], [300, 860], [470, 900], [540, 905], [640, 880], [760, 930], [880, 900]], [[180, 1010], [330, 1040], [480, 1000], [540, 1000], [620, 1030], [720, 1000], [820, 1050], [950, 1020]], [[120, 950], [260, 960], [400, 940], [540, 950], [600, 960], [700, 960]]].map((h) => h.map(([x, y]) => [x, 990 + (y - 950) * 1.6]));
 function CajaDosTierras({ T, hifas = 0, agua = 0, oscurece = 0 }) {
   const C = CAJA, seca = mixHex(SQ.seco, '#8f6538', oscurece);
   return fsvg(<>
@@ -225,9 +233,9 @@ function CajaDosTierras({ T, hifas = 0, agua = 0, oscurece = 0 }) {
     <rect x={C.x0} y={C.y0} width={C.g0 - C.x0} height={C.y1 - C.y0} rx={10} fill={SQ.mojado} stroke={KC.ink} strokeWidth={6} />
     <rect x={C.g1} y={C.y0} width={C.x1 - C.g1} height={C.y1 - C.y0} rx={10} fill={seca} stroke={KC.ink} strokeWidth={6} />
     <rect x={C.g0} y={C.y0} width={C.g1 - C.g0} height={C.y1 - C.y0} fill="#f2fbff" />
-    {[...Array(8)].map((_, i) => <circle key={i} cx={C.x0 + 40 + (i * 53) % 400} cy={C.y0 + 40 + (i * 97) % 300} r={8} fill="#2b1a10" opacity=".6" />)}
-    {[...Array(8)].map((_, i) => <circle key={'s' + i} cx={C.g1 + 40 + (i * 61) % 390} cy={C.y0 + 50 + (i * 83) % 300} r={8} fill="#a8794a" opacity=".7" />)}
-    {HIFAS_CAJA.map((pts, i) => <Hifa key={i} T={T} pts={pts} p={kclamp(hifas * 1.3 - i * 0.12, 0, 1)} ancho={20} septo={90} gotas={agua} />)}
+    {[...Array(8)].map((_, i) => <circle key={i} cx={C.x0 + 40 + (i * 53) % 400} cy={C.y0 + 90 + (i * 97) % 440} r={8} fill="#2b1a10" opacity=".6" />)}
+    {[...Array(8)].map((_, i) => <circle key={'s' + i} cx={C.g1 + 40 + (i * 61) % 390} cy={C.y0 + 90 + (i * 83) % 440} r={8} fill="#a8794a" opacity=".7" />)}
+    {HIFAS_CAJA.map((pts, i) => <Hifa key={i} T={T} pts={pts} p={kclamp(hifas * 1.3 - i * 0.12, 0, 1)} ancho={28} septo={90} gotas={agua} />)}
     <text x={(C.x0 + C.g0) / 2} y={C.y0 + 52} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>tierra húmeda</text>
     <text x={(C.g1 + C.x1) / 2} y={C.y0 + 52} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>tierra seca</text>
     <text x={(C.g0 + C.g1) / 2} y={C.y0 - 26} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>aire</text>
@@ -319,8 +327,8 @@ function SequiaShot() {
       {/* 7 · el estudio de 2018: macetas de pradera bajo techo transparente; se lee el ADN */}
       <Escena T={T} a={K.E} b={K.R} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <Macetas T={T} at={K.E} />
-        {fsvg(<g opacity={kprog(T, K.E + 3.2, K.E + 3.6)}><ADNHebra T={T} x={130} y={520} largo={820} alto={70} vueltas={4} resalta={(u) => u < kprog(T, K.E + 3.4, K.E + 5.6)} /></g>, 22)}
+        <div style={{ position:'absolute', inset:0, transform:'translateY(150px)' }}><Macetas T={T} at={K.E} /></div>
+        {fsvg(<g opacity={kprog(T, K.E + 3.2, K.E + 3.6)}><ADNHebra T={T} x={110} y={560} largo={860} alto={110} vueltas={4} resalta={(u) => u < kprog(T, K.E + 3.4, K.E + 5.6)} /></g>, 22)}
       </Escena>
       {/* 8 · redes: la de bacterias se desacomoda con la sequía; la de hongos aguanta */}
       <Escena T={T} a={K.R} b={K.Ch} zoom={0.03}>
@@ -332,8 +340,8 @@ function SequiaShot() {
         <FondoLunares color={KC.cyan} />
         <CajaDosTierras T={T} hifas={kprog(T, K.Ch + 0.8, K.Ch + 3.4, kEase.suave)} agua={kprog(T, K.Ch + 3.0, K.Ch + 3.6)} oscurece={kprog(T, K.Ch + 3.6, K.Pi + 1.0)} />
         {fsvg(<>
-          <Champinon x={150} y={746} s={0.42} crece={kprog(T, K.Ch + 0.2, K.Ch + 1.0, kEase.sale)} abre={kprog(T, K.Ch + 0.6, K.Ch + 1.4)} />
-          {T > K.Pi + 1.4 && <Pizza x={860} y={640} s={kEase.rebote(kprog(T, K.Pi + 1.4, K.Pi + 1.8)) * 0.7} rot={12 + Math.sin(T * 3) * 4} />}
+          <Champinon x={200} y={686} s={0.8} crece={kprog(T, K.Ch + 0.2, K.Ch + 1.0, kEase.sale)} abre={kprog(T, K.Ch + 0.6, K.Ch + 1.4)} />
+          {T > K.Pi + 1.4 && <Pizza x={945} y={585} s={kEase.rebote(kprog(T, K.Pi + 1.4, K.Pi + 1.8)) * 0.72} rot={12 + Math.sin(T * 3) * 4} />}
         </>, 21)}
         <div style={{ position:'absolute', inset:0, background:'rgba(14,15,18,.45)', opacity:kprog(T, K.Hp, K.Hp + 0.4), zIndex:30 }}></div>
       </Escena>
@@ -352,31 +360,31 @@ function SequiaShot() {
       <Etq T={T} at={K.Mi + 2.1} until={K.Ba - 0.3} x={640} y={700} texto="bacterias" tam={30} color={KC.texto} />
       <Chip T={T} at={K.Ba + 0.2} until={K.Se - 0.2} texto="AL MICROSCOPIO · POROS DEL SUELO" x={450} y={400} tam={28} borde={KC.cyan} mono />
       <Etq T={T} at={K.Ba + 0.9} until={K.Se + 1.0} x={360} y={630} texto="película de agua" tam={28} color={SQ.agua} />
-      <Etq T={T} at={K.Ba + 1.4} until={K.Hi - 0.2} x={300} y={1010} texto="bacteria" lado="izq" tam={28} color={KC.mint} />
-      <Etq T={T} at={K.Ba + 1.9} until={K.Hi - 0.2} x={40} y={700} texto="grano de suelo" tam={26} color="#ffd9a8" />
+      <Etq T={T} at={K.Ba + 1.4} until={K.Hi - 0.2} x={335} y={1285} texto="bacteria" lado="izq" tam={28} color={KC.mint} />
+      <Etq T={T} at={K.Ba + 1.9} until={K.Hi - 0.2} x={50} y={545} texto="grano de suelo" tam={26} color="#ffd9a8" />
       <Chip T={T} at={K.Se + 1.2} until={K.Hi - 0.2} texto="poro con aire" x={540} y={1010} tam={34} borde={SQ.aire} />
-      <Etq T={T} at={K.Hi + 1.0} until={K.P - 0.2} x={140} y={600} texto="hifa (hilo del hongo)" tam={30} color={SQ.hifa} />
+      <Etq T={T} at={K.Hi + 1.0} until={K.P - 0.2} x={150} y={560} texto="hifa (hilo del hongo)" tam={30} color={SQ.hifa} />
       <Chip T={T} at={K.Hi + 2.2} until={K.P - 0.2} texto="cruza el aire" x={330} y={420} tam={34} borde={SQ.hifa} />
       <Etq T={T} at={K.P + 0.3} until={K.E - 0.2} x={300} y={560} texto="bacteria" tam={30} color={KC.ink} />
       <Etq T={T} at={K.P + 0.5} until={K.E - 0.2} x={60} y={1100} texto="hifa" tam={30} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2018" quien="de Vries y col. · Inglaterra" revista="Nature Communications, 2018" x={540} y={470} />
-      <Chip T={T} at={K.E + 1.4} until={K.R - 0.3} texto="techo transparente: sin lluvia" x={540} y={790} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.E + 3.3} until={K.R - 0.3} texto="leen el ADN de sus microbios" x={540} y={420} tam={34} borde={KC.pink} />
-      <Etq T={T} at={K.E + 2.0} until={K.R - 0.3} x={60} y={1145} texto="macetas de pradera" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.R + 0.1} until={K.Ch - 0.3} texto="¿quién aparece con quién?" x={360} y={430} tam={32} borde={KC.gold} />
-      <Chip T={T} at={K.R + 1.0} until={K.Ch - 0.3} texto="SEQUÍA" x={360} y={520} tam={34} borde={KC.orange} />
-      <Chip T={T} at={K.R + 2.2} until={K.Ch - 0.3} texto="bacterias: menos estable" x={290} y={1135} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.R + 3.0} until={K.Ch - 0.3} texto="hongos: más estable" x={790} y={1135} tam={32} borde={KC.mint} />
-      <TarjetaEstudio T={T} at={K.Ch + 0.2} until={K.Ch + 2.6} anio="2015" quien="Guhr y col. · laboratorio" revista="PNAS, 2015" x={400} y={480} />
-      <Etq T={T} at={K.Ch + 2.8} until={K.Pi - 0.2} x={120} y={560} texto="champiñón" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Ch + 3.1} until={K.Pi - 0.2} x={120} y={612} texto="Agaricus bisporus" it tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Ch + 3.4} until={K.Pi - 0.2} texto="agua por las hifas →" x={540} y={1075} tam={30} borde={SQ.agua} />
-      <Medidor T={T} at={K.Pi + 0.1} until={K.Hp - 0.2} x={90} y={410} ancho={900} color={KC.red} valor={(t) => kprog(t, K.Pi + 0.3, K.Pi + 1.5, kEase.sale)}
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2018" quien="de Vries y col. · Inglaterra" revista="Nature Communications, 2018" x={540} y={400} />
+      <Chip T={T} at={K.E + 1.4} until={K.R - 0.3} texto="techo transparente: sin lluvia" x={540} y={945} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.E + 3.3} until={K.R - 0.3} texto="leen el ADN de sus microbios" x={540} y={400} tam={34} borde={KC.pink} />
+      <Etq T={T} at={K.E + 2.0} until={K.R - 0.3} x={60} y={1300} texto="macetas de pradera" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.R + 0.1} until={K.Ch - 0.3} texto="¿quién aparece con quién?" x={350} y={240} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.R + 1.0} until={K.Ch - 0.3} texto="SEQUÍA" x={690} y={240} tam={32} borde={KC.orange} />
+      <Chip T={T} at={K.R + 2.2} until={K.Ch - 0.3} texto="bacterias: menos estable" x={800} y={335} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.R + 3.0} until={K.Ch - 0.3} texto="hongos: más estable" x={765} y={938} tam={32} borde={KC.mint} />
+      <TarjetaEstudio T={T} at={K.Ch + 0.2} until={K.Ch + 2.6} anio="2015" quien="Guhr y col. · laboratorio" revista="PNAS, 2015" x={660} y={400} />
+      <Etq T={T} at={K.Ch + 2.8} until={K.Pi - 0.2} x={345} y={520} texto="champiñón" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ch + 3.1} until={K.Pi - 0.2} x={345} y={575} texto="Agaricus bisporus" it tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Ch + 3.4} until={K.Pi - 0.2} texto="agua por las hifas →" x={540} y={1215} tam={34} borde={SQ.agua} />
+      <Medidor T={T} at={K.Pi + 0.1} until={K.Hp - 0.2} x={90} y={345} ancho={900} color={KC.red} valor={(t) => kprog(t, K.Pi + 0.3, K.Pi + 1.5, kEase.sale)}
         etiqueta="CO₂ de descomposición, tierra seca" texto={(v) => '+' + kformato(Math.round(v * 2800), 0) + ' %'} />
-      <Etq T={T} at={K.Pi + 0.6} until={K.Hp - 0.2} x={90} y={540} texto="vs. hifas cortadas · 7 días" tam={28} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Pi + 0.3} until={K.Hp - 0.2} valor={2800} dur={1.2} prefijo="+" sufijo=" %" x={510} y={615} tam={110} color={KC.red} />
-      <SelloTexto T={T} at={K.Hp + 0.25} until={K.Ll - 0.1} x={540} y={600} texto="HIPÓTESIS" />
-      <Chip T={T} at={K.Hp + 0.7} until={K.Ll - 0.2} texto="¿así aguantan la sequía?" x={540} y={760} tam={40} borde={KC.orange} />
+      <Etq T={T} at={K.Pi + 0.6} until={K.Hp - 0.2} x={370} y={468} texto="vs. hifas cortadas · 7 días" tam={28} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Pi + 0.3} until={K.Hp - 0.2} valor={2800} dur={1.2} prefijo="+" sufijo=" %" x={610} y={572} tam={108} color={KC.red} />
+      <SelloTexto T={T} at={K.Hp + 0.25} until={K.Ll - 0.1} x={540} y={440} texto="HIPÓTESIS" />
+      <Chip T={T} at={K.Hp + 0.7} until={K.Ll - 0.2} texto="¿así aguantan la sequía?" x={540} y={590} tam={40} borde={KC.orange} />
       <GraficaPulso T={T} at={K.Bi + 0.1} until={K.C - 0.3} x={60} y={360} w={610} h={280} />
       <Chip T={T} at={K.Bi + 1.4} until={K.Bi + 4.2} texto="en minutos" x={250} y={700} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Bi + 2.6} until={K.C - 0.3} texto="microbios" x={220} y={1100} tam={30} borde={KC.mint} />
@@ -385,13 +393,13 @@ function SequiaShot() {
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="no estaba muerta" x={330} y={430} tam={40} borde={KC.leaf} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Ba} texto="10 cm (terrón)" largo={130} />
+      <BarraEscala T={T} at={K.G} until={K.Ba} texto="10 cm (terrón)" largo={156} />
       <BarraEscala T={T} at={K.Ba} until={K.P} texto="5 µm (esquemático)" largo={145} />
       <BarraEscala T={T} at={K.P} until={K.E} texto="esquemático" largo={0} />
       <BarraEscala T={T} at={K.E} until={K.R} texto="20 cm (maceta)" largo={95} />
       <BarraEscala T={T} at={K.R} until={K.Ch} texto="red esquemática" largo={0} />
       <BarraEscala T={T} at={K.Ch} until={K.Ll} texto="2 mm (hueco de aire)" largo={40} />
-      <BarraEscala T={T} at={K.Ll} until={K.Ou} texto="10 cm (terrón)" largo={130} />
+      <BarraEscala T={T} at={K.Ll} until={K.Ou} texto="10 cm (terrón)" largo={156} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Mi - 0.1} texto="No está muerta: *aguanta la respiración.*" />
