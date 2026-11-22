@@ -248,11 +248,11 @@ function ArrozShot() {
       {/* 5 · por dentro del apresorio: entra agua, el glicerol no sale, la presión sube a 8 MPa */}
       <Escena T={T} a={K.Pr} b={K.P} zoom={0.04}>
         <FondoMicro T={T} />
-        {fsvg((() => { const R = 290 * (0.94 + 0.06 * presion), bx = 520, by = 1120, g = krng(9);
+        {fsvg((() => { const R = 400 * (0.94 + 0.06 * presion), bx = 520, by = 1330, g = krng(9);
           const dots = Array.from({ length: 34 }, () => [(g() - 0.5) * 1.5 * R * 0.85, -g() * R * 0.78 - 30, g() * 6]);
           return <g>
             <rect x={0} y={by} width={KW} height={18} fill={AC.cuti} />
-            <rect x={0} y={by + 18} width={KW} height={140} fill={AC.celula2} />
+            <rect x={0} y={by + 18} width={KW} height={200} fill={AC.celula2} />
             <path d={`M ${bx - R} ${by} A ${R} ${R * 0.95} 0 0 1 ${bx + R} ${by} Z`} fill="#2c4258" />
             {dots.map(([px, py, ph], i) => <circle key={i} cx={bx + px + Math.sin(T * (3 + presion * 4) + ph) * 10} cy={by + py + Math.cos(T * (3 + presion * 4) + ph) * 10} r={12} fill={AC.glic} style={{ filter:`drop-shadow(0 0 6px ${AC.glic})` }} />)}
             {Array.from({ length: 14 }, (_, i) => { const u = ((T - K.Pr - 0.4) * 0.55 + i / 14) % 1; if (T < K.Pr + 0.4) return null; const a = Math.PI * (0.12 + 0.76 * ((i * 0.37) % 1));
@@ -264,20 +264,20 @@ function ArrozShot() {
                 {u > 0.4 && <text x={bx + Math.cos(a) * (R + 40)} y={by - Math.sin(a) * (R + 40) * 0.95} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={3}>✕</text>}</g> : null; })()}
             {presion > 0.2 && [0.2, 0.35, 0.5, 0.65, 0.8].map((f, i) => { const a = Math.PI * f, k = presion * (0.8 + 0.2 * Math.sin(T * 8 + i));
               return <line key={i} x1={bx + Math.cos(a) * (R - 80)} y1={by - Math.sin(a) * (R - 80) * 0.95} x2={bx + Math.cos(a) * (R - 80 + 50 * k)} y2={by - Math.sin(a) * (R - 80 + 50 * k) * 0.95} stroke="#fff" strokeWidth={8} strokeLinecap="round" opacity={0.85} />; })}
-            {T > K.Pr + 4.4 && <g opacity={kprog(T, K.Pr + 4.4, K.Pr + 4.8)}><Llanta x={560} y={580} r={66 * kprog(T, K.Pr + 4.4, K.Pr + 4.9, kEase.rebote)} T={T} /></g>}
+            {T > K.Pr + 4.4 && <g opacity={kprog(T, K.Pr + 4.4, K.Pr + 4.8)}><Llanta x={560} y={640} r={66 * kprog(T, K.Pr + 4.4, K.Pr + 4.9, kEase.rebote)} T={T} /></g>}
           </g>; })())}
       </Escena>
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Cl} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><Interrogacion T={T} x={280} y={1000} /><Apresorio x={290} y={1130} r={90} mel={1} glic={1} T={T} /></>)}
+        {fsvg(<><g opacity={0.5}><rect x={0} y={1330} width={KW} height={18} fill={AC.cuti} /><rect x={0} y={1348} width={KW} height={200} fill={AC.celula2} /><Apresorio x={520} y={1330} r={400} mel={1} glic={1} T={T} n={30} /></g><Interrogacion T={T} x={540} y={1180} tam={560} /></>)}
       </Escena>
       {/* 7 · corte de la hoja: la clavija perfora la cutícula y la pared celular */}
       <Escena T={T} a={K.Cl} b={K.E} zoom={0.05}>
         <FondoMicro T={T} />
         {fsvg((() => { const bx = 540, y0 = 820; const tip = y0 + 6 + peg * 230; const grieta1 = kprog(T, K.Cl + 1.0, K.Cl + 1.3), grieta2 = kprog(T, K.Cl + 1.8, K.Cl + 2.1);
           const bulbo = kprog(T, K.Cl + 3.1, K.Cl + 4.4, kEase.sale);
-          return <g transform="translate(540 800) scale(1.4) translate(-540 -820)">
+          return <g transform="translate(540 960) scale(1.5) translate(-540 -820)">
             <rect x={0} y={y0 + 70} width={KW} height={330} fill={AC.celula} />
             <ellipse cx={820} cy={1080} rx={70} ry={50} fill="#2e5a3c" stroke={AC.pared} strokeWidth={4} />
             <rect x={0} y={y0 + 18} width={KW} height={52} fill={AC.pared} />
@@ -365,16 +365,16 @@ function ArrozShot() {
       <Etq T={T} at={K.Me + 0.6} until={K.Me + 2.4} x={460} y={785} texto="pared de melanina" tam={32} color={KC.texto} />
       <Etq T={T} at={K.Me + 1.6} until={K.Me + 2.4} x={760} y={885} texto="glicerol" tam={32} color={AC.glic} />
       <Chip T={T} at={K.Pr + 0.2} until={K.Pr + 2.4} texto="POR DENTRO · apresorio" x={360} y={560} tam={28} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Pr + 0.6} until={K.P - 0.3} x={60} y={820} texto="agua: entra" tam={32} color={AC.agua} />
-      <Etq T={T} at={K.Pr + 1.6} until={K.P - 0.3} x={60} y={1205} texto="glicerol: no sale" tam={30} color={AC.glic} />
+      <Etq T={T} at={K.Pr + 0.6} until={K.P - 0.3} x={60} y={890} texto="agua: entra" tam={32} color={AC.agua} />
+      <Etq T={T} at={K.Pr + 1.6} until={K.P - 0.3} x={60} y={1420} texto="glicerol: no sale" tam={30} color={AC.glic} />
       <Medidor T={T} at={K.Pr + 0.5} until={K.P - 0.3} valor={presion} etiqueta="presión" texto={(v) => (v * 8).toFixed(1) + ' MPa' + (v > 0.99 ? ' (hasta)' : '')} x={60} y={380} ancho={600} color={KC.pink} />
-      <NumeroGigante T={T} at={K.Pr + 4.5} until={K.P - 0.3} valor={40} dur={0.8} prefijo="≈ " sufijo="×" x={290} y={580} tam={150} />
-      <Chip T={T} at={K.Pr + 4.9} until={K.P - 0.3} texto="la presión de una llanta de coche" x={360} y={700} tam={28} borde={KC.white} />
+      <NumeroGigante T={T} at={K.Pr + 4.5} until={K.P - 0.3} valor={40} dur={0.8} prefijo="≈ " sufijo="×" x={290} y={640} tam={150} />
+      <Chip T={T} at={K.Pr + 4.9} until={K.P - 0.3} texto="la presión de una llanta de coche" x={360} y={760} tam={28} borde={KC.white} />
       <Chip T={T} at={K.Cl + 0.2} until={K.E - 0.3} texto="AL MICROSCOPIO · corte de la hoja" x={440} y={380} tam={28} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Cl + 0.6} until={K.E - 0.3} x={1040} y={772} lado="izq" texto="cutícula" tam={28} color={AC.cuti} />
-      <Etq T={T} at={K.Cl + 1.4} until={K.E - 0.3} x={1040} y={864} lado="izq" texto="pared celular" tam={28} color={KC.white} />
-      <Etq T={T} at={K.Cl + 2.0} until={K.E - 0.3} x={580} y={1066} texto="clavija de penetración" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Cl + 3.2} until={K.E - 0.3} x={60} y={1290} texto="célula de la hoja" tam={28} color="#a8e08a" />
+      <Etq T={T} at={K.Cl + 0.6} until={K.E - 0.3} x={1040} y={935} lado="izq" texto="cutícula" tam={28} color={AC.cuti} />
+      <Etq T={T} at={K.Cl + 1.4} until={K.E - 0.3} x={1040} y={1025} lado="izq" texto="pared celular" tam={28} color={KC.white} />
+      <Etq T={T} at={K.Cl + 2.0} until={K.E - 0.3} x={580} y={1170} texto="clavija de penetración" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Cl + 3.2} until={K.E - 0.3} x={60} y={1470} texto="célula de la hoja" tam={28} color="#a8e08a" />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.7} anio="1991" quien="DuPont · Wilmington, Delaware" revista="Howard y cols. · PNAS, 1991 · EE. UU." y={470} />
       <Chip T={T} at={K.E + 3.2} until={K.I - 0.3} texto="plástico (Mylar) en vez de hoja" x={540} y={1290} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.E + 3.6} until={K.I - 0.3} texto="esquemático" x={540} y={770} tam={22} borde={KC.white} mono />
@@ -395,8 +395,8 @@ function ArrozShot() {
       <BarraEscala T={T} at={K.G} until={K.H} texto="1 cm" largo={175} />
       <BarraEscala T={T} at={K.H} until={K.Es} texto="10 cm" largo={98} />
       <BarraEscala T={T} at={K.Es} until={K.Me + 2.5} texto="20 µm" largo={300} />
-      <BarraEscala T={T} at={K.Pr} until={K.P} texto="5 µm" largo={330} />
-      <BarraEscala T={T} at={K.Cl} until={K.E} texto="5 µm" largo={280} />
+      <BarraEscala T={T} at={K.Pr} until={K.P} texto="5 µm" largo={455} />
+      <BarraEscala T={T} at={K.Cl} until={K.E} texto="5 µm" largo={300} />
       <BarraEscala T={T} at={K.I} until={macroI} texto="20 µm" largo={130} />
       <BarraEscala T={T} at={macroI} until={K.Tr} texto="5 mm" largo={270} />
       <BarraEscala T={T} at={K.Tr} until={K.C} texto="1 cm" largo={62} />
