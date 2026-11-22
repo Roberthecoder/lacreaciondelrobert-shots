@@ -277,7 +277,15 @@ function PotterShot() {
   const caeHoja = kprog(T, K.G, K.G + 0.35, kEase.sale);
   const pinta = kprog(T, K.G + 0.15, K.G + 2.3, kEase.suave);
   // esporas del campo microscópico (posiciones fijas)
-  const ESP = [[230, 860, 18], [580, 830, -24], [700, 900, 8], [360, 1060, 40], [640, 1120, -10], [860, 780, 70], [180, 1150, -50], [900, 1060, 20]];
+  // (pase a mano cine: campo más grande y repartido; 10 µm = 16 px × 1.6 = 256 px)
+  const ESP = [[170, 770, 18], [560, 710, -24], [800, 870, 8], [330, 1100, 40], [690, 1190, -10], [930, 650, 70], [470, 1400, -50], [900, 1380, 20]];
+  const SESP = 1.6;
+  // agranda un dibujo k veces alrededor de (cx, cy) y lo deja centrado en (nx, ny)
+  const AG = (cx, cy, k, nx = cx, ny = cy) => `translate(${nx} ${ny}) scale(${k}) translate(${-cx} ${-cy})`;
+  // avance de cámara que la capa cine le da a cada escena (para que las barras de escala lo sigan)
+  const cam = (a, b, zf = 0.1) => 1 + zf * kprog(T, a - 0.45, b + 0.45, kEase.suave);
+  // «Pregunta»: la cámara entra a UNA espora del mismo campo (la 4.ª), sin cambiar de escena
+  const zP = kprog(T, K.P + 0.05, K.P + 0.95, kEase.suave), ZP = klerp(1, 2.875, zP);
   // espora que germinan en "Hifas" (la 3.ª no brota)
   const GERM = [[260, 820, 10], [600, 760, -150], [460, 1000, 60], [800, 980, -40], [220, 1110, 160], [720, 1160, 120]];
   const HIFAS = GERM.map(([x, y, a], i) => { if (i === 2) return null; const r = a * Math.PI / 180, L = 8 * PXUM / 2;
@@ -291,9 +299,9 @@ function PotterShot() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: se pinta una acuarela de hongos y le cae el sello DATO CIENTÍFICO */}
-      <Escena T={T} a={K.G} b={K.Au} zoom={0.04} origen="30% 50%">
+      <Escena T={T} a={K.G} b={K.Au} zoom={0.04} origen="50% 47%">
         <FondoLunares color={KC.yellow} />
-        {psvg(<g transform={`translate(0 ${(1 - caeHoja) * -700})`}>
+        {psvg(<g transform={`translate(0 ${(1 - caeHoja) * -120}) ${AG(350, 750, 1.4, 540, 850)}`}>
           <Hoja x={70} y={380} w={560} h={740} rot={-3}>
             <RamitoFlammulina id="acuG" x={340} y={990} s={1} p={pinta} />
           </Hoja>
@@ -305,62 +313,68 @@ function PotterShot() {
       <Escena T={T} a={K.Au} b={K.Ci} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {psvg(<>
-          <Hoja x={80} y={700} w={430} h={560} rot={-4}>
+          <g transform={AG(295, 980, 1.5, 400, 960)}><Hoja x={80} y={700} w={430} h={560} rot={-4}>
             <RamitoFlammulina id="acuA" x={290} y={1150} s={0.72} p={1} notas={1} />
-          </Hoja>
-          <g transform={`translate(${klerp(500, 0, kprog(T, K.Au + 0.8, K.Au + 1.6, kEase.sale))} 0)`}><ConejoCampo T={T} x={790} y={1230} s={1.05} /></g>
+          </Hoja></g>
+          <g transform={`translate(${klerp(500, 0, kprog(T, K.Au + 0.8, K.Au + 1.6, kEase.sale))} 0)`}><ConejoCampo T={T} x={800} y={1400} s={1.15} /></g>
         </>)}
       </Escena>
       {/* 2 · cientos de dibujos; uno en corte: laminillas */}
       <Escena T={T} a={K.Ci} b={K.Ca} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {psvg(<>
+        {psvg(<g transform={AG(430, 950, 1.4, 540, 950)}>
           {Array.from({ length: 7 }, (_, i) => { const e = kprog(T, K.Ci + 0.1 + i * 0.12, K.Ci + 0.5 + i * 0.12, kEase.rebote); if (e <= 0) return null;
             const a = -48 + i * 16; return <MiniHoja key={i} x={430 + Math.sin(a * Math.PI / 180) * 420 * e} y={1180 - Math.cos(a * Math.PI / 180) * 330 * e} rot={a * e} tipo={i} s={0.9} />; })}
           {(() => { const e = kprog(T, K.Ci + 1.4, K.Ci + 2.0, kEase.sale); if (e <= 0) return null;
-            return <g transform={`translate(0 ${(1 - e) * 600})`}><Hoja x={150} y={700} w={540} h={430} rot={2}><CorteHongo x={420} y={870} s={0.95} /></Hoja></g>; })()}
-        </>)}
+            return <g transform={`translate(0 ${(1 - e) * 600})`}><Hoja x={150} y={700} w={540} h={430} rot={2}><CorteHongo x={420} y={870} s={0.95} />
+              {/* etiquetas sobre el papel, en tinta oscura (antes eran claras sobre claro) */}
+              <g opacity={kprog(T, K.Ci + 2.0, K.Ci + 2.3)} style={{ font:`700 26px ${KF.mono}` }} fill="#0b1020">
+                <line x1={530} y1={908} x2={530} y2={958} stroke="#0b1020" strokeWidth={3} /><text x={470} y={988}>laminillas</text></g>
+              <g opacity={kprog(T, K.Ci + 2.2, K.Ci + 2.5)} style={{ font:`700 26px ${KF.mono}` }} fill="#0b1020">
+                <line x1={352} y1={1040} x2={396} y2={1040} stroke="#0b1020" strokeWidth={3} /><text x={342} y={1049} textAnchor="end">pie</text></g>
+            </Hoja></g>; })()}
+        </g>)}
       </Escena>
       {/* 3 · el cartero naturalista le manda una carta */}
       <Escena T={T} a={K.Ca} b={K.Mi} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {psvg(<>
-          <Cartero x={230} y={1240} s={1.15} brazo={kprog(T, K.Ca + 0.6, K.Ca + 1.0, kEase.sale)} />
-          <Hoja x={600} y={760} w={380} h={460} rot={4}><RamitoFlammulina id="acuC" x={790} y={1140} s={0.55} p={1} /></Hoja>
+          <Cartero x={215} y={1340} s={1.6} brazo={kprog(T, K.Ca + 0.6, K.Ca + 1.0, kEase.sale)} />
+          <g transform={AG(790, 990, 1.35, 750, 980)}><Hoja x={600} y={760} w={380} h={460} rot={4}><RamitoFlammulina id="acuC" x={790} y={1140} s={0.55} p={1} /></Hoja></g>
           {(() => { const u = kprog(T, K.Ca + 0.9, K.Ca + 2.1, kEase.suave); if (u <= 0) return null;
-            return <Sobre x={klerp(370, 760, u)} y={klerp(860, 820, u) - Math.sin(Math.PI * u) * 260} rot={u * 360 * 0.15 - 10} s={klerp(0.9, 1.1, u)} />; })()}
+            return <Sobre x={klerp(470, 760, u)} y={klerp(820, 800, u) - Math.sin(Math.PI * u) * 260} rot={u * 360 * 0.15 - 10} s={klerp(1.2, 1.5, u)} />; })()}
         </>)}
       </Escena>
       {/* 4 · al microscopio: la cámara entra por el ocular y aparecen las esporas */}
       <Escena T={T} a={K.Mi} b={K.P} zoom={0.02}>
         <FondoLunares color={KC.orange} />
         {psvg(<>
-          <g transform={`translate(0 ${(1 - kprog(T, K.Mi, K.Mi + 0.5, kEase.sale)) * 500})`}><Microscopio x={420} y={1260} s={1.0} /></g>
-          {(() => { const r = kprog(T, K.Mi + 1.2, K.Mi + 2.0, kEase.suave) * 1500; if (r <= 0) return null;
-            return <><circle cx={326} cy={534} r={r} fill={KC.noche} />
-              <g opacity={kprog(T, K.Mi + 1.7, K.Mi + 2.3)}>{ESP.map(([x, y, a], i) => <Espora key={i} x={x + Math.sin(T * 0.6 + i) * 8} y={y + Math.cos(T * 0.5 + i) * 6} rot={a + Math.sin(T * 0.4 + i) * 6} s={1.1} />)}</g>
+          <g transform={`translate(0 ${(1 - kprog(T, K.Mi, K.Mi + 0.4, kEase.sale)) * 120}) ${AG(428, 880, 1.35, 560, 930)}`}><Microscopio x={420} y={1260} s={1.0} /></g>
+          {(() => { const r = kprog(T, K.Mi + 1.2, K.Mi + 2.0, kEase.suave) * 2000; if (r <= 0) return null;
+            const fuera = 1 - kprog(T, K.P - 0.3, K.P);
+            return <><circle cx={422} cy={463} r={r} fill={KC.noche} />
+              {/* el campo de esporas; en la «Pregunta» la cámara entra a una sola (la capa cine alarga esta escena hasta ahí) */}
+              <g opacity={kprog(T, K.Mi + 1.6, K.Mi + 2.1)} transform={`translate(${klerp(330, 540, zP)} ${klerp(1100, 1000, zP)}) scale(${ZP}) translate(-330 -1100)`}>
+                {ESP.map(([x, y, a], i) => <Espora key={i} x={x + Math.sin(T * 0.6 + i) * 8 * (i === 3 ? 1 - zP : 1)} y={y + Math.cos(T * 0.5 + i) * 6 * (i === 3 ? 1 - zP : 1)} rot={a + Math.sin(T * 0.4 + i) * 6} s={SESP} />)}</g>
               {/* su dibujo a lápiz al lado */}
-              <g opacity={kprog(T, K.Mi + 2.4, K.Mi + 2.9)} transform="translate(80 400) rotate(-4)">
+              {fuera > 0 && <g opacity={kprog(T, K.Mi + 2.2, K.Mi + 2.6) * fuera} transform="translate(70 250) rotate(-4)">
                 <rect x={0} y={0} width={330} height={210} rx={6} fill={PT.papel} stroke={KC.ink} strokeWidth={5} />
-                {[[90, 80, 15], [200, 70, -20], [150, 150, 30], [260, 150, 5]].map(([x, y, a], i) => <ellipse key={i} cx={x} cy={y} rx={46 * kprog(T, K.Mi + 2.5 + i * 0.15, K.Mi + 2.8 + i * 0.15)} ry={18} transform={`rotate(${a} ${x} ${y})`} fill="none" stroke={PT.lapiz} strokeWidth={4} />)}
-              </g></>; })()}
+                {[[90, 80, 15], [200, 70, -20], [150, 150, 30], [260, 150, 5]].map(([x, y, a], i) => <ellipse key={i} cx={x} cy={y} rx={46 * kprog(T, K.Mi + 2.3 + i * 0.15, K.Mi + 2.6 + i * 0.15)} ry={18} transform={`rotate(${a} ${x} ${y})`} fill="none" stroke={PT.lapiz} strokeWidth={4} />)}
+              </g>}</>; })()}
         </>)}
       </Escena>
-      {/* 5 · re-gancho: ¿y si las ponía a crecer? */}
-      <Escena T={T} a={K.P} b={K.V} zoom={0.06} origen="25% 50%">
-        <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <Ambiente T={T} n={20} color="rgba(200,230,255,.18)" />
+      {/* 5 · re-gancho: ¿y si las ponía a crecer? (solo el signo, chico y a un lado: la espora es la de la escena anterior, que sigue debajo) */}
+      <Escena T={T} a={K.P} b={K.V} zoom={0.06} origen="50% 50%">
         {psvg(<>
-          <Espora x={280} y={930} rot={-12 + Math.sin(T * 1.5) * 5} s={2.6} />
-          <text x={280} y={760} textAnchor="middle" style={{ font:`400 ${200 + Math.sin(T * 4) * 10}px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">?</text>
+          <text x={840} y={640} textAnchor="middle" opacity={zP} style={{ font:`400 ${150 + Math.sin(T * 4) * 8}px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={8} paintOrder="stroke">?</text>
         </>)}
       </Escena>
       {/* 6 · sobre vidrio: las esporas caen del sombrero a una gota en la placa */}
       <Escena T={T} a={K.V} b={K.Hi} zoom={0.08} origen="50% 55%">
         <FondoLunares color={KC.cyan} />
-        {psvg(<>
+        {psvg(<g transform={AG(540, 0, 1.2, 540, 80)}>
           <DefsAcuarela id="acuV" />
-          <path d="M 528 420 Q 520 200 540 0 L 580 0 Q 560 200 556 420 Z" fill="#e8c87a" stroke={KC.ink} strokeWidth={6} />
+          <path d="M 528 420 Q 520 200 540 -90 L 580 -90 Q 560 200 556 420 Z" fill="#e8c87a" stroke={KC.ink} strokeWidth={6} />
           <g transform="translate(540 560)"><g transform="rotate(4)">
             <path d="M -210 6 Q -200 -150 0 -164 Q 200 -150 210 6 Z" fill={PT.naranja} stroke={KC.ink} strokeWidth={7} />
             <path d="M -200 6 Q 0 50 200 6 Z" fill={PT.lam} stroke={KC.ink} strokeWidth={5} />
@@ -372,7 +386,7 @@ function PotterShot() {
           <rect x={170} y={862} width={740} height={22} rx={8} fill="#fff" opacity=".5" />
           <ellipse cx={540} cy={925} rx={120 * kprog(T, K.V, K.V + 0.4, kEase.rebote)} ry={34 * kprog(T, K.V, K.V + 0.4, kEase.rebote)} fill="rgba(160,220,255,.8)" stroke={KC.ink} strokeWidth={4} />
           {Array.from({ length: 12 }, (_, i) => T > K.V + 1.3 + i * 0.09 ? <circle key={i} cx={460 + (i * 41) % 160} cy={912 + (i * 13) % 26} r={3.5} fill="#fff7e0" /> : null)}
-        </>)}
+        </g>)}
       </Escena>
       {/* 7 · las esporas germinan: tubo germinativo → hifas (una no brota) */}
       <Escena T={T} a={K.Hi} b={K.E} zoom={0.02}>
@@ -387,39 +401,46 @@ function PotterShot() {
       <Escena T={T} a={K.E} b={K.Ms} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {psvg(<>
-          {[0, 1, 2].map((i) => <Manuscrito key={i} x={330 + i * 210} y={1000 + (i % 2) * 20} rot={-8 + i * 7} s={1.5 * kprog(T, K.E + 0.8 + i * 0.2, K.E + 1.2 + i * 0.2, kEase.rebote)} />)}
+          {/* detrás siguen las hifas del trabajo (atenuadas): el estudio es sobre ellas */}
+          <g opacity={0.3} transform="translate(540 960) scale(0.7) translate(-540 -960)">
+            {HIFAS.map((hs, i) => hs && hs.map((h, j) => <HifaTrazo key={i + '-' + j} h={h} g={1} grosor={22} />))}
+            {GERM.map(([x, y, a], i) => <Espora key={i} x={x} y={y} rot={a} s={1} brillo={0.2} />)}
+          </g>
+          {[0, 1, 2].map((i) => <Manuscrito key={i} x={230 + i * 310} y={1010 + (i % 2) * 24} rot={-8 + i * 7} s={2.4 * (0.6 + 0.4 * kprog(T, K.E + 0.05 + i * 0.15, K.E + 0.45 + i * 0.15, kEase.rebote))} />)}
         </>)}
       </Escena>
       {/* 9–10 · la Sociedad Linneana (aún sin socias mujeres); lo lee Massee, como era costumbre; ella lo retira; se pierde */}
       <Escena T={T} a={K.Ms} b={K.En} zoom={0.03}>
         <FondoLunares color={KC.lilac} punto="rgba(255,255,255,.18)" />
-        {psvg(<>
+        {psvg(<g transform={AG(540, 880, 1.25, 540, 1010)}>
           <Edificio x={190} y={720} w={700} h={420} puerta={kprog(T, K.Ms + 0.6, K.Ms + 1.1, kEase.sale)} />
           <text x={540} y={700} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>SOCIEDAD LINNEANA · LONDRES</text>
           <g transform={`translate(${klerp(-300, 0, kprog(T, K.Ms + 0.1, K.Ms + 0.8, kEase.sale))} 0)`}><Dama x={250} y={1150} s={0.85} brazo={Math.max(entrega * (1 - regreso), 0)} /></g>
           <g opacity={kprog(T, K.Ms + 1.8, K.Ms + 2.3)}><Senor x={640} y={1140} s={0.85} brazo={entrega * (1 - regreso)} /></g>
           <Manuscrito x={papX} y={papY} rot={-10 + entrega * 20 - regreso * 20} s={0.8} perdido={perd} />
           {perd > 0 && T < K.Pe + 3.3 && <text x={320} y={1000} textAnchor="middle" opacity={perd * (1 - kprog(T, K.Pe + 2.9, K.Pe + 3.2))} style={{ font:`400 64px ${KF.titulo}` }} fill="#fff" stroke={KC.ink} strokeWidth={6} paintOrder="stroke">PERDIDO</text>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 11 · el hongo del trabajo y su primo, el enoki */}
       <Escena T={T} a={K.En} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {psvg(<>
+          <g transform={AG(290, 880, 1.35, 350, 1000)}>
           <path d="M 40 1100 Q 260 1050 520 1090 L 520 1170 L 40 1170 Z" fill="#7a4a22" stroke={KC.ink} strokeWidth={7} />
           {[[120, 1072], [300, 1062], [450, 1082]].map(([x, y], i) => <ellipse key={i} cx={x} cy={y} rx={46} ry={12} fill="#fff" opacity=".9" />)}
           <g transform={`translate(0 ${(1 - kprog(T, K.En + 0.2, K.En + 0.8, kEase.sale)) * 400})`}>
             <RamitoFlammulina id="acuE" x={290} y={1080} s={0.95} p={1} />
           </g>
-          <g transform={`translate(${klerp(500, 0, kprog(T, K.En + 2.2, K.En + 2.9, kEase.sale))} 0)`}><PaqueteEnoki x={820} y={1140} s={0.92} T={T} /></g>
+          </g>
+          <g transform={`translate(${klerp(500, 0, kprog(T, K.En + 2.2, K.En + 2.9, kEase.sale))} 0)`}><PaqueteEnoki x={840} y={1400} s={1.25} T={T} /></g>
           {Array.from({ length: 14 }, (_, i) => <circle key={i} cx={(i * 83 + T * 20 * (1 + i % 3)) % 1080} cy={(i * 131 + T * 60) % 900 + 400} r={4 + (i % 3)} fill="#fff" opacity=".7" />)}
         </>)}
       </Escena>
       {/* 12 · cierre: la misma acuarela del inicio, ahora cuaderno de científica */}
-      <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="30% 50%">
+      <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="50% 47%">
         <FondoLunares color={KC.yellow} />
         {psvg(<>
-          <Hoja x={70} y={380} w={560} h={740} rot={-3}>
+          <g transform={AG(350, 750, 1.4, 540, 850)}><Hoja x={70} y={380} w={560} h={740} rot={-3}>
             <RamitoFlammulina id="acuZ" x={340} y={990} s={1} p={1} notas={1} />
             {/* anotaciones de cuaderno científico */}
             <g opacity={kprog(T, K.C + 0.5, K.C + 1.0)}>
@@ -430,56 +451,55 @@ function PotterShot() {
               <text x={110} y={450} style={{ font:`italic 700 26px ${KF.mono}` }} fill={PT.lapiz}>1897</text>
               <line x1={420} y1={460} x2={500} y2={460} stroke={PT.lapiz} strokeWidth={3} /><text x={420} y={445} style={{ font:`italic 700 18px ${KF.mono}` }} fill={PT.lapiz}>10 µm (espora)</text>
             </g>
-          </Hoja>
-          <g transform={`translate(${klerp(500, 0, kprog(T, K.C + 1.6, K.C + 2.4, kEase.sale))} 0)`}><ConejoCampo T={T} x={830} y={1250} s={0.9} /></g>
+          </Hoja></g>
+          <g transform={`translate(${klerp(500, 0, kprog(T, K.C + 1.6, K.C + 2.4, kEase.sale))} 0)`}><ConejoCampo T={T} x={870} y={1470} s={0.9} /></g>
         </>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.Au + 0.2} until={K.Ci - 0.3} texto="Beatrix Potter" x={540} y={430} tam={64} borde={KC.ink} />
-      <Chip T={T} at={K.Au + 0.5} until={K.Ci - 0.3} texto="1866–1943 · Inglaterra" x={540} y={530} tam={36} borde={KC.gold} mono />
-      <Chip T={T} at={K.Au + 1.2} until={K.Ci - 0.3} texto="dibujo esquemático, al estilo de sus estudios" x={540} y={615} tam={24} borde={KC.white} mono />
-      <Chip T={T} at={K.Ci + 0.3} until={K.Ca - 0.3} texto="cientos de dibujos de hongos" x={360} y={420} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.Ci + 2.0} until={K.Ca - 0.3} x={610} y={900} texto="laminillas" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Ci + 2.2} until={K.Ca - 0.3} x={450} y={1060} texto="pie" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Au + 0.2} until={K.Ci - 0.3} texto="Beatrix Potter" x={540} y={250} tam={64} borde={KC.ink} />
+      <Chip T={T} at={K.Au + 0.5} until={K.Ci - 0.3} texto="1866–1943 · Inglaterra" x={540} y={345} tam={36} borde={KC.gold} mono />
+      <Chip T={T} at={K.Au + 1.2} until={K.Ci - 0.3} texto="dibujo esquemático, al estilo de sus estudios" x={540} y={422} tam={24} borde={KC.white} mono />
+      <Chip T={T} at={K.Ci + 0.3} until={K.Ca - 0.3} texto="cientos de dibujos de hongos" x={540} y={400} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Ca + 0.3} until={K.Mi - 0.3} texto="Charles McIntosh" x={540} y={430} tam={54} borde={KC.ink} />
       <Chip T={T} at={K.Ca + 0.7} until={K.Mi - 0.3} texto="cartero y naturalista · Perthshire, Escocia" x={540} y={525} tam={28} borde={KC.gold} mono />
-      <Etq T={T} at={K.Mi + 2.2} until={K.P - 0.3} x={150} y={690} texto="esporas" tam={34} color={KC.texto} />
-      <Etq T={T} at={K.Mi + 2.5} until={K.P - 0.3} x={150} y={740} texto="Flammulina velutipes" it tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Mi + 2.6} until={K.P - 0.3} x={440} y={640} texto="su dibujo a lápiz" tam={24} color={KC.texto} />
-      <Etq T={T} at={K.V + 0.6} until={K.Hi - 0.3} x={150} y={1050} texto="placa de vidrio" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.V + 1.0} until={K.Hi - 0.3} x={680} y={925} texto="gota" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.V + 0.2} until={K.Hi - 0.3} texto="AL MICROSCOPIO · 1896" x={360} y={420} tam={30} borde={KC.ink} mono />
+      <Etq T={T} at={K.Mi + 2.2} until={K.P - 0.3} x={130} y={545} texto="esporas" tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Mi + 2.5} until={K.P - 0.3} x={130} y={595} texto="Flammulina velutipes" it tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.Mi + 2.6} until={K.P - 0.3} x={420} y={350} texto="su dibujo a lápiz" tam={24} color={KC.texto} />
+      <Etq T={T} at={K.V + 0.6} until={K.Hi - 0.3} x={120} y={1350} texto="placa de vidrio" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.V + 1.0} until={K.Hi - 0.3} x={705} y={1196} texto="gota" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.V + 0.2} until={K.Hi - 0.3} texto="AL MICROSCOPIO · 1896" x={285} y={330} tam={26} borde={KC.ink} mono />
       <Etq T={T} at={K.Hi + 0.4} until={K.E - 0.3} x={60} y={420} texto="espora" tam={32} color={KC.texto} />
       <Etq T={T} at={K.Hi + 1.4} until={K.E - 0.3} x={60} y={470} texto="tubo germinativo" tam={32} color={KC.cyan} />
       <Etq T={T} at={K.Hi + 2.8} until={K.E - 0.3} x={60} y={520} texto="hifas (con tabiques)" tam={32} color={KC.mint} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ms - 0.3} anio="1897" quien="Beatrix Potter · germinación de esporas" revista="On the germination of the spores of Agaricineae" x={540} y={680} />
-      <Chip T={T} at={K.Ms + 0.8} until={K.Pe - 0.2} texto="miembros: solo hombres (hasta 1905)" x={350} y={540} tam={24} borde={KC.red} mono />
-      <Chip T={T} at={K.Ms + 2.0} until={K.Pe - 0.2} texto="George Massee · micólogo de Kew" x={360} y={400} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Ms + 2.4} until={K.Pe - 0.2} texto="lo leyó el 1 abr 1897" x={360} y={470} tam={28} borde={KC.gold} mono />
-      <Chip T={T} at={K.Ms + 4.3} until={K.Pe - 0.2} texto="costumbre: lo leía otra persona" x={300} y={610} tam={20} borde={KC.ink} mono />
-      <Chip T={T} at={K.Pe + 0.4} until={K.Pe + 3.0} texto="8 abr 1897 · ella lo retira" x={360} y={430} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Pe + 1.8} until={K.Pe + 3.0} texto="nunca se publicó" x={360} y={515} tam={30} borde={KC.red} mono />
-      <TarjetaEstudio T={T} at={K.Pe + 3.1} until={K.En - 0.3} anio="1997" quien="secretario de la Sociedad Linneana:" revista="“la trataron vilmente” (The Sunday Times)" x={540} y={600} />
-      <Etq T={T} at={K.En + 0.8} until={K.C - 0.3} x={60} y={430} texto="Flammulina velutipes" it tam={34} color={KC.ink} />
-      <Etq T={T} at={K.En + 1.2} until={K.C - 0.3} x={60} y={478} texto="silvestre · en madera, en invierno" tam={24} color={KC.ink} />
-      <Etq T={T} at={K.En + 0.9} until={K.C - 0.3} x={60} y={540} texto="el hongo de su trabajo" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.En + 3.0} until={K.C - 0.3} x={1040} y={700} texto="enoki · Flammulina filiformis" it tam={28} color={KC.ink} lado="izq" />
-      <Chip T={T} at={K.En + 3.8} until={K.C - 0.3} texto="se separaron en 2018 por su ADN" x={700} y={610} tam={30} borde={KC.gold} />
-      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="el cuaderno de una científica" x={380} y={330} tam={34} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ms - 0.3} anio="1897" quien="Beatrix Potter · germinación de esporas" revista="On the germination of the spores of Agaricineae" x={540} y={470} />
+      <Chip T={T} at={K.Ms + 0.8} until={K.Pe - 0.2} texto="miembros: solo hombres (hasta 1905)" x={540} y={290} tam={24} borde={KC.red} mono />
+      <Chip T={T} at={K.Ms + 2.0} until={K.Pe - 0.2} texto="George Massee · micólogo de Kew" x={540} y={362} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Ms + 2.4} until={K.Pe - 0.2} texto="lo leyó el 1 abr 1897" x={540} y={438} tam={28} borde={KC.gold} mono />
+      <Chip T={T} at={K.Ms + 4.3} until={K.Pe - 0.2} texto="costumbre: lo leía otra persona" x={540} y={506} tam={20} borde={KC.ink} mono />
+      <Chip T={T} at={K.Pe + 0.4} until={K.Pe + 3.0} texto="8 abr 1897 · ella lo retira" x={540} y={380} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Pe + 1.8} until={K.Pe + 3.0} texto="nunca se publicó" x={540} y={462} tam={30} borde={KC.red} mono />
+      <TarjetaEstudio T={T} at={K.Pe + 3.1} until={K.En - 0.3} anio="1997" quien="secretario de la Sociedad Linneana:" revista="“la trataron vilmente” (The Sunday Times)" x={540} y={400} />
+      <Etq T={T} at={K.En + 0.8} until={K.C - 0.3} x={60} y={370} texto="Flammulina velutipes" it tam={34} color={KC.ink} />
+      <Etq T={T} at={K.En + 1.2} until={K.C - 0.3} x={60} y={418} texto="silvestre · en madera, en invierno" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.En + 0.9} until={K.C - 0.3} x={60} y={480} texto="el hongo de su trabajo" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.En + 3.0} until={K.C - 0.3} x={1040} y={770} texto="enoki · Flammulina filiformis" it tam={28} color={KC.ink} lado="izq" />
+      <Chip T={T} at={K.En + 3.8} until={K.C - 0.3} texto="se separaron en 2018 por su ADN" x={680} y={670} tam={30} borde={KC.gold} />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="el cuaderno de una científica" x={540} y={245} tam={34} borde={KC.ink} />
 
-      {/* barras de escala */}
-      <BarraEscalaP T={T} at={K.G} until={K.Au} texto="5 cm (hoja)" largo={150} />
-      <BarraEscalaP T={T} at={K.Au} until={K.Ci} texto="5 cm (hoja)" largo={110} />
-      <BarraEscalaP T={T} at={K.Ci} until={K.Ca} texto="5 cm (hoja)" largo={120} />
-      <BarraEscalaP T={T} at={K.Ca} until={K.Mi} texto="50 cm" largo={180} />
-      <BarraEscalaP T={T} at={K.Mi} until={K.Mi + 1.6} texto="10 cm" largo={150} />
-      <BarraEscalaP T={T} at={K.Mi + 1.6} until={K.V} texto="10 µm" largo={176} />
-      <BarraEscalaP T={T} at={K.V} until={K.Hi} texto="1 cm" largo={60} />
-      <BarraEscalaP T={T} at={K.Hi} until={K.E} texto={zH > 0.95 ? '10 µm' : '20 µm'} largo={zH > 0.95 ? 160 * zH : 320 * zH} />
+      {/* barras de escala: recalculadas con el factor de cada escena (pase a mano cine) y con el avance de cámara */}
+      <BarraEscalaP T={T} at={K.G} until={K.Au} texto="5 cm (hoja)" largo={150 * 1.4 * cam(K.G, K.Au + 0.9, 0.2)} />
+      <BarraEscalaP T={T} at={K.Au} until={K.Ci} texto="5 cm (hoja)" largo={110 * 1.5 * cam(K.Au, K.Ci + 0.9)} />
+      <BarraEscalaP T={T} at={K.Ci} until={K.Ca} texto="5 cm (hoja)" largo={120 * 1.4 * cam(K.Ci, K.Ca + 0.9)} />
+      <BarraEscalaP T={T} at={K.Ca} until={K.Mi} texto="dibujo esquemático" largo={0} />
+      <BarraEscalaP T={T} at={K.Mi} until={K.Mi + 1.6} texto="10 cm" largo={150 * 1.35 * cam(K.Mi, K.V)} />
+      {(() => { const px = 10 * PXUM * SESP * ZP * cam(K.Mi, K.V), chica = px > 460;
+        return <BarraEscalaP T={T} at={K.Mi + 1.6} until={K.V} texto={chica ? '5 µm' : '10 µm'} largo={chica ? px / 2 : px} />; })()}
+      <BarraEscalaP T={T} at={K.V} until={K.Hi} texto="1 cm" largo={60 * 1.2 * cam(K.V, K.Hi + 0.9)} />
+      <BarraEscalaP T={T} at={K.Hi} until={K.E} texto={zH > 0.95 ? '10 µm' : '20 µm'} largo={(zH > 0.95 ? 160 * zH : 320 * zH) * cam(K.Hi, K.E + 0.9)} />
       <BarraEscalaP T={T} at={K.E} until={K.En} texto="dibujo esquemático" largo={0} />
-      <BarraEscalaP T={T} at={K.En} until={K.C} texto="5 cm" largo={140} />
-      <BarraEscalaP T={T} at={K.C} until={K.Ou} texto="5 cm (hoja)" largo={150} />
+      <BarraEscalaP T={T} at={K.En} until={K.C} texto="5 cm" largo={140 * 1.35 * cam(K.En, K.C + 0.9)} />
+      <BarraEscalaP T={T} at={K.C} until={K.Ou} texto="5 cm (hoja)" largo={150 * 1.4 * cam(K.C, FIN)} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Au - 0.1} texto="No es un adorno: es un *dato científico.*" />
@@ -514,7 +534,7 @@ function PotterShot() {
 }
 
 // Barra de escala fija (texto + barra), debajo del subtítulo.
-function BarraEscalaP({ T, texto, largo = 200, x = 60, y = 1430, at = -1, until, color = KC.texto }) {
+function BarraEscalaP({ T, texto, largo = 200, x = 60, y = 1490, at = -1, until, color = KC.texto }) {
   if (T < at || (until != null && T > until)) return null;
   const o = kprog(T, at, at + 0.3) * (until != null ? 1 - kprog(T, until - 0.3, until) : 1);
   return <div style={{ position:'absolute', left:x, top:y, zIndex:40, color, font:`700 26px ${KF.mono}`, textShadow:KSOMBRA, opacity:o }}>
