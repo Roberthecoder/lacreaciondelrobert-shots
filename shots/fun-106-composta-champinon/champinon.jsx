@@ -201,7 +201,7 @@ function Pastel({ x, y, r = 130, p = 1, pct = 0.94 }) {
   const a = 2 * Math.PI * pct * p, ex = Math.sin(a) * r, ey = -Math.cos(a) * r;
   return <g transform={`translate(${x} ${y})`}>
     <circle r={r} fill="#c9a06a" stroke={KC.ink} strokeWidth={8} />
-    {p > 0 && <path d={`M 0 0 L 0 ${-r} A ${r} ${r} 0 ${a > Math.PI ? 1 : 0} 1 ${ex} ${ey} Z`} fill={KC.paper} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />}
+    {p > 0 && <path d={`M 0 0 L 0 ${-r} A ${r} ${r} 0 ${a > Math.PI ? 1 : 0} 1 ${ex} ${ey} Z`} fill="#efe9da" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />}
     <circle r={r} fill="none" stroke={KC.ink} strokeWidth={8} />
   </g>;
 }
@@ -243,178 +243,182 @@ function ChampinonShot() {
       <Escena T={T} a={K.G} b={K.M} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Cama x={110} y={860} w={860} h={220} seed={3} id="cG" T={T} champs={[[430, kprog(T, K.G + 2.0, K.G + 3.4, kEase.sale), kprog(T, K.G + 3.0, K.G + 4.2) * 0.35, 0.9]]} />
+          {/* pase a mano: acercamiento ×1.3 (la cama llena el cuadro de borde a borde) y composta más honda */}
+          <g transform="translate(540 920) scale(1.3) translate(-540 -860)">
+          <Cama x={110} y={860} w={860} h={400} seed={3} id="cG" T={T} champs={[[430, kprog(T, K.G + 2.0, K.G + 3.4, kEase.sale), kprog(T, K.G + 3.0, K.G + 4.2) * 0.35, 0.9]]} />
           {caen.map((c, i) => c.u > 0 && c.u < 1 ? <Grumo key={i} x={c.x} y={c.y} r={c.r} rot={c.rot} /> : null)}
           {palaFuera < 1 && <g opacity={1 - palaFuera}><Pala x={klerp(220, 440, pala) - palaFuera * 300} y={460 - palaFuera * 200} rot={klerp(-10, 55, pala)} /></g>}
-          <Sello T={T} at={K.G + 0.95} x={250} y={640} texto="¡NO!" color={KC.red} r={110} rot={-10} />
+          <Sello T={T} at={K.G + 0.95} x={290} y={640} texto="¡NO!" color={KC.red} r={110} rot={-10} />
+          </g>
         </>)}
       </Escena>
       {/* 1 · la maceta de Robert: tierra normal y bolsa negra… nada */}
       <Escena T={T} a={K.M} b={K.R} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Maceta x={380} y={760} s={1.05} relleno="tierra" bolsa={kprog(T, K.M + 1.2, K.M + 2.2)} T={T} />
-          {T > K.M + 2.3 && <g opacity={kprog(T, K.M + 2.3, K.M + 2.6)}><Interrogacion T={T} x={380} y={700 + kprog(T, K.M + 2.6, K.M + 3.6, kEase.suave) * 40} tam={190} color={KC.paper} /></g>}
+          <Maceta x={380} y={860} s={1.75} relleno="tierra" bolsa={kprog(T, K.M + 1.2, K.M + 2.2)} T={T} />
+          {T > K.M + 2.3 && <g opacity={kprog(T, K.M + 2.3, K.M + 2.6)}><Interrogacion T={T} x={380} y={770 + kprog(T, K.M + 2.6, K.M + 3.6, kEase.suave) * 50} tam={320} color="#f4f1e8" /></g>}
         </>)}
       </Escena>
       {/* 2 · la receta: paja, estiércol de caballo, gallinaza y yeso */}
       <Escena T={T} a={K.R} b={K.F1} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Pila T={T} x={540} y={1130} w={klerp(200, 700, kprog(T, K.R + 0.7, K.R + 3.0, kEase.sale))} h={klerp(60, 330, kprog(T, K.R + 0.7, K.R + 3.0, kEase.sale))} vivos={0} />
+          <Pila T={T} x={540} y={1400} w={klerp(300, 900, kprog(T, K.R + 0.7, K.R + 3.0, kEase.sale))} h={klerp(90, 440, kprog(T, K.R + 0.7, K.R + 3.0, kEase.sale))} vivos={0} />
           {[0.25, 0.75, 1.75, 2.35].map((t0, i) => { const k = kprog(T, K.R + t0, K.R + t0 + 0.4), baja = kprog(T, K.R + t0 + 1.2, K.R + t0 + 1.7, kEase.suave);
-            return <g key={i} opacity={1 - baja}><Ingrediente x={klerp(150 + i * 260, 540, baja)} y={klerp(620, 1000, baja)} tipo={i} k={k * (1 - baja * 0.6)} /></g>; })}
+            return <g key={i} opacity={1 - baja} transform={`translate(${klerp(160 + i * 250, 540, baja)} ${klerp(700, 1220, baja)}) scale(1.25)`}><Ingrediente x={0} y={0} tipo={i} k={k * (1 - baja * 0.6)} /></g>; })}
         </>)}
       </Escena>
       {/* 3 · fase I: la pila se calienta (~79 °C); arriba de 70 °C, química */}
       <Escena T={T} a={K.F1} b={K.F2} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<Pila T={T} x={600} y={1130} w={700} h={340} calor={kprog(T, K.F1 + 0.3, K.F1 + 3.0)} vivos={temp < 70 ? 1 : 0} quimica={kprog(T, K.F1 + 3.0, K.F1 + 4.2)} />)}
-        <Termometro x={150} y={540} alto={540} valor={temp} max={100} rango={[70, 100]} marcas={[0, 50, 70, 100]} />
+        {fsvg(<Pila T={T} x={630} y={1400} w={820} h={440} calor={kprog(T, K.F1 + 0.3, K.F1 + 3.0)} vivos={temp < 70 ? 1 : 0} quimica={kprog(T, K.F1 + 3.0, K.F1 + 4.2)} />)}
+        <Termometro x={120} y={620} alto={700} valor={temp} max={100} rango={[70, 100]} marcas={[0, 50, 70, 100]} />
       </Escena>
       {/* 4 · fase II: pasteurizar a 60 °C, ≥ 2 h */}
       <Escena T={T} a={K.F2} b={K.S} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={300} y={640} width={720} height={500} rx={20} fill="#dfe8ee" stroke={KC.ink} strokeWidth={8} />
-          <rect x={300} y={640} width={720} height={60} rx={20} fill="#b9c6cf" stroke={KC.ink} strokeWidth={8} />
-          <Cama x={360} y={940} w={600} h={150} seed={4} id="cF2" />
-          {[0, 1, 2].map((i) => <path key={i} d={`M ${480 + i * 180} 870 q 20 -40 0 -80 q -20 -40 0 -70`} stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" opacity={0.6 * (0.5 + 0.5 * Math.sin(T * 3 + i))} />)}
-          <Reloj T={T} x={850} y={500} r={92} giro={kprog(T, K.F2 + 1.4, K.F2 + 3.3, kEase.suave) * 0.99} />
+          <rect x={290} y={770} width={740} height={700} rx={20} fill="#dfe8ee" stroke={KC.ink} strokeWidth={8} />
+          <rect x={290} y={770} width={740} height={66} rx={20} fill="#b9c6cf" stroke={KC.ink} strokeWidth={8} />
+          <Cama x={350} y={1150} w={620} h={250} seed={4} id="cF2" />
+          {[0, 1, 2].map((i) => <path key={i} d={`M ${480 + i * 180} 1070 q 24 -50 0 -100 q -24 -50 0 -90`} stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" opacity={0.6 * (0.5 + 0.5 * Math.sin(T * 3 + i))} />)}
+          <Reloj T={T} x={860} y={560} r={108} giro={kprog(T, K.F2 + 1.4, K.F2 + 3.3, kEase.suave) * 0.99} />
         </>)}
-        <Termometro x={150} y={540} alto={540} valor={temp2} max={100} rango={[59, 61]} marcas={[0, 60, 100]} />
+        <Termometro x={120} y={620} alto={700} valor={temp2} max={100} rango={[59, 61]} marcas={[0, 60, 100]} />
       </Escena>
       {/* 5 · siembra: granos con micelio; el micelio llena la composta */}
       <Escena T={T} a={K.S} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Cama x={90} y={820} w={900} h={260} seed={7} id="cS" micelio={kprog(T, K.S + 1.0, K.S + 3.6, kEase.suave)} />
+          <Cama x={90} y={900} w={900} h={460} seed={7} id="cS" micelio={kprog(T, K.S + 1.0, K.S + 3.6, kEase.suave)} />
           {Array.from({ length: 14 }, (_, i) => { const t0 = K.S + 0.15 + i * 0.05, u = kprog(T, t0, t0 + 0.6); if (u <= 0) return null;
-            return <Grano key={i} x={130 + i * 62} y={klerp(460, 810 + (i % 3) * 8, u * u)} rot={u * 200 + i * 30} s={1.1} />; })}
+            return <Grano key={i} x={130 + i * 62} y={klerp(520, 888 + (i % 3) * 8, u * u)} rot={u * 200 + i * 30} s={1.25} />; })}
         </>)}
       </Escena>
       {/* 6 · re-gancho: ¿por qué no sale ni un champiñón? */}
       <Escena T={T} a={K.P} b={K.Cb} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Cama x={70} y={880} w={470} h={220} seed={7} id="cP" micelio={1} />
-          <Interrogacion T={T} x={300} y={780} tam={360} />
+          <Cama x={90} y={900} w={900} h={460} seed={7} id="cP" micelio={1} />
+          <Interrogacion T={T} x={540} y={800} tam={400} />
         </>)}
       </Escena>
       {/* 7 · la capa de cobertura: turba con caliza encima de la composta */}
       <Escena T={T} a={K.Cb} b={K.O} zoom={0.12} origen="50% 52%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<Cama x={90} y={860} w={900} h={230} seed={7} id="cCb" micelio={1} cob={kprog(T, K.Cb + 0.3, K.Cb + 1.2)} />)}
+        {fsvg(<Cama x={90} y={900} w={900} h={460} seed={7} id="cCb" micelio={1} cob={kprog(T, K.Cb + 0.3, K.Cb + 1.2)} />)}
       </Escena>
       {/* 8–9 · por dentro (fondo oscuro): el octenol frena; las bacterias se lo comen */}
       <Escena T={T} a={K.O} b={PRIM} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, #1b2333 0%, ${KC.dark} 72%)` }}></div>
         <Ambiente T={T} n={22} color="rgba(177,140,255,.25)" />
-        {fsvg(<>
-          {HIFAS_R.map((r, i) => <HifaTubo key={i} pts={r} g={kprog(T, K.O - 0.4 + i * 0.12, K.O + 1.2 + i * 0.12)} ancho={30} />)}
+        {fsvg(<g transform="translate(590 1000) scale(1.25) translate(-640 -920)">
+          {HIFAS_R.map((r, i) => <HifaTubo key={i} pts={r} g={kprog(T, K.O - 0.6 + i * 0.08, K.O + 0.6 + i * 0.08)} ancho={30} />)}
           {NUBES.map(([nx, ny], i) => { const sale = kprog(T, K.O + 0.6 + i * 0.15, K.O + 1.1 + i * 0.15, kEase.sale), c = comen(i);
             return <Nube key={i} T={T} x={nx} y={ny - sale * 30} s={sale * (1 - c)} o={1 - c * 0.8} seed={i + 1} />; })}
           {NUBES.map(([nx, ny], i) => { const ent = kprog(T, K.B + 0.1 + i * 0.12, K.B + 0.6 + i * 0.12, kEase.sale); if (ent <= 0) return null;
             const bx = klerp(nx + (i % 2 ? 260 : -260), nx - 40, ent), by = klerp(ny + 140, ny + 20, ent);
             return <Bacteria key={i} T={T} x={bx} y={by} largo={96} ancho={40} rot={i % 2 ? 160 : 20} color={CH.bact} seed={i + 5} />; })}
           <Nudo T={T} x={640} y={920} k={nudo} candado={T > K.O + 1.6 ? cand : 0} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 9b · a escala real: brotan los primordios (cabecitas de alfiler) */}
       <Escena T={T} a={PRIM} b={K.E} zoom={0.06}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<Cama x={90} y={880} w={900} h={220} seed={7} id="cPr" micelio={1} cob={1} prim={kprog(T, PRIM + 0.1, PRIM + 1.4)} />)}
+        {fsvg(<g transform="translate(540 900) scale(1.5) translate(-540 -828)"><Cama x={90} y={880} w={900} h={360} seed={7} id="cPr" micelio={1} cob={1} prim={kprog(T, PRIM + 0.1, PRIM + 1.4)} /></g>)}
       </Escena>
       {/* 10 · el estudio: Noble et al. 2009; sin bacterias, solo con ventilación */}
       <Escena T={T} a={K.E} b={K.Mx} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Cama x={110} y={880} w={620} h={170} seed={11} id="cE" micelio={1} cob={1} prim={kprog(T, K.E + 4.5, K.E + 5.4)} />
-          {T > K.E + 2.4 && [[260, 760], [420, 730], [580, 770]].map(([nx, ny], i) => <Nube key={i} T={T} x={nx - sopla * 520} y={ny} s={1.6 * kprog(T, K.E + 2.4, K.E + 2.9, kEase.sale)} o={1 - sopla} seed={i + 9} />)}
-          {T > K.E + 2.9 && <Ventilador T={T} x={900} y={780} r={95} on={vent} />}
+          <Cama x={70} y={980} w={680} h={380} seed={11} id="cE" micelio={1} cob={1} prim={kprog(T, K.E + 4.5, K.E + 5.4)} />
+          {T > K.E + 2.4 && [[230, 850], [410, 815], [590, 860]].map(([nx, ny], i) => <Nube key={i} T={T} x={nx - sopla * 560} y={ny} s={1.9 * kprog(T, K.E + 2.4, K.E + 2.9, kEase.sale)} o={1 - sopla} seed={i + 9} />)}
+          {/* pase a mano: el ventilador está desde el inicio (apagado) y se enciende con la frase */}
+          <Ventilador T={T} x={925} y={850} r={110} on={vent} />
         </>)}
       </Escena>
       {/* 11 · México: 94 % de los hongos cultivados son champiñón (INECOL, 2012) */}
       <Escena T={T} a={K.Mx} b={K.Co} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <MapaMexico x={40} y={500} ancho={620} conCA={false} color="#fff4c2">
+          <MapaMexico x={60} y={430} ancho={960} conCA={false} color="#fff4c2">
             {(() => { const [mx, my] = mxProy(-99.1, 19.4); return <Champinon x={mx} y={my + 40} s={0.5 / 0.62} crece={kprog(T, K.Mx + 0.3, K.Mx + 1.2, kEase.sale)} abre={0.2} />; })()}
           </MapaMexico>
-          {T > K.Mx + 2.2 && <g opacity={kprog(T, K.Mx + 2.2, K.Mx + 2.5)}><Pastel x={810} y={950} r={120} p={kprog(T, K.Mx + 2.4, K.Mx + 3.6, kEase.suave)} /></g>}
+          {T > K.Mx + 2.2 && <g opacity={kprog(T, K.Mx + 2.2, K.Mx + 2.5)}><Pastel x={830} y={1290} r={140} p={kprog(T, K.Mx + 2.4, K.Mx + 3.6, kEase.suave)} /></g>}
         </>)}
       </Escena>
       {/* 12 · cosecha: oleadas cada 7–10 días */}
       <Escena T={T} a={K.Co} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
-          <Cama x={90} y={900} w={900} h={190} seed={7} id="cCo" micelio={1} cob={1} T={T}
+        {fsvg(<g transform="translate(540 990) scale(1.2) translate(-540 -848)">
+          <Cama x={90} y={900} w={900} h={340} seed={7} id="cCo" micelio={1} cob={1} T={T}
             champs={[...OLA.map((dx, i) => [dx, ola1 * (1 - corta), 0.15 + (i % 3) * 0.1, 0.62]), ...OLA.map((dx, i) => [dx + 55, ola2, 0.1 + (i % 2) * 0.15, 0.58])]} />
           {corta > 0 && corta < 1 && <line x1={60 + corta * 960} y1={820} x2={60 + corta * 960 + 120} y2={820} stroke="#fff" strokeWidth={10} strokeLinecap="round" />}
-        </>)}
+        </g>)}
       </Escena>
       {/* 13 · cierre: la misma maceta, ahora con composta, cobertura y champiñones */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Maceta x={380} y={770} s={1.05} relleno="composta" T={T}>
+        {fsvg(<Maceta x={380} y={900} s={1.75} relleno="composta" T={T}>
           {[[-95, 0.85, 0.15, 0.62], [95, 0.9, 0.25, 0.6], [-10, 1, 0.92, 0.62], [-140, 0.6, 0.1, 0.42], [140, 0.55, 0, 0.42]].map(([dx, cr, ab, s], i) => <Champinon key={i} x={dx} y={-18} s={s}
             crece={cr * kprog(T, K.C + 0.2 + i * 0.15, K.C + 1.2 + i * 0.15, kEase.sale)} abre={ab} lam={i === 2 ? '#e7a3a0' : '#7a4a3a'} rot={dx * 0.08} />)}
         </Maceta>)}
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 1.6} until={K.M - 0.3} x={990} y={790} lado="izq" texto="paja + estiércol" tam={30} />
-      <Chip T={T} at={K.M + 0.3} until={K.R - 0.3} texto="a los 10 años · tutorial de internet" x={400} y={470} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.M + 2.4} until={K.R - 0.3} x={590} y={780} texto="tierra normal" tam={32} />
+      <Etq T={T} at={K.G + 1.6} until={K.M - 0.3} x={1040} y={830} lado="izq" texto="paja + estiércol" tam={30} />
+      <Chip T={T} at={K.M + 0.3} until={K.R - 0.3} texto="a los 10 años · tutorial de internet" x={420} y={340} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.M + 2.4} until={K.R - 0.3} x={715} y={898} texto="tierra normal" tam={30} />
       {['paja', 'estiércol de caballo', 'gallinaza', 'yeso'].map((t, i) => { const t0 = [0.25, 0.75, 1.75, 2.35][i];
-        return <Chip key={i} T={T} at={K.R + t0 + 0.1} until={K.R + t0 + 1.1} texto={t} x={150 + i * 260} y={750} tam={i === 1 ? 24 : 30} borde={KC.ink} />; })}
-      <Chip T={T} at={K.R + 0.4} until={K.F1 - 0.3} texto="COMPOSTA" x={540} y={460} tam={44} borde={KC.gold} />
-      <Chip T={T} at={K.F1 + 0.3} until={K.F2 - 0.3} texto={`fase I · día ${dia}`} x={500} y={460} tam={36} borde={KC.ink} mono />
-      <Chip T={T} at={K.F1 + 0.5} until={K.F2 - 0.3} texto={`${Math.round(temp)} °C`} x={400} y={560} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.F1 + 3.1} until={K.F2 - 0.3} texto="> 70 °C: química, no microbios" x={560} y={730} tam={32} borde={KC.yellow} />
-      <Chip T={T} at={K.F2 + 0.2} until={K.S - 0.3} texto="fase II · pasteurizar" x={520} y={430} tam={36} borde={KC.ink} mono />
-      <Chip T={T} at={K.F2 + 1.0} until={K.S - 0.3} texto="60 °C" x={420} y={600} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.F2 + 1.6} until={K.S - 0.3} texto="≥ 2 h" x={850} y={630} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.S + 0.6} until={K.S + 2.2} x={70} y={600} texto="granos con micelio" tam={32} />
-      <Chip T={T} at={K.S + 1.6} until={K.P - 0.3} texto="micelio: 2 a 3 semanas" x={360} y={470} tam={38} borde={KC.ink} mono />
-      <Etq T={T} at={K.Cb + 1.1} until={K.O - 0.3} x={110} y={660} texto="capa de cobertura" tam={34} />
-      <Etq T={T} at={K.Cb + 1.5} until={K.O - 0.3} x={110} y={710} texto="turba + caliza" tam={30} />
-      <Etq T={T} at={K.Cb + 1.9} until={K.O - 0.3} x={110} y={1130} texto="composta con micelio" tam={28} />
+        return <Chip key={i} T={T} at={K.R + t0 + 0.1} until={K.R + t0 + 1.1} texto={t} x={[160, 400, 670, 910][i]} y={862} tam={i === 1 ? 24 : 30} borde={KC.ink} />; })}
+      <Chip T={T} at={K.R + 0.4} until={K.F1 - 0.3} texto="COMPOSTA" x={540} y={480} tam={44} borde={KC.gold} />
+      <Chip T={T} at={K.F1 + 0.3} until={K.F2 - 0.3} texto={`fase I · día ${dia}`} x={560} y={470} tam={36} borde={KC.ink} mono />
+      <Chip T={T} at={K.F1 + 0.5} until={K.F2 - 0.3} texto={`${Math.round(temp)} °C`} x={400} y={610} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.F1 + 3.1} until={K.F2 - 0.3} texto="> 70 °C: química, no microbios" x={630} y={800} tam={32} borde={KC.yellow} />
+      <Chip T={T} at={K.F2 + 0.2} until={K.S - 0.3} texto="fase II · pasteurizar" x={420} y={450} tam={36} borde={KC.ink} mono />
+      <Chip T={T} at={K.F2 + 1.0} until={K.S - 0.3} texto="60 °C" x={420} y={690} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.F2 + 1.6} until={K.S - 0.3} texto="≥ 2 h" x={860} y={705} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.S + 0.6} until={K.S + 2.2} x={70} y={690} texto="granos con micelio" tam={32} />
+      <Chip T={T} at={K.S + 1.6} until={K.P - 0.3} texto="micelio: 2 a 3 semanas" x={540} y={520} tam={38} borde={KC.ink} mono />
+      <Etq T={T} at={K.Cb + 1.1} until={K.O - 0.3} x={110} y={700} texto="capa de cobertura" tam={34} />
+      <Etq T={T} at={K.Cb + 1.5} until={K.O - 0.3} x={110} y={750} texto="turba + caliza" tam={30} />
+      <Etq T={T} at={K.Cb + 1.9} until={K.O - 0.3} x={110} y={1440} texto="composta con micelio" tam={28} />
       <Chip T={T} at={K.O + 0.1} until={PRIM - 0.3} texto="POR DENTRO · LA COBERTURA" x={380} y={440} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.O + 0.8} until={K.B - 0.1} x={70} y={560} texto="1-octen-3-ol" tam={34} color={CH.octenol} />
-      <Etq T={T} at={K.O + 1.2} until={K.B - 0.1} x={70} y={605} texto="(parte del olor a champiñón)" tam={24} color={CH.octenol} />
-      <Etq T={T} at={K.O + 0.4} until={PRIM - 0.3} x={150} y={1150} texto="hifas" tam={28} color="#eafff7" />
-      <Etq T={T} at={K.O + 1.7} until={K.B + 1.9} x={1040} y={1070} lado="izq" texto="primordio frenado" tam={26} color={KC.red} />
-      <Etq T={T} at={K.B + 0.4} until={PRIM - 0.3} x={70} y={560} texto="Pseudomonas putida" it tam={34} color={CH.bact} />
-      <Etq T={T} at={K.B + 0.8} until={PRIM - 0.3} x={70} y={605} texto="bacterias de la cobertura" tam={24} color={CH.bact} />
-      <Etq T={T} at={K.B + 2.0} until={PRIM - 0.3} x={1040} y={1070} lado="izq" texto="¡a crecer!" tam={30} color={KC.mint} />
-      <Chip T={T} at={PRIM + 0.4} until={K.E - 0.3} texto="primordios" x={400} y={620} tam={40} borde={KC.ink} />
-      <Etq T={T} at={PRIM + 0.6} until={K.E - 0.3} x={110} y={720} texto="cabecitas de alfiler" tam={28} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2009" quien="Noble et al. · Reino Unido" revista="Mycologia, 2009" x={400} y={600} />
-      <Chip T={T} at={K.E + 2.6} until={K.Mx - 0.3} texto="sin bacterias" x={420} y={1120} tam={30} borde={KC.red} />
-      <Etq T={T} at={K.E + 2.8} until={K.E + 3.9} x={130} y={640} texto="1-octen-3-ol y otros" tam={28} />
-      <Chip T={T} at={K.E + 4.6} until={K.Mx - 0.3} texto="ayudan, al menos en parte" x={360} y={470} tam={28} borde={KC.mint} />
-      <Chip T={T} at={K.E + 5.0} until={K.Mx - 0.3} texto="ventilación → primordios" x={360} y={560} tam={28} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Mx + 1.8} until={K.Co - 0.3} valor={94} dur={1.2} sufijo=" %" x={330} y={950} tam={200} color={KC.paper} />
-      <Etq T={T} at={K.Mx + 3.4} until={K.Co - 0.3} x={700} y={790} texto="champiñón" tam={28} />
-      <Chip T={T} at={K.Mx + 2.2} until={K.Co - 0.3} texto="de los hongos cultivados en México · dato de 2012 (INECOL)" x={540} y={1120} tam={22} borde={KC.ink} mono />
-      <Chip T={T} at={K.Co + 0.2} until={K.C - 0.3} texto="15–21 días tras la cobertura" x={540} y={450} tam={32} borde={KC.ink} mono />
-      <Chip T={T} at={K.Co + 1.0} until={K.C - 0.3} texto="oleadas cada 7–10 días" x={540} y={535} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.Co + 0.8} until={K.Co + 2.0} x={70} y={620} texto="1.ª oleada" tam={30} />
-      <Etq T={T} at={K.Co + 2.8} until={K.C - 0.3} x={70} y={620} texto="2.ª oleada" tam={30} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="estiércol cocinado" x={330} y={460} tam={32} borde={KC.gold} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="+ cobertura + bacterias" x={330} y={540} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={590} y={720} texto="Agaricus bisporus" it tam={30} />
+      <Etq T={T} at={K.O + 0.8} until={K.B - 0.1} x={70} y={540} texto="1-octen-3-ol" tam={34} color={CH.octenol} />
+      <Etq T={T} at={K.O + 1.2} until={K.B - 0.1} x={70} y={583} texto="(parte del olor a champiñón)" tam={24} color={CH.octenol} />
+      <Etq T={T} at={K.O + 0.4} until={PRIM - 0.3} x={40} y={1310} texto="hifas" tam={28} color="#eafff7" />
+      <Etq T={T} at={K.O + 1.7} until={K.B + 1.9} x={420} y={1195} texto="primordio frenado" tam={26} color={KC.red} />
+      <Etq T={T} at={K.B + 0.4} until={PRIM - 0.3} x={70} y={540} texto="Pseudomonas putida" it tam={34} color={CH.bact} />
+      <Etq T={T} at={K.B + 0.8} until={PRIM - 0.3} x={70} y={583} texto="bacterias de la cobertura" tam={24} color={CH.bact} />
+      <Etq T={T} at={K.B + 2.0} until={PRIM - 0.3} x={420} y={1195} texto="¡a crecer!" tam={30} color={KC.mint} />
+      <Chip T={T} at={PRIM + 0.4} until={K.E - 0.3} texto="primordios" x={540} y={640} tam={40} borde={KC.ink} />
+      <Etq T={T} at={PRIM + 0.6} until={K.E - 0.3} x={110} y={770} texto="cabecitas de alfiler" tam={28} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2009" quien="Noble et al. · Reino Unido" revista="Mycologia, 2009" x={540} y={470} />
+      <Chip T={T} at={K.E + 2.6} until={K.Mx - 0.3} texto="sin bacterias" x={410} y={1450} tam={30} borde={KC.red} />
+      <Etq T={T} at={K.E + 2.8} until={K.E + 3.9} x={110} y={720} texto="1-octen-3-ol y otros" tam={28} />
+      <Chip T={T} at={K.E + 4.6} until={K.Mx - 0.3} texto="ayudan, al menos en parte" x={400} y={520} tam={30} borde={KC.mint} />
+      <Chip T={T} at={K.E + 5.0} until={K.Mx - 0.3} texto="ventilación → primordios" x={400} y={610} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Mx + 1.8} until={K.Co - 0.3} valor={94} dur={1.2} sufijo=" %" x={340} y={1290} tam={220} color="#fff4c2" />
+      <Etq T={T} at={K.Mx + 3.4} until={K.Co - 0.3} x={700} y={1100} texto="champiñón" tam={28} />
+      <Chip T={T} at={K.Mx + 2.2} until={K.Co - 0.3} texto="de los hongos cultivados en México · dato de 2012 (INECOL)" x={540} y={1490} tam={24} borde={KC.ink} mono />
+      <Chip T={T} at={K.Co + 0.2} until={K.C - 0.3} texto="15–21 días tras la cobertura" x={540} y={470} tam={32} borde={KC.ink} mono />
+      <Chip T={T} at={K.Co + 1.0} until={K.C - 0.3} texto="oleadas cada 7–10 días" x={540} y={558} tam={40} borde={KC.gold} />
+      <Etq T={T} at={K.Co + 0.8} until={K.Co + 2.0} x={70} y={650} texto="1.ª oleada" tam={30} />
+      <Etq T={T} at={K.Co + 2.8} until={K.C - 0.3} x={70} y={650} texto="2.ª oleada" tam={30} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="estiércol cocinado" x={380} y={380} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="+ cobertura + bacterias" x={380} y={465} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={715} y={800} texto="Agaricus bisporus" it tam={26} />
 
       {/* barras de escala (champiñón de botón ≈ 5 cm; maceta ≈ 20 cm de boca; lo demás, esquemático) */}
-      <BarraEscala T={T} at={K.G} until={K.M} texto="5 cm" largo={210} />
-      <BarraEscala T={T} at={K.M} until={K.R} texto="10 cm" largo={185} />
+      <BarraEscala T={T} at={K.G} until={K.M} texto="5 cm" largo={273} />
+      <BarraEscala T={T} at={K.M} until={K.R} texto="10 cm" largo={308} />
       <BarraEscala T={T} at={K.R} until={K.O} texto="esquemático" largo={0} />
       <BarraEscala T={T} at={K.O} until={PRIM} texto="esquemático · no a escala" largo={0} />
       <BarraEscala T={T} at={PRIM} until={K.Mx} texto="esquemático" largo={0} />
       <BarraEscala T={T} at={K.Mx} until={K.Co} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.Co} until={K.C} texto="5 cm" largo={145} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={185} />
+      <BarraEscala T={T} at={K.Co} until={K.C} texto="5 cm" largo={174} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={308} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.M - 0.1} texto="No es tierra: *estiércol cocinado.*" />
