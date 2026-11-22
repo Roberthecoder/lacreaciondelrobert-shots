@@ -14,7 +14,7 @@ const TX = {
   orellanus:'#b5652d', orellanus2:'#d08a4a', rubellus:'#a4532a',
   phaeolus:'#c9922a', phaeolus2:'#e6c34a', phaeolusC:'#6b3f1a',
   tapinella:'#6b4a2a', tapinellaPie:'#2a1a12',
-  musgo:'#2f7a3a', musgo2:'#3f9a48', agujas:'#8a5a2a',
+  musgo:'#143a22', musgo2:'#1d5230', agujas:'#8a5a2a',
 };
 
 /* ---------------- piezas ---------------- */
@@ -91,7 +91,7 @@ function Aluminio({ x, y, r = 30, p = 1, brillo = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${kEase.rebote(kclamp(p, 0, 1))})`} style={brillo ? { filter:`drop-shadow(0 0 ${12 * brillo}px #cfe8ff)` } : null}>
     <circle r={r} fill="#c9d3dd" stroke={KC.ink} strokeWidth={5} />
     <circle cx={-r * 0.35} cy={-r * 0.35} r={r * 0.3} fill="#fff" opacity=".7" />
-    <text y={r * 0.38} textAnchor="middle" style={{ font:`700 ${r * 0.95}px ${KF.mono}` }} fill={KC.ink}>Al</text>
+    <text y={r * 0.38} textAnchor="middle" style={{ font:`700 ${r * 0.95}px ${KF.mono}` }} fill="#0b1020">Al</text>
   </g>;
 }
 // Hongo Phaeolus schweinitzii: roseta de repisas anchas, borde amarillo, centro café rojizo (al pie de una conífera).
@@ -160,6 +160,7 @@ function Mechon({ x, y, color, p = 1, s = 1 }) {
 // Signo de interrogación de la marca, con Robert grande al lado.
 // Subtítulo con *dorado* y _cursiva_ (los nombres científicos van en cursiva también en los subtítulos).
 function SubtituloIt({ T, at, until, texto, idx, color = KC.gold2, tam = 62 }) {
+  if (window.CINE_OPC && !window.CINE_OPC.subtitulos) return null;   // modo cine: sin subtítulo quemado (lo pone cada app)
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
@@ -195,6 +196,7 @@ function StickerF({ T, src, at, until, lado = 'arriba-der' }) {
     transform:`translate(${tx}px, ${ty}px) scale(${(1 - w) * (1 - 0.15 * o)}, ${(1 + w) * (1 - 0.15 * o)})`, filter:'drop-shadow(0 22px 34px rgba(0,0,0,.55))' }} />;
 }
 function RobertF({ T, apariciones = [], base = 'assets/stickers/' }) {
+  if (window.CINE_OPC) return null;   // modo cine: Robert solo en la tarjeta de cierre
   return <><Precarga srcs={[...new Set(apariciones.map((a) => `${base}${a[2]}.png`))]} />{apariciones.map(([at, until, pose, lado], i) =>
     <StickerF key={i} T={T} src={`${base}${pose}.png`} at={at} until={until} lado={lado} />)}</>;
 }
@@ -208,7 +210,7 @@ function TintesShot() {
   const K = { G: CUES.Gancho, H: CUES.Hongo, Pi: CUES.Pigmento, Ex: CUES.Extrae, Mo: CUES.Mordiente, Pu: CUES.Puente, P: CUES.Pregunta, Co: CUES.Colores, R: CUES.Rice, E: CUES.Estudio, V: CUES.Veneno, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   // gancho: la madeja cae y rebota (se mueve desde el cuadro 0)
-  const caeY = (() => { const u = kprog(T, K.G, K.G + 0.55); const b = kprog(T, K.G + 0.55, K.G + 0.9); return klerp(560, 900, u * u) - Math.sin(Math.PI * b) * 50; })();
+  const caeY = (() => { const u = kprog(T, K.G, K.G + 0.55); const b = kprog(T, K.G + 0.55, K.G + 0.9); return klerp(400, 700, u * u) - Math.sin(Math.PI * b) * 60; })();
   const aplasta = T > K.G + 0.5 && T < K.G + 0.75 ? 1 - 0.12 * Math.sin(Math.PI * kprog(T, K.G + 0.5, K.G + 0.75)) : 1;
   // extracción
   const corte = (k) => kprog(T, K.Ex + 0.25 + k * 0.32, K.Ex + 0.4 + k * 0.32);
@@ -226,14 +228,14 @@ function TintesShot() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <g transform={`translate(310 ${caeY}) scale(${2 - aplasta} ${aplasta}) translate(-310 ${-caeY})`}><Madeja T={T} x={310} y={caeY} s={1.12} rot={-6} /></g>
-          <SetaSangre T={T} x={830} y={1180} s={1.5} crece={kprog(T, K.G + 2.0, K.G + 2.9)} />
+          <g transform={`translate(500 ${caeY}) scale(${2 - aplasta} ${aplasta}) translate(-500 ${-caeY})`}><Madeja T={T} x={500} y={caeY} s={1.9} rot={-6} /></g>
+          <SetaSangre T={T} x={700} y={1470} s={2.0} crece={kprog(T, K.G + 2.0, K.G + 2.9)} />
         </>)}
       </Escena>
       {/* 1 · la seta en el bosque de coníferas */}
       <Escena T={T} a={K.H} b={K.Pi} zoom={0.07} origen="50% 70%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1180) scale(1.2) translate(-540 -1000)">
           {[[1010, 0.8], [860, 1.05]].map(([cx, z], i) => <Conifera key={i} T={T} x={cx} y={1000} s={z} seed={i + 2} />)}
           <path d="M 0 990 Q 270 960 540 985 Q 810 1010 1080 975 L 1080 1920 L 0 1920 Z" fill={TX.musgo} stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 26 }, (_, i) => { const g = krng(i + 9); const px = g() * 1080, py = 1010 + g() * 220; return <line key={i} x1={px} y1={py} x2={px + 30 - g() * 60} y2={py + 8 - g() * 16} stroke={TX.agujas} strokeWidth={5} strokeLinecap="round" />; })}
@@ -241,7 +243,7 @@ function TintesShot() {
           <SetaSangre T={T} x={330} y={1150} s={1.9} rot={-6} crece={kprog(T, K.H + 0.1, K.H + 1.3)} />
           <SetaSangre T={T} x={560} y={1170} s={2.3} rot={3} crece={kprog(T, K.H + 0.4, K.H + 1.6)} />
           <SetaSangre T={T} x={760} y={1140} s={1.5} rot={9} crece={kprog(T, K.H + 0.7, K.H + 1.9)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 2 · por dentro: las antraquinonas (fondo oscuro) */}
       <Escena T={T} a={K.Pi} b={K.Ex} zoom={0.08}>
@@ -250,18 +252,18 @@ function TintesShot() {
         {fsvg(<>
           {/* las láminas de la seta, de cerca, se desvanecen al entrar a las moléculas */}
           <g opacity={1 - kprog(T, K.Pi + 0.6, K.Pi + 1.3)}>
-            {Array.from({ length: 16 }, (_, i) => <path key={i} d={`M ${-60 + i * 76} 1250 Q ${-20 + i * 76} 900 ${10 + i * 76} 420`} stroke={i % 2 ? TX.lamina : '#8a0d16'} strokeWidth={46} fill="none" />)}
+            {Array.from({ length: 16 }, (_, i) => <path key={i} d={`M ${-60 + i * 76} 1560 Q ${-20 + i * 76} 950 ${10 + i * 76} 260`} stroke={i % 2 ? TX.lamina : '#8a0d16'} strokeWidth={46} fill="none" />)}
           </g>
-          <Antraquinona x={540} y={760} s={1.6} oh={false} color="#ff8a8a" p={kprog(T, K.Pi + 0.9, K.Pi + 1.8)} />
-          <Antraquinona x={290} y={1010} s={0.95} rot={-8} oh={false} color="#f2c230" p={kprog(T, K.Pi + 3.0, K.Pi + 3.6)} />
-          <Antraquinona x={790} y={1010} s={0.95} rot={8} oh={false} color="#e0304a" p={kprog(T, K.Pi + 3.8, K.Pi + 4.4)} />
+          <Antraquinona x={540} y={760} s={2.4} oh={false} color="#ff8a8a" p={kprog(T, K.Pi + 0.9, K.Pi + 1.8)} />
+          <Antraquinona x={280} y={1250} s={1.2} rot={-8} oh={false} color="#f2c230" p={kprog(T, K.Pi + 3.0, K.Pi + 3.6)} />
+          <Antraquinona x={800} y={1250} s={1.2} rot={8} oh={false} color="#e0304a" p={kprog(T, K.Pi + 3.8, K.Pi + 4.4)} />
         </>)}
       </Escena>
       {/* 3 · picas, calientas en agua, el pigmento se suelta */}
       <Escena T={T} a={K.Ex} b={K.Mo} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
-          <rect x={90} y={1060} width={420} height={60} rx={14} fill="#c8925a" stroke={KC.ink} strokeWidth={7} />
+        {fsvg(<g transform="translate(1030 1090) scale(1.3) translate(-940 -1000)">
+          <rect x={90} y={1060} width={420} height={60} rx={14} fill="#7a5632" stroke={KC.ink} strokeWidth={7} />
           {SETAS_PICADAS.map(([px, py], i) => { const c = corte(Math.min(2, Math.floor(i / 2))); const vu = alOlla; const ox = klerp(px, 700 + (i - 2) * 30, vu), oy = klerp(py, 760 - Math.sin(Math.PI * vu) * 260 + vu * 40, vu);
             return vu < 1 ? <g key={i} transform={`translate(${ox} ${oy}) rotate(${vu * 300 + i * 30})`}><path d="M -26 0 Q -26 -30 0 -32 Q 26 -30 26 0 Z" fill={i % 2 ? TX.sangre : TX.sangre2} stroke={KC.ink} strokeWidth={4} /><rect x={-7} y={0} width={14} height={20 * (1 - c * 0.4)} fill={TX.pieRojo} stroke={KC.ink} strokeWidth={3} /></g> : null; })}
           {/* cuchillo */}
@@ -270,31 +272,31 @@ function TintesShot() {
           <Olla T={T} x={720} y={1080} s={1.05} agua={mixHex(TX.agua, TX.bano, rojoAgua)} vapor={kprog(T, K.Ex + 0.5, K.Ex + 1.5)} />
           {/* hilos de color que salen de los pedacitos en el agua */}
           {rojoAgua > 0 && rojoAgua < 1 && [0, 1, 2, 3].map((i) => <circle key={i} cx={640 + i * 50} cy={862 + Math.sin(T * 5 + i) * 6} r={14 + rojoAgua * 30} fill={TX.bano} opacity={0.5 * (1 - rojoAgua)} />)}
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · mordiente: lana blanca + alumbre */}
       <Escena T={T} a={K.Mo} b={K.Pu} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Olla T={T} x={540} y={1140} s={1.2} agua="#dceeff" vapor={1}>
+          <Olla T={T} x={540} y={1340} s={1.7} agua="#dceeff" vapor={1}>
             <g transform={`translate(0 ${klerp(-520, -215, baja)})`}><g transform="scale(0.55)"><Madeja T={T} x={0} y={0} color={TX.crudo} claro="#fffaf0" oscuro={TX.crudo2} /></g></g>
           </Olla>
           {/* cuchara con cristales de alumbre */}
-          <g transform={`translate(${klerp(1150, 760, kprog(T, K.Mo + 0.9, K.Mo + 1.4, kEase.sale))} 680) rotate(${-35 * cristales})`}>
+          <g transform={`translate(${klerp(1150, 760, kprog(T, K.Mo + 0.9, K.Mo + 1.4, kEase.sale))} 800) scale(1.3) rotate(${-35 * cristales})`}>
             <ellipse cx={0} cy={0} rx={60} ry={30} fill="#d9dee5" stroke={KC.ink} strokeWidth={6} /><rect x={50} y={-10} width={220} height={20} rx={10} fill="#d9dee5" stroke={KC.ink} strokeWidth={6} />
             {cristales < 0.3 && [[-20, -14], [6, -20], [24, -10], [-6, -6]].map(([a, b], i) => <rect key={i} x={a} y={b} width={16} height={16} fill="#fff" stroke="#9bb" strokeWidth={2} transform={`rotate(45 ${a} ${b})`} />)}
           </g>
-          {cristales > 0.2 && Array.from({ length: 9 }, (_, i) => { const u = kclamp((cristales - 0.2) * 1.6 - i * 0.05, 0, 1); return u > 0 && u < 1 ? <rect key={i} x={700 - i * 14 - u * 100} y={700 + u * 200} width={16} height={16} fill="#fff" stroke="#9bb" strokeWidth={2} transform={`rotate(45 ${710 - i * 14 - u * 100} ${708 + u * 200})`} /> : null; })}
-          {cristales >= 0.9 && [0, 1, 2, 3, 4].map((i) => { const u = kprog(T, K.Mo + 2.1 + i * 0.08, K.Mo + 2.6 + i * 0.08); return u > 0 && u < 1 ? <path key={i} d={`M ${560 + (i - 2) * 50} ${890} l 0 -${30 * u} M ${545 + (i - 2) * 50} ${890 - 15 * u} l 30 0`} stroke="#fff" strokeWidth={5} opacity={1 - u} /> : null; })}
+          {cristales > 0.2 && Array.from({ length: 9 }, (_, i) => { const u = kclamp((cristales - 0.2) * 1.6 - i * 0.05, 0, 1); return u > 0 && u < 1 ? <rect key={i} x={690 - i * 16 - u * 110} y={830 + u * 190} width={22} height={22} fill="#fff" stroke="#9bb" strokeWidth={2} transform={`rotate(45 ${701 - i * 16 - u * 110} ${841 + u * 190})`} /> : null; })}
+          {cristales >= 0.9 && [0, 1, 2, 3, 4].map((i) => { const u = kprog(T, K.Mo + 2.1 + i * 0.08, K.Mo + 2.6 + i * 0.08); return u > 0 && u < 1 ? <path key={i} d={`M ${560 + (i - 2) * 70} ${1000} l 0 -${42 * u} M ${539 + (i - 2) * 70} ${1000 - 21 * u} l 42 0`} stroke="#fff" strokeWidth={6} opacity={1 - u} /> : null; })}
         </>)}
       </Escena>
       {/* 5 · por dentro: el aluminio hace de puente entre la fibra y el pigmento */}
       <Escena T={T} a={K.Pu} b={K.P} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 70)">
           <FibraLana T={T} y={880} alto={200} tinte={tintePu * 0.75} />
-          <TxtS x={540} y={895} t="fibra de lana" tam={36} color={KC.ink} o={kprog(T, K.Pu + 0.6, K.Pu + 1.0)} />
+          <TxtS x={540} y={895} t="fibra de lana" tam={40} color={mixHex('#0b1020', '#fff4f4', tintePu)} o={kprog(T, K.Pu + 0.6, K.Pu + 1.0)} />
           {UNIONES.map(([ux, ab], i) => { const yA = ab ? 1010 : 750; const pA = kprog(T, K.Pu + 0.5 + i * 0.15, K.Pu + 0.9 + i * 0.15);
             const llega = kprog(T, K.Pu + 2.2 + i * 0.12, K.Pu + 2.8 + i * 0.12, kEase.sale); const yP = ab ? klerp(1400, 1105, llega) : klerp(380, 655, llega);
             const xP = ux + (lavado > 0 ? Math.sin(T * 9 + i) * 4 * Math.sin(Math.PI * lavado) : 0);
@@ -307,53 +309,53 @@ function TintesShot() {
           {/* chorro de lavado: agua que pasa; el color se queda */}
           {lavado > 0 && lavado < 1 && Array.from({ length: 22 }, (_, i) => { const g = krng(i + 70); const xx = -100 + ((lavado * 1400 + g() * 500) % 1400); const yy = 520 + g() * 820;
             return <ellipse key={i} cx={xx} cy={yy} rx={26} ry={9} fill={KC.cyan} opacity={0.55 * Math.sin(Math.PI * lavado)} />; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 6 · re-gancho: ¿y si quieres otro color? */}
       <Escena T={T} a={K.P} b={K.Co} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Madeja T={T} x={270} y={1130} s={0.95} color={TX.crudo} claro="#fffaf0" oscuro={TX.crudo2} /><Interrogacion T={T} x={270} y={900} tam={380} /></>)}
+        {fsvg(<><Madeja T={T} x={500} y={1290} s={1.5} color={TX.crudo} claro="#fffaf0" oscuro={TX.crudo2} /><Interrogacion T={T} x={540} y={900} tam={460} /></>)}
       </Escena>
       {/* 7 · otros colores: hierro (más oscuro) y otras setas */}
       <Escena T={T} a={K.Co} b={K.R} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <g transform={`translate(0 ${(1 - kprog(T, K.Co, K.Co + 0.4, kEase.sale)) * 60})`}><Madeja T={T} x={170} y={590} s={0.6} /></g>
-          <TxtS x={170} y={690} t="alumbre" tam={28} o={kprog(T, K.Co + 0.3, K.Co + 0.6)} />
-          {kprog(T, K.Co + 0.5, K.Co + 0.9) > 0 && <g transform={`translate(0 ${(1 - kprog(T, K.Co + 0.5, K.Co + 0.9, kEase.sale)) * 60})`}><Madeja T={T} x={460} y={590} s={0.6} color={TX.hierro} claro={TX.hierro2} oscuro="#3e161a" /></g>}
-          <TxtS x={460} y={690} t="hierro" tam={28} o={kprog(T, K.Co + 0.8, K.Co + 1.1)} />
+          <g transform={`translate(0 ${(1 - kprog(T, K.Co, K.Co + 0.4, kEase.sale)) * 60})`}><Madeja T={T} x={265} y={600} s={0.96} /></g>
+          <TxtS x={265} y={770} t="alumbre" tam={36} o={kprog(T, K.Co + 0.3, K.Co + 0.6)} />
+          {kprog(T, K.Co + 0.5, K.Co + 0.9) > 0 && <g transform={`translate(0 ${(1 - kprog(T, K.Co + 0.5, K.Co + 0.9, kEase.sale)) * 60})`}><Madeja T={T} x={790} y={600} s={0.96} color={TX.hierro} claro={TX.hierro2} oscuro="#3e161a" /></g>}
+          <TxtS x={790} y={770} t="hierro" tam={36} o={kprog(T, K.Co + 0.8, K.Co + 1.1)} />
           {/* Phaeolus schweinitzii → amarillo limón */}
-          <Phaeolus x={160} y={1010} s={0.8} p={kprog(T, K.Co + 2.3, K.Co + 2.8)} />
-          <Madeja T={T} x={330} y={1000} s={0.42} color={TX.limon} claro={TX.limon2} oscuro="#b8a520" op={kprog(T, K.Co + 2.5, K.Co + 2.9)} />
-          <TxtS x={250} y={1110} t="amarillo limón · alumbre" tam={26} o={kprog(T, K.Co + 2.6, K.Co + 2.9)} />
-          <TxtS x={770} y={1110} t="verde · hierro" tam={26} o={kprog(T, K.Co + 3.2, K.Co + 3.5)} />
+          <Phaeolus x={270} y={1100} s={1.35} p={kprog(T, K.Co + 2.3, K.Co + 2.8)} />
+          <Madeja T={T} x={250} y={1300} s={0.78} color={TX.limon} claro={TX.limon2} oscuro="#b8a520" op={kprog(T, K.Co + 2.5, K.Co + 2.9)} />
+          <TxtS x={270} y={1450} t="amarillo limón · alumbre" tam={30} o={kprog(T, K.Co + 2.6, K.Co + 2.9)} />
+          <TxtS x={810} y={1450} t="verde · hierro" tam={30} o={kprog(T, K.Co + 3.2, K.Co + 3.5)} />
           {/* Tapinella atrotomentosa → verde oscuro (con hierro) */}
-          {kprog(T, K.Co + 2.9, K.Co + 3.3) > 0 && <Seta x={650} y={1060} s={1.0} crece={kprog(T, K.Co + 2.9, K.Co + 3.5)} sombrero={TX.tapinella} pie={TX.tapinellaPie} escamas={false} anillo={false} laminas="#e8d29a" alto={120} ancho={180} />}
-          <Madeja T={T} x={880} y={1000} s={0.42} color={TX.verde} claro={TX.verde2} oscuro="#1c3a24" op={kprog(T, K.Co + 3.1, K.Co + 3.5)} />
+          {kprog(T, K.Co + 2.9, K.Co + 3.3) > 0 && <Seta x={810} y={1190} s={1.5} crece={kprog(T, K.Co + 2.9, K.Co + 3.5)} sombrero={TX.tapinella} pie={TX.tapinellaPie} escamas={false} anillo={false} laminas="#e8d29a" alto={120} ancho={180} />}
+          <Madeja T={T} x={790} y={1300} s={0.78} color={TX.verde} claro={TX.verde2} oscuro="#1c3a24" op={kprog(T, K.Co + 3.1, K.Co + 3.5)} />
         </>)}
       </Escena>
       {/* 8 · Miriam Rice, California */}
       <Escena T={T} a={K.R} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <g opacity={1 - kprog(T, K.R + 3.2, K.R + 3.6)}>
-            <MapaCalifornia x={60} y={420} s={0.85} />
-            <circle cx={60 + 40 * 0.85} cy={420 + 230 * 0.85} r={16 + 3 * Math.sin(T * 5)} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
+          <g opacity={1 - 0.5 * kprog(T, K.R + 3.2, K.R + 3.6)}>
+            <MapaCalifornia x={70} y={300} s={0.72} />
+            <circle cx={70 + 40 * 0.72} cy={300 + 230 * 0.72} r={16 + 3 * Math.sin(T * 5)} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
           </g>
-          {[TX.lana, TX.limon, TX.verde, TX.morado, '#e07a2a', TX.hierro, '#d9a0b8', '#3a6aa0'].map((c, i) => <FrascoMuestra key={i} x={110 + i * 122} y={1150} color={c} p={kprog(T, K.R + 0.9 + i * 0.28, K.R + 1.2 + i * 0.28)} />)}
+          {[TX.lana, TX.limon, TX.verde, TX.morado, '#e07a2a', TX.hierro, '#d9a0b8', '#3a6aa0'].map((c, i) => <g key={i} transform={`translate(${180 + (i % 4) * 240} ${i < 4 ? 1150 : 1440}) scale(2)`}><FrascoMuestra x={0} y={0} color={c} p={kprog(T, K.R + 0.9 + i * 0.28, K.R + 1.2 + i * 0.28)} /></g>)}
         </>)}
       </Escena>
       {/* 9 · el estudio de 2001: emodina y dermocibina puras sobre lana */}
       <Escena T={T} a={K.E} b={K.V} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <g opacity={kprog(T, K.E + 2.0, K.E + 2.4)} transform="translate(0 -50)">
-            <Tubo x={150} y={990} color={KC.orange} s={0.7} />
-            <Tubo x={150} y={1170} color="#c0306a" s={0.7} />
-            <Mechon x={420} y={890} color={TX.amarillo} p={kprog(T, K.E + 2.6, K.E + 3.0)} s={0.9} />
-            <Mechon x={620} y={890} color={TX.rojo} p={kprog(T, K.E + 3.1, K.E + 3.5)} s={0.9} />
-            <Mechon x={420} y={1110} color={TX.morado} p={kprog(T, K.E + 4.2, K.E + 4.6)} s={0.9} />
-            <Mechon x={620} y={1110} color={TX.violeta} p={kprog(T, K.E + 4.5, K.E + 4.9)} s={0.9} />
+          <g opacity={kprog(T, K.E, K.E + 0.4)}>
+            <Tubo x={170} y={930} color={KC.orange} s={1.3} />
+            <Tubo x={170} y={1330} color="#c0306a" s={1.3} />
+            <Mechon x={500} y={810} color={TX.amarillo} p={kprog(T, K.E + 2.6, K.E + 3.0)} s={1.6} />
+            <Mechon x={820} y={810} color={TX.rojo} p={kprog(T, K.E + 3.1, K.E + 3.5)} s={1.6} />
+            <Mechon x={500} y={1210} color={TX.morado} p={kprog(T, K.E + 4.2, K.E + 4.6)} s={1.6} />
+            <Mechon x={820} y={1210} color={TX.violeta} p={kprog(T, K.E + 4.5, K.E + 4.9)} s={1.6} />
           </g>
         </>)}
       </Escena>
@@ -361,66 +363,66 @@ function TintesShot() {
       <Escena T={T} a={K.V} b={K.C} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 30% 50%, #3a1414 0%, #140808 75%)' }}></div>
         {fsvg(<>
-          <SetaSangre T={T} x={150} y={900} s={1.0} crece={kprog(T, K.V + 0.4, K.V + 1.2)} sombrero={TX.orellanus} lamina="#c0742e" pie="#d9a060" />
-          <SetaSangre T={T} x={360} y={905} s={1.05} rot={6} crece={kprog(T, K.V + 0.9, K.V + 1.7)} sombrero={TX.rubellus} lamina="#a35a2a" pie="#c98a50" ancho={120} alto={190} />
-          <Sello T={T} at={K.V + 2.1} x={260} y={790} texto="NO" color={KC.red} r={95} rot={-10} />
-          <Rinon x={250} y={1010} s={0.55} apaga={kprog(T, K.V + 3.4, K.V + 4.6)} />
+          <SetaSangre T={T} x={330} y={1090} s={1.9} crece={kprog(T, K.V + 0.4, K.V + 1.2)} sombrero={TX.orellanus} lamina="#c0742e" pie="#d9a060" />
+          <SetaSangre T={T} x={740} y={1100} s={2.0} rot={6} crece={kprog(T, K.V + 0.9, K.V + 1.7)} sombrero={TX.rubellus} lamina="#a35a2a" pie="#c98a50" ancho={120} alto={190} />
+          <Sello T={T} at={K.V + 2.1} x={535} y={840} texto="NO" color={KC.red} r={150} rot={-10} />
+          <Rinon x={330} y={1340} s={1.0} apaga={kprog(T, K.V + 3.4, K.V + 4.6)} />
         </>)}
       </Escena>
       {/* 11 · cierre: la misma madeja del inicio, ya tejida, y la seta: para teñir, no para comer */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Bufanda x={70} y={1000} rot={-6} p={kprog(T, K.C + 0.3, K.C + 1.5, kEase.suave)} />
-          <Madeja T={T} x={360} y={800} s={1.0} rot={-6} />
-          <SetaSangre T={T} x={870} y={1080} s={1.2} />
+          <g transform="translate(60 1150) scale(1.3) translate(-70 -1000)"><Bufanda x={70} y={1000} w={690} rot={-6} p={kprog(T, K.C + 0.3, K.C + 1.5, kEase.suave)} /></g>
+          <Madeja T={T} x={400} y={760} s={1.4} rot={-6} />
+          <SetaSangre T={T} x={880} y={1200} s={1.7} />
         </>)}
       </Escena>
 
       {/* textos y etiquetas */}
-      <MitoTachado T={T} at={K.G + 0.35} tacharEn={K.G + 1.5} until={K.H - 0.3} texto="tinte de fábrica" x={330} y={560} tam={46} />
-      <Etq T={T} at={K.G + 2.3} until={K.H - 0.2} x={830} y={1215} texto="un hongo" lado="izq" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.0} until={K.Pi - 0.3} x={40} y={470} texto="seta color sangre" tam={34} />
-      <Etq T={T} at={K.H + 1.6} until={K.Pi - 0.3} x={40} y={525} texto="Cortinarius sanguineus" it tam={34} />
-      <Etq T={T} at={K.H + 2.4} until={K.Pi - 0.3} x={40} y={580} texto="bosques de coníferas" tam={28} />
-      <Chip T={T} at={K.Pi + 0.4} until={K.Ex - 0.3} texto="POR DENTRO · EL PIGMENTO" x={540} y={470} tam={34} borde={KC.red} mono />
-      <Etq T={T} at={K.Pi + 1.6} until={K.Ex - 0.3} x={60} y={590} texto="antraquinona" tam={36} color={'#ff9a9a'} />
-      <Etq T={T} at={K.Pi + 3.2} until={K.Ex - 0.3} x={40} y={1180} texto="emodina · amarilla" tam={30} color="#f2c230" />
-      <Etq T={T} at={K.Pi + 4.0} until={K.Ex - 0.3} x={1040} y={1180} lado="izq" texto="dermocibina · roja" tam={30} color={'#ff6a7a'} />
-      <Chip T={T} at={K.Ex + 2.0} until={K.Mo - 0.3} texto="agua caliente" x={300} y={520} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Ex + 3.0} until={K.Mo - 0.3} texto="el pigmento se suelta" x={340} y={610} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.Mo + 1.6} until={K.Pu - 0.3} texto="alumbre · sal de aluminio" x={540} y={470} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.Mo + 2.3} until={K.Pu - 0.3} texto="= mordiente" x={540} y={560} tam={38} borde={KC.gold} />
-      <Chip T={T} at={K.Pu + 0.2} until={K.P - 0.3} texto="POR DENTRO · LA FIBRA" x={350} y={470} tam={32} borde={KC.cyan} mono />
+      <MitoTachado T={T} at={K.G + 0.35} tacharEn={K.G + 1.5} until={K.H - 0.3} texto="tinte de fábrica" x={540} y={330} tam={46} />
+      <Etq T={T} at={K.G + 2.3} until={K.H - 0.2} x={600} y={1300} texto="un hongo" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.0} until={K.Pi - 0.3} x={40} y={400} texto="seta color sangre" tam={34} />
+      <Etq T={T} at={K.H + 1.6} until={K.Pi - 0.3} x={40} y={455} texto="Cortinarius sanguineus" it tam={34} />
+      <Etq T={T} at={K.H + 2.4} until={K.Pi - 0.3} x={40} y={510} texto="bosques de coníferas" tam={28} />
+      <Chip T={T} at={K.Pi + 0.4} until={K.Ex - 0.3} texto="POR DENTRO · EL PIGMENTO" x={540} y={330} tam={34} borde={KC.red} mono />
+      <Etq T={T} at={K.Pi + 1.6} until={K.Ex - 0.3} x={40} y={470} texto="antraquinona" tam={36} color={'#ff9a9a'} />
+      <Etq T={T} at={K.Pi + 3.2} until={K.Ex - 0.3} x={40} y={1455} texto="emodina · amarilla" tam={30} color="#f2c230" />
+      <Etq T={T} at={K.Pi + 4.0} until={K.Ex - 0.3} x={1040} y={1455} lado="izq" texto="dermocibina · roja" tam={30} color={'#ff6a7a'} />
+      <Chip T={T} at={K.Ex + 2.0} until={K.Mo - 0.3} texto="agua caliente" x={300} y={400} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Ex + 3.0} until={K.Mo - 0.3} texto="el pigmento se suelta" x={340} y={490} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Mo + 1.6} until={K.Pu - 0.3} texto="alumbre · sal de aluminio" x={540} y={330} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Mo + 2.3} until={K.Pu - 0.3} texto="= mordiente" x={540} y={420} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.Pu + 0.2} until={K.P - 0.3} texto="POR DENTRO · LA FIBRA" x={540} y={330} tam={32} borde={KC.cyan} mono />
       
-      <Etq T={T} at={K.Pu + 1.1} until={K.P - 0.3} x={40} y={545} texto="Al = aluminio (el puente)" tam={30} color={'#cfe8ff'} />
-      <Chip T={T} at={K.Pu + 2.9} until={K.Pu + 4.4} texto="pigmento atrapado" x={540} y={1200} tam={32} borde={TX.lana2} />
-      <Chip T={T} at={K.Pu + 4.6} until={K.P - 0.3} texto="el color aguanta mejor" x={540} y={1200} tam={34} borde={KC.mint} />
-      <Etq T={T} at={K.Co + 2.4} until={K.R - 0.3} x={20} y={800} texto="Phaeolus schweinitzii" it tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Co + 3.0} until={K.R - 0.3} x={1060} y={800} lado="izq" texto="Tapinella atrotomentosa" it tam={26} color={KC.ink} />
-      <Etq T={T} at={K.R + 0.3} until={K.R + 3.3} x={480} y={800} texto="Mendocino, California" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.R + 1.0} until={K.R + 3.3} x={480} y={870} texto="hongo tras hongo" tam={30} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.R + 3.4} until={K.E - 0.3} anio="1974" quien="Miriam C. Rice · California" revista="libro: Let's Try Mushrooms for Color" x={400} y={860} />
-      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 1.9} anio="2001" quien="Räisänen, Nousiainen y Hynninen" revista="Finlandia · Textile Research Journal, 2001" x={540} y={760} />
-      <Etq T={T} at={K.E + 2.3} until={K.V - 0.3} x={20} y={762} texto="emodina pura" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E + 4.0} until={K.V - 0.3} x={20} y={962} texto="dermocibina pura" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.V + 0.6} until={K.C - 0.3} x={40} y={470} texto="Cortinarius orellanus" it tam={34} color={TX.orellanus2} />
-      <Etq T={T} at={K.V + 1.1} until={K.C - 0.3} x={40} y={525} texto="Cortinarius rubellus" it tam={34} color={TX.orellanus2} />
-      <Chip T={T} at={K.V + 2.3} until={K.C - 0.3} texto="NO SE COMEN" x={260} y={600} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.V + 4.4} until={K.C - 0.3} texto="síntomas: días después" x={265} y={1130} tam={30} borde={KC.yellow} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="para teñir, no para comer" x={400} y={480} tam={38} borde={KC.red} />
+      <Etq T={T} at={K.Pu + 1.1} until={K.P - 0.3} x={40} y={440} texto="Al = aluminio (el puente)" tam={30} color={'#cfe8ff'} />
+      <Chip T={T} at={K.Pu + 2.9} until={K.Pu + 4.4} texto="pigmento atrapado" x={540} y={1330} tam={32} borde={TX.lana2} />
+      <Chip T={T} at={K.Pu + 4.6} until={K.P - 0.3} texto="el color aguanta mejor" x={540} y={1330} tam={34} borde={KC.mint} />
+      <Etq T={T} at={K.Co + 2.4} until={K.R - 0.3} x={20} y={900} texto="Phaeolus schweinitzii" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Co + 3.0} until={K.R - 0.3} x={1060} y={900} lado="izq" texto="Tapinella atrotomentosa" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.R + 0.3} until={K.R + 3.3} x={440} y={470} texto="Mendocino, California" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.R + 1.0} until={K.R + 3.3} x={440} y={540} texto="hongo tras hongo" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.R + 3.4} until={K.E - 0.3} anio="1974" quien="Miriam C. Rice · California" revista="libro: Let's Try Mushrooms for Color" x={740} y={560} />
+      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 1.9} anio="2001" quien="Räisänen, Nousiainen y Hynninen" revista="Finlandia · Textile Research Journal, 2001" x={540} y={400} />
+      <Etq T={T} at={K.E + 2.3} until={K.V - 0.3} x={20} y={610} texto="emodina pura" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.E + 4.0} until={K.V - 0.3} x={20} y={1010} texto="dermocibina pura" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.V + 0.6} until={K.C - 0.3} x={40} y={400} texto="Cortinarius orellanus" it tam={34} color={TX.orellanus2} />
+      <Etq T={T} at={K.V + 1.1} until={K.C - 0.3} x={40} y={455} texto="Cortinarius rubellus" it tam={34} color={TX.orellanus2} />
+      <Chip T={T} at={K.V + 2.3} until={K.C - 0.3} texto="NO SE COMEN" x={700} y={1250} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.V + 4.4} until={K.C - 0.3} texto="síntomas: días después" x={720} y={1380} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="para teñir, no para comer" x={540} y={400} tam={38} borde={KC.red} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="10 cm" largo={150} color={KC.ink} />
-      <BarraEscala T={T} at={K.H} until={K.Pi} texto="2 cm" largo={60} />
-      <BarraEscala T={T} at={K.Pi} until={K.Ex} texto="1 nm · esquemático" largo={160} />
-      <BarraEscala T={T} at={K.Ex} until={K.Mo} texto="10 cm" largo={150} color={KC.ink} />
-      <BarraEscala T={T} at={K.Mo} until={K.Pu} texto="10 cm" largo={180} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="10 cm" largo={255} color={KC.ink} />
+      <BarraEscala T={T} at={K.H} until={K.Pi} texto="2 cm" largo={170} />
+      <BarraEscala T={T} at={K.Pi} until={K.Ex} texto="1 nm · esquemático" largo={240} />
+      <BarraEscala T={T} at={K.Ex} until={K.Mo} texto="10 cm" largo={195} color={KC.ink} />
+      <BarraEscala T={T} at={K.Mo} until={K.Pu} texto="10 cm" largo={255} color={KC.ink} />
       <BarraEscala T={T} at={K.Pu} until={K.P} texto="20 µm" largo={140} />
-      <BarraEscala T={T} at={K.Co} until={K.R} texto="10 cm" largo={100} color={KC.ink} />
+      <BarraEscala T={T} at={K.Co} until={K.R} texto="10 cm" largo={160} color={KC.ink} />
       <BarraEscala T={T} at={K.R} until={K.R + 3.4} texto="mapa esquemático" largo={0} color={KC.ink} />
-      <BarraEscala T={T} at={K.V} until={K.C} texto="2 cm" largo={50} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={130} color={KC.ink} />
+      <BarraEscala T={T} at={K.V} until={K.C} texto="2 cm" largo={95} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={182} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <SubtituloIt T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No la tiñó una fábrica: *la tiñó un hongo.*" />
