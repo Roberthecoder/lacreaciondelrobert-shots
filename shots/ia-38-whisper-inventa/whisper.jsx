@@ -34,22 +34,22 @@ function HojaT({ T, at = 0, y = 760, tipo1 = 0, tipo2 = 0, brilla = 0, ok1 = 0, 
   const tl = (txt, t0, t1) => txt.slice(0, Math.round(txt.length * kprog(T, t0, t1)));
   const e = kprog(T, at, at + 0.35, kEase.sale);
   const glow = brilla * (0.5 + 0.5 * Math.sin(T * 8));
-  return <div style={{ position:'absolute', left:60, top:y, width:960, zIndex:30, opacity:e, transform:`translateY(${(1 - e) * 40}px) rotate(-1deg)`,
+  return <div style={{ position:'absolute', left:110, top:y, width:860, zIndex:30, opacity:e, transform:`translateY(${(1 - e) * 40}px) rotate(-1deg)`,
     background:'#fffdf6', border:`8px solid ${KC.ink}`, borderRadius:28, boxShadow:`14px 14px 0 ${KC.ink}`, padding:'20px 36px 26px', boxSizing:'border-box' }}>
-    <div style={{ display:'flex', alignItems:'center', gap:14, font:`700 30px ${KF.mono}`, color:'#5a524a', marginBottom:14 }}>
+    <div style={{ display:'flex', alignItems:'center', gap:14, font:`700 32px ${KF.mono}`, color:'#5a524a', marginBottom:14 }}>
       <div style={{ width:22, height:22, borderRadius:11, background:KC.red }}></div>Transcripción automática
     </div>
-    <div style={{ position:'relative', font:`900 50px/1.18 ${KF.texto}`, color:KC.ink, marginBottom:14, paddingRight:90 }}>
+    <div style={{ position:'relative', font:`900 56px/1.18 ${KF.texto}`, color:'#0b1020', marginBottom:14, paddingRight:90 }}>
       {tipo1 ? tl(L1, tipo1[0], tipo1[1]) : L1}
       {ok1 > 0 && <span style={{ position:'absolute', right:0, top:0, font:`400 64px ${KF.titulo}`, color:KC.leaf, opacity:ok1, transform:`scale(${klerp(1.8, 1, ok1)})`, WebkitTextStroke:`2px ${KC.ink}` }}>✔</span>}
     </div>
-    <div style={{ position:'relative', font:`900 50px/1.18 ${KF.texto}`, color: tacha2 > 0.5 ? '#a49a8e' : KC.red, display:'inline-block',
+    <div style={{ position:'relative', font:`900 56px/1.18 ${KF.texto}`, color: tacha2 > 0.5 ? '#a49a8e' : KC.red, display:'inline-block',
       background:`rgba(255,59,47,${0.12 + 0.2 * glow})`, borderRadius:12, padding:'2px 10px', margin:'0 -10px' }}>
       {tipo2 ? tl(L2, tipo2[0], tipo2[1]) : L2}
       {tacha2 > 0 && <div style={{ position:'absolute', left:-6, top:'50%', height:10, width:`calc(${tacha2 * 100}% + 12px)`, background:CINE.borde, borderRadius:5, transform:'rotate(-3deg)' }}></div>}
     </div>
-    {nota > 0 && <div style={{ font:`700 24px ${KF.mono}`, color:'#7a7064', marginTop:14, opacity:nota }}>ejemplo real del estudio (traducido)</div>}
-    {sello > 0 && <div style={{ position:'absolute', left:330, top:-62, transform:`rotate(-6deg) scale(${klerp(2.2, 1, kEase.sale(sello))})`, opacity:Math.min(1, sello * 2),
+    {nota > 0 && <div style={{ font:`700 26px ${KF.mono}`, color:'#7a7064', marginTop:14, opacity:nota }}>ejemplo real del estudio (traducido)</div>}
+    {sello > 0 && <div style={{ position:'absolute', left:440, top:-70, transform:`rotate(-6deg) scale(${klerp(2.2, 1, kEase.sale(sello))})`, opacity:Math.min(1, sello * 2),
       border:`9px solid ${selloColor}`, borderRadius:18, padding:'4px 22px', font:`400 64px ${KF.titulo}`, color:selloColor, background:'rgba(255,253,246,.92)' }}>{selloTxt}</div>}
     {revisado > 0 && <div style={{ position:'absolute', right:40, bottom:-40, transform:`rotate(-6deg) scale(${klerp(2, 1, kEase.sale(revisado))})`, opacity:Math.min(1, revisado * 2),
       border:`9px solid ${KC.leaf}`, borderRadius:18, padding:'4px 22px', font:`400 60px ${KF.titulo}`, color:KC.leaf, background:'rgba(255,253,246,.95)' }}>REVISADO ✔</div>}
@@ -71,8 +71,8 @@ function Audifonos({ x, y, s = 1 }) {
   </g>;
 }
 // Hojita (para la cuadrícula de 100).
-function Hojita({ x, y, roja, latido = 0 }) {
-  const s = 1 + latido;
+function Hojita({ x, y, roja, latido = 0, k = 1 }) {
+  const s = k * (1 + latido);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-20} y={-26} width={40} height={52} rx={6} fill={roja ? KC.red : '#fffdf6'} stroke={KC.ink} strokeWidth={4} />
     {[-12, 0, 12].map((ly) => <line key={ly} x1={-12} y1={ly} x2={12} y2={ly} stroke={roja ? '#ffd0cc' : '#2b3a8a'} strokeWidth={3} opacity=".7" />)}
@@ -91,7 +91,7 @@ function Globito({ x, y, malo = 0, s = 1 }) {
 function IcoViolencia({ x, y, s = 1 }) {
   const pts = Array.from({ length: 16 }, (_, i) => { const a = (i / 16) * Math.PI * 2, rr = i % 2 ? 46 : 92; return `${Math.cos(a) * rr},${Math.sin(a) * rr}`; }).join(' ');
   return <g transform={`translate(${x} ${y}) scale(${s})`}><polygon points={pts} fill={KC.orange} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
-    <text y={22} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.ink}>!</text></g>;
+    <text y={22} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill="#0b1020">!</text></g>;
 }
 function IcoTermometro({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
@@ -107,12 +107,12 @@ function IcoPlay({ x, y, s = 1 }) {
   </g>;
 }
 // Tarjeta de un servicio de transcripción (sin logos: solo el nombre).
-function Servicio({ T, at, x, y, nombre, ok = true }) {
+function Servicio({ T, at, x, y, nombre, ok = true }) {   // texto oscuro fijo: la tarjeta es clara
   const e = kprog(T, at, at + 0.4, kEase.rebote), st = kprog(T, at + 0.5, at + 0.8, kEase.sale);
-  return <div style={{ position:'absolute', left:x, top:y, width:420, height:210, transform:`translate(-50%,-50%) scale(${klerp(0.5, 1, e)})`, opacity:Math.min(1, e * 2), zIndex:30,
-    background: ok ? '#fffdf6' : '#ffe1dd', border:`7px solid ${KC.ink}`, borderRadius:26, boxShadow:`10px 10px 0 ${KC.ink}`, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:10 }}>
-    <div style={{ font:`900 52px ${KF.texto}`, color:KC.ink }}>{nombre}</div>
-    <div style={{ opacity:st, font:`900 36px ${KF.texto}`, color:'#fff', background: ok ? KC.leaf : KC.red, border:`4px solid ${KC.ink}`, borderRadius:999, padding:'6px 22px' }}>{ok ? '0 inventos así ✔' : 'inventó ✖'}</div>
+  return <div style={{ position:'absolute', left:x, top:y, width:440, height:270, transform:`translate(-50%,-50%) scale(${klerp(0.5, 1, e)})`, opacity:Math.min(1, e * 2), zIndex:30,
+    background: ok ? '#fffdf6' : '#ffe1dd', border:`7px solid ${KC.ink}`, borderRadius:26, boxShadow:`10px 10px 0 ${KC.ink}`, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:18 }}>
+    <div style={{ font:`900 64px ${KF.texto}`, color:'#0b1020' }}>{nombre}</div>
+    <div style={{ opacity:st, font:`900 38px ${KF.texto}`, color:'#fff', background: ok ? KC.leaf : KC.red, border:`4px solid ${KC.ink}`, borderRadius:999, padding:'6px 22px' }}>{ok ? '0 inventos así ✔' : 'inventó ✖'}</div>
   </div>;
 }
 // Personita simple (consultorio).
@@ -132,6 +132,7 @@ function Whisper() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, W: CUES.Whisper, E: CUES.Estudio, Ci: CUES.Cifra, D: CUES.Danos, P: CUES.Pregunta, Pa: CUES.Pausas, S: CUES.Silencio, O: CUES.Otros, Co: CUES.Consulta, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
+  const CHIP_G = 1395;   // justo debajo de la hoja del gancho
   const G2 = K.G + 5.9; // segunda frase del gancho («La IA le agregó una receta…»)
   const svg = (c, z) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{c}</svg>;
   // en el gancho: la voz se oye mientras se dice la frase 1; luego la onda queda plana (nadie habla)
@@ -144,53 +145,58 @@ function Whisper() {
       <Escena T={T} a={K.G} b={K.W}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Microfono x={150} y={500} s={0.95} T={T} />
-          <Onda T={T} x={250} y={500} w={320} h={170} activo={0.15 + 0.85 * hablaG + 0.6 * (1 - kprog(T, K.G + 0.1, K.G + 1.2))} />
-          {T > K.G + 5.6 && <text x={410} y={620} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.G + 5.6, K.G + 6.0)}>(silencio)</text>}
+          <Microfono x={230} y={470} s={1.5} T={T} />
+          <Onda T={T} x={400} y={470} w={560} h={260} n={40} activo={0.15 + 0.85 * hablaG + 0.6 * (1 - kprog(T, K.G + 0.1, K.G + 1.2))} />
+          {T > K.G + 5.6 && <text x={680} y={700} textAnchor="middle" style={{ font:`700 42px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.G + 5.6, K.G + 6.0)}>(silencio)</text>}
         </>)}
-        <HojaT T={T} at={K.G} y={760} tipo1={[K.G, K.G + 0.55]} tipo2={[K.G + 0.5, K.G + 1.15]} sello={kprog(T, K.G + 1.0, K.G + 1.4)}
+        <HojaT T={T} at={K.G} y={850} tipo1={[K.G, K.G + 0.55]} tipo2={[K.G + 0.5, K.G + 1.15]} sello={kprog(T, K.G + 1.0, K.G + 1.4)}
           ok1={kprog(T, K.G + 3.3, K.G + 3.6)} brilla={kprog(T, G2, G2 + 0.3)} nota={kprog(T, G2 + 1.0, G2 + 1.4)} />
+        {/* dentro de la escena: viaja con la cámara, pegado al renglón inventado */}
+        <Chip T={T} at={G2 + 0.3} until={K.W - 0.2} texto="✨ lo agregó la IA" x={540} y={CHIP_G} tam={38} borde={KC.red} />
       </Escena>
-      <Chip T={T} at={G2 + 0.3} until={K.W - 0.2} texto="✨ lo agregó la IA" x={300} y={700} tam={34} borde={KC.red} />
 
       {/* 2 · Whisper: la IA que pasa voz a texto */}
       <Escena T={T} a={K.W} b={K.E}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <Onda T={T} x={40} y={860} w={250} h={150} activo={1} n={14} color={KC.ink} />
-          <Robotito x={540} y={880} s={1.05} T={T} cara="feliz" />
-          <Audifonos x={540} y={880 + Math.sin(T * 3) * 6} s={1.05} />
+          <Onda T={T} x={240} y={500} w={600} h={170} activo={1} n={30} color={KC.ink} />
+          <Robotito x={540} y={930} s={1.6} T={T} cara="feliz" />
+          <Audifonos x={540} y={930 + Math.sin(T * 3) * 6} s={1.6} />
           {['toma', 'el', 'pan'].map((w, i) => { const t0 = K.W + 0.5 + i * 0.35, u = kprog(T, t0, t0 + 0.5, kEase.sale);
-            return <Ficha key={i} x={klerp(700, 900, u)} y={760 + i * 120} texto={w} s={u} o={u} color={[KC.yellow, KC.mint, KC.cyan][i]} tam={40} />; })}
+            return <Ficha key={i} x={290 + i * 250} y={klerp(1170, 1290, u)} texto={w} s={u} o={u} color={[KC.yellow, KC.mint, KC.cyan][i]} tam={58} />; })}
           {Array.from({ length: 7 }, (_, i) => { const t0 = K.W + 1.9 + i * 0.16, u = kprog(T, t0, t0 + 0.3, kEase.rebote);
-            return <g key={i} transform={`translate(${150 + i * 130} 1120) scale(${u})`}><circle r={40} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />
+            return <g key={i} transform={`translate(${150 + i * 130} 1420) scale(${u})`}><circle r={40} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />
               <path d="M -18 0 L -4 14 L 20 -14" stroke="#fff" strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>; })}
         </>)}
       </Escena>
-      <Chip T={T} at={K.W + 0.2} until={K.E - 0.2} texto="Whisper · OpenAI" x={540} y={520} tam={50} borde={KC.ink} />
-      <Chip T={T} at={K.W + 0.6} until={K.E - 0.2} texto="voz → texto" x={540} y={620} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.W + 0.2} until={K.E - 0.2} texto="Whisper · OpenAI" x={540} y={250} tam={50} borde={KC.ink} />
+      <Chip T={T} at={K.W + 0.6} until={K.E - 0.2} texto="voz → texto" x={540} y={340} tam={34} borde={KC.cyan} />
 
       {/* 3 · el estudio */}
       <Escena T={T} a={K.E} b={K.Ci}>
         <FondoLunares color={KC.mint} />
         {svg(<>{Array.from({ length: 18 }, (_, i) => { const x = 60 + rr() * 960, v = 60 + rr() * 80, y0 = rr() * 1900, y = ((y0 + (T - K.E) * v) % 1900);
-          return <g key={i} transform={`translate(${x} ${y})`} opacity=".35"><rect x={-34} y={-24} width={68} height={48} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={4} />
-            {[-18, -6, 6, 18].map((bx, k) => <rect key={k} x={bx - 3} y={-8 - k % 2 * 6} width={6} height={16 + k % 2 * 12} fill={KC.ink} />)}</g>; })}</>)}
+          return <g key={i} transform={`translate(${x} ${y}) scale(1.7)`} opacity=".5"><rect x={-34} y={-24} width={68} height={48} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={4} />
+            {[-18, -6, 6, 18].map((bx, k) => <rect key={k} x={bx - 3} y={-8 - k % 2 * 6} width={6} height={16 + k % 2 * 12} fill={KC.ink} />)}</g>; })}
+          {/* el sujeto sigue en cuadro: Whisper escuchando los fragmentos de audio del estudio */}
+          <Robotito x={540} y={930} s={1.6} T={T} cara="feliz" />
+          <Audifonos x={540} y={930 + Math.sin(T * 3) * 6} s={1.6} />
+        </>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ci - 0.3} anio="2023" quien="Cornell y otras universidades" revista="Koenecke, Choi, Mei, Schellmann y Sloane" y={700} />
-      <Chip T={T} at={K.E + 1.6} until={K.Ci - 0.3} texto="publicado en ACM FAccT 2024" x={540} y={975} tam={30} borde={KC.ink} />
-      {T < K.Ci + 0.3 && <div style={{ opacity:1 - kprog(T, K.Ci - 0.3, K.Ci + 0.1) }}><Contador T={T} at={K.E + 2.6} hasta={13140} dur={1.6} x={540} y={1060} tam={86} color={KC.ink} /></div>}
-      <Chip T={T} at={K.E + 3.0} until={K.Ci - 0.3} texto="fragmentos de audio" x={540} y={1140} tam={32} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ci - 0.3} anio="2023" quien="Cornell y otras universidades" revista="Koenecke, Choi, Mei, Schellmann y Sloane" y={335} />
+      <Chip T={T} at={K.E + 1.6} until={K.Ci - 0.3} texto="publicado en ACM FAccT 2024" x={540} y={520} tam={30} borde={KC.ink} />
+      {T < K.Ci + 0.3 && <div style={{ opacity:1 - kprog(T, K.Ci - 0.3, K.Ci + 0.1) }}><Contador T={T} at={K.E + 2.6} hasta={13140} dur={1.6} x={540} y={1350} tam={100} color={KC.ink} /></div>}
+      <Chip T={T} at={K.E + 3.0} until={K.Ci - 0.3} texto="fragmentos de audio" x={540} y={1445} tam={36} borde={KC.ink} />
 
       {/* 4 · una de cada cien */}
       <Escena T={T} a={K.Ci} b={K.D}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>{Array.from({ length: 100 }, (_, i) => { const c = i % 10, f = Math.floor(i / 10), roja = i === 46 && T > K.Ci + 1.4;
-          const ap = kprog(T, K.Ci + 0.1 + i * 0.008, K.Ci + 0.3 + i * 0.008);
-          return <g key={i} opacity={ap}><Hojita x={180 + c * 80} y={640 + f * 56} roja={roja} latido={roja ? 0.25 * Math.max(0, Math.sin((T - K.Ci) * 6)) : 0} /></g>; })}</>)}
+          const ap = kprog(T, K.Ci - 0.2 + i * 0.005, K.Ci + i * 0.005);
+          return <g key={i} opacity={ap}><Hojita k={1.45} x={108 + c * 96} y={650 + f * 82} roja={roja} latido={roja ? 0.25 * Math.max(0, Math.sin((T - K.Ci) * 6)) : 0} /></g>; })}</>)}
       </Escena>
-      <NumeroGigante T={T} at={K.Ci + 0.2} until={K.D - 0.2} valor={1} dur={0.3} prefijo="≈ " sufijo=" de cada 100" x={540} y={420} tam={110} color={KC.red} />
-      <Chip T={T} at={K.Ci + 1.6} until={K.D - 0.2} texto="frases enteras inventadas · 2023" x={540} y={548} tam={30} borde={KC.red} />
+      <NumeroGigante T={T} at={K.Ci + 0.2} until={K.D - 0.2} valor={1} dur={0.3} prefijo="≈ " sufijo=" de cada 100" x={540} y={380} tam={120} color={KC.red} />
+      <Chip T={T} at={K.Ci + 1.6} until={K.D - 0.2} texto="frases enteras inventadas · 2023" x={540} y={510} tam={32} borde={KC.red} />
 
       {/* 5 · casi 4 de cada 10 inventos, dañinos */}
       <Escena T={T} a={K.D} b={K.P}>
@@ -198,23 +204,23 @@ function Whisper() {
         {svg(<>
           {Array.from({ length: 10 }, (_, i) => { const c = i % 5, f = Math.floor(i / 5), malo = [1, 3, 5, 8].indexOf(i) >= 0 && [1, 3, 5, 8].indexOf(i) < marcados;
             const ap = kprog(T, K.D + 0.1 + i * 0.05, K.D + 0.4 + i * 0.05, kEase.rebote);
-            return <Globito key={i} x={140 + c * 200} y={730 + f * 150} malo={malo ? 1 : 0} s={0.82 * ap} />; })}
-          <g opacity={kprog(T, K.D + 2.9, K.D + 3.2)}><IcoViolencia x={200} y={1040} s={0.85} /></g>
-          <g opacity={kprog(T, K.D + 3.8, K.D + 4.1)}><IcoTermometro x={530} y={1030} s={0.75} /></g>
-          <g opacity={kprog(T, K.D + 4.8, K.D + 5.1)}><IcoPlay x={860} y={1040} s={0.8} /></g>
+            return <Globito key={i} x={140 + c * 200} y={730 + f * 190} malo={malo ? 1 : 0} s={0.98 * ap} />; })}
+          <g opacity={kprog(T, K.D + 2.9, K.D + 3.2)}><IcoViolencia x={200} y={1190} s={1.25} /></g>
+          <g opacity={kprog(T, K.D + 3.8, K.D + 4.1)}><IcoTermometro x={530} y={1180} s={1.1} /></g>
+          <g opacity={kprog(T, K.D + 4.8, K.D + 5.1)}><IcoPlay x={860} y={1190} s={1.15} /></g>
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.D + 0.9} until={K.P - 0.2} valor={38} dur={1.4} sufijo=" %" etiqueta="de los inventos: dañinos" x={330} y={470} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.D + 3.0} until={K.P - 0.2} texto="violencia" x={200} y={1130} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.D + 3.9} until={K.P - 0.2} texto="enfermedad falsa" x={530} y={1130} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.D + 4.9} until={K.P - 0.2} texto="«¡gracias por ver!»" x={860} y={1130} tam={26} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.D + 0.9} until={K.P - 0.2} valor={38} dur={1.4} sufijo=" %" etiqueta="de los inventos: dañinos" x={540} y={440} tam={150} color={KC.yellow} />
+      <Chip T={T} at={K.D + 3.0} until={K.P - 0.2} texto="violencia" x={200} y={1375} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.D + 3.9} until={K.P - 0.2} texto="enfermedad falsa" x={530} y={1375} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.D + 4.9} until={K.P - 0.2} texto="«¡gracias por ver!»" x={860} y={1375} tam={30} borde={KC.ink} />
 
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Pa} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <Onda T={T} x={60} y={1120} w={420} h={60} activo={0} tramos={[]} />
-          <text x={270} y={1040} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 270 860)`}>?</text>
+          <Onda T={T} x={240} y={1450} w={600} h={60} activo={0} tramos={[]} />
+          <text x={540} y={1100} textAnchor="middle" style={{ font:`400 620px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 900)`}>?</text>
         </>)}
       </Escena>
 
@@ -222,72 +228,74 @@ function Whisper() {
       <Escena T={T} a={K.Pa} b={K.S}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <g opacity={kprog(T, K.Pa + 0.3, K.Pa + 0.6)}><Onda T={T} x={90} y={620} w={900} h={130} n={40} seed={2} tramos={[[0, 0.3], [0.36, 0.7], [0.75, 1]]} cabeza={kprog(T, K.Pa + 0.4, K.S, null)} /></g>
-          <g opacity={kprog(T, K.Pa + 1.2, K.Pa + 1.5)}><Onda T={T} x={90} y={900} w={900} h={130} n={40} seed={6} tramos={[[0, 0.18], [0.5, 0.62], [0.9, 1]]} cabeza={kprog(T, K.Pa + 1.3, K.S, null)} />
+          <g opacity={kprog(T, K.Pa - 0.1, K.Pa + 0.3)}><Onda T={T} x={90} y={650} w={900} h={230} n={40} seed={2} tramos={[[0, 0.3], [0.36, 0.7], [0.75, 1]]} cabeza={kprog(T, K.Pa + 0.4, K.S, null)} /></g>
+          <g opacity={kprog(T, K.Pa + 1.2, K.Pa + 1.5)}><Onda T={T} x={90} y={1090} w={900} h={230} n={40} seed={6} tramos={[[0, 0.18], [0.5, 0.62], [0.9, 1]]} cabeza={kprog(T, K.Pa + 1.3, K.S, null)} />
             {[[0.18, 0.5], [0.62, 0.9]].map(([a, b], i) => <g key={i} opacity={kprog(T, K.Pa + 1.8 + i * 0.3, K.Pa + 2.1 + i * 0.3)}>
-              <rect x={90 + 900 * a + 10} y={845} width={900 * (b - a) - 20} height={110} rx={18} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={4} strokeDasharray="14 10" />
-              <text x={90 + 900 * (a + b) / 2} y={912} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>pausa</text></g>)}</g>
+              <rect x={90 + 900 * a + 10} y={1000} width={900 * (b - a) - 20} height={180} rx={22} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={4} strokeDasharray="14 10" />
+              <text x={90 + 900 * (a + b) / 2} y={1104} textAnchor="middle" style={{ font:`700 42px ${KF.mono}` }} fill={KC.ink}>pausa</text></g>)}</g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.Pa + 0.4} until={K.S - 0.2} texto="sin afasia" x={230} y={515} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Pa + 1.2} until={K.S - 0.2} texto="con afasia" x={230} y={795} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.Pa + 2.4} until={K.S - 0.2} texto="inventó más: 1.7 % vs 1.2 %" x={540} y={1100} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Pa + 0.4} until={K.S - 0.2} texto="sin afasia" x={230} y={440} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Pa + 1.2} until={K.S - 0.2} texto="con afasia" x={230} y={880} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Pa + 2.4} until={K.S - 0.2} texto="inventó más: 1.7 % vs 1.2 %" x={540} y={1350} tam={42} borde={KC.red} />
 
       {/* 8 · por dentro: el silencio se rellena (hipótesis) */}
       <Escena T={T} a={K.S} b={K.O}>
         <FondoCircuito T={T} />
         {svg(<>
-          <line x1={50} y1={800} x2={290} y2={800} stroke={KC.cyan} strokeWidth={6} strokeLinecap="round" strokeDasharray="4 16" />
-          <text x={170} y={870} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.cyan}>silencio</text>
+          <line x1={20} y1={880} x2={215} y2={880} stroke={KC.cyan} strokeWidth={8} strokeLinecap="round" strokeDasharray="4 18" />
+          <text x={118} y={950} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.cyan}>silencio</text>
         </>)}
-        <RedNeuronal T={T} x={340} y={600} ancho={380} alto={400} capas={[3, 5, 5, 3]} onda={((T - K.S - 0.6) / 1.6) % 1.2} />
+        <RedNeuronal T={T} x={250} y={560} ancho={470} alto={640} capas={[3, 5, 5, 3]} onda={((T - K.S - 0.6) / 1.6) % 1.2} />
         {svg(<>{['gracias', 'por', 'ver'].map((w, i) => { const t0 = K.S + 1.8 + i * 0.5, u = kprog(T, t0, t0 + 0.45, kEase.rebote);
-          return <Ficha key={i} x={890} y={680 + i * 130} texto={w} s={u * 0.95} o={Math.min(1, u * 2)} color={[KC.yellow, KC.pink, KC.mint][i]} tam={40} />; })}</>)}
+          return <Ficha key={i} x={890} y={740 + i * 140} texto={w} s={u} o={Math.min(1, u * 2)} color={[KC.yellow, KC.pink, KC.mint][i]} tam={40} />; })}</>)}
       </Escena>
-      <Chip T={T} at={K.S + 0.2} until={K.O - 0.2} texto="HIPÓTESIS de las autoras" x={680} y={470} tam={36} borde={KC.yellow} color={KC.yellow} />
-      <Chip T={T} at={K.S + 3.2} until={K.O - 0.2} texto="rellena el hueco con texto" x={540} y={1110} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={K.S + 0.2} until={K.O - 0.2} texto="HIPÓTESIS de las autoras" x={540} y={400} tam={40} borde={KC.yellow} color={KC.yellow} />
+      <Chip T={T} at={K.S + 3.2} until={K.O - 0.2} texto="rellena el hueco con texto" x={540} y={1340} tam={38} borde={KC.cyan} />
 
       {/* 9 · los otros servicios no inventaron */}
       <Escena T={T} a={K.O} b={K.Co}>
         <FondoLunares color={KC.yellow} />
       </Escena>
-      <Chip T={T} at={K.O + 0.1} until={K.Co - 0.2} texto="los mismos 187 audios" x={400} y={480} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.O + 0.4} until={K.Co - 0.2} texto="probados en 2023 y 2024" x={400} y={560} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.O + 0.1} until={K.Co - 0.2} texto="los mismos 187 audios" x={540} y={390} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.O + 0.4} until={K.Co - 0.2} texto="probados en 2023 y 2024" x={540} y={475} tam={28} borde={KC.ink} />
       {T > K.O - 0.5 && T < K.Co + 0.5 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.O - 0.3, K.O + 0.1) * (1 - kprog(T, K.Co - 0.05, K.Co + 0.45)) }}>
-        <Servicio T={T} at={K.O + 0.6} x={290} y={770} nombre="Google" />
-        <Servicio T={T} at={K.O + 0.9} x={790} y={770} nombre="Amazon" />
-        <Servicio T={T} at={K.O + 1.2} x={290} y={1030} nombre="Microsoft" />
-        <Servicio T={T} at={K.O + 1.5} x={790} y={1030} nombre="Whisper" ok={false} />
+        {/* los mismos audios (la onda) entran a los cuatro servicios */}
+        {svg(<Onda T={T} x={190} y={640} w={700} h={130} n={36} seed={2} />, 20)}
+        <Servicio T={T} at={K.O + 0.1} x={290} y={900} nombre="Google" />
+        <Servicio T={T} at={K.O + 0.4} x={790} y={900} nombre="Amazon" />
+        <Servicio T={T} at={K.O + 0.7} x={290} y={1220} nombre="Microsoft" />
+        <Servicio T={T} at={K.O + 1.1} x={790} y={1220} nombre="Whisper" ok={false} />
       </div>}
 
       {/* 10 · la consulta médica */}
       <Escena T={T} a={K.Co} b={K.C}>
         <FondoLunares color="#bfe9ff" punto="rgba(255,255,255,.5)" />
         {svg(<>
-          <Persona x={250} y={820} s={0.95} ropa="#fff" bata T={T} seed={2} />
-          <Persona x={830} y={820} s={0.95} ropa={KC.mint} piel="#c98a62" pelo="#16120f" T={T} seed={5} />
-          <rect x={40} y={1000} width={1000} height={46} rx={14} fill="#a8703f" stroke={KC.ink} strokeWidth={8} />
-          <rect x={60} y={1046} width={40} height={140} fill="#7a4f2a" stroke={KC.ink} strokeWidth={6} /><rect x={980} y={1046} width={40} height={140} fill="#7a4f2a" stroke={KC.ink} strokeWidth={6} />
-          <g transform="translate(540 960)">
+          <Persona x={270} y={880} s={1.5} ropa="#fff" bata T={T} seed={2} />
+          <Persona x={810} y={880} s={1.5} ropa={KC.mint} piel="#c98a62" pelo="#16120f" T={T} seed={5} />
+          <rect x={30} y={1180} width={1020} height={60} rx={16} fill="#a8703f" stroke={KC.ink} strokeWidth={8} />
+          <rect x={64} y={1240} width={52} height={200} fill="#7a4f2a" stroke={KC.ink} strokeWidth={6} /><rect x={964} y={1240} width={52} height={200} fill="#7a4f2a" stroke={KC.ink} strokeWidth={6} />
+          <g transform="translate(540 1118) scale(1.5)">
             <rect x={-70} y={-40} width={140} height={80} rx={16} fill="#10131a" stroke={KC.ink} strokeWidth={6} />
             <circle cx={-40} cy={0} r={12} fill={KC.red} opacity={Math.sin(T * 6) > 0 ? 1 : 0.3} />
             <Onda T={T} x={-18} y={0} w={78} h={44} n={6} color={KC.mint} />
           </g>
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.Co + 1.6} until={K.C - 0.2} valor={30000} dur={1.2} prefijo="+" etiqueta="clínicos" x={600} y={470} tam={130} color={KC.cyan} />
-      <Chip T={T} at={K.Co + 0.3} until={K.C - 0.2} texto="AP · octubre 2024" x={540} y={640} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Co + 3.0} until={K.C - 0.2} texto="herramienta de Nabla basada en Whisper" x={540} y={1110} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Co + 1.6} until={K.C - 0.2} valor={30000} dur={1.2} prefijo="+" etiqueta="clínicos" x={540} y={400} tam={140} color={KC.cyan} />
+      <Chip T={T} at={K.Co + 0.3} until={K.C - 0.2} texto="AP · octubre 2024" x={540} y={585} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 3.0} until={K.C - 0.2} texto="herramienta de Nabla basada en Whisper" x={540} y={1345} tam={32} borde={KC.ink} />
 
       {/* 11 · cierre: la misma transcripción, revisada */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Microfono x={150} y={500} s={0.95} T={T} rec={false} />
-          <Onda T={T} x={250} y={500} w={320} h={170} activo={0.2} />
+          <Microfono x={230} y={470} s={1.5} T={T} rec={false} />
+          <Onda T={T} x={400} y={470} w={560} h={260} n={40} activo={0.2} />
         </>)}
-        <HojaT T={T} at={K.C - 0.4} y={760} tacha2={kprog(T, K.C + 1.7, K.C + 2.3, kEase.sale)} ok1={1} revisado={kprog(T, K.C + 2.5, K.C + 2.9)} />
-        {svg(<g transform={`translate(${klerp(1150, 700, kprog(T, K.C + 0.6, K.C + 1.5, kEase.sale)) + (T > K.C + 1.7 ? klerp(0, -360, kprog(T, K.C + 1.7, K.C + 2.3, kEase.suave)) : 0)} 1010)`}><LupaIcono x={0} y={0} s={0.8} /></g>, 35)}
+        <HojaT T={T} at={K.C - 0.4} y={850} tacha2={kprog(T, K.C + 1.7, K.C + 2.3, kEase.sale)} ok1={1} revisado={kprog(T, K.C + 2.5, K.C + 2.9)} />
+        {svg(<g transform={`translate(${klerp(1150, 760, kprog(T, K.C + 0.6, K.C + 1.5, kEase.sale)) + (T > K.C + 1.7 ? klerp(0, -400, kprog(T, K.C + 1.7, K.C + 2.3, kEase.suave)) : 0)} 1150)`}><LupaIcono x={0} y={0} s={0.9} /></g>, 35)}
       </Escena>
 
       {/* subtítulos (idx = línea de narracion.json) */}
