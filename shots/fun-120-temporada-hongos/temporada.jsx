@@ -170,7 +170,7 @@ function TemporadaShot() {
   const hojaG = ((T - K.G - 0.5) % 0.7) / 0.7;
   // micelio: la cámara baja al suelo
   const baja = kprog(T, K.M - 0.2, K.M + 1.6, kEase.suave);
-  const supM = klerp(1420, 700, baja);
+  const supM = klerp(1420, 700, baja) + 220 * kprog(T, K.Se + 0.3, K.Se + 1.6, kEase.suave); // en la señal el suelo baja al centro del cuadro
   const senalP = kprog(T, K.Se + 0.4, K.Se + 2.6);
   const libre = kprog(T, K.Se + 2.4, K.Se + 3.6, kEase.sale);
   return (
@@ -219,6 +219,7 @@ function TemporadaShot() {
       </Escena>
       {/* 4–5 · por dentro: bajamos al suelo; el micelio y la señal (fondo oscuro: lo microscópico) */}
       <Escena T={T} a={K.M} b={K.P} zoom={0.03}>
+        <div style={{ position:'absolute', left:-200, top:-200, width:KW + 400, height:KH + 400, background:'#0d1424' }}></div>
         <MundoSuelo T={T} red={kprog(T, K.M + 0.3, K.M + 3.4)} brillo={kprog(T, K.M + 1.0, K.M + 2.0) * 0.8} sup={supM} cielo="#101628" seed={12} escala={0.61} ox={540} />
         <div style={{ position:'absolute', left:0, top:supM + 10, width:KW, height:KH, background:'rgba(13,20,36,.55)', opacity:baja }}></div>
         {fsvg(<>
@@ -233,12 +234,12 @@ function TemporadaShot() {
           {T < K.Se + 0.3 && <g transform={`translate(320 ${supM + 560}) scale(1.35)`}><InsertoHifas T={T} cx={0} cy={0} r={185} p={kprog(T, K.M + 2.0, K.M + 3.6)} /></g>}
           {/* la señal: termómetro y gota que suben; el nudo de hifas se enciende y la seta empuja */}
           {T > K.Se - 0.2 && <g opacity={kprog(T, K.Se - 0.2, K.Se + 0.3)}>
-            <g transform="translate(130 262) scale(1.08)">
+            <g transform={`translate(150 ${supM - 560}) scale(1.4)`}>
               <rect x={-30} y={0} width={60} height={300} rx={30} fill="#fff" stroke={KC.ink} strokeWidth={7} />
               <rect x={-14} y={300 - 280 * senalP} width={28} height={280 * senalP} rx={14} fill={KC.red} />
               <circle cx={0} cy={330} r={46} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
             </g>
-            <GotaHumedad x={400} y={470} nivel={senalP} s={1.25} />
+            <GotaHumedad x={400} y={supM - 280} nivel={senalP} s={1.6} />
             {(() => { const nudo = kprog(T, K.Se + 2.4, K.Se + 3.0), sube = kprog(T, K.Se + 2.8, K.Se + 3.8, kEase.sale);
               return <>
                 <circle cx={640} cy={supM + 76} r={(22 + 10 * nudo + Math.sin(T * 8) * 3 * nudo) * 1.4} fill={KC.gold2} opacity={nudo} style={{ filter:`drop-shadow(0 0 ${18 * nudo}px ${KC.gold})` }} />
@@ -259,7 +260,7 @@ function TemporadaShot() {
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Li} zoom={0.1}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Interrogacion T={T} x={300} y={1080} tam={520} />)}
+        {fsvg(<Interrogacion T={T} x={320} y={1480} tam={640} />)}
       </Escena>
       {/* 7–8 · la libreta de Edward Gange y el estudio de 2007 */}
       <Escena T={T} a={K.Li} b={K.Ca} zoom={0.04}>
