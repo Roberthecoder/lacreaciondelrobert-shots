@@ -158,7 +158,7 @@ function LavarShot() {
   const FIN = K.Ou + 4;
   const caida = kprog(T, K.G + 0.05, K.G + 0.55, (p) => p * p);         // el champiñón cae al agua (antes de 1 s)
   const flota = T > K.G + 0.55 ? Math.sin((T - K.G) * 3) * 6 * Math.exp(-(T - K.G - 0.55) * 0.6) : 0;
-  const champY = klerp(260, 850, caida) + flota;
+  const champY = klerp(520, 850, caida) + flota;
   const moja = kprog(T, K.G + 0.6, K.G + 3.2, kEase.suave);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -166,6 +166,7 @@ function LavarShot() {
       <Escena T={T} a={K.G} b={K.M} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
+          <g transform="translate(440 880) scale(1.3) translate(-340 -880)">
           <Tazon x={340} y={880} w={520}>
             <g transform={`translate(0 ${champY - 880})`}><Champinon x={0} y={40} s={0.9} crece={1} abre={0.1} rot={Math.sin(T * 2) * 3} /></g>
             {caida >= 1 && T < K.G + 1.4 && <g opacity={1 - kprog(T, K.G + 0.6, K.G + 1.4)}>
@@ -174,57 +175,62 @@ function LavarShot() {
             </g>}
           </Tazon>
           <Perlas x={340} y={champY + 40} s={0.9} pts={PERLAS} o={kprog(T, K.G + 1.0, K.G + 1.6)} />
-          <Esponja x={830} y={1080} s={0.85} moja={moja} />
+          </g>
+          <Esponja x={850} y={1260} s={1.05} moja={moja} />
         </>)}
       </Escena>
       {/* 2 · mito */}
       <Escena T={T} a={K.M} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Champinon x={300} y={1100} s={1.1} crece={1} abre={0.1} />
-          <Sello T={T} at={K.M + 0.7} x={760} y={1000} texto="MITO" color={KC.red} r={120} />
+          <Champinon x={400} y={1300} s={2.0} crece={1} abre={0.1} />
+          <Sello T={T} at={K.M + 0.7} x={800} y={1050} texto="MITO" color={KC.red} r={165} />
         </>)}
       </Escena>
       {/* 3 · la prueba publicada en 2018: pesar antes y después de 1 min en agua */}
       <Escena T={T} a={K.E} b={K.Ce} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
+          <g transform="translate(540 1000) scale(1.9) translate(-540 -900)">
           <Bascula x={540} y={900} valor={T < K.E + 3.4 ? 'antes' : '¿después?'} />
           {[[-140, 0, LV.blanco, 0.1], [-60, -10, LV.cafe, 0.1], [20, 0, LV.portob, 1], [100, -6, '#9a6a44', 0.9]].map(([dx, dy, c, ab], i) =>
-            <Champinon key={i} x={540 + dx} y={892 + dy} s={0.42} crece={kprog(T, K.E + 2.4 + i * 0.15, K.E + 2.9 + i * 0.15)} abre={ab} sombrero={c} />)}
+            <Champinon key={i} x={540 + dx} y={892 + dy} s={0.42} crece={kprog(T, K.E + 0.1 + i * 0.12, K.E + 0.55 + i * 0.12)} abre={ab} sombrero={c} />)}
+          </g>
           {/* seis tipos de hongos probados (íconos) */}
           {[LV.blanco, LV.cafe, LV.portob, '#8a5a3a', '#c9c3b6', '#a7895e'].map((c, i) => { const on = kprog(T, K.E + 4.0 + i * 0.1, K.E + 4.3 + i * 0.1, kEase.rebote);
-            return on > 0 ? <g key={i} transform={`translate(${150 + i * 156} 1095) scale(${on})`}><circle r={46} fill={c} stroke={KC.ink} strokeWidth={6} /></g> : null; })}
+            return on > 0 ? <g key={i} transform={`translate(${150 + i * 156} 1390) scale(${on})`}><circle r={52} fill={c} stroke={KC.ink} strokeWidth={6} /></g> : null; })}
         </>)}
       </Escena>
       {/* 4 · laminillas tapadas: casi nada de agua */}
       <Escena T={T} a={K.Ce} b={K.Ex} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
+          <g transform="translate(400 1000) scale(1.5) translate(-330 -960)">
           <Bascula x={330} y={960} w={460} valor={T < K.Ce + 1.6 ? 'después' : '≈ igual'} />
           <Champinon x={330} y={954} s={1.05} crece={1} abre={0.1} />
           <Perlas x={330} y={970} s={1.05} pts={PERLAS} />
-          <VistaAbajo x={790} y={830} r={150} velo={1} />
-          <path d="M 650 900 Q 560 900 480 860" stroke={KC.ink} strokeWidth={5} fill="none" strokeDasharray="12 10" />
+          </g>
+          <VistaAbajo x={845} y={1345} r={165} velo={1} />
+          <path d="M 540 790 Q 820 820 845 1170" stroke={KC.ink} strokeWidth={6} fill="none" strokeDasharray="14 12" />
         </>)}
       </Escena>
       {/* 5 · laminillas expuestas: hasta 25 % de su peso */}
       <Escena T={T} a={K.Ex} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Champinon x={290} y={1060} s={1.2} crece={1} abre={1} sombrero={LV.portob} sombra="#4e3222" lam={LV.lamP} pie="#efe3cf" />
-          <Seta x={790} y={1060} s={2.1} crece={1} sombrero={LV.cafe2} pie="#f1e6d0" escamas={false} anillo={false} alto={120} ancho={170} laminas="#fbf3e2" />
-          {Array.from({ length: 14 }, (_, i) => { const f = ((T - K.Ex) * 0.9 + i * 0.13) % 1, xx = (i % 2 ? 790 : 290) + ((i * 53) % 160) - 80;
-            return T > K.Ex + 0.3 ? <circle key={i} cx={xx} cy={klerp(560, i % 2 ? 900 : 940, f)} r={11} fill={LV.agua} stroke={KC.ink} strokeWidth={3} opacity={1 - f * 0.6} /> : null; })}
+          <Champinon x={300} y={1300} s={1.6} crece={1} abre={1} sombrero={LV.portob} sombra="#4e3222" lam={LV.lamP} pie="#efe3cf" />
+          <Seta x={790} y={1300} s={2.7} crece={1} sombrero={LV.cafe2} pie="#f1e6d0" escamas={false} anillo={false} alto={120} ancho={170} laminas="#fbf3e2" />
+          {Array.from({ length: 14 }, (_, i) => { const f = ((T - K.Ex) * 0.9 + i * 0.13) % 1, xx = (i % 2 ? 790 : 300) + ((i * 71) % 220) - 110;
+            return T > K.Ex + 0.3 ? <circle key={i} cx={xx} cy={klerp(540, i % 2 ? 1060 : 1120, f)} r={15} fill={LV.agua} stroke={KC.ink} strokeWidth={3} opacity={1 - f * 0.6} /> : null; })}
         </>)}
       </Escena>
       {/* 6 · re-gancho: ¿por qué repele el agua? */}
       <Escena T={T} a={K.P} b={K.H} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Champinon x={330} y={1150} s={1.5} crece={1} abre={0.1} />
-          <GotaPerla x={330} y={785} r={70} p={kprog(T, K.P + 0.1, K.P + 0.6)} rebote={Math.max(0, Math.sin((T - K.P - 0.6) * 14)) * Math.exp(-(T - K.P - 0.6) * 3) * (T > K.P + 0.6 ? 1 : 0)} />
-          <Interrogacion T={T} x={300} y={640} tam={280} />
+          <Champinon x={540} y={1400} s={2.0} crece={1} abre={0.1} />
+          <GotaPerla x={540} y={913} r={93} p={kprog(T, K.P + 0.1, K.P + 0.6)} rebote={Math.max(0, Math.sin((T - K.P - 0.6) * 14)) * Math.exp(-(T - K.P - 0.6) * 3) * (T > K.P + 0.6 ? 1 : 0)} />
+          <Interrogacion T={T} x={540} y={790} tam={320} />
         </>)}
       </Escena>
       {/* 7 · al microscopio: hifas de la piel y capa de varillitas de hidrofobina (fondo oscuro) */}
@@ -232,110 +238,114 @@ function LavarShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<>
+          <g transform="translate(0 740) scale(1.5) translate(0 -652)">
           <PielMicro T={T} hifas={kprog(T, K.H, K.H + 1.2)} varillas={kprog(T, K.H + 1.4, K.H + 3.2)} />
-          <GotaPerla x={560} y={590} r={84} p={kprog(T, K.H + 3.4, K.H + 3.9)} rebote={T > K.H + 3.9 ? Math.max(0, Math.sin((T - K.H - 3.9) * 14)) * Math.exp(-(T - K.H - 3.9) * 3) : 0} />
+          </g>
+          <GotaPerla x={480} y={648} r={120} p={kprog(T, K.H + 3.4, K.H + 3.9)} rebote={T > K.H + 3.9 ? Math.max(0, Math.sin((T - K.H - 3.9) * 14)) * Math.exp(-(T - K.H - 3.9) * 3) : 0} />
         </>)}
       </Escena>
       {/* 8 · casi 92 % del champiñón es agua */}
       <Escena T={T} a={K.L} b={K.S} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<ChampLleno T={T} x={540} y={1120} s={1.2} nivel={0.92 * kprog(T, K.L + 0.4, K.L + 2.6, kEase.suave)} />)}
+        {fsvg(<ChampLleno T={T} x={540} y={1440} s={2.1} nivel={0.92 * kprog(T, K.L + 0.4, K.L + 2.6, kEase.suave)} />)}
       </Escena>
       {/* 9 · la sartén: el agua frena el dorado hasta que se evapora */}
       <Escena T={T} a={K.S} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<Sarten T={T} x={420} y={1000} charco={1 - kprog(T, K.S + 0.6, K.S + 3.6)} dora={kprog(T, K.S + 3.8, K.S + 5.4)} />)}
-        <Termometro x={930} y={470} alto={420} max={160} marcas={[0, 100, 150]} valor={T < K.S + 3.6 ? klerp(20, 100, kprog(T, K.S, K.S + 0.8)) : klerp(100, 150, kprog(T, K.S + 3.6, K.S + 5.2))} />
+        {fsvg(<g transform="translate(460 1160) scale(1.25) translate(-420 -1000)"><Sarten T={T} x={420} y={1000} charco={1 - kprog(T, K.S + 0.6, K.S + 3.6)} dora={kprog(T, K.S + 3.8, K.S + 5.4)} /></g>)}
+        <Termometro x={855} y={400} alto={420} max={160} marcas={[0, 100, 150]} valor={T < K.S + 3.6 ? klerp(20, 100, kprog(T, K.S, K.S + 0.8)) : klerp(100, 150, kprog(T, K.S + 3.6, K.S + 5.2))} />
       </Escena>
       {/* 10 · esponja… de aceite: bolsitas de aire de la carne cruda */}
       <Escena T={T} a={K.A} b={K.R} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Rebanada x={330} y={930} s={1.3} aceite={kprog(T, K.A + 1.2, K.A + 3.4)} />
-          {Array.from({ length: 5 }, (_, i) => { const f = kprog(T, K.A + 0.8 + i * 0.35, K.A + 1.4 + i * 0.35); return f > 0 && f < 1 ? <circle key={i} cx={240 + i * 45} cy={klerp(460, 700, f)} r={16} fill={LV.aceite} stroke={KC.ink} strokeWidth={4} /> : null; })}
+          <Rebanada x={460} y={1050} s={1.9} aceite={kprog(T, K.A + 1.2, K.A + 3.4)} />
+          {Array.from({ length: 5 }, (_, i) => { const f = kprog(T, K.A + 0.8 + i * 0.35, K.A + 1.4 + i * 0.35); return f > 0 && f < 1 ? <circle key={i} cx={330 + i * 65} cy={klerp(380, 640, f)} r={22} fill={LV.aceite} stroke={KC.ink} strokeWidth={4} /> : null; })}
         </>)}
       </Escena>
       {/* 11 · ya rebanado sí absorbe: primero lávalo, luego rebánalo */}
       <Escena T={T} a={K.R} b={K.Co} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Rebanada x={330} y={960} s={1.2} moja={kprog(T, K.R + 1.0, K.R + 2.6)} />
-          <Cuchillo x={klerp(900, 560, kprog(T, K.R, K.R + 0.7, kEase.sale))} y={720} rot={-8} />
-          {Array.from({ length: 8 }, (_, i) => { const f = ((T - K.R) * 1.2 + i * 0.125) % 1; return T > K.R + 0.8 ? <circle key={i} cx={210 + (i * 41) % 250} cy={klerp(560, 900, f)} r={10} fill={LV.agua} stroke={KC.ink} strokeWidth={3} opacity={1 - f} /> : null; })}
+          <Rebanada x={460} y={1050} s={1.9} moja={kprog(T, K.R + 1.0, K.R + 2.6)} />
+          <g transform={`translate(${klerp(1100, 600, kprog(T, K.R, K.R + 0.7, kEase.sale))} 690) scale(1.3)`}><Cuchillo x={0} y={0} rot={-8} /></g>
+          {Array.from({ length: 8 }, (_, i) => { const f = ((T - K.R) * 1.2 + i * 0.125) % 1; return T > K.R + 0.8 ? <circle key={i} cx={280 + (i * 61) % 370} cy={klerp(420, 980, f)} r={14} fill={LV.agua} stroke={KC.ink} strokeWidth={3} opacity={1 - f} /> : null; })}
         </>)}
       </Escena>
       {/* 12 · consejo: entero, bajo el chorro, sin jabón, y secarlo */}
       <Escena T={T} a={K.Co} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Llave T={T} x={360} y={560} abre={kprog(T, K.Co, K.Co + 0.4)} largo={T < K.Co + 3.0 ? 420 : 420 * (1 - kprog(T, K.Co + 3.0, K.Co + 3.3))} />
-          <Champinon x={360} y={1100} s={0.95} crece={1} abre={0.1} rot={Math.sin(T * 6) * 4} />
-          <Perlas x={360} y={1110} s={0.95} pts={PERLAS} o={kprog(T, K.Co + 0.5, K.Co + 1.0) * (1 - kprog(T, K.Co + 3.2, K.Co + 3.7))} />
-          <Jabon x={830} y={1050} tache={kprog(T, K.Co + 1.6, K.Co + 2.0)} />
-          {T > K.Co + 3.0 && <Trapo x={klerp(800, 420, kprog(T, K.Co + 3.0, K.Co + 3.5, kEase.sale))} y={980 + Math.sin(T * 10) * 8} rot={-10} />}
+          <g transform="translate(430 420) scale(1.4)"><Llave T={T} x={0} y={0} abre={kprog(T, K.Co, K.Co + 0.4)} largo={T < K.Co + 3.0 ? 420 : 420 * (1 - kprog(T, K.Co + 3.0, K.Co + 3.3))} /></g>
+          <Champinon x={430} y={1330} s={1.7} crece={1} abre={0.1} rot={Math.sin(T * 6) * 4} />
+          <Perlas x={430} y={1348} s={1.7} pts={PERLAS} o={kprog(T, K.Co + 0.5, K.Co + 1.0) * (1 - kprog(T, K.Co + 3.2, K.Co + 3.7))} />
+          <g transform="translate(870 1220) scale(1.4)"><Jabon x={0} y={0} tache={kprog(T, K.Co + 1.6, K.Co + 2.0)} /></g>
+          {T > K.Co + 3.0 && <g transform={`translate(${klerp(1000, 450, kprog(T, K.Co + 3.0, K.Co + 3.5, kEase.sale))} ${1110 + Math.sin(T * 10) * 8}) scale(1.6)`}><Trapo x={0} y={0} rot={-10} /></g>}
         </>)}
       </Escena>
       {/* 13 · cierre: el mismo tazón del inicio, ahora con su impermeable y el 92 % por dentro */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
+          <g transform="translate(440 880) scale(1.3) translate(-340 -880)">
           <Tazon x={340} y={880} w={520}>
             <ChampLleno T={T} x={0} y={0} s={0.62} nivel={0.92} capa={kprog(T, K.C + 0.8, K.C + 1.6)} />
           </Tazon>
-          <Esponja x={830} y={1080} s={0.85} moja={1} />
+          </g>
+          <Esponja x={850} y={1260} s={1.05} moja={1} />
         </>)}
       </Escena>
 
       {/* textos */}
-      <Cronometro T={T} at={K.G + 0.6} until={K.M - 0.3} factor={16} x={300} y={420} etiqueta="BAJO EL AGUA" />
-      <Etq T={T} at={K.G + 1.6} until={K.M - 0.3} x={60} y={545} texto="champiñón: casi nada" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.G + 2.4} until={K.M - 0.3} x={60} y={600} texto="esponja: se empapa" tam={32} color={KC.texto} />
-      <MitoTachado T={T} at={K.M + 0.1} tacharEn={K.M + 0.8} until={K.E - 0.3} texto="«no lo laves, se empapa»" x={440} y={730} tam={46} />
-      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 3.6} anio="2018" quien="America's Test Kitchen (EE. UU.)" revista="prueba publicada en 2018" x={540} y={620} />
-      <Chip T={T} at={K.E + 3.6} until={K.Ce - 0.3} texto="pesar · 1 min en agua · pesar" x={540} y={520} tam={38} borde={KC.ink} />
-      <Cronometro T={T} at={K.E + 3.8} until={K.Ce - 0.3} factor={33} x={540} y={680} etiqueta="SUMERGIDOS" />
-      <Etq T={T} at={K.E + 4.4} until={K.Ce - 0.3} x={40} y={1025} texto="6 tipos de hongos" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.Ce + 0.3} until={K.Ex - 0.3} texto="laminillas tapadas" x={330} y={470} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.Ce + 0.8} until={K.Ex - 0.3} x={60} y={590} texto="champiñón blanco" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.Ce + 1.1} until={K.Ex - 0.3} x={60} y={640} texto="Agaricus bisporus" it tam={32} color={KC.texto} />
-      <Etq T={T} at={K.Ce + 1.5} until={K.Ex - 0.3} x={660} y={1020} texto="el velo las tapa" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.Ce + 2.2} until={K.Ex - 0.3} texto="casi nada de agua" x={790} y={1110} tam={40} borde={KC.mint} />
-      <NumeroGigante T={T} at={K.Ex + 1.6} until={K.P - 0.3} valor={25} dur={1.0} prefijo="hasta " sufijo=" %" etiqueta="de su peso en agua" x={540} y={450} tam={150} color={KC.cyan} />
-      <Etq T={T} at={K.Ex + 0.4} until={K.P - 0.3} x={30} y={1110} texto="portobello" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.Ex + 0.6} until={K.P - 0.3} x={30} y={1150} texto="Agaricus bisporus" it tam={26} color={KC.texto} />
-      <Etq T={T} at={K.Ex + 0.8} until={K.P - 0.3} x={600} y={1110} texto="shiitake" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.Ex + 1.0} until={K.P - 0.3} x={600} y={1150} texto="Lentinula edodes" it tam={26} color={KC.texto} />
-      <Chip T={T} at={K.Ex + 0.2} until={K.Ex + 1.5} texto="laminillas expuestas" x={540} y={470} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.H + 0.1} until={K.L - 0.3} texto="AL MICROSCOPIO · LA PIEL DEL SOMBRERO" x={540} y={440} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={1130} texto="hifas" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.H + 2.0} until={K.L - 0.3} x={60} y={520} texto="hidrofobina: capa de varillitas" tam={30} color={KC.gold2} />
-      <Chip T={T} at={K.H + 4.2} until={K.L - 0.3} texto="la gota no moja" x={840} y={590} tam={36} borde={KC.cyan} />
-      <NumeroGigante T={T} at={K.L + 0.4} until={K.S - 0.3} valor={92} dur={2.2} prefijo="≈ " sufijo=" %" etiqueta="del champiñón es agua" x={400} y={480} tam={130} color={KC.cyan} />
-      <Chip T={T} at={K.L + 2.4} until={K.S - 0.3} texto="USDA: 91.8 g por cada 100 g (2021)" x={540} y={650} tam={30} borde={KC.ink} mono />
-      <Chip T={T} at={K.S + 0.3} until={K.S + 3.6} texto="con agua: el hongo se queda en 100 °C" x={420} y={520} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.S + 3.8} until={K.A - 0.3} texto="sin agua: sube y se dora" x={420} y={520} tam={36} borde={LV.dorado} />
-      <Chip T={T} at={K.A + 0.2} until={K.R - 0.3} texto="POR DENTRO · CARNE CRUDA" x={330} y={430} tam={30} borde={KC.ink} mono />
-      <Etq T={T} at={K.A + 1.0} until={K.R - 0.3} x={600} y={880} texto="bolsitas de aire" tam={30} color={KC.texto} />
-      <Chip T={T} at={K.A + 2.6} until={K.R - 0.3} texto="esponja… de aceite" x={330} y={560} tam={38} borde={LV.aceite} />
-      <Chip T={T} at={K.R + 1.2} until={K.Co - 0.3} texto="primero lávalo, luego rebánalo" x={540} y={480} tam={36} borde={KC.mint} />
-      <Chip T={T} at={K.Co + 0.6} until={K.C - 0.3} texto="agua corriente · sin jabón · trapo limpio" x={540} y={1430} tam={28} borde={KC.ink} mono />
-      <Etq T={T} at={K.Co + 1.2} until={K.C - 0.3} x={60} y={1500} texto="FDA: consejo para frutas y verduras en general" tam={22} color={KC.texto} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="impermeable + ≈ 92 % agua" x={400} y={520} tam={38} borde={KC.cyan} />
+      <Cronometro T={T} at={K.G + 0.6} until={K.M - 0.3} factor={16} x={330} y={380} etiqueta="BAJO EL AGUA" />
+      <Etq T={T} at={K.G + 1.6} until={K.M - 0.3} x={590} y={560} texto="champiñón: casi nada" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.G + 2.4} until={K.M - 0.3} x={640} y={1400} texto="esponja: se empapa" tam={30} color={KC.texto} />
+      <MitoTachado T={T} at={K.M + 0.1} tacharEn={K.M + 0.8} until={K.E - 0.3} texto="«no lo laves, se empapa»" x={540} y={560} tam={52} />
+      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 3.6} anio="2018" quien="America's Test Kitchen (EE. UU.)" revista="prueba publicada en 2018" x={540} y={440} />
+      <Chip T={T} at={K.E + 3.6} until={K.Ce - 0.3} texto="pesar · 1 min en agua · pesar" x={540} y={340} tam={38} borde={KC.ink} />
+      <Cronometro T={T} at={K.E + 3.8} until={K.Ce - 0.3} factor={33} x={540} y={520} etiqueta="SUMERGIDOS" />
+      <Etq T={T} at={K.E + 4.4} until={K.Ce - 0.3} x={60} y={1300} texto="6 tipos de hongos" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.Ce + 0.3} until={K.Ex - 0.3} texto="laminillas tapadas" x={400} y={420} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.Ce + 0.8} until={K.Ex - 0.3} x={640} y={600} texto="champiñón blanco" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.Ce + 1.1} until={K.Ex - 0.3} x={640} y={652} texto="Agaricus bisporus" it tam={32} color={KC.texto} />
+      <Etq T={T} at={K.Ce + 1.5} until={K.Ex - 0.3} x={660} y={1380} lado="izq" texto="el velo las tapa" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.Ce + 2.2} until={K.Ex - 0.3} texto="casi nada de agua" x={330} y={1480} tam={40} borde={KC.mint} />
+      <NumeroGigante T={T} at={K.Ex + 1.6} until={K.P - 0.3} valor={25} dur={1.0} prefijo="hasta " sufijo=" %" etiqueta="de su peso en agua" x={540} y={400} tam={150} color={KC.cyan} />
+      <Etq T={T} at={K.Ex + 0.4} until={K.P - 0.3} x={60} y={1360} texto="portobello" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Ex + 0.6} until={K.P - 0.3} x={60} y={1402} texto="Agaricus bisporus" it tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Ex + 0.8} until={K.P - 0.3} x={600} y={1360} texto="shiitake" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Ex + 1.0} until={K.P - 0.3} x={600} y={1402} texto="Lentinula edodes" it tam={26} color={KC.texto} />
+      <Chip T={T} at={K.Ex + 0.2} until={K.Ex + 1.5} texto="laminillas expuestas" x={540} y={400} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.H + 0.1} until={K.L - 0.3} texto="AL MICROSCOPIO · LA PIEL DEL SOMBRERO" x={540} y={345} tam={30} borde={KC.cyan} mono />
+      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={1500} texto="hifas" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.H + 2.0} until={K.L - 0.3} x={60} y={425} texto="hidrofobina: capa de varillitas" tam={30} color={KC.gold2} />
+      <Chip T={T} at={K.H + 4.2} until={K.L - 0.3} texto="la gota no moja" x={840} y={610} tam={36} borde={KC.cyan} />
+      <NumeroGigante T={T} at={K.L + 0.4} until={K.S - 0.3} valor={92} dur={2.2} prefijo="≈ " sufijo=" %" etiqueta="del champiñón es agua" x={540} y={440} tam={130} color={KC.cyan} />
+      <Chip T={T} at={K.L + 2.4} until={K.S - 0.3} texto="USDA: 91.8 g por cada 100 g (2021)" x={540} y={615} tam={30} borde={KC.ink} mono />
+      <Chip T={T} at={K.S + 0.3} until={K.S + 3.6} texto="con agua: el hongo se queda en 100 °C" x={440} y={345} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.S + 3.8} until={K.A - 0.3} texto="sin agua: sube y se dora" x={440} y={345} tam={36} borde={LV.dorado} />
+      <Chip T={T} at={K.A + 0.2} until={K.R - 0.3} texto="POR DENTRO · CARNE CRUDA" x={460} y={350} tam={30} borde={KC.ink} mono />
+      <Etq T={T} at={K.A + 1.0} until={K.R - 0.3} x={615} y={1200} texto="bolsitas de aire" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.A + 2.6} until={K.R - 0.3} texto="esponja… de aceite" x={790} y={480} tam={38} borde={LV.aceite} />
+      <Chip T={T} at={K.R + 1.2} until={K.Co - 0.3} texto="primero lávalo, luego rebánalo" x={540} y={360} tam={36} borde={KC.mint} />
+      <Chip T={T} at={K.Co + 0.6} until={K.C - 0.3} texto="agua corriente · sin jabón · trapo limpio" x={540} y={1450} tam={28} borde={KC.ink} mono />
+      <Etq T={T} at={K.Co + 1.2} until={K.C - 0.3} x={60} y={1515} texto="FDA: consejo para frutas y verduras en general" tam={22} color={KC.texto} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="impermeable + ≈ 92 % agua" x={440} y={470} tam={38} borde={KC.cyan} />
 
       {/* barras de escala (el dibujo es esquemático) */}
-      <BarraEscala T={T} at={K.G} until={K.M} texto="2 cm" largo={120} y={1600} color={KC.texto} />
-      <BarraEscala T={T} at={K.M} until={K.E} texto="2 cm" largo={150} y={1600} color={KC.texto} />
-      <BarraEscala T={T} at={K.E} until={K.Ce} texto="5 cm" largo={110} y={1600} color={KC.texto} />
-      <BarraEscala T={T} at={K.Ce} until={K.Ex} texto="2 cm" largo={140} y={1600} color={KC.texto} />
-      <BarraEscala T={T} at={K.Ex} until={K.P} texto="5 cm" largo={190} y={1600} color={KC.texto} />
-      <BarraEscala T={T} at={K.P} until={K.H} texto="2 cm" largo={200} y={1600} color={KC.texto} />
+      <BarraEscala T={T} at={K.G} until={K.M} texto="2 cm" largo={156} y={1600} color={KC.texto} />
+      <BarraEscala T={T} at={K.M} until={K.E} texto="2 cm" largo={273} y={1600} color={KC.texto} />
+      <BarraEscala T={T} at={K.E} until={K.Ce} texto="5 cm" largo={209} y={1600} color={KC.texto} />
+      <BarraEscala T={T} at={K.Ce} until={K.Ex} texto="2 cm" largo={210} y={1600} color={KC.texto} />
+      <BarraEscala T={T} at={K.Ex} until={K.P} texto="5 cm" largo={253} y={1600} color={KC.texto} />
+      <BarraEscala T={T} at={K.P} until={K.H} texto="2 cm" largo={267} y={1600} color={KC.texto} />
       <BarraEscala T={T} at={K.H} until={K.L} texto="esquemático (sin escala)" largo={0} y={1600} />
-      <BarraEscala T={T} at={K.L} until={K.S} texto="2 cm" largo={180} y={1600} color={KC.texto} />
-      <BarraEscala T={T} at={K.S} until={K.A} texto="10 cm" largo={200} y={1600} color={KC.texto} />
-      <BarraEscala T={T} at={K.A} until={K.R} texto="2 cm" largo={170} y={1600} color={KC.texto} />
-      <BarraEscala T={T} at={K.R} until={K.Co} texto="2 cm" largo={160} y={1600} color={KC.texto} />
-      <BarraEscala T={T} at={K.Co} until={K.C} texto="2 cm" largo={120} y={1600} color={KC.texto} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={120} y={1600} color={KC.texto} />
+      <BarraEscala T={T} at={K.L} until={K.S} texto="2 cm" largo={315} y={1600} color={KC.texto} />
+      <BarraEscala T={T} at={K.S} until={K.A} texto="10 cm" largo={250} y={1600} color={KC.texto} />
+      <BarraEscala T={T} at={K.A} until={K.R} texto="2 cm" largo={248} y={1600} color={KC.texto} />
+      <BarraEscala T={T} at={K.R} until={K.Co} texto="2 cm" largo={253} y={1600} color={KC.texto} />
+      <BarraEscala T={T} at={K.Co} until={K.C} texto="2 cm" largo={215} y={1600} color={KC.texto} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={156} y={1600} color={KC.texto} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.M - 0.1} texto="No es esponja: *casi no absorbe.*" />
