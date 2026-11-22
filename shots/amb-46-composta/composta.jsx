@@ -178,7 +178,7 @@ function CompostaShot() {
       {/* 4 · bacterias: ácidos e hidrógeno */}
       <Escena T={T} a={K.Ba} b={K.A} zoom={0.08}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 45%, #2a1d14 0%, ${KC.dark} 75%)` }}></div>
-        {svg(<>
+        {svg(<g transform="translate(540 970) scale(1.2) translate(-540 -760)">
           {Array.from({ length: 5 }, (_, i) => { const corte = kprog(T, K.Ba + 0.3 + i * 0.35, K.Ba + 0.8 + i * 0.35);
             return <g key={i}><path d={`M ${120 + i * 40} ${520 + i * 120} L ${520 - corte * 60} ${500 + i * 120 + 20}`} stroke={CP.cascara} strokeWidth={22} strokeLinecap="round" opacity={0.85} />
               <path d={`M ${560 + corte * 60} ${505 + i * 120 + 20} L ${960 - i * 30} ${540 + i * 110}`} stroke={CP.cascara} strokeWidth={22} strokeLinecap="round" opacity={0.85} /></g>; })}
@@ -187,7 +187,7 @@ function CompostaShot() {
             return <g key={'f' + i} transform={`translate(${140 + (i * 233) % 820} ${380 + ((i * 167) % 4) * 210 + Math.sin(T * 2 + i) * 10}) scale(${e})`}>
               <circle r={h ? 26 : 34} fill={h ? '#fff' : KC.orange} stroke={KC.ink} strokeWidth={5} />
               <text y={h ? 9 : 10} textAnchor="middle" style={{ font:`900 ${h ? 24 : 22}px ${KF.texto}` }} fill={KC.ink}>{h ? 'H₂' : 'ácido'}</text></g>; })}
-        </>)}
+        </g>)}
         <EscalaFija texto="al microscopio · esquema" largo={0} y={1440} color={KC.texto} />
       </Escena>
       {/* 5 · arqueas metanógenas → metano */}
@@ -224,9 +224,9 @@ function CompostaShot() {
       {/* 7 · ¿y si tuviera aire? */}
       <Escena T={T} a={K.P} b={K.Co} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={250} y={700} textAnchor="middle" style={{ font:`400 420px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 250 540)`}>?</text>
-          <Cascara x={590} y={1010} s={1.7} T={T} />
-          <Aire x={280} y={900} T={T} rot={20} s={1.4} /><Aire x={900} y={1180} T={T} rot={-160} s={1.3} /></>)}
+        {svg(<g transform="translate(0 170)"><text x={250} y={700} textAnchor="middle" style={{ font:`400 420px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 250 540)`}>?</text>
+          <Cascara x={600} y={980} s={2.0} T={T} />
+          <Aire x={280} y={900} T={T} rot={20} s={1.4} /><Aire x={900} y={1180} T={T} rot={-160} s={1.3} /></g>)}
       </Escena>
       {/* 8 · composta con aire: bacterias, hongos y lombrices */}
       <Escena T={T} a={K.Co} b={K.E}>
