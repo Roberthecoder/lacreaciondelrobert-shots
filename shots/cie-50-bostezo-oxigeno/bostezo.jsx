@@ -78,7 +78,7 @@ function Gas({ x, y, tipo = 'O₂', o = 1 }) {
 // Rayitas de conteo (de 5 en 5), con etiqueta.
 function Rayitas({ x, y, n = 0, etq, color = KC.ink, tam = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${tam})`}>
-    {etq && <text x={0} y={-80} style={{ font:`900 40px ${KF.texto}` }} fill={color}>{etq}</text>}
+    {etq && <text x={0} y={-80} style={{ font:`900 40px ${KF.texto}`, ...(color === '#0b1020' ? { stroke:'none' } : {}) }} fill={color}>{etq}</text>}
     {Array.from({ length: n }, (_, i) => { const g = Math.floor(i / 5), j = i % 5;
       return j < 4 ? <line key={i} x1={g * 150 + j * 28} y1={-60} x2={g * 150 + j * 28} y2={10} stroke={color} strokeWidth={10} strokeLinecap="round" />
         : <line key={i} x1={g * 150 - 14} y1={-8} x2={g * 150 + 100} y2={-50} stroke={KC.red} strokeWidth={10} strokeLinecap="round" />; })}
@@ -91,12 +91,12 @@ function Portapapeles({ x, y, T, at, filas }) {
     <rect x={-290} y={-300} width={580} height={600} rx={30} fill="#a8743f" stroke={KC.ink} strokeWidth={9} />
     <rect x={-250} y={-250} width={500} height={520} rx={12} fill="#fff" stroke={KC.ink} strokeWidth={6} />
     <rect x={-90} y={-325} width={180} height={60} rx={16} fill="#bfc6cf" stroke={KC.ink} strokeWidth={7} />
-    <text x={0} y={-175} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>CONTAR BOSTEZOS</text>
+    <text x={0} y={-175} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}`, stroke:'none' }} fill="#0b1020">CONTAR BOSTEZOS</text>
     {filas.map(([txt, t], i) => { const ok = kprog(T, t, t + 0.3, kEase.rebote);
       return <g key={i} transform={`translate(-200 ${-60 + i * 120})`}>
-        <rect x={0} y={-40} width={70} height={70} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+        <rect x={0} y={-40} width={70} height={70} rx={10} fill="#fff" stroke="#0b1020" strokeWidth={6} />
         {ok > 0 && <path d="M 10 -8 L 32 18 L 66 -36" stroke={KC.leaf} strokeWidth={12} fill="none" strokeLinecap="round" strokeLinejoin="round" transform={`scale(${ok})`} />}
-        <text x={100} y={14} style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink}>{txt}</text></g>; })}
+        <text x={100} y={14} style={{ font:`900 50px ${KF.texto}`, stroke:'none' }} fill="#0b1020">{txt}</text></g>; })}
   </g>;
 }
 // Interruptor despierto ⇄ dormido. pos 0 = despierto, 1 = dormido.
@@ -132,7 +132,11 @@ function Sudor({ x, y, T }) {
 function Bostezo() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
-  const CX = 330, CY = 820, CS = 1.1;          // la persona del inicio (y del cierre)
+  // la persona del inicio llena el cuadro; cuando llega el tanque se hace a un lado (pase a mano cine)
+  const mv = kprog(T, K.Gancho + 3.4, K.Gancho + 4.1, kEase.suave);
+  const CX = klerp(540, 400, mv), CY = 930, CS = klerp(1.9, 1.5, mv);
+  const FX = 540, FY = 1010, FS = 1.7;         // la misma persona en el cierre, al centro
+  const CGX = [190, 420, 660, 890], CGY = [470, 850, 470, 850], CGS = 0.62;   // cadena del contagio en zigzag
   // gancho: bosteza desde el cuadro 0; con la mascarilla de oxígeno, vuelve a bostezar
   const bGancho = Math.max(bz(T, K.Gancho - 0.5, 3.2), bz(T, K.Gancho + 4.4, 2.4));
   const masc = kprog(T, K.Gancho + 3.6, K.Gancho + 4.1, kEase.sale);
@@ -147,62 +151,65 @@ function Bostezo() {
   const fila = [0, 1, 2, 3].map((i) => bz(T, K.Contagio + 0.5 + i * 0.6, 2.0));
   return (
     <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.dark }}>
-      {/* 0 · gancho: alguien bosteza; ¿falta de oxígeno? → con mascarilla de oxígeno bosteza igual */}
+      {/* 0 · gancho: alguien bosteza a cuadro completo; ¿falta de oxígeno? → con mascarilla de oxígeno bosteza igual */}
       <Escena T={T} a={K.Gancho} b={K.Creencia}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <g opacity={masc}><Tanque x={760 + (1 - masc) * 400} y={1000} s={0.85} color={BO2} etq="O₂" />
-            <Manguera x1={760} y1={830} x2={CX + 10} y2={CY + 150 * CS} p={kprog(T, K.Gancho + 3.8, K.Gancho + 4.3)} /></g>
+          <g opacity={masc}><Tanque x={885 + (1 - masc) * 400} y={1080} s={1.2} color={BO2} etq="O₂" /></g>
           <CaraBostezo x={CX} y={CY} s={CS} b={bGancho} mascara={masc > 0.5 ? 'rgba(160,240,220,1)' : null} T={T} />
-          <Onomato T={T} at={K.Gancho + 0.1} dur={1.8} x={CX + 10} y={470} texto="¡AAAAUH!" color={KC.yellow} tam={120} rot={-6} />
-          <Onomato T={T} at={K.Gancho + 4.8} dur={1.6} x={780} y={560} texto="¡AAAAUH!" color={KC.yellow} tam={120} rot={5} />
+          <g opacity={masc}><Manguera x1={885} y1={800} x2={CX + 92 * CS} y2={CY + 96 * CS} p={kprog(T, K.Gancho + 3.8, K.Gancho + 4.3)} /></g>
+          <Onomato T={T} at={K.Gancho + 0.1} dur={1.8} x={540} y={380} texto="¡AAAAUH!" color={KC.yellow} tam={150} rot={-6} />
+          <Onomato T={T} at={K.Gancho + 4.8} dur={1.6} x={500} y={470} texto="¡AAAAUH!" color={KC.yellow} tam={130} rot={5} />
         </Lienzo>
-        <MitoTachado T={T} at={K.Gancho + 0.5} tacharEn={K.Gancho + 2.2} until={K.Gancho + 3.4} texto="¿falta de oxígeno?" x={CX + 20} y={1165} tam={48} />
-        <Chip T={T} at={K.Gancho + 3.6} until={K.Creencia - 0.1} texto="más oxígeno…" x={780} y={720} tam={42} borde={BO2} />
-        <Chip T={T} at={K.Gancho + 5.0} until={K.Creencia - 0.1} texto="…y siguen bostezando" x={540} y={330} tam={42} borde={KC.yellow} />
+        <MitoTachado T={T} at={K.Gancho + 0.5} tacharEn={K.Gancho + 2.2} until={K.Gancho + 3.4} texto="¿falta de oxígeno?" x={540} y={1440} tam={56} />
+        <Chip T={T} at={K.Gancho + 3.6} until={K.Creencia - 0.1} texto="más oxígeno…" x={800} y={690} tam={40} borde={BO2} />
+        <Chip T={T} at={K.Gancho + 5.0} until={K.Creencia - 0.1} texto="…y siguen bostezando" x={540} y={270} tam={42} borde={KC.yellow} />
       </Escena>
-      {/* 1 · la creencia: meter oxígeno, sacar dióxido de carbono */}
+      {/* 1 · la creencia: meter oxígeno, sacar dióxido de carbono (pulmones grandes al centro; los gases entran y salen del cuadro) */}
       <Escena T={T} a={K.Creencia} b={K.Estudio} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <PulmonesB x={560} y={940} s={1.25} T={T} resp={1} />
-          <CaraBostezo x={560} y={430} s={0.5} b={bz(T, K.Creencia + 0.2, 4.6)} />
-          {Array.from({ length: 6 }, (_, i) => { const f = ((T - K.Creencia) * 0.35 + i / 6) % 1, p = kprog(T, K.Creencia + 0.6, K.Creencia + 1.2);
-            const [px, py] = bAlong([[90, 760], [380, 520], [560, 480], [560, 760], [470, 960]], f); return <Gas key={'o' + i} x={px} y={py} tipo="O₂" o={p * Math.min(1, (1 - f) * 5)} />; })}
-          {Array.from({ length: 5 }, (_, i) => { const f = ((T - K.Creencia) * 0.35 + i / 5) % 1, p = kprog(T, K.Creencia + 2.4, K.Creencia + 3.0);
-            const [px, py] = bAlong([[660, 960], [560, 760], [560, 490], [760, 480], [1000, 680]], f); return <Gas key={'c' + i} x={px} y={py} tipo="CO₂" o={p * Math.min(1, (1 - f) * 5)} />; })}
+          <g transform="translate(540 890) scale(1.45) translate(-560 -760)">
+            <PulmonesB x={560} y={940} s={1.25} T={T} resp={1} />
+            <CaraBostezo x={560} y={430} s={0.5} b={bz(T, K.Creencia + 0.2, 4.6)} />
+            {Array.from({ length: 6 }, (_, i) => { const f = ((T - K.Creencia) * 0.35 + i / 6) % 1, p = kprog(T, K.Creencia + 0.6, K.Creencia + 1.2);
+              const [px, py] = bAlong([[90, 760], [380, 520], [560, 480], [560, 760], [470, 960]], f); return <Gas key={'o' + i} x={px} y={py} tipo="O₂" o={p * Math.min(1, (1 - f) * 5)} />; })}
+            {Array.from({ length: 5 }, (_, i) => { const f = ((T - K.Creencia) * 0.35 + i / 5) % 1, p = kprog(T, K.Creencia + 2.4, K.Creencia + 3.0);
+              const [px, py] = bAlong([[660, 960], [560, 760], [560, 490], [760, 480], [1000, 680]], f); return <Gas key={'c' + i} x={px} y={py} tipo="CO₂" o={p * Math.min(1, (1 - f) * 5)} />; })}
+          </g>
         </Lienzo>
-        <Chip T={T} at={K.Creencia + 0.3} until={K.Estudio - 0.1} texto="la idea vieja" x={780} y={330} tam={40} borde={KC.gold} />
-        <Etq T={T} at={K.Creencia + 1.0} until={K.Estudio - 0.1} x={330} y={780} texto="meter O₂" lado="izq" color={KC.texto} tam={38} />
-        <Etq T={T} at={K.Creencia + 2.6} until={K.Estudio - 0.1} x={1050} y={780} texto="sacar CO₂" lado="izq" color={KC.texto} tam={38} />
+        <Chip T={T} at={K.Creencia + 0.3} until={K.Estudio - 0.1} texto="la idea vieja" x={830} y={250} tam={40} borde={KC.gold} />
+        <Etq T={T} at={K.Creencia + 1.0} until={K.Estudio - 0.1} x={335} y={810} texto="meter O₂" lado="izq" color={KC.texto} tam={38} />
+        <Etq T={T} at={K.Creencia + 2.6} until={K.Estudio - 0.1} x={975} y={800} texto="sacar CO₂" lado="izq" color={KC.texto} tam={38} />
       </Escena>
-      {/* 2 · el estudio de 1987 */}
+      {/* 2 · el estudio de 1987: el portapapeles del experimento está desde el inicio; la tarjeta va chica y arriba */}
       <Escena T={T} a={K.Estudio} b={K.Gases} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          {T > K.Estudio + 3.2 && <Portapapeles x={400} y={800} T={T} at={K.Estudio + 3.2}
-            filas={[['más O₂', K.Estudio + 4.0], ['más CO₂', K.Estudio + 4.6], ['ejercicio', K.Estudio + 5.2]]} />}
+          <g transform="translate(540 1030) scale(1.5)"><Portapapeles x={0} y={0} T={T} at={K.Estudio - 0.3}
+            filas={[['más O₂', K.Estudio + 4.0], ['más CO₂', K.Estudio + 4.6], ['ejercicio', K.Estudio + 5.2]]} /></g>
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 3.1} anio="1987" quien="Robert Provine · UMBC, Maryland" revista="psicólogo · Behavioral and Neural Biology" x={540} y={760} />
+        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Gases - 0.1} anio="1987" quien="Robert Provine · UMBC, Maryland" revista="psicólogo · Behavioral and Neural Biology" x={540} y={340} />
       </Escena>
-      {/* 3 · los gases: voluntarios con mascarilla */}
+      {/* 3 · los gases: dos voluntarios grandes con mascarilla; tanques y conteo debajo */}
       <Escena T={T} a={K.Gases} b={K.Resultado} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <Tanque x={110} y={930} s={0.6} color={BO2} etq="O₂" /><Tanque x={970} y={930} s={0.6} color={BCO2} etq="CO₂" />
-          <Manguera x1={110} y1={860} x2={290} y2={830} p={kprog(T, K.Gases + 0.4, K.Gases + 0.9)} />
-          <Manguera x1={970} y1={860} x2={790} y2={830} p={kprog(T, K.Gases + 0.6, K.Gases + 1.1)} />
-          <CaraBostezo x={290} y={700} s={0.62} b={Math.max(...yI.map((t) => bz(T, t, 1.9)))} mascara={BO2} ropa={KC.pink} />
-          <CaraBostezo x={790} y={700} s={0.62} b={Math.max(...yD.map((t) => bz(T, t, 1.9)))} mascara={BCO2} ropa={KC.orange} pelo="#6b3b1f" />
-          <g opacity={kprog(T, K.Gases + 3.2, K.Gases + 3.6)}><Rayitas x={200} y={1140} n={cuenta(yI)} etq="bostezos" /><Rayitas x={700} y={1140} n={cuenta(yD)} etq="bostezos" /></g>
+          <Tanque x={115} y={1260} s={0.75} color={BO2} etq="O₂" /><Tanque x={965} y={1260} s={0.75} color={BCO2} etq="CO₂" />
+          <CaraBostezo x={270} y={710} s={0.95} b={Math.max(...yI.map((t) => bz(T, t, 1.9)))} mascara={BO2} ropa={KC.pink} />
+          <CaraBostezo x={810} y={710} s={0.95} b={Math.max(...yD.map((t) => bz(T, t, 1.9)))} mascara={BCO2} ropa={KC.orange} pelo="#6b3b1f" />
+          <Manguera x1={115} y1={1086} x2={270} y2={870} p={kprog(T, K.Gases + 0.4, K.Gases + 0.9)} />
+          <Manguera x1={965} y1={1086} x2={810} y2={870} p={kprog(T, K.Gases + 0.6, K.Gases + 1.1)} />
+          <g opacity={kprog(T, K.Gases + 3.2, K.Gases + 3.6)}><Rayitas x={250} y={1310} n={cuenta(yI)} etq="bostezos" tam={1.3} /><Rayitas x={630} y={1310} n={cuenta(yD)} etq="bostezos" tam={1.3} /></g>
         </Lienzo>
-        <Chip T={T} at={K.Gases + 0.3} until={K.Resultado - 0.1} texto="más O₂" x={290} y={400} tam={44} borde={BO2} />
-        <Chip T={T} at={K.Gases + 1.0} until={K.Resultado - 0.1} texto="más CO₂" x={790} y={400} tam={44} borde={BCO2} />
+        <Chip T={T} at={K.Gases + 0.3} until={K.Resultado - 0.1} texto="más O₂" x={270} y={390} tam={46} borde={BO2} />
+        <Chip T={T} at={K.Gases + 1.0} until={K.Resultado - 0.1} texto="más CO₂" x={810} y={390} tam={46} borde={BCO2} />
       </Escena>
-      {/* 4 · resultado: igual en las dos condiciones */}
+      {/* 4 · resultado: igual en las dos condiciones (barras grandes, de borde a borde) */}
       <Escena T={T} a={K.Resultado} b={K.Ejercicio} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
+          <g transform="translate(540 1280) scale(1.35) translate(-540 -1020)">
           {[[300, BO2, 'más O₂', 0.3], [780, BCO2, 'más CO₂', 1.0]].map(([bx, c, et, d]) => { const h = 420 * kprog(T, K.Resultado + d, K.Resultado + d + 1.2, kEase.sale);
             return <g key={et}><rect x={bx - 120} y={1020 - h} width={240} height={h} rx={18} fill={c} stroke={KC.ink} strokeWidth={8} />
               <line x1={bx - 160} y1={1020} x2={bx + 160} y2={1020} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
@@ -210,83 +217,89 @@ function Bostezo() {
               {h > 300 && <CaraBostezo x={bx} y={1020 - h - 110} s={0.36} b={bz(T, K.Resultado + d + 1.4, 2.6)} ropa={c} />}</g>; })}
           <TextoSvg x={540} y={860} tam={170} color={KC.yellow} s={klerp(0.3, 1, kprog(T, K.Resultado + 3.0, K.Resultado + 3.4, kEase.rebote))} o={kprog(T, K.Resultado + 3.0, K.Resultado + 3.2)}>=</TextoSvg>
           <text x={540} y={1135} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Resultado + 1.5, K.Resultado + 2)}>(barras ilustrativas)</text>
+          </g>
         </Lienzo>
-        <Chip T={T} at={K.Resultado + 0.3} until={K.Resultado + 2.5} texto="más O₂: no quitó los bostezos" x={540} y={400} tam={40} borde={BO2} />
-        <Chip T={T} at={K.Resultado + 3.0} until={K.Ejercicio - 0.1} texto="más CO₂: no dio más bostezos" x={540} y={400} tam={40} borde={BCO2} />
+        <Chip T={T} at={K.Resultado + 0.3} until={K.Resultado + 2.5} texto="más O₂: no quitó los bostezos" x={540} y={300} tam={40} borde={BO2} />
+        <Chip T={T} at={K.Resultado + 3.0} until={K.Ejercicio - 0.1} texto="más CO₂: no dio más bostezos" x={540} y={300} tam={40} borde={BCO2} />
       </Escena>
-      {/* 5 · ejercicio: subir y bajar un escalón */}
+      {/* 5 · ejercicio: subir y bajar un escalón (persona grande; el piso cruza todo el cuadro) */}
       <Escena T={T} a={K.Ejercicio} b={K.Pregunta} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <rect x={60} y={1070} width={960} height={30} fill="#7a4a22" stroke={KC.ink} strokeWidth={8} />
-          <rect x={170} y={940} width={400} height={130} rx={10} fill="#c9a06a" stroke={KC.ink} strokeWidth={9} />
-          <g transform={`translate(0 ${-sube * 130})`}>
-            <PersonaSimple x={370} yPies={1080} alto={560} color={KC.cyan} brazos={0.1 + 0.1 * sube} cara={T > K.Ejercicio + 2.6 && T < K.Ejercicio + 4.2 ? 'o' : 'normal'} />
-            <OndasArco x={440} y={570} ang={-20} T={T * 1.6} color="#fff" largo={110} n={3} grosor={8} />
-            <Sudor x={290} y={520} T={T} />
+          <g transform="translate(320 1330) scale(1.4) translate(-370 -1080)">
+            <rect x={60} y={1070} width={960} height={30} fill="#7a4a22" stroke={KC.ink} strokeWidth={8} />
+            <rect x={170} y={940} width={400} height={130} rx={10} fill="#c9a06a" stroke={KC.ink} strokeWidth={9} />
+            <g transform={`translate(0 ${-sube * 130})`}>
+              <PersonaSimple x={370} yPies={1080} alto={560} color={KC.cyan} brazos={0.1 + 0.1 * sube} cara={T > K.Ejercicio + 2.6 && T < K.Ejercicio + 4.2 ? 'o' : 'normal'} />
+              <OndasArco x={440} y={570} ang={-20} T={T * 1.6} color="#fff" largo={110} n={3} grosor={8} />
+              <Sudor x={290} y={520} T={T} />
+            </g>
           </g>
-          <Onomato T={T} at={K.Ejercicio + 0.8} dur={1.4} x={760} y={600} texto="¡UF, UF!" color={KC.yellow} tam={100} rot={-6} />
-          <g opacity={kprog(T, K.Ejercicio + 2.0, K.Ejercicio + 2.4)}>
-            <rect x={640} y={500} width={400} height={330} rx={26} fill="rgba(255,255,255,.88)" stroke={KC.ink} strokeWidth={7} />
-            <Rayitas x={680} y={640} n={2} etq="sin ejercicio" tam={0.8} />
-            <Rayitas x={680} y={790} n={T > K.Ejercicio + 3.0 ? 2 : 1} etq="con ejercicio" tam={0.8} />
+          <Onomato T={T} at={K.Ejercicio + 0.8} dur={1.4} x={790} y={590} texto="¡UF, UF!" color={KC.yellow} tam={110} rot={-6} />
+          <g opacity={kprog(T, K.Ejercicio + 2.0, K.Ejercicio + 2.4)} transform="translate(-30 190)">
+            <rect x={640} y={500} width={400} height={330} rx={26} fill="rgba(255,255,255,.92)" stroke={KC.ink} strokeWidth={7} />
+            <Rayitas x={680} y={640} n={2} etq="sin ejercicio" tam={0.8} color="#0b1020" />
+            <Rayitas x={680} y={790} n={T > K.Ejercicio + 3.0 ? 2 : 1} etq="con ejercicio" tam={0.8} color="#0b1020" />
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Ejercicio + 0.3} until={K.Ejercicio + 2.8} texto="respira más rápido" x={760} y={400} tam={42} borde={KC.cyan} />
-        <Chip T={T} at={K.Ejercicio + 3.3} until={K.Pregunta - 0.1} texto="bostezos: igual" x={760} y={400} tam={44} borde={KC.yellow} />
+        <Chip T={T} at={K.Ejercicio + 0.3} until={K.Ejercicio + 2.8} texto="respira más rápido" x={760} y={340} tam={42} borde={KC.cyan} />
+        <Chip T={T} at={K.Ejercicio + 3.3} until={K.Pregunta - 0.1} texto="bostezos: igual" x={760} y={340} tam={44} borde={KC.yellow} />
       </Escena>
       {/* 6 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Hipotesis} />
-      {/* 7 · hipótesis 1: enfriar el cerebro (por dentro) */}
+      {/* 7 · hipótesis 1: enfriar el cerebro (por dentro; la cabeza llena el cuadro) */}
       <Escena T={T} a={K.Hipotesis} b={K.Otra} fondo={KC.noche}>
         <Ambiente T={T} n={20} color="rgba(255,255,255,.14)" />
         <Lienzo>
-          <CabezaPerfil x={420} y={830} s={1.35} boca={bz(T, K.Hipotesis + 1.8, 2.6)} corte={1} />
-          <g opacity={kprog(T, K.Hipotesis + 2.6, K.Hipotesis + 3.2)}>
-            <ellipse cx={420 + 0} cy={830 - 70 * 1.35} rx={130} ry={95} fill={KC.cyan} opacity={0.25 + 0.1 * Math.sin(T * 5)} />
+          <g transform="translate(450 940) scale(1.4) translate(-420 -830)">
+            <CabezaPerfil x={420} y={830} s={1.35} boca={bz(T, K.Hipotesis + 1.8, 2.6)} corte={1} />
+            <g opacity={kprog(T, K.Hipotesis + 2.6, K.Hipotesis + 3.2)}>
+              <ellipse cx={420 + 0} cy={830 - 70 * 1.35} rx={130} ry={95} fill={KC.cyan} opacity={0.25 + 0.1 * Math.sin(T * 5)} />
+            </g>
+            <OndasArco x={760} y={1000} ang={190} T={T} color={KC.cyan} largo={200} o={kprog(T, K.Hipotesis + 2.0, K.Hipotesis + 2.5) * (1 - kprog(T, K.Otra - 0.6, K.Otra - 0.2))} />
           </g>
-          <OndasArco x={760} y={1000} ang={190} T={T} color={KC.cyan} largo={200} o={kprog(T, K.Hipotesis + 2.0, K.Hipotesis + 2.5) * (1 - kprog(T, K.Otra - 0.6, K.Otra - 0.2))} />
         </Lienzo>
         <div style={{ opacity:kprog(T, K.Hipotesis + 2.4, K.Hipotesis + 2.9) }}>
-          <Termometro x={930} y={560} alto={420} valor={klerp(80, 35, kprog(T, K.Hipotesis + 2.8, K.Hipotesis + 4.2, kEase.sale))} marcas={[]} color={klerp(0, 1, kprog(T, K.Hipotesis + 2.8, K.Hipotesis + 4.2)) > 0.5 ? KC.cyan : KC.red} />
+          <Termometro x={955} y={470} alto={420} valor={klerp(80, 35, kprog(T, K.Hipotesis + 2.8, K.Hipotesis + 4.2, kEase.sale))} marcas={[]} color={klerp(0, 1, kprog(T, K.Hipotesis + 2.8, K.Hipotesis + 4.2)) > 0.5 ? KC.cyan : KC.red} />
         </div>
-        <Chip T={T} at={K.Hipotesis + 0.2} until={K.Hipotesis + 2.1} texto="nadie lo sabe con certeza" x={540} y={400} tam={42} borde={KC.gold} />
-        <Chip T={T} at={K.Hipotesis + 2.2} until={K.Otra - 0.1} texto="hipótesis" x={540} y={400} tam={44} borde={KC.lilac} />
-        <Etq T={T} at={K.Hipotesis + 3.0} until={K.Otra - 0.2} x={130} y={470} texto="¿enfriar el cerebro?" lado="der" color={KC.cyan} tam={34} />
+        <Chip T={T} at={K.Hipotesis + 0.2} until={K.Hipotesis + 2.1} texto="nadie lo sabe con certeza" x={540} y={300} tam={42} borde={KC.gold} />
+        <Chip T={T} at={K.Hipotesis + 2.2} until={K.Otra - 0.1} texto="hipótesis" x={540} y={300} tam={44} borde={KC.lilac} />
+        <Etq T={T} at={K.Hipotesis + 3.0} until={K.Otra - 0.2} x={90} y={420} texto="¿enfriar el cerebro?" lado="der" color={KC.cyan} tam={36} />
       </Escena>
-      {/* 8 · hipótesis 2: cambiar de estado */}
+      {/* 8 · hipótesis 2: cambiar de estado (interruptor y persona al centro, grandes) */}
       <Escena T={T} a={K.Otra} b={K.Contagio} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <Interruptor x={620} y={760} pos={pos} T={T} />
-          <CaraBostezo x={620} y={1060} s={0.42} b={Math.max(bz(T, K.Otra + 1.6, 1.6), bz(T, K.Otra + 3.4, 1.4))} dormido={pos > 0.5 ? 1 : 0} ropa={KC.lilac} />
-          {pos > 0.5 && <TextoSvg x={760} y={1010} tam={64} color="#fff" rot={-8} o={pos}>Zzz</TextoSvg>}
+          <g transform="translate(540 710) scale(1.4)"><Interruptor x={0} y={0} pos={pos} T={T} /></g>
+          <CaraBostezo x={540} y={1270} s={0.95} b={Math.max(bz(T, K.Otra + 1.6, 1.6), bz(T, K.Otra + 3.4, 1.4))} dormido={pos > 0.5 ? 1 : 0} ropa={KC.lilac} />
+          {pos > 0.5 && <TextoSvg x={800} y={1130} tam={110} color="#fff" rot={-8} o={pos}>Zzz</TextoSvg>}
         </Lienzo>
-        <Chip T={T} at={K.Otra + 0.3} until={K.Contagio - 0.1} texto="hipótesis" x={720} y={400} tam={44} borde={KC.lilac} />
+        <Chip T={T} at={K.Otra + 0.3} until={K.Contagio - 0.1} texto="hipótesis" x={540} y={250} tam={44} borde={KC.lilac} />
       </Escena>
-      {/* 9 · el bostezo se contagia */}
+      {/* 9 · el bostezo se contagia: cadena en zigzag que llena el cuadro; abajo, el libro y quien lo lee */}
       <Escena T={T} a={K.Contagio} b={K.Cierre} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          {fila.map((b, i) => <CaraBostezo key={i} x={150 + i * 260} y={770} s={0.46} b={b} ropa={[KC.yellow, KC.cyan, KC.mint, KC.orange][i]} pelo={i % 2 ? '#6b3b1f' : CPELO} />)}
-          {[0, 1, 2].map((i) => <FlechaRecta key={i} x1={215 + i * 260} y1={640} x2={330 + i * 260} y2={640} p={kprog(T, K.Contagio + 0.8 + i * 0.6, K.Contagio + 1.1 + i * 0.6, kEase.sale)} color={KC.yellow} grosor={10} punta={24} />)}
+          {fila.map((b, i) => <CaraBostezo key={i} x={CGX[i]} y={CGY[i]} s={CGS} b={b} ropa={[KC.yellow, KC.cyan, KC.mint, KC.orange][i]} pelo={i % 2 ? '#6b3b1f' : CPELO} />)}
+          {[0, 1, 2].map((i) => { const dx = CGX[i + 1] - CGX[i], dy = CGY[i + 1] - CGY[i], L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L;
+            return <FlechaRecta key={i} x1={CGX[i] + ux * 165} y1={CGY[i] + uy * 165 + 20} x2={CGX[i + 1] - ux * 165} y2={CGY[i + 1] - uy * 165 + 20} p={kprog(T, K.Contagio + 0.8 + i * 0.6, K.Contagio + 1.1 + i * 0.6, kEase.sale)} color={KC.yellow} grosor={12} punta={30} />; })}
           <g opacity={kprog(T, K.Contagio + 3.0, K.Contagio + 3.4)}>
-            <Libro x={330} y={1050} s={0.62} abre={kprog(T, K.Contagio + 3.0, K.Contagio + 3.7, kEase.sale)} />
-            <CaraBostezo x={800} y={1000} s={0.42} b={bz(T, K.Contagio + 4.4, 1.5)} ropa={KC.pink} />
+            <Libro x={300} y={1320} s={0.85} abre={kprog(T, K.Contagio + 3.0, K.Contagio + 3.7, kEase.sale)} />
+            <CaraBostezo x={800} y={1290} s={0.62} b={bz(T, K.Contagio + 4.4, 1.5)} ropa={KC.pink} />
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Contagio + 0.3} until={K.Cierre - 0.1} texto="se contagia" x={300} y={400} tam={46} borde={KC.yellow} />
+        <Chip T={T} at={K.Contagio + 0.3} until={K.Cierre - 0.1} texto="se contagia" x={540} y={230} tam={46} borde={KC.yellow} />
       </Escena>
-      {/* 10 · cierre: la misma persona; ¿contagio o sueño? oxígeno no */}
+      {/* 10 · cierre: la misma persona, grande y al centro; ¿contagio o sueño? oxígeno no */}
       <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <CaraBostezo x={CX} y={CY} s={CS} b={bz(T, K.Cierre + 0.2, 2.6)} T={T} />
+          <CaraBostezo x={FX} y={FY} s={FS} b={bz(T, K.Cierre + 0.2, 2.6)} T={T} />
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 0.2} until={K.Outro - 0.1} texto="¿ya bostezaste?" x={540} y={400} tam={46} borde={KC.gold} />
-        <Chip T={T} at={K.Cierre + 1.4} until={K.Outro - 0.1} texto="¿el contagio?" x={830} y={640} tam={40} borde={KC.yellow} />
-        <Chip T={T} at={K.Cierre + 2.0} until={K.Outro - 0.1} texto="¿el sueño?" x={830} y={780} tam={40} borde={KC.lilac} />
-        <MitoTachado T={T} at={K.Cierre + 2.8} tacharEn={K.Cierre + 3.5} until={K.Outro - 0.1} texto="falta de oxígeno" x={790} y={950} tam={38} />
+        <Chip T={T} at={K.Cierre + 0.2} until={K.Outro - 0.1} texto="¿ya bostezaste?" x={540} y={290} tam={48} borde={KC.gold} />
+        <Chip T={T} at={K.Cierre + 1.4} until={K.Outro - 0.1} texto="¿el contagio?" x={300} y={425} tam={42} borde={KC.yellow} />
+        <Chip T={T} at={K.Cierre + 2.0} until={K.Outro - 0.1} texto="¿el sueño?" x={780} y={425} tam={42} borde={KC.lilac} />
+        <MitoTachado T={T} at={K.Cierre + 2.8} tacharEn={K.Cierre + 3.5} until={K.Outro - 0.1} texto="falta de oxígeno" x={540} y={550} tam={40} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Creencia - 0.1} texto="No es falta de *oxígeno.*" />
