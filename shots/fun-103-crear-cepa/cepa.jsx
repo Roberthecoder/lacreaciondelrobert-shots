@@ -228,7 +228,7 @@ function CepaShot() {
       {/* 1 · corte: se abre la seta y las pinzas toman tejido de adentro */}
       <Escena T={T} a={K.Co} b={K.A} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Zm k={1.25} dx={-56} dy={-170}>
+        {fsvg(<Zm k={1.38} dx={-115} dy={-213}>
           <SetaPartida x={400} y={900} s={1.2} abre={kprog(T, K.Co + 0.2, K.Co + 1.2, kEase.sale)} hueco={kprog(T, K.Co + 2.4, K.Co + 2.6)} />
           {/* polvo y microbios en la superficie de afuera */}
           {T > K.Co + 1.6 && [[180, 700], [260, 640], [700, 620], [820, 700], [150, 820], [860, 820], [330, 600]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={7 + (i % 3) * 3} fill={i % 2 ? '#6b8f3a' : '#8a6a4a'} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.Co + 1.6 + i * 0.06, K.Co + 1.9 + i * 0.06)} />)}
@@ -375,9 +375,9 @@ function CepaShot() {
       <Etq T={T} at={K.G + 0.8} until={K.Co - 0.3} x={625} y={1346} texto={TX.etqSetaCi} it tam={30} color={KC.ink} />
       <Chip T={T} at={K.G + 0.9} until={K.Co - 0.3} texto={TX.semilla} x={200} y={236} tam={30} borde={KC.red} />
       <Chip T={T} at={K.G + 2.0} until={K.Co - 0.3} texto={TX.pedacito} x={545} y={240} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.Co + 1.4} until={K.A - 0.3} texto={TX.adentro} x={560} y={1365} tam={34} borde={KC.mint} />
-      <Chip T={T} at={K.Co + 1.9} until={K.A - 0.3} texto={TX.afuera} x={330} y={420} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.Co + 2.6} until={K.A - 0.3} texto={TX.mm} x={780} y={1200} tam={32} borde={KC.gold} mono />
+      <Chip T={T} at={K.Co + 1.4} until={K.A - 0.3} texto={TX.adentro} x={560} y={1470} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.Co + 1.9} until={K.A - 0.3} texto={TX.afuera} x={330} y={480} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.Co + 2.6} until={K.A - 0.3} texto={TX.mm} x={780} y={1275} tam={32} borde={KC.gold} mono />
       <Etq T={T} at={K.A + 0.4} until={K.A + 1.8} x={40} y={690} texto={TX.flama} tam={24} color={KC.ink} />
       <Chip T={T} at={K.A + 1.0} until={K.H - 0.3} texto={TX.sinAire} x={660} y={615} tam={24} borde={KC.ink} />
       <Chip T={T} at={K.A + 0.6} until={K.H - 0.3} texto={TX.flujo} x={660} y={545} tam={28} borde={KC.ink} />
@@ -415,7 +415,7 @@ function CepaShot() {
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Co} texto="5 cm" largo={210} />
-      <BarraEscala T={T} at={K.Co} until={K.A} texto="1 cm" largo={138} />
+      <BarraEscala T={T} at={K.Co} until={K.A} texto="1 cm" largo={152} />
       <BarraEscala T={T} at={K.A} until={K.H} texto="1 cm" largo={79} />
       <BarraEscala T={T} at={K.H} until={K.Pa} texto="1 cm" largo={83} />
       <BarraEscala T={T} at={K.Pa} until={K.P} texto="1 cm" largo={69} />
