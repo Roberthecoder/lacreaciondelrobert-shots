@@ -2,7 +2,7 @@
 // Shot Biotecnológico #51 · Tu frijol fabrica su propio abono (Rhizobium, nódulos y nitrogenasa) — NARRADO (N1 por dentro + N5 inoculante).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático y no está a escala entre sí.
 const VERDE = '#3fbf4a', VERDE_OSC = '#2a8a36', TALLO = '#4f9e3a', RAIZ = '#e8d2a6', NODULO = '#e7c08f', TIERRA = '#8a5a34',
-  RIZO = '#7fd88a', NOD = '#ff6fa8', FLAV = '#ffe11a', AZUL_N = '#2f6bff', MOFE = '#b18cff', FEPROT = '#ff8a1f';
+  RIZO = '#7fd88a', SUELO = '#3a2617', SUELO2 = '#3d2a1b', NOD = '#ff6fa8', FLAV = '#ffe11a', AZUL_N = '#2f6bff', MOFE = '#b18cff', FEPROT = '#ff8a1f';
 
 function CapaR({ children, z }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{children}</svg>;
@@ -314,24 +314,24 @@ function Rhizobium() {
       {/* 0 · gancho: arrancan la mata y aparecen las bolitas */}
       <Escena T={T} a={K.G} b={K.Ai} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <div style={{ position:'absolute', left:0, right:0, top:klerp(1180, 1560, arranca), height:800, background:TIERRA }}></div>
+        <div style={{ position:'absolute', left:0, right:0, top:klerp(1440, 1760, arranca), height:900, background:SUELO }}></div>
         <CapaR>
-          <Mata T={T} x={390} y={klerp(1180, 860, arranca)} s={1.08} nod={kprog(T, K.G + 0.4, K.G + 1.6)} tierra={kprog(T, K.G + 0.3, K.G + 2.4)} brillo={kprog(T, K.G + 2.2, K.G + 3.0)} />
-          <Puno x={430} y={klerp(1180, 860, arranca) - 330} s={0.85} />
+          <Mata T={T} x={520} y={klerp(1440, 1150, arranca)} s={1.35} nod={kprog(T, K.G + 0.4, K.G + 1.6)} tierra={kprog(T, K.G + 0.3, K.G + 2.4)} brillo={kprog(T, K.G + 2.2, K.G + 3.0)} />
+          <Puno x={575} y={klerp(1440, 1150, arranca) - 412} s={1.06} />
         </CapaR>
         <Ambiente T={T} n={16} color="rgba(255,255,255,.45)" />
       </Escena>
       {/* 1 · aire: 78 % nitrógeno */}
       <Escena T={T} a={K.Ai} b={K.Se} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <div style={{ position:'absolute', left:0, right:0, top:1220, bottom:0, background:TIERRA }}></div>
+        <div style={{ position:'absolute', left:0, right:0, top:1220, bottom:0, background:SUELO }}></div>
         <CapaR>
           {aire.map((a, i) => { const q = kprog(T, K.Ai + i * 0.03, K.Ai + i * 0.03 + 0.4, kEase.rebote); const ax = a.x + Math.sin(T * a.v * 2 + a.ph) * 30, ay = a.y + Math.cos(T * a.v * 1.6 + a.ph) * 24;
             if (q <= 0) return null;
             return <g key={i} transform={`translate(${ax} ${ay}) scale(${q})`}>
               {a.tipo === 'N' ? <N2 x={0} y={0} s={0.55} rot={a.rot + T * 20} /> : a.tipo === 'O' ? <Par x={0} y={0} s={0.55} rot={a.rot + T * 20} color={KC.red} letra="O" /> : <circle r={16} fill="#9aa3b5" stroke={KC.ink} strokeWidth={4} />}
             </g>; })}
-          <Mata T={T} x={540} y={1220} s={0.75} nod={0} />
+          <Mata T={T} x={540} y={1220} s={0.9} nod={0} />
           {/* las parejas rebotan contra la hoja */}
           {[0, 1, 2].map((i) => { const u = ((T - K.Ai - 1.6 - i * 0.7) % 2.1) / 2.1; if (T < K.Ai + 1.6 + i * 0.7) return null;
             const ex = 470 + i * 70, ey = 780 + i * 20; return <N2 key={i} x={ex - 140 + Math.abs(0.5 - u) * 280} y={ey - 180 * Math.sin(u * Math.PI)} s={0.7} rot={T * 60} />; })}
@@ -340,29 +340,29 @@ function Rhizobium() {
       {/* 2–4 · la raíz por dentro: señal, respuesta, túnel */}
       <Escena T={T} a={K.Se} b={K.Ba} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        <div style={{ position:'absolute', left:0, right:0, top:560, bottom:0, background:'#a87a4e' }}></div>
+        <div style={{ position:'absolute', left:0, right:0, top:640, bottom:0, background:SUELO2 }}></div>
         <CapaR>
-          <Mata T={T} x={540} y={560} s={1.4} nod={0} />
+          <Mata T={T} x={540} y={640} s={1.4} nod={0} />
         </CapaR>
       </Escena>
-      <Lupa T={T} at={K.Se + 0.1} until={K.Ba - 0.15} x={430} y={830} r={300} fx={640} fy={900} tinte={KC.mint} etiqueta="AL MICROSCOPIO · PELO DE LA RAÍZ"
+      <Lupa T={T} at={K.Se + 0.1} until={K.Ba - 0.15} x={480} y={970} r={350} fx={640} fy={980} tinte={KC.mint} etiqueta="AL MICROSCOPIO · PELO DE LA RAÍZ"
         interior={(t) => <PeloRaiz T={t} K={K} />} />
       {/* 5 · nódulo por dentro */}
       <Escena T={T} a={K.Ba} b={K.Pr} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        <div style={{ position:'absolute', left:0, right:0, top:420, bottom:0, background:'#a87a4e' }}></div>
+        <div style={{ position:'absolute', left:0, right:0, top:420, bottom:0, background:SUELO2 }}></div>
         <CapaR><Mata T={T} x={540} y={300} s={1.6} nod={1} /></CapaR>
       </Escena>
-      <Lupa T={T} at={K.Ba + 0.05} until={K.Pr - 0.15} x={580} y={830} r={310} fx={720} fy={560} tinte={KC.pink} etiqueta="POR DENTRO · NÓDULO"
+      <Lupa T={T} at={K.Ba + 0.05} until={K.Pr - 0.15} x={560} y={920} r={360} fx={720} fy={560} tinte={KC.pink} etiqueta="POR DENTRO · NÓDULO"
         interior={(t) => <CelulaNodulo T={t} K={K} />} />
       {/* 6 · pregunta: una molécula muy dura */}
       <Escena T={T} a={K.Pr} b={K.Ni} zoom={0.06}>
         <FondoLunares color={KC.pink} />
-        <CapaR>
+        <CapaR><g transform="translate(540 930) scale(1.25) translate(-330 -860)">
           <N2 x={300} y={880} s={2.6} rot={Math.sin(T * 2) * 4} />
           {(() => { const u = ((T - K.Pr) * 1.6) % 1, gol = Math.abs(Math.sin(u * Math.PI)); return <Martillo x={330} y={640} rot={klerp(-70, 10, gol)} s={0.9} />; })()}
           <text x={300} y={1140} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={6} opacity={Math.abs(Math.sin((T - K.Pr) * 1.6 * Math.PI))}>¡TOC!</text>
-        </CapaR>
+        </g></CapaR>
       </Escena>
       {/* 7 · nitrogenasa: rompe el triple enlace */}
       <Escena T={T} a={K.Ni} b={K.Tr} zoom={0.04}>
@@ -378,53 +378,53 @@ function Rhizobium() {
       {/* 8 · el trueque */}
       <Escena T={T} a={K.Tr} b={K.Fa} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <div style={{ position:'absolute', left:0, right:0, top:1000, bottom:0, background:TIERRA }}></div>
+        <div style={{ position:'absolute', left:0, right:0, top:1020, bottom:0, background:SUELO }}></div>
         <CapaR>
-          <Mata T={T} x={540} y={1000} s={1.0} nod={1} brillo={0.6} />
+          <Mata T={T} x={540} y={1020} s={1.12} nod={1} brillo={0.6} />
           {Array.from({ length: 6 }, (_, i) => { const u = ((T - K.Tr) * 0.45 + i / 6) % 1; return T > K.Tr + 0.3 && <g key={i}>
-            <circle cx={440 + Math.sin(u * 6) * 8} cy={klerp(620, 1100, u)} r={14} fill={KC.orange} stroke={KC.ink} strokeWidth={4} opacity={Math.sin(u * Math.PI)} />
-            <NH3 x={650 + Math.sin(u * 6) * 8} y={klerp(1120, 620, u)} s={0.45} o={Math.sin(u * Math.PI) * kprog(T, K.Tr + 1.4, K.Tr + 1.8)} />
+            <circle cx={420 + Math.sin(u * 6) * 8} cy={klerp(580, 1120, u)} r={14} fill={KC.orange} stroke={KC.ink} strokeWidth={4} opacity={Math.sin(u * Math.PI)} />
+            <NH3 x={670 + Math.sin(u * 6) * 8} y={klerp(1140, 580, u)} s={0.45} o={Math.sin(u * Math.PI) * kprog(T, K.Tr + 1.4, K.Tr + 1.8)} />
           </g>; })}
-          <FlechaCurva x1={360} y1={600} x2={360} y2={1100} curva={60} color={KC.orange} p={kprog(T, K.Tr + 0.2, K.Tr + 1.0)} T={T} />
-          <FlechaCurva x1={730} y1={1130} x2={730} y2={620} curva={60} color={KC.cyan} p={kprog(T, K.Tr + 1.4, K.Tr + 2.2)} T={T} />
+          <FlechaCurva x1={330} y1={560} x2={330} y2={1120} curva={60} color={KC.orange} p={kprog(T, K.Tr + 0.2, K.Tr + 1.0)} T={T} />
+          <FlechaCurva x1={760} y1={1150} x2={760} y2={580} curva={60} color={KC.cyan} p={kprog(T, K.Tr + 1.4, K.Tr + 2.2)} T={T} />
         </CapaR>
       </Escena>
       {/* 9 · fábrica contra bacteria */}
       <Escena T={T} a={K.Fa} b={K.In} zoom={0.03}>
         <FondoLunares color={KC.coral} />
-        <div style={{ position:'absolute', left:0, right:0, top:1180, bottom:0, background:'#9aa3b5' }}></div>
-        <div style={{ position:'absolute', left:560, right:0, top:1050, bottom:0, background:TIERRA }}></div>
+        <div style={{ position:'absolute', left:0, right:0, top:1250, bottom:0, background:'#262b36' }}></div>
+        <div style={{ position:'absolute', left:600, right:0, top:1120, bottom:0, background:SUELO }}></div>
         <CapaR>
-          <Fabrica T={T} x={290} y={1180} s={1.0} />
-          <Termo x={120} y={700} alto={300} f={kprog(T, K.Fa + 0.4, K.Fa + 1.6, kEase.sale) * 0.9} color={KC.red} texto={`${Math.round(klerp(20, 450, kprog(T, K.Fa + 0.4, K.Fa + 1.6, kEase.sale)))} °C`} />
-          <Termo x={970} y={800} alto={240} f={kprog(T, K.Fa + 2.0, K.Fa + 2.8) * 0.12} color={KC.cyan} texto="~25 °C" />
-          <g transform={`translate(780 1130) scale(${kprog(T, K.Fa + 1.8, K.Fa + 2.4, kEase.rebote)})`}>
+          <Fabrica T={T} x={310} y={1250} s={1.25} />
+          <Termo x={150} y={640} alto={360} f={kprog(T, K.Fa + 0.4, K.Fa + 1.6, kEase.sale) * 0.9} color={KC.red} texto={`${Math.round(klerp(20, 450, kprog(T, K.Fa + 0.4, K.Fa + 1.6, kEase.sale)))} °C`} />
+          <Termo x={955} y={760} alto={280} f={kprog(T, K.Fa + 2.0, K.Fa + 2.8) * 0.12} color={KC.cyan} texto="~25 °C" />
+          <g transform={`translate(770 1200) scale(${1.2 * kprog(T, K.Fa + 1.8, K.Fa + 2.4, kEase.rebote)})`}>
             <circle r={90} fill={NODULO} stroke={KC.ink} strokeWidth={8} /><circle r={110 + Math.sin(T * 5) * 6} fill="none" stroke={KC.gold2} strokeWidth={6} opacity=".7" />
             <path d="M -200 -40 Q -100 -90 -70 -50" stroke={RAIZ} strokeWidth={22} fill="none" strokeLinecap="round" />
           </g>
-          <text x={290} y={1260} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>Haber-Bosch</text>
+          <text x={310} y={1300} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>Haber-Bosch</text>
         </CapaR>
       </Escena>
       {/* 10 · Brasil: inoculante en la semilla de soya */}
       <Escena T={T} a={K.In} b={K.Br} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <CapaR>
-          <g opacity={kprog(T, K.In + 0.1, K.In + 0.6)}><MapaBrasil x={560} y={400} k={11} /></g>
-          <circle cx={560 + (-51 + 75) * 11} cy={400 + (6 + 23.3) * 11} r={14 + Math.sin(T * 5) * 3} fill={KC.red} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.In + 0.6, K.In + 1.0)} />
-          <BolsaInoc T={T} x={300} y={940} inclina={kprog(T, K.In + 2.0, K.In + 2.8, kEase.sale)} s={0.95} />
-          {T > K.In + 2.6 && Array.from({ length: 22 }, (_, i) => { const u = ((T - K.In - 2.6) * 1.2 + i / 22) % 1; return <circle key={i} cx={470 + Math.sin(i * 7) * 40 + u * 60} cy={1000 + u * 160} r={6} fill={RIZO} stroke={KC.ink} strokeWidth={2} opacity={1 - u} />; })}
-          {Array.from({ length: 13 }, (_, i) => <SemillaSoya key={i} x={480 + (i % 5) * 76 + (Math.floor(i / 5) % 2) * 36} y={1190 - Math.floor(i / 5) * 46} rot={i * 33} s={1} cubre={kprog(T, K.In + 3.0 + i * 0.08, K.In + 3.6 + i * 0.08)} />)}
+          <g opacity={kprog(T, K.In + 0.1, K.In + 0.6)}><MapaBrasil x={500} y={380} k={13} /></g>
+          <circle cx={500 + (-51 + 75) * 13} cy={380 + (6 + 23.3) * 13} r={14 + Math.sin(T * 5) * 3} fill={KC.red} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.In + 0.6, K.In + 1.0)} />
+          <BolsaInoc T={T} x={290} y={1060} inclina={kprog(T, K.In + 2.0, K.In + 2.8, kEase.sale)} s={1.2} />
+          {T > K.In + 2.6 && Array.from({ length: 22 }, (_, i) => { const u = ((T - K.In - 2.6) * 1.2 + i / 22) % 1; return <circle key={i} cx={480 + Math.sin(i * 7) * 48 + u * 70} cy={1110 + u * 200} r={7} fill={RIZO} stroke={KC.ink} strokeWidth={2} opacity={1 - u} />; })}
+          {Array.from({ length: 13 }, (_, i) => <SemillaSoya key={i} x={490 + (i % 5) * 92 + (Math.floor(i / 5) % 2) * 44} y={1340 - Math.floor(i / 5) * 56} rot={i * 33} s={1.25} cubre={kprog(T, K.In + 3.0 + i * 0.08, K.In + 3.6 + i * 0.08)} />)}
         </CapaR>
       </Escena>
       {/* 11 · 85 % de los campos de soya y el premio */}
       <Escena T={T} a={K.Br} b={K.Et} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <div style={{ position:'absolute', left:0, right:0, top:760, bottom:0, background:'#c9a36b' }}></div>
+        <div style={{ position:'absolute', left:0, right:0, top:760, bottom:0, background:'#3b2d1b' }}></div>
         <CapaR>
           {Array.from({ length: 40 }, (_, i) => { const c = i % 10, f = Math.floor(i / 10), on = i < 34 && T > K.Br + 0.6 + (i / 40) * 1.4;
-            return <Soya key={i} x={70 + c * 105 + (f % 2) * 50} y={830 + f * 110} s={0.75 + f * 0.08} on={on ? 1 : 0} T={T} seed={i} />; })}
+            return <Soya key={i} x={70 + c * 105 + (f % 2) * 50} y={850 + f * 130} s={0.85 + f * 0.09} on={on ? 1 : 0} T={T} seed={i} />; })}
           <g transform={`translate(0 ${(1 - kprog(T, K.Br + 2.4, K.Br + 3.0, kEase.rebote)) * -700})`}><Medalla x={800} y={560} s={1} rot={Math.sin(T * 2) * 5} /></g>
-          <g opacity={kprog(T, K.Br + 0.8, K.Br + 1.2)}><Costal x={860} y={1060} s={0.8} tacha={kprog(T, K.Br + 1.4, K.Br + 2.2)} /></g>
+          <g opacity={kprog(T, K.Br + 0.8, K.Br + 1.2)}><Costal x={860} y={1110} s={0.9} tacha={kprog(T, K.Br + 1.4, K.Br + 2.2)} /></g>
         </CapaR>
       </Escena>
       {/* 12 · Rhizobium etli: etl = frijol */}
@@ -444,40 +444,40 @@ function Rhizobium() {
       {/* 13 · cierre: la misma mata, ya con vainas */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <div style={{ position:'absolute', left:0, right:0, top:1560, bottom:0, background:TIERRA }}></div>
+        <div style={{ position:'absolute', left:0, right:0, top:1440, bottom:0, background:SUELO }}></div>
         <CapaR>
-          {Array.from({ length: 10 }, (_, i) => { const u = ((T - K.Ci) * 0.5 + i / 10) % 1; return <N2 key={i} x={klerp(i % 2 ? 1080 : 0, 430 + (i % 2 ? 60 : -60), u)} y={klerp(500 + i * 40, 1000, u)} s={0.5} rot={T * 40 + i * 20} o={Math.sin(u * Math.PI)} />; })}
-          <Mata T={T} x={430} y={860} s={0.95} nod={1} brillo={1} vainas={kprog(T, K.Ci + 0.2, K.Ci + 1.4, kEase.sale)} />
+          {Array.from({ length: 10 }, (_, i) => { const u = ((T - K.Ci) * 0.5 + i / 10) % 1; return <N2 key={i} x={klerp(i % 2 ? 1080 : 0, 500 + (i % 2 ? 60 : -60), u)} y={klerp(520 + i * 45, 1140, u)} s={0.5} rot={T * 40 + i * 20} o={Math.sin(u * Math.PI)} />; })}
+          <Mata T={T} x={500} y={1000} s={1.1} nod={1} brillo={1} vainas={kprog(T, K.Ci + 0.2, K.Ci + 1.4, kEase.sale)} />
         </CapaR>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.0} until={K.G + 3.4} texto="¿plaga?" x={300} y={1500} tam={52} />
-      <Chip T={T} at={K.G + 3.5} until={K.Ai - 0.3} texto="si se despega fácil: es nódulo" y={1500} tam={40} borde={KC.leaf} />
-      <Etq T={T} at={K.G + 1.0} until={K.Ai - 0.3} x={60} y={1600} texto="frijol · Phaseolus vulgaris" it tam={34} color={KC.texto} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.0} until={K.G + 3.4} texto="¿plaga?" x={840} y={1410} tam={52} />
+      <Chip T={T} at={K.G + 3.5} until={K.Ai - 0.3} texto="si se despega fácil: es nódulo" y={1410} tam={40} borde={KC.leaf} />
+      <Etq T={T} at={K.G + 1.0} until={K.Ai - 0.3} x={60} y={1520} texto="frijol · Phaseolus vulgaris" it tam={34} color={KC.texto} />
       <NumeroGigante T={T} at={K.Ai + 0.3} until={K.Se - 0.3} valor={78} dur={1.2} sufijo=" %" etiqueta="del aire es nitrógeno (N₂)" x={600} y={800} tam={230} color={KC.yellow} />
       <Chip T={T} at={K.Ai + 2.0} until={K.Se - 0.2} texto="N≡N: la planta sola no lo usa" y={1500} tam={40} borde={AZUL_N} />
-      <Etq T={T} at={K.Se + 0.9} until={K.Re - 0.2} x={60} y={1480} texto="flavonoides (señal de la raíz)" tam={32} color={FLAV} />
-      <Etq T={T} at={K.Se + 2.0} until={K.Tu - 0.2} x={60} y={1540} texto="Rhizobium" it tam={34} color={RIZO} />
-      <Etq T={T} at={K.Re + 0.3} until={K.Tu - 0.2} x={60} y={1480} texto="factores Nod (respuesta)" tam={32} color={NOD} />
+      <Etq T={T} at={K.Se + 0.9} until={K.Re - 0.2} x={60} y={1460} texto="flavonoides (señal de la raíz)" tam={32} color={FLAV} />
+      <Etq T={T} at={K.Se + 2.0} until={K.Tu - 0.2} x={60} y={1510} texto="Rhizobium" it tam={34} color={RIZO} />
+      <Etq T={T} at={K.Re + 0.3} until={K.Tu - 0.2} x={60} y={1460} texto="factores Nod (respuesta)" tam={32} color={NOD} />
       <Chip T={T} at={K.Tu + 0.4} until={K.Ba - 0.2} texto="canal de infección" y={1500} tam={42} borde={KC.pink} />
       <Chip T={T} at={K.Ba + 0.5} until={K.Pr - 0.2} texto="bacteroides en su membrana" y={1500} tam={40} borde={KC.mint} />
       <Chip T={T} at={K.Pr + 0.3} until={K.Ni - 0.2} texto="N≡N: triple enlace" y={1500} tam={44} borde={AZUL_N} />
       <Etq T={T} at={K.Ni + 0.4} until={K.Tr - 0.2} x={60} y={420} texto="nitrogenasa (esquema)" tam={32} color={MOFE} />
       <Chip T={T} at={K.Ni + 3.0} until={K.Tr - 0.2} texto="N₂ → 2 NH₃ (amoníaco)" y={1500} tam={42} borde={KC.gold} />
-      <Etq T={T} at={K.Tr + 0.6} until={K.Fa - 0.2} x={60} y={1480} texto="la planta: alimento" tam={32} color={KC.orange} />
-      <Etq T={T} at={K.Tr + 1.6} until={K.Fa - 0.2} x={60} y={1540} texto="la bacteria: nitrógeno" tam={32} color={KC.cyan} />
+      <Etq T={T} at={K.Tr + 0.6} until={K.Fa - 0.2} x={60} y={215} texto="la planta: alimento" tam={32} color={KC.orange} />
+      <Etq T={T} at={K.Tr + 1.6} until={K.Fa - 0.2} x={60} y={262} texto="la bacteria: nitrógeno" tam={32} color={KC.cyan} />
       <Chip T={T} at={K.Fa + 0.8} until={K.In - 0.2} texto="350–500 °C · 150–300 bar" y={1500} tam={40} borde={KC.red} />
-      <Etq T={T} at={K.Fa + 2.4} until={K.In - 0.2} x={1020} y={1580} texto="nitrogenasa: temperatura ambiente" lado="izq" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Fa + 2.4} until={K.In - 0.2} x={1020} y={1430} texto="nitrogenasa: temperatura ambiente" lado="izq" tam={28} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.In + 0.4} until={K.In + 2.2} anio="Brasil" quien="Mariangela Hungria" revista="Embrapa Soja · inoculantes" x={330} y={560} />
-      <Etq T={T} at={K.In + 2.6} until={K.Br - 0.2} x={60} y={1480} texto="Bradyrhizobium (soya)" it tam={34} color={KC.texto} />
-      <Chip T={T} at={K.In + 3.2} until={K.Br - 0.2} texto="la bacteria va en la semilla" y={1560} tam={38} borde={KC.mint} />
+      <Etq T={T} at={K.In + 2.6} until={K.Br - 0.2} x={60} y={1430} texto="Bradyrhizobium (soya)" it tam={34} color={KC.texto} />
+      <Chip T={T} at={K.In + 3.2} until={K.Br - 0.2} texto="la bacteria va en la semilla" y={1500} tam={38} borde={KC.mint} />
       <Medidor T={T} at={K.Br + 0.3} until={K.Et - 0.3} valor={(t) => 0.85 * kprog(t, K.Br + 0.6, K.Br + 2.0, kEase.sale)} etiqueta="campos de soya de Brasil con inoculante" x={90} y={430} ancho={560} color={KC.mint} />
-      <Chip T={T} at={K.Br + 1.4} until={K.Et - 0.3} texto="más de 30 millones de hectáreas" y={1500} tam={38} borde={KC.leaf} />
-      <Etq T={T} at={K.Br + 3.0} until={K.Et - 0.3} x={1020} y={1580} texto="Premio Mundial de la Alimentación" lado="izq" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Br + 1.4} until={K.Et - 0.3} texto="más de 30 millones de hectáreas" y={1460} tam={38} borde={KC.leaf} />
+      <Etq T={T} at={K.Br + 3.0} until={K.Et - 0.3} x={1020} y={720} texto="Premio Mundial de la Alimentación" lado="izq" tam={30} color={KC.texto} />
       <Etq T={T} at={K.Et + 1.2} until={K.Ci - 0.2} x={1020} y={1140} texto="Rhizobium etli" it lado="izq" tam={40} color={KC.texto} />
-      <Chip T={T} at={K.Et + 2.8} until={K.Ci - 0.2} texto="náhuatl: etl = frijol" y={1500} tam={44} borde={KC.gold} />
-      <Chip T={T} at={K.Et + 3.4} until={K.Ci - 0.2} texto="descrita en 1993 · cepa de Guanajuato" y={1580} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Et + 2.8} until={K.Ci - 0.2} texto="náhuatl: etl = frijol" y={1420} tam={44} borde={KC.gold} />
+      <Chip T={T} at={K.Et + 3.4} until={K.Ci - 0.2} texto="descrita en 1993 · cepa de Guanajuato" y={1500} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Ci + 0.8} until={K.Ou} texto="N₂ del aire → nódulo → frijol" y={1500} tam={40} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
