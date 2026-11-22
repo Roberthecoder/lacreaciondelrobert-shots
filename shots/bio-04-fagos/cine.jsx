@@ -22,10 +22,20 @@ function cineMix(a, b, t) {
 KC.ink = CINE.linea;
 KC.paper = '#131b2e';
 
-function FondoMarca({ color = '#1b2a44', patron = 'puntos', T = 0 }) {
+// Fondo oscuro con motas que flotan despacio: ninguna escena se queda sin movimiento (como en la referencia).
+function FondoMarca({ color = '#1b2a44', patron = 'puntos', T }) {
+  const comp = typeof useComposition === 'function' ? useComposition() : null;
+  const t = T != null && T !== 0 ? T : (comp ? comp.T : 0);
   const tinte = patron === 'oscuro' ? '#18233a' : cineMix(color, CINE.fondo, 0.8);
-  return <div style={{ position:'absolute', inset:0, background:`radial-gradient(ellipse 90% 60% at 50% 46%, ${tinte} 0%, ${CINE.fondo} 62%, ${CINE.borde} 100%)` }}></div>;
+  const seed = [...String(color)].reduce((a, ch) => a + ch.charCodeAt(0), 3);
+  return <div style={{ position:'absolute', inset:0, background:`radial-gradient(ellipse 90% 60% at 50% 46%, ${tinte} 0%, ${CINE.fondo} 62%, ${CINE.borde} 100%)` }}>
+    <Ambiente T={t} n={26} seed={seed} color="rgba(223,231,255,.2)" tam={[3, 9]} vel={16} />
+  </div>;
 }
+
+// La cámara nunca está quieta: toda escena avanza hacia el sujeto al menos 10 %.
+const EscenaKit = window.Escena;
+function Escena(p) { return EscenaKit({ ...p, zoom: Math.max(p.zoom == null ? 0.05 : p.zoom, 0.1) }); }
 
 function Subtitulo({ T, at, until, texto, idx, color = CINE.acento, tam = 50 }) {
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
@@ -60,9 +70,9 @@ function TarjetaEstudio({ T, at, until, anio, quien, revista, x = KW / 2, y = 60
   const e = kentrada(T, at, until, 'pop');
   return <div style={{ position:'absolute', left:x, top:y, zIndex:43, transform:`translate(-50%,-50%) scale(${e.s})`, opacity:e.o,
     background:'rgba(16,23,40,.88)', border:`3px solid rgba(223,231,255,.35)`, borderRadius:26, padding:'18px 44px 22px', textAlign:'center', boxShadow:'0 24px 60px rgba(0,0,0,.6)' }}>
-    <div style={{ font:`400 132px/1 ${KF.titulo}`, color:CINE.acento }}>{anio}</div>
-    {quien && <div style={{ font:`800 38px ${KF.texto}`, color:CINE.texto, marginTop:6 }}>{quien}</div>}
-    {revista && <div style={{ font:`700 24px ${KF.mono}`, color:'rgba(223,231,255,.6)', marginTop:8, fontStyle:'italic' }}>{revista}</div>}
+    <div style={{ font:`400 104px/1 ${KF.titulo}`, color:CINE.acento }}>{anio}</div>
+    {quien && <div style={{ font:`800 32px ${KF.texto}`, color:CINE.texto, marginTop:6 }}>{quien}</div>}
+    {revista && <div style={{ font:`700 21px ${KF.mono}`, color:'rgba(223,231,255,.6)', marginTop:8, fontStyle:'italic' }}>{revista}</div>}
   </div>;
 }
 
@@ -86,4 +96,4 @@ function FondoLunares({ color }) { return FondoMarca({ color, patron: 'puntos' }
 const BarraKit = window.BarraEscala;
 function BarraEscala(p) { return BarraKit ? BarraKit({ ...p, x: 800, y: 232 }) : null; }
 
-Object.assign(window, { CINE, cineMix, FondoMarca, FondoLunares, Subtitulo, Robert, MarcaAgua, TarjetaEstudio, MitoTachado, Escala, BarraEscala });
+Object.assign(window, { CINE, cineMix, FondoMarca, FondoLunares, Escena, Subtitulo, Robert, MarcaAgua, TarjetaEstudio, MitoTachado, Escala, BarraEscala });

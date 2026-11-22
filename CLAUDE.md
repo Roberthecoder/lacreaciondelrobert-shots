@@ -171,7 +171,7 @@ video (shot, largo, libre o de Robert):
   guardadas en colecciones") y, si es de hace más de 2 años, lo dice ("en 2020…"). Si no se puede verificar, no se usa.
 - Rigor: cada dato con fuente publicada, verificada en `verificacion.md` (ver "Verificación de hechos"); citarla en el guion es opcional. Si algo es hipótesis, decirlo como hipótesis. Especies en cursiva. Ilustrar bien la morfología real (ej. esporas de *Ophiocordyceps* alargadas, no redondas).
 - Estilo y reglas detalladas: `referencias/*/CLAUDE.md`, `referencias/Paquete Shot Lab/PLANTILLA Shot Sin Voz.md` y `referencias/KIT MAESTRO Shots Micologicos/GUIA_SHOT.md`. Prohibidos los avatares 01 y 09 salvo tema de sabor.
-- Subtítulos siempre fuera del tercio inferior.
+- Subtítulos: los coloca `cine.jsx` (chicos, sin caja, debajo del sujeto, arriba de la zona de botones de las apps).
 
 ## Formato y piezas de cada shot
 - Antes de escribir un shot, elegir su formato narrado en `referencias-externas/RECETARIO.md` (los 6 formatos N1–N6 y el reparto por serie; los mudos M1–M5 ya no se hacen).
@@ -191,6 +191,33 @@ La primera frase (o el primer texto, en mudos) usa uno de estos 7 ganchos:
 
 **Prohibido abrir con:** un año o fecha ("En 1897…"), una lección de historia, una etimología ("Cada vez que dices…"), solo texto sin acción, o la voz entrando después del segundo 0.5. Ninguno de esos pasó de 130 K. La fecha y la historia van después, como "el estudio" (35–50 s).
 
+## Modo cine (22 nov 2026 — manda sobre «Ritmo, duración y color» donde se contradigan)
+Por qué: con ganchos y duración ya copiados de la referencia, los shots de noviembre se quedaron en ~800 vistas en YouTube
+(mediana de 44 videos; se ve 25–45 % de cada uno) y en TikTok la gente se iba en el segundo 1. La referencia 1Cell1Life
+tiene mediana de 126 mil por Short. Comparados cuadro por cuadro y con analizador de audio, la diferencia era de imagen y de sonido:
+- **Fondo oscuro siempre**, con un tinte leve del color de marca de la escena y motas que flotan. Se hace solo: cada shot carga
+  `./cine.jsx` (copia de `motor/kit/cine.jsx`) **después de todos los kits** en la línea `<x-import>` de sus `.dc.html`
+  (`motor/kit/escribir-dc.mjs` ya lo pone). Nada de fondos saturados con puntos.
+- **Un solo punto de atención.** Nada tapa al sujeto: el subtítulo va chico, sin caja, debajo del dibujo (lo coloca `cine.jsx`);
+  máximo un chip o etiqueta a la vez; las tarjetas de estudio van chicas y arriba, con la escena ya dibujada detrás.
+- **Prohibidas las láminas:** ninguna escena puede ser solo un texto, un signo de interrogación, una tarjeta o íconos sobre fondo
+  vacío. El sujeto del video (o lo que viene) siempre está en pantalla, aunque sea atenuado al fondo.
+- **La cámara nunca está quieta:** toda escena avanza hacia el sujeto (mínimo 10 %; el gancho, 20 %). En el gancho, antes del
+  segundo 3 ya se ve hacia dónde va la historia (lo que sigue entra a cuadro).
+- **Robert en pantalla: por ahora solo en la tarjeta de cierre.** El sticker durante el video tapaba el punto de atención cerca
+  de un tercio del tiempo. Es decisión de marca de Robert y está pendiente: no regresarlo ni quitarlo del cierre sin que él lo diga.
+  La tabla «Robert en pantalla» del guion no se exige mientras tanto.
+- **Música: «cama luminosa»** (`motor/kit/cama-luminosa.mjs`, la usa `pad()` del audio-kit): registro medio-agudo, do mayor,
+  100 BPM, acordes que se mueven, arpegio y un tema escrito a mano. Ya no hay cama grave ni se suben los graves
+  (`motor/mezcla.json`, `"estilo": "luminosa"`, final −10 LUFS). Medida de control con `ffmpeg`/espectro: centro de energía de la
+  mezcla con voz entre 500 y 650 Hz (la referencia: ~600; la cama vieja: ~228) y ninguna línea fija en el espectrograma.
+- **Tema:** solo temas que el espectador ya vivió en su cuerpo, su casa o su comida. Si el tema es de nicho (un proceso
+  industrial, una técnica de laboratorio), no se hace como shot diario. En YouTube los canales hermanos de la referencia con
+  temas de computación y electricidad tienen medianas de ~1 400 vistas con el mismo formato: el tema pesa tanto como la forma.
+- **Volumen de publicación:** no se sube un lote de golpe. Un shot al día como máximo, y un formato nuevo se mide con 5 videos
+  (porcentaje visto y «se quedaron viendo» en YouTube Studio) antes de producir más.
+- **Título:** sin el sufijo de serie («| Shot Fungi Mati 08»); la serie va en la descripción.
+
 ## Ritmo, duración y color (decidido 25 oct 2026 — manda sobre las guías de `referencias/`)
 Basado en el análisis de `referencias-externas/ANALISIS.md` y confirmado con `FORMULA_VIRAL.md` (en 9 de 12 canales, la mitad más vista es la más corta: los 61–62 s se quedan). Si una guía vieja dice otra cosa (p. ej. "algo nuevo cada 1–1.5 s" o "≤ 60 s" o "60.0 s exactos"), gana esta sección.
 
@@ -205,7 +232,7 @@ Basado en el análisis de `referencias-externas/ANALISIS.md` y confirmado con `F
 - Preferir una escena continua que viaja sobre muchos cortes. Cambios de escena con movimiento de cámara o fundido, nunca corte seco.
 - Puede haber momentos quietos mientras la voz avanza, máximo ~6 s.
 - Tarjeta de cierre con el logo sobre la imagen final oscurecida, completando la duración total.
-- Música: cama grave y continua, sin golpe marcado, siempre debajo de la voz (la voz manda). Nunca una canción conocida. Cada cosa que pasa en pantalla (golpe, gota, latido, ruptura) tiene su efecto en el mismo cuadro.
+- Música: la «cama luminosa» de «Modo cine» (antes: cama grave y continua, retirada el 22 nov 2026), siempre debajo de la voz (la voz manda). Nunca una canción conocida. Cada cosa que pasa en pantalla (golpe, gota, latido, ruptura) tiene su efecto en el mismo cuadro.
 - Opcional, para comparar: algún narrado de ~90 s cuando el mecanismo lo pida (siempre más de 61 s). Por defecto, 61–62 s.
 
 **Versión sin voz**
@@ -214,10 +241,10 @@ Basado en el análisis de `referencias-externas/ANALISIS.md` y confirmado con `F
 - **La música sale siempre de los datos** (ritmos reales, conteos, tamaños, una nota por evento) y además cuenta el estado de la historia (tapada/tensa mientras dura el problema, libre cuando se resuelve). Se genera con `gen-audio.mjs`; nada grabado ni de catálogo. El título del video lleva 🎧.
 
 **Ambas**
-- Colores: se mantienen los fondos brillantes y saturados de la marca (rosa, amarillo, menta, cian…). Solo las escenas microscópicas o internas (dentro de una célula, un tejido, el suelo) usan fondo oscuro (`#0E0F12` o azul noche) con los colores de la marca como acento.
+- Colores: ver «Modo cine»: fondo oscuro en todas las escenas (los colores de la marca quedan como tinte y como acento). Regla anterior, ya sin efecto: fondos brillantes y saturados y solo las escenas microscópicas o internas (dentro de una célula, un tejido, el suelo) usan fondo oscuro (`#0E0F12` o azul noche) con los colores de la marca como acento.
 - Poco texto: un título o número grande, etiquetas chicas (nombre común + *científico*) y una línea de subtítulo con una palabra resaltada.
 - Capítulos numerados pequeños bajo el logo y medidores reales (µm, días, conteos) cuando ayuden.
-- **Robert en pantalla (obligatorio, es la marca del canal).** Los shots existen también para que la gente asocie la ciencia con la cara de Robert. Sus stickers (13 poses en `shots/001-hormiga-zombi/assets/stickers/`; copia al shot las que uses) se usan con el componente `Robert` del kit y cumplen todo esto:
+- **Robert en pantalla (regla original; en pausa desde el 22 nov 2026, ver «Modo cine»: por ahora solo en el cierre).** Los shots existen también para que la gente asocie la ciencia con la cara de Robert. Sus stickers (13 poses en `shots/001-hormiga-zombi/assets/stickers/`; copia al shot las que uses) se usan con el componente `Robert` del kit y cumplen todo esto:
   - **Cuadro 0:** Robert ya está en pantalla con el gancho (lado `gancho`), reaccionando a la primera frase. No es intro ni saludo: la voz y la imagen arrancan igual de rápido que en la receta.
   - **Cada 8–10 s** vuelve a aparecer, en cada re-gancho y en el dato sorprendente: mínimo **6 apariciones** en 61–62 s y **al menos 18 s en pantalla** en total (~30 %).
   - **Al menos una vez grande** (lado `presentador`, medio cuerpo) en el giro o el dato más fuerte, señalando o reaccionando a lo que pasa en la escena.

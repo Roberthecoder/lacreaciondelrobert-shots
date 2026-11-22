@@ -50,9 +50,13 @@ function FagosNarrado() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* GANCHO: el "robot" cae y camina */}
-      <Escena T={T} a={C.Gancho} b={C.Aterriza} zoom={0.04}>
+      <Escena T={T} a={C.Gancho} b={C.Aterriza} zoom={0.22} origen="50% 52%">
         <FondoMarca T={T} color={KC.cyan} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          {/* la bacteria sube desde abajo mientras la cámara se acerca: ya se ve a dónde va el fago */}
+          <g opacity={0.55 * kprog(T, C.Gancho + 2.0, C.Gancho + 3.2)} transform={`translate(0 ${klerp(520, 300, kprog(T, C.Gancho + 2.0, C.Aterriza, kEase.sale))})`}>
+            <Bacteria T={T} x={540} y={1500} largo={900} ancho={380} color={ECOLI} seed={5} flagelo={false} />
+          </g>
           <g transform={`translate(540 ${klerp(-200, 990, kprog(T, C.Gancho, C.Gancho + 0.6, kEase.rebote))}) scale(${1 + 0.06 * Math.exp(-(T - C.Gancho - 0.6) * 8) * (T > C.Gancho + 0.6 ? 1 : 0)}, ${1 - 0.06 * Math.exp(-(T - C.Gancho - 0.6) * 8) * (T > C.Gancho + 0.6 ? 1 : 0)})`}>
             <Fago T={T} s={1.55} patas={kprog(T, C.Gancho + 0.4, C.Gancho + 0.8)} rot={mece(T, 3, 0.4) * 3} />
           </g>
@@ -107,8 +111,8 @@ function FagosNarrado() {
       {/* ESTUDIO: Tom Patterson, 2016 */}
       <Escena T={T} a={C.Estudio} b={C.Historia}>
         <FondoMarca T={T} color={KC.mint} />
-        {T > C.Estudio + 2.8 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, C.Estudio + 2.8, C.Estudio + 3.3) }}><Cama T={T} iv={kprog(T, E2, E2 + 1.0)} despierta={kprog(T, E2 + 3.6, E2 + 4.0)} /></div>}
-        <TarjetaEstudio T={T} at={C.Estudio + 0.2} until={C.Estudio + 2.8} anio="2016" quien="Tom Patterson · UC San Diego" revista="Schooley et al., Antimicrob. Agents Chemother. 2017" y={700} />
+        {T > C.Estudio + 0.2 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, C.Estudio + 0.2, C.Estudio + 0.9) }}><Cama T={T} iv={kprog(T, E2, E2 + 1.0)} despierta={kprog(T, E2 + 3.6, E2 + 4.0)} /></div>}
+        <TarjetaEstudio T={T} at={C.Estudio + 0.2} until={C.Estudio + 2.8} anio="2016" quien="Tom Patterson · UC San Diego" revista="Schooley et al., Antimicrob. Agents Chemother. 2017" y={318} />
         <Etq T={T} at={C.Estudio + 3.4} until={E2} x={380} y={760} texto="Acinetobacter baumannii" it color={KC.ink} tam={30} />
         <Chip T={T} at={C.Estudio + 3.8} until={E2} texto="ningún antibiótico funcionaba" y={430} borde={KC.red} tam={40} />
         {T > E2 + 1.2 && <Chip T={T} at={E2 + 1.2} until={C.Historia - 0.2} texto={'día ' + Math.min(3, 1 + Math.floor(kprog(T, E2 + 1.2, E2 + 3.6) * 3))} y={430} borde={KC.pink} tam={48} mono />}
@@ -118,9 +122,13 @@ function FagosNarrado() {
       {/* HISTORIA: d'Hérelle 1917, antes que la penicilina (1928) */}
       <Escena T={T} a={C.Historia} b={C.Extra}>
         <FondoMarca T={T} color={KC.yellow} />
-        <TarjetaEstudio T={T} at={C.Historia + 0.2} until={C.Extra - 0.2} anio="1917" quien="Félix d'Hérelle" revista="Instituto Pasteur · París" y={640} />
+        <TarjetaEstudio T={T} at={C.Historia + 0.2} until={C.Extra - 0.2} anio="1917" quien="Félix d'Hérelle" revista="Instituto Pasteur · París" y={400} />
+        {/* la placa con calvas (los claros que dejan los fagos en el césped de bacterias) en vez de una lámina vacía */}
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <line x1={140} y1={1000} x2={140 + 800 * kprog(T, C.Historia + 1.6, C.Historia + 3.2)} y2={1000} stroke={KC.ink} strokeWidth={12} strokeLinecap="round" />
+          <g opacity={kprog(T, C.Historia + 0.3, C.Historia + 0.9)}><Petri T={T} x={540} y={730} R={170} calvas={[[-0.4, -0.3], [0.35, -0.1], [-0.1, 0.45], [0.45, 0.5], [-0.55, 0.3]].map(([x, y], i) => ({ x, y, r: 0.2 * kprog(T, C.Historia + 0.8 + i * 0.5, C.Historia + 2.6 + i * 0.5, kEase.sale) }))} /></g>
+        </svg>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          <line x1={140} y1={1000} x2={140 + 800 * kprog(T, C.Historia + 1.6, C.Historia + 3.2)} y2={1000} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
           {[[140, '1917', 'fagos', C.Historia + 1.6], [940, '1928', 'penicilina', C.Historia + 3.2]].map(([x, a, t, at], i) => T > at && <g key={i} transform={`translate(${x} 1000) scale(${kprog(T, at, at + 0.4, kEase.rebote)})`}>
             <circle r={26} fill={i ? KC.cyan : KC.pink} stroke={KC.ink} strokeWidth={6} />
             <text y={-48} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink}>{a}</text>

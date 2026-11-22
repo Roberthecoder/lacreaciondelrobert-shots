@@ -56,7 +56,7 @@ function AmanitaShot() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la cuchara de plata sale del caldo */}
-      <Escena T={T} a={K.G} b={K.A} zoom={0.05}>
+      <Escena T={T} a={K.G} b={K.A} zoom={0.2} origen="45% 50%">
         <FondoLunares color={KC.yellow} />
         {fsvg(<><Olla T={T} x={460} y={980} s={1.1} cuchara={sube} /><Sello T={T} at={K.G + 3.0} x={330} y={560} texto="MITO" color={KC.red} r={110} /></>)}
       </Escena>
@@ -73,6 +73,11 @@ function AmanitaShot() {
       {/* 3 · los mitos, tachados uno por uno */}
       <Escena T={T} a={K.M} b={K.Co}>
         <FondoLunares color={KC.pink} />
+        {/* la amanita sigue ahí, al fondo, mientras se tachan los mitos: el sujeto no desaparece */}
+        {fsvg(<g opacity=".32">
+          <rect x={0} y={1080} width={KW} height={900} fill="#6b4a2b" />
+          <Amanita x={420} y={1100} s={1.5} /><Amanita x={720} y={1095} s={0.9} rot={8} />
+        </g>)}
       </Escena>
       {/* 4–5 · cocinar y congelar no lo quitan */}
       <Escena T={T} a={K.Co} b={K.P}>
@@ -91,7 +96,11 @@ function AmanitaShot() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.H} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Interrogacion T={T} x={300} y={1080} />)}
+        {fsvg(<>
+          {/* la célula del hígado ya viene entrando detrás de la pregunta */}
+          <g opacity={0.3 * kprog(T, K.P, K.H)} transform={`translate(540 880) scale(${klerp(0.5, 1, kprog(T, K.P, K.H + 0.3, kEase.sale))})`}><circle r={330} fill="#c25b4a" /><circle r={150} fill="#7c3a9a" /></g>
+          <Interrogacion T={T} x={300} y={1080} />
+        </>)}
       </Escena>
       {/* 7 · en el hígado: frena la ARN polimerasa II */}
       <Escena T={T} a={K.H} b={K.E}>

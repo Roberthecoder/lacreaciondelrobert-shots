@@ -1,6 +1,6 @@
 // escribir-dc.mjs — escribe el .dc.html de un shot (escenas + componente + archivos jsx).
 // Uso: node escribir-dc.mjs <salida.dc.html> <Componente> '<json de escenas>' archivo1.jsx archivo2.jsx ...
-// (animations-v3.jsx y kit-robert.jsx se cargan siempre primero)
+// (animations-v3.jsx y kit-robert.jsx se cargan siempre primero; luego los demás kits, luego cine.jsx —modo cine, 22 nov 2026— y al final el shot)
 import fs from 'node:fs';
 const [out, comp, escenas, ...jsx] = process.argv.slice(2);
 JSON.parse(escenas);
@@ -21,7 +21,7 @@ const html = `<!DOCTYPE html>
 <script>window.OM_SCENES = '${escenas}';</script>
 <script>window.OM_PLAYBACK = '{"mode":"times","count":1}';</script>
 </helmet>
-<x-import component-from-global-scope="${comp}" from="./animations-v3.jsx ./kit-robert.jsx ${jsx.map((f) => './' + f).join(' ')}" hint-size="100%,100vh"></x-import>
+<x-import component-from-global-scope="${comp}" from="./animations-v3.jsx ./kit-robert.jsx ${[...jsx.filter((f) => /kit/.test(f) && !/cine/.test(f)), 'cine.jsx', ...jsx.filter((f) => !/kit/.test(f) && !/cine/.test(f))].map((f) => './' + f).join(' ')}" hint-size="100%,100vh"></x-import>
 </x-dc>
 </body>
 </html>

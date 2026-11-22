@@ -220,5 +220,13 @@ const bandas =
   '[lod][harm][midd][hid]amix=inputs=4:normalize=0[mus];' +
   // presencia: la voz se oye más clara y fuerte en la bocina del celular sin subir el volumen real
   `[mus][vz]amix=inputs=2:normalize=0,equalizer=f=3000:t=q:w=1.2:g=${MZ.presencia_3k_db},equalizer=f=6000:t=q:w=1:g=${MZ.brillo_6k_db}[o]`;
-ff(['-i', musWav, '-i', vozProc, '-filter_complex', bandas, '-map', '[o]', '-ar', '48000', '-c:a', 'pcm_f32le', path.join(dir, 'assets', 'mezcla_narrada.wav')]);
+// Mezcla «luminosa» (22 nov 2026, Robert: la cama grave "parece método de tortura"; su referencia usa tonos más agudos y
+// agradables). Con "estilo": "luminosa" en mezcla.json ya no se suben ni se saturan los graves: la música entra completa,
+// sin nada debajo de 90 Hz, y baja toda junta cuando hablas. La mezcla por bandas de arriba queda para el estilo viejo.
+const luminosa =
+  `[1:a]acompressor=threshold=-18dB:ratio=3:attack=5:release=120:makeup=1,volume=${gVoz.toFixed(2)}dB,asplit=2[s][vz];` +
+  `[0:a]volume=${gMus.toFixed(2)}dB,highpass=f=90:p=2,equalizer=f=4500:t=q:w=1.2:g=${MZ.agudos_db}[m];` +
+  `[m][s]sidechaincompress=threshold=0.03:ratio=${MZ.medios_ratio}:knee=4:attack=40:release=500[md];` +
+  `[md][vz]amix=inputs=2:normalize=0,equalizer=f=3000:t=q:w=1.2:g=${MZ.presencia_3k_db},equalizer=f=6000:t=q:w=1:g=${MZ.brillo_6k_db}[o]`;
+ff(['-i', musWav, '-i', vozProc, '-filter_complex', MZ.estilo === 'luminosa' ? luminosa : bandas, '-map', '[o]', '-ar', '48000', '-c:a', 'pcm_f32le', path.join(dir, 'assets', 'mezcla_narrada.wav')]);
 console.log(`Listo: ${cfg.salida} + assets/mezcla_narrada.wav`);
