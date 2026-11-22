@@ -81,24 +81,24 @@ function Raton({ x, y, s = 1, T = 0, color = '#d9d4cc', mancha }) {
 // Membrana de la bacteria por dentro: H⁺ acumulados afuera; "deshacer" (0..1) los iguala adentro y afuera.
 function Membrana({ T, deshace = 0, moleculas = 0 }) {
   const r = krng(11), out = [];
-  const yM = 760;
+  const yM = 900;
   for (let i = 0; i < 46; i++) {
-    const x0 = 60 + r() * 960, yAf = 590 + r() * 100, yAd = yM + 110 + r() * 260;
+    const x0 = 60 + r() * 960, yAf = 640 + r() * 150, yAd = yM + 130 + r() * 340;
     const cruza = i % 2 === 0 ? kclamp(deshace * 1.2 - (i / 46) * 0.2, 0, 1) : 0;
     const yy = klerp(yAf, yAd, kEase.suave(cruza)) + Math.sin(T * 2 + i) * 8, xx = x0 + Math.cos(T * 1.5 + i) * 8;
-    out.push(<g key={i} transform={`translate(${xx} ${yy})`}><circle r={24} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
-      <text y={9} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>H⁺</text></g>);
+    out.push(<g key={i} transform={`translate(${xx} ${yy})`}><circle r={28} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
+      <text y={10} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#0b1020">H⁺</text></g>);
   }
   for (let i = 0; i < 6; i++) {   // unos pocos H⁺ adentro desde el principio
-    const xx = 120 + i * 170, yy = yM + 150 + (i % 2) * 140;
-    out.push(<g key={'d' + i} transform={`translate(${xx} ${yy})`}><circle r={24} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
-      <text y={9} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>H⁺</text></g>);
+    const xx = 120 + i * 170, yy = yM + 170 + (i % 2) * 190;
+    out.push(<g key={'d' + i} transform={`translate(${xx} ${yy})`}><circle r={28} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
+      <text y={10} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#0b1020">H⁺</text></g>);
   }
   const fosf = Array.from({ length: 28 }, (_, i) => { const xx = 20 + i * 38;
-    return <g key={'f' + i}><circle cx={xx} cy={yM - 42} r={15} fill={KC.coral} stroke={KC.ink} strokeWidth={4} /><circle cx={xx} cy={yM + 42} r={15} fill={KC.coral} stroke={KC.ink} strokeWidth={4} />
-      <line x1={xx - 5} y1={yM - 28} x2={xx - 5} y2={yM + 28} stroke="#f4d9a8" strokeWidth={4} /><line x1={xx + 5} y1={yM - 28} x2={xx + 5} y2={yM + 28} stroke="#f4d9a8" strokeWidth={4} /></g>; });
+    return <g key={'f' + i}><circle cx={xx} cy={yM - 60} r={17} fill={KC.coral} stroke={KC.ink} strokeWidth={4} /><circle cx={xx} cy={yM + 60} r={17} fill={KC.coral} stroke={KC.ink} strokeWidth={4} />
+      <line x1={xx - 6} y1={yM - 44} x2={xx - 6} y2={yM + 44} stroke="#f4d9a8" strokeWidth={4} /><line x1={xx + 6} y1={yM - 44} x2={xx + 6} y2={yM + 44} stroke="#f4d9a8" strokeWidth={4} /></g>; });
   const mols = [180, 540, 900].map((xx, i) => { const p = kclamp(moleculas * 1.4 - i * 0.2, 0, 1);
-    return p > 0 && <g key={'m' + i} opacity={p}><Halicina x={xx} y={klerp(400, yM - 4, kEase.sale(p))} s={0.28} /></g>; });
+    return p > 0 && <g key={'m' + i} opacity={p}><Halicina x={xx} y={klerp(470, yM - 4, kEase.sale(p))} s={0.4} /></g>; });
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{fosf}{out}{mols}</svg>;
 }
 // Pila / batería con nivel 0..1.
@@ -118,7 +118,7 @@ function Calendario({ x, y, dias, s = 1 }) {
   const out = [];
   for (let i = 0; i < 30; i++) { const c = i % 6, f = Math.floor(i / 6), px = c * 100, py = f * 92, on = i < dias;
     out.push(<g key={i} transform={`translate(${px} ${py})`}><rect width={86} height={78} rx={12} fill={on ? '#fff3c4' : '#fffdf6'} stroke={KC.ink} strokeWidth={5} />
-      <text x={43} y={50} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{i + 1}</text>
+      <text x={43} y={50} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#0b1020">{i + 1}</text>
       {on && <path d="M 16 16 L 70 62 M 70 16 L 16 62" stroke={KC.red} strokeWidth={7} strokeLinecap="round" opacity=".8" />}</g>); }
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-24} y={-90} width={624} height={570} rx={26} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
@@ -133,7 +133,7 @@ function Frasco({ x, y, s = 1, sello = 0 }) {
     <rect x={-120} y={-250} width={240} height={70} rx={14} fill="#fffdf6" stroke={KC.ink} strokeWidth={8} />
     <rect x={-150} y={-190} width={300} height={400} rx={40} fill="#f0a35a" stroke={KC.ink} strokeWidth={8} opacity=".95" />
     <rect x={-120} y={-80} width={240} height={180} rx={14} fill="#fffdf6" stroke={KC.ink} strokeWidth={6} />
-    <text x={0} y={-20} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>HALICINA</text>
+    <text x={0} y={-20} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill="#0b1020">HALICINA</text>
     <text x={0} y={40} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#5a524a">ABAUCINA</text>
     {sello > 0 && <g transform={`translate(0 20) rotate(-14) scale(${klerp(2.2, 1, sello)})`} opacity={Math.min(1, sello * 2)}>
       <rect x={-240} y={-64} width={480} height={128} rx={18} fill="rgba(255,240,235,.92)" stroke={KC.red} strokeWidth={10} />
@@ -175,42 +175,46 @@ function HalicinaShot() {
   const fichas = Array.from({ length: 10 }, (_, i) => ({ t0: K.A + 0.6 + i * 0.6, si: [1, 0, 0, 1, 0, 1, 0, 0, 1, 0][i] }));
   const r = krng(7), celdas = Array.from({ length: 24 * 26 }, () => r());
   const scan = kprog(T, K.B + 0.3, K.B + 4.2, kEase.suave);
+  // pase a mano: las bacterias de las que habla la voz, abajo de la molécula (se apagan cuando la IA predice que las mata)
+  const bichos = (vida, o) => <g opacity={o}>{[[180, 1300, -15, ABAU], [470, 1420, 10, KC.cyan], [770, 1310, -8, KC.mint], [930, 1460, 20, ABAU]].map(([bx, by, br, c], i) =>
+    <Bacteria key={i} x={bx + Math.sin(T * 0.8 + i * 2) * 14} y={by + Math.cos(T * 0.7 + i) * 10} rot={br + Math.sin(T + i) * 6} s={1.5} T={T} seed={i} color={c} vida={vida} />)}</g>;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la molécula de halicina gira; "para diabetes" se tacha */}
       <Escena T={T} a={K.G} b={K.A}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <g opacity={kprog(T, K.G, K.G + 0.3)}><Halicina x={420} y={900 + Math.sin(T * 2) * 10} s={klerp(0.6, 0.95, kprog(T, K.G, K.G + 0.6, kEase.rebote))} rot={giro(T)} brillo={kprog(T, K.G + 4.2, K.G + 5)} /></g>
-          <Brillos T={T} x={420} y={900} o={kprog(T, K.G + 4.2, K.G + 4.8)} />
+          {bichos(1 - 0.85 * kprog(T, K.G + 4.4, K.G + 6.2, kEase.suave), 0.75)}
+          <g opacity={0.6 + 0.4 * kprog(T, K.G, K.G + 0.3)}><Halicina x={540} y={900 + Math.sin(T * 2) * 10} s={klerp(0.8, 1.03, kprog(T, K.G, K.G + 0.6, kEase.rebote))} rot={giro(T)} brillo={kprog(T, K.G + 4.2, K.G + 5)} /></g>
+          <Brillos T={T} x={540} y={900} r0={330} o={kprog(T, K.G + 4.2, K.G + 4.8)} />
         </>)}
       </Escena>
-      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.6} until={K.G + 3.6} texto="para la diabetes" x={330} y={560} tam={50} />
-      <Chip T={T} at={K.G + 4.0} until={K.A - 0.2} texto="IA: «mata bacterias»" x={330} y={540} tam={44} borde={KC.violet} fondo={KC.violet} />
-      <Chip T={T} at={K.G + 4.6} until={K.A - 0.2} texto="(predicción)" x={330} y={630} tam={30} borde={KC.texto} />
+      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.6} until={K.G + 3.6} texto="para la diabetes" x={540} y={560} tam={56} />
+      <Chip T={T} at={K.G + 4.0} until={K.A - 0.2} texto="IA: «mata bacterias»" x={540} y={520} tam={50} borde={KC.violet} fondo={KC.violet} />
+      <Chip T={T} at={K.G + 4.6} until={K.A - 0.2} texto="(predicción)" x={540} y={620} tam={32} borde={KC.texto} />
       {/* 2 · cap. 1: la red aprende con 2,335 moléculas */}
       <Escena T={T} a={K.A} b={K.B}>
         <FondoCircuito T={T} />
-        <RedNeuronal T={T} x={260} y={640} ancho={560} alto={480} capas={[4, 6, 6, 4, 1]} onda={((T - K.A) * 0.6) % 1} />
+        <RedNeuronal T={T} x={250} y={640} ancho={540} alto={700} capas={[4, 6, 6, 4, 1]} onda={((T - K.A) * 0.6) % 1} />
         {svg(<>
           {fichas.map((f, i) => { const p = kprog(T, f.t0, f.t0 + 0.55, kEase.sale), q = kprog(T, f.t0 + 0.55, f.t0 + 0.8); if (p <= 0 || q >= 1) return null;
-            return <g key={i} opacity={1 - q}><Halicina x={klerp(-120, 200, p)} y={880 + ((i % 3) - 1) * 130} s={0.16} rot={i * 40} />
-              <text x={klerp(-120, 200, p)} y={880 + ((i % 3) - 1) * 130 - 50} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={f.si ? KC.mint : KC.red} stroke={KC.ink} strokeWidth={3}>{f.si ? '✔' : '✘'}</text></g>; })}
-          <Bacteria x={930} y={880} s={1.3} T={T} color={KC.cyan} vida={T > K.A + 3 ? 0.55 + 0.45 * Math.cos((T - K.A) * 2) ** 2 : 1} />
+            return <g key={i} opacity={1 - q}><Halicina x={klerp(-120, 130, p)} y={990 + ((i % 3) - 1) * 170} s={0.2} rot={i * 40} />
+              <text x={klerp(-120, 130, p)} y={990 + ((i % 3) - 1) * 170 - 62} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={f.si ? KC.mint : KC.red} stroke={KC.ink} strokeWidth={3}>{f.si ? '✔' : '✘'}</text></g>; })}
+          <Bacteria x={930} y={990} s={1.5} T={T} color={KC.cyan} vida={T > K.A + 3 ? 0.55 + 0.45 * Math.cos((T - K.A) * 2) ** 2 : 1} />
         </>)}
       </Escena>
       <NumeroGigante T={T} at={K.A + 0.6} until={K.B - 0.2} valor={2335} dur={4.5} x={330} y={470} tam={130} color={KC.yellow} />
       <Chip T={T} at={K.A + 1.0} until={K.B - 0.2} texto="moléculas para aprender" x={330} y={570} tam={30} borde={KC.cyan} />
-      <Etq T={T} at={K.A + 2.2} until={K.B - 0.2} x={930} y={980} texto="Escherichia coli" it lado="izq" tam={34} />
-      <Chip T={T} at={K.A + 3.4} until={K.B - 0.2} texto="✔ la frena   ✘ no la frena" x={540} y={1150} tam={34} borde={KC.texto} />
+      <Etq T={T} at={K.A + 2.2} until={K.B - 0.2} x={1040} y={1090} texto="Escherichia coli" it lado="izq" tam={34} />
+      <Chip T={T} at={K.A + 3.4} until={K.B - 0.2} texto="✔ la frena   ✘ no la frena" x={540} y={1420} tam={36} borde={KC.texto} />
       {/* 3 · cap. 2: revisa 6,111 moléculas ya estudiadas */}
       <Escena T={T} a={K.B} b={K.H}>
         <FondoCircuito T={T} color={KC.lilac} />
         {svg(<>
-          {celdas.map((v, i) => { const c = i % 24, f = Math.floor(i / 24), px = 72 + c * 39, py = 680 + f * 20; const pasado = f / 26 < scan;
+          {celdas.map((v, i) => { const c = i % 24, f = Math.floor(i / 24), px = 72 + c * 39, py = 660 + f * 30; const pasado = f / 26 < scan;
             const oro = v > 0.985 && pasado, elegida = i === 24 * 13 + 11;
-            return <rect key={i} x={px} y={py} width={30} height={16} rx={5} fill={elegida && T > K.B + 4.3 ? KC.yellow : oro ? KC.gold : pasado ? '#3b2f66' : '#1d2b4a'} stroke={elegida && T > K.B + 4.3 ? KC.ink : 'none'} strokeWidth={3} />; })}
-          <rect x={60} y={680 + scan * 26 * 20 - 6} width={960} height={12} rx={6} fill={KC.cyan} opacity={scan > 0 && scan < 1 ? 0.8 : 0} />
+            return <rect key={i} x={px} y={py} width={30} height={24} rx={6} fill={elegida && T > K.B + 4.3 ? KC.yellow : oro ? KC.gold : pasado ? '#3b2f66' : '#1d2b4a'} stroke={elegida && T > K.B + 4.3 ? KC.ink : 'none'} strokeWidth={3} />; })}
+          <rect x={60} y={660 + scan * 26 * 30 - 6} width={960} height={12} rx={6} fill={KC.cyan} opacity={scan > 0 && scan < 1 ? 0.8 : 0} />
         </>)}
       </Escena>
       <NumeroGigante T={T} at={K.B + 0.3} until={K.H - 0.2} valor={6111} dur={3.8} x={330} y={470} tam={130} color={KC.yellow} />
@@ -220,78 +224,79 @@ function HalicinaShot() {
       <Escena T={T} a={K.H} b={K.P}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <g opacity={kprog(T, K.H + 1.6, K.H + 2.1)}><OjoRojo x={190} y={640} s={0.6} T={T} /></g>
-          <Halicina x={540} y={1020} s={klerp(0.3, 0.8, kprog(T, K.H, K.H + 0.8, kEase.rebote))} rot={giro(T)} brillo={1} />
+          <g opacity={kprog(T, K.H + 1.6, K.H + 2.1)}><OjoRojo x={200} y={600} s={0.75} T={T} /></g>
+          <Halicina x={540} y={1040} s={klerp(0.5, 1.1, kprog(T, K.H, K.H + 0.8, kEase.rebote))} rot={giro(T)} brillo={1} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.H + 0.4} until={K.P - 0.2} texto="HALICINA" x={470} y={470} tam={70} borde={KC.ink} fondo={KC.ink} color={KC.yellow} />
-      <Chip T={T} at={K.H + 2.0} until={K.P - 0.2} texto="por HAL, de «2001: odisea del espacio»" x={620} y={810} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.H + 0.4} until={K.P - 0.2} texto="HALICINA" x={650} y={520} tam={84} borde={KC.ink} fondo={KC.ink} color={KC.yellow} />
+      <Chip T={T} at={K.H + 2.0} until={K.P - 0.2} texto="por HAL, de «2001: odisea del espacio»" x={560} y={800} tam={32} borde={KC.red} />
       {/* 5 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Ba} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <text x={270} y={1000} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 270 820)`}>?</text>
-          {[0, 1, 2].map((i) => <g key={i}><Bacteria x={180 + i * 120} y={1120 + (i % 2) * 40} rot={i * 25 - 20} s={0.9} T={T} color={ABAU} gen />
-            <path d={`M ${180 + i * 120} ${1070 + (i % 2) * 40} l 34 14 v 26 q 0 22 -34 34 q -34 -12 -34 -34 v -26 z`} fill={KC.blue} stroke={KC.ink} strokeWidth={4} opacity=".85" /></g>)}
+          <text x={840} y={780} textAnchor="middle" style={{ font:`400 400px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 840 640)`}>?</text>
+          {[0, 1, 2].map((i) => <g key={i} transform={`translate(${240 + i * 300} ${1440 + (i % 2) * 40})`}><Bacteria x={0} y={0} rot={i * 25 - 20} s={1.7} T={T} color={ABAU} gen />
+            <path d="M 0 -50 l 34 14 v 26 q 0 22 -34 34 q -34 -12 -34 -34 v -26 z" transform="scale(1.6)" fill={KC.blue} stroke={KC.ink} strokeWidth={3} opacity=".85" /></g>)}
         </>)}
       </Escena>
-      <Chip T={T} at={K.P + 0.4} until={K.Ba - 0.2} texto="resisten a casi todo" x={300} y={480} tam={36} borde={KC.blue} />
+      <Chip T={T} at={K.P + 0.4} until={K.Ba - 0.2} texto="resisten a casi todo" x={540} y={1290} tam={42} borde={KC.blue} />
       {/* 6 · la batería: por dentro de la bacteria */}
       <Escena T={T} a={K.Ba} b={K.R}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Membrana T={T} deshace={kprog(T, K.Ba + 2.2, K.Ba + 5.4, kEase.suave)} moleculas={kprog(T, K.Ba + 1.0, K.Ba + 2.4)} />
       </Escena>
-      <Pila T={T} at={K.Ba + 0.4} until={K.R - 0.2} nivel={1 - kprog(T, K.Ba + 2.2, K.Ba + 5.4, kEase.suave)} x={330} y={400} />
-      <Etq T={T} at={K.Ba + 0.6} until={K.R - 0.2} x={30} y={505} texto="afuera: más H⁺ (más ácido)" tam={30} />
-      <Etq T={T} at={K.Ba + 0.9} until={K.R - 0.2} x={30} y={1150} texto="adentro de la bacteria" tam={30} />
-      <Etq T={T} at={K.Ba + 1.4} until={K.R - 0.2} x={1050} y={830} texto="membrana" lado="izq" tam={28} color={KC.coral} />
-      <Chip T={T} at={K.Ba + 2.6} until={K.R - 0.2} texto="esquema" x={960} y={1150} tam={24} borde={KC.texto} />
+      <Pila T={T} at={K.Ba + 0.4} until={K.R - 0.2} nivel={1 - kprog(T, K.Ba + 2.2, K.Ba + 5.4, kEase.suave)} x={540} y={420} />
+      <Etq T={T} at={K.Ba + 0.6} until={K.R - 0.2} x={30} y={570} texto="afuera: más H⁺ (más ácido)" tam={32} />
+      <Etq T={T} at={K.Ba + 0.9} until={K.R - 0.2} x={30} y={1460} texto="adentro de la bacteria" tam={32} />
+      <Etq T={T} at={K.Ba + 1.4} until={K.R - 0.2} x={1050} y={1000} texto="membrana" lado="izq" tam={30} color={KC.coral} />
+      <Chip T={T} at={K.Ba + 2.6} until={K.R - 0.2} texto="esquema" x={950} y={1460} tam={24} borde={KC.texto} />
       {/* 7 · cap. 3: Cell 2020, ratones */}
       <Escena T={T} a={K.R} b={K.Tr}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <g opacity={kprog(T, K.R + 2.6, K.R + 3.0)}><Raton x={300} y={740} s={0.9} T={T} mancha={<ellipse cx={-30} cy={-30} rx={44} ry={24} fill={T > K.R + 4.4 ? '#f2b6b6' : '#d65a5a'} stroke={KC.ink} strokeWidth={4} />} /></g>
-          <g opacity={kprog(T, K.R + 3.4, K.R + 3.8)}><Raton x={760} y={1010} s={0.8} T={T + 1} color="#c9c3b8" mancha={<circle cx={20} cy={20} r={30} fill="none" stroke={KC.ink} strokeWidth={4} strokeDasharray="8 8" />} /></g>
+          <g opacity={0.6 + 0.4 * kprog(T, K.R + 2.6, K.R + 3.0)}><Raton x={440} y={980} s={1.35} T={T} mancha={<ellipse cx={-30} cy={-30} rx={44} ry={24} fill={T > K.R + 4.4 ? '#f2b6b6' : '#d65a5a'} stroke={KC.ink} strokeWidth={4} />} /></g>
+          <g opacity={0.45 + 0.55 * kprog(T, K.R + 3.4, K.R + 3.8)}><Raton x={640} y={1350} s={1.2} T={T + 1} color="#c9c3b8" mancha={<circle cx={20} cy={20} r={30} fill="none" stroke={KC.ink} strokeWidth={4} strokeDasharray="8 8" />} /></g>
         </>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.R + 0.2} until={K.R + 2.5} anio="2020" quien="MIT · Stokes, Barzilay, Collins y col." revista="Cell" y={760} />
-      <Etq T={T} at={K.R + 3.0} until={K.Tr - 0.2} x={60} y={880} texto="A. baumannii · herida en la piel" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.R + 3.8} until={K.Tr - 0.2} x={560} y={1010} texto="C. difficile · intestino" lado="izq" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.R + 0.2} until={K.R + 2.5} anio="2020" quien="MIT · Stokes, Barzilay, Collins y col." revista="Cell" y={570} />
+      <Etq T={T} at={K.R + 3.0} until={K.Tr - 0.2} x={60} y={760} texto="A. baumannii · herida en la piel" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.R + 3.8} until={K.Tr - 0.2} x={1040} y={1160} texto="C. difficile · intestino" lado="izq" tam={32} color={KC.ink} />
       {/* 8 · treinta días sin resistencia */}
       <Escena T={T} a={K.Tr} b={K.Ab}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<Calendario x={130} y={660} s={0.92} dias={Math.round(30 * kprog(T, K.Tr + 0.2, K.Tr + 2.4, kEase.suave))} />)}
+        {svg(<Calendario x={108} y={700} s={1.5} dias={Math.round(30 * kprog(T, K.Tr + 0.2, K.Tr + 2.4, kEase.suave))} />)}
       </Escena>
-      <Chip T={T} at={K.Tr + 0.5} until={K.Ab - 0.2} texto="resistencia de E. coli: ninguna" x={560} y={470} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Tr + 0.5} until={K.Ab - 0.2} texto="resistencia de E. coli: ninguna" x={540} y={480} tam={40} borde={KC.red} />
       {/* 9 · abaucina: espectro estrecho */}
       <Escena T={T} a={K.Ab} b={K.O}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          {[[200, 860, ABAU], [430, 920, KC.mint], [720, 840, ABAU], [900, 960, KC.cyan], [300, 1030, KC.mint], [620, 1020, ABAU], [900, 760, KC.mint]].map(([bx, by, c], i) => {
+          {[[210, 930, ABAU], [470, 1060, KC.mint], [760, 900, ABAU], [900, 1150, KC.cyan], [280, 1250, KC.mint], [640, 1310, ABAU], [130, 1100, KC.mint]].map(([bx, by, c], i) => {
             const es = c === ABAU, golpe = es ? kprog(T, K.Ab + 1.6 + i * 0.12, K.Ab + 2.4 + i * 0.12) : (i === 1 ? 0.2 * kprog(T, K.Ab + 2.2, K.Ab + 2.8) : 0);
-            return <Bacteria key={i} x={bx} y={by} rot={i * 37} s={0.95} T={T} seed={i} color={c} vida={1 - golpe * (es ? 0.9 : 1)} />; })}
-          <Mira x={klerp(540, 720, kprog(T, K.Ab + 0.6, K.Ab + 1.5, kEase.suave))} y={klerp(950, 840, kprog(T, K.Ab + 0.6, K.Ab + 1.5, kEase.suave))} T={T} o={kprog(T, K.Ab + 0.5, K.Ab + 0.8)} />
-          <Abaucina x={250} y={650} s={0.7} T={T} />
+            return <Bacteria key={i} x={bx} y={by} rot={i * 37} s={1.5} T={T} seed={i} color={c} vida={1 - golpe * (es ? 0.9 : 1)} />; })}
+          <Mira x={klerp(540, 760, kprog(T, K.Ab + 0.6, K.Ab + 1.5, kEase.suave))} y={klerp(1100, 900, kprog(T, K.Ab + 0.6, K.Ab + 1.5, kEase.suave))} r={130} T={T} o={kprog(T, K.Ab + 0.5, K.Ab + 0.8)} />
+          <Abaucina x={270} y={660} s={1.0} T={T} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ab + 0.2} until={K.O - 0.2} texto="2023 · Nature Chemical Biology" x={360} y={470} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.Ab + 0.5} until={K.O - 0.2} x={430} y={650} texto="abaucina (esquema)" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ab + 2.0} until={K.O - 0.2} texto="espectro estrecho: casi solo A. baumannii" x={540} y={1125} tam={30} borde={ABAU} />
+      <Chip T={T} at={K.Ab + 0.2} until={K.O - 0.2} texto="2023 · Nature Chemical Biology" x={360} y={470} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.Ab + 0.5} until={K.O - 0.2} x={480} y={660} texto="abaucina (esquema)" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Ab + 2.0} until={K.O - 0.2} texto="espectro estrecho: casi solo A. baumannii" x={540} y={1470} tam={34} borde={ABAU} />
       {/* 10 · ojo: no es medicina aprobada */}
       <Escena T={T} a={K.O} b={K.C}>
         <FondoLunares color={KC.pink} />
-        {svg(<Frasco x={540} y={880} s={1.05} sello={kprog(T, K.O + 0.8, K.O + 1.2, kEase.sale)} />)}
+        {svg(<Frasco x={540} y={940} s={1.9} sello={kprog(T, K.O + 0.8, K.O + 1.2, kEase.sale)} />)}
       </Escena>
       {/* 11 · cierre: la misma molécula, ahora candidata a antibiótico */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Halicina x={420} y={920 + Math.sin(T * 2) * 10} s={0.95} rot={giro(T)} brillo={1} />
-          <Brillos T={T} x={420} y={920} o={kprog(T, K.C + 2.6, K.C + 3.2)} />
+          {bichos(0.15, 0.6)}
+          <Halicina x={540} y={960 + Math.sin(T * 2) * 10} s={1.1} rot={giro(T)} brillo={1} />
+          <Brillos T={T} x={540} y={960} r0={330} o={kprog(T, K.C + 2.6, K.C + 3.2)} />
         </>)}
       </Escena>
-      <MitoTachado T={T} at={K.C + 0.2} tacharEn={K.C + 1.0} until={K.Ou} texto="para la diabetes" x={330} y={560} tam={44} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="¿candidata a antibiótico?" x={400} y={660} tam={42} borde={KC.leaf} />
+      <MitoTachado T={T} at={K.C + 0.2} tacharEn={K.C + 1.0} until={K.Ou} texto="para la diabetes" x={540} y={560} tam={48} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="¿candidata a antibiótico?" x={540} y={670} tam={46} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.A - 0.1} texto="¿Diabetes? Una IA predijo: *mata bacterias.*" />
