@@ -1,0 +1,37 @@
+name: Espejo al repo público de documentales
+
+# Autorizado por Robert (2 nov 2026): "Autorizo copiar las ramas largo-render (pitch y Core #00) al repo público
+# lacreaciondelrobert-largos, sabiendo que sus archivos y fotos quedan públicos."
+# El repo de producción es privado; los renders pesados de documentales corren en el repo PÚBLICO (minutos gratis).
+# Cada push a esta rama se copia allá con solo el workflow de render (voz, YouTube y revisión se quedan aquí: usan secretos).
+# Requiere el secreto PUBLICO_TOKEN (token fino con Contents: read & write sobre lacreaciondelrobert-largos).
+on:
+  push:
+    branches: ['largo-render/pitch-solve']
+  workflow_dispatch:
+
+concurrency:
+  group: espejo-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  espejo:
+    if: github.repository == 'Roberthecoder/lacreaciondelrobert-shots'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Copiar la rama al repo público (solo el workflow de render)
+        env:
+          PUBLICO_TOKEN: ${{ secrets.PUBLICO_TOKEN }}
+          RAMA: ${{ github.ref_name }}
+        run: |
+          [ -n "$PUBLICO_TOKEN" ] || { echo "Falta el secreto PUBLICO_TOKEN"; exit 1; }
+          git config user.name "espejo-largos"; git config user.email "espejo@users.noreply.github.com"
+          find .github/workflows -type f ! -name render-largo.yml -delete
+          git add -A .github/workflows
+          git diff --cached --quiet || git commit -q -m "Espejo: solo el render en el repo público [sin render]"
+          git push --force "https://x-access-token:${PUBLICO_TOKEN}@github.com/Roberthecoder/lacreaciondelrobert-largos.git" "HEAD:refs/heads/$RAMA"

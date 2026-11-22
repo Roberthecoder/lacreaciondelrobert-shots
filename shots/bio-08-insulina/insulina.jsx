@@ -180,7 +180,7 @@ function InsulinaNarrado() {
 
       {/* 1 · ANTES — cerdos y reses */}
       <EscenaFundido T={T} a={K.A} b={K.R} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:KC.yellow, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.yellow, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g opacity={kprog(T, K.A + 0.2, K.A + 0.8)}><Animal x={300} y={760} s={0.95} tipo="cerdo" color="#d98fa4" /></g>
           <g opacity={kprog(T, K.A + 0.7, K.A + 1.3)}><Animal x={720} y={1060} s={0.9} tipo="res" color="#8e7c72" /></g>
@@ -191,7 +191,7 @@ function InsulinaNarrado() {
 
       {/* 2 · REACCIÓN — no era humana */}
       <EscenaFundido T={T} a={K.R} b={K.Ge} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:KC.coral, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.26) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.coral, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.26) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g transform={`rotate(${mece(T, 2, 0.2) * 1.5} 540 960)`}>
             <rect x={210} y={760} width={660} height={300} rx={150} fill="#f1b48f" stroke={KC.ink} strokeWidth={10} />
@@ -282,7 +282,7 @@ function InsulinaNarrado() {
 
       {/* 8 · HUMULIN */}
       <EscenaFundido T={T} a={K.H} b={K.Ho} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:KC.mint, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.mint, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g opacity={kprog(T, K.H + 2.6, K.H + 3.2)}>
             <Frasco T={T} x={300} y={960} s={1.25} etiqueta="Humulin" />
@@ -293,7 +293,7 @@ function InsulinaNarrado() {
 
       {/* 9 · HOY — no todo es bacteria */}
       <EscenaFundido T={T} a={K.Ho} b={K.Le} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:KC.lilac, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.28) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.28) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <Bacteria T={T} x={320} y={900} s={0.7} plasmido={1} />
           <g opacity={kprog(T, K.Ho + 0.6, K.Ho + 1.4)}><Levadura T={T} x={790} y={900} s={0.85} /></g>

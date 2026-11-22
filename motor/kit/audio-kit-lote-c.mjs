@@ -6,6 +6,7 @@
 // Los tiempos se dan en tiempo de AUTOR (el de K / CUES); en la narrada se convierten a tiempo real con warp().
 import fs from 'node:fs';
 import path from 'node:path';
+import { camaLuminosa } from './cama-luminosa.mjs';
 
 export function mezcla(dir, html, semilla = 7) {
   const src = fs.readFileSync(path.join(dir, html), 'utf8');
@@ -15,6 +16,7 @@ export function mezcla(dir, html, semilla = 7) {
   const warp = (ta) => { for (let i = SEC.length - 1; i >= 0; i--) { const x = SEC[i]; if (ta >= x.a) return x.p + (ta - x.a) * x.dur / x.nat; } return ta; };
   const TOTAL = acc, SR = 48000, N = Math.ceil((TOTAL + 0.3) * SR);
   const mus = new Float32Array(N), sfx = new Float32Array(N);
+  let CAMA = null;
   let seed = semilla; const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
   const NOISE = Float32Array.from({ length: SR * 2 }, () => rnd() * 2 - 1);
   const add = (buf, ta, fn, dur) => { const t = warp(ta); const i0 = Math.max(0, Math.floor(t * SR)), n = Math.floor(dur * SR); for (let i = 0; i < n && i0 + i < N; i++) buf[i0 + i] += fn(i / SR, i); };
@@ -43,10 +45,11 @@ export function mezcla(dir, html, semilla = 7) {
     zumbido: (t, d = 1, g = 0.06, f0 = 190) => add(sfx, t, (u) => (Math.sin(2 * Math.PI * f0 * u + 2 * Math.sin(2 * Math.PI * 23 * u)) * 0.6 + Math.sin(2 * Math.PI * f0 * 2.01 * u) * 0.3) * Math.sin(Math.PI * Math.min(1, u / d)) * g, d),
     motor: (t, d = 2, g = 0.08) => { const f = lp(); add(sfx, t, (u, i) => f(NOISE[i % NOISE.length] * 0.6 + Math.sin(2 * Math.PI * 95 * u) * (0.6 + 0.4 * Math.sin(2 * Math.PI * 31 * u)), 500) * Math.sin(Math.PI * Math.min(1, u / d)) * g, d); },
     // cama grave continua, sin golpe (narrados). tapa 0..1 la ahoga (mudos: estado de la historia)
-    pad: (t0, t1, g = 0.05, notas = [45, 52, 57], tapa = 0) => { const f = lp(); const n0 = Math.floor(warp(t0) * SR), n1 = Math.min(N, Math.floor(warp(t1) * SR));
-      for (let i = n0; i < n1; i++) { const t = i / SR, u = (i - n0) / (n1 - n0); const x = notas.reduce((a, mm) => a + Math.sin(2 * Math.PI * hz(mm) * t) + 0.3 * Math.sin(2 * Math.PI * hz(mm + 12) * t * 1.003), 0) / notas.length;
-        mus[i] += f(x, 520 - 300 * tapa) * g * (0.85 + 0.15 * Math.sin(t * 0.7)) * Math.min(1, u * 8, (1 - u) * 8); } },
+    // Cama de los narrados: «cama luminosa» (22 nov 2026; motor/kit/cama-luminosa.mjs). Una sola para todo el video,
+    // aunque el shot llame a pad() por tramos; los parámetros de la cama grave vieja ya no se usan.
+    pad: (t0, t1, g = 0.05) => { CAMA = CAMA ? { a: Math.min(CAMA.a, t0), b: Math.max(CAMA.b, t1), g: Math.max(CAMA.g, g) } : { a: t0, b: t1, g }; },
     guardar: (out, gan = 1) => {
+      if (CAMA) { camaLuminosa(mus, SR, Math.max(0, Math.floor(warp(CAMA.a) * SR)), Math.min(N, Math.floor(warp(CAMA.b) * SR)), { g: CAMA.g, semilla: 11 }); CAMA = null; }
       const buf = Buffer.alloc(44 + N * 4);
       buf.write('RIFF', 0); buf.writeUInt32LE(36 + N * 4, 4); buf.write('WAVE', 8); buf.write('fmt ', 12); buf.writeUInt32LE(16, 16);
       buf.writeUInt16LE(1, 20); buf.writeUInt16LE(2, 22); buf.writeUInt32LE(SR, 24); buf.writeUInt32LE(SR * 4, 28); buf.writeUInt16LE(4, 32); buf.writeUInt16LE(16, 34);

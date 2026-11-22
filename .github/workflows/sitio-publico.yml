@@ -1,0 +1,44 @@
+name: Sitio público (páginas de las API)
+
+# Copia docs/ (privacidad, términos, verificación y conexión de TikTok) al repo PÚBLICO Roberthecoder/roberthecoder.github.io,
+# carpeta lacreaciondelrobert-shots/. Así las direcciones https://roberthecoder.github.io/lacreaciondelrobert-shots/… registradas
+# en Meta, Google/YouTube, LinkedIn y TikTok siguen funcionando aunque este repo sea privado (1 nov 2026).
+# Solo copia páginas: nunca videos, guiones ni fotos. Requiere el secreto PUBLICO_TOKEN.
+on:
+  push:
+    branches: [main]
+    paths: ['docs/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sitio-publico
+  cancel-in-progress: false
+
+jobs:
+  copiar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copiar docs/ al repo público
+        env:
+          PUBLICO_TOKEN: ${{ secrets.PUBLICO_TOKEN }}
+        run: |
+          [ -n "$PUBLICO_TOKEN" ] || { echo "::error::Falta el secreto PUBLICO_TOKEN"; exit 1; }
+          echo "::add-mask::$PUBLICO_TOKEN"
+          git clone -q "https://x-access-token:${PUBLICO_TOKEN}@github.com/Roberthecoder/roberthecoder.github.io.git" pub
+          mkdir -p pub/lacreaciondelrobert-shots
+          rsync -a --delete --exclude 'revisiones/' docs/ pub/lacreaciondelrobert-shots/
+          cd pub
+          [ -f index.html ] || printf '<!doctype html><meta charset="utf-8"><title>La Creación del Robert</title><meta http-equiv="refresh" content="0; url=/lacreaciondelrobert-shots/"><a href="/lacreaciondelrobert-shots/">La Creación del Robert</a>\n' > index.html
+          touch .nojekyll
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && { echo "Sin cambios"; exit 0; }
+          git commit -q -m "Sitio: copia de docs/ (${GITHUB_SHA::7})"
+          git push -q
+          echo "Listo: https://roberthecoder.github.io/lacreaciondelrobert-shots/"

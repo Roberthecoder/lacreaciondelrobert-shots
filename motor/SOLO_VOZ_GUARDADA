@@ -1,0 +1,1 @@
+Candado del re-render masivo en modo cine (22 nov 2026). Mientras este archivo exista en esta rama, narrar.mjs nunca pide voz nueva a ElevenLabs: solo usa la voz guardada de cada shot. Se puede borrar cuando termine el re-render.

@@ -297,10 +297,154 @@ def revisar_video(red, iv):
     return problemas
 
 
+def es_largo(clave):
+    """Documental o video largo horizontal: vive en largos/<clave>/ (no en shots/)."""
+    return os.path.isdir(os.path.join('largos', clave)) and not os.path.isdir(os.path.join('shots', clave))
+
+
+def textos_largo(clave):
+    """Título y descripción de YouTube de un largo, más sus datos (meta).
+    Lee largos/<clave>/publicacion.md (sección YouTube: título y descripción con capítulos) y, si existen,
+    largos/<clave>/youtube.json o youtube/meta.json ({titulo, idioma, etiquetas, categoria, portada_segundo, sintetico})
+    y youtube/descripcion.txt (formato del pitch de Solve)."""
+    d = os.path.join('largos', clave)
+    meta = {}
+    for m in (os.path.join(d, 'youtube.json'), os.path.join(d, 'youtube', 'meta.json')):
+        if os.path.exists(m):
+            meta = json.load(open(m, encoding='utf-8'))
+            break
+    r = redes_de(os.path.join(d, 'publicacion.md'))
+    y = dict(r.get('youtube') or {})
+    txt = os.path.join(d, 'youtube', 'descripcion.txt')
+    if not y.get('texto') and os.path.exists(txt):
+        y['texto'] = open(txt, encoding='utf-8').read().strip()
+    if meta.get('titulo') and not y.get('titulo'):
+        y['titulo'] = meta['titulo']
+    if y:
+        r['youtube'] = y
+    return r, y.get('titulo') or clave, meta
+
+
+def revisar_video_largo(iv):
+    problemas = []
+    if not 1 <= iv['dur'] <= 12 * 3600:
+        problemas.append(f'dura {iv["dur"]:.1f} s (YouTube acepta hasta 12 h)')
+    if iv['w'] and iv['h'] and abs(iv['w'] / iv['h'] - 16 / 9) > 0.02:
+        problemas.append(f'no es horizontal 16:9 ({iv["w"]}×{iv["h"]})')
+    if iv['vcodec'] not in ('h264', 'hevc', 'av1', 'vp9'):
+        problemas.append(f'códec de video {iv["vcodec"]}')
+    if iv['acodec'] not in ('aac', 'opus', 'mp3'):
+        problemas.append(f'códec de audio {iv["acodec"]}')
+    return problemas
+
+
+def hacer_portada(video, clave, meta, iv):
+    """Portada 1280×720: la del Release (<clave>_portada.jpg) si el workflow la bajó; si no, un cuadro del video."""
+    for c in (os.path.join(os.path.dirname(video), f'{clave}_portada.jpg'), os.path.join(os.path.dirname(video), 'portada.jpg')):
+        if os.path.exists(c) and os.path.getsize(c) < 2 * 1024 * 1024:
+            return c
+    seg = float(meta.get('portada_segundo') or min(30.0, iv['dur'] * 0.2))
+    out = os.path.join(os.path.dirname(video) or '.', f'{clave}_portada_auto.jpg')
+    for q in (2, 5, 9):
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(seg), '-i', video, '-frames:v', '1',
+                        '-vf', 'scale=1280:720:flags=lanczos', '-q:v', str(q), out], check=False)
+        if os.path.exists(out) and os.path.getsize(out) < 2 * 1024 * 1024:
+            return out
+    return None
+
+
+YT_PRIVACIDAD = {'public': 'público', 'unlisted': 'no listado', 'private': 'privado'}
+
+
+def subir_youtube_largo(video, r, modo, clave, meta, yt, iv):
+    """Sube un documental horizontal: privacidad que elige Robert, idioma, etiquetas, capítulos (van en la descripción),
+    medios sintéticos declarados y portada propia (thumbnails/set funciona con el permiso youtube.upload)."""
+    at = youtube_token()
+    y = r['youtube']
+    if modo == 'privado':
+        priv = 'private'
+    else:
+        priv = (yt or {}).get('privacidad') or meta.get('privacidad')
+        if priv not in YT_PRIVACIDAD:
+            raise Falla('YouTube: falta elegir la privacidad del documental (público, no listado o privado) en la Sala')
+    idioma = (yt or {}).get('idioma') or meta.get('idioma') or 'es-419'
+    tags = meta.get('etiquetas') or list(dict.fromkeys(re.findall(r'#(\w+)', y['texto'])))[:15]
+    cuerpo = {'snippet': {'title': y['titulo'], 'description': y['texto'], 'categoryId': str(meta.get('categoria', '28')),
+                          'tags': tags, 'defaultLanguage': idioma, 'defaultAudioLanguage': idioma},
+              'status': {'privacyStatus': priv, 'selfDeclaredMadeForKids': False, 'embeddable': True, 'license': 'youtube',
+                         'publicStatsViewable': True, 'containsSyntheticMedia': bool(meta.get('sintetico', True))}}
+    ini = requests.post('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status',
+                        headers={'Authorization': f'Bearer {at}', 'Content-Type': 'application/json; charset=UTF-8',
+                                 'X-Upload-Content-Type': 'video/mp4', 'X-Upload-Content-Length': str(os.path.getsize(video))},
+                        data=json.dumps(cuerpo), timeout=60)
+    if ini.status_code >= 300 or 'Location' not in ini.headers:
+        err(ini, 'YouTube iniciar')
+    with open(video, 'rb') as f:
+        up = ok(requests.put(ini.headers['Location'], headers={'Content-Type': 'video/mp4'}, data=f, timeout=3600),
+                'YouTube subir')
+    st = up.get('status', {}).get('privacyStatus')
+    nota = YT_PRIVACIDAD.get(st, st or '?')
+    if st == 'private' and priv != 'private':
+        nota = 'quedó PRIVADO: Google bloquea en privado los videos de apps sin auditoría (ver ADMIN.md)'
+    portada = hacer_portada(video, clave, meta, iv)
+    if portada:
+        with open(portada, 'rb') as f:
+            th = requests.post(f'https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={up["id"]}',
+                               headers={'Authorization': f'Bearer {at}', 'Content-Type': 'image/jpeg'}, data=f, timeout=120)
+        nota += ' · portada OK' if th.status_code < 300 else f' · portada no se pudo ({th.status_code}; ¿canal sin verificar?)'
+    if iv['dur'] > 15 * 60:
+        nota += ' · dura más de 15 min: requiere el canal verificado en YouTube'
+    return {'id': up['id'], 'url': f'https://youtu.be/{up["id"]}', 'nota': nota, 'largo': True, 'privacidad': priv,
+            'idioma': idioma}
+
+
+SERIE_DE = {'fun': 'Fungi Mati', 'bio': 'Biotecnológico', 'amb': 'Ambiental', 'cie': 'Científico', 'qui': 'Químico', 'ia': 'IA',
+            'fes': 'Festivo', 'robert': 'Robert'}
+ESPECIALES_TIT = {'003-semillas-luna': ('Científico', 1)}
+
+
+def titulo_completo(clave, gancho):
+    """Título para YouTube, Facebook y LinkedIn (reglas de Robert): primero el GANCHO y al final la serie y el número,
+    SIN «#» (las redes lo vuelven hashtag; 31 oct 2026): «<gancho> | Shot <Serie> NN»."""
+    m = re.match(r'^([a-z]+)-(\d+)-', clave)
+    serie, n = ESPECIALES_TIT.get(clave) or ((SERIE_DE.get(m.group(1)), int(m.group(2))) if m else (None, None))
+    gancho = re.sub(r'\s*\|\s*Shot\b.*$', '', gancho).strip()
+    if not serie:
+        return titulo_corto(gancho, 100)
+    cola = f' | Shot {serie} {n:02d}'
+    return titulo_corto(gancho, 100 - len(cola)) + cola
+
+
+def titulo_corto(t, n):
+    """Recorta a n caracteres sin partir palabras (YouTube admite 100)."""
+    return t if len(t) <= n else t[:n - 1].rsplit(' ', 1)[0].rstrip(' ·:,;—-') + '…'
+
+
+def programado(clave):
+    """Videos especiales con horario propio (publicar/programados.json; p. ej. Shot Robert 01–13). No viven en shots/,
+    así que el calendario diario nunca los ve. Devuelve su ficha o None."""
+    try:
+        items = json.load(open('publicar/programados.json', encoding='utf-8')).get('items') or []
+    except (OSError, ValueError):
+        return None
+    return next((x for x in items if x.get('clave') == clave), None)
+
+
 def textos(clave):
+    pr = programado(clave)
+    if pr:
+        return redes_de(os.path.join('publicar', 'programados', clave, 'publicacion.md')), pr['titulo']
     carpeta = os.path.join('shots', clave)
     r = redes_de(os.path.join(carpeta, 'publicacion.md'))
-    return r, titulo_de(carpeta, clave)
+    gancho = ((r.get('youtube') or {}).get('titulo')) or titulo_de(carpeta, clave)
+    titulo = titulo_completo(clave, gancho)
+    if r.get('youtube'):
+        r['youtube']['titulo'] = titulo
+    # por si algún texto viejo trae «#NN» en el número de serie: nunca se publica como hashtag
+    for red in r.values():
+        if isinstance(red, dict) and red.get('texto'):
+            red['texto'] = re.sub(r'(Shot [^\n#|]{2,30}?) #(\d{1,3})\b', r'\1 \2', red['texto'])
+    return r, titulo
 
 
 def revisar_texto(red, r, tt=None):
@@ -666,10 +810,21 @@ def cmd_publicar(a):
         raise SystemExit(f'Redes desconocidas: {malas}. Usa: {", ".join(REDES)}')
     if a.modo == 'real' and a.confirmar != a.clave:
         raise SystemExit('Modo real: escribe la clave del shot en "confirmar" (y solo con permiso de Robert).')
+    if es_largo(a.clave):
+        return publicar_largo(a, redes)
+    pr = programado(a.clave)
+    if pr:
+        # Candado: un video programado solo va a las redes de su ficha (Shot Robert 01–13: nunca YouTube ni TikTok).
+        fuera = [x for x in redes if x not in (pr.get('redes') or [])]
+        if fuera:
+            raise SystemExit(f'{a.clave} es un video programado: no se publica en {", ".join(fuera)} '
+                             f'(solo {", ".join(pr.get("redes") or [])}).')
+        if not os.path.exists(os.path.join('publicar', 'programados', a.clave, 'publicacion.md')):
+            raise SystemExit(f'Falta publicar/programados/{a.clave}/publicacion.md')
     carpeta = os.path.join('shots', a.clave)
-    if not os.path.isdir(carpeta):
+    if not pr and not os.path.isdir(carpeta):
         raise SystemExit(f'No existe {carpeta} en esta rama')
-    ver = open(os.path.join(carpeta, 'verificacion.md'), encoding='utf-8').read() if os.path.exists(
+    ver = 'VEREDICTO: APROBADO (video del documental, aprobado por Robert)' if pr else open(os.path.join(carpeta, 'verificacion.md'), encoding='utf-8').read() if os.path.exists(
         os.path.join(carpeta, 'verificacion.md')) else ''
     if a.clave not in open('.github/verificacion-exentos.txt', encoding='utf-8').read() and \
             'VEREDICTO: APROBADO' not in ver:
@@ -680,7 +835,9 @@ def cmd_publicar(a):
     except ValueError:
         raise SystemExit('Las opciones de TikTok no son JSON válido')
     iv = info_video(a.video)
-    ya = {(x['clave'], x['red']) for x in bitacora() if x.get('modo') == 'real' and x.get('ok') and not x.get('borrador')}
+    # Ya hecho en modo real: publicado (o, en TikTok, mandado como borrador a la app): no se repite.
+    ya = {(x['clave'], x['red']) for x in bitacora() if x.get('modo') == 'real' and x.get('ok')
+          and (not x.get('borrador') or x.get('red') == 'tiktok')}
     filas, lineas = [], [f'## {a.clave} · modo **{a.modo}**', '',
                          f'Video: `{os.path.basename(a.video)}` · {iv["dur"]:.1f} s · {iv["w"]}×{iv["h"]} · '
                          f'{iv["bytes"] / 1048576:.1f} MB · {a.video_url or "sin enlace público"}', '',
@@ -691,7 +848,10 @@ def cmd_publicar(a):
                 'autorizo': a.autorizo or None}
         try:
             if a.modo == 'real' and (a.clave, red) in ya and not a.repetir:
-                raise Falla('ya se publicó antes en modo real (usa "repetir" si de verdad va otra vez)')
+                # no es una falla: la publicación diaria automática puede encontrar algo que Robert ya publicó a mano
+                print(f'{red}: ya estaba publicado; se salta', flush=True)
+                lineas.append(f'| {red} | ⏭️ | ya estaba publicado (no se repite) |')
+                continue
             prob = revisar_video(red, iv) + revisar_texto(red, r, tt)
             if prob:
                 raise Falla('; '.join(prob))
@@ -718,6 +878,60 @@ def cmd_publicar(a):
         anotar(filas)
     with open(ENV('GITHUB_STEP_SUMMARY', os.devnull), 'a', encoding='utf-8') as s:
         s.write('\n'.join(lineas) + '\n')
+    json.dump(filas, open('resultado.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    if fallas:
+        sys.exit(1)
+
+
+def publicar_largo(a, redes):
+    """Documentales y videos largos 16:9: solo YouTube (sus cortes verticales se publican como shots normales)."""
+    carpeta = os.path.join('largos', a.clave)
+    ver = open(os.path.join(carpeta, 'verificacion.md'), encoding='utf-8').read() if os.path.exists(
+        os.path.join(carpeta, 'verificacion.md')) else ''
+    if a.clave not in open('.github/verificacion-exentos.txt', encoding='utf-8').read() and \
+            'VEREDICTO: APROBADO' not in ver:
+        raise SystemExit(f'{a.clave} no tiene "VEREDICTO: APROBADO" en largos/{a.clave}/verificacion.md: no se publica.')
+    try:
+        yt = json.loads(a.youtube) if a.youtube and a.youtube.strip() not in ('', 'null') else {}
+    except ValueError:
+        raise SystemExit('Las opciones de YouTube no son JSON válido')
+    r, titulo, meta = textos_largo(a.clave)
+    iv = info_video(a.video)
+    ya = {(x['clave'], x['red']) for x in bitacora() if x.get('modo') == 'real' and x.get('ok')}
+    lineas = [f'## {a.clave} · documental · modo **{a.modo}**', '',
+              f'Video: `{os.path.basename(a.video)}` · {iv["dur"] / 60:.1f} min · {iv["w"]}×{iv["h"]} · '
+              f'{iv["bytes"] / 1048576:.0f} MB', '', '| Red | Resultado | Detalle |', '|---|---|---|']
+    filas, fallas = [], 0
+    for red in redes:
+        fila = {'clave': a.clave, 'red': red, 'modo': a.modo, 'fecha': ahora(), 'run': ENV('GITHUB_RUN_ID'),
+                'autorizo': a.autorizo or None, 'largo': True}
+        try:
+            if red != 'youtube':
+                if a.redes in ('todas', ''):
+                    continue
+                raise Falla('los documentales horizontales solo van a YouTube; sus cortes verticales se publican como shots')
+            if a.modo == 'real' and (a.clave, red) in ya and not a.repetir:
+                lineas.append(f'| {red} | ⏭️ | ya estaba publicado (no se repite) |')
+                print(f'{red}: ya estaba publicado; se salta', flush=True)
+                continue
+            prob = revisar_video_largo(iv) + revisar_texto('youtube', r)
+            if prob:
+                raise Falla('; '.join(prob))
+            if a.modo == 'prueba':
+                fila.update(ok=True, nota=probar('youtube') + f' · {iv["dur"] / 60:.1f} min 16:9 · título y descripción OK')
+            else:
+                fila.update(ok=True, **subir_youtube_largo(a.video, r, a.modo, a.clave, meta, yt, iv))
+        except (Falla, requests.RequestException, KeyError) as e:
+            fallas += 1
+            fila.update(ok=False, error=str(e) if not isinstance(e, KeyError) else f'respuesta inesperada (falta {e})')
+        filas.append(fila)
+        detalle = fila.get('error') or ' '.join(str(fila[k]) for k in ('url', 'nota') if fila.get(k)) or fila.get('id', '')
+        lineas.append(f'| {red} | {"✅" if fila["ok"] else "❌"} | {detalle} |')
+        print(f'{red}: {"OK" if fila["ok"] else "FALLA"} · {detalle}', flush=True)
+    if a.modo != 'prueba' and filas:
+        anotar(filas)
+    with open(ENV('GITHUB_STEP_SUMMARY', os.devnull), 'a', encoding='utf-8') as f:
+        f.write('\n'.join(lineas) + '\n')
     json.dump(filas, open('resultado.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     if fallas:
         sys.exit(1)
@@ -801,6 +1015,7 @@ def main():
     a.add_argument('--autorizo', default='')
     a.add_argument('--repetir', action='store_true')
     a.add_argument('--tiktok', default='', help='JSON con las opciones de TikTok elegidas en la Sala')
+    a.add_argument('--youtube', default='', help='Documentales: JSON {privacidad: public|unlisted|private, idioma}')
     s.add_parser('renovar')
     c = s.add_parser('tiktok-codigo')
     c.add_argument('codigo')

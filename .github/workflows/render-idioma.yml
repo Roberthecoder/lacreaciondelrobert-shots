@@ -1,0 +1,91 @@
+name: Render en otro idioma (RedNote en chino)
+
+# Versión del shot con letreros y subtítulos en otro idioma (hoy chino, para RedNote/Xiaohongshu) y la MISMA voz en español.
+# Se lanza al cambiar shots/<clave>/zh/textos.json (diccionario español → chino que hace la sesión de nube; ver motor/idioma/LEEME.md).
+# Toma el audio del MP4 narrado que ya existe en los Releases y renderiza la animación con motor/render.mjs --idioma.
+# El MP4 queda en el Release «idioma-zh» como <clave>_zh.mp4. No gasta créditos de voz. [sin render] en el commit lo salta.
+on:
+  push:
+    paths: ['shots/*/zh/textos.json']
+  workflow_dispatch:
+    inputs:
+      claves:
+        description: 'Claves separadas por espacio (vacío = las que cambiaron en el último commit)'
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render-idioma-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  detectar:
+    if: ${{ !contains(github.event.head_commit.message, '[sin render]') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      claves: ${{ steps.c.outputs.claves }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - id: c
+        env:
+          MANUAL: ${{ inputs.claves }}
+        run: |
+          if [ -n "$MANUAL" ]; then L="$MANUAL"; else
+            L=$(git diff --name-only HEAD~1 HEAD -- 'shots/*/zh/textos.json' | cut -d/ -f2 | sort -u | tr '\n' ' ')
+          fi
+          echo "claves=$(printf '%s\n' $L | jq -R . | jq -sc 'map(select(length>0))')" >> "$GITHUB_OUTPUT"
+          echo "Claves: $L"
+
+  render:
+    needs: detectar
+    if: needs.detectar.outputs.claves != '[]'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        clave: ${{ fromJSON(needs.detectar.outputs.claves) }}
+    env:
+      K: ${{ matrix.clave }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Herramientas (ffmpeg, fuentes chinas, Chromium)
+        timeout-minutes: 20
+        run: |
+          for i in 1 2 3; do
+            timeout 180 sudo apt-get update -qq && timeout 300 sudo apt-get install -y -qq ffmpeg fonts-noto-cjk >/dev/null && break
+            echo "apt no respondió (intento $i)"; sleep 10
+          done
+          cd motor && npm install --no-audit --no-fund && npx playwright install --with-deps chromium
+      - name: Audio del narrado que ya existe
+        run: |
+          set -e
+          [[ "$K" =~ ^[a-z0-9-]+$ ]] || { echo "::error::Clave inválida"; exit 1; }
+          ARCH="${K}_narrado.mp4"
+          TAG=$(gh api "repos/$GITHUB_REPOSITORY/releases?per_page=100" --paginate \
+            | jq -rs --arg a "$ARCH" '[.[][] | select(any(.assets[]; .name==$a)) | {tag:.tag_name, f:([.assets[]|select(.name==$a)][0].updated_at)}]
+                   | (map(select(.tag=="borradores-voces-v4")) + (sort_by(.f)|reverse)) | .[0].tag // ""')
+          [ -n "$TAG" ] || { echo "::error::No hay $ARCH en ningún Release"; exit 1; }
+          gh release download "$TAG" -R "$GITHUB_REPOSITORY" -p "$ARCH" -D video --clobber
+          ffmpeg -v error -y -i "video/$ARCH" -vn -ac 2 -ar 48000 video/audio_narrado.wav
+          echo "Audio de $TAG / $ARCH"
+      - name: Render en chino
+        run: |
+          H=$(ls "shots/$K" | grep 'narrado.dc.html' | head -1)
+          mkdir -p salida
+          node motor/render.mjs "shots/$K" "$H" "salida/${K}_zh.mp4" --audio video/audio_narrado.wav --idioma "shots/$K/zh/textos.json"
+          ffprobe -v error -show_entries format=duration -of csv=p=0 "salida/${K}_zh.mp4" | sed "s/^/$K: /" | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Subir al Release idioma-zh
+        run: |
+          gh release view idioma-zh >/dev/null 2>&1 || gh release create idioma-zh --title "Versiones en chino (RedNote)" --notes "Letreros y subtítulos en chino, voz en español." --prerelease
+          gh release upload idioma-zh "salida/${K}_zh.mp4" --clobber

@@ -124,7 +124,7 @@ function CeparioNarrado() {
 
       {/* 0 · GANCHO — el vial con escarcha */}
       <EscenaFundido T={T} a={K.G} b={K.Ce} zoom={0.06}>
-        <div style={{ position:'absolute', inset:0, background:KC.cyan, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.32) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.cyan, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.32) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g transform={`translate(540 880) rotate(${mece(T, 1, 0.25) * 4})`}>
             <Vial x={0} y={0} s={2.3} etiqueta="C-07" escarcha={1} contenido="#9ad9b5" />
@@ -136,7 +136,7 @@ function CeparioNarrado() {
 
       {/* 1 · CEPA — la ficha */}
       <EscenaFundido T={T} a={K.Ce} b={K.Ti} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:KC.mint, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.mint, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g transform="translate(230 900) scale(1.3)"><Vial x={0} y={0} s={1} etiqueta="C-07" escarcha={0.6} contenido="#9ad9b5" /></g>
         </svg>
@@ -153,7 +153,7 @@ function CeparioNarrado() {
 
       {/* 2 · TIPOS — cuatro tarjetas */}
       <EscenaFundido T={T} a={K.Ti} b={K.Cp} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:KC.lilac, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.28) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.28) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
         {TIPOS.map((t, i) => { const at = K.Ti + 0.2 + i * 0.4, e = kentrada(T, at, null, 'pop');
           if (T < at) return null;
           const [x, y] = [[250, 720], [700, 720], [250, 1070], [700, 1070]][i];
@@ -258,7 +258,7 @@ function CeparioNarrado() {
 
       {/* 12 · CIERRE — el vial del inicio, ahora con nombre */}
       <EscenaFundido T={T} a={K.C} b={FIN} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:KC.cyan, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.32) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.cyan, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.32) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g transform={`translate(430 880) rotate(${mece(T, 1, 0.25) * 4})`}>
             <Vial x={0} y={0} s={2.3} etiqueta="C-07" escarcha={1} contenido="#9ad9b5" />

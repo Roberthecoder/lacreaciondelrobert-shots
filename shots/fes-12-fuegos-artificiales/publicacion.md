@@ -1,4 +1,4 @@
-# Publicación · Shot Festivo #12 · Año Nuevo · Químico: Cada color de los fuegos artificiales es un metal distinto
+# Publicación · Shot Festivo 12 · Año Nuevo · Químico: Cada color de los fuegos artificiales es un metal distinto
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Se publica el 31 dic 2026.
 
@@ -15,7 +15,7 @@ Dato: cuenta los segundos entre el destello y el ¡pum!; cada tres segundos son 
 El dibujo es esquemático.
 Fuentes: Texas A&M Galveston (2025) · Glück et al., Eur. J. Inorg. Chem. (2020) · Juknelevicius et al., Propellants Explos. Pyrotech. (2021) · Science History Institute · HyperPhysics.
 ¿Cuál es tu color favorito de los fuegos artificiales? 👇
-Shot Festivo #12 · Año Nuevo · Químico · La Creación del Robert
+Shot Festivo 12 · Año Nuevo · Químico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #AñoNuevo #FuegosArtificiales #Ciencia
 ```
@@ -26,7 +26,7 @@ Ese rojo que ves en Año Nuevo no es pintura: es estroncio, un metal. 🎆
 Cada color de los fuegos artificiales es un metal distinto: estroncio rojo, bario verde, cobre azul, sodio amarillo y calcio naranja. El calor empuja a los electrones del metal a un nivel de más energía; al bajar, sueltan luz de un color fijo. El azul es el más difícil: sale del cobre unido a un cloro y, si la flama se calienta de más, esa pareja se rompe y el azul se deslava. Hacia 1860, Bunsen y Kirchhoff vieron con un prisma que cada elemento deja su huella de líneas de colores, y así hallaron el cesio.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Cuál es tu color favorito de los fuegos artificiales? 👇
-Shot Festivo #12 · Año Nuevo · Químico · La Creación del Robert
+Shot Festivo 12 · Año Nuevo · Químico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #AñoNuevo #FuegosArtificiales #Ciencia
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese rojo no es pintura: es estroncio 🎆 | Shot Festivo #12
+Ese rojo no es pintura: es estroncio 🎆 | Shot Festivo 12
 ```
 Descripción:
 ```text
@@ -52,7 +52,7 @@ Fuentes:
 - Science History Institute, "Robert Bunsen and Gustav Kirchhoff": https://www.sciencehistory.org/education/scientific-biographies/robert-bunsen-and-gustav-kirchhoff/
 - HyperPhysics, velocidad del sonido: http://hyperphysics.phy-astr.gsu.edu/hbase/Sound/souspe.html
 ¿Cuál es tu color favorito de los fuegos artificiales? 👇
-Shot Festivo #12 · Año Nuevo · Químico · La Creación del Robert
+Shot Festivo 12 · Año Nuevo · Químico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #AñoNuevo
 ```
@@ -61,7 +61,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Ese rojo que ves en Año Nuevo no es pintura: es estroncio, un metal. 🎆 Cada color es un metal distinto: el calor empuja a sus electrones y, al regresar, sueltan luz de un color fijo. El azul es el más difícil: si la flama se calienta de más, el cobre y el cloro se separan y el azul se deslava.
 ¿Cuál es tu color favorito de los fuegos artificiales? 👇
-Shot Festivo #12 · Año Nuevo · Químico · La Creación del Robert
+Shot Festivo 12 · Año Nuevo · Químico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #AñoNuevo
 ```
@@ -73,20 +73,20 @@ Cada color sale de un metal distinto: estroncio (rojo), bario (verde), cobre (az
 El azul sigue siendo un reto técnico: el emisor es una molécula de cobre y cloro (CuCl) que se descompone si la flama se calienta de más, y el color pierde pureza. Diseñar una buena mezcla azul es un problema de control de temperatura, documentado en revistas de química (Glück et al., 2020; Juknelevicius et al., 2021).
 Esa misma idea, que cada elemento deja sus propias líneas de color, permitió a Bunsen y Kirchhoff descubrir el cesio en 1860 con un prisma y una flama.
 ¿Qué otra tradición te gustaría ver explicada con química?
-Shot Festivo #12 · Año Nuevo · Químico · La Creación del Robert
+Shot Festivo 12 · Año Nuevo · Químico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #AñoNuevo #Espectroscopia #DivulgacionCientifica
 ```
 
 ### X
 ```text
-Ese rojo no es pintura: es estroncio 🎆 Cada color de los fuegos artificiales es un metal: el calor empuja sus electrones y al bajar sueltan luz. ¿Y el azul? Si se calienta de más, el CuCl se rompe. Shot Festivo #12 · Año Nuevo · Químico #Quimica #AñoNuevo
+Ese rojo no es pintura: es estroncio 🎆 Cada color de los fuegos artificiales es un metal: el calor empuja sus electrones y al bajar sueltan luz. ¿Y el azul? Si se calienta de más, el CuCl se rompe. Shot Festivo 12 · Año Nuevo · Químico #Quimica #AñoNuevo
 ```
 
 ### Threads
 ```text
 Ese rojo que ves en Año Nuevo no es pintura: es estroncio, un metal. 🎆 Bario da verde, cobre azul, sodio amarillo y calcio naranja: el calor empuja a los electrones y, al bajar, sueltan luz de un color fijo. El azul es el más difícil: si la flama se calienta de más, el cobre y el cloro se separan. ¿Cuál es tu color favorito? 👇
-Shot Festivo #12 · Año Nuevo · Químico · La Creación del Robert
+Shot Festivo 12 · Año Nuevo · Químico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

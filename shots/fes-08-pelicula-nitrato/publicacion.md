@@ -1,4 +1,4 @@
-# Publicación · Shot Festivo #08 · Revolución Mexicana · Químico: Las películas de la Revolución eran de algodón con ácido nítrico
+# Publicación · Shot Festivo 08 · Revolución Mexicana · Químico: Las películas de la Revolución eran de algodón con ácido nítrico
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Se publica el 20 nov 2026.
 
@@ -15,7 +15,7 @@ Y mucho cine de la Revolución sí sobrevivió: con los rollos que juntó Salvad
 El dibujo es esquemático.
 Fuentes: Canadian Conservation Institute · Kodak · NFPF · Smithsonian · El Ojo que Piensa (2016) · El Financiero.
 ¿Habías visto imágenes reales de la Revolución? ¿Cuál recuerdas? 👇
-Shot Festivo #08 · Revolución Mexicana · Químico · La Creación del Robert
+Shot Festivo 08 · Revolución Mexicana · Químico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #RevolucionMexicana #20DeNoviembre #HistoriaDelCine
 ```
@@ -26,7 +26,7 @@ Este rollo de la Revolución no es solo cine: es algodón tratado con ácido ní
 En 1914 Pancho Villa firmó para que una empresa de cine estadounidense filmara sus batallas, y esas películas eran de nitrato de celulosa: fibras de algodón en ácido nítrico y sulfúrico. Es prima del algodón pólvora (con menos nitrógeno, cerca del 12 %), trae su propio oxígeno y arde sin aire. Al envejecer suelta gases que la deshacen cada vez más rápido: nueva se prende sola a 150 °C; muy descompuesta, con 50 °C o menos. En 1982 el incendio de la Cineteca Nacional llegó a sus bóvedas de nitrato. Pero mucho cine de la Revolución sí sobrevivió, como el de Salvador Toscano.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Habías visto imágenes reales de la Revolución? 👇
-Shot Festivo #08 · Revolución Mexicana · Químico · La Creación del Robert
+Shot Festivo 08 · Revolución Mexicana · Químico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #RevolucionMexicana #20DeNoviembre #HistoriaDelCine
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las películas de la Revolución eran de algodón con ácido nítrico 🎞️ | Shot Festivo #08
+Las películas de la Revolución eran de algodón con ácido nítrico 🎞️ | Shot Festivo 08
 ```
 Descripción:
 ```text
@@ -53,7 +53,7 @@ Fuentes:
 - El Financiero, Cineteca Nacional: https://www.elfinanciero.com.mx/culturas/cineteca-nacional-45-anos-dedicada-a-difundir-la-cultura-cinematografica/
 - S. Velazco, El Ojo que Piensa 12 (2016): https://elojoquepiensa.cucsh.udg.mx/index.php/elojoquepiensa/article/download/224/228
 ¿Habías visto imágenes reales de la Revolución? ¿Cuál recuerdas? 👇
-Shot Festivo #08 · Revolución Mexicana · Químico · La Creación del Robert
+Shot Festivo 08 · Revolución Mexicana · Químico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Quimica #RevolucionMexicana
 ```
@@ -62,7 +62,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Este rollo de la Revolución no es solo cine: es algodón tratado con ácido nítrico. 🎞️🇲🇽 Las películas de 1914 eran de nitrato de celulosa, prima del algodón pólvora: trae su propio oxígeno, arde sin aire y, muy descompuesta, puede prenderse sola con 50 °C o menos. Por eso hay que guardarla en frío.
 ¿Habías visto imágenes reales de la Revolución? 👇
-Shot Festivo #08 · Revolución Mexicana · Químico · La Creación del Robert
+Shot Festivo 08 · Revolución Mexicana · Químico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #RevolucionMexicana
 ```
@@ -73,20 +73,20 @@ La memoria filmada de la Revolución Mexicana es, químicamente, algodón tratad
 Hasta inicios de los años cincuenta, el cine se grababa en película de nitrato de celulosa: fibras de algodón nitradas con ácido nítrico y sulfúrico, con cerca de 12 % de nitrógeno (el algodón pólvora pasa del 13 %). El material lleva su propio oxígeno, así que una vez encendido arde sin aire. Y al envejecer libera óxidos de nitrógeno que aceleran su propia descomposición: nuevo se autoenciende a unos 150 °C; muy degradado, a 50 °C o menos.
 Por eso conservar cine es un problema de química: el calor y la humedad aceleran su deterioro, así que se guarda en frío. En 1982 el incendio de la Cineteca Nacional llegó a sus bóvedas de nitrato (6,506 películas perdidas, según cifras oficiales). Aun así, mucho material sobrevivió, como el acervo de Salvador Toscano que su hija Carmen montó en «Memorias de un mexicano» (1950).
 ¿Qué otro archivo histórico crees que esconde un reto químico?
-Shot Festivo #08 · Revolución Mexicana · Químico · La Creación del Robert
+Shot Festivo 08 · Revolución Mexicana · Químico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Quimica #RevolucionMexicana #Conservacion #DivulgacionCientifica
 ```
 
 ### X
 ```text
-Las películas de la Revolución eran de algodón con ácido nítrico 🎞️ Nitrato de celulosa: prima del algodón pólvora, trae su propio oxígeno y, muy descompuesta, se prende sola con 50 °C o menos. Shot Festivo #08 · Revolución Mexicana · Químico #Quimica
+Las películas de la Revolución eran de algodón con ácido nítrico 🎞️ Nitrato de celulosa: prima del algodón pólvora, trae su propio oxígeno y, muy descompuesta, se prende sola con 50 °C o menos. Shot Festivo 08 · Revolución Mexicana · Químico #Quimica
 ```
 
 ### Threads
 ```text
 Este rollo de la Revolución no es solo cine: es algodón tratado con ácido nítrico. 🎞️ El nitrato de celulosa es primo del algodón pólvora, arde sin aire y, al envejecer, suelta gases que lo deshacen cada vez más rápido. ¿Habías visto imágenes reales de la Revolución? 👇
-Shot Festivo #08 · Revolución Mexicana · Químico · La Creación del Robert
+Shot Festivo 08 · Revolución Mexicana · Químico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Quimica
 ```

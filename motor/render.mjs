@@ -1,6 +1,6 @@
 // render.mjs — convierte un shot (.dc.html de Claude Design) en MP4 vertical 1080×1920
 // (u horizontal 1920×1080 si el .dc.html define window.K_ANCHO = 1920; window.K_ALTO = 1080, como los largos).
-// Uso: node render.mjs <carpeta-del-shot> <archivo.dc.html> <salida.mp4> [--fps 30] [--audio mezcla.wav] [--outro cierre.mp4] [--hasta 12.5]
+// Uso: node render.mjs <carpeta-del-shot> <archivo.dc.html> <salida.mp4> [--fps 30] [--audio mezcla.wav] [--outro cierre.mp4] [--hasta 12.5] [--idioma dic.json]
 // - React/Babel se sirven en local (no depende de unpkg).
 // - Cada cuadro se renderiza por "seek" determinista del motor animations-v3 (como el exportador de Claude Design).
 // - El video de cierre se pega con ffmpeg (Chromium headless no decodifica H.264).
@@ -38,6 +38,11 @@ await p.route(/unpkg\.com/, (r) => {
     : u.includes('babel') ? '@babel/standalone/babel.min.js' : 'react/umd/react.production.min.js';
   r.fulfill({ path: path.join(NM, f), contentType: 'application/javascript' });
 });
+// --idioma <diccionario.json>: versión traducida (p. ej. chino). Cambia letreros y subtítulos al vuelo (motor/idioma/gancho.js).
+if (opt('idioma')) {
+  const dic = fs.readFileSync(path.resolve(opt('idioma')), 'utf8');
+  await p.addInitScript({ content: `window.__IDIOMA_DIC=${dic};\n` + fs.readFileSync(path.join(HERE, 'idioma', 'gancho.js'), 'utf8') });
+}
 p.on('pageerror', (e) => console.error('[página]', e.message));
 await p.goto(`http://localhost:${port}/${encodeURIComponent(page)}`);
 const SEL = '[data-om-exportable-video-with-duration-secs]';

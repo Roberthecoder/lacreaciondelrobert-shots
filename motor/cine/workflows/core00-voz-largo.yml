@@ -1,0 +1,42 @@
+name: Voz del largo (ElevenLabs)
+
+# Corre en el repositorio privado (ahí vive la clave de ElevenLabs).
+# Se lanza al cambiar largos/<largo>/video/voz/pedido.txt en una rama "largo-render/…":
+#   "saldo"   → solo consulta los créditos (no gasta).
+#   "generar" → genera la voz que falte (solo si alcanzan los créditos) y la guarda en la rama.
+on:
+  push:
+    branches: ['largo-render/**']
+    paths: ['largos/*/video/voz/pedido.txt']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: voz-largo-${{ github.ref }}
+
+jobs:
+  voz:
+    if: github.repository == 'Roberthecoder/lacreaciondelrobert-archivo'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Voz
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          for p in largos/*/video/voz/pedido.txt; do
+            d=$(dirname "$(dirname "$p")")
+            node "$d/narrar_largo.mjs" "$(head -1 "$p" | tr -d '[:space:]')"
+          done
+      - name: Guardar la voz en la rama (aunque algo falle, para no perder lo ya pagado)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A largos/*/video/voz
+          git diff --cached --quiet || (git commit -m "Voz del largo generada [sin render]" && git push)

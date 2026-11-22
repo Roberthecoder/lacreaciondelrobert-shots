@@ -1,0 +1,37 @@
+name: Videos en chino al chat
+
+# Igual que «Videos al chat», para las versiones en otro idioma: copia los MP4 del Release «idioma-zh» a refs/videos/idioma-zh
+# (repo privado: las sesiones de nube solo pueden bajar con git). Corre solo al terminar «Render en otro idioma» o a mano.
+on:
+  workflow_run:
+    workflows: ['Render en otro idioma (RedNote en chino)']
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: videos-idioma
+  cancel-in-progress: true
+
+jobs:
+  copiar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Bajar del Release idioma-zh y subir a refs/videos/idioma-zh
+        run: |
+          mkdir -p v && cd v
+          gh release download idioma-zh -R "$GITHUB_REPOSITORY" -p "*.mp4" --clobber || { echo "Sin Release idioma-zh"; exit 0; }
+          find . -name "*.mp4" -size +95M -print -delete
+          ls -la
+          echo "Versiones en chino (copia del Release idioma-zh). Automático: no editar." > LEEME.md
+          git init -q -b main
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -q -m "Videos en chino"
+          git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/videos/idioma-zh"
+          echo "$(ls *.mp4 | wc -l) videos en refs/videos/idioma-zh" | tee -a "$GITHUB_STEP_SUMMARY"

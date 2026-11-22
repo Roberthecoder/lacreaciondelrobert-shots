@@ -1,4 +1,4 @@
-# Publicación · Shot Festivo #09 · Virgen de Guadalupe · Científico: Rosas en diciembre: el freno roto en su ADN
+# Publicación · Shot Festivo 09 · Virgen de Guadalupe · Científico: Rosas en diciembre: el freno roto en su ADN
 
 Solo versión narrada (desde el 27 oct 2026 ya no hay gemelo mudo; la versión sin voz es solo de revisión). Se publica el 12 dic 2026.
 
@@ -15,7 +15,7 @@ La rosa no cuenta las horas de luz: en invernadero cortas un tallo y en 6 a 10 s
 El dibujo es esquemático.
 Fuentes: Iwata et al. 2012 (The Plant Journal) · Soufflet-Freslon et al. 2021 (Horticulture Research) · Proietti et al. 2022 (Plants) · SADER 2026.
 ¿Qué flores se llevan a la Basílica en tu región? 👇
-Shot Festivo #09 · Virgen de Guadalupe · Científico · La Creación del Robert
+Shot Festivo 09 · Virgen de Guadalupe · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Rosas #Genetica #12DeDiciembre
 ```
@@ -26,7 +26,7 @@ Esta rosa no sabe que es diciembre: trae roto un freno en su ADN. 🌹
 Según la tradición guadalupana, Juan Diego halló rosas en el Tepeyac en diciembre, cuando no era su tiempo. Una rosa silvestre florece solo en primavera porque un gen, KSN, frena la floración el resto del año. En muchas rosas modernas, un pedazo de ADN saltarín se metió dentro de ese gen: ya no se lee, el freno desaparece y la rosa florece en cada temporada buena (Iwata et al., 2012). Ese freno roto venía de rosas de China que en Europa, a fines del siglo XVIII, se cruzaron con las rosas de allá.
 El dibujo es esquemático. Fuentes en el primer comentario.
 ¿Qué flores se llevan a la Basílica en tu región? 👇
-Shot Festivo #09 · Virgen de Guadalupe · Científico · La Creación del Robert
+Shot Festivo 09 · Virgen de Guadalupe · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Rosas #Genetica #12DeDiciembre
 ```
@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta rosa no sabe que es diciembre: trae roto un freno en su ADN 🌹 | Shot Festivo #09
+Esta rosa no sabe que es diciembre: trae roto un freno en su ADN 🌹 | Shot Festivo 09
 ```
 Descripción:
 ```text
@@ -51,7 +51,7 @@ Fuentes:
 - SADER, cierre preliminar 2025 (vía UnoTV, 13 feb 2026): https://www.unotv.com/estilo-de-vida/campo-mexicano-listo-para-san-valentin-con-15-6-millones-de-gruesas-de-flores/
 - Nican Mopohua (versión en español): https://www.aciprensa.com/juanpabloii/viajes/mexico/nican.htm
 ¿Qué flores se llevan a la Basílica en tu región? 👇
-Shot Festivo #09 · Virgen de Guadalupe · Científico · La Creación del Robert
+Shot Festivo 09 · Virgen de Guadalupe · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Shorts #Ciencia #Rosas
 ```
@@ -60,7 +60,7 @@ Soy Robert, de La Creación del Robert 🌱
 ```text
 Esta rosa no sabe que es diciembre: trae roto un freno en su ADN. 🌹 La rosa silvestre florece solo en primavera porque el gen KSN frena la floración. En muchas rosas modernas, un pedazo de ADN saltarín se metió en ese gen: el freno desaparece y la rosa florece en cada temporada buena.
 ¿Qué flores se llevan a la Basílica en tu región? 👇
-Shot Festivo #09 · Virgen de Guadalupe · Científico · La Creación del Robert
+Shot Festivo 09 · Virgen de Guadalupe · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Ciencia #Rosas
 ```
@@ -71,20 +71,20 @@ Por qué hay rosas en diciembre: un gen apagado.
 Las rosas silvestres florecen solo en primavera. El responsable es KSN, un gen parecido al TFL1 de otras plantas que actúa como freno de la floración. En 2012, Iwata y colegas (Francia y Japón, The Plant Journal) mostraron que en seis pares de rosas, las de floración continua tenían un retrotransposón insertado en ese gen: el gen ya no se transcribe, el freno desaparece y la planta florece en cada temporada favorable.
 Ese rasgo vino de rosas cultivadas en China, que a fines del siglo XVIII entraron a los cruces en Europa, y hoy está en muchas rosas modernas. En invernadero la rosa no depende de la duración del día: tras cortar un tallo, otro florece en unas 6 a 10 semanas. En México, el Estado de México produjo el 78.7 % de las rosas en 2025 (SADER, cifra preliminar).
 ¿Qué otro rasgo de un cultivo te gustaría ver explicado por dentro?
-Shot Festivo #09 · Virgen de Guadalupe · Científico · La Creación del Robert
+Shot Festivo 09 · Virgen de Guadalupe · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #LaCreacionDelRobert #Genetica #Floricultura #DivulgacionCientifica
 ```
 
 ### X
 ```text
-Esta rosa no sabe que es diciembre 🌹 La silvestre florece solo en primavera por un gen-freno, KSN. En muchas rosas modernas un pedazo de ADN saltarín se metió en él: sin freno, flor en cada temporada buena. Shot Festivo #09 · Virgen de Guadalupe · Científico #Ciencia #Rosas
+Esta rosa no sabe que es diciembre 🌹 La silvestre florece solo en primavera por un gen-freno, KSN. En muchas rosas modernas un pedazo de ADN saltarín se metió en él: sin freno, flor en cada temporada buena. Shot Festivo 09 · Virgen de Guadalupe · Científico #Ciencia #Rosas
 ```
 
 ### Threads
 ```text
 Esta rosa no sabe que es diciembre: trae roto un freno en su ADN. 🌹 La rosa silvestre florece solo en primavera por un gen, KSN, que frena la floración. En muchas rosas modernas un pedazo de ADN saltarín se metió dentro de ese gen: ya no se lee y la rosa florece en cada temporada buena. ¿Qué flores se llevan a la Basílica en tu región? 👇
-Shot Festivo #09 · Virgen de Guadalupe · Científico · La Creación del Robert
+Shot Festivo 09 · Virgen de Guadalupe · Científico · La Creación del Robert
 Soy Robert, de La Creación del Robert 🌱
 #Ciencia
 ```
