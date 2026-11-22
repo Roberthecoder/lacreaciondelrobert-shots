@@ -265,8 +265,9 @@ function CallCenter() {
       {/* 4 · los números */}
       <Escena T={T} a={K.N} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(540 1505) scale(0.95)" opacity={klerp(1, 0.6, kprog(T, N2 - 0.1, N2 + 0.3))}>
-          <Cubiculo x={0} y={0} T={T} quien="nuevo" pend={0} calma={1} robot={1} /></g>)}
+        {/* encuadre: en la Pregunta el cubículo sube y crece detrás del signo, a media luz */}
+        {(() => { const up = kprog(T, K.P - 0.15, K.P + 0.5, kEase.suave); return svg(<g transform={`translate(540 ${klerp(1505, 1330, up)}) scale(${klerp(0.95, 1.7, up)})`} opacity={klerp(1, 0.6, kprog(T, N2 - 0.1, N2 + 0.3))}>
+          <Cubiculo x={0} y={0} T={T} quien="nuevo" pend={0} calma={1} robot={1} /></g>); })()}
         {T < N2 + 0.3 && <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, N2 - 0.1, N2 + 0.3) }}>{svg(<>
           {Array.from({ length: 6 }, (_, i) => { const t0 = K.N + 1.6 + i * 0.25, u = kprog(T, t0, t0 + 0.3, kEase.rebote);
             return <g key={i} transform={`translate(${215 + i * 130} 950) scale(${u * 1.2})`}><circle r={44} fill={VERDE} stroke={KC.ink} strokeWidth={6} />
@@ -284,7 +285,7 @@ function CallCenter() {
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.M} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={540} y={940} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 760)`}>?</text>)}
+        {svg(<text x={540} y={1140} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 960)`}>?</text>)}
       </Escena>
 
       {/* 6 · por dentro: aprendió de los mejores */}
