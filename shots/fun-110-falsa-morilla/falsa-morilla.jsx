@@ -2,7 +2,7 @@
 // Shot Fungi Mati #110 · Esto no es una morilla — NARRADO (gancho 1 "Esto no es X: es Y" + mitos peligrosos tachados).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. NO es guía de identificación.
 
-const FM = { tierra:'#6b4426', tierra2:'#4a2d18', hoja:'#b8742e', hoja2:'#8f5a22',
+const FM = { tierra:'#4f321d', tierra2:'#2f1d0f', hoja:'#b8742e', hoja2:'#8f5a22',
   mRidge:'#dcc08a', mPit:'#7a5226', mPie:'#f1e6c8', mCarne:'#f6eedb',
   gCap:'#8a2f1c', gCap2:'#5a1a10', gArr:'#3a0d06', gLuz:'#b9573c', gPie:'#efe2d6', gCarne:'#f3e9df', hueco:'#2a1d14' };
 
@@ -272,34 +272,38 @@ function FalsaMorillaShot() {
   const K = { G: CUES.Gancho, Mo: CUES.Morilla, F: CUES.Falsa, Tx: CUES.Toxina, N: CUES.Neurona, S: CUES.Sintomas, H: CUES.Hervir, Fi: CUES.Finlandia, Fa: CUES.Familia, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const cuantasB6 = (t) => 8 - Math.floor(8 * kprog(t, K.N + 1.0, K.N + 3.0));
+  const zTx = (t) => kprog(t, K.Tx + 1.4, K.Tx + 2.6, kEase.suave), kTx = (t) => klerp(1.3, 2.2, zTx(t));
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la falsa morilla sale del suelo, sello NO, y una nave que maniobra */}
       <Escena T={T} a={K.G} b={K.Mo} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          {T > K.G + 2.8 && <Nave T={T} x={820} y={klerp(1250, 900, kprog(T, K.G + 2.8, K.G + 4.2, kEase.sale))} s={0.8} rot={Math.sin(T * 2) * 6} />}
-          <SueloBosque y={1080} />
-          <FalsaMorilla T={T} x={310} y={1100} s={1.5} crece={kprog(T, K.G, K.G + 0.6)} id="g0" />
-          <SelloNo T={T} at={K.G + 1.0} x={500} y={720} texto="NO" r={80} />
+          {T > K.G + 2.8 && <Nave T={T} x={832} y={klerp(1500, 600, kprog(T, K.G + 2.8, K.G + 4.2, kEase.sale))} s={0.62} rot={Math.sin(T * 2) * 6} />}
+          <SueloBosque y={1380} />
+          <FalsaMorilla T={T} x={400} y={1400} s={2.2} crece={kprog(T, K.G - 0.55, K.G + 0.4)} id="g0" />
+          <SelloNo T={T} at={K.G + 1.0} x={640} y={820} texto="NO" r={95} />
         </>)}
       </Escena>
       {/* 2 · la morilla verdadera: panal, pegada al pie, hueca */}
       <Escena T={T} a={K.Mo} b={K.F} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <SueloBosque y={1080} seed={7} />
-          <Morilla x={290} y={1100} s={1.3} crece={kprog(T, K.Mo, K.Mo + 0.6)} id="m1" />
-          <Morilla x={770} y={1100} s={1.3} crece={kprog(T, K.Mo + 2.5, K.Mo + 3.0)} corte id="m2" />
+          <SueloBosque y={1380} seed={7} />
+          <Morilla x={260} y={1400} s={2.2} crece={kprog(T, K.Mo, K.Mo + 0.5)} id="m1" />
+          {/* la segunda está desde el inicio, entera; al decir «por dentro» se abre en corte */}
+          <g opacity={1 - kprog(T, K.Mo + 2.5, K.Mo + 2.9)}><Morilla x={820} y={1400} s={2.2} crece={kprog(T, K.Mo, K.Mo + 0.5)} id="m3" /></g>
+          <g opacity={kprog(T, K.Mo + 2.5, K.Mo + 2.9)}><Morilla x={820} y={1400} s={2.2} corte id="m2" /></g>
         </>)}
       </Escena>
       {/* 3 · la falsa morilla: cerebro, con cámaras */}
       <Escena T={T} a={K.F} b={K.Tx} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <SueloBosque y={1080} seed={9} />
-          <FalsaMorilla T={T} x={290} y={1100} s={1.3} crece={kprog(T, K.F, K.F + 0.6)} id="g1" />
-          <FalsaMorilla T={T} x={780} y={1100} s={1.3} crece={kprog(T, K.F + 2.6, K.F + 3.1)} corte id="g2" />
+          <SueloBosque y={1240} seed={9} />
+          <FalsaMorilla T={T} x={285} y={1260} s={1.5} crece={kprog(T, K.F, K.F + 0.5)} id="g1" />
+          <g opacity={1 - kprog(T, K.F + 2.6, K.F + 3.0)}><FalsaMorilla T={T} x={795} y={1260} s={1.5} crece={kprog(T, K.F, K.F + 0.5)} id="g3" /></g>
+          <g opacity={kprog(T, K.F + 2.6, K.F + 3.0)}><FalsaMorilla T={T} x={795} y={1260} s={1.5} corte id="g2" /></g>
         </>)}
       </Escena>
       {/* 4 · por dentro: giromitrina → monometilhidrazina; la misma sustancia mueve naves */}
@@ -307,47 +311,53 @@ function FalsaMorillaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
         {fsvg(<>
-          <Giromitrina T={T} x={540} y={760} parte={kprog(T, K.Tx + 1.4, K.Tx + 2.4)} brilloMMH={kprog(T, K.Tx + 2.2, K.Tx + 2.8)} />
-          <g opacity={kprog(T, K.Tx + 3.4, K.Tx + 3.9)}><Nave T={T} x={klerp(1250, 820, kprog(T, K.Tx + 3.4, K.Tx + 4.6, kEase.sale))} y={1100} s={0.7} rot={-8} pulso={kprog(T, K.Tx + 4.0, K.Tx + 4.4)} /></g>
+          {/* la cámara entra a lo que queda: la monometilhidrazina llena el cuadro (kTx = aumento; la barra de escala lo sigue) */}
+          <g transform={`translate(540 880) scale(${kTx(T)}) translate(${60 * zTx(T)} ${-50 * zTx(T)})`}>
+            <Giromitrina T={T} x={0} y={0} parte={kprog(T, K.Tx + 1.4, K.Tx + 2.4)} brilloMMH={kprog(T, K.Tx + 2.2, K.Tx + 2.8)} />
+          </g>
+          <g opacity={kprog(T, K.Tx + 3.4, K.Tx + 3.9)}><Nave T={T} x={klerp(1250, 800, kprog(T, K.Tx + 3.4, K.Tx + 4.6, kEase.sale))} y={1380} s={0.85} rot={-8} pulso={kprog(T, K.Tx + 4.0, K.Tx + 4.4)} /></g>
         </>)}
       </Escena>
       {/* 5 · neurona: la MMH le quita la B6; sin freno (GABA) → convulsiones */}
       <Escena T={T} a={K.N} b={K.S} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(-132 -348) scale(1.45)">
           <Neurona T={T} x={360} y={930} agita={kprog(T, K.N + 3.4, K.N + 3.8)} />
           {Array.from({ length: 8 }, (_, i) => { const a = i / 8 * Math.PI * 2 + T * 0.4, r0 = 190;
             const robada = i >= cuantasB6(T), u = robada ? kprog(T, K.N + 1.0 + (7 - i) * 0.25, K.N + 1.6 + (7 - i) * 0.25, kEase.sale) : 0;
             const bx = 360 + Math.cos(a) * r0, by = 930 + Math.sin(a) * r0 * 0.8;
-            const ex = 720 + (i % 4) * 80, ey = 770 + Math.floor(i / 4) * 64;
+            const ex = 513 + (i % 4) * 80, ey = 716 + Math.floor(i / 4) * 64;
             const X = klerp(bx, ex, u), Y = klerp(by, ey, u);
             return <g key={i}>{robada && <MMHChica x={X - 46} y={Y} s={0.8} />}<FichaB6 x={X} y={Y} gris={u} s={0.9} /></g>; })}
           {Array.from({ length: 5 }, (_, i) => { const at = K.N + 0.6 + i * 0.4, u = kprog(T, at, at + 0.6, kEase.sale); return u < 1 && u > 0 ? <MMHChica key={'m' + i} x={klerp(1100, 560, u)} y={klerp(560 + i * 60, 900, u)} s={0.8} /> : null; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 6 · síntomas: horas después, estómago; si es grave, hígado */}
       <Escena T={T} a={K.S} b={K.H} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Cuerpo T={T} x={560} y={930} higado={kprog(T, K.S + 2.3, K.S + 3.0)} revuelto={kprog(T, K.S + 1.2, K.S + 1.6)} />
-          <Reloj T={T} x={190} y={560} vel={kprog(T, K.S, K.S + 0.3) * (1 - kprog(T, K.S + 1.2, K.S + 1.5)) * 3 + 0.05} />
+          <g transform="translate(470 1060) scale(1.35)"><Cuerpo T={T} x={0} y={0} higado={kprog(T, K.S + 2.3, K.S + 3.0)} revuelto={kprog(T, K.S + 1.2, K.S + 1.6)} /></g>
+          <Reloj T={T} x={165} y={500} r={95} vel={kprog(T, K.S, K.S + 0.3) * (1 - kprog(T, K.S + 1.2, K.S + 1.5)) * 3 + 0.05} />
         </>)}
       </Escena>
       {/* 7 · mito: hervirla la vuelve segura; el vapor intoxica a quien cocina */}
       <Escena T={T} a={K.H} b={K.Fi} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Cocinero T={T} x={830} y={720} mareo={kprog(T, K.H + 2.9, K.H + 3.4)} />
-          <Olla T={T} x={370} y={1020} vapor={kprog(T, K.H, K.H + 0.5)} hacia={[330, -400]} />
+          <g transform="translate(540 980) scale(1.2) translate(-515 -820)">
+            <Cocinero T={T} x={790} y={720} mareo={kprog(T, K.H + 2.9, K.H + 3.4)} />
+            <Olla T={T} x={380} y={1020} vapor={kprog(T, K.H, K.H + 0.5)} hacia={[280, -400]} />
+          </g>
         </>)}
       </Escena>
       {/* 8 · Finlandia 2025: se vende con advertencia; tras dos hervores queda casi un quinto */}
       <Escena T={T} a={K.Fi} b={K.Fa} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <g opacity={1 - kprog(T, K.Fi + 2.6, K.Fi + 2.9)}><CajaVenta x={540} y={1090} s={0.9} /></g>
-          {T > K.Fi + 2.7 && (() => { const u = kprog(T, K.Fi + 2.8, K.Fi + 3.4, kEase.sale), v = kprog(T, K.Fi + 3.6, K.Fi + 4.4, kEase.sale); return <g>
+          {/* la caja con su letrero se queda, atenuada, detrás de la gráfica (ya no se apaga) */}
+          <g opacity={1 - 0.86 * kprog(T, K.Fi + 2.6, K.Fi + 2.9)}><CajaVenta x={540} y={1260} s={1.4} /></g>
+          {T > K.Fi + 2.7 && (() => { const u = kprog(T, K.Fi + 2.8, K.Fi + 3.4, kEase.sale), v = kprog(T, K.Fi + 3.6, K.Fi + 4.4, kEase.sale); return <g transform="translate(540 1330) scale(1.35) translate(-400 -1120)">
             <line x1={120} y1={1120} x2={680} y2={1120} stroke={KC.ink} strokeWidth={8} />
             <rect x={160} y={1120 - 400 * u} width={200} height={400 * u} fill={FM.gCap} stroke={KC.ink} strokeWidth={7} />
             <rect x={400} y={1120 - klerp(400, 72, v) * u} width={200} height={klerp(400, 72, v) * u} fill={FM.gLuz} stroke={KC.ink} strokeWidth={7} />
@@ -362,80 +372,83 @@ function FalsaMorillaShot() {
       <Escena T={T} a={K.Fa} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <line x1={80} y1={920} x2={1000} y2={920} stroke={KC.ink} strokeWidth={6} strokeDasharray="18 12" />
-          {Array.from({ length: 6 }, (_, i) => { const at = K.Fa + 2.6 + i * 0.35, u = kprog(T, at, at + 0.35, kEase.rebote); if (u <= 0) return null;
+          {/* los seis platos están desde el inicio, atenuados; cada año se enciende con su palomita */}
+          {[880, 1230].map((yy) => <line key={yy} x1={60} y1={yy + 36} x2={1020} y2={yy + 36} stroke={KC.ink} strokeWidth={6} strokeDasharray="18 12" opacity=".7" />)}
+          {Array.from({ length: 6 }, (_, i) => { const at = K.Fa + 2.6 + i * 0.35, u = kprog(T, K.Fa + i * 0.05, K.Fa + 0.4 + i * 0.05, kEase.rebote); if (u <= 0) return null;
+            const lit = T >= at, pop = lit ? 1 + 0.14 * (1 - kprog(T, at, at + 0.3, kEase.sale)) : 1;
             const mal = i === 5 && T > K.Fa + 4.6;
-            return <g key={i}><Plato x={140 + i * 160} y={900} s={u * 1.1} estado={i < 5 ? 'ok' : (mal ? 'mal' : 'ok')} />
-              <text x={140 + i * 160} y={980} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={i === 5 && mal ? KC.red : KC.ink}>{i < 5 ? `año ${i + 1}` : (mal ? 'un día' : `año 6`)}</text></g>; })}
+            const px = 200 + (i % 3) * 340, py = 880 + Math.floor(i / 3) * 350;
+            return <g key={i} opacity={lit ? 1 : 0.4}><Plato x={px} y={py} s={u * 2 * pop} estado={!lit ? 'nada' : (i < 5 ? 'ok' : (mal ? 'mal' : 'ok'))} />
+              <text x={px} y={py + 96} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={i === 5 && mal ? KC.red : KC.ink}>{i < 5 ? `año ${i + 1}` : (mal ? 'un día' : `año 6`)}</text></g>; })}
         </>)}
       </Escena>
       {/* 10 · cierre: la misma imagen del inicio, ya "leída" */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <SueloBosque y={1080} />
-          <FalsaMorilla T={T} x={310} y={1100} s={1.5} id="g9" />
-          <SelloNo T={T} at={K.C + 0.2} x={500} y={900} texto="NO" r={80} rot={12} />
+          <SueloBosque y={1380} />
+          <FalsaMorilla T={T} x={400} y={1400} s={2.2} id="g9" />
+          <SelloNo T={T} at={K.C + 0.2} x={640} y={820} texto="NO" r={95} rot={12} />
         </>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.3} until={K.G + 2.6} texto="¿morilla?" x={310} y={560} tam={46} borde={KC.ink} />
-      <Etq T={T} at={K.G + 2.6} until={K.Mo - 0.3} x={60} y={430} texto="falsa morilla" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.G + 2.9} until={K.Mo - 0.3} x={60} y={485} texto="Gyromitra esculenta" it tam={36} color={KC.ink} />
-      <Chip T={T} at={K.G + 3.5} until={K.Mo - 0.3} texto="también: combustible de cohete" x={540} y={580} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.G + 0.3} until={K.G + 2.6} texto="¿morilla?" x={400} y={540} tam={46} borde={KC.ink} />
+      <Etq T={T} at={K.G + 2.6} until={K.Mo - 0.3} x={60} y={330} texto="falsa morilla" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.G + 2.9} until={K.Mo - 0.3} x={60} y={385} texto="Gyromitra esculenta" it tam={36} color={KC.ink} />
+      <Chip T={T} at={K.G + 3.5} until={K.Mo - 0.3} texto="también: combustible de cohete" x={370} y={490} tam={34} borde={KC.red} />
 
-      <Etq T={T} at={K.Mo + 0.6} until={K.F - 0.3} x={60} y={430} texto="morilla" tam={44} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 0.9} until={K.F - 0.3} x={60} y={485} texto="Morchella" it tam={38} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 1.2} until={K.F - 0.3} x={60} y={545} texto="panal: hoyos y costillas" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 1.9} until={K.F - 0.3} x={385} y={915} texto="pegado al pie" tam={24} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 2.0} until={K.F - 0.3} x={385} y={955} texto="(casi siempre)" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.Mo + 3.0} until={K.F - 0.3} texto="POR DENTRO · HUECA" x={770} y={600} tam={32} borde={KC.mint} mono />
+      <Etq T={T} at={K.Mo + 0.6} until={K.F - 0.3} x={60} y={300} texto="morilla" tam={44} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 0.9} until={K.F - 0.3} x={60} y={352} texto="Morchella" it tam={38} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 1.2} until={K.F - 0.3} x={60} y={404} texto="panal: hoyos y costillas" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 1.9} until={K.F - 0.3} x={395} y={1090} texto="pegado al pie" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 2.0} until={K.F - 0.3} x={395} y={1130} texto="(casi siempre)" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.Mo + 3.0} until={K.F - 0.3} texto="POR DENTRO · HUECA" x={810} y={425} tam={32} borde={KC.mint} mono />
 
       <Etq T={T} at={K.F + 0.5} until={K.Tx - 0.3} x={60} y={430} texto="falsa morilla" tam={44} color={KC.ink} />
       <Etq T={T} at={K.F + 0.8} until={K.Tx - 0.3} x={60} y={485} texto="Gyromitra esculenta" it tam={38} color={KC.ink} />
       <Etq T={T} at={K.F + 1.3} until={K.Tx - 0.3} x={60} y={545} texto="arrugada, lobulada, como cerebro" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.F + 3.1} until={K.Tx - 0.3} texto="POR DENTRO · CÁMARAS" x={770} y={620} tam={32} borde={KC.red} mono />
+      <Chip T={T} at={K.F + 3.1} until={K.Tx - 0.3} texto="POR DENTRO · CÁMARAS" x={795} y={665} tam={32} borde={KC.red} mono />
 
       <Chip T={T} at={K.Tx + 0.1} until={K.N - 0.3} texto="POR DENTRO · LA TOXINA" x={400} y={420} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Tx + 0.4} until={K.Tx + 2.2} x={60} y={560} texto="giromitrina" tam={40} color={KC.yellow} />
-      <Etq T={T} at={K.Tx + 2.3} until={K.N - 0.3} x={60} y={560} texto="monometilhidrazina (MMH)" tam={32} color={KC.red} />
-      <Chip T={T} at={K.Tx + 4.0} until={K.N - 0.3} texto="combustible para maniobrar naves" x={380} y={1000} tam={32} borde={KC.gold} />
+      <Etq T={T} at={K.Tx + 0.4} until={K.Tx + 2.2} x={60} y={500} texto="giromitrina" tam={40} color={KC.yellow} />
+      <Etq T={T} at={K.Tx + 2.3} until={K.N - 0.3} x={60} y={500} texto="monometilhidrazina (MMH)" tam={32} color={KC.red} />
+      <Chip T={T} at={K.Tx + 4.0} until={K.N - 0.3} texto="combustible para maniobrar naves" x={400} y={1290} tam={32} borde={KC.gold} />
 
-      <Chip T={T} at={K.N + 0.1} until={K.S - 0.3} texto="AL MICROSCOPIO · NEURONA" x={400} y={420} tam={32} borde={KC.pink} mono />
-      <Medidor T={T} at={K.N + 0.5} until={K.S - 0.3} valor={(t) => 1 - 0.8 * kprog(t, K.N + 1.0, K.N + 3.0)} etiqueta="freno de la neurona (GABA)" texto={(v) => (v > 0.5 ? 'normal' : 'bajo')} x={60} y={500} ancho={600} color={KC.mint} />
-      <Etq T={T} at={K.N + 1.2} until={K.S - 0.3} x={60} y={660} texto="vitamina B6 (se la llevan)" tam={28} color={KC.yellow} />
-      <Chip T={T} at={K.N + 3.6} until={K.S - 0.3} texto="convulsiones" x={720} y={1090} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.N + 0.1} until={K.S - 0.3} texto="AL MICROSCOPIO · NEURONA" x={400} y={330} tam={32} borde={KC.pink} mono />
+      <Medidor T={T} at={K.N + 0.5} until={K.S - 0.3} valor={(t) => 1 - 0.8 * kprog(t, K.N + 1.0, K.N + 3.0)} etiqueta="freno de la neurona (GABA)" texto={(v) => (v > 0.5 ? 'normal' : 'bajo')} x={60} y={400} ancho={600} color={KC.mint} />
+      <Etq T={T} at={K.N + 1.2} until={K.S - 0.3} x={520} y={590} texto="vitamina B6 (se la llevan)" tam={28} color={KC.yellow} />
+      <Chip T={T} at={K.N + 3.6} until={K.S - 0.3} texto="convulsiones" x={760} y={1210} tam={40} borde={KC.yellow} />
 
-      <Chip T={T} at={K.S + 0.3} until={K.H - 0.3} texto="horas después (≈ 5–12 h)" x={600} y={430} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.S + 1.3} until={K.H - 0.3} x={720} y={890} texto="vómito, diarrea" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.4} until={K.H - 0.3} x={60} y={1130} texto="si es grave: daño al hígado" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.S + 0.3} until={K.H - 0.3} texto="horas después (≈ 5–12 h)" x={610} y={355} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.S + 1.3} until={K.H - 0.3} x={735} y={1020} texto="vómito, diarrea" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.4} until={K.H - 0.3} x={180} y={1490} texto="si es grave: daño al hígado" tam={30} color={KC.ink} />
 
-      <MitoTachado T={T} at={K.H + 0.6} tacharEn={K.H + 1.5} until={K.Fi - 0.3} texto="hervida = segura" x={300} y={460} tam={46} />
-      <Chip T={T} at={K.H + 2.9} until={K.Fi - 0.3} texto="el vapor también puede intoxicar" x={540} y={560} tam={36} borde={KC.red} />
+      <MitoTachado T={T} at={K.H + 0.6} tacharEn={K.H + 1.5} until={K.Fi - 0.3} texto="hervida = segura" x={300} y={410} tam={46} />
+      <Chip T={T} at={K.H + 2.9} until={K.Fi - 0.3} texto="el vapor también puede intoxicar" x={500} y={515} tam={36} borde={KC.red} />
 
-      <TarjetaEstudio T={T} at={K.Fi + 0.3} until={K.Fi + 2.7} anio="2025" quien="Agencia de Alimentos de Finlandia" revista="Ruokavirasto · riesgo de la giromitrina" x={540} y={470} />
-      <Etq T={T} at={K.Fi + 1.0} until={K.Fi + 2.7} x={60} y={665} texto="«venenosa si no se trata»: aviso obligatorio al venderla" tam={24} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Fi + 3.6} until={K.Fa - 0.3} valor={18} dur={0.8} prefijo="≈" sufijo=" %" etiqueta="de la toxina sigue ahí" x={360} y={520} tam={140} color={KC.red} />
+      <TarjetaEstudio T={T} at={K.Fi + 0.3} until={K.Fi + 2.7} anio="2025" quien="Agencia de Alimentos de Finlandia" revista="Ruokavirasto · riesgo de la giromitrina" x={540} y={390} />
+      <Etq T={T} at={K.Fi + 1.0} until={K.Fi + 2.7} x={60} y={610} texto="«venenosa si no se trata»: aviso obligatorio al venderla" tam={24} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Fi + 3.6} until={K.Fa - 0.3} valor={18} dur={0.8} prefijo="≈" sufijo=" %" etiqueta="de la toxina sigue ahí" x={400} y={540} tam={140} color={KC.red} />
 
-      <MitoTachado T={T} at={K.Fa + 0.2} tacharEn={K.Fa + 1.9} until={K.Fa + 2.6} texto="«en mi familia siempre la comimos»" x={540} y={600} tam={38} />
-      <Etq T={T} at={K.Fa + 2.8} until={K.C - 0.3} x={60} y={760} texto="años sin problema…" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Fa + 4.7} until={K.C - 0.3} texto="…y un día, intoxicación" x={440} y={1090} tam={34} borde={KC.red} />
+      <MitoTachado T={T} at={K.Fa + 0.2} tacharEn={K.Fa + 1.9} until={K.Fa + 2.6} texto="«en mi familia siempre la comimos»" x={540} y={470} tam={38} />
+      <Etq T={T} at={K.Fa + 2.8} until={K.C - 0.3} x={60} y={620} texto="años sin problema…" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Fa + 4.7} until={K.C - 0.3} texto="…y un día, intoxicación" x={540} y={1440} tam={34} borde={KC.red} />
 
-      <Chip T={T} at={K.C + 0.5} until={K.Ou} texto="Ante la duda: NO la comas" x={380} y={470} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="pregunta a un micólogo" x={330} y={560} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="¿te sientes mal? → urgencias" x={380} y={650} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.C + 3.4} until={K.Ou} x={60} y={1500} texto="Esto no es una guía para identificar hongos." tam={22} color={KC.texto} />
+      <Chip T={T} at={K.C + 0.5} until={K.Ou} texto="Ante la duda: NO la comas" x={380} y={330} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="pregunta a un micólogo" x={330} y={420} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="¿te sientes mal? → urgencias" x={380} y={510} tam={34} borde={KC.red} />
+      <Etq T={T} at={K.C + 3.4} until={K.Ou} x={60} y={600} texto="Esto no es una guía para identificar hongos." tam={22} color={KC.texto} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Mo} texto="5 cm" largo={210} />
-      <BarraEscala T={T} at={K.Mo} until={K.F} texto="5 cm" largo={180} />
-      <BarraEscala T={T} at={K.F} until={K.Tx} texto="5 cm" largo={200} />
-      <BarraEscala T={T} at={K.Tx} until={K.N} texto="0.15 nm (esquemático)" largo={110} />
-      <BarraEscala T={T} at={K.N} until={K.S} texto="20 µm · medidor esquemático" largo={160} />
-      <BarraEscala T={T} at={K.S} until={K.H} texto="30 cm" largo={190} />
-      <BarraEscala T={T} at={K.H} until={K.Fi} texto="20 cm" largo={190} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={210} />
+      <BarraEscala T={T} at={K.G} until={K.Mo} texto="5 cm" largo={308} />
+      <BarraEscala T={T} at={K.Mo} until={K.F} texto="5 cm" largo={305} />
+      <BarraEscala T={T} at={K.F} until={K.Tx} texto="5 cm" largo={231} />
+      <BarraEscala T={T} at={K.Tx} until={K.N} texto="0.15 nm (esquemático)" largo={110 * kTx(T)} />
+      <BarraEscala T={T} at={K.N} until={K.S} texto="20 µm · medidor esquemático" largo={232} />
+      <BarraEscala T={T} at={K.S} until={K.H} texto="30 cm" largo={257} />
+      <BarraEscala T={T} at={K.H} until={K.Fi} texto="20 cm" largo={228} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={308} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Mo - 0.1} texto="Esto *no es una morilla.*" />
