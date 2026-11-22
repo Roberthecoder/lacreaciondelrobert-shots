@@ -3,7 +3,7 @@
 // Datos: SACMEX / IPDP CDMX (2022), Gobierno de Jalisco (2025), Liemberger y Wyatt (2018), EPA WaterSense. Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (calle, tubería, suelo, lago, ciudad y globo).
 
-const AGUA = '#2f8fd8', AGUA2 = '#7cc8ff', GRIS = '#b8c4cf', TIERRA = '#9a6a3c', TIERRA2 = '#7d5330';
+const AGUA = '#2f8fd8', AGUA2 = '#7cc8ff', GRIS = '#b8c4cf', TIERRA = '#7a5230', TIERRA2 = '#5f3f22';
 
 // Cubeta con asa. lleno 0..1. fuga 0..1 = chorrito que sale por un lado. color del agua.
 function Cubeta({ T = 0, x, y, s = 1, lleno = 1, color = AGUA, fuga = 0 }) {
@@ -122,12 +122,16 @@ function FugasShot() {
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
   const PIERDEN = [1, 4, 6, 8];
   // fila de 10 cubetas bajo el tubo: se llenan (t0) y 4 se vacían por fugas (t1)
+  // encuadre cine: el tubo da vuelta (dos tramos) y las 10 cubetas van grandes en dos filas de 5
+  const CX = (i) => 125 + (i % 5) * 192, TY = (i) => (i < 5 ? 690 : 1100), CY = (i) => TY(i) + 300;
   const cubetas = (t0, t1) => <>
-    <Tubo x0={-20} x1={1100} y={860} g={56} uniones={5} />
-    {PIERDEN.map((i) => <Chorro key={'c' + i} T={T} x={100 + i * 98} y={888} fuerza={kprog(T, t1 - 0.4, t1 + 0.2)} alto={90} n={6} dir={1} />)}
+    <rect x={1000} y={690} width={56} height={410} fill="#9aa7b4" stroke={KC.ink} strokeWidth={7} />
+    <Tubo x0={-20} x1={1056} y={690} g={56} uniones={5} />
+    <Tubo x0={-20} x1={1056} y={1100} g={56} uniones={5} />
+    {PIERDEN.map((i) => <Chorro key={'c' + i} T={T} x={CX(i)} y={TY(i) + 28} fuerza={kprog(T, t1 - 0.4, t1 + 0.2)} alto={110} n={6} dir={1} />)}
     {Array.from({ length: 10 }, (_, i) => { const pierde = PIERDEN.includes(i); const ll = kprog(T, t0 + 0.1 + i * 0.12, t0 + 0.55 + i * 0.12, kEase.sale);
       const baja = pierde ? kprog(T, t1 + i * 0.08, t1 + 1.4 + i * 0.08, kEase.suave) : 0;
-      return <Cubeta key={i} T={T} x={100 + i * 98} y={1120} s={0.62} lleno={ll * (1 - baja)} color={pierde ? mixHex(AGUA, GRIS, baja) : AGUA} fuga={pierde ? Math.sin(Math.PI * baja) : 0} />; })}
+      return <Cubeta key={i} T={T} x={CX(i)} y={CY(i)} s={1.1} lleno={ll * (1 - baja)} color={pierde ? mixHex(AGUA, GRIS, baja) : AGUA} fuga={pierde ? Math.sin(Math.PI * baja) : 0} />; })}
   </>;
   // gotero de la llave: una gota por segundo
   const presion = kprog(T, K.Tu + 0.6, K.Tu + 3.2, kEase.suave);
@@ -190,8 +194,8 @@ function FugasShot() {
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Gd} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={290} y={1000} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 820)`}>?</text>
-          <Cubeta T={T} x={290} y={1190} s={0.8} lleno={0.5} /></>)}
+        {svg(<><text x={300} y={1180} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 1000)`}>?</text>
+          <Cubeta T={T} x={720} y={1300} s={1.5} lleno={0.5} /></>)}
       </Escena>
       {/* 6 · Guadalajara: del agua que trae de Chapala, una cuarta parte no llega */}
       <Escena T={T} a={K.Gd} b={K.E}>
@@ -203,14 +207,14 @@ function FugasShot() {
           <path d="M 640 910 L 300 910 L 300 835" stroke="#9aa7b4" strokeWidth={34} fill="none" strokeLinejoin="round" />
           <Chorro T={T} x={470} y={895} fuerza={kprog(T, K.Gd + 3.0, K.Gd + 3.6)} alto={90} n={6} />
           {Array.from({ length: 4 }, (_, i) => { const ll = kprog(T, K.Gd + 0.4 + i * 0.15, K.Gd + 0.9 + i * 0.15, kEase.sale); const baja = i === 3 ? kprog(T, K.Gd + 3.0, K.Gd + 4.4, kEase.suave) : 0;
-            return <Cubeta key={i} T={T} x={330 + i * 130} y={1130} s={0.6} lleno={ll * (1 - baja)} color={i === 3 ? mixHex(AGUA, GRIS, baja) : AGUA} fuga={i === 3 ? Math.sin(Math.PI * baja) : 0} />; })}
+            return <Cubeta key={i} T={T} x={330 + i * 140} y={1150} s={0.8} lleno={ll * (1 - baja)} color={i === 3 ? mixHex(AGUA, GRIS, baja) : AGUA} fuga={i === 3 ? Math.sin(Math.PI * baja) : 0} />; })}
         </>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 7 · el estudio de 2018: el mundo pierde o no cobra 346 millones de m³ al día */}
       <Escena T={T} a={K.E} b={K.A}>
         <FondoLunares color={KC.blue} punto="rgba(255,255,255,.18)" />
-        {svg(<g opacity={kprog(T, K.E + 3.3, K.E + 3.9)}><Globo T={T} x={640} y={720} r={210} gotas={kprog(T, K.E + 3.6, K.E + 4.4)} /></g>)}
+        {svg(<g opacity={0.45 + 0.55 * kprog(T, K.E + 3.3, K.E + 3.9)}><Globo T={T} x={540} y={830} r={290} gotas={kprog(T, K.E + 3.6, K.E + 4.4)} /></g>)}
       </Escena>
       {/* 8 · más de cien mil albercas olímpicas al día */}
       <Escena T={T} a={K.A} b={K.L}>
@@ -220,33 +224,33 @@ function FugasShot() {
       {/* 9 · la llave que gotea: una gota por segundo */}
       <Escena T={T} a={K.L} b={K.R}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>
+        {svg(<g transform="translate(398 870) scale(1.3) translate(-398 -870)">
           <rect x={150} y={520} width={50} height={160} fill="#c9d3dd" stroke={KC.ink} strokeWidth={6} />
           <Llave x={300} y={600} s={1.1} />
           <Goteo T={T} x={398} y0={680} y1={880} cada={1} desde={K.L + 0.2} color={AGUA2} r={14} />
           <Garrafon x={398} y={1140} lleno={0.08 + 0.75 * kprog(T, K.L + 0.3, K.R + 1)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 10 · más de 180 regaderazos */}
       <Escena T={T} a={K.R} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<>{Array.from({ length: 6 }, (_, i) => { const c = i % 3, f = Math.floor(i / 3); const on = kprog(T, K.R + 0.3 + i * 0.25, K.R + 0.5 + i * 0.25);
-          return <Regadera key={i} T={T} x={330 + c * 260} y={790 + f * 220} on={on} />; })}</>)}
+        {svg(<g transform="translate(590 1000) scale(1.35) translate(-590 -900)">{Array.from({ length: 6 }, (_, i) => { const c = i % 3, f = Math.floor(i / 3); const on = kprog(T, K.R + 0.3 + i * 0.25, K.R + 0.5 + i * 0.25);
+          return <Regadera key={i} T={T} x={330 + c * 260} y={790 + f * 220} on={on} />; })}</g>)}
       </Escena>
       {/* 11 · cierre: regreso a las 10 cubetas; la que gotea en tu casa se cierra */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
         {svg(<>{cubetas(K.C - 0.8, K.C - 0.3)}
-          <Llave x={260} y={620} s={0.9} />
-          <Goteo T={T} x={340} y0={690} y1={800} cada={1} desde={K.C} hasta={K.C + 2.6} color={AGUA2} r={12} />
-          <g opacity={kprog(T, K.C + 2.8, K.C + 3.2)}><circle cx={470} cy={600} r={44} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} /><path d="M 448 600 l 16 18 l 28 -34" stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>
+          <Llave x={260} y={500} s={0.9} />
+          <Goteo T={T} x={340} y0={570} y1={650} cada={1} desde={K.C} hasta={K.C + 2.6} color={AGUA2} r={12} />
+          <g opacity={kprog(T, K.C + 2.8, K.C + 3.2)} transform="translate(0 -110)"><circle cx={470} cy={600} r={44} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} /><path d="M 448 600 l 16 18 l 28 -34" stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>
         </>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
 
       {/* datos y etiquetas */}
-      <NumeroGigante T={T} at={K.G + 2.8} until={K.F - 0.2} valor={4} dur={0.8} sufijo=" de 10" etiqueta="cubetas que no llegan:" x={300} y={620} tam={130} color={KC.yellow} />
-      <Etq T={T} at={K.G + 0.6} until={K.F - 0.2} x={60} y={790} texto="del tubo de la ciudad →" tam={30} color={KC.ink} />
+      <NumeroGigante T={T} at={K.G + 2.8} until={K.F - 0.2} valor={4} dur={0.8} sufijo=" de 10" etiqueta="cubetas que no llegan:" x={540} y={470} tam={130} color={KC.yellow} />
+      <Etq T={T} at={K.G + 0.6} until={K.F - 0.2} x={60} y={620} texto="del tubo de la ciudad →" tam={30} color={KC.ink} />
       <Chip T={T} at={K.F + 0.6} until={K.Tu - 0.2} texto="CDMX 2022: 37–42 % en fugas de la red" y={1450} x={540} tam={32} borde={KC.red} />
       <Etq T={T} at={K.F + 1.0} until={K.Tu - 0.2} x={590} y={860} texto="fuga" tam={34} color={KC.paper} />
       <Etq T={T} at={K.Tu + 0.8} until={K.S - 0.2} x={700} y={1110} texto="desgaste" tam={36} color={KC.ink} />
@@ -258,17 +262,17 @@ function FugasShot() {
       <Etq T={T} at={K.Gd + 1.0} until={K.E - 0.2} x={1040} y={1030} texto="Lago de Chapala" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Gd + 3.4} until={K.E - 0.2} texto="fugas · evaporación · fallas" y={420} x={340} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Gd + 1.6} until={K.E - 0.2} texto="Jalisco 2025: agua de Chapala, ~¼ no llega (25–30 %)" y={1450} x={540} tam={27} borde={KC.leaf} />
-      <TarjetaEstudio T={T} at={K.E + 0.3} until={K.E + 3.3} anio="2018" quien="Liemberger y Wyatt" revista="Water Supply · agua perdida o no cobrada" y={760} />
-      <NumeroGigante T={T} at={K.E + 3.8} until={K.A - 0.2} valor={346} dur={1.4} sufijo=" millones" etiqueta="de m³ de agua al día" x={540} y={1040} tam={110} color={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.E + 0.3} until={K.E + 3.3} anio="2018" quien="Liemberger y Wyatt" revista="Water Supply · agua perdida o no cobrada" y={330} />
+      <NumeroGigante T={T} at={K.E + 3.8} until={K.A - 0.2} valor={346} dur={1.4} sufijo=" millones" etiqueta="de m³ de agua al día" x={540} y={1300} tam={110} color={KC.yellow} />
       <Chip T={T} at={K.E + 4.4} until={K.A - 0.2} texto="perdida o no cobrada · todo el mundo" y={1450} x={540} tam={30} borde={KC.cyan} />
       <NumeroGigante T={T} at={K.A + 0.1} until={K.L - 0.2} valor={100000} dur={1.6} prefijo="+" etiqueta="albercas olímpicas al día" x={640} y={560} tam={110} color={KC.yellow} />
       <Chip T={T} at={K.A + 0.5} until={K.L - 0.2} texto="olímpicas de 2 m de hondo (2,500 m³)" y={1450} x={540} tam={30} borde={KC.ink} />
       <Cronometro T={T} at={K.L + 0.2} until={K.R - 0.2} factor={1} x={420} y={330} etiqueta="1 GOTA POR SEGUNDO" />
       <NumeroGigante T={T} at={K.L + 2.6} until={K.R - 0.2} valor={11000} dur={1.8} prefijo="+" sufijo=" L" etiqueta="en un año" x={760} y={900} tam={100} color={KC.cyan} />
       <Chip T={T} at={K.L + 0.8} until={K.R - 0.2} texto="EPA (EUA): +3,000 galones al año" y={1450} x={540} tam={30} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.R + 1.2} until={K.C - 0.2} valor={180} dur={1.4} prefijo="+" etiqueta="regaderazos" x={640} y={520} tam={130} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.R + 1.2} until={K.C - 0.2} valor={180} dur={1.4} prefijo="+" etiqueta="regaderazos" x={640} y={560} tam={130} color={KC.yellow} />
       <Chip T={T} at={K.R + 0.4} until={K.C - 0.2} texto="EPA (EUA) · llave con 1 gota/s, en un año" y={1450} x={540} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.C + 2.9} until={K.Ou - 0.1} texto="esta sí depende de ti" y={480} x={340} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 2.9} until={K.Ou - 0.1} texto="esta sí depende de ti" y={360} x={560} tam={34} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.F - 0.1} texto="10 cubetas: *unas 4 nunca llegan.*" />
