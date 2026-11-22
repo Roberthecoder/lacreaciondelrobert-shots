@@ -65,8 +65,8 @@ function Persona({ x, yPies, s = 1, T = 0, ropa = 'chamarra', gorro = 0, bufanda
     </g>
     {gorro > 0 && <g transform={`translate(0 ${(1 - gorro) * -420})`} opacity={Math.min(1, gorro * 3)}>
       <path d="M -74 -560 C -76 -650 76 -650 74 -560 Z" fill={KC.red} stroke={KC.ink} strokeWidth={7} />
-      <rect x={-80} y={-578} width={160} height={36} rx={16} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
-      <circle cx={0} cy={-648} r={22} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
+      <rect x={-80} y={-578} width={160} height={36} rx={16} fill="#eef0f6" stroke={KC.ink} strokeWidth={7} />
+      <circle cx={0} cy={-648} r={22} fill="#eef0f6" stroke={KC.ink} strokeWidth={6} />
     </g>}
     {chimenea > 0.01 && <Chimenea T={T} p={chimenea} humo={humo} />}
   </g>;
@@ -89,7 +89,7 @@ function Nieve({ T, n = 70, seed = 3, o = 1 }) {
     return <circle key={i} cx={x0 + Math.sin(T * 0.9 + i) * 22} cy={((y0 + T * v) % (KH + 40)) - 20} r={r} fill="#fff" opacity=".9" />; })}</g>;
 }
 function SueloNieve({ y = 1470 }) {
-  return <path d={`M -20 ${y} Q 260 ${y - 60} 540 ${y - 10} T 1100 ${y - 30} L 1100 1940 L -20 1940 Z`} fill="#f4f8ff" stroke={KC.ink} strokeWidth={9} />;
+  return <path d={`M -20 ${y} Q 260 ${y - 60} 540 ${y - 10} T 1100 ${y - 30} L 1100 1940 L -20 1940 Z`} fill="#9fb0cc" stroke={KC.ink} strokeWidth={9} />;
 }
 // Ondas de calor que suben (líneas onduladas).
 function OndasCalor({ T, x, y, n = 3, ancho = 110, alto = 220, color = '#ff8a3d', o = 1, sep = 46 }) {
@@ -147,26 +147,26 @@ function LupaMano({ x, y, s = 1, rot = 30 }) {
   </g>;
 }
 // Tarjeta de prenda (Gorro, bufanda, guantes, chamarra) con palomita.
-function Prenda({ T, at, x, y, tipo, texto }) {
+function Prenda({ T, at, x, y, tipo, texto, s = 1 }) {
   const e = kprog(T, at, at + 0.45, kEase.rebote), ok = kprog(T, at + 0.5, at + 0.8, kEase.rebote);
   if (T < at) return null;
   const dib = {
-    gorro: <g transform="translate(0 40)"><path d="M -110 0 C -114 -150 114 -150 110 0 Z" fill={KC.red} stroke={KC.ink} strokeWidth={9} /><rect x={-120} y={-20} width={240} height={50} rx={22} fill={KC.paper} stroke={KC.ink} strokeWidth={9} /><circle cx={0} cy={-120} r={30} fill={KC.paper} stroke={KC.ink} strokeWidth={8} /></g>,
+    gorro: <g transform="translate(0 40)"><path d="M -110 0 C -114 -150 114 -150 110 0 Z" fill={KC.red} stroke={KC.ink} strokeWidth={9} /><rect x={-120} y={-20} width={240} height={50} rx={22} fill="#eef0f6" stroke={KC.ink} strokeWidth={9} /><circle cx={0} cy={-120} r={30} fill="#eef0f6" stroke={KC.ink} strokeWidth={8} /></g>,
     bufanda: <g><rect x={-130} y={-60} width={260} height={60} rx={26} fill={KC.yellow} stroke={KC.ink} strokeWidth={9} /><rect x={30} y={-20} width={60} height={150} rx={18} fill={KC.yellow} stroke={KC.ink} strokeWidth={9} />{[50, 95].map((yy) => <line key={yy} x1={34} y1={yy} x2={86} y2={yy} stroke={KC.red} strokeWidth={10} />)}</g>,
-    guantes: <g>{[-70, 70].map((xx) => <g key={xx} transform={`translate(${xx} 0) scale(${xx < 0 ? -1 : 1} 1)`}><rect x={-45} y={-50} width={90} height={110} rx={40} fill={KC.cyan} stroke={KC.ink} strokeWidth={9} /><rect x={30} y={-30} width={40} height={60} rx={20} fill={KC.cyan} stroke={KC.ink} strokeWidth={8} transform="rotate(-30 40 0)" /><rect x={-45} y={50} width={90} height={40} rx={10} fill={KC.paper} stroke={KC.ink} strokeWidth={8} /></g>)}</g>,
+    guantes: <g>{[-70, 70].map((xx) => <g key={xx} transform={`translate(${xx} 0) scale(${xx < 0 ? -1 : 1} 1)`}><rect x={-45} y={-50} width={90} height={110} rx={40} fill={KC.cyan} stroke={KC.ink} strokeWidth={9} /><rect x={30} y={-30} width={40} height={60} rx={20} fill={KC.cyan} stroke={KC.ink} strokeWidth={8} transform="rotate(-30 40 0)" /><rect x={-45} y={50} width={90} height={40} rx={10} fill="#eef0f6" stroke={KC.ink} strokeWidth={8} /></g>)}</g>,
     chamarra: <g><rect x={-100} y={-100} width={200} height={210} rx={40} fill={KC.pink} stroke={KC.ink} strokeWidth={9} /><rect x={-160} y={-90} width={60} height={180} rx={28} fill={KC.pink} stroke={KC.ink} strokeWidth={9} transform="rotate(10 -130 -90)" /><rect x={100} y={-90} width={60} height={180} rx={28} fill={KC.pink} stroke={KC.ink} strokeWidth={9} transform="rotate(-10 130 -90)" /><line x1={0} y1={-100} x2={0} y2={110} stroke={KC.ink} strokeWidth={6} /></g>,
   }[tipo];
-  return <g transform={`translate(${x} ${y}) scale(${klerp(0.3, 1, e)})`} opacity={kprog(T, at, at + 0.15)}>
-    <rect x={-210} y={-170} width={420} height={330} rx={34} fill="#fff" stroke={KC.ink} strokeWidth={9} />
+  return <g transform={`translate(${x} ${y}) scale(${klerp(0.3, 1, e) * s})`} opacity={kprog(T, at, at + 0.15)}>
+    <rect x={-210} y={-170} width={420} height={330} rx={34} fill="#141a2e" stroke={KC.ink} strokeWidth={9} />
     <g transform="translate(0 -20) scale(0.85)">{dib}</g>
     <text x={0} y={135} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{texto}</text>
     <g transform={`translate(170 -140) scale(${ok})`}><circle r={44} fill={KC.leaf} stroke={KC.ink} strokeWidth={8} /><path d="M -20 0 L -5 16 L 22 -16" fill="none" stroke="#fff" strokeWidth={11} strokeLinecap="round" strokeLinejoin="round" /></g>
   </g>;
 }
 // Barra de 10 bloques = tu piel; el primero se llena hasta 0.7 (≈ 7 %).
-function BloquesPiel({ T, at, x, y }) {
+function BloquesPiel({ T, at, x, y, s = 1 }) {
   const lleno = kprog(T, at + 0.8, at + 2.0, kEase.sale);
-  return <g transform={`translate(${x} ${y})`}>
+  return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {Array.from({ length: 10 }, (_, i) => { const e = kprog(T, at + i * 0.06, at + 0.3 + i * 0.06, kEase.rebote);
       return <g key={i} transform={`translate(0 ${i * 74}) scale(${e})`}><rect x={-80} y={0} width={160} height={64} rx={12} fill={CPIEL} stroke={KC.ink} strokeWidth={6} />
         {i === 0 && <rect x={-80} y={0} width={160 * 0.7 * lleno} height={64} rx={12} fill={KC.gold} stroke={KC.ink} strokeWidth={6} />}</g>; })}
@@ -186,22 +186,22 @@ function CalorCabeza() {
       <Escena T={T} a={K.Gancho} b={K.Ejercito} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <SueloNieve />
-          <Persona x={320} yPies={1560} s={1.25} T={T} chimenea={kprog(T, 0, 0.5, kEase.rebote)} tiembla={0.6} cara="frio" id="g" />
+          <SueloNieve y={1530} />
+          <Persona x={540} yPies={1600} s={1.55} T={T} chimenea={kprog(T, 0, 0.5, kEase.rebote)} tiembla={0.6} cara="frio" id="g" />
           {nieve}
-          <Sello T={T} at={K.Gancho + 0.7} x={330} y={470} texto="¿MITO?" tam={130} />
+          <Sello T={T} at={K.Gancho + 0.7} x={790} y={560} texto="¿MITO?" tam={100} />
         </Lienzo>
-        <MitoTachado T={T} at={K.Gancho + 1.8} tacharEn={K.Gancho + 3.6} until={K.Ejercito - 0.2} texto="casi todo tu calor por la cabeza" x={540} y={1090} tam={38} />
+        <MitoTachado T={T} at={K.Gancho + 1.8} tacharEn={K.Gancho + 3.6} until={K.Ejercito - 0.2} texto="casi todo tu calor por la cabeza" x={540} y={350} tam={38} />
       </Escena>
       {/* 1 · viejas pruebas militares (se cree) */}
       <Escena T={T} a={K.Ejercito} b={K.Trajes} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
           <g transform={`translate(0 ${(1 - kprog(T, K.Ejercito - 0.2, K.Ejercito + 0.4, kEase.rebote)) * 900})`}>
-            <Carpeta x={540} y={830} s={1.05} abre={kprog(T, K.Ejercito + 0.8, K.Ejercito + 1.5, kEase.sale)} />
+            <Carpeta x={540} y={900} s={1.2} abre={kprog(T, K.Ejercito + 0.8, K.Ejercito + 1.5, kEase.sale)} />
           </g>
-          <TextoSvg x={540} y={1110} tam={56} color={KC.paper} o={kprog(T, K.Ejercito + 0.5, K.Ejercito + 0.8)}>VIEJAS PRUEBAS MILITARES</TextoSvg>
-          <Sello T={T} at={K.Ejercito + 1.7} x={790} y={600} texto="EE. UU." tam={90} rot={10} color={KC.blue} />
+          <TextoSvg x={540} y={1220} tam={62} color={KC.paper} o={kprog(T, K.Ejercito + 0.5, K.Ejercito + 0.8)}>VIEJAS PRUEBAS MILITARES</TextoSvg>
+          <Sello T={T} at={K.Ejercito + 1.7} x={780} y={637} texto="EE. UU." tam={95} rot={10} color={KC.blue} />
         </Lienzo>
         <Chip T={T} at={K.Ejercito + 0.3} until={K.Trajes - 0.1} texto="se cree" x={300} y={440} tam={46} borde={KC.pink} />
       </Escena>
@@ -209,22 +209,22 @@ function CalorCabeza() {
       <Escena T={T} a={K.Trajes} b={K.Claro} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <SueloNieve y={1480} />
+          <SueloNieve y={1500} />
           {[200, 540, 880].map((xx, i) => <g key={xx} transform={`translate(0 ${(1 - kprog(T, K.Trajes + i * 0.25, K.Trajes + 0.5 + i * 0.25, kEase.rebote)) * 900})`}>
-            <Persona x={xx} yPies={1540} s={0.95} T={T + i} ropa="traje" tiembla={0.5} cara="frio" id={'t' + i} /></g>)}
-          {[200, 540, 880].map((xx, i) => <ellipse key={i} cx={xx} cy={1540 - 532 * 0.95} rx={88} ry={96} fill="none" stroke={KC.yellow} strokeWidth={10} strokeDasharray="18 12" strokeDashoffset={-T * 40} opacity={kprog(T, K.Trajes + 3.3 + i * 0.15, K.Trajes + 3.7 + i * 0.15)} />)}
+            <Persona x={xx} yPies={1560} s={1.0} T={T + i} ropa="traje" tiembla={0.5} cara="frio" id={'t' + i} /></g>)}
+          {[200, 540, 880].map((xx, i) => <ellipse key={i} cx={xx} cy={1560 - 532} rx={93} ry={101} fill="none" stroke={KC.yellow} strokeWidth={10} strokeDasharray="18 12" strokeDashoffset={-T * 40} opacity={kprog(T, K.Trajes + 3.3 + i * 0.15, K.Trajes + 3.7 + i * 0.15)} />)}
           <Nieve T={T} n={90} seed={7} />
         </Lienzo>
         <Chip T={T} at={K.Trajes + 0.4} until={K.Claro - 0.1} texto="mucho frío" x={540} y={440} tam={46} borde={KC.cyan} />
         <Chip T={T} at={K.Trajes + 1.8} until={K.Claro - 0.1} texto="traje que cubre todo" x={540} y={540} tam={40} borde={KC.orange} />
-        <Etq T={T} at={K.Trajes + 3.4} until={K.Claro - 0.2} x={612} y={905} texto="cabeza destapada" lado="der" color={KC.yellow} />
+        <Etq T={T} at={K.Trajes + 3.4} until={K.Claro - 0.2} x={624} y={900} texto="cabeza destapada" lado="der" color={KC.yellow} tam={28} />
       </Escena>
       {/* 3 · cámara térmica: solo brilla la cabeza */}
       <Escena T={T} a={K.Claro} b={K.Manual} fondo={KC.noche} zoom={0.08}>
         <FondoMarca patron="oscuro" />
         <Lienzo>
-          <Persona x={400} yPies={1560} s={1.25} T={T} ropa="traje" termico={kprog(T, K.Claro + 0.2, K.Claro + 1.0)} id="c" />
-          <OndasCalor T={T} x={400} y={1560 - 640 * 1.25} n={3} o={kprog(T, K.Claro + 1.0, K.Claro + 1.6)} />
+          <Persona x={470} yPies={1400} s={1.55} T={T} ropa="traje" termico={kprog(T, K.Claro + 0.2, K.Claro + 1.0)} id="c" />
+          <OndasCalor T={T} x={470} y={1400 - 640 * 1.55} n={3} o={kprog(T, K.Claro + 1.0, K.Claro + 1.6)} />
           {/* visor */}
           {[[80, 380, 1, 1], [1000, 380, -1, 1], [80, 1480, 1, -1], [1000, 1480, -1, -1]].map(([x, y, sx, sy], i) =>
             <path key={i} d={`M ${x} ${y + sy * 90} L ${x} ${y} L ${x + sx * 90} ${y}`} fill="none" stroke="#fff" strokeWidth={8} opacity=".8" />)}
@@ -235,16 +235,16 @@ function CalorCabeza() {
           <text x={170} y={1470} textAnchor="end" style={{ font:`700 30px ${KF.mono}` }} fill="#fff">frío</text>
           <text x={910} y={1470} style={{ font:`700 30px ${KF.mono}` }} fill="#fff">calor</text>
         </Lienzo>
-        <Etq T={T} at={K.Claro + 1.4} until={K.Manual - 0.2} x={510} y={890} texto="lo único descubierto" lado="der" color={CCAL} />
+        <Etq T={T} at={K.Claro + 1.4} until={K.Manual - 0.2} x={604} y={575} texto="lo único descubierto" lado="der" color={CCAL} tam={26} />
       </Escena>
       {/* 4 · el manual: la cifra del mito */}
       <Escena T={T} a={K.Manual} b={K.Pregunta} fondo={KC.pink}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
           <g transform={`translate(${(1 - kprog(T, K.Manual - 0.2, K.Manual + 0.5, kEase.rebote)) * -900} 0)`}>
-            <Manual x={540} y={810} s={1.05} num={kprog(T, K.Manual + 2.6, K.Manual + 3.1, kEase.rebote)} />
+            <Manual x={540} y={870} s={1.12} num={kprog(T, K.Manual + 2.6, K.Manual + 3.1, kEase.rebote)} />
           </g>
-          <Sello T={T} at={K.Manual + 4.2} x={880} y={1000} texto="¿?" tam={150} rot={14} />
+          <Sello T={T} at={K.Manual + 4.2} x={870} y={1070} texto="¿?" tam={150} rot={14} />
         </Lienzo>
         <Chip T={T} at={K.Manual + 4.6} until={K.Pregunta - 0.1} texto="el dato del mito" x={540} y={300} tam={44} borde={KC.red} />
       </Escena>
@@ -254,73 +254,77 @@ function CalorCabeza() {
       <Escena T={T} a={K.Estudio} b={K.Proporcion} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <g opacity={kprog(T, K.Estudio + 1.6, K.Estudio + 2.0)}>
-            <Manual x={400} y={1030} s={0.42} rot={4} tacha={kprog(T, K.Estudio + 3.4, K.Estudio + 3.9, kEase.sale)} />
-            <LupaMano x={klerp(560, 470, 0.5 + 0.5 * Math.sin(T * 1.8))} y={1000 + Math.sin(T * 2.3) * 20} s={0.8} rot={-30} />
+          <Manual x={540} y={1040} s={0.95} rot={4} tacha={kprog(T, K.Estudio + 3.4, K.Estudio + 3.9, kEase.sale)} />
+          <g opacity={kprog(T, K.Estudio + 0.3, K.Estudio + 0.8)}>
+            <LupaMano x={klerp(680, 470, 0.5 + 0.5 * Math.sin(T * 1.8))} y={1120 + Math.sin(T * 2.3) * 30} s={1.5} rot={-30} />
           </g>
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Proporcion - 0.2} anio="2008" quien="Vreeman y Carroll" revista="BMJ" x={540} y={560} />
+        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Proporcion - 0.2} anio="2008" quien="Vreeman y Carroll" revista="BMJ" x={540} y={340} />
       </Escena>
       {/* 7 · la cabeza ≈ 7 % de la piel */}
       <Escena T={T} a={K.Proporcion} b={K.Bano} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <Persona x={320} yPies={1500} s={1.2} T={T} ropa="bano" id="pr" />
+          <Persona x={320} yPies={1540} s={1.45} T={T} ropa="bano" id="pr" />
           <g opacity={kprog(T, K.Proporcion + 0.8, K.Proporcion + 1.2)}>
-            <ellipse cx={320} cy={1500 - 530 * 1.2} rx={110} ry={120} fill="none" stroke={KC.gold} strokeWidth={14} strokeDasharray="22 14" strokeDashoffset={-T * 40} />
+            <ellipse cx={320} cy={1540 - 530 * 1.45} rx={133} ry={145} fill="none" stroke={KC.gold} strokeWidth={14} strokeDasharray="22 14" strokeDashoffset={-T * 40} />
           </g>
-          <BloquesPiel T={T} at={K.Proporcion + 1.4} x={760} y={520} />
+          <BloquesPiel T={T} at={K.Proporcion + 1.4} x={740} y={610} s={1.2} />
         </Lienzo>
-        <Chip T={T} at={K.Proporcion + 0.8} until={K.Bano - 0.1} texto="≈ 7 % de la piel" x={330} y={440} tam={44} borde={KC.gold} />
+        <Chip T={T} at={K.Proporcion + 0.8} until={K.Bano - 0.1} texto="≈ 7 % de la piel" x={320} y={530} tam={44} borde={KC.gold} />
       </Escena>
       {/* 8 · en traje de baño: por la cabeza ≤ 10 % */}
       <Escena T={T} a={K.Bano} b={K.Cara} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <SueloNieve y={1490} />
+          <SueloNieve y={1520} />
           <g transform={`translate(0 ${(1 - kprog(T, K.Bano - 0.1, K.Bano + 0.5, kEase.rebote)) * 900})`}>
-            <Persona x={760} yPies={1560} s={1.15} T={T} ropa="bano" tiembla={1} cara="frio" id="b" /></g>
-          {[[-90, -330], [90, -330], [0, -250], [-40, -120], [40, -120]].map(([dx, dy], i) => <OndasCalor key={i} T={T + i * 0.3} x={760 + dx * 1.15} y={1560 + dy * 1.15} n={1} alto={160} o={kprog(T, K.Bano + 1.0, K.Bano + 1.6) * 0.9} />)}
-          <OndasCalor T={T} x={760} y={1560 - 640 * 1.15} n={1} alto={160} color={KC.red} o={kprog(T, K.Bano + 1.0, K.Bano + 1.6)} />
+            <Persona x={700} yPies={1600} s={1.5} T={T} ropa="bano" tiembla={1} cara="frio" id="b" /></g>
+          {[[-90, -330], [90, -330], [0, -250], [-40, -120], [40, -120]].map(([dx, dy], i) => <OndasCalor key={i} T={T + i * 0.3} x={700 + dx * 1.5} y={1600 + dy * 1.5} n={1} alto={160} o={kprog(T, K.Bano + 1.0, K.Bano + 1.6) * 0.9} />)}
+          <OndasCalor T={T} x={700} y={1600 - 640 * 1.5} n={1} alto={160} color={KC.red} o={kprog(T, K.Bano + 1.0, K.Bano + 1.6)} />
           <Nieve T={T} n={60} seed={11} />
         </Lienzo>
-        <Etq T={T} at={K.Bano + 0.8} until={K.Cara - 0.2} x={640} y={420} texto="traje de baño" lado="izq" color={KC.texto} />
-        <NumeroGigante T={T} at={K.Bano + 3.4} until={K.Cara - 0.15} valor={10} desde={10} prefijo="≤ " sufijo=" %" etiqueta="por la cabeza" x={370} y={700} tam={190} />
+        <Etq T={T} at={K.Bano + 0.8} until={K.Cara - 0.2} x={432} y={1302} texto="traje de baño" lado="izq" color={KC.texto} />
+        <NumeroGigante T={T} at={K.Bano + 3.4} until={K.Cara - 0.15} valor={10} desde={10} prefijo="≤ " sufijo=" %" etiqueta="por la cabeza" x={370} y={460} tam={190} />
       </Escena>
       {/* 9 · la cara siente mucho el frío */}
       <Escena T={T} a={K.Cara} b={K.Gorro} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <g transform={`translate(${Math.sin(T * 60) * 4} 0)`}><CabezaPerfil x={560} y={820} s={1.5} gesto="mueca" boca={0.3 + 0.3 * Math.abs(Math.sin(T * 25))} /></g>
-          <ellipse cx={560 + 150 * 1.5} cy={820 + 40 * 1.5} rx={30} ry={18} fill="#8fd3ff" opacity=".85" />
-          {Array.from({ length: 4 }, (_, i) => { const f = ((T * 0.9 + i / 4) % 1); const xx = klerp(1120, 900, f), yy = 620 + i * 90;
+          <g transform={`translate(${Math.sin(T * 60) * 4} 0)`}><CabezaPerfil x={500} y={900} s={2} gesto="mueca" boca={0.3 + 0.3 * Math.abs(Math.sin(T * 25))} /></g>
+          <ellipse cx={500 + 150 * 2} cy={900 + 40 * 2} rx={40} ry={24} fill="#8fd3ff" opacity=".85" />
+          {Array.from({ length: 4 }, (_, i) => { const f = ((T * 0.9 + i / 4) % 1); const xx = klerp(1120, 900, f), yy = 634 + i * 120;
             return <path key={i} d={`M ${xx} ${yy} q -60 -24 -120 0 q -60 24 -120 0`} fill="none" stroke="#fff" strokeWidth={9} strokeLinecap="round" opacity={Math.sin(f * Math.PI)} />; })}
-          <Onomato T={T} at={K.Cara + 0.4} dur={2.2} x={760} y={450} texto="¡BRRR!" color={KC.cyan} tam={120} />
+          <Onomato T={T} at={K.Cara + 0.4} dur={2.2} x={760} y={340} texto="¡BRRR!" color={KC.cyan} tam={120} />
         </Lienzo>
-        <Chip T={T} at={K.Cara + 0.8} until={K.Gorro - 0.1} texto="la cara siente mucho el frío" x={540} y={1085} tam={40} borde={KC.cyan} />
+        <Chip T={T} at={K.Cara + 0.8} until={K.Gorro - 0.1} texto="la cara siente mucho el frío" x={540} y={1470} tam={40} borde={KC.cyan} />
       </Escena>
       {/* 10 · todas las prendas ayudan */}
       <Escena T={T} a={K.Gorro} b={K.Cierre} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <Prenda T={T} at={K.Gorro + 0.2} x={300} y={640} tipo="gorro" texto="gorro" />
-          <Prenda T={T} at={K.Gorro + 1.6} x={780} y={640} tipo="bufanda" texto="bufanda" />
-          <Prenda T={T} at={K.Gorro + 2.0} x={300} y={1010} tipo="guantes" texto="guantes" />
-          <Prenda T={T} at={K.Gorro + 2.4} x={780} y={1010} tipo="chamarra" texto="chamarra" />
+          <SueloNieve y={1500} />
+          <Persona x={540} yPies={1560} s={1.1} T={T} chimenea={1} tiembla={0.6} cara="frio" id="pg"
+            bufanda={kprog(T, K.Gorro + 2.1, K.Gorro + 2.5, kEase.sale)} guantes={T > K.Gorro + 2.6 ? 1 : 0} />
+          <Prenda T={T} at={K.Gorro + 0.2} x={200} y={660} s={0.62} tipo="gorro" texto="gorro" />
+          <Prenda T={T} at={K.Gorro + 1.6} x={880} y={660} s={0.62} tipo="bufanda" texto="bufanda" />
+          <Prenda T={T} at={K.Gorro + 2.0} x={200} y={1000} s={0.62} tipo="guantes" texto="guantes" />
+          <Prenda T={T} at={K.Gorro + 2.4} x={880} y={1000} s={0.62} tipo="chamarra" texto="chamarra" />
+          <Nieve T={T} n={50} seed={5} />
         </Lienzo>
-        <Chip T={T} at={K.Gorro + 2.9} until={K.Cierre - 0.1} texto="todas ayudan" x={540} y={420} tam={46} borde={KC.leaf} />
+        <Chip T={T} at={K.Gorro + 2.9} until={K.Cierre - 0.1} texto="todas ayudan" x={540} y={290} tam={46} borde={KC.leaf} />
       </Escena>
       {/* 11 · cierre: la misma persona; la chimenea se apaga */}
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <SueloNieve />
-          <Persona x={320} yPies={1560} s={1.25} T={T} chimenea={1 - kprog(T, K.Cierre + 1.2, K.Cierre + 2.0, kEase.suave)} humo={1 - kprog(T, K.Cierre + 0.3, K.Cierre + 1.2)}
+          <SueloNieve y={1530} />
+          <Persona x={540} yPies={1620} s={1.7} T={T} chimenea={1 - kprog(T, K.Cierre + 1.2, K.Cierre + 2.0, kEase.suave)} humo={1 - kprog(T, K.Cierre + 0.3, K.Cierre + 1.2)}
             gorro={kprog(T, K.Cierre + 2.0, K.Cierre + 2.6, kEase.rebote)} bufanda={1} guantes={1} cara={T > K.Cierre + 2.6 ? 'sonrie' : 'frio'} tiembla={1 - kprog(T, K.Cierre + 2.4, K.Cierre + 2.8)} id="f" />
           <Nieve T={T} />
-          <Sello T={T} at={K.Cierre + 3.0} x={760} y={1000} texto="MITO" tam={120} rot={-10} />
+          <Sello T={T} at={K.Cierre + 3.0} x={860} y={660} texto="MITO" tam={110} rot={-10} />
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 0.4} until={K.Outro - 0.1} texto="como cualquier parte destapada" x={540} y={440} tam={38} borde={KC.gold} />
+        <Chip T={T} at={K.Cierre + 0.4} until={K.Outro - 0.1} texto="como cualquier parte destapada" x={540} y={255} tam={38} borde={KC.gold} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Ejercito - 0.1} texto="Calor por la cabeza: *es un mito.*" />
