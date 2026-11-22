@@ -1,0 +1,2 @@
+# Avance del grupo n027
+- amb-23-suelo-cm: gancho y cierre ×1.3 y centrados (suelo llena abajo, lupas y chip reubicados); microbios ×1.15 y bajado; ácaros ×1.45 (barra 1 mm recalculada); lombrices ×1.25 (barra 1 cm recalculada); pregunta ×1.5; siglos ×1.6 con caja oscura (antes blanca); estudio Tierra r 330 y tarjeta arriba; degradado ×1.1 bajado; especies ×1.25 con íconos desde el inicio de la escena (antes entraban a 1.9 s) y tarjeta arriba; milpa ×1.2 bajada y lupa reubicada. Auditores: sin láminas, encuadre bien; pendiente: nada

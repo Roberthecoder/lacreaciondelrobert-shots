@@ -272,12 +272,13 @@ function SueloShot() {
   const FIN = K.Ou + 4;
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
   // gancho y cierre: misma imagen (pala, tierra y cucharada)
-  const portada = (t0, lluvia) => svg(<>
-    <FranjaSuelo T={T} y0={1010} y1={1220} seed={5} />
+  // pase a mano: portada ×1.3 y bajada (centro ~960); el suelo llena la parte de abajo del cuadro
+  const portada = (t0, lluvia) => svg(<g transform="translate(540 960) scale(1.3) translate(-540 -880)">
+    <FranjaSuelo T={T} y0={1010} y1={1330} seed={5} />
     <Pala x={790} y={1060} p={kprog(T, t0, t0 + 0.5, kEase.sale)} l={kprog(T, t0 + 0.6, t0 + 1.2, kEase.suave)} />
     <Cuchara x={330} y={930} s={1} lleno={kprog(T, t0 + 0.9, t0 + 1.5, kEase.rebote)} />
     {lluvia > 0 && <NubeLluvia T={T} x={760} y={430} s={1} lluvia={lluvia} largo={420} />}
-  </>);
+  </g>);
   // re-gancho: columna de suelo con 1 cm marcado
   const cm = kprog(T, K.P + 0.4, K.P + 1.4, kEase.sale);
   // siglos: el centímetro se llena despacio y la lluvia lo barre
@@ -289,12 +290,12 @@ function SueloShot() {
         <FondoLunares color={KC.yellow} />
         {portada(K.G - 0.2, 0)}
       </Escena>
-      <Lupa T={T} at={K.G + 2.0} until={K.Mi - 0.3} x={330} y={560} r={190} fx={330} fy={880} tinte={KC.mint} etiqueta="AL MICROSCOPIO · esquema" interior={InteriorCucharada} />
+      <Lupa T={T} at={K.G + 2.0} until={K.Mi - 0.3} x={300} y={600} r={230} fx={267} fy={985} tinte={KC.mint} etiqueta="AL MICROSCOPIO · esquema" interior={InteriorCucharada} />
 
       {/* 1 · bacterias y hongos se comen la hoja muerta (fondo oscuro, µm) */}
       <Escena T={T} a={K.Mi} b={K.Ac} zoom={0.08}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 45%, #2a1c12 0%, ${KC.dark} 75%)` }}></div>
-        {svg(<>
+        {svg(<g transform="translate(540 1000) scale(1.15) translate(-540 -780)">
           <g transform="translate(0 380)"><Granos w={KW} h={840} n={16} seed={12} color="#4a3220" tam={[40, 70]} /></g>
           <HojaMuerta x={560} y={800} s={1.5} come={kprog(T, K.Mi + 0.8, K.Mi + 4.6)} rot={-8} />
           <Hifas ramas={SU_HIFAS_MICRO} g={kprog(T, K.Mi - 0.3, K.Mi + 3.5, kEase.suave)} grosor={34} />
@@ -302,47 +303,47 @@ function SueloShot() {
             return i % 3 === 0 ? <Coco key={i} x={cx} y={cy} r={24} /> : <Bacteria key={i} T={T} seed={i} x={cx} y={cy} rot={a * 30} s={0.55} color={i % 2 ? KC.mint : KC.yellow} />; })}
           {Array.from({ length: 12 }, (_, i) => { const t0 = K.Mi + 1.6 + i * 0.25, u = kprog(T, t0, t0 + 2.4); if (u <= 0) return null;
             return <circle key={i} cx={480 + (i % 6) * 40 + Math.sin(T * 2 + i) * 14} cy={790 - u * 300} r={13} fill={[KC.cyan, KC.pink, KC.gold2][i % 3]} stroke={KC.ink} strokeWidth={4} opacity={1 - u * 0.4} />; })}
-        </>)}
-        <EscalaFija texto="10 µm (esquema)" largo={290} y={1440} color={KC.texto} />
+        </g>)}
+        <EscalaFija texto="10 µm (esquema)" largo={334} y={1480} color={KC.texto} />
       </Escena>
-      <Chip T={T} at={K.Mi + 0.6} until={K.Ac - 0.3} texto="hongos (hifas)" x={300} y={420} tam={30} borde="#f2e7c9" />
-      <Chip T={T} at={K.Mi + 1.2} until={K.Ac - 0.3} texto="bacterias" x={280} y={1100} tam={30} borde={KC.mint} />
-      <Etq T={T} at={K.Mi + 1.8} until={K.Ac - 0.3} x={860} y={980} texto="hoja muerta" lado="izq" color={KC.texto} />
-      <Chip T={T} at={K.Mi + 2.6} until={K.Ac - 0.3} texto="→ nutrientes" x={760} y={1100} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.Mi + 0.6} until={K.Ac - 0.3} texto="hongos (hifas)" x={264} y={586} tam={30} borde="#f2e7c9" />
+      <Chip T={T} at={K.Mi + 1.2} until={K.Ac - 0.3} texto="bacterias" x={241} y={1368} tam={30} borde={KC.mint} />
+      <Etq T={T} at={K.Mi + 1.8} until={K.Ac - 0.3} x={908} y={1230} texto="hoja muerta" lado="izq" color={KC.texto} />
+      <Chip T={T} at={K.Mi + 2.6} until={K.Ac - 0.3} texto="→ nutrientes" x={793} y={1368} tam={30} borde={KC.cyan} />
 
       {/* 2 · ácaros y colémbolos (escala 1 mm) */}
       <Escena T={T} a={K.Ac} b={K.Lo} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, #2a1c12 0%, ${KC.dark} 75%)` }}></div>
-        {svg(<>
+        {svg(<g transform="translate(540 960) scale(1.45) translate(-540 -900)">
           <g transform="translate(0 420)"><Granos w={KW} h={800} n={12} seed={21} color="#4a3220" tam={[30, 60]} /></g>
           <HojaMuerta x={540} y={930} s={0.9} come={0.6 + 0.4 * kprog(T, K.Ac, K.Lo)} rot={12} />
-          <Acaro x={klerp(250, 380, kprog(T, K.Ac, K.Lo))} y={780} s={1.3} T={T} rot={20} pata="#e9d6a8" />
-          <Colembolo x={600} y={1010 - 260 * Math.sin(Math.PI * kprog(T, K.Ac + 1.6, K.Ac + 2.4))} s={1.1} T={T} salto={kprog(T, K.Ac + 1.5, K.Ac + 1.7)} pata="#e9d6a8" />
-        </>)}
-        <EscalaFija texto="1 mm (esquema)" largo={300} y={1440} color={KC.texto} />
+          <Acaro x={klerp(390, 460, kprog(T, K.Ac, K.Lo))} y={780} s={1.3} T={T} rot={20} pata="#e9d6a8" />
+          <Colembolo x={580} y={1010 - 260 * Math.sin(Math.PI * kprog(T, K.Ac + 1.6, K.Ac + 2.4))} s={1.1} T={T} salto={kprog(T, K.Ac + 1.5, K.Ac + 1.7)} pata="#e9d6a8" />
+        </g>)}
+        <EscalaFija texto="1 mm (esquema)" largo={435} y={1480} color={KC.texto} />
       </Escena>
-      <Etq T={T} at={K.Ac + 0.3} until={K.Lo - 0.2} x={150} y={560} texto="ácaro (8 patas)" color={KC.texto} />
-      <Etq T={T} at={K.Ac + 0.7} until={K.Lo - 0.2} x={1040} y={1160} texto="colémbolo (6 patas)" lado="izq" color={KC.texto} />
+      <Etq T={T} at={K.Ac + 0.3} until={K.Lo - 0.2} x={140} y={530} texto="ácaro (8 patas)" color={KC.texto} />
+      <Etq T={T} at={K.Ac + 0.7} until={K.Lo - 0.2} x={1040} y={1330} texto="colémbolo (6 patas)" lado="izq" color={KC.texto} />
 
       {/* 3 · lombrices y grumos (escala 1 cm) */}
       <Escena T={T} a={K.Lo} b={K.P}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>
+        {svg(<g transform="translate(540 960) scale(1.25) translate(-540 -760)">
           <FranjaSuelo T={T} y0={560} y1={1220} seed={8} />
           <path d={`M -40 900 Q 300 ${880 + Math.sin(1) * 20} ${klerp(100, 1000, kprog(T, K.Lo, K.P))} 900`} stroke={SU.tierraOsc} strokeWidth={70} fill="none" strokeLinecap="round" opacity=".75" />
           {Array.from({ length: 7 }, (_, i) => { const xg = 60 + i * 120, t0 = K.Lo + 0.3 + i * 0.35; return <Grumo key={i} x={xg} y={1060 + (i % 2) * 60} r={44} seed={i + 3} o={kprog(T, t0, t0 + 0.3)} s={klerp(0.6, 1, kprog(T, t0, t0 + 0.4, kEase.rebote))} />; })}
           <Lombriz x={0} y={900} largo={640} T={T} avance={klerp(380, 1060, kprog(T, K.Lo - 0.5, K.P + 0.4))} />
           <NubeLluvia T={T} x={300} y={330} s={0.9} lluvia={kprog(T, K.Lo + 1.6, K.Lo + 2.2)} largo={200} />
-        </>)}
-        <EscalaFija texto="1 cm" largo={100} y={1440} color={KC.ink} />
+        </g>)}
+        <EscalaFija texto="1 cm" largo={125} y={1500} color={KC.ink} />
       </Escena>
-      <Etq T={T} at={K.Lo + 0.6} until={K.P - 0.2} x={760} y={780} texto="clitelo" color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.Lo + 1.2} until={K.P - 0.2} x={760} y={1150} texto="grumos" color={KC.texto} />
+      <Etq T={T} at={K.Lo + 0.6} until={K.P - 0.2} x={815} y={985} texto="clitelo" color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.Lo + 1.2} until={K.P - 0.2} x={815} y={1450} texto="grumos" color={KC.texto} />
 
       {/* 4 · re-gancho: ¿cuánto tarda 1 cm? */}
       <Escena T={T} a={K.P} b={K.Si} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>
+        {svg(<g transform="translate(540 960) scale(1.5) translate(-335 -910)">
           <rect x={70} y={640} width={200} height={540} rx={14} fill={SU.tierra} stroke={KC.ink} strokeWidth={8} />
           <rect x={70} y={640} width={200} height={110} rx={14} fill="#3a2414" stroke={KC.ink} strokeWidth={8} />
           <g transform="translate(80 660)"><Granos w={180} h={500} n={22} seed={31} tam={[6, 14]} o={0.7} /></g>
@@ -350,34 +351,34 @@ function SueloShot() {
           {Array.from({ length: 6 }, (_, i) => <line key={i} x1={270} y1={680 + i * 100} x2={300} y2={680 + i * 100} stroke={KC.ink} strokeWidth={6} />)}
           <text x={312} y={1048} style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink} opacity={cm}>1 cm</text>
           <text x={420} y={940} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 420 800)`}>?</text>
-        </>)}
+        </g>)}
       </Escena>
 
       {/* 5 · cientos de años, hasta mil… y se pierde en minutos */}
       <Escena T={T} a={K.Si} b={K.Es}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>
-          <rect x={300} y={760} width={480} height={360} rx={20} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={8} />
+        {svg(<g transform="translate(540 1020) scale(1.6) translate(-570 -940)">
+          <rect x={300} y={760} width={480} height={360} rx={20} fill="rgba(30,40,62,.78)" stroke={KC.ink} strokeWidth={8} />
           <rect x={312} y={1108 - 100 * llena * (1 - barre)} width={456} height={100 * llena * (1 - barre)} fill={SU.tierra} />
           <line x1={300} y1={1008} x2={780} y2={1008} stroke={KC.ink} strokeWidth={5} strokeDasharray="14 10" />
-          <text x={800} y={1020} style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink}>1 cm</text>
+          <text x={320} y={994} style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink}>1 cm</text>
           {barre > 0 && <NubeLluvia T={T} x={540} y={560} s={1.1} lluvia={1} largo={500} />}
           {barre > 0 && Array.from({ length: 6 }, (_, i) => <circle key={i} cx={klerp(540, 980 + i * 30, barre)} cy={1080 + i * 6} r={14} fill={SU.tierra} stroke={KC.ink} strokeWidth={4} opacity={1 - barre * 0.5} />)}
-        </>)}
+        </g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1440} color={KC.ink} />
       </Escena>
       <NumeroGigante T={T} at={K.Si + 0.2} until={K.Si + 2.7} valor={1000} desde={1000} dur={0.1} sufijo=" años" etiqueta="cientos de años… hasta" x={400} y={500} tam={120} color={KC.yellow} />
-      <Chip T={T} at={K.Si + 3.0} until={K.Es - 0.2} texto="se puede perder en minutos" x={540} y={640} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Si + 3.0} until={K.Es - 0.2} texto="se puede perder en minutos" x={540} y={1400} tam={36} borde={KC.red} />
 
       {/* 6 · el estudio: erosión por lluvia en 2012 */}
       <Escena T={T} a={K.Es} b={K.De}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <TierraErosion T={T} x={600} y={960} r={230} p={kprog(T, K.Es + 3.0, K.Es + 4.0)} />
-          <NubeLluvia T={T} x={600} y={640} s={0.8} lluvia={kprog(T, K.Es + 2.8, K.Es + 3.4)} largo={140} />
+          <TierraErosion T={T} x={540} y={1060} r={330} p={kprog(T, K.Es + 3.0, K.Es + 4.0)} />
+          <NubeLluvia T={T} x={700} y={690} s={0.9} lluvia={kprog(T, K.Es + 2.8, K.Es + 3.4)} largo={150} />
         </>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2017" quien="Basilea (Suiza) e Ispra (Italia)" revista="Borrelli et al. · Nature Communications" y={760} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2017" quien="Basilea (Suiza) e Ispra (Italia)" revista="Borrelli et al. · Nature Communications" y={420} />
       <NumeroGigante T={T} at={K.Es + 3.6} until={K.De - 0.2} valor={35.9} dec={1} dur={1.2} etiqueta="2012 · erosión por lluvia" x={380} y={470} tam={170} color={KC.yellow} />
       <Chip T={T} at={K.Es + 4.2} until={K.De - 0.2} texto="mil millones de toneladas" x={380} y={640} tam={32} borde={KC.yellow} />
       <Chip T={T} at={K.Es + 4.6} until={K.De - 0.2} texto="estimación con un modelo · Borrelli et al. 2017" x={540} y={1440} tam={28} borde={KC.ink} />
@@ -385,10 +386,10 @@ function SueloShot() {
       {/* 7 · un tercio de las tierras degradado (FAO 2015) */}
       <Escena T={T} a={K.De} b={K.Ep}>
         <FondoLunares color={KC.orange} />
-        {svg(<>
+        {svg(<g transform="translate(540 1060) scale(1.1) translate(-540 -940)">
           {[0, 1, 2].map((i) => <Bloque key={i} x={60 + i * 330} y={820} w={300} deg={i === 2 ? kprog(T, K.De + 1.0, K.De + 2.4) : 0} seed={i + 4} />)}
           <text x={540} y={1150} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.De + 2.2, K.De + 2.8)}>erosión · sal · compactación · acidez · contaminación</text>
-        </>)}
+        </g>)}
       </Escena>
       <NumeroGigante T={T} at={K.De + 0.3} until={K.Ep - 0.2} valor={33} dur={1.0} sufijo=" %" etiqueta="de las tierras, degradadas" x={340} y={560} tam={190} color={KC.yellow} />
       <Chip T={T} at={K.De + 1.6} until={K.Ep - 0.2} texto="FAO 2015 · de moderada a muy degradada" x={540} y={1440} tam={28} borde={KC.ink} />
@@ -396,29 +397,29 @@ function SueloShot() {
       {/* 8 · cerca de 6 de cada 10 especies viven en el suelo (estudio suizo 2023) */}
       <Escena T={T} a={K.Ep} b={K.Mil}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<>
-          <FranjaSuelo T={T} y0={900} y1={1220} seed={14} />
+        {svg(<g transform="translate(540 1000) scale(1.25) translate(-540 -930)">
+          <FranjaSuelo T={T} y0={900} y1={1300} seed={14} />
           {SU_ESPECIES.map((tipo, i) => { const baja = i < 6, t0 = K.Ep + 2.6 + i * 0.22, u = baja ? kprog(T, t0, t0 + 0.6, kEase.suave) : 0;
-            const ap = kprog(T, K.Ep + 1.9 + i * 0.05, K.Ep + 2.3 + i * 0.05);
-            return <g key={tipo} opacity={ap}><Especie tipo={tipo} x={baja ? 120 + i * 168 : 300 + (i - 6) * 170} y={baja ? klerp(640, 1010 + (i % 2) * 110, u) : 780} s={0.9} /></g>; })}
-        </>)}
+            const ap = kprog(T, K.Ep + 0.1 + i * 0.05, K.Ep + 0.5 + i * 0.05);
+            return <g key={tipo} opacity={ap}><Especie tipo={tipo} x={baja ? 190 + i * 140 : 300 + (i - 6) * 160} y={baja ? klerp(640, 1010 + (i % 2) * 110, u) : 780} s={1.1} /></g>; })}
+        </g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.Ep + 0.2} until={K.Ep + 2.4} anio="2023" quien="Zúrich (Suiza)" revista="Anthony et al. · PNAS" y={700} />
+      <TarjetaEstudio T={T} at={K.Ep + 0.2} until={K.Ep + 2.4} anio="2023" quien="Zúrich (Suiza)" revista="Anthony et al. · PNAS" y={430} />
       <Chip T={T} at={K.Ep + 3.6} until={K.Mil - 0.2} texto="≈ 59 % (± 15 %) · estimación" x={600} y={470} tam={34} borde={KC.ink} />
 
       {/* 9 · la milpa: 95 % de la comida sale del suelo; nódulos en la raíz del frijol */}
       <Escena T={T} a={K.Mil} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
-          <FranjaSuelo T={T} y0={1040} y1={1220} seed={22} />
+        {svg(<g transform="translate(560 1100) scale(1.2) translate(-560 -960)">
+          <FranjaSuelo T={T} y0={1040} y1={1240} seed={22} />
           <path d="M 560 1046 q -10 60 -40 110 M 560 1046 q 20 50 60 100" stroke={SU.raiz} strokeWidth={10} fill="none" />
           <Maiz x={560} y={1046} h={640} g={kprog(T, K.Mil - 0.3, K.Mil + 1.6, kEase.sale)} T={T} />
           <Frijol x={600} y={1046} h={520} g={kprog(T, K.Mil + 0.2, K.Mil + 2.0, kEase.sale)} />
           <Calabaza x={860} y={1040} g={kprog(T, K.Mil + 0.4, K.Mil + 1.4, kEase.rebote)} />
-        </>)}
+        </g>)}
       </Escena>
       <NumeroGigante T={T} at={K.Mil + 0.3} until={K.Mil + 3.4} valor={95} dur={1.0} sufijo=" %" etiqueta="de nuestra comida sale del suelo" x={330} y={520} tam={190} color={KC.yellow} />
-      <Lupa T={T} at={K.Mil + 3.6} until={K.C - 0.3} x={290} y={640} r={200} fx={600} fy={1140} tinte={KC.pink} etiqueta="AL MICROSCOPIO · nódulos" interior={InteriorNodulo} />
+      <Lupa T={T} at={K.Mil + 3.6} until={K.C - 0.3} x={280} y={660} r={220} fx={608} fy={1290} tinte={KC.pink} etiqueta="AL MICROSCOPIO · nódulos" interior={InteriorNodulo} />
       <Etq T={T} at={K.Mil + 4.4} until={K.C - 0.3} x={150} y={400} texto="Rhizobium" it color={KC.ink} />
 
       {/* 10 · cierre: regreso a la cucharada, ahora con lluvia encima */}
@@ -426,10 +427,10 @@ function SueloShot() {
         <FondoLunares color={KC.yellow} />
         {portada(K.C - 0.6, kprog(T, K.C + 2.4, K.C + 3.2))}
       </Escena>
-      <Lupa T={T} at={K.C + 0.8} until={K.Ou - 0.1} x={330} y={560} r={190} fx={330} fy={880} tinte={KC.mint} etiqueta="AL MICROSCOPIO · esquema" interior={InteriorCucharada} />
+      <Lupa T={T} at={K.C + 0.8} until={K.Ou - 0.1} x={300} y={600} r={230} fx={267} fy={985} tinte={KC.mint} etiqueta="AL MICROSCOPIO · esquema" interior={InteriorCucharada} />
 
       {/* datos del gancho */}
-      <Chip T={T} at={K.G + 0.9} until={K.Mi - 0.3} texto="1 cucharada de suelo" x={330} y={1110} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.G + 0.9} until={K.Mi - 0.3} texto="1 cucharada de suelo" x={300} y={1205} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.G + 3.0} until={K.Mi - 0.3} texto="más seres vivos que personas en la Tierra" x={540} y={1440} tam={30} borde={KC.mint} />
       <Chip T={T} at={K.C + 3.4} until={K.Ou - 0.1} texto="no está muerta: está viva" x={540} y={1440} tam={36} borde={KC.mint} />
 
