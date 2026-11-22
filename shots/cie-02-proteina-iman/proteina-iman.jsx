@@ -161,35 +161,35 @@ function ImanNarrado() {
       {/* el medidor acompaña las tres primeras escenas */}
       <Medidor T={T} at={K.B + 0.4} until={K.N - 0.3} etiqueta="FLUORESCENCIA"
         valor={(t) => klerp(1, 0.5, entraIman(K.I + 0.4))}
-        texto={(v) => Math.round(v * 100) + ' %'} y={1560} color={VERDE} />
+        texto={(v) => Math.round(v * 100) + ' %'} y={1400} color={VERDE} />
 
       {/* 3 · NOMBRE — el estudio */}
       <EscenaFundido T={T} a={K.N} b={K.A} zoom={0.04} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0b1222, #090d19)' }}></div>
         <Ambiente T={T} n={22} seed={11} color="rgba(120,180,255,.3)" tam={[3, 9]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g opacity={0.5}><Proteina T={T} x={540} y={1180} s={0.8} excita={0.4} emite={0.3} /></g>
+          <g opacity={0.95}><Proteina T={T} x={540} y={990} s={2.0} excita={0.5} emite={0.75} rot={(T - K.N) * 6} /></g>
         </svg>
       </EscenaFundido>
-      <TarjetaEstudio T={T} at={K.N + 0.2} until={K.A - 0.3} anio="2026" quien="Abrahams y colegas · Oxford" revista="Nature" y={720} />
-      <Chip T={T} at={K.N + 1.6} until={K.A - 0.3} texto="MagLOV" y={1000} borde={FLAVINA} tam={52} mono />
+      <TarjetaEstudio T={T} at={K.N + 0.2} until={K.A - 0.3} anio="2026" quien="Abrahams y colegas · Oxford" revista="Nature" y={330} />
+      <Chip T={T} at={K.N + 1.6} until={K.A - 0.3} texto="MagLOV" y={1420} borde={FLAVINA} tam={52} mono />
 
       {/* 4 · AVENA — de dónde salió */}
       <EscenaFundido T={T} a={K.A} b={K.Q} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4757 0%, #074257 68%, #284549 100%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <rect x={0} y={1420} width={KW} height={500} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} />
-          <path d="M0 1420 Q 270 1392 540 1420 T 1080 1420" fill={KC.leaf} stroke={KC.ink} strokeWidth={8} />
+          <path d="M0 1420 Q 270 1392 540 1420 T 1080 1420" fill={cineMix(KC.leaf, CINE.fondo, 0.4)} stroke={KC.ink} strokeWidth={8} />
           <Avena T={T} x={290} y={1430} s={1.35} />
           <Avena T={T} x={140} y={1470} s={0.85} seed={8} />
-          <g opacity={kprog(T, K.A + 1.4, K.A + 2.2)} transform="translate(760 880)">
+          <g opacity={kprog(T, K.A + 1.4, K.A + 2.2)} transform="translate(770 900) scale(1.4)">
             <circle r={180} fill="rgba(14,15,18,.82)" stroke={FLAVINA} strokeWidth={8} />
             <g transform="scale(0.86)"><Proteina T={T} x={0} y={0} s={0.92} excita={0.5} emite={0} /></g>
           </g>
         </svg>
         <Chip T={T} at={K.A + 0.4} until={K.Q - 0.3} texto="de la avena" y={400} borde={KC.gold} tam={44} />
         <Etiqueta T={T} at={K.A + 0.9} until={K.Q - 0.3} x={380} y={520} texto="Avena sativa" it color={KC.ink} tam={34} />
-        <Etiqueta T={T} at={K.A + 2.4} until={K.Q - 0.3} x={560} y={1120} texto="dominio LOV2" color={FLAVINA} lado="izq" tam={34} />
+        <Etiqueta T={T} at={K.A + 2.4} until={K.Q - 0.3} x={640} y={1210} texto="dominio LOV2" color={FLAVINA} tam={34} />
       </EscenaFundido>
 
       {/* 5 · PREGUNTA — re-gancho */}
@@ -197,7 +197,7 @@ function ImanNarrado() {
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 46% 48%, #141f33 0%, #07090f 74%)' }}></div>
         <Ambiente T={T} n={26} seed={17} color="rgba(120,180,255,.32)" tam={[3, 9]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Proteina T={T} x={450} y={920} s={1.5} excita={0.4 + 0.3 * Math.sin(T * 2)} emite={0.2} rot={(T - K.Q) * 10} />
+          <Proteina T={T} x={540} y={960} s={2.3} excita={0.4 + 0.3 * Math.sin(T * 2)} emite={0.2} rot={(T - K.Q) * 10} />
         </svg>
       </EscenaFundido>
 
@@ -205,15 +205,15 @@ function ImanNarrado() {
       <EscenaFundido T={T} a={K.P} b={K.Gi} zoom={0.03} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 44%, #141f33 0%, #07090f 76%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Proteina T={T} x={540} y={760} s={1.15} excita={kprog(T, K.P + 1.0, K.P + 1.6)} emite={0} />
+          <Proteina T={T} x={540} y={830} s={1.8} excita={kprog(T, K.P + 1.0, K.P + 1.6)} emite={0} />
           {/* el fotón azul que llega */}
           {(() => { const p = kprog(T, K.P + 0.2, K.P + 1.1, kEase.sale);
             return <g opacity={1 - kprog(T, K.P + 1.0, K.P + 1.3)}>
-              <circle cx={klerp(90, 520, p)} cy={klerp(380, 740, p)} r={22} fill={AZUL} style={{ filter:`drop-shadow(0 0 18px ${AZUL})` }} />
-              <path d={`M ${klerp(90, 520, p) - 70} ${klerp(380, 740, p) - 58} l 56 46`} stroke={AZUL} strokeWidth={8} opacity={0.6} strokeLinecap="round" />
+              <circle cx={klerp(90, 520, p)} cy={klerp(380, 810, p)} r={22} fill={AZUL} style={{ filter:`drop-shadow(0 0 18px ${AZUL})` }} />
+              <path d={`M ${klerp(90, 520, p) - 70} ${klerp(380, 810, p) - 58} l 56 46`} stroke={AZUL} strokeWidth={8} opacity={0.6} strokeLinecap="round" />
             </g>; })()}
           <g opacity={kprog(T, K.P + 1.7, K.P + 2.4)}>
-            <Espines T={T} x={540} y={1160} s={0.95} alineado={1} />
+            <Espines T={T} x={540} y={1310} s={1.45} alineado={1} />
           </g>
         </svg>
         <Chip T={T} at={K.P + 2.2} until={K.Gi - 0.3} texto="par radical" y={420} borde="#ff6b9a" tam={46} />
@@ -223,31 +223,33 @@ function ImanNarrado() {
       <EscenaFundido T={T} a={K.Gi} b={K.Ca} zoom={0.03} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d1322, #090d19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g opacity={kprog(T, K.Gi + 0.2, K.Gi + 0.8)}>
-            <Espines T={T} x={540} y={680} s={1.15} alineado={1} sep={180} />
+          {/* la proteína donde viven los dos espines, atenuada detrás */}
+          <g opacity={0.22}><Proteina T={T} x={540} y={960} s={2.7} excita={0.3} emite={0} /></g>
+          <g opacity={kprog(T, K.Gi + 0.1, K.Gi + 0.6)}>
+            <Espines T={T} x={540} y={700} s={1.7} alineado={1} sep={170} />
           </g>
           <g opacity={kprog(T, K.Gi + 1.4, K.Gi + 2.0)}>
-            <Espines T={T} x={540} y={1000} s={1.15} alineado={0} sep={180} />
+            <Espines T={T} x={540} y={1170} s={1.7} alineado={0} sep={170} />
           </g>
         </svg>
-        <Chip T={T} at={K.Gi + 0.6} until={K.Ca - 0.3} texto="opuestos → emite" x={540} y={840} borde={VERDE} tam={40} />
-        <Chip T={T} at={K.Gi + 1.8} until={K.Ca - 0.3} texto="paralelos → no emite" x={540} y={1140} borde="#5a6678" tam={40} />
+        <Chip T={T} at={K.Gi + 0.6} until={K.Ca - 0.3} texto="opuestos → emite" x={540} y={880} borde={VERDE} tam={40} />
+        <Chip T={T} at={K.Gi + 1.8} until={K.Ca - 0.3} texto="paralelos → no emite" x={540} y={1350} borde="#5a6678" tam={40} />
       </EscenaFundido>
 
       {/* 8 · CAMPO — inclina la probabilidad, no empuja */}
       <EscenaFundido T={T} a={K.Ca} b={K.M} zoom={0.03} fondo={KC.dark}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 42%, #1a1430 0%, #07090f 76%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform={`translate(${klerp(1340, 800, entraIman(K.Ca + 0.3))} 500) rotate(-96)`}>
-            <Iman T={T} s={1.0} activo={entraIman(K.Ca + 0.3)} />
+          <g transform={`translate(${klerp(1400, 820, entraIman(K.Ca + 0.3))} 680) rotate(-96)`}>
+            <Iman T={T} s={1.3} activo={entraIman(K.Ca + 0.3)} />
           </g>
           <g opacity={kprog(T, K.Ca + 0.2, K.Ca + 0.8)}>
-            <Espines T={T} x={430} y={760} s={0.95} alineado={1 - kprog(T, K.Ca + 1.4, K.Ca + 2.6)} sep={150} />
+            <Espines T={T} x={420} y={930} s={1.35} alineado={1 - kprog(T, K.Ca + 1.4, K.Ca + 2.6)} sep={140} />
           </g>
         </svg>
-        <Balanza T={T} at={K.Ca + 0.6} until={K.M - 0.3} y={1080}
+        <Balanza T={T} at={K.Ca + 0.6} until={K.M - 0.3} y={1270}
           p={klerp(0.35, 0.72, kprog(T, K.Ca + 1.2, K.Ca + 3.0, kEase.suave))} />
-        <Chip T={T} at={K.Ca + 2.6} until={K.M - 0.3} texto="no los empuja: cambia la probabilidad" y={430} borde={AZUL} tam={36} />
+        <Chip T={T} at={K.Ca + 2.6} until={K.M - 0.3} texto="no los empuja: cambia la probabilidad" y={470} borde={AZUL} tam={36} />
       </EscenaFundido>
 
       {/* 9 · MITAD — el número */}
@@ -265,34 +267,34 @@ function ImanNarrado() {
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0c1220, #090d19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {/* antena y ondas de radio */}
-          <g transform="translate(540 560)">
-            <line x1={0} y1={0} x2={0} y2={150} stroke="#9aa4ae" strokeWidth={14} strokeLinecap="round" />
+          <g transform="translate(540 600)">
+            <line x1={0} y1={0} x2={0} y2={170} stroke="#9aa4ae" strokeWidth={14} strokeLinecap="round" />
             <circle cy={-14} r={20} fill={IMANR} stroke={KC.ink} strokeWidth={6} />
             {[1, 2, 3, 4].map((k) => { const p = ((T * 0.9 + k * 0.25) % 1);
               return <circle key={k} cy={-14} r={60 + p * 300} fill="none" stroke={IMANR} strokeWidth={6} opacity={(1 - p) * 0.6} />; })}
           </g>
           {/* cuadrícula de células; una responde sola */}
-          {Array.from({ length: 12 }, (_, i) => { const cx = 190 + (i % 4) * 230, cy = 980 + Math.floor(i / 4) * 130;
+          {Array.from({ length: 12 }, (_, i) => { const cx = 165 + (i % 4) * 250, cy = 1030 + Math.floor(i / 4) * 160;
             const sola = i === 6, on = sola ? 0.25 + 0.75 * Math.abs(Math.sin(T * 2.2)) : 0.8;
             return <g key={i} transform={`translate(${cx} ${cy})`}>
-              <ellipse rx={78} ry={34} fill={mixHex('#24303f', VERDE, on * 0.85)} stroke="#0d141c" strokeWidth={6} />
-              {sola && <ellipse rx={104} ry={58} fill="none" stroke={KC.gold} strokeWidth={6} strokeDasharray="14 10" strokeDashoffset={-T * 40} />}
+              <ellipse rx={98} ry={44} fill={mixHex('#24303f', VERDE, on * 0.85)} stroke="#0d141c" strokeWidth={6} />
+              {sola && <ellipse rx={126} ry={70} fill="none" stroke={KC.gold} strokeWidth={6} strokeDasharray="14 10" strokeDashoffset={-T * 40} />}
             </g>; })}
         </svg>
         <Chip T={T} at={K.R + 0.4} until={K.Av - 0.3} texto="604 MHz · 21.6 mT" x={340} y={400} borde={IMANR} tam={42} mono />
-        <Chip T={T} at={K.R + 2.6} until={K.Av - 0.3} texto="ODMR · célula por célula" y={820} borde={KC.gold} tam={40} />
+        <Chip T={T} at={K.R + 2.6} until={K.Av - 0.3} texto="ODMR · célula por célula" y={880} borde={KC.gold} tam={40} />
       </EscenaFundido>
 
       {/* 11 · AVES — hipótesis */}
       <EscenaFundido T={T} a={K.Av} b={K.C} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#4a4439 0%, #4a3430 55%, #4a2b3f 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2c2924 0%, #2c1f1d 55%, #2a1a26 100%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          {[[300, 700, 1], [540, 600, 0.78], [760, 760, 0.62]].map(([bx, by, bs], i) => (
+          {[[280, 640, 1.5], [560, 540, 1.2], [800, 700, 0.95]].map(([bx, by, bs], i) => (
             <g key={i} transform={`translate(${bx + Math.sin(T * 0.8 + i) * 40} ${by + Math.sin(T * 1.6 + i) * 18}) scale(${bs})`}>
               <path d={`M -90 0 q 46 ${-40 - 26 * Math.sin(T * 4 + i)} 90 0 q 44 ${-40 - 26 * Math.sin(T * 4 + i)} 90 0`}
                 fill="none" stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
             </g>))}
-          <g transform="translate(540 1140)" opacity={kprog(T, K.Av + 1.0, K.Av + 1.8)}>
+          <g transform="translate(540 1130) scale(1.75)" opacity={kprog(T, K.Av + 0.2, K.Av + 0.8)}>
             <circle r={150} fill={KC.paper} stroke={KC.ink} strokeWidth={10} />
             <circle r={122} fill="none" stroke="#b9b2a4" strokeWidth={5} />
             <g transform={`rotate(${mece(T, 2, 0.4) * 22})`}>
