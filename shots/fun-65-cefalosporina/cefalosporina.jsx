@@ -2,7 +2,7 @@
 // Shot Fungi Mati #65 · El antibiótico que salió de junto a un desagüe: la cefalosporina — NARRADO (gancho 1 "Esto no es X: es Y" + N1 "Por dentro").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (moléculas simplificadas). No es consejo médico.
 
-const CF = { mar:'#2f8fd6', mar2:'#1f6fb0', arena:'#f1d27a', tubo:'#7d8590', agua:'#5b6b52', bact:'#ff8fa6', hifa:'#e9f4ff', gota:'#fff4b0', anillo:'#F4C25A', peni:'#8fb6ff', pared:'#7fd88a' };
+const CF = { mar:'#1b4c78', mar2:'#1f6fb0', arena:'#b8994f', tubo:'#7d8590', agua:'#5b6b52', bact:'#ff8fa6', hifa:'#e9f4ff', gota:'#fff4b0', anillo:'#F4C25A', peni:'#8fb6ff', pared:'#7fd88a' };
 
 function Frasco({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
@@ -18,7 +18,7 @@ function Frasco({ x, y, s = 1, rot = 0 }) {
 function Costa({ T, muestra = 0 }) {
   const ola = (k) => `M -20 ${700 + k * 60} ` + Array.from({ length: 12 }, (_, i) => `Q ${i * 100 + 25} ${690 + k * 60 + Math.sin(T * 2 + i + k) * 12} ${i * 100 + 50} ${700 + k * 60} T ${i * 100 + 100} ${700 + k * 60}`).join(' ');
   return <g>
-    <rect x={0} y={620} width={1080} height={700} fill={CF.mar} />
+    <rect x={0} y={620} width={1080} height={880} fill={CF.mar} />
     {[0, 1, 2, 3, 4, 5].map((k) => <path key={k} d={ola(k)} stroke="#8fd3ff" strokeWidth={6} fill="none" opacity=".6" />)}
     <path d="M 0 560 L 1080 560 L 1080 640 Q 700 600 400 680 Q 200 730 0 700 Z" fill={CF.arena} stroke={KC.ink} strokeWidth={7} />
     <rect x={-20} y={600} width={420} height={70} rx={14} fill={CF.tubo} stroke={KC.ink} strokeWidth={8} />
@@ -133,104 +133,105 @@ function CefaShot() {
       <Escena T={T} a={K.G} b={K.B} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Frasco x={330} y={klerp(500, 820, cae)} s={1.0} rot={(1 - cae) * -30} />
           {(() => { const p = kprog(T, K.G + 2.4, K.G + 3.2, kEase.sale); return p > 0 ? <g opacity={p}>
-            <rect x={540} y={1000} width={540 * p} height={80} rx={16} fill={CF.tubo} stroke={KC.ink} strokeWidth={8} />
-            <path d={`M 540 1040 Q 500 1100 520 1160`} stroke={CF.agua} strokeWidth={30} strokeLinecap="round" fill="none" opacity={p} />
-            <rect x={0} y={1120} width={1080} height={80} fill={CF.mar} opacity=".8" /></g> : null; })()}
+            <rect x={0} y={1330} width={1080} height={150} fill={CF.mar} opacity=".85" />
+            <rect x={1080 - 440 * p} y={1180} width={440 * p + 20} height={90} rx={18} fill={CF.tubo} stroke={KC.ink} strokeWidth={8} />
+            <path d={`M ${1080 - 440 * p} 1225 Q ${1040 - 440 * p} 1290 ${1060 - 440 * p} 1350`} stroke={CF.agua} strokeWidth={34} strokeLinecap="round" fill="none" opacity={p} /></g> : null; })()}
+          <Frasco x={400} y={klerp(420, 900, cae)} s={2.0} rot={(1 - cae) * -30} />
         </>)}
       </Escena>
       {/* 1 · Brotzu saca agua de mar junto a la descarga (Cagliari, 1945) */}
       <Escena T={T} a={K.B} b={K.Ti} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:'#9fd8ff' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 90% 60% at 50% 40%, #1d3352 0%, #0c1424 75%)' }}></div>
         {fsvg(<Costa T={T} muestra={kprog(T, K.B + 1.4, K.B + 4.4)} />)}
       </Escena>
       {/* 2 · la bacteria de la tifoidea desaparecía rápido */}
       <Escena T={T} a={K.Ti} b={K.Sp} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:'#9fd8ff' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 90% 60% at 50% 40%, #1d3352 0%, #0c1424 75%)' }}></div>
         {fsvg(<Costa T={T} />)}
-        <Lupa T={T} at={K.Ti + 0.2} until={K.Sp - 0.2} x={540} y={900} r={210} fx={560} fy={770} interior={interiorAgua} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · agua de la costa" />
+        <Lupa T={T} at={K.Ti + 0.2} until={K.Sp - 0.2} x={540} y={1010} r={280} fx={560} fy={770} interior={interiorAgua} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · agua de la costa" />
       </Escena>
       {/* 3 · sospechó de otro microbio */}
       <Escena T={T} a={K.Sp} b={K.Mo} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <circle cx={540} cy={880} r={240} fill="#123a5c" stroke={KC.ink} strokeWidth={9} />
-          <path d="M 380 900 Q 460 840 540 880 T 700 860" stroke={CF.hifa} strokeWidth={8} fill="none" opacity={0.3 + 0.3 * Math.sin(T * 3)} />
-          <text x={540} y={960} textAnchor="middle" style={{ font:`400 220px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">?</text>
-          <line x1={720} y1={1060} x2={860} y2={1200} stroke={KC.ink} strokeWidth={34} strokeLinecap="round" />
+          <circle cx={540} cy={960} r={320} fill="#123a5c" stroke={KC.ink} strokeWidth={10} />
+          <path d="M 330 985 Q 435 905 540 960 T 755 935" stroke={CF.hifa} strokeWidth={10} fill="none" opacity={0.3 + 0.3 * Math.sin(T * 3)} />
+          <text x={540} y={1065} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={10} paintOrder="stroke">?</text>
+          <line x1={780} y1={1200} x2={950} y2={1380} stroke={KC.ink} strokeWidth={40} strokeLinecap="round" />
+          <Sello T={T} at={K.Sp + 1.0} x={850} y={600} texto="HIPÓTESIS" color={KC.red} r={95} />
         </>)}
-        <Sello T={T} at={K.Sp + 1.0} x={820} y={640} texto="HIPÓTESIS" color={KC.red} r={95} />
       </Escena>
       {/* 4 · el moho: Acremonium al microscopio */}
       <Escena T={T} a={K.Mo} b={K.Ex} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<Acremonium x={70} y={1000} s={1.55} p={kprog(T, K.Mo + 0.2, K.Mo + 2.6)} T={T} />)}
+        {fsvg(<Acremonium x={60} y={1150} s={1.6} p={klerp(0.5, 1, kprog(T, K.Mo - 0.2, K.Mo + 2.4))} T={T} />)}
       </Escena>
       {/* 5 · su extracto frenaba bacterias: halo en la placa */}
       <Escena T={T} a={K.Ex} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Placa x={540} y={900} r={300} T={T} halo={kprog(T, K.Ex + 0.4, K.Ex + 2.0, kEase.sale)} />)}
+        {fsvg(<Placa x={540} y={960} r={380} T={T} halo={kprog(T, K.Ex + 0.4, K.Ex + 2.0, kEase.sale)} />)}
       </Escena>
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Ox} zoom={0.08}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<Interrogacion T={T} x={250} y={1080} tam={460} />)}
+        {fsvg(<><g opacity={0.45}><Placa x={540} y={960} r={380} T={T} halo={1} /></g><Interrogacion T={T} x={300} y={1220} tam={560} /></>)}
       </Escena>
       {/* 7 · sin fondos: el hongo viaja a Oxford */}
       <Escena T={T} a={K.Ox} b={K.Cc} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Europa x={300} y={520} T={T} p={kprog(T, K.Ox + 1.0, K.Ox + 3.2, kEase.suave)} />)}
+        {fsvg(<g transform="translate(540 980) scale(1.6) translate(-215 -250)"><Europa x={0} y={0} T={T} p={kprog(T, K.Ox + 1.0, K.Ox + 3.2, kEase.suave)} /></g>)}
       </Escena>
       {/* 8 · 1953: Abraham y Newton, la cefalosporina C */}
       <Escena T={T} a={K.Cc} b={K.Tr} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={12} />
-        {fsvg(<BetaLactamico x={460} y={1000} s={1.6} tipo="cef" brillo={kprog(T, K.Cc + 2.6, K.Cc + 3.4)} />)}
+        {fsvg(<BetaLactamico x={478} y={1000} s={2.4} tipo="cef" brillo={kprog(T, K.Cc + 2.6, K.Cc + 3.4)} />)}
       </Escena>
       {/* 9 · resistía la penicilinasa */}
       <Escena T={T} a={K.Tr} b={K.Pa} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {fsvg(<>
-          <BetaLactamico x={250} y={780} s={1.0} tipo="peni" cortado={kprog(T, K.Tr + 1.8, K.Tr + 2.4, kEase.sale)} />
-          <BetaLactamico x={250} y={1060} s={1.0} tipo="cef" />
-          <Tijeras x={klerp(900, 680, kprog(T, K.Tr + 1.0, K.Tr + 1.8))} y={770} s={1.0} abre={Math.abs(Math.sin(T * 6)) * (T < K.Tr + 2.4 ? 1 : 0)} />
-          {(() => { const u = kprog(T, K.Tr + 3.0, K.Tr + 4.4); return u > 0 ? <Tijeras x={u < 0.5 ? klerp(900, 600, u * 2) : klerp(600, 860, (u - 0.5) * 2)} y={1050} s={1.0} abre={0.4} /> : null; })()}
+          <BetaLactamico x={290} y={780} s={1.5} tipo="peni" cortado={kprog(T, K.Tr + 1.8, K.Tr + 2.4, kEase.sale)} />
+          <BetaLactamico x={290} y={1160} s={1.5} tipo="cef" />
+          <Tijeras x={klerp(990, 760, kprog(T, K.Tr + 1.0, K.Tr + 1.8))} y={770} s={1.35} abre={Math.abs(Math.sin(T * 6)) * (T < K.Tr + 2.4 ? 1 : 0)} />
+          {(() => { const u = kprog(T, K.Tr + 3.0, K.Tr + 4.4); return u > 0 ? <Tijeras x={u < 0.5 ? klerp(990, 650, u * 2) : klerp(650, 950, (u - 0.5) * 2)} y={1150} s={1.35} abre={0.4} /> : null; })()}
         </>)}
       </Escena>
       {/* 10 · impide armar la pared: la bacteria revienta */}
       <Escena T={T} a={K.Pa} b={K.H} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={12} />
-        {fsvg(<BacteriaPared x={540} y={900} T={T} bloqueo={kprog(T, K.Pa + 0.6, K.Pa + 2.2)} revienta={kprog(T, K.Pa + 2.6, K.Pa + 3.6, kEase.sale)} />)}
+        {fsvg(<g transform="translate(540 980) scale(1.35) translate(-540 -900)"><BacteriaPared x={540} y={900} T={T} bloqueo={kprog(T, K.Pa + 0.6, K.Pa + 2.2)} revienta={kprog(T, K.Pa + 2.6, K.Pa + 3.6, kEase.sale)} /></g>)}
       </Escena>
       {/* 11 · 2015: una de cada cinco dosis diarias en 76 países */}
       <Escena T={T} a={K.H} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>{Array.from({ length: 5 }, (_, i) => { const p = kprog(T, K.H + 0.4 + i * 0.25, K.H + 0.8 + i * 0.25, kEase.rebote), dor = i === 2 && T > K.H + 2.0;
-          return p > 0 ? <g key={i} transform={`translate(${150 + i * 195} 900) rotate(-30) scale(${p})`}>
+        {fsvg(<><g opacity={0.35}><Frasco x={540} y={1000} s={1.6} /></g>{Array.from({ length: 5 }, (_, i) => { const p = kprog(T, K.H + 0.4 + i * 0.25, K.H + 0.8 + i * 0.25, kEase.rebote), dor = i === 2 && T > K.H + 2.0;
+          return p > 0 ? <g key={i} transform={`translate(${130 + i * 205} 1110) rotate(-30) scale(${p * 1.2})`}>
             <path d="M -70 -32 L 0 -32 L 0 32 L -70 32 A 32 32 0 0 1 -70 -32 Z" fill={dor ? KC.gold : '#c9ccd4'} stroke={KC.ink} strokeWidth={6} />
             <path d="M 0 -32 L 70 -32 A 32 32 0 0 1 70 32 L 0 32 Z" fill={dor ? KC.gold2 : '#e6e1d6'} stroke={KC.ink} strokeWidth={6} /></g> : null; })}</>)}
-        <NumeroGigante T={T} at={K.H + 2.0} until={K.C - 0.2} valor={1} sufijo=" de cada 5" etiqueta="dosis diarias de antibiótico" x={540} y={680} tam={110} color={KC.gold2} />
+        <NumeroGigante T={T} at={K.H + 2.0} until={K.C - 0.2} valor={1} sufijo=" de cada 5" etiqueta="dosis diarias de antibiótico" x={540} y={760} tam={120} color={KC.gold2} />
       </Escena>
       {/* 12 · cierre: el mismo frasco; por dentro, el tanque con el moho */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Frasco x={330} y={820} s={1.0} />
-          <rect x={540} y={1000} width={540} height={80} rx={16} fill={CF.tubo} stroke={KC.ink} strokeWidth={8} />
-          <path d="M 540 1040 Q 500 1100 520 1160" stroke={CF.agua} strokeWidth={30} strokeLinecap="round" fill="none" />
+          <rect x={0} y={1330} width={1080} height={150} fill={CF.mar} opacity=".85" />
+          <rect x={640} y={1180} width={460} height={90} rx={18} fill={CF.tubo} stroke={KC.ink} strokeWidth={8} />
+          <path d="M 640 1225 Q 600 1290 620 1350" stroke={CF.agua} strokeWidth={34} strokeLinecap="round" fill="none" />
+          <Frasco x={400} y={900} s={2.0} />
         </>)}
-        <Lupa T={T} at={K.C + 0.4} until={K.Ou} x={780} y={640} r={180} fx={360} fy={820} interior={interiorTanque} tinte={KC.gold2} etiqueta="POR DENTRO · hoy" />
+        <Lupa T={T} at={K.C + 0.4} until={K.Ou} x={800} y={600} r={210} fx={430} fy={900} interior={interiorTanque} tinte={KC.gold2} etiqueta="POR DENTRO · hoy" />
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.6} until={K.B - 0.2} texto="¿un laboratorio?" x={300} y={470} tam={42} />
-      <Chip T={T} at={K.G + 2.4} until={K.B - 0.2} texto="junto a un desagüe" x={300} y={560} tam={38} borde={KC.gold} />
+      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.6} until={K.B - 0.2} texto="¿un laboratorio?" x={560} y={330} tam={42} />
+      <Chip T={T} at={K.G + 2.4} until={K.B - 0.2} texto="junto a un desagüe" x={560} y={430} tam={38} borde={KC.gold} />
       <Chip T={T} at={K.B + 0.3} until={K.Ti - 0.3} texto="1945 · Cagliari, Cerdeña" x={340} y={470} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.B + 0.8} until={K.Ti - 0.3} x={60} y={540} texto="Giuseppe Brotzu" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.B + 1.2} until={K.Ti - 0.3} x={60} y={1130} texto="descarga de drenaje" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.B + 1.2} until={K.Ti - 0.3} x={60} y={790} texto="descarga de drenaje" tam={30} color={KC.texto} />
       <Etq T={T} at={K.B + 2.6} until={K.Ti - 0.3} x={1020} y={1060} lado="izq" texto="agua de mar" tam={30} color={KC.texto} />
       <Chip T={T} at={K.Ti + 0.4} until={K.Sp - 0.3} texto="tifoidea" x={260} y={470} tam={40} borde={KC.red} />
       <Etq T={T} at={K.Ti + 0.8} until={K.Sp - 0.3} x={60} y={560} texto="Salmonella" it tam={34} color={KC.ink} />
@@ -238,35 +239,35 @@ function CefaShot() {
       <Chip T={T} at={K.Sp + 0.4} until={K.Mo - 0.3} texto="¿otro microbio la combate?" x={360} y={470} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.Mo + 0.8} until={K.Ex - 0.3} x={60} y={560} texto="Cephalosporium acremonium (nombre antiguo)" it tam={28} color={KC.texto} />
       <Etq T={T} at={K.Mo + 1.8} until={K.Ex - 0.3} x={60} y={620} texto="Acremonium chrysogenum (hoy)" it tam={32} color={KC.gold2} />
-      <Etq T={T} at={K.Mo + 2.4} until={K.Ex - 0.3} x={1030} y={1120} lado="izq" texto="gotita de esporas" tam={26} color={CF.gota} />
+      <Etq T={T} at={K.Mo + 2.4} until={K.Ex - 0.3} x={1040} y={760} lado="izq" texto="gotita de esporas" tam={26} color={CF.gota} />
       <Chip T={T} at={K.Ex + 1.2} until={K.P - 0.3} texto="frenaba bacterias" x={540} y={470} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.Ex + 2.2} until={K.P - 0.3} texto="lo probó en enfermos (también de tifoidea)" x={540} y={1250} tam={28} borde={KC.gold} />
+      <Chip T={T} at={K.Ex + 2.2} until={K.P - 0.3} texto="lo probó en enfermos (también de tifoidea)" x={540} y={1420} tam={28} borde={KC.gold} />
       <Chip T={T} at={K.P + 0.2} until={K.Ox - 0.2} texto="de moho a medicina" x={420} y={470} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Ox + 0.3} until={K.Cc - 0.3} texto="en Italia: sin fondos" x={300} y={470} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.Ox + 2.4} until={K.Cc - 0.3} x={440} y={510} texto="Oxford · 1948" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ox + 1.0} until={K.Cc - 0.3} x={540} y={1080} texto="Cerdeña" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Ox + 0.3} until={K.Cc - 0.3} texto="en Italia: sin fondos" x={300} y={390} tam={36} borde={KC.red} />
+      <Etq T={T} at={K.Ox + 2.4} until={K.Cc - 0.3} x={410} y={564} texto="Oxford · 1948" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ox + 1.0} until={K.Cc - 0.3} x={570} y={1476} texto="Cerdeña" tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Cc + 0.15} until={K.Tr - 0.2} anio="1953" quien="Oxford · Edward Abraham y Guy Newton" revista="Newton y Abraham, Nature, 1955" y={480} />
-      <Etq T={T} at={K.Cc + 2.6} until={K.Tr - 0.3} x={60} y={1170} texto="cefalosporina C: la molécula clave" tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.Tr + 0.4} until={K.Pa - 0.3} x={460} y={690} texto="penicilina" tam={28} color={CF.peni} />
-      <Etq T={T} at={K.Tr + 2.8} until={K.Pa - 0.3} x={460} y={1150} texto="cefalosporina C: resiste" tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.Cc + 2.6} until={K.Tr - 0.3} x={60} y={1250} texto="cefalosporina C: la molécula clave" tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.Tr + 0.4} until={K.Pa - 0.3} x={600} y={660} texto="penicilina" tam={28} color={CF.peni} />
+      <Etq T={T} at={K.Tr + 2.8} until={K.Pa - 0.3} x={560} y={1290} texto="cefalosporina C: resiste" tam={28} color={KC.gold2} />
       <Chip T={T} at={K.Tr + 1.0} until={K.Pa - 0.3} texto="penicilinasa (enzima de bacterias)" x={540} y={470} tam={32} borde={KC.red} />
-      <Etq T={T} at={K.Pa + 0.6} until={K.H - 0.3} x={60} y={600} texto="anillo beta-lactámico" tam={28} color={CF.anillo} />
-      <Etq T={T} at={K.Pa + 1.0} until={K.H - 0.3} x={1030} y={660} lado="izq" texto="pared de la bacteria" tam={28} color={CF.pared} />
+      <Etq T={T} at={K.Pa + 0.6} until={K.H - 0.3} x={60} y={700} texto="anillo beta-lactámico" tam={28} color={CF.anillo} />
+      <Etq T={T} at={K.Pa + 1.0} until={K.H - 0.3} x={1030} y={740} lado="izq" texto="pared de la bacteria" tam={28} color={CF.pared} />
       <Chip T={T} at={K.Pa + 2.8} until={K.H - 0.3} texto="¡revienta!" x={300} y={470} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.H + 0.2} until={K.C - 0.3} texto="2015 · 76 países" x={540} y={470} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.H + 2.6} until={K.C - 0.3} x={60} y={1100} texto="Klein et al., PNAS, 2018 (datos de 2015)" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="materia prima: cefalosporina C" x={330} y={470} tam={32} borde={KC.gold} />
-      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="antibióticos: solo con receta" x={330} y={560} tam={28} borde={KC.red} />
+      <Chip T={T} at={K.H + 0.2} until={K.C - 0.3} texto="2015 · 76 países" x={540} y={520} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.H + 2.6} until={K.C - 0.3} x={60} y={1300} texto="Klein et al., PNAS, 2018 (datos de 2015)" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="materia prima: cefalosporina C" x={360} y={300} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="antibióticos: solo con receta" x={360} y={390} tam={28} borde={KC.red} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.B} texto="5 cm" largo={110} />
+      <BarraEscala T={T} at={K.G} until={K.B} texto="5 cm" largo={220} />
       <BarraEscala T={T} at={K.B} until={K.Sp} texto="10 m" largo={120} />
-      <BarraEscala T={T} at={K.Mo} until={K.Ex} texto="10 µm" largo={110} />
-      <BarraEscala T={T} at={K.Ex} until={K.P} texto="5 cm" largo={120} />
-      <BarraEscala T={T} at={K.Ox} until={K.Cc} texto="500 km" largo={90} />
-      <BarraEscala T={T} at={K.Cc} until={K.Pa} texto="0.5 nm" largo={100} />
-      <BarraEscala T={T} at={K.Pa} until={K.H} texto="1 µm" largo={110} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={110} />
+      <BarraEscala T={T} at={K.Mo} until={K.Ex} texto="10 µm" largo={114} />
+      <BarraEscala T={T} at={K.Ex} until={K.P} texto="5 cm" largo={152} />
+      <BarraEscala T={T} at={K.Ox} until={K.Cc} texto="500 km" largo={144} />
+      <BarraEscala T={T} at={K.Cc} until={K.Pa} texto="0.5 nm" largo={150} />
+      <BarraEscala T={T} at={K.Pa} until={K.H} texto="1 µm" largo={149} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={220} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.B - 0.1} texto="Empezó *junto a un desagüe*" />
