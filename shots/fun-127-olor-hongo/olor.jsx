@@ -28,15 +28,15 @@ function Octenol({ x, y, s = 1, p = 1, color = KC.ink, oh = OH.ox, brillo = 0, f
   </g>;
 }
 // Ácido linoleico esquemático: 18 C, COOH a la izquierda, dobles enlaces 9 y 12. corte 0..1 separa los últimos 8 C (cola).
-function Linoleico({ T, x, y, dx = 50, p = 1, color = '#eafff7', ox = 0, corte = 0, colaO = 1 }) {
-  const pts = zig(18, x, y, dx, 30);
+function Linoleico({ T, x, y, dx = 50, p = 1, color = '#eafff7', ox = 0, corte = 0, colaO = 1, a = 30, gr = 9 }) {
+  const pts = zig(18, x, y, dx, a);
   const k = Math.max(2, Math.ceil(18 * kclamp(p, 0, 1)));
   const cab = pts.slice(0, Math.min(k, 10)), cola = k > 10 ? pts.slice(9, k) : [];
   const dbl = (i) => { const a = pts[i], b = pts[i + 1]; const nx = (b[1] - a[1]), ny = -(b[0] - a[0]), L = Math.hypot(nx, ny); return <line key={i} x1={a[0] + nx / L * 14 + (b[0] - a[0]) * 0.15} y1={a[1] + ny / L * 14 + (b[1] - a[1]) * 0.15} x2={b[0] + nx / L * 14 - (b[0] - a[0]) * 0.15} y2={b[1] + ny / L * 14 - (b[1] - a[1]) * 0.15} stroke={color} strokeWidth={6} strokeLinecap="round" />; };
   const sep = corte * 60;
   return <g>
     <g transform={`translate(${-sep * 0.6} ${sep * 0.5})`} opacity={1 - corte * 0.55}>
-      <path d={linea(cab)} stroke={color} strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <path d={linea(cab)} stroke={color} strokeWidth={gr} fill="none" strokeLinecap="round" strokeLinejoin="round" />
       {k > 9 && dbl(8)}
       <g transform={`translate(${pts[0][0] - 46} ${pts[0][1] + 6})`}><rect x={-46} y={-26} width={92} height={52} rx={14} fill="#2a3346" stroke={color} strokeWidth={4} />
         <text y={10} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={color}>COOH</text></g>
@@ -44,19 +44,19 @@ function Linoleico({ T, x, y, dx = 50, p = 1, color = '#eafff7', ox = 0, corte =
         <circle cx={-14} r={20} fill={OH.ox} stroke={KC.ink} strokeWidth={4} /><circle cx={16} r={20} fill={OH.ox} stroke={KC.ink} strokeWidth={4} />
         <line x1={0} y1={22} x2={0} y2={58 * ox} stroke={OH.ox} strokeWidth={6} /></g>}
     </g>
-    {cola.length > 1 && <g transform={`translate(${sep} ${-sep * 1.6})`} opacity={colaO} style={corte > 0 ? { filter:`drop-shadow(0 0 ${20 * corte}px ${OH.oro})` } : null}>
-      <path d={linea(cola)} stroke={corte > 0.3 ? mixHex(color, OH.oro, corte) : color} strokeWidth={9 + corte * 3} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    {cola.length > 1 && <g transform={`translate(${sep * 0.3} ${-sep * 1.6})`} opacity={colaO} style={corte > 0 ? { filter:`drop-shadow(0 0 ${20 * corte}px ${OH.oro})` } : null}>
+      <path d={linea(cola)} stroke={corte > 0.3 ? mixHex(color, OH.oro, corte) : color} strokeWidth={gr + corte * 3} fill="none" strokeLinecap="round" strokeLinejoin="round" />
       {k > 12 && dbl(11)}
     </g>}
   </g>;
 }
 // Enzima esquemática (boca de "pac-man"): abre 0..1.
-function Enzima({ T, x, y, r = 80, color = KC.lilac, abre = 0.5, rot = 0, texto }) {
+function Enzima({ T, x, y, r = 80, color = KC.lilac, abre = 0.5, rot = 0, texto, arriba = false }) {
   const a = 0.15 + 0.5 * abre + 0.12 * Math.sin(T * 6);
   return <g transform={`translate(${x} ${y}) rotate(${rot})`}>
     <path d={`M 0 0 L ${r * Math.cos(a)} ${-r * Math.sin(a)} A ${r} ${r} 0 1 0 ${r * Math.cos(a)} ${r * Math.sin(a)} Z`} fill={color} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <circle cx={-r * 0.2} cy={-r * 0.45} r={r * 0.1} fill={KC.ink} />
-    {texto && <text x={-r * 0.1} y={r + 46} textAnchor="middle" transform={`rotate(${-rot})`} style={{ font:`700 30px ${KF.mono}` }} fill={color}>{texto}</text>}
+    {texto && <text x={arriba ? r * 0.1 : -r * 0.1} y={arriba ? -(r + 22) : r + 46} textAnchor="middle" transform={`rotate(${-rot})`} style={{ font:`700 30px ${KF.mono}` }} fill={color}>{texto}</text>}
   </g>;
 }
 // Tabla de picar.
@@ -161,12 +161,12 @@ function Mosco({ T, x, y, s = 1, ang = 0, seed = 1 }) {
 // Trampa de moscos: cilindro con ventilador, frasquito de octenol y tanque de CO2 a un lado.
 function Trampa({ T, x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={150} y={-40} width={90} height={250} rx={40} fill="#c9d6e0" stroke={KC.ink} strokeWidth={7} /><text x={195} y={100} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>CO₂</text>
+    <rect x={150} y={-40} width={90} height={250} rx={40} fill="#c9d6e0" stroke={KC.ink} strokeWidth={7} /><text x={195} y={100} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#0b1020">CO₂</text>
     <path d="M 150 20 Q 90 10 70 -10" stroke={KC.ink} strokeWidth={6} fill="none" />
     <rect x={-80} y={-60} width={160} height={180} rx={20} fill="#3a3f4a" stroke={KC.ink} strokeWidth={7} />
     <ellipse cx={0} cy={-60} rx={80} ry={22} fill="#59606e" stroke={KC.ink} strokeWidth={6} />
     {[0, 1, 2].map((i) => <line key={i} x1={0} y1={-60} x2={60 * Math.cos(T * 9 + i * 2.1)} y2={-60 + 16 * Math.sin(T * 9 + i * 2.1)} stroke="#aab" strokeWidth={6} />)}
-    <rect x={-40} y={10} width={80} height={60} rx={10} fill={OH.oro} stroke={KC.ink} strokeWidth={5} /><text x={0} y={50} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill={KC.ink}>octenol</text>
+    <rect x={-40} y={10} width={80} height={60} rx={10} fill={OH.oro} stroke={KC.ink} strokeWidth={5} /><text x={0} y={50} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill="#0b1020">octenol</text>
     <rect x={-50} y={120} width={100} height={140} rx={12} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={6} />
   </g>;
 }
@@ -193,33 +193,35 @@ function OlorShot() {
       <Escena T={T} a={K.G} b={K.N} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
+          <g transform="translate(-27 -83) scale(1.35)">
           <Tabla x={420} y={980} />
           <ChampMachacado T={T} x={420} y={985} s={1.4} m={machG} />
           {T < K.G + 2 && <Mazo x={430 + 30 * (1 - mazoG)} y={klerp(500, 740, mazoG) - 300 * kprog(T, K.G + 1.6, K.G + 2)} />}
           <Volutas T={T} x={420} y={820} p={kprog(T, K.G + 0.5, K.G + 2.2)} alto={200} />
           <g opacity={kprog(T, K.G + 2.0, K.G + 2.6)}><Octenol x={130} y={580} s={1.0} p={kprog(T, K.G + 2.0, K.G + 3.2)} brillo={0.6} /></g>
+          </g>
         </>)}
       </Escena>
       {/* 2 · el nombre: 1-octen-3-ol */}
       <Escena T={T} a={K.N} b={K.Ge} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<><Octenol x={170} y={900} s={1.4} p={1} num brillo={0.5 + 0.2 * Math.sin(T * 3)} /></>)}
+        {fsvg(<><Octenol x={110} y={1000} s={2.2} p={1} num brillo={0.5 + 0.2 * Math.sin(T * 3)} /></>)}
       </Escena>
       {/* 3 · contraste: la tierra mojada es geosmina */}
       <Escena T={T} a={K.Ge} b={K.Co} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <TierraMojada T={T} x={270} y={1080} w={380} />
-          <g opacity={kprog(T, K.Ge + 0.2, K.Ge + 0.7)}><Geosmina x={190} y={820} s={1} /></g>
-          <text x={540} y={880} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.Ge + 0.8, K.Ge + 1.1)}>≠</text>
-          <g opacity={kprog(T, K.Ge + 0.9, K.Ge + 1.4)}><ChampMachacado T={T} x={810} y={1100} s={0.9} m={0} /><Octenol x={650} y={880} s={0.62} p={1} /></g>
+          <TierraMojada T={T} x={270} y={1270} w={440} />
+          <g opacity={0.5 + 0.5 * kprog(T, K.Ge + 0.2, K.Ge + 0.7)}><Geosmina x={150} y={790} s={1.5} /></g>
+          <text x={540} y={1060} textAnchor="middle" style={{ font:`400 210px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.Ge + 0.8, K.Ge + 1.1)}>≠</text>
+          <g opacity={0.45 + 0.55 * kprog(T, K.Ge + 0.9, K.Ge + 1.4)}><ChampMachacado T={T} x={810} y={1360} s={1.3} m={0} /><Octenol x={640} y={830} s={0.85} p={1} /></g>
         </>)}
       </Escena>
       {/* 4–7 · por dentro: células rotas, ácido linoleico, dioxigenasa, liasa */}
       <Escena T={T} a={K.Co} b={K.U} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
-        <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, K.Gr - 0.2, K.Gr + 0.6) }}>
+        <div style={{ position:'absolute', inset:0, opacity:1 - 0.8 * kprog(T, K.Gr - 0.2, K.Gr + 0.6) }}>
           <HifasMicro T={T} g={0.4 + 0.6 * kprog(T, K.Co - 0.3, K.Co + 1.0)} comida={{ x: -600, y: -600 }} />
         </div>
         {fsvg(<>
@@ -230,13 +232,13 @@ function OlorShot() {
             <path d="M 470 900 L 510 950 L 480 990 L 530 1040" stroke={KC.red} strokeWidth={10} fill="none" strokeLinejoin="round" />
             <path d="M 600 860 L 570 920 L 620 960" stroke={KC.red} strokeWidth={10} fill="none" strokeLinejoin="round" /></g>}
           {T > K.Gr - 0.3 && <g opacity={kprog(T, K.Gr - 0.3, K.Gr + 0.3)}>
-            <Linoleico T={T} x={150} y={960} p={kprog(T, K.Gr, K.Gr + 1.4)} ox={kprog(T, K.Ox + 0.3, K.Ox + 1.0, kEase.rebote)} corte={kprog(T, K.Li + 1.0, K.Li + 2.0, kEase.sale)} />
+            <Linoleico T={T} x={150} y={980} a={58} gr={13} p={kprog(T, K.Gr, K.Gr + 1.4)} ox={kprog(T, K.Ox + 0.3, K.Ox + 1.0, kEase.rebote)} corte={kprog(T, K.Li + 1.0, K.Li + 2.0, kEase.sale)} />
           </g>}
           {/* dioxigenasa */}
-          {T > K.Gr + 1.6 && <Enzima T={T} x={klerp(1200, 620, kprog(T, K.Gr + 1.6, K.Ox + 0.2, kEase.sale)) + 700 * kprog(T, K.Li, K.Li + 0.8, kEase.suave)} y={780} r={70} color={KC.lilac} rot={180} texto="dioxigenasa" abre={kprog(T, K.Ox, K.Ox + 0.4)} />}
+          {T > K.Gr + 1.6 && <Enzima T={T} x={klerp(1200, 620, kprog(T, K.Gr + 1.6, K.Ox + 0.2, kEase.sale)) + 700 * kprog(T, K.Li, K.Li + 0.8, kEase.suave)} y={775} r={120} color={KC.lilac} rot={180} arriba texto="dioxigenasa" abre={kprog(T, K.Ox, K.Ox + 0.4)} />}
           {/* liasa */}
-          {T > K.Li - 0.2 && <Enzima T={T} x={klerp(1250, 680, kprog(T, K.Li - 0.2, K.Li + 0.9, kEase.sale))} y={1080} r={74} color={KC.mint} rot={-150} texto="liasa" abre={1 - kprog(T, K.Li + 0.9, K.Li + 1.1)} />}
-          {T > K.Li + 1.1 && <text x={830} y={760} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={OH.oro} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Li + 1.6, K.Li + 2.0)}>8 C</text>}
+          {T > K.Li - 0.2 && <Enzima T={T} x={klerp(1300, 690, kprog(T, K.Li - 0.2, K.Li + 0.9, kEase.sale))} y={1160} r={125} color={KC.mint} rot={-150} texto="liasa" abre={1 - kprog(T, K.Li + 0.9, K.Li + 1.1)} />}
+          {T > K.Li + 1.1 && <text x={820} y={720} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={OH.oro} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Li + 1.6, K.Li + 2.0)}>8 C</text>}
         </>)}
       </Escena>
       {/* 8 · umbral: una molécula entre mil millones (en agua) */}
@@ -245,109 +247,111 @@ function OlorShot() {
         {fsvg(<>
           {(() => { const z = kprog(T, K.U + 0.4, K.U + 1.6, kEase.suave), g = krng(3);
             return <g>
-              <g opacity={1 - z}><rect x={380} y={760} width={320} height={420} rx={30} fill="rgba(255,255,255,.45)" stroke={KC.ink} strokeWidth={9} /><rect x={392} y={860} width={296} height={308} rx={22} fill="rgba(80,170,255,.45)" /></g>
-              <g opacity={z}>{Array.from({ length: 112 }, (_, i) => { const cx = 120 + (i % 14) * 62, cy = 740 + Math.floor(i / 14) * 52; return <circle key={i} cx={cx + Math.sin(T * 2 + i) * 4} cy={cy + Math.cos(T * 2 + i) * 4} r={14} fill="#bfe8ff" stroke="#2a6fa8" strokeWidth={3} />; })}
-                <circle cx={120 + 9 * 62} cy={740 + 5 * 52} r={22} fill={OH.oro} stroke={KC.ink} strokeWidth={5} style={{ filter:'drop-shadow(0 0 16px #F4C25A)' }} /></g>
+              <g opacity={1 - z}><rect x={300} y={700} width={480} height={630} rx={40} fill="rgba(255,255,255,.3)" stroke={KC.ink} strokeWidth={10} /><rect x={316} y={850} width={448} height={464} rx={30} fill="rgba(80,170,255,.45)" /></g>
+              <g opacity={z}>{Array.from({ length: 168 }, (_, i) => { const cx = 124 + (i % 14) * 64, cy = 700 + Math.floor(i / 14) * 62; return <circle key={i} cx={cx + Math.sin(T * 2 + i) * 4} cy={cy + Math.cos(T * 2 + i) * 4} r={17} fill="#bfe8ff" stroke="#2a6fa8" strokeWidth={3} />; })}
+                <circle cx={124 + 9 * 64} cy={700 + 7 * 62} r={26} fill={OH.oro} stroke={KC.ink} strokeWidth={5} style={{ filter:'drop-shadow(0 0 16px #F4C25A)' }} /></g>
             </g>; })()}
         </>)}
       </Escena>
       {/* 9 · re-gancho */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Octenol x={110} y={640} s={1.15} p={1} brillo={0.5} /><Interrogacion T={T} x={280} y={1160} tam={300} /></>)}
+        {fsvg(<><Octenol x={170} y={720} s={1.9} p={1} brillo={0.5} /><Interrogacion T={T} x={540} y={1420} tam={420} /></>)}
       </Escena>
       {/* 10–11 · dos formas en espejo: R y S */}
       <Escena T={T} a={K.E} b={K.Es} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <line x1={540} y1={600} x2={540} y2={1200} stroke="#fff" strokeWidth={5} strokeDasharray="18 14" opacity={kprog(T, K.E + 0.2, K.E + 0.6)} />
-          <g opacity={kprog(T, K.E + 0.4, K.E + 1.0) * (1 - kprog(T, K.F - 0.2, K.F + 0.3))}><Mano x={350} y={1040} s={1} espejo /><Mano x={730} y={1040} s={1} /></g>
-          <g opacity={kprog(T, K.E + 1.2, K.E + 1.8)}>
-            <Octenol x={500} y={760} s={0.78} p={1} color={KC.texto} forma="R" espejo />
-            <Octenol x={580} y={760} s={0.78} p={1} color={KC.texto} forma="S" />
+          <line x1={540} y1={560} x2={540} y2={1440} stroke="#fff" strokeWidth={5} strokeDasharray="18 14" opacity={kprog(T, K.E + 0.2, K.E + 0.6)} />
+          <g opacity={kprog(T, K.E + 1.0, K.E + 1.5) * (1 - kprog(T, K.F - 0.2, K.F + 0.3))}><Mano x={320} y={1230} s={1.7} espejo /><Mano x={760} y={1230} s={1.7} /></g>
+          <g opacity={kprog(T, K.E + 0.1, K.E + 0.6)}>
+            <Octenol x={510} y={790} s={1.1} p={1} color={KC.texto} forma="R" espejo />
+            <Octenol x={570} y={790} s={1.1} p={1} color={KC.texto} forma="S" />
           </g>
-          <text x={440} y={650} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={OH.oro} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.E + 1.8, K.E + 2.2)}>R</text>
-          <text x={630} y={650} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.lilac} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.E + 1.8, K.E + 2.2)}>S</text>
-          <g opacity={kprog(T, K.F + 0.2, K.F + 0.7)}><Champinon x={280} y={1080} s={0.85} crece={1} abre={0.8} /></g>
-          <g opacity={kprog(T, K.F + 1.4, K.F + 1.9)}><Moho x={710} y={1040} s={0.85} /><Pasto T={T} x={870} y={1080} s={0.85} /></g>
+          <text x={300} y={680} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={OH.oro} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.E + 1.8, K.E + 2.2)}>R</text>
+          <text x={780} y={680} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.lilac} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.E + 1.8, K.E + 2.2)}>S</text>
+          <g opacity={kprog(T, K.F + 0.2, K.F + 0.7)}><Champinon x={290} y={1320} s={1.35} crece={1} abre={0.8} /></g>
+          <g opacity={kprog(T, K.F + 1.4, K.F + 1.9)}><Moho x={690} y={1220} s={1.5} /><Pasto T={T} x={900} y={1320} s={1.5} /></g>
         </>)}
       </Escena>
       {/* 12 · el estudio: tsetsé y el olor del ganado */}
       <Escena T={T} a={K.Es} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Vaca T={T} x={560} y={930} s={1.1} />
-          <Volutas T={T} x={330} y={880} n={3} alto={260} p={kprog(T, K.Es + 2.4, K.Es + 3.4)} />
-          {[0, 1, 2, 3].map((i) => { const u = kprog(T, K.Es + 3.0 + i * 0.25, K.Es + 5.2 + i * 0.25, kEase.sale); const x0 = -100, y0 = 700 + i * 90, x1 = 230 + i * 40, y1 = 820 + (i % 2) * 70;
-            return u > 0 ? <Tsetse key={i} T={T} x={klerp(x0, x1, u) + Math.sin(T * 7 + i) * 10} y={klerp(y0, y1, u) + Math.cos(T * 6 + i) * 10} s={0.9} ang={180} /> : null; })}
+          <Vaca T={T} x={590} y={1080} s={1.7} />
+          <Volutas T={T} x={270} y={900} n={3} alto={300} p={kprog(T, K.Es + 2.4, K.Es + 3.4)} />
+          {[0, 1, 2, 3].map((i) => { const u = kprog(T, K.Es + 3.0 + i * 0.25, K.Es + 5.2 + i * 0.25, kEase.sale); const x0 = -120, y0 = 760 + i * 100, x1 = 130 + i * 55, y1 = 800 + (i % 2) * 110;
+            return u > 0 ? <Tsetse key={i} T={T} x={klerp(x0, x1, u) + Math.sin(T * 7 + i) * 10} y={klerp(y0, y1, u) + Math.cos(T * 6 + i) * 10} s={1.5} ang={180} /> : null; })}
         </>)}
       </Escena>
       {/* 13 · moscos: sudor, CO2 del aliento, trampas */}
       <Escena T={T} a={K.M} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Brazo T={T} x={40} y={720} s={1} sudor={kprog(T, K.M + 0.2, K.M + 0.8)} />
-          <g opacity={kprog(T, K.M + 1.6, K.M + 2.2)}>{[0, 1, 2].map((i) => { const u = ((T * 0.5 + i * 0.33) % 1); return <g key={i} transform={`translate(${620 + u * 160} ${760 - u * 60})`} opacity={1 - u}><circle r={34 + u * 30} fill="rgba(255,255,255,.6)" stroke={KC.ink} strokeWidth={4} /><text y={10} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>CO₂</text></g>; })}</g>
+          <Brazo T={T} x={-30} y={860} s={1.7} sudor={kprog(T, K.M + 0.2, K.M + 0.8)} />
+          <g opacity={kprog(T, K.M + 1.6, K.M + 2.2)}>{[0, 1, 2].map((i) => { const u = ((T * 0.5 + i * 0.33) % 1); return <g key={i} transform={`translate(${860 + u * 130} ${650 - u * 110})`} opacity={1 - u}><circle r={46 + u * 34} fill="rgba(255,255,255,.6)" stroke={KC.ink} strokeWidth={4} /><text y={12} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#0b1020">CO₂</text></g>; })}</g>
           {[0, 1, 2, 3, 4].map((i) => { const u = kprog(T, K.M + 2.4 + i * 0.2, K.M + 4.2 + i * 0.2, kEase.sale), atrae = i < 3;
-            const x0 = 1150, y0 = 520 + i * 80, x1 = atrae ? 300 + i * 110 : 1150, y1 = atrae ? 600 : 940 + (i - 3) * 90;
-            return u > 0 ? <Mosco key={i} T={T} seed={i} x={klerp(x0, atrae ? x1 : 880 + (i - 3) * 80, u) + Math.sin(T * 5 + i) * 12} y={klerp(y0, y1, u) + Math.cos(T * 4 + i) * 10} s={0.95} ang={atrae ? 8 : 200} /> : null; })}
-          <g opacity={kprog(T, K.M + 4.3, K.M + 4.9)}><Trampa T={T} x={260} y={1000} s={0.75} /></g>
+            const x0 = 1180, y0 = 520 + i * 90, x1 = atrae ? 190 + i * 210 : 1150, y1 = atrae ? 660 : 1080 + (i - 3) * 110;
+            return u > 0 ? <Mosco key={i} T={T} seed={i} x={klerp(x0, atrae ? x1 : 760 + (i - 3) * 110, u) + Math.sin(T * 5 + i) * 12} y={klerp(y0, y1, u) + Math.cos(T * 4 + i) * 10} s={1.6} ang={atrae ? 8 : 200} /> : null; })}
+          <g opacity={0.3 + 0.7 * kprog(T, K.M + 4.3, K.M + 4.9)}><Trampa T={T} x={330} y={1200} s={1.15} /></g>
         </>)}
       </Escena>
       {/* 14 · cierre: el mismo champiñón, ya machacado, con su molécula */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
+          <g transform="translate(-27 -83) scale(1.35)">
           <Tabla x={420} y={980} />
           <ChampMachacado T={T} x={420} y={985} s={1.4} m={0.8} />
           <Volutas T={T} x={420} y={820} p={1} alto={200} />
           <Octenol x={130} y={580} s={1.0} p={1} brillo={0.7 + 0.3 * Math.sin(T * 3)} />
+          </g>
         </>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.4} until={K.N - 0.3} texto="olor a tierra" x={300} y={400} tam={44} />
-      <Chip T={T} at={K.G + 3.0} until={K.N - 0.3} texto="1 molécula clave" x={760} y={470} tam={40} borde={KC.gold} />
+      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.4} until={K.N - 0.3} texto="olor a tierra" x={330} y={470} tam={52} />
+      <Chip T={T} at={K.G + 3.0} until={K.N - 0.3} texto="1 molécula clave" x={790} y={580} tam={40} borde={KC.gold} />
       <div style={{ position:'absolute', left:0, right:0, top:440, zIndex:41, textAlign:'center', opacity:kprog(T, K.N + 0.1, K.N + 0.5) * (1 - kprog(T, K.Ge - 0.3, K.Ge)), font:`400 150px/1 ${KF.titulo}`, color:KC.ink, WebkitTextStroke:`3px ${KC.ink}` }}>{T > K.N - 0.5 && T < K.Ge + 0.5 ? '1-octen-3-ol' : ''}</div>
-      <Etq T={T} at={K.N + 1.4} until={K.Ge - 0.3} x={140} y={640} texto="«alcohol de hongo»" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.N + 2.0} until={K.Ge - 0.3} x={140} y={1140} texto="8 carbonos · 1 doble enlace · OH" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ge + 0.4} until={K.Co - 0.3} x={60} y={640} texto="geosmina = tierra mojada" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ge + 1.1} until={K.Co - 0.3} x={580} y={770} texto="1-octen-3-ol = hongo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.4} until={K.Ge - 0.3} x={110} y={690} texto="«alcohol de hongo»" tam={46} color={KC.ink} />
+      <Etq T={T} at={K.N + 2.0} until={K.Ge - 0.3} x={110} y={1420} texto="8 carbonos · 1 doble enlace · OH" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Ge + 0.4} until={K.Co - 0.3} x={60} y={590} texto="geosmina = tierra mojada" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ge + 1.1} until={K.Co - 0.3} x={560} y={700} texto="1-octen-3-ol = hongo" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Co + 0.1} until={K.Gr - 0.2} texto="POR DENTRO · AL MICROSCOPIO" x={420} y={430} tam={32} borde={KC.cyan} mono />
       <Etq T={T} at={K.Co + 0.6} until={K.Gr - 0.2} x={420} y={520} texto="hifas del champiñón" tam={32} color={KC.mint} />
       <Etq T={T} at={K.Co + 0.9} until={K.Gr - 0.2} x={420} y={570} texto="Agaricus bisporus" it tam={30} color={KC.texto} />
       <Chip T={T} at={K.Co + 1.3} until={K.Gr - 0.2} texto="¡células rotas!" x={720} y={660} tam={38} borde={KC.red} />
       <Etq T={T} at={K.Gr + 0.4} until={K.U - 0.3} x={60} y={520} texto="ácido linoleico · 18 carbonos" tam={32} color="#eafff7" />
       <Etq T={T} at={K.Gr + 0.9} until={K.U - 0.3} x={60} y={570} texto="un ácido graso de la célula" tam={26} color={KC.texto} />
-      <Chip T={T} at={K.Ox + 0.3} until={K.Li + 1.0} texto="+ O₂ en el carbono 10" x={330} y={680} tam={34} borde={OH.ox} />
+      <Chip T={T} at={K.Ox + 0.3} until={K.Li + 1.0} texto="+ O₂ en el carbono 10" x={290} y={1140} tam={36} borde={OH.ox} />
       <Chip T={T} at={K.Li + 1.6} until={K.U - 0.3} texto="sale un pedazo de 8 carbonos" x={400} y={660} tam={34} borde={KC.gold} />
-      <NumeroGigante T={T} at={K.U + 1.4} until={K.P - 0.3} valor={1} dur={0.2} sufijo=" en 1,000,000,000" etiqueta="≈ (en agua)" x={370} y={560} tam={70} color={OH.oro} />
-      <Chip T={T} at={K.E + 0.2} until={K.F - 0.2} texto="dos formas en espejo" x={300} y={470} tam={36} borde={KC.cyan} />
-      <Etq T={T} at={K.F + 0.4} until={K.Es - 0.3} x={100} y={1150} texto="R: más a hongo" tam={30} color={OH.oro} />
-      <Etq T={T} at={K.F + 1.5} until={K.Es - 0.3} x={600} y={1150} texto="S: moho y pasto" tam={30} color={KC.lilac} />
-      <Chip T={T} at={K.F + 2.6} until={K.Es - 0.3} texto="los hongos hacen sobre todo la R" x={420} y={470} tam={32} borde={KC.gold} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="1984" quien="olor de ganado · moscas tsetsé" revista="Insect Sci. Applic., 1984" x={480} y={560} />
-      <Etq T={T} at={K.Es + 3.0} until={K.M - 0.3} x={60} y={620} texto="mosca tsetsé" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Es + 3.3} until={K.M - 0.3} x={60} y={670} texto="Glossina" it tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Es + 3.6} until={K.M - 0.3} texto="1-octen-3-ol: olor del ganado" x={350} y={470} tam={28} borde={KC.gold} />
-      <Etq T={T} at={K.M + 0.6} until={K.C - 0.3} x={60} y={850} texto="sudor: también lo trae" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.M + 2.8} until={K.C - 0.3} texto="+ CO₂ = atrae a algunas especies" x={420} y={470} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.M + 4.6} until={K.C - 0.3} x={470} y={1150} texto="trampa: octenol + CO₂" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="1-octen-3-ol" x={330} y={400} tam={34} borde={KC.gold} />
+      <NumeroGigante T={T} at={K.U + 1.4} until={K.P - 0.3} valor={1} dur={0.2} sufijo=" en 1,000,000,000" etiqueta="≈ (en agua)" x={540} y={530} tam={84} color={OH.oro} />
+      <Chip T={T} at={K.E + 0.2} until={K.F - 0.2} texto="dos formas en espejo" x={540} y={470} tam={40} borde={KC.cyan} />
+      <Etq T={T} at={K.F + 0.4} until={K.Es - 0.3} x={70} y={1410} texto="R: más a hongo" tam={36} color={OH.oro} />
+      <Etq T={T} at={K.F + 1.5} until={K.Es - 0.3} x={590} y={1410} texto="S: moho y pasto" tam={36} color={KC.lilac} />
+      <Chip T={T} at={K.F + 2.6} until={K.Es - 0.3} texto="los hongos hacen sobre todo la R" x={540} y={470} tam={36} borde={KC.gold} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="1984" quien="olor de ganado · moscas tsetsé" revista="Insect Sci. Applic., 1984" x={540} y={520} />
+      <Etq T={T} at={K.Es + 3.0} until={K.M - 0.3} x={1020} y={700} lado="izq" texto="mosca tsetsé" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Es + 3.3} until={K.M - 0.3} x={1020} y={752} lado="izq" texto="Glossina" it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Es + 3.6} until={K.M - 0.3} texto="1-octen-3-ol: olor del ganado" x={540} y={480} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.M + 0.6} until={K.C - 0.3} x={60} y={1030} texto="sudor: también lo trae" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.M + 2.8} until={K.C - 0.3} texto="+ CO₂ = atrae a algunas especies" x={540} y={470} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.M + 4.6} until={K.C - 0.3} x={625} y={1410} texto="trampa: octenol + CO₂" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="1-octen-3-ol" x={400} y={580} tam={42} borde={KC.gold} />
       <Etq T={T} at={K.C + 2.4} until={K.Ou} x={60} y={1500} texto="El dibujo es esquemático." tam={24} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.N} texto="2 cm" largo={70} color={KC.ink} />
-      <BarraEscala T={T} at={K.N} until={K.Ge} texto="1 nm (molécula, esquemática)" largo={90} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.N} texto="2 cm" largo={95} color={KC.ink} />
+      <BarraEscala T={T} at={K.N} until={K.Ge} texto="1 nm (molécula, esquemática)" largo={141} color={KC.ink} />
       <BarraEscala T={T} at={K.Ge} until={K.Co} texto="esquemático" largo={0} color={KC.ink} />
       <BarraEscala T={T} at={K.Co} until={K.Gr} texto="10 µm" largo={120} />
       <BarraEscala T={T} at={K.Gr} until={K.U} texto="1 nm (moléculas, esquemáticas)" largo={100} />
-      <BarraEscala T={T} at={K.U} until={K.P} texto="5 cm → moléculas (esquemático)" largo={90} color={KC.ink} />
-      <BarraEscala T={T} at={K.E} until={K.Es} texto="1 nm (moléculas, esquemáticas)" largo={90} />
-      <BarraEscala T={T} at={K.Es} until={K.M} texto="1 m" largo={180} color={KC.ink} />
-      <BarraEscala T={T} at={K.M} until={K.C} texto="10 cm" largo={110} color={KC.ink} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={70} color={KC.ink} y={1560} />
+      <BarraEscala T={T} at={K.U} until={K.P} texto="5 cm → moléculas (esquemático)" largo={135} color={KC.ink} />
+      <BarraEscala T={T} at={K.E} until={K.Es} texto="1 nm (moléculas, esquemáticas)" largo={127} />
+      <BarraEscala T={T} at={K.Es} until={K.M} texto="1 m" largo={278} color={KC.ink} />
+      <BarraEscala T={T} at={K.M} until={K.C} texto="10 cm" largo={187} color={KC.ink} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={95} color={KC.ink} y={1560} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="No es tierra: es *una molécula.*" />
