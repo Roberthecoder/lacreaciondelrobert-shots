@@ -2,7 +2,7 @@
 // Shot Fungi Mati #132 · Ese huevo de tortuga no se echó a perder solo — NARRADO (N1 "Por dentro", gancho 1 "Esto no es X: es Y").
 // Fusariosis de los huevos de tortuga marina (complejo Fusarium solani). Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
-const TH = { arena:'#f5cf73', arena2:'#e2b257', arena3:'#c99a4a', mar:'#1f7fd1', mar2:'#58b4ff', huevo:'#f7f2e6', huevo2:'#e6dcc6',
+const TH = { arena:'#5d4a23', arena2:'#927538', arena3:'#3b2e16', arenaClara:'#d8b25e', tierra:'#a08a4e', mar:'#1a66ab', mar2:'#58b4ff', huevo:'#f7f2e6', huevo2:'#e6dcc6',
   amar:'#e9c02f', azul:'#4f9fbe', rojizo:'#c9775a', boba:'#a4592b', boba2:'#c97a3e', carey:'#7a4a1c', carey2:'#d9a441', piel:'#8a6a4a',
   guante:'#7b5cff', hifa:'#fff4d6' };
 
@@ -92,7 +92,7 @@ function Microconidio({ x, y, rot = 0, s = 1, p = 1 }) {
 }
 
 // Mapa del mundo esquemático (lon/lat → px).
-const MP = (lon, lat) => [540 + lon * 2.9, 715 - lat * 2.9];
+const MP = (lon, lat) => [540 + lon * 2.9, 805 - lat * 2.9];
 const CONT = [
   [[-165, 65], [-140, 70], [-95, 72], [-75, 62], [-55, 50], [-80, 25], [-97, 18], [-87, 13], [-78, 8], [-105, 22], [-118, 32], [-125, 48], [-150, 60]],
   [[-78, 8], [-60, 10], [-35, -6], [-40, -22], [-58, -38], [-70, -53], [-75, -40], [-71, -18], [-81, -5]],
@@ -120,26 +120,26 @@ function TortugaShot() {
       <Escena T={T} a={K.G} b={K.N} zoom={0.05}>
         <Playa T={T} />
         {fsvg(<>
-          <ellipse cx={360} cy={1150} rx={170} ry={26} fill="rgba(0,0,0,.18)" />
-          <Huevo id="g" x={klerp(250, 360, rueda)} y={1000} r={150} rot={klerp(-160, 0, rueda)} manchas={kprog(T, K.G + 0.3, K.G + 1.8)} />
+          <ellipse cx={440} cy={1385} rx={320} ry={46} fill="rgba(0,0,0,.3)" />
+          <Huevo id="g" x={klerp(230, 440, rueda)} y={1100} r={285} rot={klerp(-160, 0, rueda)} manchas={kprog(T, K.G + 0.3, K.G + 1.8)} />
         </>, 20)}
       </Escena>
       {/* 2 · la tortuga boba entierra sus huevos y se va (corte de la playa) */}
       <Escena T={T} a={K.N} b={K.Li} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
-          <rect x={0} y={620} width={KW} height={KH} fill={TH.arena} stroke={KC.ink} strokeWidth={6} />
+        {fsvg(<g transform="translate(430 580) scale(1.3) translate(-420 -620)">
+          <rect x={-200} y={620} width={KW + 400} height={KH} fill={TH.arena} stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 60 }, (_, i) => { const r = krng(i + 40); return <circle key={i} cx={r() * KW} cy={650 + r() * 1200} r={3 + r() * 4} fill={TH.arena2} />; })}
           <path d="M 400 625 L 380 800 Q 160 830 170 1000 Q 190 1180 420 1190 Q 660 1180 670 1000 Q 680 830 460 800 L 450 625 Z" fill={TH.arena3} stroke={KC.ink} strokeWidth={5} strokeDasharray="16 10" />
           {NIDO.map(([ex, ey], i) => <Huevo key={i} id={'n' + i} x={420 + ex} y={880 + ey} r={28 * kprog(T, K.N - 0.4 + i * 0.015, K.N + 0.1 + i * 0.015, kEase.rebote)} />)}
           <Tortuga T={T} x={klerp(430, 900, kprog(T, K.N + 0.8, K.N + 3.2, kEase.suave))} y={600} s={0.75} tipo="boba" aleta={1} />
-        </>, 20)}
+        </g>, 20)}
       </Escena>
       {/* 3 · huevos de carey tomados directo de la madre: sin hongo */}
       <Escena T={T} a={K.Li} b={K.Ar} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
-          <rect x={0} y={1000} width={KW} height={KH} fill={TH.arena} stroke={KC.ink} strokeWidth={6} />
+        {fsvg(<g transform="translate(515 1020) scale(1.25) translate(-480 -1000)">
+          <rect x={-200} y={1000} width={KW + 400} height={KH} fill={TH.arena} stroke={KC.ink} strokeWidth={6} />
           <Tortuga T={T} x={360} y={960} s={1.2} tipo="carey" />
           {Array.from({ length: 4 }, (_, i) => { const u = kclamp(((T - K.Li - 0.6 - i * 0.9) / 0.6), 0, 1); if (T < K.Li + 0.6 + i * 0.9) return null;
             return <Huevo key={i} id={'l' + i} x={600 + i * 14 + u * 60} y={klerp(950, 1060 - i * 10, u)} r={26} />; })}
@@ -147,7 +147,7 @@ function TortugaShot() {
           <path d="M 590 1095 Q 640 1130 760 1110 Q 800 1100 790 1075 L 600 1070 Z" fill={TH.guante} stroke={KC.ink} strokeWidth={6} />
           <path d="M 790 1075 Q 840 1080 900 1140 L 860 1170 Q 820 1130 780 1110 Z" fill={TH.guante} stroke={KC.ink} strokeWidth={6} />
           {T > K.Li + 3.2 && <g transform={`translate(840 980) scale(${kprog(T, K.Li + 3.2, K.Li + 3.6, kEase.rebote)})`}><circle r={50} fill="#118a3a" stroke={KC.ink} strokeWidth={6} /><path d="M -22 2 L -6 18 L 24 -16" stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" /></g>}
-        </>, 20)}
+        </g>, 20)}
       </Escena>
       {/* 4 · al microscopio: el hongo vive en la arena y come materia muerta */}
       <Escena T={T} a={K.Ar} b={K.Ca} zoom={0.06}>
@@ -170,7 +170,7 @@ function TortugaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
         {fsvg((() => { const dis = kprog(T, K.Ca + 1.6, K.Ca + 3.0), ent = kprog(T, K.Ca + 2.8, K.Ca + 4.4, kEase.suave), red = kprog(T, K.Ca + 0.2, K.Ca + 1.6);
-          return <>
+          return <g transform="translate(540 880) scale(1.3) translate(-540 -800)">
             <rect x={0} y={960} width={KW} height={300} fill="#7e7862" opacity=".22" />
             {Array.from({ length: 13 }, (_, i) => { const cx = 40 + i * 84, cerca = Math.abs(cx - 540) < 130; const o = cerca ? 1 - dis * 0.75 : 1;
               return <g key={i} opacity={o}><rect x={cx - 38} y={640} width={76} height={220} rx={26} fill="#e8e2d2" stroke={KC.ink} strokeWidth={5} />
@@ -186,7 +186,7 @@ function TortugaShot() {
             <path d={`M 540 600 L 540 ${600 + ent * 420}`} stroke={KC.ink} strokeWidth={22} strokeLinecap="round" opacity={ent > 0 ? 1 : 0} />
             <path d={`M 540 600 L 540 ${600 + ent * 420}`} stroke={TH.hifa} strokeWidth={14} strokeLinecap="round" opacity={ent > 0 ? 1 : 0} />
             {ent > 0.85 && <path d={`M 540 1010 Q ${540 - 90 * (ent - 0.85) / 0.15} 1050 ${540 - 160 * (ent - 0.85) / 0.15} 1080 M 540 1010 Q ${540 + 90 * (ent - 0.85) / 0.15} 1050 ${540 + 160 * (ent - 0.85) / 0.15} 1070`} stroke={TH.hifa} strokeWidth={10} fill="none" strokeLinecap="round" />}
-          </>; })(), 20)}
+          </g>; })(), 20)}
       </Escena>
       {/* 6 · manchas por fuera; adentro, el embrión muere */}
       <Escena T={T} a={K.M} b={K.Co} zoom={0.05}>
@@ -213,17 +213,19 @@ function TortugaShot() {
         <div style={{ position:'absolute', inset:0, background:TH.arena3 }}></div>
         {fsvg(<>
           {Array.from({ length: 50 }, (_, i) => { const r = krng(i + 70); return <circle key={i} cx={r() * KW} cy={r() * KH} r={4 + r() * 5} fill={TH.arena2} />; })}
+          <g transform="translate(540 880) scale(1.3) translate(-540 -790)">
           {VECINOS.map(([vx, vy], i) => <Huevo key={i} id={'v' + i} x={540 + vx} y={790 + vy} r={105} manchas={i === 0 ? 1 : (i === 1 || i === 4 || i === 6 ? kprog(T, K.Co + 1.0, K.Co + 2.4) * 0.45 : 0)} />)}
           {[[1, -1], [4, 0], [6, 0]].map(([j], k) => { const [vx, vy] = VECINOS[j]; const q = kprog(T, K.Co + 0.2 + k * 0.2, K.Co + 1.2 + k * 0.2);
             return <path key={k} d={`M 540 790 Q ${540 + vx * 0.5 + 30} ${790 + vy * 0.5 - 30} ${540 + vx * q} ${790 + vy * q}`} stroke={TH.hifa} strokeWidth={10} fill="none" strokeLinecap="round" style={{ filter:'drop-shadow(0 0 4px #000)' }} />; })}
+          </g>
         </>, 20)}
       </Escena>
       {/* 8 · re-gancho: ¿por qué unos nidos se salvan? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Interrogacion T={T} x={300} y={820} tam={400} />
-          {[[160, 1010, 0], [420, 1010, 1]].map(([nx, ny, mal], k) => <g key={k}>
+          <Interrogacion T={T} x={540} y={900} tam={400} />
+          {[[160, 1010, 0], [420, 1010, 1]].map(([nx, ny, mal], k) => <g key={k} transform="translate(540 1080) scale(1.7) translate(-290 -1010)">
             <path d={`M ${nx - 110} ${ny} A 110 90 0 0 0 ${nx + 110} ${ny} Z`} fill={TH.arena3} stroke={KC.ink} strokeWidth={6} />
             {[[-50, 20], [0, 26], [50, 20], [-25, 60], [25, 60]].map(([ex, ey], i) => <Huevo key={i} id={`p${k}${i}`} x={nx + ex} y={ny + ey} r={22} manchas={mal ? 1 : 0} />)}
           </g>)}
@@ -233,34 +235,36 @@ function TortugaShot() {
       <Escena T={T} a={K.E} b={K.D} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <path d="M 760 820 Q 820 900 800 1000 Q 880 1060 1080 1040 L 1080 760 Q 900 740 760 820 Z" fill="#ffe9a8" stroke={KC.ink} strokeWidth={6} />
+          <g transform="translate(560 800) scale(1.45) translate(-620 -900)">
+          <path d="M 760 820 Q 820 900 800 1000 Q 880 1060 1080 1040 L 1080 760 Q 900 740 760 820 Z" fill={TH.tierra} stroke={KC.ink} strokeWidth={6} />
           {[[380, 870, 30], [450, 830, 24], [520, 880, 22], [600, 950, 46], [560, 1020, 26], [470, 1010, 20], [400, 960, 18]].map(([ix, iy, ir], i) =>
-            <circle key={i} cx={ix} cy={iy} r={ir} fill={i === 3 ? KC.gold2 : '#ffe9a8'} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.E + 0.8 + i * 0.06, K.E + 1.1 + i * 0.06)} />)}
-          {Array.from({ length: 29 }, (_, i) => { const on = kprog(T, K.E + 1.6 + i * 0.05, K.E + 1.9 + i * 0.05, kEase.rebote); const col = i < 13 ? TH.arena : i < 21 ? TH.mar2 : '#8a6a4a';
-            return on > 0 ? <circle key={i} cx={110 + (i % 15) * 62} cy={1050 + Math.floor(i / 15) * 58} r={24 * on} fill={col} stroke={KC.ink} strokeWidth={4} /> : null; })}
+            <circle key={i} cx={ix} cy={iy} r={ir} fill={i === 3 ? KC.gold2 : TH.tierra} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.E - 0.3 + i * 0.06, K.E + 0.1 + i * 0.06)} />)}
+          </g>
+          {Array.from({ length: 29 }, (_, i) => { const on = kprog(T, K.E + 1.6 + i * 0.05, K.E + 1.9 + i * 0.05, kEase.rebote); const col = i < 13 ? TH.arenaClara : i < 21 ? TH.mar2 : '#8a6a4a';
+            return on > 0 ? <circle key={i} cx={110 + (i % 15) * 62} cy={1190 + Math.floor(i / 15) * 60} r={24 * on} fill={col} stroke={KC.ink} strokeWidth={4} /> : null; })}
         </>, 20)}
       </Escena>
       {/* 10 · los datos: arena seca vs. nidos inundados */}
       <Escena T={T} a={K.D} b={K.Mu} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        {fsvg((() => { const u = kprog(T, K.D + 0.6, K.D + 2.4, kEase.sale), ola = kprog(T, K.D + 2.4, K.D + 3.6, kEase.suave), H = 380, B = 1090;
+        {fsvg((() => { const u = kprog(T, K.D + 0.6, K.D + 2.4, kEase.sale), ola = kprog(T, K.D + 2.4, K.D + 3.6, kEase.suave), H = 560, B = 1240;
           return <>
             <line x1={120} y1={B} x2={960} y2={B} stroke={KC.ink} strokeWidth={8} />
-            <rect x={210} y={B - H * 0.296 * u} width={240} height={H * 0.296 * u} fill={TH.arena} stroke={KC.ink} strokeWidth={7} />
+            <rect x={210} y={B - H * 0.296 * u} width={240} height={H * 0.296 * u} fill={TH.arenaClara} stroke={KC.ink} strokeWidth={7} />
             <rect x={630} y={B - H * 0.997 * u} width={240} height={H * 0.997 * u} fill={TH.mar2} stroke={KC.ink} strokeWidth={7} />
             <text x={330} y={B - H * 0.296 * u - 24} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.ink} opacity={u}>29.6 %</text>
             <text x={750} y={B - H * 0.997 * u - 24} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.ink} opacity={u}>99.7 %</text>
             <text x={330} y={B + 44} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>arena seca · 13 nidos</text>
             <text x={750} y={B + 44} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>inundados · 8 nidos</text>
-            {ola > 0 && <path d={`M 600 ${B} ` + Array.from({ length: 9 }, (_, i) => `L ${600 + i * 37.5} ${(B - ola * 120 + Math.sin(i * 0.9 + T * 4) * 10).toFixed(1)}`).join(' ') + ` L 900 ${B} Z`} fill="#1f7fd1" opacity=".55" stroke="#fff" strokeWidth={5} />}
+            {ola > 0 && <path d={`M 600 ${B} ` + Array.from({ length: 9 }, (_, i) => `L ${600 + i * 37.5} ${(B - ola * 180 + Math.sin(i * 0.9 + T * 4) * 10).toFixed(1)}`).join(' ') + ` L 900 ${B} Z`} fill="#1f7fd1" opacity=".55" stroke="#fff" strokeWidth={5} />}
           </>; })(), 20)}
       </Escena>
       {/* 11 · el mundo: seis especies con el hongo; la golfina también anida en Oaxaca */}
       <Escena T={T} a={K.Mu} b={K.Cl} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={20} y={470} width={1040} height={460} rx={30} fill="#bfe9ff" stroke={KC.ink} strokeWidth={6} />
-          {CONT.map((poly, i) => <path key={i} d={'M ' + poly.map(([lo, la]) => MP(lo, la).map((v) => v.toFixed(1)).join(' ')).join(' L ') + ' Z'} fill="#ffe9a8" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />)}
+          <rect x={20} y={560} width={1040} height={460} rx={30} fill="#10314a" stroke={KC.ink} strokeWidth={6} />
+          {CONT.map((poly, i) => <path key={i} d={'M ' + poly.map(([lo, la]) => MP(lo, la).map((v) => v.toFixed(1)).join(' ')).join(' L ') + ' Z'} fill={TH.tierra} stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />)}
           {SITIOS.map(([lo, la], i) => { const [px, py] = MP(lo, la); const on = kprog(T, K.Mu + 0.5 + i * 0.2, K.Mu + 0.8 + i * 0.2, kEase.rebote);
             return <circle key={i} cx={px} cy={py} r={16 * on} fill={KC.red} stroke={KC.ink} strokeWidth={4} />; })}
           {(() => { const [ox, oy] = MP(...OAXACA), [gx, gy] = MP(-80.8, -1.5), q = kprog(T, K.Mu + 5.0, K.Mu + 6.0, kEase.sale);
@@ -269,8 +273,8 @@ function TortugaShot() {
               <circle cx={ox} cy={oy} r={14 * q} fill="#7c8a5a" stroke={KC.ink} strokeWidth={4} />
             </g> : null; })()}
           {ESPECIES.map(([nom, col], i) => { const on = kprog(T, K.Mu + 2.0 + i * 0.3, K.Mu + 2.4 + i * 0.3, kEase.rebote);
-            return <g key={i}><TortugaIcono x={115 + i * 170} y={1020} s={0.8} color={col} on={on} />
-              <text x={115 + i * 170} y={1095} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink} opacity={on}>{nom}</text></g>; })}
+            return <g key={i}><TortugaIcono x={115 + i * 170} y={1170} s={1.1} color={col} on={on} />
+              <text x={115 + i * 170} y={1275} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={on}>{nom}</text></g>; })}
         </>, 20)}
       </Escena>
       {/* 12 · su temperatura favorita = la del nido */}
@@ -278,8 +282,8 @@ function TortugaShot() {
         <FondoLunares color={KC.orange} />
         <Termometro x={220} y={420} alto={620} max={40} marcas={[20, 25, 30, 35, 40]} valor={klerp(18, 29.7, kprog(T, K.Cl + 0.3, K.Cl + 1.8, kEase.sale))} />
         {fsvg(<>
-          <line x1={290} y1={580} x2={klerp(290, 420, kprog(T, K.Cl + 1.6, K.Cl + 2.0))} y2={580} stroke={KC.ink} strokeWidth={6} strokeDasharray="10 8" />
-          <g opacity={kprog(T, K.Cl + 2.4, K.Cl + 2.8)}>
+          <line x1={290} y1={580} x2={klerp(290, 400, kprog(T, K.Cl + 1.6, K.Cl + 2.0))} y2={580} stroke={KC.ink} strokeWidth={6} strokeDasharray="10 8" />
+          <g opacity={kprog(T, K.Cl + 2.4, K.Cl + 2.8)} transform="translate(700 980) scale(1.9) translate(-590 -850)">
             <path d="M 470 820 A 120 90 0 0 0 710 820 Z" fill={TH.arena3} stroke={KC.ink} strokeWidth={6} />
             {[[-50, 20], [0, 26], [50, 20], [-25, 60], [25, 60]].map(([ex, ey], i) => <Huevo key={i} id={`c${i}`} x={590 + ex} y={820 + ey} r={22} />)}
           </g>
@@ -289,59 +293,59 @@ function TortugaShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <Playa T={T} ola={kprog(T, K.C + 1.6, K.C + 3.6, kEase.suave) * 0.35} />
         {fsvg(<>
-          <ellipse cx={360} cy={1150} rx={170} ry={26} fill="rgba(0,0,0,.18)" />
-          <Huevo id="c" x={360} y={1000} r={150} manchas={1} />
-          {[[520, 1150, 700, 1080], [700, 1080, 900, 1120], [700, 1080, 760, 960], [450, 1170, 260, 1200]].map(([x1, y1, x2, y2], i) => { const q = kprog(T, K.C + 0.4 + i * 0.2, K.C + 1.4 + i * 0.2);
-            return <line key={i} x1={x1} y1={y1} x2={klerp(x1, x2, q)} y2={klerp(y1, y2, q)} stroke={TH.hifa} strokeWidth={8} strokeLinecap="round" opacity=".9" style={{ filter:'drop-shadow(0 0 3px #000)' }} />; })}
+          <ellipse cx={440} cy={1385} rx={320} ry={46} fill="rgba(0,0,0,.3)" />
+          <Huevo id="c" x={440} y={1100} r={285} manchas={1} />
+          {[[650, 1375, 840, 1300], [840, 1300, 1010, 1420], [840, 1300, 910, 1150], [520, 1395, 280, 1450]].map(([x1, y1, x2, y2], i) => { const q = kprog(T, K.C + 0.4 + i * 0.2, K.C + 1.4 + i * 0.2);
+            return <line key={i} x1={x1} y1={y1} x2={klerp(x1, x2, q)} y2={klerp(y1, y2, q)} stroke={TH.hifa} strokeWidth={12} strokeLinecap="round" opacity=".9" style={{ filter:'drop-shadow(0 0 3px #000)' }} />; })}
         </>, 20)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.4} until={K.N - 0.3} texto="no se echó a perder: hongo" x={330} y={620} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.N + 0.5} until={K.Li - 0.3} x={560} y={470} texto="tortuga boba" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.N + 0.8} until={K.Li - 0.3} x={560} y={520} texto="Caretta caretta" it tam={32} color={KC.ink} />
-      <NumeroGigante T={T} at={K.N + 0.4} until={K.Li - 0.3} valor={100} dur={1.2} prefijo="≈ " etiqueta="huevos por nido" x={850} y={1000} tam={120} color={KC.yellow} />
+      <Chip T={T} at={K.G + 1.4} until={K.N - 0.3} texto="no se echó a perder: hongo" x={540} y={620} tam={34} borde={KC.red} />
+      <Etq T={T} at={K.N + 0.5} until={K.Li - 0.3} x={60} y={330} texto="tortuga boba" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.N + 0.8} until={K.Li - 0.3} x={60} y={382} texto="Caretta caretta" it tam={32} color={KC.ink} />
+      <NumeroGigante T={T} at={K.N + 0.4} until={K.Li - 0.3} valor={100} dur={1.2} prefijo="≈ " etiqueta="huevos por nido" x={900} y={1010} tam={120} color={KC.yellow} />
       <Etq T={T} at={K.Li + 0.3} until={K.Ar - 0.3} x={60} y={470} texto="carey · Ecuador" tam={36} color={KC.ink} />
       <Etq T={T} at={K.Li + 0.6} until={K.Ar - 0.3} x={60} y={520} texto="Eretmochelys imbricata" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Li + 3.0} until={K.Ar - 0.3} texto="recién puestos, antes de tocar la arena: sin hongo" x={540} y={1140} tam={26} borde="#118a3a" />
-      <Chip T={T} at={K.Ar + 0.1} until={K.Ca - 0.3} texto="AL MICROSCOPIO · EN LA ARENA" x={540} y={400} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ar + 0.6} until={K.Ca - 0.3} x={60} y={470} texto="complejo Fusarium solani" it tam={32} color={KC.mint} />
-      <Etq T={T} at={K.Ar + 1.4} until={K.Ca - 0.3} x={640} y={780} texto="conidios" lado="izq" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.Li + 3.0} until={K.Ar - 0.3} texto="recién puestos, antes de tocar la arena: sin hongo" x={540} y={1330} tam={26} borde="#118a3a" />
+      <Chip T={T} at={K.Ar + 0.1} until={K.Ca - 0.3} texto="AL MICROSCOPIO · EN LA ARENA" x={540} y={330} tam={32} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Ar + 0.6} until={K.Ca - 0.3} x={60} y={405} texto="complejo Fusarium solani" it tam={32} color={KC.mint} />
+      <Etq T={T} at={K.Ar + 1.4} until={K.Ca - 0.3} x={565} y={610} texto="conidios" tam={28} color={KC.texto} />
       <Etq T={T} at={K.Ar + 2.0} until={K.Ca - 0.3} x={920} y={900} texto="hoja muerta" lado="izq" tam={28} color={KC.yellow} />
       <Etq T={T} at={K.Ar + 2.6} until={K.Ca - 0.3} x={60} y={1150} texto="F. falciforme · F. keratoplasticum" it tam={28} color={KC.texto} />
-      <Chip T={T} at={K.Ca + 0.1} until={K.M - 0.3} texto="POR DENTRO · LA CÁSCARA" x={540} y={400} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ca + 0.5} until={K.M - 0.3} x={60} y={470} texto="hifas sobre un huevo dañado" tam={28} color={TH.hifa} />
-      <Chip T={T} at={K.Ca + 1.0} until={K.M - 0.3} x={190} y={750} texto="capa mineral" tam={24} borde={KC.yellow} />
-      <Chip T={T} at={K.Ca + 1.3} until={K.M - 0.3} x={170} y={915} texto="membrana" tam={22} borde={KC.lilac} />
-      <Chip T={T} at={K.Ca + 1.8} until={K.M - 0.3} texto="ácidos · enzimas" x={790} y={520} tam={30} borde={KC.yellow} />
-      <Etq T={T} at={K.Ca + 3.2} until={K.M - 0.3} x={600} y={1110} texto="adentro" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.Ca + 0.1} until={K.M - 0.3} texto="POR DENTRO · LA CÁSCARA" x={400} y={330} tam={32} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Ca + 0.5} until={K.M - 0.3} x={60} y={405} texto="hifas sobre un huevo dañado" tam={28} color={TH.hifa} />
+      <Chip T={T} at={K.Ca + 1.0} until={K.M - 0.3} x={200} y={815} texto="capa mineral" tam={24} borde={KC.yellow} />
+      <Chip T={T} at={K.Ca + 1.3} until={K.M - 0.3} x={180} y={1030} texto="membrana" tam={22} borde={KC.lilac} />
+      <Chip T={T} at={K.Ca + 1.8} until={K.M - 0.3} texto="ácidos · enzimas" x={850} y={400} tam={30} borde={KC.yellow} />
+      <Etq T={T} at={K.Ca + 3.2} until={K.M - 0.3} x={620} y={1283} texto="adentro" tam={28} color={KC.texto} />
       <Etq T={T} at={K.M + 0.6} until={K.Co - 0.3} x={60} y={470} texto="manchas amarillas y azuladas" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Co + 0.4} until={K.P - 0.3} x={60} y={470} texto="de huevo en huevo" tam={34} color={KC.texto} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.D - 0.3} anio="2011" quien="Boa Vista, Cabo Verde" revista="tortuga boba · PLoS ONE, 2014" x={440} y={580} />
-      <Etq T={T} at={K.E + 1.0} until={K.D - 0.3} x={650} y={950} texto="Boa Vista" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.D + 0.3} until={K.Mu - 0.3} x={60} y={390} texto="huevos que no nacieron" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.D + 3.2} until={K.Mu - 0.3} texto="hongo en los huevos: 78 % inundados" x={540} y={470} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.D + 3.6} until={K.Mu - 0.3} texto="vs 21 % arena seca (5 nidos por grupo)" x={540} y={540} tam={28} borde={KC.cyan} />
-      <Chip T={T} at={K.D + 4.6} until={K.Mu - 0.3} texto="la marea también ahoga los huevos" x={330} y={820} tam={24} borde={KC.yellow} />
-      <Chip T={T} at={K.Mu + 0.3} until={K.Cl - 0.3} texto="2005–2012 · 6 especies · América, África y Australia" x={540} y={440} tam={26} borde={KC.red} />
+      <Etq T={T} at={K.Co + 0.4} until={K.P - 0.3} x={60} y={380} texto="de huevo en huevo" tam={34} color={KC.texto} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.D - 0.3} anio="2011" quien="Boa Vista, Cabo Verde" revista="tortuga boba · PLoS ONE, 2014" x={400} y={360} />
+      <Etq T={T} at={K.E + 1.0} until={K.D - 0.3} x={602} y={880} texto="Boa Vista" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.D + 0.3} until={K.Mu - 0.3} x={60} y={300} texto="huevos que no nacieron" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.D + 3.2} until={K.Mu - 0.3} texto="hongo en los huevos: 78 % inundados" x={540} y={385} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.D + 3.6} until={K.Mu - 0.3} texto="vs 21 % arena seca (5 nidos por grupo)" x={540} y={455} tam={28} borde={KC.cyan} />
+      <Chip T={T} at={K.D + 4.6} until={K.Mu - 0.3} texto="la marea también ahoga los huevos" x={330} y={900} tam={24} borde={KC.yellow} />
+      <Chip T={T} at={K.Mu + 0.3} until={K.Cl - 0.3} texto="2005–2012 · 6 especies · América, África y Australia" x={540} y={500} tam={26} borde={KC.red} />
       <Etq T={T} at={K.Mu + 5.6} until={K.Cl - 0.3} x={MP(...OAXACA)[0] + 10} y={MP(...OAXACA)[1] - 120} texto="Oaxaca: aquí anida la golfina" tam={24} color={KC.ink} />
-      <Etq T={T} at={K.Cl + 1.8} until={K.C - 0.3} x={420} y={580} texto="el hongo crece mejor: ≈ 29.7 °C" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Cl + 2.6} until={K.C - 0.3} x={720} y={960} texto="nido incubándose" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Cl + 3.0} until={K.C - 0.3} texto="su temperatura favorita = la del nido" x={640} y={1010} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="su peligro: la arena" x={300} y={620} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={1020} y={920} lado="izq" texto="hifas en la arena (esquemático)" tam={22} color={KC.ink} />
+      <Etq T={T} at={K.Cl + 1.8} until={K.C - 0.3} x={400} y={580} texto="el hongo crece mejor: ≈ 29.7 °C" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Cl + 2.6} until={K.C - 0.3} x={480} y={870} texto="nido incubándose" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Cl + 3.0} until={K.C - 0.3} texto="su temperatura favorita = la del nido" x={650} y={1240} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="su peligro: la arena" x={540} y={620} tam={36} borde={KC.red} />
+      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={1040} y={1470} lado="izq" texto="hifas en la arena (esquemático)" tam={22} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.N} texto="4 cm" largo={300} color={KC.ink} y={1450} />
-      <BarraEscala T={T} at={K.N} until={K.Li} texto="20 cm" largo={280} color={KC.ink} y={1450} />
-      <BarraEscala T={T} at={K.Li} until={K.Ar} texto="50 cm" largo={250} color={KC.ink} y={1450} />
+      <BarraEscala T={T} at={K.G} until={K.N} texto="4 cm" largo={570} color={KC.ink} y={1450} />
+      <BarraEscala T={T} at={K.N} until={K.Li} texto="20 cm" largo={364} color={KC.ink} y={1450} />
+      <BarraEscala T={T} at={K.Li} until={K.Ar} texto="50 cm" largo={313} color={KC.ink} y={1450} />
       <BarraEscala T={T} at={K.Ar} until={K.Ca} texto="50 µm" largo={180} y={1450} />
-      <BarraEscala T={T} at={K.Ca} until={K.M} texto="100 µm" largo={90} y={1450} />
+      <BarraEscala T={T} at={K.Ca} until={K.M} texto="100 µm" largo={117} y={1450} />
       <BarraEscala T={T} at={K.M} until={K.Co} texto="4 cm" largo={500} color={KC.ink} y={1450} />
-      <BarraEscala T={T} at={K.Co} until={K.P} texto="4 cm" largo={210} y={1450} />
+      <BarraEscala T={T} at={K.Co} until={K.P} texto="4 cm" largo={273} y={1450} />
       <BarraEscala T={T} at={K.E} until={K.D} texto="mapa esquemático" largo={0} color={KC.ink} y={1450} />
       <BarraEscala T={T} at={K.Mu} until={K.Cl} texto="mapa esquemático" largo={0} color={KC.ink} y={1450} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="4 cm" largo={300} color={KC.ink} y={1450} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="4 cm" largo={570} color={KC.ink} y={1450} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="No se echó a perder: *lo mató un hongo.*" />
