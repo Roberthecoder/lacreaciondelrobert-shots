@@ -272,7 +272,7 @@ function CigarraShot() {
   // 4 · el tapón: se caen los anillos uno por uno
   const caen = [0, 1, 2, 3].map((k) => K.Ta + 0.4 + k * 0.55);
   const perdidosTa = caen.reduce((a, t0) => a + (T >= t0 ? 1 : 0), 0);
-  const tc = { x: 620, y: 930, s: 2.15, rot: -3, espejo: false };
+  const tc = { x: 620, y: 1100, s: 2.15, rot: -3, espejo: false };
   // 5 · salero: vuela cruzando la pantalla
   const sC = (t) => ({ x: klerp(520, 700, kprog(t, K.Sa - 0.3, K.P + 0.3)), y: 960 + Math.sin(t * 2.4) * 30, s: 1.7, rot: -6 + Math.sin(t * 2) * 4, espejo: false });
   // 7–9 · el experimento: macho con tapón en la rama (mira a la bocina)
@@ -328,7 +328,7 @@ function CigarraShot() {
       <Escena T={T} a={K.A} b={K.Ta} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
-        {fsvg(<Cigarra T={T} x={620} y={930} s={2.15} rot={-3} rayos={1} hongo={kprog(T, K.A + 0.1, K.Ta)} infla={kprog(T, K.A + 1.0, K.Ta + 0.2, kEase.suave)} perdidos={0} id="a" alas={34} />)}
+        {fsvg(<Cigarra T={T} x={620} y={1100} s={2.15} rot={-3} rayos={1} hongo={kprog(T, K.A + 0.1, K.Ta)} infla={kprog(T, K.A + 1.0, K.Ta + 0.2, kEase.suave)} perdidos={0} id="a" alas={34} />)}
       </Escena>
       {/* 4 · se caen los últimos anillos: queda el tapón de esporas */}
       <Escena T={T} a={K.Ta} b={K.Sa} zoom={0.04}>
@@ -435,10 +435,10 @@ function CigarraShot() {
       <Senal T={T} at={K.S + 1.4} until={K.A - 0.3} px={zS([850, n2y + 90])[0]} py={zS([850, n2y + 90])[1]} tx={1030} ty={1400} texto="ninfa de cigarra" tam={30} ancla="der" />
       <Senal T={T} at={K.S + 2.3} until={K.A - 0.3} px={zS([328, n1y + 53])[0]} py={zS([328, n1y + 53])[1]} tx={50} ty={1400} texto="se contagia al salir" tam={30} color={KC.gold2} />
       <Chip T={T} at={K.A + 0.2} until={K.Ta - 0.3} texto="POR DENTRO · esquemático" x={400} y={440} tam={32} borde={KC.cyan} mono />
-      <Senal T={T} at={K.A + 0.9} until={K.Ta - 0.3} px={zA(cPunto(tc, -90, 0))[0]} py={zA(cPunto(tc, -90, 0))[1]} tx={60} ty={1310} texto="hongo dentro del abdomen" tam={30} />
-      <Etq T={T} at={K.A + 1.6} until={K.Ta - 0.3} x={330} y={1180} texto="se infla" tam={34} color={KC.gold2} />
-      <Senal T={T} at={K.Ta + 0.5} until={K.Sa - 0.3} px={zTa(cPunto(tc, -150, 60))[0]} py={zTa(cPunto(tc, -150, 60))[1]} tx={400} ty={1320} texto="anillos que se caen" tam={30} />
-      <Senal T={T} at={K.Ta + 2.6} until={K.Sa - 0.3} px={zTa(cPunto(tc, -170, -20))[0]} py={zTa(cPunto(tc, -170, -20))[1]} tx={50} ty={1200} texto="tapón de esporas" tam={32} />
+      <Senal T={T} at={K.A + 0.9} until={K.Ta - 0.3} px={zA(cPunto(tc, -90, 0))[0]} py={zA(cPunto(tc, -90, 0))[1]} tx={60} ty={1470} texto="hongo dentro del abdomen" tam={30} />
+      <Etq T={T} at={K.A + 1.6} until={K.Ta - 0.3} x={330} y={1350} texto="se infla" tam={34} color={KC.gold2} />
+      <Senal T={T} at={K.Ta + 0.5} until={K.Sa - 0.3} px={zTa(cPunto(tc, -150, 60))[0]} py={zTa(cPunto(tc, -150, 60))[1]} tx={420} ty={1480} texto="anillos que se caen" tam={30} />
+      <Senal T={T} at={K.Ta + 2.6} until={K.Sa - 0.3} px={zTa(cPunto(tc, -170, -20))[0]} py={zTa(cPunto(tc, -170, -20))[1]} tx={50} ty={1380} texto="tapón de esporas" tam={32} />
       <Lupa T={T} at={K.Ta + 3.0} until={K.Sa - 0.35} x={830} y={500} r={180} fx={zTa(cPunto(tc, -175, 8))[0]} fy={zTa(cPunto(tc, -175, 8))[1]} tinte={KC.gold}
         etiqueta="conidios (esporas)" interior={(Tl, r) => <svg width={r * 2} height={r * 2}>
           <rect width={r * 2} height={r * 2} fill="#1a1406" />
