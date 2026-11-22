@@ -417,7 +417,7 @@ function PolinizadoresShot() {
       {/* 10 · dato raro: moscas en la flor del aguacate */}
       <Escena T={T} a={K.Mo} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(560 900) scale(1.9) translate(-850 -840)"><path d="M 1100 1150 Q 860 900 820 640" stroke="#6b4a2a" strokeWidth={14} fill="none" strokeLinecap="round" />
+        {svg(<g transform="translate(560 1020) scale(1.9) translate(-850 -800)"><path d="M 1050 1085 Q 850 870 820 640" stroke="#6b4a2a" strokeWidth={14} fill="none" strokeLinecap="round" />
           {[[820, 640, 1.3], [700, 760, 1.15], [930, 780, 1.2], [790, 900, 1.05], [960, 960, 1.0]].map(([a, b, s], i) => <g key={i}><line x1={a} y1={b} x2={a + 40} y2={b + 60} stroke="#6b4a2a" strokeWidth={6} /><FlorAguacate x={a} y={b} s={s} /></g>)}
           <AbejaMiel T={T} id="mo" x={700 + Math.sin(T * 3) * 6} y={720} s={0.9} rot={10} />
           <Mosca T={T} x={klerp(1180, 930, kprog(T, K.Mo + 0.3, K.Mo + 1.2, kEase.sale))} y={klerp(560, 742, kprog(T, K.Mo + 0.3, K.Mo + 1.2, kEase.sale))} s={1.6} rot={-8} /></g>)}
@@ -453,8 +453,8 @@ function PolinizadoresShot() {
       <Etq T={T} at={K.To + 1.5} until={K.Mo - 0.2} x={60} y={1290} texto="60 %: no los necesitan" lado="der" tam={26} color={KC.ink} />
       <Etq T={T} at={K.To + 1.9} until={K.Mo - 0.2} x={60} y={1335} texto="(cereales, raíces)" lado="der" tam={26} color={KC.ink} />
       <NumeroGigante T={T} at={K.To + 2.6} until={K.Mo - 0.2} valor={8} desde={5} dur={0.8} prefijo="5–" sufijo=" %" etiqueta="se perdería:" x={760} y={1420} tam={120} color={KC.red} />
-      <Etq T={T} at={K.Mo + 0.9} until={K.C - 0.2} x={990} y={540} texto="mosca azul" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 1.3} until={K.C - 0.2} x={60} y={1150} texto="flor de aguacate" lado="der" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 0.9} until={K.C - 0.2} x={990} y={736} texto="mosca azul" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 1.3} until={K.C - 0.2} x={60} y={1346} texto="flor de aguacate" lado="der" tam={28} color={KC.ink} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="te quedan" x={340} y={1375} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.C + 2.4} until={K.Ou - 0.1} texto="vitamina A · hierro · folato" x={310} y={PY + TZY * PS} tam={30} borde={KC.gold} fondo={`rgba(14,15,18,${0.82 - 0.4 * kprog(T, K.C + 4.0, K.C + 5.0)})`} color={mixHex('#F6F3EC', '#7a7a7a', kprog(T, K.C + 4.0, K.C + 5.0))} />
 
