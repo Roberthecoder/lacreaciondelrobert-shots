@@ -214,7 +214,8 @@ function LapizShot() {
   const pres = T > K.Es + 1.0 && veces < 20 ? Math.max(0, Math.sin((ciclo / 0.28) * Math.PI)) : 0;
   const mitadCu = K.Cu + 3.4;
   // pase a mano (cine): la hoja de papel llena el cuadro; g0p pasa un punto del papel a la pantalla
-  const G0 = 'translate(540 860) scale(1.45) translate(-440 -910)', g0p = (p) => [(p[0] - 440) * 1.45 + 540, (p[1] - 910) * 1.45 + 860];
+  // vuelta de encuadre: todo el conjunto (papel, lápiz, diamante) baja 130 px para centrarlo en el cuadro
+  const G0 = 'translate(540 990) scale(1.45) translate(-440 -910)', g0p = (p) => [(p[0] - 440) * 1.45 + 540, (p[1] - 910) * 1.45 + 990];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el lápiz escribe; aparece el diamante */}
@@ -225,8 +226,8 @@ function LapizShot() {
             <Papel w={w0} />
             <Lapiz x={tx0} y={ty0} s={0.78} rot={-20 + Math.sin(T * 9) * 1.5} />
           </g>
-          <Diamante T={T} x={800} y={1180} s={1.1} o={diam0} />
-          {diam0 > 0.5 && <text x={575} y={1345} textAnchor="middle" style={{ font:`400 170px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.G + 2.6, K.G + 3.0)}>=</text>}
+          <Diamante T={T} x={800} y={1290} s={1.1} o={diam0} />
+          {diam0 > 0.5 && <text x={600} y={1305} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill="#0b1020" opacity={kprog(T, K.G + 2.6, K.G + 3.0)}>=</text>}
         </SvgCapa>
       </Escena>
       {/* 1 · la mina: grafito + arcilla, nada de plomo */}
@@ -347,7 +348,7 @@ function LapizShot() {
             <Papel w={1} />
             <Lapiz x={LINEA(1)[0]} y={LINEA(1)[1]} s={0.78} rot={-20} />
           </g>
-          <Diamante T={T} x={800} y={1180} s={1.1} />
+          <Diamante T={T} x={800} y={1290} s={1.1} />
         </SvgCapa>
       </Escena>
 
@@ -358,9 +359,9 @@ function LapizShot() {
         interior={(TT, r) => <svg width={2 * r} height={2 * r}><rect width={2 * r} height={2 * r} fill="#0d1424" /><Pila T={TT} cx={r} base={r + 95} gap={62} n={4} W={130} H={90} /></svg>} />
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.G + 2.6} texto="plomo" x={320} y={1390} tam={60} />
-      <Chip T={T} at={K.G + 2.8} until={K.Mi - 0.2} texto="grafito = diamante = C" y={1500} tam={46} borde={KC.ink} />
-      <Etq T={T} at={K.G + 2.9} until={K.Mi - 0.2} x={790} y={1408} lado="izq" texto="diamante" tam={34} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.G + 2.6} texto="plomo" x={320} y={1470} tam={60} />
+      <Chip T={T} at={K.G + 2.8} until={K.Mi - 0.2} texto="grafito = diamante = C" y={1540} tam={46} borde={KC.ink} />
+      <Etq T={T} at={K.G + 2.9} until={K.Mi - 0.2} x={680} y={1468} lado="izq" texto="diamante" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Mi + 0.2} until={K.Mi + 1.5} texto="corte de la punta" y={1500} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.Mi + 2.2} until={K.Ca - 0.2} texto="la mina: grafito + arcilla" y={1500} tam={42} borde={KC.yellow} />
       <BarraEscala T={T} at={K.Mi + 0.3} until={K.Mi + 1.4} texto="1 mm" largo={98} x={60} y={1400} />
