@@ -6,8 +6,8 @@ const KB = { te0:'#f1d58e', te1:'#b8681f', capa:'#ecdcb2', capa2:'#cdb684', vidr
 
 // Frasco de vidrio con té y la "madre" (capa) flotando. Base del frasco en (x, y).
 // te 0..1 = qué tan oscuro; capa 0..1 = grosor; capas = rayitas de capas apiladas; alza 0..1 = las pinzas levantan la capa.
-function Frasco({ T, x, y, s = 1, te = 1, capa = 1, capas = 2, alza = 0, burbujas = 1, nivel = 1 }) {
-  const top = -470, liq = top + 90 + (1 - nivel) * 60, grosor = 18 + 46 * capa, sube = 330 * kEase.sale(kclamp(alza, 0, 1));
+function Frasco({ T, x, y, s = 1, te = 1, capa = 1, capas = 2, alza = 0, burbujas = 1, nivel = 1, subeMax = 330 }) {
+  const top = -470, liq = top + 90 + (1 - nivel) * 60, grosor = 18 + 46 * capa, sube = subeMax * kEase.sale(kclamp(alza, 0, 1));
   const colorTe = mixHex(KB.te0, KB.te1, te);
   const borde = (yy, a = 0) => `M -196 ${yy} Q -100 ${yy - 10 + Math.sin(T * 2 + a) * 3} 0 ${yy - 4} Q 100 ${yy + 6 + Math.sin(T * 2.4 + a) * 3} 196 ${yy}`;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
@@ -153,11 +153,11 @@ function SelloTexto({ T, at, until, x, y, texto, color = KC.red, rot = -8, tam =
     border:`9px solid ${color}`, borderRadius:18, padding:'10px 28px', font:`400 ${tam}px/1 ${KF.titulo}`, color, background:'rgba(255,255,255,.88)', whiteSpace:'nowrap', letterSpacing:'.02em' }}>{texto}</div>;
 }
 // Barras de glucosa en ayunas (antes → después), en mg/dL.
-function BarrasGlucosa({ T, at, y = 520 }) {
+function BarrasGlucosa({ T, at, y = 520, x = 70, s = 1 }) {
   if (T < at) return null;
   const filas = [{ n:'kombucha', a:164, b:116, c:KC.orange }, { n:'placebo', a:162, b:141, c:'#9aa3ad' }];
   const esc = 3.2, baja = kprog(T, at + 0.9, at + 2.2, kEase.suave), o = kprog(T, at, at + 0.4);
-  return <div style={{ position:'absolute', left:70, top:y, zIndex:41, opacity:o, width:600 }}>
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, opacity:o, width:600, transform:`scale(${s})`, transformOrigin:'0 0' }}>
     <div style={{ font:`900 32px ${KF.texto}`, color:KC.ink, marginBottom:12 }}>azúcar en ayunas (mg/dL)</div>
     {filas.map((f, i) => { const v = klerp(f.a, f.b, baja); return <div key={i} style={{ marginBottom:22 }}>
       <div style={{ font:`700 30px ${KF.mono}`, color:KC.ink, marginBottom:6 }}>{f.n}: {f.a} → {Math.round(v)}</div>
@@ -180,20 +180,22 @@ function KombuchaShot() {
       <Escena T={T} a={K.G} b={K.Le} zoom={0.04}>
         <FondoLunares color={T < K.Te - 0.2 ? KC.yellow : KC.orange} />
         {fsvg(<>
-          <rect x={0} y={1190} width={KW} height={800} fill="#6a4d3b" stroke={KC.ink} strokeWidth={8} />
-          <Frasco T={T} x={380} y={1200} s={1.05} te={T < K.Te ? 0.75 : 0.45 + 0.4 * kprog(T, K.Te + 0.3, K.Le)} alza={alza0} capas={2} />
+          <rect x={0} y={1288} width={KW} height={800} fill="#3a2a20" stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(540 1300) scale(1.3) translate(-380 -1200)">
+          <Frasco T={T} x={380} y={1200} s={1.05} subeMax={220} te={T < K.Te ? 0.75 : 0.45 + 0.4 * kprog(T, K.Te + 0.3, K.Le)} alza={alza0} capas={2} />
           {T > K.Te - 0.2 && <g transform={`translate(${klerp(300, 330, kprog(T, K.Te, K.Te + 0.6))} ${klerp(200, 740, kprog(T, K.Te - 0.1, K.Te + 0.6, kEase.sale))})`}>
             <line x1={0} y1={-200} x2={0} y2={0} stroke="#fff" strokeWidth={4} /><rect x={-36} y={0} width={72} height={88} rx={8} fill="#d8a85c" stroke={KC.ink} strokeWidth={5} />
             <rect x={-24} y={-230} width={48} height={34} fill={KC.paper} stroke={KC.ink} strokeWidth={4} /></g>}
           {T > K.Te + 0.1 && [0, 1, 2].map((i) => { const p = kprog(T, K.Te + 0.3 + i * 0.25, K.Te + 0.8 + i * 0.25, kEase.sale);
             return <rect key={i} x={440 + i * 50} y={klerp(150, 800, p)} width={48} height={48} rx={6} fill="#fff" stroke={KC.ink} strokeWidth={5} transform={`rotate(${i * 20 + p * 90} ${464 + i * 50} ${klerp(174, 824, p)})`} opacity={1 - kprog(T, K.Te + 0.8 + i * 0.25, K.Te + 1.1 + i * 0.25)} />; })}
+          </g>
         </>)}
       </Escena>
       {/* 3–4 · al microscopio: levaduras parten el azúcar; bacterias vuelven ácido el alcohol */}
       <Escena T={T} a={K.Le} b={K.Hi} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:mixHex('#3a2410', KC.noche, 0.7) }}></div>
         <Ambiente T={T} n={22} color="rgba(255,220,150,.25)" />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1000) scale(1.25) translate(-540 -850)">
           {[[300, 620, 1.5, -10, 1], [620, 980, 1.2, 25, 2], [210, 1060, 1.1, 60, 3]].map(([x, y, s, r, sd], i) =>
             <Levadura key={i} x={x} y={y} s={s * kprog(T, K.Le + i * 0.25, K.Le + 0.5 + i * 0.25, kEase.rebote)} rot={r} yema={0.3 + 0.6 * kprog(T, K.Le + 1, K.Ac)} T={T} seed={sd} />)}
           {[[560, 640], [760, 820], [420, 860]].map(([x, y], i) => { const p = kprog(T, K.Le + 1.3 + i * 0.3, K.Le + 2.0 + i * 0.3); const fuera = kprog(T, K.Le + 2.4 + i * 0.3, K.Le + 3.0 + i * 0.3);
@@ -207,9 +209,9 @@ function KombuchaShot() {
           {T > K.Ac - 0.4 && [[790, 980, 20, 1], [880, 1090, -30, 2], [700, 1100, 70, 3]].map(([x, y, r, sd], i) =>
             <g key={i} opacity={kprog(T, K.Ac - 0.4 + i * 0.15, K.Ac + 0.1 + i * 0.15)}><Bacteria x={x} y={y + Math.sin(T * 2 + sd) * 6} rot={r} s={0.9} color={KB.bac} flagelo={false} T={T} seed={sd} /></g>)}
           {Array.from({ length: 6 }, (_, i) => { const p = kprog(T, K.Ac + 1.4 + i * 0.25, K.Ac + 2.0 + i * 0.25, kEase.sale); return p > 0 ? <Acido key={i} x={klerp(800, 400 + (i % 3) * 90, p)} y={klerp(1040, 640 + Math.floor(i / 3) * 110, p)} s={p} /> : null; })}
-        </>)}
+        </g>)}
         {/* medidor de pH: baja (la acidez sube) */}
-        {T > K.Ac + 1.6 && <div style={{ position:'absolute', left:70, top:560, zIndex:41, opacity:kprog(T, K.Ac + 1.6, K.Ac + 2.0) }}>
+        {T > K.Ac + 1.6 && <div style={{ position:'absolute', left:50, top:640, zIndex:41, opacity:kprog(T, K.Ac + 1.6, K.Ac + 2.0) }}>
           <div style={{ width:70, height:420, borderRadius:35, border:`6px solid ${KC.texto}`, background:'linear-gradient(#2fe0a8, #ffe11a 50%, #ff3b2f)', position:'relative' }}>
             <div style={{ position:'absolute', left:-24, width:118, height:10, background:KC.texto, borderRadius:5, boxShadow:'0 3px 0 rgba(0,0,0,.7)', top: 60 + 300 * kprog(T, K.Ac + 1.9, K.Ac + 3.6, kEase.suave) }}></div>
           </div>
@@ -227,11 +229,11 @@ function KombuchaShot() {
       {/* 6 · celulosa: la misma molécula del papel y del algodón */}
       <Escena T={T} a={K.Ce} b={K.Ca} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(525 1000) scale(1.2) translate(-540 -780)">
           <CadenaCelulosa x={150} y={900} n={kprog(T, K.Ce, K.Ce + 1.0) * 7} s={1.2} T={T} />
           <g opacity={kprog(T, K.Ce + 0.8, K.Ce + 1.2)}><Papel x={250} y={620} s={kprog(T, K.Ce + 0.8, K.Ce + 1.2, kEase.rebote)} rot={-8} /></g>
           <g opacity={kprog(T, K.Ce + 1.2, K.Ce + 1.6)}><Algodon x={560} y={620} s={kprog(T, K.Ce + 1.2, K.Ce + 1.6, kEase.rebote)} /></g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 7 · las fibras se enredan (malla) y la capa crece en el frasco */}
       <Escena T={T} a={K.Ca} b={malla} zoom={0.05}>
@@ -245,9 +247,11 @@ function KombuchaShot() {
       <Escena T={T} a={malla} b={K.An} zoom={0.04}>
         <FondoLunares color={T < K.P - 0.2 ? KC.mint : KC.lilac} />
         {fsvg(<>
-          <rect x={0} y={1190} width={KW} height={800} fill="#6a4d3b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1288} width={KW} height={800} fill="#3a2a20" stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(540 1300) scale(1.3) translate(-380 -1200)">
           <Frasco T={T} x={380} y={1200} s={1.05} te={0.8} capa={0.3 + 0.7 * kprog(T, malla, K.P)} capas={2 + Math.round(3 * kprog(T, malla, K.P))} />
           {T > K.P - 0.2 && <Interrogacion T={T} x={300} y={760} tam={420} />}
+          </g>
         </>)}
       </Escena>
       {/* 9 · casi todo se probó en animales o en laboratorio */}
@@ -266,23 +270,24 @@ function KombuchaShot() {
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           {T < K.Re + 0.2 && <g opacity={1 - kprog(T, K.Re - 0.2, K.Re + 0.2)}>
-            <g opacity={kprog(T, K.Es + 1.8, K.Es + 2.2)}><Vaso x={300} y={1120} s={1.1} color={KB.te1} etiqueta="kombucha" /></g>
-            <g opacity={kprog(T, K.Es + 2.3, K.Es + 2.7)}><Vaso x={620} y={1120} s={1.1} color="#d9c8a0" etiqueta="placebo" /></g>
+            <g opacity={kprog(T, K.Es + 1.8, K.Es + 2.2)}><Vaso x={330} y={1250} s={1.6} color={KB.te1} etiqueta="kombucha" /></g>
+            <g opacity={kprog(T, K.Es + 2.3, K.Es + 2.7)}><Vaso x={750} y={1250} s={1.6} color="#d9c8a0" etiqueta="placebo" /></g>
           </g>}
-          {T > K.Re + 2.6 && Array.from({ length: 7 }, (_, i) => { const on = kprog(T, K.Re + 2.6 + i * 0.12, K.Re + 2.9 + i * 0.12, kEase.rebote); return on > 0 ? <PersonaK key={i} x={130 + i * 115} y={1150} s={0.9 * on} /> : null; })}
+          {T > K.Re + 2.6 && Array.from({ length: 7 }, (_, i) => { const on = kprog(T, K.Re + 2.6 + i * 0.12, K.Re + 2.9 + i * 0.12, kEase.rebote); return on > 0 ? <PersonaK key={i} x={150 + i * 130} y={1310} s={1.2 * on} /> : null; })}
         </>)}
-        <BarrasGlucosa T={T} at={K.Re + 0.2} y={430} />
+        <BarrasGlucosa T={T} at={K.Re + 0.2} y={450} x={150} s={1.3} />
       </Escena>
       {/* 12 · 1.5 % de alcohol */}
       <Escena T={T} a={K.Al} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<g opacity={kprog(T, K.Al, K.Al + 0.4)}><Botella x={780} y={1170} s={kprog(T, K.Al, K.Al + 0.5, kEase.rebote)} texto="KOMBUCHA" /></g>)}
+        {fsvg(<g opacity={kprog(T, K.Al, K.Al + 0.4)}><Botella x={770} y={1290} s={1.5 * kprog(T, K.Al, K.Al + 0.5, kEase.rebote)} texto="KOMBUCHA" /></g>)}
       </Escena>
       {/* 13 · cierre: el mismo frasco, ahora con la lupa que muestra la tela viva */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <rect x={0} y={1190} width={KW} height={800} fill="#6a4d3b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1288} width={KW} height={800} fill="#3a2a20" stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(540 1300) scale(1.3) translate(-380 -1200)">
           <Frasco T={T} x={380} y={1200} s={1.05} te={0.8} capa={1} capas={5} alza={kprog(T, K.C + 0.1, K.C + 1.1)} />
           {(() => { const p = kprog(T, K.C + 1.0, K.C + 1.6, kEase.sale); if (p <= 0) return null; const cx = 380, cy = 500, r = 170 * p;
             return <g>
@@ -298,52 +303,53 @@ function KombuchaShot() {
               <circle cx={cx} cy={cy} r={r} fill="none" stroke={KC.ink} strokeWidth={16} />
               <line x1={cx - r * 0.7} y1={cy + r * 0.7} x2={cx - r * 1.25} y2={cy + r * 1.25} stroke={KC.ink} strokeWidth={28} strokeLinecap="round" />
             </g>; })()}
+          </g>
         </>)}
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 1.4} until={K.Te - 0.2} x={110} y={360} texto="madre (SCOBY)" tam={32} color={KC.ink} />
-      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.8} until={K.Te - 0.3} texto="¿un hongo?" x={820} y={1090} tam={44} />
-      <Chip T={T} at={K.G + 2.4} until={K.Te - 0.3} texto="tela de bacterias + levaduras" x={330} y={610} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.Te + 0.4} until={K.Le - 0.2} x={520} y={420} texto="té + azúcar" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.Le + 0.2} until={K.Hi - 0.3} texto="AL MICROSCOPIO · el té" x={340} y={420} tam={30} borde={KC.gold} mono />
-      <Etq T={T} at={K.Le + 0.8} until={K.Ac - 0.2} x={120} y={530} texto="levadura (hongo)" tam={28} />
-      <Etq T={T} at={K.Le + 1.2} until={K.Ac - 0.2} x={120} y={490} texto="Brettanomyces" it tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.Le + 1.6} until={K.Ac - 0.2} x={110} y={705} texto="azúcar → glucosa + fructosa" tam={24} />
-      <Etq T={T} at={K.Le + 3.0} until={K.Ac + 0.1} x={180} y={1170} texto="alcohol + CO₂ (burbujas)" tam={26} color={KB.alcohol} />
-      <Etq T={T} at={K.Ac + 0.3} until={K.Hi - 0.2} x={1030} y={930} texto="bacterias del ácido acético" lado="izq" tam={26} color={KB.bac} />
-      <Chip T={T} at={K.Ac + 1.8} until={K.Hi - 0.3} texto="pH ↓ (acidez ↑)" x={330} y={510} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.Ac + 2.4} until={K.Hi - 0.2} x={150} y={880} texto="ácido acético = el del vinagre" tam={26} color={KB.acido} />
+      <Etq T={T} at={K.G + 1.4} until={K.Te - 0.2} x={300} y={330} texto="madre (SCOBY)" tam={32} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.8} until={K.Te - 0.3} texto="¿un hongo?" x={540} y={1420} tam={44} />
+      <Chip T={T} at={K.G + 2.4} until={K.Te - 0.3} texto="tela de bacterias + levaduras" x={540} y={585} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.Te + 0.4} until={K.Le - 0.2} x={600} y={470} texto="té + azúcar" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Le + 0.2} until={K.Hi - 0.3} texto="AL MICROSCOPIO · el té" x={360} y={470} tam={30} borde={KC.gold} mono />
+      <Etq T={T} at={K.Le + 0.8} until={K.Ac - 0.2} x={30} y={600} texto="levadura (hongo)" tam={28} />
+      <Etq T={T} at={K.Le + 1.2} until={K.Ac - 0.2} x={30} y={550} texto="Brettanomyces" it tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.Le + 1.6} until={K.Ac - 0.2} x={30} y={822} texto="azúcar → glucosa + fructosa" tam={24} />
+      <Etq T={T} at={K.Le + 3.0} until={K.Ac + 0.1} x={90} y={1400} texto="alcohol + CO₂ (burbujas)" tam={26} color={KB.alcohol} />
+      <Etq T={T} at={K.Ac + 0.3} until={K.Hi - 0.2} x={1050} y={1100} texto="bacterias del ácido acético" lado="izq" tam={26} color={KB.bac} />
+      <Chip T={T} at={K.Ac + 1.8} until={K.Hi - 0.3} texto="pH ↓ (acidez ↑)" x={330} y={580} tam={34} borde={KC.red} />
+      <Etq T={T} at={K.Ac + 2.4} until={K.Hi - 0.2} x={140} y={1040} texto="ácido acético = el del vinagre" tam={26} color={KB.acido} />
       <Etq T={T} at={K.Hi + 0.4} until={K.Ce - 0.2} x={60} y={600} texto="Komagataeibacter" it tam={40} color={KC.gold2} />
       <Etq T={T} at={K.Hi + 1.6} until={K.Ce - 0.2} x={500} y={1010} texto="fibra de celulosa" tam={30} color={KB.fibra} />
-      <Chip T={T} at={K.Ce + 0.3} until={K.Ca - 0.3} texto="celulosa" x={340} y={430} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.Ce + 1.0} until={K.Ca - 0.2} x={130} y={760} texto="papel" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ce + 1.4} until={K.Ca - 0.2} x={440} y={760} texto="algodón" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Ce + 0.3} until={K.Ca - 0.3} texto="celulosa" x={340} y={590} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.Ce + 1.0} until={K.Ca - 0.2} x={33} y={976} texto="papel" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ce + 1.4} until={K.Ca - 0.2} x={405} y={976} texto="algodón" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.2} until={malla - 0.3} texto="AL MICROSCOPIO · la madre" x={360} y={390} tam={30} borde={KC.gold} mono />
       <Etq T={T} at={K.Ca + 0.8} until={malla - 0.2} x={60} y={470} texto="fibras de celulosa con microbios atrapados" tam={24} color={KB.fibra} />
-      <Chip T={T} at={malla + 0.3} until={K.P - 0.3} texto="cada tanda, más gruesa" x={360} y={430} tam={34} borde={KC.ink} />
+      <Chip T={T} at={malla + 0.3} until={K.P - 0.3} texto="cada tanda, más gruesa" x={540} y={560} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.An + 0.2} until={K.Es - 0.3} texto="¿cura? ¿desintoxica?" x={330} y={420} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.An + 0.6} until={K.Es - 0.2} x={130} y={920} texto="animales" tam={28} color={KC.ink} />
       <Etq T={T} at={K.An + 1.2} until={K.Es - 0.2} x={480} y={940} texto="laboratorio" tam={28} color={KC.ink} />
       <Chip T={T} at={K.An + 2.4} until={K.Es - 0.3} texto="en personas: muy poco" x={600} y={1130} tam={32} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Re - 0.3} anio="2023" quien="Georgetown · Washington, D. C." revista="Frontiers in Nutrition · diabetes tipo 2" x={480} y={560} />
-      <Chip T={T} at={K.Es + 3.0} until={K.Re - 0.3} texto="240 mL al día · 4 semanas · cruzado" x={470} y={850} tam={28} borde={KC.ink} mono />
-      <Chip T={T} at={K.Re + 2.4} until={K.Al - 0.3} texto="diferencia no significativa" x={400} y={840} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.Re + 3.2} until={K.Al - 0.2} x={60} y={1050} texto="solo 7 analizados" tam={30} color={KC.ink} />
-      <SelloTexto T={T} at={K.Re + 4.4} until={K.Al - 0.3} x={420} y={960} texto="PISTA, NO PRUEBA" />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Re - 0.3} anio="2023" quien="Georgetown · Washington, D. C." revista="Frontiers in Nutrition · diabetes tipo 2" x={540} y={600} />
+      <Chip T={T} at={K.Es + 3.0} until={K.Re - 0.3} texto="240 mL al día · 4 semanas · cruzado" x={540} y={880} tam={28} borde={KC.ink} mono />
+      <Chip T={T} at={K.Re + 2.4} until={K.Al - 0.3} texto="diferencia no significativa" x={540} y={985} tam={34} borde={KC.red} />
+      <Etq T={T} at={K.Re + 3.2} until={K.Al - 0.2} x={60} y={1170} texto="solo 7 analizados" tam={30} color={KC.ink} />
+      <SelloTexto T={T} at={K.Re + 4.4} until={K.Al - 0.3} x={560} y={1090} texto="PISTA, NO PRUEBA" />
       <NumeroGigante T={T} at={K.Al + 0.3} until={K.C - 0.3} valor={1.5} dec={1} dur={0.6} sufijo=" %" etiqueta="de alcohol en esa kombucha" x={380} y={760} tam={200} color={KC.yellow} />
-      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="tela viva: bacterias + levaduras" x={600} y={250} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="tela viva: bacterias + levaduras" x={780} y={620} tam={32} borde={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Le} texto="10 cm" largo={160} />
-      <BarraEscala T={T} at={K.Le} until={K.Hi} texto="10 µm" largo={150} />
+      <BarraEscala T={T} at={K.G} until={K.Le} texto="10 cm" largo={208} />
+      <BarraEscala T={T} at={K.Le} until={K.Hi} texto="10 µm" largo={188} />
       <BarraEscala T={T} at={K.Hi} until={K.Ce} texto="1 µm" largo={110} />
-      <BarraEscala T={T} at={K.Ce} until={K.Ca} texto="1 nm (esquema)" largo={110} />
+      <BarraEscala T={T} at={K.Ce} until={K.Ca} texto="1 nm (esquema)" largo={132} />
       <BarraEscala T={T} at={K.Ca} until={malla} texto="10 µm" largo={150} />
-      <BarraEscala T={T} at={malla} until={K.An} texto="10 cm" largo={160} />
-      <BarraEscala T={T} at={K.Es} until={K.Re} texto="10 cm" largo={170} />
-      <BarraEscala T={T} at={K.Al} until={K.C} texto="10 cm" largo={170} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={160} />
+      <BarraEscala T={T} at={malla} until={K.An} texto="10 cm" largo={208} />
+      <BarraEscala T={T} at={K.Es} until={K.Re} texto="10 cm" largo={247} />
+      <BarraEscala T={T} at={K.Al} until={K.C} texto="10 cm" largo={255} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={208} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Te - 0.1} texto="No es un hongo: *es una tela de bacterias.*" />
