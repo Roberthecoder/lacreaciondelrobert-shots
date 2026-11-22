@@ -1,0 +1,2 @@
+# Grupo n029 — pase a mano del estilo cine
+- cie-24-gotas-lluvia: encuadre de 10 escenas (Pequeñas, Caen, Paracaídas, Rompe, Lágrima, Velocidad y Chica agrandadas 1.12–1.3× y centradas; la regla de 1 mm escala junto con la gota); Pan rehecho en vertical (gota arriba, = y pan abajo, más grandes); Pregunta con la gota que sigue creciendo junto al «?»; gancho y cierre bajados al centro; rótulos que se salían del cuadro reacomodados. Auditores: sin láminas · encuadre bien; pendiente: nada
