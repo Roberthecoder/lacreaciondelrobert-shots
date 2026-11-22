@@ -142,7 +142,7 @@ function Hormona() {
     Al: CUES.Alerta, B: CUES.Bacteria, S: CUES.SinTejido, La: CUES.Latencia, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   // grilla del lote: 40 × 25 = 1000 cuadritos (≈ 16 glándulas cada uno)
-  const COLS = 40, FILAS = 25, GX = 90, GY = 600, GW = 900, GH = 560, cw = GW / COLS, ch = GH / FILAS;
+  const COLS = 40, FILAS = 25, GX = 90, GY = 760, GW = 900, GH = 640, cw = GW / COLS, ch = GH / FILAS;
   const llena = kprog(T, K.L + 0.3, K.L + 3.0, kEase.suave), N = COLS * FILAS;
   const ROJO = 12 * COLS + 9;                                          // el cuadrito "escondido"
   const conv = (i) => K.Pr + 0.8 + i * 0.55;                           // cuándo se dobla mal cada proteína
@@ -151,10 +151,11 @@ function Hormona() {
       {/* 0 · gancho: el frasquito de hoy y la regla de estatura */}
       <Escena T={T} a={K.G} b={K.H} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        {/* pase a mano cine: frasquito y regla 1.4 veces más grandes, centrados */}
+        <SvgCapa><Zg k={1.4} x0={330} y0={840} X0={540} Y0={960}>
           <Regla T={T} x={130} marca={klerp(0.35, 0.6, kprog(T, K.G, K.H, kEase.suave))} />
           <Frasquito T={T} x={420} y={760} s={1.7} rot={Math.sin(T * 2.4) * 7} bact={kprog(T, K.G + 2.2, K.G + 2.8, kEase.rebote)} />
-        </SvgCapa>
+        </Zg></SvgCapa>
       </Escena>
       {/* 1 · la hipófisis, del tamaño de un chícharo */}
       <Escena T={T} a={K.H} b={K.A} zoom={0.05}>
@@ -165,12 +166,13 @@ function Hormona() {
       {/* 2 · desde 1958: hormona de hipófisis de personas fallecidas */}
       <Escena T={T} a={K.A} b={K.L} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa>
+        {/* pase a mano cine: frasco, niña, regla y jeringa 1.2 veces más grandes y bajados al centro */}
+        <SvgCapa><Zg k={1.2} x0={560} y0={900} X0={540} Y0={1000}>
           <Regla T={T} x={930} y0={600} y1={1180} marca={0.35} />
           <Nina x={760} y={1090} s={1.05} />
           <Frasquito T={T} x={300} y={720} s={1.5} viejo etiqueta={['hormona de', 'hipófisis', 'humana']} rot={Math.sin(T * 1.6) * 3} />
           <g opacity={kprog(T, K.A + 2.0, K.A + 2.6)}><Jeringa x={430} y={1160} rot={-12 + Math.sin(T * 2) * 2} s={0.9} /></g>
-        </SvgCapa>
+        </Zg></SvgCapa>
       </Escena>
       {/* 3–4 · ≈16,000 glándulas por lote · y en alguna, algo escondido */}
       <Escena T={T} a={K.L} b={K.P} zoom={0.03}>
@@ -182,16 +184,17 @@ function Hormona() {
           {T > K.E + 0.4 && (() => { const cx = GX + (ROJO % COLS) * cw + cw / 2, cy = GY + Math.floor(ROJO / COLS) * ch + ch / 2, pu = (T * 1.4) % 1;
             return <g><circle cx={cx} cy={cy} r={14 + pu * 60} fill="none" stroke={PRION} strokeWidth={6} opacity={1 - pu} /><circle cx={cx} cy={cy} r={18} fill="none" stroke={KC.ink} strokeWidth={5} /></g>; })()}
         </SvgCapa>
-        <Chip T={T} at={K.L + 3.0} until={K.P - 0.2} texto="cada cuadrito ≈ 16 glándulas" y={1480} tam={34} borde={KC.ink} />
+        <Chip T={T} at={K.L + 3.0} until={K.P - 0.2} texto="cada cuadrito ≈ 16 glándulas" y={1470} tam={34} borde={KC.ink} />
       </Escena>
       {/* 5 · ¿ni virus ni bacteria? */}
       <Escena T={T} a={K.P} b={K.Pr} zoom={0.05}>
         <FondoMarca patron="oscuro" />
         <SvgCapa>
-          <Virus T={T} x={260} y={600} s={0.9} /><Tache x={260} y={600} p={kprog(T, K.P + 0.6, K.P + 1.2)} r={110} />
-          <Bacteria T={T} x={260} y={960} largo={300} ancho={120} rot={-8} /><Tache x={260} y={960} p={kprog(T, K.P + 1.4, K.P + 2.0)} r={110} />
-          <text x={260} y={760} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.texto}>virus</text>
-          <text x={260} y={1100} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.texto}>bacteria</text>
+          {/* pase a mano cine: virus y bacteria más grandes y al centro del cuadro */}
+          <Virus T={T} x={540} y={740} s={1.3} /><Tache x={540} y={740} p={kprog(T, K.P + 0.6, K.P + 1.2)} r={160} />
+          <Bacteria T={T} x={540} y={1200} largo={440} ancho={170} rot={-8} /><Tache x={540} y={1200} p={kprog(T, K.P + 1.4, K.P + 2.0)} r={160} />
+          <text x={540} y={960} textAnchor="middle" style={{ font:`700 46px ${KF.mono}` }} fill={KC.texto}>virus</text>
+          <text x={540} y={1390} textAnchor="middle" style={{ font:`700 46px ${KF.mono}` }} fill={KC.texto}>bacteria</text>
         </SvgCapa>
 
       </Escena>
@@ -199,37 +202,39 @@ function Hormona() {
       <Escena T={T} a={K.Pr} b={K.C} zoom={0.06}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={30} color="rgba(95,211,255,.25)" />
-        <SvgCapa>
+        {/* pase a mano cine: las proteínas 1.2 veces más grandes y bajadas al centro */}
+        <SvgCapa><Zg k={1.2} x0={510} y0={890} X0={540} Y0={950}>
           {[[200, 760], [460, 720], [720, 780], [300, 1040], [560, 1000], [820, 1060]].map(([px, py], i) => {
             const mal = i === 0 ? 1 : kprog(T, conv(i - 1), conv(i - 1) + 0.45, kEase.suave);
             return <Proteina key={i} T={T} x={px} y={py} mal={mal} s={1.05} seed={i + 2} />; })}
           {[0, 1, 2, 3, 4].map((i) => { const a = [[200, 760], [460, 720], [720, 780], [300, 1040], [560, 1000], [820, 1060]], p = kprog(T, conv(i) - 0.5, conv(i)), q = 1 - kprog(T, conv(i), conv(i) + 0.4);
             return p > 0 && q > 0 ? <line key={i} x1={a[i][0]} y1={a[i][1]} x2={klerp(a[i][0], a[i + 1][0], p)} y2={klerp(a[i][1], a[i + 1][1], p)} stroke={KC.gold2} strokeWidth={6} strokeDasharray="12 10" opacity={q} /> : null; })}
-        </SvgCapa>
-        <Chip T={T} at={K.Pr + 0.2} until={K.C - 0.2} texto="AL MICROSCOPIO · PRIÓN" x={380} y={430} tam={32} mono borde={NORMAL} />
-        <Etq T={T} at={K.Pr + 0.5} until={K.C - 0.3} x={120} y={640} texto="mal doblada" tam={32} color={PRION} />
-        <Etq T={T} at={K.Pr + 0.9} until={K.Pr + 3.2} x={900} y={1170} texto="normal" lado="izq" tam={32} color={NORMAL} />
-        <Chip T={T} at={K.Pr + 2.4} until={K.C - 0.2} texto="una proteína del propio cuerpo" y={1500} tam={36} borde={PRION} />
+        </Zg></SvgCapa>
+        <Chip T={T} at={K.Pr + 0.2} until={K.C - 0.2} texto="AL MICROSCOPIO · PRIÓN" x={540} y={520} tam={34} mono borde={NORMAL} />
+        <Etq T={T} at={K.Pr + 0.5} until={K.C - 0.3} x={100} y={650} texto="mal doblada" tam={34} color={PRION} />
+        <Etq T={T} at={K.Pr + 0.9} until={K.Pr + 3.2} x={980} y={1250} texto="normal" lado="izq" tam={34} color={NORMAL} />
+        <Chip T={T} at={K.Pr + 2.4} until={K.C - 0.2} texto="una proteína del propio cuerpo" y={1400} tam={38} borde={PRION} />
       </Escena>
       {/* 7 · el cerebro: aspecto de esponja */}
       <Escena T={T} a={K.C} b={K.Al} zoom={0.03}>
         <FondoMarca patron="oscuro" />
-        <SvgCapa><CerebroEsponja T={T} x={540} y={780} s={1.35} huecos={kprog(T, K.C + 0.4, K.Al - 0.3)} /></SvgCapa>
-        <Etq T={T} at={K.C + 0.6} until={K.Al - 0.2} x={120} y={1110} texto="enfermedad de Creutzfeldt-Jakob" tam={34} color={KC.gold2} />
-        <Chip T={T} at={K.C + 1.8} until={K.Al - 0.2} texto="huequitos: aspecto de esponja" y={1500} tam={34} borde="#f2a6b8" />
+        <SvgCapa><CerebroEsponja T={T} x={540} y={900} s={1.45} huecos={kprog(T, K.C + 0.4, K.Al - 0.3)} /></SvgCapa>
+        <Etq T={T} at={K.C + 0.6} until={K.Al - 0.2} x={100} y={1260} texto="enfermedad de Creutzfeldt-Jakob" tam={36} color={KC.gold2} />
+        <Chip T={T} at={K.C + 1.8} until={K.Al - 0.2} texto="huequitos: aspecto de esponja" y={1390} tam={36} borde="#f2a6b8" />
       </Escena>
       {/* 8 · 1985: la alerta y la suspensión */}
       <Escena T={T} a={K.Al} b={K.B} zoom={0.03}>
         <FondoLunares color="#d9cfc0" punto="rgba(255,255,255,.25)" />
-        <SvgCapa>
+        {/* pase a mano cine: velas, frasco y sello 1.15 veces más grandes y bajados */}
+        <SvgCapa><Zg k={1.15} x0={520} y0={1000} X0={500} Y0={1080}>
           {[0, 1, 2].map((i) => <Vela key={i} T={T} x={200 + i * 170} y={980} seed={i + 4} enciende={kprog(T, K.Al + 1.6 + i * 0.4, K.Al + 2.0 + i * 0.4)} />)}
           <Frasquito T={T} x={820} y={880} s={1.15} viejo etiqueta={['hipófisis', 'humana']} />
           {T > K.Al + 3.4 && (() => { const p = kprog(T, K.Al + 3.4, K.Al + 3.8, kEase.rebote); return <g transform={`translate(820 1010) rotate(-14) scale(${klerp(2, 1, p)})`} opacity={kprog(T, K.Al + 3.4, K.Al + 3.6)}>
             <rect x={-170} y={-50} width={340} height={100} rx={14} fill="rgba(255,255,255,.75)" stroke={PRION} strokeWidth={9} />
             <text x={0} y={-2} textAnchor="middle" style={{ font:`400 52px ${KF.titulo}` }} fill={PRION}>SUSPENDIDA</text>
             <text x={0} y={34} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={PRION}>abril de 1985</text></g>; })()}
-        </SvgCapa>
-        <TarjetaEstudio T={T} at={K.Al + 0.2} until={K.B - 0.2} anio="1985" quien="Estados Unidos · 3 pacientes" revista="NIH · CDC" x={640} y={560} />
+        </Zg></SvgCapa>
+        <TarjetaEstudio T={T} at={K.Al + 0.2} until={K.B - 0.2} anio="1985" quien="Estados Unidos · 3 pacientes" revista="NIH · CDC" x={560} y={560} />
       </Escena>
       {/* 9 · octubre de 1985: hormona hecha por bacterias */}
       <Escena T={T} a={K.B} b={K.S} zoom={0.05}>
@@ -250,20 +255,23 @@ function Hormona() {
       {/* 10 · sin glándulas humanas, ya no hay de dónde llegue el prión */}
       <Escena T={T} a={K.S} b={K.La} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        {/* pase a mano cine: los dos frascos 1.15 veces más grandes y bajados al centro */}
+        <SvgCapa><Zg k={1.15} x0={540} y0={900} X0={540} Y0={980}>
           <Frasquito T={T} x={290} y={720} s={1.35} viejo etiqueta={['hipófisis', 'humana']} punto={kprog(T, K.S + 0.6, K.S + 1.0)} />
           <Frasquito T={T} x={790} y={720} s={1.35} bact={1} rot={Math.sin(T * 2) * 3} />
           {T > K.S + 1.6 && <path d="M 720 1180 l 40 40 l 90 -90" stroke="#147a4c" strokeWidth={22} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={kprog(T, K.S + 1.6, K.S + 2.0)} />}
           <text x={290} y={1140} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>glándulas</text>
           <text x={790} y={1140} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>bacterias</text>
-        </SvgCapa>
-        <Chip T={T} at={K.S + 1.6} until={K.La - 0.2} texto="sin tejido humano" y={1500} tam={42} borde="#147a4c" />
+        </Zg></SvgCapa>
+        <Chip T={T} at={K.S + 1.6} until={K.La - 0.2} texto="sin tejido humano" y={1440} tam={42} borde="#147a4c" />
       </Escena>
       {/* 11 · 36 casos (2026); en uno, más de 50 años de espera */}
       <Escena T={T} a={K.La} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
+        {/* pase a mano cine: el frasco viejo de hipófisis a cuadro (atenuado) junto al medidor, más alto y bajado */}
         <SvgCapa>
-          {(() => { const x = 840, y0 = 1080, y1 = 610, p = kprog(T, K.La + 1.2, K.La + 4.6, kEase.suave), yb = klerp(y0, y1, p);
+          <g opacity={0.7}><Frasquito T={T} x={330} y={830} s={1.6} viejo etiqueta={['hipófisis', 'humana']} rot={Math.sin(T * 1.6) * 2} /></g>
+          {(() => { const x = 820, y0 = 1340, y1 = 770, p = kprog(T, K.La + 1.2, K.La + 4.6, kEase.suave), yb = klerp(y0, y1, p);
             return <g>
               <rect x={x - 46} y={y1} width={92} height={y0 - y1} rx={46} fill="rgba(0,0,0,.35)" stroke={KC.ink} strokeWidth={7} />
               <rect x={x - 34} y={yb} width={68} height={Math.max(0, y0 - yb - 12)} rx={34} fill={KC.gold2} />
@@ -273,16 +281,17 @@ function Hormona() {
               <text x={x} y={y1 - 26} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.La + 4.4, K.La + 4.8)}>≈ 51.5</text>
             </g>; })()}
         </SvgCapa>
-        <NumeroGigante T={T} at={K.La + 0.1} until={K.Ci - 0.2} valor={36} dur={1.0} etiqueta="casos en EE. UU. (2026)" x={600} y={430} tam={190} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.La + 0.1} until={K.Ci - 0.2} valor={36} dur={1.0} etiqueta="casos en EE. UU. (2026)" x={560} y={540} tam={190} color={KC.yellow} />
       </Escena>
       {/* 12 · cierre: el frasquito del inicio */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        {/* pase a mano cine: la misma imagen del gancho, 1.4 veces más grande */}
+        <SvgCapa><Zg k={1.4} x0={330} y0={840} X0={540} Y0={960}>
           <Regla T={T} x={130} marca={klerp(0.6, 0.82, kprog(T, K.Ci, K.Ou, kEase.suave))} />
           <Frasquito T={T} x={420} y={760} s={1.7} rot={Math.sin(T * 2.4) * 7} bact={1} />
-        </SvgCapa>
-        <Chip T={T} at={K.Ci + 0.8} until={K.Ou - 0.1} texto="hecha por bacterias · sin tejido humano" y={1500} tam={34} borde="#147a4c" />
+        </Zg></SvgCapa>
+        <Chip T={T} at={K.Ci + 0.8} until={K.Ou - 0.1} texto="hecha por bacterias · sin tejido humano" y={370} tam={34} borde="#147a4c" />
       </Escena>
 
       {/* Lupa de la hipófisis (fuera de la escena para que la escala no la deforme) */}
@@ -299,11 +308,11 @@ function Hormona() {
         </svg>} />
 
       {/* textos */}
-      <Chip T={T} at={K.G + 2.4} until={K.H - 0.3} texto="hecha por bacterias" y={1500} tam={42} borde="#147a4c" />
+      <Chip T={T} at={K.G + 2.4} until={K.H - 0.3} texto="hecha por bacterias" y={370} tam={42} borde="#147a4c" />
       <Etq T={T} at={K.H + 0.6} until={K.A - 0.3} x={440} y={1070} texto="hipófisis" lado="izq" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.A + 0.3} until={K.L - 0.3} texto="desde 1958" x={300} y={440} tam={44} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.L + 0.3} until={K.E + 0.3} valor={16000} dur={2.6} etiqueta="glándulas por lote (CDC, 1985)" x={640} y={420} tam={180} color={KC.yellow} />
-      <Chip T={T} at={K.E + 0.4} until={K.P - 0.2} texto="¿y si una venía enferma?" y={440} tam={40} borde={PRION} />
+      <Chip T={T} at={K.A + 0.3} until={K.L - 0.3} texto="desde 1958" x={260} y={540} tam={44} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.L + 0.3} until={K.E + 0.3} valor={16000} dur={2.6} etiqueta="glándulas por lote (CDC, 1985)" x={540} y={560} tam={180} color={KC.yellow} />
+      <Chip T={T} at={K.E + 0.4} until={K.P - 0.2} texto="¿y si una venía enferma?" y={600} tam={44} borde={PRION} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No salió de un cadáver: *de una bacteria.*" />
@@ -337,6 +346,10 @@ function Hormona() {
   );
 }
 
+// Pase a mano cine: agranda un grupo k veces llevando el punto (x0, y0) a (X0, Y0).
+function Zg({ k, x0, y0, X0, Y0, children }) {
+  return <g transform={`translate(${X0} ${Y0}) scale(${k}) translate(${-x0} ${-y0})`}>{children}</g>;
+}
 // Capa SVG de pantalla completa.
 function SvgCapa({ children, z }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{children}</svg>;
