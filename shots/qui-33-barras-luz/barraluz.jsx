@@ -157,18 +157,18 @@ function BarraLuzShot() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <g transform={`translate(0 ${agita})`}>
+          <g transform={`translate(540 ${980 + agita}) scale(1.15) translate(-540 -1020)`}>
             <BarraLuz x={540} y={1020} largo={760} ancho={96} curva={70 * dobla} luz={enciende} roto={crac} />
             <Mano x={215} y={1000 + 30 * dobla} rot={-12 * dobla} flip />
             <Mano x={865} y={1000 + 30 * dobla} rot={12 * dobla} />
           </g>
+          <Onomato T={T} at={K.G + 0.35} until={K.G + 1.6} x={780} y={700} texto="¡CRAC!" color={KC.yellow} tam={130} />
         </SvgCapa>
-        <Onomato T={T} at={K.G + 0.35} until={K.G + 1.6} x={540} y={860} texto="¡CRAC!" color={KC.yellow} tam={120} />
       </Escena>
       {/* 1 · qué hay adentro (antes de mezclar) */}
       <Escena T={T} a={K.Q} b={K.Me} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 960) scale(1.7) translate(-540 -960)">
           <BarraLuz x={540} y={960} largo={900} ancho={250} luz={0} roto={0} gancho={false} ampolla={false} color={VERDE} />
           <path d="M 175 960 L 905 960" stroke={OXA} strokeWidth={232} strokeLinecap="round" opacity={0.85} />
           <path d="M 250 960 L 830 960" stroke={KC.ink} strokeWidth={118} strokeLinecap="round" />
@@ -178,15 +178,15 @@ function BarraLuzShot() {
             return <g key={i} opacity={kprog(T, K.Q + 2.0 + i * 0.05, K.Q + 2.4 + i * 0.05)}>
               {i % 3 === 0 ? <circle cx={xx + Math.sin(T * 1.5 + i) * 10} cy={yy} r={13} fill={VERDE} stroke={KC.ink} strokeWidth={4} />
                 : <Hexa x={xx + Math.sin(T * 1.5 + i) * 10} y={yy} r={16} color="#c7cdd8" />}</g>; })}
-        </SvgCapa>
-        <Chip T={T} at={K.Q + 0.4} until={K.Me - 0.3} texto="vidrio: agua oxigenada (H₂O₂)" x={540} y={760} tam={36} borde={KC.cyan} />
-        <Chip T={T} at={K.Q + 2.0} until={K.Me - 0.3} texto="plástico: éster oxalato + colorante" x={540} y={1500} tam={34} borde={KC.leaf} />
+        </g></SvgCapa>
+        <Chip T={T} at={K.Q + 0.4} until={K.Me - 0.3} texto="vidrio: agua oxigenada (H₂O₂)" x={540} y={650} tam={38} borde={KC.cyan} />
+        <Chip T={T} at={K.Q + 2.0} until={K.Me - 0.3} texto="plástico: éster oxalato + colorante" x={540} y={1280} tam={36} borde={KC.leaf} />
       </Escena>
       {/* 2 · se mezclan: molécula inestable (micro, fondo noche) */}
       <Escena T={T} a={K.Me} b={K.En} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(125,255,90,.25)" />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 900) scale(1.6) translate(-540 -860)">
           <Oxalato x={540} y={820} s={1.3} o={1 - kprog(T, K.Me + 1.0, K.Me + 1.4)} fenilos={kprog(T, K.Me + 0.9, K.Me + 1.4)} />
           {T < K.Me + 1.1 && <Mol tipo="h2o2" x={klerp(-100, 470, kprog(T, K.Me, K.Me + 1.0, kEase.sale))} y={680} s={1.3} rot={T * 90} />}
           <circle cx={540} cy={800} r={60 + 260 * kprog(T, K.Me + 1.0, K.Me + 1.5)} fill="none" stroke={VERDE} strokeWidth={10} opacity={kprog(T, K.Me + 1.0, K.Me + 1.05) * (1 - kprog(T, K.Me + 1.05, K.Me + 1.5))} />
@@ -194,68 +194,71 @@ function BarraLuzShot() {
             <Dioxetanodiona x={540} y={860} s={1.5} T={T} tiembla={1} />
             {[[-1, 1], [1, 1]].map(([sg], i) => <Hexa key={i} x={540 + sg * klerp(260, 420, kprog(T, K.Me + 1.2, K.Me + 3.2))} y={klerp(1060, 1150, kprog(T, K.Me + 1.2, K.Me + 3.2))} r={44} o={0.6} />)}
           </g>}
+          </g>
           <g opacity={kprog(T, K.Me + 0.5, K.Me + 0.9)}>
             <line x1={70} y1={1460} x2={190} y2={1460} stroke={KC.texto} strokeWidth={8} />
             <text x={210} y={1472} style={{ font:`700 32px ${KF.mono}` }} fill={KC.texto}>{'< 1 nm · no a escala'}</text>
           </g>
         </SvgCapa>
-        <Chip T={T} at={K.Me + 1.5} until={K.En + 0.6} texto="¡inestable!" x={540} y={560} tam={46} borde={VERDE} />
+        <Chip T={T} at={K.Me + 1.5} until={K.En + 0.6} texto="¡inestable!" x={540} y={440} tam={50} borde={VERDE} />
       </Escena>
       {/* 3 · se parte en CO₂ y la energía pasa al colorante → luz (micro) */}
       <Escena T={T} a={K.En} b={K.Ex} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(125,255,90,.25)" />
         <SvgCapa>
-          <Dioxetanodiona x={540} y={720} s={1.2} T={T} tiembla={1 - kprog(T, K.En + 0.4, K.En + 0.5)} parte={kprog(T, K.En + 0.4, K.En + 1.4, kEase.sale)} />
+          <Dioxetanodiona x={540} y={klerp(916, 640, kprog(T, K.En - 0.3, K.En + 0.45, kEase.suave))} s={klerp(2.4, 1.3, kprog(T, K.En - 0.3, K.En + 0.45, kEase.suave))} T={T} tiembla={1 - kprog(T, K.En + 0.4, K.En + 0.5)} parte={kprog(T, K.En + 0.4, K.En + 1.4, kEase.sale)} />
           {(() => { const u = kprog(T, K.En + 1.2, K.En + 1.7); if (u <= 0 || T > K.En + 2.4) return null;
-            const pts = [[540, 760], [500, 820], [580, 860], [520, 920], [560, 960]].slice(0, 1 + Math.ceil(u * 4)).map((p) => p.join(',')).join(' ');
-            return <polyline points={pts} fill="none" stroke={KC.yellow} strokeWidth={14} strokeLinejoin="round" strokeLinecap="round" />; })()}
-          <Colorante x={540} y={1050} s={1.1} T={T} excita={kprog(T, K.En + 1.7, K.En + 2.1) * (0.8 + 0.2 * Math.sin(T * 7))} />
-          {Array.from({ length: 10 }, (_, i) => <Foton key={i} x0={540} y0={1050} ang={[200, 230, 260, 290, 320, 340, 20, 160, 250, 300][i]} u={(T - (K.En + 2.2 + i * 0.32)) / 1.4} />)}
-          <Termo x={150} y={1080} nivel={0.22} s={0.8} />
+            const pts = [[540, 720], [485, 790], [595, 850], [505, 920], [560, 990]].slice(0, 1 + Math.ceil(u * 4)).map((p) => p.join(',')).join(' ');
+            return <polyline points={pts} fill="none" stroke={KC.yellow} strokeWidth={18} strokeLinejoin="round" strokeLinecap="round" />; })()}
+          <Colorante x={540} y={1120} s={1.9} T={T} excita={kprog(T, K.En + 1.7, K.En + 2.1) * (0.8 + 0.2 * Math.sin(T * 7))} />
+          {Array.from({ length: 10 }, (_, i) => <Foton key={i} x0={540} y0={1120} ang={[200, 230, 260, 290, 320, 340, 20, 160, 250, 300][i]} u={(T - (K.En + 2.2 + i * 0.32)) / 1.4} />)}
+          <Termo x={120} y={1200} nivel={0.22} s={1.25} />
         </SvgCapa>
-        <Etq T={T} at={K.En + 1.0} until={K.En + 3.0} x={260} y={600} texto="CO₂" color={KC.texto} lado="der" />
-        <Etq T={T} at={K.En + 1.8} until={K.Ex - 0.3} x={760} y={1150} texto="colorante" color={VERDE} lado="der" />
-        <Chip T={T} at={K.En + 3.6} until={K.Ex - 0.2} texto="luz sin calor" x={540} y={1500} tam={46} borde={VERDE} />
+        <Etq T={T} at={K.En + 1.0} until={K.En + 3.0} x={300} y={470} texto="CO₂" tam={40} color={KC.texto} lado="der" />
+        <Etq T={T} at={K.En + 1.8} until={K.Ex - 0.3} x={740} y={1330} texto="colorante" tam={38} color={VERDE} lado="der" />
+        <Chip T={T} at={K.En + 3.6} until={K.Ex - 0.2} texto="luz sin calor" x={540} y={1480} tam={50} borde={VERDE} />
       </Escena>
       {/* 4–5 · el experimento: hielo, ambiente, caliente */}
       <Escena T={T} a={K.Ex} b={K.Es} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <div style={{ position:'absolute', inset:0, background:KC.noche, opacity:0.72 * apaga }}></div>
         <SvgCapa>
+          <g transform="translate(540 1260) scale(1.08) translate(-540 -1150)">
           <VasoBarra T={T} x={200} y={1150} tipo="hielo" luz={luzHielo} />
           <VasoBarra T={T} x={540} y={1150} tipo="ambiente" luz={luzAmb} />
           <VasoBarra T={T} x={880} y={1150} tipo="caliente" luz={luzCal} />
-          <g opacity={kprog(T, K.Ex + 2.6, K.Ex + 3.0)}><Reloj x={540} y={430} ang={reloj} s={0.9} /></g>
-          {T > K.Ex + 2.2 && T < K.Re + 0.4 && <text x={420} y={700} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12}
-            opacity={kprog(T, K.Ex + 2.2, K.Ex + 2.5) * (1 - kprog(T, K.Re, K.Re + 0.4))} transform={`rotate(${Math.sin(T * 3) * 6} 420 600)`}>¿?</text>}
+          </g>
+          <g opacity={kprog(T, K.Ex + 2.6, K.Ex + 3.0)}><Reloj x={klerp(800, 540, kprog(T, K.Re + 0.2, K.Re + 0.9, kEase.suave))} y={420} ang={reloj} s={1.5} /></g>
+          {T > K.Ex + 2.2 && T < K.Re + 0.4 && <text x={360} y={530} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={12}
+            opacity={kprog(T, K.Ex + 2.2, K.Ex + 2.5) * (1 - kprog(T, K.Re, K.Re + 0.4))} transform={`rotate(${Math.sin(T * 3) * 6} 360 430)`}>¿?</text>}
         </SvgCapa>
-        <Etq T={T} at={K.Ex + 0.5} until={K.Es - 0.3} x={120} y={1460} texto="hielo" color="#bfe9ff" tam={34} />
-        <Etq T={T} at={K.Ex + 1.2} until={K.Es - 0.3} x={440} y={1460} texto="ambiente" color={KC.texto} tam={34} />
-        <Etq T={T} at={K.Ex + 1.9} until={K.Es - 0.3} x={770} y={1460} texto="caliente" color="#ffb38a" tam={34} />
-        <Chip T={T} at={K.Re + 0.6} until={K.Re + 2.2} texto="brilla poco · dura más" x={300} y={1560} tam={32} borde="#bfe9ff" />
-        <Chip T={T} at={K.Re + 2.5} until={K.Re + 4.9} texto="brilla mucho · se apaga pronto" x={540} y={1560} tam={32} borde="#ffb38a" />
-        <Chip T={T} at={K.Re + 5.0} until={K.Es - 0.2} texto="frío = reacción más lenta" x={540} y={1560} tam={38} borde="#bfe9ff" />
+        <Etq T={T} at={K.Ex + 0.5} until={K.Es - 0.3} x={70} y={1350} texto="hielo" color="#bfe9ff" tam={34} />
+        <Etq T={T} at={K.Ex + 1.2} until={K.Es - 0.3} x={410} y={1350} texto="ambiente" color={KC.texto} tam={34} />
+        <Etq T={T} at={K.Ex + 1.9} until={K.Es - 0.3} x={800} y={1350} texto="caliente" color="#ffb38a" tam={34} />
+        <Chip T={T} at={K.Re + 0.6} until={K.Re + 2.2} texto="brilla poco · dura más" x={300} y={1460} tam={36} borde="#bfe9ff" />
+        <Chip T={T} at={K.Re + 2.5} until={K.Re + 4.9} texto="brilla mucho · se apaga pronto" x={540} y={1460} tam={36} borde="#ffb38a" />
+        <Chip T={T} at={K.Re + 5.0} until={K.Es - 0.2} texto="frío = reacción más lenta" x={540} y={1460} tam={42} borde="#bfe9ff" />
       </Escena>
       {/* 6 · 2021, Universidad de São Paulo: la dioxetanodiona */}
       <Escena T={T} a={K.Es} b={K.Da}>
         <FondoLunares color={KC.lilac} />
-        <div style={{ position:'absolute', left:70, top:700, width:940, height:500, borderRadius:40, background:KC.noche, border:`8px solid ${KC.ink}`, opacity:panel, transform:`scale(${klerp(0.85, 1, panel)})` }}></div>
         <SvgCapa>
-          {panel > 0 && <g opacity={panel}>
-            <Dioxetanodiona x={540} y={960} s={1.25} T={T} tiembla={0.4} colores={T > K.Es + 5.6} />
-            <text x={540} y={1150} textAnchor="middle" style={{ font:`700 44px ${KF.mono}` }} fill={KC.texto}>1,2-dioxetanodiona</text>
-            {T > K.Es + 5.8 && <text x={880} y={800} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.gold2} opacity={kprog(T, K.Es + 5.8, K.Es + 6.2)}>= 2 CO₂</text>}
-          </g>}
+          {/* la molécula del estudio está en cuadro desde que empieza la escena; el nombre llega con la frase */}
+          <Dioxetanodiona x={540} y={930} s={2.3} T={T} tiembla={0.4} colores={T > K.Es + 5.6} />
+          <text x={540} y={1250} textAnchor="middle" style={{ font:`700 56px ${KF.mono}` }} fill={KC.texto} opacity={panel}>1,2-dioxetanodiona</text>
+          {T > K.Es + 5.8 && <text x={790} y={560} textAnchor="middle" style={{ font:`400 96px ${KF.titulo}` }} fill={KC.gold2} opacity={kprog(T, K.Es + 5.8, K.Es + 6.2)}>= 2 CO₂</text>}
         </SvgCapa>
-        <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.3} anio="2021" quien="Universidad de São Paulo · Brasil" revista="da Silva et al. · J Org Chem" y={760} />
-        <Chip T={T} at={K.Es + 3.8} until={K.Da - 0.3} texto="2021 · pruebas fuertes" x={540} y={1500} tam={42} borde={KC.gold} />
+        <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.3} anio="2021" quien="Universidad de São Paulo · Brasil" revista="da Silva et al. · J Org Chem" y={380} />
+        <Chip T={T} at={K.Es + 3.8} until={K.Da - 0.3} texto="2021 · pruebas fuertes" x={540} y={1420} tam={44} borde={KC.gold} />
       </Escena>
       {/* 7 · Australia 2018: casi 3 mil casos */}
       <Escena T={T} a={K.Da} b={K.Se}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <g opacity={kprog(T, K.Da + 4.6, K.Da + 5.0)}>
+          {/* la barra de luz (de eso son los casos) sigue en cuadro toda la escena; baja cuando entra la gráfica */}
+          <BarraLuz x={540} y={klerp(900, 1300, kprog(T, K.Da + 4.2, K.Da + 5.0, kEase.suave))} largo={880} ancho={120} rot={-7} curva={14} luz={0.85 + 0.08 * Math.sin(T * 3)} roto={1} />
+          <g opacity={kprog(T, K.Da + 4.6, K.Da + 5.0)} transform="translate(540 1090) scale(1.3) translate(-290 -1080)">
             <line x1={80} y1={1080} x2={500} y2={1080} stroke={KC.ink} strokeWidth={8} />
             <rect x={110} y={1080 - 80} width={150} height={80} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
             <rect x={320} y={1080 - 80 - 270 * barraDic} width={150} height={80 + 270 * barraDic} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
@@ -263,49 +266,49 @@ function BarraLuzShot() {
             <text x={395} y={1125} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>diciembre</text>
             {barraDic > 0.9 && <g transform={`translate(395 ${1080 - 350}) rotate(-12)`}>
               <path d="M -60 0 L 0 -90 L 60 0 Z" fill={KC.red} stroke={KC.ink} strokeWidth={6} /><rect x={-66} y={-6} width={132} height={24} rx={12} fill="#fff" stroke={KC.ink} strokeWidth={5} /><circle cx={0} cy={-92} r={16} fill="#fff" stroke={KC.ink} strokeWidth={5} /></g>}
-            {barraDic > 0.9 && <text x={395} y={1080 - 140} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.paper} stroke={KC.ink} strokeWidth={4}>× 4.4</text>}
+            {barraDic > 0.9 && <text x={395} y={1080 - 140} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill="#ffffff" stroke="#0b1020" strokeWidth={5} paintOrder="stroke">× 4.4</text>}
           </g>
         </SvgCapa>
-        <TarjetaEstudio T={T} at={K.Da + 0.2} until={K.Da + 3.2} anio="2018" quien="Centro toxicológico · Sídney, Australia" revista="Cairns et al. · Med J Aust · datos 2013–2017" y={760} />
-        <NumeroGigante T={T} at={K.Da + 3.3} until={K.Se - 0.3} valor={2918} dur={1.2} etiqueta="casos en 4 años" x={540} y={470} tam={180} color={KC.yellow} />
-        <Chip T={T} at={K.Da + 6.0} until={K.Se - 0.3} texto="94 % niños de 14 años o menos" x={540} y={1500} tam={36} borde={KC.yellow} />
+        <TarjetaEstudio T={T} at={K.Da + 0.2} until={K.Da + 3.2} anio="2018" quien="Centro toxicológico · Sídney, Australia" revista="Cairns et al. · Med J Aust · datos 2013–2017" y={400} />
+        <NumeroGigante T={T} at={K.Da + 3.3} until={K.Se - 0.3} valor={2918} dur={1.2} etiqueta="casos en 4 años" x={540} y={320} tam={150} color={KC.yellow} />
+        <Chip T={T} at={K.Da + 6.0} until={K.Se - 0.3} texto="94 % niños de 14 años o menos" x={540} y={1490} tam={38} borde={KC.yellow} />
       </Escena>
       {/* 8 · seguridad: irrita, lávate con agua */}
       <Escena T={T} a={K.Se} b={K.Ci}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <g transform="translate(420 1010)">
+          <g transform="translate(450 1110) scale(1.6)">
             <path d="M -170 40 Q -190 -60 -120 -90 L 140 -90 Q 200 -60 180 40 Q 150 160 0 170 Q -150 160 -170 40 Z" fill={PIEL} stroke={KC.ink} strokeWidth={9} />
             {[-110, -40, 30, 100].map((dx, i) => <rect key={i} x={dx - 28} y={-260 + Math.abs(i - 1.5) * 20} width={56} height={200} rx={28} fill={PIEL} stroke={KC.ink} strokeWidth={8} />)}
             {[[-60, 20], [40, 60], [90, -20], [-10, 100]].map(([dx, dy], i) => <g key={i} opacity={kprog(T, K.Se + 0.2 + i * 0.15, K.Se + 0.5 + i * 0.15) * (1 - kprog(T, K.Se + 2.6 + i * 0.2, K.Se + 3.2 + i * 0.2))}>
               <circle cx={dx} cy={dy} r={46} fill={VERDE} opacity={0.3} /><circle cx={dx} cy={dy} r={22} fill={VERDE} stroke={KC.ink} strokeWidth={4} /></g>)}
           </g>
-          <path d="M 1100 560 L 760 560 Q 700 560 700 620 L 700 660" stroke="#9aa3b5" strokeWidth={60} fill="none" strokeLinejoin="round" />
-          <rect x={660} y={650} width={80} height={36} rx={10} fill="#7f8899" stroke={KC.ink} strokeWidth={6} />
-          <rect x={860} y={500} width={30} height={60} fill="#7f8899" stroke={KC.ink} strokeWidth={6} />
-          <Chorro T={T} x0={700} y0={690} x1={460} y1={950} color="#7fc8ff" o={kprog(T, K.Se + 2.0, K.Se + 2.3)} ancho={26} />
-          {lava > 0 && <Burbujas T={T} x={240} y={880} w={360} h={260} n={18} f={lava} color="rgba(127,200,255,.9)" />}
+          <path d="M 1140 440 L 800 440 Q 700 440 700 540 L 700 600" stroke="#9aa3b5" strokeWidth={92} fill="none" strokeLinejoin="round" />
+          <rect x={640} y={590} width={120} height={50} rx={12} fill="#7f8899" stroke={KC.ink} strokeWidth={7} />
+          <rect x={900} y={340} width={44} height={90} fill="#7f8899" stroke={KC.ink} strokeWidth={7} />
+          <Chorro T={T} x0={700} y0={645} x1={500} y1={1060} color="#7fc8ff" o={kprog(T, K.Se + 2.0, K.Se + 2.3)} ancho={40} />
+          {lava > 0 && <Burbujas T={T} x={190} y={900} w={540} h={440} n={18} f={lava} color="rgba(127,200,255,.9)" rmax={22} />}
         </SvgCapa>
-        <Chip T={T} at={K.Se + 0.3} until={K.Se + 1.9} texto="casi nunca grave" x={540} y={1500} tam={42} borde={KC.mint} />
-        <Chip T={T} at={K.Se + 2.0} until={K.Ci - 0.2} texto="irrita → lávate con agua" x={540} y={1500} tam={42} borde={KC.red} />
+        <Chip T={T} at={K.Se + 0.3} until={K.Se + 1.9} texto="casi nunca grave" x={540} y={1490} tam={44} borde={KC.mint} />
+        <Chip T={T} at={K.Se + 2.0} until={K.Ci - 0.2} texto="irrita → lávate con agua" x={540} y={1490} tam={44} borde={KC.red} />
       </Escena>
       {/* 9 · cierre: las mismas manos, la barra ya encendida */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 980) scale(1.15) translate(-540 -1020)">
           <BarraLuz x={540} y={1020} largo={760} ancho={96} curva={28} luz={1 + 0.1 * Math.sin(T * 3)} roto={1} />
           <Mano x={215} y={1012} rot={-5} flip />
           <Mano x={865} y={1012} rot={5} />
-        </SvgCapa>
-        <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="H₂O₂ + oxalato + colorante → luz" x={540} y={1500} tam={36} borde={VERDE} />
+        </g></SvgCapa>
+        <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="H₂O₂ + oxalato + colorante → luz" x={540} y={1440} tam={38} borde={VERDE} />
       </Escena>
 
       {/* textos del gancho y lupa por dentro */}
-      <Lupa T={T} at={K.G + 0.5} until={K.Q - 0.4} x={290} y={560} r={180} fx={540} fy={1060} tinte={VERDE} etiqueta="POR DENTRO · vidrio roto"
+      <Lupa T={T} at={K.G + 0.5} until={K.Q - 0.4} x={290} y={500} r={210} fx={540} fy={1020} tinte={VERDE} etiqueta="POR DENTRO · vidrio roto"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#10202a" />
           <BarraLuz x={r} y={r} largo={r * 4} ancho={150} curva={30} luz={kprog(t, K.G + 1.2, K.G + 2.4)} roto={kprog(t, K.G + 0.35, K.G + 0.5)} gancho={false} /></svg>} />
-      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.0} until={K.G + 3.2} texto="¿se rompió el plástico?" x={540} y={1500} tam={42} />
-      <Chip T={T} at={K.G + 3.3} until={K.Q - 0.2} texto="se rompe el vidrio de adentro" x={540} y={1500} tam={40} borde={VERDE} />
+      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.0} until={K.G + 3.2} texto="¿se rompió el plástico?" x={540} y={1440} tam={46} />
+      <Chip T={T} at={K.G + 3.3} until={K.Q - 0.2} texto="se rompe el vidrio de adentro" x={540} y={1440} tam={44} borde={VERDE} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="No es plástico: *es vidrio.*" />
