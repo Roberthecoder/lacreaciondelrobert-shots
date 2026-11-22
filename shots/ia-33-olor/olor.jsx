@@ -227,7 +227,8 @@ function Olor() {
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={290} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 900)`}>?</text>)}
+        {/* detrás queda la escena anterior a media luz (la pone cine.jsx); el signo, al centro */}
+        {svg(<text x={540} y={1210} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 1000)`}>?</text>)}
       </Escena>
       {/* 6 · el estudio */}
       <Escena T={T} a={K.Es} b={K.Re}>

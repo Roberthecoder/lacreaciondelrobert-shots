@@ -1,0 +1,2 @@
+- qui-33-barras-luz: ya cumplía (encuadre bien, sin láminas)
+- ia-33-olor: marcaba Pregunta@27s ARRIBA (signo chico arriba a la izquierda); el signo se centró y agrandó (x 540, base y 1210) con la red y el mapa de la escena anterior detrás a media luz; encuadre bien, sin láminas
