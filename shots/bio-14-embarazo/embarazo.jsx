@@ -113,8 +113,8 @@ function Utero({ T, x, y, s = 1, hunde = 1, sale = 0 }) {
   const molecs = Array.from({ length: 9 }, () => [R(), R() * 6]);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {/* pared del útero (endometrio) */}
-    <path d="M -560 40 Q -280 -10 0 30 Q 280 70 560 20 L 560 520 L -560 520 Z" fill="#f59ab0" stroke={KC.ink} strokeWidth={10} />
-    <path d="M -560 120 Q -280 80 0 120 Q 280 160 560 110" stroke="#e46a8a" strokeWidth={8} fill="none" />
+    <path d="M -560 40 Q -280 -10 0 30 Q 280 70 560 20 L 560 520 L -560 520 Z" fill="#c8687f" stroke={KC.ink} strokeWidth={10} />
+    <path d="M -560 120 Q -280 80 0 120 Q 280 160 560 110" stroke="#a84462" strokeWidth={8} fill="none" />
     {/* vaso sanguíneo de la madre */}
     <path d="M -560 330 Q -200 260 0 330 Q 220 400 560 320" stroke={KC.ink} strokeWidth={84} fill="none" />
     <path d="M -560 330 Q -200 260 0 330 Q 220 400 560 320" stroke="#d7263d" strokeWidth={68} fill="none" />
@@ -211,13 +211,13 @@ function Embarazo() {
       <Escena T={T} a={K.G} b={K.Im} zoom={0.06} origen="38% 50%">
         <FondoLunares color={KC.pink} />
         <Ambiente T={T} n={24} />
-        <Capa><PruebaEnMano T={T} x={400} y={900} s={0.95} t={tG} c={1} brilla={tG * (0.6 + 0.4 * Math.sin(T * 6))} /></Capa>
+        <Capa><PruebaEnMano T={T} x={470} y={880} s={1.2} t={tG} c={1} brilla={tG * (0.6 + 0.4 * Math.sin(T * 6))} /></Capa>
       </Escena>
       {/* 1 · implantación: la hCG entra a la sangre de la madre */}
       <Escena T={T} a={K.Im} b={K.Or}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          <Utero T={T} x={540} y={760} s={0.95} hunde={kprog(T, K.Im, K.Im + 1.8, kEase.suave)} sale={kprog(T, K.Im + 2.2, K.Im + 4.6)} />
+          <Utero T={T} x={540} y={820} s={1.15} hunde={kprog(T, K.Im, K.Im + 1.8, kEase.suave)} sale={kprog(T, K.Im + 2.2, K.Im + 4.6)} />
         </Capa>
       </Escena>
       {/* 2 · de la sangre a la orina, y la gota al pozo */}
@@ -227,7 +227,7 @@ function Embarazo() {
           <path d="M -40 520 Q 300 460 520 560" stroke={KC.ink} strokeWidth={84} fill="none" /><path d="M -40 520 Q 300 460 520 560" stroke="#d7263d" strokeWidth={68} fill="none" />
           {[0, 1, 2, 3].map((i) => { const u = ((T - K.Or) * 0.5 + i / 4) % 1; return <HCG key={i} x={klerp(0, 500, u)} y={520 - Math.sin(u * Math.PI) * 50 + (u > 0.8 ? 0 : 0)} s={1.1} rot={T * 60 + i * 40} />; })}
           <FlechaCurva x1={540} y1={590} x2={710} y2={650} p={kprog(T, K.Or + 0.3, K.Or + 1.0)} curva={60} color={KC.ink} T={T} />
-          <Prueba T={T} x={600} y={1050} s={0.6} rot={-90} t={0} c={0} letras={false} />
+          <Prueba T={T} x={537} y={1050} s={0.85} rot={-90} t={0} c={0} letras={false} />
           <g transform={`translate(0 ${klerp(0, 250, kprog(T, K.Or + 1.2, K.Or + 2.1))})`} opacity={1 - kprog(T, K.Or + 2.05, K.Or + 2.25)}>
             <path d="M 750 600 Q 690 730 750 790 Q 810 730 750 600 Z" fill="#ffe27a" stroke={KC.ink} strokeWidth={7} />
             <HCG x={752} y={735} s={0.7} rot={T * 40} /></g>
@@ -277,12 +277,12 @@ function Embarazo() {
         <Capa><Prueba T={T} x={540} y={900} s={1.25} t={kprog(T, mitadRa + 0.2, mitadRa + 1.1)} c={0} brilla={kprog(T, mitadRa + 0.6, mitadRa + 1.1)} /></Capa>
       </Escena>
       {/* 7 · ¿y cómo sabes que funcionó? */}
-      <Escena T={T} a={K.Pr} b={K.Co} zoom={0.06} origen="30% 50%">
+      <Escena T={T} a={K.Pr} b={K.Co} zoom={0.06}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          <Prueba T={T} x={330} y={900} s={1.1} t={1} c={0} />
-          <text x={330} y={680} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.pink} stroke={KC.ink} strokeWidth={8} paintOrder="stroke"
-            transform={`rotate(${Math.sin(T * 4) * 8} 330 640)`}>?</text>
+          <Prueba T={T} x={540} y={900} s={1.1} t={1} c={0} />
+          <text x={540} y={680} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.pink} stroke={KC.ink} strokeWidth={8} paintOrder="stroke"
+            transform={`rotate(${Math.sin(T * 4) * 8} 540 640)`}>?</text>
         </Capa>
       </Escena>
       {/* 8 · línea de control: atrapa los que pasan de largo */}
@@ -304,13 +304,15 @@ function Embarazo() {
         <Capa>
           {(() => {
             const junta = kprog(T, K.Es + 2.4, K.Es + 4.0, kEase.suave), sale = kprog(T, K.Es + 4.2, K.Es + 7.2);
-            const xb = klerp(270, 540, junta), xm = klerp(810, 540, junta), yy = 900;
+            const xb = klerp(300, 540, junta), xm = klerp(780, 540, junta), yy = 900;
             return <g>
-              <Raton x={200} y={1690} s={0.7} />
+              <Raton x={190} y={1400} s={0.8} />
+              <g transform="translate(540 900) scale(1.3) translate(-540 -900)">
               {junta < 1 ? <g><Celula x={xb} y={yy} r={110} color="#9fe3ff" nucleo="#2b6a9e" /><Celula x={xm} y={yy} r={150} color="#ffb38a" nucleo="#a8452a" /></g>
                 : <Celula x={540} y={yy} r={190 + Math.sin(T * 3) * 4} color="#ffd38a" nucleo="#7a3fa0" />}
               {junta >= 1 && Array.from({ length: 10 }, (_, i) => { const a = (i / 10) * Math.PI * 2 + 0.3, d = klerp(200, 470, ((T - K.Es - 4.2) * 0.35 + i * 0.1) % 1);
                 return <Anti key={i} x={540 + Math.cos(a) * d} y={yy + Math.sin(a) * d * 0.9} s={0.55} rot={a * 57 + 90} color={KC.pink} o={sale > 0 ? 1 : 0} />; })}
+              </g>
             </g>;
           })()}
         </Capa>
@@ -318,7 +320,7 @@ function Embarazo() {
       {/* 10 · Nobel 1984 */}
       <Escena T={T} a={K.No} b={K.Ca} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        <Capa><Medalla T={T} x={540} y={900} s={kprog(T, K.No, K.No + 0.5, kEase.rebote)} /></Capa>
+        <Capa><Medalla T={T} x={540} y={850} s={1.3 * kprog(T, K.No, K.No + 0.5, kEase.rebote)} /></Capa>
       </Escena>
       {/* 11 · dato chistoso: anticuerpos de cabra que atrapan los de ratón */}
       <Escena T={T} a={K.Ca} b={K.Ci}>
@@ -336,13 +338,13 @@ function Embarazo() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="38% 50%">
         <FondoLunares color={KC.pink} />
         <Ambiente T={T} n={24} />
-        <Capa><PruebaEnMano T={T} x={400} y={900} s={0.95} t={1} c={1} brilla={0.6 + 0.4 * Math.sin(T * 6)} /></Capa>
+        <Capa><PruebaEnMano T={T} x={470} y={880} s={1.2} t={1} c={1} brilla={0.6 + 0.4 * Math.sin(T * 6)} /></Capa>
       </Escena>
 
       {/* textos */}
       <Chip T={T} at={K.G + 0.9} until={K.Im - 0.3} texto="no es tinta: es oro + anticuerpos" y={1500} tam={40} borde={ORO} />
-      <Etq T={T} at={K.G + 1.0} until={K.Im - 0.3} x={262} y={800} texto="prueba" lado="izq" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Im + 2.4} until={K.Or - 0.2} x={660} y={1000} texto="hCG" tam={46} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.0} until={K.Im - 0.3} x={290} y={762} texto="prueba" lado="izq" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Im + 2.4} until={K.Or - 0.2} x={690} y={1070} texto="hCG" tam={46} color={KC.ink} />
       <Chip T={T} at={K.Im + 0.4} until={K.Im + 2.3} texto="el embrión se implanta" y={1500} tam={42} borde={KC.pink} />
       <Chip T={T} at={K.Im + 2.6} until={K.Or - 0.2} texto="hCG → sangre de la madre" y={1500} tam={42} borde="#d7263d" />
       <Chip T={T} at={K.Or + 0.3} until={K.Su - 0.2} texto="sangre → orina → prueba" y={1500} tam={42} borde={KC.ink} />
@@ -359,17 +361,17 @@ function Embarazo() {
       <Chip T={T} at={K.Co + 0.4} until={K.Es - 0.1} texto="control: sale haya hormona o no" y={1500} tam={38} borde={CABRA} />
       <Chip T={T} at={K.Es + 0.2} until={K.Es + 2.3} texto="monoclonales: todos idénticos" y={1500} tam={40} borde={KC.pink} />
       <TarjetaEstudio T={T} at={K.Es + 2.4} until={K.No - 0.2} anio="1975" quien="Köhler y Milstein · Cambridge" revista="Nature · células fusionadas: hibridoma" y={480} />
-      <Etq T={T} at={K.Es + 0.6} until={K.Es + 4.0} x={150} y={740} texto="célula de bazo" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Es + 0.8} until={K.Es + 4.0} x={930} y={1100} texto="célula de mieloma" lado="izq" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Es + 4.3} until={K.No - 0.2} x={760} y={1160} texto="hibridoma" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Es + 0.4} until={K.No - 0.2} x={340} y={1690} texto="ratón" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.No + 0.4} until={K.Ca - 0.1} texto="Nobel de Fisiología o Medicina" y={1500} tam={40} borde={ORO} />
-      <Chip T={T} at={K.No + 0.6} until={K.Ca - 0.1} texto="Jerne · Köhler · Milstein" y={1620} tam={34} borde={KC.ink} mono />
+      <Etq T={T} at={K.Es + 0.6} until={K.Es + 4.0} x={90} y={722} texto="célula de bazo" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Es + 0.8} until={K.Es + 4.0} x={1000} y={1135} texto="célula de mieloma" lado="izq" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Es + 4.3} until={K.No - 0.2} x={770} y={1135} texto="hibridoma" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Es + 0.4} until={K.No - 0.2} x={370} y={1390} texto="ratón" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.No + 0.4} until={K.Ca - 0.1} texto="Nobel de Fisiología o Medicina" y={1270} tam={40} borde={ORO} />
+      <Chip T={T} at={K.No + 0.6} until={K.Ca - 0.1} texto="Jerne · Köhler · Milstein" y={1370} tam={34} borde={KC.ink} mono />
       <Etq T={T} at={K.Ca + 0.4} until={K.Ci - 0.1} x={430} y={600} texto="de cabra" lado="izq" tam={40} color={KC.ink} />
       <Etq T={T} at={K.Ca + 1.6} until={K.Ci - 0.1} x={740} y={1140} texto="de ratón" tam={40} color={KC.ink} />
       <Chip T={T} at={K.Ca + 2.2} until={K.Ci - 0.1} texto="línea C: cabra atrapa ratón" y={1500} tam={40} borde={CABRA} />
-      <Etq T={T} at={K.Ci + 0.4} until={K.Ou} x={262} y={680} texto="control" lado="izq" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Ci + 0.8} until={K.Ou} x={262} y={800} texto="hCG" lado="izq" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 0.4} until={K.Ou} x={270} y={620} texto="control" lado="izq" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 0.8} until={K.Ou} x={290} y={762} texto="hCG" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="oro + anticuerpos + hCG" y={1500} tam={40} borde={ORO} />
       {kvisible(T, K.Ox, K.Pr) && T > K.Ox + 0.6 && <div style={{ position:'absolute', right:30, top:1640, zIndex:41, font:`700 26px ${KF.mono}`, color:'rgba(246,243,236,.75)' }}>esquema · no a escala</div>}
 
