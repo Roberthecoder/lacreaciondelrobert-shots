@@ -194,8 +194,8 @@ function PeloMuerto() {
   const K = CUES, FIN = K.Outro + 4;
   // portada: mano + cara con barbita (inicio y cierre)
   const Portada = ({ cierre = false }) => <Lienzo>
-    <ManoFrente x={300} y={930} s={1.0} T={T} rot={mece(T, 2, 0.4) * 4} retrae={cierre ? kprog(T, K.Cierre + 0.8, K.Cierre + 1.3) : 0} />
-    <CabezaPerfil x={790} y={1010} s={0.75} gesto={cierre ? 'sonrie' : 'normal'}><Barbita largo={cierre ? 2 : 0} /></CabezaPerfil>
+    <ManoFrente x={330} y={1150} s={1.45} T={T} rot={mece(T, 2, 0.4) * 4} retrae={cierre ? kprog(T, K.Cierre + 0.8, K.Cierre + 1.3) : 0} />
+    <CabezaPerfil x={762} y={1090} s={1.05} gesto={cierre ? 'sonrie' : 'normal'}><Barbita largo={cierre ? 2 : 0} /></CabezaPerfil>
   </Lienzo>;
   // tiempos del gancho
   const G = K.Gancho, flechas = kprog(T, G + 0.1, G + 0.6, kEase.sale), tacha = kprog(T, G + 1.4, G + 1.9, kEase.sale);
@@ -219,18 +219,18 @@ function PeloMuerto() {
         <FondoLunares color={KC.pink} />
         <Portada />
         <Lienzo z={3}>
-          {[-105, -35, 35, 105].map((dx, i) => <FlechaRecta key={i} x1={300 + dx} y1={600} x2={300 + dx} y2={560 - 90 * flechas - (i % 2) * 20} p={flechas} color={KC.yellow} grosor={12} punta={26} />)}
-          <TextoSvg x={300} y={420} tam={96} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, G + 0.15, G + 0.55, kEase.rebote))} o={1 - 0.4 * tacha}>¿CRECEN?</TextoSvg>
-          {tacha > 0 && <line x1={110} y1={440} x2={110 + 380 * tacha} y2={360 - 20 * tacha} stroke={KC.red} strokeWidth={22} strokeLinecap="round" />}
+          {[-105, -35, 35, 105].map((dx, i) => <FlechaRecta key={i} x1={330 + dx * 1.45} y1={670} x2={330 + dx * 1.45} y2={615 - 110 * flechas - (i % 2) * 24} p={flechas} color={KC.yellow} grosor={15} punta={32} />)}
+          <TextoSvg x={330} y={440} tam={128} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, G + 0.15, G + 0.55, kEase.rebote))} o={1 - 0.4 * tacha}>¿CRECEN?</TextoSvg>
+          {tacha > 0 && <line x1={75} y1={465} x2={75 + 510 * tacha} y2={465 - 130 * tacha} stroke={KC.red} strokeWidth={26} strokeLinecap="round" />}
         </Lienzo>
-        <Chip T={T} at={G + 2.9} until={K.Mito - 0.1} texto="es la piel" x={790} y={790} tam={48} borde={KC.gold} />
+        <Chip T={T} at={G + 2.9} until={K.Mito - 0.1} texto="es la piel" x={770} y={780} tam={52} borde={KC.gold} />
       </Escena>
       {/* 1 · el mito en un libro de cuentos (amable) con sello MITO */}
       <Escena T={T} a={K.Mito} b={K.Crecer} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
           <g transform={`translate(0 ${(1 - kprog(T, K.Mito - 0.2, K.Mito + 0.5, kEase.rebote)) * 500})`}>
-            <Libro x={540} y={860}>
+            <Libro x={540} y={930} s={1.12}>
               <circle cx={-300} cy={-180} r={34} fill={KC.gold2} stroke={KC.ink} strokeWidth={6} />
               <circle cx={-286} cy={-190} r={30} fill={KC.paper} />
               {[[-120, -200], [-70, -150], [-220, -110]].map(([sx, sy], i) => <path key={i} d="M 0 -14 L 4 -4 L 14 0 L 4 4 L 0 14 L -4 4 L -14 0 L -4 -4 Z" transform={`translate(${sx} ${sy}) scale(${1 + 0.2 * Math.sin(T * 4 + i)})`} fill={KC.gold2} />)}
@@ -243,55 +243,55 @@ function PeloMuerto() {
               <text x={190} y={168} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.magenta}>de morir</text>
             </Libro>
           </g>
-          <Sello T={T} at={K.Mito + 2.4} x={730} y={960} />
+          <g transform="translate(753 1042) scale(1.12)"><Sello T={T} at={K.Mito + 2.4} x={0} y={0} /></g>
         </Lienzo>
-        <Chip T={T} at={K.Mito + 0.3} until={K.Crecer - 0.1} texto="historias de miedo" x={540} y={470} tam={44} borde={KC.violet} />
+        <Chip T={T} at={K.Mito + 0.3} until={K.Crecer - 0.1} texto="historias de miedo" x={540} y={490} tam={46} borde={KC.violet} />
       </Escena>
       {/* 2–3 · por dentro: células que se dividen con energía… y que paran sin sangre, oxígeno ni azúcar */}
       <Escena T={T} a={K.Crecer} b={K.Piel} fondo={KC.noche} zoom={0.03}>
         <Ambiente T={T} n={18} color="rgba(255,255,255,.12)" />
         <Lienzo>
-          <Foliculo x={300} y={1060} Tc={Tc} act={act} crece={12 * (Tc - K.Crecer)} />
-          <Dedo x={1040} y={930} s={0.75} T={T} guia={0} raiz={<Racimo x={-205} y={-62} Tc={Tc} act={act} r={13} pts={[[-30, 0], [0, 4], [30, 0]]} color={KC.pink} />} />
-          <Bateria x={540} y={420} nivel={nivel} T={T} s={kprog(T, K.Crecer + 2.4, K.Crecer + 2.9, kEase.rebote)} />
-          {T > K.Sin && [[IconoSangre, 170], [IconoO2, 370], [IconoAzucar, 570]].map(([Ic, ix], i) => {
+          <Foliculo x={320} y={960} s={1.3} Tc={Tc} act={act} crece={12 * (Tc - K.Crecer)} />
+          <Dedo x={965} y={1370} s={1.15} T={T} guia={0} raiz={<Racimo x={-205} y={-62} Tc={Tc} act={act} r={13} pts={[[-30, 0], [0, 4], [30, 0]]} color={KC.pink} />} />
+          <Bateria x={775} y={600} nivel={nivel} T={T} s={kprog(T, K.Crecer + 2.4, K.Crecer + 2.9, kEase.rebote)} />
+          {T > K.Sin && [[IconoSangre, 630], [IconoO2, 775], [IconoAzucar, 920]].map(([Ic, ix], i) => {
             const a0 = K.Sin + 0.2 + i * 0.9, e = kprog(T, a0, a0 + 0.35, kEase.rebote);
-            return <g key={i}><g transform={`translate(${ix} 590) scale(${e}) translate(${-ix} -590)`}><Ic x={ix} y={590} /></g><Tache x={ix} y={590} p={kprog(T, a0 + 0.4, a0 + 0.8, kEase.sale)} r={44} /></g>; })}
+            return <g key={i}><g transform={`translate(${ix} 850) scale(${e}) translate(${-ix} -850)`}><Ic x={ix} y={850} /></g><Tache x={ix} y={850} p={kprog(T, a0 + 0.4, a0 + 0.8, kEase.sale)} r={44} /></g>; })}
         </Lienzo>
-        <Chip T={T} at={K.Crecer + 2.6} until={K.Sin - 0.1} texto="energía" x={540} y={530} tam={36} borde={KC.mint} />
-        <Etq T={T} at={K.Crecer + 0.5} until={K.Piel - 0.2} x={380} y={1110} texto="raíz del pelo" color={KC.texto} />
-        <Etq T={T} at={K.Crecer + 1.2} until={K.Piel - 0.2} x={860} y={1030} texto="raíz de la uña" lado="izq" color={KC.texto} />
-        <Chip T={T} at={K.Crecer + 0.9} until={K.Sin - 0.1} texto="células que se dividen" x={540} y={290} tam={36} borde={KC.pink} />
-        <Chip T={T} at={STOP} until={K.Piel - 0.1} texto="dejan de trabajar" x={420} y={290} tam={40} borde={KC.red} />
+        <Chip T={T} at={K.Crecer + 2.6} until={K.Sin - 0.1} texto="energía" x={775} y={720} tam={38} borde={KC.mint} />
+        <Etq T={T} at={K.Crecer + 0.5} until={K.Piel - 0.2} x={440} y={985} texto="raíz del pelo" color={KC.texto} />
+        <Etq T={T} at={K.Crecer + 1.2} until={K.Piel - 0.2} x={720} y={1218} texto="raíz de la uña" lado="izq" color={KC.texto} />
+        <Chip T={T} at={K.Crecer + 0.9} until={K.Sin - 0.1} texto="células que se dividen" x={755} y={430} tam={38} borde={KC.pink} />
+        <Chip T={T} at={STOP} until={K.Piel - 0.1} texto="dejan de trabajar" x={765} y={430} tam={42} borde={KC.red} />
       </Escena>
       {/* 4–5 · la piel pierde agua, se retrae y deja ver más uña (y más pelo) */}
       <Escena T={T} a={K.Piel} b={K.Barba} fondo={KC.cyan} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <Dedo x={880} y={640} s={1.25} T={T} retrae={ret} agua={kprog(T, K.Piel + 0.3, K.Piel + 0.8) * (1 - kprog(T, K.Asoma + 2.4, K.Asoma + 3))} guia={kprog(T, K.Asoma + 0.3, K.Asoma + 0.8)} vellos={1} />
-          {(() => { const foldG = 880 + (-140 - 52 * ret) * 1.25, baseG = 880 - 215 * 1.25, tipG = 880 + 30 * 1.25;
+          <Dedo x={960} y={770} s={1.5} T={T} retrae={ret} agua={kprog(T, K.Piel + 0.3, K.Piel + 0.8) * (1 - kprog(T, K.Asoma + 2.4, K.Asoma + 3))} guia={kprog(T, K.Asoma + 0.3, K.Asoma + 0.8)} vellos={1} />
+          {(() => { const foldG = 960 + (-140 - 52 * ret) * 1.5, baseG = 960 - 215 * 1.5, tipG = 960 + 30 * 1.5;
             return <g>
-              <Corchete x1={baseG} x2={tipG} y={480} color="#fff" texto="misma uña" tam={36} p={kprog(T, K.Asoma + 0.3, K.Asoma + 0.8)} />
-              <Corchete x1={foldG} x2={tipG} y={390} color={KC.yellow} texto="se ve" tam={36} p={kprog(T, K.Asoma + 0.9, K.Asoma + 1.4)} />
+              <Corchete x1={baseG} x2={tipG} y={555} color="#fff" texto="misma uña" tam={40} p={kprog(T, K.Asoma + 0.3, K.Asoma + 0.8)} />
+              <Corchete x1={foldG} x2={tipG} y={460} color={KC.yellow} texto="se ve" tam={40} p={kprog(T, K.Asoma + 0.9, K.Asoma + 1.4)} />
             </g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Piel + 0.4} until={K.Asoma + 0.2} texto="pierde agua" x={330} y={880} tam={44} borde={KC.cyan} />
-        <Etq T={T} at={K.Piel + 1.2} until={K.Asoma + 0.6} x={880 - 220 * 1.25} y={780} texto="la piel se retrae" lado="izq" color={KC.ink} />
-        <Lupa T={T} at={K.Asoma + 1.0} until={K.Barba - 0.3} x={430} y={900} r={150} fx={880 - 400 * 1.25} fy={640 - 70 * 1.25} tinte={KC.yellow} etiqueta="POR DENTRO · PIEL Y PELO"
+        <Chip T={T} at={K.Piel + 0.4} until={K.Asoma + 0.2} texto="pierde agua" x={330} y={1060} tam={48} borde={KC.cyan} />
+        <Etq T={T} at={K.Piel + 1.2} until={K.Asoma + 0.6} x={960 - 190 * 1.5} y={945} texto="la piel se retrae" lado="izq" color={KC.ink} />
+        <Lupa T={T} at={K.Asoma + 1.0} until={K.Barba - 0.3} x={540} y={1215} r={215} fx={960 - 400 * 1.5} fy={770 - 70 * 1.5} tinte={KC.yellow} etiqueta="POR DENTRO · PIEL Y PELO"
           interior={(t, r) => <PielPelo r={r} T={t} baja={40 * kprog(t, K.Asoma + 1.4, K.Asoma + 3.0, kEase.suave)} resalta={1} />} />
-        <Chip T={T} at={K.Asoma + 1.0} until={K.Asoma + 4.0} texto="más uña y más pelo a la vista" x={540} y={300} tam={38} borde={KC.yellow} />
-        <Chip T={T} at={K.Asoma + 4.2} until={K.Barba - 0.1} texto="creció: 0 mm" x={540} y={300} tam={48} borde={KC.red} />
+        <Chip T={T} at={K.Asoma + 1.0} until={K.Asoma + 4.0} texto="más uña y más pelo a la vista" x={540} y={310} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Asoma + 4.2} until={K.Barba - 0.1} texto="creció: 0 mm" x={540} y={310} tam={50} borde={KC.red} />
       </Escena>
       {/* 6 · la barba: la piel se retrae y asoma un trozo que estaba bajo la piel */}
       <Escena T={T} a={K.Barba} b={K.Pregunta} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <CabezaPerfil x={330} y={800} s={1.3}><Barbita largo={bajaB / 10} /></CabezaPerfil>
+          <CabezaPerfil x={340} y={760} s={1.6}><Barbita largo={bajaB / 10} /></CabezaPerfil>
         </Lienzo>
-        <Etq T={T} at={K.Barba + 0.3} until={K.Barba + 2.4} x={330 + 160 * 1.3} y={800 + 205 * 1.3} texto="mejilla" lado="der" color={KC.ink} />
-        <Lupa T={T} at={K.Barba + 0.5} until={K.Pregunta - 0.2} x={790} y={850} r={185} fx={330 + 100 * 1.3} fy={800 + 150 * 1.3} tinte={KC.gold2} etiqueta="POR DENTRO · MEJILLA"
+        <Etq T={T} at={K.Barba + 0.3} until={K.Barba + 2.4} x={560} y={900} texto="mejilla" lado="der" color={KC.ink} />
+        <Lupa T={T} at={K.Barba + 0.5} until={K.Pregunta - 0.2} x={760} y={1230} r={215} fx={340 + 100 * 1.6} fy={760 + 150 * 1.6} tinte={KC.gold2} etiqueta="POR DENTRO · MEJILLA"
           interior={(t, r) => <PielPelo r={r} T={t} corto baja={bajaB} resalta={kprog(t, K.Barba + 2.4, K.Barba + 2.9)} />} />
-        <Chip T={T} at={K.Barba + 2.6} until={K.Pregunta - 0.1} texto="estaba bajo la piel" x={360} y={400} tam={40} borde={KC.gold2} />
+        <Chip T={T} at={K.Barba + 2.6} until={K.Pregunta - 0.1} texto="estaba bajo la piel" x={265} y={1300} tam={42} borde={KC.gold2} />
       </Escena>
       {/* 7 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Unas} color={KC.lilac} />
@@ -299,36 +299,43 @@ function PeloMuerto() {
       <Escena T={T} a={K.Unas} b={K.Pelo} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <g opacity={kprog(T, K.Unas + 1.8, K.Unas + 2.2)}>
+          <g>
+            {/* dedo, regla y marca crecen juntos (×1.5): la regla sigue midiendo lo mismo */}
+            <g transform="translate(-437 -280) scale(1.5)">
             <Dedo x={560} y={760} s={1} T={T} crece={3.5 * PXMM * fU} />
             <ReglaMm x={590} y={870} pxmm={PXMM} n={5} />
             {fU > 0 && <line x1={590 + 3.5 * PXMM * fU} y1={700} x2={590 + 3.5 * PXMM * fU} y2={870} stroke={KC.red} strokeWidth={5} strokeDasharray="10 8" />}
-            <Calendario x={220} y={470} dia={1 + 29 * fU} />
+            </g>
+            <g transform="translate(220 480) scale(1.4)"><Calendario x={0} y={0} dia={1 + 29 * fU} /></g>
           </g>
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Unas + 0.2} until={K.Unas + 1.8} anio="2010" quien="uñas de las manos" revista="Yaemsiri y col. · JEADV" x={540} y={700} />
-        <Chip T={T} at={K.Unas + 2.4} until={K.Pelo - 0.1} texto="≈ 3.5 mm al mes (estudio 2010)" x={540} y={1060} tam={40} borde={KC.ink} />
+        <TarjetaEstudio T={T} at={K.Unas + 0.2} until={K.Unas + 1.8} anio="2010" quien="uñas de las manos" revista="Yaemsiri y col. · JEADV" x={720} y={420} />
+        <Chip T={T} at={K.Unas + 2.4} until={K.Pelo - 0.1} texto="≈ 3.5 mm al mes (estudio 2010)" x={540} y={1260} tam={42} borde={KC.ink} />
       </Escena>
       {/* 9 · pelo en vida: ≈ 1 cm al mes (revisión 2016) */}
       <Escena T={T} a={K.Pelo} b={K.Vida} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <g opacity={1 - kprog(T, K.Pelo + 2.3, K.Pelo + 2.7)}><CabezaPerfil x={290} y={800} s={0.95} /></g>
+          <CabezaPerfil x={232} y={930} s={0.98} />
+          {/* tablero con pelo, regla y calendario: todo crece junto (×1.3), la regla sigue marcando 1 cm */}
+          <g transform="translate(-278 -41) scale(1.3)">
           <rect x={560} y={470} width={440} height={600} rx={36} fill="#fff7e8" stroke={KC.ink} strokeWidth={9} />
           <rect x={560} y={960} width={440} height={110} rx={0} fill={DERMIS} stroke={KC.ink} strokeWidth={7} />
           <rect x={560} y={960} width={440} height={26} fill={CPIEL} stroke={KC.ink} strokeWidth={6} />
           <rect x={741} y={960 - 24 - PXCM * fP} width={18} height={24 + PXCM * fP + 60} rx={9} fill={CPELO} />
           <ReglaCm x={820} y={960 - 24} pxcm={PXCM} />
           <Calendario x={650} y={600} dia={1 + 29 * fP} />
+          </g>
         </Lienzo>
-        <Etq T={T} at={K.Pelo + 0.4} until={K.Pelo + 2.3} x={110} y={520} texto="pelo de tu cabeza" lado="der" color={KC.texto} />
-        <TarjetaEstudio T={T} at={K.Pelo + 2.6} until={K.Vida - 0.1} anio="2016" quien="una revisión" revista="Wolff y col. · Dtsch Arztebl Int" x={300} y={790} />
-        <Chip T={T} at={K.Pelo + 1.2} until={K.Vida - 0.1} texto="≈ 1 cm al mes (revisión 2016)" x={540} y={1150} tam={40} borde={KC.ink} />
+        <Etq T={T} at={K.Pelo + 0.4} until={K.Pelo + 2.3} x={18} y={640} texto="pelo de tu cabeza" lado="der" color={KC.texto} tam={30} />
+        <TarjetaEstudio T={T} at={K.Pelo + 2.6} until={K.Vida - 0.1} anio="2016" quien="una revisión" revista="Wolff y col. · Dtsch Arztebl Int" x={350} y={400} />
+        <Chip T={T} at={K.Pelo + 1.2} until={K.Vida - 0.1} texto="≈ 1 cm al mes (revisión 2016)" x={540} y={1450} tam={42} borde={KC.ink} />
       </Escena>
       {/* 10 · en vida: el corazón les manda sangre y nutrientes */}
       <Escena T={T} a={K.Vida} b={K.Cierre} fondo={KC.noche} zoom={0.03}>
         <Ambiente T={T} n={18} color="rgba(255,255,255,.12)" />
         <Lienzo>
+          <g transform="translate(-30 -132) scale(1.2)">
           <path d={`M ${V1[0]} ${V1[1]} C ${V1[0]} ${V1[1] + 250} ${V2[0] - 200} ${V2[1]} ${V2[0]} ${V2[1]} S ${V3[0] + 30} ${V3[1] + 40} ${V3[0]} ${V3[1]}`} stroke={KC.ink} strokeWidth={46} fill="none" strokeLinecap="round" />
           <path d={`M ${V1[0]} ${V1[1]} C ${V1[0]} ${V1[1] + 250} ${V2[0] - 200} ${V2[1]} ${V2[0]} ${V2[1]} S ${V3[0] + 30} ${V3[1] + 40} ${V3[0]} ${V3[1]}`} stroke="#b0303a" strokeWidth={32} fill="none" strokeLinecap="round" />
           <Foliculo x={640} y={1090} Tc={T} act={1} crece={10 * (T - K.Vida)} ancho={220} />
@@ -338,21 +345,22 @@ function PeloMuerto() {
               : <ellipse key={i} cx={P[0]} cy={P[1]} rx={13} ry={9} fill={SANGRE} stroke={KC.ink} strokeWidth={3} opacity={kprog(T, K.Vida + 0.3, K.Vida + 0.7)} />; })}
           <line x1={H[0]} y1={H[1] + 40} x2={V1[0]} y2={V1[1]} stroke="#b0303a" strokeWidth={30} />
           <Corazon x={H[0]} y={H[1]} s={1.8} late={late} />
+          </g>
         </Lienzo>
-        <Chip T={T} at={K.Vida + 0.5} until={K.Vida + 3.6} texto="sangre y nutrientes" x={360} y={400} tam={40} borde={SANGRE} />
-        <Chip T={T} at={K.Vida + 1.6} until={K.Vida + 3.6} texto="todos los días" x={300} y={480} tam={36} borde={NUTRI} />
-        <Chip T={T} at={K.Vida + 3.8} until={K.Cierre - 0.1} texto="sin eso: se detiene" x={360} y={420} tam={42} borde={KC.red} />
-        <Etq T={T} at={K.Vida + 1.0} until={K.Cierre - 0.2} x={720} y={1110} texto="folículo" color={KC.texto} />
+        <Chip T={T} at={K.Vida + 0.5} until={K.Vida + 3.6} texto="sangre y nutrientes" x={600} y={330} tam={42} borde={SANGRE} />
+        <Chip T={T} at={K.Vida + 1.6} until={K.Vida + 3.6} texto="todos los días" x={600} y={415} tam={38} borde={NUTRI} />
+        <Chip T={T} at={K.Vida + 3.8} until={K.Cierre - 0.1} texto="sin eso: se detiene" x={600} y={360} tam={44} borde={KC.red} />
+        <Etq T={T} at={K.Vida + 1.0} until={K.Cierre - 0.2} x={640} y={1150} texto="folículo" lado="izq" color={KC.texto} tam={30} />
       </Escena>
       {/* 11 · cierre: la misma mano y barba; no crece: se retira la piel */}
       <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.pink} />
         <Portada cierre />
         <Lienzo z={3}>
-          <TextoSvg x={300} y={420} tam={96} color={KC.yellow} rot={-4} o={0.6}>¿CRECEN?</TextoSvg>
-          <line x1={110} y1={440} x2={490} y2={340} stroke={KC.red} strokeWidth={22} strokeLinecap="round" />
+          <TextoSvg x={330} y={440} tam={128} color={KC.yellow} rot={-4} o={0.6}>¿CRECEN?</TextoSvg>
+          <line x1={75} y1={465} x2={585} y2={335} stroke={KC.red} strokeWidth={22} strokeLinecap="round" />
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 0.6} until={K.Outro - 0.1} texto="se retira la piel" x={540} y={560} tam={52} borde={KC.gold} />
+        <Chip T={T} at={K.Cierre + 0.6} until={K.Outro - 0.1} texto="se retira la piel" x={775} y={770} tam={50} borde={KC.gold} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Mito - 0.1} texto="No crecen: *la piel se encoge.*" />
