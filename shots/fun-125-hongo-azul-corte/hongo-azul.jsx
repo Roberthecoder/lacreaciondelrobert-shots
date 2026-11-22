@@ -9,6 +9,7 @@ const HA = {
 
 // Subtítulo con *resaltado* y _cursiva_ (nombres científicos). Mismo lugar y tiempos que Subtitulo del kit.
 function Sub({ T, at, until, texto, idx, color = KC.gold2, tam = 62 }) {
+  if (typeof CINE_OPC !== 'undefined' && !CINE_OPC.subtitulos) return null;   // modo cine: sin subtítulo quemado
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
@@ -198,7 +199,7 @@ function HongoAzulShot() {
       {/* 1 · gancho: lo cortan y se pone azul */}
       <Escena T={T} a={K.G} b={K.Bo} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1360) scale(1.75) translate(-360 -1120)">
           <ellipse cx={360} cy={1125} rx={300} ry={36} fill="#5b3a22" opacity=".55" />
           {abre <= 0 && <BoletoExt x={360} y={1120} s={1.05} id="g0" rot={Math.sin(T * 6) * 1.5} />}
           {abre > 0 && <>
@@ -206,24 +207,24 @@ function HongoAzulShot() {
             <BoletoCorte x={360 + 45 * abre} y={1120} s={1.05} rot={5 * abre} id="gR" azul={azul0} mitad="der" />
           </>}
           <Navaja p={corte0} x0={360} y0={560} x1={330} y1={1160} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 2 · es un boleto: poros, no láminas */}
       <Escena T={T} a={K.Bo} b={K.To} zoom={0.06}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <g transform={`translate(0 ${(1 - kprog(T, K.Bo, K.Bo + 0.8, kEase.sale)) * 120})`}><Poros x={440} y={830} r={350} /></g>
-          <g opacity={kprog(T, K.Bo + 1.8, K.Bo + 2.3)}><Esponja x={800} y={1130} s={kclamp(kprog(T, K.Bo + 1.8, K.Bo + 2.4, kEase.rebote), 0.01, 1)} /></g>
+          <g transform={`translate(0 ${(1 - kprog(T, K.Bo, K.Bo + 0.8, kEase.sale)) * 120})`}><Poros x={540} y={900} r={455} /></g>
+          <g opacity={kprog(T, K.Bo + 1.8, K.Bo + 2.3)}><Esponja x={770} y={1360} s={kclamp(kprog(T, K.Bo + 1.8, K.Bo + 2.4, kEase.rebote), 0.01, 1) * 1.35} /></g>
         </>)}
       </Escena>
       {/* 3 · Cyanoboletus pulverulentus: con solo tocarlo */}
       <Escena T={T} a={K.To} b={K.Pi} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <BoletoExt x={330} y={1130} s={1.25} id="cy" somb="#4e321e" brillo="#7a5232" poros={HA.poro} pie={HA.pieY} pieBase="#a8532a"
+          <BoletoExt x={420} y={1400} s={1.9} id="cy" somb="#4e321e" brillo="#7a5232" poros={HA.poro} pie={HA.pieY} pieBase="#a8532a"
             manchas={[[60, -120, 60, kprog(T, K.To + 1.2, K.To + 2.2)], [120, -190, 40, kprog(T, K.To + 2.6, K.To + 3.4)], [150, -188, 46, kprog(T, K.To + 2.7, K.To + 3.6)]]} />
-          <Dedo x={330 + 60 * 1.25 + 30} y={1130 - 120 * 1.25} p={kprog(T, K.To + 0.4, K.To + 1.1)} sale={kprog(T, K.To + 1.6, K.To + 2.1)} />
-          <Dedo x={330 + 150 * 1.25 + 30} y={1130 - 190 * 1.25} p={kprog(T, K.To + 2.1, K.To + 2.6)} sale={kprog(T, K.To + 3.2, K.To + 3.7)} />
+          <g transform={`translate(${420 + 60 * 1.9 + 40} ${1400 - 120 * 1.9}) scale(1.5)`}><Dedo x={0} y={0} p={kprog(T, K.To + 0.4, K.To + 1.1)} sale={kprog(T, K.To + 1.6, K.To + 2.1)} /></g>
+          <g transform={`translate(${420 + 150 * 1.9 + 40} ${1400 - 190 * 1.9}) scale(1.5)`}><Dedo x={0} y={0} p={kprog(T, K.To + 2.1, K.To + 2.6)} sale={kprog(T, K.To + 3.2, K.To + 3.7)} /></g>
         </>)}
       </Escena>
       {/* 4 · por dentro: el pigmento en las células (fondo oscuro) */}
@@ -231,132 +232,132 @@ function HongoAzulShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
         {fsvg(<>
-          <g opacity={kprog(T, K.Pi, K.Pi + 0.8)}><Tejido T={T} /></g>
-          <g opacity={kprog(T, K.Pi + 2.6, K.Pi + 3.2)}><Pulvinico x={460} y={600} s={kclamp(kprog(T, K.Pi + 2.6, K.Pi + 3.3, kEase.rebote), 0.01, 1) * 0.9} /></g>
+          <g opacity={kprog(T, K.Pi, K.Pi + 0.5)} transform="translate(540 1010) scale(1.5) translate(-540 -960)"><Tejido T={T} /></g>
+          <g opacity={kprog(T, K.Pi + 2.6, K.Pi + 3.2)}><Pulvinico x={805} y={500} s={kclamp(kprog(T, K.Pi + 2.6, K.Pi + 3.3, kEase.rebote), 0.01, 1) * 0.8} /></g>
         </>)}
       </Escena>
       {/* 5 · el corte: células rotas, pigmento y oxígeno */}
       <Escena T={T} a={K.Co} b={K.Ox} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1010) scale(1.5) translate(-540 -960)">
           <Tejido T={T} corte={kprog(T, K.Co + 0.6, K.Co + 1.2)} sale={kprog(T, K.Co + 1.0, K.Co + 2.2)} azul={kprog(T, K.Co + 3.8, K.Co + 5.2)} />
           <Navaja p={kprog(T, K.Co + 0.3, K.Co + 1.0)} x0={540} y0={700} x1={540} y1={1200} />
-          {[[380, 0], [600, 0.3], [480, 0.6], [700, 0.9], [300, 1.1]].map(([ox, d], i) => { const u = kprog(T, K.Co + 2.0 + d, K.Co + 3.6 + d, kEase.sale);
-            return u > 0 ? <O2 key={i} x={ox + (540 - ox) * u * 0.55} y={560 + 300 * u} s={0.9} /> : null; })}
-        </>)}
+          {[[560, 0], [680, 0.3], [620, 0.6], [740, 0.9], [520, 1.1]].map(([ox, d], i) => { const u = kprog(T, K.Co + 2.0 + d, K.Co + 3.6 + d, kEase.sale);
+            return u > 0 ? <O2 key={i} x={ox + (540 - ox) * u * 0.55} y={600 + 260 * u} s={0.75} /> : null; })}
+        </g>)}
       </Escena>
       {/* 6 · se oxida: anión azul */}
       <Escena T={T} a={K.Ox} b={K.P} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(120,160,255,.4)" />
         {fsvg(<>
-          {(() => { const c = kprog(T, K.Ox + 0.4, K.Ox + 1.6); return <Pulvinico x={540} y={900} s={1.35} color={mixHex(HA.amarillo, '#4f8bff', c)} anion={kprog(T, K.Ox + 1.4, K.Ox + 2.0)} />; })()}
+          {(() => { const c = kprog(T, K.Ox + 0.4, K.Ox + 1.6); return <Pulvinico x={540} y={980} s={1.8} color={mixHex(HA.amarillo, '#4f8bff', c)} anion={kprog(T, K.Ox + 1.4, K.Ox + 2.0)} />; })()}
           {Array.from({ length: 10 }, (_, i) => { const u = kprog(T, K.Ox + 0.4 + i * 0.07, K.Ox + 1.2 + i * 0.07); const a = i * 0.63;
-            return u > 0 && u < 1 ? <circle key={i} cx={540 + Math.cos(a) * (120 + 260 * u)} cy={900 + Math.sin(a) * (80 + 200 * u)} r={10 * (1 - u)} fill="#cfe0ff" /> : null; })}
+            return u > 0 && u < 1 ? <circle key={i} cx={540 + Math.cos(a) * (160 + 340 * u)} cy={980 + Math.sin(a) * (110 + 260 * u)} r={13 * (1 - u)} fill="#cfe0ff" /> : null; })}
         </>)}
       </Escena>
       {/* 7 · re-gancho: ¿veneno? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <BoletoCorte x={250} y={1130} s={0.95} id="pq" azul={1} mitad="izq" /><BoletoCorte x={330} y={1130} s={0.95} id="pq2" azul={1} mitad="der" />
-          <g transform={`translate(260 ${560 + Math.sin(T * 4) * 10})`}><Calavera x={0} y={0} s={1.1} /></g>
-          <text x={400} y={520} style={{ font:`400 200px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8}>?</text>
+          <BoletoCorte x={468} y={1420} s={1.7} id="pq" azul={1} mitad="izq" /><BoletoCorte x={612} y={1420} s={1.7} id="pq2" azul={1} mitad="der" />
+          <g transform={`translate(400 ${520 + Math.sin(T * 4) * 10})`}><Calavera x={0} y={0} s={1.45} /></g>
+          <text x={560} y={560} style={{ font:`400 270px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8}>?</text>
         </>)}
       </Escena>
       {/* 8 · el estudio de 1968: varias especies de boletos */}
       <Escena T={T} a={K.E} b={K.R}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <g opacity={kprog(T, K.E + 2.0, K.E + 2.6)}><Pulvinico x={600} y={900} s={0.7} color={mixHex(HA.amarillo, '#2f6bff', kprog(T, K.E + 3.0, K.E + 3.8))} anion={kprog(T, K.E + 3.6, K.E + 4.0)} /></g>
-          {[0, 1, 2, 3].map((i) => { const on = kprog(T, K.E + 4.0 + i * 0.25, K.E + 4.4 + i * 0.25, kEase.rebote); return on > 0 ?
-            <BoletoCorte key={i} x={170 + i * 245} y={1165} s={0.4 * on} id={'e' + i} azul={kprog(T, K.E + 4.6 + i * 0.25, K.E + 6.4 + i * 0.25)} somb={['#6b4325', '#8a3a22', '#a5763a', '#5a4030'][i]} /> : null; })}
+          <g opacity={0.4 + 0.6 * kprog(T, K.E + 2.0, K.E + 2.6)}><Pulvinico x={540} y={860} s={1.15} color={mixHex(HA.amarillo, '#2f6bff', kprog(T, K.E + 3.0, K.E + 3.8))} anion={kprog(T, K.E + 3.6, K.E + 4.0)} /></g>
+          {[0, 1, 2, 3].map((i) => { const on = kprog(T, K.E + 0.05 + i * 0.1, K.E + 0.45 + i * 0.1, kEase.rebote); return on > 0 ?
+            <BoletoCorte key={i} x={165 + i * 250} y={1400} s={0.56 * on} id={'e' + i} azul={kprog(T, K.E + 4.6 + i * 0.25, K.E + 6.4 + i * 0.25)} somb={['#6b4325', '#8a3a22', '#a5763a', '#5a4030'][i]} /> : null; })}
         </>)}
       </Escena>
       {/* 9 · el color no dice si se come */}
       <Escena T={T} a={K.R} b={K.Av}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <g opacity={kprog(T, K.R + 1.6, K.R + 2.2)}><BoletoCorte x={270} y={1150} s={0.8} id="r1" azul={kprog(T, K.R + 1.8, K.R + 3.4)} somb="#7a4a22" /></g>
-          <g opacity={kprog(T, K.R + 3.2, K.R + 3.8)}><BoletoExt x={790} y={1150} s={0.8} id="sat" somb={HA.satan} brillo="#f2eee4" poros={HA.rojo} pie="#e8c04a" pieBase="#c8242a" red bulbo={0.6} terciopelo
+          <g opacity={0.45 + 0.55 * kprog(T, K.R + 1.6, K.R + 2.2)}><BoletoCorte x={290} y={1420} s={1.15} id="r1" azul={kprog(T, K.R + 1.8, K.R + 3.4)} somb="#7a4a22" /></g>
+          <g opacity={0.3 + 0.7 * kprog(T, K.R + 3.2, K.R + 3.8)}><BoletoExt x={800} y={1420} s={1.15} id="sat" somb={HA.satan} brillo="#f2eee4" poros={HA.rojo} pie="#e8c04a" pieBase="#c8242a" red bulbo={0.6} terciopelo
             manchas={[[20, -100, 50, kprog(T, K.R + 4.4, K.R + 5.6)]]} azulM="#3a63c8" /></g>
-          <g opacity={kprog(T, K.R + 5.6, K.R + 6.0)}><Sello T={T} at={K.R + 5.6} x={290} y={590} texto="NO DICE" color={KC.red} r={115} rot={-8} /></g>
+          <g opacity={kprog(T, K.R + 5.6, K.R + 6.0)}><Sello T={T} at={K.R + 5.6} x={300} y={650} texto="NO DICE" color={KC.red} r={130} rot={-8} /></g>
         </>)}
       </Escena>
       {/* 10 · aviso: no comas silvestres sin experto */}
       <Escena T={T} a={K.Av} b={K.D}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(520 1400) scale(1.6) translate(-420 -1150)">
           <Canasta x={420} y={1150} s={1.1} />
           <BoletoExt x={330} y={1030} s={0.42} id="cn1" /><BoletoExt x={480} y={1040} s={0.38} id="cn2" somb={HA.satan} poros={HA.rojo} />
           {(() => { const u = kprog(T, K.Av + 0.6, K.Av + 1.4, kEase.sale); return <g transform={`translate(${klerp(1100, 560, u)} 840) rotate(-20)`}>
             <circle r={110} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={14} /><line x1={80} y1={80} x2={170} y2={170} stroke={KC.ink} strokeWidth={26} strokeLinecap="round" /></g>; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 11 · dato extra: Gyroporus cyanescens, otra molécula */}
       <Escena T={T} a={K.D} b={K.C}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <BoletoExt x={240} y={1150} s={0.75} id="gy" somb={HA.paja} brillo="#f0d7a4" poros="#f3ecd6" pie="#e6cf9a" terciopelo />
-          <BoletoCorte x={620} y={1150} s={0.75} id="gyc" somb={HA.paja} carne={HA.blanca} tubos="#efe6cc" pie={HA.blanca} hueco azul={kprog(T, K.D + 0.8, K.D + 2.6)} colorAzul="#2a5be0" />
-          <g opacity={kprog(T, K.D + 2.4, K.D + 2.9)}><g transform="translate(0 0)"><rect x={70} y={540} width={420} height={270} rx={30} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={6} />
-            <Girocianina x={280} y={700} s={0.95} /></g></g>
+          <BoletoExt x={285} y={1420} s={1.1} id="gy" somb={HA.paja} brillo="#f0d7a4" poros="#f3ecd6" pie="#e6cf9a" terciopelo />
+          <BoletoCorte x={795} y={1420} s={1.1} id="gyc" somb={HA.paja} carne={HA.blanca} tubos="#efe6cc" pie={HA.blanca} hueco azul={kprog(T, K.D + 0.8, K.D + 2.6)} colorAzul="#2a5be0" />
+          <g opacity={kprog(T, K.D + 2.4, K.D + 2.9)}><g transform="translate(0 0)"><rect x={70} y={500} width={500} height={340} rx={34} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={6} />
+            <Girocianina x={320} y={690} s={1.2} /></g></g>
         </>)}
       </Escena>
       {/* 12 · cierre: el mismo boleto del inicio, ya azul */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1360) scale(1.75) translate(-360 -1120)">
           <ellipse cx={360} cy={1125} rx={300} ry={36} fill="#5b3a22" opacity=".55" />
           <BoletoCorte x={315} y={1120} s={1.05} rot={-5} id="cL" azul={1} mitad="izq" />
           <BoletoCorte x={405} y={1120} s={1.05} rot={5} id="cR" azul={1} mitad="der" />
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.2} until={K.Bo - 0.3} texto="no está podrido" x={300} y={420} tam={44} borde={KC.red} />
-      <Etq T={T} at={K.G + 2.0} until={K.Bo - 0.3} x={60} y={500} texto="se azula desde el corte" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Bo + 0.8} until={K.To - 0.3} x={60} y={430} texto="boleto: poros, no láminas" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Bo + 2.2} until={K.To - 0.3} x={560} y={1010} texto="como esponja" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.G + 1.2} until={K.Bo - 0.3} texto="no está podrido" x={540} y={400} tam={44} borde={KC.red} />
+      <Etq T={T} at={K.G + 2.0} until={K.Bo - 0.3} x={60} y={490} texto="se azula desde el corte" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Bo + 0.8} until={K.To - 0.3} x={60} y={500} texto="boleto: poros, no láminas" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Bo + 2.2} until={K.To - 0.3} x={250} y={1370} texto="como esponja" tam={32} color={KC.ink} />
       <Etq T={T} at={K.To + 0.3} until={K.Pi - 0.3} x={60} y={430} texto="Cyanoboletus pulverulentus" it tam={38} color={KC.ink} />
-      <Chip T={T} at={K.To + 1.6} until={K.Pi - 0.3} texto="azul casi negro al tocarlo" x={360} y={520} tam={36} borde={HA.azulN} />
-      <Chip T={T} at={K.Pi + 0.1} until={K.Co - 0.3} texto="POR DENTRO · CÉLULAS (HIFAS)" x={400} y={420} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Pi + 1.0} until={K.Co - 0.3} x={60} y={735} texto="pigmento (aún no es azul)" tam={30} color={HA.amarillo} />
-      <Etq T={T} at={K.Pi + 3.0} until={K.Co - 0.3} x={60} y={490} texto="ácido variegático" tam={32} color={HA.amarillo} />
-      <Etq T={T} at={K.Pi + 3.6} until={K.Co - 0.3} x={60} y={535} texto="o su pariente, el xerocómico" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.Co + 1.0} until={K.Ox - 0.3} x={60} y={735} texto="células rotas" tam={30} color="#fff1c8" />
-      <Etq T={T} at={K.Co + 2.2} until={K.Ox - 0.3} x={60} y={430} texto="oxígeno del aire" tam={32} color="#ffd2cc" />
-      <Etq T={T} at={K.Co + 3.2} until={K.Ox - 0.3} x={60} y={480} texto="sale el pigmento" tam={32} color={KC.mint} />
-      <Chip T={T} at={K.Ox + 1.2} until={K.P - 0.3} texto="se oxida → anión azul" x={540} y={560} tam={44} borde="#2f6bff" />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.R - 0.3} anio="1968" quien="Beaumont, Edwards y Elsworthy" revista="J. Chem. Soc. C (Londres) · «The blueing of Boletus species»" x={540} y={540} />
-      <Etq T={T} at={K.E + 2.4} until={K.R - 0.3} x={60} y={810} texto="ácido variegático" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E + 4.4} until={K.R - 0.3} x={700} y={810} texto="varias especies" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.R + 0.4} until={K.R + 5.6} texto="¿se come? el azul no lo dice" x={540} y={430} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.R + 2.2} until={K.Av - 0.3} x={60} y={775} texto="unos: comestibles" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.R + 3.8} until={K.Av - 0.3} x={500} y={560} texto="Rubroboletus satanas" it tam={32} color={KC.ink} />
-      <Etq T={T} at={K.R + 4.1} until={K.Av - 0.3} x={500} y={605} texto="boleto de Satanás: intoxica" tam={26} color={KC.red} />
-      <Chip T={T} at={K.R + 6.0} until={K.Av - 0.3} texto="no es veneno… pero tampoco es permiso" x={540} y={430} tam={32} borde={KC.gold} />
-      <Chip T={T} at={K.Av + 0.3} until={K.D - 0.3} texto="¿Silvestre? Solo con experto" x={330} y={430} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.D + 0.3} until={K.C - 0.3} x={60} y={430} texto="Gyroporus cyanescens" it tam={36} color={KC.ink} />
-      <Etq T={T} at={K.D + 1.2} until={K.C - 0.3} x={60} y={480} texto="pie hueco, con cámaras" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.D + 2.6} until={K.C - 0.3} texto="otra molécula: girocianina" x={770} y={640} tam={32} borde="#2a5be0" />
-      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="no es podrido: es química" x={330} y={420} tam={42} borde="#2f6bff" />
-      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={60} y={520} texto="pigmento + oxígeno del aire" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={1470} texto="No es guía de consumo: no comas hongos" tam={22} color={KC.ink} />
-      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={1505} texto="silvestres sin que un experto los identifique." tam={22} color={KC.ink} />
+      <Chip T={T} at={K.To + 1.6} until={K.Pi - 0.3} texto="azul casi negro al tocarlo" x={360} y={505} tam={36} borde={HA.azulN} />
+      <Chip T={T} at={K.Pi + 0.1} until={K.Pi + 2.7} texto="POR DENTRO · CÉLULAS (HIFAS)" x={400} y={470} tam={32} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Pi + 1.0} until={K.Co - 0.3} x={60} y={625} texto="pigmento (aún no es azul)" tam={30} color={HA.amarillo} />
+      <Etq T={T} at={K.Pi + 3.0} until={K.Co - 0.3} x={60} y={470} texto="ácido variegático" tam={32} color={HA.amarillo} />
+      <Etq T={T} at={K.Pi + 3.6} until={K.Co - 0.3} x={60} y={518} texto="o su pariente, el xerocómico" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Co + 1.0} until={K.Ox - 0.3} x={60} y={625} texto="células rotas" tam={30} color="#fff1c8" />
+      <Etq T={T} at={K.Co + 2.2} until={K.Ox - 0.3} x={60} y={440} texto="oxígeno del aire" tam={32} color="#ffd2cc" />
+      <Etq T={T} at={K.Co + 3.2} until={K.Ox - 0.3} x={60} y={490} texto="sale el pigmento" tam={32} color={KC.mint} />
+      <Chip T={T} at={K.Ox + 1.2} until={K.P - 0.3} texto="se oxida → anión azul" x={540} y={520} tam={44} borde="#2f6bff" />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.R - 0.3} anio="1968" quien="Beaumont, Edwards y Elsworthy" revista="J. Chem. Soc. C (Londres) · «The blueing of Boletus species»" x={540} y={430} />
+      <Etq T={T} at={K.E + 2.4} until={K.R - 0.3} x={60} y={655} texto="ácido variegático" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 4.4} until={K.R - 0.3} x={60} y={1100} texto="varias especies" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.R + 0.4} until={K.R + 5.6} texto="¿se come? el azul no lo dice" x={540} y={460} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.R + 2.2} until={K.Av - 0.3} x={60} y={870} texto="unos: comestibles" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.R + 3.8} until={K.Av - 0.3} x={500} y={815} texto="Rubroboletus satanas" it tam={32} color={KC.ink} />
+      <Etq T={T} at={K.R + 4.1} until={K.Av - 0.3} x={500} y={860} texto="boleto de Satanás: intoxica" tam={26} color={KC.red} />
+      <Chip T={T} at={K.R + 6.0} until={K.Av - 0.3} texto="no es veneno… pero tampoco es permiso" x={540} y={460} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.Av + 0.3} until={K.D - 0.3} texto="¿Silvestre? Solo con experto" x={540} y={620} tam={40} borde={KC.red} />
+      <Etq T={T} at={K.D + 0.3} until={K.C - 0.3} x={60} y={400} texto="Gyroporus cyanescens" it tam={36} color={KC.ink} />
+      <Etq T={T} at={K.D + 1.2} until={K.C - 0.3} x={60} y={448} texto="pie hueco, con cámaras" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.D + 2.6} until={K.C - 0.3} texto="otra molécula: girocianina" x={815} y={670} tam={32} borde="#2a5be0" />
+      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="no es podrido: es química" x={540} y={400} tam={42} borde="#2f6bff" />
+      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={60} y={490} texto="pigmento + oxígeno del aire" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={1485} texto="No es guía de consumo: no comas hongos" tam={22} color={KC.ink} />
+      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={60} y={1520} texto="silvestres sin que un experto los identifique." tam={22} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Bo} texto="5 cm" largo={120} y={1560} color={KC.ink} />
-      <BarraEscala T={T} at={K.Bo} until={K.To} texto="1 cm" largo={170} y={1560} color={KC.ink} />
-      <BarraEscala T={T} at={K.To} until={K.Pi} texto="5 cm" largo={125} y={1560} color={KC.ink} />
-      <BarraEscala T={T} at={K.Pi} until={K.Ox} texto="10 µm" largo={160} y={1560} />
+      <BarraEscala T={T} at={K.G} until={K.Bo} texto="5 cm" largo={210} y={1560} color={KC.ink} />
+      <BarraEscala T={T} at={K.Bo} until={K.To} texto="1 cm" largo={221} y={1560} color={KC.ink} />
+      <BarraEscala T={T} at={K.To} until={K.Pi} texto="5 cm" largo={190} y={1560} color={KC.ink} />
+      <BarraEscala T={T} at={K.Pi} until={K.Ox} texto="10 µm" largo={240} y={1560} />
       <BarraEscala T={T} at={K.Ox} until={K.P} texto="molécula esquemática" largo={0} y={1560} />
-      <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={95} y={1560} color={KC.ink} />
+      <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={170} y={1560} color={KC.ink} />
       <BarraEscala T={T} at={K.E} until={K.R} texto="esquemático" largo={0} y={1560} color={KC.ink} />
-      <BarraEscala T={T} at={K.R} until={K.Av} texto="5 cm" largo={85} y={1560} color={KC.ink} />
-      <BarraEscala T={T} at={K.D} until={K.C} texto="5 cm" largo={85} y={1560} color={KC.ink} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={120} y={1560} color={KC.ink} />
+      <BarraEscala T={T} at={K.R} until={K.Av} texto="5 cm" largo={122} y={1560} color={KC.ink} />
+      <BarraEscala T={T} at={K.D} until={K.C} texto="5 cm" largo={125} y={1560} color={KC.ink} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={210} y={1560} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Sub T={T} idx={0} at={K.G + 0.1} until={K.Bo - 0.1} texto="No está podrido: *se pone azul.*" />
