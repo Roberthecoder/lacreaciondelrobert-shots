@@ -63,8 +63,8 @@ function ObjRojo({ T, u }) {
       <rect x={-70} y={-118} width={140} height={230} rx={22} fill="#e8f6ff" stroke={KC.ink} strokeWidth={7} />
       <rect x={-60} y={112 - 200 * nivel} width={120} height={Math.max(0, 200 * nivel - 2)} rx={14} fill="#ffd2d8" />
       <rect x={-58} y={-30} width={116} height={64} fill="#fff" stroke={KC.ink} strokeWidth={4} />
-      <text x={0} y={12} textAnchor="middle" style={{ font:`900 26px ${KF.texto}` }} fill={KC.ink}>INSULINA</text>
-      <path d="M -44 -96 L -44 90" stroke="#fff" strokeWidth={10} strokeLinecap="round" opacity=".6" />
+      <text x={0} y={12} textAnchor="middle" style={{ font:`900 26px ${KF.texto}` }} fill="#0b1020">INSULINA</text>
+      <path d="M -44 -96 L -44 -46 M -44 50 L -44 90" stroke="#fff" strokeWidth={10} strokeLinecap="round" opacity=".6" />
     </g>
   </g>;
 }
@@ -164,7 +164,7 @@ function ObjMorado({ T, u }) {
       <path d="M -170 0 L 170 0" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
       {[-1, 1].map((l) => <g key={l} transform={`translate(${l * 160} 0) rotate(${-inc})`}>
         <path d="M 0 0 L -50 90 M 0 0 L 50 90" stroke={KC.ink} strokeWidth={4} /><path d="M -64 90 Q 0 140 64 90 Z" fill={l < 0 ? KC.gold2 : '#fff'} stroke={KC.ink} strokeWidth={6} />
-        {l > 0 && <text x={0} y={118} textAnchor="middle" style={{ font:`900 26px ${KF.texto}` }} fill={KC.ink}>ADN</text>}
+        {l > 0 && <text x={0} y={118} textAnchor="middle" style={{ font:`900 26px ${KF.texto}` }} fill="#0b1020">ADN</text>}
       </g>)}
     </g>
     <g transform={`translate(150 90) rotate(${-30 - golpe * 25})`}><rect x={-12} y={-10} width={24} height={110} rx={8} fill="#8a5a3b" stroke={KC.ink} strokeWidth={5} /><rect x={-48} y={-46} width={96} height={46} rx={10} fill="#a0643a" stroke={KC.ink} strokeWidth={6} /></g>
@@ -243,7 +243,7 @@ function RotuloRama({ T, at, until, k, y = 330 }) {
   if (!kvisible(T, at, until, 0.3)) return null;
   const R = RAMAS.find((q) => q.k === k), e = kentrada(T, at, until, 'pop');
   return <div style={{ position:'absolute', left:0, right:0, top:y, zIndex:44, textAlign:'center', opacity:e.o, transform:`translateY(-50%) scale(${e.s})` }}>
-    <span style={{ display:'inline-block', background:R.c, color: ['blanco', 'amarillo', 'dorado', 'gris'].includes(k) ? KC.ink : KC.texto, border:`6px solid ${KC.ink}`, borderRadius:22, padding:'4px 26px 8px', font:`400 76px/1 ${KF.titulo}`, boxShadow:`8px 8px 0 ${KC.ink}`, letterSpacing:'.02em' }}>{R.n}</span>
+    <span style={{ display:'inline-block', background:R.c, color: ['blanco', 'amarillo', 'dorado', 'gris'].includes(k) ? '#0b1020' : KC.texto, border:`6px solid ${KC.ink}`, borderRadius:22, padding:'4px 26px 8px', font:`400 76px/1 ${KF.titulo}`, boxShadow:`8px 8px 0 ${KC.ink}`, letterSpacing:'.02em' }}>{R.n}</span>
     <span style={{ display:'inline-block', marginLeft:18, font:`900 46px ${KF.texto}`, color:KC.texto, textShadow:SOMBRA, verticalAlign:'middle' }}>{R.t}</span>
   </div>;
 }
