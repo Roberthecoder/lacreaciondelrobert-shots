@@ -3,7 +3,7 @@
 // Datos: Mariotte 1668, Komatsu et al. 2000 (J Neurosci), Komatsu 2006 (Nat Rev Neurosci), Hanke y Kelber 2020 (Front Physiol). Ver guion.md y verificacion.md.
 // LA PRUEBA TIENE QUE FUNCIONAR EN UN CELULAR: de Prueba a Desaparece el fondo es amarillo liso y quieto, la cruz (x 180) y el punto rojo
 // (110 px, x 900) están a la misma altura (y 800) y no se mueven; nada se mueve cerca del punto y Robert no sale.
-const PRUEBA = { cx: 180, px: 900, y: 800, r: 55 };
+const PRUEBA = { cx: 180, px: 900, y: 1080, r: 55 };
 const CRETINA = KC.coral, CNERVIO = '#f4c99c';
 
 // Cruz y punto de la prueba (dentro de svg). punto 0..1 = opacidad del punto.
@@ -172,6 +172,7 @@ function Ciego() {
         <FondoLunares color={KC.cyan} />
         <Lienzo>
           <defs><Rayas id="rg" /><clipPath id="cuadro-g"><rect x={110} y={730} width={860} height={350} rx={30} /></clipPath></defs>
+          <g transform="translate(540 990) scale(1.12) translate(-540 -800)">
           <path d={`M 330 520 L 110 730 L 970 730 Z`} fill="rgba(255,255,255,.35)" />
           <g transform={`translate(540 905) scale(${klerp(0.6, 1, kprog(T, K.Gancho, K.Gancho + 0.4, kEase.rebote))}) translate(-540 -905)`}>
             <rect x={110} y={730} width={860} height={350} rx={30} fill="url(#rg)" />
@@ -185,18 +186,19 @@ function Ciego() {
           <OjoFrente x={330} y={470} s={0.9} parp={parpadeo(T, K.Gancho + 0.35) + parpadeo(T, K.Gancho + 3.0)} mira={0.4} id="g" />
           <TextoSvg x={540} y={1150} tam={70} color={KC.yellow} rot={-4} o={kprog(T, K.Gancho + 1.0, K.Gancho + 1.2) * (1 - kprog(T, K.Gancho + 2.5, K.Gancho + 2.7))} s={klerp(0.5, 1, kprog(T, K.Gancho + 1.0, K.Gancho + 1.4, kEase.rebote))}>¡UN HOYO!</TextoSvg>
           <TextoSvg x={540} y={1150} tam={70} color={KC.pink} rot={-4} o={kprog(T, K.Gancho + 3.0, K.Gancho + 3.2)} s={klerp(0.5, 1, kprog(T, K.Gancho + 3.0, K.Gancho + 3.4, kEase.rebote))}>¿CUÁL HOYO?</TextoSvg>
+          </g>
         </Lienzo>
       </Escena>
       {/* 1–3 · LA PRUEBA: fondo amarillo liso y quieto, cruz y punto fijos. Una sola escena (sin cortes ni zoom). */}
       <Escena T={T} a={K.Prueba} b={K.Nervio} fondo={KC.yellow} zoom={0}>
         <Lienzo>
           <CruzPunto />
-          <CercaLejos x={470} y={600} o={kprog(T, K.Acercate + 0.2, K.Acercate + 0.6) * (1 - kprog(T, K.Desaparece - 0.3, K.Desaparece))} />
+          <CercaLejos x={470} y={950} o={kprog(T, K.Acercate + 0.2, K.Acercate + 0.6) * (1 - kprog(T, K.Desaparece - 0.3, K.Desaparece))} />
         </Lienzo>
-        <Chip T={T} at={K.Prueba + 0.3} until={K.Acercate - 0.2} texto="tapa tu ojo IZQUIERDO" x={540} y={390} tam={48} borde={KC.ink} />
-        <Chip T={T} at={K.Prueba + 2.4} until={K.Desaparece + 3.0} texto="mira fijo la cruz" x={540} y={490} tam={40} borde={KC.ink} />
-        <Chip T={T} at={K.Acercate + 0.1} until={K.Desaparece - 0.2} texto="acércate o aléjate despacio" x={540} y={390} tam={44} borde={KC.ink} />
-        <Chip T={T} at={K.Desaparece + 0.2} until={K.Nervio - 0.2} texto="¿ya desapareció?" x={540} y={390} tam={52} borde={KC.red} />
+        <Chip T={T} at={K.Prueba + 0.3} until={K.Acercate - 0.2} texto="tapa tu ojo IZQUIERDO" x={540} y={740} tam={48} borde={KC.ink} />
+        <Chip T={T} at={K.Prueba + 2.4} until={K.Desaparece + 3.0} texto="mira fijo la cruz" x={540} y={840} tam={40} borde={KC.ink} />
+        <Chip T={T} at={K.Acercate + 0.1} until={K.Desaparece - 0.2} texto="acércate o aléjate despacio" x={540} y={740} tam={44} borde={KC.ink} />
+        <Chip T={T} at={K.Desaparece + 0.2} until={K.Nervio - 0.2} texto="¿ya desapareció?" x={540} y={740} tam={52} borde={KC.red} />
       </Escena>
       {/* 4 · por dentro: el nervio óptico sale por el fondo del ojo */}
       <Escena T={T} a={K.Nervio} b={K.Sin} fondo={KC.noche}>
@@ -216,20 +218,27 @@ function Ciego() {
       <Escena T={T} a={K.Sin} b={K.Pregunta} fondo={KC.noche}>
         <FondoMarca patron="oscuro" />
         <Lienzo>
+          <g transform="translate(540 1020) scale(1.15) translate(-540 -830)">
           {[200, 540, 880].map((x, i) => <g key={i} opacity={kprog(T, K.Sin + 0.2, K.Sin + 0.6)}><line x1={x} y1={470} x2={x} y2={570} stroke={KC.yellow} strokeWidth={10} strokeDasharray="22 12" strokeDashoffset={-T * 60} /><path d={`M ${x - 18} 570 l 18 26 l 18 -26 Z`} fill={KC.yellow} /></g>)}
           <RetinaCerca T={T} y={800} p={kprog(T, K.Sin + 0.1, K.Sin + 1.6)} marca={kprog(T, K.Sin + 3.4, K.Sin + 3.8)} />
           {T > K.Sin + 3.6 && <TextoSvg x={540} y={1060} tam={64} color={KC.red} s={klerp(0.5, 1, kprog(T, K.Sin + 3.6, K.Sin + 4.0, kEase.rebote))}>PUNTO CIEGO</TextoSvg>}
+          </g>
         </Lienzo>
-        <Etq T={T} at={K.Sin + 0.9} until={K.Pregunta - 0.2} x={250} y={935} texto="conos" lado="izq" color={KC.mint} tam={36} />
-        <Etq T={T} at={K.Sin + 1.3} until={K.Pregunta - 0.2} x={1010} y={935} texto="bastones" lado="izq" color={KC.lilac} tam={36} />
+        <Etq T={T} at={K.Sin + 0.9} until={K.Pregunta - 0.2} x={206} y={1141} texto="conos" lado="izq" color={KC.mint} tam={36} />
+        <Etq T={T} at={K.Sin + 1.3} until={K.Pregunta - 0.2} x={1045} y={1141} texto="bastones" lado="izq" color={KC.lilac} tam={36} />
         <Chip T={T} at={K.Sin + 1.9} until={K.Pregunta - 0.1} texto="ni conos ni bastones" x={540} y={420} tam={44} borde={KC.red} />
       </Escena>
       {/* 6 · pregunta */}
-      <EscenaPregunta T={T} a={K.Pregunta} b={K.Dos} color={KC.lilac} />
+      <Escena T={T} a={K.Pregunta} b={K.Dos} zoom={0.1}>
+        <FondoLunares color={KC.lilac} />
+        <Lienzo><text x={540} y={1400} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={16}
+          transform={`rotate(${Math.sin(T * 3) * 6} 540 1060) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 900px ${KF.titulo}`, transformOrigin:'540px 1060px' }}>?</text></Lienzo>
+      </Escena>
       {/* 7 · dos ojos: lo que no ve uno lo ve el otro */}
       <Escena T={T} a={K.Dos} b={K.Rellena} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
+          <g transform="translate(0 170)">
           <g opacity={kprog(T, K.Dos + 0.1, K.Dos + 0.5)}>
             <circle cx={cI} cy={780} r={300} fill={KC.pink} fillOpacity={0.8} stroke={KC.ink} strokeWidth={8} />
             <circle cx={cD} cy={780} r={300} fill={KC.yellow} fillOpacity={0.65} stroke={KC.ink} strokeWidth={8} />
@@ -239,6 +248,7 @@ function Ciego() {
           </g>
           <OjoFrente x={400} y={1150} s={0.3} parp={parpadeo(T, K.Dos + 1.0)} id="d1" iris={KC.pink} />
           <OjoFrente x={680} y={1150} s={0.3} parp={parpadeo(T, K.Dos + 1.0)} id="d2" iris={KC.blue} />
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Dos + 0.3} until={K.Rellena - 0.1} texto="ojo izq. + ojo der." x={540} y={410} tam={42} borde={KC.ink} />
       </Escena>
@@ -261,7 +271,7 @@ function Ciego() {
       {/* 9 · Mariotte, siglo XVII */}
       <Escena T={T} a={K.Mariotte} b={K.Pulpo} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
-        <Lienzo><Pergamino x={540} y={1030} p={kprog(T, K.Mariotte + 1.2, K.Mariotte + 1.7, kEase.rebote)} T={T} /></Lienzo>
+        <Lienzo><g transform="translate(540 1090) scale(1.3) translate(-540 -1030)"><Pergamino x={540} y={1030} p={kprog(T, K.Mariotte + 0.1, K.Mariotte + 0.6, kEase.rebote)} T={T} /></g></Lienzo>
         <TarjetaEstudio T={T} at={K.Mariotte + 0.2} until={K.Pulpo - 0.2} anio="SIGLO XVII" quien="Edme Mariotte · Francia" revista="describió el punto ciego" x={540} y={680} />
       </Escena>
       {/* 10 · el pulpo: muchos haces delgados de nervio salen por detrás de la retina */}
@@ -282,10 +292,10 @@ function Ciego() {
         <Lienzo>
           <CruzPunto punto={1 - parpCierre} />
           {T > K.Cierre + 1.2 && <circle cx={PRUEBA.px} cy={PRUEBA.y} r={95} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="14 10" opacity={kprog(T, K.Cierre + 1.2, K.Cierre + 1.6)} />}
-          <OjoFrente x={540} y={1040} s={0.55} parp={parpadeo(T, K.Cierre + 0.4) + parpadeo(T, K.Cierre + 3.2)} id="c" mira={0} />
+          <OjoFrente x={540} y={1320} s={0.75} parp={parpadeo(T, K.Cierre + 0.4) + parpadeo(T, K.Cierre + 3.2)} id="c" mira={0} />
         </Lienzo>
         <Etq T={T} at={K.Cierre + 1.6} until={K.Outro - 0.1} x={PRUEBA.px - 110} y={PRUEBA.y - 130} texto="tu punto ciego" lado="izq" color={KC.ink} tam={34} />
-        <Chip T={T} at={K.Cierre + 0.6} until={K.Outro - 0.1} texto="tu cerebro pone de su parte" x={540} y={420} tam={44} borde={KC.gold} />
+        <Chip T={T} at={K.Cierre + 0.6} until={K.Outro - 0.1} texto="tu cerebro pone de su parte" x={540} y={760} tam={44} borde={KC.gold} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Prueba - 0.1} texto="Tienes un *hoyo en tu vista.*" />
