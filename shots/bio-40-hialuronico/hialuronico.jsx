@@ -133,7 +133,7 @@ function GlobuloBlanco({ T, x, y, s = 1 }) {
 function Alerta({ x, y, s = 1, o = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o}>
     <path d="M 0 -90 L 90 70 L -90 70 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
-    <rect x={-9} y={-40} width={18} height={66} rx={8} fill={KC.ink} /><circle cx={0} cy={46} r={11} fill={KC.ink} />
+    <rect x={-9} y={-40} width={18} height={66} rx={8} fill="#0b1020" /><circle cx={0} cy={46} r={11} fill="#0b1020" />
   </g>;
 }
 // Palomita.
@@ -177,7 +177,9 @@ function Hialuronico() {
   const hilos = Array.from({ length: 6 }, (_, i) => [140 + i * 160, 1250 - (i % 2) * 80]);
   // estudio: el gen salta
   const salta = kprog(T, K.Es + 3.4, K.Es + 4.6, kEase.suave);
-  const genX = klerp(270, 760, salta), genY = klerp(1040, 1000, salta) - Math.sin(salta * Math.PI) * 220;
+  const genX = klerp(250, 730, salta), genY = klerp(1020, 980, salta) - Math.sin(salta * Math.PI) * 250;
+  // persona de "tú ya lo traes": centro y escala (los puntos y etiquetas salen de aquí)
+  const PX = 540, PY = 1010, PS = 1.32;
   // glóbulo blanco que se acerca y se resbala
   const acerca = kprog(T, K.Ca + 0.2, K.Ca + 2.0, kEase.suave), resbala = kprog(T, K.Ca + 2.2, K.Ca + 3.6, kEase.suave);
   return (
@@ -186,14 +188,14 @@ function Hialuronico() {
       <Escena T={T} a={K.G} b={K.Tu} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Mano x={540} y={1280} s={1.05} />
-          <Gotero x={300} y={880} s={0.8} rot={-8} />
-          {caeG < 1 ? <Gota x={560} y={klerp(700, 1080, caeG)} r={30} /> : <ellipse cx={560} cy={1100} rx={70 + Math.sin(T * 3) * 4} ry={26} fill="rgba(225,242,255,.9)" stroke={KC.ink} strokeWidth={5} />}
-          <Pipeta x={560} y={klerp(700, 690, caeG)} s={0.8} />
-          <g opacity={kprog(T, K.G + 0.6, K.G + 1.1)}><Gallo x={170} y={600} s={0.62} gris={0.8} />
-            <text x={300} y={520} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8}>?</text></g>
+          <Mano x={540} y={1500} s={1.6} />
+          <Gotero x={215} y={600} s={1.15} rot={-8} />
+          {caeG < 1 ? <Gota x={540} y={klerp(860, 1200, caeG)} r={44} /> : <ellipse cx={540} cy={1226} rx={112 + Math.sin(T * 3) * 6} ry={40} fill="rgba(225,242,255,.9)" stroke={KC.ink} strokeWidth={6} />}
+          <Pipeta x={540} y={klerp(840, 826, caeG)} s={1.25} />
+          <g opacity={kprog(T, K.G + 0.6, K.G + 1.1)}><Gallo x={870} y={670} s={0.85} gris={0.8} />
+            <text x={890} y={440} textAnchor="middle" style={{ font:`400 190px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={8}>?</text></g>
           <g opacity={kprog(T, K.G + 1.6, K.G + 2.2)} transform={`translate(0 ${(1 - kprog(T, K.G + 1.6, K.G + 2.2, kEase.sale)) * 60})`}>
-            <Estreptococos T={T} x={840} y={1000} n={3} r={36} color={KC.mint} rot={-20} />
+            <Estreptococos T={T} x={870} y={1050} n={3} r={46} color={KC.mint} rot={-20} />
           </g>
         </SvgCapa>
       </Escena>
@@ -201,10 +203,10 @@ function Hialuronico() {
       <Escena T={T} a={K.Tu} b={K.Ga} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Persona x={540} y={1060} s={1.15} />
-          <PuntoLate T={T} x={540 - 39} y={1060 - 391} at={K.Tu + 2.9} />
-          <PuntoLate T={T} x={540 - 248} y={1060 - 70} at={K.Tu + 1.6} />
-          <PuntoLate T={T} x={420} y={1460} at={K.Tu + 2.3} />
+          <Persona x={PX} y={PY} s={PS} />
+          <PuntoLate T={T} x={PX + 34 * PS} y={PY - 340 * PS} at={K.Tu + 2.9} />
+          <PuntoLate T={T} x={PX - 216 * PS} y={PY - 61 * PS} at={K.Tu + 1.6} />
+          <PuntoLate T={T} x={PX - 104 * PS} y={PY + 348 * PS} at={K.Tu + 2.3} />
         </SvgCapa>
       </Escena>
       {/* 2 · crestas de gallo */}
@@ -223,7 +225,7 @@ function Hialuronico() {
       </Escena>
       {/* 3–5 · el tanque, y la Lupa: la enzima en la membrana y el hilo */}
       <Escena T={T} a={K.Ta} b={K.Ag} zoom={0.04}>
-        <MundoBiorreactor T={T} turbio={klerp(0.3, 0.85, kprog(T, K.Ta, K.Hi, kEase.suave))} burbujas={1} rpm={110} fondo={KC.cyan} />
+        <MundoBiorreactor T={T} turbio={klerp(0.3, 0.85, kprog(T, K.Ta, K.Hi, kEase.suave))} burbujas={1} rpm={110} fondo="#0b2731" />
       </Escena>
       <Lupa T={T} at={K.En + 0.1} until={K.Ag - 0.2} x={540} y={760} r={330} fx={V.x} fy={V.y} tinte={KC.lilac} etiqueta="AL MICROSCOPIO · la bacteria"
         interior={(t, r) => { const n = Math.min(14, Math.floor(kprog(t, K.En + 0.6, K.Hi + 2.8) * 14));
@@ -253,82 +255,83 @@ function Hialuronico() {
       <Escena T={T} a={K.Pr} b={K.Ca} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <Estreptococos T={T} x={300} y={1000} n={3} r={58} color={KC.mint} rot={-60} />
-          <text x={300} y={740} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 300 640)`}>?</text>
+          <Estreptococos T={T} x={580} y={1080} n={3} r={98} color={KC.mint} rot={-60} />
+          <text x={270} y={700} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 270 600)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 8 · la capa protege de tus defensas */}
       <Escena T={T} a={K.Ca} b={K.Ri} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <Estreptococos T={T} x={560} y={960} n={5} r={44} color="#ffb4c8" rot={-8} />
-          <GlobuloBlanco T={T} x={klerp(-200, 210, acerca) - resbala * 60} y={klerp(820, 860, acerca) - resbala * 260} s={1.05} />
-          {resbala > 0 && resbala < 1 && <path d={`M 380 900 q -60 -80 -160 -160`} fill="none" stroke="#fff" strokeWidth={6} strokeDasharray="12 10" opacity={1 - resbala} />}
+          <Estreptococos T={T} x={600} y={1100} n={5} r={72} color="#ffb4c8" rot={-8} />
+          <GlobuloBlanco T={T} x={klerp(-320, 290, acerca) - resbala * 60} y={klerp(700, 750, acerca) - resbala * 260} s={1.5} />
+          {resbala > 0 && resbala < 1 && <path d={`M 470 960 q -70 -110 -210 -230`} fill="none" stroke="#fff" strokeWidth={7} strokeDasharray="14 11" opacity={1 - resbala} />}
         </SvgCapa>
       </Escena>
       {/* 9 · el más usado puede enfermar */}
       <Escena T={T} a={K.Ri} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Estreptococos T={T} x={540} y={980} n={5} r={52} color="#ffb4c8" rot={6} />
-          <Alerta x={540} y={1550} s={1.1} o={kprog(T, K.Ri + 2.2, K.Ri + 2.6)} />
+          <Estreptococos T={T} x={540} y={900} n={5} r={70} color="#ffb4c8" rot={6} />
+          <Alerta x={540} y={1340} s={1.5} o={kprog(T, K.Ri + 2.2, K.Ri + 2.6)} />
         </SvgCapa>
       </Escena>
       {/* 10 · 2005: el gen de la enzima pasa a Bacillus subtilis */}
       <Escena T={T} a={K.Es} b={K.Cr} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <g opacity={kprog(T, K.Es + 2.8, K.Es + 3.2)}>
-            <Estreptococos T={T} x={270} y={1040} n={3} r={42} color={KC.lilac} rot={-70} capa={0.6} seed={4} />
-            <g transform={`translate(${760} ${1000})`}>
-              <Bacteria T={T} x={0} y={0} largo={360} ancho={130} rot={-10} color="#ffe08a" seed={3} />
+          {/* las dos bacterias están desde que empieza la escena (antes entraban a los 2.8 s y quedaba solo la tarjeta) */}
+          <g opacity={kprog(T, K.Es, K.Es + 0.4)}>
+            <Estreptococos T={T} x={250} y={1020} n={3} r={60} color={KC.lilac} rot={-70} capa={0.6} seed={4} />
+            <g transform={`translate(${730} ${980})`}>
+              <Bacteria T={T} x={0} y={0} largo={480} ancho={175} rot={-10} color="#ffe08a" seed={3} />
             </g>
-            {salta < 1 ? <g transform={`translate(${genX} ${genY})`}><ADNHebra T={T} x={-70} y={0} largo={140} alto={34} vueltas={2} colores={[KC.pink, KC.yellow]} /></g> : null}
-            {salta >= 1 && Array.from({ length: 3 }, (_, i) => <CadenaHA key={i} T={T} x0={760 + (i - 1) * 120} y0={900} n={Math.round(klerp(1, 8, kprog(T, K.Es + 4.8 + i * 0.2, K.Es + 6.4)))} paso={34} r={13} amp={24} fase={i * 2} />)}
-            <Palomita x={930} y={1500} p={kprog(T, K.Es + 5.6, K.Es + 6.0)} />
+            {T >= K.Es + 2.8 && salta < 1 ? <g opacity={kprog(T, K.Es + 2.8, K.Es + 3.2)} transform={`translate(${genX} ${genY})`}><ADNHebra T={T} x={-100} y={0} largo={200} alto={46} vueltas={2} colores={[KC.pink, KC.yellow]} /></g> : null}
+            {salta >= 1 && Array.from({ length: 3 }, (_, i) => <CadenaHA key={i} T={T} x0={730 + (i - 1) * 150} y0={860 - (i - 1) * 24} n={Math.round(klerp(1, 8, kprog(T, K.Es + 4.8 + i * 0.2, K.Es + 6.4)))} paso={42} r={17} amp={28} fase={i * 2} />)}
+            <Palomita x={920} y={1400} p={kprog(T, K.Es + 5.6, K.Es + 6.0)} />
           </g>
         </SvgCapa>
       </Escena>
       {/* 11 · 2015: la piel donada por dentro */}
       <Escena T={T} a={K.Cr} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa><Mano x={540} y={1380} s={1.05} />
-          <ellipse cx={540} cy={1190} rx={90} ry={30} fill="rgba(225,242,255,.9)" stroke={KC.ink} strokeWidth={5} /></SvgCapa>
+        <SvgCapa><Mano x={540} y={1620} s={1.45} />
+          <ellipse cx={540} cy={1358} rx={124} ry={42} fill="rgba(225,242,255,.9)" stroke={KC.ink} strokeWidth={6} /></SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.Cr + 0.4} until={K.Ci - 0.2} x={620} y={780} r={290} fx={540} fy={1190} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · piel"
+      <Lupa T={T} at={K.Cr + 0.4} until={K.Ci - 0.2} x={540} y={670} r={310} fx={540} fy={1358} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · piel"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><PielCorte T={t} w={r * 2} h={r * 2} t0={K.Cr + 0.4} /></svg>} />
       {/* 12 · cierre: el gotero del inicio, ya con su etiqueta */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Mano x={540} y={1280} s={1.05} />
-          <Gotero x={540} y={900} s={1.0} etiqueta="SUERO" etq2={kprog(T, K.Ci + 0.8, K.Ci + 1.2) > 0.5 ? 'hecho por|bacterias' : ''} />
-          <g transform={`translate(${klerp(1160, 860, kprog(T, K.Ci + 1.4, K.Ci + 2.2, kEase.sale))} 1060)`}><Bacteria T={T} x={0} y={0} largo={200} ancho={80} rot={-30} color="#ffe08a" seed={5} /></g>
+          <Mano x={540} y={1500} s={1.6} />
+          <Gotero x={540} y={830} s={1.5} etiqueta="SUERO" etq2={kprog(T, K.Ci + 0.8, K.Ci + 1.2) > 0.5 ? 'hecho por|bacterias' : ''} />
+          <g transform={`translate(${klerp(1260, 890, kprog(T, K.Ci + 1.4, K.Ci + 2.2, kEase.sale))} 900)`}><Bacteria T={T} x={0} y={0} largo={290} ancho={116} rot={-30} color="#ffe08a" seed={5} /></g>
         </SvgCapa>
       </Escena>
 
       {/* textos */}
       <Chip T={T} at={K.Tu + 0.4} until={K.Ga - 0.3} texto="ácido hialurónico" x={540} y={1730} tam={50} borde={GLCA} />
-      <Etq T={T} at={K.Tu + 1.7} until={K.Ga - 0.3} x={540 - 248 + 40} y={1060 - 70} texto="piel" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Tu + 2.4} until={K.Ga - 0.3} x={460} y={1460} texto="articulaciones (rodilla)" lado="der" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Tu + 3.0} until={K.Ga - 0.3} x={540 + 40} y={1060 - 391} texto="ojo (humor vítreo)" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Tu + 1.7} until={K.Ga - 0.3} x={PX - 216 * PS + 44} y={PY - 61 * PS} texto="piel" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Tu + 2.4} until={K.Ga - 0.3} x={PX - 104 * PS + 44} y={PY + 348 * PS} texto="articulaciones (rodilla)" lado="der" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Tu + 3.0} until={K.Ga - 0.3} x={PX + 34 * PS + 44} y={PY - 340 * PS} texto="ojo (humor vítreo)" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ga + 0.4} until={K.Ta - 0.2} texto="antes: cresta de gallo" x={540} y={470} tam={44} borde={KC.red} />
       <Chip T={T} at={K.Ta + 0.4} until={K.En - 0.1} texto="hoy: fermentación" x={540} y={1690} tam={46} borde={KC.mint} />
       <Etq T={T} at={K.En + 1.4} until={K.Hi - 0.1} x={610} y={800} texto="una sola enzima" tam={30} color={KC.texto} />
       <Chip T={T} at={K.En + 2.2} until={K.Ag - 0.3} texto="ácido glucurónico + N-acetilglucosamina" x={540} y={1490} tam={30} borde={GLCA} />
       <Chip T={T} at={K.Ag + 0.8} until={K.Pr - 0.3} texto="atrapa agua" x={540} y={470} tam={52} borde={AGUA} />
-      <Etq T={T} at={K.Ca + 0.6} until={K.Ri - 0.3} x={420} y={1110} texto="capa de hialurónico" tam={30} color={HA_HILO} />
-      <Etq T={T} at={K.Ca + 1.2} until={K.Ri - 0.3} x={40} y={1090} texto="glóbulo blanco" lado="der" tam={32} color="#e8e1ff" />
-      <Etq T={T} at={K.Ri + 0.6} until={K.Es - 0.2} x={160} y={1120} texto="Streptococcus zooepidemicus" it lado="der" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Ri + 0.4} until={K.Es - 0.2} texto="el más usado en las fábricas" x={650} y={470} tam={40} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2005" quien="Novozymes · Davis, California" revista="Appl Environ Microbiol · Widner et al." x={540} y={820} />
-      <Etq T={T} at={K.Es + 3.0} until={K.Cr - 0.2} x={330} y={860} texto="S. equisimilis" it lado="der" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Es + 3.2} until={K.Cr - 0.2} x={600} y={1125} texto="Bacillus subtilis" it lado="der" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Es + 3.4} until={K.Cr - 0.2} texto="gen de la enzima (hasA)" x={420} y={470} tam={40} borde={KC.pink} />
-      <Chip T={T} at={K.Es + 5.6} until={K.Cr - 0.2} texto="no enferma · buena calidad" x={500} y={1500} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={K.Cr + 0.3} until={K.Ci - 0.2} texto="2015 · Reims, Francia · piel en laboratorio" x={540} y={1500} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.Cr + 1.4} until={K.Ci - 0.2} texto="cadena grande: se queda arriba" x={540} y={1640} tam={32} borde={GLCA} />
-      <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="lo más probable: hecho por bacterias" x={540} y={1690} tam={36} borde={KC.mint} />
+      <Etq T={T} at={K.Ca + 0.6} until={K.Ri - 0.3} x={500} y={1262} texto="capa de hialurónico" tam={30} color={HA_HILO} />
+      <Etq T={T} at={K.Ca + 1.2} until={K.Ri - 0.3} x={548} y={690} texto="glóbulo blanco" lado="der" tam={32} color="#e8e1ff" />
+      <Etq T={T} at={K.Ri + 0.6} until={K.Es - 0.2} x={170} y={1090} texto="Streptococcus zooepidemicus" it lado="der" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Ri + 0.4} until={K.Es - 0.2} texto="el más usado en las fábricas" x={540} y={520} tam={40} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2005" quien="Novozymes · Davis, California" revista="Appl Environ Microbiol · Widner et al." x={540} y={470} />
+      <Etq T={T} at={K.Es + 3.0} until={K.Cr - 0.2} x={120} y={1275} texto="S. equisimilis" it lado="der" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Es + 3.2} until={K.Cr - 0.2} x={560} y={1170} texto="Bacillus subtilis" it lado="der" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Es + 3.4} until={K.Cr - 0.2} texto="gen de la enzima (hasA)" x={540} y={400} tam={40} borde={KC.pink} />
+      <Chip T={T} at={K.Es + 5.6} until={K.Cr - 0.2} texto="no enferma · buena calidad" x={490} y={1400} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.Cr + 0.3} until={K.Ci - 0.2} texto="2015 · Reims, Francia · piel en laboratorio" x={540} y={280} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.Cr + 1.4} until={K.Ci - 0.2} texto="cadena grande: se queda arriba" x={540} y={1125} tam={32} borde={GLCA} />
+      <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="lo más probable: hecho por bacterias" x={540} y={300} tam={36} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Tu - 0.1} texto="No salió de un gallo: *quizá de una bacteria.*" />
