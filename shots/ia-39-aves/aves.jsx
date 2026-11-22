@@ -256,7 +256,7 @@ function Puntitos({ T, n1, n2, x = 100, y = 690, cols = 25, paso = 36, r1 = 13, 
   const out = [];
   for (let i = 0; i < 300; i++) { const c = i % cols, f = Math.floor(i / cols), on1 = i < n1, on2 = i < n2;
     out.push(<circle key={i} cx={x + c * paso + paso / 2} cy={y + f * paso + paso / 2} r={on1 || on2 ? r1 : r0}
-      fill={on1 ? KC.yellow : on2 ? KC.pink : 'rgba(255,255,255,.35)'} stroke={on1 || on2 ? KC.ink : 'none'} strokeWidth={3} />); }
+      fill={on1 ? KC.yellow : on2 ? KC.pink : 'rgba(255,255,255,.5)'} stroke={on1 || on2 ? KC.ink : 'none'} strokeWidth={3} />); }
   return <g>{out}</g>;
 }
 // Tarjeta de un ave del jardín.
@@ -363,7 +363,7 @@ function Aves() {
       {/* 4 · pregunta */}
       <Escena T={T} a={K.P} b={K.V} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={280} y={1100} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 900)`}>?</text>)}
+        {svg(<text x={560} y={1400} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 560 1200)`}>?</text>)}
       </Escena>
       {/* 5 · los voluntarios */}
       <Escena T={T} a={K.V} b={K.Es}>
@@ -390,11 +390,11 @@ function Aves() {
       {/* 7 · de 984 a más de 3 000 */}
       <Escena T={T} a={K.Cr} b={K.Ge}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Puntitos T={T} n1={n1} n2={Math.max(n1, n2)} x={80} y={650} cols={20} paso={46} r1={16} r0={10} />)}
+        {svg(<Puntitos T={T} n1={n1} n2={Math.max(n1, n2)} x={80} y={790} cols={20} paso={46} r1={16} r0={10} />)}
       </Escena>
-      <NumeroGigante T={T} at={K.Cr + 0.3} until={K.Cr + 3.4} valor={984} dur={2.4} etiqueta="especies de aves (2018–2020)" x={540} y={420} tam={190} color={KC.yellow} />
-      <NumeroGigante T={T} at={K.Cr + 3.6} until={K.Ge - 0.2} valor={3000} desde={984} dur={1.9} prefijo="+" etiqueta="inicios de 2021" x={540} y={420} tam={190} color={KC.pink} />
-      <Chip T={T} at={K.Cr + 1.0} until={K.Ge - 0.2} texto="cada puntito = 10 especies" x={540} y={1440} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Cr + 0.3} until={K.Cr + 3.4} valor={984} dur={2.4} etiqueta="especies de aves (2018–2020)" x={540} y={570} tam={190} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Cr + 3.6} until={K.Ge - 0.2} valor={3000} desde={984} dur={1.9} prefijo="+" etiqueta="inicios de 2021" x={540} y={570} tam={190} color={KC.pink} />
+      <Chip T={T} at={K.Cr + 1.0} until={K.Ge - 0.2} texto="cada puntito = 10 especies" x={540} y={745} tam={30} borde={KC.ink} />
       {/* 8 · la gente y la grulla */}
       <Escena T={T} a={K.Ge} b={K.J}>
         <FondoLunares color={KC.pink} />
