@@ -1,0 +1,2 @@
+- fun-111-cortinarius: ya cumplía (encuadre bien).
+- bio-41-jeans: el auditor marcaba Celulasa ARRIBA; bajé y agrandé el conjunto (hifas, celulosa y celulasas a escala 1.35, centro ~y 950) y moví con él las etiquetas y el chip. Ahora encuadre bien y sin láminas.

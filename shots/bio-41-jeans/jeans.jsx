@@ -250,7 +250,7 @@ function Jeans41() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(155,93,229,.25)" />
         <SvgJ>
-          <g transform="translate(540 860) scale(1.25) translate(-540 -860)">
+          <g transform="translate(540 1080) scale(1.35) translate(-540 -860)">
           <g transform="translate(-60 640) scale(1.5)"><Hifas T={T} x={0} y={0} g={kprog(T, K.Ce, K.Ce + 1.4)} /></g>
           <Celulosa T={T} x={150} y={1010} n={9} paso={96} cortes={[{ i: 1, p: corta(0) }, { i: 4, p: corta(1) }, { i: 6, p: corta(2) }]} />
           {[0, 1, 2].map((k) => T > K.Ce + 1.0 + k * 0.3 && <Enzima key={k} x={enzX(k)} y={klerp(680, 940, kprog(T, K.Ce + 1.0 + k * 0.3, K.Ce + 2.6 + k * 0.5))} s={0.9} boca={Math.abs(Math.sin(T * 9 + k))} rot={30} />)}
@@ -354,10 +354,10 @@ function Jeans41() {
       <Chip T={T} at={K.Pi + 0.8} until={K.Pb - 0.2} texto="jeans + piedra pómez" y={1500} tam={40} borde={PIEDRA} />
       <Chip T={T} at={K.Pb + 0.6} until={K.Pr - 0.2} texto="golpes + polvo" y={1500} tam={44} borde={KC.red} />
       <Chip T={T} at={K.Pr + 0.4} until={K.Ce - 0.2} texto="solo la orilla" x={540} y={1400} tam={36} borde={KC.gold2} />
-      <Etiqueta T={T} at={K.Ce + 0.6} until={K.Mo - 0.3} x={60} y={372} texto="Trichoderma" it lado="der" tam={36} color="#bfe9d6" />
-      <Etiqueta T={T} at={K.Ce + 1.4} until={K.Mo - 0.3} x={800} y={880} texto="celulasa" lado="der" tam={34} color={CEL} />
-      <Etiqueta T={T} at={K.Ce + 2.0} until={K.Mo - 0.3} x={70} y={1175} texto="celulosa del algodón" lado="der" tam={32} color={ALGODON} />
-      <Chip T={T} at={K.Ce + 2.8} until={K.Mo - 0.3} texto="celulasa corta la celulosa" y={1500} tam={38} borde={CEL} />
+      <Etiqueta T={T} at={K.Ce + 0.6} until={K.Mo - 0.3} x={60} y={470} texto="Trichoderma" it lado="der" tam={36} color="#bfe9d6" />
+      <Etiqueta T={T} at={K.Ce + 1.4} until={K.Mo - 0.3} x={800} y={1090} texto="celulasa" lado="der" tam={34} color={CEL} />
+      <Etiqueta T={T} at={K.Ce + 2.0} until={K.Mo - 0.3} x={70} y={1400} texto="celulosa del algodón" lado="der" tam={32} color={ALGODON} />
+      <Chip T={T} at={K.Ce + 2.8} until={K.Mo - 0.3} texto="celulasa corta la celulosa" y={1510} tam={38} borde={CEL} />
       <Medidor T={T} at={K.Mo + 0.3} until={K.Gr - 0.2} valor={(t) => 1 - 0.6 * kprog(t, K.Mo + 0.4, K.Gr - 0.3)} etiqueta="azul en la orilla de la fibra" x={90} y={1460} ancho={900} color={DESL} />
       <Etiqueta T={T} at={K.Ay + 0.6} until={K.Es - 0.3} x={60} y={450} texto="amilasa · quita el almidón" lado="der" tam={32} color={AMI} />
       <Etiqueta T={T} at={K.Ay + 2.2} until={K.Es - 0.3} x={60} y={1350} texto="lacasa · aclara el azul" lado="der" tam={32} color={LAC} />
