@@ -1,0 +1,1 @@
+- amb-31-contaminacion-luminica: marcaba Resplandor, Nino y Aves ABAJO; subí la ciudad (Resplandor, Aves) y la casa y la persona agrandadas (Nino) con suelo oscuro abajo, reacomodé etiqueta y chips; ahora «encuadre bien» y «sin láminas».

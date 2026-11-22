@@ -173,7 +173,7 @@ function LuzShot() {
 
   // aves alrededor de las columnas de luz
   const apaga = kprog(T, K.Av + 5.4, K.Av + 5.8);
-  const aves = Array.from({ length: 46 }, (_, i) => { const R = krng(300 + i); const rx = 60 + R() * 300, ry = 30 + R() * 90, cy = 420 + R() * 760, w = (0.6 + R() * 0.9) * (R() < 0.5 ? 1 : -1), ph = R() * 6;
+  const aves = Array.from({ length: 46 }, (_, i) => { const R = krng(300 + i); const rx = 60 + R() * 300, ry = 30 + R() * 90, cy = 480 + R() * 700, w = (0.6 + R() * 0.9) * (R() < 0.5 ? 1 : -1), ph = R() * 6;
     const a = (T - K.Av) * w + ph; let x = 540 + Math.cos(a) * rx, y = cy + Math.sin(a) * ry;
     const sale = Math.max(0, T - (K.Av + 5.5)); const dx = Math.cos(ph) * 420 * sale, dy = -Math.abs(Math.sin(ph)) * 160 * sale;
     const llega = kprog(T, K.Av + R() * 2.2, K.Av + 0.6 + R() * 2.2);
@@ -206,8 +206,9 @@ function LuzShot() {
       {/* 2 · resplandor: la luz rebota en el aire */}
       <Escena T={T} a={K.R} b={K.A} zoom={0.06} origen="50% 80%">
         <CieloNoche T={T} via={0.1 * (1 - kprog(T, K.R, K.R + 2))} estrellas={estR} domo={domoR}>
-          {svg(<><g transform="translate(540 1920) scale(1.45) translate(-540 -1920)"><Ciudad y={1920} luz={1} seed={11} />
+          {svg(<><g transform="translate(540 1560) scale(1.45) translate(-540 -1920)"><Ciudad y={1920} luz={1} seed={11} />
             {[220, 540, 860].map((fx, k) => <Farol key={fx} x={fx} y={1700} h={300} tipo="malo" on={1} T={T} id={'fr' + k} />)}</g>
+            <rect x={0} y={1555} width={KW} height={370} fill="#17201e" stroke={KC.ink} strokeWidth={6} />
             {fot.map((f, i) => <g key={i}><circle cx={f.x1} cy={f.y1} r={7} fill="#ffcf9a" opacity={0.6} /><circle cx={f.px} cy={f.py} r={14} fill="#fff1c9" opacity={f.o} stroke={LZ_NARANJA} strokeWidth={3} /></g>)}</>)}
         </CieloNoche>
       </Escena>
@@ -250,9 +251,9 @@ function LuzShot() {
       {/* 7 · un niño: de 250 a 100 estrellas a los 18 */}
       <Escena T={T} a={K.N} b={K.Tt}>
         <CieloNoche T={T} via={0} estrellas={(cuenta / 250) * 0.9} domo={0.35 + 0.4 * kprog(T, K.N + 1, K.N + 5.3)}>
-          {svg(<><rect x={0} y={1590} width={KW} height={330} fill="#17201e" stroke={KC.ink} strokeWidth={6} />
-            <Casa x={770} y={1700} s={1.5} luz={1} />
-            <Persona x={290} y={1700} s={klerp(1.3, 3.4, edad / 18)} color={KC.yellow} /></>)}
+          {svg(<><rect x={0} y={1440} width={KW} height={480} fill="#17201e" stroke={KC.ink} strokeWidth={6} />
+            <Casa x={740} y={1500} s={2.0} luz={1} />
+            <Persona x={280} y={1500} s={klerp(1.7, 4.4, edad / 18)} color={KC.yellow} /></>)}
         </CieloNoche>
       </Escena>
       {/* 8 · tortugas recién nacidas que van hacia las luces */}
@@ -277,7 +278,8 @@ function LuzShot() {
           {svg(<><defs><linearGradient id="lzHaz" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stopColor="#dff3ff" stopOpacity=".9" /><stop offset="100%" stopColor="#dff3ff" stopOpacity=".15" /></linearGradient></defs>
             <g opacity={1 - apaga}>{[470, 610].map((hx) => <polygon key={hx} points={`${hx - 26},1560 ${hx + 26},1560 ${hx + 40},0 ${hx - 40},0`} fill="url(#lzHaz)" />)}</g>
             {aves.map((a, i) => <Ave key={i} T={T} x={a.x} y={a.y} s={a.s} seed={a.seed} o={a.o} />)}
-            <Ciudad y={1920} luz={1} seed={21} /></>)}
+            <Ciudad y={1600} luz={1} seed={21} />
+            <rect x={0} y={1595} width={KW} height={330} fill="#17201e" stroke={KC.ink} strokeWidth={6} /></>)}
         </CieloNoche>
       </Escena>
       {/* 10 · lo que sirve: luz hacia abajo, cálida y apagada si nadie la usa */}
@@ -305,7 +307,7 @@ function LuzShot() {
       {/* datos y etiquetas */}
       <Etq T={T} at={K.G + 0.5} until={K.G + 3.6} x={110} y={760} texto="Vía Láctea" tam={36} />
       <Chip T={T} at={K.G + 3.4} until={K.R - 0.2} texto="ciudad de noche" y={1040} x={300} tam={36} borde={LZ_NARANJA} />
-      <Etq T={T} at={K.R + 0.8} until={K.A - 0.2} x={1000} y={760} lado="izq" texto="resplandor del cielo" tam={34} color="#ffe1b8" />
+      <Etq T={T} at={K.R + 0.8} until={K.A - 0.2} x={1000} y={500} lado="izq" texto="resplandor del cielo" tam={34} color="#ffe1b8" />
       <Chip T={T} at={K.A + 0.4} until={K.M - 0.2} texto="Falchi et al. 2016 · Science Advances" y={215} x={540} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.A + 2.8} until={K.M - 0.2} texto="más de 1 de cada 3 no la ve" y={1625} x={540} tam={40} borde={KC.red} />
       <NumeroGigante T={T} at={K.M + 0.3} until={K.P - 0.2} valor={58} dur={1.8} sufijo=" de 100" etiqueta="México:" x={540} y={420} tam={150} color={KC.white} />
@@ -313,12 +315,12 @@ function LuzShot() {
       {T < K.N + 0.2 && <Contador T={T} at={K.C + 0.3} desde={0} hasta={51351} dur={1.6} sufijo=" conteos" x={540} y={460} tam={72} color={KC.white} />}
       <Chip T={T} at={K.C + 4.0} until={K.N - 0.2} texto="+7 a 10 % al año" y={1450} x={780} tam={46} borde={LZ_NARANJA} />
       <NumeroGigante T={T} at={K.N + 0.3} until={K.Tt - 0.2} valor={Math.round(cuenta)} desde={Math.round(cuenta)} dur={0.01} etiqueta="estrellas visibles" x={540} y={520} tam={210} color={KC.white} />
-      <Chip T={T} at={K.N + 0.6} until={K.Tt - 0.2} texto={`edad: ${Math.round(edad)} años`} y={1300} x={290} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.N + 0.6} until={K.Tt - 0.2} texto={`edad: ${Math.round(edad)} años`} y={800} x={290} tam={40} borde={KC.yellow} />
       <Etq T={T} at={K.Tt + 1.0} until={K.Av - 0.2} x={900} y={430} lado="izq" texto="crías de tortuga marina" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Tt + 2.6} until={K.Av - 0.2} texto="Florida: miles de crías al año" y={1440} x={600} tam={38} borde={KC.red} />
       <Chip T={T} at={K.Av + 0.6} until={K.S - 0.2} texto="≈ 1.1 millones de aves" y={330} x={360} tam={38} borde={KC.cyan} />
-      <Chip T={T} at={K.Av + 1.6} until={K.S - 0.2} texto="7 noches · 2008–2016" y={1390} x={540} tam={36} borde={KC.gold} />
-      <Chip T={T} at={K.Av + 2.4} until={K.S - 0.2} texto="Van Doren et al. 2017 · PNAS" y={1475} x={540} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Av + 1.6} until={K.S - 0.2} texto="7 noches · 2008–2016" y={1270} x={540} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.Av + 2.4} until={K.S - 0.2} texto="Van Doren et al. 2017 · PNAS" y={1350} x={540} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.S + 0.2} until={K.Ci - 0.2} texto="lo que sí sirve" y={490} x={540} tam={46} borde={KC.leaf} />
       <Etq T={T} at={K.Ci + 2.4} until={K.Ou - 0.1} x={110} y={760} texto="Vía Láctea" tam={36} />
 
