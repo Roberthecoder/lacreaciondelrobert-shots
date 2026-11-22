@@ -121,9 +121,9 @@ function ChatEstrella({ x, y, s = 1, o = 1 }) {
 }
 
 // Tarjeta de la escena "Clientes".
-function TarjetaCli({ T, at, x, y, titulo, children }) {
+function TarjetaCli({ T, at, x, y, titulo, children, k = 1 }) {
   const e = kprog(T, at, at + 0.45, kEase.rebote), o = kprog(T, at, at + 0.2);
-  return <g transform={`translate(${x} ${y}) scale(${klerp(0.4, 1, e)})`} opacity={o}>
+  return <g transform={`translate(${x} ${y}) scale(${klerp(0.4, 1, e) * k})`} opacity={o}>
     <rect x={-160} y={-170} width={320} height={380} rx={28} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
     <g transform="translate(0 -30)">{children}</g>
     {titulo.map((t, i) => <text key={i} y={140 + i * 44} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>{t}</text>)}
@@ -168,14 +168,15 @@ function Puerta({ T, at }) { // muñequitos que salen por la puerta: primero var
 }
 
 // Balanza: inclina hacia el lado con más peso. inc -1..1.
-function Balanza({ T, x, y, inc = 0 }) {
+function Balanza({ T, x, y, inc = 0, s = 1, izq = null, der = null }) {
   const a = inc * 12;
-  return <g transform={`translate(${x} ${y})`}>
+  return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M -90 260 L 90 260 L 20 220 L -20 220 Z" fill="#7f8ba3" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <rect x={-14} y={-20} width={28} height={244} fill="#7f8ba3" stroke={KC.ink} strokeWidth={7} />
     <g transform={`rotate(${a})`}>
       <rect x={-330} y={-34} width={660} height={24} rx={10} fill={KC.gold} stroke={KC.ink} strokeWidth={6} />
       {[-300, 300].map((px) => <g key={px} transform={`translate(${px} -22) rotate(${-a})`}>
+        {px < 0 ? izq : der}
         <line x1={-60} y1={0} x2={-80} y2={110} stroke={KC.ink} strokeWidth={5} /><line x1={60} y1={0} x2={80} y2={110} stroke={KC.ink} strokeWidth={5} />
         <path d="M -110 110 L 110 110 Q 90 160 0 160 Q -90 160 -110 110 Z" fill={KC.gold2} stroke={KC.ink} strokeWidth={6} />
       </g>)}
@@ -198,16 +199,16 @@ function CallCenter() {
       {/* 1 · gancho: tú, nuevo; el de al lado, años */}
       <Escena T={T} a={K.G} b={K.E}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>
+        {svg(<g transform="translate(0 140)">
           <Cubiculo x={290} y={1110} T={T} quien="nuevo" pend={Math.max(0, pend)} calma={calmaG} robot={kprog(T, K.G + 3.2, K.G + 3.7, kEase.rebote)} />
-          <Cubiculo x={790} y={1110} T={T} quien="veterano" color="#e9f3ff" taza />
+          <Cubiculo x={790} y={1110} T={T} quien="veterano" color="#1c2942" taza />
           <Soplo T={T} at={K.G + 3.9} x={330} y={700} s={0.9} />
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.G + 0.2} until={K.G + 5.4} texto="tú · primer día" x={290} y={560} tam={38} borde={KC.pink} />
-      <Chip T={T} at={K.G + 3.1} until={K.E - 0.2} texto="el de al lado · años" x={790} y={560} tam={38} borde={KC.blue} />
-      <Chip T={T} at={K.G + 3.9} until={K.G + 5.6} texto="la IA te sopla respuestas" x={300} y={440} tam={34} borde={KC.cyan} />
-      {kvisible(T, K.G + 5.8, K.E - 0.2) && <div style={{ position:'absolute', left:540, top:370, transform:`translate(-50%,-50%) scale(${kentrada(T, K.G + 5.8, K.E - 0.2, 'pop').s})`, zIndex:42,
+      <Chip T={T} at={K.G + 0.2} until={K.G + 5.4} texto="tú · primer día" x={290} y={715} tam={38} borde={KC.pink} />
+      <Chip T={T} at={K.G + 3.1} until={K.E - 0.2} texto="el de al lado · años" x={790} y={715} tam={38} borde={KC.blue} />
+      <Chip T={T} at={K.G + 3.9} until={K.G + 5.6} texto="la IA te sopla respuestas" x={320} y={620} tam={34} borde={KC.cyan} />
+      {kvisible(T, K.G + 5.8, K.E - 0.2) && <div style={{ position:'absolute', left:540, top:500, transform:`translate(-50%,-50%) scale(${kentrada(T, K.G + 5.8, K.E - 0.2, 'pop').s})`, zIndex:42,
         opacity:kentrada(T, K.G + 5.8, K.E - 0.2, 'pop').o, display:'flex', alignItems:'center', gap:22 }}>
         <div style={{ background:KC.paper, border:`6px solid ${KC.ink}`, borderRadius:24, padding:'12px 26px', textAlign:'center', boxShadow:`8px 8px 0 ${KC.ink}` }}>
           <div style={{ font:`400 92px/1 ${KF.titulo}`, color:KC.cyan, WebkitTextStroke:`3px ${KC.ink}` }}>2 meses</div>
@@ -221,17 +222,17 @@ function CallCenter() {
       {/* 2 · el estudio */}
       <Escena T={T} a={K.E} b={K.S}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>{Array.from({ length: 40 }, (_, i) => { const c = i % 8, f = Math.floor(i / 8), t0 = K.E + 3.4 + i * 0.04;
+        {svg(<>{Array.from({ length: 40 }, (_, i) => { const c = i % 8, f = Math.floor(i / 8), t0 = K.E - 0.2 + i * 0.012;
           const conIA = [0, 3, 5, 6, 9, 12, 14, 17, 18, 21, 23, 26, 28, 31, 33, 36, 39].includes(i);
-          return <g key={i} opacity={kprog(T, t0, t0 + 0.2)}><Diadema x={150 + c * 112} y={800 + f * 86} s={kprog(T, t0, t0 + 0.35, kEase.rebote)} T={T}
+          return <g key={i} opacity={kprog(T, t0, t0 + 0.2)}><Diadema x={106 + c * 124} y={800 + f * 124} s={1.4 * kprog(T, t0, t0 + 0.35, kEase.rebote)} T={T}
             ia={conIA ? kprog(T, K.E + 5.2 + (i % 5) * 0.08, K.E + 5.5 + (i % 5) * 0.08) : 0} /></g>; })}</>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.3} anio="2025" quien="Brynjolfsson, Li y Raymond" revista="Stanford y MIT · Quarterly Journal of Economics" y={760} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.3} anio="2025" quien="Brynjolfsson, Li y Raymond" revista="Stanford y MIT · Quarterly Journal of Economics" y={470} />
       {T >= K.E + 3.5 && T < K.S + 0.3 && <div style={{ opacity:1 - kprog(T, K.S - 0.2, K.S + 0.2) }}>
-        <Contador T={T} at={K.E + 3.5} hasta={5172} dur={1.6} x={340} y={490} tam={110} color={KC.yellow} />
-        <Chip T={T} at={K.E + 3.7} until={K.S - 0.25} texto="agentes de soporte" x={340} y={590} tam={34} borde={KC.ink} />
+        <Contador T={T} at={K.E + 3.5} hasta={5172} dur={1.6} x={540} y={420} tam={120} color={KC.yellow} />
+        <Chip T={T} at={K.E + 3.7} until={K.S - 0.25} texto="agentes de soporte" x={540} y={525} tam={34} borde={KC.ink} />
       </div>}
-      <Chip T={T} at={K.E + 5.2} until={K.S - 0.25} texto="a una parte le llegó la IA · 2020–2021" x={540} y={700} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.E + 5.2} until={K.S - 0.25} texto="a una parte le llegó la IA · 2020–2021" x={540} y={635} tam={34} borde={KC.cyan} />
 
       {/* 3 · la sugerencia: el agente decide */}
       <Escena T={T} a={K.S} b={K.N}>
@@ -239,7 +240,7 @@ function CallCenter() {
       </Escena>
       {kvisible(T, K.S, K.N - 0.2) && (() => { const e = kentrada(T, K.S, K.N - 0.2, 'sube'), sug = kprog(T, K.S + 1.2, K.S + 1.6, kEase.sale),
         cur = kprog(T, K.S + 2.4, K.S + 3.1, kEase.sale), clic = T >= K.S + 3.2, env = kprog(T, K.S + 3.3, K.S + 3.7, kEase.sale);
-        return <div style={{ position:'absolute', left:340, top:500, width:690, height:640, zIndex:40, opacity:e.o, transform:`translateY(${e.y * 0.5}px)`,
+        return <div style={{ position:'absolute', left:195, top:600, width:690, height:640, zIndex:40, opacity:e.o, transform:`translateY(${e.y * 0.5}px) scale(1.25)`,
           background:'#10131a', border:`10px solid ${KC.ink}`, borderRadius:36, boxShadow:`14px 14px 0 ${KC.ink}`, overflow:'hidden' }}>
           <div style={{ height:70, background:'#2b3445', display:'flex', alignItems:'center', padding:'0 26px', font:`700 30px ${KF.mono}`, color:KC.texto, gap:14 }}>
             <div style={{ width:18, height:18, borderRadius:9, background:VERDE }}></div>chat con cliente</div>
@@ -259,99 +260,103 @@ function CallCenter() {
           {sug > 0 && env < 1 && <svg width={80} height={90} style={{ position:'absolute', left:klerp(560, 190, cur), top:klerp(330, 520, cur), transform:`scale(${clic && T < K.S + 3.4 ? 0.85 : 1})` }}>
             <path d="M 10 6 L 10 70 L 26 56 L 38 82 L 50 76 L 38 52 L 60 52 Z" fill="#fff" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" /></svg>}
         </div>; })()}
-      <Chip T={T} at={K.S + 3.3} until={K.N - 0.2} texto="el agente decide" x={690} y={455} tam={40} borde={VERDE} />
+      <Chip T={T} at={K.S + 3.3} until={K.N - 0.2} texto="el agente decide" x={540} y={450} tam={40} borde={VERDE} />
 
       {/* 4 · los números */}
       <Escena T={T} a={K.N} b={K.P}>
         <FondoLunares color={KC.mint} />
+        {svg(<g transform="translate(540 1505) scale(0.95)" opacity={klerp(1, 0.6, kprog(T, N2 - 0.1, N2 + 0.3))}>
+          <Cubiculo x={0} y={0} T={T} quien="nuevo" pend={0} calma={1} robot={1} /></g>)}
         {T < N2 + 0.3 && <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, N2 - 0.1, N2 + 0.3) }}>{svg(<>
           {Array.from({ length: 6 }, (_, i) => { const t0 = K.N + 1.6 + i * 0.25, u = kprog(T, t0, t0 + 0.3, kEase.rebote);
-            return <g key={i} transform={`translate(${250 + i * 116} 1010) scale(${u})`}><circle r={44} fill={VERDE} stroke={KC.ink} strokeWidth={6} />
+            return <g key={i} transform={`translate(${215 + i * 130} 950) scale(${u * 1.2})`}><circle r={44} fill={VERDE} stroke={KC.ink} strokeWidth={6} />
               <path d="M -20 0 L -4 16 L 22 -16" stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>; })}
         </>)}</div>}
       </Escena>
-      <NumeroGigante T={T} at={K.N + 0.15} until={N2 - 0.2} valor={15} dur={0.9} prefijo="+" sufijo=" %" etiqueta="en promedio" x={640} y={680} tam={260} color={KC.yellow} />
-      <Chip T={T} at={K.N + 0.9} until={N2 - 0.2} texto="casos resueltos por hora" x={640} y={880} tam={38} borde={KC.ink} />
-      <BarrasH T={T} at={N2} until={K.P - 0.2} top={520} filas={[
+      <NumeroGigante T={T} at={K.N + 0.15} until={N2 - 0.2} valor={15} dur={0.9} prefijo="+" sufijo=" %" etiqueta="en promedio" x={540} y={560} tam={260} color={KC.yellow} />
+      <Chip T={T} at={K.N + 0.9} until={N2 - 0.2} texto="casos resueltos por hora" x={540} y={800} tam={38} borde={KC.ink} />
+      <BarrasH T={T} at={N2} until={K.P - 0.2} top={400} ancho={640} filas={[
         { at: N2 + 0.1, valor: 15, texto: '+15 %', etiqueta: 'promedio', color: KC.yellow },
         { at: N2 + 0.4, valor: 30, texto: '≈ +30 %', etiqueta: 'novatos y menos hábiles', color: VERDE },
         { at: N2 + 2.3, valor: 0.6, texto: 'casi nada', etiqueta: 'los más expertos', color: KC.red }]} />
-      <MitoTachado T={T} at={N2 + 3.0} tacharEn={N2 + 3.4} until={K.P - 0.2} texto="la IA ayuda igual a todos" y={1100} tam={40} />
+      <MitoTachado T={T} at={N2 + 3.0} tacharEn={N2 + 3.4} until={K.P - 0.2} texto="la IA ayuda igual a todos" y={985} tam={40} />
 
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.M} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
+        {svg(<text x={540} y={940} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 760)`}>?</text>)}
       </Escena>
 
       {/* 6 · por dentro: aprendió de los mejores */}
       <Escena T={T} a={K.M} b={K.X}>
         <FondoCircuito T={T} />
-        <RedNeuronal T={T} x={350} y={560} ancho={380} alto={420} capas={[4, 5, 5, 3]} onda={((T - K.M) * 0.8) % 1} />
+        <RedNeuronal T={T} x={250} y={520} ancho={580} alto={600} capas={[4, 5, 5, 3]} onda={((T - K.M) * 0.8) % 1} />
         {svg(<>
           {Array.from({ length: 4 }, (_, i) => { const t0 = K.M + 0.6 + i * 0.5, u = kprog(T, t0, t0 + 1.1, kEase.suave);
-            return <ChatEstrella key={i} x={klerp(150, 340, u)} y={klerp(620 + i * 110, 770, u)} s={klerp(0.9, 0.3, u)} o={T >= t0 ? 1 - kprog(T, t0 + 0.9, t0 + 1.1) : 0} />; })}
+            return <ChatEstrella key={i} x={klerp(130, 270, u)} y={klerp(610 + i * 135, 820, u)} s={klerp(1.2, 0.4, u)} o={T >= t0 ? 1 - kprog(T, t0 + 0.9, t0 + 1.1) : 0} />; })}
           {Array.from({ length: 4 }, (_, i) => { const t0 = K.M + 2.4 + i * 0.5, u = kprog(T, t0, t0 + 1.0, kEase.suave);
-            return <g key={i} opacity={T >= t0 ? 1 - kprog(T, t0 + 0.85, t0 + 1.0) : 0} transform={`translate(${klerp(740, 900, u)} ${klerp(770, 960, u)}) scale(${klerp(0.4, 0.7, u)})`}>
+            return <g key={i} opacity={T >= t0 ? 1 - kprog(T, t0 + 0.85, t0 + 1.0) : 0} transform={`translate(${klerp(820, 870, u)} ${klerp(830, 1150, u)}) scale(${klerp(0.5, 1.0, u)})`}>
               <path d="M -90 -44 h 180 a 20 20 0 0 1 20 20 v 48 a 20 20 0 0 1 -20 20 h -120 l -26 24 v -24 h -34 a 20 20 0 0 1 -20 -20 v -48 a 20 20 0 0 1 20 -20 z" fill="#fff" stroke={KC.cyan} strokeWidth={6} strokeDasharray="12 8" />
               <rect x={-70} y={-20} width={130} height={12} rx={6} fill={KC.ink} opacity=".5" /><rect x={-70} y={4} width={90} height={12} rx={6} fill={KC.ink} opacity=".5" /></g>; })}
-          <g transform="translate(905 1120)"><Agente x={0} y={0} s={0.62} T={T} cara={T > K.M + 3.6 ? 'feliz' : 'panico'} playera={KC.pink} /></g>
+          <g transform="translate(860 1500)"><Agente x={0} y={0} s={0.95} T={T} cara={T > K.M + 3.6 ? 'feliz' : 'panico'} playera={KC.pink} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.M + 0.3} until={K.X - 0.2} texto="según los autores" x={540} y={420} tam={36} borde={KC.gold} />
-      <Etq T={T} at={K.M + 0.8} until={K.X - 0.2} x={70} y={540} texto="chats de los mejores ★" color={KC.gold2} />
-      <Etq T={T} at={K.M + 2.6} until={K.X - 0.2} x={70} y={1060} texto="sugerencias → al nuevo" color={KC.cyan} />
+      <Chip T={T} at={K.M + 0.3} until={K.X - 0.2} texto="según los autores" x={540} y={400} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.M + 0.8} until={K.X - 0.2} x={70} y={495} texto="chats de los mejores ★" color={KC.gold2} />
+      <Etq T={T} at={K.M + 2.6} until={K.X - 0.2} x={70} y={1330} texto="sugerencias → al nuevo" color={KC.cyan} />
 
       {/* 7 · a los mejores, la calidad les bajó un poco */}
       <Escena T={T} a={K.X} b={K.Cl}>
         <FondoLunares color={KC.pink} />
-        {svg(<>
-          <Cubiculo x={620} y={1110} T={T} quien="veterano" color="#e9f3ff" taza robot={1} />
+        {svg(<g transform="translate(665 1260) scale(1.2) translate(-620 -1110)">
+          <Cubiculo x={620} y={1110} T={T} quien="veterano" color="#1c2942" taza robot={1} />
           <Soplo T={T} at={K.X + 0.3} x={640} y={590} s={0.9} />
-        </>)}
+        </g>)}
       </Escena>
       {kvisible(T, K.X + 0.9, K.Cl - 0.2) && (() => { const e = kentrada(T, K.X + 0.9, K.Cl - 0.2, 'pop'), baja = kprog(T, K.X + 1.4, K.X + 2.2, kEase.sale);
-        return <div style={{ position:'absolute', left:70, top:740, width:300, zIndex:42, opacity:e.o, transform:`scale(${e.s})`,
+        return <div style={{ position:'absolute', left:30, top:840, width:300, zIndex:42, opacity:e.o, transform:`scale(${e.s})`,
           background:KC.paper, border:`6px solid ${KC.ink}`, borderRadius:24, padding:'16px 20px', boxShadow:`8px 8px 0 ${KC.ink}`, textAlign:'center' }}>
           <div style={{ font:`900 34px ${KF.texto}`, color:KC.ink }}>calidad</div>
           <div style={{ position:'relative', height:200, margin:'10px auto 0', width:90, border:`5px solid ${KC.ink}`, borderRadius:14, background:'#fff', overflow:'hidden' }}>
             <div style={{ position:'absolute', left:0, right:0, bottom:0, height:`${klerp(88, 78, baja)}%`, background:VERDE }}></div></div>
           <div style={{ font:`400 60px ${KF.titulo}`, color:KC.red, WebkitTextStroke:`2px ${KC.ink}`, opacity:baja }}>↓ un poco</div>
         </div>; })()}
-      <Chip T={T} at={K.X + 0.4} until={K.Cl - 0.2} texto="los mejores agentes" x={700} y={420} tam={38} borde={KC.blue} />
+      <Chip T={T} at={K.X + 0.4} until={K.Cl - 0.2} texto="los mejores agentes" x={600} y={470} tam={38} borde={KC.blue} />
 
       {/* 8 · clientes más amables, menos supervisor, menos renuncias */}
       <Escena T={T} a={K.Cl} b={K.Co}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <TarjetaCli T={T} at={K.Cl + 0.2} x={190} y={890} titulo={['clientes', 'más amables']}><CaraCliente T={T} u={kprog(T, K.Cl + 0.8, K.Cl + 1.6, kEase.sale)} /></TarjetaCli>
-          <TarjetaCli T={T} at={K.Cl + 1.6} x={540} y={890} titulo={['menos piden', 'al supervisor']}><Supervisor T={T} u={kprog(T, K.Cl + 2.4, K.Cl + 2.9, kEase.sale)} /></TarjetaCli>
-          <TarjetaCli T={T} at={K.Cl + 3.2} x={890} y={890} titulo={['menos novatos', 'renuncian']}><Puerta T={T} at={K.Cl + 3.4} /></TarjetaCli>
+          <TarjetaCli T={T} at={K.Cl + 0.2} x={290} y={720} k={1.3} titulo={['clientes', 'más amables']}><CaraCliente T={T} u={kprog(T, K.Cl + 0.8, K.Cl + 1.6, kEase.sale)} /></TarjetaCli>
+          <TarjetaCli T={T} at={K.Cl + 1.6} x={790} y={720} k={1.3} titulo={['menos piden', 'al supervisor']}><Supervisor T={T} u={kprog(T, K.Cl + 2.4, K.Cl + 2.9, kEase.sale)} /></TarjetaCli>
+          <TarjetaCli T={T} at={K.Cl + 3.2} x={540} y={1225} k={1.3} titulo={['menos novatos', 'renuncian']}><Puerta T={T} at={K.Cl + 3.4} /></TarjetaCli>
         </>)}
       </Escena>
 
       {/* 9 · contraste con el Shot IA #16 */}
       <Escena T={T} a={K.Co} b={K.C}>
         <FondoLunares color={KC.lilac} />
-        {svg(<Balanza T={T} x={540} y={900} inc={-kprog(T, K.Co + 2.4, K.Co + 3.4, kEase.rebote)} />)}
+        {svg(<Balanza T={T} x={540} y={1010} s={1.15} inc={-kprog(T, K.Co + 2.4, K.Co + 3.4, kEase.rebote)}
+          izq={<g transform="translate(0 126)"><Agente x={0} y={0} s={0.62} T={T} cara="feliz" playera={KC.pink} /></g>}
+          der={<g transform="translate(0 126)"><Agente x={0} y={0} s={0.62} T={T} cara="calma" playera={KC.blue} piel="#c98a5e" canas /></g>} />)}
       </Escena>
       {kvisible(T, K.Co + 0.2, K.Co + 2.3) && (() => { const e = kentrada(T, K.Co + 0.2, K.Co + 2.3, 'pop');
-        return <div style={{ position:'absolute', left:640, top:560, zIndex:43, transform:`translate(-50%,-50%) scale(${e.s}) rotate(-2deg)`, opacity:e.o,
+        return <div style={{ position:'absolute', left:540, top:520, zIndex:43, transform:`translate(-50%,-50%) scale(${e.s * 0.9}) rotate(-2deg)`, opacity:e.o,
           background:KC.paper, border:`7px solid ${KC.ink}`, borderRadius:26, padding:'18px 40px', textAlign:'center', boxShadow:`12px 12px 0 ${KC.ink}` }}>
           <div style={{ font:`700 28px ${KF.mono}`, color:'#5a524a', whiteSpace:'nowrap' }}>otro estudio · Shot IA #16</div>
           <div style={{ font:`900 44px ${KF.texto}`, color:KC.ink, marginTop:6 }}>programadores expertos</div>
           <div style={{ font:`400 78px/1.1 ${KF.titulo}`, color:KC.red, WebkitTextStroke:`3px ${KC.ink}` }}>más lentos con IA</div>
         </div>; })()}
-      <Chip T={T} at={K.Co + 2.5} until={K.C - 0.2} texto="novatos: ayuda mucho" x={240} y={1110} tam={32} borde={VERDE} />
-      <Chip T={T} at={K.Co + 2.8} until={K.C - 0.2} texto="expertos: poco o nada" x={840} y={1030} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.Co + 3.6} until={K.C - 0.2} texto="no ayuda igual a todos" x={650} y={560} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 2.5} until={K.C - 0.2} texto="novatos: ayuda mucho" x={260} y={1340} tam={32} borde={VERDE} />
+      <Chip T={T} at={K.Co + 2.8} until={K.C - 0.2} texto="expertos: poco o nada" x={850} y={1180} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.Co + 3.6} until={K.C - 0.2} texto="no ayuda igual a todos" x={540} y={560} tam={44} borde={KC.ink} />
 
       {/* 10 · cierre: los mismos cubículos; los trucos pasan al nuevo */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>
+        {svg(<g transform="translate(0 140)">
           <Cubiculo x={290} y={1110} T={T} quien="nuevo" pend={0} calma={1} robot={1} />
-          <Cubiculo x={790} y={1110} T={T} quien="veterano" color="#e9f3ff" taza />
+          <Cubiculo x={790} y={1110} T={T} quien="veterano" color="#1c2942" taza />
           {(() => { const u = kprog(T, K.C + 1.0, K.C + 2.4, kEase.suave);
             return <g opacity={kprog(T, K.C + 0.8, K.C + 1.1)}>
               <path d="M 720 650 Q 620 470 470 580" fill="none" stroke={KC.ink} strokeWidth={12} strokeDasharray="22 14" strokeDashoffset={-T * 60} />
@@ -359,9 +364,9 @@ function CallCenter() {
               <g transform={`translate(${klerp(720, 470, u)} ${klerp(650, 580, u) - Math.sin(Math.PI * u) * 130})`}>
                 <path d="M 0 -34 l 10 20 l 22 3 l -16 15 l 4 22 l -20 -11 l -20 11 l 4 -22 l -16 -15 l 22 -3 z" fill={KC.gold} stroke={KC.ink} strokeWidth={4} /></g>
             </g>; })()}
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="sus trucos → al nuevo" x={360} y={430} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="sus trucos → al nuevo" x={480} y={520} tam={38} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="2 meses con IA *= +6 meses sin IA.*" />
