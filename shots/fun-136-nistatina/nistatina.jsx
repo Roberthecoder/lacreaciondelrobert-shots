@@ -132,10 +132,10 @@ const NYC = [610, 1130], ALB = [575, 690];
 function MapaNY({ T }) {
   const c = 'M 90 760 L 140 700 L 300 690 L 400 610 L 470 560 L 560 520 L 640 520 L 660 600 L 650 700 L 650 960 L 660 1060 L 640 1110 L 600 1100 L 560 1040 L 420 1000 L 260 980 L 120 980 L 90 900 Z';
   return <g>
-    <path d={c} fill="#fff3c4" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
-    <path d="M 640 1135 Q 720 1120 820 1100 L 830 1118 Q 720 1146 640 1152 Z" fill="#fff3c4" stroke={KC.ink} strokeWidth={5} />
+    <path d={c} fill="#4d4729" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <path d="M 640 1135 Q 720 1120 820 1100 L 830 1118 Q 720 1146 640 1152 Z" fill="#4d4729" stroke={KC.ink} strokeWidth={5} />
     <path d="M 610 1130 Q 600 1000 585 900 Q 570 800 578 690" stroke="#4aa3ff" strokeWidth={9} fill="none" strokeLinecap="round" />
-    <text x={120} y={850} style={{ font:`700 24px ${KF.mono}` }} fill="#8a7a50">estado de Nueva York</text>
+    <text x={120} y={850} style={{ font:`700 24px ${KF.mono}` }} fill="#e6d9a6">estado de Nueva York</text>
     {[ALB, NYC].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={18} fill={KC.red} stroke={KC.ink} strokeWidth={5} />)}
   </g>;
 }
@@ -171,32 +171,41 @@ function NistatinaShot() {
   // viaje del paquete por correo (ida en Correo, regreso en Brown)
   const ida = kprog(T, K.Cr + 1.0, K.Cr + 3.6, kEase.suave);
   const pk = [klerp(NYC[0], ALB[0], ida) + Math.sin(ida * Math.PI) * -120, klerp(NYC[1], ALB[1], ida)];
+  // pase a mano (estilo cine): cada escena se agranda con su grupo; las barras de escala se recalculan con el mismo factor
+  // y siguen el avance de la cámara (zc). En gancho y cierre, frasquito, caja y frasco comparten una sola escala (PXCM px por cm).
+  const zc = (a, b, zf) => 1 + zf * kprog(T, a - 0.45, b + 0.45, kEase.suave);
+  const PXCM = 110 / 5 / 1.05 * 1.25 * (20.8 / 12);   // el frasquito (436 u) pasa de ~21 cm a ~12 cm de alto: la caja y el frasco se dibujan más grandes que él
+  const FQ = 1.25, CJ = 1.85, BASE = 1380;
+  const CAN = 'translate(540 1000) scale(1.35) translate(-495 -950)', MEM = 'translate(540 1010) scale(1.6) translate(-540 -1010)';
+  const HAZ = 'translate(540 1400) scale(1.4) translate(-510 -1190)', MAP = 'translate(480 1000) scale(1.3) translate(-430 -835)';
+  const BRO = 'translate(540 1400) scale(1.35) translate(-535 -1190)', STR = 'translate(40 1100) scale(1.3) translate(-100 -1100)';
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: el frasquito cae; la caja de correo se abre y sale el frasco con el cultivo */}
       <Escena T={T} a={K.G} b={K.Bo} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <ellipse cx={300} cy={1185} rx={150 * cae} ry={18} fill="rgba(0,0,0,.18)" />
-          <Frasquito T={T} x={300} y={klerp(500, 1180, cae)} s={1.05} rot={(1 - cae) * -18 + Math.sin(T * 4) * 2 * kprog(T, K.G + 0.8, K.G + 1.4)} />
-          <CajaCorreo x={760} y={1180} s={1.0} abre={abre}>
-            <FrascoMason T={T} x={0} y={-60 - 230 * sube} s={0.9} rot={Math.sin(T * 3) * 3 * sube} />
+          <ellipse cx={200} cy={BASE + 6} rx={170 * cae} ry={20} fill="rgba(0,0,0,.35)" />
+          <ellipse cx={705} cy={BASE + 6} rx={330} ry={22} fill="rgba(0,0,0,.35)" />
+          <Frasquito T={T} x={200} y={klerp(620, BASE, cae)} s={FQ} rot={(1 - cae) * -18 + Math.sin(T * 4) * 2 * kprog(T, K.G + 0.8, K.G + 1.4)} />
+          <CajaCorreo x={705} y={BASE} s={CJ} abre={abre}>
+            <FrascoMason T={T} x={0} y={-60 - 190 * sube} s={0.9} rot={Math.sin(T * 3) * 3 * sube} />
           </CajaCorreo>
         </>)}
       </Escena>
       {/* 2 · la boca con algodoncillo */}
-      <Escena T={T} a={K.Bo} b={K.Ca} zoom={0.08} origen="40% 50%">
+      <Escena T={T} a={K.Bo} b={K.Ca} zoom={0.08} origen="50% 52%">
         <FondoLunares color={KC.pink} />
-        {fsvg(<Boca x={400} y={930} s={1.0} placas={kprog(T, K.Bo + 0.6, K.Bo + 2.6)} abre={0.9 + 0.1 * Math.sin(T * 2)} />)}
+        {fsvg(<Boca x={540} y={1010} s={1.6} placas={kprog(T, K.Bo + 0.6, K.Bo + 2.6)} abre={0.9 + 0.1 * Math.sin(T * 2)} />)}
       </Escena>
       {/* 3 · al microscopio: Candida que se multiplica */}
       <Escena T={T} a={K.Ca} b={K.Pa} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<>
+        {fsvg(<g transform={CAN}>
           {LEV.map(([lx, ly, r, ola], i) => { const t0 = K.Ca + 0.1 + (ola - 1) * 0.5 + (i % 3) * 0.08, p = kprog(T, t0, t0 + 0.4, kEase.rebote); if (p <= 0) return null;
             return <Yeast key={i} x={lx + mece(T, i, 0.3) * 6} y={ly + mece(T, i + 5, 0.3) * 6} s={p * 0.95} rot={r} largo={i % 5 === 3 ? 1.8 : 1} brote={kprog(T, t0 + 0.5, t0 + 1.4)} />; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · se parecen: levadura y célula humana, las dos con núcleo */}
       <Escena T={T} a={K.Pa} b={K.Er} zoom={0.05}>
@@ -204,11 +213,11 @@ function NistatinaShot() {
         <Ambiente T={T} n={16} />
         {fsvg(<>
           {(() => { const p = kprog(T, K.Pa + 0.2, K.Pa + 0.8, kEase.rebote), q = kprog(T, K.Pa + 0.7, K.Pa + 1.3, kEase.rebote); return <>
-            <g transform={`translate(280 960) scale(${p})`}>
+            <g transform={`translate(345 850) scale(${p * 1.5})`}>
               <ellipse rx={190} ry={150} fill="#f3ead2" stroke={KC.gold} strokeWidth={16} /><ellipse rx={190} ry={150} fill="none" stroke={KC.ink} strokeWidth={5} />
               <ellipse cx={-30} cy={0} rx={60} ry={52} fill="#b18cff" stroke={KC.ink} strokeWidth={5} /><ellipse cx={80} cy={-40} rx={40} ry={32} fill="rgba(0,210,255,.35)" stroke={KC.ink} strokeWidth={3} />
             </g>
-            <g transform={`translate(790 960) scale(${q})`}>
+            <g transform={`translate(755 1250) scale(${klerp(1.38, 1.5, q)})`} opacity={klerp(0.3, 1, kclamp(q, 0, 1))}>
               <path d={`M -170 -40 Q -150 -150 -20 -150 Q 140 -160 170 -30 Q 190 110 40 150 Q -120 170 -170 60 Z`} fill="#ffd2c4" stroke={KC.coles} strokeWidth={10} />
               <path d={`M -170 -40 Q -150 -150 -20 -150 Q 140 -160 170 -30 Q 190 110 40 150 Q -120 170 -170 60 Z`} fill="none" stroke={KC.ink} strokeWidth={5} />
               <ellipse cx={0} cy={0} rx={62} ry={56} fill="#b18cff" stroke={KC.ink} strokeWidth={5} />
@@ -222,66 +231,73 @@ function NistatinaShot() {
         <Ambiente T={T} n={14} />
         {fsvg(<>
           {(() => { const llega = kprog(T, K.Er + 0.3, K.Er + 1.8, kEase.sale), poro = kprog(T, K.Er + 1.9, K.Er + 2.6, kEase.sale), sale = kprog(T, K.Er + 2.5, K.Er + 4.2);
-            const pc = KW / 2, ym = 1010; return <>
-            <rect x={0} y={ym + 80} width={KW} height={260} fill="rgba(243,234,210,.10)" />
-            <Membrana T={T} y={ym} esterol={NX.ergo} poro={poro} />
-            {[-1, 1].map((sgn) => [0, 1].map((k) => { const fx = pc + sgn * (34 + k * 22), fy = klerp(620 + k * 40, ym, llega); return <Nist key={sgn + '' + k} x={klerp(pc + sgn * (240 + k * 120), fx, llega)} y={fy} rot={klerp(30 * sgn, 90, llega)} s={1.1} />; }))}
+            const pc = KW / 2, ym = 1010; return <g transform={MEM}>
+            <rect x={-300} y={ym + 80} width={KW + 600} height={260} fill="rgba(243,234,210,.10)" />
+            <Membrana T={T} y={ym} esterol={NX.ergo} poro={poro} x0={-216} w={KW + 432} />
+            {[-1, 1].map((sgn) => [0, 1].map((k) => { const fx = pc + sgn * (34 + k * 22), fy = klerp(760 + k * 40, ym, llega); return <Nist key={sgn + '' + k} x={klerp(pc + sgn * (240 + k * 120), fx, llega)} y={fy} rot={klerp(30 * sgn, 90, llega)} s={1.1} />; }))}
             {Array.from({ length: 12 }, (_, i) => { const u = kclamp(sale * 1.6 - i * 0.07, 0, 1); if (u <= 0 || u >= 1) return null;
               return <g key={i} opacity={1 - u * 0.6}><circle cx={pc + Math.sin(i * 2.1) * 24 + u * Math.sin(i) * 160} cy={klerp(ym + 140, 760, u)} r={20} fill={KC.violet} stroke={KC.lilac} strokeWidth={4} />
                 <text x={pc + Math.sin(i * 2.1) * 24 + u * Math.sin(i) * 160} y={klerp(ym + 140, 760, u) + 9} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#fff">K⁺</text></g>; })}
-          </>; })()}
+          </g>; })()}
         </>)}
       </Escena>
       {/* 6 · tu célula: colesterol; se pega menos */}
       <Escena T={T} a={K.Co} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'#101a2e' }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<>
-          <rect x={0} y={1090} width={KW} height={260} fill="rgba(255,210,196,.10)" />
-          <Membrana T={T} y={1010} esterol={KC.coles} cabeza="#ffc2b0" />
+        {fsvg(<g transform={MEM}>
+          <rect x={-300} y={1090} width={KW + 600} height={260} fill="rgba(255,210,196,.10)" />
+          <Membrana T={T} y={1010} esterol={KC.coles} cabeza="#ffc2b0" x0={-216} w={KW + 432} />
           {[[260, 0], [460, 1], [700, 2], [880, 3], [580, 4]].map(([nx, k]) => { const u = kprog(T, K.Co + 0.2 + k * 0.15, K.Co + 1.6 + k * 0.15, kEase.suave), pega = k === 1;
             const y = pega ? klerp(620, 930, u) : klerp(620, 900, Math.sin(u * Math.PI * 0.9)) - u * 60; return <Nist key={k} x={nx + (pega ? 0 : u * (k % 2 ? 60 : -60))} y={y} rot={pega ? klerp(40, 90, u) : 40 + u * 200} s={1.1} o={pega ? 1 : 1 - u * 0.4} />; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 7 · re-gancho */}
       <Escena T={T} a={K.P} b={K.H} zoom={0.1}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<><Frasquito T={T} x={270} y={1170} s={1.15} rot={Math.sin(T * 4) * 4} /><Interrogacion T={T} x={270} y={690} tam={340} /></>)}
+        {fsvg(<><Frasquito T={T} x={400} y={1420} s={1.5} rot={Math.sin(T * 4) * 4} /><Interrogacion T={T} x={800} y={960} tam={460} /></>)}
       </Escena>
       {/* 8 · Hazen en Nueva York: muestras de tierra y pruebas contra hongos */}
       <Escena T={T} a={K.H} b={K.Cr} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Cientifica x={250} y={1190} s={0.88} T={T} color={NX.sil} seed={1} />
-          {[0, 1, 2].map((k) => { const p = kprog(T, K.H + 1.2 + k * 0.4, K.H + 1.6 + k * 0.4, kEase.rebote); return p > 0 ? <g key={k} transform={`translate(${560 + k * 140} 1190) scale(${p})`}>
-            <path d="M -55 0 L -45 -110 L 45 -110 L 55 0 Z" fill="#e9d6a8" stroke={KC.ink} strokeWidth={5} /><path d="M -45 -60 L 45 -60 L 50 -2 L -50 -2 Z" fill={NX.tierra} />
-            <text y={-78} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill={KC.ink}>tierra {k + 1}</text></g> : null; })}
-          <PetriHalo x={780} y={900} r={125} T={T} halo={kprog(T, K.H + 3.6, K.H + 5.2, kEase.sale)} />
+          <g transform={HAZ}>
+            <Cientifica x={270} y={1190} s={0.88} T={T} color={NX.sil} seed={1} />
+            {/* las tres muestras están desde el inicio, atenuadas, y se encienden una por una */}
+            {[0, 1, 2].map((k) => { const p = kprog(T, K.H + 1.2 + k * 0.4, K.H + 1.6 + k * 0.4, kEase.rebote); return <g key={k} transform={`translate(${530 + k * 120} 1190) scale(${klerp(0.9, 1, p)})`} opacity={klerp(0.3, 1, kclamp(p, 0, 1))}>
+              <path d="M -55 0 L -45 -110 L 45 -110 L 55 0 Z" fill="#e9d6a8" stroke={KC.ink} strokeWidth={5} /><path d="M -45 -60 L 45 -60 L 50 -2 L -50 -2 Z" fill={NX.tierra} />
+              <text y={-78} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill="#0b1020">tierra {k + 1}</text></g>; })}
+            <PetriHalo x={745} y={890} r={125} T={T} halo={kprog(T, K.H + 3.6, K.H + 5.2, kEase.sale)} />
+          </g>
         </>)}
       </Escena>
       {/* 9 · por correo: de Nueva York a Albany */}
       <Escena T={T} a={K.Cr} b={K.Br} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <MapaNY T={T} />
-          <path d={`M ${NYC[0]} ${NYC[1]} Q ${NYC[0] - 240} ${(NYC[1] + ALB[1]) / 2} ${ALB[0]} ${ALB[1]}`} stroke={KC.ink} strokeWidth={6} fill="none" strokeDasharray="16 12" opacity={kprog(T, K.Cr + 0.6, K.Cr + 1.0)} />
-          {T > K.Cr + 0.8 && <CajaCorreo x={pk[0]} y={pk[1] + 40} s={0.42} rot={Math.sin(T * 6) * 4 * (ida > 0 && ida < 1 ? 1 : 0)} abre={kprog(T, K.Cr + 3.8, K.Cr + 4.3)}>
-            <FrascoMason T={T} x={0} y={-60 - 200 * kprog(T, K.Cr + 4.1, K.Cr + 4.8, kEase.sale)} s={0.9} /></CajaCorreo>}
-          <Cientifica x={440} y={680} s={0.45} T={T} color={NX.sil2} seed={2} />
+          <g transform={MAP}>
+            <MapaNY T={T} />
+            <path d={`M ${NYC[0]} ${NYC[1]} Q ${NYC[0] - 240} ${(NYC[1] + ALB[1]) / 2} ${ALB[0]} ${ALB[1]}`} stroke={KC.ink} strokeWidth={6} fill="none" strokeDasharray="16 12" opacity={kprog(T, K.Cr + 0.6, K.Cr + 1.0)} />
+            {T > K.Cr + 0.8 && <CajaCorreo x={pk[0]} y={pk[1] + 40} s={0.42} rot={Math.sin(T * 6) * 4 * (ida > 0 && ida < 1 ? 1 : 0)} abre={kprog(T, K.Cr + 3.8, K.Cr + 4.3)}>
+              <FrascoMason T={T} x={0} y={-60 - 200 * kprog(T, K.Cr + 4.1, K.Cr + 4.8, kEase.sale)} s={0.9} /></CajaCorreo>}
+            <Cientifica x={440} y={680} s={0.45} T={T} color={NX.sil2} seed={2} />
+          </g>
         </>)}
       </Escena>
       {/* 10 · Brown aísla la sustancia y la regresa; halo en la caja Petri */}
       <Escena T={T} a={K.Br} b={K.St} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Cientifica x={210} y={1190} s={0.95} T={T} color={NX.sil2} seed={2} />
-          <g transform="translate(470 1190)">
-            <path d="M -30 -230 L -30 -140 L -95 -10 Q -100 0 -88 0 L 88 0 Q 100 0 95 -10 L 30 -140 L 30 -230 Z" fill={NX.vidrio} stroke={KC.ink} strokeWidth={7} />
-            <path d="M -60 -70 L 60 -70 L 92 -6 L -92 -6 Z" fill="#f2d36b" opacity=".9" />
-            {[0, 1, 2].map((k) => { const u = ((T * 0.8 + k * 0.33) % 1); return <circle key={k} cx={-20 + k * 20} cy={-20 - u * 150} r={7 + k * 2} fill="none" stroke={KC.ink} strokeWidth={3} opacity={1 - u} />; })}
+          <g transform={BRO}>
+            <Cientifica x={275} y={1190} s={0.95} T={T} color={NX.sil2} seed={2} />
+            <g transform="translate(500 1190)">
+              <path d="M -30 -230 L -30 -140 L -95 -10 Q -100 0 -88 0 L 88 0 Q 100 0 95 -10 L 30 -140 L 30 -230 Z" fill={NX.vidrio} stroke={KC.ink} strokeWidth={7} />
+              <path d="M -60 -70 L 60 -70 L 92 -6 L -92 -6 Z" fill="#f2d36b" opacity=".9" />
+              {[0, 1, 2].map((k) => { const u = ((T * 0.8 + k * 0.33) % 1); return <circle key={k} cx={-20 + k * 20} cy={-20 - u * 150} r={7 + k * 2} fill="none" stroke={KC.ink} strokeWidth={3} opacity={1 - u} />; })}
+            </g>
+            {(() => { const v = kprog(T, K.Br + 0.9, K.Br + 2.2, kEase.suave); return <CajaCorreo x={klerp(640, 1250, v)} y={1190 - Math.sin(v * Math.PI) * 120} s={0.45} rot={v * 10} />; })()}
+            <PetriHalo x={760} y={860} r={150} T={T} halo={kprog(T, K.Br + 2.0, K.Br + 3.4, kEase.sale)} />
           </g>
-          {(() => { const v = kprog(T, K.Br + 0.9, K.Br + 2.2, kEase.suave); return <CajaCorreo x={klerp(560, 1250, v)} y={1190 - Math.sin(v * Math.PI) * 120} s={0.45} rot={v * 10} />; })()}
-          <PetriHalo x={780} y={870} r={150} T={T} halo={kprog(T, K.Br + 2.0, K.Br + 3.4, kEase.sale)} />
         </>)}
       </Escena>
       {/* 11 · Streptomyces noursei: una bacteria filamentosa del suelo */}
@@ -289,87 +305,93 @@ function NistatinaShot() {
         <div style={{ position:'absolute', inset:0, background:'#0f1a12' }}></div>
         <Ambiente T={T} n={18} color="rgba(201,242,208,.25)" />
         {fsvg(<>
-          {[[80, 1250, 40], [300, 1230, 30], [520, 1260, 46], [760, 1240, 34], [950, 1255, 40], [200, 760, 22], [870, 700, 26]].map(([a, b, r], i) => <circle key={i} cx={a} cy={b} r={r} fill="#5b3a22" opacity=".7" />)}
-          <g transform="translate(0 110)"><Strep T={T} g={kprog(T, K.St + 0.1, K.St + 2.6)} esporas={kprog(T, K.St + 2.4, K.St + 4.2)} /></g>
+          {[[80, 1250, 40], [300, 1230, 30], [520, 1260, 46], [760, 1240, 34], [950, 1255, 40], [200, 760, 22], [870, 700, 26]].map(([a, b, r], i) => <circle key={i} cx={a} cy={b * 1.12} r={r * 1.5} fill="#6b4426" opacity=".8" />)}
+          {/* los filamentos ya están creciendo cuando abre la escena (antes el cuadro empezaba vacío) */}
+          <g transform={STR}><g transform="translate(0 110)"><Strep T={T} g={klerp(0.4, 1.45, kprog(T, K.St - 0.3, K.St + 2.6))} esporas={kprog(T, K.St + 2.4, K.St + 4.2)} /></g></g>
         </>)}
       </Escena>
       {/* 12 · nistatina = New York State; las regalías a la ciencia */}
       <Escena T={T} a={K.R} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          {(() => { const p = kprog(T, K.R + 3.0, K.R + 3.5, kEase.rebote); return p > 0 ? <g transform={`translate(330 1180) scale(${p})`}>
+          {/* el frasquito (lo que se está nombrando) está en cuadro toda la escena; la caja del fondo, atenuada hasta su frase */}
+          <ellipse cx={250} cy={1426} rx={190} ry={20} fill="rgba(0,0,0,.35)" />
+          <Frasquito T={T} x={250} y={1420} s={1.45} rot={Math.sin(T * 2) * 1.5} />
+          {(() => { const p = kprog(T, K.R + 3.0, K.R + 3.5, kEase.rebote); return <g transform={`translate(730 1420) scale(${1.35 * klerp(0.92, 1, p)})`} opacity={klerp(0.28, 1, kclamp(p, 0, 1))}>
             <rect x={-200} y={-200} width={400} height={200} rx={20} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
             <rect x={-60} y={-214} width={120} height={20} rx={8} fill={KC.ink} />
             <text x={0} y={-118} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>Research Corporation</text>
-            <text x={0} y={-66} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="#5a524a">Fondo Brown-Hazen</text></g> : null; })()}
+            <text x={0} y={-66} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="#cfc8ba">Fondo Brown-Hazen</text></g>; })()}
           {Array.from({ length: 14 }, (_, i) => { const t0 = K.R + 3.3 + i * 0.12, u = kprog(T, t0, t0 + 0.6); if (u <= 0 || u >= 1) return null;
-            return <Moneda key={i} x={330 + Math.sin(i * 1.7) * 120} y={klerp(700, 990, u * u)} rot={u * 360} s={0.9} />; })}
+            return <Moneda key={i} x={730 + Math.sin(i * 1.7) * 160} y={klerp(660, 1120, u * u)} rot={u * 360} s={1.25} />; })}
         </>)}
       </Escena>
       {/* 13 · cierre: el mismo frasquito y la misma caja, ya "leídos" */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <ellipse cx={300} cy={1185} rx={150} ry={18} fill="rgba(0,0,0,.18)" />
-          <Frasquito T={T} x={300} y={1180} s={1.05} etiqueta2={kprog(T, K.C + 0.5, K.C + 1.0, kEase.sale)} />
-          <CajaCorreo x={760} y={1180} abre={1}><FrascoMason T={T} x={0} y={-290} s={0.9} /></CajaCorreo>
-          <g transform="translate(540 650) scale(0.5)" opacity={kprog(T, K.C + 1.4, K.C + 1.9)}><PetriHalo x={0} y={0} r={150} T={T} halo={1} /></g>
+          <ellipse cx={200} cy={BASE + 6} rx={170} ry={20} fill="rgba(0,0,0,.35)" />
+          <ellipse cx={705} cy={BASE + 6} rx={330} ry={22} fill="rgba(0,0,0,.35)" />
+          <Frasquito T={T} x={200} y={BASE} s={FQ} etiqueta2={kprog(T, K.C + 0.5, K.C + 1.0, kEase.sale)} />
+          <CajaCorreo x={705} y={BASE} s={CJ} abre={1}><FrascoMason T={T} x={0} y={-250} s={0.9} /></CajaCorreo>
+          <g transform="translate(240 580) scale(1.1)" opacity={kprog(T, K.C + 1.4, K.C + 1.9)}><PetriHalo x={0} y={0} r={150} T={T} halo={1} /></g>
         </>)}
       </Escena>
 
       {/* NY · STATE (letras grandes en Regalías) */}
       {kvisible(T, K.R + 0.2, K.R + 2.9) && (() => { const e = kentrada(T, K.R + 0.2, K.R + 2.9, 'pop'), u = kprog(T, K.R + 1.2, K.R + 1.8, kEase.sale);
-        return <div style={{ position:'absolute', left:0, right:0, top:470, zIndex:41, textAlign:'center', opacity:e.o, transform:`scale(${e.s})` }}>
+        return <div style={{ position:'absolute', left:0, right:0, top:330, zIndex:41, textAlign:'center', opacity:e.o, transform:`scale(${e.s})` }}>
           <div style={{ font:`400 150px/1 ${KF.titulo}`, color:KC.paper, WebkitTextStroke:`5px ${KC.ink}`, textShadow:`6px 6px 0 ${KC.ink}` }}><span style={{ color:KC.yellow }}>NY</span>STATIN</div>
-          <div style={{ font:`900 52px ${KF.texto}`, color:KC.ink, marginTop:10, opacity:u }}><span style={{ background:KC.yellow, padding:'0 8px', borderRadius:8 }}>N</span>ew <span style={{ background:KC.yellow, padding:'0 8px', borderRadius:8 }}>Y</span>ork <span style={{ background:KC.yellow, padding:'0 8px', borderRadius:8 }}>Stat</span>e</div>
+          <div style={{ font:`900 52px ${KF.texto}`, color:KC.ink, marginTop:10, opacity:u }}><span style={{ background:KC.yellow, color:'#0b1020', padding:'0 8px', borderRadius:8 }}>N</span>ew <span style={{ background:KC.yellow, color:'#0b1020', padding:'0 8px', borderRadius:8 }}>Y</span>ork <span style={{ background:KC.yellow, color:'#0b1020', padding:'0 8px', borderRadius:8 }}>Stat</span>e</div>
         </div>; })()}
 
       {/* textos */}
-      <Chip T={T} at={K.G + 2.3} until={K.Bo - 0.3} texto="un microbio de la tierra, por correo" x={540} y={1440} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.Bo + 0.8} until={K.Ca - 0.3} x={60} y={490} texto="algodoncillo · candidiasis oral" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Bo + 1.6} until={K.Ca - 0.3} x={60} y={550} texto="Candida" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.Ca + 0.1} until={K.Pa - 0.3} texto="AL MICROSCOPIO · LEVADURAS" x={420} y={480} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ca + 0.6} until={K.Pa - 0.3} x={60} y={560} texto="Candida albicans" it tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Ca + 1.4} until={K.Pa - 0.3} x={60} y={612} texto="se multiplica por yemas" tam={26} color={KC.gold2} />
-      <Etq T={T} at={K.Pa + 0.6} until={K.Er - 0.3} x={110} y={760} texto="hongo" tam={34} color={KC.gold2} />
-      <Etq T={T} at={K.Pa + 1.1} until={K.Er - 0.3} x={610} y={770} texto="tu célula" tam={34} color={KC.coles} />
-      <Chip T={T} at={K.Pa + 1.8} until={K.Er - 0.3} texto="las dos tienen núcleo" x={540} y={1170} tam={36} borde={KC.lilac} />
-      <Chip T={T} at={K.Er + 0.1} until={K.P - 0.3} texto="POR DENTRO · LA MEMBRANA" x={400} y={480} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Er + 0.5} until={K.Co - 0.3} x={60} y={560} texto="nistatina" tam={34} color={NX.nist} />
-      <Etq T={T} at={K.Er + 1.0} until={K.Co - 0.3} x={60} y={620} texto="ergosterol (hongo)" tam={34} color={NX.ergo} />
-      <Etq T={T} at={K.Er + 2.4} until={K.Co - 0.3} x={60} y={680} texto="poro: se escapa el potasio" tam={28} color={KC.lilac} />
-      <Etq T={T} at={K.Er + 0.5} until={K.Co - 0.3} x={60} y={1150} texto="adentro del hongo" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.Co + 0.3} until={K.P - 0.3} x={60} y={560} texto="colesterol (tu célula)" tam={34} color={KC.coles} />
-      <Chip T={T} at={K.Co + 1.4} until={K.P - 0.3} texto="se pega menos" x={540} y={760} tam={44} borde={KC.coles} />
-      <Etq T={T} at={K.H + 0.4} until={K.Cr - 0.3} x={40} y={700} texto="Elizabeth Lee Hazen · microbióloga" tam={26} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.H + 0.3} until={K.H + 3.4} anio="1948" quien="Depto. de Salud del Estado de NY" revista="Nueva York (ciudad) · 1948–1950" x={660} y={440} />
-      <Chip T={T} at={K.H + 3.7} until={K.Cr - 0.3} texto="¿mata hongos? → halo sin levadura" x={600} y={580} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.Cr + 0.4} until={K.Br - 0.3} x={640} y={1150} texto="Nueva York" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Cr + 0.4} until={K.Br - 0.3} x={600} y={700} texto="Albany" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Cr + 1.2} until={K.Br - 0.3} x={60} y={380} texto="Rachel Fuller Brown · química" tam={26} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Cr + 1.8} until={K.Br - 0.3} valor={240} dur={1.4} prefijo="≈" sufijo=" km" etiqueta="(150 millas)" x={830} y={900} tam={100} color={KC.yellow} />
-      <Etq T={T} at={K.Br + 0.3} until={K.St - 0.3} x={60} y={420} texto="Albany: aísla la sustancia" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Br + 1.0} until={K.St - 0.3} x={60} y={480} texto="→ de regreso a Nueva York" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Br + 2.3} until={K.St - 0.3} texto="halo: el hongo no crece" x={760} y={640} tam={30} borde={KC.gold} />
-      <Etq T={T} at={K.St + 0.5} until={K.R - 0.3} x={60} y={480} texto="Streptomyces noursei" it tam={40} color={NX.espora} />
-      <Chip T={T} at={K.St + 1.4} until={K.R - 0.3} texto="bacteria (actinomiceto), no hongo" x={540} y={1470} tam={34} borde={NX.espora} />
-      <Etq T={T} at={K.St + 2.6} until={K.R - 0.3} x={60} y={545} texto="cadenas de esporas" tam={26} color={KC.texto} />
-      <Chip T={T} at={K.St + 3.2} until={K.R - 0.3} texto="de la tierra de unos amigos de Hazen (Nourse)" x={540} y={1560} tam={26} borde={KC.gold2} />
-      <NumeroGigante T={T} at={K.R + 3.5} until={K.C - 0.3} valor={13.4} dec={1} dur={1.2} prefijo="US$" sufijo=" mill." etiqueta="regalías 1955–1976" x={370} y={580} tam={98} color={KC.yellow} />
-      <Chip T={T} at={K.R + 4.8} until={K.C - 0.3} texto="para la investigación" x={760} y={1060} tam={32} borde={KC.mint} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="tierra + correo + 2 científicas" x={390} y={470} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.C + 2.4} until={K.Ou} x={60} y={1480} texto="No es consejo médico. Si tienes síntomas," tam={22} color={KC.ink} />
-      <Etq T={T} at={K.C + 2.4} until={K.Ou} x={60} y={1515} texto="platícalo con tu médico." tam={22} color={KC.ink} />
+      <Chip T={T} at={K.G + 2.3} until={K.Bo - 0.3} texto="un microbio de la tierra, por correo" x={400} y={300} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Bo + 0.8} until={K.Ca - 0.3} x={60} y={430} texto="algodoncillo · candidiasis oral" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Bo + 1.6} until={K.Ca - 0.3} x={60} y={495} texto="Candida" it tam={44} color={KC.ink} />
+      <Chip T={T} at={K.Ca + 0.1} until={K.Pa - 0.3} texto="AL MICROSCOPIO · LEVADURAS" x={540} y={400} tam={32} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Ca + 0.6} until={K.Pa - 0.3} x={60} y={490} texto="Candida albicans" it tam={38} color={KC.texto} />
+      <Etq T={T} at={K.Ca + 1.4} until={K.Pa - 0.3} x={60} y={548} texto="se multiplica por yemas" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.Pa + 0.6} until={K.Er - 0.3} x={110} y={570} texto="hongo" tam={38} color={KC.gold2} />
+      <Etq T={T} at={K.Pa + 1.1} until={K.Er - 0.3} x={640} y={965} texto="tu célula" tam={38} color={KC.coles} />
+      <Chip T={T} at={K.Pa + 1.8} until={K.Er - 0.3} texto="las dos tienen núcleo" x={290} y={1210} tam={36} borde={KC.lilac} />
+      <Chip T={T} at={K.Er + 0.1} until={K.P - 0.3} texto="POR DENTRO · LA MEMBRANA" x={380} y={310} tam={32} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Er + 0.5} until={K.Co - 0.3} x={60} y={400} texto="nistatina" tam={36} color={NX.nist} />
+      <Etq T={T} at={K.Er + 1.0} until={K.Co - 0.3} x={60} y={458} texto="ergosterol (hongo)" tam={36} color={NX.ergo} />
+      <Etq T={T} at={K.Er + 2.4} until={K.Co - 0.3} x={60} y={516} texto="poro: se escapa el potasio" tam={30} color={KC.lilac} />
+      <Etq T={T} at={K.Er + 0.5} until={K.Co - 0.3} x={60} y={1290} texto="adentro del hongo" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Co + 0.3} until={K.P - 0.3} x={60} y={1250} texto="colesterol (tu célula)" tam={36} color={KC.coles} />
+      <Chip T={T} at={K.Co + 1.4} until={K.P - 0.3} texto="se pega menos" x={540} y={1380} tam={48} borde={KC.coles} />
+      <Etq T={T} at={K.H + 0.4} until={K.Cr - 0.3} x={40} y={650} texto="Elizabeth Lee Hazen · microbióloga" tam={28} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.H + 0.3} until={K.H + 3.4} anio="1948" quien="Depto. de Salud del Estado de NY" revista="Nueva York (ciudad) · 1948–1950" x={700} y={400} />
+      <Chip T={T} at={K.H + 3.7} until={K.Cr - 0.3} texto="¿mata hongos? → halo sin levadura" x={690} y={540} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.Cr + 0.4} until={K.Br - 0.3} x={740} y={1452} texto="Nueva York" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Cr + 0.4} until={K.Br - 0.3} x={704} y={812} texto="Albany" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Cr + 1.2} until={K.Br - 0.3} x={60} y={440} texto="Rachel Fuller Brown · química" tam={28} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Cr + 1.8} until={K.Br - 0.3} valor={240} dur={1.4} prefijo="≈" sufijo=" km" etiqueta="(150 millas)" x={290} y={1350} tam={100} color={KC.yellow} />
+      <Etq T={T} at={K.Br + 0.3} until={K.St - 0.3} x={60} y={540} texto="Albany: aísla la sustancia" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Br + 1.0} until={K.St - 0.3} x={60} y={596} texto="→ de regreso a Nueva York" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Br + 2.3} until={K.St - 0.3} texto="halo: el hongo no crece" x={800} y={650} tam={32} borde={KC.gold} />
+      <Etq T={T} at={K.St + 0.5} until={K.R - 0.3} x={60} y={330} texto="Streptomyces noursei" it tam={44} color={NX.espora} />
+      <Chip T={T} at={K.St + 1.4} until={K.R - 0.3} texto="bacteria (actinomiceto), no hongo" x={540} y={1440} tam={34} borde={NX.espora} />
+      <Etq T={T} at={K.St + 2.6} until={K.R - 0.3} x={60} y={395} texto="cadenas de esporas" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.St + 3.2} until={K.R - 0.3} texto="de la tierra de unos amigos de Hazen (Nourse)" x={540} y={1516} tam={26} borde={KC.gold2} />
+      <NumeroGigante T={T} at={K.R + 3.5} until={K.C - 0.3} valor={13.4} dec={1} dur={1.2} prefijo="US$" sufijo=" mill." etiqueta="regalías 1955–1976" x={560} y={470} tam={104} color={KC.yellow} />
+      <Chip T={T} at={K.R + 4.8} until={K.C - 0.3} texto="para la investigación" x={730} y={1490} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="tierra + correo + 2 científicas" x={390} y={310} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.C + 2.4} until={K.Ou} x={60} y={1478} texto="No es consejo médico. Si tienes síntomas," tam={24} color={KC.ink} />
+      <Etq T={T} at={K.C + 2.4} until={K.Ou} x={60} y={1514} texto="platícalo con tu médico." tam={24} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Bo} texto="5 cm" largo={110} y={1530} color={KC.ink} />
-      <BarraEscala T={T} at={K.Bo} until={K.Ca} texto="1 cm" largo={110} color={KC.ink} />
-      <BarraEscala T={T} at={K.Ca} until={K.Pa} texto="5 µm" largo={100} />
+      <BarraEscala T={T} at={K.G} until={K.Bo} texto="5 cm" largo={5 * PXCM * zc(K.G, K.Bo + 0.9, 0.2)} y={1530} color={KC.ink} />
+      <BarraEscala T={T} at={K.Bo} until={K.Ca} texto="1 cm" largo={110 * 1.6 * zc(K.Bo, K.Ca + 0.9, 0.1)} color={KC.ink} />
+      <BarraEscala T={T} at={K.Ca} until={K.Pa} texto="5 µm" largo={100 * 1.35 * zc(K.Ca, K.Pa + 0.9, 0.1)} />
       <BarraEscala T={T} at={K.Pa} until={K.Er} texto="esquemático · no a escala" largo={0} />
-      <BarraEscala T={T} at={K.Er} until={K.P} texto="5 nm (esquemático)" largo={130} y={1440} />
+      <BarraEscala T={T} at={K.Er} until={K.Co} texto="5 nm (esquemático)" largo={130 * 1.6 * zc(K.Er, K.Co + 0.9, 0.1)} y={1440} />
+      <BarraEscala T={T} at={K.Co} until={K.P} texto="5 nm (esquemático)" largo={130 * 1.6 * zc(K.Co, K.H, 0.1)} y={1440} />
       <BarraEscala T={T} at={K.Cr} until={K.Br} texto="mapa esquemático" largo={0} y={1440} color={KC.ink} />
-      <BarraEscala T={T} at={K.St} until={K.R} texto="10 µm" largo={200} y={1640} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={110} y={1580} color={KC.ink} />
+      <BarraEscala T={T} at={K.St} until={K.R} texto="10 µm" largo={200 * 1.3 * zc(K.St, K.R + 0.9, 0.1)} y={1640} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={5 * PXCM * zc(K.C, FIN, 0.1)} y={1580} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Bo - 0.1} texto="Esta medicina salió de *la tierra* y viajó *por correo.*" />
