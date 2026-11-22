@@ -401,8 +401,8 @@ function HongosMercadoShot() {
       <Escena T={T} a={K.X} b={K.C} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <g opacity={0.3}><Yema x={280} y={1400} s={1.55} /><AmanitaBlanca x={790} y={1400} s={1.55} /></g>
-          <Advertencia x={540} y={800} s={kprog(T, K.X, K.X + 0.4, kEase.rebote) * 2.6} />
+          <g opacity={0.45}><Yema x={280} y={1400} s={1.55} /><AmanitaBlanca x={790} y={1400} s={1.55} /></g>
+          <Advertencia x={540} y={1010} s={kprog(T, K.X, K.X + 0.4, kEase.rebote) * 3.3} />
         </>)}
       </Escena>
       {/* 12 · cierre: el mismo puesto, ahora con su bosque y su honguera */}
