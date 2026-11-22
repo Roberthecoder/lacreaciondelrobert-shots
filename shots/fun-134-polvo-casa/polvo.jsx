@@ -3,7 +3,7 @@
 // Gancho 1 «Esto no es X: es Y». Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (mapas y esporas).
 
 const PX = { madera:'#b9773d', madera2:'#8a5226', madera3:'#d99a5c', polvo:'#9b958c', polvo2:'#c9c3b8', piel:'#f1b48f', piel2:'#d98f6b',
-  pared:'#fff4dc', clado:'#4a5a3a', clado2:'#7f9a5e', alter:'#7a4a22', alter2:'#b47a3e', algodon:'#fbfaf5' };
+  pared:'#5e4c38', clado:'#4a5a3a', clado2:'#7f9a5e', alter:'#7a4a22', alter2:'#b47a3e', algodon:'#fbfaf5' };
 
 // Viga de arriba del marco de la puerta (vista de cerca). x, y = esquina superior izquierda. limpio 0..1 = cuánto limpió el dedo.
 function ViGaMarco({ x, y, w = 1080, h = 150, polvo = 1, limpio = 0, seed = 3 }) {
@@ -196,49 +196,52 @@ function PolvoShot() {
       <Escena T={T} a={K.G} b={K.Ma} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
+          <g opacity={0.45}><Puerta x={540} y={2040} s={1.15} polvo={0} /></g>
+          <g transform="translate(300 700) scale(1.6) translate(-300 -740)">
           <ViGaMarco x={0} y={740} polvo={1} limpio={swipe * 0.62} />
-          {swipe < 1 && <Dedo x={swipe * 670} y={728} />}
+          {swipe < 1 && <Dedo x={Math.max(120, swipe * 670)} y={728} />}
           {T > K.G + 1.2 && <Dedo x={670 + kprog(T, K.G + 1.3, K.G + 1.9) * 500} y={728 - kprog(T, K.G + 1.3, K.G + 1.9) * 120} />}
-          <MapaMotas T={T} x={225} y={900} s={0.7} p={kprog(T, K.G + 0.9, K.G + 3.2)} />
+          </g>
+          <MapaMotas T={T} x={63} y={975} s={1.1} p={kprog(T, K.G + 0.9, K.G + 3.2)} />
         </>)}
       </Escena>
       {/* 1 · el marco de arriba de la puerta */}
       <Escena T={T} a={K.Ma} b={K.En} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Puerta x={430} y={1260} s={0.72} polvo={kprog(T, K.Ma + 0.6, K.Ma + 2.6)} />
-          <FlechaCurva x1={160} y1={500} x2={260} y2={570} p={kprog(T, K.Ma + 0.3, K.Ma + 0.9)} color={KC.ink} curva={-60} T={T} />
+          <Puerta x={540} y={1480} s={1.1} polvo={kprog(T, K.Ma + 0.6, K.Ma + 2.6)} />
+          <FlechaCurva x1={150} y1={300} x2={250} y2={420} p={kprog(T, K.Ma + 0.3, K.Ma + 0.9)} color={KC.ink} curva={-60} T={T} />
         </>)}
       </Escena>
       {/* 2 · cómo entran las esporas */}
       <Escena T={T} a={K.En} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<CasaCorte T={T} x={90} y={280} p={kprog(T, K.En + 0.3, K.En + 0.8)} a={K.En} />)}
+        {fsvg(<g transform="translate(540 960) scale(1.12) translate(-450 -470)"><CasaCorte T={T} x={0} y={0} p={kprog(T, K.En + 0.3, K.En + 0.8)} a={K.En} /></g>)}
       </Escena>
       {/* 3 · por dentro del polvo: esporas (fondo oscuro, microscópico) */}
       <Escena T={T} a={K.Es} b={K.R} zoom={0.1}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.45) translate(-540 -950)">
           {[[160, 1000, 0.5], [880, 760, 0.42]].map(([fx, fy, sz], i) => <path key={i} d={`M ${fx - 140} ${fy} Q ${fx} ${fy - 60} ${fx + 160} ${fy + 30}`} stroke="#7a8aa8" strokeWidth={10} fill="none" opacity=".5" />)}
-          <CadenaClado T={T} x={250} y={1060} s={1} p={kprog(T, K.Es + 0.1, K.Es + 1.0)} />
-          <CadenaClado T={T} x={420} y={1140} s={0.8} rot={20} p={kprog(T, K.Es + 0.3, K.Es + 1.2)} />
-          <EsporaAlter x={760} y={960} s={1} rot={14} p={kprog(T, K.Es + 0.6, K.Es + 1.2)} />
-          <EsporaAlter x={620} y={820} s={0.7} rot={-30} p={kprog(T, K.Es + 0.8, K.Es + 1.4)} />
-          <CadenaClado T={T} x={900} y={1180} s={0.7} rot={-25} p={kprog(T, K.Es + 0.5, K.Es + 1.3)} />
-          <CadenaClado T={T} x={120} y={900} s={0.6} rot={35} p={kprog(T, K.Es + 0.7, K.Es + 1.5)} />
+          <CadenaClado T={T} x={250} y={1060} s={1} p={kprog(T, K.Es + 0.0, K.Es + 0.7)} />
+          <CadenaClado T={T} x={420} y={1140} s={0.8} rot={20} p={kprog(T, K.Es + 0.1, K.Es + 0.8)} />
+          <EsporaAlter x={760} y={960} s={1} rot={14} p={kprog(T, K.Es + 0.2, K.Es + 0.8)} />
+          <EsporaAlter x={620} y={820} s={0.7} rot={-30} p={kprog(T, K.Es + 0.3, K.Es + 0.9)} />
+          <CadenaClado T={T} x={900} y={1180} s={0.7} rot={-25} p={kprog(T, K.Es + 0.2, K.Es + 0.9)} />
+          <CadenaClado T={T} x={120} y={900} s={0.6} rot={35} p={kprog(T, K.Es + 0.35, K.Es + 1.0)} />
           {[[120, 760], [600, 1180], [940, 1130], [520, 720]].map(([gx, gy], i) => <circle key={i} cx={gx} cy={gy} r={18 + i * 4} fill="#6f6a62" opacity=".6" />)}
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · cada región, sus hongos */}
       <Escena T={T} a={K.R} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<MapaUSA x={90} y={660} s={1} id="usR" regiones={kprog(T, K.R + 0.3, K.R + 2.6)} />)}
+        {fsvg(<MapaUSA x={19} y={647} s={1.2} id="usR" regiones={kprog(T, K.R + 0.3, K.R + 2.6)} />)}
       </Escena>
       {/* 5 · re-gancho */}
       <Escena T={T} a={K.P} b={K.H} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><ViGaMarco x={0} y={1180} polvo={1} /><Interrogacion T={T} x={300} y={1080} tam={420} /></>)}
+        {fsvg(<><g transform="translate(540 1060) scale(1.6) translate(-540 -1180)"><ViGaMarco x={0} y={1180} polvo={1} /></g><Interrogacion T={T} x={300} y={1080} tam={420} /></>)}
       </Escena>
       {/* 6 · el experimento: el hisopo, adentro y afuera; ~1,200 casas */}
       <Escena T={T} a={K.H} b={K.A} zoom={0.04}>
@@ -246,58 +249,58 @@ function PolvoShot() {
         {fsvg(<>
           {(() => { const u = kprog(T, K.H + 2.0, K.H + 4.5); const lado = u < 0.5 ? 0 : 1, w = (u % 0.5) * 2;
             return <g opacity={1 - kprog(T, K.H + 4.6, K.H + 5.0)}>
-              <rect x={60} y={700} width={440} height={520} rx={20} fill={PX.pared} stroke={KC.ink} strokeWidth={7} />
-              <rect x={580} y={700} width={440} height={520} rx={20} fill="#bfefff" stroke={KC.ink} strokeWidth={7} />
-              <Puerta x={280} y={1200} s={0.5} polvo={1} color="#e8336d" />
-              <Puerta x={800} y={1200} s={0.5} polvo={1} color="#2a6fdb" />
-              {T > K.H + 1.9 && <g transform={`translate(${lado ? 800 : 280} 738)`}>
-                <Hisopo x={-110 + Math.sin(w * Math.PI * 4) * 90} y={-10} rot={-82} s={0.55} sucio={kclamp(w * 1.4, 0, 1)} />
-                <Mano x={30 + Math.sin(w * Math.PI * 4) * 90} y={20} rot={-10} s={0.6} />
+              <rect x={60} y={560} width={440} height={740} rx={20} fill={PX.pared} stroke={KC.ink} strokeWidth={7} />
+              <rect x={580} y={560} width={440} height={740} rx={20} fill="#24506a" stroke={KC.ink} strokeWidth={7} />
+              <Puerta x={280} y={1280} s={0.72} polvo={1} color="#e8336d" />
+              <Puerta x={800} y={1280} s={0.72} polvo={1} color="#2a6fdb" />
+              {T > K.H + 1.9 && <g transform={`translate(${lado ? 800 : 280} 610)`}>
+                <Hisopo x={-158 + Math.sin(w * Math.PI * 4) * 130} y={-14} rot={-82} s={0.8} sucio={kclamp(w * 1.4, 0, 1)} />
+                <Mano x={43 + Math.sin(w * Math.PI * 4) * 130} y={29} rot={-10} s={0.86} />
               </g>}
             </g>; })()}
-          {T > K.H + 4.6 && <MapaUSA x={90} y={760} s={1} id="usH" puntos={kprog(T, K.H + 4.8, K.H + 7.0)} nPuntos={150} />}
+          {T > K.H + 4.6 && <MapaUSA x={19} y={760} s={1.2} id="usH" puntos={kprog(T, K.H + 4.8, K.H + 7.0)} nPuntos={150} />}
         </>)}
       </Escena>
       {/* 7 · se lee el ADN del polvo (oscuro) */}
       <Escena T={T} a={K.A} b={K.Af} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1000) scale(1.25) translate(-560 -960)">
           <Tubo x={200} y={1000} s={1} lleno={kprog(T, K.A + 0.1, K.A + 0.8)} />
           <Hisopo x={200} y={klerp(560, 800, kprog(T, K.A, K.A + 0.7))} s={0.6} sucio={1} />
           <ADNHebra T={T} x={330} y={980} largo={660} alto={110} vueltas={3} vel={1.4} resalta={(u) => u < kprog(T, K.A + 0.6, K.A + 3.0)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 8 · los hongos de adentro venían de afuera */}
       <Escena T={T} a={K.Af} b={K.B} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={70} y={720} width={430} height={440} rx={26} fill={PX.pared} stroke={KC.ink} strokeWidth={7} />
-          <rect x={580} y={720} width={430} height={440} rx={26} fill="#bfefff" stroke={KC.ink} strokeWidth={7} />
-          {[0, 1, 2, 3, 4].map((i) => { const y0 = 800 + i * 74, q = kprog(T, K.Af + 0.6 + i * 0.2, K.Af + 1.0 + i * 0.2);
+          <rect x={70} y={620} width={430} height={680} rx={26} fill={PX.pared} stroke={KC.ink} strokeWidth={7} />
+          <rect x={580} y={620} width={430} height={680} rx={26} fill="#24506a" stroke={KC.ink} strokeWidth={7} />
+          {[0, 1, 2, 3, 4].map((i) => { const y0 = 720 + i * 130, q = kprog(T, K.Af + 0.15 + i * 0.1, K.Af + 0.55 + i * 0.1);
             return <g key={i}>
-              <ellipse cx={330} cy={y0} rx={i % 2 ? 12 : 18} ry={i % 2 ? 20 : 26} fill={i % 2 ? PX.clado2 : PX.alter2} stroke={KC.ink} strokeWidth={3} opacity={q} />
-              <ellipse cx={760} cy={y0} rx={i % 2 ? 12 : 18} ry={i % 2 ? 20 : 26} fill={i % 2 ? PX.clado2 : PX.alter2} stroke={KC.ink} strokeWidth={3} />
-              <line x1={350} y1={y0} x2={740} y2={y0} stroke={KC.ink} strokeWidth={4} strokeDasharray="12 10" opacity={q} />
+              <ellipse cx={330} cy={y0} rx={i % 2 ? 19 : 29} ry={i % 2 ? 32 : 42} fill={i % 2 ? PX.clado2 : PX.alter2} stroke={KC.ink} strokeWidth={3} opacity={q} />
+              <ellipse cx={760} cy={y0} rx={i % 2 ? 19 : 29} ry={i % 2 ? 32 : 42} fill={i % 2 ? PX.clado2 : PX.alter2} stroke={KC.ink} strokeWidth={3} />
+              <line x1={362} y1={y0} x2={728} y2={y0} stroke={KC.ink} strokeWidth={4} strokeDasharray="12 10" opacity={q} />
             </g>; })}
-          <FlechaCurva x1={900} y1={1230} x2={200} y2={1230} p={kprog(T, K.Af + 0.3, K.Af + 1.2)} color={KC.ink} curva={-70} T={T} />
+          <FlechaCurva x1={900} y1={1380} x2={200} y2={1380} p={kprog(T, K.Af + 0.3, K.Af + 1.2)} color={KC.ink} curva={-70} T={T} />
         </>)}
       </Escena>
       {/* 9 · las bacterias: quién vive ahí */}
       <Escena T={T} a={K.B} b={K.M} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(500 1300) scale(1.45) translate(-500 -1150)">
           <Persona x={250} y={1150} s={1} />
-          <Perro x={720} y={1150} s={1.1} T={T} />
+          <Perro x={660} y={1150} s={1.1} T={T} />
           {Array.from({ length: 8 }, (_, i) => { const q = kprog(T, K.B + 0.5 + i * 0.12, K.B + 1.5 + i * 0.12, kEase.sale); const fromDog = i % 2;
-            const x0 = fromDog ? 640 : 250, y0 = fromDog ? 990 : 910;
-            return q > 0 ? <Bacteria key={i} T={T} x={x0 + (i - 4) * 40 * q} y={y0 - 260 * q - (i % 3) * 30} largo={70} ancho={34} rot={i * 37} color={fromDog ? '#7fd88a' : '#ffb3c8'} seed={i + 2} opacidad={q} /> : null; })}
-        </>)}
+            const x0 = fromDog ? 580 : 250, y0 = fromDog ? 990 : 910;
+            return q > 0 ? <Bacteria key={i} T={T} x={x0 + (i - 4) * 40 * q} y={y0 - 120 * q - (i % 3) * 30} largo={70} ancho={34} rot={i * 37} color={fromDog ? '#7fd88a' : '#ffb3c8'} seed={i + 2} opacidad={q} /> : null; })}
+        </g>)}
       </Escena>
       {/* 10 · solo con hongos: el círculo de 230 km */}
       <Escena T={T} a={K.M} b={K.F} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<MapaUSA x={90} y={650} s={1} id="usM">
+        {fsvg(<MapaUSA x={19} y={760} s={1.2} id="usM">
           {(() => { const q = kprog(T, K.M + 1.6, K.M + 2.6, kEase.sale); const r = 18 * q; // ~100 km, esquemático (círculo agrandado para que se vea)
             return <g>
               <circle cx={560} cy={230} r={r * 3} fill={KC.pink} opacity={0.18 * q} />
@@ -309,78 +312,81 @@ function PolvoShot() {
       {/* 11 · ciencia forense (propuesta) */}
       <Escena T={T} a={K.F} b={K.C} zoom={0.06}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(520 1050) scale(1.35) translate(-520 -1050)">
           <Playera x={330} y={1040} s={1.3} />
           <Llave x={700} y={1080} s={1} rot={-20} />
           <g transform={`translate(${klerp(980, 400, kprog(T, K.F + 0.2, K.F + 1.4, kEase.sale))} 990)`}>
             <circle r={110} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={12} />
             <line x1={78} y1={78} x2={170} y2={170} stroke={KC.ink} strokeWidth={24} strokeLinecap="round" />
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · cierre: el mismo marco del inicio; el trapo borra el mapa */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           {(() => { const lim = kprog(T, K.C + 0.8, K.C + 3.8, kEase.suave); return <>
+            <g opacity={0.45}><Puerta x={540} y={2040} s={1.15} polvo={0} /></g>
+            <g transform="translate(300 700) scale(1.6) translate(-300 -740)">
             <ViGaMarco x={0} y={740} polvo={1} limpio={lim} />
-            <MapaMotas T={T} x={225} y={900} s={0.7} p={1} borra={lim} />
             {lim > 0 && lim < 1 && <Trapo x={lim * 1080} y={720} rot={Math.sin(T * 14) * 6} />}
+            </g>
+            <MapaMotas T={T} x={63} y={975} s={1.1} p={1} borra={lim} />
           </>; })()}
         </>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 2.4} until={K.Ma - 0.3} texto="un mapa · escrito en hongos" x={300} y={620} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.G + 3.0} until={K.Ma - 0.3} x={60} y={1400} texto="estudio hecho en EE. UU." tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Ma + 0.4} until={K.En - 0.3} x={60} y={440} texto="marco de arriba de la puerta" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ma + 1.6} until={K.En - 0.3} texto="rara vez se limpia" x={820} y={760} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.En + 0.6} until={K.Es - 0.3} x={70} y={930} texto="ventanas" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.En + 1.4} until={K.Es - 0.3} x={560} y={750} texto="puertas" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.En + 3.1} until={K.Es - 0.3} x={600} y={680} texto="en las personas" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.G + 2.4} until={K.Ma - 0.3} texto="un mapa · escrito en hongos" x={700} y={620} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.G + 3.0} until={K.Ma - 0.3} x={60} y={540} texto="estudio hecho en EE. UU." tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Ma + 0.4} until={K.En - 0.3} x={60} y={270} texto="marco de arriba de la puerta" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Ma + 1.6} until={K.En - 0.3} texto="rara vez se limpia" x={790} y={350} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.En + 0.6} until={K.Es - 0.3} x={70} y={1165} texto="ventanas" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.En + 1.4} until={K.Es - 0.3} x={500} y={985} texto="puertas" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.En + 3.1} until={K.Es - 0.3} x={600} y={905} texto="en las personas" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Es + 0.05} until={K.R - 0.3} texto="POR DENTRO · EL POLVO" x={540} y={470} tam={34} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Es + 0.5} until={K.R - 0.3} x={70} y={640} texto="Cladosporium · esporas en cadena" it tam={30} color={KC.mint} />
-      <Etq T={T} at={K.Es + 0.9} until={K.R - 0.3} x={380} y={1120} texto="Alternaria · espora en mazo" it tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.Es + 0.5} until={K.R - 0.3} x={70} y={680} texto="Cladosporium · esporas en cadena" it tam={30} color={KC.mint} />
+      <Etq T={T} at={K.Es + 0.9} until={K.R - 0.3} x={330} y={1270} texto="Alternaria · espora en mazo" it tam={30} color={KC.yellow} />
       <Chip T={T} at={K.Es + 1.3} until={K.R - 0.3} texto="muchas aguantan la sequedad" x={540} y={560} tam={34} borde={KC.mint} />
       <Etq T={T} at={K.R + 1.2} until={K.P - 0.3} x={60} y={450} texto="muchos hongos solo viven" tam={36} color={KC.ink} />
       <Etq T={T} at={K.R + 1.4} until={K.P - 0.3} x={60} y={505} texto="en ciertas regiones" tam={36} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.H + 0.75} until={K.H + 1.9} anio="2012–13" quien="Wild Life of Our Homes" revista="ciencia ciudadana · ~1,200 casas de EE. UU." x={540} y={760} />
-      <Etq T={T} at={K.H + 2.0} until={K.H + 4.5} x={90} y={600} texto="adentro: puerta de la sala" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.H + 3.3} until={K.H + 4.5} x={520} y={640} texto="afuera: puerta a la calle" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.H + 2.1} until={K.H + 4.5} texto="hisopo de doble punta" x={540} y={520} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.H + 2.0} until={K.H + 4.5} x={90} y={470} texto="adentro: puerta de la sala" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.H + 3.3} until={K.H + 4.5} x={520} y={515} texto="afuera: puerta a la calle" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.H + 2.1} until={K.H + 4.5} texto="hisopo de doble punta" x={540} y={390} tam={32} borde={KC.ink} />
       <NumeroGigante T={T} at={K.H + 4.8} until={K.A - 0.3} valor={1200} desde={0} dur={1.6} prefijo="~" etiqueta="casas de EE. UU." x={540} y={530} tam={150} color={KC.ink} />
-      <Etq T={T} at={K.A + 0.6} until={K.Af - 0.3} x={330} y={850} texto="leyendo ADN…" tam={30} color={KC.lilac} />
+      <Etq T={T} at={K.A + 0.6} until={K.Af - 0.3} x={260} y={900} texto="leyendo ADN…" tam={30} color={KC.lilac} />
       <NumeroGigante T={T} at={K.A + 0.8} until={K.Af - 0.3} valor={72284} desde={0} dur={2.0} etiqueta="tipos de hongos, en total" x={340} y={560} tam={130} color={KC.mint} />
-      <TarjetaEstudio T={T} at={K.A + 1.8} until={K.Af - 0.3} anio="2015" quien="U. de Colorado + NC State" revista="Proc. R. Soc. B, 2015" x={600} y={1560} />
-      <Etq T={T} at={K.Af + 0.2} until={K.B - 0.3} x={150} y={670} texto="adentro" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Af + 0.2} until={K.B - 0.3} x={700} y={660} texto="afuera" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.Af + 1.5} until={K.B - 0.3} texto="65 % de los tipos de adentro, también afuera" x={540} y={600} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.B + 0.4} until={K.M - 0.3} texto="las bacterias: quién vive ahí" x={400} y={460} tam={34} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.B + 2.4} until={K.M - 0.3} valor={92} dur={0.8} sufijo=" %" etiqueta="acierto: ¿hay perro?" x={340} y={640} tam={160} color={KC.pink} />
-      <Chip T={T} at={K.B + 4.0} until={K.M - 0.3} texto="gato: 83 %" x={820} y={830} tam={30} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.A + 1.8} until={K.Af - 0.3} anio="2015" quien="U. de Colorado + NC State" revista="Proc. R. Soc. B, 2015" x={600} y={1360} />
+      <Etq T={T} at={K.Af + 0.2} until={K.B - 0.3} x={150} y={570} texto="adentro" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Af + 0.2} until={K.B - 0.3} x={700} y={570} texto="afuera" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Af + 1.5} until={K.B - 0.3} texto="65 % de los tipos de adentro, también afuera" x={540} y={480} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.B + 0.4} until={K.M - 0.3} texto="las bacterias: quién vive ahí" x={400} y={380} tam={34} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.B + 2.4} until={K.M - 0.3} valor={92} dur={0.8} sufijo=" %" etiqueta="acierto: ¿hay perro?" x={340} y={540} tam={160} color={KC.pink} />
+      <Chip T={T} at={K.B + 4.0} until={K.M - 0.3} texto="gato: 83 %" x={840} y={700} tam={30} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.M + 0.2} until={K.M + 1.8} anio="2020" quien="redes neuronales · ~1,300 muestras" revista="J. R. Stat. Soc. C, 2020 · solo hongos" x={380} y={600} />
       <NumeroGigante T={T} at={K.M + 2.0} until={K.F - 0.3} valor={100} dur={1.0} prefijo="< " sufijo=" km" etiqueta="error mediano: más de la mitad, a menos" x={360} y={560} tam={150} color={KC.pink} />
-      <Etq T={T} at={K.M + 3.4} until={K.F - 0.3} x={60} y={1520} texto="en 2015, con otro método: 230 km" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.F + 0.3} until={K.C - 0.3} texto="¿de dónde viene este polvo?" x={380} y={640} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.F + 1.0} until={K.C - 0.3} texto="propuesta: ciencia forense" x={380} y={740} tam={34} borde={KC.gold} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="un mapa de tu región, en hongos" x={360} y={560} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.C + 2.6} until={K.Ou} x={60} y={1500} texto="Probado en EE. UU. por regiones; en México, solo a nivel país." tam={24} color={KC.ink} />
+      <Etq T={T} at={K.M + 3.4} until={K.F - 0.3} x={60} y={1400} texto="en 2015, con otro método: 230 km" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.F + 0.3} until={K.C - 0.3} texto="¿de dónde viene este polvo?" x={380} y={520} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.F + 1.0} until={K.C - 0.3} texto="propuesta: ciencia forense" x={380} y={610} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="un mapa de tu región, en hongos" x={540} y={615} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.C + 2.6} until={K.Ou} x={60} y={520} texto="Probado en EE. UU. por regiones; en México, solo a nivel país." tam={24} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Ma} texto="5 cm" largo={150} />
-      <BarraEscala T={T} at={K.Ma} until={K.En} texto="10 cm" largo={60} />
+      <BarraEscala T={T} at={K.G} until={K.Ma} texto="5 cm" largo={240} />
+      <BarraEscala T={T} at={K.Ma} until={K.En} texto="10 cm" largo={92} />
       <BarraEscala T={T} at={K.En} until={K.Es} texto="1 m" largo={180} />
-      <BarraEscala T={T} at={K.Es} until={K.R} texto="10 µm" largo={80} />
-      <BarraEscala T={T} at={K.R} until={K.P} texto="1,000 km (esquemático)" largo={180} />
-      <BarraEscala T={T} at={K.P} until={K.H} texto="5 cm" largo={150} />
-      <BarraEscala T={T} at={K.H} until={K.H + 4.7} texto="50 cm" largo={110} />
-      <BarraEscala T={T} at={K.H + 4.7} until={K.A} texto="1,000 km (esquemático)" largo={180} />
-      <BarraEscala T={T} at={K.A} until={K.Af} texto="2 nm (ancho del ADN)" largo={60} />
-      <BarraEscala T={T} at={K.Af} until={K.B} texto="10 µm (esporas)" largo={80} />
-      <BarraEscala T={T} at={K.B} until={K.M} texto="50 cm" largo={160} />
-      <BarraEscala T={T} at={K.M} until={K.F} texto="100 km (esquemático)" largo={18} />
-      <BarraEscala T={T} at={K.F} until={K.C} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={150} y={1600} />
+      <BarraEscala T={T} at={K.Es} until={K.R} texto="10 µm" largo={116} />
+      <BarraEscala T={T} at={K.R} until={K.P} texto="1,000 km (esquemático)" largo={216} />
+      <BarraEscala T={T} at={K.P} until={K.H} texto="5 cm" largo={240} />
+      <BarraEscala T={T} at={K.H} until={K.H + 4.7} texto="50 cm" largo={158} />
+      <BarraEscala T={T} at={K.H + 4.7} until={K.A} texto="1,000 km (esquemático)" largo={216} />
+      <BarraEscala T={T} at={K.A} until={K.Af} texto="2 nm (ancho del ADN)" largo={75} />
+      <BarraEscala T={T} at={K.Af} until={K.B} texto="10 µm (esporas)" largo={128} />
+      <BarraEscala T={T} at={K.B} until={K.M} texto="50 cm" largo={232} />
+      <BarraEscala T={T} at={K.M} until={K.F} texto="100 km (esquemático)" largo={22} />
+      <BarraEscala T={T} at={K.F} until={K.C} texto="10 cm" largo={149} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={240} y={1600} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ma - 0.1} texto="No es solo polvo: *es un mapa.*" />
