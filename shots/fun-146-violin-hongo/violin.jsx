@@ -167,6 +167,17 @@ function PiceaNieve({ T, x, y, s = 1 }) {
   </g>;
 }
 
+// Escenario de la prueba de 2009: cinco violines detrás de una cortina (también queda atenuado en «Ojo»).
+function Escenario({ T, K }) {
+  return <g transform="translate(0 140)">
+    <ellipse cx={540} cy={1085} rx={530} ry={70} fill="#1a0509" />
+    {[0, 1, 2, 3, 4].map((i) => { const on = T > K.Pb + 1.2 + i * 0.55, toca = on && T < K.Pb + 1.75 + i * 0.55 && T < K.Vo;
+      return <g key={i}><Violin T={T} id={'vs' + i} x={140 + i * 200} y={950} s={0.3} silueta={toca ? '#ffd76a' : on ? '#7a3a2a' : '#3a0f18'} />
+        <text x={140 + i * 200} y={1140} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={on ? KC.gold2 : '#7a4a50'}>{i + 1}</text></g>; })}
+    <Cortina T={T} x={30} y={640} w={1020} h={440} alfa={0.55 + 0.1 * Math.sin(T)} />
+  </g>;
+}
+
 function ViolinShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Ci: CUES.Ciegas, Ma: CUES.Madera, Ho: CUES.Hongos, Ad: CUES.Adelgaza, Li: CUES.Ligera, P: CUES.Pregunta, Ra: CUES.Radia, Hi: CUES.Hipotesis, Pb: CUES.Prueba, Vo: CUES.Votos, Oj: CUES.Ojo, Pc: CUES.Precio, C: CUES.Cierre, Ou: CUES.Outro };
@@ -178,78 +189,73 @@ function ViolinShot() {
       {/* 0 · gancho: el violín suena y por dentro le crece el hongo */}
       <Escena T={T} a={K.G} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Violin T={T} id="vg" x={380} y={960} s={0.75} rot={-4} arco={T > K.G + 0.15} vibra={kprog(T, K.G + 0.2, K.G + 0.8)} hifas={kprog(T, K.G + 1.0, K.G + 4.6)} />)}
+        {fsvg(<Violin T={T} id="vg" x={420} y={1060} s={0.9} rot={-4} arco={T > K.G + 0.15} vibra={kprog(T, K.G + 0.2, K.G + 0.8)} hifas={kprog(T, K.G + 1.0, K.G + 4.6)} />)}
       </Escena>
       {/* 1 · prueba a ciegas: cortina y público */}
       <Escena T={T} a={K.Ci} b={K.Ma}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 980) scale(1.1) translate(-513 -741)">
           <Violin T={T} id="vc" x={340} y={660} s={0.32} silueta="#2a0710" />
           <Cortina T={T} x={60} y={400} w={560} h={400} alfa={0.86} />
           {Array.from({ length: PUB }, (_, i) => { const c = i % 20, r = Math.floor(i / 20); const on = kprog(T, K.Ci + 0.4 + r * 0.06, K.Ci + 0.7 + r * 0.06, kEase.rebote);
             const oro = i < SI113 && T > K.Ci + 1.3 + (i / SI113) * 1.2; return on > 0 ? <g key={i} transform={`translate(${112 + c * 45} ${872 + r * 30}) scale(${on * 0.85})`}>
               <circle r={12} fill={oro ? KC.gold2 : '#ffffff'} stroke={KC.ink} strokeWidth={4} /></g> : null; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 2 · la madera: tapa de pícea y fondo de arce → al microscopio */}
       <Escena T={T} a={K.Ma} b={K.Ho} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<g opacity={1 - kprog(T, K.Ma + 1.8, K.Ma + 2.3)}>
-          <TapaPicea T={T} id="tm" x={290} y={760} s={0.55} />
-          <g transform={`translate(${klerp(300, 0, kprog(T, K.Ma + 0.2, K.Ma + 0.9, kEase.sale))} 0)`}><FondoArce id="fm" x={790} y={760} s={0.55} /></g>
+        {fsvg(<g opacity={1 - 0.7 * kprog(T, K.Ma + 1.8, K.Ma + 2.3)}>
+          <TapaPicea T={T} id="tm" x={275} y={960} s={0.8} />
+          <g transform={`translate(${klerp(300, 0, kprog(T, K.Ma + 0.2, K.Ma + 0.9, kEase.sale))} 0)`}><FondoArce id="fm" x={805} y={960} s={0.8} /></g>
         </g>)}
       </Escena>
-      <Lupa T={T} at={K.Ma + 1.9} until={K.Ho - 0.15} x={540} y={780} r={300} fx={290} fy={700} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · PÍCEA"
+      <Lupa T={T} at={K.Ma + 1.9} until={K.Ho - 0.15} x={540} y={980} r={360} fx={275} fy={900} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · PÍCEA"
         interior={(Tl, r) => <svg width={r * 2} height={r * 2}><Panal T={Tl} x={-20} y={-20} w={r * 2 + 40} h={r * 2 + 40} cel={64} pared={14} /></svg>} />
       {/* 3–4 · por dentro: entran las hifas y adelgazan las paredes (fondo oscuro) */}
       <Escena T={T} a={K.Ho} b={K.Li} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<Panal T={T} x={50} y={780} w={980} h={420} cel={84} pared={pared} hifas={kprog(T, K.Ho + 0.6, K.Ad + 2.8)} desgaste={kprog(T, K.Ad, K.Ad + 2.6)} />)}
+        {fsvg(<g transform="translate(540 1010) scale(1.25) translate(-540 -990)"><Panal T={T} x={50} y={780} w={980} h={420} cel={84} pared={pared} hifas={kprog(T, K.Ho + 0.6, K.Ad + 2.8)} desgaste={kprog(T, K.Ad, K.Ad + 2.6)} /></g>)}
       </Escena>
       {/* 5 · más ligera, el sonido viaja casi igual de rápido */}
       <Escena T={T} a={K.Li} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<TapaPicea T={T} id="tl" x={420} y={930} s={0.72} pulso={((T - K.Li - 1.8) / 1.4) % 1 * (T > K.Li + 1.8 ? 1 : 0)} />)}
+        {fsvg(<TapaPicea T={T} id="tl" x={540} y={1090} s={1.05} pulso={((T - K.Li - 1.8) / 1.4) % 1 * (T > K.Li + 1.8 ? 1 : 0)} />)}
       </Escena>
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Ra} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><Violin T={T} id="vp" x={270} y={1010} s={0.6} rot={Math.sin(T * 4) * 4} /><Interrogacion T={T} x={300} y={760} tam={340} /></>)}
+        {fsvg(<><Violin T={T} id="vp" x={400} y={1110} s={0.8} rot={Math.sin(T * 4) * 4} /><Interrogacion T={T} x={790} y={1000} tam={420} /></>)}
       </Escena>
       {/* 7 · radia sonido: de pobre a buena */}
       <Escena T={T} a={K.Ra} b={K.Hi}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           <g opacity={kprog(T, K.Ra + 0.1, K.Ra + 0.5)}>
-            {[0, 1, 2].map((k) => { const u = ((T * 0.8 + k / 3) % 1); return <circle key={k} cx={290} cy={900} r={210 + u * 260} fill="none" stroke="#ffffff" strokeWidth={10} opacity={(1 - u) * 0.7 * kprog(T, K.Ra + 2.4, K.Ra + 3.2)} />; })}
-            <TapaPicea T={T} id="tr" x={290} y={900} s={0.58} vibra={kprog(T, K.Ra + 2.4, K.Ra + 3.2)} />
+            {[0, 1, 2].map((k) => { const u = ((T * 0.8 + k / 3) % 1); return <circle key={k} cx={300} cy={1010} r={310 + u * 300} fill="none" stroke="#ffffff" strokeWidth={10} opacity={(1 - u) * 0.7 * kprog(T, K.Ra + 2.4, K.Ra + 3.2)} />; })}
+            <TapaPicea T={T} id="tr" x={300} y={1010} s={0.85} vibra={kprog(T, K.Ra + 2.4, K.Ra + 3.2)} />
           </g>
-          <Aguja x={790} y={1060} r={170} v={kprog(T, K.Ra + 2.6, K.Ra + 3.6, kEase.rebote)} />
+          <Aguja x={800} y={1140} r={190} v={kprog(T, K.Ra + 2.6, K.Ra + 3.6, kEase.rebote)} />
         </>)}
       </Escena>
       {/* 8 · hipótesis: pícea de clima frío, anillos angostos */}
       <Escena T={T} a={K.Hi} b={K.Pb}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0f1731, #182545)' }}></div>
-        <div style={{ position:'absolute', left:0, right:0, top:1150, bottom:0, background:'#eef4ff' }}></div>
+        <div style={{ position:'absolute', left:0, right:0, top:1290, bottom:0, background:'linear-gradient(#45567a, #2a3654 140px, #1a2238)' }}></div>
         <Ambiente T={T} n={60} color="rgba(255,255,255,.85)" tam={[5, 12]} vel={30} />
-        {fsvg(<><PiceaNieve T={T} x={290} y={1160} s={0.95} /><Rodaja x={780} y={880} r={170} n={30} p={kprog(T, K.Hi + 0.6, K.Hi + 2.2)} /></>)}
+        {fsvg(<><PiceaNieve T={T} x={290} y={1300} s={1.15} /><Rodaja x={780} y={1010} r={210} n={30} p={kprog(T, K.Hi + 0.6, K.Hi + 2.2)} /></>)}
       </Escena>
       {/* 9 · la prueba de 2009: cinco violines detrás de una cortina */}
       <Escena T={T} a={K.Pb} b={K.Vo}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#120e19, #1b101d)' }}></div>
-        {fsvg(<>
-          <ellipse cx={540} cy={1095} rx={520} ry={70} fill="#1a0509" />
-          {[0, 1, 2, 3, 4].map((i) => { const on = T > K.Pb + 1.2 + i * 0.55, toca = on && T < K.Pb + 1.75 + i * 0.55;
-            return <g key={i}><Violin T={T} id={'vs' + i} x={140 + i * 200} y={960} s={0.24} silueta={toca ? '#ffd76a' : on ? '#7a3a2a' : '#3a0f18'} />
-              <text x={140 + i * 200} y={1145} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={on ? KC.gold2 : '#7a4a50'}>{i + 1}</text></g>; })}
-          <Cortina T={T} x={30} y={680} w={1020} h={400} alfa={0.55 + 0.1 * Math.sin(T)} />
-        </>)}
+        {fsvg(<Escenario T={T} K={K} />)}
       </Escena>
       {/* 10 · los votos */}
       <Escena T={T} a={K.Vo} b={K.Oj}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 140)">
+          <g opacity={0.4}><Violin T={T} id="vv1" x={330} y={932} s={0.5} hifas={1} /><Violin T={T} id="vv2" x={750} y={932} s={0.5} tapa="#a8461a" borde="#5a1e08" /></g>
           <line x1={110} y1={1110} x2={970} y2={1110} stroke={KC.ink} strokeWidth={9} />
           {(() => { const u = kprog(T, K.Vo + 0.4, K.Vo + 2.0, kEase.sale), v = kprog(T, K.Vo + 2.2, K.Vo + 3.2, kEase.sale); return <>
             <rect x={200} y={1110 - 90 * 5.6 * u} width={260} height={90 * 5.6 * u} fill={KC.mint} stroke={KC.ink} strokeWidth={8} />
@@ -259,20 +265,21 @@ function ViolinShot() {
           </>; })()}
           <text x={330} y={1158} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>con hongos · 9 meses</text>
           <text x={750} y={1158} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>Stradivarius 1711</text>
-        </>)}
+        </g>)}
       </Escena>
       {/* 11 · ojo: fue una votación */}
       <Escena T={T} a={K.Oj} b={K.Pc}>
         <FondoLunares color={KC.orange} />
+        {fsvg(<g opacity={0.55}><Escenario T={T} K={K} /></g>)}
       </Escena>
       {/* 12 · el precio */}
       <Escena T={T} a={K.Pc} b={K.C}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Violin T={T} id="vx" x={800} y={1010} s={0.5} rot={6} tapa="#a8461a" borde="#5a1e08" />
-          {(() => { const sw = Math.sin(T * 3) * 4 * kprog(T, K.Pc + 0.3, K.Pc + 0.8), on = kprog(T, K.Pc + 0.3, K.Pc + 0.8, kEase.rebote); return <g transform={`rotate(${sw} 760 600)`} opacity={on}>
-            <line x1={760} y1={598} x2={790} y2={530} stroke={KC.ink} strokeWidth={4} />
-            <g transform={`translate(790 470) scale(${on})`}>
+          <Violin T={T} id="vx" x={560} y={1180} s={0.8} rot={6} tapa="#a8461a" borde="#5a1e08" />
+          {(() => { const sw = Math.sin(T * 3) * 4 * kprog(T, K.Pc + 0.3, K.Pc + 0.8), on = kprog(T, K.Pc + 0.3, K.Pc + 0.8, kEase.rebote); return <g transform={`rotate(${sw} 630 500)`} opacity={on}>
+            <line x1={630} y1={498} x2={640} y2={430} stroke={KC.ink} strokeWidth={4} />
+            <g transform={`translate(640 360) scale(${on})`}>
               <path d="M -190 -70 L 160 -70 L 200 0 L 160 70 L -190 70 Z" fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
               <circle cx={160} cy={0} r={12} fill={KC.mint} stroke={KC.ink} strokeWidth={4} />
               <text x={-10} y={-14} textAnchor="middle" style={{ font:`400 58px ${KF.titulo}` }} fill={KC.ink}>≈ 2 millones</text>
@@ -283,20 +290,20 @@ function ViolinShot() {
       {/* 13 · cierre: el mismo violín del inicio, ya afinado por el hongo */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Violin T={T} id="vf" x={380} y={960} s={0.75} rot={-4} arco vibra={1} hifas={1} oro={kprog(T, K.C + 0.4, K.C + 1.6)} />)}
+        {fsvg(<Violin T={T} id="vf" x={420} y={1060} s={0.9} rot={-4} arco vibra={1} hifas={1} oro={kprog(T, K.C + 0.4, K.C + 1.6)} />)}
       </Escena>
 
       {/* textos */}
-      <NumeroGigante T={T} at={K.G + 2.6} until={K.Ci - 0.3} valor={9} dur={1.6} sufijo=" meses" etiqueta="con hongos" x={800} y={1010} tam={110} color={KC.mint} />
-      <Etq T={T} at={K.G + 3.4} until={K.Ci - 0.3} x={620} y={1160} texto="tratada con hongos" tam={26} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Ci + 1.3} until={K.Ma - 0.3} valor={113} dur={1.2} etiqueta="personas" x={340} y={600} tam={150} color={KC.gold2} />
-      <Chip T={T} at={K.Ci + 2.0} until={K.Ma - 0.3} texto="creyeron que era el Stradivarius" x={540} y={840} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.Ci + 0.6} until={K.Ma - 0.3} x={60} y={1148} texto="más de 180 asistentes · cada círculo, una persona" tam={22} color={KC.ink} />
-      <Etq T={T} at={K.Ma + 0.4} until={K.Ma + 2.0} x={130} y={1010} texto="tapa · pícea" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ma + 0.6} until={K.Ma + 2.0} x={130} y={1055} texto="Picea abies" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ma + 0.9} until={K.Ma + 2.0} x={600} y={1010} texto="fondo · arce" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ma + 1.1} until={K.Ma + 2.0} x={600} y={1055} texto="Acer pseudoplatanus" it tam={28} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Ho + 0.2} until={K.Ho + 2.5} anio="EMPA" quien="St. Gallen, Suiza" revista="Francis W. M. R. Schwarze" x={380} y={720} />
+      <NumeroGigante T={T} at={K.G + 2.6} until={K.Ci - 0.3} valor={9} dur={1.6} sufijo=" meses" etiqueta="con hongos" x={820} y={1080} tam={110} color={KC.mint} />
+      <Etq T={T} at={K.G + 3.4} until={K.Ci - 0.3} x={650} y={1230} texto="tratada con hongos" tam={26} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Ci + 1.3} until={K.Ma - 0.3} valor={113} dur={1.2} etiqueta="personas" x={350} y={825} tam={150} color={KC.gold2} />
+      <Chip T={T} at={K.Ci + 2.0} until={K.Ma - 0.3} texto="creyeron que era el Stradivarius" x={570} y={1086} tam={32} borde={KC.gold} />
+      <Etq T={T} at={K.Ci + 0.6} until={K.Ma - 0.3} x={60} y={1428} texto="más de 180 asistentes · cada círculo, una persona" tam={22} color={KC.ink} />
+      <Etq T={T} at={K.Ma + 0.4} until={K.Ma + 2.0} x={100} y={1300} texto="tapa · pícea" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ma + 0.6} until={K.Ma + 2.0} x={100} y={1345} texto="Picea abies" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ma + 0.9} until={K.Ma + 2.0} x={630} y={1300} texto="fondo · arce" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ma + 1.1} until={K.Ma + 2.0} x={630} y={1345} texto="Acer pseudoplatanus" it tam={28} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Ho + 0.2} until={K.Ho + 2.5} anio="EMPA" quien="St. Gallen, Suiza" revista="Francis W. M. R. Schwarze" x={540} y={500} />
       <Chip T={T} at={K.Ho + 2.4} until={K.Ad - 0.2} texto="en el laboratorio · 2008–2014" x={380} y={470} tam={30} borde={KC.cyan} mono />
       <Chip T={T} at={K.Ho + 3.0} until={K.Ad - 0.2} texto="hongos que pudren madera" x={380} y={555} tam={32} borde={KC.paper} />
       <Etq T={T} at={K.Ho + 4.2} until={K.Ad - 0.2} x={60} y={650} texto="Physisporinus vitreus" it tam={34} color={KC.texto} />
@@ -311,35 +318,35 @@ function ViolinShot() {
         valor={(t) => klerp(0.9, 0.86, kprog(t, K.Li + 1.8, K.Li + 2.8))} texto={() => 'casi igual'} />
       <Etq T={T} at={K.Li + 0.6} until={K.P - 0.2} x={60} y={620} texto="medidores esquemáticos, sin escala" tam={20} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Ra + 2.4} anio="2008" quien="Empa · Schwarze y colegas" revista="New Phytologist, 2008" x={540} y={560} />
-      <Etq T={T} at={K.Ra + 2.6} until={K.Hi - 0.2} x={600} y={830} texto="radiar sonido" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ra + 2.6} until={K.Hi - 0.2} x={620} y={860} texto="radiar sonido" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ra + 3.4} until={K.Hi - 0.2} texto="como madera de clima frío" x={540} y={480} tam={36} borde={KC.blue} />
-      <Chip T={T} at={K.Hi + 0.1} until={K.Pb - 0.2} texto="HIPÓTESIS" x={540} y={440} tam={52} borde={KC.yellow} />
-      <Etq T={T} at={K.Hi + 0.8} until={K.Pb - 0.2} x={600} y={620} texto="anillos angostos:" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Hi + 0.8} until={K.Pb - 0.2} x={600} y={665} texto="creció lento, en frío" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.Hi + 0.1} until={K.Pb - 0.2} texto="HIPÓTESIS" x={760} y={520} tam={52} borde={KC.yellow} />
+      <Etq T={T} at={K.Hi + 0.8} until={K.Pb - 0.2} x={580} y={680} texto="anillos angostos:" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Hi + 0.8} until={K.Pb - 0.2} x={580} y={725} texto="creció lento, en frío" tam={28} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.Pb + 0.2} until={K.Pb + 3.2} anio="2009" quien="Osnabrück, Alemania" revista="congreso de cuidado de árboles" x={360} y={520} />
       <Chip T={T} at={K.Pb + 3.5} until={K.Vo - 0.2} texto="uno: su Stradivarius de 1711" x={380} y={480} tam={32} borde={KC.gold} />
       <Etq T={T} at={K.Pb + 3.3} until={K.Vo - 0.2} x={60} y={560} texto="el público no ve cuál suena" tam={24} color={KC.texto} />
       <Etq T={T} at={K.Vo + 0.2} until={K.Oj - 0.2} x={60} y={430} texto="votos por el mejor sonido" tam={32} color={KC.ink} />
       <Etq T={T} at={K.Vo + 0.5} until={K.Oj - 0.2} x={60} y={480} texto="de más de 180 asistentes" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Oj + 0.1} until={K.Pc - 0.2} texto="OJO" x={300} y={500} tam={90} borde={KC.yellow} />
-      <Chip T={T} at={K.Oj + 0.8} until={K.Pc - 0.2} texto="✓ votación del público en un congreso" x={540} y={790} tam={32} borde={KC.leaf} />
-      <MitoTachado T={T} at={K.Oj + 1.3} tacharEn={K.Oj + 1.9} until={K.Pc - 0.2} texto="experimento controlado" x={540} y={940} tam={46} />
-      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="madera afinada por hongos" x={380} y={360} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.Oj + 0.1} until={K.Pc - 0.2} texto="OJO" x={540} y={400} tam={90} borde={KC.yellow} />
+      <Chip T={T} at={K.Oj + 0.8} until={K.Pc - 0.2} texto="✓ votación del público en un congreso" x={540} y={540} tam={32} borde={KC.leaf} />
+      <MitoTachado T={T} at={K.Oj + 1.3} tacharEn={K.Oj + 1.9} until={K.Pc - 0.2} texto="experimento controlado" x={540} y={650} tam={46} />
+      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="madera afinada por hongos" x={760} y={420} tam={34} borde={KC.gold} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Ci} texto="10 cm" largo={128} />
+      <BarraEscala T={T} at={K.G} until={K.Ci} texto="10 cm" largo={154} />
       <BarraEscala T={T} at={K.Ci} until={K.Ma} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.Ma} until={K.Ma + 2.0} texto="5 cm" largo={42} />
+      <BarraEscala T={T} at={K.Ma} until={K.Ma + 2.0} texto="5 cm" largo={61} />
       <BarraEscala T={T} at={K.Ma + 2.0} until={K.Ho} texto="≈ 30 µm (una célula)" largo={64} />
-      <BarraEscala T={T} at={K.Ho} until={K.Li} texto="≈ 30 µm (una célula)" largo={84} />
-      <BarraEscala T={T} at={K.Li} until={K.P} texto="5 cm" largo={56} />
-      <BarraEscala T={T} at={K.P} until={K.Ra} texto="10 cm" largo={102} />
-      <BarraEscala T={T} at={K.Ra} until={K.Hi} texto="5 cm" largo={45} />
+      <BarraEscala T={T} at={K.Ho} until={K.Li} texto="≈ 30 µm (una célula)" largo={105} />
+      <BarraEscala T={T} at={K.Li} until={K.P} texto="5 cm" largo={82} />
+      <BarraEscala T={T} at={K.P} until={K.Ra} texto="10 cm" largo={136} />
+      <BarraEscala T={T} at={K.Ra} until={K.Hi} texto="5 cm" largo={66} />
       <BarraEscala T={T} at={K.Hi} until={K.Pb} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.Pb} until={K.Vo} texto="10 cm" largo={41} />
+      <BarraEscala T={T} at={K.Pb} until={K.Vo} texto="10 cm" largo={51} />
       <BarraEscala T={T} at={K.Vo} until={K.Oj} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.Pc} until={K.C} texto="10 cm" largo={85} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={128} />
+      <BarraEscala T={T} at={K.Pc} until={K.C} texto="10 cm" largo={136} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={154} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ci - 0.1} texto="No es un Stradivarius: es *madera con hongos.*" />
