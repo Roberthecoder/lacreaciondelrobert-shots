@@ -43,14 +43,17 @@ function Abanico({ T, x, y, s = 1, lesion, color = AX.fan, fase = 0 }) {
   </g>;
 }
 // Fondo del arrecife: agua cian con rayos de luz, arena y unas rocas.
-function Arrecife({ T, burbujas = true }) {
+// pase a mano (modo cine): la arena y las rocas van oscuras (antes una franja crema a media pantalla) y dy las baja para que el abanico crezca.
+function Arrecife({ T, burbujas = true, dy = 0 }) {
   return <>
     <div style={{ position:'absolute', inset:0, background:'linear-gradient(#204657 0%, #0c3a51 55%, #0a3047 100%)' }}></div>
     {fsvg(<>
       {[0, 1, 2, 3].map((i) => <polygon key={i} points={`${120 + i * 260 + Math.sin(T * 0.4 + i) * 30},0 ${220 + i * 260 + Math.sin(T * 0.4 + i) * 30},0 ${60 + i * 300},1500 ${-60 + i * 300},1500`} fill="#ffffff" opacity=".1" />)}
-      <path d="M 0 1330 Q 270 1270 540 1310 Q 820 1350 1080 1290 L 1080 1920 L 0 1920 Z" fill={AX.arena} stroke={KC.ink} strokeWidth={6} />
-      <path d="M 80 1330 Q 120 1240 220 1250 Q 300 1260 320 1320 Z" fill="#7d8a96" stroke={KC.ink} strokeWidth={6} />
-      <path d="M 700 1320 Q 760 1230 880 1240 Q 980 1260 1000 1300 Z" fill="#6f7c88" stroke={KC.ink} strokeWidth={6} />
+      <g transform={`translate(0 ${dy})`}>
+      <path d="M -60 1330 Q 270 1270 540 1310 Q 820 1350 1140 1290 L 1140 2400 L -60 2400 Z" fill="#4a4026" stroke={KC.ink} strokeWidth={6} />
+      <path d="M 80 1330 Q 120 1240 220 1250 Q 300 1260 320 1320 Z" fill="#37424d" stroke={KC.ink} strokeWidth={6} />
+      <path d="M 700 1320 Q 760 1230 880 1240 Q 980 1260 1000 1300 Z" fill="#2f3943" stroke={KC.ink} strokeWidth={6} />
+      </g>
     </>, 2)}
     {burbujas && <Ambiente T={T} n={16} seed={9} color="rgba(255,255,255,.45)" tam={[5, 12]} vel={-26} />}
   </>;
@@ -125,17 +128,19 @@ function SelloRect({ T, at, x, y, texto, color = KC.red, tam = 70, rot = -8 }) {
   </g>;
 }
 // Mapa esquemático del Atlántico: América a la izquierda, África a la derecha.
+// pase a mano (modo cine): mar y tierra de los dos mapas en tonos oscuros (antes cian y crema brillantes a media pantalla); rótulos claros.
+const MAPA = { mar:'#0f4666', tierra:'#6a5a36' };
 function MapaAtlantico() {
   return <g>
-    <rect x={0} y={380} width={1080} height={900} fill={AX.mar} />
-    <path d="M 0 380 L 330 380 Q 300 470 250 520 Q 230 560 270 600 Q 320 640 330 720 Q 335 760 310 770 Q 280 740 250 700 Q 180 690 130 720 Q 90 760 110 820 Q 140 830 170 800 Q 190 840 160 900 Q 200 960 250 990 Q 300 1000 340 1010 Q 450 1020 560 1080 Q 600 1150 560 1280 L 0 1280 Z" fill={AX.tierraMapa} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
-    {[[360, 830, 60, 14], [450, 850, 30, 12], [500, 860, 18, 10], [540, 880, 10, 8], [560, 910, 8, 8], [590, 960, 8, 8]].map(([a, b, rx, ry], i) => <ellipse key={i} cx={a} cy={b} rx={rx} ry={ry} fill={AX.tierraMapa} stroke={KC.ink} strokeWidth={4} />)}
-    <path d="M 1080 380 L 760 380 Q 700 460 690 540 Q 640 600 640 690 Q 660 760 730 800 Q 800 820 860 860 Q 900 960 920 1080 Q 960 1200 1000 1280 L 1080 1280 Z" fill={AX.tierraMapa} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
-    <text x={880} y={600} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#9a7a30">SAHARA</text>
-    <text x={150} y={470} style={{ font:`700 26px ${KF.mono}` }} fill="#7a6a40">AMÉRICA</text>
-    <text x={880} y={1000} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="#7a6a40">ÁFRICA</text>
-    <text x={470} y={790} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#063a52">CARIBE</text>
-    <text x={500} y={600} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#0a5878">océano Atlántico</text>
+    <rect x={0} y={380} width={1080} height={900} fill={MAPA.mar} />
+    <path d="M 0 380 L 330 380 Q 300 470 250 520 Q 230 560 270 600 Q 320 640 330 720 Q 335 760 310 770 Q 280 740 250 700 Q 180 690 130 720 Q 90 760 110 820 Q 140 830 170 800 Q 190 840 160 900 Q 200 960 250 990 Q 300 1000 340 1010 Q 450 1020 560 1080 Q 600 1150 560 1280 L 0 1280 Z" fill={MAPA.tierra} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    {[[360, 830, 60, 14], [450, 850, 30, 12], [500, 860, 18, 10], [540, 880, 10, 8], [560, 910, 8, 8], [590, 960, 8, 8]].map(([a, b, rx, ry], i) => <ellipse key={i} cx={a} cy={b} rx={rx} ry={ry} fill={MAPA.tierra} stroke={KC.ink} strokeWidth={4} />)}
+    <path d="M 1080 380 L 760 380 Q 700 460 690 540 Q 640 600 640 690 Q 660 760 730 800 Q 800 820 860 860 Q 900 960 920 1080 Q 960 1200 1000 1280 L 1080 1280 Z" fill={MAPA.tierra} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    <text x={880} y={600} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#f0cf7a">SAHARA</text>
+    <text x={150} y={470} style={{ font:`700 26px ${KF.mono}` }} fill="#d8c594">AMÉRICA</text>
+    <text x={880} y={1000} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="#d8c594">ÁFRICA</text>
+    <text x={470} y={790} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#a9dcf2">CARIBE</text>
+    <text x={500} y={600} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#a9dcf2">océano Atlántico</text>
   </g>;
 }
 // Nube de polvo que cruza el Atlántico (de África al Caribe). p 0..1.
@@ -155,7 +160,7 @@ function Arbol({ x, y, p = 1 }) {
     {HOJAS.map((t, i) => { const lx = i * dx; const pair = Math.floor(i / 2) * 2 * dx + dx / 2;
       return <g key={i}>
         <line x1={lx} y1={0} x2={lx} y2={-60} stroke={KC.ink} strokeWidth={5} />
-        <circle cx={lx} cy={20} r={20} fill={t === 'a' ? AX.fan : AX.tierra} stroke={KC.ink} strokeWidth={4} opacity={kclamp(p * 3 - i * 0.1, 0, 1)} />
+        <circle cx={lx} cy={20} r={20} fill={t === 'a' ? AX.fan : '#c98a4b'} stroke={KC.ink} strokeWidth={4} opacity={kclamp(p * 3 - i * 0.1, 0, 1)} />
       </g>; })}
     {[0, 1, 2, 3, 4, 5].map((k) => <line key={'p' + k} x1={k * 2 * dx} y1={-60} x2={k * 2 * dx + dx} y2={-60} stroke={KC.ink} strokeWidth={5} />)}
     {[0, 1, 2, 3, 4, 5].map((k) => <line key={'v' + k} x1={k * 2 * dx + dx / 2} y1={-60} x2={k * 2 * dx + dx / 2} y2={-110 - (k % 2) * 30} stroke={KC.ink} strokeWidth={5} />)}
@@ -179,18 +184,18 @@ function Filtro({ x, y, tache = 0 }) {
 // Mapa del Caribe (esquemático): Florida y sus Cayos, Cuba, la península de Yucatán.
 function MapaCaribe({ flo = 0, yuc = 0 }) {
   return <g>
-    <rect x={0} y={380} width={1080} height={900} fill={AX.mar} />
-    <path d="M 0 380 L 1080 380 L 1080 420 Q 760 420 700 460 Q 660 520 690 600 Q 720 680 700 740 Q 680 770 650 740 Q 600 660 560 600 Q 520 560 440 560 Q 300 560 200 600 Q 120 640 80 720 Q 60 800 80 880 L 0 880 Z" fill={AX.tierraMapa} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
-    <path d="M 0 880 L 80 880 Q 120 980 180 1010 Q 230 1040 300 1000 Q 330 960 320 880 Q 300 830 250 820 Q 230 860 200 900 Q 170 960 140 1060 Q 150 1160 200 1280 L 0 1280 Z" fill={AX.tierraMapa} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
-    <path d="M 420 860 Q 520 820 640 830 Q 760 840 880 900 Q 900 920 860 925 Q 760 905 650 880 Q 530 880 440 885 Z" fill={AX.tierraMapa} stroke={KC.ink} strokeWidth={5} />
-    {[[640, 780], [610, 795], [580, 805], [550, 812], [520, 816]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={7} fill={AX.tierraMapa} stroke={KC.ink} strokeWidth={3} />)}
+    <rect x={0} y={380} width={1080} height={900} fill={MAPA.mar} />
+    <path d="M 0 380 L 1080 380 L 1080 420 Q 760 420 700 460 Q 660 520 690 600 Q 720 680 700 740 Q 680 770 650 740 Q 600 660 560 600 Q 520 560 440 560 Q 300 560 200 600 Q 120 640 80 720 Q 60 800 80 880 L 0 880 Z" fill={MAPA.tierra} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    <path d="M 0 880 L 80 880 Q 120 980 180 1010 Q 230 1040 300 1000 Q 330 960 320 880 Q 300 830 250 820 Q 230 860 200 900 Q 170 960 140 1060 Q 150 1160 200 1280 L 0 1280 Z" fill={MAPA.tierra} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    <path d="M 420 860 Q 520 820 640 830 Q 760 840 880 900 Q 900 920 860 925 Q 760 905 650 880 Q 530 880 440 885 Z" fill={MAPA.tierra} stroke={KC.ink} strokeWidth={5} />
+    {[[640, 780], [610, 795], [580, 805], [550, 812], [520, 816]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={7} fill={MAPA.tierra} stroke={KC.ink} strokeWidth={3} />)}
     {flo > 0 && <circle cx={590} cy={800} r={70 * kEase.rebote(kclamp(flo, 0, 1))} fill="none" stroke={KC.red} strokeWidth={9} />}
     {yuc > 0 && <circle cx={250} cy={930} r={95 * kEase.rebote(kclamp(yuc, 0, 1))} fill="none" stroke={KC.red} strokeWidth={9} />}
-    <text x={720} y={540} style={{ font:`700 28px ${KF.mono}` }} fill="#7a6a40">FLORIDA</text>
-    <text x={660} y={960} style={{ font:`700 24px ${KF.mono}` }} fill="#7a6a40">CUBA</text>
-    <text x={20} y={1150} style={{ font:`700 24px ${KF.mono}` }} fill="#7a6a40">MÉXICO</text>
-    <text x={380} y={720} style={{ font:`700 24px ${KF.mono}` }} fill="#0a5878">golfo de México</text>
-    <text x={560} y={1080} style={{ font:`700 26px ${KF.mono}` }} fill="#0a5878">mar Caribe</text>
+    <text x={720} y={540} style={{ font:`700 28px ${KF.mono}` }} fill="#d8c594">FLORIDA</text>
+    <text x={660} y={960} style={{ font:`700 24px ${KF.mono}` }} fill="#d8c594">CUBA</text>
+    <text x={20} y={1150} style={{ font:`700 24px ${KF.mono}` }} fill="#d8c594">MÉXICO</text>
+    <text x={380} y={720} style={{ font:`700 24px ${KF.mono}` }} fill="#a9dcf2">golfo de México</text>
+    <text x={560} y={1080} style={{ font:`700 26px ${KF.mono}` }} fill="#a9dcf2">mar Caribe</text>
   </g>;
 }
 // Abanico chiquito (íconos de conteo).
@@ -219,42 +224,50 @@ function AbanicoShot() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: el abanico en el arrecife, la lupa sobre el anillo morado */}
-      <Escena T={T} a={K.G} b={K.A} zoom={0.06} origen="30% 45%">
-        <Arrecife T={T} />
+      {/* pase a mano: abanico 1.33× (s 1.05→1.4) y centrado, de orilla a orilla; barra «10 cm» 110→147 px */}
+      <Escena T={T} a={K.G} b={K.A} zoom={0.06}>
+        <Arrecife T={T} dy={130} />
         {fsvg(<>
-          <Abanico T={T} x={330} y={1300} s={1.05} lesion={LES} />
-          {lupaG > 0 && <g transform={`translate(${330 + LES.x * 1.05} ${1300 + LES.y * 1.05}) scale(${lupaG})`}>
-            <circle r={120} fill="rgba(255,255,255,.18)" stroke={KC.white} strokeWidth={12} />
-            <line x1={85} y1={85} x2={170} y2={170} stroke={KC.ink} strokeWidth={26} strokeLinecap="round" />
+          <Abanico T={T} x={540} y={1430} s={1.4} lesion={LES} />
+          {lupaG > 0 && <g transform={`translate(${540 + LES.x * 1.4} ${1430 + LES.y * 1.4}) scale(${lupaG})`}>
+            <circle r={150} fill="rgba(255,255,255,.18)" stroke={KC.white} strokeWidth={12} />
+            <line x1={106} y1={106} x2={200} y2={200} stroke={KC.ink} strokeWidth={28} strokeLinecap="round" />
           </g>}
         </>, 20)}
       </Escena>
       {/* 2 · no es planta: pólipos de 8 tentáculos sobre una ramita (aumentada) */}
       <Escena T={T} a={K.A} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {/* pase a mano: ramita y pólipos 1.8× (tres pólipos llenan el ancho); barra «1 mm» 160→288 px */}
+        {fsvg(<g transform="translate(540 1150) scale(1.8) translate(-480 -990)">
           <path d="M -40 1010 Q 300 960 560 990 Q 820 1020 1120 960" stroke={AX.fanOsc} strokeWidth={130} fill="none" strokeLinecap="round" />
           <path d="M -40 1010 Q 300 960 560 990 Q 820 1020 1120 960" stroke={AX.fan} strokeWidth={110} fill="none" strokeLinecap="round" />
           <path d="M -40 1010 Q 300 960 560 990 Q 820 1020 1120 960" stroke={AX.eje2} strokeWidth={16} fill="none" strokeDasharray="30 18" opacity=".6" />
           {[120, 300, 480, 660, 840, 1000].map((px, i) => { const py = 990 + Math.sin(px / 170) * -20 - 40; const ab = kprog(T, K.A + 0.3 + i * 0.2, K.A + 1.1 + i * 0.2, kEase.sale) * (0.85 + 0.15 * Math.sin(T * 2 + i));
             return <Polipo key={i} x={px} y={py} s={1.3} abre={ab} rot={(i % 2 ? 6 : -6)} />; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 3 · el hongo: Aspergillus sydowii en el suelo */}
       <Escena T={T} a={K.H} b={K.Hi} zoom={0.06}>
-        <div style={{ position:'absolute', inset:0, background:'#f2c86b' }}></div>
+        {/* pase a mano: fondo oscuro (antes amarillo brillante y tierra café clara), el suelo baja y el hongo crece 1.39× (s 1.15→1.6) al centro;
+            barra «30 µm» 170→237 px */}
+        <FondoLunares color={AX.polvo} />
         {fsvg(<>
-          <rect x={0} y={1060} width={1080} height={860} fill={AX.tierra} />
-          <path d="M 0 1060 Q 270 1030 540 1060 Q 810 1090 1080 1050" stroke={KC.ink} strokeWidth={6} fill="none" />
-          {[[120, 1160, 30], [380, 1230, 22], [700, 1150, 36], [900, 1260, 26], [250, 1320, 18]].map(([a, b, r], i) => <ellipse key={i} cx={a} cy={b} rx={r * 1.4} ry={r} fill={AX.tierra2} stroke={KC.ink} strokeWidth={4} />)}
-          <path d="M 80 1100 Q 300 1080 420 1066 Q 540 1052 760 1090 Q 900 1110 1040 1080" stroke="#f2efe2" strokeWidth={9} fill="none" />
-          <Conidioforo T={T} x={420} y={1066} s={1.15} crece={kprog(T, K.H, K.H + 2.0)} />
+          <g transform="translate(120 264)">
+            <rect x={-200} y={1060} width={1480} height={900} fill="#452c13" />
+            <path d="M -200 1060 Q 270 1030 540 1060 Q 810 1090 1280 1050" stroke={KC.ink} strokeWidth={6} fill="none" />
+            {[[120, 1160, 30], [380, 1230, 22], [700, 1150, 36], [900, 1260, 26], [250, 1320, 18], [-60, 1250, 24]].map(([a, b, r], i) => <ellipse key={i} cx={a} cy={b} rx={r * 1.4} ry={r} fill="#2e1c0b" stroke={KC.ink} strokeWidth={4} />)}
+            <path d="M -120 1090 Q 300 1080 420 1066 Q 540 1052 760 1090 Q 900 1110 1040 1080" stroke="#f2efe2" strokeWidth={9} fill="none" />
+          </g>
+          {/* el pie del hongo ya está a medio crecer cuando empieza la escena (antes el cuadro arrancaba vacío) */}
+          <Conidioforo T={T} x={540} y={1330} s={1.6} crece={klerp(0.45, 1, kprog(T, K.H - 0.2, K.H + 1.8))} />
         </>)}
       </Escena>
       {/* 4–5 · por dentro: hifas que comen el tejido; células de defensa y banda de melanina */}
       <Escena T={T} a={K.Hi} b={K.An} zoom={0.04}>
         <FondoMarca patron="oscuro" />
-        {fsvg(<>
+        {/* pase a mano: el tejido 1.3× (ocupa del 25 al 70 % del alto); barra «20 µm» 120→156 px */}
+        {fsvg(<g transform="translate(540 900) scale(1.3) translate(-540 -880)">
           {(() => { const R = krng(31); return Array.from({ length: 70 }, (_, i) => { const cx = 40 + R() * 1000, cy = 560 + R() * 620; const near = HIF.length && kprog(T, K.Hi + 0.2, K.Hi + 2.4);
             const comido = (Math.abs(cy - (760 + (cx - 120) * 0.3)) < 90) ? near : 0;
             return <circle key={i} cx={cx} cy={cy} r={26 + R() * 14} fill={mixHex(AX.tejido, '#5a4a52', comido * 0.8)} stroke={AX.tejido2} strokeWidth={3} opacity={1 - comido * 0.5} />; }); })()}
@@ -263,27 +276,29 @@ function AbanicoShot() {
           <Hifas p={kprog(T, K.Hi + 0.1, K.Hi + 2.6)} w={15} />
           {T > K.D && (() => { const R = krng(77); return Array.from({ length: 16 }, (_, i) => { const sx = R() * 1080, sy = R() < 0.5 ? 480 : 1260, tx = 160 + (i / 15) * 760, ty = 760 + (tx - 120) * 0.3 + (i % 2 ? -46 : 46);
             const q = kprog(T, K.D + 0.1 + i * 0.05, K.D + 1.3 + i * 0.05, kEase.sale); return <Amebocito key={i} x={klerp(sx, tx, q)} y={klerp(sy, ty, q)} r={20} />; }); })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 6 · por fuera: el anillo morado con el centro muerto */}
       <Escena T={T} a={K.An} b={K.P} zoom={0.05}>
-        <Arrecife T={T} />
-        {fsvg(<g transform="translate(540 820) scale(2.6) translate(60 330)"><Abanico T={T} x={0} y={0} s={1} lesion={LES} /></g>, 20)}
+        <Arrecife T={T} dy={420} />
+        {fsvg(<g transform="translate(540 900) scale(2.6) translate(60 330)"><Abanico T={T} x={0} y={0} s={1} lesion={LES} /></g>, 20)}
       </Escena>
       {/* 7 · re-gancho: ¿cómo llega un hongo de tierra al mar? */}
       <Escena T={T} a={K.P} b={K.Po} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Abanico T={T} x={250} y={1130} s={0.55} lesion={LES} />
-          <path d="M 640 1130 Q 760 960 900 1000 Q 1000 1040 1040 1130 Z" fill={AX.tierra} stroke={KC.ink} strokeWidth={7} />
-          <Conidioforo T={T} x={840} y={1010} s={0.4} crece={1} />
-          <Interrogacion T={T} x={540} y={900} tam={300} />
+          {/* pase a mano: la tierra con su hongo arriba y el abanico abajo, grandes (antes dos dibujos chicos a los lados) */}
+          <g transform="translate(540 700) scale(1.3) translate(-840 -1130)"><path d="M 640 1130 Q 760 960 900 1000 Q 1000 1040 1040 1130 Z" fill="#5a3a1c" stroke={KC.ink} strokeWidth={6} /></g>
+          <Conidioforo T={T} x={552} y={545} s={0.56} crece={1} />
+          <Abanico T={T} x={540} y={1500} s={0.8} lesion={LES} />
+          <Interrogacion T={T} x={540} y={960} tam={240} />
         </>)}
       </Escena>
       {/* 8–9 · hipótesis del polvo del Sahara y lo que la contradice */}
       <Escena T={T} a={K.Po} b={K.F} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {/* pase a mano: mapa oscuro y 70 px más abajo (centrado); tarjetas arriba, fuera del mapa; árbol 1.15× sobre panel oscuro */}
+        {fsvg(<g transform="translate(0 70)">
           <g opacity={1 - kprog(T, K.Co + 2.6, K.Co + 3.1)}>
             <MapaAtlantico />
             <NubePolvo T={T} p={kprog(T, K.Po + 0.5, K.Po + 3.5)} />
@@ -292,15 +307,15 @@ function AbanicoShot() {
               <Filtro x={560} y={880} tache={kprog(T, K.Co + 1.0, K.Co + 1.3)} /><Filtro x={620} y={940} tache={kprog(T, K.Co + 1.2, K.Co + 1.5)} /></>}
           </g>
           {T > K.Co + 2.6 && <g opacity={kprog(T, K.Co + 2.6, K.Co + 3.1)}>
-            <rect x={0} y={380} width={1080} height={900} fill="#fff6d2" />
-            <Arbol x={133} y={900} p={kprog(T, K.Co + 2.8, K.Co + 3.8)} />
+            <rect x={0} y={380} width={1080} height={900} fill="#141d33" />
+            <g transform="translate(540 850) scale(1.15) translate(-540 -830)"><Arbol x={133} y={900} p={kprog(T, K.Co + 2.8, K.Co + 3.8)} /></g>
           </g>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 10–11 · Florida y Yucatán */}
       <Escena T={T} a={K.F} b={K.Hu} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 70)">
           <MapaCaribe flo={kprog(T, K.F + 0.3, K.F + 0.9)} yuc={kprog(T, K.Y + 0.2, K.Y + 0.8)} />
           {T > K.F && T < K.Y && (() => { const v = kprog(T, K.F + 2.2, K.F + 3.8, kEase.suave); return <g transform="translate(850 1180)">
             <g opacity={1 - v * 0.75}><MiniAbanico x={0} y={0} s={1.3} /></g>
@@ -308,70 +323,73 @@ function AbanicoShot() {
           </g>; })()}
           {T > K.Y && Array.from({ length: 8 }, (_, i) => { const on = kprog(T, K.Y + 1.0 + i * 0.08, K.Y + 1.3 + i * 0.08, kEase.rebote);
             return on > 0 ? <MiniAbanico key={i} x={110 + i * 123} y={1150} s={0.75 * on} enfermo={i === 5 && T > K.Y + 1.9} /> : null; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · dato raro: también en personas */}
       <Escena T={T} a={K.Hu} b={K.C} zoom={0.06}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Persona x={300} y={1180} s={1.2} />
-          <Conidioforo T={T} x={760} y={1180} s={0.75} crece={kprog(T, K.Hu + 0.3, K.Hu + 1.5)} />
-          <path d="M 470 900 L 600 900" stroke={KC.ink} strokeWidth={8} strokeDasharray="16 12" />
+          {/* pase a mano: persona 1.5× y hongo 1.5×, uno junto al otro llenando el cuadro */}
+          <Persona x={290} y={1400} s={1.85} />
+          <Conidioforo T={T} x={800} y={1400} s={1.15} crece={kprog(T, K.Hu + 0.3, K.Hu + 1.5)} />
+          <path d="M 425 860 L 580 985" stroke={KC.ink} strokeWidth={8} strokeDasharray="16 12" />
         </>)}
       </Escena>
       {/* 13 · cierre: el mismo arrecife y el mismo abanico; llegan abanicos jóvenes */}
-      <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="30% 45%">
-        <Arrecife T={T} />
+      {/* pase a mano: el mismo encuadre grande del gancho; los abanicos jóvenes crecen delante, a los lados */}
+      <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
+        <Arrecife T={T} dy={130} />
         {fsvg(<>
-          <Abanico T={T} x={330} y={1300} s={1.05} lesion={LES} />
-          {[[700, 1310, 0.35], [880, 1300, 0.28], [600, 1330, 0.22], [980, 1320, 0.2]].map(([x, y, s], i) => { const q = kprog(T, K.C + 1.0 + i * 0.4, K.C + 2.0 + i * 0.4, kEase.sale);
+          <Abanico T={T} x={540} y={1430} s={1.4} lesion={LES} />
+          {[[850, 1450, 0.46], [1000, 1440, 0.34], [150, 1455, 0.4], [320, 1465, 0.27]].map(([x, y, s], i) => { const q = kprog(T, K.C + 1.0 + i * 0.4, K.C + 2.0 + i * 0.4, kEase.sale);
             return q > 0 ? <Abanico key={i} T={T} x={x} y={y} s={s * q} fase={i * 1.7} /> : null; })}
         </>, 20)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.2} until={K.A - 0.3} texto="no es su color normal" x={330} y={420} tam={40} borde={AX.anillo} />
-      <Etq T={T} at={K.G + 2.6} until={K.A - 0.3} x={420} y={930} texto="anillo morado" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.G + 3.6} until={K.A - 0.3} x={60} y={500} texto="sospechoso: un hongo de tierra" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.A + 0.6} until={K.H - 0.3} x={60} y={560} texto="abanico de mar" tam={38} color={KC.ink} />
-      <Etq T={T} at={K.A + 1.0} until={K.H - 0.3} x={60} y={615} texto="Gorgonia ventalina" it tam={38} color={KC.ink} />
-      <Etq T={T} at={K.A + 1.8} until={K.H - 0.3} x={60} y={780} texto="pólipos de 8 tentáculos · animal" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.A + 2.4} until={K.H - 0.3} texto="NO ES PLANTA" x={330} y={430} tam={44} borde={KC.red} />
-      <Etq T={T} at={K.H + 0.5} until={K.Hi - 0.2} x={470} y={1010} texto="Aspergillus sydowii" it tam={38} color={KC.ink} />
-      <Chip T={T} at={K.H + 1.2} until={K.Hi - 0.2} texto="suele vivir en el suelo" x={330} y={1140} tam={36} borde={AX.tierra} />
-      <Etq T={T} at={K.H + 1.9} until={K.Hi - 0.2} x={640} y={830} texto="esporas rugosas" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Hi + 0.05} until={K.An - 0.3} texto="POR DENTRO · EL TEJIDO" x={360} y={400} tam={34} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Hi + 0.8} until={K.D + 1.0} x={60} y={700} texto="hifas" tam={36} color={KC.texto} />
-      <Etq T={T} at={K.D + 0.6} until={K.An - 0.3} x={60} y={1150} texto="células de defensa" tam={32} color={AX.ameba} />
-      <Etq T={T} at={K.D + 1.8} until={K.An - 0.3} x={60} y={520} texto="banda de melanina" tam={32} color="#e0b98f" />
-      <Etq T={T} at={K.An + 0.5} until={K.P - 0.2} x={60} y={520} texto="anillo morado" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.An + 1.3} until={K.P - 0.2} x={60} y={590} texto="centro: tejido muerto, eje desnudo" tam={30} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Po + 1.4} until={K.Co - 0.2} anio="2000" quien="Shinn y colegas" revista="Geophys. Res. Letters" x={300} y={990} />
-      <TarjetaEstudio T={T} at={K.Co + 0.1} until={K.Co + 2.5} anio="2008" quien="Rypien · Cornell" revista="7 muestras · sin A. sydowii" x={300} y={990} />
-      <Etq T={T} at={K.Co + 1.6} until={K.Co + 2.5} x={60} y={430} texto="no lo descarta del todo" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Co + 3.0} until={K.F - 0.3} texto="muchas entradas desde tierra" x={540} y={470} tam={40} borde={AX.tierra} />
-      <Etq T={T} at={K.Co + 3.4} until={K.F - 0.3} x={60} y={1010} texto="● abanico" tam={30} color={AX.fan2} />
-      <Etq T={T} at={K.Co + 3.6} until={K.F - 0.3} x={330} y={1010} texto="● ambiente (suelo, aire…)" tam={30} color={AX.tierra} />
-      <Etq T={T} at={K.Co + 3.8} until={K.F - 0.3} x={60} y={560} texto="árbol genético (esquemático)" tam={26} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.F + 0.6} until={K.F + 2.1} anio="2004" quien="Kim y Harvell · Cayos de Florida" revista="Am. Naturalist · datos 1997–2003" x={420} y={990} />
-      <NumeroGigante T={T} at={K.F + 2.2} until={K.Y - 0.2} valor={50} dur={1.2} prefijo="> " sufijo=" %" etiqueta="del tejido, perdido" x={540} y={1030} tam={150} color={KC.red} />
-      <NumeroGigante T={T} at={K.Y + 1.9} until={K.Hu - 0.2} valor={8} dur={0.5} prefijo="1 de cada " x={540} y={470} tam={110} color={AX.fan} />
-      <Etq T={T} at={K.Y + 2.6} until={K.Hu - 0.2} x={40} y={600} texto="enfermos: 12.85 % en 2002 · 5.26 % en 2004" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Hu + 0.6} until={K.C - 0.3} x={520} y={600} texto="Aspergillus sydowii" it tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Y + 2.9} until={K.Hu - 0.2} x={40} y={650} texto="Ward y colegas · Dis. Aquat. Org., 2006" tam={22} color={KC.ink} />
-      <Chip T={T} at={K.Hu + 1.2} until={K.C - 0.3} texto="misma especie, también en personas" x={400} y={430} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Hu + 1.8} until={K.C - 0.3} x={60} y={520} texto="muestreo genético mundial, 2008" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="los casos bajaron (1997–2003)" x={340} y={430} tam={34} borde={KC.mint} />
-      <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="¿más resistencia? (hipótesis)" x={340} y={520} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.G + 1.2} until={K.A - 0.3} texto="no es su color normal" x={400} y={290} tam={40} borde={AX.anillo} />
+      <Etq T={T} at={K.G + 2.6} until={K.A - 0.3} x={625} y={975} texto="anillo morado" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.G + 3.6} until={K.A - 0.3} x={60} y={390} texto="sospechoso: un hongo de tierra" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.A + 0.6} until={K.H - 0.3} x={60} y={440} texto="abanico de mar" tam={38} color={KC.ink} />
+      <Etq T={T} at={K.A + 1.0} until={K.H - 0.3} x={60} y={500} texto="Gorgonia ventalina" it tam={38} color={KC.ink} />
+      <Etq T={T} at={K.A + 1.8} until={K.H - 0.3} x={60} y={660} texto="pólipos de 8 tentáculos · animal" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.A + 2.4} until={K.H - 0.3} texto="NO ES PLANTA" x={400} y={300} tam={44} borde={KC.red} />
+      <Etq T={T} at={K.H + 0.5} until={K.Hi - 0.2} x={575} y={1180} texto="Aspergillus sydowii" it tam={32} color={KC.ink} />
+      <Chip T={T} at={K.H + 1.2} until={K.Hi - 0.2} texto="suele vivir en el suelo" x={540} y={1440} tam={36} borde={AX.tierra} />
+      <Etq T={T} at={K.H + 1.9} until={K.Hi - 0.2} x={560} y={410} texto="esporas rugosas" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Hi + 0.05} until={K.An - 0.3} texto="POR DENTRO · EL TEJIDO" x={360} y={290} tam={34} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Hi + 0.8} until={K.D + 1.0} x={60} y={690} texto="hifas" tam={36} color={KC.texto} />
+      <Etq T={T} at={K.D + 0.6} until={K.An - 0.3} x={60} y={1340} texto="células de defensa" tam={32} color={AX.ameba} />
+      <Etq T={T} at={K.D + 1.8} until={K.An - 0.3} x={60} y={400} texto="banda de melanina" tam={32} color="#e0b98f" />
+      <Etq T={T} at={K.An + 0.5} until={K.P - 0.2} x={60} y={560} texto="anillo morado" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.An + 1.3} until={K.P - 0.2} x={60} y={630} texto="centro: tejido muerto, eje desnudo" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Po + 1.4} until={K.Co - 0.2} anio="2000" quien="Shinn y colegas" revista="Geophys. Res. Letters" x={330} y={300} />
+      <TarjetaEstudio T={T} at={K.Co + 0.1} until={K.Co + 2.5} anio="2008" quien="Rypien · Cornell" revista="7 muestras · sin A. sydowii" x={330} y={300} />
+      <Etq T={T} at={K.Co + 1.6} until={K.Co + 2.5} x={60} y={1400} texto="no lo descarta del todo" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Co + 3.0} until={K.F - 0.3} texto="muchas entradas desde tierra" x={540} y={560} tam={40} borde={AX.tierra} />
+      <Etq T={T} at={K.Co + 3.4} until={K.F - 0.3} x={60} y={1140} texto="● abanico" tam={30} color={AX.fan} />
+      <Etq T={T} at={K.Co + 3.6} until={K.F - 0.3} x={330} y={1140} texto="● ambiente (suelo, aire…)" tam={30} color="#c98a4b" />
+      <Etq T={T} at={K.Co + 3.8} until={K.F - 0.3} x={60} y={690} texto="árbol genético (esquemático)" tam={26} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.F + 0.6} until={K.F + 2.1} anio="2004" quien="Kim y Harvell · Cayos de Florida" revista="Am. Naturalist · datos 1997–2003" x={400} y={300} />
+      <NumeroGigante T={T} at={K.F + 2.2} until={K.Y - 0.2} valor={50} dur={1.2} prefijo="> " sufijo=" %" etiqueta="del tejido, perdido" x={540} y={300} tam={150} color={KC.red} />
+      <NumeroGigante T={T} at={K.Y + 1.9} until={K.Hu - 0.2} valor={8} dur={0.5} prefijo="1 de cada " x={540} y={320} tam={110} color={AX.fan} />
+      <Etq T={T} at={K.Y + 2.6} until={K.Hu - 0.2} x={40} y={1410} texto="enfermos: 12.85 % en 2002 · 5.26 % en 2004" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Hu + 0.6} until={K.C - 0.3} x={560} y={700} texto="Aspergillus sydowii" it tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Y + 2.9} until={K.Hu - 0.2} x={40} y={1455} texto="Ward y colegas · Dis. Aquat. Org., 2006" tam={22} color={KC.ink} />
+      <Chip T={T} at={K.Hu + 1.2} until={K.C - 0.3} texto="misma especie, también en personas" x={540} y={330} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.Hu + 1.8} until={K.C - 0.3} x={60} y={440} texto="muestreo genético mundial, 2008" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="los casos bajaron (1997–2003)" x={400} y={290} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="¿más resistencia? (hipótesis)" x={400} y={380} tam={34} borde={KC.gold} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.A} texto="10 cm" largo={110} y={1460} />
-      <BarraEscala T={T} at={K.A} until={K.H} texto="1 mm" largo={160} />
-      <BarraEscala T={T} at={K.H} until={K.Hi} texto="30 µm" largo={170} y={1460} />
-      <BarraEscala T={T} at={K.Hi} until={K.An} texto="20 µm" largo={120} />
-      <BarraEscala T={T} at={K.An} until={K.P} texto="5 cm" largo={170} y={1460} />
+      <BarraEscala T={T} at={K.G} until={K.A} texto="10 cm" largo={147} y={1460} />
+      <BarraEscala T={T} at={K.A} until={K.H} texto="1 mm" largo={288} />
+      <BarraEscala T={T} at={K.H} until={K.Hi} texto="30 µm" largo={237} y={1460} />
+      <BarraEscala T={T} at={K.Hi} until={K.An} texto="20 µm" largo={156} />
+      {/* pase a mano: en esta escena el abanico va a 2.6 (10 cm = 273 px, misma proporción que el gancho), así que «5 cm» mide 136 px (antes 170) */}
+      <BarraEscala T={T} at={K.An} until={K.P} texto="5 cm" largo={136} y={1460} />
       <BarraEscala T={T} at={K.Po} until={K.Hu} texto="mapa esquemático" largo={0} y={1460} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={110} y={1460} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={147} y={1460} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.A - 0.1} texto="Ese anillo morado *es su defensa.*" />
