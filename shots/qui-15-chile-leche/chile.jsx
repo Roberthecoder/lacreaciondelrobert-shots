@@ -54,7 +54,7 @@ function TermoChico({ x, y, s = 1, alerta = 0 }) {
     <circle cx={0} cy={40} r={46} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
     {[-190, -150, -110, -70].map((yy) => <line key={yy} x1={26} x2={46} y1={yy} y2={yy} stroke={KC.ink} strokeWidth={4} />)}
     <rect x={-70} y={100} width={140} height={46} rx={23} fill={KC.mint} stroke={KC.ink} strokeWidth={5} />
-    <text x={0} y={133} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>normal</text>
+    <text x={0} y={133} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#0b1020">normal</text>
     {alerta > 0 && <text x={0} y={-240} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} opacity={alerta}>?</text>}
   </g>;
 }
@@ -116,7 +116,7 @@ function Vaso({ x, y, s = 1, liquido = '#cfe9ff', nivel = 0.75, espuma = false, 
     {espuma && <path d={`M ${-wl} ${yl} Q ${-wl / 2} ${yl - 26} 0 ${yl - 8} Q ${wl / 2} ${yl - 30} ${wl} ${yl} Z`} fill="#fffbe8" stroke={KC.ink} strokeWidth={4} />}
     <path d={`M ${-wt} ${-h} L ${-wb} 0 L ${wb} 0 L ${wt} ${-h}`} fill="rgba(255,255,255,.22)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     {codigo && <g><rect x={-40} y={-80} width={80} height={36} rx={6} fill="#fff" stroke={KC.ink} strokeWidth={3} />
-      <text x={0} y={-53} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>{codigo}</text></g>}
+      <text x={0} y={-53} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#0b1020">{codigo}</text></g>}
   </g>;
 }
 const BEBIDAS = [
@@ -132,8 +132,8 @@ function Medalla({ x, y, s = 1, o = 1, T = 0 }) {
     <path d="M -30 -330 L 0 -240 L 30 -330 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
     <circle r={190} fill={KC.gold} stroke={KC.ink} strokeWidth={10} />
     <circle r={150} fill={KC.gold2} stroke="#b07a10" strokeWidth={6} />
-    <text x={0} y={-10} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill={KC.ink}>NOBEL</text>
-    <text x={0} y={80} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.ink}>2021</text>
+    <text x={0} y={-10} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill="#0b1020">NOBEL</text>
+    <text x={0} y={80} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill="#0b1020">2021</text>
   </g>;
 }
 
@@ -146,7 +146,7 @@ function Chile() {
   const mord = kprog(T, K.G + 0.4, K.G + 0.55);
   const fuego = kprog(T, K.G + 0.6, K.G + 1.4, kEase.sale);
   // micro: membrana y canales
-  const MY = 640, C1 = 300, C2 = 640;
+  const MY = 820, C1 = 300, C2 = 640;
   const llamaO = kprog(T, K.Se + 0.8, K.Se + 1.4) * (1 - kprog(T, K.En - 0.4, K.En));
   const abreCalor = kprog(T, K.Se + 1.6, K.Se + 2.0);
   const dock = kprog(T, K.En + 0.3, K.En + 1.4, kEase.suave);
@@ -168,73 +168,78 @@ function Chile() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(480 1000) scale(1.28) translate(-560 -900)">
           <BocaLengua x={560} y={900} s={0.95} />
           {[[480, 915, 0.9], [560, 890, 1.2], [640, 920, 0.95], [525, 950, 0.75], [600, 955, 0.8]].map(([x, y, s], i) => <Flamita key={i} T={T} x={x} y={y} s={s} o={fuego} seed={i} />)}
           <Habanero x={klerp(1180, 860, llega)} y={klerp(700, 860, llega)} s={1.0} rot={klerp(30, -35, llega)} mordida={mord} />
-          <TermoChico x={130} y={900} s={0.9} alerta={kprog(T, K.G + 2.0, K.G + 2.4)} />
+          </g>
+          <TermoChico x={940} y={500} s={0.8} alerta={kprog(T, K.G + 2.0, K.G + 2.4)} />
         </SvgCapa>
-        <Onomato T={T} at={K.G + 0.42} until={K.G + 1.3} x={760} y={1120} texto="¡crunch!" color={KC.orange} tam={80} />
+        <Onomato T={T} at={K.G + 0.42} until={K.G + 1.3} x={800} y={1330} texto="¡crunch!" color={KC.orange} tam={80} />
       </Escena>
       {/* 1 · la capsaicina: lo que pica en los chiles */}
       <Escena T={T} a={K.Q} b={K.Se} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <g transform="translate(540 980) scale(1.18) translate(-560 -880)">
           <Habanero x={330} y={960} s={1.15} rot={-8 + Math.sin(T * 1.5) * 3} />
           <g opacity={kprog(T, K.Q + 2.4, K.Q + 2.9)} transform={`translate(0 ${klerp(80, 0, kprog(T, K.Q + 2.4, K.Q + 3.0, kEase.sale))})`}><Jalapeno x={790} y={950} s={1.1} rot={18 + Math.sin(T * 1.3) * 3} /></g>
           {[0, 1, 2].map((i) => { const t0 = K.Q + 0.4 + i * 0.5, p = kprog(T, t0, t0 + 1.2, kEase.sale);
             return T > t0 ? <Capsa key={i} x={klerp(330, [560, 300, 820][i], p)} y={klerp(900, [620, 800, 800][i], p)} s={i === 0 ? klerp(0.2, 0.75, p) : klerp(0.1, 0.32, p)} rot={i === 0 ? Math.sin(T) * 5 : T * 20 + i * 90} /> : null; })}
           {T > K.Q + 2.6 && [0, 1].map((i) => { const p = kprog(T, K.Q + 2.8 + i * 0.4, K.Q + 3.8 + i * 0.4, kEase.sale); return <Capsa key={'j' + i} x={klerp(790, [860, 930][i], p)} y={klerp(880, [470, 560][i], p)} s={klerp(0.1, 0.3, p)} rot={-T * 25 + i * 70} />; })}
+          </g>
         </SvgCapa>
-        <Etq T={T} at={K.Q + 0.8} until={K.Se - 0.3} x={340} y={1170} texto="habanero" lado="der" tam={32} color={KC.ink} />
-        <Etq T={T} at={K.Q + 3.0} until={K.Se - 0.3} x={1020} y={1170} texto="jalapeño" lado="izq" tam={32} color={KC.ink} />
-        <Etq T={T} at={K.Q + 1.6} until={K.Se - 0.3} x={640} y={700} texto="cola de carbonos" lado="der" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.Q + 0.8} until={K.Se - 0.3} x={290} y={1325} texto="habanero" lado="der" tam={32} color={KC.ink} />
+        <Etq T={T} at={K.Q + 3.0} until={K.Se - 0.3} x={1040} y={1325} texto="jalapeño" lado="izq" tam={32} color={KC.ink} />
+        <Etq T={T} at={K.Q + 1.6} until={K.Se - 0.3} x={640} y={770} texto="cola de carbonos" lado="der" tam={30} color={KC.ink} />
       </Escena>
       {/* 2–4 · por dentro: el sensor TRPV1, la capsaicina y el agua */}
       <Escena T={T} a={K.Se} b={K.Pr} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <rect x={0} y={0} width={KW} height={MY - 60} fill="#1a1426" />
-          <Nervio T={T} x0={C1} y0={MY + 60} x1={130} y1={1180} p={-1} />
-          <Nervio T={T} x0={C2} y0={MY + 60} x1={130} y1={1180} p={senal > 0 && senal < 1 ? senal : -1} />
+          <Nervio T={T} x0={C1} y0={MY + 60} x1={130} y1={1400} p={-1} />
+          <Nervio T={T} x0={C2} y0={MY + 60} x1={130} y1={1400} p={senal > 0 && senal < 1 ? senal : -1} />
           <Membrana T={T} y={MY} canales={[C1, C2]} abre={[abre, abre]} />
           <Llama T={T} x={klerp(-120, C1 - 10, kprog(T, K.Se + 0.8, K.Se + 1.5, kEase.sale))} y={MY - 90} s={1.3} o={llamaO} />
           {/* capsaicinas que se pegan a los canales */}
-          {T > K.En - 0.2 && [C1, C2].map((c, i) => <Capsa key={i} x={klerp(c + 260 - i * 520, c, dock)} y={klerp(260, MY - 110, dock)} s={0.28} rot={klerp(140, 90, dock) + (dock < 1 ? Math.sin(T * 3) * 10 : 0)} />)}
+          {T > K.En - 0.2 && [C1, C2].map((c, i) => <Capsa key={i} x={klerp(c + 260 - i * 520, c, dock)} y={klerp(440, MY - 110, dock)} s={0.28} rot={klerp(140, 90, dock) + (dock < 1 ? Math.sin(T * 3) * 10 : 0)} />)}
           {/* capsaicinas sueltas que el agua sí arrastra */}
-          {T > K.En && [[820, 300], [900, 450], [470, 360]].map(([x, y], i) => { const p = enjuague; return <Capsa key={'s' + i} x={x - p * 900} y={y + Math.sin(T * 2 + i) * 14 + p * 120} s={0.24} rot={T * 30 + i * 60} o={1 - kprog(p, 0.7, 1)} />; })}
-          {T > K.Ag && Array.from({ length: 22 }, (_, i) => { const t0 = K.Ag + 0.2 + i * 0.1, p = kprog(T, t0, t0 + 1.0); return p > 0 && p < 1 ? <circle key={'g' + i} cx={980 - i * 40 - p * 200} cy={140 + p * 400} r={18} fill="#7fc8ff" stroke={KC.ink} strokeWidth={4} opacity={0.9} /> : null; })}
+          {T > K.En && [[820, 480], [900, 630], [470, 540]].map(([x, y], i) => { const p = enjuague; return <Capsa key={'s' + i} x={x - p * 900} y={y + Math.sin(T * 2 + i) * 14 + p * 120} s={0.24} rot={T * 30 + i * 60} o={1 - kprog(p, 0.7, 1)} />; })}
+          {T > K.Ag && Array.from({ length: 22 }, (_, i) => { const t0 = K.Ag + 0.2 + i * 0.1, p = kprog(T, t0, t0 + 1.0); return p > 0 && p < 1 ? <circle key={'g' + i} cx={980 - i * 40 - p * 200} cy={320 + p * 400} r={18} fill="#7fc8ff" stroke={KC.ink} strokeWidth={4} opacity={0.9} /> : null; })}
           {/* el cerebro siente fuego */}
           <g opacity={kprog(T, K.En + 2.4, K.En + 2.9) * (1 - kprog(T, K.Ag - 0.2, K.Ag + 0.3))}>
-            <Cerebro x={780} y={1080} s={1.1} />
-            <circle cx={900} cy={880} r={80} fill="#fff" stroke={KC.ink} strokeWidth={6} />
-            <Flamita T={T} x={900} y={920} s={0.8} />
-            <text x={980} y={830} style={{ font:`400 80px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={4}>?</text>
+            <Cerebro x={780} y={1240} s={1.3} />
+            <circle cx={920} cy={1010} r={86} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+            <Flamita T={T} x={920} y={1050} s={0.85} />
+            <text x={1000} y={960} style={{ font:`400 80px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={4}>?</text>
           </g>
           {/* la gota: la capsaicina no se mezcla */}
-          <g opacity={kprog(T, K.Ag + 1.0, K.Ag + 1.5)}>
+          <g opacity={kprog(T, K.Ag + 1.0, K.Ag + 1.5)} transform="translate(0 180)">
             <path d="M 760 820 Q 900 960 900 1060 A 140 140 0 0 1 620 1060 Q 620 960 760 820 Z" fill="#7fc8ff" stroke={KC.ink} strokeWidth={7} opacity={0.95} />
             {Array.from({ length: 9 }, (_, i) => { const a = i / 9 * Math.PI * 2 + T * 0.6; return <Mol key={i} tipo="agua" x={760 + Math.cos(a) * 95} y={1060 + Math.sin(a) * 85} s={0.38} rot={a * 57} />; })}
             <Capsa x={760} y={1050} s={0.22} rot={T * 10} dobla={1} />
           </g>
         </SvgCapa>
         <Etq T={T} at={K.Se + 0.5} until={K.Ag - 0.3} x={C2 + 70} y={MY + 120} texto="TRPV1" lado="der" tam={40} color={TRP === '#9b5de5' ? '#d6b8ff' : TRP} />
-        <Etq T={T} at={K.Se + 0.9} until={K.En - 0.3} x={250} y={1000} texto="nervio" lado="der" tam={34} color="#ffe38a" />
-        <Etq T={T} at={K.Ag + 1.6} until={K.Pr - 0.2} x={600} y={800} texto="casi insoluble en agua" lado="izq" tam={30} color={KC.texto} />
+        <Etq T={T} at={K.Se + 0.9} until={K.En - 0.3} x={250} y={1180} texto="nervio" lado="der" tam={34} color="#ffe38a" />
+        <Etq T={T} at={K.Ag + 1.6} until={K.Pr - 0.2} x={600} y={990} texto="casi insoluble en agua" lado="izq" tam={30} color={KC.texto} />
       </Escena>
       {/* 5 · ¿entonces qué te tomas? */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
           {BEBIDAS.filter((_, i) => i !== 5).map((b, i) => { const x = 120 + i * 140 + (i > 3 ? 0 : 0), p = kprog(T, K.Pr + i * 0.12, K.Pr + 0.4 + i * 0.12, kEase.sale);
-            return <Vaso key={i} x={[150, 330, 150, 330, 240, 420][i]} y={[580, 580, 840, 840, 1100, 1100][i] + Math.sin(T * 2 + i) * 10} s={0.9} liquido={b.c} espuma={!!b.espuma} o={p} rot={Math.sin(T * 1.5 + i) * 6} />; })}
-          <text x={600} y={1060} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 600 1000)`} opacity={kprog(T, K.Pr, K.Pr + 0.3)}>?</text>
+            return <Vaso key={i} x={[150, 330, 150, 330, 240, 420][i]} y={[760, 760, 1020, 1020, 1280, 1280][i] + Math.sin(T * 2 + i) * 10} s={1.0} liquido={b.c} espuma={!!b.espuma} o={p} rot={Math.sin(T * 1.5 + i) * 6} />; })}
+          <text x={620} y={1220} textAnchor="middle" style={{ font:`400 400px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 620 1150)`} opacity={kprog(T, K.Pr, K.Pr + 0.3)}>?</text>
         </SvgCapa>
       </Escena>
       {/* 6 · 2019, Penn State: 72 personas, siete bebidas */}
       <Escena T={T} a={K.Es} b={K.Re}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <rect x={40} y={1080} width={1000} height={40} rx={10} fill="#c98f52" stroke={KC.ink} strokeWidth={7} />
+          <g transform="translate(0 140)">
+          <rect x={40} y={1080} width={1000} height={40} rx={10} fill="#8a6038" stroke={KC.ink} strokeWidth={7} />
           <Vaso x={110} y={1080} s={0.85} liquido="#d1342b" nivel={0.7} />
           {Array.from({ length: 5 }, (_, i) => <circle key={i} cx={90 + i * 12} cy={940 - (i % 2) * 14} r={7} fill={KC.orange} />)}
           {BEBIDAS.map((b, i) => { const x = 250 + i * 122, t0 = K.Es + 3.0 + i * 0.55, on = kprog(T, t0, t0 + 0.25), prob = kprog(T, t0 + 0.25, t0 + 0.5);
@@ -242,36 +247,37 @@ function Chile() {
               <Vaso x={x} y={1080} s={0.72} liquido={b.c} espuma={!!b.espuma} codigo={b.cod} o={klerp(0.35, 1, on)} />
               {on > 0 && <Marca x={x} y={880} ok={true} s={0.4} o={prob} />}
             </g>; })}
+          </g>
         </SvgCapa>
-        <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.8} anio="2019" quien="Penn State · Nolden, Lenart y Hayes" revista="Physiology & Behavior" x={560} y={640} />
-        <NumeroGigante T={T} at={K.Es + 3.0} until={K.Re - 0.3} valor={72} dur={1.0} etiqueta="personas" x={560} y={600} tam={210} color={KC.yellow} />
-        <Etq T={T} at={K.Es + 0.6} until={K.Es + 3.0} x={180} y={860} texto="jugo picante" lado="der" tam={30} color={KC.ink} />
+        <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.8} anio="2019" quien="Penn State · Nolden, Lenart y Hayes" revista="Physiology & Behavior" x={560} y={660} />
+        <NumeroGigante T={T} at={K.Es + 3.0} until={K.Re - 0.3} valor={72} dur={1.0} etiqueta="personas" x={560} y={700} tam={210} color={KC.yellow} />
+        <Etq T={T} at={K.Es + 0.6} until={K.Es + 3.0} x={180} y={1000} texto="jugo picante" lado="der" tam={30} color={KC.ink} />
       </Escena>
       {/* 7 · resultado: barras de ardor */}
       <Escena T={T} a={K.Re} b={K.Pt}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          {(() => { const base = 1100, H = 520, yAgua = base - H * VAL[1] * crece; return <g>
+          {(() => { const base = 1200, H = 660, yAgua = base - H * VAL[1] * crece; return <g>
             {VAL.map((v, i) => { const x = 100 + i * 120, h = H * v * crece, gana = i >= 5;
               return <g key={i}>
                 <rect x={x - 46} y={base - h} width={92} height={h} fill={COL[i]} stroke={gana && brilla > 0 ? KC.mint : KC.ink} strokeWidth={gana ? 7 + brilla * 5 : 7} />
-                <text x={x} y={base + 40} textAnchor="middle" style={{ font:`700 21px ${KF.mono}` }} fill={KC.ink}>{NOM[i].split('\n').map((l, j) => <tspan key={j} x={x} dy={j ? 24 : 0}>{l}</tspan>)}</text>
+                <text x={x} y={base + 40} textAnchor="middle" style={{ font:`700 23px ${KF.mono}` }} fill={KC.ink}>{NOM[i].split('\n').map((l, j) => <tspan key={j} x={x} dy={j ? 24 : 0}>{l}</tspan>)}</text>
               </g>; })}
             <line x1={40} x2={1040} y1={yAgua} y2={yAgua} stroke={KC.blue} strokeWidth={5} strokeDasharray="16 12" opacity={kprog(T, K.Re + 1.6, K.Re + 2.0)} />
             <text x={60} y={base - H - 30} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>ardor total (2 min)</text>
             <text x={60} y={base - H - 72} textAnchor="start" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>*sin alcohol · barras esquemáticas</text>
           </g>; })()}
         </SvgCapa>
-        <Chip T={T} at={K.Re + 2.4} until={K.Pt - 0.3} texto="solo la leche y el agua de sabor le ganaron al agua" y={1500} tam={28} borde={KC.mint} />
+        <Chip T={T} at={K.Re + 2.4} until={K.Pt - 0.3} texto="solo la leche y el agua de sabor le ganaron al agua" y={1400} tam={30} borde={KC.mint} />
       </Escena>
       {/* 8 · entera = descremada; hipótesis: la proteína */}
       <Escena T={T} a={K.Pt} b={K.No}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Vaso x={250} y={1070} s={1.0} liquido={LECHE} nivel={0.8} />
-          <Vaso x={830} y={1070} s={1.0} liquido="#f4f8ff" nivel={0.8} />
-          <text x={540} y={1050} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Pt + 0.6, K.Pt + 1.0)}>=</text>
-          <g opacity={kprog(T, K.Pt + 2.4, K.Pt + 2.9)}>
+          <Vaso x={250} y={1230} s={1.25} liquido={LECHE} nivel={0.8} />
+          <Vaso x={830} y={1230} s={1.25} liquido="#f4f8ff" nivel={0.8} />
+          <text x={540} y={1170} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Pt + 0.6, K.Pt + 1.0)}>=</text>
+          <g opacity={kprog(T, K.Pt + 2.4, K.Pt + 2.9)} transform="translate(540 760) scale(1.15) translate(-560 -660)">
             <circle cx={560} cy={660} r={220} fill={KC.noche} stroke={KC.white} strokeWidth={10} />
             {[[430, 580], [660, 550], [520, 780], [680, 740]].map(([x, y], i) => <circle key={i} cx={x + Math.sin(T + i) * 6} cy={y} r={34} fill="#ffe7a0" stroke={KC.ink} strokeWidth={4} />)}
             {[[520, 600], [620, 660], [460, 700]].map(([x, y], i) => <g key={'c' + i} transform={`translate(${x + Math.cos(T * 0.8 + i) * 8} ${y})`}>
@@ -279,50 +285,52 @@ function Chile() {
               <Capsa x={30} y={-24} s={0.12} rot={T * 15 + i * 100} o={kprog(T, K.Pt + 3.2 + i * 0.3, K.Pt + 3.6 + i * 0.3)} /></g>)}
           </g>
         </SvgCapa>
-        <Etq T={T} at={K.Pt + 0.3} until={K.No - 0.3} x={250} y={1120} texto="entera" lado="der" tam={34} color={KC.ink} />
-        <Etq T={T} at={K.Pt + 0.5} until={K.No - 0.3} x={830} y={1120} texto="descremada" lado="izq" tam={34} color={KC.ink} />
-        <Etq T={T} at={K.Pt + 3.0} until={K.No - 0.3} x={790} y={600} texto="caseína" lado="der" tam={30} color={KC.texto} />
-        <Etq T={T} at={K.Pt + 3.3} until={K.No - 0.3} x={790} y={800} texto="grasa" lado="der" tam={30} color="#ffe7a0" />
-        <Chip T={T} at={K.Pt + 3.4} until={K.No - 0.3} texto="hipótesis de los autores" y={1500} tam={38} borde={KC.orange} />
+        <Etq T={T} at={K.Pt + 0.3} until={K.No - 0.3} x={250} y={1290} texto="entera" lado="der" tam={34} color={KC.ink} />
+        <Etq T={T} at={K.Pt + 0.5} until={K.No - 0.3} x={830} y={1290} texto="descremada" lado="izq" tam={34} color={KC.ink} />
+        <Etq T={T} at={K.Pt + 3.0} until={K.No - 0.3} x={800} y={660} texto="caseína" lado="der" tam={30} color={KC.texto} />
+        <Etq T={T} at={K.Pt + 3.3} until={K.No - 0.3} x={800} y={900} texto="grasa" lado="der" tam={30} color="#ffe7a0" />
+        <Chip T={T} at={K.Pt + 3.4} until={K.No - 0.3} texto="hipótesis de los autores" y={1420} tam={38} borde={KC.orange} />
       </Escena>
       {/* 9 · Julius, 1997 · Nobel 2021 */}
       <Escena T={T} a={K.No} b={K.Ci}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <g opacity={1 - kprog(T, K.No + 3.0, K.No + 3.4)}>
+          {(() => { const mv = kprog(T, K.No + 2.9, K.No + 3.5, kEase.suave); return <g transform={`translate(540 ${klerp(1020, 1270, mv)}) scale(${klerp(1.4, 1.0, mv)}) translate(-540 -1000)`}>
             <Habanero x={300} y={1000} s={0.9} rot={-15} />
             <path d="M 420 980 L 560 980" stroke={KC.ink} strokeWidth={10} /><path d="M 540 960 L 570 980 L 540 1000" fill="none" stroke={KC.ink} strokeWidth={10} />
             <rect x={620} y={910} width={70} height={150} rx={26} fill={TRP} stroke={KC.ink} strokeWidth={7} />
             <rect x={730} y={910} width={70} height={150} rx={26} fill={TRP} stroke={KC.ink} strokeWidth={7} />
             <text x={710} y={1120} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>TRPV1</text>
-          </g>
-          <Medalla T={T} x={540} y={900} s={1} o={kprog(T, K.No + 3.2, K.No + 3.7, kEase.sale)} />
+          </g>; })()}
+          <Medalla T={T} x={540} y={800} s={1.2} o={kprog(T, K.No + 3.2, K.No + 3.7, kEase.sale)} />
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.No + 0.2} until={K.No + 3.0} anio="1997" quien="David Julius · San Francisco" revista="Nature · el receptor de la capsaicina" x={540} y={600} />
-        <Chip T={T} at={K.No + 3.8} until={K.Ci - 0.3} texto="Nobel de Fisiología o Medicina (compartido)" y={1500} tam={30} borde={KC.gold} />
+        <Chip T={T} at={K.No + 3.8} until={K.Ci - 0.3} texto="Nobel de Fisiología o Medicina (compartido)" y={1460} tam={32} borde={KC.gold} />
       </Escena>
       {/* 10 · cierre: la misma boca, ahora con leche */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(480 1000) scale(1.28) translate(-560 -900)">
           <BocaLengua x={560} y={900} s={0.95} />
           {[[480, 915, 0.9], [560, 890, 1.2], [640, 920, 0.95], [525, 950, 0.75], [600, 955, 0.8]].map(([x, y, s], i) => <Flamita key={i} T={T} x={x} y={y} s={s} o={1 - 0.75 * kprog(T, K.Ci + 1.2 + i * 0.2, K.Ci + 3.0 + i * 0.2)} seed={i} />)}
           <Habanero x={860} y={860} s={1.0} rot={-35} mordida={1} />
           <Chorro T={T} x0={330} y0={600} x1={500} y1={880} color={LECHE} o={kprog(T, K.Ci + 0.9, K.Ci + 1.2) * (1 - kprog(T, K.Ci + 3.4, K.Ci + 3.8))} ancho={22} />
           <Vaso x={klerp(-100, 260, kprog(T, K.Ci + 0.2, K.Ci + 0.9, kEase.sale))} y={640} s={1.0} liquido={LECHE} nivel={0.7} rot={klerp(0, 95, kprog(T, K.Ci + 0.6, K.Ci + 1.0))} />
-          <TermoChico x={130} y={900} s={0.9} />
+          </g>
+          <TermoChico x={940} y={500} s={0.8} />
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 2.9} texto="es calor" x={330} y={470} tam={46} />
-      <Chip T={T} at={K.G + 3.0} until={K.Q - 0.3} texto="es capsaicina" x={330} y={470} tam={44} borde={KC.orange} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 2.9} texto="es calor" x={430} y={450} tam={50} />
+      <Chip T={T} at={K.G + 3.0} until={K.Q - 0.3} texto="es capsaicina" x={430} y={450} tam={48} borde={KC.orange} />
       <Chip T={T} at={K.Q + 0.4} until={K.Se - 0.3} texto="capsaicina: lo que pica" y={1500} tam={44} borde={KC.orange} />
       <Chip T={T} at={K.Se + 1.6} until={K.En - 0.3} texto="TRPV1: se abre con calor que quema" y={1500} tam={34} borde={TRP} />
       <Chip T={T} at={K.En + 1.5} until={K.Ag - 0.3} texto="la capsaicina abre el mismo sensor" y={1500} tam={34} borde={TRP} />
       <Medidor T={T} at={K.Ag + 1.2} until={K.Pr - 0.2} valor={ardorAg} etiqueta="ardor" texto={() => 'baja poquito'} y={1460} color={KC.red} />
-      <Chip T={T} at={K.Es + 4.0} until={K.Re - 0.3} texto="cada persona probó las 7, una por ronda" y={1500} tam={32} borde={KC.yellow} />
-      <Chip T={T} at={K.Ci + 3.2} until={K.Ou} texto="capsaicina + TRPV1 = ardor sin fuego" y={1500} tam={36} borde={KC.orange} />
+      <Chip T={T} at={K.Es + 4.0} until={K.Re - 0.3} texto="cada persona probó las 7, una por ronda" y={1440} tam={32} borde={KC.yellow} />
+      <Chip T={T} at={K.Ci + 3.2} until={K.Ou} texto="capsaicina + TRPV1 = ardor sin fuego" y={1460} tam={38} borde={KC.orange} />
       <Medidor T={T} at={K.Ci + 1.0} until={K.Ci + 3.0} valor={ardorCi} etiqueta="ardor" texto={() => 'baja con leche'} y={1460} color={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
