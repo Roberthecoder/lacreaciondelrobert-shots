@@ -178,7 +178,7 @@ function Glutamato() {
     else if (k < 67) { const t0 = ePla + (k - 50) * 0.04; if (T >= t0) { color = KC.cyan; esc = klerp(1.4, 1, kprog(T, t0, t0 + 0.25)); }
       if (T >= eRep) color = mixHex(KC.cyan, '#5a6070', kprog(T, eRep, eRep + 0.4)); }
     const dim = T >= eComida ? 1 - 0.55 * kprog(T, eComida, eComida + 0.5) : 1;
-    return <Personita key={i} x={150 + c * 65} y={690 + f * 50} s={0.62 * esc} color={color} o={dim} />;
+    return <Personita key={i} x={150 + c * 65} y={800 + f * 58} s={0.72 * esc} color={color} o={dim} />;
   });
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -186,42 +186,44 @@ function Glutamato() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.06}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Jitomate x={560} y={1000} r={290} />
-          <Cristales T={T} desde={K.G + 0.05} x0={330} y0={740} x1={560} y1={980} n={34} />
-          <Salero x={280} y={640} s={0.95} rot={150 + sacude} />
+          <g transform="translate(540 980) scale(1.55) translate(-560 -1000)">
+            <Jitomate x={560} y={1000} r={290} />
+            <Cristales T={T} desde={K.G + 0.05} x0={330} y0={740} x1={560} y1={980} n={34} />
+            <Salero x={280} y={640} s={0.95} rot={150 + sacude} />
+          </g>
         </SvgCapa>
-        <Escala T={T} z={1} pxPorMm={8} />
+        <Escala T={T} z={1} pxPorMm={8 * 1.55} />
       </Escena>
       {/* 1 · qué es: el cristal se disuelve en sodio + glutamato, el mismo de la proteína */}
       <Escena T={T} a={K.Q} b={K.U} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <CristalGrande x={540} y={860} s={1.3} o={1 - kprog(T, K.Q + 0.6, K.Q + 1.3)} />
+          <CristalGrande x={540} y={900} s={2.4} o={1 - kprog(T, K.Q + 0.6, K.Q + 1.3)} />
           {T > K.Q + 0.6 && <g>
-            <Atomo x={klerp(540, 220, kprog(T, K.Q + 0.6, K.Q + 1.6, kEase.sale))} y={760 + Math.sin(T * 2) * 14} r={62} color={NA} letra="Na⁺" tam={42} />
-            <Mol tipo="glu" x={klerp(540, 640, kprog(T, K.Q + 0.6, K.Q + 1.6, kEase.sale))} y={820} s={1.35 * kprog(T, K.Q + 0.6, K.Q + 1.2, kEase.sale)} rot={Math.sin(T * 1.3) * 6} />
+            <Atomo x={klerp(540, 220, kprog(T, K.Q + 0.6, K.Q + 1.6, kEase.sale))} y={800 + Math.sin(T * 2) * 14} r={74} color={NA} letra="Na⁺" tam={48} />
+            <Mol tipo="glu" x={klerp(540, 650, kprog(T, K.Q + 0.6, K.Q + 1.6, kEase.sale))} y={880} s={1.6 * kprog(T, K.Q + 0.6, K.Q + 1.2, kEase.sale)} rot={Math.sin(T * 1.3) * 6} />
           </g>}
-          <Proteina T={T} x={540} y={1170} n={10} paso={95} glu={[3, 7]} o={kprog(T, K.Q + 2.0, K.Q + 2.6)} />
+          <Proteina T={T} x={540} y={1280} n={10} paso={98} glu={[3, 7]} o={kprog(T, K.Q + 2.0, K.Q + 2.6)} />
         </SvgCapa>
-        <Escala T={T} z={1} pxPorMm={5.7e8} objetivo={650} />
+        <Escala T={T} z={1} pxPorMm={5.7e8 * 1.6 / 1.35} objetivo={650} />
       </Escena>
       {/* 2 · jitomate y queso → 1908, caldo de alga → umami */}
       <Escena T={T} a={K.U} b={K.Gr} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
           <g opacity={1 - kprog(T, uOlla - 0.3, uOlla + 0.1)}>
-            <Jitomate x={300} y={980} r={170} />
-            <Queso x={780} y={1000} s={1} />
+            <Jitomate x={290} y={980} r={230} />
+            <Queso x={790} y={1010} s={1.3} />
             {Array.from({ length: 8 }, (_, i) => { const sube = ((T - K.U) * 0.5 + i / 8) % 1, x0 = i % 2 ? 300 : 780;
               return <Mol key={i} tipo="glu" x={x0 + Math.sin(T * 2 + i) * 60} y={klerp(860, 560, sube)} s={0.32} rot={T * 20 + i * 40} o={Math.sin(sube * Math.PI)} />; })}
           </g>
           {T > uOlla - 0.3 && T < uLengua + 0.2 && <g opacity={kprog(T, uOlla - 0.3, uOlla + 0.1) * (1 - kprog(T, uLengua - 0.2, uLengua + 0.2))}>
-            <Olla T={T} x={540} y={1060} s={1} />
-            <CristalGrande x={540} y={klerp(900, 720, kprog(T, uOlla + 0.4, uOlla + 1.6, kEase.sale))} s={0.35 * kprog(T, uOlla + 0.4, uOlla + 0.8)} />
+            <Olla T={T} x={540} y={1060} s={1.4} />
+            <CristalGrande x={540} y={klerp(860, 640, kprog(T, uOlla + 0.4, uOlla + 1.6, kEase.sale))} s={0.45 * kprog(T, uOlla + 0.4, uOlla + 0.8)} />
           </g>}
           {T > uLengua - 0.2 && <g opacity={kprog(T, uLengua - 0.2, uLengua + 0.2)}>
-            <Lengua T={T} x={540} y={980} s={1} brillo={kprog(T, uLengua + 0.3, uLengua + 0.8)} />
-            <text x={540} y={1000} textAnchor="middle" style={{ font:`400 ${150 * kprog(T, uLengua + 0.3, uLengua + 0.7, kEase.rebote)}px ${KF.titulo}` }} fill={GLU} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">UMAMI</text>
+            <Lengua T={T} x={540} y={960} s={1.6} brillo={kprog(T, uLengua + 0.3, uLengua + 0.8)} />
+            <text x={540} y={1010} textAnchor="middle" style={{ font:`400 ${190 * kprog(T, uLengua + 0.3, uLengua + 0.7, kEase.rebote)}px ${KF.titulo}` }} fill={GLU} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">UMAMI</text>
           </g>}
         </SvgCapa>
       </Escena>
@@ -237,13 +239,15 @@ function Glutamato() {
               return <circle key={i} cx={ix(u)} cy={iy(u)} r={g ? 26 : 22} fill={g ? GLU : [KC.mint, KC.pink, KC.lilac][i % 3]} stroke={KC.ink} strokeWidth={5} />; })}
           </g>
           {T > grBarras - 0.3 && (() => { const g = kprog(T, grBarras, grBarras + 1.2, kEase.sale), o = kprog(T, grBarras - 0.3, grBarras + 0.1);
-            const h1 = 430 * g, h2 = 430 * (0.55 / 13) * g, B = 1140;
+            const h1 = 600 * g, h2 = 600 * (0.55 / 13) * g, B = 1240;
             return <g opacity={o}>
-              <rect x={390} y={B - h1} width={200} height={h1} fill={GLU} stroke={KC.ink} strokeWidth={8} />
-              <rect x={720} y={B - h2} width={200} height={Math.max(h2, 4)} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
-              <line x1={320} x2={990} y1={B + 2} y2={B + 2} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
-              <text x={490} y={B - 20 - h1} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">{kformato(13 * g)} g</text>
-              <text x={490} y={B - 140 - h1} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, grBarras + 1.0, grBarras + 1.4)}>de tu comida</text>
+              <rect x={330} y={B - h1} width={260} height={h1} fill={GLU} stroke={KC.ink} strokeWidth={8} />
+              <rect x={690} y={B - h2} width={260} height={Math.max(h2, 4)} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
+              <line x1={250} x2={1030} y1={B + 2} y2={B + 2} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
+              <Plato x={460} y={B + 110} s={1} />
+              <Salero x={820} y={B + 120} s={0.5} etq="" />
+              <text x={460} y={B - 20 - h1} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">{kformato(13 * g)} g</text>
+              <text x={460} y={B - 140 - h1} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, grBarras + 1.0, grBarras + 1.4)}>de tu comida</text>
               <text x={820} y={B - 20 - h2} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">{kformato(0.55 * g, 2)} g</text>
               <text x={820} y={B - 120 - h2} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, grBarras + 1.4, grBarras + 1.8)}>añadido</text>
             </g>; })()}
@@ -253,8 +257,8 @@ function Glutamato() {
       <Escena T={T} a={K.Pr} b={K.Ca} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <text x={290} y={1020} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 820)`}>?</text>
-          <Salero x={290} y={1170} s={0.5} rot={Math.sin(T * 5) * 5} etq="?" />
+          <text x={320} y={1100} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 320 900)`}>?</text>
+          <Salero x={740} y={1060} s={1.25} rot={Math.sin(T * 5) * 5} etq="?" />
         </SvgCapa>
       </Escena>
       {/* 5 · 1968: la carta */}
@@ -262,9 +266,9 @@ function Glutamato() {
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
           <g opacity={1 - kprog(T, K.Ca + 3.0, K.Ca + 3.4)}>
-            <Sobre x={560} y={900} s={1.1} abre={kprog(T, K.Ca + 0.2, K.Ca + 0.8, kEase.sale)} sube={kprog(T, K.Ca + 0.8, K.Ca + 1.6, kEase.sale)} />
+            <Sobre x={540} y={1060} s={1.5} abre={kprog(T, K.Ca + 0.2, K.Ca + 0.8, kEase.sale)} sube={kprog(T, K.Ca + 0.8, K.Ca + 1.6, kEase.sale)} />
           </g>
-          {T > K.Ca + 3.0 && <g opacity={kprog(T, K.Ca + 3.0, K.Ca + 3.4)}><Silueta T={T} x={600} y={900} s={1} f={kprog(T, K.Ca + 3.6, K.Ca + 4.2)} /></g>}
+          {T > K.Ca + 3.0 && <g opacity={kprog(T, K.Ca + 3.0, K.Ca + 3.4)}><Silueta T={T} x={540} y={1030} s={1.3} f={kprog(T, K.Ca + 3.6, K.Ca + 4.2)} /></g>}
         </SvgCapa>
       </Escena>
       {/* 6 · sospechosos sin pruebas */}
@@ -286,12 +290,12 @@ function Glutamato() {
       <Escena T={T} a={K.Es} b={K.Le} zoom={0.02}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          {T > eGrid - 0.3 && <g opacity={kprog(T, eGrid - 0.3, eGrid + 0.3)}>
-            <VasoPrueba x={220} y={620} letra="A" />
-            <VasoPrueba x={400} y={620} letra="B" />
-            <Plato x={600} y={590} s={0.7} o={kprog(T, eComida, eComida + 0.4)} />
+          {<g opacity={kprog(T, K.Es - 0.3, K.Es + 0.3)}>
+            <VasoPrueba x={220} y={680} letra="A" />
+            <VasoPrueba x={400} y={680} letra="B" />
+            <Plato x={620} y={660} s={0.75} o={kprog(T, eComida, eComida + 0.4)} />
             {malla}
-            {T > eRep && T < eComida && <g transform={`translate(950 520) rotate(${(T - eRep) * 200})`} opacity={kprog(T, eRep, eRep + 0.3)}>
+            {T > eRep && T < eComida && <g transform={`translate(900 650) rotate(${(T - eRep) * 200})`} opacity={kprog(T, eRep, eRep + 0.3)}>
               <path d="M 0 -50 A 50 50 0 1 1 -50 0" stroke={KC.ink} strokeWidth={12} fill="none" strokeLinecap="round" /><path d="M -70 -10 L -50 20 L -28 -10 Z" fill={KC.ink} /></g>}
           </g>}
         </SvgCapa>
@@ -308,30 +312,32 @@ function Glutamato() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Jitomate x={560} y={1000} r={290} brillo={kprog(T, K.Ci + 0.6, K.Ci + 1.2)} />
-          <Cristales T={T} desde={K.Ci - 30} x0={330} y0={740} x1={560} y1={980} n={34} />
-          {[0, 1, 2, 3, 4].map((i) => <Mol key={i} tipo="glu" x={560 + Math.cos(T * 0.7 + i * 1.25) * 210} y={1000 + Math.sin(T * 0.7 + i * 1.25) * 210} s={0.22} rot={T * 25 + i * 70} o={kprog(T, K.Ci + 0.8 + i * 0.1, K.Ci + 1.2 + i * 0.1)} />)}
-          <Sello x={300} y={560} texto="FDA · GRAS" o={kprog(T, K.Ci + 1.4, K.Ci + 1.7, kEase.sale)} color={KC.blue} rot={-8} tam={60} />
+          <g transform="translate(540 980) scale(1.5) translate(-560 -1000)">
+            <Jitomate x={560} y={1000} r={290} brillo={kprog(T, K.Ci + 0.6, K.Ci + 1.2)} />
+            <Cristales T={T} desde={K.Ci - 30} x0={330} y0={740} x1={560} y1={980} n={34} />
+            {[0, 1, 2, 3, 4].map((i) => <Mol key={i} tipo="glu" x={560 + Math.cos(T * 0.7 + i * 1.25) * 210} y={1000 + Math.sin(T * 0.7 + i * 1.25) * 210} s={0.22} rot={T * 25 + i * 70} o={kprog(T, K.Ci + 0.8 + i * 0.1, K.Ci + 1.2 + i * 0.1)} />)}
+          </g>
+          <Sello x={330} y={330} texto="FDA · GRAS" o={kprog(T, K.Ci + 1.4, K.Ci + 1.7, kEase.sale)} color={KC.blue} rot={-8} tam={60} />
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.0} texto="☠ ¿veneno?" x={300} y={400} tam={46} />
-      <Chip T={T} at={K.G + 3.1} until={K.Q - 0.3} texto="glutamato" x={300} y={400} tam={46} borde={GLU} />
-      <Etq T={T} at={K.Q + 1.0} until={K.U - 0.3} x={290} y={630} texto="sodio" lado="der" tam={34} color={NA} />
-      <Etq T={T} at={K.Q + 1.3} until={K.U - 0.3} x={640} y={640} texto="glutamato" lado="der" tam={34} color={GLU} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.0} texto="☠ ¿veneno?" x={720} y={420} tam={46} />
+      <Chip T={T} at={K.G + 3.1} until={K.Q - 0.3} texto="glutamato" x={720} y={420} tam={46} borde={GLU} />
+      <Etq T={T} at={K.Q + 1.0} until={K.U - 0.3} x={250} y={680} texto="sodio" lado="der" tam={34} color={NA} />
+      <Etq T={T} at={K.Q + 1.3} until={K.U - 0.3} x={660} y={650} texto="glutamato" lado="der" tam={34} color={GLU} />
       <Chip T={T} at={K.Q + 2.2} until={K.U - 0.3} texto="un aminoácido de las proteínas" y={1570} tam={36} borde={GLU} />
       <Chip T={T} at={K.U + 0.3} until={uOlla - 0.3} texto="glutamato natural" y={1500} tam={42} borde={GLU} />
-      <TarjetaEstudio T={T} at={uOlla} until={uLengua + 0.2} anio="1908" quien="Kikunae Ikeda · Tokio" revista="caldo de alga (kombu)" y={1580} />
-      <Etq T={T} at={uOlla + 0.6} until={uLengua - 0.3} x={780} y={820} texto="Laminaria japonica" it lado="der" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={uOlla} until={uLengua + 0.2} anio="1908" quien="Kikunae Ikeda · Tokio" revista="caldo de alga (kombu)" y={330} />
+      <Etq T={T} at={uOlla + 0.6} until={uLengua - 0.3} x={700} y={800} texto="Laminaria japonica" it lado="der" tam={27} color={KC.ink} />
       <Chip T={T} at={uLengua + 0.6} until={K.Gr - 0.3} texto="el sabor umami" y={1500} tam={44} borde={GLU} />
       <Etq T={T} at={K.Gr + 0.6} until={grBarras - 0.3} x={520} y={700} texto="tu intestino" lado="der" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Gr + 1.2} until={grBarras - 0.3} texto="la proteína suelta glutamato" x={620} y={1500} tam={34} borde={GLU} />
       <Chip T={T} at={grBarras + 0.6} until={K.Pr - 0.3} texto="FDA · adulto promedio, al día" y={1500} tam={36} borde={KC.blue} />
-      <TarjetaEstudio T={T} at={K.Ca + 0.2} until={K.Ca + 3.0} anio="1968" quien="carta al editor" revista="New England Journal of Medicine" y={1580} />
+      <TarjetaEstudio T={T} at={K.Ca + 0.2} until={K.Ca + 3.0} anio="1968" quien="carta al editor" revista="New England Journal of Medicine" y={330} />
       <Chip T={T} at={K.Ca + 3.6} until={K.So - 0.3} texto="cuello entumido · palpitaciones" y={1500} tam={36} borde={KC.red} />
       <Chip T={T} at={K.So + 3.4} until={K.Es - 0.3} texto="nace la mala fama" y={1500} tam={44} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={eGrid} anio="2000" quien="Geha et al. · Harvard (Boston) y otros centros" revista="doble ciego · J Allergy Clin Immunol" y={760} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={eGrid} anio="2000" quien="Geha et al. · Harvard (Boston) y otros centros" revista="doble ciego · J Allergy Clin Immunol" y={330} />
       <Chip T={T} at={eGrid + 0.4} until={eGlu - 0.2} texto="130 personas · 5 g o placebo" y={1500} tam={38} borde={KC.ink} />
       <Chip T={T} at={eGlu + 0.2} until={eRep - 0.2} texto="sin comida · glutamato: 50 de 130" y={1500} tam={34} borde={GLU} />
       <Chip T={T} at={ePla + 0.2} until={eRep - 0.2} texto="placebo: 17 de 130" y={1600} tam={34} borde={KC.cyan} />
