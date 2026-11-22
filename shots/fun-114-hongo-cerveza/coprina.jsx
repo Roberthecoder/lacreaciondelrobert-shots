@@ -290,7 +290,7 @@ function CoprinaShot() {
       <Escena T={T} a={K.Cp} b={K.E} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<CoprinaMol x={740} y={920} s={1.18} parte={kprog(T, K.Cp + 0.5, K.Cp + 1.6)} T={T} />)}
+        {fsvg(<CoprinaMol x={735} y={1070} s={1.27} parte={kprog(T, K.Cp + 0.5, K.Cp + 1.6)} T={T} />)}
       </Escena>
       {/* 5 · bloquea la aldehído deshidrogenasa (hígado) */}
       <Escena T={T} a={K.E} b={K.P} zoom={0.05}>
@@ -386,8 +386,8 @@ function CoprinaShot() {
       <Etq T={T} at={K.Ti + 1.2} until={K.Co - 0.3} x={560} y={672} texto="esporas negras, 8–11 µm" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Co + 0.2} until={K.Cp - 0.25} texto="se considera comestible de joven" x={540} y={340} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.Cp + 0.1} until={K.E - 0.3} texto="POR DENTRO · tu cuerpo" x={540} y={400} tam={34} mono borde={KC.gold} />
-      <Etq T={T} at={K.Cp + 0.3} until={K.Cp + 1.5} x={190} y={700} texto="coprina" tam={38} color={KC.gold2} />
-      <Etq T={T} at={K.Cp + 1.6} until={K.E - 0.3} x={1040} y={1080} lado="izq" texto="1-aminociclopropanol" tam={36} color={KC.gold2} />
+      <Etq T={T} at={K.Cp + 0.3} until={K.Cp + 1.5} x={190} y={880} texto="coprina" tam={38} color={KC.gold2} />
+      <Etq T={T} at={K.Cp + 1.6} until={K.E - 0.3} x={1040} y={1230} lado="izq" texto="1-aminociclopropanol" tam={36} color={KC.gold2} />
       <Chip T={T} at={K.E + 0.1} until={K.P - 0.3} texto="POR DENTRO · hígado" x={540} y={330} tam={34} mono borde={KC.gold} />
       <Etq T={T} at={K.E + 0.5} until={K.P - 0.3} x={60} y={1390} texto="aldehído deshidrogenasa (ALDH)" tam={34} color={CA.acetato} />
       <Etq T={T} at={K.E + 2.6} until={K.P - 0.3} x={690} y={590} texto="bloqueada" tam={38} color={KC.gold2} />
