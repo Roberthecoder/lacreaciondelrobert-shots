@@ -244,10 +244,11 @@ function GatosShot() {
       {/* 4 · pregunta: sale por la gatera */}
       <Escena T={T} a={K.P} b={K.Ca} zoom={0.08}>
         <FondoLunares color={KC.orange} />
-        {svg(<><rect x={-20} y={830} width={KW + 40} height={590} fill="#4a3f35" stroke={KC.ink} strokeWidth={6} />
+        {svg(<><rect x={-20} y={830} width={KW + 40} height={640} fill="#4a3f35" stroke={KC.ink} strokeWidth={6} />
           <text x={790} y={770} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 790 600)`}>?</text>
+          <g transform="translate(540 1470) scale(1.4) translate(-460 -1420)">
           <g transform="translate(250 1414) scale(2.1)"><Gatera T={T} x={0} y={0} abre={Math.sin((T - K.P) * 7) * Math.exp(-(T - K.P) * 1.2)} /></g>
-          <Gato x={klerp(270, 700, kprog(T, K.P + 0.1, K.P + 1.4, kEase.sale))} y={1420} s={1.15} T={T} collar={KC.red} /></>)}
+          <Gato x={klerp(270, 620, kprog(T, K.P + 0.1, K.P + 1.4, kEase.sale))} y={1420} s={1.15} T={T} collar={KC.red} /></g></>)}
       </Escena>
       {/* 5 · cámaras en el collar (KittyCam) */}
       <Escena T={T} a={K.Ca} b={K.R}>
@@ -259,6 +260,7 @@ function GatosShot() {
       {/* 6 · ¿a dónde fueron las presas? 23 / 49 / 28 */}
       <Escena T={T} a={K.R} b={K.L}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
+        {svg(<g opacity={0.2}><Gato x={470} y={1270} s={2.2} T={T} collar={KC.red} camara /></g>)}
         {svg(Array.from({ length: 100 }, (_, i) => { const cx = 144 + (i % 10) * 88, cy = 520 + Math.floor(i / 10) * 76;
           return <circle key={i} cx={cx} cy={cy} r={27} fill={colorCelda(i)} stroke={KC.ink} strokeWidth={i < n23 || (i >= 23 && i < 23 + n49) || (i >= 72 && i < 72 + n28) ? 3.5 : 0} />; }))}
       </Escena>
@@ -267,7 +269,7 @@ function GatosShot() {
         <FondoLunares color={KC.mint} />
         {svg(<g transform="translate(0 90)"><path d="M -20 1006 C 300 986 600 1026 1100 986" stroke="#7a4a22" strokeWidth={44} fill="none" strokeLinecap="round" />
           <path d="M 760 990 q 60 -60 140 -70" stroke="#7a4a22" strokeWidth={14} fill="none" strokeLinecap="round" />
-          <Anolis x={klerp(420, 600, kprog(T, K.L + 0.1, K.L + 1.0, kEase.sale))} y={940} s={2.3} T={T} papada={kprog(T, K.L + 1.4, K.L + 1.8)} /></g>)}
+          <Anolis x={klerp(440, 580, kprog(T, K.L + 0.1, K.L + 1.0, kEase.sale))} y={950} s={3.2} T={T} papada={kprog(T, K.L + 1.4, K.L + 1.8)} /></g>)}
       </Escena>
       {/* 8 · UICN: entre las 100 peores especies invasoras */}
       <Escena T={T} a={K.I} b={K.Co}>
