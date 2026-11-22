@@ -233,10 +233,15 @@ function Pajaros() {
         <Chip T={T} at={K.Nada + 3.4} until={K.Pregunta - 0.2} texto="el cable conduce mucho mejor" x={540} y={1330} tam={40} borde={KC.yellow} />
       </Escena>
       {/* 4 · ¿y cuándo sí? */}
-      {/* (pase a mano: el «?» baja junto al pajarito, que sigue detrás, en vez de quedar arriba a la izquierda) */}
+      {/* (pase a mano: el pajarito sigue en su cable y el «?» baja junto a él, en vez de quedar solo arriba a la izquierda) */}
       <Escena T={T} a={K.Pregunta} b={K.Dos} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        <Lienzo><text x={820} y={1470} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={14}
+        <Lienzo>
+          <path d={`M -20 ${CY} L 1100 ${CY}`} stroke={KC.ink} strokeWidth={58} />
+          <path d={`M -20 ${CY} L 1100 ${CY}`} stroke={PJ_CABLE} strokeWidth={44} />
+          <path d={`M -20 ${CY - 12} L 1100 ${CY - 12}`} stroke="#4a505c" strokeWidth={8} />
+          <Pajarito x={540} y={CY - 18} s={3.6} T={T} ojos="cerrados" />
+          <text x={820} y={1470} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={14}
           transform={`rotate(${Math.sin(T * 3) * 6} 820 1270) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 520px ${KF.titulo}`, transformOrigin:'820px 1270px' }}>?</text></Lienzo>
       </Escena>
       {/* 5 · toca dos cosas a la vez: le abre un camino (dibujo de advertencia) */}
