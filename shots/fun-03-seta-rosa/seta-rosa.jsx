@@ -41,49 +41,49 @@ function SetaNarrado() {
       <Precarga srcs={FOTOS} />
       {/* 0 · gancho: la foto real entra girando; "plástico" y "coral" se tachan */}
       <Escena T={T} a={K.G} b={K.Es} fondo={KC.pink} zoom={0.03}>
-        <div style={fondoPuntos(KC.pink)}></div>
-        <FotoRecorte T={T} at={K.G + 0.02} src={FOTO('racimo1')} x={400} y={860} w={520} h={700} rot={-3} seed={1} zoom={0.1} />
+        <FondoMarca color={KC.pink} />
+        <FotoRecorte T={T} at={K.G + 0.02} src={FOTO('racimo1')} x={540} y={940} w={760} h={1023} rot={-3} seed={1} zoom={0.1} />
       </Escena>
       {/* 1 · la especie */}
       <Escena T={T} a={K.Es} b={K.Ep} fondo={KC.mint}>
-        <div style={fondoPuntos(KC.mint)}></div>
-        <FotoRecorte T={T} at={K.Es} src={FOTO('racimo2')} x={380} y={800} w={470} h={633} rot={-4} seed={2} />
-        <FotoRecorte T={T} at={K.Es + 1.2} src={FOTO('laminillas')} x={790} y={960} w={340} h={340} rot={5} seed={3} />
+        <FondoMarca color={KC.mint} />
+        <FotoRecorte T={T} at={K.Es} src={FOTO('racimo2')} x={360} y={900} w={600} h={808} rot={-4} seed={2} />
+        <FotoRecorte T={T} at={K.Es + 1.2} src={FOTO('laminillas')} x={790} y={1120} w={440} h={440} rot={5} seed={3} />
       </Escena>
       {/* 2 · esporada: dibujo de la seta soltando esporas alargadas + la foto */}
       <Escena T={T} a={K.Ep} b={K.Pl} fondo={KC.yellow}>
-        <div style={fondoPuntos(KC.yellow)}></div>
-        <FotoRecorte T={T} at={K.Ep + 0.1} src={FOTO('racimo_video')} x={540} y={1010} w={720} h={405} rot={2} seed={4} />
+        <FondoMarca color={KC.yellow} />
+        <FotoRecorte T={T} at={K.Ep + 0.1} src={FOTO('racimo_video')} x={540} y={1150} w={900} h={506} rot={2} seed={4} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:39 }}>
-          <g transform="translate(300 470) scale(1 -1)"><SetaOstra s={1.9} abre={1} rot={-8} color={ROSA} oscuro={ROSA2} /></g>
-          {Array.from({ length: 30 }, (_, i) => { const u = ((T - K.Ep) * 0.5 + i / 30) % 1; return <EsporaPl key={i} x={440 + (i % 6) * 36 + Math.sin(u * 6 + i) * 20} y={520 + u * 300} s={1.4} rot={i * 40 + T * 60} o={Math.sin(Math.PI * u)} />; })}
+          <g transform="translate(330 640) scale(1 -1)"><SetaOstra s={1.9} abre={1} rot={-8} color={ROSA} oscuro={ROSA2} /></g>
+          {Array.from({ length: 30 }, (_, i) => { const u = ((T - K.Ep) * 0.5 + i / 30) % 1; return <EsporaPl key={i} x={440 + (i % 6) * 36 + Math.sin(u * 6 + i) * 20} y={690 + u * 300} s={1.4} rot={i * 40 + T * 60} o={Math.sin(Math.PI * u)} />; })}
         </svg>
       </Escena>
       {/* 3 · placa de agar: foto + lupa de rayos X con el micelio que nace */}
       <Escena T={T} a={K.Pl} b={K.Gr} fondo={KC.cyan}>
-        <div style={fondoPuntos(KC.cyan)}></div>
-        <FotoRecorte T={T} at={K.Pl + 0.05} src={FOTO('placa')} x={350} y={1000} w={480} h={411} rot={-3} seed={5} />
+        <FondoMarca color={KC.cyan} />
+        <FotoRecorte T={T} at={K.Pl + 0.05} src={FOTO('placa')} x={380} y={1130} w={640} h={548} rot={-3} seed={5} />
       </Escena>
       {/* 4 · grano y sustrato: línea de tiempo con las fechas reales */}
       <Escena T={T} a={K.Gr} b={K.P} fondo={KC.lilac}>
-        <div style={fondoPuntos(KC.lilac)}></div>
-        <FotoRecorte T={T} at={K.Gr + 0.05} src={FOTO('grano')} x={330} y={800} w={440} h={346} rot={-4} seed={6} pie="15 mar" />
-        <FotoRecorte T={T} at={K.Gr + 1.4} src={FOTO('primordios')} x={720} y={1030} w={440} h={330} rot={4} seed={7} pie="19 abr" />
+        <FondoMarca color={KC.lilac} />
+        <FotoRecorte T={T} at={K.Gr + 0.05} src={FOTO('grano')} x={360} y={830} w={600} h={472} rot={-4} seed={6} pie="15 mar" />
+        <FotoRecorte T={T} at={K.Gr + 1.4} src={FOTO('primordios')} x={700} y={1180} w={600} h={450} rot={4} seed={7} pie="19 abr" />
       </Escena>
       {/* 5-8 · la bolsa: pregunta, aire, humedad, calor */}
       <Escena T={T} a={K.P} b={K.R} fondo={KC.mint} zoom={0.02}>
-        <div style={fondoPuntos(KC.mint)}></div>
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+        <FondoMarca color={KC.mint} />
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><g transform="translate(540 1060) scale(1.22) translate(-540 -1060)">
           <BolsaCultivo T={T} x={540} y={1060} w={430} h={600} col={1} rayos={kprog(T, K.P + 0.3, K.P + 1) * (1 - kprog(T, K.A, K.A + 0.8))} />
           {/* con CO₂ alto: pie largo y sombrero chico (deforme); con aire fresco: sombreros normales */}
-          {T > K.A && <g opacity={1 - kprog(T, K.A + 3.8, K.A + 4.4)}><RacimoOstra T={T} x={720} y={860} s={1.3} abre={0.35} pie={3.2} n={5} color={ROSA} oscuro={ROSA2} /></g>}
-          {T > K.A + 3.8 && <RacimoOstra T={T} x={720} y={860} s={klerp(1.3, 1.6, abreH)} abre={0.5 + 0.5 * abreH} pie={1} n={7} color={ROSA} oscuro={ROSA2} />}
+          {T > K.A && <g opacity={1 - kprog(T, K.A + 3.8, K.A + 4.4)}><RacimoOstra T={T} x={690} y={860} s={1.3} abre={0.35} pie={3.2} n={5} color={ROSA} oscuro={ROSA2} /></g>}
+          {T > K.A + 3.8 && <RacimoOstra T={T} x={690} y={860} s={klerp(1.3, 1.45, abreH)} abre={0.5 + 0.5 * abreH} pie={1} n={7} color={ROSA} oscuro={ROSA2} />}
           {/* luz (ventana) */}
           {T > K.H && <g opacity={kprog(T, K.H + 0.5, K.H + 1.2)}>{Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${-40 + i * 30} ${300 + i * 12} L ${700} ${720 + i * 50}`} stroke="#fff9c4" strokeWidth={22} opacity={0.25 + 0.1 * Math.sin(T * 2 + i)} />)}</g>}
           {/* gotitas de humedad */}
           {T > K.H && Array.from({ length: 20 }, (_, i) => { const u = ((T - K.H) * 0.35 + i / 20) % 1; return <circle key={i} cx={120 + (i * 47) % 860} cy={380 + u * 900} r={7} fill="#fff" opacity={0.7 * Math.sin(Math.PI * u)} />; })}
-        </svg>
-        <Lupa T={T} at={K.P + 0.3} until={K.A - 0.2} x={540} y={600} r={230} fx={540} fy={1060} etiqueta="POR DENTRO · bolsa" tinte={KC.cyan}
+        </g></svg>
+        <Lupa T={T} at={K.P + 0.3} until={K.A - 0.2} x={540} y={520} r={230} fx={540} fy={1060} etiqueta="POR DENTRO · bolsa" tinte={KC.cyan}
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#3a2614" />{Array.from({ length: 24 }, (_, i) => <rect key={i} x={(i * 53) % (r * 2)} y={(i * 97) % (r * 2)} width={34} height={12} rx={3} fill="#a86d2c" transform={`rotate(${i * 37} ${(i * 53) % (r * 2)} ${(i * 97) % (r * 2)})`} />)}<MicelioRadial r={r} p={1} seed={4} /></svg>} />
         <Medidor T={T} at={K.A + 0.6} until={K.H - 0.2} etiqueta="CO₂ EN LA BOLSA" valor={co2} texto={(v) => (v > 0.5 ? 'alto' : 'bajo')} y={330} color={KC.red} />
         <Medidor T={T} at={K.H + 0.2} until={K.C - 0.2} etiqueta="HUMEDAD" valor={(t) => 0.9 * kprog(t, K.H + 0.3, K.H + 2)} texto={(v) => Math.round(v * 100) + ' %'} y={330} color={KC.cyan} />
@@ -91,38 +91,38 @@ function SetaNarrado() {
       </Escena>
       {/* 8 · calor: termómetro */}
       <Escena T={T} a={K.C} b={K.R} fondo={KC.orange}>
-        <div style={fondoPuntos(KC.orange)}></div>
-        <Termometro T={T} x={330} y={420} valor={klerp(8, 27, kprog(T, K.C + 0.2, K.C + 2, kEase.sale))} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><RacimoOstra T={T} x={760} y={1000} s={1.8} abre={kprog(T, K.C + 1, K.C + 3)} n={7} color={ROSA} oscuro={ROSA2} /></svg>
+        <FondoMarca color={KC.orange} />
+        <Termometro T={T} x={300} y={560} valor={klerp(8, 27, kprog(T, K.C + 0.2, K.C + 2, kEase.sale))} />
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><RacimoOstra T={T} x={740} y={1100} s={2.0} abre={0.15 + 0.85 * kprog(T, K.C + 1, K.C + 3)} n={7} color={ROSA} oscuro={ROSA2} /></svg>
       </Escena>
       {/* 9 · el rosa: estudio + primordios intensos que se aclaran */}
       <Escena T={T} a={K.R} b={K.Ci} fondo={KC.lilac}>
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'repeating-linear-gradient(45deg, rgba(255,255,255,.12) 0 24px, transparent 24px 48px)' }}></div>
-        <TarjetaEstudio T={T} at={K.R + 0.3} until={K.R + 3.6} anio="2017" quien="Dulce Salmones · INECOL, Xalapa" revista="Scientia Fungorum 46: 73–85" y={740} />
-        {T > K.R + 3.6 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+        <FondoMarca color={KC.lilac} />
+        <TarjetaEstudio T={T} at={K.R + 0.3} until={K.R + 3.6} anio="2017" quien="Dulce Salmones · INECOL, Xalapa" revista="Scientia Fungorum 46: 73–85" y={420} />
+        {<svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:0.45 + 0.55 * kprog(T, K.R + 3.3, K.R + 4.0) }}>
           {(() => { const m = kprog(T, K.R + 4.4, K.R + 6.6, kEase.suave); return <>
-            <RacimoOstra T={T} x={270} y={1000} s={1.0} abre={0.45} n={6} color="#ff4f86" oscuro="#c93a6a" />
-            <path d="M 470 900 L 600 900" stroke={KC.ink} strokeWidth={10} markerEnd="" /><path d="M 590 875 L 630 900 L 590 925" fill="none" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
-            <RacimoOstra T={T} x={800} y={1000} s={1.2} abre={1} n={7} color={mixHex('#ff5f8f', '#f8d2dc', m)} oscuro={mixHex('#c93a6a', '#e7aebe', m)} />
+            <RacimoOstra T={T} x={260} y={1100} s={1.3} abre={0.45} n={6} color="#ff4f86" oscuro="#c93a6a" />
+            <g opacity={kprog(T, K.R + 3.6, K.R + 4.0)}><path d="M 480 980 L 600 980" stroke={KC.ink} strokeWidth={10} markerEnd="" /><path d="M 590 955 L 630 980 L 590 1005" fill="none" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" /></g>
+            <RacimoOstra T={T} x={790} y={1100} s={1.6} abre={1} n={7} color={mixHex('#ff5f8f', '#f8d2dc', m)} oscuro={mixHex('#c93a6a', '#e7aebe', m)} />
           </>; })()}
         </svg>}
       </Escena>
       {/* 10 · cierre: la misma foto del inicio, con la lupa en la base (micelio escondido) */}
       <Escena T={T} a={K.Ci} b={FIN} fondo={KC.pink}>
-        <div style={fondoPuntos(KC.pink)}></div>
-        <FotoRecorte T={T} at={K.Ci - 0.5} src={FOTO('racimo1')} x={400} y={860} w={520} h={700} rot={-3} seed={1} zoom={0.04} />
+        <FondoMarca color={KC.pink} />
+        <FotoRecorte T={T} at={K.Ci - 0.5} src={FOTO('racimo1')} x={540} y={940} w={760} h={1023} rot={-3} seed={1} zoom={0.04} />
       </Escena>
 
       {/* textos sobre las escenas */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.Es - 0.3} texto="¿plástico?" x={300} y={330} tam={44} />
-      <MitoTachado T={T} at={K.G + 0.8} tacharEn={K.G + 2.0} until={K.Es - 0.3} texto="¿coral?" x={300} y={440} tam={44} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.Es - 0.3} texto="¿plástico?" x={300} y={250} tam={44} />
+      <MitoTachado T={T} at={K.G + 0.8} tacharEn={K.G + 2.0} until={K.Es - 0.3} texto="¿coral?" x={300} y={350} tam={44} />
       <Chip T={T} at={K.G + 2.6} until={K.Es - 0.2} texto="un hongo vivo" y={1500} x={400} borde={KC.mint} tam={44} />
       <Etq T={T} at={K.Es + 0.6} until={K.Ep - 0.2} x={640} y={420} texto="Pleurotus djamor" it color={KC.ink} />
       <Chip T={T} at={K.Es + 2.2} until={K.Ep - 0.2} texto="silvestre en México y el trópico" y={1500} x={400} borde={KC.gold} tam={38} />
-      <Etq T={T} at={K.Ep + 1.4} until={K.Pl - 0.2} x={700} y={620} texto="esporas (≈ 8 µm)" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ep + 0.2} until={K.Ep + 2.6} texto="micelio en aserrín pasteurizado" y={420} borde={KC.mint} tam={36} />
+      <Etq T={T} at={K.Ep + 1.4} until={K.Pl - 0.2} x={700} y={790} texto="esporas (≈ 8 µm)" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Ep + 0.2} until={K.Ep + 2.6} texto="micelio en aserrín pasteurizado" y={330} borde={KC.mint} tam={36} />
       <Chip T={T} at={K.Ep + 2.4} until={K.Pl - 0.2} texto="esporada · 3 feb 2026" y={1500} x={400} borde={KC.pink} tam={38} />
-      <Lupa T={T} at={K.Pl + 0.7} until={K.Gr - 0.3} x={720} y={560} r={250} fx={360} fy={1000} etiqueta="AL MICROSCOPIO · agar" tinte={KC.mint}
+      <Lupa T={T} at={K.Pl + 0.7} until={K.Gr - 0.3} x={730} y={600} r={260} fx={380} fy={1130} etiqueta="AL MICROSCOPIO · agar" tinte={KC.mint}
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#e7cf8f" opacity=".25" /><MicelioRadial r={r} p={kprog(t, K.Pl + 1, K.Gr - 0.3)} /><g transform={`translate(${r} ${r})`}><EsporaPl x={0} y={0} s={1.6} /></g></svg>} />
       <Chip T={T} at={K.Pl + 0.3} until={K.Gr - 0.2} texto="agar PDA · 4 feb" y={1500} x={400} borde={KC.mint} tam={38} />
       <Chip T={T} at={K.Gr + 0.3} until={K.P - 0.2} texto="grano → sustrato → semanas" y={420} borde={KC.gold} tam={38} />
@@ -130,10 +130,10 @@ function SetaNarrado() {
       <MitoTachado T={T} at={K.A + 1.2} tacharEn={K.A + 3.6} until={K.A + 4} texto="mucho CO₂ = deforme" x={540} y={1500} tam={38} />
       <Chip T={T} at={K.H + 2.8} until={K.C - 0.2} texto="la luz abre el sombrero" y={1500} x={400} borde={KC.yellow} tam={36} />
       <Chip T={T} at={K.C + 1.8} until={K.R - 0.2} texto="tropical: 22–30 °C" y={1500} x={400} borde={KC.red} tam={44} />
-      <Etq T={T} at={K.R + 4.4} until={K.Ci - 0.2} x={300} y={1100} texto="primordio" lado="der" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.R + 5.4} until={K.Ci - 0.2} x={760} y={1120} texto="adulta" lado="der" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.R + 4.4} until={K.Ci - 0.2} x={150} y={1260} texto="primordio" lado="der" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.R + 5.4} until={K.Ci - 0.2} x={700} y={1290} texto="adulta" lado="der" tam={30} color={KC.ink} />
       <Chip T={T} at={K.R + 4} until={K.Ci - 0.2} texto="¿por qué se pierde el rosa? sin resolver" y={420} borde={KC.pink} tam={36} />
-      <Lupa T={T} at={K.Ci + 0.8} until={K.O - 0.1} x={760} y={760} r={170} fx={480} fy={1180} etiqueta="micelio" tinte={KC.mint}
+      <Lupa T={T} at={K.Ci + 0.8} until={K.O - 0.1} x={790} y={720} r={200} fx={480} fy={1250} etiqueta="micelio" tinte={KC.mint}
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#3a2614" /><MicelioRadial r={r} p={1} seed={4} /></svg>} />
       <Chip T={T} at={K.Ci + 0.3} until={K.O} texto="no es plástico: es un fruto" y={330} borde={KC.mint} tam={40} />
 
