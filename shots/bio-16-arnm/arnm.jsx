@@ -147,7 +147,7 @@ function Medalla({ T, x, y, r = 220, s = 1 }) {
     <circle r={r - 28} fill={KC.gold2} stroke="#b37a10" strokeWidth={6} />
     {[-1, 1].map((sd) => Array.from({ length: 7 }, (_, i) => { const a = (Math.PI / 2) + sd * (0.35 + i * 0.3);
       return <ellipse key={sd + '' + i} cx={Math.cos(a) * (r - 58)} cy={Math.sin(a) * (r - 58)} rx={12} ry={24} fill="#c88a1a" transform={`rotate(${(a * 180) / Math.PI} ${Math.cos(a) * (r - 58)} ${Math.sin(a) * (r - 58)})`} />; }))}
-    <text x={0} y={-10} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill={KC.ink}>NOBEL</text>
+    <text x={0} y={-10} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill="#0b1020">NOBEL</text>
     <text x={0} y={80} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill="#8a5a00">2023</text>
   </g>;
 }
@@ -198,8 +198,8 @@ function Arnm() {
   // inflamación
   const alarma = kprog(T, Al + 1.8, Al + 2.4) * (1 - kprog(T, Ag + 0.3, Ag + 2.0, kEase.suave));
   // escala real (aprox., el dibujo es esquemático): [desde, hasta, px por mm]
-  const ESC = [[G, Bu + 0.4, 4], [Bu + 0.4, En, 1.2e6], [En, Ri, 1.8e6], [Ri, Ap, 4.5e6], [Ap, Pr, 5e4], [Pr, Nu, 2.7e4], [Nu, Al, 5e4],
-    [Al, Es, 2e4], [Es, Ag, 1.2e8], [Ag, Tr, 2e4], [Tr, No, 1.2e8], [No, Ci, 7], [Ci, Ou, 4]];
+  const ESC = [[G, Bu + 0.4, 4], [Bu + 0.4, En, 1.2e6 * 340 / 280], [En, Ri, 1.8e6], [Ri, Ap, 4.5e6], [Ap, Pr, 5e4], [Pr, Nu, 2.7e4 * 1.3], [Nu, Al, 5e4],
+    [Al, Es, 2e4], [Es, Ag, 1.2e8], [Ag, Tr, 2e4], [Tr, No, 1.2e8 * 1.5], [No, Ci, 7 * 1.3], [Ci, Ou, 4]];
   const esc = ESC.find(([a, b]) => T >= a && T < b);
   const UCAMBIA = [1, 5, 6, 9];
   return (
@@ -213,12 +213,12 @@ function Arnm() {
           {emb > 0 && emb < 1 && <circle cx={PX} cy={PY} r={16 + emb * 30} fill="rgba(255,244,176,.5)" />}
         </Capa>
       </Escena>
-      <Lupa T={T} at={Bu + 0.1} until={En - 0.25} x={600} y={640} r={280} fx={PX} fy={PY} tinte={KC.yellow} etiqueta="AL MICROSCOPIO · la vacuna"
-        interior={(t, r) => <svg width={2 * r} height={2 * r}>
-          <Nanoparticula T={t} x={r} y={r} r={110} seed={2} />
-          <Nanoparticula T={t} x={r - 175 + Math.sin(t) * 8} y={r - 140} r={58} seed={5} rot={40} />
-          <Nanoparticula T={t} x={r + 170} y={r + 150 + Math.cos(t) * 8} r={64} seed={9} rot={-30} />
-        </svg>} />
+      <Lupa T={T} at={Bu + 0.1} until={En - 0.25} x={560} y={1150} r={340} fx={PX} fy={PY} tinte={KC.yellow} etiqueta="AL MICROSCOPIO · la vacuna"
+        interior={(t, r) => <svg width={2 * r} height={2 * r}><g transform={`scale(${r / 280})`}>
+          <Nanoparticula T={t} x={280} y={280} r={110} seed={2} />
+          <Nanoparticula T={t} x={280 - 175 + Math.sin(t) * 8} y={280 - 140} r={58} seed={5} rot={40} />
+          <Nanoparticula T={t} x={280 + 170} y={280 + 150 + Math.cos(t) * 8} r={64} seed={9} rot={-30} />
+        </g></svg>} />
       {/* 2 · la burbuja entra a la célula y suelta el mensaje */}
       <Escena T={T} a={En} b={Ri} zoom={0.04}>
         <FondoMarca patron="oscuro" />
@@ -268,12 +268,14 @@ function Arnm() {
       <Escena T={T} a={Pr} b={Nu} zoom={0.08} origen="30% 45%">
         <FondoMarca patron="oscuro" />
         <Capa>
+          <g transform="translate(420 1010) scale(1.3) translate(-290 -900)">
           <ellipse cx={290} cy={900} rx={260} ry={340} fill="#3a1f2c" stroke={MEMB} strokeWidth={20} />
           <circle cx={270} cy={960} r={110} fill="#1f2f5c" stroke="#7fb3ff" strokeWidth={10} />
           <ADNNucleo T={T} x={270} y={960} r={110} />
           <text x={270} y={830} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#7fb3ff" opacity={kprog(T, Pr + 0.4, Pr + 0.8)}>núcleo · ADN</text>
           <HebraARN T={T} x={160} y={660} largo={220} n={9} amp={8} grosor={6} />
-          <text x={760} y={500} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 760 380)`} opacity={kprog(T, Pr, Pr + 0.4)}>?</text>
+          </g>
+          <text x={870} y={1110} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 870 990)`} opacity={kprog(T, Pr, Pr + 0.4)}>?</text>
         </Capa>
 
       </Escena>
@@ -335,7 +337,7 @@ function Arnm() {
       {/* 10 · el truco: tu propio ARN ya trae letras modificadas */}
       <Escena T={T} a={Tr} b={No} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <Capa>
+        <Capa><g transform="translate(540 960) scale(1.5) translate(-280 -870)">
           <text x={60} y={640} style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>el ARN de tu célula</text>
           <Letras T={T} x={40} y={700} letras={'GΨACAΨ'.split('')} p={0} tam={76} />
           <text x={240} y={900} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, Tr + 1.6, Tr + 2.0)}>≈</text>
@@ -343,12 +345,12 @@ function Arnm() {
             <text x={60} y={980} style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>el ARN de la vacuna</text>
             <Letras T={T} x={40} y={1040} letras={'AΨGGCΨ'.split('')} p={0} tam={76} />
           </g>
-        </Capa>
+        </g></Capa>
       </Escena>
       {/* 11 · Nobel 2023 */}
       <Escena T={T} a={No} b={Ci} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        <Capa><Medalla T={T} x={600} y={860} s={kprog(T, No, No + 0.6, kEase.rebote)} /></Capa>
+        <Capa><g transform="translate(540 960) scale(1.3)"><Medalla T={T} x={0} y={0} s={kprog(T, No, No + 0.6, kEase.rebote)} /></g></Capa>
       </Escena>
       {/* 12 · cierre: el mismo brazo, ya entrenado */}
       <Escena T={T} a={Ci} b={FIN} zoom={0.04}>
@@ -363,7 +365,7 @@ function Arnm() {
       {/* textos */}
       <MitoTachado T={T} at={G + 0.2} tacharEn={G + 1.5} until={G + 3.0} texto="trae el virus" x={300} y={470} tam={44} />
       <Chip T={T} at={G + 2.2} until={Bu - 0.2} texto="trae instrucciones" x={300} y={470} tam={42} borde={KC.yellow} />
-      <Chip T={T} at={Bu + 0.8} until={En - 0.3} texto="ARNm + nanopartícula de lípidos" y={1480} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={Bu + 0.8} until={En - 0.3} texto="ARNm + nanopartícula de lípidos" y={430} tam={36} borde={KC.yellow} />
       <Chip T={T} at={En + 0.4} until={Ri - 0.3} texto="una célula del músculo del brazo" y={1480} tam={36} borde={MEMB} />
       <Chip T={T} at={Ri + 1.6} until={Ap - 0.3} texto="proteína espícula" y={1480} tam={42} borde={ESP} />
       <Chip T={T} at={Ap + 1.6} until={Pr - 0.3} texto="aprende a reconocerla" y={1480} tam={42} borde={ANTI} />
@@ -371,7 +373,7 @@ function Arnm() {
       <TarjetaEstudio T={T} at={Es + 0.2} until={Es + 4.0} anio="2005" quien="Karikó y Weissman · U. de Pensilvania" revista="Immunity 23: 165–175" y={640} />
       <Chip T={T} at={Es + 4.4} until={Ag - 0.3} texto="probaron varias letras modificadas" y={1480} tam={36} borde={PSI} />
       <Chip T={T} at={Tr + 0.6} until={No - 0.3} texto="copiar lo que ya hace tu célula" y={1480} tam={36} borde={PSI} />
-      <Chip T={T} at={No + 0.5} until={Ci - 0.2} texto="Katalin Karikó · Drew Weissman" y={1150} tam={40} borde={KC.gold} />
+      <Chip T={T} at={No + 0.5} until={Ci - 0.2} texto="Katalin Karikó · Drew Weissman" y={1340} tam={40} borde={KC.gold} />
       <Chip T={T} at={No + 0.9} until={Ci - 0.2} texto="Fisiología o Medicina" y={1480} tam={40} borde={KC.gold} />
       <Chip T={T} at={Ci + 1.4} until={Ou} texto="un mensaje que se lee y se borra" y={1480} tam={36} borde={KC.yellow} />
       {esc && <Escala T={T} pxPorMm={esc[2]} y={1650} />}
