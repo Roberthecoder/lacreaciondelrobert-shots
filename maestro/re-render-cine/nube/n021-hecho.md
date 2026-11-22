@@ -1,0 +1,3 @@
+# Grupo n021 · pase a mano cine
+
+- fun-57-prototaxites: Gancho/Devónico y Cierre con suelo en y=1500 y tronco 1.55× (regla 8 m y barra 1 m recalculadas, tronco ya visible desde el cuadro 0); Plantas bajada 320 px y personas/plantas sin entrada tardía; Tubos/Hongo: lente más abajo, maraña ya a medio dibujar al entrar, tarjeta 2001 arriba sin tapar; Carbono y Pregunta con tronco, planta y sol grandes; Estudio pedernal 1.2× (barra 5 cm 1.2×); champiñón 1.47× (barra 5 cm 1.47×); Linaje árbol bajado y 1.1×; suelos oscurecidos; etiquetas reacomodadas. Auditores: sin láminas · encuadre bien; pendiente: nada
