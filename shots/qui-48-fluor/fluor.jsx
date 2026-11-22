@@ -142,7 +142,7 @@ function Fluor() {
       {/* 0 · gancho: el buche de agua */}
       <Escena T={T} a={K.G} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 920) scale(1.3) translate(-540 -840)">
           <Lavabo x={540} y={1110} />
           <Cara T={T} x={540} y={800} s={0.8} espuma={espumaG} brillo={1 - kprog(T, K.G + 1.8, K.G + 2.6)} />
           <Chorro T={T} x0={300} y0={640} x1={440} y1={800} color="#8fd3ff" o={inclina} />
@@ -150,19 +150,20 @@ function Fluor() {
           <Chorro T={T} x0={556} y0={895} x1={540} y1={1110} color="rgba(220,240,255,.95)" o={buche} ancho={22} />
           {Array.from({ length: 10 }, (_, i) => { const t0 = K.G + 1.9 + i * 0.22, p = kprog(T, t0, t0 + 0.9);
             return p > 0 && p < 1 ? <IonF key={i} T={T} ph={i} x={555 - p * 15 + Math.sin(i * 2) * 12} y={klerp(890, 1115, p)} r={14} o={1 - p * 0.4} /> : null; })}
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 1 · el esmalte: prismas de cristalitos */}
       <Escena T={T} a={K.E} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa><Muela x={280} y={860} s={0.8} /></SvgCapa>
-        <Lupa T={T} at={K.E + 0.3} until={K.A - 0.2} x={700} y={800} r={230} fx={300} fy={740} interior={(t, r) => <Prismas T={t} r={r} />} tinte={KC.gold2} etiqueta="prismas de cristalitos" />
+        <SvgCapa><Muela x={250} y={900} s={1.15} /></SvgCapa>
+        <Lupa T={T} at={K.E + 0.3} until={K.A - 0.2} x={730} y={840} r={290} fx={273} fy={770} interior={(t, r) => <Prismas T={t} r={r} />} tinte={KC.gold2} etiqueta="prismas de cristalitos" />
       </Escena>
       {/* 2–3 · ácido y flúor en la red de cristalitos */}
       <Escena T={T} a={K.A} b={K.C}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <Ambiente T={T} n={30} />
+          <g transform="translate(540 860) scale(1.35) translate(-540 -860)">
           {HEX.map((h, i) => { const z = ZONA(h), op = z ? 1 - disuelve * 0.75 + rehace * 0.75 : 1;
             return <g key={i}>
               <path d={hexPath(h.x, h.y, 52)} fill={ESMALTE} opacity={op} stroke={z && rehace > 0 ? ORO : '#8f8a7c'} strokeWidth={z && rehace > 0 ? 7 : 4} strokeDasharray={z && disuelve > 0.5 && rehace < 0.5 ? '10 8' : 'none'} />
@@ -170,7 +171,7 @@ function Fluor() {
               <circle cx={h.x + 14} cy={h.y + 10} r={8} fill={KC.orange} stroke={KC.ink} strokeWidth={2} opacity={op} />
             </g>; })}
           {/* azúcar y bacterias */}
-          <rect x={140} y={660} width={70 * (1 - kprog(T, K.A + 0.3, K.A + 1.5))} height={70 * (1 - kprog(T, K.A + 0.3, K.A + 1.5))} fill="#fff" stroke={KC.ink} strokeWidth={5} />
+          <rect x={200} y={590} width={70 * (1 - kprog(T, K.A + 0.3, K.A + 1.5))} height={70 * (1 - kprog(T, K.A + 0.3, K.A + 1.5))} fill="#fff" stroke={KC.ink} strokeWidth={5} />
           {[[300, 720, 0], [540, 690, 2], [780, 730, 4]].map(([x, y, ph], i) => <Bichito key={i} T={T} x={x} y={y} ph={ph} s={1} />)}
           {T > K.A + 1.5 && T < K.F + 0.8 && Array.from({ length: 12 }, (_, i) => { const per = 1.2, t0 = K.A + 1.5 + (i % 4) * 0.3 + Math.floor(i / 4) * per, p = kprog(T, t0, t0 + 1.0);
             const x = [300, 520, 740][i % 3] + (i % 2) * 30; return p > 0 && p < 1 ? <g key={i} opacity={1 - p * 0.3}><circle cx={x} cy={klerp(770, 840, p)} r={20} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
@@ -182,8 +183,9 @@ function Fluor() {
               <text y={6} textAnchor="middle" style={{ font:`700 15px ${KF.mono}` }} fill={KC.ink}>{s.ca ? 'Ca' : 'PO₄'}</text></g>; })}
           {/* el flúor llega en la saliva */}
           {T > K.F && Array.from({ length: 12 }, (_, i) => { const t0 = K.F + 0.2 + i * 0.12, p = kprog(T, t0, t0 + 1.6, kEase.suave), hz = HEX.filter(ZONA)[i % 8];
-            return p > 0 ? <IonF key={i} T={T} ph={i} x={klerp(120 + i * 75, hz.x, p)} y={klerp(560, hz.y - 40, p)} r={16} /> : null; })}
-          <Medidor x={1000} y={650} acido={acido} />
+            return p > 0 ? <IonF key={i} T={T} ph={i} x={klerp(100 + i * 62, hz.x, p)} y={klerp(560, hz.y - 40, p)} r={16} /> : null; })}
+          </g>
+          <Medidor x={1000} y={340} acido={acido} />
         </SvgCapa>
       </Escena>
       {/* 4 · el cristal mete flúor donde había hidroxilo */}
@@ -191,6 +193,7 @@ function Fluor() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <Ambiente T={T} n={24} />
+          <g transform="translate(540 870) scale(1.3) translate(-540 -850)">
           <path d={hexPath(540, 850, 270)} fill="rgba(239,233,218,.12)" stroke={entraF > 0.9 ? ORO : ESMALTE} strokeWidth={10} />
           {Array.from({ length: 6 }, (_, k) => { const a = Math.PI / 6 + k * Math.PI / 3; return <Atomo key={k} x={540 + 270 * Math.cos(a)} y={850 + 270 * Math.sin(a)} r={40} color={QA.Ca} letra="Ca" tam={30} />; })}
           {[0, 2, 4].map((k) => { const a = k * Math.PI / 3, x = 540 + 150 * Math.cos(a), y = 850 + 150 * Math.sin(a);
@@ -200,6 +203,7 @@ function Fluor() {
           {gota > 0 && <g transform={`translate(${540} ${rebota > 0 ? klerp(540, 420, rebota) : klerp(380, 540, gota)})`} opacity={1 - rebota}><circle r={30} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
             <text y={10} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#fff">H⁺</text></g>}
           <Onomato T={T} at={K.C + 3.5} until={K.C + 4.7} x={300} y={540} texto="¡tink!" color={ORO} tam={80} />
+          </g>
         </SvgCapa>
       </Escena>
       {/* 5 · pregunta */}
@@ -209,9 +213,9 @@ function Fluor() {
       </Escena>
       {/* 6 · 1901: Colorado Springs, manchas color chocolate */}
       <Escena T={T} a={K.M} b={mitadM}>
-        <div style={{ position:'absolute', inset:0, background:'#d8c39a' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'#2a2114' }}></div>
         <SvgCapa>
-          <Cara T={T} x={540} y={820} s={0.85} manchas={kprog(T, K.M + 0.8, K.M + 2.2)} />
+          <Cara T={T} x={540} y={960} s={1.1} manchas={kprog(T, K.M + 0.8, K.M + 2.2)} />
           <rect x={0} y={0} width={KW} height={KH} fill="rgba(110,80,40,.12)" />
         </SvgCapa>
       </Escena>
@@ -220,10 +224,10 @@ function Fluor() {
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
           {[[160, 900, 240], [460, 900, 330], [820, 900, 280]].map(([x, y, h], i) => <g key={i}>
-            <path d={`M ${x - h * 0.9} ${y} L ${x} ${y - h} L ${x + h * 0.9} ${y} Z`} fill="#8a8f99" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+            <path d={`M ${x - h * 0.9} ${y} L ${x} ${y - h} L ${x + h * 0.9} ${y} Z`} fill="#6a707c" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
             <path d={`M ${x - h * 0.25} ${y - h * 0.72} L ${x} ${y - h} L ${x + h * 0.25} ${y - h * 0.72} Q ${x} ${y - h * 0.62} ${x - h * 0.25} ${y - h * 0.72} Z`} fill="#fff" /></g>)}
-          <rect x={0} y={900} width={KW} height={240} fill="#446943" stroke={KC.ink} strokeWidth={6} />
-          <g transform={`translate(540 1110) scale(${klerp(0.6, 1.25, kprog(T, mitadM, mitadM + 0.8, kEase.sale))})`}>
+          <rect x={0} y={900} width={KW} height={400} fill="#24402a" stroke={KC.ink} strokeWidth={6} />
+          <g transform={`translate(400 1230) scale(${klerp(0.6, 2.3, kprog(T, mitadM, mitadM + 0.8, kEase.sale))})`}>
             <VasoAgua x={0} y={0} s={1} nivel={0.8} />
             {Array.from({ length: 9 }, (_, i) => <IonF key={i} T={T} ph={i} x={-44 + (i % 3) * 44} y={-40 - Math.floor(i / 3) * 50 + Math.sin(T * 2 + i) * 6} r={13} />)}
           </g>
@@ -232,7 +236,7 @@ function Fluor() {
       {/* 7 · 1945: Grand Rapids, Michigan */}
       <Escena T={T} a={K.Es} b={K.R}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 1240) scale(1.3) translate(-540 -1180)">
           {[[90, 260, KC.pink], [230, 380, KC.cyan], [370, 300, KC.lilac], [930, 330, KC.coral]].map(([x, h, c], i) => <g key={i}>
             <rect x={x - 60} y={1110 - h} width={120} height={h} fill={c} stroke={KC.ink} strokeWidth={7} />
             {Array.from({ length: Math.floor(h / 70) }, (_, k) => <rect key={k} x={x - 34} y={1110 - h + 24 + k * 70} width={68} height={34} fill="#fff6c8" stroke={KC.ink} strokeWidth={4} />)}</g>)}
@@ -242,27 +246,27 @@ function Fluor() {
             <path d="M 530 690 Q 660 600 790 690 Z" fill="#6b8fb3" stroke={KC.ink} strokeWidth={8} />
             <text x={660} y={795} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>AGUA</text>
           </g>
-          {Array.from({ length: 8 }, (_, i) => { const t0 = K.Es + 3.0 + i * 0.25, p = kprog(T, t0, t0 + 0.7); return p > 0 && p < 1 ? <IonF key={i} T={T} ph={i} x={660 + (i % 3 - 1) * 30} y={klerp(520, 720, p)} r={14} /> : null; })}
-          <rect x={0} y={1110} width={KW} height={70} fill="#446943" stroke={KC.ink} strokeWidth={6} />
-        </SvgCapa>
+          {Array.from({ length: 8 }, (_, i) => { const t0 = K.Es + 3.0 + i * 0.25, p = kprog(T, t0, t0 + 0.7); return p > 0 && p < 1 ? <IonF key={i} T={T} ph={i} x={660 + (i % 3 - 1) * 30} y={klerp(560, 720, p)} r={14} /> : null; })}
+          <rect x={-200} y={1110} width={KW + 400} height={70} fill="#24402a" stroke={KC.ink} strokeWidth={6} />
+        </g></SvgCapa>
       </Escena>
       {/* 8 · casi 30 mil escolares, más de 60 % menos caries */}
       <Escena T={T} a={K.R} b={K.N}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <g opacity={1 - kprog(T, mitadR - 0.3, mitadR)}>
+          <g opacity={1 - kprog(T, mitadR - 0.3, mitadR)} transform="translate(545 860) scale(1.2) translate(-545 -840)">
             {Array.from({ length: 30 }, (_, i) => { const t0 = K.R + 0.1 + i * 0.04, e = kprog(T, t0, t0 + 0.3, kEase.sale);
               return <Personita key={i} x={170 + (i % 6) * 150} y={640 + Math.floor(i / 6) * 100} s={1.4 * e} color={[KC.yellow, KC.cyan, KC.mint, KC.pink][i % 4]} />; })}
           </g>
-          {T > mitadR && (() => { const g = kprog(T, mitadR, mitadR + 1.0, kEase.sale), h1 = 380 * g, h2 = 380 * 0.38 * g;
+          {T > mitadR && (() => { const g = kprog(T, mitadR, mitadR + 1.0, kEase.sale), h1 = 560 * g, h2 = 560 * 0.38 * g;
             return <g>
-              <rect x={200} y={1080 - h1} width={240} height={h1} rx={12} fill={KC.coral} stroke={KC.ink} strokeWidth={7} />
-              <rect x={640} y={1080 - h2} width={240} height={h2} rx={12} fill={KC.mint} stroke={KC.ink} strokeWidth={7} />
-              <line x1={160} x2={920} y1={1080} y2={1080} stroke={KC.ink} strokeWidth={8} />
-              <text x={320} y={1125} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>antes del flúor</text>
-              <text x={760} y={1125} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>nacidos después</text>
-              <text x={760} y={1080 - h2 - 30} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} paintOrder="stroke" opacity={kprog(T, mitadR + 0.8, mitadR + 1.2)}>−60 % o más</text>
-              <text x={320} y={1080 - h1 - 24} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink}>caries</text>
+              <rect x={200} y={1180 - h1} width={240} height={h1} rx={12} fill={KC.coral} stroke={KC.ink} strokeWidth={7} />
+              <rect x={640} y={1180 - h2} width={240} height={h2} rx={12} fill={KC.mint} stroke={KC.ink} strokeWidth={7} />
+              <line x1={160} x2={920} y1={1180} y2={1180} stroke={KC.ink} strokeWidth={8} />
+              <text x={320} y={1225} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>antes del flúor</text>
+              <text x={760} y={1225} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>nacidos después</text>
+              <text x={760} y={1180 - h2 - 30} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} paintOrder="stroke" opacity={kprog(T, mitadR + 0.8, mitadR + 1.2)}>−60 % o más</text>
+              <text x={320} y={1180 - h1 - 24} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink}>caries</text>
             </g>; })()}
         </SvgCapa>
       </Escena>
@@ -270,8 +274,8 @@ function Fluor() {
       <Escena T={T} a={K.N} b={K.Ci}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          {T < mitadN + 0.4 && <g opacity={1 - kprog(T, mitadN, mitadN + 0.4)}><Muela x={360} y={820} s={0.95} lineas={kprog(T, K.N + 0.6, K.N + 1.6)} color="#e6d9bd" /></g>}
-          {T > mitadN && <g opacity={kprog(T, mitadN, mitadN + 0.4)}>
+          {T < mitadN + 0.4 && <g opacity={1 - kprog(T, mitadN, mitadN + 0.4)}><Muela x={400} y={840} s={1.6} lineas={kprog(T, K.N + 0.6, K.N + 1.6)} color="#e6d9bd" /></g>}
+          {T > mitadN && <g opacity={kprog(T, mitadN, mitadN + 0.4)} transform="translate(570 900) scale(1.2) translate(-540 -880)">
             <Cepillo x={640} y={760} s={1.15} pasta={T > mitadN + 0.5 ? 'arroz' : null} />
             <text x={300} y={660} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>menos de 3 años</text>
             <text x={300} y={820} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>= grano de arroz</text>
@@ -285,32 +289,32 @@ function Fluor() {
       {/* 10 · cierre: la misma cara, ahora escupe y el flúor se queda */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 920) scale(1.3) translate(-540 -840)">
           <Lavabo x={540} y={1110} />
           <Cara T={T} x={540} y={800} s={0.8} espuma={1 - kprog(T, K.Ci + 0.6, K.Ci + 1.6)} brillo={kprog(T, K.Ci + 1.4, K.Ci + 2.2)} />
           <Chorro T={T} x0={556} y0={895} x1={540} y1={1110} color="rgba(255,255,255,.95)" o={kprog(T, K.Ci + 0.4, K.Ci + 0.7) * (1 - kprog(T, K.Ci + 1.4, K.Ci + 1.8))} ancho={26} />
           <VasoAgua x={230} y={700} s={0.85} nivel={0.75} />
           <Marca x={230} y={500} ok={false} s={0.6} o={kprog(T, K.Ci + 2.4, K.Ci + 2.8)} />
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.4} until={K.G + 4.9} texto="el buche ayuda" x={300} y={420} tam={46} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.4} until={K.G + 4.9} texto="el buche ayuda" x={330} y={350} tam={46} />
       <Chip T={T} at={K.G + 2.6} until={K.E - 0.2} texto="se va el flúor de la pasta" y={1500} tam={42} borde={ORO} />
       <Chip T={T} at={K.E + 1.0} until={K.A - 0.2} texto="apatita = calcio + fosfato" y={1500} tam={42} borde={KC.gold2} />
       <Chip T={T} at={K.A + 0.4} until={K.F - 0.2} texto="bacterias + azúcar → ácido" y={1500} tam={42} borde={KC.red} />
-      <EscalaFija T={T} at={K.A + 0.2} until={K.C - 0.2} texto="100 nm" largo={150} />
+      <EscalaFija T={T} at={K.A + 0.2} until={K.C - 0.2} texto="100 nm" largo={203} y={1330} />
       <Chip T={T} at={K.F + 0.3} until={K.C - 0.2} texto="flúor en la saliva → se reconstruye" y={1500} tam={36} borde={ORO} />
       <Chip T={T} at={K.C + 2.4} until={K.P - 0.2} texto="OH → F: se disuelve menos" y={1500} tam={42} borde={ORO} />
-      <div style={{ position:'absolute', left:60, top:1440, zIndex:40, font:`700 24px ${KF.mono}`, color:KC.texto, opacity: T > K.C + 0.2 && T < K.P - 0.2 ? 0.85 : 0 }}>esquema de la red · no a escala</div>
-      <TarjetaEstudio T={T} at={K.M + 0.2} until={mitadM - 0.3} anio="1901" quien="Frederick McKay · Colorado Springs" revista="manchas color chocolate · NIDCR (NIH)" y={1560} />
-      <Chip T={T} at={K.M + 2.8} until={mitadM - 0.3} texto="manchados… y con menos caries" x={540} y={470} tam={38} borde={CAFE} />
-      <Chip T={T} at={mitadM + 0.1} until={K.Es - 0.3} texto="30 años después" x={330} y={560} tam={50} borde={ORO} />
-      <Etq T={T} at={mitadM + 1.2} until={K.Es - 0.3} x={700} y={960} texto="flúor natural de más" tam={34} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.9} anio="1945" quien="Grand Rapids, Michigan" revista="primera ciudad con agua fluorada · NIDCR" y={640} />
+      <div style={{ position:'absolute', left:60, top:1385, zIndex:40, font:`700 24px ${KF.mono}`, color:KC.texto, opacity: T > K.C + 0.2 && T < K.P - 0.2 ? 0.85 : 0 }}>esquema de la red · no a escala</div>
+      <TarjetaEstudio T={T} at={K.M + 0.2} until={mitadM - 0.3} anio="1901" quien="Frederick McKay · Colorado Springs" revista="manchas color chocolate · NIDCR (NIH)" y={330} />
+      <Chip T={T} at={K.M + 2.8} until={mitadM - 0.3} texto="manchados… y con menos caries" x={540} y={1400} tam={38} borde={CAFE} />
+      <Chip T={T} at={mitadM + 0.1} until={K.Es - 0.3} texto="30 años después" x={540} y={450} tam={50} borde={ORO} />
+      <Etq T={T} at={mitadM + 1.2} until={K.Es - 0.3} x={590} y={1000} texto="flúor natural de más" tam={32} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.9} anio="1945" quien="Grand Rapids, Michigan" revista="primera ciudad con agua fluorada · NIDCR" y={330} />
       <Chip T={T} at={K.Es + 3.0} until={K.R - 0.2} texto="flúor medido en el agua de la ciudad" y={1500} tam={36} borde={ORO} />
       <Chip T={T} at={K.R + 0.3} until={K.N - 0.2} texto="≈ 30 000 escolares · 15 años" y={1500} tam={42} borde={KC.mint} />
-      <Etq T={T} at={K.N + 1.0} until={mitadN} x={560} y={860} texto="fluorosis leve" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.0} until={mitadN} x={650} y={800} texto="fluorosis leve" tam={34} color={KC.ink} />
       <Chip T={T} at={K.N + 0.3} until={K.Ci - 0.2} texto="niños: que la escupan, no la traguen" y={1500} tam={36} borde={KC.red} />
       <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="escupe ✓ · enjuague luego luego ✗" y={1500} tam={38} borde={ORO} />
 
