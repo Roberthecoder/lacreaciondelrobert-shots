@@ -184,50 +184,50 @@ function Lengua17() {
         <FondoLunares color={KC.pink} />
         <Lienzo>
           <g transform={`translate(0 ${(1 - kprog(T, 0, 0.5, kEase.rebote)) * -900})`}>
-            <Poster x={380} y={790} s={0.88}>
+            <Poster x={540} y={980} s={1.3}>
               <Lengua id="g" x={0} y={50} s={0.78} T={T} mapa={1} fronteras={1} etiquetas={1}
                 zonasOn={(k) => kprog(T, 0.3 + ['amargo', 'acido', 'salado', 'dulce'].indexOf(k) * 0.3, 0.55 + ['amargo', 'acido', 'salado', 'dulce'].indexOf(k) * 0.3)} />
             </Poster>
           </g>
-          <Sello T={T} at={pegar} x={380} y={810} />
+          <Sello T={T} at={pegar} x={540} y={1006} s={1.35} />
         </Lienzo>
       </Escena>
       {/* 1 · la prueba: azúcar en un lado */}
       <Escena T={T} a={K.Prueba} b={K.Papilas}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <Lengua id="p" x={540} y={820} s={0.85} T={T} fronteras={0.25}>
+          <Lengua id="p" x={540} y={960} s={1.25} T={T} fronteras={0.25}>
             {T > K.Prueba + 2.6 && [0, 1, 2].map((i) => { const f = ((T - K.Prueba - 2.6) * 0.8 + i / 3) % 1;
               return <circle key={i} cx={190} cy={60} r={30 + f * 150} fill="none" stroke={KC.pink} strokeWidth={12} opacity={(1 - f) * kprog(T, K.Prueba + 2.6, K.Prueba + 2.9)} />; })}
             {T > K.Prueba + 1.5 && Array.from({ length: 9 }, (_, i) => { const t0 = K.Prueba + 1.5 + i * 0.08, f = kprog(T, t0, t0 + 0.45, (q) => q * q);
               return <Cristal key={i} x={190 + ((i * 37) % 70) - 35} y={klerp(-60, 60 + ((i * 23) % 40) - 20, f)} r={11} rot={i * 33 + f * 90} />; })}
           </Lengua>
           {(() => { const lle = kprog(T, K.Prueba + 0.3, K.Prueba + 1.3, kEase.sale), tilt = kprog(T, K.Prueba + 1.4, K.Prueba + 1.8), va = kprog(T, K.Prueba + 2.6, K.Prueba + 3.4, kEase.suave);
-            return <Cuchara x={klerp(1300, 540 + 0.85 * 190 + 90, lle) + va * 600} y={klerp(500, 820 + 0.85 * 60 - 120, lle) - va * 200} rot={-20 + tilt * 35} s={1.1} />; })()}
+            return <Cuchara x={klerp(1300, 540 + 1.25 * 190 + 110, lle) + va * 600} y={klerp(600, 960 + 1.25 * 60 - 150, lle) - va * 200} rot={-20 + tilt * 35} s={1.45} />; })()}
         </Lienzo>
-        <Chip T={T} at={K.Prueba + 2.8} until={K.Papilas - 0.1} texto="dulce ✓" x={330} y={430} tam={56} borde={KC.pink} />
+        <Chip T={T} at={K.Prueba + 2.8} until={K.Papilas - 0.1} texto="dulce ✓" x={300} y={420} tam={56} borde={KC.pink} />
       </Escena>
       {/* 2 · papilas: por toda la lengua, al microscopio */}
       <Escena T={T} a={K.Papilas} b={K.Todos} fondo={KC.noche}>
         <Ambiente T={T} n={20} color="rgba(255,255,255,.14)" />
         <Lienzo>
-          <Lengua id="m" x={320} y={930} s={0.74} T={T} papilas={kprog(T, K.Papilas + 0.2, K.Papilas + 2.6)} />
+          <Lengua id="m" x={350} y={1060} s={0.98} T={T} papilas={kprog(T, K.Papilas + 0.2, K.Papilas + 2.6)} />
         </Lienzo>
-        <Etq T={T} at={K.Papilas + 1.0} until={K.Todos - 0.2} x={40} y={560} texto="papilas gustativas" lado="der" color={KC.gold2} />
-        <Lupa T={T} at={K.Papilas + 1.9} until={K.Todos - 0.3} x={800} y={590} r={215} fx={320 + 0.74 * 215} fy={930 + 0.74 * 40} tinte={KC.pink} etiqueta="AL MICROSCOPIO · PAPILA"
+        <Etq T={T} at={K.Papilas + 1.0} until={K.Todos - 0.2} x={40} y={600} texto="papilas gustativas" lado="der" color={KC.gold2} />
+        <Lupa T={T} at={K.Papilas + 1.9} until={K.Todos - 0.3} x={800} y={620} r={225} fx={350 + 0.98 * 215} fy={1060 + 0.98 * 40} tinte={KC.pink} etiqueta="AL MICROSCOPIO · PAPILA"
           interior={(t, r) => <BotonGustativo T={t} r={r} />} />
-        <Etq T={T} at={K.Papilas + 2.8} until={K.Todos - 0.2} x={640} y={920} texto="botón gustativo" lado="der" color={KC.texto} tam={30} />
-        <Etq T={T} at={K.Papilas + 3.4} until={K.Todos - 0.2} x={640} y={975} texto="células del gusto" lado="der" color={KC.gold2} tam={30} />
+        <Etq T={T} at={K.Papilas + 2.8} until={K.Todos - 0.2} x={660} y={960} texto="botón gustativo" lado="der" color={KC.texto} tam={30} />
+        <Etq T={T} at={K.Papilas + 3.4} until={K.Todos - 0.2} x={660} y={1015} texto="células del gusto" lado="der" color={KC.gold2} tam={30} />
       </Escena>
       {/* 3 · los cinco sabores en todas las zonas */}
       <Escena T={T} a={K.Todos} b={K.Pregunta}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <Lengua id="t" x={540} y={950} s={0.72} T={T} papilas={1} brillo={kprog(T, sab(4) + 0.5, sab(4) + 1.2) * 0.6}>
+          <Lengua id="t" x={540} y={1090} s={1.05} T={T} papilas={1} brillo={kprog(T, sab(4) + 0.5, sab(4) + 1.2) * 0.6}>
             {SABORES.map((k, i) => T > sab(i) && SPOTS.map(([sx, sy], j) => { const f = kprog(T, sab(i) + j * 0.03, sab(i) + 0.9 + j * 0.03);
               return f < 1 && <circle key={k + j} cx={sx} cy={sy} r={20 + f * 90} fill={SAB[k]} fillOpacity={0.35 * (1 - f)} stroke={SAB[k]} strokeWidth={10} opacity={1 - f} />; }))}
           </Lengua>
-          {SABORES.map((k, i) => { const on = kprog(T, sab(i), sab(i) + 0.3, kEase.rebote), cx = 140 + i * 200, cy = 470, ap = kprog(T, K.Todos + 0.3 + i * 0.12, K.Todos + 0.7 + i * 0.12, kEase.sale);
+          {SABORES.map((k, i) => { const on = kprog(T, sab(i), sab(i) + 0.3, kEase.rebote), cx = 140 + i * 200, cy = 450, ap = kprog(T, K.Todos + 0.3 + i * 0.12, K.Todos + 0.7 + i * 0.12, kEase.sale);
             return <g key={k} transform={`translate(${cx} ${cy}) scale(${ap * (1 + 0.15 * on * (1 - kprog(T, sab(i) + 0.3, sab(i) + 0.8)))})`}>
               <circle r={84} fill={on > 0.5 ? SAB[k] : 'rgba(255,255,255,.55)'} stroke={KC.ink} strokeWidth={8} />
               {on > 0 && <circle r={84 + 30 * kprog(T, sab(i), sab(i) + 0.6)} fill="none" stroke="#fff" strokeWidth={8} opacity={1 - kprog(T, sab(i), sab(i) + 0.6)} />}
@@ -235,45 +235,54 @@ function Lengua17() {
               <text y={130} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">{NOMBRE[k]}</text>
             </g>; })}
         </Lienzo>
-        <Chip T={T} at={K.Todos + 0.5} until={sab(0) - 0.1} texto="zonas con papilas" x={540} y={680} tam={40} borde={KC.gold2} />
+        <Chip T={T} at={K.Todos + 0.5} until={sab(0) - 0.1} texto="zonas con papilas" x={540} y={640} tam={40} borde={KC.gold2} />
       </Escena>
       {/* 4 · pregunta */}
-      <EscenaPregunta T={T} a={K.Pregunta} b={K.Hanig} />
+      <Escena T={T} a={K.Pregunta} b={K.Hanig} zoom={0.1}>
+        <FondoLunares color={KC.lilac} />
+        <Lienzo><text x={540} y={1300} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={16}
+          transform={`rotate(${Math.sin(T * 3) * 6} 540 1050) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 720px ${KF.titulo}`, transformOrigin:'540px 1050px' }}>?</text></Lienzo>
+      </Escena>
       {/* 5 · Hänig 1901: un poco más sensibles */}
       <Escena T={T} a={K.Hanig} b={K.Boring}>
         <FondoLunares color={KC.yellow} />
-        <Lienzo o={kprog(T, K.Hanig + 2.6, K.Hanig + 3.0)}>
-          <Lengua id="h" x={540} y={900} s={0.78} T={T} papilas={1}>
+        <Lienzo>
+          <Lengua id="h" x={540} y={1010} s={1.1} T={T} papilas={1}>
             {[[0, 300, 3.2], [-200, 120, 4.1], [200, -150, 5.0]].map(([px, py, dt], i) => { const t0 = K.Hanig + dt, f = kprog(T, t0 + 0.3, t0 + 1.0);
               return T > t0 + 0.3 && <g key={i}><circle cx={px} cy={py} r={26 + f * 60} fill="none" stroke={KC.blue} strokeWidth={8} opacity={1 - f} />
                 <text x={px + 46} y={py - 30} style={{ font:`400 64px ${KF.titulo}` }} fill={KC.blue} stroke="#fff" strokeWidth={8} paintOrder="stroke" opacity={kprog(T, t0 + 0.3, t0 + 0.5)}>+</text></g>; })}
           </Lengua>
-          {(() => { const ps = [[540, 900 + 0.78 * 300, 3.2], [540 - 0.78 * 200, 900 + 0.78 * 120, 4.1], [540 + 0.78 * 200, 900 - 0.78 * 150, 5.0]];
+          {(() => { const ps = [[540, 1010 + 1.1 * 300, 3.2], [540 - 1.1 * 200, 1010 + 1.1 * 120, 4.1], [540 + 1.1 * 200, 1010 - 1.1 * 150, 5.0]];
             let gx = ps[0][0], gy = ps[0][1]; for (let i = 0; i < 3; i++) { const t0 = K.Hanig + ps[i][2]; if (T > t0 - 0.6) { const f = kprog(T, t0 - 0.6, t0 - 0.1, kEase.suave);
-              gx = klerp(i ? ps[i - 1][0] : 760, ps[i][0], f); gy = klerp(i ? ps[i - 1][1] : 520, ps[i][1], f); } }
+              gx = klerp(i ? ps[i - 1][0] : 930, ps[i][0], f); gy = klerp(i ? ps[i - 1][1] : 760, ps[i][1], f); } }
             const toca = [0, 1, 2].some((i) => Math.abs(T - K.Hanig - ps[i][2] - 0.1) < 0.2) ? 18 : 0;
-            return <Gotero x={gx} y={gy - 20 + toca} s={1.1} />; })()}
+            return <Gotero x={gx} y={gy - 20 + toca} s={1.25} />; })()}
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Hanig + 0.2} until={K.Hanig + 2.7} anio="1901" quien="David Hänig · Alemania" revista="midió la sensibilidad por zonas" x={540} y={760} />
+        <TarjetaEstudio T={T} at={K.Hanig + 0.2} until={K.Hanig + 2.7} anio="1901" quien="David Hänig · Alemania" revista="midió la sensibilidad por zonas" x={540} y={330} />
         <Chip T={T} at={K.Hanig + 3.4} until={K.Boring - 0.1} texto="apenas un poco más sensibles" x={540} y={420} tam={42} borde={KC.blue} />
       </Escena>
       {/* 6 · Boring 1942: la gráfica exagera */}
       <Escena T={T} a={K.Boring} b={K.Libros}>
         <FondoLunares color={KC.orange} />
-        <Lienzo o={kprog(T, K.Boring + 2.7, K.Boring + 3.1)}>
-          <Grafica T={T} x={130} y={520} w={820} h={600} p={kprog(T, K.Boring + 2.9, K.Boring + 3.8)} estira={klerp(1, 7, kprog(T, K.Boring + 4.4, K.Boring + 6.0, kEase.suave)) + 0.15 * Math.sin(T * 8) * kprog(T, K.Boring + 4.4, K.Boring + 6)} />
-          {T > K.Boring + 4.4 && [300, 480, 690, 860].map((xx, i) => <g key={i} opacity={kprog(T, K.Boring + 4.4, K.Boring + 4.8) * (1 - kprog(T, K.Boring + 6.2, K.Boring + 6.6))}>
-            <line x1={xx} y1={770 - Math.sin(T * 9 + i) * 20} x2={xx} y2={700 - Math.sin(T * 9 + i) * 20} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
-            <path d={`M ${xx - 20} ${712 - Math.sin(T * 9 + i) * 20} L ${xx} ${680 - Math.sin(T * 9 + i) * 20} L ${xx + 20} ${712 - Math.sin(T * 9 + i) * 20}`} fill="none" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" /></g>)}
+        <Lienzo>
+          <g opacity={1 - 0.7 * kprog(T, K.Boring + 2.6, K.Boring + 3.1)}>
+            <Lengua id="bo" x={540} y={1010} s={1.1} T={T} papilas={1} />
+          </g>
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Boring + 0.2} until={K.Boring + 2.8} anio="1942" quien="Edwin Boring · Harvard" revista="psicólogo" x={540} y={760} />
-        <Chip T={T} at={K.Boring + 4.6} until={K.Libros - 0.1} texto="las diferencias se ven grandes" x={540} y={430} tam={42} borde={KC.red} />
+        <Lienzo o={kprog(T, K.Boring + 2.7, K.Boring + 3.1)}>
+          <Grafica T={T} x={130} y={700} w={820} h={600} p={kprog(T, K.Boring + 2.9, K.Boring + 3.8)} estira={klerp(1, 7, kprog(T, K.Boring + 4.4, K.Boring + 6.0, kEase.suave)) + 0.15 * Math.sin(T * 8) * kprog(T, K.Boring + 4.4, K.Boring + 6)} />
+          {T > K.Boring + 4.4 && [300, 480, 690, 860].map((xx, i) => <g key={i} opacity={kprog(T, K.Boring + 4.4, K.Boring + 4.8) * (1 - kprog(T, K.Boring + 6.2, K.Boring + 6.6))}>
+            <line x1={xx} y1={950 - Math.sin(T * 9 + i) * 20} x2={xx} y2={880 - Math.sin(T * 9 + i) * 20} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
+            <path d={`M ${xx - 20} ${892 - Math.sin(T * 9 + i) * 20} L ${xx} ${860 - Math.sin(T * 9 + i) * 20} L ${xx + 20} ${892 - Math.sin(T * 9 + i) * 20}`} fill="none" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" /></g>)}
+        </Lienzo>
+        <TarjetaEstudio T={T} at={K.Boring + 0.2} until={K.Boring + 2.8} anio="1942" quien="Edwin Boring · Harvard" revista="psicólogo" x={540} y={330} />
+        <Chip T={T} at={K.Boring + 4.6} until={K.Libros - 0.1} texto="las diferencias se ven grandes" x={540} y={560} tam={42} borde={KC.red} />
       </Escena>
       {/* 7 · los libros: zonas con fronteras */}
       <Escena T={T} a={K.Libros} b={K.Umami}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <g transform={`translate(540 880) scale(${klerp(0.6, 0.92, kprog(T, K.Libros, K.Libros + 0.5, kEase.rebote))}) translate(-540 -880)`}>
+          <g transform={`translate(540 970) scale(${klerp(0.7, 1.0, kprog(T, K.Libros, K.Libros + 0.5, kEase.rebote))}) translate(-540 -880)`}>
             <path d="M 50 520 L 530 560 L 1030 520 L 1030 1220 L 530 1250 L 50 1220 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
             <path d="M 80 545 Q 300 520 530 575 L 530 1225 Q 300 1180 80 1200 Z" fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
             <path d="M 1000 545 Q 770 520 530 575 L 530 1225 Q 770 1180 1000 1200 Z" fill="#fffaf0" stroke={KC.ink} strokeWidth={8} />
@@ -284,62 +293,63 @@ function Lengua17() {
               <Bandera key={i} x={bx} y={by} color={c} p={kprog(T, K.Libros + 2.6 + i * 0.35, K.Libros + 3.0 + i * 0.35, kEase.rebote)} />)}
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Libros + 2.6} until={K.Umami - 0.1} texto="cada sabor, su territorio" x={540} y={420} tam={44} borde={KC.ink} />
+        <Chip T={T} at={K.Libros + 2.6} until={K.Umami - 0.1} texto="cada sabor, su territorio" x={540} y={400} tam={44} borde={KC.ink} />
       </Escena>
       {/* 8 · el umami no estaba */}
       <Escena T={T} a={K.Umami} b={K.Diferencias}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
           <g transform={`translate(0 ${(1 - kprog(T, K.Umami, K.Umami + 0.5, kEase.sale)) * -300})`}>
-            <Lengua id="u" x={290} y={760} s={0.44} T={T} mapa={1} fronteras={1} etiquetas={1} />
-            <g transform={`translate(470 ${640})`} opacity={kprog(T, K.Umami + 0.8, K.Umami + 1.2)}>
+            <Lengua id="u" x={300} y={690} s={0.62} T={T} mapa={1} fronteras={1} etiquetas={1} />
+            <g transform={`translate(560 560) scale(1.15)`} opacity={kprog(T, K.Umami + 0.8, K.Umami + 1.2)}>
               <rect x={0} y={0} width={190} height={110} rx={20} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={6} strokeDasharray="16 10" />
               <text x={95} y={70} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>¿UMAMI?</text>
               {T > K.Umami + 1.4 && <path d="M 20 20 L 170 90 M 170 20 L 20 90" stroke={KC.red} strokeWidth={14 * kprog(T, K.Umami + 1.4, K.Umami + 1.6)} strokeLinecap="round" />}
             </g>
           </g>
           <g transform={`translate(0 ${(1 - kprog(T, K.Umami + 2.0, K.Umami + 2.6, kEase.rebote)) * 700})`}>
-            <Tazon x={330} y={1060} s={0.95} T={T} vapor={1} />
-            <Jitomate x={770} y={1050} s={0.85} rot={Math.sin(T * 2) * 4} />
+            <Tazon x={320} y={1200} s={1.15} T={T} vapor={1} />
+            <Jitomate x={790} y={1190} s={1.02} rot={Math.sin(T * 2) * 4} />
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Umami + 1.4} until={K.Umami + 3.0} texto="no estaba en el mapa" x={370} y={430} tam={42} borde={KC.red} />
-        <Chip T={T} at={K.Umami + 3.0} until={K.Diferencias - 0.1} texto="umami" x={540} y={900} tam={58} borde={KC.orange} />
-        <Etq T={T} at={K.Umami + 3.2} until={K.Diferencias - 0.2} x={330} y={1195} texto="caldo" lado="izq" tam={30} />
-        <Etq T={T} at={K.Umami + 3.6} until={K.Diferencias - 0.2} x={770} y={1195} texto="jitomate maduro" lado="izq" tam={30} />
+        <Chip T={T} at={K.Umami + 1.4} until={K.Umami + 3.0} texto="no estaba en el mapa" x={640} y={420} tam={42} borde={KC.red} />
+        <Chip T={T} at={K.Umami + 3.0} until={K.Diferencias - 0.1} texto="umami" x={780} y={900} tam={58} borde={KC.orange} />
+        <Etq T={T} at={K.Umami + 3.2} until={K.Diferencias - 0.2} x={320} y={1370} texto="caldo" lado="izq" tam={30} />
+        <Etq T={T} at={K.Umami + 3.6} until={K.Diferencias - 0.2} x={790} y={1370} texto="jitomate maduro" lado="izq" tam={30} />
       </Escena>
       {/* 9 · las diferencias son pequeñitas */}
       <Escena T={T} a={K.Diferencias} b={K.Cierre}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
+          <g opacity={0.4}><Lengua id="d" x={540} y={1000} s={1.15} T={T} papilas={1} /></g>
           {[['punta', 0.8], ['lado izquierdo', 0.84], ['lado derecho', 0.82], ['atrás', 0.78]].map(([et, v], i) =>
             <g key={i} opacity={kprog(T, K.Diferencias + 0.2 + i * 0.25, K.Diferencias + 0.5 + i * 0.25)}>
-              <BarraH x={140} y={580 + i * 150} ancho={800} v={v * kprog(T, K.Diferencias + 0.3 + i * 0.25, K.Diferencias + 1.5 + i * 0.25, kEase.sale)} color={[SAB.dulce, SAB.salado, SAB.acido, SAB.amargo][i]} etiqueta={et} />
+              <BarraH x={140} y={740 + i * 150} ancho={800} v={v * kprog(T, K.Diferencias + 0.3 + i * 0.25, K.Diferencias + 1.5 + i * 0.25, kEase.sale)} color={[SAB.dulce, SAB.salado, SAB.acido, SAB.amargo][i]} etiqueta={et} />
             </g>)}
           {(() => { const o = kprog(T, K.Diferencias + 2.0, K.Diferencias + 2.4); const xs = [140 + 800 * 0.78, 140 + 800 * 0.84];
-            return <g opacity={o}><line x1={xs[0]} y1={540} x2={xs[0]} y2={1080} stroke={KC.red} strokeWidth={6} strokeDasharray="12 8" />
-              <line x1={xs[1]} y1={540} x2={xs[1]} y2={1080} stroke={KC.red} strokeWidth={6} strokeDasharray="12 8" />
-              <path d={`M ${xs[0]} 1100 L ${xs[1]} 1100`} stroke={KC.red} strokeWidth={8} /><circle cx={(xs[0] + xs[1]) / 2} cy={1100} r={60 + 6 * Math.sin(T * 6)} fill="none" stroke={KC.red} strokeWidth={7} /></g>; })()}
-          <text x={540} y={1190} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>(barras ilustrativas)</text>
+            return <g opacity={o}><line x1={xs[0]} y1={700} x2={xs[0]} y2={1240} stroke={KC.red} strokeWidth={6} strokeDasharray="12 8" />
+              <line x1={xs[1]} y1={700} x2={xs[1]} y2={1240} stroke={KC.red} strokeWidth={6} strokeDasharray="12 8" />
+              <path d={`M ${xs[0]} 1260 L ${xs[1]} 1260`} stroke={KC.red} strokeWidth={8} /><circle cx={(xs[0] + xs[1]) / 2} cy={1260} r={60 + 6 * Math.sin(T * 6)} fill="none" stroke={KC.red} strokeWidth={7} /></g>; })()}
+          <text x={540} y={1380} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>(barras ilustrativas)</text>
         </Lienzo>
-        <Chip T={T} at={K.Diferencias + 2.0} until={K.Cierre - 0.1} texto="sí existen, pero pequeñitas" x={540} y={430} tam={42} borde={KC.red} />
+        <Chip T={T} at={K.Diferencias + 2.0} until={K.Cierre - 0.1} texto="sí existen, pero pequeñitas" x={540} y={470} tam={42} borde={KC.red} />
       </Escena>
       {/* 10 · cierre: el mismo mapa, sin fronteras, toda la lengua encendida */}
       <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <Poster x={380} y={790} s={0.88} titulo="TU LENGUA">
+          <Poster x={540} y={980} s={1.3} titulo="TU LENGUA">
             <Lengua id="c" x={0} y={50} s={0.78} T={T} papilas={kprog(T, K.Cierre + 0.8, K.Cierre + 1.8)}
               mapa={1 - kprog(T, K.Cierre + 0.4, K.Cierre + 1.8)} etiquetas={1 - kprog(T, K.Cierre + 0.2, K.Cierre + 0.8)}
               fronteras={1 - kprog(T, K.Cierre + 0.2, K.Cierre + 1.2)} brillo={kprog(T, K.Cierre + 1.4, K.Cierre + 2.4)} />
           </Poster>
-          <g opacity={1 - kprog(T, K.Cierre + 0.2, K.Cierre + 0.8)}><Sello T={T} at={K.Cierre - 1} x={380} y={810} /></g>
+          <g opacity={1 - kprog(T, K.Cierre + 0.2, K.Cierre + 0.8)}><Sello T={T} at={K.Cierre - 1} x={540} y={1006} s={1.35} /></g>
           {/* goma que borra las fronteras */}
           {(() => { const f = kprog(T, K.Cierre + 0.2, K.Cierre + 1.3); if (f <= 0 || f >= 1) return null;
-            const gx = 380 + Math.sin(f * Math.PI * 6) * 150, gy = klerp(560, 1000, f);
-            return <g transform={`translate(${gx} ${gy}) rotate(-25)`}><rect x={-60} y={-34} width={120} height={68} rx={12} fill="#ff9fb0" stroke={KC.ink} strokeWidth={7} /><rect x={10} y={-34} width={50} height={68} rx={8} fill={KC.blue} stroke={KC.ink} strokeWidth={7} /></g>; })()}
+            const gx = 540 + Math.sin(f * Math.PI * 6) * 220, gy = klerp(700, 1350, f);
+            return <g transform={`translate(${gx} ${gy}) rotate(-25) scale(1.4)`}><rect x={-60} y={-34} width={120} height={68} rx={12} fill="#ff9fb0" stroke={KC.ink} strokeWidth={7} /><rect x={10} y={-34} width={50} height={68} rx={8} fill={KC.blue} stroke={KC.ink} strokeWidth={7} /></g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 2.0} until={K.Outro - 0.1} texto="toda ella prueba de todo" x={400} y={330} tam={44} borde={KC.gold} />
+        <Chip T={T} at={K.Cierre + 2.0} until={K.Outro - 0.1} texto="toda ella prueba de todo" x={540} y={300} tam={44} borde={KC.gold} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Prueba - 0.1} texto="Ese mapa de la lengua *está mal.*" />
