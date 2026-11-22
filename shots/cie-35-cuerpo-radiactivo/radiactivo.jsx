@@ -217,15 +217,24 @@ function Radiactivo() {
         <Chip T={T} at={K.Cuenta + 0.9} until={K.Pregunta - 0.1} texto="por segundo" x={540} y={715} tam={52} borde={KC.yellow} />
       </Escena>
       {/* 5 · pregunta */}
-      <EscenaPregunta T={T} a={K.Pregunta} b={K.Normal} color={KC.cyan} />
+      {/* la silueta de la cuenta sigue detrás, grande y a media luz; el «?» va encima */}
+      <Escena T={T} a={K.Pregunta} b={K.Normal} zoom={0.1}>
+        <FondoLunares color={KC.cyan} />
+        <Lienzo>
+          <g opacity={0.7}><Silueta T={T} x={670} yPies={1480} s={0.96} chispas={1} vel={2.2} /></g>
+          <text x={320} y={1170} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={14}
+            transform={`rotate(${Math.sin(T * 3) * 6} 320 960) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 560px ${KF.titulo}`, transformOrigin:'320px 960px' }}>?</text>
+        </Lienzo>
+      </Escena>
       {/* 6 · normal: toda tu vida + pastel de un año */}
       <Escena T={T} a={K.Normal} b={K.Platano} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          {T < K.Normal + 3.6 && <g opacity={1 - kprog(T, K.Normal + 3.2, K.Normal + 3.6)}>
+          {T < K.Normal + 3.6 && <g opacity={1 - kprog(T, K.Normal + 3.2, K.Normal + 3.6)} transform="translate(0 190)">
             {[[0.42, 130], [0.68, 390], [0.95, 770]].map(([sc, sx], i) => { const e = kprog(T, K.Normal + 0.05 + i * 0.5, K.Normal + 0.45 + i * 0.5, kEase.rebote);
               return <g key={i} transform={`translate(${sx} 1300) scale(${e}) translate(${-sx} -1300)`}><Silueta T={T + i} x={sx} yPies={1300} s={sc} chispas={0.6} vel={1.2} /></g>; })}
           </g>}
+          <g transform="translate(540 1010) scale(1.1) translate(-540 -900)">
           {T > K.Normal + 3.3 && <Pastel T={T} x={540} y={900} r={360} p={kprog(T, K.Normal + 3.4, K.Normal + 4.6, kEase.suave)} sale={kprog(T, K.Normal + 4.6, K.Normal + 5.0, kEase.rebote)} />}
           {T > K.Normal + 4.9 && <g opacity={kprog(T, K.Normal + 4.9, K.Normal + 5.2)}>
             <line x1={722} y1={552} x2={772} y2={552} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" />
@@ -234,10 +243,11 @@ function Radiactivo() {
             <TextoSvg x={784} y={672} tam={70} color={KC.pink} ancla="start">7–10 %</TextoSvg>
             <text x={490} y={1060} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Normal + 5.3, K.Normal + 5.6)}>el resto</text>
           </g>}
+          </g>
         </Lienzo>
-        <Chip T={T} at={K.Normal + 0.2} until={K.Normal + 3.3} texto="radiación natural" x={540} y={330} tam={44} borde={KC.leaf} />
-        <Chip T={T} at={K.Normal + 1.9} until={K.Normal + 3.3} texto="toda tu vida →" x={290} y={620} tam={38} borde={KC.yellow} />
-        <Chip T={T} at={K.Normal + 3.5} until={K.Platano - 0.15} texto="radiación natural de un año" x={540} y={380} tam={40} borde={KC.leaf} />
+        <Chip T={T} at={K.Normal + 0.2} until={K.Normal + 3.3} texto="radiación natural" x={540} y={420} tam={44} borde={KC.leaf} />
+        <Chip T={T} at={K.Normal + 1.9} until={K.Normal + 3.3} texto="toda tu vida →" x={290} y={790} tam={38} borde={KC.yellow} />
+        <Chip T={T} at={K.Normal + 3.5} until={K.Platano - 0.15} texto="radiación natural de un año" x={540} y={470} tam={40} borde={KC.leaf} />
       </Escena>
       {/* 7 · el plátano también tiene potasio */}
       <Escena T={T} a={K.Platano} b={K.Igual} fondo={KC.yellow}>
@@ -281,6 +291,7 @@ function Radiactivo() {
         <Lienzo>
           <rect width={KW} height={KH} fill="#0e0c25" />
           <EstrellasFondo T={T} n={80} seed={35} />
+          <g transform="translate(540 1010) scale(1.12) translate(-540 -880)">
           {T < sn + 0.4 && <g transform={`translate(540 820) scale(${1 + 0.15 * kprog(T, K.Viejo, sn) + 0.05 * Math.sin(T * 14)})`}>
             <circle r={290} fill="#ffb347" opacity=".25" /><circle r={185} fill="#ffd23a" stroke={KC.ink} strokeWidth={9} /></g>}
           {T >= sn && <g>
@@ -292,12 +303,13 @@ function Radiactivo() {
               return <circle key={i} cx={X} cy={Y} r={gr.k40 ? 17 : 11} fill={gr.k40 ? RA_K40 : '#ffcf8a'} stroke={KC.ink} strokeWidth={3} opacity={1 - kprog(T, junta + 1.6, junta + 2.2)} />; })}
           </g>}
           <TierraNace T={T} x={540} y={960} r={210} f={kprog(T, junta + 1.4, junta + 2.2, kEase.rebote)} />
+          </g>
         </Lienzo>
-        <Chip T={T} at={sn + 0.3} until={junta - 0.1} texto="estrella que explota" x={540} y={420} tam={42} borde={KC.orange} />
+        <Chip T={T} at={sn + 0.3} until={junta - 0.1} texto="estrella que explota" x={540} y={470} tam={42} borde={KC.orange} />
         {T > sn + 0.9 && T < junta + 1.6 && <div style={{ position:'absolute', left:90, top:1380, zIndex:41, display:'flex', alignItems:'center', gap:14, opacity:kprog(T, sn + 0.9, sn + 1.2) * (1 - kprog(T, junta + 1.2, junta + 1.6)) }}>
           <div style={{ width:28, height:28, borderRadius:'50%', background:RA_K40, border:`4px solid ${KC.ink}` }}></div>
           <div style={{ font:`700 32px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA }}>= potasio-40</div></div>}
-        <Chip T={T} at={junta + 0.1} until={K.Cierre - 0.15} texto="antes de que existiera la Tierra" x={540} y={420} tam={38} borde={KC.cyan} />
+        <Chip T={T} at={junta + 0.1} until={K.Cierre - 0.15} texto="antes de que existiera la Tierra" x={540} y={600} tam={38} borde={KC.cyan} />
       </Escena>
       {/* 10 · cierre: la misma silueta, ahora brilla tenue */}
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.lilac} zoom={0.04}>

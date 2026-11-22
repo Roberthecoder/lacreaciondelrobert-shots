@@ -1,0 +1,1 @@
+- cie-35-cuerpo-radiactivo: marcaba Pregunta, Normal y Viejo ARRIBA; Pregunta con la silueta de la cuenta detrás, grande y a media luz, y el «?» más abajo; Normal: siluetas bajadas 190 px y pastel bajado y agrandado ×1.1 con sus rótulos y chips; Viejo: estrella, explosión y Tierra bajadas y agrandadas ×1.12 (sin barras de escala). Queda «encuadre bien» y «sin láminas».
