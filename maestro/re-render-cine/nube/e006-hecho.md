@@ -1,0 +1,1 @@
+- qui-32-cerillo: marcaba Brillo ARRIBA; bajé la boca con encías que brillan (y 930→1080, escala 1.9→2.0) y subí su chip a y=1330 (esquema, sin barra de escala). Auditores: sin láminas · encuadre bien.
