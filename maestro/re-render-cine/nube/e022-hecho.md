@@ -1,0 +1,1 @@
+- bio-44-artemisinina: marcaba Mosquito ABAJO, Cifra ABAJO y Genes ARRIBA; subí la piel y la oscurecí abajo, mosquito y lupa más grandes; glóbulos y cifras subidos al centro; célula de levadura bajada y agrandada 1.15× (y el matraz con ella), etiqueta POR DENTRO arriba. Auditores: sin láminas, encuadre bien.

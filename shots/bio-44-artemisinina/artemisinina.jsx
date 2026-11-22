@@ -223,11 +223,11 @@ function Artemisinina44() {
       <Escena T={T} a={K.Mo} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          <defs><linearGradient id="a44Piel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#c58a6d" /><stop offset="100%" stopColor="#4e3229" /></linearGradient></defs>
-          <path d="M -40 1180 Q 540 1080 1120 1150 L 1120 2000 L -40 2000 Z" fill="url(#a44Piel)" stroke={KC.ink} strokeWidth={10} />
-          <Mosquito T={T} x={klerp(880, 430, kprog(T, K.Mo, K.Mo + 1.0, kEase.sale))} y={klerp(380, 860, kprog(T, K.Mo, K.Mo + 1.0, kEase.sale))} s={1.9} pica={kprog(T, K.Mo + 1.0, K.Mo + 1.3)} />
+          <defs><linearGradient id="a44Piel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#c58a6d" /><stop offset="40%" stopColor="#4e3229" /><stop offset="100%" stopColor="#2a1a16" /></linearGradient></defs>
+          <path d="M -40 1120 Q 540 1020 1120 1090 L 1120 2000 L -40 2000 Z" fill="url(#a44Piel)" stroke={KC.ink} strokeWidth={10} />
+          <Mosquito T={T} x={klerp(880, 430, kprog(T, K.Mo, K.Mo + 1.0, kEase.sale))} y={klerp(420, 820, kprog(T, K.Mo, K.Mo + 1.0, kEase.sale))} s={2.05} pica={kprog(T, K.Mo + 1.0, K.Mo + 1.3)} />
         </Capa>
-        <Lupa T={T} at={K.Mo + 1.6} until={K.Ci - 0.2} x={740} y={500} r={230} fx={705} fy={1135} tinte={KC.red} etiqueta="AL MICROSCOPIO · sangre"
+        <Lupa T={T} at={K.Mo + 1.6} until={K.Ci - 0.2} x={750} y={560} r={240} fx={680} fy={1075} tinte={KC.red} etiqueta="AL MICROSCOPIO · sangre"
           interior={(T, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a0c12" />
             {[[120, 150, 0], [300, 120, 1], [200, 300, 1], [380, 300, 0], [100, 360, 0], [300, 430, 1], [420, 170, 0]].map(([gx, gy, p], i) =>
               <Globulo key={i} x={gx + Math.sin(T + i) * 6} y={gy + Math.cos(T * 0.8 + i) * 6} s={0.75} rot={i * 20} parasito={p * kprog(T, K.Mo + 2.4 + i * 0.15, K.Mo + 2.9 + i * 0.15)} />)}
@@ -236,7 +236,7 @@ function Artemisinina44() {
       {/* 2 · la cifra */}
       <Escena T={T} a={K.Ci} b={K.Pl} zoom={0.03}>
         <FondoMarca color={KC.coral} patron="rayas" />
-        <Capa>{Array.from({ length: 15 }, (_, i) => <Globulo key={i} x={110 + (i % 5) * 215 + (Math.floor(i / 5) % 2) * 20 - 10} y={1190 + Math.floor(i / 5) * 205 + Math.sin(T + i) * 8} s={1.2} rot={i * 33} parasito={i % 2} />)}</Capa>
+        <Capa>{Array.from({ length: 15 }, (_, i) => <Globulo key={i} x={110 + (i % 5) * 215 + (Math.floor(i / 5) % 2) * 20 - 10} y={1050 + Math.floor(i / 5) * 195 + Math.sin(T + i) * 8} s={1.2} rot={i * 33} parasito={i % 2} />)}</Capa>
       </Escena>
       {/* 3 · la planta y la molécula */}
       <Escena T={T} a={K.Pl} b={K.Li} zoom={0.05}>
@@ -287,7 +287,7 @@ function Artemisinina44() {
       {/* 8–9 · por dentro de la levadura y la química */}
       <Escena T={T} a={K.Ge} b={K.Es} zoom={0.03}>
         <FondoMarca patron="oscuro" />
-        <Capa>
+        <Capa><g transform="translate(540 1000) scale(1.15) translate(-540 -820)">
           <ellipse cx={540} cy={820} rx={430} ry={360} fill="#3a3220" stroke={'#f4dc9a'} strokeWidth={14} opacity={0.95} />
           <ellipse cx={540} cy={820} rx={430} ry={360} fill="none" stroke={KC.ink} strokeWidth={4} />
           <circle cx={330} cy={700} r={120} fill="#4b3f7a" stroke="#b18cff" strokeWidth={8} />
@@ -299,15 +299,15 @@ function Artemisinina44() {
           {T >= K.Qu - 0.4 && (() => { const s = kprog(T, K.Qu, K.Qu + 1.6, kEase.suave);
             return <g>{Array.from({ length: 5 }, (_, i) => { const yy = 640 + i * 70, xx = klerp(640, 1040 + i * 15, kprog(T, K.Qu + i * 0.2, K.Qu + 1.4 + i * 0.2, kEase.suave));
               return <Molecula key={i} x={xx} y={yy} s={0.8} color={KC.mint} anillos={2} cola={1} rot={T * 30 + i * 40} />; })}</g>; })()}
-        </Capa>
+        </g></Capa>
         {/* la química: matraz que cierra el puente O–O */}
         {T >= K.Qu + 1.0 && <Capa>
           <g opacity={kprog(T, K.Qu + 1.0, K.Qu + 1.4)}>
-            <rect x={0} y={0} width={KW} height={KH} fill="rgba(14,15,18,.7)" />
+            <rect x={0} y={0} width={KW} height={KH} fill="rgba(14,15,18,.7)" /><g transform="translate(0 150)">
             <path d="M 470 560 L 470 700 L 330 1040 Q 320 1080 360 1080 L 720 1080 Q 760 1080 750 1040 L 610 700 L 610 560 Z" fill="rgba(200,240,255,.25)" stroke={KC.white} strokeWidth={9} />
             <path d="M 395 900 L 685 900 L 740 1040 Q 745 1070 715 1070 L 365 1070 Q 335 1070 340 1040 Z" fill="rgba(47,224,168,.45)" />
             {Array.from({ length: 6 }, (_, i) => { const ph = (T * 0.9 + i / 6) % 1; return <circle key={i} cx={400 + i * 50} cy={1050 - ph * 150} r={8} fill="none" stroke="#fff" strokeWidth={3} opacity={1 - ph} />; })}
-            <Artemisinina x={540} y={830} s={0.9} puente={kprog(T, K.Qu + 1.8, K.Qu + 2.6, kEase.sale)} brillo={kprog(T, K.Qu + 2.4, K.Qu + 3.0)} />
+            <Artemisinina x={540} y={830} s={0.9} puente={kprog(T, K.Qu + 1.8, K.Qu + 2.6, kEase.sale)} brillo={kprog(T, K.Qu + 2.4, K.Qu + 3.0)} /></g>
           </g>
         </Capa>}
       </Escena>
@@ -342,9 +342,9 @@ function Artemisinina44() {
       <Etq T={T} at={K.G + 3.4} until={K.Mo - 0.3} x={1030} y={1000} texto="levadura" lado="izq" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Mo + 1.0} until={K.Mo + 3.0} x={60} y={1400} texto="mosquito Anopheles" it tam={34} color={KC.ink} />
       <Etq T={T} at={K.Mo + 3.1} until={K.Ci - 0.3} x={60} y={1400} texto="parásito: Plasmodium falciparum" it tam={32} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Ci + 0.3} until={K.Pl - 0.3} valor={282} dur={1.2} sufijo=" M" etiqueta="casos de malaria en 2024" y={590} tam={190} color={KC.yellow} />
-      <NumeroGigante T={T} at={K.Ci + 1.8} until={K.Pl - 0.3} valor={610} dur={1.0} sufijo=" mil" etiqueta="muertes" y={835} tam={110} color={KC.white} />
-      <Chip T={T} at={K.Ci + 0.6} until={K.Pl - 0.3} texto="OMS · Informe mundial 2025" x={540} y={1020} tam={34} borde={KC.cyan} mono />
+      <NumeroGigante T={T} at={K.Ci + 0.3} until={K.Pl - 0.3} valor={282} dur={1.2} sufijo=" M" etiqueta="casos de malaria en 2024" y={500} tam={190} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Ci + 1.8} until={K.Pl - 0.3} valor={610} dur={1.0} sufijo=" mil" etiqueta="muertes" y={745} tam={110} color={KC.white} />
+      <Chip T={T} at={K.Ci + 0.6} until={K.Pl - 0.3} texto="OMS · Informe mundial 2025" x={540} y={905} tam={34} borde={KC.cyan} mono />
       <Etq T={T} at={K.Pl + 0.5} until={K.Li - 0.3} x={60} y={1505} texto="ajenjo dulce · Artemisia annua" it tam={32} color={KC.ink} />
       <Etiqueta T={T} at={K.Pl + 2.8} until={K.Li - 0.3} x={755} y={622} texto="puente O–O" lado="izq" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Pl + 3.2} until={K.Li - 0.3} texto="artemisinina (esquema)" x={800} y={1030} tam={34} borde={KC.gold} />
@@ -357,7 +357,7 @@ function Artemisinina44() {
       <Chip T={T} at={K.Ge + 0.3} until={K.Qu - 0.2} texto="genes de la planta" x={540} y={1500} tam={36} borde={KC.leaf} />
       <Chip T={T} at={K.Qu + 0.2} until={K.Qu + 1.1} texto="sale de la célula" x={540} y={1500} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.Qu + 2.4} until={K.Es - 0.2} texto="química: se cierra el puente O–O" x={540} y={1500} tam={34} borde={KC.red} />
-      <Etiqueta T={T} at={K.Ge + 0.2} until={K.Qu - 0.2} x={540} y={1640} texto="POR DENTRO · levadura" lado="der" tam={30} color={KC.texto} />
+      <Etiqueta T={T} at={K.Ge + 0.2} until={K.Qu - 0.2} x={540} y={400} texto="POR DENTRO · levadura" lado="der" tam={30} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="2013" quien="Amyris y Keasling · California" revista="Paddon et al., Nature" x={330} y={400} />
       <Medidor T={T} at={K.Es + 2.4} until={K.Sa - 0.2} x={90} y={1500} ancho={900} etiqueta="ácido artemisínico" valor={(T) => klerp(1.6 / 25, 1, kprog(T, K.Es + 2.6, K.Es + 4.6, kEase.suave))} texto={(v) => kformato(v * 25, 1) + ' g/L'} color={KC.yellow} />
       <Chip T={T} at={K.Sa + 0.2} until={K.Gi - 0.2} texto="Sanofi · Garessio, Italia · 2013" x={540} y={1485} tam={36} borde={KC.gold} />
