@@ -72,7 +72,8 @@ function Paxilo({ T = 0, x, y, s = 1, crece = 1, H = 190, corte = false, manchas
 // Suelo de bosque con hojarasca.
 function Hojarasca({ y }) {
   return <g>
-    <rect x={-20} y={y} width={1120} height={900} fill="#6b4a2a" />
+    <defs><linearGradient id="pxSuelo" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#6b4a2a" /><stop offset="28%" stopColor="#4a3220" /><stop offset="60%" stopColor="#21170f" /><stop offset="100%" stopColor="#120d0a" /></linearGradient></defs>
+    <rect x={-20} y={y} width={1120} height={900} fill="url(#pxSuelo)" />
     <path d={`M -20 ${y} Q 270 ${y - 22} 540 ${y - 6} Q 810 ${y + 10} 1100 ${y - 14} L 1100 ${y + 30} L -20 ${y + 30} Z`} fill="#4f8a3a" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 16 }, (_, i) => { const hx = 30 + i * 67, hy = y + 14 + (i % 3) * 9;
       return <ellipse key={i} cx={hx} cy={hy} rx={34} ry={12} fill={['#c9772b', '#e0a43c', '#9a5a22'][i % 3]} stroke={KC.ink} strokeWidth={3} transform={`rotate(${(i * 37) % 50 - 25} ${hx} ${hy})`} />; })}
