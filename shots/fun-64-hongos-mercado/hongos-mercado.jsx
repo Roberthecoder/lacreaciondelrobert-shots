@@ -222,6 +222,7 @@ function Trueque({ T, a, p }) {
 
 // Subtítulo con *resaltado* y _cursiva_ (para nombres científicos). Mismo lugar y tiempos que el Subtitulo del kit.
 function SubtituloIt({ T, at, until, texto, idx, color = KC.gold2, tam = 64 }) {
+  if (!CINE_OPC.subtitulos) return null;
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
@@ -259,8 +260,8 @@ function ContenidoCanasta({ i }) {
   return <><Enchilado x={-40} y={-98} s={0.56} rot={-8} /><Enchilado x={46} y={-100} s={0.6} rot={14} /></>;
 }
 const ETQ_CAN = [
-  ['yemas', 'Amanita gpo. caesarea', 205, 610], ['hongo azul', 'Lactarius indigo', 400, 760],
-  ['duraznillos', 'Cantharellus gpo. cibarius', 660, 610], ['enchilados', 'Hypomyces lactifluorum', 880, 760],
+  ['yemas', 'Amanita gpo. caesarea', 258, 610], ['hongo azul', 'Lactarius indigo', 400, 760],
+  ['duraznillos', 'Cantharellus gpo. cibarius', 660, 610], ['enchilados', 'Hypomyces lactifluorum', 820, 760],
 ];
 const MINI_COL = [HM.yemaC, HM.azul, HM.durazno, HM.ench, '#b18cff', '#2fe0a8', '#8a5a2b', '#ff2d78', '#f4efe4', '#ffe11a'];
 
@@ -268,6 +269,7 @@ function HongosMercadoShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Me: CUES.Mercado, F: CUES.Fruto, Mi: CUES.Micelio, R: CUES.Raiz, Tr: CUES.Trueque, P: CUES.Pregunta, B: CUES.Bosque, E: CUES.Estudio, S: CUES.Senas, A: CUES.Aviso, X: CUES.Experto, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
+  const PUESTO_TR = 'translate(-32.4 136) scale(1.06)';   // el puesto 1.06x, centrado en el cuadro (y 400–1126 → 560–1330)
   const caida = kprog(T, K.G + 0.05, K.G + 0.55);
   const rebote = Math.abs(Math.sin(kprog(T, K.G + 0.55, K.G + 1.1) * Math.PI)) * 40 * (1 - kprog(T, K.G + 0.55, K.G + 1.1));
   const nMini = Math.floor(425 * kprog(T, K.G + 0.4, K.G + 3.2, kEase.suave));
@@ -280,36 +282,38 @@ function HongosMercadoShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <g opacity={T > K.G + 3.4 ? klerp(1, 0.35, kprog(T, K.G + 3.4, K.G + 3.9)) : 1}>
-            {Array.from({ length: nMini }, (_, i) => <MiniHongo key={i} x={62 + (i % 25) * 20.4} y={358 + Math.floor(i / 25) * 23} c={MINI_COL[(i * 7) % MINI_COL.length]} s={1.15} />)}
+            {Array.from({ length: nMini }, (_, i) => <MiniHongo key={i} x={122 + (i % 25) * 34.5} y={400 + Math.floor(i / 25) * 31} c={MINI_COL[(i * 7) % MINI_COL.length]} s={1.9} />)}
           </g>
-          <ellipse cx={780} cy={1040} rx={200} ry={44} fill="#ffffff" stroke={KC.ink} strokeWidth={7} />
-          <ellipse cx={780} cy={1034} rx={140} ry={26} fill="#efe9dc" />
-          <Champi x={780} y={klerp(880, 1030, caida * caida) - rebote} s={1.1} rot={(1 - caida) * 30} />
+          <ellipse cx={540} cy={1320} rx={380} ry={72} fill="#ffffff" stroke={KC.ink} strokeWidth={8} />
+          <ellipse cx={540} cy={1310} rx={270} ry={44} fill="#efe9dc" />
+          <Champi x={540} y={klerp(960, 1304, caida * caida) - rebote * 2} s={2.3} rot={(1 - caida) * 30} />
         </>)}
       </Escena>
       {/* 1 · el puesto del mercado en temporada de lluvias */}
       <Escena T={T} a={K.Me} b={K.F} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
+          <g transform={PUESTO_TR}>
           <Puesto T={T} lluvia={1 - kprog(T, K.Me + 3.6, K.Me + 4.4)} />
           {puestoCanastas((i) => kprog(T, K.Me + 0.2 + i * 0.7, K.Me + 0.6 + i * 0.7, kEase.rebote), (i) => kclamp(1 - Math.abs(T - (K.Me + 0.5 + i * 0.7)) * 2, 0, 1))}
           {ETQ_CAN.map(([c, n, ex, ey], i) => <EtqDoble key={i} T={T} at={K.Me + 0.4 + i * 0.7} until={K.F - 0.3} x={ex} y={ey} comun={c} cientifico={n} hastaY={i % 2 ? 900 : 760} />)}
+          </g>
         </>)}
       </Escena>
       {/* 2 · lo que compras es solo el fruto */}
       <Escena T={T} a={K.F} b={K.Mi} zoom={0.06} origen="50% 70%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Yema x={470} y={1110} s={1.55} crece={kprog(T, K.F - 0.3, K.F + 0.5)} />
-          <g opacity={kprog(T, K.F + 0.9, K.F + 1.3)}><Manzana x={160} y={820} s={1.0} /></g>
+          <Yema x={600} y={1400} s={2.1} crece={kprog(T, K.F - 0.3, K.F + 0.5)} />
+          <g opacity={kprog(T, K.F + 0.9, K.F + 1.3)}><Manzana x={200} y={1140} s={1.35} /></g>
         </>)}
       </Escena>
       {/* 3 · bajo el suelo: el micelio (fondo oscuro) */}
       <Escena T={T} a={K.Mi} b={K.R} zoom={0.05} origen="50% 35%">
-        <div style={{ position:'absolute', inset:0, background:`linear-gradient(${KC.mint} 0px, ${KC.mint} 600px, ${HM.suelo} 600px, ${HM.suelo2} 1920px)` }}></div>
+        <div style={{ position:'absolute', inset:0, background:`linear-gradient(#0c2622 0px, #123a33 600px, ${HM.suelo} 600px, ${HM.suelo2} 1920px)` }}></div>
         {fsvg(<>
           {Array.from({ length: 30 }, (_, i) => { const r = krng(i + 90); const x0 = r() * 1080; return <line key={i} x1={x0} y1={596 - r() * 14} x2={x0 + 30 + r() * 20} y2={600 - r() * 10} stroke="#a8743c" strokeWidth={5} strokeLinecap="round" />; })}
-          <g transform="translate(540 600) scale(1.55) translate(0 -0)"><g transform="translate(0 0)"><path d="M -22 -40 L -18 -150 L 18 -150 L 22 -40 Z" fill={HM.yemaP} stroke={KC.ink} strokeWidth={6} />
+          <g transform="translate(540 600) scale(2.1) translate(0 -0)"><g transform="translate(0 0)"><path d="M -22 -40 L -18 -150 L 18 -150 L 22 -40 Z" fill={HM.yemaP} stroke={KC.ink} strokeWidth={6} />
             <path d="M -40 0 Q -50 -50 -30 -78 L -20 -52 L -8 -72 L 4 -50 L 18 -74 L 26 -50 L 34 -76 Q 52 -46 40 0 Z" fill={HM.volva} stroke={KC.ink} strokeWidth={6} /></g></g>
           <RedHifas T={T} x={540} y={640} g={kprog(T, K.Mi + 0.2, K.Mi + 3.4)} seed={64} n={320} escala={1.05} ancho={3.2} brillo={0.6} />
           <path d={`M -20 1050 Q 300 980 ${klerp(-20, 1100, kprog(T, K.Mi + 2.2, K.Mi + 3.6))} 1010`} stroke={HM.raiz} strokeWidth={26} fill="none" strokeLinecap="round" />
@@ -321,54 +325,65 @@ function HongosMercadoShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<>
+          <g transform="translate(-182 -145) scale(1.3)">
           <PuntaRaiz T={T} manto={kprog(T, K.R + 0.3, K.R + 1.8, kEase.suave)} hartig={kprog(T, K.R + 1.8, K.R + 3.2)} hifas={kprog(T, K.R + 1.2, K.R + 3.0, kEase.sale)} />
           <Trueque T={T} a={K.Tr} p={kprog(T, K.Tr + 0.1, K.Tr + 0.6)} />
+          </g>
         </>)}
       </Escena>
       {/* 6 · re-gancho: ¿por qué no los siembran como al champiñón? */}
-      <Escena T={T} a={K.P} b={K.B} zoom={0.08} origen="25% 55%">
+      <Escena T={T} a={K.P} b={K.B} zoom={0.08}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<><Charola x={270} y={1020} s={1.0} T={T} /><Interrogacion T={T} x={270} y={820} tam={300} /></>)}
+        {fsvg(<><Charola x={540} y={1180} s={1.9} T={T} /><Interrogacion T={T} x={540} y={810} tam={400} /></>)}
       </Escena>
       {/* 7 · no se cultivan: la maceta no da nada → al bosque */}
       <Escena T={T} a={K.B} b={K.E} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:`linear-gradient(#9fe6ff, #d9f6ff 60%, #7fcf6a 60%, #5fae4a)` }}></div>
+        <div style={{ position:'absolute', inset:0, background:`linear-gradient(#0a1a28, #12303a 66%, #173a1f 66%, #0d2412)` }}></div>
         {fsvg(<>
-          <g opacity={kprog(T, K.B + 1.2, K.B + 2.2)}>
+          <g opacity={kprog(T, K.B + 1.2, K.B + 2.2)} transform="translate(540 1300) scale(1.25) translate(-540 -1150)">
             {[[90, 1150, 0.95, 1], [300, 1120, 0.8, 2], [560, 1160, 1.05, 3], [800, 1120, 0.85, 4], [1010, 1150, 0.95, 5]].map(([x, y, s, sd], i) => <Conifera key={i} T={T} x={x} y={y} s={s} seed={sd} />)}
             <path d="M -20 1120 Q 400 1060 1100 1110" stroke="#c9a46a" strokeWidth={34} fill="none" opacity=".8" />
             {Array.from({ length: 30 }, (_, i) => { const r = krng(i + 300); const x0 = r() * 1080, u = ((T * (0.8 + r() * 0.5) + r()) % 1); return <line key={i} x1={x0} y1={300 + u * 800} x2={x0 - 8} y2={330 + u * 800} stroke="#ffffff" strokeWidth={4} opacity=".55" />; })}
             <Honguera T={T} x={klerp(80, 520, kprog(T, K.B + 1.6, K.E))} y={1108} s={0.9} camina={1} />
           </g>
           <g opacity={1 - kprog(T, K.B + 1.6, K.B + 2.2)}>
-            <Maceta x={540} y={1060} s={1.3} />
-            <g opacity={1 - kprog(T, K.B + 0.4, K.B + 1.0)}><Yema x={540} y={800} s={0.5} crece={1} /></g>
-            {T > K.B + 0.9 && <path d="M 450 640 L 630 820 M 630 640 L 450 820" stroke={KC.red} strokeWidth={26} strokeLinecap="round" opacity={kprog(T, K.B + 0.9, K.B + 1.1)} />}
+            <Maceta x={540} y={1270} s={2.2} />
+            <g opacity={1 - kprog(T, K.B + 0.4, K.B + 1.0)}><Yema x={540} y={832} s={0.85} crece={1} /></g>
+            {T > K.B + 0.9 && <path d="M 390 530 L 690 830 M 690 530 L 390 830" stroke={KC.red} strokeWidth={36} strokeLinecap="round" opacity={kprog(T, K.B + 0.9, K.B + 1.1)} />}
           </g>
         </>)}
       </Escena>
       {/* 8 · el estudio de Acaxochitlán, Hidalgo (2009) */}
       <Escena T={T} a={K.E} b={K.S} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<g opacity={kprog(T, K.E + 2.6, K.E + 3.1)}>
-          <MapaMexico x={40} y={680} ancho={620} conCA={false}>
-            {(() => { const [hx, hy] = mxProy(-98.2, 20.2); const pu = 1 + 0.2 * Math.sin(T * 6); return <g><circle cx={hx} cy={hy} r={26 * pu} fill={KC.red} stroke={KC.ink} strokeWidth={6} /></g>; })()}
+        {fsvg(<g opacity={klerp(0.55, 1, kprog(T, K.E + 2.6, K.E + 3.1))}>
+          <MapaMexico x={60} y={560} ancho={1250} conCA={false}>
+            {(() => { const [hx, hy] = mxProy(-98.2, 20.2); const pu = 1 + 0.2 * Math.sin(T * 6); return <g><circle cx={hx} cy={hy} r={22 * pu} fill={KC.red} stroke={KC.ink} strokeWidth={5} /></g>; })()}
           </MapaMexico>
-          <Honguera T={T} x={800} y={1090} s={0.8} color="#ff2d78" rebozo="#2346ff" />
-          <Honguera T={T} x={960} y={1090} s={0.74} color="#ff8a1f" rebozo="#11a39a" />
+          <Honguera T={T} x={200} y={1450} s={1.3} color="#ff2d78" rebozo="#2346ff" />
+          <Honguera T={T} x={400} y={1450} s={1.2} color="#ff8a1f" rebozo="#11a39a" />
+          {(() => { const u = kprog(T, K.E + 3.2, K.E + 3.6, kEase.sale) * (1 - kprog(T, K.S - 0.5, K.S - 0.3)); return u > 0 && <g opacity={u}>
+            <path d={`M 649 940 L 649 ${klerp(940, 664, u)} L 700 ${klerp(940, 640, u)}`} fill="none" stroke={KC.ink} strokeWidth={4} strokeLinecap="round" strokeLinejoin="round" />
+            <text x={1010} y={632} textAnchor="end" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>Acaxochitlán, Hidalgo</text>
+          </g>; })()}
+          {(() => { const u = kprog(T, K.E + 3.6, K.E + 4.0, kEase.sale) * (1 - kprog(T, K.S - 0.5, K.S - 0.3)); return u > 0 && <g opacity={u}>
+            <line x1={500} y1={1330} x2={500 + 60 * u} y2={1330} stroke={KC.ink} strokeWidth={4} strokeLinecap="round" />
+            <text x={572} y={1339} style={{ font:`700 25px ${KF.mono}` }} fill={KC.ink}>entrevistas a las hongueras</text>
+          </g>; })()}
         </g>)}
       </Escena>
       {/* 9 · las señas de las hongueras */}
       <Escena T={T} a={K.S} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Yema x={300} y={1100} s={1.35} marcas={kprog(T, K.S + 0.2, K.S + 2.6)} />
-          {[[K.S + 0.3, 1100 - 300 * 1.35, 'sin «ajonjolí»', '(verrugas): liso', 720], [K.S + 1.1, 1100 - 178 * 1.35, '«pañuelito»', '(anillo)', 870], [K.S + 1.9, 1100 - 36 * 1.35, '«botita»', '(volva)', 1040]].map(([at, fy, a, b, ly], i) => {
+          <Yema x={310} y={1420} s={2.0} marcas={kprog(T, K.S + 0.2, K.S + 2.6)} />
+          {[[K.S + 0.3, 1420 - 300 * 2.0, 'sin «ajonjolí»', '(verrugas): liso', 800], [K.S + 1.1, 1420 - 178 * 2.0, '«pañuelito»', '(anillo)', 1050], [K.S + 1.9, 1420 - 36 * 2.0, '«botita»', '(volva)', 1320]].map(([at, fy, a, b, ly], i) => {
             const u = kprog(T, at, at + 0.4, kEase.sale); if (u <= 0) return null;
+            const x0 = 310 + [150, 100, 105][i];
             return <g key={i} opacity={u}>
-              <line x1={300 + 90} y1={fy} x2={klerp(390, 560, u)} y2={ly - 10} stroke={KC.ink} strokeWidth={5} />
-              <text x={575} y={ly} style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>{a}</text>
-              <text x={575} y={ly + 40} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>{b}</text>
+              <line x1={x0} y1={fy} x2={klerp(x0, 590, u)} y2={ly - 12} stroke={KC.ink} strokeWidth={5} />
+              <text x={606} y={ly} style={{ font:`900 52px ${KF.texto}` }} fill={KC.ink}>{a}</text>
+              <text x={606} y={ly + 46} style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>{b}</text>
             </g>; })}
         </>)}
       </Escena>
@@ -376,23 +391,25 @@ function HongosMercadoShot() {
       <Escena T={T} a={K.A} b={K.X} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 60%, #6a1422, ${HM.rojoOsc})` }}></div>
         {fsvg(<>
-          <Yema x={260} y={1070} s={1.05} marcas={1} />
-          <AmanitaBlanca x={720} y={1070} s={1.05} crece={kprog(T, K.A + 0.2, K.A + 0.8)} marcas={kprog(T, K.A + 0.9, K.A + 2.2)} />
-          {T > K.A + 2.0 && <Sello T={T} at={K.A + 2.3} x={720} y={830} texto="MORTAL" color={KC.red} r={124} rot={-10} />}
-          <g opacity={kprog(T, K.A + 3.1, K.A + 3.6)}><Olla T={T} x={140} y={600} s={0.7} /><g transform={`translate(140 ${500 - 8 * Math.sin(T * 4)})`}><Calavera x={0} y={0} s={0.8} /></g></g>
+          <Yema x={280} y={1400} s={1.55} marcas={1} />
+          <AmanitaBlanca x={790} y={1400} s={1.55} crece={kprog(T, K.A + 0.2, K.A + 0.8)} marcas={kprog(T, K.A + 0.9, K.A + 2.2)} />
+          {T > K.A + 2.0 && <Sello T={T} at={K.A + 2.3} x={790} y={1046} texto="MORTAL" color={KC.red} r={176} rot={-10} />}
+          <g opacity={kprog(T, K.A + 3.1, K.A + 3.6)}><Olla T={T} x={255} y={640} s={1.2} /><g transform={`translate(255 ${468 - 10 * Math.sin(T * 4)})`}><Calavera x={0} y={0} s={1.35} /></g></g>
         </>)}
       </Escena>
       {/* 11 · nunca sin un experto */}
       <Escena T={T} a={K.X} b={K.C} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Advertencia x={540} y={760} s={kprog(T, K.X, K.X + 0.4, kEase.rebote) * 1.2} />
+          <g opacity={0.3}><Yema x={280} y={1400} s={1.55} /><AmanitaBlanca x={790} y={1400} s={1.55} /></g>
+          <Advertencia x={540} y={800} s={kprog(T, K.X, K.X + 0.4, kEase.rebote) * 2.6} />
         </>)}
       </Escena>
       {/* 12 · cierre: el mismo puesto, ahora con su bosque y su honguera */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
+          <g transform={PUESTO_TR}>
           <g opacity={kprog(T, K.C + 0.6, K.C + 1.6)}>
             {[[170, 1090, 0.78, 1], [420, 1090, 0.9, 2], [660, 1090, 0.82, 3], [905, 1090, 0.9, 4]].map(([x, y, s, sd], i) => <Conifera key={i} T={T} x={x} y={y} s={s} seed={sd} />)}
           </g>
@@ -401,61 +418,60 @@ function HongosMercadoShot() {
             {CAN_X.map((cx, i) => <path key={i} d={`M ${cx} 1000 Q ${cx + (i % 2 ? 40 : -40)} 1040 ${cx} 1088`} stroke={FK.hifa} strokeWidth={6} fill="none" style={{ filter:'drop-shadow(0 0 8px #fff6c0)' }} />)}
           </g>
           {puestoCanastas(null, (i) => kprog(T, K.C + 1.4 + i * 0.2, K.C + 1.8 + i * 0.2) * 0.8)}
+          </g>
         </>)}
       </Escena>
 
       {/* textos */}
-      <NumeroGigante T={T} at={K.G + 3.4} until={K.Me - 0.3} valor={425} dur={0.6} x={310} y={560} tam={230} color={KC.yellow} />
-      <Etq T={T} at={K.G + 3.7} until={K.Me - 0.3} x={60} y={725} texto="hongos silvestres" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.G + 3.9} until={K.Me - 0.3} x={60} y={772} texto="que se comen en México" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.G + 4.1} until={K.Me - 0.3} x={60} y={815} texto="(conteo de 2025)" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.G + 1.4} until={K.Me - 0.3} texto="champiñón: cultivado" x={780} y={1130} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Me + 3.2} until={K.F - 0.3} texto="lluvias: de junio a noviembre, según la región" x={540} y={530} tam={28} borde={KC.pink} />
-      <Etq T={T} at={K.F + 0.3} until={K.Mi - 0.3} x={60} y={470} texto="cuerpo fructífero = el «fruto»" tam={27} color={KC.ink} />
-      <Etq T={T} at={K.F + 1.1} until={K.Mi - 0.3} x={40} y={930} texto="como una manzana" tam={22} color={KC.ink} />
+      <NumeroGigante T={T} at={K.G + 3.4} until={K.Me - 0.3} valor={425} dur={0.6} x={540} y={620} tam={300} color={KC.yellow} />
+      <Etq T={T} at={K.G + 3.7} until={K.Me - 0.3} x={250} y={810} texto="hongos silvestres" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.G + 3.9} until={K.Me - 0.3} x={250} y={860} texto="que se comen en México" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.G + 4.1} until={K.Me - 0.3} x={250} y={906} texto="(conteo de 2025)" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.G + 1.4} until={K.Me - 0.3} texto="champiñón: cultivado" x={540} y={1570} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Me + 3.2} until={K.F - 0.3} texto="lluvias: de junio a noviembre, según la región" x={540} y={700} tam={28} borde={KC.pink} />
+      <Etq T={T} at={K.F + 0.3} until={K.Mi - 0.3} x={60} y={470} texto="cuerpo fructífero = el «fruto»" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.F + 1.1} until={K.Mi - 0.3} x={60} y={1290} texto="como una manzana" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Mi + 0.2} until={K.R - 0.3} texto="BAJO EL SUELO DEL BOSQUE" x={540} y={680} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.Mi + 1.2} until={K.R - 0.3} x={60} y={1120} texto="micelio · red de hifas" tam={32} color={KC.texto} />
       <Etq T={T} at={K.Mi + 2.6} until={K.R - 0.3} x={600} y={940} texto="raíz de un árbol" tam={26} color={HM.raiz2} />
-      <NumeroGigante T={T} at={K.R + 0.4} until={K.Tr - 0.2} valor={65} dur={0.7} sufijo=" %" x={300} y={530} tam={170} color={KC.mint} />
-      <Etq T={T} at={K.R + 0.8} until={K.Tr - 0.2} x={60} y={1035} texto="de las especies que se comen en México:" tam={24} color={KC.texto} />
-      <Etq T={T} at={K.R + 1.2} until={K.Tr - 0.2} x={60} y={1075} texto="viven abrazadas a una raíz (ectomicorriza)" tam={24} color={KC.mint} />
-      <Etq T={T} at={K.R + 1.9} until={K.Tr - 0.2} x={60} y={680} texto="manto de hifas" tam={28} color={FK.hifa} />
-      <Etq T={T} at={K.R + 2.4} until={K.Tr - 0.2} x={260} y={980} texto="hifas entre las células (red de Hartig)" tam={22} color={FK.hifa} />
-      <Etq T={T} at={K.Tr + 0.3} until={K.P - 0.3} x={60} y={520} texto="● azúcares: árbol → hongo" tam={30} color={HM.oro} />
-      <Etq T={T} at={K.Tr + 1.2} until={K.P - 0.3} x={60} y={575} texto="● agua y nutrientes: hongo → árbol" tam={30} color={HM.agua} />
-      <Chip T={T} at={K.P + 0.3} until={K.B - 0.3} texto="champiñón: se siembra" x={270} y={1150} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.B + 0.9} until={K.B + 1.9} texto="sin su árbol, no da fruto" x={540} y={520} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.B + 2.2} until={K.E - 0.3} texto="se recolectan en el bosque" x={540} y={470} tam={36} borde={KC.leaf} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2009" quien="mercado de Acaxochitlán, Hidalgo" revista="U. Autónoma del Edo. de Hidalgo · Etnobiología, 2010" x={540} y={620} />
-      <Etq T={T} at={K.E + 3.2} until={K.S - 0.3} x={60} y={520} texto="Acaxochitlán, Hidalgo" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.E + 3.6} until={K.S - 0.3} x={60} y={570} texto="entrevistas a las hongueras" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.S + 3.0} until={K.A - 0.3} texto="saber náhuatl · lo guardan las hongueras" x={350} y={480} tam={25} borde={KC.ink} />
-      <Chip T={T} at={K.A + 0.3} until={K.X - 0.3} texto="yema" x={260} y={1118} tam={28} borde={KC.mint} />
-      <Chip T={T} at={K.A + 0.6} until={K.X - 0.3} texto="mortal" x={720} y={1118} tam={28} borde={KC.red} />
-      <Etq T={T} at={K.A + 1.0} until={K.X - 0.3} x={520} y={662} texto="Amanita sección Phalloideae" it tam={20} color={KC.texto} />
-      <Etq T={T} at={K.A + 1.6} until={K.X - 0.3} x={250} y={580} texto="mismas 3 señas" tam={28} color={KC.yellow} lado="der" />
-      <Etq T={T} at={K.A + 3.4} until={K.X - 0.3} x={250} y={470} texto="cocinarla no quita el veneno" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.A + 3.8} until={K.X - 0.3} x={250} y={512} texto="(amatoxinas)" tam={22} color={KC.texto} />
-      <div style={{ position:'absolute', left:90, right:90, top:900, zIndex:42, textAlign:'center', opacity: T > K.X - 0.1 && T < K.C + 0.2 ? kprog(T, K.X + 0.3, K.X + 0.7) * (1 - kprog(T, K.C - 0.2, K.C + 0.2)) : 0,
-        background:KC.paper, border:`7px solid ${KC.ink}`, borderRadius:28, padding:'22px 26px', boxShadow:`12px 12px 0 ${KC.ink}`, font:`900 50px/1.12 ${KF.texto}`, color:KC.ink }}>
-        Nunca recolectes ni comas hongos silvestres <span style={{ background:KC.yellow, padding:'0 .2em', borderRadius:8 }}>sin un experto</span>
+      <NumeroGigante T={T} at={K.R + 0.4} until={K.Tr - 0.2} valor={65} dur={0.7} sufijo=" %" x={330} y={400} tam={180} color={KC.mint} />
+      <Etq T={T} at={K.R + 0.8} until={K.Tr - 0.2} x={60} y={1215} texto="de las especies que se comen en México:" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.R + 1.2} until={K.Tr - 0.2} x={60} y={1260} texto="viven abrazadas a una raíz (ectomicorriza)" tam={26} color={KC.mint} />
+      <Etq T={T} at={K.R + 1.9} until={K.Tr - 0.2} x={60} y={745} texto="manto de hifas" tam={30} color={FK.hifa} />
+      <Etq T={T} at={K.R + 2.4} until={K.Tr - 0.2} x={200} y={1130} texto="hifas entre las células (red de Hartig)" tam={26} color={FK.hifa} />
+      <Etq T={T} at={K.Tr + 0.3} until={K.P - 0.3} x={60} y={330} texto="● azúcares: árbol → hongo" tam={30} color={HM.oro} />
+      <Etq T={T} at={K.Tr + 1.2} until={K.P - 0.3} x={60} y={385} texto="● agua y nutrientes: hongo → árbol" tam={30} color={HM.agua} />
+      <Chip T={T} at={K.P + 0.3} until={K.B - 0.3} texto="champiñón: se siembra" x={540} y={1310} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.B + 0.9} until={K.B + 1.9} texto="sin su árbol, no da fruto" x={540} y={1400} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.B + 2.2} until={K.E - 0.3} texto="se recolectan en el bosque" x={540} y={340} tam={38} borde={KC.leaf} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2009" quien="mercado de Acaxochitlán, Hidalgo" revista="U. Autónoma del Edo. de Hidalgo · Etnobiología, 2010" x={440} y={330} />
+      <Chip T={T} at={K.S + 3.0} until={K.A - 0.3} texto="saber náhuatl · lo guardan las hongueras" x={540} y={540} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.A + 0.3} until={K.X - 0.3} texto="yema" x={280} y={1480} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.A + 0.6} until={K.X - 0.3} texto="mortal" x={790} y={1480} tam={34} borde={KC.red} />
+      <Etq T={T} at={K.A + 1.0} until={K.X - 0.3} x={540} y={770} texto="Amanita sección Phalloideae" it tam={26} color={KC.texto} />
+      <Etq T={T} at={K.A + 1.6} until={K.X - 0.3} x={70} y={770} texto="mismas 3 señas" tam={30} color={KC.yellow} lado="der" />
+      <Etq T={T} at={K.A + 3.4} until={K.X - 0.3} x={445} y={500} texto="cocinarla no quita el veneno" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.A + 3.8} until={K.X - 0.3} x={445} y={548} texto="(amatoxinas)" tam={24} color={KC.texto} />
+      <div style={{ position:'absolute', left:130, right:130, top:300, zIndex:42, textAlign:'center', opacity: T > K.X - 0.1 && T < K.C + 0.2 ? kprog(T, K.X + 0.3, K.X + 0.7) * (1 - kprog(T, K.C - 0.2, K.C + 0.2)) : 0,
+        background:'rgba(16,23,40,.9)', border:'3px solid rgba(223,231,255,.5)', borderRadius:28, padding:'20px 26px', boxShadow:'0 24px 60px rgba(0,0,0,.6)', font:`900 44px/1.14 ${KF.texto}`, color:KC.texto }}>
+        Nunca recolectes ni comas hongos silvestres <span style={{ background:KC.yellow, color:'#0b1020', padding:'0 .2em', borderRadius:8 }}>sin un experto</span>
       </div>
-      <NumeroGigante T={T} at={K.C + 2.4} until={K.Ou} valor={425} dur={0.4} desde={424} x={290} y={590} tam={130} color={KC.yellow} />
-      <Etq T={T} at={K.C + 2.6} until={K.Ou} x={60} y={690} texto="hongos silvestres en la mesa" tam={28} color={KC.ink} />
+      <NumeroGigante T={T} at={K.C + 2.4} until={K.Ou} valor={425} dur={0.4} desde={424} x={275} y={770} tam={130} color={KC.yellow} />
+      <Etq T={T} at={K.C + 2.6} until={K.Ou} x={60} y={872} texto="hongos silvestres en la mesa" tam={28} color={KC.ink} />
       <Etq T={T} at={K.C + 0.8} until={K.Ou} x={60} y={1500} texto="Nunca comas hongos silvestres sin un experto." tam={24} color={KC.texto} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Me} texto="5 cm" largo={60} />
-      <BarraEscala T={T} at={K.Me} until={K.F} texto="10 cm" largo={73} />
-      <BarraEscala T={T} at={K.F} until={K.Mi} texto="5 cm" largo={170} />
-      <BarraEscala T={T} at={K.Mi} until={K.R} texto="5 cm" largo={160} />
-      <BarraEscala T={T} at={K.R} until={K.P} texto="100 µm" largo={66} />
-      <BarraEscala T={T} at={K.P} until={K.B} texto="10 cm" largo={100} />
+      <BarraEscala T={T} at={K.G} until={K.Me} texto="5 cm" largo={125} />{/* champiñón 1.1 → 2.3: 60 × 2.09 */}
+      <BarraEscala T={T} at={K.Me} until={K.F} texto="10 cm" largo={77} />{/* puesto 1.06x */}
+      <BarraEscala T={T} at={K.F} until={K.Mi} texto="5 cm" largo={230} />{/* yema 1.55 → 2.1 */}
+      <BarraEscala T={T} at={K.Mi} until={K.R} texto="5 cm" largo={217} />{/* pie 1.55 → 2.1 */}
+      <BarraEscala T={T} at={K.R} until={K.P} texto="100 µm" largo={86} />{/* raíz 1.3x */}
+      <BarraEscala T={T} at={K.P} until={K.B} texto="10 cm" largo={190} />{/* charola 1.9x */}
       <BarraEscala T={T} at={K.B} until={K.E} texto="dibujo esquemático" largo={0} />
       <BarraEscala T={T} at={K.E} until={K.S} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.S} until={K.A} texto="5 cm" largo={150} />
-      <BarraEscala T={T} at={K.A} until={K.X} texto="5 cm" largo={120} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={73} y={1560} />
+      <BarraEscala T={T} at={K.S} until={K.A} texto="5 cm" largo={222} />{/* yema 1.35 → 2.0 */}
+      <BarraEscala T={T} at={K.A} until={K.X} texto="5 cm" largo={177} />{/* amanitas 1.05 → 1.55 */}
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={77} y={1560} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <SubtituloIt T={T} idx={0} at={K.G + 0.1} until={K.Me - 0.1} texto="En México se comen *425 hongos silvestres*" />
