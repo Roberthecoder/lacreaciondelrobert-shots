@@ -8,6 +8,7 @@ const PC = { piel:'#f1b48f', piel2:'#d98f6b', concha:'rgba(255,255,255,.55)', ta
 
 // Subtítulo con *resaltado* y _cursiva_ (especies en cursiva también en subtítulos).
 function SubK({ T, at, until, texto, idx, color = KC.gold2, tam = 62 }) {
+  if (typeof CINE_OPC !== 'undefined' && !CINE_OPC.subtitulos) return null;
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
@@ -85,6 +86,7 @@ function Trio({ x, y, n = 3, oro = 0, brillo = 0 }) {
 const ESC = [[110, 640], [390, 800], [670, 960]];
 function Escalera({ T, at, cada = 0.28 }) {
   return <g>
+    {ESC.map(([x, y], k) => [0, 1, 2].map((j) => <path key={k + '-' + j} d={hexD(x + j * PASO, y)} fill="rgba(127,224,255,.12)" stroke="rgba(223,231,255,.6)" strokeWidth={4} strokeDasharray="10 8" />))}
     {ESC.map(([x, y], k) => { const t0 = at + k * 3 * cada; const n = kclamp((T - t0) / cada, 0, 3);
       const oro = kprog(T, t0 + 3 * cada, t0 + 3 * cada + 0.4);
       const sig = ESC[k + 1], esc = sig ? kprog(T, at + (k + 1) * 3 * cada - 0.1, at + (k + 1) * 3 * cada + 0.15) : 0;
@@ -151,7 +153,7 @@ function Precio({ T, x, y, p = 1 }) {
     <circle cx={262} cy={40} r={16} fill={KC.orange} stroke={KC.ink} strokeWidth={5} />
     <text x={-190} y={0} style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>pululano a granel</text>
     <text x={-190} y={72} style={{ font:`400 66px ${KF.titulo}` }} fill={KC.red}>25–30 USD/kg</text>
-    <text x={-190} y={118} style={{ font:`700 26px ${KF.mono}` }} fill="#5a524a">precio en 2026</text>
+    <text x={-190} y={118} style={{ font:`700 26px ${KF.mono}` }} fill="#b9b0a4">precio en 2026</text>
   </g>;
 }
 
@@ -175,8 +177,8 @@ function Panza({ T, x, y, inf = 0 }) {
   const r = 150 + 70 * inf;
   return <g transform={`translate(${x} ${y})`}>
     <circle cx={0} cy={-330} r={95} fill={PC.piel} stroke={KC.ink} strokeWidth={8} />
-    <circle cx={-32} cy={-340} r={10} fill={KC.ink} /><circle cx={32} cy={-340} r={10} fill={KC.ink} />
-    <path d={inf > 0.5 ? 'M -30 -290 Q 0 -275 30 -290' : 'M -30 -295 Q 0 -275 30 -295'} stroke={KC.ink} strokeWidth={6} fill="none" strokeLinecap="round" />
+    <circle cx={-32} cy={-340} r={10} fill="#0b1020" /><circle cx={32} cy={-340} r={10} fill="#0b1020" />
+    <path d={inf > 0.5 ? 'M -30 -290 Q 0 -275 30 -290' : 'M -30 -295 Q 0 -275 30 -295'} stroke="#0b1020" strokeWidth={6} fill="none" strokeLinecap="round" />
     <path d={`M -120 -230 L 120 -230 Q ${130 + inf * 60} -60 ${r * 0.95} 60 Q 0 ${120 + r * 0.6} ${-r * 0.95} 60 Q ${-130 - inf * 60} -60 -120 -230 Z`} fill="#2fbfa0" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <circle cx={0} cy={40 + inf * 30} r={9} fill="rgba(0,0,0,.4)" />
     {inf > 0.6 && [0, 1, 2].map((k) => <path key={k} d={`M ${r + 20} ${-40 + k * 50} l 40 ${-10 + k * 10}`} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" opacity={inf} />)}
@@ -225,41 +227,43 @@ function PululanoShot() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
+          <g transform="translate(540 1000) scale(1.35) translate(-540 -1000)">
           <Palma x={540} y={1110} s={1.15} />
           <Capsula T={T} id="g" x={540} y={klerp(-300, 960, caer) + rebote} rot={klerp(-50, -8, caer) + rebote * 0.5} s={0.95} />
+          </g>
           {/* el hongo negro va AFUERA, al lado: «de aquí sale» (la cápsula no lleva células) */}
           <g opacity={kprog(T, K.G + 1.9, K.G + 2.4)}>
-            {[[870, 800, 20, 1, 0.7], [960, 770, -30, 1, 0], [975, 860, 60, 0.85, 0]].map(([x, y, r, o, ym], i) => <Celula key={i} T={T} x={x} y={y} rx={40} ry={28} rot={r} oscura={o} seed={i + 50} yema={ym} />)}
-            <path d="M 840 840 Q 800 880 760 890" stroke={KC.ink} strokeWidth={6} fill="none" strokeDasharray="12 10" />
+            {[[790, 610, 20, 1, 0.7], [890, 580, -30, 1, 0], [905, 680, 60, 0.85, 0]].map(([x, y, r, o, ym], i) => <Celula key={i} T={T} x={x} y={y} rx={52} ry={36} rot={r} oscura={o} seed={i + 50} yema={ym} />)}
+            <path d="M 800 690 Q 790 770 770 830" stroke={KC.ink} strokeWidth={6} fill="none" strokeDasharray="12 10" />
           </g>
         </>)}
-        <Lupa T={T} at={K.G + 1.4} until={K.H - 0.2} x={300} y={790} r={110} fx={470} fy={930} interior={(TT, r) => <svg width={2 * r} height={2 * r}><rect width={2 * r} height={2 * r} fill="#0d1424" />
+        <Lupa T={T} at={K.G + 1.4} until={K.H - 0.2} x={330} y={620} r={130} fx={445} fy={905} interior={(TT, r) => <svg width={2 * r} height={2 * r}><rect width={2 * r} height={2 * r} fill="#0d1424" />
           <g transform={`translate(${r * 0.18} ${r * 0.55}) scale(.42)`}><Trio x={0} y={0} oro={1} /><path d={`M ${2 * PASO} ${RH} L ${2 * PASO} 160 L ${3 * PASO - RH + 10} 160`} stroke={KC.gold2} strokeWidth={8} fill="none" /><Trio x={3 * PASO + 10} y={160} oro={1} /></g>
         </svg>} etiqueta="POR DENTRO · PARED" tinte={KC.gold} />
       </Escena>
       {/* 1 · el hongo: colonias en placa que se ponen negras */}
       <Escena T={T} a={K.H} b={K.Ca} zoom={0.06}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Petri x={540} y={1000} r={250} medio="#f5ebc8">
+        {fsvg(<g transform="translate(540 990) scale(1.5) translate(-540 -1000)"><Petri x={540} y={1000} r={250} medio="#f5ebc8">
           {[[-100, -75, 58, 1], [75, -100, 46, 2], [110, 60, 66, 3], [-75, 95, 50, 4], [8, 8, 38, 5], [-150, 25, 30, 6], [160, -18, 32, 7]].map(([cx, cy, r, sd], i) => {
             const c = kprog(T, K.H + 0.1 + i * 0.12, K.H + 1.2 + i * 0.12, kEase.sale);
             return <g key={i}><Colonia cx={cx} cy={cy} r={r * c} color={mixHex('#efe3c6', '#2a221e', colonia)} seed={sd} />
               <Colonia cx={cx} cy={cy} r={r * c * 0.55} color={mixHex('#e6d6b0', '#121010', colonia)} seed={sd + 20} /></g>; })}
-        </Petri>)}
+        </Petri></g>)}
       </Escena>
       {/* 2 · donde vive: tierra, frutas, pintura */}
       <Escena T={T} a={K.Ca} b={K.M} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
           {[0, 1, 2].map((k) => { const e = kprog(T, K.Ca + 0.1 + k * 0.7, K.Ca + 0.5 + k * 0.7, kEase.rebote); if (e <= 0) return null;
-            const cx = 200 + k * 340, cy = 900 + (k === 1 ? -40 : 30), puntos = kprog(T, K.Ca + 0.5 + k * 0.7, K.Ca + 1.2 + k * 0.7);
+            const cx = [285, 795, 540][k], cy = [740, 740, 1235][k], puntos = kprog(T, K.Ca + 0.5 + k * 0.7, K.Ca + 1.2 + k * 0.7);
             const g = krng(k + 40);
-            return <g key={k} transform={`translate(${cx} ${cy}) scale(${e}) rotate(${(k - 1) * 4})`}>
+            return <g key={k} transform={`translate(${cx} ${cy}) scale(${e * 1.38}) rotate(${(k - 1) * 4})`}>
               <rect x={-150} y={-170} width={300} height={340} rx={30} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
               {k === 0 && <path d="M -120 120 Q -100 -40 0 -60 Q 110 -40 120 120 Z" fill={PC.tierra} stroke={KC.ink} strokeWidth={6} />}
               {k === 1 && [[-40, -40], [40, -40], [0, 20], [-60, 30], [60, 30], [-20, 80], [30, 80]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={42} fill={PC.uva} stroke={KC.ink} strokeWidth={5} />)}
               {k === 1 && <path d="M 0 -90 Q 10 -130 30 -140" stroke="#5a3418" strokeWidth={10} fill="none" />}
-              {k === 2 && <><rect x={-120} y={-140} width={240} height={260} fill={PC.pared} stroke={KC.ink} strokeWidth={5} /><path d="M -110 -20 Q 0 -60 110 -10 L 110 40 Q 0 0 -110 40 Z" fill={KC.cyan} opacity=".8" /></>}
+              {k === 2 && <><rect x={-120} y={-140} width={240} height={260} fill="#a39d90" stroke={KC.ink} strokeWidth={5} /><path d="M -110 -20 Q 0 -60 110 -10 L 110 40 Q 0 0 -110 40 Z" fill={KC.cyan} opacity=".8" /></>}
               {Array.from({ length: 9 }, (_, i) => { const px = -100 + g() * 200, py = -100 + g() * 200; return <circle key={i} cx={px} cy={py} r={7 * kprog(puntos, i / 12, i / 12 + 0.3)} fill={PC.negro} />; })}
               <text y={150} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>{['tierra', 'frutas', 'pintura'][k]}</text>
             </g>; })}
@@ -269,42 +273,46 @@ function PululanoShot() {
       <Escena T={T} a={K.M} b={K.B} zoom={0.07}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(575 960) scale(1.18) translate(-575 -960)">
           {[[200, 760, 10, 0.1], [380, 900, -20, 0.6], [170, 1040, 30, 0], [430, 1120, 5, 0.9], [540, 780, -10, 0]].map(([x, y, r, osc], i) =>
             <Celula key={i} T={T} seed={i + 1} x={x} y={y} rx={62} ry={44} rot={r} oscura={osc} yema={kprog(T, K.M + 0.6 + i * 0.25, K.M + 1.6 + i * 0.25, kEase.sale)} />)}
           <Hilo pts={[[600, 1160], [650, 1080], [700, 1010], [770, 950], [820, 870], [900, 820], [960, 760]]} p={kprog(T, K.M + 1.8, K.M + 3.2)} />
           <Hilo pts={[[770, 950], [840, 980], [920, 1020], [990, 1040]]} p={kprog(T, K.M + 2.4, K.M + 3.6)} ancho={22} />
-        </>)}
+        </g>)}
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, transparent 520px, ${KC.noche} 780px)`, zIndex:21 }}></div>
       </Escena>
       {/* 4 · la baba: el pululano sale fuera de la célula */}
       <Escena T={T} a={K.B} b={K.Mo} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 920) scale(1.2) translate(-540 -900)">
           <Baba T={T} x={540} y={900} R={150} p={kprog(T, K.B + 0.6, K.B + 3.4, kEase.suave)} />
           <Celula T={T} x={540} y={900} rx={170} ry={120} seed={9} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · la molécula: tríos de glucosa en escalera */}
       <Escena T={T} a={K.Mo} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<Escalera T={T} at={K.Mo + 0.3} cada={0.3} />)}
+        {fsvg(<>
+          {/* la célula con su baba sigue en cuadro, atenuada: de ahí sale la molécula */}
+          <g opacity={0.45}><Baba T={T} x={830} y={575} R={110} p={0.55} /><Celula T={T} x={830} y={575} rx={125} ry={88} seed={9} /></g>
+          <g transform="translate(520 860) scale(1.1) translate(-476 -800)"><Escalera T={T} at={K.Mo + 0.3} cada={0.3} /></g>
+        </>)}
       </Escena>
       {/* 6 · re-gancho: ¿y cómo se vuelve cápsula? */}
       <Escena T={T} a={K.P} b={K.Pe} zoom={0.1}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<><Capsula T={T} id="p" x={300} y={1080} s={0.62} rot={-20} /><Interrogacion T={T} x={300} y={900} tam={360} /></>)}
+        {fsvg(<><Capsula T={T} id="p" x={340} y={1290} s={0.85} rot={-20} /><Interrogacion T={T} x={185} y={1080} tam={360} /></>)}
       </Escena>
       {/* 7 · la película: se disuelve, se seca, queda transparente */}
       <Escena T={T} a={K.Pe} b={K.O} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <g opacity={1 - kprog(T, pe(2.0), pe(2.4))}>
+          <g opacity={1 - kprog(T, pe(2.0), pe(2.4))} transform="translate(540 990) scale(1.7) translate(-540 -970)">
             <Vaso T={T} x={540} y={1120} polvo={kprog(T, pe(0.1), pe(0.9))} mezcla={kprog(T, pe(0.7), pe(1.9))} inclina={klerp(0, 60, kprog(T, pe(1.6), pe(2.2), kEase.suave))} />
           </g>
-          <g opacity={kprog(T, pe(1.9), pe(2.3))}>
+          <g opacity={kprog(T, pe(1.9), pe(2.3))} transform="translate(540 1000) scale(1.2) translate(-540 -1020)">
             <text x={540} y={1050} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.ink}>FUNGI MATI</text>
             <rect x={130} y={940} width={820} height={160} rx={16} fill="rgba(120,220,255,.35)" stroke={KC.ink} strokeWidth={6} opacity={1 - kprog(T, pe(2.6), pe(3.2))} />
             {[0, 1, 2].map((k) => { const u = ((T - pe(2.3)) * 0.8 + k / 3) % 1; return T > pe(2.3) && T < pe(3.4) ? <path key={k} d={`M ${300 + k * 240} ${930 - u * 180} q 20 -30 0 -60 q -20 -30 0 -60`} stroke="rgba(255,255,255,.85)" strokeWidth={9} fill="none" opacity={(1 - u) * 0.9} strokeLinecap="round" /> : null; })}
@@ -319,122 +327,125 @@ function PululanoShot() {
       {/* 8 · oxígeno: la pared casi no lo deja pasar */}
       <Escena T={T} a={K.O} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
-          <rect x={470} y={650} width={90} height={560} rx={20} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={8} />
+        {fsvg(<g transform="translate(540 940) scale(1.2) translate(-540 -930)">
+          <rect x={470} y={650} width={90} height={560} rx={20} fill="rgba(255,255,255,.3)" stroke={KC.ink} strokeWidth={8} />
           <text x={515} y={630} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>pared de pululano</text>
           <circle cx={800} cy={930} r={130} fill={PC.aceite} stroke={KC.ink} strokeWidth={8} />
           <path d="M 730 860 Q 760 830 800 830" stroke="#fff6c8" strokeWidth={14} fill="none" strokeLinecap="round" />
           <text x={800} y={1110} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>lo de adentro</text>
           <Oxigeno T={T} at={K.O} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 9 · el estudio: Japón 1976, Europa 2025 */}
       <Escena T={T} a={K.E} b={K.Ti} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Capsula T={T} id="e" x={540} y={1110} s={0.7} rot={-6} />
-          <Sello T={T} at={K.E + 4.8} x={820} y={980} texto="" color={KC.leaf} r={110} />
-          {T > K.E + 4.8 && <path d="M 770 985 L 805 1025 L 875 935" stroke={KC.leaf} strokeWidth={22} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={kprog(T, K.E + 4.8, K.E + 5.0)} />}
+          <Capsula T={T} id="e" x={500} y={1110} s={1.25} rot={-6} />
+          <Sello T={T} at={K.E + 4.8} x={850} y={790} texto="" color={KC.leaf} r={110} />
+          {T > K.E + 4.8 && <path d="M 800 795 L 835 835 L 905 745" stroke={KC.leaf} strokeWidth={22} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={kprog(T, K.E + 4.8, K.E + 5.0)} />}
         </>)}
       </Escena>
       {/* 10 · tiras para el aliento */}
       <Escena T={T} a={K.Ti} b={K.Pr} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Lengua T={T} x={540} y={960} cae={kprog(T, K.Ti + 0.4, K.Ti + 1.2)} deshace={kprog(T, K.Ti + 2.0, K.Ti + 3.4)} />)}
+        {fsvg(<g transform="translate(540 960) scale(1.4) translate(-540 -960)"><Lengua T={T} x={540} y={960} cae={kprog(T, K.Ti + 0.4, K.Ti + 1.2)} deshace={kprog(T, K.Ti + 2.0, K.Ti + 3.4)} /></g>)}
       </Escena>
       {/* 11 · el problema: caro y hay que quitarle el pigmento */}
       <Escena T={T} a={K.Pr} b={K.Pa} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 900) scale(1.15) translate(-505 -900)">
           <Precio T={T} x={290} y={740} p={kprog(T, K.Pr + 0.3, K.Pr + 0.8)} />
           <g opacity={kprog(T, K.Pr + 1.6, K.Pr + 2.0)}><Filtro T={T} x={770} y={1010} at={K.Pr + 1.7} /></g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · la panza */}
       <Escena T={T} a={K.Pa} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 950) scale(1.35) translate(-540 -950)">
           <Panza T={T} x={380} y={1060} inf={kprog(T, K.Pa + 1.2, K.Pa + 2.2, kEase.rebote) * (1 - 0.6 * kprog(T, K.Pa + 3.0, K.Pa + 3.6))} />
-          <g transform="translate(810 1050)" opacity={kprog(T, K.Pa + 0.2, K.Pa + 0.5)}>
-            <rect x={-130} y={-40} width={260} height={120} rx={20} fill="#dfe6ec" stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(760 760)" opacity={kprog(T, K.Pa + 0.2, K.Pa + 0.5)}>
+            <rect x={-130} y={-40} width={260} height={120} rx={20} fill="#3a4652" stroke={KC.ink} strokeWidth={8} />
             <rect x={-100} y={-20} width={200} height={70} rx={10} fill="#1d2b22" />
             <text x={0} y={32} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill="#7dff9e">10 g/día</text>
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 13 · cierre: la misma cápsula en la palma, ahora con su historia */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
+          <g transform="translate(540 1000) scale(1.35) translate(-540 -1000)">
           <Palma x={540} y={1110} s={1.15} />
           <Capsula T={T} id="c" x={540} y={960} rot={-8} s={0.95} escalera={kprog(T, K.C + 0.4, K.C + 1.2)} />
+          </g>
           <g opacity={kprog(T, K.C + 1.4, K.C + 2.0)}>
-            {[[140, 730, 0, 1], [230, 700, 30, 1]].map(([x, y, r, o], i) => <Celula key={i} T={T} x={x} y={y} rx={34} ry={24} rot={r} oscura={o} seed={i + 30} yema={i ? 0.7 : 0} />)}
+            {[[150, 700, 0, 1], [260, 665, 30, 1]].map(([x, y, r, o], i) => <Celula key={i} T={T} x={x} y={y} rx={46} ry={32} rot={r} oscura={o} seed={i + 30} yema={i ? 0.7 : 0} />)}
           </g>
         </>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.2} until={K.H - 0.3} texto="gelatina" x={300} y={470} tam={54} />
-      <Chip T={T} at={K.G + 1.5} until={K.H - 0.3} texto="es baba de hongo" x={310} y={590} tam={44} borde={KC.leaf} />
+      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.2} until={K.H - 0.3} texto="gelatina" x={300} y={290} tam={54} />
+      <Chip T={T} at={K.G + 1.5} until={K.H - 0.3} texto="es baba de hongo" x={660} y={410} tam={44} borde={KC.leaf} />
 
-      <Chip T={T} at={K.H + 0.2} until={K.Ca - 0.3} texto="PULULANO" x={300} y={470} tam={64} borde={KC.gold} />
-      <Etq T={T} at={K.H + 0.9} until={K.Ca - 0.3} x={60} y={570} texto="Aureobasidium pullulans" it tam={36} color={KC.ink} />
-      <Chip T={T} at={K.H + 2.6} until={K.Ca - 0.3} texto="«levadura negra»" x={300} y={660} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.H + 3.4} until={K.Ca - 0.3} x={60} y={720} texto="pigmento: melanina" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.H + 0.2} until={K.Ca - 0.3} texto="PULULANO" x={300} y={270} tam={64} borde={KC.gold} />
+      <Etq T={T} at={K.H + 0.9} until={K.Ca - 0.3} x={60} y={365} texto="Aureobasidium pullulans" it tam={36} color={KC.ink} />
+      <Chip T={T} at={K.H + 2.6} until={K.Ca - 0.3} texto="«levadura negra»" x={540} y={1420} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.H + 3.4} until={K.Ca - 0.3} x={330} y={1490} texto="pigmento: melanina" tam={28} color={KC.ink} />
 
-      <Chip T={T} at={K.M + 0.2} until={K.B - 0.3} texto="AL MICROSCOPIO" x={320} y={470} tam={34} borde={KC.cyan} mono />
-      <Etq T={T} at={K.M + 1.2} until={K.B - 0.3} x={60} y={560} texto="levadura (echa yemas)" tam={30} />
-      <Etq T={T} at={K.M + 2.2} until={K.B - 0.3} x={560} y={1170} texto="hilos (hifas)" tam={30} />
-      <Chip T={T} at={K.M + 2.8} until={K.B - 0.3} texto="cambia de forma" x={320} y={650} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.M + 0.2} until={K.B - 0.3} texto="AL MICROSCOPIO" x={320} y={400} tam={34} borde={KC.cyan} mono />
+      <Etq T={T} at={K.M + 1.2} until={K.B - 0.3} x={60} y={490} texto="levadura (echa yemas)" tam={30} />
+      <Etq T={T} at={K.M + 2.2} until={K.B - 0.3} x={520} y={1260} texto="hilos (hifas)" tam={30} />
+      <Chip T={T} at={K.M + 2.8} until={K.B - 0.3} texto="cambia de forma" x={760} y={400} tam={34} borde={KC.gold} />
 
-      <Chip T={T} at={K.B + 0.8} until={K.Mo - 0.3} texto="fuera de la célula" x={320} y={470} tam={38} borde={KC.cyan} />
-      <Etq T={T} at={K.B + 2.0} until={K.Mo - 0.3} x={60} y={580} texto="pululano («baba»)" tam={32} />
+      <Chip T={T} at={K.B + 0.8} until={K.Mo - 0.3} texto="fuera de la célula" x={320} y={300} tam={38} borde={KC.cyan} />
+      <Etq T={T} at={K.B + 2.0} until={K.Mo - 0.3} x={60} y={420} texto="pululano («baba»)" tam={32} />
 
       <Chip T={T} at={K.Mo + 0.2} until={K.P - 0.3} texto="glucosa" x={200} y={470} tam={34} borde={KC.cyan} />
       <Chip T={T} at={K.Mo + 1.5} until={K.P - 0.3} texto="maltotriosa = 3 glucosas" x={420} y={560} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.Mo + 1.0} until={K.P - 0.3} x={110} y={700} texto="unión α-1,4" tam={26} />
-      <Etq T={T} at={K.Mo + 2.4} until={K.P - 0.3} x={560} y={760} texto="unión α-1,6 (escalón)" tam={26} color={KC.gold2} />
-      <Chip T={T} at={K.Mo + 3.4} until={K.P - 0.3} texto="forma de escalera" x={320} y={1150} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.Mo + 1.0} until={K.P - 0.3} x={100} y={745} texto="unión α-1,4" tam={26} />
+      <Etq T={T} at={K.Mo + 2.4} until={K.P - 0.3} x={440} y={788} texto="unión α-1,6 (escalón)" tam={26} color={KC.gold2} />
+      <Chip T={T} at={K.Mo + 3.4} until={K.P - 0.3} texto="forma de escalera" x={320} y={1240} tam={34} borde={KC.gold} />
 
       <Chip T={T} at={pe(0.2)} until={pe(1.9)} texto="se disuelve en agua" x={330} y={470} tam={36} borde={KC.cyan} />
       <Chip T={T} at={pe(2.3)} until={pe(3.2)} texto="se seca" x={330} y={470} tam={40} borde={KC.white} />
       <Chip T={T} at={pe(3.3)} until={K.O - 0.3} texto="transparente" x={300} y={470} tam={40} borde={KC.cyan} />
       <Chip T={T} at={pe(3.7)} until={K.O - 0.3} texto="muy delgada (hasta 0.01 mm)" x={350} y={580} tam={30} borde={KC.ink} />
 
-      <Chip T={T} at={K.O + 0.6} until={K.E - 0.3} texto="pasa muy poco oxígeno" x={340} y={470} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.O + 0.3} until={K.E - 0.3} x={60} y={560} texto="O₂" tam={40} color={KC.ink} />
+      <Chip T={T} at={K.O + 0.6} until={K.E - 0.3} texto="pasa muy poco oxígeno" x={340} y={400} tam={34} borde={KC.red} />
+      <Etq T={T} at={K.O + 0.3} until={K.E - 0.3} x={60} y={520} texto="O₂" tam={40} color={KC.ink} />
 
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="1976" quien="Japón" revista="aditivo y alimento" x={370} y={620} />
-      <TarjetaEstudio T={T} at={K.E + 2.8} until={K.Ti - 0.3} anio="2025" quien="EFSA · Unión Europea" revista="re-evaluación del pululano (E 1204)" x={370} y={620} />
-      <Chip T={T} at={K.E + 5.0} until={K.Ti - 0.3} texto="sin problema de seguridad" x={360} y={860} tam={32} borde={KC.leaf} />
-      <Chip T={T} at={K.E + 5.2} until={K.Ti - 0.3} texto="en sus usos actuales" x={360} y={950} tam={28} borde={KC.leaf} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="1976" quien="Japón" revista="aditivo y alimento" x={380} y={420} />
+      <TarjetaEstudio T={T} at={K.E + 2.8} until={K.Ti - 0.3} anio="2025" quien="EFSA · Unión Europea" revista="re-evaluación del pululano (E 1204)" x={380} y={420} />
+      <Chip T={T} at={K.E + 5.0} until={K.Ti - 0.3} texto="sin problema de seguridad" x={360} y={660} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.E + 5.2} until={K.Ti - 0.3} texto="en sus usos actuales" x={360} y={745} tam={28} borde={KC.leaf} />
 
-      <Chip T={T} at={K.Ti + 0.6} until={K.Pr - 0.3} texto="tira para el aliento" x={320} y={470} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={K.Ti + 2.2} until={K.Pr - 0.3} texto="se deshace en tu lengua" x={340} y={580} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Ti + 0.6} until={K.Pr - 0.3} texto="tira para el aliento" x={320} y={400} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.Ti + 2.2} until={K.Pr - 0.3} texto="se deshace en tu lengua" x={340} y={500} tam={32} borde={KC.ink} />
 
-      <Chip T={T} at={K.Pr + 2.2} until={K.Pa - 0.3} texto="hay que quitarle la melanina" x={300} y={980} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Pr + 2.2} until={K.Pa - 0.3} texto="hay que quitarle la melanina" x={290} y={1020} tam={30} borde={KC.ink} />
 
-      <Chip T={T} at={K.Pa + 0.3} until={K.C - 0.3} texto="≥ 10 g al día" x={300} y={470} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Pa + 1.6} until={K.C - 0.3} texto="hinchazón, gases (leves)" x={330} y={580} tam={32} borde={KC.orange} />
+      <Chip T={T} at={K.Pa + 0.3} until={K.C - 0.3} texto="≥ 10 g al día" x={740} y={380} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Pa + 1.6} until={K.C - 0.3} texto="hinchazón, gases (leves)" x={740} y={470} tam={32} borde={KC.orange} />
 
-      <Etq T={T} at={K.C + 1.8} until={K.Ou} x={60} y={620} texto="el hongo (afuera)" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="no es gelatina: es pululano" x={350} y={470} tam={38} borde={KC.leaf} />
+      <Etq T={T} at={K.C + 1.8} until={K.Ou} x={60} y={590} texto="el hongo (afuera)" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="no es gelatina: es pululano" x={540} y={400} tam={38} borde={KC.leaf} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="1 cm" largo={110} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="1 cm" largo={149} />
       <BarraEscala T={T} at={K.H} until={K.Ca} texto="esquemático" largo={0} />
       <BarraEscala T={T} at={K.Ca} until={K.M} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.M} until={K.B} texto="10 µm (esquemático)" largo={150} />
-      <BarraEscala T={T} at={K.B} until={K.Mo} texto="5 µm (esquemático)" largo={150} />
+      <BarraEscala T={T} at={K.M} until={K.B} texto="10 µm (esquemático)" largo={177} />
+      <BarraEscala T={T} at={K.B} until={K.Mo} texto="5 µm (esquemático)" largo={180} />
       <BarraEscala T={T} at={K.Mo} until={K.P} texto="molécula esquemática" largo={0} />
-      <BarraEscala T={T} at={K.P} until={K.Pe} texto="1 cm" largo={70} />
-      <BarraEscala T={T} at={K.Pe} until={K.O} texto="5 cm" largo={160} />
+      <BarraEscala T={T} at={K.P} until={K.Pe} texto="1 cm" largo={96} />
+      <BarraEscala T={T} at={K.Pe} until={pe(2.15)} texto="5 cm" largo={272} />
+      <BarraEscala T={T} at={pe(2.15)} until={K.O} texto="5 cm" largo={192} />
       <BarraEscala T={T} at={K.O} until={K.E} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.E} until={K.Ti} texto="1 cm" largo={80} />
-      <BarraEscala T={T} at={K.Ti} until={K.Pr} texto="2 cm" largo={140} />
+      <BarraEscala T={T} at={K.E} until={K.Ti} texto="1 cm" largo={143} />
+      <BarraEscala T={T} at={K.Ti} until={K.Pr} texto="2 cm" largo={196} />
       <BarraEscala T={T} at={K.Pr} until={K.C} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={110} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={149} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <SubK T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No es gelatina: *es baba de hongo.*" />
