@@ -3,7 +3,7 @@
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
 const MZ = { corteza:'#8a5a32', corteza2:'#6e4424', raiz:'#9b6a3c', raiz2:'#7a4f2a', hifa:'#fff4d6', abedul:'#f4f1ea', hojaAbedul:'#9fd356', hojaAbedul2:'#c9e86f',
-  celula:'#d9b98a', celula2:'#c9a271', estela:'#e7c96a', suelo:'#6b4a2b', verde:'#2f9e44', verde2:'#46c25a' };
+  celula:'#d9b98a', celula2:'#c9a271', estela:'#e7c96a', suelo:'#3b2a1b', verde:'#2f9e44', verde2:'#46c25a' };
 
 // Sello rectangular de evidencia (COMPROBADO / EN DEBATE / SIN EVIDENCIA) con una línea chica abajo. Cae con golpe.
 function SelloRect({ T, at, until, x, y, titulo, sub, color = KC.leaf, rot = -8, escala = 1, tam = 64 }) {
@@ -46,7 +46,7 @@ function PieDeArbol({ T, hif = 1 }) {
   return <g>
     <rect x={0} y={700} width={KW} height={KH - 700} fill={MZ.suelo} />
     <rect x={0} y={700} width={KW} height={22} fill="#2c221e" />
-    {Array.from({ length: 26 }, (_, i) => { const g = krng(i + 40); return <ellipse key={i} cx={g() * KW} cy={760 + g() * 700} rx={8 + g() * 16} ry={6 + g() * 9} fill={i % 3 ? '#80603f' : '#5a3d24'} />; })}
+    {Array.from({ length: 26 }, (_, i) => { const g = krng(i + 40); return <ellipse key={i} cx={g() * KW} cy={760 + g() * 700} rx={8 + g() * 16} ry={6 + g() * 9} fill={i % 3 ? '#56402a' : '#2e2015'} />; })}
     <path d="M 210 -40 L 460 -40 L 470 560 Q 490 680 560 730 L 110 730 Q 180 680 200 560 Z" fill={MZ.corteza} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     {[[250, 40, 320], [330, 120, 260], [410, 60, 380], [290, 420, 140]].map(([x, y, h], i) => <path key={i} d={`M ${x} ${y} q 10 ${h / 2} 0 ${h}`} stroke={MZ.corteza2} strokeWidth={8} fill="none" strokeLinecap="round" />)}
     {[
@@ -119,7 +119,7 @@ function CorteRaiz({ T, manto = 1, hartig = 1, hifas = 1 }) {
 }
 
 // Parcela vista desde arriba (mapa esquemático): árboles como puntos; el mismo hongo se enciende en 19 de ellos.
-const PARCELA = { x: 110, y: 620, l: 600 };
+const PARCELA = { x: 60, y: 600, l: 680 };
 const ARBOLES_PARCELA = (() => { const g = krng(54), pts = []; let tries = 0;
   while (pts.length < 34 && tries < 2000) { tries++; const p = [PARCELA.x + 40 + g() * (PARCELA.l - 80), PARCELA.y + 70 + g() * (PARCELA.l - 110), 10 + g() * 18];
     if (pts.every((q) => Math.hypot(q[0] - p[0], q[1] - p[1]) > 58)) pts.push(p); }
@@ -153,7 +153,7 @@ function Experimento({ T, a, debate }) {
   const dbt = debate != null ? kprog(T, debate, debate + 0.8) : 0;
   return <g>
     <rect x={0} y={gnd} width={KW} height={KH - gnd} fill={MZ.suelo} />
-    {Array.from({ length: 16 }, (_, i) => { const g = krng(i + 90); return <ellipse key={i} cx={g() * KW} cy={gnd + 40 + g() * 360} rx={8 + g() * 12} ry={6 + g() * 7} fill="#80603f" />; })}
+    {Array.from({ length: 16 }, (_, i) => { const g = krng(i + 90); return <ellipse key={i} cx={g() * KW} cy={gnd + 40 + g() * 360} rx={8 + g() * 12} ry={6 + g() * 7} fill="#56402a" />; })}
     <path d="M 300 1010 L 300 1080 M 300 1040 L 250 1100 M 300 1050 L 350 1110" stroke={MZ.raiz} strokeWidth={10} strokeLinecap="round" fill="none" />
     <path d="M 760 1010 L 760 1070 M 760 1030 L 700 1100 M 760 1040 L 815 1100" stroke={MZ.raiz} strokeWidth={10} strokeLinecap="round" fill="none" />
     <path d={d2(pathH.slice(2, 7))} stroke={MZ.hifa} strokeWidth={6} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={0.9} />
@@ -198,29 +198,29 @@ function MicorrizasShot() {
       {/* 1 · gancho: el pie de un árbol, sus raíces y el hilito blanco. ¿Internet? No: mercado */}
       <Escena T={T} a={K.G} b={K.V} zoom={0.05} origen="55% 60%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.15) translate(-500 -800)">
           <PieDeArbol T={T} hif={kprog(T, K.G + 0.05, K.G + 1.3, kEase.sale)} />
-          {wifiG > 0 && <Wifi x={640} y={960} s={0.75 * wifiG} tachado={kprog(T, K.G + 2.2, K.G + 2.6)} />}
-          <Toldo x={630} y={1010} w={320} s={toldoG} alto={110} />
-        </>)}
+          {wifiG > 0 && <Wifi x={650} y={950} s={0.95 * wifiG} tachado={kprog(T, K.G + 2.2, K.G + 2.6)} />}
+          <Toldo x={630} y={1010} w={380} s={toldoG} alto={120} />
+        </g>)}
       </Escena>
       {/* 2 · lo viral: un teléfono con el "árbol madre" y su red */}
       <Escena T={T} a={K.V} b={K.Mi} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 930) scale(1.45) translate(-400 -870)">
           <rect x={170} y={520} width={460} height={700} rx={50} fill={KC.ink} />
-          <rect x={192} y={560} width={416} height={620} rx={22} fill="#bfe8ff" />
+          <rect x={192} y={560} width={416} height={620} rx={22} fill="#16324d" />
           <svg x={192} y={560} width={416} height={620} viewBox="0 0 416 620"><BosqueViral T={T} x0={208} y0={420} s={0.42} corona={kprog(T, K.V + 1.2, K.V + 1.6, kEase.rebote)} /></svg>
           <rect x={360} y={530} width={80} height={12} rx={6} fill="#333" />
           <path d="M 560 1130 l 0 -30 l 26 15 Z" fill="#fff" opacity=".85" />
           {[0, 1, 2].map((i) => <circle key={i} cx={575} cy={760 + i * 90} r={26} fill="rgba(255,255,255,.85)" stroke={KC.ink} strokeWidth={3} />)}
-        </>)}
+        </g>)}
       </Escena>
       {/* 3–4 · por dentro: la raicita con su micorriza (manto + red de Hartig) y el mercado P/N ⇄ azúcares */}
       <Escena T={T} a={K.Mi} b={K.Ca} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.35) translate(-540 -860)">
           <CorteRaiz T={T} manto={kprog(T, K.Mi + 0.3, K.Mi + 1.4, kEase.sale)} hartig={kprog(T, K.Mi + 1.2, K.Mi + 2.4)} hifas={kprog(T, K.Mi + 0.6, K.Mi + 2.6)} />
           {T > K.Tr && Array.from({ length: 8 }, (_, i) => { const t0 = K.Tr + 0.3 + i * 0.3; if (T < t0) return null; const u = ((T - t0) / 2.4) % 1; const a = i * 0.8 + 0.4;
             const r = klerp(560, 230, kEase.suave(u)); const x = CORTE.cx + Math.cos(a) * r, y = CORTE.cy + Math.sin(a) * r;
@@ -228,30 +228,30 @@ function MicorrizasShot() {
           {T > K.Tr + 1.6 && Array.from({ length: 7 }, (_, i) => { const t0 = K.Tr + 1.6 + i * 0.32; if (T < t0) return null; const u = ((T - t0) / 2.4) % 1; const a = i * 0.9 + 0.8;
             const r = klerp(90, 520, kEase.suave(u)); const x = CORTE.cx + Math.cos(a) * r, y = CORTE.cy + Math.sin(a) * r;
             return <g key={'s' + i} transform={`translate(${x} ${y}) rotate(${T * 60 + i * 30})`}><rect x={-17} y={-17} width={34} height={34} rx={5} fill="#fff" stroke={KC.ink} strokeWidth={4} /><rect x={-9} y={-9} width={8} height={8} fill="#e2e2e2" /></g>; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · 8 de cada 10 especies de plantas */}
       <Escena T={T} a={K.Ca} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.08) translate(-540 -845)">
           {Array.from({ length: 10 }, (_, i) => { const cx = 150 + (i % 5) * 195, cy = 700 + Math.floor(i / 5) * 290; const on = kprog(T, K.Ca + 0.5 + i * 0.16, K.Ca + 0.8 + i * 0.16);
             const fr = i < 8 ? 1 : i === 8 ? 0.5 : 0;
             return <g key={i}>
-              <rect x={cx - 85} y={cy - 130} width={170} height={250} rx={24} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={6} />
-              {fr > 0 && <rect x={cx - 82} y={cy - 127 + 244 * (1 - fr * on)} width={164} height={244 * fr * on} rx={20} fill={KC.leaf} opacity={0.85} />}
+              <rect x={cx - 85} y={cy - 130} width={170} height={250} rx={24} fill="rgba(16,23,40,.85)" stroke={KC.ink} strokeWidth={6} />
+              {fr > 0 && <rect x={cx - 82} y={cy - 127 + 244 * (1 - fr * on)} width={164} height={244 * fr * on} rx={20} fill={KC.leaf} opacity={0.55} />}
               <Plantita x={cx} y={cy + 30} s={1.05} myc={fr > 0 ? on : 0} />
             </g>; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 6 · re-gancho: ¿un mismo hongo en varios árboles? */}
       <Escena T={T} a={K.P} b={K.R} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <rect x={0} y={1060} width={KW} height={900} fill={MZ.suelo} />
-          <Conifera T={T} x={190} y={1060} s={0.5} seed={4} />
-          <Conifera T={T} x={470} y={1060} s={0.45} seed={6} />
-          <path d={`M 190 1080 Q 330 ${1180 + Math.sin(T * 3) * 8} 470 1080`} stroke={MZ.hifa} strokeWidth={7} fill="none" strokeDasharray={`${400 * kprog(T, K.P + 0.3, K.P + 1.5)} 999`} strokeLinecap="round" />
-          <Interrogacion T={T} x={330} y={760} tam={420} />
+          <rect x={0} y={1300} width={KW} height={700} fill={MZ.suelo} />
+          <Conifera T={T} x={290} y={1300} s={0.85} seed={4} />
+          <Conifera T={T} x={790} y={1300} s={0.765} seed={6} />
+          <path d={`M 290 1330 Q 540 ${1470 + Math.sin(T * 3) * 10} 790 1330`} stroke={MZ.hifa} strokeWidth={9} fill="none" strokeDasharray={`${700 * kprog(T, K.P + 0.3, K.P + 1.5)} 999`} strokeLinecap="round" />
+          <Interrogacion T={T} x={540} y={720} tam={440} />
         </>)}
       </Escena>
       {/* 7 · el mapa: el mismo hongo en raíces de hasta 19 abetos */}
@@ -262,86 +262,87 @@ function MicorrizasShot() {
       {/* 8–9 · el experimento de 1997 y el debate de 2023 */}
       <Escena T={T} a={K.Si} b={K.Ma} zoom={0.04}>
         <FondoLunares color={T < K.De ? KC.cyan : KC.yellow} />
-        {fsvg(<g transform="translate(0 -130)"><rect x={0} y={1700} width={KW} height={400} fill={MZ.suelo} /><Experimento T={T} a={K.Si} debate={K.De + 0.6} /></g>)}
+        {fsvg(<g transform="translate(540 1100) scale(1.3) translate(-530 -1010)"><Experimento T={T} a={K.Si} debate={K.De + 0.6} /></g>)}
       </Escena>
       {/* 10 · ¿el árbol madre? sin evidencia */}
       <Escena T={T} a={K.Ma} b={K.Ci} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<BosqueViral T={T} x0={480} y0={1090} s={1.05} corona={1} apagado={kprog(T, K.Ma + 2.0, K.Ma + 3.0)} />)}
+        {fsvg(<BosqueViral T={T} x0={540} y0={1260} s={1.3} corona={1} apagado={kprog(T, K.Ma + 2.0, K.Ma + 3.0)} />)}
       </Escena>
       {/* 11 · las citas que exageran: ×2 en 25 años */}
       <Escena T={T} a={K.Ci} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
-          <rect x={90} y={600} width={880} height={600} rx={24} fill="rgba(255,255,255,.9)" stroke={KC.ink} strokeWidth={7} />
+        {fsvg(<g opacity=".6"><BosqueViral T={T} x0={540} y0={1560} s={0.78} corona={1} apagado={1} /></g>)}
+        {fsvg(<g transform="translate(0 -170)">
+          <rect x={90} y={600} width={880} height={600} rx={24} fill="rgba(16,23,40,.9)" stroke={KC.ink} strokeWidth={7} />
           <line x1={170} y1={1110} x2={920} y2={1110} stroke={KC.ink} strokeWidth={6} />
           <line x1={170} y1={1110} x2={170} y2={680} stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 6 }, (_, i) => { const h = klerp(190, 380, i / 5) * kprog(T, K.Ci + 0.4 + i * 0.25, K.Ci + 0.9 + i * 0.25, kEase.sale);
             return <rect key={i} x={210 + i * 118} y={1110 - h} width={84} height={h} rx={8} fill={i === 5 ? KC.red : '#ff8f6b'} stroke={KC.ink} strokeWidth={5} />; })}
           <text x={545} y={1165} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>25 años →</text>
           <text x={200} y={660} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>citas que afirman de más</text>
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · cierre: la misma raíz del inicio, ya con su toldo y sus sellos */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="55% 60%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.15) translate(-500 -800)">
           <PieDeArbol T={T} hif={1} />
           <Toldo x={630} y={1010} w={320} s={1} alto={110} />
           <Wifi x={880} y={1140} s={0.45} o={kprog(T, K.C + 2.6, K.C + 3.0)} />
           {T > K.C + 2.8 && <text x={880} y={1080} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.C + 2.8, K.C + 3.2)}>?</text>}
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos y sellos */}
       <Chip T={T} at={K.G + 1.0} until={K.G + 3.1} texto="¿el «internet del bosque»?" x={380} y={470} tam={38} borde={KC.blue} />
       <Chip T={T} at={K.G + 3.6} until={K.V - 0.3} texto="es un mercado" x={380} y={470} tam={44} borde={KC.red} />
-      <Etq T={T} at={K.G + 1.4} until={K.V - 0.3} x={40} y={1090} texto="hilitos de hongo" tam={30} />
-      <Chip T={T} at={K.V + 0.3} until={K.Mi - 0.3} texto="lo que se hizo viral" x={420} y={430} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.V + 1.6} until={K.Mi - 0.3} x={180} y={495} texto="«árbol madre»" tam={30} color={KC.ink} />
-      <SelloRect T={T} at={K.Mi + 0.2} until={K.Tr - 0.3} x={380} y={440} titulo="COMPROBADO" color={KC.leaf} rot={-6} tam={66} />
-      <Etq T={T} at={K.Mi + 1.0} until={K.Tr - 0.2} x={40} y={1120} texto="manto de hongo" tam={30} color={MZ.hifa} />
-      <Etq T={T} at={K.Mi + 1.8} until={K.Tr - 0.2} x={60} y={560} texto="red de Hartig (entre células)" tam={28} color={MZ.hifa} />
-      <Etq T={T} at={K.Mi + 2.4} until={K.Tr - 0.2} x={60} y={620} texto="micorriza = hongo + raíz" tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.G + 1.4} until={K.V - 0.3} x={40} y={1330} texto="hilitos de hongo" tam={30} />
+      <Chip T={T} at={K.V + 0.3} until={K.Mi - 0.3} texto="lo que se hizo viral" x={540} y={300} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.V + 1.6} until={K.Mi - 0.3} x={615} y={725} texto="«árbol madre»" tam={34} color={KC.ink} />
+      <SelloRect T={T} at={K.Mi + 0.2} until={K.Tr - 0.3} x={770} y={400} titulo="COMPROBADO" color={KC.leaf} rot={-6} tam={60} />
+      <Etq T={T} at={K.Mi + 1.0} until={K.Tr - 0.2}  x={40} y={1300} texto="manto de hongo" tam={30} color={MZ.hifa} />
+      <Etq T={T} at={K.Mi + 1.8} until={K.Tr - 0.2}  x={40} y={470} texto="red de Hartig (entre células)" tam={28} color={MZ.hifa} />
+      <Etq T={T} at={K.Mi + 2.4} until={K.Tr - 0.2}  x={40} y={525} texto="micorriza = hongo + raíz" tam={28} color={KC.gold2} />
       <Chip T={T} at={K.Tr + 0.5} until={K.Ca - 0.3} texto="hongo → planta: fósforo · nitrógeno" x={540} y={440} tam={32} borde="#7cc8ff" />
       <Chip T={T} at={K.Tr + 1.8} until={K.Ca - 0.3} texto="planta → hongo: carbono, sobre todo azúcares" x={540} y={525} tam={30} borde={KC.gold2} />
       <Chip T={T} at={K.Ca + 0.4} until={K.P - 0.3} texto="85 % de las plantas vasculares · 8 % nunca" x={540} y={460} tam={32} borde={KC.leaf} />
       <Etq T={T} at={K.R + 0.3} until={K.Si - 0.3} x={60} y={430} texto="abeto de Douglas" tam={32} color={KC.ink} />
       <Etq T={T} at={K.R + 0.6} until={K.Si - 0.3} x={60} y={480} texto="Pseudotsuga menziesii" it tam={30} color={KC.ink} />
       <Etq T={T} at={K.R + 1.2} until={K.Si - 0.3} x={PARCELA.x + PARCELA.l * 0.48 + 30} y={PARCELA.y + PARCELA.l * 0.55 + 4} texto="Rhizopogon" it tam={28} color={KC.white} />
-      <NumeroGigante T={T} at={K.R + 2.0} until={K.Si - 0.3} valor={19} dur={1.0} etiqueta="hasta" x={880} y={880} tam={170} color={KC.orange} />
-      <Chip T={T} at={K.R + 2.4} until={K.Si - 0.3} texto="mismo ADN" x={880} y={1050} tam={30} borde={KC.orange} />
-      <SelloRect T={T} at={K.R + 3.0} until={K.Si - 0.3} x={860} y={1160} titulo="COMPROBADO" sub="comparten hongo" color={KC.leaf} rot={-8} tam={46} />
-      <Chip T={T} at={K.R + 0.9} until={K.Si - 0.3} texto="Canadá · Beiler et al., 2010" x={410} y={560} tam={26} borde={KC.ink} mono />
-      <TarjetaEstudio T={T} at={K.Si + 0.2} until={K.Si + 3.4} anio="1997" quien="oeste de Canadá" revista="Simard et al., Nature" y={440} />
-      <Etq T={T} at={K.Si + 2.0} until={K.De + 0.4} x={40} y={1000} texto="abedul de papel" tam={28} color={KC.white} />
-      <Etq T={T} at={K.Si + 2.3} until={K.De + 0.4} x={40} y={1045} texto="Betula papyrifera" it tam={26} color={KC.white} />
-      <Etq T={T} at={K.Si + 2.6} until={K.De + 0.4} x={1040} y={1000} lado="izq" texto="abeto de Douglas" tam={28} color={KC.white} />
-      <Etq T={T} at={K.Si + 2.9} until={K.De + 0.4} x={1040} y={1045} lado="izq" texto="Pseudotsuga menziesii" it tam={26} color={KC.white} />
-      <Chip T={T} at={K.Si + 3.6} until={K.De - 0.1} texto="carbono marcado ●" x={420} y={440} tam={34} borde={KC.yellow} />
-      <SelloRect T={T} at={K.De + 0.3} until={K.Ma - 0.3} x={330} y={590} titulo="EN DEBATE" color="#d99a00" rot={-7} tam={64} />
-      <Chip T={T} at={K.De + 0.8} until={K.Ma - 0.3} texto="Karst, Jones y Hoeksema · 2023" x={360} y={410} tam={26} borde={KC.ink} mono />
-      <Etq T={T} at={K.De + 1.6} until={K.Ma - 0.3} x={40} y={470} texto="Nature Ecology & Evolution" it tam={26} color={KC.ink} />
-      <Etq T={T} at={K.De + 1.2} until={K.Ma - 0.3} x={600} y={910} texto="¿por el hongo?" tam={26} color={KC.white} />
-      <Etq T={T} at={K.De + 1.6} until={K.Ma - 0.3} x={640} y={1110} texto="¿por el suelo?" tam={26} color={KC.white} />
-      <Chip T={T} at={K.Ma + 0.3} until={K.Ci - 0.3} texto="¿el árbol madre?" x={380} y={430} tam={40} borde={KC.ink} />
-      <SelloRect T={T} at={K.Ma + 2.0} until={K.Ci - 0.3} x={520} y={700} titulo="SIN EVIDENCIA" sub="según Karst et al. 2023" color={KC.red} rot={-8} tam={72} />
-      <Chip T={T} at={K.Ci + 1.8} until={K.C - 0.3} texto="×2 en 25 años" x={380} y={470} tam={48} borde={KC.red} />
-      <Etq T={T} at={K.Ci + 0.6} until={K.C - 0.3} x={60} y={540} texto="según Karst et al. 2023" tam={26} color={KC.ink} />
-      <SelloRect T={T} at={K.C + 0.6} until={K.Ou} x={270} y={430} titulo="COMPROBADO" sub="es un mercado" color={KC.leaf} rot={-6} tam={44} />
-      <SelloRect T={T} at={K.C + 2.4} until={K.Ou} x={270} y={580} titulo="EN DEBATE" sub="la red entre árboles" color="#d99a00" rot={4} tam={44} />
-      <SelloRect T={T} at={K.C + 3.2} until={K.Ou} x={290} y={735} titulo="SIN EVIDENCIA" sub="el «árbol madre»" color={KC.red} rot={-5} tam={44} />
-      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="internet del bosque: se investiga" x={540} y={870} tam={30} borde={KC.blue} />
+      <NumeroGigante T={T} at={K.R + 2.0} until={K.Si - 0.3} valor={19} dur={1.0} etiqueta="hasta" x={905} y={880} tam={170} color={KC.orange} />
+      <Chip T={T} at={K.R + 2.4} until={K.Si - 0.3} texto="mismo ADN" x={905} y={1050} tam={30} borde={KC.orange} />
+      <SelloRect T={T} at={K.R + 3.0} until={K.Si - 0.3} x={890} y={1170} titulo="COMPROBADO" sub="comparten hongo" color={KC.leaf} rot={-8} tam={46} />
+      <Chip T={T} at={K.R + 0.9} until={K.Si - 0.3} texto="Canadá · Beiler et al., 2010" x={400} y={548} tam={26} borde={KC.ink} mono />
+      <TarjetaEstudio T={T} at={K.Si + 0.2} until={K.Si + 3.4} anio="1997" quien="oeste de Canadá" revista="Simard et al., Nature" x={610} y={400} />
+      <Etq T={T} at={K.Si + 2.0} until={K.De + 0.4} x={40} y={1150} texto="abedul de papel" tam={28} color={KC.white} />
+      <Etq T={T} at={K.Si + 2.3} until={K.De + 0.4} x={40} y={1195} texto="Betula papyrifera" it tam={26} color={KC.white} />
+      <Etq T={T} at={K.Si + 2.6} until={K.De + 0.4} x={1040} y={1150} lado="izq" texto="abeto de Douglas" tam={28} color={KC.white} />
+      <Etq T={T} at={K.Si + 2.9} until={K.De + 0.4} x={1040} y={1195} lado="izq" texto="Pseudotsuga menziesii" it tam={26} color={KC.white} />
+      <Chip T={T} at={K.Si + 3.6} until={K.De - 0.1} texto="carbono marcado ●" x={610} y={400} tam={34} borde={KC.yellow} />
+      <SelloRect T={T} at={K.De + 0.3} until={K.Ma - 0.3} x={540} y={490} titulo="EN DEBATE" color="#d99a00" rot={-7} tam={56} />
+      <Chip T={T} at={K.De + 0.8} until={K.Ma - 0.3} texto="Karst, Jones y Hoeksema · 2023" x={540} y={315} tam={26} borde={KC.ink} mono />
+      <Etq T={T} at={K.De + 1.6} until={K.Ma - 0.3} x={300} y={380} texto="Nature Ecology & Evolution" it tam={26} color={KC.ink} />
+      <Etq T={T} at={K.De + 1.2} until={K.Ma - 0.3} x={610} y={1175} texto="¿por el hongo?" tam={26} color={KC.white} />
+      <Etq T={T} at={K.De + 1.6} until={K.Ma - 0.3} x={660} y={1450} texto="¿por el suelo?" tam={26} color={KC.white} />
+      <Chip T={T} at={K.Ma + 0.3} until={K.Ci - 0.3} texto="¿el árbol madre?" x={540} y={330} tam={40} borde={KC.ink} />
+      <SelloRect T={T} at={K.Ma + 2.0} until={K.Ci - 0.3} x={540} y={780} titulo="SIN EVIDENCIA" sub="según Karst et al. 2023" color={KC.red} rot={-8} tam={72} />
+      <Chip T={T} at={K.Ci + 1.8} until={K.C - 0.3} texto="×2 en 25 años" x={700} y={360} tam={48} borde={KC.red} />
+      <Etq T={T} at={K.Ci + 0.6} until={K.C - 0.3} x={40} y={330} texto="según Karst et al. 2023" tam={26} color={KC.ink} />
+      <SelloRect T={T} at={K.C + 0.6} until={K.Ou} x={290} y={450} titulo="COMPROBADO" sub="es un mercado" color={KC.leaf} rot={-6} tam={44} />
+      <SelloRect T={T} at={K.C + 2.4} until={K.Ou} x={290} y={600} titulo="EN DEBATE" sub="la red entre árboles" color="#d99a00" rot={4} tam={44} />
+      <SelloRect T={T} at={K.C + 3.2} until={K.Ou} x={310} y={755} titulo="SIN EVIDENCIA" sub="el «árbol madre»" color={KC.red} rot={-5} tam={44} />
+      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="internet del bosque: se investiga" x={600} y={900} tam={30} borde={KC.blue} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.V} texto="10 cm" largo={170} />
-      <BarraEscala T={T} at={K.Mi} until={K.Ca} texto="100 µm" largo={160} />
-      <BarraEscala T={T} at={K.Ca} until={K.P} texto="10 cm" largo={150} color={KC.ink} />
-      <BarraEscala T={T} at={K.P} until={K.R} texto="1 m" largo={140} />
-      <BarraEscala T={T} at={K.R} until={K.Si} texto="10 m" largo={200} />
-      <BarraEscala T={T} at={K.Si} until={K.Ma} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.Ma} until={K.Ci} texto="5 m" largo={120} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={170} />
+      <BarraEscala T={T} at={K.G} until={K.V} texto="10 cm" largo={196} />
+      <BarraEscala T={T} at={K.Mi} until={K.Ca} texto="100 µm" largo={216} />
+      <BarraEscala T={T} at={K.Ca} until={K.P} texto="10 cm" largo={162} color={KC.ink} />
+      <BarraEscala T={T} at={K.P} until={K.R} texto="1 m" largo={238} />
+      <BarraEscala T={T} at={K.R} until={K.Si} texto="10 m" largo={227} />
+      <BarraEscala T={T} at={K.Si} until={K.Ma} texto="10 cm" largo={143} />
+      <BarraEscala T={T} at={K.Ma} until={K.Ci} texto="5 m" largo={149} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={196} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.V - 0.1} texto="No es el internet que te contaron: *es un mercado.*" />
