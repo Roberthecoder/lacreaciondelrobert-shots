@@ -224,6 +224,10 @@ compararon cuadro por cuadro y con analizador de audio; todo lo de abajo sale de
 - **Viaje macro → micro → macro** en un solo lugar que se transforma: una escena continua con cámara, no una serie de láminas.
 - **Fondo oscuro** (azul noche con tinte leve del color de la escena y motas que flotan) en lo microscópico y en casi todo; las
   escenas a escala real pueden llevar su propio escenario (piel, mesa de madera, tierra), nunca un color plano con puntos.
+- **Volumen y halo de color en todo el dibujo** (22 nov 2026): `cine.jsx` aplica a cada dibujo un filtro (`#cine-vol`, ajustes en
+  `CINE_VOL`) que le da relieve con luz desde arriba a la izquierda, brillo en los bordes y un halo del color de cada pieza. Es lo
+  que acerca las piezas planas al sombreado de la referencia: no se apaga, y las piezas nuevas se dibujan pensando en él (rellenos
+  de color medio, sin contornos negros gruesos).
 - **Lo microscópico se dibuja en línea con resplandor** (contornos claros o de color sobre oscuro, rellenos apagados), no con
   rellenos planos de caricatura.
 - **Un solo punto de atención.** Nada tapa al sujeto. Máximo una etiqueta o chip a la vez; etiquetas cortas, en mayúsculas o

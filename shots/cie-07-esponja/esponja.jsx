@@ -61,28 +61,30 @@ function EsponjaShot() {
       {/* 1 · gancho: la esponja se aprieta y sus poros se vuelven ventanas */}
       <Escena T={T} a={K.G} b={K.Cu}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Esponja x={400} y={960} s={1.25} squeeze={sq} ventanas={vent} T={T} /><Goteo T={T} x={400} y0={1130} y1={1400} cada={0.5} color="rgba(80,180,255,.7)" desde={K.G} hasta={K.G + 2.2} r={14} /></>)}
+        {svg(<><Esponja x={540} y={980} s={1.9} squeeze={sq} ventanas={vent} T={T} /><Goteo T={T} x={540} y0={1240} y1={1480} cada={0.5} color="rgba(80,180,255,.7)" desde={K.G} hasta={K.G + 2.2} r={14} /></>)}
       </Escena>
       {/* 2 · un cubito de 1 cm */}
       <Escena T={T} a={K.Cu} b={K.E}>
         <FondoLunares color={KC.yellow} />
-        {svg(<g transform={`translate(540 1000) scale(${klerp(0.6, 1.4, kprog(T, K.Cu, K.Cu + 1.2, kEase.sale))})`}>
+        {svg(<g transform={`translate(540 960) scale(${klerp(0.9, 1.9, kprog(T, K.Cu, K.Cu + 1.2, kEase.sale))})`}>
           <path d="M -120 -60 L 0 -120 L 120 -60 L 0 0 Z" fill={AMA} stroke={KC.ink} strokeWidth={7} />
           <path d="M -120 -60 L 0 0 L 0 140 L -120 80 Z" fill={AMA2} stroke={KC.ink} strokeWidth={7} />
           <path d="M 120 -60 L 0 0 L 0 140 L 120 80 Z" fill="#c99412" stroke={KC.ink} strokeWidth={7} />
           {Array.from({ length: 30 }, (_, i) => <circle key={i} cx={-100 + (i * 37) % 200} cy={-40 + ((i * 53) % 160)} r={4} fill={KC.red} opacity={kprog(T, K.Cu + 1 + i * 0.05, K.Cu + 1.3 + i * 0.05)} />)}
         </g>)}
-        <Escala T={T} z={1} pxPorMm={17} y={1700} x={60} />
+        <Escala T={T} z={1} pxPorMm={23} objetivo={240} y={1700} x={60} />
       </Escena>
       {/* 3 · el estudio: 14 esponjas */}
       <Escena T={T} a={K.E} b={K.A}>
         <FondoLunares color={KC.orange} />
-        {svg(<>{Array.from({ length: 14 }, (_, i) => T > K.E + 2.2 + i * 0.12 && <Esponja key={i} x={140 + (i % 7) * 133} y={1060 + Math.floor(i / 7) * 120} s={0.24} T={T} />)}</>)}
+        {/* modo cine: las 14 esponjas entran al empezar la escena (no 2.2 s después) y llenan el cuadro */}
+        {svg(<>{Array.from({ length: 14 }, (_, i) => { const f = Math.floor(i / 5), c = i % 5, e = kprog(T, K.E + 0.25 + i * 0.1, K.E + 0.55 + i * 0.1);
+          return e > 0 ? <g key={i} opacity={e}><Esponja x={200 + c * 170 + (f === 2 ? 85 : 0)} y={900 + f * 165} s={0.36} T={T} /></g> : null; })}</>)}
       </Escena>
       {/* 4 · ADN: 362 grupos */}
       <Escena T={T} a={K.A} b={K.H}>
         <FondoLunares color={KC.lilac} />
-        {svg(<g transform="translate(540 1000)">{Array.from({ length: 16 }, (_, i) => { const y = -300 + i * 40, ph = T * 2 + i * 0.5, x1 = Math.sin(ph) * 160, x2 = -x1;
+        {svg(<g transform="translate(560 1030) scale(1.3)">{Array.from({ length: 16 }, (_, i) => { const y = -300 + i * 40, ph = T * 2 + i * 0.5, x1 = Math.sin(ph) * 160, x2 = -x1;
           return <g key={i}><line x1={x1} y1={y} x2={x2} y2={y} stroke={KC.ink} strokeWidth={6} /><circle cx={x1} cy={y} r={16} fill={KC.pink} stroke={KC.ink} strokeWidth={5} /><circle cx={x2} cy={y} r={16} fill={KC.cyan} stroke={KC.ink} strokeWidth={5} /></g>; })}</g>)}
       </Escena>
       {/* 5 · por dentro: huecos y capas de bacterias */}
@@ -95,53 +97,55 @@ function EsponjaShot() {
       {/* 6 · pregunta: agua caliente o micro */}
       <Escena T={T} a={K.Q} b={K.I}>
         <FondoLunares color={KC.pink} />
-        {svg(<><Micro x={300} y={1000} s={1} T={T} on={1} /><text x={300} y={760} textAnchor="middle" style={{ font:`400 220px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={10}>?</text></>)}
+        {svg(<><Micro x={540} y={1060} s={1.5} T={T} on={1} /><text x={540} y={800} textAnchor="middle" style={{ font:`400 220px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={10}>?</text></>)}
       </Escena>
       {/* 7 · las limpiadas seguido no tenían menos */}
       <Escena T={T} a={K.I} b={K.M}>
         <FondoLunares color={KC.mint} />
+        {/* modo cine: no es lámina; la esponja con sus bacterias sigue en pantalla bajo las barras */}
+        {svg(<g opacity={0.85 * kprog(T, K.I + 0.1, K.I + 0.5)}><Esponja x={540} y={1300} s={0.8} ventanas={1} T={T} /></g>)}
       </Escena>
       {/* 8–9 · Moraxella y el olor */}
       <Escena T={T} a={K.M} b={K.R}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          {T < K.O ? <g transform="translate(540 950)">
+          {T < K.O ? <g transform="translate(540 960) scale(1.6)">
             {Array.from({ length: 8 }, (_, i) => { const a = i / 8 * Math.PI * 2 + T * 0.3, r = 160 + (i % 2) * 60;
               return <g key={i} transform={`translate(${Math.cos(a) * r} ${Math.sin(a) * r})`}><circle cx={-22} cy={0} r={26} fill={KC.pink} stroke={KC.ink} strokeWidth={6} /><circle cx={22} cy={0} r={26} fill={KC.pink} stroke={KC.ink} strokeWidth={6} /></g>; })}
             <path d="M -120 -80 L -60 -120 L 60 -120 L 120 -80 L 90 -40 L 60 -60 L 60 120 L -60 120 L -60 -60 L -90 -40 Z" fill="#cfe7ff" stroke={KC.ink} strokeWidth={8} />
             {[-40, 0, 40].map((dx, k) => <path key={k} d={`M ${dx} -140 q 20 -30 0 -60 q -20 -30 0 -60`} stroke={KC.leaf} strokeWidth={9} fill="none" opacity={0.5 + 0.5 * Math.sin(T * 4 + k)} />)}
-          </g> : <Esponja x={540} y={1000} s={1.1} T={T} olor={kprog(T, K.O + 0.3, K.O + 1.2)} />}
+          </g> : <Esponja x={540} y={1100} s={1.7} T={T} olor={kprog(T, K.O + 0.3, K.O + 1.2)} />}
         </>)}
         <Etq T={T} at={K.M + 1.0} until={K.O - 0.2} x={100} y={1480} texto="Moraxella osloensis" it lado="der" tam={40} />
       </Escena>
       {/* 10 · el micro baja la carga, pero regresan */}
       <Escena T={T} a={K.R} b={K.Cs}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Micro x={360} y={960} s={1} T={T} on={T > K.R + 0.4 && T < K.R + 1.8 ? 1 : 0} />)}
+        {svg(<Micro x={540} y={940} s={1.7} T={T} on={T > K.R + 0.4 && T < K.R + 1.8 ? 1 : 0} />)}
         <Medidor T={T} at={K.R + 0.2} until={K.Cs - 0.2} valor={carga} etiqueta="bacterias en la esponja" texto={() => (T < K.R + 2.4 ? 'bajan' : '¿vuelven a crecer?')} x={90} y={1460} ancho={900} color={KC.red} />
       </Escena>
       {/* 11 · consejo: cámbiala cada semana */}
       <Escena T={T} a={K.Cs} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<Calendario x={540} y={940} T={T} at={K.Cs + 0.3} />)}
+        {svg(<g transform="translate(540 960) scale(1.5)"><Calendario x={0} y={0} T={T} at={K.Cs + 0.3} /></g>)}
       </Escena>
       {/* 12 · cierre: la misma esponja, un edificio lleno */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Esponja x={400} y={960} s={1.25} ventanas={1} T={T} />)}
+        {svg(<Esponja x={540} y={980} s={1.9} ventanas={1} T={T} />)}
       </Escena>
 
       {/* datos */}
-      <Chip T={T} at={K.G + 1.4} until={K.Cu - 0.2} texto="edificio de bacterias" x={330} y={440} tam={42} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Cu + 1.0} until={K.E - 0.2} valor={54} dur={1.0} sufijo=" mil millones" etiqueta="bacterias en 1 cm³ (algunas zonas)" x={540} y={1530} tam={100} color={KC.red} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.A - 0.3} anio="2017" quien="Alemania · 14 esponjas usadas" revista="Cardinale et al. · Scientific Reports" x={600} y={700} />
-      <NumeroGigante T={T} at={K.A + 0.6} until={K.H - 0.2} valor={362} dur={1.2} etiqueta="grupos de bacterias" x={400} y={520} tam={130} color={KC.yellow} />
+      <Chip T={T} at={K.G + 1.4} until={K.Cu - 0.2} texto="edificio de bacterias" x={540} y={500} tam={42} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Cu + 1.0} until={K.E - 0.2} valor={54} dur={1.0} sufijo=" mil millones" etiqueta="bacterias en 1 cm³ (algunas zonas)" x={540} y={1410} tam={100} color={KC.red} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.A - 0.3} anio="2017" quien="Alemania · 14 esponjas usadas" revista="Cardinale et al. · Scientific Reports" x={540} y={470} />
+      <NumeroGigante T={T} at={K.A + 0.6} until={K.H - 0.2} valor={362} dur={1.2} etiqueta="grupos de bacterias" x={540} y={470} tam={130} color={KC.yellow} />
       <Chip T={T} at={K.Q + 0.3} until={K.I - 0.2} texto="¿agua caliente o micro?" x={540} y={1500} tam={38} borde={KC.ink} />
       <Comparativa T={T} at={K.I + 0.3} until={K.M - 0.2} max={10} y={720} alto={300}
         izq={{ valor: 8, etiqueta: 'limpiadas seguido', color: KC.blue, texto: '≈' }} der={{ valor: 8.3, etiqueta: 'sin limpiar', color: KC.orange, texto: '≈' }} />
       <Chip T={T} at={K.I + 1.6} until={K.M - 0.2} texto="de 4 comparadas: no tenían menos" x={540} y={1500} tam={40} borde={KC.red} />
       <Chip T={T} at={K.O + 0.4} until={K.R - 0.2} texto="sospecha: culpable del olor" x={380} y={440} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="dale fecha de caducidad" x={360} y={440} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="dale fecha de caducidad" x={540} y={500} tam={40} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Cu - 0.1} texto="No es esponja: *es un edificio.*" />

@@ -53,7 +53,7 @@ function Capside({ T, x = 0, y = 0, r = 220, rot = 0, o = 1, color = '#c84b6a', 
    quieto: 0..1 — a 1 la silueta deja de moverse y se vuelve gris. */
 function RatonSilueta({ T, x = 0, y = 0, s = 1, quieto = 0 }) {
   const b = mece(T, 3, 0.8) * 7 * (1 - quieto);
-  const col = mixHex('#6f7a84', '#3a4149', quieto);
+  const col = mixHex('#7d8892', '#667079', quieto);   // modo cine: el gris quieto se sigue viendo sobre el fondo oscuro
   return <g transform={`translate(${x} ${y}) scale(${s}) rotate(${b * 0.5})`} opacity={0.9}>
     <path d={`M 120 -16 q 70 ${10 + b * 2} 92 -42`} fill="none" stroke={col} strokeWidth={11} strokeLinecap="round" />
     <ellipse cx={30} cy={-40} rx={104} ry={60} fill={col} />
@@ -89,6 +89,17 @@ function Candado({ T, x = 0, y = 0, s = 1, cierra = 0 }) {
   </g>;
 }
 
+/* ---------- portada de la revista (escena Science y, atenuada, la crítica) ---------- */
+function PortadaScience({ T, t0 }) {
+  return <g transform={`rotate(${mece(T, 4, 0.2) * 1.4} 490 860)`}>
+    <rect x={180} y={520} width={620} height={680} rx={18} fill={KC.paper} stroke={KC.ink} strokeWidth={10} />
+    <rect x={180} y={520} width={620} height={130} rx={18} fill={KC.red} stroke={KC.ink} strokeWidth={10} />
+    <text x={490} y={618} textAnchor="middle" style={{ font:`400 94px ${KF.titulo}` }} fill={KC.paper}>Science</text>
+    <Capside T={T} x={490} y={890} r={160} rot={(T - t0) * 12} />
+    <text x={490} y={1150} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill="#5a524a">9 · agosto · 2002</text>
+  </g>;
+}
+
 /* ================= VERSIÓN NARRADA ================= */
 function PolioNarrado() {
   const { T, CUES } = useComposition();
@@ -104,8 +115,9 @@ function PolioNarrado() {
       {/* 0 · GANCHO — el genoma entero dibujado en una pantalla */}
       <EscenaFundido T={T} a={K.G} b={K.E} zoom={0} fondo="#0a0d14">
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 46%, #141a28 0%, #080a10 76%)' }}></div>
-        <div style={{ position:'absolute', inset:0, transform:`scale(${zoomG})`, transformOrigin:'22% 36%' }}>
-          <PantallaLetras T={T} llenado={kprog(T, K.G + 0.05, K.G + 3.4, kEase.sale)} />
+        <div style={{ position:'absolute', inset:0, transform:`scale(${zoomG})`, transformOrigin:'22% 19%' }}>
+          {/* modo cine: las letras llenan el cuadro desde el segundo 0 (la cámara parte de las primeras filas, ya escritas) */}
+          <PantallaLetras T={T} llenado={0.3 + 0.7 * kprog(T, K.G + 0.05, K.G + 3.4, kEase.sale)} />
         </div>
       </EscenaFundido>
       <NumeroGigante T={T} at={K.G + 2.0} until={K.E - 0.3} valor={7500} etiqueta="LETRAS" y={1500} tam={180} color={KC.yellow} />
@@ -114,9 +126,9 @@ function PolioNarrado() {
       <EscenaFundido T={T} a={K.E} b={K.S} zoom={0.05} fondo="#0a0d14">
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d121f, #090e19)' }}></div>
         <Ambiente T={T} n={22} seed={7} color="rgba(120,180,255,.3)" tam={[3, 9]} />
-        <PantallaLetras T={T} llenado={1} x={240} y={560} ancho={600} alto={620} />
+        <PantallaLetras T={T} llenado={1} x={130} y={520} ancho={820} alto={850} />
       </EscenaFundido>
-      <TarjetaEstudio T={T} at={K.E + 0.3} until={K.S - 0.3} anio="2002" quien="Cello, Paul y Wimmer" revista="Stony Brook, Nueva York" y={860} />
+      <TarjetaEstudio T={T} at={K.E + 0.3} until={K.S - 0.3} anio="2002" quien="Cello, Paul y Wimmer" revista="Stony Brook, Nueva York" y={290} />
 
       {/* 2 · SECUENCIA — ya estaba publicada */}
       <EscenaFundido T={T} a={K.S} b={K.P} zoom={0.05} fondo="#0a0d14">
@@ -134,7 +146,7 @@ function PolioNarrado() {
 
       {/* 3 · PEDAZOS — llegan por correo */}
       <EscenaFundido T={T} a={K.P} b={K.A} zoom={0.04} fondo="#0a0d14">
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.yellow, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.yellow, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.05) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {Array.from({ length: 10 }, (_, i) => { const at = K.P + 0.4 + i * 0.22, p = kprog(T, at, at + 1.1, kEase.rebote);
             if (T < at) return null; const g = krng(i * 13 + 2);
@@ -172,7 +184,7 @@ function PolioNarrado() {
       <EscenaFundido T={T} a={K.R} b={K.Q} zoom={0.04} fondo="#0a0d14">
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#12101b, #090e19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <RatonSilueta T={T} x={540} y={930} s={2.0} quieto={kprog(T, K.R + 1.2, K.R + 2.4, kEase.suave)} />
+          <RatonSilueta T={T} x={410} y={1060} s={2.8} quieto={kprog(T, K.R + 1.2, K.R + 2.4, kEase.suave)} />
         </svg>
       </EscenaFundido>
       <Chip T={T} at={K.R + 1.8} until={K.Q - 0.3} texto="los ratones se paralizaron" y={520} borde={KC.red} tam={44} />
@@ -181,7 +193,12 @@ function PolioNarrado() {
       <EscenaFundido T={T} a={K.Q} b={K.Po} zoom={0.06} fondo="#0a0d14">
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 44% 48%, #1d2433 0%, #080a10 74%)' }}></div>
         <Ambiente T={T} n={26} seed={11} color="rgba(200,220,255,.32)" tam={[3, 9]} />
-        <div style={{ position:'absolute', left:0, right:0, top:760, textAlign:'center',
+        {/* modo cine: no es lámina; el ratón quieto y el virus armado siguen detrás de la pregunta */}
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:0.55 }}>
+          <RatonSilueta T={T} x={410} y={1060} s={2.8} quieto={1} />
+          <Capside T={T} x={800} y={560} r={150} rot={(T - K.A) * 18} />
+        </svg>
+        <div style={{ position:'absolute', left:0, right:0, top:760, zIndex:5, textAlign:'center',
           font:`400 340px/1 ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`10px ${KC.ink}`,
           transform:`scale(${klerp(0.7, 1, kprog(T, K.Q, K.Q + 0.6, kEase.rebote))})` }}>?</div>
       </EscenaFundido>
@@ -189,7 +206,9 @@ function PolioNarrado() {
       {/* 7 · PORQUÉ — se lee y ahora también se escribe */}
       <EscenaFundido T={T} a={K.Po} b={K.Sc} zoom={0.04} fondo="#0a0d14">
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0c1220, #090e19)' }}></div>
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+        {/* modo cine: el sujeto (el genoma en letras) sigue detrás, atenuado */}
+        <div style={{ position:'absolute', inset:0, opacity:0.2 }}><PantallaLetras T={T} llenado={1} x={70} y={400} ancho={940} alto={1000} /></div>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:22 }}>
           {[0, 1].map((k) => { const y = 740 + k * 400, on = k === 0 ? 1 : kprog(T, K.Po + 1.8, K.Po + 2.6);
             return <g key={k} opacity={k === 0 ? kprog(T, K.Po + 0.3, K.Po + 0.9) : on}>
               <g transform={`translate(${k ? 760 : 250} ${y})`}>
@@ -212,30 +231,28 @@ function PolioNarrado() {
 
       {/* 8 · SCIENCE */}
       <EscenaFundido T={T} a={K.Sc} b={K.Cr} zoom={0.05} fondo="#0a0d14">
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.28) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.05) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform={`rotate(${mece(T, 4, 0.2) * 1.4} 490 860)`}>
-            <rect x={180} y={520} width={620} height={680} rx={18} fill={KC.paper} stroke={KC.ink} strokeWidth={10} />
-            <rect x={180} y={520} width={620} height={130} rx={18} fill={KC.red} stroke={KC.ink} strokeWidth={10} />
-            <text x={490} y={618} textAnchor="middle" style={{ font:`400 94px ${KF.titulo}` }} fill={KC.paper}>Science</text>
-            <Capside T={T} x={490} y={890} r={160} rot={(T - K.Sc) * 12} />
-            <text x={490} y={1150} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill="#5a524a">9 · agosto · 2002</text>
-          </g>
+          <g transform="translate(540 880) scale(1.12) translate(-490 -860)"><PortadaScience T={T} t0={K.Sc} /></g>
         </svg>
       </EscenaFundido>
 
       {/* 9 · CRÍTICA */}
       <EscenaFundido T={T} a={K.Cr} b={K.Re} zoom={0.04} fondo="#0a0d14">
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.coral, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.26) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.coral, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.05) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
         <Ambiente T={T} n={16} seed={23} color="rgba(255,255,255,.4)" tam={[5, 14]} vel={12} />
+        {/* modo cine: no es lámina; la portada criticada sigue en pantalla, atenuada */}
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:0.5 }}>
+          <g transform="translate(50 60)"><PortadaScience T={T} t0={K.Sc} /></g>
+        </svg>
       </EscenaFundido>
-      <Chip T={T} at={K.Cr + 0.4} until={K.Re - 0.3} texto="«irresponsable»" x={400} y={560} borde={KC.red} tam={48} />
-      <Chip T={T} at={K.Cr + 1.9} until={K.Re - 0.3} texto="de eso se trataba:" x={560} y={740} borde={KC.gold} tam={44} />
-      <Chip T={T} at={K.Cr + 2.3} until={K.Re - 0.3} texto="advertir del riesgo" x={560} y={870} borde={KC.gold} tam={44} />
+      <Chip T={T} at={K.Cr + 0.4} until={K.Re - 0.3} texto="«irresponsable»" x={540} y={330} borde={KC.red} tam={48} />
+      <Chip T={T} at={K.Cr + 1.9} until={K.Re - 0.3} texto="de eso se trataba:" x={540} y={1400} borde={KC.gold} tam={44} />
+      <Chip T={T} at={K.Cr + 2.3} until={K.Re - 0.3} texto="advertir del riesgo" x={540} y={1490} borde={KC.gold} tam={44} />
 
       {/* 10 · REGLAS */}
       <EscenaFundido T={T} a={K.Re} b={K.H} zoom={0.04} fondo="#0a0d14">
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.mint, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.mint, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.05) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g opacity={kprog(T, K.Re + 0.3, K.Re + 0.9)}>
             <Documento T={T} x={320} y={790} w={400} h={470} titulo="Informe Fink" pie="2004" rot={-6}
@@ -251,7 +268,7 @@ function PolioNarrado() {
 
       {/* 11 · HOY — se revisa el pedido y el cliente */}
       <EscenaFundido T={T} a={K.H} b={K.C} zoom={0.04} fondo="#0a0d14">
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.cyan, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.cyan, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.05) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <Documento T={T} x={470} y={830} w={460} h={540} titulo="pedido de ADN" pie="¿qué? · ¿quién?" rot={-3}
             sello="REVISADO" sellado={kprog(T, K.H + 2.2, K.H + 2.8, kEase.sale)} />
@@ -265,10 +282,10 @@ function PolioNarrado() {
       {/* 12 · CIERRE — la misma pantalla, ahora con candado */}
       <EscenaFundido T={T} a={K.C} b={FIN} zoom={0.03} fondo="#0a0d14">
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 44%, #141a28 0%, #080a10 76%)' }}></div>
-        <PantallaLetras T={T} llenado={1} x={160} y={400} ancho={760} alto={760} brillo={kprog(T, K.C + 0.4, K.C + 1.2)} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+        <PantallaLetras T={T} llenado={1} x={100} y={420} ancho={880} alto={900} brillo={kprog(T, K.C + 0.4, K.C + 1.2)} />
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:21 }}>
           <g opacity={kprog(T, K.C + 1.4, K.C + 2.0)} style={{ filter:'drop-shadow(0 0 40px rgba(0,0,0,.85))' }}>
-            <Candado T={T} x={540} y={790} s={2.1} cierra={kprog(T, K.C + 1.8, K.C + 2.6, kEase.sale)} />
+            <Candado T={T} x={540} y={880} s={2.1} cierra={kprog(T, K.C + 1.8, K.C + 2.6, kEase.sale)} />
           </g>
         </svg>
       </EscenaFundido>

@@ -12,7 +12,9 @@
 const CINE = { fondo: '#0a0f1c', borde: '#070a12', linea: '#dfe7ff', texto: '#f3f6ff', acento: '#ffd166' };
 // Interruptores (22 nov 2026, tras revisar tres videos de la referencia cuadro por cuadro: no llevan subtítulo quemado ni
 // logo durante el video, y sus trazos tienen un resplandor suave). Cambiar aquí afecta a todos los shots al re-renderizar.
-const CINE_OPC = { subtitulos: false, logo: false, resplandor: true };
+const CINE_OPC = { subtitulos: false, logo: false, resplandor: true, volumen: true };
+const CINE_ENC = { max: 1.7, ancho: 0.93, alto: 0.72, centroY: 0.47, bajar: 0.17 };
+const CINE_VOL = { suave: 5, relieve: 7, brillo: 0.5, halo: 12, haloFuerza: 0.5 };
 
 function cineMix(a, b, t) {
   const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
@@ -62,8 +64,28 @@ function cineEscena(Kit) {
       else if (!velo && iB >= 0 && !/^Outro/i.test(cs[iB][0])) b = p.b + 0.9;   // disolvencia larga hacia la escena que sigue
     }
     // El gancho es donde se decide si la gente se queda: ahí la cámara entra más (20 %).
-    const el = Kit({ ...p, b, zoom: Math.max(p.zoom == null ? 0.05 : p.zoom, gancho ? 0.2 : 0.1) });
-    return el ? <CineCtx.Provider value={{ velo, a: p.a }}>{el}</CineCtx.Provider> : null;
+    const zf = Math.max(p.zoom == null ? 0.05 : p.zoom, gancho ? 0.2 : 0.1);
+    // Encuadre automático: motor/kit/encuadrar.py midió, escena por escena, la caja que ocupa el dibujo; aquí se agranda
+    // y se centra para que el sujeto llene el cuadro (regla del modo cine), sin que nada se salga.
+    let enc = null;
+    const E = window.CINE_ENCUADRE;
+    if (E && !window.CINE_SIN_ENCUADRE && comp && comp.CUES) {
+      let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9, n = 0;
+      Object.entries(comp.CUES).forEach(([nom, t]) => { const c = E[nom]; if (c && t >= p.a - 0.08 && t < p.b - 0.08) { x0 = Math.min(x0, c[0]); y0 = Math.min(y0, c[1]); x1 = Math.max(x1, c[2]); y1 = Math.max(y1, c[3]); n++; } });
+      if (n) {
+        const w = Math.max(40, x1 - x0), h = Math.max(40, y1 - y0);
+        const k = Math.min(CINE_ENC.max, (KW * CINE_ENC.ancho) / (w * (1 + zf)), (KH * CINE_ENC.alto) / (h * (1 + zf)));
+        const kk = k >= 1.06 ? k : 1, cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+        const dx = Math.min(0, Math.max(KW * (1 - kk), KW / 2 - kk * cx));
+        // Hacia abajo sí se permite bajar el dibujo aunque no se agrande: los shots dejaban libre la franja del subtítulo
+        // viejo y por eso todo quedaba en la mitad de arriba. La franja que se descubre arriba se rellena con el fondo.
+        const dy = Math.min(KH * CINE_ENC.bajar, Math.max(KH * (1 - kk), KH * CINE_ENC.centroY - kk * cy));
+        if (kk > 1 || dy > 24) enc = { k: kk, dx, dy: dy > 0 && dy <= 24 ? 0 : dy };
+      }
+    }
+    const hijos = enc ? <React.Fragment>{enc.dy > 0 ? <div style={{ position:'absolute', inset:0, background:CINE.fondo }}></div> : null}<div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:`translate(${enc.dx}px,${enc.dy}px) scale(${enc.k})`, transformOrigin:'0 0' }}>{p.children}</div></React.Fragment> : p.children;
+    const el = Kit({ ...p, b, zoom: window.CINE_MIDIENDO ? 0 : zf, children: hijos });
+    return el ? <CineCtx.Provider value={{ velo, a: p.a, enc }}>{el}</CineCtx.Provider> : null;
   };
 }
 const Escena = cineEscena(window.Escena);
@@ -106,8 +128,34 @@ function RobertF() { return null; }
 if (typeof document !== 'undefined' && !document.getElementById('cine-css')) {
   const st = document.createElement('style'); st.id = 'cine-css';
   st.textContent = 'svg text{paint-order:stroke;stroke:rgba(7,10,18,.88);stroke-width:5px;stroke-linejoin:round}'
-    + (CINE_OPC.resplandor ? ' [data-om-exportable-video-with-duration-secs] svg{filter:drop-shadow(0 0 7px rgba(150,195,255,.30))}' : '');
+    + (CINE_OPC.resplandor ? ' [data-om-exportable-video-with-duration-secs] svg{filter:' + (CINE_OPC.volumen ? 'url(#cine-vol)' : 'drop-shadow(0 0 7px rgba(150,195,255,.30))') + '}' : '');
   document.head.appendChild(st);
+}
+
+// Volumen y línea luminosa (22 nov 2026): la referencia dibuja con sombreado y contornos que brillan; las piezas de los
+// shots son rellenos planos. Este filtro se aplica a cada dibujo (SVG) completo y le da, sin tocar ningún shot:
+// 1) relieve: luz desde arriba a la izquierda, calculada con la silueta y con los cambios de brillo de adentro;
+// 2) brillo especular suave en los bordes que miran a la luz;
+// 3) halo del color de cada pieza (no azul fijo), que es lo que hace que la línea "brille" sobre el fondo oscuro.
+if (typeof document !== 'undefined' && CINE_OPC.volumen && !document.getElementById('cine-vol-svg')) {
+  const d = document.createElement('div'); d.id = 'cine-vol-svg';
+  d.style.cssText = 'position:absolute;width:0;height:0;overflow:hidden';
+  d.innerHTML = '<svg width="0" height="0"><defs><filter id="cine-vol" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">'
+    + '<feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  .21 .72 .07 .55 0" result="lum"/>'
+    + '<feComposite in="lum" in2="SourceAlpha" operator="in" result="lumIn"/>'
+    + '<feGaussianBlur in="lumIn" stdDeviation="' + CINE_VOL.suave + '" result="h"/>'
+    + '<feDiffuseLighting in="h" surfaceScale="' + CINE_VOL.relieve + '" diffuseConstant="1.22" lighting-color="#ffffff" result="dif"><feDistantLight azimuth="232" elevation="56"/></feDiffuseLighting>'
+    + '<feComposite in="dif" in2="SourceAlpha" operator="in" result="difIn"/>'
+    + '<feBlend in="SourceGraphic" in2="difIn" mode="multiply" result="sombra"/>'
+    + '<feComposite in="sombra" in2="SourceAlpha" operator="in" result="sombraIn"/>'
+    + '<feSpecularLighting in="h" surfaceScale="' + CINE_VOL.relieve + '" specularConstant="' + CINE_VOL.brillo + '" specularExponent="18" lighting-color="#dbe8ff" result="spec"><feDistantLight azimuth="232" elevation="48"/></feSpecularLighting>'
+    + '<feComposite in="spec" in2="SourceAlpha" operator="in" result="specIn"/>'
+    + '<feComposite in="sombraIn" in2="specIn" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="luz"/>'
+    + '<feGaussianBlur in="SourceGraphic" stdDeviation="' + CINE_VOL.halo + '" result="g"/>'
+    + '<feColorMatrix in="g" type="matrix" values="1.25 0 0 0 0  0 1.25 0 0 0  0 0 1.25 0 0  0 0 0 ' + CINE_VOL.haloFuerza + ' 0" result="haloC"/>'
+    + '<feMerge><feMergeNode in="haloC"/><feMergeNode in="luz"/></feMerge>'
+    + '</filter></defs></svg>';
+  (document.body || document.documentElement).appendChild(d);
 }
 
 function MarcaAgua({ T, num, hasta, tema, logo }) {
@@ -143,11 +191,22 @@ function MitoTachado({ T, at, tacharEn, until, texto, x = KW / 2, y = 760, tam =
 
 // La barra de escala sube a la esquina superior derecha para no chocar con el subtítulo.
 const EscalaKit = window.Escala;
-function Escala(p) { return EscalaKit({ ...p, x: 800, y: 232 }); }
+function cineFija(el, enc) {   // deshace el encuadre para una pieza que debe quedarse en su esquina
+  return enc && el ? <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:`scale(${1 / enc.k}) translate(${-enc.dx}px,${-enc.dy}px)`, transformOrigin:'0 0', pointerEvents:'none' }}>{el}</div> : el;
+}
+function Escala(p) {
+  if (window.CINE_MIDIENDO) return null;
+  const enc = React.useContext(CineCtx).enc;
+  return cineFija(EscalaKit({ ...p, z: (p.z == null ? 1 : p.z) * (enc ? enc.k : 1), x: 800, y: 232 }), enc);
+}
 
 // Variantes de otros kits (fungi-kit, series C y D): mismo trato. Por eso cine.jsx va al final de los kits.
 function FondoLunares({ color }) { return FondoMarca({ color, patron: 'puntos' }); }
 const BarraKit = window.BarraEscala;
-function BarraEscala(p) { return BarraKit ? BarraKit({ ...p, x: 800, y: 232 }) : null; }
+function BarraEscala(p) {
+  if (!BarraKit || window.CINE_MIDIENDO) return null;
+  const enc = React.useContext(CineCtx).enc, L = (p.largo == null ? 200 : p.largo) * (enc ? enc.k : 1);
+  return cineFija(BarraKit({ ...p, largo: L, x: Math.min(800, 1030 - L), y: 232 }), enc);
+}
 
 Object.assign(window, CINE_ESCENAS, CINE_MUNDOS, { CINE, CINE_OPC, cineMix, CineCtx, FondoMarca, FondoLunares, Sticker, RobertF, Subtitulo, Robert, MarcaAgua, TarjetaEstudio, MitoTachado, Escala, BarraEscala });

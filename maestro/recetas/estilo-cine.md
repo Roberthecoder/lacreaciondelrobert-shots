@@ -45,3 +45,17 @@ Complementa la sección «Modo cine» de `CLAUDE.md`. Aquí queda lo que se midi
 ## Archivos
 `motor/kit/cine.jsx` (capa de estilo e interruptores), `motor/kit/aplicar-cine.py`, `motor/kit/auditar-laminas.py`,
 `motor/kit/cama-luminosa.mjs`, `motor/mezcla.json`, `maestro/recetas/pase-a-mano-cine.md`, `maestro/re-render-cine/`.
+
+## Volumen del dibujo (22 nov 2026)
+La referencia sombrea sus piezas y sus líneas brillan; las nuestras eran rellenos planos. `motor/kit/cine.jsx` aplica a cada
+SVG el filtro `#cine-vol`: relieve por luz difusa y especular (la altura sale del brillo de cada pieza), y un halo desenfocado
+del propio color de la pieza en lugar del resplandor azul fijo. Se ajusta en `CINE_VOL` (suave, relieve, brillo, halo,
+haloFuerza) y se apaga con `CINE_OPC.volumen`. Revisado en hojas de cuadros de fagos, alucinaciones, barrenador, dedos,
+cebolla y arrieras.
+
+## Tamaño del sujeto: se arregla a mano
+Se probó un encuadre automático (`motor/kit/encuadrar.py`: mide la caja del dibujo por escena y la agranda). Sirve en escenas
+angostas, pero muchos shots dibujan piezas fuera de la `Escena` y esas no se mueven con lo demás, así que el medidor descarta
+la mayoría de las escenas y tarda unos 2 minutos por shot. Queda como herramienta opcional. Lo que sí funciona es el encargo
+del pase a mano: agrandar el sujeto 1.4 a 2.3 veces escena por escena y recalcular las barras de escala (ejemplos: qui-08-cebolla,
+fun-22-arrieras, amb-08-vaquita, cie-07-esponja).

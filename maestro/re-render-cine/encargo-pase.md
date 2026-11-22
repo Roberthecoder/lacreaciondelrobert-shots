@@ -1,0 +1,20 @@
+Trabajas en /home/claude/lacreaciondelrobert-shots (videos verticales 1080x1920 de divulgación científica de Robert, animados con React/JSX y renderizados cuadro por cuadro). Haces el "pase a mano del estilo cine" SOLO de los shots que te asignaron (otros agentes trabajan otros shots en paralelo en el mismo directorio).
+
+Lee primero, completos: la sección «Modo cine» de CLAUDE.md, maestro/recetas/pase-a-mano-cine.md y maestro/recetas/estilo-cine.md. Para ver ejemplos ya hechos: `git log --oneline -8` y `git show <commit> -- shots/cie-06-bacterias-1a1 shots/bio-05-petunia shots/ia-03-siguiente-palabra`.
+
+Para cada shot:
+1. Auditor: `NAVEGADOR=chrome python3 motor/kit/auditar-laminas.py shots/<clave>` (marca escenas casi vacías).
+2. Hoja de cuadros de TODO el shot, y MÍRALA con Read (es imagen). El .dc.html narrado es el del campo "salida" de shots/<clave>/narracion.json (el nombre puede llevar espacios: ponlo entre comillas). Los tiempos están en ese .dc.html en `window.OM_SCENES` (inicio = suma de los dur anteriores). Dos o tres cuadros por escena: `NAVEGADOR=chrome node motor/preview.mjs shots/<clave> "<salida>" /tmp/<clave>_a.png 0.3,1.5,3,… --cols 6 --ancho 220`. Máximo ~18 tiempos por hoja; nombres en /tmp que empiecen con la clave.
+3. Arregla en el .jsx PROPIO del shot (el último archivo de la lista `from="…"` del .dc.html; nunca toques kit-robert.jsx, cine.jsx, los *-kit.jsx, *-piezas.jsx, animations-v3.jsx ni support.js):
+   a) ESCALA DEL SUJETO (lo más importante y lo que más falta): en cada escena el dibujo principal debe ocupar al menos la mitad del cuadro (unos 600 px o más de ancho o 900 de alto de los 1080x1920). Si está chico y flotando en fondo vacío, agrándalo de verdad (factor 1.4 a 2.2: escala `s`, o envuélvelo en `<g transform="translate(cx,cy) scale(k) translate(-cx,-cy)">`) y céntralo hacia el centro vertical del cuadro (y entre 500 y 1300), reacomodando etiquetas, chips y líneas guía para que sigan apuntando a lo suyo y nada se salga ni se encime. Esto NO se deja como "sería rediseño": se hace, escena por escena, con cuidado.
+   b) Ninguna escena es lámina: si solo hay tarjeta, chip, número, barras o un signo, trae a cuadro el sujeto del video reutilizando un dibujo que el shot ya tiene (quieto o atenuado) y haz la tarjeta más chica y arriba (TarjetaEstudio acepta x, y).
+   c) Gancho (primera escena): la imagen cotidiana llena el cuadro de borde a borde desde el cuadro 0 y antes del segundo 3 ya se ve hacia dónde va la historia.
+   d) Nada entra tarde (más de ~0.6 s después de empezar la escena) ni se apaga antes de que termine.
+   e) Un solo punto de atención; chips y etiquetas no tapan al sujeto ni se enciman. Ya no hay subtítulo ni logo durante el video; no pongas piezas importantes debajo de y≈1500 ni arriba de y≈200.
+   f) Fondo oscuro siempre: ningún rectángulo o suelo de color claro o saturado a media pantalla (oscurécelo conservando el tinte). Texto legible: en estilo cine KC.ink es CLARO y KC.paper es oscuro; texto o detalle que quedó claro sobre una pieza clara (o una pieza que debía ser negra y quedó blanca) lleva color oscuro fijo como "#0b1020".
+4. Límites que NO se cruzan: no cambies narracion.json, guion.md, verificacion.md, publicacion.md, los .dc.html ni nada de audio; no cambies tiempos ni duraciones; no agregues en pantalla ningún dato, cifra, nombre o afirmación nueva (solo dibujos de cosas que el guion ya dice, reutilizando piezas del mismo shot); deja intacta la primera línea "// cine:oscurecido …" del .jsx; no hagas git add, commit ni push; no renderices el MP4 completo.
+5. Comprueba: vuelve a correr el auditor y vuelve a sacar y MIRAR los cuadros de cada escena tocada. Si el preview dice "No cargó el escenario" o hay errores distintos de "Failed to load resource" y un 404 que ya existía, rompiste el JSX: corrígelo.
+
+Trabaja con detalle y cariño: Robert pidió el máximo cuidado en cada shot. Si una escena ya cumple todo, no la toques.
+
+Entrega al final SOLO esto, en español: por cada shot una línea `clave: <qué escenas arreglaste y cómo, o "sin cambios: ya cumplía">` con el resultado final del auditor; y al final lo que no pudiste resolver.

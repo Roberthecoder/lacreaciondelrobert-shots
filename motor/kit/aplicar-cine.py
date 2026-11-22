@@ -12,7 +12,7 @@ Qué hace en cada carpeta de shot:
      (este paso se aplica una sola vez por archivo: deja una marca en su primera línea).
 No toca guion, narración ni voz: el video se vuelve a renderizar con la voz guardada.
 """
-import glob, os, re, shutil, sys
+import glob, json, os, re, shutil, sys
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CINE = os.path.join(RAIZ, 'motor', 'kit', 'cine.jsx')
@@ -53,6 +53,11 @@ def shot(d):
     if not htmls:
         return 0
     shutil.copyfile(CINE, os.path.join(d, 'cine.jsx'))
+    # Encuadre automático del shot (lo mide motor/kit/encuadrar.py): va al final de su copia de cine.jsx.
+    enc = os.path.join(d, 'encuadre.json')
+    if os.path.exists(enc):
+        with open(os.path.join(d, 'cine.jsx'), 'a', encoding='utf-8') as f:
+            f.write('\n// encuadre:auto (motor/kit/encuadrar.py)\nwindow.CINE_ENCUADRE = ' + json.dumps(json.load(open(enc, encoding='utf-8')), ensure_ascii=False) + ';\n')
     propios = set()
     for h in htmls:
         s = open(h, encoding='utf-8').read()

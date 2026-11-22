@@ -228,7 +228,7 @@ function AflatoxinasShot() {
   const CAEN = [[470, 1135, 20], [610, 1150, -30], [720, 1130, 70], [540, 1175, 110], [820, 1165, -10], [670, 1190, 40], [900, 1140, 150], [760, 1200, -60]];
   const ARR = [600, 1120]; // el cacahuate arrugado
   const Mesa = ({ cierre }) => <>
-    <rect x={0} y={1160} width={KW} height={800} fill="#6a4d33" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-30} y={1160} width={KW + 60} height={900} fill="#6a4d33" stroke={KC.ink} strokeWidth={8} />
     <rect x={0} y={1160} width={KW} height={20} fill="#59402b" />
     {CAEN.map(([x, y, r], i) => { const t0 = K.G + 0.15 + i * 0.1, u = cierre ? 1 : kprog(T, t0, t0 + 0.45, kEase.suave);
       return u > 0 ? <Cacahuate key={i} x={klerp(bocaX, x, u)} y={klerp(bocaY, y - 25, u) - Math.sin(u * Math.PI) * 120} s={0.8} rot={r * u} /> : null; })}
@@ -275,7 +275,7 @@ function AflatoxinasShot() {
       <Escena T={T} a={MICRO} b={K.Co} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1160} width={KW} height={800} fill="#4a3c30" stroke={KC.ink} strokeWidth={8} />
+          <rect x={-30} y={1160} width={KW + 60} height={900} fill="#4a3c30" stroke={KC.ink} strokeWidth={8} />
           {[['maíz', 'maiz', 165], ['cacahuate', 'cacahuate', 405], ['nueces', 'nueces', 645], ['chiles', 'chiles', 885]].map(([t, tipo, x], i) => { const on = kprog(T, MICRO + 0.15 + i * 0.3, MICRO + 0.5 + i * 0.3, kEase.rebote);
             return on > 0 ? <g key={i} transform={`translate(${x} 1060) scale(${on}) translate(${-x} -1060)`}><Costal x={x} y={1060} texto={t} tipo={tipo} s={0.92} moho={kprog(T, K.Co - 1.4 + i * 0.15, K.Co - 0.3)} /></g> : null; })}
           <Termometro x={110} y={780} v={0.25 + 0.7 * kprog(T, MICRO + 1.6, MICRO + 2.6, kEase.sale)} />
@@ -330,7 +330,7 @@ function AflatoxinasShot() {
       <Escena T={T} a={K.Es} b={K.Nu}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={0} y={1160} width={KW} height={800} fill="#423227" stroke={KC.ink} strokeWidth={8} />
+          <rect x={-30} y={1160} width={KW + 60} height={900} fill="#423227" stroke={KC.ink} strokeWidth={8} />
           {[90, 200, 310, 420].map((x, i) => <Milpa key={i} T={T} x={x} y={1170} s={0.9 + (i % 2) * 0.1} seed={i} />)}
           <g opacity={kprog(T, K.Es + 2.0, K.Es + 2.5)}><Troje x={760} y={1070} moho={kprog(T, K.Es + 3.0, K.Es + 4.2)} /></g>
           <Lluvia T={T} on={kprog(T, K.Es + 0.6, K.Es + 1.0)} />
@@ -360,7 +360,7 @@ function AflatoxinasShot() {
       <Escena T={T} a={K.Pa} b={K.Si}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <rect x={0} y={1180} width={KW} height={800} fill="#3c5e33" stroke={KC.ink} strokeWidth={8} />
+          <rect x={-30} y={1180} width={KW + 60} height={900} fill="#3c5e33" stroke={KC.ink} strokeWidth={8} />
           <g transform="translate(190 960)">
             <path d="M -110 -150 Q -125 0 -115 120 Q 0 140 115 120 Q 125 0 110 -150 Q 0 -136 -110 -150 Z" fill="#e4d2a6" stroke={KC.ink} strokeWidth={7} />
             <text x={0} y={-30} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>HARINA DE</text>
@@ -375,7 +375,7 @@ function AflatoxinasShot() {
       <Escena T={T} a={K.Si} b={K.Ci}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          {(() => { const a = kprog(T, K.Si + 0.6, K.Si + 1.0, kEase.rebote); return T >= 0 && a > 0.001 && <g transform={`translate(200 820) scale(${a})`}>
+          {(() => { const a = kprog(T, K.Si + 0.15, K.Si + 0.55, kEase.rebote); /* modo cine: entra al empezar la escena */ return T >= 0 && a > 0.001 && <g transform={`translate(200 820) scale(${a})`}>
             <Sol T={T} x={0} y={-90} r={56} />
             <rect x={-150} y={20} width={300} height={70} rx={10} fill="#e0c27a" stroke={KC.ink} strokeWidth={6} />
             {Array.from({ length: 10 }, (_, i) => <ellipse key={i} cx={-115 + (i % 5) * 58} cy={42 + Math.floor(i / 5) * 26} rx={13} ry={10} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} />)}

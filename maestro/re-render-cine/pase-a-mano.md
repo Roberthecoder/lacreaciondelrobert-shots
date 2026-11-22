@@ -20,4 +20,8 @@ Orden: lote1.txt … lote6.txt, de arriba abajo. Una línea por shot terminado.
 
 PENDIENTE EN TODOS LOS DE ARRIBA (segunda vuelta): escala del sujeto. En muchas escenas el dibujo ocupa menos de la mitad del cuadro (col morada, huella, caspa, alucinaciones «Raro» y «Cifra», lactosa, nixtamal gancho). Desde el grupo E el encargo ya pide agrandar.
 
-En curso (agentes, 22 nov): fun-17, bio-07, amb-07, fes-09, cie-07, fun-18 y los tres grupos siguientes.
+- Grupo E (22 nov): fun-17-cornezuelo («Medicina»), bio-07-polio (gancho lleno, «Raton», «Pregunta», «Critica» y «Cierre» con sujeto), amb-07-monarca (oyamel bajo cifras y barras), fes-09-rosas-diciembre (piezas fuera de la zona de botones), cie-07-esponja (todo más grande y centrado), fun-18-aflatoxinas (retoques). Pendiente de escala: cornezuelo «Flor», «Hofmann», «Molino»; rosas «Freno» y «Saltarin»; aflatoxinas «Sirve»; monarca gancho.
+- Grupo G (22 nov, ya con el encargo de escala): amb-08-vaquita, fun-21-anillo-hadas, cie-08-estatura, qui-08-cebolla, ia-08-mamografias, fun-22-arrieras: sujetos a 1.4–2.3x, fondos oscuros, barras de escala recalculadas (en fun-21 y fun-22 cambió el texto de la barra para que cupiera: misma escala, otra longitud).
+
+En curso (agentes, 22 nov): grupo F (qui-07, ia-07, fun-19, fes-10, fun-20, bio-08), grupo H (fun-23, fes-11, bio-09, amb-09, fun-24, cie-09) y los siguientes.
+Siguiente por asignar: qui-09-agua-oxigenada, ia-09-detectores, fun-25-papa-irlanda, fun-26-shiitake y lo que sigue en lote1.txt. Después, segunda vuelta de escala a los grupos A, B, C, D y E con /tmp/encargo-pase.md (copia en maestro/re-render-cine/encargo-pase.md).

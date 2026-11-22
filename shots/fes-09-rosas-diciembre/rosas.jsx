@@ -410,7 +410,7 @@ function Rosas() {
             </g>}
             {(() => { const h = kprog(T, K.Ch + 3.8, K.Ch + 4.6); return h > 0 ? <g>
               <path d="M 540 960 L 540 1040" stroke={KC.ink} strokeWidth={8} opacity={h} />
-              <g transform={`translate(540 ${1500}) scale(${1.0 * h})`}>{[-90, 0, 90].map((dx, k) => <RosaFlor key={k} x={dx} y={k === 1 ? -40 : 0} s={0.8} abre={kprog(T, K.Ch + 4.2 + k * 0.3, K.Ch + 4.9 + k * 0.3)} color={'#ff5c8a'} />)}</g>
+              <g transform={`translate(540 ${1350}) scale(${1.0 * h})`}>{[-90, 0, 90].map((dx, k) => <RosaFlor key={k} x={dx} y={k === 1 ? -40 : 0} s={0.8} abre={kprog(T, K.Ch + 4.2 + k * 0.3, K.Ch + 4.9 + k * 0.3)} color={'#ff5c8a'} />)}</g>
             </g> : null; })()}
           </>; })())}
       </Escena>
@@ -439,7 +439,7 @@ function Rosas() {
             </g>}
             <Sol x={170} y={700} s={0.8} T={T} />
             {/* semanas */}
-            <g transform="translate(90 1440)">
+            <g transform="translate(90 1300)">
               {Array.from({ length: 10 }, (_, i) => { const on = nuevo * 10 > i; return <g key={i}>
                 <rect x={i * 90 + 4} y={0} width={82} height={70} rx={12} fill={on ? (i >= 6 ? KC.gold2 : '#fff') : 'rgba(255,255,255,.35)'} stroke={KC.ink} strokeWidth={4} strokeDasharray={i >= 6 ? '10 6' : 'none'} />
                 <text x={i * 90 + 45} y={50} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>{i + 1}</text></g>; })}
@@ -456,7 +456,7 @@ function Rosas() {
               <circle cx={ex} cy={ey} r={20 * p} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
             </MapaMexico>
             {Array.from({ length: 10 }, (_, i) => { const on = kprog(T, K.Da + 1.6 + i * 0.2, K.Da + 1.9 + i * 0.2) * (i < 8 ? 1 : 0), e = kprog(T, K.Da + 1.2 + i * 0.05, K.Da + 1.5 + i * 0.05);
-              return <g key={i} opacity={e} transform={`translate(${115 + i * 94} 1490)`}>
+              return <g key={i} opacity={e} transform={`translate(${115 + i * 94} 1320)`}>
                 <circle r={44} fill={on > 0 ? '#fff' : 'rgba(255,255,255,.35)'} stroke={KC.ink} strokeWidth={4} />
                 <RosaFlor x={0} y={4} s={0.28} abre={1} color={on > 0 ? ROJO : '#b9a8ae'} color2={on > 0 ? ROJO2 : '#8d7f84'} />
               </g>; })}
@@ -495,12 +495,12 @@ function Rosas() {
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2012" quien="Iwata et al. · Francia y Japón" revista="The Plant Journal" x={540} y={510} />
       <Chip T={T} at={K.E + 3.6} until={K.Ch - 0.3} texto="las de cada temporada traen el pedazo" x={540} y={1500} tam={40} borde={INSERTO} />
       <Chip T={T} at={K.Ch + 2.6} until={K.In - 0.3} texto="fines del siglo XVIII: cruces en Europa" x={540} y={560} tam={40} borde={KC.yellow} />
-      <Etq T={T} at={K.Ch + 4.6} until={K.In - 0.3} x={640} y={1460} texto="rosas modernas" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ch + 4.6} until={K.In - 0.3} x={400} y={1510} texto="rosas modernas" tam={34} color={KC.ink} />
       <MitoTachado T={T} at={K.In + 0.3} tacharEn={K.In + 1.2} until={K.In + 3.0} texto="horas de luz" x={430} y={480} tam={46} />
       <Etq T={T} at={K.In + 3.0} until={K.Da - 0.3} x={60} y={560} texto="brota de la yema" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.In + 3.6} until={K.Da - 0.3} texto="6 a 10 semanas" x={540} y={1610} tam={42} borde={KC.gold} />
+      <Chip T={T} at={K.In + 3.6} until={K.Da - 0.3} texto="6 a 10 semanas" x={540} y={1470} tam={42} borde={KC.gold} />
       <Etq T={T} at={K.Da + 1.0} until={K.Ci - 0.3} x={520} y={1060} texto="Estado de México" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Da + 3.4} until={K.Ci - 0.3} texto="78.7 % · SADER, preliminar 2025" x={540} y={1620} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.Da + 3.4} until={K.Ci - 0.3} texto="78.7 % · SADER, preliminar 2025" x={540} y={1470} tam={36} borde={KC.yellow} />
       <Chip T={T} at={K.Ci + 2.2} until={K.Ou} texto="KSN apagado: flor en cada temporada buena" x={445} y={1450} tam={30} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

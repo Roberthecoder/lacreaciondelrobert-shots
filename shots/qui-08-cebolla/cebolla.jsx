@@ -45,7 +45,7 @@ function MolS({ x, y, s = 1, rot = 0, o = 1, partida = 0 }) {
 }
 function Celula({ T, roto = 0 }) {
   return <g>
-    <rect x={110} y={560} width={860} height={660} rx={60} fill="#fdf3dc" stroke={KC.ink} strokeWidth={10} />
+    <rect x={110} y={560} width={860} height={660} rx={60} fill="#2b2618" stroke={KC.ink} strokeWidth={10} />
     <ellipse cx={560} cy={880} rx={250 + roto * 30} ry={190 + roto * 20} fill="rgba(155,93,229,.18)" stroke={ENZ1} strokeWidth={8} strokeDasharray={roto > 0.05 ? `${60 - roto * 50} ${20 + roto * 60}` : 'none'} />
     <circle cx={850} cy={680} r={60} fill="#e9c89a" stroke={KC.ink} strokeWidth={6} />
   </g>;
@@ -74,10 +74,11 @@ function Cebolla_() {
       <Escena T={T} a={K.G} b={K.Ce} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <rect x={120} y={1100} width={840} height={70} rx={20} fill="#c48a52" stroke={KC.ink} strokeWidth={8} />
-          <Cebolla x={500} y={960} s={1.1} cortada={kprog(T, K.G + 0.4, K.G + 0.8)} />
-          <Cuchillo x={500} y={klerp(560, 1060, corte)} s={1.0} />
-          <Nube T={T} x={500} y={klerp(860, 640, nube)} f={nube} r={150} color={GAS} seed={3} />
+          <rect x={-60} y={1330} width={KW + 120} height={800} fill="#5a3d22" stroke={KC.ink} strokeWidth={8} />
+          {[1440, 1560, 1700].map((ty, i) => <path key={i} d={`M -40 ${ty} Q 300 ${ty - 18 + i * 10} 560 ${ty} T 1120 ${ty + 6}`} stroke="#3f2a16" strokeWidth={6} fill="none" />)}
+          <Cebolla x={540} y={950} s={2.3} cortada={kprog(T, K.G + 0.4, K.G + 0.8)} />
+          <Cuchillo x={540} y={klerp(520, 1330, corte)} s={2.0} />
+          <Nube T={T} x={540} y={klerp(900, 560, nube)} f={nube} r={250} color={GAS} seed={3} />
         </SvgCapa>
       </Escena>
       {/* 1–4 · por dentro de la célula */}
@@ -92,16 +93,16 @@ function Cebolla_() {
           {enz.map(([x, y, r], i) => { const sale = kprog(T, K.Co + 1.0, K.Co + 3.0, kEase.suave), tx = klerp(x, mols[i * 2 % 9][0] - 60, sale), ty = klerp(y, mols[i * 2 % 9][1], sale);
             return <Tijera key={i} x={tx} y={ty} s={1.1} rot={r + T * 30} abre={Math.max(0, Math.sin(T * 10 + i))} />; })}
           {T > K.Ga && [0, 1, 2].map((i) => <Tijera key={'l' + i} x={klerp(-80, 300 + i * 220, kprog(T, K.Ga + 0.1, K.Ga + 0.6))} y={1060 - i * 140} s={1.1} color={ENZ2} rot={-T * 40 + i * 90} abre={Math.max(0, Math.sin(T * 9 + i))} />)}
-          {T > K.Ga + 2.6 && <g transform="translate(0 -40)"><Ojo x={540} y={420} s={0.9} rojo={kprog(T, K.Ga + 3.6, K.Ga + 5)} llora={kprog(T, K.Ga + 4.6, K.Ga + 5.4)} T={T} /></g>}
+          {T > K.Ga + 2.6 && <g transform="translate(0 -40)"><Ojo x={540} y={410} s={1.3} rojo={kprog(T, K.Ga + 3.6, K.Ga + 5)} llora={kprog(T, K.Ga + 4.6, K.Ga + 5.4)} T={T} /></g>}
         </SvgCapa>
       </Escena>
       {/* 5 · defensa */}
       <Escena T={T} a={K.De} b={K.Pr}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Cebolla x={480} y={960} s={1.3} escudo={kprog(T, K.De + 0.4, K.De + 1.2)} />
-          <Bichito x={klerp(860, 1200, kprog(T, K.De + 1.8, K.De + 3.6, kEase.suave))} y={1080} s={1.3} T={T} />
-          <Nube T={T} x={720} y={900} f={kprog(T, K.De + 1.2, K.De + 2)} r={90} color={GAS} seed={5} n={6} />
+          <Cebolla x={460} y={930} s={2.0} escudo={kprog(T, K.De + 0.4, K.De + 1.2)} />
+          <Bichito x={klerp(930, 1260, kprog(T, K.De + 1.8, K.De + 3.6, kEase.suave))} y={1190} s={1.8} T={T} />
+          <Nube T={T} x={830} y={900} f={kprog(T, K.De + 1.2, K.De + 2)} r={130} color={GAS} seed={5} n={6} />
         </SvgCapa>
       </Escena>
       {/* 6 · pregunta */}
@@ -112,13 +113,13 @@ function Cebolla_() {
       {/* 7 · 2002: la enzima, en Nature */}
       <Escena T={T} a={K.Ja} b={K.Si}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa><Tijera x={760} y={1080} s={3} color={ENZ2} rot={-20 + Math.sin(T * 2) * 8} abre={Math.max(0, Math.sin(T * 4))} /></SvgCapa>
+        <SvgCapa><g opacity={0.38}><Cebolla x={540} y={1000} s={2.0} cortada={1} /></g><Tijera x={470} y={1010} s={4.6} color={ENZ2} rot={-20 + Math.sin(T * 2) * 8} abre={Math.max(0, Math.sin(T * 4))} /></SvgCapa>
       </Escena>
       {/* 8 · 2016: cebollas sin lágrimas */}
       <Escena T={T} a={K.Si} b={K.Cr}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          {T < K.Si + 2.4 && <g>{Array.from({ length: 6 }, (_, i) => <ellipse key={i} cx={360 + i * 70} cy={1080} rx={18} ry={12} fill="#2a2a2a" />)}
+          {T < K.Si + 2.4 && <g transform="translate(540 880) scale(1.5) translate(-540 -796)">{Array.from({ length: 6 }, (_, i) => <ellipse key={i} cx={365 + i * 70} cy={1080} rx={18} ry={12} fill="#0b1020" stroke={KC.ink} strokeWidth={3} />)}
             <line x1={540} y1={560} x2={540} y2={1060} stroke={KC.pink} strokeWidth={30 + Math.sin(T * 30) * 6} opacity={0.6} />
             <rect x={440} y={500} width={200} height={70} rx={14} fill="#3b3f48" stroke={KC.ink} strokeWidth={6} /></g>}
           {T >= K.Si + 2.4 && <g>
@@ -126,10 +127,10 @@ function Cebolla_() {
             <rect x={150 + 200} y={1150 - 480 / 7.5 * kprog(T, K.Si + 2.6, K.Si + 3.6)} width={170} height={480 / 7.5 * kprog(T, K.Si + 2.6, K.Si + 3.6)} fill={GAS} stroke={KC.ink} strokeWidth={7} />
             <text x={235} y={1210} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>normal</text>
             <text x={435} y={1210} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>nueva</text>
-            {Array.from({ length: 20 }, (_, i) => T > K.Si + 4.0 + i * 0.08 ? <g key={i} transform={`translate(${600 + (i % 5) * 84} ${720 + Math.floor(i / 5) * 110})`}><circle r={34} fill="#ffd36b" stroke={KC.ink} strokeWidth={5} /><circle cx={-12} cy={-6} r={5} fill={KC.ink} /><circle cx={12} cy={-6} r={5} fill={KC.ink} /><path d="M -14 12 Q 0 22 14 12" stroke={KC.ink} strokeWidth={4} fill="none" /></g> : null)}
+            {Array.from({ length: 20 }, (_, i) => T > K.Si + 4.0 + i * 0.08 ? <g key={i} transform={`translate(${600 + (i % 5) * 84} ${720 + Math.floor(i / 5) * 110})`}><circle r={34} fill="#ffd36b" stroke={KC.ink} strokeWidth={5} /><circle cx={-12} cy={-6} r={5} fill="#0b1020" /><circle cx={12} cy={-6} r={5} fill="#0b1020" /><path d="M -14 12 Q 0 22 14 12" stroke="#0b1020" strokeWidth={4} fill="none" /></g> : null)}
           </g>}
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Si + 3.0} until={K.Cr - 0.3} valor={7.5} dec={1} dur={1.0} prefijo="÷ " etiqueta="factor lacrimógeno" x={300} y={1530} tam={120} color={KC.ink} />
+        <NumeroGigante T={T} at={K.Si + 3.0} until={K.Cr - 0.3} valor={7.5} dec={1} dur={1.0} prefijo="÷ " etiqueta="factor lacrimógeno" x={330} y={1390} tam={110} color={KC.ink} />
       </Escena>
       {/* 9 · 2026: CRISPR */}
       <Escena T={T} a={K.Cr} b={K.Ci}>
@@ -150,28 +151,29 @@ function Cebolla_() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <rect x={120} y={1100} width={840} height={70} rx={20} fill="#c48a52" stroke={KC.ink} strokeWidth={8} />
-          <Cebolla x={500} y={960} s={1.1} cortada={1} escudo={kprog(T, K.Ci + 1.0, K.Ci + 2.0)} />
-          <Nube T={T} x={500} y={660} f={1} r={150} color={GAS} seed={3} />
+          <rect x={-60} y={1330} width={KW + 120} height={800} fill="#5a3d22" stroke={KC.ink} strokeWidth={8} />
+          {[1440, 1560, 1700].map((ty, i) => <path key={i} d={`M -40 ${ty} Q 300 ${ty - 18 + i * 10} 560 ${ty} T 1120 ${ty + 6}`} stroke="#3f2a16" strokeWidth={6} fill="none" />)}
+          <Nube T={T} x={540} y={540} f={1} r={230} color={GAS} seed={3} />
+          <Cebolla x={540} y={950} s={2.3} cortada={1} escudo={kprog(T, K.Ci + 1.0, K.Ci + 2.0)} />
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.0} texto="¿tristeza?" x={330} y={470} tam={50} />
-      <Chip T={T} at={K.G + 3.1} until={K.Ce - 0.3} texto="un gas" x={300} y={470} tam={52} borde={GAS} />
-      <Etq T={T} at={K.Ce + 0.6} until={K.Co - 0.2} x={60} y={1500} texto="compuesto con azufre (S)" tam={34} color={AZUFRE} />
-      <Etq T={T} at={K.Ce + 1.4} until={K.Co - 0.2} x={1030} y={1580} texto="enzima, en su compartimento" lado="izq" tam={34} color={ENZ1} />
-      <Chip T={T} at={K.Co + 1.2} until={K.Ac - 0.2} texto="aliinasa" x={540} y={1500} tam={52} borde={ENZ1} />
-      <Chip T={T} at={K.Ac + 0.2} until={K.Ga - 0.2} texto="ácido sulfénico" x={540} y={1500} tam={48} borde={AZUFRE} />
-      <Chip T={T} at={K.Ga + 0.3} until={K.De - 0.2} texto="factor lacrimógeno" x={540} y={1500} tam={48} borde={GAS} />
-      <Etq T={T} at={K.Ga + 0.4} until={K.Ga + 2.6} x={60} y={1640} texto="2.ª enzima (LFS)" tam={34} color={ENZ2} />
-      <Chip T={T} at={K.De + 0.5} until={K.Pr - 0.3} texto="defensa química" x={540} y={1500} tam={50} borde={ENZ2} />
-      <TarjetaEstudio T={T} at={K.Ja + 0.2} until={K.Si - 0.3} anio="2002" quien="Imai et al. · House Foods, Japón" revista="Nature · la enzima que hace llorar" x={420} y={800} />
-      <Chip T={T} at={K.Si + 0.3} until={K.Si + 2.3} texto="semillas irradiadas · 2016" x={540} y={1500} tam={42} borde={KC.pink} />
-      <Etq T={T} at={K.Si + 4.0} until={K.Cr - 0.3} x={1030} y={1700} texto="20 catadores: sin lágrimas" lado="izq" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Cr + 0.3} until={K.Ci - 0.3} texto="2026 · CRISPR · Front Plant Sci" x={540} y={1500} tam={40} borde={KC.cyan} />
-      <Etq T={T} at={K.Cr + 4.2} until={K.Ci - 0.3} x={60} y={1640} texto="creció mal · sin semilla" tam={34} color={KC.red} />
-      <Chip T={T} at={K.Ci + 2.0} until={K.Ou} texto="no es tristeza: es defensa" y={1500} tam={44} borde={GAS} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.0} texto="¿tristeza?" x={270} y={330} tam={50} />
+      <Chip T={T} at={K.G + 3.1} until={K.Ce - 0.3} texto="un gas" x={230} y={300} tam={52} borde={GAS} />
+      <Etq T={T} at={K.Ce + 0.6} until={K.Co - 0.2} x={60} y={1300} texto="compuesto con azufre (S)" tam={34} color={AZUFRE} />
+      <Etq T={T} at={K.Ce + 1.4} until={K.Co - 0.2} x={1030} y={1380} texto="enzima, en su compartimento" lado="izq" tam={34} color={ENZ1} />
+      <Chip T={T} at={K.Co + 1.2} until={K.Ac - 0.2} texto="aliinasa" x={540} y={1380} tam={52} borde={ENZ1} />
+      <Chip T={T} at={K.Ac + 0.2} until={K.Ga - 0.2} texto="ácido sulfénico" x={540} y={1380} tam={48} borde={AZUFRE} />
+      <Chip T={T} at={K.Ga + 0.3} until={K.De - 0.2} texto="factor lacrimógeno" x={540} y={1420} tam={48} borde={GAS} />
+      <Etq T={T} at={K.Ga + 0.4} until={K.Ga + 2.6} x={60} y={1310} texto="2.ª enzima (LFS)" tam={34} color={ENZ2} />
+      <Chip T={T} at={K.De + 0.5} until={K.Pr - 0.3} texto="defensa química" x={540} y={1480} tam={50} borde={ENZ2} />
+      <TarjetaEstudio T={T} at={K.Ja + 0.2} until={K.Si - 0.3} anio="2002" quien="Imai et al. · House Foods, Japón" revista="Nature · la enzima que hace llorar" x={540} y={420} />
+      <Chip T={T} at={K.Si + 0.3} until={K.Si + 2.3} texto="semillas irradiadas · 2016" x={540} y={1450} tam={42} borde={KC.pink} />
+      <Etq T={T} at={K.Si + 4.0} until={K.Cr - 0.3} x={1030} y={610} texto="20 catadores: sin lágrimas" lado="izq" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Cr + 0.3} until={K.Ci - 0.3} texto="2026 · CRISPR · Front Plant Sci" x={540} y={1450} tam={40} borde={KC.cyan} />
+      <Etq T={T} at={K.Cr + 4.2} until={K.Ci - 0.3} x={60} y={1330} texto="creció mal · sin semilla" tam={34} color={KC.red} />
+      <Chip T={T} at={K.Ci + 2.0} until={K.Ou} texto="no es tristeza: es defensa" y={1480} tam={44} borde={GAS} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ce - 0.1} texto="No es tristeza: *es un gas.*" />
