@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #23 · Esa madera no está embrujada: hongos que brillan — NARRADO (gancho 1 "Esto no es X: es Y" + N1 "Por dentro").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Química (Kotlobay et al. 2018): ácido cafeico →(hispidina sintasa)→ hispidina →(H3H)→ 3-hidroxihispidina (luciferina)
@@ -17,7 +18,7 @@ function BosqueNoche({ T, palmas = false }) {
       <circle cx={860} cy={420} r={70} fill="#f4efd0" opacity=".9" /><circle cx={885} cy={405} r={66} fill="#102446" opacity=".55" />
       {!palmas && [[80, 70], [300, 50], [760, 60], [990, 80]].map(([x, w], i) => <rect key={i} x={x - w / 2} y={360} width={w} height={900} fill="#08101f" opacity=".85" />)}
       {palmas && [[130, 1.0], [960, 1.1], [560, 0.75]].map(([x, s], i) => <Palma key={i} T={T} x={x} y={1180} s={s} seed={i} />)}
-      <rect x={0} y={1150} width={KW} height={800} fill="#1c1410" />
+      <rect x={0} y={1150} width={KW} height={800} fill="#131216" />
       <path d={`M 0 1150 ${Array.from({ length: 19 }, (_, i) => `Q ${i * 60 + 30} ${1130 + (i % 3) * 8} ${i * 60 + 60} 1150`).join(' ')} L 1080 1180 L 0 1180 Z`} fill="#2a1d14" />
     </>, 5)}
   </>;
@@ -359,7 +360,7 @@ function BrillanShot() {
       <Escena T={T} a={K.H} b={K.Rj} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1150} width={KW} height={800} fill="#6b4a2b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1150} width={KW} height={800} fill="#3a2c24" stroke={KC.ink} strokeWidth={8} />
           <Gardneri T={T} x={330} y={1150} s={1.3} b={1} />
           {(() => { const u = kprog(T, K.H + 0.9, K.H + 3.4, kEase.suave); const x = klerp(380, 960, u), y = klerp(860, 560, u) - Math.sin(u * Math.PI) * 120;
             return <g>

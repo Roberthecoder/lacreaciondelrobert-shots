@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #22 · Las arrieras no cargan hojas para comérselas: son granjeras — NARRADO (N1 "Por dentro", gancho 1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 

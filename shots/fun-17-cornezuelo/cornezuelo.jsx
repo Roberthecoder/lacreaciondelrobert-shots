@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #17 · Ese grano negro no es centeno quemado: el cornezuelo (Claviceps purpurea) — NARRADO (N1 "Por dentro").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 

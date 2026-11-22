@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #08 · Esas lágrimas no son de tristeza: el gas de la cebolla — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const GAS = '#b6e33a', AZUFRE = '#ffe11a', ENZ1 = '#9b5de5', ENZ2 = '#2fe0a8';

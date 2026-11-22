@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #14 · Cuenta los segundos entre el rayo y el trueno — NARRADO (N3 "Capítulos y medidores" + participación).
 // Datos: NOAA/NWS (Thunder, Lightning Safety, hoja 2018), velocidad del sonido ≈ 343 m/s. Ver guion.md y verificacion.md.
 // Dibujo esquemático: el rayo, la onda y las distancias no van a escala.
@@ -40,7 +41,7 @@ function Tormenta({ T, rayos = [], persona = true }) {
   return <g>
     <defs><linearGradient id="trCielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={TR_CIELO_A} /><stop offset="1" stopColor={TR_CIELO_B} /></linearGradient></defs>
     <rect width={KW} height={KH} fill="url(#trCielo)" />
-    <rect width={KW} height={KH} fill="#cfe2ff" opacity={fl * 0.45} />
+    <rect width={KW} height={KH} fill="#6c788e" opacity={fl * 0.45} />
     {rayos.map(([t, x, sd], i) => { const r = rayoEn(T, t); return <Rayo key={i} x0={x + 40} y0={420} x1={x} y1={1450} seed={sd} p={r.p} o={r.o} grosor={9} />; })}
     {[[180, 330, 1.5], [560, 260, 1.8], [930, 360, 1.4], [360, 470, 1.2], [780, 500, 1.3]].map(([x, y, s], i) =>
       <Nube key={i} x={x + Math.sin(T * 0.3 + i) * 14} y={y} s={s} color={fl > 0.25 ? '#6b75a0' : TR_NUBE} borde="#121628" />)}

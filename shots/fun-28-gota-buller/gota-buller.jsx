@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #28 · Ese champiñón está disparando: la gota de Buller — NARRADO (gancho 1 "Esto no es X: es Y" + N3 Capítulos).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Morfología: Agaricus campestris (sombrero blanco, laminillas libres rosadas → café chocolate, pie blanco con anillo delgado,

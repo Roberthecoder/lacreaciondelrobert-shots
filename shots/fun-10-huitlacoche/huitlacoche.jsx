@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #10 · Ese elote no está podrido: el huitlacoche (Ustilago maydis) — NARRADO (gancho 1 "Esto no es X: es Y" + N1 Por dentro).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Viaje: elote en la milpa (macro) → pelos, hifas, células del grano y esporas (micro, fondo oscuro) → el mismo elote junto a la quesadilla.
@@ -207,7 +208,7 @@ function HuitlacocheShot() {
       <Escena T={T} a={K.E} b={K.Co} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={0} y={1180} width={KW} height={800} fill="#7a4a22" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={800} fill="#422c1f" stroke={KC.ink} strokeWidth={8} />
           {[170, 400, 630, 860].map((x, i) => <Elote key={i} T={T} x={x} y={1160} s={0.5} abre={0} agalla={0} />)}
           {(() => { const u = kprog(T, K.E + 0.8, K.E + 5.4); const k = Math.min(3, Math.floor(u * 4)), f = (u * 4) % 1; const xs = [170, 400, 630, 860];
             const sx = klerp(xs[k], xs[Math.min(3, k + 1)], kEase.suave(kprog(f, 0.6, 1))); const baja = Math.sin(Math.PI * kprog(f, 0, 0.6)) * 50;

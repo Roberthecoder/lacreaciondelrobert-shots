@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #26 · ¿Por qué NO comer shiitake crudo? — NARRADO (gancho 6 "¿Por qué NO…?" + N1 "Por dentro").
 // Viaje: plato de shiitake (macro) → pared de la hifa y corte de piel (micro, fondo noche) → el mismo plato, ya bien cocido.
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
@@ -121,9 +122,9 @@ function Hifa({ T, y = 820, alto = 260 }) {
 function CortePiel({ T, abre = 0 }) {
   const vy = 1020, r = 34 + abre * 30;
   return <g>
-    <rect x={0} y={420} width={KW} height={200} fill="#f7d9c4" stroke={KC.ink} strokeWidth={6} />
+    <rect x={0} y={420} width={KW} height={200} fill="#807470" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 4 }, (_, f) => Array.from({ length: 12 }, (_, i) => <rect key={f + '_' + i} x={(f % 2) * 45 + i * 90 - 30} y={430 + f * 46} width={84} height={42} rx={14} fill={mixHex('#f9e3d2', '#eab69a', f / 3)} stroke="rgba(0,0,0,.35)" strokeWidth={3} />))}
-    <rect x={0} y={620} width={KW} height={600} fill="#e9a08c" stroke={KC.ink} strokeWidth={6} />
+    <rect x={0} y={620} width={KW} height={600} fill="#7a5854" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M 0 ${660 + i * 60} C 300 ${640 + i * 60} 700 ${690 + i * 60} 1080 ${660 + i * 60}`} stroke="rgba(150,60,50,.25)" strokeWidth={5} fill="none" />)}
     {abre > 0 && <ellipse cx={540} cy={vy} rx={520} ry={120 * abre} fill="rgba(255,40,60,.25)" />}
     <rect x={-20} y={vy - r} width={1120} height={r * 2} rx={r} fill={mixHex('#f2b6ab', '#ff6a6a', abre)} stroke="#9c2b2b" strokeWidth={6} />

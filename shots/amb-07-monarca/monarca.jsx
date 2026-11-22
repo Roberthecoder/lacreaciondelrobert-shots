@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #07 · Las monarcas caben en cuatro canchas (temporada 2025-2026) — NARRADO (N4 la imagen que se llena + N2 el número).
 // Datos: WWF/CONANP, "Monitoreo Mariposa Monarca en México 2025-2026" y "Análisis del cambio forestal … RBMM 2024-2025";
 // revisión "Eastern North American Monarch Butterfly Conservation Needs and Opportunities" (2026, PMC13027080);

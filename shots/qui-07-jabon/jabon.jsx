@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #07 · El jabón no desaparece la grasa: la encierra (micelas) — NARRADO (N1 por dentro + número N2).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const PIEL = '#f1b48f', GRASA = '#f2c14e', CABEZA = '#ff3b6b', COLA = '#3a3a3a';

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot bio-08 · Biotecnológico #08 — "La insulina sale de un tanque".
 // Dos versiones en un mismo archivo: InsulinaNarradoApp (N1 + N5) y InsulinaCicloApp (gemelo mudo M4).
 // Guion, corrección (levadura) y fuentes: guion.md. Todos los dibujos son esquemáticos.
@@ -314,7 +315,7 @@ function InsulinaNarrado() {
 
       {/* 11 · DIFERENCIA — adentro vs. afuera */}
       <EscenaFundido T={T} a={K.D} b={K.C} zoom={0.03} fondo={KC.dark}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#16281f, #0E0F12)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d161d, #0b0f19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <Bacteria T={T} x={300} y={850} s={0.78} plasmido={1} cuerpos={kprog(T, K.D + 0.4, K.D + 1.4, kEase.rebote)} />
           <g opacity={kprog(T, K.D + 1.8, K.D + 2.4)}><Levadura T={T} x={790} y={850} s={0.72} suelta={1} /></g>

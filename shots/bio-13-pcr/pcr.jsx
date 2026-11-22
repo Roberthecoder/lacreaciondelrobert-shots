@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #13 · PCR: una sola molécula se puede volver más de mil millones — NARRADO (N3 capítulos y medidores).
 // Guion y fuentes: guion.md · verificación: verificacion.md. Todos los dibujos son esquemáticos.
 // Temperaturas típicas con Taq (Lorenz, JoVE 2012): separar 94–98 °C (95), pegar ~52–58 °C (55), copiar 70–80 °C (72).
@@ -180,7 +181,7 @@ function NocheCarretera({ T, u = 0 }) {
   const estrellas = Array.from({ length: 40 }, () => [R() * KW, 220 + R() * 520, 2 + R() * 4]);
   const cx = klerp(-120, 1180, u), cy = 1110 - Math.sin(u * Math.PI * 2) * 30;
   return <g>
-    <rect width={KW} height={KH} fill="#0d1424" />
+    <rect width={KW} height={KH} fill="#0c1220" />
     {estrellas.map(([sx, sy, sr], i) => <circle key={i} cx={sx} cy={sy} r={sr * (0.7 + 0.3 * Math.sin(T * 3 + i))} fill="#fff" opacity=".85" />)}
     <circle cx={860} cy={420} r={70} fill="#f6f3ec" /><circle cx={885} cy={405} r={64} fill="#0d1424" />
     <path d="M 0 900 L 180 700 L 330 820 L 520 620 L 720 830 L 900 680 L 1080 860 L 1080 1920 L 0 1920 Z" fill="#2b0f63" stroke={KC.ink} strokeWidth={8} />
@@ -315,7 +316,7 @@ function Pcr() {
 
       {/* 8 · 1969: Brock y Freeze, Yellowstone y Thermus aquaticus */}
       <Escena T={T} a={K.E} b={K.Tq} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#7fd8ff 0%, #c9f1ff 45%, #d8c39a 46%, #b89a6a 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#284357 0%, #3c4a57 45%, #403e3d 46%, #373330 100%)' }}></div>
         <SvgCapa>
           <path d="M 0 880 L 160 760 L 320 840 L 520 720 L 700 830 L 880 740 L 1080 850 L 1080 890 L 0 890 Z" fill="#4f8a5b" stroke={KC.ink} strokeWidth={6} />
           <Manantial T={T} x={540} y={1100} />

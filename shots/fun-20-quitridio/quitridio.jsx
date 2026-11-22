@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #20 · La rana no está dormida: el quitridio — NARRADO (N1 "Por dentro", gancho 7 "algo que tus ojos nunca van a ver").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (capas, tamaños y colores ilustrativos).
 

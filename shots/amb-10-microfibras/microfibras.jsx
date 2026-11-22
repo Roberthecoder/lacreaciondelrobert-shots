@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #10 · Tu suéter se deshace en plástico cada vez que lo lavas (microfibras) — NARRADO (N2 el número + N1 por dentro).
 // Datos: Napper y Thompson 2016 (Plymouth), Murphy et al. 2016 (Escocia), Corradini et al. 2019 (Chile), Cotton et al. 2020,
 // Kelly et al. 2019, Napper, Barrett y Thompson 2020. Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -83,7 +84,7 @@ function Rio({ T, y, x0 = 0, x1 = KW, alto = 70 }) {
 // Campo de cultivo con surcos y brotes; lodo 0..1 = cuánto ya se esparció (de izquierda a derecha).
 function Campo({ T, y = 920, lodo = 0 }) {
   return <g>
-    <rect x={0} y={y} width={KW} height={210} fill="#c99a5b" stroke={KC.ink} strokeWidth={6} />
+    <rect x={0} y={y} width={KW} height={210} fill="#6a543c" stroke={KC.ink} strokeWidth={6} />
     {[0, 1, 2, 3].map((i) => <path key={i} d={`M 0 ${y + 30 + i * 48} L ${KW} ${y + 30 + i * 48}`} stroke="#a77a43" strokeWidth={10} />)}
     <rect x={0} y={y + 4} width={KW * lodo} height={200} fill={MF_LODO} opacity={0.55} />
     {Array.from({ length: 12 }, (_, i) => <g key={i} transform={`translate(${50 + i * 90} ${y + 26 + (i % 4) * 48})`}><path d="M 0 0 Q -14 -24 -24 -26 M 0 0 Q 12 -22 24 -24 M 0 0 L 0 -30" stroke={KC.leaf} strokeWidth={6} fill="none" strokeLinecap="round" /></g>)}

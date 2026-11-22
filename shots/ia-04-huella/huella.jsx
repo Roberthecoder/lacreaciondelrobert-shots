@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #04 · Lo que costó entrenar una IA: Llama 3 — NARRADO (N2 "El número").
 // Cifras de la ficha oficial de Llama 3 (Meta, abril 2024): 7.7 M horas de GPU H100 (TDP 700 W), 2,290 t CO2eq (70B: 1,900 · 8B: 390),
 // 100 % compensado por Meta, más de 15 billones (trillion) de tokens. Gancho = solo el modelo 70B: 6,400,000 h ÷ 8,766 h/año = 730 años ("más de 700"); las dos versiones juntas, 7.7 M h. Ver guion.md.

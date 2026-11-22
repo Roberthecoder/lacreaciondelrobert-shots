@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot bio-09 · Biotecnológico #09 — "Un cepario: vida en pausa".
 // Dos versiones en un mismo archivo: CeparioNarradoApp (N3 + N1) y CeparioDatosApp (gemelo mudo M1).
 // Guion y fuentes: guion.md. Todos los dibujos son esquemáticos.
@@ -174,7 +175,7 @@ function CeparioNarrado() {
 
       {/* 4 · CUIDO — el congelador abierto */}
       <EscenaFundido T={T} a={K.Cu} b={K.Q} zoom={0.04} fondo={KC.dark}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#17283a, #0E0F12)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d1624, #0b0f19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <Congelador T={T} x={560} y={820} s={0.95} abierto={kprog(T, K.Cu + 0.4, K.Cu + 1.4, kEase.sale)} />
           <Vaho T={T} x={520} y={800} w={420} n={16} o={kprog(T, K.Cu + 1.0, K.Cu + 1.8)} />
@@ -208,7 +209,7 @@ function CeparioNarrado() {
 
       {/* 8 · CAPÍTULO 2 — nitrógeno líquido */}
       <EscenaFundido T={T} a={K.C2} b={K.C3} zoom={0.04} fondo={KC.dark}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0f2234, #0E0F12)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0b1422, #0b0f19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <TanqueN2 T={T} x={520} y={900} s={1.0} abierto={kprog(T, K.C2 + 0.5, K.C2 + 1.5, kEase.sale)} />
           <Vaho T={T} x={470} y={700} w={520} n={20} o={kprog(T, K.C2 + 1.0, K.C2 + 1.8)} />
@@ -236,7 +237,7 @@ function CeparioNarrado() {
 
       {/* 10 · DOS COPIAS */}
       <EscenaFundido T={T} a={K.D} b={K.M} zoom={0.04} fondo={KC.dark}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#17283a, #0E0F12)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d1624, #0b0f19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g transform="translate(280 880) scale(0.6)"><Congelador T={T} x={0} y={0} s={1} abierto={0} etiqueta="copia 1" /></g>
           <g opacity={kprog(T, K.D + 0.5, K.D + 1.1)} transform="translate(800 880) scale(0.6)">

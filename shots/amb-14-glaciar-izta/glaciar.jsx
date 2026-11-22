@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #14 · El glaciar del Iztaccíhuatl que ya nunca vas a ver (Ayoloco) — NARRADO (N4 la imagen que se vacía + N1).
 // Datos: Gaceta UNAM (22 abr 2021 y 3 abr 2025), resúmenes del Simposio de Glaciares del IGf-UNAM (2025),
 // Cortés-Ramos y Delgado Granados (2015) y nota 338 del C3 UNAM (2025). Ver guion.md y verificacion.md.

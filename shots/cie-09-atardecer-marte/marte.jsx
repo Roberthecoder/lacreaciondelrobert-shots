@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #09 · El atardecer azul de Marte — NARRADO (N1 "Por dentro" de la luz + N2; gancho #7 "algo que tus ojos nunca van a ver": nadie lo ha visto en persona).
 // Datos: NASA/JPL PIA19400 (Curiosity, sol 956, 15 abr 2015), NASA Space Place "Why Is the Sky Blue?", NASA APOD "Martian Sunset"
 // (10 ene 2009 y 2 mar 2014). Ver guion.md y verificacion.md.

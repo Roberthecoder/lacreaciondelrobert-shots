@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Científico #03 · Tu ADN no es completamente humano — NARRADA (N4 "La imagen que se llena" + N1 rayos X a la placenta)
 // y gemelo MUDO (M4 "Ciclo": virus → célula germinal → bebé → placenta → generaciones → tu ADN → virus).
 // Guion y fuentes: guion.md. El dibujo es esquemático (retrovirus con envoltura y espículas; sincitio = células fundidas).

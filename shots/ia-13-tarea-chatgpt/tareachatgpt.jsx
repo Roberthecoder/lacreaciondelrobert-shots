@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #13 · Estudiar con ChatGPT: mejor en la tarea, peor en el examen — NARRADO (N2 "El número" + consejo útil).
 // Datos: Bastani, Bastani, Sungu, Ge, Kabakcı y Mariman, "Generative AI without guardrails can harm learning: Evidence from
 // high school mathematics", PNAS 122(26): e2422633122 (2025). Ver guion.md y verificacion.md. Los ejercicios y chats son ilustrativos.
@@ -143,7 +144,7 @@ function NumeroTachado({ T, at, until, tachaEn, texto, x, y, tam = 170, color = 
   return <div style={{ position:'absolute', left:x, top:y, zIndex:41, transform:`translate(-50%,-50%) scale(${e.s})`, opacity:e.o * (1 - r * 0.35) }}>
     <div style={{ position:'relative', font:`400 ${tam}px/0.95 ${KF.titulo}`, color, WebkitTextStroke:`${tam / 30}px ${KC.ink}`, textShadow:`${tam / 24}px ${tam / 24}px 0 ${KC.ink}`, whiteSpace:'nowrap' }}>
       {texto}
-      <div style={{ position:'absolute', left:-16, top:'48%', height:18, width:`calc(${r * 100}% + 32px)`, background:KC.ink, borderRadius:9, transform:'rotate(-8deg)' }}></div>
+      <div style={{ position:'absolute', left:-16, top:'48%', height:18, width:`calc(${r * 100}% + 32px)`, background:CINE.borde, borderRadius:9, transform:'rotate(-8deg)' }}></div>
     </div>
   </div>;
 }

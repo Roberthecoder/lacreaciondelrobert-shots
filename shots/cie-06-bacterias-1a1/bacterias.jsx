@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #06 · No eres 10 bacterias por cada célula: es casi 1 a 1 — NARRADO (N2 "El número" + N4 "La imagen que se llena").
 // Datos: Sender, Fuchs y Milo 2016, PLoS Biology 14: e1002533 (y su resumen en Cell 164: 337). Ver guion.md y verificacion.md.
 const ROJO = '#e23b3b', BAC = KC.mint;

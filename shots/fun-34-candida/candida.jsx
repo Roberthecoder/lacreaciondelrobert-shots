@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #34 · La levadura que puedes compartir con tu pareja: Candida albicans — NARRADO (N1 Por dentro, gancho 2).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
 // Escalas: micro de la lengua 30 px/µm · formas 40 px/µm · epitelio 10 px/µm. Levadura ovalada ≈ 5 × 4 µm; hifa de paredes paralelas ≈ 2 µm de ancho.

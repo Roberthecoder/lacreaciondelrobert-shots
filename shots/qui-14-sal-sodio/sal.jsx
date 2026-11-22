@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #14 · Esa sal no es un polvito inocente (sodio + cloro = sal) — NARRADO (N1 por dentro + escena N5 de Davy).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const NA = '#4f7bff', CL = '#b6e33a', CLGAS = '#c8e65a', PLATA = '#cfd6e0', SAL = '#ffffff';

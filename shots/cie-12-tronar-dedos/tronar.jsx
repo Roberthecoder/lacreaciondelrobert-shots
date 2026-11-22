@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #12 · Cuando te truenas los dedos no se rompe nada: es una burbuja de gas — NARRADO (N5 + N1 "Por dentro").
 // Datos: Kawchuk et al. 2015 (PLOS ONE), Chandran Suja y Barakat 2018 (Sci. Rep.), Unger 1998 + Ig Nobel 2009. Ver guion.md y verificacion.md.
 const TF_HUESO = '#f4ecd8', TF_CART = '#cfe9ff', TF_LIQ = '#f6e7a1', TF_CAPS = '#ff7aa8', TF_GAS = '#1a1530';

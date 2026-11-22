@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #11 · Las manchitas que flotan en tu vista están dentro de tu ojo — NARRADO (N1 "Por dentro": cielo → ojo en corte → cielo).
 // Datos: Webb et al. 2013 (Int J Ophthalmol), Ivanova et al. 2016 (Eye), NEI / AAO / MedlinePlus. Ver guion.md y verificacion.md.
 // El ojo en corte es esquemático y las moscas están exageradas para que se vean.

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #06 · Ese dorado no es quemado: la reacción de Maillard — NARRADO (N1 por dentro + medidores N3).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const CRUDO = '#e7737a', DORADO = '#9a5a2a', CAFE = '#6b3a1c';

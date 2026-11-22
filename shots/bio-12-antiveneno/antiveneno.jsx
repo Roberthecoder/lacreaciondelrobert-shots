@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #12 · Los anticuerpos del suero antialacrán los hizo un caballo (faboterápicos) — NARRADO (N5 experimento + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (no está a escala salvo la barra de nm).
 const ALA = '#d9a441', ALA_OSC = '#a8741f', CAB = '#b5733f', CAB_OSC = '#7a4622', CRIN = '#3f2412';
@@ -208,7 +209,7 @@ function Antiveneno() {
       <Escena T={T} a={K.Do} b={K.Pl} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <CapaAV>
-          <rect x={0} y={HY} width={KW} height={KH - HY} fill="#7fcf6a" />
+          <rect x={0} y={HY} width={KW} height={KH - HY} fill="#446f43" />
           <path d={`M 40 ${HY - 120} L 1040 ${HY - 120} M 40 ${HY - 60} L 1040 ${HY - 60}`} stroke="#8a5a2b" strokeWidth={16} />
           <Caballo T={T} x={HX} y={HY} s={HS} />
           {T < K.Ap + 0.3 && <g opacity={1 - kprog(T, K.Ap, K.Ap + 0.3)}>

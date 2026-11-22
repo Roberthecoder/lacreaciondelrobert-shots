@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #03 · Un chatbot por dentro: adivina la siguiente pieza de palabra — NARRADO (N1 "Por dentro").
 // Viaje: el chat en el celular (macro) → por dentro (tokens, números, capas, lista de probabilidades) → el mismo chat, ya entendido.
 // Cifras: GPT-3 175 mil millones de parámetros (OpenAI, 2020) · Llama 3 vocabulario de 128 mil tokens (Meta, 2024). Ver guion.md.

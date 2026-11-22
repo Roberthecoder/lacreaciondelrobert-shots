@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #15 · Esas venas no son queso echado a perder: el queso azul (Penicillium roqueforti) — NARRADO.
 // Formato N1 "Por dentro" con capítulos (1 inocular · 2 picar · 3 madurar). Guion y fuentes: guion.md · verificacion.md.
 // El dibujo es esquemático (P. roqueforti: tallo rugoso, pincel terverticilado, cadenas de esporas redondas y lisas, 3–4.5 µm).

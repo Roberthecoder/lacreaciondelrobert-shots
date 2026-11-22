@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #21 · Ese círculo en el pasto no es de hadas: es un hongo — NARRADO (gancho 1 "Esto no es X: es Y" + N4 "la imagen que se llena").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 

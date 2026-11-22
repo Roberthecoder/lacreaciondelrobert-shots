@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #08 · En la noche mides menos (y en el espacio, más) — NARRADO (N2 "El número" + N1 "Por dentro": la columna).
 // Datos: Tyrrell, Reilly y Troup 1985 (Spine), Roberts et al. 1998 (Clin Anat, Liverpool), Paajanen et al. 1994 (J Orthop Res),
 // NASA (Spinal Ultrasound, ISS) y Green y Scott 2017 (Front Physiol, revisión). Ver guion.md y verificacion.md.
@@ -74,7 +75,7 @@ function Estatura() {
           {dia < 0.7 ? <Sol x={klerp(120, 560, dia / 0.7)} y={klerp(900, 520, dia / 0.7)} /> : <Luna x={560} y={520} />}
           <Regla x={620} yBase={1180} alto={760} marca={700} />
           <Persona x={430} yPies={1180} alto={700 - encoge} color={KC.pink} />
-          <rect x={0} y={1180} width={KW} height={800} fill="#6bbf59" />
+          <rect x={0} y={1180} width={KW} height={800} fill="#3a673a" />
         </>)}
         <Escala T={T} z={1} pxPorMm={0.4} y={1430} x={60} />
       </Escena>
@@ -139,7 +140,7 @@ function Estatura() {
           <Sol x={160} y={860} />
           <Regla x={620} yBase={1180} alto={760} marca={700} />
           <Persona x={430} yPies={1180} alto={700} color={KC.pink} />
-          <rect x={0} y={1180} width={KW} height={800} fill="#6bbf59" />
+          <rect x={0} y={1180} width={KW} height={800} fill="#3a673a" />
           <g transform={`translate(${klerp(1200, 880, kprog(T, K.C + 3.2, K.C + 4.6, kEase.sale))} ${klerp(1100, 600, kprog(T, K.C + 3.2, K.C + 6.5))}) rotate(30)`}>
             <path d="M 0 -90 Q 40 -40 40 40 L -40 40 Q -40 -40 0 -90 Z" fill="#fff" stroke={KC.ink} strokeWidth={7} />
             <circle cx={0} cy={-20} r={16} fill={KC.cyan} stroke={KC.ink} strokeWidth={5} />

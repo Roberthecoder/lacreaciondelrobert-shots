@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #05 · Esa masa no es solo maíz molido: la nixtamalización — NARRADO (N3 capítulos + viaje N1).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const MAIZ = '#f5c542', MASA = '#f1dc9a', PERICARPIO = '#e88a1a', CAL = '#f4f4f0';
@@ -162,7 +163,7 @@ function Nixtamal() {
       <Escena T={T} a={K.Eu} b={K.Es}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <rect x={0} y={1060} width={KW} height={300} fill="#2f6dff" opacity={0.6} />
+          <rect x={0} y={1060} width={KW} height={300} fill="#1c3e8e" opacity={0.6} />
           <g opacity={1 - kprog(T, K.Eu + 2.8, K.Eu + 3.3)}><Barco T={T} x={klerp(-200, 560, kprog(T, K.Eu, K.Eu + 2.6, kEase.sale))} y={1000} s={1.3} /></g>
           <g opacity={kprog(T, K.Eu + 3.0, K.Eu + 3.5)}>
             {[['piel', '#ff6b5a', 220], ['diarrea', '#c9a14a', 540], ['demencia', '#9aa3b5', 860]].map(([t, c, x], i) => <g key={i} transform={`translate(${x} 860) scale(${kprog(T, K.Eu + 3.6 + i * 0.6, K.Eu + 4.0 + i * 0.6, kEase.rebote)})`}>

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #11 · Tu foto de noche no es una foto: son hasta trece — NARRADO (N1 "Por dentro").
 // Datos: Liba et al. 2019 (Night Sight, ACM TOG 38(6):164), Hasinoff et al. 2016 (HDR+, ACM TOG 35(6):192),
 // Wronski et al. 2019 (Super Res Zoom, ACM TOG 38(4):28), blog.google 18 abr 2023. Ver guion.md y verificacion.md.

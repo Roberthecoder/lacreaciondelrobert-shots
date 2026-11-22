@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #08 · Revolución Mexicana · Químico: las películas de la Revolución eran de algodón con ácido nítrico — NARRADO (N3 capítulos y medidores + N5 experimento).
 // Guion, fuentes y verificación: guion.md y verificacion.md. El dibujo es esquemático (cadena de celulosa, grupos nitrato y gases simplificados).
 const VERDE = '#1f9e4a', ROJO = '#e0302a', BLANCO = '#fbf8f1', SEPIA = '#c79a5a', SEPIA2 = '#8a6236', AMBAR = '#e9a43a', CAFE = '#7a4a22', NO2 = '#b8571b', PLATA = '#c9ced8', PLATA2 = '#8d95a3';

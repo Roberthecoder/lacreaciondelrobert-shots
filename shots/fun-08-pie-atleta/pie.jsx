@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #08 · Pie de atleta (Trichophyton) — NARRADO (N1 "Por dentro" + N2 "qué sí sirve").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (no es un caso clínico real).
 const PIEL = '#f2b48f', PIEL2 = '#d9906b';
@@ -28,7 +29,7 @@ function Corte({ T, hifas = 0, digiere = 0 }) {
     const cerca = Math.abs(y - (Y0 + 50)) < 40 && x < 160 + hifas * 900;
     tejas.push(<rect key={r + '-' + c} x={x} y={y} width={122} height={H / 5 - 4} rx={8} fill="#f3d9a4" stroke="#a88b55" strokeWidth={3} opacity={1 - (cerca ? digiere * 0.75 : 0)} />); }
   return fsvg(<>
-    <rect x={0} y={Y0 + H} width={KW} height={420} fill="#f2a8a0" />
+    <rect x={0} y={Y0 + H} width={KW} height={420} fill="#7e5c5e" />
     {Array.from({ length: 24 }, (_, i) => <circle key={i} cx={(i % 8) * 140 + 60 + (Math.floor(i / 8) % 2) * 70} cy={Y0 + H + 70 + Math.floor(i / 8) * 120} r={50} fill="#f7c0b6" stroke="#c97a70" strokeWidth={4} />)}
     {tejas}
     {[0, 1, 2, 3].map((k) => <Cordon key={k} x1={-20} y1={Y0 + 20 + k * 26} x2={1100} y2={Y0 + 30 + k * 22} p={kprog(hifas, k * 0.12, 0.6 + k * 0.12)} onda={10} ancho={6} color={KC.gold2} punta="#fff" />)}

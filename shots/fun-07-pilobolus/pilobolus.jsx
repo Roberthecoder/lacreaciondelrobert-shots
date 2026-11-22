@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #07 · El cañón de esporas (Pilobolus) — NARRADO (N3 "Capítulos y medidores" + viaje N1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. Escala de los acercamientos: 1 mm = 200 px × s.
 const PASTO = '#58c763';
@@ -82,7 +83,7 @@ function Pilobolus() {
         {fsvg(<>
           <Sol x={190} y={560} r={62} T={T} />
           {kprog(T, K.A + 0.6, K.A + 1.2) > 0 && [0, 1, 2].map((k) => <line key={k} x1={230 + k * 30} y1={600 + k * 20} x2={400} y2={600} stroke={KC.yellow} strokeWidth={10} strokeDasharray="20 16" strokeDashoffset={-T * 60} opacity={0.8 * kprog(T, K.A + 0.6, K.A + 1.2) * (1 - kprog(T, K.D, K.D + 0.5))} />)}
-          <rect x={0} y={1200} width={KW} height={800} fill="#6b4a2b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1200} width={KW} height={800} fill="#3a2c24" stroke={KC.ink} strokeWidth={8} />
           <Pilo T={T} x={600} y={1210} s={1.35} rot={giro} infla={infla} sale={sale} chorro={kprog(T, K.D + 1.6, K.D + 1.9) * (1 - kprog(T, K.D + 1.9, K.D + 2.5))} />
           {sale > 0 && sale < 0.6 && <circle cx={380} cy={520} r={140 * sale + 30} fill="none" stroke={KC.yellow} strokeWidth={14} opacity={1 - sale * 1.6} />}
         </>)}

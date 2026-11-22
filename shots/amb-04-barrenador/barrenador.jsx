@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Ambiental #04 · El gusano barrenador y las moscas estériles — NARRADA (N5 "El experimento" con mapa de México como medida
 // + N1 rayos X) y gemelo MUDO (M1 "La música son los datos": el modelo de Knipling, cada mosca silvestre es una nota).
 // Guion y fuentes: guion.md. El dibujo es esquemático (mosca: tórax azul verdoso metálico con 3 franjas oscuras y ojos rojizos).
@@ -49,10 +50,10 @@ function Vaca({ x, y, s = 1, T = 0, herida = 0, triste = 0 }) {
 }
 function Pasto({ T }) {
   return <>
-    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#9feaff, #00d2ff 55%)' }}></div>
+    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#314857, #074257 55%)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       <circle cx={170} cy={360} r={80} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
-      <rect x={0} y={1180} width={KW} height={740} fill={KC.leaf} />
+      <rect x={0} y={1180} width={KW} height={740} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} />
       <path d="M 0 1180 Q 270 1150 540 1180 T 1080 1180" fill={KC.leaf} stroke={KC.ink} strokeWidth={8} />
       {Array.from({ length: 16 }, (_, i) => <path key={i} d={`M ${30 + i * 68} 1300 l 10 -28 l 10 28`} stroke="#2a9a3c" strokeWidth={6} fill="none" />)}
     </svg>
@@ -138,7 +139,7 @@ function BarrenadorNarrado() {
       </Escena>
       {/* Curazao 1954 */}
       <Escena T={T} a={K.E} b={K.B}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#7fc4ff, #2f7fff)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#283e57, #142c57)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <path d="M 180 1000 C 260 900 420 920 560 860 C 700 800 880 760 920 820 C 960 880 820 940 700 980 C 560 1030 400 1100 260 1110 C 170 1115 130 1060 180 1000 Z" fill="#f1d08a" stroke={KC.ink} strokeWidth={9} />
           {Array.from({ length: 24 }, (_, i) => { const viva = i / 24 > kprog(T, K.E + 2.8, K.B - 0.4); return viva ? <Mosca key={i} x={260 + (i * 97) % 600} y={900 + (i * 53) % 160} s={0.42} rot={T * 80 + i * 30} T={T} seed={i} /> : null; })}

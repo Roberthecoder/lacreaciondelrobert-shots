@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #10 · Tu voz grabada no suena rara: es tu voz sin tus huesos — NARRADO (N1 "Por dentro" + N5 la prueba de los oídos).
 // Datos: Reinfeldt et al. 2010 (JASA), Hughes y Harrison 2013 (Perception), efecto de oclusión. Ver guion.md y verificacion.md.
 const VAIRE = KC.cyan, VHUESO = KC.gold2;

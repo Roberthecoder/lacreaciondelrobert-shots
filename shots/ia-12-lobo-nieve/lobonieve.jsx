@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #12 · La IA no vio al lobo: vio la nieve — NARRADO (N5 "El experimento" + N1 "Por dentro").
 // Datos: Ribeiro, Singh y Guestrin, KDD 2016 (LIME, lobo/husky entrenado mal a propósito); Zech et al., PLOS Medicine 2018
 // (neumonía y hospital); Winkler et al., JAMA Dermatology 2019 (tinta quirúrgica en lunares). Ver guion.md y verificacion.md.

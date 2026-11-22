@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #10 · Posadas · Científico: lo que el hervor le hace al tejocote de tu ponche — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md (verificacion.md: APROBADO). El dibujo es esquemático: células, lámina media y cadenas de pectina simplificadas y fuera de escala.
 const TEJ = '#f7a823', TEJ2 = '#e2701a', TEJ3 = '#ffd36b', CALIZ = '#5a3a1e', BARRO = '#b4643a', BARRO2 = '#8f4a26', PONCHE = '#b8561f';

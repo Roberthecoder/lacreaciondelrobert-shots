@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #14 · ¿Cuál de estas caras es real? — NARRADO (N5 "El experimento" + N2 "El número").
 // Datos: Nightingale y Farid, PNAS 119(8):e2120481119 (2022) · Miller et al., Psychological Science 34(12):1390–1403 (2023).
 // Ver guion.md y verificacion.md. TODAS las caras son dibujos esquemáticos (ni fotos reales ni de IA).

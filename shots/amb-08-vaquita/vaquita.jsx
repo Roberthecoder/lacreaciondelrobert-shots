@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #08 · Las vaquitas que quedan se cuentan con los dedos (crucero 2025) — NARRADO (N2 el número + N1 por dentro).
 // Datos: "Informe del Crucero de Observación Vaquita Marina 2025" (IUCN-CSG, feb 2026); NOAA Fisheries (especie vaquita);
 // NOAA SWFSC, "Abundance and Trends" (567 en 1997, 59 en 2015). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -98,7 +99,7 @@ function VaquitaShot() {
       {/* 7 · el crucero: dos barcos, binoculares gigantes y micrófonos bajo el agua */}
       <Escena T={T} a={K.E} b={K.Cr}>
         {mar(0.1)}
-        {svg(<><rect x={0} y={0} width={KW} height={720} fill="#bfefff" />
+        {svg(<><rect x={0} y={0} width={KW} height={720} fill="#647f8e" />
           {[[300, 700], [780, 690]].map(([bx, by], i) => <g key={i} transform={`translate(${bx} ${by + Math.sin(T * 1.5 + i) * 6})`}>
             <path d="M -170 0 L 170 0 L 130 70 L -130 70 Z" fill={i ? KC.ink : '#2346ff'} stroke={KC.ink} strokeWidth={6} />
             <rect x={-80} y={-90} width={140} height={90} fill="#fff" stroke={KC.ink} strokeWidth={6} />
@@ -119,7 +120,7 @@ function VaquitaShot() {
       {/* 9 · bloques con ganchos */}
       <Escena T={T} a={K.B} b={K.C}>
         {mar(0.35)}
-        {svg(<><rect x={0} y={1140} width={KW} height={800} fill="#c7a76a" stroke={KC.ink} strokeWidth={6} />
+        {svg(<><rect x={0} y={1140} width={KW} height={800} fill="#685b43" stroke={KC.ink} strokeWidth={6} />
           <Bloque x={220} y={1140} T={T} /><Bloque x={540} y={1140} T={T} red /><Bloque x={860} y={1140} T={T} />
           <Vaquita x={klerp(200, 760, (Math.sin(T * 0.6) + 1) / 2)} y={760} s={0.7} T={T} flip={Math.cos(T * 0.6) < 0} /><Vaquita x={420} y={900} s={0.6} T={T} fase={2} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />

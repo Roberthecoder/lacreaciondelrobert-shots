@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #09 · El detector de IA que acusa a quien escribe sencillo — NARRADO (N2 "El número" + N4 "La imagen que se llena").
 // Datos: Liang, Yuksekgonul, Mao, Wu y Zou, "GPT detectors are biased against non-native English writers", Patterns 4(7):100779 (2023). Ver guion.md y verificacion.md.
 const AZUL = '#2f6dff';

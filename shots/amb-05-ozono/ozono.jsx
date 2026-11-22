@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #05 · El agujero de ozono se está cerrando (Mario Molina y el Protocolo de Montreal) — NARRADO (N3 capítulos + N1 por dentro).
 // Datos: WMO/UNEP (evaluación 2022, comunicado del 9 ene 2023), EPA (ciencia básica de la capa de ozono), NobelPrize.org (1995) y
 // Molina y Rowland, Nature 249: 810 (1974). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -33,7 +34,7 @@ function BanoLab({ T, a }) {
     {burb(0, 30, k)}
   </g>;
   return <g>
-    <rect x={0} y={1080} width={KW} height={300} fill="#cfe9e1" />
+    <rect x={0} y={1080} width={KW} height={300} fill="#6c7c7e" />
     {Array.from({ length: 10 }, (_, i) => <line key={i} x1={i * 120} y1={1080} x2={i * 120} y2={1380} stroke="#9cc9bb" strokeWidth={4} />)}
     <path d="M 120 900 L 960 900 Q 960 1120 800 1140 L 280 1140 Q 120 1120 120 900 Z" fill="#fff" stroke={KC.ink} strokeWidth={10} />
     <rect x={100} y={880} width={880} height={36} rx={18} fill="#fff" stroke={KC.ink} strokeWidth={9} />
@@ -47,7 +48,7 @@ function CieloLado({ T, a, rayos = true, oscuro = 0 }) {
   return <g>
     <defs><linearGradient id="cielo" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stopColor={mixHex('#9fdcff', '#1d2b6a', oscuro)} /><stop offset="100%" stopColor={mixHex('#2346ff', '#070b1d', oscuro)} /></linearGradient></defs>
     <rect x={0} y={0} width={KW} height={KH} fill="url(#cielo)" />
-    <rect x={0} y={ozY(40)} width={KW} height={ozY(15) - ozY(40)} fill={KC.mint} opacity={0.28 + 0.06 * Math.sin(T * 2)} />
+    <rect x={0} y={ozY(40)} width={KW} height={ozY(15) - ozY(40)} fill={cineMix(KC.mint, CINE.fondo, 0.55)} opacity={0.28 + 0.06 * Math.sin(T * 2)} />
     {Array.from({ length: 40 }, (_, i) => { const r = krng(i + 7); const x = r() * KW, y = ozY(15 + r() * 25); return <Ozono key={i} x={x + Math.sin(T + i) * 6} y={y} s={0.32} rot={r() * 360} />; })}
     <path d={`M 0 ${OZ_Y0} Q 540 ${OZ_Y0 - 50} ${KW} ${OZ_Y0} L ${KW} ${KH} L 0 ${KH} Z`} fill="#58b85c" stroke={KC.ink} strokeWidth={8} />
     {/* regla de altura */}

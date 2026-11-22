@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #05 · Alucinaciones: la IA repite los mitos de los humanos (TruthfulQA, 2021) — NARRADO (N2 "El número" + "Tú contra…").
 // Datos: README del repositorio oficial de TruthfulQA (Lin, Hilton y Evans, 2021) y su TruthfulQA.csv (la pregunta del chicle). Ver guion.md.
 const AZUL = '#2f6dff';

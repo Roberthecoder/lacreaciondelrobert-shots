@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #12 · Tu palomita no revienta por quemarse (por qué revientan las palomitas) — NARRADO
 // (N3 capítulos y medidores + viaje macro → micro → macro). Guion: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const ORO = '#f4b73a', ORO_OSC = '#c98a1a', ALMIDON = '#fbecc0', ALM_OSC = '#efd58e', AGUA = '#4db8ff', CREMA = '#fffaf0', OLLA = '#9aa3b5';

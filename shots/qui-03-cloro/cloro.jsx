@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #03 · ¿Por qué NO se mezcla el cloro con vinagre? — NARRADO (N3 capítulos + M2 "¿Por qué NO…?").
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const VERDE = '#c8e65a', AZUL_CLORO = '#d9f0ff', VINAGRE = '#f3e7b0', AMONIACO = '#e3dcff';
@@ -66,7 +67,7 @@ function Pulmones({ T, dano = 0, late = 0 }) {
 function Trinchera({ T, a }) {
   const avanza = kprog(T, a + 0.3, a + 4.4);
   return <SvgCapa>
-    <rect x={0} y={0} width={KW} height={KH} fill="#c9b58e" />
+    <rect x={0} y={0} width={KW} height={KH} fill="#6a6255" />
     <path d={`M 0 1180 L 1080 1180 L 1080 1920 L 0 1920 Z`} fill="#7a6040" />
     <path d="M 0 1060 Q 200 1020 400 1070 T 800 1050 T 1080 1060 L 1080 1200 L 0 1200 Z" fill="#8f7350" stroke={KC.ink} strokeWidth={8} />
     {[120, 300, 520, 740, 940].map((x, i) => <g key={i}><line x1={x} y1={1040} x2={x + 30} y2={960} stroke="#3b2a1a" strokeWidth={10} /><path d={`M ${x - 30} 990 L ${x + 60} 1010`} stroke="#3b2a1a" strokeWidth={4} strokeDasharray="10 8" /></g>)}

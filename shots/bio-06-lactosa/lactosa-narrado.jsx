@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot bio-06 · Biotecnológico #06 — versión NARRADA (N1 "Por dentro" + N5 "El experimento").
 // Las escenas y los subtítulos se ajustan a la voz con narrar.mjs (window.SUBS); sin voz usan los
 // tiempos estimados de OM_SCENES. Guion, correcciones y fuentes: guion.md.
@@ -203,7 +204,7 @@ function LactosaNarrado() {
 
       {/* 7 · AUTO — 2018, un divulgador */}
       <EscenaFundido T={T} a={K.Au} b={K.O} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2b0f63, #0E0F12)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#130f2e, #0b0f19)' }}></div>
         <Ambiente T={T} n={22} seed={13} color="rgba(177,140,255,.4)" tam={[3, 10]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g transform={`rotate(${mece(T, 6, 0.2) * 1.2} 540 880)`}>
@@ -214,7 +215,7 @@ function LactosaNarrado() {
 
       {/* 8 · OJO — el matiz obligatorio */}
       <EscenaFundido T={T} a={K.O} b={K.Re} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#3a1414, #0E0F12)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#16101a, #0b0f19)' }}></div>
         <Ambiente T={T} n={18} seed={21} color="rgba(255,120,110,.3)" tam={[4, 11]} />
       </EscenaFundido>
       <MitoTachado T={T} at={K.O + 0.3} tacharEn={K.O + 1.6} until={K.Re - 0.3} texto="¿cura aprobada?" x={430} y={520} tam={56} />

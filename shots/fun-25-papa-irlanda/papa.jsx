@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #25 · Ese hongo de la papa no es un hongo: Phytophthora infestans — NARRADO (N1 Por dentro, gancho 1 "Esto no es X: es Y").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -270,7 +271,7 @@ function PapaShot() {
         {fsvg(<>
           <CorteHoja T={T} y={880} tubo={kprog(T, K.E + 0.9, K.E + 2.0)} />
           <g opacity={1 - kprog(T, K.E + 1.9, K.E + 2.3)}><Zoospora T={T} x={klerp(260, 540, kprog(T, K.E, K.E + 0.8, kEase.sale))} y={klerp(560, 830, kprog(T, K.E, K.E + 0.8, kEase.sale))} enquista={kprog(T, K.E + 0.6, K.E + 0.9)} s={1.3} /></g>
-          {T > K.E + 1.9 && <rect x={0} y={0} width={KW} height={KH} fill={KC.noche} opacity={0.85 * kprog(T, K.E + 1.9, K.E + 2.3)} />}
+          {T > K.E + 1.9 && <rect x={0} y={0} width={KW} height={KH} fill={cineMix(KC.noche, CINE.fondo, 0.55)} opacity={0.85 * kprog(T, K.E + 1.9, K.E + 2.3)} />}
           {T > K.E + 2.1 && Array.from({ length: 60 }, (_, i) => { const r = krng(200 + i); const px = 60 + r() * 960, py = 760 + r() * 440; const u = kprog(T, K.E + 2.1 + r() * 1.4, K.E + 2.4 + r() * 1.4, kEase.rebote);
             return <Limon key={i} x={px} y={py} h={64} rot={(r() - 0.5) * 60} s={u} />; })}
         </>)}

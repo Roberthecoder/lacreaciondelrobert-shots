@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #11 · Siete mil cien compras: la bolsa de tela no es verde por arte de magia — NARRADO (N2 el número).
 // Datos: Agencia de Protección Ambiental de Dinamarca (2018, cálculo de DTU), Agencia Ambiental de Inglaterra (2011, datos de 2006)
 // y Chiba et al., Marine Policy (2018). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

@@ -8,7 +8,8 @@ Qué hace en cada carpeta de shot:
   1. copia motor/kit/cine.jsx;
   2. en cada .dc.html mete ./cine.jsx en la línea <x-import>, justo antes del .jsx del shot (después de todos los kits);
   3. en su audio-kit local cambia pad() (la cama grave) por la cama luminosa, una sola para todo el video;
-  4. en el .jsx del shot oscurece los fondos de color puestos a mano que ocupan toda la pantalla.
+  4. en el .jsx del shot oscurece los fondos, cielos y franjas de color puestos a mano que ocupan toda la pantalla
+     (este paso se aplica una sola vez por archivo: deja una marca en su primera línea).
 No toca guion, narración ni voz: el video se vuelve a renderizar con la voz guardada.
 """
 import glob, os, re, shutil, sys
@@ -19,7 +20,14 @@ PAD = ("    // Cama de los narrados: «cama luminosa» (22 nov 2026; motor/kit/c
        "    // aunque el shot llame a pad() por tramos; los parámetros de la cama grave vieja ya no se usan.\n"
        "    pad: (t0, t1, g = 0.05) => { CAMA = CAMA ? { a: Math.min(CAMA.a, t0), b: Math.max(CAMA.b, t1), g: Math.max(CAMA.g, g) } : { a: t0, b: t1, g }; },\n")
 GUARDA = "      if (CAMA) { camaLuminosa(mus, SR, Math.max(0, Math.floor(warp(CAMA.a) * SR)), Math.min(N, Math.floor(warp(CAMA.b) * SR)), { g: CAMA.g, semilla: 11 }); CAMA = null; }\n"
+MARCA = '// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)'
 BRILLO = r"(yellow|pink|cyan|mint|coral|orange|lilac|magenta|blue|red|gold|gold2|leaf|paper|white)"
+
+
+def oscuro(h, t, base=(10, 15, 28)):
+    """Mezcla un color #rrggbb con el fondo oscuro del modo cine (t = cuánto fondo)."""
+    c = [int(h[i:i + 2], 16) for i in (1, 3, 5)]
+    return '#' + ''.join('%02x' % round(v + (b - v) * t) for v, b in zip(c, base))
 
 
 def audio(path, imp):
@@ -63,9 +71,17 @@ def shot(d):
         if not os.path.exists(p):
             continue
         s = open(p, encoding='utf-8').read()
+        if MARCA in s:
+            continue
         t = re.sub(r"(position:'absolute', inset:0, background:)KC\." + BRILLO + r"\b(?!\w)", r"\1cineMix(KC.\2, CINE.fondo, 0.8)", s)
-        if t != s:
-            open(p, 'w', encoding='utf-8').write(t); n += 1
+        # cielos y fondos pintados a mano con degradado de colores fijos: cada color se oscurece
+        t = re.sub(r"(position:'absolute', inset:0, background:')(linear-gradient\([^')]*\))(')", lambda m: m.group(1) + re.sub(r'#[0-9a-fA-F]{6}\b', lambda c: oscuro(c.group(0), 0.74), m.group(2)) + m.group(3), t)
+        # franjas a todo lo ancho (pasto, tierra, mar): más oscuras; si eran «tinta» (negro), siguen negras
+        t = re.sub(r'(<rect [^>]*width=\{KW\}[^>]*fill=)\{KC\.ink\}', r'\1{CINE.borde}', t)
+        t = re.sub(r'(<rect [^>]*width=\{KW\}[^>]*fill=)\{KC\.(?!ink\b)(\w+)\}', r'\1{cineMix(KC.\2, CINE.fondo, 0.55)}', t)
+        t = re.sub(r'(<rect [^>]*width=\{KW\}[^>]*fill=)"(#[0-9a-fA-F]{6})"', lambda m: m.group(1) + '"' + oscuro(m.group(2), 0.5) + '"', t)
+        t = re.sub(r"(background:)KC\.ink\b", r"\1CINE.borde", t)
+        open(p, 'w', encoding='utf-8').write(MARCA + '\n' + t); n += 1
     return n
 
 

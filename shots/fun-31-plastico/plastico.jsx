@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #31 · ¿Hongos que comen plástico? Lo que sí y lo que no — NARRADO (gancho 4 "número que contradice" + N2 "lo que sí sirve").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -144,7 +145,7 @@ function PlasticoShot() {
       <Escena T={T} a={K.H} b={K.E} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1180} width={KW} height={800} fill="#6b4a2b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={800} fill="#3a2c24" stroke={KC.ink} strokeWidth={8} />
           <path d="M 230 1190 L 245 560 L 285 560 L 300 1190 Z" fill={PL.verde} stroke={KC.ink} strokeWidth={8} />
           {[[265, 660, -1], [265, 820, 1], [265, 980, -1]].map(([x, y, d], i) => <path key={i} d={`M ${x} ${y} q ${d * 120} -80 ${d * 200} -20 q ${d * -90} 50 ${d * -200} 20 Z`} fill={PL.verde2} stroke={KC.ink} strokeWidth={6} />)}
           {[[60, 1190], [880, 1190], [960, 1190]].map(([x, y], i) => <path key={'p' + i} d={`M ${x - 30} ${y} L ${x - 10} ${y - 300 - i * 60} L ${x + 10} ${y - 300 - i * 60} L ${x + 30} ${y} Z`} fill="#2c7a36" stroke={KC.ink} strokeWidth={6} opacity=".8" />)}

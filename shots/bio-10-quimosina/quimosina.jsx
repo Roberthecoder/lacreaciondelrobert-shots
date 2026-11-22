@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #10 · El cuajo de tu queso lo hace un microbio (quimosina) — NARRADO (N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const QUI = '#9b5de5', LECHE = '#fbf8ef', CUAJ = '#f3e7c4', SUERO = '#e9df8a', CA = '#7fe0ff', KAPPA = '#ffb3c7';
