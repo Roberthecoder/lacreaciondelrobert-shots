@@ -134,9 +134,9 @@ function Torre({ T, x, y, lodo = 1 }) {
     <path d="M -170 0 L -40 -560 L 40 -560 L 170 0" fill="none" stroke={KC.ink} strokeWidth={14} strokeLinejoin="round" />
     {[-460, -340, -220, -100].map((yy, i) => { const w = 40 + (yy + 560) * 0.23; return <g key={i}><line x1={-w} y1={yy} x2={w} y2={yy} stroke={KC.ink} strokeWidth={9} /><line x1={-w} y1={yy} x2={w + 25} y2={yy + 120} stroke={KC.ink} strokeWidth={6} /></g>; })}
     <rect x={-60} y={-600} width={120} height={50} rx={10} fill={KC.orange} stroke={KC.ink} strokeWidth={8} />
-    <rect x={-260} y={0} width={520} height={40} fill="#6b4b2a" stroke={KC.ink} strokeWidth={8} />
-    <rect x={-300} y={40} width={600} height={640} fill="#b07a46" stroke={KC.ink} strokeWidth={8} />
-    {[140, 260, 400, 540].map((yy) => <path key={yy} d={`M -300 ${yy} q 150 -24 300 0 t 300 0`} stroke="#8e5e32" strokeWidth={6} fill="none" />)}
+    <rect x={-260} y={0} width={520} height={40} fill="#4a3320" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-300} y={40} width={600} height={640} fill="#3e2a19" stroke={KC.ink} strokeWidth={8} />
+    {[140, 260, 400, 540].map((yy) => <path key={yy} d={`M -300 ${yy} q 150 -24 300 0 t 300 0`} stroke="#5c3f25" strokeWidth={6} fill="none" />)}
     <rect x={-22} y={-560} width={44} height={1220} fill="#9aa4ae" stroke={KC.ink} strokeWidth={6} />
     {L.map((d, i) => <ellipse key={i} cx={0} cy={-540 + d * 1.9} rx={12} ry={20} fill="#c9b07a" stroke={KC.ink} strokeWidth={3} opacity={lodo} />)}
   </g>;
@@ -168,6 +168,8 @@ function Sello({ T, at, until, x, y, texto1, texto2 }) {
   </div>;
 }
 
+// Pase a mano cine: agranda un grupo k veces llevando el punto (cx, cy) a (tx, ty).
+const Zg = ({ k, cx, cy, tx = 540, ty = 960, children }) => <g transform={`translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
 function Xantana() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, E: CUES.Etiqueta, C: CUES.Col, Ta: CUES.Tanque, Al: CUES.Alcohol, P: CUES.Pregunta, Ca: CUES.Cadena, R: CUES.Red, Ag: CUES.Agitar, Es: CUES.Estudio, D: CUES.Dato, Ci: CUES.Cierre, Ou: CUES.Outro };
@@ -184,24 +186,27 @@ function Xantana() {
   const visc = 0.92 - 0.72 * orden;
   // barra de escala (aprox.): frasco ~5 px/mm · hoja ~3 px/mm. Bacterias y moléculas van sin escala: «esquemático · no a escala».
   const noEscala = (T >= C2 && T < K.Ta) || (T >= K.Ta + 1.6 && T < K.Al);
-  const escala = T < K.C ? 5 : T < C2 ? 3 : T < K.Ag ? null : T < K.Es ? 4 : T < K.Ci ? null : T < K.Ou ? 5 : null;
+  // (pase a mano: frasco 4 px/mm × su escala en pantalla — gancho y cierre 1.25 × 1.45, etiqueta 1.35, agitar 1.2; hoja 3 × 1.22 / 1.15)
+  const escala = T < K.E ? 7.25 : T < K.C ? 5.4 : T < C2 ? 3.18 : T < K.Ag ? null : T < K.Es ? 4.8 : T < K.Ci ? null : T < K.Ou ? 7.25 : null;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el frasco y la cuchara */}
       <Escena T={T} a={K.G - 0.5} b={K.E} zoom={0.04}>
         <FondoMarca color={KC.yellow} T={T} />
         <SvgX>
-          <FrascoAderezo T={T} x={470} y={900} s={1.25} hueco={cuchara > 0.5 ? 1 : 0} />
-          <Cuchara x={500} y={640} p={cuchara} />
-          <g opacity={kprog(T, K.G + 2.0, K.G + 2.5)}><Xanto T={T} x={870} y={1060 + Math.sin(T * 3) * 10} s={0.8} rot={-20} seed={3} /></g>
+          <Zg k={1.45} cx={470} cy={900} tx={470} ty={930}>
+            <FrascoAderezo T={T} x={470} y={900} s={1.25} hueco={cuchara > 0.5 ? 1 : 0} />
+            <Cuchara x={500} y={640} p={cuchara} />
+          </Zg>
+          <g opacity={kprog(T, K.G + 2.0, K.G + 2.5)}><Xanto T={T} x={925} y={1170 + Math.sin(T * 3) * 10} s={0.8} rot={-20} seed={3} /></g>
         </SvgX>
       </Escena>
       {/* 1 · la etiqueta y la pasta de dientes */}
       <Escena T={T} a={K.E} b={K.C} zoom={0.04}>
         <FondoMarca color={KC.mint} T={T} />
         <SvgX>
-          <FrascoAderezo T={T} x={330} y={880} s={1.0} resalta={kprog(T, K.E + 0.2, K.E + 0.8)} />
-          <g transform={`translate(${klerp(1300, 800, kprog(T, K.E + 1.4, K.E + 2.1, kEase.sale))} 930) rotate(-24)`}>
+          <FrascoAderezo T={T} x={300} y={980} s={1.35} resalta={kprog(T, K.E + 0.2, K.E + 0.8)} />
+          <g transform={`translate(${klerp(1300, 775, kprog(T, K.E + 0.2, K.E + 0.9, kEase.sale))} 1000) rotate(-24) scale(1.35)`}>
             <path d="M -70 -260 L 70 -260 L 90 180 L -90 180 Z" fill="#fff" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
             <path d="M -90 180 L 90 180 L 80 214 L -80 214 Z" fill="#c9d3dd" stroke={KC.ink} strokeWidth={7} />
             <rect x={-40} y={-320} width={80} height={62} rx={10} fill={KC.blue} stroke={KC.ink} strokeWidth={8} />
@@ -215,9 +220,9 @@ function Xantana() {
       {/* 2–3 · la hoja de col con pudrición negra y, por dentro, la baba */}
       <Escena T={T} a={K.C} b={K.Ta} zoom={0.04}>
         <FondoMarca color={KC.cyan} T={T} />
-        <SvgX><HojaCol T={T} x={500} y={900} s={1.15} v={kprog(T, K.C + 0.3, K.C + 3.0, kEase.suave)} /></SvgX>
+        <SvgX><HojaCol T={T} x={540} y={920} s={1.22} v={kprog(T, K.C + 0.3, K.C + 3.0, kEase.suave)} /></SvgX>
       </Escena>
-      <Lupa T={T} at={C2} until={K.Ta - 0.2} x={540} y={760} r={300} fx={760} fy={920} tinte={KC.mint} etiqueta="AL MICROSCOPIO · HOJA DE COL"
+      <Lupa T={T} at={C2} until={K.Ta - 0.2} x={520} y={860} r={320} fx={900} fy={944} tinte={KC.mint} etiqueta="AL MICROSCOPIO · HOJA DE COL"
         interior={(t, r) => <svg width={r * 2} height={r * 2}>
           <rect width={r * 2} height={r * 2} fill="#0b1a14" />
           {[[-90, -80, -15, 1], [110, -30, 25, 2], [-40, 110, 5, 3], [150, 140, -30, 4]].map(([dx, dy, rot, sd], i) =>
@@ -225,10 +230,10 @@ function Xantana() {
         </svg>} />
       {/* 4 · el tanque con azúcar; la bacteria suelta la goma afuera */}
       <Escena T={T} a={K.Ta} b={K.Al} zoom={0.03}>
-        <MundoBiorreactor T={T} turbio={0.35 + 0.4 * kprog(T, K.Ta, K.Al)} rpm={70} fondo={KC.pink} />
+        <MundoBiorreactor T={T} turbio={0.35 + 0.4 * kprog(T, K.Ta, K.Al)} rpm={70} fondo="#3a2340" />
         <SvgX>{Array.from({ length: 6 }, (_, i) => { const t0 = K.Ta + 0.2 + i * 0.32, u = kprog(T, t0, t0 + 0.7, kEase.entra); return u > 0 && u < 1 ? <Cubo key={i} x={420 + i * 46} y={klerp(250, 640, u)} rot={i * 40 + u * 120} s={1.1} /> : null; })}</SvgX>
       </Escena>
-      <Lupa T={T} at={K.Ta + 1.6} until={K.Al - 0.2} x={560} y={830} r={230} fx={540} fy={1010} tinte={KC.yellow} etiqueta="AL MICROSCOPIO · EL CALDO"
+      <Lupa T={T} at={K.Ta + 1.6} until={K.Al - 0.2} x={540} y={840} r={290} fx={540} fy={1010} tinte={KC.yellow} etiqueta="AL MICROSCOPIO · EL CALDO"
         interior={(t, r) => <svg width={r * 2} height={r * 2}>
           <rect width={r * 2} height={r * 2} fill="#1a1508" />
           <Xanto T={t} x={r} y={r} s={0.9} rot={10} seed={5} hilos={kprog(t, K.Ta + 2.0, K.Al - 0.4)} />
@@ -237,15 +242,15 @@ function Xantana() {
       <Escena T={T} a={K.Al} b={K.P} zoom={0.03}>
         <FondoMarca color={KC.lilac} T={T} />
         <SvgX>
-          {T < A1 + 0.3 && <g opacity={1 - kprog(T, A1, A1 + 0.3)}>
+          {T < A1 + 0.3 && <g opacity={1 - kprog(T, A1, A1 + 0.3)}><Zg k={1.3} cx={540} cy={930} ty={930}>
             {/* filtro: las bacterias se quedan arriba, el caldo pasa */}
             <path d="M 300 560 L 780 560 L 600 820 L 600 900 L 480 900 L 480 820 Z" fill={VIDRIO} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
             <path d="M 330 600 L 750 600" stroke="#fff" strokeWidth={8} strokeDasharray="14 10" />
             {Array.from({ length: 6 }, (_, i) => <Bacteria key={i} T={T} x={380 + i * 62} y={585 - (i % 2) * 18} largo={70} ancho={26} rot={i * 30} color={XBACT} seed={i} />)}
             <Goteo T={T} x={540} y0={910} y1={1080} cada={0.25} color="#efe1b0" desde={K.Al} hasta={A1} />
             <Vaso x={540} y={1150} s={0.9} nivel={kprog(T, K.Al, A1) * 0.5} liquido="#efe1b0" />
-          </g>}
-          {T >= A1 && T < A2 + 0.3 && <g opacity={kprog(T, A1, A1 + 0.3) * (1 - kprog(T, A2, A2 + 0.3))}>
+          </Zg></g>}
+          {T >= A1 && T < A2 + 0.3 && <g opacity={kprog(T, A1, A1 + 0.3) * (1 - kprog(T, A2, A2 + 0.3))}><Zg k={1.4} cx={500} cy={900} tx={520} ty={940}>
             <Vaso x={540} y={980} s={1.3} nivel={0.55 + 0.2 * kprog(T, A1 + 0.3, A1 + 1.3)} liquido="#efe1b0">
               {Array.from({ length: 9 }, (_, i) => { const k = kprog(T, A1 + 0.6 + i * 0.1, A1 + 1.6 + i * 0.1); return <path key={i} d={`M ${-100 + i * 25} 60 q 20 ${-40 * k} 0 ${-90 * k} q -18 -30 6 ${-50 * k}`} stroke="#fff" strokeWidth={9} fill="none" strokeLinecap="round" opacity={k} />; })}
             </Vaso>
@@ -255,44 +260,44 @@ function Xantana() {
               <text x={0} y={-50} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>OH</text>
             </g>
             {T < A1 + 1.4 && <path d={`M 400 650 Q 480 680 ${520 + Math.sin(T * 18) * 4} 800`} stroke="#e8f6ff" strokeWidth={14} fill="none" strokeLinecap="round" />}
-          </g>}
-          {T >= A2 && <g opacity={kprog(T, A2, A2 + 0.3)}>
+          </Zg></g>}
+          {T >= A2 && <g opacity={kprog(T, A2, A2 + 0.3)}><Zg k={1.4} cx={540} cy={860} ty={940}>
             <ellipse cx={540} cy={1060} rx={270} ry={50} fill="rgba(0,0,0,.15)" />
             <path d="M 300 820 Q 290 1060 540 1070 Q 790 1060 780 820 Z" fill="#d9b98a" stroke={KC.ink} strokeWidth={10} />
             <path d={`M 330 ${880 - 60 * kprog(T, A2, A2 + 1)} Q 540 ${760 - 90 * kprog(T, A2, A2 + 1)} 750 ${880 - 60 * kprog(T, A2, A2 + 1)} L 760 900 L 320 900 Z`} fill="#fbf8ef" stroke="#cfc7b0" strokeWidth={5} />
             <path d="M 300 820 Q 540 900 780 820" fill="none" stroke={KC.ink} strokeWidth={10} />
             {Array.from({ length: 10 }, (_, i) => { const u = ((T - A2) * 0.9 + i * 0.1) % 1; return <circle key={i} cx={500 + (i % 5) * 20} cy={klerp(560, 800, u)} r={6} fill="#fbf8ef" stroke="#cfc7b0" strokeWidth={2} />; })}
-          </g>}
+          </Zg></g>}
         </SvgX>
       </Escena>
       {/* 6 · pregunta: una pizca en un vaso de agua */}
       <Escena T={T} a={K.P} b={K.Ca} zoom={0.06}>
         <FondoMarca color={KC.orange} T={T} />
         <SvgX>
-          <Vaso x={300} y={1010} s={1.2} nivel={0.6} liquido={mixHex('#7fd0ff', '#d6eef7', kprog(T, K.P + 0.8, K.P + 2.0))}>
+          <Vaso x={370} y={1000} s={2.0} nivel={0.6} liquido={mixHex('#7fd0ff', '#d6eef7', kprog(T, K.P + 0.8, K.P + 2.0))}>
             <path d={`M -140 ${-28 + Math.sin(T * 6) * 14 * (1 - kprog(T, K.P + 0.8, K.P + 2.0))} Q -50 ${-50 - Math.sin(T * 6) * 18 * (1 - kprog(T, K.P + 0.8, K.P + 2.0))} 30 -28 T 140 -28`} stroke="#fff" strokeWidth={6} fill="none" />
           </Vaso>
-          {Array.from({ length: 10 }, (_, i) => { const u = kprog(T, K.P + 0.1 + i * 0.05, K.P + 0.7 + i * 0.05); return u > 0 && u < 1 ? <circle key={i} cx={280 + (i % 4) * 12} cy={klerp(560, 900, u)} r={6} fill="#fbf8ef" stroke={KC.ink} strokeWidth={2} /> : null; })}
-          <text x={560} y={760} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 560 650)`}>?</text>
+          {Array.from({ length: 10 }, (_, i) => { const u = kprog(T, K.P + 0.1 + i * 0.05, K.P + 0.7 + i * 0.05); return u > 0 && u < 1 ? <circle key={i} cx={350 + (i % 4) * 14} cy={klerp(480, 900, u)} r={8} fill="#fbf8ef" stroke={KC.ink} strokeWidth={2} /> : null; })}
+          <text x={800} y={860} textAnchor="middle" style={{ font:`400 340px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 800 740)`}>?</text>
         </SvgX>
       </Escena>
       {/* 7 · por dentro: la cadena en hélice */}
       <Escena T={T} a={K.Ca} b={K.R} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={30} color="rgba(120,200,255,.25)" />
-        <SvgX><CadenaX T={T} x={90} y={860} n={10} p={kprog(T, K.Ca + 0.2, K.Ca + 2.2)} paso={94} s={1.1} /></SvgX>
+        <SvgX><CadenaX T={T} x={70} y={940} n={10} p={kprog(T, K.Ca + 0.2, K.Ca + 2.2)} paso={80} s={1.32} /></SvgX>
       </Escena>
       {/* 8 · en reposo: la red frena el agua */}
       <Escena T={T} a={K.R} b={K.Ag} zoom={0.03}>
         <FondoMarca patron="oscuro" />
-        <SvgX><GotasAgua T={T} vel={0.15} /><RedCadenas T={T} orden={0} o={kprog(T, K.R, K.R + 1.2)} /></SvgX>
+        <SvgX><g transform="translate(0 90)"><GotasAgua T={T} vel={0.15} /><RedCadenas T={T} orden={0} o={kprog(T, K.R, K.R + 0.5)} /></g></SvgX>
       </Escena>
       {/* 9 · si agitas: el frasco y, por dentro, las cadenas alineadas */}
       <Escena T={T} a={K.Ag} b={K.Es} zoom={0.02}>
         <FondoMarca color={KC.yellow} T={T} />
-        <SvgX><FrascoAderezo T={T} x={300} y={1000} s={0.85} agita={sacude} flujo={orden} /></SvgX>
+        <SvgX><FrascoAderezo T={T} x={300} y={1080} s={1.2} agita={sacude} flujo={orden} /></SvgX>
       </Escena>
-      <Lupa T={T} at={K.Ag + 0.2} until={K.Es - 0.2} x={740} y={820} r={250} fx={340} fy={940} tinte={KC.cyan} etiqueta="POR DENTRO · GOMA XANTANA"
+      <Lupa T={T} at={K.Ag + 0.2} until={K.Es - 0.2} x={730} y={740} r={290} fx={320} fy={1000} tinte={KC.cyan} etiqueta="POR DENTRO · GOMA XANTANA"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0b1220" />
           <g transform={`translate(${r - 540 * 0.5} ${r - 870 * 0.5}) scale(0.5)`}><GotasAgua T={t} vel={klerp(0.15, 3, orden)} /><RedCadenas T={t} orden={orden} flujo={orden} /></g></svg>} />
       {/* 10 · el estudio: Peoria 1961 y el sello de 1969 */}
@@ -303,44 +308,46 @@ function Xantana() {
       {/* 11 · dato: lodo de perforación */}
       <Escena T={T} a={K.D} b={K.Ci} zoom={0.03}>
         <FondoMarca color={KC.pink} T={T} />
-        <SvgX><Torre T={T} x={380} y={1180} /></SvgX>
+        <SvgX><Zg k={1.25} cx={540} cy={1060} ty={1020}><Torre T={T} x={540} y={1060} /></Zg></SvgX>
       </Escena>
       {/* 12 · cierre: el frasco del inicio */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoMarca color={KC.yellow} T={T} />
         <SvgX>
-          <FrascoAderezo T={T} x={470} y={900} s={1.25} resalta={kprog(T, K.Ci + 1.6, K.Ci + 2.2)} hueco={cuchara2 > 0.5 ? 1 : 0} />
-          <Cuchara x={500} y={640} p={cuchara2} />
-          <g opacity={kprog(T, K.Ci + 2.0, K.Ci + 2.5)}><Xanto T={T} x={870} y={1060 + Math.sin(T * 3) * 10} s={0.8} rot={-20} seed={3} baba={0.5} /></g>
+          <Zg k={1.45} cx={470} cy={900} tx={470} ty={930}>
+            <FrascoAderezo T={T} x={470} y={900} s={1.25} resalta={kprog(T, K.Ci + 1.6, K.Ci + 2.2)} hueco={cuchara2 > 0.5 ? 1 : 0} />
+            <Cuchara x={500} y={640} p={cuchara2} />
+          </Zg>
+          <g opacity={kprog(T, K.Ci + 0.3, K.Ci + 0.8)}><Xanto T={T} x={925} y={1170 + Math.sin(T * 3) * 10} s={0.8} rot={-20} seed={3} baba={0.5} /></g>
         </SvgX>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.6} until={K.E - 0.2} texto="¿solo crema?" x={285} y={420} tam={46} />
-      <Etiqueta T={T} at={K.G + 2.3} until={K.E - 0.2} x={770} y={1160} texto="bacteria" color={KC.ink} />
-      <Chip T={T} at={K.E + 0.4} until={K.C - 0.2} texto="goma xantana" x={330} y={470} tam={48} borde={KC.gold2} />
-      <Chip T={T} at={K.C + 0.3} until={C2 - 0.1} texto="pudrición negra de la col" y={1500} tam={40} borde={KC.yellow} />
-      <Etiqueta T={T} at={K.C + 1.2} until={C2 - 0.1} x={60} y={1600} texto="Xanthomonas campestris pv. campestris" it tam={32} />
-      <Etiqueta T={T} at={C2 + 1.0} until={K.Ta - 0.2} x={60} y={1600} texto="baba de xantana: su escudo" tam={34} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.6} until={K.E - 0.2} texto="¿solo crema?" x={790} y={380} tam={46} />
+      <Etiqueta T={T} at={K.G + 2.3} until={K.E - 0.2} x={830} y={1262} texto="bacteria" color={KC.ink} />
+      <Chip T={T} at={K.E + 0.4} until={K.C - 0.2} texto="goma xantana" x={300} y={560} tam={48} borde={KC.gold2} />
+      <Chip T={T} at={K.C + 0.3} until={C2 - 0.1} texto="pudrición negra de la col" y={1420} tam={40} borde={KC.yellow} />
+      <Etiqueta T={T} at={K.C + 1.2} until={C2 - 0.1} x={60} y={1505} texto="Xanthomonas campestris pv. campestris" it tam={32} />
+      <Etiqueta T={T} at={C2 + 1.0} until={K.Ta - 0.2} x={60} y={1440} texto="baba de xantana: su escudo" tam={34} />
       {noEscala && <div style={{ position:'absolute', left:60, top:1700, zIndex:40, font:`700 26px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA }}>esquemático · no a escala</div>}
       {escala && <Escala T={T} z={1} pxPorMm={escala} x={60} y={1690} objetivo={170} />}
-      <Chip T={T} at={K.Ta + 0.3} until={K.Al - 0.2} texto="fermentación: azúcar → goma" y={1500} tam={40} borde={KC.yellow} />
-      <Etiqueta T={T} at={K.Ta + 2.4} until={K.Al - 0.2} x={1020} y={1600} texto="la goma sale por fuera" lado="izq" tam={34} />
-      <Chip T={T} at={K.Al + 0.2} until={A1 - 0.1} texto="1 · se eliminan las bacterias" y={1500} tam={40} borde={KC.red} />
-      <Chip T={T} at={A1 + 0.2} until={A2 - 0.1} texto="2 · alcohol: la goma se junta" y={1500} tam={40} borde={KC.cyan} />
-      <Chip T={T} at={A2 + 0.2} until={K.P - 0.2} texto="3 · polvo sin bacterias vivas" y={1500} tam={40} borde={KC.mint} />
-      <Etiqueta T={T} at={K.Ca + 1.4} until={K.R - 0.2} x={60} y={1500} texto="esqueleto de glucosas" color={KC.yellow} />
-      <Etiqueta T={T} at={K.Ca + 2.4} until={K.R - 0.2} x={60} y={1580} texto="ramitas de 3 azúcares" color="#c9b5ff" />
+      <Chip T={T} at={K.Ta + 0.3} until={K.Al - 0.2} texto="fermentación: azúcar → goma" y={1420} tam={40} borde={KC.yellow} />
+      <Etiqueta T={T} at={K.Ta + 2.4} until={K.Al - 0.2} x={1020} y={1300} texto="la goma sale por fuera" lado="izq" tam={34} />
+      <Chip T={T} at={K.Al + 0.2} until={A1 - 0.1} texto="1 · se eliminan las bacterias" y={1490} tam={40} borde={KC.red} />
+      <Chip T={T} at={A1 + 0.2} until={A2 - 0.1} texto="2 · alcohol: la goma se junta" y={1490} tam={40} borde={KC.cyan} />
+      <Chip T={T} at={A2 + 0.2} until={K.P - 0.2} texto="3 · polvo sin bacterias vivas" y={1490} tam={40} borde={KC.mint} />
+      <Etiqueta T={T} at={K.Ca + 1.4} until={K.R - 0.2} x={60} y={1330} texto="esqueleto de glucosas" color={KC.yellow} />
+      <Etiqueta T={T} at={K.Ca + 2.4} until={K.R - 0.2} x={60} y={1400} texto="ramitas de 3 azúcares" color="#c9b5ff" />
       <Chip T={T} at={K.Ca + 0.3} until={K.R - 0.2} texto="cadena en hélice" x={340} y={470} tam={42} borde={KC.yellow} />
-      <Chip T={T} at={K.R + 0.3} until={K.Ag - 0.2} texto="en reposo: una red" x={340} y={470} tam={42} borde={KC.gold2} />
-      <Medidor T={T} at={K.R + 0.6} until={K.Es - 0.2} valor={K.R <= T && T < K.Ag ? 0.92 : visc} etiqueta="qué tan espeso" texto={(v) => (v > 0.6 ? 'espeso' : 'corre')} x={90} y={1460} color={KC.gold2} />
-      <Chip T={T} at={K.Ag + 0.4} until={AgQ - 0.1} texto="agitado: se alinean" y={1610} tam={40} borde={KC.cyan} />
-      <Chip T={T} at={AgQ + 0.1} until={K.Es - 0.2} texto="quieto: se enredan" y={1610} tam={40} borde={KC.gold2} />
+      <Chip T={T} at={K.R + 0.3} until={K.Ag - 0.2} texto="en reposo: una red" x={340} y={420} tam={42} borde={KC.gold2} />
+      <Medidor T={T} at={K.R + 0.6} until={K.Es - 0.2} valor={K.R <= T && T < K.Ag ? 0.92 : visc} etiqueta="qué tan espeso" texto={(v) => (v > 0.6 ? 'espeso' : 'corre')} x={90} y={250} ancho={680} color={KC.gold2} />
+      <Chip T={T} at={K.Ag + 0.4} until={AgQ - 0.1} texto="agitado: se alinean" y={1490} tam={40} borde={KC.cyan} />
+      <Chip T={T} at={AgQ + 0.1} until={K.Es - 0.2} texto="quieto: se enredan" y={1490} tam={40} borde={KC.gold2} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={Es2 - 0.1} anio="1961" quien="Jeanes, Pittsley y Senti · Peoria, EE. UU." revista="J. Appl. Polym. Sci. · goma de glucosa por fermentación" y={520} />
       <Chip T={T} at={K.Es + 1.2} until={Es2 - 0.1} texto="Departamento de Agricultura de EE. UU." y={1500} tam={34} borde={KC.gold2} />
       <Sello T={T} at={Es2} until={K.D - 0.1} x={420} y={560} texto1="1969" texto2={'FDA · aditivo\nde alimentos'} />
       <Chip T={T} at={Es2 + 0.3} until={K.D - 0.2} texto="aprobada para alimentos" y={1500} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.D + 0.3} until={K.Ci - 0.2} texto="lodo para perforar pozos" y={1500} tam={40} borde={KC.orange} />
+      <Chip T={T} at={K.D + 0.3} until={K.Ci - 0.2} texto="lodo para perforar pozos" y={1480} tam={40} borde={KC.orange} />
       <Chip T={T} at={K.Ci + 0.4} until={K.Ou} texto="crema + baba de bacteria" y={1500} tam={40} borde={KC.gold2} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
