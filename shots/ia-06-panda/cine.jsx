@@ -149,7 +149,9 @@ if (typeof document !== 'undefined' && CINE_OPC.volumen && !document.getElementB
     + '<feBlend in="SourceGraphic" in2="difIn" mode="multiply" result="sombra"/>'
     + '<feComposite in="sombra" in2="SourceAlpha" operator="in" result="sombraIn"/>'
     + '<feSpecularLighting in="h" surfaceScale="' + CINE_VOL.relieve + '" specularConstant="' + CINE_VOL.brillo + '" specularExponent="18" lighting-color="#dbe8ff" result="spec"><feDistantLight azimuth="232" elevation="48"/></feSpecularLighting>'
-    + '<feComposite in="spec" in2="SourceAlpha" operator="in" result="specIn"/>'
+    // una superficie plana también refleja un poco (≈14 %): se resta para que el brillo quede solo en los bordes y las piezas oscuras no se agrisen
+    + '<feColorMatrix in="spec" type="matrix" values="1.5 0 0 0 -0.22  0 1.5 0 0 -0.22  0 0 1.5 0 -0.22  0 0 0 1.5 -0.22" result="spec2"/>'
+    + '<feComposite in="spec2" in2="SourceAlpha" operator="in" result="specIn"/>'
     + '<feComposite in="sombraIn" in2="specIn" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="luz"/>'
     + '<feGaussianBlur in="SourceGraphic" stdDeviation="' + CINE_VOL.halo + '" result="g"/>'
     + '<feColorMatrix in="g" type="matrix" values="1.25 0 0 0 0  0 1.25 0 0 0  0 0 1.25 0 0  0 0 0 ' + CINE_VOL.haloFuerza + ' 0" result="haloC"/>'
