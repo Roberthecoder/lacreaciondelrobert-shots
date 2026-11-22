@@ -252,6 +252,9 @@ function Flecha({ x1, y1, x2, y2, p = 1, color = KC.ink }) {
 const txt = (x, y, t, tam = 30, color = KC.ink, anchor = 'middle', o = 1, w = 700, f = KF.mono, it = false) =>
   <text x={x} y={y} textAnchor={anchor} opacity={o} style={{ font:`${it ? 'italic ' : ''}${w} ${tam}px ${f}` }} fill={color}>{t}</text>;
 
+// Pase a mano (modo cine): agranda k veces un grupo de dibujo y lleva el punto (cx, cy) a (nx, ny).
+const enc = (k, cx, cy, nx, ny, hijos) => <g transform={`translate(${nx} ${ny}) scale(${k}) translate(${-cx} ${-cy})`}>{hijos}</g>;
+
 function OloteShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, N: CUES.Numero, Pr: CUES.Preparar, Se: CUES.Semilla, Os: CUES.Oscuro, En: CUES.Enzimas, P: CUES.Pregunta, Fr: CUES.Fruto, E: CUES.Estudio, Ro: CUES.Robert, So: CUES.Sobra, Fu: CUES.Futuro, C: CUES.Cierre, Ou: CUES.Outro };
@@ -272,85 +275,97 @@ function OloteShot() {
       {/* 1 · gancho */}
       <Escena T={T} a={K.G} b={K.N} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(enc(1.3, 560, 930, 540, 1030, <>
           <Bote x={830} y={1200} />
           {txt(830, 1060, 'BASURA', 40, '#fff', 'middle', 1, 400, KF.titulo)}
           {frena > 0 && <circle cx={oX} cy={oY} r={240 * frena} fill="#fff" opacity={0.35 * frena} />}
           <Mano x={260} y={900} rot={manoRot} />
           <Olote x={oX} y={oY} s={1.05} rot={oR} />
           {lanza <= 0 && <Mano x={260} y={900} rot={manoRot} dedos />}
-        </>)}
+        </>))}
       </Escena>
       {/* 2 · el número: 1 kg de olote seco → 850 g de setas frescas */}
       <Escena T={T} a={K.N} b={K.Pr} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(enc(1.1, 540, 880, 540, 1000, <>
           <Balanza x={540} y={700} tilt={klerp(10, 4, kprog(T, K.N + 1.4, K.N + 3.2, kEase.suave))}
             izq={<g>{[[-60, -30, -8], [50, -34, 6], [0, -70, 2]].map(([a, b, r], i) => <Olote key={i} x={a} y={b} s={0.36} rot={r} seed={20 + i} />)}</g>}
             der={<RacimoSeta T={T} x={-80} y={-20} s={0.75} abre={kprog(T, K.N + 1.2, K.N + 3.2)} n={7} seed={5} />} />
           {txt(250, 1090, '1 kg de olote', 34, KC.ink)}{txt(250, 1130, 'SECO', 34, KC.red, 'middle', 1, 900, KF.texto)}
-          {txt(830, 1090, '850 g de setas', 34, KC.ink, 'middle', kprog(T, K.N + 2.2, K.N + 2.6))}{txt(830, 1130, 'FRESCAS', 34, '#118a3a', 'middle', kprog(T, K.N + 2.2, K.N + 2.6), 900, KF.texto)}
-        </>)}
+          {txt(830, 1090, '850 g de setas', 34, KC.ink, 'middle', kprog(T, K.N + 2.2, K.N + 2.6))}{txt(830, 1130, 'FRESCAS', 34, '#2fd06a', 'middle', kprog(T, K.N + 2.2, K.N + 2.6), 900, KF.texto)}
+        </>))}
       </Escena>
       {/* 3 · remojar y pasteurizar */}
       <Escena T={T} a={K.Pr} b={K.Se} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Cubeta x={210} y={1060} T={T} olotes={kprog(T, K.Pr + 0.1, K.Pr + 0.9)} />
-          {txt(210, 1110, '1 · remojo (48 h)', 30)}
-          <g opacity={kprog(T, K.Pr + 1.2, K.Pr + 1.6)}><g transform="translate(585 1060) scale(.9) translate(-585 -1060)"><Olla x={585} y={1060} T={T} calor={kprog(T, K.Pr + 1.5, K.Pr + 2.6)} /></g>
-            {txt(585, 1110, '2 · pasteurizar', 30)}</g>
-          <Flecha x1={375} y1={880} x2={420} y2={880} p={kprog(T, K.Pr + 1.0, K.Pr + 1.4)} />
+          {/* dos pasos en diagonal, los dos 1.4× (misma escala): 1 arriba a la izquierda, 2 abajo a la derecha */}
+          {enc(1.4, 210, 1060, 270, 880, <>
+            <Cubeta x={210} y={1060} T={T} olotes={kprog(T, K.Pr + 0.1, K.Pr + 0.9)} />
+            {txt(210, 1110, '1 · remojo (48 h)', 30)}
+          </>)}
+          <g opacity={kprog(T, K.Pr + 1.2, K.Pr + 1.6)}>{enc(1.4, 585, 1060, 650, 1400, <>
+            <g transform="translate(585 1060) scale(.9) translate(-585 -1060)"><Olla x={585} y={1060} T={T} calor={kprog(T, K.Pr + 1.5, K.Pr + 2.6)} /></g>
+            {txt(585, 1105, '2 · pasteurizar', 30)}
+          </>)}</g>
+          <Flecha x1={560} y1={640} x2={625} y2={735} p={kprog(T, K.Pr + 1.0, K.Pr + 1.4)} />
         </>)}
-        {T > K.Pr + 1.3 && <div style={{ opacity:kprog(T, K.Pr + 1.3, K.Pr + 1.7) }}><Termometro x={845} y={560} alto={420} valor={klerp(20, 70, kprog(T, K.Pr + 1.6, K.Pr + 2.8, kEase.sale))} max={100} rango={[68, 72]} marcas={[0, 70, 100]} /></div>}
+        {T > K.Pr + 1.3 && <div style={{ opacity:kprog(T, K.Pr + 1.3, K.Pr + 1.7) }}><Termometro x={850} y={410} alto={480} valor={klerp(20, 70, kprog(T, K.Pr + 1.6, K.Pr + 2.8, kEase.sale))} max={100} rango={[68, 72]} marcas={[0, 70, 100]} /></div>}
       </Escena>
       {/* 4 · sembrar la semilla */}
       <Escena T={T} a={K.Se} b={K.Os} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(enc(1.25, 420, 900, 540, 960, <>
           <Bandeja x={600} y={1150} />
           <FrascoGrano x={330} y={880} rot={-inclina * 115} T={T} />
           {Array.from({ length: nGr }, (_, i) => { const t0 = K.Se + 0.9 + i * 0.08, u = kprog(T, t0, t0 + 0.6); if (u <= 0) return null;
             const sx = 330 + Math.cos(-inclina * 2) * 0 + 220, sy = 760, ex = 470 + (i * 37) % 260, ey = 1040 + (i * 13) % 40;
             return <GranoSemilla key={i} x={klerp(sx, ex, u)} y={klerp(sy, ey, u * u)} a={i * 40 + u * 200} s={1.1} />; })}
-        </>)}
+        </>))}
       </Escena>
       {/* 5 · a oscuras, la bolsa se coloniza */}
       <Escena T={T} a={K.Os} b={K.En} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:mixHex('#2b3f63', KC.noche, kprog(T, K.Os + 0.2, K.Os + 0.6)) }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <BolsaCultivo T={T} x={540} y={900} w={380} h={560} col={col} />
-          <Foco x={170} y={460} on={1 - kprog(T, K.Os + 0.2, K.Os + 0.35)} />
+          {enc(1.6, 540, 900, 540, 1000, <BolsaCultivo T={T} x={540} y={900} w={380} h={560} col={col} />)}
+          <Foco x={140} y={400} on={1 - kprog(T, K.Os + 0.2, K.Os + 0.35)} />
         </>)}
       </Escena>
       {/* 6 · por dentro: hifas y enzimas que desarman la fibra */}
       <Escena T={T} a={K.En} b={K.P} zoom={0.03}>
         <FondoMarca patron="oscuro" />
-        {fsvg(<BolsaCultivo T={T} x={170} y={1010} w={200} h={290} col={1} />)}
-        <Lupa T={T} at={K.En + 0.1} until={K.P - 0.2} x={610} y={770} r={320} fx={200} fy={980} tinte={KC.mint} etiqueta="POR DENTRO · HIFAS Y FIBRA"
+        {fsvg(<BolsaCultivo T={T} x={150} y={1340} w={200} h={290} col={1} />)}
+        <Lupa T={T} at={K.En + 0.1} until={K.P - 0.2} x={600} y={850} r={400} fx={185} fy={1300} tinte={KC.mint} etiqueta="POR DENTRO · HIFAS Y FIBRA"
           interior={(t, r) => <MicroFibra T={t} r={r} g={kprog(t, K.En + 0.2, K.En + 2.2)} corte={kprog(t, K.En + 2.0, K.En + 4.4)} />} />
       </Escena>
       {/* 7 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Fr} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><BolsaCultivo T={T} x={280} y={1000} w={360} h={520} col={1} /><Interrogacion T={T} x={300} y={760} tam={340} /></>)}
+        {fsvg(enc(1.5, 280, 1000, 380, 1000, <><BolsaCultivo T={T} x={280} y={1000} w={360} h={520} col={1} /><Interrogacion T={T} x={300} y={880} tam={340} /></>))}
       </Escena>
       {/* 8 · aire, luz y humedad: brotan los racimos */}
       <Escena T={T} a={K.Fr} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           {[0, 1, 2, 3].map((i) => { const u = ((T * 0.8 + i / 4) % 1); return <path key={i} d={`M ${1000 - u * 380} ${560 + i * 90} q 40 -20 80 0 q 40 20 80 0`} stroke="#fff" strokeWidth={7} fill="none" strokeLinecap="round" opacity={kprog(T, K.Fr + 0.4, K.Fr + 0.8) * Math.sin(Math.PI * u)} />; })}
-          <BolsaCultivo T={T} x={BOLSA.x} y={BOLSA.y} w={420} h={620} col={1} />
-          {CORTES.map(([dx, dy, l], i) => <CorteX key={i} x={BOLSA.x + dx} y={BOLSA.y + dy} p={kprog(T, K.Fr + 0.1 + i * 0.15, K.Fr + 0.3 + i * 0.15)} />)}
-          {CORTES.map(([dx, dy, l], i) => <RacimoSeta key={'r' + i} T={T} lado={l} x={BOLSA.x + dx} y={BOLSA.y + dy} s={0.62} abre={kprog(T, K.Fr + 1.2 + i * 0.35, K.Fr + 3.2 + i * 0.3)} n={6} seed={11 + i} />)}
+          {enc(1.3, BOLSA.x, BOLSA.y, 380, 1000, <>
+            <BolsaCultivo T={T} x={BOLSA.x} y={BOLSA.y} w={420} h={620} col={1} />
+            {CORTES.map(([dx, dy, l], i) => <CorteX key={i} x={BOLSA.x + dx} y={BOLSA.y + dy} p={kprog(T, K.Fr + 0.1 + i * 0.15, K.Fr + 0.3 + i * 0.15)} />)}
+            {CORTES.map(([dx, dy, l], i) => <RacimoSeta key={'r' + i} T={T} lado={l} x={BOLSA.x + dx} y={BOLSA.y + dy} s={0.62} abre={kprog(T, K.Fr + 1.2 + i * 0.35, K.Fr + 3.2 + i * 0.3)} n={6} seed={11 + i} />)}
+          </>)}
         </>)}
       </Escena>
       {/* 9 · el estudio de Hidalgo */}
       <Escena T={T} a={K.E} b={K.Ro} zoom={0.03}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          {(() => { const u = kprog(T, K.E + 2.8, K.E + 4.0, kEase.sale), B = 1060; return <>
+          {/* mientras está la tarjeta del estudio, la bolsa con sus racimos sigue en cuadro (atenuada) */}
+          {T < K.E + 3.0 && <g opacity={0.55 * (1 - kprog(T, K.E + 2.3, K.E + 2.9))}>{enc(1.3, BOLSA.x, BOLSA.y, 380, 1000, <>
+            <BolsaCultivo T={T} x={BOLSA.x} y={BOLSA.y} w={420} h={620} col={1} />
+            {CORTES.map(([dx, dy, l], i) => <RacimoSeta key={'r' + i} T={T} lado={l} x={BOLSA.x + dx} y={BOLSA.y + dy} s={0.62} abre={1} n={6} seed={11 + i} />)}
+          </>)}</g>}
+          {enc(1.22, 540, 820, 540, 950, (() => { const u = kprog(T, K.E + 2.8, K.E + 4.0, kEase.sale), B = 1060; return <>
             <line x1={120} y1={B} x2={960} y2={B} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.E + 2.6, K.E + 2.9)} />
             <rect x={210} y={B - 425 * u} width={240} height={425 * u} rx={10} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} />
             <rect x={630} y={B - 325 * u} width={240} height={325 * u} rx={10} fill="#7fd3f0" stroke={KC.ink} strokeWidth={7} />
@@ -358,52 +373,62 @@ function OloteShot() {
             {u > 0.3 && <><Olote x={330} y={B - 70} s={0.5} rot={-4} seed={31} /><Paja x={750} y={B - 70} s={1.2} /></>}
             {txt(330, B + 44, 'olote', 32, KC.ink, 'middle', kprog(T, K.E + 2.9, K.E + 3.2))}
             {txt(750, B + 44, 'paja de cebada', 32, KC.ink, 'middle', kprog(T, K.E + 2.9, K.E + 3.2))}
-            {txt(330, 520, 'eficiencia biológica', 30, KC.ink, 'middle', kprog(T, K.E + 3.0, K.E + 3.4))}
-          </>; })()}
+            {txt(540, 540, 'eficiencia biológica', 34, KC.ink, 'middle', kprog(T, K.E + 3.0, K.E + 3.4))}
+          </>; })())}
         </>)}
       </Escena>
       {/* 10 · lo que probó Robert */}
       <Escena T={T} a={K.Ro} b={K.So} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
+          {/* arriba el que falló, abajo el que funcionó; los dos 1.4× (misma escala) */}
+          {enc(1.4, 270, 990, 540, 650, <>
           <Olote x={270} y={1000} s={0.85} rot={-12} granos={0.55} burbujas={kprog(T, K.Ro + 0.8, K.Ro + 1.4)} T={T} seed={41} />
           <Paloma x={270} y={830} ok={false} p={kprog(T, K.Ro + 1.6, K.Ro + 2.0)} />
           {txt(270, 1110, 'mal desgranado:', 28, KC.ink, 'middle', kprog(T, K.Ro + 1.6, K.Ro + 2.0))}
           {txt(270, 1146, 'fermenta', 30, KC.red, 'middle', kprog(T, K.Ro + 1.6, K.Ro + 2.0), 900, KF.texto)}
+          </>)}
+          {enc(1.4, 780, 985, 540, 1210, <>
           <Olote x={790} y={1020} s={0.85} rot={8} seed={42} />
           <RacimoSeta T={T} x={700} y={990} s={1.0} abre={kprog(T, K.Ro + 2.6, K.Ro + 4.0)} n={7} seed={17} />
           <Paloma x={950} y={1140} ok p={kprog(T, K.Ro + 3.6, K.Ro + 4.0)} />
           {txt(760, 1146, 'setas enormes', 30, KC.ink, 'middle', kprog(T, K.Ro + 3.6, K.Ro + 4.0), 900, KF.texto)}
+          </>)}
         </>)}
       </Escena>
       {/* 11 · lo que sobra: composta o alimento */}
       <Escena T={T} a={K.So} b={K.Fu} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(enc(1.15, 540, 860, 540, 950, <>
           <Bloque x={540} y={860} T={T} />
           {txt(540, 495, 'sustrato agotado', 32, KC.ink, 'middle', 1, 900, KF.texto)}
           <Flecha x1={430} y1={880} x2={300} y2={960} p={kprog(T, K.So + 0.8, K.So + 1.2)} />
           <Flecha x1={650} y1={880} x2={780} y2={960} p={kprog(T, K.So + 1.6, K.So + 2.0)} />
           <g opacity={kprog(T, K.So + 1.0, K.So + 1.3)}><Maceta x={210} y={1190} T={T} crece={kprog(T, K.So + 1.1, K.So + 2.0, kEase.rebote)} />{txt(210, 1230, 'composta', 32, KC.ink, 'middle', 1, 900, KF.texto)}</g>
           <g opacity={kprog(T, K.So + 1.8, K.So + 2.1)}><Vaca x={850} y={1190} T={T} s={0.78} />{txt(830, 1230, 'alimento animal', 32, KC.ink, 'middle', 1, 900, KF.texto)}</g>
-        </>)}
+        </>))}
       </Escena>
       {/* 12 · la meta a futuro de Robert */}
       <Escena T={T} a={K.Fu} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Bagazo x={290} y={1100} T={T} crece={kprog(T, K.Fu + 0.2, K.Fu + 1.2, kEase.sale)} />
-          {txt(290, 1150, '1 tonelada', 44, KC.ink, 'middle', kprog(T, K.Fu + 1.0, K.Fu + 1.4), 400, KF.titulo)}
-          {txt(290, 1190, 'de bagazo de agave', 28, KC.ink, 'middle', kprog(T, K.Fu + 1.2, K.Fu + 1.6))}
-          <Flecha x1={530} y1={900} x2={650} y2={900} p={kprog(T, K.Fu + 2.0, K.Fu + 2.6)} color={KC.violet} />
-          <g opacity={kprog(T, K.Fu + 2.4, K.Fu + 2.8)}><Plato x={810} y={1080} T={T} abre={kprog(T, K.Fu + 2.5, K.Fu + 3.8)} />
-            {txt(810, 1170, 'hongos para comer', 28, KC.ink, 'middle', 1)}</g>
+          {/* de arriba abajo: la montaña de bagazo → el plato de hongos, los dos 1.5× */}
+          {enc(1.5, 290, 1100, 540, 835, <>
+            <g opacity={kprog(T, K.Fu + 0.2, K.Fu + 0.45)}><Bagazo x={290} y={1100} T={T} crece={kprog(T, K.Fu + 0.2, K.Fu + 1.2, kEase.sale)} /></g>
+            {txt(290, 1150, '1 tonelada', 44, KC.ink, 'middle', kprog(T, K.Fu + 1.0, K.Fu + 1.4), 400, KF.titulo)}
+            {txt(290, 1190, 'de bagazo de agave', 28, KC.ink, 'middle', kprog(T, K.Fu + 1.2, K.Fu + 1.6))}
+          </>)}
+          <Flecha x1={540} y1={1010} x2={540} y2={1075} p={kprog(T, K.Fu + 2.0, K.Fu + 2.6)} color="#b9a4ff" />
+          <g opacity={kprog(T, K.Fu + 2.4, K.Fu + 2.8)}>{enc(1.5, 810, 1080, 540, 1325, <>
+            <Plato x={810} y={1080} T={T} abre={kprog(T, K.Fu + 2.5, K.Fu + 3.8)} />
+            {txt(810, 1170, 'hongos para comer', 28, KC.ink, 'middle', 1)}
+          </>)}</g>
         </>)}
       </Escena>
       {/* 13 · cierre: el mismo olote del inicio, ahora con setas */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(enc(1.3, 560, 930, 540, 1030, <>
           <Bote x={830} y={1200} />
           {txt(830, 1060, 'BASURA', 40, '#fff', 'middle', 1, 400, KF.titulo)}
           <circle cx={470} cy={820} r={240} fill="#fff" opacity={0.3} />
@@ -411,47 +436,47 @@ function OloteShot() {
           <Olote x={470} y={830} s={1.05} rot={0} />
           <RacimoSeta T={T} x={400} y={800} s={1.0} abre={kprog(T, K.C + 0.2, K.C + 1.8)} n={7} seed={23} />
           <Mano x={260} y={900} rot={-10} dedos />
-        </>)}
+        </>))}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.4} until={K.N - 0.3} texto="basura" x={250} y={450} tam={50} />
-      <Chip T={T} at={K.G + 1.9} until={K.N - 0.3} texto="comida… ¿para quién?" x={330} y={1130} tam={40} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.N + 0.4} until={K.Pr - 0.3} valor={850} dur={1.6} sufijo=" g" etiqueta="de setas frescas" x={340} y={470} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.N + 3.8} until={K.Pr - 0.3} texto="eficiencia biológica 85 % · Hidalgo, 2026" x={540} y={1205} tam={28} borde={KC.gold} />
-      <Chip T={T} at={K.Pr + 1.6} until={K.Se - 0.3} texto="70 °C · 1 hora" x={420} y={470} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.Pr + 2.4} until={K.Se - 0.3} texto="pasteurizar, no esterilizar" x={420} y={1200} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Se + 0.5} until={K.Os - 0.3} texto="semilla = grano con micelio" x={360} y={470} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Se + 2.4} until={K.Os - 0.3} x={60} y={600} texto="seta" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Se + 2.6} until={K.Os - 0.3} x={60} y={655} texto="Pleurotus ostreatus" it tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Se + 3.0} until={K.Os - 0.3} texto="~5 % de semilla" x={830} y={1200} tam={30} borde={KC.gold} />
-      {T < K.En + 0.2 && <div style={{ opacity:1 - kprog(T, K.En - 0.2, K.En + 0.2) }}><Contador T={T} at={K.Os + 0.5} desde={0} hasta={15} dur={2.9} sufijo=" días" x={540} y={420} tam={80} color={KC.texto} /></div>}
-      <Chip T={T} at={K.Os + 1.0} until={K.En - 0.3} texto="a oscuras · ~25 °C" x={540} y={520} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.En + 0.6} until={K.P - 0.3} texto="pudrición blanca" x={780} y={395} tam={34} borde={KC.mint} />
-      <Chip T={T} at={K.Fr + 0.4} until={K.E - 0.3} texto="aire fresco" x={870} y={500} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Fr + 0.9} until={K.E - 0.3} texto="luz 12 h" x={870} y={590} tam={30} borde={KC.yellow} />
-      <Chip T={T} at={K.Fr + 1.4} until={K.E - 0.3} texto="humedad 85–90 %" x={870} y={680} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.Fr + 1.9} until={K.E - 0.3} texto="18–22 °C" x={870} y={770} tam={30} borde={KC.red} />
-      <Etq T={T} at={K.Fr + 2.6} until={K.E - 0.3} x={640} y={880} texto="Pleurotus ostreatus" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Fr + 3.0} until={K.E - 0.3} x={640} y={935} texto="en repisa, pie de lado" tam={26} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.5} anio="2026" quien="Hidalgo, México · López-López et al." revista="Agroindustrial Science, 2026" x={540} y={760} />
-      <Chip T={T} at={K.E + 4.6} until={K.Ro - 0.3} texto="cosecha: 19 días" x={330} y={1190} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.E + 6.2} until={K.Ro - 0.3} texto="26 días" x={750} y={1190} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Ro + 0.3} until={K.So - 0.3} texto="lo que probé yo" x={330} y={460} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Ro + 3.0} until={K.So - 0.3} texto="+ cal de nixtamal" x={330} y={545} tam={28} borde={KC.gold} />
-      <Chip T={T} at={K.Fu + 0.3} until={K.C - 0.3} texto="mi meta a futuro" x={330} y={460} tam={36} borde={KC.violet} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="no era basura" x={300} y={460} tam={40} borde={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.4} until={K.N - 0.3} texto="basura" x={230} y={470} tam={56} />
+      <Chip T={T} at={K.G + 1.9} until={K.N - 0.3} texto="comida… ¿para quién?" x={390} y={1455} tam={44} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.N + 0.4} until={K.Pr - 0.3} valor={850} dur={1.6} sufijo=" g" etiqueta="de setas frescas" x={540} y={400} tam={140} color={KC.yellow} />
+      <Chip T={T} at={K.N + 3.8} until={K.Pr - 0.3} texto="eficiencia biológica 85 % · Hidalgo, 2026" x={540} y={1410} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.Pr + 1.6} until={K.Se - 0.3} texto="70 °C · 1 hora" x={830} y={345} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.Pr + 2.4} until={K.Se - 0.3} texto="pasteurizar, no esterilizar" x={290} y={1030} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Se + 0.5} until={K.Os - 0.3} texto="semilla = grano con micelio" x={400} y={400} tam={36} borde={KC.ink} />
+      <Etq T={T} at={K.Se + 2.4} until={K.Os - 0.3} x={60} y={560} texto="seta" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Se + 2.6} until={K.Os - 0.3} x={60} y={615} texto="Pleurotus ostreatus" it tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Se + 3.0} until={K.Os - 0.3} texto="~5 % de semilla" x={800} y={1360} tam={34} borde={KC.gold} />
+      {T < K.En + 0.2 && <div style={{ opacity:1 - kprog(T, K.En - 0.2, K.En + 0.2) }}><Contador T={T} at={K.Os + 0.5} desde={0} hasta={15} dur={2.9} sufijo=" días" x={540} y={330} tam={92} color={KC.texto} /></div>}
+      <Chip T={T} at={K.Os + 1.0} until={K.En - 0.3} texto="a oscuras · ~25 °C" x={540} y={430} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.En + 0.6} until={K.P - 0.3} texto="pudrición blanca" x={420} y={380} tam={38} borde={KC.mint} />
+      <Chip T={T} at={K.Fr + 0.4} until={K.E - 0.3} texto="aire fresco" x={860} y={400} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Fr + 0.9} until={K.E - 0.3} texto="luz 12 h" x={860} y={485} tam={30} borde={KC.yellow} />
+      <Chip T={T} at={K.Fr + 1.4} until={K.E - 0.3} texto="humedad 85–90 %" x={860} y={570} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.Fr + 1.9} until={K.E - 0.3} texto="18–22 °C" x={860} y={655} tam={30} borde={KC.red} />
+      <Etq T={T} at={K.Fr + 2.6} until={K.E - 0.3} x={645} y={1200} texto="Pleurotus ostreatus" it tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Fr + 3.0} until={K.E - 0.3} x={645} y={1250} texto="en repisa, pie de lado" tam={24} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.5} anio="2026" quien="Hidalgo, México · López-López et al." revista="Agroindustrial Science, 2026" x={540} y={360} />
+      <Chip T={T} at={K.E + 4.6} until={K.Ro - 0.3} texto="cosecha: 19 días" x={284} y={1400} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.E + 6.2} until={K.Ro - 0.3} texto="26 días" x={796} y={1400} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Ro + 0.3} until={K.So - 0.3} texto="lo que probé yo" x={270} y={285} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Ro + 3.0} until={K.So - 0.3} texto="+ cal de nixtamal" x={215} y={1010} tam={30} borde={KC.gold} />
+      <Chip T={T} at={K.Fu + 0.3} until={K.C - 0.3} texto="mi meta a futuro" x={540} y={240} tam={40} borde={KC.violet} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="no era basura" x={420} y={480} tam={48} borde={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.N} texto="10 cm" largo={200} />
-      <BarraEscala T={T} at={K.Pr} until={K.Se} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.Se} until={K.Os} texto="5 cm" largo={90} />
-      <BarraEscala T={T} at={K.Os} until={K.En} texto="10 cm" largo={130} />
-      <BarraEscala T={T} at={K.En + 0.6} until={K.P} texto="10 µm (dentro de la lupa)" largo={110} />
-      <BarraEscala T={T} at={K.P} until={K.Fr} texto="10 cm" largo={120} />
-      <BarraEscala T={T} at={K.Fr} until={K.E} texto="5 cm" largo={80} />
-      <BarraEscala T={T} at={K.Ro} until={K.So} texto="10 cm" largo={170} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={200} />
+      <BarraEscala T={T} at={K.G} until={K.N} texto="10 cm" largo={260} />
+      <BarraEscala T={T} at={K.Pr} until={K.Se} texto="10 cm" largo={154} />
+      <BarraEscala T={T} at={K.Se} until={K.Os} texto="5 cm" largo={112} />
+      <BarraEscala T={T} at={K.Os} until={K.En} texto="10 cm" largo={208} />
+      <BarraEscala T={T} at={K.En + 0.6} until={K.P} texto="10 µm (dentro de la lupa)" largo={138} />
+      <BarraEscala T={T} at={K.P} until={K.Fr} texto="10 cm" largo={180} />
+      <BarraEscala T={T} at={K.Fr} until={K.E} texto="5 cm" largo={104} />
+      <BarraEscala T={T} at={K.Ro} until={K.So} texto="10 cm" largo={238} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={260} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="No es basura: *es comida.*" />
