@@ -52,6 +52,10 @@ function Tabla({ T, x, y, s = 1, lineas = 1, relleno = 0, blanco = 0, id = 'tb',
   </g>;
 }
 
+// Pase a mano (cine): la misma tabla, de pie (girada 90°) y centrada en (cx, cy), para que llene el cuadro vertical.
+function TablaV({ cx = 540, cy = 1010, s = 1.5, ...p }) {
+  return <g transform={`translate(${cx} ${cy}) rotate(90)`}><Tabla {...p} x={-TW / 2 * s} y={-TH / 2 * s} s={s} /></g>;
+}
 // Cuenco torneado de perfil con la misma madera (clip). (x, y) = centro de la boca.
 function Cuenco({ T, x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
@@ -238,142 +242,146 @@ function EspalteadaShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, V: CUES.Valor, En: CUES.Entran, H: CUES.Hifas, Ch: CUES.Choque, M: CUES.Melanina, P: CUES.Pregunta, Ma: CUES.Mapa, B: CUES.Blanqueo, L: CUES.Laboratorio, Co: CUES.Costo, S: CUES.Secar, X: CUES.Xylaria, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const TX = 126, TY = 590, TS = 0.92;   // la tabla (macro): mismo lugar en el gancho, el mapa y el cierre
+  const TX = 126, TY = 590, TS = 0.92;   // (antes del pase a mano) la tabla acostada
+  const TVS = 1.42, TVY = 1060;            // la tabla de pie (macro): mismo lugar en el gancho, el mapa y el cierre. 10 cm = 200 × TVS / 0.92 px
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: la tabla; las líneas negras se dibujan */}
       <Escena T={T} a={K.G} b={K.V} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Tabla T={T} x={TX} y={TY} s={TS} lineas={kprog(T, K.G, K.G + 1.9, kEase.sale)} id="tbG" />)}
+        {fsvg(<TablaV T={T} cy={TVY} s={TVS} lineas={kprog(T, K.G, K.G + 1.9, kEase.sale)} id="tbG" />)}
       </Escena>
       {/* 1 · valor: cuenco torneado y precio */}
       <Escena T={T} a={K.V} b={K.En} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <g transform={`translate(0 ${(1 - kprog(T, K.V - 0.3, K.V + 0.6, kEase.sale)) * 300})`}><Cuenco T={T} x={430} y={820} s={1.1} /></g>
-          {T > K.V + 1.4 && <Precio T={T} x={860} y={820} n={1 + Math.min(2, Math.floor((T - K.V - 1.4) / 0.5))} />}
+          <g transform={`translate(0 ${(1 - kprog(T, K.V - 0.3, K.V + 0.6, kEase.sale)) * 300})`}><Cuenco T={T} x={505} y={900} s={1.6} /></g>
+          {T > K.V + 1.4 && <Precio T={T} x={870} y={620} n={1 + Math.min(2, Math.floor((T - K.V - 1.4) / 0.5))} />}
         </>)}
       </Escena>
       {/* 2 · entran varios hongos al mismo tronco (la cámara se acerca a la espora rosa) */}
-      <Escena T={T} a={K.En} b={K.H} zoom={0.45} origen="37% 42%">
+      <Escena T={T} a={K.En} b={K.H} zoom={0.45} origen="30.5% 43.4%">
         <FondoLunares color={KC.cyan} />
-        {fsvg(<CorteTronco T={T} x={540} y={900} r={320} esporas={ESPORAS3.map(([a, b, c], i) => [a, b, c, K.En + 0.4 + i * 0.9])} />)}
+        {fsvg(<g transform="translate(540 960) scale(1.4)"><CorteTronco T={T} x={0} y={0} r={320} esporas={ESPORAS3.map(([a, b, c], i) => [a, b, c, K.En + 0.4 + i * 0.9])} /></g>)}
       </Escena>
       {/* 3–5 · al microscopio: hifas, choque y muro de melanina (fondo oscuro) */}
       <Escena T={T} a={K.H} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.3) translate(-540 -895)">
           <CelulasMadera />
           <Hifas H={HROSA} g={kprog(T, K.H + 0.2, K.Ch + 0.6)} color={KC.pink} oscuro={kprog(T, K.M, K.M + 1.5)} />
           <Hifas H={HCIAN} g={kprog(T, K.H + 0.5, K.Ch + 0.8)} color={KC.cyan} oscuro={kprog(T, K.M, K.M + 1.5)} />
           {T > K.Ch + 0.3 && T < K.M + 0.6 && [...HROSA.contactos, ...HCIAN.contactos].slice(0, 16).map(([cx, cy], i) => { const f = 0.5 + 0.5 * Math.sin(T * 9 + i * 1.7);
             return <g key={i} opacity={1 - kprog(T, K.M, K.M + 0.6)}><circle cx={cx} cy={cy} r={10 + 10 * f} fill="none" stroke={KC.yellow} strokeWidth={4} opacity={0.7 * f} /></g>; })}
           <Muro m={kprog(T, K.M + 0.1, K.M + 2.0, kEase.sale)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 6 · re-gancho: ¿y si hay muchos hongos? */}
       <Escena T={T} a={K.P} b={K.Ma} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <g transform="translate(300 1000) scale(0.68)"><CorteTronco T={T} x={0} y={0} r={320} esporas={ESPORAS_MUCHAS.map(([a, b], i) => [a, b, TERR[i % TERR.length], K.P + 0.1 + i * 0.12])} /></g>
-          <Interrogacion T={T} x={290} y={760} tam={300} />
+          <g transform="translate(540 1100) scale(1.15)"><CorteTronco T={T} x={0} y={0} r={320} esporas={ESPORAS_MUCHAS.map(([a, b], i) => [a, b, TERR[i % TERR.length], K.P + 0.1 + i * 0.12])} /></g>
+          <Interrogacion T={T} x={540} y={600} tam={320} />
         </>)}
       </Escena>
       {/* 7 · el mapa: cada territorio, un color */}
       <Escena T={T} a={K.Ma} b={K.B} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Tabla T={T} x={TX} y={TY} s={TS} lineas={1} relleno={kprog(T, K.Ma + 0.2, K.Ma + 2.6)} id="tbM" />)}
+        {fsvg(<TablaV T={T} cy={TVY} s={TVS} lineas={1} relleno={kprog(T, K.Ma + 0.2, K.Ma + 2.6)} id="tbM" />)}
       </Escena>
       {/* 8 · blanqueo (Trametes) sobre la misma tabla */}
       <Escena T={T} a={K.B} b={K.L} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Tabla T={T} x={TX} y={TY + 20} s={TS} lineas={1} relleno={1 - kprog(T, K.B, K.B + 0.8)} blanco={kprog(T, K.B + 1.6, K.B + 3.6)} id="tbB" />
-          <Trametes x={TX + 110} y={TY + 26} s={1} crece={kprog(T, K.B + 0.2, K.B + 1.4)} />
+          <TablaV T={T} cy={1110} s={1.3} lineas={1} relleno={1 - kprog(T, K.B, K.B + 0.8)} blanco={kprog(T, K.B + 1.6, K.B + 3.6)} id="tbB" />
+          <Trametes x={332} y={531} s={1.3} crece={kprog(T, K.B + 0.2, K.B + 1.4)} />
         </>)}
       </Escena>
       {/* 9 · el laboratorio (2012, Toronto): frascos con cubitos de haya, semanas que corren */}
       <Escena T={T} a={K.L} b={K.Co} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Frascos T={T} x={110} y={700} at={K.L + 0.2} semana={kprog(T, K.L + 1.6, K.Co - 0.4)} />)}
+        {fsvg(<g transform="translate(540 1000) scale(1.12) translate(-530 -900)"><Frascos T={T} x={110} y={700} at={K.L + 0.2} semana={kprog(T, K.L + 1.6, K.Co - 0.4)} /></g>)}
       </Escena>
       {/* 10 · el costo: la báscula */}
       <Escena T={T} a={K.Co} b={K.S} zoom={0.04}>
         <FondoLunares color={KC.coral} />
-        {fsvg(<Bascula T={T} x={540} y={960} p={kprog(T, K.Co + 0.9, K.Co + 2.6, kEase.suave)} entra={kEase.sale(kprog(T, K.Co - 0.3, K.Co + 0.4))} />)}
+        {fsvg(<Bascula T={T} x={540} y={1080} p={kprog(T, K.Co + 0.9, K.Co + 2.6, kEase.suave)} entra={1.6 * kEase.sale(kprog(T, K.Co - 0.3, K.Co + 0.4))} />)}
       </Escena>
       {/* 11 · secar a tiempo vs. húmeda */}
       <Escena T={T} a={K.S} b={K.X} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 990) scale(1.1) translate(-540 -950)">
           <DosTablas T={T} a={K.S} seca={kprog(T, K.S + 0.2, K.S + 2.0)} pudre={kprog(T, K.S + 1.0, K.S + 2.8)} />
           <Sello T={T} at={K.S + 1.4} x={290} y={940} texto="PAUSA" color={KC.blue} r={90} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 11 · Xylaria polymorpha: fronteras consigo mismo */}
       <Escena T={T} a={K.X} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Xylaria T={T} x={330} y={1190} s={1} crece={kprog(T, K.X + 0.1, K.X + 1.6)} />
-          <TerritorioSolo T={T} x={560} y={800} p={kprog(T, K.X + 2.6, K.X + 4.6)} />
+          <Xylaria T={T} x={390} y={1380} s={1.5} crece={kprog(T, K.X + 0.1, K.X + 1.6)} />
+          <TerritorioSolo T={T} x={545} y={470} p={kprog(T, K.X + 2.6, K.X + 4.6)} />
         </>)}
       </Escena>
       {/* 12 · cierre: la misma tabla del inicio, ya leída */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Tabla T={T} x={TX} y={TY} s={TS} lineas={1} relleno={0.5 * kprog(T, K.C + 0.4, K.C + 1.6)} blanco={1} id="tbC" />)}
+        {fsvg(<TablaV T={T} cy={TVY} s={TVS} lineas={1} relleno={0.5 * kprog(T, K.C + 0.4, K.C + 1.6)} blanco={1} id="tbC" />)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.V - 0.3} texto="vetas" x={250} y={470} tam={52} />
-      <Chip T={T} at={K.G + 1.9} until={K.V - 0.3} texto="fronteras entre hongos" x={420} y={555} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.G + 2.4} until={K.V - 0.3} x={130} y={1160} texto="líneas de zona" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.V + 0.4} until={K.En - 0.3} texto="madera espalteada · spalting" x={370} y={470} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.V + 1.0} until={K.En - 0.3} x={120} y={1172} texto="pieza torneada" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.V + 1.6} until={K.En - 0.3} texto="se vende cara" x={860} y={1010} tam={32} borde="#118a3a" />
-      <Etq T={T} at={K.En + 0.5} until={K.En + 3.0} x={120} y={500} texto="cada color = un hongo distinto" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.H + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO · MADERA" x={360} y={470} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.H + 1.0} until={K.Ch - 0.2} x={60} y={545} texto="hifas (hilos del hongo)" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.H + 1.6} until={K.Ch - 0.2} x={60} y={1160} texto="células de la madera" tam={28} color="#d9b98a" />
-      <Chip T={T} at={K.Ch + 0.6} until={K.M - 0.2} texto="se disputan la madera" x={540} y={560} tam={36} borde={KC.yellow} />
-      <Etq T={T} at={K.M + 0.6} until={K.P - 0.3} x={500} y={560} texto="melanina" lado="izq" tam={34} color={KC.gold2} />
-      <Etq T={T} at={K.M + 1.4} until={K.P - 0.3} x={500} y={1160} texto="línea de zona" lado="izq" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Ma + 1.0} until={K.B - 0.3} x={130} y={555} texto="cada color = el territorio de un hongo" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ma + 1.8} until={K.B - 0.3} texto="cada línea negra = una frontera" x={540} y={470} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.B + 1.0} until={K.L - 0.3} x={60} y={445} texto="Trametes versicolor" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.B + 1.6} until={K.L - 0.3} texto="pudrición blanca" x={400} y={375} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.B + 2.4} until={K.L - 0.3} x={1040} y={770} lado="izq" texto="come lignina: más clara" tam={26} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.L + 0.1} until={K.L + 2.8} anio="2012" quien="Robinson, Tudor y Cooper" revista="U. de Toronto · Appl. Microbiol. Biotechnol." x={540} y={500} />
-      {FRASCOS.map(([n], i) => <div key={i} style={{ position:'absolute', left:215 + i * 215, top:1080, transform:'translate(-50%,0)', zIndex:41, opacity:kprog(T, K.L + 0.5 + i * 0.35, K.L + 0.9 + i * 0.35) * (1 - kprog(T, K.Co - 0.4, K.Co - 0.1)),
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.V - 0.3} texto="vetas" x={220} y={225} tam={52} />
+      <Chip T={T} at={K.G + 1.9} until={K.V - 0.3} texto="fronteras entre hongos" x={350} y={312} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.G + 2.4} until={K.V - 0.3} texto="líneas de zona" x={540} y={1580} tam={30} mono borde={KC.ink} />
+      <Chip T={T} at={K.V + 0.4} until={K.En - 0.3} texto="madera espalteada · spalting" x={370} y={440} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.V + 1.0} until={K.En - 0.3} x={120} y={1410} texto="pieza torneada" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.V + 1.6} until={K.En - 0.3} texto="se vende cara" x={800} y={770} tam={32} borde="#118a3a" />
+      <Etq T={T} at={K.En + 0.5} until={K.En + 3.0} x={120} y={400} texto="cada color = un hongo distinto" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.H + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO · MADERA" x={360} y={420} tam={30} borde={KC.cyan} mono />
+      <Etq T={T} at={K.H + 1.0} until={K.Ch - 0.2} x={60} y={500} texto="hifas (hilos del hongo)" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.H + 1.6} until={K.Ch - 0.2} x={60} y={1450} texto="células de la madera" tam={28} color="#d9b98a" />
+      <Chip T={T} at={K.Ch + 0.6} until={K.M - 0.2} texto="se disputan la madera" x={540} y={495} tam={36} borde={KC.yellow} />
+      <Etq T={T} at={K.M + 0.6} until={K.P - 0.3} x={500} y={505} texto="melanina" lado="izq" tam={34} color={KC.gold2} />
+      <Etq T={T} at={K.M + 1.4} until={K.P - 0.3} x={500} y={1450} texto="línea de zona" lado="izq" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.Ma + 1.0} until={K.B - 0.3} x={80} y={335} texto="cada color = el territorio de un hongo" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Ma + 1.8} until={K.B - 0.3} texto="cada línea negra = una frontera" x={370} y={235} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.B + 1.0} until={K.L - 0.3} x={60} y={268} texto="Trametes versicolor" it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.B + 1.6} until={K.L - 0.3} texto="pudrición blanca" x={300} y={200} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.B + 2.4} until={K.L - 0.3} x={60} y={312} texto="come lignina: más clara" tam={26} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.L + 0.1} until={K.L + 2.8} anio="2012" quien="Robinson, Tudor y Cooper" revista="U. de Toronto · Appl. Microbiol. Biotechnol." x={540} y={470} />
+      {FRASCOS.map(([n], i) => <div key={i} style={{ position:'absolute', left:187 + i * 240.8, top:1202, transform:'translate(-50%,0)', zIndex:41, opacity:kprog(T, K.L + 0.5 + i * 0.35, K.L + 0.9 + i * 0.35) * (1 - kprog(T, K.Co - 0.4, K.Co - 0.1)),
         font:`700 italic 24px ${KF.mono}`, color:KC.ink, whiteSpace:'nowrap' }}>{n}</div>)}
-      <Chip T={T} at={K.L + 1.6} until={K.Co - 0.3} texto={`semana ${1 + Math.floor(11 * kprog(T, K.L + 1.6, K.Co - 0.4))}`} x={300} y={670} tam={34} borde={KC.ink} mono />
-      <Chip T={T} at={K.L + 1.9} until={K.Co - 0.3} texto="27 °C" x={560} y={670} tam={34} borde={KC.red} mono />
-      <Etq T={T} at={K.L + 2.4} until={K.Co - 0.3} x={110} y={1140} texto="cubitos de haya · Fagus grandifolia" tam={26} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Co + 1.0} until={K.S - 0.3} valor={30} prefijo="−" sufijo=" %" x={330} y={500} tam={190} color={KC.yellow} />
-      <Etq T={T} at={K.Co + 1.6} until={K.S - 0.3} x={40} y={630} texto="peso perdido · albura de haya" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Co + 2.0} until={K.S - 0.3} x={40} y={675} texto="Trametes versicolor" it tam={28} color={KC.ink} />
+      <Chip T={T} at={K.L + 1.6} until={K.Co - 0.3} texto={`semana ${1 + Math.floor(11 * kprog(T, K.L + 1.6, K.Co - 0.4))}`} x={300} y={745} tam={34} borde={KC.ink} mono />
+      <Chip T={T} at={K.L + 1.9} until={K.Co - 0.3} texto="27 °C" x={560} y={745} tam={34} borde={KC.red} mono />
+      <Etq T={T} at={K.L + 2.4} until={K.Co - 0.3} x={90} y={1275} texto="cubitos de haya · Fagus grandifolia" tam={26} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Co + 1.0} until={K.S - 0.3} valor={30} prefijo="−" sufijo=" %" x={330} y={420} tam={190} color={KC.yellow} />
+      <Etq T={T} at={K.Co + 1.6} until={K.S - 0.3} x={40} y={555} texto="peso perdido · albura de haya" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Co + 2.0} until={K.S - 0.3} x={40} y={600} texto="Trametes versicolor" it tam={28} color={KC.ink} />
       <Medidor T={T} at={K.S + 0.1} until={K.X - 0.3} valor={(t) => 0.85 - 0.65 * kprog(t, K.S + 0.2, K.S + 2.0)} etiqueta="agua en la madera" texto={(v) => (v > 0.4 ? 'húmeda' : 'seca')} x={90} y={430} ancho={560} color="#7fd8ff" />
-      <Chip T={T} at={K.S + 1.6} until={K.X - 0.3} texto="seca: el hongo se detiene" x={290} y={640} tam={26} borde={KC.blue} />
-      <Chip T={T} at={K.S + 1.9} until={K.X - 0.3} texto="húmeda: se sigue pudriendo" x={795} y={790} tam={26} borde={KC.red} />
-      <Etq T={T} at={K.X + 0.6} until={K.C - 0.3} x={80} y={600} texto="Xylaria polymorpha" it tam={34} color={KC.ink} />
-      <Etq T={T} at={K.X + 1.2} until={K.C - 0.3} x={80} y={650} texto="«dedos de muerto»" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.X + 2.6} until={K.C - 0.3} texto="sin otro hongo" x={805} y={745} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.X + 3.2} until={K.C - 0.3} x={580} y={1135} texto="un solo hongo" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.C + 0.8} until={K.Ou} x={340} y={545} texto="fronteras · blanqueo · secada a tiempo" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="un mapa de una guerra de hongos" x={650} y={470} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.S + 1.6} until={K.X - 0.3} texto="seca: el hongo se detiene" x={265} y={610} tam={26} borde={KC.blue} />
+      <Chip T={T} at={K.S + 1.9} until={K.X - 0.3} texto="húmeda: se sigue pudriendo" x={800} y={800} tam={26} borde={KC.red} />
+      <Etq T={T} at={K.X + 0.6} until={K.C - 0.3} x={50} y={520} texto="Xylaria polymorpha" it tam={34} color={KC.ink} />
+      <Etq T={T} at={K.X + 1.2} until={K.C - 0.3} x={50} y={572} texto="«dedos de muerto»" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.X + 2.6} until={K.C - 0.3} texto="sin otro hongo" x={790} y={415} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.X + 3.2} until={K.C - 0.3} x={600} y={810} texto="un solo hongo" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.C + 0.8} until={K.Ou} x={80} y={335} texto="fronteras · blanqueo · secada a tiempo" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="un mapa de una guerra de hongos" x={370} y={235} tam={30} borde={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.V} texto="10 cm" largo={200} />
-      <BarraEscala T={T} at={K.V} until={K.En} texto="10 cm" largo={180} />
-      <BarraEscala T={T} at={K.En} until={K.H} texto="20 cm" largo={210} />
-      <BarraEscala T={T} at={K.H} until={K.P} texto="100 µm (esquemático)" largo={140} />
-      <BarraEscala T={T} at={K.P} until={K.Ma} texto="20 cm" largo={140} />
-      <BarraEscala T={T} at={K.Ma} until={K.L} texto="10 cm" largo={200} />
-      <BarraEscala T={T} at={K.L} until={K.S} texto="cubito de 14 mm" largo={60} />
-      <BarraEscala T={T} at={K.S} until={K.X} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.X} until={K.C} texto="2 cm" largo={60} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={200} />
+      {/* pase a mano: cada barra crece en la misma proporción que su dibujo (largo viejo × factor) */}
+      <BarraEscala T={T} at={K.G} until={K.V} texto="10 cm" largo={309} />{/* tabla 0.92 → 1.42 */}
+      <BarraEscala T={T} at={K.V} until={K.En} texto="10 cm" largo={262} />{/* cuenco 1.1 → 1.6 */}
+      <BarraEscala T={T} at={K.En} until={K.H} texto="20 cm" largo={294} />{/* tronco × 1.4 */}
+      <BarraEscala T={T} at={K.H} until={K.P} texto="100 µm (esquemático)" largo={182} />{/* × 1.3 */}
+      <BarraEscala T={T} at={K.P} until={K.Ma} texto="20 cm" largo={242} />{/* tronco 0.68 → 1.15 */}
+      <BarraEscala T={T} at={K.Ma} until={K.B} texto="10 cm" largo={309} />{/* tabla 0.92 → 1.42 */}
+      <BarraEscala T={T} at={K.B} until={K.L} texto="10 cm" largo={283} />{/* tabla 0.92 → 1.3 */}
+      <BarraEscala T={T} at={K.L} until={K.Co} texto="cubito de 14 mm" largo={67} />{/* frascos × 1.12 */}
+      <BarraEscala T={T} at={K.Co} until={K.S} texto="cubito de 14 mm" largo={320} />{/* el cubito de la báscula: arista de 200 × 1.6 px */}
+      <BarraEscala T={T} at={K.S} until={K.X} texto="10 cm" largo={121} />{/* × 1.1 */}
+      <BarraEscala T={T} at={K.X} until={K.C} texto="2 cm" largo={90} />{/* Xylaria × 1.5 */}
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={309} />{/* tabla 0.92 → 1.42 */}
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.V - 0.1} texto="No son vetas: son *fronteras entre hongos.*" />
