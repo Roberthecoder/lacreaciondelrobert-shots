@@ -51,6 +51,8 @@ const RED = (() => {
   const centros = cs.filter(([cx, cy]) => cx > 160 && cx < 920 && cy > 600 && cy < 1180);
   return { verts, edges, centros, r };
 })();
+// Molécula del agua líquida que lleva la etiqueta "H₂O": la más alta de la zona central (para que la línea la toque).
+const ETQ_MOL = RED.verts.reduce((m, v, i) => (v.lx > 330 && v.lx < 760 && v.ly < RED.verts[m].ly ? i : m), RED.verts.findIndex((v) => v.lx > 330 && v.lx < 760));
 function MolAgua({ x, y, s = 1, rot = 0, o = 1 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={o}>
     <line x1={0} y1={0} x2={-26} y2={22} stroke={KC.ink} strokeWidth={8} /><line x1={0} y1={0} x2={26} y2={22} stroke={KC.ink} strokeWidth={8} />
@@ -96,10 +98,11 @@ function Pez({ x, y, s = 1, dir = 1, color = KC.orange, T = 0 }) {
 // Corte de un lago con hielo arriba. congelado = 1 → todo blanco (hipotético).
 function Lago({ T, congelado = 0, peces = 1 }) {
   return <g>
-    <rect x={0} y={0} width={KW} height={700} fill="#647a8e" />
-    <circle cx={880} cy={480} r={60} fill="#fff6c8" opacity={0.9} />
-    {[160, 300].map((x, i) => <g key={i}><rect x={x - 10} y={560} width={20} height={80} fill="#6b4a2b" /><path d={`M ${x} 430 L ${x - 70} 600 L ${x + 70} 600 Z`} fill="#2e8b57" stroke={KC.ink} strokeWidth={6} /><path d={`M ${x} 430 L ${x - 34} 500 L ${x + 34} 500 Z`} fill="#fff" /></g>)}
-    <path d="M 0 640 L 140 660 Q 200 1180 540 1200 Q 880 1180 940 660 L 1080 640 L 1080 1260 L 0 1260 Z" fill="#8a6440" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-300} y={-700} width={KW + 600} height={1400} fill="#16233a" />
+    <rect x={-300} y={1200} width={KW + 600} height={900} fill="#4a3522" />
+    <circle cx={850} cy={480} r={60} fill="#fff6c8" opacity={0.9} />
+    {[190, 320].map((x, i) => <g key={i}><rect x={x - 10} y={560} width={20} height={80} fill="#6b4a2b" /><path d={`M ${x} 430 L ${x - 70} 600 L ${x + 70} 600 Z`} fill="#2e8b57" stroke={KC.ink} strokeWidth={6} /><path d={`M ${x} 430 L ${x - 34} 500 L ${x + 34} 500 Z`} fill="#fff" /></g>)}
+    <path d="M 0 640 L 140 660 Q 200 1180 540 1200 Q 880 1180 940 660  L 1380 640 L 1380 2200 L -300 2200 L -300 640 Z" fill="#4a3522" stroke={KC.ink} strokeWidth={8} />
     <path d="M 140 700 Q 200 1180 540 1200 Q 880 1180 940 700 Z" fill={mixHex('#2f8fd8', '#eef7ff', congelado)} />
     <path d="M 140 660 L 940 660 L 940 720 L 140 720 Z" fill={HIELO} stroke={KC.ink} strokeWidth={7} />
     {congelado < 0.5 && peces > 0 && [[380, 900, 1], [640, 1010, -1], [520, 1110, 1]].map(([x, y, d], i) => <Pez key={i} T={T + i} x={x + Math.sin(T * 0.6 + i * 2) * 90 * d} y={y + Math.sin(T * 1.3 + i) * 10} s={0.8} dir={Math.cos(T * 0.6 + i * 2) > 0 ? d : -d} color={[KC.orange, KC.yellow, KC.pink][i]} />)}
@@ -161,18 +164,18 @@ function Hielo() {
       {/* 0 · gancho: el hielo cae al vaso y flota */}
       <Escena T={T} a={K.G} b={K.Ra} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 1010) scale(1.45) translate(-540 -937)">
           <VasoCocina x={540} y={1250} s={1.25} nivel={NIV} id="g">
             {T - K.G >= 0.2 && <Cubo x={540} y={cuboY(K.G)} l={150} rot={Math.sin(T * 1.4) * 6} />}
           </VasoCocina>
           {T - K.G < 0.2 && <Cubo x={540} y={cuboY(K.G)} l={150} rot={(T - K.G) * 60} />}
           {sp > 0 && Array.from({ length: 8 }, (_, i) => { const a = Math.PI * (0.15 + 0.7 * i / 7); return <circle key={i} cx={540 + Math.cos(a) * 260 * sp * (i % 2 ? 1 : -1)} cy={NIV - Math.sin(a) * 220 * sp + sp * sp * 260} r={16 * (1 - sp)} fill={AGUA} stroke={AGUA_OSC} strokeWidth={3} />; })}
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 1 · casi todo se hunde en su líquido; el hielo, no */}
       <Escena T={T} a={K.Ra} b={K.Li} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 990) scale(1.15) translate(-540 -935)">
           <VasoCocina x={300} y={1180} s={0.8} nivel={850} id="r1">
             <rect x={240} y={klerp(900, 1060, kprog(T, K.Ra + 0.6, K.Ra + 1.6, kEase.suave))} width={120} height={100} rx={18} fill="#e8a35a" stroke={KC.ink} strokeWidth={7} />
           </VasoCocina>
@@ -183,21 +186,27 @@ function Hielo() {
           </VasoCocina>
           <g opacity={kprog(T, K.Ra + 3.0, K.Ra + 3.4)}><path d="M 780 720 L 780 640" stroke={KC.ink} strokeWidth={10} /><path d="M 750 670 L 780 635 L 810 670" stroke={KC.ink} strokeWidth={10} fill="none" /></g>
           <text x={300} y={1240} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>CASI TODOS</text>
-          <text x={780} y={1240} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={AGUA_OSC} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.Ra + 2.4, K.Ra + 2.8)}>EL AGUA</text>
-        </SvgCapa>
+          <text x={780} y={1240} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={AGUA} opacity={kprog(T, K.Ra + 2.4, K.Ra + 2.8)}>EL AGUA</text>
+        </g></SvgCapa>
       </Escena>
       {/* 2–3 · por dentro: líquido revuelto → panal de hexágonos */}
       <Escena T={T} a={K.Li} b={K.Nu} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa><VasoCocina x={540} y={1250} s={1.25} nivel={NIV} id="l"><Cubo x={540} y={yFlota} l={150} /></VasoCocina></SvgCapa>
+        <SvgCapa><g transform="translate(540 1010) scale(1.45) translate(-540 -937)"><VasoCocina x={540} y={1250} s={1.25} nivel={NIV} id="l"><Cubo x={540} y={yFlota} l={150} /></VasoCocina></g></SvgCapa>
         <div style={{ position:'absolute', inset:0, background:KC.noche, opacity:kprog(T, K.Li + 1.6, K.Li + 2.2) }}>
           <SvgCapa>
-            <MundoMolecular T={T} f={congela} huecos={kprog(T, K.He + 2.4, K.He + 3.2)} />
-            <g opacity={kprog(T, K.He, K.He + 0.4)}><TermoSimple x={950} y={500} nivel={klerp(0.7, 0.15, congela)} texto={congela > 0.95 ? '0 °C' : `${Math.round(klerp(10, 0, congela))} °C`} color={mixHex('#ff3b2f', '#2346ff', congela)} /></g>
+            <g transform="translate(0 80)">
+              <MundoMolecular T={T} f={congela} huecos={kprog(T, K.He + 2.4, K.He + 3.2)} />
+              {(() => { const v = RED.verts[ETQ_MOL], mx = v.lx + Math.sin(T * 2.3 + v.ph) * 22, my = v.ly + Math.cos(T * 2.9 + v.ph) * 22;
+                return <g opacity={kprog(T, K.Li + 2.6, K.Li + 3.0) * (1 - kprog(T, K.He - 0.5, K.He - 0.2))}>
+                  <line x1={mx} y1={my - 38} x2={mx} y2={my - 86} stroke={KC.texto} strokeWidth={4} strokeLinecap="round" />
+                  <text x={mx} y={my - 100} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.texto} stroke="#0b1020" strokeWidth={6} paintOrder="stroke">H₂O</text></g>; })()}
+            </g>
+            <g opacity={kprog(T, K.He, K.He + 0.4)}><TermoSimple x={910} y={440} nivel={klerp(0.7, 0.15, congela)} texto={congela > 0.95 ? '0 °C' : `${Math.round(klerp(10, 0, congela))} °C`} color={mixHex('#ff3b2f', '#2346ff', congela)} /></g>
           </SvgCapa>
         </div>
       </Escena>
-      <Lupa T={T} at={K.Li + 0.1} until={K.Li + 1.7} x={540} y={760} r={230} fx={540} fy={1000} etiqueta="POR DENTRO · AGUA" interior={(TT, r) =>
+      <Lupa T={T} at={K.Li + 0.1} until={K.Li + 1.7} x={540} y={700} r={260} fx={540} fy={1150} etiqueta="POR DENTRO · AGUA" interior={(TT, r) =>
         <svg width={r * 2} height={r * 2}><g transform={`translate(${r - 540 * 0.55} ${r - 870 * 0.55}) scale(0.55)`}><MundoMolecular T={TT} f={0} /></g></svg>} />
       {/* 4 · el mismo número de moléculas ocupa más */}
       <Escena T={T} a={K.Nu} b={K.Pr} zoom={0.04}>
@@ -205,7 +214,7 @@ function Hielo() {
         <SvgCapa>
           {(() => { const c = kprog(T, K.Nu + 0.5, K.Nu + 2.0, kEase.sale), hL = 330, hH = klerp(330, 360, c);
             const R = krng(3);
-            return <g>
+            return <g transform="translate(530 1090) translate(-540 -1030)">
               <rect x={120} y={1180 - hL} width={360} height={hL} rx={16} fill={AGUA} stroke={KC.ink} strokeWidth={9} />
               {Array.from({ length: 24 }, (_, i) => <MolAgua key={i} x={160 + (i % 6) * 56 + (Math.floor(i / 6) % 2) * 20 + Math.sin(T * 3 + i) * 5} y={1180 - hL + 50 + Math.floor(i / 6) * 76 + Math.cos(T * 3 + i) * 5} s={0.6} rot={R() * 360 + T * 30} />)}
               <rect x={600} y={1180 - hH} width={360} height={hH} rx={16} fill={HIELO} stroke={KC.ink} strokeWidth={9} />
@@ -217,79 +226,78 @@ function Hielo() {
                 <line x1={500} x2={1000} y1={1180 - hL} y2={1180 - hL} stroke={KC.ink} strokeWidth={5} strokeDasharray="14 10" /></g>
             </g>; })()}
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Nu + 1.6} until={K.Pr - 0.3} valor={9} prefijo="+" sufijo=" %" etiqueta="más espacio" x={780} y={620} tam={170} color={KC.cyan} />
+        <NumeroGigante T={T} at={K.Nu + 1.6} until={K.Pr - 0.3} valor={9} prefijo="+" sufijo=" %" etiqueta="más espacio" x={750} y={650} tam={170} color={KC.cyan} />
       </Escena>
       {/* 5 · ¿y si el hielo se hundiera? */}
       <Escena T={T} a={K.Pr} b={K.La} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 950) scale(1.35) translate(-290 -800)">
           <VasoCocina x={290} y={1200} s={0.9} nivel={860} id="p"><Cubo x={290} y={klerp(900, 1110, kprog(T, K.Pr + 0.4, K.Pr + 1.6, kEase.suave))} l={120} rot={-8} /></VasoCocina>
           <text x={290} y={680} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 290 600)`}>?</text>
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 6 · el lago: hipotético (todo hielo) → real (tapa de hielo y peces abajo) */}
       <Escena T={T} a={K.La} b={K.Ga} zoom={0.04}>
-        <SvgCapa><Lago T={T} congelado={1 - kprog(T, mitadLa, mitadLa + 0.7, kEase.suave)} />
+        <SvgCapa><g transform="translate(540 740) scale(1.15) translate(-540 -660)"><Lago T={T} congelado={1 - kprog(T, mitadLa, mitadLa + 0.7, kEase.suave)} />
           <Marca x={330} y={950} ok={false} s={1.1} o={kprog(T, K.La + 0.8, K.La + 1.2) * (1 - kprog(T, mitadLa - 0.3, mitadLa))} />
-          <g opacity={kprog(T, mitadLa + 1.6, mitadLa + 2.1)}><TermoSimple x={960} y={900} nivel={0.3} color={KC.blue} /></g>
-        </SvgCapa>
+          <g opacity={kprog(T, mitadLa + 1.6, mitadLa + 2.1)}><TermoSimple x={820} y={930} nivel={0.3} color={KC.blue} /></g>
+        </g></SvgCapa>
       </Escena>
       {/* 7 · Galileo: el hielo ancho empujado al fondo sube solo */}
       <Escena T={T} a={K.Ga} b={K.Tu} zoom={0.03}>
         <FondoLunares color={KC.orange} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 1150) scale(1.2) translate(-540 -1040)">
           <Tina x={540} y={1220}>
             <g transform={`translate(540 ${losaY}) rotate(${Math.sin(T * 1.2) * 2 * (1 - empuja + suelta)})`}><rect x={-230} y={-28} width={460} height={56} rx={16} fill={HIELO} stroke={KC.ink} strokeWidth={8} /><rect x={-210} y={-18} width={120} height={12} rx={6} fill="#fff" /></g>
           </Tina>
           <g opacity={kprog(T, K.Ga + 2.6, K.Ga + 3.0) * (1 - kprog(T, K.Ga + 4.4, K.Ga + 4.8))}><Mano x={540} y={losaY - 26} s={0.9} /></g>
-          <Marca x={880} y={760} ok={true} s={1} o={kprog(T, K.Ga + 5.6, K.Ga + 6.0)} />
-        </SvgCapa>
+          <Marca x={800} y={740} ok={true} s={1} o={kprog(T, K.Ga + 5.6, K.Ga + 6.0)} />
+        </g></SvgCapa>
       </Escena>
       {/* 8 · tuberías que revientan */}
       <Escena T={T} a={K.Tu} b={K.Cu} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:'#3d6fb8' }}></div>
-        <SvgCapa><Tubo T={T} crece={kprog(T, K.Tu + 0.2, K.Tu + 1.9)} hinchar={kprog(T, K.Tu + 0.9, K.Tu + 2.2, kEase.suave)} roto={kprog(T, K.Tu + 2.2, K.Tu + 2.5)} />
-          <Onomato T={T} at={K.Tu + 2.2} until={K.Cu - 0.1} x={560} y={720} texto="¡CRAC!" tam={130} /></SvgCapa>
+        <div style={{ position:'absolute', inset:0, background:'#0e1c33' }}></div>
+        <SvgCapa><g transform="translate(540 980) scale(1.5) translate(-540 -980)"><Tubo T={T} crece={kprog(T, K.Tu + 0.2, K.Tu + 1.9)} hinchar={kprog(T, K.Tu + 0.9, K.Tu + 2.2, kEase.suave)} roto={kprog(T, K.Tu + 2.2, K.Tu + 2.5)} />
+          <Onomato T={T} at={K.Tu + 2.2} until={K.Cu - 0.1} x={560} y={720} texto="¡CRAC!" tam={130} /></g></SvgCapa>
       </Escena>
       {/* 9 · el hielo de agua pesada se hunde */}
       <Escena T={T} a={K.Cu} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 1000) scale(1.75) translate(-262 -950)">
           <VasoCocina x={140} y={1180} s={0.55} nivel={960} id="c1"><Cubo x={140} y={990} l={90} rot={Math.sin(T * 1.5) * 6} /></VasoCocina>
           <VasoCocina x={385} y={1180} s={0.55} nivel={960} id="c2"><Cubo x={385} y={klerp(780, 1120, kprog(T, K.Cu + 1.3, K.Cu + 2.6, kEase.suave))} l={90} rot={6} color={D2O} borde="#3fa34d" /></VasoCocina>
           <text x={140} y={1240} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>H₂O</text>
           <text x={385} y={1240} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>D₂O</text>
           <g opacity={kprog(T, K.Cu + 0.4, K.Cu + 0.8)}><Atomo x={140} y={700} r={34} color={QA.H} letra="H" /><Atomo x={385} y={700} r={52} color={D2O} letra="D" /></g>
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 10 · cierre: el vaso del inicio, ahora con los huecos a la vista */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa><VasoCocina x={540} y={1250} s={1.25} nivel={NIV} id="ci">
-          <Cubo x={540} y={yFlota} l={150} rot={Math.sin(T * 1.4) * 6} T={T} huecos={kprog(T, K.Ci + 0.4, K.Ci + 1.4)} /></VasoCocina></SvgCapa>
+        <SvgCapa><g transform="translate(540 1010) scale(1.45) translate(-540 -937)"><VasoCocina x={540} y={1250} s={1.25} nivel={NIV} id="ci">
+          <Cubo x={540} y={yFlota} l={150} rot={Math.sin(T * 1.4) * 6} T={T} huecos={kprog(T, K.Ci + 0.4, K.Ci + 1.4)} /></VasoCocina></g></SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.0} until={K.G + 3.2} texto="¿agua apretada?" x={330} y={520} tam={46} />
-      <Chip T={T} at={K.G + 3.3} until={K.Ra - 0.3} texto="agua con huecos" x={330} y={520} tam={46} borde={KC.cyan} />
-      <Barra T={T} at={K.G + 0.5} until={K.Ra - 0.2} largo={60} texto="1 cm" />
+      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.0} until={K.G + 3.2} texto="¿agua apretada?" x={540} y={400} tam={46} />
+      <Chip T={T} at={K.G + 3.3} until={K.Ra - 0.3} texto="agua con huecos" x={540} y={400} tam={46} borde={KC.cyan} />
+      <Barra T={T} at={K.G + 0.5} until={K.Ra - 0.2} largo={60 * 1.45 * (1 + 0.2 * kprog(T, K.G - 0.45, K.Ra + 1.35, kEase.suave))} texto="1 cm" y={300} />
       <Chip T={T} at={K.Ra + 0.4} until={K.Li - 0.3} texto="sólido = más denso… casi siempre" y={1500} tam={38} borde={KC.orange} />
       <Chip T={T} at={K.Li + 2.3} until={K.He - 0.2} texto="puentes de hidrógeno" y={1500} tam={44} borde={KC.gold2} />
-      <Etq T={T} at={K.Li + 2.6} until={K.He - 0.2} x={1030} y={480} texto="H₂O" lado="izq" tam={36} />
-      <Barra T={T} at={K.Li + 2.2} until={K.Nu - 0.2} largo={110} texto="≈ 0.3 nm" />
+      <Barra T={T} at={K.Li + 2.2} until={K.Nu - 0.2} largo={120 * (1 + 0.1 * kprog(T, K.Li - 0.45, K.Nu + 1.35, kEase.suave))} texto="≈ 0.3 nm" />
       <Chip T={T} at={K.He + 2.8} until={K.Nu - 0.2} texto="hexágonos con huecos" y={1500} tam={44} borde={KC.cyan} />
       <Chip T={T} at={K.Nu + 0.6} until={K.Pr - 0.2} texto="agua 0 °C · 0.9998 g/cm³" y={1470} tam={36} borde={AGUA} mono />
       <Chip T={T} at={K.Nu + 1.4} until={K.Pr - 0.2} texto="hielo 0 °C · 0.917 g/cm³" y={1570} tam={36} borde={KC.cyan} mono />
-      <Chip T={T} at={K.Pr + 0.2} until={K.La - 0.1} texto="¿y si…?" x={290} y={1460} tam={46} borde={KC.pink} />
-      <Chip T={T} at={K.La + 0.3} until={mitadLa - 0.2} texto="¿y si…? lago congelado entero" y={1500} tam={38} borde={KC.red} />
-      <Etq T={T} at={mitadLa + 0.4} until={K.Ga - 0.3} x={560} y={600} texto="tapa de hielo" lado="der" tam={34} color={KC.ink} />
-      <Chip T={T} at={mitadLa + 1.6} until={K.Ga - 0.2} texto="abajo: agua líquida, hasta ≈ 4 °C" y={1500} tam={36} borde={KC.blue} />
-      <TarjetaEstudio T={T} at={K.Ga + 0.2} until={K.Ga + 2.6} anio="1612" quien="Galileo · Florencia" revista="Discorso intorno alle cose che stanno in su l'acqua" y={620} />
+      <Chip T={T} at={K.Pr + 0.2} until={K.La - 0.1} texto="¿y si…?" x={540} y={340} tam={46} borde={KC.pink} />
+      <Chip T={T} at={K.La + 0.3} until={mitadLa - 0.2} texto="¿y si…? lago congelado entero" y={1540} tam={38} borde={KC.red} />
+      <Etq T={T} at={mitadLa + 0.4} until={K.Ga - 0.3} x={560} y={705} texto="tapa de hielo" lado="der" tam={34} color={KC.ink} />
+      <Chip T={T} at={mitadLa + 1.6} until={K.Ga - 0.2} texto="abajo: agua líquida, hasta ≈ 4 °C" y={1540} tam={36} borde={KC.blue} />
+      <TarjetaEstudio T={T} at={K.Ga + 0.2} until={K.Ga + 2.6} anio="1612" quien="Galileo · Florencia" revista="Discorso intorno alle cose che stanno in su l'acqua" y={440} />
       <MitoTachado T={T} at={K.Ga + 0.8} tacharEn={K.Ga + 2.2} until={K.Ga + 3.4} texto="flota por ser plano" y={1500} tam={44} />
       <Chip T={T} at={K.Ga + 5.0} until={K.Tu - 0.2} texto="flota por ser más ligero" y={1500} tam={42} borde={KC.mint} />
       <Chip T={T} at={K.Tu + 0.3} until={K.Cu - 0.2} texto="el hielo empuja: ≈ 9 % más" y={1500} tam={40} borde={KC.cyan} />
-      <Chip T={T} at={K.Cu + 0.6} until={K.Ci - 0.2} texto="agua pesada · deuterio" y={1500} tam={42} borde={D2O} />
-      <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="hielo = agua con huecos" y={1500} tam={44} borde={KC.cyan} />
+      <Chip T={T} at={K.Cu + 0.6} until={K.Ci - 0.2} texto="agua pesada · deuterio" y={280} tam={42} borde={D2O} />
+      <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="hielo = agua con huecos" y={400} tam={44} borde={KC.cyan} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ra - 0.1} texto="No es agua apretada: *tiene huecos.*" />
