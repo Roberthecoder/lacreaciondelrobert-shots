@@ -1,0 +1,3 @@
+# Grupo n008 · pase a mano cine
+
+- cie-15-estornudo: gancho con cabeza grande (s 1.7) y bala/número reacomodados; Mito con la cabeza y la nube del mito en pantalla todo el tiempo (ya no lámina, bajado al centro); Cálculo agrandado ×1.18 y papel más apagado; Estudio: voluntarios más grandes y entran desde el inicio (antes 0.7–1.8 s); Sombras/Medida/Nariz: campo de sombras pasado a oscuro con silueta negra de contorno claro y plumas claras, silueta ×1.45, regla de 60 cm recalculada junto con el alcance de la nube (520 px) y rótulos legibles; Tos, Mano y Codo agrandados y bajados; Cierre con cabeza grande. Auditores: sin láminas · encuadre bien; pendiente: nada.
