@@ -1,0 +1,2 @@
+# Avance grupo n050
+- qui-50-edulcorantes: gancho y cierre con la taza y el montón agrandados y bajados (cifra y etiqueta reubicadas); barras de Familia agrandadas; receptor dulce al doble en Receptor/Llave con moléculas y cerebro reacomodados; tazas de Poquito agrandadas; Pregunta con la taza y su granito detrás del signo; Schlatter y Londres agrandados con tarjetas arriba; Francia agrandada y escalera IARC agrandada con escalones oscuros; Límite recentrado para que no se corte; Amargo con receptores 1.3×; auditores: sin láminas, encuadre bien; pendiente: nada
