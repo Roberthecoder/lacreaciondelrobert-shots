@@ -151,7 +151,7 @@ function TierraNoRedonda() {
             <Montana x={480} y={1400} ancho={900} alto={800} color="#8a7b9e" />
             <path d="M 476 600 L 476 520 L 548 540 L 476 562" fill={KC.red} stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
           </g>
-          <rect x={-60} y={1390} width={1200} height={600} fill="#143a6b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={-60} y={1390} width={1200} height={600} fill="#0e2647" stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M ${i * 130 + ((T * 30) % 130) - 60} 1432 q 25 -18 50 0 t 50 0`} stroke="#fff" strokeWidth={5} fill="none" opacity=".6" />)}
           {(() => { const p = kprog(T, K.Everest + 1.4, K.Everest + 2.6, kEase.sale); return p > 0 && <g>
             <line x1={965} y1={1390} x2={965} y2={klerp(1390, 600, p)} stroke={KC.ink} strokeWidth={18} strokeLinecap="round" />
