@@ -318,9 +318,9 @@ function EsporasLluviaShot() {
       <Escena T={T} a={K.P} b={K.N} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Nube x={540} y={600} s={1.4} T={T} />
-          <Interrogacion T={T} x={800} y={1290} tam={380} />
-          <Basidiospora x={330 + kprog(T, K.P, K.P + 1.6) * 140} y={1300 - kprog(T, K.P, K.P + 1.6) * 430} s={0.24} rot={-14 + Math.sin(T * 3) * 8} />
+          <Nube x={540} y={850} s={1.6} T={T} />
+          <Interrogacion T={T} x={790} y={1430} tam={440} />
+          <Basidiospora x={330 + kprog(T, K.P, K.P + 1.6) * 140} y={1480 - kprog(T, K.P, K.P + 1.6) * 420} s={0.34} rot={-14 + Math.sin(T * 3) * 8} />
         </>)}
       </Escena>
       {/* 6–7 · capítulo 3: la nube por dentro. Gotitas líquidas bajo cero; una semilla las congela; el hielo cae y se vuelve lluvia */}
