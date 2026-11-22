@@ -6,6 +6,7 @@
 // Los tiempos van en "tiempo de autor" (CUES del jsx); warp() los lleva al tiempo real de la voz.
 import fs from 'node:fs';
 import path from 'node:path';
+import { camaLuminosa } from './cama-luminosa.mjs';
 
 export function crearMezcla(htmlPath, { seed = 7 } = {}) {
   const html = fs.readFileSync(htmlPath, 'utf8');
@@ -32,7 +33,7 @@ export function crearMezcla(htmlPath, { seed = 7 } = {}) {
     pluck: (t, m, g = 0.1, d = 0.5) => add(mus, t, (u) => { const f = hz(m); return ((2 * ((u * f) % 1) - 1) * Math.exp(-u * 9) * 0.5 + Math.sin(2 * Math.PI * f * u) * Math.exp(-u * 6) * 0.6) * g; }, d),
     sube: (t, d, m0, m1, g = 0.08) => { let ph = 0; add(mus, t, (u) => { ph += 2 * Math.PI * hz(m0 + (m1 - m0) * (u / d)) / SR; return Math.sin(ph) * Math.sin(Math.PI * Math.min(1, u / d)) * g; }, d); },
     latido: (t, g = 0.22) => { let ph = 0; add(sfx, t, (u) => { ph += 2 * Math.PI * (55 + 30 * Math.exp(-u * 20)) / SR; return Math.sin(ph) * Math.exp(-u * 7) * g; }, 0.6); },
-    golpe: (t, g = 0.4, f0 = 85) => { let ph = 0; add(sfx, t, (u) => { ph += 2 * Math.PI * (f0 + 110 * Math.exp(-u * 35)) / SR; return Math.sin(ph) * Math.exp(-u * 9) * g; }, 0.5); },
+    golpe: (t, g = 0.4, f0 = 85) => { let ph = 0; add(sfx, t, (u) => { ph += 2 * Math.PI * (f0 + 110 * Math.exp(-u * 35)) / SR; return Math.sin(ph) * Math.exp(-u * 9) * g * 0.5; }, 0.5); },  // golpes a la mitad: ya no compiten con una cama grave
     metal: (t, g = 0.25, f = 820) => add(sfx, t, (u) => [1, 2.76, 5.4].reduce((a, k) => a + Math.sin(2 * Math.PI * f * k * u) / k, 0) * Math.exp(-u * 12) * g, 0.6),
     burbuja: (t, g = 0.15, f = 500) => { let ph = 0; add(sfx, t, (u) => { ph += 2 * Math.PI * f * (1 + u * 14) / SR; return Math.sin(ph) * Math.exp(-u * 30) * g; }, 0.12); },
     ruido: (t, d, g = 0.15, f0 = 400, f1 = 3000) => { const f = lp(), h = hp(); add(sfx, t, (u, i) => h(f(NOISE[i % NOISE.length], f0 + (f1 - f0) * (u / d)), 150) * Math.sin(Math.PI * Math.min(1, u / d)) * g, d); },
@@ -40,9 +41,9 @@ export function crearMezcla(htmlPath, { seed = 7 } = {}) {
     pop: (t, g = 0.3) => { let ph = 0; add(sfx, t, (u) => { ph += 2 * Math.PI * (900 - 600 * Math.min(1, u * 30)) / SR; return Math.sin(ph) * Math.exp(-u * 40) * g; }, 0.1); },
     eructo: (t, d = 0.9, g = 0.3) => { let ph = 0; const f = lp(); add(sfx, t, (u, i) => { ph += 2 * Math.PI * (70 + 25 * Math.sin(u * 40) * Math.exp(-u * 2)) / SR; return f(Math.sign(Math.sin(ph)) * 0.6 + NOISE[i % NOISE.length] * 0.25, 600) * Math.sin(Math.PI * Math.min(1, u / d)) * g; }, d); },
     // cama grave continua y filtrada; corte bajo = música "tapada" (estado de la historia)
-    pad: (t0, t1, g = 0.05, notas = [45, 52, 57], corte = 520) => { const f = lp(); const n0 = Math.floor(warp(t0) * SR), n1 = Math.min(N, Math.floor(warp(t1) * SR));
-      for (let i = n0; i < n1; i++) { const t = i / SR, u = (i - n0) / Math.max(1, n1 - n0); const x = notas.reduce((a, m) => a + Math.sin(2 * Math.PI * hz(m) * t) + 0.3 * Math.sin(2 * Math.PI * hz(m + 12) * t * 1.003), 0) / notas.length;
-        mus[i] += f(x, corte) * g * (0.85 + 0.15 * Math.sin(t * 0.7)) * Math.min(1, u * 8, (1 - u) * 8); } },
+    // Cama de los narrados: desde el 22 nov 2026 es la «cama luminosa» (registro medio-agudo, acordes y tema; ver cama-luminosa.mjs).
+    // Los parámetros `notas` y `corte` de la cama grave vieja se aceptan pero ya no se usan.
+    pad: (t0, t1, g = 0.05) => camaLuminosa(mus, SR, Math.max(0, Math.floor(warp(t0) * SR)), Math.min(N, Math.floor(warp(t1) * SR)), { g, semilla: 11 }),
     guardar: (out, { musG = 0.9, sfxG = 0.8 } = {}) => {
       const buf = Buffer.alloc(44 + N * 4);
       buf.write('RIFF', 0); buf.writeUInt32LE(36 + N * 4, 4); buf.write('WAVE', 8); buf.write('fmt ', 12); buf.writeUInt32LE(16, 16);

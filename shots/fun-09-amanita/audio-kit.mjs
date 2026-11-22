@@ -6,6 +6,7 @@
 // Los tiempos se dan en tiempo de AUTOR (el de K / CUES); en la narrada se convierten a tiempo real con warp().
 import fs from 'node:fs';
 import path from 'node:path';
+import { camaLuminosa } from '../../motor/kit/cama-luminosa.mjs';
 
 export function mezcla(dir, html, semilla = 7) {
   const src = fs.readFileSync(path.join(dir, html), 'utf8');
@@ -34,7 +35,7 @@ export function mezcla(dir, html, semilla = 7) {
     bajo: (t, mm, g = 0.12, d = 0.5) => { const f = hz(mm); add(mus, t, (u) => Math.sin(2 * Math.PI * f * u + 0.6 * Math.sin(2 * Math.PI * f * 2 * u) * Math.exp(-u * 8)) * env(u, 0.004, d * 0.35) * g, d); },
     sube: (t, d, m0, m1, g = 0.08) => { let ph = 0; add(mus, t, (u) => { ph += 2 * Math.PI * hz(m0 + (m1 - m0) * (u / d)) / SR; return Math.sin(ph) * Math.sin(Math.PI * Math.min(1, u / d)) * g; }, d); },
     latido: (t, g = 0.22) => { let ph = 0; add(sfx, t, (u) => { ph += 2 * Math.PI * (55 + 30 * Math.exp(-u * 20)) / SR; return Math.sin(ph) * Math.exp(-u * 7) * g; }, 0.6); },
-    golpe: (t, g = 0.4, f0 = 85) => { let ph = 0; add(sfx, t, (u) => { ph += 2 * Math.PI * (f0 + 110 * Math.exp(-u * 35)) / SR; return Math.sin(ph) * Math.exp(-u * 9) * g; }, 0.5); },
+    golpe: (t, g = 0.4, f0 = 85) => { let ph = 0; add(sfx, t, (u) => { ph += 2 * Math.PI * (f0 + 110 * Math.exp(-u * 35)) / SR; return Math.sin(ph) * Math.exp(-u * 9) * g * 0.5; }, 0.5); },
     metal: (t, g = 0.25, f0 = 820) => add(sfx, t, (u) => [1, 2.76, 5.4].reduce((a, k) => a + Math.sin(2 * Math.PI * f0 * k * u) / k, 0) * Math.exp(-u * 12) * g, 0.6),
     gota: (t, g = 0.25, f0 = 900) => { let ph = 0; add(sfx, t, (u) => { ph += 2 * Math.PI * (f0 + 900 * Math.exp(-u * 40)) / SR; return Math.sin(ph) * Math.exp(-u * 25) * g; }, 0.18); },
     burbuja: (t, g = 0.15, f0 = 500) => { let ph = 0; add(sfx, t, (u) => { ph += 2 * Math.PI * (f0 * (1 + u * 6)) / SR; return Math.sin(ph) * Math.sin(Math.PI * Math.min(1, u / 0.09)) * g; }, 0.09); },
@@ -42,10 +43,8 @@ export function mezcla(dir, html, semilla = 7) {
     whoosh: (t, d = 0.6, g = 0.22) => { const f = lp(), h = hp(); add(sfx, t, (u, i) => h(f(NOISE[i % NOISE.length], 300 + 3000 * (u / d)), 200) * Math.sin(Math.PI * u / d) * g, d); },
     zumbido: (t, d = 1, g = 0.06, f0 = 190) => add(sfx, t, (u) => (Math.sin(2 * Math.PI * f0 * u + 2 * Math.sin(2 * Math.PI * 23 * u)) * 0.6 + Math.sin(2 * Math.PI * f0 * 2.01 * u) * 0.3) * Math.sin(Math.PI * Math.min(1, u / d)) * g, d),
     motor: (t, d = 2, g = 0.08) => { const f = lp(); add(sfx, t, (u, i) => f(NOISE[i % NOISE.length] * 0.6 + Math.sin(2 * Math.PI * 95 * u) * (0.6 + 0.4 * Math.sin(2 * Math.PI * 31 * u)), 500) * Math.sin(Math.PI * Math.min(1, u / d)) * g, d); },
-    // cama grave continua, sin golpe (narrados). tapa 0..1 la ahoga (mudos: estado de la historia)
-    pad: (t0, t1, g = 0.05, notas = [45, 52, 57], tapa = 0) => { const f = lp(); const n0 = Math.floor(warp(t0) * SR), n1 = Math.min(N, Math.floor(warp(t1) * SR));
-      for (let i = n0; i < n1; i++) { const t = i / SR, u = (i - n0) / (n1 - n0); const x = notas.reduce((a, mm) => a + Math.sin(2 * Math.PI * hz(mm) * t) + 0.3 * Math.sin(2 * Math.PI * hz(mm + 12) * t * 1.003), 0) / notas.length;
-        mus[i] += f(x, 520 - 300 * tapa) * g * (0.85 + 0.15 * Math.sin(t * 0.7)) * Math.min(1, u * 8, (1 - u) * 8); } },
+    // Cama de los narrados: «cama luminosa» (22 nov 2026; motor/kit/cama-luminosa.mjs). Los demás parámetros ya no se usan.
+    pad: (t0, t1, g = 0.05) => camaLuminosa(mus, SR, Math.max(0, Math.floor(warp(t0) * SR)), Math.min(N, Math.floor(warp(t1) * SR)), { g, semilla: 11 }),
     guardar: (out, gan = 1) => {
       const buf = Buffer.alloc(44 + N * 4);
       buf.write('RIFF', 0); buf.writeUInt32LE(36 + N * 4, 4); buf.write('WAVE', 8); buf.write('fmt ', 12); buf.writeUInt32LE(16, 16);
