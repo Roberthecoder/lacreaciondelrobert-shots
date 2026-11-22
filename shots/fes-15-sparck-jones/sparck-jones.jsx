@@ -3,7 +3,7 @@
 // NARRADO (N4 "La imagen que se llena" + un poco de N2). Guion, fuentes y verificación: guion.md / verificacion.md.
 // El dibujo es esquemático: la pared de páginas, las pesitas, la balanza y el asistente de IA son ilustrativos.
 const PIEL = '#f1c7a5', PIEL2 = '#d9a283', CANA = '#a39a92', CANA2 = '#7f766e', HOJA = '#e7d29a', HOJA2 = '#c9ae6a', MASA = '#f6d873', POBLANO = '#2f8f3a';
-const TINTA = KC.ink, PANT = '#fbf8ff';
+const TINTA = KC.ink, PANT = '#151a2b', OSC = '#0b1020'; // pantalla del celular en modo oscuro (cine)
 const PALABRAS = [ // ejemplo ilustrativo: «de» sale en casi todas las páginas (pesa poco), «rajas» en pocas (pesa mucho)
   { w: 'receta', p: 0.42, c: KC.lilac }, { w: 'de', p: 0.06, c: '#c9c3d6' }, { w: 'tamales', p: 0.62, c: KC.orange }, { w: 'de', p: 0.06, c: '#c9c3d6' }, { w: 'rajas', p: 0.95, c: KC.mint },
 ];
@@ -44,7 +44,7 @@ function Karen({ T, x, y, s = 1, sonrie = 0.5, rot = -3, nombre = true }) {
     <rect x={-166} y={-176} width={332} height={340} rx={6} fill="#ffe7b8" />
     <clipPath id={`kc${Math.round(x)}${Math.round(y)}`}><rect x={-166} y={-176} width={332} height={340} rx={6} /></clipPath>
     <g clipPath={`url(#kc${Math.round(x)}${Math.round(y)})`}><g transform="translate(0 -110) scale(1.0)"><KarenCara T={T} sonrie={sonrie} /></g></g>
-    {nombre && <text x={0} y={222} textAnchor="middle" style={{ font: `900 30px ${KF.texto}` }} fill={TINTA}>Karen Spärck Jones</text>}
+    {nombre && <text x={0} y={222} textAnchor="middle" style={{ font: `900 30px ${KF.texto}` }} fill={OSC}>Karen Spärck Jones</text>}
   </g>;
 }
 
@@ -60,7 +60,7 @@ function Telefono({ T, x, y, s = 1, letras = 0, pesos = 0, toque = -9, resultado
     <rect x={-296} y={24} width={592} height={1352} rx={64} fill={PANT} />
     <rect x={-70} y={40} width={140} height={26} rx={13} fill="#1d1b26" />
     {/* barra */}
-    <rect x={-272} y={100} width={544} height={96} rx={48} fill="#fff" stroke={TINTA} strokeWidth={5} />
+    <rect x={-272} y={100} width={544} height={96} rx={48} fill="#232a44" stroke={TINTA} strokeWidth={5} />
     <g transform={`translate(-222 148) scale(${1 + 0.25 * Math.sin(Math.PI * tq)})`}>
       <circle cx={-4} cy={-4} r={17} fill="none" stroke={TINTA} strokeWidth={6} /><line x1={8} y1={8} x2={22} y2={22} stroke={TINTA} strokeWidth={7} strokeLinecap="round" />
     </g>
@@ -72,17 +72,17 @@ function Telefono({ T, x, y, s = 1, letras = 0, pesos = 0, toque = -9, resultado
       return <g key={i} opacity={kprog(pesos, i * 0.12, i * 0.12 + 0.15)}>
         <g transform={`translate(${x0 + w / 2} 252) scale(${klerp(0.6, 1, e)})`}>
           <rect x={-w / 2} y={-26} width={w} height={52} rx={26} fill={p.c} stroke={TINTA} strokeWidth={4} />
-          <text x={0} y={10} textAnchor="middle" style={T28} fill={TINTA}>{p.w}</text>
+          <text x={0} y={10} textAnchor="middle" style={T28} fill={OSC}>{p.w}</text>
         </g>
         <rect x={x0 + w / 2 - 22} y={400 - h} width={44} height={h} rx={8} fill={p.c} stroke={TINTA} strokeWidth={4} />
         <rect x={x0 + w / 2 - 34} y={400} width={68} height={10} rx={5} fill={TINTA} />
       </g>; })}
-    {pesos > 0 && <text x={-272} y={446} style={{ font: `700 24px ${KF.mono}` }} fill="#6b6578" opacity={kprog(pesos, 0.6, 0.9)}>peso de cada palabra</text>}
+    {pesos > 0 && <text x={-272} y={446} style={{ font: `700 24px ${KF.mono}` }} fill="#9a95a8" opacity={kprog(pesos, 0.6, 0.9)}>peso de cada palabra</text>}
     {/* resultados (abajo del subtítulo) */}
     <g opacity={resultados}>{[0, 1, 2, 3].map((i) => <g key={i} transform={`translate(-262 ${560 + i * 170})`}>
-      <rect x={0} y={0} width={524} height={140} rx={22} fill="#fff" stroke="#d8d2e6" strokeWidth={4} />
+      <rect x={0} y={0} width={524} height={140} rx={22} fill="#1e2540" stroke="#3a4466" strokeWidth={4} />
       <rect x={24} y={26} width={300 - i * 30} height={22} rx={11} fill={i === 0 ? KC.blue : '#b8b1c9'} opacity=".8" />
-      <rect x={24} y={66} width={440} height={14} rx={7} fill="#e2ddec" /><rect x={24} y={96} width={360} height={14} rx={7} fill="#e2ddec" />
+      <rect x={24} y={66} width={440} height={14} rx={7} fill="#3a4466" /><rect x={24} y={96} width={360} height={14} rx={7} fill="#3a4466" />
     </g>)}</g>
     {apagado > 0 && <rect x={-296} y={24} width={592} height={1352} rx={64} fill="#05050a" opacity={apagado} />}
   </g>;
@@ -116,8 +116,8 @@ function ParedPaginas({ T, deAt, deHasta, rajasAt }) {
     return <g key={k} transform={`translate(${x + PW / 2} ${y + PH / 2}) scale(${1 + 0.08 * lra}) translate(${-PW / 2} ${-PH / 2})`}>
       <rect x={0} y={0} width={PW} height={PH} rx={10} fill="#fff" stroke={lra > 0.01 ? POBLANO : TINTA} strokeWidth={lra > 0.01 ? 4 + 5 * lra : 4} opacity={T > rajasAt ? klerp(1, lra > 0.01 ? 1 : 0.45, kprog(T, rajasAt, rajasAt + 0.5)) : 1} />
       {[0, 1, 2, 3, 4].map((l) => <rect key={l} x={12} y={16 + l * 20} width={l === 4 ? 46 : 80} height={9} rx={4} fill="#d6d0e0" />)}
-      {lde > 0 && <g opacity={lde}><rect x={10 + (k % 2) * 30} y={10 + linea * 20} width={40} height={22} rx={6} fill={KC.yellow} stroke={TINTA} strokeWidth={3} /><text x={30 + (k % 2) * 30} y={27 + linea * 20} textAnchor="middle" style={{ font: `800 17px ${KF.texto}` }} fill={TINTA}>de</text></g>}
-      {lra > 0 && <g opacity={kclamp(lra, 0, 1)}><rect x={12} y={50} width={80} height={26} rx={7} fill={KC.mint} stroke={TINTA} strokeWidth={3} /><text x={52} y={69} textAnchor="middle" style={{ font: `800 18px ${KF.texto}` }} fill={TINTA}>rajas</text></g>}
+      {lde > 0 && <g opacity={lde}><rect x={10 + (k % 2) * 30} y={10 + linea * 20} width={40} height={22} rx={6} fill={KC.yellow} stroke={TINTA} strokeWidth={3} /><text x={30 + (k % 2) * 30} y={27 + linea * 20} textAnchor="middle" style={{ font: `800 17px ${KF.texto}` }} fill={OSC}>de</text></g>}
+      {lra > 0 && <g opacity={kclamp(lra, 0, 1)}><rect x={12} y={50} width={80} height={26} rx={7} fill={KC.mint} stroke={TINTA} strokeWidth={3} /><text x={52} y={69} textAnchor="middle" style={{ font: `800 18px ${KF.texto}` }} fill={OSC}>rajas</text></g>}
     </g>; })}</g>;
 }
 
@@ -136,7 +136,7 @@ function Balanza({ T, x, y, incl = 0, pesas = 0 }) {
     <path d="M -130 190 Q 0 250 130 190 Z" fill="#c9ced8" stroke={TINTA} strokeWidth={7} />
     {pesa}
     <g transform="translate(0 -40)"><rect x={-anchoTxt(palabra, 40) / 2 - 22} y={-32} width={anchoTxt(palabra, 40) + 44} height={64} rx={32} fill={col} stroke={TINTA} strokeWidth={5} />
-      <text x={0} y={14} textAnchor="middle" style={{ font: `900 40px ${KF.texto}` }} fill={TINTA}>{palabra}</text></g>
+      <text x={0} y={14} textAnchor="middle" style={{ font: `900 40px ${KF.texto}` }} fill={OSC}>{palabra}</text></g>
     <text x={0} y={300} textAnchor="middle" style={{ font: `700 28px ${KF.mono}` }} fill={TINTA}>{nota}</text>
   </g>;
   return <g transform={`translate(${x} ${y})`}>
@@ -158,11 +158,11 @@ function Lista({ T, x, y, sube }) {
   return <g transform={`translate(${x} ${y})`}>
     {RESULTADOS.map((r, i) => { const yy = pos[i] * 170, top = i === 2;
       return <g key={i} transform={`translate(0 ${yy}) scale(${top ? 1 + 0.04 * Math.sin(Math.PI * sube) : 1})`}>
-        <rect x={0} y={0} width={860} height={146} rx={24} fill="#fff" stroke={top ? KC.orange : TINTA} strokeWidth={top ? 8 : 5} />
-        <text x={30} y={56} style={{ font: `900 38px ${KF.texto}` }} fill={i === 2 || i === 3 ? KC.blue : TINTA}>{r.t}</text>
+        <rect x={0} y={0} width={860} height={146} rx={24} fill="#1e2540" stroke={top ? KC.orange : TINTA} strokeWidth={top ? 8 : 5} />
+        <text x={30} y={56} style={{ font: `900 38px ${KF.texto}` }} fill={i === 2 || i === 3 ? KC.cyan : TINTA}>{r.t}</text>
         {Array.from({ length: r.marcas }, (_, k) => <g key={k} opacity={kprog(T, 0, 0) * 1} transform={`translate(${30 + k * 160} 84)`}>
-          <rect x={0} y={0} width={148} height={40} rx={10} fill={KC.orange} stroke={TINTA} strokeWidth={3} /><text x={74} y={29} textAnchor="middle" style={{ font: `800 24px ${KF.texto}` }} fill={TINTA}>tamales</text></g>)}
-        {r.marcas === 0 && <><rect x={30} y={88} width={520} height={14} rx={7} fill="#e2ddec" /><rect x={30} y={114} width={380} height={14} rx={7} fill="#e2ddec" /></>}
+          <rect x={0} y={0} width={148} height={40} rx={10} fill={KC.orange} stroke={TINTA} strokeWidth={3} /><text x={74} y={29} textAnchor="middle" style={{ font: `800 24px ${KF.texto}` }} fill={OSC}>tamales</text></g>)}
+        {r.marcas === 0 && <><rect x={30} y={88} width={520} height={14} rx={7} fill="#3a4466" /><rect x={30} y={114} width={380} height={14} rx={7} fill="#3a4466" /></>}
         <text x={820} y={56} textAnchor="end" style={{ font: `700 30px ${KF.mono}` }} fill="#8b8597">{Math.round(pos[i]) + 1}</text>
       </g>; })}
   </g>;
@@ -195,7 +195,7 @@ function Ficha({ T, x, y, palabra, cae, peso, color }) {
     <rect x={0} y={0} width={560} height={150} rx={12} fill="#fffaf0" stroke={TINTA} strokeWidth={6} />
     <line x1={0} y1={40} x2={560} y2={40} stroke={KC.red} strokeWidth={3} opacity=".6" />
     {[72, 102, 132].map((yy) => <line key={yy} x1={20} y1={yy} x2={540} y2={yy} stroke="#9fc3e6" strokeWidth={2} />)}
-    <text x={30} y={112} style={{ font: `900 56px ${KF.texto}` }} fill={TINTA}>{palabra}</text>
+    <text x={30} y={112} style={{ font: `900 56px ${KF.texto}` }} fill={OSC}>{palabra}</text>
     {T > cae && <g transform={`translate(${440} ${klerp(-300, 130, u)})`}><Pesa x={0} y={0} s={peso} color={color} /></g>}
   </g>;
 }
@@ -207,7 +207,7 @@ function Fichero({ T, x, y, k, at, sube }) {
     {[0, 1, 2, 3, 4].map((i) => <rect key={i} x={-110 + i * 6} y={-60 - i * 10 + Math.sin(T * 2 + i + k) * 3} width={200} height={110} rx={8} fill={['#fffaf0', '#f3e6b8', '#ffe2ec'][k]} stroke={TINTA} strokeWidth={4} transform={`rotate(${-6 + i * 3})`} />)}
     <path d="M -140 0 L 140 0 L 120 170 L -120 170 Z" fill={['#b4643a', KC.blue, KC.teal][k]} stroke={TINTA} strokeWidth={7} strokeLinejoin="round" />
     <rect x={-60} y={60} width={120} height={46} rx={8} fill="#fff" stroke={TINTA} strokeWidth={4} />
-    <text x={0} y={94} textAnchor="middle" style={{ font: `900 34px ${KF.texto}` }} fill={TINTA}>{k + 1}</text>
+    <text x={0} y={94} textAnchor="middle" style={{ font: `900 34px ${KF.texto}` }} fill={OSC}>{k + 1}</text>
     {/* barras: sin pesos (gris) vs con pesos (dorado) */}
     <g transform="translate(0 -110)">
       <rect x={-80} y={-h0 * kprog(T, at, at + 0.6, kEase.sale)} width={64} height={h0 * kprog(T, at, at + 0.6, kEase.sale)} rx={8} fill="#9b98a6" stroke={TINTA} strokeWidth={5} />
@@ -220,7 +220,7 @@ function Fichero({ T, x, y, k, at, sube }) {
 /* ---------- red de herencia: IDF → fórmulas ---------- */
 const RAMAS = [[200, 'TF-IDF'], [100, 'BM25'], [140, ''], [170, ''], [230, ''], [60, ''], [30, ''], [0, ''], [260, '']].map(([a, n]) => [Math.cos(a * Math.PI / 180) * 380, Math.sin(a * Math.PI / 180) * 300, n]);
 function Herencia({ T, at }) {
-  return <g transform="translate(540 800)">
+  return <g transform="translate(540 890) scale(1.08)">
     {RAMAS.map(([dx, dy, nom], i) => { const t0 = at + 1.2 + i * 0.22, u = kprog(T, t0, t0 + 0.5, kEase.sale), br = 0.6 + 0.4 * Math.sin(T * 3 + i);
       return <g key={i}>
         <path d={`M 0 0 Q ${dx * 0.2} ${dy * 0.6} ${dx * u} ${dy * u}`} stroke={KC.gold2} strokeWidth={nom ? 8 : 5} fill="none" opacity={0.85} strokeDasharray={nom ? '0' : '12 10'} strokeDashoffset={-T * 30} />
@@ -265,7 +265,7 @@ function Asistente({ T, at }) {
     {T > at + 0.8 && <g transform={`translate(${lx} ${ly}) rotate(${Math.sin(T * 5) * 8})`}>
       <circle r={56} fill="rgba(0,210,255,.18)" stroke={KC.texto} strokeWidth={10} /><line x1={40} y1={40} x2={92} y2={92} stroke={KC.texto} strokeWidth={16} strokeLinecap="round" />
       <rect x={-62} y={-112} width={124} height={44} rx={22} fill={KC.gold} stroke={TINTA} strokeWidth={4} />
-      <text x={0} y={-80} textAnchor="middle" style={{ font: `900 28px ${KF.texto}` }} fill={TINTA}>BM25</text>
+      <text x={0} y={-80} textAnchor="middle" style={{ font: `900 28px ${KF.texto}` }} fill={OSC}>BM25</text>
     </g>}
   </g>;
 }
@@ -304,9 +304,9 @@ function SparckJones() {
       <Escena T={T} a={K.G} b={K.De} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Telefono T={T} x={540} y={klerp(1000, 700, kprog(T, K.G, K.G + 0.5, kEase.sale))} toque={TOQUE} letras={letras} resultados={kprog(T, K.G + 0.6, K.G + 1.2)} />
-          <g opacity={kprog(T, K.G + 1.0, K.G + 1.3)}><Karen T={T} x={240} y={klerp(330, 470, kprog(T, K.G + 1.0, K.G + 1.6, kEase.rebote))} s={0.74} rot={-4} sonrie={0.7} /></g>
-          {T > K.Bu + 1.4 && <Tamal T={T} x={860} y={klerp(1150, 540, kprog(T, K.Bu + 1.4, K.Bu + 1.9, kEase.rebote))} s={0.75} rot={10 + Math.sin(T * 3) * 6} />}
+          <Telefono T={T} x={540} y={klerp(640, 560, kprog(T, K.G, K.G + 1.2, kEase.sale))} s={1.1} toque={TOQUE} letras={letras} resultados={kprog(T, K.G + 0.6, K.G + 1.2)} />
+          <g opacity={kprog(T, K.G, K.G + 0.3)}><Karen T={T} x={230} y={klerp(400, 450, kprog(T, K.G, K.G + 0.8, kEase.rebote))} s={0.74} rot={-4} sonrie={0.7} /></g>
+          {T > K.Bu + 1.4 && <Tamal T={T} x={880} y={klerp(1150, 480, kprog(T, K.Bu + 1.4, K.Bu + 1.9, kEase.rebote))} s={0.75} rot={10 + Math.sin(T * 3) * 6} />}
         </>)}
       </Escena>
       {/* 3-4 · la pared de páginas: «de» en casi todas, «rajas» en pocas */}
@@ -340,11 +340,11 @@ function SparckJones() {
       <Escena T={T} a={K.E} b={K.Pr}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <g opacity={kprog(T, K.E + 2.8, K.E + 3.2)}>
-            <Karen T={T} x={230} y={klerp(1500, 690, kprog(T, K.E + 2.8, K.E + 3.4, kEase.sale))} s={0.62} rot={-5} sonrie={0.5} mira={1} />
-            <Ficha T={T} x={440} y={520} palabra="de" cae={K.E + 3.4} peso={0.4} color="#8d879c" />
-            <Ficha T={T} x={440} y={740} palabra="receta" cae={K.E + 4.0} peso={0.75} color={KC.lilac} />
-            <Ficha T={T} x={440} y={960} palabra="rajas" cae={K.E + 4.6} peso={1.1} color={POBLANO} />
+          <g opacity={kprog(T, K.E, K.E + 0.4)} transform="translate(-20 40)">
+            <Karen T={T} x={230} y={klerp(900, 830, kprog(T, K.E, K.E + 0.8, kEase.sale))} s={0.66} rot={-5} sonrie={0.5} mira={1} />
+            <Ficha T={T} x={440} y={640} palabra="de" cae={K.E + 3.4} peso={0.4} color="#8d879c" />
+            <Ficha T={T} x={440} y={860} palabra="receta" cae={K.E + 4.0} peso={0.75} color={KC.lilac} />
+            <Ficha T={T} x={440} y={1080} palabra="rajas" cae={K.E + 4.6} peso={1.1} color={POBLANO} />
           </g>
         </>)}
       </Escena>
@@ -363,7 +363,7 @@ function SparckJones() {
       <Escena T={T} a={K.IA} b={K.Da}>
         <div style={{ position: 'absolute', inset: 0, background: KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(0,210,255,.22)" />
-        {svg(<Asistente T={T} at={K.IA} />)}
+        {svg(<g transform="translate(0 100)"><Asistente T={T} at={K.IA} /></g>)}
       </Escena>
       {/* 12 · niñas y computación; su lema */}
       <Escena T={T} a={K.Da} b={K.Ci}>
@@ -379,8 +379,8 @@ function SparckJones() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Telefono T={T} x={540} y={700} letras={BUSCA.length + 1} pesos={kprog(T, K.Ci + 0.4, K.Ci + 2.6)} resultados={1} />
-          <Karen T={T} x={240} y={470} s={0.74} rot={-4} sonrie={1} />
+          <Telefono T={T} x={540} y={560} s={1.1} letras={BUSCA.length + 1} pesos={kprog(T, K.Ci + 0.4, K.Ci + 2.6)} resultados={1} />
+          <Karen T={T} x={230} y={450} s={0.74} rot={-4} sonrie={1} />
           {Array.from({ length: 6 }, (_, i) => <Destello key={i} x={120 + i * 170} y={440 + (i % 2) * 60 + Math.sin(T * 2 + i) * 10} r={18 * kprog(T, K.Ci + 2.6 + i * 0.1, K.Ci + 3.0 + i * 0.1, kEase.rebote)} color={KC.gold2} rot={T * 40} />)}
         </>)}
       </Escena>
@@ -389,22 +389,22 @@ function SparckJones() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 0.3} until={K.Bu - 0.2} texto="Día de la Mujer y la Niña en la Ciencia" x={540} y={1460} tam={36} borde={KC.yellow} />
-      <Etq T={T} at={K.Bu + 1.9} until={K.De - 0.3} x={660} y={728} texto="tamal de rajas" tam={30} color={TINTA} />
-      <Medidor T={T} at={K.De + 1.2} until={K.Ra - 0.3} y={1420} ancho={900} etiqueta="peso de «de»" valor={(t) => 0.06 * kprog(t, K.De + 1.4, K.De + 2.4)} texto={() => 'casi nada'} color={KC.yellow} />
-      <Chip T={T} at={K.De + 2.6} until={K.Ra - 0.3} texto="ejemplo: sale en casi todas = pesa poco" x={540} y={1610} tam={38} borde={KC.yellow} />
-      <Medidor T={T} at={K.Ra + 1.6} until={K.Rr - 0.3} y={1420} ancho={900} etiqueta="peso de «rajas»" valor={(t) => 0.95 * kprog(t, K.Ra + 1.8, K.Ra + 2.8, kEase.sale)} texto={() => 'mucho'} color={KC.mint} />
-      <Chip T={T} at={K.Ra + 2.4} until={K.Rr - 0.3} texto="sale en pocas = pesa mucho" x={540} y={1610} tam={38} borde={KC.mint} />
+      <Etq T={T} at={K.Bu + 1.9} until={K.De - 0.3} x={700} y={300} texto="tamal de rajas" tam={30} color={TINTA} />
+      <Medidor T={T} at={K.De + 1.2} until={K.Ra - 0.3} y={1300} ancho={900} etiqueta="peso de «de»" valor={(t) => 0.06 * kprog(t, K.De + 1.4, K.De + 2.4)} texto={() => 'casi nada'} color={KC.yellow} />
+      <Chip T={T} at={K.De + 2.6} until={K.Ra - 0.3} texto="ejemplo: sale en casi todas = pesa poco" x={540} y={1440} tam={38} borde={KC.yellow} />
+      <Medidor T={T} at={K.Ra + 1.6} until={K.Rr - 0.3} y={1300} ancho={900} etiqueta="peso de «rajas»" valor={(t) => 0.95 * kprog(t, K.Ra + 1.8, K.Ra + 2.8, kEase.sale)} texto={() => 'mucho'} color={KC.mint} />
+      <Chip T={T} at={K.Ra + 2.4} until={K.Rr - 0.3} texto="sale en pocas = pesa mucho" x={540} y={1440} tam={38} borde={KC.mint} />
       <Chip T={T} at={K.Rr + 2.4} until={K.Re - 0.3} texto="la palabra rara pesa más" x={540} y={1480} tam={42} borde={KC.ink} />
-      <Chip T={T} at={K.Re + 1.6} until={K.P - 0.3} texto="TF: cuántas veces en la página" x={540} y={1450} tam={36} borde={KC.orange} />
-      <Chip T={T} at={K.Re + 2.4} until={K.P - 0.3} texto="× IDF: qué tan rara es" x={540} y={1560} tam={36} borde={KC.mint} />
+      <Chip T={T} at={K.Re + 1.6} until={K.P - 0.3} texto="TF: cuántas veces en la página" x={540} y={1310} tam={36} borde={KC.orange} />
+      <Chip T={T} at={K.Re + 2.4} until={K.P - 0.3} texto="× IDF: qué tan rara es" x={540} y={1410} tam={36} borde={KC.mint} />
       <Etq T={T} at={K.P + 1.4} until={K.E - 0.3} x={60} y={1460} texto="mucho antes de la web (1989)" tam={30} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.7} anio="1972" quien="Karen Spärck Jones" revista="Cambridge, Inglaterra · Journal of Documentation" x={540} y={880} />
-      <Chip T={T} at={K.E + 3.2} until={K.Pr - 0.3} texto="más rara = más peso" x={540} y={1460} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Pr + 0.6} until={K.H - 0.3} texto="3 colecciones de prueba" x={540} y={1460} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.Pr + 2.0} until={K.H - 0.3} x={60} y={1580} texto="gris: sin pesos · dorado: con pesos" tam={30} color={TINTA} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.7} anio="1972" quien="Karen Spärck Jones" revista="Cambridge, Inglaterra · Journal of Documentation" x={540} y={400} />
+      <Chip T={T} at={K.E + 3.2} until={K.Pr - 0.3} texto="más rara = más peso" x={540} y={1440} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Pr + 0.6} until={K.H - 0.3} texto="3 colecciones de prueba" x={540} y={1300} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.Pr + 2.0} until={K.H - 0.3} x={60} y={1400} texto="gris: sin pesos · dorado: con pesos" tam={30} color={TINTA} />
       <Chip T={T} at={K.H + 0.7} until={K.IA - 0.3} texto="frecuencia inversa de documento" x={540} y={1460} tam={38} borde={KC.gold} />
-      <Chip T={T} at={K.IA + 0.6} until={K.Da - 0.3} texto="buscar antes de responder" x={540} y={1460} tam={40} borde={KC.cyan} />
-      <Etq T={T} at={K.IA + 2.2} until={K.Da - 0.3} x={60} y={1580} texto="BM25: heredera de TF-IDF" tam={30} />
+      <Chip T={T} at={K.IA + 0.6} until={K.Da - 0.3} texto="buscar antes de responder" x={540} y={1410} tam={40} borde={KC.cyan} />
+      <Etq T={T} at={K.IA + 2.2} until={K.Da - 0.3} x={60} y={1490} texto="BM25: heredera de TF-IDF" tam={30} />
       {/* el lema, atribuido */}
       {kvisible(T, K.Da + 3.3, K.Ci - 0.3) && (() => { const e = kentrada(T, K.Da + 3.3, K.Ci - 0.3, 'pop');
         return <div style={{ position: 'absolute', left: 540, top: 600, zIndex: 43, width: 900, transform: `translate(-50%,-50%) scale(${e.s}) rotate(-1.5deg)`, opacity: e.o,
