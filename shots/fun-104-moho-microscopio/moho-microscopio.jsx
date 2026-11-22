@@ -299,7 +299,7 @@ function MohoShot() {
       {/* 4 · portaobjetos con azul de lactofenol */}
       <Escena T={T} a={K.Ti} b={K.Pi} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<g transform="translate(540 830) scale(1.2) translate(-540 -830)">
+        {fsvg(<g transform="translate(540 1000) scale(1.2) translate(-540 -830)">
           <Portaobjetos T={T} x={540} y={830} gota={kprog(T, K.Ti + 0.1, K.Ti + 0.7)} charco={kprog(T, K.Ti + 0.65, K.Ti + 0.95, kEase.sale)} cinta={kprog(T, K.Ti + 1.1, K.Ti + 2.0)} cubre={kprog(T, K.Ti + 2.2, K.Ti + 2.8)} />
           {/* gotero */}
           <g opacity={1 - kprog(T, K.Ti + 0.9, K.Ti + 1.2)} transform={`translate(600 ${410 + Math.sin(T * 3) * 4})`}>
@@ -334,9 +334,9 @@ function MohoShot() {
       <Escena T={T} a={K.P} b={K.A} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <g transform="translate(290 820) scale(1.45)"><Petri x={0} y={0} r={150} medio="#f2e6bd"><Colonia cx={0} cy={0} r={110} color={MM.micelio} seed={2} /><Colonia cx={0} cy={0} r={80} color={MM.moho} seed={4} /></Petri></g>
-          <g transform="translate(790 820) scale(1.45)"><Petri x={0} y={0} r={150} medio="#f2e6bd"><Colonia cx={0} cy={0} r={115} color="#e9f0e4" seed={6} /><Colonia cx={0} cy={0} r={85} color="#6f8f6a" seed={7} /></Petri></g>
-          <Interrogacion T={T} x={620} y={1340} tam={300} />
+          <g transform="translate(290 990) scale(1.45)"><Petri x={0} y={0} r={150} medio="#f2e6bd"><Colonia cx={0} cy={0} r={110} color={MM.micelio} seed={2} /><Colonia cx={0} cy={0} r={80} color={MM.moho} seed={4} /></Petri></g>
+          <g transform="translate(790 990) scale(1.45)"><Petri x={0} y={0} r={150} medio="#f2e6bd"><Colonia cx={0} cy={0} r={115} color="#e9f0e4" seed={6} /><Colonia cx={0} cy={0} r={85} color="#6f8f6a" seed={7} /></Petri></g>
+          <Interrogacion T={T} x={620} y={1480} tam={300} />
         </>)}
       </Escena>
       {/* 8 · Aspergillus fumigatus al microscopio */}
@@ -416,16 +416,16 @@ function MohoShot() {
       <Chip T={T} at={K.Mo + 1.2} until={K.Ci - 0.2} texto="el color = sus esporas" x={540} y={1450} tam={32} borde={MM.moho} />
       <Chip T={T} at={K.Ci + 0.2} until={K.Ti - 0.2} texto="EN EL LABORATORIO" x={280} y={270} tam={34} borde={KC.ink} mono />
       <Etq T={T} at={K.Ci + 0.4} until={K.Ti - 0.2} x={60} y={1400} texto="cultivo del moho en agar" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ti + 0.4} until={K.Pi - 0.2} texto="azul de algodón de lactofenol" x={540} y={1130} tam={30} borde={KC.blue} />
-      <Etq T={T} at={K.Ti + 1.3} until={K.Pi - 0.2} x={60} y={1260} texto="tiñe la quitina de las paredes" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ti + 2.4} until={K.Pi - 0.2} x={60} y={1315} texto="portaobjetos + cubreobjetos" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Ti + 0.4} until={K.Pi - 0.2} texto="azul de algodón de lactofenol" x={540} y={1300} tam={30} borde={KC.blue} />
+      <Etq T={T} at={K.Ti + 1.3} until={K.Pi - 0.2} x={60} y={1420} texto="tiñe la quitina de las paredes" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ti + 2.4} until={K.Pi - 0.2} x={60} y={1475} texto="portaobjetos + cubreobjetos" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Pi + 0.1} until={K.Pi + 2.4} texto="AL MICROSCOPIO" x={300} y={290} tam={34} borde={KC.cyan} mono />
       <Etq T={T} at={K.Pi + 0.9} until={K.Ca - 0.2} x={490} y={1200} texto="tallo con tabiques" tam={28} color={KC.texto} />
       <Etq T={T} at={K.Pi + 1.5} until={K.Ca - 0.2} x={640} y={860} texto="ramas y métulas" tam={28} color={KC.texto} />
       <Etq T={T} at={K.Pi + 2.0} until={K.Ca - 0.2} x={670} y={670} texto="fiálides" tam={28} color={KC.texto} />
       <ChipI T={T} at={K.Pi + 2.6} until={K.Ca - 0.2} partes={[['Penicillium', true], [' = pincel (Link, 1809)', false]]} x={400} y={290} tam={32} borde={KC.gold} />
       <Chip T={T} at={K.Ca + 1.0} until={K.P - 0.3} texto="la espora más joven: abajo" x={540} y={1440} tam={30} borde={KC.gold2} />
-      <Chip T={T} at={K.P + 0.3} until={K.A - 0.2} texto="✓ pincel" x={290} y={1100} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.P + 0.3} until={K.A - 0.2} texto="✓ pincel" x={290} y={1270} tam={32} borde={KC.leaf} />
       <Etq T={T} at={K.A + 0.6} until={K.Mi - 0.2} x={60} y={1200} texto="tallo liso, sin tabiques" tam={26} color={KC.texto} />
       <Etq T={T} at={K.A + 1.0} until={K.Mi - 0.2} x={60} y={300} texto="Aspergillus fumigatus" it tam={38} color={KC.texto} />
       <Etq T={T} at={K.A + 1.4} until={K.Mi - 0.2} x={60} y={935} texto="vesícula · 20–30 µm" tam={26} color={KC.gold2} />
