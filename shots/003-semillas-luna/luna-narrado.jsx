@@ -97,7 +97,7 @@ function Equipaje({ T, a }) {
   const bolsas = [[250, 720], [830, 720], [260, 1060], [820, 1060]];
   return <>
     <FondoLunares color={KC.yellow} />
-    <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><g transform="translate(540 960) scale(1.2) translate(-540 -890)">
+    <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><g transform="translate(540 1010) scale(1.25) translate(-540 -890)">
       {bolsas.map(([bx, by], i) => {
         const p = kprog(T, a + 0.9 + i * 0.18, a + 1.7 + i * 0.18, kEase.rebote);
         const x = klerp(540, bx, p), y = klerp(700, by, p) + mece(T, i + 2, 0.4) * 6;
@@ -129,11 +129,11 @@ const ESPECIES = [
   { n: 'Abeto Douglas', c: 'Pseudotsuga menziesii', d: () => <SemillaAla s={1.45} y={40} rot={-12} ala="#e0b07a" cuerpo="#6a3a1e" /> },
 ];
 function Especies({ T, a }) {
-  const pos = [[190, 700], [540, 700], [890, 700], [365, 1190], [715, 1190]];
+  const pos = [[190, 810], [540, 810], [890, 810], [365, 1280], [715, 1280]];
   return <>
     <FondoLunares color={KC.mint} />
     {ESPECIES.map((e, i) => {
-      const at = a + 0.15 + i * 0.62, k = kentrada(T, at, null, 'pop');
+      const at = a + 0.1 + i * 0.25, k = kentrada(T, at, null, 'pop');
       if (T < at) return null;
       const [x, y] = pos[i];
       return <div key={i} style={{ position:'absolute', left:x - 165, top:y - 225, width:330, height:450, opacity:k.o, transform:`scale(${k.s}) rotate(${(i % 2 ? 1 : -1) + mece(T, i, 0.2)}deg)`,
@@ -149,7 +149,7 @@ function Especies({ T, a }) {
 // La Luna, el módulo lunar en la superficie y la nave de Roosa en órbita.
 function Orbita({ T, a, b }) {
   const g = krng(31), est = Array.from({ length: 90 }, () => [g() * KW, g() * 1300, 1 + g() * 3, g() * 6]);
-  const R = { x: 540, y: 940, rx: 480, ry: 112 };
+  const R = { x: 540, y: 1170, rx: 510, ry: 120 };
   const th = 0.35 + (T - a) * 2.4, cx = R.x + R.rx * Math.cos(th), cy = R.y + R.ry * Math.sin(th), frente = Math.sin(th) > 0;
   const ang = Math.atan2(R.ry * Math.cos(th), -R.rx * Math.sin(th)) * 180 / Math.PI;
   const nave = <g transform={`translate(${cx} ${cy}) rotate(${ang}) scale(${frente ? 2.0 : 1.5})`} opacity={frente ? 1 : 0.7}>
@@ -166,21 +166,21 @@ function Orbita({ T, a, b }) {
       <g><circle cx={910} cy={330} r={70} fill="#2f7fff" stroke={KC.ink} strokeWidth={6} /><path d="M 870 300 q 30 -20 50 10 q 20 30 -10 40 q -30 0 -40 -50 Z" fill={KC.leaf} /><circle cx={910} cy={330} r={84} fill="none" stroke="#8fd3ff" strokeWidth={4} opacity=".6" /></g>
       <path d={`M ${R.x - R.rx} ${R.y} A ${R.rx} ${R.ry} 0 0 1 ${R.x + R.rx} ${R.y}`} fill="none" stroke={KC.cyan} strokeWidth={5} strokeDasharray="16 14" opacity=".45" />
       {!frente && nave}
-      <circle cx={540} cy={1500} r={660} fill="#7d7892" stroke={KC.ink} strokeWidth={10} />
-      {[[300, 1030, 60], [760, 1080, 80], [520, 1200, 50], [880, 1260, 40], [200, 1280, 70], [640, 930, 34]].map(([x, y, r], i) => <ellipse key={i} cx={x} cy={y} rx={r} ry={r * 0.45} fill="#676180" stroke="#5a5472" strokeWidth={4} />)}
+      <circle cx={540} cy={1170} r={440} fill="#7d7892" stroke={KC.ink} strokeWidth={10} />
+      {[[320, 910, 60], [740, 970, 80], [520, 1110, 50], [840, 1210, 40], [230, 1230, 70], [640, 850, 34], [400, 1400, 55], [700, 1420, 45]].map(([x, y, r], i) => <ellipse key={i} cx={x} cy={y} rx={r} ry={r * 0.45} fill="#676180" stroke="#5a5472" strokeWidth={4} />)}
       {/* módulo lunar Antares y dos astronautas */}
-      <g transform="translate(450 812) scale(2.2)">
+      <g transform="translate(470 712) scale(1.7)">
         <path d="M -40 30 L -26 6 M 40 30 L 26 6 M -14 30 L -8 8 M 14 30 L 8 8" stroke={KC.ink} strokeWidth={5} />
         <rect x={-30} y={-22} width={60} height={30} rx={4} fill={KC.gold} stroke={KC.ink} strokeWidth={5} />
         <path d="M -22 -22 L -16 -46 L 16 -46 L 22 -22 Z" fill="#dfe5ea" stroke={KC.ink} strokeWidth={5} />
       </g>
-      {[[610, 852], [690, 862]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y + Math.abs(Math.sin(T * 3 + i)) * -8}) scale(2)`}><circle cx={0} cy={-26} r={9} fill="#fff" stroke={KC.ink} strokeWidth={4} /><rect x={-8} y={-18} width={16} height={22} rx={5} fill="#fff" stroke={KC.ink} strokeWidth={4} /></g>)}
+      {[[590, 744], [655, 752]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y + Math.abs(Math.sin(T * 3 + i)) * -8}) scale(1.6)`}><circle cx={0} cy={-26} r={9} fill="#fff" stroke={KC.ink} strokeWidth={4} /><rect x={-8} y={-18} width={16} height={22} rx={5} fill="#fff" stroke={KC.ink} strokeWidth={4} /></g>)}
       <path d={`M ${R.x - R.rx} ${R.y} A ${R.rx} ${R.ry} 0 0 0 ${R.x + R.rx} ${R.y}`} fill="none" stroke={KC.cyan} strokeWidth={6} strokeDasharray="16 14" opacity=".9" />
       {frente && nave}
     </svg>
     <div style={{ position:'absolute', left:0, right:0, top:400, textAlign:'center', font:`700 58px ${KF.mono}`, color:KC.texto, textShadow:SOMBRA }}>vuelta <span style={{ color:KC.yellow }}>{vuelta}</span> / 34</div>
-    <Etq T={T} at={a + 1.2} until={b} x={70} y={640} texto="Roosa, solo (de la vuelta 12 a la 32)" color={KC.cyan} />
-    <Etq T={T} at={a + 2.0} until={b} x={600} y={715} texto="Shepard y Mitchell" color={KC.texto} />
+    <Etq T={T} at={a + 1.2} until={b} x={70} y={600} texto="Roosa, solo (de la vuelta 12 a la 32)" color={KC.cyan} />
+    <Etq T={T} at={a + 2.0} until={b} x={600} y={650} texto="Shepard y Mitchell" color={KC.texto} />
   </>;
 }
 
@@ -201,12 +201,12 @@ function SemillaCorte({ T, r }) {
 
 // Escena de la semilla grande (re-gancho + por dentro).
 function SemillaGrande({ T, P, D }) {
-  const s = klerp(0.6, 1, kprog(T, P, P + 2.2, kEase.suave));
+  const s = klerp(0.85, 1.3, kprog(T, P, P + 2.2, kEase.suave));
   return <>
     <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 55%, #1b2333 0%, #0E0F12 70%)' }}></div>
     <Ambiente T={T} n={34} seed={12} color="rgba(234,255,247,.4)" tam={[3, 8]} />
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-      <g transform={`translate(540 1090) scale(${s}) rotate(${mece(T, 3, 0.15) * 4})`}><SemillaAla s={8} borde={1.2} /></g>
+      <g transform={`translate(540 1350) scale(${s}) rotate(${mece(T, 3, 0.15) * 4})`}><SemillaAla s={8} borde={1.2} /></g>
     </svg>
     <Escala T={T} z={s} pxPorMm={37} />
   </>;
@@ -287,8 +287,8 @@ function Igual({ T, a }) {
       <line x1={80} y1={top - 70 * s} x2={1000} y2={top - 70 * s} stroke={KC.ink} strokeWidth={6} strokeDasharray="20 14" opacity={kprog(T, a + 2.8, a + 3.3)} />
     </svg>
     <Chip T={T} at={a + 3.0} texto="40+ años: sin diferencia" y={420} borde={KC.gold} tam={44} />
-    <Chip T={T} at={a + 0.6} texto="lunar" x={300} y={1530} borde={KC.lilac} tam={38} />
-    <Chip T={T} at={a + 0.8} texto="terrestre" x={790} y={1530} borde={KC.cyan} tam={38} />
+    <Chip T={T} at={a + 0.6} texto="lunar" x={300} y={1500} borde={KC.lilac} tam={38} />
+    <Chip T={T} at={a + 0.8} texto="terrestre" x={790} y={1500} borde={KC.cyan} tam={38} />
   </>;
 }
 
@@ -300,7 +300,7 @@ function Lista({ T, a }) {
     <FondoLunares color={KC.mint} />
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       {arb.sort((p, q) => p[1] - q[1]).map(([x, y, q], i) => {
-        const e = kentrada(T, a + 0.3 + i * 0.07, null, 'pop'); if (T < a + 0.3 + i * 0.07) return null;
+        const t0 = a + 0.15 + ((i * 17) % 40) * 0.04, e = kentrada(T, t0, null, 'pop'); if (T < t0) return null;
         return <g key={i} transform={`translate(${x} ${y}) scale(${1.7 * e.s}) rotate(${mece(T, i, 0.25) * 3})`} opacity={e.o}>
           <rect x={-6} y={-10} width={12} height={30} fill={TRONCO} stroke={KC.ink} strokeWidth={3} />
           <path d="M 0 -78 L 30 -28 L 18 -28 L 40 6 L -40 6 L -18 -28 L -30 -28 Z" fill={VERDE} stroke={KC.ink} strokeWidth={4} strokeLinejoin="round" />
@@ -338,21 +338,21 @@ function LunaNarrado() {
       <Chip T={T} at={K.C + 0.6} until={K.Ou} texto="34 vueltas a la Luna" y={445} tam={40} />
 
       {/* viaje */}
-      <Chip T={T} at={K.V + 0.2} until={K.E - 0.2} texto="Stuart Roosa · Apolo 14 · 1971" y={290} tam={40} />
-      <Chip T={T} at={K.V + 2.3} until={K.E - 0.2} texto="exbombero forestal" y={1400} borde={KC.red} tam={40} />
-      <Etq T={T} at={K.V + 1.2} until={K.E - 0.2} x={730} y={893} texto="equipaje" color={KC.ink} />
+      <Chip T={T} at={K.V + 0.2} until={K.E - 0.2} texto="Stuart Roosa · Apolo 14 · 1971" y={390} tam={40} />
+      <Chip T={T} at={K.V + 2.3} until={K.E - 0.2} texto="exbombero forestal" y={1450} borde={KC.red} tam={40} />
+      <Etq T={T} at={K.V + 1.2} until={K.E - 0.2} x={745} y={935} texto="equipaje" color={KC.ink} />
       {/* especies */}
-      <Chip T={T} at={K.E + 0.1} until={K.O - 0.2} texto="5 árboles" y={380} tam={44} />
+      <Chip T={T} at={K.E + 0.1} until={K.O - 0.2} texto="5 árboles" y={470} tam={44} />
       {/* órbita */}
-      <Chip T={T} at={K.O + 0.6} until={K.P - 0.2} texto="no pisaron la Luna" y={520} borde={KC.red} tam={40} />
+      <Chip T={T} at={K.O + 0.6} until={K.P - 0.2} texto="no pisaron la Luna" y={510} borde={KC.red} tam={40} />
       {/* por dentro (Lupa en modo rayos X) */}
-      <Lupa T={T} at={K.D + 0.1} until={K.Va - 0.3} x={380} y={630} r={250} fx={540} fy={1090} interior={(t, r) => <SemillaCorte T={t} r={r} />} etiqueta="POR DENTRO · semilla" />
-      <Etq T={T} at={K.D + 0.9} until={K.Va - 0.3} x={650} y={480} texto="cubierta" />
-      <Etq T={T} at={K.D + 1.3} until={K.Va - 0.3} x={650} y={620} texto="reserva" color={KC.gold2} />
-      <Etq T={T} at={K.D + 1.7} until={K.Va - 0.3} x={650} y={760} texto="embrión" color="#b8e986" />
-      <Medidor T={T} at={K.D + 3.6} until={K.Va - 0.3} etiqueta="AGUA EN LA SEMILLA" valor={(t) => 0.08 * kprog(t, K.D + 3.8, K.D + 4.6)} texto={() => 'muy poca'} y={1560} color={KC.cyan} />
+      <Lupa T={T} at={K.D + 0.1} until={K.Va - 0.3} x={540} y={760} r={255} fx={540} fy={1350} interior={(t, r) => <SemillaCorte T={t} r={r} />} etiqueta="POR DENTRO · semilla" />
+      <Etq T={T} at={K.D + 0.9} until={K.Va - 0.3} x={815} y={610} texto="cubierta" />
+      <Etq T={T} at={K.D + 1.3} until={K.Va - 0.3} x={815} y={750} texto="reserva" color={KC.gold2} />
+      <Etq T={T} at={K.D + 1.7} until={K.Va - 0.3} x={815} y={890} texto="embrión" color="#b8e986" />
+      <Medidor T={T} at={K.D + 3.6} until={K.Va - 0.3} etiqueta="AGUA EN LA SEMILLA" valor={(t) => 0.08 * kprog(t, K.D + 3.8, K.D + 4.6)} texto={() => 'muy poca'} y={380} color={KC.cyan} />
       {/* vacío → germinaron */}
-      <MitoTachado T={T} at={K.Va + 3.6} tacharEn={K.I - 1.4} until={K.I - 0.3} texto="¿Ya no sirven?" y={1500} />
+      <MitoTachado T={T} at={K.Va + 3.6} tacharEn={K.I - 1.4} until={K.I - 0.3} texto="¿Ya no sirven?" y={1440} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.2} until={K.V - 0.1} texto="No es un árbol cualquiera: *34 vueltas a la Luna.*" />
