@@ -40,6 +40,10 @@ function Caja({ x, y, s = 1 }) {
     {Array.from({ length: 70 }, (_, i) => <circle key={i} cx={-290 + R() * 580} cy={140 + R() * 76} r={2 + R() * 4} fill={i % 3 ? '#8e4a2a' : '#c0392b'} />)}
   </g>;
 }
+// Acercamiento: lleva el punto `de` al punto `a` y agranda k veces (pase a mano del estilo cine).
+function DZ({ k = 1, de = [0, 0], a = [0, 0], children }) {
+  return <g transform={`translate(${a[0]} ${a[1]}) scale(${k}) translate(${-de[0]} ${-de[1]})`}>{children}</g>;
+}
 // Chispazo (estrella amarilla).
 function Chispazo({ x, y, f = 1, r = 60 }) {
   if (f <= 0 || f >= 1) return null;
@@ -107,7 +111,7 @@ function BocaBrillo({ T, x, y, s = 1, brillo = 0 }) {
     <defs><filter id="glowb" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22" /></filter></defs>
     <ellipse cx={0} cy={-62} rx={250} ry={70} fill={VERDOSO} opacity={0.75 * g} filter="url(#glowb)" />
     <path d="M -220 -40 Q 0 -150 220 -40 L 200 -20 Q 0 -110 -200 -20 Z" fill={mixHex('#3a3a3a', VERDOSO, g)} stroke="rgba(255,255,255,.35)" strokeWidth={4} />
-    {Array.from({ length: 8 }, (_, i) => { const tx = -175 + i * 50; return <rect key={i} x={tx} y={-40 + Math.abs(i - 3.5) * 6} width={44} height={56} rx={10} fill="#2a2d33" stroke="rgba(255,255,255,.25)" strokeWidth={3} />; })}
+    {Array.from({ length: 8 }, (_, i) => { const tx = -197 + i * 50; return <rect key={i} x={tx} y={-40 + Math.abs(i - 3.5) * 6} width={44} height={56} rx={10} fill="#2a2d33" stroke="rgba(255,255,255,.25)" strokeWidth={3} />; })}
     <path d="M -240 -40 Q 0 -190 240 -40 Q 0 170 -240 -40 Z" fill="none" stroke="rgba(255,255,255,.4)" strokeWidth={6} />
   </g>;
 }
@@ -136,16 +140,19 @@ function Cerillo32() {
       <Escena T={T} a={K.G} b={K.Ca} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Caja x={500} y={850} />
-          <Cerillo T={T} x={hx} y={hy} rot={klerp(78, 12, lev)} s={1} flama={kprog(T, K.G + 0.5, K.G + 1.1, kEase.sale)} />
-          <Chispazo x={760} y={1032} f={kprog(T, K.G + 0.45, K.G + 0.9)} r={80} />
-          <BarraEscala x={70} y={1450} px={120} texto="1 cm" />
+          <DZ k={1.6} de={[500, 900]} a={[540, 960]}>
+            <Caja x={500} y={850} />
+            <Cerillo T={T} x={hx} y={hy} rot={klerp(78, 12, lev)} s={1} flama={kprog(T, K.G + 0.5, K.G + 1.1, kEase.sale)} />
+            <Chispazo x={760} y={1032} f={kprog(T, K.G + 0.45, K.G + 0.9)} r={80} />
+          </DZ>
+          <BarraEscala x={70} y={1370} px={192} texto="1 cm" />
         </SvgCapa>
       </Escena>
       {/* 1 · la cabeza por dentro */}
       <Escena T={T} a={K.Ca} b={K.Ti} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <DZ k={1.3} de={[540, 820]} a={[540, 800]}>
           <rect x={480} y={1060} width={120} height={500} rx={20} fill={MADERA} stroke={KC.ink} strokeWidth={9} />
           <ellipse cx={540} cy={820} rx={230} ry={300} fill={CAB} stroke={KC.ink} strokeWidth={12} />
           <clipPath id="cabclip"><ellipse cx={540} cy={820} rx={222} ry={292} /></clipPath>
@@ -156,7 +163,8 @@ function Cerillo32() {
             {azufres.map(([dx, dy], i) => { const e = kprog(T, K.Ca + 2.4 + i * 0.08, K.Ca + 2.8 + i * 0.08, kEase.rebote);
               return <circle key={i} cx={540 + dx} cy={820 + dy} r={22 * e} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />; })}
           </g>
-          <BarraEscala x={70} y={1450} px={160} texto="1 mm" />
+          </DZ>
+          <BarraEscala x={70} y={1400} px={208} texto="1 mm" />
         </SvgCapa>
       </Escena>
       {/* 2–4 · la tira al microscopio: fricción, fósforo blanco y chispa */}
@@ -164,6 +172,8 @@ function Cerillo32() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} seed={9} color="rgba(255,190,120,.25)" />
         <SvgCapa>
+          {/* cámara: muy cerca de la tira mientras se habla de ella; se abre cuando llega la cabeza del cerillo */}
+          <g transform={`translate(540 ${klerp(960, 1112, kprog(T, K.Fr - 0.6, K.Fr + 0.3, kEase.suave))}) scale(${klerp(1.7, 1.2, kprog(T, K.Fr - 0.6, K.Fr + 0.3, kEase.suave))}) translate(-540 -1010)`}>
           <rect x={0} y={810} width={KW} height={400} fill="#593c24" opacity={0.9} />
           <rect x={0} y={810} width={KW} height={14} fill="#6e5438" />
           {vidrios.map(([x, y, r, k], i) => <path key={i} d={`M ${-k} ${k * 0.6} L ${k * 0.2} ${-k} L ${k} ${k * 0.4} Z`} transform={`translate(${x} ${y}) rotate(${r})`} fill="rgba(200,240,255,.75)" stroke="#e8fbff" strokeWidth={3} />)}
@@ -179,7 +189,8 @@ function Cerillo32() {
             {azufres.slice(0, 6).map(([dx, dy], i) => <circle key={i} cx={dx * 0.7} cy={dy * 0.5 + 30} r={16} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} />)}
             <rect x={-260} y={200} width={520} height={60} fill={`rgba(255,${klerp(200, 90, calor)},40,${0.6 * calor})`} />
           </g>}
-          {T > K.Fr && T < K.Ll + 0.4 && <g transform="translate(990 600)" opacity={kprog(T, K.Fr, K.Fr + 0.4)}>
+          </g>
+          {T > K.Fr && T < K.Ll + 0.4 && <g transform="translate(975 350) scale(0.7)" opacity={kprog(T, K.Fr, K.Fr + 0.4)}>
             <rect x={-26} y={-260} width={52} height={300} rx={26} fill="#fff" stroke={KC.ink} strokeWidth={6} />
             <rect x={-12} y={20 - 240 * calor} width={24} height={240 * calor + 10} rx={10} fill={KC.red} />
             <circle cx={0} cy={50} r={40} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
@@ -190,6 +201,7 @@ function Cerillo32() {
       <Escena T={T} a={K.Ll} b={K.Pr} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
+          <DZ k={1.7} de={[600, 820]} a={[540, 980]}>
           <Cerillo T={T} x={600} y={820} rot={0} s={2.4} mano={false} flama={kprog(T, K.Ll + 2.3, K.Ll + 3.2, kEase.sale)} quema={kprog(T, K.Ll + 3.2, K.Ll + 4.8)} />
           <g opacity={1 - kprog(T, K.Ll + 2.6, K.Ll + 3.2)}>
             {cristales.slice(0, 6).map(([dx, dy, r], i) => <rect key={i} x={600 + dx * 0.18 - 9} y={800 + dy * 0.16 - 9} width={18} height={18} rx={3} fill="#f4f8ff" stroke={KC.ink} strokeWidth={2} />)}
@@ -197,90 +209,97 @@ function Cerillo32() {
           </g>
           {Array.from({ length: 6 }, (_, i) => { const t0 = K.Ll + 0.4 + i * 0.2, p = kprog(T, t0, t0 + 1.4, kEase.suave);
             return T > t0 && p < 1 ? <Mol key={i} tipo="o2" x={600 + (i - 2.5) * 70 + Math.sin(T * 3 + i) * 10} y={klerp(800, 520, p)} s={0.5} o={1 - p} /> : null; })}
-          <BarraEscala x={70} y={1450} px={150} texto="1 mm" />
+          </DZ>
+          <BarraEscala x={70} y={1400} px={255} texto="1 mm" />
         </SvgCapa>
       </Escena>
       {/* 6 · pregunta: el cerillo de antes */}
       <Escena T={T} a={K.Pr} b={K.Hu} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Cerillo T={T} x={250} y={850} rot={Math.sin(T * 2) * 5} s={1.15} cabeza={P_BLANCO} mano={false} />
-          <text x={250} y={700} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 250 560)`}>?</text>
+          <Cerillo T={T} x={250} y={900} rot={Math.sin(T * 2) * 5} s={1.9} cabeza={P_BLANCO} mano={false} />
+          <text x={250} y={760} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 250 620)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 7 · 1888: la huelga de Londres */}
       <Escena T={T} a={K.Hu} b={K.Qu} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
+          <DZ k={1.45} de={[430, 1000]} a={[470, 1060]}>
           <Fabrica x={430} y={1000} s={1} T={T} />
           {Array.from({ length: 14 }, (_, i) => { const t0 = K.Hu + 2.6 + i * 0.32, p = kprog(T, t0, t0 + 2.4); if (T < t0) return null;
             const fila = i % 2; return <Personita key={i} x={klerp(630, 1110, p)} y={1110 + fila * 60 + Math.abs(Math.sin(T * 8 + i)) * -6} s={1.9} color={i % 3 ? KC.yellow : KC.coral} />; })}
+          </DZ>
         </SvgCapa>
-        <Contador T={T} at={K.Hu + 2.8} desde={0} hasta={1400} dur={2.8} x={KW / 2} y={1480} tam={120} color={KC.yellow} />
+        <Contador T={T} at={K.Hu + 2.8} desde={0} hasta={1400} dur={2.8} x={KW / 2} y={1440} tam={120} color={KC.yellow} />
       </Escena>
       {/* 8 · la quijada de fósforo */}
       <Escena T={T} a={K.Qu} b={K.Be} zoom={0.03}>
-        <div style={{ position:'absolute', inset:0, background:'#d9c7a0' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'#2b2318' }}></div>
         <SvgCapa>
-          <Cubeta x={250} y={1090} s={0.6} liquido="#f3eccc" color="#8a8f99" nivel={0.7} />
-          <Nube T={T} x={250} y={930} f={kprog(T, K.Qu + 0.2, K.Qu + 1.6)} r={150} color="#d8f5b8" seed={4} />
-          <Perfil x={780} y={850} s={0.95} mal={kprog(T, K.Qu + 1.4, K.Qu + 2.8)} />
-          {T > K.Qu + 3.0 && [0, 1, 2, 3, 4].map((i) => <Personita key={i} x={340 + i * 100} y={1490} s={1.7 * kprog(T, K.Qu + 3.0 + i * 0.1, K.Qu + 3.3 + i * 0.1, kEase.rebote)} color={i === 4 ? mixHex('#ffe11a', '#8a8f99', kprog(T, K.Qu + 4.0, K.Qu + 4.6)) : KC.yellow} o={i === 4 ? 1 - 0.6 * kprog(T, K.Qu + 4.0, K.Qu + 4.6) : 1} />)}
+          <Cubeta x={190} y={1160} s={0.8} liquido="#f3eccc" color="#8a8f99" nivel={0.7} />
+          <Nube T={T} x={190} y={947} f={kprog(T, K.Qu + 0.2, K.Qu + 1.6)} r={150} color="#d8f5b8" seed={4} />
+          <Perfil x={745} y={830} s={1.15} mal={kprog(T, K.Qu + 1.4, K.Qu + 2.8)} />
+          {T > K.Qu + 3.0 && [0, 1, 2, 3, 4].map((i) => <Personita key={i} x={340 + i * 100} y={1440} s={1.7 * kprog(T, K.Qu + 3.0 + i * 0.1, K.Qu + 3.3 + i * 0.1, kEase.rebote)} color={i === 4 ? mixHex('#ffe11a', '#8a8f99', kprog(T, K.Qu + 4.0, K.Qu + 4.6)) : KC.yellow} o={i === 4 ? 1 - 0.6 * kprog(T, K.Qu + 4.0, K.Qu + 4.6) : 1} />)}
           <rect x={0} y={0} width={KW} height={KH} fill="rgba(110,80,40,.12)" />
         </SvgCapa>
       </Escena>
       {/* 9 · Berna 1906 */}
       <Escena T={T} a={K.Be} b={K.Br} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa><Documento T={T} x={640} y={900} s={1} sello={kprog(T, K.Be + 1.6, K.Be + 2.0, kEase.sale)} /></SvgCapa>
+        <SvgCapa><Documento T={T} x={540} y={900} s={1.45} sello={kprog(T, K.Be + 1.6, K.Be + 2.0, kEase.sale)} /></SvgCapa>
       </Escena>
       {/* 10 · brillo en la oscuridad */}
       <Escena T={T} a={K.Br} b={K.Ci} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:'#050608' }}></div>
         <SvgCapa>
-          <g opacity={1 - kprog(T, K.Br + 2.8, K.Br + 3.3)}>
+          <g opacity={1 - kprog(T, K.Br + 2.8, K.Br + 3.3)}><DZ k={2.4} de={[790, 860]} a={[540, 900]}>
             <circle cx={790} cy={860} r={170 + Math.sin(T * 3) * 12} fill={VERDOSO} opacity={0.18 * kprog(T, K.Br + 0.4, K.Br + 1.2)} />
             <circle cx={790} cy={860} r={110} fill={VERDOSO} opacity={0.22 * kprog(T, K.Br + 0.4, K.Br + 1.2)} />
             <path d="M 700 860 Q 690 790 760 780 Q 840 760 880 820 Q 900 900 830 930 Q 740 950 700 860 Z" fill={mixHex('#3a3a3a', '#f5f7d8', kprog(T, K.Br + 0.4, K.Br + 1.2))} stroke="rgba(255,255,255,.4)" strokeWidth={5} />
-          </g>
-          {T > K.Br + 2.8 && <g opacity={kprog(T, K.Br + 2.8, K.Br + 3.4)}><BocaBrillo T={T} x={805} y={860} s={1.0} brillo={kprog(T, K.Br + 3.2, K.Br + 4.2)} /></g>}
+          </DZ></g>
+          {T > K.Br + 2.8 && <g opacity={kprog(T, K.Br + 2.8, K.Br + 3.4)}><BocaBrillo T={T} x={540} y={930} s={1.9} brillo={kprog(T, K.Br + 2.9, K.Br + 3.7)} /></g>}
         </SvgCapa>
       </Escena>
       {/* 11 · cierre: la misma caja, ya con el cerillo encendido */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Caja x={500} y={850} />
-          <Cerillo T={T} x={420} y={700} rot={12} s={1} flama={1} />
-          <BarraEscala x={70} y={1450} px={120} texto="1 cm" />
+          <DZ k={1.6} de={[500, 900]} a={[540, 960]}>
+            <Caja x={500} y={850} />
+            <Cerillo T={T} x={420} y={700} rot={12} s={1} flama={1} />
+          </DZ>
+          <BarraEscala x={70} y={1370} px={192} texto="1 cm" />
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.9} until={K.G + 3.0} texto="¿fuego en la cabeza?" x={330} y={420} tam={44} />
-      <Chip T={T} at={K.G + 3.1} until={K.Ca - 0.3} texto="fósforo: en la tira" x={330} y={420} tam={44} borde={P_ROJO} />
-      <Etq T={T} at={K.G + 3.3} until={K.Ca - 0.3} x={1040} y={1030} texto="tira" lado="izq" tam={36} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.9} until={K.G + 3.0} texto="¿fuego en la cabeza?" x={800} y={470} tam={44} />
+      <Chip T={T} at={K.G + 3.1} until={K.Ca - 0.3} texto="fósforo: en la tira" x={800} y={470} tam={44} borde={P_ROJO} />
+      <Etq T={T} at={K.G + 3.3} until={K.Ca - 0.3} x={1000} y={1164} texto="tira" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.6} until={K.Ti - 0.3} texto="clorato de potasio · KClO₃" x={540} y={1500} tam={40} borde="#f4f8ff" />
       <Chip T={T} at={K.Ca + 2.5} until={K.Ti - 0.3} texto="azufre · S" x={540} y={1610} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.Ti + 0.2} until={K.Fr - 0.2} texto="fósforo rojo + pegamento + vidrio" x={540} y={1500} tam={36} borde={P_ROJO} />
-      <Etq T={T} at={K.Ti + 0.5} until={K.Fr - 0.2} x={40} y={640} texto="AL MICROSCOPIO · la tira" lado="der" tam={32} color={KC.texto} />
-      <Chip T={T} at={K.Fr + 0.6} until={K.Ch - 0.2} texto="fricción = calor" x={540} y={1500} tam={44} borde={KC.orange} />
-      <Chip T={T} at={K.Fr + 2.4} until={K.Ch - 0.2} texto="una pizca: rojo → blanco (P₄)" x={540} y={1610} tam={36} borde={P_BLANCO} />
-      <Chip T={T} at={K.Ch + 0.3} until={K.Ll - 0.2} texto="fósforo blanco + aire = chispa" x={540} y={1500} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.Ti + 0.2} until={K.Fr - 0.2} texto="fósforo rojo + pegamento + vidrio" x={540} y={1450} tam={36} borde={P_ROJO} />
+      <Etq T={T} at={K.Ti + 0.5} until={K.Fr - 0.2} x={40} y={540} texto="AL MICROSCOPIO · la tira" lado="der" tam={32} color={KC.texto} />
+      <Chip T={T} at={K.Fr + 0.6} until={K.Ch - 0.2} texto="fricción = calor" x={540} y={1450} tam={44} borde={KC.orange} />
+      <Chip T={T} at={K.Fr + 2.4} until={K.Ch - 0.2} texto="una pizca: rojo → blanco (P₄)" x={540} y={1555} tam={36} borde={P_BLANCO} />
+      <Chip T={T} at={K.Ch + 0.3} until={K.Ll - 0.2} texto="fósforo blanco + aire = chispa" x={540} y={1450} tam={38} borde={KC.yellow} />
       <Chip T={T} at={K.Ll + 0.3} until={K.Ll + 2.1} texto="clorato → oxígeno" x={540} y={1500} tam={44} borde="#bfe8ff" />
       <Chip T={T} at={K.Ll + 2.2} until={K.Pr - 0.2} texto="arde el azufre → la madera" x={540} y={1500} tam={40} borde={KC.orange} />
       <Chip T={T} at={K.Pr + 0.4} until={K.Hu - 0.2} texto="antes: fósforo blanco en la cabeza" x={540} y={1500} tam={34} borde={P_BLANCO} />
-      <TarjetaEstudio T={T} at={K.Hu + 0.2} until={K.Hu + 2.6} anio="1888" quien="Londres · Bryant & May" revista="The National Archives (Reino Unido)" x={540} y={600} />
-      <Chip T={T} at={K.Hu + 5.4} until={K.Qu - 0.3} texto="huelga por despidos y multas" x={540} y={1610} tam={38} borde={KC.coral} />
-      <Etq T={T} at={K.Hu + 3.2} until={K.Qu - 0.3} x={60} y={1385} texto="mujeres en huelga" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Qu + 0.6} until={K.Qu + 3.0} x={40} y={800} texto="humo de fósforo blanco" lado="der" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Qu + 1.6} until={K.Be - 0.3} x={730} y={1150} texto="hueso de la quijada" lado="izq" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Qu + 3.4} until={K.Be - 0.3} texto="1882–1897 · murió el 19 % de los casos" x={540} y={1610} tam={32} borde={KC.red} />
+      <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, zIndex:43, transform:'scale(.8)', transformOrigin:'540px 340px', pointerEvents:'none' }}>
+        <TarjetaEstudio T={T} at={K.Hu + 0.2} until={K.Hu + 2.6} anio="1888" quien="Londres · Bryant & May" revista="The National Archives (Reino Unido)" x={540} y={340} />
+      </div>
+      <Chip T={T} at={K.Hu + 5.4} until={K.Qu - 0.3} texto="huelga por despidos y multas" x={540} y={1630} tam={38} borde={KC.coral} />
+      <Etq T={T} at={K.Hu + 3.2} until={K.Qu - 0.3} x={60} y={1400} texto="mujeres en huelga" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Qu + 0.6} until={K.Qu + 3.0} x={20} y={715} texto="humo de fósforo blanco" lado="der" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Qu + 1.6} until={K.Be - 0.3} x={768} y={1012} texto="hueso de la quijada" lado="izq" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Qu + 3.4} until={K.Be - 0.3} texto="1882–1897 · murió el 19 % de los casos" x={540} y={1570} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Be + 2.1} until={K.Br - 0.2} texto="sin fósforo blanco en los cerillos" x={540} y={1500} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.Br + 0.8} until={K.Br + 2.8} x={700} y={1020} texto="fósforo blanco" lado="der" tam={34} color={VERDOSO} />
-      <Chip T={T} at={K.Br + 3.6} until={K.Ci - 0.2} texto="encías que brillaban" x={540} y={1500} tam={42} borde={VERDOSO} />
-      <Chip T={T} at={K.Ci + 0.5} until={K.Ou} texto="caja: fósforo rojo + vidrio" x={540} y={1500} tam={38} borde={P_ROJO} />
-      <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="cabeza: clorato + azufre" x={540} y={1610} tam={38} borde={CAB} />
+      <Etq T={T} at={K.Br + 0.8} until={K.Br + 2.8} x={346} y={1210} texto="fósforo blanco" lado="der" tam={34} color={VERDOSO} />
+      <Chip T={T} at={K.Br + 3.6} until={K.Ci - 0.2} texto="encías que brillaban" x={540} y={1450} tam={42} borde={VERDOSO} />
+      <Chip T={T} at={K.Ci + 0.5} until={K.Ou} texto="caja: fósforo rojo + vidrio" x={540} y={1470} tam={38} borde={P_ROJO} />
+      <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="cabeza: clorato + azufre" x={540} y={1575} tam={38} borde={CAB} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ca - 0.1} texto="El fósforo está *en la caja.*" />
