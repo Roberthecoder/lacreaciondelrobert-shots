@@ -1,0 +1,2 @@
+# Avance grupo n033 (pase a mano cine)
+- bio-26-papaya: gancho y cierre agrandados ×1.42 y centrados (llenan el cuadro) con el virus asomando antes del s3; isla de Hawái ×1.3 y papayos más grandes y abajo (Puna recolocada); papayas sobre las barras más grandes; virus y gen bajados al centro; texto de la placa subido; hoja ×1.2 con barra de 15 cm recalculada (150→180 px) y lupa más grande; chips fuera de la franja baja; auditor: sin láminas · encuadre bien; pendiente: nada

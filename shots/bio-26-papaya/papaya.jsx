@@ -203,18 +203,20 @@ function Papaya26() {
       {/* 0 · gancho: el papayo y su papaya; el insecticida se tacha */}
       <Escena T={T} a={K.G} b={K.L} zoom={0.06}>
         <FondoLunares color={KC.yellow} />
-        <Capa>
+        <Capa><g transform="translate(600 1010) scale(1.42) translate(-540 -820)">
           <ellipse cx={330} cy={1185} rx={230} ry={36} fill="rgba(0,0,0,.15)" />
           <Papayo x={330} y={1190} s={0.92} T={T} maduro={0.5} brilloGen={kprog(T, K.G + 2.2, K.G + 3.2)} />
           <Papaya x={760} y={1010} s={0.95 + 0.03 * Math.sin(T * 3)} rot={-10 + Math.sin(T * 2) * 6} maduro={0.75} brilloGen={kprog(T, K.G + 2.2, K.G + 3.2)} T={T} />
+        </g>
+          <g opacity={kprog(T, K.G + 1.8, K.G + 2.6) * 0.9}><VirusPRSV x={klerp(1000, 600, kprog(T, K.G + 1.8, K.G + 4.5, kEase.suave))} y={640} largo={380} grueso={18} T={T} resalta={kprog(T, K.G + 2.4, K.G + 3.0)} /></g>
         </Capa>
       </Escena>
       {/* 1 · llega el virus a Puna, 1992 */}
       <Escena T={T} a={K.L} b={K.Pu}>
         <FondoLunares color={KC.cyan} />
         <Capa>
-          <IslaHawaii x={520} y={740} s={1.0} puna={kprog(T, K.L + 0.8, K.L + 1.3)} T={T} />
-          {[0, 1, 2, 3].map((i) => <Papayo key={i} x={180 + i * 240} y={1200} s={0.3} T={T} seed={i + 3} enferma={kprog(T, K.L + 1.4 + i * 0.3, K.L + 3.2)} />)}
+          <IslaHawaii x={520} y={770} s={1.3} puna={kprog(T, K.L + 0.8, K.L + 1.3)} T={T} />
+          {[0, 1, 2, 3].map((i) => <Papayo key={i} x={165 + i * 250} y={1480} s={0.4} T={T} seed={i + 3} enferma={kprog(T, K.L + 1.4 + i * 0.3, K.L + 3.2)} />)}
         </Capa>
       </Escena>
       {/* 2 · el pulgón pica unos segundos y pasa el virus */}
@@ -249,8 +251,8 @@ function Papaya26() {
           {[[360, 55.8, '1992', barra, PV.verde], [720, 35.7, '1997', barra2, KC.red]].map(([bx, v, a, p, c], i) => { const h = 420 * (v / 55.8) * p;
             return <g key={i}><rect x={bx - 100} y={1180 - h} width={200} height={h} fill={c} stroke={KC.ink} strokeWidth={8} />
               <text x={bx} y={1240} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{a}</text>
-              {p > 0.9 && <text x={bx} y={1160 - h} textAnchor="middle" style={{ font:`400 72px ${KF.titulo}` }} fill={KC.ink}>{kformato(v, 1)}</text>}
-              <Papaya x={bx} y={1180 - h - 130} s={0.3 * p} maduro={0.8} /></g>; })}
+              {p > 0.9 && <text x={bx + 150} y={1160 - h} textAnchor="middle" style={{ font:`400 72px ${KF.titulo}` }} fill={KC.ink}>{kformato(v, 1)}</text>}
+              <Papaya x={bx} y={1180 - h - 175} s={0.42 * p} maduro={0.8} /></g>; })}
           <text x={540} y={1440} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>millones de libras de papaya fresca · Hawái</text>
         </Capa>
       </Escena>
@@ -267,9 +269,9 @@ function Papaya26() {
       <Escena T={T} a={K.Ge} b={K.Di} zoom={0.05}>
         <FondoMarca patron="oscuro" />
         <Capa>
-          <VirusPRSV x={90} y={860} largo={900} grueso={46} T={T} resalta={kprog(T, K.Ge + 1.4, K.Ge + 2.0)} />
+          <VirusPRSV x={90} y={940} largo={900} grueso={46} T={T} resalta={kprog(T, K.Ge + 1.4, K.Ge + 2.0)} />
           {(() => { const sale = kprog(T, K.Ge + 2.4, K.Ge + 3.6, kEase.suave);
-            return sale > 0 ? <g transform={`translate(${klerp(830, 540, sale)} ${klerp(860, 1080, sale)})`}>
+            return sale > 0 ? <g transform={`translate(${klerp(830, 540, sale)} ${klerp(940, 1160, sale)})`}>
               <path d="M -90 0 q 22 -24 45 0 t 45 0 t 45 0 t 45 0" stroke={PV.gen} strokeWidth={16} fill="none" strokeLinecap="round" style={{ filter:'drop-shadow(0 0 14px #F4C25A)' }} />
             </g> : null; })()}
           <BarraEscala x={90} y={1460} ancho={180} texto="≈ 160 nm" />
@@ -283,18 +285,18 @@ function Papaya26() {
           <PlacaCelulas x={540} y={1110} s={1.6} T={T} brillo={kprog(T, K.Di + 1.8, K.Di + 2.6)} />
           {disparo > 0 && disparo < 1 && Array.from({ length: 16 }, (_, i) => { const u = kclamp(disparo * 1.6 - (i % 5) * 0.12, 0, 1), xx = 540 + ((i * 37) % 200) - 100;
             return u > 0 && u < 1 ? <circle key={i} cx={xx} cy={klerp(700, 1100, u)} r={9} fill={PV.gen} stroke={KC.ink} strokeWidth={3} /> : null; })}
-          <text x={540} y={1650} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>células de papaya en cultivo</text>
+          <text x={540} y={1270} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>células de papaya en cultivo</text>
         </Capa>
       </Escena>
       {/* 8 · por dentro: la planta lee el gen y corta el ARN parecido */}
       <Escena T={T} a={K.Si} b={K.Es} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          <HojaPapaya x={540} y={1640} s={2.0} rot={0} T={T} seed={8} />
-          <BarraEscala x={50} y={1470} ancho={150} texto="≈ 15 cm" color={KC.ink} />
+          <HojaPapaya x={540} y={1560} s={2.4} rot={0} T={T} seed={8} />
+          <BarraEscala x={40} y={1120} ancho={180} texto="≈ 15 cm" color={KC.ink} />
         </Capa>
       </Escena>
-      <Lupa T={T} at={K.Si + 0.2} until={K.Es - 0.3} x={540} y={760} r={330} fx={540} fy={1400} tinte={KC.mint} etiqueta="POR DENTRO · célula de la hoja" interior={(T2, r) => {
+      <Lupa T={T} at={K.Si + 0.2} until={K.Es - 0.3} x={540} y={760} r={360} fx={540} fy={1330} tinte={KC.mint} etiqueta="POR DENTRO · célula de la hoja" interior={(T2, r) => {
         const lee = kprog(T2, K.Si + 0.6, K.Si + 1.6), entra = kprog(T2, K.Si + 2.4, K.Si + 3.4, kEase.suave), corta = kprog(T2, K.Si + 3.5, K.Si + 4.6);
         return <svg width={2 * r} height={2 * r}>
           <rect width={2 * r} height={2 * r} fill="#0d2a1c" />
@@ -361,34 +363,35 @@ function Papaya26() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <Capa>
+          <g transform="translate(600 1010) scale(1.42) translate(-540 -820)">
           <ellipse cx={330} cy={1185} rx={230} ry={36} fill="rgba(0,0,0,.15)" />
           <Papayo x={330} y={1190} s={0.92} T={T} maduro={0.7} brilloGen={1} />
-          <Papaya x={760} y={1010} s={0.95} rot={-10 + Math.sin(T * 2) * 6} maduro={0.85} brilloGen={1} T={T} />
+          <Papaya x={760} y={1010} s={0.95} rot={-10 + Math.sin(T * 2) * 6} maduro={0.85} brilloGen={1} T={T} /></g>
         </Capa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.6} until={K.G + 2.2} texto="¿insecticida?" x={540} y={1500} tam={46} />
-      <Chip T={T} at={K.G + 2.4} until={K.L - 0.3} texto="un gen del virus" x={760} y={1500} tam={42} borde={PV.gen} />
-      <Chip T={T} at={K.L + 0.9} until={K.Pu - 0.3} texto="Puna, Hawái · 1992" y={1490} tam={44} borde={KC.red} />
-      <Etq T={T} at={K.L + 1.0} until={K.Pu - 0.3} x={800} y={650} texto="Puna" lado="der" tam={40} color={KC.ink} />
-      <Chip T={T} at={K.Pu + 1.4} until={K.D - 0.3} texto="un piquete de segundos" y={1500} tam={42} borde={PV.virus} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.6} until={K.G + 2.2} texto="¿insecticida?" x={540} y={330} tam={46} />
+      <Chip T={T} at={K.G + 2.4} until={K.L - 0.3} texto="un gen del virus" x={760} y={330} tam={42} borde={PV.gen} />
+      <Chip T={T} at={K.L + 0.9} until={K.Pu - 0.3} texto="Puna, Hawái · 1992" y={300} tam={44} borde={KC.red} />
+      <Etq T={T} at={K.L + 1.0} until={K.Pu - 0.3} x={880} y={700} texto="Puna" lado="der" tam={40} color={KC.ink} />
+      <Chip T={T} at={K.Pu + 1.4} until={K.D - 0.3} texto="un piquete de segundos" y={420} tam={42} borde={PV.virus} />
       <Etq T={T} at={K.D + 0.6} until={K.Ca - 0.3} x={560} y={600} texto="manchas en anillo" tam={34} color={KC.ink} />
       <Chip T={T} at={K.D + 2.4} until={K.Ca - 0.3} texto="puede bajar 50 % o más" x={540} y={1490} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.Ca + 2.7} until={K.Pr - 0.2} texto="−36 % en 5 años" y={1520} tam={46} borde={KC.red} />
       <Etq T={T} at={K.Pr + 1.0} until={K.Ge - 0.2} x={520} y={1090} texto="virus de la mancha anular" tam={30} />
       <Chip T={T} at={K.Ge + 2.0} until={K.Di - 0.3} texto="gen de la cubierta del virus" y={1500} tam={40} borde={PV.gen} />
-      <Etq T={T} at={K.Ge + 0.4} until={K.Ge + 2.0} x={500} y={760} texto="cubierta de proteína" tam={32} />
-      <Etq T={T} at={K.Ge + 0.8} until={K.Ge + 2.2} x={500} y={970} texto="ARN" tam={32} color={PV.arn} />
-      <Chip T={T} at={K.Di + 1.6} until={K.Si - 0.3} texto="bombardeo con microbalines" y={1520} tam={40} borde={PV.gen} />
-      <Chip T={T} at={K.Si + 1.2} until={K.Es - 0.4} texto="silenciamiento de ARN" y={1520} tam={40} borde={KC.lilac} />
+      <Etq T={T} at={K.Ge + 0.4} until={K.Ge + 2.0} x={500} y={840} texto="cubierta de proteína" tam={32} />
+      <Etq T={T} at={K.Ge + 0.8} until={K.Ge + 2.2} x={500} y={1050} texto="ARN" tam={32} color={PV.arn} />
+      <Chip T={T} at={K.Di + 1.6} until={K.Si - 0.3} texto="bombardeo con microbalines" y={1380} tam={40} borde={PV.gen} />
+      <Chip T={T} at={K.Si + 1.2} until={K.Es - 0.4} texto="silenciamiento de ARN" y={320} tam={40} borde={KC.lilac} />
       <TarjetaEstudio T={T} at={K.Es + 0.1} until={K.Es + 2.9} anio="1995" quien="Puna, Hawái · ensayo de campo" revista="Ferreira et al. · Plant Disease (2002)" y={430} />
       <Chip T={T} at={K.Es + 3.1} until={K.Ra - 0.3} texto="control: 100 % enfermas · con el gen: 0" y={1500} tam={34} borde={KC.mint} />
       <Chip T={T} at={K.Ra + 0.2} until={K.Ra + 2.4} texto="1998 · sale Rainbow" y={1500} tam={46} borde={KC.orange} />
       <Etq T={T} at={K.Ra + 0.8} until={K.Me - 0.3} x={200} y={570} texto="pulpa amarilla" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Me + 3.6} until={mx - 0.2} texto="Rainbow: defensa a la medida" y={1500} tam={40} borde={PV.gen} />
       <Chip T={T} at={mx + 0.3} until={K.Ci - 0.3} texto="el virus también está en México" y={1500} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="un pedacito del virus la defiende" x={540} y={1500} tam={38} borde={PV.gen} />
+      <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="un pedacito del virus la defiende" x={540} y={330} tam={38} borde={PV.gen} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.L - 0.1} texto="No fue insecticida: *un pedacito del virus.*" />
