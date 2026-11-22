@@ -283,7 +283,8 @@ function CornezueloShot() {
       <Escena T={T} a={K.Po} b={ES2} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
-        {fsvg(<g transform="translate(540 950) scale(1.25) translate(-540 -950)"><CorteFlor T={T} polen={kprog(T, K.Po + 0.2, K.Po + 0.8)} hifa={kprog(T, K.Po + 0.6, K.Es - 0.2, kEase.suave)} invade={kprog(T, K.Es - 0.3, ES2 - 0.2, kEase.sale)} /></g>)}
+        {/* encuadre: el corte baja 160 px y crece (antes translate(540 950) scale(1.25)); etiquetas y barra de 1 mm (250 → 260 px) con él */}
+        {fsvg(<g transform="translate(540 1110) scale(1.3) translate(-540 -950)"><CorteFlor T={T} polen={kprog(T, K.Po + 0.2, K.Po + 0.8)} hifa={kprog(T, K.Po + 0.6, K.Es - 0.2, kEase.suave)} invade={kprog(T, K.Es - 0.3, ES2 - 0.2, kEase.sale)} /></g>)}
       </Escena>
       {/* 3b · macro: la gota de mielecilla con esporas y el insecto que la lleva */}
       <Escena T={T} a={ES2} b={K.Cu} zoom={0.05}>
@@ -305,7 +306,7 @@ function CornezueloShot() {
       <Escena T={T} a={K.P} b={K.V} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <g transform="translate(190 60) translate(430 980) scale(1.25) translate(-430 -980)">
+          <g transform="translate(260 200) translate(430 980) scale(1.5) translate(-430 -980)">{/* encuadre: antes translate(190 60) y escala 1.25; baja y crece (barra de 10 cm: 247 → 296 px) */}
           <Molino T={T} x={270} y={560} s={0.95} />
           {Array.from({ length: 7 }, (_, i) => { const u = ((T - K.P) * 1.4 + i / 7) % 1; return T > K.P ? (i % 3 === 1 ? <Cuerno key={i} x={230 + (i % 3) * 30} y={klerp(380, 470, u) + 40} largo={50} ancho={14} rot={90 + i * 30} /> : <ellipse key={i} cx={230 + (i % 3) * 35} cy={klerp(380, 470, u)} rx={14} ry={8} fill={CZ.grano} stroke={KC.ink} strokeWidth={2} />) : null; })}
           <path d="M 270 680 L 270 800" stroke={KC.ink} strokeWidth={10} strokeDasharray="16 12" strokeDashoffset={-T * 50} />
@@ -317,8 +318,8 @@ function CornezueloShot() {
       {/* 6 · los vasos se cierran y los dedos se mueren */}
       <Escena T={T} a={K.V} b={K.SA} zoom={0.04}>
         <FondoLunares color={KC.coral} />
-        {fsvg(<Mano x={560} y={1520} s={1.45} necro={necro} />)}
-        <Lupa T={T} at={K.V + 0.4} until={K.SA - 0.3} x={360} y={560} r={210} fx={618} fy={990} tinte={KC.red} etiqueta="POR DENTRO · vaso sanguíneo" interior={(TT, r) => <VasoInterior T={TT} r={r} cierra={cierraV} />} />
+        {fsvg(<Mano x={560} y={1280} s={1.5} necro={necro} />)}   {/* encuadre: antes y 1520, s 1.45 (cargada abajo); barra de 2 cm 174 → 180 px */}
+        <Lupa T={T} at={K.V + 0.4} until={K.SA - 0.3} x={390} y={360} r={175} fx={620} fy={732} tinte={KC.red} etiqueta="POR DENTRO · vaso sanguíneo" interior={(TT, r) => <VasoInterior T={TT} r={r} cierra={cierraV} />} />
       </Escena>
       {/* 7 · fuego de San Antonio (Edad Media) */}
       <Escena T={T} a={K.SA} b={K.E} zoom={0.05}>
@@ -362,7 +363,7 @@ function CornezueloShot() {
       <Escena T={T} a={K.M} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          {(() => { const u = kprog(T, K.M + 0.4, K.M + 1.3, kEase.suave); return <g transform="translate(540 900) scale(2.0) translate(-540 -900)">
+          {(() => { const u = kprog(T, K.M + 0.4, K.M + 1.3, kEase.suave); return <g transform="translate(540 1150) scale(2.0) translate(-540 -900)">   {/* encuadre: baja 250 px al centro (antes translate(540 900)) */}
             {/* modo cine: el cornezuelo no se apaga; queda atenuado junto al frasco que sale de él */}
             <g opacity={1 - 0.5 * u}><Cuerno x={klerp(470, 390, u)} y={920} largo={260} ancho={60} rot={-12} /></g>
             <g opacity={u} transform={`translate(${klerp(420, 610, u)} ${klerp(900, 820, u)}) scale(${klerp(0.4, 1.25, u)})`}><Frasco x={0} y={0} /></g>
@@ -383,7 +384,8 @@ function CornezueloShot() {
       {/* 12 · hoy: el molino lo separa */}
       <Escena T={T} a={K.Mo} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<g transform="translate(540 920) scale(1.4) translate(-540 -920)"><Banda T={T} a={K.Mo} y={860} /></g>)}
+        {/* encuadre: la banda baja y crece (antes translate(540 920) scale(1.4)); barra de 1 cm 154 → 176 px */}
+        {fsvg(<g transform="translate(540 1060) scale(1.6) translate(-540 -920)"><Banda T={T} a={K.Mo} y={860} /></g>)}
       </Escena>
       {/* 13 · cierre: la misma espiga, ahora con su frasquito de medicina */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.06} origen="35% 45%">
@@ -402,16 +404,16 @@ function CornezueloShot() {
       <Etq T={T} at={K.F + 0.8} until={K.Po - 0.3} x={60} y={480} texto="Claviceps purpurea" it tam={40} color={KC.ink} />
       <Etq T={T} at={K.F + 1.8} until={K.Po - 0.3} x={30} y={700} texto="flor del centeno" tam={26} color={KC.ink} />
       <Etq T={T} at={K.F + 2.2} until={K.Po - 0.3} x={30} y={620} texto="espora" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Po + 0.4} until={ES2 - 0.3} x={430} y={420} texto="estigma" lado="izq" tam={30} />
-      <Etq T={T} at={K.Po + 0.9} until={K.Es - 0.4} x={500} y={700} texto="camino del polen" lado="izq" tam={28} color={KC.lilac} />
-      <Etq T={T} at={K.Po + 1.4} until={ES2 - 0.3} x={600} y={860} texto="hifa" tam={34} color="#ffe7a0" />
-      <Etq T={T} at={K.Po + 2.2} until={ES2 - 0.3} x={800} y={1000} texto="ovario" tam={32} />
+      <Etq T={T} at={K.Po + 0.4} until={ES2 - 0.3} x={426} y={559} texto="estigma" lado="izq" tam={30} />
+      <Etq T={T} at={K.Po + 0.9} until={K.Es - 0.4} x={498} y={851} texto="camino del polen" lado="izq" tam={28} color={KC.lilac} />
+      <Etq T={T} at={K.Po + 1.4} until={ES2 - 0.3} x={602} y={1017} texto="hifa" tam={34} color="#ffe7a0" />
+      <Etq T={T} at={K.Po + 2.2} until={ES2 - 0.3} x={810} y={1162} texto="ovario" tam={32} />
       <Chip T={T} at={ES2 + 0.5} until={K.Cu - 0.3} texto="mielecilla: jarabe de azúcar + esporas" x={500} y={470} tam={32} borde={CZ.miel} />
       <Etq T={T} at={ES2 + 1.2} until={K.Cu - 0.3} x={60} y={600} texto="insecto" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Cu + 1.0} until={K.P - 0.3} x={440} y={830} texto="esclerocio (cornezuelo)" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Cu + 1.3} until={K.P - 0.3} x={270} y={640} texto="grano de centeno" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Cu + 1.8} until={K.P - 0.3} texto="alcaloides: ergotamina, ergometrina…" x={390} y={440} tam={27} borde={KC.lilac} />
-      <Chip T={T} at={K.V + 2.4} until={K.SA - 0.3} texto="gangrena" x={830} y={950} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.V + 2.4} until={K.SA - 0.3} texto="gangrena" x={850} y={690} tam={40} borde={KC.red} />
       <Chip T={T} at={K.SA + 0.3} until={K.E - 0.3} texto="Edad Media · ergotismo" x={400} y={470} tam={34} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Cul - 0.3} anio="2001" quien="Arsi, Etiopía · 18 casos" revista="Urga et al., Ethiop. J. Health Dev., 2002" x={380} y={530} />
       <Chip T={T} at={K.E + 2.8} until={K.Cul - 0.3} texto="de 5 a 30 años" x={790} y={830} tam={32} borde={KC.ink} />
@@ -419,28 +421,28 @@ function CornezueloShot() {
       <Etq T={T} at={K.Cul + 0.4} until={K.M - 0.3} x={800} y={1100} texto="cebada" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Cul + 2.0} until={K.M - 0.3} x={60} y={470} texto="avena silvestre" tam={32} color={KC.ink} />
       <Etq T={T} at={K.Cul + 2.3} until={K.M - 0.3} x={60} y={520} texto="+ cornezuelo" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.M + 1.4} until={K.H - 0.3} texto="migraña · dihidroergotamina" x={540} y={1090} tam={32} borde={KC.cyan} />
-      <Chip T={T} at={K.M + 2.4} until={K.H - 0.3} texto="sangrado después del parto · ergometrina" x={540} y={1175} tam={28} borde={KC.cyan} />
+      <Chip T={T} at={K.M + 1.4} until={K.H - 0.3} texto="migraña · dihidroergotamina" x={540} y={1330} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={K.M + 2.4} until={K.H - 0.3} texto="sangrado después del parto · ergometrina" x={540} y={1415} tam={28} borde={KC.cyan} />
       <Chip T={T} at={K.H + 0.2} until={K.Mo - 0.3} texto="1938 · Albert Hofmann" x={330} y={470} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.H + 1.2} until={K.Mo - 0.3} x={1040} y={1110} texto="ácido lisérgico → LSD (esquema)" lado="izq" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Mo + 0.6} until={K.C - 0.3} texto="UE: límite de cornezuelo en el grano" x={640} y={470} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.Mo + 1.4} until={K.C - 0.3} x={600} y={1090} texto="cornezuelo fuera" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 1.4} until={K.C - 0.3} x={609} y={1254} texto="cornezuelo fuera" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="veneno → medicina" x={330} y={440} tam={40} borde={KC.yellow} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.F} texto="2 cm" largo={210} />
       <BarraEscala T={T} at={K.F} until={K.Po} texto="1 mm" largo={200} />
-      <BarraEscala T={T} at={K.Po} until={ES2} texto="1 mm" largo={250} />
+      <BarraEscala T={T} at={K.Po} until={ES2} texto="1 mm" largo={260} />
       <BarraEscala T={T} at={ES2} until={K.Cu} texto="1 mm" largo={168} />
       <BarraEscala T={T} at={K.Cu} until={K.P} texto="1 cm" largo={160} />
-      <BarraEscala T={T} at={K.P} until={K.V} texto="10 cm" largo={247} />
-      <BarraEscala T={T} at={K.V} until={K.SA} texto="2 cm" largo={174} />
+      <BarraEscala T={T} at={K.P} until={K.V} texto="10 cm" largo={296} />
+      <BarraEscala T={T} at={K.V} until={K.SA} texto="2 cm" largo={180} />
       <BarraEscala T={T} at={K.SA} until={K.E} texto="50 cm" largo={195} />
       <BarraEscala T={T} at={K.E} until={K.Cul} texto="500 km" largo={173} />
       <BarraEscala T={T} at={K.Cul} until={K.M} texto="1 cm" largo={130} />
       <BarraEscala T={T} at={K.M} until={K.H} texto="1 cm" largo={220} />
       <BarraEscala T={T} at={K.H} until={K.Mo} texto="10 cm" largo={254} />
-      <BarraEscala T={T} at={K.Mo} until={K.C} texto="1 cm" largo={154} />
+      <BarraEscala T={T} at={K.Mo} until={K.C} texto="1 cm" largo={176} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={210} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

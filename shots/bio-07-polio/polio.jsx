@@ -199,10 +199,11 @@ function PolioNarrado() {
         {/* modo cine: no es lámina; el ratón quieto y el virus armado siguen detrás de la pregunta */}
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:0.55 }}>
           <RatonSilueta T={T} x={470} y={1080} s={3.5} quieto={1} />
-          <Capside T={T} x={830} y={520} r={190} rot={(T - K.A) * 18} />
+          <Capside T={T} x={830} y={640} r={190} rot={(T - K.A) * 18} />
         </svg>
-        <div style={{ position:'absolute', left:0, right:0, top:760, zIndex:5, textAlign:'center',
-          font:`400 340px/1 ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`10px ${KC.ink}`,
+        {/* encuadre: el signo crece y baja al centro del cuadro (antes top 760, 340 px) */}
+        <div style={{ position:'absolute', left:0, right:0, top:820, zIndex:5, textAlign:'center',
+          font:`400 560px/1 ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`10px ${KC.ink}`,
           transform:`scale(${klerp(0.7, 1, kprog(T, K.Q, K.Q + 0.6, kEase.rebote))})` }}>?</div>
       </EscenaFundido>
 
@@ -236,7 +237,8 @@ function PolioNarrado() {
       <EscenaFundido T={T} a={K.Sc} b={K.Cr} zoom={0.05} fondo="#0a0d14">
         <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.9), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.05) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform="translate(540 940) scale(1.45) translate(-490 -860)"><PortadaScience T={T} t0={K.Sc} /></g>
+          {/* encuadre: la portada baja al centro (antes translate(540 940) scale(1.45)) */}
+          <g transform="translate(540 1060) scale(1.38) translate(-490 -860)"><PortadaScience T={T} t0={K.Sc} /></g>
         </svg>
       </EscenaFundido>
 
@@ -253,29 +255,29 @@ function PolioNarrado() {
       <Chip T={T} at={K.Cr + 1.9} until={K.Re - 0.3} texto="de eso se trataba:" x={540} y={1400} borde={KC.gold} tam={44} />
       <Chip T={T} at={K.Cr + 2.3} until={K.Re - 0.3} texto="advertir del riesgo" x={540} y={1490} borde={KC.gold} tam={44} />
 
-      {/* 10 · REGLAS */}
+      {/* 10 · REGLAS (encuadre: los dos documentos bajan 150 px al centro) */}}
       <EscenaFundido T={T} a={K.Re} b={K.H} zoom={0.04} fondo="#0a0d14">
         <div style={{ position:'absolute', inset:0, background:cineMix(KC.mint, CINE.fondo, 0.9), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.05) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g opacity={kprog(T, K.Re + 0.02, K.Re + 0.5)}>
-            <Documento T={T} x={330} y={820} w={520} h={610} titulo="Informe Fink" pie="2004" rot={-6}
+            <Documento T={T} x={330} y={970} w={520} h={610} titulo="Informe Fink" pie="2004" rot={-6}
               sello="REGLAS" sellado={kprog(T, K.Re + 1.4, K.Re + 1.9, kEase.sale)} />
           </g>
           <g opacity={kprog(T, K.Re + 0.5, K.Re + 1.1)}>
-            <Documento T={T} x={760} y={1000} w={520} h={610} titulo="NSABB" pie="2004" rot={5}
+            <Documento T={T} x={760} y={1150} w={520} h={610} titulo="NSABB" pie="2004" rot={5}
               sello="CONSEJO" sellado={kprog(T, K.Re + 2.6, K.Re + 3.1, kEase.sale)} />
           </g>
         </svg>
         <Chip T={T} at={K.Re + 3.4} until={K.H - 0.3} texto="bioseguridad" y={430} borde={KC.mint} tam={46} />
       </EscenaFundido>
 
-      {/* 11 · HOY — se revisa el pedido y el cliente */}
+      {/* 11 · HOY — se revisa el pedido y el cliente (encuadre: documento y lupa bajan 170 px al centro) */}}
       <EscenaFundido T={T} a={K.H} b={K.C} zoom={0.04} fondo="#0a0d14">
         <div style={{ position:'absolute', inset:0, background:cineMix(KC.cyan, CINE.fondo, 0.9), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.05) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Documento T={T} x={450} y={900} w={600} h={700} titulo="pedido de ADN" pie="¿qué? · ¿quién?" rot={-3}
+          <Documento T={T} x={450} y={1070} w={600} h={700} titulo="pedido de ADN" pie="¿qué? · ¿quién?" rot={-3}
             sello="REVISADO" sellado={kprog(T, K.H + 2.2, K.H + 2.8, kEase.sale)} />
-          <g transform={`translate(${840 + Math.sin((T - K.H) * 1.5) * 60} ${720 + Math.cos((T - K.H) * 1.2) * 50}) scale(1.3)`} opacity={kprog(T, K.H + 0.4, K.H + 1.0)}>
+          <g transform={`translate(${840 + Math.sin((T - K.H) * 1.5) * 60} ${890 + Math.cos((T - K.H) * 1.2) * 50}) scale(1.3)`} opacity={kprog(T, K.H + 0.4, K.H + 1.0)}>
             <circle r={96} fill="rgba(0,210,255,.1)" stroke={KC.cyan} strokeWidth={12} />
             <line x1={68} y1={68} x2={150} y2={150} stroke={KC.cyan} strokeWidth={20} strokeLinecap="round" />
           </g>

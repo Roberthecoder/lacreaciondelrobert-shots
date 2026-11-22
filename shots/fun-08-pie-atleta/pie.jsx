@@ -4,7 +4,9 @@
 const PIEL = '#e3a682', PIEL2 = '#d9906b';
 const HUECO = { x: 525, y: 910 };   // el pie se dibuja corrido (-210, +150)   // entre el 4.º y el 5.º dedo
 
-const PIE_K = 1.5, PIE_DX = -60, PIE_DY = -430, G = { x: HUECO.x * PIE_K + PIE_DX, y: HUECO.y * PIE_K + PIE_DY };
+// encuadre (vuelta de centrado): antes 1.5 / -60 / -430 dejaba el pie cargado abajo; ahora se ve casi entero y centrado.
+// La barra de escala de 2 cm pasó de 170 a 147 px (×1.3/1.5).
+const PIE_K = 1.3, PIE_DX = 40, PIE_DY = -480, G = { x: HUECO.x * PIE_K + PIE_DX, y: HUECO.y * PIE_K + PIE_DY };
 function PieGrande(p) { return <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:`translate(${PIE_DX}px, ${PIE_DY}px) scale(${PIE_K})`, transformOrigin:'0 0' }}><Pie {...p} /></div>; }
 // Pie visto desde arriba. parche 0..1 = piel blanca que se pela entre el 4.º y 5.º dedo.
 function Pie({ T, parche = 0, brilla = 0 }) {
@@ -79,7 +81,7 @@ function PieDeAtleta() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Interrogacion T={T} x={540} y={1150} />)}
+        {fsvg(<Interrogacion T={T} x={480} y={1370} tam={820} />)}   {/* encuadre: el signo crece y baja al centro, sobre el pie atenuado */}
       </Escena>
       {/* 7–9 · el estudio: el clima dentro del zapato */}
       <Escena T={T} a={K.E} b={K.Co}>
@@ -135,14 +137,14 @@ function PieDeAtleta() {
       <Lupa T={T} at={K.C + 1.0} until={K.Ou - 0.2} x={760} y={1250} r={235} fx={G.x} fy={G.y} interior={(Tl, r) => lupaInterior(Tl + 100, r)} tinte={KC.yellow} etiqueta="queratina = su cena" />
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.2} until={K.G + 4.6} texto="¿solo humedad?" x={360} y={400} tam={52} />
-      <Etq T={T} at={K.N + 0.4} until={K.Q - 0.3} x={60} y={360} texto="pie de atleta (tinea pedis)" tam={38} color={KC.ink} />
-      <Etq T={T} at={K.N + 1.2} until={K.Q - 0.3} x={60} y={425} texto="Trichophyton rubrum" it tam={36} color={KC.ink} />
-      <Etq T={T} at={K.N + 1.8} until={K.Q - 0.3} x={60} y={485} texto="Trichophyton interdigitale" it tam={36} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.2} until={K.G + 4.6} texto="¿solo humedad?" x={360} y={290} tam={52} />
+      <Etq T={T} at={K.N + 0.4} until={K.Q - 0.3} x={60} y={205} texto="pie de atleta (tinea pedis)" tam={38} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.2} until={K.Q - 0.3} x={60} y={250} texto="Trichophyton rubrum" it tam={36} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.8} until={K.Q - 0.3} x={60} y={295} texto="Trichophyton interdigitale" it tam={36} color={KC.ink} />
       <Etq T={T} at={K.Q + 0.6} until={K.L - 0.3} x={60} y={540} texto="capa córnea: queratina" tam={40} color={KC.yellow} />
       <Etq T={T} at={K.Q + 1.2} until={K.L - 0.3} x={60} y={1335} texto="piel viva" tam={38} />
       <Etq T={T} at={K.En + 0.4} until={K.L - 0.3} x={60} y={470} texto="hifas del hongo + enzimas" tam={38} color={KC.gold2} />
-      <Chip T={T} at={K.L + 0.4} until={K.P - 0.2} texto="entre el 4.º y el 5.º dedo" x={420} y={420} tam={44} borde={KC.yellow} />
+      <Chip T={T} at={K.L + 0.4} until={K.P - 0.2} texto="entre el 4.º y el 5.º dedo" x={420} y={300} tam={44} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.5} anio="2019" quien="Sasagawa · Osaka, Japón" revista="J. Dermatol. · datos 2011–2014" y={480} />
       <NumeroGigante T={T} at={K.E + 2.6} until={K.Hu - 0.3} valor={420} dur={1.2} etiqueta="pacientes" x={540} y={470} tam={170} />
       <Medidor T={T} at={K.Hu + 0.2} until={K.R - 0.3} valor={(t) => 0.8 * kprog(t, K.Hu + 0.4, K.Hu + 2.0)} etiqueta="humedad entre los dedos" x={90} y={400} ancho={900} color={KC.cyan} />
@@ -151,19 +153,19 @@ function PieDeAtleta() {
       <Chip T={T} at={K.R + 0.4} until={K.Co - 0.3} texto="fresco y seco" x={782} y={1225} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.R + 1.4} until={K.Co - 0.3} texto="más pie de atleta" x={290} y={540} tam={44} borde={KC.red} />
       <Chip T={T} at={K.Co + 2.4} until={K.S - 0.2} texto="esporas y pedacitos de piel" x={540} y={470} tam={42} borde={KC.ink} />
-      <Chip T={T} at={K.S + 0.3} until={K.D - 0.3} texto="prevenir: ✓ seca entre los dedos" x={370} y={390} tam={38} borde={KC.leaf} />
-      <Chip T={T} at={K.S + 1.8} until={K.D - 0.3} texto="✓ calzado que respire" x={370} y={480} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 0.3} until={K.D - 0.3} texto="prevenir: ✓ seca entre los dedos" x={370} y={260} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 1.8} until={K.D - 0.3} texto="✓ calzado que respire" x={370} y={345} tam={38} borde={KC.leaf} />
       <Chip T={T} at={K.S + 2.8} until={K.D - 0.3} texto="¿ya lo tienes? antimicótico; si no mejora, al médico" x={540} y={1400} tam={34} borde={KC.orange} />
       <NumeroGigante T={T} at={K.D + 0.3} until={K.C - 0.3} valor={49} dur={1.4} sufijo="%" etiqueta="pacientes de esa clínica" x={350} y={500} tam={170} />
       <Etq T={T} at={K.D + 2.4} until={K.C - 0.3} x={60} y={1320} texto="con hongos en pies o uñas" tam={36} />
-      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="¿un hongo cenando?" x={380} y={420} tam={46} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="¿un hongo cenando?" x={380} y={300} tam={46} borde={KC.yellow} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Q} texto="2 cm" largo={170} />
+      <BarraEscala T={T} at={K.G} until={K.Q} texto="2 cm" largo={147} />
       <BarraEscala T={T} at={K.Q} until={K.L} texto="50 µm" largo={150} />
-      <BarraEscala T={T} at={K.L} until={K.P} texto="2 cm" largo={170} />
-      <BarraEscala T={T} at={K.S} until={K.D} texto="2 cm" largo={170} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={170} />
+      <BarraEscala T={T} at={K.L} until={K.P} texto="2 cm" largo={147} />
+      <BarraEscala T={T} at={K.S} until={K.D} texto="2 cm" largo={147} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={147} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="Puede ser un hongo *comiendo queratina.*" />

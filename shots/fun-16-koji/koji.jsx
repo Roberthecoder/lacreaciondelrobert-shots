@@ -342,14 +342,14 @@ function KojiShot() {
           {T > K.Pm + 5.2 && <text x={800} y={610} textAnchor="middle" opacity={kprog(T, K.Pm + 5.2, K.Pm + 5.5)} style={{ font:`700 30px ${KF.mono}` }} fill={KC.mint}>aflatoxinas</text>}
         </>)}
       </Escena>
-      {/* 11 · sake, miso y soya: hongo nacional */}
+      {/* 11 · sake, miso y soya: hongo nacional (encuadre: todo baja ~90 px y crece ×1.15; barra de 10 cm 208 → 239 px) */}}
       <Escena T={T} a={K.N} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          {kprog(T, K.N + 0.2, K.N + 0.6) > 0 && <g transform={`translate(215 1150) scale(${1.3 * kprog(T, K.N + 0.2, K.N + 0.6, kEase.rebote)}) translate(-230 -1080)`}><Tokkuri x={230} y={1080} s={1.0} /></g>}
-          {kprog(T, K.N + 0.7, K.N + 1.1) > 0 && <g transform={`translate(540 1140) scale(${1.3 * kprog(T, K.N + 0.7, K.N + 1.1, kEase.rebote)}) translate(-540 -1080)`}><Miso x={540} y={1080} T={T} /></g>}
-          {kprog(T, K.N + 1.2, K.N + 1.6) > 0 && <g transform={`translate(865 1050) scale(${kprog(T, K.N + 1.2, K.N + 1.6, kEase.rebote) * 0.8}) translate(-840 -1000)`}><Botella x={840} y={1000} /></g>}
-          <Medalla T={T} at={K.N + 2.0} x={540} y={590} r={175} />
+          {kprog(T, K.N + 0.2, K.N + 0.6) > 0 && <g transform={`translate(215 1240) scale(${1.5 * kprog(T, K.N + 0.2, K.N + 0.6, kEase.rebote)}) translate(-230 -1080)`}><Tokkuri x={230} y={1080} s={1.0} /></g>}
+          {kprog(T, K.N + 0.7, K.N + 1.1) > 0 && <g transform={`translate(540 1230) scale(${1.5 * kprog(T, K.N + 0.7, K.N + 1.1, kEase.rebote)}) translate(-540 -1080)`}><Miso x={540} y={1080} T={T} /></g>}
+          {kprog(T, K.N + 1.2, K.N + 1.6) > 0 && <g transform={`translate(865 1140) scale(${kprog(T, K.N + 1.2, K.N + 1.6, kEase.rebote) * 0.92}) translate(-840 -1000)`}><Botella x={840} y={1000} /></g>}
+          <Medalla T={T} at={K.N + 2.0} x={540} y={680} r={190} />
         </>)}
       </Escena>
       {/* 12 · cierre: la misma botella y el mismo sushi; adentro, el fantasma del hongo */}
@@ -388,10 +388,10 @@ function KojiShot() {
       <Etq T={T} at={K.Pm + 1.4} until={K.N - 0.3} x={600} y={1250} texto="A. oryzae (koji)" it tam={28} color={KJ.koji2} />
       <Etq T={T} at={K.Pm + 2.4} until={K.N - 0.3} x={60} y={350} texto="aflatoxinas" tam={34} color={KC.red} />
       <Chip T={T} at={K.Pm + 3.8} until={K.N - 0.3} texto="genes apagados o incompletos" x={640} y={1340} tam={30} borde={KC.mint} />
-      <Chip T={T} at={K.N + 2.4} until={K.C - 0.3} texto="Brewing Society of Japan" x={540} y={815} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.N + 0.4} until={K.C - 0.3} x={255} y={1260} texto="sake" lado="izq" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.N + 0.9} until={K.C - 0.3} x={585} y={1260} texto="miso" lado="izq" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.N + 1.4} until={K.C - 0.3} x={915} y={1260} texto="soya" lado="izq" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.N + 2.4} until={K.C - 0.3} texto="Brewing Society of Japan" x={540} y={920} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.N + 0.4} until={K.C - 0.3} x={255} y={1370} texto="sake" lado="izq" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.N + 0.9} until={K.C - 0.3} x={585} y={1370} texto="miso" lado="izq" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.N + 1.4} until={K.C - 0.3} x={915} y={1370} texto="soya" lado="izq" tam={30} color={KC.texto} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="la cocinó un hongo" x={540} y={400} tam={42} borde={KC.leaf} />
 
       {/* barras de escala */}
@@ -404,7 +404,7 @@ function KojiShot() {
       <BarraEscala T={T} at={K.Co} until={K.E} texto="5 cm" largo={221} />
       <BarraEscala T={T} at={K.E} until={K.Pm} texto="5 cm" largo={189} />
       <BarraEscala T={T} at={K.Pm} until={K.N} texto="50 µm" largo={300} />
-      <BarraEscala T={T} at={K.N} until={K.C} texto="10 cm" largo={208} />
+      <BarraEscala T={T} at={K.N} until={K.C} texto="10 cm" largo={239} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={230} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

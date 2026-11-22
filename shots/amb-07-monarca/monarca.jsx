@@ -106,8 +106,9 @@ function MonarcaShot() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Al} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={300} y={980} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 800)`}>?</text>
-          <Monarca x={420} y={1150} s={2.4} T={T} ang={-10} /></>)}
+        {/* encuadre: el signo y la monarca crecen y bajan al centro del cuadro */}
+        {svg(<><text x={330} y={1200} textAnchor="middle" style={{ font:`400 720px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={16} transform={`rotate(${Math.sin(T * 3) * 6} 330 950)`}>?</text>
+          <Monarca x={560} y={1330} s={3.4} T={T} ang={-10} /></>)}
       </Escena>
       {/* 7 · algodoncillo y herbicida */}
       <Escena T={T} a={K.Al} b={K.Cl}>
@@ -159,7 +160,7 @@ function MonarcaShot() {
       <NumeroGigante T={T} at={K.R + 1.2} until={K.Ci - 0.2} valor={20} dur={1.0} prefijo="≈ " sufijo=" millones" etiqueta="por hectárea" y={430} x={640} tam={80} color={KC.orange} />
       <NumeroGigante T={T} at={K.Ci + 0.2} until={K.A - 0.2} valor={2.93} dec={2} dur={1.0} sufijo=" ha" etiqueta="invierno 2025-2026" y={640} tam={200} color={KC.orange} />
       <Chip T={T} at={K.Ci + 2.2} until={K.A - 0.2} texto="+64 % (antes: 1.79 ha)" y={900} tam={44} borde={KC.leaf} />
-      <Comparativa T={T} at={K.A + 0.1} until={K.P - 0.1} max={18.19} y={420} alto={600}
+      <Comparativa T={T} at={K.A + 0.1} until={K.P - 0.1} max={18.19} y={620} alto={640}
         izq={{ valor: 18.19, texto: '18.19 ha', etiqueta: '1996-1997', color: KC.orange }} der={{ valor: 2.93, texto: '2.93 ha', etiqueta: '2025-2026', color: KC.yellow }} />
       <Etq T={T} at={K.Al + 0.6} until={K.Cl - 0.2} x={520} y={1450} texto="algodoncillo (Asclepias)" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Al + 2.2} until={K.Cl - 0.2} texto="herbicidas en sus zonas de cría" y={430} x={560} tam={32} borde={KC.red} />

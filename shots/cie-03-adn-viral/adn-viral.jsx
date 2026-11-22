@@ -159,7 +159,8 @@ function AdnViralNarrado() {
       {/* estudio y fusión: la placenta por rayos X */}
       <Escena T={T} a={K.E} b={K.Ra}>
         <FondoLunares color={KC.mint} />
-        <Panza T={T} />
+        {/* encuadre: la embarazada baja 180 px y crece ×1.08 al centro; la lupa y su etiqueta siguen apuntando a la placenta */}
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:'translate(0px, 180px) scale(1.08)', transformOrigin:'540px 800px' }}><Panza T={T} /></div>
       </Escena>
       <Escena T={T} a={K.Ra} b={K.O}>
         <FondoLunares color={KC.lilac} />
@@ -189,8 +190,8 @@ function AdnViralNarrado() {
       <Chip T={T} at={K.P + 0.2} until={K.E - 0.3} texto="env: la envoltura" y={1290} tam={50} borde={KC.yellow} />
       {/* modo cine: tarjeta chica y a un lado, sin tapar a la embarazada */}
       <div style={{ position:'absolute', left:0, top:0, width:KW * 2, height:KH, zIndex:43, pointerEvents:'none', transform:'scale(.78)', transformOrigin:'855px 250px' }}><TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2000" quien="Mi et al. · Genetics Institute" revista="Nature 403: 785–789 · sincitina" x={855} y={250} /></div>
-      <Lupa T={T} at={K.E + 3.6} until={K.Ra - 0.3} x={725} y={705} r={320} fx={660} fy={1230} interior={(t, r) => <Sincitio T={t} r={r} funde={kprog(t, K.F + 0.6, K.F + 3.6)} />} etiqueta="AL MICROSCOPIO · placenta" tinte={VIR2} />
-      <Etq T={T} at={K.F + 3.4} until={K.Ra - 0.3} x={430} y={1140} texto="una sola capa: sincitio" color={KC.ink} />
+      <Lupa T={T} at={K.E + 3.6} until={K.Ra - 0.3} x={725} y={760} r={320} fx={670} fy={1444} interior={(t, r) => <Sincitio T={t} r={r} funde={kprog(t, K.F + 0.6, K.F + 3.6)} />} etiqueta="AL MICROSCOPIO · placenta" tinte={VIR2} />
+      <Etq T={T} at={K.F + 3.4} until={K.Ra - 0.3} x={422} y={1347} texto="una sola capa: sincitio" color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Ra + 2.4} anio="2009" quien="Dupressoir et al. · Francia" revista="PNAS 106: 12127–12132 · ratones" y={520} />
       <Lupa T={T} at={K.Ra + 2.2} until={K.O - 0.3} x={540} y={650} r={270} fx={520} fy={1270} interior={(t, r) => <Sincitio T={t} r={r} sinSincitina />} etiqueta="sin sincitina" tinte={KC.red} />
       <Chip T={T} at={K.O + 0.2} until={K.C - 0.3} texto="cada grupo, su propio virus" y={1420} tam={44} />
