@@ -159,24 +159,24 @@ function PneumoShot() {
       {/* 0 · gancho: tus pulmones, con un hongo */}
       <Escena T={T} a={K.G} b={K.Ai} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Torso x={390} y={960} s={0.8} T={T} brillo={kprog(T, K.G + 0.4, K.G + 1.2, kEase.sale)} />)}
+        {fsvg(<Torso x={540} y={930} s={1.1} T={T} brillo={kprog(T, K.G + 0.4, K.G + 1.2, kEase.sale)} />)}
       </Escena>
       {/* 1 · pasa por el aire de persona a persona */}
       <Escena T={T} a={K.Ai} b={K.Al} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <g transform="translate(230 1040) scale(5.4)"><Personita x={0} y={0} color="#8fb6ff" /></g>
-          <g transform="translate(850 1040) scale(5.4)"><Personita x={0} y={0} color="#ff8a1f" /></g>
+          <g transform="translate(220 1120) scale(6.4)"><Personita x={0} y={0} color="#8fb6ff" /></g>
+          <g transform="translate(860 1120) scale(6.4)"><Personita x={0} y={0} color="#ff8a1f" /></g>
           {Array.from({ length: 16 }, (_, i) => { const u = kprog(T, K.Ai + 0.4 + i * 0.12, K.Ai + 2.6 + i * 0.12, kEase.suave);
-            const px = klerp(320, 760, u), py = 860 + Math.sin(u * Math.PI) * -120 + ((i * 37) % 60) - 30 + Math.sin(T * 3 + i) * 8;
+            const px = klerp(320, 760, u), py = 900 + Math.sin(u * Math.PI) * -120 + ((i * 37) % 60) - 30 + Math.sin(T * 3 + i) * 8;
             return u > 0 && u < 1 ? <circle key={i} cx={px} cy={py} r={9} fill={PC.hongo} stroke={KC.ink} strokeWidth={2.5} /> : null; })}
         </>)}
       </Escena>
       {/* 2 · baja a los alvéolos */}
       <Escena T={T} a={K.Al} b={K.Fo} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Racimo x={540} y={1050} s={1.25} T={T} />)}
-        <Lupa T={T} at={K.Al + 1.6} until={K.Fo - 0.2} x={300} y={760} r={190} fx={600} fy={1000} interior={interiorAlv} tinte={KC.lilac} etiqueta="AL MICROSCOPIO · alvéolo" />
+        {fsvg(<Racimo x={540} y={1040} s={1.8} T={T} />)}
+        <Lupa T={T} at={K.Al + 1.6} until={K.Fo - 0.2} x={340} y={600} r={190} fx={600} fy={1000} interior={interiorAlv} tinte={KC.lilac} etiqueta="AL MICROSCOPIO · alvéolo" />
       </Escena>
       {/* 3 · dos formas: tróficas pegadas y quiste con 8 esporas */}
       <Escena T={T} a={K.Fo} b={K.Sa} zoom={0.04}>
@@ -185,8 +185,8 @@ function PneumoShot() {
         {fsvg(<>
           <Pared y={1150} T={T} />
           {[[180, 1068], [270, 1050], [380, 1035], [640, 1032], [740, 1046]].map(([x, y], i) => { const p = kprog(T, K.Fo + 0.3 + i * 0.15, K.Fo + 0.7 + i * 0.15, kEase.rebote);
-            return p > 0 ? <Trofica key={i} x={x} y={y} s={p * 1.1} T={T} seed={i} /> : null; })}
-          {(() => { const p = kprog(T, K.Fo + 1.4, K.Fo + 2.0, kEase.rebote); return p > 0 ? <Quiste x={540} y={800} s={p * 1.8} n={nEsp} /> : null; })()}
+            return p > 0 ? <Trofica key={i} x={x} y={y} s={p * 1.54} T={T} seed={i} /> : null; })}
+          {(() => { const p = kprog(T, K.Fo + 1.4, K.Fo + 2.0, kEase.rebote); return p > 0 ? <Quiste x={540} y={780} s={p * 2.52} n={nEsp} /> : null; })()}
         </>)}
       </Escena>
       {/* 4 · con defensas bien, casi nunca da neumonía */}
@@ -194,9 +194,9 @@ function PneumoShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {fsvg(<>
           <Pared y={1150} T={T} />
-          <Trofica x={560} y={1030} s={1.2} T={T} seed={2} />
-          <Macrofago T={T} cx={klerp(1150, 640, kprog(T, K.Sa + 0.2, K.Sa + 1.6, kEase.sale))} cy={900} s={1.4} />
-          {(() => { const p = kprog(T, K.Sa + 1.6, K.Sa + 2.1, kEase.rebote); return p > 0 ? <g transform={`translate(300 720) scale(${p})`}>
+          <Trofica x={560} y={1030} s={1.56} T={T} seed={2} />
+          <Macrofago T={T} cx={klerp(1150, 640, kprog(T, K.Sa + 0.2, K.Sa + 1.6, kEase.sale))} cy={880} s={1.82} />
+          {(() => { const p = kprog(T, K.Sa + 1.6, K.Sa + 2.1, kEase.rebote); return p > 0 ? <g transform={`translate(260 700) scale(${p})`}>
             <path d="M 0 -110 L 95 -70 Q 95 60 0 115 Q -95 60 -95 -70 Z" fill={KC.mint} stroke={KC.ink} strokeWidth={8} />
             <path d="M -40 0 L -8 34 L 46 -32" stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g> : null; })()}
         </>)}
@@ -218,7 +218,11 @@ function PneumoShot() {
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Co} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Interrogacion T={T} x={250} y={1080} tam={460} />)}
+        {fsvg(<>
+          <Quiste x={650} y={1110} s={2.2} n={8} />
+          <Trofica x={440} y={1340} s={1.6} T={T} seed={1} /><Trofica x={860} y={1330} s={1.5} T={T} seed={3} />
+          <Interrogacion T={T} x={250} y={1080} tam={460} />
+        </>)}
       </Escena>
       {/* 7 · ergosterol vs colesterol */}
       <Escena T={T} a={K.Co} b={K.An} zoom={0.03}>
@@ -237,19 +241,19 @@ function PneumoShot() {
       {/* 8 · en su lugar, un antibiótico */}
       <Escena T={T} a={K.An} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Frasco x={540} y={860} s={1.2} />)}
+        {fsvg(<Frasco x={540} y={900} s={1.8} />)}
       </Escena>
       {/* 9 · 1981, Los Ángeles, 5 hombres jóvenes */}
       <Escena T={T} a={K.E} b={K.B} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>{Array.from({ length: 5 }, (_, i) => { const on = T > K.E + 2.6 + i * 0.4;
-          return <g key={i} transform={`translate(${170 + i * 185} 1090) scale(3.6)`}><Personita x={0} y={0} color={on ? KC.gold2 : '#c9ccd4'} /></g>; })}</>)}
+          return <g key={i} transform={`translate(${140 + i * 200} 1150) scale(4.6)`}><Personita x={0} y={0} color={on ? KC.gold2 : '#c9ccd4'} /></g>; })}</>)}
       </Escena>
       {/* 10 · Chile: 67 de 79 bebés con anticuerpos a los 20 meses */}
       <Escena T={T} a={K.B} b={K.R} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={60} y={640} width={640} height={560} rx={26} fill="rgba(255,255,255,.85)" stroke={KC.ink} strokeWidth={7} />
+          <rect x={60} y={640} width={640} height={560} rx={26} fill="rgba(22,30,52,.92)" stroke={KC.ink} strokeWidth={7} />
           {Array.from({ length: 79 }, (_, i) => <Bebe key={i} x={105 + (i % 10) * 61} y={690 + Math.floor(i / 10) * 64} s={1.15} color={i < nB ? KC.gold2 : '#e6e1d6'} />)}
         </>)}
         <NumeroGigante T={T} at={K.B + 1.0} until={K.R - 0.2} valor={85} dur={2.0} sufijo=" %" etiqueta="con anticuerpos" x={880} y={900} tam={130} color={KC.gold2} />
@@ -270,21 +274,21 @@ function PneumoShot() {
       {/* 12 · cierre: el mismo torso; por dentro, el alvéolo con el hongo y la defensa */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Torso x={390} y={960} s={0.8} T={T} brillo={1} />)}
-        <Lupa T={T} at={K.C + 0.5} until={K.Ou} x={790} y={700} r={180} fx={254} fy={1112} interior={interiorCierre} tinte={KC.gold2} etiqueta="POR DENTRO" />
+        {fsvg(<Torso x={540} y={930} s={1.1} T={T} brillo={1} />)}
+        <Lupa T={T} at={K.C + 0.5} until={K.Ou} x={870} y={620} r={185} fx={353} fy={1139} interior={interiorCierre} tinte={KC.gold2} etiqueta="POR DENTRO" />
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.6} until={K.Ai - 0.2} texto="un hongo" x={250} y={420} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.G + 2.2} until={K.Ai - 0.2} texto="probablemente de bebé" x={300} y={500} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.G + 0.6} until={K.Ai - 0.2} texto="un hongo" x={260} y={250} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.G + 2.2} until={K.Ai - 0.2} texto="probablemente de bebé" x={290} y={330} tam={36} borde={KC.gold} />
       <Etq T={T} at={K.Ai + 0.6} until={K.Al - 0.3} x={70} y={520} texto="Pneumocystis jirovecii" it tam={38} color={KC.ink} />
-      <Chip T={T} at={K.Ai + 1.6} until={K.Al - 0.3} texto="por el aire" x={540} y={1170} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.Al + 0.6} until={K.Fo - 0.3} x={640} y={1150} texto="alvéolos" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Ai + 1.6} until={K.Al - 0.3} texto="por el aire" x={540} y={1240} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.Al + 0.6} until={K.Fo - 0.3} x={760} y={1330} texto="alvéolos" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Fo + 0.8} until={K.Sa - 0.3} x={60} y={960} texto="forma trófica (2–10 µm)" tam={28} color={PC.hongo} />
-      <Etq T={T} at={K.Fo + 1.8} until={K.Sa - 0.3} x={700} y={640} texto="quiste (5–8 µm)" tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.Fo + 1.8} until={K.Sa - 0.3} x={730} y={560} texto="quiste (5–8 µm)" tam={28} color={KC.gold2} />
       <Chip T={T} at={K.Fo + 2.0} until={K.Sa - 0.3} texto={`${Math.max(1, nEsp)} / 8 esporas`} x={540} y={470} tam={40} borde={KC.gold} />
       <Etq T={T} at={K.Fo + 0.6} until={K.Sa - 0.3} x={60} y={1260} texto="pared del alvéolo" tam={26} color="#ffc2d0" />
-      <Etq T={T} at={K.Sa + 1.0} until={K.Di - 0.3} x={720} y={700} texto="macrófago (defensa)" tam={28} color="#a8ffd3" />
+      <Etq T={T} at={K.Sa + 1.0} until={K.Di - 0.3} x={1040} y={610} lado="izq" texto="macrófago (defensa)" tam={28} color="#a8ffd3" />
       <Chip T={T} at={K.Sa + 1.8} until={K.Di - 0.3} texto="defensas bien → casi nunca neumonía" x={540} y={470} tam={32} borde={KC.mint} />
       <Chip T={T} at={K.Di + 1.0} until={K.P - 0.3} texto="sus genes (ARN ribosomal)" x={540} y={1250} tam={32} borde={KC.gold} />
       <Etq T={T} at={K.Di + 3.2} until={K.P - 0.3} x={60} y={470} texto="Edman et al., Nature, 1988" tam={26} color={KC.ink} />
@@ -294,9 +298,9 @@ function PneumoShot() {
       <Etq T={T} at={K.Co + 0.8} until={K.An - 0.3} x={60} y={1040} texto="ergosterol" tam={30} color={PC.ergo} />
       <Etq T={T} at={K.Co + 1.6} until={K.An - 0.3} x={580} y={1040} texto="colesterol (como tú)" tam={30} color={PC.coles} />
       <Chip T={T} at={K.Co + 2.6} until={K.An - 0.3} texto="el antifúngico rebota" x={800} y={560} tam={28} borde={KC.red} />
-      <Chip T={T} at={K.An + 0.5} until={K.E - 0.3} texto="es un antibiótico" x={320} y={470} tam={42} borde={KC.gold} />
-      <Etq T={T} at={K.An + 1.0} until={K.E - 0.3} x={60} y={1110} texto="trimetoprim + sulfametoxazol" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.An + 1.6} until={K.E - 0.3} texto="esto no es consejo médico" x={300} y={550} tam={26} borde={KC.red} />
+      <Chip T={T} at={K.An + 0.5} until={K.E - 0.3} texto="es un antibiótico" x={540} y={420} tam={42} borde={KC.gold} />
+      <Etq T={T} at={K.An + 1.0} until={K.E - 0.3} x={260} y={1300} texto="trimetoprim + sulfametoxazol" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.An + 1.6} until={K.E - 0.3} texto="esto no es consejo médico" x={540} y={1400} tam={26} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 4.6} anio="1981" quien="5 hombres jóvenes · Los Ángeles · 5 de junio" revista="MMWR (CDC), 1981" y={480} />
       <Chip T={T} at={K.E + 4.7} until={K.B - 0.2} texto="primer reporte de lo que luego se llamó sida" x={540} y={520} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.B + 0.1} until={K.R - 0.2} texto="67 de 79 bebés sanos · a los 20 meses" x={540} y={470} tam={32} borde={KC.ink} />
@@ -304,17 +308,17 @@ function PneumoShot() {
       <Etq T={T} at={K.R + 0.5} until={K.C - 0.3} x={110} y={1120} texto="P. carinii (rata)" it tam={30} color={KC.ink} />
       <Etq T={T} at={K.R + 0.7} until={K.C - 0.3} x={1040} y={1170} lado="izq" texto="P. jirovecii (humano)" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.R + 1.5} until={K.C - 0.3} texto="cada mamífero tiene las suyas" x={400} y={760} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="a raya" x={250} y={470} tam={44} borde={KC.mint} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="a raya" x={220} y={330} tam={44} borde={KC.mint} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Ai} texto="20 cm" largo={240} />
-      <BarraEscala T={T} at={K.Ai} until={K.Al} texto="50 cm" largo={290} />
-      <BarraEscala T={T} at={K.Al} until={K.Fo} texto="0.2 mm" largo={100} />
-      <BarraEscala T={T} at={K.Fo} until={K.Sa} texto="5 µm" largo={180} />
-      <BarraEscala T={T} at={K.Sa} until={K.Di} texto="5 µm" largo={90} />
+      <BarraEscala T={T} at={K.G} until={K.Ai} texto="20 cm" largo={330} />
+      <BarraEscala T={T} at={K.Ai} until={K.Al} texto="50 cm" largo={344} />
+      <BarraEscala T={T} at={K.Al} until={K.Fo} texto="0.2 mm" largo={144} />
+      <BarraEscala T={T} at={K.Fo} until={K.Sa} texto="5 µm" largo={252} />
+      <BarraEscala T={T} at={K.Sa} until={K.Di} texto="5 µm" largo={117} />
       <BarraEscala T={T} at={K.Co} until={K.An} texto="5 nm" largo={130} />
       <BarraEscala T={T} at={K.R} until={K.C} texto="dibujos no a escala" largo={0} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="20 cm" largo={240} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="20 cm" largo={330} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ai - 0.1} texto="Tus pulmones ya tuvieron *un hongo*" />
