@@ -2,7 +2,7 @@
 // Químico #02 · Estriado por agotamiento — MUDO protagonista (M2 "¿Por qué NO…?", errores comunes) y base NARRADA (N3 "Capítulos").
 // Protocolo de referencia: Sanders, E. R. (2012) JoVE 63: e3064. Guion y fuentes: guion.md. El dibujo es esquemático.
 const AVS = (n) => 'assets/stickers/' + n + '.png';
-const fondoPuntos = (c) => ({ position:'absolute', inset:0, background:c, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' });
+const fondoPuntos = (c) => ({ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, ${cineMix(c, CINE.fondo, 0.72)} 0%, ${cineMix(c, CINE.fondo, 0.9)} 78%)` });
 const AGAR = '#f1d79a', RP = 360;                       // radio de la placa grande
 const EST = kEstriado(RP - 20, 4);
 
@@ -116,7 +116,7 @@ function EstriadoNarrado() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, M: CUES.Material, C1: CUES.Cuad1, C2: CUES.Cuad2, C3: CUES.Cuad3, P: CUES.Pregunta, C4: CUES.Cuad4, Er: CUES.Errores, E: CUES.Estudio, X: CUES.Extra, Ci: CUES.Cierre, O: CUES.Outro };
   const FIN = K.O + 4;
-  const PY = 850, PS = 0.9;                           // placa más arriba: la zona 4 no queda tras el subtítulo
+  const PY = 960, PS = 1.1, GS = 1.3;                 // placa al centro y grande (ya no hay subtítulo); GS: el gancho de borde a borde
   const tr = [kprog(T, K.C1 + 0.4, K.C1 + 3.2), kprog(T, K.C2 + 1.6, K.C2 + 4), kprog(T, K.C3 + 1.2, K.C3 + 3.6), kprog(T, K.C4 + 0.1, K.C4 + 2.2)];
   const gancho = T < K.M;
   const trG = [kprog(T, K.G + 0.05, K.G + 0.9), kprog(T, K.G + 0.9, K.G + 1.6), kprog(T, K.G + 1.6, K.G + 2.3), kprog(T, K.G + 2.3, K.G + 3.0)];
@@ -125,8 +125,8 @@ function EstriadoNarrado() {
   let asa = null;
   const flamas = [K.C2 + 0.2, K.C3 + 0.1];
   const enFlama = flamas.some((t) => T >= t && T < t + 1.3);
-  if (gancho) { const q = Math.max(0, trG.findIndex((v) => v < 1)); const [x, y] = puntaAsa(q < 0 ? 3 : q, (trG[q < 0 ? 3 : q]) || 0.001, 540, PY, PS); asa = { x, y, cal: 0 }; }
-  else if (enFlama) asa = { x: 150, y: 1290, cal: 1, ang: -70 };
+  if (gancho) { const q = Math.max(0, trG.findIndex((v) => v < 1)); const [x, y] = puntaAsa(q < 0 ? 3 : q, (trG[q < 0 ? 3 : q]) || 0.001, 540, PY, GS); asa = { x, y, cal: 0 }; }
+  else if (enFlama) asa = { x: 100, y: 1230, cal: 1, ang: -70 };
   else if (enPlaca && T < K.C4 + 2.3) { const q = tr.findIndex((v) => v > 0 && v < 1); if (q >= 0) { const [x, y] = puntaAsa(q, tr[q], 540, PY, PS); asa = { x, y, cal: Math.max(0, 1 - (T - (q === 1 ? flamas[0] + 1.3 : q === 2 ? flamas[1] + 1.3 : 0)) * 2) * (q > 0 ? 1 : 0) }; } }
   const caps = [{ at: K.C1, titulo: 'Zona 1: la muestra' }, { at: K.C2, titulo: 'Zona 2: un poquito' }, { at: K.C3, titulo: 'Zona 3: menos' }, { at: K.C4, titulo: 'Zona 4: una sola' }];
   return (
@@ -135,69 +135,69 @@ function EstriadoNarrado() {
       <Escena T={T} a={K.G} b={K.M} fondo={KC.yellow}>
         <div style={fondoPuntos(KC.yellow)}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <PlacaEstriada T={T} y={PY} s={PS} trazo={trG} crecen={[0, 0, 0, 0].map((_, q) => kprog(T, K.G + 3.2 + q * 0.2, K.G + 4.6 + q * 0.2))} id="pg" />
+          <PlacaEstriada T={T} y={PY} s={GS} trazo={trG} crecen={[0, 0, 0, 0].map((_, q) => kprog(T, K.G + 3.2 + q * 0.2, K.G + 4.6 + q * 0.2))} id="pg" />
           {asa && gancho && <Asa x={asa.x} y={asa.y} s={1.15} />}
         </svg>
       </Escena>
       {/* material: placa, asa y mechero */}
       <Escena T={T} a={K.M} b={K.C1} fondo={KC.mint}>
         <div style={fondoPuntos(KC.mint)}></div>
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          {[['placa', 0.3], ['asa', 1.4], ['flama', 2.4]].map(([n, d], i) => { const e = kentrada(T, K.M + d, null, 'pop'); if (T < K.M + d) return null;
-            return <g key={n} opacity={e.o} transform={`translate(${[300, 560, 830][i]} ${[900, 760, 1000][i]}) scale(${e.s})`}>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><g transform="translate(565 960) scale(1.2) translate(-565 -960)">
+          {[['placa', 0.0], ['asa', 1.4], ['flama', 2.4]].map(([n, d], i) => { const e = kentrada(T, K.M + d, null, 'pop'); if (T < K.M + d) return null;
+            return <g key={n} opacity={e.o} transform={`translate(${[330, 580, 820][i]} ${[900, 760, 1000][i]}) scale(${e.s})`}>
               {n === 'placa' && <PlacaPetri x={0} y={0} r={190} agar={AGAR} id="pm" />}
               {n === 'asa' && <Asa x={-80} y={0} ang={70} caliente={kprog(T, K.M + 3.6, K.M + 4.4)} s={0.9} />}
               {n === 'flama' && <Mechero T={T} x={0} y={260} s={1.1} />}
             </g>; })}
-        </svg>
-        <Chip T={T} at={K.M + 0.5} until={K.C1 - 0.2} texto="agar" x={300} y={1150} borde={KC.gold} tam={36} />
-        <Chip T={T} at={K.M + 1.6} until={K.C1 - 0.2} texto="asa" x={560} y={1150} borde={KC.blue} tam={36} />
-        <Chip T={T} at={K.M + 2.6} until={K.C1 - 0.2} texto="mechero" x={830} y={1150} borde={KC.red} tam={36} />
+        </g></svg>
+        <Chip T={T} at={K.M + 0.5} until={K.C1 - 0.2} texto="agar" x={283} y={1220} borde={KC.gold} tam={36} />
+        <Chip T={T} at={K.M + 1.6} until={K.C1 - 0.2} texto="asa" x={583} y={1220} borde={KC.blue} tam={36} />
+        <Chip T={T} at={K.M + 2.6} until={K.C1 - 0.2} texto="mechero" x={871} y={1220} borde={KC.red} tam={36} />
       </Escena>
       {/* las cuatro zonas */}
       <Escena T={T} a={K.C1} b={K.Er} fondo={KC.cyan} zoom={0.02}>
         <div style={fondoPuntos(KC.cyan)}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Mechero T={T} x={150} y={1560} s={0.8} />
+          <Mechero T={T} x={100} y={1500} s={0.8} />
           <PlacaEstriada T={T} y={PY} s={PS} trazo={tr} crecen={cre} id="pz" />
           <Zonas T={T} y={PY} s={PS} o={kprog(T, K.C1 + 0.2, K.C1 + 0.6)} />
           {asa && !gancho && <Asa x={asa.x} y={asa.y} ang={asa.ang || -32} caliente={asa.cal} s={1.1} />}
           {/* millones de células encimadas en la zona 1 (zoom) */}
         </svg>
-        <Lupa T={T} at={K.C1 + 2.4} until={K.C2 - 0.2} x={760} y={560} r={190} fx={540 + EST.trazos[0][3][0] * PS} fy={PY + EST.trazos[0][3][1] * PS} etiqueta="millones de células" tinte={KC.red}
+        <Lupa T={T} at={K.C1 + 2.4} until={K.C2 - 0.2} x={790} y={370} r={180} fx={540 + EST.trazos[0][3][0] * PS} fy={PY + EST.trazos[0][3][1] * PS} etiqueta="millones de células" tinte={KC.red}
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a2633" />{Array.from({ length: 70 }, (_, i) => <rect key={i} x={(i * 53) % (r * 2)} y={(i * 37) % (r * 2)} width={26} height={12} rx={6} fill="#ff6b8a" transform={`rotate(${i * 29} ${(i * 53) % (r * 2)} ${(i * 37) % (r * 2)})`} />)}</svg>} />
-        <Lupa T={T} at={K.C4 + 4.4} until={K.Er - 0.2} x={420} y={560} r={190} fx={540 + EST.colonias.find((c) => c.q === 3).x * PS} fy={PY + EST.colonias.find((c) => c.q === 3).y * PS} etiqueta="1 colonia ≈ 1 célula (en teoría)" tinte={KC.mint}
+        <Lupa T={T} at={K.C4 + 4.4} until={K.Er - 0.2} x={590} y={370} r={180} fx={540 + EST.colonias.find((c) => c.q === 3).x * PS} fy={PY + EST.colonias.find((c) => c.q === 3).y * PS} etiqueta="1 colonia ≈ 1 célula (en teoría)" tinte={KC.mint}
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a2633" /><circle cx={r} cy={r} r={r * 0.7} fill="#f4efe4" opacity=".35" />{Array.from({ length: 40 }, (_, i) => { const a = i * 2.4, d = Math.sqrt(i / 40) * r * 0.6; return <rect key={i} x={r + Math.cos(a) * d - 12} y={r + Math.sin(a) * d - 6} width={24} height={12} rx={6} fill="#ff6b8a" />; })}</svg>} />
-        <Cronometro T={T} at={K.C4 + 2.4} until={K.C4 + 4.6} factor={24 * 3600 / 2.2} etiqueta="INCUBANDO" x={260} y={1640} />
+        <Cronometro T={T} at={K.C4 + 2.4} until={K.C4 + 4.6} factor={24 * 3600 / 2.2} etiqueta="INCUBANDO" x={540} y={1450} />
       </Escena>
       {/* errores comunes */}
       <Escena T={T} a={K.Er} b={K.E} fondo={KC.pink}>
         <div style={fondoPuntos(KC.pink)}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          {[['muerta', 300, 640], ['clava', 780, 640], ['regresa', 540, 1060]].map(([m, x, y], i) => { const at = K.Er + 0.6 + i * 1.6; if (T < at) return null; const e = kentrada(T, at, null, 'pop');
-            return <g key={m} opacity={e.o}><PlacaEstriada T={T} x={x} y={y} s={0.55 * e.s} trazo={[1, 1, 1, 1]} crecen={[1, 1, 1, 1]} modo={m} id={'er' + i} />
-              <Tache x={x} y={y} s={1.2} p={kprog(T, at + 0.6, at + 1)} /></g>; })}
+          {[['muerta', 300, 860], ['clava', 780, 860], ['regresa', 540, 1280]].map(([m, x, y], i) => { const at = K.Er + 0.3 + i * 1.6; if (T < at) return null; const e = kentrada(T, at, null, 'pop');
+            return <g key={m} opacity={e.o}><PlacaEstriada T={T} x={x} y={y} s={0.6 * e.s} trazo={[1, 1, 1, 1]} crecen={[1, 1, 1, 1]} modo={m} id={'er' + i} />
+              <Tache x={x} y={y} s={1.3} p={kprog(T, at + 0.6, at + 1)} /></g>; })}
         </svg>
-        {['asa caliente', 'clavarla', 'regresar a la 1'].map((t, i) => <Chip key={t} T={T} at={K.Er + 0.8 + i * 1.6} until={K.E - 0.2} texto={t} x={[300, 780, 540][i]} y={[880, 880, 1300][i]} borde={KC.red} tam={34} />)}
+        {['asa caliente', 'clavarla', 'regresar a la 1'].map((t, i) => <Chip key={t} T={T} at={K.Er + 0.5 + i * 1.6} until={K.E - 0.2} texto={t} x={[300, 780, 850][i]} y={[1110, 1110, 1290][i]} borde={KC.red} tam={34} />)}
       </Escena>
       {/* el estudio: Sanders 2012, Serratia */}
       <Escena T={T} a={K.E} b={K.X} fondo={KC.lilac}>
         <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'repeating-linear-gradient(45deg, rgba(255,255,255,.12) 0 24px, transparent 24px 48px)' }}></div>
-        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3} anio="2012" quien="Erin R. Sanders" revista="JoVE 63: e3064 · protocolo de estriado" y={700} />
-        {T > K.E + 2.8 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:kprog(T, K.E + 2.8, K.E + 3.3) }}>
-          <PlacaEstriada T={T} y={870} s={0.88} crecen={[0, 1, 2, 3].map((q) => kprog(T, K.E + 3.4 + q * 0.4, K.E + 5 + q * 0.4))} color="#e8384f" borde="#9a1a2a" id="ps" />
-          <Zonas T={T} y={870} s={0.88} />
+        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3} anio="2012" quien="Erin R. Sanders" revista="JoVE 63: e3064 · protocolo de estriado" y={330} />
+        {<svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          <PlacaEstriada T={T} y={1000} s={1.1} crecen={[0, 1, 2, 3].map((q) => kprog(T, K.E + 3.4 + q * 0.4, K.E + 5 + q * 0.4))} color="#e8384f" borde="#9a1a2a" id="ps" />
+          <Zonas T={T} y={1000} s={1.1} />
         </svg>}
-        <Chip T={T} at={K.E + 3.4} until={K.X - 0.2} texto="24 h · 30 °C" y={460} borde={KC.gold} tam={44} mono />
-        <Etq T={T} at={K.E + 5.2} until={K.X - 0.2} x={1010} y={520} texto="Serratia marcescens" it lado="izq" tam={30} color={KC.ink} />
+        <Chip T={T} at={K.E + 3.4} until={K.X - 0.2} texto="24 h · 30 °C" y={480} borde={KC.gold} tam={44} mono />
+        <Etq T={T} at={K.E + 5.2} until={K.X - 0.2} x={1010} y={570} texto="Serratia marcescens" it lado="izq" tam={30} color={KC.ink} />
       </Escena>
       {/* la bacteria roja en la regadera */}
-      <Escena T={T} a={K.X} b={K.Ci} fondo="#d9eef5">
-        <div style={{ position:'absolute', inset:0, background:'#d9eef5', backgroundImage:'linear-gradient(#b7d3de 4px, transparent 4px), linear-gradient(90deg, #b7d3de 4px, transparent 4px)', backgroundSize:'120px 120px' }}></div>
+      <Escena T={T} a={K.X} b={K.Ci} fondo="#1c2a33">
+        <div style={{ position:'absolute', inset:0, background:'#1c2a33', backgroundImage:'linear-gradient(#2c404c 4px, transparent 4px), linear-gradient(90deg, #2c404c 4px, transparent 4px)', backgroundSize:'120px 120px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <path d={`M 0 1500 Q ${200 * kprog(T, K.X + 0.3, K.X + 3)} 1460 ${380 * kprog(T, K.X + 0.3, K.X + 3)} 1500 L 0 1500 Z`} fill="#ff6b7a" opacity=".85" />
           <path d={`M 0 1500 L 0 ${1500 - 760 * kprog(T, K.X + 0.3, K.X + 3)} Q 150 ${1500 - 560 * kprog(T, K.X + 0.3, K.X + 3)} 110 1500 Z`} fill="#ff6b7a" opacity=".85" />
-          <rect x={0} y={1500} width={KW} height={420} fill="#7f7f80" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1500} width={KW} height={420} fill="#34373d" stroke={KC.ink} strokeWidth={8} />
           <rect x={700} y={300} width={60} height={300} rx={20} fill="#9aa4ae" stroke={KC.ink} strokeWidth={6} />
           <ellipse cx={730} cy={620} rx={110} ry={34} fill="#c3cbd3" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 14 }, (_, i) => { const u = ((T * 0.9 + i / 14) % 1); return <line key={i} x1={650 + (i * 13) % 160} y1={650 + u * 820} x2={650 + (i * 13) % 160} y2={680 + u * 820} stroke="#5ac8ff" strokeWidth={6} opacity=".7" />; })}
@@ -211,7 +211,7 @@ function EstriadoNarrado() {
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <PlacaEstriada T={T} y={PY} s={PS} crecen={[1, 1, 1, 1]} id="pc" />
           <Zonas T={T} y={PY} s={PS} />
-          {Array.from({ length: 24 }, (_, i) => { const u = kprog(T, K.Ci + 0.3 + i * 0.05, K.Ci + 1.8 + i * 0.05); return <circle key={i} cx={klerp(120 + (i % 6) * 20, 330, u)} cy={klerp(560 + Math.floor(i / 6) * 20, 760, u)} r={10} fill="#ff6b8a" opacity={1 - u} />; })}
+          {Array.from({ length: 24 }, (_, i) => { const u = kprog(T, K.Ci + 0.3 + i * 0.05, K.Ci + 1.8 + i * 0.05); return <circle key={i} cx={klerp(120 + (i % 6) * 20, puntaAsa(0, 0.5, 540, PY, PS)[0], u)} cy={klerp(440 + Math.floor(i / 6) * 20, puntaAsa(0, 0.5, 540, PY, PS)[1], u)} r={10} fill="#ff6b8a" opacity={1 - u} />; })}
         </svg>
         <Chip T={T} at={K.Ci + 0.4} until={K.O} texto="entra una multitud · sale una sola" y={460} borde={KC.gold} tam={36} />
       </Escena>
