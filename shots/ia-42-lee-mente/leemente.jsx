@@ -247,12 +247,12 @@ function LeeMente() {
       <Escena T={T} a={K.A} b={K.Ej}>
         <FondoCircuito T={T} />
         {svg(<>
-          <Cerebro x={540} y={700} s={1.6} T={T} zonas={[{ x: -120, y: -40, at: K.A + 0.4 }, { x: 60, y: -90, at: K.A + 0.9, color: KC.cyan }, { x: 140, y: 40, at: K.A + 1.4, color: KC.mint }, { x: -40, y: 70, at: K.A + 1.9, color: KC.orange }]} />
+          <Cerebro x={540} y={850} s={1.62} T={T} zonas={[{ x: -120, y: -40, at: K.A + 0.4 }, { x: 60, y: -90, at: K.A + 0.9, color: KC.cyan }, { x: 140, y: 40, at: K.A + 1.4, color: KC.mint }, { x: -40, y: 70, at: K.A + 1.9, color: KC.orange }]} />
         </>)}
-        <RedNeuronal T={T} x={190} y={1130} ancho={700} alto={190} capas={[3, 4, 4, 3]} onda={((T - K.A) * 0.7) % 1} o={kprog(T, K.A + 1.0, K.A + 1.6)} />
+        <RedNeuronal T={T} x={170} y={1258} ancho={740} alto={148} capas={[3, 4, 4, 3]} onda={((T - K.A) * 0.7) % 1} o={kprog(T, K.A + 1.0, K.A + 1.6)} />
       </Escena>
       <Chip T={T} at={K.A + 1.2} until={K.A + 3.4} texto="un decodificador para cada persona" x={540} y={330} tam={30} borde={KC.cyan} />
-      <Pantalla T={T} at={K.A + 3.8} until={K.Ej - 0.1} y={1440} h={170} titulo="historia nueva → texto" texto={tecleo('ella ni siquiera…', T, K.A + 4.6, K.A + 6.6)} />
+      <Pantalla T={T} at={K.A + 3.8} until={K.Ej - 0.1} y={1482} h={148} titulo="historia nueva → texto" texto={tecleo('ella ni siquiera…', T, K.A + 4.6, K.A + 6.6)} />
 
       {/* 4 · el ejemplo real: no las palabras, la idea */}
       <Escena T={T} a={K.Ej} b={K.P}>
