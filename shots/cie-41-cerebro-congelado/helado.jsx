@@ -163,11 +163,11 @@ function Reloj({ x, y, r = 240, p = 0, marca = 0.85, dolor = 1 }) {
     <rect x={x - 34} y={y - r - 60} width={68} height={50} rx={12} fill="#cfd6e0" stroke={KC.ink} strokeWidth={8} />
     <circle cx={x} cy={y} r={r} fill="#fff" stroke={KC.ink} strokeWidth={14} />
     {p > 0.001 && <path d={arco(Math.min(p, 0.999))} fill={KC.mint} opacity=".55" />}
-    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={px(i / 12, r - 18)} y1={py(i / 12, r - 18)} x2={px(i / 12, r - 46)} y2={py(i / 12, r - 46)} stroke={KC.ink} strokeWidth={7} strokeLinecap="round" />)}
+    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={px(i / 12, r - 18)} y1={py(i / 12, r - 18)} x2={px(i / 12, r - 46)} y2={py(i / 12, r - 46)} stroke="#0b1020" strokeWidth={7} strokeLinecap="round" />)}
     <line x1={px(marca, r - 10)} y1={py(marca, r - 10)} x2={px(marca, r - 70)} y2={py(marca, r - 70)} stroke={KC.red} strokeWidth={16} strokeLinecap="round" />
     <text x={px(marca, r + 62)} y={py(marca, r + 62) + 14} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>2 min</text>
-    <line x1={x} y1={y} x2={px(p, r - 60)} y2={py(p, r - 60)} stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
-    <circle cx={x} cy={y} r={20} fill={KC.ink} />
+    <line x1={x} y1={y} x2={px(p, r - 60)} y2={py(p, r - 60)} stroke="#0b1020" strokeWidth={16} strokeLinecap="round" />
+    <circle cx={x} cy={y} r={20} fill="#0b1020" />
     <Rayo x={x + 4} y={y + 110} s={0.8 * dolor + 0.01} o={dolor} />
   </g>;
 }
@@ -180,15 +180,16 @@ function Palomita({ x, y, s = 1, p = 1 }) {
   </g>;
 }
 // Tarjeta del estudio de 2002: rápido vs. despacio (sin cifras: solo la dirección del resultado).
-function PanelComer({ x, y, T, p = 1, titulo, rapido }) {
+function PanelComer({ x, y, T, p = 1, titulo, rapido, s = 1, o = 1, marca = null }) {
   if (p <= 0) return null;
   const e = kEase.rebote(kclamp(p, 0, 1));
-  return <g transform={`translate(${x} ${y}) scale(${klerp(0.5, 1, e)})`} opacity={kprog(p, 0, 0.3)}>
+  const mk = marca == null ? kprog(p, 0.4, 1) : marca;
+  return <g transform={`translate(${x} ${y}) scale(${s * klerp(0.5, 1, e)})`} opacity={o * kprog(p, 0, 0.3)}>
     <rect x={-210} y={-250} width={420} height={500} rx={36} fill={KC.paper} stroke={KC.ink} strokeWidth={9} />
     <text x={0} y={-180} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={rapido ? KC.red : KC.leaf} stroke={KC.ink} strokeWidth={3}>{titulo}</text>
     {rapido && [-40, 0, 40].map((dy, i) => <line key={i} x1={-180 + ((T * 300 + i * 40) % 60)} y1={dy + 40} x2={-110 + ((T * 300 + i * 40) % 60)} y2={dy + 40} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />)}
     <g transform={`translate(${rapido ? Math.sin(T * 30) * 6 : 0} 0)`}><Helado x={20} y={0} s={0.62} rot={rapido ? 20 : -8} mano={false} mordida={rapido ? 0.9 : 0.35} /></g>
-    {rapido ? <Rayo x={140} y={-80} s={0.7} rot={10} /> : <Palomita x={140} y={-80} s={0.8} p={kprog(p, 0.4, 1)} />}
+    {rapido ? <Rayo x={140} y={-80} s={0.7} rot={10} o={mk} /> : <Palomita x={140} y={-80} s={0.8} p={mk} />}
   </g>;
 }
 
@@ -210,13 +211,22 @@ function Helado41() {
   // resultado: ancho de la arteria y dolor (los dos al mismo tiempo)
   const sube = kprog(T, K.Resultado + 1.4, K.Resultado + 2.8, kEase.suave), baja = kprog(T, K.Resultado + 4.6, K.Resultado + 6.2, kEase.suave);
   const ancho = sube * (1 - baja), dolorR = ancho;
-  const RC = { x: 540, y: 600 };
+  const RC = { x: 540, y: 640 };
+  // pase a mano cine: cada escena agranda y centra su dibujo (las etiquetas se reacomodaron a mano)
+  const GG = 'translate(540 1000) scale(1.3) translate(-480 -1000)';     // gancho y cierre
+  const GP = 'translate(470 950) scale(1.2) translate(-440 -900)';       // paladar
+  const GN = 'translate(540 980) scale(1.3) translate(-470 -910)';       // nervio
+  const GF = 'translate(360 1000) scale(1.15) translate(-450 -950)';     // frente
+  const GE = 'translate(540 1040) scale(1.25) translate(-510 -1000)';    // estudio
+  const GL = 'translate(430 950) scale(1.2) translate(-440 -900)';       // lengua
+  const gg = (x, y) => [540 + 1.3 * (x - 480), 1000 + 1.3 * (y - 1000)];
   return (
     <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: mordida → rayo en la frente → el cerebro congelado se tacha */}
-      <Escena T={T} a={K.Gancho} b={K.Paladar} fondo={KC.pink}>
+      <Escena T={T} a={K.Gancho} b={K.Paladar}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
+          <g transform={GG}>
           <Manga x={mx0} y={my0} hasta={[1060, 1560]} />
           <CabezaPerfil x={CG.x} y={CG.y} s={CG.s} gesto={ay > 0.5 ? 'mueca' : 'normal'} boca={T < K.Gancho + 0.6 ? 0.6 : 0} />
           <Helado x={hx} y={hy} rot={hrot} mordida={kprog(T, K.Gancho + 0.45, K.Gancho + 0.6)} />
@@ -225,27 +235,30 @@ function Helado41() {
           <Latidos x={fre0[0]} y={fre0[1]} T={T} o={ay * (1 - kprog(T, K.Gancho + 2.4, K.Gancho + 2.9)) + kprog(T, K.Gancho + 6.0, K.Gancho + 6.5)} />
           <Rayo x={fre0[0] + 20} y={fre0[1] - 30} s={0.9 + 0.08 * Math.sin(T * 20)} o={ay * (1 - kprog(T, K.Gancho + 2.4, K.Gancho + 2.9)) + kprog(T, K.Gancho + 6.0, K.Gancho + 6.4)} />
           <Onomato T={T} at={K.Gancho + 0.85} dur={1.4} x={280} y={640} texto="¡AY!" color={KC.yellow} tam={170} />
-          <GloboCerebro x={250} y={500} T={T} s={0.85} hacia={[CG.x - 40, CG.y - 230]} o={kprog(T, K.Gancho + 2.5, K.Gancho + 2.9) * (1 - kprog(T, K.Gancho + 4.6, K.Gancho + 5.0))}
+          </g>
+          <GloboCerebro x={290} y={390} T={T} s={0.9} hacia={gg(CG.x - 40, CG.y - 215)} o={kprog(T, K.Gancho + 2.5, K.Gancho + 2.9) * (1 - kprog(T, K.Gancho + 4.6, K.Gancho + 5.0))}
             tacha={kprog(T, K.Gancho + 3.4, K.Gancho + 4.0)} />
         </Lienzo>
-        <Chip T={T} at={K.Gancho + 4.9} until={K.Paladar - 0.1} texto="❄ el frío: tu paladar" x={760} y={430} tam={40} borde={HFRIO} />
-        <Chip T={T} at={K.Gancho + 6.1} until={K.Paladar - 0.1} texto="⚡ el dolor: tu frente" x={760} y={530} tam={40} borde={HDOLOR} />
+        <Chip T={T} at={K.Gancho + 4.9} until={K.Paladar - 0.1} texto="❄ el frío: tu paladar" x={690} y={400} tam={40} borde={HFRIO} />
+        <Chip T={T} at={K.Gancho + 6.1} until={K.Paladar - 0.1} texto="⚡ el dolor: tu frente" x={690} y={500} tam={40} borde={HDOLOR} />
       </Escena>
 
       {/* 1 · por dentro: el frío toca el paladar y los vasos reaccionan */}
       <Escena T={T} a={K.Paladar} b={K.Nervio} fondo={KC.noche}>
         <Ambiente T={T} n={20} color="rgba(255,255,255,.14)" />
         <Lienzo>
+          <g transform={GP}>
           <Helado x={CC.x + 270} y={CC.y + 170} rot={-70} s={0.9} mano={false} />
           <CabezaPerfil x={CC.x} y={CC.y} s={CC.s} corte={1}>
             <BocaCorte T={T} bocado={kprog(T, K.Paladar + 1.0, K.Paladar + 1.4)} frio={kprog(T, K.Paladar + 1.5, K.Paladar + 2.2)} garganta={kprog(T, K.Paladar + 2.4, K.Paladar + 3.0)}
               vasos={1 - 0.6 * kprog(T, K.Paladar + 4.0, K.Paladar + 4.5) + 1.2 * kprog(T, K.Paladar + 4.9, K.Paladar + 5.5)} />
           </CabezaPerfil>
+          </g>
         </Lienzo>
-        <Chip T={T} at={K.Paladar + 0.3} until={K.Nervio - 0.1} texto="idea más aceptada" x={600} y={420} tam={42} borde={KC.gold} />
-        <Etq T={T} at={K.Paladar + 1.6} until={K.Nervio - 0.2} x={735} y={1015} texto="paladar" lado="der" color={HFRIO} />
-        <Etq T={T} at={K.Paladar + 2.6} until={K.Nervio - 0.2} x={400} y={1150} texto="garganta" lado="izq" color={HFRIO} />
-        <Lupa T={T} at={K.Paladar + 3.7} until={K.Nervio - 0.3} x={810} y={690} r={165} fx={CC.x + 95 * CC.s} fy={CC.y + 57 * CC.s} tinte={HSANGRE} etiqueta="POR DENTRO · PALADAR"
+        <Chip T={T} at={K.Paladar + 0.3} until={K.Nervio - 0.1} texto="idea más aceptada" x={360} y={400} tam={42} borde={KC.gold} />
+        <Etq T={T} at={K.Paladar + 1.6} until={K.Nervio - 0.2} x={770} y={1066} texto="paladar" lado="der" color={HFRIO} />
+        <Etq T={T} at={K.Paladar + 2.6} until={K.Nervio - 0.2} x={436} y={1250} texto="garganta" lado="izq" color={HFRIO} />
+        <Lupa T={T} at={K.Paladar + 3.7} until={K.Nervio - 0.3} x={775} y={640} r={175} fx={470 + 1.2 * (CC.x + 95 * CC.s - 440)} fy={950 + 1.2 * (CC.y + 57 * CC.s - 900)} tinte={HSANGRE} etiqueta="POR DENTRO · PALADAR"
           interior={(t, r) => { const w = 1 - 0.6 * kprog(t, K.Paladar + 4.0, K.Paladar + 4.5) + 1.0 * kprog(t, K.Paladar + 4.9, K.Paladar + 5.5); const h = 60 * w;
             return <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a0f18" />
               <rect x={0} y={r * 1.45} width={r * 2} height={r} fill="#f7a8b8" /><rect x={0} y={r * 1.45} width={r * 2} height={14} fill={HFRIO} opacity=".8" />
@@ -256,24 +269,25 @@ function Helado41() {
       </Escena>
 
       {/* 2 · el nervio trigémino lleva la señal */}
-      <Escena T={T} a={K.Nervio} b={K.Frente} fondo={KC.cyan}>
+      <Escena T={T} a={K.Nervio} b={K.Frente}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <CabezaPerfil x={CN.x} y={CN.y} s={CN.s}>
+          <g transform={GN}><CabezaPerfil x={CN.x} y={CN.y} s={CN.s}>
             <CaraZona o={kprog(T, K.Nervio + 2.3, K.Nervio + 2.9)} />
             <Trigemino T={T} p={kprog(T, K.Nervio + 0.1, K.Nervio + 1.3, kEase.sale)} pulso={kprog(T, K.Nervio + 1.0, K.Nervio + 1.5)} rama={1} />
             <Halo x={L_PALADAR[0] + 8} y={L_PALADAR[1]} r={26} o={1} />
-          </CabezaPerfil>
+          </CabezaPerfil></g>
         </Lienzo>
-        <Chip T={T} at={K.Nervio + 0.4} until={K.Frente - 0.1} texto="nervio trigémino" x={540} y={420} tam={44} borde={KC.yellow} />
-        <Etq T={T} at={K.Nervio + 1.2} until={K.Frente - 0.2} x={CN.x - 5 * CN.s - 30} y={CN.y + 15 * CN.s} texto="3 ramas" lado="izq" color={KC.texto} />
-        <Chip T={T} at={K.Nervio + 2.6} until={K.Frente - 0.1} texto="siente casi toda tu cara" x={540} y={515} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Nervio + 0.4} until={K.Frente - 0.1} texto="nervio trigémino" x={540} y={350} tam={44} borde={KC.yellow} />
+        <Etq T={T} at={K.Nervio + 1.2} until={K.Frente - 0.2} x={540 + 1.3 * (CN.x - 5 * CN.s - 30 - 470)} y={980 + 1.3 * (CN.y + 15 * CN.s - 910)} texto="3 ramas" lado="izq" color={KC.texto} />
+        <Chip T={T} at={K.Nervio + 2.6} until={K.Frente - 0.1} texto="siente casi toda tu cara" x={540} y={445} tam={40} borde={KC.yellow} />
       </Escena>
 
       {/* 3 · el cerebro la ubica en la frente: dolor que se siente lejos */}
-      <Escena T={T} a={K.Frente} b={K.Estudio} fondo={KC.yellow}>
+      <Escena T={T} a={K.Frente} b={K.Estudio}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
+          <g transform={GF}>
           <CabezaPerfil x={CF.x} y={CF.y} s={CF.s} gesto={T > K.Frente + 1.2 ? 'mueca' : 'normal'}>
             <Trigemino T={T} p={1} pulso={0.6} rama={0} />
           </CabezaPerfil>
@@ -284,25 +298,30 @@ function Helado41() {
               <Latidos x={c} y={d} T={T} o={kprog(T, K.Frente + 1.2, K.Frente + 1.5)} />
               <Rayo x={c + 30} y={d - 40} s={0.85 + 0.08 * Math.sin(T * 20)} o={kprog(T, K.Frente + 1.2, K.Frente + 1.4)} />
             </g>; })()}
+          </g>
         </Lienzo>
-        <Etq T={T} at={K.Frente + 0.4} until={K.Estudio - 0.2} x={720} y={1130} texto="empieza aquí" lado="der" color={KC.ink} tam={30} />
-        <Etq T={T} at={K.Frente + 1.4} until={K.Estudio - 0.2} x={690} y={830} texto="lo sientes aquí" lado="der" color={KC.ink} tam={30} />
-        <Chip T={T} at={K.Frente + 2.6} until={K.Estudio - 0.1} texto="dolor que se siente lejos" x={370} y={440} tam={36} borde={KC.red} />
+        <Etq T={T} at={K.Frente + 0.4} until={K.Estudio - 0.2} x={672} y={1200} texto="empieza aquí" lado="der" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Frente + 1.4} until={K.Estudio - 0.2} x={655} y={850} texto="lo sientes aquí" lado="der" color={KC.ink} tam={30} />
+        <Chip T={T} at={K.Frente + 2.6} until={K.Estudio - 0.1} texto="dolor que se siente lejos" x={400} y={470} tam={36} borde={KC.red} />
       </Escena>
 
       {/* 4 · el estudio de 2012: agua helada con popote al paladar */}
-      <Escena T={T} a={K.Estudio} b={K.Resultado} fondo={KC.mint}>
+      <Escena T={T} a={K.Estudio} b={K.Resultado}>
         <FondoLunares color={KC.mint} />
-        {T > K.Estudio + 2.3 && <Lienzo o={kprog(T, K.Estudio + 2.3, K.Estudio + 2.7)}>
+        <Lienzo o={0.5 + 0.5 * kprog(T, K.Estudio + 2.1, K.Estudio + 2.6)}>
+          <g transform={GE}>
           <Vaso x={790} y={1060} s={0.9} T={T} />
           <path d={`M 800 960 L 800 860 L ${CE.x + 200 * CE.s} ${CE.y + 105 * CE.s}`} fill="none" stroke={KC.ink} strokeWidth={22} strokeLinejoin="round" strokeLinecap="round" />
           <path d={`M 800 960 L 800 860 L ${CE.x + 200 * CE.s} ${CE.y + 105 * CE.s}`} fill="none" stroke="#fff" strokeWidth={13} strokeLinejoin="round" strokeLinecap="round" />
           <path d={`M 800 960 L 800 860 L ${CE.x + 200 * CE.s} ${CE.y + 105 * CE.s}`} fill="none" stroke={KC.red} strokeWidth={13} strokeDasharray="10 14" strokeDashoffset={-T * 40} strokeLinejoin="round" />
           <CabezaPerfil x={CE.x} y={CE.y} s={CE.s} boca={0.3} />
-        </Lienzo>}
-        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 2.3} anio="2012" quien="Harvard · Jorge Serrador" revista="presentado en un congreso" x={540} y={720} />
-        <Chip T={T} at={K.Estudio + 2.6} until={K.Resultado - 0.1} texto="voluntarios · agua helada" x={540} y={420} tam={42} borde={KC.ink} />
-        <Lupa T={T} at={K.Estudio + 3.4} until={K.Resultado - 0.3} x={800} y={640} r={160} fx={CE.x + 190 * CE.s} fy={CE.y + 100 * CE.s} tinte={HFRIO} etiqueta="POR DENTRO · POPOTE"
+          </g>
+        </Lienzo>
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, zIndex:43, transform:'scale(.85)', transformOrigin:'540px 400px', pointerEvents:'none' }}>
+          <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 2.3} anio="2012" quien="Harvard · Jorge Serrador" revista="presentado en un congreso" x={540} y={400} />
+        </div>
+        <Chip T={T} at={K.Estudio + 2.6} until={K.Resultado - 0.1} texto="voluntarios · agua helada" x={400} y={330} tam={42} borde={KC.ink} />
+        <Lupa T={T} at={K.Estudio + 3.4} until={K.Resultado - 0.3} x={775} y={610} r={175} fx={540 + 1.25 * (CE.x + 190 * CE.s - 510)} fy={1040 + 1.25 * (CE.y + 100 * CE.s - 1000)} tinte={HFRIO} etiqueta="POR DENTRO · POPOTE"
           interior={(t, r) => <svg width={r * 2} height={r * 2} viewBox="40 20 160 160"><rect x={0} y={0} width={300} height={300} fill="#f1b48f" />
             <BocaCorte T={t} popote={1} frio={kprog(t, K.Estudio + 3.9, K.Estudio + 4.4)} /></svg>} />
       </Escena>
@@ -311,84 +330,86 @@ function Helado41() {
       <Escena T={T} a={K.Resultado} b={K.Pregunta} fondo={KC.noche}>
         <Ambiente T={T} n={20} color="rgba(255,255,255,.14)" />
         <Lienzo>
-          <g transform={`translate(${RC.x} ${RC.y}) scale(1.5)`}>
+          <g transform={`translate(${RC.x} ${RC.y}) scale(1.9)`}>
             <path d="M -120 20 C -140 -60 -80 -112 -20 -100 C 20 -130 92 -112 110 -60 C 150 -30 140 40 100 60 C 60 92 -60 92 -120 20 Z" fill="#f7a8c0" stroke={KC.ink} strokeWidth={8} />
             <path d="M -90 0 C -70 -30 -40 0 -20 -30 C 0 -60 30 -20 50 -50 M -60 50 C -40 20 0 50 20 20 C 40 -5 70 30 100 10" fill="none" stroke="#c9577c" strokeWidth={6} strokeLinecap="round" />
             <path d="M -30 70 C 20 40 80 0 95 -55 C 100 -80 60 -100 20 -100" fill="none" stroke={KC.ink} strokeWidth={10 + 8 * ancho} strokeLinecap="round" />
             <path d="M -30 70 C 20 40 80 0 95 -55 C 100 -80 60 -100 20 -100" fill="none" stroke={HSANGRE} strokeWidth={5 + 8 * ancho} strokeLinecap="round" />
           </g>
           {/* el tubo de cerca */}
-          {(() => { const h = 70 + 90 * ancho, y0 = 1000;
-            return <g opacity={kprog(T, K.Resultado + 0.6, K.Resultado + 1.1)}>
+          {(() => { const h = 70 + 90 * ancho, y0 = 1080;
+            return <g opacity={kprog(T, K.Resultado - 0.1, K.Resultado + 0.4)}>
               <rect x={60} y={y0 - h / 2 - 12} width={960} height={h + 24} rx={(h + 24) / 2} fill="#a3364a" stroke={KC.ink} strokeWidth={8} />
               <rect x={60} y={y0 - h / 2} width={960} height={h} rx={h / 2} fill={HSANGRE} />
               {Array.from({ length: 12 }, (_, i) => <ellipse key={i} cx={80 + ((T * (140 + 160 * ancho) + i * 85) % 920)} cy={y0 + Math.sin(i * 2.3) * h * 0.25} rx={24} ry={13} fill="#ff6b7d" stroke="#7a1422" strokeWidth={3} />)}
               {[-1, 1].map((sg) => <g key={sg}><path d={`M 540 ${y0 + sg * (h / 2 + 30)} l 0 ${sg * 50 * ancho + sg * 0.01}`} stroke={KC.texto} strokeWidth={8} markerEnd="" />
                 {ancho > 0.2 && <path d={`M 520 ${y0 + sg * (h / 2 + 30 + 50 * ancho) - sg * 18} L 540 ${y0 + sg * (h / 2 + 30 + 50 * ancho)} L 560 ${y0 + sg * (h / 2 + 30 + 50 * ancho) - sg * 18}`} fill="none" stroke={KC.texto} strokeWidth={8} strokeLinecap="round" />}</g>)}
             </g>; })()}
-          <Rayo x={RC.x + 270} y={RC.y - 40} s={0.8} o={dolorR} />
-          <Latidos x={RC.x + 270} y={RC.y - 40} T={T} o={dolorR} r1={100} />
+          <Rayo x={RC.x + 340} y={RC.y - 60} s={1} o={dolorR} />
+          <Latidos x={RC.x + 340} y={RC.y - 60} T={T} o={dolorR} r1={100} />
         </Lienzo>
-        <Etq T={T} at={K.Resultado + 0.7} until={K.Pregunta - 0.2} x={600} y={800} texto="una arteria del cerebro" lado="izq" color={KC.texto} tam={30} />
-        <Medidor T={T} at={K.Resultado + 1.0} until={K.Pregunta - 0.1} valor={() => 0.3 + 0.7 * ancho} etiqueta="arteria" texto={() => (ancho > 0.5 ? 'se ensancha' : baja > 0.5 ? 'se cierra' : 'normal')} x={90} y={1420} ancho={620} color={HSANGRE} />
-        <Medidor T={T} at={K.Resultado + 1.0} until={K.Pregunta - 0.1} valor={() => dolorR} etiqueta="dolor" texto={() => (dolorR > 0.5 ? '¡duele!' : baja > 0.5 ? 'se quita' : 'nada')} x={90} y={1540} ancho={620} color={KC.yellow} />
-        <Chip T={T} at={K.Resultado + 2.6} until={K.Resultado + 4.5} texto="¡al mismo tiempo!" x={540} y={420} tam={44} borde={KC.yellow} />
+        <Etq T={T} at={K.Resultado + 0.7} until={K.Pregunta - 0.2} x={525} y={905} texto="una arteria del cerebro" lado="izq" color={KC.texto} tam={28} />
+        <Medidor T={T} at={K.Resultado + 1.0} until={K.Pregunta - 0.1} valor={() => 0.3 + 0.7 * ancho} etiqueta="arteria" texto={() => (ancho > 0.5 ? 'se ensancha' : baja > 0.5 ? 'se cierra' : 'normal')} x={230} y={1335} ancho={620} color={HSANGRE} />
+        <Medidor T={T} at={K.Resultado + 1.0} until={K.Pregunta - 0.1} valor={() => dolorR} etiqueta="dolor" texto={() => (dolorR > 0.5 ? '¡duele!' : baja > 0.5 ? 'se quita' : 'nada')} x={230} y={1450} ancho={620} color={KC.yellow} />
+        <Chip T={T} at={K.Resultado + 2.6} until={K.Resultado + 4.5} texto="¡al mismo tiempo!" x={540} y={300} tam={44} borde={KC.yellow} />
       </Escena>
 
       {/* 6 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Lengua} />
 
       {/* 7 · lo que se recomienda: lengua al paladar o algo tibio */}
-      <Escena T={T} a={K.Lengua} b={K.Rapido} fondo={KC.orange}>
+      <Escena T={T} a={K.Lengua} b={K.Rapido}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <CabezaPerfil x={CC.x} y={CC.y} s={CC.s} corte={1}>
+          <g transform={GL}><CabezaPerfil x={CC.x} y={CC.y} s={CC.s} corte={1}>
             <BocaCorte T={T} frio={1 - kprog(T, K.Lengua + 2.2, K.Lengua + 3.2)} lengua={kprog(T, K.Lengua + 1.3, K.Lengua + 2.2, kEase.sale)} tibio={kprog(T, K.Lengua + 2.2, K.Lengua + 3.2)} />
-          </CabezaPerfil>
-          <g transform={`translate(0 ${(1 - kprog(T, K.Lengua + 4.0, K.Lengua + 4.5, kEase.rebote)) * 900})`}><Taza x={880} y={1080} s={0.95} T={T} /></g>
+          </CabezaPerfil></g>
+          <g transform={`translate(0 ${(1 - kprog(T, K.Lengua + 4.0, K.Lengua + 4.5, kEase.rebote)) * 1300})`}><Taza x={875} y={1200} s={1.05} T={T} /></g>
         </Lienzo>
         <Chip T={T} at={K.Lengua + 0.2} until={K.Rapido - 0.1} texto="lo que se recomienda" x={540} y={420} tam={44} borde={KC.gold} />
-        <Etq T={T} at={K.Lengua + 1.8} until={K.Rapido - 0.2} x={490} y={1175} texto="lengua al paladar" lado="izq" color={KC.texto} />
-        <Chip T={T} at={K.Lengua + 4.4} until={K.Rapido - 0.1} texto="o algo tibio" x={860} y={850} tam={40} borde={HTIBIO} />
+        <Etq T={T} at={K.Lengua + 1.8} until={K.Rapido - 0.2} x={505} y={1168} texto="lengua al paladar" lado="izq" color={KC.texto} />
+        <Chip T={T} at={K.Lengua + 4.4} until={K.Rapido - 0.1} texto="o algo tibio" x={860} y={905} tam={40} borde={HTIBIO} />
       </Escena>
 
       {/* 8 · menos de 2 minutos */}
-      <Escena T={T} a={K.Rapido} b={K.Despacio} fondo={KC.lilac}>
+      <Escena T={T} a={K.Rapido} b={K.Despacio}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <g transform={`translate(540 800) scale(${klerp(0.6, 1, kprog(T, K.Rapido - 0.2, K.Rapido + 0.3, kEase.rebote))}) translate(-540 -800)`}>
-            <Reloj x={540} y={800} r={250} p={0.8 * kprog(T, K.Rapido + 0.2, K.Rapido + 2.6, kEase.suave)} dolor={1 - kprog(T, K.Rapido + 1.6, K.Rapido + 2.6)} />
+          <g transform={`translate(540 960) scale(${klerp(0.6, 1, kprog(T, K.Rapido - 0.2, K.Rapido + 0.3, kEase.rebote))}) translate(-540 -960)`}>
+            <Reloj x={540} y={960} r={310} p={0.8 * kprog(T, K.Rapido + 0.2, K.Rapido + 2.6, kEase.suave)} dolor={1 - kprog(T, K.Rapido + 1.6, K.Rapido + 2.6)} />
           </g>
-          <TextoSvg x={540} y={470} tam={110} color={KC.yellow} s={klerp(0.5, 1, kprog(T, K.Rapido + 0.3, K.Rapido + 0.7, kEase.rebote))}>MENOS DE 2 MIN</TextoSvg>
+          <TextoSvg x={540} y={500} tam={118} color={KC.yellow} s={klerp(0.5, 1, kprog(T, K.Rapido + 0.3, K.Rapido + 0.7, kEase.rebote))}>MENOS DE 2 MIN</TextoSvg>
         </Lienzo>
-        <Chip T={T} at={K.Rapido + 1.0} until={K.Despacio - 0.1} texto="casi siempre se quita solo" x={540} y={1150} tam={40} borde={KC.mint} />
+        <Chip T={T} at={K.Rapido + 1.0} until={K.Despacio - 0.1} texto="casi siempre se quita solo" x={540} y={1400} tam={40} borde={KC.mint} />
       </Escena>
 
       {/* 9 · 2002, Canadá: comer despacio ayuda */}
-      <Escena T={T} a={K.Despacio} b={K.Cierre} fondo={KC.cyan}>
+      <Escena T={T} a={K.Despacio} b={K.Cierre}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <PanelComer x={300} y={830} T={T} p={kprog(T, K.Despacio + 2.3, K.Despacio + 2.8)} titulo="RÁPIDO" rapido />
-          <PanelComer x={780} y={830} T={T} p={kprog(T, K.Despacio + 2.8, K.Despacio + 3.3)} titulo="DESPACIO" />
+          <PanelComer x={290} y={960} s={1.08} T={T} p={kprog(T, K.Despacio - 0.1, K.Despacio + 0.4)} o={0.45 + 0.55 * kprog(T, K.Despacio + 2.1, K.Despacio + 2.5)} marca={kprog(T, K.Despacio + 2.5, K.Despacio + 2.8)} titulo="RÁPIDO" rapido />
+          <PanelComer x={790} y={960} s={1.08} T={T} p={kprog(T, K.Despacio, K.Despacio + 0.5)} o={0.45 + 0.55 * kprog(T, K.Despacio + 2.1, K.Despacio + 2.5)} marca={kprog(T, K.Despacio + 3.0, K.Despacio + 3.3)} titulo="DESPACIO" />
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Despacio + 0.2} until={K.Despacio + 2.2} anio="2002" quien="Canadá" revista="BMJ" x={540} y={760} />
-        <Chip T={T} at={K.Despacio + 3.4} until={K.Cierre - 0.1} texto="comer despacio ayuda" x={540} y={420} tam={44} borde={KC.leaf} />
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, zIndex:43, transform:'scale(.85)', transformOrigin:'540px 400px', pointerEvents:'none' }}>
+          <TarjetaEstudio T={T} at={K.Despacio + 0.2} until={K.Despacio + 2.2} anio="2002" quien="Canadá" revista="BMJ" x={540} y={400} />
+        </div>
+        <Chip T={T} at={K.Despacio + 3.4} until={K.Cierre - 0.1} texto="comer despacio ayuda" x={540} y={540} tam={44} borde={KC.leaf} />
       </Escena>
 
       {/* 10 · cierre: el mismo helado, ahora despacio */}
-      <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.pink}>
+      <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
           {(() => { const r = -50, x = 690 + 10 * Math.sin(T * 1.5), y = 1080; const [mx, my] = manoDe(x, y, 1, r);
-            return <g><Manga x={mx} y={my} hasta={[1060, 1560]} /><CabezaPerfil x={CG.x} y={CG.y} s={CG.s} gesto="sonrie" />
+            return <g transform={GG}><Manga x={mx} y={my} hasta={[1060, 1560]} /><CabezaPerfil x={CG.x} y={CG.y} s={CG.s} gesto="sonrie" />
               <Helado x={x} y={y} rot={r} mordida={0.35} /></g>; })()}
-          <GloboCerebro x={250} y={500} T={T} s={0.85} hacia={[CG.x - 40, CG.y - 230]} o={kprog(T, K.Cierre, K.Cierre + 0.3) * (1 - kprog(T, K.Cierre + 2.0, K.Cierre + 2.4))} tacha={1} />
+          <GloboCerebro x={290} y={390} T={T} s={0.9} hacia={gg(CG.x - 40, CG.y - 215)} o={kprog(T, K.Cierre, K.Cierre + 0.3) * (1 - kprog(T, K.Cierre + 2.0, K.Cierre + 2.4))} tacha={1} />
           {(() => { const p = kprog(T, K.Cierre + 2.2, K.Cierre + 3.0, kEase.sale);
-            return <g><Halo x={pal0[0] + 40} y={pal0[1]} r={60} color={HFRIO} o={p} />
+            return <g transform={GG}><Halo x={pal0[0] + 40} y={pal0[1]} r={60} color={HFRIO} o={p} />
               <FlechaCurva x1={pal0[0] + 120} y1={pal0[1] - 10} x2={fre0[0] + 80} y2={fre0[1] + 20} curva={-130} p={p} color={KC.yellow} grosor={11} T={T} />
               <Halo x={fre0[0]} y={fre0[1]} r={50} color={KC.yellow} o={p * (0.6 + 0.4 * Math.sin(T * 8))} /></g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 2.4} until={K.Outro - 0.1} texto="la alarma del paladar" x={400} y={420} tam={42} borde={KC.yellow} />
+        <Chip T={T} at={K.Cierre + 2.4} until={K.Outro - 0.1} texto="la alarma del paladar" x={420} y={430} tam={42} borde={KC.yellow} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Paladar - 0.1} texto="Tu cerebro *no se congela.*" />
