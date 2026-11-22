@@ -95,7 +95,7 @@ function Pilobolus() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Interrogacion T={T} x={540} y={1150} />)}
+        {fsvg(<Interrogacion T={T} x={770} y={1380} tam={840} />)}   {/* encuadre: el signo crece y baja al centro, a la derecha del esporangióforo atenuado (sin taparlo) */}
       </Escena>
       {/* 7–9 · el estudio: video de alta velocidad, rapidez y aceleración */}
       <Escena T={T} a={K.E} b={K.Di}>
@@ -107,7 +107,7 @@ function Pilobolus() {
             <ellipse cx={135 + i * 162} cy={1040 - i * 30} rx={14} ry={10} fill="#fff" />
             <line x1={135 + i * 162} y1={1052 - i * 30} x2={135 + i * 162} y2={1075} stroke="#c9eeff" strokeWidth={5} opacity={i < 3 ? 1 : 0.3} />
           </g> : null; })}
-          {T > K.V && <g transform={`translate(540 1180) scale(1.5)`}>
+          {T > K.V && <g transform={`translate(540 1330) scale(1.8)`}>   {/* encuadre: el velocímetro crece y baja al centro (antes 1180 / 1.5); cifras y chips bajan con él */}
             <path d="M -260 0 A 260 260 0 0 1 260 0" fill="none" stroke={KC.texto} strokeWidth={14} />
             {Array.from({ length: 11 }, (_, i) => { const a = Math.PI + i * Math.PI / 10; return <line key={i} x1={Math.cos(a) * 230} y1={Math.sin(a) * 230} x2={Math.cos(a) * 258} y2={Math.sin(a) * 258} stroke={KC.texto} strokeWidth={6} />; })}
             <line x1={0} y1={0} x2={Math.cos(Math.PI + Math.PI * kprog(T, K.V + 0.3, K.V + 1.6, kEase.sale) * 0.87) * 220} y2={Math.sin(Math.PI + Math.PI * kprog(T, K.V + 0.3, K.V + 1.6, kEase.sale) * 0.87) * 220} stroke={KC.red} strokeWidth={12} strokeLinecap="round" />
@@ -188,10 +188,10 @@ function Pilobolus() {
       <Etq T={T} at={K.A + 1.4} until={K.Ca - 0.2} x={440} y={720} texto="ampolla = lente" tam={36} color={KC.ink} />
       <Etq T={T} at={K.D + 0.6} until={K.P - 0.2} x={370} y={520} texto="bolsita de esporas" tam={36} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.V - 0.3} anio="2008" quien="Yafetto et al. · Ohio, EE. UU." revista="PLoS ONE · 50,000 cuadros por segundo" y={470} />
-      <NumeroGigante T={T} at={K.V + 0.2} until={K.Gr - 0.3} valor={13} dur={1.4} sufijo=" m/s" etiqueta="hasta" x={540} y={520} tam={200} />
-      <Chip T={T} at={K.V + 2.0} until={K.Gr - 0.3} texto="≈ 47 km/h" y={1300} tam={58} borde={KC.red} />
-      <NumeroGigante T={T} at={K.Gr + 0.2} until={K.Di - 0.3} valor={20000} prefijo="+" dur={1.2} sufijo=" g" etiqueta="aceleración al despegar" x={540} y={520} tam={180} color={KC.orange} />
-      <Chip T={T} at={K.Gr + 1.2} until={K.Di - 0.3} texto="g = la gravedad de la Tierra" y={1300} tam={42} borde={KC.orange} />
+      <NumeroGigante T={T} at={K.V + 0.2} until={K.Gr - 0.3} valor={13} dur={1.4} sufijo=" m/s" etiqueta="hasta" x={540} y={650} tam={200} />
+      <Chip T={T} at={K.V + 2.0} until={K.Gr - 0.3} texto="≈ 47 km/h" y={1470} tam={58} borde={KC.red} />
+      <NumeroGigante T={T} at={K.Gr + 0.2} until={K.Di - 0.3} valor={20000} prefijo="+" dur={1.2} sufijo=" g" etiqueta="aceleración al despegar" x={540} y={650} tam={180} color={KC.orange} />
+      <Chip T={T} at={K.Gr + 1.2} until={K.Di - 0.3} texto="g = la gravedad de la Tierra" y={1470} tam={42} borde={KC.orange} />
       <Etq T={T} at={K.Di + 2.4} until={K.Va - 0.3} x={610} y={1220} texto="pasto limpio" tam={38} color={KC.ink} />
       <Etq T={T} at={K.Va + 2.8} until={K.Po - 0.3} x={90} y={350} texto="las esporas despiertan" tam={36} color={KC.ink} />
       <Etq T={T} at={K.Po + 1.4} until={K.C - 0.3} x={60} y={1440} texto="larvas de Dictyocaulus viviparus" it tam={36} />

@@ -263,12 +263,12 @@ function MezclillaShot() {
         {T > K.P && <g opacity={kprog(T, K.P + 0.6, K.P + 1.0) * pzO}><Lavadora T={T} x={850} y={1180} s={1.0} gira={1} /></g>}
       </>, 20)}
 
-      {/* 5 · carbono por fase: el pantalón sigue en cuadro, arriba de las barras */}
+      {/* 5 · carbono por fase: las barras arriba y el pantalón grande abajo, en el centro del cuadro */}
       <Escena T={T} a={K.Ca} b={K.Co}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
-          <Pantalon T={T} id="pzCa" x={540} y={310} s={0.64} />
-          {FASES_CO2.map(([nom, v, col], i) => { const g = kprog(T, K.Ca + 0.4 + i * 0.12, K.Ca + 1.2 + i * 0.12, kEase.sale), y = 1005 + i * 64, w = 400 * v / 37 * g, foco = i === 0 ? kprog(T, K.Ca + 1.8, K.Ca + 2.4) : 0;
+          <Pantalon T={T} id="pzCa" x={540} y={782} s={0.69} />
+          {FASES_CO2.map(([nom, v, col], i) => { const g = kprog(T, K.Ca + 0.4 + i * 0.12, K.Ca + 1.2 + i * 0.12, kEase.sale), y = 318 + i * 64, w = 400 * v / 37 * g, foco = i === 0 ? kprog(T, K.Ca + 1.8, K.Ca + 2.4) : 0;
           return <g key={i}>
             <text x={470} y={y + 38} textAnchor="end" style={{ font:`${i === 0 ? 900 : 700} ${i === 0 ? 34 : 30}px ${i === 0 ? KF.texto : KF.mono}` }} fill={KC.ink}>{nom}</text>
             <rect x={490} y={y + 6} width={Math.max(0, w)} height={46} rx={10} fill={col} stroke={KC.ink} strokeWidth={4 + foco * 3} />

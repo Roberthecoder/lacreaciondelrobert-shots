@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #36 · El agua pura casi no conduce: lo que conduce son los iones — NARRADO (N2 el número + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (medidores en escala logarítmica).
 const AGUA_PURA = '#e6f7ff', AGUA_MAR = '#5fb8e8', AGUA_LLAVE = '#a9dcf5', COBRE = '#d9822b';
@@ -36,8 +37,8 @@ function VasoElectrodos({ x, y, s = 1, liquido, baja = 1, iones = 0, T, seed = 3
       <text x={0} y={54} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.texto}>{rotulo}</text></g>}
   </g>;
 }
-function Barra() {
-  return <g><rect x={0} y={1180} width={KW} height={60} fill="#f2e3c6" stroke={KC.ink} strokeWidth={8} /><rect x={0} y={1236} width={KW} height={700} fill="#c98f5a" /></g>;
+function Barra({ y = 1180 }) {   // pase a mano: la barra acepta altura (las escenas de laboratorio subieron para no quedar bajo y≈1500)
+  return <g><rect x={0} y={y} width={KW} height={60} fill="#55514c" stroke={KC.ink} strokeWidth={8} /><rect x={0} y={y + 56} width={KW} height={KH - y} fill="#4a3727" /></g>;
 }
 // Ion con carga (Na⁺ morado / Cl⁻ verde)
 function Ion({ x, y, pos = true, s = 1, o = 1 }) {
@@ -130,7 +131,7 @@ function AguaPura() {
   // agua pura: autoionización rara
   const parte = (t0) => kprog(T, t0, t0 + 0.3) * (1 - kprog(T, t0 + 1.1, t0 + 1.5));
   // estudio: CO2 que entra
-  const co2 = Array.from({ length: 6 }, (_, i) => ({ x: 420 + (i % 3) * 110, t0: K.Es + 3.8 + i * 0.5 }));
+  const co2 = Array.from({ length: 6 }, (_, i) => ({ x: 410 + (i % 3) * 120, t0: K.Es + 3.8 + i * 0.5 }));
   const lecturaEs = klerp(0.055, 1.0, kprog(T, K.Es + 5.0, K.Es + 7.5, kEase.suave));
   const vEs = klerp(0.1, 0.29, kprog(T, K.Es + 5.0, K.Es + 7.5, kEase.suave));
 
@@ -140,12 +141,13 @@ function AguaPura() {
       <Escena T={T} a={K.G} b={K.Io} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Barra />
-          <VasoElectrodos T={T} x={290} y={1170} s={1.05} liquido={AGUA_PURA} baja={baja} seed={4} />
-          <VasoElectrodos T={T} x={790} y={1170} s={1.05} liquido={AGUA_MAR} baja={baja} iones={1} seed={6} />
-          <Conductimetro T={T} x={290} y={1440} s={1.1} v={vPura} tiembla={0.01} lectura="0.055" color={KC.cyan} nombre="agua ultrapura" />
-          <Conductimetro T={T} x={790} y={1440} s={1.1} v={vMar} lectura="≈50,000" color={KC.yellow} nombre="agua de mar" />
-          {T > K.G + 0.5 && T < K.G + 1.4 && [0, 1, 2, 3, 4].map((k) => <path key={k} d={`M ${790 + Math.cos(k * 1.26) * 60} ${1390 + Math.sin(k * 1.26) * 60} l ${Math.cos(k * 1.26) * 40} ${Math.sin(k * 1.26) * 40}`} stroke={KC.yellow} strokeWidth={8} strokeLinecap="round" opacity={1 - kprog(T, K.G + 0.9, K.G + 1.4)} />)}
+          {/* pase a mano: vasos ×1.14 y todo el banco sube 120 px (los medidores ya no quedan bajo y≈1500) */}
+          <Barra y={1060} />
+          <VasoElectrodos T={T} x={290} y={1050} s={1.2} liquido={AGUA_PURA} baja={baja} seed={4} />
+          <VasoElectrodos T={T} x={790} y={1050} s={1.2} liquido={AGUA_MAR} baja={baja} iones={1} seed={6} />
+          <Conductimetro T={T} x={290} y={1310} s={1.05} v={vPura} tiembla={0.01} lectura="0.055" color={KC.cyan} nombre="agua ultrapura" />
+          <Conductimetro T={T} x={790} y={1310} s={1.05} v={vMar} lectura="≈50,000" color={KC.yellow} nombre="agua de mar" />
+          {T > K.G + 0.5 && T < K.G + 1.4 && [0, 1, 2, 3, 4].map((k) => <path key={k} d={`M ${790 + Math.cos(k * 1.26) * 60} ${1262 + Math.sin(k * 1.26) * 60} l ${Math.cos(k * 1.26) * 40} ${Math.sin(k * 1.26) * 40}`} stroke={KC.yellow} strokeWidth={8} strokeLinecap="round" opacity={1 - kprog(T, K.G + 0.9, K.G + 1.4)} />)}
         </SvgCapa>
       </Escena>
       {/* 2 · los iones de la sal y la corriente */}
@@ -183,9 +185,11 @@ function AguaPura() {
       <Escena T={T} a={K.Pr} b={K.Re} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <rect x={0} y={1100} width={KW} height={820} fill="#f2e3c6" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1150} width={KW} height={820} fill="#3a3734" stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(540 1000) scale(1.35) translate(-300 -1000)">{/* pase a mano: enchufe y lavabo ×1.35, al centro */}
           <Enchufe x={250} y={820} s={1.1} />
           <Lavabo x={300} y={1150} s={1} T={T} gotea />
+          </g>
           <text x={540} y={560} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 460)`}>?</text>
         </SvgCapa>
       </Escena>
@@ -193,10 +197,12 @@ function AguaPura() {
       <Escena T={T} a={K.Re} b={K.Es}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          {/* pase a mano: el sujeto (el vaso con agua de la llave, con iones) está en pantalla desde el inicio */}
+          <g opacity={kprog(T, K.Re - 0.3, K.Re + 0.3)}><Barra y={1260} /><VasoElectrodos T={T} x={540} y={1250} s={1.05} liquido={AGUA_LLAVE} iones={0.5} seed={8} /></g>
           {[['llave', 200, 0], ['alberca', 540, 1], ['suelo', 880, 2]].map(([t, x, k]) => { const at = K.Re + 0.3 + k * 1.7, e = kprog(T, at, at + 0.4, kEase.rebote);
             if (T < at) return null;
-            return <g key={t} transform={`translate(${x} ${830}) scale(${e * 0.85})`}>
-              <circle r={150} fill="#fff" stroke={KC.ink} strokeWidth={8} />
+            return <g key={t} transform={`translate(${x} ${600}) scale(${e * 0.88})`}>
+              <circle r={150} fill="#22304a" stroke={KC.ink} strokeWidth={8} />
               {k === 0 && <Llave x={-20} y={0} s={1.2} T={T} />}
               {k === 1 && <Alberca x={0} y={20} s={1.1} T={T} />}
               {k === 2 && <Suelo x={0} y={10} s={1.1} />}
@@ -211,29 +217,30 @@ function AguaPura() {
       <Escena T={T} a={K.Es} b={K.Cu}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <Barra />
-          <VasoElectrodos T={T} x={560} y={1170} s={1.05} liquido={AGUA_PURA} baja={1} seed={9} />
+          {/* pase a mano: vaso ×1.43 (antes 1.05) y banco más arriba */}
+          <Barra y={1110} />
+          <VasoElectrodos T={T} x={540} y={1100} s={1.5} liquido={AGUA_PURA} baja={1} seed={9} />
           {co2.map((c, i) => { const p = kprog(T, c.t0, c.t0 + 1.2, kEase.suave), conv = kprog(T, c.t0 + 1.2, c.t0 + 1.6);
             if (T < c.t0) return null;
             const y = klerp(380, 1020, p);
             return conv < 1 ? <Mol key={i} tipo="co2" x={c.x} y={y} s={0.75} rot={T * 40 + i * 30} o={1 - conv} />
               : <g key={i}><Atomo x={c.x - 30} y={1030 - (i % 2) * 60 + Math.sin(T * 3 + i) * 6} r={24} color={QA.H} letra="H⁺" tam={18} />
                 <g transform={`translate(${c.x + 40} ${1060 - (i % 2) * 60 + Math.cos(T * 3 + i) * 6})`}><rect x={-56} y={-24} width={112} height={48} rx={24} fill={KC.mint} stroke={KC.ink} strokeWidth={4} /><text x={0} y={10} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>HCO₃⁻</text></g></g>; })}
-          <Conductimetro T={T} x={560} y={1440} s={1.1} v={vEs} lectura={`${lecturaEs < 0.1 ? lecturaEs.toFixed(3) : lecturaEs.toFixed(2)}`} color={KC.cyan} />
+          <Conductimetro T={T} x={540} y={1345} s={1.15} v={vEs} lectura={`${lecturaEs < 0.1 ? lecturaEs.toFixed(3) : lecturaEs.toFixed(2)}`} color={KC.cyan} />
         </SvgCapa>
       </Escena>
       {/* 7 · tu cuerpo es salado */}
       <Escena T={T} a={K.Cu} b={K.Pe}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa><Persona x={800} y={1000} s={1} /></SvgCapa>
-        <Lupa T={T} at={K.Cu + 0.8} until={K.Pe - 0.3} x={760} y={470} r={170} fx={1010} fy={790} tinte={KC.yellow} etiqueta="dentro de ti"
+        <SvgCapa><Persona x={600} y={1050} s={1.35} /></SvgCapa>{/* pase a mano: persona ×1.35 y centrada (antes x 800, s 1) */}
+        <Lupa T={T} at={K.Cu + 0.8} until={K.Pe - 0.3} x={870} y={400} r={170} fx={930} fy={800} tinte={KC.yellow} etiqueta="dentro de ti"
           interior={(TT, r) => <svg width={r * 2} height={r * 2}>{[[90, 110, 1], [200, 90, 0], [150, 190, 1], [250, 220, 0], [100, 240, 0], [230, 150, 1]].map(([x, y, p], j) => <Ion key={j} x={x + Math.sin(TT * 2 + j) * 8} y={y + Math.cos(TT * 2 + j) * 8} pos={!!p} s={0.8} />)}</svg>} />
       </Escena>
       {/* 8 · peligro */}
       <Escena T={T} a={K.Pe} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <rect x={0} y={1100} width={KW} height={820} fill="#f2e3c6" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1100} width={KW} height={820} fill="#3a3734" stroke={KC.ink} strokeWidth={8} />
           <Enchufe x={220} y={860} s={1} />
           <ellipse cx={240} cy={1130} rx={170} ry={34} fill="#7fc8ff" stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Pe + 0.4, K.Pe + 1.0)} />
           <Lavabo x={720} y={1140} s={0.9} T={T} gotea />
@@ -247,36 +254,37 @@ function AguaPura() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Barra />
-          <VasoElectrodos T={T} x={190} y={1170} s={0.78} liquido={AGUA_PURA} seed={4} />
-          <VasoElectrodos T={T} x={540} y={1170} s={0.78} liquido={AGUA_LLAVE} iones={0.5} seed={8} />
-          <VasoElectrodos T={T} x={890} y={1170} s={0.78} liquido={AGUA_MAR} iones={1} seed={6} />
-          <Conductimetro T={T} x={190} y={1440} s={0.85} v={0.1} tiembla={0.01} color={KC.cyan} nombre="pura" />
-          <Conductimetro T={T} x={540} y={1440} s={0.85} v={0.1 + 0.55 * kprog(T, K.Ci + 0.6, K.Ci + 1.2, kEase.rebote)} color={KC.mint} nombre="de tu llave" />
-          <Conductimetro T={T} x={890} y={1440} s={0.85} v={0.96} color={KC.yellow} nombre="de mar" />
+          {/* pase a mano: vasos ×1.13 y banco 120 px más arriba */}
+          <Barra y={1060} />
+          <VasoElectrodos T={T} x={190} y={1050} s={0.88} liquido={AGUA_PURA} seed={4} />
+          <VasoElectrodos T={T} x={540} y={1050} s={0.88} liquido={AGUA_LLAVE} iones={0.5} seed={8} />
+          <VasoElectrodos T={T} x={890} y={1050} s={0.88} liquido={AGUA_MAR} iones={1} seed={6} />
+          <Conductimetro T={T} x={190} y={1290} s={0.95} v={0.1} tiembla={0.01} color={KC.cyan} nombre="pura" />
+          <Conductimetro T={T} x={540} y={1290} s={0.95} v={0.1 + 0.55 * kprog(T, K.Ci + 0.6, K.Ci + 1.2, kEase.rebote)} color={KC.mint} nombre="de tu llave" />
+          <Conductimetro T={T} x={890} y={1290} s={0.95} v={0.96} color={KC.yellow} nombre="de mar" />
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <NumeroGigante T={T} at={K.G + 0.15} until={K.G + 5.2} valor={900000} dur={1.1} prefijo="×" etiqueta="agua ultrapura · 25 °C" x={330} y={520} tam={130} />
-      <Chip T={T} at={K.G + 1.6} until={K.G + 5.2} texto="peor que el agua de mar" x={330} y={700} tam={34} borde={KC.yellow} />
-      <MitoTachado T={T} at={K.Q + 0.2} tacharEn={K.Q + 1.6} until={K.Q + 3.2} texto="el agua conduce" x={620} y={370} tam={44} />
-      <Lupa T={T} at={K.Q + 1.8} until={K.Io - 0.2} x={600} y={640} r={210} fx={790} fy={1050} tinte={KC.yellow} etiqueta="iones disueltos"
+      <NumeroGigante T={T} at={K.G + 0.15} until={K.G + 5.2} valor={900000} dur={1.1} prefijo="×" etiqueta="agua ultrapura · 25 °C" x={540} y={400} tam={130} />
+      <Chip T={T} at={K.G + 1.6} until={K.G + 5.2} texto="peor que el agua de mar" x={540} y={555} tam={34} borde={KC.yellow} />
+      <MitoTachado T={T} at={K.Q + 0.2} tacharEn={K.Q + 1.6} until={K.Q + 3.2} texto="el agua conduce" x={540} y={270} tam={44} />
+      <Lupa T={T} at={K.Q + 1.8} until={K.Io - 0.2} x={520} y={540} r={200} fx={790} fy={900} tinte={KC.yellow} etiqueta="iones disueltos"
         interior={(TT, r) => <svg width={r * 2} height={r * 2}>{[[110, 120, 1], [260, 100, 0], [180, 210, 1], [300, 250, 0], [120, 300, 0], [260, 330, 1], [200, 60, 0]].map(([x, y, p], j) => <Ion key={j} x={x + Math.sin(TT * 2 + j) * 8} y={y + Math.cos(TT * 2 + j) * 8} pos={!!p} s={0.85} />)}</svg>} />
-      <Chip T={T} at={K.Io + 0.6} until={K.Io + 3.2} texto="sal → iones con carga" x={540} y={1500} tam={42} borde={KC.lilac} />
-      <Chip T={T} at={K.Io + 3.6} until={K.Pu - 0.2} texto="iones en movimiento = corriente" x={540} y={1500} tam={38} borde={KC.yellow} />
-      <Etq T={T} at={K.Io + 4.2} until={K.Pu - 0.2} x={150} y={1600} texto="+ al polo −" tam={32} color={QA.Na} />
-      <Etq T={T} at={K.Io + 4.2} until={K.Pu - 0.2} x={930} y={1600} texto="− al polo +" lado="izq" tam={32} color={QA.Cl} />
-      <Chip T={T} at={K.Pu + 0.4} until={K.Pr - 0.2} texto="agua pura: 0.055 µS/cm a 25 °C" x={540} y={1500} tam={36} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Pu + 1.2} until={K.Pu + 2.4} x={620} y={760} texto="se parte sola (rara vez)" tam={30} color={KC.yellow} />
-      <Chip T={T} at={K.Re + 5.5} until={K.Es - 0.2} texto="en la naturaleza no hay agua pura" x={540} y={1500} tam={36} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="1995" quien="NIST · Gaithersburg, Maryland" revista="J Res NIST · Wu y Berezansky" x={540} y={720} />
+      <Chip T={T} at={K.Io + 0.6} until={K.Io + 3.2} texto="sal → iones con carga" x={540} y={1300} tam={42} borde={KC.lilac} />
+      <Chip T={T} at={K.Io + 3.6} until={K.Pu - 0.2} texto="iones en movimiento = corriente" x={540} y={1300} tam={38} borde={KC.yellow} />
+      <Etq T={T} at={K.Io + 4.2} until={K.Pu - 0.2} x={150} y={1380} texto="+ al polo −" tam={32} color={QA.Na} />
+      <Etq T={T} at={K.Io + 4.2} until={K.Pu - 0.2} x={930} y={1380} texto="− al polo +" lado="izq" tam={32} color={QA.Cl} />
+      <Chip T={T} at={K.Pu + 0.4} until={K.Pr - 0.2} texto="agua pura: 0.055 µS/cm a 25 °C" x={540} y={1300} tam={36} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Pu + 1.2} until={K.Pu + 2.4} x={600} y={780} texto="se parte sola (rara vez)" tam={26} color={KC.yellow} />
+      <Chip T={T} at={K.Re + 5.5} until={K.Es - 0.2} texto="en la naturaleza no hay agua pura" x={540} y={1400} tam={36} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="1995" quien="NIST · Gaithersburg, Maryland" revista="J Res NIST · Wu y Berezansky" x={540} y={400} />
       <Etq T={T} at={K.Es + 3.9} until={K.Es + 5.0} x={300} y={400} texto="CO₂ del aire" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Es + 6.6} until={K.Cu - 0.2} texto="×10 a ×30 con el CO₂ del aire" x={540} y={1760} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.Cu + 1.8} until={K.Pe - 0.2} texto="tu cuerpo es salado: conduces" x={540} y={1500} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.Pe + 2.6} until={K.Ci - 0.2} texto="agua + electricidad = peligro" x={540} y={1500} tam={42} borde={KC.red} />
-      <Chip T={T} at={K.Ci + 0.3} until={K.Ou} texto="pura: casi no conduce" x={620} y={470} tam={38} borde={KC.cyan} />
-      <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="la que tocas: nunca es pura" x={620} y={570} tam={38} borde={KC.mint} />
+      <Chip T={T} at={K.Es + 6.6} until={K.Cu - 0.2} texto="×10 a ×30 con el CO₂ del aire" x={540} y={300} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.Cu + 1.8} until={K.Pe - 0.2} texto="tu cuerpo es salado: conduces" x={390} y={260} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.Pe + 2.6} until={K.Ci - 0.2} texto="agua + electricidad = peligro" x={540} y={1360} tam={42} borde={KC.red} />
+      <Chip T={T} at={K.Ci + 0.3} until={K.Ou} texto="pura: casi no conduce" x={540} y={470} tam={38} borde={KC.cyan} />
+      <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="la que tocas: nunca es pura" x={540} y={565} tam={38} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="La más pura: *900 mil veces peor.*" />

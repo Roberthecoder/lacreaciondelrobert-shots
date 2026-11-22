@@ -302,31 +302,31 @@ function Teclado() {
         const pts = Array.from({ length: 14 }, (_, k) => { const t0 = K.A + 2.0 + k * 0.28, u = kprog(T, t0, t0 + 1.6); return { k, u, t0 }; });
         const col = [KC.yellow, KC.pink, KC.cyan, KC.mint, KC.orange];
         return <g opacity={o}>
-          <MiniCel x={800} y={850} s={2.6} pantalla="#16203a">
+          <MiniCel x={800} y={1000} s={3.0} pantalla="#16203a">
             {[0, 1, 2, 3].map((t, k) => <Carita key={k} x={-30 + (k % 2) * 60} y={-50 + Math.floor(k / 2) * 66} r={22} tipo={t} />)}
           </MiniCel>
-          <Dado x={450} y={850} s={1.5} rot={T > K.A + 2 ? (T - K.A) * 240 : 0} />
+          <Dado x={450} y={1000} s={1.8} rot={T > K.A + 2 ? (T - K.A) * 240 : 0} />
           {pts.map(({ k, u }) => u > 0 && u < 1 && (() => { const a = u < 0.5 ? u / 0.5 : 1, b = u < 0.5 ? 0 : (u - 0.5) / 0.5;
-            const x = u < 0.5 ? klerp(650, 450, a) : klerp(450, 140, b), y = u < 0.5 ? 850 : klerp(850, 850 + (((k * 53) % 160) - 80) * 1.3, b);
+            const x = u < 0.5 ? klerp(650, 450, a) : klerp(450, 140, b), y = u < 0.5 ? 1000 : klerp(1000, 1000 + (((k * 53) % 160) - 80) * 1.3, b);
             return <g key={k} transform={`translate(${x} ${y})`}>{u < 0.5 ? <Carita x={0} y={0} r={26} tipo={k % 4} /> : <circle r={22} fill={col[(k * 7) % 5]} stroke={KC.ink} strokeWidth={4} />}</g>; })())}
-          <g opacity={0.3 + 0.7 * kprog(T, K.A + 1.6, K.A + 2.0)}><circle cx={140} cy={850} r={95} fill={KC.paper} stroke={KC.ink} strokeWidth={8} /><text x={140} y={866} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink}>Apple</text></g>
+          <g opacity={0.3 + 0.7 * kprog(T, K.A + 1.6, K.A + 2.0)}><circle cx={145} cy={1000} r={105} fill={KC.paper} stroke={KC.ink} strokeWidth={8} /><text x={145} y={1017} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink}>Apple</text></g>
         </g>; })()}</SVGL>
-      <Chip T={T} at={K.A + 0.6} until={K.M - 0.2} texto="si aceptas compartir" x={760} y={480} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.A + 2.4} until={K.M - 0.2} texto="se revuelve al azar antes de salir" x={540} y={1255} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.A + 3.6} until={K.M - 0.2} texto="privacidad diferencial · 2017" x={540} y={1340} tam={28} mono borde={KC.texto} />
+      <Chip T={T} at={K.A + 0.6} until={K.M - 0.2} texto="si aceptas compartir" x={760} y={590} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.A + 2.4} until={K.M - 0.2} texto="se revuelve al azar antes de salir" x={540} y={1420} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.A + 3.6} until={K.M - 0.2} texto="privacidad diferencial · 2017" x={540} y={1500} tam={28} mono borde={KC.texto} />
 
       {/* 10 · el matiz: no es privacidad perfecta */}
       <Escena T={T} a={K.M} b={K.C}>
         <FondoCircuito T={T} color={KC.red} />
-        <SVGL><Paquete x={540} y={640} s={2.3} T={T} candado={1} brillo={0.6} /></SVGL>
+        <SVGL><Paquete x={540} y={790} s={2.7} T={T} candado={1} brillo={0.6} /></SVGL>
         {(() => { let xx = 148; return frase.map((w, k) => { const tw = Math.max(70, w.length * 60 * 0.62 + 40), cx = xx + tw / 2; xx += tw + 22;
           const t0 = K.M + 1.8 + k * 0.5, e = kprog(T, t0, t0 + 0.4, kEase.rebote), rv = T > t0 + 1.4 + k * 0.4;
           const u = kprog(T, t0, t0 + 0.6, kEase.sale);
-          return e > 0 && <FichaT key={k} x={klerp(540, cx, u)} y={klerp(660, 1040, u)} s={e} texto={rv ? w : '?'} tam={60} color={rv ? KC.yellow : '#7f8ba3'} />; }); })()}
+          return e > 0 && <FichaT key={k} x={klerp(540, cx, u)} y={klerp(790, 1200, u)} s={e} texto={rv ? w : '?'} tam={60} color={rv ? KC.yellow : '#7f8ba3'} />; }); })()}
       </Escena>
-      <Chip T={T} at={K.M + 0.8} until={K.C - 0.2} texto="MIT · 2019" x={540} y={300} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.M + 4.4} until={K.C - 0.2} texto="en pruebas de laboratorio" x={540} y={1210} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.M + 4.8} until={K.C - 0.2} texto="frase de ejemplo" x={540} y={1295} tam={26} mono borde={KC.texto} />
+      <Chip T={T} at={K.M + 0.8} until={K.C - 0.2} texto="MIT · 2019" x={540} y={420} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.M + 4.4} until={K.C - 0.2} texto="en pruebas de laboratorio" x={540} y={1370} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.M + 4.8} until={K.C - 0.2} texto="frase de ejemplo" x={540} y={1455} tam={26} mono borde={KC.texto} />
 
       {/* 11 · cierre: el mismo celular del inicio */}
       <Escena T={T} a={K.C} b={FIN}><FondoLunares color={KC.yellow} /></Escena>

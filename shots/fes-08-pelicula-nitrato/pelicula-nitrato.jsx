@@ -312,12 +312,13 @@ function PeliculaNitrato() {
       <Escena T={T} a={K.G} b={K.V} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         <PapelPicado T={T} />
-        {svg(<>
+        {/* encuadre: el rollo, la tira y el algodón bajan juntos al centro del cuadro y crecen un poco */}
+        {svg(<g transform="translate(90 190) translate(540 800) scale(1.1) translate(-540 -800)">
           <Tira T={T} x={390} y={870} largo={1000 * desenrolla} rot={16} corre={-T * 220} alto={230} />
           <Rollo x={390} y={790} r={340} rot={T * 220} lleno={0.95 - desenrolla * 0.08} />
           {/* modo cine: antes del segundo 3 ya se ve hacia dónde va la historia (el algodón del que está hecho el rollo entra a cuadro) */}
           <g opacity={0.95 * kprog(T, K.G + 1.5, K.G + 2.2)}><Algodon x={klerp(1120, 840, kprog(T, K.G + 1.5, K.G + 2.5, kEase.sale))} y={480 + mece(T, 3, 0.25) * 12} s={1.4} /></g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 2 · Villa firma con una empresa de cine estadounidense para que filme sus batallas */}
       <Escena T={T} a={K.V} b={K.N}>
@@ -389,8 +390,9 @@ function PeliculaNitrato() {
       <Escena T={T} a={K.Q} b={K.Ga} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <text x={270} y={1120} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 270 900)`}>?</text>
-          <g transform={`translate(300 1190) rotate(${-20 + Math.sin(T * 2) * 4})`}>
+          {/* encuadre: el signo y el cerillo bajan y crecen hacia el centro, junto al frasco atenuado */}
+          <text x={330} y={1390} textAnchor="middle" style={{ font:`400 780px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={16} transform={`rotate(${Math.sin(T * 3) * 6} 330 1080)`}>?</text>
+          <g transform={`translate(390 1420) scale(1.3) rotate(${-20 + Math.sin(T * 2) * 4})`}>
             <rect x={-8} y={-10} width={16} height={180} rx={5} fill="#e9c88f" stroke={KC.ink} strokeWidth={4} />
             <ellipse cx={0} cy={-18} rx={16} ry={22} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
           </g>
@@ -432,7 +434,8 @@ function PeliculaNitrato() {
       <Escena T={T} a={K.D} b={K.Ci}>
         <FondoLunares color={KC.mint} />
         <PapelPicado T={T} />
-        {svg(<>
+        {/* encuadre: latas, moviola y cartel bajan 170 px juntos; sus rótulos suben arriba */}
+        {svg(<g transform="translate(0 170)">
           <g opacity={1 - kprog(T, K.D + 3.6, K.D + 4.2)}>
             {[0, 1, 2].map((i) => <Lata key={i} x={212 + i * 328} y={klerp(1290, 1110, kprog(T, K.D + i * 0.3, K.D + 0.6 + i * 0.3, kEase.rebote))} r={165} texto="TOSCANO" frio={0.8} />)}
             {[0, 1].map((i) => <Lata key={'b' + i} x={376 + i * 328} y={klerp(990, 830, kprog(T, K.D + 1.0 + i * 0.3, K.D + 1.6 + i * 0.3, kEase.rebote))} r={165} texto="TOSCANO" frio={0.8} />)}
@@ -441,18 +444,19 @@ function PeliculaNitrato() {
             <g transform="translate(370 1200) scale(1.1)"><Moviola T={T} x={0} y={0} /></g>
             <g transform="translate(750 810) scale(1.3)"><Cartel x={0} y={0} /></g>
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 13 · cierre: el mismo rollo del inicio, ahora guardado en frío; por dentro, nitrato de celulosa */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <PapelPicado T={T} />
-        {svg(<>
+        {/* encuadre: el rollo baja y crece igual que en el gancho (misma imagen del inicio); la lupa baja con él */}
+        {svg(<g transform="translate(90 190) translate(540 800) scale(1.1) translate(-540 -800)">
           <Tira T={T} x={390} y={870} largo={1000 * (1 - kprog(T, K.Ci + 0.6, K.Ci + 1.6, kEase.suave) * 0.7)} rot={16} corre={-T * 60} alto={230} />
           <Rollo x={390} y={790} r={340} rot={T * 40} />
           {Array.from({ length: 12 }, (_, i) => { const g = krng(i + 90); return <path key={i} transform={`translate(${g() * 1000 + 40} ${520 + g() * 700}) scale(${0.6 + g() * 0.6})`} d="M 0 -18 L 0 18 M -16 -9 L 16 9 M -16 9 L 16 -9" stroke="#e8f6ff" strokeWidth={4} strokeLinecap="round" opacity={kprog(T, K.Ci + 1.4, K.Ci + 2.0) * (0.5 + 0.5 * Math.sin(T * 3 + i))} />; })}
-        </>)}
-        <Lupa T={T} at={K.Ci + 1.2} until={K.Ou - 0.2} x={600} y={1280} r={235} fx={390} fy={790} tinte={KC.orange} etiqueta="POR DENTRO · nitrato de celulosa"
+        </g>)}
+        <Lupa T={T} at={K.Ci + 1.2} until={K.Ou - 0.2} x={640} y={1330} r={190} fx={465} fy={979} tinte={KC.orange} etiqueta="POR DENTRO · nitrato de celulosa"
           interior={(Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill={KC.noche} /><g transform={`translate(${r} ${r}) scale(.62) translate(-540 -900)`}><Cadena T={Tl} y={900} nitro={() => 1} brillaO={1} /></g></svg>} />
       </Escena>
 
@@ -482,10 +486,10 @@ function PeliculaNitrato() {
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="1982" quien="Cineteca Nacional · CDMX" revista="24 de marzo" x={540} y={440} />
       <NumeroGigante T={T} at={K.E + 3.8} until={K.D - 0.3} valor={6000} prefijo="+" etiqueta="películas perdidas" x={540} y={440} tam={190} color={KC.red} />
       <Chip T={T} at={K.E + 4.6} until={K.D - 0.3} texto="cifra oficial: 6,506" x={540} y={1440} tam={46} borde={KC.ink} />
-      <Etq T={T} at={K.D + 1.6} until={K.D + 3.6} x={80} y={1480} texto="acervo de Salvador Toscano" tam={38} color={KC.ink} />
-      <Chip T={T} at={K.D + 4.4} until={K.Ci - 0.3} texto="de Carmen Toscano, su hija" x={540} y={1540} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.D + 1.6} until={K.D + 3.6} x={80} y={600} texto="acervo de Salvador Toscano" tam={38} color={KC.ink} />
+      <Chip T={T} at={K.D + 4.4} until={K.Ci - 0.3} texto="de Carmen Toscano, su hija" x={560} y={600} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.Ci + 2.4} until={K.Ou} texto="no es solo cine: es química" x={400} y={340} tam={44} borde={KC.yellow} />
-      <Etq T={T} at={K.Ci + 2.0} until={K.Ou - 0.2} x={1020} y={1000} lado="izq" texto="guardar en frío" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 2.0} until={K.Ou - 0.2} x={1020} y={560} lado="izq" texto="guardar en frío" tam={36} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.V - 0.1} texto="No es solo cine: *es algodón con ácido nítrico.*" />

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #58 · La «isla de basura» del Pacífico no se puede pisar: es una sopa — NARRADO (N2 el número + N1 por dentro).
 // Datos: Lebreton et al. 2018 y 2022 (Scientific Reports), NOAA. Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (mapa, corrientes, isla imaginaria, redes).
@@ -25,6 +26,10 @@ function Pieza({ x, y, tipo, c, s = 1, rot = 0, o = 1 }) {
 function Frag({ x, y, r = 8, c = '#fff', rot = 0, o = 1 }) {
   return <polygon transform={`translate(${x} ${y}) rotate(${rot})`} points={`${-r},${-r * 0.4} ${r * 0.2},${-r} ${r},${-r * 0.1} ${r * 0.4},${r * 0.8} ${-r * 0.7},${r * 0.6}`} fill={c} stroke={KC.ink} strokeWidth={Math.max(1.5, r / 4)} opacity={o} />;
 }
+// Acerca y recoloca un grupo: el punto c (coordenadas originales) queda en a, agrandado k veces.
+function Zm({ c, a, k = 1, children }) {
+  return <g transform={`translate(${a[0]} ${a[1]}) scale(${k}) translate(${-c[0]} ${-c[1]})`}>{children}</g>;
+}
 // Olitas que se mecen.
 function Olas({ T, n = 14, seed = 3, area = [0, 360, 1080, 900], color = 'rgba(255,255,255,.7)' }) {
   const r = krng(seed);
@@ -32,7 +37,7 @@ function Olas({ T, n = 14, seed = 3, area = [0, 360, 1080, 900], color = 'rgba(2
     return <path key={i} d={`M ${x} ${y + Math.sin(T * 2 + p) * 6} q 22 -14 44 0 q 22 14 44 0`} stroke={color} strokeWidth={6} fill="none" strokeLinecap="round" />; })}</>;
 }
 // La isla imaginaria que se deshace. deshace 0..1.
-function IslaImaginaria({ T, x, y, deshace = 0 }) {
+function IslaImaginaria({ T, x, y, deshace = 0, destino = (p) => [p.dx, p.dy] }) {
   const base = 1 - kclamp(deshace * 2.5, 0, 1);
   return <g>
     {base > 0 && <g transform={`translate(${x} ${y})`} opacity={base}>
@@ -40,7 +45,7 @@ function IslaImaginaria({ T, x, y, deshace = 0 }) {
       <ellipse rx={265} ry={88} fill="none" stroke="#fff" strokeWidth={5} strokeDasharray="20 14" opacity={0.7} />
     </g>}
     {MP_PIEZAS.map((p, i) => { const k = kclamp(deshace * 1.3 - (i % 7) * 0.04, 0, 1), e = kEase.sale(k);
-      const px = klerp(x + p.hx, p.dx, e) + Math.sin(T * 1.2 + p.f) * 6 * e, py = klerp(y + p.hy - 20, p.dy, e) + Math.cos(T * 1.5 + p.f) * 5 * e;
+      const [qx, qy] = destino(p), px = klerp(x + p.hx, qx, e) + Math.sin(T * 1.2 + p.f) * 6 * e, py = klerp(y + p.hy - 20, qy, e) + Math.cos(T * 1.5 + p.f) * 5 * e;
       return k < 0.95 ? <Pieza key={i} x={px} y={py} tipo={p.tipo} c={p.c} s={klerp(1.1, 0.25, e)} rot={p.rot + e * 90} /> : <Frag key={i} x={px} y={py} r={p.s} c={p.c} rot={p.rot} />; })}
   </g>;
 }
@@ -153,9 +158,9 @@ function BoyaVieja({ x, y, T, s = 1 }) {
 // Báscula de plato.
 function Bascula({ x, y, T, aguja = 0 }) {
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-150} y={-30} width={300} height={170} rx={24} fill={KC.white} stroke={KC.ink} strokeWidth={7} />
+    <rect x={-150} y={-30} width={300} height={170} rx={24} fill="#2a3448" stroke={KC.ink} strokeWidth={7} />
     <ellipse cx={0} cy={-40} rx={190} ry={26} fill="#c0c7cf" stroke={KC.ink} strokeWidth={7} />
-    <circle cx={0} cy={60} r={56} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+    <circle cx={0} cy={60} r={56} fill="#141c2c" stroke={KC.ink} strokeWidth={6} />
     <line x1={0} y1={60} x2={46 * Math.sin(aguja)} y2={60 - 46 * Math.cos(aguja)} stroke={KC.red} strokeWidth={6} strokeLinecap="round" />
     {Array.from({ length: 7 }, (_, i) => <Frag key={i} x={-120 + i * 40} y={-46 + (i % 2) * 6} r={5} c={MP_COL[i]} rot={i * 50} />)}
   </g>;
@@ -176,72 +181,78 @@ function ManchaShot() {
       {/* 1 · gancho: la "isla" que se deshace cuando la pisas */}
       <Escena T={T} a={K.G} b={K.D}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Olas T={T} seed={3} />
-          <IslaImaginaria T={T} x={ISX} y={ISY} deshace={deshace} />
-          <Chapuzon T={T} x={ISX + 40} y={ISY} at={K.G + 1.35} />
-          <Tenis x={ISX - 20} y={pieY} s={1} o={1 - kprog(T, K.G + 1.9, K.G + 2.3)} /></>)}
+        {svg(<><Olas T={T} seed={3} area={[0, 300, 1080, 1200]} />
+          <Zm c={[ISX, ISY]} a={[540, 960]} k={1.7}>
+            <IslaImaginaria T={T} x={ISX} y={ISY} deshace={deshace} destino={(p) => [ISX + (p.dx - 540) / 1.7, ISY + (440 + (p.dy - 380) * 1.15 - 960) / 1.7]} />
+            <Chapuzon T={T} x={ISX + 40} y={ISY} at={K.G + 1.35} />
+            <Tenis x={ISX - 20} y={pieY} s={1} o={1 - kprog(T, K.G + 1.9, K.G + 2.3)} />
+          </Zm></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 2–3 · el mapa: entre Hawái y California, y el giro que la junta */}
       <Escena T={T} a={K.D} b={K.S}>
         <FondoLunares color={KC.cyan} />
-        {svg(<MapaPacifico T={T} t0={K.Gi} mancha={kprog(T, K.D + 0.6, K.D + 2.2)} giro={kprog(T, K.Gi + 0.1, K.Gi + 1.0)} />)}
-        <EscalaFija texto="1,000 km · esquema" largo={214} y={1480} color={KC.ink} />
+        {svg(<Zm c={[500, 700]} a={[520, 1020]} k={1.15}><MapaPacifico T={T} t0={K.Gi} mancha={kprog(T, K.D + 0.6, K.D + 2.2)} giro={kprog(T, K.Gi + 0.1, K.Gi + 1.0)} /></Zm>)}
+        <EscalaFija texto="1,000 km · esquema" largo={246} y={1480} color={KC.ink} />
       </Escena>
       {/* 4 · la sopa: 1 m × 1 m de mar */}
       <Escena T={T} a={K.S} b={K.P}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Olas T={T} seed={11} n={10} area={[0, 360, 1080, 820]} color="rgba(255,255,255,.5)" />
+        {svg(<><Olas T={T} seed={11} n={10} area={[0, 400, 1080, 960]} color="rgba(255,255,255,.5)" />
+          <Zm c={[420, 750]} a={[470, 880]} k={1.2}>
           <rect x={120} y={450} width={600} height={600} fill="rgba(255,255,255,.12)" stroke="#fff" strokeWidth={8} strokeDasharray="30 18" strokeDashoffset={-T * 30}
             opacity={kprog(T, K.S + 0.1, K.S + 0.6)} />
           <text x={420} y={1095} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.S + 0.3, K.S + 0.8)}>1 m</text>
-          <text x={765} y={760} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.S + 0.3, K.S + 0.8)}>1 m</text>
-          <circle cx={430} cy={760} r={34 + 8 * Math.sin(T * 6)} fill="none" stroke={KC.yellow} strokeWidth={6} opacity={kprog(T, K.S + 0.8, K.S + 1.2)} /><Frag x={430 + Math.sin(T * 1.3) * 4} y={760 + Math.cos(T) * 3} r={13} c="#fff" rot={T * 20} o={kprog(T, K.S + 0.8, K.S + 1.2)} /></>)}
-        <EscalaFija texto="50 cm" largo={300} y={1480} color={KC.ink} />
+          <text x={765} y={700} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.S + 0.3, K.S + 0.8)}>1 m</text>
+          <circle cx={430} cy={760} r={34 + 8 * Math.sin(T * 6)} fill="none" stroke={KC.yellow} strokeWidth={6} opacity={kprog(T, K.S + 0.8, K.S + 1.2)} /><Frag x={430 + Math.sin(T * 1.3) * 4} y={760 + Math.cos(T) * 3} r={13} c="#fff" rot={T * 20} o={kprog(T, K.S + 0.8, K.S + 1.2)} />
+          </Zm></>)}
+        <EscalaFija texto="50 cm" largo={360} y={1480} color={KC.ink} />
       </Escena>
-      <Lupa T={T} at={K.S + 3.6} until={K.P - 0.2} x={800} y={930} r={170} fx={430} fy={760} tinte={KC.yellow} etiqueta="AUMENTADO"
-        interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0d3550" />
+      <Lupa T={T} at={K.S + 3.6} until={K.P - 0.2} x={840} y={1125} r={200} fx={482} fy={892} tinte={KC.yellow} etiqueta="AUMENTADO"
+        interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0d3550" /><g transform={`scale(${r / 170})`}>
           <rect x={-10} y={70} width={150} height={150} rx={8} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
           <rect x={130} y={66} width={40} height={158} fill="#c0c7cf" stroke={KC.ink} strokeWidth={5} />
           <rect x={168} y={70} width={40} height={150} rx={14} fill="#ff8fb1" stroke={KC.ink} strokeWidth={5} />
           <text x={120} y={252} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#fff">goma de lápiz</text>
           <Frag x={260} y={110} r={34} c="#fff" rot={20} /><Frag x={250} y={210} r={22} c={KC.blue} rot={80} /><Frag x={300} y={170} r={14} c={KC.red} rot={10} />
           <Frag x={210} y={270} r={12} c={KC.leaf} rot={50} /><Frag x={290} y={260} r={18} c={KC.yellow} rot={140} />
-          <line x1={200} y1={310} x2={250} y2={310} stroke="#fff" strokeWidth={5} /><text x={225} y={300} textAnchor="middle" style={{ font:`700 18px ${KF.mono}` }} fill="#fff">2 mm</text></svg>} />
+          <line x1={200} y1={310} x2={250} y2={310} stroke="#fff" strokeWidth={5} /><text x={225} y={300} textAnchor="middle" style={{ font:`700 18px ${KF.mono}` }} fill="#fff">2 mm</text></g></svg>} />
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={280} y={860} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 700)`}>?</text>
-          <Bascula x={290} y={1040} T={T} aguja={0.25 * Math.sin(T * 5)} /></>)}
+        {svg(<><text x={420} y={1010} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 420 850)`}>?</text>
+          <Bascula x={440} y={1200} T={T} aguja={0.25 * Math.sin(T * 5)} /></>)}
       </Escena>
       {/* 6 · el estudio: 18 barcos en 2015 y un avión en 2016 */}
       <Escena T={T} a={K.E} b={K.R}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><rect x={0} y={990} width={KW} height={KH - 990} fill="#1b9fd6" />
-          <Olas T={T} seed={21} n={10} area={[0, 1010, 1080, 360]} />
+        {svg(<><rect x={0} y={1112} width={KW} height={KH - 1112} fill="#0c3550" />
+          <Olas T={T} seed={21} n={10} area={[0, 1135, 1080, 330]} />
+          <Zm c={[540, 900]} a={[540, 1000]} k={1.25}>
           {[0, 1, 2].map((i) => <BarcoRed key={i} T={T} x={230 + i * 330 + (T - K.E) * 22} y={960} s={0.85} />)}
           {T > K.E + 2.9 && <Avion x={avX} y={640} mar={995} foto={kprog(T, K.E + 4.6, K.E + 5.0)} />}
-          {T > K.E + 5.0 && [0, 1].map((i) => <rect key={i} x={avX - 120 + i * 130} y={1000} width={120} height={60} fill="none" stroke="#fff" strokeWidth={5} opacity={0.5 + 0.5 * Math.sin(T * 8 + i)} />)}</>)}
+          {T > K.E + 5.0 && [0, 1].map((i) => <rect key={i} x={avX - 120 + i * 130} y={1000} width={120} height={60} fill="none" stroke="#fff" strokeWidth={5} opacity={0.5 + 0.5 * Math.sin(T * 8 + i)} />)}
+          </Zm></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 7 · 79 mil toneladas, al menos 46 % redes */}
       <Escena T={T} a={K.R} b={K.O}>
         <FondoLunares color={KC.mint} />
-        {svg(<><rect x={90} y={760} width={900} height={90} rx={20} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={7} />
+        {svg(<Zm c={[540, 900]} a={[540, 1010]} k={1.15}><rect x={90} y={760} width={900} height={90} rx={20} fill="rgba(36,54,84,.85)" stroke={KC.ink} strokeWidth={7} />
           {fill46 > 0 && <rect x={98} y={768} width={884 * fill46 / 1} height={74} rx={14} fill="#1f8a5b" />}
           {fill46 > 0 && Array.from({ length: Math.floor(fill46 * 30) }, (_, i) => <line key={i} x1={110 + i * 28} y1={772} x2={130 + i * 28} y2={838} stroke={KC.orange} strokeWidth={4} />)}
           <RedEnredada x={400} y={1060} s={0.95} T={T} seed={5} />
-          <RedEnredada x={800} y={1080} s={0.6} T={T} seed={9} /></>)}
+          <RedEnredada x={800} y={1080} s={0.6} T={T} seed={9} /></Zm>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 8 · 2019: más de seis mil objetos duros; Japón y China */}
       <Escena T={T} a={K.O} b={K.B}>
         <FondoLunares color={KC.orange} />
-        {svg(<><g opacity={kprog(T, K.O + 0.2, K.O + 0.7)} transform="translate(0 -50)">
+        {svg(<><Zm c={[540, 800]} a={[540, 820]} k={1.3}><g opacity={kprog(T, K.O + 0.2, K.O + 0.7)} transform="translate(0 -50)">
             <CajaPescado x={260} y={760} rot={-8} /><CajaPescado x={480} y={820} rot={6} s={0.9} c="#e9eef5" />
             <TrampaAnguila x={720} y={760} rot={-12} /><Separador x={240} y={880} rot={20} /><Separador x={880} y={880} rot={-30} />
             <ellipse cx={650} cy={900} rx={60} ry={50} fill="#fff" stroke={KC.ink} strokeWidth={6} /><path d="M 590 900 Q 650 880 710 900" stroke={KC.red} strokeWidth={10} fill="none" />
-          </g>
+          </g></Zm>
           {[['Japón', 0.34, '34 %'], ['China', 0.32, '32 %']].map(([n, v, t], i) => { const w = 560 * v / 0.34 * kprog(T, K.O + 2.4 + i * 0.4, K.O + 3.2 + i * 0.4, kEase.sale);
             return <g key={n}><text x={90} y={1040 + i * 90} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{n}</text>
               <rect x={270} y={1008 + i * 90} width={w} height={44} rx={12} fill={i ? KC.red : KC.white} stroke={KC.ink} strokeWidth={5} />
@@ -251,42 +262,43 @@ function ManchaShot() {
       {/* 9 · la boya de 1966 */}
       <Escena T={T} a={K.B} b={K.C}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<><rect x={0} y={1060} width={KW} height={KH - 1060} fill="#1b9fd6" opacity={0.9} /><Olas T={T} seed={31} n={6} area={[0, 1070, 1080, 150]} />
-          <BoyaVieja x={790} y={860} T={T} s={kprog(T, K.B, K.B + 0.5, kEase.rebote) * 0.85} /></>)}
+        {svg(<><rect x={0} y={1090} width={KW} height={KH - 1090} fill="#0c3550" opacity={0.95} /><Olas T={T} seed={31} n={7} area={[0, 1100, 1080, 300]} />
+          <BoyaVieja x={540} y={900} T={T} s={kprog(T, K.B, K.B + 0.5, kEase.rebote) * 1.5} />
+          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#0c3550" opacity={0.55} /></>)}
       </Escena>
       {/* 10 · cierre: el mismo mar del inicio, ya sin isla: sopa que gira y redes a la deriva */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Olas T={T} seed={3} />
-          <ellipse cx={ISX} cy={ISY} rx={265} ry={88} fill="none" stroke="#fff" strokeWidth={5} strokeDasharray="20 14" opacity={0.6} />
+        {svg(<><Olas T={T} seed={3} area={[0, 420, 1080, 1000]} />
+          <ellipse cx={540} cy={960} rx={450} ry={150} fill="none" stroke="#fff" strokeWidth={6} strokeDasharray="26 18" opacity={0.6} />
           {MP_PIEZAS.map((p, i) => { const th = (T - K.C) * (0.25 + (i % 5) * 0.04) + i, rr = 120 + (i * 37) % 360;
-            return <Frag key={i} x={ISX + 60 + Math.cos(th) * rr * 1.3} y={ISY - 80 + Math.sin(th) * rr * 0.9} r={p.s} c={p.c} rot={p.rot} />; })}
-          <RedEnredada x={760 - (T - K.C) * 20} y={1080} s={0.55} T={T} seed={5} />
-          <RedEnredada x={240 + (T - K.C) * 15} y={560} s={0.45} T={T} seed={9} /></>)}
+            return <Frag key={i} x={560 + Math.cos(th) * rr * 1.15} y={930 + Math.sin(th) * rr * 0.9} r={p.s * 1.4} c={p.c} rot={p.rot} />; })}
+          <RedEnredada x={760 - (T - K.C) * 20} y={1250} s={0.75} T={T} seed={5} />
+          <RedEnredada x={260 + (T - K.C) * 15} y={640} s={0.6} T={T} seed={9} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
 
       {/* datos y etiquetas */}
-      <MitoTachado T={T} at={K.G + 0.1} tacharEn={K.G + 1.5} until={K.D - 0.2} texto="isla de basura" x={330} y={480} tam={46} />
-      <Chip T={T} at={K.G + 2.4} until={K.D - 0.2} texto="sopa de plástico" x={360} y={1130} tam={40} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.D + 1.2} until={K.Gi - 0.2} valor={1600000} dur={1.0} sufijo=" km²" etiqueta="en 2015:" x={560} y={470} tam={84} color={KC.yellow} />
-      <Etq T={T} at={K.D + 0.6} until={K.S - 0.2} x={240} y={1010} texto="Hawái" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.D + 0.9} until={K.S - 0.2} x={1000} y={660} texto="California" lado="izq" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Gi + 0.3} until={K.S - 0.2} texto="giro oceánico: corrientes que dan vueltas" x={640} y={400} tam={28} borde={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.1} tacharEn={K.G + 1.5} until={K.D - 0.2} texto="isla de basura" x={540} y={520} tam={46} />
+      <Chip T={T} at={K.G + 2.4} until={K.D - 0.2} texto="sopa de plástico" x={540} y={1300} tam={40} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.D + 1.2} until={K.Gi - 0.2} valor={1600000} dur={1.0} sufijo=" km²" etiqueta="en 2015:" x={520} y={620} tam={84} color={KC.yellow} />
+      <Etq T={T} at={K.D + 0.6} until={K.S - 0.2} x={221} y={1376} texto="Hawái" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.D + 0.9} until={K.S - 0.2} x={1001} y={834} texto="California" lado="izq" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Gi + 0.3} until={K.S - 0.2} texto="giro oceánico: corrientes que dan vueltas" x={540} y={540} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.S + 0.5} until={K.S + 3.9} texto="en promedio: < 1 pieza por m²" x={420} y={380} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.S + 4.1} until={K.P - 0.2} texto="94 de cada 100: < 5 mm" x={360} y={380} tam={34} borde={KC.yellow} />
-      <Chip T={T} at={K.P + 0.3} until={K.E - 0.2} texto="¿qué pesa más?" x={300} y={420} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.P + 0.3} until={K.E - 0.2} texto="¿qué pesa más?" x={430} y={520} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.E + 0.3} until={K.E + 2.9} texto="2015 · 18 barcos" x={360} y={430} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.E + 3.1} until={K.R - 0.2} texto="2016 · fotos desde un avión" x={380} y={430} tam={34} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.R + 0.3} until={K.O - 0.2} valor={79} dur={1.2} sufijo=" mil" etiqueta="toneladas de plástico:" x={660} y={470} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.R + 1.0} until={K.O - 0.2} texto="Lebreton et al. 2018 · Sci. Rep." x={660} y={660} tam={26} borde={KC.ink} mono />
-      <Etq T={T} at={K.R + 3.0} until={K.O - 0.2} x={98} y={900} texto="≥ 46 % redes de pesca" tam={34} color={KC.ink} />
+      <NumeroGigante T={T} at={K.R + 0.3} until={K.O - 0.2} valor={79} dur={1.2} sufijo=" mil" etiqueta="toneladas de plástico:" x={600} y={560} tam={150} color={KC.yellow} />
+      <Chip T={T} at={K.R + 1.0} until={K.O - 0.2} texto="Lebreton et al. 2018 · Sci. Rep." x={600} y={745} tam={26} borde={KC.ink} mono />
+      <Etq T={T} at={K.R + 3.0} until={K.O - 0.2} x={32} y={1010} texto="≥ 46 % redes de pesca" tam={34} color={KC.ink} />
       <Chip T={T} at={K.O + 0.3} until={K.B - 0.2} texto="2019 · más de 6 mil objetos" x={380} y={400} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.O + 1.0} until={K.B - 0.2} x={150} y={630} texto="caja de pescado" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.O + 1.4} until={K.B - 0.2} x={760} y={640} texto="trampa" lado="izq" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.O + 2.4} until={K.B - 0.2} x={90} y={965} texto="objetos con origen identificado:" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.B + 0.4} until={K.C - 0.2} texto="el más viejo con fecha legible" x={660} y={420} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="no es isla: es sopa" x={380} y={430} tam={40} borde={KC.yellow} />
+      <Etq T={T} at={K.O + 1.0} until={K.B - 0.2} x={60} y={572} texto="caja de pescado" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.O + 1.4} until={K.B - 0.2} x={800} y={612} texto="trampa" lado="izq" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.O + 2.4} until={K.B - 0.2} x={90} y={975} texto="objetos con origen identificado:" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.B + 0.4} until={K.C - 0.2} texto="el más viejo con fecha legible" x={540} y={400} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="no es isla: es sopa" x={540} y={420} tam={40} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.D - 0.1} texto="No es una isla: *es una sopa.*" />

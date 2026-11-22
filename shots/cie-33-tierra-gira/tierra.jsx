@@ -127,12 +127,17 @@ function Reloj({ x, y, r = 80, v = 0, color = KC.gold2 }) {
   </g>;
 }
 // El cuarto del gancho (y del cierre). curvo 0..1: el piso se vuelve la Tierra que gira.
-function Cuarto({ T, curvo = 0, v = 1 }) {
+function Cuarto({ T, curvo = 0, v = 1, noche = 0 }) {
   return <g>
     {/* pase a mano cine: persona y velocímetro x1.5 (llenan el cuadro), piso más abajo y oscuro */}
     <rect x={0} y={1420} width={KW} height={800} fill="#3b2b22" opacity={1 - curvo} />
     <line x1={0} y1={1420} x2={KW} y2={1420} stroke={KC.ink} strokeWidth={8} opacity={1 - curvo} />
     {curvo > 0 && <g opacity={curvo}><Globo x={540} y={1420 + 1300} R={1300} lon0={-100 - 40 * T / 61.5} lat0={-30} id="cuarto" /></g>}
+    {/* vuelta de encuadre: en el cierre la Tierra se apaga hacia abajo (lado de noche) para que el peso quede en la silla */}
+    {noche > 0 && <g opacity={noche}>
+      <defs><linearGradient id="cuartoNoche" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0b1020" stopOpacity="0" /><stop offset=".55" stopColor="#0b1020" stopOpacity=".88" /><stop offset="1" stopColor="#0b1020" stopOpacity=".96" /></linearGradient></defs>
+      <rect x={-200} y={1500} width={KW + 400} height={520} fill="url(#cuartoNoche)" />
+    </g>}
     <PersonaSentada x={350} y={1113} s={1.45} T={T} cara={curvo > 0.5 ? 'sonrie' : 'normal'} />
     <Velocimetro x={790} y={1230} r={150} v={v} T={T} />
   </g>;
@@ -333,7 +338,7 @@ function Tierra() {
       {/* 10 · cierre: la misma silla, ahora sobre la Tierra que gira */}
       <Escena T={T} a={K.Cierre} b={FIN} zoom={-0.04}>
         <FondoLunares color={KC.pink} />
-        <Lienzo><Cuarto T={T} v={1} curvo={kprog(T, K.Cierre + 0.4, K.Cierre + 1.6, kEase.suave)} /></Lienzo>
+        <Lienzo><Cuarto T={T} v={1} curvo={kprog(T, K.Cierre + 0.4, K.Cierre + 1.6, kEase.suave)} noche={kprog(T, K.Cierre + 0.4, K.Cierre + 1.6, kEase.suave)} /></Lienzo>
         <NumeroGigante T={T} at={K.Cierre + 2.4} until={K.Outro - 0.1} valor={37000} desde={37000} dur={0.1} prefijo="> " sufijo=" km" etiqueta="hoy, sin levantarte" x={540} y={370} tam={130} color={KC.yellow} />
         <Chip T={T} at={K.Cierre + 0.6} until={K.Cierre + 2.3} texto="Guadalajara o CDMX" x={540} y={380} tam={44} borde={KC.gold} />
       </Escena>

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #42 · ¿Una IA puede leer tu mente? Solo si tú te dejas — NARRADO (N5 "El experimento").
 // Datos: Tang, LeBel, Jain y Huth, "Semantic reconstruction of continuous language from non-invasive brain recordings",
 // Nature Neuroscience 26:858–866 (2023), UT Austin. Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -218,113 +219,118 @@ function LeeMente() {
       {/* 1 · gancho: la máquina quiere tu pensamiento y choca con un candado */}
       <Escena T={T} a={K.G} b={K.Es}>
         <FondoLunares color={KC.pink} />
-        {svg(<>
+        {/* pase a mano: cabeza, pensamiento y máquina más grandes y al centro del cuadro */}
+        {svg(<><g transform="translate(585 940) scale(1.1) translate(-540 -815)">
           <Cabeza x={330} y={1010} s={1.05} T={T} casco={kprog(T, K.G, K.G + 0.3)} />
           <Globo x={330} y={560} hacia={[40, 300]}><Foco x={0} y={10} s={0.95} T={T} /></Globo>
           {choque > 0 && <g transform={`translate(${tiembla} 0)`}><Candado x={470} y={640} s={klerp(0.3, 0.85, choque)} T={T} /></g>}
           {choque <= 0 && rayo([770, 930], [520, 640], viaje, KC.cyan)}
           {choque > 0 && T < K.G + 2.4 && rayo([520, 640], [700, 900], kprog(T, K.G + 1.3, K.G + 2.2, kEase.sale), KC.red)}
           <Robotito x={830} y={1080} s={0.8} T={T} cara={T > K.G + 1.3 ? 'duda' : 'seguro'} />
-        </>)}
+        </g></>)}
       </Escena>
-      <Chip T={T} at={K.G + 3.8} until={K.Es - 0.2} texto="desde afuera · por ahora" x={330} y={345} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.8} until={K.Es - 0.2} texto="desde afuera · por ahora" x={354} y={380} tam={32} borde={KC.ink} />
 
       {/* 2 · el escáner: 3 personas, 16 horas de historias */}
       <Escena T={T} a={K.Es} b={K.A}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Resonador x={440} y={900} s={0.95} T={T} zumba={kprog(T, K.Es + 0.2, K.Es + 0.8)} />
-          {[0, 1, 2].map((i) => { const p = kprog(T, K.Es + 0.8 + i * 0.35, K.Es + 1.2 + i * 0.35, kEase.rebote); return <Persona key={i} x={170 + i * 150} y={520} s={0.9 * p} color={[KC.pink, KC.yellow, KC.mint][i]} o={Math.min(1, p * 2)} />; })}
+          <Resonador x={400} y={1040} s={1.2} T={T} zumba={kprog(T, K.Es + 0.2, K.Es + 0.8)} />
+          {[0, 1, 2].map((i) => { const p = kprog(T, K.Es + 0.8 + i * 0.35, K.Es + 1.2 + i * 0.35, kEase.rebote); return <Persona key={i} x={190 + i * 180} y={570} s={1.2 * p} color={[KC.pink, KC.yellow, KC.mint][i]} o={Math.min(1, p * 2)} />; })}
         </>)}
       </Escena>
-      <Chip T={T} at={K.Es + 1.0} until={K.A - 0.2} texto="3 personas" x={320} y={380} tam={34} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Es + 3.0} until={K.A - 0.2} valor={16} dur={1.6} sufijo=" h" x={890} y={960} tam={170} color={KC.yellow} />
-      <Chip T={T} at={K.Es + 3.6} until={K.A - 0.2} texto="de historias en audio" x={850} y={1100} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Es + 1.0} until={K.A - 0.2} texto="3 personas" x={370} y={400} tam={34} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Es + 3.0} until={K.A - 0.2} valor={16} dur={1.6} sufijo=" h" x={900} y={900} tam={160} color={KC.yellow} />
+      <Chip T={T} at={K.Es + 3.6} until={K.A - 0.2} texto="de historias en audio" x={890} y={1040} tam={28} borde={KC.ink} />
 
       {/* 3 · por dentro: la IA aprende el cerebro de cada una y luego escribe */}
       <Escena T={T} a={K.A} b={K.Ej}>
         <FondoCircuito T={T} />
         {svg(<>
-          <Cerebro x={660} y={580} s={1.0} T={T} zonas={[{ x: -120, y: -40, at: K.A + 0.4 }, { x: 60, y: -90, at: K.A + 0.9, color: KC.cyan }, { x: 140, y: 40, at: K.A + 1.4, color: KC.mint }, { x: -40, y: 70, at: K.A + 1.9, color: KC.orange }]} />
+          <Cerebro x={540} y={850} s={1.62} T={T} zonas={[{ x: -120, y: -40, at: K.A + 0.4 }, { x: 60, y: -90, at: K.A + 0.9, color: KC.cyan }, { x: 140, y: 40, at: K.A + 1.4, color: KC.mint }, { x: -40, y: 70, at: K.A + 1.9, color: KC.orange }]} />
         </>)}
-        <RedNeuronal T={T} x={380} y={850} ancho={560} alto={130} capas={[3, 4, 4, 3]} onda={((T - K.A) * 0.7) % 1} o={kprog(T, K.A + 1.0, K.A + 1.6)} />
+        <RedNeuronal T={T} x={170} y={1258} ancho={740} alto={148} capas={[3, 4, 4, 3]} onda={((T - K.A) * 0.7) % 1} o={kprog(T, K.A + 1.0, K.A + 1.6)} />
       </Escena>
-      <Chip T={T} at={K.A + 1.2} until={K.A + 3.4} texto="un decodificador para cada persona" x={600} y={380} tam={30} borde={KC.cyan} />
-      <Pantalla T={T} at={K.A + 3.8} until={K.Ej - 0.1} y={1085} h={170} titulo="historia nueva → texto" texto={tecleo('ella ni siquiera…', T, K.A + 4.6, K.A + 6.6)} />
+      <Chip T={T} at={K.A + 1.2} until={K.A + 3.4} texto="un decodificador para cada persona" x={540} y={330} tam={30} borde={KC.cyan} />
+      <Pantalla T={T} at={K.A + 3.8} until={K.Ej - 0.1} y={1482} h={148} titulo="historia nueva → texto" texto={tecleo('ella ni siquiera…', T, K.A + 4.6, K.A + 6.6)} />
 
       {/* 4 · el ejemplo real: no las palabras, la idea */}
       <Escena T={T} a={K.Ej} b={K.P}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <g opacity={kprog(T, K.Ej + 0.8, K.Ej + 1.3) * (1 - kprog(T, K.Ej + 6.8, K.Ej + 7.2))}><Licencia x={850} y={350} s={0.8} /></g>
-          <g opacity={kprog(T, K.Ej + 4.0, K.Ej + 4.5)}><Volante x={900} y={1110} s={0.75} T={T} /></g>
+          {/* pase a mano: quien oye la frase (con su casco) y la máquina que escribe están en cuadro toda la escena */}
+          <Cabeza x={290} y={1390} s={0.95} T={T} casco={1} />
+          <Robotito x={810} y={1390} s={1.0} T={T} cara="seguro" />
+          <g opacity={kprog(T, K.Ej + 0.8, K.Ej + 1.3) * (1 - kprog(T, K.Ej + 6.8, K.Ej + 7.2))}><Licencia x={880} y={285} s={0.9} /></g>
+          <g opacity={kprog(T, K.Ej + 4.0, K.Ej + 4.5)}><Volante x={830} y={1100} s={0.9} T={T} /></g>
         </>)}
       </Escena>
-      <TarjetaFrase T={T} at={K.Ej + 0.3} until={K.Ej + 6.9} y={570} etiqueta="lo que oyó" icono={<IcoOreja />} texto="«Todavía no tengo licencia de manejo»." />
-      <TarjetaFrase T={T} at={K.Ej + 3.3} until={K.P - 0.2} y={900} etiqueta="lo que escribió la máquina" icono={<IcoPantalla />} acento={KC.teal} color="#e9fff6"
+      <TarjetaFrase T={T} at={K.Ej + 0.3} until={K.Ej + 6.9} y={480} etiqueta="lo que oyó" icono={<IcoOreja />} texto="«Todavía no tengo licencia de manejo»." />
+      <TarjetaFrase T={T} at={K.Ej + 3.3} until={K.P - 0.2} y={810} etiqueta="lo que escribió la máquina" icono={<IcoPantalla />} acento={KC.mint} color="#0f2b2e"
         texto={tecleo('«Ella ni siquiera ha empezado a aprender a manejar».', T, K.Ej + 3.6, K.Ej + 6.4)} />
-      <Chip T={T} at={K.Ej + 4.2} until={K.Ej + 6.9} texto="ejemplo real del estudio (traducido)" x={540} y={1090} tam={26} borde={KC.ink} />
-      <MitoTachado T={T} at={K.Ej + 7.3} tacharEn={K.Ej + 7.9} until={K.P - 0.2} texto="mismas palabras" x={340} y={480} tam={44} />
-      <Chip T={T} at={K.Ej + 8.3} until={K.P - 0.2} texto="= la misma idea ✔" x={340} y={600} tam={44} borde={KC.leaf} />
+      <Chip T={T} at={K.Ej + 4.2} until={K.Ej + 6.9} texto="ejemplo real del estudio (traducido)" x={380} y={1000} tam={26} borde={KC.ink} />
+      <MitoTachado T={T} at={K.Ej + 7.3} tacharEn={K.Ej + 7.9} until={K.P - 0.2} texto="mismas palabras" x={340} y={420} tam={44} />
+      <Chip T={T} at={K.Ej + 8.3} until={K.P - 0.2} texto="= la misma idea ✔" x={340} y={550} tam={44} borde={KC.leaf} />
 
       {/* 5 · re-gancho y el estudio */}
       <Escena T={T} a={K.P} b={K.Aj} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<g opacity={1 - kprog(T, K.P + 2.5, K.P + 2.9)}>
+        {svg(<Resonador x={540} y={1130} s={1.1} T={T} zumba={kprog(T, K.P + 2.8, K.P + 3.4)} />)}
+        {svg(<g opacity={1 - kprog(T, K.P + 2.5, K.P + 2.9)} transform="translate(0 -300)">
           <text x={300} y={1080} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>
           <OjoEspia x={300} y={720} s={0.6} T={T} />
         </g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.P + 2.8} until={K.Aj - 0.2} anio="2023" quien="Universidad de Texas en Austin" revista="Tang, LeBel, Jain y Huth · Nature Neuroscience" y={700} />
-      <Chip T={T} at={K.P + 3.5} until={K.Aj - 0.2} texto="resonancia · sin cirugía" y={1010} tam={36} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.P + 2.8} until={K.Aj - 0.2} anio="2023" quien="Universidad de Texas en Austin" revista="Tang, LeBel, Jain y Huth · Nature Neuroscience" y={420} />
+      <Chip T={T} at={K.P + 3.5} until={K.Aj - 0.2} texto="resonancia · sin cirugía" y={730} tam={36} borde={KC.ink} />
 
       {/* 6 · prueba 1: el cerebro de alguien con quien no se entrenó */}
       <Escena T={T} a={K.Aj} b={K.Sa}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <Cabeza x={300} y={930} s={0.78} T={T} piel="#8d5a3b" pelo="#c9a227" casco={1} />
-          <path d={`M 330 690 C 420 600 520 640 560 700`} stroke={KC.ink} strokeWidth={10} fill="none" strokeDasharray="18 12" />
+          <Cabeza x={330} y={1080} s={1.25} T={T} piel="#8d5a3b" pelo="#c9a227" casco={1} />
+          <path d={`M 368 660 C 440 590 560 640 612 742`} stroke={KC.ink} strokeWidth={10} fill="none" strokeDasharray="18 12" />
         </>)}
       </Escena>
-      <Chip T={T} at={K.Aj + 0.2} until={K.Sa - 0.2} texto="Prueba 1 · otro cerebro" x={700} y={400} tam={36} borde={KC.ink} />
-      <Pantalla T={T} at={K.Aj + 0.6} until={K.Sa - 0.2} x={760} y={760} w={520} h={220} color={KC.red} titulo="decodificador de otra persona" cursor={false} tam={40} texto={T > K.Aj + 1.0 ? revuelto(T, 22, 2) : ''} />
-      <Medidor T={T} at={K.Aj + 1.6} until={K.Sa - 0.2} y={1040} etiqueta="aciertos" color={KC.red} valor={(t) => 0.06 * kprog(t, K.Aj + 1.8, K.Aj + 2.6, kEase.sale)} texto={() => 'apenas más que el azar'} />
+      <Chip T={T} at={K.Aj + 0.2} until={K.Sa - 0.2} texto="Prueba 1 · otro cerebro" x={720} y={560} tam={36} borde={KC.ink} />
+      <Pantalla T={T} at={K.Aj + 0.6} until={K.Sa - 0.2} x={820} y={860} w={480} h={230} color={KC.red} titulo="decodificador de otra persona" cursor={false} tam={40} texto={T > K.Aj + 1.0 ? revuelto(T, 22, 2) : ''} />
+      <Medidor T={T} at={K.Aj + 1.6} until={K.Sa - 0.2} y={1450} etiqueta="aciertos" color={KC.red} valor={(t) => 0.06 * kprog(t, K.Aj + 1.8, K.Aj + 2.6, kEase.sale)} texto={() => 'apenas más que el azar'} />
 
       {/* 7 · prueba 2: sabotaje pensando en animales */}
       <Escena T={T} a={K.Sa} b={K.Ex}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<><g transform="translate(600 1010) scale(1.35) translate(-755 -805)">
           <Cabeza x={810} y={1005} s={0.78} T={T} ojos="cerrados" espejo casco={1} />
           <Globo x={760} y={620} rx={220} ry={150} hacia={[40, 210]}>
             {animales.map(([t, ax, ay, at]) => { const p = kprog(T, at, at + 0.35, kEase.rebote); return p > 0 ? <Animal key={t} tipo={t} x={ax} y={ay} s={0.75 * p} T={T} /> : null; })}
           </Globo>
-        </>)}
+        </g></>)}
       </Escena>
-      <Chip T={T} at={K.Sa + 0.2} until={K.Sa + 2.1} texto="Prueba 2 · ¡sabotaje!" x={330} y={420} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Sa + 0.7} until={K.Sa + 2.1} texto="«nombra animales en tu mente»" x={330} y={800} tam={28} borde={KC.ink} />
-      <Medidor T={T} at={K.Sa + 2.6} until={K.Ex - 0.2} x={330} ancho={700} y={330} etiqueta="aciertos del decodificador" color={caida > 0.5 ? KC.red : KC.leaf}
+      <Chip T={T} at={K.Sa + 0.2} until={K.Sa + 2.1} texto="Prueba 2 · ¡sabotaje!" x={540} y={300} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Sa + 0.7} until={K.Sa + 2.1} texto="«nombra animales en tu mente»" x={540} y={395} tam={28} borde={KC.ink} />
+      <Medidor T={T} at={K.Sa + 2.6} until={K.Ex - 0.2} x={140} ancho={800} y={340} etiqueta="aciertos del decodificador" color={caida > 0.5 ? KC.red : KC.leaf}
         valor={(t) => klerp(0.55, 0.02, kprog(t, K.Sa + 2.9, K.Sa + 4.3, kEase.suave))} texto={() => caida < 0.5 ? 'escuchando: ~55 %' : 'saboteando: 0–3 %'} />
 
       {/* 8 · lo raro: cortos animados sin sonido */}
       <Escena T={T} a={K.Ex} b={K.C}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<CineMudo x={560} y={930} s={0.95} T={T} />)}
+        {svg(<CineMudo x={540} y={990} s={1.25} T={T} />)}
       </Escena>
-      <Chip T={T} at={K.Ex + 0.4} until={K.C - 0.2} texto="cortos animados · sin sonido" x={640} y={540} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Ex + 1.8} until={K.C - 0.2} texto="la máquina describió lo que pasaba" x={560} y={1200} tam={28} borde={KC.teal} />
+      <Chip T={T} at={K.Ex + 0.4} until={K.C - 0.2} texto="cortos animados · sin sonido" x={470} y={610} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Ex + 1.8} until={K.C - 0.2} texto="la máquina describió lo que pasaba" x={540} y={1360} tam={28} borde={KC.teal} />
 
       {/* 9 · cierre: la misma cabeza; el candado se cierra */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.pink} />
-        {svg(<>
+        {svg(<><g transform="translate(585 940) scale(1.1) translate(-540 -815)">
           <Cabeza x={330} y={1010} s={1.05} T={T} casco={1 - kprog(T, K.C + 3.0, K.C + 3.6)} />
           <Globo x={330} y={560} hacia={[40, 300]}><Foco x={0} y={10} s={0.95} T={T} /></Globo>
           <Candado x={470} y={640} s={0.85} cerrado={kprog(T, K.C + 0.8, K.C + 1.2, kEase.rebote)} brillo={kprog(T, K.C + 1.2, K.C + 1.8)} T={T} />
           <g opacity={1 - kprog(T, K.C + 1.4, K.C + 2.2)}><Robotito x={830 + 300 * kprog(T, K.C + 1.4, K.C + 2.4, kEase.suave)} y={1080} s={0.8} T={T} cara="duda" /></g>
-        </>)}
+        </g></>)}
       </Escena>
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="privacidad mental ✔" x={330} y={345} tam={38} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="los autores piden reglas que la protejan" x={540} y={1110} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="privacidad mental ✔" x={354} y={380} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="los autores piden reglas que la protejan" x={540} y={1500} tam={28} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Es - 0.1} texto="¿Por qué no te *leen la mente* desde afuera?" />

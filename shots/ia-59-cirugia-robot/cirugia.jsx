@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #59 · El robot que cosió un intestino (y quién lo vigilaba) — NARRADO (N3 "Capítulos y medidores").
 // Datos: Saeidi et al., Science Robotics 7(62): eabj2908 (2022) · Kim et al., SRT-H, Science Robotics (2025). Ver guion.md y verificacion.md.
 // Todo es esquemático.
@@ -166,35 +167,36 @@ function Cirugia() {
       {/* 0 · gancho: el intestino y la aguja desde el cuadro 0 */}
       <Escena T={T} a={K.G} b={K.Pl}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<g transform="translate(540 1040) scale(1.25) translate(-470 -980)">
           <Intestino x={470} y={980} s={1} gap={klerp(110, 0, kprog(T, K.G, K.G + 1.2, kEase.sale))} puntadas={kprog(T, K.G + 0.3, K.G + 5.0) * 7} T={T} />
           <g opacity={kprog(T, K.G + 1.6, K.G + 2.2)}><Brazo tx={klerp(240, 470, kprog(T, K.G + 1.6, K.G + 2.4, kEase.sale))} ty={890 + 30 * golpe(K.G + 2.4, 4, 0.7)} s={0.9} T={T} /></g>
-        </>)}
+        </g>)}
       </Escena>
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.5} until={K.G + 2.4} texto="lo cosió un cirujano" x={470} y={1115} tam={46} />
-      <Chip T={T} at={K.G + 2.6} until={K.Pl - 0.2} texto="cerdo vivo · Science Robotics 2022" x={470} y={1115} tam={32} borde={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.5} until={K.G + 2.4} texto="lo cosió un cirujano" x={540} y={1275} tam={46} />
+      <Chip T={T} at={K.G + 2.6} until={K.Pl - 0.2} texto="cerdo vivo · Science Robotics 2022" x={540} y={1275} tam={32} borde={KC.ink} />
 
       {/* 1 · planea: por dentro de la máquina */}
       <Escena T={T} a={K.Pl} b={K.Co}>
         <FondoCircuito T={T} />
-        {svg(<>
+        {svg(<g transform="translate(540 960) scale(1.25) translate(-540 -880)">
+          <g opacity=".35"><Intestino x={540} y={880} s={1.05} gap={0} puntadas={0} T={T} respira={1} /></g>
           <g opacity=".95">{Array.from({ length: 9 }, (_, i) => { const yy = 880 + (i - 4) * 40 * (1 + 0.06 * Math.sin(T * 1.7)), w = 360 * Math.sqrt(1 - Math.pow((i - 4) / 4.6, 2));
-            return <path key={i} d={`M ${540 - 420} ${yy} Q 540 ${yy + (i - 4) * 6} ${540 + 420} ${yy}`} stroke={KC.cyan} strokeWidth={3} fill="none" opacity={0.25 + 0.5 * (w / 360)} />; })}
-            {Array.from({ length: 13 }, (_, j) => { const xx = 120 + j * 70; return <path key={j} d={`M ${xx} ${880 - 165 * (1 + 0.06 * Math.sin(T * 1.7))} Q ${xx + 18} 880 ${xx} ${880 + 165 * (1 + 0.06 * Math.sin(T * 1.7))}`} stroke={KC.cyan} strokeWidth={3} fill="none" opacity=".45" />; })}
+            return <path key={i} d={`M ${540 - 420} ${yy} Q 540 ${yy + (i - 4) * 6} ${540 + 420} ${yy}`} stroke={KC.cyan} strokeWidth={5} fill="none" opacity={0.45 + 0.5 * (w / 360)} />; })}
+            {Array.from({ length: 13 }, (_, j) => { const xx = 120 + j * 70; return <path key={j} d={`M ${xx} ${880 - 165 * (1 + 0.06 * Math.sin(T * 1.7))} Q ${xx + 18} 880 ${xx} ${880 + 165 * (1 + 0.06 * Math.sin(T * 1.7))}`} stroke={KC.cyan} strokeWidth={5} fill="none" opacity=".7" />; })}
           </g>
           {Array.from({ length: 7 }, (_, i) => <circle key={i} cx={540} cy={880 + (i - 3) * 44 * (1 + 0.06 * Math.sin(T * 1.7))} r={11} fill={KC.yellow} stroke={KC.ink} strokeWidth={3}
             opacity={kprog(T, K.Pl + 3.0 + i * 0.22, K.Pl + 3.2 + i * 0.22)} />)}
           <path d={`M 140 1100 ${Array.from({ length: 40 }, (_, i) => `L ${140 + i * 20} ${1100 - 30 * Math.sin(i * 0.45 - T * 3)}`).join(' ')}`} stroke={KC.mint} strokeWidth={5} fill="none" opacity={kprog(T, K.Pl + 1.6, K.Pl + 2.0)} />
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.Pl + 0.6} until={K.Pl + 2.9} texto="cámara 3D" x={300} y={620} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.Pl + 1.8} until={K.Co - 0.2} texto="sigue la respiración" x={540} y={1100} tam={30} borde={KC.mint} />
-      <Chip T={T} at={K.Pl + 3.2} until={K.Co - 0.2} texto="plan de puntadas" x={520} y={660} tam={32} borde={KC.yellow} />
+      <Chip T={T} at={K.Pl + 0.6} until={K.Pl + 2.9} texto="cámara 3D" x={540} y={690} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.Pl + 1.8} until={K.Co - 0.2} texto="sigue la respiración" x={540} y={1330} tam={30} borde={KC.mint} />
+      <Chip T={T} at={K.Pl + 3.2} until={K.Co - 0.2} texto="plan de puntadas" x={540} y={690} tam={32} borde={KC.yellow} />
 
       {/* 2 · cose: la persona aprueba, el robot cose cada 3 mm */}
       <Escena T={T} a={K.Co} b={K.E}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>
+        {svg(<g transform="translate(540 950) scale(1.15) translate(-540 -800)">
           <Persona x={600} y={540} s={0.85} T={T} ok={kprog(T, K.Co + 1.2, K.Co + 1.3)} />
           <Intestino x={540} y={980} s={0.95} gap={0} puntadas={kprog(T, K.Co + 2.0, K.Co + 5.6) * 7} T={T} />
           <Brazo tx={540 + 18} ty={980 - 100 + 26 * golpe(K.Co + 2.0, 7, 0.51)} s={0.75} T={T} />
@@ -202,19 +204,19 @@ function Cirugia() {
             <path d={`M 590 ${980 - 28.5} L 700 ${980 - 28.5} M 590 980 L 700 980 M 690 ${980 - 28.5} L 690 980`} stroke={KC.ink} strokeWidth={5} />
             <text x={712} y={978} style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink}>3 mm</text>
           </g>
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.Co + 0.4} until={K.Co + 2.6} texto="una persona aprueba" x={540} y={800} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Co + 2.0} until={K.Co + 3.2} texto="y cada disparo de la aguja" x={540} y={800} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Co + 3.4} until={K.E - 0.2} texto="1 puntada cada 3 mm" x={540} y={1115} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.Co + 0.4} until={K.Co + 1.95} texto="una persona aprueba" x={540} y={1340} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 2.0} until={K.Co + 3.2} texto="y cada disparo de la aguja" x={540} y={1340} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 3.4} until={K.E - 0.2} texto="1 puntada cada 3 mm" x={540} y={1340} tam={40} borde={KC.yellow} />
 
       {/* 3 · el estudio */}
       <Escena T={T} a={K.E} b={K.Pa}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>{[0, 1, 2, 3].map((i) => <g key={i} opacity={kprog(T, K.E + 1.6 + i * 0.25, K.E + 1.9 + i * 0.25)}><Cerdito x={150 + i * 235} y={1010} s={0.68} T={T} fase={i} /></g>)}</>)}
+        {svg(<>{[0, 1, 2, 3].map((i) => <g key={i} opacity={kprog(T, K.E - 0.2 + i * 0.12, K.E + 0.2 + i * 0.12)}><Cerdito x={[310, 730][i % 2] - 20} y={i < 2 ? 990 : 1240} s={1.2} T={T} fase={i} /></g>)}</>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.7} anio="2022" quien="Johns Hopkins y Children's National" revista="Saeidi, Krieger y col. · Science Robotics" y={640} />
-      <Chip T={T} at={K.E + 2.9} until={K.Pa - 0.3} texto="4 cerdos · revisión a la semana" x={540} y={1115} tam={36} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.7} anio="2022" quien="Johns Hopkins y Children's National" revista="Saeidi, Krieger y col. · Science Robotics" y={620} />
+      <Chip T={T} at={K.E + 2.9} until={K.Pa - 0.3} texto="4 cerdos · revisión a la semana" x={540} y={1430} tam={36} borde={KC.ink} />
 
       {/* 4 · la prueba: separación entre puntadas en intestino de práctica */}
       <Escena T={T} a={K.Pa} b={K.P}>
@@ -230,55 +232,59 @@ function Cirugia() {
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.F} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<><Lampara x={300} y={560} s={0.9} T={T} />
-          <text x={300} y={1150} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 980)`}>?</text></>)}
+        {svg(<g transform="translate(240 230)"><Lampara x={300} y={560} s={0.9} T={T} />
+          <text x={300} y={1150} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 980)`}>?</text></g>)}
       </Escena>
 
       {/* 6 · todavía no: correcciones y tiempo */}
       <Escena T={T} a={K.F} b={K.V}>
         <FondoLunares color={KC.yellow} />
       </Escena>
-      {T >= K.F - 0.45 && T < F2 + 0.5 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.F - 0.45, K.F + 0.05) * (1 - kprog(T, F2 - 0.1, F2 + 0.3)) }}><RejillaPuntadas p={kprog(T, K.F + 1.6, K.F + 4.2, kEase.suave)} /></div>}
-      <Chip T={T} at={K.F + 0.2} until={F2 - 0.2} texto={`corregidas por una persona: ${Math.round(29 * kprog(T, K.F + 1.6, K.F + 4.2, kEase.suave))} de 86`} x={400} y={480} tam={30} borde={KC.red} />
-      <BarrasTiempo T={T} at={F2 + 0.2} until={K.V - 0.2} top={760} />
+      {T >= K.F - 0.45 && T < F2 + 0.5 && <div style={{ position:'absolute', inset:0, transformOrigin:'398px 830px', transform:'translate(142px,140px) scale(1.5)', opacity:kprog(T, K.F - 0.45, K.F + 0.05) * (1 - kprog(T, F2 - 0.1, F2 + 0.3)) }}><RejillaPuntadas p={kprog(T, K.F + 1.6, K.F + 4.2, kEase.suave)} /></div>}
+      <Chip T={T} at={K.F + 0.2} until={F2 - 0.2} texto={`corregidas por una persona: ${Math.round(29 * kprog(T, K.F + 1.6, K.F + 4.2, kEase.suave))} de 86`} x={540} y={440} tam={32} borde={KC.red} />
+      {T >= F2 - 0.2 && T < K.V + 0.4 && svg(<g opacity={0.3 * kprog(T, F2 - 0.2, F2 + 0.3) * (1 - kprog(T, K.V - 0.1, K.V + 0.4))} transform="translate(540 1040) scale(1.25) translate(-470 -980)">
+        <Intestino x={470} y={980} s={1} gap={0} puntadas={7} T={T} /><Brazo tx={470} ty={890 + 30 * golpe(F2, 20, 0.7)} s={0.9} T={T} /></g>)}
+      <BarrasTiempo T={T} at={F2 + 0.2} until={K.V - 0.2} top={800} />
 
       {/* 7 · 2025: el robot de las vesículas */}
       <Escena T={T} a={K.V} b={K.Fa}>
         <FondoLunares color={KC.pink} />
         {svg(<>{Array.from({ length: 8 }, (_, i) => { const t0 = K.V + 3.6 + i * 0.6, c = Math.floor(6 * kprog(T, t0, t0 + 0.4)) / 2;
-          return <g key={i} opacity={kprog(T, K.V + 3.0 + i * 0.08, K.V + 3.3 + i * 0.08)}>
-            <Vesicula x={150 + (i % 4) * 255} y={i < 4 ? 640 : 880} s={0.62} clips={Math.min(3, c * 2)} corte={kprog(T, t0 + 0.4, t0 + 0.55)} ok={kprog(T, t0 + 0.55, t0 + 0.8)} />
+          return <g key={i} opacity={kprog(T, K.V - 0.2, K.V + 0.4) * (0.5 + 0.5 * kprog(T, K.V + 3.0 + i * 0.08, K.V + 3.3 + i * 0.08))}>
+            <Vesicula x={155 + (i % 4) * 255} y={i < 4 ? 720 : 1110} s={0.88} clips={Math.min(3, c * 2)} corte={kprog(T, t0 + 0.4, t0 + 0.55)} ok={kprog(T, t0 + 0.55, t0 + 0.8)} />
           </g>; })}</>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.V + 0.2} until={K.V + 2.9} anio="2025" quien="Johns Hopkins y Stanford · SRT-H" revista="Kim, Finn, Krieger y col. · Science Robotics" y={760} />
-      <Chip T={T} at={K.V + 1.6} until={K.V + 2.9} texto="aprendió con ≈ 17 h de demostraciones" x={540} y={1060} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.V + 3.0} until={K.Fa - 0.2} texto="8 vesículas · fuera del cuerpo" x={400} y={470} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.V + 4.0} until={K.V + 7.0} texto="clips + tijera, él solo" x={540} y={1110} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={K.V + 7.2} until={K.Fa - 0.2} texto="una persona solo recargaba los clips" x={540} y={1110} tam={32} borde={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.V + 0.2} until={K.V + 2.9} anio="2025" quien="Johns Hopkins y Stanford · SRT-H" revista="Kim, Finn, Krieger y col. · Science Robotics" y={470} />
+      <Chip T={T} at={K.V + 1.6} until={K.V + 2.9} texto="aprendió con ≈ 17 h de demostraciones" x={540} y={1420} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.V + 3.0} until={K.Fa - 0.2} texto="8 vesículas · fuera del cuerpo" x={540} y={480} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.V + 4.0} until={K.V + 7.0} texto="clips + tijera, él solo" x={540} y={1420} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.V + 7.2} until={K.Fa - 0.2} texto="una persona solo recargaba los clips" x={540} y={1420} tam={32} borde={KC.yellow} />
 
       {/* 8 · lo que falta */}
       <Escena T={T} a={K.Fa} b={K.C}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<>
-          <rect x={270} y={640} width={420} height={60} rx={20} fill="#c4ccd8" stroke={KC.ink} strokeWidth={7} />
+        {svg(<g transform="translate(540 820) scale(1.5) translate(-480 -550)">
+          <rect x={270} y={640} width={420} height={60} rx={20} fill="#3a4458" stroke={KC.ink} strokeWidth={7} />
           <Vesicula x={480} y={500} s={0.65} clips={3} corte={1} />
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.Fa + 0.3} until={K.C - 0.2} texto="fuera del cuerpo (ex vivo)" x={480} y={760} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Fa + 1.8} until={K.C - 0.2} texto="falta: con sangrado ⏳" x={540} y={880} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Fa + 2.6} until={K.C - 0.2} texto="falta: tejido que se mueve ⏳" x={540} y={990} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Fa + 3.2} until={K.C - 0.2} texto="en estos estudios: ninguna persona operada" x={540} y={1100} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Fa + 0.3} until={K.C - 0.2} texto="fuera del cuerpo (ex vivo)" x={540} y={1110} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Fa + 1.8} until={K.C - 0.2} texto="falta: con sangrado ⏳" x={540} y={1215} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Fa + 2.6} until={K.C - 0.2} texto="falta: tejido que se mueve ⏳" x={540} y={1320} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Fa + 3.2} until={K.C - 0.2} texto="en estos estudios: ninguna persona operada" x={540} y={1425} tam={30} borde={KC.ink} />
 
       {/* 9 · cierre: el mismo intestino, ahora con alguien vigilando */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Intestino x={470} y={980} s={1} gap={0} puntadas={7} T={T} />
-          <Brazo tx={470} ty={890} s={0.9} T={T} />
-          <g opacity={kprog(T, K.C + 1.0, K.C + 1.6)} transform={`translate(${klerp(300, 0, kprog(T, K.C + 1.0, K.C + 1.7, kEase.sale))} 0)`}><Persona x={640} y={520} s={0.75} T={T} pantalla="vigila" /></g>
+          <g transform="translate(540 1040) scale(1.25) translate(-470 -980)">
+            <Intestino x={470} y={980} s={1} gap={0} puntadas={7} T={T} />
+            <Brazo tx={470} ty={890} s={0.9} T={T} />
+          </g>
+          <g opacity={kprog(T, K.C + 0.2, K.C + 0.8)} transform={`translate(${klerp(300, 0, kprog(T, K.C + 0.2, K.C + 0.9, kEase.sale))} 0)`}><Persona x={680} y={640} s={0.85} T={T} pantalla="vigila" /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="robot + persona vigilando ✔" x={540} y={1115} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="robot + persona vigilando ✔" x={540} y={1300} tam={38} borde={KC.leaf} />
 
       <Capitulo T={T} hasta={K.C} caps={[{ at: K.Pl, titulo: 'planea' }, { at: K.Co, titulo: 'cose' }, { at: K.Pa, titulo: 'la prueba' }, { at: K.F, titulo: 'lo que falla' }, { at: K.V, titulo: '2025: otro robot' }, { at: K.Fa, titulo: 'lo que falta' }]} />
 

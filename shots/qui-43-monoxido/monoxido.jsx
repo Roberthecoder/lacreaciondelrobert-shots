@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #43 · Lo que mata no huele ni se ve (monóxido de carbono del anafre y el boiler) — NARRADO (N1 por dentro + estudio de 1987).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático; las personas son monitos esquemáticos.
 const SANGRE = '#d7263d', PIEL = '#f1b48f', BRASA = '#ff5a1f', GRIS_CO = '#9fb0c8';
@@ -51,19 +52,19 @@ function IconoNo({ x, y, tipo, o = 1, texto }) {
   if (o <= 0) return null;
   return <g transform={`translate(${x} ${y}) scale(${klerp(0.6, 1, o)})`} opacity={o}>
     <circle r={78} fill="#fff" stroke={KC.ink} strokeWidth={8} />
-    {tipo === 'nariz' ? <path d="M -6 -46 Q -10 0 -34 22 Q -20 36 0 30 Q 20 36 34 22 Q 12 0 8 -46" fill={PIEL} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
-      : <g><path d="M -54 0 Q 0 -46 54 0 Q 0 46 -54 0 Z" fill="#fff" stroke={KC.ink} strokeWidth={6} /><circle r={20} fill="#2a6fdb" stroke={KC.ink} strokeWidth={5} /><circle r={8} fill={KC.ink} /></g>}
+    {tipo === 'nariz' ? <path d="M -6 -46 Q -10 0 -34 22 Q -20 36 0 30 Q 20 36 34 22 Q 12 0 8 -46" fill={PIEL} stroke="#0b1020" strokeWidth={6} strokeLinejoin="round" />
+      : <g><path d="M -54 0 Q 0 -46 54 0 Q 0 46 -54 0 Z" fill="#fff" stroke="#0b1020" strokeWidth={6} /><circle r={20} fill="#2a6fdb" stroke="#0b1020" strokeWidth={5} /><circle r={8} fill="#0b1020" /></g>}
     <path d="M -56 -56 L 56 56" stroke={KC.red} strokeWidth={14} strokeLinecap="round" />
-    {texto && <text y={122} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink} stroke="#fff" strokeWidth={8} paintOrder="stroke">{texto}</text>}
+    {texto && <text y={122} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink} stroke="#0b1020" strokeWidth={8} paintOrder="stroke">{texto}</text>}
   </g>;
 }
 // Cuarto: piso, zoclo y ventana (cerrada con candado o abierta con cielo).
 function Cuarto({ T, abierta = 0 }) {
   const wx = 90, wy = 420, ww = 260, wh = 240;
   return <g>
-    <rect x={0} y={1120} width={KW} height={KH - 1120} fill="#8a5a3c" />
+    <rect x={0} y={1120} width={KW} height={KH - 1120} fill="#4a342c" />
     {Array.from({ length: 8 }, (_, i) => <line key={i} x1={i * 150} y1={1120} x2={i * 150 - 80} y2={KH} stroke="rgba(0,0,0,.18)" strokeWidth={5} />)}
-    <rect x={0} y={1104} width={KW} height={22} fill="#5b3a26" />
+    <rect x={0} y={1104} width={KW} height={22} fill="#322421" />
     <rect x={wx} y={wy} width={ww} height={wh} fill={abierta > 0 ? mixHex('#1d2a4a', '#8fd8ff', abierta) : '#1d2a4a'} stroke={KC.ink} strokeWidth={10} />
     {abierta > 0 && <g opacity={abierta}><circle cx={wx + 200} cy={wy + 60} r={34} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
       <ellipse cx={wx + 90} cy={wy + 110} rx={60} ry={24} fill="#fff" />
@@ -83,7 +84,7 @@ function CamaDormida({ T, x, y, s = 1, zzz = 1 }) {
     <rect x={-200} y={-120} width={30} height={200} rx={8} fill="#a8683f" stroke={KC.ink} strokeWidth={7} />
     <rect x={-170} y={-70} width={110} height={56} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={6} />
     <circle cx={-110} cy={-74} r={42} fill={PIEL} stroke={KC.ink} strokeWidth={7} />
-    <path d="M -128 -78 q 8 8 16 0 M -100 -78 q 8 8 16 0" stroke={KC.ink} strokeWidth={5} fill="none" strokeLinecap="round" />
+    <path d="M -128 -78 q 8 8 16 0 M -100 -78 q 8 8 16 0" stroke="#0b1020" strokeWidth={5} fill="none" strokeLinecap="round" />
     <path d="M -150 -100 Q -110 -136 -70 -100" fill="#3b2a25" stroke={KC.ink} strokeWidth={5} />
     <path d="M -70 -40 Q 40 -90 180 -40 L 180 -10 L -70 -10 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     {zzz > 0 && [0, 1, 2].map((i) => { const u = (T * 0.5 + i / 3) % 1; return <text key={i} x={-60 + u * 70} y={-130 - u * 120} style={{ font:`400 ${40 + u * 30}px ${KF.titulo}` }} fill="#fff" stroke={KC.ink} strokeWidth={4} paintOrder="stroke" opacity={zzz * (1 - u)}>z</text>; })}
@@ -120,12 +121,12 @@ function Busto({ T, x, y, s = 1, dolor = 0, mareo = 0, nausea = 0 }) {
     <rect x={-40} y={90} width={80} height={70} fill={PIEL} stroke={KC.ink} strokeWidth={7} />
     <circle cx={0} cy={0} r={120} fill={PIEL} stroke={KC.ink} strokeWidth={9} />
     <path d="M -120 -20 Q -120 -140 0 -140 Q 120 -140 120 -20 Q 60 -90 -120 -20 Z" fill="#3b2a25" stroke={KC.ink} strokeWidth={7} />
-    <path d="M -54 10 q 14 -10 28 0 M 26 10 q 14 -10 28 0" stroke={KC.ink} strokeWidth={7} fill="none" strokeLinecap="round" />
-    <path d={`M -36 64 Q 0 ${44 - nausea * 0} 36 64`} stroke={KC.ink} strokeWidth={7} fill="none" strokeLinecap="round" />
+    <path d="M -54 10 q 14 -10 28 0 M 26 10 q 14 -10 28 0" stroke="#0b1020" strokeWidth={7} fill="none" strokeLinecap="round" />
+    <path d={`M -36 64 Q 0 ${44 - nausea * 0} 36 64`} stroke="#0b1020" strokeWidth={7} fill="none" strokeLinecap="round" />
     {dolor > 0 && [[-150, -110, -30], [150, -110, 30], [0, -190, 0]].map(([dx, dy, r], i) => <path key={i} d="M 0 0 l 18 -24 l -14 -6 l 18 -26" transform={`translate(${dx} ${dy}) rotate(${r}) scale(${dolor * (1 + 0.1 * Math.sin(T * 14 + i))})`} stroke={KC.red} strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" />)}
     {mareo > 0 && <g transform={`translate(0 -250) rotate(${T * 240}) scale(${mareo})`}><path d="M 0 0 m -6 0 a 6 6 0 1 1 12 0 a 14 14 0 1 1 -28 0 a 24 24 0 1 1 48 0 a 34 34 0 1 1 -68 0" stroke={KC.violet} strokeWidth={7} fill="none" strokeLinecap="round" /></g>}
     {nausea > 0 && <g opacity={nausea}><circle cx={0} cy={250} r={52} fill="#bfe86a" stroke={KC.ink} strokeWidth={6} />
-      {[0, 1].map((i) => <path key={i} d={`M -30 ${240 + i * 20} q 15 ${-10 + Math.sin(T * 8) * 4} 30 0 t 30 0`} stroke={KC.ink} strokeWidth={5} fill="none" />)}</g>}
+      {[0, 1].map((i) => <path key={i} d={`M -30 ${240 + i * 20} q 15 ${-10 + Math.sin(T * 8) * 4} 30 0 t 30 0`} stroke="#0b1020" strokeWidth={5} fill="none" />)}</g>}
   </g>;
 }
 // Detector de monóxido en la pared. alarma 0..1 (luz roja que parpadea) o ok (luz verde).
@@ -134,8 +135,8 @@ function Detector({ T, x, y, s = 1, alarma = 0, ok = false }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-80} y={-60} width={160} height={120} rx={26} fill="#f6f3ec" stroke={KC.ink} strokeWidth={8} />
     <circle cx={-40} cy={-14} r={16} fill={luz} stroke={KC.ink} strokeWidth={4} />
-    {[0, 1, 2].map((i) => <line key={i} x1={0} x2={56} y1={-26 + i * 16} y2={-26 + i * 16} stroke={KC.ink} strokeWidth={5} strokeLinecap="round" />)}
-    <text x={0} y={46} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>CO</text>
+    {[0, 1, 2].map((i) => <line key={i} x1={0} x2={56} y1={-26 + i * 16} y2={-26 + i * 16} stroke="#0b1020" strokeWidth={5} strokeLinecap="round" />)}
+    <text x={0} y={46} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="#0b1020">CO</text>
     {alarma > 0 && [1, 2].map((k) => { const u = (T * 1.6 + k / 2) % 1; return <circle key={k} r={90 + u * 90} fill="none" stroke={KC.red} strokeWidth={6} opacity={alarma * (1 - u)} />; })}
   </g>;
 }
@@ -144,10 +145,10 @@ function Reloj({ T, x, y, r = 190, horas = 0 }) {
   const aM = horas * 360, aH = horas * 30;
   return <g transform={`translate(${x} ${y})`}>
     <circle r={r} fill="#fff" stroke={KC.ink} strokeWidth={12} />
-    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={0} y1={-r + 18} x2={0} y2={-r + (i % 3 ? 36 : 54)} stroke={KC.ink} strokeWidth={i % 3 ? 5 : 9} transform={`rotate(${i * 30})`} />)}
-    <line x1={0} y1={0} x2={0} y2={-r * 0.5} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" transform={`rotate(${aH})`} />
+    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={0} y1={-r + 18} x2={0} y2={-r + (i % 3 ? 36 : 54)} stroke="#0b1020" strokeWidth={i % 3 ? 5 : 9} transform={`rotate(${i * 30})`} />)}
+    <line x1={0} y1={0} x2={0} y2={-r * 0.5} stroke="#0b1020" strokeWidth={14} strokeLinecap="round" transform={`rotate(${aH})`} />
     <line x1={0} y1={0} x2={0} y2={-r * 0.78} stroke={KC.red} strokeWidth={8} strokeLinecap="round" transform={`rotate(${aM})`} />
-    <circle r={14} fill={KC.ink} />
+    <circle r={14} fill="#0b1020" />
   </g>;
 }
 // Casa vista de lado (para salir al aire libre).
@@ -158,6 +159,11 @@ function CasaLado({ x, y, s = 1 }) {
     <rect x={-60} y={-170} width={110} height={170} fill="#5b3a26" stroke={KC.ink} strokeWidth={8} transform="skewY(0)" />
     <rect x={80} y={-220} width={90} height={80} fill="#8fd8ff" stroke={KC.ink} strokeWidth={7} />
   </g>;
+}
+
+// Encuadre del cuarto (pase a mano cine): agranda k veces y baja el piso (y=1120) a la altura `ay`, para que el dibujo llene el cuadro.
+function Enc({ k = 1.25, cx = 540, fy = 1120, ay = 1330, children }) {
+  return <g transform={`translate(540 ${ay}) scale(${k}) translate(${-cx} ${-fy})`}>{children}</g>;
 }
 
 function Monoxido() {
@@ -180,12 +186,14 @@ function Monoxido() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.05} origen="55% 55%">
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
+          <Enc k={1.08} cx={522} ay={1300}>
           <Cuarto T={T} abierta={0} />
-          <CamaDormida T={T} x={270} y={1040} s={0.95} />
-          <Anafre T={T} x={760} y={980} s={1} />
-          <NubeCO T={T} x={600} y={820} f={nube0} r={420} />
-          <IconoNo x={470} y={500} tipo="nariz" o={kprog(T, K.G + 2.6, K.G + 3.0, kEase.rebote)} texto="no huele" />
-          <IconoNo x={470} y={790} tipo="ojo" o={kprog(T, K.G + 3.3, K.G + 3.7, kEase.rebote)} texto="no se ve" />
+          <CamaDormida T={T} x={300} y={1020} s={1.25} />
+          <Anafre T={T} x={745} y={960} s={1.75} />
+          <NubeCO T={T} x={640} y={760} f={nube0} r={420} />
+          <IconoNo x={540} y={480} tipo="nariz" o={kprog(T, K.G + 2.6, K.G + 3.0, kEase.rebote)} texto="no huele" />
+          <IconoNo x={780} y={480} tipo="ojo" o={kprog(T, K.G + 3.3, K.G + 3.7, kEase.rebote)} texto="no se ve" />
+          </Enc>
         </SvgCapa>
       </Escena>
       {/* 1 · qué es: combustión completa vs. incompleta */}
@@ -194,8 +202,10 @@ function Monoxido() {
         <SvgCapa>
           {(() => { const r1 = kprog(T, K.Q + 0.3, K.Q + 1.3, kEase.sale), r2 = kprog(T, K.Q + 2.4, K.Q + 3.4, kEase.sale);
             return <g>
+              <Anafre T={T} x={540} y={1230} s={1.8} />
+              <g transform="translate(0 -280)">
               <g opacity={kprog(T, K.Q, K.Q + 0.3)}>
-                <rect x={60} y={660} width={960} height={210} rx={30} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={6} />
+                <rect x={60} y={660} width={960} height={210} rx={30} fill="rgba(255,255,255,.08)" stroke={KC.ink} strokeWidth={6} />
                 <Atomo x={klerp(170, 240, r1)} y={760} r={42} color={QA.C} letra="C" />
                 <text x={330} y={784} textAnchor="middle" style={{ font:`700 64px ${KF.mono}` }} fill={KC.ink}>+</text>
                 <Mol tipo="o2" x={klerp(500, 440, r1)} y={760} s={1} />
@@ -204,7 +214,7 @@ function Monoxido() {
                 <text x={800} y={850} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} opacity={r1}>CO₂</text>
               </g>
               <g opacity={kprog(T, K.Q + 2.2, K.Q + 2.5)}>
-                <rect x={60} y={930} width={960} height={230} rx={30} fill="rgba(255,255,255,.75)" stroke={KC.red} strokeWidth={8} />
+                <rect x={60} y={930} width={960} height={230} rx={30} fill="rgba(255,90,90,.10)" stroke={KC.red} strokeWidth={8} />
                 <Atomo x={klerp(130, 190, r2)} y={1020} r={38} color={QA.C} letra="C" />
                 <Atomo x={klerp(130, 190, r2)} y={1110} r={38} color={QA.C} letra="C" />
                 <text x={290} y={1084} textAnchor="middle" style={{ font:`700 64px ${KF.mono}` }} fill={KC.ink}>+</text>
@@ -215,6 +225,7 @@ function Monoxido() {
                 <circle cx={760} cy={1060} r={130 + Math.sin(T * 6) * 6} fill="none" stroke={KC.red} strokeWidth={8} opacity={r2} strokeDasharray="20 12" />
                 <text x={940} y={1072} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={3} opacity={r2}>CO</text>
               </g>
+              </g>
             </g>; })()}
         </SvgCapa>
       </Escena>
@@ -222,22 +233,26 @@ function Monoxido() {
       <Escena T={T} a={K.F} b={K.Pu} zoom={0.06} origen="50% 60%">
         <FondoLunares color={KC.pink} />
         <SvgCapa>
+          <Enc k={1.2} cx={535}>
           <Cuarto T={T} abierta={0} />
           <Boiler T={T} x={800} y={1080} s={1} tapado />
-          <Anafre T={T} x={330} y={980} s={0.95} />
-          <NubeCO T={T} x={330} y={760} f={kprog(T, K.F, K.F + 1.6, kEase.sale)} r={300} seed={6} />
+          <Anafre T={T} x={330} y={955} s={1.1} />
+          <NubeCO T={T} x={330} y={730} f={kprog(T, K.F, K.F + 1.6, kEase.sale)} r={300} seed={6} />
           <NubeCO T={T} x={760} y={560} f={kprog(T, K.F + 0.9, K.F + 2.5, kEase.sale)} r={300} seed={9} />
+          </Enc>
         </SvgCapa>
       </Escena>
       {/* 3 · del pulmón al glóbulo rojo */}
       <Escena T={T} a={K.Pu} b={K.H} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
+          <g transform="translate(320 640) scale(1.368) translate(-270 -830)">
           <Pulmones x={270} y={830} s={0.95} />
           {Array.from({ length: 5 }, (_, i) => { const u = kprog(T, K.Pu + i * 0.25, K.Pu + 1.4 + i * 0.25); return u > 0 && u < 1 ? <MolCO key={i} x={270 + Math.sin(i * 2) * 20} y={klerp(560, 920, u)} s={0.45} rot={T * 60 + i * 50} /> : null; })}
+          </g>
           {/* lupa: alvéolo y capilar */}
-          <line x1={330} y1={960} x2={640} y2={900} stroke="#fff" strokeWidth={4} strokeDasharray="12 10" opacity={kprog(T, K.Pu + 0.5, K.Pu + 0.9)} />
-          <g opacity={kprog(T, K.Pu + 0.5, K.Pu + 0.9)}>
+          <line x1={400} y1={850} x2={528} y2={962} stroke="#fff" strokeWidth={4} strokeDasharray="12 10" opacity={kprog(T, K.Pu + 0.5, K.Pu + 0.9)} />
+          <g opacity={kprog(T, K.Pu + 0.5, K.Pu + 0.9)} transform="translate(745 1170) scale(1.2) translate(-780 -900)">
             <clipPath id="lupaPu"><circle cx={780} cy={900} r={250} /></clipPath>
             <g clipPath="url(#lupaPu)">
               <rect x={520} y={640} width={520} height={520} fill="#1a2440" />
@@ -249,19 +264,19 @@ function Monoxido() {
             <circle cx={780} cy={900} r={250} fill="none" stroke="#fff" strokeWidth={10} />
           </g>
         </SvgCapa>
-        <Etq T={T} at={K.Pu + 0.3} until={K.H - 0.2} x={120} y={1200} texto="pulmón" color={KC.texto} />
-        <Etq T={T} at={K.Pu + 1.1} until={K.H - 0.2} x={1040} y={1180} lado="izq" texto="glóbulos rojos" color="#ff8fa3" />
-        <Etq T={T} at={K.Pu + 0.9} until={K.H - 0.2} x={1040} y={620} lado="izq" texto="alvéolo" color="#ffc2cc" />
+        <Etq T={T} at={K.Pu + 0.3} until={K.H - 0.2} x={70} y={1140} texto="pulmón" color={KC.texto} />
+        <Etq T={T} at={K.Pu + 1.1} until={K.H - 0.2} x={1050} y={1500} lado="izq" texto="glóbulos rojos" color="#ff8fa3" />
+        <Etq T={T} at={K.Pu + 0.9} until={K.H - 0.2} x={1050} y={850} lado="izq" texto="alvéolo" color="#ffc2cc" />
       </Escena>
       {/* 4–5 · la hemoglobina: el CO se pega y le quita el lugar al oxígeno */}
       <Escena T={T} a={K.H} b={K.Pr} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <ellipse cx={540} cy={890} rx={520} ry={360} fill="#5e0f1c" stroke="#a81a2e" strokeWidth={14} />
-          <Hemoglobina T={T} x={540} y={900} s={1.25} ocup={ocup} />
+          <ellipse cx={540} cy={890} rx={520} ry={470} fill="#5e0f1c" stroke="#a81a2e" strokeWidth={14} />
+          <Hemoglobina T={T} x={540} y={900} s={1.9} ocup={ocup} />
           {T > K.D && [0, 1, 2].map((i) => { const u = kprog(T, K.D + 0.4 + i * 0.6, K.D + 2.4 + i * 0.6); return <Mol key={i} tipo="o2" x={klerp(540, i === 1 ? 980 : (i ? 920 : 140), u)} y={klerp(900, 620 + i * 60, u)} s={0.6} rot={T * 50} o={u > 0 ? 0.8 : 0} />; })}
         </SvgCapa>
-        <Etq T={T} at={K.H + 0.3} until={K.D - 0.2} x={1040} y={470} lado="izq" texto="hemoglobina" color="#ffa24c" />
+        <Etq T={T} at={K.H + 0.3} until={K.D - 0.2} x={1040} y={400} lado="izq" texto="hemoglobina" color="#ffa24c" />
         <NumeroGigante T={T} at={K.H + 3.0} until={K.D - 0.2} valor={200} dur={1.0} prefijo="×" sufijo="+" etiqueta="más fuerte que el oxígeno" x={540} y={1520} tam={150} color={KC.red} />
         <Medidor T={T} at={K.D + 0.3} until={K.Pr - 0.2} valor={(t) => 1 - 0.7 * kprog(t, K.D + 0.3, K.D + 3.2)} etiqueta="oxígeno que llega" texto={(v) => (v > 0.75 ? 'normal' : 'baja')} x={90} y={1460} ancho={900} color={KC.mint} />
       </Escena>
@@ -274,16 +289,19 @@ function Monoxido() {
       <Escena T={T} a={K.S} b={K.E}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          {T < K.S + 3.3 ? <g>
-            <Busto T={T} x={560} y={770} s={1} dolor={kprog(T, K.S + 0.1, K.S + 0.5, kEase.rebote)} mareo={kprog(T, K.S + 0.8, K.S + 1.2, kEase.rebote)} nausea={kprog(T, K.S + 1.4, K.S + 1.8)} />
-          </g> : <g>
-            <rect x={0} y={1120} width={KW} height={KH - 1120} fill="#2a8f6e" />
-            <CamaDormida T={T} x={560} y={1020} s={1.3} zzz={1 - kprog(T, K.S + 4.0, K.S + 5.2)} />
+          {(() => { const cam = kprog(T, K.S + 3.1, K.S + 3.5); return <g>
+          {cam < 1 && <g opacity={1 - cam}>
+            <Busto T={T} x={540} y={820} s={1.5} dolor={kprog(T, K.S + 0.1, K.S + 0.5, kEase.rebote)} mareo={kprog(T, K.S + 0.8, K.S + 1.2, kEase.rebote)} nausea={kprog(T, K.S + 1.4, K.S + 1.8)} />
           </g>}
+          {cam > 0 && <g opacity={cam}>
+            <rect x={0} y={1300} width={KW} height={KH - 1300} fill="#1a4f45" />
+            <CamaDormida T={T} x={560} y={1150} s={2} zzz={1 - kprog(T, K.S + 4.0, K.S + 5.2)} />
+          </g>}
+          </g>; })()}
         </SvgCapa>
-        <Etq T={T} at={K.S + 0.2} until={K.S + 3.2} x={1050} y={560} lado="izq" texto="dolor de cabeza" color={KC.ink} tam={32} />
-        <Etq T={T} at={K.S + 0.9} until={K.S + 3.2} x={300} y={560} lado="izq" texto="mareo" color={KC.ink} tam={32} />
-        <Etq T={T} at={K.S + 1.5} until={K.S + 3.2} x={790} y={1010} texto="náuseas" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.S + 0.2} until={K.S + 3.2} x={1050} y={505} lado="izq" texto="dolor de cabeza" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.S + 0.9} until={K.S + 3.2} x={465} y={445} lado="izq" texto="mareo" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.S + 1.5} until={K.S + 3.2} x={850} y={1195} texto="náuseas" color={KC.ink} tam={32} />
         <Chip T={T} at={K.S + 2.0} until={K.S + 3.2} texto="¿gripa?" y={1500} tam={52} borde={KC.blue} />
         <Chip T={T} at={K.S + 3.5} until={K.E - 0.2} texto="dormido, no te das cuenta" y={1500} tam={44} borde={KC.red} />
       </Escena>
@@ -296,8 +314,8 @@ function Monoxido() {
           <line x1={850} y1={420} x2={850} y2={640} stroke={KC.ink} strokeWidth={6} />
                     {(() => { const rojos = [3, 10, 17, 21, 26, 30, 35]; return Array.from({ length: 37 }, (_, i) => { const c = i % 8, r = Math.floor(i / 8), k = rojos.indexOf(i);
             const on = k >= 0 ? kprog(T, K.E + 4.0 + k * 0.25, K.E + 4.3 + k * 0.25) : 0;
-            const ap = kprog(T, K.E + 3.4 + i * 0.015, K.E + 3.7 + i * 0.015);
-            return <Personita key={i} x={150 + c * 112} y={760 + r * 88} s={1.4 * klerp(0.6, 1, ap)} o={ap} color={mixHex('#f6f3ec', KC.red, on)} />; }); })()}
+            const ap = kprog(T, K.E + 0.4 + i * 0.015, K.E + 0.7 + i * 0.015);
+            return <Personita key={i} x={106 + c * 124} y={810 + r * 150} s={1.75 * klerp(0.6, 1, ap)} o={ap} color={mixHex('#f6f3ec', KC.red, on)} />; }); })()}
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.5} anio="1987" quien="Heckerling · Chicago" revista="Am J Emerg Med · urgencias en invierno" x={400} y={560} />
         <Chip T={T} at={K.E + 1.0} until={K.E + 3.9} texto="37 personas con dolor de cabeza" y={1500} tam={40} borde={KC.blue} />
@@ -308,38 +326,42 @@ function Monoxido() {
       <Escena T={T} a={K.L} b={K.A}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
+          <g transform="translate(545 900) scale(1.18) translate(-545 -910)">
           <Reloj T={T} x={340} y={900} r={210} horas={4.5 * kprog(T, K.L + 0.4, K.L + 3.4, kEase.suave) + T * 0.05} />
           <g>
-            <rect x={700} y={680} width={200} height={460} rx={30} fill="rgba(255,255,255,.6)" stroke={KC.ink} strokeWidth={9} />
+            <rect x={700} y={680} width={200} height={460} rx={30} fill="rgba(255,255,255,.22)" stroke={KC.ink} strokeWidth={9} />
             <rect x={712} y={692 + 436 * (1 - coEnSangre)} width={176} height={436 * coEnSangre} rx={22} fill={GRIS_CO} />
             {[0, 1, 2, 3].map((i) => <MolCO key={i} x={800} y={1090 - i * 100} s={0.6} rot={T * 30 + i * 40} o={coEnSangre * 4 - i > 1 ? 1 : 0.15} />)}
             <line x1={680} y1={910} x2={920} y2={910} stroke={KC.ink} strokeWidth={6} strokeDasharray="14 10" />
             <text x={940} y={922} style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>½</text>
           </g>
+          </g>
         </SvgCapa>
-        <Etq T={T} at={K.L + 0.3} until={K.A - 0.2} x={1000} y={640} lado="izq" texto="CO en tu sangre" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.L + 0.3} until={K.A - 0.2} x={1010} y={585} lado="izq" texto="CO en tu sangre" color={KC.ink} tam={32} />
         <Chip T={T} at={K.L + 2.4} until={K.A - 0.2} texto="la mitad: ≈ 4–5 h" y={1500} tam={48} borde={KC.violet} />
       </Escena>
       {/* 10 · aviso: varios con dolor de cabeza → salir al aire libre → 911 */}
       <Escena T={T} a={K.A} b={avisoB + 0.2}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <Enc k={1.15} cx={520}>
           <Cuarto T={T} abierta={0} />
-          <Detector T={T} x={560} y={500} s={1.1} alarma={kprog(T, K.A + 1.6, K.A + 1.8)} />
-          {[[260, 1060], [470, 1080], [640, 1060]].map(([x, y], i) => <g key={i}>
-            <Personita x={x} y={y} s={3} color={[KC.orange, KC.blue, KC.mint][i]} />
-            {kprog(T, K.A + 0.2 + i * 0.3, K.A + 0.5 + i * 0.3) > 0 && <path d="M 0 0 l 14 -18 l -10 -4 l 14 -20" transform={`translate(${x + 40} ${y - 170})`} stroke={KC.red} strokeWidth={8} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
+          <Detector T={T} x={600} y={480} s={1.1} alarma={kprog(T, K.A + 1.6, K.A + 1.8)} />
+          {[[250, 1032], [520, 1032], [790, 1032]].map(([x, y], i) => <g key={i}>
+            <Personita x={x} y={y} s={4.4} color={[KC.orange, KC.blue, KC.mint][i]} />
+            {kprog(T, K.A + 0.2 + i * 0.3, K.A + 0.5 + i * 0.3) > 0 && <path d="M 0 0 l 14 -18 l -10 -4 l 14 -20" transform={`translate(${x + 62} ${y - 250}) scale(1.5)`} stroke={KC.red} strokeWidth={8} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
           </g>)}
+          <Onomato T={T} at={K.A + 1.7} until={avisoB} x={800} y={670} texto="¡pip pip!" color={KC.red} tam={48} />
+          </Enc>
         </SvgCapa>
-        <Onomato T={T} at={K.A + 1.7} until={avisoB} x={600} y={700} texto="¡pip pip!" color={KC.red} tam={70} />
       </Escena>
       <Escena T={T} a={avisoB} b={K.C} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:'#8fd8ff' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix('#8fd8ff', CINE.fondo, 0.78) }}></div>
         <SvgCapa>
           <circle cx={900} cy={480} r={80} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
-          <rect x={0} y={1120} width={KW} height={KH - 1120} fill={KC.leaf} />
-          <CasaLado x={250} y={1130} s={0.9} />
-          {[[600, 1100], [740, 1110], [880, 1100]].map(([x, y], i) => { const u = kprog(T, avisoB + i * 0.2, avisoB + 1.2 + i * 0.2, kEase.sale); return <Personita key={i} x={klerp(300, x, u)} y={y} s={3} color={[KC.orange, KC.blue, KC.mint][i]} />; })}
+          <rect x={0} y={1320} width={KW} height={KH - 1320} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} />
+          <CasaLado x={330} y={1330} s={1.35} />
+          {[[610, 1242], [785, 1252], [955, 1242]].map(([x, y], i) => { const u = kprog(T, avisoB + i * 0.2, avisoB + 1.2 + i * 0.2, kEase.sale); return <Personita key={i} x={klerp(380, x, u)} y={y} s={4.4} color={[KC.orange, KC.blue, KC.mint][i]} />; })}
           {[0, 1, 2].map((i) => { const u = (T * 0.6 + i / 3) % 1; return <path key={i} d={`M ${1080 - u * 700} ${620 + i * 70} q 30 -16 60 0 t 60 0`} stroke="#fff" strokeWidth={8} fill="none" strokeLinecap="round" opacity={1 - u} />; })}
         </SvgCapa>
         <Chip T={T} at={avisoB + 1.2} until={K.C - 0.2} texto="pide ayuda: 911" y={1500} tam={56} borde={KC.red} />
@@ -348,22 +370,25 @@ function Monoxido() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="55% 55%">
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
+          <Enc k={1.08} cx={522} ay={1300}>
           <Cuarto T={T} abierta={kprog(T, K.C + 0.2, K.C + 1.4, kEase.sale)} />
           <g opacity={kprog(T, K.C + 1.0, K.C + 1.6)}><Anafre T={T} x={220} y={600} s={0.35} encendido={1} /></g>
-          <CamaDormida T={T} x={270} y={1040} s={0.95} />
-          <g opacity={1 - kprog(T, K.C + 0.2, K.C + 1.0)}><Anafre T={T} x={760} y={980} s={1} encendido={1} /></g>
-          <g opacity={kprog(T, K.C + 0.6, K.C + 1.2)}><Marca x={760} y={960} ok={false} s={1.3} o={1 - kprog(T, K.C + 2.6, K.C + 3.0)} /></g>
-          <NubeCO T={T} x={600} y={820} f={1 - kprog(T, K.C + 0.2, K.C + 2.2)} r={420} />
+          <CamaDormida T={T} x={300} y={1020} s={1.25} />
+          {/* el anafre de adentro se apaga y queda atenuado, con su tache, hasta el final (ya está afuera, en la ventana) */}
+          <g opacity={klerp(1, 0.28, kprog(T, K.C + 0.2, K.C + 1.0))}><Anafre T={T} x={745} y={960} s={1.75} encendido={1 - kprog(T, K.C + 0.2, K.C + 1.0)} /></g>
+          <g opacity={kprog(T, K.C + 0.6, K.C + 1.2)}><Marca x={745} y={930} ok={false} s={1.6} /></g>
+          <NubeCO T={T} x={640} y={760} f={1 - kprog(T, K.C + 0.2, K.C + 2.2)} r={420} />
           <Detector T={T} x={560} y={500} s={1.1} ok />
+          </Enc>
         </SvgCapa>
         <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="anafre: solo al aire libre" y={1500} tam={46} borde={KC.mint} />
       </Escena>
 
       {/* textos que cruzan escenas */}
-      <Chip T={T} at={K.Q + 0.4} until={K.Q + 2.3} texto="con mucho oxígeno" x={540} y={620} tam={34} borde={KC.mint} />
-      <Chip T={T} at={K.Q + 2.5} until={K.F - 0.2} texto="sin suficiente oxígeno: monóxido" y={1500} tam={40} borde={KC.red} />
-      <Etq T={T} at={K.F + 0.3} until={K.Pu - 0.2} x={140} y={720} texto="anafre" color={KC.ink} tam={36} />
-      <Etq T={T} at={K.F + 0.9} until={K.Pu - 0.2} x={670} y={900} lado="izq" texto="boiler" color={KC.ink} tam={36} />
+      <Chip T={T} at={K.Q + 0.4} until={K.Q + 2.3} texto="con mucho oxígeno" x={540} y={340} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.Q + 2.5} until={K.F - 0.2} texto="sin suficiente oxígeno: monóxido" y={965} tam={40} borde={KC.red} />
+      <Etq T={T} at={K.F + 0.3} until={K.Pu - 0.2} x={500} y={1113} texto="anafre" color={KC.ink} tam={36} />
+      <Etq T={T} at={K.F + 0.9} until={K.Pu - 0.2} x={716} y={930} lado="izq" texto="boiler" color={KC.ink} tam={36} />
       <Chip T={T} at={K.F + 1.4} until={K.Pu - 0.2} texto="cuarto cerrado" y={1500} tam={48} borde={KC.red} />
       <Chip T={T} at={K.G + 0.3} until={K.G + 2.4} texto="monóxido de carbono · CO" y={1500} tam={42} borde={GRIS_CO} />
 

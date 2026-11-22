@@ -1,7 +1,22 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #39 · Esa pastilla no calma tu estómago: le hace química (antiácidos y neutralización) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (la herida de St. Martin, sin nada gráfico).
 const PIEL = '#f1b48f', ACIDO = '#9be15d', NEUTRO = '#7fc8ff', CELULA = '#ff8fa3', HPLUS = '#ffe11a', CLM = '#b6e33a', OHM = '#7fd8ff', OMEP = '#9b5de5';
 const PAPEL = '#ead9b3';
+const TINTA = '#0b1020';   // negro fijo para texto sobre piezas claras (KC.ink es claro en modo cine)
+// Rótulo con línea guía dentro del dibujo (se mueve con la cámara de la escena). (x, y) = lo que señala; (tx, ty) = texto.
+function Guia({ x, y, tx, ty, texto, p = 1, tam = 34, color = '#f3f6ff', ancla = 'middle' }) {
+  if (p <= 0.01) return null;
+  return <g opacity={p}>
+    <line x1={x} y1={y} x2={tx} y2={ty - tam * 1.05} stroke={color} strokeWidth={4} strokeLinecap="round" />
+    <circle cx={x} cy={y} r={8} fill={color} />
+    <text x={tx} y={ty} textAnchor={ancla} style={{ font:`700 ${tam}px ${KF.mono}` }} fill={color}>{texto}</text>
+  </g>;
+}
+// Ácido con profundidad: brillante en la superficie y oscuro hacia abajo (ya no es una franja saturada).
+function GradAcido({ id }) {
+  return <linearGradient id={id} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={ACIDO} /><stop offset=".05" stopColor="#4f8f2c" /><stop offset=".22" stopColor="#1f4217" /><stop offset="1" stopColor="#0c1a0b" /></linearGradient>;
+}
 
 // Estómago (forma de J) en coordenadas locales del torso.
 const ESTOMAGO = 'M 10 -70 Q 12 -10 -20 40 Q -60 140 40 172 Q 170 196 205 80 Q 222 -20 140 -62 Q 80 -92 10 -70 Z';
@@ -9,10 +24,10 @@ function posPastilla(p) { // boca → esófago → charco
   if (p < 0.6) { const u = p / 0.6; return [klerp(0, 14, u), klerp(-392, -70, u)]; }
   const u = (p - 0.6) / 0.4; return [klerp(14, 72, u), klerp(-70, 112, u * u)];
 }
-function Pastilla({ x, y, s = 1, rot = 0, o = 1 }) {
+function Pastilla({ x, y, s = 1, rot = 0, o = 1, trazo = 6 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={o}>
-    <ellipse rx={30} ry={24} fill="#fbfbf7" stroke={KC.ink} strokeWidth={6} />
-    <line x1={-18} y1={0} x2={18} y2={0} stroke="#b9b4a8" strokeWidth={4} strokeLinecap="round" />
+    <ellipse rx={30} ry={24} fill="#fbfbf7" stroke={KC.ink} strokeWidth={trazo} />
+    <line x1={-18} y1={0} x2={18} y2={0} stroke="#b9b4a8" strokeWidth={Math.min(4, trazo)} strokeLinecap="round" />
   </g>;
 }
 function CapsulaOmep({ x, y, s = 1, rot = 0 }) {
@@ -130,145 +145,163 @@ function Antiacido() {
   const FIN = K.Ou + 4;
   const caida = kprog(T, K.G, K.G + 0.85);
   const mitadB = K.B + 3.9;
+  const TX = 520, TY = 1080, TS = 1.2;   // torso grande y al centro (pase a mano cine)
   const ph = klerp(7, 1.7, kprog(T, K.P + 1.0, K.P + 2.6, kEase.sale));
   const phX = (v) => 110 + v / 14 * 860;
   const giro = kprog(T, K.M + 2.2, K.M + 2.9, kEase.suave);
   const dia = 1 + Math.floor(kprog(T, K.O + 3.6, K.O + 6.0) * 3 + 0.0001);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
-      {/* 0 · gancho: la pastilla cae al ácido del estómago */}
+      {/* 0 · gancho: la pastilla cae al ácido del estómago (torso grande, al centro) */}
       <Escena T={T} a={K.G} b={K.A} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa><Torso T={T} x={380} y={960} s={0.85} pastilla={caida < 1 ? caida : -1} golpe={K.G + 0.85} id="g" /></SvgCapa>
+        <SvgCapa>
+          <Torso T={T} x={TX} y={TY} s={TS} pastilla={caida < 1 ? caida : -1} golpe={K.G + 0.85} id="g" />
+          <Guia x={TX + 100 * TS} y={TY + 140 * TS} tx={TX + 40} ty={TY + 345 * TS} texto="ácido del estómago" p={kprog(T, K.G + 1.2, K.G + 1.6)} />
+        </SvgCapa>
       </Escena>
       {/* 1 · las células parietales hacen el HCl (micro, fondo noche) */}
       <Escena T={T} a={K.A} b={K.P} fondo={KC.noche}>
         <SvgCapa>
-          <rect x={0} y={1060} width={KW} height={260} fill="#3a1830" />
+          <rect x={0} y={1060} width={KW} height={260} fill="#221426" />
           {[230, 540, 850].map((cx, i) => <Parietal key={i} T={T} x={cx} y={1000} />)}
           {[230, 540, 850].map((cx, i) => <Emision key={i} T={T} x={cx} y={880} desde={K.A + 0.5 + i * 0.2} alto={300} />)}
           <text x={760} y={500} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="rgba(246,243,236,.7)">interior del estómago</text>
         </SvgCapa>
-        <div style={{ position:'absolute', left:80, top:1440, zIndex:40, color:KC.texto, font:`700 26px ${KF.mono}`, textShadow:KSOMBRA }}>
+        <div style={{ position:'absolute', left:80, top:1190, zIndex:40, color:KC.texto, font:`700 26px ${KF.mono}`, textShadow:KSOMBRA }}>
           <div style={{ marginBottom:8 }}>10 µm</div><div style={{ width:110, height:8, background:KC.texto, borderRadius:4 }}></div></div>
       </Escena>
-      {/* 2 · pH 1.7 en ayunas (1990) */}
+      {/* 2 · pH 1.7 en ayunas (1990): la cápsula medidora, grande, cae al ácido */}
       <Escena T={T} a={K.P} b={K.Ag} fondo="#14301f">
         <SvgCapa>
-          <path d={`M 0 ${820 + Math.sin(T * 3) * 10} Q 270 ${800 - Math.sin(T * 3) * 10} 540 ${820} T 1080 ${815} L 1080 1060 L 0 1060 Z`} fill={ACIDO} opacity={0.85} />
-          <g transform={`translate(${540 + Math.sin(T * 2) * 30} ${klerp(380, 860, kprog(T, K.P, K.P + 1.2, kEase.sale)) + Math.sin(T * 3) * 6}) rotate(${-20 + Math.sin(T * 2) * 8})`}>
-            <rect x={-80} y={-34} width={160} height={68} rx={34} fill="#d9dde3" stroke={KC.ink} strokeWidth={6} />
+          <defs><GradAcido id="acg1" /></defs>
+          <path d={`M -60 ${850 + Math.sin(T * 3) * 10} Q 270 ${830 - Math.sin(T * 3) * 10} 540 ${850} T 1140 ${845} L 1140 2000 L -60 2000 Z`} fill="url(#acg1)" opacity={0.92} />
+          <g transform={`translate(${540 + Math.sin(T * 2) * 30} ${klerp(330, 890, kprog(T, K.P - 0.2, K.P + 1.2, kEase.sale)) + Math.sin(T * 3) * 6}) rotate(${-20 + Math.sin(T * 2) * 8}) scale(2.2)`}>
+            <rect x={-80} y={-34} width={160} height={68} rx={34} fill="#d9dde3" stroke={KC.ink} strokeWidth={5} />
             <circle cx={40} cy={0} r={12} fill={KC.red} opacity={0.5 + 0.5 * Math.sin(T * 10)} />
-            <path d="M -80 0 Q -120 -20 -140 10" stroke={KC.ink} strokeWidth={4} fill="none" />
+            <path d="M -80 0 Q -120 -20 -140 10" stroke={KC.ink} strokeWidth={3} fill="none" />
           </g>
           <defs><linearGradient id="phg" x1="0" x2="1"><stop offset="0" stopColor="#ff3b2f" /><stop offset=".25" stopColor="#ff8a1f" /><stop offset=".45" stopColor="#ffe11a" /><stop offset=".55" stopColor="#2fe0a8" /><stop offset=".8" stopColor="#2346ff" /><stop offset="1" stopColor="#7a2bd6" /></linearGradient></defs>
-          <rect x={110} y={1110} width={860} height={44} rx={22} fill="url(#phg)" stroke={KC.ink} strokeWidth={6} />
-          {[0, 7, 14].map((v) => <text key={v} x={phX(v)} y={1196} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>{v}</text>)}
-          <path d={`M ${phX(ph)} 1104 l -22 -40 l 44 0 Z`} fill={KC.white} stroke={KC.ink} strokeWidth={5} />
+          <rect x={110} y={1230} width={860} height={44} rx={22} fill="url(#phg)" stroke={KC.ink} strokeWidth={6} />
+          {[0, 7, 14].map((v) => <text key={v} x={phX(v)} y={1318} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>{v}</text>)}
+          <path d={`M ${phX(ph)} 1224 l -22 -40 l 44 0 Z`} fill={KC.white} stroke={KC.ink} strokeWidth={5} />
         </SvgCapa>
-        <NumeroGigante T={T} at={K.P + 1.0} until={K.Ag - 0.2} valor={1.7} desde={7} dur={1.6} dec={1} prefijo="pH " x={540} y={540} tam={230} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.P + 1.0} until={K.Ag - 0.2} valor={1.7} desde={7} dur={1.6} dec={1} prefijo="pH " x={540} y={470} tam={230} color={KC.yellow} />
       </Escena>
       {/* 3 · agruras: el ácido sube por el esófago */}
-      <Escena T={T} a={K.Ag} b={K.B} fondo={KC.pink}>
+      <Escena T={T} a={K.Ag} b={K.B}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa><Torso T={T} x={380} y={960} s={0.85} sube={kprog(T, K.Ag + 0.3, K.Ag + 1.4, kEase.sale)} ardor={kprog(T, K.Ag + 1.0, K.Ag + 1.6)} id="r" /></SvgCapa>
-        <Etq T={T} at={K.Ag + 1.2} until={K.B - 0.2} x={400} y={800} texto="esófago" tam={34} color={KC.ink} />
+        <SvgCapa>
+          <Torso T={T} x={TX} y={TY} s={TS} sube={kprog(T, K.Ag + 0.3, K.Ag + 1.4, kEase.sale)} ardor={kprog(T, K.Ag + 1.0, K.Ag + 1.6)} id="r" />
+          <Guia x={TX + 30} y={TY - 215 * TS} tx={880} ty={TY - 330 * TS} texto="esófago" tam={38} p={kprog(T, K.Ag + 1.2, K.Ag + 1.5)} />
+        </SvgCapa>
       </Escena>
-      {/* 4 · las bases del antiácido y la neutralización */}
+      {/* 4 · las bases del antiácido (salen de la pastilla, que sigue en cuadro) y la neutralización */}
       <Escena T={T} a={K.B} b={K.Ga} fondo={KC.noche}>
         <SvgCapa>
           {T < mitadB ? <g opacity={1 - kprog(T, mitadB - 0.3, mitadB)}>
-            <Pastilla x={540} y={600} s={2.6 * (1 - kprog(T, K.B + 0.4, K.B + 0.8)) + 0.01} rot={Math.sin(T * 3) * 10} />
-            {[['CaCO₃', 'carbonato de calcio', 190, KC.paper], ['Mg(OH)₂', 'hidróxido de magnesio', 540, OHM], ['NaHCO₃', 'bicarbonato', 890, KC.mint]].map(([f, n, cx, c], i) => {
-              const e = kprog(T, K.B + 0.6 + i * 1.1, K.B + 1.0 + i * 1.1, kEase.rebote);
-              return <g key={i} transform={`translate(${cx} ${klerp(600, 900, kprog(T, K.B + 0.6 + i * 1.1, K.B + 1.0 + i * 1.1, kEase.sale))}) scale(${e})`}>
-                <rect x={-160} y={-110} width={320} height={220} rx={30} fill={c} stroke={KC.ink} strokeWidth={8} />
-                <text y={10} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.ink}>{f}</text>
-                <text y={72} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>{n}</text>
+            <Pastilla x={540} y={klerp(760, 590, kprog(T, K.B + 0.3, K.B + 0.8, kEase.suave))} s={klerp(7, 5.2, kprog(T, K.B + 0.3, K.B + 0.8, kEase.suave))} rot={Math.sin(T * 3) * 6} trazo={1.6} />
+            {[['CaCO₃', 'carbonato de calcio', 190, '#f6f3ec'], ['Mg(OH)₂', 'hidróxido de magnesio', 540, OHM], ['NaHCO₃', 'bicarbonato', 890, KC.mint]].map(([f, n, cx, c], i) => {
+              const e = kprog(T, K.B + 0.6 + i * 1.1, K.B + 1.0 + i * 1.1, kEase.rebote), v = kprog(T, K.B + 0.6 + i * 1.1, K.B + 1.0 + i * 1.1, kEase.sale);
+              return <g key={i}>
+                <line x1={540} y1={640} x2={klerp(540, cx, v)} y2={klerp(640, 900, v)} stroke="rgba(223,231,255,.45)" strokeWidth={5} strokeDasharray="10 12" opacity={v} />
+                <g transform={`translate(${klerp(540, cx, v)} ${klerp(640, 1010, v)}) scale(${e})`}>
+                  <rect x={-160} y={-110} width={320} height={220} rx={30} fill={c} stroke={KC.ink} strokeWidth={8} />
+                  <text y={10} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}`, stroke:'none' }} fill={TINTA}>{f}</text>
+                  <text y={72} textAnchor="middle" style={{ font:`700 22px ${KF.mono}`, stroke:'none' }} fill={TINTA}>{n}</text>
+                </g>
               </g>; })}
-          </g> : <g>
+          </g> : <g transform="translate(540 900) scale(1.45) translate(-540 -900)">
             {[0, 1, 2, 3].map((i) => { const t0 = mitadB + 0.2 + i * 0.45, u = kprog(T, t0, t0 + 0.8, kEase.suave), yy = 760 + i * 95;
               return <g key={i}>
-                {u < 1 && <Ion x={klerp(130, 490, u)} y={yy} tipo="H" s={1.6} />}
-                {u < 1 && <Ion x={klerp(950, 590, u)} y={yy} tipo="OH" s={1.6} />}
+                {u < 1 && <Ion x={klerp(255, 490, u)} y={yy} tipo="H" s={1.6} />}
+                {u < 1 && <Ion x={klerp(825, 590, u)} y={yy} tipo="OH" s={1.6} />}
                 {u >= 1 && <Mol tipo="agua" x={540} y={yy} s={1.15} rot={Math.sin(T * 2 + i) * 15} />}
                 <Chispas T={T} x={540} y={yy} at={t0 + 0.8} color={OHM} r0={20} r1={70} />
               </g>; })}
-            <g transform={`translate(${840} ${1010}) scale(${kprog(T, mitadB + 1.6, mitadB + 2.0, kEase.rebote)})`}>
+            <g transform={`translate(${790} ${940}) scale(${kprog(T, mitadB + 1.6, mitadB + 2.0, kEase.rebote)})`}>
               <rect x={-60} y={-60} width={120} height={120} rx={10} fill="#f4f4f4" stroke={KC.ink} strokeWidth={7} transform="rotate(12)" />
               <text y={110} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>sal</text>
             </g>
-            <text x={540} y={640} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.texto} opacity={kprog(T, mitadB, mitadB + 0.4)}>ÁCIDO + BASE</text>
+            <text x={540} y={650} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.texto} opacity={kprog(T, mitadB, mitadB + 0.4)}>ÁCIDO + BASE</text>
           </g>}
         </SvgCapa>
       </Escena>
-      {/* 5 · con carbonatos sale CO₂: ¡burp! */}
+      {/* 5 · con carbonatos sale CO₂: ¡burp! (todo 1.5x; el ácido con profundidad) */}
       <Escena T={T} a={K.Ga} b={K.Pr} fondo={KC.noche}>
         <SvgCapa>
-          <path d={`M 0 ${1060 + Math.sin(T * 3) * 8} Q 270 ${1040} 540 ${1060} T 1080 ${1055} L 1080 1240 L 0 1240 Z`} fill={ACIDO} opacity={0.8} />
-          <g transform={`translate(640 1080) scale(${1 - kprog(T, K.Ga + 0.3, K.Pr, kEase.suave) * 0.5})`}>
-            <rect x={-70} y={-50} width={140} height={100} rx={20} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
-            <text y={14} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>CaCO₃</text>
+          <defs><GradAcido id="acg2" /></defs>
+          <g transform="translate(540 1100) scale(1.5) translate(-640 -1060)">
+            <path d={`M -100 ${1060 + Math.sin(T * 3) * 8} Q 270 ${1040} 540 ${1060} T 1180 ${1055} L 1180 1700 L -100 1700 Z`} fill="url(#acg2)" opacity={0.9} />
+            <g transform={`translate(640 1080) scale(${1 - kprog(T, K.Ga + 0.3, K.Pr, kEase.suave) * 0.5})`}>
+              <rect x={-70} y={-50} width={140} height={100} rx={20} fill="#f6f3ec" stroke={KC.ink} strokeWidth={7} />
+              <text y={14} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}`, stroke:'none' }} fill={TINTA}>CaCO₃</text>
+            </g>
+            <CO2Sube T={T} x={640} y={1000} desde={K.Ga + 0.3} hasta={K.Pr} alto={430} w={320} n={12} />
+            <Onomato T={T} at={K.Ga + 2.4} until={K.Pr + 0.3} x={795} y={570} texto="¡BURP!" color={KC.mint} tam={100} rot={-10} />
           </g>
-          <CO2Sube T={T} x={640} y={1000} desde={K.Ga + 0.3} hasta={K.Pr} alto={430} w={320} n={12} />
-          <Onomato T={T} at={K.Ga + 2.4} until={K.Pr + 0.3} x={760} y={540} texto="¡BURP!" color={KC.mint} tam={120} rot={-10} />
         </SvgCapa>
       </Escena>
       {/* 6 · pregunta: ¿y el omeprazol? */}
       <Escena T={T} a={K.Pr} b={K.O} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <text x={280} y={1030} textAnchor="middle" style={{ font:`400 470px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 850)`}>?</text>
-          <Pastilla x={130} y={1130} s={2.1} rot={Math.sin(T * 2) * 10} />
-          <CapsulaOmep x={410} y={1130} s={1.6} rot={-20 + Math.sin(T * 2.4) * 10} />
+          {/* detrás queda a media luz la escena anterior (ácido, CaCO₃ y CO₂): la pone cine.jsx */}
+          <text x={540} y={1075} textAnchor="middle" style={{ font:`400 470px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 900)`}>?</text>
+          <Pastilla x={290} y={1330} s={2.3} rot={Math.sin(T * 2) * 10} />
+          <CapsulaOmep x={790} y={1330} s={1.8} rot={-20 + Math.sin(T * 2.4) * 10} />
         </SvgCapa>
       </Escena>
-      {/* 7 · antiácido vs. omeprazol */}
+      {/* 7 · antiácido (arriba) vs. omeprazol (abajo): cada mitad 1.3x */}
       <Escena T={T} a={K.O} b={K.Be} fondo={KC.noche}>
         <SvgCapa>
-          <line x1={540} y1={780} x2={540} y2={1220} stroke="rgba(246,243,236,.35)" strokeWidth={4} strokeDasharray="12 12" />
-          <text x={280} y={815} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.texto}>ANTIÁCIDO</text>
-          <text x={800} y={815} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={OMEP}>OMEPRAZOL</text>
-          <rect x={70} y={1060} width={420} height={150} rx={30} fill={mixHex(ACIDO, NEUTRO, kprog(T, K.O + 1.0, K.O + 3.0))} stroke={KC.ink} strokeWidth={6} />
-          <Pastilla x={280} y={klerp(880, 1100, kprog(T, K.O + 0.3, K.O + 1.0, kEase.sale))} s={1.3} rot={T * 60} />
-          {[0, 1, 2, 3].map((i) => { const u = kprog(T, K.O + 1.0 + i * 0.3, K.O + 1.6 + i * 0.3);
-            return u < 1 ? <Ion key={i} x={120 + i * 100} y={1000} tipo="H" o={1 - u} s={1 - u * 0.4} /> : <Mol key={i} tipo="agua" x={120 + i * 100} y={1000} s={0.5} rot={T * 30} />; })}
-          <Parietal T={T} x={800} y={1100} candados={kprog(T, K.O + 2.0, K.O + 2.6, kEase.rebote)} />
-          <Emision T={T} x={800} y={980} desde={K.O + 0.2} hasta={K.O + 2.4} alto={40} cl={false} />
-        </SvgCapa>
-      </Escena>
-      {/* 8 · 1822: Beaumont y St. Martin (esquemático, nada gráfico) */}
-      <Escena T={T} a={K.Be} b={K.M} fondo={PAPEL}>
-        <FondoLunares color={PAPEL} punto="rgba(255,255,255,.4)" />
-        <SvgCapa>
-          <Chispas T={T} x={880} y={420} at={K.Be + 0.8} color={KC.orange} r0={20} r1={120} />
-          <Onomato T={T} at={K.Be + 0.8} until={K.Be + 2.2} x={880} y={450} texto="¡PUM!" color={KC.orange} tam={90} rot={8} />
-          <g opacity={kprog(T, K.Be + 2.4, K.Be + 3.0)}>
-            <Torso T={T} x={420} y={960} s={0.72} hoyo={kprog(T, K.Be + 2.8, K.Be + 3.4)} id="b" />
+          <line x1={120} y1={836} x2={960} y2={836} stroke="rgba(246,243,236,.35)" strokeWidth={4} strokeDasharray="12 12" />
+          <g transform="translate(540 240) scale(1.3) translate(-280 -770)">
+            <text x={280} y={815} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.texto}>ANTIÁCIDO</text>
+            <rect x={70} y={1060} width={420} height={150} rx={30} fill={mixHex(ACIDO, NEUTRO, kprog(T, K.O + 1.0, K.O + 3.0))} stroke={KC.ink} strokeWidth={6} />
+            <Pastilla x={280} y={klerp(880, 1100, kprog(T, K.O + 0.3, K.O + 1.0, kEase.sale))} s={1.3} rot={T * 60} />
+            {[0, 1, 2, 3].map((i) => { const u = kprog(T, K.O + 1.0 + i * 0.3, K.O + 1.6 + i * 0.3);
+              return u < 1 ? <Ion key={i} x={120 + i * 100} y={1000} tipo="H" o={1 - u} s={1 - u * 0.4} /> : <Mol key={i} tipo="agua" x={120 + i * 100} y={1000} s={0.5} rot={T * 30} />; })}
           </g>
-          {T > K.Be + 5.0 && <g>
-            <path d={`M ${420 + 150 * 0.72} ${960 + 10 * 0.72} Q 640 ${820} ${790} ${800}`} stroke="#c9d4b0" strokeWidth={14} fill="none" strokeLinecap="round"
-              strokeDasharray="600" strokeDashoffset={600 * (1 - kprog(T, K.Be + 5.0, K.Be + 5.8))} />
-            <Goteo T={T} x={790} y0={810} y1={940} cada={0.35} color="#e9f3d6" desde={K.Be + 5.8} hasta={K.Be + 7.2} />
-          </g>}
-          {T > K.Be + 4.6 && <Frasco T={T} x={790} y={980} s={0.95} rot={T > K.Be + 7 ? Math.sin(T * 5) * 6 : 0} nivel={klerp(0.15, 0.55, kprog(T, K.Be + 5.8, K.Be + 7.2))} carne={kprog(T, K.Be + 7.2, K.M - 0.3)} />}
-          {T > K.Be + 6.8 && <g><Termo x={950} y={930} nivel={0.62} />
-            <text x={950} y={1030} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>≈ 38 °C</text></g>}
+          <g transform="translate(540 850) scale(1.2) translate(-800 -770)">
+            <text x={800} y={815} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={OMEP}>OMEPRAZOL</text>
+            <Parietal T={T} x={800} y={1100} candados={kprog(T, K.O + 2.0, K.O + 2.6, kEase.rebote)} />
+            <Emision T={T} x={800} y={980} desde={K.O + 0.2} hasta={K.O + 2.4} alto={40} cl={false} />
+          </g>
         </SvgCapa>
-        <Etq T={T} at={K.Be + 3.2} until={K.Be + 6.6} x={510} y={1095} lado="izq" texto="abertura al estómago" tam={30} color={KC.ink} />
       </Escena>
-      {/* 9 · ácido muriático = clorhídrico */}
-      <Escena T={T} a={K.M} b={K.Ci} fondo={PAPEL} zoom={0.04}>
+      {/* 8 · 1822: Beaumont y St. Martin (esquemático, nada gráfico). El torso está desde que empieza la escena */}
+      <Escena T={T} a={K.Be} b={K.M}>
         <FondoLunares color={PAPEL} punto="rgba(255,255,255,.4)" />
         <SvgCapa>
-          <Frasco T={T} x={470} y={960} s={1.7} rot={Math.sin(T * 1.5) * 3} nivel={0.55} etiqueta={
+          <g opacity={kprog(T, K.Be - 0.2, K.Be + 0.4)}>
+            <Torso T={T} x={400} y={1080} s={1.05} hoyo={kprog(T, K.Be + 2.8, K.Be + 3.4)} id="b" />
+          </g>
+          <Chispas T={T} x={880} y={560} at={K.Be + 0.8} color={KC.orange} r0={20} r1={120} />
+          <Onomato T={T} at={K.Be + 0.8} until={K.Be + 2.2} x={880} y={590} texto="¡PUM!" color={KC.orange} tam={90} rot={8} />
+          <Guia x={400 + 150 * 1.05} y={1080 + 14 * 1.05} tx={720} ty={1420} texto="abertura al estómago" tam={32} p={kprog(T, K.Be + 3.2, K.Be + 3.6) * (1 - kprog(T, K.Be + 6.3, K.Be + 6.6))} />
+          {T > K.Be + 5.0 && <g>
+            <path d={`M ${400 + 150 * 1.05} ${1080 + 10 * 1.05} Q 720 ${780} ${860} ${810}`} stroke="#c9d4b0" strokeWidth={14} fill="none" strokeLinecap="round"
+              strokeDasharray="600" strokeDashoffset={600 * (1 - kprog(T, K.Be + 5.0, K.Be + 5.8))} />
+            <Goteo T={T} x={860} y0={835} y1={1040} cada={0.35} color="#e9f3d6" desde={K.Be + 5.8} hasta={K.Be + 7.2} />
+          </g>}
+          {T > K.Be + 4.6 && <g opacity={kprog(T, K.Be + 4.6, K.Be + 4.9)}><Frasco T={T} x={860} y={1080} s={1.25} rot={T > K.Be + 7 ? Math.sin(T * 5) * 6 : 0} nivel={klerp(0.15, 0.55, kprog(T, K.Be + 5.8, K.Be + 7.2))} carne={kprog(T, K.Be + 7.2, K.M - 0.3)} /></g>}
+          {T > K.Be + 6.8 && <g opacity={kprog(T, K.Be + 6.8, K.Be + 7.1)}><Termo x={990} y={680} nivel={0.62} />
+            <text x={880} y={690} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>≈ 38 °C</text></g>}
+        </SvgCapa>
+      </Escena>
+      {/* 9 · ácido muriático = clorhídrico (frasco grande, al centro) */}
+      <Escena T={T} a={K.M} b={K.Ci} zoom={0.04}>
+        <FondoLunares color={PAPEL} punto="rgba(255,255,255,.4)" />
+        <SvgCapa>
+          <Frasco T={T} x={540} y={1020} s={2.6} rot={Math.sin(T * 1.5) * 3} nivel={0.55} etiqueta={
             <g transform={`scale(${Math.abs(Math.cos(Math.PI * giro)) + 0.02} 1)`}>
               <rect x={-70} y={-60} width={140} height={110} rx={6} fill={giro < 0.5 ? '#f3e2b8' : KC.white} stroke={KC.ink} strokeWidth={4} />
-              {giro < 0.5 ? <g><text y={-18} textAnchor="middle" style={{ font:`italic 700 19px Georgia, serif` }} fill="#5a3a1a">Muriatic</text>
-                <text y={8} textAnchor="middle" style={{ font:`italic 700 19px Georgia, serif` }} fill="#5a3a1a">acid</text>
-                <text y={36} textAnchor="middle" style={{ font:`700 18px Georgia, serif` }} fill="#5a3a1a">1833</text></g>
-                : <g><text y={-6} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>HCl</text>
-                <text y={30} textAnchor="middle" style={{ font:`700 13px ${KF.mono}` }} fill={KC.ink}>ác. clorhídrico</text></g>}
+              {giro < 0.5 ? <g><text y={-18} textAnchor="middle" style={{ font:`italic 700 19px Georgia, serif`, stroke:'none' }} fill="#5a3a1a">Muriatic</text>
+                <text y={8} textAnchor="middle" style={{ font:`italic 700 19px Georgia, serif`, stroke:'none' }} fill="#5a3a1a">acid</text>
+                <text y={36} textAnchor="middle" style={{ font:`700 18px Georgia, serif`, stroke:'none' }} fill="#5a3a1a">1833</text></g>
+                : <g><text y={-6} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}`, stroke:'none' }} fill={TINTA}>HCl</text>
+                <text y={30} textAnchor="middle" style={{ font:`700 13px ${KF.mono}`, stroke:'none' }} fill={TINTA}>ác. clorhídrico</text></g>}
             </g>} />
         </SvgCapa>
       </Escena>
@@ -276,29 +309,28 @@ function Antiacido() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Torso T={T} x={380} y={960} s={0.85} acido={kprog(T, K.Ci + 1.0, K.Ci + 3.0, kEase.suave)} pastilla={kprog(T, K.Ci + 0.1, K.Ci + 0.95) < 1 ? kprog(T, K.Ci + 0.1, K.Ci + 0.95) : -1} golpe={K.Ci + 0.95} id="c" />
-          <CO2Sube T={T} x={380 + 72 * 0.85} y={960 + 100 * 0.85} desde={K.Ci + 1.1} hasta={K.Ci + 2.6} alto={140} w={100} n={5} seed={9} />
+          <Torso T={T} x={TX} y={TY} s={TS} acido={kprog(T, K.Ci + 1.0, K.Ci + 3.0, kEase.suave)} pastilla={kprog(T, K.Ci + 0.1, K.Ci + 0.95) < 1 ? kprog(T, K.Ci + 0.1, K.Ci + 0.95) : -1} golpe={K.Ci + 0.95} id="c" />
+          <CO2Sube T={T} x={TX + 72 * TS} y={TY + 100 * TS} desde={K.Ci + 1.1} hasta={K.Ci + 2.6} alto={200} w={140} n={5} seed={9} />
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.0} texto="¿calma tu estómago?" x={330} y={400} tam={42} />
-      <Chip T={T} at={K.G + 3.1} until={K.A - 0.3} texto="base + ácido" x={300} y={400} tam={50} borde={NEUTRO} />
-      <Etq T={T} at={K.G + 1.2} until={K.A - 0.3} x={560} y={1060} texto="ácido del estómago" tam={30} color={KC.ink} lado="der" />
-      <Chip T={T} at={K.A + 0.4} until={K.P - 0.3} texto="H⁺ + Cl⁻ → HCl" x={540} y={1560} tam={46} borde={HPLUS} mono />
-      <Etq T={T} at={K.A + 1.2} until={K.P - 0.3} x={1000} y={1450} texto="células parietales" lado="izq" tam={32} color={CELULA} />
-      <Chip T={T} at={K.P + 1.4} until={K.Ag - 0.3} texto="1990 · mediana en ayunas" x={540} y={1500} tam={40} borde={ACIDO} />
-      <Chip T={T} at={K.Ag + 1.0} until={K.B - 0.3} texto="ácido en el esófago = agruras" x={540} y={1500} tam={40} borde={KC.orange} />
-      <Chip T={T} at={mitadB + 0.2} until={K.Ga - 0.3} texto="ácido + base → sal + agua" x={540} y={1500} tam={46} borde={OHM} />
-      <Chip T={T} at={K.Ga + 0.6} until={K.Pr - 0.3} texto="CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂" x={540} y={1500} tam={30} borde={KC.mint} mono />
-      <Etq T={T} at={K.O + 1.2} until={K.Be - 0.3} x={60} y={880} texto="neutraliza el que ya hay" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.O + 2.4} until={K.Be - 0.3} x={1040} y={880} texto="frena las bombas" lado="izq" tam={26} color={OMEP} />
-      <Chip T={T} at={K.O + 3.6} until={K.Be - 0.3} texto={`omeprazol: día ${dia} de 4`} x={540} y={1500} tam={40} borde={OMEP} />
-      <TarjetaEstudio T={T} at={K.Be + 0.2} until={K.Be + 3.4} anio="1822" quien="Beaumont y St. Martin" revista="Isla Mackinac, Michigan" x={540} y={680} />
-      <Chip T={T} at={K.Be + 7.2} until={K.M - 0.3} texto="jugo gástrico: digiere fuera del cuerpo" x={540} y={1500} tam={34} borde={KC.gold} />
-      <Chip T={T} at={K.M + 0.4} until={K.Ci - 0.3} texto="1833 · profesores de Virginia" x={540} y={1500} tam={38} borde={KC.gold} />
-      <Chip T={T} at={K.Ci + 1.2} until={K.Ci + 3.4} texto="base + ácido → sal + agua (+ CO₂)" x={540} y={1500} tam={34} borde={NEUTRO} />
-      <Chip T={T} at={K.Ci + 3.6} until={K.Ou} texto="¿agruras frecuentes? → al médico" x={540} y={1500} tam={36} borde={KC.red} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.0} texto="¿calma tu estómago?" x={540} y={225} tam={42} />
+      <Chip T={T} at={K.G + 3.1} until={K.A - 0.3} texto="base + ácido" x={540} y={225} tam={50} borde={NEUTRO} />
+      <Chip T={T} at={K.A + 0.4} until={K.P - 0.3} texto="H⁺ + Cl⁻ → HCl" x={540} y={1420} tam={46} borde={HPLUS} mono />
+      <Etq T={T} at={K.A + 1.2} until={K.P - 0.3} x={1000} y={1225} texto="células parietales" lado="izq" tam={32} color={CELULA} />
+      <Chip T={T} at={K.P + 1.4} until={K.Ag - 0.3} texto="1990 · mediana en ayunas" x={540} y={1440} tam={40} borde={ACIDO} />
+      <Chip T={T} at={K.Ag + 1.0} until={K.B - 0.3} texto="ácido en el esófago = agruras" x={540} y={240} tam={40} borde={KC.orange} />
+      <Chip T={T} at={mitadB + 0.2} until={K.Ga - 0.3} texto="ácido + base → sal + agua" x={540} y={1440} tam={46} borde={OHM} />
+      <Chip T={T} at={K.Ga + 0.6} until={K.Pr - 0.3} texto="CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂" x={540} y={1460} tam={30} borde={KC.mint} mono />
+      <Etq T={T} at={K.O + 1.2} until={K.Be - 0.3} x={250} y={385} texto="neutraliza el que ya hay" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.O + 2.4} until={K.Be - 0.3} x={770} y={952} texto="frena las bombas" lado="izq" tam={30} color={OMEP} />
+      <Chip T={T} at={K.O + 3.6} until={K.Be - 0.3} texto={`omeprazol: día ${dia} de 4`} x={540} y={1495} tam={40} borde={OMEP} />
+      <TarjetaEstudio T={T} at={K.Be + 0.2} until={K.Be + 3.4} anio="1822" quien="Beaumont y St. Martin" revista="Isla Mackinac, Michigan" x={540} y={300} />
+      <Chip T={T} at={K.Be + 7.2} until={K.M - 0.3} texto="jugo gástrico: digiere fuera del cuerpo" x={540} y={260} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.M + 0.4} until={K.Ci - 0.3} texto="1833 · profesores de Virginia" x={540} y={330} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.Ci + 1.2} until={K.Ci + 3.4} texto="base + ácido → sal + agua (+ CO₂)" x={540} y={240} tam={34} borde={NEUTRO} />
+      <Chip T={T} at={K.Ci + 3.6} until={K.Ou} texto="¿agruras frecuentes? → al médico" x={540} y={240} tam={36} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.A - 0.1} texto="No calma: *base contra ácido.*" />

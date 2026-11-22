@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #40 · Esa mayonesa no es una pasta (emulsión de aceite y yema) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const MAYO = '#fff3c4', ACEITE = '#f6b81f', ACEITE_OSC = '#c98a00', AGUA = '#7fc8ff', YEMA = '#ff9a1f', CABEZA = '#2a7bff', PROT = '#b18cff', VINAGRE = '#9be37a';
@@ -84,7 +85,7 @@ function Mayonesa() {
   const FIN = K.Ou + 4;
   // gancho: la cuchara entra al frasco y sale con la cucharada
   const sube = kprog(T, K.G + 0.35, K.G + 1.3, kEase.sale);
-  const cx = klerp(250, 520, sube), cy = klerp(800, 700, sube) - Math.sin(sube * Math.PI) * 120;
+  const cx = klerp(310, 590, sube), cy = klerp(760, 520, sube) - Math.sin(sube * Math.PI) * 150;
   const R = krng(11);
   const gotasPb = Array.from({ length: 16 }, () => [380 + R() * 320, 820 + R() * 330, 18 + R() * 22, R() * 6]);
   const pPb = kprog(T, K.Pb + 0.8, K.Pb + 3.8, kEase.suave);
@@ -96,7 +97,7 @@ function Mayonesa() {
   const vuelve = kprog(T, choque + 0.9, choque + 1.4, kEase.sale);
   const campo = campoGotas(7, -40, 420, 1160, 860, 45);
   const zEp = klerp(1.9, 1, kprog(T, K.Ep, K.Ep + 1.6, kEase.suave));
-  const tazones = [[170, 800], [410, 800], [670, 800], [910, 800], [290, 1050], [540, 1050], [790, 1050]];
+  const tazones = [[195, 740], [540, 740], [885, 740], [195, 1020], [540, 1020], [885, 1020], [540, 1300]];
   const porciones = ['40 × 5 g', '20 × 10 g', '10 × 20 g', '6 × 30 g…', '5 × 40 g', '4 × 50 g', '200 g de golpe'];
   const diag = kprog(T, K.Re + 4.3, K.Re + 4.8);
   const voltea = kprog(T, K.Re + 5.0, K.Re + 5.8, kEase.suave);
@@ -115,11 +116,11 @@ function Mayonesa() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Frasco x={260} y={1200} s={1} hueco={sube} />
-          <Cuchara x={cx} y={cy} rot={klerp(-60, -25, sube)} s={1.1} carga={sube} />
+          <Frasco x={320} y={1450} s={1.8} hueco={sube} />
+          <Cuchara x={cx} y={cy} rot={klerp(-60, -25, sube)} s={1.8} carga={sube} />
         </SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.G + 1.9} until={K.Q - 0.3} x={650} y={930} r={215} fx={520} fy={690} tinte={KC.orange} interior={InteriorMayo({ forro: 0 })} etiqueta="gotitas de aceite" />
+      <Lupa T={T} at={K.G + 1.9} until={K.Q - 0.3} x={805} y={1210} r={258} fx={592} fy={500} tinte={KC.orange} interior={InteriorMayo({ forro: 0 })} etiqueta="gotitas de aceite" />
 
       {/* 1 · qué tiene */}
       <Escena T={T} a={K.Q} b={K.Pb}>
@@ -129,7 +130,7 @@ function Mayonesa() {
             const capas = [[YEMA, 0.09, K.Q + 2.6], [AGUA, 0.07, K.Q + 3.2], [VINAGRE, 0.04, K.Q + 3.8]];
             let yy = bot - oil; const out = [];
             capas.forEach(([c, f, t0], i) => { const h = f * H * kprog(T, t0, t0 + 0.4, kEase.sale); yy -= h; out.push(<rect key={i} x={386} y={yy} width={308} height={h} fill={c} />); });
-            return <g>
+            return <g transform="translate(460 960) scale(1.35) translate(-540 -920)">
               <rect x={386} y={bot - oil} width={308} height={oil} fill={ACEITE} />
               {out}
               {oil > 0 && T < K.Q + 2.6 && <path d={`M 386 ${bot - oil} q 77 ${-10 + Math.sin(T * 5) * 6} 154 0 t 154 0`} stroke="rgba(255,255,255,.6)" strokeWidth={5} fill="none" />}
@@ -137,17 +138,17 @@ function Mayonesa() {
               <Chorro T={T} x0={700} y0={540} x1={560} y1={bot - oil} color={ACEITE} o={1 - kprog(T, K.Q + 1.9, K.Q + 2.1)} ancho={22} />
             </g>; })()}
         </SvgCapa>
-        <Etq T={T} at={K.Q + 1.0} until={K.Pb - 0.3} x={710} y={1000} texto="aceite ≈ 80 %" color={KC.ink} tam={30} />
-        <Etq T={T} at={K.Q + 2.7} until={K.Pb - 0.3} x={370} y={745} lado="izq" texto="yema" color={KC.ink} tam={30} />
-        <Etq T={T} at={K.Q + 3.3} until={K.Pb - 0.3} x={370} y={700} lado="izq" texto="agua" color={KC.ink} tam={30} />
-        <Etq T={T} at={K.Q + 3.9} until={K.Pb - 0.3} x={710} y={655} texto="vinagre o limón" color={KC.ink} tam={26} />
+        <Etq T={T} at={K.Q + 1.0} until={K.Pb - 0.3} x={695} y={1068} texto="aceite ≈ 80 %" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Q + 2.7} until={K.Pb - 0.3} x={230} y={724} lado="izq" texto="yema" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Q + 3.3} until={K.Pb - 0.3} x={230} y={663} lado="izq" texto="agua" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Q + 3.9} until={K.Pb - 0.3} x={695} y={602} texto="vinagre o limón" color={KC.ink} tam={26} />
       </Escena>
 
       {/* 2 · aceite y agua no se mezclan */}
       <Escena T={T} a={K.Pb} b={K.Y}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <g transform={`rotate(${Math.sin(T * 14) * 6 * (1 - kprog(T, K.Pb + 0.2, K.Pb + 1.2))} 540 1180)`}>
+          <g transform={`translate(500 980) scale(1.5) translate(-540 -950) rotate(${Math.sin(T * 14) * 6 * (1 - kprog(T, K.Pb + 0.2, K.Pb + 1.2))} 540 1180)`}>
             <rect x={380} y={720 + 120 * pPb} width={320} height={460 - 120 * pPb} fill={AGUA} />
             <rect x={380} y={720} width={320} height={120 * pPb} fill={ACEITE} />
             {gotasPb.map(([x, y, r, ph], i) => { const p = kprog(T, K.Pb + 0.8 + (i % 6) * 0.25, K.Pb + 3.4 + (i % 4) * 0.15, kEase.suave);
@@ -155,42 +156,42 @@ function Mayonesa() {
               return p < 1 ? <circle key={i} cx={mx + Math.sin(T * 5 + ph) * 6} cy={my} r={r * (1 + p * 0.8)} fill={ACEITE} stroke={KC.ink} strokeWidth={4} opacity={1 - p * 0.6} /> : null; })}
             <path d="M 364 700 L 380 720 L 380 1166 Q 380 1180 396 1180 L 684 1180 Q 700 1180 700 1166 L 700 720 L 716 700" fill="none" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
           </g>
-          <Onomato T={T} at={K.Pb + 1.6} until={K.Pb + 2.6} x={820} y={860} texto="¡blop!" color={ACEITE} tam={80} />
+          <Onomato T={T} at={K.Pb + 1.6} until={K.Pb + 2.6} x={890} y={900} texto="¡blop!" color={ACEITE} tam={80} />
         </SvgCapa>
-        <Etq T={T} at={K.Pb + 3.4} until={K.Y - 0.3} x={720} y={780} texto="aceite" color={KC.ink} tam={34} />
-        <Etq T={T} at={K.Pb + 3.4} until={K.Y - 0.3} x={720} y={1050} texto="agua" color={KC.ink} tam={34} />
+        <Etq T={T} at={K.Pb + 3.4} until={K.Y - 0.3} x={770} y={725} texto="aceite" color={KC.ink} tam={34} />
+        <Etq T={T} at={K.Pb + 3.4} until={K.Y - 0.3} x={770} y={1130} texto="agua" color={KC.ink} tam={34} />
       </Escena>
 
       {/* 3 · entra la yema (macro) → sus moléculas en la orilla agua/aceite (micro) */}
       <Escena T={T} a={K.Y} b={yA}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <Tazon x={540} y={1120} s={2} />
-          {(() => { const c = kprog(T, K.Y + 0.1, K.Y + 0.8, (p) => p * p); return <g>
+          <g transform="translate(540 1100) scale(1.5) translate(-540 -1000)"><Tazon x={540} y={1120} s={2} /></g>
+          {(() => { const c = kprog(T, K.Y + 0.1, K.Y + 0.8, (p) => p * p); return <g transform="translate(540 1100) scale(1.5) translate(-540 -1000)">
             <ellipse cx={540} cy={klerp(560, 1010, c)} rx={88 + 30 * kprog(T, K.Y + 0.8, K.Y + 1.0)} ry={70 - 18 * kprog(T, K.Y + 0.8, K.Y + 1.0)} fill={YEMA} stroke={KC.ink} strokeWidth={8} />
             <ellipse cx={510} cy={klerp(535, 985, c)} rx={22} ry={14} fill="#fff" opacity={0.6} /></g>; })()}
-          <Onomato T={T} at={K.Y + 0.8} until={yA} x={820} y={860} texto="¡plop!" color={KC.yellow} tam={80} />
+          <Onomato T={T} at={K.Y + 0.8} until={yA} x={850} y={800} texto="¡plop!" color={KC.yellow} tam={80} />
         </SvgCapa>
       </Escena>
       <Escena T={T} a={yA} b={K.Ec}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <SvgCapa>
-          <rect x={0} y={520} width={KW} height={340} fill="#1b4f8a" opacity={0.75} />
+        <SvgCapa><g transform="translate(540 900) scale(1.15) translate(-540 -900)">
+          <rect x={0} y={520} width={KW} height={340} fill="#122f53" opacity={0.75} />
           <rect x={0} y={860} width={KW} height={320} fill={ACEITE_OSC} opacity={0.55} />
           <line x1={0} y1={860} x2={KW} y2={860} stroke="#fff" strokeWidth={4} strokeDasharray="16 12" opacity={0.6} />
           {Array.from({ length: 9 }, (_, i) => { const p = pYm(i), x = 100 + i * 110, prot = i % 3 === 1;
             const y0 = 580 + (i % 2) * 120, y = klerp(y0, prot ? 860 : 836, p);
             return prot ? <Proteina key={i} x={x} y={y} s={1} ang={klerp(80, 0, p)} /> : <Fosfo key={i} x={x} y={y} T={T} ang={klerp(200 + i * 20, 90, p)} />; })}
-        </SvgCapa>
-        <Etq T={T} at={yA + 0.3} until={K.Ec - 0.3} x={40} y={560} texto="agua" color={AGUA} tam={34} />
-        <Etq T={T} at={yA + 0.3} until={K.Ec - 0.3} x={40} y={1130} texto="aceite" color={ACEITE} tam={34} />
+        </g></SvgCapa>
+        <Etq T={T} at={yA + 0.3} until={K.Ec - 0.3} x={40} y={505} texto="agua" color={AGUA} tam={34} />
+        <Etq T={T} at={yA + 0.3} until={K.Ec - 0.3} x={40} y={1170} texto="aceite" color={ACEITE} tam={34} />
         <Chip T={T} at={yA + 1.4} until={K.Ec - 0.2} texto="fosfolípidos + proteínas de la yema" y={1500} tam={36} borde={CABEZA} />
       </Escena>
 
       {/* 4 · el escudo en cada gotita */}
       <Escena T={T} a={K.Ec} b={K.Ep} zoom={0.02}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 900) scale(1.35) translate(-540 -900)">
           {T < choque ? <g>
             <Gota x={540} y={900} r={220} forro={0} />
             {Array.from({ length: escudoN }, (_, i) => { const a = (i / escudoN) * 2 * Math.PI, p = kprog(T, K.Ec + 0.2 + i * 0.07, K.Ec + 0.9 + i * 0.07, kEase.sale);
@@ -201,7 +202,7 @@ function Mayonesa() {
               return [-1, 1].map((sgn) => <Gota key={sgn} x={540 + sgn * d / 2} y={900} r={140} forro={1} />); })()}
           </g>}
           <Onomato T={T} at={choque + 0.75} until={K.Ep - 0.1} x={540} y={660} texto="¡toc!" color={KC.mint} tam={90} rot={0} />
-        </SvgCapa>
+        </g></SvgCapa>
         <Chip T={T} at={K.Ec + 1.2} until={K.Ep - 0.2} texto={sep > 0 ? 'chocan… y no se funden' : 'un escudo en la orilla'} y={1500} tam={40} borde={CABEZA} />
       </Escena>
 
@@ -235,13 +236,13 @@ function Mayonesa() {
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
           <g opacity={1 - 0.75 * diag}>
-            {tazones.map(([x, y], i) => { const ap = kprog(T, K.Es + 3.4 + i * 0.12, K.Es + 3.8 + i * 0.12, kEase.rebote);
+            {tazones.map(([x, y], i) => { const ap = kprog(T, K.Es + 0.05 + i * 0.07, K.Es + 0.45 + i * 0.07, kEase.rebote);   // los siete tazones están desde que empieza la escena
               const ok = i < 2, t0 = ok ? K.Re + 0.3 + i * 0.5 : K.Re + 2.3 + (i - 2) * 0.32, f = kprog(T, t0, t0 + 0.9, kEase.sale);
               return ap > 0 ? <g key={i} transform={`translate(${x} ${y}) scale(${ap}) translate(${-x} ${-y})`}>
-                {T > t0 && T < t0 + 0.9 && <Chorro T={T} x0={x + 70} y0={y - 230} x1={x} y1={y - 70} color={ACEITE} o={1} ancho={ok ? 8 : 26} />}
-                <Tazon x={x} y={y} s={0.82} num={i + 1} estado={T > t0 ? (ok ? 'ok' : 'cortada') : 0} f={f} />
-                {T > K.Re + 0.1 && <text x={x} y={y - 120} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, t0 - 0.3, t0)}>{porciones[i]}</text>}
-                <Marca x={x + 80} y={y - 60} ok={ok} s={0.45} o={kprog(T, t0 + 0.9, t0 + 1.2)} />
+                {T > t0 && T < t0 + 0.9 && <Chorro T={T} x0={x + 94} y0={y - 250} x1={x} y1={y - 94} color={ACEITE} o={1} ancho={ok ? 8 : 26} />}
+                <Tazon x={x} y={y} s={1.1} num={i + 1} estado={T > t0 ? (ok ? 'ok' : 'cortada') : 0} f={f} />
+                {T > K.Re + 0.1 && <text x={x} y={y - 160} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, t0 - 0.3, t0)}>{porciones[i]}</text>}
+                <Marca x={x + 107} y={y - 80} ok={ok} s={0.6} o={kprog(T, t0 + 0.9, t0 + 1.2)} />
               </g> : null; })}
           </g>
           {diag > 0 && <g opacity={diag}>
@@ -254,7 +255,7 @@ function Mayonesa() {
             <text x={790} y={1110} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto} opacity={voltea}>agua en aceite ✗</text>
           </g>}
         </SvgCapa>
-        <TarjetaEstudio T={T} at={K.Es + 0.7} until={K.Es + 3.2} anio="2024" quien="Ghaffari et al. · Países Bajos" revista="Physics of Fluids · 7 mayonesas a mano" y={900} />
+        <TarjetaEstudio T={T} at={K.Es + 0.7} until={K.Es + 3.2} anio="2024" quien="Ghaffari et al. · Países Bajos" revista="Physics of Fluids · 7 mayonesas a mano" y={400} />
         <Chip T={T} at={K.Es + 4.0} until={K.Re - 0.2} texto="20 g yema · 200 g aceite · 30 g vinagre" y={1500} tam={32} borde={KC.ink} />
         <Chip T={T} at={K.Re + 0.4} until={K.Re + 2.2} texto="poquito a poquito: salió" y={1500} tam={40} borde={KC.mint} />
         <Chip T={T} at={K.Re + 2.4} until={K.Re + 4.3} texto="mucho de golpe: se cortó" y={1500} tam={40} borde={KC.red} />
@@ -264,7 +265,7 @@ function Mayonesa() {
       {/* 9 · la ley en EE. UU. */}
       <Escena T={T} a={K.Le} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(565 960) scale(1.15) translate(-592 -915)">
           <Frasco x={360} y={1150} s={1.1} />
           <rect x={760} y={640} width={110} height={440} rx={20} fill="rgba(255,255,255,.5)" stroke={KC.ink} strokeWidth={8} />
           <rect x={768} y={1072 - 424 * nivelLey / 100} width={94} height={424 * nivelLey / 100} rx={14} fill={ACEITE} />
@@ -276,7 +277,7 @@ function Mayonesa() {
             return o > 0 ? <g transform={`translate(360 860) rotate(-12) scale(${klerp(1.6, 1, o)})`} opacity={Math.min(1, o)}>
               <rect x={-230} y={-60} width={460} height={120} rx={20} fill="none" stroke={okLey ? '#1a9b62' : KC.red} strokeWidth={12} />
               <text x={0} y={22} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={okLey ? '#1a9b62' : KC.red}>{okLey ? '✓ MAYONESA' : '✗ NO ES MAYONESA'}</text></g> : null; })()}
-        </SvgCapa>
+        </g></SvgCapa>
         <Chip T={T} at={K.Le + 0.4} until={K.Ci - 0.2} texto="EE. UU. · FDA · 21 CFR 169.140" y={1500} tam={36} borde={KC.blue} />
       </Escena>
 
@@ -284,15 +285,15 @@ function Mayonesa() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Frasco x={260} y={1200} s={1} hueco={1} />
-          <Cuchara x={520} y={700} rot={-25} s={1.1} carga={1} />
+          <Frasco x={320} y={1450} s={1.8} hueco={1} />
+          <Cuchara x={590} y={520} rot={-25} s={1.8} carga={1} />
         </SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.Ci + 0.6} until={K.Ou + 0.2} x={650} y={930} r={215} fx={520} fy={690} tinte={CABEZA} interior={InteriorMayo({ forro: 1 })} etiqueta="aceite + yema = emulsión" />
+      <Lupa T={T} at={K.Ci + 0.6} until={K.Ou + 0.2} x={785} y={1210} r={258} fx={592} fy={500} tinte={CABEZA} interior={InteriorMayo({ forro: 1 })} etiqueta="aceite + yema = emulsión" />
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.6} texto="¿pasta?" x={300} y={470} tam={54} />
-      <Chip T={T} at={K.G + 2.8} until={K.Q - 0.3} texto="aceite en gotitas" x={320} y={470} tam={40} borde={ACEITE} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.6} texto="¿pasta?" x={250} y={400} tam={54} />
+      <Chip T={T} at={K.G + 2.8} until={K.Q - 0.3} texto="aceite en gotitas" x={235} y={400} tam={40} borde={ACEITE} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="No es pasta: *es aceite.*" />

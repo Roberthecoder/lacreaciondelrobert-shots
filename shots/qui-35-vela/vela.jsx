@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #35 · Esa vela no quema la cera que ves (quema cera hecha vapor) — NARRADO (N1 por dentro + N3 capítulos + Faraday 1860–61).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const CERA = '#fbf3df', CERA2 = '#e6d6b0', LIQ = '#ffc94d', MECHA = '#2e2219', VAPOR = '#c9d6e8', ALGODON = '#f5efe2', MADERA = '#e8c48a';
@@ -106,15 +107,17 @@ function Vela35() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: la vela en la mesa */}
-      <Escena T={T} a={K.G} b={K.Co} zoom={0.05} origen="38% 40%">
+      <Escena T={T} a={K.G} b={K.Co} zoom={0.05} origen="50% 47%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(540 720) scale(1.4) translate(-400 -760)">
           <Vela T={T} x={400} y={760} copa={0.75} />
           {T > K.G + 2.0 && <g opacity={kprog(T, K.G + 2.0, K.G + 2.5)}>
             {Array.from({ length: 9 }, (_, i) => { const a = ((T - K.G) * 0.7 + i / 9) % 1; return <circle key={i} cx={402 + Math.sin(i * 2.3) * a * 40} cy={712 - a * 110} r={9 + a * 8} fill={VAPOR} stroke={KC.ink} strokeWidth={2} opacity={1 - a} />; })}
             <circle cx={402} cy={660} r={70 + Math.sin(T * 6) * 6} fill="none" stroke={KC.pink} strokeWidth={8} strokeDasharray="18 12" strokeDashoffset={-T * 40} />
           </g>}
-          <BarraEscala x={70} y={1450} px={80} texto="1 cm" />
+          </g>
+          <BarraEscala x={70} y={1450} px={112} texto="1 cm" />
         </SvgCapa>
       </Escena>
       {/* 1 · capítulo 1: la copita de cera líquida */}
@@ -131,13 +134,15 @@ function Vela35() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={26} seed={9} color="rgba(255,210,120,.22)" />
         <SvgCapa>
-          <path d="M 0 1090 Q 270 1070 540 1090 T 1080 1090 L 1080 1240 L 0 1240 Z" fill={LIQ} opacity={0.9} />
+          <g transform="translate(420 800) scale(1.2) translate(-420 -800)">
+          <path d="M -200 1090 Q 270 1070 540 1090 T 1300 1090 L 1300 1240 L -200 1240 Z" fill={LIQ} opacity={0.9} />
           <Mecha x={420} y0={1230} y1={380} />
           <clipPath id="mojado"><rect x={0} y={klerp(1230, 470, moja)} width={KW} height={KH} /></clipPath>
           <g clipPath="url(#mojado)"><Mecha x={420} y0={1230} y1={380} color={LIQ} ancho={20} /></g>
           <path d="M 380 380 Q 420 330 460 380 L 460 460 L 380 460 Z" fill="#1d1712" stroke={KC.ink} strokeWidth={6} />
           {T > K.Me + 0.4 && Array.from({ length: 14 }, (_, i) => { const yy = 1150 - (((T - K.Me) * 170 + i * 55) % 700); if (yy < klerp(1150, 470, moja)) return null;
             return <circle key={i} cx={420 + Math.sin(yy / 50 + i) * 34} cy={yy} r={12} fill={LIQ} stroke={KC.ink} strokeWidth={3} />; })}
+          </g>
           {T > K.Me + 1.6 && <g opacity={kprog(T, K.Me + 1.6, K.Me + 2.1)}>
             <rect x={750} y={680} width={180} height={250} rx={14} fill="rgba(220,240,255,.18)" stroke={KC.texto} strokeWidth={6} />
             <rect x={756} y={820} width={168} height={104} fill="#5fb8ff" opacity={0.8} />
@@ -146,13 +151,14 @@ function Vela35() {
             <clipPath id="servi"><rect x={818} y={543} width={44} height={354} /></clipPath>
             <text x={840} y={980} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>servilleta</text>
           </g>}
-          <BarraEscala x={70} y={1450} px={150} texto="1 mm" color={KC.texto} />
+          <BarraEscala x={70} y={1450} px={180} texto="1 mm" color={KC.texto} />
         </SvgCapa>
       </Escena>
       {/* 3 · capítulo 3: el vapor se junta con el oxígeno y arde */}
       <Escena T={T} a={K.Va} b={K.Br} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
+          <g transform="translate(540 780) scale(1.5) translate(-540 -800)">
           <Mecha x={540} y0={1250} y1={1010} amp={22} ancho={20} />
           <path d="M 512 1010 Q 540 975 568 1010 L 568 1050 L 512 1050 Z" fill="#1d1712" stroke={KC.ink} strokeWidth={5} />
           {T > K.Va + 0.2 && Array.from({ length: 26 }, (_, i) => { const a = ((T - K.Va) * 0.55 + i / 26) % 1;
@@ -163,30 +169,34 @@ function Vela35() {
             <path d="M 540 470 Q 760 760 700 960 Q 660 1050 540 1050 Q 420 1050 380 960 Q 320 760 540 470 Z" fill="rgba(255,170,40,.10)" stroke="#ffb81a" strokeWidth={22 + Math.sin(T * 12) * 3} strokeDasharray="2400" strokeDashoffset={2400 * (1 - kprog(T, K.Va + 2.4, K.Va + 3.4))} />
             <path d="M 540 470 Q 760 760 700 960 Q 660 1050 540 1050 Q 420 1050 380 960 Q 320 760 540 470 Z" fill="none" stroke="#fff1a6" strokeWidth={6} opacity={0.8} />
           </g>}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 4 · el brillo amarillo: hollín incandescente */}
       <Escena T={T} a={K.Br} b={K.Pr} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
+          <g transform="translate(540 830) scale(1.35) translate(-540 -850)">
           <FlamaVela T={T} x={540} y={1150} s={2.5} glow={0.25} />
           {T > K.Br + 0.3 && hollin.map(([ph, dx], i) => { const a = ((T - K.Br) * 0.42 + ph) % 1, yy = klerp(930, 520, a);
             const c = a < 0.25 ? '#1b1b1b' : a < 0.55 ? mixHex('#2a1408', '#ff5a1a', (a - 0.25) / 0.3) : mixHex('#ff5a1a', '#fffbe0', Math.min(1, (a - 0.55) / 0.3));
             return <circle key={i} cx={540 + dx * 70 * (1 - a * 0.4)} cy={yy} r={10} fill={c} stroke={a < 0.5 ? '#000' : 'none'} strokeWidth={2} opacity={kprog(T, K.Br + 0.3, K.Br + 0.9) * (a > 0.92 ? (1 - a) / 0.08 : 1)} />; })}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Fa} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Vela T={T} x={300} y={820} H={330} />
-          <text x={300} y={560} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 300 460)`}>?</text>
+          <g transform="translate(360 860) scale(1.45) translate(-300 -820)"><Vela T={T} x={300} y={820} H={330} /></g>
+          <text x={790} y={640} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 790 540)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 6 · Faraday, 1860–61: el tubito */}
       <Escena T={T} a={K.Fa} b={K.Hu} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
+          <g transform="translate(530 880) scale(1.35) translate(-530 -880)">
           <Vela T={T} x={300} y={930} s={0.85} H={250} />
           {tuboIn > 0 && <g transform={`translate(${(1 - tuboIn) * 420} ${(1 - tuboIn) * -260})`} opacity={tuboIn}>
             <path d={TUBO} fill="none" stroke={KC.ink} strokeWidth={42} strokeLinecap="round" />
@@ -197,12 +207,14 @@ function Vela35() {
             const [px, py] = enTubo(u); return <circle key={i} cx={px} cy={py} r={9} fill="#ffffff" stroke="#8a95a8" strokeWidth={2} opacity={0.9} />; })}
           {ast > 0 && <g transform={`translate(${astSale * 400} ${astSale * -300})`} opacity={1 - astSale}><Astilla T={T} x={klerp(1150, 880, ast)} y={klerp(260, 560, ast)} llama={1} /></g>}
           {llama2 > 0 && <FlamaVela T={T} x={860} y={615} s={0.62} f={llama2} glow={1} seed={4} />}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 7 · el humo que se vuelve a encender (demostración) */}
       <Escena T={T} a={K.Hu} b={K.Es} zoom={0.04} origen="40% 45%">
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
+          <g transform="translate(500 850) scale(1.35) translate(-420 -800)">
           <Vela T={T} x={420} y={800} H={380} flama={(1 - apaga) + prende} copa={0.75} />
           <HumoVela T={T} x={422} y={756} f={kprog(T, K.Hu + 0.8, K.Hu + 2.0)} o={1 - kprog(T, K.Hu + 5.0, K.Hu + 5.6)} fuego={baja > 0 ? baja : -1} />
           {T > K.Hu + 0.1 && T < K.Hu + 1.3 && [0, 1, 2].map((i) => { const p = kprog(T, K.Hu + 0.1 + i * 0.08, K.Hu + 0.9 + i * 0.08);
@@ -213,7 +225,8 @@ function Vela35() {
             <line x1={580} y1={440} x2={620} y2={440} stroke={KC.ink} strokeWidth={6} /><line x1={580} y1={710} x2={620} y2={710} stroke={KC.ink} strokeWidth={6} />
             <text x={630} y={590} style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>unos cm</text>
           </g>}
-          <BarraEscala x={70} y={1450} px={80} texto="1 cm" />
+          </g>
+          <BarraEscala x={70} y={1450} px={108} texto="1 cm" />
         </SvgCapa>
       </Escena>
       {/* 8 · en el espacio: llama redonda y azul */}
@@ -221,9 +234,10 @@ function Vela35() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           {estrellas.map(([sx, sy, r], i) => <circle key={i} cx={sx} cy={sy} r={r} fill="#fff" opacity={0.35 + 0.35 * Math.sin(T * 2 + i)} />)}
+          <g transform="translate(540 760) scale(1.3) translate(-540 -760)">
           <Vela T={T} x={290} y={820} s={0.8} H={250} />
           {[200, 380].map((fx, i) => <Flecha key={i} T={T} x={fx} y={740} alto={260} color={KC.orange} fase={i * 20} o={kprog(T, K.Es + 0.6, K.Es + 1.1)} />)}
-          <g opacity={kprog(T, K.Es + 1.3, K.Es + 1.8)}>
+          <g opacity={0.35 + 0.65 * kprog(T, K.Es + 1.3, K.Es + 1.8)}>
             <Vela T={T} x={790} y={820} s={0.8} H={250} flama={0} />
             {(() => { const k = kprog(T, K.Es + 1.6, K.Es + 2.4, kEase.rebote) * (1 + Math.sin(T * 5) * 0.03); return <g transform={`translate(792 782) scale(${k})`}>
               <circle r={130} fill="#2b5cff" opacity={0.28} />
@@ -232,50 +246,53 @@ function Vela35() {
               <circle r={60} fill="#0d1424" opacity={0.55} />
             </g>; })()}
           </g>
-          <text x={290} y={1120} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.texto} opacity={kprog(T, K.Es + 0.4, K.Es + 0.9)}>TIERRA</text>
-          <text x={790} y={1120} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill="#9cc3ff" opacity={kprog(T, K.Es + 1.6, K.Es + 2.1)}>MICROGRAVEDAD</text>
+          </g>
+          <text x={215} y={1235} textAnchor="middle" style={{ font:`400 58px ${KF.titulo}` }} fill={KC.texto} opacity={kprog(T, K.Es + 0.4, K.Es + 0.9)}>TIERRA</text>
+          <text x={865} y={1235} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill="#9cc3ff" opacity={kprog(T, K.Es + 1.6, K.Es + 2.1)}>MICROGRAVEDAD</text>
         </SvgCapa>
       </Escena>
       {/* 9 · cierre: la misma vela del inicio, ya entendida */}
-      <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="38% 40%">
+      <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="50% 47%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(540 720) scale(1.4) translate(-400 -760)">
           <Vela T={T} x={400} y={760} copa={0.75} />
           {Array.from({ length: 9 }, (_, i) => { const a = ((T - K.Ci) * 0.7 + i / 9) % 1; return <circle key={i} cx={402 + Math.sin(i * 2.3) * a * 40} cy={712 - a * 110} r={9 + a * 8} fill={VAPOR} stroke={KC.ink} strokeWidth={2} opacity={(1 - a) * kprog(T, K.Ci, K.Ci + 0.5)} />; })}
-          <BarraEscala x={70} y={1450} px={80} texto="1 cm" />
+          </g>
+          <BarraEscala x={70} y={1450} px={112} texto="1 cm" />
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.9} until={K.G + 3.0} texto="¿arde la cera sólida?" x={320} y={340} tam={40} />
-      <Etq T={T} at={K.G + 0.6} until={K.G + 2.0} x={500} y={1000} texto="cera sólida" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.G + 2.3} until={K.Co - 0.3} x={330} y={640} texto="vapor" lado="izq" tam={36} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.9} until={K.G + 3.0} texto="¿arde la cera sólida?" x={540} y={212} tam={38} />
+      <Etq T={T} at={K.G + 0.6} until={K.G + 2.0} x={685} y={1080} texto="cera sólida" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.G + 2.3} until={K.Co - 0.3} x={440} y={580} texto="vapor" lado="izq" tam={36} color={KC.ink} />
       <Chip T={T} at={K.G + 3.0} until={K.Co - 0.3} texto="arde: cera hecha vapor" x={540} y={1500} tam={44} borde={KC.pink} />
       <Chip T={T} at={K.Co + 0.4} until={K.Me - 0.2} texto="Cap. 1 · se derrite" x={540} y={1500} tam={44} borde={LIQ} />
       <Etq T={T} at={K.Co + 1.0} until={K.Me - 0.2} x={350} y={990} texto="cera líquida" lado="izq" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Co + 1.6} until={K.Me - 0.2} texto="aire frío: el borde sigue sólido" x={540} y={1610} tam={34} borde="#bff3ff" />
       <Chip T={T} at={K.Me + 0.4} until={K.Va - 0.2} texto="Cap. 2 · capilaridad" x={540} y={1500} tam={44} borde={LIQ} />
-      <Etq T={T} at={K.Me + 0.8} until={K.Va - 0.2} x={480} y={1030} texto="hilos de algodón" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Me + 0.8} until={K.Va - 0.2} x={500} y={1070} texto="hilos de algodón" tam={30} color={KC.texto} />
       <Chip T={T} at={K.Va + 2.6} until={K.Br - 0.2} texto="Cap. 3 · vapor + O₂ → arde" x={540} y={1500} tam={42} borde="#ffb81a" />
-      <Etq T={T} at={K.Va + 0.6} until={K.Br - 0.2} x={600} y={880} texto="vapor de cera" tam={30} color={VAPOR} />
-      <Etq T={T} at={K.Va + 1.8} until={K.Br - 0.2} x={1040} y={1150} texto="O₂ del aire" lado="izq" tam={30} color="#ff8a80" />
+      <Etq T={T} at={K.Va + 0.6} until={K.Br - 0.2} x={620} y={760} texto="vapor de cera" tam={30} color={VAPOR} />
+      <Etq T={T} at={K.Va + 1.8} until={K.Br - 0.2} x={1060} y={480} texto="O₂ del aire" lado="izq" tam={30} color="#ff8a80" />
       <Chip T={T} at={K.Br + 0.6} until={K.Pr - 0.2} texto="hollín incandescente" x={540} y={1500} tam={44} borde={KC.orange} />
-      <Etq T={T} at={K.Br + 1.2} until={K.Pr - 0.2} x={640} y={600} texto="hollín (C)" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.Br + 2.4} until={K.Pr - 0.2} x={600} y={1120} texto="base azul: sin hollín" tam={30} color="#9cc3ff" />
+      <Etq T={T} at={K.Br + 1.2} until={K.Pr - 0.2} x={650} y={560} texto="hollín (C)" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.Br + 2.4} until={K.Pr - 0.2} x={600} y={1275} texto="base azul: sin hollín" tam={28} color="#9cc3ff" />
       <Chip T={T} at={K.Pr + 0.3} until={K.Fa - 0.1} texto="¿qué es lo que arde?" x={540} y={1500} tam={44} borde={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.Fa + 0.2} until={K.Fa + 2.9} anio="1860–61" quien="Faraday · Royal Institution, Londres" revista="The Chemical History of a Candle (1861)" x={540} y={560} />
-      <Etq T={T} at={K.Fa + 3.4} until={K.Fa + 6.0} x={330} y={870} texto="parte oscura" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Fa + 0.2} until={K.Fa + 2.9} anio="1860–61" quien="Faraday · Royal Institution, Londres" revista="The Chemical History of a Candle (1861)" x={600} y={360} />
+      <Etq T={T} at={K.Fa + 3.4} until={K.Fa + 6.0} x={272} y={866} texto="parte oscura" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Fa + 4.2} until={K.Fa + 7.2} texto="el vapor viaja por el tubo" x={540} y={1500} tam={40} borde="#dff4ff" />
       <Chip T={T} at={K.Fa + 7.4} until={K.Hu - 0.2} texto="¡una vela por tubería!" x={540} y={1500} tam={44} borde={KC.yellow} />
-      <Etq T={T} at={K.Fa + 7.8} until={K.Hu - 0.2} x={800} y={470} texto="2.ª llama" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Fa + 7.8} until={K.Hu - 0.2} x={900} y={340} texto="2.ª llama" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Hu + 1.0} until={K.Hu + 5.4} texto="humo = cera evaporada" x={540} y={1500} tam={44} borde="#ffffff" />
       <Chip T={T} at={K.Hu + 5.6} until={K.Es - 0.2} texto="⚠️ fuego de verdad · no es un juego" x={540} y={1500} tam={38} borde={KC.red} />
       <Chip T={T} at={K.Es + 2.8} until={K.Ci - 0.2} texto="redonda · azul · sin hollín" x={540} y={1500} tam={42} borde="#9cc3ff" />
-      <Etq T={T} at={K.Ci + 0.4} until={K.Ou} x={340} y={520} texto="hollín" lado="izq" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Ci + 0.8} until={K.Ou} x={340} y={660} texto="vapor" lado="izq" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Ci + 1.2} until={K.Ou} x={420} y={730} texto="mecha: capilaridad" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ci + 1.6} until={K.Ou} x={470} y={800} texto="copita líquida" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ci + 2.0} until={K.Ou} x={500} y={1000} texto="cera sólida" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 0.4} until={K.Ou} x={470} y={440} texto="hollín" lado="izq" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 0.8} until={K.Ou} x={465} y={580} texto="vapor" lado="izq" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 1.2} until={K.Ou} x={570} y={662} texto="mecha: capilaridad" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 1.6} until={K.Ou} x={655} y={735} texto="copita líquida" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 2.0} until={K.Ou} x={685} y={1080} texto="cera sólida" tam={30} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Co - 0.1} texto="Arde la *cera hecha vapor.*" />

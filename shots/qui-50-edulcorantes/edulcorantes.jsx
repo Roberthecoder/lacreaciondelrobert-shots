@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #50 · Este granito no es azúcar (endulzantes que engañan a tu lengua) — NARRADO (N2 el número + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático. Sin marcas comerciales.
 const CAFE = '#5b3418', TAZA = '#ff6b5a', LENGUA = '#f28aa0', R2C = '#b18cff', R3C = '#00d2ff', AMARGO = '#3fbf4a', CL = '#b6e33a';
@@ -69,7 +70,7 @@ function ReceptorAmargo({ x, y, s = 1, luz = 0, nombre }) {
 function Membrana({ T, y }) {
   const d = Array.from({ length: 23 }, (_, i) => `${i === 0 ? 'M' : 'L'} ${i * 50} ${y + Math.sin(T * 1.5 + i * 0.7) * 8}`).join(' ');
   return <g>
-    <rect x={0} y={y} width={KW} height={KH - y} fill="#1d2a45" />
+    <rect x={0} y={y} width={KW} height={KH - y} fill="#141c30" />
     <path d={d} stroke="#ffd36e" strokeWidth={22} fill="none" opacity={0.8} />
     <path d={d} stroke={KC.ink} strokeWidth={4} fill="none" transform="translate(0 -11)" /><path d={d} stroke={KC.ink} strokeWidth={4} fill="none" transform="translate(0 11)" />
   </g>;
@@ -152,7 +153,7 @@ function EscaleraIARC({ x, y, f = 1, sello = 0 }) {
   const g = ['1', '2A', '2B', '3'];
   return <g transform={`translate(${x} ${y})`}>
     {g.map((t, i) => { const h = 300 - i * 70, on = kclamp(f * 4 - i, 0, 1); return <g key={t} opacity={on}>
-      <rect x={i * 200} y={-h} width={190} height={h} fill={i === 2 ? KC.orange : '#f6f3ec'} stroke={KC.ink} strokeWidth={8} />
+      <rect x={i * 200} y={-h} width={190} height={h} fill={i === 2 ? KC.orange : '#2c3446'} stroke={KC.ink} strokeWidth={8} />
       <text x={i * 200 + 95} y={-h + 70} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{t}</text></g>; })}
     {sello > 0 && <g transform={`translate(${2 * 200 + 95} ${-160 - 90}) rotate(-12) scale(${klerp(1.8, 1, sello)})`} opacity={sello}>
       <circle r={78} fill="none" stroke={KC.red} strokeWidth={10} /><text y={20} textAnchor="middle" style={{ font:`400 58px ${KF.titulo}` }} fill={KC.red}>2B</text></g>}
@@ -185,6 +186,8 @@ function Medida({ texto, x = 70, y = 1700 }) {
     <text x={x + 160} y={y + 14} style={{ font:`700 36px ${KF.mono}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">{texto}</text></g>;
 }
 
+// Encuadre del pase a mano: lleva el punto (cx,cy) del dibujo original a (x,y) con escala k.
+const Zoom = ({ cx, cy, k, x = 540, y = 960, children }) => <g transform={`translate(${x} ${y}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
 function Edulcorantes() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, F: CUES.Familia, Re: CUES.Receptor, Ll: CUES.Llave, Po: CUES.Poquito, Pr: CUES.Pregunta, Sc: CUES.Schlatter, Lo: CUES.Londres, Es: CUES.Estudio, Li: CUES.Limite, Am: CUES.Amargo, Ci: CUES.Cierre, Ou: CUES.Outro };
@@ -215,7 +218,7 @@ function Edulcorantes() {
       {/* 0 · gancho: un granito en el café contra un montón de azúcar */}
       <Escena T={T} a={K.G} b={K.F} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><Zoom cx={555} cy={840} k={1.12} y={980}>
           <g transform={`translate(330 ${klerp(480, 560, kprog(T, K.G, K.G + 0.3))}) rotate(${klerp(0, 35, kprog(T, K.G, K.G + 0.3))})`}>
             <rect x={-150} y={-10} width={150} height={20} rx={10} fill="#c9ced8" stroke={KC.ink} strokeWidth={6} /><ellipse cx={20} cy={0} rx={40} ry={24} fill="#c9ced8" stroke={KC.ink} strokeWidth={6} /></g>
           {cae < 1 && <Granito x={350} y={klerp(570, 870, cae)} s={1.6} rot={cae * 200} />}
@@ -223,13 +226,13 @@ function Edulcorantes() {
           {cae >= 1 && <Granito x={330} y={884} s={1.2} o={1 - kprog(T, K.G + 1.2, K.G + 2.2) * 0.4} />}
           <Monton x={790} y={1190} f={lluvia} n={140} ancho={330} alto={250} />
           {lluvia > 0 && lluvia < 1 && Array.from({ length: 8 }, (_, i) => <Granito key={i} x={680 + i * 30} y={760 + ((T * 900 + i * 97) % 300)} s={0.55} rot={T * 300 + i * 40} />)}
-        </SvgCapa>
-        <div style={{ position:'absolute', left:740, top:1470, transform:'translate(-50%,-50%)', font:`400 72px ${KF.titulo}`, color:KC.ink, whiteSpace:'nowrap', opacity:kprog(T, K.G + 1.0, K.G + 1.2) }}>≈{Math.round(600 * lluvia)} <span style={{ font:`900 34px ${KF.texto}` }}>granitos de azúcar</span></div>
+        </Zoom></SvgCapa>
+        <div style={{ position:'absolute', left:720, top:770, transform:'translate(-50%,-50%)', font:`400 72px ${KF.titulo}`, color:KC.ink, whiteSpace:'nowrap', opacity:kprog(T, K.G + 1.0, K.G + 1.2) }}>≈{Math.round(600 * lluvia)} <span style={{ font:`900 34px ${KF.texto}` }}>granitos de azúcar</span></div>
       </Escena>
       {/* 1 · familia: cuántas veces más dulces */}
       <Escena T={T} a={K.F} b={K.Re}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        <SvgCapa><Zoom cx={520} cy={910} k={1.15}>
           {[['sucralosa', 600, 0, '≈600×', '#ffffff'], ['aspartamo', 200, 0.5, '≈200×', '#ffffff'], ['stevia', 400, 1.0, '200–400×', '#f1fff0']].map(([n, v, d, t, c], i) => {
             const y = 760 + i * 170, p = kprog(T, K.F + 0.2 + d, K.F + 1.0 + d, kEase.sale), ancho = v * 1.05 * p;
             return <g key={n} opacity={kprog(T, K.F + d, K.F + d + 0.2)}>
@@ -241,7 +244,7 @@ function Edulcorantes() {
                 : <rect x={150} y={y - 20} width={ancho} height={70} rx={14} fill={i === 0 ? KC.pink : KC.orange} stroke={KC.ink} strokeWidth={6} />}
               <text x={170 + ancho} y={y + 36} style={{ font:`400 62px ${KF.titulo}` }} fill={KC.ink} opacity={p}>{t}</text>
             </g>; })}
-        </SvgCapa>
+        </Zoom></SvgCapa>
       </Escena>
       {/* 2 · de la lengua a la célula: el receptor */}
       <Escena T={T} a={K.Re} b={K.Ll} zoom={0}>
@@ -252,26 +255,26 @@ function Edulcorantes() {
             <Medida texto="1 cm" /></SvgCapa>
         </div>
         <div style={{ position:'absolute', inset:0, background:KC.noche, opacity:micro }}>
-          <SvgCapa><Membrana T={T} y={1060} /><Receptor x={540} y={1050} s={1.2} cierra={0} luz={0} /></SvgCapa>
+          <SvgCapa><Membrana T={T} y={1250} /><Receptor x={540} y={1240} s={2} cierra={0} luz={0} /></SvgCapa>
         </div>
       </Escena>
       {/* 3 · la llave: azúcar y sucralosa encienden el receptor */}
       <Escena T={T} a={K.Ll} b={K.Po} zoom={0.02}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <Membrana T={T} y={1060} />
-          <Receptor x={540} y={1050} s={1.2} cierra={Math.max(cierraA, cierraB)} luz={Math.max(cierraA, cierraB)} />
-          {mA > 0 && T < K.Ll + 1.8 && <MolHex x={klerp(140, 540, mA)} y={klerp(620, 890, mA)} s={0.9} rot={(1 - mA) * 90} o={1 - kprog(T, K.Ll + 1.5, K.Ll + 1.8)} />}
-          {mB > 0 && <MolHex x={klerp(960, 540, mB)} y={klerp(620, 890, mB)} s={0.9} rot={(1 - mB) * -90} cloros={3} color="#fff7d6" />}
-          <path d="M 540 1150 Q 820 1000 860 640" stroke={KC.yellow} strokeWidth={6} fill="none" strokeDasharray="12 14" opacity={0.6} />
-          {[K.Ll + 1.0, K.Ll + 2.7].map((t0, i) => { const p = senal(t0); return p > 0 && p < 1 ? <circle key={i} cx={klerp(540, 860, p)} cy={klerp(1010, 640, p)} r={18} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /> : null; })}
-          <Cerebro x={860} y={560} s={0.9} luz={Math.max(kprog(T, K.Ll + 1.6, K.Ll + 1.8) * (1 - kprog(T, K.Ll + 1.9, K.Ll + 2.3)), kprog(T, K.Ll + 3.3, K.Ll + 3.5))} />
+          <Membrana T={T} y={1250} />
+          <Receptor x={540} y={1240} s={2} cierra={Math.max(cierraA, cierraB)} luz={Math.max(cierraA, cierraB)} />
+          {mA > 0 && T < K.Ll + 1.8 && <MolHex x={klerp(140, 540, mA)} y={klerp(640, 975, mA)} s={1.4} rot={(1 - mA) * 90} o={1 - kprog(T, K.Ll + 1.5, K.Ll + 1.8)} />}
+          {mB > 0 && <MolHex x={klerp(900, 540, mB)} y={klerp(640, 975, mB)} s={1.4} rot={(1 - mB) * -90} cloros={3} color="#fff7d6" />}
+          <path d="M 540 1420 Q 900 1200 880 580" stroke={KC.yellow} strokeWidth={6} fill="none" strokeDasharray="12 14" opacity={0.6} />
+          {[K.Ll + 1.0, K.Ll + 2.7].map((t0, i) => { const p = senal(t0); return p > 0 && p < 1 ? <circle key={i} cx={klerp(540, 880, p)} cy={klerp(1150, 580, p)} r={22} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /> : null; })}
+          <Cerebro x={880} y={470} s={1.1} luz={Math.max(kprog(T, K.Ll + 1.6, K.Ll + 1.8) * (1 - kprog(T, K.Ll + 1.9, K.Ll + 2.3)), kprog(T, K.Ll + 3.3, K.Ll + 3.5))} />
         </SvgCapa>
       </Escena>
       {/* 4 · con mucho menos: 8 g contra unos 40 mg */}
       <Escena T={T} a={K.Po} b={K.Pr}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa><Zoom cx={530} cy={950} k={1.2}>
           <Taza x={280} y={990} s={0.75} /><Taza x={780} y={990} s={0.75} />
           <Monton x={280} y={872} f={cucharas} n={70} ancho={180} alto={110} s={0.5} seed={9} />
           {pizca > 0 && <g opacity={pizca}><Granito x={780} y={870} s={0.45} /><Granito x={790} y={873} s={0.35} />
@@ -282,28 +285,29 @@ function Edulcorantes() {
             <rect x={x - 150} y={720} width={300} height={44} rx={22} fill="rgba(255,255,255,.6)" stroke={KC.ink} strokeWidth={6} />
             <rect x={x - 147} y={723} width={294 * dulzor} height={38} rx={19} fill={KC.pink} />
             <text x={x} y={706} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>dulzor</text></g>)}
-        </SvgCapa>
+        </Zoom></SvgCapa>
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Sc} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa><text x={280} y={1100} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 900)`}>?</text></SvgCapa>
+        <SvgCapa><g opacity={0.9}><Taza x={540} y={1200} s={1.5} /><Granito x={540} y={968} s={1.6} /></g>
+          <text x={540} y={880} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 700)`}>?</text></SvgCapa>
       </Escena>
       {/* 6 · 1965: el dedo de Schlatter */}
       <Escena T={T} a={K.Sc} b={K.Lo}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa>
-          <rect x={0} y={1180} width={KW} height={60} fill="#c99a6b" stroke={KC.ink} strokeWidth={8} />
+        <SvgCapa><Zoom cx={530} cy={950} k={1.25} y={970}>
+          <rect x={-200} y={1180} width={KW + 400} height={60} fill="#6a5444" stroke={KC.ink} strokeWidth={8} />
           <Matraz x={300} y={1030} s={0.9} polvo={1 - toca * 0.6} />
           <Papel x={760} y={1080} s={0.7} rot={8} />
           <Labios x={760} y={700} s={0.9} abre={kprog(T, K.Sc + 3.6, K.Sc + 4.0) * (1 - kprog(T, K.Sc + 4.4, K.Sc + 4.8)) * 0.6} />
           <Dedo T={T} x={klerp(klerp(560, 300, toca), 760, sube)} y={klerp(klerp(1950, 1010, kprog(T, K.Sc + 1.6, K.Sc + 2.9, kEase.suave)), 980, sube)} s={0.9} rot={klerp(0, -10, toca)} polvo={toca} brillo={kprog(T, K.Sc + 4.5, K.Sc + 4.9)} />
-        </SvgCapa>
+        </Zoom></SvgCapa>
       </Escena>
       {/* 7 · Londres, años 70: "test" → "taste" */}
       <Escena T={T} a={K.Lo} b={K.Es}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa><Zoom cx={550} cy={915} k={1.12}>
           <Telefono x={260} y={1060} s={0.9} T={T} suena={kprog(T, K.Lo + 1.6, K.Lo + 1.8) * (1 - kprog(T, K.Lo + 2.8, K.Lo + 3.0))} />
           <g opacity={kprog(T, K.Lo + 2.2, K.Lo + 2.5)}>
             <path d="M 420 780 Q 420 680 560 680 L 900 680 Q 1000 680 1000 780 Q 1000 880 900 880 L 540 880 L 430 960 L 470 870 Q 420 850 420 780 Z" fill="#fff" stroke={KC.ink} strokeWidth={8} />
@@ -312,74 +316,74 @@ function Edulcorantes() {
           </g>
           <Frasquito x={720} y={1170} s={1} etiqueta="Cl" />
           {T > K.Lo + 4.0 && <g opacity={kprog(T, K.Lo + 4.0, K.Lo + 4.3)}><Labios x={720} y={1000} s={0.55} abre={0.4 + Math.sin(T * 8) * 0.1} /></g>}
-        </SvgCapa>
+        </Zoom></SvgCapa>
       </Escena>
       {/* 8 · 2023, Lyon: la agencia de cáncer de la OMS */}
       <Escena T={T} a={K.Es} b={K.Li}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          {T < K.Es + 3.6 ? <Francia x={540} y={960} s={1.1} pin={kprog(T, K.Es + 0.6, K.Es + 1.1, kEase.rebote)} T={T} />
-            : <EscaleraIARC x={150} y={1180} f={kprog(T, K.Es + 3.6, K.Es + 4.6)} sello={kprog(T, K.Es + 4.9, K.Es + 5.3, kEase.sale)} />}
+          {T < K.Es + 3.6 ? <Francia x={540} y={1030} s={1.6} pin={kprog(T, K.Es + 0.6, K.Es + 1.1, kEase.rebote)} T={T} />
+            : <Zoom cx={550} cy={1030} k={1.15} y={1010}><EscaleraIARC x={150} y={1180} f={kprog(T, K.Es + 3.6, K.Es + 4.6)} sello={kprog(T, K.Es + 4.9, K.Es + 5.3, kEase.sale)} /></Zoom>}
         </SvgCapa>
       </Escena>
       {/* 9 · el límite de JECFA: más de 9 latas */}
       <Escena T={T} a={K.Li} b={K.Am}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
-          <Silueta x={200} y={1190} s={1.1} />
+        <SvgCapa><Zoom cx={565} cy={915} k={1.05} y={1000}>
+          <Silueta x={250} y={1190} s={1.1} />
           {Array.from({ length: 9 }, (_, i) => { const t0 = K.Li + 1.8 + i * 0.33; const c = i % 3, r = Math.floor(i / 3);
-            return <Lata key={i} x={480 + c * 130} y={klerp(700, 1110 - r * 160, kprog(T, t0, t0 + 0.3, kEase.sale))} s={1} o={kprog(T, t0, t0 + 0.1)} n={i + 1} />; })}
-          <text x={940} y={940} style={{ font:`400 140px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.Li + 5.0, K.Li + 5.3)}>+</text>
-          <line x1={400} y1={700} x2={1040} y2={700} stroke={KC.red} strokeWidth={8} strokeDasharray="22 14" opacity={kprog(T, K.Li + 4.8, K.Li + 5.2)} />
-          <text x={1040} y={680} textAnchor="end" style={{ font:`700 34px ${KF.mono}` }} fill={KC.red} opacity={kprog(T, K.Li + 4.8, K.Li + 5.2)}>límite diario</text>
-        </SvgCapa>
+            return <Lata key={i} x={500 + c * 130} y={klerp(700, 1110 - r * 160, kprog(T, t0, t0 + 0.3, kEase.sale))} s={1} o={kprog(T, t0, t0 + 0.1)} n={i + 1} />; })}
+          <text x={900} y={940} style={{ font:`400 140px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.Li + 5.0, K.Li + 5.3)}>+</text>
+          <line x1={440} y1={700} x2={1000} y2={700} stroke={KC.red} strokeWidth={8} strokeDasharray="22 14" opacity={kprog(T, K.Li + 4.8, K.Li + 5.2)} />
+          <text x={1000} y={680} textAnchor="end" style={{ font:`700 34px ${KF.mono}` }} fill={KC.red} opacity={kprog(T, K.Li + 4.8, K.Li + 5.2)}>límite diario</text>
+        </Zoom></SvgCapa>
       </Escena>
       {/* 10 · 2012: la stevia también enciende receptores de amargo */}
       <Escena T={T} a={K.Am} b={K.Ci}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <Membrana T={T} y={1060} />
-          <ReceptorAmargo x={180} y={1050} s={1} luz={kprog(T, K.Am + 1.4, K.Am + 1.8)} nombre="TAS2R4" />
-          <Receptor x={540} y={1050} s={0.95} cierra={kprog(T, K.Am + 0.9, K.Am + 1.1)} luz={kprog(T, K.Am + 0.9, K.Am + 1.2)} />
-          <ReceptorAmargo x={900} y={1050} s={1} luz={kprog(T, K.Am + 1.7, K.Am + 2.1)} nombre="TAS2R14" />
-          <g transform={`translate(${klerp(540, 540, sv)} ${klerp(520, 800, sv)})`}><MolHex x={0} y={0} s={0.8} color="#eaffea" anillos={1} /><Hoja x={0} y={-70} s={0.5} /></g>
-          {[180, 900].map((x, i) => { const p = kprog(T, K.Am + 1.2 + i * 0.3, K.Am + 1.6 + i * 0.3); return p > 0 && p < 1 ? <circle key={i} cx={klerp(540, x, p)} cy={klerp(800, 880, p)} r={16} fill={AMARGO} stroke={KC.ink} strokeWidth={4} /> : null; })}
+          <Membrana T={T} y={1200} />
+          <ReceptorAmargo x={175} y={1190} s={1.3} luz={kprog(T, K.Am + 1.4, K.Am + 1.8)} nombre="TAS2R4" />
+          <Receptor x={540} y={1190} s={1.3} cierra={kprog(T, K.Am + 0.9, K.Am + 1.1)} luz={kprog(T, K.Am + 0.9, K.Am + 1.2)} />
+          <ReceptorAmargo x={905} y={1190} s={1.3} luz={kprog(T, K.Am + 1.7, K.Am + 2.1)} nombre="TAS2R14" />
+          <g transform={`translate(540 ${klerp(560, 850, sv)}) scale(1.3)`}><MolHex x={0} y={0} s={0.8} color="#eaffea" anillos={1} /><Hoja x={0} y={-70} s={0.5} /></g>
+          {[175, 905].map((x, i) => { const p = kprog(T, K.Am + 1.2 + i * 0.3, K.Am + 1.6 + i * 0.3); return p > 0 && p < 1 ? <circle key={i} cx={klerp(540, x, p)} cy={klerp(850, 980, p)} r={20} fill={AMARGO} stroke={KC.ink} strokeWidth={4} /> : null; })}
         </SvgCapa>
       </Escena>
       {/* 11 · cierre: la taza del inicio, ya explicada */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><Zoom cx={555} cy={840} k={1.12} y={980}>
           <Taza x={330} y={1040} s={1.05} ondas={(T * 0.6) % 1} />
           <Granito x={330} y={884} s={1.2} />
           <g transform={`translate(790 1080) scale(0.6)`} opacity={kprog(T, K.Ci + 0.4, K.Ci + 0.9)}><Receptor x={0} y={0} s={1} cierra={kprog(T, K.Ci + 1.2, K.Ci + 1.5)} luz={kprog(T, K.Ci + 1.2, K.Ci + 1.6)} etiquetas={false} /></g>
           <path d="M 400 870 Q 600 760 740 900" stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="16 12" opacity={kprog(T, K.Ci + 0.8, K.Ci + 1.2)} />
-        </SvgCapa>
+        </Zoom></SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.6} until={K.G + 4.6} texto="¿azúcar?" x={300} y={470} tam={52} />
-      <Etq T={T} at={K.G + 1.0} until={K.F - 0.2} x={120} y={760} texto="1 granito de sucralosa" tam={32} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.6} until={K.G + 4.6} texto="¿azúcar?" x={330} y={300} tam={52} />
+      <Etq T={T} at={K.G + 1.0} until={K.F - 0.2} x={140} y={930} texto="1 granito de sucralosa" tam={32} color={KC.ink} />
       <Chip T={T} at={K.F + 0.3} until={K.Re - 0.2} texto="veces más dulce que el azúcar" y={1500} tam={40} borde={KC.pink} />
       <Etq T={T} at={K.Re + 0.3} until={K.Re + 1.4} x={660} y={760} texto="papila" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Re + 2.0} until={K.Ll - 0.2} texto="receptor dulce: 2 piezas" y={1500} tam={42} borde={R3C} />
       <Chip T={T} at={K.Ll + 0.3} until={K.Ll + 1.8} texto="azúcar → ¡clic!" y={1500} tam={44} borde={KC.yellow} />
       <Chip T={T} at={K.Ll + 2.0} until={K.Po - 0.2} texto="sucralosa (3 cloros) → ¡clic!" y={1500} tam={40} borde={CL} />
-      <Etq T={T} at={K.Ll + 1.6} until={K.Po - 0.2} x={760} y={430} texto="¡DULCE!" lado="izq" tam={40} color={KC.yellow} />
+      <Etq T={T} at={K.Ll + 1.6} until={K.Po - 0.2} x={720} y={420} texto="¡DULCE!" lado="izq" tam={40} color={KC.yellow} />
       <Chip T={T} at={K.Po + 2.6} until={K.Pr - 0.2} texto="mismo dulzor · cuenta con datos de la FDA" y={1500} tam={32} borde={KC.pink} />
-      <TarjetaEstudio T={T} at={K.Sc + 0.5} until={K.Sc + 2.2} anio="1965" quien="James Schlatter" revista="buscaba un remedio para la úlcera" y={640} />
-      <Onomato T={T} at={K.Sc + 4.7} until={K.Lo - 0.2} x={540} y={520} texto="¡DULCE!" color={KC.yellow} tam={110} />
+      <TarjetaEstudio T={T} at={K.Sc + 0.5} until={K.Sc + 2.2} anio="1965" quien="James Schlatter" revista="buscaba un remedio para la úlcera" y={380} />
+      <Onomato T={T} at={K.Sc + 4.7} until={K.Lo - 0.2} x={540} y={420} texto="¡DULCE!" color={KC.yellow} tam={110} />
       <Chip T={T} at={K.Sc + 2.6} until={K.Lo - 0.2} texto="de chiripa: polvo en el dedo" y={1500} tam={40} borde={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.Lo + 0.2} until={K.Lo + 2.0} anio="años 70" quien="Londres · un estudiante" revista="Queen Elizabeth College" y={640} />
-      <Onomato T={T} at={K.Lo + 1.6} until={K.Lo + 2.9} x={300} y={830} texto="¡RING!" color={KC.yellow} tam={90} />
-      <Etq T={T} at={K.Lo + 3.4} until={K.Lo + 5.0} x={520} y={930} texto="azúcares con cloro" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Lo + 0.2} until={K.Lo + 2.0} anio="años 70" quien="Londres · un estudiante" revista="Queen Elizabeth College" y={400} />
+      <Onomato T={T} at={K.Lo + 1.6} until={K.Lo + 2.9} x={290} y={880} texto="¡RING!" color={KC.yellow} tam={90} />
+      <Etq T={T} at={K.Lo + 3.4} until={K.Lo + 5.0} x={510} y={985} texto="azúcares con cloro" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Lo + 5.0} until={K.Es - 0.2} texto="así nació la sucralosa" y={1500} tam={46} borde={CL} />
-      <TarjetaEstudio T={T} at={K.Es + 1.2} until={K.Es + 3.4} anio="2023" quien="IARC · agencia de cáncer de la OMS" revista="25 expertos de 12 países · Lyon" y={560} />
-      <Chip T={T} at={K.Es + 4.0} until={K.Li - 0.2} texto="aspartamo: Grupo 2B" y={780} tam={46} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.Es + 1.2} until={K.Es + 3.4} anio="2023" quien="IARC · agencia de cáncer de la OMS" revista="25 expertos de 12 países · Lyon" y={380} />
+      <Chip T={T} at={K.Es + 4.0} until={K.Li - 0.2} texto="aspartamo: Grupo 2B" y={600} tam={46} borde={KC.red} />
       <Chip T={T} at={K.Es + 5.3} until={K.Li - 0.2} texto="posiblemente cancerígeno · evidencia limitada" y={1500} tam={30} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Li + 0.2} until={K.Li + 1.7} anio="40 mg" quien="por kilo al día · sin cambios" revista="JECFA (FAO/OMS) · Ginebra 2023" y={600} />
+      <TarjetaEstudio T={T} at={K.Li + 0.2} until={K.Li + 1.7} anio="40 mg" quien="por kilo al día · sin cambios" revista="JECFA (FAO/OMS) · Ginebra 2023" y={420} />
       <Chip T={T} at={K.Li + 2.0} until={K.Am - 0.2} texto="más de 9 latas light al día (OMS)" y={1500} tam={36} borde={KC.cyan} />
-      <TarjetaEstudio T={T} at={K.Am + 2.2} until={K.Ci - 0.3} anio="2012" quien="Alemania" revista="Hellfritsch et al. · J Agric Food Chem" x={650} y={520} />
+      <TarjetaEstudio T={T} at={K.Am + 2.2} until={K.Ci - 0.3} anio="2012" quien="Alemania" revista="Hellfritsch et al. · J Agric Food Chem" x={700} y={430} />
       <Chip T={T} at={K.Am + 1.4} until={K.Ci - 0.2} texto="stevia: dulce + 2 receptores de amargo" y={1500} tam={34} borde={AMARGO} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="sucralosa = llave del receptor dulce" y={1500} tam={36} borde={KC.pink} />
 

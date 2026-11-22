@@ -1,4 +1,4 @@
-# Shot 003 · Las semillas que viajaron a la Luna (árboles lunares) — DEMO
+# Las semillas que viajaron a la Luna
 
 - **Serie:** Shot (general) · **Tema del logo:** biología · **Badge:** #03 (confirmar numeración con Robert).
 - **Formato:** N1 "Por dentro" + N5 "El experimento" (mezcla del recetario). Gemelo mudo propuesto: M4 "Ciclo" (abajo).

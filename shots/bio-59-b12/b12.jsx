@@ -1,12 +1,17 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #59 · Tu B12 la hicieron bacterias — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (la molécula no es la estructura atómica completa).
 // Vaca y pastizal adaptados de shots/bio-02-vacas/vacas-comun.jsx.
 
-const B12R = '#d7263d', B12R2 = '#a3122a', COBALTO = '#ff4fa3', PASTO_B = '#3fbf4a', PASTO_B2 = '#2a9a3c';
+const B12R = '#d7263d', B12R2 = '#a3122a', COBALTO = '#ff4fa3', PASTO_B = '#3fbf4a', PASTO_B2 = '#2a9a3c', PRADO = '#245e33', PRADO2 = '#173f22';
 
 // Capa SVG de pantalla completa.
 function SvgB({ children, z }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{children}</svg>;
+}
+// Acerca y recoloca un grupo: el punto c (coordenadas originales) queda en a, agrandado k veces.
+function Zm({ c, a, k = 1, children }) {
+  return <g transform={`translate(${a[0]} ${a[1]}) scale(${k}) translate(${-c[0]} ${-c[1]})`}>{children}</g>;
 }
 // Palomita o tache grande.
 function MarcaB({ x, y, ok = true, s = 1, o = 1 }) {
@@ -104,13 +109,13 @@ function VacaB({ T = 0, x = 0, y = 0, s = 1, mastica = 0, brillo = 0 }) {
 }
 function PastizalB({ T, horizonte = 1240 }) {
   return <>
-    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#8fe8ff 0%, #00d2ff 65%, #7fe0c8 100%)' }}></div>
+    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4757 0%, #074257 65%, #284549 100%)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-      <circle cx={920} cy={760} r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
+      <circle cx={930} cy={570} r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
       {[[860, 330, 60], [640, 420, 46]].map(([x, y, r], i) => <g key={i} transform={`translate(${mece(T, i + 4, 0.05) * 30} 0)`}><ellipse cx={x} cy={y} rx={r * 1.5} ry={r * 0.6} fill="#fff" stroke={KC.ink} strokeWidth={6} /></g>)}
-      <rect x={0} y={horizonte} width={KW} height={KH - horizonte} fill={PASTO_B} />
-      <path d={`M0 ${horizonte} Q 270 ${horizonte - 30} 540 ${horizonte} T 1080 ${horizonte}`} fill={PASTO_B} stroke={KC.ink} strokeWidth={8} />
-      {Array.from({ length: 22 }, (_, i) => <path key={i} d={`M ${20 + i * 50} ${horizonte + 220 + (i % 3) * 40} l ${8 + mece(T, i, 0.4) * 6} -34 l ${8 - mece(T, i, 0.4) * 6} 34`} stroke={PASTO_B2} strokeWidth={6} fill="none" />)}
+      <rect x={0} y={horizonte} width={KW} height={KH - horizonte} fill={PRADO} />
+      <path d={`M0 ${horizonte} Q 270 ${horizonte - 30} 540 ${horizonte} T 1080 ${horizonte}`} fill={PRADO} stroke={KC.ink} strokeWidth={8} />
+      {Array.from({ length: 22 }, (_, i) => <path key={i} d={`M ${20 + i * 50} ${horizonte + 120 + (i % 3) * 40} l ${8 + mece(T, i, 0.4) * 6} -34 l ${8 - mece(T, i, 0.4) * 6} 34`} stroke={PRADO2} strokeWidth={6} fill="none" />)}
     </svg>
   </>;
 }
@@ -166,7 +171,7 @@ function PlatoVerde({ x, y, s = 1, T = 0 }) {
 // Matraz de laboratorio que burbujea.
 function Matraz({ x, y, s = 1, T = 0, liquido = KC.cyan }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -50 -260 L -50 -120 L -180 120 Q -190 150 -150 150 L 150 150 Q 190 150 180 120 L 50 -120 L 50 -260" fill="rgba(255,255,255,.5)" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+    <path d="M -50 -260 L -50 -120 L -180 120 Q -190 150 -150 150 L 150 150 Q 190 150 180 120 L 50 -120 L 50 -260" fill="rgba(200,225,255,.2)" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
     <path d="M -120 20 L -180 120 Q -190 150 -150 150 L 150 150 Q 190 150 180 120 L 120 20 Z" fill={liquido} stroke={KC.ink} strokeWidth={6} />
     <rect x={-66} y={-282} width={132} height={30} rx={8} fill="#fff" stroke={KC.ink} strokeWidth={8} />
     {Array.from({ length: 9 }, (_, i) => { const f = (T * 0.7 + i / 9) % 1; return <circle key={i} cx={-90 + (i * 23) % 180 + Math.sin(T * 3 + i) * 6} cy={130 - f * 360} r={8 + (i % 3) * 5} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={3} opacity={1 - f} />; })}
@@ -208,7 +213,7 @@ function Difraccion({ T, t0 }) {
   return <g>
     <rect x={60} y={920} width={200} height={130} rx={20} fill="#9aa3b5" stroke={KC.ink} strokeWidth={8} />
     <rect x={250} y={965} width={50} height={40} fill="#6b7385" stroke={KC.ink} strokeWidth={6} />
-    <text x={160} y={1000} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>RAYOS X</text>
+    <text x={160} y={1000} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#0b1020">RAYOS X</text>
     <path d={`M 300 985 L ${klerp(300, 500, haz)} 985`} stroke={KC.yellow} strokeWidth={18} strokeLinecap="round" opacity={0.8 + Math.sin(T * 20) * 0.2} />
     <g transform={`translate(540 985) rotate(${T * 20})`}>
       <polygon points="0,-44 38,-14 26,36 -26,36 -38,-14" fill={B12R} stroke={KC.ink} strokeWidth={6} />
@@ -282,9 +287,9 @@ function B12() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: la pastilla cae junto al cereal; la planta y el animal se tachan; llegan las bacterias */}
-      <Escena T={T} a={K.G} b={K.N} zoom={0.05} origen="40% 60%">
+      <Escena T={T} a={K.G} b={K.N} zoom={0.05} origen="50% 52%">
         <FondoLunares color={KC.mint} />
-        <SvgB>
+        <SvgB><Zm c={[535, 965]} a={[540, 1000]} k={1.1}>
           <Cereal x={760} y={1110} s={1} T={T} />
           <ellipse cx={360} cy={1100} rx={130 * klerp(0.4, 1, cae)} ry={22} fill="rgba(0,0,0,.18)" />
           <Pastilla x={360} y={pastY} s={1} rot={klerp(-30, 0, cae)} T={T} />
@@ -293,14 +298,14 @@ function B12() {
           <g transform={`translate(440 820) scale(0.26)`}><VacaB T={T} mastica={T * 6} /></g>
           <MarcaB x={500} y={720} ok={false} s={0.8} o={kprog(T, K.G + 2.1, K.G + 2.5)} />
           {anillo(K.G + 3.0, 360, 1060, 1)}
-        </SvgB>
+        </Zm></SvgB>
       </Escena>
       {/* 1 · ningún animal ni planta: solo bacterias y arqueas */}
       <Escena T={T} a={K.N} b={K.V} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgB>
-          <rect x={60} y={640} width={440} height={600} rx={30} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={8} />
-          <rect x={580} y={640} width={440} height={600} rx={30} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={8} />
+          <rect x={60} y={640} width={440} height={600} rx={30} fill="rgba(30,44,70,.8)" stroke={KC.ink} strokeWidth={8} />
+          <rect x={580} y={640} width={440} height={600} rx={30} fill="rgba(30,44,70,.8)" stroke={KC.ink} strokeWidth={8} />
           <text x={280} y={720} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>NO LA HACEN</text>
           <text x={800} y={720} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>SÍ LA HACEN</text>
           <Planta x={170} y={900} s={0.65} T={T} />
@@ -319,35 +324,35 @@ function B12() {
       <Escena T={T} a={K.V} b={K.Ve} zoom={0.03}>
         <PastizalB T={T} />
         <SvgB>
-          <VacaB T={T} x={500} y={1010} s={0.85} mastica={T * 5} brillo={kprog(T, K.V + 0.4, K.V + 1.0) * (1 - kprog(T, V2, V2 + 0.4))} />
+          <VacaB T={T} x={510} y={1030} s={1.0} mastica={T * 5} brillo={kprog(T, K.V + 0.4, K.V + 1.0) * (1 - kprog(T, V2, V2 + 0.4))} />
           {T > V2 && <g>
-            <path d={`M 560 900 Q 760 700 ${klerp(560, 850, kprog(T, V2 + 0.3, V2 + 1.0))} ${klerp(900, 760, kprog(T, V2 + 0.3, V2 + 1.0))}`} stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="20 14" strokeDashoffset={-T * 30} />
+            <path d={`M 580 900 Q 760 700 ${klerp(580, 850, kprog(T, V2 + 0.3, V2 + 1.0))} ${klerp(900, 760, kprog(T, V2 + 0.3, V2 + 1.0))}`} stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="20 14" strokeDashoffset={-T * 30} />
             <g opacity={kprog(T, V2 + 0.9, V2 + 1.3)}><Leche x={880} y={780} s={0.8} /></g>
             <g opacity={kprog(T, V2 + 1.4, V2 + 1.8)}><Bistec x={160} y={720} s={0.9} /></g>
           </g>}
         </SvgB>
-        <Lupa T={T} at={K.V + 0.6} until={V2 + 0.3} x={330} y={560} r={210} fx={420} fy={1010} tinte={KC.yellow}
+        <Lupa T={T} at={K.V + 0.6} until={V2 + 0.3} x={330} y={560} r={210} fx={430} fy={1040} tinte={KC.yellow}
           etiqueta="AL MICROSCOPIO · RUMEN" interior={(t, r) => <RumenB12 T={t} r={r} t0={K.V + 1.2} />} />
       </Escena>
       {/* 4 · si eres vegano */}
       <Escena T={T} a={K.Ve} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        <SvgB>
+        <SvgB><Zm c={[500, 950]} a={[540, 980]} k={1.2}>
           <PlatoVerde x={300} y={1050} s={1} T={T} />
           <g opacity={kprog(T, K.Ve + 1.6, K.Ve + 2.0)} transform={`translate(0 ${(1 - kprog(T, K.Ve + 1.6, K.Ve + 2.1, kEase.sale)) * 80})`}>
             <CajaCereal x={800} y={930} s={0.95} rot={4} />
             <Pastilla x={610} y={760} s={0.6} rot={-8} T={T} />
           </g>
-        </SvgB>
-        <Chip T={T} at={K.Ve + 0.4} until={K.P - 0.3} texto="B12: casi 0" x={300} y={850} tam={44} borde={KC.red} />
-        <Chip T={T} at={K.Ve + 2.0} until={K.P - 0.3} texto="suplemento o fortificados" x={540} y={1520} tam={40} borde={B12R} />
+        </Zm></SvgB>
+        <Chip T={T} at={K.Ve + 0.4} until={K.P - 0.3} texto="B12: casi 0" x={300} y={860} tam={44} borde={KC.red} />
+        <Chip T={T} at={K.Ve + 2.0} until={K.P - 0.3} texto="suplemento o fortificados" x={540} y={1400} tam={40} borde={B12R} />
       </Escena>
       {/* 5 · re-gancho: ¿por qué no con pura química? */}
       <Escena T={T} a={K.P} b={K.M} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         <SvgB>
-          <Matraz x={290} y={1040} s={1} T={T} />
-          <text x={290} y={720} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 290 620)`}>?</text>
+          <Matraz x={420} y={1100} s={1.15} T={T} />
+          <text x={420} y={760} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 420 660)`}>?</text>
         </SvgB>
       </Escena>
       {/* 6 · la molécula por dentro: anillo de corrina con cobalto */}
@@ -355,10 +360,11 @@ function B12() {
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={30} seed={8} color="rgba(159,232,255,.25)" tam={[3, 8]} vel={10} />
         <SvgB>
-          <Corrina T={T} x={540} y={930} s={1.05} p={kprog(T, K.M + 0.2, K.M + 2.2)} co={kprog(T, K.M + 2.2, K.M + 2.7, kEase.rebote)} />
+          <g opacity={0.22}><Corrina T={T} x={540} y={930} s={1.35} p={1} co={0} /></g>
+          <Corrina T={T} x={540} y={930} s={1.35} p={kprog(T, K.M + 0.2, K.M + 2.2)} co={kprog(T, K.M + 2.2, K.M + 2.7, kEase.rebote)} />
         </SvgB>
-        <Etq T={T} at={K.M + 1.0} until={K.H - 0.3} x={60} y={1500} texto="anillo de corrina" tam={42} color="#9fe8ff" />
-        <Etq T={T} at={K.M + 2.4} until={K.H - 0.3} x={1020} y={1580} texto="un átomo de cobalto" lado="izq" tam={42} color={COBALTO} />
+        <Etq T={T} at={K.M + 1.0} until={K.H - 0.3} x={60} y={1425} texto="anillo de corrina" tam={42} color="#9fe8ff" />
+        <Etq T={T} at={K.M + 2.4} until={K.H - 0.3} x={1020} y={1480} texto="un átomo de cobalto" lado="izq" tam={42} color={COBALTO} />
       </Escena>
       {/* 7 · Hodgkin, 1956: rayos X → 8 · Nobel 1964 */}
       <Escena T={T} a={K.H} b={K.S} zoom={0.03}>
@@ -368,57 +374,57 @@ function B12() {
           {T > H2 - 0.1 && <g opacity={kprog(T, H2 - 0.1, H2 + 0.3)} transform={`translate(540 980) scale(${klerp(0.6, 1.2, kprog(T, H2, H2 + 0.6, kEase.rebote))}) translate(-540 -980)`}><Medalla T={T} x={540} y={1000} s={1} /></g>}
         </SvgB>
         <TarjetaEstudio T={T} at={K.H + 0.3} until={H2 - 0.6} anio="1956" quien="Dorothy Hodgkin · Oxford" revista="Nature · su forma, con rayos X" x={400} y={560} />
-        <Chip T={T} at={K.H + 2.6} until={H2 - 0.2} texto="la vitamina más compleja" x={540} y={1520} tam={42} borde={B12R} />
+        <Chip T={T} at={K.H + 2.6} until={H2 - 0.2} texto="la vitamina más compleja" x={540} y={1400} tam={42} borde={B12R} />
       </Escena>
       {/* 9 · 1972: casi cien científicos de 19 países, 11 años → 10 · nunca se usó para producirla */}
       <Escena T={T} a={K.S} b={K.Ta} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         <SvgB>
           {T < S2 + 0.3 && <g opacity={1 - kprog(T, S2 - 0.1, S2 + 0.3)}>
-            <rect x={80} y={640} width={920} height={600} rx={30} fill="rgba(255,255,255,.5)" stroke={KC.ink} strokeWidth={8} />
+            <rect x={80} y={640} width={920} height={600} rx={30} fill="rgba(30,44,70,.8)" stroke={KC.ink} strokeWidth={8} />
             {Array.from({ length: 99 }, (_, i) => { const c = i % 11, f = Math.floor(i / 11); const on = i < cient;
               return <Persona key={i} x={145 + c * 79} y={720 + f * 60} s={0.9} color={on ? coloresPais[i % 19] : 'rgba(255,255,255,.4)'} o={on ? 1 : 0.35} />; })}
           </g>}
-          {T > S2 - 0.1 && <g opacity={kprog(T, S2 - 0.1, S2 + 0.3)}><TiraPasos T={T} t0={S2} y={960} /></g>}
+          {T > S2 - 0.1 && <g opacity={kprog(T, S2 - 0.1, S2 + 0.3)}><Zm c={[540, 960]} a={[540, 940]} k={1.4}><TiraPasos T={T} t0={S2} y={960} /></Zm></g>}
         </SvgB>
-        {T < S2 && <Contador T={T} at={K.S + 0.6} hasta={99} dur={3} x={540} y={1490} tam={70} color={KC.texto} sufijo=" científicos" />}
+        {T < S2 && <Contador T={T} at={K.S + 0.6} hasta={99} dur={3} x={540} y={1320} tam={70} color={KC.texto} sufijo=" científicos" />}
         <Chip T={T} at={K.S + 1.2} until={S2 - 0.2} texto="Harvard + ETH Zúrich" x={340} y={560} tam={36} borde={KC.blue} />
-        <Chip T={T} at={K.S + 2.6} until={S2 - 0.2} texto="19 países · 11 años" x={540} y={1600} tam={44} borde={KC.blue} />
-        <MitoTachado T={T} at={S2 + 0.4} tacharEn={S2 + 1.8} until={K.Ta - 0.2} texto="B12 hecha con pura química" x={540} y={1520} tam={40} />
+        <Chip T={T} at={K.S + 2.6} until={S2 - 0.2} texto="19 países · 11 años" x={540} y={1430} tam={44} borde={KC.blue} />
+        <MitoTachado T={T} at={S2 + 0.4} tacharEn={S2 + 1.8} until={K.Ta - 0.2} texto="B12 hecha con pura química" x={540} y={1230} tam={40} />
       </Escena>
       {/* 11 · hoy: tanques de fermentación con bacterias */}
       <Escena T={T} a={K.Ta} b={K.Q} zoom={0.03}>
-        <MundoBiorreactor T={T} turbio={0.6} burbujas={1} rpm={90} fondo={KC.cyan} />
+        <MundoBiorreactor T={T} turbio={0.6} burbujas={1} rpm={90} fondo="#12303a" />
         <Lupa T={T} at={K.Ta + 0.8} until={K.Q - 0.2} x={330} y={560} r={190} fx={540} fy={1010} tinte={KC.mint}
           etiqueta="AL MICROSCOPIO · CALDO" interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#1d1a10" />
             {Array.from({ length: 7 }, (_, i) => { const gx = 60 + (i * 97) % (r * 2 - 100), gy = 70 + (i * 61) % (r * 2 - 120);
               return <g key={i}><Bacteria T={t} x={gx + mece(t, i, 0.3) * 10} y={gy} largo={80} ancho={32} rot={i * 50 + t * 10} color={i % 2 ? KC.mint : KC.lilac} seed={i} flagelo={false} nucleoide={false} />
                 <B12Mini x={gx + 30} y={gy - 30 - ((t * 40 + i * 20) % 60)} s={0.6} rot={t * 50} o={0.9} /></g>; })}</svg>} />
-        <Chip T={T} at={K.Ta + 1.8} until={K.Q - 0.2} texto={<i>Pseudomonas denitrificans</i>} x={540} y={1510} tam={36} borde={KC.mint} />
-        <Chip T={T} at={K.Ta + 2.6} until={K.Q - 0.2} texto={<i>Propionibacterium freudenreichii</i>} x={540} y={1610} tam={36} borde={KC.lilac} />
+        <Chip T={T} at={K.Ta + 1.8} until={K.Q - 0.2} texto={<i>Pseudomonas denitrificans</i>} x={540} y={255} tam={36} borde={KC.mint} />
+        <Chip T={T} at={K.Ta + 2.6} until={K.Q - 0.2} texto={<i>Propionibacterium freudenreichii</i>} x={540} y={330} tam={36} borde={KC.lilac} />
       </Escena>
       {/* 12 · el queso suizo */}
       <Escena T={T} a={K.Q} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgB><QuesoSuizo T={T} x={780} y={950} s={0.85} t0={K.Q} /></SvgB>
-        <Chip T={T} at={K.Q + 1.6} until={K.C - 0.2} texto={<i>Propionibacterium freudenreichii</i>} x={540} y={1520} tam={36} borde={KC.lilac} />
+        <SvgB><QuesoSuizo T={T} x={560} y={990} s={1.25} t0={K.Q} /></SvgB>
+        <Chip T={T} at={K.Q + 1.6} until={K.C - 0.2} texto={<i>Propionibacterium freudenreichii</i>} x={540} y={1420} tam={36} borde={KC.lilac} />
       </Escena>
       {/* 13 · cierre: la pastilla del inicio, ahora con su bacteria */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgB>
+        <SvgB><Zm c={[535, 965]} a={[540, 1000]} k={1.1}>
           <Cereal x={760} y={1110} s={1} T={T} />
           <ellipse cx={360} cy={1100} rx={130} ry={22} fill="rgba(0,0,0,.18)" />
           <Pastilla x={360} y={1060} s={1.15} T={T} bacteria={kprog(T, K.C + 0.8, K.C + 1.4)} />
           {anillo(K.C + 0.3, 360, 1060, 1.1)}
-        </SvgB>
-        <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="hecha por bacterias" x={540} y={1520} tam={44} borde={KC.mint} />
+        </Zm></SvgB>
+        <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="hecha por bacterias" x={540} y={1440} tam={44} borde={KC.mint} />
       </Escena>
 
-      <Chip T={T} at={K.G + 0.6} until={K.N - 0.3} texto="vitamina B12 · cobalamina" x={330} y={1520} tam={38} borde={B12R} />
-      <Chip T={T} at={K.N + 1.4} until={K.V - 0.3} texto="solo bacterias y arqueas" x={540} y={1520} tam={42} borde={KC.mint} />
-      <Chip T={T} at={K.V + 1.2} until={V2 - 0.2} texto="la arman sus microbios" x={540} y={1520} tam={42} borde={KC.yellow} />
-      <Chip T={T} at={V2 + 0.8} until={K.Ve - 0.2} texto="origen: microbios" x={540} y={1520} tam={44} borde={KC.yellow} />
+      <Chip T={T} at={K.G + 0.6} until={K.N - 0.3} texto="vitamina B12 · cobalamina" x={540} y={1440} tam={38} borde={B12R} />
+      <Chip T={T} at={K.N + 1.4} until={K.V - 0.3} texto="solo bacterias y arqueas" x={540} y={1330} tam={42} borde={KC.mint} />
+      <Chip T={T} at={K.V + 1.2} until={V2 - 0.2} texto="la arman sus microbios" x={540} y={1440} tam={42} borde={KC.yellow} />
+      <Chip T={T} at={V2 + 0.8} until={K.Ve - 0.2} texto="origen: microbios" x={540} y={1440} tam={44} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="No la hizo una planta: *la hicieron bacterias.*" />

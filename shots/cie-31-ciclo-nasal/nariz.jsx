@@ -146,7 +146,7 @@ function Nariz() {
   // La cara llena el cuadro en el gancho y el cierre (NS 1.25); en la prueba y los cornetes se aleja un poco para dejar
   // sitio a los medidores. El cambio es continuo para que la disolvencia entre escenas no duplique la cara.
   const pz = nzSw(T, K.Prueba - 0.5, K.Prueba + 0.5) * (T < K.Cierre - 1 ? 1 : 0);
-  const NS = klerp(1.25, 1.02, pz), NY = klerp(1100, 930, pz);
+  const NS = klerp(1.25, 1.02, pz), NY = klerp(1100, 1040, pz);
   // gancho: el lado grueso se intercambia
   const gL = 1 - nzSw(T, 2.6, 3.7) + nzSw(T, 5.4, 6.4);
   // prueba: tapa un lado (dedo izq.) y luego el otro (dedo der.)
@@ -191,10 +191,10 @@ function Nariz() {
       <Escena T={T} a={K.Cornetes} b={K.Turno} zoom={0.06} origen="50% 40%">
         <FondoLunares color={KC.pink} />
         <Lienzo><NarizGrande T={T} x={NX} y={NY} s={NS} largo={NL} fl={0.4} fr={0.4} /></Lienzo>
-        <Lupa T={T} at={K.Cornetes + 0.1} until={K.Turno + 0.3} x={540} y={800} r={400} fx={540} fy={910} tinte={KC.cyan}
+        <Lupa T={T} at={K.Cornetes + 0.1} until={K.Turno + 0.3} x={540} y={930} r={420} fx={540} fy={1020} tinte={KC.cyan}
           etiqueta="POR DENTRO · NARIZ" interior={corte(0.25 + 0.5 * (0.5 + 0.5 * Math.sin((T - K.Cornetes) * 2.2)), 0.25 + 0.5 * (0.5 + 0.5 * Math.sin((T - K.Cornetes) * 2.2)))} />
-        <Etq T={T} at={K.Cornetes + 1.2} until={K.Turno - 0.1} x={335} y={822} texto="cornetes" lado="izq" color={KC.texto} tam={36} />
-        <Chip T={T} at={K.Cornetes + 2.4} until={K.Turno - 0.1} texto="tejido que se llena de sangre" x={540} y={1340} tam={40} borde={NZ_SANGRE} />
+        <Etq T={T} at={K.Cornetes + 1.2} until={K.Turno - 0.1} x={325} y={952} texto="cornetes" lado="izq" color={KC.texto} tam={36} />
+        <Chip T={T} at={K.Cornetes + 2.4} until={K.Turno - 0.1} texto="tejido que se llena de sangre" x={540} y={1490} tam={40} borde={NZ_SANGRE} />
       </Escena>
       {/* 3 · el turno: un lado se hincha y el otro se deshincha */}
       <Escena T={T} a={K.Turno} b={K.Ciclo} zoom={0.03}>

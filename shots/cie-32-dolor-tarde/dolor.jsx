@@ -191,7 +191,7 @@ function Dolor() {
       <Escena T={T} a={K.Velocidad} b={K.Distancia} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          {[[670, DL_RAP, 'rápida', (t) => ((t - K.Velocidad - 0.4) * 1.4) % 1, true], [1190, DL_LEN, 'lenta', (t) => kprog(t, K.Velocidad + 3.0, K.Distancia + 1, (p) => p) * 0.9, false]].map(([y, c, nom, f, forro], i) => {
+          {[[900, DL_RAP, 'rápida', (t) => ((t - K.Velocidad - 0.4) * 1.4) % 1, true], [1420, DL_LEN, 'lenta', (t) => kprog(t, K.Velocidad + 3.0, K.Distancia + 1, (p) => p) * 0.9, false]].map(([y, c, nom, f, forro], i) => {
             const p = f(T), on = i === 0 ? T > K.Velocidad + 0.4 : T > K.Velocidad + 3.0;
             return <g key={i} opacity={kprog(T, K.Velocidad + 0.2, K.Velocidad + 0.5) * (i ? 0.4 + 0.6 * kprog(T, K.Velocidad + 2.8, K.Velocidad + 3.1) : 1)}>
               <rect x={60} y={y - 115} width={960} height={230} rx={56} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
@@ -199,14 +199,14 @@ function Dolor() {
               <text x={104} y={y - 66} style={{ font:`900 38px ${KF.texto}` }} fill={c}>{nom}</text>
             </g>; })}
         </Lienzo>
-        <MedidorG T={T} at={K.Velocidad + 0.2} until={K.Distancia - 0.15} v={kprog(T, K.Velocidad + 0.4, K.Velocidad + 0.9, kEase.sale)} etiqueta="con forro" valor="hasta decenas de m/s" y={390} color={DL_RAP} />
-        <MedidorG T={T} at={K.Velocidad + 2.8} until={K.Distancia - 0.15} v={0.07 * kprog(T, K.Velocidad + 3.0, K.Velocidad + 5.0)} etiqueta="sin forro" valor="≈ 2 m/s o menos" y={910} color={DL_LEN} />
+        <MedidorG T={T} at={K.Velocidad + 0.2} until={K.Distancia - 0.15} v={kprog(T, K.Velocidad + 0.4, K.Velocidad + 0.9, kEase.sale)} etiqueta="con forro" valor="hasta decenas de m/s" y={620} color={DL_RAP} />
+        <MedidorG T={T} at={K.Velocidad + 2.8} until={K.Distancia - 0.15} v={0.07 * kprog(T, K.Velocidad + 3.0, K.Velocidad + 5.0)} etiqueta="sin forro" valor="≈ 2 m/s o menos" y={1140} color={DL_LEN} />
       </Escena>
       {/* 5 · del dedo al cerebro hay más de un metro */}
       <Escena T={T} a={K.Distancia} b={K.Pregunta} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <DZ k={1.2} de={[540, 760]} a={[536, 850]}>
+          <DZ k={1.2} de={[540, 760]} a={[536, 990]}>
           {(() => { const R = [[468, 1178], [455, 860], [425, 820], [420, 480], [420, 400]], p = kprog(T, K.Distancia + 0.3, K.Distancia + 2.3, kEase.suave), q = dlPunto(R, p);
             return <g>
               <PersonaSimple x={420} yPies={1190} alto={860} color={KC.pink} cara="normal" />
@@ -221,20 +221,20 @@ function Dolor() {
               {Array.from({ length: Math.floor((1180 - yT) / 42) }, (_, i) => <line key={i} x1={690} y1={1180 - i * 42} x2={690 + (i % 5 ? 22 : 40)} y2={1180 - i * 42} stroke={KC.ink} strokeWidth={4} />)}
             </g>; })()}
           </DZ>
-          {T > K.Distancia + 2.5 && <g transform={`translate(909 800) scale(${klerp(0.4, 1, kprog(T, K.Distancia + 2.5, K.Distancia + 2.9, kEase.rebote))})`}>
+          {T > K.Distancia + 2.5 && <g transform={`translate(909 940) scale(${klerp(0.4, 1, kprog(T, K.Distancia + 2.5, K.Distancia + 2.9, kEase.rebote))})`}>
             <TextoSvg x={0} y={0} tam={76} color={KC.yellow}>MÁS DE</TextoSvg>
             <TextoSvg x={0} y={114} tam={128} color={KC.yellow}>1 M</TextoSvg>
           </g>}
         </Lienzo>
-        <Etq T={T} at={K.Distancia + 0.4} until={K.Pregunta - 0.15} x={488} y={1318} texto="dedo" tam={30} lado="der" color={KC.texto} />
-        <Etq T={T} at={K.Distancia + 1.2} until={K.Pregunta - 0.15} x={284} y={706} texto="médula" tam={30} lado="izq" color={KC.texto} />
-        <Etq T={T} at={K.Distancia + 2.1} until={K.Pregunta - 0.15} x={284} y={406} texto="cerebro" tam={30} lado="izq" color={KC.texto} />
+        <Etq T={T} at={K.Distancia + 0.4} until={K.Pregunta - 0.15} x={488} y={1458} texto="dedo" tam={30} lado="der" color={KC.texto} />
+        <Etq T={T} at={K.Distancia + 1.2} until={K.Pregunta - 0.15} x={284} y={846} texto="médula" tam={30} lado="izq" color={KC.texto} />
+        <Etq T={T} at={K.Distancia + 2.1} until={K.Pregunta - 0.15} x={284} y={546} texto="cerebro" tam={30} lado="izq" color={KC.texto} />
       </Escena>
       {/* 6 · ¿por qué no sientes todo junto? */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Primer} color={KC.orange} />
       <Escena T={T} a={K.Pregunta} b={K.Primer} zoom={0}>
         <Lienzo>
-          {[DL_RAP, DL_LEN].map((c, i) => { const a = T * 3 + i * Math.PI; return <Senal key={i} x={330 + Math.cos(a) * 260} y={880 + Math.sin(a) * 150} color={c} r={26} />; })}
+          {[DL_RAP, DL_LEN].map((c, i) => { const a = T * 3 + i * Math.PI; return <Senal key={i} x={330 + Math.cos(a) * 260} y={1020 + Math.sin(a) * 150} color={c} r={26} />; })}
         </Lienzo>
       </Escena>
       {/* 7 · la carrera: primero llega la azul, después la roja (como rayo y trueno) */}
@@ -242,7 +242,7 @@ function Dolor() {
         <FondoLunares color={KC.cyan} />
         {(() => { const x0 = 281, x1 = 756, pR = kprog(T, K.Primer + 0.3, K.Primer + 1.0, kEase.suave), pL = kprog(T, K.Primer + 0.9, K.Primer + 4.2, (p) => p);
           const llegaR = K.Primer + 1.0, llegaL = K.Primer + 4.2, br = destelloD(T, llegaR) + destelloD(T, llegaL);
-          return <Lienzo>
+          return <Lienzo><g transform="translate(0 160)">
             <DefsDolor />
             {[[770, DL_RAP, pR, 'rápida', true], [1040, DL_LEN, pL, 'lenta', false]].map(([y, c, p, nom, forro], i) => <g key={i}>
               <rect x={225} y={y - 82} width={575} height={164} rx={82} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
@@ -261,7 +261,7 @@ function Dolor() {
               </DZ>
             </g>}
             <Onomato T={T} at={K.Primer + 5.2} dur={1.2} x={800} y={545} texto="¡BRRUM!" tam={112} color={KC.yellow} />
-          </Lienzo>; })()}
+          </g></Lienzo>; })()}
       </Escena>
       {/* 8 · sobarte ayuda un poco: compuerta en la médula (teoría de 1965) */}
       <Escena T={T} a={K.Sobar} b={K.Cierre} fondo={KC.pink}>

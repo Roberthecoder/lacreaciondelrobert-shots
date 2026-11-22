@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #50 · Detrás de tu IA hay personas etiquetando — NARRADO (N2 "El número" + N4 "La imagen que se llena").
 // Datos: Russakovsky et al., IJCV 2015 (ImageNet, agosto de 2014) y Perrigo, TIME, 18 ene 2023 (Sama/OpenAI en Kenia). Ver guion.md y verificacion.md.
 const PIEL = '#c98b5e', PIEL2 = '#a86d45';
@@ -150,9 +151,9 @@ function Nutria({ x, y, s = 1, T = 0 }) {
   </g>;
 }
 // Tarjeta con un animal, su cuadrito y una etiqueta con duda.
-function TarjetaAnimal({ x, y, T, e, caja, etq, texto, animal, color }) {
+function TarjetaAnimal({ x, y, T, e, caja, etq, texto, animal, color, s = 1 }) {
   if (e <= 0) return null;
-  return <g transform={`translate(${x} ${y}) scale(${klerp(0.7, 1, e)}) rotate(${animal === 'foca' ? -3 : 3})`} opacity={Math.min(1, e * 2)}>
+  return <g transform={`translate(${x} ${y}) scale(${klerp(0.7, 1, e) * s}) rotate(${animal === 'foca' ? -3 : 3})`} opacity={Math.min(1, e * 2)}>
     <rect x={-235} y={-230} width={470} height={460} rx={18} fill="#fffdf6" stroke={KC.ink} strokeWidth={8} />
     <rect x={-210} y={-205} width={420} height={410} fill={color} stroke={KC.ink} strokeWidth={5} />
     {animal === 'foca' ? <Foca x={-10} y={-10} s={0.9} T={T} /> : <Nutria x={30} y={20} s={0.88} T={T} />}
@@ -227,7 +228,7 @@ function Balanza({ T, x, y, s = 1, izq, der, inclina = 0 }) {
   const plato = (px, py, txt, col) => <g transform={`translate(${px} ${py})`}>
     <line x1={0} y1={0} x2={-110} y2={150} stroke={KC.ink} strokeWidth={5} /><line x1={0} y1={0} x2={110} y2={150} stroke={KC.ink} strokeWidth={5} />
     <path d="M -150 150 L 150 150 Q 120 200 0 200 Q -120 200 -150 150 Z" fill={col} stroke={KC.ink} strokeWidth={7} />
-    <foreignObject x={-150} y={210} width={300} height={140}><div style={{ font:`900 34px/1.1 ${KF.texto}`, color:KC.ink, textAlign:'center', background:'rgba(255,255,255,.85)', border:`4px solid ${KC.ink}`, borderRadius:16, padding:'8px 6px' }}>{txt}</div></foreignObject>
+    <foreignObject x={-150} y={210} width={300} height={140}><div style={{ font:`900 34px/1.1 ${KF.texto}`, color:'#0b1020', textAlign:'center', background:'rgba(255,255,255,.85)', border:`4px solid ${KC.ink}`, borderRadius:16, padding:'8px 6px' }}>{txt}</div></foreignObject>
   </g>;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M -90 420 L 90 420 L 40 380 L -40 380 Z" fill="#8a6a3a" stroke={KC.ink} strokeWidth={7} />
@@ -258,7 +259,7 @@ function Etiquetadores() {
     return { i, u, gato: i % 2 === 0, o: u <= 0 ? 0 : u < 0.85 ? 1 : 1 - (u - 0.85) / 0.15 }; });
   // textos tóxicos que chocan con el escudo
   const tox = [0, 1, 2].map((i) => { const t0 = K.D + 0.9 + i * 1.2, u = kprog(T, t0, t0 + 0.6, kEase.entra || ((p) => p * p)), reb = kprog(T, t0 + 0.6, t0 + 1.1, kEase.sale);
-    return { i, t0, x: klerp(1160, 930, u) + reb * 220, y: 620 + i * 170 + reb * -60, o: T < t0 ? 0 : 1 - reb, rot: reb * 40 }; });
+    return { i, t0, x: klerp(1180, 950, u) + reb * 220, y: 770 + i * 190 + reb * -60, o: T < t0 ? 0 : 1 - reb, rot: reb * 40 }; });
   const ultimoGolpe = tox.reduce((g, t) => (T >= t.t0 + 0.6 ? T - (t.t0 + 0.6) : g), 0);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -266,105 +267,108 @@ function Etiquetadores() {
       <Escena T={T} a={K.G} b={K.E}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <g opacity={kprog(T, K.G + 1.6, K.G + 2.2)}><Persona x={800} y={880} s={0.85} T={T} saluda={0} /></g>
-          <FotoGato x={330} y={800} s={1} T={T} caja={kprog(T, K.G + 0.1, K.G + 1.3, kEase.suave)} etq={kprog(T, K.G + 1.3, K.G + 1.6, kEase.sale)} marcador />
+          <g opacity={kprog(T, K.G + 1.6, K.G + 2.2)}><Persona x={810} y={1010} s={1.0} T={T} saluda={0} /></g>
+          <FotoGato x={390} y={900} s={1.25} T={T} caja={kprog(T, K.G + 0.1, K.G + 1.3, kEase.suave)} etq={kprog(T, K.G + 1.3, K.G + 1.6, kEase.sale)} marcador />
         </>)}
       </Escena>
       {/* 2 · aprender con ejemplos etiquetados */}
       <Escena T={T} a={K.E} b={K.I}>
         <FondoLunares color={KC.mint} />
-        <RedNeuronal T={T} x={440} y={640} ancho={560} alto={440} capas={[4, 5, 5, 3]} onda={((T - K.E) * 0.6) % 1} color={KC.ink} acento={KC.yellow} />
-        {svg(<>{ejemplos.map((e) => e.o > 0 && <g key={e.i} transform={`translate(${klerp(160, 440, e.u)} ${klerp(700 + (e.i % 3) * 150, 860, e.u)}) scale(${klerp(1, 0.4, e.u)})`} opacity={e.o}>
+        <RedNeuronal T={T} x={380} y={700} ancho={620} alto={560} capas={[4, 5, 5, 3]} onda={((T - K.E) * 0.6) % 1} color={KC.ink} acento={KC.yellow} />
+        {svg(<>{ejemplos.map((e) => e.o > 0 && <g key={e.i} transform={`translate(${klerp(170, 380, e.u)} ${klerp(820 + (e.i % 3) * 160, 980, e.u)}) scale(${klerp(1.2, 0.45, e.u)})`} opacity={e.o}>
           <rect x={-110} y={-60} width={220} height={120} rx={14} fill="#fffdf6" stroke={KC.ink} strokeWidth={6} />
           <g transform="translate(-55 0)"><Icono tipo={e.gato ? 0 : [1, 4, 2][e.i % 3]} s={1.4} /></g>
           <text x={45} y={14} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={e.gato ? KC.leaf : KC.red}>{e.gato ? 'gato' : 'no'}</text>
         </g>)}</>)}
       </Escena>
-      <Chip T={T} at={K.E + 0.3} until={K.I - 0.2} texto="miles de ejemplos etiquetados" x={540} y={1120} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.E + 0.3} until={K.I - 0.2} texto="miles de ejemplos etiquetados" x={540} y={1360} tam={36} borde={KC.ink} />
       {/* 3 · ImageNet: más de 14 millones */}
       <Escena T={T} a={K.I} b={K.V}>
         <FondoLunares color={KC.cyan} />
-        <Miniaturas T={T} at={K.I + 1.2} dur={4.2} />
+        <Miniaturas T={T} at={K.I + 1.2} dur={4.2} x={74} y={790} w={108} h={88} gx={10} gy={14} />
       </Escena>
-      <NumeroGigante T={T} at={K.I + 0.1} until={K.V - 0.2} valor={14197122} dur={1.6} etiqueta="imágenes en ImageNet" x={540} y={470} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.I + 1.0} until={K.V - 0.2} texto="verificadas por personas · agosto de 2014" x={540} y={620} tam={32} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.I + 0.1} until={K.V - 0.2} valor={14197122} dur={1.6} etiqueta="imágenes en ImageNet" x={540} y={560} tam={150} color={KC.yellow} />
+      <Chip T={T} at={K.I + 1.0} until={K.V - 0.2} texto="verificadas por personas · agosto de 2014" x={540} y={700} tam={32} borde={KC.ink} />
       {/* 4 · varias personas votan cada foto (gato birmano) */}
       <Escena T={T} a={K.V} b={V2}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <FotoGato x={320} y={720} s={0.8} T={T} tipo="birmano" caja={kprog(T, K.V + 0.2, K.V + 1.0, kEase.suave)} etq={sube(K.V + 1.0, 0.3)} texto="gato birmano" rot={2} />
-          {[0, 1, 2, 3, 4].map((i) => <Voto key={i} x={140 + i * 180} y={1040} e={sube(K.V + 1.6 + i * 0.5, 0.35)} playera={[KC.pink, KC.orange, KC.cyan, KC.yellow, KC.mint][i]} seed={i + 2} />)}
+          <FotoGato x={540} y={830} s={1.05} T={T} tipo="birmano" caja={kprog(T, K.V + 0.2, K.V + 1.0, kEase.suave)} etq={sube(K.V + 1.0, 0.3)} texto="gato birmano" rot={2} />
+          {[0, 1, 2, 3, 4].map((i) => <Voto key={i} x={140 + i * 200} y={1330} e={sube(K.V + 1.6 + i * 0.5, 0.35)} playera={[KC.pink, KC.orange, KC.cyan, KC.yellow, KC.mint][i]} seed={i + 2} />)}
         </>)}
       </Escena>
-      <Chip T={T} at={K.V + 1.6} until={V2 - 0.2} texto={`votos: ${Math.min(5, Math.max(0, Math.floor((T - K.V - 1.6) / 0.5) + 1))}`} x={800} y={820} tam={44} borde={KC.leaf} />
+      <Chip T={T} at={K.V + 1.6} until={V2 - 0.2} texto={`votos: ${Math.min(5, Math.max(0, Math.floor((T - K.V - 1.6) / 0.5) + 1))}`} x={540} y={440} tam={44} borde={KC.leaf} />
       {/* 4b · al dibujar cuadritos: foca o nutria marina */}
       <Escena T={T} a={V2} b={K.P}>
         <FondoLunares color={KC.teal} />
         {svg(<>
-          <TarjetaAnimal x={290} y={820} T={T} e={sube(V2 + 0.1)} caja={kprog(T, V2 + 0.3, V2 + 1.0, kEase.suave)} etq={sube(V2 + 1.0, 0.3)} texto="¿nutria marina?" animal="foca" color="#bfe9ff" />
-          <TarjetaAnimal x={790} y={900} T={T} e={sube(V2 + 0.6)} caja={kprog(T, V2 + 0.8, V2 + 1.5, kEase.suave)} etq={sube(V2 + 1.5, 0.3)} texto="¿foca?" animal="nutria" color="#9fd8ff" />
+          <TarjetaAnimal x={420} y={730} s={1.1} T={T} e={sube(V2 + 0.1)} caja={kprog(T, V2 + 0.3, V2 + 1.0, kEase.suave)} etq={sube(V2 + 1.0, 0.3)} texto="¿nutria marina?" animal="foca" color="#bfe9ff" />
+          <TarjetaAnimal x={660} y={1220} s={1.1} T={T} e={sube(V2 + 0.6)} caja={kprog(T, V2 + 0.8, V2 + 1.5, kEase.suave)} etq={sube(V2 + 1.5, 0.3)} texto="¿foca?" animal="nutria" color="#9fd8ff" />
         </>)}
       </Escena>
-      <Chip T={T} at={V2 + 2.0} until={K.P - 0.2} texto="foca  ↔  nutria marina" x={540} y={470} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={V2 + 2.0} until={K.P - 0.2} texto="foca  ↔  nutria marina" x={540} y={380} tam={40} borde={KC.yellow} />
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Ke} zoom={0.1}>
         <FondoLunares color={KC.orange} punto="rgba(0,0,0,.08)" />
-        {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
+        {svg(<><g opacity={0.9}><Persona x={540} y={1060} s={1.4} T={T} /></g>
+          <text x={540} y={860} textAnchor="middle" style={{ font:`400 460px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 690)`}>?</text></>)}
       </Escena>
       {/* 6 · Kenia: unas tres docenas de personas */}
       <Escena T={T} a={K.Ke} b={K.D}>
         <FondoLunares color={KC.pink} punto="rgba(255,255,255,.25)" />
         <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, K.Ke + 2.8, K.Ke + 3.3) }}>
-          {svg(<Africa x={290} y={420} s={1.0} T={T} pin={sube(K.Ke + 0.6, 0.5)} />)}
+          {svg(<Africa x={165} y={540} s={1.5} T={T} pin={sube(K.Ke + 0.6, 0.5)} />)}
         </div>
-        <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.Ke + 3.0, K.Ke + 3.4) }}><Equipos T={T} at={K.Ke + 3.0} /></div>
+        <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.Ke + 3.0, K.Ke + 3.4) }}><Equipos T={T} at={K.Ke + 3.0} y={770} /></div>
       </Escena>
-      <Chip T={T} at={K.Ke + 1.1} until={K.Ke + 3.0} texto="Nairobi, Kenia · desde nov. 2021" x={540} y={1060} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.Ke + 3.4} until={K.D - 0.2} texto="unas 3 docenas · 3 equipos" x={540} y={420} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.Ke + 4.6} until={K.D - 0.2} texto="vía Sama, empresa contratista" x={540} y={1130} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Ke + 1.1} until={K.Ke + 3.0} texto="Nairobi, Kenia · desde nov. 2021" x={540} y={1430} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Ke + 3.4} until={K.D - 0.2} texto="unas 3 docenas · 3 equipos" x={540} y={600} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Ke + 4.6} until={K.D - 0.2} texto="vía Sama, empresa contratista" x={540} y={1320} tam={32} borde={KC.ink} />
       {/* 7 · el detector dentro de ChatGPT (por dentro de la máquina) */}
       <Escena T={T} a={K.D} b={K.Pa}>
         <FondoCircuito T={T} />
-        <CelularChat T={T} x={520} y={800} s={0.62} tam={46} mensajes={[{ at: K.D + 0.4, yo: true, texto: 'Hola 👋' }, { at: K.D + 1.0, yo: false, texto: '¡Hola! ¿En qué te ayudo?' }]} />
+        <CelularChat T={T} x={460} y={960} s={0.85} tam={46} mensajes={[{ at: K.D + 0.4, yo: true, texto: 'Hola 👋' }, { at: K.D + 1.0, yo: false, texto: '¡Hola! ¿En qué te ayudo?' }]} />
         {svg(<>
-          <Escudo x={860} y={800} s={0.9} T={T} golpe={ultimoGolpe} />
+          <Escudo x={850} y={960} s={1.2} T={T} golpe={ultimoGolpe} />
           {tox.map((t) => t.o > 0 && <Toxico key={t.i} x={t.x} y={t.y} o={t.o} rot={t.rot} />)}
         </>)}
       </Escena>
-      <Chip T={T} at={K.D + 0.6} until={K.Pa - 0.2} texto="detector de contenido tóxico · según OpenAI" x={540} y={1150} tam={30} borde={KC.mint} />
+      <Chip T={T} at={K.D + 0.6} until={K.Pa - 0.2} texto="detector de contenido tóxico · según OpenAI" x={540} y={1460} tam={30} borde={KC.mint} />
       {/* 8 · la paga, según TIME */}
       <Escena T={T} a={K.Pa} b={K.To}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
+        {svg(<Persona x={300} y={1000} s={1.25} T={T} />)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.Pa + 0.1} until={K.Pa + 2.4} anio="2023" quien="revista TIME" revista="Billy Perrigo · 18 ene 2023" y={700} />
-      {T > K.Pa + 2.5 && T < K.To + 0.5 && <div style={{ position:'absolute', left:0, right:0, top:760, zIndex:41, textAlign:'center', transform:`translateY(-50%) scale(${kentrada(T, K.Pa + 2.5, K.To - 0.2, 'pop').s})`, opacity:kentrada(T, K.Pa + 2.5, K.To - 0.2, 'pop').o }}>
+      <TarjetaEstudio T={T} at={K.Pa + 0.1} until={K.Pa + 2.4} anio="2023" quien="revista TIME" revista="Billy Perrigo · 18 ene 2023" y={680} />
+      {T > K.Pa + 2.5 && T < K.To + 0.5 && <div style={{ position:'absolute', left:0, right:0, top:700, zIndex:41, textAlign:'center', transform:`translateY(-50%) scale(${kentrada(T, K.Pa + 2.5, K.To - 0.2, 'pop').s})`, opacity:kentrada(T, K.Pa + 2.5, K.To - 0.2, 'pop').o }}>
         <div style={{ font:`900 44px ${KF.texto}`, color:KC.ink, marginBottom:6 }}>sueldo neto, según TIME</div>
         <div style={{ font:`400 190px/0.95 ${KF.titulo}`, color:KC.red, WebkitTextStroke:`6px ${KC.ink}`, textShadow:`8px 8px 0 ${KC.ink}` }}>1.32–2</div>
         <div style={{ font:`900 54px ${KF.texto}`, color:KC.ink, marginTop:6 }}>dólares por hora</div>
       </div>}
-      <Chip T={T} at={K.Pa + 3.4} until={K.To - 0.2} texto="Sama dice: 1.46–3.74 USD/h" x={540} y={1070} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Pa + 3.4} until={K.To - 0.2} texto="Sama dice: 1.46–3.74 USD/h" x={540} y={420} tam={36} borde={KC.ink} />
       {/* 9 · «tortura» y el contrato cortado */}
       <Escena T={T} a={K.To} b={K.B}>
         <FondoLunares color={KC.coral} punto="rgba(255,255,255,.25)" />
+        {svg(<Persona x={300} y={1000} s={1.25} T={T} />)}
       </Escena>
-      <Cita T={T} at={K.To + 0.2} until={K.B - 0.2} y={430} texto="«That was torture.»" quien="«Eso fue tortura», dijo un trabajador de Sama a TIME (2023)" />
-      <Calendario T={T} at={K.To + 1.4} until={K.B - 0.2} x={600} y={620} />
-      <Chip T={T} at={K.To + 2.6} until={K.B - 0.2} texto="se canceló en feb. · 8 meses antes" x={800} y={1150} tam={30} borde={KC.ink} />
+      <Cita T={T} at={K.To + 0.2} until={K.B - 0.2} y={400} texto="«That was torture.»" quien="«Eso fue tortura», dijo un trabajador de Sama a TIME (2023)" />
+      <Calendario T={T} at={K.To + 1.4} until={K.B - 0.2} x={590} y={600} />
+      <Chip T={T} at={K.To + 2.6} until={K.B - 0.2} texto="se canceló en feb. · 8 meses antes" x={790} y={1160} tam={30} borde={KC.ink} />
       {/* 10 · balance */}
       <Escena T={T} a={K.B} b={K.C}>
         <FondoLunares color={KC.lilac} />
-        {svg(<Balanza T={T} x={540} y={660} s={1} izq="IA más segura (OpenAI)" der="paga baja y trauma (TIME)" inclina={Math.sin(Math.min(1, (T - K.B) / 2.5) * Math.PI * 2) * (1 - kprog(T, K.B, K.B + 3))} />)}
+        {svg(<Balanza T={T} x={540} y={740} s={1.15} izq="IA más segura (OpenAI)" der="paga baja y trauma (TIME)" inclina={Math.sin(Math.min(1, (T - K.B) / 2.5) * Math.PI * 2) * (1 - kprog(T, K.B, K.B + 3))} />)}
       </Escena>
-      <Chip T={T} at={K.B + 2.8} until={K.C - 0.2} texto="ambas pueden ser ciertas" x={540} y={1150} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.B + 2.8} until={K.C - 0.2} texto="ambas pueden ser ciertas" x={540} y={1440} tam={40} borde={KC.gold} />
       {/* 11 · cierre: el mismo cuadrito, ahora con la persona completa */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Persona x={800} y={880} s={0.85} T={T} saluda={kprog(T, K.C + 1.0, K.C + 1.5, kEase.sale)} />
-          <FotoGato x={330} y={800} s={1} T={T} caja={1} etq={1} />
+          <Persona x={810} y={1010} s={1.0} T={T} saluda={kprog(T, K.C + 1.0, K.C + 1.5, kEase.sale)} />
+          <FotoGato x={390} y={900} s={1.25} T={T} caja={1} etq={1} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="alguien se lo enseñó ✔" x={540} y={1160} tam={42} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="alguien se lo enseñó ✔" x={540} y={1420} tam={42} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="No lo puso una máquina: *lo puso una persona.*" />

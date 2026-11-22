@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #42 · El hielo del Ártico en septiembre, medido en Méxicos — NARRADO (N4 la imagen que se llena).
 // Datos: NSIDC (Sea Ice Today, 23 sep y 7 oct 2026; Quick facts; Why sea ice matters), NASA Earth Observatory, SRE/INEGI.
 // Ver guion.md y verificacion.md. El mapa es ESQUEMÁTICO; las áreas del hielo y de México sí están a la misma escala entre sí.
@@ -22,7 +23,7 @@ const haR = (valor, Ro) => Math.sqrt(valor * HA_Q * (Ro / 320) ** 2 / HA_A1);
 
 // Mapa del Ártico visto desde arriba (esquemático): tierra alrededor, océano oscuro, hielo blanco.
 // valor = millones de km² de hielo; contorno = millones de km² dibujados con línea punteada; hueco = 0..1 pinta la diferencia.
-function ArticoMapa({ T, cx = 440, cy = 845, Ro = 320, valor = HA_PROM, contorno, hueco = 0, etiquetas = true, polo = true }) {
+function ArticoMapa({ T, cx = 540, cy = 1010, Ro = 420, valor = HA_PROM, contorno, hueco = 0, etiquetas = true, polo = true }) {
   const id = 'am' + Math.round(cx + cy + Ro);
   const ocR = (a) => { let r = 0.87; const atl = Math.exp(-((a - 0.1) ** 2) / 0.05), ber = Math.exp(-((a + 2.1) ** 2) / 0.01);
     return Ro * (r + (1.05 - r) * Math.max(atl, ber)); };
@@ -61,12 +62,12 @@ function ArticoMapa({ T, cx = 440, cy = 845, Ro = 320, valor = HA_PROM, contorno
   </g>;
 }
 // Silueta de México con el área real a la escala del mapa (Ro). (mx, my) = centro de la silueta.
-function MexicoEscala({ mx, my, Ro = 320, o = 1, color = '#3fbf4a' }) {
+function MexicoEscala({ mx, my, Ro = 420, o = 1, color = '#3fbf4a' }) {
   const s = Math.sqrt(HA_MX * HA_Q * (Ro / 320) ** 2 / HA_MX_AREA);
   return <g opacity={o}><MapaMexico x={mx - 382 * s} y={my - 241 * s} ancho={1000 * s} conCA={false} color={color} /></g>;
 }
 // Fila de íconos de México que se llenan: n = cuántos Méxicos (con fracción). total = íconos a dibujar.
-function FilaMexicos({ T, n, total = 4, x = 110, y = 350, paso = 145, s = 0.18, aparece = 1 }) {
+function FilaMexicos({ T, n, total = 4, x = 115, y = 300, paso = 215, s = 0.26, aparece = 1 }) {
   return <g>{Array.from({ length: total }, (_, i) => { const f = kclamp(n - i, 0, 1), id = 'fm' + i + Math.round(x);
     const w = (743 - 21) * s, x0 = x + i * paso;
     return <g key={i} opacity={kclamp(aparece * total - i, 0, 1)}>
@@ -117,62 +118,62 @@ function HieloArticoShot() {
       {/* 1 · gancho */}
       <Escena T={T} a={K.G} b={K.M}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><ArticoMapa T={T} cx={400} cy={870} Ro={290} valor={vG} />
-          <g transform="translate(90 380)">
+        {svg(<><ArticoMapa T={T} cx={540} cy={1030} Ro={400} valor={vG} />
+          <g transform="translate(215 380) scale(1.3)">
             <rect x={0} y={0} width={500} height={44} rx={22} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={5} />
             <rect x={6} y={6} width={488 * vida} height={32} rx={16} fill={KC.pink} />
             <text x={0} y={-16} style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>tu vida: menos de 20 años</text>
             <text x={0} y={80} style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>2007</text>
             <text x={500} y={80} textAnchor="end" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>2026</text>
           </g></>)}
-        <EscalaFija texto="esquema · hielo de septiembre" largo={0} y={1440} color={KC.ink} />
+        <EscalaFija texto="esquema · hielo de septiembre" largo={0} y={1490} color={KC.ink} />
       </Escena>
       {/* 2 · un México como regla */}
       <Escena T={T} a={K.M} b={K.A}>
         <FondoLunares color={KC.cyan} />
         {svg(<><ArticoMapa T={T} valor={HA_PROM} />
-          <g transform={`translate(0 ${-(1 - kprog(T, K.M + 0.3, K.M + 1.0, kEase.rebote)) * 500})`}><MexicoEscala mx={440} my={835} o={0.85 * kprog(T, K.M + 0.3, K.M + 0.6)} /></g></>)}
-        <EscalaFija texto="esquema · áreas a la misma escala" largo={0} y={1440} color={KC.ink} />
+          <g transform={`translate(0 ${-(1 - kprog(T, K.M + 0.3, K.M + 1.0, kEase.rebote)) * 500})`}><MexicoEscala mx={540} my={997} o={0.85 * kprog(T, K.M + 0.3, K.M + 0.6)} /></g></>)}
+        <EscalaFija texto="esquema · áreas a la misma escala" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 3 · antes: más de tres Méxicos */}
       <Escena T={T} a={K.A} b={K.H}>
         <FondoLunares color={KC.cyan} />
         {svg(<><ArticoMapa T={T} valor={HA_PROM} />
           <FilaMexicos T={T} n={klerp(0, HA_PROM / HA_MX, kprog(T, K.A + 0.6, K.A + 3.2, kEase.suave))} /></>)}
-        <EscalaFija texto="esquema · áreas a la misma escala" largo={0} y={1440} color={KC.ink} />
+        <EscalaFija texto="esquema · áreas a la misma escala" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 4 · hoy: poco más de dos */}
       <Escena T={T} a={K.H} b={K.Hu}>
         <FondoLunares color={KC.cyan} />
         {svg(<><ArticoMapa T={T} valor={vH} />
           <FilaMexicos T={T} n={vH / HA_MX} /></>)}
-        <EscalaFija texto="esquema · áreas a la misma escala" largo={0} y={1440} color={KC.ink} />
+        <EscalaFija texto="esquema · áreas a la misma escala" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 5 · el hueco: del tamaño de Alaska */}
       <Escena T={T} a={K.Hu} b={K.P}>
         <FondoLunares color={KC.cyan} />
         {svg(<><ArticoMapa T={T} valor={HA_2026} contorno={HA_PROM} hueco={kprog(T, K.Hu + 0.3, K.Hu + 1.2)} />
-          <FilaMexicos T={T} n={(HA_PROM - HA_2026) / HA_MX * kprog(T, K.Hu + 1.6, K.Hu + 3.0, kEase.suave)} total={1} x={300} /></>)}
-        <EscalaFija texto="esquema · áreas a la misma escala" largo={0} y={1440} color={KC.ink} />
+          <FilaMexicos T={T} n={(HA_PROM - HA_2026) / HA_MX * kprog(T, K.Hu + 1.6, K.Hu + 3.0, kEase.suave)} total={1} x={330} /></>)}
+        <EscalaFija texto="esquema · áreas a la misma escala" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={260} y={900} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 260 720)`}>?</text>
-          <ArticoMapa T={T} cx={260} cy={1060} Ro={110} valor={HA_2026} etiquetas={false} polo={false} /></>)}
+        {svg(<><text x={540} y={990} textAnchor="middle" style={{ font:`400 620px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 760)`}>?</text>
+          <ArticoMapa T={T} cx={540} cy={1200} Ro={140} valor={HA_2026} etiquetas={false} polo={false} /></>)}
       </Escena>
       {/* 7 · el espejo: hielo 50–70 %, mar 6 % */}
       <Escena T={T} a={K.E} b={K.C}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#7fdcff 0%, #c9f1ff 55%, #c9f1ff 100%)' }}></div>
-        {svg(<>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#10202e 0%, #0e1622 55%, #0a0f18 100%)' }}></div>
+        {svg(<g transform="translate(0 150)">
           <Sol T={T} x={300} y={470} r={80} />
           {/* hielo (izquierda) y mar (derecha) */}
-          <path d="M 40 960 L 520 960 L 520 1180 L 40 1180 Z" fill="#0b2347" />
+          <path d="M 40 960 L 520 960 L 520 1340 L 40 1340 Z" fill="#0b2347" />
           <path d="M 40 930 L 150 915 L 300 935 L 420 918 L 520 930 L 520 1000 L 40 1000 Z" fill="#f4fbff" stroke={KC.ink} strokeWidth={6} />
-          <path d="M 560 960 L 1040 960 L 1040 1180 L 560 1180 Z" fill="#0b2347" stroke={KC.ink} strokeWidth={6} />
+          <path d="M 560 960 L 1040 960 L 1040 1340 L 560 1340 Z" fill="#0b2347" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${590 + i * 75} ${985 + (i % 2) * 30} q 14 ${-8 + Math.sin(T * 2 + i) * 3} 28 0 t 28 0`} stroke="#3f7cc4" strokeWidth={4} fill="none" />)}
-          <rect x={560} y={960} width={480} height={220} fill={KC.red} opacity={0.35 * kprog(T, K.E + 2.0, K.E + 5.5)} />
-          <rect x={40} y={1000} width={480} height={180} fill="none" stroke={KC.ink} strokeWidth={6} />
+          <rect x={560} y={960} width={480} height={380} fill={KC.red} opacity={0.35 * kprog(T, K.E + 2.0, K.E + 5.5)} />
+          <rect x={40} y={1000} width={480} height={340} fill="none" stroke={KC.ink} strokeWidth={6} />
           {/* rayos: al hielo y de regreso (muchos) */}
           {[0, 1, 2, 3].map((i) => { const u = ray(i), x0 = 300, y0 = 560, x1 = 200 + i * 70, y1 = 925;
             const ida = u < 0.5, p = ida ? u * 2 : (u - 0.5) * 2;
@@ -183,16 +184,16 @@ function HieloArticoShot() {
           {[0, 1, 2, 3].map((i) => { const u = ray(i + 0.5), x0 = 330, y0 = 560, x1 = 640 + i * 100, y1 = 1060;
             return <g key={i} opacity={kprog(T, K.E + 2.0, K.E + 2.5)}><line x1={x0} y1={y0} x2={x1} y2={y1} stroke={KC.orange} strokeWidth={5} strokeDasharray="10 10" opacity={0.5} />
               <circle cx={klerp(x0, x1, u)} cy={klerp(y0, y1, u)} r={14} fill={KC.orange} stroke={KC.ink} strokeWidth={4} opacity={u > 0.85 ? (1 - u) / 0.15 : 1} /></g>; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 8 · el círculo vicioso */}
       <Escena T={T} a={K.C} b={K.Es}>
         <FondoLunares color={KC.orange} />
-        {svg(<g transform="translate(560 800) scale(0.88)">
+        {svg(<g transform="translate(540 960) scale(1.3)">
           <g transform={`rotate(${(T - K.C) * 40})`}>{[0, 1, 2, 3].map((i) => <path key={i} d="M 0 -250 A 250 250 0 0 1 177 -177" transform={`rotate(${i * 90 + 20})`} stroke={KC.ink} strokeWidth={12} fill="none" markerEnd="" />)}
             {[0, 1, 2, 3].map((i) => <polygon key={'p' + i} points="0,-22 26,0 0,22" fill={KC.ink} transform={`rotate(${i * 90 + 65}) translate(0 -250) rotate(0)`} />)}</g>
           {[['menos hielo', 0, -250, '#f4fbff'], ['mar oscuro', 250, 0, '#0b2347'], ['absorbe más sol', 0, 250, KC.yellow], ['se calienta', -250, 0, KC.red]].map(([t, x, y, c], i) =>
-            <g key={i} opacity={kprog(T, K.C + 0.2 + i * 0.4, K.C + 0.5 + i * 0.4)}>
+            <g key={i} opacity={0.3 + 0.7 * kprog(T, K.C + 0.2 + i * 0.4, K.C + 0.5 + i * 0.4)}>
               <circle cx={x} cy={y} r={70} fill={c} stroke={KC.ink} strokeWidth={7} />
               <text x={x} y={y + 112} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={7} paintOrder="stroke">{t}</text></g>)}
         </g>)}
@@ -202,51 +203,51 @@ function HieloArticoShot() {
         <FondoLunares color={KC.noche} punto="rgba(255,255,255,.08)" />
         {svg(<>
           <g opacity={1 - kprog(T, K.Es + 2.6, K.Es + 3.0)}>
-            <ArticoMapa T={T} cx={440} cy={870} Ro={260} valor={HA_2026} />
-            <ellipse cx={440} cy={870} rx={380} ry={120} fill="none" stroke="rgba(255,255,255,.5)" strokeWidth={4} strokeDasharray="12 10" />
-            <Satelite x={440 + Math.cos((T - K.Es) * 1.6) * 380} y={870 + Math.sin((T - K.Es) * 1.6) * 120} rot={(T - K.Es) * 20} />
+            <ArticoMapa T={T} cx={540} cy={1000} Ro={330} valor={HA_2026} />
+            <ellipse cx={540} cy={1000} rx={440} ry={150} fill="none" stroke="rgba(255,255,255,.5)" strokeWidth={4} strokeDasharray="12 10" />
+            <g transform={`translate(${540 + Math.cos((T - K.Es) * 1.6) * 440} ${1000 + Math.sin((T - K.Es) * 1.6) * 150}) scale(1.4)`}><Satelite x={0} y={0} rot={(T - K.Es) * 20} /></g>
           </g>
-          <g opacity={kprog(T, K.Es + 2.8, K.Es + 3.2)}>
+          <g opacity={kprog(T, K.Es + 2.8, K.Es + 3.2)} transform="translate(540 1000) scale(1.45) translate(-421 -956)">
             {Array.from({ length: 48 }, (_, i) => { const c = i % 8, f = Math.floor(i / 8), on = i >= 28 && T > K.Es + 3.4 + (i - 28) * 0.06;
               return <rect key={i} x={90 + c * 84} y={740 + f * 72} width={74} height={60} rx={12} fill={on ? KC.red : 'rgba(244,251,255,.85)'} stroke={KC.ink} strokeWidth={4} />; })}
             <text x={127} y={779} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill={KC.ink}>1979</text>
             <text x={715} y={1139} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill="#fff">2026</text>
-            <text x={127} y={995} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill="#fff">2007</text>
+            <text x={463} y={995} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill="#fff">2007</text>
           </g></>)}
       </Escena>
       {/* 10 · récord 2012, y el vaso: ya flota */}
       <Escena T={T} a={K.R} b={RS}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><ArticoMapa T={T} valor={vR} /><FilaMexicos T={T} n={vR / HA_MX} total={3} /></>)}
-        <EscalaFija texto="esquema · áreas a la misma escala" largo={0} y={1440} color={KC.ink} />
+        {svg(<><ArticoMapa T={T} valor={vR} /><FilaMexicos T={T} n={vR / HA_MX} total={3} x={231} /></>)}
+        <EscalaFija texto="esquema · áreas a la misma escala" largo={0} y={1500} color={KC.ink} />
       </Escena>
       <Escena T={T} a={RS} b={K.Ci}>
         <FondoLunares color={KC.mint} />
-        {svg(<VasoHielo T={T} x={420} y={1160} derrite={kprog(T, RS + 0.4, K.Ci - 0.2, kEase.suave)} />)}
+        {svg(<g transform="translate(540 1340) scale(1.7)"><VasoHielo T={T} x={0} y={0} derrite={kprog(T, RS + 0.4, K.Ci - 0.2, kEase.suave)} /></g>)}
       </Escena>
       {/* 11 · cierre: el mapa del inicio, con el hielo de antes solo dibujado */}
       <Escena T={T} a={K.Ci} b={FIN}>
         <FondoLunares color={KC.cyan} />
         {svg(<><ArticoMapa T={T} valor={HA_2026} contorno={HA_PROM} /><FilaMexicos T={T} n={HA_PROM / HA_MX} aparece={kprog(T, K.Ci + 0.5, K.Ci + 2.0)} /></>)}
-        <EscalaFija texto="esquema · áreas a la misma escala" largo={0} y={1440} color={KC.ink} />
+        <EscalaFija texto="esquema · áreas a la misma escala" largo={0} y={1500} color={KC.ink} />
       </Escena>
 
       {/* datos y etiquetas */}
-      <Chip T={T} at={K.G + 2.8} until={K.M - 0.2} texto="hoy: menos hielo que cualquier año antes de 2007" y={1530} x={540} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.M + 1.0} until={K.A - 0.2} texto="México = 1.96 millones de km²" y={470} x={400} tam={30} borde={KC.leaf} />
-      <Chip T={T} at={K.A + 0.5} until={K.H - 0.2} texto="≈ 6.2 millones de km² · promedio 1981–2010" y={490} x={420} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.H + 2.4} until={K.Hu - 0.2} texto="4.60 millones de km² · 12 sep 2026" y={490} x={420} tam={28} borde={KC.cyan} />
-      <Chip T={T} at={K.Hu + 1.0} until={K.P - 0.2} texto="faltan 1.62 millones de km² ≈ Alaska" y={490} x={420} tam={28} borde={KC.yellow} />
-      <Etq T={T} at={K.Hu + 1.8} until={K.P - 0.2} x={440} y={385} texto="¾ de México" lado="der" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.E + 0.8} until={K.C - 0.2} texto="hielo: refleja 50–70 %" y={850} x={280} tam={30} borde={KC.white} />
-      <Chip T={T} at={K.E + 2.4} until={K.C - 0.2} texto="mar: refleja 6 %" y={900} x={800} tam={30} borde={KC.orange} />
-      <Chip T={T} at={K.Es + 0.3} until={K.Es + 2.8} texto="satélites desde 1979" y={410} x={400} tam={32} borde={KC.cyan} />
-      <Chip T={T} at={K.Es + 0.7} until={K.Es + 2.8} texto="NSIDC · Boulder, Colorado" y={500} x={420} tam={30} borde={KC.white} />
-      <Chip T={T} at={K.Es + 3.4} until={K.R - 0.2} texto="los 20 con menos hielo: 2007–2026" y={470} x={420} tam={28} borde={KC.red} />
-      <Chip T={T} at={K.R + 0.8} until={RS - 0.2} texto="17 sep 2012 · 3.39 millones de km² · récord" y={490} x={440} tam={26} borde={KC.red} />
-      <Chip T={T} at={RS + 0.3} until={K.Ci - 0.2} texto="ya flota: no sube el mar" y={470} x={420} tam={34} borde={KC.ink} />
-      <Etq T={T} at={RS + 0.8} until={K.Ci - 0.2} x={660} y={860} texto="nivel: igual" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ci + 1.4} until={K.Ou - 0.1} texto="el de antes: solo dibujado" y={490} x={420} tam={30} borde={KC.yellow} />
+      <Chip T={T} at={K.G + 2.8} until={K.M - 0.2} texto="hoy: menos hielo que cualquier año antes de 2007" y={522} x={540} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.M + 1.0} until={K.A - 0.2} texto="México = 1.96 millones de km²" y={470} x={540} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.A + 0.5} until={K.H - 0.2} texto="≈ 6.2 millones de km² · promedio 1981–2010" y={490} x={540} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.H + 2.4} until={K.Hu - 0.2} texto="4.60 millones de km² · 12 sep 2026" y={490} x={540} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={K.Hu + 1.0} until={K.P - 0.2} texto="faltan 1.62 millones de km² ≈ Alaska" y={490} x={540} tam={32} borde={KC.yellow} />
+      <Etq T={T} at={K.Hu + 1.8} until={K.P - 0.2} x={540} y={340} texto="¾ de México" lado="der" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.E + 0.8} until={K.C - 0.2} texto="hielo: refleja 50–70 %" y={1380} x={265} tam={30} borde={KC.white} />
+      <Chip T={T} at={K.E + 2.4} until={K.C - 0.2} texto="mar: refleja 6 %" y={1380} x={815} tam={30} borde={KC.orange} />
+      <Chip T={T} at={K.Es + 0.3} until={K.Es + 2.8} texto="satélites desde 1979" y={400} x={540} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={K.Es + 0.7} until={K.Es + 2.8} texto="NSIDC · Boulder, Colorado" y={490} x={540} tam={30} borde={KC.white} />
+      <Chip T={T} at={K.Es + 3.4} until={K.R - 0.2} texto="los 20 con menos hielo: 2007–2026" y={560} x={540} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.R + 0.8} until={RS - 0.2} texto="17 sep 2012 · 3.39 millones de km² · récord" y={490} x={540} tam={30} borde={KC.red} />
+      <Chip T={T} at={RS + 0.3} until={K.Ci - 0.2} texto="ya flota: no sube el mar" y={430} x={540} tam={38} borde={KC.ink} />
+      <Etq T={T} at={RS + 0.8} until={K.Ci - 0.2} x={560} y={905} texto="nivel: igual" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Ci + 1.4} until={K.Ou - 0.1} texto="el de antes: solo dibujado" y={490} x={540} tam={34} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.M - 0.1} texto="Menos de 20: *nunca visto.*" tam={58} />

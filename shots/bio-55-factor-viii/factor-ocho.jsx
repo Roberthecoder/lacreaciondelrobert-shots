@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #55 · La pieza que le falta a tu sangre: el factor VIII (hemofilia A) — NARRADO (N1 por dentro + estudio).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (no está a escala, salvo la barra de la red de fibrina).
 const F8 = { piel:'#f2c09a', pielO:'#d8946c', una:'#fbe3d3', sangre:'#d7263d', sangreO:'#8e1426', curita:'#e9b98a', curitaO:'#c98f5f',
@@ -218,10 +219,10 @@ function FactorOcho() {
       <Escena T={T} a={K.G} b={K.Ca} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         <FSvg>
-          <Dedo T={T} y={1040} sangra={kprog(T, K.G, K.G + 0.7, kEase.sale)} curita={kprog(T, K.G + 1.0, K.G + 1.4, kEase.sale)} />
+          <g transform="translate(540 900) scale(1.5) translate(-560 -948)"><Dedo T={T} y={1040} sangra={kprog(T, K.G, K.G + 0.7, kEase.sale)} curita={kprog(T, K.G + 1.0, K.G + 1.4, kEase.sale)} /></g>
         </FSvg>
       </Escena>
-      <Lupa T={T} at={K.G + 2.6} until={K.Ca - 0.1} x={320} y={620} r={240} fx={570} fy={948} tinte={KC.cyan} etiqueta="POR DENTRO · TU SANGRE"
+      <Lupa T={T} at={K.G + 2.6} until={K.Ca - 0.1} x={540} y={530} r={250} fx={555} fy={880} tinte={KC.cyan} etiqueta="POR DENTRO · TU SANGRE"
         interior={(t) => <svg width={480} height={480}>
           <rect width={480} height={480} fill="#14070c" />
           <rect x={0} y={60} width={500} height={50} fill="#ff8fa3" stroke={KC.ink} strokeWidth={5} />
@@ -245,7 +246,7 @@ function FactorOcho() {
       {/* 2 · la trombina arma la red de fibrina */}
       <Escena T={T} a={K.Fi} b={K.Fa} zoom={0.05}>
         <FondoMarca patron="oscuro" />
-        <FSvg>
+        <FSvg><g transform="translate(540 1030) scale(1.1) translate(-540 -880)">
           {fibr.map(([fx, fy, fr, fd], i) => <Fibrinogeno key={i} x={fx + Math.sin(T * 1.2 + i) * 10} y={fy} rot={fr + T * 20 * (fd - 0.5)} o={1 - kprog(T, K.Fi + 0.8 + fd * 0.6, K.Fi + 1.4 + fd * 0.6)} />)}
           <RedFibrina T={T} p={kprog(T, K.Fi + 0.9, K.Fi + 3.2, kEase.suave)} x={40} y={560} w={1000} h={640} n={32} />
           {glob.map(([gx, gy, gr], i) => { const atrapa = kprog(T, K.Fi + 1.6, K.Fi + 3.0, kEase.sale);
@@ -254,10 +255,10 @@ function FactorOcho() {
           <g transform={`translate(${klerp(1180, 860, kprog(T, K.Fi, K.Fi + 0.7, kEase.sale))} 470)`}>
             <Ficha x={0} y={100} lab="II" color={F8.ii} s={0.7} brillo={0.6 + 0.4 * Math.sin(T * 6)} />
           </g>
-        </FSvg>
-        <Etq T={T} at={K.Fi + 0.3} until={K.Fa - 0.2} x={830} y={420} lado="izq" texto="trombina" tam={34} color={KC.texto} />
-        <Etq T={T} at={K.Fi + 1.4} until={K.Fa - 0.2} x={60} y={500} texto="hilos de fibrina" tam={34} color={F8.fibrina} />
-        <Escala T={T} z={1} pxPorMm={10000} objetivo={120} y={1440} />
+        </g></FSvg>
+        <Etq T={T} at={K.Fi + 0.3} until={K.Fa - 0.2} x={856} y={555} lado="izq" texto="trombina" tam={34} color={KC.texto} />
+        <Etq T={T} at={K.Fi + 1.4} until={K.Fa - 0.2} x={60} y={600} texto="hilos de fibrina" tam={34} color={F8.fibrina} />
+        <Escala T={T} z={1.1} pxPorMm={10000} objetivo={120} y={1440} />
       </Escena>
 
       {/* 3 · hemofilia A: la VIII casi vacía, la fila se detiene */}
@@ -273,14 +274,14 @@ function FactorOcho() {
       <Escena T={T} a={K.Cr} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <FSvg>
-          <g transform="translate(290 870)">
+          <g transform="translate(290 1010)">
             <rect x={-230} y={-300} width={460} height={560} rx={36} fill="rgba(14,15,18,.82)" stroke={KC.ink} strokeWidth={8} />
             <Cromosoma x={-80} y={-20} tipo="X" marca={kprog(T, K.Cr + 0.8, K.Cr + 1.3)} s={0.9} />
             <Cromosoma x={110} y={20} tipo="Y" s={0.9} />
             <text x={0} y={-230} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.texto}>XY</text>
             <text x={0} y={220} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.texto} opacity={kprog(T, K.Cr + 1.6, K.Cr + 2.0)}>una sola X</text>
           </g>
-          <g transform="translate(790 870)">
+          <g transform="translate(790 1010)">
             <rect x={-230} y={-300} width={460} height={560} rx={36} fill="rgba(14,15,18,.82)" stroke={KC.ink} strokeWidth={8} />
             <Cromosoma x={-90} y={0} tipo="X" marca={kprog(T, K.Cr + 0.8, K.Cr + 1.3)} s={0.9} />
             <Cromosoma x={90} y={0} tipo="X" marca={kprog(T, K.Cr + 2.0, K.Cr + 2.5)} sana s={0.9} color="#ffb3c1" />
@@ -288,15 +289,15 @@ function FactorOcho() {
             <text x={0} y={220} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.texto} opacity={kprog(T, K.Cr + 2.2, K.Cr + 2.6)}>la otra X ayuda</text>
           </g>
         </FSvg>
-        <Chip T={T} at={K.Cr + 0.9} until={K.P - 0.2} texto="gen F8 · cromosoma X (Xq28)" y={480} tam={36} borde={KC.red} />
+        <Chip T={T} at={K.Cr + 0.9} until={K.P - 0.2} texto="gen F8 · cromosoma X (Xq28)" y={600} tam={36} borde={KC.red} />
       </Escena>
 
       {/* 5 · pregunta: ¿de dónde lo sacas? */}
       <Escena T={T} a={K.P} b={K.Pl} zoom={0.08}>
         <FondoLunares color={KC.yellow} />
         <FSvg>
-          <Ficha x={200} y={1150} lab="VIII" color={F8.viii} vacia={0.85} s={1.5} />
-          <text x={280} y={740} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 7} 280 640)`}>?</text>
+          <Ficha x={300} y={1300} lab="VIII" color={F8.viii} vacia={0.85} s={2.2} />
+          <text x={780} y={1180} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 7} 780 1080)`}>?</text>
         </FSvg>
       </Escena>
 
@@ -304,9 +305,11 @@ function FactorOcho() {
       <Escena T={T} a={K.Pl} b={K.V} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <FSvg>
+          <g transform="translate(540 1000) scale(1.2) translate(-540 -1000)">
           <Tanque T={T} x={540} y={1000} nivel={0.2 + 0.55 * kprog(T, K.Pl + 0.2, K.V)} />
           {Array.from({ length: 12 }, (_, i) => { const t0 = K.Pl + 0.1 + i * 0.22, p = kprog(T, t0, t0 + 0.7, (q) => q * q);
             return p > 0 && p < 1 && <Bolsa key={i} x={300 + (i * 97) % 480} y={klerp(600, 900, p)} rot={(i % 2 ? 1 : -1) * (20 + p * 60)} s={0.9} />; })}
+          </g>
         </FSvg>
         <Chip T={T} at={K.Pl + 0.6} until={K.V - 0.1} texto="donantes por lote: de 1,000 a más de 20,000" y={480} tam={32} borde={KC.ink} />
       </Escena>
@@ -314,11 +317,11 @@ function FactorOcho() {
       {/* 7 · en los ochenta, el plasma traía VIH y hepatitis C (tono serio) */}
       <Escena T={T} a={K.V} b={K.Ci} zoom={0.03}>
         <FondoLunares color={F8.gris} punto="rgba(255,255,255,.12)" />
-        <FSvg>
+        <FSvg><g transform="translate(540 1000) scale(1.2) translate(-540 -1000)">
           <Tanque T={T} x={540} y={1000} nivel={0.75} turbio={kprog(T, K.V + 0.4, K.V + 1.6)} />
           {[[380, 940, F8.virus1, 'VIH'], [700, 1020, F8.virus2, 'VHC'], [560, 1110, F8.virus1, null], [430, 1120, F8.virus2, null], [690, 880, F8.virus1, null]].map(([vx, vy, c, lab], i) =>
             <Virus key={i} x={vx + Math.sin(T * 1.5 + i) * 12} y={vy + Math.cos(T * 1.2 + i) * 10} r={lab ? 34 : 24} color={c} rot={T * 15 + i * 40} lab={lab} o={kprog(T, K.V + 0.5 + i * 0.25, K.V + 0.9 + i * 0.25)} />)}
-        </FSvg>
+        </g></FSvg>
         <Chip T={T} at={K.V + 0.3} until={K.Ci - 0.1} texto="años 80 · concentrados de plasma" y={1500} tam={34} borde={KC.texto} />
         <Chip T={T} at={K.V + 1.2} until={K.Ci - 0.1} texto="virus: esquema, no a escala" x={330} y={1860} tam={22} mono borde="rgba(255,255,255,.4)" />
       </Escena>
@@ -328,9 +331,9 @@ function FactorOcho() {
         <FondoLunares color={F8.grisO} punto="rgba(255,255,255,.08)" />
         <FSvg>
           {Array.from({ length: 10 }, (_, i) => { const on = kprog(T, K.Ci + 1.4 + i * 0.18, K.Ci + 1.7 + i * 0.18);
-            return <Persona key={i} x={160 + (i % 5) * 190} y={560 + Math.floor(i / 5) * 250} s={1} color={i < 7 && on > 0 ? `rgba(215,38,61,${0.35 + 0.6 * on})` : 'rgba(255,255,255,.22)'} o={kprog(T, K.Ci + 0.2 + i * 0.06, K.Ci + 0.5 + i * 0.06)} />; })}
+            return <Persona key={i} x={150 + (i % 5) * 195} y={760 + Math.floor(i / 5) * 300} s={1.3} color={i < 7 && on > 0 ? `rgba(215,38,61,${0.35 + 0.6 * on})` : 'rgba(255,255,255,.22)'} o={kprog(T, K.Ci + 0.2 + i * 0.06, K.Ci + 0.5 + i * 0.06)} />; })}
         </FSvg>
-        <NumeroGigante T={T} at={K.Ci + 2.6} until={K.Ge - 0.15} valor={7} dur={0.5} sufijo=" de 10" y={1040} tam={200} color={KC.texto} />
+        <NumeroGigante T={T} at={K.Ci + 2.6} until={K.Ge - 0.15} valor={7} dur={0.5} sufijo=" de 10" y={1330} tam={190} color={KC.texto} />
         <Chip T={T} at={K.Ci + 0.4} until={K.Ge - 0.15} texto="EE. UU. · 1987 · analizadas en centros de hemofilia" y={1500} tam={28} borde={KC.texto} />
       </Escena>
 
@@ -338,38 +341,40 @@ function FactorOcho() {
       <Escena T={T} a={K.Ge} b={K.H} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <FSvg>
+          <g opacity={0.55 + 0.45 * kprog(T, K.Ge + 2.0, K.Ge + 2.4)}><Cromosoma x={540} y={790} tipo="X" marca={1} s={1.3} /></g>
           {T > K.Ge + 2.0 && <g opacity={kprog(T, K.Ge + 2.0, K.Ge + 2.4)}>
-            <rect x={40} y={980} width={1000} height={170} rx={30} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
-            <svg x={46} y={986} width={988} height={158} overflow="hidden"><g transform={`translate(${-((T - K.Ge) * 260) % 400} 0)`}><ADNHebra T={T} x={0} y={110} largo={1500} alto={60} vueltas={9} vel={1} /></g></svg>
+            <path d="M 615 995 L 40 1160 M 615 995 L 1040 1160" stroke={KC.red} strokeWidth={4} strokeDasharray="14 10" fill="none" opacity={0.7} />
+            <rect x={40} y={1160} width={1000} height={170} rx={30} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
+            <svg x={46} y={1166} width={988} height={158} overflow="hidden"><g transform={`translate(${-((T - K.Ge) * 260) % 400} 0)`}><ADNHebra T={T} x={0} y={110} largo={1500} alto={60} vueltas={9} vel={1} /></g></svg>
           </g>}
         </FSvg>
-        <TarjetaEstudio T={T} at={K.Ge + 0.2} until={K.Ge + 2.0} anio="1984" quien="Genentech · Genetics Institute" revista="Nature · noviembre de 1984" y={650} />
-        {T > K.Ge + 2.0 && <Contador T={T} at={K.Ge + 2.1} desde={0} hasta={186000} dur={2.2} sufijo=" letras" x={540} y={1035} tam={60} color={KC.yellow} />}
+        <TarjetaEstudio T={T} at={K.Ge + 0.2} until={K.Ge + 2.0} anio="1984" quien="Genentech · Genetics Institute" revista="Nature · noviembre de 1984" y={410} />
+        {T > K.Ge + 2.0 && <Contador T={T} at={K.Ge + 2.1} desde={0} hasta={186000} dur={2.2} sufijo=" letras" x={540} y={1215} tam={60} color={KC.yellow} />}
       </Escena>
 
       {/* 10 · células de hámster que lo fabrican y lo sueltan al caldo */}
       <Escena T={T} a={K.H} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <FSvg>
-          <g opacity={1 - kprog(T, K.H + 1.6, K.H + 2.2)}><Hamster x={540} y={900} s={klerp(1.4, 2.4, kprog(T, K.H, K.H + 2.2, kEase.suave))} T={T} /></g>
+          <g opacity={1 - kprog(T, K.H + 1.6, K.H + 2.2)}><Hamster x={540} y={960} s={klerp(1.4, 2.4, kprog(T, K.H, K.H + 2.2, kEase.suave))} T={T} /></g>
           {T > K.H + 1.6 && <g opacity={kprog(T, K.H + 1.6, K.H + 2.2)}>
-            <rect x={60} y={560} width={960} height={680} rx={60} fill="#2a1a10" stroke={KC.ink} strokeWidth={10} />
-            <rect x={60} y={560} width={960} height={680} rx={60} fill="rgba(255,214,92,.12)" />
-            <CelulaCHO T={T} x={420} y={900} r={170} suelta={kprog(T, K.H + 2.4, K.H + 3.0)} />
+            <rect x={40} y={600} width={1000} height={720} rx={60} fill="#2a1a10" stroke={KC.ink} strokeWidth={10} />
+            <rect x={40} y={600} width={1000} height={720} rx={60} fill="rgba(255,214,92,.12)" />
+            <CelulaCHO T={T} x={430} y={960} r={235} suelta={kprog(T, K.H + 2.4, K.H + 3.0)} />
           </g>}
         </FSvg>
-        <Etq T={T} at={K.H + 0.3} until={K.H + 1.8} x={90} y={520} texto="hámster" tam={40} color={KC.ink} />
-        <Etq T={T} at={K.H + 2.0} until={K.A - 0.2} x={90} y={520} texto="células de hámster, en cultivo" tam={36} color={KC.ink} />
-        <Etq T={T} at={K.H + 2.7} until={K.A - 0.2} x={1000} y={1190} lado="izq" texto="factor VIII al caldo" tam={30} color={F8.viii} />
+        <Etq T={T} at={K.H + 0.3} until={K.H + 1.8} x={90} y={560} texto="hámster" tam={40} color={KC.ink} />
+        <Etq T={T} at={K.H + 2.0} until={K.A - 0.2} x={70} y={560} texto="células de hámster, en cultivo" tam={36} color={KC.ink} />
+        <Etq T={T} at={K.H + 2.7} until={K.A - 0.2} x={1010} y={1275} lado="izq" texto="factor VIII al caldo" tam={30} color={F8.viii} />
       </Escena>
 
       {/* 11 · 1992: primer factor VIII hecho por células (Recombinate) */}
       <Escena T={T} a={K.A} b={K.An} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <FSvg>
-          <Frasco x={680} y={1020} s={1.15} color="#f1e6c8" etiqueta="PLASMA" tapa="#8b97a8" o={0.55} />
-          <g transform={`translate(${klerp(1200, 900, kprog(T, K.A + 0.2, K.A + 0.8, kEase.sale))} 0)`}><Frasco x={0} y={1000} s={1.3} color="#ffffff" etiqueta="CÉLULAS" tapa={KC.blue} /></g>
-          {(() => { const p = kprog(T, K.A + 1.3, K.A + 1.6, kEase.rebote); return p > 0 && <g transform={`translate(800 620) rotate(-10) scale(${klerp(1.8, 1, p)})`} opacity={Math.min(1, p * 2)}>
+          <Frasco x={330} y={1090} s={1.55} color="#f1e6c8" etiqueta="PLASMA" tapa="#8b97a8" o={0.55} />
+          <g transform={`translate(${klerp(1300, 750, kprog(T, K.A + 0.2, K.A + 0.8, kEase.sale))} 0)`}><Frasco x={0} y={1060} s={1.75} color="#ffffff" etiqueta="CÉLULAS" tapa={KC.blue} /></g>
+          {(() => { const p = kprog(T, K.A + 1.3, K.A + 1.6, kEase.rebote); return p > 0 && <g transform={`translate(560 560) rotate(-10) scale(${klerp(1.8, 1, p)})`} opacity={Math.min(1, p * 2)}>
             <rect x={-230} y={-90} width={460} height={180} rx={24} fill="none" stroke={KC.red} strokeWidth={12} />
             <text x={0} y={-10} textAnchor="middle" style={{ font:`400 74px ${KF.titulo}` }} fill={KC.red}>FDA · 1992</text>
             <text x={0} y={56} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.red}>diciembre</text>
@@ -381,7 +386,7 @@ function FactorOcho() {
       {/* 12 · hoy: un anticuerpo junta IXa y X (emicizumab) */}
       <Escena T={T} a={K.An} b={K.Cie} zoom={0.04}>
         <FondoMarca patron="oscuro" />
-        <FSvg>
+        <FSvg><g transform="translate(540 1000) scale(1.25) translate(-540 -1000)">
           {(() => { const junta = kprog(T, K.An + 1.6, K.An + 2.4, kEase.suave), entra = kprog(T, K.An + 0.4, K.An + 1.4, kEase.sale);
             return <g>
               <g transform={`translate(${klerp(250, 360, junta)} 0)`}><Ficha x={0} y={1150} lab="IXa" color={F8.ix} brillo={junta} /></g>
@@ -389,8 +394,8 @@ function FactorOcho() {
               <Anticuerpo x={klerp(540, 512, junta)} y={klerp(340, 715, entra)} s={1.3} abre={1 - junta} rot={180} />
               {T > K.An + 2.9 && <g opacity={kprog(T, K.An + 2.9, K.An + 3.3)}><Ficha x={760} y={1150} lab="II" color={F8.ii} brillo={0.6 + 0.4 * Math.sin(T * 6)} /></g>}
             </g>; })()}
-        </FSvg>
-        <Etq T={T} at={K.An + 0.8} until={K.Cie - 0.2} x={140} y={470} texto="anticuerpo" tam={36} color={KC.texto} />
+        </g></FSvg>
+        <Etq T={T} at={K.An + 0.8} until={K.Cie - 0.2} x={110} y={560} texto="anticuerpo" tam={36} color={KC.texto} />
         <Chip T={T} at={K.An + 1.4} until={K.Cie - 0.15} texto="emicizumab · se inyecta bajo la piel" y={1500} tam={32} borde={F8.ix} />
       </Escena>
 
@@ -405,12 +410,12 @@ function FactorOcho() {
       <Escena T={T} a={cierreMicro} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <FSvg>
-          <Dedo T={T} y={1040} sangra={0} curita={1} quita={kprog(T, cierreMicro + 0.4, cierreMicro + 1.2, kEase.suave)} cerrada={1} />
+          <g transform="translate(540 900) scale(1.5) translate(-560 -948)"><Dedo T={T} y={1040} sangra={0} curita={1} quita={kprog(T, cierreMicro + 0.4, cierreMicro + 1.2, kEase.suave)} cerrada={1} /></g>
         </FSvg>
       </Escena>
 
       {/* textos fijos */}
-      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.0} until={K.G + 2.6} texto="¿la curita?" x={330} y={620} tam={48} />
+      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.0} until={K.G + 2.6} texto="¿la curita?" x={540} y={620} tam={48} />
       <Chip T={T} at={K.Fa + 1.2} until={K.Cr - 0.15} texto="hemofilia A = falta o hay poco factor VIII" y={1500} tam={30} borde={F8.viii} />
       <Chip T={T} at={K.Ca + 0.2} until={K.O} texto="dibujo esquemático" x={870} y={1860} tam={20} mono borde="rgba(255,255,255,.4)" />
 

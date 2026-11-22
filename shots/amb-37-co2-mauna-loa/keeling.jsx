@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #37 · La línea que mide el aire que respiras (curva de Keeling) — NARRADO (N4 la imagen que se llena + N2).
 // Datos: NOAA GML (promedios mensuales y anuales de Mauna Loa), Scripps CO2 Program y NOAA Climate.gov. Ver guion.md y verificacion.md.
 // La curva se dibuja con los promedios mensuales reales de NOAA (keeling-datos.jsx). Volcanes, árbol, molécula y núcleo de hielo son esquemáticos.
@@ -7,7 +8,7 @@ const kAnio = (i) => 1958 + (2 + i + 0.5) / 12;          // índice 0 = marzo de
 
 // Gráfica de la curva. box = {x, y, w, h} (y = arriba). hasta = cuántos meses dibujar (puede ser fraccional).
 function Grafica({ T, box = { x: 140, y: 700, w: 850, h: 440 }, y0 = 260, y1 = 440, a0 = 1958, a1 = 2026, i0 = 0, hasta = 0,
-  ticksY = [300, 350, 400], ticksX = [1960, 1980, 2000, 2020], color = KC.red, grosor = 7, pluma = true, base280 = 0, ejes = 1, fondo = 'rgba(255,255,255,.82)', tamTick = 26, dec = 0 }) {
+  ticksY = [300, 350, 400], ticksX = [1960, 1980, 2000, 2020], color = KC.red, grosor = 7, pluma = true, base280 = 0, ejes = 1, fondo = 'rgba(16,26,46,.9)', tamTick = 26, dec = 0 }) {
   const d = KD();
   const X = (a) => box.x + (a - a0) / (a1 - a0) * box.w;
   const Y = (v) => box.y + box.h - (v - y0) / (y1 - y0) * box.h;
@@ -18,10 +19,10 @@ function Grafica({ T, box = { x: 140, y: 700, w: 850, h: 440 }, y0 = 260, y1 = 4
     const px = klerp(X(kAnio(k)), X(kAnio(k + 1)), f), py = Y(v); path += ' L ' + px.toFixed(1) + ' ' + py.toFixed(1); last = [px, py, v]; }
   return <g opacity={ejes}>
     <rect x={box.x - 20} y={box.y - 20} width={box.w + 40} height={box.h + 40} rx={22} fill={fondo} stroke={KC.ink} strokeWidth={6} />
-    {ticksY.map((v) => <g key={v}><line x1={box.x} y1={Y(v)} x2={box.x + box.w} y2={Y(v)} stroke="rgba(0,0,0,.14)" strokeWidth={3} />
+    {ticksY.map((v) => <g key={v}><line x1={box.x} y1={Y(v)} x2={box.x + box.w} y2={Y(v)} stroke="rgba(223,231,255,.16)" strokeWidth={3} />
       <text x={box.x - 28} y={Y(v) + 9} textAnchor="end" style={{ font:`700 ${tamTick}px ${KF.mono}` }} fill={KC.ink}>{kformato(v, dec)}</text></g>)}
     {ticksX.map((a) => <text key={a} x={X(a)} y={box.y + box.h + 52} textAnchor="middle" style={{ font:`700 ${tamTick}px ${KF.mono}` }} fill={KC.ink}>{a}</text>)}
-    {base280 > 0 && <g opacity={base280}><line x1={box.x} y1={Y(280)} x2={box.x + box.w * base280} y2={Y(280)} stroke="#2a6fdb" strokeWidth={6} strokeDasharray="18 12" /></g>}
+    {base280 > 0 && <g opacity={base280}><line x1={box.x} y1={Y(280)} x2={box.x + box.w * base280} y2={Y(280)} stroke="#5b9bff" strokeWidth={6} strokeDasharray="18 12" /></g>}
     {path && <path d={path} fill="none" stroke={color} strokeWidth={grosor} strokeLinejoin="round" strokeLinecap="round" />}
     {pluma && last && hasta > 0 && <circle cx={last[0]} cy={last[1]} r={13} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />}
   </g>;
@@ -133,9 +134,10 @@ function KeelingShot() {
   // Hoy: la curva se completa
   const hH = (N - 1) * kprog(T, K.H - 0.3, K.H + 1.8, kEase.suave);
   const fosil = K.A + 4.4;
-  const box = { x: 150, y: 690, w: 840, h: 400 };
+  const box = { x: 150, y: 620, w: 840, h: 640 };   // pase a mano (cine): gráfica más alta, ocupa media pantalla
   const iErup = (2022 - 1958) * 12 + 8;                       // nov 2022 (índice)
   const X = (a) => box.x + (a - 1958) / (2026 - 1958) * box.w, Y = (v) => box.y + box.h - (v - 260) / 180 * box.h;
+  const Y4 = Y(427.35);
   const [ox, oy] = kObs(540, 1150, 470, 700);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -143,11 +145,11 @@ function KeelingShot() {
       <Escena T={T} a={K.G} b={K.V}>
         <FondoLunares color={KC.cyan} />
         {svg(<><Grafica T={T} box={box} hasta={hG} />
-          <text x={box.x - 10} y={box.y - 40} style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>CO2 en el aire (ppm)</text></>)}
+          <text x={box.x - 10} y={box.y - 48} style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>CO2 en el aire (ppm)</text></>)}
       </Escena>
       {/* 2 · el observatorio de Mauna Loa */}
       <Escena T={T} a={K.V} b={K.Pp} zoom={0.03} origen="30% 55%">
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#8fe3ff 0%, #c9f3ff 55%, #2f8fd8 60%, #1f6fb8 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4657 0%, #3c4a57 55%, #14304d 60%, #0f2845 100%)' }}></div>
         {svg(<><Escudo x={540} T={T} />
           {/* aire que entra a la toma */}
           {Array.from({ length: 4 }, (_, i) => { const u = ((T * 0.9 + i / 4) % 1); return <path key={i} d={`M ${ox + 250 - u * 140} ${oy - 150 + Math.sin(i) * 20} q -20 -12 -40 0`} stroke="#fff" strokeWidth={6} fill="none" opacity={kprog(T, K.V + 1, K.V + 1.4) * (1 - u)} />; })}
@@ -165,20 +167,20 @@ function KeelingShot() {
       {/* 3 · partes por millón: micro */}
       <Escena T={T} a={K.Pp} b={K.I} fondo={KC.noche}>
         {svg(<>
-          <g opacity={1 - kprog(T, K.Pp + 2.6, K.Pp + 3.1)}>
+          <g opacity={1 - kprog(T, K.Pp + 2.6, K.Pp + 3.1)} transform="translate(540 900) scale(1.15) translate(-540 -900)">
             <rect x={150} y={640} width={780} height={520} rx={26} fill="rgba(255,255,255,.06)" stroke="#9fd7ff" strokeWidth={6} strokeDasharray="22 14" />
             {Array.from({ length: 42 }, (_, i) => { const tipo = i === 17 ? 'CO2' : i === 30 ? 'Ar' : i % 5 === 0 ? 'O2' : 'N2'; const [mx, my, mr] = kMolPos(i, T);
               return <Molecula key={i} tipo={tipo} x={mx} y={my} rot={mr} />; })}
             {(() => { const [mx, my] = kMolPos(17, T); return <circle cx={mx} cy={my} r={58} fill="none" stroke={KC.yellow} strokeWidth={6} opacity={kprog(T, K.Pp + 1.0, K.Pp + 1.4)} />; })()}
           </g>
           <g opacity={kprog(T, K.Pp + 2.8, K.Pp + 3.3)}>
-            <defs><pattern id="kgrid" x={240} y={560} width={6} height={6} patternUnits="userSpaceOnUse"><circle cx={3} cy={3} r={2} fill="#7fa6c9" /></pattern></defs>
-            <rect x={240} y={560} width={600} height={600} fill="url(#kgrid)" />
-            {[[3, 71], [52, 18], [77, 88], [29, 46]].map(([c, f], i) => <g key={i}><circle cx={240 + c * 6 + 3} cy={560 + f * 6 + 3} r={4} fill={KC.yellow} />
-              <circle cx={240 + c * 6 + 3} cy={560 + f * 6 + 3} r={22} fill="none" stroke={KC.yellow} strokeWidth={5} opacity={kprog(T, K.Pp + 3.4 + i * 0.25, K.Pp + 3.7 + i * 0.25)} /></g>)}
+            <defs><pattern id="kgrid" x={140} y={540} width={8} height={8} patternUnits="userSpaceOnUse"><circle cx={4} cy={4} r={2.6} fill="#7fa6c9" /></pattern></defs>
+            <rect x={140} y={540} width={800} height={800} fill="url(#kgrid)" />
+            {[[3, 71], [52, 18], [77, 88], [29, 46]].map(([c, f], i) => <g key={i}><circle cx={140 + c * 8 + 4} cy={540 + f * 8 + 4} r={5} fill={KC.yellow} />
+              <circle cx={140 + c * 8 + 4} cy={540 + f * 8 + 4} r={26} fill="none" stroke={KC.yellow} strokeWidth={5} opacity={kprog(T, K.Pp + 3.4 + i * 0.25, K.Pp + 3.7 + i * 0.25)} /></g>)}
           </g></>)}
-        <Etq T={T} at={K.Pp + 0.4} until={K.Pp + 2.6} x={160} y={600} texto="N2 · O2 · Ar · CO2" tam={30} />
-        <Etq T={T} at={K.Pp + 1.2} until={K.Pp + 2.6} x={720} y={600} texto="esquema" tam={26} color={KC.gold2} />
+        <Etq T={T} at={K.Pp + 0.4} until={K.Pp + 2.6}  x={100} y={560} texto="N2 · O2 · Ar · CO2" tam={30} />
+        <Etq T={T} at={K.Pp + 1.2} until={K.Pp + 2.6} x={760} y={560} texto="esquema" tam={26} color={KC.gold2} />
         <Chip T={T} at={K.Pp + 0.3} until={K.Pp + 2.7} texto="ppm = partes por millón" y={470} x={540} tam={40} borde={KC.cyan} />
         <Chip T={T} at={K.Pp + 3.0} until={K.I - 0.2} texto="10,000 moléculas · hoy ≈ 4 son CO2" y={470} x={540} tam={34} borde={KC.yellow} />
       </Escena>
@@ -188,16 +190,16 @@ function KeelingShot() {
         {svg(<><Grafica T={T} box={box} hasta={0} pluma={false} />
           <circle cx={X(1958.2)} cy={Y(313)} r={16 * kprog(T, K.I + 0.3, K.I + 0.7, kEase.rebote)} fill={KC.red} stroke={KC.ink} strokeWidth={5} /></>)}
         <Etq T={T} at={K.I + 0.6} until={K.Re - 0.2} x={X(1958.2) + 20} y={Y(313) - 40} texto="marzo 1958 · 313 ppm" tam={30} color={KC.ink} />
-        <NumeroGigante T={T} at={K.I + 0.4} until={K.Re - 0.2} valor={313} desde={250} dur={1.0} etiqueta="el primer día:" x={360} y={500} tam={220} color={KC.red} />
+        <NumeroGigante T={T} at={K.I + 0.4} until={K.Re - 0.2} valor={313} desde={250} dur={1.0} etiqueta="el primer día:" x={360} y={450} tam={220} color={KC.red} />
       </Escena>
       {/* 5 · la curva respira (1958–1960) */}
       <Escena T={T} a={K.Re} b={K.P}>
         <FondoLunares color={veranoR ? KC.mint : KC.orange} />
         {svg(<><Grafica T={T} box={box} a0={1958.1} a1={1961.05} y0={311} y1={322} ticksY={[312, 316, 320]} ticksX={[1959, 1960, 1961]} hasta={hR} />
-          <Arbol x={700} y={600} s={1.05} hojas={veranoR ? 1 : 0} />
-          <FlechaCO2 x={veranoR ? 960 : 760} y={veranoR ? 380 : 380} ang={veranoR ? 180 : 0} largo={130} o={kprog(T, K.Re + 0.5, K.Re + 0.9)} />
-          <text x={320} y={540} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} stroke="#fff" strokeWidth={8} paintOrder="stroke">{veranoR ? 'verano del norte' : 'invierno del norte'}</text>
-          <text x={320} y={590} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} stroke="#fff" strokeWidth={6} paintOrder="stroke">{veranoR ? 'las hojas lo absorben' : 'las hojas se pudren'}</text></>)}
+          <Arbol x={700} y={560} s={1.05} hojas={veranoR ? 1 : 0} />
+          <FlechaCO2 x={veranoR ? 960 : 760} y={340} ang={veranoR ? 180 : 0} largo={130} o={kprog(T, K.Re + 0.5, K.Re + 0.9)} />
+          <text x={320} y={480} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} stroke="#fff" strokeWidth={8} paintOrder="stroke">{veranoR ? 'verano del norte' : 'invierno del norte'}</text>
+          <text x={320} y={530} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} stroke="#fff" strokeWidth={6} paintOrder="stroke">{veranoR ? 'las hojas lo absorben' : 'las hojas se pudren'}</text></>)}
         <Etq T={T} at={K.Re + 1.2} until={K.P - 0.2} x={(box.x + (1958.37 - 1958.1) / 2.95 * box.w) + 10} y={box.y + box.h - (317.51 - 311) / 11 * box.h - 30} texto="mayo: máximo" tam={26} color={KC.ink} />
         <Etq T={T} at={K.Re + 2.2} until={K.P - 0.2} x={(box.x + (1958.79 - 1958.1) / 2.95 * box.w) + 10} y={box.y + box.h - (312.42 - 311) / 11 * box.h + 10} texto="sep–oct: mínimo" tam={26} color={KC.ink} />
       </Escena>
@@ -211,13 +213,13 @@ function KeelingShot() {
       <Escena T={T} a={K.E} b={K.H}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<g transform="rotate(1.5 540 930)">
-          <rect x={150} y={740} width={780} height={400} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={6} />
-          <text x={190} y={795} style={{ font:`700 30px ${KF.mono}` }} fill="#5a524a">Tellus · 1960</text>
-          <Grafica T={T} box={{ x: 240, y: 830, w: 640, h: 240 }} a0={1958.1} a1={1960.1} y0={311} y1={321} ticksY={[]} ticksX={[1959, 1960]} hasta={22 * kprog(T, K.E + 0.6, K.E + 3.5)} tamTick={22} grosor={5} fondo="rgba(255,255,255,0)" />
+          <rect x={100} y={720} width={880} height={580} rx={10} fill="#18213a" stroke={KC.ink} strokeWidth={6} />
+          <text x={140} y={780} style={{ font:`700 30px ${KF.mono}` }} fill="rgba(223,231,255,.75)">Tellus · 1960</text>
+          <Grafica T={T} box={{ x: 200, y: 830, w: 720, h: 360 }} a0={1958.1} a1={1960.1} y0={311} y1={321} ticksY={[]} ticksX={[1959, 1960]} hasta={22 * kprog(T, K.E + 0.6, K.E + 3.5)} tamTick={22} grosor={5} fondo="rgba(255,255,255,0)" />
         </g>)}
-        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.H - 0.2} anio="1960" quien="Charles David Keeling" revista="Scripps · revista Tellus" x={380} y={470} />
-        <Chip T={T} at={K.E + 3.4} until={K.H - 0.2} texto="la Tierra respira" y={705} x={290} tam={32} borde={KC.leaf} />
-        <Chip T={T} at={K.E + 4.6} until={K.H - 0.2} texto="y va en aumento" y={705} x={650} tam={32} borde={KC.red} />
+        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.H - 0.2} anio="1960" quien="Charles David Keeling" revista="Scripps · revista Tellus" x={540} y={440} />
+        <Chip T={T} at={K.E + 3.4} until={K.H - 0.2} texto="la Tierra respira" y={650} x={290} tam={32} borde={KC.leaf} />
+        <Chip T={T} at={K.E + 4.6} until={K.H - 0.2} texto="y va en aumento" y={650} x={700} tam={32} borde={KC.red} />
       </Escena>
       {/* 8 y 9 · hoy (427) y antes de la industria (280) */}
       <Escena T={T} a={K.H} b={K.Vz}>
@@ -226,15 +228,15 @@ function KeelingShot() {
           <circle cx={X(2025.5)} cy={Y(427.35)} r={15 * kprog(T, K.H + 1.8, K.H + 2.2, kEase.rebote)} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
           <g opacity={kprog(T, K.A + 0.8, K.A + 1.2) * (1 - kprog(T, fosil - 0.3, fosil))}><NucleoHielo x={760} y={470} T={T} /></g>
           <Fosiles x={770} y={590} T={T} o={kprog(T, fosil, fosil + 0.4)} /></>)}
-        <NumeroGigante T={T} at={K.H + 0.5} until={K.A - 0.1} valor={427} desde={313} dur={1.4} etiqueta="promedio de 2025:" x={420} y={500} tam={210} color={KC.yellow} />
-        <Etq T={T} at={K.H + 2.0} until={K.Vz - 0.2} x={X(2025.5) - 10} y={930} texto="2025: 427 ppm" lado="izq" tam={30} color={KC.ink} />
-        <Etq T={T} at={K.A + 1.2} until={K.Vz - 0.2} x={box.x + 20} y={Y(280) - 30} texto="antes de la industria: ≈ 280" tam={28} color="#1d4fa8" />
+        <NumeroGigante T={T} at={K.H + 0.5} until={K.A - 0.1} valor={427} desde={313} dur={1.4} etiqueta="promedio de 2025:" x={420} y={450} tam={210} color={KC.yellow} />
+        <Etq T={T} at={K.H + 2.0} until={K.Vz - 0.2} x={X(2025.5) - 10} y={Y4 + 330} texto="2025: 427 ppm" lado="izq" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.A + 1.2} until={K.Vz - 0.2} x={box.x + 20} y={Y(280) - 30} texto="antes de la industria: ≈ 280" tam={28} color="#8fbcff" />
         <Etq T={T} at={K.A + 1.0} until={fosil - 0.3} x={600} y={570} texto="burbujas en el hielo" lado="der" tam={28} color={KC.ink} />
-        <Chip T={T} at={fosil + 0.3} until={K.Vz - 0.2} texto="sobre todo: combustibles fósiles" y={660} x={640} tam={30} borde={KC.ink} />
+        <Chip T={T} at={fosil + 0.3} until={K.Vz - 0.2} texto="sobre todo: combustibles fósiles" y={250} x={540} tam={30} borde={KC.ink} />
       </Escena>
       {/* 10 · la erupción: midieron desde Maunakea */}
       <Escena T={T} a={K.Vz} b={K.C} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#ffb48a 0%, #ffe0c2 55%, #2f8fd8 60%, #1f6fb8 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#4a3a39 0%, #4a4547 55%, #14304d 60%, #0f2845 100%)' }}></div>
         {svg(<><Escudo x={820} base={1150} alto={440} ancho={300} lava="#5b5560" obs={false} nombre="Maunakea" />
           <Escudo x={330} base={1150} alto={400} ancho={430} T={T} erupcion={kprog(T, K.Vz + 0.3, K.Vz + 1.2)} nombre="Mauna Loa" />
           {(() => { const [ax, ay] = kObs(330, 1150, 400, 430), bx = 820 - 0.3 * 300, by = 1150 - 440 * Math.pow(1 - 0.09, 1.5), p = kprog(T, K.Vz + 2.2, K.Vz + 3.2, kEase.sale);
@@ -253,9 +255,9 @@ function KeelingShot() {
         {svg(<><Grafica T={T} box={box} hasta={N - 1} base280={1} pluma={false} />
           <circle cx={X(1958.2)} cy={Y(313)} r={13} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
           <circle cx={X(2025.5)} cy={Y(427.35)} r={15} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} /></>)}
-        <Etq T={T} at={K.C + 0.6} until={K.Ou - 0.1} x={X(1958.2) + 10} y={870} texto="1958: 313" tam={30} color={KC.ink} />
-        <Etq T={T} at={K.C + 1.0} until={K.Ou - 0.1} x={X(2025.5) - 10} y={930} texto="2025: 427" lado="izq" tam={30} color={KC.ink} />
-        <Etq T={T} at={K.C + 1.4} until={K.Ou - 0.1} x={box.x + 20} y={Y(280) - 30} texto="≈ 280" tam={28} color="#1d4fa8" />
+        <Etq T={T} at={K.C + 0.6} until={K.Ou - 0.1} x={X(1958.2) + 10} y={Y(313) - 170} texto="1958: 313" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.C + 1.0} until={K.Ou - 0.1} x={X(2025.5) - 10} y={Y4 + 330} texto="2025: 427" lado="izq" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.C + 1.4} until={K.Ou - 0.1} x={box.x + 20} y={Y(280) - 30} texto="≈ 280" tam={28} color="#8fbcff" />
         <Chip T={T} at={K.C + 0.3} until={K.Ou - 0.1} texto="el aire que respiras" y={500} x={680} tam={38} borde={KC.yellow} />
       </Escena>
 

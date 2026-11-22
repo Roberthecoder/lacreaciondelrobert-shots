@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #36 · Tú contra el auto sin conductor — NARRADO (N2 "El número").
 // Datos: Waymo Safety Impact Hub (hasta junio 2026); Di Lillo et al. (Swiss Re + Waymo, preprint dic 2024); NHTSA recall 25E084000 (dic 2025);
 // OMS, hoja "Road traffic injuries" (jul 2026). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -38,9 +39,9 @@ function Calle({ T, y0 = 760, y1 = 1180, vel = 1, carriles = 2 }) {
   for (let c = 1; c < carriles; c++) { const yy = y0 + (y1 - y0) * c / carriles;
     for (let k = -1; k < 9; k++) rayas.push(<rect key={`${c}-${k}`} x={off + k * 160} y={yy - 7} width={90} height={14} rx={7} fill={KC.yellow} />); }
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <rect x={0} y={y0 - 18} width={KW} height={18} fill="#c9c3b6" stroke={KC.ink} strokeWidth={5} />
+    <rect x={0} y={y0 - 18} width={KW} height={18} fill="#6a6969" stroke={KC.ink} strokeWidth={5} />
     <rect x={0} y={y0} width={KW} height={y1 - y0} fill={ASFALTO} />
-    <rect x={0} y={y1} width={KW} height={18} fill="#c9c3b6" stroke={KC.ink} strokeWidth={5} />
+    <rect x={0} y={y1} width={KW} height={18} fill="#6a6969" stroke={KC.ink} strokeWidth={5} />
     {rayas}
   </svg>;
 }
@@ -192,24 +193,25 @@ function Waymo() {
       {/* 1 · gancho: tú contra el auto sin nadie */}
       <Escena T={T} a={K.G} b={K.Mi}>
         <FondoLunares color={KC.yellow} />
-        <Calle T={T} vel={1} />
+        {/* pase a mano: calle y autos ×1.6 (antes calle 760–1180 y autos 0.9) */}
+        <Calle T={T} vel={1} y0={640} y1={1320} />
         {svg(<>
-          <Auto x={xH} y={850} s={0.9} T={T} color={KC.red} humano />
-          <Auto x={xW} y={1070} s={0.9} T={T} color={BLANCO} humano={false} />
+          <Auto x={xH} y={820} s={1.45} T={T} color={KC.red} humano />
+          <Auto x={xW} y={1170} s={1.45} T={T} color={BLANCO} humano={false} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.G + 0.5} until={K.Mi - 0.2} texto="tú" x={800} y={850} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.G + 1.4} until={K.Mi - 0.2} texto="nadie al volante" x={790} y={1070} tam={40} borde={KC.cyan} />
-      <NumeroGigante T={T} at={K.G + 4.7} until={K.Mi - 0.2} valor={-82} desde={0} dur={0.9} sufijo=" %" x={540} y={450} tam={230} color={KC.mint} />
-      <Chip T={T} at={K.G + 5.3} until={K.Mi - 0.2} texto="choques con heridos · según Waymo" x={540} y={640} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.G + 0.5} until={K.Mi - 0.2} texto="tú" x={820} y={800} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.G + 1.4} until={K.Mi - 0.2} texto="nadie al volante" x={820} y={1150} tam={40} borde={KC.cyan} />
+      <NumeroGigante T={T} at={K.G + 4.7} until={K.Mi - 0.2} valor={-82} desde={0} dur={0.9} sufijo=" %" x={540} y={370} tam={230} color={KC.mint} />
+      <Chip T={T} at={K.G + 5.3} until={K.Mi - 0.2} texto="choques con heridos · según Waymo" x={540} y={555} tam={34} borde={KC.mint} />
       {/* 2 · millas */}
       <Escena T={T} a={K.Mi} b={K.Ci}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Tablero T={T} x={540} y={820} r={250} aguja={0.15 + 0.7 * kprog(T, K.Mi + 0.2, K.Mi + 2.2, kEase.sale) + 0.02 * Math.sin(T * 7)} />)}
+        {svg(<Tablero T={T} x={540} y={880} r={330} aguja={0.15 + 0.7 * kprog(T, K.Mi + 0.2, K.Mi + 2.2, kEase.sale) + 0.02 * Math.sin(T * 7)} />)}
       </Escena>
-      <NumeroGigante T={T} at={K.Mi + 0.3} until={K.Ci - 0.2} valor={271.3} dur={2.0} dec={1} x={540} y={1110} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.Mi + 0.8} until={K.Ci - 0.2} texto="millones de millas sin conductor" x={620} y={470} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Mi + 2.2} until={K.Ci - 0.2} texto="hasta junio de 2026" x={620} y={560} tam={32} borde={KC.gold} />
+      <NumeroGigante T={T} at={K.Mi + 0.3} until={K.Ci - 0.2} valor={271.3} dur={2.0} dec={1} x={540} y={1160} tam={130} color={KC.yellow} />
+      <Chip T={T} at={K.Mi + 0.8} until={K.Ci - 0.2} texto="millones de millas sin conductor" x={540} y={370} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Mi + 2.2} until={K.Ci - 0.2} texto="hasta junio de 2026" x={540} y={455} tam={32} borde={KC.gold} />
       {/* 3 · ciudades */}
       <Escena T={T} a={K.Ci} b={K.P}>
         <FondoLunares color={KC.mint} />
@@ -225,21 +227,21 @@ function Waymo() {
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <Cuaderno x={300} y={830} s={0.95} T={T} />
-          <text x={250} y={560} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 250 470)`}>?</text>
+          <Cuaderno x={540} y={920} s={1.15} T={T} />{/* pase a mano: cuaderno ×1.2 y al centro */}
+          <text x={540} y={560} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 470)`}>?</text>
         </>)}
       </Escena>
       {/* 5 · el estudio con la reaseguradora */}
       <Escena T={T} a={K.E} b={K.Es}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>
+        {svg(<g transform="translate(540 1050) scale(1.6) translate(-540 -1050)">{/* pase a mano: escritorio y reclamos ×1.6 */}
           <path d="M 300 1100 L 340 1010 L 740 1010 L 780 1100 Z" fill="#8a6a4a" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
           {[0, 1].map((i) => { const g = kprog(T, K.E + 3.2 + i * 0.6, K.E + 3.7 + i * 0.6, kEase.sale);
             return <Reclamo key={i} x={480 + i * 120} y={klerp(700, 1000, g)} s={1.6} rot={i ? 8 : -6} o={g > 0 ? 1 : 0} />; })}
-        </>)}
+        </g>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Es - 0.2} anio="2024" quien="reaseguradora Swiss Re + Waymo" revista="reclamos de seguro · 25.3 millones de millas" y={560} />
-      <Chip T={T} at={K.E + 3.4} until={K.Es - 0.2} texto="reclamos por lesiones: 2" x={540} y={860} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.E + 3.4} until={K.Es - 0.2} texto="reclamos por lesiones: 2" x={540} y={1250} tam={40} borde={KC.red} />
       {/* 6 · lo esperado con humanos */}
       <Escena T={T} a={K.Es} b={K.O}>
         <FondoLunares color={KC.mint} />
@@ -261,56 +263,61 @@ function Waymo() {
       {/* 7 · ojo: quién firma y dónde casi no maneja */}
       <Escena T={T} a={K.O} b={K.R}>
         <FondoLunares color={KC.pink} />
+        {/* pase a mano: el sujeto (el auto sin conductor en su calle) sigue en pantalla bajo la tarjeta y los tachados */}
+        <div style={{ position:'absolute', inset:0, opacity:0.85 }}><Calle T={T} vel={0.35} y0={1150} y1={1420} /></div>
         {svg(<>
+          <Auto x={540} y={1285} s={1.0} T={T} color={BLANCO} humano={false} vel={0.35} o={0.9} />
           <g opacity={kprog(T, K.O + 0.2, K.O + 0.6)}>
             <rect x={360} y={360} width={660} height={330} rx={26} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
             <text x={690} y={420} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>autores del estudio</text>
             {[0, 1, 2, 3, 4, 5].map((i) => <g key={i} opacity={kprog(T, K.O + 0.5 + i * 0.15, K.O + 0.7 + i * 0.15)}><Autor x={440 + i * 100} y={540} color={i < 2 ? KC.gold : KC.cyan} s={1.1} /></g>)}
-            <text x={540} y={655} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#7a5a10">2 · Swiss Re</text>
-            <text x={840} y={655} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#0a6a86">4 · Waymo</text>
+            <text x={540} y={655} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.gold}>2 · Swiss Re</text>
+            <text x={840} y={655} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.cyan}>4 · Waymo</text>
           </g>
           <g opacity={kprog(T, K.O + 2.4, K.O + 2.8)}>
-            <Tachado x={300} y={960} g={kprog(T, K.O + 2.9, K.O + 3.3, kEase.sale)}><Autopista /></Tachado>
-            <Tachado x={780} y={960} g={kprog(T, K.O + 3.5, K.O + 3.9, kEase.sale)}><Copo /></Tachado>
+            <g transform="translate(270 950) scale(1.3) translate(-270 -950)"><Tachado x={270} y={950} g={kprog(T, K.O + 2.9, K.O + 3.3, kEase.sale)}><Autopista /></Tachado></g>
+            <g transform="translate(810 950) scale(1.3) translate(-810 -950)"><Tachado x={810} y={950} g={kprog(T, K.O + 3.5, K.O + 3.9, kEase.sale)}><Copo /></Tachado></g>
           </g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.O + 2.5} until={K.R - 0.2} texto="dónde casi no maneja" x={540} y={790} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.O + 2.5} until={K.R - 0.2} texto="dónde casi no maneja" x={540} y={740} tam={38} borde={KC.ink} />
       {/* 8 · recall: el autobús escolar */}
       <Escena T={T} a={K.R} b={K.Mu}>
         <FondoLunares color={KC.cyan} />
-        <Calle T={T} vel={congela ? 0 : 0.4 * (1 - kprog(T, K.R + 2.0, K.R + 2.6))} y0={780} y1={1180} />
+        {/* pase a mano: calle, autobús y auto ×1.25 */}
+        <Calle T={T} vel={congela ? 0 : 0.4 * (1 - kprog(T, K.R + 2.0, K.R + 2.6))} y0={700} y1={1260} />
         {svg(<>
-          <Autobus x={640} y={850} s={0.82} T={T} alto={kprog(T, K.R + 0.2, K.R + 0.7, kEase.sale)} />
-          <Auto x={xR} y={1080} s={0.78} T={congela ? 0 : T} color={BLANCO} humano={false} vel={congela ? 0 : 1} />
+          <Autobus x={640} y={800} s={1.05} T={T} alto={kprog(T, K.R + 0.2, K.R + 0.7, kEase.sale)} />
+          <Auto x={xR} y={1115} s={0.95} T={congela ? 0 : T} color={BLANCO} humano={false} vel={congela ? 0 : 1} />
           {T > K.R + 2.6 && T < K.R + 5.0 && <g opacity={Math.sin((T - K.R) * 12) > 0 ? 1 : 0.4}>
-            <circle cx={xR + 150} cy={980} r={40} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
-            <text x={xR + 150} y={996} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill="#fff">!</text></g>}
-          <g opacity={1 - kprog(T, K.R + 4.8, K.R + 5.1)}><Sello x={360} y={480} g={kprog(T, K.R + 2.8, K.R + 3.2, kEase.sale)} texto="RECALL" tam={120} /></g>
+            <circle cx={xR + 180} cy={990} r={44} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
+            <text x={xR + 180} y={1006} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill="#fff">!</text></g>}
+          <g opacity={1 - kprog(T, K.R + 4.8, K.R + 5.1)}><Sello x={360} y={430} g={kprog(T, K.R + 2.8, K.R + 3.2, kEase.sale)} texto="RECALL" tam={120} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.R + 3.4} until={K.Mu - 0.2} texto="NHTSA · 3,067 autos · dic 2025" x={370} y={650} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.R + 3.4} until={K.Mu - 0.2} texto="NHTSA · 3,067 autos · dic 2025" x={370} y={555} tam={32} borde={KC.red} />
       <Medidor T={T} at={K.R + 5.0} until={K.Mu - 0.2} x={60} y={420} ancho={600} etiqueta="actualizar software" color={KC.mint}
         valor={(t) => kprog(t, K.R + 5.2, K.R + 6.6, kEase.suave)} texto={(v) => v > 0.98 ? 'corregido ✔' : Math.round(v * 100) + ' %'} />
       {/* 9 · el mundo */}
       <Escena T={T} a={K.Mu} b={K.C}>
-        <div style={{ position:'absolute', inset:0, background:'#46506a' }}></div>
-        {svg(<Globo x={620} y={900} r={220} T={T} />)}
+        <FondoLunares color="#46506a" />{/* pase a mano: fondo oscuro (antes gris azulado claro plano) y globo ×1.45 */}
+        {svg(<Globo x={540} y={990} r={320} T={T} />)}
       </Escena>
-      <NumeroGigante T={T} at={K.Mu + 0.5} until={K.C - 0.2} valor={1.16} dur={1.0} dec={2} sufijo=" millones" etiqueta="muertes al año en el tránsito" x={620} y={480} tam={110} color={KC.yellow} />
-      <Chip T={T} at={K.Mu + 1.6} until={K.C - 0.2} texto="OMS · hoja informativa 2026" x={620} y={615} tam={28} borde={KC.texto} />
+      <NumeroGigante T={T} at={K.Mu + 0.5} until={K.C - 0.2} valor={1.16} dur={1.0} dec={2} sufijo=" millones" etiqueta="muertes al año en el tránsito" x={540} y={460} tam={110} color={KC.yellow} />
+      <Chip T={T} at={K.Mu + 1.6} until={K.C - 0.2} texto="OMS · hoja informativa 2026" x={540} y={600} tam={28} borde={KC.texto} />
       {/* 10 · cierre: los mismos dos autos, el de nadie va adelante… con lupa */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
-        <Calle T={T} vel={1} />
+        {/* pase a mano: mismo encuadre que el gancho (calle y autos ×1.6) */}
+        <Calle T={T} vel={1} y0={640} y1={1320} />
         {svg(<>
-          <Auto x={klerp(330, 300, kprog(T, K.C, K.C + 1.5, kEase.suave))} y={850} s={0.9} T={T} color={KC.red} humano />
-          <Auto x={klerp(330, 700, kprog(T, K.C + 0.2, K.C + 1.8, kEase.suave))} y={1070} s={0.9} T={T} color={BLANCO} humano={false} />
-          <g opacity={kprog(T, K.C + 3.3, K.C + 3.7)}><LupaIcono x={klerp(500, 700, kprog(T, K.C + 3.3, K.C + 4.3, kEase.sale))} y={960} s={0.9} /></g>
+          <Auto x={klerp(330, 290, kprog(T, K.C, K.C + 1.5, kEase.suave))} y={820} s={1.45} T={T} color={KC.red} humano />
+          <Auto x={klerp(330, 760, kprog(T, K.C + 0.2, K.C + 1.8, kEase.suave))} y={1170} s={1.45} T={T} color={BLANCO} humano={false} />
+          <g opacity={kprog(T, K.C + 3.3, K.C + 3.7)}><LupaIcono x={klerp(560, 760, kprog(T, K.C + 3.3, K.C + 4.3, kEase.sale))} y={1090} s={1.3} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="en sus calles: va adelante" x={370} y={560} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="¿y sus números? a revisar 🔍" x={370} y={660} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="en sus calles: va adelante" x={540} y={430} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="¿y sus números? a revisar 🔍" x={540} y={520} tam={34} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Mi - 0.1} texto="Tú contra un auto *sin nadie al volante*" />

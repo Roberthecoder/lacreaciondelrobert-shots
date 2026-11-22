@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #50 · De cada mil incendios en Jalisco, solo dos los prende la naturaleza (Bosque La Primavera) — NARRADO
 // (N4 la imagen que se llena: el mapa del bosque junto a Guadalajara se colorea con lo quemado + N2 el número: 2 de 1,000).
 // Datos: Plan Estatal de Manejo del Fuego de Jalisco (2018, CONAFOR 2005-2013), Ra Ximhai (2012), Sánchez Durán et al. (2014),
@@ -20,7 +21,7 @@ function PinoMini({ x, y, s = 1, color = '#2f7a39' }) {
 // Mapa esquemático: Guadalajara (gris) y La Primavera (verde) al poniente. q05 / q12: 0..1 crecimiento de lo quemado. p25: 0..1 puntos de 2025.
 function Mapa({ T, seco = 0, q05 = 0, q12 = 0, p25 = 0, basura = 0 }) {
   const verde = mixHex('#46a352', '#c9b55a', seco);
-  return <g transform="translate(0 -110)">
+  return <g transform="translate(540 990) scale(1.05) translate(-555 -955)">
     <defs><clipPath id="pvClip"><path d={PV_BOSQUE} /></clipPath><clipPath id="pvCiu"><path d={PV_CIUDAD} /></clipPath></defs>
     {/* ciudad */}
     <path d={PV_CIUDAD} fill="#a9b0b9" stroke={KC.ink} strokeWidth={6} />
@@ -46,7 +47,7 @@ function Mapa({ T, seco = 0, q05 = 0, q12 = 0, p25 = 0, basura = 0 }) {
       <path d={PV_FLAMA} transform={`translate(0 -16) scale(${0.8 * (1 + 0.12 * Math.sin(T * 17))})`} fill={KC.yellow} />
     </g>}
     <text x={785} y={960} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={8} paintOrder="stroke">Guadalajara</text>
-    <text x={60} y={1185} style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>esquema</text>
+    <text x={130} y={1185} style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>esquema</text>
   </g>;
 }
 // Cabecera de dato a la izquierda (deja libre la zona de Robert a la derecha).
@@ -63,7 +64,7 @@ function Cabecera({ T, at, until, grande, linea, sub, color = KC.yellow }) {
 const PV_NAT = [6 * 40 + 9, 17 * 40 + 30];
 const PV_ORDEN = (() => { const r = krng(998), a = Array.from({ length: 1000 }, (_, i) => ({ i, k: r() })); a.sort((p, q) => p.k - q.k); const o = new Array(1000); a.forEach((p, n) => { o[p.i] = n / 1000; }); return o; })();
 function Flamas({ T, t0, apagarDesde = null, apagarDur = 3.5 }) {
-  const cw = 22, ch = 14.6, x0 = 100, y0 = 735;
+  const cw = 24.5, ch = 25, x0 = 50, y0 = 620;
   const out = [];
   for (let i = 0; i < 1000; i++) {
     const c = i % 40, r = Math.floor(i / 40), x = x0 + c * cw + cw / 2, y = y0 + r * ch + ch;
@@ -72,7 +73,7 @@ function Flamas({ T, t0, apagarDesde = null, apagarDur = 3.5 }) {
     const off = apagarDesde == null || nat ? 0 : kprog(T, apagarDesde + PV_ORDEN[i] * apagarDur, apagarDesde + PV_ORDEN[i] * apagarDur + 0.25);
     const fl = 1 + 0.12 * Math.sin(T * 12 + i * 1.7);
     if (off >= 1) { out.push(<circle key={i} cx={x} cy={y - 4} r={2.5} fill="#5b5f66" />); continue; }
-    out.push(<path key={i} d={PV_FLAMA} transform={`translate(${x} ${y}) scale(${0.55 * luz * (1 - off)}, ${0.6 * luz * fl * (1 - off)})`} fill={nat ? KC.cyan : (i % 3 ? KC.orange : '#ff5a1f')} stroke={KC.ink} strokeWidth={2} />);
+    out.push(<path key={i} d={PV_FLAMA} transform={`translate(${x} ${y}) scale(${0.85 * luz * (1 - off)}, ${0.95 * luz * fl * (1 - off)})`} fill={nat ? KC.cyan : (i % 3 ? KC.orange : '#ff5a1f')} stroke={KC.ink} strokeWidth={2} />);
   }
   const marcas = PV_NAT.map((i, k) => { const c = i % 40, r = Math.floor(i / 40), x = x0 + c * cw + cw / 2, y = y0 + r * ch + ch - 6;
     const p = kprog(T, t0 + 1.0 + k * 0.3, t0 + 1.4 + k * 0.3, kEase.rebote);
@@ -90,20 +91,20 @@ function CorteAgua({ T, t0 }) {
     if (T < t0) continue;
     gotas.push(u < 0.35 ? <path key={k} d="M 0 -14 Q 9 0 0 9 Q -9 0 0 -14 Z" transform={`translate(${x} ${700 + u / 0.35 * 180})`} fill="#3aa0ff" stroke={KC.ink} strokeWidth={2.5} />
       : <circle key={k} cx={x + Math.sin(u * 20 + k) * 8} cy={880 + (u - 0.35) / 0.65 * 230} r={6} fill="#3aa0ff" stroke={KC.ink} strokeWidth={2} />); }
-  return <g transform="translate(0 -150)">
-    <rect x={0} y={880} width={1080} height={90} fill="#6b4a2e" />
-    <rect x={0} y={970} width={1080} height={130} fill="#c9a27a" />
-    {Array.from({ length: 40 }, (_, i) => <circle key={i} cx={(i * 97) % 1080} cy={990 + (i * 37) % 100} r={6 + (i % 3) * 3} fill="#a9825c" />)}
-    <rect x={0} y={1100} width={1080} height={110} fill="#2f7fd0" />
+  return <g transform="translate(540 970) scale(1.15) translate(-540 -865)">
+    <rect x={-100} y={880} width={1280} height={90} fill="#4a3320" />
+    <rect x={-100} y={970} width={1280} height={130} fill="#6e5640" />
+    {Array.from({ length: 40 }, (_, i) => <circle key={i} cx={(i * 97) % 1080} cy={990 + (i * 37) % 100} r={6 + (i % 3) * 3} fill="#5a4532" />)}
+    <rect x={-100} y={1100} width={1280} height={110} fill="#1d4f86" />
     {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${60 + i * 170} ${1150 + Math.sin(T * 2 + i) * 4} q 30 -10 60 0`} stroke="#bfe7ff" strokeWidth={5} fill="none" />)}
-    <line x1={0} y1={880} x2={1080} y2={880} stroke={KC.ink} strokeWidth={6} />
+    <line x1={-100} y1={880} x2={1180} y2={880} stroke={KC.ink} strokeWidth={6} />
     {[130, 260, 400, 560, 700, 840, 960].map((x, i) => <g key={i} transform={`translate(${x} 880) scale(${1.1 + (i % 2) * 0.3})`}>
       <rect x={-6} y={-60} width={12} height={60} fill="#5a3b22" stroke={KC.ink} strokeWidth={3} />
       <path d="M 0 -150 L 34 -90 L 18 -90 L 44 -50 L -44 -50 L -18 -90 L -34 -90 Z" fill="#2f7a39" stroke={KC.ink} strokeWidth={4} transform={`rotate(${Math.sin(T * 1.5 + i) * 2} 0 -50)`} /></g>)}
     {gotas}
     <g transform={`translate(420 640)`}><ellipse cx={0} cy={0} rx={190} ry={60} fill="#e3e9f0" stroke={KC.ink} strokeWidth={6} /><circle cx={-90} cy={-30} r={55} fill="#e3e9f0" stroke={KC.ink} strokeWidth={6} /><circle cx={30} cy={-50} r={70} fill="#e3e9f0" stroke={KC.ink} strokeWidth={6} /><ellipse cx={0} cy={5} rx={182} ry={52} fill="#e3e9f0" /></g>
-    <text x={1040} y={1170} textAnchor="end" style={{ font:`900 34px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={7} paintOrder="stroke">acuífero</text>
-    <text x={40} y={1040} style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>suelo y roca</text>
+    <text x={990} y={1170} textAnchor="end" style={{ font:`900 34px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={7} paintOrder="stroke">acuífero</text>
+    <text x={90} y={1040} style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>suelo y roca</text>
   </g>;
 }
 // Ocote (Pinus oocarpa): tronco con corteza en placas, copa irregular de mechones de acículas y conos ovoides con pedúnculo.
@@ -140,7 +141,7 @@ function PrimaveraShot() {
   const K = { G: CUES.Gancho, B: CUES.Bosque, A: CUES.Agua, F: CUES.Fuego, Ba: CUES.Basura, P: CUES.Pregunta, E: CUES.Estudio, At: CUES.Atorado, H: CUES.Hoy, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
-  const km5 = 90; // 1 km ≈ 18 px en el mapa (esquema)
+  const km5 = 90 * 1.05; // 1 km ≈ 18 px en el mapa (esquema), × 1.05 porque el mapa se dibuja 1.05 veces más grande
   const q05 = kprog(T, K.F + 1.2, K.F + 4.0, kEase.suave);
   const q12 = kprog(T, K.Ba + 1.0, K.Ba + 3.8, kEase.suave);
   return (
@@ -178,14 +179,14 @@ function PrimaveraShot() {
       {/* 6 · pregunta: ¿los pinos no aguantan? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><Ocote x={330} y={1110} s={1.05} T={T} />
-          <text x={120} y={900} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 120 800)`}>?</text></>)}
+        {svg(<><Ocote x={580} y={1460} s={1.5} T={T} />
+          <text x={150} y={1180} textAnchor="middle" style={{ font:`400 320px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 150 1080)`}>?</text></>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 7 · el estudio de 2010: rebrotes de raíz */}
       <Escena T={T} a={K.E} b={K.At}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<><g transform="translate(0 -170)">
+        {svg(<><g transform="translate(0 -50)">
           <rect x={0} y={860} width={1080} height={400} fill="#6b4a2e" />
           <rect x={0} y={840} width={1080} height={24} fill="#2e221c" />
           <ellipse cx={540} cy={846} rx={420 * kprog(T, K.E + 0.2, K.E + 1.0, kEase.sale)} ry={30} fill="none" stroke={KC.yellow} strokeWidth={6} strokeDasharray="18 12" />
@@ -199,19 +200,19 @@ function PrimaveraShot() {
           {[250, 820].map((x, i) => { const b = kprog(T, K.E + 4.2 + i * 0.3, K.E + 4.8 + i * 0.3, kEase.rebote); return <PinitoRamoso key={'s' + i} x={x + 40} y={840} s={0.5} T={T} brote={b} />; })}
           <text x={60} y={1190} style={{ font:`700 26px ${KF.mono}` }} fill="#f4efe4">raíz del pino quemado (esquema)</text></g>
           {/* barra 83 % */}
-          <g opacity={kprog(T, K.E + 4.6, K.E + 5.0)}><rect x={90} y={900} width={900} height={50} rx={25} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={5} />
-            <rect x={95} y={905} width={890 * 0.83 * kprog(T, K.E + 4.6, K.E + 5.6, kEase.sale)} height={40} rx={20} fill={KC.gold} /></g>
+          <g opacity={kprog(T, K.E + 4.6, K.E + 5.0)}><rect x={90} y={1020} width={900} height={50} rx={25} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={5} />
+            <rect x={95} y={1025} width={890 * 0.83 * kprog(T, K.E + 4.6, K.E + 5.6, kEase.sale)} height={40} rx={20} fill={KC.gold} /></g>
         </>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 8 · se quedan chaparritos y ramosos */}
       <Escena T={T} a={K.At} b={K.H}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(0 -90)">
-          <rect x={0} y={1150} width={1080} height={110} fill="#6b4a2e" /><line x1={0} y1={1150} x2={1080} y2={1150} stroke={KC.ink} strokeWidth={6} />
+        {svg(<g transform="translate(0 30)">
+          <rect x={0} y={1150} width={1080} height={110} fill="#4a3320" /><line x1={0} y1={1150} x2={1080} y2={1150} stroke={KC.ink} strokeWidth={6} />
           <line x1={120} y1={760} x2={960} y2={760} stroke={KC.ink} strokeWidth={5} strokeDasharray="20 14" />
           <text x={960} y={740} textAnchor="end" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>altura para reproducirse</text>
-          <PinitoRamoso x={430} y={1150} s={2.2} T={T} brote={1 + 0.03 * Math.sin((T - K.At) * 6)} />
+          <PinitoRamoso x={430} y={1150} s={2.6} T={T} brote={1 + 0.03 * Math.sin((T - K.At) * 6)} />
           <g transform="translate(950 0)"><rect x={0} y={800} width={60} height={350} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
             {Array.from({ length: 8 }, (_, i) => <line key={i} x1={0} y1={1150 - i * 44} x2={i % 2 ? 22 : 36} y2={1150 - i * 44} stroke={KC.ink} strokeWidth={4} />)}</g>
           <g transform={`translate(800 1000) scale(${kprog(T, K.At + 1.2, K.At + 1.7, kEase.rebote)})`}>
@@ -232,14 +233,14 @@ function PrimaveraShot() {
         <FondoLunares color={KC.cyan} />
         {svg(<>
           {[[230, 'basura'], [540, 'pastizal']].map(([x, t], i) => { const p = kprog(T, K.C + 0.2 + i * 0.4, K.C + 0.6 + i * 0.4, kEase.rebote), r = kprog(T, K.C + 0.9 + i * 0.4, K.C + 1.2 + i * 0.4);
-            return <g key={i} transform={`translate(${x} 880) scale(${p})`}>
+            return <g key={i} transform={`translate(${x} 960) scale(${p})`}>
               <circle r={120} fill="#fff" stroke={KC.ink} strokeWidth={8} />
               {i === 0 ? <path d="M -60 50 Q -55 0 -15 -10 Q 20 -25 55 5 Q 70 30 62 50 Z" fill="#7d8a5a" stroke={KC.ink} strokeWidth={5} />
                 : Array.from({ length: 9 }, (_, k) => <path key={k} d={`M ${-64 + k * 16} 55 q ${4 - (k % 2) * 8} -50 ${(k % 2) * 10 - 5} -80`} stroke="#c9b55a" strokeWidth={7} fill="none" strokeLinecap="round" />)}
               <path d={PV_FLAMA} transform={`translate(0 -10) scale(${2.4 * (1 + 0.1 * Math.sin(T * 13 + i))})`} fill={KC.orange} stroke={KC.ink} strokeWidth={3} />
               <path d="M -85 -85 L 85 85" stroke={KC.red} strokeWidth={18 * r} strokeLinecap="round" />
               <text y={170} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{t}</text></g>; })}
-          <g transform={`translate(850 880) scale(${kprog(T, K.C + 1.6, K.C + 2.0, kEase.rebote)}) rotate(${Math.sin(T * 25) * 4 * (T < K.C + 3 ? 1 : 0)})`}>
+          <g transform={`translate(850 960) scale(${kprog(T, K.C + 1.6, K.C + 2.0, kEase.rebote)}) rotate(${Math.sin(T * 25) * 4 * (T < K.C + 3 ? 1 : 0)})`}>
             <rect x={-70} y={-130} width={140} height={260} rx={24} fill="#2c2f36" stroke={KC.ink} strokeWidth={7} />
             <rect x={-56} y={-104} width={112} height={180} rx={10} fill="#e8f6ff" />
             <text y={10} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.red}>911</text>
@@ -254,21 +255,21 @@ function PrimaveraShot() {
       </Escena>
 
       {/* datos y etiquetas */}
-      <NumeroGigante T={T} at={K.G + 0.6} until={K.B - 0.2} valor={2} dur={0.6} sufijo=" de 1,000" etiqueta="naturales:" x={320} y={560} tam={110} color={KC.cyan} />
-      <Chip T={T} at={K.G + 1.5} until={K.B - 0.2} texto="Jalisco · 2005–2013" y={372} x={300} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.G + 3.0} until={K.B - 0.2} texto="998: personas" y={672} x={320} tam={40} borde={KC.orange} />
+      <NumeroGigante T={T} at={K.G + 0.6} until={K.B - 0.2} valor={2} dur={0.6} sufijo=" de 1,000" etiqueta="naturales:" x={330} y={450} tam={110} color={KC.cyan} />
+      <Chip T={T} at={K.G + 1.5} until={K.B - 0.2} texto="Jalisco · 2005–2013" y={290} x={300} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.0} until={K.B - 0.2} texto="998: personas" y={1350} x={540} tam={40} borde={KC.orange} />
       <Chip T={T} at={K.B + 0.2} until={K.B + 2.5} texto="CONAFOR · Jalisco 2005–2013" y={470} x={540} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.B + 2.4} until={K.A - 0.2} texto="La Primavera · 30,500 ha" y={655} x={300} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.A + 0.5} until={K.F - 0.2} texto="≈ 240 millones de m³ de lluvia al año" y={370} x={380} tam={28} borde={KC.cyan} />
       <Cabecera T={T} at={K.F + 1.0} until={K.Ba - 0.2} grande="2005" linea="más de 11 mil ha · 37 %" sub="temporada seca" color={KC.yellow} />
       <Cabecera T={T} at={K.Ba + 0.8} until={K.P - 0.2} grande="2012" linea="más de 8 mil ha" sub="empezó: quema de basura" color={KC.yellow} />
-      <Etq T={T} at={K.P + 0.3} until={K.E - 0.1} x={70} y={440} texto="ocote · Pinus oocarpa" lado="der" tam={30} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 1.6} until={K.E + 4.4} anio="2010" quien="UdeG · La Primavera" revista="Rev. Mex. Cienc. Forestales, 2014" x={540} y={520} />
-      <Chip T={T} at={K.E + 4.7} until={K.At - 0.1} texto="83 % rebrotes de raíz" y={560} x={340} tam={36} borde={KC.gold} />
-      <Etq T={T} at={K.E + 2.2} until={K.E + 4.4} x={80} y={760} texto="Pinus oocarpa" it lado="der" tam={28} color={KC.paper} />
-      <Etq T={T} at={K.At + 0.5} until={K.H - 0.2} x={430} y={780} texto="estado ramoso" lado="der" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.P + 0.3} until={K.E - 0.1} x={70} y={540} texto="ocote · Pinus oocarpa" lado="der" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 1.6} until={K.E + 4.4} anio="2010" quien="UdeG · La Primavera" revista="Rev. Mex. Cienc. Forestales, 2014" x={540} y={600} />
+      <Chip T={T} at={K.E + 4.7} until={K.At - 0.1} texto="83 % rebrotes de raíz" y={660} x={340} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.E + 2.2} until={K.E + 4.4} x={80} y={880} texto="Pinus oocarpa" it lado="der" tam={28} color="#f4efe4" />
+      <Etq T={T} at={K.At + 0.5} until={K.H - 0.2} x={470} y={880} texto="estado ramoso" lado="der" tam={32} color={KC.ink} />
       <Cabecera T={T} at={K.H + 0.6} until={K.C - 0.2} grande="2025" linea="≈ 50 incendios" sub="casi 2,000 ha" color={KC.yellow} />
-      <Chip T={T} at={K.C + 3.4} until={K.Ou - 0.1} texto="que no sea de los 998" y={640} x={400} tam={40} borde={KC.orange} />
+      <Chip T={T} at={K.C + 3.4} until={K.Ou - 0.1} texto="que no sea de los 998" y={500} x={540} tam={40} borde={KC.orange} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.B - 0.1} texto="Solo *2 de cada 1,000* los prendió la naturaleza." />

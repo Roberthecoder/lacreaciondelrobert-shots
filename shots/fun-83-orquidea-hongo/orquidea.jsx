@@ -313,8 +313,8 @@ function OrquideaShot() {
   const abre0 = kprog(T, K.G + 0.15, K.G + 0.7, kEase.sale);
   const dedo = kprog(T, K.G, K.G + 0.25) * (1 - kprog(T, K.G + 0.6, K.G + 1.0));
   const RAMA_Y = 760, CAP_X = 330, ORQ_X = 590;
-  // Pase a mano (cine): la rama con la cápsula se dibuja 1.6 veces más grande (misma imagen en gancho, cápsula y cierre).
-  const GT = 'translate(270 630) scale(1.6) translate(-330 -760)';
+  // Pase a mano (cine): la rama con la cápsula se dibuja 1.6 veces más grande y centrada (misma imagen en gancho, cápsula y cierre).
+  const GT = 'translate(270 790) scale(1.6) translate(-330 -760)';
   // Semilla al microscopio 1.25 veces más grande (centro 540, 900): la hifa sube desde abajo y entra por la punta izquierda.
   const SEM = { x: 540, y: 900, L: 950, W: 312 };
   const hifaPts = [[-40, 1480], [120, 1300], [60, 1090], [66, 922], [190, 904], [345, 899]];
@@ -488,18 +488,18 @@ function OrquideaShot() {
       </Escena>
 
       {/* ---------- textos ---------- */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 0.9} until={K.G + 1.6} texto={TX.mito} x={290} y={380} tam={64} />
-      <Chip T={T} at={K.G + 1.7} until={K.Bo - 0.3} texto={TX.semillas} x={275} y={350} tam={36} borde={KC.gold} />
-      <Chip T={T} at={K.G + 3.2} until={K.Bo - 0.3} texto={TX.sinHongo} x={330} y={435} tam={32} borde={KC.red} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 0.9} until={K.G + 1.6} texto={TX.mito} x={290} y={330} tam={64} />
+      <Chip T={T} at={K.G + 1.7} until={K.Bo - 0.3} texto={TX.semillas} x={275} y={300} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.G + 3.2} until={K.Bo - 0.3} texto={TX.sinHongo} x={330} y={380} tam={32} borde={KC.red} />
       <NumeroGigante T={T} at={K.Bo + 0.4} until={K.Ca - 0.3} valor={TX.numMx} prefijo={TX.numMxPre} dur={1.0} x={330} y={530} tam={170} color={KC.yellow} />
       <EtqP T={T} at={K.Bo + 0.9} until={K.Ca - 0.3} x={60} y={710} texto={TX.etqMx1} tam={32} />
       <EtqP T={T} at={K.Bo + 1.1} until={K.Ca - 0.3} x={60} y={765} texto={TX.etqMx2} tam={32} />
       <Chip T={T} at={K.Bo + 2.6} until={K.Ca - 0.3} texto={TX.bosque1} x={540} y={1000} tam={40} borde={KC.mint} />
       <Chip T={T} at={K.Bo + 3.2} until={K.Ca - 0.3} texto={TX.bosque2} x={540} y={1085} tam={30} borde={KC.mint} mono />
-      <NumeroGigante T={T} at={K.Ca + 0.2} until={K.Se - 0.3} valor={TX.numCap} prefijo={TX.numCapPre} dur={1.1} x={740} y={790} tam={88} color={KC.yellow} />
-      <EtqP T={T} at={K.Ca + 0.6} until={K.Se - 0.3} x={440} y={865} texto={TX.etqCap} tam={28} linea={false} />
-      <EtqP T={T} at={K.Ca + 1.0} until={K.Se - 0.3} x={440} y={912} texto={TX.etqCap2} tam={28} linea={false} color={KC.gold2} />
-      <EtqP T={T} at={K.Ca + 1.0} until={K.Se - 0.3} x={440} y={959} texto={TX.etqCap3} tam={28} color={KC.gold2} linea={false} />
+      <NumeroGigante T={T} at={K.Ca + 0.2} until={K.Se - 0.3} valor={TX.numCap} prefijo={TX.numCapPre} dur={1.1} x={740} y={950} tam={88} color={KC.yellow} />
+      <EtqP T={T} at={K.Ca + 0.6} until={K.Se - 0.3} x={440} y={1025} texto={TX.etqCap} tam={28} linea={false} />
+      <EtqP T={T} at={K.Ca + 1.0} until={K.Se - 0.3} x={440} y={1072} texto={TX.etqCap2} tam={28} linea={false} color={KC.gold2} />
+      <EtqP T={T} at={K.Ca + 1.0} until={K.Se - 0.3} x={440} y={1119} texto={TX.etqCap3} tam={28} color={KC.gold2} linea={false} />
       <Chip T={T} at={K.Se + 0.2} until={K.Pe - 0.3} texto={TX.porDentro} x={400} y={390} tam={30} borde={KC.cyan} mono />
       <EtqP T={T} at={K.Se + 0.9} until={K.Hi - 0.2} x={200} y={690} texto={TX.testa} tam={32} color={OQ.testa} />
       <EtqP T={T} at={K.Se + 1.4} until={K.Hi - 0.2} x={640} y={1070} texto={TX.embrion} tam={32} color={OQ.embrion} />
@@ -528,12 +528,12 @@ function OrquideaShot() {
       <EtqP T={T} at={K.Va + 1.0} until={K.C - 0.3} x={60} y={290} texto={TX.vainilla2} tam={30} linea={false} />
       <EtqP T={T} at={K.Va + 2.2} until={K.C - 0.3} x={610} y={860} texto={TX.nativa1} tam={30} linea={false} />
       <EtqP T={T} at={K.Va + 2.2} until={K.C - 0.3} x={610} y={912} texto={TX.nativa2} tam={30} linea={false} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.cierre} x={740} y={960} tam={44} borde={KC.gold} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.cierre} x={740} y={1040} tam={44} borde={KC.gold} />
 
       {/* ---------- barras de escala ---------- */}
-      <Escala2 T={T} at={K.G} until={K.Bo} texto="1 cm" largo={96} />
+      <Escala2 T={T} at={K.G} until={K.Bo} texto="1 cm" largo={96} x={30} y={1090} />
       <Escala2 T={T} at={K.Bo} until={K.Ca} texto="1 m" largo={200} />
-      <Escala2 T={T} at={K.Ca} until={K.Se} texto="1 cm" largo={96} />
+      <Escala2 T={T} at={K.Ca} until={K.Se} texto="1 cm" largo={96} x={30} y={1090} />
       <Escala2 T={T} at={K.Se} until={K.Pe} texto="0.1 mm" largo={250} />
       <Escala2 T={T} at={K.Pe} until={K.Pr} texto="20 µm" largo={192} />
       <Escala2 T={T} at={K.Pr} until={K.Di} texto="dibujo esquemático" largo={0} />
@@ -541,7 +541,7 @@ function OrquideaShot() {
       <Escala2 T={T} at={K.Pc} until={K.Es} texto="0.5 mm" largo={194} />
       <Escala2 T={T} at={K.Es + 0.3} until={K.Va} texto="10 cm" largo={208} />
       <Escala2 T={T} at={K.Va} until={K.C} texto="10 cm (planta) · mapa esquemático" largo={120} />
-      <Escala2 T={T} at={K.C} until={K.Ou} texto="1 cm" largo={96} />
+      <Escala2 T={T} at={K.C} until={K.Ou} texto="1 cm" largo={96} x={30} y={1090} />
 
       {/* ---------- subtítulos (idx = línea de narracion.json) ---------- */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Bo - 0.1} texto="No es polvo: son *semillas de orquídea.*" />

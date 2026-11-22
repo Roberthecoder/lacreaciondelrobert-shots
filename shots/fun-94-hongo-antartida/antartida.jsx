@@ -158,7 +158,7 @@ function AntartidaShot() {
       <Escena T={T} a={K.E} b={K.R} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:'#060a18' }}></div>
         <Ambiente T={T} n={40} color="rgba(255,255,255,.6)" tam={[2, 5]} vel={4} />
-        {fsvg(<><Tierra x={540} y={1840} r={640} /><Estacion T={T} x={540} y={860} s={1.25} charola={kprog(T, K.E + 2.0, K.E + 2.6)} marte={kprog(T, K.M + 1.6, K.M + 2.4)} /></>)}
+        {fsvg(<><g opacity={0.42}><Tierra x={540} y={1900} r={640} /></g><Estacion T={T} x={540} y={930} s={1.25} charola={kprog(T, K.E + 2.0, K.E + 2.6)} marte={kprog(T, K.M + 1.6, K.M + 2.4)} /></>)}
       </Escena>
       {/* 9 · más del 60 % de las células seguían enteras (cuadrícula de 100) */}
       <Escena T={T} a={K.R} b={K.Co} zoom={0.03}>
@@ -206,7 +206,7 @@ function AntartidaShot() {
       <Chip T={T} at={K.Es + 0.4} until={K.P - 0.3} texto="escudo contra UV y radiación" x={540} y={1560} tam={34} borde={AO.uv} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.M - 0.3} anio="2008" quien="ESA · EXPOSE-E · experimento LIFE" revista="afuera de la Estación, 2008–2009" x={540} y={420} />
       <Chip T={T} at={K.M + 0.3} until={K.R - 0.3} texto="18 meses afuera" x={540} y={480} tam={42} borde={KC.gold2} />
-      <EtqMix T={T} at={K.M + 1.6} until={K.R - 0.3} x={540} y={1085} centro partes={[['espacio  |  ', false], ['como en Marte (CO₂, ~1 % de la presión)', false]]} tam={26} color={KC.texto} />
+      <EtqMix T={T} at={K.M + 1.6} until={K.R - 0.3} x={540} y={1150} centro partes={[['espacio  |  ', false], ['como en Marte (CO₂, ~1 % de la presión)', false]]} tam={26} color={KC.texto} />
       <NumeroGigante T={T} at={K.R + 2.6} until={K.Co - 0.3} valor={60} dur={0.6} prefijo="> " sufijo=" %" etiqueta="células enteras" x={540} y={380} tam={120} color={KC.texto} />
       <Etq T={T} at={K.R + 3.2} until={K.Co - 0.3} x={100} y={545} texto="hongos y rocas de la prueba · medido por ADN" tam={26} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.R + 0.3} until={K.R + 2.4} anio="2015" quien="Onofri et al." revista="Astrobiology, 2015" x={540} y={360} />

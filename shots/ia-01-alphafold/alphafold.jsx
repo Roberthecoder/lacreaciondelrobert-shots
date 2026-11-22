@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #01 · AlphaFold: la IA que adivina la forma de las proteínas — NARRADO (N2 "El número" + viaje N1).
 // Guion y fuentes: guion.md. El dibujo es esquemático: la proteína es una cadena de 40 cuentas (no una proteína real).
 const N_CUENTAS = 40;
@@ -64,7 +65,7 @@ function Cristal({ T, a }) {
     <rect x={40} y={830} width={150} height={120} rx={16} fill="#3c4458" stroke={KC.ink} strokeWidth={8} />
     <text x={115} y={900} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.yellow}>RX</text>
     {haz > 0 && <line x1={190} y1={890} x2={klerp(190, 820, haz)} y2={890} stroke={KC.yellow} strokeWidth={14} opacity={0.55 + 0.45 * Math.sin(T * 30)} />}
-    <g transform={`translate(430 890) rotate(${T * 10})`}>
+    <g transform={`translate(430 890) scale(1.55) rotate(${T * 10})`}>
       <path d="M 0 -110 L 90 -55 L 90 55 L 0 110 L -90 55 L -90 -55 Z" fill="#b8f1ff" stroke={KC.ink} strokeWidth={8} opacity=".9" />
       <path d="M 0 -110 L 0 0 L 90 55 M 0 0 L -90 55" stroke="#5fc6e6" strokeWidth={5} fill="none" />
       {Array.from({ length: 9 }, (_, i) => <g key={i} transform={`translate(${((i % 3) - 1) * 46} ${(Math.floor(i / 3) - 1) * 46}) scale(.16)`}><Proteina T={T} x={0} y={0} f={1} cuentas={0} /></g>)}
@@ -98,21 +99,21 @@ function AlphaFold() {
       {/* 1 · gancho: estambre → proteína */}
       <Escena T={T} a={K.G} b={K.Co} zoom={0.06}>
         <FondoLunares color={KC.pink} />
-        {svg(<Proteina T={T} x={500} y={980} s={klerp(0.3, 1.45, llega)} f={1} estambre={1 - revela} cuentas={revela} gira={1.2} />)}
+        {svg(<Proteina T={T} x={540} y={1000} s={klerp(0.5, 2.15, llega)} f={1} estambre={1 - revela} cuentas={revela} gira={1.2} />)}
       </Escena>
       {/* 2–3 · collar de cuentas que se dobla */}
       <Escena T={T} a={K.Co} b={K.L}>
         <FondoLunares color={T < K.D ? KC.yellow : KC.mint} />
-        {svg(<Proteina T={T} x={540} y={940} s={1.05} f={1 - kprog(T, K.Co - 0.3, K.Co + 1.2, kEase.suave) + kprog(T, K.D + 0.3, K.D + 3.0)} letras={kprog(T, K.Co + 1.5, K.Co + 2.0) * (1 - kprog(T, K.D, K.D + 0.4))} gira={0.5} />)}
+        {svg(<Proteina T={T} x={540} y={980} s={1.05 + 0.6 * kprog(T, K.D + 0.3, K.D + 2.4, kEase.suave)} f={1 - kprog(T, K.Co - 0.3, K.Co + 1.2, kEase.suave) + kprog(T, K.D + 0.3, K.D + 3.0)} letras={kprog(T, K.Co + 1.5, K.Co + 2.0) * (1 - kprog(T, K.D, K.D + 0.4))} gira={0.5} />)}
       </Escena>
       {/* 4 · la llave y la cerradura */}
       <Escena T={T} a={K.L} b={K.R}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>
+        {svg(<g transform="translate(540 1000) scale(1.9) translate(-540 -1000)">
           <Cerradura x={540} y={1060} ok={cuadrada < 0.5 && entra > 0.95 ? 1 : 0} />
-          <g transform={`translate(${choca} 0)`}><Llave x={540} y={klerp(560, 995, entra)} cuadrada={cuadrada} T={T} /></g>
-          {cuadrada > 0 && <path d="M 430 640 L 650 860 M 650 640 L 430 860" stroke={KC.red} strokeWidth={26} strokeLinecap="round" opacity={kprog(T, K.L + 1.6, K.L + 1.8)} />}
-        </>)}
+          <g transform={`translate(${choca} 0)`}><Llave x={540} y={klerp(800, 995, entra)} cuadrada={cuadrada} T={T} /></g>
+          {cuadrada > 0 && <path d="M 430 680 L 650 900 M 650 680 L 430 900" stroke={KC.red} strokeWidth={22} strokeLinecap="round" opacity={kprog(T, K.L + 1.6, K.L + 1.8)} />}
+        </g>)}
       </Escena>
       {/* 5 · cristales y rayos X (oscuro: es por dentro del laboratorio) */}
       <Escena T={T} a={K.R} b={K.P}>
@@ -122,32 +123,36 @@ function AlphaFold() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Re} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
+        {svg(<>
+          <g opacity={0.55}><Proteina T={T} x={540} y={1000} s={1} f={0.12} gira={0.5} /></g>
+          <text x={540} y={1290} textAnchor="middle" style={{ font:`400 900px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={16} transform={`rotate(${Math.sin(T * 3) * 6} 540 1000)`}>?</text>
+        </>)}
       </Escena>
       {/* 7 · la red lee la cadena de letras y sale la forma */}
       <Escena T={T} a={K.Re} b={K.E}>
         <FondoCircuito T={T} />
         {svg(<>
-          {Array.from({ length: 14 }, (_, i) => { const u = kprog(T, K.Re + 0.3 + i * 0.12, K.Re + 1.8 + i * 0.12); return u < 1 ? <Ficha key={i} x={klerp(-60 + i * 62, 170, u)} y={klerp(640, 910, u)} texto={LETRAS[i]} tam={34} o={1 - u * 0.8} color={COLORES_AA[i % 6]} /> : null; })}
+          {Array.from({ length: 14 }, (_, i) => { const u = kprog(T, K.Re + 0.3 + i * 0.12, K.Re + 1.8 + i * 0.12); return u < 1 ? <Ficha key={i} x={klerp(-60 + i * 62, 170, u)} y={klerp(770, 1040, u)} texto={LETRAS[i]} tam={34} o={1 - u * 0.8} color={COLORES_AA[i % 6]} /> : null; })}
         </>)}
-        <RedNeuronal T={T} x={200} y={650} ancho={520} alto={520} onda={((T - K.Re) * 0.45) % 1} />
-        {svg(<Proteina T={T} x={900} y={910} s={0.5} f={kprog(T, K.Re + 2.4, K.Re + 4.2)} gira={0.9} />)}
+        <RedNeuronal T={T} x={180} y={770} ancho={560} alto={560} onda={((T - K.Re) * 0.45) % 1} />
+        {svg(<Proteina T={T} x={895} y={1050} s={0.68} f={kprog(T, K.Re + 2.4, K.Re + 4.2)} gira={0.9} />)}
       </Escena>
       {/* 8 · el estudio */}
       <Escena T={T} a={K.E} b={K.B}>
         <FondoLunares color={KC.orange} />
-        {svg(<Proteina T={T} x={540} y={1450} s={0.6} f={1} gira={0.4} />)}
+        {svg(<Proteina T={T} x={540} y={1110} s={1.4} f={1} gira={0.4} />)}
       </Escena>
       {/* 9 · 214 millones: el catálogo se llena */}
       <Escena T={T} a={K.B} b={K.O} zoom={0.03}>
         <FondoCircuito T={T} color={KC.mint} />
-        {svg(Array.from({ length: 48 }, (_, i) => { const at = K.B + 0.8 + i * 0.07; if (T < at) return null; const c = i % 8, r = Math.floor(i / 8);
-          return <g key={i} transform={`translate(${115 + c * 122} ${900 + r * 100}) scale(${0.17 * kprog(T, at, at + 0.3, kEase.rebote)})`}><Proteina T={T + i} x={0} y={0} f={1} gira={0.5} /></g>; }))}
+        {svg(<g opacity={1 - kprog(T, K.B + 0.2, K.B + 1.4)}><Proteina T={T} x={540} y={1110} s={klerp(1.4, 0.3, kprog(T, K.B, K.B + 1.4, kEase.suave))} f={1} gira={0.4} /></g>)}
+        {svg(Array.from({ length: 48 }, (_, i) => { const at = K.B + 0.05 + i * 0.05; if (T < at) return null; const c = i % 8, r = Math.floor(i / 8);
+          return <g key={i} transform={`translate(${115 + c * 122} ${900 + r * 100}) scale(${0.2 * kprog(T, at, at + 0.3, kEase.rebote)})`}><Proteina T={T + i} x={0} y={0} f={1} gira={0.5} /></g>; }))}
       </Escena>
       {/* 10 · ojo: confianza de cada predicción */}
       <Escena T={T} a={K.O} b={K.Pe}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {svg(<Proteina T={T} x={540} y={930} s={1.3} f={1} confianza={kprog(T, K.O + 0.8, K.O + 2.0)} gira={0.5} />)}
+        {svg(<Proteina T={T} x={540} y={980} s={1.6} f={1} confianza={kprog(T, K.O + 0.8, K.O + 2.0)} gira={0.5} />)}
       </Escena>
       {/* 11 · 23 TiB contra un celular */}
       <Escena T={T} a={K.Pe} b={K.C}>
@@ -161,23 +166,23 @@ function AlphaFold() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Proteina T={T} x={500} y={900} s={1.45} f={1} estambre={kprog(T, K.C + 0.2, K.C + 0.8) * (1 - kprog(T, K.C + 1.8, K.C + 2.6))} cuentas={1 - kprog(T, K.C + 0.2, K.C + 0.8) + kprog(T, K.C + 1.8, K.C + 2.6)} gira={1.2} />
-          <g opacity={kprog(T, K.C + 2.6, K.C + 3.2)}><Cerradura x={540} y={klerp(1500, 1280, kprog(T, K.C + 2.6, K.C + 3.4, kEase.sale))} ok={1} /></g>
+          <Proteina T={T} x={540} y={930} s={1.85} f={1} estambre={kprog(T, K.C + 0.2, K.C + 0.8) * (1 - kprog(T, K.C + 1.8, K.C + 2.6))} cuentas={1 - kprog(T, K.C + 0.2, K.C + 0.8) + kprog(T, K.C + 1.8, K.C + 2.6)} gira={1.2} />
+          <g opacity={kprog(T, K.C + 2.6, K.C + 3.2)} transform={`translate(0 ${klerp(1560, 1360, kprog(T, K.C + 2.6, K.C + 3.4, kEase.sale))}) scale(1.25)`}><Cerradura x={540 / 1.25} y={0} ok={1} /></g>
         </>)}
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 0.6} until={K.G + 2.3} x={110} y={620} texto="¿estambre?" tam={40} />
-      <Etq T={T} at={K.G + 3.0} until={K.Co - 0.3} x={110} y={620} texto="proteína" tam={44} color={KC.yellow} />
+      <Etq T={T} at={K.G + 0.6} until={K.G + 2.3} x={110} y={400} texto="¿estambre?" tam={40} />
+      <Etq T={T} at={K.G + 3.0} until={K.Co - 0.3} x={110} y={400} texto="proteína" tam={44} color={KC.yellow} />
       <Etq T={T} at={K.Co + 1.6} until={K.D - 0.2} x={80} y={740} texto="aminoácidos (cuentas)" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.D + 1.0} until={K.L - 0.3} texto="de la forma depende el trabajo" y={600} tam={46} borde={KC.ink} />
-      <Chip T={T} at={K.L + 1.7} until={K.R - 0.3} texto="otra forma: no entra" y={1500} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.D + 1.0} until={K.L - 0.3} texto="de la forma depende el trabajo" y={470} tam={46} borde={KC.ink} />
+      <Chip T={T} at={K.L + 1.7} until={K.R - 0.3} texto="otra forma: no entra" y={1440} tam={44} borde={KC.red} />
       <Chip T={T} at={K.R + 0.3} until={K.P - 0.3} texto="cristal + rayos X" y={560} tam={44} borde={KC.yellow} />
       <Etq T={T} at={K.R + 2.0} until={K.P - 0.3} x={1000} y={600} texto="patrón de puntos" lado="izq" tam={28} />
       <Chip T={T} at={K.Re + 0.2} until={K.E - 0.3} texto="AlphaFold · Google DeepMind" y={470} tam={38} borde={KC.cyan} />
-      <Etq T={T} at={K.Re + 0.6} until={K.Re + 3} x={40} y={570} texto="cadena de letras" tam={28} />
-      <Etq T={T} at={K.Re + 4.2} until={K.E - 0.3} x={1040} y={700} texto="forma predicha" lado="izq" tam={28} color={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.B - 0.3} anio="2021" quien="Jumper et al. · Google DeepMind" revista="Nature · el programa se liberó" y={830} />
+      <Etq T={T} at={K.Re + 0.6} until={K.Re + 3} x={40} y={700} texto="cadena de letras" tam={28} />
+      <Etq T={T} at={K.Re + 4.2} until={K.E - 0.3} x={1040} y={820} texto="forma predicha" lado="izq" tam={28} color={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.B - 0.3} anio="2021" quien="Jumper et al. · Google DeepMind" revista="Nature · el programa se liberó" y={420} />
       <NumeroGigante T={T} at={K.B + 0.4} until={K.O - 0.3} valor={214000000} dur={2.4} etiqueta="formas predichas · 2022" y={640} tam={130} />
       <Chip T={T} at={K.B + 3.0} until={K.O - 0.3} texto="gratis para cualquiera" y={1500} tam={40} borde={KC.mint} />
       <Chip T={T} at={K.O + 0.3} until={K.Pe - 0.3} texto="predicción ≠ medición" x={390} y={470} tam={46} borde={KC.orange} />

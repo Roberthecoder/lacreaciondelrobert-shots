@@ -137,10 +137,10 @@ function Cloro() {
           <Onomato T={T} at={K.E + 0.9} until={K.Pr} x={820} y={760} texto="¡COF!" color={KC.orange} rot={8} tam={80} />
         </g></SvgCapa>
       </Escena>
-      {/* 6 · pregunta */}
+      {/* 6 · pregunta (encuadre: el signo crece y baja al centro, entre los pulmones atenuados) */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa><text x={540} y={1150} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 950)`}>?</text></SvgCapa>
+        <SvgCapa><text x={540} y={1370} textAnchor="middle" style={{ font:`400 820px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={16} transform={`rotate(${Math.sin(T * 3) * 6} 540 1050)`}>?</text></SvgCapa>
       </Escena>
       {/* 7 · el estudio: 85,104 exposiciones */}
       <Escena T={T} a={K.Es} b={K.Ca}>

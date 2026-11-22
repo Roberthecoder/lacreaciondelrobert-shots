@@ -258,7 +258,7 @@ function Cerillo32() {
             <circle cx={790} cy={860} r={110} fill={VERDOSO} opacity={0.22 * kprog(T, K.Br + 0.4, K.Br + 1.2)} />
             <path d="M 700 860 Q 690 790 760 780 Q 840 760 880 820 Q 900 900 830 930 Q 740 950 700 860 Z" fill={mixHex('#3a3a3a', '#f5f7d8', kprog(T, K.Br + 0.4, K.Br + 1.2))} stroke="rgba(255,255,255,.4)" strokeWidth={5} />
           </DZ></g>
-          {T > K.Br + 2.8 && <g opacity={kprog(T, K.Br + 2.8, K.Br + 3.4)}><BocaBrillo T={T} x={540} y={930} s={1.9} brillo={kprog(T, K.Br + 2.9, K.Br + 3.7)} /></g>}
+          {T > K.Br + 2.8 && <g opacity={kprog(T, K.Br + 2.8, K.Br + 3.4)}><BocaBrillo T={T} x={540} y={1080} s={2.0} brillo={kprog(T, K.Br + 2.9, K.Br + 3.7)} /></g>}
         </SvgCapa>
       </Escena>
       {/* 11 · cierre: la misma caja, ya con el cerillo encendido */}
@@ -297,7 +297,7 @@ function Cerillo32() {
       <Chip T={T} at={K.Qu + 3.4} until={K.Be - 0.3} texto="1882–1897 · murió el 19 % de los casos" x={540} y={1570} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Be + 2.1} until={K.Br - 0.2} texto="sin fósforo blanco en los cerillos" x={540} y={1500} tam={36} borde={KC.red} />
       <Etq T={T} at={K.Br + 0.8} until={K.Br + 2.8} x={346} y={1210} texto="fósforo blanco" lado="der" tam={34} color={VERDOSO} />
-      <Chip T={T} at={K.Br + 3.6} until={K.Ci - 0.2} texto="encías que brillaban" x={540} y={1450} tam={42} borde={VERDOSO} />
+      <Chip T={T} at={K.Br + 3.6} until={K.Ci - 0.2} texto="encías que brillaban" x={540} y={1330} tam={42} borde={VERDOSO} />
       <Chip T={T} at={K.Ci + 0.5} until={K.Ou} texto="caja: fósforo rojo + vidrio" x={540} y={1470} tam={38} borde={P_ROJO} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="cabeza: clorato + azufre" x={540} y={1575} tam={38} borde={CAB} />
 

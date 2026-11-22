@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #42 · La carne que creció en un tanque (carne cultivada) — NARRADO (N1 por dentro + N3 capítulos).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const CARNE = '#d9434f', CARNE2 = '#b8303e', GRASA = '#f5e2c8', SAT = '#2fe0a8', FAPC = '#b18cff', LIPIDO = '#ffd43b', AMBAR = '#e0a040';
@@ -164,7 +165,7 @@ function Carne() {
   const rebota = Math.exp(-Math.max(0, T - K.G - 0.4) * 7) * Math.sin(Math.max(0, T - K.G - 0.4) * 22) * 18;
   // biopsia
   const pica = kprog(T, K.Bi + 0.9, K.Bi + 1.6, kEase.sale), sale = kprog(T, K.Bi + 2.2, K.Bi + 3.0, kEase.suave);
-  const agX = klerp(560, 690, pica) - sale * 130, agY = klerp(470, 790, pica) - sale * 320;
+  const agX = klerp(600, 749, pica) - sale * 140, agY = klerp(520, 820, pica) - sale * 330;
   // biorreactor: duplicaciones
   const dupT0 = K.Br + 0.9, dupDt = 0.55;
   const kDup = Math.max(0, Math.min(5, Math.floor((T - dupT0) / dupDt) + 1));
@@ -187,18 +188,21 @@ function Carne() {
       <EscenaFundido T={T} a={K.G} b={K.Bi} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <TanqueMini T={T} x={250} y={700} s={0.85} brillo={kprog(T, K.G + 0.9, K.G + 1.6)} />
-          <Tabla x={560} y={1090} s={1} />
-          <Filete x={580} y={klerp(-300, 990, cae) - rebota} s={0.95} rot={klerp(-25, -4, cae)} brillo={kprog(T, K.G + 2.0, K.G + 2.6) * (1 - kprog(T, K.G + 3.6, K.G + 4.4))} />
+          {/* pase a mano: todo el conjunto 1.15× y centrado, para que la tabla llene el cuadro de borde a borde */}
+          <g transform="translate(565 930) scale(1.15) translate(-560 -800)">
+            <TanqueMini T={T} x={250} y={700} s={0.85} brillo={kprog(T, K.G + 0.9, K.G + 1.6)} />
+            <Tabla x={560} y={1090} s={1} />
+            <Filete x={580} y={klerp(-300, 990, cae) - rebota} s={0.95} rot={klerp(-25, -4, cae)} brillo={kprog(T, K.G + 2.0, K.G + 2.6) * (1 - kprog(T, K.G + 3.6, K.G + 4.4))} />
+          </g>
         </SvgCapa>
       </EscenaFundido>
       {/* 1 · biopsia de un animal vivo */}
       <EscenaFundido T={T} a={K.Bi} b={K.Ce} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <rect x={0} y={1140} width={KW} height={800} fill="#7ccf6a" />
-          <Vaca T={T} x={470} y={900} s={0.95} />
-          <circle cx={690} cy={790} r={20 + 10 * Math.sin(T * 6)} fill="none" stroke={KC.red} strokeWidth={6} opacity={kprog(T, K.Bi + 0.4, K.Bi + 0.8) * (1 - sale)} />
+          <rect x={0} y={1225} width={KW} height={800} fill="#1b3320" />
+          <Vaca T={T} x={490} y={950} s={1.12} />
+          <circle cx={749} cy={820} r={20 + 10 * Math.sin(T * 6)} fill="none" stroke={KC.red} strokeWidth={6} opacity={kprog(T, K.Bi + 0.4, K.Bi + 0.8) * (1 - sale)} />
           <Aguja x={agX} y={agY} rot={35} muestra={kprog(T, K.Bi + 1.8, K.Bi + 2.2)} />
         </SvgCapa>
       </EscenaFundido>
@@ -206,12 +210,14 @@ function Carne() {
       <EscenaFundido T={T} a={K.Ce} b={K.Br} zoom={0.08}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, #1d2436 0%, ${KC.dark} 75%)` }}></div>
         <SvgCapa>
+          <g transform="translate(540 1000) scale(1.3) translate(-540 -850)">
           <Fibra x0={-60} x1={1140} y={640} T={T} seed={2} />
           <Fibra x0={-60} x1={1140} y={850} T={T} seed={3} />
           <Fibra x0={-60} x1={1140} y={1060} T={T} seed={4} />
           {[[260, 568], [700, 568], [480, 778], [900, 778], [340, 988]].map(([x, y], i) => { const on = kprog(T, K.Ce + 0.6 + i * 0.25, K.Ce + 1.0 + i * 0.25, kEase.rebote);
             return <Satelite key={i} x={x} y={y - 18} s={on} glow={0.6 + 0.4 * Math.sin(T * 5 + i)} />; })}
           {[[600, 745], [180, 955], [820, 955]].map(([x, y], i) => <FAP key={i} x={x} y={y} s={0.55} rot={i * 50} o={0.85} />)}
+          </g>
         </SvgCapa>
       </EscenaFundido>
       {/* 3 · biorreactor: la Lupa muestra las células que se dividen */}
@@ -228,6 +234,7 @@ function Carne() {
       <EscenaFundido T={T} a={K.Fi} b={K.Pr} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, ${mixHex('#1d2436', '#3a2430', cambia)} 0%, ${KC.dark} 78%)` }}></div>
         <SvgCapa>
+          <g transform="translate(540 960) scale(1.15) translate(-540 -900)">
           {funde > 0 && <g opacity={funde}>
             <rect x={110} y={700} width={860} height={120} rx={60} fill="#c9404f" stroke={KC.ink} strokeWidth={6} />
             {Array.from({ length: 34 }, (_, i) => <line key={i} x1={140 + i * 24} y1={712} x2={140 + i * 24} y2={808} stroke={i % 2 ? '#e0606d' : '#a52f3c'} strokeWidth={5} opacity={funde} />)}
@@ -240,36 +247,38 @@ function Carne() {
             {engorda < 1 && <FAP x={x} y={y} s={0.9} rot={i * 40 + Math.sin(T + i) * 6} o={1 - engorda} />}
             {engorda > 0 && <Adipocito x={x} y={y} r={78} f={engorda} />}
           </g>)}
+          </g>
         </SvgCapa>
       </EscenaFundido>
       {/* 5 · re-gancho: ¿qué lleva el caldo? */}
       <EscenaFundido T={T} a={K.Pr} b={K.Su} zoom={0.08}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Frasco x={300} y={1020} s={1.2} liquido="#f2c4b4" etiqueta="caldo" />
-          <text x={300} y={720} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.pink} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 7} 300 600)`}>?</text>
+          <Frasco x={540} y={1090} s={1.8} liquido="#f2c4b4" etiqueta="caldo" />
+          <text x={540} y={640} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.pink} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 7} 540 520)`}>?</text>
         </SvgCapa>
       </EscenaFundido>
       {/* 6 · suero fetal bovino */}
       <EscenaFundido T={T} a={K.Su} b={K.SS} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <Tubo x={250} y={930} s={1.05} liquido={AMBAR} etiqueta="FBS" />
-          <Vaca T={T} x={720} y={1000} s={0.55} feto={kprog(T, K.Su + 1.6, K.Su + 2.4)} />
+          <Tubo x={220} y={960} s={1.35} liquido={AMBAR} etiqueta="FBS" />
+          <Vaca T={T} x={690} y={1010} s={0.78} feto={kprog(T, K.Su + 1.6, K.Su + 2.4)} />
         </SvgCapa>
       </EscenaFundido>
       {/* 7 · caldos sin suero */}
       <EscenaFundido T={T} a={K.SS} b={K.Ha} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <g opacity={1 - 0.6 * kprog(T, K.SS + 1.2, K.SS + 1.8)}><Tubo x={250} y={930} s={0.9} liquido={AMBAR} etiqueta="FBS" /></g>
-          <g transform={`translate(${klerp(1300, 0, kprog(T, K.SS + 1.4, K.SS + 2.0, kEase.sale))} 0)`}><Frasco x={730} y={1000} s={1.15} liquido="#bdf2d8" etiqueta="sin suero" /></g>
+          <g opacity={1 - 0.6 * kprog(T, K.SS + 1.2, K.SS + 1.8)}><Tubo x={220} y={960} s={1.35} liquido={AMBAR} etiqueta="FBS" /></g>
+          <g transform={`translate(${klerp(1300, 0, kprog(T, K.SS + 0.15, K.SS + 0.75, kEase.sale))} 0)`}><Frasco x={730} y={1040} s={1.5} liquido="#bdf2d8" etiqueta="sin suero" /></g>
         </SvgCapa>
       </EscenaFundido>
       {/* 8–9 · Londres 2013: 20 mil tiritas · 250 mil euros */}
       <EscenaFundido T={T} a={K.Ha} b={K.Le} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
+          <g transform="translate(540 1020) scale(1.35) translate(-640 -1050)">
           <ellipse cx={640} cy={1080} rx={300} ry={50} fill="rgba(0,0,0,.18)" />
           <ellipse cx={640} cy={1050} rx={360} ry={70} fill="#fff" stroke={KC.ink} strokeWidth={9} />
           {torta > 0 && <g opacity={torta}><ellipse cx={640} cy={1010} rx={250} ry={90} fill={CARNE} stroke={KC.ink} strokeWidth={9} />
@@ -277,24 +286,32 @@ function Carne() {
           {tiras.map(([x, y, rot, t0], i) => { const p = kprog(T, t0, t0 + 0.45, kEase.sale); if (p <= 0) return null;
             return <rect key={i} x={-34} y={-8} width={68} height={16} rx={8} fill={i % 3 ? CARNE : '#e86a76'} stroke={KC.ink} strokeWidth={3}
               transform={`translate(${x} ${klerp(-60, y, p)}) rotate(${rot + (1 - p) * 120})`} opacity={1 - torta * 0.85} />; })}
+          </g>
         </SvgCapa>
       </EscenaFundido>
       {/* 10 · leyes */}
       <EscenaFundido T={T} a={K.Le} b={K.Re} zoom={0.02}>
         <FondoLunares color={KC.cyan} />
+        {/* pase a mano: la carne sigue en cuadro (atenuada) mientras pasan las tarjetas */}
+        <SvgCapa>
+          <g opacity={0.7}>
+            <Tabla x={540} y={1480} s={0.95} />
+            <Filete x={560} y={1380} s={0.95} rot={-4} />
+          </g>
+        </SvgCapa>
       </EscenaFundido>
       {T > K.Le - 0.4 && T < K.Re + 0.45 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.Le - 0.4, K.Le + 0.05) * (1 - kprog(T, K.Re - 0.05, K.Re + 0.45)) }}>
-        <Titulo T={T} at={K.Le + 0.1} until={K.Re} texto="APROBARON SU VENTA" y={470} />
-        <Tarjeta T={T} at={K.Le + 0.4} ok nombre="Singapur" anio="2020" y={570} />
-        <Tarjeta T={T} at={K.Le + 1.8} ok nombre="Estados Unidos" anio="2023" y={710} />
-        <Titulo T={T} at={K.Le + 3.3} until={K.Re} texto="LA PROHIBIERON" y={880} color={KC.red} />
-        <Tarjeta T={T} at={K.Le + 3.6} nombre="Italia · Hungría" anio="2023–25" y={980} />
-        <Tarjeta T={T} at={K.Le + 4.6} nombre="8 estados de EE. UU." anio="2024–26" y={1120} chico />
+        <Titulo T={T} at={K.Le + 0.1} until={K.Re} texto="APROBARON SU VENTA" y={290} />
+        <Tarjeta T={T} at={K.Le + 0.4} ok nombre="Singapur" anio="2020" y={390} />
+        <Tarjeta T={T} at={K.Le + 1.8} ok nombre="Estados Unidos" anio="2023" y={530} />
+        <Titulo T={T} at={K.Le + 3.3} until={K.Re} texto="LA PROHIBIERON" y={700} color={KC.red} />
+        <Tarjeta T={T} at={K.Le + 3.6} nombre="Italia · Hungría" anio="2023–25" y={800} />
+        <Tarjeta T={T} at={K.Le + 4.6} nombre="8 estados de EE. UU." anio="2024–26" y={940} chico />
       </div>}
       {/* 11 · el reto: el caldo y los tanques gigantes */}
       <EscenaFundido T={T} a={K.Re} b={K.Ci} zoom={0.02}>
-        <div style={{ position:'absolute', inset:0, transform:`scale(${klerp(0.42, 0.95, crece)})`, transformOrigin:'50% 80%' }}>
-          <MundoBiorreactor T={T} turbio={0.55} burbujas={1} fondo={KC.yellow} />
+        <div style={{ position:'absolute', inset:0, transform:`scale(${klerp(0.78, 0.95, crece)})`, transformOrigin:'50% 48%' }}>
+          <MundoBiorreactor T={T} turbio={0.55} burbujas={1} fondo="#8a6a10" />
         </div>
         <SvgCapa>
           {Array.from({ length: 9 }, (_, i) => { const t0 = K.Re + 0.3 + i * 0.16, p = kprog(T, t0, t0 + 0.6, kEase.suave); if (p <= 0 || p >= 1) return null;
@@ -305,10 +322,12 @@ function Carne() {
       <EscenaFundido T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <TanqueMini T={T} x={230} y={700} s={0.85} brillo={0.6} />
-          <FlechaCurva x1={300} y1={420} x2={560} y2={860} p={kprog(T, K.Ci + 0.4, K.Ci + 1.4)} color={KC.ink} T={T} />
-          <Tabla x={580} y={1090} s={1} />
-          <Filete x={600} y={990} s={0.95} rot={-4} brillo={0.5 + 0.3 * Math.sin(T * 3)} />
+          <g transform="translate(575 940) scale(1.2) translate(-580 -800)">
+            <TanqueMini T={T} x={230} y={700} s={0.85} brillo={0.6} />
+            <FlechaCurva x1={300} y1={420} x2={560} y2={860} p={kprog(T, K.Ci + 0.4, K.Ci + 1.4)} color={KC.ink} T={T} />
+            <Tabla x={580} y={1090} s={1} />
+            <Filete x={600} y={990} s={0.95} rot={-4} brillo={0.5 + 0.3 * Math.sin(T * 3)} />
+          </g>
         </SvgCapa>
       </EscenaFundido>
 
@@ -316,27 +335,27 @@ function Carne() {
       <Capitulo T={T} caps={[{ at: K.Bi, titulo: 'Biopsia' }, { at: K.Br, titulo: 'Biorreactor' }, { at: K.Fi, titulo: 'Músculo y grasa' }, { at: K.Pr, titulo: 'El caldo' }]} hasta={K.Ha - 0.2} />
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.9} until={K.G + 4.3} texto="¿cortada de una res?" x={330} y={470} tam={44} />
-      <Chip T={T} at={K.G + 2.2} until={K.Bi - 0.3} texto="carne cultivada" y={1560} tam={50} borde={KC.pink} />
-      <Etq T={T} at={K.Bi + 2.0} until={K.Ce - 0.3} x={700} y={1250} texto="animal vivo" lado="izq" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.Bi + 1.8} until={K.Ce - 0.3} texto="biopsia: un pedacito de músculo" y={1560} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Ce + 0.2} until={K.Br - 0.3} texto="AL MICROSCOPIO · músculo" y={440} tam={36} mono borde={SAT} />
-      <Etq T={T} at={K.Ce + 1.2} until={K.Br - 0.3} x={250} y={500} texto="célula satélite (célula madre)" lado="der" tam={34} color={SAT} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.9} until={K.G + 4.3} texto="¿cortada de una res?" x={640} y={400} tam={44} />
+      <Chip T={T} at={K.G + 2.2} until={K.Bi - 0.3} texto="carne cultivada" y={1555} tam={50} borde={KC.pink} />
+      <Etq T={T} at={K.Bi + 2.0} until={K.Ce - 0.3} x={640} y={1310} texto="animal vivo" lado="izq" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Bi + 1.8} until={K.Ce - 0.3} texto="biopsia: un pedacito de músculo" y={1500} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Ce + 0.2} until={K.Br - 0.3} texto="AL MICROSCOPIO · músculo" y={425} tam={36} mono borde={SAT} />
+      <Etq T={T} at={K.Ce + 1.2} until={K.Br - 0.3} x={180} y={508} texto="célula satélite (célula madre)" lado="der" tam={34} color={SAT} />
       <Chip T={T} at={dupT0 - 0.2} until={K.Fi - 0.3} texto={`${nCel} ${nCel === 1 ? 'célula' : 'células'}`} y={1560} tam={52} mono borde={SAT} />
-      <Chip T={T} at={K.Fi + 0.2} until={K.Fi + 2.0} texto="caldo nuevo" y={460} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.Fi + 3.0} until={K.Pr - 0.3} x={110} y={630} texto="fibra de músculo" lado="der" tam={36} color="#ff8f9b" />
-      <Etq T={T} at={K.Fi + 1.4} until={K.Fi + 3.6} x={100} y={960} texto="otras células del pedacito" lado="der" tam={32} color={FAPC} />
-      <Etq T={T} at={K.Fi + 4.0} until={K.Pr - 0.3} x={100} y={960} texto="grasa" lado="der" tam={36} color={LIPIDO} />
-      <Etq T={T} at={K.Su + 1.5} until={K.SS - 0.3} x={340} y={700} texto="suero fetal bovino" lado="der" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Su + 2.4} until={K.SS - 0.3} texto="parte líquida de la sangre de fetos" y={1560} tam={36} borde={AMBAR} />
-      <MitoTachado T={T} at={K.SS + 0.2} tacharEn={K.SS + 1.0} until={K.Ha - 0.3} texto="suero fetal" x={300} y={470} tam={44} />
-      <Chip T={T} at={K.SS + 2.0} until={K.Ha - 0.3} texto="Singapur · 2023 · primer caldo sin suero" y={1560} tam={34} borde={KC.mint} />
-      <TarjetaEstudio T={T} at={K.Ha + 0.2} until={K.Ha + 3.6} anio="2013" quien="Mark Post · Londres" revista="5 ago · Universidad de Maastricht" x={620} y={600} />
-      {T < K.Le && <Contador T={T} at={K.Ha + 1.0} desde={0} hasta={20000} dur={3.8} sufijo=" tiritas" x={540} y={1560} tam={64} color={KC.texto} />}
+      <Chip T={T} at={K.Fi + 0.2} until={K.Fi + 2.0} texto="caldo nuevo" x={700} y={400} tam={40} borde={KC.gold} />
+      <Etq T={T} at={K.Fi + 3.0} until={K.Pr - 0.3} x={50} y={670} texto="fibra de músculo" lado="der" tam={36} color="#ff8f9b" />
+      <Etq T={T} at={K.Fi + 1.4} until={K.Fi + 3.6} x={60} y={1060} texto="otras células del pedacito" lado="der" tam={32} color={FAPC} />
+      <Etq T={T} at={K.Fi + 4.0} until={K.Pr - 0.3} x={60} y={1060} texto="grasa" lado="der" tam={36} color={LIPIDO} />
+      <Etq T={T} at={K.Su + 1.5} until={K.SS - 0.3} x={350} y={640} texto="suero fetal bovino" lado="der" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Su + 2.4} until={K.SS - 0.3} texto="parte líquida de la sangre de fetos" y={1480} tam={36} borde={AMBAR} />
+      <MitoTachado T={T} at={K.SS + 0.2} tacharEn={K.SS + 1.0} until={K.Ha - 0.3} texto="suero fetal" x={650} y={540} tam={44} />
+      <Chip T={T} at={K.SS + 2.0} until={K.Ha - 0.3} texto="Singapur · 2023 · primer caldo sin suero" y={1480} tam={34} borde={KC.mint} />
+      <TarjetaEstudio T={T} at={K.Ha + 0.2} until={K.Ha + 3.6} anio="2013" quien="Mark Post · Londres" revista="5 ago · Universidad de Maastricht" x={540} y={470} />
+      {T < K.Le && <Contador T={T} at={K.Ha + 1.0} desde={0} hasta={20000} dur={3.8} sufijo=" tiritas" x={540} y={1340} tam={64} color={KC.texto} />}
       <NumeroGigante T={T} at={K.Co} until={K.Le - 0.2} valor={250000} dur={1.0} sufijo=" €" y={500} tam={190} color={KC.yellow} />
       <Chip T={T} at={K.Re + 0.3} until={K.Re + 2.0} texto="el caldo: lo más caro" y={1560} tam={46} borde={KC.gold} />
-      <Chip T={T} at={K.Re + 2.2} until={K.Ci - 0.3} texto="falta: tanques gigantes" y={1560} tam={46} borde={KC.cyan} />
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="células de animal · crecidas en tanque" y={1560} tam={36} borde={KC.pink} />
+      <Chip T={T} at={K.Re + 2.2} until={K.Ci - 0.3} texto="falta: tanques gigantes" y={250} tam={46} borde={KC.cyan} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="células de animal · crecidas en tanque" y={1540} tam={36} borde={KC.pink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Bi - 0.1} texto="No se cortó: *creció en un tanque.*" />

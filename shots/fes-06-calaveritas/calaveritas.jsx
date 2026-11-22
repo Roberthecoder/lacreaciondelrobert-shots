@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #06 · Día de Muertos · Químico: las calaveritas de azúcar se arman solas — NARRADO (N3 capítulos y medidores + N5 experimento).
 // Guion y fuentes: guion.md. El dibujo es esquemático (la molécula de sacarosa y la red del cristal están simplificadas).
 const ROSA = '#ff4f9a', AMBAR = '#f2b84b', MIEL = '#d98a1e', BARRO = '#b4643a', BARRO2 = '#8f4a26', AZUCAR = '#fbf8f1', COBRE = '#c8693a';
@@ -236,11 +237,11 @@ function Calaveritas() {
       <Escena T={T} a={K.G} b={K.Hi} zoom={0.06}>
         <FondoLunares color={ROSA} />
         <PapelPicado T={T} />
-        {svg(<>
+        {svg(<g transform="translate(470 1000) scale(1.45) translate(-400 -960)">
           <Calavera T={T} x={400} y={960} s={klerp(0.82, 1.12, kprog(T, K.G, K.G + 0.6, kEase.rebote))} brilla={kprog(T, K.G + 2.2, K.G + 3.0)} rot={T > GOLPE ? Math.sin((T - GOLPE) * 30) * 3 * Math.exp(-(T - GOLPE) * 4) : 0} />
           <Martillo T={T} x={720} y={1000} golpe={T < GOLPE + 0.6 ? GOLPE : GOLPE2} s={0.9} />
           <Migajas T={T} x={560} y={780} at={GOLPE} /><Migajas T={T} x={560} y={780} at={GOLPE2} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 2 · se hierve azúcar con agua */}
       <Escena T={T} a={K.Hi} b={K.Ca}>
@@ -254,10 +255,10 @@ function Calaveritas() {
       {/* 3 · solubilidad: agua fría vs agua hirviendo (datos de manual) */}
       <Escena T={T} a={K.Ca} b={K.Mo}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>
+        {svg(<g transform="translate(540 860) scale(1.25) translate(-540 -860)">
           <Vaso T={T} x={280} y={860} caliente={false} lleno={kprog(T, K.Ca + 0.4, K.Ca + 1.4) * 0.42} etiqueta="20 °C" />
           <Vaso T={T} x={800} y={860} caliente={true} lleno={kprog(T, K.Ca + 1.0, K.Ca + 2.6)} etiqueta="100 °C" />
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · se vacía en moldes de barro fríos */}
       <Escena T={T} a={K.Mo} b={K.So}>
@@ -284,16 +285,16 @@ function Calaveritas() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Cr} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<>
+        {svg(<g transform="translate(280 160)">
           <text x={260} y={1100} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 260 900)`}>?</text>
           {Array.from({ length: 8 }, (_, i) => <rect key={i} x={120 + (i % 4) * 90 + Math.sin(T * 2 + i) * 14} y={1150 - ((T * 60 + i * 40) % 400)} width={22} height={22} fill="#fff" stroke={KC.ink} strokeWidth={3} transform={`rotate(${T * 90 + i * 20} ${131 + (i % 4) * 90} ${1161 - ((T * 60 + i * 40) % 400)})`} />)}
-        </>)}
+        </g>)}
       </Escena>
       {/* 7 · por dentro: las moléculas de sacarosa se acomodan en filas (oscuro: escala molecular) */}
       <Escena T={T} a={K.Cr} b={K.Co} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(120,200,255,.25)" />
-        {svg(<RedCristal T={T} cx={540} cy={880} orden={kprog(T, K.Cr + 1.4, K.Cr + 4.2)} brillo={kprog(T, K.Cr + 3.8, K.Cr + 4.6)} />)}
+        {svg(<g transform="translate(540 980) scale(1.12) translate(-540 -860)"><RedCristal T={T} cx={540} cy={860} orden={kprog(T, K.Cr + 1.4, K.Cr + 4.2)} brillo={kprog(T, K.Cr + 3.8, K.Cr + 4.6)} /></g>)}
       </Escena>
       {/* 8 · la costra cuaja en la orilla; se voltea el molde y escurre la miel: queda hueca */}
       <Escena T={T} a={K.Co} b={K.E}>
@@ -310,7 +311,7 @@ function Calaveritas() {
           <VistaCristales T={T} x={270} y={1010} seed={3} etiqueta="remolacha" />
           <VistaCristales T={T} x={810} y={1010} seed={8} etiqueta="caña" />
           <text x={540} y={1040} textAnchor="middle" style={{ font:`400 140px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.E + 3.0, K.E + 3.4)}>=</text>
-          <g opacity={kprog(T, K.E + 1.6, K.E + 2.2)}><Remolacha x={110} y={1500} /><Cana x={970} y={1520} /></g>
+          <g opacity={kprog(T, K.E + 1.6, K.E + 2.2)}><g transform="translate(270 1410) scale(1.1)"><Remolacha x={0} y={0} /></g><Cana x={810} y={1430} /></g>
           <g opacity={1 - kprog(T, K.E + 1.4, K.E + 2.0)}><Microscopio x={540} y={1000} s={1.4} /></g>
         </>)}
       </Escena>
@@ -320,9 +321,9 @@ function Calaveritas() {
         {svg((() => {
           const bate = 1 - kprog(T, K.Gr + 2.8, K.Gr + 3.2), vac = kprog(T, K.Gr + 3.0, K.Gr + 3.8, kEase.suave);
           const cristaliza = kprog(T, K.Gr + 1.0, K.Gr + 3.0), espuma = kprog(T, K.Gr + 0.5, K.Gr + 1.3) * bate, g = krng(21);
-          return <>
-            <g opacity={kprog(T, K.Gr + 2.9, K.Gr + 3.3)}><Molde x={280} y={900} s={0.5} /></g>
-            {vac > 0.6 && <path d={`M 420 690 Q 360 700 ${klerp(330, 300, vac)} ${klerp(730, 790, kprog(T, K.Gr + 3.4, K.Gr + 3.9))}`} stroke="#f6e3b8" strokeWidth={22} fill="none" strokeLinecap="round" />}
+          return <g transform="translate(540 930) scale(1.3) translate(-540 -800)">
+            <g opacity={kprog(T, K.Gr + 2.9, K.Gr + 3.3)}><Molde x={330} y={900} s={0.5} /></g>
+            {vac > 0.6 && <path d={`M 470 690 Q 410 700 ${klerp(380, 350, vac)} ${klerp(730, 790, kprog(T, K.Gr + 3.4, K.Gr + 3.9))}`} stroke="#f6e3b8" strokeWidth={22} fill="none" strokeLinecap="round" />}
             <g transform={`translate(${klerp(620, 640, vac)} ${klerp(820, 700, vac)}) rotate(${klerp(0, -35, vac)}) scale(0.9)`}>
               <rect x={190} y={-30} width={210} height={30} rx={14} fill="#6b4226" stroke={KC.ink} strokeWidth={6} />
               <path d="M -210 -60 L 210 -60 L 180 150 Q 0 190 -180 150 Z" fill={COBRE} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
@@ -334,21 +335,21 @@ function Calaveritas() {
                 return <circle key={i} cx={bx + Math.sin(T * 9 + i) * 6} cy={by} r={r0 * (0.8 + 0.2 * Math.sin(T * 7 + i))} fill="#fffaf0" stroke={KC.ink} strokeWidth={2} opacity={espuma} />; })}
               {bate > 0 && <g opacity={bate}><Cuchara T={T} x={0} y={-50} gira={1.6 * bate} /></g>}
             </g>
-          </>;
+          </g>;
         })())}
       </Escena>
       {/* 11 · reposa un día y se decora */}
       <Escena T={T} a={K.Da} b={K.Ci}>
         <FondoLunares color={KC.lilac} />
         <PapelPicado T={T} />
-        {svg(<Calavera T={T} x={540} y={960} s={1.05} deco={kprog(T, K.Da + 2.6, K.Da + 5.6)} nombre="LUPITA" />)}
+        {svg(<Calavera T={T} x={540} y={1020} s={1.55} deco={kprog(T, K.Da + 2.6, K.Da + 5.6)} nombre="LUPITA" />)}
       </Escena>
       {/* 12 · cierre: la misma calavera del inicio, ahora con sus cristales por dentro */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={ROSA} />
         <PapelPicado T={T} />
-        {svg(<Calavera T={T} x={400} y={960} s={1.12} brilla={kprog(T, K.Ci + 0.4, K.Ci + 1.2)} />)}
-        <Lupa T={T} at={K.Ci + 1.0} until={K.Ou - 0.2} x={800} y={1520} r={190} fx={430} fy={900} tinte={KC.cyan} etiqueta="cristales de sacarosa"
+        {svg(<g transform="translate(440 1000) scale(1.3) translate(-400 -960)"><Calavera T={T} x={400} y={960} s={1.12} brilla={kprog(T, K.Ci + 0.4, K.Ci + 1.2)} /></g>)}
+        <Lupa T={T} at={K.Ci + 1.0} until={K.Ou - 0.2} x={790} y={1330} r={175} fx={479} fy={922} tinte={KC.cyan} etiqueta="cristales de sacarosa"
           interior={(Tl, r) => <svg width={r * 2} height={r * 2}><g transform={`translate(${r} ${r}) scale(.55) translate(-540 -860)`}><RedCristal T={Tl} cx={540} cy={860} orden={1} n={40} brillo={0.6 + 0.4 * Math.sin(Tl * 3)} /></g></svg>} />
       </Escena>
 
@@ -356,30 +357,30 @@ function Calaveritas() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 0.2} until={K.Hi - 0.2} texto="Especial Día de Muertos" x={540} y={1500} tam={40} borde={KC.yellow} />
-      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.7} until={K.G + 2.6} texto="¿yeso?" x={250} y={560} tam={52} />
-      <Etq T={T} at={K.G + 2.4} until={K.Hi - 0.3} x={60} y={560} texto="azúcar (sacarosa)" tam={40} color={KC.yellow} />
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.7} until={K.G + 2.6} texto="¿yeso?" x={250} y={470} tam={52} />
+      <Etq T={T} at={K.G + 2.4} until={K.Hi - 0.3} x={60} y={470} texto="azúcar (sacarosa)" tam={40} color={KC.yellow} />
       <Etq T={T} at={K.Hi + 0.4} until={K.Ca - 0.3} x={560} y={480} texto="azúcar + agua" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Hi + 1.4} until={K.Ca - 0.3} texto="hasta que espesa" x={600} y={1500} tam={40} borde={KC.orange} />
-      <Medidor T={T} at={K.Ca + 0.3} until={K.Mo - 0.3} y={1440} ancho={900} etiqueta="20 °C · agua fría" valor={(t) => 0.42 * kprog(t, K.Ca + 0.4, K.Ca + 1.4)} texto={(v) => Math.round(v * 487) + ' g'} color={KC.cyan} />
-      <Medidor T={T} at={K.Ca + 0.9} until={K.Mo - 0.3} y={1560} ancho={900} etiqueta="100 °C · hirviendo" valor={(t) => kprog(t, K.Ca + 1.0, K.Ca + 2.6)} texto={(v) => Math.round(v * 487) + ' g'} color={KC.orange} />
-      <Etq T={T} at={K.Ca + 2.6} until={K.Mo - 0.3} x={90} y={1700} texto="por cada 100 mL de agua · datos de manual" tam={26} />
-      <Chip T={T} at={K.Ca + 2.8} until={K.Mo - 0.3} texto="más del doble" x={540} y={520} tam={52} borde={KC.yellow} />
+      <Medidor T={T} at={K.Ca + 0.3} until={K.Mo - 0.3} y={1270} ancho={900} etiqueta="20 °C · agua fría" valor={(t) => 0.42 * kprog(t, K.Ca + 0.4, K.Ca + 1.4)} texto={(v) => Math.round(v * 487) + ' g'} color={KC.cyan} />
+      <Medidor T={T} at={K.Ca + 0.9} until={K.Mo - 0.3} y={1380} ancho={900} etiqueta="100 °C · hirviendo" valor={(t) => kprog(t, K.Ca + 1.0, K.Ca + 2.6)} texto={(v) => Math.round(v * 487) + ' g'} color={KC.orange} />
+      <Etq T={T} at={K.Ca + 2.6} until={K.Mo - 0.3} x={90} y={1490} texto="por cada 100 mL de agua · datos de manual" tam={26} />
+      <Chip T={T} at={K.Ca + 2.8} until={K.Mo - 0.3} texto="más del doble" x={540} y={470} tam={52} borde={KC.yellow} />
       <Etq T={T} at={K.Mo + 0.5} until={K.So - 0.3} x={180} y={1440} texto="molde de barro frío" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Mo + 0.9} until={K.So - 0.3} x={180} y={1500} texto="dos piezas + liga" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.So + 2.4} until={K.P - 0.2} texto="sobresaturado" x={600} y={1560} tam={50} borde={KC.red} />
-      <Etq T={T} at={K.So + 0.6} until={K.P - 0.3} x={340} y={1440} texto="el azúcar que ya no cabe" tam={32} color={KC.ink} />
-      {T > K.Cr - 0.3 && T < K.Co + 0.2 && <Escala T={T} z={1} pxPorMm={1e8} x={60} y={1440} />}
+      <Chip T={T} at={K.So + 2.4} until={K.P - 0.2} texto="sobresaturado" x={600} y={1360} tam={50} borde={KC.red} />
+      <Etq T={T} at={K.So + 0.6} until={K.P - 0.3} x={340} y={1250} texto="el azúcar que ya no cabe" tam={32} color={KC.ink} />
+      {T > K.Cr - 0.3 && T < K.Co + 0.2 && <Escala T={T} z={1.12} pxPorMm={1e8} x={60} y={1440} />}
       <Etq T={T} at={K.Cr + 0.4} until={K.Co - 0.3} x={80} y={480} texto="sacarosa = glucosa + fructosa" tam={30} />
-      <Chip T={T} at={K.Cr + 3.6} until={K.Co - 0.3} texto="filas ordenadas = cristal" x={540} y={1560} tam={44} borde={KC.cyan} />
+      <Chip T={T} at={K.Cr + 3.6} until={K.Co - 0.3} texto="filas ordenadas = cristal" x={540} y={1440} tam={44} borde={KC.cyan} />
       <Etq T={T} at={K.Co + 0.8} until={K.Co + 2.8} x={600} y={500} texto="la costra cuaja en la orilla" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Co + 4.0} until={K.E - 0.3} texto="queda hueca" x={540} y={1600} tam={48} borde={KC.yellow} />
+      <Chip T={T} at={K.Co + 4.0} until={K.E - 0.3} texto="queda hueca" x={540} y={1450} tam={48} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="1747" quien="Andreas Marggraf · Berlín" revista="azúcar de remolacha al microscopio" x={360} y={560} />
       <Chip T={T} at={K.E + 3.2} until={K.Gr - 0.3} texto="los mismos cristales" x={400} y={560} tam={44} borde={KC.ink} />
-      <Etq T={T} at={K.Gr + 3.2} until={K.Da - 0.3} x={60} y={680} texto="al molde" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Gr + 0.8} until={K.Da - 0.3} texto="espumado: se bate para que cristalice" x={540} y={1520} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.Gr + 3.2} until={K.Da - 0.3} x={40} y={790} texto="al molde" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Gr + 0.8} until={K.Da - 0.3} texto="espumado: se bate para que cristalice" x={540} y={1440} tam={38} borde={KC.ink} />
       <Cronometro T={T} at={K.Da + 0.2} until={K.Da + 2.7} factor={86400 / 2.3} x={360} y={500} etiqueta="REPOSO" />
-      <Chip T={T} at={K.Da + 2.8} until={K.Ci - 0.3} texto="betún + papel brillante" x={540} y={1540} tam={44} borde={KC.pink} />
-      <Chip T={T} at={K.Ci + 3.0} until={K.Ou} texto="no es yeso: es cristal" x={400} y={500} tam={44} borde={KC.yellow} />
+      <Chip T={T} at={K.Da + 2.8} until={K.Ci - 0.3} texto="betún + papel brillante" x={540} y={1470} tam={44} borde={KC.pink} />
+      <Chip T={T} at={K.Ci + 3.0} until={K.Ou} texto="no es yeso: es cristal" x={440} y={470} tam={44} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Hi - 0.1} texto="No es yeso: *es azúcar acomodada en cristales.*" />

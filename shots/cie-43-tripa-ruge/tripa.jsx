@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #43 · Por qué te ruge la tripa (y no siempre es hambre) — NARRADO (N1 "Por dentro": estómago e intestino con sus ondas).
 // Datos: Andrews 2002 (Scientific American), MedlinePlus 2024, MedicineNet (borborigmos); Deloose et al. 2012, Takahashi 2013,
 // Wang et al. 2025 (complejo motor migratorio, 90–120 min); Tack et al. 2016 (motilina y hambre). Ver guion.md y verificacion.md.
@@ -188,6 +189,8 @@ function Tripa() {
   const K = CUES, FIN = K.Outro + 4;
   // gancho y cierre: el mismo salón
   const ALU = { x: 350, y: 880, s: 1 }, PANZA = [ALU.x, ALU.y + 90 * ALU.s];
+  // pase a mano cine: el salón completo va agrandado 1.3 (el alumno llena el cuadro); PZ = la panza ya en coordenadas de pantalla
+  const SAL = { k: 1.3, tx: -5, ty: -214 }, PZ = [PANZA[0] * SAL.k + SAL.tx, PANZA[1] * SAL.k + SAL.ty];
   const grrG = [0.15, 2.3].map((t) => K.Gancho + t), grrC = [0.3, 2.2].map((t) => K.Cierre + t);
   const tiembla = (ts) => ts.reduce((a, t) => a + (T > t && T < t + 1.1 ? Math.sin((T - t) * 50) * 5 * (1 - (T - t) / 1.1) : 0), 0);
   const miraG = kprog(T, K.Gancho + 0.6, K.Gancho + 0.9);
@@ -198,22 +201,22 @@ function Tripa() {
   const tLlega = K.Hambre + 2.4;
   const salon = (cierre) => {
     const ts = cierre ? grrC : grrG, mira = cierre ? 1 : miraG;
-    return <>
-      <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#e0517f" opacity=".45" />
+    return <g transform={`translate(${SAL.tx} ${SAL.ty}) scale(${SAL.k})`}>
+      <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#5a2540" opacity=".45" />
       <g transform={`translate(${tiembla(ts)} 0)`}>
         <Alumno x={ALU.x} y={ALU.y} s={ALU.s} color={KC.yellow} cara={cierre ? 'sonrie' : (T > ts[0] ? 'pena' : 'normal')} uid={cierre ? 'c' : 'g'}
-          ventana={cierre ? kprog(T, K.Cierre + 1.0, K.Cierre + 1.5, kEase.sale) : 0}
-          dentro={cierre && <g><g transform="scale(0.42) translate(0 -20)"><Tracto T={T} amp={0.8} /></g>
-            <Escoba x={Math.sin(T * 3.2) * 70} y={60} s={0.62} rot={Math.sin(T * 3.2) * 18} /></g>} />
+          ventana={cierre ? kprog(T, K.Cierre + 1.0, K.Cierre + 1.5, kEase.sale) : kprog(T, K.Gancho + 2.6, K.Gancho + 3.1, kEase.sale)}
+          dentro={<g><g transform="scale(0.42) translate(0 -20)"><Tracto T={T} amp={0.8} /></g>
+            {cierre && <Escoba x={Math.sin(T * 3.2) * 70} y={60} s={0.62} rot={Math.sin(T * 3.2) * 18} />}</g>} />
       </g>
       <Pupitre x={ALU.x} y={1130} />
-      {[0, 1].map((k) => { const lx = k ? 920 : 70, ly = k ? 1000 : 960;
+      {[0, 1].map((k) => { const lx = k ? 790 : 68, ly = k ? 1000 : 960;
         return <g key={k}><Alumno x={lx} y={ly} s={0.55} color={k ? KC.cyan : KC.mint} mira={(k ? -1 : 1) * mira} cara={cierre ? 'sonrie' : (mira > 0.5 ? 'o' : 'normal')} uid={'v' + k + (cierre ? 'c' : 'g')} pelo={k ? '#6b3a1f' : CPELO} />
-          {!cierre && <TextoSvg x={lx + (k ? -40 : 60)} y={ly - 290} tam={70} color={KC.paper} o={kprog(T, K.Gancho + 0.9, K.Gancho + 1.2)} s={klerp(0.4, 1, kprog(T, K.Gancho + 0.9, K.Gancho + 1.3, kEase.rebote))}>?</TextoSvg>}</g>; })}
-      {ts.map((t, i) => <g key={i}><Onomato T={T} at={t} dur={1.5} x={PANZA[0] + 230 + i * 20} y={PANZA[1] - 40 - i * 40} texto="GRRR" tam={130} color={KC.yellow} rot={i % 2 ? 6 : -7} />
-        {T > t && T < t + 1.8 && <><OndasArco x={PANZA[0] + 100} y={PANZA[1]} ang={0} T={T} color={KC.paper} largo={160} o={1 - kprog(T, t + 1.3, t + 1.8)} />
-          <OndasArco x={PANZA[0] - 100} y={PANZA[1]} ang={180} T={T} color={KC.paper} largo={130} o={1 - kprog(T, t + 1.3, t + 1.8)} /></>}</g>)}
-    </>;
+          {!cierre && <TextoSvg x={lx + (k ? -40 : 60)} y={ly - 290} tam={70} color={KC.yellow} o={kprog(T, K.Gancho + 0.9, K.Gancho + 1.2)} s={klerp(0.4, 1, kprog(T, K.Gancho + 0.9, K.Gancho + 1.3, kEase.rebote))}>?</TextoSvg>}</g>; })}
+      {ts.map((t, i) => <g key={i}><Onomato T={T} at={t} dur={1.5} x={PANZA[0] + 150 + i * 20} y={PANZA[1] - 185 - i * 30} texto="GRRR" tam={110} color={KC.yellow} rot={i % 2 ? 6 : -7} />
+        {T > t && T < t + 1.8 && <><OndasArco x={PANZA[0] + 100} y={PANZA[1]} ang={0} T={T} color="#0b1020" largo={160} o={1 - kprog(T, t + 1.3, t + 1.8)} />
+          <OndasArco x={PANZA[0] - 100} y={PANZA[1]} ang={180} T={T} color="#0b1020" largo={130} o={1 - kprog(T, t + 1.3, t + 1.8)} /></>}</g>)}
+    </g>;
   };
   return (
     <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.dark }}>
@@ -222,11 +225,10 @@ function Tripa() {
         <FondoLunares color={KC.pink} />
         <Lienzo>
           {salon(false)}
-          {T > K.Gancho + 2.6 && <circle cx={PANZA[0]} cy={PANZA[1]} r={150 + 6 * Math.sin(T * 8)} fill="none" stroke={KC.ink} strokeWidth={8} strokeDasharray="18 12" opacity={kprog(T, K.Gancho + 2.6, K.Gancho + 2.9)} />}
         </Lienzo>
-        <Chip T={T} at={K.Gancho + 2.7} until={K.Gancho + 4.0} texto="¿hambre?" x={300} y={380} tam={48} borde={KC.ink} />
-        <Chip T={T} at={K.Gancho + 4.0} until={K.Musculos - 0.1} texto="no siempre" x={300} y={380} tam={48} borde={KC.yellow} />
-        <Etq T={T} at={K.Gancho + 4.2} until={K.Musculos - 0.1} x={PANZA[0] + 160} y={PANZA[1] + 120} texto="tu intestino" lado="der" color={KC.paper} />
+        <Chip T={T} at={K.Gancho + 2.7} until={K.Gancho + 4.0} texto="¿hambre?" x={800} y={520} tam={48} borde={KC.ink} />
+        <Chip T={T} at={K.Gancho + 4.0} until={K.Musculos - 0.1} texto="no siempre" x={800} y={520} tam={48} borde={KC.yellow} />
+        <Etq T={T} at={K.Gancho + 4.2} until={K.Musculos - 0.1} x={330} y={1400} texto="tu intestino" lado="der" color={KC.texto} />
       </Escena>
       {/* 1 · tubos de músculo que se aprietan en ondas */}
       <Escena T={T} a={K.Musculos} b={K.Ruido}>
@@ -248,13 +250,13 @@ function Tripa() {
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={18} color="rgba(255,255,255,.12)" />
         <Lienzo>
-          <TuboGrande T={T} y={860} R={190} amp={1} gas={kprog(T, K.Ruido + 0.4, K.Ruido + 1.0)} liq={kprog(T, K.Ruido + 0.2, K.Ruido + 0.8)} />
-          {[1.2, 2.0, 2.8].map((t, i) => <Onomato key={i} T={T} at={K.Ruido + t} dur={0.7} x={[260, 560, 820][i]} y={[620, 1110, 640][i]} texto="blub" tam={70} color={KC.cyan} rot={i % 2 ? 8 : -8} />)}
-          {T > K.Ruido + 3.3 && <TextoSvg x={540} y={520} tam={118} color={KC.yellow} rot={-3 + Math.sin(T * 3) * 2} s={klerp(0.4, 1, kprog(T, K.Ruido + 3.3, K.Ruido + 3.7, kEase.rebote))}>BORBORIGMO</TextoSvg>}
+          <TuboGrande T={T} y={900} R={250} amp={1} gas={kprog(T, K.Ruido + 0.4, K.Ruido + 1.0)} liq={kprog(T, K.Ruido + 0.2, K.Ruido + 0.8)} />
+          {[1.2, 2.0, 2.8].map((t, i) => <Onomato key={i} T={T} at={K.Ruido + t} dur={0.7} x={[260, 660, 820][i]} y={[640, 1265, 545][i]} texto="blub" tam={70} color={KC.cyan} rot={i % 2 ? 8 : -8} />)}
+          {T > K.Ruido + 3.3 && <TextoSvg x={540} y={470} tam={118} color={KC.yellow} rot={-3 + Math.sin(T * 3) * 2} s={klerp(0.4, 1, kprog(T, K.Ruido + 3.3, K.Ruido + 3.7, kEase.rebote))}>BORBORIGMO</TextoSvg>}
         </Lienzo>
-        <Etq T={T} at={K.Ruido + 0.6} until={K.Ruido + 3.2} x={250} y={1110} texto="líquido" lado="der" color={TP.liq} />
-        <Etq T={T} at={K.Ruido + 1.1} until={K.Ruido + 3.2} x={760} y={560} texto="gas" lado="izq" color={KC.texto} />
-        <Chip T={T} at={K.Ruido + 3.6} until={K.Lleno - 0.1} texto="el ruido tiene nombre" x={540} y={1150} tam={36} borde={KC.yellow} />
+        <Etq T={T} at={K.Ruido + 0.6} until={K.Ruido + 3.2} x={210} y={1285} texto="líquido" lado="der" color={TP.liq} />
+        <Etq T={T} at={K.Ruido + 1.1} until={K.Ruido + 3.2} x={760} y={570} texto="gas" lado="izq" color={KC.texto} />
+        <Chip T={T} at={K.Ruido + 3.6} until={K.Lleno - 0.1} texto="el ruido tiene nombre" x={540} y={1340} tam={36} borde={KC.yellow} />
       </Escena>
       {/* 3–4 · lleno: ruido apagado · vacío: suena más fuerte, como tambor hueco */}
       <Escena T={T} a={K.Lleno} b={K.Pregunta}>
@@ -263,18 +265,18 @@ function Tripa() {
           {(() => { const com = 1 - kprog(T, K.Vacio + 0.2, K.Vacio + 1.6, kEase.suave), fuerte = kprog(T, K.Vacio + 1.2, K.Vacio + 2);
             const golpes = [3.2, 3.7, 4.2, 4.7, 5.2].map((t) => K.Vacio + t), gp = golpes.reduce((a, t) => Math.max(a, T > t ? Math.exp(-(T - t) * 9) : 0), 0);
             return <>
-              <Estomago x={360} y={830} s={1.15} comida={com} T={T} ondas={0.3 + fuerte} />
-              <OndasArco x={640} y={780} ang={-10} T={T} color={fuerte > 0.5 ? KC.red : '#8a7a5a'} largo={klerp(70, 230, fuerte)} grosor={klerp(5, 12, fuerte)} o={klerp(0.45, 1, fuerte)} n={klerp(2, 4, fuerte)} />
-              <OndasArco x={110} y={780} ang={190} T={T} color={fuerte > 0.5 ? KC.red : '#8a7a5a'} largo={klerp(50, 160, fuerte)} grosor={klerp(5, 12, fuerte)} o={klerp(0.45, 1, fuerte)} />
-              <Volumen x={840} y={1130} v={klerp(0.25, 1, fuerte)} T={T} />
-              {T > K.Vacio + 2.9 && <g opacity={kprog(T, K.Vacio + 2.9, K.Vacio + 3.2)}><Tambor x={420} y={430 + 0} s={0.7 * klerp(0.5, 1, kprog(T, K.Vacio + 2.9, K.Vacio + 3.3, kEase.rebote))} golpe={gp} /></g>}
-              {golpes.map((t, i) => <Onomato key={i} T={T} at={t} dur={0.35} x={i % 2 ? 640 : 200} y={420} texto="pum" tam={64} color={KC.red} rot={i % 2 ? 8 : -8} />)}
+              <Estomago x={430} y={950} s={1.4} comida={com} T={T} ondas={0.3 + fuerte} />
+              <OndasArco x={905} y={876} ang={0} T={T} color={fuerte > 0.5 ? KC.red : '#8a7a5a'} largo={klerp(70, 200, fuerte)} grosor={klerp(5, 12, fuerte)} o={klerp(0.45, 1, fuerte)} n={klerp(2, 4, fuerte)} />
+              <OndasArco x={232} y={640} ang={225} T={T} color={fuerte > 0.5 ? KC.red : '#8a7a5a'} largo={klerp(50, 160, fuerte)} grosor={klerp(5, 12, fuerte)} o={klerp(0.45, 1, fuerte)} />
+              <Volumen x={815} y={1420} v={klerp(0.25, 1, fuerte)} T={T} />
+              {T > K.Vacio + 2.9 && <g opacity={kprog(T, K.Vacio + 2.9, K.Vacio + 3.2)}><Tambor x={800} y={500} s={0.8 * klerp(0.5, 1, kprog(T, K.Vacio + 2.9, K.Vacio + 3.3, kEase.rebote))} golpe={gp} /></g>}
+              {golpes.map((t, i) => <Onomato key={i} T={T} at={t} dur={0.35} x={590} y={i % 2 ? 575 : 410} texto="pum" tam={64} color={KC.red} rot={i % 2 ? 8 : -8} />)}
             </>; })()}
         </Lienzo>
-        <Etq T={T} at={K.Lleno + 0.4} until={K.Vacio + 0.4} x={300} y={1140} texto="comida" lado="der" color={KC.ink} />
-        <Chip T={T} at={K.Lleno + 0.6} until={K.Vacio - 0.1} texto="con comida: más apagado" x={540} y={440} tam={42} borde={'#8a7a5a'} />
-        <Chip T={T} at={K.Vacio + 1.2} until={K.Vacio + 2.8} texto="vacío: más fuerte" x={660} y={440} tam={46} borde={KC.red} />
-        <Chip T={T} at={K.Vacio + 3.1} until={K.Pregunta - 0.1} texto="tambor hueco" x={760} y={600} tam={40} borde={KC.red} />
+        <Etq T={T} at={K.Lleno + 0.4} until={K.Vacio + 0.4} x={420} y={1310} texto="comida" lado="der" color={KC.ink} />
+        <Chip T={T} at={K.Lleno + 0.6} until={K.Vacio - 0.1} texto="con comida: más apagado" x={540} y={400} tam={42} borde={'#8a7a5a'} />
+        <Chip T={T} at={K.Vacio + 1.2} until={K.Vacio + 2.8} texto="vacío: más fuerte" x={600} y={400} tam={46} borde={KC.red} />
+        <Chip T={T} at={K.Vacio + 3.1} until={K.Pregunta - 0.1} texto="tambor hueco" x={800} y={705} tam={40} borde={KC.red} />
       </Escena>
       {/* 5 · ¿por qué ruge con hambre? */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Limpieza} />
@@ -282,33 +284,30 @@ function Tripa() {
       <Escena T={T} a={K.Limpieza} b={K.Barre}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <Reloj x={230} y={600} r={130} vueltas={3 * kprog(T, K.Limpieza + 0.2, K.Limpieza + 2.2, kEase.suave) + 0.05 * T} />
-          <g opacity={kprog(T, K.Limpieza + 1.2, K.Limpieza + 1.7)}>
-            <rect x={300} y={520} width={700} height={700} rx={60} fill="#2a0f19" stroke={KC.ink} strokeWidth={10} />
-            <g transform="translate(650 880) scale(0.95)"><Tracto T={T} amp={0.4} limpia={limpL > 0 && limpL < 1 ? limpL : null} /></g>
-          </g>
+          <Reloj x={150} y={590} r={105} vueltas={3 * kprog(T, K.Limpieza + 0.2, K.Limpieza + 2.2, kEase.suave) + 0.05 * T} />
+          <g transform="translate(580 1030) scale(1.35)"><Tracto T={T} amp={0.4} limpia={limpL > 0 && limpL < 1 ? limpL : null} /></g>
         </Lienzo>
-        <Chip T={T} at={K.Limpieza + 0.3} until={K.Barre - 0.1} texto="horas sin comer" x={260} y={420} tam={38} borde={KC.ink} />
-        <Chip T={T} at={K.Limpieza + 1.8} until={K.Barre - 0.1} texto="onda de limpieza" x={720} y={440} tam={42} borde={KC.yellow} />
+        <Chip T={T} at={K.Limpieza + 0.3} until={K.Barre - 0.1} texto="horas sin comer" x={235} y={390} tam={38} borde={KC.ink} />
+        <Chip T={T} at={K.Limpieza + 1.8} until={K.Barre - 0.1} texto="onda de limpieza" x={790} y={400} tam={42} borde={KC.yellow} />
       </Escena>
       {/* 7 · barre los restos hacia adelante; ≈ cada 1.5–2 h */}
       <Escena T={T} a={K.Barre} b={K.Hambre} fondo={KC.noche} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={16} color="rgba(255,255,255,.12)" />
         <Lienzo>
-          <TuboGrande T={T} y={840} R={180} amp={1} frente={frenteB} restos={1} gas={0} />
-          {frenteB > -150 && frenteB < 1150 && <g opacity=".85">{[0, 1].map((k) => <circle key={k} cx={frenteB} cy={840 + 70 * Math.sin(frenteB / 260 + 0.6)} r={180 + 26 + k * 20} fill="none" stroke={KC.yellow} strokeWidth={7 - k * 3} opacity={0.6 - k * 0.3} />)}</g>}
-          <FlechaRecta x1={200} y1={1110} x2={880} y2={1110} p={kprog(T, K.Barre + 0.8, K.Barre + 1.6, kEase.sale)} color={KC.yellow} grosor={14} />
+          <TuboGrande T={T} y={900} R={250} amp={1} frente={frenteB} restos={1} gas={0} />
+          {frenteB > -150 && frenteB < 1150 && <g opacity=".85">{[0, 1].map((k) => <circle key={k} cx={frenteB} cy={900 + 70 * Math.sin(frenteB / 260 + 0.6)} r={250 + 26 + k * 20} fill="none" stroke={KC.yellow} strokeWidth={7 - k * 3} opacity={0.6 - k * 0.3} />)}</g>}
+          <FlechaRecta x1={200} y1={1310} x2={880} y2={1310} p={kprog(T, K.Barre + 0.8, K.Barre + 1.6, kEase.sale)} color={KC.yellow} grosor={14} />
         </Lienzo>
-        <Etq T={T} at={K.Barre + 0.3} until={K.Barre + 2.6} x={560} y={600} texto="restos de comida" lado="der" color={TP.resto} />
-        <Chip T={T} at={K.Barre + 1.0} until={K.Barre + 3.0} texto="hacia adelante" x={540} y={460} tam={42} borde={KC.yellow} />
-        <Chip T={T} at={K.Barre + 3.0} until={K.Hambre - 0.1} texto="≈ cada 1.5–2 h" x={540} y={460} tam={60} borde={KC.yellow} />
+        <Etq T={T} at={K.Barre + 0.3} until={K.Barre + 2.6} x={110} y={635} texto="restos de comida" lado="der" color="#e0a968" />
+        <Chip T={T} at={K.Barre + 1.0} until={K.Barre + 3.0} texto="hacia adelante" x={540} y={430} tam={42} borde={KC.yellow} />
+        <Chip T={T} at={K.Barre + 3.0} until={K.Hambre - 0.1} texto="≈ cada 1.5–2 h" x={540} y={430} tam={60} borde={KC.yellow} />
       </Escena>
       {/* 8 · la motilina, hormona del intestino, la pone en marcha y avisa hambre */}
       <Escena T={T} a={K.Hambre} b={K.Lugar}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          {(() => { const C = { x: 400, y: 900, s: 1.15 }, k = 150 / 340 * 0.95;
+          {(() => { const C = { x: 400, y: 960, s: 1.4 }, k = 150 / 340 * 0.95;
             const dO = trEn(0.36), aE = trEn(0.14); // duodeno → estómago (coordenadas del tracto)
             const enc = kprog(T, tLlega, tLlega + 0.6);
             return <>
@@ -317,46 +316,46 @@ function Tripa() {
                   {[0, 1, 2].map((i) => { const f = kprog(T, K.Hambre + 0.6 + i * 0.35, tLlega + i * 0.2, kEase.suave);
                     return f > 0 && f < 1 && <Motilina key={i} x={klerp(dO.x + 40, aE.x, f) + i * 30} y={klerp(dO.y + 60, aE.y, f) + Math.sin(f * 6) * 40} s={2.6} T={T} brillo={1} />; })}</g>} />
               {T > K.Hambre + 3.6 && <g opacity={kprog(T, K.Hambre + 3.6, K.Hambre + 4.0)}>
-                <circle cx={560} cy={500} r={16} fill="#fff" stroke={KC.ink} strokeWidth={6} /><circle cx={610} cy={450} r={24} fill="#fff" stroke={KC.ink} strokeWidth={6} />
-                <g transform={`translate(800 380) scale(${klerp(0.4, 1.15, kprog(T, K.Hambre + 3.7, K.Hambre + 4.1, kEase.rebote))})`}><Nube x={0} y={0} s={1} />
-                  <text x={-5} y={14} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>hambre</text></g></g>}
+                <circle cx={595} cy={560} r={16} fill="#fff" stroke={KC.ink} strokeWidth={6} /><circle cx={650} cy={505} r={24} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+                <g transform={`translate(800 400) scale(${klerp(0.4, 1.15, kprog(T, K.Hambre + 3.7, K.Hambre + 4.1, kEase.rebote))})`}><Nube x={0} y={0} s={1} />
+                  <text x={-5} y={14} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill="#0b1020">hambre</text></g></g>}
             </>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Hambre + 0.3} until={K.Hambre + 3.4} texto="hormona de tu intestino" x={770} y={560} tam={40} borde={KC.pink} />
-        <Etq T={T} at={K.Hambre + 0.8} until={K.Lugar - 0.15} x={600} y={1000} texto="motilina" lado="der" color={KC.ink} tam={44} />
-        <Chip T={T} at={tLlega + 0.3} until={K.Lugar - 0.15} texto="pone en marcha la onda" x={560} y={1170} tam={36} borde={KC.yellow} />
+        <Chip T={T} at={K.Hambre + 0.3} until={K.Hambre + 3.4} texto="hormona de tu intestino" x={540} y={290} tam={40} borde={KC.pink} />
+        <Etq T={T} at={K.Hambre + 0.8} until={K.Lugar - 0.15} x={700} y={1090} texto="motilina" lado="der" color={KC.ink} tam={44} />
+        <Chip T={T} at={tLlega + 0.3} until={K.Lugar - 0.15} texto="pone en marcha la onda" x={540} y={1460} tam={36} borde={KC.yellow} />
       </Escena>
       {/* 9 · gran parte del ruido viene del intestino delgado */}
       <Escena T={T} a={K.Lugar} b={K.Normal} fondo={KC.noche} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={16} color="rgba(255,255,255,.12)" />
         <Lienzo>
-          {(() => { const b = kprog(T, K.Lugar + 1.2, K.Lugar + 2.0), C = { x: 620, y: 800, s: 0.85 };
+          {(() => { const b = kprog(T, K.Lugar + 1.2, K.Lugar + 2.0), C = { x: 540, y: 960, s: 1.2 };
             return <>
               <g transform={`translate(${C.x} ${C.y}) scale(${C.s})`}><Tracto T={T} amp={1} brilloInt={b * (0.75 + 0.25 * Math.sin(T * 6))} apagaEst={b * 0.8} gas={b} /></g>
-              {b > 0.3 && [0, 1, 2].map((i) => <OndasArco key={i} x={C.x + 0.85 * [-240, 250, -230][i]} y={C.y + 0.85 * [80, 180, 260][i]} ang={[180, 0, 180][i]} T={T + i * 0.3} color={KC.gold2} largo={150} o={b} />)}
-              {[0.3, 1.4].map((t, i) => <Onomato key={i} T={T} at={K.Lugar + 2.4 + t} dur={0.9} x={i ? 860 : 330} y={i ? 1000 : 1060} texto="grrr" tam={80} color={KC.gold2} rot={i ? 8 : -8} />)}
+              {b > 0.3 && [0, 1, 2].map((i) => <OndasArco key={i} x={C.x + C.s * [-240, 250, -230][i]} y={C.y + C.s * [80, 180, 260][i]} ang={[180, 0, 180][i]} T={T + i * 0.3} color={KC.gold2} largo={150} o={b} />)}
+              {[0.3, 1.4].map((t, i) => <Onomato key={i} T={T} at={K.Lugar + 2.4 + t} dur={0.9} x={i ? 880 : 190} y={i ? 1410 : 880} texto="grrr" tam={80} color={KC.gold2} rot={i ? 8 : -8} />)}
             </>; })()}
         </Lienzo>
-        <Etq T={T} at={K.Lugar + 0.5} until={K.Normal - 0.1} x={700} y={640} texto="estómago" lado="der" color={KC.texto} />
-        <Etq T={T} at={K.Lugar + 1.4} until={K.Normal - 0.1} x={330} y={1130} texto="intestino delgado" lado="der" color={KC.gold2} />
-        <Chip T={T} at={K.Lugar + 3.4} until={K.Normal - 0.1} texto="no solo el estómago" x={660} y={440} tam={42} borde={KC.gold2} />
+        <Etq T={T} at={K.Lugar + 0.5} until={K.Normal - 0.1} x={653} y={734} texto="estómago" lado="der" color={KC.texto} />
+        <Etq T={T} at={K.Lugar + 1.4} until={K.Normal - 0.1} x={131} y={1430} texto="intestino delgado" lado="der" color={KC.gold2} />
+        <Chip T={T} at={K.Lugar + 3.4} until={K.Normal - 0.1} texto="no solo el estómago" x={720} y={390} tam={42} borde={KC.gold2} />
       </Escena>
       {/* 10 · es normal: está trabajando */}
       <Escena T={T} a={K.Normal} b={K.Cierre}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <Alumno x={360} y={930} s={1.05} color={KC.yellow} uid="n" ventana={1} cara="sonrie" dentro={<g transform="scale(0.42) translate(0 -20)"><Tracto T={T} amp={1} gas={0.6} /></g>} />
-          {T > K.Normal + 0.5 && <Palomita x={820} y={700} s={klerp(0.3, 1, kprog(T, K.Normal + 0.5, K.Normal + 0.9, kEase.rebote))} />}
+          <Alumno x={440} y={1000} s={1.4} color={KC.yellow} uid="n" ventana={1} cara="sonrie" dentro={<g transform="scale(0.42) translate(0 -20)"><Tracto T={T} amp={1} gas={0.6} /></g>} />
+          {T > K.Normal + 0.5 && <Palomita x={880} y={640} s={klerp(0.3, 1, kprog(T, K.Normal + 0.5, K.Normal + 0.9, kEase.rebote))} />}
         </Lienzo>
-        <Chip T={T} at={K.Normal + 0.3} until={K.Cierre - 0.1} texto="es normal" x={540} y={440} tam={64} borde={KC.mint} />
-        <Chip T={T} at={K.Normal + 1.6} until={K.Cierre - 0.1} texto="está trabajando" x={780} y={960} tam={38} borde={KC.ink} />
+        <Chip T={T} at={K.Normal + 0.3} until={K.Cierre - 0.1} texto="es normal" x={540} y={320} tam={64} borde={KC.mint} />
+        <Chip T={T} at={K.Normal + 1.6} until={K.Cierre - 0.1} texto="está trabajando" x={540} y={1490} tam={38} borde={KC.ink} />
       </Escena>
       {/* 11 · cierre: el mismo salón; la panza hace la limpieza */}
       <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.pink} />
         <Lienzo>{salon(true)}</Lienzo>
-        <Chip T={T} at={K.Cierre + 1.4} until={K.Outro - 0.1} texto="haciendo la limpieza" x={540} y={380} tam={44} borde={KC.yellow} />
+        <Chip T={T} at={K.Cierre + 1.4} until={K.Outro - 0.1} texto="haciendo la limpieza" x={540} y={300} tam={44} borde={KC.yellow} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Musculos - 0.1} texto="No siempre es *hambre.*" />

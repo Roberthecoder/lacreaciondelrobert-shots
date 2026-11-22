@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #49 · ELIZA: el "psicólogo" de unas cuantas reglas — NARRADO (N1 "Por dentro" + N6 "Guía en pasos").
 // Datos: Weizenbaum, Communications of the ACM 9(1):36–45 (1966); Weizenbaum, Computer Power and Human Reason (1976);
 // Hofstadter (1995); Lane et al., arXiv:2501.06707 (2025). Ver guion.md y verificacion.md.
@@ -98,11 +99,13 @@ function Secretos({ T, x0, y0, x1, y1, n = 6, vel = 0.32, alto = 220, o = 1 }) {
 // Escena del consultorio (gancho y cierre).
 function Consultorio({ T, traje = 1, reglas = 0, secretos = 1 }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <rect x={0} y={1180} width={KW} height={740} fill="#7fd9b8" />
-    <line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={8} />
-    <Divan x={330} y={1120} s={1} T={T} />
-    <Psicologo x={790} y={1000} s={0.95} T={T} traje={traje} reglas={reglas} />
-    <Secretos T={T} x0={150} y0={960} x1={780} y1={720} o={secretos} />
+    <g transform="translate(540 1250) scale(1.15) translate(-500 -1180)">
+      <rect x={-100} y={1180} width={KW + 200} height={740} fill="#1d3531" />
+      <line x1={-100} y1={1180} x2={KW + 100} y2={1180} stroke={KC.ink} strokeWidth={8} />
+      <Divan x={330} y={1120} s={1} T={T} />
+      <Psicologo x={790} y={1000} s={0.95} T={T} traje={traje} reglas={reglas} />
+      <Secretos T={T} x0={150} y0={960} x1={780} y1={720} o={secretos} />
+    </g>
   </svg>;
 }
 
@@ -149,9 +152,10 @@ function Oficina({ T, K }) {
   const sale = kprog(T, K.S + 4.0, K.S + 5.0, kEase.suave), puerta = kprog(T, K.S + 4.7, K.S + 5.4, kEase.sale);
   const teclea = Math.sin(T * 18) > 0 ? 4 : 0;
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <rect x={0} y={0} width={KW} height={1180} fill="#f6e3b0" />
-    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={i * 96} y1={0} x2={i * 96} y2={1180} stroke="#e9cf8d" strokeWidth={10} />)}
-    <rect x={0} y={1180} width={KW} height={740} fill="#9c6b45" />
+    <g transform="translate(540 1380) scale(1.2) translate(-540 -1180)">
+    <rect x={-100} y={-100} width={KW + 200} height={1280} fill="#2c2a25" />
+    {Array.from({ length: 14 }, (_, i) => <line key={i} x1={-96 + i * 96} y1={-100} x2={-96 + i * 96} y2={1180} stroke="#4a4232" strokeWidth={10} />)}
+    <rect x={-100} y={1180} width={KW + 200} height={740} fill="#2a1e17" />
     <line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={8} />
     {/* puerta */}
     <rect x={860} y={700} width={220} height={480} fill="#3a2a20" stroke={KC.ink} strokeWidth={8} />
@@ -184,6 +188,7 @@ function Oficina({ T, K }) {
       <circle cx={-17} cy={-148} r={13} fill="none" stroke={KC.ink} strokeWidth={5} /><circle cx={17} cy={-148} r={13} fill="none" stroke={KC.ink} strokeWidth={5} />
       <path d="M -18 -124 Q 0 -114 18 -124" stroke="#2b2b2b" strokeWidth={8} strokeLinecap="round" fill="none" />
     </g>
+    </g>
   </svg>;
 }
 
@@ -207,7 +212,7 @@ function LetrasCorazon({ T, at, cx = 400, cy = 880, R = 17, n = 46 }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     {Array.from({ length: n }, (_, i) => { const th = (i / n) * Math.PI * 2;
       const hx = 16 * Math.pow(Math.sin(th), 3), hy = -(13 * Math.cos(th) - 5 * Math.cos(2 * th) - 2 * Math.cos(3 * th) - Math.cos(4 * th));
-      const sx = 80 + r() * 920, sy = 520 + r() * 680, l = letras[Math.floor(r() * letras.length)];
+      const sx = 80 + r() * 920, sy = 640 + r() * 760, l = letras[Math.floor(r() * letras.length)];
       const px = klerp(sx + Math.sin(T * 0.8 + i) * 18, cx + hx * R, g), py = klerp(sy + Math.cos(T * 0.7 + i) * 18, cy + hy * R, g);
       return <text key={i} x={px} y={py} textAnchor="middle" style={{ font:`700 ${42 + (i % 3) * 8}px ${KF.mono}` }} fill={g > 0.95 ? KC.pink : KC.texto} opacity={0.9}>{l}</text>; })}
   </svg>;
@@ -217,6 +222,7 @@ function LetrasCorazon({ T, at, cx = 400, cy = 880, R = 17, n = 46 }) {
 function CajaArchivo({ T, K }) {
   const sube = kprog(T, K.C + 0.4, K.C + 2.6, kEase.sale), n = 4, alto = 110;
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+    <g transform="translate(570 1330) scale(1.25) translate(-600 -1190)">
     {Array.from({ length: n }, (_, i) => { const v = kclamp(sube * n - i, 0, 1); if (v <= 0) return null;
       const yb = 1010 - i * alto * 0.92, sk = i % 2 ? 14 : -14;
       return <g key={i} opacity={v} transform={`translate(600 ${yb + (1 - v) * 60})`}>
@@ -229,6 +235,7 @@ function CajaArchivo({ T, K }) {
     <rect x={470} y={1070} width={260} height={80} rx={8} fill={PAPEL} stroke={KC.ink} strokeWidth={5} />
     <text x={600} y={1104} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={TINTA}>ARCHIVO MIT</text>
     <text x={600} y={1136} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill={TINTA}>papeles de Weizenbaum</text>
+    </g>
   </svg>;
 }
 
@@ -286,6 +293,7 @@ function Eliza() {
       {/* 2 · el truco en 3 pasos (por dentro de la máquina) */}
       <Escena T={T} a={K.R} b={K.E}>
         <FondoCircuito T={T} />
+        {svg(<Teletipo x={540} y={1300} s={0.85} T={T} papel={0} ancho={640} />)}
         {svg(<>
           {T < R2 + 0.2 && fichas.map((f, i) => { const tiene = f.length > 1, brilla = tiene && T > p1 + 0.4;
             const tx = klerp(fx[i], 220 + i * 128, junta), ty = klerp(fy[i], 1070, junta);
@@ -311,9 +319,10 @@ function Eliza() {
       {/* 3 · quién y cuándo */}
       <Escena T={T} a={K.E} b={K.P}>
         <FondoLunares color={KC.lilac} />
-        {svg(<g opacity={kprog(T, K.E + 3.0, K.E + 3.4)}><Bote x={850} y={1080} s={0.75} T={T} /></g>)}
+        {svg(<g opacity={1 - 0.75 * kprog(T, K.E + 2.9, K.E + 3.4)}><Teletipo x={540} y={1230} s={0.95} T={T} papel={210} barras={6} ancho={420} /></g>)}
+        {svg(<g opacity={kprog(T, K.E + 3.0, K.E + 3.4)}><Bote x={820} y={1270} s={1.1} T={T} /></g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="1966" quien="ELIZA · Joseph Weizenbaum · MIT" revista="Communications of the ACM, vol. 9, núm. 1" y={700} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="1966" quien="ELIZA · Joseph Weizenbaum · MIT" revista="Communications of the ACM, vol. 9, núm. 1" y={520} />
       <Chip T={T} at={K.E + 3.0} until={K.P - 0.2} texto="así respondería un psiquiatra, según Weizenbaum:" x={540} y={720} tam={30} borde={KC.ink} />
       <Burbuja T={T} at={K.E + 3.3} until={K.P - 0.2} texto="«Me fui a dar un paseo en barco.»" x={430} y={850} ancho={640} lado="izq" tam={38} />
       <Burbuja T={T} at={K.E + 4.1} until={K.P - 0.2} texto="«Háblame de barcos.»" x={420} y={1040} ancho={460} lado="der" fondo={KC.yellow} tam={42} />
@@ -322,15 +331,15 @@ function Eliza() {
       <Escena T={T} a={K.P} b={K.S} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <Teletipo x={280} y={1080} s={0.6} T={T} papel={120} barras={3} ancho={340} />
-          <text x={280} y={860} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 700)`}>?</text>
+          <Teletipo x={620} y={1170} s={1} T={T} papel={150} barras={4} ancho={340} />
+          <text x={250} y={900} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 250 740)`}>?</text>
         </>)}
       </Escena>
 
       {/* 5 · la secretaria */}
       <Escena T={T} a={K.S} b={K.Es}>
         <Oficina T={T} K={K} />
-        {svg(<g opacity={kprog(T, K.S + 0.3, K.S + 0.6) * (1 - kprog(T, K.S + 2.6, K.S + 2.9))}><Calendario T={T} at={K.S + 0.3} x={880} y={500} s={1.2} /></g>)}
+        {svg(<g opacity={kprog(T, K.S + 0.3, K.S + 0.6) * (1 - kprog(T, K.S + 2.6, K.S + 2.9))}><Calendario T={T} at={K.S + 0.3} x={948} y={564} s={1.44} /></g>)}
       </Escena>
       <Chip T={T} at={K.S + 0.4} until={K.S + 2.6} texto="lo vio programarla por meses" x={420} y={500} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.S + 2.9} until={K.Es - 0.2} texto="a los pocos mensajes…" x={360} y={690} tam={38} borde={KC.ink} />
@@ -340,6 +349,7 @@ function Eliza() {
         <FondoLunares color={KC.violet} punto="rgba(255,255,255,.08)" />
         {svg(<>
           <circle cx={900} cy={480} r={70} fill={KC.gold2} stroke={KC.ink} strokeWidth={7} /><circle cx={930} cy={460} r={62} fill={KC.violet} />
+          <g transform="translate(520 1010) scale(1.3) translate(-540 -1000)">
           <g transform="translate(330 1060)">
             {[0, 1, 2].map((k) => <g key={k} transform={`translate(${(k - 1) * 120} ${k === 1 ? -30 : 0})`}>
               <rect x={-50} y={-40} width={100} height={120} rx={10} fill={PAPEL} stroke={KC.ink} strokeWidth={6} />
@@ -355,6 +365,7 @@ function Eliza() {
             <circle cx={-17} cy={-158} r={13} fill="none" stroke={KC.ink} strokeWidth={5} /><circle cx={17} cy={-158} r={13} fill="none" stroke={KC.ink} strokeWidth={5} />
             <path d="M -18 -130 Q 0 -138 18 -130" stroke="#2b2b2b" strokeWidth={8} strokeLinecap="round" fill="none" />
           </g>
+          </g>
         </>)}
       </Escena>
       <Chip T={T} at={K.Es + 0.2} until={K.Es + 1.5} texto="propuesta: revisar las pláticas de una noche" x={540} y={720} tam={30} borde={KC.cyan} />
@@ -365,30 +376,30 @@ function Eliza() {
       {/* 7 · efecto ELIZA */}
       <Escena T={T} a={K.Ef} b={K.C}>
         <FondoLunares color={KC.noche} punto="rgba(255,255,255,.06)" />
-        <LetrasCorazon T={T} at={K.Ef + 0.6} cx={420} cy={900} />
+        <LetrasCorazon T={T} at={K.Ef + 0.6} cx={540} cy={1000} R={24} />
       </Escena>
       {kvisible(T, K.Ef + 0.2, K.C - 0.2) && (() => { const e = kentrada(T, K.Ef + 0.2, K.C - 0.2, 'pop');
-        return <div style={{ position:'absolute', left:70, top:410, zIndex:41, opacity:e.o, transform:`scale(${e.s})`, transformOrigin:'0 50%', font:`400 110px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`6px 6px 0 ${KC.ink}` }}>EFECTO ELIZA</div>; })()}
-      <Chip T={T} at={K.Ef + 2.3} until={K.C - 0.2} texto="…pero solo son símbolos" x={420} y={1160} tam={34} borde={KC.pink} />
+        return <div style={{ position:'absolute', left:70, top:440, zIndex:41, opacity:e.o, transform:`scale(${e.s})`, transformOrigin:'0 50%', font:`400 110px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`6px 6px 0 ${KC.ink}` }}>EFECTO ELIZA</div>; })()}
+      <Chip T={T} at={K.Ef + 2.3} until={K.C - 0.2} texto="…pero solo son símbolos" x={540} y={1470} tam={34} borde={KC.pink} />
 
       {/* 8 · el código perdido */}
       <Escena T={T} a={K.C} b={K.H}>
         <FondoLunares color={KC.yellow} />
         <CajaArchivo T={T} K={K} />
       </Escena>
-      <NumeroGigante T={T} at={K.C + 0.6} until={K.H - 0.2} valor={50} dur={1.2} sufijo="+" etiqueta="" x={250} y={500} tam={190} color={KC.orange} />
-      <Chip T={T} at={K.C + 1.0} until={K.H - 0.2} texto="años sin verse" x={250} y={640} tam={32} borde={KC.ink} />
-      <Sello T={T} at={K.C + 3.3} texto="2021 · ENCONTRADO" until={K.H - 0.2} x={600} y={800} rot={-9} tam={58} />
+      <NumeroGigante T={T} at={K.C + 0.6} until={K.H - 0.2} valor={50} dur={1.2} sufijo="+" etiqueta="" x={190} y={470} tam={190} color={KC.orange} />
+      <Chip T={T} at={K.C + 1.0} until={K.H - 0.2} texto="años sin verse" x={190} y={600} tam={32} borde={KC.ink} />
+      <Sello T={T} at={K.C + 3.3} texto="2021 · ENCONTRADO" until={K.H - 0.2} x={570} y={860} rot={-9} tam={58} />
 
       {/* 9 · hoy */}
       <Escena T={T} a={K.H} b={K.Ci}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Secretos T={T} x0={520} y0={900} x1={900} y1={780} n={5} alto={160} />)}
+        {svg(<Secretos T={T} x0={640} y0={1000} x1={960} y1={860} n={5} alto={180} />)}
       </Escena>
       {T > K.H - 0.4 && T < K.Ci + 0.4 && <div style={{ opacity:kprog(T, K.H - 0.4, K.H + 0.05) * (1 - kprog(T, K.Ci - 0.05, K.Ci + 0.4)) }}>
-        <CelularChat T={T} x={380} y={870} s={0.7} tam={46} mensajes={[{ at: K.H + 0.3, yo: true, texto: 'Tuve un día horrible.' }, { at: K.H + 1.3, texto: 'Lamento que te sientas así. ¿Quieres contarme qué pasó?' }]} escribe={[K.H + 0.7, K.H + 1.3]} />
+        <CelularChat T={T} x={400} y={1000} s={0.85} tam={46} mensajes={[{ at: K.H + 0.3, yo: true, texto: 'Tuve un día horrible.' }, { at: K.H + 1.3, texto: 'Lamento que te sientas así. ¿Quieres contarme qué pasó?' }]} escribe={[K.H + 0.7, K.H + 1.3]} />
       </div>}
-      <Chip T={T} at={K.H + 1.8} until={K.Ci - 0.2} texto="chat ilustrativo" x={830} y={1120} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.H + 1.8} until={K.Ci - 0.2} texto="chat ilustrativo" x={830} y={1380} tam={28} borde={KC.ink} />
 
       {/* 10 · cierre: el mismo consultorio, ya sin disfraz */}
       <Escena T={T} a={K.Ci} b={FIN}>

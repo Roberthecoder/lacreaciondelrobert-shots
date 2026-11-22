@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #37 · La Luna no es más grande en el horizonte — NARRADO (N2 mito + participación: tápala con la uña del meñique).
 // Datos: NASA Science 2023 (fotos del mismo ancho, prueba con el dedo, sin explicación sólida), Kaufman y Kaufman 2000 (PNAS),
 // Ross 2019 / Ross y Plug 2002 (más de 2,000 años, cielo aplanado), Wikipedia «Moon illusion» (≈ 1.5 % más lejos). Ver guion.md y
@@ -92,7 +93,7 @@ function NocheCiudad({ T, children, frente }) {
     <EstrellasFondo T={T} n={80} seed={37} alto={1000} />
     {children}
     <CiudadLH base={1200} T={T} />
-    <rect x={0} y={1190} width={KW} height={KH - 1190} fill="#1a1433" stroke={KC.ink} strokeWidth={8} />
+    <rect x={0} y={1190} width={KW} height={KH - 1190} fill="#121228" stroke={KC.ink} strokeWidth={8} />
     {frente}
   </g>;
 }
@@ -131,29 +132,29 @@ function LunaHorizonte() {
       </Escena>
 
       {/* 1 · la misma regla: abajo y arriba, casi lo mismo */}
-      <Escena T={T} a={K.Medida} b={K.Foto} fondo={KC.lilac}>
+      <Escena T={T} a={K.Medida} b={K.Foto}>
         <FondoLunares color={KC.lilac} />
-        <Lienzo>
+        <Lienzo><g transform="translate(450 880) scale(1.5) translate(-450 -880)">
           {mS > 0.02 && <g opacity={0.9}>
             <circle cx={260} cy={1010} r={70} fill="none" stroke={KC.ink} strokeWidth={5} strokeDasharray="12 10" />
             <ReglaLH x={260 - 100} y={1010 - 150} ancho={200} color="#fff3a0" o={0.8} />
           </g>}
           {mS > 0.02 && mS < 0.98 && <path d={`M 260 1010 Q 380 720 600 690`} stroke="#fff" strokeWidth={6} strokeDasharray="4 16" strokeLinecap="round" fill="none" opacity=".7" />}
           <LunaH x={mX} y={mY} r={mR} halo={0.6} />
-          <CiudadLH base={1180} T={T} color="#4b3a86" ventanas={false} esc={0.45} />
-          <rect x={0} y={1170} width={KW} height={KH - 1170} fill="#3a2c6b" stroke={KC.ink} strokeWidth={8} />
+          <CiudadLH base={1180} T={T} color="#382c66" ventanas={false} esc={0.45} />
+          <rect x={0} y={1170} width={KW} height={KH - 1170} fill="#221e44" stroke={KC.ink} strokeWidth={8} />
           <MideLuna x={mX} y={mY} r={mR} o={kprog(T, K.Medida + 0.4, K.Medida + 0.8)} />
-        </Lienzo>
-        <Etq T={T} at={K.Medida + 1.2} until={K.Foto - 0.1} x={360} y={1000} texto="en el horizonte" lado="der" color={KC.ink} tam={36} />
-        <Etq T={T} at={K.Medida + 4.0} until={K.Foto - 0.1} x={700} y={700} texto="más arriba" lado="der" color={KC.ink} tam={36} />
-        <Chip T={T} at={K.Medida + 4.3} until={K.Foto - 0.1} texto="casi el mismo tamaño" x={540} y={400} tam={44} borde={KC.yellow} />
+        </g></Lienzo>
+        <Etq T={T} at={K.Medida + 1.2} until={K.Foto - 0.1} x={290} y={1065} texto="en el horizonte" lado="der" color={KC.ink} tam={36} />
+        <Etq T={T} at={K.Medida + 4.0} until={K.Foto - 0.1} x={555} y={600} texto="más arriba" lado="izq" color={KC.ink} tam={32} />
+        <Chip T={T} at={K.Medida + 4.3} until={K.Foto - 0.1} texto="casi el mismo tamaño" x={540} y={265} tam={44} borde={KC.yellow} />
       </Escena>
 
       {/* 2 · fotos: misma cámara, mismo zoom → todas del mismo ancho */}
-      <Escena T={T} a={K.Foto} b={K.Dedo} fondo={KC.yellow}>
+      <Escena T={T} a={K.Foto} b={K.Dedo}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <rect x={70} y={490} width={940} height={690} rx={14} fill="#fff" stroke={KC.ink} strokeWidth={9} transform={`rotate(-1.5 540 835)`} />
+          <rect x={70} y={490} width={940} height={690} rx={14} fill="#8f98ad" stroke={KC.ink} strokeWidth={9} transform={`rotate(-1.5 540 835)`} />
           <g transform="rotate(-1.5 540 835)">
             <rect x={96} y={516} width={888} height={638} fill={LH_CIELO_A} stroke={KC.ink} strokeWidth={6} />
             {Array.from({ length: 24 }, (_, i) => <circle key={i} cx={120 + (i * 137) % 850} cy={540 + (i * 89) % 420} r={2.5} fill="#fff" opacity=".6" />)}
@@ -173,44 +174,44 @@ function LunaHorizonte() {
       </Escena>
 
       {/* 3 · haz la prueba: la uña del meñique la tapa abajo y arriba */}
-      <Escena T={T} a={K.Dedo} b={K.Pregunta} fondo={KC.mint}>
+      <Escena T={T} a={K.Dedo} b={K.Pregunta}>
         <FondoLunares color={KC.mint} />
-        <Lienzo>
-          <path d="M 0 1010 Q 200 960 420 1000 T 820 990 T 1080 1000 L 1080 1920 L 0 1920 Z" fill="#1f8a63" stroke={KC.ink} strokeWidth={8} />
+        <Lienzo><g transform="translate(560 900) scale(1.3) translate(-560 -900)">
+          <path d="M -200 1010 Q 200 960 420 1000 T 820 990 T 1280 1000 L 1280 2100 L -200 2100 Z" fill="#164a39" stroke={KC.ink} strokeWidth={8} />
           <LunaH x={dX} y={dY} r={24} halo={1} />
-          <g transform={`translate(${dX} ${dY + (1 - dMano) * 1100}) scale(0.8)`}><ManoMenique x={0} y={0} /></g>
+          <g transform={`translate(${dX} ${dY + (1 - dMano) * 450}) scale(0.8)`}><ManoMenique x={0} y={0} /></g>
           <Palomita T={T} at={K.Dedo + 1.5} x={560 - 130} y={950} />
           <Palomita T={T} at={K.Dedo + 4.8} x={600 - 130} y={600} />
           {T < K.Dedo + 2.3 && <circle cx={dX} cy={dY} r={44} fill="none" stroke="#fff" strokeWidth={5} strokeDasharray="8 8" opacity={kprog(T, K.Dedo + 1.3, K.Dedo + 1.5)} />}
-        </Lienzo>
+        </g></Lienzo>
         <Chip T={T} at={K.Dedo + 0.2} until={K.Pregunta - 0.1} texto="haz la prueba · brazo estirado" x={540} y={400} tam={40} borde={KC.yellow} />
-        <Etq T={T} at={K.Dedo + 1.6} until={K.Dedo + 2.6} x={370} y={860} texto="cuando sale" lado="izq" color={KC.ink} tam={36} />
-        <Etq T={T} at={K.Dedo + 4.9} until={K.Pregunta - 0.1} x={410} y={510} texto="ya arriba" lado="izq" color={KC.ink} tam={36} />
+        <Etq T={T} at={K.Dedo + 1.6} until={K.Dedo + 2.6} x={300} y={870} texto="cuando sale" lado="der" color={KC.ink} tam={36} />
+        <Etq T={T} at={K.Dedo + 4.9} until={K.Pregunta - 0.1} x={354} y={510} texto="ya arriba" lado="izq" color={KC.ink} tam={36} />
       </Escena>
 
       {/* 4 · ¿entonces por qué la ves enorme? */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Nadie} color={KC.orange} />
 
       {/* 5 · nadie lo sabe con certeza; ilusión conocida desde hace más de 2,000 años */}
-      <Escena T={T} a={K.Nadie} b={K.Hipotesis} fondo={KC.pink}>
+      <Escena T={T} a={K.Nadie} b={K.Hipotesis}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
           {[[180, 640, -12], [900, 700, 10], [230, 1000, 8], [860, 1040, -10]].map(([x, y, r], i) =>
-            <TextoSvg key={i} x={x} y={y + Math.sin(T * 2 + i) * 14} tam={120} color={KC.yellow} rot={r} o={kprog(T, K.Nadie + 0.4 + i * 0.25, K.Nadie + 0.6 + i * 0.25) * (1 - kprog(T, K.Nadie + 2.0, K.Nadie + 2.4))}>?</TextoSvg>)}
+            <TextoSvg key={i} x={x} y={y + Math.sin(T * 2 + i) * 14} tam={120} color={KC.yellow} rot={r} o={kprog(T, K.Nadie - 0.1 + i * 0.15, K.Nadie + 0.15 + i * 0.15) * (1 - kprog(T, K.Nadie + 2.0, K.Nadie + 2.4))}>?</TextoSvg>)}
           <g opacity={kprog(T, K.Nadie + 1.8, K.Nadie + 2.0)}>
-            <Pergamino x={540} y={740} a={kprog(T, K.Nadie + 1.9, K.Nadie + 2.8, kEase.suave)} T={T} />
+            <g transform="translate(540 740) scale(1.3) translate(-540 -740)"><Pergamino x={540} y={740} a={kprog(T, K.Nadie + 1.9, K.Nadie + 2.8, kEase.suave)} T={T} /></g>
           </g>
-          <text x={540} y={1000} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke" opacity={kprog(T, K.Nadie + 2.8, K.Nadie + 3.1)}>ilusión conocida desde hace</text>
-          <TextoSvg x={540} y={1105} tam={100} color={KC.yellow} s={klerp(0.5, 1, kprog(T, K.Nadie + 3.1, K.Nadie + 3.5, kEase.rebote))} o={kprog(T, K.Nadie + 3.1, K.Nadie + 3.2)}>MÁS DE 2,000 AÑOS</TextoSvg>
+          <text x={540} y={1075} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke" opacity={kprog(T, K.Nadie + 2.8, K.Nadie + 3.1)}>ilusión conocida desde hace</text>
+          <TextoSvg x={540} y={1180} tam={100} color={KC.yellow} s={klerp(0.5, 1, kprog(T, K.Nadie + 3.1, K.Nadie + 3.5, kEase.rebote))} o={kprog(T, K.Nadie + 3.1, K.Nadie + 3.2)}>MÁS DE 2,000 AÑOS</TextoSvg>
         </Lienzo>
         <Chip T={T} at={K.Nadie + 0.2} until={K.Hipotesis - 0.1} texto="nadie lo sabe con certeza" x={540} y={410} tam={44} borde={KC.yellow} />
       </Escena>
 
       {/* 6 · hipótesis: sentimos el cielo como un techo aplanado */}
-      <Escena T={T} a={K.Hipotesis} b={K.Lejos} fondo={KC.cyan}>
+      <Escena T={T} a={K.Hipotesis} b={K.Lejos}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#2fb36b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#133a2c" stroke={KC.ink} strokeWidth={8} />
           <path d="M 80 1150 A 460 340 0 0 1 1000 1150" fill="rgba(255,255,255,.18)" stroke={KC.ink} strokeWidth={10} pathLength={1}
             strokeDasharray={`${kprog(T, K.Hipotesis + 0.8, K.Hipotesis + 2.2, kEase.suave)} 1`} />
           <path d="M 80 1150 A 460 340 0 0 1 1000 1150" fill="none" stroke="#fff" strokeWidth={4} pathLength={1}
@@ -228,7 +229,7 @@ function LunaHorizonte() {
       </Escena>
 
       {/* 7 · lo que parece más lejos y ocupa lo mismo en tu vista, el cerebro lo agranda (ilusión de Ponzo) */}
-      <Escena T={T} a={K.Lejos} b={K.Cerca} fondo={KC.yellow}>
+      <Escena T={T} a={K.Lejos} b={K.Cerca}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
           {(() => { const VY = 330, dib = kprog(T, K.Lejos + 0.2, K.Lejos + 1.0, kEase.sale);
@@ -250,7 +251,7 @@ function LunaHorizonte() {
       </Escena>
 
       {/* 8 · otra idea: junto a árboles y edificios la Luna parece enorme */}
-      <Escena T={T} a={K.Cerca} b={K.Real} fondo={KC.orange}>
+      <Escena T={T} a={K.Cerca} b={K.Real}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
           {[[60, 0.3], [560, 0.6]].map(([x0, d], i) => <g key={i} opacity={kprog(T, K.Cerca + d, K.Cerca + d + 0.3)}>
@@ -277,9 +278,9 @@ function LunaHorizonte() {
       </Escena>
 
       {/* 9 · de hecho, en el horizonte está un poquito más lejos (≈ 1.5 %) */}
-      <Escena T={T} a={K.Real} b={K.Cierre} fondo={KC.lilac}>
+      <Escena T={T} a={K.Real} b={K.Cierre}>
         <FondoLunares color={KC.lilac} />
-        <Lienzo>
+        <Lienzo><g transform="translate(620 880) scale(1.12) translate(-600 -880)">
           {(() => { const E = [290, 880], R = 180, M = [910, 880];
             const pY = kprog(T, K.Real + 0.8, K.Real + 1.5, kEase.sale), pR = kprog(T, K.Real + 1.8, K.Real + 2.6, kEase.sale), pr = kprog(T, K.Real + 3.0, K.Real + 3.6);
             return <g>
@@ -295,12 +296,12 @@ function LunaHorizonte() {
                 <line x1={E[0]} y1={E[1]} x2={E[0]} y2={E[1] - R} stroke={KC.ink} strokeWidth={6} strokeDasharray="10 8" />
                 <circle cx={E[0]} cy={E[1]} r={8} fill={KC.ink} />
               </g>
-            </g>; })()}
+            </g>; })()}</g>
           <TextoSvg x={540} y={1140} tam={64} color={KC.yellow} o={kprog(T, K.Real + 3.4, K.Real + 3.6)} s={klerp(0.5, 1, kprog(T, K.Real + 3.4, K.Real + 3.8, kEase.rebote))}>UN POQUITO MÁS LEJOS · ≈ 1.5 %</TextoSvg>
         </Lienzo>
-        <Etq T={T} at={K.Real + 1.3} until={K.Cierre - 0.1} x={660} y={930} texto="arriba de ti" lado="der" color={KC.ink} tam={32} />
-        <Etq T={T} at={K.Real + 2.4} until={K.Cierre - 0.1} x={560} y={720} texto="en el horizonte" lado="der" color={KC.ink} tam={32} />
-        <Etq T={T} at={K.Real + 3.1} until={K.Cierre - 0.1} x={290} y={800} texto="radio de la Tierra" lado="der" color={KC.ink} tam={28} />
+        <Etq T={T} at={K.Real + 1.3} until={K.Cierre - 0.1} x={687} y={985} texto="arriba de ti" lado="der" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.Real + 2.4} until={K.Cierre - 0.1} x={575} y={701} texto="en el horizonte" lado="der" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.Real + 3.1} until={K.Cierre - 0.1} x={250} y={790} texto="radio de la Tierra" lado="der" color={KC.ink} tam={28} />
         <Chip T={T} at={K.Real + 0.2} until={K.Cierre - 0.1} texto="de hecho…" x={540} y={410} tam={42} borde={KC.yellow} />
         <div style={{ position:'absolute', left:540, top:1190, transform:'translate(-50%,-50%)', zIndex:41, font:`700 24px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.Real + 0.6, K.Real + 1.0) * (1 - kprog(T, K.Real + 3.2, K.Real + 3.4)) }}>(dibujo sin escala)</div>
       </Escena>

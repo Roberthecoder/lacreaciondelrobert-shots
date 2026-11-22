@@ -64,11 +64,11 @@ function Reloj({ T, x, y, r = 120, t = 0, pausa = false }) {
   const a = (t % 1) * Math.PI * 2 - Math.PI / 2;
   return <g transform={`translate(${x} ${y})`}>
     <rect x={-24} y={-r - 40} width={48} height={30} rx={8} fill={KC.ink} />
-    <circle r={r} fill={KC.paper} stroke={KC.ink} strokeWidth={10} />
-    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={Math.cos(i * Math.PI / 6) * r * 0.8} y1={Math.sin(i * Math.PI / 6) * r * 0.8} x2={Math.cos(i * Math.PI / 6) * r * 0.92} y2={Math.sin(i * Math.PI / 6) * r * 0.92} stroke={KC.ink} strokeWidth={6} />)}
+    <circle r={r} fill="#d6b066" stroke={KC.ink} strokeWidth={10} />
+    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={Math.cos(i * Math.PI / 6) * r * 0.8} y1={Math.sin(i * Math.PI / 6) * r * 0.8} x2={Math.cos(i * Math.PI / 6) * r * 0.92} y2={Math.sin(i * Math.PI / 6) * r * 0.92} stroke="#0b1020" strokeWidth={6} />)}
     <line x1={0} y1={0} x2={Math.cos(a) * r * 0.75} y2={Math.sin(a) * r * 0.75} stroke={KC.red} strokeWidth={8} strokeLinecap="round" />
-    <circle r={12} fill={KC.ink} />
-    {pausa && <g opacity={0.5 + 0.5 * Math.sin(T * 6)}><rect x={-34} y={r * 0.3} width={20} height={44} fill={KC.ink} /><rect x={14} y={r * 0.3} width={20} height={44} fill={KC.ink} /></g>}
+    <circle r={12} fill="#0b1020" />
+    {pausa && <g opacity={0.5 + 0.5 * Math.sin(T * 6)}><rect x={-34} y={r * 0.3} width={20} height={44} fill="#0b1020" /><rect x={14} y={r * 0.3} width={20} height={44} fill="#0b1020" /></g>}
   </g>;
 }
 // Barras de genoma (esquema, no a escala del humano).
@@ -138,14 +138,14 @@ function ArponShot() {
       {/* 7 · re-gancho: ¿qué tan rápido? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.06}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Reloj T={T} x={340} y={760} r={220} t={0} pausa />)}
+        {fsvg(<Reloj T={T} x={620} y={1170} r={250} t={0} pausa />)}
       </Escena>
       {/* 8–9 · el estudio y la velocidad: espora sola en el portaobjetos (así se filmó) */}
       <Escena T={T} a={K.E} b={K.Ps} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:'#1a2236' }}></div>
         {fsvg(<>
           {/* la película: cada cuadro es la misma espora con el tubo un poco más afuera (pase a mano cine: antes eran cuadros vacíos) */}
-          <g opacity={1 - kprog(T, K.Ve - 0.3, K.Ve)}>
+          <g opacity={1 - kprog(T, K.Ve - 0.3, K.Ve)} transform="translate(540 1020) scale(1.5) translate(-540 -1020)">
             {Array.from({ length: 5 }, (_, i) => { const fx = ((i * 340 - T * 160) % 1700 + 1700) % 1700 - 320;
               return <g key={i}>
                 <clipPath id={'cuadro92-' + i}><rect x={fx + 6} y={906} width={288} height={228} rx={8} /></clipPath>
@@ -217,7 +217,7 @@ function ArponShot() {
       <Etq T={T} at={K.D + 1.6} until={K.V + 0.2} x={520} y={400} texto="célula" tam={36} color={KC.texto} />
       <Chip T={T} at={K.D + 2.0} until={K.V - 0.2} texto="se clava en la célula" x={320} y={760} tam={38} borde={KC.gold2} />
       <Chip T={T} at={K.V + 0.5} until={K.P - 0.3} texto="el contenido viaja por el tubo" x={320} y={760} tam={34} borde={KC.pink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ve - 0.3} anio="2020" quien="Jaroenlak et al. · NYU" revista="PLoS Pathogens, 2020 · microscopía de alta velocidad" x={540} y={570} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ve - 0.3} anio="2020" quien="Jaroenlak et al. · NYU" revista="PLoS Pathogens, 2020 · microscopía de alta velocidad" x={540} y={610} />
       <Chip T={T} at={K.Ve + 0.2} until={K.Ps - 0.3} texto="sin célula: así lo filmaron" x={420} y={640} tam={34} borde={KC.cyan} mono />
       <EtqMix T={T} at={K.Ve + 1.2} until={K.Ps - 0.3} x={540} y={725} centro partes={[['≈ 235–336 µm/s', false]]} tam={62} color={KC.gold2} />
       <Etq T={T} at={K.Ve + 1.4} until={K.Ps - 0.3} x={360} y={795} texto="(promedios de 3 especies)" tam={26} color={KC.texto} />

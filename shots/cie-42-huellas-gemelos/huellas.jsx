@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #42 · Los gemelos idénticos no tienen las mismas huellas — NARRADO (N1 "Por dentro" + N2 comparación).
 // Datos: Wertheim 2011 (Fingerprint Sourcebook cap. 3), MedlinePlus 2022, Jain et al. 2002, Henneberg et al. 1997. Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (útero, bebé, huellas y flechas de tensión).
@@ -58,7 +59,7 @@ function Huella({ x = 0, y = 0, s = 1, sx = 1, rot = 0, tipo = 'remolino', seed 
 }
 
 // Útero (esquema) con un bebé de pocos meses enroscado. mano = punto de la yema del dedo (para la lupa).
-const UTERO = { x: 540, y: 820 }, MANO_BEBE = [UTERO.x + 70, UTERO.y - 40];
+const UTERO = { x: 540, y: 820 }, MANO_BEBE = [630, 979];   // la yema ya con el útero agrandado 1.28× y bajado (vuelta de encuadre)
 function Utero({ T }) {
   const { x, y } = UTERO, lat = 1 + 0.015 * Math.sin(T * 4);
   return <g>
@@ -150,7 +151,7 @@ function HuellasGemelos() {
       {/* 0 · gancho: dos gemelos idénticos levantan la mano; sus huellas salen y no coinciden */}
       <Escena T={T} a={K.Gancho} b={K.ADN}>
         <FondoLunares color={KC.pink} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 960) scale(1.35) translate(-330 -750)">
           <g transform={`translate(0 ${(1 - sube(0.05)) * 300})`}>{gem(190, KC.cyan, 0.7 * kprog(T, 0.25, 0.7, kEase.rebote), 1, 'o')}</g>
           <g transform={`translate(0 ${(1 - sube(0.15)) * 300})`}>{gem(470, KC.cyan, 0.7 * kprog(T, 0.35, 0.8, kEase.rebote), 2, 'o')}</g>
           <Huella id="g1" x={klerp(150, 170, kprog(T, 1.6, 2.4, kEase.sale))} y={klerp(700, 440, kprog(T, 0.8, 1.4, kEase.sale))} s={klerp(0.2, 0.85, kprog(T, 0.8, 1.4, kEase.rebote))} tipo="remolino" seed={3} rot={-6}
@@ -158,8 +159,8 @@ function HuellasGemelos() {
           <Huella id="g2" x={klerp(500, 490, kprog(T, 1.6, 2.4, kEase.sale))} y={klerp(700, 440, kprog(T, 0.9, 1.5, kEase.sale))} s={klerp(0.2, 0.85, kprog(T, 0.9, 1.5, kEase.rebote))} tipo="remolino" seed={11} rot={6}
             marcas={kprog(T, 2.6, 3.6)} nMarcas={3} colorMarca={KC.blue} o={kprog(T, 0.9, 1.1)} />
           <TextoSvg x={330} y={480} tam={150} color={KC.yellow} s={sube(1.9)} o={kprog(T, 1.9, 2.0)}>≠</TextoSvg>
-          <TextoSvg x={540} y={1130} tam={60} color={KC.texto} s={sube(3.4)} o={kprog(T, 3.4, 3.5)}>ADN ≈ casi igual</TextoSvg>
-        </Lienzo>
+          <TextoSvg x={330} y={1150} tam={60} color={KC.texto} s={sube(3.4)} o={kprog(T, 3.4, 3.5)}>ADN ≈ casi igual</TextoSvg>
+        </g></Lienzo>
       </Escena>
       {/* 1 · mismo óvulo y mismo espermatozoide → se divide en dos embriones con casi el mismo ADN */}
       <Escena T={T} a={K.ADN} b={K.Formacion} fondo={KC.noche}>
@@ -167,7 +168,7 @@ function HuellasGemelos() {
         <Ambiente T={T} n={22} color="rgba(255,255,255,.12)" />
         <Lienzo>
           {(() => { const t = T - K.ADN, div = kprog(t, 1.9, 2.9, kEase.suave), une = kprog(t, 0.2, 1.4, kEase.sale);
-            return <g>
+            return <g transform="translate(540 900) scale(1.12) translate(-540 -790)">
               {div < 0.02 && <Ovulo x={540} y={720} r={170} />}
               {div >= 0.02 && <><Ovulo x={540 - 230 * div} y={720} r={klerp(170, 140, div)} /><Ovulo x={540 + 230 * div} y={720} r={klerp(170, 140, div)} /></>}
               {une < 1 && <Esperma x={klerp(40, 340, une)} y={klerp(1060, 840, une)} rot={-36} T={T} s={1.6} />}
@@ -178,21 +179,21 @@ function HuellasGemelos() {
               </g>
             </g>; })()}
         </Lienzo>
-        <Etq T={T} at={K.ADN + 0.3} until={K.ADN + 1.8} x={720} y={520} texto="óvulo" lado="der" color={KC.texto} />
-        <Etq T={T} at={K.ADN + 0.5} until={K.ADN + 1.8} x={300} y={990} texto="espermatozoide" lado="der" color={KC.texto} />
-        <Chip T={T} at={K.ADN + 2.0} until={K.Formacion - 0.2} texto="1 → 2 embriones" x={540} y={460} tam={42} borde={KC.cyan} />
-        <Chip T={T} at={K.ADN + 3.2} until={K.Formacion - 0.1} texto="casi el mismo ADN" x={540} y={1120} tam={42} borde={KC.gold} />
+        <Etq T={T} at={K.ADN + 0.3} until={K.ADN + 1.8} x={742} y={598} texto="óvulo" lado="der" color={KC.texto} />
+        <Etq T={T} at={K.ADN + 0.5} until={K.ADN + 1.8} x={271} y={1124} texto="espermatozoide" lado="der" color={KC.texto} />
+        <Chip T={T} at={K.ADN + 2.0} until={K.Formacion - 0.2} texto="1 → 2 embriones" x={540} y={540} tam={42} borde={KC.cyan} />
+        <Chip T={T} at={K.ADN + 3.2} until={K.Formacion - 0.1} texto="casi el mismo ADN" x={540} y={1262} tam={42} borde={KC.gold} />
       </Escena>
       {/* 2 · las huellas se forman antes de nacer: útero (esquema) y zoom a la yema del dedo */}
       <Escena T={T} a={K.Formacion} b={K.Presion} zoom={0.12} origen={`${MANO_BEBE[0]}px ${MANO_BEBE[1]}px`}>
         <FondoLunares color={KC.lilac} />
-        <Lienzo><g transform={`translate(0 ${(1 - sube(K.Formacion - 0.2, 0.6)) * 200})`}><Utero T={T} /></g></Lienzo>
-        <Chip T={T} at={K.Formacion + 0.3} until={K.Formacion + 1.3} texto="antes de nacer" x={540} y={400} tam={44} borde={KC.pink} />
-        <Chip T={T} at={K.Formacion + 1.5} until={K.Formacion + 2.9} texto="primeros meses del embarazo" x={540} y={400} tam={38} borde={KC.gold} />
+        <Lienzo><g transform={`translate(0 ${(1 - sube(K.Formacion - 0.2, 0.6)) * 200})`}><g transform="translate(540 1030) scale(1.28) translate(-540 -820)"><Utero T={T} /></g></g></Lienzo>
+        <Chip T={T} at={K.Formacion + 0.3} until={K.Formacion + 1.3} texto="antes de nacer" x={540} y={320} tam={44} borde={KC.pink} />
+        <Chip T={T} at={K.Formacion + 1.5} until={K.Formacion + 2.9} texto="primeros meses del embarazo" x={540} y={320} tam={38} borde={KC.gold} />
       </Escena>
-      <Lupa T={T} at={K.Formacion + 3.0} until={K.Presion - 0.15} x={790} y={500} r={165} fx={MANO_BEBE[0]} fy={MANO_BEBE[1]} tinte={KC.yellow} etiqueta="POR DENTRO · LA YEMA"
+      <Lupa T={T} at={K.Formacion + 3.0} until={K.Presion - 0.15} x={800} y={520} r={190} fx={MANO_BEBE[0]} fy={MANO_BEBE[1]} tinte={KC.yellow} etiqueta="POR DENTRO · LA YEMA"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a1830" />
-            <Huella id="lf" x={r} y={r + 10} s={1.0} tipo="remolino" seed={5} p={kprog(t, K.Formacion + 3.2, K.Presion, kEase.suave)} /></svg>} />
+            <Huella id="lf" x={r} y={r + 10} s={1.15} tipo="remolino" seed={5} p={kprog(t, K.Formacion + 3.2, K.Presion, kEase.suave)} /></svg>} />
       {/* 3 · presión: la yema crece y se estira; flechas de tensión; las crestas se doblan */}
       <Escena T={T} a={K.Presion} b={K.Dos} fondo={KC.noche}>
         <FondoMarca patron="oscuro" />
@@ -201,40 +202,40 @@ function HuellasGemelos() {
           {(() => { const t = T - K.Presion, crece = kprog(t, 0, 6.5, kEase.suave), sx = 1 + 0.18 * kprog(t, 1.2, 5.5, kEase.suave), S = klerp(1.9, 2.3, crece), pulso = 0.5 + 0.5 * Math.sin(T * 5);
             const R = [[1, 0], [0.8, -0.6], [-0.8, -0.6], [-1, 0], [-0.8, 0.6], [0.8, 0.6]];
             return <g>
-              <Huella id="pr" x={540} y={760} s={S} sx={sx} tipo="remolino" seed={5} p={kprog(t, 0, 2.2)} doblar={kprog(t, 1.4, 4)} T={T} grosor={4.5} />
+              <Huella id="pr" x={540} y={900} s={S} sx={sx} tipo="remolino" seed={5} p={kprog(t, 0, 2.2)} doblar={kprog(t, 1.4, 4)} T={T} grosor={4.5} />
               {R.map(([dx, dy], i) => { const ini = 1.0 + i * 0.25, rx = 110 * S * sx, ry = 145 * S;
-                const L = 110 + 50 * pulso, x1 = 540 + dx * (rx + 20), y1 = 760 + dy * (ry + 20);
+                const L = 110 + 50 * pulso, x1 = 540 + dx * (rx + 20), y1 = 900 + dy * (ry + 20);
                 return <FlechaRecta key={i} x1={x1} y1={y1} x2={x1 + dx * L} y2={y1 + dy * L} p={kprog(t, ini, ini + 0.5, kEase.sale)} color={KC.yellow} grosor={18} punta={40} />; })}
             </g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Presion + 1.0} until={K.Presion + 4.6} texto="crece y se estira" x={540} y={420} tam={44} borde={KC.yellow} />
-        <Chip T={T} at={K.Presion + 4.7} until={K.Dos - 0.1} texto="ambiente dentro del útero" x={540} y={420} tam={40} borde={KC.pink} />
-        <Etq T={T} at={K.Presion + 2.2} until={K.Presion + 6.5} x={200} y={1150} texto="crestas de la piel" lado="der" color={KC.texto} tam={30} />
+        <Chip T={T} at={K.Presion + 1.0} until={K.Presion + 4.6} texto="crece y se estira" x={540} y={440} tam={44} borde={KC.yellow} />
+        <Chip T={T} at={K.Presion + 4.7} until={K.Dos - 0.1} texto="ambiente dentro del útero" x={540} y={440} tam={40} borde={KC.pink} />
+        <Etq T={T} at={K.Presion + 2.2} until={K.Presion + 6.5} x={200} y={1310} texto="crestas de la piel" lado="der" color={KC.texto} tam={30} />
       </Escena>
       {/* 4 · nunca idénticas: diez yemas distintas, cinco por gemelo */}
-      <Escena T={T} a={K.Dos} b={K.Pregunta} fondo={KC.mint}>
+      <Escena T={T} a={K.Dos} b={K.Pregunta} fondo={KC.noche}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
           {TIPOS10.map((tp, i) => { const fila = Math.floor(i / 5), c = i % 5, at = K.Dos + 0.3 + i * 0.22;
-            return <Huella key={i} id={'d' + i} x={140 + c * 200} y={620 + fila * 420} s={0.72 * sube(at)} tipo={tp} seed={20 + i * 3} o={kprog(T, at, at + 0.1)} grosor={6} />; })}
-          {T > K.Dos + 3.2 && <TextoSvg x={240} y={650} tam={110} color={KC.yellow} s={sube(K.Dos + 3.2)}>≠</TextoSvg>}
+            return <Huella key={i} id={'d' + i} x={140 + c * 200} y={720 + fila * 480} s={0.84 * sube(at)} tipo={tp} seed={20 + i * 3} o={kprog(T, at, at + 0.1)} grosor={6} />; })}
+          {T > K.Dos + 3.2 && <TextoSvg x={240} y={755} tam={110} color={KC.yellow} s={sube(K.Dos + 3.2)}>≠</TextoSvg>}
         </Lienzo>
-        <Chip T={T} at={K.Dos + 0.2} until={K.Pregunta - 0.1} texto="gemelo 1" x={180} y={430} tam={36} borde={KC.cyan} />
-        <Chip T={T} at={K.Dos + 1.3} until={K.Pregunta - 0.1} texto="gemelo 2" x={180} y={850} tam={36} borde={KC.pink} />
-        <Chip T={T} at={K.Dos + 2.4} until={K.Pregunta - 0.1} texto="nunca idénticas" x={720} y={1175} tam={40} borde={KC.gold} />
+        <Chip T={T} at={K.Dos + 0.2} until={K.Pregunta - 0.1} texto="gemelo 1" x={180} y={500} tam={36} borde={KC.cyan} />
+        <Chip T={T} at={K.Dos + 1.3} until={K.Pregunta - 0.1} texto="gemelo 2" x={180} y={985} tam={36} borde={KC.pink} />
+        <Chip T={T} at={K.Dos + 2.4} until={K.Pregunta - 0.1} texto="nunca idénticas" x={720} y={1400} tam={40} borde={KC.gold} />
       </Escena>
       {/* 5 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Parecidas} color={KC.orange} />
       {/* 6 · dibujo general parecido, detalles finos distintos (finales y bifurcaciones) */}
-      <Escena T={T} a={K.Parecidas} b={K.Policia} fondo={KC.cyan}>
+      <Escena T={T} a={K.Parecidas} b={K.Policia} fondo={KC.noche}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <Huella id="pa" x={290} y={790} s={1.55} tipo="remolino" seed={3} marcas={kprog(T, K.Parecidas + 3.4, K.Parecidas + 4.6)} nMarcas={4} brillo={kprog(T, K.Parecidas + 0.6, K.Parecidas + 1.2) * (1 - kprog(T, K.Parecidas + 3.0, K.Parecidas + 3.4))} />
-          <Huella id="pb" x={790} y={790} s={1.55} tipo="remolino" seed={11} marcas={kprog(T, K.Parecidas + 3.8, K.Parecidas + 5.0)} nMarcas={4} colorMarca={KC.blue} brillo={kprog(T, K.Parecidas + 0.6, K.Parecidas + 1.2) * (1 - kprog(T, K.Parecidas + 3.0, K.Parecidas + 3.4))} />
+          <Huella id="pa" x={290} y={880} s={1.55} tipo="remolino" seed={3} marcas={kprog(T, K.Parecidas + 3.4, K.Parecidas + 4.6)} nMarcas={4} brillo={kprog(T, K.Parecidas + 0.6, K.Parecidas + 1.2) * (1 - kprog(T, K.Parecidas + 3.0, K.Parecidas + 3.4))} />
+          <Huella id="pb" x={790} y={880} s={1.55} tipo="remolino" seed={11} marcas={kprog(T, K.Parecidas + 3.8, K.Parecidas + 5.0)} nMarcas={4} colorMarca={KC.blue} brillo={kprog(T, K.Parecidas + 0.6, K.Parecidas + 1.2) * (1 - kprog(T, K.Parecidas + 3.0, K.Parecidas + 3.4))} />
         </Lienzo>
-        <Chip T={T} at={K.Parecidas + 0.5} until={K.Parecidas + 3.2} texto="dibujo general: parecido" x={540} y={430} tam={42} borde={KC.mint} />
-        <Chip T={T} at={K.Parecidas + 3.3} until={K.Policia - 0.1} texto="detalles finos: diferentes" x={540} y={430} tam={42} borde={KC.red} />
-        <Lupa T={T} at={K.Parecidas + 5.0} until={K.Policia - 0.2} x={540} y={945} r={110} fx={290} fy={790} tinte={KC.yellow} etiqueta="AL MICROSCOPIO · CRESTAS"
+        <Chip T={T} at={K.Parecidas + 0.5} until={K.Parecidas + 3.2} texto="dibujo general: parecido" x={540} y={510} tam={42} borde={KC.mint} />
+        <Chip T={T} at={K.Parecidas + 3.3} until={K.Policia - 0.1} texto="detalles finos: diferentes" x={540} y={510} tam={42} borde={KC.red} />
+        <Lupa T={T} at={K.Parecidas + 5.0} until={K.Policia - 0.2} x={540} y={1150} r={130} fx={290} fy={880} tinte={KC.yellow} etiqueta="AL MICROSCOPIO · CRESTAS"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill={HPIEL} />
             <g fill="none" stroke={KC.ink} strokeWidth={14} strokeLinecap="round">
               <path d={`M -10 ${r - 70} Q ${r} ${r - 100} ${r * 2 + 10} ${r - 70}`} />
@@ -245,62 +246,62 @@ function HuellasGemelos() {
             </g>
             <circle cx={r} cy={r - 10} r={34} fill="none" stroke={KC.red} strokeWidth={6} />
             <circle cx={r * 0.9} cy={r + 90} r={30} fill="none" stroke={KC.blue} strokeWidth={6} /></svg>} />
-        <Etq T={T} at={K.Parecidas + 5.6} until={K.Policia - 0.2} x={665} y={900} texto="se divide" lado="der" color={KC.texto} />
-        <Etq T={T} at={K.Parecidas + 6.0} until={K.Policia - 0.2} x={415} y={1060} texto="se corta" lado="izq" color={KC.texto} />
+        <Etq T={T} at={K.Parecidas + 5.6} until={K.Policia - 0.2} x={685} y={1165} texto="se divide" lado="der" color={KC.texto} />
+        <Etq T={T} at={K.Parecidas + 6.0} until={K.Policia - 0.2} x={395} y={1285} texto="se corta" lado="izq" color={KC.texto} />
       </Escena>
       {/* 7 · las huellas sí los distinguen; una prueba común de ADN no */}
-      <Escena T={T} a={K.Policia} b={K.Koala} fondo={KC.yellow}>
+      <Escena T={T} a={K.Policia} b={K.Koala} fondo={KC.noche}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <Huella id="p1" x={200} y={650} s={0.9} tipo="remolino" seed={3} marcas={1} nMarcas={3} />
-          <Huella id="p2" x={480} y={650} s={0.9} tipo="remolino" seed={11} marcas={1} nMarcas={3} colorMarca={KC.blue} />
-          {(() => { const t = T - K.Policia, u = kprog(t, 0.2, 2.6, kEase.suave); return <LupaDetective x={klerp(130, 500, u)} y={630 + Math.sin(u * Math.PI * 2) * 40} s={0.8} rot={-35} />; })()}
-          {T > K.Policia + 2.4 && <TextoSvg x={340} y={930} tam={140} color={KC.leaf} s={sube(K.Policia + 2.4)}>✓</TextoSvg>}
+          <Huella id="p1" x={300} y={720} s={1.35} tipo="remolino" seed={3} marcas={1} nMarcas={3} />
+          <Huella id="p2" x={780} y={720} s={1.35} tipo="remolino" seed={11} marcas={1} nMarcas={3} colorMarca={KC.blue} />
+          {(() => { const t = T - K.Policia, u = kprog(t, 0.2, 2.6, kEase.suave); return <LupaDetective x={klerp(200, 800, u)} y={700 + Math.sin(u * Math.PI * 2) * 50} s={1.15} rot={-35} />; })()}
+          {T > K.Policia + 2.4 && <TextoSvg x={540} y={775} tam={150} color={KC.leaf} s={sube(K.Policia + 2.4)}>✓</TextoSvg>}
           <g opacity={kprog(T, K.Policia + 2.8, K.Policia + 3.2)} transform={`translate(0 ${(1 - sube(K.Policia + 2.8)) * 200})`}>
-            <GelADN x={810} y={650} p={kprog(T, K.Policia + 3.0, K.Policia + 4.0)} />
-            <TextoSvg x={810} y={860} tam={110} color={KC.yellow}>=</TextoSvg>
+            <GelADN x={380} y={1110} p={kprog(T, K.Policia + 3.0, K.Policia + 4.0)} />
+            <TextoSvg x={380} y={1320} tam={110} color={KC.yellow}>=</TextoSvg>
           </g>
         </Lienzo>
         <Chip T={T} at={K.Policia + 0.4} until={K.Koala - 0.1} texto="las huellas sí los distinguen" x={540} y={420} tam={42} borde={KC.leaf} />
-        <Chip T={T} at={K.Policia + 3.4} until={K.Koala - 0.1} texto="prueba común de ADN" x={790} y={1100} tam={32} borde={KC.cyan} />
+        <Chip T={T} at={K.Policia + 3.4} until={K.Koala - 0.1} texto="prueba común de ADN" x={810} y={1270} tam={34} borde={KC.cyan} />
       </Escena>
       {/* 8 · dato raro: koalas con huellas casi idénticas, también al microscopio (Henneberg 1997) */}
-      <Escena T={T} a={K.Koala} b={K.Cierre} fondo={KC.mint}>
+      <Escena T={T} a={K.Koala} b={K.Cierre} fondo={KC.noche}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <g opacity={1 - kprog(T, K.Koala + 2.6, K.Koala + 3.2)}><Koala T={T} /></g>
+          <g opacity={1 - kprog(T, K.Koala + 2.6, K.Koala + 3.2)} transform="translate(0 90)"><Koala T={T} /></g>
           <g opacity={kprog(T, K.Koala + 2.6, K.Koala + 3.2)}>
-            <Huella id="kh" x={290} y={680} s={1.1} tipo="presilla" seed={41} fondo="#cfd4da" />
-            <Huella id="hh" x={790} y={680} s={1.1} tipo="presilla" seed={47} />
-            <TextoSvg x={540} y={715} tam={120} color={KC.yellow} s={sube(K.Koala + 3.2)}>≈</TextoSvg>
+            <Huella id="kh" x={290} y={800} s={1.5} tipo="presilla" seed={41} fondo="#cfd4da" />
+            <Huella id="hh" x={790} y={800} s={1.5} tipo="presilla" seed={47} />
+            <TextoSvg x={540} y={840} tam={130} color={KC.yellow} s={sube(K.Koala + 3.2)}>≈</TextoSvg>
           </g>
         </Lienzo>
-        <Etq T={T} at={K.Koala + 0.4} until={K.Koala + 2.6} x={60} y={400} texto="koala" lado="der" color={KC.ink} />
-        <Etq T={T} at={K.Koala + 0.6} until={K.Koala + 2.6} x={60} y={445} texto="Phascolarctos cinereus" it lado="der" color={KC.ink} tam={30} />
-        <Lupa T={T} at={K.Koala + 0.9} until={K.Koala + 2.6} x={830} y={900} r={130} fx={DEDO_KOALA[0] + 15} fy={DEDO_KOALA[1] - 5} tinte={KC.yellow} etiqueta="AL MICROSCOPIO"
+        <Etq T={T} at={K.Koala + 0.4} until={K.Koala + 2.6} x={60} y={440} texto="koala" lado="der" color={KC.ink} />
+        <Etq T={T} at={K.Koala + 0.6} until={K.Koala + 2.6} x={60} y={488} texto="Phascolarctos cinereus" it lado="der" color={KC.ink} tam={30} />
+        <Lupa T={T} at={K.Koala + 0.9} until={K.Koala + 2.6} x={830} y={1010} r={150} fx={DEDO_KOALA[0] + 15} fy={DEDO_KOALA[1] + 85} tinte={KC.yellow} etiqueta="AL MICROSCOPIO"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#cfd4da" />
-            {Array.from({ length: 8 }, (_, i) => <path key={i} d={`M -10 ${i * 36 + 6} Q ${r} ${i * 36 - 22} ${r * 2 + 10} ${i * 36 + 10}`} fill="none" stroke={KC.ink} strokeWidth={13} strokeLinecap="round" />)}</svg>} />
-        {[[290, 'koala', '#cfd4da', 0], [790, 'humano', HPIEL, 1]].map(([lx, nom, bg, j]) => <Lupa key={nom} T={T} at={K.Koala + 4.3 + j * 0.3} until={K.Cierre - 0.15} x={lx} y={1060} r={100} fx={lx} fy={680} tinte={KC.yellow}
+            {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M -10 ${i * 36 + 6} Q ${r} ${i * 36 - 22} ${r * 2 + 10} ${i * 36 + 10}`} fill="none" stroke={KC.ink} strokeWidth={13} strokeLinecap="round" />)}</svg>} />
+        {[[290, 'koala', '#cfd4da', 0], [790, 'humano', HPIEL, 1]].map(([lx, nom, bg, j]) => <Lupa key={nom} T={T} at={K.Koala + 4.3 + j * 0.3} until={K.Cierre - 0.15} x={lx} y={1290} r={125} fx={lx} fy={800} tinte={KC.yellow}
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill={bg} />
-            {Array.from({ length: 7 }, (_, i) => <path key={i} d={`M -10 ${i * 34 + 4} Q ${r} ${i * 34 - 26 + j * 4} ${r * 2 + 10} ${i * 34 + 8}`} fill="none" stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />)}
-            {Array.from({ length: 7 }, (_, i) => <circle key={'p' + i} cx={30 + i * 26} cy={i * 34 - 6 + 0.25 * r} r={3} fill="#fff" />)}</svg>} />)}
-        <Chip T={T} at={K.Koala + 4.6} until={K.Cierre - 0.1} texto="al microscopio" x={540} y={1060} tam={30} borde={KC.yellow} mono />
-        <Chip T={T} at={K.Koala + 3.0} until={K.Cierre - 0.1} texto="koala" x={290} y={470} tam={38} borde={HKOALA} />
-        <Chip T={T} at={K.Koala + 3.1} until={K.Cierre - 0.1} texto="humano" x={790} y={470} tam={38} borde={KC.pink} />
-        <Chip T={T} at={K.Koala + 3.4} until={K.Cierre - 0.1} texto="casi idénticas" x={540} y={905} tam={44} borde={KC.gold} />
-        <Chip T={T} at={K.Koala + 3.8} until={K.Cierre - 0.1} texto="Henneberg y colegas · 1997" x={540} y={385} tam={26} borde={KC.ink} mono />
+            {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M -10 ${i * 34 + 4} Q ${r} ${i * 34 - 26 + j * 4} ${r * 2 + 10} ${i * 34 + 8}`} fill="none" stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />)}
+            {Array.from({ length: 9 }, (_, i) => <circle key={'p' + i} cx={30 + i * 26} cy={i * 34 - 6 + 0.25 * r} r={3} fill="#fff" />)}</svg>} />)}
+        <Chip T={T} at={K.Koala + 4.6} until={K.Cierre - 0.1} texto="al microscopio" x={540} y={1290} tam={30} borde={KC.yellow} mono />
+        <Chip T={T} at={K.Koala + 3.0} until={K.Cierre - 0.1} texto="koala" x={290} y={520} tam={38} borde={HKOALA} />
+        <Chip T={T} at={K.Koala + 3.1} until={K.Cierre - 0.1} texto="humano" x={790} y={520} tam={38} borde={KC.pink} />
+        <Chip T={T} at={K.Koala + 3.4} until={K.Cierre - 0.1} texto="casi idénticas" x={540} y={1085} tam={44} borde={KC.gold} />
+        <Chip T={T} at={K.Koala + 3.8} until={K.Cierre - 0.1} texto="Henneberg y colegas · 1997" x={540} y={425} tam={26} borde={KC.ink} mono />
       </Escena>
       {/* 9 · cierre: los mismos gemelos dejan huellas distintas en un vidrio */}
       <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.pink} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 1050) scale(1.38) translate(-410 -800)">
           <Vidrio x={90} y={360} w={640} h={420} />
           <Huella id="c1" x={260} y={570} s={0.62 * kprog(T, K.Cierre + 0.7, K.Cierre + 1.1, kEase.rebote)} tipo="remolino" seed={3} fondo="rgba(255,255,255,.35)" tinta="#3a3f5c" borde={false} brillo={kprog(T, K.Cierre + 1.0, K.Cierre + 1.6)} />
           <Huella id="c2" x={560} y={570} s={0.62 * kprog(T, K.Cierre + 1.1, K.Cierre + 1.5, kEase.rebote)} tipo="remolino" seed={11} fondo="rgba(255,255,255,.35)" tinta="#3a3f5c" borde={false} brillo={kprog(T, K.Cierre + 1.4, K.Cierre + 2.0)} />
           {gem(260, KC.cyan, kprog(T, K.Cierre + 0.2, K.Cierre + 0.7, kEase.rebote) * (1 - kprog(T, K.Cierre + 1.6, K.Cierre + 2.2)), 1, 'sonrie')}
           {gem(560, KC.cyan, kprog(T, K.Cierre + 0.5, K.Cierre + 1.0, kEase.rebote) * (1 - kprog(T, K.Cierre + 1.9, K.Cierre + 2.5)), 2, 'sonrie')}
-        </Lienzo>
-        <Chip T={T} at={K.Cierre + 2.2} until={K.Outro - 0.1} texto="su propia firma" x={720} y={300} tam={46} borde={KC.gold} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Cierre + 2.2} until={K.Outro - 0.1} texto="su propia firma" x={540} y={300} tam={50} borde={KC.gold} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.ADN - 0.1} texto="Casi el mismo ADN, *distintas huellas.*" />

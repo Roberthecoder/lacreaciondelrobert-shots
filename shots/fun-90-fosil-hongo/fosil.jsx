@@ -178,7 +178,7 @@ function FosilShot() {
       <Escena T={T} a={K.M} b={K.A} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
-        {fsvg(<g transform={`translate(540 ${klerp(880, 760, kprog(T, K.Q, K.Q + 0.8))}) scale(${klerp(0.4, 1.0, zoomMicro) * klerp(1, 0.72, kprog(T, K.Q, K.Q + 0.8))})`}>
+        {fsvg(<g transform={`translate(540 ${klerp(1010, 760, kprog(T, K.Q, K.Q + 0.8))}) scale(${klerp(0.44, 1.1, zoomMicro) * klerp(1, 0.72 / 1.1, kprog(T, K.Q, K.Q + 0.8))})`}>
           <circle r={470} fill="#1d2233" stroke="#3a4560" strokeWidth={6} />
           <Filamentos T={T} p={kprog(T, K.M + 0.3, K.M + 2.6)} color={T > K.Q + 0.4 ? mixHex(FO.ambar, KC.gold2, 0.5 + 0.5 * Math.sin(T * 5)) : FO.ambar} />
         </g>)}
@@ -209,7 +209,7 @@ function FosilShot() {
       {/* 9 · la rama de hongos y animales */}
       <Escena T={T} a={K.Ra} b={K.D} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<g transform="translate(540 880) scale(1.25) translate(-540 -800)">
+        {fsvg(<g transform="translate(540 1000) scale(1.25) translate(-555 -855)">
           <ArbolOpisto T={T} x={540} y={760} p={kprog(T, K.Ra + 0.2, K.Ra + 1.8)} punto={kprog(T, K.Ra + 2.6, K.Ra + 3.1)} />
           <g opacity={kprog(T, K.Ra, K.Ra + 0.3)}><Champinon x={300} y={760} s={0.7} /></g>
           <g opacity={kprog(T, K.Ra, K.Ra + 0.3)}><Escarabajo T={T} x={700} y={640} s={0.55} /><Persona x={860} y={760} s={0.9} /></g>
@@ -247,9 +247,9 @@ function FosilShot() {
       <Etq T={T} at={K.R + 0.8} until={K.M - 0.3} x={60} y={560} texto="Formación Grassy Bay" tam={30} color={KC.ink} />
       <Etq T={T} at={K.R + 1.2} until={K.M - 0.3} x={60} y={615} texto="Territorios del Noroeste · Canadá" tam={30} color={KC.ink} />
       <Chip T={T} at={K.R + 1.6} until={K.M - 0.3} texto="lutita = roca de lodo" x={540} y={470} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.M + 0.2} until={K.Q - 0.3} texto="AL MICROSCOPIO · LÁMINA DE ROCA" x={540} y={400} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.M + 1.6} until={K.Q - 0.3} x={60} y={500} texto="hilos ramificados con tabiques" tam={30} color={FO.ambar2} />
-      <Etq T={T} at={K.M + 2.6} until={K.Q - 0.3} x={60} y={550} texto="bolitas, como esporas" tam={30} color={FO.ambar2} />
+      <Chip T={T} at={K.M + 0.2} until={K.Q - 0.3} texto="AL MICROSCOPIO · LÁMINA DE ROCA" x={540} y={370} tam={32} borde={KC.cyan} mono />
+      <Etq T={T} at={K.M + 1.6} until={K.Q - 0.3} x={60} y={428} texto="hilos ramificados con tabiques" tam={30} color={FO.ambar2} />
+      <Etq T={T} at={K.M + 2.6} until={K.Q - 0.3} x={60} y={470} texto="bolitas, como esporas" tam={30} color={FO.ambar2} />
       <Chip T={T} at={K.Q + 0.3} until={K.A - 0.3} texto="señal de quitina (infrarrojo)" x={540} y={365} tam={34} borde={KC.gold2} />
       <Etq T={T} at={K.Q + 1.6} until={K.A - 0.3} x={630} y={1490} texto="hongos de hoy" tam={28} color={KC.texto} />
       <Etq T={T} at={K.Q + 2.6} until={K.A - 0.3} x={60} y={1490} texto="caparazón de escarabajo" tam={28} color={KC.texto} />
@@ -261,9 +261,9 @@ function FosilShot() {
       <Etq T={T} at={K.Ag + 1.4} until={K.E - 0.3} x={560} y={880} texto="mar poco profundo" tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ra - 0.3} anio="2019" quien="Loron et al. · U. de Lieja (Bélgica)" revista="Nature, 2019" x={540} y={440} />
       <EtqMix T={T} at={K.E + 2.6} until={K.Ra - 0.3} x={540} y={600} centro partes={[['Ourasphaira giraldae', true]]} tam={48} color={KC.texto} />
-      <Etq T={T} at={K.Ra + 0.5} until={K.D - 0.3} x={90} y={500} texto="hongos" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Ra + 0.8} until={K.D - 0.3} x={1000} y={500} texto="animales (y tú)" lado="izq" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.Ra + 2.7} until={K.D - 0.3} texto="hace casi 1,000 millones ya existía" x={540} y={1400} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.Ra + 0.5} until={K.D - 0.3} x={90} y={590} texto="hongos" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Ra + 0.8} until={K.D - 0.3} x={1000} y={590} texto="animales (y tú)" lado="izq" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Ra + 2.7} until={K.D - 0.3} texto="hace casi 1,000 millones ya existía" x={540} y={1470} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.D + 1.0} until={K.L - 0.3} texto="otros científicos piden más pruebas" x={540} y={400} tam={32} borde={KC.yellow} />
       <Chip T={T} at={K.L + 0.4} until={K.C - 0.3} texto="lava de Sudáfrica · ~2,400 M" x={540} y={400} tam={36} borde={KC.orange} />
       <Chip T={T} at={K.L + 3.2} until={K.C - 0.3} texto="¿hongo? en debate" x={540} y={1490} tam={36} borde={KC.yellow} />
@@ -273,7 +273,7 @@ function FosilShot() {
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.R} texto="5 cm" largo={340} />
       <BarraEscala T={T} at={K.R} until={K.M} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.M} until={K.Q + 0.4} texto="30 µm" largo={120} />
+      <BarraEscala T={T} at={K.M} until={K.Q + 0.4} texto="30 µm" largo={132} />
       <BarraEscala T={T} at={K.Q + 0.4} until={K.A} texto="30 µm" largo={86} />
       <BarraEscala T={T} at={K.A} until={K.P} texto="esquema · millones de años" largo={0} />
       <BarraEscala T={T} at={K.P} until={K.E} texto="paisaje esquemático" largo={0} />

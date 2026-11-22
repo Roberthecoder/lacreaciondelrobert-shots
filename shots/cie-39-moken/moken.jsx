@@ -1,7 +1,9 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #39 · Los niños moken veían mejor bajo el agua — NARRADO (N5 "El experimento" Gislén 2003 + N1 "Por dentro": el ojo bajo el agua).
 // Datos: Gislén et al. 2003 (Current Biology) y 2006 (Vision Research). Ver guion.md y verificacion.md.
 // Todo es esquemático: el ojo, el mapa, el barco y los niños. Las barras respetan la proporción del estudio (6.06 vs. 2.95 ciclos/grado).
-const AGUA1 = '#16c9f0', AGUA2 = '#0b5fa8', ARENA = '#f3d9a0', ARENA2 = '#e2bd76';
+const AGUA1 = '#1183b3', AGUA2 = '#06203f', ARENA = '#7a663f', ARENA2 = '#5f4e2e';   // pase a mano cine: mar profundo y arena en penumbra
+const TINTA = '#0b1020';   // negro fijo para piezas que deben ser oscuras (KC.ink es claro en modo cine)
 const PIEL_MK = '#a8694a', PELO_MK = '#1b1410', PIEL_EU = '#f3c6a5', PELO_EU = '#a8743f';
 const RMK = 6.06 / 6.06, REU = 2.95 / 6.06;   // agudeza bajo el agua, relativa a la de los niños moken (Gislén 2003)
 
@@ -162,18 +164,18 @@ const MERGUI = [[98.1, 12.6], [98.0, 12.2], [98.3, 11.9], [98.2, 11.5], [98.45, 
 function MapaAndaman({ T, p = 1, zona = 0 }) {
   const [bx, by] = MP(97.6, 9.2);
   return <g opacity={p}>
-    <rect x={-20} y={-20} width={KW + 40} height={KH + 40} fill="#5fd3f3" />
+    <rect x={-20} y={-20} width={KW + 40} height={KH + 40} fill="#0d3b5c" />
     {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${60 + i * 60} ${1050 + i * 30} q 20 -14 40 0 t 40 0`} fill="none" stroke="rgba(255,255,255,.55)" strokeWidth={5} strokeLinecap="round" transform={`translate(${12 * Math.sin(T * 1.5 + i)} 0)`} />)}
-    <path d={mpPath(TIERRA)} fill="#ffe9a8" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <path d={mpPath(TIERRA)} fill="#6a5f3a" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <path d={mpPath(FRONTERA).replace(/ Z$/, '')} fill="none" stroke={KC.ink} strokeWidth={5} strokeDasharray="16 12" opacity=".7" />
-    {ANDAMAN.map((isla, i) => <path key={i} d={mpPath(isla)} fill="#bfe3b4" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />)}
-    {MERGUI.map(([a, b], i) => { const [x, y] = MP(a, b); return <ellipse key={i} cx={x} cy={y} rx={9 + (i % 3) * 4} ry={7 + (i % 2) * 4} fill="#bfe3b4" stroke={KC.ink} strokeWidth={4} />; })}
+    {ANDAMAN.map((isla, i) => <path key={i} d={mpPath(isla)} fill="#4f7d57" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />)}
+    {MERGUI.map(([a, b], i) => { const [x, y] = MP(a, b); return <ellipse key={i} cx={x} cy={y} rx={9 + (i % 3) * 4} ry={7 + (i % 2) * 4} fill="#4f7d57" stroke={KC.ink} strokeWidth={4} />; })}
     {/* zona de los moken: costa e islas, del archipiélago de Mergui a Tailandia */}
     {zona > 0 && <g opacity={zona}><path d={`M ${MP(97.7, 13.4).join(' ')} Q ${MP(97.2, 11).join(' ')} ${MP(97.9, 8.0).join(' ')} L ${MP(98.55, 8.0).join(' ')} Q ${MP(98.9, 11).join(' ')} ${MP(98.4, 13.4).join(' ')} Z`}
       fill="rgba(255,45,120,.28)" stroke={KC.pink} strokeWidth={7} strokeDasharray="18 10" strokeDashoffset={-T * 30} /></g>}
     <TextoSvg x={MP(95.3, 12.4)[0]} y={MP(95.3, 12.4)[1]} tam={50} color={KC.white} fuente="texto" rot={-8} o={kprog(p, 0.3, 1)}>Mar de</TextoSvg>
     <TextoSvg x={MP(95.3, 11.75)[0]} y={MP(95.3, 11.75)[1]} tam={50} color={KC.white} fuente="texto" rot={-8} o={kprog(p, 0.3, 1)}>Andamán</TextoSvg>
-    <TextoSvg x={MP(102.2, 9.3)[0]} y={MP(102.2, 9.3)[1]} tam={30} color="#e9fbff" fuente="texto" o={0.85}>golfo de Tailandia</TextoSvg>
+    <TextoSvg x={MP(101.5, 9.3)[0]} y={MP(101.5, 9.3)[1]} tam={28} color="#e9fbff" fuente="texto" o={0.85}>golfo de Tailandia</TextoSvg>
     {zona > 0 && <g transform={`translate(${bx} ${by}) scale(${0.32 * zona})`}><Kabang T={T} /></g>}
   </g>;
 }
@@ -195,7 +197,7 @@ function Rayas({ x, y, w = 260, h = 200, n = 8, d = 0, id = 'ry', marco = KC.whi
     <rect x={-w / 2 - 14} y={-h / 2 - 14} width={w + 28} height={h + 28} rx={18} fill={marco} stroke={KC.ink} strokeWidth={7} />
     <g clipPath={`url(#c-${id})`}><g filter={d > 0 ? `url(#b-${id})` : undefined}>
       <rect x={-w / 2} y={-h / 2} width={w} height={h} fill="#fff" />
-      {Array.from({ length: n }, (_, i) => i % 2 === 0 && <rect key={i} x={-w / 2 + i * paso} y={-h / 2} width={paso} height={h} fill={KC.ink} />)}
+      {Array.from({ length: n }, (_, i) => i % 2 === 0 && <rect key={i} x={-w / 2 + i * paso} y={-h / 2} width={paso} height={h} fill={TINTA} />)}
     </g></g>
   </g>;
 }
@@ -248,7 +250,7 @@ function Moken() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
   // gancho: el niño moken entra nadando hacia el fondo
-  const ninoX = (t) => klerp(-260, 470, kprog(t, K.Gancho - 0.4, K.Gancho + 1.6, kEase.sale)) + 14 * Math.sin(t * 1.3);
+  const ninoX = (t) => klerp(-260, 500, kprog(t, K.Gancho - 0.4, K.Gancho + 1.6, kEase.sale)) + 14 * Math.sin(t * 1.3);
   const mEye = kprog(T, K.Agua + 0.5, K.Agua + 2.4, kEase.suave);                 // del aire al agua
   const subeAgua = kprog(T, K.Agua - 0.2, K.Agua + 0.9, kEase.suave);
   // Pueblo: del mapa al barco
@@ -256,6 +258,8 @@ function Moken() {
   const zuma = kprog(T, K.Pueblo + 3.4, K.Pueblo + 4.6, kEase.suave);
   const buceo = kprog(T, K.Pueblo + 5.2, K.Pueblo + 7.4, kEase.suave);
   // Pupila
+  const OX = 500, OY = 900, OR = 340;   // ojo en corte: grande y al centro (pase a mano cine)
+  const subir = kprog(T, K.Pupila + 1.8, K.Pupila + 2.5, kEase.suave), ojoY = klerp(820, 450, subir), ojoS = klerp(2.0, 1.45, subir);
   const rp = klerp(78, 34, kprog(T, K.Pupila + 0.3, K.Pupila + 2.0, kEase.suave));
   const lente = kprog(T, K.Pupila + 2.3, K.Pupila + 3.6, kEase.suave);
   const apert = klerp(1, 0.38, kprog(T, K.Pupila + 4.0, K.Pupila + 5.4, kEase.suave));
@@ -266,22 +270,23 @@ function Moken() {
   return (
     <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: un niño moken bucea sin visor y ve claro; tu vista, borrosa */}
-      <Escena T={T} a={K.Gancho} b={K.Borroso} zoom={0.04} fondo={AGUA1}>
+      <Escena T={T} a={K.Gancho} b={K.Borroso} zoom={0.04} fondo={AGUA2}>
         <Lienzo>
           <AguaFondo T={T} />
-          <FondoMar T={T} y={1150} />
-          <Pez x={(T * 90) % 1400 - 200} y={960} s={0.8} T={T} color={KC.yellow} />
-          <Pez x={1200 - (T * 70) % 1400} y={1060} s={0.6} T={T} color={KC.pink} dir={-1} />
-          <NinoNadando x={ninoX(T)} y={880} rot={18} T={T} brazo={kprog(T, K.Gancho + 1.2, K.Gancho + 2.2, kEase.suave)} />
-          <Burbujas T={T} x={ninoX(T) + 200} y={850} alto={420} />
-          <VistaBurbuja T={T} x={250} y={530} r={140} d={12 + 2 * Math.sin(T * 2)} etiqueta="tu vista" id="g1" p={kprog(T, K.Gancho + 2.7, K.Gancho + 3.2, kEase.rebote)} />
+          <g transform="translate(540 1330) scale(1.25) translate(-540 -1330)"><FondoMar T={T} y={1330} /></g>
+          <Alga x={50} y={1300} alto={330} T={T} seed={5} /><Alga x={1030} y={1290} alto={300} T={T} seed={6} color="#2aa36b" />
+          <Pez x={(T * 90) % 1400 - 200} y={1190} s={0.9} T={T} color={KC.yellow} />
+          <Pez x={1200 - (T * 70) % 1400} y={1260} s={0.7} T={T} color={KC.pink} dir={-1} />
+          <NinoNadando x={ninoX(T)} y={860} s={1.4} rot={18} T={T} brazo={kprog(T, K.Gancho + 1.2, K.Gancho + 2.2, kEase.suave)} />
+          <Burbujas T={T} x={ninoX(T) + 290} y={800} alto={460} />
+          <VistaBurbuja T={T} x={250} y={430} r={150} d={12 + 2 * Math.sin(T * 2)} etiqueta="tu vista" id="g1" p={kprog(T, K.Gancho + 2.7, K.Gancho + 3.2, kEase.rebote)} />
         </Lienzo>
-        <Chip T={T} at={K.Gancho + 0.3} until={K.Gancho + 2.2} texto="sin visor" x={300} y={470} tam={48} borde={KC.yellow} />
-        <Etq T={T} at={K.Gancho + 3.6} until={K.Borroso - 0.1} x={120} y={1040} texto="niño moken" lado="der" tam={38} />
+        <Chip T={T} at={K.Gancho + 0.3} until={K.Gancho + 2.2} texto="sin visor" x={640} y={640} tam={48} borde={KC.yellow} />
+        <Etq T={T} at={K.Gancho + 3.6} until={K.Borroso - 0.1} x={330} y={1100} texto="niño moken" lado="der" tam={38} />
       </Escena>
 
       {/* 1 · tú abres los ojos bajo el agua: todo borroso */}
-      <Escena T={T} a={K.Borroso} b={K.Cornea} zoom={0.06} fondo={AGUA1}>
+      <Escena T={T} a={K.Borroso} b={K.Cornea} zoom={0.06} fondo={AGUA2}>
         <Lienzo>
           <defs><Borr id="bor1" d={klerp(2, 16, kprog(T, K.Borroso + 0.2, K.Borroso + 1.2, kEase.sale)) + 1.5 * Math.sin(T * 2.5)} /></defs>
           <g filter="url(#bor1)" transform="translate(540 1000) scale(1.5) translate(-540 -1000)">
@@ -299,38 +304,38 @@ function Moken() {
         <Chip T={T} at={K.Borroso + 1.0} until={K.Cornea - 0.1} texto="todo borroso" x={540} y={470} tam={56} borde={KC.cyan} />
       </Escena>
 
-      {/* 2 · por dentro: en el aire, la córnea junta los rayos en la retina */}
-      <Escena T={T} a={K.Cornea} b={K.Agua} zoom={0.03} fondo={KC.yellow}>
+      {/* 2 · por dentro: en el aire, la córnea junta los rayos en la retina (ojo grande: llena el cuadro) */}
+      <Escena T={T} a={K.Cornea} b={K.Agua} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <g transform={`translate(470 860) scale(${klerp(0.4, 1, kprog(T, K.Cornea - 0.3, K.Cornea + 0.5, kEase.rebote))}) translate(-470 -860)`}>
-            <OjoLado cx={470} cy={860} R={250} T={T} rayos={kprog(T, K.Cornea + 2.2, K.Cornea + 3.0)} brilloC={kprog(T, K.Cornea + 1.2, K.Cornea + 1.7)} />
+          <g transform={`translate(${OX} ${OY}) scale(${klerp(0.4, 1, kprog(T, K.Cornea - 0.3, K.Cornea + 0.5, kEase.rebote))}) translate(${-OX} ${-OY})`}>
+            <OjoLado cx={OX} cy={OY} R={OR} T={T} rayos={kprog(T, K.Cornea + 2.2, K.Cornea + 3.0)} brilloC={kprog(T, K.Cornea + 1.2, K.Cornea + 1.7)} />
           </g>
-          <Rotulo x={470 + 1.03 * 250} y={860 - 120} tx={850} ty={560} texto="córnea" p={kprog(T, K.Cornea + 1.2, K.Cornea + 1.5)} />
-          <Rotulo x={470 - 250 + 22} y={860 + 150} tx={220} ty={1180} texto="retina" p={kprog(T, K.Cornea + 3.0, K.Cornea + 3.3)} />
-          <TextoSvg x={930} y={1180} tam={72} color={KC.white} o={kprog(T, K.Cornea + 3.6, K.Cornea + 4.0)} s={klerp(0.5, 1, kprog(T, K.Cornea + 3.6, K.Cornea + 4.0, kEase.rebote))}>AIRE</TextoSvg>
+          <Rotulo x={OX + 0.99 * OR} y={OY - 0.36 * OR} tx={900} ty={520} texto="córnea" p={kprog(T, K.Cornea + 1.2, K.Cornea + 1.5)} />
+          <Rotulo x={OX - 0.82 * (OR - 20)} y={OY + 0.57 * (OR - 20)} tx={210} ty={1380} texto="retina" p={kprog(T, K.Cornea + 3.0, K.Cornea + 3.3)} />
+          <TextoSvg x={900} y={1350} tam={72} color={KC.white} o={kprog(T, K.Cornea + 3.6, K.Cornea + 4.0)} s={klerp(0.5, 1, kprog(T, K.Cornea + 3.6, K.Cornea + 4.0, kEase.rebote))}>AIRE</TextoSvg>
         </Lienzo>
-        <Chip T={T} at={K.Cornea + 3.3} until={K.Agua - 0.1} texto="se juntan en la retina: nítido" x={540} y={430} tam={40} borde={KC.leaf} />
+        <Chip T={T} at={K.Cornea + 3.3} until={K.Agua - 0.1} texto="se juntan en la retina: nítido" x={540} y={390} tam={40} borde={KC.leaf} />
       </Escena>
 
       {/* 3 · el mismo ojo bajo el agua: la córnea casi pierde su poder; los rayos se juntan detrás del ojo */}
-      <Escena T={T} a={K.Agua} b={K.Pueblo} zoom={0.03} fondo={KC.yellow}>
+      <Escena T={T} a={K.Agua} b={K.Pueblo} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <rect x={-20} y={klerp(KH, -20, subeAgua)} width={KW + 40} height={KH + 40} fill="#2bb8e8" opacity=".92" />
+          <rect x={-20} y={klerp(KH, -20, subeAgua)} width={KW + 40} height={KH + 40} fill="#0c4d78" opacity=".92" />
           <path d={`M -20 ${klerp(KH, -20, subeAgua)} q 70 -24 140 0 t 140 0 t 140 0 t 140 0 t 140 0 t 140 0 t 140 0 t 140 0`} fill="none" stroke="#fff" strokeWidth={8} opacity={1 - subeAgua} transform={`translate(${-40 * T % 140} 0)`} />
-          <Burbujas T={T} x={980} y={1200} alto={800} n={7} seed={3} o={subeAgua} />
-          <Burbujas T={T} x={120} y={1200} alto={700} n={6} seed={7} o={subeAgua} />
-          <OjoLado cx={470} cy={860} R={250} T={T} m={mEye} rayos={1} brilloC={1 - 0.85 * mEye} />
-          <TextoSvg x={930} y={1180} tam={72} color={KC.white} s={1}>{subeAgua > 0.5 ? 'AGUA' : 'AIRE'}</TextoSvg>
+          <Burbujas T={T} x={980} y={1500} alto={1000} n={7} seed={3} o={subeAgua} />
+          <Burbujas T={T} x={90} y={1500} alto={900} n={6} seed={7} o={subeAgua} />
+          <OjoLado cx={OX} cy={OY} R={OR} T={T} m={mEye} rayos={1} brilloC={1 - 0.85 * mEye} />
+          <TextoSvg x={900} y={1350} tam={72} color={KC.white} s={1}>{subeAgua > 0.5 ? 'AGUA' : 'AIRE'}</TextoSvg>
         </Lienzo>
-        <Medidor T={T} at={K.Agua + 0.4} until={K.Pueblo - 0.1} x={90} y={360} ancho={900} color={KC.yellow} etiqueta="poder de la córnea"
+        <Medidor T={T} at={K.Agua + 0.4} until={K.Pueblo - 0.1} x={90} y={270} ancho={900} color={KC.yellow} etiqueta="poder de la córnea"
           valor={(t) => 1 - 0.87 * kprog(t, K.Agua + 0.5, K.Agua + 2.4, kEase.suave)} texto={(v) => (v > 0.6 ? 'mucho' : 'casi nada')} />
-        <Chip T={T} at={K.Agua + 2.5} until={K.Pueblo - 0.1} texto="fuera de foco" x={540} y={520} tam={48} borde={KC.red} />
+        <Chip T={T} at={K.Agua + 2.5} until={K.Pueblo - 0.1} texto="fuera de foco" x={540} y={450} tam={48} borde={KC.red} />
       </Escena>
 
       {/* 4 · el pueblo moken: mapa del mar de Andamán → barco → el niño bucea por comida */}
-      <Escena T={T} a={K.Pueblo} b={K.Estudio} zoom={0} fondo="#5fd3f3">
+      <Escena T={T} a={K.Pueblo} b={K.Estudio} zoom={0} fondo="#0d3b5c">
         <Lienzo>
           {aBarco < 1 && <g opacity={1 - aBarco} transform={`translate(${MP(98.2, 10.5)[0]} ${MP(98.2, 10.5)[1]}) scale(${klerp(klerp(0.9, 1, kprog(T, K.Pueblo - 0.3, K.Pueblo + 0.8, kEase.sale)), 2.6, zuma)}) translate(${-MP(98.2, 10.5)[0]} ${-MP(98.2, 10.5)[1]})`}>
             <MapaAndaman T={T} p={kprog(T, K.Pueblo - 0.3, K.Pueblo + 0.4)} zona={kprog(T, K.Pueblo + 1.0, K.Pueblo + 1.6)} />
@@ -339,109 +344,121 @@ function Moken() {
                 <TextoSvg x={x2} y={y2} tam={58} color={KC.pink} s={klerp(0.3, 1, f)} o={kprog(T, K.Pueblo + 2.8, K.Pueblo + 3.0)}>TAILANDIA</TextoSvg></g>; })()}
           </g>}
           {aBarco > 0 && <g opacity={aBarco}>
-            <rect x={-20} y={-20} width={KW + 40} height={680} fill="#ffd36b" />
-            <SolDibujo x={880} y={420} r={80} T={T} />
-            <AguaFondo T={T} y0={640} />
-            <FondoMar T={T} y={1170} />
-            <path d={`M -20 640 ${Array.from({ length: 9 }, (_, i) => `q 65 ${i % 2 ? 18 : -18} 130 0`).join(' ')}`} fill="none" stroke="#fff" strokeWidth={8} transform={`translate(${-(T * 30) % 130} 0)`} />
-            <g transform={`translate(400 ${650 + 6 * Math.sin(T * 1.6)})`}><Kabang T={T} s={0.95} /></g>
-            {buceo > 0 && <><NinoNadando x={klerp(700, 640, buceo)} y={klerp(600, 970, buceo)} rot={klerp(80, 25, buceo)} s={0.82} T={T} seed={1} brazo={kprog(T, K.Pueblo + 6.6, K.Pueblo + 7.4)} />
-              <Burbujas T={T} x={klerp(700, 640, buceo)} y={klerp(600, 930, buceo)} alto={300} n={5} seed={4} /></>}
+            <rect x={-20} y={-20} width={KW + 40} height={740} fill="#2b2338" />
+            <SolDibujo x={160} y={400} r={70} T={T} />
+            <AguaFondo T={T} y0={700} />
+            <FondoMar T={T} y={1330} />
+            <path d={`M -20 700 ${Array.from({ length: 9 }, (_, i) => `q 65 ${i % 2 ? 18 : -18} 130 0`).join(' ')}`} fill="none" stroke="#fff" strokeWidth={8} transform={`translate(${-(T * 30) % 130} 0)`} />
+            <g transform={`translate(440 ${712 + 6 * Math.sin(T * 1.6)})`}><Kabang T={T} s={1.3} /></g>
+            {buceo > 0 && <><NinoNadando x={klerp(800, 660, buceo)} y={klerp(700, 1070, buceo)} rot={klerp(80, 25, buceo)} s={1.1} T={T} seed={1} brazo={kprog(T, K.Pueblo + 6.6, K.Pueblo + 7.4)} />
+              <Burbujas T={T} x={klerp(800, 660, buceo)} y={klerp(700, 1020, buceo)} alto={300} n={5} seed={4} /></>}
           </g>}
         </Lienzo>
-        <Chip T={T} at={K.Pueblo + 4.6} until={K.Estudio - 0.1} texto="viven del mar" x={300} y={440} tam={46} borde={KC.yellow} />
-        <Etq T={T} at={K.Pueblo + 5.4} until={K.Estudio - 0.1} x={130} y={770} texto="barco moken (kabang)" lado="der" tam={32} />
+        <Chip T={T} at={K.Pueblo + 4.6} until={K.Estudio - 0.1} texto="viven del mar" x={730} y={262} tam={46} borde={KC.yellow} />
+        <Etq T={T} at={K.Pueblo + 5.4} until={K.Estudio - 0.1} x={90} y={860} texto="barco moken (kabang)" lado="der" tam={32} />
       </Escena>
 
-      {/* 5 · el estudio de 2003 */}
-      <Escena T={T} a={K.Estudio} b={K.Doble} zoom={0.03} fondo={KC.lilac}>
+      {/* 5 · el estudio de 2003: la prueba bajo el agua está en pantalla desde que empieza la escena; tarjeta chica y arriba */}
+      <Escena T={T} a={K.Estudio} b={K.Doble} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          {(() => { const e = kprog(T, K.Estudio + 2.3, K.Estudio + 2.9, kEase.sale); return <g opacity={e} transform={`translate(0 ${(1 - e) * 300})`}>
-            <rect x={60} y={720} width={960} height={390} rx={30} fill="#2bb8e8" stroke={KC.ink} strokeWidth={9} />
-            <path d={`M 60 750 ${Array.from({ length: 8 }, (_, i) => `q 60 ${i % 2 ? 14 : -14} 120 0`).join(' ')}`} fill="none" stroke="#fff" strokeWidth={6} transform={`translate(${-(T * 30) % 120} 0)`} />
-            <line x1={60} y1={905} x2={1020} y2={905} stroke="#fff" strokeWidth={5} strokeDasharray="20 16" opacity=".7" />
-            <NinoNadando x={290} y={800} s={0.62} rot={4} T={T} brazo={0.3} />
-            <NinoNadando x={290} y={995} s={0.62} rot={4} T={T} seed={2} piel={PIEL_EU} pelo={PELO_EU} playera={KC.mint} short="#7a2b5e" brazo={0.3} />
-            <Rayas x={860} y={805} w={150} h={110} n={8} id="e1" />
-            <TextoSvg x={420} y={885} tam={34} color={KC.white} fuente="texto">niños moken</TextoSvg>
-            <Rayas x={860} y={1005} w={150} h={110} n={8} id="e2" />
-            <TextoSvg x={420} y={1085} tam={34} color={KC.white} fuente="texto">niños europeos</TextoSvg>
+          {(() => { const e = kprog(T, K.Estudio - 0.3, K.Estudio + 0.4, kEase.sale); return <g opacity={e} transform={`translate(0 ${(1 - e) * 200})`}>
+            <defs><clipPath id="alberca"><rect x={50} y={560} width={980} height={770} rx={30} /></clipPath></defs>
+            <rect x={50} y={560} width={980} height={770} rx={30} fill="#0c4d78" stroke={KC.ink} strokeWidth={9} />
+            <g clipPath="url(#alberca)">
+              <path d={`M 50 600 ${Array.from({ length: 10 }, (_, i) => `q 60 ${i % 2 ? 14 : -14} 120 0`).join(' ')}`} fill="none" stroke="#fff" strokeWidth={6} transform={`translate(${-(T * 30) % 240} 0)`} />
+              <Burbujas T={T} x={600} y={760} alto={150} n={4} seed={3} /><Burbujas T={T} x={600} y={1140} alto={150} n={4} seed={6} />
+            </g>
+            <line x1={50} y1={945} x2={1030} y2={945} stroke="#fff" strokeWidth={5} strokeDasharray="20 16" opacity=".7" />
+            <NinoNadando x={330} y={760} s={0.95} rot={4} T={T} brazo={0.3} />
+            <NinoNadando x={330} y={1140} s={0.95} rot={4} T={T} seed={2} piel={PIEL_EU} pelo={PELO_EU} playera={KC.mint} short="#7a2b5e" brazo={0.3} />
+            <Rayas x={840} y={760} w={230} h={170} n={8} id="e1" />
+            <TextoSvg x={330} y={900} tam={40} color={KC.white} fuente="texto">niños moken</TextoSvg>
+            <Rayas x={840} y={1140} w={230} h={170} n={8} id="e2" />
+            <TextoSvg x={330} y={1280} tam={40} color={KC.white} fuente="texto">niños europeos</TextoSvg>
           </g>; })()}
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Doble - 0.1} anio="2003" quien="Anna Gislén" revista="Universidad de Lund, Suecia" x={540} y={500} />
+        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Doble - 0.1} anio="2003" quien="Anna Gislén" revista="Universidad de Lund, Suecia" x={540} y={350} />
       </Escena>
 
-      {/* 6 · el resultado: detalles más de dos veces más finos */}
-      <Escena T={T} a={K.Doble} b={K.Pregunta} zoom={0.03} fondo={KC.mint}>
+      {/* 6 · el resultado: detalles más de dos veces más finos (los dos niños siguen en cuadro, cada uno sobre su tarjeta) */}
+      <Escena T={T} a={K.Doble} b={K.Pregunta} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          {(() => { const e1 = kprog(T, K.Doble + 0.3, K.Doble + 0.7, kEase.rebote), e2 = kprog(T, K.Doble + 0.6, K.Doble + 1.0, kEase.rebote); return <g>
-            <g transform={`translate(290 640) scale(${e1})`}><Rayas x={0} y={0} w={300} h={220} n={16} id="d1" marco={KC.yellow} /></g>
-            <g transform={`translate(790 640) scale(${e2})`}><Rayas x={0} y={0} w={300} h={220} n={8} id="d2" marco="#fff" /></g>
-            <TextoSvg x={290} y={810} tam={38} color={KC.white} fuente="texto" o={e1}>niños moken</TextoSvg>
-            <TextoSvg x={790} y={810} tam={38} color={KC.white} fuente="texto" o={e2}>niños europeos</TextoSvg>
-            <BarraH x={140} y={920} ancho={800} alto={64} v={RMK * kprog(T, K.Doble + 1.2, K.Doble + 2.0, kEase.sale)} color={KC.yellow} etiqueta="niños moken" />
-            <BarraH x={140} y={1070} ancho={800} alto={64} v={REU * kprog(T, K.Doble + 1.2, K.Doble + 2.0, kEase.sale)} color="#fff" etiqueta="niños europeos" />
+          {(() => { const e1 = kprog(T, K.Doble - 0.1, K.Doble + 0.35, kEase.rebote), e2 = kprog(T, K.Doble + 0.15, K.Doble + 0.6, kEase.rebote), en = kprog(T, K.Doble - 0.3, K.Doble + 0.3); return <g>
+            <g opacity={en}>
+              <NinoNadando x={300} y={540} s={0.72} rot={4} T={T} brazo={0.3} />
+              <NinoNadando x={800} y={540} s={0.72} rot={4} T={T} seed={2} piel={PIEL_EU} pelo={PELO_EU} playera={KC.mint} short="#7a2b5e" brazo={0.3} />
+              <Burbujas T={T} x={470} y={500} alto={130} n={3} seed={2} /><Burbujas T={T} x={970} y={500} alto={130} n={3} seed={8} />
+            </g>
+            <g transform={`translate(290 820) scale(${e1})`}><Rayas x={0} y={0} w={330} h={240} n={16} id="d1" marco={KC.yellow} /></g>
+            <g transform={`translate(790 820) scale(${e2})`}><Rayas x={0} y={0} w={330} h={240} n={8} id="d2" marco="#fff" /></g>
+            <BarraH x={140} y={1110} ancho={800} alto={64} v={RMK * kprog(T, K.Doble + 1.2, K.Doble + 2.0, kEase.sale)} color={KC.yellow} etiqueta="niños moken" />
+            <BarraH x={140} y={1260} ancho={800} alto={64} v={REU * kprog(T, K.Doble + 1.2, K.Doble + 2.0, kEase.sale)} color="#fff" etiqueta="niños europeos" />
           </g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Doble + 1.6} until={K.Pregunta - 0.1} texto="más de 2 veces más fino" x={540} y={430} tam={50} borde={KC.yellow} />
+        <Chip T={T} at={K.Doble + 1.6} until={K.Pregunta - 0.1} texto="más de 2 veces más fino" x={540} y={330} tam={50} borde={KC.yellow} />
       </Escena>
 
       {/* 7 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Pupila} color={KC.pink} />
 
-      {/* 8 · cómo lo hacen: pupila chiquita + cristalino abombado, como el diafragma de una cámara */}
-      <Escena T={T} a={K.Pupila} b={K.Entrenar} zoom={0.03} fondo={KC.cyan}>
+      {/* 8 · cómo lo hacen: el ojo de frente llena el cuadro y cierra la pupila; luego sube y entran el cristalino y el diafragma */}
+      <Escena T={T} a={K.Pupila} b={K.Entrenar} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <g transform={`translate(0 0) scale(1)`} opacity={kprog(T, K.Pupila - 0.2, K.Pupila + 0.3)}>
-            <OjoFrente x={280} y={600} s={0.95} rp={rp} />
-            <Rotulo x={280} y={600 + rp * 0.95} tx={280} ty={800} texto="pupila" p={kprog(T, K.Pupila + 0.6, K.Pupila + 0.9)} />
+          <g opacity={kprog(T, K.Pupila - 0.2, K.Pupila + 0.3)}>
+            <OjoFrente x={540} y={ojoY} s={ojoS} rp={rp} />
+            <Rotulo x={540 + rp * ojoS * Math.sin(1.1 * subir)} y={ojoY + rp * ojoS * Math.cos(1.1 * subir)} tx={klerp(540, 965, subir)} ty={klerp(1150, 650, subir)} texto="pupila" p={kprog(T, K.Pupila + 0.6, K.Pupila + 0.9)} />
           </g>
-          <g opacity={kprog(T, K.Pupila + 2.0, K.Pupila + 2.4)}>
-            <OjoLado cx={830} cy={600} R={140} T={T} lente={lente} />
-            <Rotulo x={830 + 0.6 * 140} y={600 + 0.3 * 140} tx={840} ty={800} texto="cristalino" p={kprog(T, K.Pupila + 2.4, K.Pupila + 2.7)} />
-            {lente > 0.05 && [-1, 1].map((sg) => <path key={sg} d={`M ${830 + 84 + sg * 70} ${600 - 75} l ${-sg * 26} 0`} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" opacity={lente} />)}
+          <g opacity={kprog(T, K.Pupila + 2.0, K.Pupila + 2.5)}>
+            <OjoLado cx={600} cy={850} R={185} T={T} lente={lente} />
+            <Rotulo x={600 + 0.6 * 185} y={850 + 0.3 * 185} tx={930} ty={1010} texto="cristalino" p={kprog(T, K.Pupila + 2.4, K.Pupila + 2.7)} />
+            {lente > 0.05 && [-1, 1].map((sg) => <path key={sg} d={`M ${600 + 111 + sg * 92} ${850 - 99} l ${-sg * 34} 0`} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" opacity={lente} />)}
           </g>
           <g opacity={kprog(T, K.Pupila + 3.8, K.Pupila + 4.2)}>
-            <Diafragma x={280} y={1030} r={130} a={apert} T={T} />
-            <g transform="translate(780 1030)">
+            <Diafragma x={270} y={1265} r={120} a={apert} T={T} />
+            <g transform="translate(790 1265)">
               <defs><clipPath id="foto"><rect x={-180} y={-125} width={360} height={250} rx={12} /></clipPath><Borr id="bfoto" d={klerp(14, 0, nitido)} /></defs>
               <rect x={-196} y={-141} width={392} height={282} rx={20} fill="#fff" stroke={KC.ink} strokeWidth={8} />
               <g clipPath="url(#foto)"><g filter="url(#bfoto)" transform="translate(-180 -125) scale(0.42) translate(-80 -900)">
                 <rect x={0} y={800} width={1080} height={700} fill={AGUA1} /><FondoMar T={T} y={1150} /></g></g>
             </g>
-            <FlechaRecta x1={430} y1={1030} x2={560} y2={1030} p={kprog(T, K.Pupila + 4.4, K.Pupila + 4.9)} color={KC.yellow} grosor={12} />
+            <FlechaRecta x1={425} y1={1265} x2={570} y2={1265} p={kprog(T, K.Pupila + 4.4, K.Pupila + 4.9)} color={KC.yellow} grosor={12} />
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Pupila + 5.6} until={K.Entrenar - 0.1} texto="más nítido" x={780} y={880} tam={42} borde={KC.leaf} />
+        <Chip T={T} at={K.Pupila + 5.6} until={K.Entrenar - 0.1} texto="más nítido" x={790} y={1465} tam={42} borde={KC.leaf} />
       </Escena>
 
-      {/* 9 · 2006: niños europeos entrenados un mes también lo lograron */}
-      <Escena T={T} a={K.Entrenar} b={K.Cierre} zoom={0.03} fondo={KC.orange}>
+      {/* 9 · 2006: niños europeos entrenados un mes también lo lograron (el niño que entrena está en cuadro) */}
+      <Escena T={T} a={K.Entrenar} b={K.Cierre} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <g transform="translate(540 400) scale(0.85) translate(-540 -400)"><Calendario T={T} x={540} y={420} p={kprog(T, K.Entrenar - 0.2, K.Entrenar + 0.5, kEase.rebote)} marc={marc} /></g>
-          <BarraH x={140} y={950} ancho={800} alto={64} v={RMK} color={KC.yellow} etiqueta="niños moken" />
-          <BarraH x={140} y={1100} ancho={800} alto={64} v={vEU} color={vEU > 0.97 ? KC.yellow : '#fff'} etiqueta="niños europeos entrenados" />
+          <g transform="translate(540 400) scale(0.95) translate(-540 -400)"><Calendario T={T} x={540} y={370} p={kprog(T, K.Entrenar - 0.2, K.Entrenar + 0.5, kEase.rebote)} marc={marc} /></g>
+          <g opacity={kprog(T, K.Entrenar - 0.2, K.Entrenar + 0.4)}>
+            <NinoNadando x={540 + 14 * Math.sin(T * 1.2)} y={905} s={1} rot={6} T={T} seed={2} piel={PIEL_EU} pelo={PELO_EU} playera={KC.mint} short="#7a2b5e" brazo={0.4} />
+            <Burbujas T={T} x={800} y={870} alto={110} n={3} seed={4} />
+          </g>
+          <BarraH x={140} y={1180} ancho={800} alto={64} v={RMK} color={KC.yellow} etiqueta="niños moken" />
+          <BarraH x={140} y={1330} ancho={800} alto={64} v={vEU} color={vEU > 0.97 ? KC.yellow : '#fff'} etiqueta="niños europeos entrenados" />
         </Lienzo>
-        <Chip T={T} at={K.Entrenar + 0.9} until={K.Entrenar + 3.4} texto="un mes" x={880} y={360} tam={40} borde={KC.cyan} />
-        <Chip T={T} at={K.Entrenar + 4.8} until={K.Cierre - 0.1} texto="¡también lo lograron!" x={540} y={850} tam={44} borde={KC.leaf} />
+        <Chip T={T} at={K.Entrenar + 0.9} until={K.Entrenar + 3.4} texto="un mes" x={890} y={258} tam={40} borde={KC.cyan} />
+        <Chip T={T} at={K.Entrenar + 4.8} until={K.Cierre - 0.1} texto="¡también lo lograron!" x={540} y={1050} tam={44} borde={KC.leaf} />
       </Escena>
 
       {/* 10 · cierre: el mismo mar del inicio, ahora dos niños ven claro */}
-      <Escena T={T} a={K.Cierre} b={FIN} zoom={0.04} fondo={AGUA1}>
+      <Escena T={T} a={K.Cierre} b={FIN} zoom={0.04} fondo={AGUA2}>
         <Lienzo>
           <AguaFondo T={T} />
-          <FondoMar T={T} y={1150} />
-          <Pez x={(T * 90) % 1400 - 200} y={760} s={0.8} T={T} color={KC.yellow} />
-          <NinoNadando x={470 + 14 * Math.sin(T * 1.3)} y={850} rot={18} T={T} brazo={0.8} />
-          <NinoNadando x={klerp(-300, 560, kprog(T, K.Cierre + 0.4, K.Cierre + 2.2, kEase.sale)) + 12 * Math.sin(T * 1.1)} y={1050} rot={12} s={0.85} T={T} seed={2} piel={PIEL_EU} pelo={PELO_EU} playera={KC.mint} short="#7a2b5e" brazo={0.9} />
-          <Burbujas T={T} x={680} y={820} alto={380} />
-          <VistaBurbuja T={T} x={230} y={530} r={125} d={klerp(12, 0, kprog(T, K.Cierre + 1.6, K.Cierre + 3.0, kEase.suave))} etiqueta="se aprende" color={KC.yellow} id="c1" p={kprog(T, K.Cierre + 1.0, K.Cierre + 1.5, kEase.rebote)} />
+          <g transform="translate(540 1330) scale(1.25) translate(-540 -1330)"><FondoMar T={T} y={1330} /></g>
+          <Alga x={50} y={1300} alto={330} T={T} seed={5} /><Alga x={1030} y={1290} alto={300} T={T} seed={6} color="#2aa36b" />
+          <Pez x={(T * 90) % 1400 - 200} y={1250} s={0.8} T={T} color={KC.yellow} />
+          <NinoNadando x={480 + 14 * Math.sin(T * 1.3)} y={800} s={1.3} rot={18} T={T} brazo={0.8} />
+          <NinoNadando x={klerp(-300, 600, kprog(T, K.Cierre + 0.4, K.Cierre + 2.2, kEase.sale)) + 12 * Math.sin(T * 1.1)} y={1100} rot={12} s={1.15} T={T} seed={2} piel={PIEL_EU} pelo={PELO_EU} playera={KC.mint} short="#7a2b5e" brazo={0.9} />
+          <Burbujas T={T} x={930} y={1060} alto={260} />
+          <VistaBurbuja T={T} x={830} y={480} r={165} d={klerp(12, 0, kprog(T, K.Cierre + 1.6, K.Cierre + 3.0, kEase.suave))} etiqueta="se aprende" color={KC.yellow} id="c1" p={kprog(T, K.Cierre + 1.0, K.Cierre + 1.5, kEase.rebote)} />
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 3.0} until={K.Outro - 0.1} texto="un niño lo puede aprender" x={600} y={300} tam={46} borde={KC.yellow} />
+        <Chip T={T} at={K.Cierre + 3.0} until={K.Outro - 0.1} texto="un niño lo puede aprender" x={540} y={235} tam={46} borde={KC.yellow} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Borroso - 0.1} texto="Veían bajo el agua *mejor que tú.*" />

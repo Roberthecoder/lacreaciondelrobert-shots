@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #41 · El polvo de la ciudad que tus ojos nunca van a ver (PM2.5) — NARRADO (N1 por dentro + N2 el número).
 // Datos: EPA "PM Basics" (tamaño, fuentes, gráfica de la arena de 90 µm), OMS 2021 (guía anual 5 µg/m³), SEDEMA Informe anual 2023
 // (promedio PM2.5 = 20 µg/m³; 1 ene 2023 contingencia por pirotecnia), CAMe 1 ene 2026 (recomendaciones). Ver guion.md y verificacion.md.
@@ -34,19 +35,21 @@ function Coche({ x, y, s = 1, color = KC.red, T = 0, humo = true }) {
 // Calle de ciudad con edificios, sol y un rayo de luz (donde la Lupa encuentra las partículas).
 function Calle({ T, tono = 0, nube = 1 }) {
   const ed = [[0, 520, 170, '#7a8bb0'], [160, 600, 150, '#94a3c4'], [300, 450, 190, '#6e7fa6'], [480, 640, 130, '#a6b3cf'], [600, 500, 170, '#7f90b5'], [760, 580, 150, '#95a4c6'], [900, 470, 180, '#7083a9']];
-  const cielo = mixHex('#8fd8ff', '#c9c2b0', tono);
+  const cielo = mixHex('#14304f', '#34383f', tono), osc = (c) => mixHex(c, '#0b1020', 0.42);
   return <g>
     <rect x={0} y={0} width={KW} height={KH} fill={cielo} />
-    <Sol T={T} x={170} y={420} r={70} />
-    {ed.map(([x, top, w, c], i) => <g key={i}><rect x={x} y={top} width={w} height={1100 - top} fill={c} stroke={KC.ink} strokeWidth={6} />
+    <g transform="translate(540 1250) scale(1.2) translate(-540 -1100)">
+    <Sol T={T} x={235} y={405} r={70} />
+    {ed.map(([x, top, w, c], i) => <g key={i}><rect x={x} y={top} width={w} height={1100 - top} fill={osc(c)} stroke={KC.ink} strokeWidth={6} />
       {Array.from({ length: Math.floor((1060 - top) / 80) }, (_, r) => Array.from({ length: Math.floor((w - 20) / 50) }, (_, k) => <rect key={r + '-' + k} x={x + 18 + k * 50} y={top + 24 + r * 80} width={26} height={40} rx={4} fill="#ffe9a6" stroke={KC.ink} strokeWidth={3} opacity={0.9} />))}</g>)}
     {/* rayo de sol entre los edificios */}
     <polygon points="210,470 330,470 760,1100 520,1100" fill="#fff6c2" opacity={0.42 + 0.08 * Math.sin(T * 2)} />
-    <rect x={0} y={1100} width={KW} height={KH - 1100} fill="#5d6068" />
-    <rect x={0} y={1100} width={KW} height={18} fill="#c9ccd2" stroke={KC.ink} strokeWidth={5} />
+    <rect x={-120} y={1100} width={KW + 240} height={KH - 1100} fill="#232733" />
+    <rect x={-120} y={1100} width={KW + 240} height={18} fill="#4a4e58" stroke={KC.ink} strokeWidth={5} />
     {Array.from({ length: 7 }, (_, i) => <rect key={i} x={((i * 200 - T * 260) % 1400 + 1400) % 1400 - 200} y={1470} width={110} height={16} rx={8} fill="#f3f0e6" />)}
     <Coche x={((T * 240) % 1500) - 200} y={1240} s={0.95} color={KC.red} T={T} />
     <Coche x={1300 - ((T * 180 + 600) % 1500)} y={1400} s={0.8} color={KC.blue} T={T} />
+    </g>
   </g>;
 }
 // Grano de arena fina (90 µm): facetado e irregular, como en la gráfica de la EPA. w = ancho en px.
@@ -189,12 +192,12 @@ function Celular({ T, x, y, s = 1, nivel = 1, o = 1 }) {
     <rect x={-190} y={-360} width={380} height={720} rx={50} fill="#1d2230" stroke={KC.ink} strokeWidth={8} />
     <rect x={-165} y={-320} width={330} height={640} rx={26} fill="#f7f9fc" />
     <rect x={-40} y={-345} width={80} height={12} rx={6} fill="#444" />
-    <text x={0} y={-262} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>Aire y Salud</text>
+    <text x={0} y={-262} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill="#0b1020">Aire y Salud</text>
     <circle cx={0} cy={-150} r={78} fill={IAS[n][1]} stroke={KC.ink} strokeWidth={6} />
-    <text x={0} y={-138} textAnchor="middle" style={{ font:`900 ${n === 4 ? 20 : 30}px ${KF.texto}` }} fill={KC.ink}>{n === 4 ? 'Extrem. mala' : IAS[n][0]}</text>
+    <text x={0} y={-138} textAnchor="middle" style={{ font:`900 ${n === 4 ? 20 : 30}px ${KF.texto}` }} fill="#0b1020">{n === 4 ? 'Extrem. mala' : IAS[n][0]}</text>
     {IAS.map(([t, c], i) => <g key={i} transform={`translate(-140 ${-30 + i * 64})`}>
       <rect width={280} height={50} rx={12} fill={c} stroke={KC.ink} strokeWidth={i === n ? 7 : 3} opacity={i === n ? 1 : 0.55} />
-      <text x={140} y={34} textAnchor="middle" style={{ font:`900 ${i === 4 ? 22 : 27}px ${KF.texto}` }} fill={KC.ink}>{t}</text></g>)}
+      <text x={140} y={34} textAnchor="middle" style={{ font:`900 ${i === 4 ? 22 : 27}px ${KF.texto}` }} fill="#0b1020">{t}</text></g>)}
   </g>;
 }
 // Ventana que se cierra (cierre 0..1) con partículas que se quedan afuera.
@@ -230,6 +233,7 @@ function ParticulasShot() {
   const nFila = Math.round(36 * kprog(T, K.Ta + 0.5, K.Ta + 0.5 + 35 * 0.075 + 0.45));
   const g5 = klerp(10, 5, kprog(T, K.Gu + 2.2, K.Gu + 3.4, kEase.suave));            // guía: de 10 (2005) a 5 (2021)
   const cd = klerp(0, 20, kprog(T, K.Ci + 1.0, K.Ci + 2.6, kEase.sale));                // CDMX 2023: 20
+  const celU = kprog(T, K.S + 2.6, K.S + 3.3, kEase.suave);                             // el celular se hace a un lado cuando llega la ventana
   const humoNY = kprog(T, K.A + 1.0, K.A + 5.5);                                        // neblina de Año Nuevo
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -237,9 +241,9 @@ function ParticulasShot() {
       <Escena T={T} a={K.G} b={K.Ta}>
         {svg(<Calle T={T} />)}
       </Escena>
-      <Lupa T={T} at={K.G + 0.2} until={K.Ta - 0.3} x={330} y={640} r={230} fx={470} fy={860} tinte={KC.yellow} etiqueta="AUMENTADO · PM2.5"
+      <Lupa T={T} at={K.G + 0.2} until={K.Ta - 0.3} x={560} y={690} r={300} fx={456} fy={962} tinte={KC.yellow} etiqueta="AUMENTADO · PM2.5"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a2a20" /><rect width={r * 2} height={r * 2} fill="#fff6c2" opacity=".12" />
-          <NubePM T={t} w={r * 2} h={r * 2} n={46} seed={4} rmin={5} rmax={15} /></svg>} />
+          <NubePM T={t} w={r * 2} h={r * 2} n={46} seed={4} rmin={7} rmax={20} /></svg>} />
 
       {/* 2 · tamaño: más de 30 en fila a lo ancho de un granito de arena fina */}
       <Escena T={T} a={K.Ta} b={K.O} fondo="#0E0F12">
@@ -255,92 +259,96 @@ function ParticulasShot() {
       {/* 3 · de dónde salen */}
       <Escena T={T} a={K.O} b={K.Pu}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><rect x={0} y={1100} width={KW} height={KH - 1100} fill="#8a7a64" /><rect x={0} y={1100} width={KW} height={14} fill={KC.ink} />
-          <Obra x={140} y={1100} T={T} /><Directas T={T} x0={140} y0={1040} seed={1} />
-          <path d="M 260 1100 L 330 1100 L 300 1180 L 220 1180 Z" fill="#b8874a" opacity=".0" />
-          <Fogata x={330} y={1095} T={T} s={0.8} /><Directas T={T} x0={330} y0={990} seed={2} />
-          <Coche x={560} y={1100} s={0.75} color={KC.red} T={T} humo={false} /><GasSube T={T} x0={460} y0={1060} color="#b18cff" seed={1} />
-          <Fabrica x={760} y={1100} T={T} /><GasSube T={T} x0={852} y0={790} color="#ff8a1f" seed={2} alto={420} />
-          <PlantaLuz x={960} y={1100} /><GasSube T={T} x0={960} y0={830} color="#2fe0a8" seed={3} alto={440} /></>)}
+        {svg(<g transform="translate(0 -60)"><rect x={0} y={1180} width={KW} height={KH - 1100} fill="#211d1b" /><rect x={0} y={1180} width={KW} height={14} fill={CINE.borde} />
+          {/* al fondo: fábrica y planta de luz (gases que se vuelven partículas) */}
+          <g transform="translate(450 1180) scale(1.35)"><Fabrica x={0} y={0} T={T} /></g>
+          <g transform="translate(790 1180) scale(1.35)"><PlantaLuz x={0} y={0} /></g>
+          <GasSube T={T} x0={574} y0={765} color="#ff8a1f" seed={2} alto={440} />
+          <GasSube T={T} x0={790} y0={820} color="#2fe0a8" seed={3} alto={460} />
+          {/* al frente: obra, fogata y coche */}
+          <g transform="translate(180 1335) scale(1.45)"><Obra x={0} y={0} T={T} /></g><Directas T={T} x0={180} y0={1240} seed={1} alto={520} />
+          <Fogata x={520} y={1335} T={T} s={1.3} /><Directas T={T} x0={520} y0={1190} seed={2} alto={480} />
+          <Coche x={860} y={1345} s={1.15} color={KC.red} T={T} humo={false} /><GasSube T={T} x0={710} y0={1300} color="#b18cff" seed={1} alto={640} /></g>)}
       </Escena>
-      <Chip T={T} at={K.O + 0.4} until={K.Pu - 0.2} texto="directas: obras, tierra, fuego" y={1440} x={540} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.O + 3.4} until={K.Pu - 0.2} texto="la mayoría: se forman en el aire" y={1530} x={540} tam={32} borde={KC.orange} />
-      <Etq T={T} at={K.O + 4.2} until={K.Pu - 0.2} x={540} y={420} texto="gases → partículas" lado="der" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.O + 0.4} until={K.Pu - 0.2} texto="directas: obras, tierra, fuego" y={1400} x={540} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.O + 3.4} until={K.Pu - 0.2} texto="la mayoría: se forman en el aire" y={1482} x={540} tam={32} borde={KC.orange} />
+      <Etq T={T} at={K.O + 4.2} until={K.Pu - 0.2} x={300} y={420} texto="gases → partículas" lado="der" tam={30} color={KC.ink} />
 
       {/* 4 · pulmones (por dentro, esquema) */}
       <Escena T={T} a={K.Pu} b={K.P} fondo="#151822">
-        {svg(<Pulmones T={T} a={K.Pu} />)}
+        {svg(<g transform="translate(540 870) scale(1.3) translate(-540 -750)"><Pulmones T={T} a={K.Pu} /></g>)}
         <div style={{ position:'absolute', right:60, top:1455, font:`700 26px ${KF.mono}`, color:'rgba(246,243,236,.75)' }}>esquema</div>
       </Escena>
-      <Lupa T={T} at={K.Pu + 0.8} until={K.P - 0.2} x={830} y={470} r={170} fx={780} fy={870} tinte={KC.pink} etiqueta="POR DENTRO · alvéolos"
+      <Lupa T={T} at={K.Pu + 0.8} until={K.P - 0.2} x={790} y={410} r={185} fx={852} fy={1026} tinte={KC.pink} etiqueta="POR DENTRO · alvéolos"
         interior={(t, r) => <AlveolosInt T={t} a={K.Pu + 0.8} r={r} />} />
-      <Etq T={T} at={K.Pu + 2.6} until={K.P - 0.2} x={500} y={1000} texto="corazón" lado="izq" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Pu + 2.6} until={K.P - 0.2} x={488} y={1195} texto="corazón" lado="izq" tam={30} color={KC.texto} />
 
       {/* 5 · re-gancho: ¿cuánto es demasiado? */}
       <Escena T={T} a={K.P} b={K.Gu} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={270} y={940} textAnchor="middle" style={{ font:`400 460px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 270 780)`}>?</text>
-          <CuboAire T={T} x={270} y={1000} s={0.55} n={14} /></>)}
+        {svg(<><text x={300} y={890} textAnchor="middle" style={{ font:`400 460px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 730)`}>?</text>
+          <CuboAire T={T} x={300} y={1060} s={0.9} n={14} /></>)}
       </Escena>
 
       {/* 6 · guía OMS 2021: 5 µg/m³ (antes 10) */}
       <Escena T={T} a={K.Gu} b={K.Ci}>
         <FondoLunares color={KC.mint} />
-        {svg(<><CuboAire T={T} x={290} y={820} s={1} n={Math.round(g5 * 2)} />
-          <g opacity={kprog(T, K.Gu + 1.2, K.Gu + 1.7)}>
-            <rect x={690} y={1150 - 25 * 26} width={190} height={25 * 26} rx={16} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={6} />
+        {svg(<g transform="translate(540 930) scale(1.3) translate(-527 -850)"><CuboAire T={T} x={290} y={820} s={1} n={Math.round(g5 * 2)} />
+          <g opacity={0.3 + 0.7 * kprog(T, K.Gu + 1.2, K.Gu + 1.7)}>
+            <rect x={690} y={1150 - 25 * 26} width={190} height={25 * 26} rx={16} fill="rgba(255,255,255,.12)" stroke={KC.ink} strokeWidth={6} />
             <rect x={700} y={1150 - g5 * 26} width={170} height={g5 * 26} rx={12} fill={g5 > 6 ? KC.orange : KC.leaf} stroke={KC.ink} strokeWidth={5} />
             <text x={785} y={1150 - g5 * 26 - 24} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink}>{kformato(g5, 0)}</text>
             <text x={785} y={1205} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>µg/m³ al año</text>
             {T > K.Gu + 2.2 && <g opacity={0.6}><line x1={660} y1={1150 - 260} x2={910} y2={1150 - 260} stroke={KC.ink} strokeWidth={5} strokeDasharray="14 10" />
               <text x={655} y={1150 - 270} textAnchor="end" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>2005: 10</text></g>}
-          </g></>)}
+          </g></g>)}
       </Escena>
-      <Chip T={T} at={K.Gu + 1.4} until={K.Ci - 0.2} texto="OMS 2021: guía anual de PM2.5" y={420} x={600} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.Gu + 1.4} until={K.Ci - 0.2} texto="OMS 2021: guía anual de PM2.5" y={385} x={560} tam={32} borde={KC.leaf} />
 
       {/* 7 · CDMX 2023: promedio 20 = 4 veces la guía */}
       <Escena T={T} a={K.Ci} b={K.A}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><g opacity={0.55}><Skyline T={T} y={1150} estaciones={kprog(T, K.Ci + 0.1, K.Ci + 1.2)} /></g>
-          <Barra x={200} valor={5} color={KC.leaf} titulo="OMS" />
-          <Barra x={450} valor={cd} color={KC.red} titulo="CDMX 2023" />
+        {svg(<g transform="translate(0 200)"><rect x={-200} y={1150} width={KW + 400} height={700} fill="#121826" /><g opacity={0.55}><Skyline T={T} y={1150} estaciones={kprog(T, K.Ci + 0.1, K.Ci + 1.2)} /></g>
+          <Barra x={190} valor={5} k={32} ancho={180} color={KC.leaf} titulo="OMS" />
+          <Barra x={440} valor={cd} k={32} ancho={180} color={KC.red} titulo="CDMX 2023" />
           {[0, 1, 2, 3].map((i) => { const o = kprog(T, K.Ci + 3.0 + i * 0.3, K.Ci + 3.3 + i * 0.3, kEase.sale);
-            return <g key={i} opacity={o}><rect x={620} y={1100 - (i + 1) * 100 + 4} width={150} height={92} rx={12} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />
-              <text x={695} y={1100 - i * 100 - 28} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>5</text></g>; })}
-          <text x={900} y={1040} textAnchor="middle" opacity={kprog(T, K.Ci + 4.2, K.Ci + 4.5)} style={{ font:`400 150px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8}>×4</text></>)}
+            return <g key={i} opacity={o}><rect x={600} y={1100 - (i + 1) * 160 + 5} width={160} height={150} rx={12} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />
+              <text x={680} y={1100 - i * 160 - 52} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.ink}>5</text></g>; })}
+          <text x={885} y={840} textAnchor="middle" opacity={kprog(T, K.Ci + 4.2, K.Ci + 4.5)} style={{ font:`400 150px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8}>×4</text></g>)}
       </Escena>
-      <Chip T={T} at={K.Ci + 0.4} until={K.A - 0.2} texto="SEDEMA · promedio anual 2023" y={420} x={370} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.Ci + 1.2} until={K.A - 0.2} texto="µg/m³ de PM2.5" y={1440} x={540} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Ci + 0.4} until={K.A - 0.2} texto="SEDEMA · promedio anual 2023" y={470} x={330} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.Ci + 1.2} until={K.A - 0.2} texto="µg/m³ de PM2.5" y={1475} x={540} tam={30} borde={KC.ink} />
 
       {/* 8 · 1 de enero de 2023: contingencia por cohetes y fogatas */}
       <Escena T={T} a={K.A} b={K.S} fondo="#0d1424">
-        {svg(<><rect x={0} y={0} width={KW} height={KH} fill="#0d1424" />
+        {svg(<><rect x={0} y={0} width={KW} height={KH} fill="#0c1220" />
           {Array.from({ length: 40 }, (_, i) => { const q = krng(i + 3); return <circle key={i} cx={q() * KW} cy={q() * 800} r={2 + q() * 2} fill="#fff" opacity={0.3 + 0.4 * Math.abs(Math.sin(T * 2 + i))} />; })}
+          <g transform="translate(540 1350) scale(1.2) translate(-540 -1150)">
           <g opacity={0.8}><Skyline T={T} y={1150} estaciones={0} /></g>
           {[[0.2, 260, KC.pink], [0.8, 720, KC.yellow], [1.4, 480, KC.mint], [2.1, 880, KC.cyan], [2.7, 200, KC.orange], [3.3, 600, KC.pink], [3.9, 380, KC.yellow], [4.5, 820, KC.lilac]].map(([d, x, c], i) =>
             <Cohete key={i} T={T} t0={K.A + d} x={x} y={1100} color={c} alto={480 + (i % 3) * 80} />)}
           <Fogata x={160} y={1170} T={T} s={0.9} /><Fogata x={900} y={1180} T={T} s={0.8} />
-          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#23262e" />
-          <rect x={0} y={1150 - humoNY * 700} width={KW} height={humoNY * 700 + 20} fill="#8d8a86" opacity={0.45 * humoNY} /></>)}
+          <rect x={-120} y={1150} width={KW + 240} height={KH - 1150} fill="#161a25" />
+          <rect x={-120} y={1150 - humoNY * 700} width={KW + 240} height={humoNY * 700 + 20} fill="#4c4c51" opacity={0.45 * humoNY} /></g></>)}
       </Escena>
-      <Chip T={T} at={K.A + 1.0} until={K.S - 0.2} texto="1 ene 2023 · contingencia por PM2.5" y={1440} x={540} tam={32} borde={KC.pink} />
+      <Chip T={T} at={K.A + 1.0} until={K.S - 0.2} texto="1 ene 2023 · contingencia por PM2.5" y={1490} x={540} tam={32} borde={KC.pink} />
 
       {/* 9 · qué sí sirve: índice AIRE y SALUD; en contingencia, ventanas cerradas y nada de ejercicio afuera */}
       <Escena T={T} a={K.S} b={K.C}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<><Celular T={T} x={300} y={820} s={0.95} nivel={kclamp(Math.floor((T - K.S - 0.5) * 1.4), 0, 4)} />
-          <g opacity={kprog(T, K.S + 3.0, K.S + 3.4)}><Ventana T={T} x={790} y={930} cierre={kprog(T, K.S + 3.3, K.S + 4.2, kEase.suave)} /></g>
-          <NoEjercicio x={790} y={500} s={0.9} o={kprog(T, K.S + 4.6, K.S + 5.0)} /></>)}
+        {svg(<><Celular T={T} x={klerp(540, 275, celU)} y={klerp(900, 880, celU)} s={klerp(1.3, 1.05, celU)} nivel={kclamp(Math.floor((T - K.S - 0.5) * 1.4), 0, 4)} />
+          <g opacity={kprog(T, K.S + 3.0, K.S + 3.4)} transform="translate(735 1060) scale(1.05)"><Ventana T={T} x={0} y={0} cierre={kprog(T, K.S + 3.3, K.S + 4.2, kEase.suave)} /></g>
+          <NoEjercicio x={735} y={590} s={1.15} o={kprog(T, K.S + 4.6, K.S + 5.0)} /></>)}
       </Escena>
-      <Chip T={T} at={K.S + 3.2} until={K.C - 0.2} texto="en contingencia" y={1440} x={540} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.S + 3.2} until={K.C - 0.2} texto="en contingencia" y={1480} x={540} tam={32} borde={KC.red} />
 
       {/* 10 · cierre: la misma calle, ahora con el índice en el celular */}
       <Escena T={T} a={K.C} b={FIN}>
-        {svg(<><Calle T={T} tono={0.15} /><Celular T={T} x={830} y={980} s={0.5} nivel={1} /></>)}
+        {svg(<><Calle T={T} tono={0.15} /><Celular T={T} x={905} y={1270} s={0.6} nivel={1} /></>)}
       </Escena>
-      <Lupa T={T} at={K.C + 0.4} until={K.Ou - 0.1} x={330} y={640} r={230} fx={470} fy={860} tinte={KC.yellow} etiqueta="AUMENTADO · PM2.5"
+      <Lupa T={T} at={K.C + 0.4} until={K.Ou - 0.1} x={560} y={690} r={300} fx={456} fy={962} tinte={KC.yellow} etiqueta="AUMENTADO · PM2.5"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a2a20" /><rect width={r * 2} height={r * 2} fill="#fff6c2" opacity=".12" />
-          <NubePM T={t} w={r * 2} h={r * 2} n={46} seed={4} rmin={5} rmax={15} /></svg>} />
+          <NubePM T={t} w={r * 2} h={r * 2} n={46} seed={4} rmin={7} rmax={20} /></svg>} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ta - 0.1} texto="Nunca *las vas a ver.*" tam={56} />

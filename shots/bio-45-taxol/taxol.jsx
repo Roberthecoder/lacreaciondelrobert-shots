@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #45 · La quimio que escondía un árbol (Taxol / paclitaxel) — NARRADO (N1 por dentro + N3 capítulos).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const BARK = '#8c3f33', BARK_O = '#6a2a21', BARK_C = '#b4604c', MADERA = '#f1d9a6';
@@ -44,6 +45,17 @@ function Tejo({ T, x, y, s = 1, pelado = 0, seco = 0, seed = 1, arilos = true })
   </g>;
 }
 
+// Suelo oscuro hasta abajo del cuadro, con degradado y matitas (conserva el tinte: verde = bosque, café = tierra).
+function Suelo({ y, c1 = '#1f4630', c2 = '#0a1710', id = 'a' }) {
+  const g = krng(id.charCodeAt(0) * 7 + 3);
+  return <g>
+    <defs><linearGradient id={'tx-suelo-' + id} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={c1} /><stop offset="1" stopColor={c2} /></linearGradient></defs>
+    <rect x={-300} y={y} width={KW + 600} height={1000} fill={'url(#tx-suelo-' + id + ')'} stroke={KC.ink} strokeWidth={5} strokeOpacity={0.5} />
+    {Array.from({ length: 26 }, (_, i) => { const px = -40 + g() * (KW + 80), py = y + 30 + g() * 520, k = 0.6 + g() * 0.9;
+      return <path key={i} d={`M ${px - 14 * k} ${py} q ${4 * k} ${-22 * k} ${10 * k} ${-26 * k} M ${px} ${py} q 0 ${-28 * k} ${2 * k} ${-34 * k} M ${px + 14 * k} ${py} q ${-4 * k} ${-20 * k} ${-9 * k} ${-24 * k}`} stroke={c1} strokeWidth={5} fill="none" strokeLinecap="round" opacity={0.55 + 0.4 * g()} />; })}
+  </g>;
+}
+
 /* ---------- objetos ---------- */
 function BolsaSuero({ T, x, y, s = 1, tubo, nivel = 0.8 }) {
   const gota = ((T * 1.4) % 1);
@@ -56,7 +68,7 @@ function BolsaSuero({ T, x, y, s = 1, tubo, nivel = 0.8 }) {
       <path d="M -95 -160 L 95 -160 Q 110 -160 110 -140 L 110 120 Q 110 170 40 175 L -40 175 Q -110 170 -110 120 L -110 -140 Q -110 -160 -95 -160 Z" fill="rgba(240,250,255,.85)" stroke={KC.ink} strokeWidth={8} />
       <path d={`M -104 ${170 - 320 * nivel + Math.sin(T * 2) * 4} L 104 ${170 - 320 * nivel - Math.sin(T * 2) * 4} L 104 120 Q 104 166 40 169 L -40 169 Q -104 166 -104 120 Z`} fill="#fff1bf" />
       <rect x={-80} y={-110} width={160} height={70} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={4} />
-      <text x={0} y={-66} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>PACLITAXEL</text>
+      <text x={0} y={-66} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#0b1020">PACLITAXEL</text>
       <rect x={-16} y={175} width={32} height={40} fill="#e8eef2" stroke={KC.ink} strokeWidth={5} />
       <rect x={-26} y={215} width={52} height={80} rx={12} fill="rgba(240,250,255,.85)" stroke={KC.ink} strokeWidth={6} />
       <circle cx={0} cy={226 + gota * 50} r={7} fill="#fff1bf" stroke={KC.ink} strokeWidth={2} />
@@ -81,7 +93,7 @@ function Frasco({ x, y, s = 1, texto = 'TAXOL', sub = 'paclitaxel' }) {
     <rect x={-70} y={-190} width={140} height={66} rx={14} fill={KC.violet} stroke={KC.ink} strokeWidth={8} />
     <rect x={-84} y={-20} width={168} height={110} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={5} />
     <text x={0} y={30} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.violet}>{texto}</text>
-    <text x={0} y={70} textAnchor="middle" style={{ font:`italic 700 22px ${KF.mono}` }} fill={KC.ink}>{sub}</text>
+    <text x={0} y={70} textAnchor="middle" style={{ font:`italic 700 22px ${KF.mono}` }} fill="#0b1020">{sub}</text>
   </g>;
 }
 function Cromosoma({ x, y, rot = 0, s = 1, c1 = KC.pink, c2 = KC.yellow, o = 1 }) {
@@ -146,7 +158,7 @@ function TuboMT({ T, x, y, con = false, frio = 0, etiqueta }) {
 }
 function Hielera({ x, y, w = 560 }) {
   return <g transform={`translate(${x} ${y})`}>
-    <path d={`M ${-w / 2} 0 L ${w / 2} 0 L ${w / 2 - 30} 200 L ${-w / 2 + 30} 200 Z`} fill="#4fa3ff" stroke={KC.ink} strokeWidth={9} />
+    <path d={`M ${-w / 2} 0 L ${w / 2} 0 L ${w / 2 - 30} 200 L ${-w / 2 + 30} 200 Z`} fill="#1f4f8f" stroke={KC.ink} strokeWidth={9} />
     {Array.from({ length: 7 }, (_, i) => <rect key={i} x={-w / 2 + 30 + i * 72} y={-34 + (i % 2) * 12} width={62} height={56} rx={10} fill="rgba(235,248,255,.95)" stroke={KC.ink} strokeWidth={4} transform={`rotate(${(i * 23) % 20 - 10} ${-w / 2 + 61 + i * 72} 0)`} />)}
   </g>;
 }
@@ -194,141 +206,151 @@ function Taxol() {
   const FIN = K.Ou + 4;
   // congelado de los microtúbulos: baja la "dinámica" a ~10 % (no a cero)
   const fr = kprog(T, K.Co + 0.6, K.Co + 2.4, kEase.suave);
-  const tubo0 = 'M 220 760 Q 220 1000 330 1150 Q 380 1210 420 1200';
+  const GY = 1420;                                                   // suelo del gancho y del cierre
+  const tubo0 = 'M 250 898 Q 235 1200 400 1365 Q 490 1432 592 1404';
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
-      {/* 0 · gancho: la bolsa de quimio conectada al árbol */}
+      {/* 0 · gancho: la bolsa de quimio conectada al árbol; el tejo llena el cuadro (1.6× del dibujo anterior) */}
       <Escena T={T} a={K.G} b={K.Te} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         <TxSvg>
-          <rect x={0} y={1200} width={KW} height={720} fill="#3f8a4a" />
-          <Tejo T={T} x={470} y={1200} s={0.85} seed={2} />
-          <BolsaSuero T={T} x={220} y={500} s={0.95} tubo={tubo0} nivel={0.8} />
-          <circle cx={430} cy={1196} r={14 + Math.sin(T * 6) * 4} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />
+          <Suelo y={GY} id="g" />
+          <Tejo T={T} x={640} y={GY} s={1.32} seed={2} />
+          <BolsaSuero T={T} x={250} y={560} s={1.15} tubo={tubo0} nivel={0.8} />
+          <circle cx={594} cy={1403} r={16 + Math.sin(T * 6) * 5} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />
         </TxSvg>
       </Escena>
-      {/* 1 · 1962: la corteza del tejo del Pacífico */}
+      {/* 1 · 1962: la corteza del tejo del Pacífico (árbol 1.5×; la tira de corteza va a la bolsa de muestra) */}
       <Escena T={T} a={K.Te} b={K.Tx}>
         <FondoLunares color={KC.yellow} />
         <TxSvg>
-          <rect x={0} y={1260} width={KW} height={660} fill="#c9a24a" />
-          <Tejo T={T} x={600} y={1260} s={1.15} seed={3} pelado={kprog(T, K.Te + 0.6, K.Te + 2.2, kEase.sale) * 0.55} />
+          <Suelo y={1450} c1="#4a3d22" c2="#17120a" id="t" />
+          <Tejo T={T} x={500} y={1450} s={1.5} seed={3} pelado={kprog(T, K.Te + 0.6, K.Te + 2.2, kEase.sale) * 0.55} />
+          <g transform="translate(900 1345) scale(1.45)"><path d="M -90 -80 L 90 -80 L 80 90 L -80 90 Z" fill="#f4efe4" stroke={KC.ink} strokeWidth={7} />
+            <text x={0} y={20} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#0b1020">1962</text></g>
           {(() => { const c = kprog(T, K.Te + 2.2, K.Te + 3.2, kEase.suave); if (T < K.Te + 0.6) return null;
-            return <g transform={`translate(${klerp(600, 860, c)} ${klerp(1100, 1150, c)}) rotate(${c * 70})`}><rect x={-22} y={-110} width={44} height={150} rx={12} fill={BARK} stroke={KC.ink} strokeWidth={5} /></g>; })()}
-          <g transform="translate(870 1180)"><path d="M -90 -80 L 90 -80 L 80 90 L -80 90 Z" fill="#f4efe4" stroke={KC.ink} strokeWidth={7} />
-            <text x={0} y={20} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>1962</text></g>
+            return <g transform={`translate(${klerp(500, 900, c)} ${klerp(1230, 1215, c) - Math.sin(c * Math.PI) * 120}) rotate(${c * 70}) scale(1.5)`}><rect x={-22} y={-110} width={44} height={150} rx={12} fill={BARK} stroke={KC.ink} strokeWidth={5} /></g>; })()}
         </TxSvg>
-        <Etq T={T} at={K.Te + 0.8} until={K.Tx - 0.3} x={640} y={1040} texto="corteza" color={KC.ink} tam={34} />
+        <Etq T={T} at={K.Te + 0.8} until={K.Tx - 0.3} x={572} y={1180} texto="corteza" color={KC.ink} tam={36} />
       </Escena>
-      {/* 2 · de la corteza al Taxol */}
+      {/* 2 · de la corteza al Taxol: matraz y frasco grandes; el frasco está desde el inicio (atenuado) y se enciende a su tiempo */}
       <Escena T={T} a={K.Tx} b={K.Ca}>
         <FondoLunares color={KC.pink} />
         <TxSvg>
-          <Matraz T={T} x={360} y={960} s={1.2} nivel={klerp(0.15, 0.6, kprog(T, K.Tx, K.Tx + 1.5))} liquido={mixHex(BARK_C, '#fff1bf', kprog(T, K.Tx + 1.2, K.Tx + 2.2))} />
-          <FlechaCurva x1={500} y1={760} x2={680} y2={760} p={kprog(T, K.Tx + 1.6, K.Tx + 2.2)} color={KC.ink} T={T} />
-          {T > K.Tx + 2.0 && <g transform={`translate(780 960) scale(${klerp(0.4, 1.25, kprog(T, K.Tx + 2.0, K.Tx + 2.5, kEase.rebote))})`}><Frasco x={0} y={0} /></g>}
+          {[0, 1, 2].map((i) => { const u = kprog(T, K.Tx - 0.3 + i * 0.35, K.Tx + 0.5 + i * 0.35, kEase.suave); if (u >= 1) return null;
+            return <g key={i} transform={`translate(${320 + (i - 1) * 16} ${klerp(400, 780, u)}) rotate(${20 + i * 50 + u * 90})`} opacity={1 - kprog(u, 0.8, 1)}><rect x={-16} y={-60} width={32} height={120} rx={10} fill={BARK} stroke={KC.ink} strokeWidth={5} /></g>; })}
+          <Matraz T={T} x={320} y={1010} s={1.6} nivel={klerp(0.15, 0.6, kprog(T, K.Tx, K.Tx + 1.5))} liquido={mixHex(BARK_C, '#fff1bf', kprog(T, K.Tx + 1.2, K.Tx + 2.2))} />
+          <FlechaCurva x1={470} y1={600} x2={720} y2={640} p={kprog(T, K.Tx + 1.6, K.Tx + 2.2)} color={KC.ink} T={T} />
+          <g transform={`translate(815 1020) scale(${klerp(1.6, 1.8, kprog(T, K.Tx + 2.0, K.Tx + 2.5, kEase.rebote))})`} opacity={klerp(0.22, 1, kprog(T, K.Tx + 2.0, K.Tx + 2.3))}><Frasco x={0} y={0} /></g>
         </TxSvg>
       </Escena>
-      {/* 3–5 · la célula por dentro */}
+      {/* 3–5 · la célula por dentro (1.22×; la barra de escala se recalcula sola con z) */}
       <Escena T={T} a={K.Ca} b={K.Pr} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <TxSvg>
-          <CelulaDivision T={T} f={fr} taxol={kprog(T, K.Co + 0.2, K.Co + 1.4)} tres={kprog(T, K.Mu + 0.2, K.Mu + 1.0)} muere={kprog(T, K.Mu + 0.8, K.Mu + 3.2)} aparece={kprog(T, K.Ca, K.Ca + 0.6)} />
+          <g transform="translate(540 880) scale(1.22) translate(-540 -900)">
+            <CelulaDivision T={T} f={fr} taxol={kprog(T, K.Co + 0.2, K.Co + 1.4)} tres={kprog(T, K.Mu + 0.2, K.Mu + 1.0)} muere={kprog(T, K.Mu + 0.8, K.Mu + 3.2)} aparece={kprog(T, K.Ca, K.Ca + 0.6)} />
+          </g>
         </TxSvg>
-        {T < K.Co && <Escala T={T} z={1} pxPorMm={33000} y={1430} />}
+        {T < K.Co && <Escala T={T} z={1.22} pxPorMm={33000} objetivo={250} y={1430} />}
       </Escena>
       {/* la Lupa abre la célula desde la bolsa */}
       <Escena T={T} a={K.Ca - 0.2} b={K.Ca + 1.0} zoom={0}>
         <FondoLunares color={KC.mint} />
-        <TxSvg><BolsaSuero T={T} x={540} y={900} s={1.3} nivel={0.8} /></TxSvg>
+        <TxSvg><BolsaSuero T={T} x={540} y={900} s={1.6} nivel={0.8} /></TxSvg>
       </Escena>
-      {/* 6 · pregunta: diez miligramos */}
+      {/* 6 · pregunta: diez miligramos (el vial grande al centro; la célula sigue detrás, bajo el velo) */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        <TxSvg><g transform={`translate(300 1060) rotate(${Math.sin(T * 3) * 5})`}><Vial x={0} y={0} s={1.5} etiqueta="10 mg" contenido="#f4efe4" tapa={KC.violet} /></g></TxSvg>
+        <TxSvg><g transform={`translate(540 1130) rotate(${Math.sin(T * 3) * 4})`}><Vial x={0} y={0} s={2.5} etiqueta="10 mg" contenido="#f4efe4" tapa={KC.violet} /></g></TxSvg>
       </Escena>
-      {/* 7 · 1979: en el tubo de ensayo, con hielo, los microtúbulos con taxol no se deshacen */}
+      {/* 7 · 1979: en el tubo de ensayo, con hielo, los microtúbulos con taxol no se deshacen (todo 1.35×) */}
       <Escena T={T} a={K.Es} b={K.Ar}>
         <FondoLunares color={KC.cyan} />
         <TxSvg>
-          <TuboMT T={T} x={360} y={1000} con={false} frio={kprog(T, K.Es + 2.6, K.Es + 4.6)} etiqueta="sin taxol" />
-          <TuboMT T={T} x={720} y={1000} con={true} frio={kprog(T, K.Es + 2.6, K.Es + 4.6)} etiqueta="con taxol" />
-          <Hielera x={540} y={1150} w={640} />
-          {T > K.Es + 4.8 && <g><text x={360} y={1420} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={4}>✗</text>
-            <text x={720} y={1420} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.mint} stroke={KC.ink} strokeWidth={4}>✓</text></g>}
+          <g transform="translate(540 1020) scale(1.35) translate(-540 -1000)">
+            <TuboMT T={T} x={360} y={1000} con={false} frio={kprog(T, K.Es + 2.6, K.Es + 4.6)} etiqueta="sin taxol" />
+            <TuboMT T={T} x={720} y={1000} con={true} frio={kprog(T, K.Es + 2.6, K.Es + 4.6)} etiqueta="con taxol" />
+            <Hielera x={540} y={1150} w={640} />
+            {T > K.Es + 4.8 && <g opacity={kprog(T, K.Es + 4.8, K.Es + 5.1)}><text x={360} y={690} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={4}>✗</text>
+              <text x={720} y={690} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.mint} stroke={KC.ink} strokeWidth={4}>✓</text></g>}
+          </g>
         </TxSvg>
       </Escena>
-      {/* 8 · Cap. 1 corteza: tres árboles por paciente */}
+      {/* 8 · Cap. 1 corteza: tres árboles por paciente (árboles 1.45× y paciente 1.2×, al centro del cuadro) */}
       <Escena T={T} a={K.Ar} b={K.Ag}>
         <FondoLunares color={KC.yellow} />
         <TxSvg>
-          <rect x={0} y={1200} width={KW} height={720} fill="#c9a24a" />
-          <Paciente x={170} y={1200} s={0.95} />
-          {[470, 690, 910].map((tx, i) => { const t0 = K.Ar + 0.8 + i * 0.9;
-            return <Tejo key={i} T={T} x={tx} y={1200} s={0.55} seed={5 + i} pelado={kprog(T, t0, t0 + 0.6) * 0.9} seco={kprog(T, t0 + 1.4, t0 + 3.0)} />; })}
+          <Suelo y={1340} c1="#4a3d22" c2="#17120a" id="a" />
+          {[380, 590, 800].map((tx, i) => { const t0 = K.Ar + 0.8 + i * 0.9;
+            return <Tejo key={i} T={T} x={tx} y={1340} s={0.8} seed={5 + i} pelado={kprog(T, t0, t0 + 0.6) * 0.9} seco={kprog(T, t0 + 1.4, t0 + 3.0)} />; })}
+          <Paciente x={170} y={1340} s={1.15} />
         </TxSvg>
-        <Medidor T={T} at={K.Ar + 0.6} until={K.Ag - 0.3} y={1440} valor={(t) => kprog(t, K.Ar + 0.8, K.Ar + 3.2)} etiqueta="corteza por paciente al año (1992)" texto={(v) => { const n = Math.max(0, Math.round(v * 3)); return n === 1 ? '~1 árbol' : `~${n} árboles`; }} color={BARK_C} />
+        <Medidor T={T} at={K.Ar + 0.6} until={K.Ag - 0.3} y={1420} valor={(t) => kprog(t, K.Ar + 0.8, K.Ar + 3.2)} etiqueta="corteza por paciente al año (1992)" texto={(v) => { const n = Math.max(0, Math.round(v * 3)); return n === 1 ? '~1 árbol' : `~${n} árboles`; }} color={BARK_C} />
       </Escena>
-      {/* 9 · Cap. 2 hojas: el tejo europeo rebrota */}
+      {/* 9 · Cap. 2 hojas: el tejo europeo rebrota (rama 1.3×, matraz 1.3× abajo, donde cae la ramita cortada) */}
       <Escena T={T} a={K.Ag} b={K.Ta}>
         <FondoLunares color={KC.mint} />
         <TxSvg>
           {(() => { const corta = kprog(T, K.Ag + 0.8, K.Ag + 1.2), crece = kprog(T, K.Ag + 2.0, K.Ag + 3.6, kEase.suave), cae = kprog(T, K.Ag + 1.2, K.Ag + 2.2, kEase.entra || kEase.suave);
             return <g>
+              <g transform="translate(0 800) scale(1.3) translate(0 -820)">
               <path d="M -20 820 Q 300 780 560 840" fill="none" stroke="#5b3a22" strokeWidth={20} strokeLinecap="round" />
               <Ramita T={T} x={60} y={812} ang={-8} len={300} col="#2f8a44" col2="#5fb865" seed={21} />
               <Ramita T={T} x={250} y={796} ang={-40} len={200} col="#2f8a44" col2="#5fb865" seed={22} />
+              <Ramita T={T} x={150} y={806} ang={28} len={170} col="#2f8a44" col2="#5fb865" seed={25} />
               <Ramita T={T} x={540} y={836} ang={-4} len={corta < 1 ? 280 : 280 * Math.max(0.12, crece)} col={crece > 0 && corta >= 1 ? '#7fd36b' : '#2f8a44'} col2="#9be07a" seed={23} />
-              {corta >= 1 && <g transform={`translate(${klerp(700, 810, cae)} ${klerp(820, 1040, cae)}) rotate(${cae * 40})`} opacity={1 - kprog(T, K.Ag + 2.2, K.Ag + 2.5)}>
+              {corta >= 1 && <g transform={`translate(${klerp(700, 590, cae)} ${klerp(820, 975, cae)}) rotate(${cae * 70})`} opacity={1 - kprog(T, K.Ag + 2.2, K.Ag + 2.5)}>
                 <Ramita T={0} x={-120} y={0} ang={0} len={240} col="#2f8a44" col2="#5fb865" seed={24} /></g>}
               <g transform={`translate(560 836) rotate(${corta < 1 ? -30 + corta * 30 : 0})`} opacity={1 - kprog(T, K.Ag + 1.4, K.Ag + 1.8)}>
                 <line x1={0} y1={-40} x2={110} y2={-6} stroke={KC.ink} strokeWidth={12} strokeLinecap="round" /><line x1={0} y1={40} x2={110} y2={6} stroke={KC.ink} strokeWidth={12} strokeLinecap="round" />
                 <circle cx={-14} cy={-50} r={22} fill="none" stroke={KC.red} strokeWidth={10} /><circle cx={-14} cy={50} r={22} fill="none" stroke={KC.red} strokeWidth={10} /></g>
-              <Matraz T={T} x={820} y={1110} s={0.8} nivel={klerp(0.2, 0.55, kprog(T, K.Ag + 2.2, K.Ag + 3.2))} liquido="#fff1bf" />
+              </g>
+              <Matraz T={T} x={765} y={1290} s={1.3} nivel={klerp(0.2, 0.55, kprog(T, K.Ag + 2.2, K.Ag + 3.2))} liquido="#fff1bf" />
             </g>; })()}
         </TxSvg>
-        <Etq T={T} at={K.Ag + 0.4} until={K.Ta - 0.3} x={250} y={640} texto="Taxus baccata" it color={KC.ink} tam={34} />
-        <Etq T={T} at={K.Ag + 0.7} until={K.Ta - 0.3} x={250} y={690} texto="tejo europeo" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Ag + 0.4} until={K.Ta - 0.3} x={540} y={560} texto="Taxus baccata" it color={KC.ink} tam={36} />
+        <Etq T={T} at={K.Ag + 0.7} until={K.Ta - 0.3} x={540} y={615} texto="tejo europeo" color={KC.ink} tam={30} />
       </Escena>
       {/* 10 · Cap. 3 tanque: células de tejo en el caldo */}
       <Escena T={T} a={K.Ta} b={K.Ci} zoom={0.03}>
         <MundoBiorreactor T={T} turbio={0.25} burbujas={1} fondo={KC.cyan} etiquetaTanque="hasta 75,000 litros" />
       </Escena>
-      <Lupa T={T} at={K.Ta + 1.2} until={K.Ci - 0.4} x={600} y={880} r={200} fx={540} fy={1010} tinte={KC.leaf} etiqueta="AL MICROSCOPIO · CÉLULAS DE TEJO" interior={(Tl, r) => <CelulasTejo T={Tl} r={r} />} />
-      {/* 11 · cierre: la misma bolsa, ahora del tanque, y el árbol de pie */}
+      <Lupa T={T} at={K.Ta + 1.2} until={K.Ci - 0.4} x={560} y={880} r={250} fx={540} fy={1010} tinte={KC.leaf} etiqueta="AL MICROSCOPIO · CÉLULAS DE TEJO" interior={(Tl, r) => <CelulasTejo T={Tl} r={r} />} />
+      {/* 11 · cierre: el mismo tejo y la misma bolsa del inicio; ahora la bolsa se llena desde el tanque y el árbol sigue de pie */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <TxSvg>
-          <rect x={0} y={1200} width={KW} height={720} fill="#3f8a4a" />
-          <Tejo T={T} x={470} y={1200} s={0.85} seed={2} />
-          <TanqueMini T={T} x={860} y={960} s={0.75} />
-          <BolsaSuero T={T} x={220} y={500} s={0.95} tubo="M 220 760 Q 230 860 500 820 Q 700 790 760 870" nivel={0.8} />
+          <Suelo y={GY} id="g" />
+          <Tejo T={T} x={640} y={GY} s={1.32} seed={2} />
+          <TanqueMini T={T} x={895} y={1160} s={1.0} />
+          <BolsaSuero T={T} x={250} y={560} s={1.15} tubo="M 250 898 Q 260 1110 500 1030 Q 740 945 850 925" nivel={0.8} />
         </TxSvg>
       </Escena>
 
       {/* textos */}
       <Capitulo T={T} caps={[{ at: K.Ar, titulo: 'CORTEZA' }, { at: K.Ag, titulo: 'HOJAS' }, { at: K.Ta, titulo: 'TANQUE' }]} hasta={K.Ci} />
-      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.9} until={K.G + 3.6} texto="¿la inventó un químico?" x={330} y={1500} tam={40} />
-      <Chip T={T} at={K.G + 3.6} until={K.Te - 0.2} texto="paclitaxel = Taxol" y={1500} tam={42} borde={KC.yellow} />
-      <Etq T={T} at={K.Te + 1.0} until={K.Tx - 0.3} x={1050} y={860} texto="Taxus brevifolia" it lado="izq" color={KC.texto} tam={34} />
-      <Etq T={T} at={K.Te + 1.3} until={K.Tx - 0.3} x={1050} y={910} texto="tejo del Pacífico" lado="izq" color={KC.texto} tam={30} />
-      <Chip T={T} at={K.Te + 0.4} until={K.Tx - 0.2} texto="1962 · programa de plantas del NCI" y={1500} tam={36} borde={BARK_C} />
-      <Chip T={T} at={K.Tx + 2.3} until={K.Ca - 0.2} texto="cáncer de mama" x={300} y={1500} tam={40} borde={KC.pink} />
-      <Chip T={T} at={K.Tx + 2.6} until={K.Ca - 0.2} texto="de ovario" x={790} y={1500} tam={40} borde={KC.lilac} />
-      <Lupa T={T} at={K.Ca + 0.0} until={K.Ca + 1.1} x={540} y={840} r={280} fx={540} fy={900} tinte={KC.pink} etiqueta="POR DENTRO · CÉLULA" interior={(Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0d1424" /><g transform={`translate(${r - 540 * 0.5} ${r - 900 * 0.5}) scale(0.5)`}><CelulaDivision T={Tl} /></g></svg>} />
-      <Etq T={T} at={K.Ca + 1.2} until={K.Co - 0.2} x={180} y={610} texto="microtúbulos" color={MT} tam={34} />
-      <Etq T={T} at={K.Ca + 2.2} until={K.Co - 0.2} x={700} y={1100} texto="cromosomas" color={KC.yellow} tam={34} />
-      <Medidor T={T} at={K.Co + 0.3} until={K.Mu + 2.6} y={1440} valor={(t) => 1 - 0.9 * kprog(t, K.Co + 0.6, K.Co + 2.4, kEase.suave)} etiqueta="movimiento de los microtúbulos" color={HIELO} />
-      <Etq T={T} at={K.Co + 0.6} until={K.Mu - 0.2} x={720} y={760} texto="Taxol" color={TAXOL} tam={36} />
-      <Chip T={T} at={K.Mu + 0.6} until={K.Pr - 0.2} texto="cromosomas mal repartidos" y={1580} tam={38} borde={KC.red} />
-      <NumeroGigante T={T} at={K.Pr + 0.2} until={K.Es - 0.1} valor={10} dur={0.8} sufijo=" mg" x={300} y={660} tam={200} color={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.Es + 0.4} until={K.Es + 2.5} anio="1979" quien="Horwitz · Bronx, Nueva York" revista="Nature · Albert Einstein College of Medicine" y={560} />
-      <Chip T={T} at={K.Es + 2.6} until={K.Ar - 0.2} texto="en hielo: 4 °C" x={540} y={1500} tam={40} borde={HIELO} />
-      <Chip T={T} at={K.Es + 4.0} until={K.Ar - 0.2} texto="con taxol no se deshacen" y={500} tam={42} borde={TAXOL} />
-      <Chip T={T} at={K.Ar + 3.4} until={K.Ag - 0.2} texto="pelar la corteza mata al tejo" y={1580} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.Ag + 2.0} until={K.Ta - 0.2} texto="semisíntesis · FDA 1994" y={1500} tam={40} borde={KC.leaf} />
-      <Chip T={T} at={K.Ta + 0.4} until={K.Ci - 0.2} texto="desde 2002 · Phyton Biotech" y={430} x={380} tam={34} borde={KC.leaf} />
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="corteza → hojas → tanque" y={1500} tam={42} borde={KC.gold} />
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.9} until={K.G + 3.6} texto="¿la inventó un químico?" x={540} y={1520} tam={42} />
+      <Chip T={T} at={K.G + 3.6} until={K.Te - 0.2} texto="paclitaxel = Taxol" y={1520} tam={44} borde={KC.yellow} />
+      <Etq T={T} at={K.Te + 1.0} until={K.Tx - 0.3} x={1040} y={300} texto="Taxus brevifolia" it lado="izq" color={KC.texto} tam={36} />
+      <Etq T={T} at={K.Te + 1.3} until={K.Tx - 0.3} x={1040} y={355} texto="tejo del Pacífico" lado="izq" color={KC.texto} tam={30} />
+      <Chip T={T} at={K.Te + 0.4} until={K.Tx - 0.2} texto="1962 · programa de plantas del NCI" y={1540} tam={36} borde={BARK_C} />
+      <Chip T={T} at={K.Tx + 2.3} until={K.Ca - 0.2} texto="cáncer de mama" x={320} y={1400} tam={40} borde={KC.pink} />
+      <Chip T={T} at={K.Tx + 2.6} until={K.Ca - 0.2} texto="de ovario" x={815} y={1400} tam={40} borde={KC.lilac} />
+      <Lupa T={T} at={K.Ca + 0.0} until={K.Ca + 1.1} x={540} y={840} r={300} fx={540} fy={900} tinte={KC.pink} etiqueta="POR DENTRO · CÉLULA" interior={(Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0d1424" /><g transform={`translate(${r - 540 * 0.6} ${r - 900 * 0.6}) scale(0.6)`}><CelulaDivision T={Tl} /></g></svg>} />
+      <Etq T={T} at={K.Ca + 1.2} until={K.Co - 0.2} x={110} y={545} texto="microtúbulos" color={MT} tam={36} />
+      <Etq T={T} at={K.Ca + 2.2} until={K.Co - 0.2} x={610} y={1085} texto="cromosomas" color={KC.yellow} tam={36} />
+      <Medidor T={T} at={K.Co + 0.3} until={K.Mu + 2.6} y={1320} valor={(t) => 1 - 0.9 * kprog(t, K.Co + 0.6, K.Co + 2.4, kEase.suave)} etiqueta="movimiento de los microtúbulos" color={HIELO} />
+      <Etq T={T} at={K.Co + 0.6} until={K.Mu - 0.2} x={770} y={700} texto="Taxol" color={TAXOL} tam={38} />
+      <Chip T={T} at={K.Mu + 0.6} until={K.Pr - 0.2} texto="cromosomas mal repartidos" y={1480} tam={40} borde={KC.red} />
+      <NumeroGigante T={T} at={K.Pr + 0.2} until={K.Es - 0.1} valor={10} dur={0.8} sufijo=" mg" x={540} y={500} tam={230} color={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.Es + 0.4} until={K.Es + 2.5} anio="1979" quien="Horwitz · Bronx, Nueva York" revista="Nature · Albert Einstein College of Medicine" y={390} />
+      <Chip T={T} at={K.Es + 2.6} until={K.Ar - 0.2} texto="en hielo: 4 °C" x={540} y={1390} tam={40} borde={HIELO} />
+      <Chip T={T} at={K.Es + 4.0} until={K.Ar - 0.2} texto="con taxol no se deshacen" y={350} tam={44} borde={TAXOL} />
+      <Chip T={T} at={K.Ar + 3.4} until={K.Ag - 0.2} texto="pelar la corteza mata al tejo" y={540} x={600} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Ag + 2.0} until={K.Ta - 0.2} texto="semisíntesis · FDA 1994" x={285} y={1300} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.Ta + 0.4} until={K.Ci - 0.2} texto="desde 2002 · Phyton Biotech" y={358} x={660} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="corteza → hojas → tanque" y={1520} tam={44} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Te - 0.1} texto="No la diseñó un químico: *la tenía un árbol.*" />
