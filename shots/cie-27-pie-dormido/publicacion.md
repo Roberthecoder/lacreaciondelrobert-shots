@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu pie no se duerme: tus nervios hacen corto 🦶⚡ | Shot Científico 27
+Tu pie no se duerme: tus nervios hacen corto 🦶⚡
 ```
 Descripción:
 ```text

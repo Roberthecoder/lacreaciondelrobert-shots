@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Una IA ve en tu retina lo que los oftalmólogos no saben ver 👁️ | Shot IA 18
+Una IA ve en tu retina lo que los oftalmólogos no saben ver 👁️
 ```
 Descripción:
 ```text

@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las gotas de lluvia no son lágrimas 🍔🌧️ | Shot Científico 24
+Las gotas de lluvia no son lágrimas 🍔🌧️
 ```
 Descripción:
 ```text

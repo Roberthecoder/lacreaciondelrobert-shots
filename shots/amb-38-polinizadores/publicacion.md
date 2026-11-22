@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Sin abejas nos morimos de hambre? 🐝🌮 | Shot Ambiental 38
+¿Sin abejas nos morimos de hambre? 🐝🌮
 ```
 Descripción:
 ```text

@@ -39,7 +39,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-TikTok no te lee la mente: te mide 📱 | Shot IA 20
+TikTok no te lee la mente: te mide 📱
 ```
 Descripción:
 ```text

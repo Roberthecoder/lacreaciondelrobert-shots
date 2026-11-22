@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La Luna se aleja de ti casi 4 cm cada año 🌙 | Shot Científico 16
+La Luna se aleja de ti casi 4 cm cada año 🌙
 ```
 Descripción:
 ```text

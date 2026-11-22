@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-«Ya lo comí antes y no me hizo nada»: con este hongo, ESE es el riesgo 🍄 | Shot Fungi Mati 112
+«Ya lo comí antes y no me hizo nada»: con este hongo, ESE es el riesgo 🍄
 ```
 Descripción:
 ```text

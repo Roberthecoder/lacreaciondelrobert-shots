@@ -82,6 +82,8 @@ if (ORG) {
     console.log(`Voz orgánica lista (${t.coincidencia} % del guion encontrado en la grabación)`);
   } else console.log('Voz orgánica en caché');
 } else if (!meta || meta.hash !== hash || !fs.existsSync(mp3)) {
+  // Candado del re-render masivo (22 nov 2026): si existe motor/SOLO_VOZ_GUARDADA, nunca se pide voz nueva (no se gastan créditos).
+  if (fs.existsSync(new URL('./SOLO_VOZ_GUARDADA', import.meta.url))) throw new Error('Candado SOLO_VOZ_GUARDADA: la voz de este shot no está guardada o su texto cambió; no se genera voz nueva.');
   if (!KEY) throw new Error('Falta ELEVENLABS_API_KEY y la narración no está en caché.');
   // sin voice_settings: ElevenLabs usa los ajustes guardados en la voz
   const H = { 'xi-api-key': KEY };

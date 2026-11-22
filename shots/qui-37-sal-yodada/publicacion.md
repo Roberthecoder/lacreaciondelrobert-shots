@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese «yodada» en tu sal no es adorno 🧂 | Shot Químico 37
+Ese «yodada» en tu sal no es adorno 🧂
 ```
 Descripción:
 ```text

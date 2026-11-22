@@ -30,7 +30,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa bolsa trae tus propias células cazando cáncer 🩸 | Shot Biotecnológico 31
+Esa bolsa trae tus propias células cazando cáncer 🩸
 ```
 Descripción:
 ```text

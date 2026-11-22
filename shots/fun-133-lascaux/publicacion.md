@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta pintura nunca la vas a ver… por un hongo 🍄 | Shot Fungi Mati 133
+Esta pintura nunca la vas a ver… por un hongo 🍄
 ```
 Descripción:
 ```text

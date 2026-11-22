@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La «isla de basura» del Pacífico no se puede pisar 🌊 | Shot Ambiental 58
+La «isla de basura» del Pacífico no se puede pisar 🌊
 ```
 Descripción:
 ```text

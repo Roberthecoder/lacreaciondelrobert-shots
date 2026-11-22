@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa masa no es solo maíz: es química con cal 🌽 | Shot Químico 05
+Esa masa no es solo maíz: es química con cal 🌽
 ```
 Descripción:
 ```text

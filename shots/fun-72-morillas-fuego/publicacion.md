@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este bosque quemado se llena de hongos 🍄🔥 | Shot Fungi Mati 72
+Este bosque quemado se llena de hongos 🍄🔥
 ```
 Descripción:
 ```text

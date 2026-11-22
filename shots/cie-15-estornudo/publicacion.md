@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu estornudo no sale como bala 🤧 | Shot Científico 15
+Tu estornudo no sale como bala 🤧
 ```
 Descripción:
 ```text

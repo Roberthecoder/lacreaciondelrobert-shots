@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Menos de 1 de cada 5 confía en el agua de su llave 🚰 | Shot Ambiental 45
+Menos de 1 de cada 5 confía en el agua de su llave 🚰
 ```
 Descripción:
 ```text

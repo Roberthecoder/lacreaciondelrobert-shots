@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La sal no calienta el hielo: le roba calor a tu helado 🍦 | Shot Químico 18
+La sal no calienta el hielo: le roba calor a tu helado 🍦
 ```
 Descripción:
 ```text

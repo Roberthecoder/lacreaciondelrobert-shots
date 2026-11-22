@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas uvas sin semilla las infló la hormona de un hongo 🍇 | Shot Fungi Mati 75
+Esas uvas sin semilla las infló la hormona de un hongo 🍇
 ```
 Descripción:
 ```text

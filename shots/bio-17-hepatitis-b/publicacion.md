@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La vacuna que te ponen al nacer la hizo una levadura 💉 | Shot Biotecnológico 17
+La vacuna que te ponen al nacer la hizo una levadura 💉
 ```
 Descripción:
 ```text

@@ -53,7 +53,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese riñón no es de una persona: es de un cerdo 🐷 | Shot Biotecnológico 34
+Ese riñón no es de una persona: es de un cerdo 🐷
 ```
 Descripción:
 ```text

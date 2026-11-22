@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Lo blanco de tu leche no es un pigmento 🥛 | Shot Químico 57
+Lo blanco de tu leche no es un pigmento 🥛
 ```
 Descripción:
 ```text

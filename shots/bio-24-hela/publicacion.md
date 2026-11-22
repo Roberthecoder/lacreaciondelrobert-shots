@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas células son de una mujer, no de un laboratorio 🔬 | Shot Biotecnológico 24
+Esas células son de una mujer, no de un laboratorio 🔬
 ```
 Descripción:
 ```text

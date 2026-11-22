@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un tronco de 8 m que quizá NO era hongo 🍄❓ | Shot Fungi Mati 57
+Un tronco de 8 m que quizá NO era hongo 🍄❓
 ```
 Descripción:
 ```text

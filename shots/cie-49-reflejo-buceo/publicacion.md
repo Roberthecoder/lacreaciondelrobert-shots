@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu corazón se frena con agua fría 🦭 | Shot Científico 49
+Tu corazón se frena con agua fría 🦭
 ```
 Descripción:
 ```text

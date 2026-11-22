@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese frasquito no es solo para arrugas ☠️💉 | Shot Biotecnológico 47
+Ese frasquito no es solo para arrugas ☠️💉
 ```
 Descripción:
 ```text

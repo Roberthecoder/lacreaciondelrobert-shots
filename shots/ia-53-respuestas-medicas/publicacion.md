@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Un chatbot contesta mejor que tu médico? Lo que sí dice el estudio 🩺 | Shot IA 53
+¿Un chatbot contesta mejor que tu médico? Lo que sí dice el estudio 🩺
 ```
 Descripción:
 ```text

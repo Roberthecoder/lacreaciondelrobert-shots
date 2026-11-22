@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu salsa de soya la cocinó un HONGO 🍄 | Shot Fungi Mati 16
+Tu salsa de soya la cocinó un HONGO 🍄
 ```
 Descripción:
 ```text

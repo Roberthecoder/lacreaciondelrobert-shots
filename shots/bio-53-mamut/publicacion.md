@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Quieres revivir un mamut? Sigue estos 5 pasos 🦣 | Shot Biotecnológico 53
+¿Quieres revivir un mamut? Sigue estos 5 pasos 🦣
 ```
 Descripción:
 ```text

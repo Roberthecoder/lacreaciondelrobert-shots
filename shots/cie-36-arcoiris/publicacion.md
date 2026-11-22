@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Nadie ve el mismo arcoíris que tú 🌈 | Shot Científico 36
+Nadie ve el mismo arcoíris que tú 🌈
 ```
 Descripción:
 ```text

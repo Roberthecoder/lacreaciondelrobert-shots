@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas bolitas de tu frijol son fábricas de abono 🌱 | Shot Biotecnológico 51
+Esas bolitas de tu frijol son fábricas de abono 🌱
 ```
 Descripción:
 ```text

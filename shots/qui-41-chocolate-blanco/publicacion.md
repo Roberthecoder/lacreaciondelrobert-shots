@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa capa blanca no es moho 🍫 | Shot Químico 41
+Esa capa blanca no es moho 🍫
 ```
 Descripción:
 ```text

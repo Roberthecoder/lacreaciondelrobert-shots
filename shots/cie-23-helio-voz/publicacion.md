@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El helio no cambia tu nota: cambia tu timbre 🎈 | Shot Científico 23
+El helio no cambia tu nota: cambia tu timbre 🎈
 ```
 Descripción:
 ```text

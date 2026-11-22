@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Al Ángel le agregaron 14 escalones 🏙️ | Shot Ambiental 06
+Al Ángel le agregaron 14 escalones 🏙️
 ```
 Descripción:
 ```text

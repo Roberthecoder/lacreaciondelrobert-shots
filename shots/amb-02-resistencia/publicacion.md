@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu antibiótico entrenó a las bacterias más duras 💊 | Shot Ambiental 02
+Tu antibiótico entrenó a las bacterias más duras 💊
 ```
 Descripción:
 ```text

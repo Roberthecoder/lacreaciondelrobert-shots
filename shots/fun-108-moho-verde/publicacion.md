@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa pelusa blanca NO es tu hongo: es el enemigo 🟢🍄 | Shot Fungi Mati 108
+Esa pelusa blanca NO es tu hongo: es el enemigo 🟢🍄
 ```
 Descripción:
 ```text

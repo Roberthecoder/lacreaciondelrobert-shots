@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese dorado no es quemado: es química 🥩 | Shot Químico 06
+Ese dorado no es quemado: es química 🥩
 ```
 Descripción:
 ```text

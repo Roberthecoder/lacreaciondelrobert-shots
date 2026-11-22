@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Hasta dónde puedes ver una vela de noche? 🕯️ | Shot Científico 47
+¿Hasta dónde puedes ver una vela de noche? 🕯️
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese plátano no es único: es un clon 🍌 | Shot Biotecnológico 22
+Ese plátano no es único: es un clon 🍌
 ```
 Descripción:
 ```text

@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es agua de jamaica: es un medidor de pH 🥬 | Shot Químico 04
+Esto no es agua de jamaica: es un medidor de pH 🥬
 ```
 Descripción:
 ```text

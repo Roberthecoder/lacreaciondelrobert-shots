@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La hamburguesa vegetal que "sangra" 🍔 | Shot Biotecnológico 43
+La hamburguesa vegetal que "sangra" 🍔
 ```
 Descripción:
 ```text

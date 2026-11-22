@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa pelusa blanca no es moho: es la comida de esta abeja bebé 🐝🍄 | Shot Fungi Mati 99
+Esa pelusa blanca no es moho: es la comida de esta abeja bebé 🐝🍄
 ```
 Descripción:
 ```text

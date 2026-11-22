@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este hongo huele a hot cakes con miel de maple 🍄🥞 | Shot Fungi Mati 129
+Este hongo huele a hot cakes con miel de maple 🍄🥞
 ```
 Descripción:
 ```text

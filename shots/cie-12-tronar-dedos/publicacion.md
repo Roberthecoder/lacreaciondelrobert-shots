@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Cuando te truenas los dedos no se rompe nada 🫰 | Shot Científico 12
+Cuando te truenas los dedos no se rompe nada 🫰
 ```
 Descripción:
 ```text

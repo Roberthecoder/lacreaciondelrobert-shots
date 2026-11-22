@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El mar no se vuelve ácido… y aun así deshace conchas 🐚 | Shot Ambiental 29
+El mar no se vuelve ácido… y aun así deshace conchas 🐚
 ```
 Descripción:
 ```text

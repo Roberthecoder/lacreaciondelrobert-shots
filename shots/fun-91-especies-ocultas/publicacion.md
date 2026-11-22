@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-9 de cada 10 hongos no tienen nombre 🍄❓ | Shot Fungi Mati 91
+9 de cada 10 hongos no tienen nombre 🍄❓
 ```
 Descripción:
 ```text

@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este granito no es azúcar 🍬 | Shot Químico 50
+Este granito no es azúcar 🍬
 ```
 Descripción:
 ```text

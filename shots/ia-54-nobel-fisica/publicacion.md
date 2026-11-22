@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los imanes que le enseñaron a recordar a una máquina: el Nobel de Física 2024 🧲 | Shot IA 54
+Los imanes que le enseñaron a recordar a una máquina: el Nobel de Física 2024 🧲
 ```
 Descripción:
 ```text

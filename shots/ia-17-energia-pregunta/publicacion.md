@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Cuánta energía gasta una pregunta a la IA? Menos que 9 s de tele 📺 | Shot IA 17
+¿Cuánta energía gasta una pregunta a la IA? Menos que 9 s de tele 📺
 ```
 Descripción:
 ```text

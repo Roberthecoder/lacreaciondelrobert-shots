@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa rayita no es tinta: es oro y anticuerpos 🧪 | Shot Biotecnológico 14
+Esa rayita no es tinta: es oro y anticuerpos 🧪
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA de hospital que no vio 2 de cada 3 casos de sepsis 🏥 | Shot IA 28
+La IA de hospital que no vio 2 de cada 3 casos de sepsis 🏥
 ```
 Descripción:
 ```text

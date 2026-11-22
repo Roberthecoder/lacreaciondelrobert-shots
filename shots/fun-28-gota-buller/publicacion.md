@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu champiñón está DISPARANDO esporas 💧 la gota de Buller | Shot Fungi Mati 28
+Tu champiñón está DISPARANDO esporas 💧 la gota de Buller
 ```
 Descripción:
 ```text

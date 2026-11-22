@@ -16,6 +16,7 @@ export function crearMezcla(htmlPath, { seed = 7 } = {}) {
   const warp = (ta) => { for (let i = SEC.length - 1; i >= 0; i--) { const x = SEC[i]; if (ta >= x.a) return x.p + (ta - x.a) * x.dur / x.nat; } return ta; };
   const TOTAL = acc, SR = 48000, N = Math.ceil((TOTAL + 0.3) * SR);
   const mus = new Float32Array(N), sfx = new Float32Array(N);
+  let CAMA = null;
   let sd = seed; const rnd = () => { sd = (sd * 1664525 + 1013904223) >>> 0; return sd / 4294967296; };
   const NOISE = Float32Array.from({ length: SR * 2 }, () => rnd() * 2 - 1);
   const add = (buf, ta, fn, dur) => { const t = warp(ta); const i0 = Math.max(0, Math.floor(t * SR)), n = Math.floor(dur * SR); for (let i = 0; i < n && i0 + i < N; i++) buf[i0 + i] += fn(i / SR, i); };
@@ -43,8 +44,9 @@ export function crearMezcla(htmlPath, { seed = 7 } = {}) {
     // cama grave continua y filtrada; corte bajo = música "tapada" (estado de la historia)
     // Cama de los narrados: desde el 22 nov 2026 es la «cama luminosa» (registro medio-agudo, acordes y tema; ver cama-luminosa.mjs).
     // Los parámetros `notas` y `corte` de la cama grave vieja se aceptan pero ya no se usan.
-    pad: (t0, t1, g = 0.05) => camaLuminosa(mus, SR, Math.max(0, Math.floor(warp(t0) * SR)), Math.min(N, Math.floor(warp(t1) * SR)), { g, semilla: 11 }),
+    pad: (t0, t1, g = 0.05) => { CAMA = CAMA ? { a: Math.min(CAMA.a, t0), b: Math.max(CAMA.b, t1), g: Math.max(CAMA.g, g) } : { a: t0, b: t1, g }; },
     guardar: (out, { musG = 0.9, sfxG = 0.8 } = {}) => {
+      if (CAMA) { camaLuminosa(mus, SR, Math.max(0, Math.floor(warp(CAMA.a) * SR)), Math.min(N, Math.floor(warp(CAMA.b) * SR)), { g: CAMA.g, semilla: 11 }); CAMA = null; }
       const buf = Buffer.alloc(44 + N * 4);
       buf.write('RIFF', 0); buf.writeUInt32LE(36 + N * 4, 4); buf.write('WAVE', 8); buf.write('fmt ', 12); buf.writeUInt32LE(16, 16);
       buf.writeUInt16LE(1, 20); buf.writeUInt16LE(2, 22); buf.writeUInt32LE(SR, 24); buf.writeUInt32LE(SR * 4, 28); buf.writeUInt16LE(4, 32); buf.writeUInt16LE(16, 34);

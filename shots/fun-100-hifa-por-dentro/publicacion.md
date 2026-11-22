@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese moho no está hecho de hilos: son tubos con un río dentro 🍄 | Shot Fungi Mati 100
+Ese moho no está hecho de hilos: son tubos con un río dentro 🍄
 ```
 Descripción:
 ```text

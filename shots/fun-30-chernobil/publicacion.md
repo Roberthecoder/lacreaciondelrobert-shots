@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los hongos negros del reactor de Chernóbil ☢️ | Shot Fungi Mati 30
+Los hongos negros del reactor de Chernóbil ☢️
 ```
 Descripción:
 ```text

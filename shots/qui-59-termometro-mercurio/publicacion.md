@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Por qué NO barrer el mercurio de un termómetro? 🌡️ | Shot Químico 59
+¿Por qué NO barrer el mercurio de un termómetro? 🌡️
 ```
 Descripción:
 ```text

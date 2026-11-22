@@ -31,7 +31,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu queso lo cuajó un microbio 🧀 | Shot Biotecnológico 10
+Tu queso lo cuajó un microbio 🧀
 ```
 Descripción:
 ```text

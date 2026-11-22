@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-425 hongos silvestres se comen en México… ¿y tú solo el champiñón? 🍄 | Shot Fungi Mati 64
+425 hongos silvestres se comen en México… ¿y tú solo el champiñón? 🍄
 ```
 Descripción:
 ```text

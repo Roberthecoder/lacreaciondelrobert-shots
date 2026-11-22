@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta sangre azul revisa tus vacunas 💙🦀 | Shot Biotecnológico 21
+Esta sangre azul revisa tus vacunas 💙🦀
 ```
 Descripción:
 ```text

@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las arrieras NO cargan hojas para comérselas: son granjeras 🐜🍄 | Shot Fungi Mati 22
+Las arrieras NO cargan hojas para comérselas: son granjeras 🐜🍄
 ```
 Descripción:
 ```text

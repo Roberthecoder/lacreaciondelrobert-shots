@@ -31,7 +31,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo que se derrite en TINTA 🖋️ (y caza gusanos) | Shot Fungi Mati 40
+El hongo que se derrite en TINTA 🖋️ (y caza gusanos)
 ```
 Descripción:
 ```text

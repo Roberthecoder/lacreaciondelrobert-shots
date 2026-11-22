@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-998 de cada 1,000 incendios los prendimos nosotros 🔥 | Shot Ambiental 50
+998 de cada 1,000 incendios los prendimos nosotros 🔥
 ```
 Descripción:
 ```text

@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las bolitas de «no comer» no son veneno 💧 | Shot Químico 27
+Las bolitas de «no comer» no son veneno 💧
 ```
 Descripción:
 ```text

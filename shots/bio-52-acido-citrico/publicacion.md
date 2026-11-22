@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu gomita ácida no es de limón: es de moho 🍬 | Shot Biotecnológico 52
+Tu gomita ácida no es de limón: es de moho 🍬
 ```
 Descripción:
 ```text

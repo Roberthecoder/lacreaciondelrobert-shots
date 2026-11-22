@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese olor a hongo no es tierra: lo firma UNA molécula 🍄 | Shot Fungi Mati 127
+Ese olor a hongo no es tierra: lo firma UNA molécula 🍄
 ```
 Descripción:
 ```text

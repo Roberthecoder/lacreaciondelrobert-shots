@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese olor no es el gas de tu estufa 🔔 | Shot Químico 11
+Ese olor no es el gas de tu estufa 🔔
 ```
 Descripción:
 ```text

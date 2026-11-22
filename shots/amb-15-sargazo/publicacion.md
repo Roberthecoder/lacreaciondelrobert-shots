@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El sargazo no es basura: viene de un cinturón de 8,850 km 🌊 | Shot Ambiental 15
+El sargazo no es basura: viene de un cinturón de 8,850 km 🌊
 ```
 Descripción:
 ```text

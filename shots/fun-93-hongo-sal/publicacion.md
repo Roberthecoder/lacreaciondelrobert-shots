@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este hongo no puede vivir sin sal 🧂🍄 | Shot Fungi Mati 93
+Este hongo no puede vivir sin sal 🧂🍄
 ```
 Descripción:
 ```text

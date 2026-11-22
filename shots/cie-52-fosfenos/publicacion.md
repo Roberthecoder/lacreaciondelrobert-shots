@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las luces que ves al tallarte los ojos ✨ | Shot Científico 52
+Las luces que ves al tallarte los ojos ✨
 ```
 Descripción:
 ```text

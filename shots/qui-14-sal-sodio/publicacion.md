@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa sal está hecha de un metal y un gas venenoso 🧂 | Shot Químico 14
+Esa sal está hecha de un metal y un gas venenoso 🧂
 ```
 Descripción:
 ```text

@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El moho de la tierra que salvó los trasplantes 🍄 | Shot Fungi Mati 45
+El moho de la tierra que salvó los trasplantes 🍄
 ```
 Descripción:
 ```text

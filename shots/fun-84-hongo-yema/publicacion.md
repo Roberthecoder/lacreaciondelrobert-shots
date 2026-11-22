@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Eso no es un huevo: es un hongo a punto de nacer 🍄🌋 | Shot Fungi Mati 84
+Eso no es un huevo: es un hongo a punto de nacer 🍄🌋
 ```
 Descripción:
 ```text

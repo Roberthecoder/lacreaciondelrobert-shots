@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tú contra un bot: ¿quién resuelve mejor los captchas? 🤖 | Shot IA 10
+Tú contra un bot: ¿quién resuelve mejor los captchas? 🤖
 ```
 Descripción:
 ```text

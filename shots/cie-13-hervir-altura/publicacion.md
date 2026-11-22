@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-En la CDMX el agua hierve a 92 °C, no a 100 🌡️ | Shot Científico 13
+En la CDMX el agua hierve a 92 °C, no a 100 🌡️
 ```
 Descripción:
 ```text

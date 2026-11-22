@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tus dedos arrugados no son piel aguada 🖐️ | Shot Científico 04
+Tus dedos arrugados no son piel aguada 🖐️
 ```
 Descripción:
 ```text

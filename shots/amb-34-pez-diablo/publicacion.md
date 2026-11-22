@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este "limpiapeceras" invadió los ríos de México 🐟 | Shot Ambiental 34
+Este "limpiapeceras" invadió los ríos de México 🐟
 ```
 Descripción:
 ```text

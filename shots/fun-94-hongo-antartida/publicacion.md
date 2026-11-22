@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo antártico que pasó 18 meses en el espacio 🪨🚀 | Shot Fungi Mati 94
+El hongo antártico que pasó 18 meses en el espacio 🪨🚀
 ```
 Descripción:
 ```text

@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese olor no es tu sudor 🦠 | Shot Químico 29
+Ese olor no es tu sudor 🦠
 ```
 Descripción:
 ```text

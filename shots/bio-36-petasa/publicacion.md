@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta bacteria se come el plástico PET ♻️ | Shot Biotecnológico 36
+Esta bacteria se come el plástico PET ♻️
 ```
 Descripción:
 ```text

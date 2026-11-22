@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Por qué ves estrellitas al pararte rápido ✨ | Shot Científico 51
+Por qué ves estrellitas al pararte rápido ✨
 ```
 Descripción:
 ```text

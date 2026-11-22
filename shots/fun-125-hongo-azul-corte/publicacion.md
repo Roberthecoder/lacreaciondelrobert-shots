@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este hongo no está podrido: se pone AZUL al cortarlo 🍄 | Shot Fungi Mati 125
+Este hongo no está podrido: se pone AZUL al cortarlo 🍄
 ```
 Descripción:
 ```text

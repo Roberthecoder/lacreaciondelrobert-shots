@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese calentador no trae pilas: es hierro oxidándose 🔥 | Shot Químico 25
+Ese calentador no trae pilas: es hierro oxidándose 🔥
 ```
 Descripción:
 ```text

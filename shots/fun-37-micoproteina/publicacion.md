@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta "carne" es un HONGO: así se hace la micoproteína 🍄 | Shot Fungi Mati 37
+Esta "carne" es un HONGO: así se hace la micoproteína 🍄
 ```
 Descripción:
 ```text

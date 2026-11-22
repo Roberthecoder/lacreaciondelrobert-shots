@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa mancha en la piedra NO es una planta 🍄 | Shot Fungi Mati 19
+Esa mancha en la piedra NO es una planta 🍄
 ```
 Descripción:
 ```text

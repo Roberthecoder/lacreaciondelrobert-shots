@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta línea es el aire que respiras 🌋 | Shot Ambiental 37
+Esta línea es el aire que respiras 🌋
 ```
 Descripción:
 ```text

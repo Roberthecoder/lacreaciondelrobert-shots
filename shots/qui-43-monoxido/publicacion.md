@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El gas del anafre que no huele ni se ve 🔥 | Shot Químico 43
+El gas del anafre que no huele ni se ve 🔥
 ```
 Descripción:
 ```text

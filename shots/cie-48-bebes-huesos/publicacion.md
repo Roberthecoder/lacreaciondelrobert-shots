@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los bebés tienen más piezas de hueso que tú 🦴 | Shot Científico 48
+Los bebés tienen más piezas de hueso que tú 🦴
 ```
 Descripción:
 ```text

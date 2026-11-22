@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese moho no se come tu tortilla: la digiere por fuera 🍄 | Shot Fungi Mati 150
+Ese moho no se come tu tortilla: la digiere por fuera 🍄
 ```
 Descripción:
 ```text

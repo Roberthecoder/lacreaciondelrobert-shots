@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA ayudó más a los novatos que a los expertos de un call center 🎧 | Shot IA 44
+La IA ayudó más a los novatos que a los expertos de un call center 🎧
 ```
 Descripción:
 ```text

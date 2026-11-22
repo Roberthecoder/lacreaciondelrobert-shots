@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese humo no es humo 🌫️ | Shot Químico 24
+Ese humo no es humo 🌫️
 ```
 Descripción:
 ```text

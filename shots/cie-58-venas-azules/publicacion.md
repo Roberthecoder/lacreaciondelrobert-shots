@@ -31,7 +31,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tus venas no son azules: tu sangre es roja oscura 🩸 | Shot Científico 58
+Tus venas no son azules: tu sangre es roja oscura 🩸
 ```
 Descripción:
 ```text

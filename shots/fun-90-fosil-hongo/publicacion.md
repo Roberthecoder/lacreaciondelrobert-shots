@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿El hongo más viejo? Escondido en una roca de mil millones de años 🍄 | Shot Fungi Mati 90
+¿El hongo más viejo? Escondido en una roca de mil millones de años 🍄
 ```
 Descripción:
 ```text

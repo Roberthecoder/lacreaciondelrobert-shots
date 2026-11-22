@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Por qué casi ningún hongo te puede atacar: tu escudo de 37 °C 🌡️ | Shot Fungi Mati 14
+Por qué casi ningún hongo te puede atacar: tu escudo de 37 °C 🌡️
 ```
 Descripción:
 ```text

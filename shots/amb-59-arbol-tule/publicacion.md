@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Parece un bosque… y es UN solo árbol 🌳 | Shot Ambiental 59
+Parece un bosque… y es UN solo árbol 🌳
 ```
 Descripción:
 ```text

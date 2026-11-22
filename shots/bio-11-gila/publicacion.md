@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La medicina que salió de la saliva de un lagarto 🦎 | Shot Biotecnológico 11
+La medicina que salió de la saliva de un lagarto 🦎
 ```
 Descripción:
 ```text

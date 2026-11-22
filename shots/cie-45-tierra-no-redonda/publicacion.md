@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El Everest NO es el punto más lejano del centro de la Tierra | Shot Científico 45
+El Everest NO es el punto más lejano del centro de la Tierra
 ```
 Descripción:
 ```text

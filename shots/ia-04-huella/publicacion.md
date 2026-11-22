@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Entrenar esta IA con 1 tarjeta: más de 700 años ⏳ | Shot IA 04
+Entrenar esta IA con 1 tarjeta: más de 700 años ⏳
 ```
 Descripción:
 ```text

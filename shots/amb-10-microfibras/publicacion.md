@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu suéter suelta 700 mil fibras de plástico en una lavada 🧶 | Shot Ambiental 10
+Tu suéter suelta 700 mil fibras de plástico en una lavada 🧶
 ```
 Descripción:
 ```text

@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es un estanque: es una ventana a un río 💧 | Shot Ambiental 57
+Esto no es un estanque: es una ventana a un río 💧
 ```
 Descripción:
 ```text

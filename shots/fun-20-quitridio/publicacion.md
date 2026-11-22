@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo invisible que le para el corazón a las ranas 🐸 | Shot Fungi Mati 20
+El hongo invisible que le para el corazón a las ranas 🐸
 ```
 Descripción:
 ```text

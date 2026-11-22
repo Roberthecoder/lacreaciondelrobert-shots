@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta hormona ya no sale de cadáveres: sale de bacterias 🧬 | Shot Biotecnológico 30
+Esta hormona ya no sale de cadáveres: sale de bacterias 🧬
 ```
 Descripción:
 ```text

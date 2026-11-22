@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese limón no te da electricidad 🍋⚡ | Shot Químico 23
+Ese limón no te da electricidad 🍋⚡
 ```
 Descripción:
 ```text

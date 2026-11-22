@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Por qué el hongo de la uña tarda TANTO en irse? 🦶 | Shot Fungi Mati 35
+¿Por qué el hongo de la uña tarda TANTO en irse? 🦶
 ```
 Descripción:
 ```text

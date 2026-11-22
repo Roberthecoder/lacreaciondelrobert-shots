@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-No eres 10 bacterias por célula: es casi 1 a 1 🦠 | Shot Científico 06
+No eres 10 bacterias por célula: es casi 1 a 1 🦠
 ```
 Descripción:
 ```text

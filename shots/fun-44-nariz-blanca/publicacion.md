@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo que NO deja dormir a los murciélagos 🦇 | Shot Fungi Mati 44
+El hongo que NO deja dormir a los murciélagos 🦇
 ```
 Descripción:
 ```text

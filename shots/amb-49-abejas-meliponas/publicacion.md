@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La abeja maya que NO pica 🐝 | Shot Ambiental 49
+La abeja maya que NO pica 🐝
 ```
 Descripción:
 ```text

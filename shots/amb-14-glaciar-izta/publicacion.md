@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este glaciar mexicano ya nunca lo vas a ver 🏔️ | Shot Ambiental 14
+Este glaciar mexicano ya nunca lo vas a ver 🏔️
 ```
 Descripción:
 ```text

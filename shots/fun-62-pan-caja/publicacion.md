@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu pan de caja no es inmortal: suele traer antimoho 🍞 | Shot Fungi Mati 62
+Tu pan de caja no es inmortal: suele traer antimoho 🍞
 ```
 Descripción:
 ```text

@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa piel blanca entre tus dedos puede ser un hongo 🦶 | Shot Fungi Mati 08
+Esa piel blanca entre tus dedos puede ser un hongo 🦶
 ```
 Descripción:
 ```text

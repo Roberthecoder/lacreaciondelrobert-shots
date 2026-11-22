@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Niños que veían bajo el agua sin visor 🌊 | Shot Científico 39
+Niños que veían bajo el agua sin visor 🌊
 ```
 Descripción:
 ```text

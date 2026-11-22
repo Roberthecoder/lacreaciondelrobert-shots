@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa espuma del río no es jabón: está llena de estrellas ✨ | Shot Fungi Mati 130
+Esa espuma del río no es jabón: está llena de estrellas ✨
 ```
 Descripción:
 ```text

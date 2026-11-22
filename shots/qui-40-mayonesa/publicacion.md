@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa mayonesa no es una pasta: es aceite 🥄 | Shot Químico 40
+Esa mayonesa no es una pasta: es aceite 🥄
 ```
 Descripción:
 ```text

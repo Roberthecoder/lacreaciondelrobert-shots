@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta tos NO te la pegó nadie: te la da tu casa 🍄 | Shot Fungi Mati 89
+Esta tos NO te la pegó nadie: te la da tu casa 🍄
 ```
 Descripción:
 ```text

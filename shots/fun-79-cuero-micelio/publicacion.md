@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta cartera no es de piel de vaca: es de hongo 🍄 | Shot Fungi Mati 79
+Esta cartera no es de piel de vaca: es de hongo 🍄
 ```
 Descripción:
 ```text

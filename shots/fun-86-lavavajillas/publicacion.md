@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu lavavajillas puede lavar a 80 °C… y AHÍ vive un hongo 🍄 | Shot Fungi Mati 86
+Tu lavavajillas puede lavar a 80 °C… y AHÍ vive un hongo 🍄
 ```
 Descripción:
 ```text

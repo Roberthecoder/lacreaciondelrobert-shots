@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Una IA encontró un planeta que nadie había visto 🪐 | Shot IA 48
+Una IA encontró un planeta que nadie había visto 🪐
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Creían que la IA los hacía más rápidos: tardaron 19 % más ⏱️ | Shot IA 16
+Creían que la IA los hacía más rápidos: tardaron 19 % más ⏱️
 ```
 Descripción:
 ```text

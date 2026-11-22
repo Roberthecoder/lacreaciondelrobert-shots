@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta medicina viajó por correo en un frasco 📦🍄 | Shot Fungi Mati 136
+Esta medicina viajó por correo en un frasco 📦🍄
 ```
 Descripción:
 ```text

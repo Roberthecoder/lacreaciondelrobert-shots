@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa madera verde NO está pintada: la tiñe un hongo 🍄 | Shot Fungi Mati 126
+Esa madera verde NO está pintada: la tiñe un hongo 🍄
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Era para la diabetes y una IA predijo que mata bacterias 💊 | Shot IA 46
+Era para la diabetes y una IA predijo que mata bacterias 💊
 ```
 Descripción:
 ```text

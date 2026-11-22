@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El primer transgénico del súper fue un jitomate 🍅 | Shot Biotecnológico 58
+El primer transgénico del súper fue un jitomate 🍅
 ```
 Descripción:
 ```text

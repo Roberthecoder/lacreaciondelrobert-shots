@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La levadura de tu pan cuenta a sus hijas en cicatrices 🍞🔬 | Shot Fungi Mati 101
+La levadura de tu pan cuenta a sus hijas en cicatrices 🍞🔬
 ```
 Descripción:
 ```text

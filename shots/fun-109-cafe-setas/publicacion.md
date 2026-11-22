@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es tierra: es tu café… y puede dar setas ☕🍄 | Shot Fungi Mati 109
+Esto no es tierra: es tu café… y puede dar setas ☕🍄
 ```
 Descripción:
 ```text

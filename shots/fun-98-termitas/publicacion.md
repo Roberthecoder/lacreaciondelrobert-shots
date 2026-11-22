@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese montículo no es una casa: es una granja de hongos 🍄🐜 | Shot Fungi Mati 98
+Ese montículo no es una casa: es una granja de hongos 🍄🐜
 ```
 Descripción:
 ```text

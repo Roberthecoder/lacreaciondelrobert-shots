@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La plaga que se combate soltando más moscas 🪰 | Shot Ambiental 04
+La plaga que se combate soltando más moscas 🪰
 ```
 Descripción:
 ```text

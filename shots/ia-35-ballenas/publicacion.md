@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los cachalotes tienen un "alfabeto" de clics (y ninguna IA lo tradujo) 🐋 | Shot IA 35
+Los cachalotes tienen un "alfabeto" de clics (y ninguna IA lo tradujo) 🐋
 ```
 Descripción:
 ```text

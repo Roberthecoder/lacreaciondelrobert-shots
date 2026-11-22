@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa célula no está rota: está doblada 🩸✂️ | Shot Biotecnológico 32
+Esa célula no está rota: está doblada 🩸✂️
 ```
 Descripción:
 ```text

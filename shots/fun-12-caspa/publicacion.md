@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu caspa tiene una levadura que come grasa 🍄 | Shot Fungi Mati 12
+Tu caspa tiene una levadura que come grasa 🍄
 ```
 Descripción:
 ```text

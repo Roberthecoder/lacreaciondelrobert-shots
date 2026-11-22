@@ -39,7 +39,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu microondas no calienta de adentro hacia afuera 🍲 | Shot Científico 26
+Tu microondas no calienta de adentro hacia afuera 🍲
 ```
 Descripción:
 ```text

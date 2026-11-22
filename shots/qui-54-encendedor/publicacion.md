@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese encendedor no está lleno de gas 🔥 | Shot Químico 54
+Ese encendedor no está lleno de gas 🔥
 ```
 Descripción:
 ```text

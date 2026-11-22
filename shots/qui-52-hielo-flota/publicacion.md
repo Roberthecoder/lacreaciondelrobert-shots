@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese hielo no es agua apretada: tiene huecos 🧊 | Shot Químico 52
+Ese hielo no es agua apretada: tiene huecos 🧊
 ```
 Descripción:
 ```text

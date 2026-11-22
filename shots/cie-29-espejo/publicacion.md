@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El espejo NO invierte izquierda y derecha 🪞 | Shot Científico 29
+El espejo NO invierte izquierda y derecha 🪞
 ```
 Descripción:
 ```text

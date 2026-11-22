@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El mapa de los sabores de la lengua es un mito 👅 | Shot Científico 17
+El mapa de los sabores de la lengua es un mito 👅
 ```
 Descripción:
 ```text

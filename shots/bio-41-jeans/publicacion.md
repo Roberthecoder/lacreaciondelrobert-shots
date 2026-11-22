@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tus jeans quizá los deslavó un hongo 👖🍄 | Shot Biotecnológico 41
+Tus jeans quizá los deslavó un hongo 👖🍄
 ```
 Descripción:
 ```text

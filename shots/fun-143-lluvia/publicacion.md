@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese hongo no nació anoche con la lluvia 🍄🌧️ | Shot Fungi Mati 143
+Ese hongo no nació anoche con la lluvia 🍄🌧️
 ```
 Descripción:
 ```text

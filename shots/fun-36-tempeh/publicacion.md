@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El tempeh no es soya prensada: lo amarra un hongo 🍄 | Shot Fungi Mati 36
+El tempeh no es soya prensada: lo amarra un hongo 🍄
 ```
 Descripción:
 ```text

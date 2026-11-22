@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu glucómetro no mide tu sangre 🩸⚡ | Shot Biotecnológico 18
+Tu glucómetro no mide tu sangre 🩸⚡
 ```
 Descripción:
 ```text

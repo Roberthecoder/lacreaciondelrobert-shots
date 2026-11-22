@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las venas del queso azul son MOHO… sembrado a propósito 🧀 | Shot Fungi Mati 15
+Las venas del queso azul son MOHO… sembrado a propósito 🧀
 ```
 Descripción:
 ```text

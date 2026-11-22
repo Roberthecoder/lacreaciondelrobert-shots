@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Horas sin nada NO es estar a salvo: el hongo que avisa días después 🍄 | Shot Fungi Mati 111
+Horas sin nada NO es estar a salvo: el hongo que avisa días después 🍄
 ```
 Descripción:
 ```text

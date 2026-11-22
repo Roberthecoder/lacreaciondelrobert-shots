@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu teclado aprende de ti sin llevarse lo que escribes ⌨️ | Shot IA 30
+Tu teclado aprende de ti sin llevarse lo que escribes ⌨️
 ```
 Descripción:
 ```text

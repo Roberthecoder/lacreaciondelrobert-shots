@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese suero no salió de un gallo 🧴🦠 | Shot Biotecnológico 40
+Ese suero no salió de un gallo 🧴🦠
 ```
 Descripción:
 ```text

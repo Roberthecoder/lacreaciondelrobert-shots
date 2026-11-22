@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este mosco trae una bacteria que frena al dengue 🦟 | Shot Biotecnológico 35
+Este mosco trae una bacteria que frena al dengue 🦟
 ```
 Descripción:
 ```text

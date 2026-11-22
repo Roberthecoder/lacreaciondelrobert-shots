@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu pantalón de mezclilla lleva 189 garrafones de agua 👖💧 | Shot Ambiental 33
+Tu pantalón de mezclilla lleva 189 garrafones de agua 👖💧
 ```
 Descripción:
 ```text

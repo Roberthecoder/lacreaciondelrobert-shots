@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese anillo rojo NO es un gusano: es un hongo que te pudo pasar tu gato 🐱🍄 | Shot Fungi Mati 85
+Ese anillo rojo NO es un gusano: es un hongo que te pudo pasar tu gato 🐱🍄
 ```
 Descripción:
 ```text

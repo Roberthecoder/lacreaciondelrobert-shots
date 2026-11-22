@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese sombrero no es de fieltro: es un hongo 🍄🔥 | Shot Fungi Mati 149
+Ese sombrero no es de fieltro: es un hongo 🍄🔥
 ```
 Descripción:
 ```text

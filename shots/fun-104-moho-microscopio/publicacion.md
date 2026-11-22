@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese moho azul de tu naranja, al microscopio: un bosque de pinceles 🔬 | Shot Fungi Mati 104
+Ese moho azul de tu naranja, al microscopio: un bosque de pinceles 🔬
 ```
 Descripción:
 ```text

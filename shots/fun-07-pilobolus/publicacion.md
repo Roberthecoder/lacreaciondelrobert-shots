@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo cañón que dispara a 47 km/h 💥 | Shot Fungi Mati 07
+El hongo cañón que dispara a 47 km/h 💥
 ```
 Descripción:
 ```text

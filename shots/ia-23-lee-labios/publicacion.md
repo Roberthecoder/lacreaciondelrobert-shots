@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que lee labios mejor que los expertos 👄 | Shot IA 23
+La IA que lee labios mejor que los expertos 👄
 ```
 Descripción:
 ```text

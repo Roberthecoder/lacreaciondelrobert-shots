@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu panza no ruge solo de hambre 🫃 | Shot Científico 43
+Tu panza no ruge solo de hambre 🫃
 ```
 Descripción:
 ```text

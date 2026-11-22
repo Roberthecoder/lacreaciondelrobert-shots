@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Una IA puede leer tu mente? Solo si tú te dejas 🧠 | Shot IA 42
+¿Una IA puede leer tu mente? Solo si tú te dejas 🧠
 ```
 Descripción:
 ```text

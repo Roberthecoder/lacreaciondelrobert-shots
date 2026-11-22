@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu plátano está madurando a la fruta de al lado 🍌 | Shot Químico 46
+Tu plátano está madurando a la fruta de al lado 🍌
 ```
 Descripción:
 ```text

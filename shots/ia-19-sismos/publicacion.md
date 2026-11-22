@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿La IA puede predecir sismos? Lo que sí y lo que no 🌎 | Shot IA 19
+¿La IA puede predecir sismos? Lo que sí y lo que no 🌎
 ```
 Descripción:
 ```text

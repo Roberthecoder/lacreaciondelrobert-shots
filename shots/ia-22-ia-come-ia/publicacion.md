@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que aprendió de otra IA y terminó hablando de liebres 🐇 | Shot IA 22
+La IA que aprendió de otra IA y terminó hablando de liebres 🐇
 ```
 Descripción:
 ```text

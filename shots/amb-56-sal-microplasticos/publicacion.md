@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu sal también trae plástico 🧂 | Shot Ambiental 56
+Tu sal también trae plástico 🧂
 ```
 Descripción:
 ```text

@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El cómputo de la IA crece 5 veces cada año 🥤 | Shot IA 58
+El cómputo de la IA crece 5 veces cada año 🥤
 ```
 Descripción:
 ```text

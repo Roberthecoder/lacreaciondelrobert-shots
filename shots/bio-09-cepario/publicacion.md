@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este frasco no está vacío: tiene vida en pausa 🧫❄️ | Shot Biotecnológico 09
+Este frasco no está vacío: tiene vida en pausa 🧫❄️
 ```
 Descripción:
 ```text

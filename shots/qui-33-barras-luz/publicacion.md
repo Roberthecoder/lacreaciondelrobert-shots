@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese crac no es el plástico 💚 | Shot Químico 33
+Ese crac no es el plástico 💚
 ```
 Descripción:
 ```text

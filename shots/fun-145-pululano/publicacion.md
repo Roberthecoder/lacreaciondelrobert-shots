@@ -38,7 +38,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa cápsula no es de gelatina: es baba de un hongo 🍄💊 | Shot Fungi Mati 145
+Esa cápsula no es de gelatina: es baba de un hongo 🍄💊
 ```
 Descripción:
 ```text

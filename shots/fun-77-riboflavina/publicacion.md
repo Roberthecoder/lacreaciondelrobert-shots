@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El amarillo de tu pipí lo fabricó un hongo 💛🍄 | Shot Fungi Mati 77
+El amarillo de tu pipí lo fabricó un hongo 💛🍄
 ```
 Descripción:
 ```text

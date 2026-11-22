@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Por qué en el espacio no se oyen las explosiones? | Shot Científico 56
+¿Por qué en el espacio no se oyen las explosiones?
 ```
 Descripción:
 ```text

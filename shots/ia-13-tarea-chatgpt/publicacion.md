@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Estudiar con ChatGPT: +48 % en la tarea, −17 % en el examen 📚 | Shot IA 13
+Estudiar con ChatGPT: +48 % en la tarea, −17 % en el examen 📚
 ```
 Descripción:
 ```text

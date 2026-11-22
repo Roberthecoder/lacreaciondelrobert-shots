@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este hongo se come… si no tomas alcohol 🍄🍺 | Shot Fungi Mati 114
+Este hongo se come… si no tomas alcohol 🍄🍺
 ```
 Descripción:
 ```text

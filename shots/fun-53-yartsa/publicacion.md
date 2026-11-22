@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa "ramita" es una oruga con un hongo en la cabeza 🐛🍄 | Shot Fungi Mati 53
+Esa "ramita" es una oruga con un hongo en la cabeza 🐛🍄
 ```
 Descripción:
 ```text

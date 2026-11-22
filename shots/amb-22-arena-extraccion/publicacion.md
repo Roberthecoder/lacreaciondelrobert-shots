@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu casa está hecha de arena (y se está acabando en los ríos) 🧱 | Shot Ambiental 22
+Tu casa está hecha de arena (y se está acabando en los ríos) 🧱
 ```
 Descripción:
 ```text

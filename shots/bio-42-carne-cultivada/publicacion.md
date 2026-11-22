@@ -44,7 +44,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta carne no se cortó de un animal: creció en un tanque 🥩 | Shot Biotecnológico 42
+Esta carne no se cortó de un animal: creció en un tanque 🥩
 ```
 Descripción:
 ```text

@@ -40,7 +40,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los multaron por citar 6 casos que inventó ChatGPT ⚖️ | Shot IA 32
+Los multaron por citar 6 casos que inventó ChatGPT ⚖️
 ```
 Descripción:
 ```text

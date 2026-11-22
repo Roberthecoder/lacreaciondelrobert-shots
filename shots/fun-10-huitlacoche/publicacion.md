@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese elote NO está podrido: es huitlacoche 🌽🍄 | Shot Fungi Mati 10
+Ese elote NO está podrido: es huitlacoche 🌽🍄
 ```
 Descripción:
 ```text

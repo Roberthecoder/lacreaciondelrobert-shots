@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese grano negro NO es centeno quemado: es un hongo 🌾 | Shot Fungi Mati 17
+Ese grano negro NO es centeno quemado: es un hongo 🌾
 ```
 Descripción:
 ```text

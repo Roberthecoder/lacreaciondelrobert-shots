@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu helado de vainilla casi nunca tocó una vaina 🍦 | Shot Biotecnológico 23
+Tu helado de vainilla casi nunca tocó una vaina 🍦
 ```
 Descripción:
 ```text

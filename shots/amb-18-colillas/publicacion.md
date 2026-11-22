@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El filtro de tu cigarro no es algodón: es plástico 🚬 | Shot Ambiental 18
+El filtro de tu cigarro no es algodón: es plástico 🚬
 ```
 Descripción:
 ```text

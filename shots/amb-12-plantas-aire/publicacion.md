@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu planta NO limpia el aire de tu casa 🪴 | Shot Ambiental 12
+Tu planta NO limpia el aire de tu casa 🪴
 ```
 Descripción:
 ```text

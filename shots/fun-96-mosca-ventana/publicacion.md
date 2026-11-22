@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa mosca en tu ventana no murió de vieja: la mató un hongo 🪰🍄 | Shot Fungi Mati 96
+Esa mosca en tu ventana no murió de vieja: la mató un hongo 🪰🍄
 ```
 Descripción:
 ```text

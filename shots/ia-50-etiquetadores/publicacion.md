@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese cuadrito «gato» lo puso una persona 🐱 | Shot IA 50
+Ese cuadrito «gato» lo puso una persona 🐱
 ```
 Descripción:
 ```text

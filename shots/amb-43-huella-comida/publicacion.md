@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu taco de res vs. el de frijol: 50 veces más gases 🌮 | Shot Ambiental 43
+Tu taco de res vs. el de frijol: 50 veces más gases 🌮
 ```
 Descripción:
 ```text

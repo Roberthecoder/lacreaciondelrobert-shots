@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es polvo: son semillas de orquídea… y necesitan un hongo 🌸🍄 | Shot Fungi Mati 83
+Esto no es polvo: son semillas de orquídea… y necesitan un hongo 🌸🍄
 ```
 Descripción:
 ```text

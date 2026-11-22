@@ -38,7 +38,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Por qué te mareas en el carro (no es tu estómago) | Shot Científico 54
+Por qué te mareas en el carro (no es tu estómago)
 ```
 Descripción:
 ```text

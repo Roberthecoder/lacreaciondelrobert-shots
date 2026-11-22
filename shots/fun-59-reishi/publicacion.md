@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Tu reishi trae lo que dice? Lo que SÍ dice la ciencia 🍄 | Shot Fungi Mati 59
+¿Tu reishi trae lo que dice? Lo que SÍ dice la ciencia 🍄
 ```
 Descripción:
 ```text

@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Los champiñones te caen mal? Quizá no es alergia 🍄 | Shot Fungi Mati 151
+¿Los champiñones te caen mal? Quizá no es alergia 🍄
 ```
 Descripción:
 ```text

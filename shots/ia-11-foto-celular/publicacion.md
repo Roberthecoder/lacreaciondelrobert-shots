@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu foto de noche no es una foto: son hasta 13 📸 | Shot IA 11
+Tu foto de noche no es una foto: son hasta 13 📸
 ```
 Descripción:
 ```text

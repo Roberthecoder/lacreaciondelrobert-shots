@@ -144,7 +144,7 @@ function EspeciesShot() {
       </Escena>
       {/* 7 · re-gancho: ¿cuánto tardaríamos? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.06}>
-        <div style={{ position:'absolute', inset:0, background:KC.pink }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.pink, CINE.fondo, 0.8) }}></div>
         {fsvg(<><g opacity=".45"><Cuad T={T} x={120} y={520} c={60} gris={1} oro={1} /></g><RelojArena T={T} x={300} y={900} s={0.9} p={kprog(T, K.P, K.E + 1)} /></>)}
       </Escena>
       {/* 8–10 · el reporte de Kew: +2,500 al año, 750–1,000 años */}

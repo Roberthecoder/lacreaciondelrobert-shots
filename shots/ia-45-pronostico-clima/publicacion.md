@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que hace el pronóstico de 10 días en menos de un minuto ⛅ | Shot IA 45
+La IA que hace el pronóstico de 10 días en menos de un minuto ⛅
 ```
 Descripción:
 ```text

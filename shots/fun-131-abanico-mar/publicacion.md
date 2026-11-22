@@ -38,7 +38,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese anillo morado es un animal peleando contra un hongo 🪸 | Shot Fungi Mati 131
+Ese anillo morado es un animal peleando contra un hongo 🪸
 ```
 Descripción:
 ```text

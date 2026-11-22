@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿De qué vive una vaca? No es del pasto 🐄 | Shot Biotecnológico 02
+¿De qué vive una vaca? No es del pasto 🐄
 ```
 Descripción:
 ```text

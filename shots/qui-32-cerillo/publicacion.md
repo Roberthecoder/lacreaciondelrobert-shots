@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese cerillo no trae el fuego en la cabeza 🔥 | Shot Químico 32
+Ese cerillo no trae el fuego en la cabeza 🔥
 ```
 Descripción:
 ```text

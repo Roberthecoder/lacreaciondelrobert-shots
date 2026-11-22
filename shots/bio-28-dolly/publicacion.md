@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta oveja salió de una célula de ubre 🐑🧬 | Shot Biotecnológico 28
+Esta oveja salió de una célula de ubre 🐑🧬
 ```
 Descripción:
 ```text

@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Por qué el dolor del dedo del pie llega tarde 🦶 | Shot Científico 32
+Por qué el dolor del dedo del pie llega tarde 🦶
 ```
 Descripción:
 ```text

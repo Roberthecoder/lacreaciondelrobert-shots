@@ -96,7 +96,7 @@ function SetaNarrado() {
       </Escena>
       {/* 9 · el rosa: estudio + primordios intensos que se aclaran */}
       <Escena T={T} a={K.R} b={K.Ci} fondo={KC.lilac}>
-        <div style={{ position:'absolute', inset:0, background:KC.lilac, backgroundImage:'repeating-linear-gradient(45deg, rgba(255,255,255,.12) 0 24px, transparent 24px 48px)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'repeating-linear-gradient(45deg, rgba(255,255,255,.12) 0 24px, transparent 24px 48px)' }}></div>
         <TarjetaEstudio T={T} at={K.R + 0.3} until={K.R + 3.6} anio="2017" quien="Dulce Salmones · INECOL, Xalapa" revista="Scientia Fungorum 46: 73–85" y={740} />
         {T > K.R + 3.6 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {(() => { const m = kprog(T, K.R + 4.4, K.R + 6.6, kEase.suave); return <>

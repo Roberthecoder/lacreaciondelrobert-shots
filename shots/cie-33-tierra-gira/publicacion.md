@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ahora mismo vas a más de 1,500 km/h 🌎 | Shot Científico 33
+Ahora mismo vas a más de 1,500 km/h 🌎
 ```
 Descripción:
 ```text

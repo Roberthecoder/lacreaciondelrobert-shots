@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es una roca: es un animal 🪸 | Shot Ambiental 17
+Esto no es una roca: es un animal 🪸
 ```
 Descripción:
 ```text

@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tú contra el auto sin conductor: ¿quién choca más? 🚗 | Shot IA 36
+Tú contra el auto sin conductor: ¿quién choca más? 🚗
 ```
 Descripción:
 ```text

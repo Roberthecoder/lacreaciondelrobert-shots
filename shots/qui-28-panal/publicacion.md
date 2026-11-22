@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es gelatina: es el polvo de un pañal 💧 | Shot Químico 28
+Esto no es gelatina: es el polvo de un pañal 💧
 ```
 Descripción:
 ```text

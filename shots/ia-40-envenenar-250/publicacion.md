@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-250 hojas rojas bastan para meterle una trampa a una IA 📚 | Shot IA 40
+250 hojas rojas bastan para meterle una trampa a una IA 📚
 ```
 Descripción:
 ```text

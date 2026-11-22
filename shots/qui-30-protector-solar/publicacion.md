@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu protector solar no es un espejo: es una esponja ☀️ | Shot Químico 30
+Tu protector solar no es un espejo: es una esponja ☀️
 ```
 Descripción:
 ```text

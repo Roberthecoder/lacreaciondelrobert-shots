@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La primera estatina salió de un MOHO escondido en arroz 🍄 | Shot Fungi Mati 46
+La primera estatina salió de un MOHO escondido en arroz 🍄
 ```
 Descripción:
 ```text

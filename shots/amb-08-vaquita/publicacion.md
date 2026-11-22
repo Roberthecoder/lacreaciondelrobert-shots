@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las vaquitas se cuentan con los dedos 🐬 | Shot Ambiental 08
+Las vaquitas se cuentan con los dedos 🐬
 ```
 Descripción:
 ```text

@@ -48,7 +48,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas gotas de tu talón cazaban enfermedades 🩸👣 | Shot Biotecnológico 39
+Esas gotas de tu talón cazaban enfermedades 🩸👣
 ```
 Descripción:
 ```text

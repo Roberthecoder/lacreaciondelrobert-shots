@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La pastilla de la presión salió de un veneno de víbora 🐍 | Shot Biotecnológico 54
+La pastilla de la presión salió de un veneno de víbora 🐍
 ```
 Descripción:
 ```text

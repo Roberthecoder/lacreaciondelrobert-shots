@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un chatbot no escribe tu respuesta de golpe: la apuesta 🎲 | Shot IA 03
+Un chatbot no escribe tu respuesta de golpe: la apuesta 🎲
 ```
 Descripción:
 ```text

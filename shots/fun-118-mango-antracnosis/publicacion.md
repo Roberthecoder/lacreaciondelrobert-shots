@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas manchas negras de tu mango muchas veces no son golpes 🥭 | Shot Fungi Mati 118
+Esas manchas negras de tu mango muchas veces no son golpes 🥭
 ```
 Descripción:
 ```text

@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu palomita no revienta por quemarse 🍿 | Shot Químico 12
+Tu palomita no revienta por quemarse 🍿
 ```
 Descripción:
 ```text

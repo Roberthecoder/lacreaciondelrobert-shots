@@ -40,7 +40,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu sopa instantánea tiene algo hecho por bacterias 🍜🦠 | Shot Biotecnológico 20
+Tu sopa instantánea tiene algo hecho por bacterias 🍜🦠
 ```
 Descripción:
 ```text

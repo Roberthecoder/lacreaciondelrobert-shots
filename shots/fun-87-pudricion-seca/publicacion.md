@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa madera NO está vieja: se la come un hongo que llora 🍄 | Shot Fungi Mati 87
+Esa madera NO está vieja: se la come un hongo que llora 🍄
 ```
 Descripción:
 ```text

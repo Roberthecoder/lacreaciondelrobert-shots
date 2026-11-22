@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese anillo verde no es huevo echado a perder 🥚 | Shot Químico 17
+Ese anillo verde no es huevo echado a perder 🥚
 ```
 Descripción:
 ```text

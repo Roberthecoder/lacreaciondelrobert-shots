@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese foco no es una lámpara: es un calentador 💡🔥 | Shot Ambiental 21
+Ese foco no es una lámpara: es un calentador 💡🔥
 ```
 Descripción:
 ```text

@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un champiñón suelta 16 mil millones de esporas 🍄 (y puedes verlas) | Shot Fungi Mati 32
+Un champiñón suelta 16 mil millones de esporas 🍄 (y puedes verlas)
 ```
 Descripción:
 ```text

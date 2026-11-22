@@ -38,7 +38,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese cuernito negro no es basura: de él salió el LSD 🍄 | Shot Fungi Mati 138
+Ese cuernito negro no es basura: de él salió el LSD 🍄
 ```
 Descripción:
 ```text

@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu lápiz no es plomo: es lo mismo que un diamante ✏️💎 | Shot Químico 45
+Tu lápiz no es plomo: es lo mismo que un diamante ✏️💎
 ```
 Descripción:
 ```text

@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La trufa: el hongo que se deja encontrar por el olfato 🐖 | Shot Fungi Mati 52
+La trufa: el hongo que se deja encontrar por el olfato 🐖
 ```
 Descripción:
 ```text

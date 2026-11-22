@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-No pierdes casi todo tu calor por la cabeza 🥶 | Shot Científico 59
+No pierdes casi todo tu calor por la cabeza 🥶
 ```
 Descripción:
 ```text

@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese champiñón es más pariente tuyo que de la lechuga 🍄 | Shot Fungi Mati 142
+Ese champiñón es más pariente tuyo que de la lechuga 🍄
 ```
 Descripción:
 ```text

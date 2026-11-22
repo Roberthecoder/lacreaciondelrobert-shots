@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El atardecer azul que nadie ha visto en persona: Marte 🌅 | Shot Científico 09
+El atardecer azul que nadie ha visto en persona: Marte 🌅
 ```
 Descripción:
 ```text

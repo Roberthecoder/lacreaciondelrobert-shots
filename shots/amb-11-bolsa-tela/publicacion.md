@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu bolsa de tela necesita 7,100 compras 🛍️ | Shot Ambiental 11
+Tu bolsa de tela necesita 7,100 compras 🛍️
 ```
 Descripción:
 ```text

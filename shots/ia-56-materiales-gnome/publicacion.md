@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que "descubrió" 2.2 millones de cristales 💎 | Shot IA 56
+La IA que "descubrió" 2.2 millones de cristales 💎
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que encontró 303 figuras escondidas en Nazca 🏜️ | Shot IA 26
+La IA que encontró 303 figuras escondidas en Nazca 🏜️
 ```
 Descripción:
 ```text

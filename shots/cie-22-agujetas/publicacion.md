@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las agujetas NO son ácido láctico 💪 | Shot Científico 22
+Las agujetas NO son ácido láctico 💪
 ```
 Descripción:
 ```text

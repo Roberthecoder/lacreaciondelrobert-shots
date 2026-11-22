@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El jabón no desaparece la grasa: la encierra 🧼 | Shot Químico 07
+El jabón no desaparece la grasa: la encierra 🧼
 ```
 Descripción:
 ```text

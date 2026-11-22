@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa cerveza no estaba agitada: traía proteínas de un hongo 🍄 | Shot Fungi Mati 152
+Esa cerveza no estaba agitada: traía proteínas de un hongo 🍄
 ```
 Descripción:
 ```text

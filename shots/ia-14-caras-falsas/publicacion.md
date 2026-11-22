@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Cuál de estas caras es real? La IA ya engaña a tus ojos 👀 | Shot IA 14
+¿Cuál de estas caras es real? La IA ya engaña a tus ojos 👀
 ```
 Descripción:
 ```text

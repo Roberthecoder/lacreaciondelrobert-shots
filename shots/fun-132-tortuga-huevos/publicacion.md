@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese huevo de tortuga no se echó a perder: lo mató un hongo 🐢🍄 | Shot Fungi Mati 132
+Ese huevo de tortuga no se echó a perder: lo mató un hongo 🐢🍄
 ```
 Descripción:
 ```text

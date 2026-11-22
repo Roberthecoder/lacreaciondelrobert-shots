@@ -39,7 +39,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese champiñón NO es una verdura 🍄 | Shot Fungi Mati 137
+Ese champiñón NO es una verdura 🍄
 ```
 Descripción:
 ```text

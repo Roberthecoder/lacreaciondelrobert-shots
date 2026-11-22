@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-1 molécula de ADN → más de mil millones de copias 🧬 | Shot Biotecnológico 13
+1 molécula de ADN → más de mil millones de copias 🧬
 ```
 Descripción:
 ```text

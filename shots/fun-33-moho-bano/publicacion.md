@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa mancha negra del baño NO es mugre 🍄 y el mito del "moho tóxico" | Shot Fungi Mati 33
+Esa mancha negra del baño NO es mugre 🍄 y el mito del "moho tóxico"
 ```
 Descripción:
 ```text

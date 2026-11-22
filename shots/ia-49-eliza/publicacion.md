@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-ELIZA: el "psicólogo" de unas cuantas reglas al que le contaban secretos 🛋️ | Shot IA 49
+ELIZA: el "psicólogo" de unas cuantas reglas al que le contaban secretos 🛋️
 ```
 Descripción:
 ```text

@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El virus que te haría digerir la leche otra vez 🥛🧬 | Shot Biotecnológico 06
+El virus que te haría digerir la leche otra vez 🥛🧬
 ```
 Descripción:
 ```text

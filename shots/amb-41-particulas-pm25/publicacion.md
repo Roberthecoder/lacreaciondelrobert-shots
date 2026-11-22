@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El polvo que respiras y nunca vas a ver 🌫️ | Shot Ambiental 41
+El polvo que respiras y nunca vas a ver 🌫️
 ```
 Descripción:
 ```text

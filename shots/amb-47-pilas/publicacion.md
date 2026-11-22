@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Una pila contamina 600 mil litros de agua? 🔋 | Shot Ambiental 47
+¿Una pila contamina 600 mil litros de agua? 🔋
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese hongo de tu jardín NO es champiñón 🍄⚠️ | Shot Fungi Mati 113
+Ese hongo de tu jardín NO es champiñón 🍄⚠️
 ```
 Descripción:
 ```text

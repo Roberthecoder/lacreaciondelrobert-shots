@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa seta fabrica viento… y quizá lluvia 🍄🌧️ | Shot Fungi Mati 123
+Esa seta fabrica viento… y quizá lluvia 🍄🌧️
 ```
 Descripción:
 ```text

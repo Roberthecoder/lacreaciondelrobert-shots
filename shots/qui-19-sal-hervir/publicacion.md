@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La sal NO hace que tu agua hierva antes 🧂 | Shot Químico 19
+La sal NO hace que tu agua hierva antes 🧂
 ```
 Descripción:
 ```text

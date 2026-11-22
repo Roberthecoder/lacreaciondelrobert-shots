@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un virus entero escrito en una pantalla: 7,500 letras 🧬🔒 | Shot Biotecnológico 07
+Un virus entero escrito en una pantalla: 7,500 letras 🧬🔒
 ```
 Descripción:
 ```text

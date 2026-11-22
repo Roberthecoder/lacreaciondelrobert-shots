@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa mancha en tu arroz no es una mordida: empezó con un agujero hecho a presión | Shot Fungi Mati 115
+Esa mancha en tu arroz no es una mordida: empezó con un agujero hecho a presión
 ```
 Descripción:
 ```text

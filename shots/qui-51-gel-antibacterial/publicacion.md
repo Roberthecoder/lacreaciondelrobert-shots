@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese gel no te lava las manos 🧴 | Shot Químico 51
+Ese gel no te lava las manos 🧴
 ```
 Descripción:
 ```text

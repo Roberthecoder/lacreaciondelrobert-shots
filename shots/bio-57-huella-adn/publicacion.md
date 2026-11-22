@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu ADN es 99.6 % igual al de al lado… y te delata 🧬 | Shot Biotecnológico 57
+Tu ADN es 99.6 % igual al de al lado… y te delata 🧬
 ```
 Descripción:
 ```text

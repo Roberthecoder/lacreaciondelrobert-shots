@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa leche no se echó a perder: es queso 🍋🧀 | Shot Químico 42
+Esa leche no se echó a perder: es queso 🍋🧀
 ```
 Descripción:
 ```text

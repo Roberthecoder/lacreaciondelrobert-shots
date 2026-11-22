@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esos no son huevitos: este hongo dispara con la lluvia 🍄🌧️ | Shot Fungi Mati 71
+Esos no son huevitos: este hongo dispara con la lluvia 🍄🌧️
 ```
 Descripción:
 ```text

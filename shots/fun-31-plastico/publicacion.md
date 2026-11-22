@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Hongos que comen plástico? Lo que sí y lo que no 🍄🧪 | Shot Fungi Mati 31
+¿Hongos que comen plástico? Lo que sí y lo que no 🍄🧪
 ```
 Descripción:
 ```text

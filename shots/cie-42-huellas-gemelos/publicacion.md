@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los gemelos idénticos NO tienen las mismas huellas 🔍 | Shot Científico 42
+Los gemelos idénticos NO tienen las mismas huellas 🔍
 ```
 Descripción:
 ```text

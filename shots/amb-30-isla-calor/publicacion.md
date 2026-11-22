@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu noche es más caliente que la del rancho 🌡️ | Shot Ambiental 30
+Tu noche es más caliente que la del rancho 🌡️
 ```
 Descripción:
 ```text

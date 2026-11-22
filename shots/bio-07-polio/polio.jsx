@@ -133,7 +133,7 @@ function PolioNarrado() {
 
       {/* 3 · PEDAZOS — llegan por correo */}
       <EscenaFundido T={T} a={K.P} b={K.A} zoom={0.04} fondo="#0a0d14">
-        <div style={{ position:'absolute', inset:0, background:KC.yellow, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.yellow, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {Array.from({ length: 10 }, (_, i) => { const at = K.P + 0.4 + i * 0.22, p = kprog(T, at, at + 1.1, kEase.rebote);
             if (T < at) return null; const g = krng(i * 13 + 2);
@@ -211,7 +211,7 @@ function PolioNarrado() {
 
       {/* 8 · SCIENCE */}
       <EscenaFundido T={T} a={K.Sc} b={K.Cr} zoom={0.05} fondo="#0a0d14">
-        <div style={{ position:'absolute', inset:0, background:KC.lilac, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.28) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.28) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g transform={`rotate(${mece(T, 4, 0.2) * 1.4} 490 860)`}>
             <rect x={180} y={520} width={620} height={680} rx={18} fill={KC.paper} stroke={KC.ink} strokeWidth={10} />
@@ -225,7 +225,7 @@ function PolioNarrado() {
 
       {/* 9 · CRÍTICA */}
       <EscenaFundido T={T} a={K.Cr} b={K.Re} zoom={0.04} fondo="#0a0d14">
-        <div style={{ position:'absolute', inset:0, background:KC.coral, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.26) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.coral, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.26) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
         <Ambiente T={T} n={16} seed={23} color="rgba(255,255,255,.4)" tam={[5, 14]} vel={12} />
       </EscenaFundido>
       <Chip T={T} at={K.Cr + 0.4} until={K.Re - 0.3} texto="«irresponsable»" x={400} y={560} borde={KC.red} tam={48} />
@@ -234,7 +234,7 @@ function PolioNarrado() {
 
       {/* 10 · REGLAS */}
       <EscenaFundido T={T} a={K.Re} b={K.H} zoom={0.04} fondo="#0a0d14">
-        <div style={{ position:'absolute', inset:0, background:KC.mint, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.mint, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g opacity={kprog(T, K.Re + 0.3, K.Re + 0.9)}>
             <Documento T={T} x={320} y={790} w={400} h={470} titulo="Informe Fink" pie="2004" rot={-6}
@@ -250,7 +250,7 @@ function PolioNarrado() {
 
       {/* 11 · HOY — se revisa el pedido y el cliente */}
       <EscenaFundido T={T} a={K.H} b={K.C} zoom={0.04} fondo="#0a0d14">
-        <div style={{ position:'absolute', inset:0, background:KC.cyan, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.cyan, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <Documento T={T} x={470} y={830} w={460} h={540} titulo="pedido de ADN" pie="¿qué? · ¿quién?" rot={-3}
             sello="REVISADO" sellado={kprog(T, K.H + 2.2, K.H + 2.8, kEase.sale)} />

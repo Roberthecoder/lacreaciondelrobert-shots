@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese polvito blanco no es veneno 🍅 | Shot Químico 49
+Ese polvito blanco no es veneno 🍅
 ```
 Descripción:
 ```text

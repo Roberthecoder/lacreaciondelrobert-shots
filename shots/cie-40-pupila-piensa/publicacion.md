@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tus pupilas se agrandan cuando piensas fuerte 👁️ | Shot Científico 40
+Tus pupilas se agrandan cuando piensas fuerte 👁️
 ```
 Descripción:
 ```text

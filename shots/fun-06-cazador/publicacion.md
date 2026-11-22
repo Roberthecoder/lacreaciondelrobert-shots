@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este hongo caza gusanos con redes pegajosas 🍄 | Shot Fungi Mati 06
+Este hongo caza gusanos con redes pegajosas 🍄
 ```
 Descripción:
 ```text

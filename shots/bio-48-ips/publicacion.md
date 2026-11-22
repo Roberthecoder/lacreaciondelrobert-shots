@@ -31,7 +31,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta célula de tu piel puede volverse neurona 🧬 | Shot Biotecnológico 48
+Esta célula de tu piel puede volverse neurona 🧬
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA no vio al lobo: vio la nieve 🐺❄️ | Shot IA 12
+La IA no vio al lobo: vio la nieve 🐺❄️
 ```
 Descripción:
 ```text

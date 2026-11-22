@@ -48,14 +48,26 @@ function Subtitulo({ T, at, until, texto, idx, color = CINE.acento, tam = 50 }) 
     const t0 = at + i * 0.04, e = kprog(T, t0, t0 + 0.25, kEase.sale);
     return <span key={i} style={{ display:'inline-block', opacity:e, transform:`translateY(${(1 - e) * 12}px)`, color: acc ? color : CINE.texto }}>{p}</span>;
   });
-  return <div style={{ position:'absolute', left:0, right:0, top:1400, zIndex:47, display:'flex', justifyContent:'center', opacity:1 - out }}>
+  // Va en la franja que todos los shots ya dejaban libre para el subtítulo viejo (termina en y≈1350), sin la caja.
+  return <div style={{ position:'absolute', left:0, right:0, bottom:570, zIndex:47, display:'flex', justifyContent:'center', opacity:1 - out }}>
     <div style={{ maxWidth:900, display:'flex', flexWrap:'wrap', justifyContent:'center', columnGap:'0.26em', rowGap:4,
       font:`800 ${tam}px/1.16 ${KF.texto}`, textAlign:'center', textShadow:'0 2px 0 rgba(0,0,0,.9), 0 0 22px rgba(4,6,12,.95), 0 0 44px rgba(4,6,12,.9)' }}>{palabras}</div>
   </div>;
 }
 
-// Robert ya no entra durante el video: solo en la tarjeta de cierre (CierreMarca robert=…).
+// Robert ya no entra durante el video: solo en la tarjeta de cierre (CierreMarca robert=…). Muchos shots lo ponen con
+// <Sticker> directo (o <RobertF>), así que también se apagan.
 function Robert() { return null; }
+function Sticker() { return null; }
+function RobertF() { return null; }
+
+// Texto dentro de los dibujos (SVG): con KC.ink claro, una palabra sobre una pieza blanca (una etiqueta, un frasco) se
+// perdería. Un contorno oscuro fino la deja legible sobre cualquier color.
+if (typeof document !== 'undefined' && !document.getElementById('cine-css')) {
+  const st = document.createElement('style'); st.id = 'cine-css';
+  st.textContent = 'svg text{paint-order:stroke;stroke:rgba(7,10,18,.88);stroke-width:5px;stroke-linejoin:round}';
+  document.head.appendChild(st);
+}
 
 function MarcaAgua({ T, num, hasta, tema, logo }) {
   logo = logo || klogo(tema);
@@ -96,4 +108,4 @@ function FondoLunares({ color }) { return FondoMarca({ color, patron: 'puntos' }
 const BarraKit = window.BarraEscala;
 function BarraEscala(p) { return BarraKit ? BarraKit({ ...p, x: 800, y: 232 }) : null; }
 
-Object.assign(window, { CINE, cineMix, FondoMarca, FondoLunares, Escena, Subtitulo, Robert, MarcaAgua, TarjetaEstudio, MitoTachado, Escala, BarraEscala });
+Object.assign(window, { CINE, cineMix, FondoMarca, FondoLunares, Escena, Sticker, RobertF, Subtitulo, Robert, MarcaAgua, TarjetaEstudio, MitoTachado, Escala, BarraEscala });

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es nieve: es espuma del río Santiago 🫧 | Shot Ambiental 51
+Esto no es nieve: es espuma del río Santiago 🫧
 ```
 Descripción:
 ```text

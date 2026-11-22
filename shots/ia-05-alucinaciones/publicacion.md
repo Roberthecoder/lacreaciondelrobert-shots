@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-En 2021, una persona le ganó a la IA en preguntas tramposas: 94 vs 58 🧠 | Shot IA 05
+En 2021, una persona le ganó a la IA en preguntas tramposas: 94 vs 58 🧠
 ```
 Descripción:
 ```text

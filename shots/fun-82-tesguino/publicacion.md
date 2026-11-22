@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa olla no es solo maíz con agua: es una fábrica de hongos 🍄 | Shot Fungi Mati 82
+Esa olla no es solo maíz con agua: es una fábrica de hongos 🍄
 ```
 Descripción:
 ```text

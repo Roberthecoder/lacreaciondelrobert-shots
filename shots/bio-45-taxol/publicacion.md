@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta quimio la escondía un árbol 🌲 | Shot Biotecnológico 45
+Esta quimio la escondía un árbol 🌲
 ```
 Descripción:
 ```text

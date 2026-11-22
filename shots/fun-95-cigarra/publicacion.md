@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa cigarra vuela con medio cuerpo hecho hongo 🦗🍄 | Shot Fungi Mati 95
+Esa cigarra vuela con medio cuerpo hecho hongo 🦗🍄
 ```
 Descripción:
 ```text

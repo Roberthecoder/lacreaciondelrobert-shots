@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este hongo blanco no es un champiñón: viaja de México a Japón 🍄 | Shot Fungi Mati 81
+Este hongo blanco no es un champiñón: viaja de México a Japón 🍄
 ```
 Descripción:
 ```text

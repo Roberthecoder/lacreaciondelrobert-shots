@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La pieza que le falta a tu sangre: el factor VIII 🩸 | Shot Biotecnológico 55
+La pieza que le falta a tu sangre: el factor VIII 🩸
 ```
 Descripción:
 ```text

@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La autora de Peter Rabbit era científica de hongos 🍄🔬 | Shot Fungi Mati 139
+La autora de Peter Rabbit era científica de hongos 🍄🔬
 ```
 Descripción:
 ```text

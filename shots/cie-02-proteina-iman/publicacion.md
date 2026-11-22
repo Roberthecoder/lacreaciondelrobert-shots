@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un imán apaga esta proteína sin tocarla 🧲🔵 | Shot Científico 02
+Un imán apaga esta proteína sin tocarla 🧲🔵
 ```
 Descripción:
 ```text

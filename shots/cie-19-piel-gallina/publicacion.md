@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La piel de gallina: músculos que jalan tus pelos 🥶 | Shot Científico 19
+La piel de gallina: músculos que jalan tus pelos 🥶
 ```
 Descripción:
 ```text

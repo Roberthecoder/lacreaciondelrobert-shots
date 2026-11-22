@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El virus que salva a un pasto del calor 🌱🦠 | Shot Fungi Mati 73
+El virus que salva a un pasto del calor 🌱🦠
 ```
 Descripción:
 ```text

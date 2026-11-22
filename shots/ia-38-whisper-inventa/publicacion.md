@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que transcribe tu voz a veces inventa frases que nadie dijo 🎙️ | Shot IA 38
+La IA que transcribe tu voz a veces inventa frases que nadie dijo 🎙️
 ```
 Descripción:
 ```text

@@ -38,7 +38,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este arbusto no es solo de adorno: puede dejarte sin pan 🌾 | Shot Fungi Mati 116
+Este arbusto no es solo de adorno: puede dejarte sin pan 🌾
 ```
 Descripción:
 ```text

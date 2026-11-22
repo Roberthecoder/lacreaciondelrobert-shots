@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Internet del bosque? Lo que SÍ sabemos de los hongos y los árboles 🌲 | Shot Fungi Mati 54
+¿Internet del bosque? Lo que SÍ sabemos de los hongos y los árboles 🌲
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa reja no se está ensuciando 🟠 | Shot Químico 21
+Esa reja no se está ensuciando 🟠
 ```
 Descripción:
 ```text

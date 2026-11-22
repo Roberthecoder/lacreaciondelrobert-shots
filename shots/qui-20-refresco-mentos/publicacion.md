@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa fuente no es química: es gas 🥤 | Shot Químico 20
+Esa fuente no es química: es gas 🥤
 ```
 Descripción:
 ```text

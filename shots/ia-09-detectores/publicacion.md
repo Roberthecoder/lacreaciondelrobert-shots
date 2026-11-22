@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El detector de IA que acusa a quien escribe sencillo 📝 | Shot IA 09
+El detector de IA que acusa a quien escribe sencillo 📝
 ```
 Descripción:
 ```text

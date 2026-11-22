@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa madera no está embrujada: brilla un HONGO ✨🍄 | Shot Fungi Mati 23
+Esa madera no está embrujada: brilla un HONGO ✨🍄
 ```
 Descripción:
 ```text

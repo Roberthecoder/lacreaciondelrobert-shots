@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este lodo es una bodega de carbono 🌱 | Shot Ambiental 39
+Este lodo es una bodega de carbono 🌱
 ```
 Descripción:
 ```text

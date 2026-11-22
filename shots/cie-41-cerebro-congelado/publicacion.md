@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu cerebro no se congela: es tu paladar 🍦 | Shot Científico 41
+Tu cerebro no se congela: es tu paladar 🍦
 ```
 Descripción:
 ```text

@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La langosta que se da FIEBRE para pelear contra un hongo 🦗🔥 | Shot Fungi Mati 50
+La langosta que se da FIEBRE para pelear contra un hongo 🦗🔥
 ```
 Descripción:
 ```text

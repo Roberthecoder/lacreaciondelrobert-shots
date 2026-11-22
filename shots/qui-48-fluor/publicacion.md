@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese buche de agua se lleva tu flúor 🪥 | Shot Químico 48
+Ese buche de agua se lleva tu flúor 🪥
 ```
 Descripción:
 ```text

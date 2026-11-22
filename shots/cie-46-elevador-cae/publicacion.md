@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Saltar en un elevador que cae te salva? Casi seguro no 🛗 | Shot Científico 46
+¿Saltar en un elevador que cae te salva? Casi seguro no 🛗
 ```
 Descripción:
 ```text

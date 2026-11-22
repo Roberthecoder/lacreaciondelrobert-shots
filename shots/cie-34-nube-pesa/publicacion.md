@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Una nube pesa como cien elefantes ☁️ | Shot Científico 34
+Una nube pesa como cien elefantes ☁️
 ```
 Descripción:
 ```text

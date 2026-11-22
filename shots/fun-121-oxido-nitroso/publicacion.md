@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este costal no es solo comida para tu milpa 🌽💨 | Shot Fungi Mati 121
+Este costal no es solo comida para tu milpa 🌽💨
 ```
 Descripción:
 ```text

@@ -39,7 +39,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese olote no es basura: es comida para un hongo 🌽🍄 | Shot Fungi Mati 105
+Ese olote no es basura: es comida para un hongo 🌽🍄
 ```
 Descripción:
 ```text

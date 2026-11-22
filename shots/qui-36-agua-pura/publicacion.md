@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El agua pura casi no conduce electricidad ⚡ | Shot Químico 36
+El agua pura casi no conduce electricidad ⚡
 ```
 Descripción:
 ```text

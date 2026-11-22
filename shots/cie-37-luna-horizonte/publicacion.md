@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La Luna NO es más grande en el horizonte 🌕 | Shot Científico 37
+La Luna NO es más grande en el horizonte 🌕
 ```
 Descripción:
 ```text

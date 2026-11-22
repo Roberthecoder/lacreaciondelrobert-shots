@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta medicina contra la malaria también la empieza una levadura 🍞 | Shot Biotecnológico 44
+Esta medicina contra la malaria también la empieza una levadura 🍞
 ```
 Descripción:
 ```text

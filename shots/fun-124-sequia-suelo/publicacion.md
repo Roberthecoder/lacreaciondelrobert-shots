@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta tierra seca no está muerta: aguanta la respiración 🍄 | Shot Fungi Mati 124
+Esta tierra seca no está muerta: aguanta la respiración 🍄
 ```
 Descripción:
 ```text

@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa lana roja la tiñó un HONGO 🍄🧶 | Shot Fungi Mati 148
+Esa lana roja la tiñó un HONGO 🍄🧶
 ```
 Descripción:
 ```text

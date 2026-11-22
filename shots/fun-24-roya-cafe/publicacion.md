@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese polvo naranja NO es óxido: es la roya del café 🍂☕ | Shot Fungi Mati 24
+Ese polvo naranja NO es óxido: es la roya del café 🍂☕
 ```
 Descripción:
 ```text

@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu insulina no viene de un animal: viene de un tanque 💉🦠 | Shot Biotecnológico 08
+Tu insulina no viene de un animal: viene de un tanque 💉🦠
 ```
 Descripción:
 ```text

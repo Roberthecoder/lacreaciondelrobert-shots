@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El agua es azul por sí misma (y no solo por el cielo) 🌊 | Shot Científico 57
+El agua es azul por sí misma (y no solo por el cielo) 🌊
 ```
 Descripción:
 ```text

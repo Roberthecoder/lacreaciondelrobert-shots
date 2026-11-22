@@ -31,7 +31,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu GPS funciona gracias a Einstein 🛰️ | Shot Científico 18
+Tu GPS funciona gracias a Einstein 🛰️
 ```
 Descripción:
 ```text

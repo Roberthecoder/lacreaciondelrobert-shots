@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Virus que curan infecciones? Sí existen 🦠 | Shot Biotecnológico 04
+¿Virus que curan infecciones? Sí existen 🦠
 ```
 Descripción:
 ```text

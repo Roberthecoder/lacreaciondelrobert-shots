@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un tutor de IA: 6 semanas que valieron como hasta 2 años de escuela 📚 | Shot IA 55
+Un tutor de IA: 6 semanas que valieron como hasta 2 años de escuela 📚
 ```
 Descripción:
 ```text

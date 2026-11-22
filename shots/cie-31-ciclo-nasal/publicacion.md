@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Respiras más por un lado de la nariz 👃 | Shot Científico 31
+Respiras más por un lado de la nariz 👃
 ```
 Descripción:
 ```text

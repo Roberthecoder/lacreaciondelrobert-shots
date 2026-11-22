@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-6 de cada 10 litros de Guadalajara salen de aquí 💧 | Shot Ambiental 09
+6 de cada 10 litros de Guadalajara salen de aquí 💧
 ```
 Descripción:
 ```text

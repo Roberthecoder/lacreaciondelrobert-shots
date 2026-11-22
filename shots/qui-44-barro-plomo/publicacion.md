@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese brillo de tu jarrito puede ser plomo ☕ | Shot Químico 44
+Ese brillo de tu jarrito puede ser plomo ☕
 ```
 Descripción:
 ```text

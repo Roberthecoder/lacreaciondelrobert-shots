@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta semilla le dio 34 vueltas a la Luna 🌙🌲 | Shot Científico 01
+Esta semilla le dio 34 vueltas a la Luna 🌙🌲
 ```
 Descripción:
 ```text

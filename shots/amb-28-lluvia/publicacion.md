@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-900 litros de lluvia por m² y se van a la coladera 🌧️ | Shot Ambiental 28
+900 litros de lluvia por m² y se van a la coladera 🌧️
 ```
 Descripción:
 ```text

@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu detergente puede traer enzimas de bacterias 🧺 | Shot Biotecnológico 15
+Tu detergente puede traer enzimas de bacterias 🧺
 ```
 Descripción:
 ```text

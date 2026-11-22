@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que sacó oro en la Olimpiada de Matemáticas (y el problema que no pudo) 🧮 | Shot IA 47
+La IA que sacó oro en la Olimpiada de Matemáticas (y el problema que no pudo) 🧮
 ```
 Descripción:
 ```text

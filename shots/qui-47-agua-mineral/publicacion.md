@@ -31,7 +31,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese piquete casi no son las burbujas 🫧 | Shot Químico 47
+Ese piquete casi no son las burbujas 🫧
 ```
 Descripción:
 ```text

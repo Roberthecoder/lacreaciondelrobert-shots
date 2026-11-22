@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿El pelo y las uñas crecen después de morir? No 💅 | Shot Científico 53
+¿El pelo y las uñas crecen después de morir? No 💅
 ```
 Descripción:
 ```text

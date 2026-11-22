@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que revisa tus lunares ve peor la piel oscura 🔍 | Shot IA 37
+La IA que revisa tus lunares ve peor la piel oscura 🔍
 ```
 Descripción:
 ```text

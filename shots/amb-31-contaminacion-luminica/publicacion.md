@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La Vía Láctea que ya no ves desde tu casa 🌌 | Shot Ambiental 31
+La Vía Láctea que ya no ves desde tu casa 🌌
 ```
 Descripción:
 ```text

@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa hormiga no está paseando: la maneja un hongo 🍄 | Shot Fungi Mati 02
+Esa hormiga no está paseando: la maneja un hongo 🍄
 ```
 Descripción:
 ```text

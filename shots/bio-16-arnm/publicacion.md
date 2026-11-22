@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa vacuna no trae el virus: trae instrucciones 💉 | Shot Biotecnológico 16
+Esa vacuna no trae el virus: trae instrucciones 💉
 ```
 Descripción:
 ```text

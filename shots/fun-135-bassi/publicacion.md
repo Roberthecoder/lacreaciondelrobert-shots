@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese polvo blanco no es cal: es un hongo 🐛🍄 | Shot Fungi Mati 135
+Ese polvo blanco no es cal: es un hongo 🐛🍄
 ```
 Descripción:
 ```text

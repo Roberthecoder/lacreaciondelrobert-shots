@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no son granos echados a perder: es la semilla de un hongo 🍄 | Shot Fungi Mati 107
+Esto no son granos echados a perder: es la semilla de un hongo 🍄
 ```
 Descripción:
 ```text

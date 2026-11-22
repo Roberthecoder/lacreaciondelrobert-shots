@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tienes un hoyo en tu vista (haz la prueba) 👁️ | Shot Científico 20
+Tienes un hoyo en tu vista (haz la prueba) 👁️
 ```
 Descripción:
 ```text

@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Para un pájaro, tu ventana es cielo 🐦 | Shot Ambiental 36
+Para un pájaro, tu ventana es cielo 🐦
 ```
 Descripción:
 ```text

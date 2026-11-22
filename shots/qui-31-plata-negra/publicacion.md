@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese negro en tu plata no es mugre 💍 | Shot Químico 31
+Ese negro en tu plata no es mugre 💍
 ```
 Descripción:
 ```text

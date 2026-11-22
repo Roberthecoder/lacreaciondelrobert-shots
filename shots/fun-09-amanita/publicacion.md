@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La cuchara de plata NO detecta hongos venenosos ⚠️ | Shot Fungi Mati 09
+La cuchara de plata NO detecta hongos venenosos ⚠️
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta tierra no está muerta 🌱 1 cm tarda hasta mil años | Shot Ambiental 23
+Esta tierra no está muerta 🌱 1 cm tarda hasta mil años
 ```
 Descripción:
 ```text

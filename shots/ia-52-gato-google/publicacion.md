@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La computadora que aprendió sola qué es un gato 🐱 | Shot IA 52
+La computadora que aprendió sola qué es un gato 🐱
 ```
 Descripción:
 ```text

@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El mar del caracol no es el mar: es tu ruido 🐚 | Shot Científico 28
+El mar del caracol no es el mar: es tu ruido 🐚
 ```
 Descripción:
 ```text

@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El pronóstico decía 100 km/h… Otis llegó con 260 🌀 | Shot Ambiental 25
+El pronóstico decía 100 km/h… Otis llegó con 260 🌀
 ```
 Descripción:
 ```text

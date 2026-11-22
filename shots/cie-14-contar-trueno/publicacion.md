@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Cuenta los segundos entre el rayo y el trueno ⚡ | Shot Científico 14
+Cuenta los segundos entre el rayo y el trueno ⚡
 ```
 Descripción:
 ```text

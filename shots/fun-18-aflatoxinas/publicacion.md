@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El cacahuate arrugado del fondo de la bolsa 🥜⚠️ Aflatoxinas | Shot Fungi Mati 18
+El cacahuate arrugado del fondo de la bolsa 🥜⚠️ Aflatoxinas
 ```
 Descripción:
 ```text

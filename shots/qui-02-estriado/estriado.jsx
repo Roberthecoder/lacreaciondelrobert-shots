@@ -181,7 +181,7 @@ function EstriadoNarrado() {
       </Escena>
       {/* el estudio: Sanders 2012, Serratia */}
       <Escena T={T} a={K.E} b={K.X} fondo={KC.lilac}>
-        <div style={{ position:'absolute', inset:0, background:KC.lilac, backgroundImage:'repeating-linear-gradient(45deg, rgba(255,255,255,.12) 0 24px, transparent 24px 48px)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'repeating-linear-gradient(45deg, rgba(255,255,255,.12) 0 24px, transparent 24px 48px)' }}></div>
         <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3} anio="2012" quien="Erin R. Sanders" revista="JoVE 63: e3064 · protocolo de estriado" y={700} />
         {T > K.E + 2.8 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:kprog(T, K.E + 2.8, K.E + 3.3) }}>
           <PlacaEstriada T={T} y={870} s={0.88} crecen={[0, 1, 2, 3].map((q) => kprog(T, K.E + 3.4 + q * 0.4, K.E + 5 + q * 0.4))} color="#e8384f" borde="#9a1a2a" id="ps" />

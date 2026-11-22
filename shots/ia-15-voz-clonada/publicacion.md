@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu voz se clona con 3 segundos: así es la estafa del familiar 📞 | Shot IA 15
+Tu voz se clona con 3 segundos: así es la estafa del familiar 📞
 ```
 Descripción:
 ```text

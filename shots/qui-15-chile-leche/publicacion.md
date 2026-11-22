@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese ardor del chile no es calor 🌶️ | Shot Químico 15
+Ese ardor del chile no es calor 🌶️
 ```
 Descripción:
 ```text

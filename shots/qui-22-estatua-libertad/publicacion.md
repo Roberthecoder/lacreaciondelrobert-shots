@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa estatua no nació verde 🗽 | Shot Químico 22
+Esa estatua no nació verde 🗽
 ```
 Descripción:
 ```text

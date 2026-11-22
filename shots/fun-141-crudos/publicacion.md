@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Por qué NO comer cualquier hongo crudo? 🍄 | Shot Fungi Mati 141
+¿Por qué NO comer cualquier hongo crudo? 🍄
 ```
 Descripción:
 ```text

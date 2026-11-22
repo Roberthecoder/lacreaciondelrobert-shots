@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta pastilla nació de un hongo de cigarras 🦗 | Shot Fungi Mati 68
+Esta pastilla nació de un hongo de cigarras 🦗
 ```
 Descripción:
 ```text

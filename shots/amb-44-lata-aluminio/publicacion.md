@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta lata ahorra el 95 % de la energía ⚡ | Shot Ambiental 44
+Esta lata ahorra el 95 % de la energía ⚡
 ```
 Descripción:
 ```text

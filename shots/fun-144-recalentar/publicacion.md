@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Se pueden recalentar los hongos? El mito de la abuela 🍄 | Shot Fungi Mati 144
+¿Se pueden recalentar los hongos? El mito de la abuela 🍄
 ```
 Descripción:
 ```text

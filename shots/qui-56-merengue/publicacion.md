@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese merengue no es solo azúcar 🥚🫧 | Shot Químico 56
+Ese merengue no es solo azúcar 🥚🫧
 ```
 Descripción:
 ```text

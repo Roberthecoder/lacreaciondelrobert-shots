@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese puntito en el tronco es un granjero de hongos que amenaza tu guacamole 🪲🍄 | Shot Fungi Mati 97
+Ese puntito en el tronco es un granjero de hongos que amenaza tu guacamole 🪲🍄
 ```
 Descripción:
 ```text

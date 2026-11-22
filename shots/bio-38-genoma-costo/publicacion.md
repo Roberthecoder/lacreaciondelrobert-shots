@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu genoma en una pantalla: de casi 100 millones a 525 dólares 🧬 | Shot Biotecnológico 38
+Tu genoma en una pantalla: de casi 100 millones a 525 dólares 🧬
 ```
 Descripción:
 ```text

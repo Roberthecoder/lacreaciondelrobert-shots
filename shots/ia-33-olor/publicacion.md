@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que sabe a qué huele una molécula sin olerla 👃 | Shot IA 33
+La IA que sabe a qué huele una molécula sin olerla 👃
 ```
 Descripción:
 ```text

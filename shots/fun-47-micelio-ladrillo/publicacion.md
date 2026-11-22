@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto NO es unicel: es un HONGO 🍄📦 | Shot Fungi Mati 47
+Esto NO es unicel: es un HONGO 🍄📦
 ```
 Descripción:
 ```text

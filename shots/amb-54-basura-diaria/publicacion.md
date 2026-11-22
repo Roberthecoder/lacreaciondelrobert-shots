@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu basura de un año pesa casi 400 kilos 🗑️ ¿A dónde va? | Shot Ambiental 54
+Tu basura de un año pesa casi 400 kilos 🗑️ ¿A dónde va?
 ```
 Descripción:
 ```text

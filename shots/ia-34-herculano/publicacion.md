@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El libro quemado por un volcán que la IA leyó sin abrirlo 📜 | Shot IA 34
+El libro quemado por un volcán que la IA leyó sin abrirlo 📜
 ```
 Descripción:
 ```text

@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese polvo no es un solo truco 🎂 | Shot Químico 55
+Ese polvo no es un solo truco 🎂
 ```
 Descripción:
 ```text

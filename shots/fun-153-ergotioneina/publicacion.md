@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tus células tienen una puerta para una molécula de los hongos 🍄🚪 | Shot Fungi Mati 153
+Tus células tienen una puerta para una molécula de los hongos 🍄🚪
 ```
 Descripción:
 ```text

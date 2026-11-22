@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Quién inventó CRISPR? No fuimos nosotros 🧫 | Shot Biotecnológico 03
+¿Quién inventó CRISPR? No fuimos nosotros 🧫
 ```
 Descripción:
 ```text

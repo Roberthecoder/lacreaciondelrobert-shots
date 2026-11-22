@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Así se cuentan los jaguares de México 🐆📸 | Shot Ambiental 26
+Así se cuentan los jaguares de México 🐆📸
 ```
 Descripción:
 ```text

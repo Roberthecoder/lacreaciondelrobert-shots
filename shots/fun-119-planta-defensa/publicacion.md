@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esos puntitos cafés: tu planta sacrificándose 🍅 | Shot Fungi Mati 119
+Esos puntitos cafés: tu planta sacrificándose 🍅
 ```
 Descripción:
 ```text

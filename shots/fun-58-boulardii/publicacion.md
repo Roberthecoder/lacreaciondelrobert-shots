@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este sobrecito para la diarrea es un HONGO vivo 🍄 | Shot Fungi Mati 58
+Este sobrecito para la diarrea es un HONGO vivo 🍄
 ```
 Descripción:
 ```text

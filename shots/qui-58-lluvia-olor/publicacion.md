@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese olor no es la lluvia 🌧️ | Shot Químico 58
+Ese olor no es la lluvia 🌧️
 ```
 Descripción:
 ```text

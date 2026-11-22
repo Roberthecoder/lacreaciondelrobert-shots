@@ -40,7 +40,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es tierra: es estiércol cocinado 🍄 | Shot Fungi Mati 106
+Esto no es tierra: es estiércol cocinado 🍄
 ```
 Descripción:
 ```text

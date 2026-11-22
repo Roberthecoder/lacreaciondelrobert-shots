@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Por qué no te puedes hacer cosquillas 🤭 | Shot Científico 05
+Por qué no te puedes hacer cosquillas 🤭
 ```
 Descripción:
 ```text

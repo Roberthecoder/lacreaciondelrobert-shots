@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Por qué NO mezclar cloro con vinagre? ⚠️ | Shot Químico 03
+¿Por qué NO mezclar cloro con vinagre? ⚠️
 ```
 Descripción:
 ```text

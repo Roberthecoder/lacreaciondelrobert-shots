@@ -42,7 +42,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿De qué color es tu medicina? La biotecnología tiene arcoíris 🌈 | Shot Biotecnológico 01
+¿De qué color es tu medicina? La biotecnología tiene arcoíris 🌈
 ```
 Descripción:
 ```text

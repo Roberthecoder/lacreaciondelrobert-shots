@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este antibiótico empezó junto a un desagüe 💊 | Shot Fungi Mati 65
+Este antibiótico empezó junto a un desagüe 💊
 ```
 Descripción:
 ```text

@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu refri NO mata al moho: solo lo pone en pausa 🧊🍄 | Shot Fungi Mati 88
+Tu refri NO mata al moho: solo lo pone en pausa 🧊🍄
 ```
 Descripción:
 ```text

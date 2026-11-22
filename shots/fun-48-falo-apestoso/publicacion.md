@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo que huele a carne podrida (a propósito) 🪰 | Shot Fungi Mati 48
+El hongo que huele a carne podrida (a propósito) 🪰
 ```
 Descripción:
 ```text

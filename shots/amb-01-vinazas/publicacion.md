@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un litro de tequila deja 12 litros de vinaza 🥃 | Shot Ambiental 01
+Un litro de tequila deja 12 litros de vinaza 🥃
 ```
 Descripción:
 ```text

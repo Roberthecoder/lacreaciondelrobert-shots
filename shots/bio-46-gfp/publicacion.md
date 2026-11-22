@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa medusa no fabrica luz verde 🪼💚 | Shot Biotecnológico 46
+Esa medusa no fabrica luz verde 🪼💚
 ```
 Descripción:
 ```text

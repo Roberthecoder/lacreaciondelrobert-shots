@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un moho le abrió el camino a tu crema de hidrocortisona 🍄 | Shot Fungi Mati 76
+Un moho le abrió el camino a tu crema de hidrocortisona 🍄
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas manchitas negras en tu coche son DISPAROS de un hongo 🎯 | Shot Fungi Mati 29
+Esas manchitas negras en tu coche son DISPAROS de un hongo 🎯
 ```
 Descripción:
 ```text

@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-No bostezas por falta de oxígeno 🥱 | Shot Científico 50
+No bostezas por falta de oxígeno 🥱
 ```
 Descripción:
 ```text

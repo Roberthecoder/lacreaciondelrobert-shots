@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-AlphaZero: revisaba mil veces menos posiciones y aun así ganaba ♟️ | Shot IA 31
+AlphaZero: revisaba mil veces menos posiciones y aun así ganaba ♟️
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu celular no te ve la cara: te la mide 📱 | Shot IA 57
+Tu celular no te ve la cara: te la mide 📱
 ```
 Descripción:
 ```text

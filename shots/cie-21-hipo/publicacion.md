@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hipo: tu diafragma con un tic 😮 | Shot Científico 21
+El hipo: tu diafragma con un tic 😮
 ```
 Descripción:
 ```text

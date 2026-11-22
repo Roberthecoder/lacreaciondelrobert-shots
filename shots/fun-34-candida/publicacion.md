@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu pareja y tú pueden compartir este hongo de la boca 👄 | Shot Fungi Mati 34
+Tu pareja y tú pueden compartir este hongo de la boca 👄
 ```
 Descripción:
 ```text

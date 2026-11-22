@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese cajón de cables viejos es una mina 📱⛏️ | Shot Ambiental 20
+Ese cajón de cables viejos es una mina 📱⛏️
 ```
 Descripción:
 ```text

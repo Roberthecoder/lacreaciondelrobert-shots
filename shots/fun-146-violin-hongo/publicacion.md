@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este violín no es un Stradivarius: lo afinaron hongos 🎻🍄 | Shot Fungi Mati 146
+Este violín no es un Stradivarius: lo afinaron hongos 🎻🍄
 ```
 Descripción:
 ```text

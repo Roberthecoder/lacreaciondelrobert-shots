@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese chicle no es chicle: es plástico 🍬 | Shot Ambiental 24
+Ese chicle no es chicle: es plástico 🍬
 ```
 Descripción:
 ```text

@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta seta no nació de una semilla: así se crea una cepa 🍄🧫 | Shot Fungi Mati 103
+Esta seta no nació de una semilla: así se crea una cepa 🍄🧫
 ```
 Descripción:
 ```text

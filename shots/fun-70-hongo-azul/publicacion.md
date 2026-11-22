@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este hongo suelta LECHE AZUL 💙🍄 | Shot Fungi Mati 70
+Este hongo suelta LECHE AZUL 💙🍄
 ```
 Descripción:
 ```text

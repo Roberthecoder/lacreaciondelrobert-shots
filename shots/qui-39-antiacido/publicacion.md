@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa pastilla no calma tu estómago 💊 | Shot Químico 39
+Esa pastilla no calma tu estómago 💊
 ```
 Descripción:
 ```text

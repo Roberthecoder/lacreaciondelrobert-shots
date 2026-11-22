@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que leyó 120 veces más inglés que español 🤖 | Shot IA 02
+La IA que leyó 120 veces más inglés que español 🤖
 ```
 Descripción:
 ```text

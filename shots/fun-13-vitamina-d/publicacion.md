@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-15 minutos de sol de mediodía y tu champiñón fabrica vitamina D ☀️🍄 | Shot Fungi Mati 13
+15 minutos de sol de mediodía y tu champiñón fabrica vitamina D ☀️🍄
 ```
 Descripción:
 ```text

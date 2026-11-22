@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu cerebro piensa con 20 watts; una tarjeta de IA, con 700 💡 | Shot IA 24
+Tu cerebro piensa con 20 watts; una tarjeta de IA, con 700 💡
 ```
 Descripción:
 ```text

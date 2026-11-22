@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El "hongo negro" NO es negro: es tejido muerto | Shot Fungi Mati 56
+El "hongo negro" NO es negro: es tejido muerto
 ```
 Descripción:
 ```text

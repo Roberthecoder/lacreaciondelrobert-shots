@@ -39,7 +39,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta tierra negra es un cementerio de microbios 🍄 | Shot Fungi Mati 122
+Esta tierra negra es un cementerio de microbios 🍄
 ```
 Descripción:
 ```text

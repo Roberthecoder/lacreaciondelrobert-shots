@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que busca Parkinson en cómo respiras dormido 😴 | Shot IA 43
+La IA que busca Parkinson en cómo respiras dormido 😴
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa vela no quema la cera que ves 🕯️ | Shot Químico 35
+Esa vela no quema la cera que ves 🕯️
 ```
 Descripción:
 ```text

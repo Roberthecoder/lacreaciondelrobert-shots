@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La imagen hecha con IA que ganó un concurso de arte 🎨 | Shot IA 41
+La imagen hecha con IA que ganó un concurso de arte 🎨
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Todos los lobos mexicanos vienen de solo 7 🐺 | Shot Ambiental 27
+Todos los lobos mexicanos vienen de solo 7 🐺
 ```
 Descripción:
 ```text

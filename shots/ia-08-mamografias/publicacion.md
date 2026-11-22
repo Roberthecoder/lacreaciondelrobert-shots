@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La IA que encontró más cáncer con 44 % menos trabajo 🩺 | Shot IA 08
+La IA que encontró más cáncer con 44 % menos trabajo 🩺
 ```
 Descripción:
 ```text

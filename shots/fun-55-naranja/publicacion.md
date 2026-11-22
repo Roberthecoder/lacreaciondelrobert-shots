@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese polvo verde de tu naranja NO es polvo 🍊 | Shot Fungi Mati 55
+Ese polvo verde de tu naranja NO es polvo 🍊
 ```
 Descripción:
 ```text

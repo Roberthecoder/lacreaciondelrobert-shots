@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La «madre» de la kombucha NO es un hongo 🍵 | Shot Fungi Mati 38
+La «madre» de la kombucha NO es un hongo 🍵
 ```
 Descripción:
 ```text

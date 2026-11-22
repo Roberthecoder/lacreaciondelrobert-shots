@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu bocina se prende sola… con la tele 🔵 | Shot IA 51
+Tu bocina se prende sola… con la tele 🔵
 ```
 Descripción:
 ```text

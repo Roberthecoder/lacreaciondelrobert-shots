@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu vitamina B12 la hicieron bacterias 💊🦠 | Shot Biotecnológico 59
+Tu vitamina B12 la hicieron bacterias 💊🦠
 ```
 Descripción:
 ```text

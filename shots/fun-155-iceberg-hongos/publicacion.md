@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El iceberg de los hongos: ¿hasta qué nivel sabías? 🍄🧊 | Shot Fungi Mati 155
+El iceberg de los hongos: ¿hasta qué nivel sabías? 🍄🧊
 ```
 Descripción:
 ```text

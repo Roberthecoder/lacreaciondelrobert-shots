@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Por qué NO comer shiitake crudo? 🍄 La piel a latigazos | Shot Fungi Mati 26
+¿Por qué NO comer shiitake crudo? 🍄 La piel a latigazos
 ```
 Descripción:
 ```text

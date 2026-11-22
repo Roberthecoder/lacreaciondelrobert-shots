@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este hongo vive en la cama del hospital 🏥 | Shot Fungi Mati 66
+Este hongo vive en la cama del hospital 🏥
 ```
 Descripción:
 ```text

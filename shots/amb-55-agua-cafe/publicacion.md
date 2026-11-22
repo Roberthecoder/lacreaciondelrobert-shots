@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu café esconde 130 litros de agua ☕💧 | Shot Ambiental 55
+Tu café esconde 130 litros de agua ☕💧
 ```
 Descripción:
 ```text

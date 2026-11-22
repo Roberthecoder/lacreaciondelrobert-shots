@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu penicilina salió de un melón podrido 🍈 | Shot Biotecnológico 29
+Tu penicilina salió de un melón podrido 🍈
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese refresco no solo es dulce: es ácido 🥤🦷 | Shot Químico 38
+Ese refresco no solo es dulce: es ácido 🥤🦷
 ```
 Descripción:
 ```text

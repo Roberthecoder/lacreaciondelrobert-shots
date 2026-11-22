@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es un panda: para la IA es un gibón 🐼 | Shot IA 06
+Esto no es un panda: para la IA es un gibón 🐼
 ```
 Descripción:
 ```text

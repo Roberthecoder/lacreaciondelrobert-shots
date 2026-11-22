@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese pasto es el abuelo de tu tortilla 🌽 | Shot Biotecnológico 50
+Ese pasto es el abuelo de tu tortilla 🌽
 ```
 Descripción:
 ```text

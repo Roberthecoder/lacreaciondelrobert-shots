@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo que respiras en las cuevas con murciélagos 🦇 | Shot Fungi Mati 43
+El hongo que respiras en las cuevas con murciélagos 🦇
 ```
 Descripción:
 ```text

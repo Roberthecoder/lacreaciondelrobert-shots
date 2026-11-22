@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Por qué los pájaros en los cables no se electrocutan? ⚡ | Shot Científico 30
+¿Por qué los pájaros en los cables no se electrocutan? ⚡
 ```
 Descripción:
 ```text

@@ -362,7 +362,7 @@ function TikTok() {
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2024" quien="EE. UU. · Alemania · Países Bajos" revista="Vombatkere et al. · The Web Conference (Singapur)" y={600} />
       <Chip T={T} at={K.E + 3.6} until={E2 - 0.2} texto="347 usuarios donaron sus datos" x={540} y={680} tam={40} borde={KC.ink} />
       <Datos347 T={T} at={K.E + 3.7} until={E2 - 0.3} x={120} y={780} />
-      {T > E2 - 0.3 && T < K.X + 0.3 && <div style={{ position:'absolute', inset:0, background:KC.cyan, opacity:kprog(T, E2 - 0.3, E2) * (1 - kprog(T, K.X - 0.1, K.X + 0.3)), zIndex:35,
+      {T > E2 - 0.3 && T < K.X + 0.3 && <div style={{ position:'absolute', inset:0, background:cineMix(KC.cyan, CINE.fondo, 0.8), opacity:kprog(T, E2 - 0.3, E2) * (1 - kprog(T, K.X - 0.1, K.X + 0.3)), zIndex:35,
         backgroundImage:'radial-gradient(circle, rgba(255,255,255,.33) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>}
       <Chip T={T} at={E2 + 0.1} until={K.X - 0.2} texto="lo que más personalizaba" x={430} y={540} tam={38} borde={KC.ink} />
       <Impacto T={T} at={E2 + 0.4} until={K.X - 0.2} y={640} />

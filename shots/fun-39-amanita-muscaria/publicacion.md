@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los puntos del hongo de los cuentos son un cascarón ROTO 🍄 | Shot Fungi Mati 39
+Los puntos del hongo de los cuentos son un cascarón ROTO 🍄
 ```
 Descripción:
 ```text

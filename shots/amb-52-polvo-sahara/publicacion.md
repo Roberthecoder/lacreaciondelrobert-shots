@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese atardecer rojo viene del Sahara 🌅 | Shot Ambiental 52
+Ese atardecer rojo viene del Sahara 🌅
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese hongo arrugado no está echado a perder: es una bomba de umami 🍄 | Shot Fungi Mati 128
+Ese hongo arrugado no está echado a perder: es una bomba de umami 🍄
 ```
 Descripción:
 ```text

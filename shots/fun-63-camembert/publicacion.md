@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa cáscara blanca no es queso: es un hongo clonado 🧀 | Shot Fungi Mati 63
+Esa cáscara blanca no es queso: es un hongo clonado 🧀
 ```
 Descripción:
 ```text

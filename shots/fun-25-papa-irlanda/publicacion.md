@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El "hongo" de la papa NO es un hongo 🥔 | Shot Fungi Mati 25
+El "hongo" de la papa NO es un hongo 🥔
 ```
 Descripción:
 ```text

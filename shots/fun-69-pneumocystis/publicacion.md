@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un hongo ya vivió en tus pulmones 🫁 | Shot Fungi Mati 69
+Un hongo ya vivió en tus pulmones 🫁
 ```
 Descripción:
 ```text

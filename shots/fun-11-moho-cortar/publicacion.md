@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Le quitas el moho al pan y te lo comes? 🍞 Cuándo cortar y cuándo tirar | Shot Fungi Mati 11
+¿Le quitas el moho al pan y te lo comes? 🍞 Cuándo cortar y cuándo tirar
 ```
 Descripción:
 ```text

@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto NO es pollo: es un hongo que se come un árbol 🍄 | Shot Fungi Mati 41
+Esto NO es pollo: es un hongo que se come un árbol 🍄
 ```
 Descripción:
 ```text

@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El regalito de tu gato es solo una parte 🐈🐦 | Shot Ambiental 35
+El regalito de tu gato es solo una parte 🐈🐦
 ```
 Descripción:
 ```text

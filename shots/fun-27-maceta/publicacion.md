@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese hongo amarillo NO mata a tu planta 🍄🪴 | Shot Fungi Mati 27
+Ese hongo amarillo NO mata a tu planta 🍄🪴
 ```
 Descripción:
 ```text

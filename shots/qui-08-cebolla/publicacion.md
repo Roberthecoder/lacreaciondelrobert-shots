@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas lágrimas no son de tristeza: es un gas 🧅 | Shot Químico 08
+Esas lágrimas no son de tristeza: es un gas 🧅
 ```
 Descripción:
 ```text

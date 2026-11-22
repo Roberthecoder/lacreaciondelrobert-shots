@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El "robot" que jugaba ajedrez era una persona escondida ♟️ | Shot IA 25
+El "robot" que jugaba ajedrez era una persona escondida ♟️
 ```
 Descripción:
 ```text

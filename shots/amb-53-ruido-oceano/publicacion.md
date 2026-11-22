@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El 11-S dejó al mar callado… y las ballenas se relajaron 🐋 | Shot Ambiental 53
+El 11-S dejó al mar callado… y las ballenas se relajaron 🐋
 ```
 Descripción:
 ```text

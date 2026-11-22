@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este hongo no tiene dos sexos: tiene más de 23 mil | Shot Fungi Mati 80
+Este hongo no tiene dos sexos: tiene más de 23 mil
 ```
 Descripción:
 ```text

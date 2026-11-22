@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas manchitas que flotan están dentro de tu ojo 👁️ | Shot Científico 11
+Esas manchitas que flotan están dentro de tu ojo 👁️
 ```
 Descripción:
 ```text

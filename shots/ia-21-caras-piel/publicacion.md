@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La misma app de caras falla más con unas que con otras 👀 | Shot IA 21
+La misma app de caras falla más con unas que con otras 👀
 ```
 Descripción:
 ```text

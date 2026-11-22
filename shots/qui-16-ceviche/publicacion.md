@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese ceviche no está cocido 🍋🐟 | Shot Químico 16
+Ese ceviche no está cocido 🍋🐟
 ```
 Descripción:
 ```text

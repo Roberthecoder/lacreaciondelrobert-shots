@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta gelatina no se echó a perder 🍍 | Shot Químico 10
+Esta gelatina no se echó a perder 🍍
 ```
 Descripción:
 ```text

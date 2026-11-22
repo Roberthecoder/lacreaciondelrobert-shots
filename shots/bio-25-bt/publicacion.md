@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta hoja fabrica su propio insecticida 🌽 | Shot Biotecnológico 25
+Esta hoja fabrica su propio insecticida 🌽
 ```
 Descripción:
 ```text

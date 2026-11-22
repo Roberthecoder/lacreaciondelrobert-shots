@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese humo de la cocina no es solo olor 🔥 | Shot Ambiental 40
+Ese humo de la cocina no es solo olor 🔥
 ```
 Descripción:
 ```text

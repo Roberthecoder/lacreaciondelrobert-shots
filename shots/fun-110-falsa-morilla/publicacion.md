@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es una morilla: es combustible de cohete 🍄🚀 | Shot Fungi Mati 110
+Esto no es una morilla: es combustible de cohete 🍄🚀
 ```
 Descripción:
 ```text

@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Todas las monarcas caben en 4 canchas 🦋 | Shot Ambiental 07
+Todas las monarcas caben en 4 canchas 🦋
 ```
 Descripción:
 ```text

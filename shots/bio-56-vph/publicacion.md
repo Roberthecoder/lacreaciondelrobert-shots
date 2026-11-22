@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta vacuna no trae un virus: trae su cáscara vacía 💉 | Shot Biotecnológico 56
+Esta vacuna no trae un virus: trae su cáscara vacía 💉
 ```
 Descripción:
 ```text

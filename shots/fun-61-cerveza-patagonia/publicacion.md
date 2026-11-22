@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu cerveza lager la hicieron DOS levaduras (y una es salvaje) 🍺 | Shot Fungi Mati 61
+Tu cerveza lager la hicieron DOS levaduras (y una es salvaje) 🍺
 ```
 Descripción:
 ```text

@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas estrellitas no son radiactivas ✨ | Shot Químico 34
+Esas estrellitas no son radiactivas ✨
 ```
 Descripción:
 ```text

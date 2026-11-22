@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese portobello NO es otro hongo: es un champiñón que dejaron crecer 🍄 | Shot Fungi Mati 60
+Ese portobello NO es otro hongo: es un champiñón que dejaron crecer 🍄
 ```
 Descripción:
 ```text

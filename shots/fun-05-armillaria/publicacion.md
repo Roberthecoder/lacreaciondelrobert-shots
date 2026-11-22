@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este hongo mide 965 hectáreas 🍄 | Shot Fungi Mati 05
+Este hongo mide 965 hectáreas 🍄
 ```
 Descripción:
 ```text

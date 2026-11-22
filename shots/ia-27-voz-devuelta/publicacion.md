@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa cara no habla sola: la mueve su cerebro 🧠 | Shot IA 27
+Esa cara no habla sola: la mueve su cerebro 🧠
 ```
 Descripción:
 ```text

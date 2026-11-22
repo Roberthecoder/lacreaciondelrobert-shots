@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un gramo de ADN guarda más que un millón de celulares 🧬 | Shot Biotecnológico 37
+Un gramo de ADN guarda más que un millón de celulares 🧬
 ```
 Descripción:
 ```text

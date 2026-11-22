@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El Sol que ves es el de hace 8 minutos ☀️ | Shot Científico 25
+El Sol que ves es el de hace 8 minutos ☀️
 ```
 Descripción:
 ```text

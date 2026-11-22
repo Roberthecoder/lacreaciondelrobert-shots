@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa costra no es corteza: es un hongo de 11 metros 🍄 | Shot Fungi Mati 74
+Esa costra no es corteza: es un hongo de 11 metros 🍄
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esta medicina se hizo para un solo bebé 🧬 | Shot Biotecnológico 33
+Esta medicina se hizo para un solo bebé 🧬
 ```
 Descripción:
 ```text

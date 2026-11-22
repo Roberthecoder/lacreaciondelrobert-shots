@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un año de ballena gris en un mapa: 16,000 km 🐋 | Shot Ambiental 48
+Un año de ballena gris en un mapa: 16,000 km 🐋
 ```
 Descripción:
 ```text

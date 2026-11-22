@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa compresa no fabrica frío: te roba calor 🧊 | Shot Químico 26
+Esa compresa no fabrica frío: te roba calor 🧊
 ```
 Descripción:
 ```text

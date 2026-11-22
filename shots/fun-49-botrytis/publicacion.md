@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La pelusa gris de tus fresas entró desde la flor 🍓 | Shot Fungi Mati 49
+La pelusa gris de tus fresas entró desde la flor 🍓
 ```
 Descripción:
 ```text

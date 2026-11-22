@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este vaso "compostable" no se deshace en tu jardín 🥤 | Shot Ambiental 03
+Este vaso "compostable" no se deshace en tu jardín 🥤
 ```
 Descripción:
 ```text

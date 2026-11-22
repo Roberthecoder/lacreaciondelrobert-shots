@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hielo del Ártico, medido en Méxicos 🧊 | Shot Ambiental 42
+El hielo del Ártico, medido en Méxicos 🧊
 ```
 Descripción:
 ```text

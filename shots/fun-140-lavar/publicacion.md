@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese champiñón NO es una esponja 🍄💧 | Shot Fungi Mati 140
+Ese champiñón NO es una esponja 🍄💧
 ```
 Descripción:
 ```text

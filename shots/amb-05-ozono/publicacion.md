@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este agujero se está cerrando 🌍 | Shot Ambiental 05
+Este agujero se está cerrando 🌍
 ```
 Descripción:
 ```text

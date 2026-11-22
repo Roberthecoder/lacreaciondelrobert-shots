@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-A esta tortuga la decide la arena, no sus cromosomas 🐢 | Shot Ambiental 13
+A esta tortuga la decide la arena, no sus cromosomas 🐢
 ```
 Descripción:
 ```text

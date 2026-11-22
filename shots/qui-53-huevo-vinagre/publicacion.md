@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este huevo no está pelado 🥚🫧 | Shot Químico 53
+Este huevo no está pelado 🥚🫧
 ```
 Descripción:
 ```text

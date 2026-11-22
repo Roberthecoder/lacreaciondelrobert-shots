@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu celular "ve" el canto de los pájaros 🐦 | Shot IA 39
+Tu celular "ve" el canto de los pájaros 🐦
 ```
 Descripción:
 ```text

@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa seta no salió tarde: el calendario de los hongos cambió 🍄 | Shot Fungi Mati 120
+Esa seta no salió tarde: el calendario de los hongos cambió 🍄
 ```
 Descripción:
 ```text

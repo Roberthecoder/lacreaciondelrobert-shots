@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu cuerpo es un poquito radiactivo ✨ | Shot Científico 35
+Tu cuerpo es un poquito radiactivo ✨
 ```
 Descripción:
 ```text

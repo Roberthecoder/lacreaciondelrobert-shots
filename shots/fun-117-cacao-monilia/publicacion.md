@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa mazorca no está nevada: es un hongo ❄️🍫 | Shot Fungi Mati 117
+Esa mazorca no está nevada: es un hongo ❄️🍫
 ```
 Descripción:
 ```text

@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu voz grabada no suena rara: suena sin tus huesos 🎙️ | Shot Científico 10
+Tu voz grabada no suena rara: suena sin tus huesos 🎙️
 ```
 Descripción:
 ```text

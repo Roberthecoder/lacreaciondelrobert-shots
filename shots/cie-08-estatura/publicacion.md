@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-En la noche puedes medir 2 cm menos (y en el espacio, más) 📏 | Shot Científico 08
+En la noche puedes medir 2 cm menos (y en el espacio, más) 📏
 ```
 Descripción:
 ```text

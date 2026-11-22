@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu polvo es un mapa de tu región, escrito en hongos 🗺️ | Shot Fungi Mati 134
+Tu polvo es un mapa de tu región, escrito en hongos 🗺️
 ```
 Descripción:
 ```text

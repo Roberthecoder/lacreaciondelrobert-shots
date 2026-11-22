@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esto no es estambre: es una proteína que adivinó una IA 🤖 | Shot IA 01
+Esto no es estambre: es una proteína que adivinó una IA 🤖
 ```
 Descripción:
 ```text

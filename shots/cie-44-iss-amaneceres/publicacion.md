@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Los astronautas ven 16 amaneceres al día 🌅 | Shot Científico 44
+Los astronautas ven 16 amaneceres al día 🌅
 ```
 Descripción:
 ```text

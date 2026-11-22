@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-En peceras de todo el mundo… y casi ninguno en su casa 🦎 | Shot Ambiental 16
+En peceras de todo el mundo… y casi ninguno en su casa 🦎
 ```
 Descripción:
 ```text

@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese círculo en el pasto NO es de hadas 🍄 | Shot Fungi Mati 21
+Ese círculo en el pasto NO es de hadas 🍄
 ```
 Descripción:
 ```text

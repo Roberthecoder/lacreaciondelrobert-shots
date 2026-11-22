@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-1 de cada 5 partes de la comida, a la basura 🗑️ | Shot Ambiental 19
+1 de cada 5 partes de la comida, a la basura 🗑️
 ```
 Descripción:
 ```text

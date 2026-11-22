@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu guacamole café NO está podrido 🥑 | Shot Químico 13
+Tu guacamole café NO está podrido 🥑
 ```
 Descripción:
 ```text

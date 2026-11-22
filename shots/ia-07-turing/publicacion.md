@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-La gente creyó que esta IA era humana: 73 de 100 🤖 | Shot IA 07
+La gente creyó que esta IA era humana: 73 de 100 🤖
 ```
 Descripción:
 ```text

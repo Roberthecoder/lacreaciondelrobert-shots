@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Lo espeso de tu aderezo lo hizo una bacteria 🥗🦠 | Shot Biotecnológico 19
+Lo espeso de tu aderezo lo hizo una bacteria 🥗🦠
 ```
 Descripción:
 ```text

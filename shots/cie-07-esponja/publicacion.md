@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu esponja de cocina es un edificio de bacterias 🧽 | Shot Científico 07
+Tu esponja de cocina es un edificio de bacterias 🧽
 ```
 Descripción:
 ```text

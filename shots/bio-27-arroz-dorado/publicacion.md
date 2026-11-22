@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese arroz no está pintado: fabrica vitamina A 🍚 | Shot Biotecnológico 27
+Ese arroz no está pintado: fabrica vitamina A 🍚
 ```
 Descripción:
 ```text

@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-¿Una flor que brilla sin pilas? Sí existe 🌸 | Shot Biotecnológico 05
+¿Una flor que brilla sin pilas? Sí existe 🌸
 ```
 Descripción:
 ```text

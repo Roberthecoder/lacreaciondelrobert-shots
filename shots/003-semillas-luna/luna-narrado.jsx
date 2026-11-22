@@ -95,7 +95,7 @@ function Equipaje({ T, a }) {
   const tapa = kprog(T, a + 0.4, a + 1.1, kEase.sale);
   const bolsas = [[250, 720], [830, 720], [260, 1060], [820, 1060]];
   return <>
-    <div style={{ position:'absolute', inset:0, background:KC.yellow, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.35) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+    <div style={{ position:'absolute', inset:0, background:cineMix(KC.yellow, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.35) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       {bolsas.map(([bx, by], i) => {
         const p = kprog(T, a + 0.9 + i * 0.18, a + 1.7 + i * 0.18, kEase.rebote);
@@ -130,7 +130,7 @@ const ESPECIES = [
 function Especies({ T, a }) {
   const pos = [[200, 625], [540, 625], [880, 625], [370, 965], [710, 965]];
   return <>
-    <div style={{ position:'absolute', inset:0, background:KC.mint, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+    <div style={{ position:'absolute', inset:0, background:cineMix(KC.mint, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
     {ESPECIES.map((e, i) => {
       const at = a + 0.4 + i * 0.62, k = kentrada(T, at, null, 'pop');
       if (T < at) return null;
@@ -217,7 +217,7 @@ function Vacio({ T, a }) {
   const sem = Array.from({ length: 28 }, (_, i) => ({ vx: (g() - 0.5) * 760, vy: (g() - 0.5) * 560, r0: g() * 360, vr: (g() - 0.5) * 140, t: i % 3, s: 0.7 + g() * 0.5 }));
   const u = T - rev, k = u > 0 ? 1 - Math.exp(-u * 1.6) : 0;
   return <>
-    <div style={{ position:'absolute', inset:0, background:KC.lilac, backgroundImage:'repeating-linear-gradient(45deg, rgba(255,255,255,.12) 0 24px, transparent 24px 48px)' }}></div>
+    <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'repeating-linear-gradient(45deg, rgba(255,255,255,.12) 0 24px, transparent 24px 48px)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       <rect x={110} y={440} width={860} height={760} rx={60} fill="#151924" stroke={KC.ink} strokeWidth={12} />
       <rect x={130} y={460} width={820} height={720} rx={46} fill="none" stroke="#3b4255" strokeWidth={6} />
@@ -259,7 +259,7 @@ function Maceta({ x, y, texto, color }) {
 function Estudio({ T, a, b }) {
   const brota = kprog(T, b - 2.4, b - 0.6, kEase.sale), m = kentrada(T, a + 3.3, null, 'pop');
   return <>
-    <div style={{ position:'absolute', inset:0, background:KC.yellow, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.35) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+    <div style={{ position:'absolute', inset:0, background:cineMix(KC.yellow, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.35) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
     {T >= a + 3.3 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:m.o }}>
       <g transform={`translate(0 ${(1 - m.s) * 200})`}>
         <Plantula x={300} y={990} p={brota} /><Plantula x={780} y={990} p={brota} />
@@ -293,7 +293,7 @@ function Lista({ T, a }) {
   const g = krng(404), arb = [];
   while (arb.length < 40) { const x = 70 + g() * 940, y = 720 + g() * 1100; if (y > 1180 && y < 1420) continue; arb.push([x, y, g() < 0.25]); }
   return <>
-    <div style={{ position:'absolute', inset:0, background:KC.mint, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+    <div style={{ position:'absolute', inset:0, background:cineMix(KC.mint, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       {arb.sort((p, q) => p[1] - q[1]).map(([x, y, q], i) => {
         const e = kentrada(T, a + 0.3 + i * 0.07, null, 'pop'); if (T < a + 0.3 + i * 0.07) return null;

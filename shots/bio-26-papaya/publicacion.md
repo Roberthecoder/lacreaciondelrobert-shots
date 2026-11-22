@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa papaya la salvó un pedacito del virus 🍈 | Shot Biotecnológico 26
+Esa papaya la salvó un pedacito del virus 🍈
 ```
 Descripción:
 ```text

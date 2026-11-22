@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa espina de rosal te pudo meter un hongo 🌹 | Shot Fungi Mati 67
+Esa espina de rosal te pudo meter un hongo 🌹
 ```
 Descripción:
 ```text

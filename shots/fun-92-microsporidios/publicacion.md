@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este parásito dispara un arpón 20 veces más largo que él 🎯 | Shot Fungi Mati 92
+Este parásito dispara un arpón 20 veces más largo que él 🎯
 ```
 Descripción:
 ```text

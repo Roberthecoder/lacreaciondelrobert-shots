@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Este polvo trae esporas de un hongo 🌵 La fiebre del valle | Shot Fungi Mati 42
+Este polvo trae esporas de un hongo 🌵 La fiebre del valle
 ```
 Descripción:
 ```text

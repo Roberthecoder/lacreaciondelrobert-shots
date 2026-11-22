@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu cáscara de plátano se vuelve gas en el basurero 🍌💨 | Shot Ambiental 46
+Tu cáscara de plátano se vuelve gas en el basurero 🍌💨
 ```
 Descripción:
 ```text

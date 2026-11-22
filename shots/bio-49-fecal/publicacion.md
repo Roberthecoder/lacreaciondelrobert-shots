@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Estas cápsulas están hechas a partir de caca 💩💊 | Shot Biotecnológico 49
+Estas cápsulas están hechas a partir de caca 💩💊
 ```
 Descripción:
 ```text

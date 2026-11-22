@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El hongo que se come la turbosina de los aviones ✈️🍄 | Shot Fungi Mati 51
+El hongo que se come la turbosina de los aviones ✈️🍄
 ```
 Descripción:
 ```text

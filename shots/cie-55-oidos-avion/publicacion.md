@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Por qué se te tapan los oídos en el avión ✈️ | Shot Científico 55
+Por qué se te tapan los oídos en el avión ✈️
 ```
 Descripción:
 ```text

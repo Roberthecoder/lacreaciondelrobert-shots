@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-El traductor que convierte a la ingeniera en «él» 🌐 | Shot IA 29
+El traductor que convierte a la ingeniera en «él» 🌐
 ```
 Descripción:
 ```text

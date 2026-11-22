@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa madera blanca no está sucia: su hongo rompe el DDT 🍄 | Shot Fungi Mati 78
+Esa madera blanca no está sucia: su hongo rompe el DDT 🍄
 ```
 Descripción:
 ```text

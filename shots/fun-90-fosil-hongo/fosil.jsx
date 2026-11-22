@@ -188,7 +188,7 @@ function FosilShot() {
       </Escena>
       {/* 6–7 · re-gancho y el agua: un río que llega al mar (hipótesis de los autores) */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.06}>
-        <div style={{ position:'absolute', inset:0, background:KC.pink }}></div>
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.pink, CINE.fondo, 0.8) }}></div>
         {fsvg(<TierraPelona T={T} x={0} y={260} rio={kprog(T, K.Ag + 0.2, K.Ag + 1.6)} />)}
         {fsvg(<g opacity={kprog(T, K.Ag + 1.4, K.Ag + 1.9)}><CapasLodo T={T} x={130} y={1180} p={kprog(T, K.Ag + 1.5, K.Ag + 3.2)} /></g>)}
       </Escena>

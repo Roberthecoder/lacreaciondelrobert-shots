@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Tu suero contra el alacrán lo empezó un caballo 🦂🐴 | Shot Biotecnológico 12
+Tu suero contra el alacrán lo empezó un caballo 🦂🐴
 ```
 Descripción:
 ```text

@@ -35,7 +35,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Un robot cosió el intestino de un cerdo vivo 🤖🪡 | Shot IA 59
+Un robot cosió el intestino de un cerdo vivo 🤖🪡
 ```
 Descripción:
 ```text

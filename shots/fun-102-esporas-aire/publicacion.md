@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Hoy vas a respirar MILES de esporas que nunca vas a ver 🍄🌬️ | Shot Fungi Mati 102
+Hoy vas a respirar MILES de esporas que nunca vas a ver 🍄🌬️
 ```
 Descripción:
 ```text

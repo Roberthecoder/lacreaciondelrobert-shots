@@ -33,7 +33,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-De cada 10 cubetas de agua, unas 4 se pierden en la calle 💧 | Shot Ambiental 32
+De cada 10 cubetas de agua, unas 4 se pierden en la calle 💧
 ```
 Descripción:
 ```text

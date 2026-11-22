@@ -32,7 +32,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esa espuma no es tu herida sanando 🫧 | Shot Químico 09
+Esa espuma no es tu herida sanando 🫧
 ```
 Descripción:
 ```text

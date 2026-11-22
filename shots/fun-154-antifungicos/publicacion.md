@@ -37,7 +37,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Ese hongo y tú son casi lo mismo (para un medicamento) 🍄💊 | Shot Fungi Mati 154
+Ese hongo y tú son casi lo mismo (para un medicamento) 🍄💊
 ```
 Descripción:
 ```text

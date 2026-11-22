@@ -34,7 +34,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Esas líneas negras en la madera son fronteras entre hongos 🍄🪵 | Shot Fungi Mati 147
+Esas líneas negras en la madera son fronteras entre hongos 🍄🪵
 ```
 Descripción:
 ```text

@@ -36,7 +36,7 @@ Soy Robert, de La Creación del Robert 🌱
 ### YouTube Shorts
 Título:
 ```text
-Las estrellas no parpadean: es el aire ✨ | Shot Científico 38
+Las estrellas no parpadean: es el aire ✨
 ```
 Descripción:
 ```text
