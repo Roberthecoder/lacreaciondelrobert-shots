@@ -7,7 +7,7 @@
 // gruesa y superficie en red. Todo es esquemático (no se dice ningún tamaño).
 
 const CG = { cuerpo:'#1d1a1f', cuerpo2:'#3a3540', ojo:'#e3262c', naranja:'#e8742a', ala:'rgba(236,246,255,.42)', tapon:'#f2e4b4', tapon2:'#d6bf85',
-  tapon3:'#fff7dc', rama:'#7a4a22', rama2:'#5a3416', hoja:'#3fbf4a', hoja2:'#2f9e44', tierra:'#6b4a2b', tierra2:'#4a321c', ninfa:'#c89a5e', ninfa2:'#8a6236',
+  tapon3:'#fff7dc', rama:'#7a4a22', rama2:'#5a3416', hoja:'#3fbf4a', hoja2:'#2f9e44', tierra:'#3b2a1b', tierra2:'#21160d', ninfa:'#c89a5e', ninfa2:'#8a6236',
   reposo:'#9c7440', reposo2:'#4f3418', anual:'#4a3b2c', anual2:'#6e5a44' };
 
 /* ---------- la cigarra (de perfil, mirando a la derecha) ----------
@@ -209,33 +209,33 @@ const PSILO = { enlaces: [...anillo([0, 2, 4]), [43, -25, 90, -40], [90, -40, 11
   letras: [[0, -110, 'OPO₃H₂'], [92, 58, 'NH'], [200, -160, 'N(CH₃)₂']] };
 
 // letrero pegado a un punto (sigue a lo que se mueve): línea del punto al texto
-function Senal({ T, at, until, px, py, tx, ty, texto, it = false, tam = 32, ancla = 'izq', fondo = 'rgba(244,239,228,.95)', color = KC.ink }) {
+function Senal({ T, at, until, px, py, tx, ty, texto, it = false, tam = 32, ancla = 'izq', fondo = 'rgba(16,23,40,.92)', color = KC.ink }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube'), v = (q) => (typeof q === 'function' ? q(T) : q);
   const PX = v(px), PY = v(py), TX = v(tx), TY = v(ty), w = kprog(T, at, at + 0.4, kEase.sale);
   return <>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:41, opacity:e.o, pointerEvents:'none' }}>
-      <line x1={PX} y1={PY} x2={klerp(PX, TX, w)} y2={klerp(PY, TY, w)} stroke={KC.ink} strokeWidth={9} strokeLinecap="round" />
+      <line x1={PX} y1={PY} x2={klerp(PX, TX, w)} y2={klerp(PY, TY, w)} stroke="#0b1020" strokeWidth={9} strokeLinecap="round" />
       <line x1={PX} y1={PY} x2={klerp(PX, TX, w)} y2={klerp(PY, TY, w)} stroke="#fff" strokeWidth={4} strokeLinecap="round" />
-      <circle cx={PX} cy={PY} r={10} fill="#fff" stroke={KC.ink} strokeWidth={4} />
+      <circle cx={PX} cy={PY} r={10} fill="#fff" stroke="#0b1020" strokeWidth={4} />
     </svg>
     <div style={{ position:'absolute', left:TX, top:TY, zIndex:42, opacity:e.o, transform:`translate(${ancla === 'izq' ? '0' : ancla === 'centro' ? '-50%' : '-100%'}, -50%)`,
-      background:fondo, border:`4px solid ${KC.ink}`, borderRadius:14, padding:'4px 16px', font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color, whiteSpace:'nowrap', boxShadow:`5px 5px 0 ${KC.ink}` }}>{texto}</div>
+      background:fondo, border:'3px solid rgba(223,231,255,.6)', borderRadius:14, padding:'4px 16px', font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color, whiteSpace:'nowrap', boxShadow:'0 10px 26px rgba(0,0,0,.55)' }}>{texto}</div>
   </>;
 }
 // cajita de texto (nombre científico, etc.)
 function Caja({ T, at, until, x, y, children, tam = 36, ancla = 'izq' }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube');
-  return <div style={{ position:'absolute', left:x, top:y, zIndex:42, opacity:e.o, transform:`translate(${ancla === 'centro' ? '-50%' : '0'}, ${e.y * 0.4}px)`, background:'rgba(244,239,228,.95)', border:`4px solid ${KC.ink}`,
-    borderRadius:14, padding:'6px 18px', font:`700 ${tam}px ${KF.mono}`, color:KC.ink, whiteSpace:'nowrap', boxShadow:`6px 6px 0 ${KC.ink}` }}>{children}</div>;
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:42, opacity:e.o, transform:`translate(${ancla === 'centro' ? '-50%' : '0'}, ${e.y * 0.4}px)`, background:'rgba(16,23,40,.92)', border:'3px solid rgba(223,231,255,.6)',
+    borderRadius:14, padding:'6px 18px', font:`700 ${tam}px ${KF.mono}`, color:KC.ink, whiteSpace:'nowrap', boxShadow:'0 10px 26px rgba(0,0,0,.55)' }}>{children}</div>;
 }
 // sello rectangular "HIPÓTESIS"
 function SelloTexto({ T, at, until, x, y, texto, color = KC.red, tam = 110, rot = -8 }) {
   if (T < at || (until != null && T > until + 0.4)) return null;
   const k = kprog(T, at, at + 0.35, kEase.rebote);
   return <div style={{ position:'absolute', left:x, top:y, zIndex:43, transform:`translate(-50%,-50%) rotate(${rot}deg) scale(${klerp(2.2, 1, k)})`, opacity:kprog(T, at, at + 0.15) * (until != null ? 1 - kprog(T, until, until + 0.4) : 1),
-    border:`12px solid ${color}`, borderRadius:24, padding:'6px 34px', font:`400 ${tam}px/1 ${KF.titulo}`, color, background:'rgba(255,255,255,.75)', letterSpacing:'.04em', whiteSpace:'nowrap' }}>{texto}</div>;
+    border:`12px solid ${color}`, borderRadius:24, padding:'6px 34px', font:`400 ${tam}px/1 ${KF.titulo}`, color, background:'rgba(16,23,40,.9)', letterSpacing:'.04em', whiteSpace:'nowrap' }}>{texto}</div>;
 }
 // marcador del experimento: n cuadritos, los primeros `si` se pintan
 function Marcador({ T, at, x, y, n, si, cols, lado = 46, color = KC.gold2, cada = 0.07 }) {
@@ -266,26 +266,33 @@ function CigarraShot() {
 
   // 0–1 · la cigarra despega de la rama (cuadro 0) y vuela; la parte de atrás es un tapón de esporas
   const despega = kprog(T, K.G + 0.05, K.G + 1.0, kEase.sale);
-  const gC = (t) => ({ x: klerp(470, 520, kprog(t, K.G, K.G + 1.0, kEase.sale)) + Math.sin(t * 1.3) * 28, y: klerp(1005, 880, kprog(t, K.G + 0.05, K.G + 1.0, kEase.sale)) + Math.sin(t * 2.1) * 18,
-    s: 1.45, rot: -4 + Math.sin(t * 1.7) * 3, espejo: false });
+  const gC = (t) => ({ x: klerp(570, 610, kprog(t, K.G, K.G + 1.0, kEase.sale)) + Math.sin(t * 1.3) * 28, y: klerp(1010, 930, kprog(t, K.G + 0.05, K.G + 1.0, kEase.sale)) + Math.sin(t * 2.1) * 18,
+    s: 1.75, rot: -4 + Math.sin(t * 1.7) * 3, espejo: false });
   const gc = gC(T);
   // 4 · el tapón: se caen los anillos uno por uno
   const caen = [0, 1, 2, 3].map((k) => K.Ta + 0.4 + k * 0.55);
   const perdidosTa = caen.reduce((a, t0) => a + (T >= t0 ? 1 : 0), 0);
   const tc = { x: 620, y: 930, s: 2.15, rot: -3, espejo: false };
   // 5 · salero: vuela cruzando la pantalla
-  const sC = (t) => ({ x: klerp(250, 760, kprog(t, K.Sa - 0.3, K.P + 0.3)), y: 880 + Math.sin(t * 2.4) * 30, s: 1.25, rot: -6 + Math.sin(t * 2) * 4, espejo: false });
+  const sC = (t) => ({ x: klerp(520, 700, kprog(t, K.Sa - 0.3, K.P + 0.3)), y: 960 + Math.sin(t * 2.4) * 30, s: 1.7, rot: -6 + Math.sin(t * 2) * 4, espejo: false });
   // 7–9 · el experimento: macho con tapón en la rama (mira a la bocina)
-  const ex = { x: 445, y: 1060, s: 1.1, rot: 2, espejo: true };
+  const ex = { x: 500, y: 1034, s: 1.35, rot: 2, espejo: true };
   const flickT = [K.Al + 0.5, K.Al + 1.1, K.Al + 2.2, K.Al + 2.8, K.Al + 3.9, K.Al + 4.5];
   const flick = 0.85 * flickT.reduce((a, t0) => Math.max(a, kprog(T, t0, t0 + 0.1) * (1 - kprog(T, t0 + 0.1, t0 + 0.3))), 0);
   const llega = kprog(T, K.M + 0.2, K.M + 1.8, kEase.sale);
-  const sano = { x: klerp(1300, 840, llega), y: klerp(780, 1050, llega), s: 0.95, rot: klerp(-14, -2, llega), espejo: false };
+  const sano = { x: klerp(1400, 800, llega), y: klerp(740, 1024, llega), s: 1.2, rot: klerp(-14, -2, llega), espejo: false };
   // 13 · cierre: la misma cigarra y la misma rama del inicio
-  const cC = (t) => ({ x: klerp(470, 520, kprog(t, K.C, K.C + 1.0, kEase.sale)) + Math.sin(t * 1.3) * 28, y: klerp(1005, 880, kprog(t, K.C + 0.05, K.C + 1.0, kEase.sale)) + Math.sin(t * 2.1) * 18,
-    s: 1.45, rot: -4 + Math.sin(t * 1.7) * 3, espejo: false });
+  const cC = (t) => ({ x: klerp(570, 610, kprog(t, K.C, K.C + 1.0, kEase.sale)) + Math.sin(t * 1.3) * 28, y: klerp(1010, 930, kprog(t, K.C + 0.05, K.C + 1.0, kEase.sale)) + Math.sin(t * 2.1) * 18,
+    s: 1.75, rot: -4 + Math.sin(t * 1.7) * 3, espejo: false });
   const cc = cC(T);
   const colaG = (t) => cPunto(gC(t), COLA[0], COLA[1]);
+  // Pase a mano (cine): la cámara de cada Escena entra (10 %; 20 % en el gancho). Los letreros van fuera de la Escena, así que
+  // sus puntos se pasan por la misma cámara para que sigan pegados a lo que señalan.
+  const camZ = (a, b, zf, ox = 540, oy = 864) => { const z = 1 + zf * kprog(T, a - 0.45, b + 0.45, kEase.suave); return ([x, y]) => [ox + (x - ox) * z, oy + (y - oy) * z]; };
+  const zG = camZ(K.G, K.S + 0.9, 0.2, 486, 960), zS = camZ(K.S, K.A + 0.9, 0.1), zA = camZ(K.A, K.Ta + 0.9, 0.1), zTa = camZ(K.Ta, K.Sa + 0.9, 0.1),
+    zE = camZ(K.E, K.Ca + 0.9, 0.1), zCa = camZ(K.Ca, K.Ps + 0.9, 0.1), zPs = camZ(K.Ps, K.H + 0.9, 0.1), zC = camZ(K.C, FIN, 0.1, 486, 960);
+  const kC = { x: 640, y: 1130, s: 1.8, rot: -3 }, pC = { x: 680, y: 1140, s: 1.7, rot: -3 };
+  const n1y = klerp(1160, 860, kprog(T, K.S + 0.2, K.A + 0.3)), n2y = klerp(1230, 980, kprog(T, K.S + 0.5, K.A + 0.3));
 
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -293,11 +300,11 @@ function CigarraShot() {
       <Escena T={T} a={K.G} b={K.S} zoom={0.06} origen="45% 50%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Rama T={T} />
-          <Estela T={T} desde={K.G + 0.5} hasta={K.S} pos={colaG} tam={1.5} />
+          <Rama T={T} y0={1220} y1={1140} />
+          <Estela T={T} desde={K.G + 0.5} hasta={K.S} pos={colaG} tam={1.8} />
           <Cigarra T={T} {...gc} vuela={despega} perdidos={4} id="g" />
-          {kprog(T, K.N + 0.8, K.N + 1.2) > 0 && [['13', 170], ['17', 360]].map(([n, xx], i) => { const u = kprog(T, K.N + 0.8 + i * 0.35, K.N + 1.2 + i * 0.35, kEase.rebote); return u > 0 ?
-            <g key={n} transform={`translate(${xx} 620) scale(${0.8 * u})`}>
+          {kprog(T, K.N + 0.8, K.N + 1.2) > 0 && [['13', 730], ['17', 895]].map(([n, xx], i) => { const u = kprog(T, K.N + 0.8 + i * 0.35, K.N + 1.2 + i * 0.35, kEase.rebote); return u > 0 ?
+            <g key={n} transform={`translate(${xx} 545) scale(${0.8 * u})`}>
               <rect x={-95} y={-80} width={190} height={170} rx={20} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
               <rect x={-95} y={-80} width={190} height={44} rx={20} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
               <text x={0} y={42} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill={KC.ink}>{n}</text>
@@ -310,11 +317,11 @@ function CigarraShot() {
         {fsvg(<>
           <rect x={0} y={560} width={KW} height={KH} fill={CG.tierra} stroke={KC.ink} strokeWidth={8} />
           <rect x={0} y={530} width={KW} height={40} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} stroke={KC.ink} strokeWidth={7} />
-          {[[260, 1300], [640, 1240]].map(([tx, ty], i) => <path key={'t' + i} d={`M ${tx} ${ty} Q ${tx + (i ? -30 : 40)} ${(ty + 560) / 2} ${tx + (i ? 10 : -10)} 560`} stroke={CG.tierra2} strokeWidth={120} fill="none" strokeLinecap="round" />)}
-          {[[130, 760, 0], [430, 690, 30], [520, 960, 60], [400, 1090, 10], [860, 1060, 80], [110, 1120, 40], [800, 700, 20], [940, 880, 50]].map(([x, y, r], i) =>
-            <EsporaReposo key={i} x={x} y={y + Math.sin(T * 1.2 + i) * 3} r={30} rot={r} />)}
-          <Ninfa T={T} x={klerp(262, 270, 0)} y={klerp(1060, 800, kprog(T, K.S + 0.2, K.A + 0.3))} s={1.35} contagio={kprog(T, K.S + 2.1, K.S + 2.5)} />
-          <Ninfa T={T + 0.4} x={636} y={klerp(1090, 860, kprog(T, K.S + 0.5, K.A + 0.3))} s={1.2} contagio={kprog(T, K.S + 2.8, K.S + 3.2)} />
+          {[[270, 1480], [770, 1500]].map(([tx, ty], i) => <path key={'t' + i} d={`M ${tx} ${ty} Q ${tx + (i ? -30 : 40)} ${(ty + 560) / 2} ${tx + (i ? 10 : -10)} 560`} stroke={CG.tierra2} strokeWidth={230} fill="none" strokeLinecap="round" />)}
+          {[[520, 730, 30], [70, 800, 0], [530, 1010, 60], [510, 1290, 10], [990, 1230, 80], [60, 1250, 40], [1000, 720, 20], [1010, 960, 50]].map(([x, y, r], i) =>
+            <EsporaReposo key={i} x={x} y={y + Math.sin(T * 1.2 + i) * 3} r={44} rot={r} />)}
+          <Ninfa T={T} x={280} y={n1y} s={2.2} contagio={kprog(T, K.S + 2.1, K.S + 2.5)} />
+          <Ninfa T={T + 0.4} x={770} y={n2y} s={2.0} contagio={kprog(T, K.S + 2.8, K.S + 3.2)} />
         </>)}
       </Escena>
       {/* 3 · por dentro: el hongo llena el abdomen y lo infla */}
@@ -337,23 +344,25 @@ function CigarraShot() {
       {/* 5 · aun así sigue volando: un salero con alas */}
       <Escena T={T} a={K.Sa} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
-          <Rama T={T} x0={-40} y0={1180} x1={1120} y1={1120} />
-          <Estela T={T} desde={K.Sa - 0.4} hasta={K.P + 0.4} pos={(t) => cPunto(sC(t), COLA[0], COLA[1])} cada={0.035} seed={5} tam={1.5} />
+        {/* en la «Pregunta» esta escena se queda detrás del velo: aquí se apaga y la pregunta la vuelve a dibujar nítida (misma rama, misma cigarra) */}
+        {fsvg(<g opacity={1 - kprog(T, K.P - 0.45, K.P + 0.05)}>
+          <Rama T={T} x0={-40} y0={1300} x1={1120} y1={1240} />
+          <Estela T={T} desde={K.Sa - 0.4} hasta={K.P + 0.4} pos={(t) => cPunto(sC(t), COLA[0], COLA[1])} cada={0.035} seed={5} tam={2} />
           <Cigarra T={T} {...sC(T)} vuela={1} perdidos={4} id="s" />
-          {kprog(T, K.Sa + 1.6, K.Sa + 2.0) > 0 && <g opacity={1 - kprog(T, K.P - 0.4, K.P)} transform={`translate(${sC(T).x - 260} ${700}) scale(${kprog(T, K.Sa + 1.6, K.Sa + 2.0, kEase.rebote)})`}>
-            <Salero T={T} x={0} y={0} s={0.9} /></g>}
-        </>)}
+          {kprog(T, K.Sa + 1.6, K.Sa + 2.0) > 0 && <g opacity={1 - kprog(T, K.P - 0.4, K.P)} transform={`translate(860 590) scale(${kprog(T, K.Sa + 1.6, K.Sa + 2.0, kEase.rebote)})`}>
+            <Salero T={T} x={0} y={0} s={1.25} /></g>}
+        </g>)}
       </Escena>
       {/* 6 · re-gancho: ¿cómo contagia a más cigarras? (coro de cigarras) */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Rama T={T} x0={-40} y0={1080} x1={700} y1={1010} />
-          <Cigarra T={T} x={200} y={985} s={0.75} rot={-3} perdidos={0} id="p1" />
-          <Cigarra T={T} x={430} y={960} s={0.75} rot={-5} perdidos={0} espejo id="p2" />
-          <Cigarra T={T} x={300} y={760} s={0.75} rot={-8} vuela={1} perdidos={4} id="p3" />
-          <Interrogacion T={T} x={250} y={700} tam={360} />
+          <Rama T={T} x0={-40} y0={1300} x1={1120} y1={1240} />
+          <Cigarra T={T} x={270} y={1178} s={1} rot={-3} perdidos={0} id="p1" />
+          <Cigarra T={T} x={650} y={1162} s={1} rot={-5} perdidos={0} espejo id="p2" />
+          <Estela T={T} desde={K.Sa - 0.4} hasta={K.E + 0.4} pos={(t) => cPunto(sC(t), COLA[0], COLA[1])} cada={0.035} seed={5} tam={2} />
+          <Cigarra T={T} {...sC(T)} vuela={1} perdidos={4} id="p3" />
+          <Interrogacion T={T} x={690} y={600} tam={360} />
         </>)}
       </Escena>
       {/* 7–9 · el experimento: cantos de macho por una bocina; el macho con tapón responde con el aleteo de las hembras */}
@@ -361,103 +370,103 @@ function CigarraShot() {
         <FondoLunares color={KC.pink} />
         {fsvg(<>
           <Rama T={T} x0={240} y0={1180} x1={1140} y1={1140} />
-          <g opacity={kprog(T, K.E + 1.6, K.E + 2.1)}><Bocina T={T} x={140} y={990} s={0.85} suena={kprog(T, K.E + 2.0, K.E + 2.3) * (1 - kprog(T, K.M + 0.2, K.M + 0.6))} /></g>
+          <g opacity={kprog(T, K.E + 1.6, K.E + 2.1)}><Bocina T={T} x={125} y={1000} s={1.05} suena={kprog(T, K.E + 2.0, K.E + 2.3) * (1 - kprog(T, K.M + 0.2, K.M + 0.6))} /></g>
           <Cigarra T={T} {...ex} flick={flick} perdidos={4} id="e" />
           {/* el chasquido del aleteo */}
-          {flick > 0.2 && [0, 1, 2, 3, 4].map((k) => { const a = -1.9 + k * 0.35; const [px, py] = cPunto(ex, -60, -90); return <line key={k} x1={px + Math.cos(a) * 60} y1={py + Math.sin(a) * 60} x2={px + Math.cos(a) * (80 + 50 * flick)} y2={py + Math.sin(a) * (80 + 50 * flick)} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />; })}
+          {flick > 0.2 && [0, 1, 2, 3, 4].map((k) => { const a = -1.9 + k * 0.35; const [px, py] = cPunto(ex, -60, -90); return <line key={k} x1={px + Math.cos(a) * 75} y1={py + Math.sin(a) * 75} x2={px + Math.cos(a) * (100 + 62 * flick)} y2={py + Math.sin(a) * (100 + 62 * flick)} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />; })}
           {T > K.M && <Cigarra T={T} {...sano} vuela={1 - llega} perdidos={0} id="m" />}
           {T > K.M + 1.6 && <Estela T={T} desde={K.M + 1.6} hasta={K.Ca} pos={(t) => { const [ax, ay] = cPunto(ex, COLA[0], COLA[1]); return [ax + 30 * Math.sin(t * 5), ay - 10]; }} cada={0.12} vida={1.2} seed={9} tam={1.3} />}
-          {T > K.Al + 1.2 && T < K.M + 0.2 && <g opacity={1 - kprog(T, K.M - 0.2, K.M + 0.2)}><Marcador T={T} at={K.Al + 1.2} x={70} y={400} n={25} si={23} cols={5} lado={44} cada={0.06} /></g>}
+          {T > K.Al + 1.2 && T < K.M + 0.2 && <g opacity={1 - kprog(T, K.M - 0.2, K.M + 0.2)}><Marcador T={T} at={K.Al + 1.2} x={70} y={250} n={25} si={23} cols={5} lado={44} cada={0.06} /></g>}
                   </>)}
       </Escena>
       {/* 10 · 2019: catinona en los tapones */}
       <Escena T={T} a={K.Ca} b={K.Ps} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Cigarra T={T} x={600} y={1040} s={1.4} rot={-3} perdidos={4} infla={1} id="k" brilloTapon={0.6} alas={10} />
-          {(() => { const p = kprog(T, K.Ca + 2.3, K.Ca + 3.4); const [px, py] = cPunto({ x: 600, y: 1040, s: 1.4, rot: -3 }, COLA[0], COLA[1]);
+          <Cigarra T={T} {...kC} perdidos={4} infla={1} id="k" brilloTapon={0.6} alas={10} />
+          {(() => { const p = kprog(T, K.Ca + 2.3, K.Ca + 3.4); const [px, py] = cPunto(kC, COLA[0], COLA[1]);
             return p > 0 ? <g>
-              {Array.from({ length: 6 }, (_, k) => { const u = kprog(T, K.Ca + 2.1 + k * 0.08, K.Ca + 2.9 + k * 0.08); return u > 0 && u < 1 ? <circle key={k} cx={klerp(px, 470, u) + Math.sin(k) * 20} cy={klerp(py, 760, u)} r={8} fill={KC.gold2} opacity={1 - u} /> : null; })}
-              <Mol x={300} y={760} s={1.25} p={p} {...CATINONA} brillo={0.6 * p} />
+              {Array.from({ length: 6 }, (_, k) => { const u = kprog(T, K.Ca + 2.1 + k * 0.08, K.Ca + 2.9 + k * 0.08); return u > 0 && u < 1 ? <circle key={k} cx={klerp(px, 380, u) + Math.sin(k) * 20} cy={klerp(py, 720, u)} r={10} fill={KC.gold2} opacity={1 - u} /> : null; })}
+              <Mol x={250} y={700} s={1.6} p={p} {...CATINONA} brillo={0.6 * p} />
             </g> : null; })()}
-          {kprog(T, K.Ca + 3.6, K.Ca + 4.0) > 0 && <g opacity={kprog(T, K.Ca + 3.6, K.Ca + 4.0)}><HojaKhat x={760} y={660} s={1.1} rot={-20} /><HojaKhat x={770} y={700} s={0.9} rot={20} /></g>}
+          {kprog(T, K.Ca + 3.6, K.Ca + 4.0) > 0 && <g opacity={kprog(T, K.Ca + 3.6, K.Ca + 4.0)}><HojaKhat x={790} y={600} s={1.6} rot={-20} /><HojaKhat x={805} y={660} s={1.3} rot={20} /></g>}
         </>)}
       </Escena>
       {/* 11 · psilocibina en otras Massospora (cigarras anuales) */}
       <Escena T={T} a={K.Ps} b={K.H} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Cigarra T={T} x={720} y={1060} s={1.2} rot={-3} perdidos={3} anual id="ps" brilloTapon={0.5} alas={10} />
-          <Mol x={220} y={830} s={1.2} p={kprog(T, K.Ps + 0.6, K.Ps + 1.8)} {...PSILO} brillo={0.6} />
+          <Cigarra T={T} {...pC} perdidos={3} anual id="ps" brilloTapon={0.5} alas={10} />
+          <Mol x={200} y={770} s={1.55} p={kprog(T, K.Ps + 0.6, K.Ps + 1.8)} {...PSILO} brillo={0.6} />
         </>)}
       </Escena>
       {/* 12 · hipótesis: ¿la droga cambia la conducta? */}
       <Escena T={T} a={K.H} b={K.C} zoom={0.06}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Mol x={170} y={880} s={0.85} p={1} {...CATINONA} />
+          <Mol x={200} y={540} s={1.5} p={1} {...CATINONA} />
           {(() => { const u = kprog(T, K.H + 0.3, K.H + 1.0, kEase.sale); return <g>
-            <line x1={430} y1={880} x2={klerp(430, 560, u)} y2={880} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
-            {u > 0.95 && <path d="M 540 852 L 580 880 L 540 908" stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
+            <line x1={300} y1={730} x2={300} y2={klerp(730, 880, u)} stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
+            {u > 0.95 && <path d="M 266 846 L 300 890 L 334 846" stroke={KC.ink} strokeWidth={16} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
           </g>; })()}
-          <Cigarra T={T} x={870} y={900} s={0.95} rot={-3} perdidos={4} flick={Math.max(0, Math.sin(T * 9)) * kprog(T, K.H + 0.8, K.H + 1.0)} id="h" />
-          <text x={870} y={1060} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>conducta</text>
-          <text x={330} y={1060} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>catinona</text>
+          <Cigarra T={T} x={660} y={1180} s={1.5} rot={-3} perdidos={4} flick={Math.max(0, Math.sin(T * 9)) * kprog(T, K.H + 0.8, K.H + 1.0)} id="h" />
+          <text x={660} y={1410} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>conducta</text>
+          <text x={760} y={555} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>catinona</text>
         </>)}
       </Escena>
       {/* 13 · cierre: la misma cigarra en la misma rama, ahora se ve el hongo que lleva */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.06} origen="45% 50%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Rama T={T} />
-          <Estela T={T} desde={K.C + 0.5} hasta={FIN} pos={(t) => cPunto(cC(t), COLA[0], COLA[1])} cada={0.035} seed={13} tam={1.5} />
+          <Rama T={T} y0={1220} y1={1140} />
+          <Estela T={T} desde={K.C + 0.5} hasta={FIN} pos={(t) => cPunto(cC(t), COLA[0], COLA[1])} cada={0.035} seed={13} tam={1.8} />
           <Cigarra T={T} {...cc} vuela={kprog(T, K.C + 0.05, K.C + 1.0, kEase.sale)} perdidos={4} id="c" brilloTapon={0.5 + 0.4 * Math.sin(T * 4)} />
         </>)}
       </Escena>
 
       {/* textos en pantalla */}
-      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.9} until={K.G + 3.3} texto="cigarra entera" x={330} y={430} tam={50} />
-      <Senal T={T} at={K.G + 2.4} until={K.N + 0.5} px={() => cPunto(gc, COLA[0] - 10, COLA[1])[0]} py={() => cPunto(gc, COLA[0] - 10, COLA[1])[1]} tx={60} ty={680} texto="hongo: tapón de esporas" tam={30} />
-      <Senal T={T} at={K.G + 2.9} until={K.N - 0.2} px={() => cPunto(gc, 70, 20)[0]} py={() => cPunto(gc, 70, 20)[1]} tx={480} ty={1140} texto="cigarra viva" tam={30} ancla="centro" />
-      <Caja T={T} at={K.N + 0.2} until={K.S - 0.3} x={60} y={430}><i>Massospora cicadina</i></Caja>
-      <Caja T={T} at={K.N + 0.6} until={K.S - 0.3} x={60} y={1110} tam={30}>cigarra periódica · <i>Magicicada</i></Caja>
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.9} until={K.G + 3.3} texto="cigarra entera" x={330} y={340} tam={50} />
+      <Senal T={T} at={K.G + 2.4} until={K.N + 0.5} px={zG(cPunto(gc, COLA[0] - 10, COLA[1]))[0]} py={zG(cPunto(gc, COLA[0] - 10, COLA[1]))[1]} tx={50} ty={1120} texto="hongo: tapón de esporas" tam={30} />
+      <Senal T={T} at={K.G + 2.9} until={K.N - 0.2} px={zG(cPunto(gc, 70, 20))[0]} py={zG(cPunto(gc, 70, 20))[1]} tx={1030} ty={640} texto="cigarra viva" tam={30} ancla="der" />
+      <Caja T={T} at={K.N + 0.2} until={K.S - 0.3} x={60} y={300}><i>Massospora cicadina</i></Caja>
+      <Caja T={T} at={K.N + 0.6} until={K.S - 0.3} x={60} y={385} tam={30}>cigarra periódica · <i>Magicicada</i></Caja>
       <Chip T={T} at={K.S + 0.2} until={K.A - 0.3} texto="BAJO TIERRA · esquemático" x={400} y={440} tam={32} borde={KC.gold} mono />
-      <Senal T={T} at={K.S + 0.8} until={K.A - 0.3} px={430} py={690} tx={380} ty={590} texto="esporas de reposo" tam={30} ancla="der" />
-      <Senal T={T} at={K.S + 1.4} until={K.A - 0.3} px={() => 690} py={() => klerp(1090, 860, kprog(T, K.S + 0.5, K.A + 0.3)) + 40} tx={1030} ty={1150} texto="ninfa de cigarra" tam={30} ancla="der" />
-      <Etq T={T} at={K.S + 2.3} until={K.A - 0.3} x={330} y={880} texto="se contagia al salir" tam={30} color={KC.gold2} />
+      <Senal T={T} at={K.S + 0.8} until={K.A - 0.3} px={zS([495, 705])[0]} py={zS([495, 705])[1]} tx={470} ty={630} texto="esporas de reposo" tam={30} ancla="der" />
+      <Senal T={T} at={K.S + 1.4} until={K.A - 0.3} px={zS([850, n2y + 90])[0]} py={zS([850, n2y + 90])[1]} tx={1030} ty={1400} texto="ninfa de cigarra" tam={30} ancla="der" />
+      <Senal T={T} at={K.S + 2.3} until={K.A - 0.3} px={zS([328, n1y + 53])[0]} py={zS([328, n1y + 53])[1]} tx={50} ty={1400} texto="se contagia al salir" tam={30} color={KC.gold2} />
       <Chip T={T} at={K.A + 0.2} until={K.Ta - 0.3} texto="POR DENTRO · esquemático" x={400} y={440} tam={32} borde={KC.cyan} mono />
-      <Senal T={T} at={K.A + 0.9} until={K.Ta - 0.3} px={cPunto({ x: 620, y: 930, s: 2.15, rot: -3 }, -90, 0)[0]} py={cPunto({ x: 620, y: 930, s: 2.15, rot: -3 }, -90, 0)[1]} tx={120} ty={640} texto="hongo dentro del abdomen" tam={30} />
-      <Etq T={T} at={K.A + 1.6} until={K.Ta - 0.3} x={200} y={1150} texto="se infla" tam={34} color={KC.gold2} />
-      <Senal T={T} at={K.Ta + 0.5} until={K.Sa - 0.3} px={cPunto(tc, -150, 60)[0]} py={cPunto(tc, -150, 60)[1]} tx={80} ty={1160} texto="anillos que se caen" tam={30} />
-      <Senal T={T} at={K.Ta + 2.6} until={K.Sa - 0.3} px={cPunto(tc, -170, -20)[0]} py={cPunto(tc, -170, -20)[1]} tx={60} ty={560} texto="tapón de esporas" tam={32} />
-      <Lupa T={T} at={K.Ta + 3.0} until={K.Sa - 0.35} x={810} y={640} r={170} fx={() => cPunto(tc, -175, 8)[0]} fy={() => cPunto(tc, -175, 8)[1]} tinte={KC.gold}
+      <Senal T={T} at={K.A + 0.9} until={K.Ta - 0.3} px={zA(cPunto(tc, -90, 0))[0]} py={zA(cPunto(tc, -90, 0))[1]} tx={60} ty={1310} texto="hongo dentro del abdomen" tam={30} />
+      <Etq T={T} at={K.A + 1.6} until={K.Ta - 0.3} x={330} y={1180} texto="se infla" tam={34} color={KC.gold2} />
+      <Senal T={T} at={K.Ta + 0.5} until={K.Sa - 0.3} px={zTa(cPunto(tc, -150, 60))[0]} py={zTa(cPunto(tc, -150, 60))[1]} tx={400} ty={1320} texto="anillos que se caen" tam={30} />
+      <Senal T={T} at={K.Ta + 2.6} until={K.Sa - 0.3} px={zTa(cPunto(tc, -170, -20))[0]} py={zTa(cPunto(tc, -170, -20))[1]} tx={50} ty={1200} texto="tapón de esporas" tam={32} />
+      <Lupa T={T} at={K.Ta + 3.0} until={K.Sa - 0.35} x={830} y={500} r={180} fx={zTa(cPunto(tc, -175, 8))[0]} fy={zTa(cPunto(tc, -175, 8))[1]} tinte={KC.gold}
         etiqueta="conidios (esporas)" interior={(Tl, r) => <svg width={r * 2} height={r * 2}>
           <rect width={r * 2} height={r * 2} fill="#1a1406" />
           {[[0.3, 0.35, 0], [0.55, 0.3, 30], [0.75, 0.45, 70], [0.38, 0.6, 110], [0.62, 0.62, 10], [0.25, 0.8, 60], [0.5, 0.85, 140], [0.8, 0.75, 20], [0.45, 0.15, 90], [0.15, 0.55, 45], [0.85, 0.2, 120]].map(([u, v, ro], i) =>
             <Conidio key={i} x={u * r * 2 + Math.sin(Tl * 1.3 + i) * 3} y={v * r * 2 + Math.cos(Tl + i) * 3} r={30} e={i % 3 ? 1.3 : 1.08} rot={ro} />)}
         </svg>} />
-      <Chip T={T} at={K.Sa + 0.2} until={K.P - 0.3} texto="sigue viva y volando" x={400} y={440} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.Sa + 2.1} until={K.P - 0.3} x={180} y={560} texto="«salero con alas»" tam={32} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 1.9} anio="2002" quien="cantos en EE. UU." revista="Cooley, Marshall y Hill · Scientific Reports 2018" x={540} y={600} />
-      <Etq T={T} at={K.E + 2.2} until={K.Al - 0.2} x={60} y={820} texto="canto de macho" tam={30} color={KC.ink} />
-      <Senal T={T} at={K.E + 2.5} until={K.Al + 1.0} px={cPunto(ex, -185, -10)[0]} py={cPunto(ex, -185, -10)[1]}  tx={1030} ty={820} texto="macho con tapón" tam={30} ancla="der" />
-      {T > K.Al + 1.2 && T < K.M && <div style={{ position:'absolute', left:70, top:672, zIndex:42, font:`900 40px ${KF.texto}`, color:KC.ink, opacity:kprog(T, K.Al + 2.6, K.Al + 2.9) * (1 - kprog(T, K.M - 0.3, K.M)) }}>23 de 25 machos con tapón de conidios</div>}
-      {T > K.Al + 2.7 && T < K.M && <div style={{ position:'absolute', left:70, top:722, zIndex:42, font:`700 28px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.Al + 2.8, K.Al + 3.1) * (1 - kprog(T, K.M - 0.3, K.M)) }}>…respondieron con el aleteo de hembra</div>}
-      {T > K.Al + 3.3 && T < K.M && <div style={{ position:'absolute', left:70, top:768, zIndex:42, font:`700 28px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.Al + 3.3, K.Al + 3.6) * (1 - kprog(T, K.M - 0.3, K.M)) }}>con tapón de esporas de reposo: 0 de 17</div>}
-      <Senal T={T} at={K.M + 1.8} until={K.Ca - 0.3} px={() => cPunto(sano, 70, -30)[0]} py={() => cPunto(sano, 70, -30)[1]} tx={1030} ty={820} texto="macho sano" tam={30} ancla="der" />
-      <Chip T={T} at={K.M + 2.4} until={K.Ca - 0.3} texto="al parecer, por contacto" x={360} y={470} tam={34} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Ca + 0.2} until={K.Ca + 2.1} anio="2019" quien="West Virginia University" revista="Boyce, Kasson y col. · Fungal Ecology" x={540} y={650} />
-      <Caja T={T} at={K.Ca + 2.6} until={K.Ps - 0.3} x={60} y={430}>catinona</Caja>
-      <Etq T={T} at={K.Ca + 3.0} until={K.Ps - 0.3} x={60} y={560} texto="una anfetamina de planta" tam={30} color={KC.ink} />
-      <Caja T={T} at={K.Ca + 3.8} until={K.Ps - 0.3} x={640} y={800} tam={28}>khat · <i>Catha edulis</i></Caja>
-      <Senal T={T} at={K.Ca + 1.0} until={K.Ps - 0.3} px={cPunto({ x: 600, y: 1040, s: 1.4, rot: -3 }, -200, 30)[0]} py={cPunto({ x: 600, y: 1040, s: 1.4, rot: -3 }, -200, 30)[1]} tx={60} ty={1112} texto={<>tapón de <i>M. cicadina</i></>} tam={28} />
-      <Caja T={T} at={K.Ps + 0.2} until={K.H - 0.3} x={60} y={430}>psilocibina</Caja>
-      <Etq T={T} at={K.Ps + 0.9} until={K.H - 0.3} x={60} y={545} texto="la de los hongos mágicos" tam={30} color={KC.ink} />
-      <Senal T={T} at={K.Ps + 1.0} until={K.H - 0.3} px={cPunto({ x: 720, y: 1060, s: 1.2, rot: -3 }, -175, 20)[0]} py={cPunto({ x: 720, y: 1060, s: 1.2, rot: -3 }, -175, 20)[1]} tx={60} ty={1112} texto={<><i>M. platypediae</i> / <i>M. levispora</i></>} tam={26} />
-      <Etq T={T} at={K.Ps + 1.4} until={K.H - 0.3} x={1020} y={880} lado="izq" texto="cigarra anual" tam={30} color={KC.ink} />
-      <SelloTexto T={T} at={K.H + 1.2} until={K.C - 0.5} x={400} y={640} texto="HIPÓTESIS" />
-      <Senal T={T} at={K.C + 1.0} until={K.Ou - 0.1} px={() => cPunto(cc, COLA[0] - 10, COLA[1])[0]} py={() => cPunto(cc, COLA[0] - 10, COLA[1])[1]} tx={60} ty={680} texto="vuela con un hongo" tam={32} />
-      <Caja T={T} at={K.C + 0.3} until={K.Ou} x={60} y={420}>cigarra + <i>Massospora</i></Caja>
+      <Chip T={T} at={K.Sa + 0.2} until={K.P - 0.3} texto="sigue viva y volando" x={330} y={330} tam={36} borde={KC.ink} />
+      <Etq T={T} at={K.Sa + 2.1} until={K.P - 0.3} x={1030} y={400} lado="izq" texto="«salero con alas»" tam={32} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 1.9} anio="2002" quien="cantos en EE. UU." revista="Cooley, Marshall y Hill · Scientific Reports 2018" x={540} y={400} />
+      <Etq T={T} at={K.E + 2.2} until={K.Al - 0.2} x={50} y={790} texto="canto de macho" tam={30} color={KC.ink} />
+      <Senal T={T} at={K.E + 2.5} until={K.Al + 1.0} px={zE(cPunto(ex, -185, -10))[0]} py={zE(cPunto(ex, -185, -10))[1]}  tx={1030} ty={800} texto="macho con tapón" tam={30} ancla="der" />
+      {T > K.Al + 1.2 && T < K.M && <div style={{ position:'absolute', left:70, top:530, zIndex:42, font:`900 40px ${KF.texto}`, color:KC.ink, opacity:kprog(T, K.Al + 2.6, K.Al + 2.9) * (1 - kprog(T, K.M - 0.3, K.M)) }}>23 de 25 machos con tapón de conidios</div>}
+      {T > K.Al + 2.7 && T < K.M && <div style={{ position:'absolute', left:70, top:582, zIndex:42, font:`700 28px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.Al + 2.8, K.Al + 3.1) * (1 - kprog(T, K.M - 0.3, K.M)) }}>…respondieron con el aleteo de hembra</div>}
+      {T > K.Al + 3.3 && T < K.M && <div style={{ position:'absolute', left:70, top:628, zIndex:42, font:`700 28px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.Al + 3.3, K.Al + 3.6) * (1 - kprog(T, K.M - 0.3, K.M)) }}>con tapón de esporas de reposo: 0 de 17</div>}
+      <Senal T={T} at={K.M + 1.8} until={K.Ca - 0.3} px={zE(cPunto(sano, 70, -30))[0]} py={zE(cPunto(sano, 70, -30))[1]} tx={1030} ty={800} texto="macho sano" tam={30} ancla="der" />
+      <Chip T={T} at={K.M + 2.4} until={K.Ca - 0.3} texto="al parecer, por contacto" x={540} y={480} tam={38} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Ca + 0.2} until={K.Ca + 2.1} anio="2019" quien="West Virginia University" revista="Boyce, Kasson y col. · Fungal Ecology" x={540} y={400} />
+      <Caja T={T} at={K.Ca + 2.6} until={K.Ps - 0.3} x={60} y={330}>catinona</Caja>
+      <Etq T={T} at={K.Ca + 3.0} until={K.Ps - 0.3} x={60} y={440} texto="una anfetamina de planta" tam={30} color={KC.ink} />
+      <Caja T={T} at={K.Ca + 3.8} until={K.Ps - 0.3} x={620} y={760} tam={28}>khat · <i>Catha edulis</i></Caja>
+      <Senal T={T} at={K.Ca + 1.0} until={K.Ps - 0.3} px={zCa(cPunto(kC, -200, 30))[0]} py={zCa(cPunto(kC, -200, 30))[1]} tx={50} ty={1400} texto={<>tapón de <i>M. cicadina</i></>} tam={28} />
+      <Caja T={T} at={K.Ps + 0.2} until={K.H - 0.3} x={60} y={330}>psilocibina</Caja>
+      <Etq T={T} at={K.Ps + 0.9} until={K.H - 0.3} x={60} y={440} texto="la de los hongos mágicos" tam={30} color={KC.ink} />
+      <Senal T={T} at={K.Ps + 1.0} until={K.H - 0.3} px={zPs(cPunto(pC, -175, 20))[0]} py={zPs(cPunto(pC, -175, 20))[1]} tx={50} ty={1400} texto={<><i>M. platypediae</i> / <i>M. levispora</i></>} tam={26} />
+      <Etq T={T} at={K.Ps + 1.4} until={K.H - 0.3} x={1030} y={930} lado="izq" texto="cigarra anual" tam={30} color={KC.ink} />
+      <SelloTexto T={T} at={K.H + 1.2} until={K.C - 0.5} x={750} y={760} texto="HIPÓTESIS" tam={92} />
+      <Senal T={T} at={K.C + 1.0} until={K.Ou - 0.1} px={zC(cPunto(cc, COLA[0] - 10, COLA[1]))[0]} py={zC(cPunto(cc, COLA[0] - 10, COLA[1]))[1]} tx={50} ty={1120} texto="vuela con un hongo" tam={32} />
+      <Caja T={T} at={K.C + 0.3} until={K.Ou} x={60} y={320}>cigarra + <i>Massospora</i></Caja>
 
       {/* barras de escala / esquemático */}
       <BarraEscala T={T} at={K.G} until={K.Ou} texto="esquemático" largo={160} color={KC.texto} />
