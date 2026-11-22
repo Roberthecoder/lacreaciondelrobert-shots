@@ -2,6 +2,7 @@
 // Shot Químico #29 · Ese olor no es tu sudor (desodorante vs. antitranspirante) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const PIEL = '#f1b48f', PIEL2 = '#e8a07c', CORY = KC.mint, HOMI = KC.lilac, AUR = '#a7adb8', ENZ = '#9b5de5', OLOR = '#9bd23c', SUDOR = '#7fc8ff';
+const PIELC = '#5e3a30';   // piel en corte, oscurecida para el modo cine (conserva el tinte)
 const PX_UM = 86; // en el mundo micro: 1 µm ≈ 86 px (cocos de ~0.85 µm). Esquemático.
 
 /* ---------- macro: la persona con el brazo arriba (origen = la axila) ---------- */
@@ -85,8 +86,8 @@ function Racimo({ T = 0, x, y, s = 1, color = HOMI, seed = 1, vida = 1 }) {
 // Gota de sudor sobre la piel, en corte (fondo noche). Hijos = lo que va dentro.
 function PielCorte({ T, y = 1120, poro = 540, gota = 1, children }) {
   return <g>
-    <path d={`M 0 ${y} Q 270 ${y - 20} ${poro - 70} ${y} L ${poro - 40} ${y + 10} L ${poro - 40} ${KH} L 0 ${KH} Z`} fill="#d98f72" stroke={KC.ink} strokeWidth={8} />
-    <path d={`M ${KW} ${y} Q 810 ${y - 20} ${poro + 70} ${y} L ${poro + 40} ${y + 10} L ${poro + 40} ${KH} L ${KW} ${KH} Z`} fill="#d98f72" stroke={KC.ink} strokeWidth={8} />
+    <path d={`M -200 ${y} Q 270 ${y - 20} ${poro - 70} ${y} L ${poro - 40} ${y + 10} L ${poro - 40} ${KH} L -200 ${KH} Z`} fill={PIELC} stroke={KC.ink} strokeWidth={8} />
+    <path d={`M ${KW + 200} ${y} Q 810 ${y - 20} ${poro + 70} ${y} L ${poro + 40} ${y + 10} L ${poro + 40} ${KH} L ${KW + 200} ${KH} Z`} fill={PIELC} stroke={KC.ink} strokeWidth={8} />
     <rect x={poro - 40} y={y + 10} width={80} height={KH} fill={SUDOR} opacity={0.35} />
     {gota > 0 && <path d={`M ${poro - 330 * gota} ${y} Q ${poro - 340 * gota} ${y - 300 * gota} ${poro} ${y - 330 * gota} Q ${poro + 340 * gota} ${y - 300 * gota} ${poro + 330 * gota} ${y} Z`}
       fill="rgba(127,200,255,.28)" stroke="#bfe8ff" strokeWidth={6} />}
@@ -146,7 +147,7 @@ function Desodorante() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Su: CUES.Sudor, Ba: CUES.Bacterias, Ol: CUES.Olor, De: CUES.Desodorante, An: CUES.Antitranspirante, Pr: CUES.Pregunta, Es: CUES.Estudio, Pb: CUES.Prueba, Cu: CUES.Curioso, Al: CUES.Aluminio, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4.5;
-  const AX = 590, AY = 1110;                      // axila en pantalla
+  const AX = 590, AY = 900, PS = 1.25;            // axila en pantalla (pase cine: persona 1.25× y más arriba, llena el cuadro)
   const brazo = kprog(T, K.G - 0.2, K.G + 0.55, kEase.sale);
   const micro = K.Su + 1.8;                        // entra al microscopio
   // precursores en la gota: [x, y, tipo, momento del corte, vuelo hacia (vx, vy)]
@@ -161,18 +162,19 @@ function Desodorante() {
       <Escena T={T} a={K.G} b={micro} zoom={0.06} origen="55% 55%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Persona T={T} x={AX} y={AY} brazo={brazo} />
+          <Persona T={T} x={AX} y={AY} s={PS} brazo={brazo} />
           <Ondas T={T} x={AX + 40} y={AY - 40} f={kprog(T, K.G + 0.35, K.G + 1.4) * (1 - kprog(T, K.Su + 0.6, K.Su + 1.2))} alto={300} />
           {[[30, 20], [-10, -60], [20, -100], [-30, -10], [10, 50]].map(([dx, dy], i) => { const on = kprog(T, K.G + 2.2 + i * 0.12, K.G + 2.5 + i * 0.12, kEase.rebote);
             return on > 0 ? <circle key={i} cx={AX + dx + Math.sin(T * 5 + i) * 3} cy={AY + dy} r={9 * on} fill={i % 2 ? HOMI : CORY} stroke={KC.ink} strokeWidth={3} /> : null; })}
         </SvgCapa>
-        <BarraEsc txt="10 cm" largo={180} />
+        <BarraEsc txt="10 cm" largo={225} />
       </Escena>
       {/* 1–3 · al microscopio: la gota de sudor, las bacterias y el olor */}
       <Escena T={T} a={micro} b={K.De} zoom={0.04} origen="50% 55%">
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(191,232,255,.25)" />
         <SvgCapa>
+          <g transform="translate(540 930) scale(1.25) translate(-540 -980)">
           <PielCorte T={T} gota={kprog(T, micro, micro + 1.0, kEase.sale)}>
             {PRE.map(([x, y, tipo, tc, vx, vy], i) => <Precursor key={i} T={T} x={x} y={y} tipo={tipo} corte={kprog(T, tc, tc + 0.4)} vuelo={kprog(T, K.Ol + i * 0.3, K.Ol + 2.2 + i * 0.3)} vx={vx} vy={vy} fade={kprog(T, K.Ol + 1, K.Ol + 2) * 0.4} />)}
           </PielCorte>
@@ -180,10 +182,11 @@ function Desodorante() {
             return <Bacteria key={i} x={klerp(x < 540 ? -120 : 1200, x, e) + Math.sin(T * 1.3 + i) * 6} y={y} rot={r} s={1} color={CORY} T={T} seed={i + 1} flagelo={false} />; })}
           {[[330, 1060, 0], [790, 830, 1]].map(([x, y, i]) => { const e = kprog(T, K.Ba + 0.4 + i * 0.3, K.Ba + 1.5 + i * 0.3, kEase.sale);
             return <Racimo key={i} T={T} x={klerp(x < 540 ? -150 : 1250, x, e)} y={y} s={0.9} seed={i} />; })}
-          <Nube T={T} x={420} y={430} f={kprog(T, K.Ol + 1.2, K.Ol + 3.2)} r={170} color={OLOR} seed={4} />
+          <Nube T={T} x={420} y={520} f={kprog(T, K.Ol + 1.2, K.Ol + 3.2)} r={170} color={OLOR} seed={4} />
           {[[K.Ba + 2.4, 400, 980], [K.Ba + 2.9, 580, 930], [K.Ba + 3.4, 680, 1040]].map(([t, x, y], i) => <Onomato key={i} T={T} at={t} until={t + 0.7} x={x} y={y} texto="¡clic!" color={KC.white} tam={52} rot={-10 + i * 8} />)}
+          </g>
         </SvgCapa>
-        <BarraEsc txt="1 µm" largo={PX_UM} color={KC.texto} />
+        <BarraEsc txt="1 µm" largo={Math.round(PX_UM * 1.25)} color={KC.texto} />
       </Escena>
       {/* 4 · desodorante */}
       <Escena T={T} a={K.De} b={K.An} zoom={0.05}>
@@ -207,8 +210,9 @@ function Desodorante() {
       <Escena T={T} a={K.An} b={K.Pr} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <rect x={0} y={640} width={KW} height={KH} fill="#724f47" />
-          <path d={`M 0 640 L ${KW} 640`} stroke={KC.ink} strokeWidth={10} />
+          <g transform="translate(540 760) scale(1.2) translate(-540 -640)">
+          <rect x={-200} y={640} width={KW + 400} height={KH} fill="#5a3d37" />
+          <path d={`M -200 640 L ${KW + 200} 640`} stroke={KC.ink} strokeWidth={10} />
           <rect x={495} y={640} width={90} height={500} fill="#2a3550" stroke={KC.ink} strokeWidth={8} />
           <path d="M 540 1140 q -120 20 -100 80 q 30 60 100 30 q 80 -30 120 30 q -20 70 -120 50" stroke="#2a3550" strokeWidth={70} fill="none" strokeLinecap="round" />
           {Array.from({ length: 8 }, (_, i) => { const per = 2.2, ph = ((T - K.An) / per + i / 8) % 1; const yy = klerp(1120, 560, ph); const limite = klerp(560, 800, tapon);
@@ -216,46 +220,49 @@ function Desodorante() {
           {IONES.map(([x0, y0, t0], i) => { const u = kprog(T, t0, t0 + 1.3, kEase.suave); const tx = 520 + (i % 3) * 20, ty = 690 + Math.floor(i / 3) * 34;
             return T >= t0 ? <g key={i}><Atomo x={klerp(x0, tx, u)} y={klerp(y0, ty, u)} r={26} color="#d6dbe3" letra="Al" tam={22} /></g> : null; })}
           {tapon > 0 && <rect x={497} y={668} width={86} height={110 * tapon} rx={14} fill="rgba(160,168,180,.85)" stroke={KC.ink} strokeWidth={5} />}
+          </g>
         </SvgCapa>
-        <Etq T={T} at={K.An + 0.5} until={K.Pr - 0.3} x={485} y={980} texto="conducto del sudor" lado="izq" tam={32} />
-        <Etq T={T} at={K.An + 1.2} until={K.Pr - 0.3} x={470} y={520} texto="sales de aluminio" lado="izq" tam={36} color="#d6dbe3" />
+        <Etq T={T} at={K.An + 0.5} until={K.Pr - 0.3} x={474} y={1168} texto="conducto del sudor" lado="izq" tam={32} />
+        <Etq T={T} at={K.An + 1.2} until={K.Pr - 0.3} x={490} y={600} texto="sales de aluminio" lado="izq" tam={32} color="#d6dbe3" />
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <Bacteria x={170} y={760} rot={-20} s={1.3} color={CORY} T={T} seed={4} flagelo={false} />
-          <Racimo T={T} x={400} y={780} s={1.1} />
-          <text x={270} y={1180} textAnchor="middle" style={{ font:`400 400px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 270 1000)`}>?</text>
+          <Bacteria x={250} y={700} rot={-20} s={2.0} color={CORY} T={T} seed={4} flagelo={false} />
+          <Racimo T={T} x={700} y={760} s={1.8} />
+          <text x={540} y={1360} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 1160)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 7 · el estudio de York (2020): la enzima de S. hominis */}
       <Escena T={T} a={K.Es} b={K.Pb}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          {(() => { const ent = kprog(T, K.Es + 3.0, K.Es + 3.6, kEase.sale), mov = kprog(T, K.Es + 3.6, K.Es + 4.6, kEase.suave), c = kprog(T, K.Es + 4.6, K.Es + 5.0), v = kprog(T, K.Es + 5.0, K.Es + 6.8);
-            return <g opacity={ent}>
+          {(() => { const ent = kprog(T, K.Es, K.Es + 0.5, kEase.sale), mov = kprog(T, K.Es + 3.6, K.Es + 4.6, kEase.suave), c = kprog(T, K.Es + 4.6, K.Es + 5.0), v = kprog(T, K.Es + 5.0, K.Es + 6.8);
+            return <g opacity={ent} transform="translate(540 980) scale(1.3) translate(-480 -920)">
               <Racimo T={T} x={260} y={920} s={1.7} />
               <Tijera x={klerp(330, 560, mov)} y={klerp(920, 960, mov)} s={1} abre={c > 0 ? 1 - c : Math.abs(Math.sin(T * 6))} />
               <Precursor T={T} x={680} y={960} tipo="tiol" s={1.1} corte={c} vuelo={v} vx={40} vy={-200} />
               <Nube T={T} x={720} y={780} f={v * 0.7} r={90} color={OLOR} seed={9} />
             </g>; })()}
         </SvgCapa>
-        <Etq T={T} at={K.Es + 3.8} until={K.Pb - 0.3} x={300} y={1080} texto="enzima PatB" tam={34} color={KC.ink} />
+        <Etq T={T} at={K.Es + 3.8} until={K.Pb - 0.3} x={306} y={1188} texto="enzima PatB" tam={34} color={KC.ink} />
       </Escena>
       {/* 8 · la prueba: el gen pasa a otra bacteria */}
       <Escena T={T} a={K.Pb} b={K.Cu}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <g transform="translate(540 980) scale(1.1) translate(-530 -850)">
           <Racimo T={T} x={230} y={900} s={1.4} />
           <Racimo T={T} x={830} y={960} s={1.4} color={AUR} seed={3} />
           <path d="M 300 820 Q 540 600 780 860" stroke={KC.ink} strokeWidth={6} fill="none" strokeDasharray="16 12" strokeDashoffset={-T * 40} opacity={kprog(T, K.Pb + 0.3, K.Pb + 0.6)} />
           {(() => { const u = kprog(T, K.Pb + 0.5, K.Pb + 1.9, kEase.suave); if (T < K.Pb + 0.4 || u >= 1) return null;
             const x = (1 - u) * (1 - u) * 300 + 2 * u * (1 - u) * 540 + u * u * 780, y = (1 - u) * (1 - u) * 820 + 2 * u * (1 - u) * 600 + u * u * 860; return <Gen x={x} y={y} T={T} />; })()}
           {(() => { const v = kprog(T, K.Pb + 2.1, K.Pb + 3.8); return v > 0 ? <g><Odorante x={850} y={klerp(860, 700, v)} tipo="tiol" s={0.9} brillo={T} /><Nube T={T} x={860} y={720} f={v * 0.7} r={100} color={OLOR} seed={11} /></g> : null; })()}
+          </g>
         </SvgCapa>
-        <Etq T={T} at={K.Pb + 0.3} until={K.Cu - 0.3} x={100} y={1060} texto="S. hominis" it tam={36} color={KC.ink} />
-        <Etq T={T} at={K.Pb + 0.6} until={K.Cu - 0.3} x={1000} y={1100} texto="S. aureus (no lo hacía)" it lado="izq" tam={34} color={KC.ink} />
+        <Etq T={T} at={K.Pb + 0.3} until={K.Cu - 0.3} x={67} y={1211} texto="S. hominis" it tam={36} color={KC.ink} />
+        <Etq T={T} at={K.Pb + 0.6} until={K.Cu - 0.3} x={1030} y={1255} texto="S. aureus (no lo hacía)" it lado="izq" tam={34} color={KC.ink} />
       </Escena>
       {/* 9 · lo curioso: antes que nuestra especie */}
       <Escena T={T} a={K.Cu} b={K.Al}>
@@ -294,36 +301,36 @@ function Desodorante() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="55% 55%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Persona T={T} x={AX} y={AY} brazo={1} />
+          <Persona T={T} x={AX} y={AY} s={PS} brazo={1} />
           <Ondas T={T} x={AX + 40} y={AY - 40} f={kprog(T, K.Ci + 0.2, K.Ci + 1.0)} alto={220} />
         </SvgCapa>
-        <BarraEsc txt="10 cm" largo={180} />
+        <BarraEsc txt="10 cm" largo={225} />
       </Escena>
 
       {/* lupas (sobre las escenas macro) */}
-      <Lupa T={T} at={K.Su + 0.1} until={micro - 0.2} x={800} y={860} r={190} fx={AX + 5} fy={AY - 20} interior={(Tl, r) => <MiniGota T={Tl} r={r} t0={K.Su} cortar={false} />} etiqueta="AL MICROSCOPIO · poro" tinte={KC.cyan} />
-      <Lupa T={T} at={K.Ci + 0.6} until={FIN} x={820} y={880} r={180} fx={AX + 5} fy={AY - 20} interior={(Tl, r) => <MiniGota T={Tl} r={r} t0={K.Ci + 0.6} />} etiqueta="AL MICROSCOPIO" tinte={KC.mint} />
+      <Lupa T={T} at={K.Su + 0.1} until={micro - 0.2} x={850} y={1180} r={190} fx={AX + 5} fy={AY - 20} interior={(Tl, r) => <MiniGota T={Tl} r={r} t0={K.Su} cortar={false} />} etiqueta="AL MICROSCOPIO · poro" tinte={KC.cyan} />
+      <Lupa T={T} at={K.Ci + 0.6} until={FIN} x={850} y={1100} r={180} fx={AX + 5} fy={AY - 20} interior={(Tl, r) => <MiniGota T={Tl} r={r} t0={K.Ci + 0.6} />} etiqueta="AL MICROSCOPIO" tinte={KC.mint} />
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.9} until={K.Su - 0.2} texto="huele tu sudor" x={300} y={1010} tam={40} />
-      <Chip T={T} at={K.G + 2.6} until={K.Su - 0.2} texto="huelen las bacterias" y={1500} tam={42} borde={OLOR} />
-      <Chip T={T} at={micro + 0.9} until={K.Ba - 0.2} texto="sudor fresco: sin olor" y={1500} tam={42} borde={SUDOR} />
-      <Etq T={T} at={micro + 1.4} until={K.Ba + 2.2} x={330} y={1010} texto="aminoácidos" lado="izq" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Ba + 1.1} until={K.Ol - 0.2} x={130} y={800} texto="Corynebacterium" it tam={32} />
-      <Etq T={T} at={K.Ba + 1.5} until={K.Ol - 0.2} x={930} y={720} texto="Staphylococcus hominis" it lado="izq" tam={32} />
-      <Chip T={T} at={K.Ba + 2.3} until={K.Ol - 0.2} texto="las enzimas cortan" y={1500} tam={42} borde={ENZ} />
-      <Chip T={T} at={K.Ol + 0.3} until={K.De - 0.2} texto="ácidos + tioalcoholes (S = azufre)" y={1500} tam={36} borde={OLOR} />
-      <Chip T={T} at={K.De + 0.3} until={K.De + 2.3} texto="desodorante = cosmético (FDA)" y={1500} tam={38} borde={KC.cyan} />
-      <Chip T={T} at={K.De + 2.5} until={K.An - 0.2} texto="perfume + antimicrobianos" y={1500} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.An + 0.3} until={K.An + 3.2} texto="antitranspirante = medicamento (FDA)" y={1500} tam={34} borde="#d6dbe3" />
-      <Chip T={T} at={K.An + 3.4} until={K.Pr - 0.2} texto="tapón temporal" y={1500} tam={46} borde="#d6dbe3" />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.9} anio="2020" quien="Universidad de York · Inglaterra" revista="Rudden et al. · Scientific Reports" y={920} />
-      <Chip T={T} at={K.Es + 5.0} until={K.Pb - 0.2} texto="suelta el tioalcohol" y={1500} tam={44} borde={ENZ} />
-      <Chip T={T} at={K.Pb + 2.4} until={K.Cu - 0.2} texto="3M3SH detectado" y={1500} tam={44} borde={OLOR} mono />
-      <Chip T={T} at={K.Cu + 1.0} until={K.Al - 0.2} texto="hipótesis de los autores" y={1500} tam={42} borde={KC.lilac} />
-      <TarjetaEstudio T={T} at={K.Al + 2.4} until={K.Ci - 0.3} anio="2026" quien="American Cancer Society" revista="evidencia limitada" y={1580} />
-      <Etq T={T} at={K.Ci + 1.2} until={K.Ou} x={545} y={1070} texto="sudor: sin olor" lado="izq" tam={32} color={KC.white} />
-      <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="el olor = química de bacterias" y={1500} tam={38} borde={OLOR} />
+      <Chip T={T} at={K.G + 2.6} until={K.Su - 0.2} texto="huelen las bacterias" y={1430} tam={42} borde={OLOR} />
+      <Chip T={T} at={micro + 0.9} until={K.Ba - 0.2} texto="sudor fresco: sin olor" y={1430} tam={42} borde={SUDOR} />
+      <Etq T={T} at={micro + 1.4} until={K.Ba + 2.2} x={290} y={905} texto="aminoácidos" lado="izq" tam={26} color={KC.gold2} />
+      <Etq T={T} at={K.Ba + 1.1} until={K.Ol - 0.2} x={40} y={705} texto="Corynebacterium" it tam={32} />
+      <Etq T={T} at={K.Ba + 1.5} until={K.Ol - 0.2} x={1000} y={640} texto="Staphylococcus hominis" it lado="izq" tam={32} />
+      <Chip T={T} at={K.Ba + 2.3} until={K.Ol - 0.2} texto="las enzimas cortan" y={1430} tam={42} borde={ENZ} />
+      <Chip T={T} at={K.Ol + 0.3} until={K.De - 0.2} texto="ácidos + tioalcoholes (S = azufre)" y={1430} tam={36} borde={OLOR} />
+      <Chip T={T} at={K.De + 0.3} until={K.De + 2.3} texto="desodorante = cosmético (FDA)" y={1430} tam={38} borde={KC.cyan} />
+      <Chip T={T} at={K.De + 2.5} until={K.An - 0.2} texto="perfume + antimicrobianos" y={1430} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.An + 0.3} until={K.An + 3.2} texto="antitranspirante = medicamento (FDA)" y={1430} tam={34} borde="#d6dbe3" />
+      <Chip T={T} at={K.An + 3.4} until={K.Pr - 0.2} texto="tapón temporal" y={1430} tam={46} borde="#d6dbe3" />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.9} anio="2020" quien="Universidad de York · Inglaterra" revista="Rudden et al. · Scientific Reports" y={420} />
+      <Chip T={T} at={K.Es + 5.0} until={K.Pb - 0.2} texto="suelta el tioalcohol" y={1430} tam={44} borde={ENZ} />
+      <Chip T={T} at={K.Pb + 2.4} until={K.Cu - 0.2} texto="3M3SH detectado" y={1430} tam={44} borde={OLOR} mono />
+      <Chip T={T} at={K.Cu + 1.0} until={K.Al - 0.2} texto="hipótesis de los autores" y={1430} tam={42} borde={KC.lilac} />
+      <TarjetaEstudio T={T} at={K.Al + 2.4} until={K.Ci - 0.3} anio="2026" quien="American Cancer Society" revista="evidencia limitada" y={430} />
+      <Etq T={T} at={K.Ci + 1.2} until={K.Ou} x={545} y={860} texto="sudor: sin olor" lado="izq" tam={32} color={KC.white} />
+      <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="el olor = química de bacterias" y={1430} tam={38} borde={OLOR} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Su - 0.1} texto="No es tu sudor: *son bacterias.*" />
