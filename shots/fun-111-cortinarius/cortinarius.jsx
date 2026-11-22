@@ -144,10 +144,10 @@ function Persona({ x, y, s = 1, color = '#f6f3ec', gota = 0, rojo = 0 }) {
 // Máquina de diálisis esquemática con tubos.
 function Dialisis({ T, x, y, s = 1, p = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={p}>
-    <rect x={-110} y={-280} width={220} height={280} rx={22} fill="#e9eef5" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-110} y={-280} width={220} height={280} rx={22} fill="#b9c4d4" stroke={KC.ink} strokeWidth={8} />
     <rect x={-80} y={-250} width={160} height={90} rx={10} fill="#1a2a44" stroke={KC.ink} strokeWidth={5} />
     <path d={`M -70 -205 ${Array.from({ length: 14 }, (_, i) => `L ${-70 + i * 10} ${-205 + Math.sin(i * 0.9 + T * 6) * 18}`).join(' ')}`} stroke={KC.mint} strokeWidth={4} fill="none" />
-    <rect x={-30} y={-140} width={60} height={110} rx={12} fill="#fff" stroke={KC.ink} strokeWidth={5} />
+    <rect x={-30} y={-140} width={60} height={110} rx={12} fill="#e6ebf2" stroke="#0b1020" strokeWidth={5} />
     <rect x={-24} y={-90} width={48} height={54} rx={8} fill={CX.dial} />
     <path d="M 110 -200 Q 220 -220 230 -100" stroke={KC.red} strokeWidth={10} fill="none" />
     <path d="M 110 -120 Q 190 -100 230 -60" stroke={CX.dial} strokeWidth={10} fill="none" />
@@ -162,7 +162,18 @@ function Urgencias({ x, y, s = 1 }) {
   </g>;
 }
 
-const GRID28 = Array.from({ length: 28 }, (_, i) => [140 + (i % 7) * 80, 900 + Math.floor(i / 7) * 92]);
+// Suelo del bosque: tierra oscura que se pierde hacia abajo, con piedritas y raicillas (para que no sea un bloque plano).
+function Suelo({ y = 1340 }) {
+  const g = krng(23);
+  return <g>
+    <defs><linearGradient id="cx-suelo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#33261e" /><stop offset="0.45" stopColor="#1c1614" /><stop offset="1" stopColor="#0c0d14" /></linearGradient></defs>
+    <rect x={-60} y={y} width={KW + 120} height={700} fill="url(#cx-suelo)" />
+    {Array.from({ length: 26 }, (_, i) => { const px = g() * KW, py = y + 30 + g() * 420, r = 5 + g() * 12; return <ellipse key={i} cx={px} cy={py} rx={r * 1.5} ry={r} fill="#4a3a2e" opacity={0.5 * (1 - (py - y) / 520)} />; })}
+    {Array.from({ length: 9 }, (_, i) => { const px = 60 + g() * 960, py = y + 10; return <path key={'r' + i} d={`M ${px} ${py} q ${g() * 30 - 15} 40 ${g() * 50 - 25} ${70 + g() * 60}`} stroke="#5a4636" strokeWidth={3} fill="none" opacity=".45" />; })}
+  </g>;
+}
+
+const GRID28 = Array.from({ length: 28 }, (_, i) => [150 + (i % 7) * 130, 910 + Math.floor(i / 7) * 150]);
 const DIAL22 = [0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 19, 20, 21, 23, 24, 26]; // ilustrativo
 const ROJO21 = [0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 18, 19, 20, 22, 24, 25];   // ilustrativo (75 % = 21 de 28)
 
@@ -182,69 +193,74 @@ function CortinariusShot() {
       <Escena T={T} a={K.G} b={K.Co} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Sarten T={T} x={430} y={1000} s={1.05} calor={1} />
-          <g opacity={kprog(T, K.G + 1.4, K.G + 1.8) * (1 - kprog(T, K.G + 4.4, K.G + 4.8))}><Reloj x={220} y={560} r={110} horas={horas} /></g>
-          {T > K.G + 4.4 && <g opacity={kprog(T, K.G + 4.4, K.G + 4.8)}><Calendario x={220} y={560} s={1.05} dia={diasG} /></g>}
+          <Sarten T={T} x={500} y={1090} s={1.6} calor={1} />
+          <g opacity={kprog(T, K.G + 1.4, K.G + 1.8) * (1 - kprog(T, K.G + 4.4, K.G + 4.8))}><Reloj x={540} y={470} r={150} horas={horas} /></g>
+          {T > K.G + 4.4 && <g opacity={kprog(T, K.G + 4.4, K.G + 4.8)}><Calendario x={260} y={480} s={1.45} dia={diasG} /></g>}
         </>)}
       </Escena>
       {/* 2 · el hongo: joven con cortina y adulto */}
       <Escena T={T} a={K.Co} b={K.Es} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1110} width={KW} height={120} fill="#3a2c23" />
-          <path d={`M 0 1110 ${Array.from({ length: 28 }, (_, i) => `L ${i * 40 + 20} ${1100 - (i % 3) * 10} L ${i * 40 + 40} 1110`).join(' ')}`} fill="#4f8a3a" stroke={KC.ink} strokeWidth={4} />
-          <Cortinario T={T} x={290} y={1115} s={1.1} edad={0} cortina={kprog(T, K.Co + 1.0, K.Co + 2.0)} crece={kprog(T, K.Co, K.Co + 1.0)} seed={2} />
-          <Cortinario T={T} x={700} y={1115} s={1.15} edad={1} oxido={0.6} crece={kprog(T, K.Co + 0.3, K.Co + 1.3)} seed={5} />
+          <Suelo y={1340} />
+          <path d={`M -60 1340 ${Array.from({ length: 31 }, (_, i) => `L ${i * 40 - 40} ${1326 - (i % 3) * 14} L ${i * 40 - 20} 1340`).join(' ')}`} fill="#3f7030" stroke={KC.ink} strokeWidth={4} />
+          <Cortinario T={T} x={290} y={1346} s={1.76} edad={0} cortina={kprog(T, K.Co + 1.0, K.Co + 2.0)} crece={kprog(T, K.Co - 0.3, K.Co + 0.6)} seed={2} />
+          <Cortinario T={T} x={735} y={1346} s={1.84} edad={1} oxido={0.6} crece={kprog(T, K.Co - 0.2, K.Co + 0.8)} seed={5} />
         </>)}
       </Escena>
       {/* 3 · esporada color óxido */}
       <Escena T={T} a={K.Es} b={K.To} zoom={0.06}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
-          <rect x={150} y={760} width={560} height={420} rx={16} fill="#fbf7ee" stroke={KC.ink} strokeWidth={8} transform="rotate(-3 430 970)" />
+        {fsvg(<g transform="translate(540 1020) scale(1.5) translate(-430 -970)">
+          <rect x={150} y={760} width={560} height={420} rx={16} fill="#d6cebd" stroke={KC.ink} strokeWidth={6} transform="rotate(-3 430 970)" />
           {(() => { const p = kprog(T, K.Es + 0.6, K.Es + 2.0, kEase.sale); return <g transform="translate(430 975)" opacity={p}>
             {Array.from({ length: 60 }, (_, i) => { const a = i / 60 * Math.PI * 2; return <line key={i} x1={Math.cos(a) * 28} y1={Math.sin(a) * 28} x2={Math.cos(a) * 150 * p} y2={Math.sin(a) * 150 * p} stroke={CX.oxido} strokeWidth={5} opacity=".85" />; })}
-            <circle r={150 * p} fill="none" stroke={CX.oxido} strokeWidth={3} opacity=".5" /><circle r={26} fill="#fbf7ee" />
+            <circle r={150 * p} fill="none" stroke={CX.oxido} strokeWidth={3} opacity=".5" /><circle r={26} fill="#d6cebd" />
           </g>; })()}
           <g transform={`translate(0 ${-kprog(T, K.Es + 0.3, K.Es + 0.9, kEase.sale) * 200})`}><Cortinario T={T} x={430} y={1210} s={1.1} edad={1} oxido={1} seed={4} /></g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · por dentro: la orelanina viaja al riñón (fondo oscuro) */}
       <Escena T={T} a={K.To} b={K.Tu} zoom={0.08}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={24} />
         {fsvg(<>
-          <Orelanina x={170} y={760} s={1.05} rot={Math.sin(T) * 4} p={kprog(T, K.To + 0.1, K.To + 0.8)} />
-          <Rinon x={820} y={1020} s={1.1} latido={Math.max(0, Math.sin(T * 6)) * 0.03} dano={kprog(T, K.To + 1.8, K.To + 3.0) * 0.35} />
+          <Orelanina x={250} y={790} s={2.0} rot={Math.sin(T) * 4} p={kprog(T, K.To - 0.2, K.To + 0.5)} />
+          <Rinon x={810} y={1260} s={1.9} latido={Math.max(0, Math.sin(T * 6)) * 0.03} dano={kprog(T, K.To + 1.8, K.To + 3.0) * 0.35} />
           {Array.from({ length: 8 }, (_, i) => { const u = kprog(T, K.To + 1.0 + i * 0.12, K.To + 2.0 + i * 0.12, kEase.suave); return u > 0 && u < 1 ?
-            <circle key={i} cx={klerp(300, 800, u)} cy={klerp(860, 1010, u) - Math.sin(u * Math.PI) * 80 + (i % 3) * 14} r={11} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /> : null; })}
+            <circle key={i} cx={klerp(470, 720, u)} cy={klerp(960, 1200, u) - Math.sin(u * Math.PI) * 110 + (i % 3) * 20} r={17} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /> : null; })}
         </>)}
       </Escena>
       {/* 5 · al microscopio: el túbulo se daña sin hacer ruido */}
       <Escena T={T} a={K.Tu} b={K.P} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.dark }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<Tubulo T={T} x={60} y={870} w={960} toxina={kprog(T, K.Tu + 0.4, K.Tu + 1.8)} dano={kprog(T, K.Tu + 1.6, K.Tu + 4.4)} />)}
+        {fsvg(<g transform="translate(540 980) scale(1.3) translate(-540 -941)"><Tubulo T={T} x={60} y={870} w={960} toxina={kprog(T, K.Tu + 0.4, K.Tu + 1.8)} dano={kprog(T, K.Tu + 1.6, K.Tu + 4.4)} /></g>)}
       </Escena>
       {/* 6 · re-gancho: ¿cuánto tarda en avisar? */}
       <Escena T={T} a={K.P} b={K.R} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Calendario x={290} y={1000} s={1.5} dia="?" /><Interrogacion T={T} x={290} y={760} tam={300} color={KC.yellow} /></>)}
+        {fsvg(<><Calendario x={540} y={1090} s={1.9} dia="?" /><Interrogacion T={T} x={540} y={800} tam={340} color={KC.yellow} /></>)}
       </Escena>
       {/* 7 · la revisión de 2001: línea de tiempo en días */}
       <Escena T={T} a={K.R} b={K.Su}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <line x1={xd(0)} y1={1060} x2={xd(14)} y2={1060} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
+          <line x1={xd(0)} y1={1160} x2={xd(14)} y2={1160} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
           {Array.from({ length: 15 }, (_, d) => <g key={d} opacity={d <= rd + 0.01 ? 1 : 0.3}>
-            <line x1={xd(d)} y1={1040} x2={xd(d)} y2={1080} stroke={KC.ink} strokeWidth={6} />
-            {d % 2 === 0 && <text x={xd(d)} y={1125} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{d}</text>}
+            <line x1={xd(d)} y1={1128} x2={xd(d)} y2={1192} stroke={KC.ink} strokeWidth={7} />
+            {d % 2 === 0 && <text x={xd(d)} y={1250} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>{d}</text>}
           </g>)}
-          <text x={xd(14) + 20} y={1072} style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>días</text>
-          <rect x={xd(0)} y={1048} width={Math.max(0, xd(rd) - xd(0))} height={24} rx={12} fill={KC.red} opacity=".85" />
-          {rd >= 3 && <g transform={`translate(${xd(3)} 960) scale(${kprog(T, K.R + 2.0, K.R + 2.4, kEase.rebote)})`}>
-            <circle r={52} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} /><text y={14} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>día 3</text></g>}
-          {rd >= 8.5 && <g transform={`translate(${xd(8.5)} 930)`}><Rinon x={0} y={0} s={0.55 * kprog(T, K.R + 3.6, K.R + 4.0, kEase.rebote)} dano={0.6} /></g>}
+          <text x={xd(14) + 20} y={1305} textAnchor="end" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>días</text>
+          <rect x={xd(0)} y={1145} width={Math.max(0, xd(rd) - xd(0))} height={30} rx={15} fill={KC.red} opacity=".85" />
+          {rd >= 3 && <g transform={`translate(${xd(3)} 1020) scale(${kprog(T, K.R + 2.0, K.R + 2.4, kEase.rebote)})`}>
+            <circle r={80} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} /><text y={14} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill="#0b1020">día 3</text>
+            <line x1={0} y1={80} x2={0} y2={122} stroke={KC.yellow} strokeWidth={6} /></g>}
+          {/* el riñón espera a un lado desde que empieza la escena y baja a su lugar en la línea cuando la voz dice cuándo avisa */}
+          {(() => { const v = kprog(T, K.R + 3.3, K.R + 4.0, kEase.suave), pop = kprog(T, K.R + 3.6, K.R + 4.0, kEase.rebote);
+            return <g transform={`translate(${klerp(840, xd(8.5), v)} ${klerp(800, 985, v)})`} opacity={0.45 + 0.55 * v}>
+              <Rinon x={0} y={0} s={klerp(0.95, 1.05, pop)} dano={0.6 * v} latido={Math.max(0, Math.sin(T * 5)) * 0.02 * (1 - v)} />
+              <line x1={0} y1={118} x2={0} y2={157} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.R + 3.8, K.R + 4.1)} /></g>; })()}
         </>)}
       </Escena>
       {/* 8–9 · Suecia: 28 intoxicados, 22 con diálisis; 21 en falla renal grave */}
@@ -254,88 +270,88 @@ function CortinariusShot() {
           {GRID28.map(([px, py], i) => { const on = kprog(T, K.Su + 0.3 + i * 0.03, K.Su + 0.6 + i * 0.03, kEase.rebote); if (on <= 0) return null;
             const di = DIAL22.indexOf(i), g = T < K.Fa && di >= 0 ? kprog(T, K.Su + 1.6 + di * 0.06, K.Su + 1.9 + di * 0.06) : 0;
             const ri = ROJO21.indexOf(i), r = ri >= 0 ? kprog(T, K.Fa + 0.4 + ri * 0.06, K.Fa + 0.7 + ri * 0.06) : 0;
-            return <Persona key={i} x={px} y={py} s={on * 1.05} gota={g * (1 - kprog(T, K.Fa - 0.2, K.Fa))} rojo={r} />; })}
+            return <Persona key={i} x={px} y={py} s={on * 1.75} gota={g * (1 - kprog(T, K.Fa - 0.2, K.Fa))} rojo={r} />; })}
         </>)}
       </Escena>
       {/* 10 · sin antídoto: diálisis o trasplante */}
       <Escena T={T} a={K.An} b={K.Ev}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Dialisis T={T} x={320} y={1150} s={1.15} p={kprog(T, K.An + 0.9, K.An + 1.4)} />
-          <Rinon x={800} y={1010} s={0.9} dano={0.7} latido={Math.max(0, Math.sin(T * 5)) * 0.03} />
+          <Dialisis T={T} x={300} y={1330} s={1.75} p={0.3 + 0.7 * kprog(T, K.An + 0.9, K.An + 1.4)} />
+          <Rinon x={865} y={1130} s={1.5} dano={0.7} latido={Math.max(0, Math.sin(T * 5)) * 0.03} />
         </>)}
       </Escena>
       {/* 11 · el caso de 2008: porcini (poros) ≠ Cortinarius (láminas) */}
       <Escena T={T} a={K.Ev} b={K.Ci}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1120} width={KW} height={110} fill="#3a2c23" />
-          <Porcini T={T} x={250} y={1125} s={1.15} crece={kprog(T, K.Ev + 3.4, K.Ev + 4.0)} />
-          <Cortinario T={T} x={760} y={1125} s={1.3} edad={1} oxido={0.8} crece={kprog(T, K.Ev + 3.8, K.Ev + 4.6)} seed={7} />
-          {T > K.Ev + 4.6 && <text x={505} y={900} textAnchor="middle" style={{ font:`400 ${200 * kprog(T, K.Ev + 4.6, K.Ev + 5.0, kEase.rebote)}px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={8}>≠</text>}
+          <Suelo y={1340} />
+          <Porcini T={T} x={275} y={1346} s={1.44} crece={kprog(T, K.Ev - 0.2, K.Ev + 0.5)} />
+          <Cortinario T={T} x={790} y={1346} s={1.62} edad={1} oxido={0.8} crece={kprog(T, K.Ev - 0.1, K.Ev + 0.7)} seed={7} />
+          {T > K.Ev + 4.6 && <text x={528} y={1060} textAnchor="middle" style={{ font:`400 ${230 * kprog(T, K.Ev + 4.6, K.Ev + 5.0, kEase.rebote)}px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={8}>≠</text>}
         </>)}
       </Escena>
       {/* 12 · cierre: la misma sartén del inicio, ahora con la respuesta */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Sarten T={T} x={430} y={990} s={1.05} calor={1 - kprog(T, K.Ci + 1.2, K.Ci + 2.2)} />
-          <g opacity={kprog(T, K.Ci + 1.4, K.Ci + 1.8)}><Sello T={T} at={K.Ci + 1.4} x={430} y={980} texto="NO" color={KC.red} r={150} rot={-10} /></g>
-          {T > K.Ci + 3.6 && <g opacity={kprog(T, K.Ci + 3.6, K.Ci + 4.0)}><Calendario x={200} y={620} s={0.9} dia={diasC} /></g>}
-          {T > K.Ci + 6.2 && <g transform={`translate(0 0) scale(1)`} opacity={kprog(T, K.Ci + 6.2, K.Ci + 6.6)}><Urgencias x={480} y={505 + (1 - kprog(T, K.Ci + 6.2, K.Ci + 6.7, kEase.rebote)) * 60} s={1.1} /></g>}
+          <Sarten T={T} x={500} y={1090} s={1.6} calor={1 - kprog(T, K.Ci + 1.2, K.Ci + 2.2)} />
+          <g opacity={kprog(T, K.Ci + 1.4, K.Ci + 1.8)}><Sello T={T} at={K.Ci + 1.4} x={500} y={1080} texto="NO" color={KC.red} r={225} rot={-10} /></g>
+          {T > K.Ci + 3.6 && <g opacity={kprog(T, K.Ci + 3.6, K.Ci + 4.0)}><Calendario x={240} y={540} s={1.3} dia={diasC} /></g>}
+          {T > K.Ci + 6.2 && <g transform={`translate(0 0) scale(1)`} opacity={kprog(T, K.Ci + 6.2, K.Ci + 6.6)}><Urgencias x={690} y={545 + (1 - kprog(T, K.Ci + 6.2, K.Ci + 6.7, kEase.rebote)) * 60} s={1.3} /></g>}
         </>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.8} until={K.G + 3.3} texto="6 horas después: nada ✓" x={400} y={740} tam={36} borde={KC.leaf} />
-      <MitoTachado T={T} at={K.G + 3.4} tacharEn={K.G + 4.1} until={K.Co - 0.3} texto="«ya estoy a salvo»" x={420} y={740} tam={46} />
-      <Chip T={T} at={K.G + 4.8} until={K.Co - 0.3} texto="puede avisar DÍAS después" x={700} y={440} tam={40} borde={KC.red} />
-      <Etq T={T} at={K.Co + 1.2} until={K.Es - 0.3} x={60} y={470} texto="Cortinarius orellanus" it tam={40} color={KC.ink} />
-      <Etq T={T} at={K.Co + 1.5} until={K.Es - 0.3} x={60} y={525} texto="Cortinarius rubellus" it tam={40} color={KC.ink} />
-      <Etq T={T} at={K.Co + 2.0} until={K.Es - 0.3} x={60} y={640} texto="joven: cortina (velo de telaraña)" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Co + 2.6} until={K.Es - 0.3} x={60} y={690} texto="adulto: láminas que se vuelven óxido" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Es + 0.3} until={K.To - 0.3} x={60} y={480} texto="sombrero naranja rojizo" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Es + 1.2} until={K.To - 0.3} x={60} y={560} texto="esporada: café óxido" tam={40} color={KC.ink} />
-      <Chip T={T} at={K.To + 0.1} until={K.Tu - 0.3} texto="POR DENTRO · LA TOXINA" x={440} y={470} tam={34} borde={KC.cyan} mono />
-      <Etq T={T} at={K.To + 0.6} until={K.Tu - 0.3} x={60} y={600} texto="orelanina (esquema)" tam={34} color={KC.yellow} />
-      <Chip T={T} at={K.To + 1.2} until={K.Tu - 0.3} texto="solo algunas especies de Cortinarius la tienen" x={360} y={930} tam={22} borde={KC.yellow} />
-      <Etq T={T} at={K.To + 1.8} until={K.Tu - 0.3} x={620} y={860} texto="riñón" tam={36} color={KC.texto} />
-      <Chip T={T} at={K.Tu + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO · TÚBULO DEL RIÑÓN" x={440} y={470} tam={30} borde={KC.pink} mono />
-      <Etq T={T} at={K.Tu + 0.8} until={K.P - 0.3} x={60} y={560} texto="aquí se forma la orina" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Tu + 2.4} until={K.P - 0.3} x={60} y={610} texto="células dañadas" tam={30} color={KC.gold2} />
-      <TarjetaEstudio T={T} at={K.R + 0.2} until={K.R + 1.5} anio="2001" quien="revisión · 90 casos analizados" revista="Toxicon, 2001" x={540} y={620} />
-      <Etq T={T} at={K.R + 2.1} until={K.Su - 0.3} x={60} y={470} texto="estómago: hacia el día 3" tam={32} color={KC.ink} />
-      <NumeroGigante T={T} at={K.R + 3.6} until={K.Su - 0.3} valor={8.5} dec={1} dur={0.8} sufijo=" días" etiqueta="riñón: en la mitad, después de…" x={540} y={660} tam={150} color={KC.red} />
-      <Chip T={T} at={K.R + 4.6} until={K.Su - 0.3} texto="mediana · fase renal" x={540} y={820} tam={30} borde={KC.ink} mono />
-      <Chip T={T} at={K.Su + 0.2} until={K.Fa - 0.2} texto="oeste de Suecia · 1979–2012" x={380} y={470} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Su + 0.5} until={K.Fa - 0.2} x={60} y={560} texto="estudio · BMC Nephrology, 2017" tam={26} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Su + 1.6} until={K.Fa - 0.2} valor={22} dur={1.3} sufijo=" de 28" etiqueta="necesitaron diálisis" x={380} y={690} tam={110} color={CX.dial} />
-      <NumeroGigante T={T} at={K.Fa + 0.3} until={K.An - 0.3} valor={75} dur={1.3} sufijo=" %" etiqueta="falla renal más grave" x={380} y={690} tam={130} color={KC.red} />
-      <Chip T={T} at={K.Fa + 1.4} until={K.An - 0.3} texto="etapa 5 de enfermedad renal crónica" x={380} y={470} tam={28} borde={KC.red} />
-      <MitoTachado T={T} at={K.An + 0.1} tacharEn={K.An + 0.6} until={K.Ev - 0.3} texto="antídoto" x={540} y={470} tam={56} />
-      <Chip T={T} at={K.An + 1.2} until={K.Ev - 0.3} texto="diálisis" x={320} y={620} tam={42} borde={CX.dial} />
-      <Chip T={T} at={K.An + 2.0} until={K.Ev - 0.3} texto="o un trasplante" x={720} y={760} tam={42} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Ev + 0.3} until={K.Ev + 3.3} anio="2008" quien="Escocia · Nicholas Evans y 3 familiares" revista="autor de «The Horse Whisperer»" x={540} y={640} />
-      <Etq T={T} at={K.Ev + 4.0} until={K.Ci - 0.3} x={60} y={560} texto="porcini: poros" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ev + 4.0} until={K.Ci - 0.3} x={60} y={605} texto="Boletus edulis" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ev + 4.4} until={K.Ci - 0.3} x={60} y={675} texto="venenoso: láminas" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ev + 4.4} until={K.Ci - 0.3} x={60} y={720} texto="Cortinarius rubellus" it tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ev + 6.3} until={K.Ci - 0.3} texto="diálisis → un riñón de su hija" x={420} y={470} tam={34} borde={KC.pink} />
-      <Chip T={T} at={K.Ci + 0.2} until={K.Ci + 3.4} texto="no hay truco casero" x={600} y={440} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Ci + 1.6} until={K.Ci + 6.8} texto="ante la duda, no lo comas" x={540} y={770} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Ci + 7.0} until={K.Ou} texto="di: «comí hongos silvestres»" x={540} y={770} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.G + 1.8} until={K.G + 3.3} texto="6 horas después: nada ✓" x={540} y={700} tam={40} borde={KC.leaf} />
+      <MitoTachado T={T} at={K.G + 3.4} tacharEn={K.G + 4.1} until={K.Co - 0.3} texto="«ya estoy a salvo»" x={540} y={720} tam={50} />
+      <Chip T={T} at={K.G + 4.8} until={K.Co - 0.3} texto="puede avisar DÍAS después" x={720} y={480} tam={38} borde={KC.red} />
+      <Etq T={T} at={K.Co + 1.2} until={K.Es - 0.3} x={60} y={400} texto="Cortinarius orellanus" it tam={40} color={KC.ink} />
+      <Etq T={T} at={K.Co + 1.5} until={K.Es - 0.3} x={60} y={455} texto="Cortinarius rubellus" it tam={40} color={KC.ink} />
+      <Etq T={T} at={K.Co + 2.0} until={K.Es - 0.3} x={60} y={560} texto="joven: cortina (velo de telaraña)" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Co + 2.6} until={K.Es - 0.3} x={60} y={612} texto="adulto: láminas que se vuelven óxido" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Es + 0.3} until={K.To - 0.3} x={60} y={390} texto="sombrero naranja rojizo" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Es + 1.2} until={K.To - 0.3} x={60} y={460} texto="esporada: café óxido" tam={40} color={KC.ink} />
+      <Chip T={T} at={K.To + 0.1} until={K.Tu - 0.3} texto="POR DENTRO · LA TOXINA" x={540} y={390} tam={34} borde={KC.cyan} mono />
+      <Etq T={T} at={K.To + 0.6} until={K.Tu - 0.3} x={60} y={520} texto="orelanina (esquema)" tam={36} color={KC.yellow} />
+      <Chip T={T} at={K.To + 1.2} until={K.Tu - 0.3} texto="solo algunas especies de Cortinarius la tienen" x={330} y={1085} tam={22} borde={KC.yellow} />
+      <Etq T={T} at={K.To + 1.8} until={K.Tu - 0.3} x={650} y={985} texto="riñón" tam={38} color={KC.texto} />
+      <Chip T={T} at={K.Tu + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO · TÚBULO DEL RIÑÓN" x={540} y={390} tam={32} borde={KC.pink} mono />
+      <Etq T={T} at={K.Tu + 0.8} until={K.P - 0.3} x={60} y={480} texto="aquí se forma la orina" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.Tu + 2.4} until={K.P - 0.3} x={60} y={535} texto="células dañadas" tam={32} color={KC.gold2} />
+      <TarjetaEstudio T={T} at={K.R + 0.2} until={K.R + 1.5} anio="2001" quien="revisión · 90 casos analizados" revista="Toxicon, 2001" x={540} y={500} />
+      <Etq T={T} at={K.R + 2.1} until={K.Su - 0.3} x={60} y={826} texto="estómago: hacia el día 3" tam={30} color={KC.ink} />
+      <NumeroGigante T={T} at={K.R + 3.6} until={K.Su - 0.3} valor={8.5} dec={1} dur={0.8} sufijo=" días" etiqueta="riñón: en la mitad, después de…" x={540} y={560} tam={170} color={KC.red} />
+      <Chip T={T} at={K.R + 4.6} until={K.Su - 0.3} texto="mediana · fase renal" x={540} y={745} tam={30} borde={KC.ink} mono />
+      <Chip T={T} at={K.Su + 0.2} until={K.Fa - 0.2} texto="oeste de Suecia · 1979–2012" x={540} y={390} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Su + 0.5} until={K.Fa - 0.2} x={60} y={470} texto="estudio · BMC Nephrology, 2017" tam={26} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Su + 1.6} until={K.Fa - 0.2} valor={22} dur={1.3} sufijo=" de 28" etiqueta="necesitaron diálisis" x={540} y={640} tam={140} color={CX.dial} />
+      <NumeroGigante T={T} at={K.Fa + 0.3} until={K.An - 0.3} valor={75} dur={1.3} sufijo=" %" etiqueta="falla renal más grave" x={540} y={630} tam={160} color={KC.red} />
+      <Chip T={T} at={K.Fa + 1.4} until={K.An - 0.3} texto="etapa 5 de enfermedad renal crónica" x={540} y={420} tam={30} borde={KC.red} />
+      <MitoTachado T={T} at={K.An + 0.1} tacharEn={K.An + 0.6} until={K.Ev - 0.3} texto="antídoto" x={540} y={430} tam={64} />
+      <Chip T={T} at={K.An + 1.2} until={K.Ev - 0.3} texto="diálisis" x={300} y={740} tam={44} borde={CX.dial} />
+      <Chip T={T} at={K.An + 2.0} until={K.Ev - 0.3} texto="o un trasplante" x={810} y={850} tam={42} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.Ev + 0.3} until={K.Ev + 3.3} anio="2008" quien="Escocia · Nicholas Evans y 3 familiares" revista="autor de «The Horse Whisperer»" x={540} y={520} />
+      <Etq T={T} at={K.Ev + 4.0} until={K.Ci - 0.3} x={60} y={690} texto="porcini: poros" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ev + 4.0} until={K.Ci - 0.3} x={60} y={738} texto="Boletus edulis" it tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ev + 4.4} until={K.Ci - 0.3} x={590} y={640} texto="venenoso: láminas" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ev + 4.4} until={K.Ci - 0.3} x={590} y={688} texto="Cortinarius rubellus" it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Ev + 6.3} until={K.Ci - 0.3} texto="diálisis → un riñón de su hija" x={540} y={430} tam={38} borde={KC.pink} />
+      <Chip T={T} at={K.Ci + 0.2} until={K.Ci + 3.4} texto="no hay truco casero" x={540} y={520} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.Ci + 1.6} until={K.Ci + 6.8} texto="ante la duda, no lo comas" x={540} y={745} tam={42} borde={KC.red} />
+      <Chip T={T} at={K.Ci + 7.0} until={K.Ou} texto="di: «comí hongos silvestres»" x={540} y={745} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Ci + 2.4} until={K.Ou} x={60} y={1500} texto="No es guía de identificación ni consejo médico." tam={22} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Co} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.Co} until={K.Es} texto="5 cm" largo={130} />
-      <BarraEscala T={T} at={K.Es} until={K.To} texto="5 cm" largo={120} />
+      <BarraEscala T={T} at={K.G} until={K.Co} texto="10 cm" largo={168} />
+      <BarraEscala T={T} at={K.Co} until={K.Es} texto="5 cm" largo={208} />
+      <BarraEscala T={T} at={K.Es} until={K.To} texto="5 cm" largo={180} />
       <BarraEscala T={T} at={K.To} until={K.Tu} texto="esquema · sin escala" largo={0} />
-      <BarraEscala T={T} at={K.Tu} until={K.P} texto="20 µm" largo={140} />
-      <BarraEscala T={T} at={K.P} until={K.R} texto="10 cm" largo={120} />
+      <BarraEscala T={T} at={K.Tu} until={K.P} texto="20 µm" largo={182} />
+      <BarraEscala T={T} at={K.P} until={K.R} texto="10 cm" largo={152} />
       <BarraEscala T={T} at={K.R} until={K.Su} texto="1 día" largo={60} />
-      <BarraEscala T={T} at={K.Ev} until={K.Ci} texto="5 cm" largo={120} />
-      <BarraEscala T={T} at={K.Ci} until={K.Ou} texto="10 cm" largo={110} y={1560} />
+      <BarraEscala T={T} at={K.Ev} until={K.Ci} texto="5 cm" largo={150} />
+      <BarraEscala T={T} at={K.Ci} until={K.Ou} texto="10 cm" largo={168} y={1560} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Co - 0.1} texto="Horas sin nada *no es estar a salvo.*" />
