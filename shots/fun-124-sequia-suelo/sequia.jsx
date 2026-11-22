@@ -310,19 +310,23 @@ function SequiaShot() {
       {/* 1–2 · la milpa seca: el terrón se agrieta (0.3 s) y "aguanta la respiración"; la lupa baja al microscopio */}
       <Escena T={T} a={K.G} b={K.Ba} zoom={0.06} origen="50% 55%">
         <Milpa T={T} grieta={kprog(T, K.G + 0.25, K.G + 0.9, kEase.sale)} pecho={pecho} />
+        {/* vuelta de encuadre: en el gancho el subsuelo de abajo queda en penumbra para que el ojo vaya al terrón */}
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(to bottom, rgba(8,12,22,0) 64%, rgba(8,12,22,.82) 86%)', opacity:1 - kprog(T, K.Mi - 0.3, K.Mi + 0.6), zIndex:20 }}></div>
       </Escena>
       {/* 3–5 · los poros por dentro: películas de agua, bacterias, aire, hifas */}
       <Escena T={T} a={K.Ba} b={K.P} zoom={0.05}>
-        <MundoPoros T={T} agua={1 - kprog(T, K.Se + 0.2, K.Se + 2.2, kEase.suave)} hifas={kprog(T, K.Hi + 0.2, K.Hi + 3.6, kEase.suave)} nadan={1 - kprog(T, K.Se + 0.5, K.Se + 2.2)} />
+        {/* vuelta de encuadre: el mundo de los poros baja 140 px (etiquetas y chips con él) */}
+        <div style={{ position:'absolute', inset:0, background:KC.dark }}></div>
+        <div style={{ position:'absolute', inset:0, transform:'translateY(140px)' }}><MundoPoros T={T} agua={1 - kprog(T, K.Se + 0.2, K.Se + 2.2, kEase.suave)} hifas={kprog(T, K.Hi + 0.2, K.Hi + 3.6, kEase.suave)} nadan={1 - kprog(T, K.Se + 0.5, K.Se + 2.2)} /></div>
       </Escena>
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 200)">{/* vuelta de encuadre: baja 200 px */}
           <BacteriaC T={T} x={190} y={640} s={1.6} rot={-15 + Math.sin(T * 3) * 6} color={KC.mint} seed={3} />
           <Hifa T={T} pts={[[-40, 1010], [140, 990], [300, 1030], [430, 990]]} p={1} ancho={70} />
           <Interrogacion T={T} x={300} y={930} tam={320} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 7 · el estudio de 2018: macetas de pradera bajo techo transparente; se lee el ADN */}
       <Escena T={T} a={K.E} b={K.R} zoom={0.04}>
@@ -343,7 +347,7 @@ function SequiaShot() {
           <Champinon x={200} y={686} s={0.8} crece={kprog(T, K.Ch + 0.2, K.Ch + 1.0, kEase.sale)} abre={kprog(T, K.Ch + 0.6, K.Ch + 1.4)} />
           {T > K.Pi + 1.4 && <Pizza x={945} y={585} s={kEase.rebote(kprog(T, K.Pi + 1.4, K.Pi + 1.8)) * 0.72} rot={12 + Math.sin(T * 3) * 4} />}
         </>, 21)}
-        <div style={{ position:'absolute', inset:0, background:'rgba(14,15,18,.45)', opacity:kprog(T, K.Hp, K.Hp + 0.4), zIndex:30 }}></div>
+        <div style={{ position:'absolute', inset:0, background:'rgba(14,15,18,.2)', opacity:kprog(T, K.Hp, K.Hp + 0.4), zIndex:30 }}></div>
       </Escena>
       {/* 12–14 · llueve: la tierra exhala (efecto Birch) y regresa la milpa, ya mojada y verde */}
       <Escena T={T} a={K.Ll} b={FIN} zoom={0.04} origen="50% 55%">
@@ -358,15 +362,15 @@ function SequiaShot() {
       <Soles T={T} at={K.Mi + 0.6} until={K.Ba - 0.3} x={700} y={540} />
       <Etq T={T} at={K.Mi + 1.6} until={K.Ba - 0.3} x={640} y={640} texto="hongos (hifas)" tam={30} color={KC.texto} />
       <Etq T={T} at={K.Mi + 2.1} until={K.Ba - 0.3} x={640} y={700} texto="bacterias" tam={30} color={KC.texto} />
-      <Chip T={T} at={K.Ba + 0.2} until={K.Se - 0.2} texto="AL MICROSCOPIO · POROS DEL SUELO" x={450} y={400} tam={28} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ba + 0.9} until={K.Se + 1.0} x={360} y={630} texto="película de agua" tam={28} color={SQ.agua} />
-      <Etq T={T} at={K.Ba + 1.4} until={K.Hi - 0.2} x={335} y={1285} texto="bacteria" lado="izq" tam={28} color={KC.mint} />
-      <Etq T={T} at={K.Ba + 1.9} until={K.Hi - 0.2} x={50} y={545} texto="grano de suelo" tam={26} color="#ffd9a8" />
-      <Chip T={T} at={K.Se + 1.2} until={K.Hi - 0.2} texto="poro con aire" x={540} y={1010} tam={34} borde={SQ.aire} />
-      <Etq T={T} at={K.Hi + 1.0} until={K.P - 0.2} x={150} y={560} texto="hifa (hilo del hongo)" tam={30} color={SQ.hifa} />
-      <Chip T={T} at={K.Hi + 2.2} until={K.P - 0.2} texto="cruza el aire" x={330} y={420} tam={34} borde={SQ.hifa} />
-      <Etq T={T} at={K.P + 0.3} until={K.E - 0.2} x={300} y={560} texto="bacteria" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.P + 0.5} until={K.E - 0.2} x={60} y={1100} texto="hifa" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Ba + 0.2} until={K.Se - 0.2} texto="AL MICROSCOPIO · POROS DEL SUELO" x={450} y={540} tam={28} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Ba + 0.9} until={K.Se + 1.0} x={360} y={770} texto="película de agua" tam={28} color={SQ.agua} />
+      <Etq T={T} at={K.Ba + 1.4} until={K.Hi - 0.2} x={335} y={1425} texto="bacteria" lado="izq" tam={28} color={KC.mint} />
+      <Etq T={T} at={K.Ba + 1.9} until={K.Hi - 0.2} x={50} y={685} texto="grano de suelo" tam={26} color="#ffd9a8" />
+      <Chip T={T} at={K.Se + 1.2} until={K.Hi - 0.2} texto="poro con aire" x={540} y={1150} tam={34} borde={SQ.aire} />
+      <Etq T={T} at={K.Hi + 1.0} until={K.P - 0.2} x={150} y={700} texto="hifa (hilo del hongo)" tam={30} color={SQ.hifa} />
+      <Chip T={T} at={K.Hi + 2.2} until={K.P - 0.2} texto="cruza el aire" x={330} y={560} tam={34} borde={SQ.hifa} />
+      <Etq T={T} at={K.P + 0.3} until={K.E - 0.2} x={300} y={760} texto="bacteria" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.P + 0.5} until={K.E - 0.2} x={60} y={1300} texto="hifa" tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2018" quien="de Vries y col. · Inglaterra" revista="Nature Communications, 2018" x={540} y={400} />
       <Chip T={T} at={K.E + 1.4} until={K.R - 0.3} texto="techo transparente: sin lluvia" x={540} y={945} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.E + 3.3} until={K.R - 0.3} texto="leen el ADN de sus microbios" x={540} y={400} tam={34} borde={KC.pink} />
