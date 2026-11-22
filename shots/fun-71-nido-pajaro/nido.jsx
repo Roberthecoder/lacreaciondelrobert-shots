@@ -170,10 +170,10 @@ function NidoShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           {T < K.H && lluvia(K.G, 14, 3)}
-          <Madera x={-40} y={1080} w={1160} h={150} />
-          <Copa T={T} x={380} y={1090} s={1.55} R={150} H={240} />
-          {g1 < 1 && <Gota x={110} y={klerp(260, 1060, g1 * g1)} s={1.3} />}
-          <Salpica x={110} y={1085} p={kprog(T, K.G + 0.75, K.G + 1.35)} s={0.8} />
+          <Madera x={-40} y={1290} w={1160} h={160} />
+          <Copa T={T} x={540} y={1300} s={2.5} R={150} H={240} />
+          {g1 < 1 && <Gota x={95} y={klerp(260, 1265, g1 * g1)} s={1.4} />}
+          <Salpica x={95} y={1292} p={kprog(T, K.G + 0.75, K.G + 1.35)} s={0.9} />
         </>)}
       </Escena>
       {/* 3 · dónde crece: tarjetas y mapa */}
@@ -182,14 +182,14 @@ function NidoShot() {
         {fsvg(<>
           {T < K.D + 3.6 && [0, 1, 2].map((i) => { const e = kprog(T, K.D + 0.2 + i * 0.8, K.D + 0.6 + i * 0.8, kEase.rebote); const out = kprog(T, K.D + 3.1, K.D + 3.5);
             if (e <= 0) return null;
-            return <Tarjeta key={i} x={45 + i * 340} y={540} w={310} h={360} s={e} o={1 - out} titulo={['madera podrida', 'estiércol viejo', 'astillas'][i]}>
+            return <Tarjeta key={i} x={45 + i * 340} y={790} w={310} h={360} s={e} o={1 - out} titulo={['madera podrida', 'estiércol viejo', 'astillas'][i]}>
               {i === 0 && <><rect x={30} y={190} width={250} height={70} rx={20} fill="#6b4a2a" stroke={KC.ink} strokeWidth={5} /><path d="M 50 210 L 120 205 M 160 230 L 250 222" stroke="#3b2a1c" strokeWidth={4} /></>}
               {i === 1 && <path d="M 30 255 Q 40 190 110 185 Q 160 160 210 185 Q 280 190 280 255 Z" fill="#6a5232" stroke={KC.ink} strokeWidth={5} />}
               {i === 2 && Array.from({ length: 14 }, (_, k) => <rect key={k} x={30 + (k % 7) * 36} y={205 + Math.floor(k / 7) * 26} width={34} height={16} rx={4} fill={k % 2 ? '#d9a35a' : '#b97f3c'} stroke={KC.ink} strokeWidth={3} transform={`rotate(${(k * 37) % 30 - 15} ${47 + (k % 7) * 36} ${213 + Math.floor(k / 7) * 26})`} />)}
               {[[100, 195], [165, 188], [225, 196]].map(([cx, cy], k) => <Copa key={k} x={cx} y={cy} s={0.28} R={150} H={240} />)}
             </Tarjeta>; })}
           {T > K.D + 3.1 && <g opacity={kprog(T, K.D + 3.1, K.D + 3.6)}>
-            <MapaMexico x={90} y={540} ancho={900} conCA={false}>
+            <MapaMexico x={60} y={660} ancho={960} conCA={false}>
               {NIDO_PUNTOS.map(([n, lo, la], i) => { const [px, py] = mxProy(lo, la); const k = kEase.rebote(kprog(T, K.D + 3.7 + i * 0.18, K.D + 4.0 + i * 0.18));
                 return <circle key={n} cx={px} cy={py} r={18 * k} fill={NP.cafe} stroke={KC.ink} strokeWidth={4} />; })}
             </MapaMexico>
@@ -200,12 +200,12 @@ function NidoShot() {
       <Escena T={T} a={K.Hu} b={K.P} zoom={0.05} origen="40% 45%">
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
-        {fsvg(<PeridioloCorte T={T} x={380} y={720} s={kEase.sale(kprog(T, K.Hu, K.Hu + 0.6))} esporas={kprog(T, K.Hu + 0.4, K.Hu + 1.6)} cordon={kprog(T, K.Hu + 2.0, K.Hu + 3.0, kEase.sale)} punta={kprog(T, K.Hu + 3.2, K.Hu + 3.7)} />)}
+        {fsvg(<PeridioloCorte T={T} x={540} y={900} s={1.4 * kEase.sale(kprog(T, K.Hu, K.Hu + 0.6))} esporas={kprog(T, K.Hu + 0.4, K.Hu + 1.6)} cordon={kprog(T, K.Hu + 2.0, K.Hu + 3.0, kEase.sale)} punta={kprog(T, K.Hu + 3.2, K.Hu + 3.7)} />)}
       </Escena>
       {/* 5 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Go} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Madera x={-40} y={1100} w={700} h={130} /><Copa T={T} x={270} y={1110} s={1.15} R={150} H={240} tiembla={0.3} /><Interrogacion T={T} x={270} y={640} tam={300} /></>)}
+        {fsvg(<><Madera x={-40} y={1290} w={1160} h={150} /><Copa T={T} x={440} y={1300} s={1.8} R={150} H={240} tiembla={0.3} /><Interrogacion T={T} x={790} y={700} tam={340} /></>)}
       </Escena>
       {/* 6 · la gota pega en el borde: el huevito sale disparado */}
       <Escena T={T} a={K.Go} b={K.V} zoom={0.03} origen="50% 60%">
@@ -222,7 +222,7 @@ function NidoShot() {
       {/* 7 · vuelo: 1–5 m/s, hasta ≈ 1 m */}
       <Escena T={T} a={K.V} b={K.E} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 190)">
           <rect x={0} y={1010} width={KW} height={400} fill="#3a2c23" />
           <line x1={0} y1={1010} x2={KW} y2={1010} stroke={KC.ink} strokeWidth={8} />
           <Copa T={T} x={150} y={1015} s={0.5} R={150} H={240} huevos={[1, 2, 3, 4, 5, 6]} />
@@ -234,17 +234,17 @@ function NidoShot() {
             {Array.from({ length: 11 }, (_, i) => i / 10 <= kprog(T, K.V + 2.4, K.V + 3.0) ? <line key={i} x1={170 + i * 76} y1={1030} x2={170 + i * 76} y2={i % 5 ? 1050 : 1065} stroke={KC.ink} strokeWidth={4} /> : null)}
           </g>
           <g opacity={kprog(T, K.V + 0.3, K.V + 0.7)}><Velocimetro x={800} y={560} v={0.2 + 0.6 * kprog(T, K.V + 0.5, K.V + 1.5, kEase.sale) + Math.sin(T * 9) * 0.02} /></g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 8 · el estudio: cámara superlenta */}
       <Escena T={T} a={K.E} b={K.En} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <CamaraCine x={250} y={1110} s={0.7} T={T} />
-          <Madera x={560} y={1150} w={560} h={110} /><Copa T={T} x={800} y={1160} s={0.7} R={150} H={240} />
+          <CamaraCine x={250} y={1250} s={1.05} T={T} />
+          <Madera x={540} y={1290} w={580} h={130} /><Copa T={T} x={790} y={1300} s={1.05} R={150} H={240} />
           {/* tira de película con el huevito a distintas alturas */}
           <g transform={`translate(${-((T - K.E) * 160) % 200} 0)`} opacity={kprog(T, K.E + 2.4, K.E + 2.8)}>
-            {Array.from({ length: 8 }, (_, i) => <g key={i} transform={`translate(${i * 200 - 60} 770)`}>
+            {Array.from({ length: 8 }, (_, i) => <g key={i} transform={`translate(${i * 200 - 60} 860)`}>
               <rect x={0} y={0} width={190} height={150} fill="#1b1d22" stroke={KC.ink} strokeWidth={4} />
               {[0, 1, 2, 3].map((k) => <rect key={k} x={10 + k * 45} y={6} width={22} height={12} rx={3} fill="#f4efe4" />)}
               <rect x={14} y={26} width={162} height={100} fill="#cfeaff" />
@@ -257,19 +257,20 @@ function NidoShot() {
       <Escena T={T} a={K.En} b={K.F} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Gota x={180} y={820} s={2.4} />
+          <g opacity={0.6}><Madera x={-40} y={1460} w={1160} h={150} /><Copa T={T} x={540} y={1470} s={1.5} R={150} H={240} huevos={[1, 2, 3, 4, 5, 6]} /></g>
+          <Gota x={180} y={900} s={2.4} />
           {(() => { const u = kprog(T, K.En + 0.3, K.En + 1.2, kEase.sale), d = kprog(T, K.En + 1.6, K.En + 2.4, kEase.sale); return <>
-            <rect x={320} y={760} width={600 * u} height={110} fill={NP.gota} stroke={KC.ink} strokeWidth={7} />
-            <rect x={320 + 600 * u - 12 + d * 40} y={760 - d * 120} width={12} height={110} fill={KC.gold} stroke={KC.ink} strokeWidth={4} />
-            {d > 0 && <Huevito x={346 + 600 * u + d * 20} y={720 - d * 30} s={1.6} />}
+            <rect x={320} y={840} width={600 * u} height={110} fill={NP.gota} stroke={KC.ink} strokeWidth={7} />
+            <rect x={320 + 600 * u - 12 + d * 40} y={840 - d * 120} width={12} height={110} fill={KC.gold} stroke={KC.ink} strokeWidth={4} />
+            {d > 0 && <Huevito x={346 + 600 * u + d * 20} y={800 - d * 30} s={1.6} />}
           </>; })()}
-          <text x={320} y={920} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>energía de la gota (100 %)</text>
+          <text x={320} y={1000} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>energía de la gota (100 %)</text>
         </>)}
       </Escena>
       {/* 10–11 · el cordón frena; el venado */}
       <Escena T={T} a={K.F} b={K.C} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 140)">
           <rect x={0} y={1150} width={KW} height={200} fill="#3a2c23" />
           {[[120, 520, 2], [260, 600, 5], [430, 470, 7], [ANC[0], 430, 1], [880, 560, 9], [990, 500, 4]].map(([x, y1, sd], i) => <Tallo key={i} x={x} y0={1160} y1={y1} T={i === 3 ? 0 : T} seed={sd} />)}
           {/* cordón */}
@@ -277,52 +278,52 @@ function NidoShot() {
           {T > tc && comido < 1 && <g transform={`translate(${ANC[0]} ${ANC[1]})`} style={{ filter:`drop-shadow(0 0 10px ${KC.yellow})` }}><circle r={11} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /></g>}
           {comido < 1 && T > K.F + 0.1 && <g opacity={1 - comido}><Huevito x={pf[0]} y={pf[1] + 10} s={2.2} rot={T < tc ? (T - K.F) * 300 : 0} />{T < tc && <Ovillo x={pf[0] - 26} y={pf[1] - 6} s={1.8} />}</g>}
           {T > K.He && <Venado x={venX} y={ANC[1] + 270} s={1.15} mastica={kprog(T, K.He + 1.8, K.He + 3.4)} />}
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · cierre: la misma copa del inicio, con un huevito menos, bajo la lluvia */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="40% 55%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           {lluvia(K.C, 18, 40)}
-          <Madera x={-40} y={1080} w={1160} h={150} />
-          <Copa T={T} x={380} y={1090} s={1.55} R={150} H={240} huevos={[1, 2, 3, 4, 5, 6]} />
-          {(() => { const per = 1.1, u = ((T - K.C) % per) / per; return <><Gota x={110} y={klerp(260, 1060, u * u)} s={1.2} o={u < 0.95 ? 1 : 0} /></>; })()}
+          <Madera x={-40} y={1290} w={1160} h={160} />
+          <Copa T={T} x={540} y={1300} s={2.5} R={150} H={240} huevos={[1, 2, 3, 4, 5, 6]} />
+          {(() => { const per = 1.1, u = ((T - K.C) % per) / per; return <><Gota x={95} y={klerp(260, 1265, u * u)} s={1.3} o={u < 0.95 ? 1 : 0} /></>; })()}
         </>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 2.4} until={K.H - 0.2} texto="no son huevos" x={300} y={470} tam={44} borde={KC.red} />
-      <Etq T={T} at={K.H + 0.3} until={K.D - 0.3} x={60} y={480} texto="hongo nido de pájaro" tam={38} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.9} until={K.D - 0.3} x={60} y={540} texto="Cyathus" it tam={44} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.6} until={K.D - 0.3} x={640} y={1040} texto="7–10 mm de alto" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.D + 0.1} until={K.D + 3.3} texto="¿DÓNDE CRECE?" x={540} y={460} tam={38} borde={KC.ink} mono />
-      <Chip T={T} at={K.D + 3.5} until={K.Hu - 0.3} texto="algunos registros en México" x={540} y={440} tam={36} borde={NP.cafe} />
-      <Etq T={T} at={K.D + 3.9} until={K.Hu - 0.3} x={262} y={600} texto="Sonora" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.D + 4.9} until={K.Hu - 0.3} x={690} y={880} texto="Yucatán" tam={30} lado="izq" color={KC.ink} />
-      <Chip T={T} at={K.Hu + 0.2} until={K.P - 0.3} texto="POR DENTRO · UN HUEVITO" x={380} y={400} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Hu + 1.0} until={K.P - 0.3} x={110} y={545} texto="paquete de esporas" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Hu + 2.4} until={K.P - 0.3} x={440} y={980} texto="cordón enrollado" tam={30} color={'#efe2c4'} />
-      <Etq T={T} at={K.Hu + 3.4} until={K.P - 0.3} x={440} y={1130} texto="punta pegajosa" tam={30} color={KC.yellow} />
-      <Chip T={T} at={K.Go + 2.0} until={K.V - 0.3} texto="el borde: el mejor golpe" x={540} y={1050} tam={36} borde={NP.gota} />
+      <Chip T={T} at={K.G + 2.4} until={K.H - 0.2} texto="no son huevos" x={300} y={420} tam={44} borde={KC.red} />
+      <Etq T={T} at={K.H + 0.3} until={K.D - 0.3} x={60} y={400} texto="hongo nido de pájaro" tam={38} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.9} until={K.D - 0.3} x={60} y={470} texto="Cyathus" it tam={44} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.6} until={K.D - 0.3} x={410} y={1150} texto="7–10 mm de alto" lado="izq" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.D + 0.1} until={K.D + 3.3} texto="¿DÓNDE CRECE?" x={540} y={700} tam={38} borde={KC.ink} mono />
+      <Chip T={T} at={K.D + 3.5} until={K.Hu - 0.3} texto="algunos registros en México" x={540} y={560} tam={36} borde={NP.cafe} />
+      <Etq T={T} at={K.D + 3.9} until={K.Hu - 0.3} x={242} y={726} texto="Sonora" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.D + 4.9} until={K.Hu - 0.3} x={701} y={1018} texto="Yucatán" tam={30} lado="izq" color={KC.ink} />
+      <Chip T={T} at={K.Hu + 0.2} until={K.P - 0.3} texto="POR DENTRO · UN HUEVITO" x={540} y={520} tam={32} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Hu + 1.0} until={K.P - 0.3} x={190} y={660} texto="paquete de esporas" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.Hu + 2.4} until={K.P - 0.3} x={620} y={1250} texto="cordón enrollado" tam={30} color={'#efe2c4'} />
+      <Etq T={T} at={K.Hu + 3.4} until={K.P - 0.3} x={620} y={1474} texto="punta pegajosa" tam={30} color={KC.yellow} />
+      <Chip T={T} at={K.Go + 2.0} until={K.V - 0.3} texto="el borde: el mejor golpe" x={540} y={1400} tam={36} borde={NP.gota} />
       <Etq T={T} at={K.Go + 0.4} until={golpe} x={borde[0] + 50} y={460} texto="gota de lluvia" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.V + 0.6} until={K.E - 0.3} texto="1–5 m/s" x={800} y={420} tam={48} borde={KC.red} />
-      <Etq T={T} at={K.V + 2.9} until={K.E - 0.3} x={170} y={1120} texto="hasta ≈ 1 m (máximo estimado)" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.V + 0.6} until={K.E - 0.3} texto="1–5 m/s" x={800} y={610} tam={48} borde={KC.red} />
+      <Etq T={T} at={K.V + 2.9} until={K.E - 0.3} x={170} y={1310} texto="hasta ≈ 1 m (máximo estimado)" tam={30} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.En - 0.3} anio="2013" quien="Miami University (Ohio)" revista="Fungal Biology, 2013 · video de alta velocidad" x={540} y={560} />
-      <NumeroGigante T={T} at={K.En + 1.6} until={K.F - 0.3} valor={2} dur={0.4} prefijo="< " sufijo=" %" etiqueta="para lanzar el huevito" x={380} y={540} tam={170} color={KC.gold2} />
-      <Etq T={T} at={K.F + 1.6} until={K.He - 0.2} x={ANC[0] + 30} y={ANC[1] - 40} texto="se pega" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.F + 2.6} until={K.He - 0.2} texto="el cordón lo frena" x={330} y={460} tam={38} borde={KC.yellow} />
-      <Chip T={T} at={K.He + 2.4} until={K.C - 0.2} texto="hipótesis: viajan en la panza" x={640} y={430} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.He + 1.2} until={K.C - 0.2} x={560} y={520} texto="herbívoro (ilustrativo)" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="espera la lluvia" x={330} y={470} tam={42} borde={NP.gota} />
+      <NumeroGigante T={T} at={K.En + 1.6} until={K.F - 0.3} valor={2} dur={0.4} prefijo="< " sufijo=" %" etiqueta="para lanzar el huevito" x={420} y={620} tam={170} color={KC.gold2} />
+      <Etq T={T} at={K.F + 1.6} until={K.He - 0.2} x={ANC[0] + 30} y={ANC[1] + 100} texto="se pega" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.F + 2.6} until={K.He - 0.2} texto="el cordón lo frena" x={330} y={520} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.He + 2.4} until={K.C - 0.2} texto="hipótesis: viajan en la panza" x={640} y={540} tam={32} borde={KC.gold} />
+      <Etq T={T} at={K.He + 1.2} until={K.C - 0.2} x={560} y={660} texto="herbívoro (ilustrativo)" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="espera la lluvia" x={330} y={420} tam={42} borde={NP.gota} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.D} texto="1 cm" largo={300} />
-      <BarraEscala T={T} at={K.Hu} until={K.P} texto="1 mm" largo={250} />
-      <BarraEscala T={T} at={K.P} until={K.Go} texto="1 cm" largo={220} />
+      <BarraEscala T={T} at={K.G} until={K.D} texto="1 cm" largo={484} />
+      <BarraEscala T={T} at={K.Hu} until={K.P} texto="1 mm" largo={350} />
+      <BarraEscala T={T} at={K.P} until={K.Go} texto="1 cm" largo={344} />
       <BarraEscala T={T} at={K.Go} until={K.V} texto="1 cm" largo={330} />
       <BarraEscala T={T} at={K.V} until={K.E} texto="10 cm" largo={76} />
       <BarraEscala T={T} at={K.D + 3.4} until={K.Hu} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={300} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={484} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No son huevitos: son *cápsulas de esporas.*" />
