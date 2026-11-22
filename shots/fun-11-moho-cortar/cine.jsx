@@ -36,7 +36,7 @@ const CineCtx = React.createContext({ velo: false, a: null });
 function FondoMarca({ color = '#1b2a44', patron = 'puntos', T }) {
   const ctx = React.useContext(CineCtx);
   const comp = typeof useComposition === 'function' ? useComposition() : null;
-  if (ctx && ctx.velo) return <div style={{ position:'absolute', inset:0, background:'rgba(8,12,22,.68)' }}></div>;
+  if (ctx && ctx.velo) return <div style={{ position:'absolute', inset:0, background:'rgba(8,12,22,.46)' }}></div>;
   // Disolvencia larga: el fondo de una escena nueva tarda ~1.2 s en volverse sólido, y mientras tanto la escena anterior
   // (que dura 0.9 s más) se sigue viendo detrás. Así no hay pantalla vacía mientras entra el dibujo nuevo.
   const tt = T != null && T !== 0 ? T : (comp ? comp.T : 0);

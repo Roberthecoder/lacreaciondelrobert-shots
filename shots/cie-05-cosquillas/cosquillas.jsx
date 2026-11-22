@@ -125,6 +125,9 @@ function Cosquillas() {
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Q} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
+        {/* encuadre: tu mano y tu pie (los de la escena anterior) siguen a cuadro, a media luz, y la pregunta encima */}
+        <div style={{ position:'absolute', inset:0, background:'rgba(10,15,28,.85)' }}></div>
+        {svg(<><g opacity={0.55}><Pie x={400} y={1150} s={1.7} rot={-8} /><ManoCosq x={640} y={838} s={1.27} T={T} rot={35} vel={6} /></g></>)}
         {svg(<text x={830} y={1440} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 830 1260)`}>?</text>)}
       </Escena>
       {/* 6 · el estudio */}

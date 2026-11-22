@@ -248,6 +248,13 @@ function CalorShot() {
       {/* 4 · re-gancho */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
+        {/* encuadre: las setas de la escena anterior (ya caídas por el calor) siguen a cuadro, a media luz, y la pregunta encima */}
+        <div style={{ position:'absolute', inset:0, background:'rgba(10,15,28,.85)' }}></div>
+        {(() => { const somb = ['#c98b2b', '#e8336d', '#f3e6c4', '#8a5a2b', '#b18cff', '#ff8a1f'];
+          return fsvg(<><rect x={-60} y={1130} width={KW + 120} height={900} fill="#1a1310" stroke="#3d302a" strokeWidth={6} /><g opacity={0.6}>
+            {[0, 2, 4, 1, 3, 5].map((i) => { const c = somb[i]; const ww = i === 3 ? 0 : 1;
+              return <Seta key={i} x={140 + i * 160} y={i % 2 ? 1300 : 1150} s={1.5 - ww * 0.45} crece={1 - ww * 0.4} rot={(i % 2 ? 1 : -1) * 38 * ww + mece(T, i, 0.4) * 2} sombrero={mixHex(c, '#8d8d8d', ww)} pie={mixHex('#f3e6c4', '#9a9a9a', ww)} escamas={i % 2 === 0} anillo={i !== 2} />; })}
+          </g></>); })()}
         {fsvg(<><Interrogacion T={T} x={280} y={1080} /><Termo x={300} y={1150} alto={300} f={fT(37)} s={0.6} color={KC.orange} /></>)}
       </Escena>
       {/* 5–8 · la colección: 50 cajas como esquema de 4 802 cepas */}

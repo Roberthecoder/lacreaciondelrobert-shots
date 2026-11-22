@@ -209,11 +209,12 @@ function VitaminaDShot() {
       <Escena T={T} a={K.L} b={K.Pi} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
+        {/* encuadre: el conjunto (rayos y molécula) baja y crece ×1.08 para quedar centrado; etiquetas, chip y barra de 0.5 nm van con él */}
+        {fsvg(<g transform="translate(560 1010) scale(1.08) translate(-540 -800)">
           {[0, 1, 2].map((i) => <RayoUV key={i} T={T} x1={60 + i * 90} y1={330 + i * 40} x2={420 + i * 40} y2={760 + i * 30} p={kprog(T, K.L + 0.2 + i * 0.15, K.L + 1.2 + i * 0.15)} fase={i * 2} />)}
           <Esterol x={250} y={960} s={1.6} abre={abre} color={abre >= 1.9 ? KC.yellow : KC.gold2} />
           {abre > 1.9 && <circle cx={480} cy={900} r={330} fill={KC.yellow} opacity={0.08 + 0.04 * Math.sin(T * 5)} />}
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · tu piel hace casi lo mismo: D3 */}
       <Escena T={T} a={K.Pi} b={K.P} zoom={0.05}>
@@ -325,10 +326,10 @@ function VitaminaDShot() {
       <Etq T={T} at={K.E + 1.4} until={K.L - 0.3} x={60} y={520} texto="ergosterol" tam={36} color={KC.gold2} />
       <Etq T={T} at={K.E + 2.5} until={K.L - 0.3} x={60} y={1005} texto="ergosterol (hongo)" tam={32} color={KC.gold2} />
       <Etq T={T} at={K.E + 2.7} until={K.L - 0.3} x={1040} y={1450} lado="izq" texto="colesterol (tú)" tam={32} color="#9fd8ff" />
-      <Etq T={T} at={K.L + 0.4} until={K.L + 1.5} x={1040} y={1090} lado="izq" texto="ergosterol" tam={36} color={KC.gold2} />
-      <Chip T={T} at={K.L + 0.3} until={K.Pi - 0.3} texto="luz UV" x={300} y={470} tam={40} borde={VD.uv} />
-      <Etq T={T} at={K.L + 1.7} until={K.L + 3.1} x={1040} y={1090} lado="izq" texto="previtamina D2" tam={36} color={KC.gold2} />
-      <Etq T={T} at={K.L + 3.4} until={K.Pi - 0.3} x={1040} y={1090} lado="izq" texto="vitamina D2" tam={40} color={KC.yellow} />
+      <Etq T={T} at={K.L + 0.4} until={K.L + 1.5} x={1040} y={1323} lado="izq" texto="ergosterol" tam={36} color={KC.gold2} />
+      <Chip T={T} at={K.L + 0.3} until={K.Pi - 0.3} texto="luz UV" x={301} y={654} tam={40} borde={VD.uv} />
+      <Etq T={T} at={K.L + 1.7} until={K.L + 3.1} x={1040} y={1323} lado="izq" texto="previtamina D2" tam={36} color={KC.gold2} />
+      <Etq T={T} at={K.L + 3.4} until={K.Pi - 0.3} x={1040} y={1323} lado="izq" texto="vitamina D2" tam={40} color={KC.yellow} />
       <Chip T={T} at={K.Pi + 0.8} until={K.P - 0.2} texto="hongo → D2" x={330} y={1020} tam={38} borde={KC.gold} />
       <Chip T={T} at={K.Pi + 1.2} until={K.P - 0.2} texto="tu piel → D3" x={330} y={1160} tam={38} borde={KC.coral} />
       <TarjetaEstudio T={T} at={K.Es + 0.1} until={K.Es + 1.6} anio="2015" quien="un equipo de Alemania y Dinamarca" revista="Urbain y Jakobsen · J. Agric. Food Chem." x={620} y={400} />
@@ -355,7 +356,7 @@ function VitaminaDShot() {
       <BarraEscala T={T} at={K.O} until={K.E} texto="10 cm" largo={364} />
       <BarraEscala T={T} at={K.E} until={K.E + 2.5} texto="5 nm" largo={510} />
       <BarraEscala T={T} at={K.E + 2.5} until={K.L} texto="0.5 nm" largo={219} />
-      <BarraEscala T={T} at={K.L} until={K.Pi} texto="0.5 nm" largo={260} />
+      <BarraEscala T={T} at={K.L} until={K.Pi} texto="0.5 nm" largo={281} />
       <BarraEscala T={T} at={K.Pi} until={K.P} texto="5 cm" largo={350} color={KC.ink} />
       <BarraEscala T={T} at={K.P} until={K.Es} texto="2 cm" largo={178} color={KC.ink} />
       <BarraEscala T={T} at={K.Es} until={K.Sa} texto="5 cm" largo={290} color={KC.ink} />
