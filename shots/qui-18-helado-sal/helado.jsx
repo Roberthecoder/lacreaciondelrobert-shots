@@ -162,22 +162,22 @@ function Helado() {
       {/* 0 · gancho: la sal sobre el hielo de la cubeta */}
       <Escena T={T} a={K.G} b={K.Te} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 940) scale(1.3) translate(-480 -830)">
           <CubetaHelado T={T} x={480} y={960} s={1} sal={kprog(T, K.G + 0.2, K.G + 2.4)} flecha={kprog(T, K.G + 2.6, K.G + 3.4, kEase.sale)} />
           <Salero T={T} x={kprog(T, K.G, K.G + 2.4) < 1 ? klerp(250, 690, kprog(T, K.G, K.G + 2.4, kEase.suave)) : 690} y={560} s={0.8} rot={150} />
           <LluviaSal T={T} x={klerp(270, 690, kprog(T, K.G, K.G + 2.4, kEase.suave))} y0={640} y1={770} t0={K.G} t1={K.G + 2.6} n={60} />
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 1 · termómetro en vivo */}
       <Escena T={T} a={K.Te} b={K.Sa} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 950) scale(1.3) translate(-567 -915)">
           <VasoHielo T={T} x={400} y={1200} s={1} sal={kprog(T, salTe, salTe + 1)} />
           <Salero T={T} x={470} y={700} s={0.6} rot={kprog(T, salTe - 0.4, salTe) > 0 && T < salTe + 1.6 ? 150 : 200} />
           <LluviaSal T={T} x={440} y0={770} y1={980} t0={salTe} t1={salTe + 1.4} n={34} w={160} seed={8} />
           <Termo x={820} y={560} h={640} tmin={-25} tmax={10} temp={tempTe} />
-          <Lectura x={400} y={780} temp={tempTe} tam={140} color={tempTe < -0.5 ? '#bfe8ff' : KC.white} />
-        </SvgCapa>
+          <Lectura x={400} y={570} temp={tempTe} tam={140} color={tempTe < -0.5 ? '#bfe8ff' : KC.white} />
+        </g></SvgCapa>
       </Escena>
       {/* 2 · por dentro: la sal le estorba a la red del hielo */}
       <Escena T={T} a={K.Sa} b={K.Ca} zoom={0.03}>
@@ -197,9 +197,9 @@ function Helado() {
       <Escena T={T} a={K.Ca} b={K.Cr} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <rect x={0} y={650} width={470} height={620} fill={CREMA} />
+          <rect x={0} y={650} width={470} height={620} fill="#4a3a2a" />
           <rect x={470} y={650} width={60} height={620} fill={LATA} stroke={KC.ink} strokeWidth={8} />
-          <rect x={530} y={650} width={550} height={620} fill="#3f86b8" />
+          <rect x={530} y={650} width={550} height={620} fill="#173a55" />
           <HieloPicado x={580} y={680} w={420} h={520} seed={12} n={Math.round(klerp(12, 6, kprog(T, K.Ca, K.Cr)))} />
           {chispas.map((i) => { const t0 = K.Ca + 0.6 + i * 0.3, u = kprog(T, t0, t0 + 1.6, kEase.suave); if (u <= 0 || u >= 1) return null;
             const yy = 720 + ((i * 97) % 480), xx = klerp(160, 860, u);
@@ -233,26 +233,26 @@ function Helado() {
       {/* 6 · límite: −21 °C contra el congelador de −18 °C */}
       <Escena T={T} a={K.Li} b={K.Es} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(570 920) scale(1.1) translate(-660 -880)">
           <Termo x={440} y={430} h={820} tmin={-25} tmax={10} temp={tempLi} marcaTxt={T > K.Li + 1.6 ? '−21 °C' : null} />
           <g opacity={congOn} transform={`translate(${(1 - congOn) * 300} 0)`}><Congelador x={830} y={900} s={0.75} />
             <Termo x={830} y={980} h={240} tmin={-25} tmax={10} temp={-18} marcas={false} ancho={28} color={KC.blue} />
             <Lectura x={830} y={1330} temp={-18} tam={90} color={KC.white} /></g>
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 7 · Blagden, 1788: más sal, más baja */}
       <Escena T={T} a={K.Es} b={K.Car} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 1030) scale(1.15) translate(-540 -975)">
           {[0, 1, 2, 3].map((i) => <FrascoSal key={i} x={180 + i * 240} y={1200} n={i + 1} temp={fr(i)} />)}
           {T > K.Es + 6.0 && <path d={`M 180 ${1200 - 500 + 250 - 40 - ((fr(0) + 20) / 25) * 170} L 900 ${1200 - 500 + 250 - 40 - ((fr(3) + 20) / 25) * 170}`} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" opacity={kprog(T, K.Es + 6.0, K.Es + 6.5)} />}
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 8 · carretera con hielo */}
       <Escena T={T} a={K.Car} b={K.Fa} zoom={0.03}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#394757, #444b57 45%, #414753 45%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#141c27, #1b212b 45%, #191e27 45%)' }}></div>
         <SvgCapa>
-          <path d="M 0 1260 L 1080 1260 L 1080 860 L 0 860 Z" fill="#4a4f5a" stroke={KC.ink} strokeWidth={8} />
+          <path d="M 0 1260 L 1080 1260 L 1080 860 L 0 860 Z" fill="#2a2e36" stroke={KC.ink} strokeWidth={8} />
           {[80, 380, 680, 980].map((x) => <rect key={x} x={x} y={1052} width={140} height={16} fill={KC.yellow} />)}
           {[[200, 960], [560, 1150], [860, 990], [380, 1060]].map(([x, y], i) => <ellipse key={i} cx={x} cy={y} rx={150} ry={44} fill={mixHex('#e8f8ff', '#2f4d66', T < K.Car + 3.0 ? derrite : 1)} opacity={0.95} stroke={mixHex('#9fd0ee', '#1f3346', derrite)} strokeWidth={5} />)}
           {T > K.Car + 3.0 && [[220, 940], [540, 1130], [880, 975]].map(([x, y], i) => <ellipse key={'n' + i} cx={x} cy={y} rx={130} ry={40} fill="#e8f8ff" opacity={frio} stroke="#9fd0ee" strokeWidth={5} />)}
@@ -266,36 +266,36 @@ function Helado() {
       {/* 9 · Fahrenheit, 1724: el cero salió de hielo, agua y sal */}
       <Escena T={T} a={K.Fa} b={K.Ci} zoom={0.03}>
         <FondoLunares color="#e9d9b0" punto="rgba(255,255,255,.28)" />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 960) scale(1.4) translate(-500 -880)">
           <VasoHielo T={T} x={400} y={1200} s={1.15} sal={1} seed={14} />
           <Termo x={560} y={560} h={560} tmin={0} tmax={100} paso={32} temp={tempFa} unidad=" °F" antiguo marcas={false} />
           <text x={620} y={1080} style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Fa + 4.4, K.Fa + 4.8)}>← 0 °F</text>
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 10 · cierre: la cubeta del inicio, ya con helado */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa><CubetaHelado T={T} x={480} y={960} s={1} sal={1} helado={1} destapa={kprog(T, K.Ci + 0.6, K.Ci + 1.8, kEase.sale)} flecha={kprog(T, K.Ci + 1.8, K.Ci + 2.5, kEase.sale)} /></SvgCapa>
+        <SvgCapa><g transform="translate(540 940) scale(1.3) translate(-480 -830)"><CubetaHelado T={T} x={480} y={960} s={1} sal={1} helado={1} destapa={kprog(T, K.Ci + 0.6, K.Ci + 1.8, kEase.sale)} flecha={kprog(T, K.Ci + 1.8, K.Ci + 2.5, kEase.sale)} /></g></SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.0} until={K.Te - 0.3} texto="¿la sal calienta?" x={300} y={470} tam={44} />
-      <Etq T={T} at={K.G + 3.0} until={K.Te - 0.3} x={30} y={700} texto="calor" lado="der" tam={40} color={KC.red} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.0} until={K.Te - 0.3} texto="¿la sal calienta?" x={300} y={330} tam={44} />
+      <Etq T={T} at={K.G + 3.0} until={K.Te - 0.3} x={10} y={800} texto="calor" lado="der" tam={40} color={KC.red} />
       <Chip T={T} at={K.Te + 0.4} until={salTe} texto="hielo + agua = 0 °C" x={540} y={1500} tam={44} borde={KC.blue} />
       <Chip T={T} at={salTe + 0.5} until={K.Sa - 0.3} texto="+ sal → baja" x={540} y={1500} tam={46} borde={KC.red} />
       <Chip T={T} at={K.Sa + 1.0} until={K.Ca - 0.3} texto="punto de congelación ↓" x={540} y={1500} tam={42} borde={NA} />
-      <Etq T={T} at={K.Sa + 0.8} until={K.Ca - 0.3} x={560} y={1620} texto="iones de sal: Na⁺ y Cl⁻" tam={32} color={CL} />
+      <Etq T={T} at={K.Sa + 0.8} until={K.Ca - 0.3} x={560} y={1390} texto="iones de sal: Na⁺ y Cl⁻" tam={32} color={CL} />
       <Chip T={T} at={K.Ca + 1.6} until={K.Cr - 0.3} texto="derretir hielo: 6 kJ por mol" x={540} y={1500} tam={40} borde={CALOR} />
-      <Etq T={T} at={K.Ca + 0.8} until={K.Cr - 0.3} x={300} y={1620} texto="calor →" tam={40} color={CALOR} />
+      <Etq T={T} at={K.Ca + 0.8} until={K.Cr - 0.3} x={300} y={1400} texto="calor →" tam={40} color={CALOR} />
       <Chip T={T} at={K.Cr + 0.5} until={K.Pr - 0.3} texto="la crema se congela bajo 0 °C" x={540} y={1500} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.Li + 1.6} until={K.Es - 0.3} texto="límite: agua + sal" x={540} y={1500} tam={44} borde={KC.blue} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.2} anio="1788" quien="Charles Blagden" revista="Real Sociedad de Londres · Phil. Trans." x={540} y={640} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.2} anio="1788" quien="Charles Blagden" revista="Real Sociedad de Londres · Phil. Trans." x={540} y={420} />
       <Chip T={T} at={K.Es + 6.0} until={K.Car - 0.3} texto="casi en proporción" x={540} y={1500} tam={44} borde={KC.ink} />
       <Chip T={T} at={K.Car + 0.6} until={K.Car + 2.8} texto="sal en carreteras con hielo" x={540} y={1500} tam={40} borde={KC.orange} />
       <Chip T={T} at={K.Car + 3.6} until={K.Fa - 0.3} texto="abajo de −9 °C: casi no derrite" x={540} y={1500} tam={36} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Fa + 0.2} until={K.Fa + 2.5} anio="1724" quien="Fahrenheit lo publica" revista="Phil. Trans. · hielo + agua + sal = 0 °F" x={540} y={640} />
+      <TarjetaEstudio T={T} at={K.Fa + 0.2} until={K.Fa + 2.5} anio="1724" quien="Fahrenheit lo publica" revista="Phil. Trans. · hielo + agua + sal = 0 °F" x={540} y={400} />
       <Chip T={T} at={K.Fa + 4.8} until={K.Ci - 0.3} texto="0 °F ≈ −18 °C" x={540} y={1500} tam={46} borde={KC.gold} />
-      <Etq T={T} at={K.Ci + 2.4} until={K.Ou} x={1050} y={370} lado="izq" texto="calor: crema → hielo" tam={36} color={KC.red} />
+      <Etq T={T} at={K.Ci + 2.4} until={K.Ou} x={1000} y={330} lado="izq" texto="calor: crema → hielo" tam={36} color={KC.red} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="la sal no calienta: el hielo roba calor" x={540} y={1500} tam={32} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

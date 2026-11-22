@@ -1,0 +1,2 @@
+# Grupo n015 · pase a mano cine
+- qui-18-helado-sal: gancho y cierre (cubeta ×1.3 centrada, mito y etiqueta de calor reubicados), termómetro (vaso, salero y termómetro ×1.3, lectura arriba sin encimarse), calor (paneles crema/hielo oscurecidos con su tinte), límite (×1.1), estudio Blagden (frascos ×1.15, tarjeta arriba), carretera (fondo y asfalto oscuros), Fahrenheit (×1.4, ya no CHICO; tarjeta arriba), etiquetas bajo y=1500 subidas; auditores: sin láminas · encuadre bien; pendiente: nada
