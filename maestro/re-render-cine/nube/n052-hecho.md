@@ -1,0 +1,2 @@
+# Avance del grupo n052 (pase a mano cine)
+- fun-143-lluvia: cielo diurno claro oscurecido (azul noche) y tierra más oscura; champiñón centrado y agrandado escena por escena con una lente (gancho y cierre ×1.75 con el mismo encuadre, especie ×1.3, bajo tierra ×1.35, botón ×3, células del pie ×1.65, 80 % agua ×1.3, estudio de 1977 ×1.3, hongo tinta ×1.5); en el gancho ya se asoman los hilos del micelio antes del segundo 3; calendario, sol, chips y etiquetas reacomodados; barras de escala recalculadas (botón pasa a 1 cm). Auditores: sin láminas · encuadre bien; pendiente: nada
