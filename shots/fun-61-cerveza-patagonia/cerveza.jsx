@@ -137,22 +137,24 @@ function CervezaShot() {
       <Escena T={T} a={K.G} b={K.M} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Vaso T={T} x={330} y={1180} s={1.15} />
-          <g transform={`translate(${klerp(700, 790, fusion)} 1010)`} opacity={kprog(T, K.G + 1.4, K.G + 1.8)}><Levadura x={0} y={0} r={58} color={CV.azul2} nucleo={false} /></g>
-          <g transform={`translate(${klerp(950, 860, fusion)} 1010)`} opacity={kprog(T, K.G + 1.6, K.G + 2.0) * (1 - kprog(T, K.G + 3.3, K.G + 3.6))}><Levadura x={0} y={0} r={58} color={CV.verde2} nucleo={false} /></g>
-          {fusion > 0.85 && <Levadura x={825} y={1010} r={80} color={CV.cel} mezcla={kprog(T, K.G + 3.5, K.G + 3.9)} />}
+          <Vaso T={T} x={320} y={1470} s={2.0} />
+          <g transform={`translate(${klerp(730, 845, fusion)} 1010)`} opacity={kprog(T, K.G + 1.0, K.G + 1.4)}><Levadura x={0} y={0} r={82} color={CV.azul2} nucleo={false} /></g>
+          <g transform={`translate(${klerp(990, 905, fusion)} 1010)`} opacity={kprog(T, K.G + 1.2, K.G + 1.6) * (1 - kprog(T, K.G + 3.3, K.G + 3.6))}><Levadura x={0} y={0} r={82} color={CV.verde2} nucleo={false} /></g>
+          {fusion > 0.85 && <Levadura x={860} y={1010} r={112} color={CV.cel} mezcla={kprog(T, K.G + 3.5, K.G + 3.9)} />}
         </>)}
       </Escena>
       {/* 2 · la malta suelta azúcares; la levadura se los come */}
       <Escena T={T} a={K.M} b={K.B} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
+          <g transform="translate(540 1000) scale(1.35) translate(-540 -920)">
           <Vaso T={T} x={540} y={1200} s={1.25} burb={0.4} />
           {[[200, 640, -20], [330, 600, 10], [760, 620, 25], [880, 660, -10]].map(([gx, gy, ro], i) => <Grano key={i} x={gx} y={gy} rot={ro} s={1.1} abre={kprog(T, K.M + 0.2 + i * 0.15, K.M + 0.7 + i * 0.15)} />)}
           {Array.from({ length: 8 }, (_, i) => { const t0 = K.M + 0.5 + i * 0.18, u = kprog(T, t0, t0 + 1.2, kEase.suave), comido = kprog(T, K.M + 1.9 + i * 0.12, K.M + 2.2 + i * 0.12);
             const sx = [200, 330, 760, 880][i % 4], ex = 470 + (i % 4) * 45 + (i > 3 ? 20 : 0), ey = 860 + Math.floor(i / 4) * 120;
             return u > 0 ? <Azucar key={i} x={klerp(sx, ex, u)} y={klerp(650, ey, u)} n={i % 3 === 0 ? 3 : 2} s={0.8} color={KC.ink} o={1 - comido} rot={u * 90} /> : null; })}
-          {[[470, 910], [610, 1030]].map(([lx, ly], i) => <Levadura key={i} x={lx} y={ly + Math.sin(T * 2 + i) * 6} r={42 * kprog(T, K.M + 1.2 + i * 0.2, K.M + 1.6 + i * 0.2, kEase.rebote)} />)}
+          {[[470, 910], [610, 1030]].map(([lx, ly], i) => <Levadura key={i} x={lx} y={ly + Math.sin(T * 2 + i) * 6} r={42 * kprog(T, K.M + 0.3 + i * 0.2, K.M + 0.7 + i * 0.2, kEase.rebote)} />)}
+          </g>
         </>)}
       </Escena>
       {/* 3–5 · por dentro de una levadura (fondo oscuro): fermentación, gemación y el núcleo híbrido */}
@@ -160,21 +162,21 @@ function CervezaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<g>
-          <g transform={`translate(${klerp(500, 617, zNuc)} ${klerp(980, 897, zNuc)}) scale(${klerp(1, 3.2, zNuc)})`} opacity={1 - kprog(T, K.H + 0.7, K.H + 1.0)}>
-            <Levadura T={T} x={0} y={0} r={240} yema={kprog(T, K.Ge + 0.1, K.Ge + 1.2)} suelta={kprog(T, K.Ge + 1.2, K.Ge + 1.9, kEase.suave)} />
+          <g transform={`translate(${klerp(420, 617, zNuc)} ${klerp(980, 897, zNuc)}) scale(${klerp(1, 2.4, zNuc)})`} opacity={1 - kprog(T, K.H + 0.7, K.H + 1.0)}>
+            <Levadura T={T} x={0} y={0} r={320} yema={kprog(T, K.Ge + 0.1, K.Ge + 1.2)} suelta={kprog(T, K.Ge + 1.2, K.Ge + 1.9, kEase.suave)} />
           </g>
           {/* azúcar que entra y se parte en alcohol + CO₂ */}
           {T < K.Ge + 0.2 && (() => { const u = kprog(T, K.B + 0.2, K.B + 1.0, kEase.suave), sp = kprog(T, K.B + 1.0, K.B + 1.4);
             return <g opacity={1 - kprog(T, K.Ge, K.Ge + 0.2)}>
-              {sp < 1 && <Azucar x={klerp(80, 470, u)} y={980} n={1} s={1.4} o={1 - sp} />}
+              {sp < 1 && <Azucar x={klerp(40, 400, u)} y={980} n={1} s={1.7} o={1 - sp} />}
               {sp > 0 && [0, 1].map((j) => { const v = kprog(T, K.B + 1.2 + j * 0.2, K.B + 3.2, kEase.suave);
                 return <g key={j}>
-                  <g transform={`translate(${klerp(480, 900, v)} ${klerp(1000, 1040 + j * 70, v)})`}><circle r={16} fill={KC.lilac} stroke={KC.ink} strokeWidth={3} /><circle cx={22} r={12} fill={KC.lilac} stroke={KC.ink} strokeWidth={3} /><circle cx={-18} cy={-8} r={8} fill="#fff" stroke={KC.ink} strokeWidth={2} /></g>
-                  <circle cx={klerp(470, 420 + j * 180, v)} cy={klerp(960, 700, v)} r={28 + v * 22} fill="rgba(255,255,255,.3)" stroke="#fff" strokeWidth={6} />
+                  <g transform={`translate(${klerp(420, 930, v)} ${klerp(1000, 1060 + j * 90, v)}) scale(1.4)`}><circle r={16} fill={KC.lilac} stroke={KC.ink} strokeWidth={3} /><circle cx={22} r={12} fill={KC.lilac} stroke={KC.ink} strokeWidth={3} /><circle cx={-18} cy={-8} r={8} fill="#fff" stroke={KC.ink} strokeWidth={2} /></g>
+                  <circle cx={klerp(410, 300 + j * 240, v)} cy={klerp(960, 720, v)} r={36 + v * 24} fill="rgba(255,255,255,.3)" stroke="#fff" strokeWidth={6} />
                 </g>; })}
             </g>; })()}
           {/* núcleo: cromosomas de dos especies */}
-          {zNuc > 0.6 && <g opacity={kprog(T, K.H + 0.6, K.H + 1.0)} transform="translate(540 960)">
+          {zNuc > 0.6 && <g opacity={kprog(T, K.H + 0.6, K.H + 1.0)} transform="translate(540 990) scale(1.18)">
             <circle r={280} fill="#3a2f12" stroke={CV.nucleo} strokeWidth={10} />
             {CROMOS.map(([cx, cy, ro, col], i) => { const pin = kprog(T, K.H + 1.2 + i * 0.1, K.H + 1.5 + i * 0.1);
               const vuela = col === CV.azul ? kprog(T, K.Ce - 0.3 + (i % 7) * 0.05, K.Ce + 0.4 + (i % 7) * 0.05, kEase.suave) : 0;
@@ -186,18 +188,18 @@ function CervezaShot() {
       <Escena T={T} a={K.Ce} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Pan x={360} y={1150} s={1.15} infla={kprog(T, K.Ce + 0.5, K.Ce + 2.2, kEase.sale)} />
+          <Pan x={330} y={1200} s={1.7} infla={kprog(T, K.Ce + 0.5, K.Ce + 2.2, kEase.sale)} />
           {Array.from({ length: 7 }, (_, i) => { const u = kprog(T, K.Ce + 0.05 + i * 0.06, K.Ce + 0.7 + i * 0.06, kEase.suave);
-            return <Cromo key={i} x={klerp(900 - i * 20, 300 + (i % 4) * 40, u)} y={klerp(820 + i * 30, 1060 - Math.floor(i / 4) * 40, u)} s={0.8 * (1 - kprog(T, K.Ce + 0.8, K.Ce + 1.2))} rot={i * 30} color={CV.azul} />; })}
-          <Levadura x={800} y={1050} r={70} color={CV.azul2} />
+            return <Cromo key={i} x={klerp(880 - i * 25, 220 + (i % 4) * 60, u)} y={klerp(880 + i * 35, 1080 - Math.floor(i / 4) * 60, u)} s={1.1 * (1 - kprog(T, K.Ce + 0.8, K.Ce + 1.2))} rot={i * 30} color={CV.azul} />; })}
+          <Levadura x={850} y={1080} r={110} color={CV.azul2} />
         </>)}
       </Escena>
       {/* 7 · re-gancho: ¿y la otra? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          {[[200, 1100], [330, 1150], [260, 1010]].map(([cx, cy], i) => <Cromo key={i} x={cx} y={cy} s={1.6} rot={i * 50 + Math.sin(T * 3) * 10} color={CV.verde} />)}
-          <Interrogacion T={T} x={290} y={900} tam={360} />
+          {[[400, 1290], [560, 1330], [720, 1270]].map(([cx, cy], i) => <Cromo key={i} x={cx} y={cy} s={2.3} rot={i * 50 + Math.sin(T * 3) * 10} color={CV.verde} />)}
+          <Interrogacion T={T} x={540} y={1150} tam={560} />
         </>)}
       </Escena>
       {/* 8 · 2011: Patagonia, bosques de Nothofagus */}
@@ -233,15 +235,15 @@ function CervezaShot() {
         {fsvg(<>
           {(() => { const jn = kprog(T, K.F + 4.4, K.F + 5.4, kEase.suave); return <>
             <g opacity={1 - kprog(T, K.F + 5.2, K.F + 5.5)}>
-              <Levadura T={T} x={klerp(270, 520, jn)} y={980} r={110} color={CV.verde2} bufanda={kprog(T, K.F + 0.3, K.F + 0.8)} />
-              <Levadura T={T} x={klerp(810, 560, jn)} y={980} r={110} color={CV.azul2} />
+              <Levadura T={T} x={klerp(250, 510, jn)} y={980} r={150} color={CV.verde2} bufanda={kprog(T, K.F + 0.3, K.F + 0.8)} />
+              <Levadura T={T} x={klerp(830, 570, jn)} y={980} r={150} color={CV.azul2} />
             </g>
             {/* maltotriosa: la verde la rechaza, la azul se la come */}
             {(() => { const a = kprog(T, K.F + 2.0, K.F + 2.8, kEase.suave), b = kprog(T, K.F + 2.9, K.F + 3.6, kEase.suave), c = kprog(T, K.F + 3.6, K.F + 3.9);
-              return c < 1 && a > 0 ? <Azucar x={klerp(klerp(470, 390, a), 700, b)} y={klerp(780, 900, a) - Math.sin(b * Math.PI) * 120} n={3} s={1.1} color={KC.ink} o={1 - c} /> : null; })()}
-            {T > K.F + 2.8 && T < K.F + 3.5 && <text x={300} y={820} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={4}>✗</text>}
-            {T > K.F + 5.2 && <Levadura T={T} x={540} y={980} r={150 * kprog(T, K.F + 5.2, K.F + 5.6, kEase.rebote)} color={CV.cel} mezcla={1} />}
-            <Termometro x={100} y={1150} s={0.75} nivel={klerp(0.75, 0.32, kprog(T, K.F + 0.2, K.F + 1.4))} />
+              return c < 1 && a > 0 ? <Azucar x={klerp(klerp(470, 380, a), 780, b)} y={klerp(760, 880, a) - Math.sin(b * Math.PI) * 140} n={3} s={1.4} color={KC.ink} o={1 - c} /> : null; })()}
+            {T > K.F + 2.8 && T < K.F + 3.5 && <text x={250} y={800} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={4}>✗</text>}
+            {T > K.F + 5.2 && <Levadura T={T} x={540} y={980} r={205 * kprog(T, K.F + 5.2, K.F + 5.6, kEase.rebote)} color={CV.cel} mezcla={1} />}
+            <Termometro x={klerp(540, 900, jn)} y={1150} s={0.9} nivel={klerp(0.75, 0.32, kprog(T, K.F + 0.2, K.F + 1.4))} />
           </>; })()}
         </>)}
       </Escena>
@@ -268,35 +270,35 @@ function CervezaShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Vaso T={T} x={330} y={1180} s={1.15} />
-          {(() => { const l = kprog(T, K.C + 0.4, K.C + 1.0, kEase.sale); return l > 0 ? <g transform={`translate(330 960) scale(${l})`}>
+          <Vaso T={T} x={320} y={1470} s={2.0} />
+          {(() => { const l = kprog(T, K.C + 0.2, K.C + 0.7, kEase.sale); return l > 0 ? <g transform={`translate(320 1020) scale(${1.45 * l})`}>
             <circle r={120} fill={KC.noche} stroke={KC.white} strokeWidth={12} />
             <Levadura x={0} y={0} r={62} color={CV.cel} mezcla={1} />
             <line x1={86} y1={86} x2={160} y2={160} stroke={KC.ink} strokeWidth={24} strokeLinecap="round" />
           </g> : null; })()}
-          <Pan x={790} y={1120} s={0.55} infla={1} />
-          {T > K.C + 1.8 && <g transform={`translate(800 1010) scale(${0.5 * kprog(T, K.C + 1.8, K.C + 2.3, kEase.rebote)})`}><Nothofagus T={T} x={0} y={0} s={0.9} cyttaria={1} seed={5} /></g>}
+          <Pan x={830} y={1320} s={0.8} infla={1} />
+          {T > K.C + 1.8 && <g transform={`translate(840 1120) scale(${0.68 * kprog(T, K.C + 1.8, K.C + 2.3, kEase.rebote)})`}><Nothofagus T={T} x={0} y={0} s={0.9} cyttaria={1} seed={5} /></g>}
         </>)}
       </Escena>
 
       {/* textos (nombres científicos en cursiva) */}
-      <MitoTachado T={T} at={K.G + 0.15} tacharEn={K.G + 1.4} until={K.M - 0.3} texto="¿una levadura?" x={330} y={530} tam={46} />
-      <Chip T={T} at={K.G + 1.9} until={K.M - 0.3} texto="dos, en una sola célula" x={310} y={640} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.G + 0.6} until={K.M - 0.3} x={460} y={900} texto="cerveza lager" tam={30} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.15} tacharEn={K.G + 1.4} until={K.M - 0.3} texto="¿una levadura?" x={800} y={560} tam={46} />
+      <Chip T={T} at={K.G + 1.9} until={K.M - 0.3} texto="dos, en una sola célula" x={790} y={680} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.G + 0.6} until={K.M - 0.3} x={580} y={1290} texto="cerveza lager" tam={30} color={KC.ink} />
       <Etq T={T} at={K.M + 0.6} until={K.B - 0.3} x={60} y={440} texto="malta (cebada germinada)" tam={30} color={KC.ink} />
       <Etq T={T} at={K.M + 1.0} until={K.B - 0.3} x={60} y={490} texto="azúcares" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.M + 1.5} until={K.B - 0.3} x={650} y={1060} texto="levadura" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.M + 1.5} until={K.B - 0.3} x={720} y={1150} texto="levadura" tam={30} color={KC.ink} />
       <Chip T={T} at={K.B + 0.1} until={K.Ge - 0.2} texto="POR DENTRO · UNA LEVADURA" x={380} y={470} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.B + 0.3} until={K.B + 1.2} x={60} y={860} texto="azúcar" tam={30} />
+      <Etq T={T} at={K.B + 0.3} until={K.B + 1.2} x={40} y={1300} texto="azúcar" tam={30} />
       <Etq T={T} at={K.B + 1.6} until={K.Ge + 0.1} x={60} y={550} texto="CO₂ = las burbujas" tam={32} color={KC.white} />
       <Etq T={T} at={K.B + 2.0} until={K.Ge + 0.1} x={60} y={605} texto="alcohol (etanol) →" tam={30} color={KC.lilac} />
       <Etq T={T} at={K.Ge + 0.5} until={K.H - 0.2} x={60} y={600} texto="gemación: sale una yema" tam={32} color={KC.gold2} />
-      <Chip T={T} at={K.H + 0.4} until={K.Ce - 0.3} texto="híbrido de 2 especies" x={330} y={470} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.H + 0.8} until={K.Ce - 0.3} x={40} y={560} texto="Saccharomyces pastorianus" it tam={32} color={KC.gold2} />
-      <Etq T={T} at={K.H + 1.6} until={K.Ce - 0.3} x={40} y={612} texto="● de una especie" tam={28} color={CV.azul2} />
-      <Etq T={T} at={K.H + 2.0} until={K.Ce - 0.3} x={40} y={652} texto="● de la otra especie" tam={28} color={CV.verde2} />
-      <Etq T={T} at={K.Ce + 0.4} until={K.P - 0.2} x={60} y={600} texto="Saccharomyces cerevisiae" it tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Ce + 0.9} until={K.P - 0.2} x={60} y={660} texto="la del pan (y la cerveza ale)" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.H + 0.4} until={K.Ce - 0.3} texto="híbrido de 2 especies" x={330} y={420} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.H + 0.8} until={K.Ce - 0.3} x={40} y={505} texto="Saccharomyces pastorianus" it tam={32} color={KC.gold2} />
+      <Etq T={T} at={K.H + 1.6} until={K.Ce - 0.3} x={40} y={552} texto="● de una especie" tam={28} color={CV.azul2} />
+      <Etq T={T} at={K.H + 2.0} until={K.Ce - 0.3} x={40} y={592} texto="● de la otra especie" tam={28} color={CV.verde2} />
+      <Etq T={T} at={K.Ce + 0.4} until={K.P - 0.2} x={60} y={720} texto="Saccharomyces cerevisiae" it tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Ce + 0.9} until={K.P - 0.2} x={60} y={780} texto="la del pan (y la cerveza ale)" tam={30} color={KC.ink} />
       <Chip T={T} at={K.P + 0.2} until={K.E - 0.2} texto="¿y la otra?" x={300} y={520} tam={48} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.3} until={K.E + 2.7} anio="2011" quien="Argentina · EE. UU. · Portugal" revista="Libkind et al., PNAS 2011 · Patagonia" x={650} y={820} />
       <Etq T={T} at={K.E + 0.8} until={K.E + 2.7} x={300} y={1150} texto="Patagonia, Argentina" tam={28} color={KC.ink} />
@@ -307,8 +309,8 @@ function CervezaShot() {
       <Etq T={T} at={K.Gn + 0.5} until={K.F - 0.3} x={100} y={820} texto="Saccharomyces eubayanus (silvestre)" it tam={28} color={CV.verde2} />
       <Etq T={T} at={K.Gn + 0.9} until={K.F - 0.3} x={100} y={1160} texto="la otra parte de la lager" tam={28} color={CV.cerveza2} />
       <Etq T={T} at={K.Gn + 4.0} until={K.F - 0.3} x={100} y={1220} texto="borrador de su genoma · 2011" tam={24} color={KC.texto} />
-      <Etq T={T} at={K.F + 0.6} until={K.F + 4.4} x={180} y={1130} texto="aguanta el frío" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.F + 3.0} until={K.F + 4.4} x={690} y={1130} texto="come maltotriosa" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.F + 0.6} until={K.F + 4.4} x={150} y={1190} texto="aguanta el frío" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.F + 3.0} until={K.F + 4.4} x={660} y={1190} texto="come maltotriosa" tam={28} color={KC.ink} />
       <Chip T={T} at={K.F + 5.4} until={K.Ti - 0.3} texto="10–15 °C · fermentación lager" x={380} y={560} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.Ti + 0.5} until={K.Mu - 0.3} x={380} y={1135} texto="Patagonia" tam={26} color={KC.red} />
       <Etq T={T} at={K.Ti + 1.1} until={K.Mu - 0.3} x={560} y={900} texto="Tíbet: más parecida" tam={28} color={KC.ink} />
@@ -316,22 +318,22 @@ function CervezaShot() {
       <Chip T={T} at={K.Ti + 3.6} until={K.Mu - 0.3} texto="su historia aún se investiga" x={340} y={555} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.Mu + 0.8} until={K.C - 0.3} texto="la gran mayoría del mercado mundial" x={540} y={520} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.Mu + 1.8} until={K.C - 0.3} x={110} y={612} texto="dorado: lager · ámbar: otras (esquemático)" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="la hicieron dos" x={330} y={560} tam={44} borde={KC.ink} />
-      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={690} y={1080} texto="del pan" lado="izq" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.C + 2.3} until={K.Ou} x={700} y={880} texto="salvaje" lado="izq" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="la hicieron dos" x={770} y={560} tam={44} borde={KC.ink} />
+      <Etq T={T} at={K.C + 1.6} until={K.Ou} x={690} y={1290} texto="del pan" lado="izq" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.C + 2.3} until={K.Ou} x={720} y={900} texto="salvaje" lado="izq" tam={26} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.M} texto="5 cm" largo={110} y={1480} />
-      <BarraEscala T={T} at={K.M} until={K.B} texto="5 cm" largo={120} y={1480} />
-      <BarraEscala T={T} at={K.B} until={K.H + 0.5} texto="5 µm" largo={300} y={1480} />
-      <BarraEscala T={T} at={K.H + 0.5} until={K.Ce} texto="1 µm (esquemático)" largo={200} y={1480} />
-      <BarraEscala T={T} at={K.Ce} until={K.P} texto="5 cm" largo={120} y={1480} />
+      <BarraEscala T={T} at={K.G} until={K.M} texto="5 cm" largo={191} y={1480} />
+      <BarraEscala T={T} at={K.M} until={K.B} texto="5 cm" largo={162} y={1480} />
+      <BarraEscala T={T} at={K.B} until={K.H + 0.5} texto="5 µm" largo={400} y={1480} />
+      <BarraEscala T={T} at={K.H + 0.5} until={K.Ce} texto="1 µm (esquemático)" largo={236} y={1480} />
+      <BarraEscala T={T} at={K.Ce} until={K.P} texto="5 cm" largo={177} y={1480} />
       <BarraEscala T={T} at={K.E} until={K.E + 3.0} texto="mapa esquemático" largo={0} y={1480} />
       <BarraEscala T={T} at={K.E + 3.0} until={K.Gn} texto="5 m" largo={160} y={1480} />
       <BarraEscala T={T} at={K.Gn} until={K.F} texto="2 nm (ancho del ADN, esquemático)" largo={40} y={1480} />
-      <BarraEscala T={T} at={K.F} until={K.Ti} texto="5 µm" largo={200} y={1480} />
+      <BarraEscala T={T} at={K.F} until={K.Ti} texto="5 µm" largo={273} y={1480} />
       <BarraEscala T={T} at={K.Ti} until={K.Mu} texto="mapa esquemático" largo={0} y={1480} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={110} y={1480} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={191} y={1480} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.M - 0.1} texto="No la hizo una levadura: *la hicieron dos.*" />
