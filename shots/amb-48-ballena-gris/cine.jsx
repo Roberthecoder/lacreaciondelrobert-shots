@@ -58,6 +58,7 @@ function FondoMarca({ color = '#1b2a44', patron = 'puntos', T }) {
 function cineEscena(Kit) {
   return function EscenaCine(p) {
     const comp = typeof useComposition === 'function' ? useComposition() : null;
+    React.useLayoutEffect(cineSignos);
     let b = p.b, velo = false, gancho = false;
     if (comp && comp.CUES) {
       const cs = Object.entries(comp.CUES).sort((x, y) => x[1] - y[1]);
@@ -136,6 +137,31 @@ if (typeof document !== 'undefined' && !document.getElementById('cine-css')) {
   st.textContent = 'svg text{paint-order:stroke;stroke:rgba(7,10,18,.88);stroke-width:5px;stroke-linejoin:round}'
     + (CINE_OPC.resplandor ? ' [data-om-exportable-video-with-duration-secs] svg{filter:' + (CINE_OPC.volumen ? 'url(#cine-vol)' : 'drop-shadow(0 0 7px rgba(150,195,255,.30))') + ' saturate(' + CINE_REF.saturacion + ')}' : '');
   document.head.appendChild(st);
+}
+
+// Tipografía y signos como la referencia (22 nov 2026, 2.ª revisión): los títulos y números usaban «Anton» (alta, condensada,
+// con contorno y sombra dura de caricatura); la referencia usa una sans gruesa y limpia, blanca, sin contorno. Se cambia la
+// fuente de títulos de TODOS los shots y se quitan contornos y sombras duras del texto HTML.
+if (typeof document !== 'undefined' && !document.getElementById('cine-fuente')) {
+  const lk = document.createElement('link'); lk.id = 'cine-fuente'; lk.rel = 'stylesheet';
+  lk.href = 'https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap';
+  document.head.appendChild(lk);
+  const st2 = document.createElement('style'); st2.id = 'cine-css-texto';
+  st2.textContent = '[data-om-exportable-video-with-duration-secs] div, [data-om-exportable-video-with-duration-secs] span'
+    + '{-webkit-text-stroke:0 !important;text-shadow:none !important}';
+  document.head.appendChild(st2);
+}
+if (typeof KF !== 'undefined') KF.titulo = "'Archivo Black', 'Archivo', 'Arial Black', sans-serif";
+// El «?» gigante de las escenas «Pregunta» (dibujado dentro de cada shot) se vuelve chico y blanco: la referencia no usa
+// signos gigantes. Se hace después de cada cuadro, sobre lo que ya se dibujó.
+function cineSignos() {
+  if (typeof document === 'undefined') return;
+  document.querySelectorAll('[data-om-exportable-video-with-duration-secs] text, [data-om-exportable-video-with-duration-secs] div').forEach((el) => {
+    if (el.children.length || !/^[¿?]{1,2}$/.test((el.textContent || '').trim())) return;
+    const fs = parseFloat(getComputedStyle(el).fontSize) || 0;
+    if (fs < 150) return;
+    el.style.fontSize = '150px'; el.style.fill = CINE.texto; el.style.color = CINE.texto; el.style.opacity = '0.9';
+  });
 }
 
 // Volumen y línea luminosa (22 nov 2026): la referencia dibuja con sombreado y contornos que brillan; las piezas de los
