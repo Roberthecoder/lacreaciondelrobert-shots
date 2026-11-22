@@ -150,18 +150,18 @@ function OndaSeno({ x0, x1, y, lam, T, color, amp = 44, o = 1, etiqueta }) {
 function MicroondasShot() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
-  const MW = { x: 400, y: 960, s: 0.95 };           // microondas del inicio y del cierre
+  const MW = { x: 540, y: 960, s: 1.45 };           // microondas del inicio y del cierre
   const giro = T * 1.7;
   // corte de la comida (escenas por dentro)
-  const C = { x: 540, y: 860, w: 840, h: 500 };
-  const halfC = 250, BANDA = 58;
-  const frenteCentro = klerp(BANDA, 150, kprog(T, K.Centro + 0.6, K.Pregunta - 0.2, kEase.suave));
-  const gruesa = klerp(300, 620, kprog(T, K.Frio + 0.2, K.Frio + 1.4, kEase.rebote));
-  const frenteReposo = klerp(BANDA, 280, kprog(T, K.Reposo + 0.8, K.Plato - 0.6, kEase.suave));
+  const C = { x: 540, y: 1000, w: 920, h: 600 };
+  const halfC = 300, BANDA = 70;
+  const frenteCentro = klerp(BANDA, 180, kprog(T, K.Centro + 0.6, K.Pregunta - 0.2, kEase.suave));
+  const gruesa = klerp(340, 700, kprog(T, K.Frio + 0.2, K.Frio + 1.4, kEase.rebote));
+  const frenteReposo = klerp(BANDA, 320, kprog(T, K.Reposo + 0.8, K.Plato - 0.6, kEase.suave));
   // plato visto desde arriba
-  const P = { x: 580, y: 900, L: 600 };
+  const P = { x: 540, y: 990, L: 760 };
   const spots = []; for (let i = 0; i < 5; i++) for (let j = 0; j < 5; j++) spots.push([i, j, Math.sin(i * 1.9 + 0.6) * Math.cos(j * 1.7 + 0.4)]);
-  const angPlato = T * 1.6, rP = 135;
+  const angPlato = T * 1.6, rP = 170;
   return (
     <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el microondas se enciende; «de adentro hacia afuera» se tacha */}
@@ -179,9 +179,9 @@ function MicroondasShot() {
               p={kprog(T, K.Gancho + 3.6 + i * 0.12, K.Gancho + 4.1 + i * 0.12, kEase.sale)} color={KC.red} grosor={12} punta={28} />)}
           </Microondas>
         </Lienzo>
-        <MitoTachado T={T} at={K.Gancho + 0.5} tacharEn={K.Gancho + 2.7} until={K.Gancho + 3.5} texto="de adentro hacia afuera" x={330} y={600} tam={38} />
-        <Chip T={T} at={K.Gancho + 3.7} until={K.Ondas - 0.15} texto="por fuera" x={300} y={600} tam={56} borde={KC.red} />
-        <Etq T={T} at={K.Gancho + 4.6} until={K.Ondas - 0.15} x={110} y={700} texto="unos cuantos cm" tam={40} lado="der" color={KC.texto} />
+        <MitoTachado T={T} at={K.Gancho + 0.5} tacharEn={K.Gancho + 2.7} until={K.Gancho + 3.5} texto="de adentro hacia afuera" x={540} y={520} tam={44} />
+        <Chip T={T} at={K.Gancho + 3.7} until={K.Ondas - 0.15} texto="por fuera" x={540} y={520} tam={60} borde={KC.red} />
+        <Etq T={T} at={K.Gancho + 4.6} until={K.Ondas - 0.15} x={300} y={1390} texto="unos cuantos cm" tam={44} lado="der" color={KC.texto} />
       </Escena>
 
       {/* 1 · ondas: la caja se llena de microondas */}
@@ -203,11 +203,11 @@ function MicroondasShot() {
       <Escena T={T} a={K.Agua} b={K.Profundidad} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <OndasArco x={300} y={760} ang={90} T={T} color={MONDA} largo={180} n={4} grosor={10} />
-          <ellipse cx={300} cy={1085} rx={250} ry={38} fill="#dfe6ee" stroke={KC.ink} strokeWidth={8} />
-          <PiezaFrente x={300} y={1030} w={320} h={120} borde={0.6 * kprog(T, K.Agua + 3, K.Agua + 5.5)} />
+          <OndasArco x={300} y={880} ang={90} T={T} color={MONDA} largo={180} n={4} grosor={10} />
+          <ellipse cx={300} cy={1235} rx={320} ry={46} fill="#dfe6ee" stroke={KC.ink} strokeWidth={8} />
+          <PiezaFrente x={300} y={1165} w={420} h={150} borde={0.6 * kprog(T, K.Agua + 3, K.Agua + 5.5)} />
         </Lienzo>
-        <Lupa T={T} at={K.Agua + 0.8} until={K.Profundidad - 0.3} x={640} y={700} r={270} fx={300} fy={1020} tinte={KC.orange} etiqueta="AL MICROSCOPIO · AGUA"
+        <Lupa T={T} at={K.Agua + 0.35} until={K.Profundidad - 0.3} x={660} y={720} r={330} fx={300} fy={1150} tinte={KC.orange} etiqueta="AL MICROSCOPIO · AGUA"
           interior={(t, r) => { const g = krng(7), calor = kprog(t, K.Agua + 3, K.Agua + 5.5);
             return <svg width={r * 2} height={r * 2}><defs><radialGradient id="glw"><stop offset="0" stopColor={KC.orange} stopOpacity={0.7 * calor} /><stop offset="1" stopColor={KC.red} stopOpacity={0.15 * calor} /></radialGradient></defs>
               <rect width={r * 2} height={r * 2} fill="#0b1626" /><rect width={r * 2} height={r * 2} fill="url(#glw)" />
@@ -226,14 +226,14 @@ function MicroondasShot() {
           {/* marca de la banda: solo unos cm */}
           {T > K.Profundidad + 1.8 && T < K.Centro + 0.2 && <g opacity={kprog(T, K.Profundidad + 1.8, K.Profundidad + 2.2) * (1 - kprog(T, K.Centro - 0.2, K.Centro + 0.2))}>
             <path d={`M ${C.x - 160} ${C.y - C.h / 2 - 20} h -10 v ${BANDA + 20} h 10`} fill="none" stroke={KC.yellow} strokeWidth={8} />
-            <line x1={C.x - 190} y1={C.y - C.h / 2 + BANDA / 2} x2={C.x - 260} y2={540} stroke={KC.yellow} strokeWidth={6} />
+            <line x1={C.x - 190} y1={C.y - C.h / 2 + BANDA / 2} x2={C.x - 260} y2={C.y - C.h / 2 - 110} stroke={KC.yellow} strokeWidth={6} />
           </g>}
-          {T > K.Centro + 1.2 && T < K.Pregunta + 0.2 && <Estufa x={850} y={470} s={0.75} T={T} />}
+          {T > K.Centro + 1.2 && T < K.Pregunta + 0.2 && <Estufa x={840} y={560} s={0.9} T={T} />}
         </Lienzo>
-        <Chip T={T} at={K.Profundidad + 0.2} until={K.Profundidad + 1.9} texto="la comida por dentro" x={540} y={450} tam={44} borde={MONDA} />
-        <Chip T={T} at={K.Profundidad + 2.0} until={K.Centro - 0.1} texto="solo unos cm" x={280} y={500} tam={48} borde={KC.yellow} />
+        <Chip T={T} at={K.Profundidad + 0.2} until={K.Profundidad + 1.9} texto="la comida por dentro" x={540} y={560} tam={48} borde={MONDA} />
+        <Chip T={T} at={K.Profundidad + 2.0} until={K.Centro - 0.1} texto="solo unos cm" x={280} y={590} tam={50} borde={KC.yellow} />
         <Etq T={T} at={K.Profundidad + 2.6} until={K.Centro + 0.6} x={C.x + 20} y={C.y} texto="centro: aún frío" lado="der" color={KC.texto} />
-        <Chip T={T} at={K.Centro + 1.2} until={K.Pregunta - 0.1} texto="como en una estufa" x={380} y={470} tam={44} borde={KC.orange} />
+        <Chip T={T} at={K.Centro + 1.2} until={K.Pregunta - 0.1} texto="como en una estufa" x={360} y={570} tam={46} borde={KC.orange} />
         <Etq T={T} at={K.Centro + 0.5} until={K.Pregunta - 0.2} x={C.x} y={C.y} texto="poco a poco" lado="der" color={KC.yellow} />
       </Escena>
 
@@ -244,25 +244,25 @@ function MicroondasShot() {
       <Escena T={T} a={K.Frio} b={K.Reposo} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <Corte x={540} y={860} w={760} h={gruesa} banda={50} frente={0} mo={1} />
-          <CopoFrio x={540} y={860} s={klerp(0.2, 1, kprog(T, K.Frio + 1.6, K.Frio + 2.1, kEase.rebote))} o={kprog(T, K.Frio + 1.6, K.Frio + 1.8)} T={T} />
+          <Corte x={540} y={970} w={880} h={gruesa} banda={58} frente={0} mo={1} />
+          <CopoFrio x={540} y={970} s={1.2 * klerp(0.2, 1, kprog(T, K.Frio + 1.6, K.Frio + 2.1, kEase.rebote))} o={kprog(T, K.Frio + 1.6, K.Frio + 1.8)} T={T} />
         </Lienzo>
-        <Chip T={T} at={K.Frio + 0.3} until={K.Reposo - 0.1} texto="pieza gruesa" x={540} y={440} tam={50} borde={KC.ink} />
-        <Etq T={T} at={K.Frio + 2.2} until={K.Reposo - 0.2} x={640} y={860} texto="centro frío" lado="der" color={KC.texto} tam={40} />
+        <Chip T={T} at={K.Frio + 0.3} until={K.Reposo - 0.1} texto="pieza gruesa" x={540} y={560} tam={54} borde={KC.ink} />
+        <Etq T={T} at={K.Frio + 2.2} until={K.Reposo - 0.2} x={660} y={970} texto="centro frío" lado="der" color={KC.texto} tam={40} />
       </Escena>
 
       {/* 7 · reposo: el calor sigue entrando */}
       <Escena T={T} a={K.Reposo} b={K.Plato} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <ellipse cx={540} cy={1160} rx={460} ry={46} fill="#f4f6fb" stroke={KC.ink} strokeWidth={9} />
-          <Corte x={540} y={880} w={760} h={560} banda={50} frente={frenteReposo} mo={1} />
-          <FlechasCalor x={540} y={880} w={760} h={560} desde={40} hasta={frenteReposo + 10} T={T} o={kprog(T, K.Reposo + 0.6, K.Reposo + 1.2) * (1 - kprog(T, K.Plato - 0.8, K.Plato - 0.3))} />
-          <CopoFrio x={540} y={880} s={1 - 0.6 * kprog(T, K.Reposo + 2.5, K.Plato - 1.2)} o={1 - kprog(T, K.Reposo + 3.2, K.Plato - 1.2)} T={T} />
-          <Reloj x={330} y={450} r={85} T={T - K.Reposo} o={kprog(T, K.Reposo + 0.2, K.Reposo + 0.6)} />
+          <ellipse cx={540} cy={1320} rx={520} ry={52} fill="#f4f6fb" stroke={KC.ink} strokeWidth={9} />
+          <Corte x={540} y={990} w={880} h={640} banda={58} frente={frenteReposo} mo={1} />
+          <FlechasCalor x={540} y={990} w={880} h={640} desde={46} hasta={frenteReposo + 10} T={T} o={kprog(T, K.Reposo + 0.6, K.Reposo + 1.2) * (1 - kprog(T, K.Plato - 0.8, K.Plato - 0.3))} />
+          <CopoFrio x={540} y={990} s={1.2 - 0.7 * kprog(T, K.Reposo + 2.5, K.Plato - 1.2)} o={1 - kprog(T, K.Reposo + 3.2, K.Plato - 1.2)} T={T} />
+          <Reloj x={330} y={540} r={90} T={T - K.Reposo} o={kprog(T, K.Reposo + 0.2, K.Reposo + 0.6)} />
         </Lienzo>
-        <Chip T={T} at={K.Reposo + 0.4} until={K.Plato - 0.1} texto="reposo" x={560} y={450} tam={52} borde={KC.ink} />
-        <Etq T={T} at={K.Plato - 1.6} until={K.Plato - 0.2} x={600} y={880} texto="ya llegó" lado="der" color={KC.texto} tam={40} />
+        <Chip T={T} at={K.Reposo + 0.4} until={K.Plato - 0.1} texto="reposo" x={580} y={545} tam={56} borde={KC.ink} />
+        <Etq T={T} at={K.Plato - 1.6} until={K.Plato - 0.2} x={640} y={990} texto="ya llegó" lado="der" color={KC.texto} tam={40} />
       </Escena>
 
       {/* 8 · el plato gira: puntos con más y menos ondas (vista desde arriba) */}
@@ -271,30 +271,30 @@ function MicroondasShot() {
         <Lienzo>
           <rect x={P.x - P.L / 2 - 30} y={P.y - P.L / 2 - 30} width={P.L + 60} height={P.L + 60} rx={40} fill="#cfd6e0" stroke={KC.ink} strokeWidth={12} />
           <rect x={P.x - P.L / 2} y={P.y - P.L / 2} width={P.L} height={P.L} rx={22} fill="#2f3440" stroke={KC.ink} strokeWidth={8} />
-          {spots.map(([i, j, v], k) => Math.abs(v) < 0.25 ? null : <circle key={k} cx={P.x - P.L / 2 + (i + 0.5) * P.L / 5} cy={P.y - P.L / 2 + (j + 0.5) * P.L / 5} r={(40 + 20 * Math.abs(v)) * (0.9 + 0.1 * Math.sin(T * 6 + k))}
+          {spots.map(([i, j, v], k) => Math.abs(v) < 0.25 ? null : <circle key={k} cx={P.x - P.L / 2 + (i + 0.5) * P.L / 5} cy={P.y - P.L / 2 + (j + 0.5) * P.L / 5} r={(50 + 25 * Math.abs(v)) * (0.9 + 0.1 * Math.sin(T * 6 + k))}
             fill={v > 0 ? MCALIENTE : MFRIO} opacity={0.75 * kprog(T, K.Plato + 0.2 + k * 0.03, K.Plato + 0.7 + k * 0.03)} />)}
           <g transform={`rotate(${angPlato * 57.3} ${P.x} ${P.y})`}>
-            <circle cx={P.x} cy={P.y} r={240} fill="rgba(240,244,250,.35)" stroke="#f4f6fb" strokeWidth={10} strokeDasharray="30 20" />
-            <rect x={P.x + rP - 80} y={P.y - 60} width={160} height={120} rx={44} fill={mHex(MCOMIDA, mCalor(0.15 + 0.4 * kprog(T, K.Plato + 0.8, K.Wifi)), 0.8)} stroke={KC.ink} strokeWidth={8} />
+            <circle cx={P.x} cy={P.y} r={300} fill="rgba(240,244,250,.35)" stroke="#f4f6fb" strokeWidth={10} strokeDasharray="30 20" />
+            <rect x={P.x + rP - 100} y={P.y - 75} width={200} height={150} rx={54} fill={mHex(MCOMIDA, mCalor(0.15 + 0.4 * kprog(T, K.Plato + 0.8, K.Wifi)), 0.8)} stroke={KC.ink} strokeWidth={8} />
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Plato + 0.3} until={K.Wifi - 0.1} texto="vista desde arriba" x={640} y={430} tam={38} borde={KC.ink} mono />
-        <Chip T={T} at={K.Plato + 1.0} until={K.Wifi - 0.1} texto="más ondas" x={500} y={525} tam={40} borde={MCALIENTE} />
-        <Chip T={T} at={K.Plato + 1.6} until={K.Wifi - 0.1} texto="menos ondas" x={845} y={525} tam={40} borde={MFRIO} />
+        <Chip T={T} at={K.Plato + 0.3} until={K.Wifi - 0.1} texto="vista desde arriba" x={540} y={430} tam={40} borde={KC.ink} mono />
+        <Chip T={T} at={K.Plato + 1.0} until={K.Wifi - 0.1} texto="más ondas" x={360} y={515} tam={42} borde={MCALIENTE} />
+        <Chip T={T} at={K.Plato + 1.6} until={K.Wifi - 0.1} texto="menos ondas" x={720} y={515} tam={42} borde={MFRIO} />
       </Escena>
 
       {/* 9 · dato raro: casi la misma frecuencia que el wifi */}
       <Escena T={T} a={K.Wifi} b={K.Cierre} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <TextoSvg x={540} y={470} tam={96} color={KC.yellow} rot={-4} s={klerp(0.4, 1, kprog(T, K.Wifi + 0.05, K.Wifi + 0.45, kEase.rebote))}>¡DATO RARO!</TextoSvg>
-          <OndaSeno x0={90} x1={990} y={650} lam={150} amp={38} T={T} color={MONDA} o={kprog(T, K.Wifi + 1.6, K.Wifi + 2.1)} etiqueta="wifi" />
-          <OndaSeno x0={90} x1={990} y={840} lam={148} amp={38} T={T} color={KC.pink} o={kprog(T, K.Wifi + 2.1, K.Wifi + 2.6)} etiqueta="microondas" />
-          <Router x={190} y={1130} s={0.62} T={T} />
-          <OndasArco x={190} y={990} ang={-90} T={T} color={MONDA} largo={60} n={3} grosor={8} />
-          <Microondas x={850} y={1120} s={0.38} T={T} id="w" luz={1} giro={giro} />
+          <TextoSvg x={540} y={540} tam={104} color={KC.yellow} rot={-4} s={klerp(0.4, 1, kprog(T, K.Wifi + 0.05, K.Wifi + 0.45, kEase.rebote))}>¡DATO RARO!</TextoSvg>
+          <OndaSeno x0={70} x1={1010} y={760} lam={150} amp={44} T={T} color={MONDA} o={kprog(T, K.Wifi + 1.6, K.Wifi + 2.1)} etiqueta="wifi" />
+          <OndaSeno x0={70} x1={1010} y={970} lam={148} amp={44} T={T} color={KC.pink} o={kprog(T, K.Wifi + 2.1, K.Wifi + 2.6)} etiqueta="microondas" />
+          <Router x={240} y={1360} s={0.85} T={T} />
+          <OndasArco x={240} y={1150} ang={-90} T={T} color={MONDA} largo={80} n={3} grosor={8} />
+          <Microondas x={800} y={1330} s={0.6} T={T} id="w" luz={1} giro={giro} />
         </Lienzo>
-        <Chip T={T} at={K.Wifi + 2.8} until={K.Cierre - 0.1} texto="casi la misma frecuencia" x={540} y={975} tam={44} borde={KC.ink} />
+        <Chip T={T} at={K.Wifi + 2.8} until={K.Cierre - 0.1} texto="casi la misma frecuencia" x={540} y={1105} tam={48} borde={KC.ink} />
       </Escena>
 
       {/* 10 · cierre: el mismo microondas, la puerta se abre y la comida sale pareja */}
@@ -306,9 +306,9 @@ function MicroondasShot() {
             {T > K.Cierre + 2.4 && [[-1, 0], [1, 0], [0, -1]].map(([sx, sy], i) => <FlechaRecta key={i} x1={-92 + sx * 220} y1={88 + sy * 170} x2={-92 + sx * 115} y2={88 + sy * 60}
               p={kprog(T, K.Cierre + 2.4 + i * 0.12, K.Cierre + 2.9 + i * 0.12, kEase.sale)} color={KC.red} grosor={12} punta={28} />)}
           </Microondas>
-          <Reloj x={880} y={720} r={75} T={T - K.Cierre} o={kprog(T, K.Cierre + 3.4, K.Cierre + 3.8)} />
+          <Reloj x={880} y={520} r={80} T={T - K.Cierre} o={kprog(T, K.Cierre + 3.4, K.Cierre + 3.8)} />
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 3.0} until={K.Outro - 0.1} texto="por fuera + paciencia" x={400} y={560} tam={48} borde={KC.gold} />
+        <Chip T={T} at={K.Cierre + 3.0} until={K.Outro - 0.1} texto="por fuera + paciencia" x={400} y={520} tam={50} borde={KC.gold} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Ondas - 0.1} texto="No de adentro: *por fuera.*" />

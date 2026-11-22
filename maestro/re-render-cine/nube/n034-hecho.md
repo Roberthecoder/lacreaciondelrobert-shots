@@ -1,0 +1,2 @@
+# Grupo n034 · avance del pase a mano
+- cie-26-microondas: microondas del gancho y del cierre a 1.45× y centrado (chips subidos, reloj reacomodado); lupa del agua más grande y entra a 0.35 s, pieza más grande; corte por dentro, pieza gruesa y reposo agrandados (~1.15×) y bajados al centro con chips, estufa y marcas reacomodados; plato visto desde arriba a 1.27×; dato raro del wifi bajado y con router y microondas más grandes. Auditores: sin láminas · encuadre bien; pendiente: nada
