@@ -2,3 +2,4 @@
 # La publicación diaria SOLO publica los shots de esta lista. El admin agrega una clave cuando ya revisó su render final
 # (estilo cine al nivel de la referencia, logo pequeño, sin subtítulos) en el Release borradores-voces-v4.
 # Ya publicados antes del cambio no necesitan estar aquí.
+amb-04-barrenador
