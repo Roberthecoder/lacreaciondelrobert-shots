@@ -55,6 +55,9 @@ jobs:
           if [ "$BASE" = "$(git rev-parse HEAD)" ]; then BASE=$(git rev-parse HEAD~1); fi
           echo "Comparando $BASE..$GITHUB_SHA"
           CAMBIOS=$(git diff --name-only "$BASE" HEAD -- shots/ largos/)
+          # voces/v4 (22 nov): si el push cambia .github/render-lista.txt, se renderiza exactamente esa lista (una clave por línea, máx. 250)
+          if [ -n "$ANTES" ] && [ "$ANTES" != "0000000000000000000000000000000000000000" ] && git diff --name-only "$ANTES" HEAD -- .github/render-lista.txt | grep -q .; then
+            CAMBIOS=$(grep -v '^#' .github/render-lista.txt | grep . | sed 's#^#shots/#; s#$#/narracion.json#'); echo "Lista explícita: $(echo "$CAMBIOS" | wc -l) shots"; fi
           LISTA=(); TEXTOS=()
           for d in $(echo "$CAMBIOS" | cut -d/ -f1,2 | sort -u); do
             case "$(basename "$d")" in _*) continue;; esac
@@ -120,6 +123,9 @@ jobs:
           mkdir -p salida
           N=$(basename "$SHOT")
           echo "NOMBRE=$N" >> "$GITHUB_ENV"
+          # voces/v4 (22 nov): si el shot ya tiene su voz guardada y aprobada, la versión sin voz no se usa: se salta (render a la mitad de tiempo)
+          if [ "$(node -p "require('./$SHOT/narracion.json').voz_aprobada === true")" = true ] && [ -f "$SHOT/voz/narracion.mp3" ]; then
+            echo "Ya tiene voz guardada: se salta la versión sin voz"; exit 0; fi
           MUDO=$(node -p "JSON.stringify(require('./$SHOT/narracion.json').mudo || null)")
           if [ "$MUDO" != "null" ]; then
             HTML=$(node -p "require('./$SHOT/narracion.json').mudo.dcHtml")
