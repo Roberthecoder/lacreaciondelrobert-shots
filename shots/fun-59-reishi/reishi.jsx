@@ -126,6 +126,8 @@ function MapaEurasia({ x, y, s = 1, pLuc = 1, pLing = 1 }) {
 
 // posiciones de los 19 frascos (2 filas: 10 + 9)
 const FR19 = Array.from({ length: 19 }, (_, i) => [i < 10 ? 100 + i * 98 : 149 + (i - 10) * 98, i < 10 ? 900 : 1040]);
+const FRB = FR19.map(([x, y]) => [x, y + 340]);   // las mismas filas, más abajo (gancho y cierre: frasco grande arriba)
+const FRE = FR19.map(([x, y]) => [x, y + 150]);   // filas del estudio
 const SI5 = [1, 4, 8, 12, 16];                  // los 5 que cumplían la etiqueta (posición ilustrativa)
 const ALM13 = [0, 2, 3, 5, 6, 7, 9, 10, 11, 13, 14, 17, 18]; // los 13 con tipo almidón (posición ilustrativa)
 const BG5 = [1, 4, 8, 15, 16];                  // los 5 con el betaglucano (posición ilustrativa)
@@ -142,10 +144,12 @@ function ReishiShot() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
+          <g transform="translate(310 1030) scale(1.5) translate(-300 -780)">
           <Frasco x={300} y={780} s={0.95} rot={Math.sin(T * 5) * 3 * (1 - kprog(T, K.G + 1.2, K.G + 2))} tapa={tapa} />
           {caida > 0 && caida < 1 && <Capsula x={300 + caida * 170} y={440 - Math.sin(caida * Math.PI) * 160 + caida * 330} rot={caida * 540} />}
           {caida >= 1 && <Capsula x={470} y={770} rot={20} />}
-          {FR19.map(([fx, fy], i) => { const on = kprog(T, K.G + 1.2 + i * 0.05, K.G + 1.5 + i * 0.05, kEase.rebote); const ok = SI5.includes(i) && T > K.G + 2.8;
+          </g>
+          {FRB.map(([fx, fy], i) => { const on = kprog(T, K.G + 1.2 + i * 0.05, K.G + 1.5 + i * 0.05, kEase.rebote); const ok = SI5.includes(i) && T > K.G + 2.8;
             return on > 0 ? <MiniFrasco key={i} x={fx} y={fy} s={on * 0.9} tinte={ok ? RX.verde : '#b9b2a6'} marca={T > K.G + 2.8 ? (ok ? 'si' : null) : null} /> : null; })}
         </>)}
       </Escena>
@@ -162,22 +166,23 @@ function ReishiShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={24} />
         {fsvg(<>
-          <Triterpeno x={170} y={760} s={1.5} rot={Math.sin(T) * 4} p={kprog(T, K.Co + 0.2, K.Co + 1.0)} />
-          <Betaglucano x={150} y={1010} s={1.25} n={8} p={kprog(T, K.Co + 0.9, K.Co + 1.9)} />
+          <Triterpeno x={160} y={780} s={1.92} rot={Math.sin(T) * 4} p={kprog(T, K.Co + 0.2, K.Co + 1.0)} />
+          <Betaglucano x={130} y={1080} s={1.6} n={8} p={kprog(T, K.Co + 0.4, K.Co + 1.6)} />
         </>)}
       </Escena>
       {/* 4–5 · mito y dato del cáncer */}
       <Escena T={T} a={K.MC} b={K.J}>
         <FondoLunares color={T < K.DC ? KC.orange : KC.cyan} />
         {fsvg(<>
-          {T < K.DC && <g opacity={1 - kprog(T, K.DC - 0.3, K.DC)}><Sello T={T} at={K.MC + 0.9} x={790} y={1040} texto="MITO" color={KC.red} r={110} /></g>}
-          {T > K.DC - 0.2 && <g opacity={kprog(T, K.DC - 0.2, K.DC + 0.2)}><Sello T={T} at={K.DC + 0.1} x={780} y={1010} texto="DATO" color="#118a3a" r={120} rot={10} /></g>}
+          <Frasco x={330} y={1290} s={1.35} rot={Math.sin(T * 2) * 2} />
+          {T < K.DC && <g opacity={1 - kprog(T, K.DC - 0.3, K.DC)}><Sello T={T} at={K.MC + 0.9} x={790} y={1060} texto="MITO" color={KC.red} r={110} /></g>}
+          {T > K.DC - 0.2 && <g opacity={kprog(T, K.DC - 0.2, K.DC + 0.2)}><Sello T={T} at={K.DC + 0.1} x={790} y={1060} texto="DATO" color="#118a3a" r={120} rot={10} /></g>}
         </>)}
       </Escena>
       {/* 6 · junto con quimio o radioterapia: algo mejor, estudios de baja calidad */}
       <Escena T={T} a={K.J} b={K.P}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1200) scale(1.2) translate(-540 -1060)">
           <line x1={140} y1={1060} x2={940} y2={1060} stroke={KC.ink} strokeWidth={8} />
           {(() => { const u = kprog(T, K.J + 0.3, K.J + 1.6, kEase.sale); return <>
             <rect x={230} y={1060 - 300 * u} width={220} height={300 * u} fill="#8fb6ff" stroke={KC.ink} strokeWidth={7} />
@@ -191,23 +196,23 @@ function ReishiShot() {
             <line x1={64} y1={64} x2={140} y2={140} stroke={KC.ink} strokeWidth={22} strokeLinecap="round" />
             <text y={22} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.red}>?</text>
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 7 · re-gancho: ¿qué hay dentro del frasco? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Frasco x={300} y={1120} s={1.3} rot={Math.sin(T * 4) * 4} /><Interrogacion T={T} x={300} y={700} tam={360} /></>)}
+        {fsvg(<><Frasco x={480} y={1330} s={1.5} rot={Math.sin(T * 4) * 4} /><Interrogacion T={T} x={540} y={820} tam={400} /></>)}
       </Escena>
       {/* 8–10 · el estudio de 2017: 19 frascos, 13 con tipo almidón, 5 con el betaglucano */}
       <Escena T={T} a={K.E} b={K.ME}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          {FR19.map(([fx, fy], i) => { const on = kprog(T, K.E + 1.4 + i * 0.07, K.E + 1.7 + i * 0.07, kEase.rebote); if (on <= 0) return null;
+          {FRE.map(([fx, fy], i) => { const on = kprog(T, K.E + 0.15 + i * 0.03, K.E + 0.45 + i * 0.03, kEase.rebote); if (on <= 0) return null;
             const t13 = ALM13.indexOf(i), mor = t13 >= 0 ? kprog(T, K.A + 0.3 + t13 * 0.12, K.A + 0.6 + t13 * 0.12) : 0;
             const bg = BG5.includes(i) && T > K.B + 0.4;
-            return <g key={i}><MiniFrasco x={fx} y={fy} s={on} tinte={mixHex(RX.ambar, '#4b2a7a', mor)} marca={bg ? 'si' : null} />
-              {mor > 0 && mor < 1 && <circle cx={fx} cy={fy - 120 + mor * 60} r={9} fill="#5a3a1a" stroke={KC.ink} strokeWidth={2} />}
-              {bg && <g transform={`translate(${fx - 28} ${fy - 150}) scale(.32)`}><Betaglucano x={0} y={0} n={3} brillo={1} /></g>}</g>; })}
+            return <g key={i}><MiniFrasco x={fx} y={fy} s={on * 1.2} tinte={mixHex(RX.ambar, '#4b2a7a', mor)} marca={bg ? 'si' : null} />
+              {mor > 0 && mor < 1 && <circle cx={fx} cy={fy - 144 + mor * 72} r={9} fill="#5a3a1a" stroke={KC.ink} strokeWidth={2} />}
+              {bg && <g transform={`translate(${fx - 32} ${fy - 178}) scale(.36)`}><Betaglucano x={0} y={0} n={3} brillo={1} /></g>}</g>; })}
         </>)}
       </Escena>
       {/* 11 · mito de la especie: el ADN de 20 productos (fondo oscuro: lo microscópico) */}
@@ -215,80 +220,81 @@ function ReishiShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <ADN T={T} x={90} y={720} w={900} amp={55} vel={3} lectura={kprog(T, K.ME + 0.5, K.ME + 3.6)} />
-          {Array.from({ length: 20 }, (_, i) => { const on = kprog(T, K.ME + 3.7 + i * 0.04, K.ME + 4.0 + i * 0.04, kEase.rebote); if (on <= 0) return null;
-            return <Producto key={i} x={140 + (i % 5) * 200} y={880 + Math.floor(i / 5) * 72} s={on * 0.62} tipo={i % 3} tache={kprog(T, K.ME + 4.6 + i * 0.07, K.ME + 4.8 + i * 0.07)} />; })}
-          {T < K.ME + 4.6 && <g opacity={1 - kprog(T, K.ME + 4.2, K.ME + 4.6)}><Sello T={T} at={K.ME + 1.2} x={830} y={500} texto="MITO" color={KC.red} r={100} /></g>}
+          <ADN T={T} x={90} y={880} w={900} amp={55} vel={3} lectura={kprog(T, K.ME + 0.5, K.ME + 3.6)} />
+          {Array.from({ length: 20 }, (_, i) => { const on = kprog(T, K.ME + 0.2 + i * 0.02, K.ME + 0.5 + i * 0.02, kEase.rebote); if (on <= 0) return null;
+            return <g key={i} opacity={0.45 + 0.55 * kprog(T, K.ME + 3.7 + i * 0.04, K.ME + 4.0 + i * 0.04)}><Producto x={140 + (i % 5) * 200} y={1070 + Math.floor(i / 5) * 105} s={on * 0.9} tipo={i % 3} tache={kprog(T, K.ME + 4.6 + i * 0.07, K.ME + 4.8 + i * 0.07)} /></g>; })}
+          {T < K.ME + 4.6 && <g opacity={1 - kprog(T, K.ME + 4.2, K.ME + 4.6)}><Sello T={T} at={K.ME + 1.2} x={880} y={470} texto="MITO" color={KC.red} r={95} /></g>}
         </>)}
       </Escena>
       {/* 12 · dato: la mayoría eran G. lingzhi; mapa */}
       <Escena T={T} a={K.L} b={K.C}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <MapaEurasia x={160} y={745} s={0.9} pLuc={kprog(T, K.L + 2.0, K.L + 2.8)} pLing={kprog(T, K.L + 3.0, K.L + 3.8)} />
-          <Sello T={T} at={K.L + 0.3} x={170} y={420} texto="DATO" color="#118a3a" r={95} rot={8} />
+          <MapaEurasia x={70} y={770} s={1.15} pLuc={kprog(T, K.L + 2.0, K.L + 2.8)} pLing={kprog(T, K.L + 3.0, K.L + 3.8)} />
+          <Sello T={T} at={K.L + 0.3} x={900} y={450} texto="DATO" color="#118a3a" r={95} rot={8} />
         </>)}
       </Escena>
       {/* 13 · cierre: el mismo frasco del inicio, ya "leído" */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
+          <g transform="translate(310 1030) scale(1.5) translate(-300 -780)">
           <Frasco x={300} y={780} s={0.95} etiqueta="REISHI?" />
           <g opacity={kprog(T, K.C + 0.6, K.C + 1.0)} transform="translate(300 780) scale(0.95)">
             <rect x={-104} y={-226} width={208} height={156} rx={12} fill="#fffbe8" stroke={KC.ink} strokeWidth={6} transform="rotate(-4)" />
             {['¿especie?', '¿relleno?', '¿pruebas?'].map((t, i) => <text key={i} x={-86} y={-186 + i * 44} transform="rotate(-4)" style={{ font:`700 34px ${KF.mono}` }} fill={i === 1 ? KC.red : KC.ink} opacity={kprog(T, K.C + 0.8 + i * 0.4, K.C + 1.1 + i * 0.4)}>{t}</text>)}
-          </g>
-          <Sello T={T} at={K.C + 2.0} x={560} y={570} texto="MITO" color={KC.red} r={80} rot={-14} />
-          <Sello T={T} at={K.C + 2.4} x={600} y={730} texto="DATO" color="#118a3a" r={80} rot={10} />
-          {FR19.map(([fx, fy], i) => <MiniFrasco key={i} x={fx} y={fy} s={0.9} tinte={SI5.includes(i) ? RX.verde : '#b9b2a6'} marca={SI5.includes(i) ? 'si' : null} />)}
+          </g></g>
+          <Sello T={T} at={K.C + 2.0} x={680} y={700} texto="MITO" color={KC.red} r={95} rot={-14} />
+          <Sello T={T} at={K.C + 2.4} x={760} y={920} texto="DATO" color="#118a3a" r={95} rot={10} />
+          {FRB.map(([fx, fy], i) => <MiniFrasco key={i} x={fx} y={fy} s={0.9} tinte={SI5.includes(i) ? RX.verde : '#b9b2a6'} marca={SI5.includes(i) ? 'si' : null} />)}
         </>)}
       </Escena>
 
       {/* textos */}
-      <NumeroGigante T={T} at={K.G + 2.8} until={K.H - 0.3} valor={5} dur={0.5} sufijo=" de 19" etiqueta="cumplían su etiqueta" x={720} y={560} tam={140} color={RX.verde} />
+      <NumeroGigante T={T} at={K.G + 2.8} until={K.H - 0.3} valor={5} dur={0.5} sufijo=" de 19" etiqueta="cumplían su etiqueta" x={760} y={760} tam={140} color={RX.verde} />
       <Etq T={T} at={K.H + 1.3} until={K.Co - 0.3} x={60} y={520} texto="reishi · lingzhi" tam={42} color={KC.ink} />
       <Etq T={T} at={K.H + 1.8} until={K.Co - 0.3} x={60} y={580} texto="Ganoderma" it tam={40} color={KC.ink} />
       <Etq T={T} at={K.H + 2.3} until={K.Co - 0.3} x={430} y={1015} texto="pie lateral, brillante" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Co + 0.1} until={K.MC - 0.3} texto="POR DENTRO · LO QUE TRAE" x={440} y={470} tam={34} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Co + 0.8} until={K.MC - 0.3} x={60} y={640} texto="triterpenos · ácidos ganodéricos" tam={30} color={KC.yellow} />
-      <Etq T={T} at={K.Co + 1.6} until={K.MC - 0.3} x={60} y={920} texto="polisacáridos · betaglucanos" tam={30} color={KC.mint} />
-      <Chip T={T} at={K.Co + 2.0} until={K.MC - 0.3} texto="sí se estudian" x={540} y={1160} tam={36} borde={KC.mint} />
-      <MitoTachado T={T} at={K.MC + 0.2} tacharEn={K.MC + 0.9} until={K.DC - 0.3} texto="cura el cáncer" x={330} y={1040} tam={50} />
-      <TarjetaEstudio T={T} at={K.MC + 1.8} until={K.DC - 0.3} anio="2016" quien="Cochrane · 5 ensayos · 373 personas" revista="Cochrane Database Syst. Rev., 2016" x={440} y={760} />
-      <Chip T={T} at={K.DC + 0.5} until={K.J - 0.3} texto="¿Solo, como tratamiento?" x={420} y={520} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.DC + 1.2} until={K.J - 0.3} texto="pruebas insuficientes" x={420} y={610} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.DC + 2.4} until={K.J - 0.3} texto="¿Alarga la vida?" x={420} y={760} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.DC + 3.0} until={K.J - 0.3} texto="ningún ensayo lo midió" x={420} y={850} tam={40} borde={KC.red} />
+      <Etq T={T} at={K.Co + 0.4} until={K.MC - 0.3} x={60} y={640} texto="triterpenos · ácidos ganodéricos" tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.Co + 0.8} until={K.MC - 0.3} x={60} y={980} texto="polisacáridos · betaglucanos" tam={30} color={KC.mint} />
+      <Chip T={T} at={K.Co + 2.0} until={K.MC - 0.3} texto="sí se estudian" x={760} y={1280} tam={36} borde={KC.mint} />
+      <MitoTachado T={T} at={K.MC + 0.2} tacharEn={K.MC + 0.9} until={K.DC - 0.3} texto="cura el cáncer" x={360} y={730} tam={50} />
+      <TarjetaEstudio T={T} at={K.MC + 1.8} until={K.DC - 0.3} anio="2016" quien="Cochrane · 5 ensayos · 373 personas" revista="Cochrane Database Syst. Rev., 2016" x={540} y={440} />
+      <Chip T={T} at={K.DC + 0.5} until={K.J - 0.3} texto="¿Solo, como tratamiento?" x={440} y={430} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.DC + 1.2} until={K.J - 0.3} texto="pruebas insuficientes" x={440} y={515} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.DC + 2.4} until={K.J - 0.3} texto="¿Alarga la vida?" x={440} y={630} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.DC + 3.0} until={K.J - 0.3} texto="ningún ensayo lo midió" x={440} y={715} tam={40} borde={KC.red} />
       <Chip T={T} at={K.J + 0.4} until={K.P - 0.3} texto="con quimio o radioterapia" x={400} y={470} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.J + 1.2} until={K.P - 0.3} x={60} y={545} texto="respuesta al tratamiento" tam={28} color={KC.ink} />
       <Chip T={T} at={K.J + 2.2} until={K.P - 0.3} texto="calidad de los estudios: baja" x={400} y={640} tam={34} borde={KC.yellow} />
       <Chip T={T} at={K.J + 2.8} until={K.P - 0.3} texto="diferencia no concluyente" x={330} y={720} tam={30} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.A - 0.3} anio="2017" quien="U. de Macao + Farmacopea de EE. UU." revista="Sci. Reports, 2017 · comprados en línea en 2015" x={540} y={560} />
-      <NumeroGigante T={T} at={K.A + 0.4} until={K.B - 0.3} valor={13} dur={1.5} sufijo=" de 19" etiqueta="con polisacáridos tipo almidón" x={360} y={520} tam={140} color={KC.lilac} />
-      <Chip T={T} at={K.A + 1.6} until={K.B - 0.3} texto="tipo almidón: el cuerpo del hongo no lo tiene" x={500} y={690} tam={30} borde={KC.lilac} />
-      <NumeroGigante T={T} at={K.B + 0.3} until={K.ME - 0.3} valor={5} dur={0.6} sufijo=" de 19" etiqueta="con el betaglucano del reishi" x={360} y={520} tam={140} color={KC.mint} />
-      <Etq T={T} at={K.ME + 0.3} until={K.L - 0.3} x={60} y={470} texto="Ganoderma lucidum" it tam={44} color={KC.texto} />
-      <Etq T={T} at={K.ME + 0.6} until={K.ME + 3.6} x={60} y={560} texto="leyendo ADN…" tam={30} color={KC.lilac} />
-      <TarjetaEstudio T={T} at={K.ME + 1.6} until={K.ME + 3.6} anio="2018" quien="ADN de 20 productos" revista="Frontiers in Microbiology, 2018" x={540} y={1000} />
-      <Chip T={T} at={K.ME + 4.8} until={K.L - 0.3} texto="G. lucidum: en ninguno" x={420} y={600} tam={38} borde={KC.red} />
+      <NumeroGigante T={T} at={K.A + 0.4} until={K.B - 0.3} valor={13} dur={1.5} sufijo=" de 19" etiqueta="con polisacáridos tipo almidón" x={360} y={600} tam={140} color={KC.lilac} />
+      <Chip T={T} at={K.A + 1.6} until={K.B - 0.3} texto="tipo almidón: el cuerpo del hongo no lo tiene" x={520} y={790} tam={30} borde={KC.lilac} />
+      <NumeroGigante T={T} at={K.B + 0.3} until={K.ME - 0.3} valor={5} dur={0.6} sufijo=" de 19" etiqueta="con el betaglucano del reishi" x={360} y={600} tam={140} color={KC.mint} />
+      <Etq T={T} at={K.ME + 0.3} until={K.L - 0.3} x={60} y={420} texto="Ganoderma lucidum" it tam={44} color={KC.texto} />
+      <Etq T={T} at={K.ME + 0.6} until={K.ME + 3.6} x={60} y={490} texto="leyendo ADN…" tam={30} color={KC.lilac} />
+      <TarjetaEstudio T={T} at={K.ME + 1.6} until={K.ME + 3.6} anio="2018" quien="ADN de 20 productos" revista="Frontiers in Microbiology, 2018" x={540} y={650} />
+      <Chip T={T} at={K.ME + 4.8} until={K.L - 0.3} texto="G. lucidum: en ninguno" x={420} y={700} tam={38} borde={KC.red} />
       <Etq T={T} at={K.L + 0.6} until={K.C - 0.3} x={60} y={575} texto="la mayoría: Ganoderma lingzhi" it tam={30} color={KC.ink} />
       <Etq T={T} at={K.L + 1.1} until={K.C - 0.3} x={60} y={620} texto="el más usado en la medicina china" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.L + 2.2} until={K.C - 0.3} x={60} y={1075} texto="● G. lucidum: Europa (y partes de China)" it tam={28} color={KC.red} />
-      <Etq T={T} at={K.L + 3.2} until={K.C - 0.3} x={60} y={1125} texto="● G. lingzhi: Asia" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.L + 2.2} until={K.C - 0.3} x={60} y={1190} texto="● G. lucidum: Europa (y partes de China)" it tam={28} color={KC.red} />
+      <Etq T={T} at={K.L + 3.2} until={K.C - 0.3} x={60} y={1240} texto="● G. lingzhi: Asia" it tam={28} color={KC.ink} />
       <Chip T={T} at={K.L + 4.2} until={K.C - 0.3} texto="en esos: falla el nombre, no el hongo" x={420} y={700} tam={36} borde={KC.gold} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="no siempre trae lo que dice" x={470} y={370} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="no siempre trae lo que dice" x={540} y={400} tam={32} borde={KC.red} />
       <Etq T={T} at={K.C + 2.8} until={K.Ou} x={60} y={1500} texto="No es consejo médico. Si tomas medicamentos o" tam={22} color={KC.ink} />
       <Etq T={T} at={K.C + 2.8} until={K.Ou} x={60} y={1535} texto="estás en tratamiento, platícalo con tu médico." tam={22} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={110} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={165} />
       <BarraEscala T={T} at={K.H} until={K.Co} texto="10 cm" largo={180} />
-      <BarraEscala T={T} at={K.Co} until={K.MC} texto="1 nm" largo={300} />
-      <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={140} />
-      <BarraEscala T={T} at={K.E} until={K.ME} texto="5 cm" largo={100} />
+      <BarraEscala T={T} at={K.Co} until={K.MC} texto="1 nm" largo={384} />
+      <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={162} />
+      <BarraEscala T={T} at={K.E} until={K.ME} texto="5 cm" largo={120} />
       <BarraEscala T={T} at={K.ME} until={K.L} texto="2 nm (ancho del ADN)" largo={110} />
       <BarraEscala T={T} at={K.L} until={K.C} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={110} y={1600} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={165} y={1600} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="Solo *5 de 19* cumplían su etiqueta." />
