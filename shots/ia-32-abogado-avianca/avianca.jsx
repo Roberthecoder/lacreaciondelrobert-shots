@@ -17,13 +17,16 @@ function StickerAV({ T, src, at, until, lado = 'arriba-der' }) {
     transform:`translate(${tx}px, ${ty}px) scale(${1 - w}, ${1 + w})`, filter:'drop-shadow(0 22px 34px rgba(0,0,0,.55))' }} />;
 }
 function RobertAV({ T, apariciones = [], base = 'assets/stickers/' }) {
+  if (window.CINE_OPC) return null;   // modo cine: Robert solo en la tarjeta de cierre
   return <>{apariciones.map(([at, until, pose, lado], i) => <StickerAV key={i} T={T} src={`${base}${pose}.png`} at={at} until={until} lado={lado} />)}</>;
 }
 
 // Los seis casos que el tribunal declaró inexistentes (orden del 22 jun 2023, ¶36).
 const CASOS = [['Varghese', 'v. China Southern'], ['Shaboon', 'v. Egyptair'], ['Petersen', 'v. Iran Air'],
   ['Martinez', 'v. Delta Airlines'], ['Durden', 'v. KLM'], ['Miller', 'v. United Airlines']];
-const POS6 = [[200, 860], [540, 860], [880, 860], [200, 1050], [540, 1050], [880, 1050]];
+const POS6 = [[205, 870], [540, 870], [875, 870], [205, 1150], [540, 1150], [875, 1150]];
+// Los mismos seis, más abajo y atenuados, detrás del escrito de Avianca y de la pregunta.
+const POS6B = [[205, 1120], [540, 1120], [875, 1120], [205, 1370], [540, 1370], [875, 1370]];
 
 // Expediente (carpeta) con el nombre del caso y un sello rojo "NO EXISTE" (sello 0..1).
 function Expediente({ x, y, s = 1, rot = 0, nombre, contra, sello = 0, o = 1 }) {
@@ -31,7 +34,7 @@ function Expediente({ x, y, s = 1, rot = 0, nombre, contra, sello = 0, o = 1 }) 
     <path d="M -140 -95 L -140 -118 Q -140 -126 -132 -126 L -40 -126 Q -30 -126 -24 -116 L -16 -100 L 132 -100 Q 140 -100 140 -92 L 140 -80 Z" fill="#e0ad4f" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
     <rect x={-124} y={-112} width={248} height={120} rx={4} fill="#fffdf6" stroke={KC.ink} strokeWidth={4} transform="rotate(-3)" />
     <rect x={-140} y={-92} width={280} height={182} rx={12} fill="#f3c86b" stroke={KC.ink} strokeWidth={7} />
-    <text x={0} y={-12} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill={KC.ink}>{nombre}</text>
+    <text x={0} y={-12} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill="#0b1020">{nombre}</text>
     <text x={0} y={30} textAnchor="middle" style={{ font:`italic 700 22px ${KF.mono}` }} fill="#5a3d10">{contra}</text>
     <line x1={-100} y1={58} x2={100} y2={58} stroke="#b8862f" strokeWidth={4} /><line x1={-100} y1={72} x2={60} y2={72} stroke="#b8862f" strokeWidth={4} />
     {sello > 0 && <g transform={`translate(0 48) rotate(-9) scale(${klerp(2.3, 0.82, sello)})`} opacity={Math.min(1, sello * 2)}>
@@ -41,9 +44,9 @@ function Expediente({ x, y, s = 1, rot = 0, nombre, contra, sello = 0, o = 1 }) 
   </g>;
 }
 // Los seis expedientes; sello(i) da el avance del sello de cada uno.
-function SeisExpedientes({ T, t0, sello, s = 0.95 }) {
-  return <>{CASOS.map(([n, c], i) => { const [x, y] = POS6[i], e = kprog(T, t0 + i * 0.12, t0 + i * 0.12 + 0.45, kEase.rebote);
-    return <Expediente key={i} x={x} y={y - (1 - e) * 260} s={s} rot={[-4, 3, -2, 2, -3, 4][i]} nombre={n} contra={c} sello={sello(i)} o={kprog(T, t0 + i * 0.12, t0 + i * 0.12 + 0.15)} />; })}</>;
+function SeisExpedientes({ T, t0, sello, s = 1.1, pos = POS6, o = 1 }) {
+  return <g opacity={o}>{CASOS.map(([n, c], i) => { const [x, y] = pos[i], e = kprog(T, t0 + i * 0.12, t0 + i * 0.12 + 0.45, kEase.rebote);
+    return <Expediente key={i} x={x} y={y - (1 - e) * 260} s={s} rot={[-4, 3, -2, 2, -3, 4][i]} nombre={n} contra={c} sello={sello(i)} o={kprog(T, t0 + i * 0.12, t0 + i * 0.12 + 0.15)} />; })}</g>;
 }
 
 // Encabezado de paso (N6): "PASO n / 4" + instrucción irónica.
@@ -73,6 +76,7 @@ function Cabina({ T, carroX, golpe }) {
   const dolor = T > golpe ? Math.max(0, 1 - (T - golpe) * 0.5) : 0;
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     <defs><clipPath id="avCab"><rect x={70} y={790} width={940} height={370} rx={40} /></clipPath></defs>
+    <g transform="translate(540 1085) scale(1.5) translate(-480 -975)">
     <g clipPath="url(#avCab)">
       <rect x={70} y={790} width={940} height={370} fill="#e9eef5" />
       <path d="M 70 790 L 1010 790 L 1010 815 Q 540 860 70 815 Z" fill="#cfd8e6" />
@@ -104,6 +108,7 @@ function Cabina({ T, carroX, golpe }) {
       <path d="M 0 -80 L 22 -26 L 80 -40 L 40 6 L 76 50 L 18 34 L 0 86 L -18 34 L -76 50 L -40 6 L -80 -40 L -22 -26 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
       <text y={16} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.red}>¡TAC!</text>
     </g>}
+    </g>
   </svg>;
 }
 // "Sentencia" falsa: solo un pedazo (la parte de abajo está arrancada).
@@ -113,9 +118,9 @@ function HojaFalsa({ x, y, s = 1, T = 0, falta = 0 }) {
     <rect x={-180} y={60} width={360} height={190} rx={10} fill="none" stroke={KC.ink} strokeWidth={5} strokeDasharray="16 12" opacity={falta} />
     <text x={0} y={180} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink} opacity={falta * 0.55}>?</text>
     <path d="M -180 -220 L 180 -220 L 180 60 L 150 44 L 120 66 L 90 46 L 60 68 L 30 48 L 0 66 L -30 44 L -60 66 L -90 46 L -120 68 L -150 46 L -180 62 Z" fill="#fffdf6" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
-    <text x={0} y={-170} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>Varghese v. China</text>
-    <text x={0} y={-136} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>Southern Airlines</text>
-    <line x1={-140} y1={-112} x2={140} y2={-112} stroke={KC.ink} strokeWidth={3} />
+    <text x={0} y={-170} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="#0b1020">Varghese v. China</text>
+    <text x={0} y={-136} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="#0b1020">Southern Airlines</text>
+    <line x1={-140} y1={-112} x2={140} y2={-112} stroke="#0b1020" strokeWidth={3} />
     {Array.from({ length: 6 }, (_, i) => { const yy = -80 + i * 22, l = 220 + r() * 60; let d = `M -140 ${yy}`; for (let k = 0; k < 10; k++) d += ` q ${l / 20} ${-4 - r() * 4} ${l / 10} 0`;
       return <path key={i} d={d} stroke="#5a524a" strokeWidth={3.5} fill="none" opacity=".7" />; })}
   </g>;
@@ -180,9 +185,9 @@ function Documento({ T, at, until, encabezado, texto, x = KW / 2, y = 760, ancho
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'pop');
   return <div style={{ position:'absolute', left:x, top:y, width:ancho, zIndex:42, transform:`translate(-50%,-50%) scale(${e.s}) rotate(-1.5deg)`, opacity:e.o,
-    background:'#fffdf6', border:`7px solid ${KC.ink}`, borderRadius:18, padding:'22px 34px 28px', boxShadow:`12px 12px 0 ${KC.ink}`, boxSizing:'border-box' }}>
-    <div style={{ font:`700 28px ${KF.mono}`, color:KC.red, borderBottom:`4px solid ${KC.ink}`, paddingBottom:10, marginBottom:14 }}>{encabezado}</div>
-    <div style={{ font:`900 ${tam}px/1.2 ${KF.texto}`, color:KC.ink }}>{texto}</div>
+    background:'#fffdf6', border:`7px solid ${KC.ink}`, borderRadius:18, padding:'22px 34px 28px', boxShadow:'0 14px 40px rgba(0,0,0,.55)', boxSizing:'border-box' }}>
+    <div style={{ font:`700 28px ${KF.mono}`, color:'#c22a20', borderBottom:'4px solid #0b1020', paddingBottom:10, marginBottom:14 }}>{encabezado}</div>
+    <div style={{ font:`900 ${tam}px/1.2 ${KF.texto}`, color:'#0b1020' }}>{texto}</div>
   </div>;
 }
 // Tarjeta chica que se acomoda en varias líneas (para la izquierda de la pantalla).
@@ -193,13 +198,14 @@ function Nota({ T, at, until, texto, x, y, ancho = 460, tam = 44, borde = KC.gol
     background:fondo, color, border:`5px solid ${borde}`, borderRadius:30, padding:'18px 28px', font:`900 ${tam}px/1.15 ${KF.texto}`, boxShadow:'0 10px 30px rgba(0,0,0,.45)', boxSizing:'border-box' }}>{texto}</div>;
 }
 // Cuadrícula de expedientes: cada cuadrito = 10 casos (223 llenos = 2,230 casos; el contador dice 2,231).
-function Expedientitos({ T, llenos, x = 92, y = 660 }) {
+function Expedientitos({ T, llenos, x = 46, y = 650 }) {
   const cols = 16, out = [];
-  for (let i = 0; i < 224; i++) { const c = i % cols, rr = Math.floor(i / cols), px = x + c * 56, py = y + rr * 32;
+  for (let i = 0; i < 224; i++) { const c = i % cols, rr = Math.floor(i / cols), px = x + c * 62, py = y + rr * 52;
     const on = i < llenos;
     out.push(<g key={i} transform={`translate(${px} ${py})`}>
-      <rect width={46} height={26} rx={4} fill={on ? '#f3c86b' : 'rgba(255,255,255,.35)'} stroke={KC.ink} strokeWidth={3} />
-      {on && <rect x={10} y={8} width={26} height={10} rx={2} fill="none" stroke={KC.red} strokeWidth={3} />}
+      <path d="M 0 6 L 0 2 Q 0 0 3 0 L 20 0 L 25 6 Z" fill={on ? '#e0ad4f' : 'rgba(255,255,255,.14)'} stroke={KC.ink} strokeWidth={2} />
+      <rect y={6} width={54} height={36} rx={5} fill={on ? '#f3c86b' : 'rgba(255,255,255,.14)'} stroke={KC.ink} strokeWidth={3} />
+      {on && <rect x={10} y={17} width={34} height={14} rx={3} fill="none" stroke={KC.red} strokeWidth={3.5} />}
     </g>); }
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{out}</svg>;
 }
@@ -217,7 +223,7 @@ function Avianca() {
   // conteo
   const llenos = Math.round(223 * kprog(T, K.Co + 0.6, K.Co + 3.6, kEase.suave));
   // cierre: la lupa pasa sobre los expedientes y revela el sello
-  const lupaX = klerp(-80, 1160, kprog(T, K.C + 0.8, K.C + 4.0, kEase.suave)), lupaY = (t) => 930 + Math.sin(t * 2.4) * 40;
+  const lupaX = klerp(-80, 1160, kprog(T, K.C + 0.8, K.C + 4.0, kEase.suave)), lupaY = (t) => 1010 + Math.sin(t * 2.4) * 60;
   const selloCierre = (i) => { const px = POS6[i][0]; return kprog(lupaX, px - 40, px + 40); };
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -225,89 +231,96 @@ function Avianca() {
       <Escena T={T} a={K.G} b={K.P1}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <g opacity={1 - kprog(T, K.G + 4.6, K.G + 5.1)}><Robotito x={300} y={560} s={0.8} T={T} cara="feliz" /></g>
+          <g opacity={1 - 0.6 * kprog(T, K.G + 5.4, K.G + 6.0)}><Robotito x={540} y={450} s={1.45} T={T} cara="feliz" /></g>
           <SeisExpedientes T={T} t0={K.G - 0.05} sello={(i) => kprog(T, K.G + 0.55 + i * 0.32, K.G + 0.85 + i * 0.32, kEase.sale)} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.G + 1.4} until={K.G + 4.5} texto="hechos por ChatGPT" x={300} y={360} tam={34} borde={KC.cyan} />
-      <Nota T={T} at={G2 - 0.6} until={K.P1 - 0.2} x={90} y={520} ancho={900} tam={76} borde={KC.red} fondo={KC.paper} color={KC.ink}
+      <Chip T={T} at={K.G + 1.4} until={K.G + 4.5} texto="hechos por ChatGPT" x={815} y={250} tam={34} borde={KC.cyan} />
+      <Nota T={T} at={G2 - 0.6} until={K.P1 - 0.2} x={130} y={1455} ancho={820} tam={60} borde={KC.red} fondo={KC.paper} color={KC.ink}
         texto={<span><span style={{ font:`700 30px ${KF.mono}`, color:KC.red, display:'block', marginBottom:8 }}>MANUAL (IRÓNICO)</span>Cómo lograr que te multen</span>} />
 
       {/* 2 · paso 1: la demanda contra Avianca */}
       <Escena T={T} a={K.P1} b={K.P2}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <path d="M 150 700 Q 540 540 930 700" stroke={KC.ink} strokeWidth={5} strokeDasharray="14 14" fill="none" opacity=".6" />
+          <path d="M 150 700 Q 540 560 930 700" stroke={KC.ink} strokeWidth={5} strokeDasharray="14 14" fill="none" opacity=".6" />
           <circle cx={150} cy={700} r={14} fill={KC.red} stroke={KC.ink} strokeWidth={5} /><circle cx={930} cy={700} r={14} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
           <text x={150} y={750} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>El Salvador</text>
           <text x={930} y={750} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>Nueva York</text>
-          <Avion x={klerp(150, 930, vuelo)} y={700 - Math.sin(Math.PI * vuelo) * 80} s={0.5} rot={klerp(-14, 14, vuelo)} />
+          <Avion x={klerp(150, 930, vuelo)} y={700 - Math.sin(Math.PI * vuelo) * 70} s={0.55} rot={klerp(-14, 14, vuelo)} />
         </>)}
         <Cabina T={T} carroX={carroX} golpe={golpe} />
       </Escena>
       <PasoN T={T} at={K.P1 + 0.05} until={K.P2 - 0.25} n={1} texto="Un caso contra una aerolínea" />
-      <Chip T={T} at={K.P1 + 1.6} until={K.P1 + 4.0} texto="Avianca · aerolínea de Colombia" x={540} y={545} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.P1 + 1.6} until={K.P1 + 4.0} texto="Avianca · aerolínea de Colombia" x={540} y={550} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.P1 + 4.5} until={K.P2 - 0.25} texto="carrito de metal → rodilla" x={540} y={545} tam={34} borde={KC.red} />
 
       {/* 3 · paso 2: pídele casos a ChatGPT */}
       <Escena T={T} a={K.P2} b={K.P3}>
         <FondoLunares color={KC.lilac} />
-        {svg(<g opacity={kprog(T, K.P2 + 2.6, K.P2 + 3.0)}><HojaFalsa x={790} y={820} s={0.82} T={T} falta={kprog(T, K.P2 + 3.6, K.P2 + 4.2)} /></g>)}
+        {svg(<g opacity={klerp(0.28, 1, kprog(T, K.P2 + 2.6, K.P2 + 3.0))}><HojaFalsa x={805} y={900} s={1.08} T={T} falta={kprog(T, K.P2 + 3.6, K.P2 + 4.2)} /></g>)}
       </Escena>
       {T > K.P2 - 0.45 && T < K.P3 + 0.45 && <div style={{ opacity: kprog(T, K.P2 - 0.45, K.P2 + 0.05) * (1 - kprog(T, K.P3 - 0.05, K.P3 + 0.45)) }}>
-        <CelularChat T={T} x={300} y={845} s={0.66} tam={40} mensajes={[
+        <CelularChat T={T} x={300} y={1010} s={0.84} tam={40} mensajes={[
           { at: K.P2 + 0.6, yo: true, texto: 'Dame casos que apoyen mi demanda' },
           { at: K.P2 + 1.5, texto: 'Varghese v. China Southern Airlines (2019)' },
           { at: K.P2 + 2.1, texto: 'Shaboon v. Egyptair (2013)' },
           { at: K.P2 + 2.6, texto: 'Petersen v. Iran Air (2012)…' }]} escribe={[K.P2 + 1.0, K.P2 + 1.5]} />
       </div>}
       <PasoN T={T} at={K.P2 + 0.05} until={K.P3 - 0.25} n={2} texto="Pídele casos a ChatGPT" />
-      <Chip T={T} at={K.P2 + 3.9} until={K.P3 - 0.25} texto="texto completo: ✗" x={790} y={1100} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.P2 + 3.9} until={K.P3 - 0.25} texto="texto completo: ✗" x={805} y={1250} tam={36} borde={KC.red} />
 
       {/* 4 · paso 3: no retires nada */}
       <Escena T={T} a={K.P3} b={K.Q}>
         <FondoLunares color={KC.pink} />
+        {svg(<SeisExpedientes T={T} t0={K.P3 - 1.4} s={1.1} pos={POS6B} o={0.6} sello={() => 0} />)}
       </Escena>
       <PasoN T={T} at={K.P3 + 0.05} until={K.Q - 0.25} n={3} texto="Si no los encuentran, no retires nada" />
-      <Documento T={T} at={K.P3 + 0.5} until={K.Q - 0.25} y={800} encabezado="ESCRITO DE AVIANCA · 15 MAR 2023" texto="«No hemos podido encontrar la mayoría de los casos citados»" />
-      <Chip T={T} at={K.P3 + 2.3} until={K.Q - 0.25} texto="¿Retirar el escrito?  ✗ No" x={430} y={1080} tam={40} borde={KC.ink} />
+      <Documento T={T} at={K.P3 + 0.5} until={K.Q - 0.25} y={720} encabezado="ESCRITO DE AVIANCA · 15 MAR 2023" texto="«No hemos podido encontrar la mayoría de los casos citados»" />
+      <Chip T={T} at={K.P3 + 2.3} until={K.Q - 0.25} texto="¿Retirar el escrito?  ✗ No" x={540} y={915} tam={40} borde={KC.ink} />
 
       {/* 5 · re-gancho */}
       <Escena T={T} a={K.Q} b={K.R} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={290} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 900)`}>?</text>)}
+        {svg(<>
+          <SeisExpedientes T={T} t0={K.Q - 3} s={1.1} pos={POS6B} o={klerp(0.6, 1, kprog(T, K.Q - 0.2, K.Q + 0.5))} sello={() => 0} />
+          <text x={540} y={900} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 740)`}>?</text>
+        </>)}
       </Escena>
-      <Chip T={T} at={K.Q + 0.3} until={K.R - 0.2} texto="«¿son reales?»" x={300} y={440} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.Q + 0.3} until={K.R - 0.2} texto="«¿son reales?»" x={540} y={340} tam={44} borde={KC.ink} />
 
       {/* 6 · la respuesta de ChatGPT */}
       <Escena T={T} a={K.R} b={K.M}>
         <FondoCircuito T={T} />
-        {svg(<PalomitaTache x={830} y={800} s={kprog(T, K.R + 2.3, K.R + 2.7, kEase.rebote)} v={kprog(T, K.R + 4.0, K.R + 4.4, kEase.sale)} />)}
+        {svg(<>
+          <Expediente x={855} y={740} s={1.25} rot={3} nombre={CASOS[0][0]} contra={CASOS[0][1]} sello={0} />
+          <PalomitaTache x={855} y={1020} s={1.05 * kprog(T, K.R + 2.3, K.R + 2.7, kEase.rebote)} v={kprog(T, K.R + 4.0, K.R + 4.4, kEase.sale)} />
+        </>)}
       </Escena>
       {T > K.R - 0.45 && T < K.M + 0.45 && <div style={{ opacity: kprog(T, K.R - 0.45, K.R + 0.05) * (1 - kprog(T, K.M - 0.05, K.M + 0.45)) }}>
-        <CelularChat T={T} x={330} y={820} s={0.72} tam={42} mensajes={[
+        <CelularChat T={T} x={345} y={960} s={0.94} tam={42} mensajes={[
           { at: K.R + 0.4, yo: true, texto: '¿Varghese es un caso real?' },
           { at: K.R + 1.9, texto: 'Sí, existe. Lo encuentras en bases de datos legales.' }]} escribe={[K.R + 0.9, K.R + 1.9]} />
       </div>}
-      <Nota T={T} at={K.R + 2.6} until={K.M - 0.2} x={690} y={1040} ancho={320} tam={22} borde={KC.cyan} texto="paráfrasis · las capturas reales están en la orden del juez" />
+      <Nota T={T} at={K.R + 2.6} until={K.M - 0.2} x={690} y={1250} ancho={330} tam={22} borde={KC.cyan} texto="paráfrasis · las capturas reales están en la orden del juez" />
 
       {/* 7 · paso 4: la sentencia y la multa */}
       <Escena T={T} a={K.M} b={K.Co}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <g opacity={kprog(T, K.M + 2.0, K.M + 2.4) * (1 - kprog(T, M2 - 0.3, M2))}><Mazo x={180} y={980} s={1.1} T={T} th={K.M + 3.3} /></g>
-          {T > M2 - 0.3 && CASOS.map(([n], i) => { const jx = [220, 540, 860][i % 3], jy = i < 3 ? 720 : 960, tE = M2 + 0.6 + i * 0.42, v = kprog(T, tE, tE + 0.6, kEase.sale);
+          <g opacity={1 - kprog(T, M2 - 0.3, M2)}><Mazo x={350} y={1130} s={2.4} T={T} th={K.M + 3.3} /></g>
+          {T > M2 - 0.3 && CASOS.map(([n], i) => { const jx = [200, 540, 880][i % 3], jy = i < 3 ? 800 : 1230, tE = M2 + 0.6 + i * 0.42, v = kprog(T, tE, tE + 0.6, kEase.sale);
             return <g key={i}>
-              <g opacity={kprog(T, M2 - 0.2 + i * 0.08, M2 + 0.2 + i * 0.08)}><Juez x={jx} y={jy} s={0.85} T={T} caso={n} carta={v} piel={['#e0a878', '#c98a5e', '#f1c49d', '#a86f45', '#e8b48c', '#d49a6a'][i]} /></g>
-              {v > 0 && v < 1 && <g transform={`translate(${klerp(540, jx + 42, v)} ${klerp(1160, jy - 50, v) - Math.sin(Math.PI * v) * 120}) rotate(${v * 360}) scale(.55)`}><Sobre /></g>}
+              <g opacity={kprog(T, M2 - 0.2 + i * 0.08, M2 + 0.2 + i * 0.08)}><Juez x={jx} y={jy} s={1.45} T={T} caso={n} carta={v} piel={['#e0a878', '#c98a5e', '#f1c49d', '#a86f45', '#e8b48c', '#d49a6a'][i]} /></g>
+              {v > 0 && v < 1 && <g transform={`translate(${klerp(540, jx + 72, v)} ${klerp(1600, jy - 87, v) - Math.sin(Math.PI * v) * 160}) rotate(${v * 360}) scale(.8)`}><Sobre /></g>}
             </g>; })}
         </>)}
       </Escena>
       <PasoN T={T} at={K.M + 0.05} until={K.M + 1.7} n={4} texto="Espera la sentencia" />
-      <TarjetaEstudio T={T} at={K.M + 1.1} until={K.M + 4.6} anio="2023" quien="22 de junio · juez P. Kevin Castel" revista="Tribunal federal · Distrito Sur de Nueva York" y={650} />
-      <NumeroGigante T={T} at={K.M + 5.2} until={M2 - 0.3} valor={5000} dur={0.9} prefijo="$" etiqueta="dólares de multa" x={660} y={660} tam={190} color={KC.yellow} />
-      <Chip T={T} at={K.M + 4.2} until={M2 - 0.3} texto="a los 2 abogados y su despacho" x={620} y={880} tam={36} borde={KC.ink} />
-      <Nota T={T} at={M2 + 0.1} until={K.Co - 0.25} x={90} y={470} ancho={900} tam={40} borde={KC.ink}
+      <TarjetaEstudio T={T} at={K.M + 1.1} until={K.M + 4.6} anio="2023" quien="22 de junio · juez P. Kevin Castel" revista="Tribunal federal · Distrito Sur de Nueva York" y={700} />
+      <NumeroGigante T={T} at={K.M + 5.2} until={M2 - 0.3} valor={5000} dur={0.9} prefijo="$" etiqueta="dólares de multa" x={540} y={620} tam={240} color={KC.yellow} />
+      <Chip T={T} at={K.M + 4.2} until={M2 - 0.3} texto="a los 2 abogados y su despacho" x={540} y={850} tam={36} borde={KC.ink} />
+      <Nota T={T} at={M2 + 0.1} until={K.Co - 0.25} x={90} y={440} ancho={900} tam={40} borde={KC.ink}
         texto="Una carta a cada juez que pusieron como autor de un caso falso" />
 
       {/* 8 · conteo: no fue el único */}
@@ -315,20 +328,20 @@ function Avianca() {
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         <Expedientitos T={T} llenos={llenos} />
       </Escena>
-      <NumeroGigante T={T} at={K.Co + 0.5} until={K.C - 0.25} valor={2231} dur={3.1} etiqueta="" x={540} y={430} tam={170} color={KC.red} />
-      <Chip T={T} at={K.Co + 0.9} until={K.C - 0.25} texto="casos en tribunales con contenido inventado por IA" x={540} y={590} tam={28} borde={KC.red} />
-      <Chip T={T} at={K.Co + 2.0} until={K.C - 0.25} texto="cada cuadrito = 10 casos · base de D. Charlotin · 28 oct 2026" x={540} y={1150} tam={20} mono borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Co + 0.5} until={K.C - 0.25} valor={2231} dur={3.1} etiqueta="" x={540} y={400} tam={190} color={KC.red} />
+      <Chip T={T} at={K.Co + 0.9} until={K.C - 0.25} texto="casos en tribunales con contenido inventado por IA" x={540} y={560} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.Co + 2.0} until={K.C - 0.25} texto="cada cuadrito = 10 casos · base de D. Charlotin · 28 oct 2026" x={540} y={1435} tam={22} mono borde={KC.ink} />
 
       {/* 9 · cierre: los mismos seis expedientes, ahora revisados por ti */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
           <SeisExpedientes T={T} t0={K.C - 0.6} sello={selloCierre} />
-          <LupaSimple x={lupaX} y={lupaY(T)} s={0.9} />
+          <LupaSimple x={lupaX} y={lupaY(T)} s={1.5} />
         </>)}
       </Escena>
-      <Nota T={T} at={K.C + 0.3} until={K.C + 2.4} x={60} y={520} ancho={500} tam={46} borde={KC.ink} texto={<span>Usar IA: ✔<br/>Revisar: <span style={{ color:KC.gold2 }}>te toca a ti</span></span>} />
-      <Nota T={T} at={K.C + 2.6} until={K.Ou} x={60} y={520} ancho={500} tam={46} borde={KC.leaf} texto={<span>✔ Busca cada caso <span style={{ color:KC.mint }}>en la fuente</span></span>} />
+      <Nota T={T} at={K.C + 0.3} until={K.C + 2.4} x={230} y={560} ancho={620} tam={54} borde={KC.ink} texto={<span>Usar IA: ✔<br/>Revisar: <span style={{ color:KC.gold2 }}>te toca a ti</span></span>} />
+      <Nota T={T} at={K.C + 2.6} until={K.Ou} x={230} y={560} ancho={620} tam={54} borde={KC.leaf} texto={<span>✔ Busca cada caso <span style={{ color:KC.mint }}>en la fuente</span></span>} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={G2 - 0.1} texto="Estos 6 casos *no existen.*" />
