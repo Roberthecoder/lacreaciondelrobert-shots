@@ -138,7 +138,7 @@ function Calle({ T, x = 40, y = 630, w = 1000, h = 520, dia = 1, carga = 0, suel
       {dia < 0.5 && <circle cx={w - 120} cy={90} r={40} fill="#fff6c8" opacity={1 - dia * 2} />}
       {/* edificio de concreto */}
       <rect x={80} y={170} width={360} height={suelo - 170} fill={mixHex(IC.concreto, '#ff7a5a', carga * 0.35)} stroke={KC.ink} strokeWidth={7} />
-      {Array.from({ length: 3 }, (_, i) => Array.from({ length: 4 }, (_, j) => <rect key={i + '-' + j} x={110 + j * 82} y={210 + i * 62} width={50} height={36} fill={dia > 0.5 ? '#bfe7ff' : KC.yellow} stroke={KC.ink} strokeWidth={4} />))}
+      {Array.from({ length: Math.max(3, Math.floor((suelo - 220) / 62)) }, (_, i) => Array.from({ length: 4 }, (_, j) => <rect key={i + '-' + j} x={110 + j * 82} y={210 + i * 62} width={50} height={36} fill={dia > 0.5 ? '#bfe7ff' : KC.yellow} stroke={KC.ink} strokeWidth={4} />))}
       <rect x={66} y={146} width={388} height={30} fill={techoC} stroke={KC.ink} strokeWidth={7} />
       <rect x={66} y={146} width={388} height={30} fill={glow(0.85 * (1 - blanco))} />
       <rect x={80} y={176} width={360} height={suelo - 176} fill={glow(0.35)} />
@@ -147,6 +147,7 @@ function Calle({ T, x = 40, y = 630, w = 1000, h = 520, dia = 1, carga = 0, suel
       <rect x={476} y={230} width={228} height={26} fill={techoC} stroke={KC.ink} strokeWidth={7} />
       <rect x={476} y={230} width={228} height={26} fill={glow(0.85 * (1 - blanco))} />
       <rect x={560} y={suelo - 80} width={50} height={80} fill="#8a5a33" stroke={KC.ink} strokeWidth={5} />
+      {suelo > 500 && [0, 1].map((i) => <rect key={'vc' + i} x={520 + i * 100} y={300} width={50} height={40} fill={dia > 0.5 ? '#bfe7ff' : KC.yellow} stroke={KC.ink} strokeWidth={4} />)}
       {/* banqueta, asfalto y subsuelo */}
       <rect x={0} y={suelo} width={w} height={18} fill="#d6d2c8" stroke={KC.ink} strokeWidth={5} />
       <rect x={0} y={suelo + 18} width={w} height={56} fill={IC.asfalto} />
@@ -259,14 +260,23 @@ function Calendario({ x, y, mes = 'FEB', s = 1 }) {
   </g>;
 }
 
+// Pase a mano cine: agranda un grupo k veces llevando el punto (cx, cy) a (tx, ty); zp hace lo mismo con un punto de una etiqueta.
+const Zg = ({ k, cx, cy, tx = 540, ty = 960, children }) => <g transform={`translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
+const zp = (z, x, y) => [z.tx + z.k * (x - z.cx), z.ty + z.k * (y - z.cy)];
+const ZI = { k: 1.15, cx: 540, cy: 900, tx: 540, ty: 930 };    // mapa térmico
+const ZP = { k: 1.4, cx: 270, cy: 900, tx: 540, ty: 1020 };    // termómetros de la pregunta
+const ZV = { k: 1.12, cx: 540, cy: 890, tx: 540, ty: 960 };    // Valle de México
+const ZF = { k: 1.35, cx: 380, cy: 860, tx: 540, ty: 960 };    // febrero: lunas y calendario
+const CY = 600, CH = 760;                                       // calle más alta (antes y=630, h=520)
+
 function IslaCalorShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, I: CUES.Isla, Te: CUES.Techos, N: CUES.Noche, E: CUES.Extra, P: CUES.Pregunta, Es: CUES.Estudio, F: CUES.Febrero, A: CUES.Arboles, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
   const partida = (t0, termico) => <>
-    <Cuarto T={T} x={30} y={700} tipo="ciudad" temp={klerp(0.35, 0.82, kprog(T, t0 + 0.1, t0 + 2.2, kEase.sale))} termico={termico} rotulo="ciudad" />
-    <Cuarto T={T} x={555} y={700} tipo="rancho" temp={klerp(0.6, 0.3, kprog(T, t0 + 0.1, t0 + 2.2, kEase.sale))} rotulo="rancho" />
+    <g transform="translate(72 340) scale(1.3)"><Cuarto T={T} x={0} y={0} w={720} h={430} tipo="ciudad" temp={klerp(0.35, 0.82, kprog(T, t0 + 0.1, t0 + 2.2, kEase.sale))} termico={termico} rotulo="ciudad" /></g>
+    <g transform="translate(72 919) scale(1.3)"><Cuarto T={T} x={0} y={0} w={720} h={430} tipo="rancho" temp={klerp(0.6, 0.3, kprog(T, t0 + 0.1, t0 + 2.2, kEase.sale))} rotulo="rancho" /></g>
   </>;
   // Techos: el sol carga los materiales
   const cargaTe = kprog(T, K.Te + 0.3, K.Te + 3.0, kEase.suave);
@@ -282,110 +292,110 @@ function IslaCalorShot() {
       <Escena T={T} a={K.G} b={K.I}>
         <FondoLunares color={KC.pink} />
         {svg(partida(K.G, 0))}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1620} color={KC.ink} />
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 2 · isla de calor vista desde arriba (cámara térmica esquemática) */}
       <Escena T={T} a={K.I} b={K.Te} zoom={0.08}>
         <FondoLunares color={KC.mint} />
-        {svg(<><MapaTermico T={T} calor={kprog(T, K.I + 0.1, K.I + 1.6, kEase.sale)} /><Leyenda /></>)}
-        <EscalaFija texto="esquema tipo cámara térmica" largo={0} y={1620} color={KC.ink} />
+        {svg(<><Zg {...ZI}><MapaTermico T={T} x={90} y={600} w={900} h={600} calor={kprog(T, K.I + 0.1, K.I + 1.6, kEase.sale)} /></Zg><Leyenda y={1360} /></>)}
+        <EscalaFija texto="esquema tipo cámara térmica" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 3 · de día: asfalto y concreto se tragan el sol; techo vs. aire */}
       <Escena T={T} a={K.Te} b={K.N}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Calle T={T} dia={1} carga={cargaTe} rayos={kprog(T, K.Te, K.Te + 0.6)} />
-          <Termometro x={260} y={750} alto={110} valor={klerp(0.3, 0.95, cargaTe)} etiqueta="techo" s={0.85} tam={34} />
-          <Termometro x={640} y={730} alto={110} valor={0.35} color={KC.orange} etiqueta="aire" s={0.85} tam={34} /></>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1620} color={KC.ink} />
+        {svg(<><Calle T={T} y={CY} h={CH} dia={1} carga={cargaTe} rayos={kprog(T, K.Te, K.Te + 0.6)} />
+          <Termometro x={260} y={720} alto={110} valor={klerp(0.3, 0.95, cargaTe)} etiqueta="techo" s={0.85} tam={34} />
+          <Termometro x={640} y={700} alto={110} valor={0.35} color={KC.orange} etiqueta="aire" s={0.85} tam={34} /></>)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 4 · de noche: lo sueltan lento; el campo ya se enfrió */}
       <Escena T={T} a={K.N} b={K.E}>
         <FondoLunares color={KC.orange} />
-        {svg(<Calle T={T} dia={diaN} carga={cargaN} suelta={kprog(T, K.N + 0.5, K.N + 1.2)} campo={1} />)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1620} color={KC.ink} />
+        {svg(<Calle T={T} y={CY} h={CH} dia={diaN} carga={cargaN} suelta={kprog(T, K.N + 0.5, K.N + 1.2)} campo={1} />)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 5 · más causas: pocos árboles, edificios que tapan el viento, coches y climas */}
       <Escena T={T} a={K.E} b={K.P}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Tarjeta T={T} x={30} y={740} at={K.E + 0.2} texto="pocos árboles">
+          <g transform="translate(150 430) scale(1.15)"><Tarjeta T={T} x={0} y={0} at={K.E + 0.2} texto="pocos árboles">
             <rect x={20} y={300} width={270} height={40} fill={IC.asfalto} /><circle cx={230} cy={90} r={40} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
             <path d="M 120 300 L 125 250 L 150 250 L 155 300 Z" fill="#8a5a33" stroke={KC.ink} strokeWidth={5} /><ellipse cx={138} cy={250} rx={18} ry={6} fill="#c8955f" stroke={KC.ink} strokeWidth={4} />
             <OndasCalor T={T} x={80} y={290} n={3} s={0.8} />
-          </Tarjeta>
-          <Tarjeta T={T} x={385} y={740} at={K.E + 1.3} texto="sin viento">
+          </Tarjeta></g>
+          <g transform="translate(573 430) scale(1.15)"><Tarjeta T={T} x={0} y={0} at={K.E + 1.3} texto="sin viento">
             <rect x={40} y={90} width={90} height={250} fill="#7d8597" stroke={KC.ink} strokeWidth={5} /><rect x={180} y={60} width={90} height={280} fill="#5f6779" stroke={KC.ink} strokeWidth={5} />
             {Array.from({ length: 5 }, (_, i) => <g key={i}><rect x={58} y={110 + i * 44} width={20} height={20} fill={KC.yellow} /><rect x={198} y={84 + i * 48} width={20} height={20} fill={KC.yellow} /></g>)}
             <path d={`M -10 ${150 + Math.sin(T * 4) * 4} L 30 150`} stroke={KC.blue} strokeWidth={10} strokeLinecap="round" />
             <path d="M 30 150 l -18 -14 m 18 14 l -18 14" stroke={KC.blue} strokeWidth={10} strokeLinecap="round" />
             <path d={`M 34 175 q -24 20 -6 40`} stroke={KC.blue} strokeWidth={8} fill="none" strokeLinecap="round" strokeDasharray="10 10" />
-          </Tarjeta>
-          <Tarjeta T={T} x={740} y={740} at={K.E + 2.6} texto="coches y climas">
+          </Tarjeta></g>
+          <g transform="translate(362 966) scale(1.15)"><Tarjeta T={T} x={0} y={0} at={K.E + 2.6} texto="coches y climas">
             <Coche x={140} y={330} s={0.9} />
             <OndasCalor T={T} x={30} y={300} n={2} s={0.8} />
             <Clima T={T} x={180} y={140} s={0.9} />
             <OndasCalor T={T} x={260} y={110} n={2} s={0.8} />
-          </Tarjeta></>)}
+          </Tarjeta></g></>)}
       </Escena>
       {/* 6 · re-gancho: ¿cuánto? de uno a casi tres grados de noche (EPA) */}
       <Escena T={T} a={K.P} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>
+        {svg(<Zg {...ZP}>
           <g opacity={1 - kprog(T, K.P + 1.5, K.P + 1.9)}><text x={270} y={1080} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 270 900)`}>?</text></g>
           <g opacity={kprog(T, K.P + 1.7, K.P + 2.2)}>
             <Termometro x={150} y={990} alto={300} valor={klerp(0.4, 0.72, kprog(T, K.P + 1.9, K.P + 3.2, kEase.sale))} etiqueta="ciudad" />
             <Termometro x={390} y={990} alto={300} valor={0.4} color={IC.frio} etiqueta="afuera" />
             <path d={`M 205 ${990 - 300 * klerp(0.4, 0.72, kprog(T, K.P + 1.9, K.P + 3.2, kEase.sale))} L 230 ${990 - 300 * klerp(0.4, 0.72, kprog(T, K.P + 1.9, K.P + 3.2, kEase.sale))} L 230 870 L 335 870`} stroke={KC.ink} strokeWidth={6} fill="none" strokeDasharray="12 8" />
-          </g></>)}
+          </g></Zg>)}
       </Escena>
       {/* 7 · el estudio: Jáuregui, UNAM, Centro contra Texcoco (1994-1995) */}
       <Escena T={T} a={K.Es} b={K.F}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<ValleMexico T={T} pines={kprog(T, K.Es + 1.6, K.Es + 3.6)} />)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1620} color={KC.ink} />
+        {svg(<Zg {...ZV}><ValleMexico T={T} pines={kprog(T, K.Es + 1.6, K.Es + 3.6)} /></Zg>)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 8 · 3 de cada 4: de noche · febrero: hasta 7.8 °C más */}
       <Escena T={T} a={K.F} b={K.A}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>
+        {svg(<Zg {...ZF}>
           {[0, 1, 2, 3].map((i) => <Turno key={i} x={150 + i * 170} y={740} r={64} noche={i < 3} e={kprog(T, K.F + 0.2 + i * 0.3, K.F + 0.6 + i * 0.3, kEase.rebote)} prendido={i < 3 ? 1 : 0.4} />)}
-          <g opacity={kprog(T, K.F + 3.0, K.F + 3.5)}><Calendario x={200} y={970} s={0.95} /></g></>)}
+          <g opacity={kprog(T, K.F + 3.0, K.F + 3.5)}><Calendario x={200} y={970} s={0.95} /></g></Zg>)}
       </Escena>
       {/* 9 · lo que sí ayuda: techos claros y árboles */}
       <Escena T={T} a={K.A} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<Calle T={T} dia={1} carga={cargaA} blanco={blanco} arboles={crecen} rayos={1} />)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1620} color={KC.ink} />
+        {svg(<Calle T={T} y={CY} h={CH} dia={1} carga={cargaA} blanco={blanco} arboles={crecen} rayos={1} />)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 10 · cierre: la pantalla partida del inicio, ahora en cámara térmica */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.pink} />
         {svg(partida(K.C - 1.0, kprog(T, K.C + 0.8, K.C + 2.0)))}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1620} color={KC.ink} />
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color={KC.ink} />
       </Escena>
 
       {/* datos y etiquetas */}
-      <Chip T={T} at={K.G + 0.3} until={K.I - 0.2} texto="tu noche vs. la de tu primo" x={330} y={520} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.G + 0.3} until={K.I - 0.2} texto="tu noche vs. la de tu primo" x={540} y={280} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.I + 0.3} until={K.Te - 0.2} texto="isla de calor urbana" x={540} y={470} tam={44} borde={KC.red} />
-      <Etq T={T} at={K.I + 1.2} until={K.Te - 0.2} x={500} y={900} texto="ciudad" lado="der" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.I + 1.5} until={K.Te - 0.2} x={140} y={700} texto="campo" lado="der" tam={34} color="#fff" />
+      <Etq T={T} at={K.I + 1.2} until={K.Te - 0.2}  x={500} y={945} texto="ciudad" lado="der" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.I + 1.5} until={K.Te - 0.2}  x={110} y={650} texto="campo" lado="der" tam={34} color="#fff" />
       <NumeroGigante T={T} at={K.Te + 2.4} until={K.N - 0.2} valor={36} dur={1.0} prefijo="+" sufijo=" °C" etiqueta="techo vs. aire" x={330} y={470} tam={150} color={KC.red} />
       <Chip T={T} at={K.Te + 2.8} until={K.N - 0.2} texto="techo común · día caluroso" y={1440} x={540} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.N + 1.0} until={K.E - 0.2} x={110} y={680} texto="el concreto suelta calor" lado="der" tam={30} color="#fff" />
+      <Etq T={T} at={K.N + 1.0} until={K.E - 0.2} x={110} y={650} texto="el concreto suelta calor" lado="der" tam={30} color="#fff" />
       <Chip T={T} at={K.N + 1.4} until={K.E - 0.2} texto="campo: ya se enfrió" y={1440} x={540} tam={34} borde={KC.blue} />
-      <NumeroGigante T={T} at={K.P + 2.2} until={K.Es - 0.2} valor={2.8} dec={1} dur={1.0} prefijo="+1 a " sufijo=" °C" etiqueta="de noche, en EE. UU." x={500} y={440} tam={120} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.P + 2.2} until={K.Es - 0.2} valor={2.8} dec={1} dur={1.0} prefijo="+1 a " sufijo=" °C" etiqueta="de noche, en EE. UU." x={540} y={440} tam={120} color={KC.yellow} />
       <Chip T={T} at={K.P + 2.6} until={K.Es - 0.2} texto="EPA, EE. UU. · revisión 2017" y={1440} x={540} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Es + 0.3} until={K.F - 0.2} texto="Jáuregui · UNAM" x={360} y={470} tam={44} borde={KC.gold} />
-      <Etq T={T} at={K.Es + 2.0} until={K.F - 0.2} x={390} y={1010} texto="Centro" lado="izq" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Es + 2.6} until={K.F - 0.2} x={760} y={1010} texto="Texcoco" lado="izq" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Es + 0.3} until={K.F - 0.2} texto="Jáuregui · UNAM" x={360} y={560} tam={44} borde={KC.gold} />
+      <Etq T={T} at={K.Es + 2.0} until={K.F - 0.2} x={zp(ZV, 390, 1010)[0]} y={zp(ZV, 390, 1010)[1]} texto="Centro" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Es + 2.6} until={K.F - 0.2} x={zp(ZV, 760, 1010)[0]} y={zp(ZV, 760, 1010)[1]} texto="Texcoco" lado="izq" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Es + 2.4} until={K.F - 0.2} texto="mayo 1994 – abril 1995" y={1440} x={540} tam={34} borde={KC.gold} />
-      <Chip T={T} at={K.F + 1.4} until={K.A - 0.2} texto="3 de cada 4: de noche" x={360} y={520} tam={40} borde={IC.noche} />
-      <NumeroGigante T={T} at={K.F + 3.4} until={K.A - 0.2} valor={7.8} dec={1} dur={1.0} prefijo="+" sufijo=" °C" etiqueta="máximo nocturno" x={680} y={960} tam={150} color={KC.red} />
+      <Chip T={T} at={K.F + 1.4} until={K.A - 0.2} texto="3 de cada 4: de noche" x={540} y={500} tam={40} borde={IC.noche} />
+      <NumeroGigante T={T} at={K.F + 3.4} until={K.A - 0.2} valor={7.8} dec={1} dur={1.0} prefijo="+" sufijo=" °C" etiqueta="máximo nocturno" x={720} y={1110} tam={160} color={KC.red} />
       <Chip T={T} at={K.F + 3.8} until={K.A - 0.2} texto="Centro vs. Texcoco · noches despejadas" y={1440} x={540} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.A + 1.4} until={K.C - 0.2} x={470} y={735} texto="techo claro" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.A + 1.4} until={K.C - 0.2} x={470} y={705} texto="techo claro" lado="izq" tam={28} color={KC.ink} />
       <NumeroGigante T={T} at={K.A + 4.6} until={K.C - 0.2} valor={1.6} dec={1} dur={1.0} prefijo="−" sufijo=" °C" etiqueta="bosque urbano" x={700} y={470} tam={140} color={KC.leaf} />
       <Chip T={T} at={K.A + 5.0} until={K.C - 0.2} texto="−1.6 °C en promedio (308 estudios, 2021)" y={1440} x={540} tam={28} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 0.6} until={K.Ou - 0.1} texto="isla de calor" x={330} y={520} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.C + 0.6} until={K.Ou - 0.1} texto="isla de calor" x={540} y={280} tam={44} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.I - 0.1} texto="Tu noche: *más caliente que en el rancho.*" />
