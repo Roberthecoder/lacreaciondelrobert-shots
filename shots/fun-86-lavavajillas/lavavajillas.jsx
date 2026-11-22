@@ -24,17 +24,17 @@ function Cocina({ T, abre = 0, vapor = 0, linea = 1, ojos = 0, aspersor = 0, cho
   const { x0, x1, top, panel, y1, gx0, gx1, gy0, gy1 } = LVD;
   const th = kclamp(abre, 0, 1) * Math.PI / 2, hPuerta = (y1 - panel) * Math.cos(th), ens = 40 * Math.sin(th);
   const ang = T * 400 * aspersor;
-  return <g transform="translate(0 -130)">
+  return <g transform="translate(0 40)">
     {/* cubierta y gabinetes */}
-    <rect x={-20} y={y1 - 10} width={1120} height={1200} fill="#e7c896" stroke={KC.ink} strokeWidth={7} />
-    {Array.from({ length: 9 }, (_, i) => <line key={i} x1={i * 135} y1={y1 + 80} x2={i * 135 - 150} y2={y1 + 1190} stroke="#d2ae74" strokeWidth={6} />)}
-    <line x1={-20} y1={y1 + 80} x2={1100} y2={y1 + 80} stroke="#d2ae74" strokeWidth={6} />
-    <rect x={-20} y={top + 50} width={240} height={y1 - top - 50} fill={LV.gabinete} stroke={KC.ink} strokeWidth={7} />
-    <rect x={860} y={top + 50} width={240} height={y1 - top - 50} fill={LV.gabinete} stroke={KC.ink} strokeWidth={7} />
+    <rect x={-20} y={y1 - 10} width={1120} height={1200} fill="#4a3824" stroke={KC.ink} strokeWidth={7} />
+    {Array.from({ length: 9 }, (_, i) => <line key={i} x1={i * 135} y1={y1 + 80} x2={i * 135 - 150} y2={y1 + 1190} stroke="#5e4730" strokeWidth={6} />)}
+    <line x1={-20} y1={y1 + 80} x2={1100} y2={y1 + 80} stroke="#5e4730" strokeWidth={6} />
+    <rect x={-20} y={top + 50} width={240} height={y1 - top - 50} fill="#3b3529" stroke={KC.ink} strokeWidth={7} />
+    <rect x={860} y={top + 50} width={240} height={y1 - top - 50} fill="#3b3529" stroke={KC.ink} strokeWidth={7} />
     <rect x={150} y={top + 120} width={14} height={110} rx={7} fill={LV.acero3} stroke={KC.ink} strokeWidth={3} />
     <rect x={916} y={top + 120} width={14} height={110} rx={7} fill={LV.acero3} stroke={KC.ink} strokeWidth={3} />
-    <rect x={-20} y={top - 50} width={1120} height={60} fill={LV.madera} stroke={KC.ink} strokeWidth={7} />
-    <rect x={-20} y={top + 4} width={1120} height={14} fill={LV.madera2} />
+    <rect x={-20} y={top - 50} width={1120} height={60} fill="#8a5a36" stroke={KC.ink} strokeWidth={7} />
+    <rect x={-20} y={top + 4} width={1120} height={14} fill="#6a4426" />
     {/* cuerpo */}
     <rect x={x0} y={top} width={x1 - x0} height={y1 - top} fill={LV.acero2} stroke={KC.ink} strokeWidth={7} />
     {/* interior de la tina */}
@@ -112,13 +112,13 @@ function EmpaqueCerca({ T, linea = 1 }) {
   const brillos = Array.from({ length: 9 }, () => ({ x: 60 + g() * 960, w: 20 + g() * 40 }));
   return <g>
     {/* pared de acero de la tina */}
-    <rect x={-20} y={300} width={1120} height={470} fill={LV.acero2} />
-    {Array.from({ length: 14 }, (_, i) => <line key={i} x1={i * 85} y1={300} x2={i * 85 - 40} y2={770} stroke={LV.acero} strokeWidth={10} opacity=".5" />)}
+    <rect x={-20} y={60} width={1120} height={710} fill="#6c767d" />
+    {Array.from({ length: 14 }, (_, i) => <line key={i} x1={i * 85} y1={60} x2={i * 85 - 60} y2={770} stroke={LV.acero2} strokeWidth={10} opacity=".35" />)}
     {/* labio de arriba, canal, labio de abajo */}
     <path d="M -20 760 L 1100 760 L 1100 840 Q 540 860 -20 840 Z" fill={LV.hule} stroke={KC.ink} strokeWidth={7} />
     <path d="M -20 840 Q 540 860 1100 840 L 1100 960 Q 540 985 -20 960 Z" fill={LV.hule2} stroke={KC.ink} strokeWidth={6} />
     <path d="M -20 960 Q 540 985 1100 960 L 1100 1050 L -20 1050 Z" fill={LV.hule} stroke={KC.ink} strokeWidth={7} />
-    <rect x={-20} y={1050} width={1120} height={200} fill={LV.acero} stroke={KC.ink} strokeWidth={7} />
+    <rect x={-20} y={1050} width={1120} height={260} fill="#8a949b" stroke={KC.ink} strokeWidth={7} />
     {/* la línea negra: viscosa, brillante, en el fondo del canal */}
     {linea > 0 && <g opacity={kclamp(linea * 1.4, 0, 1)}>
       <path d={'M -20 ' + 900 + ' ' + borde.map((p) => `L ${p.x} ${878 - p.a * linea}`).join(' ') + ' L 1100 880 L 1100 935 ' + borde.slice().reverse().map((p) => `L ${p.x} ${938 + p.b * linea}`).join(' ') + ' L -20 935 Z'} fill={LV.negro} />
@@ -338,6 +338,7 @@ function Ave({ T, x, y, s = 1 }) {
 
 // Subtítulo con cursiva: palabras con _guiones_ van en cursiva (nombres científicos); *asteriscos* = resaltado dorado.
 function SubtituloIt({ T, at, until, texto, idx, color = KC.gold2, tam = 64 }) {
+  if (!CINE_OPC.subtitulos) return null;
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
@@ -366,9 +367,9 @@ function LavavajillasShot() {
   const FIN = K.Ou + 4;
   // cámara del gancho: de la cocina completa al empaque de abajo
   const zG = kprog(T, K.G + 3.5, K.G + 4.9, kEase.suave);
-  const camG = camara(klerp(540, 420, zG), klerp(900, 1075, zG), klerp(1, 2.6, zG));
+  const camG = camara(klerp(540, 420, zG), klerp(900, 1160, zG), klerp(1, 2.6, zG));
   const zC = kprog(T, K.C + 2.0, K.C + 3.2, kEase.suave);
-  const camC = camara(klerp(540, 465, zC), klerp(900, 1075, zC), klerp(1, 2.6, zC));
+  const camC = camara(klerp(540, 465, zC), klerp(900, 1160, zC), klerp(1, 2.6, zC));
   const lupa = kprog(T, K.Em + 3.0, K.Em + 4.4, kEase.suave);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -378,16 +379,16 @@ function LavavajillasShot() {
         {fsvg(<>
           <g transform={camG}>
             <Cocina T={T} abre={kprog(T, K.G + 0.15, K.G + 0.9, kEase.sale)} vapor={kprog(T, K.G + 0.3, K.G + 1.0) * (1 - 0.6 * zG)} linea={1} />
-            <Caen T={T} at={K.G + 1.7} x={440} y0={510} y1={870} n={7} tipo="det" />
-            <Caen T={T} at={K.G + 2.6} x={640} y0={510} y1={960} n={8} tipo="sal" />
+            <Caen T={T} at={K.G + 1.7} x={440} y0={680} y1={1040} n={7} tipo="det" />
+            <Caen T={T} at={K.G + 2.6} x={640} y0={680} y1={1130} n={8} tipo="sal" />
           </g>
-          <g opacity={1 - zG}><TermoMini x={110} y={600} h={300} valor={klerp(20, 80, kprog(T, K.G + 0.6, K.G + 1.6, kEase.sale))} /></g>
+          <g opacity={1 - zG}><TermoMini x={110} y={770} h={300} valor={klerp(20, 80, kprog(T, K.G + 0.6, K.G + 1.6, kEase.sale))} /></g>
         </>)}
       </Escena>
       {/* 2 · el empaque de cerca: la línea negra puede ser una levadura negra */}
       <Escena T={T} a={K.Em} b={K.Mi} zoom={0.03} origen="40% 47%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 150)">
           <EmpaqueCerca T={T} linea={klerp(0.8, 1, kprog(T, K.Em, K.Em + 2))} />
           {lupa > 0 && <g>
             <circle cx={400} cy={900} r={300 * lupa + 14} fill="none" stroke={KC.white} strokeWidth={14} />
@@ -399,46 +400,49 @@ function LavavajillasShot() {
               {cadenaPts(560, 1040, -120, 6, 50, 0.03).map(([x, y], k) => <Celula key={'c' + k} x={x} y={y} tono={k % 2} />)}
             </g>
           </g>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 3 · al microscopio: brotan en cadenas largas y luego hacen hilos pardos */}
       <Escena T={T} a={K.Mi} b={K.Me} zoom={0.05} origen="45% 55%">
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
         {fsvg(<>
-          <Cadena T={T} at={K.Mi + 0.1} pts={CAD_A} />
-          <Cadena T={T} at={K.Mi + 0.3} pts={CAD_B} tono={1} />
-          <Cadena T={T} at={K.Mi + 1.3} pts={CAD_R} />
+          {/* campo del microscopio (el mismo aro de la lupa de la escena anterior) */}
+          <circle cx={540} cy={930} r={505} fill="rgba(120,150,210,.10)" stroke="rgba(235,242,255,.6)" strokeWidth={12} />
+          <g transform="translate(555 930) scale(1.2) translate(-570 -765)">
+          <Cadena T={T} at={K.Mi + 0.0} pts={CAD_A} cada={0.1} />
+          <Cadena T={T} at={K.Mi + 0.05} pts={CAD_B} tono={1} cada={0.1} />
+          <Cadena T={T} at={K.Mi + 0.8} pts={CAD_R} cada={0.18} />
           <Hifa T={T} at={K.Mi + 2.4} x={HIFA0[0] + 30} y={HIFA0[1]} n={4} ang={-12} />
           {/* colonia en la caja: negra, húmeda y brillante */}
-          {T > K.Mi + 3.3 && <g transform={`translate(900 560) scale(${0.85 * kprog(T, K.Mi + 3.3, K.Mi + 3.7, kEase.rebote)})`}>
+          {T > K.Mi + 3.3 && <g transform={`translate(860 560) scale(${0.85 * kprog(T, K.Mi + 3.3, K.Mi + 3.7, kEase.rebote)})`}>
             <Petri x={0} y={0} r={100} medio="#f1e3b6">
               {[[-30, -20, 34], [35, 10, 28], [-10, 45, 22], [40, -45, 18]].map(([a, b, r], i) => <g key={i}><Colonia cx={a} cy={b} r={r} color="#16130f" seed={i + 2} /><ellipse cx={a - r * 0.3} cy={b - r * 0.35} rx={r * 0.35} ry={r * 0.15} fill="#fff" opacity=".6" /></g>)}
             </Petri>
           </g>}
-        </>)}
+        </g></>)}
       </Escena>
       {/* 4 · la pared con melanina (escudo contra UV, oxidación y sequedad) */}
       <Escena T={T} a={K.Me} b={K.Ci} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} seed={9} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 930) scale(1.3) translate(-520 -830)">
           <CelulaCorte T={T} x={520} y={830} r={240} />
-          <Estres T={T} at={K.Me + 0.6} x0={150} y0={540} x1={355} y1={660} tipo="uv" texto="UV" />
-          <Estres T={T} at={K.Me + 1.2} x0={120} y0={960} x1={290} y1={890} tipo="ox" texto="oxidación" />
-          <Estres T={T} at={K.Me + 1.8} x0={930} y0={1040} x1={740} y1={940} tipo="seco" texto="sequedad" />
-        </>)}
+          <Estres T={T} at={K.Me + 0.6} x0={170} y0={540} x1={355} y1={660} tipo="uv" texto="UV" />
+          <Estres T={T} at={K.Me + 1.2} x0={250} y0={1010} x1={330} y1={935} tipo="ox" texto="oxidación" />
+          <Estres T={T} at={K.Me + 1.8} x0={790} y0={1060} x1={700} y1={990} tipo="seco" texto="sequedad" />
+        </g>)}
       </Escena>
       {/* 5 · cada lavado es extremo: calor, detergente, sal y agua alcalina */}
       <Escena T={T} a={K.Ci} b={K.P} zoom={0.04} origen="50% 60%">
         <FondoLunares color={KC.orange} />
         {fsvg(<>
           <Cocina T={T} abre={1} vapor={0.7} aspersor={1} chorros={kprog(T, K.Ci, K.Ci + 0.4)} display="80°" />
-          <TermoMini x={110} y={600} h={300} valor={klerp(60, 80, 0.5 + 0.5 * Math.sin((T - K.Ci) * 2.5))} />
-          <Caen T={T} at={K.Ci + 1.2} x={440} y0={570} y1={870} n={7} tipo="det" />
-          <Caen T={T} at={K.Ci + 2.2} x={640} y0={570} y1={960} n={8} tipo="sal" />
+          <TermoMini x={110} y={770} h={300} valor={klerp(60, 80, 0.5 + 0.5 * Math.sin((T - K.Ci) * 2.5))} />
+          <Caen T={T} at={K.Ci + 1.2} x={440} y0={740} y1={1040} n={7} tipo="det" />
+          <Caen T={T} at={K.Ci + 2.2} x={640} y0={740} y1={1130} n={8} tipo="sal" />
           {/* tira de pH que se pone azul (alcalina) */}
-          <g transform="translate(965 640)" opacity={kprog(T, K.Ci + 3.0, K.Ci + 3.3)}>
+          <g transform="translate(965 810)" opacity={kprog(T, K.Ci + 3.0, K.Ci + 3.3)}>
             <rect x={-20} y={0} width={40} height={220} rx={6} fill="#fffbe6" stroke={KC.ink} strokeWidth={5} />
             <rect x={-20} y={130} width={40} height={90} rx={6} fill={mixHex('#f2d64b', '#2346ff', kprog(T, K.Ci + 3.3, K.Ci + 4.0))} stroke={KC.ink} strokeWidth={5} />
           </g>
@@ -448,8 +452,8 @@ function LavavajillasShot() {
       <Escena T={T} a={K.P} b={K.Es} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Interrogacion T={T} x={270} y={1150} />
-          {Array.from({ length: 8 }, (_, i) => <MiniLava key={i} x={110 + i * 122} y={440} s={1.3 * kprog(T, K.P + 0.1 + i * 0.12, K.P + 0.4 + i * 0.12, kEase.rebote)} />)}
+          <Interrogacion T={T} x={540} y={1300} tam={620} />
+          {Array.from({ length: 8 }, (_, i) => <MiniLava key={i} x={110 + i * 122} y={1450} s={1.5 * kprog(T, K.P + 0.1 + i * 0.12, K.P + 0.4 + i * 0.12, kEase.rebote)} />)}
         </>)}
       </Escena>
       {/* 7 · el estudio: 189 lavavajillas de casas de todo el mundo */}
@@ -457,7 +461,7 @@ function LavavajillasShot() {
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           <MapaMundo T={T} at={K.Es + 2.2} />
-          {(() => { const u = kprog(T, K.Es + 0.4, K.Es + 2.2); return u > 0 && u < 1 ? <g transform="translate(840 960)"><MiniLava x={0} y={0} s={2.2} linea /><Hisopo x={-50 + Math.sin(u * Math.PI * 6) * 30} y={60} rot={-35} /></g> : null; })()}
+          {(() => { const u = kprog(T, K.Es + 0.4, K.Es + 2.2); return u > 0 && u < 1 ? <g transform="translate(560 1080) scale(2.4)"><MiniLava x={0} y={0} s={2.2} linea /><Hisopo x={-50 + Math.sin(u * Math.PI * 6) * 30} y={60} rot={-35} /></g> : null; })()}
         </>)}
       </Escena>
       {/* 8 · resultado: 62 % con hongos; en más de la mitad de esos, Exophiala */}
@@ -468,30 +472,30 @@ function LavavajillasShot() {
             const c = i % 20, f = Math.floor(i / 20), hongo = i < 62, exo = i < 35;
             const vg = kprog(T, K.Re + 1.0 + i * 0.012, K.Re + 1.2 + i * 0.012), vn = kprog(T, K.Re + 2.6 + i * 0.02, K.Re + 2.8 + i * 0.02);
             const col = exo && vn > 0.5 ? '#3a3a3a' : hongo && vg > 0.5 ? KC.leaf : LV.acero;
-            return <MiniLava key={i} x={84 + c * 48} y={720 + f * 56} s={0.68 * kprog(T, K.Re + 0.2 + i * 0.006, K.Re + 0.5 + i * 0.006, kEase.rebote)} color={col} linea={exo && vn > 0.5} />;
+            return <MiniLava key={i} x={162 + (i % 10) * 84} y={640 + Math.floor(i / 10) * 84} s={1.1 * kprog(T, K.Re + 0.2 + i * 0.006, K.Re + 0.5 + i * 0.006, kEase.rebote)} color={col} linea={exo && vn > 0.5} />;
           })}
         </>)}
       </Escena>
       {/* 9 · riesgo: en personas sanas casi nunca causa nada; puede colonizar pulmones con fibrosis quística */}
       <Escena T={T} a={K.Ri} b={K.La} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1000) scale(1.2) translate(-545 -805)">
           <Persona T={T} x={290} y={720} />
           <Marca x={430} y={600} ok s={kprog(T, K.Ri + 1.3, K.Ri + 1.7, kEase.rebote)} />
           {T > K.Ri + 3.0 && <g opacity={kprog(T, K.Ri + 3.0, K.Ri + 3.4)}><Pulmones T={T} x={790} y={840} s={0.95} manchas={kprog(T, K.Ri + 3.6, K.Ri + 5.2)} /></g>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 10 · también en lavadoras: 79 % de 70 lavadoras de casa en Eslovenia, 2015 */}
       <Escena T={T} a={K.La} b={K.Or} zoom={0.04} origen="70% 55%">
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(740 1060) scale(1.2) translate(-785 -925)">
           <Lavadora T={T} x={560} y={690} gira={1} cajon={kprog(T, K.La + 2.4, K.La + 2.9, kEase.sale)} manchas={kprog(T, K.La + 0.8, K.La + 1.8)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 11 · origen: nadie sabe; hipótesis, frutas de selva tropical */}
       <Escena T={T} a={K.Or} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.leaf} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1080) scale(1.15) translate(-540 -880)">
           {T < K.Or + 2.6 && <g opacity={1 - kprog(T, K.Or + 2.2, K.Or + 2.6)}><Interrogacion T={T} x={360} y={1120} color={KC.yellow} tam={560} /></g>}
           {T > K.Or + 2.2 && <g opacity={kprog(T, K.Or + 2.2, K.Or + 2.7)}>
             {[[-40, 520, 1.3, 10, '#1f8a3a'], [900, 640, 1.2, 170, '#2aa64a'], [-60, 1130, 1.4, -15, '#2aa64a'], [880, 1160, 1.3, 195, '#1f8a3a'], [640, 520, 0.9, 160, '#167a30']].map(([x, y, s, r, c], i) => <Hoja key={i} T={T} x={x} y={y} s={s} rot={r} color={c} seed={i} />)}
@@ -500,7 +504,7 @@ function LavavajillasShot() {
             <Pina x={680} y={880} s={0.9 * kprog(T, K.Or + 2.9, K.Or + 3.3, kEase.rebote)} />
             <Ave T={T} x={890} y={760} s={0.85 * kprog(T, K.Or + 3.2, K.Or + 3.6, kEase.rebote)} />
           </g>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · cierre: el mismo lavavajillas, la puerta se abre otra vez… y la línea negra sigue ahí, tranquila */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.02}>
@@ -509,7 +513,7 @@ function LavavajillasShot() {
           <g transform={camC}>
             <Cocina T={T} abre={kprog(T, K.C + 0.15, K.C + 0.9, kEase.sale)} vapor={kprog(T, K.C + 0.3, K.C + 1.0) * (1 - 0.6 * zC)} linea={1} ojos={kprog(T, K.C + 2.8, K.C + 3.2)} />
           </g>
-          <g opacity={1 - zC}><TermoMini x={110} y={600} h={300} valor={klerp(20, 80, kprog(T, K.C + 0.4, K.C + 1.4, kEase.sale))} /></g>
+          <g opacity={1 - zC}><TermoMini x={110} y={770} h={300} valor={klerp(20, 80, kprog(T, K.C + 0.4, K.C + 1.4, kEase.sale))} /></g>
         </>)}
       </Escena>
 
@@ -519,16 +523,16 @@ function LavavajillasShot() {
       <Chip T={T} at={K.G + 2.6} until={K.G + 3.4} texto="sal" x={260} y={560} tam={36} borde={KC.white} />
       <Chip T={T} at={K.G + 3.6} until={K.G + 4.7} texto="¿y aun así…?" x={300} y={560} tam={44} borde={KC.gold} />
       <Chip T={T} at={K.G + 4.8} until={K.Em - 0.3} texto="¡ahí vive un hongo!" x={360} y={560} tam={46} borde={KC.mint} />
-      <Etq T={T} at={K.Em + 0.8} until={K.Em + 2.9} x={600} y={862} texto="levadura negra" tam={34} color={KC.texto} />
-      <Etq T={T} at={K.Em + 1.2} until={K.Em + 2.9} x={600} y={918} texto="Exophiala" it tam={38} color={KC.gold2} />
-      <Chip T={T} at={K.Em + 1.6} until={K.Em + 2.9} texto="en el hule de la puerta" x={330} y={560} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Em + 3.4} until={K.Mi - 0.2} texto="AL MICROSCOPIO" x={330} y={520} tam={34} borde={KC.cyan} />
-      <Etq T={T} at={K.Mi + 0.9} until={K.Me - 0.3} x={325} y={600} texto="blastoconidios (brotan)" tam={28} color={KC.gold2} />
-      <Chip T={T} at={K.Mi + 1.6} until={K.Me - 0.3} texto="en cadenas largas" x={300} y={480} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.Mi + 3.0} until={K.Me - 0.3} x={1040} y={660} lado="izq" texto="hifa parda con septos" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.Mi + 3.5} until={K.Me - 0.3} texto="colonia: negra, húmeda y brillante" x={640} y={400} tam={26} borde={KC.ink} />
-      <Etq T={T} at={K.Me + 0.4} until={K.Ci - 0.3} x={765} y={760} texto="melanina" tam={34} color={KC.gold2} />
-      <Etq T={T} at={K.Me + 0.4} until={K.Ci - 0.3} x={765} y={808} texto="(en la pared)" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Em + 0.8} until={K.Em + 2.9} x={600} y={1012} texto="levadura negra" tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Em + 1.2} until={K.Em + 2.9} x={600} y={1068} texto="Exophiala" it tam={38} color={KC.gold2} />
+      <Chip T={T} at={K.Em + 1.6} until={K.Em + 2.9} texto="en el hule de la puerta" x={330} y={640} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Em + 3.4} until={K.Mi - 0.2} texto="AL MICROSCOPIO" x={400} y={640} tam={34} borde={KC.cyan} />
+      <Etq T={T} at={K.Mi + 0.9} until={K.Me - 0.3} x={261} y={732} texto="blastoconidios (brotan)" tam={28} color={KC.gold2} />
+      <Chip T={T} at={K.Mi + 1.6} until={K.Me - 0.3} texto="en cadenas largas" x={275} y={590} tam={32} borde={KC.gold} />
+      <Etq T={T} at={K.Mi + 3.0} until={K.Me - 0.3} x={1045} y={805} lado="izq" texto="hifa parda con septos" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.Mi + 3.5} until={K.Me - 0.3} texto="colonia: negra, húmeda y brillante" x={639} y={500} tam={26} borde={KC.ink} />
+      <Etq T={T} at={K.Me + 0.4} until={K.Ci - 0.3} x={770} y={700} texto="melanina" tam={34} color={KC.gold2} />
+      <Etq T={T} at={K.Me + 0.4} until={K.Ci - 0.3} x={770} y={748} texto="(en la pared)" tam={26} color={KC.texto} />
       <Chip T={T} at={K.Me + 2.3} until={K.Ci - 0.3} texto="pigmento = escudo" x={330} y={420} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.Ci + 0.3} until={K.P - 0.3} texto="60–80 °C, a ratos" x={290} y={400} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Ci + 1.2} until={K.P - 0.3} texto="detergente agresivo" x={780} y={400} tam={32} borde={LV.azul} />
@@ -537,18 +541,18 @@ function LavavajillasShot() {
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.1} anio="2011" quien="Eslovenia · Zalar y colaboradores" revista="Fungal Biology" y={620} />
       <NumeroGigante T={T} at={K.Es + 2.3} until={K.Re - 0.3} valor={189} dur={1.4} etiqueta="lavavajillas de casas" x={540} y={470} tam={180} color={KC.gold2} />
       <Chip T={T} at={K.Es + 3.0} until={K.Re - 0.3} texto="101 ciudades y pueblos" x={540} y={650} tam={30} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Re + 0.2} until={K.Ri - 0.3} valor={62} dur={1.0} sufijo=" %" etiqueta="tenía hongos en el hule" x={380} y={470} tam={170} color={KC.leaf} />
-      <Chip T={T} at={K.Re + 2.7} until={K.Ri - 0.3} texto={<><i>Exophiala</i>: en el 56 % de los que tenían hongos</>} x={540} y={1010} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.Ri + 0.4} until={K.La - 0.3} texto="¿es peligrosa?" x={300} y={420} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.Ri + 1.4} until={K.La - 0.3} texto="personas sanas: casi nunca causa nada" x={540} y={1105} tam={28} borde={KC.leaf} />
-      <Chip T={T} at={K.Ri + 3.4} until={K.La - 0.3} texto="fibrosis quística: puede colonizar los pulmones" x={540} y={1105} tam={26} borde={KC.red} />
-      <NumeroGigante T={T} at={K.La + 0.7} until={K.Or - 0.3} valor={79} dur={1.0} sufijo=" %" etiqueta="de 70 lavadoras de casa" x={330} y={480} tam={170} color={KC.yellow} />
-      <Chip T={T} at={K.La + 1.4} until={K.Or - 0.3} texto="Eslovenia, 2015" x={330} y={660} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.La + 2.6} until={K.Or - 0.3} x={575} y={735} lado="izq" texto="cajón del detergente" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.La + 3.0} until={K.Or - 0.3} x={655} y={1000} lado="izq" texto="hule de la puerta" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Or + 0.4} until={K.Or + 2.3} texto="origen: desconocido" x={360} y={460} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.Or + 2.4} until={K.C - 0.3} texto="HIPÓTESIS" x={260} y={440} tam={48} borde={KC.yellow} fondo={KC.red} />
-      <Chip T={T} at={K.Or + 3.4} until={K.C - 0.3} texto="la han hallado en frutas tropicales de Tailandia" x={540} y={1050} tam={26} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Re + 0.2} until={K.Ri - 0.3} valor={62} dur={1.0} sufijo=" %" etiqueta="tenía hongos en el hule" x={540} y={470} tam={170} color={KC.leaf} />
+      <Chip T={T} at={K.Re + 2.7} until={K.Ri - 0.3} texto={<><i>Exophiala</i>: en el 56 % de los que tenían hongos</>} x={540} y={1480} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Ri + 0.4} until={K.La - 0.3} texto="¿es peligrosa?" x={300} y={600} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.Ri + 1.4} until={K.La - 0.3} texto="personas sanas: casi nunca causa nada" x={540} y={1370} tam={28} borde={KC.leaf} />
+      <Chip T={T} at={K.Ri + 3.4} until={K.La - 0.3} texto="fibrosis quística: puede colonizar los pulmones" x={540} y={1370} tam={26} borde={KC.red} />
+      <NumeroGigante T={T} at={K.La + 0.7} until={K.Or - 0.3} valor={79} dur={1.0} sufijo=" %" etiqueta="de 70 lavadoras de casa" x={330} y={600} tam={170} color={KC.yellow} />
+      <Chip T={T} at={K.La + 1.4} until={K.Or - 0.3} texto="Eslovenia, 2015" x={300} y={760} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.La + 2.6} until={K.Or - 0.3} x={488} y={832} lado="izq" texto="cajón del detergente" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.La + 3.0} until={K.Or - 0.3} x={584} y={1150} lado="izq" texto="hule de la puerta" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Or + 0.4} until={K.Or + 2.3} texto="origen: desconocido" x={360} y={490} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.Or + 2.4} until={K.C - 0.3} texto="HIPÓTESIS" x={260} y={400} tam={48} borde={KC.yellow} fondo={KC.red} />
+      <Chip T={T} at={K.Or + 3.4} until={K.C - 0.3} texto="la han hallado en frutas tropicales de Tailandia" x={540} y={1330} tam={26} borde={KC.ink} />
       <Chip T={T} at={K.C + 0.7} until={K.C + 2.0} texto="hasta 80 °C" x={260} y={420} tam={36} borde={KC.red} />
       <Chip T={T} at={K.C + 3.2} until={K.Ou} texto="tan tranquila" x={380} y={640} tam={48} borde={KC.mint} />
 
@@ -556,11 +560,11 @@ function LavavajillasShot() {
       <BarraEscala T={T} at={K.G} until={K.G + 3.6} texto="10 cm" largo={113} />
       <BarraEscala T={T} at={K.G + 4.6} until={K.Em} texto="5 cm" largo={147} />
       <BarraEscala T={T} at={K.Em} until={K.Mi} texto="1 cm" largo={120} />
-      <BarraEscala T={T} at={K.Mi} until={K.Me} texto="10 µm" largo={104} />
-      <BarraEscala T={T} at={K.Me} until={K.Ci} texto="1 µm" largo={104} />
+      <BarraEscala T={T} at={K.Mi} until={K.Me} texto="10 µm" largo={125} />
+      <BarraEscala T={T} at={K.Me} until={K.Ci} texto="1 µm" largo={135} />
       <BarraEscala T={T} at={K.Ci} until={K.P} texto="10 cm" largo={113} />
-      <BarraEscala T={T} at={K.La} until={K.Or} texto="10 cm" largo={75} />
-      <BarraEscala T={T} at={K.Or + 2.4} until={K.C} texto="10 cm" largo={100} />
+      <BarraEscala T={T} at={K.La} until={K.Or} texto="10 cm" largo={90} />
+      <BarraEscala T={T} at={K.Or + 2.4} until={K.C} texto="10 cm" largo={115} />
       <BarraEscala T={T} at={K.C} until={K.C + 2.1} texto="10 cm" largo={113} />
       <BarraEscala T={T} at={K.C + 3.2} until={K.Ou} texto="5 cm" largo={147} />
 
