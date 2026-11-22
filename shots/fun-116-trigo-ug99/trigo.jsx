@@ -265,7 +265,7 @@ const CICLO = [
 ];
 const cicloXY = (ang) => [CICLO_C[0] + Math.cos(ang * Math.PI / 180) * CICLO_R, CICLO_C[1] + Math.sin(ang * Math.PI / 180) * CICLO_R];
 const ARB2 = Array.from({ length: 12 }, (_, i) => [170 + (i % 4) * 247, 830 + Math.floor(i / 4) * 190]);
-const PARCELAS = [[170, 1170], [417, 1170], [663, 1170], [910, 1170]];
+const PARCELAS = [[170, 1290], [417, 1290], [663, 1290], [910, 1290]];   // bajadas en la vuelta de encuadre
 
 function TrigoShot() {
   const { T, CUES } = useComposition();
@@ -373,7 +373,7 @@ function TrigoShot() {
       <Escena T={T} a={K.U} b={K.S} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <MapaAfrica x={40} y={330} k={7.5}>{(P) => { const [ux, uy] = P(29.9, -1.3); const pul = kprog(T, K.U + 0.4, K.U + 0.9, kEase.rebote);
+          <MapaAfrica x={40} y={420} k={9.5}>{(P) => { const [ux, uy] = P(29.9, -1.3); const pul = kprog(T, K.U + 0.4, K.U + 0.9, kEase.rebote);
             return <g><circle cx={ux} cy={uy} r={46 * pul + Math.sin(T * 6) * 4 * pul} fill="none" stroke={KC.red} strokeWidth={8} /><circle cx={ux} cy={uy} r={16 * pul} fill={KC.red} stroke="#0b1020" strokeWidth={4} /></g>; }}</MapaAfrica>
           {PARCELAS.map(([x, y], i) => <Parcela key={i} T={T} x={x} y={y} s={1.12} seed={i + 1} roya={kprog(T, K.U + 2.2 + i * 0.3, K.U + 3.2 + i * 0.3)} />)}
         </>)}
@@ -453,8 +453,8 @@ function TrigoShot() {
       <TarjetaEstudio T={T} at={K.Ca + 0.2} until={K.P - 0.3} anio="1918" quien="EE. UU. vs. agracejo" revista="hasta 1980 · Plant Dis. 2005" x={335} y={440} />
       <NumeroGigante T={T} at={K.Ca + 1.3} until={K.P - 0.3} valor={500} dur={2.6} prefijo="+" sufijo=" millones" etiqueta="de agracejos destruidos" x={540} y={1400} tam={110} color={KC.yellow} />
       <TarjetaEstudio T={T} at={K.U + 0.6} until={K.S - 0.3} anio="1999" quien="Kalengyere, Uganda" revista="feb. 1999 · Plant Disease, 2000" x={805} y={445} />
-      <Etq T={T} at={K.U + 0.9} until={K.S - 0.3} x={452} y={625} texto="Uganda" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.U + 2.6} until={K.S - 0.3} texto="trigos con el gen Sr31: con roya" x={540} y={1345} tam={32} borde={TG.ladrillo} />
+      <Etq T={T} at={K.U + 0.9} until={K.S - 0.3} x={548} y={793} texto="Uganda" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.U + 2.6} until={K.S - 0.3} texto="trigos con el gen Sr31: con roya" x={540} y={1462} tam={32} borde={TG.ladrillo} />
       <TextoGrande T={T} at={K.S + 2.3} until={K.B - 0.3} texto="Ug99" x={330} y={430} tam={170} color={TG.roya2} />
       <Etq T={T} at={K.S + 2.8} until={K.B - 0.3} x={60} y={560} texto="Ug = Uganda · 99 = 1999" tam={28} color={KC.ink} />
       <Etq T={T} at={K.S + 0.5} until={K.S + 2.2} x={60} y={470} texto="gen de resistencia Sr31" tam={30} color={KC.ink} />
