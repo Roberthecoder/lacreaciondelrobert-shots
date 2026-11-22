@@ -1,7 +1,7 @@
 // cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #01 · Día de Muertos · Ambiental: las mariposas monarca — NARRADO (N2 "El número" + viaje de ida y vuelta a la misma imagen).
 // Guion y fuentes: guion.md. El dibujo es esquemático (mariposas, mapa, árboles y oruga simplificados).
-const NARANJA = '#ff8a1f', NARANJA2 = '#f26a0f', OYAMEL = '#1f6b4a', OYAMEL2 = '#16523a';
+const NEGRO = '#0b1020', NARANJA = '#ff8a1f', NARANJA2 = '#f26a0f', OYAMEL = '#1f6b4a', OYAMEL2 = '#16523a';
 
 // Mariposa monarca vista desde arriba: alas naranjas con venas y borde negros y puntos blancos.
 // ala: 0..1 apertura (1 = abiertas). Antenas con botoncito. Centro en (0,0), cuerpo de -34 a 40.
@@ -10,8 +10,9 @@ function Ala({ arriba = true }) {
   const venas = arriba ? ['M 8 -4 L 96 -56', 'M 10 -2 L 100 -36', 'M 12 0 L 88 -16', 'M 30 -26 L 70 -64'] : ['M 8 8 L 70 50', 'M 8 10 L 44 64', 'M 10 8 L 76 30'];
   const puntos = arriba ? [[100, -52], [106, -42], [102, -30], [92, -18], [80, -10], [88, -62]] : [[72, 40], [66, 54], [52, 62], [36, 60], [76, 28]];
   return <g>
-    <path d={d} fill={NARANJA} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
-    {venas.map((v, i) => <path key={i} d={v} stroke={KC.ink} strokeWidth={3.2} fill="none" />)}
+    <path d={d} fill="none" stroke="#ffb872" strokeWidth={12} strokeLinejoin="round" />
+    <path d={d} fill={NARANJA} stroke={NEGRO} strokeWidth={9} strokeLinejoin="round" />
+    {venas.map((v, i) => <path key={i} d={v} stroke={NEGRO} strokeWidth={3.2} fill="none" />)}
     {puntos.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={2.6} fill="#fff" />)}
   </g>;
 }
@@ -20,10 +21,10 @@ function Monarca({ x, y, s = 1, rot = 0, ala = 1, o = 1 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={o}>
     <g transform={`scale(${a} 1)`}><Ala arriba /><Ala arriba={false} /></g>
     <g transform={`scale(${-a} 1)`}><Ala arriba /><Ala arriba={false} /></g>
-    <path d="M -3 -26 Q -14 -60 -26 -78 M 3 -26 Q 14 -60 26 -78" stroke={KC.ink} strokeWidth={3.5} fill="none" />
-    <circle cx={-26} cy={-78} r={5} fill={KC.ink} /><circle cx={26} cy={-78} r={5} fill={KC.ink} />
-    <ellipse cx={0} cy={6} rx={7} ry={34} fill={KC.ink} />
-    <circle cx={0} cy={-28} r={8} fill={KC.ink} />
+    <path d="M -3 -26 Q -14 -60 -26 -78 M 3 -26 Q 14 -60 26 -78" stroke="#ffb872" strokeWidth={3.5} fill="none" />
+    <circle cx={-26} cy={-78} r={5} fill="#ffb872" /><circle cx={26} cy={-78} r={5} fill="#ffb872" />
+    <ellipse cx={0} cy={6} rx={7} ry={34} fill={NEGRO} stroke="#ffb872" strokeWidth={1.5} />
+    <circle cx={0} cy={-28} r={8} fill={NEGRO} stroke="#ffb872" strokeWidth={1.5} />
   </g>;
 }
 // Hoja seca naranja (lo que "parece" la nube antes de revelarse).
@@ -34,7 +35,7 @@ function Hoja({ x, y, s = 1, rot = 0, o = 1 }) {
   </g>;
 }
 // Nube de mariposas: n partículas que se mecen. revela 0 = hojas, 1 = mariposas.
-function Nube({ T, n = 46, revela = 1, cx = 540, cy = 760, ancho = 860, alto = 520, s = 0.62, seed = 9, llega = 1 }) {
+function Nube({ T, n = 46, revela = 1, cx = 540, cy = 730, ancho = 900, alto = 840, s = 0.95, seed = 9, llega = 1 }) {
   const r = krng(seed);
   const ps = Array.from({ length: n }, () => ({ u: r() - 0.5, v: r() - 0.5, f: 0.6 + r() * 0.9, ph: r() * 6.28, rot: r() * 360, k: 0.7 + r() * 0.6 }));
   return <g>{ps.map((p, i) => {
@@ -47,10 +48,12 @@ function Nube({ T, n = 46, revela = 1, cx = 540, cy = 760, ancho = 860, alto = 5
   })}</g>;
 }
 // Oyamel (abeto): pisos de triángulos verdes con tronco.
-function Oyamel({ x, y, s = 1, color = OYAMEL }) {
+function Oyamel({ x, y, s = 1, color = OYAMEL, linea = '#8fd9b0' }) {
+  if (s < 0.02) return null;
+  const tr = Math.min(6, 4.5 / s);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-14} y={-10} width={28} height={70} fill="#6b4024" stroke={KC.ink} strokeWidth={6} />
-    {[0, 1, 2, 3].map((k) => <path key={k} d={`M 0 ${-300 + k * 70} L ${70 + k * 26} ${-170 + k * 70} L ${-70 - k * 26} ${-170 + k * 70} Z`} fill={k % 2 ? color : OYAMEL2} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />)}
+    <rect x={-14} y={-10} width={28} height={70} fill="#6b4024" stroke={linea} strokeWidth={tr} />
+    {[0, 1, 2, 3].map((k) => <path key={k} d={`M 0 ${-300 + k * 70} L ${70 + k * 26} ${-170 + k * 70} L ${-70 - k * 26} ${-170 + k * 70} Z`} fill={k % 2 ? color : OYAMEL2} stroke={linea} strokeWidth={tr} strokeLinejoin="round" />)}
   </g>;
 }
 // Flor de cempasúchil (esquemática).
@@ -62,14 +65,17 @@ function Cempa({ x, y, s = 1, T = 0 }) {
   </g>;
 }
 // Bosque de oyameles con cempasúchil al pie.
-function Bosque({ T, fondo = KC.cyan }) {
-  return <div style={{ position:'absolute', inset:0, background:fondo }}>
+function Bosque({ T, fondo = KC.cyan, atenua = 0 }) {
+  const cielo = mixHex(fondo, '#0a0f1c', 0.74);
+  return <div style={{ position:'absolute', inset:0, background:`linear-gradient(180deg, #070c18 0%, ${cielo} 62%, #0d2a22 100%)` }}>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-      <circle cx={880} cy={330} r={90} fill={KC.yellow} opacity=".8" />
-      {[[90, 1500, 1.5], [330, 1460, 1.25], [560, 1520, 1.6], [800, 1470, 1.3], [1020, 1510, 1.5]].map(([x, y, s], i) => <Oyamel key={i} x={x} y={y} s={s} color={i % 2 ? '#2a8a5c' : OYAMEL} />)}
-      <rect x={0} y={1560} width={KW} height={400} fill="#224423" />
-      {Array.from({ length: 9 }, (_, i) => <Cempa key={i} T={T} x={60 + i * 120} y={1600 + (i % 2) * 40} s={0.9} />)}
+      <circle cx={880} cy={300} r={90} fill={KC.yellow} opacity=".6" />
+      <g opacity=".55">{[[-30, 1370, 2.5], [250, 1340, 2.25], [540, 1380, 2.6], [830, 1340, 2.25], [1110, 1370, 2.5]].map(([x, y, s], i) => <Oyamel key={i} x={x} y={y} s={s} color="#1c6146" />)}</g>
+      {[[110, 1575, 2.45], [400, 1555, 2.15], [690, 1585, 2.55], [985, 1555, 2.25]].map(([x, y, s], i) => <Oyamel key={i} x={x} y={y} s={s} color={i % 2 ? '#2a8a5c' : OYAMEL} />)}
+      <rect x={0} y={1590} width={KW} height={400} fill="#10261a" />
+      {Array.from({ length: 8 }, (_, i) => <Cempa key={i} T={T} x={70 + i * 135} y={1640 + (i % 2) * 40} s={1.25} />)}
     </svg>
+    {atenua > 0 && <div style={{ position:'absolute', inset:0, background:`rgba(8,12,22,${atenua})` }}></div>}
   </div>;
 }
 // Papel picado: banderitas de colores con cortes.
@@ -95,11 +101,12 @@ function Vela({ x, y, T, s = 1 }) {
 }
 // Algodoncillo (Asclepias): tallo con hojas y flores rosadas. vida 0..1 (0 = se secó y desapareció).
 function Algodoncillo({ x, y, s = 1, vida = 1, T = 0 }) {
-  return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={0.2 + 0.8 * vida}>
+  const tr = Math.min(5, 5.5 / s);
+  return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={0.5 + 0.5 * vida}>
     <path d="M 0 0 L 0 -300" stroke={mixHex('#9a7a4a', '#3a9a3a', vida)} strokeWidth={10} />
     {[-60, -130, -200].map((yy, i) => <g key={i}>
-      <ellipse cx={-48} cy={yy} rx={48} ry={18} fill={mixHex('#b89a5a', KC.leaf, vida)} stroke={KC.ink} strokeWidth={5} transform={`rotate(${-20 + Math.sin(T + i) * 4} 0 ${yy})`} />
-      <ellipse cx={48} cy={yy - 20} rx={48} ry={18} fill={mixHex('#b89a5a', KC.leaf, vida)} stroke={KC.ink} strokeWidth={5} transform={`rotate(${20 + Math.sin(T + i) * 4} 0 ${yy - 20})`} />
+      <ellipse cx={-48} cy={yy} rx={48} ry={18} fill={mixHex('#b89a5a', KC.leaf, vida)} stroke={KC.ink} strokeWidth={tr} transform={`rotate(${-20 + Math.sin(T + i) * 4} 0 ${yy})`} />
+      <ellipse cx={48} cy={yy - 20} rx={48} ry={18} fill={mixHex('#b89a5a', KC.leaf, vida)} stroke={KC.ink} strokeWidth={tr} transform={`rotate(${20 + Math.sin(T + i) * 4} 0 ${yy - 20})`} />
     </g>)}
     {vida > 0.3 && Array.from({ length: 7 }, (_, i) => <circle key={i} cx={Math.cos(i) * 26} cy={-318 + Math.sin(i * 2) * 16} r={11} fill="#f28ab2" stroke={KC.ink} strokeWidth={3} opacity={vida} />)}
   </g>;
@@ -108,30 +115,33 @@ function Algodoncillo({ x, y, s = 1, vida = 1, T = 0 }) {
 function Oruga({ x, y, s = 1, T = 0 }) {
   const seg = 9;
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    {Array.from({ length: seg }, (_, i) => { const yy = Math.sin(T * 6 - i * 0.7) * 6; const cols = [KC.yellow, KC.ink, '#fff'];
-      return <g key={i}><circle cx={i * 30} cy={yy} r={24} fill={cols[i % 3]} stroke={KC.ink} strokeWidth={4} />
+    {Array.from({ length: seg }, (_, i) => { const yy = Math.sin(T * 6 - i * 0.7) * 6; const cols = [KC.yellow, NEGRO, '#fff'];
+      return <g key={i}><circle cx={i * 30} cy={yy} r={24} fill={cols[i % 3]} stroke={KC.ink} strokeWidth={2.5} />
         <rect x={i * 30 - 6} y={yy - 24} width={12} height={48} fill={cols[(i + 1) % 3]} opacity=".85" /></g>; })}
-    <circle cx={-26} cy={Math.sin(T * 6) * 6} r={26} fill={KC.ink} />
+    <circle cx={-26} cy={Math.sin(T * 6) * 6} r={26} fill={NEGRO} stroke={KC.ink} strokeWidth={2.5} />
     <path d={`M -30 ${-22 + Math.sin(T * 6) * 6} q -10 -30 -26 -36 M ${seg * 30 - 10} -18 q 10 -30 26 -34`} stroke={KC.ink} strokeWidth={5} fill="none" />
   </g>;
 }
 // Pájaro esquemático (tipo chara azul). abre 0..1 el pico.
 function Pajaro({ x, y, s = 1, abre = 0, rot = 0 }) {
+  const k = Math.min(1, 1.1 / s);
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
-    <ellipse cx={0} cy={0} rx={110} ry={74} fill="#3a7bff" stroke={KC.ink} strokeWidth={7} />
-    <path d="M 60 -20 L 150 -60 L 120 10 Z" fill="#2457d6" stroke={KC.ink} strokeWidth={6} />
-    <path d="M -20 -10 Q 30 40 90 10" fill="#2457d6" stroke={KC.ink} strokeWidth={6} />
-    <path d="M -70 -40 L -110 -100 L -60 -60 Z" fill="#2457d6" stroke={KC.ink} strokeWidth={6} />
-    <circle cx={-60} cy={-20} r={14} fill="#fff" stroke={KC.ink} strokeWidth={4} /><circle cx={-64} cy={-20} r={6} fill={KC.ink} />
-    <path d={`M -100 -6 L -160 ${-4 - abre * 26} L -104 6 Z`} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
-    <path d={`M -104 8 L -158 ${14 + abre * 26} L -100 18 Z`} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
+    <ellipse cx={0} cy={0} rx={110} ry={74} fill="#3a7bff" stroke={KC.ink} strokeWidth={7 * k} />
+    <path d="M 60 -20 L 150 -60 L 120 10 Z" fill="#2457d6" stroke={KC.ink} strokeWidth={6 * k} />
+    <path d="M -20 -10 Q 30 40 90 10" fill="#2457d6" stroke={KC.ink} strokeWidth={6 * k} />
+    <path d="M -70 -40 L -110 -100 L -60 -60 Z" fill="#2457d6" stroke={KC.ink} strokeWidth={6 * k} />
+    <circle cx={-60} cy={-20} r={14} fill="#fff" stroke={KC.ink} strokeWidth={4 * k} /><circle cx={-64} cy={-20} r={6} fill={NEGRO} />
+    <path d={`M -100 -6 L -160 ${-4 - abre * 26} L -104 6 Z`} fill={KC.yellow} stroke={KC.ink} strokeWidth={5 * k} />
+    <path d={`M -104 8 L -158 ${14 + abre * 26} L -100 18 Z`} fill={KC.yellow} stroke={KC.ink} strokeWidth={5 * k} />
   </g>;
 }
 function Tocon({ x, y, s = 1 }) {
+  if (s < 0.02) return null;
+  const k = Math.min(1, 1.2 / s);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <rect x={-50} y={-60} width={100} height={90} fill="#8a5a34" stroke={KC.ink} strokeWidth={7} />
-    <ellipse cx={0} cy={-60} rx={50} ry={20} fill="#e9c48c" stroke={KC.ink} strokeWidth={7} />
-    <ellipse cx={0} cy={-60} rx={28} ry={10} fill="none" stroke="#b07a46" strokeWidth={4} />
+    <rect x={-50} y={-60} width={100} height={90} fill="#8a5a34" stroke={KC.ink} strokeWidth={7 * k} />
+    <ellipse cx={0} cy={-60} rx={50} ry={20} fill="#e9c48c" stroke={KC.ink} strokeWidth={7 * k} />
+    <ellipse cx={0} cy={-60} rx={28} ry={10} fill="none" stroke="#b07a46" strokeWidth={4 * k} />
   </g>;
 }
 
@@ -142,15 +152,16 @@ function Monarcas() {
   const svg = (c, z) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{c}</svg>;
   const revela = kprog(T, K.G + 2.2, K.G + 3.2, kEase.suave);
   // mapa: Michoacán (-100.3, 19.6) y Edomex (-99.8, 19.4)
-  const MAPX = -120, MAPY = 420, MAPW = 1250, sM = MAPW / 1000;
+  const MAPX = -120, MAPY = 500, MAPW = 1250, sM = MAPW / 1000;
   const pm = (lon, lat) => { const [a, b] = mxProy(lon, lat); return [MAPX + a * sM, MAPY + b * sM]; };
   const [mx, my] = pm(-100.3, 19.6), [ex, ey] = pm(-99.7, 19.35);
   const vuelo = kprog(T, K.Vi + 0.6, K.Vi + 4.4, kEase.suave);
   // generaciones
   const gens = ['sale de México', 'hija', 'nieta', 'bisnieta', 'tataranieta'];
   // barras de la comparación (propias, en la mitad izquierda: Robert grande a la derecha)
-  const g = kprog(T, K.An + 0.5, K.An + 1.6, kEase.sale), g2 = kprog(T, K.An + 1.4, K.An + 2.2, kEase.sale);
-  const H = 560, base = 1080;
+  // la barra de este invierno (2.93, ya dicha en la escena anterior) está desde que empieza la escena; la de 1996–97 crece a su lado
+  const g = kprog(T, K.An + 0.2, K.An + 1.5, kEase.sale), g2 = kprog(T, K.An - 0.4, K.An + 0.3, kEase.sale);
+  const H = 860, base = 1390;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la nube de "hojas" que son mariposas, sobre el bosque de oyamel */}
@@ -163,11 +174,11 @@ function Monarcas() {
         <FondoLunares color={KC.yellow} />
         {svg(<>
           <MapaMexico x={MAPX} y={MAPY} ancho={MAPW} />
-          <path d={`M 470 200 C 520 380 ${mx - 40} 600 ${mx} ${my}`} stroke={KC.ink} strokeWidth={10} strokeDasharray="26 18" strokeDashoffset={-T * 60} fill="none" opacity={kprog(T, K.Vi + 0.2, K.Vi + 0.6)} />
-          {[0, 1, 2, 3, 4].map((k) => { const u = kclamp(vuelo - k * 0.06, 0, 1); const bx = klerp(470, mx, u) + Math.sin(u * 9 + k) * 30, by = klerp(200, my, u * u * 0.4 + u * 0.6);
-            return u > 0 && u < 1 ? <Monarca key={k} x={bx} y={by} s={0.45} rot={160} ala={Math.abs(Math.cos(T * 10 + k))} /> : null; })}
+          <path d={`M 470 300 C 520 460 ${mx - 40} 680 ${mx} ${my}`} stroke={KC.ink} strokeWidth={10} strokeDasharray="26 18" strokeDashoffset={-T * 60} fill="none" opacity={kprog(T, K.Vi + 0.2, K.Vi + 0.6)} />
+          {[0, 1, 2, 3, 4].map((k) => { const u = kclamp(vuelo * 1.2 - k * 0.09, 0, 1); const bx = klerp(470, mx, u) + Math.sin(u * 9 + k) * 30, by = klerp(300, my, u * u * 0.4 + u * 0.6);
+            return u > 0 && u < 1 ? <Monarca key={k} x={bx} y={by} s={0.8} rot={160} ala={Math.abs(Math.cos(T * 10 + k))} /> : null; })}
           {[[mx, my], [ex, ey]].map(([x, y], i) => { const on = kprog(T, K.Vi + 3.6 + i * 0.4, K.Vi + 4.0 + i * 0.4, kEase.rebote);
-            return <g key={i} transform={`translate(${x} ${y}) scale(${on})`}><circle r={24} fill={NARANJA} stroke={KC.ink} strokeWidth={6} /><circle r={8} fill={KC.ink} /></g>; })}
+            return <g key={i} transform={`translate(${x} ${y}) scale(${on})`}><circle r={30} fill={NARANJA} stroke={KC.ink} strokeWidth={5} /><circle r={10} fill={NEGRO} /></g>; })}
         </>)}
       </Escena>
       {/* 3 · las almas: papel picado, velas y mariposas */}
@@ -175,37 +186,45 @@ function Monarcas() {
         <FondoLunares color={KC.magenta} punto="rgba(255,255,255,.18)" />
         <PapelPicado T={T} y={250} />
         {svg(<>
-          {[220, 420, 660, 860].map((x, i) => <Vela key={i} x={x} y={1500} T={T} s={1.1} />)}
-          {[0, 1, 2, 3, 4, 5].map((k) => { const t0 = K.A + 0.3 + k * 0.35, u = kprog(T, t0, t0 + 3.5);
-            return u > 0 ? <Monarca key={k} x={200 + k * 140 + Math.sin(T * 2 + k) * 40} y={klerp(1350, 700, u)} s={0.7} rot={Math.sin(T * 3 + k) * 20} ala={Math.abs(Math.cos(T * 8 + k))} o={0.9} /> : null; })}
-          {Array.from({ length: 6 }, (_, i) => <Cempa key={i} T={T} x={120 + i * 170} y={1640} s={1} />)}
+          {[170, 420, 660, 910].map((x, i) => <Vela key={i} x={x} y={1330} T={T} s={1.8} />)}
+          {[0, 1, 2, 3, 4, 5].map((k) => { const t0 = K.A - 0.8 + k * 0.15, u = kprog(T, t0, t0 + 4.2);
+            return <Monarca key={k} x={150 + k * 156 + Math.sin(T * 2 + k) * 40} y={klerp(1160, 700, u) + (k % 2) * 110} s={1.15} rot={Math.sin(T * 3 + k) * 20} ala={Math.abs(Math.cos(T * 8 + k))} o={0.95} />; })}
+          {Array.from({ length: 6 }, (_, i) => <Cempa key={i} T={T} x={100 + i * 176} y={1565} s={1.3} />)}
         </>)}
       </Escena>
       {/* 4 · cinco generaciones: la que viaja es la tataranieta */}
       <Escena T={T} a={K.Bi} b={K.S}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          {gens.map((t, i) => { const at = K.Bi + 0.3 + i * 0.55, e = kprog(T, at, at + 0.4, kEase.rebote), x = 150 + i * 195, y = 880 + (i % 2) * 50;
+          {gens.map((t, i) => { const at = K.Bi + 0.3 + i * 0.55, e = kprog(T, at, at + 0.4, kEase.rebote), e1 = Math.min(1, e);
+            const P = (j) => [215 + j * 165, j % 2 ? 1160 : 760], [x, y] = P(i);
             const vuela = i === 4 ? kprog(T, K.Bi + 3.4, K.S + 0.4, kEase.suave) : 0;
+            // flecha a la siguiente generación (entre las dos mariposas, sin tocarlas)
+            let flecha = null;
+            if (i < 4) { const [nx, ny] = P(i + 1), d = Math.hypot(nx - x, ny - y), ux = (nx - x) / d, uy = (ny - y) / d;
+              const ax = x + ux * 165, ay = y + uy * 165, bx = nx - ux * 165, by = ny - uy * 165, an = Math.atan2(uy, ux);
+              flecha = <g opacity={kprog(T, at + 0.3, at + 0.6)} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" fill="none">
+                <path d={`M ${ax} ${ay} L ${bx} ${by}`} />
+                <path d={`M ${bx - Math.cos(an - 0.5) * 34} ${by - Math.sin(an - 0.5) * 34} L ${bx} ${by} L ${bx - Math.cos(an + 0.5) * 34} ${by - Math.sin(an + 0.5) * 34}`} />
+              </g>; }
             return <g key={i}>
-              {i < 4 && <path d={`M ${x + 55} ${y} L ${x + 135} ${y + (i % 2 ? -40 : 40)}`} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, at + 0.3, at + 0.6)} markerEnd="" />}
-              {i < 4 && <path d={`M ${x + 120} ${y + (i % 2 ? -50 : 30)} l 18 12 l -20 8`} stroke={KC.ink} strokeWidth={7} fill="none" opacity={kprog(T, at + 0.3, at + 0.6)} />}
-              <g transform={`translate(${vuela * 200} ${-vuela * 700})`}><Monarca x={x} y={y} s={0.85 * e} ala={Math.abs(Math.cos(T * 7 + i))} rot={vuela * -20} /></g>
-              <text x={x} y={y + 120} textAnchor="middle" style={{ font:`700 ${i === 4 ? 36 : 28}px ${KF.mono}` }} fill={i === 4 ? KC.ink : '#1d4b3a'} opacity={e * (1 - vuela)}>{t}</text>
+              {flecha}
+              <g transform={`translate(${vuela * 200} ${-vuela * 900})`}><Monarca x={x} y={y} s={1.25 * (0.82 + 0.18 * e)} ala={Math.abs(Math.cos(T * 7 + i))} rot={vuela * -20} o={0.3 + 0.7 * e1} /></g>
+              <text x={x} y={i % 2 ? y + 165 : y - 135} textAnchor="middle" style={{ font:`700 ${i >= 3 ? 40 : 34}px ${KF.mono}` }} fill={KC.ink} opacity={e1 * (1 - vuela)}>{t}</text>
             </g>; })}
         </>)}
-        <Chip T={T} at={K.Bi + 2.8} until={K.S - 0.2} texto="cuántas generaciones: depende del clima y la latitud" y={1520} borde={KC.gold} tam={34} />
+        <Chip T={T} at={K.Bi + 2.8} until={K.S - 0.2} texto="cuántas generaciones: depende del clima y la latitud" y={1450} borde={KC.gold} tam={34} />
       </Escena>
       {/* 5 · el sol y el reloj de las antenas */}
       <Escena T={T} a={K.S} b={K.P}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <g transform={`translate(230 560) rotate(${T * 20})`}>{Array.from({ length: 12 }, (_, i) => <path key={i} d="M 0 -150 L 18 -110 L -18 -110 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={5} transform={`rotate(${i * 30})`} />)}</g>
-          <circle cx={230} cy={560} r={100} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
-          <line x1={330} y1={640} x2={500} y2={800} stroke={KC.yellow} strokeWidth={8} strokeDasharray="20 14" strokeDashoffset={-T * 40} />
-          <Monarca x={600} y={1000} s={2.3} ala={0.75 + 0.25 * Math.cos(T * 3)} rot={-8} />
+          <g transform={`translate(230 500) rotate(${T * 20})`}>{Array.from({ length: 12 }, (_, i) => <path key={i} d="M 0 -150 L 18 -110 L -18 -110 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={3} transform={`rotate(${i * 30})`} />)}</g>
+          <circle cx={230} cy={500} r={100} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />
+          <line x1={320} y1={590} x2={470} y2={880} stroke={KC.yellow} strokeWidth={8} strokeDasharray="20 14" strokeDashoffset={-T * 40} />
+          <Monarca x={560} y={1110} s={3.4} ala={0.75 + 0.25 * Math.cos(T * 3)} rot={0} />
         </>)}
-        <Lupa T={T} at={K.S + 1.6} until={K.P - 0.1} x={820} y={560} r={150} fx={600 + 26 * 2.3} fy={1000 - 78 * 2.3} tinte={KC.yellow} etiqueta="reloj en las antenas"
+        <Lupa T={T} at={K.S + 1.6} until={K.P - 0.1} x={810} y={500} r={185} fx={560 + 26 * 3.4 * 0.75} fy={1110 - 78 * 3.4} tinte={KC.yellow} etiqueta="reloj en las antenas"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><circle cx={r} cy={r} r={r * 0.7} fill="#fff8e0" stroke={KC.yellow} strokeWidth={8} />
             {Array.from({ length: 12 }, (_, i) => <line key={i} x1={r + Math.cos(i * 0.5236) * r * 0.58} y1={r + Math.sin(i * 0.5236) * r * 0.58} x2={r + Math.cos(i * 0.5236) * r * 0.66} y2={r + Math.sin(i * 0.5236) * r * 0.66} stroke={KC.ink} strokeWidth={5} />)}
             <line x1={r} y1={r} x2={r + Math.cos(t * 2) * r * 0.5} y2={r + Math.sin(t * 2) * r * 0.5} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
@@ -215,73 +234,83 @@ function Monarcas() {
       <Escena T={T} a={K.P} b={K.Bo} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>
-          <Nube T={T} n={14} cx={300} cy={600} ancho={500} alto={300} s={0.5} seed={4} />
+          <text x={470} y={760} textAnchor="middle" style={{ font:`400 420px ${KF.titulo}` }} fill={KC.yellow} stroke={NEGRO} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 470 620)`}>?</text>
+          <Nube T={T} n={14} cx={540} cy={1500} ancho={900} alto={240} s={0.5} seed={4} />
         </>)}
       </Escena>
       {/* 7 · se mide el bosque que cubren */}
       <Escena T={T} a={K.Bo} b={K.E}>
         <Bosque T={T} fondo="#7fd8ff" />
         {svg(<>
-          <Nube T={T} n={90} cx={540} cy={1180} ancho={900} alto={420} s={0.42} seed={12} />
-          <rect x={80} y={900} width={920} height={560} rx={20} fill="none" stroke={KC.yellow} strokeWidth={10} strokeDasharray="34 20" strokeDashoffset={-T * 50} opacity={kprog(T, K.Bo + 1.2, K.Bo + 1.8)} />
+          <Nube T={T} n={90} cx={540} cy={1010} ancho={880} alto={740} s={0.5} seed={12} />
+          <rect x={50} y={590} width={980} height={850} rx={20} fill="none" stroke={KC.yellow} strokeWidth={10} strokeDasharray="34 20" strokeDashoffset={-T * 50} opacity={kprog(T, K.Bo + 1.2, K.Bo + 1.8)} />
         </>)}
       </Escena>
       {/* 8 · 2.93 hectáreas: cuadritos de una hectárea */}
       <Escena T={T} a={K.E} b={K.An} zoom={0.03}>
-        <FondoLunares color={KC.mint} />
+        <Bosque T={T} fondo="#7fd8ff" atenua={0.68} />
         {svg(<>
-          {[0, 1, 2].map((i) => { const at = K.E + 1.5 + i * 0.5, e = kprog(T, at, at + 0.4, kEase.rebote), lleno = i < 2 ? 1 : 0.93;
-            return <g key={i} transform={`translate(${120 + i * 290} 1430) scale(${e})`}>
-              <rect x={0} y={0} width={250} height={250} fill="#fff" stroke={KC.ink} strokeWidth={7} />
-              <rect x={0} y={250 * (1 - lleno)} width={250} height={250 * lleno} fill={NARANJA} stroke={KC.ink} strokeWidth={7} />
-              <text x={125} y={150} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>{i < 2 ? '1 ha' : '0.93'}</text>
+          {/* cada cuadro es una hectárea de bosque; se llena de mariposas (la tercera, al 93 %) */}
+          {[0, 1, 2].map((i) => { const at = K.E + 1.5 + i * 0.5, e = Math.min(1, kprog(T, at, at + 0.5, kEase.sale)), lleno = i < 2 ? 1 : 0.93, L = 310;
+            return <g key={i} transform={`translate(${45 + i * 340} 940)`} opacity={kprog(T, K.E - 0.3, K.E + 0.3)}>
+              <rect x={0} y={0} width={L} height={L} rx={8} fill="#0f2a1f" stroke={KC.ink} strokeWidth={5} />
+              <rect x={0} y={L * (1 - lleno * e)} width={L} height={L * lleno * e} fill={NARANJA} opacity=".38" />
+              {e > 0 && <line x1={0} y1={L * (1 - lleno * e)} x2={L} y2={L * (1 - lleno * e)} stroke={NARANJA} strokeWidth={5} />}
+              {[0, 1, 2].map((r) => [0, 1, 2].map((c) => { const my = L - L * lleno * ((r + 0.5) / 3), on = kprog(e, (r + 0.2) / 3.4, (r + 1) / 3.4);
+                return on > 0 ? <Monarca key={r * 3 + c} x={55 + c * 100 + (r % 2) * 8} y={my} s={0.38 * on} rot={(c - 1) * 14 + r * 9} ala={Math.abs(Math.cos(T * 7 + r * 2 + c + i))} /> : null; }))}
+              <text x={L / 2} y={L + 78} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink} opacity={e}>{i < 2 ? '1 ha' : '0.93'}</text>
             </g>; })}
         </>)}
       </Escena>
       {/* 9 · 1996–97 contra 2025–26 */}
       <Escena T={T} a={K.An} b={K.Am}>
-        <FondoLunares color={KC.yellow} />
+        <Bosque T={T} fondo="#7fd8ff" atenua={0.74} />
         {svg(<>
-          {[[150, 18.19, '1996–97', NARANJA, g], [380, 2.93, '2025–26', KC.coral, g2]].map(([x, v, et, c, gg], i) => { const h = H * (v / 18.19) * gg;
+          {[[310, 18.19, '1996–97', NARANJA, g], [770, 2.93, '2025–26', KC.coral, g2]].map(([x, v, et, c, gg], i) => { const h = H * (v / 18.19) * gg;
             return <g key={i}>
-              <rect x={x - 90} y={base - h} width={180} height={h} rx={14} fill={c} stroke={KC.ink} strokeWidth={8} />
-              <text x={x} y={base - h - 24} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.ink} opacity={gg}>{kformato(v * gg, 2)} ha</text>
-              <text x={x} y={base + 60} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{et}</text>
+              <rect x={x - 150} y={base - h} width={300} height={h} rx={16} fill={c} stroke={KC.ink} strokeWidth={5} />
+              <text x={x} y={base - h - 28} textAnchor="middle" style={{ font:`400 96px ${KF.titulo}` }} fill={KC.ink} opacity={gg}>{kformato(v * gg, 2)} ha</text>
+              <text x={x} y={base + 74} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink}>{et}</text>
             </g>; })}
-          {Array.from({ length: 10 }, (_, i) => <Monarca key={i} x={100 + (i % 2) * 100} y={base - 60 - i * 58} s={0.32 * g} ala={Math.abs(Math.cos(T * 8 + i))} />)}
+          {Array.from({ length: 10 }, (_, i) => <Monarca key={i} x={310 + (i % 2 ? 68 : -68)} y={base - 80 - i * 78} s={0.52 * kclamp((g * H - (60 + i * 78)) / 60, 0, 1)} ala={Math.abs(Math.cos(T * 8 + i))} />)}
         </>)}
       </Escena>
       {/* 10 · amenazas: tala, algodoncillo que desaparece, clima extremo */}
       <Escena T={T} a={K.Am} b={K.D}>
         <FondoLunares color={KC.coral} />
         {svg(<>
-          {[0, 1, 2].map((i) => <rect key={i} x={40 + i * 340} y={560} width={320} height={520} rx={26} fill="rgba(255,255,255,.85)" stroke={KC.ink} strokeWidth={7} opacity={kprog(T, K.Am + 0.2 + i * 1.4, K.Am + 0.6 + i * 1.4)} />)}
-          <g opacity={kprog(T, K.Am + 0.2, K.Am + 0.6)}>
-            <Oyamel x={200} y={900} s={0.6 * (1 - kprog(T, K.Am + 0.9, K.Am + 1.3))} />
-            <Tocon x={200} y={960} s={kprog(T, K.Am + 0.9, K.Am + 1.3, kEase.rebote)} />
-            <Tocon x={110} y={990} s={0.6 * kprog(T, K.Am + 1.1, K.Am + 1.5, kEase.rebote)} />
-          </g>
-          <g opacity={kprog(T, K.Am + 1.6, K.Am + 2.0)}><Algodoncillo x={540} y={960} s={0.85} T={T} vida={1 - kprog(T, K.Am + 2.4, K.Am + 3.8)} /></g>
-          <g opacity={kprog(T, K.Am + 3.0, K.Am + 3.4)} transform={`translate(880 880)`}>
-            <circle r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} transform="translate(-40 -60)" />
-            <g transform={`translate(40 80) rotate(${T * 30})`}>{[0, 60, 120].map((a) => <path key={a} d="M 0 -80 L 0 80 M -14 -60 L 0 -46 L 14 -60 M -14 60 L 0 46 L 14 60" stroke="#e8f7ff" strokeWidth={12} strokeLinecap="round" transform={`rotate(${a})`} />)}
-              {[0, 60, 120].map((a) => <path key={'b' + a} d="M 0 -80 L 0 80" stroke={KC.ink} strokeWidth={3} transform={`rotate(${a})`} />)}</g>
-          </g>
-          {['tala ilegal', 'algodoncillo', 'clima extremo'].map((t, i) => <text key={'t' + i} x={200 + i * 340} y={1040} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Am + 0.5 + i * 1.4, K.Am + 0.9 + i * 1.4)}>{t}</text>)}
+          {(() => { const on = (i) => 0.3 + 0.7 * kprog(T, K.Am + 0.2 + i * 1.4, K.Am + 0.6 + i * 1.4), tala = kprog(T, K.Am + 0.9, K.Am + 1.3);
+            return <>
+              {/* tala: el oyamel grande queda en tocón */}
+              <g opacity={on(0)}>
+                <Oyamel x={280} y={1250} s={1.9 * (1 - tala)} />
+                <Tocon x={290} y={1270} s={3.3 * kprog(T, K.Am + 0.9, K.Am + 1.3, kEase.rebote)} />
+                <Tocon x={95} y={1340} s={1.9 * kprog(T, K.Am + 1.1, K.Am + 1.5, kEase.rebote)} />
+              </g>
+              {/* el algodoncillo se seca */}
+              <g opacity={on(1)}><Algodoncillo x={770} y={1320} s={1.9} T={T} vida={1 - kprog(T, K.Am + 2.4, K.Am + 3.8)} /></g>
+              {/* clima extremo: sol y helada */}
+              <g opacity={on(2)} transform="translate(590 500) scale(1.7)">
+                <circle r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} transform="translate(-40 -60)" />
+                <g transform={`translate(40 80) rotate(${T * 30})`}>{[0, 60, 120].map((a) => <path key={a} d="M 0 -80 L 0 80 M -14 -60 L 0 -46 L 14 -60 M -14 60 L 0 46 L 14 60" stroke="#e8f7ff" strokeWidth={10} strokeLinecap="round" transform={`rotate(${a})`} />)}</g>
+              </g>
+            </>; })()}
+          {[['tala ilegal', 280, 1420], ['algodoncillo', 770, 1420], ['clima extremo', 590, 850]].map(([t, x, y], i) => <text key={'t' + i} x={x} y={y} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Am + 0.5 + i * 1.4, K.Am + 0.9 + i * 1.4)}>{t}</text>)}
         </>)}
       </Escena>
       {/* 11 · la oruga, el algodoncillo y el pájaro que la escupe */}
       <Escena T={T} a={K.D} b={K.C}>
         <FondoLunares color={KC.leaf} punto="rgba(255,255,255,.2)" />
         {svg(<>
-          <Algodoncillo x={330} y={1180} s={1.6} T={T} />
+          <Algodoncillo x={300} y={1340} s={2.2} T={T} />
           {(() => { const pico = kprog(T, K.D + 2.6, K.D + 3.2, kEase.suave), escupe = kprog(T, K.D + 4.0, K.D + 4.8, kEase.sale);
-            const ox = klerp(klerp(420, 640, pico), 1000, escupe), oy = klerp(klerp(860, 760, pico), 1500, escupe * escupe);
+            const ox = klerp(klerp(425, 550, pico), 1010, escupe), oy = klerp(klerp(900, 790, pico), 1560, escupe * escupe);
+            // el pájaro ya asoma por la derecha desde que empieza la escena y luego entra a picar
+            const px = klerp(klerp(1420, 1075, kprog(T, K.D - 0.3, K.D + 0.5, kEase.sale)), 800, kprog(T, K.D + 1.8, K.D + 2.6, kEase.sale));
             return <>
-              <Oruga x={ox} y={oy} s={0.9} T={T} />
-              <Pajaro x={klerp(1300, 830, kprog(T, K.D + 1.8, K.D + 2.6, kEase.sale))} y={720} s={1.1} abre={pico > 0 && escupe < 1 ? (escupe > 0 ? 1 : 0.2) : 0} rot={escupe * 10} />
-              {escupe > 0 && <g opacity={1 - kprog(T, K.D + 5.6, K.D + 6.2)}><text x={720} y={560} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} transform={`rotate(-6 720 560)`}>¡PUAJ!</text></g>}
+              <Oruga x={ox} y={oy} s={1.25} T={T} />
+              <Pajaro x={px} y={730} s={1.45} abre={pico > 0 && escupe < 1 ? (escupe > 0 ? 1 : 0.2) : 0} rot={escupe * 10} />
+              {escupe > 0 && <g opacity={1 - kprog(T, K.D + 5.6, K.D + 6.2)}><text x={700} y={450} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={KC.yellow} stroke={NEGRO} strokeWidth={8} transform={`rotate(-6 700 450)`}>¡PUAJ!</text></g>}
             </>; })()}
         </>)}
       </Escena>
@@ -292,20 +321,20 @@ function Monarcas() {
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.2} until={K.Vi - 0.3} texto="Especial Día de Muertos" x={330} y={1440} tam={38} borde={NARANJA} />
-      <Etq T={T} at={K.G + 0.6} until={K.G + 2.2} x={60} y={1090} texto="¿hojas secas?" tam={40} />
-      <Etq T={T} at={K.G + 3.0} until={K.Vi - 0.3} x={60} y={1090} texto="mariposas monarca" tam={42} color={KC.yellow} />
-      <Etq T={T} at={K.G + 3.4} until={K.Vi - 0.3} x={60} y={1150} texto="Danaus plexippus" it tam={34} />
-      <Chip T={T} at={K.Vi + 0.3} until={K.A - 0.3} texto="Canadá y EUA" x={470} y={170 + 0} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.G + 0.2} until={K.Vi - 0.3} texto="Especial Día de Muertos" x={330} y={1460} tam={38} borde={NARANJA} />
+      <Etq T={T} at={K.G + 0.6} until={K.G + 2.2} x={60} y={1255} texto="¿hojas secas?" tam={44} />
+      <Etq T={T} at={K.G + 3.0} until={K.Vi - 0.3} x={60} y={1255} texto="mariposas monarca" tam={46} color={KC.yellow} />
+      <Etq T={T} at={K.G + 3.4} until={K.Vi - 0.3} x={60} y={1320} texto="Danaus plexippus" it tam={36} />
+      <Chip T={T} at={K.Vi + 0.3} until={K.A - 0.3} texto="Canadá y EUA" x={470} y={255} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.Vi + 3.9} until={K.A - 0.3} texto="Michoacán y Edomex: bosques de oyamel" x={540} y={1460} tam={34} borde={NARANJA} />
-      <Chip T={T} at={K.A + 0.6} until={K.Bi - 0.3} texto="creencia: traen a los difuntos" y={800} tam={38} borde={NARANJA} />
-      <Chip T={T} at={K.Bi + 0.2} until={K.S - 0.3} texto="ninguna conoce el camino" y={560} tam={42} borde={KC.ink} />
-      <Chip T={T} at={K.S + 0.4} until={K.S + 1.5} texto="brújula de sol" x={700} y={420} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.Bo + 1.4} until={K.E - 0.3} texto="se mide el bosque que cubren" y={820} tam={40} borde={KC.yellow} />
-      <NumeroGigante T={T} at={K.E + 0.3} until={K.An - 0.3} valor={2.93} dec={2} dur={1.2} sufijo=" ha" etiqueta="invierno 2025–2026 · WWF y CONANP" y={900} tam={210} />
-      <Chip T={T} at={K.E + 2.6} until={K.An - 0.3} texto="+64 % que el año anterior" y={1140} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.An + 2.4} until={K.Am - 0.3} texto="6 veces más" x={385} y={720} tam={46} borde={KC.red} />
-      <Etq T={T} at={K.D + 0.6} until={K.D + 2.6} x={560} y={1010} texto="solo come algodoncillo" tam={34} />
+      <Chip T={T} at={K.A + 0.6} until={K.Bi - 0.3} texto="creencia: traen a los difuntos" y={530} tam={40} borde={NARANJA} />
+      <Chip T={T} at={K.Bi + 0.2} until={K.S - 0.3} texto="ninguna conoce el camino" y={440} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.S + 0.4} until={K.S + 1.5} texto="brújula de sol" x={720} y={400} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.Bo + 1.4} until={K.E - 0.3} texto="se mide el bosque que cubren" y={500} tam={42} borde={KC.yellow} />
+      <NumeroGigante T={T} at={K.E + 0.3} until={K.An - 0.3} valor={2.93} dec={2} dur={1.2} sufijo=" ha" etiqueta="invierno 2025–2026 · WWF y CONANP" y={540} tam={190} />
+      <Chip T={T} at={K.E + 2.6} until={K.An - 0.3} texto="+64 % que el año anterior" y={770} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.An + 2.4} until={K.Am - 0.3} texto="6 veces más" x={770} y={1040} tam={54} borde={KC.red} />
+      <Etq T={T} at={K.D + 0.6} until={K.D + 2.6} x={480} y={1160} texto="solo come algodoncillo" tam={32} />
       <Chip T={T} at={K.D + 3.4} until={K.C - 0.3} texto="el veneno de la planta = amarga" y={1460} tam={38} borde={KC.yellow} />
       <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="una visita que hay que cuidar" x={380} y={470} tam={36} borde={NARANJA} />
 
