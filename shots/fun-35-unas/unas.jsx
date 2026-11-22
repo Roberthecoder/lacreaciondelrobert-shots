@@ -71,14 +71,27 @@ function Hifa({ T, x, y, largo = 800, p = 1, conidios = 1, color = KC.gold2, anc
   </g>;
 }
 
+// Corte en pantalla 1.3 veces más grande, con la punta del dedo pegada al borde derecho (ahí entra el hongo).
+const CORTE_TF = 'translate(1040 960) scale(1.3) translate(-1010 -945)';
+let CORTE_GUIA = [0, 0];                                     // cuándo se ve la línea guía de la raíz (lo fija cada escena)
+// Etiqueta con fondo oscuro, para cuando cae encima de la piel (si no, el texto claro se pierde).
+function EtqOsc({ T, at, until, x, y, texto, lado = 'der', color = KC.texto, tam = 30 }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube');
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, opacity:e.o, display:'flex', alignItems:'center', gap:10, flexDirection: lado === 'der' ? 'row' : 'row-reverse',
+    transform:`translate(${lado === 'der' ? 0 : '-100%'}, -50%)`, background:'rgba(11,16,32,.86)', borderRadius:14, padding:'6px 14px' }}>
+    <div style={{ width:56 * kprog(T, at, at + 0.4, kEase.sale), height:4, background:color, borderRadius:2 }}></div>
+    <div style={{ font:`700 ${tam}px ${KF.mono}`, color, whiteSpace:'nowrap' }}>{texto}</div>
+  </div>;
+}
 // Corte de lado del dedo (la punta a la derecha): piel, hueso, lecho, raíz (matriz) y lámina de la uña.
 // hifas 0..1 = el hongo entra por debajo de la punta y avanza · sano 0..1 = uña nueva que sale de la raíz · raiz 0..1 = brillo de la matriz
-function CorteDedo({ T, hifas = 0, sano = 0, raiz = 0, mala = 1 }) {
+function CorteDedo({ T, hifas = 0, sano = 0, raiz = 0, mala = 1, tf = CORTE_TF }) {
   const X0 = 330, X1 = 940, Y = 830;                         // lámina: de la raíz (X0) al borde libre (X1)
   const xb = X0 + sano * (X1 - X0);
   const xh = X1 - hifas * 470;
   const gruesa = 22 + 16 * mala;
-  return fsvg(<>
+  return fsvg(<g transform={tf}>
     <path d="M -20 760 L 300 760 Q 360 760 380 800 L 840 800 Q 990 800 1010 930 Q 1000 1120 820 1130 L -20 1130 Z" fill={PIEL_U} stroke={KC.ink} strokeWidth={9} />
     <path d="M 120 905 Q 400 880 760 885 Q 870 895 865 965 Q 850 1035 740 1030 Q 420 1035 120 1035 Z" fill="#f3ead2" stroke={KC.ink} strokeWidth={6} />
     <path d={`M ${X0 + 20} ${Y + 18} L ${X1 - 40} ${Y + 18}`} stroke="#e98e86" strokeWidth={12} strokeLinecap="round" />
@@ -90,7 +103,9 @@ function CorteDedo({ T, hifas = 0, sano = 0, raiz = 0, mala = 1 }) {
     <path d="M 240 760 Q 330 770 390 812" stroke={KC.ink} strokeWidth={8} fill="none" />
     {hifas > 0 && <Cordon x1={X1 - 5} y1={Y + 14} x2={X1 - 5 - 470 * hifas} y2={Y + 14} p={1} onda={4} ancho={12} color="#fffaf0" punta={KC.yellow} />}
     {hifas > 0 && <Cordon x1={X1 - 30} y1={Y - 6} x2={X1 - 30 - 380 * hifas} y2={Y - 10} p={1} onda={5} ancho={9} color="#fffaf0" punta={KC.yellow} />}
-  </>);
+    {/* guía de la raíz hacia su etiqueta, abajo */}
+    <line x1={X0 + 10} y1={Y + 56} x2={X0 + 10} y2={1158} stroke="#0b1020" strokeWidth={5} opacity={kprog(T, CORTE_GUIA[0], CORTE_GUIA[0] + 0.4) * (1 - kprog(T, CORTE_GUIA[1], CORTE_GUIA[1] + 0.3))} />
+  </g>);
 }
 
 // Persona (ícono) con una marquita en la uña.
@@ -132,6 +147,8 @@ function UnasShot() {
   const FIN = K.Ou + 4;
   const cae = kprog(T, K.G + 0.15, K.G + 0.85, kEase.rebote);
   const NAIL = { x: 470, y: 600 };                          // punta del dedo grande en las escenas macro
+  const DEDO_TF = 'translate(540 520) scale(1.5) translate(-470 -600)';   // en pantalla: dedo 1.5x, uña al centro
+  CORTE_GUIA = T < CUES.Raiz ? [CUES.Entrada + 1.3, CUES.Queratina - 0.3] : [CUES.Raiz + 0.4, CUES.Estudio - 0.3];
   const lupaInterior = (Tl, r) => <svg width={r * 2} height={r * 2}>
     <rect width={r * 2} height={r * 2} fill="#1d1408" />
     {Array.from({ length: 9 }, (_, k) => <rect key={k} x={(k % 2) * -60} y={20 + k * 44} width={r * 2 + 80} height={36} rx={10} fill="#e8cf8a" opacity=".28" />)}
@@ -141,7 +158,7 @@ function UnasShot() {
   // micro: ladrillos de queratina (onicocitos aplanados) que se deshacen cerca de las hifas
   const digiere = kprog(T, K.Q + 1.0, K.D - 0.2);
   const ladrillos = [];
-  for (let r = 0; r < 9; r++) for (let c = 0; c < 5; c++) { const x = c * 260 - (r % 2) * 130 - 40, y = 600 + r * 50;
+  for (let r = 0; r < 11; r++) for (let c = 0; c < 5; c++) { const x = c * 260 - (r % 2) * 130 - 40, y = 600 + r * 50;
     const cerca = (Math.abs(y + 22 - 730) < 60 || Math.abs(y + 22 - 910) < 60);
     ladrillos.push(<rect key={r + '-' + c} x={x} y={y} width={250} height={46} rx={12} fill="#f0d79a" stroke="#a88b55" strokeWidth={3} opacity={1 - (cerca ? digiere * 0.8 : 0)} />); }
   return (
@@ -150,12 +167,14 @@ function UnasShot() {
       <Escena T={T} a={K.G} b={K.En} zoom={0.06} origen="45% 40%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Dedo T={T} x={NAIL.x} y={NAIL.y} id="g" mala={1} grueso={1} quiebra={0.4} mueve={1 - kprog(T, K.G + 1.5, K.G + 2.5)} />
-          <Blister x={klerp(160, 200, cae)} y={klerp(-200, 1060, cae)} rot={klerp(-60, -14, cae)} s={0.95} usadas={Math.floor(8 * kprog(T, K.G + 1.0, K.G + 3.0))} />
-          {T > K.G + 3.9 && T < K.Cu + 0.4 && <g opacity={kprog(T, K.G + 3.9, K.G + 4.3) * (1 - kprog(T, K.Cu - 0.2, K.Cu + 0.3))}><Calendario x={700} y={800} n={12} cols={4} tam={66} lleno={kprog(T, K.G + 4.0, K.Cu)} titulo="MESES" color={KC.orange} /></g>}
+          <g transform={DEDO_TF}>
+            <Dedo T={T} x={NAIL.x} y={NAIL.y} id="g" mala={1} grueso={1} quiebra={0.4} mueve={1 - kprog(T, K.G + 1.5, K.G + 2.5)} />
+            <Blister x={klerp(220, 260, cae)} y={klerp(-200, 1060, cae)} rot={klerp(-60, -14, cae)} s={0.95} usadas={Math.floor(8 * kprog(T, K.G + 1.0, K.G + 3.0))} />
+          </g>
+          {T > K.G + 3.9 && T < K.Cu + 0.4 && <g opacity={kprog(T, K.G + 3.9, K.G + 4.3) * (1 - kprog(T, K.Cu - 0.2, K.Cu + 0.3))}><Calendario x={720} y={860} n={12} cols={4} tam={66} lleno={kprog(T, K.G + 4.0, K.Cu)} titulo="MESES" color={KC.orange} /></g>}
         </>)}
       </Escena>
-      <Lupa T={T} at={K.Cu + 0.05} until={K.En - 0.3} x={760} y={900} r={190} fx={NAIL.x} fy={NAIL.y + 180} interior={lupaInterior} tinte={KC.yellow} etiqueta="AL MICROSCOPIO · HONGO" />
+      <Lupa T={T} at={K.Cu + 0.05} until={K.En - 0.3} x={800} y={930} r={230} fx={540} fy={790} interior={lupaInterior} tinte={KC.yellow} etiqueta="AL MICROSCOPIO · HONGO" />
       {/* 3 · por dónde entra: corte de lado del dedo */}
       <Escena T={T} a={K.En} b={K.Q}>
         <FondoLunares color={KC.cyan} />
@@ -165,120 +184,122 @@ function UnasShot() {
       <Escena T={T} a={K.Q} b={K.D}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.35) translate(-540 -850)">
           {ladrillos}
           <Hifa T={T} x={-40} y={730} largo={1200} p={kprog(T, K.Q - 0.3, K.Q + 2.0)} conidios={kprog(T, K.Q + 1.2, K.Q + 2.2)} />
           <Hifa T={T} x={-40} y={910} largo={1200} p={kprog(T, K.Q + 0.2, K.Q + 2.6)} conidios={kprog(T, K.Q + 1.6, K.Q + 2.8)} fase={2.3} />
           {digiere > 0 && Array.from({ length: 34 }, (_, i) => { const u = ((T * 0.8 + i / 34) % 1); const yy = (i % 2 ? 730 : 910) + (i % 3 - 1) * 34 + Math.sin(T * 3 + i) * 10;
             return <circle key={'e' + i} cx={(i * 61) % 1060 + 10} cy={yy} r={6} fill={KC.cyan} opacity={digiere * (1 - u)} />; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · el daño: color, grosor, se quiebra */}
       <Escena T={T} a={K.D} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<Dedo T={T} x={NAIL.x} y={NAIL.y} id="d" mala={1} grueso={kprog(T, K.D + 0.6, K.D + 1.2)} quiebra={kprog(T, K.D + 1.3, K.D + 1.9)} />)}
+        {fsvg(<Dedo T={T} x={460} y={560} s={1.5} id="d" mala={1} grueso={kprog(T, K.D + 0.6, K.D + 1.2)} quiebra={kprog(T, K.D + 1.3, K.D + 1.9)} />)}
       </Escena>
       {/* 6 · pregunta: el hongo se fue, la uña sigue fea */}
       <Escena T={T} a={K.P} b={K.R} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Dedo T={T} x={720} y={760} s={0.62} id="p" mala={1} grueso={1} quiebra={1} />
-          <Interrogacion T={T} x={790} y={700} tam={380} />
+          <Dedo T={T} x={500} y={560} s={1.5} id="p" mala={1} grueso={1} quiebra={1} />
+          <Interrogacion T={T} x={880} y={860} tam={420} />
         </>)}
       </Escena>
       {/* 7 · la raíz fabrica uña nueva y empuja a la vieja */}
       <Escena T={T} a={K.R} b={K.E}>
         <FondoLunares color={KC.cyan} />
         <CorteDedo T={T} hifas={0} sano={kprog(T, K.R + 1.0, K.E + 0.3, kEase.suave) * 0.6} raiz={kprog(T, K.R + 0.2, K.R + 0.8) * (0.7 + 0.3 * Math.sin(T * 6))} mala={1} />
-        {fsvg(<path d={`M ${400 + kprog(T, K.R + 1.0, K.E) * 300} 700 l 120 0 m -30 -26 l 30 26 l -30 26`} stroke={KC.ink} strokeWidth={12} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={kprog(T, K.R + 1.2, K.R + 1.6)} />)}
+        {fsvg(<path transform={CORTE_TF} d={`M ${400 + kprog(T, K.R + 1.0, K.E) * 300} 700 l 120 0 m -30 -26 l 30 26 l -30 26`} stroke={KC.ink} strokeWidth={12} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={kprog(T, K.R + 1.2, K.R + 1.6)} />)}
       </Escena>
       {/* 8 · el estudio: 22 jóvenes marcan sus uñas */}
       <Escena T={T} a={K.E} b={K.Re}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>{Array.from({ length: 22 }, (_, i) => { const on = kprog(T, K.E + 1.4 + i * 0.07, K.E + 1.7 + i * 0.07, kEase.rebote);
-          return on > 0 ? <PersonaU key={i} x={100 + (i % 11) * 88} y={900 + Math.floor(i / 11) * 160} s={on * 0.85} color={i % 3 ? '#8fb6ff' : KC.pink} marca={kprog(T, K.E + 3.0 + i * 0.05, K.E + 3.3 + i * 0.05)} /> : null; })}</>)}
+          return on > 0 ? <PersonaU key={i} x={102 + (i % 8) * 125} y={880 + Math.floor(i / 8) * 200} s={on * 1.3} color={i % 3 ? '#8fb6ff' : KC.pink} marca={kprog(T, K.E + 3.0 + i * 0.05, K.E + 3.3 + i * 0.05)} /> : null; })}</>)}
       </Escena>
       {/* 9 · resultado: manos 3.47 mm/mes · pies 1.62 mm/mes */}
       <Escena T={T} a={K.Re} b={K.Ti}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1000) scale(1.1) translate(-540 -1020)">
           <ReglaUna x={110} y={860} mm={3.47} p={kprog(T, K.Re + 0.3, K.Re + 2.2, kEase.suave)} titulo="MANOS" valor="3.47 mm/mes" color={KC.mint} />
-          <ReglaUna x={110} y={1120} mm={1.62} p={kprog(T, K.Re + 2.4, K.Re + 4.2, kEase.suave)} titulo="PIES" valor="1.62 mm/mes" color={KC.orange} />
-        </>)}
+          <ReglaUna x={110} y={1180} mm={1.62} p={kprog(T, K.Re + 2.4, K.Re + 4.2, kEase.suave)} titulo="PIES" valor="1.62 mm/mes" color={KC.orange} />
+        </g>)}
       </Escena>
       {/* 10 · el tiempo: la uña se renueva de la raíz a la punta */}
       <Escena T={T} a={K.Ti} b={K.Rg} zoom={0.04} origen="45% 40%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Dedo T={T} x={NAIL.x - 90} y={NAIL.y} id="t" mala={1} grueso={1 - kprog(T, K.Ti, K.Rg)} quiebra={0} sano={kprog(T, K.Ti + 0.2, K.Rg + 0.2, kEase.suave) * 0.85} />
-          <Calendario x={640} y={700} n={18} cols={3} tam={74} lleno={kprog(T, K.Ti + 0.2, K.Rg)} titulo="18 MESES" />
+          <Dedo T={T} x={340} y={560} s={1.35} id="t" mala={1} grueso={1 - kprog(T, K.Ti, K.Rg)} quiebra={0} sano={kprog(T, K.Ti + 0.2, K.Rg + 0.2, kEase.suave) * 0.85} />
+          <Calendario x={650} y={660} n={18} cols={3} tam={84} lleno={kprog(T, K.Ti + 0.2, K.Rg)} titulo="18 MESES" />
         </>)}
       </Escena>
       {/* 11 · regresa: 1 de cada 4 o 5 */}
       <Escena T={T} a={K.Rg} b={K.S}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>{[0, 1, 2, 3, 4].map((i) => { const m = i === 2 ? kprog(T, K.Rg + 1.4, K.Rg + 2.4) : 0;
-          return <Dedo key={i} T={T} x={140 + i * 200} y={800} s={0.44} id={'r' + i} mala={m} grueso={m} quiebra={0} sano={0} />; })}</>)}
+          return <Dedo key={i} T={T} x={140 + i * 200} y={760} s={0.5} id={'r' + i} mala={m} grueso={m} quiebra={0} sano={0} />; })}</>)}
       </Escena>
       {/* 12 · lo que ayuda */}
       <Escena T={T} a={K.S} b={K.C}>
-        <div style={{ position:'absolute', inset:0, background:'#bfeaf5', backgroundImage:'linear-gradient(#ffffff 4px, transparent 4px), linear-gradient(90deg, #ffffff 4px, transparent 4px)', backgroundSize:'120px 120px' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'#173640', backgroundImage:'linear-gradient(rgba(191,234,245,.22) 4px, transparent 4px), linear-gradient(90deg, rgba(191,234,245,.22) 4px, transparent 4px)', backgroundSize:'120px 120px' }}></div>
         {fsvg(<>
           {Array.from({ length: 10 }, (_, i) => { const u = ((T * 0.9 + i / 10) % 1); return <circle key={i} cx={100 + i * 95} cy={300 + u * 1100} r={9} fill="#7fd3ff" opacity={0.7 * (1 - u)} />; })}
-          <Chancla x={380} y={klerp(-300, 840, kprog(T, K.S + 0.2, K.S + 0.8, kEase.rebote))} rot={-8} />
-          <Chancla x={600} y={klerp(-300, 860, kprog(T, K.S + 0.4, K.S + 1.0, kEase.rebote))} rot={8} />
+          <Chancla x={330} y={klerp(-400, 860, kprog(T, K.S + 0.2, K.S + 0.8, kEase.rebote))} rot={-8} s={1.6} />
+          <Chancla x={750} y={klerp(-400, 890, kprog(T, K.S + 0.4, K.S + 1.0, kEase.rebote))} rot={8} s={1.6} />
         </>)}
       </Escena>
       {/* 13 · cierre: el mismo dedo del inicio, ya con uña nueva */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="45% 40%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Dedo T={T} x={NAIL.x} y={NAIL.y} id="c" mala={1} grueso={0} quiebra={0} sano={klerp(0.86, 1, kprog(T, K.C + 1.2, K.C + 3.6, kEase.suave))} />
-          <Blister x={200} y={1060} rot={-14} s={0.95} usadas={8} />
-          <Calendario x={700} y={940} n={18} cols={6} tam={50} lleno={1} titulo="18 MESES" />
+          <g transform={DEDO_TF}>
+            <Dedo T={T} x={NAIL.x} y={NAIL.y} id="c" mala={1} grueso={0} quiebra={0} sano={klerp(0.86, 1, kprog(T, K.C + 1.2, K.C + 3.6, kEase.suave))} />
+            <Blister x={260} y={1060} rot={-14} s={0.95} usadas={8} />
+          </g>
+          <Calendario x={680} y={1000} n={18} cols={6} tam={56} lleno={1} titulo="18 MESES" />
         </>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.9} until={K.Cu - 0.2} texto="pastilla: 12 semanas ✓" x={330} y={430} tam={38} borde={KC.leaf} />
-      <Chip T={T} at={K.G + 3.6} until={K.Cu - 0.2} texto="¿uña sana? 1 año o más" x={330} y={520} tam={38} borde={KC.red} />
-      <Etq T={T} at={K.Cu + 0.8} until={K.En - 0.3} x={60} y={470} texto="dermatofito" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Cu + 1.3} until={K.En - 0.3} x={60} y={530} texto="Trichophyton rubrum" it tam={38} color={KC.ink} />
-      <Chip T={T} at={K.En + 0.2} until={K.Q - 0.3} texto="POR DENTRO · DEDO GORDO" x={420} y={470} tam={32} mono borde={KC.ink} />
-      <Etq T={T} at={K.En + 0.5} until={K.Q - 0.3} x={900} y={720} texto="uña" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.En + 0.9} until={K.Q - 0.3} x={950} y={890} texto="entra por aquí" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.En + 1.3} until={K.Q - 0.3} x={340} y={1090} texto="raíz (matriz)" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Q + 0.2} until={K.D - 0.3} texto="AL MICROSCOPIO · LA UÑA" x={420} y={470} tam={32} mono borde={KC.cyan} />
-      <Etq T={T} at={K.Q + 0.6} until={K.D - 0.3} x={40} y={560} texto="queratina = proteína dura" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Q + 1.2} until={K.D - 0.3} x={40} y={1145} texto="hifa con tabiques" tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.Q + 1.8} until={K.D - 0.3} x={1040} y={1095} texto="enzimas" lado="izq" tam={28} color={KC.cyan} />
-      <Etq T={T} at={K.Q + 1.6} until={K.D - 0.3} x={40} y={1095} texto="microconidios (en gota)" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.D + 0.2} until={K.P - 0.3} texto="color" x={850} y={560} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.D + 0.7} until={K.P - 0.3} texto="grosor" x={850} y={680} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.D + 1.3} until={K.P - 0.3} texto="se quiebra" x={850} y={800} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.P + 0.2} until={K.R - 0.3} texto="hongo: fuera ✓" x={780} y={440} tam={38} borde={KC.leaf} />
-      <Etq T={T} at={K.R + 0.4} until={K.E - 0.3} x={60} y={1090} texto="raíz (matriz): aquí nace la uña" lado="der" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.R + 1.4} until={K.E - 0.3} texto="uña nueva → empuja a la vieja" x={420} y={600} tam={32} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Re - 0.3} anio="2010" quien="Estados Unidos · 22 jóvenes" revista="Yaemsiri et al., JEADV" x={400} y={590} />
-      <Chip T={T} at={K.Ti + 0.2} until={K.Rg - 0.3} texto="12–18 meses" x={330} y={470} tam={44} borde={KC.orange} />
-      <Chip T={T} at={K.Rg + 0.6} until={K.S - 0.3} texto="20–25 % regresa" x={380} y={470} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.Rg + 0.6} until={K.S - 0.3} texto="por lo general antes de 2 años" x={380} y={560} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.S + 0.8} until={K.C - 0.3} texto="✓ no andes descalzo en lugares públicos" x={480} y={1060} tam={30} borde={KC.leaf} />
-      <Chip T={T} at={K.S + 2.0} until={K.C - 0.3} texto="✓ ¿pie de atleta? trátalo pronto" x={480} y={1150} tam={30} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="uña nueva del pie: hasta 18 meses" x={390} y={470} tam={32} borde={KC.yellow} />
+      <Chip T={T} at={K.G + 0.9} until={K.Cu - 0.2} texto="pastilla: 12 semanas ✓" x={330} y={370} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={K.G + 3.6} until={K.Cu - 0.2} texto="¿uña sana? 1 año o más" x={330} y={448} tam={38} borde={KC.red} />
+      <Etq T={T} at={K.Cu + 0.8} until={K.En - 0.3} x={40} y={385} texto="dermatofito" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Cu + 1.3} until={K.En - 0.3} x={40} y={440} texto="Trichophyton rubrum" it tam={38} color={KC.ink} />
+      <Chip T={T} at={K.En + 0.2} until={K.Q - 0.3} texto="POR DENTRO · DEDO GORDO" x={420} y={520} tam={32} mono borde={KC.ink} />
+      <Etq T={T} at={K.En + 0.5} until={K.Q - 0.3} x={880} y={735} texto="uña" lado="izq" tam={32} color={KC.ink} />
+      <EtqOsc T={T} at={K.En + 0.9} until={K.Q - 0.3} x={985} y={895} texto="entra por aquí" lado="izq" tam={30} color={KC.yellow} />
+      <EtqOsc T={T} at={K.En + 1.3} until={K.Q - 0.3} x={110} y={1270} texto="raíz (matriz)" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Q + 0.2} until={K.D - 0.3} texto="AL MICROSCOPIO · LA UÑA" x={420} y={460} tam={32} mono borde={KC.cyan} />
+      <Etq T={T} at={K.Q + 0.6} until={K.D - 0.3} x={40} y={565} texto="queratina = proteína dura" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Q + 1.2} until={K.D - 0.3} x={40} y={1460} texto="hifa con tabiques" tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.Q + 1.8} until={K.D - 0.3} x={1040} y={1410} texto="enzimas" lado="izq" tam={28} color={KC.cyan} />
+      <Etq T={T} at={K.Q + 1.6} until={K.D - 0.3} x={40} y={1410} texto="microconidios (en gota)" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.D + 0.2} until={K.P - 0.3} texto="color" x={900} y={640} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.D + 0.7} until={K.P - 0.3} texto="grosor" x={900} y={760} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.D + 1.3} until={K.P - 0.3} texto="se quiebra" x={900} y={880} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.P + 0.2} until={K.R - 0.3} texto="hongo: fuera ✓" x={760} y={440} tam={38} borde={KC.leaf} />
+      <EtqOsc T={T} at={K.R + 0.4} until={K.E - 0.3} x={110} y={1270} texto="raíz (matriz): aquí nace la uña" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.R + 1.4} until={K.E - 0.3} texto="uña nueva → empuja a la vieja" x={540} y={540} tam={32} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Re - 0.3} anio="2010" quien="Estados Unidos · 22 jóvenes" revista="Yaemsiri et al., JEADV" x={540} y={520} />
+      <Chip T={T} at={K.Ti + 0.2} until={K.Rg - 0.3} texto="12–18 meses" x={340} y={450} tam={44} borde={KC.orange} />
+      <Chip T={T} at={K.Rg + 0.6} until={K.S - 0.3} texto="20–25 % regresa" x={540} y={470} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.Rg + 0.6} until={K.S - 0.3} texto="por lo general antes de 2 años" x={540} y={560} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.S + 0.8} until={K.C - 0.3} texto="✓ no andes descalzo en lugares públicos" x={540} y={1300} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 2.0} until={K.C - 0.3} texto="✓ ¿pie de atleta? trátalo pronto" x={540} y={1390} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="uña nueva del pie: hasta 18 meses" x={540} y={430} tam={32} borde={KC.yellow} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.En} texto="1 cm" largo={200} />
-      <BarraEscala T={T} at={K.En} until={K.Q} texto="1 cm" largo={300} />
-      <BarraEscala T={T} at={K.Q} until={K.D} texto="10 µm" largo={90} />
-      <BarraEscala T={T} at={K.D} until={K.R} texto="1 cm" largo={200} />
-      <BarraEscala T={T} at={K.R} until={K.E} texto="1 cm" largo={300} />
-      <BarraEscala T={T} at={K.E} until={K.Re} texto="1 m" largo={54} />
-      <BarraEscala T={T} at={K.Re} until={K.Ti} texto="1 mm" largo={150} />
-      <BarraEscala T={T} at={K.Ti} until={K.Rg} texto="1 cm" largo={200} />
-      <BarraEscala T={T} at={K.Rg} until={K.S} texto="1 cm" largo={88} />
-      <BarraEscala T={T} at={K.S} until={K.C} texto="10 cm" largo={120} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={200} />
+      <BarraEscala T={T} at={K.G} until={K.En} texto="1 cm" largo={300} />
+      <BarraEscala T={T} at={K.En} until={K.Q} texto="1 cm" largo={390} />
+      <BarraEscala T={T} at={K.Q} until={K.D} texto="10 µm" largo={122} />
+      <BarraEscala T={T} at={K.D} until={K.R} texto="1 cm" largo={300} />
+      <BarraEscala T={T} at={K.R} until={K.E} texto="1 cm" largo={390} />
+      <BarraEscala T={T} at={K.E} until={K.Re} texto="1 m" largo={83} />
+      <BarraEscala T={T} at={K.Re} until={K.Ti} texto="1 mm" largo={165} />
+      <BarraEscala T={T} at={K.Ti} until={K.Rg} texto="1 cm" largo={270} />
+      <BarraEscala T={T} at={K.Rg} until={K.S} texto="1 cm" largo={100} />
+      <BarraEscala T={T} at={K.S} until={K.C} texto="10 cm" largo={192} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={300} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Cu - 0.1} texto="Pastilla: 12 semanas. ¿Uña sana? *Un año o más.*" />
