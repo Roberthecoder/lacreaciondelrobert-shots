@@ -135,10 +135,12 @@ function Carro({ x, y, s = 1, rot = 0, T = 0, dir = 1 }) {
 }
 
 // cabeza del pasajero (gancho y cierre)
-const PH = { x: 330, y: 930, s: 1.45 };
+const PH = { x: 450, y: 980, s: 2.1 }, MANO_S = 1.6;
+// ventanilla detrás del pasajero (gancho y cierre)
+const VP = { x: 560, y: 340, w: 380, h: 500 };
 const OREJA_P = [PH.x - 75 * PH.s, PH.y + 10 * PH.s];
 // centro del corte grande del oído (escenas por dentro)
-const OC = { x: 560, y: 660, s: 1.0 };
+const OC = { x: 585, y: 700, s: 1.12 };
 
 function OidosAvion() {
   const { T, CUES } = useComposition();
@@ -150,23 +152,24 @@ function OidosAvion() {
       <Escena T={T} a={K.Gancho} b={K.Oido}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <Ventanilla x={690} y={760} w={300} h={380} T={T} suelo={0.35 + 0.1 * kprog(T, 0, K.Oido)} />
-          <OndasArco x={680} y={980} ang={180} T={T} color={KC.yellow} largo={170} o={1 - 0.6 * kprog(T, K.Gancho + 1.6, K.Gancho + 2.2)} />
+          <Ventanilla x={VP.x} y={VP.y} w={VP.w} h={VP.h} T={T} suelo={0.35 + 0.1 * kprog(T, 0, K.Oido)} />
+          <OndasArco x={1070} y={1230} ang={180} T={T} color={KC.yellow} largo={220} grosor={12} o={1 - 0.6 * kprog(T, K.Gancho + 1.6, K.Gancho + 2.2)} />
           <CabezaPerfil x={PH.x} y={PH.y} s={PH.s} gesto="mueca" />
-          <g transform={`translate(0 ${(1 - kprog(T, K.Gancho + 0.05, K.Gancho + 0.6, kEase.rebote)) * 700})`}><ManoOreja x={OREJA_P[0] - 5} y={OREJA_P[1] + 20} s={1.1} /></g>
-          <FlechaRecta x1={OREJA_P[0] - 200} y1={OREJA_P[1] + 330} x2={OREJA_P[0] - 40} y2={OREJA_P[1] + 90} p={kprog(T, K.Gancho + 3.0, K.Gancho + 3.6, kEase.sale)} color={KC.cyan} />
+          <g transform={`translate(0 ${(1 - kprog(T, K.Gancho + 0.05, K.Gancho + 0.6, kEase.rebote)) * 900})`}><ManoOreja x={OREJA_P[0] - 7} y={OREJA_P[1] + 29} s={MANO_S} /></g>
+          <FlechaRecta x1={36} y1={1330} x2={172} y2={1100} p={kprog(T, K.Gancho + 3.0, K.Gancho + 3.6, kEase.sale)} color={KC.cyan} />
         </Lienzo>
-        <MitoTachado T={T} at={K.Gancho + 0.6} tacharEn={K.Gancho + 2.0} until={K.Oido - 0.1} texto="¿por el ruido?" x={300} y={470} />
-        <Chip T={T} at={K.Gancho + 3.2} until={K.Oido - 0.1} texto="aire atrapado" x={270} y={600} tam={40} borde={KC.cyan} />
+        <MitoTachado T={T} at={K.Gancho + 0.6} tacharEn={K.Gancho + 2.0} until={K.Oido - 0.1} texto="¿por el ruido?" x={320} y={300} />
+        <Chip T={T} at={K.Gancho + 3.2} until={K.Oido - 0.1} texto="aire atrapado" x={320} y={420} tam={42} borde={KC.cyan} />
       </Escena>
 
       {/* 1 · por dentro: la cajita de aire detrás del tímpano */}
       <Escena T={T} a={K.Oido} b={K.Trompa} fondo={KC.noche}>
         <Ambiente T={T} n={22} color="rgba(255,255,255,.12)" />
-        <Lienzo><g opacity={1 - 0.5 * kprog(T, K.Oido + 0.8, K.Oido + 1.5)}><CabezaPerfil x={300} y={1000} s={1.1} corte={0.5} /></g></Lienzo>
-        <Lupa T={T} at={K.Oido + 0.25} until={K.Trompa + 0.2} x={610} y={720} r={330} fx={300 - 75 * 1.1} fy={1000 + 11} tinte={KC.cyan} etiqueta="POR DENTRO · OÍDO"
+        <Lienzo><g opacity={1 - 0.6 * kprog(T, K.Oido + 0.5, K.Oido + 1.2)}><CabezaPerfil x={PH.x} y={PH.y} s={PH.s} corte={0.5} /></g></Lienzo>
+        <Lupa T={T} at={K.Oido + 0.25} until={K.Trompa + 0.2} x={560} y={720} r={440} fx={OREJA_P[0]} fy={OREJA_P[1]} linea={false} tinte={KC.cyan} etiqueta="POR DENTRO · OÍDO"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0b1a2c" />
-            <OidoCorte x={r + 70} y={r - 40} s={0.95} T={t} rotulos={kprog(t, K.Oido + 1.0, K.Oido + 1.5)} /></svg>} />
+            {/* mismo lugar y tamaño que el corte de la escena siguiente (descontando el avance de cámara de esta escena) */}
+            <OidoCorte x={r + 21.5} y={r - 7} s={OC.s / 1.085} T={t} rotulos={kprog(t, K.Oido + 1.0, K.Oido + 1.5)} /></svg>} />
       </Escena>
 
       {/* 2 · la trompa de Eustaquio, casi siempre cerrada */}
@@ -174,45 +177,46 @@ function OidosAvion() {
         <FondoMarca patron="oscuro" />
         <Lienzo>
           <OidoCorte x={OC.x} y={OC.y} s={OC.s} T={T} rotulos={1} brilloTubo={kprog(T, K.Trompa + 0.6, K.Trompa + 1.2) * (1 - kprog(T, K.Trompa + 4, K.Trompa + 4.5))} />
-          <g opacity={kprog(T, K.Trompa + 0.6, K.Trompa + 1.1)}><Rot x={OC.x + 30} y={OC.y + 250} ancla="end" color={KC.yellow}>trompa de</Rot><Rot x={OC.x + 30} y={OC.y + 300} ancla="end" color={KC.yellow}>Eustaquio</Rot></g>
-          <g opacity={kprog(T, K.Trompa + 0.2, K.Trompa + 0.7)}><Rot x={OC.x + 225} y={OC.y + 520} ancla="end" color={OTEJ}>garganta</Rot></g>
+          <g opacity={kprog(T, K.Trompa + 0.6, K.Trompa + 1.1)}><Rot x={OC.x + 30 * OC.s} y={OC.y + 250 * OC.s} ancla="end" color={KC.yellow}>trompa de</Rot><Rot x={OC.x + 30 * OC.s} y={OC.y + 250 * OC.s + 52} ancla="end" color={KC.yellow}>Eustaquio</Rot></g>
+          <g opacity={kprog(T, K.Trompa + 0.2, K.Trompa + 0.7)}><Rot x={OC.x + 225 * OC.s} y={OC.y + 520 * OC.s} ancla="end" color={OTEJ}>garganta</Rot></g>
         </Lienzo>
-        <Chip T={T} at={K.Trompa + 3.2} until={K.Cabina - 0.1} texto="casi siempre: cerrado" x={540} y={400} tam={42} borde={KC.yellow} />
+        <Chip T={T} at={K.Trompa + 3.2} until={K.Cabina - 0.1} texto="casi siempre: cerrado" x={540} y={330} tam={42} borde={KC.yellow} />
       </Escena>
 
       {/* 3 · la cabina va presurizada, con menos presión que a nivel del mar */}
       <Escena T={T} a={K.Cabina} b={K.Bajada} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <Nube x={((900 - (T - K.Cabina) * 120) % 1400 + 1400) % 1400 - 200} y={420} s={0.9} />
-          <Nube x={((300 - (T - K.Cabina) * 80) % 1400 + 1400) % 1400 - 200} y={1150} s={0.7} />
-          <Avion x={540 + Math.sin(T * 1.3) * 10} y={640 + Math.sin(T * 2) * 8} s={1.25} />
+          <Nube x={((900 - (T - K.Cabina) * 120) % 1400 + 1400) % 1400 - 200} y={340} s={1.1} />
+          <Nube x={((300 - (T - K.Cabina) * 80) % 1400 + 1400) % 1400 - 200} y={1440} s={1.0} />
+          <Avion x={540 + Math.sin(T * 1.3) * 10} y={690 + Math.sin(T * 2) * 8} s={1.6} />
           <g opacity={kprog(T, K.Cabina + 1.4, K.Cabina + 1.9)}>
-            <rect x={90} y={830} width={900} height={330} rx={36} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
-            <BarraH x={140} y={920} ancho={800} v={kprog(T, K.Cabina + 1.6, K.Cabina + 2.4, kEase.sale)} color={KC.mint} etiqueta="nivel del mar" />
-            <BarraH x={140} y={1060} ancho={800} v={0.72 * kprog(T, K.Cabina + 2.6, K.Cabina + 3.4, kEase.sale)} color={KC.yellow} etiqueta="presión de la cabina" />
+            <rect x={90} y={950} width={900} height={330} rx={36} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
+            <BarraH x={140} y={1040} ancho={800} v={kprog(T, K.Cabina + 1.6, K.Cabina + 2.4, kEase.sale)} color={KC.mint} etiqueta="nivel del mar" />
+            <BarraH x={140} y={1180} ancho={800} v={0.72 * kprog(T, K.Cabina + 2.6, K.Cabina + 3.4, kEase.sale)} color={KC.yellow} etiqueta="presión de la cabina" />
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Cabina + 0.4} until={K.Bajada - 0.1} texto="cabina presurizada" x={540} y={420} tam={42} borde={KC.ink} />
-        <Chip T={T} at={K.Cabina + 3.4} until={K.Bajada - 0.1} texto="menos presión" x={760} y={1110} tam={34} borde={KC.yellow} />
+        <Chip T={T} at={K.Cabina + 0.4} until={K.Bajada - 0.1} texto="cabina presurizada" x={540} y={400} tam={42} borde={KC.ink} />
+        <Chip T={T} at={K.Cabina + 3.4} until={K.Bajada - 0.1} texto="menos presión" x={840} y={1215} tam={34} borde={KC.yellow} />
       </Escena>
 
       {/* 4 · al bajar, la presión sube y empuja el tímpano hacia adentro */}
       <Escena T={T} a={K.Bajada} b={K.Pregunta} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <Montana x={200} y={1250} ancho={700} alto={300} color={KC.leaf} nieve={false} />
-          <Montana x={800} y={1250} ancho={800} alto={380} color="#46a85a" nieve={false} />
-          <Avion x={klerp(900, 300, kprog(T, K.Bajada, K.Pregunta))} y={klerp(620, 900, kprog(T, K.Bajada, K.Pregunta))} s={0.7} rot={14} />
-          <rect x={90} y={360} width={900} height={150} rx={30} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
-          <BarraH x={140} y={420} ancho={800} v={presCab(T)} color={KC.yellow} etiqueta="presión de la cabina" />
-          {T > K.Bajada + 0.3 && <TextoSvg x={930} y={480} tam={70} color={KC.yellow} o={kprog(T, K.Bajada + 0.4, K.Bajada + 0.8)}>▲</TextoSvg>}
+          <rect x={-200} y={1500} width={KW + 400} height={KH} fill="#143321" />
+          <Montana x={170} y={1500} ancho={800} alto={430} color={KC.leaf} nieve={false} />
+          <Montana x={860} y={1500} ancho={900} alto={540} color="#46a85a" nieve={false} />
+          <Avion x={klerp(860, 300, kprog(T, K.Bajada, K.Pregunta))} y={klerp(560, 660, kprog(T, K.Bajada, K.Pregunta))} s={1.0} rot={14} />
+          <rect x={90} y={230} width={900} height={150} rx={30} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
+          <BarraH x={140} y={290} ancho={800} v={presCab(T)} color={KC.yellow} etiqueta="presión de la cabina" />
+          {T > K.Bajada + 0.3 && <TextoSvg x={930} y={350} tam={70} color={KC.yellow} o={kprog(T, K.Bajada + 0.4, K.Bajada + 0.8)}>▲</TextoSvg>}
         </Lienzo>
-        <Lupa T={T} at={K.Bajada + 1.6} until={K.Pregunta - 0.1} x={540} y={820} r={260} fx={() => klerp(900, 300, kprog(K.Bajada + 1.6, K.Bajada, K.Pregunta)) - 60} fy={() => klerp(620, 900, kprog(K.Bajada + 1.6, K.Bajada, K.Pregunta)) - 10} tinte={KC.yellow} etiqueta="POR DENTRO · TÍMPANO"
+        <Lupa T={T} at={K.Bajada + 1.6} until={K.Trago - 0.1} x={540} y={1110} r={340} fx={() => klerp(860, 300, kprog(K.Bajada + 1.6, K.Bajada, K.Pregunta)) - 80} fy={() => klerp(560, 660, kprog(K.Bajada + 1.6, K.Bajada, K.Pregunta)) - 14} tinte={KC.yellow} etiqueta="POR DENTRO · TÍMPANO"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0b1a2c" />
-            <OidoCorte x={r + 50} y={r + 10} s={0.62} T={t} tim={kprog(t, K.Bajada + 2.4, K.Bajada + 3.4, kEase.sale)} fuera={klerp(1, 2, kprog(t, K.Bajada + 1.8, K.Bajada + 3))} dentro={0.7}
+            <OidoCorte x={r + 65} y={r + 13} s={0.81} T={t} tim={kprog(t, K.Bajada + 2.4, K.Bajada + 3.4, kEase.sale)} fuera={klerp(1, 2, kprog(t, K.Bajada + 1.8, K.Bajada + 3))} dentro={0.7}
               empuja={kprog(t, K.Bajada + 2.2, K.Bajada + 3.4)} />
-            <Rot x={r} y={r - 150} tam={44} color={KC.yellow} o={kprog(t, K.Bajada + 3.0, K.Bajada + 3.4)}>hacia adentro</Rot></svg>} />
+            <Rot x={r} y={r - 196} tam={54} color={KC.yellow} o={kprog(t, K.Bajada + 3.0, K.Bajada + 3.4)}>hacia adentro</Rot></svg>} />
       </Escena>
 
       {/* 5 · pregunta */}
@@ -227,41 +231,41 @@ function OidosAvion() {
             abre={kprog(T, K.Trago + 1.8, K.Trago + 2.2) * (1 - kprog(T, K.Trago + 3.6, K.Trago + 4.2))}
             flujo={1} fuera={2} dentro={klerp(0.7, 2, kprog(T, K.Trago + 2.2, K.Trago + 3.4))}
             glup={kprog(T, K.Trago + 0.9, K.Trago + 1.9)} />
-          <Onomato T={T} at={K.Trago + 3.3} dur={2.2} x={OC.x + 190} y={OC.y - 140} texto="¡POP!" tam={170} />
+          <Onomato T={T} at={K.Trago + 3.3} dur={2.2} x={OC.x + 190 * OC.s} y={OC.y - 140 * OC.s} texto="¡POP!" tam={190} />
         </Lienzo>
-        <Chip T={T} at={K.Trago + 0.2} until={K.Trago + 2.8} texto="tragas o bostezas" x={540} y={400} tam={42} borde={OTEJ} />
-        <Chip T={T} at={K.Trago + 3.5} until={K.Consejos - 0.1} texto="la presión se iguala" x={540} y={1180} tam={40} borde={KC.cyan} />
+        <Chip T={T} at={K.Trago + 0.2} until={K.Trago + 2.8} texto="tragas o bostezas" x={540} y={330} tam={42} borde={OTEJ} />
+        <Chip T={T} at={K.Trago + 3.5} until={K.Consejos - 0.1} texto="la presión se iguala" x={400} y={1245} tam={40} borde={KC.cyan} />
       </Escena>
 
       {/* 7 · consejos: chicle, tragar seguido, bostezar */}
       <Escena T={T} a={K.Consejos} b={K.Bebes} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          {[[K.Consejos + 0.6, 270, 610, 'masticar chicle'], [K.Consejos + 1.5, 810, 610, 'tragar seguido'], [K.Consejos + 2.3, 540, 980, 'bostezar']].map(([at, xx, yy, lab], i) => {
-            const e = kprog(T, at, at + 0.4, kEase.rebote);
-            return <g key={i} transform={`translate(${xx} ${yy}) scale(${e})`}>
-              <circle r={140} fill="#fff" stroke={KC.ink} strokeWidth={9} />
-              {i === 0 && <Chicle x={-15} y={15} s={0.75} T={T} />}
-              {i === 1 && <Vaso x={0} y={0} s={0.85} T={T} />}
-              {i === 2 && <CabezaPerfil x={-20} y={-10} s={0.5} boca={0.6 + 0.4 * Math.abs(Math.sin(T * 1.5))} />}
-              <Rot x={0} y={195} tam={44}>{lab}</Rot>
-            </g>; })}
+          {/* el mismo pasajero, grande: mastica, traga y bosteza (antes eran tres íconos sueltos) */}
+          {(() => { const mast = kprog(T, K.Consejos + 0.6, K.Consejos + 0.9) * (1 - kprog(T, K.Consejos + 2.0, K.Consejos + 2.3)), bost = kprog(T, K.Consejos + 2.3, K.Consejos + 2.9);
+            const e = (at) => kprog(T, at, at + 0.4, kEase.rebote);
+            return <>
+              <CabezaPerfil x={300} y={1010} s={1.7} boca={Math.max(mast * 0.35 * Math.abs(Math.sin(T * 9)), bost * (0.6 + 0.4 * Math.abs(Math.sin(T * 1.5))))} />
+              <g transform={`translate(820 640) scale(${e(K.Consejos + 0.6)})`}><Chicle x={-15} y={0} s={0.85} T={T} /><Rot x={10} y={150} tam={40}>masticar chicle</Rot></g>
+              <g transform={`translate(830 1050) scale(${e(K.Consejos + 1.5)})`}><Vaso x={0} y={0} s={1.15} T={T} /><Rot x={0} y={200} tam={40}>tragar seguido</Rot></g>
+              <g transform={`translate(620 1420) scale(${e(K.Consejos + 2.3)})`}><Rot x={0} y={0} tam={48}>bostezar</Rot></g>
+            </>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Consejos + 3.4} until={K.Bebes - 0.1} texto="sobre todo: al empezar a bajar" x={540} y={420} tam={38} borde={KC.ink} />
+        <Chip T={T} at={K.Consejos + 3.4} until={K.Bebes - 0.1} texto="sobre todo: al empezar a bajar" x={540} y={330} tam={38} borde={KC.ink} />
       </Escena>
 
       {/* 8 · bebés: pecho o biberón durante el aterrizaje */}
       <Escena T={T} a={K.Bebes} b={K.Gripa} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <Ventanilla x={650} y={420} w={280} h={340} T={T} suelo={klerp(0.5, 0.95, kprog(T, K.Bebes, K.Gripa))} pista={kprog(T, K.Bebes + 2, K.Bebes + 3.5)} />
-          <BebeBiberon x={430} y={800} s={1.15} T={T} chupa={1} />
+          <Ventanilla x={640} y={330} w={340} h={420} T={T} suelo={klerp(0.5, 0.95, kprog(T, K.Bebes, K.Gripa))} pista={kprog(T, K.Bebes + 2, K.Bebes + 3.5)} />
+          <BebeBiberon x={470} y={940} s={1.6} T={T} chupa={1} />
           {[0, 1, 2].map((i) => { const f = ((T - K.Bebes) * 0.9 + i / 3) % 1;
-            return T > K.Bebes + 2.4 && <circle key={i} cx={250} cy={860 - f * 140} r={14 + f * 8} fill="none" stroke={KC.ink} strokeWidth={6} opacity={1 - f} />; })}
+            return T > K.Bebes + 2.4 && <circle key={i} cx={220} cy={1023 - f * 195} r={20 + f * 11} fill="none" stroke={KC.ink} strokeWidth={7} opacity={1 - f} />; })}
         </Lienzo>
-        <Chip T={T} at={K.Bebes + 0.5} until={K.Gripa - 0.1} texto="pecho o biberón" x={300} y={420} tam={42} borde={KC.pink} />
-        <Chip T={T} at={K.Bebes + 1.2} until={K.Gripa - 0.1} texto="al aterrizar" x={790} y={840} tam={36} borde={KC.ink} />
-        <Chip T={T} at={K.Bebes + 2.6} until={K.Gripa - 0.1} texto="así tragan seguido" x={380} y={1175} tam={38} borde={KC.ink} />
+        <Chip T={T} at={K.Bebes + 0.5} until={K.Gripa - 0.1} texto="pecho o biberón" x={300} y={590} tam={42} borde={KC.pink} />
+        <Chip T={T} at={K.Bebes + 1.2} until={K.Gripa - 0.1} texto="al aterrizar" x={810} y={850} tam={36} borde={KC.ink} />
+        <Chip T={T} at={K.Bebes + 2.6} until={K.Gripa - 0.1} texto="así tragan seguido" x={540} y={1490} tam={38} borde={KC.ink} />
       </Escena>
 
       {/* 9 · con gripa o alergia: el tubito se inflama */}
@@ -271,38 +275,39 @@ function OidosAvion() {
           <OidoCorte x={OC.x} y={OC.y} s={OC.s} T={T} rotulos={1} inflama={kprog(T, K.Gripa + 0.6, K.Gripa + 1.8, kEase.sale)}
             abre={0.12 * Math.max(0, Math.sin((T - K.Gripa) * 6)) * kprog(T, K.Gripa + 2.4, K.Gripa + 2.8)} tim={0.9} fuera={2} dentro={0.7}
             glup={T > K.Gripa + 2.2 ? ((T - K.Gripa - 2.2) * 0.9) % 1 : -1} />
-          <Alerta x={OC.x + 380} y={OC.y + 330} s={0.8} color={KC.red} />
+          <Alerta x={OC.x + 380 * OC.s - 30} y={OC.y + 330 * OC.s} s={0.9} color={KC.red} />
         </Lienzo>
-        <Chip T={T} at={K.Gripa + 0.2} until={K.Montana - 0.1} texto="gripa o alergia" x={540} y={400} tam={44} borde={KC.red} />
-        <Etq T={T} at={K.Gripa + 1.4} until={K.Montana - 0.1} x={OC.x + 60} y={OC.y + 330} texto="se inflama" color={KC.red} lado="izq" tam={42} />
-        <Chip T={T} at={K.Gripa + 2.6} until={K.Montana - 0.1} texto="cuesta más destaparlo" x={540} y={1180} tam={38} borde={KC.red} />
+        <Chip T={T} at={K.Gripa + 0.2} until={K.Montana - 0.1} texto="gripa o alergia" x={540} y={330} tam={44} borde={KC.red} />
+        <Etq T={T} at={K.Gripa + 1.4} until={K.Montana - 0.1} x={OC.x + 60 * OC.s} y={OC.y + 330 * OC.s} texto="se inflama" color={KC.red} lado="izq" tam={42} />
+        <Chip T={T} at={K.Gripa + 2.6} until={K.Montana - 0.1} texto="cuesta más destaparlo" x={400} y={1245} tam={38} borde={KC.red} />
       </Escena>
 
       {/* 10 · lo mismo al bajar una montaña en carro */}
       <Escena T={T} a={K.Montana} b={K.Cierre} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <SolDibujo x={880} y={460} r={60} T={T} />
-          <Montana x={540} y={1240} ancho={1300} alto={780} color="#8a7b9e" />
-          {(() => { const ruta = [[620, 520], [300, 700], [800, 900], [180, 1200]]; const f = kprog(T, K.Montana - 0.3, K.Cierre - 0.2, kEase.suave); const [cx, cy] = bez(ruta, f), [nx, ny] = bez(ruta, Math.min(1, f + 0.02));
+          <SolDibujo x={900} y={400} r={70} T={T} />
+          <rect x={-200} y={1420} width={KW + 400} height={KH} fill="#3a3346" />
+          <Montana x={540} y={1420} ancho={1400} alto={900} color="#8a7b9e" />
+          {(() => { const ruta = [[625, 600], [300, 800], [800, 1030], [180, 1374]]; const f = kprog(T, K.Montana - 0.3, K.Cierre - 0.2, kEase.suave); const [cx, cy] = bez(ruta, f), [nx, ny] = bez(ruta, Math.min(1, f + 0.02));
             return <><path d={`M ${ruta[0]} C ${ruta[1]} ${ruta[2]} ${ruta[3]}`} fill="none" stroke="#3b3b44" strokeWidth={46} strokeLinecap="round" />
               <path d={`M ${ruta[0]} C ${ruta[1]} ${ruta[2]} ${ruta[3]}`} fill="none" stroke="#fff" strokeWidth={5} strokeDasharray="22 22" />
-              <Carro x={cx} y={cy - 26} s={0.9} dir={nx < cx ? -1 : 1} rot={Math.atan2(ny - cy, Math.abs(nx - cx)) * 180 / Math.PI * (nx < cx ? -1 : 1)} T={T} /></>; })()}
-          <Onomato T={T} at={K.Montana + 2.0} dur={1.3} x={620} y={760} texto="¡POP!" tam={140} />
+              <Carro x={cx} y={cy - 34} s={1.3} dir={nx < cx ? -1 : 1} rot={Math.atan2(ny - cy, Math.abs(nx - cx)) * 180 / Math.PI * (nx < cx ? -1 : 1)} T={T} /></>; })()}
+          <Onomato T={T} at={K.Montana + 2.0} dur={1.3} x={700} y={860} texto="¡POP!" tam={160} />
         </Lienzo>
-        <Chip T={T} at={K.Montana + 0.3} until={K.Cierre - 0.1} texto="bajando la montaña" x={540} y={420} tam={42} borde={KC.ink} />
+        <Chip T={T} at={K.Montana + 0.3} until={K.Cierre - 0.1} texto="bajando la montaña" x={430} y={390} tam={42} borde={KC.ink} />
       </Escena>
 
       {/* 11 · cierre: el mismo pasajero, ya destapado */}
       <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <Ventanilla x={690} y={760} w={300} h={380} T={T} suelo={0.95} pista={1} />
+          <Ventanilla x={VP.x} y={VP.y} w={VP.w} h={VP.h} T={T} suelo={0.95} pista={1} />
           <CabezaPerfil x={PH.x} y={PH.y} s={PH.s} gesto={T > K.Cierre + 1.4 ? 'sonrie' : 'mueca'} />
-          <g opacity={1 - kprog(T, K.Cierre + 0.9, K.Cierre + 1.3)} transform={`translate(0 ${kprog(T, K.Cierre + 0.6, K.Cierre + 1.3, kEase.sale) * 900})`}><ManoOreja x={OREJA_P[0] - 5} y={OREJA_P[1] + 20} s={1.1} /></g>
-          <Onomato T={T} at={K.Cierre + 1.3} dur={1.4} x={OREJA_P[0] - 20} y={OREJA_P[1] - 260} texto="¡pop!" tam={120} />
+          <g opacity={1 - kprog(T, K.Cierre + 0.9, K.Cierre + 1.3)} transform={`translate(0 ${kprog(T, K.Cierre + 0.6, K.Cierre + 1.3, kEase.sale) * 900})`}><ManoOreja x={OREJA_P[0] - 7} y={OREJA_P[1] + 29} s={MANO_S} /></g>
+          <Onomato T={T} at={K.Cierre + 1.3} dur={1.4} x={250} y={500} texto="¡pop!" tam={150} />
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 2.0} until={K.Outro - 0.1} texto="el aire se iguala" x={330} y={470} tam={44} borde={KC.cyan} />
+        <Chip T={T} at={K.Cierre + 2.0} until={K.Outro - 0.1} texto="el aire se iguala" x={330} y={330} tam={44} borde={KC.cyan} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Oido - 0.1} texto="No es el ruido: *es aire.*" />
