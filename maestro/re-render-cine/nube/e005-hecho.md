@@ -1,1 +1,3 @@
 - amb-31-contaminacion-luminica: marcaba Resplandor, Nino y Aves ABAJO; subí la ciudad (Resplandor, Aves) y la casa y la persona agrandadas (Nino) con suelo oscuro abajo, reacomodé etiqueta y chips; ahora «encuadre bien» y «sin láminas».
+- cie-31-ciclo-nasal: marcaba Prueba y Cornetes ARRIBA; bajé la cara 110 px en esas dos escenas (y la lupa, la etiqueta «cornetes» y el chip con ella); ahora «encuadre bien» y «sin láminas».
+- qui-31-plata-negra: ya cumplía («encuadre bien»), sin cambios.
