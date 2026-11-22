@@ -188,14 +188,15 @@ function Hialuronico() {
       <Escena T={T} a={K.G} b={K.Tu} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Mano x={540} y={1500} s={1.6} />
-          <Gotero x={215} y={600} s={1.15} rot={-8} />
-          {caeG < 1 ? <Gota x={540} y={klerp(860, 1200, caeG)} r={44} /> : <ellipse cx={540} cy={1226} rx={112 + Math.sin(T * 3) * 6} ry={40} fill="rgba(225,242,255,.9)" stroke={KC.ink} strokeWidth={6} />}
-          <Pipeta x={540} y={klerp(840, 826, caeG)} s={1.25} />
+          {/* encuadre: la mano sube y se achica un poco para que no se corte abajo y el conjunto quede centrado */}
+          <Mano x={540} y={1290} s={1.38} />
+          <Gotero x={215} y={640} s={1.15} rot={-8} />
+          {caeG < 1 ? <Gota x={540} y={klerp(780, 1036, caeG)} r={44} /> : <ellipse cx={540} cy={1056} rx={104 + Math.sin(T * 3) * 6} ry={37} fill="rgba(225,242,255,.9)" stroke={KC.ink} strokeWidth={6} />}
+          <Pipeta x={540} y={klerp(760, 746, caeG)} s={1.25} />
           <g opacity={kprog(T, K.G + 0.6, K.G + 1.1)}><Gallo x={870} y={670} s={0.85} gris={0.8} />
             <text x={890} y={440} textAnchor="middle" style={{ font:`400 190px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={8}>?</text></g>
           <g opacity={kprog(T, K.G + 1.6, K.G + 2.2)} transform={`translate(0 ${(1 - kprog(T, K.G + 1.6, K.G + 2.2, kEase.sale)) * 60})`}>
-            <Estreptococos T={T} x={870} y={1050} n={3} r={46} color={KC.mint} rot={-20} />
+            <Estreptococos T={T} x={870} y={990} n={3} r={46} color={KC.mint} rot={-20} />
           </g>
         </SvgCapa>
       </Escena>
@@ -263,9 +264,12 @@ function Hialuronico() {
       <Escena T={T} a={K.Ca} b={K.Ri} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
+          {/* encuadre: el conjunto baja y crece 1.15 (centro 820 → 1000) */}
+          <g transform="translate(540 1000) scale(1.15) translate(-540 -820)">
           <Estreptococos T={T} x={600} y={1100} n={5} r={72} color="#ffb4c8" rot={-8} />
-          <GlobuloBlanco T={T} x={klerp(-320, 290, acerca) - resbala * 60} y={klerp(700, 750, acerca) - resbala * 260} s={1.5} />
+          <GlobuloBlanco T={T} x={klerp(40, 290, acerca) - resbala * 60} y={klerp(700, 750, acerca) - resbala * 260} s={1.5} />
           {resbala > 0 && resbala < 1 && <path d={`M 470 960 q -70 -110 -210 -230`} fill="none" stroke="#fff" strokeWidth={7} strokeDasharray="14 11" opacity={1 - resbala} />}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 9 · el más usado puede enfermar */}
@@ -304,9 +308,9 @@ function Hialuronico() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Mano x={540} y={1500} s={1.6} />
-          <Gotero x={540} y={830} s={1.5} etiqueta="SUERO" etq2={kprog(T, K.Ci + 0.8, K.Ci + 1.2) > 0.5 ? 'hecho por|bacterias' : ''} />
-          <g transform={`translate(${klerp(1260, 890, kprog(T, K.Ci + 1.4, K.Ci + 2.2, kEase.sale))} 900)`}><Bacteria T={T} x={0} y={0} largo={290} ancho={116} rot={-30} color="#ffe08a" seed={5} /></g>
+          <Mano x={540} y={1300} s={1.38} />
+          <Gotero x={540} y={700} s={1.5} etiqueta="SUERO" etq2={kprog(T, K.Ci + 0.8, K.Ci + 1.2) > 0.5 ? 'hecho por|bacterias' : ''} />
+          <g transform={`translate(${klerp(1260, 890, kprog(T, K.Ci + 1.4, K.Ci + 2.2, kEase.sale))} 770)`}><Bacteria T={T} x={0} y={0} largo={290} ancho={116} rot={-30} color="#ffe08a" seed={5} /></g>
         </SvgCapa>
       </Escena>
 
@@ -320,8 +324,8 @@ function Hialuronico() {
       <Etq T={T} at={K.En + 1.4} until={K.Hi - 0.1} x={610} y={800} texto="una sola enzima" tam={30} color={KC.texto} />
       <Chip T={T} at={K.En + 2.2} until={K.Ag - 0.3} texto="ácido glucurónico + N-acetilglucosamina" x={540} y={1490} tam={30} borde={GLCA} />
       <Chip T={T} at={K.Ag + 0.8} until={K.Pr - 0.3} texto="atrapa agua" x={540} y={470} tam={52} borde={AGUA} />
-      <Etq T={T} at={K.Ca + 0.6} until={K.Ri - 0.3} x={500} y={1262} texto="capa de hialurónico" tam={30} color={HA_HILO} />
-      <Etq T={T} at={K.Ca + 1.2} until={K.Ri - 0.3} x={548} y={690} texto="glóbulo blanco" lado="der" tam={32} color="#e8e1ff" />
+      <Etq T={T} at={K.Ca + 0.6} until={K.Ri - 0.3} x={515} y={1535} texto="capa de hialurónico" tam={30} color={HA_HILO} />
+      <Etq T={T} at={K.Ca + 1.2} until={K.Ri - 0.3} x={549} y={850} texto="glóbulo blanco" lado="der" tam={32} color="#e8e1ff" />
       <Etq T={T} at={K.Ri + 0.6} until={K.Es - 0.2} x={170} y={1090} texto="Streptococcus zooepidemicus" it lado="der" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ri + 0.4} until={K.Es - 0.2} texto="el más usado en las fábricas" x={540} y={520} tam={40} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2005" quien="Novozymes · Davis, California" revista="Appl Environ Microbiol · Widner et al." x={540} y={470} />
@@ -331,7 +335,7 @@ function Hialuronico() {
       <Chip T={T} at={K.Es + 5.6} until={K.Cr - 0.2} texto="no enferma · buena calidad" x={490} y={1400} tam={36} borde={KC.leaf} />
       <Chip T={T} at={K.Cr + 0.3} until={K.Ci - 0.2} texto="2015 · Reims, Francia · piel en laboratorio" x={540} y={280} tam={30} borde={KC.cyan} />
       <Chip T={T} at={K.Cr + 1.4} until={K.Ci - 0.2} texto="cadena grande: se queda arriba" x={540} y={1125} tam={32} borde={GLCA} />
-      <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="lo más probable: hecho por bacterias" x={540} y={300} tam={36} borde={KC.mint} />
+      <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="lo más probable: hecho por bacterias" x={540} y={250} tam={36} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Tu - 0.1} texto="No salió de un gallo: *quizá de una bacteria.*" />
