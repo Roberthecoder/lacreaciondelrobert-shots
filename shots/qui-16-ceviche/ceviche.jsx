@@ -1,7 +1,7 @@
 // cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #16 · Ese ceviche no está cocido (el limón desdobla proteínas, pero no esteriliza) — NARRADO (N1 por dentro + N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
-const PEZ_CRUDO = '#f2a3a6', PEZ_BLANCO = '#fbf6ee', LIMA = '#7cc242', LIMA_OSC = '#3f8a1f', JUGO = '#e9f5b0', LARVA = '#f3ead6';
+const OSC = '#0b1020', PEZ_CRUDO = '#f2a3a6', PEZ_BLANCO = '#fbf6ee', LIMA = '#7cc242', LIMA_OSC = '#3f8a1f', JUGO = '#e9f5b0', LARVA = '#f3ead6';
 
 // ---------- piezas ----------
 function Limon({ x, y, s = 1, rot = 0, apriete = 0 }) {
@@ -51,7 +51,7 @@ function Cordon({ T, x, y, len = 560, abre = 0, s = 1, color = '#ff9fb0', color2
     <circle cx={fin[0] + 20} cy={fin[1] + 18} r={18} fill={color2} stroke={KC.ink} strokeWidth={6} />
     {cargas > 0 && A.filter((_, i) => i % 7 === 3).map(([a, b], i) => <g key={i} opacity={kclamp(cargas * 8 - i, 0, 1)}>
       <circle cx={a} cy={b - 26} r={17} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />
-      <text x={a} y={b - 17} textAnchor="middle" style={{ font:`900 28px ${KF.texto}` }} fill={KC.ink}>+</text></g>)}
+      <text x={a} y={b - 17} textAnchor="middle" style={{ font:`900 28px ${KF.texto}` }} fill={OSC}>+</text></g>)}
   </g>;
 }
 // Fibras de músculo de fondo (lo micro).
@@ -97,9 +97,9 @@ function Cubo({ x, y, s = 1, blanco = 1 }) {
 }
 function Congelador({ T, x, y, frio = 0 }) {
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-300} y={-330} width={600} height={660} rx={40} fill="#f4f8ff" stroke={KC.ink} strokeWidth={11} />
-    <rect x={-250} y={-280} width={500} height={560} rx={24} fill={mixHex('#dff3ff', '#a9dcff', frio)} stroke={KC.ink} strokeWidth={7} />
-    <rect x={250} y={-120} width={22} height={160} rx={10} fill="#c9d3e3" stroke={KC.ink} strokeWidth={5} />
+    <rect x={-300} y={-330} width={600} height={660} rx={40} fill="#33405c" stroke={KC.ink} strokeWidth={11} />
+    <rect x={-250} y={-280} width={500} height={560} rx={24} fill={mixHex('#1c2c48', '#2f6a9c', frio)} stroke={KC.ink} strokeWidth={7} />
+    <rect x={250} y={-120} width={22} height={160} rx={10} fill="#6b7a96" stroke={KC.ink} strokeWidth={5} />
     {Array.from({ length: 14 }, (_, i) => { const R = krng(40 + i); const cx = -230 + R() * 460, cy = -260 + R() * 520; return <path key={i} d={`M ${cx - 14} ${cy} L ${cx + 14} ${cy} M ${cx} ${cy - 14} L ${cx} ${cy + 14} M ${cx - 10} ${cy - 10} L ${cx + 10} ${cy + 10} M ${cx + 10} ${cy - 10} L ${cx - 10} ${cy + 10}`} stroke="#fff" strokeWidth={4} opacity={frio} />; })}
   </g>;
 }
@@ -117,8 +117,8 @@ function Calendario({ x, y, dia, total, etiqueta = 'DÍA', color = KC.red }) {
     <rect x={-110} y={-100} width={220} height={210} rx={22} fill="#fff" stroke={KC.ink} strokeWidth={8} />
     <rect x={-110} y={-100} width={220} height={60} rx={22} fill={color} stroke={KC.ink} strokeWidth={8} />
     <text x={0} y={-56} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#fff">{etiqueta}</text>
-    <text x={0} y={80} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.ink}>{dia}</text>
-    {total && <text x={0} y={140} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>{total}</text>}
+    <text x={0} y={80} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={OSC}>{dia}</text>
+    {total && <text x={0} y={140} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto}>{total}</text>}
   </g>;
 }
 function BarraEscala({ x = 60, y = 1450, px = 200, texto, color = KC.ink }) {
@@ -144,10 +144,10 @@ function Ceviche() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.08} origen="50% 55%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Tazon T={T} x={540} y={1000} s={1.15} blanco={blanqueo} />
-          <Goteo T={T} x={330} y0={700} y1={930} cada={0.22} color={JUGO} desde={K.G} hasta={K.G + 3.0} r={13} />
-          <Limon x={330} y={640} s={0.95} rot={170} apriete={apr} />
-          <BarraEscala x={60} y={1470} px={110} texto="1 cm" />
+          <Tazon T={T} x={540} y={1010} s={1.35} blanco={blanqueo} />
+          <Goteo T={T} x={300} y0={700} y1={900} cada={0.22} color={JUGO} desde={K.G} hasta={K.G + 3.0} r={13} />
+          <Limon x={300} y={600} s={1.1} rot={170} apriete={apr} />
+          <BarraEscala x={60} y={1470} px={129} texto="1 cm" />
         </SvgCapa>
       </Escena>
       {/* 1–2 · las proteínas por dentro; el ácido las abre */}
@@ -155,14 +155,14 @@ function Ceviche() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <Fibras T={T} />
-          <Cordon T={T} x={540} y={800} abre={abre} s={1.5} cargas={kprog(T, K.A + 0.4, K.A + 1.8)} seed={1} />
-          <Cordon T={T} x={330} y={1090} abre={abre} s={0.75} cargas={kprog(T, K.A + 0.6, K.A + 2.0)} seed={3} color="#ffb3c4" />
-          <Cordon T={T} x={760} y={1080} abre={abre} s={0.75} cargas={kprog(T, K.A + 0.8, K.A + 2.2)} seed={5} color="#ffb3c4" />
+          <Cordon T={T} x={540} y={860} abre={abre} s={2.3} len={365} cargas={kprog(T, K.A + 0.4, K.A + 1.8)} seed={1} />
+          <Cordon T={T} x={300} y={1220} abre={abre} s={1.1} len={380} cargas={kprog(T, K.A + 0.6, K.A + 2.0)} seed={3} color="#ffb3c4" />
+          <Cordon T={T} x={780} y={1210} abre={abre} s={1.1} len={380} cargas={kprog(T, K.A + 0.8, K.A + 2.2)} seed={5} color="#ffb3c4" />
           {Array.from({ length: 12 }, (_, i) => { const t0 = K.A + 0.1 + i * 0.1, u = kprog(T, t0, t0 + 0.9, kEase.sale); if (u >= 1 || T < t0) return null;
-            const sx = i % 2 ? 1150 : -70, sy = 500 + i * 60; return <g key={i} opacity={1 - u * 0.6}><circle cx={klerp(sx, 540 + (i - 6) * 60, u)} cy={klerp(sy, 760, u)} r={16} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />
-              <text x={klerp(sx, 540 + (i - 6) * 60, u)} y={klerp(sy, 760, u) + 8} textAnchor="middle" style={{ font:`900 22px ${KF.texto}` }} fill={KC.ink}>H⁺</text></g>; })}
-          {T > K.A + 1.4 && T < K.A + 4.4 && [[-1, 700], [1, 700], [-1, 940], [1, 940]].map(([sg, yy], i) => { const u = (T * 1.5 + i * 0.25) % 1; return <path key={i} d={`M ${540 + sg * (120 + u * 120)} ${yy} l ${sg * 40} 0 m ${-sg * 14} -14 l ${sg * 14} 14 l ${-sg * 14} 14`} stroke={KC.yellow} strokeWidth={7} fill="none" strokeLinecap="round" opacity={1 - u} />; })}
-          <BarraEscala x={60} y={1470} px={240} texto="≈ 100 nm" color={KC.texto} />
+            const sx = i % 2 ? 1150 : -70, sy = 500 + i * 60; return <g key={i} opacity={1 - u * 0.6}><circle cx={klerp(sx, 540 + (i - 6) * 60, u)} cy={klerp(sy, 820, u)} r={16} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />
+              <text x={klerp(sx, 540 + (i - 6) * 60, u)} y={klerp(sy, 820, u) + 8} textAnchor="middle" style={{ font:`900 22px ${KF.texto}` }} fill={OSC}>H⁺</text></g>; })}
+          {T > K.A + 1.4 && T < K.A + 4.4 && [[-1, 720], [1, 720], [-1, 1000], [1, 1000]].map(([sg, yy], i) => { const u = (T * 1.5 + i * 0.25) % 1; return <path key={i} d={`M ${540 + sg * (200 + u * 140)} ${yy} l ${sg * 40} 0 m ${-sg * 14} -14 l ${sg * 14} 14 l ${-sg * 14} 14`} stroke={KC.yellow} strokeWidth={7} fill="none" strokeLinecap="round" opacity={1 - u} />; })}
+          <BarraEscala x={60} y={1470} px={368} texto="≈ 100 nm" color={KC.texto} />
         </SvgCapa>
       </Escena>
       {/* 3 · abiertas, se amontonan y dispersan la luz → el cubo blanco */}
@@ -171,22 +171,24 @@ function Ceviche() {
         <SvgCapa>
           <g opacity={1 - vistaCubo}>
             <Fibras T={T} />
+            <g transform="translate(540 930) scale(1.2) translate(-540 -880)">
             <text x={300} y={560} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>sin grumos</text>
             <text x={790} y={560} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.gold2}>con grumitos</text>
             <line x1={540} x2={540} y1={600} y2={1160} stroke="rgba(255,255,255,.25)" strokeWidth={4} strokeDasharray="14 14" />
-            <Cordon T={T} x={300} y={820} abre={0} s={1} seed={2} />
+            <Cordon T={T} x={300} y={840} abre={0} s={1.3} seed={2} />
             {[[700, 780, 1], [880, 900, 2], [720, 1020, 3], [860, 1090, 4]].map(([gx, gy, sd]) => <Grumo key={sd} x={gx} y={gy} s={klerp(0.5, 1.2, grumo)} seed={sd} o={grumo} />)}
             {[680, 820, 960].map((yy, i) => { const t0 = K.B + 1.2 + i * 0.2; return <Rayo key={i} x0={80} y0={yy} x1={520} y1={yy} p={kprog(T, t0, t0 + 0.5)} />; })}
             {[0, 1, 2, 3].map((i) => { const t0 = K.B + 1.4 + i * 0.15, cy = [780, 900, 1020, 1090][i], cx = [700, 880, 720, 860][i];
               return <g key={i}>{[-70, -25, 20, 65, 120, 170, 220].map((a, k) => { const r = a * Math.PI / 180; return <Rayo key={k} x0={cx} y0={cy} x1={cx + Math.cos(r) * 150} y1={cy + Math.sin(r) * 150} p={kprog(T, t0 + 0.3, t0 + 0.7) * grumo} w={7} />; })}</g>; })}
+            </g>
           </g>
-          {vistaCubo > 0 && <g opacity={vistaCubo}><Cubo x={540} y={900} s={2.6 - 0.3 * vistaCubo} blanco={1} /><BarraEscala x={60} y={1470} px={110} texto="1 cm" color={KC.texto} /></g>}
+          {vistaCubo > 0 && <g opacity={vistaCubo}><Cubo x={540} y={930} s={4.16 - 0.48 * vistaCubo} blanco={1} /><BarraEscala x={60} y={1470} px={176} texto="1 cm" color={KC.texto} /></g>}
         </SvgCapa>
       </Escena>
       {/* 4 · el fuego hace algo más */}
       <Escena T={T} a={K.F} b={K.P} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 930) scale(1.2) translate(-540 -920)">
           <line x1={540} x2={540} y1={560} y2={1180} stroke={KC.ink} strokeWidth={8} strokeDasharray="20 16" />
           <Sarten T={T} x={290} y={1000} s={0.95} />
           <Cubo x={290} y={930} s={1} blanco={1} />
@@ -196,7 +198,7 @@ function Ceviche() {
             return <g key={k} opacity={ap}><Bacteria T={T} x={cx - 110} y={720} s={0.8} rot={-20} vida={1 - mata} color={KC.pink} seed={k} /><Larva T={T} x={cx + 100} y={720} s={0.55} vida={1 - mata} seed={k} /></g>; })}
           <Marca x={290} y={640} ok={false} s={0.9} o={kprog(T, K.F + 2.6, K.F + 3.0)} />
           <text x={790} y={680} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.F + 3.0, K.F + 3.4)}>?</text>
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.L} zoom={0.1}>
@@ -212,7 +214,7 @@ function Ceviche() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <rect x={90} y={680} width={900} height={500} rx={60} fill={PEZ_BLANCO} opacity={0.16} stroke="rgba(255,255,255,.4)" strokeWidth={5} />
-          {bact.map(([bx, by, r], i) => { const ap = kprog(T, K.L + 0.4 + i * 0.08, K.L + 0.8 + i * 0.08), muere = (i === 3 || i === 11) ? kprog(T, lima0 + 1.5, lima0 + 2.5) : 0;
+          {bact.map(([bx, by, r], i) => { const ap = kprog(T, K.L + 0.05 + i * 0.03, K.L + 0.4 + i * 0.03), muere = (i === 3 || i === 11) ? kprog(T, lima0 + 1.5, lima0 + 2.5) : 0;
             return <g key={i} opacity={ap}><Bacteria T={T} x={bx + Math.sin(T * 1.3 + i) * 8} y={by} rot={r + Math.sin(T + i) * 10} s={0.85} vida={1 - muere} color={[KC.mint, KC.pink, KC.cyan][i % 3]} seed={i} /></g>; })}
           {T > lima0 && <Goteo T={T} x={540} y0={560} y1={700} cada={0.35} color={JUGO} desde={lima0} hasta={K.C} r={12} />}
           <BarraEscala x={60} y={1470} px={130} texto="2 µm" color={KC.texto} />
@@ -221,20 +223,21 @@ function Ceviche() {
       {/* 7 · 2019, Croacia: larva en jugo de limón */}
       <Escena T={T} a={K.C} b={K.Fr}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa>
-          <VasoLab x={420} y={1180} s={1.2} liquido={JUGO} nivel={0.7} ancho={360} alto={420} />
+        <SvgCapa><g transform="translate(540 960) scale(1.15) translate(-560 -920)">
+          <VasoLab x={420} y={1180} s={1.2} liquido="#5d6a2c" nivel={0.7} ancho={360} alto={420} />
           <Larva T={T} x={420} y={1000} s={0.9} seed={1} />
           <Limon x={420} y={700} s={0.55} rot={180} apriete={0} />
-          <Calendario x={830} y={900} dia={Math.max(1, Math.min(5, 1 + Math.floor(kprog(T, K.C + 2.8, K.C + 5.6) * 4.999)))} total="en jugo de limón" />
-          <BarraEscala x={60} y={1470} px={130} texto="1 cm" />
+          <Calendario x={830} y={900} dia={Math.max(1, Math.min(5, 1 + Math.floor(kprog(T, K.C + 2.8, K.C + 5.6) * 4.999)))} total="en jugo de limón" /></g>
+          <BarraEscala x={60} y={1470} px={150} texto="1 cm" />
         </SvgCapa>
       </Escena>
       {/* 8 · 2025, Francia: 40 larvas */}
       <Escena T={T} a={K.Fr} b={K.Co}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
+          <g opacity={kprog(T, K.Fr, K.Fr + 0.4)}><Tazon T={T} x={540} y={klerp(1190, 1150, kprog(T, K.Fr, K.Fr + 1.2, kEase.sale))} s={1.05} blanco={1} /></g>
           {Array.from({ length: 40 }, (_, i) => { const t0 = K.Fr + 2.6 + i * 0.05, ap = kprog(T, t0, t0 + 0.3, kEase.rebote); if (ap <= 0) return null;
-            return <Larva key={i} T={T} x={150 + (i % 8) * 112} y={830 + Math.floor(i / 8) * 85} s={0.32 * ap} seed={i} rot={(i * 47) % 360} />; })}
+            return <Larva key={i} T={T} x={150 + (i % 8) * 112} y={690 + Math.floor(i / 8) * 86} s={0.38 * ap} seed={i} rot={(i * 47) % 360} />; })}
         </SvgCapa>
       </Escena>
       {/* 9 · congelar a −20 °C por 7 días */}
@@ -243,7 +246,7 @@ function Ceviche() {
         <SvgCapa>
           <Congelador T={T} x={420} y={900} frio={frio} />
           <Larva T={T} x={420} y={880} s={0.9} vida={1 - kprog(T, K.Co + 3.6, K.Co + 5.0)} seed={2} />
-          <rect x={250} y={740} width={340} height={280} rx={30} fill="rgba(200,235,255,.55)" stroke="#fff" strokeWidth={6} opacity={kprog(T, K.Co + 3.4, K.Co + 4.4)} />
+          <rect x={250} y={740} width={340} height={280} rx={30} fill="rgba(160,210,255,.35)" stroke="#cfe9ff" strokeWidth={6} opacity={kprog(T, K.Co + 3.4, K.Co + 4.4)} />
           <TermometroFrio x={850} y={800} f={frio} />
           <Calendario x={850} y={1090} dia={Math.max(1, Math.min(7, 1 + Math.floor(kprog(T, K.Co + 2.0, K.Co + 4.4) * 6.999)))} total="días" color={KC.blue} />
         </SvgCapa>
@@ -251,7 +254,7 @@ function Ceviche() {
       {/* 10 · cierre: el tazón del inicio */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="50% 55%">
         <FondoLunares color={KC.yellow} />
-        <SvgCapa><Tazon T={T} x={540} y={1000} s={1.15} blanco={1} /><Limon x={330} y={640} s={0.95} rot={170} /><BarraEscala x={60} y={1470} px={110} texto="1 cm" /></SvgCapa>
+        <SvgCapa><Tazon T={T} x={540} y={1010} s={1.35} blanco={1} /><Limon x={300} y={600} s={1.1} rot={170} /><BarraEscala x={60} y={1470} px={129} texto="1 cm" /></SvgCapa>
       </Escena>
 
       {/* textos */}
@@ -259,20 +262,20 @@ function Ceviche() {
       <Chip T={T} at={K.G + 0.2} until={K.G + 4.2} texto="⏩ 15 min" x={800} y={1500} tam={30} mono borde={KC.texto} />
       <Chip T={T} at={K.G + 4.2} until={K.Q - 0.3} texto="el limón no lo cuece" x={540} y={1500} tam={40} borde={LIMA} />
       <Chip T={T} at={K.Q + 0.4} until={K.A - 0.3} texto="POR DENTRO · el pescado" x={540} y={470} tam={34} mono borde={KC.pink} />
-      <Etq T={T} at={K.Q + 1.4} until={K.A - 0.3} x={400} y={660} texto="proteína" lado="izq" tam={36} color={KC.texto} />
+      <Etq T={T} at={K.Q + 1.4} until={K.A - 0.3} x={390} y={700} texto="proteína" lado="izq" tam={36} color={KC.texto} />
       <Chip T={T} at={K.A + 0.3} until={K.A + 1.9} texto="H⁺ = el ácido del limón" x={540} y={1500} tam={38} borde={KC.yellow} />
       <Chip T={T} at={K.A + 2.0} until={K.B - 0.3} texto="ácido → desnaturaliza" x={540} y={1500} tam={42} borde={KC.yellow} />
       <Chip T={T} at={K.B + 3.4} until={K.F - 0.3} texto="blanco… pero crudo" x={540} y={1500} tam={42} borde={PEZ_BLANCO} />
-      <Etq T={T} at={K.F + 0.4} until={K.P - 0.3} x={290} y={1500} texto="calor" lado="izq" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.F + 0.6} until={K.P - 0.3} x={790} y={1500} texto="limón" tam={40} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.L + 0.15} until={K.L + 2.4} anio="2010" quien="Lima, Perú · Herrera et al." revista="J Travel Med · ceviche con bacterias" y={760} />
+      <Etq T={T} at={K.F + 0.4} until={K.P - 0.3} x={240} y={1390} texto="calor" lado="izq" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.F + 0.6} until={K.P - 0.3} x={840} y={1390} texto="limón" tam={40} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.L + 0.15} until={K.L + 2.4} anio="2010" quien="Lima, Perú · Herrera et al." revista="J Travel Med · ceviche con bacterias" y={400} />
       <Cronometro T={T} at={lima0} until={K.C - 0.2} inicio={0} factor={1800 / Math.max(1, K.C - lima0 - 0.6)} x={420} y={470} etiqueta="⏩ CÁMARA RÁPIDA" />
       <Etq T={T} at={K.L + 2.8} until={K.C - 0.3} x={140} y={620} texto="Vibrio parahaemolyticus" it tam={30} />
       <Chip T={T} at={K.L + 4.6} until={K.C - 0.3} texto="30 min: casi no bajaron" x={540} y={1500} tam={40} borde={KC.mint} />
-      <TarjetaEstudio T={T} at={K.C + 0.15} until={K.C + 2.5} anio="2019" quien="Split, Croacia · Šimat y Trumbić" revista="Fishes · larvas en jugo de limón" y={700} />
-      <Etq T={T} at={K.C + 2.8} until={K.Fr - 0.3} x={640} y={630} texto="larva de Anisakis" it tam={32} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.C + 0.15} until={K.C + 2.5} anio="2019" quien="Split, Croacia · Šimat y Trumbić" revista="Fishes · larvas en jugo de limón" y={400} />
+      <Etq T={T} at={K.C + 2.8} until={K.Fr - 0.3} x={290} y={1195} texto="larva de Anisakis" it tam={32} color={KC.ink} />
       <Chip T={T} at={K.C + 4.4} until={K.Fr - 0.3} texto="≈ 5 días vivas" x={540} y={1500} tam={44} borde={KC.lilac} />
-      <TarjetaEstudio T={T} at={K.Fr + 0.15} until={K.Fr + 2.4} anio="2025" quien="Francia · Robert et al." revista="Food Waterborne Parasitol" y={760} />
+      <TarjetaEstudio T={T} at={K.Fr + 0.15} until={K.Fr + 2.4} anio="2025" quien="Francia · Robert et al." revista="Food Waterborne Parasitol" y={400} />
       <NumeroGigante T={T} at={K.Fr + 2.6} until={K.Co - 0.3} valor={40} dur={2.0} etiqueta="larvas" y={540} tam={170} color={KC.yellow} />
       <Chip T={T} at={K.Fr + 3.4} until={K.Co - 0.3} texto="ceviche casero de merluza" x={540} y={1500} tam={38} borde={KC.cyan} />
       <Chip T={T} at={K.Co + 0.3} until={K.Co + 3.0} texto="FDA · pescado para comer crudo" x={380} y={470} tam={30} borde={KC.blue} />
