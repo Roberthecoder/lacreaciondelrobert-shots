@@ -231,8 +231,8 @@ compararon cuadro por cuadro y con analizador de audio; todo lo de abajo sale de
 - **Lo microscópico se dibuja en línea con resplandor** (contornos claros o de color sobre oscuro, rellenos apagados), no con
   rellenos planos de caricatura.
 - **Un solo punto de atención.** Nada tapa al sujeto. Máximo una etiqueta o chip a la vez; etiquetas cortas, en mayúsculas o
-  monoespaciada chica, con línea guía. **Sin subtítulo quemado y sin logo durante el video** (la referencia no los lleva;
-  interruptores en `CINE_OPC` de `motor/kit/cine.jsx`). El logo va solo en la tarjeta de cierre.
+  monoespaciada chica, con línea guía. **Sin subtítulo quemado durante el video** (la referencia no lo lleva); **el logo pequeño del canal sí va**,
+  arriba a la izquierda (Robert, 22 nov 2026). Interruptores en `CINE_OPC` de `motor/kit/cine.jsx`.
 - **Prohibidas las láminas:** ninguna escena puede ser solo un texto, un signo de interrogación, una tarjeta, una lista de chips
   o íconos sobre fondo vacío. El sujeto (o lo que viene) siempre está en pantalla. La fecha y el estudio se cuentan con una escena
   dibujada (la cama del paciente, la placa de Petri), con la tarjeta chica y arriba.
