@@ -3,7 +3,7 @@
 // Guion y fuentes: guion.md · verificacion.md. Arroyo, esporas, hifas, larva y mapas: DIBUJO ESQUEMÁTICO (estilo propio).
 // Esporas (conidios) de Articulospora tetracladia: un brazo de base corto (16–25 µm) + tres brazos que divergen de un punto (20–50 µm), incoloras.
 
-const ES = { agua:'#2aa7d6', agua2:'#1b7fb0', agua3:'#5fd0f2', espuma:'#f3ead2', espuma2:'#e2d3ac', roca:'#8d8a82', roca2:'#6e6b64',
+const ES = { agua:'#14506f', agua2:'#0e3a54', agua3:'#5fd0f2', espuma:'#f3ead2', espuma2:'#e2d3ac', roca:'#5d5b57', roca2:'#6e6b64',
   rama:'#6b4423', hoja:'#d98a2b', hoja2:'#b8641a', hojaV:'#7cbf3a', nervio:'#8a4a12', hialino:'rgba(235,250,255,.9)', hialBorde:'#bfe9ff',
   larva:'#f0d9a8', cielo:'#0f1a3a', galleta:'#e7b765', crema:'#a4682c', tronco:'#6b4a2e' };
 
@@ -53,14 +53,14 @@ function Espuma({ T, x, y, w = 420, h = 150, p = 1, estrellas = 0, noche = 0, se
     {B.map(([bx, by, r, k], i) => i / B.length <= p ? <circle key={i} cx={bx + Math.sin(T * 0.8 + i) * 3} cy={by} r={r} fill={k > 0.5 ? col : col2} stroke={noche > 0.5 ? '#2a3a6a' : '#c9b98a'} strokeWidth={2} opacity={0.95} /> : null)}
     {B.map(([bx, by, r], i) => i % 3 === 0 && i / B.length <= p ? <circle key={'b' + i} cx={bx - r * 0.3} cy={by - r * 0.35} r={r * 0.22} fill="#fff" opacity={0.7 * (1 - noche)} /> : null)}
     {S.slice(0, Math.round(estrellas)).map(([sx, sy, rr, ss, f], i) => { const tw = 0.55 + 0.45 * Math.sin(T * 4 + f);
-      return <Estrella key={'s' + i} x={sx} y={sy} rot={rr} s={ss * (0.32 + noche * 0.12)} L={60} o={tw} color={noche > 0.5 ? '#fff8d6' : ES.hialino} borde={noche > 0.5 ? KC.gold2 : '#9fd8f0'} septos={false} />; })}
+      return <Estrella key={'s' + i} x={sx} y={sy} rot={rr} s={ss * (0.36 + noche * 0.24)} L={60} o={tw} color={noche > 0.5 ? '#fff8d6' : ES.hialino} borde={noche > 0.5 ? KC.gold2 : '#9fd8f0'} septos={false} />; })}
   </g>;
 }
 // Arroyo de lado a lado con piedras, remanso y tapón de ramitas. Las cosas que se ponen encima van como children.
 function Arroyo({ T, y = 620, h = 1400, children, noche = 0 }) {
   const agua = mixHex(ES.agua, '#0b1640', noche), agua2 = mixHex(ES.agua2, '#08102e', noche);
   return <g>
-    <rect x={0} y={y - 80} width={KW} height={100} fill={mixHex('#6fb43c', '#14301a', noche)} />
+    <rect x={0} y={y - 80} width={KW} height={100} fill={mixHex('#2f5e24', '#14301a', noche)} />
     <rect x={0} y={y} width={KW} height={h} fill={agua} />
     {Array.from({ length: 9 }, (_, i) => { const yy = y + 40 + i * 64, dx = ((T * 90 + i * 140) % (KW + 300)) - 150;
       return <path key={i} d={`M ${dx} ${yy} q 40 -10 80 0 t 80 0`} stroke={mixHex(ES.agua3, '#3a5aa0', noche)} strokeWidth={5} fill="none" opacity=".7" strokeLinecap="round" />; })}
@@ -130,7 +130,7 @@ function ArbolLluvia({ T, x, y, s = 1, p = 1 }) {
   </g>;
 }
 
-const ESTR_GRID = Array.from({ length: 18 }, (_, i) => [180 + (i % 6) * 145, 760 + Math.floor(i / 6) * 150]);
+const ESTR_GRID = Array.from({ length: 18 }, (_, i) => [140 + (i % 6) * 160, 700 + Math.floor(i / 6) * 200]);
 
 function EspumaShot() {
   const { T, CUES } = useComposition();
@@ -141,25 +141,25 @@ function EspumaShot() {
       {/* 1 · gancho: la espuma en el remanso; el jabón se tacha; titilan estrellas */}
       <Escena T={T} a={K.G} b={K.Na} zoom={0.06} origen="45% 50%">
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Arroyo T={T} y={520}>
+        {fsvg(<g transform="translate(540 900) scale(1.6) translate(-420 -830)"><Arroyo T={T} y={520}>
           <Espuma T={T} x={420} y={830} w={460} h={170} p={klerp(0.55, 1, kprog(T, K.G, K.G + 1.2))} estrellas={kprog(T, K.G + 1.2, K.G + 2.8) * 18} />
-          <g transform={`translate(830 ${1000}) rotate(${-10 + Math.sin(T * 3) * 4})`} opacity={kprog(T, K.G + 0.2, K.G + 0.5)}>
+          <g transform={`translate(600 ${1110}) rotate(${-10 + Math.sin(T * 3) * 4})`} opacity={kprog(T, K.G + 0.2, K.G + 0.5)}>
             <rect x={-55} y={-150} width={110} height={170} rx={24} fill={KC.pink} stroke={KC.ink} strokeWidth={6} />
             <rect x={-25} y={-190} width={50} height={44} rx={8} fill="#fff" stroke={KC.ink} strokeWidth={5} />
             <text x={0} y={-50} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill="#fff">JABÓN</text>
             <path d="M -80 -170 L 80 30 M 80 -170 L -80 30" stroke={KC.red} strokeWidth={16} strokeLinecap="round" opacity={kprog(T, K.G + 1.0, K.G + 1.3)} />
           </g>
-        </Arroyo>)}
+        </Arroyo></g>)}
       </Escena>
       {/* 2 · espuma natural: hojas que caen y se pudren sueltan sustancias que hacen burbujas */}
       <Escena T={T} a={K.Na} b={K.Z} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={760} width={KW} height={560} fill={ES.agua} stroke={KC.ink} strokeWidth={6} />
+          <rect x={-60} y={900} width={KW + 120} height={1200} fill={ES.agua} stroke={KC.ink} strokeWidth={6} />
           {[0, 1, 2, 3].map((i) => { const u = kprog(T, K.Na + i * 0.5, K.Na + 1.4 + i * 0.5, kEase.sale); const podr = kprog(T, K.Na + 1.5 + i * 0.4, K.Na + 3.2 + i * 0.4);
-            return <g key={i} transform={`translate(${190 + i * 230} ${klerp(420, 820, u)}) rotate(${Math.sin(T * 2 + i) * 20 * (1 - u) + i * 30})`}><HojaAliso x={0} y={0} s={0.55} color={mixHex(i % 2 ? ES.hoja : ES.hojaV, '#6a4a2a', podr)} /></g>; })}
+            return <g key={i} transform={`translate(${160 + i * 253} ${klerp(520, 960, u)}) rotate(${Math.sin(T * 2 + i) * 20 * (1 - u) + i * 30})`}><HojaAliso x={0} y={0} s={1.0} color={mixHex(i % 2 ? ES.hoja : ES.hojaV, '#6a4a2a', podr)} /></g>; })}
           {Array.from({ length: 22 }, (_, i) => { const t0 = K.Na + 1.6 + i * 0.09, u = kprog(T, t0, t0 + 1.0); if (u <= 0) return null;
-            return <circle key={i} cx={150 + (i * 83) % 820} cy={klerp(900, 770, u)} r={10 + (i % 4) * 5} fill={ES.espuma} stroke="#c9b98a" strokeWidth={2} opacity={0.9} />; })}
+            return <circle key={i} cx={130 + (i * 83) % 820} cy={klerp(1080, 905, u)} r={15 + (i % 4) * 8} fill={ES.espuma} stroke="#c9b98a" strokeWidth={2} opacity={0.9} />; })}
         </>)}
       </Escena>
       {/* 3–4 · al microscopio: esporas de 4 brazos en las burbujas; medida de Articulospora */}
@@ -167,7 +167,7 @@ function EspumaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<>
-          {T < K.M + 0.3 && <g opacity={1 - kprog(T, K.M - 0.1, K.M + 0.3)}>
+          {T < K.M + 0.3 && <g opacity={1 - kprog(T, K.M - 0.1, K.M + 0.3)} transform="translate(540 930) scale(1.25) translate(-455 -890)">
             {[[300, 760, 210], [650, 960, 170], [330, 1110, 120]].map(([cx, cy, r], i) => <g key={i} opacity={kprog(T, K.Z + i * 0.25, K.Z + 0.5 + i * 0.25)}>
               <circle cx={cx} cy={cy} r={r} fill="rgba(160,220,255,.08)" stroke="rgba(200,240,255,.7)" strokeWidth={5} />
               <ellipse cx={cx - r * 0.35} cy={cy - r * 0.4} rx={r * 0.2} ry={r * 0.1} fill="#fff" opacity=".5" transform={`rotate(-30 ${cx - r * 0.35} ${cy - r * 0.4})`} />
@@ -178,7 +178,7 @@ function EspumaShot() {
             <Sigmoide x={200} y={1010} rot={30} L={140} o={kprog(T, K.Z + 2.2, K.Z + 2.6)} />
           </g>}
           {T > K.M - 0.3 && <g opacity={kprog(T, K.M - 0.3, K.M + 0.2)}>
-            {(() => { const s = 3.2, L = 90, cx = 400, cy = 900, a = -30 * Math.PI / 180, ex = cx + Math.cos(a) * L * s, ey = cy + Math.sin(a) * L * s, m = kprog(T, K.M + 1.0, K.M + 2.0, kEase.sale);
+            {(() => { const s = 4.2, L = 90, cx = 540, cy = 1000, a = -30 * Math.PI / 180, ex = cx + Math.cos(a) * L * s, ey = cy + Math.sin(a) * L * s, m = kprog(T, K.M + 1.0, K.M + 2.0, kEase.sale);
               return <>
                 <Estrella x={cx} y={cy} s={s} L={L} ancho={6} rot={0} />
                 {/* medidor sobre uno de los tres brazos que divergen */}
@@ -210,38 +210,38 @@ function EspumaShot() {
       <Escena T={T} a={K.Ga} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <HojaAliso x={250} y={640} s={0.95} color="#d9a46a" />
-          <HojaAliso x={720} y={640} s={0.95} color="#b07a3a">
+          <HojaAliso x={270} y={640} s={1.5} color="#d9a46a" />
+          <HojaAliso x={790} y={640} s={1.5} color="#b07a3a">
             {[[-40, -30], [20, 10], [-10, 50], [40, -50], [-50, 30]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={16} fill="none" stroke="#f6fff0" strokeWidth={4} strokeDasharray="6 6" />)}
           </HojaAliso>
-          <Larva T={T} x={klerp(500, 600, kprog(T, K.Ga + 0.6, K.Ga + 2.0, kEase.suave))} y={840} s={1.1} />
+          <Larva T={T} x={klerp(560, 720, kprog(T, K.Ga + 0.6, K.Ga + 2.0, kEase.suave))} y={940} s={1.6} dir={-1} />
           <g opacity={kprog(T, K.Ga + 2.6, K.Ga + 3.0)}>
-            <Galleta x={250} y={1650} s={0.75} crema={0} />
-            <text x={500} y={1675} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>VS</text>
-            <Galleta x={740} y={1650} s={0.75} crema={kprog(T, K.Ga + 3.2, K.Ga + 3.8)} />
+            <Galleta x={270} y={1300} s={1.1} crema={0} />
+            <text x={530} y={1332} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink}>VS</text>
+            <Galleta x={790} y={1300} s={1.1} crema={kprog(T, K.Ga + 3.2, K.Ga + 3.8)} />
           </g>
         </>)}
       </Escena>
       {/* 7 · re-gancho: ¿y por qué estrellas? */}
       <Escena T={T} a={K.P} b={K.W} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Estrella x={300} y={860} rot={T * 40} s={3.4} L={70} color="#ffffff" borde={KC.ink} ancho={8} /><Interrogacion T={T} x={300} y={1230} tam={300} /></>)}
+        {fsvg(<><Estrella x={540} y={800} rot={T * 40} s={3.4} L={70} color="#ffffff" borde={KC.ink} ancho={8} /><Interrogacion T={T} x={540} y={1300} tam={320} /></>)}
       </Escena>
       {/* 8 · Webster 1959: caen a la misma velocidad; al chocar, las estrellas se quedan */}
       <Escena T={T} a={K.W} b={K.B} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={160} y={520} width={760} height={600} rx={30} fill="rgba(200,240,255,.55)" stroke={KC.ink} strokeWidth={8} />
-          <rect x={160} y={1090} width={760} height={30} fill="#d6dde6" stroke={KC.ink} strokeWidth={6} />
-          {(() => { const u = kprog(T, K.W + 1.6, K.W + 4.0), yy = klerp(560, 1070, u), reb = kprog(T, K.W + 4.0, K.W + 4.8, kEase.sale);
+          <rect x={160} y={540} width={760} height={800} rx={30} fill="rgba(120,190,230,.14)" stroke={KC.ink} strokeWidth={8} />
+          <rect x={160} y={1310} width={760} height={30} fill="#8f9aa8" stroke={KC.ink} strokeWidth={6} />
+          {(() => { const u = kprog(T, K.W + 1.6, K.W + 4.0), yy = klerp(640, 1280, u), reb = kprog(T, K.W + 4.0, K.W + 4.8, kEase.sale);
             return <>
-              <Ovalada x={290 + reb * 90} y={yy - reb * 60 + reb * reb * 40} s={2.2} rot={reb * 120} />
-              <Sigmoide x={540} y={yy - 10} rot={u * 30} L={120} s={1.6} borde={KC.ink} />
-              <Estrella x={790} y={yy - 40} rot={180} s={1.7} L={50} borde={KC.ink} />
-              <text x={290} y={1170} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>ovalada</text>
-              <text x={540} y={1170} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>en S</text>
-              <text x={790} y={1170} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>estrella</text>
-              {reb > 0.6 && <path d="M 760 1040 l 24 24 l 44 -54" stroke="#118a3a" strokeWidth={12} fill="none" strokeLinecap="round" opacity={kprog(T, K.W + 4.5, K.W + 4.8)} />}
+              <Ovalada x={290 + reb * 90} y={yy - 30 - reb * 60 + reb * reb * 40} s={3.2} rot={reb * 120} />
+              <Sigmoide x={540} y={yy - 16} rot={u * 30} L={120} s={2.3} borde={KC.ink} />
+              <Estrella x={790} y={yy - 62} rot={180} s={2.6} L={50} borde={KC.ink} />
+              <text x={290} y={1385} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>ovalada</text>
+              <text x={540} y={1385} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>en S</text>
+              <text x={790} y={1385} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>estrella</text>
+              {reb > 0.6 && <path d="M 850 1150 l 24 24 l 44 -54" stroke="#118a3a" strokeWidth={12} fill="none" strokeLinecap="round" opacity={kprog(T, K.W + 4.5, K.W + 4.8)} />}
             </>; })()}
         </>)}
       </Escena>
@@ -249,37 +249,37 @@ function EspumaShot() {
       <Escena T={T} a={K.B} b={K.I} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <rect x={60} y={1010} width={960} height={70} rx={20} fill={ES.hoja} stroke={KC.ink} strokeWidth={7} />
-          <path d="M 80 1045 L 1000 1045" stroke={ES.nervio} strokeWidth={6} />
-          {(() => { const u = kprog(T, K.B + 0.3, K.B + 1.5, kEase.rebote), s = 2.6, L = 70, a1 = 35 * Math.PI / 180, dy = Math.sin(a1) * L * s, dx = Math.cos(a1) * L * s;
+          <rect x={60} y={1040} width={960} height={80} rx={20} fill={ES.hoja} stroke={KC.ink} strokeWidth={7} />
+          <path d="M 80 1080 L 1000 1080" stroke={ES.nervio} strokeWidth={6} />
+          {(() => { const u = kprog(T, K.B + 0.3, K.B + 1.5, kEase.rebote), s = 3.6, L = 70, a1 = 35 * Math.PI / 180, dy = Math.sin(a1) * L * s, dx = Math.cos(a1) * L * s;
             // vista de lado: el brazo de base apunta arriba y los tres brazos bajan; el del centro va hacia ti (se ve más corto), así las tres puntas tocan la hoja
-            const cy = klerp(520, 1010 - dy, u), puntas = [[-dx, dy], [0, dy], [dx, dy]];
+            const cy = klerp(440, 1040 - dy, u), puntas = [[-dx, dy], [0, dy], [dx, dy]];
             return <g>
-              <g transform={`translate(420 ${cy})`}>
+              <g transform={`translate(400 ${cy})`}>
                 {[[0, 0, 0, -L * s * 0.45], ...puntas.map(([a, b]) => [0, 0, a, b])].map(([a, b, c, d], i) => <g key={i}>
                   <line x1={a} y1={b} x2={c} y2={d} stroke={KC.ink} strokeWidth={24} strokeLinecap="round" />
                   <line x1={a} y1={b} x2={c} y2={d} stroke={i === 2 ? '#d8f2ff' : ES.hialino} strokeWidth={17} strokeLinecap="round" /></g>)}
                 <circle r={16} fill={ES.hialino} stroke={KC.ink} strokeWidth={4} />
               </g>
-              {T > K.B + 1.4 && puntas.map(([a], k) => <circle key={k} cx={420 + a} cy={1010} r={20 * kprog(T, K.B + 1.4 + k * 0.1, K.B + 1.7 + k * 0.1, kEase.rebote)} fill="none" stroke={KC.gold2} strokeWidth={7} />)}
+              {T > K.B + 1.4 && puntas.map(([a], k) => <circle key={k} cx={400 + a} cy={1040} r={26 * kprog(T, K.B + 1.4 + k * 0.1, K.B + 1.7 + k * 0.1, kEase.rebote)} fill="none" stroke={KC.gold2} strokeWidth={7} />)}
             </g>; })()}
-          <g opacity={kprog(T, K.B + 1.8, K.B + 2.3)}><Banquito x={830} y={800} s={1} /></g>
+          <g opacity={klerp(0.35, 1, kprog(T, K.B + 1.8, K.B + 2.3))}><Banquito x={840} y={760} s={1.7} /></g>
         </>)}
       </Escena>
       {/* 10 · Ingold: arroyo detrás de su casa, Inglaterra; publica en 1942 */}
       <Escena T={T} a={K.I} b={K.R} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <path d="M 0 1110 Q 300 1060 540 1120 T 1080 1100 L 1080 1200 L 0 1200 Z" fill={ES.agua} stroke={KC.ink} strokeWidth={6} />
-          <g opacity={kprog(T, K.I + 0.1, K.I + 0.6)}><Casita x={300} y={1070} s={1.15} /></g>
-          <g opacity={kprog(T, K.I + 0.8, K.I + 1.3)}><MapaGB x={760} y={560} s={0.95} p={kprog(T, K.I + 1.3, K.I + 1.8)} /></g>
+          <path d="M -60 1310 Q 300 1250 540 1320 T 1140 1300 L 1140 2100 L -60 2100 Z" fill={ES.agua} stroke={KC.ink} strokeWidth={6} />
+          <g opacity={kprog(T, K.I + 0.1, K.I + 0.6)}><Casita x={330} y={1285} s={1.8} /></g>
+          <g opacity={kprog(T, K.I + 0.8, K.I + 1.3)}><MapaGB x={700} y={560} s={1.5} p={kprog(T, K.I + 1.3, K.I + 1.8)} /></g>
         </>)}
       </Escena>
       {/* 11 · espuma tras las ramitas; una lupa saca estrellas; cuadrícula de formas */}
       <Escena T={T} a={K.R} b={K.L} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          {T < K.R + 2.6 && <g opacity={1 - kprog(T, K.R + 2.2, K.R + 2.6)}><Arroyo T={T} y={420}>
+          {T < K.R + 2.6 && <g opacity={1 - kprog(T, K.R + 2.2, K.R + 2.6)} transform="translate(540 900) scale(1.5) translate(-440 -720)"><Arroyo T={T} y={420}>
             <Espuma T={T} x={440} y={720} w={420} h={150} estrellas={0} />
           </Arroyo>
             <g transform={`translate(${klerp(1000, 470, kprog(T, K.R + 0.4, K.R + 1.2, kEase.sale))} 700)`}>
@@ -288,18 +288,18 @@ function EspumaShot() {
               <line x1={85} y1={85} x2={170} y2={170} stroke={KC.ink} strokeWidth={26} strokeLinecap="round" />
             </g></g>}
           {ESTR_GRID.map(([gx, gy], i) => { const on = kprog(T, K.R + 2.6 + i * 0.08, K.R + 2.9 + i * 0.08, kEase.rebote); if (on <= 1e-3) return null;
-            return <g key={i}><circle cx={gx} cy={gy} r={62} fill="rgba(14,20,36,.85)" stroke={KC.ink} strokeWidth={5} />
-              {i % 4 === 3 ? <Sigmoide x={gx} y={gy} s={on * 0.7} rot={i * 20} L={150} color="#fff8d6" borde={KC.gold2} /> : <Estrella x={gx} y={gy + 8} s={on * (0.75 + (i % 3) * 0.08)} rot={i * 37} L={60} color="#fff8d6" borde={KC.gold2} />}</g>; })}
+            return <g key={i}><circle cx={gx} cy={gy} r={72} fill="rgba(14,20,36,.85)" stroke={KC.ink} strokeWidth={5} />
+              {i % 4 === 3 ? <Sigmoide x={gx} y={gy} s={on * 0.84} rot={i * 20} L={150} color="#fff8d6" borde={KC.gold2} /> : <Estrella x={gx} y={gy + 8} s={on * 1.2 * (0.75 + (i % 3) * 0.08)} rot={i * 37} L={60} color="#fff8d6" borde={KC.gold2} />}</g>; })}
         </>)}
       </Escena>
       {/* 12 · también en la lluvia que escurre por los troncos */}
       <Escena T={T} a={K.L} b={K.C} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#283a4d, #394554)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#111a29, #1a2433)' }}></div>
         {fsvg(<>
-          {Array.from({ length: 40 }, (_, i) => { const x0 = (i * 97) % KW, y0 = ((T * 900 + i * 173) % 1500) + 300; return <line key={i} x1={x0} y1={y0} x2={x0 - 8} y2={y0 + 40} stroke="#e6f6ff" strokeWidth={4} opacity=".8" />; })}
+          {Array.from({ length: 40 }, (_, i) => { const x0 = (i * 97) % KW, y0 = ((T * 900 + i * 173) % 1500) + 300; return <line key={i} x1={x0} y1={y0} x2={x0 - 8} y2={y0 + 40} stroke="#e6f6ff" strokeWidth={4} opacity=".45" />; })}
           <rect x={0} y={1140} width={KW} height={80} fill={ES.agua} stroke={KC.ink} strokeWidth={6} />
           <ArbolLluvia T={T} x={300} y={1150} s={0.95} />
-          {(() => { const g = kprog(T, K.L + 1.2, K.L + 2.0, kEase.rebote); return <g transform={`translate(720 ${820}) scale(${g})`}>
+          {(() => { const g = kprog(T, K.L + 1.2, K.L + 2.0, kEase.rebote); return <g transform={`translate(800 ${900}) scale(${g * 1.4})`}>
             <path d="M 0 -200 Q 150 0 140 70 Q 120 170 0 170 Q -120 170 -140 70 Q -150 0 0 -200 Z" fill="rgba(170,225,255,.85)" stroke={KC.ink} strokeWidth={8} />
             <Estrella x={0} y={70} s={1.3} L={60} borde={'#3a7aa0'} />
           </g>; })()}
@@ -308,60 +308,61 @@ function EspumaShot() {
       {/* 13 · cierre: el mismo remanso del inicio; la espuma se vuelve un cielo de estrellas */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="45% 50%">
         <FondoLunares color={mixHex(KC.cyan, '#0b1a3a', kprog(T, K.C + 0.6, K.C + 2.2))} punto={`rgba(255,255,255,${0.33 * (1 - kprog(T, K.C + 0.6, K.C + 2.2))})`} />
-        {fsvg(<Arroyo T={T} y={520} noche={kprog(T, K.C + 0.6, K.C + 2.2)}>
+        {fsvg(<g transform="translate(540 900) scale(1.6) translate(-420 -830)"><Arroyo T={T} y={520} noche={kprog(T, K.C + 0.6, K.C + 2.2)}>
           <Espuma T={T} x={420} y={830} w={460} h={170} estrellas={klerp(18, 26, kprog(T, K.C + 0.8, K.C + 2.2))} noche={kprog(T, K.C + 0.6, K.C + 2.2)} />
-        </Arroyo>)}
+        </Arroyo></g>)}
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 1.4} until={K.Na - 0.3} x={60} y={470} texto="espuma del remanso" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Na + 1.8} until={K.Z - 0.3} x={60} y={470} texto="espuma natural" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.Na + 2.2} until={K.Z - 0.3} x={60} y={525} texto="de hojas que se pudren" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Na + 2.6} until={K.Z - 0.3} texto="también existe espuma de contaminación: esa es otra" x={KW / 2} y={680} tam={26} borde={KC.red} />
-      <Chip T={T} at={K.Z + 0.1} until={K.M - 0.3} texto="AL MICROSCOPIO · LA ESPUMA" x={420} y={460} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Z + 1.3} until={K.M - 0.3} x={60} y={1500} texto="esporas de 4 brazos" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Z + 2.2} until={K.M - 0.3} x={60} y={1550} texto="y en S (sigmoides)" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.M + 0.3} until={K.H - 0.3} x={60} y={470} texto="Articulospora tetracladia" it tam={40} color={KC.texto} />
-      <Etq T={T} at={K.M + 0.7} until={K.H - 0.3} x={60} y={525} texto="espora (conidio), incolora" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.M + 2.4} until={K.H - 0.3} x={60} y={1500} texto="= hasta 0.05 mm por brazo" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.G + 1.4} until={K.Na - 0.3} x={60} y={640} texto="espuma del remanso" tam={38} color={KC.ink} />
+      <Etq T={T} at={K.Na + 1.8} until={K.Z - 0.3} x={60} y={300} texto="espuma natural" tam={42} color={KC.ink} />
+      <Etq T={T} at={K.Na + 2.2} until={K.Z - 0.3} x={60} y={358} texto="de hojas que se pudren" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Na + 2.6} until={K.Z - 0.3} texto="también existe espuma de contaminación: esa es otra" x={KW / 2} y={1400} tam={28} borde={KC.red} />
+      <Chip T={T} at={K.Z + 0.1} until={K.M - 0.3} texto="AL MICROSCOPIO · LA ESPUMA" x={540} y={380} tam={32} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Z + 1.3} until={K.M - 0.3} x={60} y={1420} texto="esporas de 4 brazos" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Z + 2.2} until={K.M - 0.3} x={60} y={1470} texto="y en S (sigmoides)" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.M + 0.3} until={K.H - 0.3} x={60} y={420} texto="Articulospora tetracladia" it tam={40} color={KC.texto} />
+      <Etq T={T} at={K.M + 0.7} until={K.H - 0.3} x={60} y={478} texto="espora (conidio), incolora" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.M + 2.4} until={K.H - 0.3} x={60} y={1380} texto="= hasta 0.05 mm por brazo" tam={34} color={KC.gold2} />
       <Chip T={T} at={K.H + 0.1} until={K.Ga - 0.3} texto="POR DENTRO · UNA HOJA EN EL AGUA" x={360} y={460} tam={30} borde={KC.mint} mono />
       <Etq T={T} at={K.H + 0.8} until={K.Ga - 0.3} x={60} y={525} texto="hifas de hongos acuáticos" tam={30} color="#eafff7" />
       <Medidor T={T} at={K.H + 1.6} until={K.Ga - 0.3} etiqueta="dureza de la hoja" valor={(t) => klerp(0.9, 0.35, kprog(t, K.H + 1.8, K.H + 4.2))} texto={() => ''} x={90} y={1490} ancho={420} color={KC.orange} />
       <Medidor T={T} at={K.H + 2.4} until={K.Ga - 0.3} etiqueta="proteína" valor={(t) => klerp(0.2, 0.8, kprog(t, K.H + 2.6, K.H + 4.6))} texto={() => ''} x={570} y={1490} ancho={420} color={KC.mint} />
-      <Etq T={T} at={K.Ga + 0.4} until={K.P - 0.3} x={60} y={480} texto="larva de tricóptero" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ga + 0.8} until={K.P - 0.3} x={60} y={530} texto="casita de trocitos de hoja" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Ga + 1.6} until={K.Ga + 2.6} texto="elige la hoja con hongo" x={720} y={1500} tam={28} borde={KC.mint} />
-      <Etq T={T} at={K.Ga + 0.3} until={K.Ga + 2.6} x={60} y={1500} texto="hoja sin hongo" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Ga + 2.8} until={K.P - 0.3} x={170} y={1530} texto="hoja sola" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Ga + 3.4} until={K.P - 0.3} x={640} y={1530} texto="con hongo" tam={26} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.W + 0.1} until={K.W + 1.5} anio="1959" quien="J. Webster · laboratorio" revista="Annals of Botany, 1959" x={540} y={820} />
-      <Cronometro T={T} at={K.W + 1.6} until={K.B - 0.3} factor={1} x={540} y={470} etiqueta="CAEN A LA MISMA VELOCIDAD" />
-      <Chip T={T} at={K.W + 4.3} until={K.B - 0.3} texto="la estrella se atora al chocar" x={540} y={1500} tam={30} borde={KC.ink} fondo="rgba(14,15,18,.85)" />
-      <Chip T={T} at={K.B + 1.9} until={K.I - 0.3} texto="hipótesis: aterriza en 3 puntas" x={KW / 2} y={1500} tam={32} borde={KC.gold} />
-      <Chip T={T} at={K.B + 3.0} until={K.I - 0.3} texto="no en todas las especies" x={KW / 2} y={1590} tam={30} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.I + 2.4} until={K.R - 0.3} anio="1942" quien="C. T. Ingold publica · Inglaterra" revista="Trans. Br. Mycol. Soc., 1942" x={420} y={640} />
-      <Etq T={T} at={K.I + 0.8} until={K.I + 2.3} x={60} y={520} texto="el arroyo detrás de su casa" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.I + 1.6} until={K.R - 0.3} x={640} y={980} texto="Inglaterra" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.R + 0.3} until={K.R + 2.4} x={60} y={470} texto="espuma tras unas ramitas" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.R + 2.8} until={K.L - 0.3} texto="más de 300 especies descritas · estudio de 2022" x={KW / 2} y={1500} tam={28} borde={KC.gold} />
-      <Etq T={T} at={K.L + 0.4} until={K.C - 0.3} x={60} y={1500} texto="agua que escurre" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.L + 0.8} until={K.C - 0.3} x={60} y={1550} texto="por troncos y hojas" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="no es jabón: es un cielo de estrellas de hongo" x={KW / 2} y={1500} tam={28} borde={KC.gold2} />
+      <Etq T={T} at={K.Ga + 0.4} until={K.P - 0.3} x={60} y={1075} texto="larva de tricóptero" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ga + 0.8} until={K.P - 0.3} x={60} y={1125} texto="casita de trocitos de hoja" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Ga + 1.6} until={K.Ga + 2.6} texto="elige la hoja con hongo" x={790} y={400} tam={30} borde={KC.mint} />
+      <Etq T={T} at={K.Ga + 0.3} until={K.Ga + 2.6} x={60} y={430} texto="hoja sin hongo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ga + 2.8} until={K.P - 0.3} x={170} y={1480} texto="hoja sola" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ga + 3.4} until={K.P - 0.3} x={690} y={1480} texto="con hongo" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.W + 0.1} until={K.W + 1.5} anio="1959" quien="J. Webster · laboratorio" revista="Annals of Botany, 1959" x={540} y={350} />
+      <Cronometro T={T} at={K.W + 1.6} until={K.B - 0.3} factor={1} x={540} y={440} etiqueta="CAEN A LA MISMA VELOCIDAD" />
+      <Chip T={T} at={K.W + 4.3} until={K.B - 0.3} texto="la estrella se atora al chocar" x={540} y={1535} tam={32} borde={KC.ink} fondo="rgba(14,15,18,.85)" />
+      <Chip T={T} at={K.B + 1.9} until={K.I - 0.3} texto="hipótesis: aterriza en 3 puntas" x={KW / 2} y={1260} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.B + 3.0} until={K.I - 0.3} texto="no en todas las especies" x={KW / 2} y={1350} tam={30} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.I + 2.4} until={K.R - 0.3} anio="1942" quien="C. T. Ingold publica · Inglaterra" revista="Trans. Br. Mycol. Soc., 1942" x={360} y={520} />
+      <Etq T={T} at={K.I + 0.8} until={K.I + 2.3} x={60} y={700} texto="el arroyo detrás de su casa" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.I + 1.6} until={K.R - 0.3} x={730} y={1190} texto="Inglaterra" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.R + 0.3} until={K.R + 2.4} x={60} y={600} texto="espuma tras unas ramitas" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.R + 2.8} until={K.L - 0.3} texto="más de 300 especies descritas · estudio de 2022" x={KW / 2} y={1340} tam={30} borde={KC.gold} />
+      <Etq T={T} at={K.L + 0.4} until={K.C - 0.3} x={60} y={1310} texto="agua que escurre" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.L + 0.8} until={K.C - 0.3} x={60} y={1362} texto="por troncos y hojas" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="no es jabón: es un cielo de estrellas de hongo" x={KW / 2} y={1420} tam={30} borde={KC.gold2} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Na} texto="10 cm" largo={160} color={KC.texto} />
-      <BarraEscala T={T} at={K.Na} until={K.Z} texto="10 cm" largo={180} />
-      <BarraEscala T={T} at={K.Z} until={K.M} texto="50 µm" largo={170} />
-      <BarraEscala T={T} at={K.M} until={K.H} texto="50 µm" largo={260} />
+      <BarraEscala T={T} at={K.G} until={K.Na} texto="10 cm" largo={256} color={KC.texto} />
+      <BarraEscala T={T} at={K.Na} until={K.Z} texto="5 cm" largo={164} />
+      <BarraEscala T={T} at={K.Z} until={K.M} texto="50 µm" largo={212} />
+      <BarraEscala T={T} at={K.M} until={K.H} texto="50 µm" largo={378} />
       <BarraEscala T={T} at={K.H} until={K.Ga} texto="20 µm" largo={110} y={1360} />
-      <BarraEscala T={T} at={K.Ga} until={K.P} texto="1 cm · esquemático" largo={120} />
+      <BarraEscala T={T} at={K.Ga} until={K.P} texto="1 cm · esquemático" largo={175} />
       <BarraEscala T={T} at={K.P} until={K.W} texto="50 µm" largo={240} />
       <BarraEscala T={T} at={K.W} until={K.B} texto="esquema del experimento" largo={0} />
-      <BarraEscala T={T} at={K.B} until={K.I} texto="50 µm" largo={180} />
+      <BarraEscala T={T} at={K.B} until={K.I} texto="50 µm" largo={249} />
       <BarraEscala T={T} at={K.I} until={K.R} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.R} until={K.L} texto="esporas: 50 µm · esquemático" largo={90} />
+      <BarraEscala T={T} at={K.R} until={K.R + 2.5} texto="esporas: 50 µm · esquemático" largo={135} />
+      <BarraEscala T={T} at={K.R + 2.5} until={K.L} texto="esporas: 50 µm · esquemático" largo={108} />
       <BarraEscala T={T} at={K.L} until={K.C} texto="1 m · esquemático" largo={120} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={160} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={256} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Na - 0.1} texto="No es jabón: *está llena de estrellas.*" />
