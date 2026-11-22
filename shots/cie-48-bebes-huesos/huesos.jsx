@@ -204,19 +204,20 @@ function BebesHuesos() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
   const uF = kprog(T, K.Fusion + 0.6, K.Fusion + 3.2, kEase.suave);
+  const pG = kprog(T, K.Gancho + 3.9, K.Gancho + 4.8, kEase.suave);   // gancho: el bebé llena el cuadro y luego se hace a un lado para el adulto
   return (
     <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: bebé (≈ 300 piezas) contra adulto (206) */}
       <Escena T={T} a={K.Gancho} b={K.Cartilago}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <Cuerpo x={300} yPies={1170} alto={560} k={0} u={0} sale={kprog(T, K.Gancho, K.Gancho + 2.6)} T={T} />
-          <g transform={`translate(${(1 - kprog(T, K.Gancho + 4.2, K.Gancho + 4.9, kEase.sale)) * 600} 0)`}>
-            <Cuerpo x={790} yPies={1170} alto={700} k={1} u={1} sale={kprog(T, K.Gancho + 4.3, K.Gancho + 5.6)} T={T} piel="#e9a27c" />
+          <Cuerpo x={klerp(540, 320, pG)} yPies={1560} alto={klerp(1150, 800, pG)} k={0} u={0} sale={kprog(T, K.Gancho, K.Gancho + 2.6)} T={T} />
+          <g transform={`translate(${(1 - kprog(T, K.Gancho + 4.2, K.Gancho + 4.9, kEase.sale)) * 700} 0)`}>
+            <Cuerpo x={750} yPies={1560} alto={960} k={1} u={1} sale={kprog(T, K.Gancho + 4.3, K.Gancho + 5.6)} T={T} piel="#e9a27c" />
           </g>
         </Lienzo>
-        <NumeroGigante T={T} at={K.Gancho + 0.15} until={K.Cartilago - 0.2} valor={300} dur={2.4} prefijo="≈ " etiqueta="piezas · bebé" x={300} y={440} tam={170} color={KC.yellow} />
-        <NumeroGigante T={T} at={K.Gancho + 4.4} until={K.Cartilago - 0.2} valor={206} dur={0.9} etiqueta="huesos · adulto" x={790} y={330} tam={170} color={KC.cyan} />
+        <NumeroGigante T={T} at={K.Gancho + 0.15} until={K.Cartilago - 0.2} valor={300} dur={2.4} prefijo="≈ " etiqueta="piezas · bebé" x={klerp(540, 320, pG)} y={klerp(290, 610, pG)} tam={klerp(170, 150, pG)} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.Gancho + 4.4} until={K.Cartilago - 0.2} valor={206} dur={0.9} etiqueta="huesos · adulto" x={750} y={420} tam={170} color={KC.cyan} />
       </Escena>
       {/* 1 · en parte cartílago */}
       <Escena T={T} a={K.Cartilago} b={K.Fusion} zoom={0.08} origen="30% 60%">
@@ -236,24 +237,24 @@ function BebesHuesos() {
       <Escena T={T} a={K.Fusion} b={K.Craneo} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <g transform={`translate(520 ${830}) rotate(-8)`}>
+          <g transform={`translate(540 ${820}) rotate(-40) scale(1.1)`}>
             <HuesoLargo x1={-300} y1={0} x2={300} y2={0} w={120} u={uF} sep={150} sw={9} />
           </g>
         </Lienzo>
-        <BarraCrece T={T} at={K.Fusion + 0.3} until={K.Craneo - 0.15} p={uF} texto="al crecer →" fin={uF > 0.98 ? '1 solo hueso' : 'varias piezas'} x={140} y={1040} />
+        <BarraCrece T={T} at={K.Fusion + 0.3} until={K.Craneo - 0.15} p={uF} texto="al crecer →" fin={uF > 0.98 ? '1 solo hueso' : 'varias piezas'} x={140} y={1380} />
       </Escena>
       {/* 3 · el cráneo: placas y fontanelas */}
       <Escena T={T} a={K.Craneo} b={K.Parto} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <CraneoArriba x={500} y={800} s={1.05} T={T} marca={T > K.Craneo + 3.6 ? 'arriba' : null}
+          <CraneoArriba x={540} y={900} s={1.2} T={T} marca={T > K.Craneo + 3.6 ? 'arriba' : null}
             toque={kprog(T, K.Craneo + 0.4, K.Craneo + 1.4, kEase.sale) * (1 - kprog(T, K.Craneo + 3.2, K.Craneo + 3.8))} />
         </Lienzo>
-        <Chip T={T} at={K.Craneo + 0.3} until={K.Craneo + 3.3} texto="un ejemplo que puedes tocar" x={540} y={400} tam={40} borde={KC.yellow} />
-        <Etq T={T} at={K.Craneo + 2.6} until={K.Craneo + 4.4} x={770} y={640} texto="placas" lado="der" />
-        <Chip T={T} at={K.Craneo + 3.6} until={K.Parto - 0.15} texto="fontanelas: puntos blanditos" x={540} y={400} tam={40} borde={MEMB} />
-        <Etq T={T} at={K.Craneo + 4.2} until={K.Parto - 0.15} x={565} y={705} texto="de arriba" lado="der" color={KC.yellow} tam={40} />
-        <Etq T={T} at={K.Craneo + 4.9} until={K.Parto - 0.15} x={500} y={1050} texto="de atrás" lado="der" color={KC.yellow} tam={40} />
+        <Chip T={T} at={K.Craneo + 0.3} until={K.Craneo + 3.3} texto="un ejemplo que puedes tocar" x={540} y={300} tam={40} borde={KC.yellow} />
+        <Etq T={T} at={K.Craneo + 2.6} until={K.Craneo + 4.4} x={849} y={717} texto="placas" lado="der" />
+        <Chip T={T} at={K.Craneo + 3.6} until={K.Parto - 0.15} texto="fontanelas: puntos blanditos" x={540} y={300} tam={40} borde={MEMB} />
+        <Etq T={T} at={K.Craneo + 4.2} until={K.Parto - 0.15} x={614} y={791} texto="de arriba" lado="der" color="#0b1020" tam={32} />
+        <Etq T={T} at={K.Craneo + 4.9} until={K.Parto - 0.15} x={540} y={1186} texto="de atrás" lado="der" color="#0b1020" tam={32} />
       </Escena>
       {/* 4 · se acomoda al nacer y deja crecer al cerebro */}
       <Escena T={T} a={K.Parto} b={K.Cierra} fondo={KC.lilac}>
@@ -261,44 +262,44 @@ function BebesHuesos() {
         <Lienzo>
           {(() => { const ap = kprog(T, K.Parto + 0.3, K.Parto + 1.2, kEase.suave) * (1 - kprog(T, K.Parto + 2.2, K.Parto + 2.8, kEase.suave));
             const ce = kprog(T, K.Parto + 2.6, K.Parto + 4.4, kEase.suave);
-            return <g>
+            return <g transform="translate(540 900) scale(1.1) translate(-500 -800)">
               <CraneoArriba x={500} y={800} s={1.0} T={T} aprieta={ap} cerebro={ce} />
               {[-1, 1].map((d) => <path key={d} d={`M ${500 + d * (480 - 60 * ap)} 480 Q ${500 + d * (380 - 70 * ap)} 800 ${500 + d * (480 - 60 * ap)} 1120`} fill="none" stroke={KC.violet} strokeWidth={30} strokeLinecap="round" opacity={ap} />)}
               {ce > 0.05 && [0, 1, 2, 3, 4, 5].map((i) => { const a = i / 6 * Math.PI * 2 + 0.5, f = (T * 0.8 + i / 6) % 1;
                 return <g key={i} opacity={ce * (1 - f)}><FlechaRecta x1={500 + Math.cos(a) * 300} y1={800 + Math.sin(a) * 350} x2={500 + Math.cos(a) * (360 + f * 60)} y2={800 + Math.sin(a) * (410 + f * 60)} color={KC.yellow} grosor={10} punta={24} /></g>; })}
             </g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Parto + 0.3} until={K.Parto + 2.5} texto="se acomoda al nacer" x={540} y={400} tam={42} borde={KC.yellow} />
-        <Chip T={T} at={K.Parto + 2.7} until={K.Cierra - 0.15} texto="espacio para el cerebro" x={540} y={400} tam={42} borde="#f7a8c0" />
+        <Chip T={T} at={K.Parto + 0.3} until={K.Parto + 2.5} texto="se acomoda al nacer" x={540} y={290} tam={42} borde={KC.yellow} />
+        <Chip T={T} at={K.Parto + 2.7} until={K.Cierra - 0.15} texto="espacio para el cerebro" x={540} y={290} tam={42} borde="#f7a8c0" />
       </Escena>
       {/* 5 · calendario de las fontanelas */}
       <Escena T={T} a={K.Cierra} b={K.Pregunta} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
-        {(() => { const X0 = 300, PX = 34, mx = (m) => X0 + m * PX;
+        {(() => { const X0 = 360, PX = 31, mx = (m) => X0 + m * PX;
           const pa = kprog(T, K.Cierra + 0.4, K.Cierra + 2.0, kEase.sale), pb = kprog(T, K.Cierra + 3.4, K.Cierra + 5.6, kEase.sale);
           const cur = T < K.Cierra + 3.2 ? klerp(0, 2.5, pa) : klerp(7, 19, pb);
           return <Lienzo>
-            <rect x={60} y={500} width={960} height={680} rx={40} fill="rgba(14,15,18,.82)" stroke={KC.ink} strokeWidth={8} />
+            <rect x={36} y={530} width={1008} height={880} rx={40} fill="rgba(14,15,18,.82)" stroke={KC.ink} strokeWidth={8} />
             {/* fila 1: atrás */}
-            <CraneoArriba x={165} y={680} s={0.2} T={T} cierraAtras={pa} marca="atras" />
-            <text x={X0} y={600} style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto}>atrás</text>
-            <rect x={X0} y={640} width={20 * PX} height={44} rx={22} fill="rgba(255,255,255,.12)" />
-            <rect x={X0} y={640} width={Math.max(44, 2.5 * PX * pa)} height={44} rx={22} fill={MEMB} stroke={KC.ink} strokeWidth={5} />
-            <text x={X0 + 2.5 * PX + 24} y={676} style={{ font:`700 34px ${KF.mono}` }} fill={MEMB} opacity={kprog(T, K.Cierra + 1.2, K.Cierra + 1.7)}>primeros meses</text>
+            <CraneoArriba x={190} y={745} s={0.4} T={T} cierraAtras={pa} marca="atras" />
+            <text x={X0} y={665} style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto}>atrás</text>
+            <rect x={X0} y={705} width={20 * PX} height={44} rx={22} fill="rgba(255,255,255,.12)" />
+            <rect x={X0} y={705} width={Math.max(44, 2.5 * PX * pa)} height={44} rx={22} fill={MEMB} stroke={KC.ink} strokeWidth={5} />
+            <text x={X0 + 2.5 * PX + 24} y={741} style={{ font:`700 34px ${KF.mono}` }} fill={MEMB} opacity={kprog(T, K.Cierra + 1.2, K.Cierra + 1.7)}>primeros meses</text>
             {/* fila 2: arriba */}
-            <CraneoArriba x={165} y={930} s={0.2} T={T} cierraArriba={pb} marca="arriba" />
-            <text x={X0} y={850} style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto} opacity={kprog(T, K.Cierra + 2.6, K.Cierra + 3.0)}>arriba</text>
-            <rect x={X0} y={890} width={20 * PX} height={44} rx={22} fill="rgba(255,255,255,.12)" />
-            {pb > 0 && <rect x={mx(7)} y={890} width={Math.max(44, 12 * PX * pb)} height={44} rx={22} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />}
-            <text x={mx(13)} y={990} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.yellow} opacity={kprog(T, K.Cierra + 4.4, K.Cierra + 4.9)}>7–19 meses</text>
+            <CraneoArriba x={190} y={1065} s={0.4} T={T} cierraArriba={pb} marca="arriba" />
+            <text x={X0} y={985} style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto} opacity={kprog(T, K.Cierra + 2.6, K.Cierra + 3.0)}>arriba</text>
+            <rect x={X0} y={1025} width={20 * PX} height={44} rx={22} fill="rgba(255,255,255,.12)" />
+            {pb > 0 && <rect x={mx(7)} y={1025} width={Math.max(44, 12 * PX * pb)} height={44} rx={22} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />}
+            <text x={mx(13)} y={1125} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.yellow} opacity={kprog(T, K.Cierra + 4.4, K.Cierra + 4.9)}>7–19 meses</text>
             {/* eje */}
-            <line x1={X0} y1={1080} x2={mx(20)} y2={1080} stroke={KC.texto} strokeWidth={5} />
-            {[0, 7, 19].map((m) => <g key={m}><line x1={mx(m)} y1={1066} x2={mx(m)} y2={1094} stroke={KC.texto} strokeWidth={5} />
-              <text x={mx(m)} y={1140} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>{m === 0 ? 'al nacer' : m}</text></g>)}
-            <text x={mx(20)} y={1062} textAnchor="end" style={{ font:`700 26px ${KF.mono}` }} fill="rgba(246,243,236,.7)">meses →</text>
-            <circle cx={mx(cur)} cy={1080} r={18} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
+            <line x1={X0} y1={1290} x2={mx(20)} y2={1290} stroke={KC.texto} strokeWidth={5} />
+            {[0, 7, 19].map((m) => <g key={m}><line x1={mx(m)} y1={1276} x2={mx(m)} y2={1304} stroke={KC.texto} strokeWidth={5} />
+              <text x={mx(m)} y={1350} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>{m === 0 ? 'al nacer' : m}</text></g>)}
+            <text x={mx(20)} y={1272} textAnchor="end" style={{ font:`700 26px ${KF.mono}` }} fill="rgba(246,243,236,.7)">meses →</text>
+            <circle cx={mx(cur)} cy={1290} r={18} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
           </Lienzo>; })()}
-        <Chip T={T} at={K.Cierra + 0.2} until={K.Pregunta - 0.15} texto="¿cuándo se cierran?" x={540} y={420} tam={42} borde={KC.yellow} />
+        <Chip T={T} at={K.Cierra + 0.2} until={K.Pregunta - 0.15} texto="¿cuándo se cierran?" x={540} y={440} tam={42} borde={KC.yellow} />
       </Escena>
       {/* 6 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Cadera} color={KC.orange} />
@@ -307,39 +308,39 @@ function BebesHuesos() {
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={18} color="rgba(255,255,255,.12)" />
         <Lienzo>
-          <Pelvis x={540} y={860} s={0.9} u={kprog(T, K.Cadera + 1.2, K.Cadera + 4.8, kEase.suave)} />
+          <Pelvis x={540} y={930} s={1.08} u={kprog(T, K.Cadera + 1.2, K.Cadera + 4.8, kEase.suave)} />
         </Lienzo>
-        <BarraCrece T={T} at={K.Cadera + 0.6} until={K.Rodilla - 0.15} p={kprog(T, K.Cadera + 1.2, K.Cadera + 4.8, kEase.suave)} texto="al crecer →" fin="edad adulta" x={140} y={420} color={KC.orange} />
-        <Etq T={T} at={K.Cadera + 0.9} until={K.Rodilla - 0.15} x={70} y={590} texto="cadera" lado="der" color={KC.orange} tam={40} />
-        <Etq T={T} at={K.Cadera + 1.6} until={K.Rodilla - 0.15} x={560} y={1060} texto="base de la columna" lado="der" color={KC.orange} tam={36} />
+        <BarraCrece T={T} at={K.Cadera + 0.6} until={K.Rodilla - 0.15} p={kprog(T, K.Cadera + 1.2, K.Cadera + 4.8, kEase.suave)} texto="al crecer →" fin="edad adulta" x={140} y={390} color={KC.orange} />
+        <Etq T={T} at={K.Cadera + 0.9} until={K.Rodilla - 0.15} x={70} y={585} texto="cadera" lado="der" color={KC.orange} tam={40} />
+        <Etq T={T} at={K.Cadera + 1.6} until={K.Rodilla - 0.15} x={430} y={1240} texto="base de la columna" lado="der" color={KC.orange} tam={28} />
       </Escena>
       {/* 8 · rótula: casi toda cartílago */}
       <Escena T={T} a={K.Rodilla} b={K.Total} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
-        <Lienzo><g transform="translate(1120 0) scale(-1 1)"><PiernaBebe x={560} y={820} s={0.8} T={T} /></g></Lienzo>
-        <Lupa T={T} at={K.Rodilla + 0.4} until={K.Total - 0.15} x={330} y={700} r={210} fx={560} fy={815} tinte={KC.yellow} etiqueta="POR DENTRO · RÓTULA"
+        <Lienzo><g transform="translate(1120 0) scale(-1 1)"><PiernaBebe x={580} y={1065} s={1.0} T={T} /></g></Lienzo>
+        <Lupa T={T} at={K.Rodilla + 0.4} until={K.Total - 0.15} x={300} y={665} r={240} fx={540} fy={1060} tinte={KC.yellow} etiqueta="POR DENTRO · RÓTULA"
           interior={(t, r) => <RotulaDentro r={r} u={kprog(t, K.Rodilla + 2.4, K.Rodilla + 5.2, kEase.suave)} T={t} />} />
-        <BarraCrece T={T} at={K.Rodilla + 2.2} until={K.Total - 0.15} p={kprog(T, K.Rodilla + 2.4, K.Rodilla + 5.2, kEase.suave)} texto="durante la infancia →" fin="" x={140} y={410} color={KC.yellow} />
-        <Etq T={T} at={K.Rodilla + 1.0} until={K.Rodilla + 2.4} x={560} y={580} texto="casi toda cartílago" lado="der" color={KC.texto} tam={36} />
+        <BarraCrece T={T} at={K.Rodilla + 2.2} until={K.Total - 0.15} p={kprog(T, K.Rodilla + 2.4, K.Rodilla + 5.2, kEase.suave)} texto="durante la infancia →" fin="" x={140} y={320} color={KC.yellow} />
+        <Etq T={T} at={K.Rodilla + 1.0} until={K.Rodilla + 2.4} x={560} y={560} texto="casi toda cartílago" lado="der" color={KC.texto} tam={36} />
       </Escena>
       {/* 9 · 206 huesos (puede variar) */}
       <Escena T={T} a={K.Total} b={K.Cierre} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
-        <Lienzo><Cuerpo x={300} yPies={1180} alto={720} k={1} u={1} T={T} piel="#e9a27c" sale={kprog(T, K.Total, K.Total + 1.2)} /></Lienzo>
-        <Chip T={T} at={K.Total + 0.2} until={K.Cierre - 0.15} texto="casi todos los adultos" x={540} y={420} tam={42} borde={KC.ink} />
-        <NumeroGigante T={T} at={K.Total + 1.2} until={K.Cierre - 0.15} valor={206} dur={1.2} etiqueta="huesos" x={770} y={700} tam={230} color={KC.cyan} />
-        <Chip T={T} at={K.Total + 3.6} until={K.Cierre - 0.15} texto="puede variar" x={770} y={950} tam={40} borde={KC.pink} />
-        <Etq T={T} at={K.Total + 4.2} until={K.Cierre - 0.15} x={610} y={1040} texto="de persona a persona" lado="der" color={KC.ink} tam={28} />
+        <Lienzo><Cuerpo x={315} yPies={1560} alto={1100} k={1} u={1} T={T} piel="#e9a27c" sale={kprog(T, K.Total, K.Total + 1.2)} /></Lienzo>
+        <Chip T={T} at={K.Total + 0.2} until={K.Cierre - 0.15} texto="casi todos los adultos" x={540} y={330} tam={42} borde={KC.ink} />
+        <NumeroGigante T={T} at={K.Total + 1.2} until={K.Cierre - 0.15} valor={206} dur={1.2} etiqueta="huesos" x={800} y={820} tam={230} color={KC.cyan} />
+        <Chip T={T} at={K.Total + 3.6} until={K.Cierre - 0.15} texto="puede variar" x={800} y={1080} tam={40} borde={KC.pink} />
+        <Etq T={T} at={K.Total + 4.2} until={K.Cierre - 0.15} x={600} y={1170} texto="de persona a persona" lado="der" color={KC.ink} tam={26} />
       </Escena>
       {/* 10 · cierre: la misma imagen del inicio, ya unida */}
       <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.pink} />
         {(() => { const c = kprog(T, K.Cierre + 0.3, K.Cierre + 2.6, kEase.suave);
           return <Lienzo>
-            <Cuerpo x={klerp(300, 540, c)} yPies={1170} alto={klerp(560, 760, c)} k={c} u={c} T={T} piel={mixHex(CPIEL, '#e9a27c', c)} />
-            <Cuerpo x={790} yPies={1170} alto={700} k={1} u={1} T={T} piel="#e9a27c" o={1 - c} />
+            <Cuerpo x={klerp(320, 540, c)} yPies={1560} alto={klerp(800, 1150, c)} k={c} u={c} T={T} piel={mixHex(CPIEL, '#e9a27c', c)} />
+            <Cuerpo x={750} yPies={1560} alto={960} k={1} u={1} T={T} piel="#e9a27c" o={1 - c} />
           </Lienzo>; })()}
-        <Chip T={T} at={K.Cierre + 0.5} until={K.Outro - 0.1} texto="no se perdieron: se fueron uniendo" x={540} y={430} tam={38} borde={KC.gold} />
+        <Chip T={T} at={K.Cierre + 0.5} until={K.Outro - 0.1} texto="no se perdieron: se fueron uniendo" x={540} y={300} tam={38} borde={KC.gold} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Cartilago - 0.1} texto="Más piezas de hueso *que tú.*" />
