@@ -87,8 +87,8 @@ function Frontera({ T, capa = 0, seed = 4 }) {
   return <g>
     <rect x={0} y={0} width={MEMB_X} height={KH} fill="#1d2a44" />
     {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M 40 ${470 + i * 130} q 100 ${-40 + Math.sin(T + i) * 14} 200 0 t 200 0`} stroke="rgba(246,243,236,.35)" strokeWidth={10} fill="none" strokeLinecap="round" />)}
-    <rect x={MEMB_X} y={0} width={KW - MEMB_X} height={KH} fill="#5a4410" />
-    <rect x={MEMB_X} y={0} width={KW - MEMB_X} height={KH} fill={YEMA} opacity={0.45} />
+    <rect x={MEMB_X} y={0} width={KW - MEMB_X} height={KH} fill="#3a2c0c" />
+    <rect x={MEMB_X} y={0} width={KW - MEMB_X} height={KH} fill={YEMA} opacity={0.16} />
     {fe.map(([x, y], i) => <Fe key={i} x={x + Math.sin(T * 1.3 + i) * 6} y={y + Math.cos(T + i) * 6} r={24} />)}
     {fes.map(([x, y, r, k], i) => k < capa ? <GranoFeS key={i} x={x} y={y} rot={r} s={1.1} /> : null)}
     <line x1={MEMB_X} x2={MEMB_X} y1={0} y2={KH} stroke={KC.texto} strokeWidth={6} strokeDasharray="22 16" />
@@ -141,13 +141,15 @@ function Huevo() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.06} origen="50% 55%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(540 1010) scale(1.2) translate(-540 -1010)">
           <Tabla x={540} y={1010} />
           {abre <= 0 ? <HuevoEntero x={540} y={1000} s={0.95} /> : <g>
             <HuevoMitad x={klerp(540, 320, abre)} y={1000} s={0.95} rot={klerp(0, -8, abre)} />
             <HuevoMitad x={klerp(540, 760, abre)} y={1000} s={0.95} rot={klerp(0, 8, abre)} />
           </g>}
           <g opacity={1 - kprog(T, K.G + 0.9, K.G + 1.3)}><Cuchillo x={540 + 120} y={klerp(380, 860, corte)} rot={-6} s={1} /></g>
-          <BarraEscala x={140} y={830} largo={150} texto="1 cm" />
+          </g>
+          <BarraEscala x={110} y={770} largo={180} texto="1 cm" />
         </SvgCapa>
       </Escena>
       {/* 1 · la clara tiene azufre, la yema hierro */}
@@ -192,9 +194,9 @@ function Huevo() {
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <text x={270} y={1000} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 270 800)`}>?</text>
-          <HuevoMitad x={300} y={1560} s={0.6} anillo={1} />
-          <HuevoMitad x={780} y={1560} s={0.6} anillo={0} />
+          <text x={540} y={960} textAnchor="middle" style={{ font:`400 500px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 780)`}>?</text>
+          <HuevoMitad x={290} y={1170} s={0.78} anillo={1} />
+          <HuevoMitad x={790} y={1170} s={0.78} anillo={0} />
         </SvgCapa>
       </Escena>
       {/* 6 · 1920, Londres: 15 minutos, agua fría vs. enfriado lento */}
@@ -214,12 +216,12 @@ function Huevo() {
               <Termometro x={760} y={830} s={0.55} nivel={klerp(0.92, 0.55, kprog(T, esFrio + 0.2, esFrio + 2.2))} color={KC.red} texto="lento" />
             </g>}
           </g> : <g>
-            <HuevoMitad x={300} y={1000} s={0.85} anillo={klerp(0, 0.06, kprog(T, esParte, esParte + 0.5))} />
-            <HuevoMitad x={780} y={1000} s={0.85} anillo={klerp(0, 0.45, kprog(T, esParte, esParte + 0.8))} />
+            <HuevoMitad x={285} y={980} s={1.08} anillo={klerp(0, 0.06, kprog(T, esParte, esParte + 0.5))} />
+            <HuevoMitad x={795} y={980} s={1.08} anillo={klerp(0, 0.45, kprog(T, esParte, esParte + 0.8))} />
           </g>}
         </SvgCapa>
-        <Etq T={T} at={esParte + 0.2} until={K.Tr - 0.2} x={300} y={1300} texto="agua fría" lado="izq" color={KC.ink} tam={36} />
-        <Etq T={T} at={esParte + 0.4} until={K.Tr - 0.2} x={780} y={1300} texto="enfriado lento" color={KC.ink} tam={36} />
+        <Etq T={T} at={esParte + 0.2} until={K.Tr - 0.2} x={300} y={1290} texto="agua fría" lado="izq" color={KC.ink} tam={36} />
+        <Etq T={T} at={esParte + 0.4} until={K.Tr - 0.2} x={780} y={1290} texto="enfriado lento" color={KC.ink} tam={36} />
       </Escena>
       {/* 7 · 30 minutos: mucho más intenso en los dos */}
       <Escena T={T} a={K.Tr} b={K.Fr} zoom={0.04}>
@@ -228,10 +230,10 @@ function Huevo() {
           {T < K.Tr + 1.7 ? <Olla T={T} x={540} y={1060} s={1.1}>
             <HuevoEntero x={-100} y={60} s={0.55} rot={Math.sin(T * 3) * 5} /><HuevoEntero x={100} y={60} s={0.55} rot={Math.cos(T * 3) * 5} />
           </Olla> : <g>
-            <HuevoMitad x={300} y={1000} s={0.85} anillo={klerp(0.45, 1.3, kprog(T, K.Tr + 1.7, K.Tr + 2.4))} />
-            <HuevoMitad x={780} y={1000} s={0.85} anillo={klerp(0.45, 1.3, kprog(T, K.Tr + 1.7, K.Tr + 2.4))} />
-            <text x={300} y={720} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>agua fría</text>
-            <text x={780} y={720} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>lento</text>
+            <HuevoMitad x={285} y={980} s={1.08} anillo={klerp(0.45, 1.3, kprog(T, K.Tr + 1.7, K.Tr + 2.4))} />
+            <HuevoMitad x={795} y={980} s={1.08} anillo={klerp(0.45, 1.3, kprog(T, K.Tr + 1.7, K.Tr + 2.4))} />
+            <text x={285} y={710} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>agua fría</text>
+            <text x={795} y={710} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>lento</text>
           </g>}
         </SvgCapa>
       </Escena>
@@ -256,20 +258,22 @@ function Huevo() {
       <Escena T={T} a={K.Da} b={K.Ci} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <HuevoMitad x={760} y={960} s={1.05} anillo={1.4} grueso={klerp(0, 30, kprog(T, K.Da + 1.2, K.Da + 2.4))} clara={mixHex(CLARA, '#e2c79a', kprog(T, K.Da + 0.4, K.Da + 2.0))} />
+          <HuevoMitad x={540} y={930} s={1.6} anillo={1.4} grueso={klerp(0, 30, kprog(T, K.Da + 1.2, K.Da + 2.4))} clara={mixHex(CLARA, '#e2c79a', kprog(T, K.Da + 0.4, K.Da + 2.0))} />
           
         </SvgCapa>
-        <Chip T={T} at={K.Da + 2.6} until={K.Ci - 0.2} texto="≈ 1 mm de FeS" x={770} y={1460} tam={44} borde={VERDE} />
+        <Chip T={T} at={K.Da + 2.6} until={K.Ci - 0.2} texto="≈ 1 mm de FeS" x={540} y={1460} tam={44} borde={VERDE} />
       </Escena>
       {/* 10 · cierre: el huevo partido del inicio, ya explicado */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="50% 55%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(540 1010) scale(1.3) translate(-540 -1010)">
           <Tabla x={540} y={1010} />
           <HuevoMitad x={320} y={1000} s={0.95} rot={-8} />
           <HuevoMitad x={760} y={1000} s={0.95} rot={8} />
           <Marca x={880} y={760} ok s={0.9} o={kprog(T, K.Ci + 1.0, K.Ci + 1.4)} />
-          <BarraEscala x={140} y={830} largo={150} texto="1 cm" />
+          </g>
+          <BarraEscala x={100} y={745} largo={195} texto="1 cm" />
         </SvgCapa>
       </Escena>
 

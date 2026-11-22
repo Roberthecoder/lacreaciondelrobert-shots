@@ -4,7 +4,7 @@
 // Dibujo esquemático: las gráficas de picos, las ondas y el tubo no van a escala.
 const HE_AIRE = KC.cyan, HE_HELIO = KC.pink, HE_SF6 = KC.violet, HE_TUBO = '#c2456b';
 // Cabeza del shot (gancho, tubo y cierre).
-const HC = { x: 360, y: 820, s: 1.35 };
+const HC = { x: 380, y: 930, s: 1.9 }; // pase a mano: cabeza ×1.4 y centrada (antes x 360, y 820, s 1.35)
 // Recorrido del tubo (garganta → boca) en coordenadas locales de CabezaPerfil.
 const TUBO_PTS = [[25, 228], [25, 140], [42, 102], [85, 88], [150, 100]];
 function enTubo(f) {
@@ -131,7 +131,7 @@ function Pulmones({ x, y, s = 1, cambio = 0, T = 0 }) {
 function Carril({ y, prog, color, nombre, T, globo = false }) {
   const x0 = 150, x1 = 950, fx = klerp(x0, x1, prog);
   return <g>
-    <rect x={90} y={y - 95} width={900} height={190} rx={40} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={8} />
+    <rect x={90} y={y - 95} width={900} height={190} rx={40} fill="rgba(20,26,40,.85)" stroke={KC.ink} strokeWidth={8} />
     <line x1={x1 + 10} y1={y - 95} x2={x1 + 10} y2={y + 95} stroke={KC.ink} strokeWidth={8} strokeDasharray="18 12" />
     {Array.from({ length: 6 }, (_, i) => { const xx = fx - i * 46; if (xx < x0) return null;
       return <path key={i} d={`M ${xx - 22} ${y - 60} Q ${xx + 22} ${y} ${xx - 22} ${y + 60}`} fill="none" stroke={i ? color : KC.ink} strokeWidth={i ? 10 : 14} strokeLinecap="round" opacity={1 - i * 0.15} />; })}
@@ -157,19 +157,19 @@ function Helio() {
       <Escena T={T} a={K.Gancho} b={K.Cuerdas} origen="40% 55%">
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <Globo x={130} y={470} r={90} T={T} des={kprog(T, 0, 2.2, kEase.sale)} color={KC.yellow} cuerda={200} />
+          <Globo x={150} y={400} r={100} T={T} des={kprog(T, 0, 2.2, kEase.sale)} color={KC.yellow} cuerda={200} />
           <CabezaPerfil x={HC.x} y={HC.y} s={HC.s} boca={habla(0.1, K.Cuerdas)} gesto="mueca" corte={0}>
             <TuboVoz T={T} o={kprog(T, K.Gancho + 3.3, K.Gancho + 3.8)} luz={kprog(T, K.Gancho + 3.6, K.Gancho + 4.2)} ondas={kprog(T, K.Gancho + 3.8, K.Gancho + 4.3)} />
           </CabezaPerfil>
           <OndasArco x={BOCA[0] + 20} y={BOCA[1]} ang={-10} T={T * 1.8} color={KC.yellow} largo={200} />
-          <Chillon x={830} y={1010} texto="¡HOLA!" T={T} tam={120} s={klerp(0.3, 1, kprog(T, 0.15, 0.55, kEase.rebote))} />
+          <Chillon x={830} y={760} texto="¡HOLA!" T={T} tam={105} s={klerp(0.3, 1, kprog(T, 0.15, 0.55, kEase.rebote))} />
           {T > K.Gancho + 1.2 && T < K.Gancho + 3.4 && <g opacity={kprog(T, K.Gancho + 1.2, K.Gancho + 1.5)}>
             <circle cx={CUELLO[0]} cy={CUELLO[1]} r={46} fill="none" stroke={KC.ink} strokeWidth={14} /><circle cx={CUELLO[0]} cy={CUELLO[1]} r={46} fill="none" stroke="#fff" strokeWidth={7} />
             <path d={`M ${CUELLO[0] - 30} ${CUELLO[1] - 30} L ${CUELLO[0] + 30} ${CUELLO[1] + 30} M ${CUELLO[0] + 30} ${CUELLO[1] - 30} L ${CUELLO[0] - 30} ${CUELLO[1] + 30}`} stroke={KC.red} strokeWidth={14} strokeLinecap="round" />
           </g>}
         </Lienzo>
-        <Chip T={T} at={K.Gancho + 1.2} until={K.Gancho + 3.3} texto="no son tus cuerdas" x={430} y={400} tam={38} borde={KC.red} />
-        <Chip T={T} at={K.Gancho + 3.6} until={K.Cuerdas - 0.1} texto="es el tubo" x={420} y={400} tam={44} borde={KC.yellow} />
+        <Chip T={T} at={K.Gancho + 1.2} until={K.Gancho + 3.3} texto="no son tus cuerdas" x={520} y={400} tam={38} borde={KC.red} />
+        <Chip T={T} at={K.Gancho + 3.6} until={K.Cuerdas - 0.1} texto="es el tubo" x={520} y={400} tam={44} borde={KC.yellow} />
       </Escena>
 
       {/* 1 · por dentro: las cuerdas vocales vibran */}
@@ -177,16 +177,16 @@ function Helio() {
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={18} color="rgba(255,255,255,.12)" />
         <Lienzo>
-          <g transform={`translate(540 690) scale(${klerp(0.15, 1, kprog(T, K.Cuerdas - 0.3, K.Cuerdas + 0.6, kEase.sale))}) translate(-540 -690)`}>
-            <CuerdasArriba x={540} y={690} s={0.9} T={T} vel={11} />
+          <g transform={`translate(540 840) scale(${klerp(0.15, 1, kprog(T, K.Cuerdas - 0.3, K.Cuerdas + 0.6, kEase.sale))}) translate(-540 -840)`}>
+            <CuerdasArriba x={540} y={840} s={1.25} T={T} vel={11} />
           </g>
-          <g opacity={kprog(T, K.Cuerdas + 1.8, K.Cuerdas + 2.3)}>
-            <rect x={90} y={1000} width={900} height={150} rx={30} fill="rgba(10,12,20,.85)" stroke={KC.yellow} strokeWidth={5} />
-            <OndaLinea x={120} y={1075} ancho={840} periodo={95} amp={48} fase={-T * 14} p={kprog(T, K.Cuerdas + 1.8, K.Cuerdas + 2.8)} />
+          <g opacity={kprog(T, K.Cuerdas + 0.1, K.Cuerdas + 0.5)}>
+            <rect x={90} y={1270} width={900} height={150} rx={30} fill="rgba(10,12,20,.85)" stroke={KC.yellow} strokeWidth={5} />
+            <OndaLinea x={120} y={1345} ancho={840} periodo={95} amp={48} fase={-T * 14} p={kprog(T, K.Cuerdas + 0.5, K.Cuerdas + 2.4)} />
           </g>
         </Lienzo>
         <Chip T={T} at={K.Cuerdas + 0.4} until={K.Cuerdas + 2.3} texto="POR DENTRO · TU GARGANTA" x={540} y={330} tam={36} borde={HE_AIRE} mono />
-        <Etq T={T} at={K.Cuerdas + 0.9} until={K.Tubo - 0.2} x={570} y={420} texto="cuerdas vocales" lado="der" color={KC.texto} />
+        <Etq T={T} at={K.Cuerdas + 0.9} until={K.Tubo - 0.2} x={640} y={450} texto="cuerdas vocales" lado="der" color={KC.texto} />
         <Chip T={T} at={K.Cuerdas + 2.4} until={K.Tubo - 0.1} texto="vibraciones por segundo = tono" x={540} y={330} tam={36} borde={KC.yellow} />
       </Escena>
 
@@ -198,7 +198,7 @@ function Helio() {
             <TuboVoz T={T} o={1} luz={kprog(T, K.Tubo + 1.4, K.Tubo + 2)} ondas={kprog(T, K.Tubo + 0.5, K.Tubo + 1)} />
           </CabezaPerfil>
           <OndasArco x={BOCA[0] + 20} y={BOCA[1]} ang={-10} T={T} color={KC.yellow} largo={200} o={kprog(T, K.Tubo + 1, K.Tubo + 1.5)} />
-          {T > K.Tubo + 2.2 && <g transform={`translate(800 600) scale(${klerp(0.3, 1, kprog(T, K.Tubo + 2.2, K.Tubo + 2.6, kEase.rebote))})`}>
+          {T > K.Tubo + 2.2 && <g transform={`translate(810 540) scale(${klerp(0.3, 1, kprog(T, K.Tubo + 2.2, K.Tubo + 2.6, kEase.rebote))})`}>
             <rect x={-170} y={-60} width={340} height={120} rx={20} fill={HE_TUBO} stroke={KC.ink} strokeWidth={9} />
             <rect x={-150} y={-40} width={300} height={80} rx={12} fill="#5a1f22" />
             <OndaLinea x={-150} y={0} ancho={300} periodo={150} amp={30 * Math.sin(T * 12)} color={KC.yellow} grosor={7} />
@@ -214,43 +214,51 @@ function Helio() {
       <Escena T={T} a={K.Timbre} b={K.Helio} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <Espectro x={90} y={680} w={900} h={400} T={T} p={kprog(T, K.Timbre + 0.2, K.Timbre + 1.2, kEase.sale)} curva={kprog(T, K.Timbre + 1.2, K.Timbre + 2.4)} />
-          {T > K.Timbre + 2.6 && <TextoSvg x={680} y={630} tam={68} color={KC.yellow} s={klerp(0.4, 1, kprog(T, K.Timbre + 2.6, K.Timbre + 3, kEase.rebote))}>EL COLOR DE TU VOZ</TextoSvg>}
+          <Espectro x={90} y={760} w={900} h={460} T={T} p={kprog(T, K.Timbre + 0.2, K.Timbre + 1.2, kEase.sale)} curva={kprog(T, K.Timbre + 1.2, K.Timbre + 2.4)} />
+          {T > K.Timbre + 2.6 && <TextoSvg x={680} y={710} tam={68} color={KC.yellow} s={klerp(0.4, 1, kprog(T, K.Timbre + 2.6, K.Timbre + 3, kEase.rebote))}>EL COLOR DE TU VOZ</TextoSvg>}
         </Lienzo>
-        <Chip T={T} at={K.Timbre + 0.3} until={K.Timbre + 2.5} texto="frecuencias reforzadas" x={640} y={460} tam={40} borde={KC.yellow} />
-        <Etq T={T} at={K.Timbre + 1.6} until={K.Helio - 0.2} x={560} y={790} texto="picos = timbre" lado="der" color={KC.yellow} />
+        <Chip T={T} at={K.Timbre + 0.3} until={K.Timbre + 2.5} texto="frecuencias reforzadas" x={640} y={560} tam={40} borde={KC.yellow} />
+        <Etq T={T} at={K.Timbre + 1.6} until={K.Helio - 0.2} x={560} y={860} texto="picos = timbre" lado="der" color={KC.yellow} />
       </Escena>
 
       {/* 4 · en el helio el sonido corre casi 3 veces más rápido */}
       <Escena T={T} a={K.Helio} b={K.Sube} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <Carril y={740} prog={pAire} color={HE_AIRE} nombre="en aire" T={T} />
-          <Carril y={1010} prog={pHe} color={HE_HELIO} nombre="en helio" T={T} />
-          {T > C0 + CD && <TextoSvg x={760} y={520} tam={170} color={HE_HELIO} rot={-5} s={klerp(0.3, 1, kprog(T, C0 + CD, C0 + CD + 0.4, kEase.rebote))}>≈ 3×</TextoSvg>}
+          <Carril y={840} prog={pAire} color={HE_AIRE} nombre="en aire" T={T} />
+          <Carril y={1160} prog={pHe} color={HE_HELIO} nombre="en helio" T={T} />
+          {T > C0 + CD && <TextoSvg x={760} y={620} tam={170} color={HE_HELIO} rot={-5} s={klerp(0.3, 1, kprog(T, C0 + CD, C0 + CD + 0.4, kEase.rebote))}>≈ 3×</TextoSvg>}
         </Lienzo>
-        <Chip T={T} at={K.Helio + 0.2} until={C0 + CD - 0.5} texto="carrera del sonido" x={540} y={400} tam={42} borde={KC.ink} />
+        <Chip T={T} at={K.Helio + 0.2} until={C0 + CD - 0.5} texto="carrera del sonido" x={540} y={560} tam={42} borde={KC.ink} />
               </Escena>
 
       {/* 5 · suben los picos: voz chillona */}
       <Escena T={T} a={K.Sube} b={K.Pregunta} fondo={KC.pink}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <Espectro x={90} y={680} w={900} h={400} T={T} f={fSube} fantasma barra={HE_HELIO} />
-          {T > K.Sube + 0.8 && T < K.Sube + 3.2 && <FlechaRecta x1={330} y1={610} x2={330 + 380 * kprog(T, K.Sube + 0.8, K.Sube + 2.4, kEase.sale)} y2={610} p={1} color={KC.yellow} />}
-          {T > K.Sube + 0.8 && T < K.Sube + 3.2 && <text x={340} y={570} style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">más agudo</text>}
-          {T > K.Sube + 3.2 && <Chillon x={560} y={470} texto="¡HOLAAA!" T={T} tam={100} color={KC.yellow} s={klerp(0.3, 1, kprog(T, K.Sube + 3.2, K.Sube + 3.6, kEase.rebote))} rot={-3} />}
+          <Espectro x={90} y={760} w={900} h={460} T={T} f={fSube} fantasma barra={HE_HELIO} />
+          {T > K.Sube + 0.8 && T < K.Sube + 3.2 && <FlechaRecta x1={330} y1={690} x2={330 + 380 * kprog(T, K.Sube + 0.8, K.Sube + 2.4, kEase.sale)} y2={690} p={1} color={KC.yellow} />}
+          {T > K.Sube + 0.8 && T < K.Sube + 3.2 && <text x={340} y={650} style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">más agudo</text>}
+          {T > K.Sube + 3.2 && <Chillon x={560} y={560} texto="¡HOLAAA!" T={T} tam={100} color={KC.yellow} s={klerp(0.3, 1, kprog(T, K.Sube + 3.2, K.Sube + 3.6, kEase.rebote))} rot={-3} />}
         </Lienzo>
-        <Chip T={T} at={K.Sube + 0.2} until={K.Sube + 3.0} texto="con helio" x={200} y={420} tam={40} borde={HE_HELIO} />
+        <Chip T={T} at={K.Sube + 0.2} until={K.Sube + 3.0} texto="con helio" x={200} y={520} tam={40} borde={HE_HELIO} />
               </Escena>
 
       {/* 6 · pregunta */}
-      <EscenaPregunta T={T} a={K.Pregunta} b={K.Igual} color={KC.orange} />
+      <Escena T={T} a={K.Pregunta} b={K.Igual} zoom={0.1}>
+        <FondoLunares color={KC.orange} />
+        <Lienzo>
+          <g opacity={0.6}><CabezaPerfil x={HC.x} y={HC.y} s={HC.s} boca={habla(K.Pregunta, K.Igual)} corte={0.25}>
+            <TuboVoz T={T} o={1} luz={0.6} ondas={1} color={HE_HELIO} />
+          </CabezaPerfil></g>
+          <text x={820} y={1240} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={14}
+          transform={`rotate(${Math.sin(T * 3) * 6} 820 1020) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 600px ${KF.titulo}`, transformOrigin:'820px 1020px' }}>?</text></Lienzo>
+      </Escena>
 
       {/* 7 · la nota casi no cambia; cambia el color de la onda */}
       <Escena T={T} a={K.Igual} b={K.Pesado} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
-        <Lienzo>
+        <Lienzo><g transform="translate(0 150)">
           {[0, 1, 2, 3, 4].map((i) => <line key={i} x1={100} y1={520 + i * 40} x2={980} y2={520 + i * 40} stroke={KC.ink} strokeWidth={5} />)}
           <text x={110} y={670} style={{ font:`400 190px ${KF.titulo}` }} fill={KC.ink}>𝄞</text>
           <NotaMusical x={420} y={600} s={1.1} color={HE_AIRE} o={kprog(T, K.Igual + 0.2, K.Igual + 0.5)} />
@@ -258,15 +266,15 @@ function Helio() {
           {T > K.Igual + 1.2 && <line x1={460} y1={600} x2={720} y2={600} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" opacity={kprog(T, K.Igual + 1.2, K.Igual + 1.6)} />}
           <text x={440} y={780} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Igual + 0.2, K.Igual + 0.5)}>en aire</text>
           <text x={780} y={780} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Igual + 1.0, K.Igual + 1.3)}>en helio</text>
+          <rect x={90} y={830} width={900} height={350} rx={30} fill="rgba(10,12,20,.85)" stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.Igual + 0.1, K.Igual + 0.5)} />
           <g opacity={kprog(T, K.Igual + 2.4, K.Igual + 2.9)}>
-            <rect x={90} y={830} width={900} height={350} rx={30} fill="rgba(10,12,20,.85)" stroke={KC.ink} strokeWidth={8} />
             {[0, 1, 2, 3].map((i) => <line key={i} x1={130 + i * 260} y1={845} x2={130 + i * 260} y2={1165} stroke="rgba(255,255,255,.3)" strokeWidth={4} strokeDasharray="10 10" />)}
             <OndaLinea x={130} y={925} ancho={780} periodo={260} amp={55} fase={-T * 4} color={HE_AIRE} forma={(u) => (Math.sin(u) + 0.3 * Math.sin(2 * u)) / 1.2} />
             <OndaLinea x={130} y={1085} ancho={780} periodo={260} amp={55} fase={-T * 4} color={HE_HELIO} forma={(u) => (Math.sin(u) + 0.55 * Math.sin(3 * u) + 0.4 * Math.sin(5 * u)) / 1.5} />
           </g>
-        </Lienzo>
-        <Chip T={T} at={K.Igual + 0.3} until={K.Igual + 2.6} texto="casi la misma nota" x={540} y={420} tam={42} borde={KC.ink} />
-        <Chip T={T} at={K.Igual + 2.8} until={K.Pesado - 0.1} texto="cambia el color del sonido" x={540} y={420} tam={40} borde={HE_HELIO} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Igual + 0.3} until={K.Igual + 2.6} texto="casi la misma nota" x={540} y={500} tam={42} borde={KC.ink} />
+        <Chip T={T} at={K.Igual + 2.8} until={K.Pesado - 0.1} texto="cambia el color del sonido" x={540} y={500} tam={40} borde={HE_HELIO} />
       </Escena>
 
       {/* 8 · gas pesado: al revés, los picos bajan y la voz suena grave */}
@@ -274,56 +282,56 @@ function Helio() {
         <FondoLunares color={KC.orange} />
         <Lienzo>
           <g transform={`translate(0 ${(1 - kprog(T, K.Pesado + 0.1, K.Pesado + 0.7, kEase.rebote)) * 900})`}>
-            <Tanque x={230} y={560} s={0.8} color={HE_SF6} etiqueta="SF₆" />
+            <Tanque x={250} y={640} s={1.0} color={HE_SF6} etiqueta="SF₆" />
           </g>
-          <g opacity={kprog(T, K.Pesado + 2.2, K.Pesado + 2.6)}>
-            <Espectro x={90} y={830} w={900} h={290} T={T} f={fBaja} fantasma barra={KC.lilac} color={KC.yellow} etiquetas={false} />
-            {T > K.Pesado + 2.8 && <FlechaRecta x1={760} y1={790} x2={760 - 360 * kprog(T, K.Pesado + 2.8, K.Pesado + 4.4, kEase.sale)} y2={790} p={1} color={KC.yellow} />}
+          <g opacity={kprog(T, K.Pesado + 0.2, K.Pesado + 0.6)}>
+            <Espectro x={90} y={920} w={900} h={380} T={T} f={fBaja} fantasma barra={KC.lilac} color={KC.yellow} etiquetas={false} />
+            {T > K.Pesado + 2.8 && <FlechaRecta x1={760} y1={880} x2={760 - 360 * kprog(T, K.Pesado + 2.8, K.Pesado + 4.4, kEase.sale)} y2={880} p={1} color={KC.yellow} />}
           </g>
         </Lienzo>
-        <Etq T={T} at={K.Pesado + 0.8} until={K.Pesado + 3.2} x={350} y={480} texto="hexafluoruro de azufre" lado="der" color={KC.texto} tam={32} />
-        <Chip T={T} at={K.Pesado + 1.2} until={K.Pesado + 3.2} texto="mucho más pesado" x={660} y={640} tam={40} borde={HE_SF6} />
-        <Chip T={T} at={K.Pesado + 3.4} until={K.Peligro - 0.1} texto="sonido más lento = voz grave" x={660} y={640} tam={36} borde={KC.yellow} />
+        <Etq T={T} at={K.Pesado + 0.8} until={K.Pesado + 3.2} x={370} y={560} texto="hexafluoruro de azufre" lado="der" color={KC.texto} tam={32} />
+        <Chip T={T} at={K.Pesado + 1.2} until={K.Pesado + 3.2} texto="mucho más pesado" x={690} y={720} tam={40} borde={HE_SF6} />
+        <Chip T={T} at={K.Pesado + 3.4} until={K.Peligro - 0.1} texto="sonido más lento = voz grave" x={690} y={720} tam={36} borde={KC.yellow} />
       </Escena>
 
       {/* 9 · peligro: no respires helio */}
       <Escena T={T} a={K.Peligro} b={K.Cierre} fondo={KC.yellow} zoom={0.02}>
         <FondoMarca color={KC.yellow} patron="rayas" />
         <Lienzo>
-          <g transform={`translate(540 560) scale(${klerp(0.3, 1, kprog(T, K.Peligro, K.Peligro + 0.4, kEase.rebote)) * (1 + 0.04 * Math.sin(T * 8))}) translate(-540 -560)`}>
-            <Alerta x={540} y={560} s={2.1} color={KC.orange} />
+          <g transform={`translate(540 680) scale(${klerp(0.3, 1, kprog(T, K.Peligro, K.Peligro + 0.4, kEase.rebote)) * (1 + 0.04 * Math.sin(T * 8))}) translate(-540 -680)`}>
+            <Alerta x={540} y={680} s={2.3} color={KC.orange} />
           </g>
           {T < K.Peligro + 3.6 && <g opacity={1 - kprog(T, K.Peligro + 3.3, K.Peligro + 3.6)}>
-            <TextoSvg x={540} y={820} tam={92} color={KC.red} s={klerp(0.4, 1, kprog(T, K.Peligro + 0.4, K.Peligro + 0.8, kEase.rebote))}>¡NO LO RESPIRES!</TextoSvg>
-            <g opacity={kprog(T, K.Peligro + 0.9, K.Peligro + 1.2)}><Globo x={310} y={990} r={80} T={T} color={KC.pink} cuerda={90} />
-              <Prohibido x={310} y={1020} r={140} o={kprog(T, K.Peligro + 1.2, K.Peligro + 1.4)} /></g>
-            <g opacity={kprog(T, K.Peligro + 1.6, K.Peligro + 1.9)}><Tanque x={770} y={1030} s={0.48} color={KC.lilac} etiqueta="He" />
-              <Prohibido x={770} y={1020} r={140} o={kprog(T, K.Peligro + 1.9, K.Peligro + 2.1)} /></g>
+            <TextoSvg x={540} y={960} tam={96} color={KC.red} s={klerp(0.4, 1, kprog(T, K.Peligro + 0.4, K.Peligro + 0.8, kEase.rebote))}>¡NO LO RESPIRES!</TextoSvg>
+            <g opacity={kprog(T, K.Peligro + 0.9, K.Peligro + 1.2)}><Globo x={300} y={1150} r={100} T={T} color={KC.pink} cuerda={90} />
+              <Prohibido x={300} y={1185} r={170} o={kprog(T, K.Peligro + 1.2, K.Peligro + 1.4)} /></g>
+            <g opacity={kprog(T, K.Peligro + 1.6, K.Peligro + 1.9)}><Tanque x={780} y={1195} s={0.6} color={KC.lilac} etiqueta="He" />
+              <Prohibido x={780} y={1185} r={170} o={kprog(T, K.Peligro + 1.9, K.Peligro + 2.1)} /></g>
           </g>}
           {T > K.Peligro + 3.4 && <g opacity={kprog(T, K.Peligro + 3.4, K.Peligro + 3.8)}>
-            <Pulmones x={540} y={1010} s={0.75} T={T} cambio={kprog(T, K.Peligro + 3.8, K.Peligro + 5.6)} />
-            <circle cx={110} cy={920} r={22} fill={HE_AIRE} stroke={KC.ink} strokeWidth={5} />
-            <text x={145} y={934} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>oxígeno</text>
-            <g opacity={kprog(T, K.Peligro + 4.0, K.Peligro + 4.3)}><circle cx={790} cy={920} r={22} fill={KC.gold2} stroke={KC.ink} strokeWidth={5} />
-            <text x={825} y={934} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>helio</text></g>
+            <Pulmones x={540} y={1180} s={1.25} T={T} cambio={kprog(T, K.Peligro + 3.8, K.Peligro + 5.6)} />
+            <circle cx={90} cy={1040} r={22} fill={HE_AIRE} stroke={KC.ink} strokeWidth={5} />
+            <text x={125} y={1054} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>oxígeno</text>
+            <g opacity={kprog(T, K.Peligro + 4.0, K.Peligro + 4.3)}><circle cx={830} cy={1040} r={22} fill={KC.gold2} stroke={KC.ink} strokeWidth={5} />
+            <text x={865} y={1054} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>helio</text></g>
           </g>}
         </Lienzo>
-        <Chip T={T} at={K.Peligro + 3.6} until={K.Cierre - 0.1} texto="desplaza el oxígeno" x={540} y={750} tam={46} borde={KC.red} />
+        <Chip T={T} at={K.Peligro + 3.6} until={K.Cierre - 0.1} texto="desplaza el oxígeno" x={540} y={1480} tam={46} borde={KC.red} />
       </Escena>
 
       {/* 10 · cierre: el globo del inicio, ahora con la nota fija y el timbre de color */}
       <Escena T={T} a={K.Cierre} b={FIN} origen="40% 55%">
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <Globo x={130} y={470} r={90} T={T} des={1} color={KC.yellow} cuerda={200} />
+          <Globo x={150} y={400} r={100} T={T} des={1} color={KC.yellow} cuerda={200} />
           <CabezaPerfil x={HC.x} y={HC.y} s={HC.s} boca={habla(K.Cierre, K.Outro)} gesto="sonrie" corte={0}>
             <TuboVoz T={T} o={1} luz={1} ondas={1} />
           </CabezaPerfil>
           <OndasArco x={BOCA[0] + 20} y={BOCA[1]} ang={-10} T={T * 1.8} color={HE_HELIO} largo={200} n={3} />
           <OndasArco x={BOCA[0] + 20} y={BOCA[1]} ang={-10} T={T * 1.8 + 0.17} color={KC.yellow} largo={200} n={3} />
-          <NotaMusical x={820} y={900} s={1.2} color={KC.yellow} o={kprog(T, K.Cierre + 0.5, K.Cierre + 0.9)} />
+          <NotaMusical x={880} y={940} s={1.4} color={KC.yellow} o={kprog(T, K.Cierre + 0.5, K.Cierre + 0.9)} />
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 0.4} until={K.Outro - 0.1} texto="misma nota · otro timbre" x={470} y={400} tam={42} borde={KC.yellow} />
+        <Chip T={T} at={K.Cierre + 0.4} until={K.Outro - 0.1} texto="misma nota · otro timbre" x={600} y={400} tam={42} borde={KC.yellow} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Cuerdas - 0.1} texto="No son tus cuerdas: *es el tubo.*" />

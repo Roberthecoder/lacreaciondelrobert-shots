@@ -2,8 +2,10 @@
 // Shot Químico #24 · Ese humo no es humo (hielo seco y sublimación) — NARRADO (N1 por dentro + mito peligroso).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 // Regla de la verificación (opción A): el hielo seco va SIEMPRE en un vaso VACÍO (sin agua): la niebla sale de la humedad del aire.
-const HIELO = '#f4fbff', HIELO_B = '#9fc3d6', NIEBLA = 'rgba(255,255,255,.62)', MESA = '#d9a066', CO2C = '#5b6170';
+const HIELO = '#f4fbff', HIELO_B = '#9fc3d6', NIEBLA = 'rgba(255,255,255,.62)', MESA = '#4a3322', CO2C = '#5b6170';
 const VX = 420, VB = 1150, VW = 250, VH = 300;   // vaso: centro x, base y, ancho, alto
+// encuadre cine: el vaso se ve 1.6 veces más grande y centrado (la barra de escala usa pxPorMm × 1.6)
+const VZ = 1.6, VASO_T = `translate(530 1010) scale(${VZ}) translate(-420 -1000)`;
 
 // Trozo de hielo seco (bloque blanco con escarcha).
 function Trozo({ x, y, s = 1, rot = 0, o = 1 }) {
@@ -15,7 +17,7 @@ function Trozo({ x, y, s = 1, rot = 0, o = 1 }) {
 // Mesa (cubierta de madera) desde y hasta el fondo.
 function Mesa({ y = VB }) {
   return <g><rect x={-20} y={y} width={KW + 40} height={KH - y} fill={MESA} stroke={KC.ink} strokeWidth={8} />
-    <rect x={-20} y={y} width={KW + 40} height={26} fill="#b77d45" /></g>;
+    <rect x={-20} y={y} width={KW + 40} height={26} fill="#7a5532" /></g>;
 }
 // Vaso de vidrio vacío.
 function VasoVacio({ x = VX, y = VB, w = VW, h = VH }) {
@@ -178,7 +180,7 @@ function HieloSeco() {
       {/* 0 · gancho: hielo seco en un vaso VACÍO, la niebla rebosa */}
       <Escena T={T} a={K.G} b={K.Q} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        <SvgCapa><g transform={VASO_T}>
           <Mesa />
           <VasoVacio />
           <TrozosVaso cae />
@@ -187,18 +189,18 @@ function HieloSeco() {
             <path d="M -14 0 L -34 -320 M 14 0 L 34 -320" stroke="#8b96a3" strokeWidth={16} strokeLinecap="round" />
             <path d="M -34 -320 L 34 -320" stroke="#8b96a3" strokeWidth={16} strokeLinecap="round" />
           </g>
-        </SvgCapa>
-        <Escala T={T} pxPorMm={3.2} objetivo={200} x={60} y={1400} color={KC.ink} />
+        </g></SvgCapa>
+        <Escala T={T} pxPorMm={3.2 * VZ} objetivo={200} x={60} y={1400} color={KC.ink} />
       </Escena>
       {/* 1 · qué es: CO2 sólido a −78.5 °C */}
       <Escena T={T} a={K.Q} b={K.Su}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Trozo x={400} y={930} s={3.2} rot={-6} />
-          <Mol tipo="co2" x={400} y={930} s={0.9 * kprog(T, K.Q + 0.4, K.Q + 0.9, kEase.rebote)} rot={Math.sin(T * 2) * 8} />
-          <Termometro x={820} y0={640} y1={1090} frac={klerp(0.82, 0.08, enfria)} />
-          <text x={820} y={600} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.blue} stroke={KC.ink} strokeWidth={3} paintOrder="stroke">{kformato(klerp(20, -78.5, enfria), 1)} °C</text>
-          {enfria > 0.6 && [[760, 700], [880, 820], [770, 960], [870, 1040]].map(([fx, fy], i) => <path key={i} d={`M ${fx - 14} ${fy} l 28 0 M ${fx} ${fy - 14} l 0 28 M ${fx - 10} ${fy - 10} l 20 20 M ${fx + 10} ${fy - 10} l -20 20`} stroke="#fff" strokeWidth={4} opacity={kprog(T, K.Q + 2.2 + i * 0.1, K.Q + 2.6 + i * 0.1)} />)}
+          <Trozo x={370} y={960} s={4.4} rot={-6} />
+          <Mol tipo="co2" x={370} y={960} s={1.25 * kprog(T, K.Q + 0.4, K.Q + 0.9, kEase.rebote)} rot={Math.sin(T * 2) * 8} />
+          <Termometro x={850} y0={600} y1={1200} frac={klerp(0.82, 0.08, enfria)} />
+          <text x={850} y={555} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.blue} stroke={KC.ink} strokeWidth={3} paintOrder="stroke">{kformato(klerp(20, -78.5, enfria), 1)} °C</text>
+          {enfria > 0.6 && [[790, 680], [910, 840], [800, 1000], [900, 1110]].map(([fx, fy], i) => <path key={i} d={`M ${fx - 14} ${fy} l 28 0 M ${fx} ${fy - 14} l 0 28 M ${fx - 10} ${fy - 10} l 20 20 M ${fx + 10} ${fy - 10} l -20 20`} stroke="#fff" strokeWidth={4} opacity={kprog(T, K.Q + 2.2 + i * 0.1, K.Q + 2.6 + i * 0.1)} />)}
         </SvgCapa>
       </Escena>
       {/* 2–3 · sublimación: las moléculas se sueltan y se vuelven invisibles */}
@@ -240,9 +242,9 @@ function HieloSeco() {
             {centros.map(([cx, cy], i) => <g key={i} opacity={gota}><circle cx={cx} cy={cy} r={70 * gota} fill="rgba(255,255,255,.88)" stroke="#bfe8ff" strokeWidth={5} /><circle cx={cx - 22} cy={cy - 24} r={14 * gota} fill="#fff" /></g>)}
           </g>
           {aleja > 0 && <g opacity={aleja}>
-            <rect x={0} y={0} width={KW} height={KH} fill={cineMix(KC.mint, CINE.fondo, 0.55)} />
-            <Mesa /><VasoVacio /><TrozosVaso /><Niebla T={T} f={1} />
-            <circle cx={VX + 150} cy={VB - VH - 10} r={70} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="12 10" />
+            <rect x={0} y={0} width={KW} height={KH} fill={cineMix(KC.mint, CINE.fondo, 0.8)} />
+            <g transform={VASO_T}><Mesa /><VasoVacio /><TrozosVaso /><Niebla T={T} f={1} />
+            <circle cx={VX + 150} cy={VB - VH - 10} r={70} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="12 10" /></g>
           </g>}
         </SvgCapa>
       </Escena>
@@ -250,37 +252,37 @@ function HieloSeco() {
       <Escena T={T} a={K.Pr} b={K.Ri} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <g transform="translate(-120 40)"><Mesa y={VB} /><VasoVacio /><TrozosVaso /><Niebla T={T} f={1} /></g>
-          <text x={300} y={820} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 300 700)`}>?</text>
+          <g transform="translate(650 1040) scale(1.5) translate(-420 -1000)"><Mesa y={VB} /><VasoVacio /><TrozosVaso /><Niebla T={T} f={1} /></g>
+          <text x={290} y={820} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 290 700)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 6 · riesgo: 250 L de gas · desplaza el oxígeno · quema por frío */}
       <Escena T={T} a={K.Ri} b={K.Es}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          {T < rB && <g>
+          {T < rB && <g transform="translate(540 1090) scale(1.8) translate(-300 -1000)">
             <Bascula x={300} y={1100} />
             <Trozo x={300} y={1020} s={1.4} />
             <Globo x={300} y={980} r={globo} />
           </g>}
-          {T >= rB && T < rC && <g>
-            <rect x={170} y={640} width={560} height={480} fill="#fff7e8" stroke={KC.ink} strokeWidth={10} />
-            <rect x={175} y={1115 - 330 * sube} width={550} height={330 * sube} fill="rgba(91,97,112,.35)" />
+          {T >= rB && T < rC && <g transform="translate(440 960) scale(1.2) translate(-450 -880)">
+            <rect x={170} y={640} width={560} height={480} fill="#262c3a" stroke={KC.ink} strokeWidth={10} />
+            <rect x={175} y={1115 - 330 * sube} width={550} height={330 * sube} fill="rgba(150,160,180,.30)" />
             {Array.from({ length: 6 }, (_, i) => <Mol key={i} tipo="co2" x={230 + i * 90} y={1080 - (i % 2) * 70 * sube - 120 * sube * ((i * 3) % 4) / 3} s={0.42} rot={T * 50 + i * 30} />)}
             {Array.from({ length: 6 }, (_, i) => { const y0 = 760 + (i % 3) * 110, yT = 680 + (i % 2) * 40; return <Mol key={i} tipo="o2" x={240 + i * 85 + Math.sin(T * 3 + i) * 10} y={klerp(y0, yT, sube)} s={0.42} rot={T * 40 + i * 50} />; })}
             <Personita x={640} y={1080} s={2.2} color={KC.yellow} />
             <Trozo x={300} y={1100} s={0.9} />
           </g>}
-          {T >= rC && <g>
+          {T >= rC && <g transform="translate(540 990) scale(1.5) translate(-560 -1000)">
             <Mano x={440} y={1060} s={1.5} />
             <Trozo x={440} y={1020} s={1.2} />
             {[[360, 940], [520, 960], [430, 900]].map(([fx, fy], i) => <path key={i} d={`M ${fx - 16} ${fy} l 32 0 M ${fx} ${fy - 16} l 0 32 M ${fx - 11} ${fy - 11} l 22 22 M ${fx + 11} ${fy - 11} l -22 22`} stroke="#fff" strokeWidth={5} opacity={kprog(T, rC + 0.4 + i * 0.15, rC + 0.8 + i * 0.15)} />)}
             <Marca x={720} y={830} ok={false} s={1} o={kprog(T, rC + 0.6, rC + 1.0)} />
           </g>}
         </SvgCapa>
-        {T >= rB && T < rC && <Etq T={T} at={rB + 0.6} until={rC - 0.3} x={740} y={720} texto="O₂ arriba" color={KC.ink} tam={34} />}
-        {T >= rB && T < rC && <Etq T={T} at={rB + 1.2} until={rC - 0.3} x={740} y={1060} texto="CO₂ abajo" color={KC.ink} tam={34} />}
-        {T < rB && globo > 10 && <Contador T={T} at={rA + 0.6} hasta={250} dur={1.7} sufijo=" L" x={300} y={560} tam={86} />}
+        {T >= rB && T < rC && <Etq T={T} at={rB + 0.6} until={rC - 0.3} x={790} y={768} texto="O₂ arriba" color={KC.ink} tam={34} />}
+        {T >= rB && T < rC && <Etq T={T} at={rB + 1.2} until={rC - 0.3} x={790} y={1176} texto="CO₂ abajo" color={KC.ink} tam={34} />}
+        {T < rB && globo > 10 && <Contador T={T} at={rA + 0.6} hasta={250} dur={1.7} sufijo=" L" x={540} y={300} tam={86} />}
       </Escena>
       {/* 7 · 2004, Alabama: la camioneta cerrada */}
       <Escena T={T} a={K.Es} b={K.Th}>
@@ -302,16 +304,16 @@ function HieloSeco() {
       <Escena T={T} a={K.Th} b={K.Re}>
         <FondoLunares color="#e9cf8f" punto="rgba(255,255,255,.25)" />
         <SvgCapa>
-          <Mesa y={1150} />
-          <g transform={`translate(${tiembla} 0)`}><Matraz x={520} y={1000} s={1.1} nieve={1} vapor={vap} T={T} tapon={{ dy: -vuela * 620, rot: vuela * 540 }} /></g>
+          <Mesa y={1220} />
+          <g transform={`translate(${tiembla} 0)`}><Matraz x={540} y={1000} s={1.5} nieve={1} vapor={vap} T={T} tapon={{ dy: -vuela * 460, rot: vuela * 540 }} /></g>
           <rect x={0} y={0} width={KW} height={KH} fill="rgba(120,80,30,.10)" />
         </SvgCapa>
-        <SvgCapa z={42}><Onomato T={T} at={K.Th + 4.7} until={K.Re - 0.2} x={300} y={560} texto="¡PUM!" tam={130} color={KC.yellow} /></SvgCapa>
+        <SvgCapa z={42}><Onomato T={T} at={K.Th + 4.7} until={K.Re - 0.2} x={290} y={470} texto="¡PUM!" tam={130} color={KC.yellow} /></SvgCapa>
       </Escena>
       {/* 9 · la regla */}
       <Escena T={T} a={K.Re} b={K.Ci}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 990) scale(1.25) translate(-550 -930)">
           {T < cambio ? <g>
             <Frasco x={330} y={1000} s={1.1} />
             <Mano x={770} y={1050} s={1.2} /><Trozo x={770} y={1010} s={1} />
@@ -323,25 +325,25 @@ function HieloSeco() {
             <Marca x={330} y={760} ok o={kprog(T, cambio + 0.2, cambio + 0.6)} />
             <Marca x={770} y={760} ok o={kprog(T, cambio + 0.4, cambio + 0.8)} />
           </g>}
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 10 · cierre: el mismo vaso del inicio, ahora explicado */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        <SvgCapa><g transform={VASO_T}>
           <Mesa /><VasoVacio /><TrozosVaso /><Niebla T={T} f={1} />
           {Array.from({ length: 4 }, (_, i) => { const u = (T * 0.35 + i / 4) % 1; return <g key={i} opacity={kprog(T, K.Ci + 1.4, K.Ci + 2.0) * (1 - u)}>
-            <circle cx={VX + 170 + u * 140} cy={VB - VH + 40 + u * 230} r={56} fill="none" stroke={KC.ink} strokeWidth={5} strokeDasharray="10 9" />
-            <text x={VX + 170 + u * 140} y={VB - VH + 50 + u * 230} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>CO₂</text></g>; })}
-        </SvgCapa>
-        <Escala T={T} pxPorMm={3.2} objetivo={200} x={60} y={1400} color={KC.ink} />
+            <circle cx={VX + 140 + u * 90} cy={VB - VH + 40 + u * 230} r={56} fill="none" stroke={KC.ink} strokeWidth={5} strokeDasharray="10 9" />
+            <text x={VX + 140 + u * 90} y={VB - VH + 50 + u * 230} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>CO₂</text></g>; })}
+        </g></SvgCapa>
+        <Escala T={T} pxPorMm={3.2 * VZ} objetivo={200} x={60} y={1400} color={KC.ink} />
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.0} texto="¿humo?" x={330} y={470} tam={56} />
-      <Chip T={T} at={K.G + 3.1} until={K.Q - 0.3} texto="agua del aire, hecha nube" x={360} y={470} tam={38} borde={KC.cyan} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.0} texto="¿humo?" x={540} y={470} tam={56} />
+      <Chip T={T} at={K.G + 3.1} until={K.Q - 0.3} texto="agua del aire, hecha nube" x={540} y={470} tam={38} borde={KC.cyan} />
       <Chip T={T} at={K.Q + 0.3} until={K.Su - 0.3} texto="hielo seco = CO₂ sólido" x={540} y={1500} tam={46} borde={KC.blue} />
-      <Etq T={T} at={K.Q + 0.9} until={K.Su - 0.3} x={260} y={1170} texto="dióxido de carbono" color={KC.ink} tam={32} />
+      <Etq T={T} at={K.Q + 0.9} until={K.Su - 0.3} x={150} y={1190} texto="dióxido de carbono" color={KC.ink} tam={32} />
       <Chip T={T} at={K.Su + 0.4} until={K.In - 0.2} texto="sólido → gas: sublimación" x={540} y={1500} tam={42} borde={KC.cyan} />
       <MitoTachado T={T} at={K.Su + 1.0} tacharEn={K.Su + 2.0} until={K.In - 0.2} texto="líquido" x={540} y={470} tam={48} />
       <Chip T={T} at={K.In + 0.3} until={K.Nu - 0.2} texto="sin color" x={340} y={1500} tam={44} borde={KC.mint} />
@@ -358,13 +360,13 @@ function HieloSeco() {
       <Chip T={T} at={K.Es + 3.2} until={K.Es + 5.4} texto="45 kg de hielo seco · cabina cerrada" x={540} y={470} tam={34} borde={KC.coral} />
       <Chip T={T} at={K.Es + 5.6} until={K.Es + 7.5} texto="aire recirculando → se desmaya" x={540} y={470} tam={36} borde={KC.red} />
       <Chip T={T} at={K.Es + 7.7} until={K.Th - 0.3} texto="abren la puerta → despierta" x={540} y={470} tam={36} borde={KC.mint} />
-      <TarjetaEstudio T={T} at={K.Th + 0.2} until={K.Th + 2.6} anio="1835" quien="Thilorier · París" revista="Comptes rendus · Académie des sciences" x={540} y={1560} />
-      <Chip T={T} at={K.Th + 2.8} until={K.Th + 4.6} texto="frasco bien tapado…" x={540} y={1560} tam={42} borde={KC.orange} />
-      <Chip T={T} at={K.Th + 4.8} until={K.Re - 0.3} texto="¡el tapón salió disparado!" x={540} y={1560} tam={42} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.Th + 0.2} until={K.Th + 2.6} anio="1835" quien="Thilorier · París" revista="Comptes rendus · Académie des sciences" x={540} y={380} />
+      <Chip T={T} at={K.Th + 2.8} until={K.Th + 4.6} texto="frasco bien tapado…" x={540} y={1380} tam={42} borde={KC.orange} />
+      <Chip T={T} at={K.Th + 4.8} until={K.Re - 0.3} texto="¡el tapón salió disparado!" x={540} y={1380} tam={42} borde={KC.red} />
       <Chip T={T} at={K.Re + 0.3} until={cambio - 0.1} texto="nunca en frasco cerrado" x={540} y={1500} tam={40} borde={KC.red} />
       <Chip T={T} at={cambio + 0.1} until={K.Ci - 0.2} texto="unicel sin cerrar · guantes gruesos" x={540} y={1500} tam={36} borde={KC.mint} />
-      <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="lo blanco: gotitas de agua del aire" x={540} y={1500} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="CO₂: el gas que no ves" x={540} y={1620} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="lo blanco: gotitas de agua del aire" x={540} y={420} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="CO₂: el gas que no ves" x={540} y={520} tam={36} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="No es humo: *es agua del aire.*" />

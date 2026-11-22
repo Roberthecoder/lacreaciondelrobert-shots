@@ -215,24 +215,24 @@ function Detergente() {
       {/* 0 · gancho: el polvo cae desde el cuadro 0 */}
       <Escena T={T} a={K.G} b={K.Ma} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 900) scale(1.4) translate(-335 -700)">
           <Polvo T={T} x0={350} y0={640} x1={460} y1={1080} f={vierte} monton={klerp(0.35, 1, kprog(T, K.G, K.G + 3.5))} />
           <CajaPolvo x={250} y={520} s={0.9} inclina={klerp(30, 118, vierte)} />
           {/* lupita en un granito de enzima */}
-          <circle cx={560} cy={1040} r={46 + Math.sin(T * 6) * 4} fill="none" stroke={KC.ink} strokeWidth={7} opacity={kprog(T, K.G + 1.0, K.G + 1.4)} />
-        </SvgCapa>
+          <circle cx={390} cy={1050} r={46 + Math.sin(T * 6) * 4} fill="none" stroke={KC.ink} strokeWidth={7} opacity={kprog(T, K.G + 1.0, K.G + 1.4)} />
+        </g></SvgCapa>
       </Escena>
       {/* 1–3 · la camisa manchada, el jabón y la lupa */}
       <Escena T={T} a={K.Ma} b={K.Pt} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Camisa T={T} x={540} y={900} s={0.95} huevo={huevo} choco={choco * (1 - talla * 0.55)} grasa={grasa * (1 - talla * 0.6)} />
-          {T > K.Ja && Array.from({ length: 26 }, (_, i) => { const g = krng(i + 70), bx = 330 + g() * 440, by = 1180 - ((T - K.Ja) * (90 + g() * 80) + g() * 500) % 700, r = 14 + g() * 26;
+          <Camisa T={T} x={540} y={980} s={1.1} huevo={huevo} choco={choco * (1 - talla * 0.55)} grasa={grasa * (1 - talla * 0.6)} />
+          {T > K.Ja && Array.from({ length: 26 }, (_, i) => { const g = krng(i + 70), bx = 320 + g() * 440, by = 1260 - ((T - K.Ja) * (90 + g() * 80) + g() * 500) % 700, r = 14 + g() * 26;
             return <circle key={i} cx={bx + Math.sin(T * 2 + i) * 12} cy={by} r={r} fill="rgba(255,255,255,.55)" stroke="#7fc8ff" strokeWidth={4} opacity={1 - kprog(T, K.Mi, K.Mi + 0.6)} />; })}
         </SvgCapa>
-        <Escala T={T} pxPorMm={1.7} z={1} x={60} y={1430} color={KC.ink} />
+        <Escala T={T} pxPorMm={1.97} z={1} x={60} y={1430} color={KC.ink} />
       </Escena>
-      <Lupa T={T} at={K.Mi + 0.1} until={K.Pt - 0.2} x={540} y={700} r={340} fx={540 - 114} fy={900 - 10} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · LA MANCHA"
+      <Lupa T={T} at={K.Mi + 0.1} until={K.Pt - 0.2} x={540} y={700} r={340} fx={408} fy={969} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · LA MANCHA"
         interior={(t) => <svg width={680} height={680} viewBox="100 600 880 880" style={{ position:'absolute', left:0, top:0 }}><rect x={0} y={0} width={KW} height={KH} fill="#0c1220" /><MicroMancha T={t} K={K} enzimas={false} /></svg>} />
       {/* 4–5 · al microscopio: las enzimas cortan */}
       <Escena T={T} a={K.Pt} b={K.Pr} zoom={0.03}>
@@ -245,8 +245,8 @@ function Detergente() {
       <Escena T={T} a={K.Pr} b={K.Fr} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Lavadora T={T} x={500} y={960} s={1} />
-          <CopoNieve x={500} y={1020} r={60 * kprog(T, K.Pr + 1.6, K.Pr + 2.2, kEase.rebote)} rot={T * 30} color="#ffffff" />
+          <Lavadora T={T} x={470} y={1000} s={1.25} />
+          <CopoNieve x={470} y={1075} r={75 * kprog(T, K.Pr + 1.6, K.Pr + 2.2, kEase.rebote)} rot={T * 30} color="#ffffff" />
         </SvgCapa>
         <Termometro x={900} y={560} alto={480} valor={termo} max={60} marcas={[0, 20, 40, 60]} color={termo > 30 ? KC.red : KC.cyan} />
       </Escena>
@@ -268,48 +268,48 @@ function Detergente() {
       {/* 9 · 1963 */}
       <Escena T={T} a={K.Bi} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 1080) scale(1.2) translate(-565 -960)">
           <CajaPolvo x={300} y={960} s={1.0} inclina={-6 + Math.sin(T * 1.5) * 2} texto="REMOJO" color={KC.teal} banda={KC.paper} />
           <path d="M 560 900 L 980 900 L 940 1100 L 600 1100 Z" fill="#cfd8e0" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
           <path d={`M 575 940 Q 770 ${920 + Math.sin(T * 3) * 10} 965 940 L 948 1080 L 594 1080 Z`} fill="#7fc8ff" opacity={0.85} />
           <path d={`M 640 960 q 60 -40 120 0 q 60 40 120 0`} stroke="#fbfbf7" strokeWidth={30} fill="none" strokeLinecap="round" />
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 10 · 1969: el polvo de enzima en la fábrica */}
       <Escena T={T} a={K.Es} b={K.Gr} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa><Fabrica T={T} nube={1} tos={kprog(T, K.Es + 2.2, K.Es + 2.6)} /></SvgCapa>
+        <SvgCapa><g transform="translate(0 180)"><Fabrica T={T} nube={1} tos={kprog(T, K.Es + 2.2, K.Es + 2.6)} /></g></SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.Es + 3.0} until={K.Gr - 0.3} x={820} y={1560} r={150} fx={780} fy={1050} tinte={KC.red} etiqueta="POR DENTRO · PULMONES"
+      <Lupa T={T} at={K.Es + 3.0} until={K.Gr - 0.3} x={790} y={600} r={150} fx={780} fy={1230} tinte={KC.red} etiqueta="POR DENTRO · PULMONES"
         interior={(t) => <svg width={300} height={300} viewBox="-200 -200 400 400" style={{ position:'absolute', left:0, top:0 }}><rect x={-200} y={-200} width={400} height={400} fill="#2b0f1a" /><Pulmones x={0} y={-10} s={0.95} rojo={kprog(t, K.Es + 3.4, K.Es + 5.0)} /></svg>} />
       {/* 11 · granitos que casi no sueltan polvo */}
       <Escena T={T} a={K.Gr} b={K.Pa} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa><Polvo T={T} x0={300} y0={1100} x1={300} y1={1560} f={0} monton={1} seed={6} /></SvgCapa>
+        <SvgCapa><g transform="translate(540 1380) scale(1.5) translate(-540 -1380)"><Polvo T={T} x0={540} y0={1000} x1={540} y1={1380} f={0} monton={1} seed={6} /></g></SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.Gr + 0.4} until={K.Pa - 0.3} x={540} y={800} r={230} fx={300 + 30} fy={1500} tinte={KC.gold} etiqueta="AL MICROSCOPIO · UN GRANITO"
+      <Lupa T={T} at={K.Gr + 0.4} until={K.Pa - 0.3} x={540} y={800} r={230} fx={570} fy={1330} tinte={KC.gold} etiqueta="AL MICROSCOPIO · UN GRANITO"
         interior={(t, r) => <svg width={2 * r} height={2 * r} style={{ position:'absolute', left:0, top:0 }}><rect width={2 * r} height={2 * r} fill="#1d2a24" /><GranitoCorte T={t} cx={r} cy={r} r={r * 0.78} /></svg>} />
       {/* 12 · tu páncreas */}
       <Escena T={T} a={K.Pa} b={K.Ci} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa><CuerpoPancreas T={T} x={290} y={930} s={0.95} luz={kprog(T, K.Pa + 0.3, K.Pa + 0.9)} flujo={kprog(T, K.Pa + 0.9, K.Pa + 1.3)} /></SvgCapa>
+        <SvgCapa><CuerpoPancreas T={T} x={540} y={990} s={1.15} luz={kprog(T, K.Pa + 0.3, K.Pa + 0.9)} flujo={kprog(T, K.Pa + 0.9, K.Pa + 1.3)} /></SvgCapa>
       </Escena>
       {/* 13 · cierre: la misma camisa, limpia */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Camisa T={T} x={540} y={880} s={0.95} brilla={kprog(T, K.Ci + 0.4, K.Ci + 1.0)} mece={1} />
-          <Polvo T={T} x0={0} y0={0} x1={190} y1={1600} f={0} monton={0.8} seed={8} />
+          <Camisa T={T} x={540} y={940} s={1.1} brilla={kprog(T, K.Ci + 0.4, K.Ci + 1.0)} mece={1} />
+          <Polvo T={T} x0={0} y0={0} x1={230} y1={1470} f={0} monton={0.8} seed={8} />
         </SvgCapa>
-        <Escala T={T} pxPorMm={1.7} z={1} x={820} y={1650} color={KC.ink} />
+        <Escala T={T} pxPorMm={1.97} z={1} x={820} y={1650} color={KC.ink} />
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.2} until={K.Ma - 0.3} texto="enzimas de microbios" y={1500} tam={44} borde={KC.mint} />
-      <Etiqueta T={T} at={K.G + 1.4} until={K.Ma - 0.3} x={610} y={1010} texto="granito de enzima" color={KC.ink} tam={32} />
-      <Etiqueta T={T} at={K.Ma + 0.3} until={K.Mi - 0.2} x={300} y={890} texto="huevo" lado="izq" color={KC.ink} tam={34} />
-      <Etiqueta T={T} at={K.Ma + 1.0} until={K.Mi - 0.2} x={780} y={1000} texto="chocolate" color={KC.ink} tam={34} />
-      <Etiqueta T={T} at={K.Ma + 1.7} until={K.Mi - 0.2} x={330} y={1130} texto="grasa" lado="izq" color={KC.ink} tam={34} />
+      <Chip T={T} at={K.G + 1.2} until={K.Ma - 0.3} texto="enzimas de microbios" y={260} tam={44} borde={KC.mint} />
+      <Etiqueta T={T} at={K.G + 1.4} until={K.Ma - 0.3} x={555} y={1390} lado="izq" texto="granito de enzima" color={KC.ink} tam={32} />
+      <Etiqueta T={T} at={K.Ma + 0.3} until={K.Mi - 0.2} x={285} y={1062} texto="huevo" lado="izq" color={KC.ink} tam={34} />
+      <Etiqueta T={T} at={K.Ma + 1.0} until={K.Mi - 0.2} x={800} y={1101} texto="chocolate" color={KC.ink} tam={34} />
+      <Etiqueta T={T} at={K.Ma + 1.7} until={K.Mi - 0.2} x={280} y={1240} texto="grasa" lado="izq" color={KC.ink} tam={34} />
       <MitoTachado T={T} at={K.Ja + 0.3} tacharEn={K.Ja + 2.0} until={K.Mi - 0.2} texto="solo jabón" x={380} y={470} tam={44} />
       <Chip T={T} at={K.Mi + 0.8} until={K.Pt - 0.3} texto="proteína · almidón · grasa" y={1500} tam={40} borde={KC.cyan} />
       <Chip T={T} at={K.Pt + 0.2} until={K.Pr - 0.3} texto="esquemático · no a escala" x={330} y={420} tam={28} borde="#9aa3b5" mono />
@@ -324,14 +324,14 @@ function Detergente() {
       <Chip T={T} at={K.Ta + 1.6} until={K.Bi - 0.3} texto="las bacterias sueltan la enzima al caldo" y={1500} tam={32} borde={KC.mint} />
       <TarjetaEstudio T={T} at={K.Bi + 0.2} until={K.Es - 0.3} anio="1963" quien="Bio-tex · Alcalase" revista="proteasa de bacteria en un polvo para remojar" x={560} y={620} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.8} anio="1969" quien="Inglaterra · The Lancet" revista="obreros de fábrica · polvo de enzima" x={620} y={430} />
-      <Chip T={T} at={K.Es + 3.2} until={K.Gr - 0.3} texto="polvo de enzima → enfermedad pulmonar" x={680} y={470} tam={28} borde={KC.red} />
+      <Chip T={T} at={K.Es + 3.2} until={K.Gr - 0.3} texto="polvo de enzima → enfermedad pulmonar" x={600} y={330} tam={28} borde={KC.red} />
       <Chip T={T} at={K.Gr + 0.9} until={K.Pa - 0.3} texto="casi no sueltan polvo" y={440} tam={44} borde={KC.gold} />
       <Etiqueta T={T} at={K.Gr + 1.4} until={K.Pa - 0.3} x={780} y={660} texto="cubierta" tam={32} color={KC.ink} />
       <Etiqueta T={T} at={K.Gr + 1.8} until={K.Pa - 0.3} x={780} y={860} texto="enzima" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Pa + 0.5} until={K.Ci - 0.3} texto="páncreas: corta proteína, almidón y grasa" y={1500} tam={32} borde={KC.yellow} />
-      <Etiqueta T={T} at={K.Pa + 0.4} until={K.Ci - 0.3} x={20} y={955} texto="páncreas" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="enzimas de microbios" y={1500} tam={44} borde={KC.mint} />
-      <Etiqueta T={T} at={K.Ci + 1.4} until={K.Ou} x={400} y={1560} texto="granitos de enzima" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Pa + 0.5} until={K.Ci - 0.3} texto="páncreas: corta proteína, almidón y grasa" y={255} tam={32} borde={KC.yellow} />
+      <Etiqueta T={T} at={K.Pa + 0.4} until={K.Ci - 0.3} x={40} y={1030} texto="páncreas" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="enzimas de microbios" y={330} tam={44} borde={KC.mint} />
+      <Etiqueta T={T} at={K.Ci + 1.4} until={K.Ou} x={440} y={1450} texto="granitos de enzima" tam={30} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ma - 0.1} texto="No es solo jabón: *trae enzimas.*" />

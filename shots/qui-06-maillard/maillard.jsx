@@ -149,6 +149,9 @@ function Maillard() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Ma} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
+        {/* encuadre: la red café de la escena anterior sigue a cuadro, a media luz, y la pregunta encima */}
+        <div style={{ position:'absolute', inset:0, background:'rgba(10,15,28,.85)' }}></div>
+        <SvgCapa><rect x={0} y={1200} width={KW} height={720} fill="#1c120c" /><g opacity={0.55}><RedCafe T={T} f={1} /></g></SvgCapa>
         <SvgCapa><text x={540} y={1130} textAnchor="middle" style={{ font:`400 620px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 930)`}>?</text></SvgCapa>
       </Escena>
       {/* 7 · 1912: Maillard */}

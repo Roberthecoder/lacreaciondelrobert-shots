@@ -4,9 +4,13 @@
 // Todas las barras son ilustrativas (sin números).
 const CMUS = '#e2475f', CMUS2 = '#b52a44', CLAC = KC.cyan, CDOL = KC.red, CREP = KC.mint;
 
+// Acercamiento: lleva el punto `de` al punto `a` y agranda k veces (pase a mano del estilo cine).
+function DZ({ k = 1, de = [0, 0], a = [0, 0], children }) {
+  return <g transform={`translate(${a[0]} ${a[1]}) scale(${k}) translate(${-de[0]} ${-de[1]})`}>{children}</g>;
+}
 /* ---------- escalera y persona que baja ---------- */
 // Escalera que baja hacia la derecha: n escalones de w × h desde (x0, y0).
-function Escalera({ x0, y0, n = 5, w = 100, h = 95, color = '#c98b5a' }) {
+function Escalera({ x0, y0, n = 5, w = 100, h = 95, color = '#5e4129' }) {
   let d = `M ${x0 - 200} ${KH} L ${x0 - 200} ${y0} `;
   for (let k = 0; k < n; k++) d += `L ${x0 + w * (k + 1)} ${y0 + h * k} L ${x0 + w * (k + 1)} ${y0 + h * (k + 1)} `;
   d += `L ${KW + 50} ${y0 + h * n} L ${KW + 50} ${KH} Z`;
@@ -201,7 +205,7 @@ function Agujetas() {
   const curva = (u) => { // lactato ilustrativo: base → sube con el ejercicio → baja en horas
     if (u < 0.15) return 0.12; if (u < 0.45) return 0.12 + 0.78 * kEase.suave((u - 0.15) / 0.3);
     if (u < 0.92) return 0.12 + 0.78 * (1 - kEase.suave((u - 0.45) / 0.47)); return 0.12; };
-  const G = { x: 140, y: 560, w: 800, h: 480 };
+  const G = { x: 140, y: 740, w: 800, h: 540 };
   const gp = kprog(T, K.Lactato + 0.3, K.Tarde - 0.4);
   const gpts = []; for (let i = 0; i <= 80 * gp; i++) { const u = i / 80; gpts.push(`${G.x + u * G.w},${G.y + G.h - curva(u) * G.h}`); }
   const tip = gpts.length ? gpts[gpts.length - 1].split(',').map(Number) : [G.x, G.y + G.h];
@@ -212,13 +216,13 @@ function Agujetas() {
       {/* 0 · gancho: al día siguiente, bajar la escalera duele; el frasco de ácido láctico se tacha */}
       <Escena T={T} a={K.Gancho} b={K.Lactato}>
         <FondoLunares color={KC.yellow} />
-        <Lienzo>
+        <Lienzo><DZ k={1.5} de={[480, 820]} a={[480, 960]}>
           <Escalera {...ES} n={6} />
           <BajaEscalera T={T} {...ES} k={1.0 + T * 0.5} cara="o" dolor={1} />
-          <Frasco x={800} y={1010} s={1.05} tacha={kprog(T, K.Gancho + 2.6, K.Gancho + 3.3)} />
+          <Frasco x={730} y={1010} s={1.05} tacha={kprog(T, K.Gancho + 2.6, K.Gancho + 3.3)} />
           <Onomato T={T} at={K.Gancho + 0.2} dur={1.6} x={450} y={400} texto="¡AY!" color={KC.red} tam={140} rot={-10} />
-        </Lienzo>
-        <Chip T={T} at={K.Gancho + 1.6} until={K.Lactato - 0.1} texto="al día siguiente…" x={330} y={1170} tam={40} borde={KC.red} />
+        </DZ></Lienzo>
+        <Chip T={T} at={K.Gancho + 1.6} until={K.Lactato - 0.1} texto="al día siguiente…" x={330} y={1450} tam={40} borde={KC.red} />
       </Escena>
       {/* 1 · el lactato sube con el ejercicio y baja en horas */}
       <Escena T={T} a={K.Lactato} b={K.Tarde} fondo={KC.cyan}>
@@ -234,17 +238,19 @@ function Agujetas() {
           <polyline points={gpts.join(' ')} fill="none" stroke={KC.ink} strokeWidth={20} strokeLinecap="round" strokeLinejoin="round" />
           <polyline points={gpts.join(' ')} fill="none" stroke={CLAC} strokeWidth={12} strokeLinecap="round" strokeLinejoin="round" />
           {gp > 0 && <circle cx={tip[0]} cy={tip[1]} r={18} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />}
+          {/* el corredor (mismo dibujo de la caminadora) mientras dura el ejercicio */}
+          <g opacity={(0.35 + 0.65 * (1 - kprog(T, K.Lactato + 2.2, K.Lactato + 2.8))) * kprog(T, K.Lactato - 0.2, K.Lactato + 0.2)}><Corredor x={G.x + 90} y={G.y + 150} s={0.7} T={T} color={KC.orange} vel={9 * (1 - 0.7 * kprog(T, K.Lactato + 2.2, K.Lactato + 2.8))} /></g>
           <g opacity={kprog(T, K.Lactato + 2.6, K.Lactato + 3.0)}>
             <Reloj x={G.x + G.w * 0.74} y={G.y + 70} r={62} T={T} vel={3} />
             <text x={G.x + G.w * 0.74} y={G.y + 190} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.texto}>en horas</text>
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Lactato + 0.2} until={K.Tarde - 0.1} texto="el lactato sube… y baja" x={540} y={400} tam={42} borde={CLAC} />
+        <Chip T={T} at={K.Lactato + 0.2} until={K.Tarde - 0.1} texto="el lactato sube… y baja" x={540} y={520} tam={42} borde={CLAC} />
       </Escena>
       {/* 2 · las agujetas llegan tarde: calendario con dolor */}
       <Escena T={T} a={K.Tarde} b={K.Estudio} fondo={KC.pink}>
         <FondoLunares color={KC.pink} />
-        <Lienzo>
+        <Lienzo><g transform="translate(0 170)">
           {dias.map((d, i) => { const cx = 165 + i * 250, e = kprog(T, K.Tarde + 0.2 + i * 0.25, K.Tarde + 0.6 + i * 0.25, kEase.rebote);
             const v = d.v * kprog(T, K.Tarde + 1.4 + i * 0.75, K.Tarde + 2.2 + i * 0.75, kEase.sale);
             return <g key={i} transform={`translate(${cx} 860) scale(${e}) translate(${-cx} -860)`}>
@@ -256,26 +262,26 @@ function Agujetas() {
             </g>; })}
           {T > K.Tarde + 1.0 && <g opacity={kprog(T, K.Tarde + 1.0, K.Tarde + 1.4)}><Reloj x={165} y={500} r={46} T={T} vel={4} /></g>}
           <text x={640} y={525} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Tarde + 1.5, K.Tarde + 2)}>(dolor ilustrativo)</text>
-        </Lienzo>
-        <Chip T={T} at={K.Tarde + 0.3} until={K.Estudio - 0.1} texto="el dolor llega tarde" x={600} y={420} tam={42} borde={CDOL} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Tarde + 0.3} until={K.Estudio - 0.1} texto="el dolor llega tarde" x={600} y={570} tam={42} borde={CDOL} />
       </Escena>
       {/* 3 · el estudio de 1983: caminadora en plano y en bajada */}
       <Escena T={T} a={K.Estudio} b={K.Bajada} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          {T > K.Estudio + 2.2 && <g opacity={kprog(T, K.Estudio + 2.2, K.Estudio + 2.6)}>
-            <g transform={`translate(${(1 - kprog(T, K.Estudio + 2.2, K.Estudio + 2.8, kEase.sale)) * -500} 0)`}><Caminadora x={300} y={760} s={0.75} T={T} inclina={0} color={KC.orange} /></g>
-            <g transform={`translate(${(1 - kprog(T, K.Estudio + 2.6, K.Estudio + 3.2, kEase.sale)) * 600} 0)`}><Caminadora x={760} y={1080} s={0.75} T={T} inclina={9} color={KC.lilac} /></g>
-            <TextoSvg x={300} y={880} tam={64} color={KC.yellow} o={kprog(T, K.Estudio + 2.6, K.Estudio + 2.9)}>EN PLANO</TextoSvg>
-            <TextoSvg x={760} y={1200} tam={64} color={KC.yellow} o={kprog(T, K.Estudio + 3.0, K.Estudio + 3.3)}>EN BAJADA</TextoSvg>
+          {T > K.Estudio - 0.45 && <g>
+            <g transform={`translate(${(1 - kprog(T, K.Estudio - 0.2, K.Estudio + 0.5, kEase.sale)) * -500} 0)`}><Caminadora x={300} y={900} s={0.95} T={T} inclina={0} color={KC.orange} /></g>
+            <g transform={`translate(${(1 - kprog(T, K.Estudio, K.Estudio + 0.7, kEase.sale)) * 600} 0)`}><Caminadora x={770} y={1290} s={0.95} T={T} inclina={9} color={KC.lilac} /></g>
+            <TextoSvg x={300} y={1040} tam={70} color={KC.yellow} o={kprog(T, K.Estudio + 0.5, K.Estudio + 0.8)}>EN PLANO</TextoSvg>
+            <TextoSvg x={770} y={1440} tam={70} color={KC.yellow} o={kprog(T, K.Estudio + 0.7, K.Estudio + 1.0)}>EN BAJADA</TextoSvg>
           </g>}
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 2.2} anio="1983" quien="caminadora: en plano y en bajada" revista="Schwane et al. · The Physician and Sportsmedicine" x={540} y={820} />
+        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 2.2} anio="1983" quien="caminadora: en plano y en bajada" revista="Schwane et al. · The Physician and Sportsmedicine" x={560} y={350} />
       </Escena>
       {/* 4 · resultado: en bajada el lactato no sube, pero duele más */}
       <Escena T={T} a={K.Bajada} b={K.Pregunta} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
-        <Lienzo>
+        <Lienzo><DZ k={1.1} de={[540, 825]} a={[540, 940]}>
           <rect x={60} y={420} width={960} height={810} rx={36} fill="rgba(10,12,20,.82)" stroke={KC.ink} strokeWidth={8} />
           <Caminadora x={290} y={640} s={0.42} T={T} inclina={0} color={KC.orange} />
           <Caminadora x={790} y={640} s={0.42} T={T} inclina={9} color={KC.lilac} />
@@ -293,76 +299,77 @@ function Agujetas() {
           <text x={790 - 160} y={1110 - 330 * 0.18 - 14} style={{ font:`700 24px ${KF.mono}` }} fill={KC.texto}>reposo</text>
           <text x={540} y={812} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="rgba(246,243,236,.8)">(barras ilustrativas)</text>
           {T > K.Bajada + 1.6 && <TextoSvg x={705} y={1000} tam={44} color={CLAC} rot={-6} o={kprog(T, K.Bajada + 1.6, K.Bajada + 2.0) * (1 - kprog(T, K.Bajada + 3.0, K.Bajada + 3.3))}>no subió</TextoSvg>}
-        </Lienzo>
+        </DZ></Lienzo>
       </Escena>
       {/* 5 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Fibras} color={KC.orange} />
       {/* 6 · por dentro: daños microscópicos en las fibras */}
       <Escena T={T} a={K.Fibras} b={K.Excentrico} fondo={KC.noche}>
         <Ambiente T={T} n={20} color="rgba(255,255,255,.14)" />
-        <Lienzo><MusloCorte x={250} y={820} T={T} corte={kprog(T, K.Fibras + 0.1, K.Fibras + 0.7)} /></Lienzo>
-        <Etq T={T} at={K.Fibras + 0.5} until={K.Fibras + 2.0} x={360} y={560} texto="músculo" color={KC.texto} />
-        <Lupa T={T} at={K.Fibras + 1.0} until={K.Excentrico - 0.3} x={650} y={740} r={240} fx={280} fy={820} tinte={KC.coral} etiqueta="AL MICROSCOPIO · FIBRA MUSCULAR"
+        <Lienzo><DZ k={1.3} de={[270, 1000]} a={[270, 1000]}><MusloCorte x={270} y={1000} T={T} corte={kprog(T, K.Fibras + 0.1, K.Fibras + 0.7)} /></DZ></Lienzo>
+        <Etq T={T} at={K.Fibras + 0.5} until={K.Fibras + 2.0} x={440} y={650} texto="músculo" color={KC.texto} />
+        <Lupa T={T} at={K.Fibras + 1.0} until={K.Excentrico - 0.3} x={680} y={960} r={260} fx={290} fy={1000} tinte={KC.coral} etiqueta="AL MICROSCOPIO · FIBRA MUSCULAR"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#1a0b14" />
-            {[0, 1, 2, 3].map((i) => <FibraMicro key={i} x={-20} y={40 + i * 112} largo={r * 2 + 40} alto={96} T={t} fase={i}
+            {[0, 1, 2, 3].map((i) => <FibraMicro key={i} x={-20} y={50 + i * 126} largo={r * 2 + 40} alto={96} T={t} fase={i}
               desgarres={[{ x: [150, 330, 220, 380][i], p: kprog(t, K.Fibras + 3.0 + i * 0.35, K.Fibras + 3.6 + i * 0.35, kEase.sale) }]} />)}</svg>} />
-        <Chip T={T} at={K.Fibras + 0.2} until={K.Excentrico - 0.1} texto="lo más aceptado" x={540} y={400} tam={40} borde={KC.coral} />
-        <Etq T={T} at={K.Fibras + 3.4} until={K.Excentrico - 0.3} x={520} y={1110} texto="daños microscópicos" color={KC.yellow} />
+        <Chip T={T} at={K.Fibras + 0.2} until={K.Excentrico - 0.1} texto="lo más aceptado" x={660} y={470} tam={40} borde={KC.coral} />
+        <Etq T={T} at={K.Fibras + 3.4} until={K.Excentrico - 0.3} x={560} y={1330} texto="daños microscópicos" color={KC.yellow} />
       </Escena>
       {/* 7 · el músculo trabaja mientras se estira: bajar un escalón (o un cerro) */}
       <Escena T={T} a={K.Excentrico} b={K.Inflamacion} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
-        <Lienzo>
-          <BajaCerro T={T} x={850} y={980} ancho={420} alto={300} p={kprog(T, K.Excentrico + 3.4, K.Excentrico + 3.9)} />
-          <path d={`M -20 1110 L 520 1110 L 520 1240 L ${KW + 20} 1240 L ${KW + 20} ${KH} L -20 ${KH} Z`} fill="#c98b5a" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+        <Lienzo><DZ k={1.3} de={[540, 1000]} a={[540, 1080]}>
+          <BajaCerro T={T} x={700} y={980} ancho={420} alto={300} p={kprog(T, K.Excentrico + 3.4, K.Excentrico + 3.9)} />
+          <path d={`M -200 1110 L 520 1110 L 520 1240 L ${KW + 200} 1240 L ${KW + 200} ${KH + 200} L -200 ${KH + 200} Z`} fill="#5e4129" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
           <PiernaBaja T={T} a={K.Excentrico} x={430} piso={1100} L={280} />
-        </Lienzo>
-        <Chip T={T} at={K.Excentrico + 0.4} until={K.Inflamacion - 0.1} texto="trabaja mientras se estira" x={680} y={420} tam={40} borde={KC.yellow} />
-        <Etq T={T} at={K.Excentrico + 1.2} until={K.Excentrico + 3.3} x={560} y={560} texto="el músculo se alarga" color={KC.ink} />
-        <Etq T={T} at={K.Excentrico + 3.6} until={K.Inflamacion - 0.2} x={1050} y={630} texto="bajar un cerro" lado="izq" color={KC.ink} />
+        </DZ></Lienzo>
+        <Chip T={T} at={K.Excentrico + 0.4} until={K.Inflamacion - 0.1} texto="trabaja mientras se estira" x={700} y={300} tam={40} borde={KC.yellow} />
+        <Etq T={T} at={K.Excentrico + 1.2} until={K.Excentrico + 3.3} x={590} y={610} texto="el músculo se alarga" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.Excentrico + 3.6} until={K.Inflamacion - 0.2} x={1050} y={610} texto="bajar un cerro" lado="izq" color={KC.ink} />
       </Escena>
       {/* 8 · inflamación y nervios más sensibles */}
       <Escena T={T} a={K.Inflamacion} b={K.Repetida} fondo={KC.noche}>
         <FondoMarca patron="oscuro" />
-        <Lienzo>
+        <Lienzo><DZ k={1.2} de={[540, 790]} a={[540, 960]}>
           <circle cx={540} cy={790} r={300} fill={KC.orange} opacity={0.22 * kprog(T, K.Inflamacion + 0.8, K.Inflamacion + 2) * (0.8 + 0.2 * Math.sin(T * 4))} />
           {[0, 1, 2].map((i) => <FibraMicro key={i} x={-40} y={600 + i * 118} largo={KW + 80} alto={100} T={T} fase={i} desgarres={[{ x: 560 + i * 30, p: 1 }]} />)}
           {Array.from({ length: 8 }, (_, i) => { const g = krng(30 + i), sx = -80 - g() * 200, sy = 450 + g() * 800, tx = 470 + g() * 160, ty = 600 + g() * 340;
             const p = kprog(T, K.Inflamacion + 0.3 + i * 0.15, K.Inflamacion + 2.2 + i * 0.15, kEase.suave);
             return <CelDefensa key={i} x={klerp(sx, tx, p) + Math.sin(T * 2 + i) * 8} y={klerp(sy, ty, p)} r={32} T={T} i={i} />; })}
           <Nervio x1={KW + 30} y1={1180} x2={680} y2={940} p={kprog(T, K.Inflamacion + 2.6, K.Inflamacion + 3.3, kEase.sale)} T={T} chispa={kprog(T, K.Inflamacion + 3.3, K.Inflamacion + 4.5)} />
-        </Lienzo>
-        <Chip T={T} at={K.Inflamacion + 0.6} until={K.Repetida - 0.1} texto="inflamación" x={330} y={420} tam={44} borde={KC.orange} />
-        <Etq T={T} at={K.Inflamacion + 1.4} until={K.Inflamacion + 2.8} x={420} y={520} texto="células de defensa" lado="der" color={KC.texto} />
-        <Etq T={T} at={K.Inflamacion + 3.4} until={K.Repetida - 0.2} x={620} y={1120} texto="nervio más sensible" lado="izq" color={KC.yellow} />
+        </DZ></Lienzo>
+        <Chip T={T} at={K.Inflamacion + 0.6} until={K.Repetida - 0.1} texto="inflamación" x={330} y={560} tam={44} borde={KC.orange} />
+        <Etq T={T} at={K.Inflamacion + 1.4} until={K.Inflamacion + 2.8} x={420} y={700} texto="células de defensa" lado="der" color={KC.texto} />
+        <Etq T={T} at={K.Inflamacion + 3.4} until={K.Repetida - 0.2} x={690} y={1310} texto="nervio más sensible" lado="izq" color={KC.yellow} />
       </Escena>
       {/* 9 · la siguiente vez duele mucho menos */}
       <Escena T={T} a={K.Repetida} b={K.Cierre} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
-        <Lienzo>
+        <Lienzo><DZ k={1.1} de={[540, 845]} a={[540, 960]}>
           <rect x={70} y={500} width={940} height={690} rx={36} fill="rgba(10,12,20,.82)" stroke={KC.ink} strokeWidth={8} />
           <BarraH x={140} y={620} ancho={800} v={0.92 * kprog(T, K.Repetida + 0.4, K.Repetida + 1.6, kEase.sale)} color={CDOL} etiqueta="dolor · la primera vez" />
           <BarraH x={140} y={830} ancho={800} v={0.22 * kprog(T, K.Repetida + 2.2, K.Repetida + 3.2, kEase.sale)} color={CREP} etiqueta="dolor · la siguiente vez" />
           <text x={540} y={970} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="rgba(246,243,236,.8)">(barras ilustrativas)</text>
-          {T > K.Repetida + 3.8 && <g transform={`translate(540 1080) scale(${kprog(T, K.Repetida + 3.8, K.Repetida + 4.3, kEase.rebote)})`}>
+          {/* la fibra está desde el inicio (atenuada) y se enciende cuando se adapta */}
+          {T > K.Repetida - 0.45 && <g transform={`translate(540 1080) scale(${0.85 + 0.15 * kprog(T, K.Repetida + 3.8, K.Repetida + 4.3, kEase.rebote)})`} opacity={0.4 + 0.6 * kprog(T, K.Repetida + 3.8, K.Repetida + 4.1)}>
             <rect x={-260} y={-50} width={520} height={100} rx={50} fill={CMUS} stroke={KC.ink} strokeWidth={8} />
             {Array.from({ length: 16 }, (_, i) => <rect key={i} x={-240 + i * 30} y={-42} width={14} height={84} fill={CMUS2} opacity=".85" />)}
-            <rect x={-260} y={-50} width={520} height={100} rx={50} fill="none" stroke={CREP} strokeWidth={10} opacity={0.6 + 0.4 * Math.sin(T * 6)} />
+            <rect x={-260} y={-50} width={520} height={100} rx={50} fill="none" stroke={CREP} strokeWidth={10} opacity={kprog(T, K.Repetida + 3.8, K.Repetida + 4.1) * (0.6 + 0.4 * Math.sin(T * 6))} />
           </g>}
-        </Lienzo>
-        <Chip T={T} at={K.Repetida + 3.8} until={K.Cierre - 0.1} texto="tu músculo se adapta" x={540} y={420} tam={44} borde={CREP} />
+        </DZ></Lienzo>
+        <Chip T={T} at={K.Repetida + 3.8} until={K.Cierre - 0.1} texto="tu músculo se adapta" x={540} y={520} tam={44} borde={CREP} />
       </Escena>
       {/* 10 · cierre: la misma escalera; ahora baja sin dolor */}
       <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.yellow} />
-        <Lienzo>
+        <Lienzo><DZ k={1.5} de={[480, 820]} a={[480, 960]}>
           <Escalera {...ES} n={6} />
           <BajaEscalera T={T} {...ES} k={1.0 + (T - K.Cierre) * 0.6} cara="sonrie" color={KC.mint} />
-          <Frasco x={800} y={1040} s={0.8} tacha={1} o={0.55} texto="VENENO ACUMULADO" />
+          <Frasco x={760} y={1040} s={0.8} tacha={1} o={0.55} texto="VENENO ACUMULADO" />
           {Array.from({ length: 6 }, (_, i) => { const f = ((T * 0.6 + i / 6) % 1), x = 260 + (i % 3) * 120 + (T - K.Cierre) * 70, y = 900 - f * 260;
             return <text key={i} x={x} y={y} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.mint} stroke={KC.ink} strokeWidth={7} paintOrder="stroke" opacity={(1 - f) * kprog(T, K.Cierre + 1.2, K.Cierre + 1.6)}>+</text>; })}
-        </Lienzo>
-        <Chip T={T} at={K.Cierre + 1.2} until={K.Outro - 0.1} texto="se está reparando" x={320} y={420} tam={44} borde={CREP} />
+        </DZ></Lienzo>
+        <Chip T={T} at={K.Cierre + 1.2} until={K.Outro - 0.1} texto="se está reparando" x={740} y={340} tam={44} borde={CREP} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Lactato - 0.1} texto="No es *ácido láctico.*" />

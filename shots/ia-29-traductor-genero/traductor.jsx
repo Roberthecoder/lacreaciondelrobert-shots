@@ -58,10 +58,10 @@ function Persona({ x, y, s = 1, color = AZUL, extra = null, T = 0, ph = 0 }) {
   </g>;
 }
 // Barra vertical con su propio momento de entrada.
-function BarraV({ T, at, until, valor, max, texto, etiqueta, color, cx, base = 1080, alto = 330 }) {
+function BarraV({ T, at, until, valor, max, texto, etiqueta, color, cx, base = 1080, alto = 330, ancho = 280 }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube'), g = kprog(T, at + 0.1, at + 1.1, kEase.sale), h = alto * (valor / max) * g;
-  return <div style={{ position:'absolute', left:cx - 140, top:base - h - 90, width:280, zIndex:40, opacity:e.o, textAlign:'center' }}>
+  return <div style={{ position:'absolute', left:cx - ancho / 2, top:base - h - 90, width:ancho, zIndex:40, opacity:e.o, textAlign:'center' }}>
     <div style={{ font:`400 76px ${KF.titulo}`, color, WebkitTextStroke:`3px ${KC.ink}`, height:84 }}>{texto}</div>
     <div style={{ height:h, background:color, border:`7px solid ${KC.ink}`, borderRadius:'20px 20px 0 0', marginTop:6, boxShadow:`10px 0 0 ${KC.ink}` }}></div>
     <div style={{ marginTop:12, font:`900 34px/1.1 ${KF.texto}`, color:KC.ink }}>{etiqueta}</div>
@@ -81,6 +81,21 @@ function FrasePrueba({ T, at, until, y = 800 }) {
         <span style={{ position:'absolute', left:-6, top:'50%', height:9, width:`calc(${tacha * 100}% + 12px)`, background:KC.red, borderRadius:4, transform:'rotate(-6deg)' }}></span></span> le pidió a la enfermera…</div>
     </div>
   </div>;
+}
+
+// Árbol «the doctor» → el doctor / la doctora (escena Español; se reusa atenuado en Seattle).
+function ArbolDoctor({ T, at, q = true }) {
+  return <g>
+          <g transform="translate(540 780)"><rect x={-200} y={-60} width={400} height={120} rx={24} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
+            <text y={20} textAnchor="middle" style={{ font:`900 56px ${KF.texto}` }} fill={KC.ink}>the doctor</text></g>
+          {[[-1, AZUL, 'el doctor'], [1, KC.pink, 'la doctora']].map(([d, c, t], i) => { const u = kprog(T, at + 0.6 + i * 0.5, at + 1.2 + i * 0.5, kEase.sale);
+            return <g key={i}>
+              <path d={`M 540 845 Q ${540 + d * 40} 940 ${540 + d * 240 * u} ${860 + 160 * u}`} stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" />
+              <g transform={`translate(${540 + d * 240} 1080) scale(${u})`}><rect x={-185} y={-55} width={370} height={110} rx={24} fill={c} stroke={KC.ink} strokeWidth={8} />
+                <text y={18} textAnchor="middle" style={{ font:`900 52px ${KF.texto}` }} fill="#fff">{t}</text></g>
+            </g>; })}
+          <text x={540} y={960} textAnchor="middle" style={{ font:`400 ${110 + 12 * Math.sin(T * 5)}px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} opacity={q ? kprog(T, at + 1.6, at + 2.0) : 0}>?</text>
+  </g>;
 }
 
 function Traduccion() {
@@ -111,97 +126,102 @@ function Traduccion() {
       {/* 1 · gancho: el «he» que no se deja borrar */}
       <Escena T={T} a={K.G} b={K.P}>
         <FondoLunares color={KC.cyan} />
-        <Traductor T={T} x={340} y={860} texto="ő egy mérnök" salidas={[{ at: -5, partes: heGancho }]} />
-        {svgZ(<Dedo x={dedoX} y={1000 + 30 * Math.sin(T * 6) * (1 - kprog(T, K.G + 0.9, K.G + 1.0))} s={0.85} o={1 - kprog(T, K.G + 1.4, K.G + 1.7)} />)}
+        {/* pase a mano cine: el celular llena el cuadro (s 1.22, antes 0.8) y se centra; el dedo se mueve con él */}
+        <Traductor T={T} x={540} y={1000} s={1.22} texto="ő egy mérnök" salidas={[{ at: -5, partes: heGancho }]} />
+        {svgZ(<g transform="translate(540 1000) scale(1.525) translate(-340 -860)"><Dedo x={dedoX} y={1000 + 30 * Math.sin(T * 6) * (1 - kprog(T, K.G + 0.9, K.G + 1.0))} s={0.85} o={1 - kprog(T, K.G + 1.4, K.G + 1.7)} /></g>)}
       </Escena>
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.P - 0.2} texto="¿error de dedo?" x={800} y={880} tam={42} />
-      <Chip T={T} at={K.G + 2.0} until={K.P - 0.2} texto="lo aprendió" x={800} y={1000} tam={46} borde={KC.red} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.4} until={K.P - 0.2} texto="¿error de dedo?" x={540} y={330} tam={46} />
+      <Chip T={T} at={K.G + 2.0} until={K.P - 0.2} texto="lo aprendió" x={540} y={430} tam={50} borde={KC.red} />
       {/* 2 · la prueba en húngaro */}
       <Escena T={T} a={K.P} b={K.E}>
         <FondoLunares color={KC.yellow} />
-        {svg(<g opacity={1 - kprog(T, K.P + 2.3, K.P + 2.7)}>
+        {/* pase a mano cine: la «ő» y las dos personas, 1.3 veces más grandes y centradas */}
+        {svg(<g opacity={1 - kprog(T, K.P + 2.3, K.P + 2.7)} transform="translate(540 980) scale(1.3) translate(-540 -920)">
           <text x={540} y={1000} textAnchor="middle" style={{ font:`400 ${klerp(380, 230, ozo)}px ${KF.titulo}` }} fill={KC.paper} stroke={KC.ink} strokeWidth={12} transform={`translate(0 ${-ozo * 120})`}>ő</text>
           <g opacity={ozo}><Persona x={540 - 230 * ozo} y={900} s={0.9} color={AZUL} T={T} /><Persona x={540 + 230 * ozo} y={900} s={0.9} color={KC.pink} T={T} ph={1} /></g>
           <text x={310} y={1140} textAnchor="middle" opacity={ozo} style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>él</text>
           <text x={770} y={1140} textAnchor="middle" opacity={ozo} style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>ella</text>
         </g>)}
-        <Traductor T={T} x={330} y={880} o={kprog(T, K.P + 2.4, K.P + 2.8)} dx={-200 * (1 - kprog(T, K.P + 2.4, K.P + 2.9, kEase.sale))} texto={pruebaTexto} escrito={pruebaEscrito} salidas={pruebaSal} parpadea={false} />
+        <Traductor T={T} x={360} y={1010} s={1.1} o={kprog(T, K.P + 2.4, K.P + 2.8)} dx={-200 * (1 - kprog(T, K.P + 2.4, K.P + 2.9, kEase.sale))} texto={pruebaTexto} escrito={pruebaEscrito} salidas={pruebaSal} parpadea={false} />
         {svg(<>
-          <g opacity={kprog(T, K.P + 4.9, K.P + 5.3)}><Persona x={830} y={770} s={0.6} color={AZUL} extra="casco" T={T} /></g>
-          <g opacity={kprog(T, K.P + 8.7, K.P + 9.1)}><Persona x={830} y={1000} s={0.6} color={KC.pink} extra="cofia" T={T} ph={2} /></g>
+          <g opacity={kprog(T, K.P + 4.9, K.P + 5.3)}><Persona x={875} y={760} s={0.75} color={AZUL} extra="casco" T={T} /></g>
+          <g opacity={kprog(T, K.P + 8.7, K.P + 9.1)}><Persona x={875} y={1130} s={0.75} color={KC.pink} extra="cofia" T={T} ph={2} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.P + 0.6} until={K.P + 2.4} texto="húngaro: ő = él o ella" y={560} tam={42} borde={KC.ink} />
-      <Chip T={T} at={K.P + 2.6} until={K.E - 0.2} texto="así salía en 2018" x={330} y={500} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.P + 5.0} until={K.E - 0.2} texto="ingeniero → he" x={830} y={880} tam={32} borde={AZUL} />
-      <Chip T={T} at={K.P + 8.8} until={K.E - 0.2} texto="enfermera → she" x={830} y={1110} tam={32} borde={KC.pink} />
+      <Chip T={T} at={K.P + 0.6} until={K.P + 2.4} texto="húngaro: ő = él o ella" y={500} tam={46} borde={KC.ink} />
+      <Chip T={T} at={K.P + 2.6} until={K.E - 0.2} texto="así salía en 2018" x={360} y={480} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.P + 5.0} until={K.E - 0.2} texto="ingeniero → he" x={875} y={930} tam={34} borde={AZUL} />
+      <Chip T={T} at={K.P + 8.8} until={K.E - 0.2} texto="enfermera → she" x={875} y={1300} tam={34} borde={KC.pink} />
       {/* 3 · el estudio */}
       <Escena T={T} a={K.E} b={K.R}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>{PROF.map((p, i) => { const t0 = K.E + 0.6 + i * 0.16, u = kprog(T, t0, t0 + 1.2, kEase.sale), col = i % 4, fila = Math.floor(i / 4);
-          return <Ficha key={i} x={160 + col * 250 + (fila % 2) * 60} y={klerp(-80, 840 + fila * 64, u)} texto={p} tam={30} color={COLS[i % COLS.length]} rot={(i % 3 - 1) * 5} o={u > 0 ? 1 : 0} />; })}</>)}
+        {/* pase a mano cine: fichas más grandes (tam 40, antes 30) en 3 columnas que llenan el centro del cuadro */}
+        {svg(<>{PROF.map((p, i) => { const t0 = K.E + 0.6 + i * 0.16, u = kprog(T, t0, t0 + 1.2, kEase.sale), col = i % 3, fila = Math.floor(i / 3);
+          return <Ficha key={i} x={220 + col * 320 + (fila % 2 ? 10 : -10)} y={klerp(-80, 800 + fila * 105, u)} texto={p} tam={40} color={COLS[i % COLS.length]} rot={(i % 3 - 1) * 4} o={u > 0 ? 1 : 0} />; })}</>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.R - 0.3} anio="2018" quien="experimentos · UFRGS, Brasil" revista="Prates, Avelar y Lamb · publicado en 2019" y={600} />
-      <Chip T={T} at={K.E + 1.8} until={K.R - 0.3} texto="1,019 profesiones · 12 idiomas sin género" y={1110} tam={36} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.R - 0.3} anio="2018" quien="experimentos · UFRGS, Brasil" revista="Prates, Avelar y Lamb · publicado en 2019" y={480} />
+      <Chip T={T} at={K.E + 1.8} until={K.R - 0.3} texto="1,019 profesiones · 12 idiomas sin género" y={1370} tam={38} borde={KC.ink} />
       {/* 4 · resultado en ciencia y tecnología */}
       <Escena T={T} a={K.R} b={K.Q}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
+        {/* pase a mano cine: las dos personas de la prueba («él» y «ella») a cuadro debajo de las barras; «ella» atenuada */}
+        {svg(<><Persona x={320} y={1230} s={1.15} color={AZUL} T={T} /><g opacity={klerp(0.3, 0.55, kprog(T, K.R + 2.9, K.R + 3.3))}><Persona x={760} y={1230} s={1.15} color={KC.pink} T={T} ph={1} /></g>
+          <text x={320} y={1450} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>él</text>
+          <text x={760} y={1450} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink} opacity={0.6}>ella</text></>)}
       </Escena>
-      <Chip T={T} at={K.R + 0.2} until={K.Q - 0.2} texto="ciencia y tecnología (STEM)" x={600} y={700} tam={38} borde={KC.ink} />
-      <BarrasHT T={T} at={K.R + 0.4} until={K.Q - 0.2} top={790} filas={[{ valor: 71.6, texto:'72 %', etiqueta:'salió «él»', color: AZUL }, { valor: 4.2, texto:'4 %', etiqueta:'salió «ella»', color: KC.pink, at: K.R + 2.9 }]} />
-      <Chip T={T} at={K.R + 3.5} until={K.Q - 0.2} texto="el resto: neutro o sin pronombre" y={1120} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.R + 0.2} until={K.Q - 0.2} texto="ciencia y tecnología (STEM)" x={540} y={440} tam={42} borde={KC.ink} />
+      <BarrasHT T={T} at={K.R + 0.4} until={K.Q - 0.2} top={520} filas={[{ valor: 71.6, texto:'72 %', etiqueta:'salió «él»', color: AZUL }, { valor: 4.2, texto:'4 %', etiqueta:'salió «ella»', color: KC.pink, at: K.R + 2.9 }]} />
+      <Chip T={T} at={K.R + 3.5} until={K.Q - 0.2} texto="el resto: neutro o sin pronombre" y={880} tam={28} borde={KC.ink} />
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Q} b={K.Re} zoom={0.1}>
         <FondoLunares color={KC.coral} />
-        {svg(<text x={290} y={1120} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 900)`}>?</text>)}
+        {/* pase a mano cine: «él» y «ella» de la escena anterior siguen a cuadro y el signo queda entre ellos */}
+        {svg(<><Persona x={320} y={1230} s={1.15} color={AZUL} T={T} /><g opacity={0.55}><Persona x={760} y={1230} s={1.15} color={KC.pink} T={T} ph={1} /></g>
+          <text x={540} y={1010} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 860)`}>?</text></>)}
       </Escena>
       {/* 6 · la realidad: 12 % contra 36 % */}
       <Escena T={T} a={K.Re} b={K.Go}>
         <FondoLunares color={KC.mint} />
+        {/* pase a mano cine: una persona «ella» sobre cada columna (en el traductor / en la vida real), a cuadro desde el inicio */}
+        {svg(<><Persona x={310} y={870} s={0.6} color={KC.pink} T={T} />
+          <g opacity={klerp(0.35, 1, kprog(T, K.Re + 3.9, K.Re + 4.3))}><Persona x={770} y={470} s={0.6} color={KC.pink} T={T} ph={1.5} /></g></>)}
       </Escena>
-      <BarraV T={T} at={K.Re + 0.4} until={K.Go - 0.2} valor={11.76} max={40} texto="12 %" etiqueta="«ella» en el traductor" color={KC.pink} cx={330} />
-      <Chip T={T} at={K.Re + 1.2} until={K.Go - 0.2} texto="(todas las profesiones)" x={330} y={700} tam={30} borde={KC.pink} />
-      <BarraV T={T} at={K.Re + 3.9} until={K.Go - 0.2} valor={35.94} max={40} texto="36 %" etiqueta="mujeres en esos trabajos" color={KC.blue} cx={760} />
-      <Chip T={T} at={K.Re + 4.6} until={K.Go - 0.2} texto="EE. UU., 2017" x={760} y={640} tam={30} borde={KC.blue} />
+      <BarraV T={T} at={K.Re + 0.1} until={K.Go - 0.2} valor={11.76} max={40} texto="12 %" etiqueta="«ella» en el traductor" color={KC.pink} cx={310} base={1320} alto={620} ancho={360} />
+      <Chip T={T} at={K.Re + 1.2} until={K.Go - 0.2} texto="(todas las profesiones)" x={310} y={1000} tam={32} borde={KC.pink} />
+      <BarraV T={T} at={K.Re + 3.9} until={K.Go - 0.2} valor={35.94} max={40} texto="36 %" etiqueta="mujeres en esos trabajos" color={KC.blue} cx={770} base={1320} alto={620} ancho={360} />
+      <Chip T={T} at={K.Re + 4.6} until={K.Go - 0.2} texto="EE. UU., 2017" x={770} y={600} tam={34} borde={KC.blue} />
       {/* 7 · la respuesta de Google */}
       <Escena T={T} a={K.Go} b={K.Es}>
         <FondoLunares color={KC.orange} />
-        <Traductor T={T} x={340} y={880} origen="TURCO" destino="INGLÉS" texto="o bir doktor" escrito={kprog(T, K.Go + 0.2, K.Go + 1.0)} parpadea={false}
+        <Traductor T={T} x={360} y={1010} s={1.1} origen="TURCO" destino="INGLÉS" texto="o bir doktor" escrito={kprog(T, K.Go + 0.2, K.Go + 1.0)} parpadea={false}
           salidas={[{ at: K.Go + 1.4, tag:'femenino', partes:[{ t:'she', color:KC.pink, late:false }, { t:' is a doctor' }] }, { at: K.Go + 1.9, tag:'masculino', partes:[{ t:'he', color:AZUL, late:false }, { t:' is a doctor' }] }]} />
       </Escena>
-      <Chip T={T} at={K.Go + 0.5} until={K.Es - 0.2} texto="diciembre 2018" x={820} y={720} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.Go + 2.6} until={K.Es - 0.2} texto="algunos idiomas" x={820} y={820} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Go + 4.8} until={K.Es - 0.2} texto="2020: + húngaro" x={820} y={960} tam={40} borde={KC.leaf} />
-      <Chip T={T} at={K.Go + 1.6} until={K.Es - 0.2} texto="ejemplo del blog de Google" x={820} y={1110} tam={24} borde={KC.ink} />
+      <Chip T={T} at={K.Go + 0.5} until={K.Es - 0.2} texto="diciembre 2018" x={880} y={680} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Go + 2.6} until={K.Es - 0.2} texto="algunos idiomas" x={880} y={790} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Go + 4.8} until={K.Es - 0.2} texto="2020: + húngaro" x={880} y={960} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.Go + 1.6} until={K.Es - 0.2} texto="ejemplo del blog de Google" x={880} y={1400} tam={24} borde={KC.ink} />
       {/* 8 · en español hay que elegir */}
       <Escena T={T} a={K.Es} b={K.S}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>
-          <g transform="translate(540 780)"><rect x={-200} y={-60} width={400} height={120} rx={24} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
-            <text y={20} textAnchor="middle" style={{ font:`900 56px ${KF.texto}` }} fill={KC.ink}>the doctor</text></g>
-          {[[-1, AZUL, 'el doctor'], [1, KC.pink, 'la doctora']].map(([d, c, t], i) => { const u = kprog(T, K.Es + 0.6 + i * 0.5, K.Es + 1.2 + i * 0.5, kEase.sale);
-            return <g key={i}>
-              <path d={`M 540 845 Q ${540 + d * 40} 940 ${540 + d * 240 * u} ${860 + 160 * u}`} stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" />
-              <g transform={`translate(${540 + d * 240} 1080) scale(${u})`}><rect x={-185} y={-55} width={370} height={110} rx={24} fill={c} stroke={KC.ink} strokeWidth={8} />
-                <text y={18} textAnchor="middle" style={{ font:`900 52px ${KF.texto}` }} fill="#fff">{t}</text></g>
-            </g>; })}
-          <text x={540} y={960} textAnchor="middle" style={{ font:`400 ${110 + 12 * Math.sin(T * 5)}px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.Es + 1.6, K.Es + 2.0)}>?</text>
-        </>)}
+        {/* pase a mano cine: el árbol «the doctor» 1.15 veces más grande y centrado */}
+        {svg(<g transform="translate(540 960) scale(1.15) translate(-540 -930)"><ArbolDoctor T={T} at={K.Es} /></g>)}
       </Escena>
       {/* 9 · Seattle, 2019 */}
       <Escena T={T} a={K.S} b={K.C}>
         <FondoLunares color={KC.pink} />
+        {/* pase a mano cine: el árbol «the doctor» sigue a cuadro abajo (lo que se prueba); tarjeta y frase arriba */}
+        {svg(<g opacity={0.75} transform="translate(540 1180) scale(1.0) translate(-540 -930)"><ArbolDoctor T={T} at={K.S - 10} q={false} /></g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.S + 0.2} until={K.S + 2.5} anio="2019" quien="Universidad de Washington, Seattle" revista="Stanovsky, Smith y Zettlemoyer · ACL" y={760} />
-      <FrasePrueba T={T} at={K.S + 2.7} until={K.C - 0.2} y={810} />
-      <NumeroGigante T={T} at={K.S + 4.7} until={K.C - 0.2} valor={53} dur={0.9} sufijo=" %" etiqueta="género correcto al español" x={540} y={1050} tam={130} color={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.S + 0.2} until={K.S + 2.5} anio="2019" quien="Universidad de Washington, Seattle" revista="Stanovsky, Smith y Zettlemoyer · ACL" y={560} />
+      <FrasePrueba T={T} at={K.S + 2.7} until={K.C - 0.2} y={520} />
+      <NumeroGigante T={T} at={K.S + 4.7} until={K.C - 0.2} valor={53} dur={0.9} sufijo=" %" etiqueta="género correcto al español" x={540} y={790} tam={130} color={KC.yellow} />
       {/* 10 · cierre: el mismo traductor */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        <Traductor T={T} x={340} y={860} texto="ő egy mérnök" salidas={cierreSal} parpadea={T < K.C + 1.2} />
+        <Traductor T={T} x={540} y={1000} s={1.22} texto="ő egy mérnök" salidas={cierreSal} parpadea={T < K.C + 1.2} />
       </Escena>
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="¿lo dijo la frase…" x={800} y={800} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="…o lo aprendió?" x={800} y={900} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="¿lo dijo la frase…" x={540} y={330} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="…o lo aprendió?" x={540} y={430} tam={42} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.P - 0.1} texto="No fue un error de dedo: *lo aprendió.*" />

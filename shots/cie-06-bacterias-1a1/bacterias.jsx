@@ -88,6 +88,9 @@ function Bacterias() {
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Q} b={K.H} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
+        {/* encuadre: el intestino de la escena anterior (bacterias en el colon) sigue a cuadro, a media luz, y la pregunta encima */}
+        <div style={{ position:'absolute', inset:0, background:'rgba(10,15,28,.85)' }}></div>
+        {svg(<g opacity={0.55} transform="translate(540 970) scale(1.2) translate(-540 -900)"><Intestino T={T} bacDelgado={0} bacColon={1} resalta={1} /></g>)}
         {svg(<text x={540} y={1150} textAnchor="middle" style={{ font:`400 620px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 950)`}>?</text>)}
       </Escena>
       {/* 6 · 36 billones de células tuyas (hombre, Hatton et al. 2023); ~4 de cada 5 sin núcleo (≈29 de 36) */}
@@ -100,8 +103,8 @@ function Bacterias() {
       {/* 7 · la cuenta: 36 (2023) contra 38 (2016) */}
       <Escena T={T} a={K.Cu} b={K.E}>
         <FondoLunares color={KC.cyan} />
-        {/* modo cine: a cada barra, su sujeto (tu célula y la bacteria del gancho) */}
-        {svg(<g opacity={kprog(T, K.Cu + 0.2, K.Cu + 0.7)}><Globulo x={340} y={395} r={66} rot={T * 10} /><Bacteria x={740} y={395} rot={T * 20} s={0.6} T={T} color={BAC} /></g>)}
+        {/* modo cine: a cada barra, su sujeto (tu célula y la bacteria del gancho); encuadre: barras más altas y todo un poco más abajo */}
+        {svg(<g opacity={kprog(T, K.Cu + 0.2, K.Cu + 0.7)}><Globulo x={340} y={405} r={66} rot={T * 10} /><Bacteria x={740} y={405} rot={T * 20} s={0.6} T={T} color={BAC} /></g>)}
       </Escena>
       {/* 8 · el estudio */}
       <Escena T={T} a={K.E} b={K.P}>
@@ -136,10 +139,10 @@ function Bacterias() {
       <Chip T={T} at={K.Co + 0.9} until={K.Q - 0.2} texto="casi todas: colon (~400 mL)" x={540} y={395} tam={34} borde={KC.yellow} />
       <NumeroGigante T={T} at={K.H + 0.2} until={K.Cu - 0.2} valor={36} dur={1.0} sufijo=" billones" etiqueta="células tuyas (2023)" x={540} y={500} tam={130} color={KC.red} />
       <Chip T={T} at={K.H + 2.6} until={K.Cu - 0.2} texto="4 de cada 5 sin núcleo: glóbulos rojos y plaquetas" x={540} y={1385} tam={30} borde={ROJO} />
-      <Comparativa T={T} at={K.Cu + 0.2} until={K.E - 0.2} max={40} y={560} alto={640}
+      <Comparativa T={T} at={K.Cu + 0.2} until={K.E - 0.2} max={40} y={560} alto={800}
         izq={{ valor: 36, etiqueta: 'células tuyas (2023)', color: ROJO, texto: '36' }} der={{ valor: 38, etiqueta: 'bacterias (2016)', color: BAC, texto: '38' }} />
-      <Chip T={T} at={K.Cu + 0.6} until={K.E - 0.2} texto="billones" x={540} y={290} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Cu + 2.4} until={K.E - 0.2} texto="≈ una a una" x={540} y={1465} tam={44} borde={KC.gold} />
+      <Chip T={T} at={K.Cu + 0.6} until={K.E - 0.2} texto="billones" x={540} y={275} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Cu + 2.4} until={K.E - 0.2} texto="≈ una a una" x={540} y={1505} tam={44} borde={KC.gold} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.P - 0.3} anio="2016" quien="Instituto Weizmann, Israel" revista="Sender, Fuchs y Milo · PLoS Biology" x={540} y={480} />
       <MitoTachado T={T} at={K.P + 2.2} tacharEn={K.P + 3.0} until={K.B - 0.2} texto="1 a 3 kg" x={320} y={460} tam={52} />
       <Chip T={T} at={K.P + 1.2} until={K.B - 0.2} texto="≈ 200 g" x={540} y={620} tam={64} borde={BAC} />

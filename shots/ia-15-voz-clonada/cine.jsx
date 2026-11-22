@@ -12,7 +12,7 @@
 const CINE = { fondo: '#0a0f1c', borde: '#070a12', linea: '#dfe7ff', texto: '#f3f6ff', acento: '#ffd166' };
 // Interruptores (22 nov 2026, tras revisar tres videos de la referencia cuadro por cuadro: no llevan subtítulo quemado ni
 // logo durante el video, y sus trazos tienen un resplandor suave). Cambiar aquí afecta a todos los shots al re-renderizar.
-const CINE_OPC = { subtitulos: false, logo: false, resplandor: true, volumen: true };
+const CINE_OPC = { subtitulos: false, logo: true, resplandor: true, volumen: true };
 const CINE_ENC = { max: 1.7, ancho: 0.93, alto: 0.72, centroY: 0.47, bajar: 0.17 };
 const CINE_VOL = { suave: 8, relieve: 9, brillo: 0.5, halo: 12, haloFuerza: 0.5 };
 
@@ -36,7 +36,7 @@ const CineCtx = React.createContext({ velo: false, a: null });
 function FondoMarca({ color = '#1b2a44', patron = 'puntos', T }) {
   const ctx = React.useContext(CineCtx);
   const comp = typeof useComposition === 'function' ? useComposition() : null;
-  if (ctx && ctx.velo) return <div style={{ position:'absolute', inset:0, background:'rgba(8,12,22,.68)' }}></div>;
+  if (ctx && ctx.velo) return <div style={{ position:'absolute', inset:0, background:'rgba(8,12,22,.46)' }}></div>;
   // Disolvencia larga: el fondo de una escena nueva tarda ~1.2 s en volverse sólido, y mientras tanto la escena anterior
   // (que dura 0.9 s más) se sigue viendo detrás. Así no hay pantalla vacía mientras entra el dibujo nuevo.
   const tt = T != null && T !== 0 ? T : (comp ? comp.T : 0);
@@ -84,7 +84,9 @@ function cineEscena(Kit) {
       }
     }
     const hijos = enc ? <React.Fragment>{enc.dy > 0 ? <div style={{ position:'absolute', inset:0, background:CINE.fondo }}></div> : null}<div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:`translate(${enc.dx}px,${enc.dy}px) scale(${enc.k})`, transformOrigin:'0 0' }}>{p.children}</div></React.Fragment> : p.children;
-    const el = Kit({ ...p, b, zoom: window.CINE_MIDIENDO ? 0 : zf, children: hijos });
+    // El `fondo` de color de la Escena se veía como un destello saturado al entrar (durante la disolvencia): pasa a su versión oscura.
+    const fondo = (typeof p.fondo === 'string' && /^#[0-9a-f]{6}$/i.test(p.fondo)) ? cineMix(p.fondo, CINE.fondo, 0.82) : p.fondo;
+    const el = Kit({ ...p, b, fondo, zoom: window.CINE_MIDIENDO ? 0 : zf, children: hijos });
     return el ? <CineCtx.Provider value={{ velo, a: p.a, enc }}>{el}</CineCtx.Provider> : null;
   };
 }

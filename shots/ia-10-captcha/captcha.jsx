@@ -144,48 +144,54 @@ function Captcha() {
       <Escena T={T} a={K.G} b={K.Ma}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <line x1={540} y1={760} x2={540} y2={1190} stroke={KC.ink} strokeWidth={8} strokeDasharray="20 18" />
-          <TarjetaCaptcha x={275} y={1010} s={0.9} texto="xK7pQ" escrito={tuEscrito} ok={0} T={T} seed={4} />
-          <Cursor x={300} y={1090} s={1.1} clic={Math.max(0, Math.sin(T * 9)) * 0.6} />
-          <AnilloTiempo x={410} y={790} p={kprog(T, K.G, K.G + 8)} color={KC.red} />
-          <TarjetaCaptcha x={805} y={1010} s={0.9} texto="xK7pQ" escrito={botEscrito} ok={pasa(K.G + 0.8, K.G + 1.2)} T={T} seed={4} />
-          <AnilloTiempo x={940} y={790} p={Math.min(kprog(T, K.G, K.G + 8), 0.1)} color={AZUL} parado={T > K.G + 0.8} />
+          <line x1={540} y1={680} x2={540} y2={1290} stroke={KC.ink} strokeWidth={8} strokeDasharray="20 18" />
+          <TarjetaCaptcha x={275} y={1010} s={1.05} texto="xK7pQ" escrito={tuEscrito} ok={0} T={T} seed={4} />
+          <Cursor x={300} y={1100} s={1.3} clic={Math.max(0, Math.sin(T * 9)) * 0.6} />
+          <AnilloTiempo x={420} y={720} r={52} p={kprog(T, K.G, K.G + 8)} color={KC.red} />
+          <TarjetaCaptcha x={805} y={1010} s={1.05} texto="xK7pQ" escrito={botEscrito} ok={pasa(K.G + 0.8, K.G + 1.2)} T={T} seed={4} />
+          <AnilloTiempo x={950} y={720} r={52} p={Math.min(kprog(T, K.G, K.G + 8), 0.1)} color={AZUL} parado={T > K.G + 0.8} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.G + 0.05} until={K.Ma - 0.2} texto="TÚ" x={150} y={790} tam={52} borde={KC.red} />
-      <Chip T={T} at={K.G + 0.15} until={K.Ma - 0.2} texto="BOT" x={690} y={790} tam={52} borde={AZUL} />
+      <Chip T={T} at={K.G + 0.05} until={K.Ma - 0.2} texto="TÚ" x={150} y={720} tam={52} borde={KC.red} />
+      <Chip T={T} at={K.G + 0.15} until={K.Ma - 0.2} texto="BOT" x={690} y={720} tam={52} borde={AZUL} />
       {/* 2 · marcador */}
       <Escena T={T} a={K.Ma} b={K.E}>
         <FondoLunares color={KC.mint} />
+        {svg(<g opacity={0.9}>
+          <line x1={540} y1={1010} x2={540} y2={1470} stroke={KC.ink} strokeWidth={8} strokeDasharray="20 18" />
+          <TarjetaCaptcha x={272} y={1240} s={1.0} texto="xK7pQ" escrito={kprog(T, K.Ma, K.E, (p) => p) * 0.6 + 0.4} ok={0} T={T} seed={4} />
+          <Cursor x={295} y={1330} s={1.2} clic={Math.max(0, Math.sin(T * 9)) * 0.6} />
+          <TarjetaCaptcha x={808} y={1240} s={1.0} texto="xK7pQ" escrito={1} ok={1} T={T} seed={4} />
+        </g>)}
       </Escena>
-      <Marcador T={T} at={K.Ma + 0.2} until={K.E - 0.2} top={690} />
-      <Chip T={T} at={K.Ma + 3.4} until={K.E - 0.2} texto="bots: estudios 2014–2021" x={650} y={520} tam={34} borde={AZUL} />
+      <Marcador T={T} at={K.Ma + 0.2} until={K.E - 0.2} top={430} />
+      <Chip T={T} at={K.Ma + 3.4} until={K.E - 0.2} texto="bots: estudios 2014–2021" x={650} y={330} tam={34} borde={AZUL} />
       {/* 3 · el estudio */}
       <Escena T={T} a={K.E} b={K.L}>
         <FondoLunares color={KC.lilac} />
-        {svg(<MiniCaptchas T={T} x={92} y={870} p={kprog(T, K.E + 1.6, K.E + 4.6, kEase.suave)} />)}
+        {svg(<g transform="translate(540 1110) scale(1.1) translate(-540 -1066)"><MiniCaptchas T={T} x={92} y={870} p={kprog(T, K.E + 1.6, K.E + 4.6, kEase.suave)} /></g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.L - 0.3} anio="2023" quien="Universidad de California, Irvine" revista="Searles et al. · USENIX Security" x={650} y={560} />
-      <Chip T={T} at={K.E + 1.4} until={K.L - 0.3} texto="1,400 personas · 14,000 captchas" x={540} y={800} tam={38} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.L - 0.3} anio="2023" quien="Universidad de California, Irvine" revista="Searles et al. · USENIX Security" x={540} y={460} />
+      <Chip T={T} at={K.E + 1.4} until={K.L - 0.3} texto="1,400 personas · 14,000 captchas" x={540} y={770} tam={38} borde={KC.ink} />
       {/* 4 · letras chuecas: la IA de Google */}
       <Escena T={T} a={K.L} b={K.P}>
         <FondoCircuito T={T} />
-        <RedNeuronal T={T} x={250} y={600} ancho={580} alto={320} capas={[3, 5, 5, 3]} onda={((T - K.L) * 0.6) % 1} />
+        <RedNeuronal T={T} x={250} y={560} ancho={580} alto={460} capas={[3, 5, 5, 3]} onda={((T - K.L) * 0.6) % 1} />
         {svg(<>
-          <g opacity={pasa(K.L + 0.2, K.L + 0.7)}><rect x={30} y={650} width={200} height={220} rx={18} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
-            <LetrasChuecas x={130} y={775} texto="Rq4" tam={66} seed={9} T={T} tiembla={3} /></g>
-          <g opacity={pasa(K.L + 1.4, K.L + 1.9)}><rect x={850} y={650} width={200} height={220} rx={18} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
-            <text x={950} y={785} textAnchor="middle" style={{ font:`700 66px ${KF.mono}` }} fill={KC.ink}>Rq4</text></g>
+          <g opacity={pasa(K.L + 0.2, K.L + 0.7)}><rect x={30} y={680} width={200} height={220} rx={18} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
+            <LetrasChuecas x={130} y={805} texto="Rq4" tam={66} seed={9} T={T} tiembla={3} /></g>
+          <g opacity={pasa(K.L + 1.4, K.L + 1.9)}><rect x={850} y={680} width={200} height={220} rx={18} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
+            <text x={950} y={815} textAnchor="middle" style={{ font:`700 66px ${KF.mono}` }} fill={KC.ink}>Rq4</text></g>
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.L + 2.4} until={K.P - 0.2} valor={99.8} dec={1} dur={1.1} sufijo=" %" etiqueta="de acierto (las más difíciles)" x={540} y={1040} tam={150} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.L + 2.4} until={K.P - 0.2} valor={99.8} dec={1} dur={1.1} sufijo=" %" etiqueta="de acierto (las más difíciles)" x={540} y={1200} tam={160} color={KC.yellow} />
       <Chip T={T} at={K.L + 0.6} until={K.P - 0.2} texto="2014 · IA de Google" x={360} y={470} tam={38} borde={KC.cyan} />
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Li} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {svg(<>
           <text x={280} y={900} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 740)`}>?</text>
-          <Casilla x={330} y={1080} s={0.7} T={T} />
+          <Casilla x={540} y={1180} s={1.05} T={T} />
         </>)}
       </Escena>
       {/* 6 · libros escaneados */}
@@ -193,19 +199,19 @@ function Captcha() {
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
           <g opacity={1 - pasa(Li2 - 0.4, Li2)}>
-            <Libro x={540} y={760} s={0.95} borrosa={1 - pasa(K.Li + 5.2, K.Li + 6.0)} resalta={pasa(K.Li + 1.2, K.Li + 1.6)} />
-            <g opacity={pasa(K.Li + 1.6, K.Li + 2.0) * (1 - pasa(K.Li + 5.6, K.Li + 6.0))}><rect x={650} y={600} width={170} height={56} rx={28} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
-              <text x={735} y={640} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill="#fff">¿???</text></g>
-            <TarjetaCaptcha x={klerp(690, 540, pasa(K.Li + 2.2, K.Li + 3.0))} y={klerp(724, 1060, pasa(K.Li + 2.2, K.Li + 3.0))} s={klerp(0.2, 0.75, pasa(K.Li + 2.2, K.Li + 3.0))}
+            <Libro x={540} y={720} s={1.25} borrosa={1 - pasa(K.Li + 5.2, K.Li + 6.0)} resalta={pasa(K.Li + 1.2, K.Li + 1.6)} />
+            <g opacity={pasa(K.Li + 1.6, K.Li + 2.0) * (1 - pasa(K.Li + 5.6, K.Li + 6.0))}><rect x={711} y={518} width={170} height={56} rx={28} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
+              <text x={796} y={558} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill="#fff">¿???</text></g>
+            <TarjetaCaptcha x={klerp(727, 540, pasa(K.Li + 2.2, K.Li + 3.0))} y={klerp(675, 1190, pasa(K.Li + 2.2, K.Li + 3.0))} s={klerp(0.25, 0.85, pasa(K.Li + 2.2, K.Li + 3.0))}
               texto="upon" escrito={kprog(T, K.Li + 3.2, K.Li + 4.8)} ok={pasa(K.Li + 4.9, K.Li + 5.3)} T={T} seed={11} fondo="#f1e2c0" />
           </g>
-          <g opacity={pasa(Li2 - 0.3, Li2 + 0.2)}><PilaLibros x={260} y={1180} n={9 * kprog(T, Li2, Li2 + 3.0, kEase.sale)} /></g>
+          <g opacity={pasa(Li2 - 0.3, Li2 + 0.2)} transform="translate(300 1320) scale(1.4) translate(-260 -1180)"><PilaLibros x={260} y={1180} n={9 * kprog(T, Li2, Li2 + 3.0, kEase.sale)} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.Li + 0.4} until={K.Li + 5.0} texto="libros escaneados que la computadora no leía" x={540} y={480} tam={32} borde={KC.ink} />
-      <NumeroGigante T={T} at={Li2 + 0.1} until={K.Ca - 0.2} valor={440} dur={1.6} sufijo=" millones" etiqueta="" x={710} y={780} tam={120} color={KC.orange} />
-      <Chip T={T} at={Li2 + 0.8} until={K.Ca - 0.2} texto="de palabras transcritas (2008)" x={710} y={900} tam={36} borde={KC.orange} />
-      <Chip T={T} at={Li2 + 1.4} until={K.Ca - 0.2} texto="von Ahn et al. · Science 2008" x={710} y={1000} tam={28} mono borde={KC.ink} />
+      <Chip T={T} at={K.Li + 0.4} until={K.Li + 5.0} texto="libros escaneados que la computadora no leía" x={540} y={330} tam={32} borde={KC.ink} />
+      <NumeroGigante T={T} at={Li2 + 0.1} until={K.Ca - 0.2} valor={440} dur={1.6} sufijo=" millones" etiqueta="" x={775} y={760} tam={100} color={KC.orange} />
+      <Chip T={T} at={Li2 + 0.8} until={K.Ca - 0.2} texto="de palabras transcritas (2008)" x={770} y={880} tam={34} borde={KC.orange} />
+      <Chip T={T} at={Li2 + 1.4} until={K.Ca - 0.2} texto="von Ahn et al. · Science 2008" x={770} y={970} tam={28} mono borde={KC.ink} />
       {/* 7 · Street View */}
       <Escena T={T} a={K.Ca} b={K.Mo}>
         <FondoLunares color={KC.cyan} />
@@ -219,38 +225,38 @@ function Captcha() {
       {/* 8 · la casilla mira cómo la usas */}
       <Escena T={T} a={K.Mo} b={K.Cf}>
         <FondoLunares color={KC.pink} />
-        {svg(<Casilla x={540} y={800} s={1.25} T={T} brillo={pasa(K.Mo + 0.6, K.Mo + 1.2)} check={pasa(K.Mo + 3.0, K.Mo + 3.4)} />)}
+        {svg(<Casilla x={540} y={900} s={1.55} T={T} brillo={pasa(K.Mo + 0.6, K.Mo + 1.2)} check={pasa(K.Mo + 3.0, K.Mo + 3.4)} />)}
       </Escena>
-      <Chip T={T} at={K.Mo + 0.3} until={K.Cf - 0.2} texto="desde 2014" x={540} y={560} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Mo + 1.8} until={K.Cf - 0.2} texto="antes" x={250} y={1030} tam={42} borde={KC.yellow} />
-      <Chip T={T} at={K.Mo + 2.6} until={K.Cf - 0.2} texto="durante" x={540} y={1030} tam={42} borde={KC.yellow} />
-      <Chip T={T} at={K.Mo + 3.4} until={K.Cf - 0.2} texto="después" x={830} y={1030} tam={42} borde={KC.yellow} />
-      <Chip T={T} at={K.Mo + 1.0} until={K.Cf - 0.2} texto="esquema" x={900} y={680} tam={24} mono borde={KC.texto} />
+      <Chip T={T} at={K.Mo + 0.3} until={K.Cf - 0.2} texto="desde 2014" x={540} y={600} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Mo + 1.8} until={K.Cf - 0.2} texto="antes" x={250} y={1150} tam={42} borde={KC.yellow} />
+      <Chip T={T} at={K.Mo + 2.6} until={K.Cf - 0.2} texto="durante" x={540} y={1150} tam={42} borde={KC.yellow} />
+      <Chip T={T} at={K.Mo + 3.4} until={K.Cf - 0.2} texto="después" x={830} y={1150} tam={42} borde={KC.yellow} />
+      <Chip T={T} at={K.Mo + 1.0} until={K.Cf - 0.2} texto="esquema" x={930} y={705} tam={24} mono borde={KC.texto} />
       {/* 9 · versión tres: una calificación */}
       <Escena T={T} a={K.Cf} b={K.C}>
         <FondoCircuito T={T} color={KC.lilac} />
       </Escena>
-      <Chip T={T} at={K.Cf + 0.2} until={K.C - 0.2} texto="versión 3 · sin pruebas" x={380} y={470} tam={40} borde={KC.lilac} />
-      <Medidor T={T} at={K.Cf + 0.6} until={K.C - 0.2} y={760} etiqueta="0.0 = bot" color={vScore > 0.5 ? KC.mint : KC.red} valor={vScore} texto={(v) => `${(v).toFixed(1)} · 1.0 = humano`} />
-      {T > K.Cf - 0.5 && T < K.C + 0.5 && svg(<g opacity={pasa(K.Cf + 0.9, K.Cf + 1.3) * (1 - pasa(K.C - 0.2, K.C + 0.3))}>
-        <Robotito x={220} y={1040} s={0.6} T={T} cara="duda" color={KC.red} />
-        <text x={220} y={1160} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>0.0</text>
-        <Cursor x={830} y={980} s={1.3} />
-        <text x={860} y={1160} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>1.0</text>
+      <Chip T={T} at={K.Cf + 0.2} until={K.C - 0.2} texto="versión 3 · sin pruebas" x={400} y={400} tam={40} borde={KC.lilac} />
+      <Medidor T={T} at={K.Cf + 0.6} until={K.C - 0.2} y={560} etiqueta="0.0 = bot" color={vScore > 0.5 ? KC.mint : KC.red} valor={vScore} texto={(v) => `${(v).toFixed(1)} · 1.0 = humano`} />
+      {T > K.Cf - 0.5 && T < K.C + 0.5 && svg(<g opacity={pasa(K.Cf - 0.1, K.Cf + 0.3) * (1 - pasa(K.C - 0.2, K.C + 0.3))}>
+        <Robotito x={280} y={1080} s={1.4} T={T} cara="duda" color={KC.red} />
+        <text x={280} y={1320} textAnchor="middle" style={{ font:`700 44px ${KF.mono}` }} fill={KC.texto}>0.0</text>
+        <Cursor x={720} y={890} s={3.0} />
+        <text x={800} y={1320} textAnchor="middle" style={{ font:`700 44px ${KF.mono}` }} fill={KC.texto}>1.0</text>
       </g>, 41)}
       {/* 10 · cierre: la misma pantalla del inicio */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <line x1={540} y1={760} x2={540} y2={1190} stroke={KC.ink} strokeWidth={8} strokeDasharray="20 18" />
-          <g opacity={1 - pasa(K.C + 1.0, K.C + 1.6)}><TarjetaCaptcha x={275} y={1010} s={0.9} texto="xK7pQ" escrito={0.4} T={T} seed={4} /></g>
-          <g opacity={pasa(K.C + 1.0, K.C + 1.6)}><Casilla x={275} y={1010} s={0.62} T={T} brillo={1} check={pasa(K.C + 1.8, K.C + 2.2)} texto="No soy robot" /></g>
-          <TarjetaCaptcha x={805} y={1010} s={0.9} texto="xK7pQ" escrito={1} ok={1} T={T} seed={4} />
+          <line x1={540} y1={680} x2={540} y2={1290} stroke={KC.ink} strokeWidth={8} strokeDasharray="20 18" />
+          <g opacity={1 - pasa(K.C + 1.0, K.C + 1.6)}><TarjetaCaptcha x={275} y={1010} s={1.05} texto="xK7pQ" escrito={0.4} T={T} seed={4} /></g>
+          <g opacity={pasa(K.C + 1.0, K.C + 1.6)}><Casilla x={275} y={1010} s={0.74} T={T} brillo={1} check={pasa(K.C + 1.8, K.C + 2.2)} texto="No soy robot" /></g>
+          <TarjetaCaptcha x={805} y={1010} s={1.05} texto="xK7pQ" escrito={1} ok={1} T={T} seed={4} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 0.1} until={K.Ou} texto="TÚ" x={150} y={790} tam={52} borde={KC.red} />
-      <Chip T={T} at={K.C + 0.1} until={K.Ou} texto="BOT" x={690} y={790} tam={52} borde={AZUL} />
-      <Chip T={T} at={K.C + 2.3} until={K.Ou} texto="cómo te portas ✔" x={275} y={1110} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 0.1} until={K.Ou} texto="TÚ" x={150} y={720} tam={52} borde={KC.red} />
+      <Chip T={T} at={K.C + 0.1} until={K.Ou} texto="BOT" x={690} y={720} tam={52} borde={AZUL} />
+      <Chip T={T} at={K.C + 2.3} until={K.Ou} texto="cómo te portas ✔" x={275} y={1130} tam={40} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ma - 0.1} texto="Tú contra un bot: *casi siempre gana él.*" />

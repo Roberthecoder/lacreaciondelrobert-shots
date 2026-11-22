@@ -5,6 +5,7 @@
 
 // El Ángel de la Independencia (esquemático, no a escala): columna con el ángel dorado y la base.
 // El monumento no se mueve: el suelo de alrededor baja y aparecen escalones (esc = 0..14) debajo del pedestal.
+const SUB_DY = 160;   // encuadre: cuánto baja el corte del subsuelo (Lago, Bomba, Esponja, Pregunta e Historia)
 const ANG_BASE = 924, ANG_PASO = 14;
 const angSuelo = (esc) => ANG_BASE + esc * ANG_PASO;
 function Angel({ T, x = 540, esc = 0 }) {
@@ -25,19 +26,19 @@ function Angel({ T, x = 540, esc = 0 }) {
   </g>;
 }
 // Corte del subsuelo: ciudad arriba, lodo del antiguo lago con agua entre los granos, y un pozo.
-function Subsuelo({ T, aplasta = 0, bombea = 0, pozo = true }) {
+function Subsuelo({ T, aplasta = 0, bombea = 0, pozo = true, fondo = true }) {
   const top = 760 + aplasta * 90;                       // la superficie baja cuando el lodo se aplasta
   const r = krng(5);
   const granos = Array.from({ length: 60 }, () => ({ x: r() * KW, y: r(), s: 8 + r() * 10 }));
   return <g>
-    <rect x={0} y={0} width={KW} height={KH} fill="#0e1626" />
+    {fondo && <rect x={0} y={0} width={KW} height={KH} fill="#0e1626" />}
     {/* edificios */}
     {[[60, 160, 300], [250, 140, 220], [420, 180, 360], [640, 150, 260], [820, 200, 320]].map(([bx, w, h], i) =>
       <g key={i}><rect x={bx} y={top - h} width={w} height={h} fill={[KC.pink, KC.yellow, KC.lilac, KC.orange, KC.mint][i]} stroke={KC.ink} strokeWidth={6} />
         {Array.from({ length: Math.floor(h / 70) }, (_, k) => <rect key={k} x={bx + 22} y={top - h + 22 + k * 70} width={w - 44} height={30} fill="#fff" opacity=".55" />)}</g>)}
     {/* lodo del antiguo lago */}
-    <rect x={0} y={top} width={KW} height={1360 - top} fill="#4a3c33" stroke={KC.ink} strokeWidth={6} />
-    {granos.map((g, i) => <circle key={i} cx={g.x} cy={top + 30 + g.y * (1300 - top)} r={g.s * (1 - aplasta * 0.15)} fill="#6d523a" />)}
+    <rect x={0} y={top} width={KW} height={1360 - top} fill="#6e5747" stroke={KC.ink} strokeWidth={6} />{/* encuadre: lodo un poco más claro para que se lea como parte del sujeto */}
+    {granos.map((g, i) => <circle key={i} cx={g.x} cy={top + 30 + g.y * (1300 - top)} r={g.s * (1 - aplasta * 0.15)} fill="#4e3a2a" />)}
     {/* agua entre los granos: se va vaciando */}
     {Array.from({ length: 30 }, (_, i) => { const rr = krng(50 + i), yy = top + 40 + rr() * (1280 - top);
       return <circle key={i} cx={rr() * KW} cy={yy} r={7} fill="#3aa0ff" opacity={Math.max(0, 0.9 - bombea * 0.8)} />; })}
@@ -115,10 +116,11 @@ function HundimientoShot() {
       </Escena>
       {/* 2–4 · el lago, el pozo y el lodo que se aplasta (corte del subsuelo) */}
       <Escena T={T} a={K.L} b={K.P}>
-        {svg(<Subsuelo T={T} aplasta={aplasta} bombea={kprog(T, K.B + 0.3, K.Es + 3.0)} pozo={T > K.B - 0.3} />)}
+        {/* encuadre: el corte del subsuelo baja 160 px (antes la ciudad y el lodo quedaban en la mitad de arriba); chips, etiqueta y lupa bajan igual */}
+        {svg(<><rect x={0} y={0} width={KW} height={KH} fill="#0e1626" /><g transform={`translate(0 ${SUB_DY})`}><Subsuelo T={T} aplasta={aplasta} bombea={kprog(T, K.B + 0.3, K.Es + 3.0)} pozo={T > K.B - 0.3} /></g></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
-      <Lupa T={T} at={K.Es + 0.6} until={K.P - 0.2} x={760} y={540} r={170} fx={540} fy={1000} tinte={KC.yellow} etiqueta="POR DENTRO · lodo del lago"
+      <Lupa T={T} at={K.Es + 0.6} until={K.P - 0.2} x={760} y={540 + SUB_DY} r={170} fx={540} fy={1000 + SUB_DY} tinte={KC.yellow} etiqueta="POR DENTRO · lodo del lago"
         interior={(t, r) => { const u = kprog(t, K.Es + 0.8, K.Es + 3.2, kEase.suave); const pts = [];
           for (let i = 0; i < 5; i++) for (let j = 0; j < 5; j++) pts.push([40 + i * 65, klerp(40 + j * 65, 120 + j * 45, u)]);
           return <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#5a4330" />
@@ -126,6 +128,9 @@ function HundimientoShot() {
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Sa} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
+        {/* encuadre: la ciudad sobre el lodo ya aplastado (lo de la escena anterior) sigue a cuadro, a media luz, y la pregunta encima */}
+        <div style={{ position:'absolute', inset:0, background:'rgba(10,15,28,.85)' }}></div>
+        {svg(<g opacity={0.55} transform={`translate(0 ${SUB_DY})`}><Subsuelo T={T} aplasta={1} bombea={1} fondo={false} /></g>)}
         {svg(<text x={300} y={980} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 800)`}>?</text>)}
       </Escena>
       {/* 6 · el satélite NISAR con su radar */}
@@ -152,7 +157,8 @@ function HundimientoShot() {
       <Escena T={T} a={K.H} b={K.Gr}>
         <FondoLunares color={KC.yellow} />
         {/* modo cine: el sujeto sigue en pantalla (la ciudad sobre el lodo del lago, atenuada, bajando despacio) */}
-        {svg(<g opacity={0.6 * kprog(T, K.H, K.H + 0.5)}><Subsuelo T={T} aplasta={kprog(T, K.H + 0.5, K.Gr, kEase.suave)} bombea={1} /></g>)}
+        {/* encuadre: baja igual que en las escenas del subsuelo y se atenúa menos, para que la ciudad llene el centro del cuadro */}
+        {svg(<g opacity={0.75 * kprog(T, K.H, K.H + 0.5)} transform={`translate(0 ${SUB_DY})`}><Subsuelo T={T} aplasta={kprog(T, K.H + 0.5, K.Gr, kEase.suave)} bombea={1} fondo={false} /></g>)}
       </Escena>
       {/* 10 · grietas */}
       <Escena T={T} a={K.Gr} b={K.C}>
@@ -169,10 +175,10 @@ function HundimientoShot() {
       {/* datos y etiquetas */}
       <NumeroGigante T={T} at={K.G + 0.1} until={K.L - 0.2} valor={14} dur={3.1} etiqueta="escalones agregados" x={240} y={800} tam={150} color={KC.yellow} />
       <Etq T={T} at={K.G + 1.0} until={K.L - 0.2} x={705} y={ANG_BASE + 160} texto="suelo de antes" color={KC.red} tam={28} />
-      <Chip T={T} at={K.L + 0.3} until={K.B - 0.2} texto="fondo de un antiguo lago" y={320} x={540} tam={38} borde={KC.cyan} />
-      <Chip T={T} at={K.B + 0.3} until={K.Es - 0.2} texto="≈ 20 millones de personas" y={320} x={540} tam={38} borde={KC.yellow} />
-      <Etq T={T} at={K.B + 1.2} until={K.Es - 0.2} x={940} y={1235} texto="agua del subsuelo" lado="izq" tam={28} />
-      <Chip T={T} at={K.Es + 0.3} until={K.P - 0.2} texto="se aplasta como esponja" y={320} x={390} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.L + 0.3} until={K.B - 0.2} texto="fondo de un antiguo lago" y={320 + SUB_DY} x={540} tam={38} borde={KC.cyan} />
+      <Chip T={T} at={K.B + 0.3} until={K.Es - 0.2} texto="≈ 20 millones de personas" y={320 + SUB_DY} x={540} tam={38} borde={KC.yellow} />
+      <Etq T={T} at={K.B + 1.2} until={K.Es - 0.2} x={940} y={1235 + SUB_DY} texto="agua del subsuelo" lado="izq" tam={28} />
+      <Chip T={T} at={K.Es + 0.3} until={K.P - 0.2} texto="se aplasta como esponja" y={320 + SUB_DY} x={390} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Sa + 0.3} until={K.Ci - 0.2} texto="NISAR · NASA + India" y={380} x={540} tam={40} borde={KC.gold} />
       <Etq T={T} at={K.Sa + 2.2} until={K.Ci - 0.2} x={250} y={1190} texto="radar: atraviesa las nubes" tam={28} />
       <Chip T={T} at={K.Ci + 0.2} until={K.U - 0.2} texto="oct 2025 – ene 2026 · preliminar" y={300} x={540} tam={30} borde={KC.ink} />

@@ -25,7 +25,7 @@ function Cancha({ x, y, w, lleno = 0, T = 0, seed = 1, contorno = false }) {
   const n = Math.round(lleno * 26);
   for (let i = 0; i < n; i++) mar.push(<Monarca key={i} x={x + 12 + r() * (w - 24)} y={y + 12 + r() * (h - 24)} s={0.22 * w / 220} ang={r() * 360} T={T} fase={i} />);
   return <g>
-    <rect x={x} y={y} width={w} height={h} fill={contorno ? 'none' : '#3fae4a'} stroke={contorno ? 'rgba(255,255,255,.7)' : '#fff'} strokeWidth={contorno ? 3 : 4} strokeDasharray={contorno ? '8 6' : 'none'} />
+    <rect x={x} y={y} width={w} height={h} fill={contorno ? 'none' : cineMix('#3fae4a', CINE.fondo, 0.5)} stroke={contorno ? 'rgba(255,255,255,.7)' : '#fff'} strokeWidth={contorno ? 3 : 4} strokeDasharray={contorno ? '8 6' : 'none'} />
     {!contorno && <><line x1={x + w / 2} y1={y} x2={x + w / 2} y2={y + h} stroke="#fff" strokeWidth={3} /><circle cx={x + w / 2} cy={y + h / 2} r={h * 0.14} fill="none" stroke="#fff" strokeWidth={3} />
       <rect x={x} y={y + h * 0.3} width={w * 0.12} height={h * 0.4} fill="none" stroke="#fff" strokeWidth={3} /><rect x={x + w * 0.88} y={y + h * 0.3} width={w * 0.12} height={h * 0.4} fill="none" stroke="#fff" strokeWidth={3} />
       {lleno > 0 && <rect x={x} y={y} width={w} height={h} fill="#f08a1c" opacity={0.45 * lleno} />}</>}
@@ -64,25 +64,26 @@ function MonarcaShot() {
   // 4 canchas (2×2) que se llenan desde el cuadro 0; escala: cancha de 105 m = 400 px.
   const CW = 400, CH = CW * 68 / 105;
   const llenaG = kprog(T, K.G + 0.05, K.G + 2.2, kEase.sale);
-  const canchas4 = (lleno, ox = 130, oy = 650) => [0, 1, 2, 3].map((i) => <Cancha key={i} x={ox + (i % 2) * (CW + 20)} y={oy + Math.floor(i / 2) * (CH + 20)} w={CW} T={T} seed={i + 2}
+  const CWg = 500, CHg = CWg * 68 / 105;   // en el gancho, las canchas llenan el cuadro de lado a lado
+  const canchas4 = (lleno, ox = 30, oy = 700) => [0, 1, 2, 3].map((i) => <Cancha key={i} x={ox + (i % 2) * (CWg + 20)} y={oy + Math.floor(i / 2) * (CHg + 20)} w={CWg} T={T} seed={i + 2}
     lleno={i < 4 ? kclamp(lleno * 4.1 - i, 0, 1) : 0} />);
   // Viaje: de Canadá/EE. UU. (arriba del mapa) a la Región Monarca (Michoacán/Edomex ≈ 19.6 N, 100.3 O).
   const [mx, my] = mxProy(-100.3, 19.6);
   const viaje = kprog(T, K.V + 0.3, K.R - 0.3, kEase.suave);
   // Cierre: 25 canchas (lo de 1996-1997) y solo 4 llenas (lo de hoy).
-  const CW2 = 130, CH2 = CW2 * 68 / 105;
+  const CW2 = 175, CH2 = CW2 * 68 / 105;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: cuatro canchas que se llenan de monarcas */}
       <Escena T={T} a={K.G} b={K.V}>
         <FondoLunares color={KC.yellow} />
         {svg(canchas4(llenaG))}
-        <EscalaFija texto="50 m" largo={CW * 50 / 105} y={1480} color={KC.ink} />
+        <EscalaFija texto="50 m" largo={CWg * 50 / 105} y={1480} color={KC.ink} />
       </Escena>
       {/* 2 · el viaje en el mapa */}
       <Escena T={T} a={K.V} b={K.R}>
         <FondoLunares color={KC.cyan} />
-        {svg(<MapaMexico x={40} y={520} ancho={1000} conCA={false}>
+        {svg(<MapaMexico x={40} y={700} ancho={1000} conCA={false}>
           <path d={`M ${mx + 260} -400 Q ${mx + 120} ${my - 300} ${mx} ${my}`} stroke={KC.orange} strokeWidth={10} fill="none" strokeDasharray="22 14" opacity={viaje > 0 ? 1 : 0} />
           {Array.from({ length: 6 }, (_, k) => { const u = kclamp(viaje * 1.3 - k * 0.06, 0, 1), t = u; const px = (1 - t) * (1 - t) * (mx + 260) + 2 * (1 - t) * t * (mx + 120) + t * t * mx, py = (1 - t) * (1 - t) * -400 + 2 * (1 - t) * t * (my - 300) + t * t * my;
             return <Monarca key={k} x={px + k * 14} y={py - k * 10} s={0.45} ang={160} T={T} fase={k} />; })}
@@ -93,7 +94,7 @@ function MonarcaShot() {
       {/* 3 · racimos en el oyamel */}
       <Escena T={T} a={K.R} b={K.Ci}>
         <FondoLunares color={KC.mint} />
-        {svg(<Oyamel x={540} y={620} s={1.1} T={T} lleno={kprog(T, K.R + 0.2, K.R + 2.5)} />)}
+        {svg(<Oyamel x={540} y={700} s={1.3} T={T} lleno={kprog(T, K.R + 0.2, K.R + 2.5)} />)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 4–5 · la cifra y el récord de 1996-1997 */}
@@ -105,13 +106,14 @@ function MonarcaShot() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Al} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={300} y={980} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 800)`}>?</text>
-          <Monarca x={300} y={1080} s={1.2} T={T} ang={-10} /></>)}
+        {/* encuadre: el signo y la monarca crecen y bajan al centro del cuadro */}
+        {svg(<><text x={330} y={1200} textAnchor="middle" style={{ font:`400 720px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={16} transform={`rotate(${Math.sin(T * 3) * 6} 330 950)`}>?</text>
+          <Monarca x={560} y={1330} s={3.4} T={T} ang={-10} /></>)}
       </Escena>
       {/* 7 · algodoncillo y herbicida */}
       <Escena T={T} a={K.Al} b={K.Cl}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><g transform="translate(460 1320) scale(1.6)"><Algodoncillo x={0} y={0} T={T} marchita={kprog(T, K.Al + 2.4, K.Cl - 0.3)} /></g>
+        {svg(<><g transform="translate(470 1370) scale(1.9)"><Algodoncillo x={0} y={0} T={T} marchita={kprog(T, K.Al + 2.4, K.Cl - 0.3)} /></g>
           {kprog(T, K.Al + 2.0, K.Cl) > 0 && <g transform="translate(800 560) rotate(-20)"><rect x={-40} y={-120} width={80} height={170} rx={20} fill={KC.red} stroke={KC.ink} strokeWidth={6} /><rect x={-14} y={-160} width={28} height={44} fill="#999" stroke={KC.ink} strokeWidth={5} />
             {Array.from({ length: 10 }, (_, k) => { const u = ((T * 1.4 + k / 10) % 1); return <circle key={k} cx={-30 - u * 260} cy={-150 + u * 260 + Math.sin(k) * 30} r={6} fill="#c9e86a" opacity={1 - u} />; })}</g>}</>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
@@ -119,21 +121,21 @@ function MonarcaShot() {
       {/* 8 · clima, tala, incendio y sequía */}
       <Escena T={T} a={K.Cl} b={K.E}>
         <FondoLunares color={KC.orange} />
-        {svg(<g transform="translate(0 40)">
+        {svg(<g transform="translate(0 150)">
           {[180, 380, 580, 780, 940].map((tx, i) => { const cort = i === 1 || i === 3, quem = i === 4;
-            return <g key={i} transform={`translate(${tx} 1000)`}>
+            return <g key={i} transform={`translate(${tx} 1000) scale(1.4)`}>
               {cort ? <><rect x={-22} y={-60} width={44} height={60} fill="#6b4a2e" stroke={KC.ink} strokeWidth={5} /><ellipse cx={0} cy={-60} rx={22} ry={8} fill="#d8b98a" stroke={KC.ink} strokeWidth={4} /></>
                 : <><rect x={-16} y={-120} width={32} height={120} fill="#6b4a2e" stroke={KC.ink} strokeWidth={5} /><path d="M -110 -100 L 0 -360 L 110 -100 Z" fill={quem ? '#3b2b22' : '#2f6b3f'} stroke={KC.ink} strokeWidth={5} />
                   {quem && [0, 1, 2].map((k) => <path key={k} d={`M ${-40 + k * 40} -100 q 20 -50 0 -90 q -20 -40 10 -80`} stroke={KC.red} strokeWidth={10} fill="none" opacity={0.6 + 0.4 * Math.sin(T * 8 + k)} />)}</>}
             </g>; })}
-          <g transform="translate(860 520)"><rect x={-24} y={-150} width={48} height={260} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={6} /><circle cy={130} r={44} fill={KC.red} stroke={KC.ink} strokeWidth={6} /><rect x={-10} y={-120 + 160 * (1 - kprog(T, K.Cl + 0.2, K.Cl + 1.6))} width={20} height={250 - 160 * (1 - kprog(T, K.Cl + 0.2, K.Cl + 1.6))} fill={KC.red} /></g>
+          <g transform="translate(1010 370)"><rect x={-24} y={-150} width={48} height={260} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={6} /><circle cy={130} r={44} fill={KC.red} stroke={KC.ink} strokeWidth={6} /><rect x={-10} y={-120 + 160 * (1 - kprog(T, K.Cl + 0.2, K.Cl + 1.6))} width={20} height={250 - 160 * (1 - kprog(T, K.Cl + 0.2, K.Cl + 1.6))} fill={KC.red} /></g>
         </g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 9 · el estudio */}
       <Escena T={T} a={K.E} b={K.M}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Oyamel x={480} y={840} s={1.0} T={T} lleno={1} />)}
+        {svg(<Oyamel x={540} y={800} s={1.2} T={T} lleno={1} />)}
       </Escena>
       {/* 10 · la meta: seis hectáreas */}
       <Escena T={T} a={K.M} b={K.C}>
@@ -144,7 +146,7 @@ function MonarcaShot() {
       {/* 11 · cierre: 25 canchas de 1996-1997, solo 4 llenas hoy */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
-        {svg(Array.from({ length: 25 }, (_, i) => <Cancha key={i} x={200 + (i % 5) * (CW2 + 6)} y={745 + Math.floor(i / 5) * (CH2 + 8)} w={CW2} T={T} seed={i + 2}
+        {svg(Array.from({ length: 25 }, (_, i) => <Cancha key={i} x={90 + (i % 5) * (CW2 + 6)} y={700 + Math.floor(i / 5) * (CH2 + 8)} w={CW2} T={T} seed={i + 2}
           lleno={i < 4 ? (i < 3 ? 1 : 0.1) : 0} contorno={i >= 4 && T < K.C + 0.8 + i * 0.06} />))}
         <EscalaFija texto="50 m" largo={CW2 * 50 / 105} y={1480} color={KC.ink} />
       </Escena>
@@ -153,14 +155,14 @@ function MonarcaShot() {
       <Chip T={T} at={K.G + 0.4} until={K.V - 0.2} texto="≈ 4 canchas de fútbol" y={430} x={360} tam={40} borde={KC.orange} />
       <Etq T={T} at={K.G + 2.4} until={K.V - 0.2} x={420} y={1440} texto="cancha FIFA: 105 × 68 m" tam={26} color={KC.ink} />
       <Chip T={T} at={K.V + 0.4} until={K.R - 0.2} texto="del sur de Canadá y EE. UU." y={420} x={620} tam={32} borde={KC.orange} />
-      <Etq T={T} at={K.V + 3.6} until={K.R - 0.2} x={mx + 40 + 40} y={my * 1 + 520 - 2} texto="Michoacán y Edomex" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.R + 0.4} until={K.Ci - 0.2} x={380} y={1440} texto="Danaus plexippus en un oyamel" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.V + 3.6} until={K.R - 0.2} x={mx + 40 + 40} y={my * 1 + 700 - 2} texto="Michoacán y Edomex" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.R + 0.4} until={K.Ci - 0.2} x={380} y={1470} texto="Danaus plexippus en un oyamel" it tam={28} color={KC.ink} />
       <NumeroGigante T={T} at={K.R + 1.2} until={K.Ci - 0.2} valor={20} dur={1.0} prefijo="≈ " sufijo=" millones" etiqueta="por hectárea" y={430} x={640} tam={80} color={KC.orange} />
       <NumeroGigante T={T} at={K.Ci + 0.2} until={K.A - 0.2} valor={2.93} dec={2} dur={1.0} sufijo=" ha" etiqueta="invierno 2025-2026" y={640} tam={200} color={KC.orange} />
       <Chip T={T} at={K.Ci + 2.2} until={K.A - 0.2} texto="+64 % (antes: 1.79 ha)" y={900} tam={44} borde={KC.leaf} />
-      <Comparativa T={T} at={K.A + 0.1} until={K.P - 0.1} max={18.19} y={420} alto={600}
+      <Comparativa T={T} at={K.A + 0.1} until={K.P - 0.1} max={18.19} y={620} alto={640}
         izq={{ valor: 18.19, texto: '18.19 ha', etiqueta: '1996-1997', color: KC.orange }} der={{ valor: 2.93, texto: '2.93 ha', etiqueta: '2025-2026', color: KC.yellow }} />
-      <Etq T={T} at={K.Al + 0.6} until={K.Cl - 0.2} x={540} y={1260} texto="algodoncillo (Asclepias)" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Al + 0.6} until={K.Cl - 0.2} x={520} y={1450} texto="algodoncillo (Asclepias)" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Al + 2.2} until={K.Cl - 0.2} texto="herbicidas en sus zonas de cría" y={430} x={560} tam={32} borde={KC.red} />
       <NumeroGigante T={T} at={K.Cl + 2.2} until={K.E - 0.2} valor={2.55} dec={2} dur={1.0} sufijo=" ha" etiqueta="bosque dañado (feb 2024–feb 2025)" y={560} x={460} tam={150} color={KC.red} />
       <Chip T={T} at={K.Cl + 3.6} until={K.E - 0.2} texto="tala · incendio · sequía" y={1440} tam={40} borde={KC.ink} />

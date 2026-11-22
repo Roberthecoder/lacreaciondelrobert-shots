@@ -67,8 +67,8 @@ function Tijera({ x, y, s = 1, T = 0, fase = 0 }) {
 function Bascula({ x, y, baja = 0 }) {
   const ang = -40 + 0 - baja * 50;
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-230} y={0} width={460} height={190} rx={26} fill="#e9edf2" stroke={KC.ink} strokeWidth={9} />
-    <rect x={-250} y={-24} width={500} height={34} rx={12} fill="#c7cdd6" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-230} y={0} width={460} height={190} rx={26} fill="#6b7480" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-250} y={-24} width={500} height={34} rx={12} fill="#8b94a0" stroke={KC.ink} strokeWidth={8} />
     <path d="M -110 160 A 110 110 0 0 1 110 160" fill="#fff" stroke={KC.ink} strokeWidth={6} />
     <line x1={0} y1={160} x2={95 * Math.sin(ang * Math.PI / 180)} y2={160 - 95 * Math.cos(ang * Math.PI / 180)} stroke={KC.red} strokeWidth={9} strokeLinecap="round" />
     <circle cx={0} cy={160} r={12} fill={KC.ink} />
@@ -136,10 +136,10 @@ function PlasticoShot() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <ellipse cx={330} cy={1115} rx={150} ry={22} fill="rgba(0,0,0,.15)" />
-          <Tubo T={T} x={330} y={500} h={600} claro={claroG} hongo={kprog(T, K.G, K.G + 2.5)} />
+          <ellipse cx={290} cy={1268} rx={210} ry={28} fill="rgba(0,0,0,.15)" />
+          <Tubo T={T} x={290} y={380} w={246} h={870} claro={claroG} hongo={kprog(T, K.G, K.G + 2.5)} />
         </>)}
-        <div style={{ position:'absolute', left:740, top:810, transform:'translate(-50%,-50%)', zIndex:41, font:`700 64px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.G + 0.2, K.G + 0.4) }}>día {kformato(dia, 1)}</div>
+        <div style={{ position:'absolute', left:760, top:810, transform:'translate(-50%,-50%)', zIndex:41, font:`700 64px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.G + 0.2, K.G + 0.4) }}>día {kformato(dia, 1)}</div>
       </Escena>
       {/* 2 · Pestalotiopsis microspora: vive dentro de tallos (endófito) · luego sus conidios al microscopio */}
       <Escena T={T} a={K.H} b={K.E} zoom={0.06}>
@@ -165,8 +165,8 @@ function PlasticoShot() {
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           {Array.from({ length: 59 }, (_, i) => { const on = kprog(T, K.E + 0.4 + i * 0.03, K.E + 0.7 + i * 0.03, kEase.rebote); if (on <= 0) return null;
-            const cx = 110 + (i % 10) * 95, cy = 770 + Math.floor(i / 10) * 68, gana = i === 23 ? kprog(T, K.E + 3.0, K.E + 3.4) : 0;
-            return <g key={i} transform={`translate(${cx} ${cy}) scale(${on * (1 + gana * 0.5)})`}>
+            const cx = 112 + (i % 10) * 95, cy = 720 + Math.floor(i / 10) * 96, gana = i === 23 ? kprog(T, K.E + 3.0, K.E + 3.4) : 0;
+            return <g key={i} transform={`translate(${cx} ${cy}) scale(${on * 1.32 * (1 + gana * 0.5)})`}>
               {gana > 0 && <circle r={52} fill={KC.yellow} opacity={0.7 * gana} />}
               <circle r={32} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={4} />
               <circle r={14 + (i * 7) % 9} fill={['#fff6e0', '#e8f0c8', '#ffe6f0', '#f0e2c8'][i % 4]} stroke="rgba(0,0,0,.3)" strokeWidth={2} />
@@ -177,7 +177,7 @@ function PlasticoShot() {
       <Escena T={T} a={K.Z} b={K.O}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
+        {fsvg(<><g transform="translate(470 900) scale(1.3) translate(-540 -900)">
           <path d="M -20 900 Q 160 880 330 905" stroke={KC.ink} strokeWidth={80} fill="none" strokeLinecap="round" />
           <path d="M -20 900 Q 160 880 330 905" stroke={FK.hifa} strokeWidth={64} fill="none" strokeLinecap="round" />
           {Array.from({ length: 12 }, (_, i) => { const corte = [2, 5, 8].includes(i) ? kprog(T, K.Z + 0.9 + [2, 5, 8].indexOf(i) * 0.4, K.Z + 1.3 + [2, 5, 8].indexOf(i) * 0.4) : 0;
@@ -188,21 +188,21 @@ function PlasticoShot() {
               <circle cx={bx} cy={by} r={25} fill={PL.pur} stroke={KC.ink} strokeWidth={5} />
             </g>; })}
           {[0, 1, 2].map((k) => { const p = kprog(T, K.Z + 0.2 + k * 0.4, K.Z + 1.1 + k * 0.4, kEase.sale); return p > 0 ? <Tijera key={k} T={T} fase={k} x={klerp(330, 557 + k * 162, p)} y={klerp(905, 830, p)} s={1.3} /> : null; })}
-        </>)}
+        </g></>)}
       </Escena>
       {/* 5 · igual de rápido con o sin oxígeno */}
       <Escena T={T} a={K.O} b={K.P}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Tubo T={T} x={260} y={620} h={580} w={150} claro={0.5 * kprog(T, K.O + 0.3, K.O + 2.2)} seed={4} />
-          <Tubo T={T} x={560} y={620} h={580} w={150} claro={0.5 * kprog(T, K.O + 0.3, K.O + 2.2)} seed={7} />
+          <Tubo T={T} x={300} y={480} h={820} w={212} claro={0.5 * kprog(T, K.O + 0.3, K.O + 2.2)} seed={4} />
+          <Tubo T={T} x={760} y={480} h={820} w={212} claro={0.5 * kprog(T, K.O + 0.3, K.O + 2.2)} seed={7} />
           <path d="M 470 560 Q 560 540 650 560" stroke="none" fill="none" />
         </>)}
       </Escena>
       {/* 6 · re-gancho: ¿limpiarán el planeta? */}
       <Escena T={T} a={K.P} b={K.Tr} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><Interrogacion T={T} x={300} y={700} tam={300} /><Planeta T={T} x={300} y={940} r={190} /></>)}
+        {fsvg(<><Planeta T={T} x={520} y={1000} r={260} /><Interrogacion T={T} x={280} y={640} tam={300} /></>)}
       </Escena>
       {/* 7 · ojo: era poliuretano suspendido en agua, no una bolsa */}
       <Escena T={T} a={K.Tr} b={K.Pk}>
@@ -218,6 +218,7 @@ function PlasticoShot() {
       <Escena T={T} a={K.Pk} b={K.R}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
+          <g transform="translate(540 1010) scale(1.4) translate(-480 -960)">
           <Petri x={480} y={960} r={215} medio="#e9f3f7">
             {romper < 1 && <g opacity={1 - romper}><rect x={-140} y={-110} width={280} height={220} rx={10} fill="rgba(255,240,200,.9)" stroke={KC.ink} strokeWidth={5} /></g>}
             {romper > 0 && Array.from({ length: 9 }, (_, i) => { const gx = (i % 3) - 1, gy = Math.floor(i / 3) - 1; const d = romper * 40;
@@ -225,6 +226,7 @@ function PlasticoShot() {
             {Array.from({ length: 14 }, (_, i) => { const p = kprog(T, K.Pk + 2.4 + i * 0.1, K.Pk + 2.8 + i * 0.1); const a = i * 2.4, rr = 60 + (i * 37) % 120;
               return p > 0 ? <circle key={'n' + i} cx={Math.cos(a) * rr} cy={Math.sin(a) * rr * 0.8} r={10 * p} fill="#1b1a1a" stroke="#555" strokeWidth={2} /> : null; })}
           </Petri>
+          </g>
         </>)}
       </Escena>
       {/* 9 · la revisión de 2022: 664 reportes · polietileno */}
@@ -234,7 +236,7 @@ function PlasticoShot() {
           <g opacity={1 - kprog(T, K.R + 3.4, K.R + 3.8)}>
             {Array.from({ length: 664 }, (_, i) => { const p = kprog(T, K.R + 0.3 + i * 0.0035, K.R + 0.5 + i * 0.0035); return p > 0 ? <circle key={i} cx={100 + (i % 37) * 24.5} cy={760 + Math.floor(i / 37) * 24} r={8 * p} fill={i % 3 ? KC.mint : '#fff4d6'} stroke={KC.ink} strokeWidth={2} /> : null; })}
           </g>
-          <g opacity={kprog(T, K.R + 3.6, K.R + 4.1)}>
+          <g opacity={kprog(T, K.R + 3.6, K.R + 4.1)} transform="translate(540 1020) scale(1.5) translate(-420 -990)">
             <Bolsa x={420} y={990} s={1.0} rot={-4} />
             {[[300, 820], [560, 860], [360, 1150], [600, 1100]].map(([x, y], i) => <g key={i} transform={`translate(${x + Math.sin(T * 2 + i) * 8} ${y})`}><ellipse rx={26} ry={12} fill={KC.mint} stroke={KC.ink} strokeWidth={3} /></g>)}
           </g>
@@ -244,17 +246,19 @@ function PlasticoShot() {
       <Escena T={T} a={K.Pe} b={K.S}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
+          <g transform="translate(540 920) scale(1.35) translate(-420 -890)">
           <Bascula x={420} y={980} baja={aditivos} />
           <Bolsa x={420} y={810} s={0.9} />
           {Array.from({ length: 14 }, (_, i) => { const t0 = K.Pe + 0.6 + i * 0.18, p = kprog(T, t0, t0 + 1.2); if (p <= 0 || p >= 1) return null;
             const a = -Math.PI / 2 + (i % 7 - 3) * 0.35; return <circle key={i} cx={420 + Math.cos(a) * (60 + p * 320)} cy={780 + Math.sin(a) * (40 + p * 260)} r={11} fill={[KC.pink, KC.yellow, KC.lilac, KC.orange][i % 4]} stroke={KC.ink} strokeWidth={3} opacity={1 - p * 0.6} />; })}
+          </g>
         </>)}
       </Escena>
       {/* 11 · lo que sí sirve */}
       <Escena T={T} a={K.S} b={K.F}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          {[[KC.blue, 220], [KC.leaf, 440], [KC.yellow, 660]].map(([c, x], i) => <g key={i} opacity={kprog(T, K.S + 0.6 + i * 0.8, K.S + 0.9 + i * 0.8)} transform={`translate(${x} 1040)`}>
+          {[[KC.blue, 210], [KC.leaf, 540], [KC.yellow, 870]].map(([c, x], i) => <g key={i} opacity={klerp(0.3, 1, kprog(T, K.S + 0.6 + i * 0.8, K.S + 0.9 + i * 0.8))} transform={`translate(${x} 1110) scale(1.5)`}>
             <path d="M -80 -100 L 80 -100 L 66 120 L -66 120 Z" fill={c} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
             <rect x={-94} y={-128} width={188} height={32} rx={10} fill={c} stroke={KC.ink} strokeWidth={7} />
           </g>)}
@@ -264,66 +268,66 @@ function PlasticoShot() {
       <Escena T={T} a={K.F} b={K.C}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<RedHifas T={T} x={480} y={920} g={kprog(T, K.F, K.F + 2.8)} seed={11} n={320} escala={0.5} color={KC.gold2} ancho={4} circ brillo={1} />)}
+        {fsvg(<RedHifas T={T} x={480} y={920} g={klerp(0.3, 1, kprog(T, K.F, K.F + 2.8))} seed={11} n={320} escala={0.5} color={KC.gold2} ancho={4} circ brillo={1} />)}
       </Escena>
       {/* 13 · cierre: el mismo tubo del inicio… al lado de la basura de verdad */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <ellipse cx={330} cy={1115} rx={150} ry={22} fill="rgba(0,0,0,.15)" />
-          <Tubo T={T} x={330} y={500} h={600} claro={0.5} hongo={1} />
-          <g opacity={kprog(T, K.C + 1.0, K.C + 1.6)} transform={`translate(${klerp(240, 0, kprog(T, K.C + 1.0, K.C + 1.8, kEase.sale))} 0)`}><Bote x={770} y={960} s={0.82} /></g>
+          <ellipse cx={290} cy={1268} rx={210} ry={28} fill="rgba(0,0,0,.15)" />
+          <Tubo T={T} x={290} y={380} w={246} h={870} claro={0.5} hongo={1} />
+          <g opacity={kprog(T, K.C + 1.0, K.C + 1.6)} transform={`translate(${klerp(240, 0, kprog(T, K.C + 1.0, K.C + 1.8, kEase.sale))} 0)`}><Bote x={790} y={1000} s={1.0} /></g>
         </>)}
       </Escena>
 
       {/* textos */}
-      <Titular T={T} at={K.G + 0.6} until={K.H - 0.3} texto="½ en ~5 días" x={740} y={950} tam={110} />
-      <MitoTachado T={T} at={K.G + 3.4} tacharEn={K.G + 4.4} until={K.H - 0.3} texto="¿adiós a la basura?" x={720} y={1090} tam={40} />
+      <Titular T={T} at={K.G + 0.6} until={K.H - 0.3} texto="½ en ~5 días" x={760} y={950} tam={110} />
+      <MitoTachado T={T} at={K.G + 3.4} tacharEn={K.G + 4.4} until={K.H - 0.3} texto="¿adiós a la basura?" x={760} y={1090} tam={40} />
       <Chip T={T} at={K.H + 0.3} until={K.H + 2.3} texto="Ecuador · Amazonía (Yasuní)" x={400} y={400} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.H + 0.8} until={K.E - 0.3} x={60} y={490} texto="Pestalotiopsis microspora" it tam={36} color={micro > 0.5 ? KC.yellow : KC.ink} />
       <Etq T={T} at={K.H + 1.2} until={K.H + 2.3} x={330} y={1130} texto="vive dentro de la planta" tam={30} color={KC.ink} />
       <Etq T={T} at={K.H + 3.0} until={K.E - 0.3} x={60} y={550} texto="sus esporas (conidios)" tam={30} color={KC.texto} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.5} anio="2011" quien="Yale · 59 hongos probados" revista="Russell et al., Appl. Environ. Microbiol." y={560} x={460} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.5} anio="2011" quien="Yale · 59 hongos probados" revista="Russell et al., Appl. Environ. Microbiol." y={420} x={460} />
       <Chip T={T} at={K.Z + 0.1} until={K.O - 0.3} texto="AL MICROSCOPIO · esquemático" x={420} y={470} tam={32} mono borde={KC.cyan} />
-      <Etq T={T} at={K.Z + 0.5} until={K.O - 0.3} x={600} y={730} texto="poliuretano" tam={32} color={PL.pur} />
-      <Etq T={T} at={K.Z + 0.8} until={K.O - 0.3} x={60} y={1070} texto="enzima (serina hidrolasa)" tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.Z + 0.5} until={K.O - 0.3} x={620} y={700} texto="poliuretano" tam={32} color={PL.pur} />
+      <Etq T={T} at={K.Z + 0.8} until={K.O - 0.3} x={60} y={1110} texto="enzima (serina hidrolasa)" tam={30} color={KC.yellow} />
       <Etq T={T} at={K.Z + 0.3} until={K.O - 0.3} x={60} y={790} texto="hifa" tam={30} color={FK.hifa} />
-      <Chip T={T} at={K.O + 0.2} until={K.P - 0.3} texto="con O₂" x={260} y={540} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.O + 0.4} until={K.P - 0.3} texto="sin O₂" x={560} y={540} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.O + 0.2} until={K.P - 0.3} texto="con O₂" x={300} y={400} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.O + 0.4} until={K.P - 0.3} texto="sin O₂" x={760} y={400} tam={36} borde={KC.red} />
       <Chip T={T} at={K.Tr + 0.3} until={K.Pk - 0.3} texto="en laboratorio" x={380} y={400} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.Tr + 0.8} until={K.Pk - 0.3} x={60} y={475} texto="poliuretano suspendido en agua" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Tr + 2.7} until={K.Pk - 0.3} texto="esto NO" x={800} y={800} tam={40} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Pk + 0.1} until={K.Pk + 2.3} anio="2017" quien="Islamabad · suelo de un basurero" revista="Khan et al., Environ. Pollut." y={560} x={470} />
-      <Etq T={T} at={K.Pk + 2.5} until={K.R - 0.3} x={60} y={690} texto="Aspergillus tubingensis" it tam={36} color={KC.ink} />
-      <Chip T={T} at={K.Pk + 2.8} until={K.R - 0.3} texto="2 meses" x={870} y={800} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Pk + 3.6} until={K.R - 0.3} texto="+ 2 % de glucosa" x={480} y={1130} tam={36} borde={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.Pk + 0.1} until={K.Pk + 2.3} anio="2017" quien="Islamabad · suelo de un basurero" revista="Khan et al., Environ. Pollut." y={420} x={470} />
+      <Etq T={T} at={K.Pk + 2.5} until={K.R - 0.3} x={60} y={600} texto="Aspergillus tubingensis" it tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Pk + 2.8} until={K.R - 0.3} texto="2 meses" x={900} y={600} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Pk + 3.6} until={K.R - 0.3} texto="+ 2 % de glucosa" x={540} y={1250} tam={36} borde={KC.yellow} />
       <NumeroGigante T={T} at={K.R + 0.2} until={K.R + 3.4} valor={664} dur={1.2} etiqueta="reportes de microbios" x={380} y={540} tam={220} color={KC.yellow} />
-      <Chip T={T} at={K.R + 4.0} until={K.Pe - 0.3} texto="polietileno (PE), el plástico de las bolsas" x={540} y={700} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.R + 4.0} until={K.Pe - 0.3} texto="polietileno (PE), el plástico de las bolsas" x={540} y={490} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.R + 5.0} until={K.Pe - 0.3} texto="sin pruebas de que se lo coman mucho" x={590} y={1430} tam={30} borde={KC.red} />
-      <Etq T={T} at={K.R + 5.4} until={K.Pe - 0.3} x={60} y={470} texto="Lear et al., 2022" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.R + 5.4} until={K.Pe - 0.3} x={60} y={395} texto="Lear et al., 2022" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Pe + 0.3} until={K.S - 0.3} texto="pesa menos ≠ se lo comieron" x={400} y={470} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.Pe + 1.2} until={K.S - 0.3} x={660} y={760} texto="aditivos" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Pe + 1.2} until={K.S - 0.3} x={760} y={700} texto="aditivos" tam={32} color={KC.ink} />
       <Chip T={T} at={K.S + 0.6} until={K.F - 0.3} texto="✓ usar menos" x={380} y={500} tam={40} borde={KC.leaf} />
       <Chip T={T} at={K.S + 1.4} until={K.F - 0.3} texto="✓ reusar" x={380} y={620} tam={40} borde={KC.leaf} />
       <Chip T={T} at={K.S + 2.2} until={K.F - 0.3} texto="✓ separar para reciclar" x={430} y={740} tam={40} borde={KC.leaf} />
       <Chip T={T} at={K.F + 0.6} until={K.C - 0.3} texto="una pista, no un permiso" x={400} y={470} tam={36} borde={KC.gold} />
-      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="en un tubo, no en tu basura" x={390} y={470} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="en un tubo, no en tu basura" x={560} y={300} tam={32} borde={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={210} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={305} />
       <BarraEscala T={T} at={K.H} until={K.H + 2.4} texto="10 cm" largo={160} />
       <BarraEscala T={T} at={K.H + 2.4} until={K.E} texto="10 µm" largo={112} />
-      <BarraEscala T={T} at={K.E} until={K.Z} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.Z} until={K.O} texto="10 nm (esquemático)" largo={150} />
-      <BarraEscala T={T} at={K.O} until={K.P} texto="5 cm" largo={190} />
+      <BarraEscala T={T} at={K.E} until={K.Z} texto="10 cm" largo={145} />
+      <BarraEscala T={T} at={K.Z} until={K.O} texto="10 nm (esquemático)" largo={195} />
+      <BarraEscala T={T} at={K.O} until={K.P} texto="5 cm" largo={269} />
       <BarraEscala T={T} at={K.P} until={K.Tr} texto="no a escala" largo={150} />
       <BarraEscala T={T} at={K.Tr} until={K.Tr + 1.8} texto="5 cm" largo={240} />
-      <BarraEscala T={T} at={K.Pk} until={K.R} texto="5 cm" largo={260} />
-      <BarraEscala T={T} at={K.R + 3.6} until={K.Pe} texto="20 cm" largo={150} />
-      <BarraEscala T={T} at={K.Pe} until={K.S} texto="20 cm" largo={130} />
-      <BarraEscala T={T} at={K.S} until={K.F} texto="20 cm" largo={130} />
+      <BarraEscala T={T} at={K.Pk} until={K.R} texto="5 cm" largo={364} />
+      <BarraEscala T={T} at={K.R + 3.6} until={K.Pe} texto="20 cm" largo={225} />
+      <BarraEscala T={T} at={K.Pe} until={K.S} texto="20 cm" largo={176} />
+      <BarraEscala T={T} at={K.S} until={K.F} texto="20 cm" largo={195} />
       <BarraEscala T={T} at={K.F} until={K.C} texto="1 cm" largo={160} />
-      <BarraEscala T={T} at={K.C} until={K.C + 1.0} texto="5 cm" largo={210} />
+      <BarraEscala T={T} at={K.C} until={K.C + 1.0} texto="5 cm" largo={305} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="En un tubo: *la mitad en ~5 días.*" />

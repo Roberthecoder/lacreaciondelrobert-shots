@@ -3,7 +3,7 @@
 // La pudrición seca, Serpula lacrymans. Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
 const PS = {
-  yeso:'#f1e7d3', yesoNuevo:'#f8f3e6', ladrillo:'#c9673f', ladrillo2:'#b55a35', mortero:'#e4d6c0', mancha:'#7d6a4c',
+  yeso:'#b9ab92', yesoNuevo:'#cbbfa8', ladrillo:'#c9673f', ladrillo2:'#b55a35', mortero:'#e4d6c0', mancha:'#7d6a4c',
   madera:'#d9a066', madera2:'#c48a52', vetas:'#a8703c', nueva:'#ecc690', nueva2:'#ddb27a',
   podrida:'#7b4a26', podrida2:'#5e381c', grieta:'#2e1b0e', micelio:'#f6f3ec', micLila:'#e6dcef', micAma:'#f1e6b4',
   cordon:'#d8d3c8', oxido:'#a4532a', oxido2:'#7a3a1a', oxido3:'#c8703f', espora:'#9a4a22', agua:'#9ad7ff', nutri:'#6fe07a',
@@ -11,6 +11,9 @@ const PS = {
 };
 const CASA = { x0: 40, x1: 1040, y0: 330, y1: 1990, muro: 880, piso: 905, piso2: 955, viga0: 975, viga1: 1055 };
 const ZONA = { a: 110, b: 560 }; // tramo podrido de la viga y del piso
+// Encuadre cine: la casa en corte, 1.3× y centrada (el muro, el piso y la viga llenan el cuadro; el sótano queda abajo).
+const ENC_K = 1.3, ENC = `translate(540 1000) scale(${ENC_K}) translate(-470 -720)`;
+const encX = (x) => 540 + (x - 470) * ENC_K, encY = (y) => 1000 + (y - 720) * ENC_K;
 
 // Recorre una polilínea hasta la fracción p de su largo: devuelve el trazo y la punta.
 function parcialPts(pts, p) {
@@ -163,7 +166,7 @@ function Casa({ T, id = 'casa', pud = 1, mic = 1, cor = 0, flujo = 0, fru = 0, e
       <Cordones T={T} p={cor} flujo={flujo} o={vivo} />
       {fru > 0 && vivo > 0 && <g opacity={vivo}><Fruto T={T} x={340} y={700} crece={fru} /></g>}
       {/* rejilla de ventilación */}
-      <Rejilla T={T} x={880} y={800} o={vent} aire={vent} />
+      <Rejilla T={T} x={785} y={640} o={vent} aire={vent} />
       {/* tubería con fuga */}
       <rect x={x0} y={398} width={640} height={40} fill={PS.tubo} stroke={KC.ink} strokeWidth={6} />
       <rect x={312} y={390} width={40} height={56} rx={6} fill="#7c878c" stroke={KC.ink} strokeWidth={5} />
@@ -220,9 +223,9 @@ function Casa({ T, id = 'casa', pud = 1, mic = 1, cor = 0, flujo = 0, fru = 0, e
       <path d={`M ${x0} 1170 Q 300 1150 600 1168 T 1040 1160 L 1040 ${y1} L 40 ${y1} Z`} fill={PS.tierra} />
       {[1240, 1400, 1560, 1720].map((y, i) => <path key={y} d={`M ${x0} ${y} Q 300 ${y - 20 + i * 6} 600 ${y + 8} T 1040 ${y - 6}`} stroke="rgba(0,0,0,.22)" strokeWidth={10} fill="none" />)}
       {(() => { const g = krng(12); return Array.from({ length: 26 }, (_, i) => <ellipse key={i} cx={60 + g() * 960} cy={1200 + g() * 760} rx={10 + g() * 22} ry={7 + g() * 14} fill={g() < 0.5 ? '#6b5038' : '#5a4330'} stroke="rgba(0,0,0,.35)" strokeWidth={3} />); })()}
-      <rect x={880} y={1160} width={130} height={40} fill="#8a8f99" stroke={KC.ink} strokeWidth={5} />
-      <rect x={900} y={viga1} width={90} height={110} fill={PS.ladrillo2} stroke={KC.ink} strokeWidth={5} />
-      {[1078, 1100, 1122, 1144].map((y) => <line key={y} x1={900} y1={y} x2={990} y2={y} stroke={PS.mortero} strokeWidth={3} />)}
+      <rect x={845} y={1160} width={130} height={40} fill="#8a8f99" stroke={KC.ink} strokeWidth={5} />
+      <rect x={865} y={viga1} width={90} height={110} fill={PS.ladrillo2} stroke={KC.ink} strokeWidth={5} />
+      {[1078, 1100, 1122, 1144].map((y) => <line key={y} x1={865} y1={y} x2={955} y2={y} stroke={PS.mortero} strokeWidth={3} />)}
       {sierra && <Serrucho x={sierra.x} y={sierra.y} rot={sierra.rot || 0} />}
       {bota && <Bota x={bota.x} y={bota.y + dh} />}
     </g>
@@ -413,16 +416,18 @@ function PudricionSecaShot() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.05} origen="35% 55%">
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Casa T={T} id="cG" pud={1} mic={1} hum={1} gotas={kprog(T, K.G + 1.2, K.G + 3.2)} bota={pisa(K.G + 0.1)} hunde={hundeG} />
-          <Sello T={T} at={K.G + 2.3} x={220} y={560} texto="HONGO" color={KC.red} r={105} />
+          <g transform={ENC}><Casa T={T} id="cG" pud={1} mic={1} hum={1} gotas={kprog(T, K.G + 1.2, K.G + 3.2)} bota={pisa(K.G + 0.1)} hunde={hundeG} /></g>
+          <Sello T={T} at={K.G + 2.3} x={230} y={800} texto="HONGO" color={KC.red} r={105} />
         </>)}
       </Escena>
       {/* 2 · solo arranca en madera muy húmeda: la fuga gotea y el medidor sube */}
       <Escena T={T} a={K.H} b={K.Cu} zoom={0.04} origen="35% 60%">
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Casa T={T} id="cH" pud={1} mic={klerp(0.8, 1, kprog(T, K.H, K.Cu))} hum={1} fuga={1} gotas={1} />
-          {T > K.H + 1.4 && <g opacity={kprog(T, K.H + 1.4, K.H + 1.8)}><MedidorMadera x={760} y={845} v={kprog(T, K.H + 1.6, K.H + 3.0, kEase.suave) * 0.92} texto={kprog(T, K.H + 1.6, K.H + 3.0) > 0.7 ? 'MUY HÚMEDA' : 'midiendo…'} /></g>}
+          <g transform={ENC}>
+            <Casa T={T} id="cH" pud={1} mic={klerp(0.8, 1, kprog(T, K.H, K.Cu))} hum={1} fuga={1} gotas={1} />
+            {T > K.H + 0.4 && <g opacity={kprog(T, K.H + 0.4, K.H + 0.8)}><MedidorMadera x={720} y={845} v={kprog(T, K.H + 1.6, K.H + 3.0, kEase.suave) * 0.92} texto={kprog(T, K.H + 1.6, K.H + 3.0) > 0.7 ? 'MUY HÚMEDA' : 'midiendo…'} /></g>}
+          </g>
         </>)}
       </Escena>
       {/* 3 · al microscopio: las hifas se comen la celulosa y queda la lignina; luego el trozo se parte en cubos */}
@@ -430,37 +435,41 @@ function PudricionSecaShot() {
         <div style={{ position:'absolute', inset:0, background:PS.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <g opacity={1 - kprog(T, K.Cu + 3.0, K.Cu + 3.5)}><MaderaMicro T={T} a={K.Cu} /></g>
-          {T > K.Cu + 3.0 && <g opacity={kprog(T, K.Cu + 3.0, K.Cu + 3.5)}><BloqueCubos T={T} a={K.Cu + 3.4} /></g>}
+          <g opacity={1 - kprog(T, K.Cu + 3.0, K.Cu + 3.5)} transform="translate(0 170)"><MaderaMicro T={T} a={K.Cu} /></g>
+          {T > K.Cu + 3.0 && <g opacity={kprog(T, K.Cu + 3.0, K.Cu + 3.5)} transform="translate(540 960) scale(1.25) translate(-580 -770)"><BloqueCubos T={T} a={K.Cu + 3.4} /></g>}
         </>)}
       </Escena>
       {/* 4 · cordones gruesos que avanzan varios metros por el ladrillo y el yeso */}
       <Escena T={T} a={K.Co} b={K.Go} zoom={0.04} origen="30% 55%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
+          <g transform={ENC}>
           <Casa T={T} id="cC" pud={1} mic={1} hum={1} cor={kprog(T, K.Co + 0.2, K.Co + 4.6, kEase.suave)} flujo={kprog(T, K.Co + 3.0, K.Co + 3.6)} />
           {/* cinta métrica */}
           {(() => { const u = kprog(T, K.Co + 1.6, K.Co + 2.6, kEase.sale); return u > 0 ? <g>
-            <rect x={56} y={klerp(975, 400, u)} width={36} height={975 - klerp(975, 400, u)} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />
-            {Array.from({ length: 23 }, (_, i) => { const yy = 975 - i * 26; return yy > klerp(975, 400, u) ? <line key={i} x1={56} y1={yy} x2={i % 4 ? 70 : 82} y2={yy} stroke={KC.ink} strokeWidth={3} /> : null; })}
+            <rect x={80} y={klerp(975, 400, u)} width={36} height={975 - klerp(975, 400, u)} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />
+            {Array.from({ length: 23 }, (_, i) => { const yy = 975 - i * 26; return yy > klerp(975, 400, u) ? <line key={i} x1={80} y1={yy} x2={i % 4 ? 94 : 106} y2={yy} stroke={KC.ink} strokeWidth={3} /> : null; })}
           </g> : null; })()}
+          </g>
         </>)}
       </Escena>
       {/* 5 · de cerca: el micelio suelta gotas («lacrymans» = que llora) */}
       <Escena T={T} a={K.Go} b={K.F} zoom={0.05} origen="50% 70%">
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <rect x={-20} y={900} width={KW + 40} height={1100} fill={PS.podrida} stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(540 960) scale(1.15) translate(-560 -860)">
+          <rect x={-20} y={900} width={KW + 40} height={1300} fill={PS.podrida2} stroke={KC.ink} strokeWidth={8} />
           {[960, 1030, 1110, 1180, 1290, 1400, 1510, 1620, 1730, 1840].map((y) => <line key={y} x1={0} y1={y} x2={KW} y2={y + 6} stroke={PS.grieta} strokeWidth={6} />)}
           {[120, 300, 470, 650, 820, 990].map((x, i) => <line key={x} x1={x + (i % 2) * 40} y1={900} x2={x + (i % 2) * 40 - 8} y2={1960} stroke={PS.grieta} strokeWidth={6} />)}
           {(() => { const g = krng(31); return Array.from({ length: 120 }, (_, i) => { const a = g() * Math.PI * 2, d = Math.sqrt(g()); const x = 560 + Math.cos(a) * d * 430, y = 860 + Math.sin(a) * d * 170, c = g();
             return <circle key={i} cx={x} cy={y} r={30 + g() * 34} fill={c < 0.62 ? PS.micelio : c < 0.82 ? PS.micLila : PS.micAma} opacity=".95" />; }); })()}
           {(() => { const g = krng(32); return Array.from({ length: 40 }, (_, i) => { const a = g() * Math.PI * 2, x = 560 + Math.cos(a) * 450, y = 860 + Math.sin(a) * 180;
             return <path key={i} d={`M ${x} ${y} q ${Math.cos(a) * 30} ${Math.sin(a) * 20 - 10} ${Math.cos(a) * 60} ${Math.sin(a) * 30}`} stroke="#ffffff" strokeWidth={4} fill="none" strokeLinecap="round" />; }); })()}
-          {[[300, 820, 0.4], [520, 760, 0.7], [700, 840, 1.0], [430, 900, 1.3], [830, 780, 1.6], [610, 930, 1.9], [240, 920, 2.2], [880, 900, 2.5]].map(([x, y, t0], i) => { const g = kprog(T, K.Go + t0, K.Go + t0 + 0.8, kEase.sale);
+          {[[300, 820, 0.2], [520, 760, 0.5], [700, 840, 1.0], [430, 900, 1.3], [830, 780, 1.6], [610, 930, 1.9], [240, 920, 2.2], [880, 900, 2.5]].map(([x, y, t0], i) => { const g = kprog(T, K.Go + t0, K.Go + t0 + 0.8, kEase.sale);
             if (g <= 0) return null; const r = 14 + (i % 3) * 6; const cae = i % 3 === 1 ? kprog(T, K.Go + t0 + 1.2, K.Go + t0 + 2.0, kEase.suave) : 0;
             return <g key={i}><ellipse cx={x} cy={y + cae * 120} rx={r * g} ry={r * 1.15 * g + cae * 8} fill="rgba(170,225,255,.85)" stroke={KC.ink} strokeWidth={3} />
               <ellipse cx={x - r * 0.35 * g} cy={y - r * 0.4 * g + cae * 120} rx={r * 0.25 * g} ry={r * 0.32 * g} fill="#ffffff" /></g>; })}
+          </g>
         </>)}
       </Escena>
       {/* 6 · el cuerpo fructífero plano, color óxido, suelta polvo de esporas */}
@@ -478,8 +487,8 @@ function PudricionSecaShot() {
       <Escena T={T} a={K.P} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Interrogacion T={T} x={270} y={1180} />
-          <g transform={`translate(540 ${470 + Math.sin(T * 10) * 4})`} opacity={kprog(T, K.P, K.P + 0.3)}>
+          <Interrogacion T={T} x={300} y={1320} tam={600} />
+          <g transform={`translate(540 ${720 + Math.sin(T * 10) * 4})`} opacity={kprog(T, K.P, K.P + 0.3)}>
             <text textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} paintOrder="stroke">¿DE DÓNDE SALIÓ?</text>
           </g>
         </>)}
@@ -488,6 +497,12 @@ function PudricionSecaShot() {
       <Escena T={T} a={K.Es} b={K.B} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
+          {(() => { const o = 0.55 * (1 - kprog(T, K.Es + 2.1, K.Es + 2.6)); return o > 0 ? <g opacity={o}>
+            <clipPath id="estClip"><rect x={40} y={330} width={1000} height={1660} /></clipPath>
+            <g clipPath="url(#estClip)"><g transform="translate(440 960) scale(1.6) translate(-340 -700)">
+              <Casa T={T} id="cEs" pud={1} mic={1} hum={1} cor={1} fru={1} polvo={1} />
+            </g></g>
+          </g> : null; })()}
           {(() => { const o = kprog(T, K.Es + 2.3, K.Es + 2.7) * (1 - kprog(T, K.Es + 4.6, K.Es + 5.0)); return o > 0 ? <g opacity={o}>
             <ADNHebra T={T} x={90} y={640} largo={560} alto={70} vueltas={3.5} resalta={(u) => u > 0.4 && u < 0.6} />
             <FlechaCurva T={T} x1={660} y1={640} x2={mp(95, 45)[0]} y2={mp(95, 45)[1] - 40} p={kprog(T, K.Es + 2.6, K.Es + 3.2)} curva={-60} color={KC.gold2} />
@@ -500,16 +515,16 @@ function PudricionSecaShot() {
       <Escena T={T} a={K.B} b={K.Te} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={0} y={1000} width={KW} height={960} fill="#1c477a" />
-          {Array.from({ length: 18 }, (_, i) => <path key={i} d={`M ${-80 + ((T * 40 + i * 60) % 160)} ${1030 + i * 50} q 40 -16 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0`} stroke="rgba(255,255,255,.45)" strokeWidth={5} fill="none" />)}
+          <rect x={0} y={1000} width={KW} height={960} fill="#133657" />
+          {Array.from({ length: 18 }, (_, i) => <path key={i} d={`M ${-80 + ((T * 40 + i * 60) % 160)} ${1030 + i * 50} q 40 -16 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0`} stroke="rgba(255,255,255,.22)" strokeWidth={5} fill="none" />)}
           {/* muelle con tablones */}
-          <g transform="translate(0 0)">
+          <g transform="translate(0 1040) scale(1.3) translate(0 -1000)">
             <rect x={-10} y={960} width={260} height={50} fill="#8a5a33" stroke={KC.ink} strokeWidth={6} />
             {[[20, 880], [90, 880], [55, 820]].map(([x, y], i) => <g key={i}><rect x={x} y={y} width={130} height={60} rx={6} fill="#c48a52" stroke={KC.ink} strokeWidth={5} /><line x1={x + 10} y1={y + 30} x2={x + 120} y2={y + 30} stroke="#8a5a33" strokeWidth={4} /></g>)}
             {[[70, 880, 16], [92, 876, 12], [150, 882, 10]].map(([x, y, r], i) => <circle key={'m' + i} cx={x} cy={y} r={r} fill={PS.micelio} stroke="rgba(0,0,0,.2)" strokeWidth={2} />)}
           </g>
-          <Barco T={T} x={klerp(380, 720, kprog(T, K.B, K.Te + 0.4))} y={1040} s={0.95} />
-          {[[1000, 560, 60], [1010, 760, -40], [880, 400, 90]].map(([x, y, c], i) => <FlechaCurva key={i} T={T} x1={klerp(380, 720, kprog(T, K.B, K.Te + 0.4)) + 220} y1={720} x2={x} y2={y} p={kprog(T, K.B + 1.0 + i * 0.4, K.B + 1.8 + i * 0.4)} curva={c} color={KC.white} grosor={7} />)}
+          <Barco T={T} x={klerp(420, 640, kprog(T, K.B, K.Te + 0.4))} y={1080} s={1.3} />
+          {[[1030, 640, 60], [1040, 860, -40], [900, 520, 90]].map(([x, y, c], i) => <FlechaCurva key={i} T={T} x1={klerp(420, 640, kprog(T, K.B, K.Te + 0.4)) + 280} y1={820} x2={x} y2={y} p={kprog(T, K.B + 1.0 + i * 0.4, K.B + 1.8 + i * 0.4)} curva={c} color={KC.white} grosor={7} />)}
         </>)}
       </Escena>
       {/* 10 · le gustan los climas templados; en la naturaleza no vive en el trópico */}
@@ -526,41 +541,42 @@ function PudricionSecaShot() {
         {fsvg(<>
           {(() => { const nueva = kprog(T, K.S + 2.4, K.S + 3.0); const hum = 1 - kprog(T, K.S + 3.0, K.S + 4.4);
             const corta = kprog(T, K.S + 1.6, K.S + 2.5);
-            return <Casa T={T} id="cS" pud={1} mic={1} cor={1} hum={hum} fuga={T < K.S + 0.5 ? 1 : 0} arreglo={kprog(T, K.S + 0.3, K.S + 0.6)} vent={kprog(T, K.S + 1.0, K.S + 1.4)} nueva={nueva} polvo={1}
-              sierra={corta > 0 && corta < 1 ? { x: 430 + Math.sin(corta * Math.PI * 8) * 50, y: 960, rot: 8 } : null} />; })()}
-          {T > K.S + 3.0 && <g opacity={kprog(T, K.S + 3.0, K.S + 3.3)}><MedidorMadera x={760} y={845} v={klerp(0.92, 0.15, kprog(T, K.S + 3.2, K.S + 4.4, kEase.suave))} texto={kprog(T, K.S + 3.2, K.S + 4.4) > 0.7 ? 'SECA' : 'secando…'} /></g>}
+            return <g transform={ENC}><Casa T={T} id="cS" pud={1} mic={1} cor={1} hum={hum} fuga={T < K.S + 0.5 ? 1 : 0} arreglo={kprog(T, K.S + 0.3, K.S + 0.6)} vent={kprog(T, K.S + 1.0, K.S + 1.4)} nueva={nueva} polvo={1}
+              sierra={corta > 0 && corta < 1 ? { x: 430 + Math.sin(corta * Math.PI * 8) * 50, y: 960, rot: 8 } : null} />
+            {T > K.S + 3.0 && <g opacity={kprog(T, K.S + 3.0, K.S + 3.3)}><MedidorMadera x={720} y={845} v={klerp(0.92, 0.15, kprog(T, K.S + 3.2, K.S + 4.4, kEase.suave))} texto={kprog(T, K.S + 3.2, K.S + 4.4) > 0.7 ? 'SECA' : 'secando…'} /></g>}
+            </g>; })()}
         </>)}
       </Escena>
       {/* 12 · cierre: la misma viga y el mismo piso, nuevos y secos; la bota pisa y no se hunde */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="35% 55%">
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Casa T={T} id="cE" pud={0} mic={0} hum={0} arreglo={1} vent={1} nueva={1} bota={pisa(K.C + 0.1)} />
-          <Sello T={T} at={K.C + 0.9} x={220} y={560} texto="SECA" color={KC.leaf} r={105} />
+          <g transform={ENC}><Casa T={T} id="cE" pud={0} mic={0} hum={0} arreglo={1} vent={1} nueva={1} bota={pisa(K.C + 0.1)} /></g>
+          <Sello T={T} at={K.C + 0.9} x={230} y={800} texto="SECA" color={KC.leaf} r={105} />
         </>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.3} texto="¿vieja?" x={220} y={560} tam={56} />
-      <Etq T={T} at={K.G + 1.4} until={K.H - 0.2} x={470} y={1012} texto="micelio" tam={30} color={KC.white} />
-      <Etq T={T} at={K.H + 0.4} until={K.Cu - 0.3} x={470} y={1012} texto="Serpula lacrymans" it tam={34} color={KC.white} />
-      <Etq T={T} at={K.H + 0.8} until={K.Cu - 0.3} x={470} y={1100} texto="pudrición seca" tam={28} color={KC.gold2} />
-      <Chip T={T} at={K.H + 2.6} until={K.Cu - 0.3} texto="sin agua no arranca" x={330} y={560} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.Cu + 0.2} until={K.Cu + 2.9} texto="AL MICROSCOPIO · madera" x={540} y={330} tam={28} borde={KC.gold} mono />
-      <Etq T={T} at={K.Cu + 1.0} until={K.Cu + 2.9} x={258} y={760} texto="hifa" tam={32} color="#eafff7" />
-      <Etq T={T} at={K.Cu + 1.5} until={K.Cu + 2.9} x={828} y={560} lado="izq" texto="celulosa" tam={30} color="#ffffff" />
-      <Etq T={T} at={K.Cu + 2.2} until={K.Cu + 2.9} x={372} y={1080} texto="lignina café" tam={30} color="#d9a066" />
-      <Chip T={T} at={K.Cu + 3.4} until={K.Co - 0.3} texto="pudrición parda" x={540} y={460} tam={40} borde={PS.oxido3} />
-      <Etq T={T} at={K.Cu + 4.0} until={K.Co - 0.3} x={540} y={1050} texto="se parte en cubos" tam={30} color={KC.white} />
-      <Chip T={T} at={K.Co + 1.8} until={K.Go - 0.3} texto="varios metros" x={300} y={380} tam={34} borde={KC.yellow} />
-      <Etq T={T} at={K.Co + 2.2} until={K.Go - 0.3} x={478} y={712} texto="cordones" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Co + 3.2} until={K.Go - 0.3} texto="llevan agua y nutrientes" x={540} y={1128} tam={30} borde={PS.agua} />
-      <LetreroNombre T={T} at={K.Go + 0.3} until={K.F - 0.3} x={60} y={360} />
-      <Etq T={T} at={K.Go + 1.2} until={K.F - 0.3} x={746} y={840} texto="gotas" tam={34} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.3} texto="¿vieja?" x={230} y={800} tam={56} />
+      <Etq T={T} at={K.G + 1.4} until={K.H - 0.2} x={encX(480)} y={encY(1012)} texto="micelio" tam={30} color={KC.white} />
+      <Etq T={T} at={K.H + 0.4} until={K.Cu - 0.3} x={encX(480)} y={encY(1012)} texto="Serpula lacrymans" it tam={34} color={KC.white} />
+      <Etq T={T} at={K.H + 0.8} until={K.Cu - 0.3} x={encX(560)} y={encY(1100)} texto="pudrición seca" tam={28} color={KC.gold2} />
+      <Chip T={T} at={K.H + 2.6} until={K.Cu - 0.3} texto="sin agua no arranca" x={540} y={400} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.Cu + 0.2} until={K.Cu + 2.9} texto="AL MICROSCOPIO · madera" x={540} y={440} tam={28} borde={KC.gold} mono />
+      <Etq T={T} at={K.Cu + 1.0} until={K.Cu + 2.9} x={258} y={930} texto="hifa" tam={32} color="#eafff7" />
+      <Etq T={T} at={K.Cu + 1.5} until={K.Cu + 2.9} x={828} y={730} lado="izq" texto="celulosa" tam={30} color="#ffffff" />
+      <Etq T={T} at={K.Cu + 2.2} until={K.Cu + 2.9} x={372} y={1250} texto="lignina café" tam={30} color="#d9a066" />
+      <Chip T={T} at={K.Cu + 3.4} until={K.Co - 0.3} texto="pudrición parda" x={540} y={560} tam={40} borde={PS.oxido3} />
+      <Etq T={T} at={K.Cu + 4.0} until={K.Co - 0.3} x={540} y={1290} texto="se parte en cubos" tam={30} color={KC.white} />
+      <Chip T={T} at={K.Co + 1.8} until={K.Go - 0.3} texto="varios metros" x={300} y={360} tam={34} borde={KC.yellow} />
+      <Etq T={T} at={K.Co + 2.2} until={K.Go - 0.3} x={encX(500)} y={encY(712)} texto="cordones" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Co + 3.2} until={K.Go - 0.3} texto="llevan agua y nutrientes" x={600} y={440} tam={30} borde={PS.agua} />
+      <LetreroNombre T={T} at={K.Go + 0.3} until={K.F - 0.3} x={60} y={330} />
+      <Etq T={T} at={K.Go + 1.2} until={K.F - 0.3} x={760} y={930} texto="gotas" tam={34} color={KC.ink} />
       <Chip T={T} at={K.F + 1.0} until={K.P - 0.3} texto="color óxido, borde blanco" x={330} y={420} tam={30} borde={PS.oxido3} />
       <Etq T={T} at={K.F + 1.4} until={K.P - 0.3} x={622} y={790} texto="cuerpo fructífero" tam={28} color={KC.white} />
       <Etq T={T} at={K.F + 3.4} until={K.P - 0.3} x={632} y={1100} texto="esporas: polvo café" tam={28} color={KC.white} />
-      <TarjetaEstudio T={T} at={K.Es + 0.3} until={K.Es + 2.3} anio="2007" quien="Universidad de Oslo" revista="Kauserud y col. · Molecular Ecology" y={600} />
+      <TarjetaEstudio T={T} at={K.Es + 0.3} until={K.Es + 2.3} anio="2007" quien="Universidad de Oslo" revista="Kauserud y col. · Molecular Ecology" y={330} />
       <Chip T={T} at={K.Es + 3.4} until={K.Es + 4.6} texto="ADN → Asia" x={330} y={460} tam={36} borde={KC.gold} />
       <Etq T={T} at={K.Es + 5.2} until={K.B - 0.3} x={540} y={920} lado="izq" texto="Himalaya" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Es + 5.6} until={K.B - 0.3} texto="bosques de montaña, casi siempre a más de 2000 m" x={540} y={1040} tam={26} borde={KC.leaf} />
@@ -568,22 +584,22 @@ function PudricionSecaShot() {
       <Chip T={T} at={K.B + 1.2} until={K.Te - 0.3} texto="probablemente (hipótesis)" x={540} y={510} tam={30} borde={KC.red} />
       <Etq T={T} at={K.Te + 2.3} until={K.S - 0.3} x={520} y={880} texto="trópico" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Te + 2.6} until={K.S - 0.3} texto="no vive en el trópico (en la naturaleza)" x={540} y={1210} tam={28} borde={KC.red} />
-      <Chip T={T} at={K.S + 0.3} until={K.C - 0.3} texto="✓ arreglar la fuga" x={250} y={400} tam={28} borde={KC.leaf} />
-      <Chip T={T} at={K.S + 1.0} until={K.C - 0.3} texto="✓ ventilar" x={180} y={470} tam={28} borde={KC.leaf} />
-      <Chip T={T} at={K.S + 1.8} until={K.C - 0.3} texto="✓ cambiar la madera podrida" x={316} y={540} tam={28} borde={KC.leaf} />
-      <Chip T={T} at={K.S + 3.0} until={K.C - 0.3} texto="✓ secar" x={160} y={610} tam={28} borde={KC.leaf} />
-      <MitoTachado T={T} at={K.S + 3.1} tacharEn={K.S + 3.6} until={K.C - 0.3} texto="solo químicos" x={250} y={712} tam={34} />
-      <Chip T={T} at={K.S + 3.6} until={K.C - 0.3} texto="sin secar, los químicos solos no bastan" x={440} y={1132} tam={24} borde={KC.ink} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="le sobraba agua" x={700} y={700} tam={40} borde={KC.cyan} />
+      <Chip T={T} at={K.S + 0.3} until={K.C - 0.3} texto="✓ arreglar la fuga" x={250} y={225} tam={28} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 1.0} until={K.C - 0.3} texto="✓ ventilar" x={180} y={292} tam={28} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 1.8} until={K.C - 0.3} texto="✓ cambiar la madera podrida" x={316} y={359} tam={28} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 3.0} until={K.C - 0.3} texto="✓ secar" x={160} y={426} tam={28} borde={KC.leaf} />
+      <MitoTachado T={T} at={K.S + 3.1} tacharEn={K.S + 3.6} until={K.C - 0.3} texto="solo químicos" x={790} y={400} tam={34} />
+      <Chip T={T} at={K.S + 3.6} until={K.C - 0.3} texto="sin secar, los químicos solos no bastan" x={540} y={1530} tam={24} borde={KC.ink} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="le sobraba agua" x={760} y={1160} tam={40} borde={KC.cyan} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Cu} texto="50 cm" largo={130} />
+      <BarraEscala T={T} at={K.G} until={K.Cu} texto="50 cm" largo={169} />
       <BarraEscala T={T} at={K.Cu} until={K.Cu + 3.2} texto="50 µm" largo={200} />
-      <BarraEscala T={T} at={K.Cu + 3.2} until={K.Co} texto="5 cm" largo={120} />
-      <BarraEscala T={T} at={K.Co} until={K.Go} texto="50 cm" largo={130} />
-      <BarraEscala T={T} at={K.Go} until={K.F} texto="5 cm" largo={250} />
+      <BarraEscala T={T} at={K.Cu + 3.2} until={K.Co} texto="5 cm" largo={150} />
+      <BarraEscala T={T} at={K.Co} until={K.Go} texto="50 cm" largo={169} />
+      <BarraEscala T={T} at={K.Go} until={K.F} texto="5 cm" largo={288} />
       <BarraEscala T={T} at={K.F} until={K.P} texto="20 cm" largo={83} />
-      <BarraEscala T={T} at={K.S} until={K.Ou} texto="50 cm" largo={130} />
+      <BarraEscala T={T} at={K.S} until={K.Ou} texto="50 cm" largo={169} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="Un hongo *se la come.*" />

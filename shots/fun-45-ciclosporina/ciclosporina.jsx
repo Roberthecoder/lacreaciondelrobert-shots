@@ -202,6 +202,7 @@ function CiclosporinaShot() {
   // calcineurina: la ciclosporina entra (0.4–1.4), se une a la ciclofilina (1.4–2.2) y juntas bajan el interruptor (2.2–3.2)
   const entra = kprog(T, K.Ca + 0.4, K.Ca + 1.4, kEase.sale), une = kprog(T, K.Ca + 1.4, K.Ca + 2.2, kEase.suave), baja = kprog(T, K.Ca + 2.2, K.Ca + 3.2, kEase.suave);
   const CX = 500, CY = 920;
+  const MANO = 'translate(470 980) scale(1.3) translate(-470 -980)';   // la mano con la tierra, agrandada 1.3 (gancho y cierre)
   const parX = klerp(330, 620, baja), parY = klerp(760, 700, baja);
   const ataque = kprog(T, K.R + 0.6, K.R + 3.4, kEase.suave);
   const rinonRojo = kprog(T, K.R + 2.4, K.R + 4.2);
@@ -210,7 +211,7 @@ function CiclosporinaShot() {
       {/* 1 · gancho: la mano abre el puño y cae la tierra; de ella sale la medicina */}
       <Escena T={T} a={K.G} b={K.N} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform={MANO}>
           <Mano x={470} y={1010} s={1.05} abre={kprog(T, K.G + 0.2, K.G + 0.9, kEase.sale)} />
           <Granos T={T} x={470} y={1010} at={K.G + 0.3} />
           <Punado T={T} x={470} y={1040} s={1.05} cae={kprog(T, K.G + 0.3, K.G + 1.2)} />
@@ -218,7 +219,7 @@ function CiclosporinaShot() {
             {Array.from({ length: 10 }, (_, i) => { const a = i / 10 * Math.PI * 2 + T; return <line key={i} x1={450 + Math.cos(a) * 120} y1={720 + Math.sin(a) * 120} x2={450 + Math.cos(a) * 170} y2={720 + Math.sin(a) * 170} stroke="#fff" strokeWidth={10} strokeLinecap="round" />; })}
             <Frasco x={450} y={800} s={kprog(T, K.G + 2.2, K.G + 2.8, kEase.rebote)} />
           </g>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 2a · Noruega en el mapa */}
       <Escena T={T} a={K.N} b={NM} zoom={0.08} origen="25% 70%">
@@ -231,13 +232,13 @@ function CiclosporinaShot() {
         <Ambiente T={T} n={18} />
         {fsvg(<>
           {[[160, 1150, 60], [880, 640, 46], [760, 1180, 70], [250, 660, 40]].map(([x, y, r], i) => <circle key={i} cx={x} cy={y} r={r} fill="#4a3220" stroke="#2a1a10" strokeWidth={6} opacity=".8" />)}
-          <Tolypo T={T} g={kprog(T, NM, K.S - 0.6)} y={910} />
+          <Tolypo T={T} g={0.3 + 0.7 * kprog(T, NM - 0.3, K.S - 0.6)} y={910} />
         </>)}
       </Escena>
       {/* 3 · Sandoz: el caldo con el moho y la molécula de 11 piezas */}
       <Escena T={T} a={K.S} b={K.R}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(510 930) scale(1.35) translate(-480 -930)">
           <g transform="translate(330 1000)">
             <path d="M -50 -300 L -50 -150 L -190 140 Q -200 170 -170 170 L 170 170 Q 200 170 190 140 L 50 -150 L 50 -300 Z" fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
             <path d="M -125 10 L -190 140 Q -200 170 -170 170 L 170 170 Q 200 170 190 140 L 125 10 Z" fill="#e8c46a" stroke={KC.ink} strokeWidth={5} />
@@ -245,17 +246,17 @@ function CiclosporinaShot() {
             <rect x={-62} y={-318} width={124} height={34} rx={10} fill="#d9d2c4" stroke={KC.ink} strokeWidth={6} />
           </g>
           {(() => { const v = kprog(T, K.S + 0.8, K.S + 1.6, kEase.sale); return <Ciclo x={klerp(330, 720, v)} y={klerp(1000, 760, v)} r={90} p={kprog(T, K.S + 1.2, K.S + 2.4)} rot={T * 15} />; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · el rechazo: los linfocitos T atacan el riñón nuevo */}
       <Escena T={T} a={K.R} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(520 900) scale(1.25) translate(-520 -900)">
           <Silueta x={480} y={890} s={1} />
           <g transform={`translate(${Math.sin(T * 40) * 4 * rinonRojo} 0)`}><Rinon x={560} y={930} s={0.85} color={mixHex('#c9574a', KC.red, rinonRojo)} /></g>
           {Array.from({ length: 8 }, (_, i) => { const a = i / 8 * Math.PI * 2 + 0.4; const R = klerp(520, 150, ataque) + Math.sin(T * 3 + i) * 10;
             return <Linfocito key={i} T={T} seed={i} x={560 + Math.cos(a) * R} y={930 + Math.sin(a) * R * 0.9} r={42} />; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Ca} zoom={0.1}>
@@ -266,7 +267,7 @@ function CiclosporinaShot() {
       <Escena T={T} a={K.Ca} b={K.Ra}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<>
+        {fsvg(<g transform={`translate(540 960) scale(1.3) translate(${-CX} ${-CY})`}>
           <circle cx={CX} cy={CY} r={310} fill="#8d6fd1" stroke={KC.ink} strokeWidth={9} opacity=".95" />
           <circle cx={CX + 40} cy={CY + 40} r={190} fill={mixHex('#5b2bb3', '#3a2a5a', baja)} stroke={KC.ink} strokeWidth={6} />
           <Senales T={T} x={CX + 40} y={CY + 40} fuerza={1 - kprog(T, K.Ca + 2.6, K.Ca + 3.6)} />
@@ -275,22 +276,23 @@ function CiclosporinaShot() {
           <Ciclofilina x={une > 0 ? parX - 60 : 260} y={une > 0 ? parY + 40 : 800} s={0.8} />
           <Ciclo x={une > 0 ? parX : klerp(-80, klerp(140, 330, une), entra)} y={une > 0 ? parY : klerp(560, 760, entra)} r={44} rot={T * 25 * (1 - une)} />
           {T > K.Al + 0.8 && <path d={`M ${CX - 250} ${CY - 60} L ${CX - 170} ${CY + 20} M ${CX - 170} ${CY - 60} L ${CX - 250} ${CY + 20}`} stroke={KC.red} strokeWidth={16} strokeLinecap="round" opacity={kprog(T, K.Al + 0.8, K.Al + 1.1)} />}
-        </>)}
+        </g>)}
       </Escena>
       {/* 8 · 1976: Borel y Stähelin (siluetas), el ratón con el injerto de piel */}
       <Escena T={T} a={K.Ra} b={K.Cn}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Cientifico x={150} y={1060} s={0.75} />
-          <Cientifico x={930} y={1060} s={0.75} />
-          <Raton T={T} x={520} y={1050} s={0.85} parche={kprog(T, K.Ra + 2.4, K.Ra + 2.9)} />
+          <Cientifico x={200} y={860} s={1.05} />
+          <Cientifico x={880} y={860} s={1.05} />
+          <Raton T={T} x={560} y={1170} s={1.5} parche={kprog(T, K.Ra + 2.4, K.Ra + 2.9)} />
         </>)}
       </Escena>
       {/* 9 · 1983, Canadá: 209 trasplantes; 80 de cada 100 contra 64 */}
       <Escena T={T} a={K.Cn} b={K.Es}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          {T > K.Cn + 2.2 && <g opacity={kprog(T, K.Cn + 2.2, K.Cn + 2.7)}>
+          {/* las dos cuadrículas de 100 riñones están desde el inicio (vacías y atenuadas, bajo la tarjeta) */}
+          {<g opacity={klerp(0.4, 1, kprog(T, K.Cn + 2.2, K.Cn + 2.7))}>
             <Cien T={T} x={78} y={740} n={80} at={K.Cn + 2.8} dur={2.2} />
             <Cien T={T} x={608} y={740} n={64} at={K.Cn + 2.8} dur={1.76} color={KC.orange} />
           </g>}
@@ -300,11 +302,11 @@ function CiclosporinaShot() {
       <Escena T={T} a={K.Es} b={K.H}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <rect x={-20} y={640} width={KW + 40} height={1300} fill={FK.tierra} stroke={KC.ink} strokeWidth={8} />
-          {Array.from({ length: 30 }, (_, i) => { const g = krng(i + 5); return <circle key={i} cx={g() * KW} cy={680 + g() * 560} r={6 + g() * 12} fill={i % 2 ? FK.tierra2 : '#8a5a35'} />; })}
+          <rect x={-120} y={640} width={KW + 240} height={1500} fill={mixHex(FK.tierra, '#0b1020', 0.5)} stroke={KC.ink} strokeWidth={8} />
+          {Array.from({ length: 30 }, (_, i) => { const g = krng(i + 5); return <circle key={i} cx={g() * KW} cy={680 + g() * 560} r={6 + g() * 12} fill={i % 2 ? FK.tierra2 : '#6a452a'} />; })}
           <path d="M 120 640 q 20 120 -10 220 M 900 640 q -30 140 10 260" stroke="#e9d6a8" strokeWidth={6} fill="none" strokeLinecap="round" />
-          <Larva T={T} x={560} y={960} s={1} moho={kprog(T, K.Es + 1.8, K.H - 0.2)} />
-          <RedHifas T={T} x={560} y={960} g={kprog(T, K.Es + 1.6, K.H)} seed={7} n={160} escala={0.55} color="#ffffff" ancho={3} />
+          <Larva T={T} x={540} y={1080} s={1.6} moho={kprog(T, K.Es + 1.8, K.H - 0.2)} />
+          <RedHifas T={T} x={540} y={1080} g={kprog(T, K.Es + 1.6, K.H)} seed={7} n={160} escala={0.8} color="#ffffff" ancho={3} />
         </>)}
       </Escena>
       {/* 11 · hipótesis: dentro de la larva, sus células de defensa se apagan */}
@@ -312,66 +314,66 @@ function CiclosporinaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} color="rgba(255,200,120,.25)" />
         {fsvg(<>
-          {[[300, 760, 1], [700, 820, 2], [460, 1060, 3], [800, 1110, 4], [220, 1040, 5]].map(([x, y, sd], i) => <Hemocito key={i} T={T} x={x} y={y} seed={sd} apagada={kprog(T, K.H + 1.6 + i * 0.3, K.H + 2.4 + i * 0.3)} />)}
-          {[[300, 760], [700, 820], [460, 1060], [800, 1110], [220, 1040]].map(([x, y], i) => { const v = kprog(T, K.H + 0.8 + i * 0.3, K.H + 1.8 + i * 0.3, kEase.sale);
-            return v > 0 ? <Ciclo key={i} x={klerp(x + 300, x + 50, v)} y={klerp(y - 300, y - 50, v)} r={26} rot={T * 30} /> : null; })}
+          {[[250, 700, 1], [760, 770, 2], [490, 1020, 3], [830, 1200, 4], [240, 1270, 5]].map(([x, y, sd], i) => <Hemocito key={i} T={T} x={x} y={y} r={120} seed={sd} apagada={kprog(T, K.H + 1.6 + i * 0.3, K.H + 2.4 + i * 0.3)} />)}
+          {[[250, 700], [760, 770], [490, 1020], [830, 1200], [240, 1270]].map(([x, y], i) => { const v = kprog(T, K.H + 0.8 + i * 0.3, K.H + 1.8 + i * 0.3, kEase.sale);
+            return v > 0 ? <Ciclo key={i} x={klerp(x + 400, x + 86, v)} y={klerp(y - 400, y - 86, v)} r={44} rot={T * 30} /> : null; })}
         </>)}
       </Escena>
       {/* 12 · cierre: el mismo puñado de tierra en la mano; ahora encima, un riñón que funciona */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform={MANO}>
           <Mano x={470} y={1010} s={1.05} abre={1} />
           <Punado T={T} x={470} y={1040} s={1.05} cae={1} />
           {(() => { const v = kprog(T, K.C + 0.5, K.C + 1.3, kEase.rebote); return v > 0 ? <Rinon x={450} y={770} s={0.95 * v * (1 + 0.03 * Math.sin(T * 5))} brillo={0.6 + 0.4 * Math.sin(T * 5)} rot={-8} /> : null; })()}
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 3.6} until={K.N - 0.3} texto="tierra → medicina" x={330} y={500} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.6} until={K.N - 0.3} texto="tierra → medicina" x={330} y={300} tam={42} borde={KC.ink} />
       <Etq T={T} at={K.N + 0.9} until={NM - 0.2} x={norP([13, 65])[0] + 40} y={norP([13, 65])[1] - 50} texto="muestra de suelo" tam={30} color={KC.ink} />
       <Etq T={T} at={K.N + 0.4} until={NM - 0.2} x={500} y={1160} texto="NORUEGA" tam={44} color={KC.ink} />
       <Chip T={T} at={NM + 0.2} until={K.S - 0.3} texto="AL MICROSCOPIO · moho del suelo" x={540} y={520} tam={32} borde={KC.cyan} />
       <Etq T={T} at={NM + 0.6} until={K.S - 0.3} x={60} y={620} texto="Tolypocladium inflatum" it tam={40} />
-      <Etq T={T} at={NM + 1.4} until={K.S - 0.3} x={540} y={1150} texto="fiálides de base inflada" tam={28} color={KC.gold2} />
+      <Etq T={T} at={NM + 1.4} until={K.S - 0.3} x={470} y={1225} texto="fiálides de base inflada" tam={28} color={KC.gold2} />
       <Etq T={T} at={NM + 1.8} until={K.S - 0.3} x={760} y={620} texto="esporas" tam={28} color="#bfe3ff" />
-      <Chip T={T} at={K.S + 0.3} until={K.R - 0.3} texto="Sandoz · Basilea, Suiza" x={420} y={480} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.S + 2.0} until={K.R - 0.3} x={600} y={620} texto="ciclosporina" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.6} until={K.R - 0.3} x={600} y={900} texto="anillo de 11 piezas" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.R + 2.6} until={K.P - 0.3} texto="rechazo" x={300} y={470} tam={46} borde={KC.red} />
-      <Etq T={T} at={K.R + 0.6} until={K.P - 0.3} x={60} y={640} texto="linfocitos T" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.R + 1.2} until={K.P - 0.3} x={1030} y={700} texto="riñón nuevo" lado="izq" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ca + 0.2} until={K.Ra - 0.3} texto="AL MICROSCOPIO · linfocito T" x={360} y={470} tam={30} borde={KC.lilac} />
-      <Etq T={T} at={K.Ca + 0.9} until={K.Ca + 1.6} x={60} y={560} texto="ciclosporina" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Ca + 1.6} until={K.Ra - 0.3} x={60} y={620} texto="ciclofilina (su pareja)" tam={28} color="#7ff0e0" />
-      <Etq T={T} at={K.Ca + 2.0} until={K.Ra - 0.3} x={1040} y={CY + 180} texto="calcineurina" lado="izq" tam={30} color={KC.leaf} />
-      <Chip T={T} at={K.Al + 0.6} until={K.Ra - 0.3} texto="señales de ataque: apagadas" x={400} y={560} tam={32} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Cn - 0.3} anio="1976" quien="Borel, Feurer, Gubler y Stähelin" revista="Sandoz · Agents and Actions" x={430} y={740} />
-      <Etq T={T} at={K.Ra + 1.2} until={K.Cn - 0.3} x={70} y={1140} texto="Borel" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Ra + 1.4} until={K.Cn - 0.3} x={1010} y={1140} texto="Stähelin" lado="izq" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Ra + 3.0} until={K.Cn - 0.3} texto="injerto de piel: tarda en rechazarse" x={540} y={930} tam={28} borde={KC.leaf} />
-      <TarjetaEstudio T={T} at={K.Cn + 0.2} until={K.Cn + 2.3} anio="1983" quien="Canadá · 209 trasplantes de riñón" revista="N Engl J Med, 1983" y={760} />
-      <Chip T={T} at={K.Cn + 2.6} until={K.Es - 0.3} texto="riñones funcionando al año (estimado)" x={420} y={540} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.S + 0.3} until={K.R - 0.3} texto="Sandoz · Basilea, Suiza" x={420} y={430} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.S + 2.0} until={K.R - 0.3} x={670} y={520} texto="ciclosporina" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.6} until={K.R - 0.3} x={630} y={885} texto="anillo de 11 piezas" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.R + 2.6} until={K.P - 0.3} texto="rechazo" x={870} y={400} tam={46} borde={KC.red} />
+      <Etq T={T} at={K.R + 0.6} until={K.P - 0.3} x={40} y={400} texto="linfocitos T" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.R + 1.2} until={K.P - 0.3} x={792} y={945} texto="riñón nuevo" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Ca + 0.2} until={K.Ra - 0.3} texto="AL MICROSCOPIO · linfocito T" x={400} y={310} tam={32} borde={KC.lilac} />
+      <Etq T={T} at={K.Ca + 0.9} until={K.Ca + 1.6} x={40} y={470} texto="ciclosporina" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.Ca + 1.6} until={K.Ra - 0.3} x={40} y={470} texto="ciclofilina (su pareja)" tam={28} color="#7ff0e0" />
+      <Etq T={T} at={K.Ca + 2.0} until={K.Ra - 0.3} x={606} y={1022} texto="calcineurina" lado="izq" tam={26} color={KC.leaf} />
+      <Chip T={T} at={K.Al + 0.6} until={K.Ra - 0.3} texto="señales de ataque: apagadas" x={540} y={392} tam={34} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.Ra + 0.2} until={K.Cn - 0.3} anio="1976" quien="Borel, Feurer, Gubler y Stähelin" revista="Sandoz · Agents and Actions" x={540} y={370} />
+      <Etq T={T} at={K.Ra + 1.2} until={K.Cn - 0.3} x={85} y={965} texto="Borel" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ra + 1.4} until={K.Cn - 0.3} x={995} y={965} texto="Stähelin" lado="izq" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Ra + 3.0} until={K.Cn - 0.3} texto="injerto de piel: tarda en rechazarse" x={540} y={1380} tam={36} borde={KC.leaf} />
+      <TarjetaEstudio T={T} at={K.Cn + 0.2} until={K.Cn + 2.3} anio="1983" quien="Canadá · 209 trasplantes de riñón" revista="N Engl J Med, 1983" y={420} />
+      <Chip T={T} at={K.Cn + 2.6} until={K.Es - 0.3} texto="riñones funcionando al año (estimado)" x={540} y={540} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.Cn + 2.7} until={K.Es - 0.3} x={70} y={695} texto="con ciclosporina" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Cn + 2.9} until={K.Es - 0.3} x={600} y={695} texto="tratamiento de antes" tam={30} color={KC.ink} />
       {T < K.Es - 0.3 && <Contador T={T} at={K.Cn + 2.8} hasta={80} dur={2.2} sufijo=" de 100" x={290} y={1145} tam={46} color={KC.ink} />}
       {T < K.Es - 0.3 && <Contador T={T} at={K.Cn + 2.8} hasta={64} dur={1.76} sufijo=" de 100" x={820} y={1145} tam={46} color={KC.ink} />}
-      <Etq T={T} at={K.Es + 0.6} until={K.H - 0.3} x={60} y={760} texto="larva de escarabajo" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.Es + 2.0} until={K.H - 0.3} x={60} y={820} texto="moho: Tolypocladium" it tam={28} color="#fff" />
-      <Chip T={T} at={K.H + 0.3} until={K.C - 0.3} texto="hipótesis" x={330} y={500} tam={42} borde={KC.gold} />
-      <Etq T={T} at={K.H + 0.8} until={K.C - 0.3} x={60} y={600} texto="células de defensa del insecto" tam={28} color="#ffcf8a" />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="tierra → trasplante" x={420} y={500} tam={42} borde={KC.leaf} />
+      <Etq T={T} at={K.Es + 0.6} until={K.H - 0.3} x={60} y={690} texto="larva de escarabajo" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.Es + 2.0} until={K.H - 0.3} x={560} y={690} texto="moho: Tolypocladium" it tam={28} color="#fff" />
+      <Chip T={T} at={K.H + 0.3} until={K.C - 0.3} texto="hipótesis" x={540} y={390} tam={46} borde={KC.gold} />
+      <Etq T={T} at={K.H + 0.8} until={K.C - 0.3} x={60} y={490} texto="células de defensa del insecto" tam={30} color="#ffcf8a" />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="tierra → trasplante" x={540} y={360} tam={44} borde={KC.leaf} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={260} />
+      <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={338} />
       <BarraEscala T={T} at={K.N} until={NM} texto="200 km" largo={107} color={KC.ink} />
       <BarraEscala T={T} at={NM} until={K.S} texto="10 µm" largo={100} />
-      <BarraEscala T={T} at={K.S} until={K.R} texto="5 cm" largo={120} />
-      <BarraEscala T={T} at={K.R} until={K.P} texto="10 cm" largo={100} />
-      <BarraEscala T={T} at={K.Ca} until={K.Ra} texto="2 µm" largo={170} />
-      <BarraEscala T={T} at={K.Es} until={K.H} texto="1 cm" largo={150} />
-      <BarraEscala T={T} at={K.H} until={K.C} texto="10 µm" largo={140} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={260} />
+      <BarraEscala T={T} at={K.S} until={K.R} texto="5 cm" largo={162} />
+      <BarraEscala T={T} at={K.R} until={K.P} texto="10 cm" largo={125} />
+      <BarraEscala T={T} at={K.Ca} until={K.Ra} texto="2 µm" largo={221} />
+      <BarraEscala T={T} at={K.Es} until={K.H} texto="1 cm" largo={240} />
+      <BarraEscala T={T} at={K.H} until={K.C} texto="10 µm" largo={240} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={338} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="Esta tierra *no es solo tierra.*" />

@@ -177,6 +177,8 @@ function Platito({ x, y, n = 1, cocido = 0, s = 1 }) {
   </g>;
 }
 
+// Pase a mano cine: agranda una escena k veces llevando el punto (cx, cy) a (tx, ty).
+const Zg = ({ k, cx, cy, tx = 540, ty = 900, children }) => <g transform={`translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
 function ShiitakeShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, N: CUES.Nombre, Es: CUES.Espera, R: CUES.Rayas, L: CUES.Lentinano, P: CUES.Pregunta, H: CUES.Hipotesis, Ca: CUES.Calor, E: CUES.Estudio, D: CUES.Dosis, Ce: CUES.Cena, S: CUES.Sirve, C: CUES.Cierre, Ou: CUES.Outro };
@@ -193,18 +195,18 @@ function ShiitakeShot() {
       {/* 0 · gancho: el tenedor pincha shiitake crudo; un brazo se raya como a latigazos */}
       <Escena T={T} a={K.G} b={K.N} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<Zg k={1.25} cx={470} cy={800}>
           <Plato T={T} x={470} y={1010} s={1.15} />
           <Tenedor x={klerp(760, 640, pincha)} y={klerp(560, 900, pincha)} rot={24} s={1.1} />
           {T > K.G + 2.9 && <g opacity={kprog(T, K.G + 2.9, K.G + 3.2)}><Brazo T={T} x={330} y={560} s={0.95} rayas={latigo} /></g>}
-        </>)}
+        </Zg>)}
       </Escena>
       {/* 1 · tiene nombre: dermatitis flagelada; es raro, no le pasa a todos */}
       <Escena T={T} a={K.N} b={K.Es} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Shiitake x={330} y={900} s={1.5} crece={kprog(T, K.N - 0.2, K.N + 1.0)} rot={-4} />
-          {Array.from({ length: 8 }, (_, i) => { const on = kprog(T, K.N + 1.6 + i * 0.1, K.N + 1.9 + i * 0.1, kEase.rebote); return on > 0 ? <Persona key={i} x={110 + i * 122} y={1150} s={0.9 * on} color={i === 5 ? KC.orange : '#8fb6ff'} rayas={i === 5 ? kprog(T, K.N + 2.6, K.N + 3.4) : 0} /> : null; })}
+          <Shiitake x={360} y={1080} s={2.2} crece={kprog(T, K.N - 0.2, K.N + 1.0)} rot={-4} />
+          {Array.from({ length: 8 }, (_, i) => { const on = kprog(T, K.N + 1.6 + i * 0.1, K.N + 1.9 + i * 0.1, kEase.rebote); return on > 0 ? <Persona key={i} x={110 + i * 122} y={1290} s={1.05 * on} color={i === 5 ? KC.orange : '#8fb6ff'} rayas={i === 5 ? kprog(T, K.N + 2.6, K.N + 3.4) : 0} /> : null; })}
         </>)}
       </Escena>
       {/* 2 · tarda: de horas a días */}
@@ -212,27 +214,28 @@ function ShiitakeShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           {Array.from({ length: 7 }, (_, i) => { const on = kprog(T, K.Es + 0.6 + i * 0.25, K.Es + 0.9 + i * 0.25, kEase.rebote);
-            return <g key={i} transform={`translate(${130 + i * 137} 900) scale(${0.3 + 0.7 * on})`} opacity={0.25 + 0.75 * on}>
+            return <g key={i} transform={`translate(${540 + (i - 3) * 142} 860) scale(${1.25 * (0.3 + 0.7 * on)})`} opacity={0.25 + 0.75 * on}>
               <rect x={-56} y={-60} width={112} height={120} rx={14} fill="#fff" stroke={KC.ink} strokeWidth={6} />
               <rect x={-56} y={-60} width={112} height={34} rx={12} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
-              <text y={42} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{i + 1}</text></g>; })}
-          <text x={540} y={1070} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>días después de comer</text>
+              <text y={42} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill="#0b1020">{i + 1}</text></g>; })}
+          <text x={540} y={1030} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink}>días después de comer</text>
+          <Brazo T={T} x={500} y={1260} s={1.2} rayas={kprog(T, K.Es + 2.2, K.Es + 3.6)} />
         </>)}
       </Escena>
       {/* 3 · rayas rojas con comezón en torso, brazos o piernas */}
       <Escena T={T} a={K.R} b={K.L} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Cuerpo T={T} x={400} y={960} s={0.8} p={kprog(T, K.R + 0.2, K.R + 3.0)} rasca={kprog(T, K.R + 1.2, K.R + 1.6)} />)}
+        {fsvg(<Cuerpo T={T} x={500} y={1100} s={1.15} p={kprog(T, K.R + 0.2, K.R + 3.0)} rasca={kprog(T, K.R + 1.2, K.R + 1.6)} />)}
       </Escena>
       {/* 4 · micro: la pared de la hifa del shiitake y el lentinano */}
       <Escena T={T} a={K.L} b={K.P} zoom={0.12}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
-        {fsvg(<>
+        {fsvg(<Zg k={1.2} cx={540} cy={800}>
           <Hifa T={T} y={1010} />
           {[[240, 700, -86], [540, 680, -94], [840, 700, -88]].map(([hx, hy, r], i) => { const on = kprog(T, K.L + 1.2 + i * 0.35, K.L + 2.0 + i * 0.35, kEase.sale);
             return on > 0 ? <g key={i} opacity={on}><Helice T={T} x={hx} y={hy + (1 - on) * 120} largo={380} s={0.85} rot={r} fase={i} n={11} /></g> : null; })}
-        </>)}
+        </Zg>)}
       </Escena>
       {/* 5 · re-gancho: ¿por qué hace rayas? */}
       <Escena T={T} a={K.P} b={K.H} zoom={0.1}>
@@ -255,7 +258,7 @@ function ShiitakeShot() {
       {/* 7 · pasa con crudo o poco cocido; el calor fuerte separa la triple hélice */}
       <Escena T={T} a={K.Ca} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<Zg k={1.15} cx={560} cy={950} tx={520} ty={960}>
           {T < mitadCa + 0.3 && <g opacity={1 - kprog(T, mitadCa - 0.2, mitadCa + 0.3)}>
             <Shiitake x={300} y={1080} s={1.2} crece={kprog(T, K.Ca, K.Ca + 0.6)} />
             <Shiitake x={720} y={1080} s={1.2} crece={kprog(T, K.Ca + 0.4, K.Ca + 1.0)} cocido={0.35} />
@@ -263,32 +266,32 @@ function ShiitakeShot() {
           {T > mitadCa - 0.3 && <g opacity={kprog(T, mitadCa - 0.3, mitadCa + 0.2)}>
             <Sarten T={T} x={420} y={1100} s={1.0} />
             <Helice T={T} x={420} y={830} largo={560} s={1.0} sep={sep} n={15} />
-            <Termometro x={930} y={1080} valor={temp} />
+            <Termometro x={900} y={1080} valor={temp} />
           </g>}
-        </>)}
+        </Zg>)}
       </Escena>
       {/* 8 · el estudio: Francia, 2014–2019, 59 casos de 125 expuestos (cuadrícula esquemática) */}
       <Escena T={T} a={K.E} b={K.D} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>{Array.from({ length: 125 }, (_, i) => { const on = kprog(T, K.E + 1.8 + i * 0.012, K.E + 2.1 + i * 0.012, kEase.rebote); if (on <= 0) return null;
-          const caso = i < 59 && T > K.E + 2.6 + i * 0.012; return <circle key={i} cx={130 + (i % 25) * 34.5} cy={860 + Math.floor(i / 25) * 50} r={13 * on} fill={caso ? SH.raya : '#ffffff'} stroke={KC.ink} strokeWidth={4} />; })}</>)}
+        {fsvg(<>{Array.from({ length: 125 }, (_, i) => { const on = kprog(T, K.E + 0.3 + i * 0.012, K.E + 0.6 + i * 0.012, kEase.rebote); if (on <= 0) return null;
+          const caso = i < 59 && T > K.E + 2.6 + i * 0.012; return <Persona key={i} x={78 + (i % 15) * 66} y={700 + Math.floor(i / 15) * 94} s={0.5 * on} color={caso ? KC.orange : '#8fb6ff'} rayas={caso ? 1 : 0} />; })}</>)}
       </Escena>
       {/* 9 · todos se recuperaron; entre más comieron, más días les duró (medianas 4, 7, 15) */}
       <Escena T={T} a={K.D} b={K.Ce} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>{DIAS.map((d, i) => { const on = kprog(T, dosisT(i), dosisT(i) + 0.5, kEase.sale), y = 700 + i * 170;
-          return <g key={i} opacity={kprog(T, dosisT(i) - 0.2, dosisT(i))}>
-            <Platito x={150} y={y + 20} n={[1, 3, 6][i]} s={0.9} />
-            <rect x={270} y={y - 30} width={40 * d * on} height={60} rx={14} fill={SH.raya} stroke={KC.ink} strokeWidth={6} />
-            <text x={290 + 40 * d * on} y={y + 14} style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink}>{on > 0.9 ? `${d} días` : ''}</text>
+        {fsvg(<>{DIAS.map((d, i) => { const on = kprog(T, dosisT(i), dosisT(i) + 0.5, kEase.sale), y = 680 + i * 260;
+          return <g key={i} opacity={klerp(0.35, 1, kprog(T, dosisT(i) - 0.2, dosisT(i)))}>
+            <Platito x={200} y={y + 30} n={[1, 3, 6][i]} s={1.3} />
+            <rect x={360} y={y - 40} width={30 * d * on} height={80} rx={18} fill={SH.raya} stroke={KC.ink} strokeWidth={6} />
+            <text x={380 + 30 * d * on} y={y + 20} style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink}>{on > 0.9 ? `${d} días` : ''}</text>
           </g>; })}
-                    <text x={270} y={630} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>días con rayas (mediana)</text>
+                    <text x={360} y={540} style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>días con rayas (mediana)</text>
         </>)}
       </Escena>
       {/* 10 · comidas compartidas: los que lo prefirieron cocido, sin nada */}
       <Escena T={T} a={K.Ce} b={K.S} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<Zg k={1.15} cx={540} cy={1000} ty={960}>
           <rect x={60} y={1010} width={960} height={50} rx={18} fill="#b07a45" stroke={KC.ink} strokeWidth={8} />
           <rect x={120} y={1060} width={30} height={160} fill="#8a5a2e" stroke={KC.ink} strokeWidth={6} /><rect x={930} y={1060} width={30} height={160} fill="#8a5a2e" stroke={KC.ink} strokeWidth={6} />
           {[0, 1, 2, 3].map((i) => { const crudo = i === 0, on = kprog(T, K.Ce + 0.2 + i * 0.25, K.Ce + 0.6 + i * 0.25, kEase.rebote);
@@ -296,41 +299,41 @@ function ShiitakeShot() {
               <Persona x={180 + i * 240} y={930} s={1.25} color={crudo ? KC.orange : '#8fb6ff'} rayas={crudo ? kprog(T, K.Ce + 1.2, K.Ce + 2.0) : 0} feliz={!crudo && T > K.Ce + 2.2 ? 1 : 0} />
               <Platito x={180 + i * 240} y={1000} n={2} s={0.75} cocido={crudo ? 0 : 1} />
             </g>; })}
-        </>)}
+        </Zg>)}
       </Escena>
       {/* 11 · lo que sí sirve: cocinarlo bien */}
       <Escena T={T} a={K.S} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<Sarten T={T} x={440} y={1060} s={1.05}>
+        {fsvg(<Zg k={1.2} cx={470} cy={1000} tx={520} ty={980}><Sarten T={T} x={440} y={1060} s={1.05}>
           {[-150, -30, 100].map((dx, i) => <Rebanada key={i} x={dx} y={-62 + Math.sin(T * 6 + i) * 4} s={1.0} rot={(i - 1) * 10} cocido={kprog(T, K.S + 0.2, K.S + 2.2)} />)}
           {Array.from({ length: 4 }, (_, i) => { const u = (T * 0.7 + i / 4) % 1; return <path key={i} d={`M ${-120 + i * 80} ${-110 - u * 220} q 20 -26 0 -52 q -20 -26 0 -52`} stroke="#fff" strokeWidth={12} fill="none" strokeLinecap="round" opacity={(1 - u) * 0.7} />; })}
-        </Sarten>)}
+        </Sarten></Zg>)}
       </Escena>
       {/* 12 · cierre: el mismo plato y el mismo tenedor, ahora con shiitake bien cocido; el brazo ya sin rayas */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<Zg k={1.25} cx={470} cy={800}>
           <Plato T={T} x={470} y={1010} s={1.15} cocido={1} vapor={1} />
           <Tenedor x={640} y={900} rot={24} s={1.1} />
           <Brazo T={T} x={330} y={560} s={0.95} rayas={1 - kprog(T, K.C + 0.3, K.C + 1.6)} />
-        </>)}
+        </Zg>)}
       </Escena>
 
       {/* textos */}
       <Chip T={T} at={K.G + 3.4} until={K.N - 0.3} texto="¿crudo?" x={260} y={400} tam={44} borde={KC.red} />
-      <Etq T={T} at={K.N + 0.9} until={K.Es - 0.3} x={560} y={720} texto="shiitake" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.N + 1.2} until={K.Es - 0.3} x={560} y={775} texto="Lentinula edodes" it tam={36} color={KC.ink} />
-      <Chip T={T} at={K.N + 2.6} until={K.Es - 0.3} texto="dermatitis flagelada" x={340} y={400} tam={48} borde={KC.red} />
-      <Chip T={T} at={K.N + 3.0} until={K.Es - 0.3} texto="flagelo = látigo · es raro" x={340} y={500} tam={32} borde={KC.ink} />
-      <Cronometro T={T} at={K.Es + 0.1} until={K.R - 0.3} factor={168 * 3600 / 3.1} etiqueta="DESPUÉS DE COMER" x={420} y={560} />
-      <Chip T={T} at={K.Es + 1.0} until={K.R - 0.3} texto="de 1 hora a 7 días" x={420} y={700} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.R + 0.8} until={K.L - 0.3} x={540} y={680} texto="torso" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.R + 1.4} until={K.L - 0.3} x={600} y={860} texto="brazos" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.R + 2.0} until={K.L - 0.3} x={500} y={1110} texto="piernas" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.R + 1.2} until={K.L - 0.3} texto="mucha comezón" x={330} y={400} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.L + 0.5} until={K.P - 0.3} x={60} y={1050} texto="hifa del shiitake" tam={30} />
-      <Etq T={T} at={K.L + 0.9} until={K.P - 0.3} x={60} y={855} texto="pared celular" tam={30} color={KC.white} />
-      <Etq T={T} at={K.L + 2.0} until={K.P - 0.3} x={60} y={425} texto="lentinano (β-glucano)" tam={34} color={KC.yellow} />
+      <Etq T={T} at={K.N + 0.9} until={K.Es - 0.3} x={660} y={880} texto="shiitake" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.2} until={K.Es - 0.3} x={660} y={930} texto="Lentinula edodes" it tam={32} color={KC.ink} />
+      <Chip T={T} at={K.N + 2.6} until={K.Es - 0.3} texto="dermatitis flagelada" x={540} y={320} tam={48} borde={KC.red} />
+      <Chip T={T} at={K.N + 3.0} until={K.Es - 0.3} texto="flagelo = látigo · es raro" x={540} y={410} tam={32} borde={KC.ink} />
+      <Cronometro T={T} at={K.Es + 0.1} until={K.R - 0.3} factor={168 * 3600 / 3.1} etiqueta="DESPUÉS DE COMER" x={540} y={480} />
+      <Chip T={T} at={K.Es + 1.0} until={K.R - 0.3} texto="de 1 hora a 7 días" x={540} y={640} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.R + 0.8} until={K.L - 0.3} x={701} y={697} texto="torso" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.R + 1.4} until={K.L - 0.3} x={787} y={956} texto="brazos" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.R + 2.0} until={K.L - 0.3} x={644} y={1316} texto="piernas" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.R + 1.2} until={K.L - 0.3} texto="mucha comezón" x={300} y={300} tam={36} borde={KC.red} />
+      <Etq T={T} at={K.L + 0.5} until={K.P - 0.3} x={60} y={1200} texto="hifa del shiitake" tam={30} />
+      <Etq T={T} at={K.L + 0.9} until={K.P - 0.3} x={60} y={966} texto="pared celular" tam={30} color={KC.white} />
+      <Etq T={T} at={K.L + 2.0} until={K.P - 0.3} x={60} y={450} texto="lentinano (β-glucano)" tam={34} color={KC.yellow} />
       <Chip T={T} at={K.L + 2.6} until={K.P - 0.3} texto="se cree que es el culpable" x={540} y={340} tam={34} borde={KC.yellow} />
       <Chip T={T} at={K.L + 2.0} until={K.P - 0.3} texto="moléculas agrandadas" x={720} y={1450} tam={26} borde={KC.ink} mono />
       <Chip T={T} at={K.H + 0.4} until={K.H + 3.2} texto="hipótesis 1: inflamación" x={360} y={360} tam={34} borde={KC.yellow} />
@@ -338,31 +341,31 @@ function ShiitakeShot() {
       <Etq T={T} at={K.H + 0.3} until={K.Ca - 0.3} x={60} y={680} texto="piel (corte)" tam={30} color={KC.ink} />
       <Chip T={T} at={K.H + 3.4} until={K.Ca - 0.3} texto="hipótesis 2: alergia retardada" x={370} y={360} tam={32} borde={KC.lilac} />
       <Etq T={T} at={K.H + 3.8} until={K.Ca - 0.3} x={640} y={800} texto="linfocito T" lado="izq" tam={30} color={KC.white} />
-      <Chip T={T} at={K.Ca + 0.6} until={mitadCa - 0.2} texto="crudo" x={300} y={760} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Ca + 1.0} until={mitadCa - 0.2} texto="poco cocido" x={720} y={760} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Ca + 0.6} until={mitadCa - 0.2} texto="crudo" x={221} y={680} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Ca + 1.0} until={mitadCa - 0.2} texto="poco cocido" x={704} y={680} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Ca + 1.4} until={mitadCa - 0.2} texto="✓ aquí pasa" x={420} y={460} tam={40} borde={KC.ink} />
       <Chip T={T} at={mitadCa + 1.6} until={K.E - 0.3} texto="~140 °C: la hélice se separa" x={390} y={460} tam={36} borde={KC.yellow} />
       <Etq T={T} at={mitadCa + 0.4} until={K.E - 0.3} x={60} y={660} texto="lentinano (molécula agrandada)" tam={28} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.D - 0.3} anio="2014–2019" quien="Francia · centros de toxicología" revista="Boels et al., Clin Toxicol, 2022" y={470} />
-      <Chip T={T} at={K.E + 2.6} until={K.D - 0.3} texto="59 casos de dermatitis · de 125 expuestos" x={540} y={770} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.E + 2.0} until={K.D - 0.3} texto="esquemático" x={540} y={1120} tam={24} borde={KC.ink} mono />
-      <Chip T={T} at={K.D + 2.4} until={K.Ce - 0.3} texto="✓ todos se recuperaron" x={420} y={460} tam={38} borde={KC.leaf} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.D - 0.3} anio="2014–2019" quien="Francia · centros de toxicología" revista="Boels et al., Clin Toxicol, 2022" y={330} />
+      <Chip T={T} at={K.E + 2.6} until={K.D - 0.3} texto="59 casos de dermatitis · de 125 expuestos" x={540} y={540} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.E + 2.0} until={K.D - 0.3} texto="esquemático" x={540} y={1480} tam={24} borde={KC.ink} mono />
+      <Chip T={T} at={K.D + 2.4} until={K.Ce - 0.3} texto="✓ todos se recuperaron" x={540} y={380} tam={38} borde={KC.leaf} />
       <Chip T={T} at={K.Ce + 0.4} until={K.S - 0.3} texto="Boels et al., 2014" x={380} y={560} tam={30} borde={KC.ink} mono />
-      <Etq T={T} at={K.Ce + 1.0} until={K.S - 0.3} x={110} y={700} texto="crudo" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ce + 1.6} until={K.S - 0.3} x={540} y={700} texto="cocido: nada" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ce + 1.0} until={K.S - 0.3} x={60} y={650} texto="crudo" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ce + 1.6} until={K.S - 0.3} x={400} y={650} texto="cocido: nada" tam={34} color={KC.ink} />
       <Chip T={T} at={K.S + 0.5} until={K.C - 0.2} texto="✓ bien cocido" x={400} y={460} tam={40} borde={KC.leaf} />
       <Chip T={T} at={K.S + 1.4} until={K.C - 0.2} texto="¿rayas raras? al médico" x={390} y={570} tam={34} borde={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={150} />
-      <BarraEscala T={T} at={K.N} until={K.Es} texto="5 cm" largo={190} />
-      <BarraEscala T={T} at={K.R} until={K.L} texto="50 cm" largo={170} />
-      <BarraEscala T={T} at={K.L} until={K.P} texto="10 µm" largo={160} />
+      <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={150 * 1.25} />
+      <BarraEscala T={T} at={K.N} until={K.Es} texto="5 cm" largo={190 * 2.2 / 1.5} />
+      <BarraEscala T={T} at={K.R} until={K.L} texto="50 cm" largo={170 * 1.15 / 0.8} />
+      <BarraEscala T={T} at={K.L} until={K.P} texto="10 µm" largo={160 * 1.2} />
       <BarraEscala T={T} at={K.P} until={K.H} texto="5 cm" largo={180} />
       <BarraEscala T={T} at={K.H} until={K.Ca} texto="100 µm" largo={170} />
-      <BarraEscala T={T} at={K.Ca} until={K.E} texto="10 cm" largo={170} />
-      <BarraEscala T={T} at={K.S} until={K.C} texto="10 cm" largo={170} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={150} />
+      <BarraEscala T={T} at={K.Ca} until={K.E} texto="10 cm" largo={170 * 1.15} />
+      <BarraEscala T={T} at={K.S} until={K.C} texto="10 cm" largo={170 * 1.2} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={150 * 1.25} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="¿Shiitake crudo? *Piel a latigazos.*" />

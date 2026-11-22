@@ -136,6 +136,8 @@ const OREJA = [CH.x - 75 * CH.s, CH.y + 10 * CH.s];
 function CaracolMar() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
+  // pase a mano (cine): reencuadre de una escena; el punto (x0, y0) del dibujo viejo pasa a (X, Y) y todo crece k veces.
+  const zg = (x0, y0, k, X, Y) => `translate(${X} ${Y}) scale(${k}) translate(${-x0} ${-y0})`;
   const late = (t) => Math.pow(Math.max(0, Math.sin(t * Math.PI * 2 * 1.1)), 8);   // latido (también en gen-audio)
   const iconos = (t0, sale) => [[Refri, 170, 800, 0.38, t0], [Globo, 230, 640, 0.75, t0 + 0.3], [Coche, 430, 760, 0.55, t0 + 0.6]].map(([C, x, y, s, t], i) => {
     const e = kprog(T, t, t + 0.4, kEase.rebote), m = sale ? kprog(T, t + 0.6, t + 2.2, kEase.suave) : 0;
@@ -146,7 +148,7 @@ function CaracolMar() {
       {/* 0 · gancho: el caracol en la oreja; salen olas… y se tachan: es el ruido del lugar */}
       <Escena T={T} a={K.Gancho} b={K.Ruido}>
         <FondoLunares color={KC.pink} />
-        <Lienzo>
+        <Lienzo><g transform={zg(465, 1000, 1.25, 540, 1010)}>
           <CabezaPerfil x={CH.x} y={CH.y} s={CH.s} />
           {T < K.Gancho + 3.0 && Array.from({ length: 4 }, (_, i) => { const f = ((T - K.Gancho) * 0.45 + i / 4) % 1;
             return <OlaMar key={i} x={OREJA[0] - 260 - f * 160 + i * 20} y={OREJA[1] - 170 - f * 280} s={0.7 + f * 0.4} o={(1 - f) * (1 - kprog(T, K.Gancho + 2.4, K.Gancho + 3.0))} />; })}
@@ -157,18 +159,18 @@ function CaracolMar() {
           {iconos(K.Gancho + 2.9, true)}
           <Caracol x={OREJA[0] + 6} y={OREJA[1] - 6} s={1.05} rot={-12 + Math.sin(T * 2.4) * 3} brillo={kprog(T, K.Gancho + 4.3, K.Gancho + 4.7)} />
           {T > K.Gancho + 4.2 && [0, 1, 2].map((i) => { const f = ((T * 0.9 + i / 3) % 1); return <circle key={i} cx={OREJA[0] - 140} cy={OREJA[1] - 30} r={30 + f * 150} fill="none" stroke={KC.yellow} strokeWidth={9} opacity={(1 - f) * kprog(T, K.Gancho + 4.2, K.Gancho + 4.6)} />; })}
-          <TextoSvg x={320} y={480} tam={110} color={KC.yellow} rot={-5} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.05, K.Gancho + 0.45, kEase.rebote))} o={1 - kprog(T, K.Gancho + 2.8, K.Gancho + 3.1)}>¿EL MAR?</TextoSvg>
-          {T > K.Gancho + 2.1 && <line x1={110} y1={445} x2={klerp(110, 540, kprog(T, K.Gancho + 2.1, K.Gancho + 2.35))} y2={klerp(445, 420, kprog(T, K.Gancho + 2.1, K.Gancho + 2.35))} stroke={KC.red} strokeWidth={22} strokeLinecap="round" opacity={1 - kprog(T, K.Gancho + 2.8, K.Gancho + 3.1)} />}
-          <TextoSvg x={320} y={480} tam={92} color={KC.texto} rot={-5} s={klerp(0.5, 1, kprog(T, K.Gancho + 2.9, K.Gancho + 3.3, kEase.rebote))} o={kprog(T, K.Gancho + 2.9, K.Gancho + 3.1)}>¡ES TU RUIDO!</TextoSvg>
-        </Lienzo>
-        <Etq T={T} at={K.Gancho + 4.3} until={K.Ruido - 0.2} x={OREJA[0] - 170} y={OREJA[1] + 170} texto="rebota adentro" lado="der" color={KC.texto} />
+          <TextoSvg x={400} y={480} tam={110} color={KC.yellow} rot={-5} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.05, K.Gancho + 0.45, kEase.rebote))} o={1 - kprog(T, K.Gancho + 2.8, K.Gancho + 3.1)}>¿EL MAR?</TextoSvg>
+          {T > K.Gancho + 2.1 && <line x1={190} y1={445} x2={klerp(190, 620, kprog(T, K.Gancho + 2.1, K.Gancho + 2.35))} y2={klerp(445, 420, kprog(T, K.Gancho + 2.1, K.Gancho + 2.35))} stroke={KC.red} strokeWidth={22} strokeLinecap="round" opacity={1 - kprog(T, K.Gancho + 2.8, K.Gancho + 3.1)} />}
+          <TextoSvg x={400} y={480} tam={92} color={KC.texto} rot={-5} s={klerp(0.5, 1, kprog(T, K.Gancho + 2.9, K.Gancho + 3.3, kEase.rebote))} o={kprog(T, K.Gancho + 2.9, K.Gancho + 3.1)}>¡ES TU RUIDO!</TextoSvg>
+        </g></Lienzo>
+        <Etq T={T} at={K.Gancho + 4.3} until={K.Ruido - 0.2} x={319} y={1263} texto="rebota adentro" lado="der" color={KC.texto} />
       </Escena>
 
       {/* 1 · el ruido de siempre: voces, refri, viento, coches */}
       <Escena T={T} a={K.Ruido} b={K.Cavidad}>
         <FondoLunares color={KC.yellow} />
-        <Lienzo>
-          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#75593b" stroke={KC.ink} strokeWidth={9} />
+        <Lienzo><g transform={zg(545, 820, 1.15, 540, 980)}>
+          <rect x={-100} y={1150} width={KW + 200} height={KH - 1150} fill="#3b2d1f" stroke={KC.ink} strokeWidth={9} />
           <defs><clipPath id="caVentana"><rect x={630} y={420} width={380} height={300} /></clipPath></defs>
           <rect x={630} y={420} width={380} height={300} fill="#9fe3ff" />
           <g clipPath="url(#caVentana)">
@@ -190,30 +192,30 @@ function CaracolMar() {
           <OndasArco x={520} y={780} ang={0} T={T * 0.9} color={KC.pink} largo={200} o={0.4 + 0.6 * kprog(T, K.Ruido + 3.2, K.Ruido + 3.5)} />
           <OndasArco x={780} y={725} ang={95} T={T * 1.1} color="#ffffff" largo={60} n={3} o={0.4 + 0.6 * kprog(T, K.Ruido + 4.7, K.Ruido + 5.0)} />
           <OndasArco x={920} y={725} ang={110} T={T * 1.2} color={KC.orange} largo={90} n={3} o={0.4 + 0.6 * kprog(T, K.Ruido + 5.4, K.Ruido + 5.7)} />
-        </Lienzo>
-        <Chip T={T} at={K.Ruido + 1.6} until={K.Cavidad - 0.2} texto="aunque no lo notes" x={330} y={470} tam={40} borde={KC.ink} />
-        <Etq T={T} at={K.Ruido + 3.2} until={K.Cavidad - 0.2} x={520} y={650} texto="voces" lado="izq" color={KC.ink} />
-        <Etq T={T} at={K.Ruido + 4.1} until={K.Cavidad - 0.2} x={180} y={1090} texto="refri" lado="der" color={KC.ink} />
-        <Etq T={T} at={K.Ruido + 4.7} until={K.Cavidad - 0.2} x={640} y={390} texto="viento" lado="der" color={KC.ink} />
-        <Etq T={T} at={K.Ruido + 5.4} until={K.Cavidad - 0.2} x={1010} y={770} texto="coches" lado="izq" color={KC.ink} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Ruido + 1.6} until={K.Cavidad - 0.2} texto="aunque no lo notes" x={300} y={600} tam={40} borde={KC.ink} />
+        <Etq T={T} at={K.Ruido + 3.2} until={K.Cavidad - 0.2} x={535} y={785} texto="voces" lado="izq" color={KC.ink} />
+        <Etq T={T} at={K.Ruido + 4.1} until={K.Cavidad - 0.2} x={126} y={1290} texto="refri" lado="der" color={KC.ink} />
+        <Etq T={T} at={K.Ruido + 4.7} until={K.Cavidad - 0.2} x={649} y={446} texto="viento" lado="der" color={KC.ink} />
+        <Etq T={T} at={K.Ruido + 5.4} until={K.Cavidad - 0.2} x={1074} y={922} texto="coches" lado="izq" color={KC.ink} />
       </Escena>
 
       {/* 2 · por dentro: el hueco curvo; los tonos rebotan y uno se refuerza */}
       <Escena T={T} a={K.Cavidad} b={K.Mar} fondo={KC.noche}>
         <Ambiente T={T} n={20} color="rgba(255,255,255,.14)" />
         <Lienzo>
-          {[0, 1, 2, 3].map((i) => <OndasArco key={i} x={1120} y={760 + i * 30} ang={180 + (i - 1.5) * 8} T={T * (0.8 + i * 0.15)} color={CA_SONIDOS[i]} largo={170} n={3} o={kprog(T, K.Cavidad + 0.2, K.Cavidad + 0.6)} />)}
-          <CaracolCorte x={530} y={800} s={2.2} T={T} ondas={kprog(T, K.Cavidad + 0.6, K.Cavidad + 1.2)} refuerzo={kprog(T, K.Cavidad + 2.8, K.Cavidad + 4.0, kEase.sale)} />
+          {[0, 1, 2, 3].map((i) => <OndasArco key={i} x={1120} y={920 + i * 30} ang={180 + (i - 1.5) * 8} T={T * (0.8 + i * 0.15)} color={CA_SONIDOS[i]} largo={170} n={3} o={kprog(T, K.Cavidad + 0.2, K.Cavidad + 0.6)} />)}
+          <CaracolCorte x={540} y={960} s={2.4} T={T} ondas={kprog(T, K.Cavidad + 0.6, K.Cavidad + 1.2)} refuerzo={kprog(T, K.Cavidad + 2.8, K.Cavidad + 4.0, kEase.sale)} />
         </Lienzo>
-        <Chip T={T} at={K.Cavidad + 0.2} until={K.Mar - 0.2} texto="POR DENTRO · LA CONCHA" x={540} y={440} tam={38} borde={KC.cyan} mono />
-        <Etq T={T} at={K.Cavidad + 1.0} until={K.Cavidad + 2.7} x={530 + 120 * 2.2 - 80} y={1090} texto="hueco curvo" lado="izq" color={KC.texto} />
-        <Chip T={T} at={K.Cavidad + 3.0} until={K.Mar - 0.2} texto="algunos tonos se refuerzan" x={520} y={1165} tam={40} borde={KC.gold2} />
+        <Chip T={T} at={K.Cavidad + 0.2} until={K.Mar - 0.2} texto="POR DENTRO · LA CONCHA" x={540} y={560} tam={38} borde={KC.cyan} mono />
+        <Etq T={T} at={K.Cavidad + 1.0} until={K.Cavidad + 2.7} x={540 + 120 * 2.4 - 80} y={1290} texto="hueco curvo" lado="izq" color={KC.texto} />
+        <Chip T={T} at={K.Cavidad + 3.0} until={K.Mar - 0.2} texto="algunos tonos se refuerzan" x={540} y={1360} tam={40} borde={KC.gold2} />
       </Escena>
 
       {/* 3 · el zumbido reforzado suena a olas */}
       <Escena T={T} a={K.Mar} b={K.Pregunta}>
         <FondoLunares color={KC.cyan} />
-        <Lienzo>
+        <Lienzo><g transform={zg(540, 900, 1.1, 540, 1050)}>
           <rect x={80} y={660} width={920} height={480} rx={34} fill="rgba(10,12,20,.82)" stroke={KC.ink} strokeWidth={8} />
           {(() => { const pk = kprog(T, K.Mar + 0.3, K.Mar + 1.6, kEase.sale), g = krng(4), pts = [], base = 1040;
             for (let i = 0; i <= 80; i++) { const xx = 130 + i * 10.25, u = i / 80, ruido = 40 + 26 * Math.abs(Math.sin(T * 6 + i * 1.7)) + g() * 20;
@@ -227,85 +229,92 @@ function CaracolMar() {
           <text x={980} y={720} textAnchor="end" style={{ font:`700 28px ${KF.mono}` }} fill="rgba(246,243,236,.7)">ruido dentro de la concha</text>
           {T > K.Mar + 3.0 && <MarFranja x0={0} x1={KW} y={600} T={T} bravo={0.2} alto={30 * kprog(T, K.Mar + 3.0, K.Mar + 3.6)} />}
           <Onomato T={T} at={K.Mar + 1.4} dur={1.3} x={300} y={560} texto="shhh…" color={KC.texto} tam={120} />
-        </Lienzo>
-        <Etq T={T} at={K.Mar + 1.0} until={K.Pregunta - 0.2} x={130 + 0.38 * 820 + 30} y={760} texto="reforzado" lado="der" color={KC.gold2} />
-        <Chip T={T} at={K.Mar + 3.0} until={K.Pregunta - 0.1} texto="suena a olas" x={540} y={440} tam={46} borde={CA_MAR} />
+        </g></Lienzo>
+        <Etq T={T} at={K.Mar + 1.0} until={K.Pregunta - 0.2} x={465} y={896} texto="reforzado" lado="der" color={KC.gold2} />
+        <Chip T={T} at={K.Mar + 3.0} until={K.Pregunta - 0.1} texto="suena a olas" x={540} y={600} tam={46} borde={CA_MAR} />
       </Escena>
 
       {/* 4 · pregunta */}
-      <EscenaPregunta T={T} a={K.Pregunta} b={K.Mito} />
+      {/* (pase a mano: el signo va más grande y centrado; detrás se queda la gráfica de la escena anterior) */}
+      <Escena T={T} a={K.Pregunta} b={K.Mito} zoom={0.1}>
+        <FondoLunares color={KC.lilac} />
+        <Lienzo><text x={540} y={1330} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={16}
+          transform={`rotate(${Math.sin(T * 3) * 6} 540 1080) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 720px ${KF.titulo}`, transformOrigin:'540px 1080px' }}>?</text></Lienzo>
+      </Escena>
 
       {/* 5 · lo que mucha gente cree: la sangre cerca del oído */}
       <Escena T={T} a={K.Mito} b={K.Sangre}>
         <FondoLunares color={KC.coral} />
-        <Lienzo>
+        <Lienzo><g transform={zg(600, 860, 1.15, 600, 1010)}>
           <CabezaPerfil x={600} y={860} s={1.2} />
           <path d="M 600 1120 C 600 1040 500 990 500 920 C 500 860 530 820 570 780" fill="none" stroke={KC.ink} strokeWidth={30} strokeLinecap="round" opacity={kprog(T, K.Mito + 0.4, K.Mito + 0.9)} />
           <path d="M 600 1120 C 600 1040 500 990 500 920 C 500 860 530 820 570 780" fill="none" stroke={KC.red} strokeWidth={20} strokeLinecap="round" strokeDasharray="16 14" strokeDashoffset={T * 60} opacity={kprog(T, K.Mito + 0.4, K.Mito + 0.9)} />
           <Caracol x={600 - 75 * 1.2 + 6} y={872 - 6} s={0.8} rot={-12} />
           <Corazon x={700} y={1150} s={0.7} late={late(T)} />
-        </Lienzo>
-        <Lupa T={T} at={K.Mito + 1.4} until={K.Sangre - 0.2} x={275} y={500} r={140} fx={505} fy={950} tinte={KC.red} etiqueta="POR DENTRO · SANGRE"
+        </g></Lienzo>
+        <Lupa T={T} at={K.Mito + 1.4} until={K.Sangre - 0.2} x={250} y={600} r={150} fx={491} fy={1114} tinte={KC.red} etiqueta="POR DENTRO · SANGRE"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a0c14" />
             <rect x={0} y={r - 70} width={r * 2} height={140} fill="#7a1726" />
             {Array.from({ length: 9 }, (_, i) => { const xx = ((t * 120 + i * 50) % (r * 2 + 80)) - 40, yy = r + Math.sin(i * 2.1) * 36;
               return <g key={i}><ellipse cx={xx} cy={yy} rx={30} ry={18} fill="#e8333f" stroke={KC.ink} strokeWidth={3} /><ellipse cx={xx} cy={yy} rx={14} ry={7} fill="#b31f2d" /></g>; })}</svg>} />
-        <Chip T={T} at={K.Mito + 3.4} until={K.Sangre + 2.4} texto="no es lo principal" x={760} y={450} tam={42} borde={KC.red} />
+        <Chip T={T} at={K.Mito + 3.4} until={K.Sangre + 2.4} texto="no es lo principal" x={780} y={520} tam={42} borde={KC.red} />
       </Escena>
 
       {/* 6 · la prueba de que no es la sangre: en un cuarto muy silencioso casi no suena */}
       <Escena T={T} a={K.Sangre} b={K.Vaso}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <Espuma x={0} y={300} w={KW} h={850} o={kprog(T, K.Sangre + 3.3, K.Sangre + 4.0)} />
-          <rect x={0} y={1150} width={KW} height={KH - 1150} fill={T > K.Sangre + 3.6 ? '#3a3552' : '#c7a2e8'} stroke={KC.ink} strokeWidth={9} />
-          {[0, 1, 2].map((i) => <OndasArco key={i} x={[100, 980, 540][i]} y={[700, 640, 380][i]} ang={[10, 170, 90][i]} T={T * (1 + i * 0.2)} color={CA_SONIDOS[i]} largo={200} n={3} o={1 - kprog(T, K.Sangre + 3.3, K.Sangre + 3.8)} />)}
+          <Espuma x={0} y={300} w={KW} h={1040} o={kprog(T, K.Sangre + 3.3, K.Sangre + 4.0)} />
+          <rect x={0} y={1339} width={KW} height={KH - 1339} fill={T > K.Sangre + 3.6 ? '#3a3552' : '#2e2740'} stroke={KC.ink} strokeWidth={9} />
+          {[0, 1, 2].map((i) => <OndasArco key={i} x={[100, 980, 540][i]} y={[880, 820, 560][i]} ang={[10, 170, 90][i]} T={T * (1 + i * 0.2)} color={CA_SONIDOS[i]} largo={200} n={3} o={1 - kprog(T, K.Sangre + 3.3, K.Sangre + 3.8)} />)}
+          <g transform={zg(540, 1210, 1.35, 540, 1420)}>
           <PersonaSimple x={540} yPies={1210} alto={520} color={KC.pink} />
           <Caracol x={609} y={758} s={0.4} voltea rot={8} />
           <Corazon x={540} y={960} s={0.45} late={late(T)} />
-          <Onomato T={T} at={K.Sangre + 5.0} dur={1.4} x={820} y={820} texto="shh…" color={KC.texto} tam={60} />
+          </g>
+          <Onomato T={T} at={K.Sangre + 5.0} dur={1.4} x={850} y={900} texto="shh…" color={KC.texto} tam={70} />
         </Lienzo>
         <Medidor T={T} at={K.Sangre + 3.6} until={K.Vaso - 0.2} valor={(t) => klerp(0.75, 0.08, kprog(t, K.Sangre + 4.0, K.Sangre + 5.6, kEase.sale))} etiqueta="sonido del caracol"
-          texto={(v) => (v > 0.4 ? 'fuerte' : 'casi nada')} x={60} y={560} ancho={590} color={KC.yellow} />
-        <Etq T={T} at={K.Sangre + 3.8} until={K.Vaso - 0.2} x={470} y={960} texto="la sangre sigue" lado="izq" color={KC.texto} />
+          texto={(v) => (v > 0.4 ? 'fuerte' : 'casi nada')} x={60} y={570} ancho={590} color={KC.yellow} />
+        <Etq T={T} at={K.Sangre + 3.8} until={K.Vaso - 0.2} x={470} y={1082} texto="la sangre sigue" lado="izq" color={KC.texto} />
         <Chip T={T} at={K.Sangre + 3.6} until={K.Vaso - 0.2} texto="cuarto muy silencioso" x={540} y={440} tam={40} borde={KC.lilac} />
       </Escena>
 
       {/* 7 · haz la prueba: vaso o mano ahuecada */}
       <Escena T={T} a={K.Vaso} b={K.Tamano}>
         <FondoLunares color={KC.orange} />
-        <Lienzo>
+        <Lienzo><g transform={zg(550, 860, 1.06, 545, 950)}>
           <CabezaPerfil x={300} y={860} s={0.85} />
           <CabezaPerfil x={800} y={860} s={0.85} />
           <g transform={`translate(${(1 - kprog(T, K.Vaso + 0.6, K.Vaso + 1.1, kEase.rebote)) * -400} 0)`}><VasoOreja x={300 - 64 + 8} y={868} s={0.85} rot={-6} /></g>
           <g transform={`translate(0 ${(1 - kprog(T, K.Vaso + 1.6, K.Vaso + 2.1, kEase.rebote)) * 700})`}><ManoCopa x={800 - 64 + 30} y={866} s={0.85} /></g>
           {[[150, 640], [640, 640]].map(([x, y], i) => [0, 1, 2].map((k) => { const f = ((T - K.Vaso) * 0.5 + k / 3) % 1;
             return <OlaMar key={i + '-' + k} x={x - f * 40 + k * 10} y={y - f * 150} s={0.5 + f * 0.2} o={(1 - f) * kprog(T, K.Vaso + 3.0, K.Vaso + 3.4)} />; }))}
-        </Lienzo>
-        <Chip T={T} at={K.Vaso + 0.3} until={K.Tamano - 0.2} texto="haz la prueba" x={380} y={440} tam={46} borde={KC.yellow} />
-        <Etq T={T} at={K.Vaso + 1.1} until={K.Tamano - 0.2} x={250} y={1110} texto="vaso" lado="izq" color={KC.ink} />
-        <Etq T={T} at={K.Vaso + 2.1} until={K.Tamano - 0.2} x={700} y={1110} texto="mano ahuecada" lado="izq" color={KC.ink} />
-        <Chip T={T} at={K.Vaso + 3.2} until={K.Tamano - 0.2} texto="tu propio mar" x={790} y={540} tam={40} borde={CA_MAR} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Vaso + 0.3} until={K.Tamano - 0.2} texto="haz la prueba" x={380} y={520} tam={46} borde={KC.yellow} />
+        <Etq T={T} at={K.Vaso + 1.1} until={K.Tamano - 0.2} x={270} y={1220} texto="vaso" lado="izq" color={KC.ink} />
+        <Etq T={T} at={K.Vaso + 2.1} until={K.Tamano - 0.2} x={714} y={1220} texto="mano ahuecada" lado="izq" color={KC.ink} />
+        <Chip T={T} at={K.Vaso + 3.2} until={K.Tamano - 0.2} texto="tu propio mar" x={820} y={600} tam={40} borde={CA_MAR} />
       </Escena>
 
       {/* 8 · el tamaño: hueco grande → tonos graves; chico → agudos (esquemático) */}
       <Escena T={T} a={K.Tamano} b={K.Lugar}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <g transform={`scale(${1})`}><Caracol x={540} y={640} s={klerp(0.3, 1.25, kprog(T, K.Tamano + 0.2, K.Tamano + 0.7, kEase.rebote))} rot={0} /></g>
-          <Tono x0={640} x1={1040} y={650} amp={80} lam={320} T={T} vel={140} color={KC.blue} p={kprog(T, K.Tamano + 1.5, K.Tamano + 2.4, kEase.sale)} />
-          {T > K.Tamano + 3.6 && <Caracol x={420} y={1040} s={klerp(0.2, 0.55, kprog(T, K.Tamano + 3.6, K.Tamano + 4.0, kEase.rebote))} />}
-          <Tono x0={500} x1={1040} y={1045} amp={40} lam={60} T={T} vel={140} color={KC.pink} p={kprog(T, K.Tamano + 3.9, K.Tamano + 4.6, kEase.sale)} />
+          <g transform={`scale(${1})`}><Caracol x={560} y={880} s={klerp(0.3, 1.5, kprog(T, K.Tamano + 0.2, K.Tamano + 0.7, kEase.rebote))} rot={0} /></g>
+          <Tono x0={690} x1={1050} y={890} amp={96} lam={320} T={T} vel={140} color={KC.blue} p={kprog(T, K.Tamano + 1.5, K.Tamano + 2.4, kEase.sale)} />
+          {T > K.Tamano + 3.6 && <Caracol x={440} y={1310} s={klerp(0.2, 0.66, kprog(T, K.Tamano + 3.6, K.Tamano + 4.0, kEase.rebote))} />}
+          <Tono x0={530} x1={1050} y={1315} amp={48} lam={60} T={T} vel={140} color={KC.pink} p={kprog(T, K.Tamano + 3.9, K.Tamano + 4.6, kEase.sale)} />
         </Lienzo>
-        <Chip T={T} at={K.Tamano + 0.3} until={K.Lugar - 0.2} texto="cambia con el tamaño" x={540} y={440} tam={42} borde={KC.ink} />
-        <Etq T={T} at={K.Tamano + 2.0} until={K.Lugar - 0.2} x={300} y={830} texto="hueco grande → más grave" lado="der" color={KC.ink} />
-        <Etq T={T} at={K.Tamano + 4.2} until={K.Lugar - 0.2} x={200} y={1150} texto="hueco chico → más agudo" lado="der" color={KC.ink} />
+        <Chip T={T} at={K.Tamano + 0.3} until={K.Lugar - 0.2} texto="cambia con el tamaño" x={540} y={600} tam={42} borde={KC.ink} />
+        <Etq T={T} at={K.Tamano + 2.0} until={K.Lugar - 0.2} x={300} y={1130} texto="hueco grande → más grave" lado="der" color={KC.ink} />
+        <Etq T={T} at={K.Tamano + 4.2} until={K.Lugar - 0.2} x={200} y={1440} texto="hueco chico → más agudo" lado="der" color={KC.ink} />
       </Escena>
 
       {/* 9 · el lugar: calle con tráfico (mar bravo) contra recámara (mar tranquilo) */}
       <Escena T={T} a={K.Lugar} b={K.Cierre}>
         <FondoLunares color={KC.orange} />
-        <Lienzo>
+        <Lienzo><g transform="translate(0 160)">
           <rect x={0} y={810} width={KW} height={430} fill={cineMix(KC.mint, CINE.fondo, 0.55)} />
           <line x1={0} y1={810} x2={KW} y2={810} stroke={KC.ink} strokeWidth={10} />
           {[[60, 160, 300], [240, 130, 380], [400, 170, 260], [600, 150, 340]].map(([x, w, h], i) => <g key={i}><rect x={x} y={700 - h} width={w} height={h} fill={['#7d6bb5', '#5b8fd6', '#c96b8b', '#6b9b7d'][i]} stroke={KC.ink} strokeWidth={7} />
@@ -321,25 +330,25 @@ function CaracolMar() {
             <g clipPath="url(#caMar1)" opacity={kprog(T, K.Lugar + 3.0, K.Lugar + 3.4)}><MarFranja x0={-140} x1={140} y={20} T={T} bravo={1} alto={60} /></g></g>
           <g transform="translate(900 920)"><circle r={110} fill="#bfe8ff" stroke={KC.ink} strokeWidth={9} opacity={kprog(T, K.Lugar + 4.4, K.Lugar + 4.8)} />
             <g clipPath="url(#caMar2)" opacity={kprog(T, K.Lugar + 4.4, K.Lugar + 4.8)}><MarFranja x0={-120} x1={120} y={30} T={T} bravo={0} alto={22} /></g></g>
-        </Lienzo>
-        <Chip T={T} at={K.Lugar + 1.6} until={K.Cierre - 0.2} texto="calle con tráfico" x={330} y={290 + 160} tam={40} borde={KC.ink} />
-        <Etq T={T} at={K.Lugar + 3.2} until={K.Cierre - 0.2} x={990} y={610} texto="mar bravo" lado="izq" color={KC.texto} />
-        <Chip T={T} at={K.Lugar + 4.4} until={K.Cierre - 0.2} texto="tu recámara" x={330} y={880} tam={40} borde={KC.ink} />
-        <Etq T={T} at={K.Lugar + 4.6} until={K.Cierre - 0.2} x={790} y={1060} texto="mar tranquilo" lado="izq" color={KC.ink} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Lugar + 1.6} until={K.Cierre - 0.2} texto="calle con tráfico" x={330} y={290 + 160 + 160} tam={40} borde={KC.ink} />
+        <Etq T={T} at={K.Lugar + 3.2} until={K.Cierre - 0.2} x={990} y={770} texto="mar bravo" lado="izq" color={KC.texto} />
+        <Chip T={T} at={K.Lugar + 4.4} until={K.Cierre - 0.2} texto="tu recámara" x={330} y={1040} tam={40} borde={KC.ink} />
+        <Etq T={T} at={K.Lugar + 4.6} until={K.Cierre - 0.2} x={790} y={1220} texto="mar tranquilo" lado="izq" color={KC.ink} />
       </Escena>
 
       {/* 10 · cierre: la misma oreja del inicio; ahora se ve que es el ruido del cuarto, con eco */}
       <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.pink} />
-        <Lienzo>
+        <Lienzo><g transform={zg(465, 1000, 1.25, 540, 1010)}>
           <CabezaPerfil x={CH.x} y={CH.y} s={CH.s} gesto="sonrie" />
           {iconos(K.Cierre + 0.3, true)}
           <Caracol x={OREJA[0] + 6} y={OREJA[1] - 6} s={1.05} rot={-12 + Math.sin(T * 2.4) * 3} brillo={kprog(T, K.Cierre + 1.8, K.Cierre + 2.4)} />
           {T > K.Cierre + 1.8 && [0, 1, 2].map((i) => { const f = ((T * 0.9 + i / 3) % 1); return <circle key={i} cx={OREJA[0] - 140} cy={OREJA[1] - 30} r={30 + f * 150} fill="none" stroke={KC.yellow} strokeWidth={9} opacity={(1 - f) * kprog(T, K.Cierre + 1.8, K.Cierre + 2.2)} />; })}
           {T > K.Cierre + 3.6 && Array.from({ length: 4 }, (_, i) => { const f = ((T - K.Cierre) * 0.4 + i / 4) % 1;
             return <OlaMar key={i} x={OREJA[0] - 260 - f * 160 + i * 20} y={OREJA[1] - 170 - f * 280} s={0.7 + f * 0.4} o={(1 - f) * kprog(T, K.Cierre + 3.6, K.Cierre + 4.0)} />; })}
-        </Lienzo>
-        <Chip T={T} at={K.Cierre + 1.8} until={K.Outro - 0.1} texto="tu cuarto + eco" x={320} y={460} tam={46} borde={KC.gold} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Cierre + 1.8} until={K.Outro - 0.1} texto="tu cuarto + eco" x={340} y={420} tam={46} borde={KC.gold} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Ruido - 0.1} texto="No es el mar: *es tu ruido.*" />

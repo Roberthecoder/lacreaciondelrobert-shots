@@ -124,10 +124,10 @@ function Sala({ T, aire = 0, abre = 0, macetas = 0, planta = true, cortina = fal
     mac.push(<Macetita key={k} x={klerp(xs, xe, (c + 0.5 + (f % 2) * 0.3) / cols)} y={klerp(S.by1 + 10, S.fy - 4, v)} s={klerp(0.42, 0.75, v)} />); }
   return <g>
     {/* paredes y piso */}
-    <path d={`M ${S.fx0} 560 L ${S.bx0} ${S.by0} L ${S.bx0} ${S.by1} L ${S.fx0} ${S.fy} Z`} fill="#f2d7a6" stroke={KC.ink} strokeWidth={7} />
-    <path d={`M ${S.fx1} 560 L ${S.bx1} ${S.by0} L ${S.bx1} ${S.by1} L ${S.fx1} ${S.fy} Z`} fill="#f2d7a6" stroke={KC.ink} strokeWidth={7} />
-    <rect x={S.bx0} y={S.by0} width={S.bx1 - S.bx0} height={S.by1 - S.by0} fill="#ffe7bd" stroke={KC.ink} strokeWidth={7} />
-    <path d={`M ${S.bx0} ${S.by1} L ${S.bx1} ${S.by1} L ${S.fx1} ${S.fy} L ${S.fx0} ${S.fy} Z`} fill="#c98e5a" stroke={KC.ink} strokeWidth={7} />
+    <path d={`M ${S.fx0} 560 L ${S.bx0} ${S.by0} L ${S.bx0} ${S.by1} L ${S.fx0} ${S.fy} Z`} fill={cineMix('#f2d7a6', '#0a0f1c', 0.4)} stroke={KC.ink} strokeWidth={7} />
+    <path d={`M ${S.fx1} 560 L ${S.bx1} ${S.by0} L ${S.bx1} ${S.by1} L ${S.fx1} ${S.fy} Z`} fill={cineMix('#f2d7a6', '#0a0f1c', 0.4)} stroke={KC.ink} strokeWidth={7} />
+    <rect x={S.bx0} y={S.by0} width={S.bx1 - S.bx0} height={S.by1 - S.by0} fill={cineMix('#ffe7bd', '#0a0f1c', 0.32)} stroke={KC.ink} strokeWidth={7} />
+    <path d={`M ${S.bx0} ${S.by1} L ${S.bx1} ${S.by1} L ${S.fx1} ${S.fy} L ${S.fx0} ${S.fy} Z`} fill={cineMix('#c98e5a', '#0a0f1c', 0.4)} stroke={KC.ink} strokeWidth={7} />
     {[0.3, 0.6].map((v) => <line key={v} x1={klerp(S.bx0, S.fx0, v)} y1={klerp(S.by1, S.fy, v)} x2={klerp(S.bx1, S.fx1, v)} y2={klerp(S.by1, S.fy, v)} stroke="#a8713f" strokeWidth={4} />)}
     {/* ventana del fondo */}
     <rect x={430} y={700} width={220} height={170} fill="#9fe3ff" stroke={KC.ink} strokeWidth={7} />
@@ -205,9 +205,9 @@ function PlantasShot() {
       <Escena T={T} a={K.G} b={K.M}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <g opacity={1 - g1} transform={`translate(${-g1 * 200} 0)`}><Planta T={T} x={330} y={1180} s={1.35} seed={2} /></g>
-          <g opacity={g1}>
-            <rect x={140} y={700} width={470} height={470} fill="#c98e5a" stroke={KC.ink} strokeWidth={8} />
+          <g opacity={1 - g1} transform={`translate(${-g1 * 200} 0)`}><Planta T={T} x={540} y={1320} s={1.9} seed={2} /></g>
+          <g opacity={g1} transform="translate(540 930) scale(1.6) translate(-375 -935)">
+            <rect x={140} y={700} width={470} height={470} fill={cineMix('#c98e5a', '#0a0f1c', 0.4)} stroke={KC.ink} strokeWidth={8} />
             {cuadro(Math.round(1000 * llen))}
             <line x1={140} y1={1196} x2={610} y2={1196} stroke={KC.ink} strokeWidth={5} /><text x={375} y={1236} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>1 m</text>
           </g></>)}
@@ -216,25 +216,27 @@ function PlantasShot() {
       <Escena T={T} a={K.M} b={K.Ca}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <g opacity={kprog(T, K.M + 2.4, K.M + 2.9)}><EdificioSellado x={270} y={1150} s={kprog(T, K.M + 2.4, K.M + 3.0, kEase.rebote) * 0.85} /></g>
-          <g opacity={kprog(T, K.M + 3.8, K.M + 4.3)}><BaseEspacial T={T} x={780} y={1150} s={0.9 * kprog(T, K.M + 3.8, K.M + 4.4, kEase.rebote)} /></g>
+          <g opacity={kprog(T, K.M, K.M + 0.3)}><EdificioSellado x={250} y={1300} s={kprog(T, K.M, K.M + 0.5, kEase.rebote) * 1.3} /></g>
+          <g opacity={kprog(T, K.M + 0.2, K.M + 0.5)}><BaseEspacial T={T} x={780} y={1300} s={1.3 * kprog(T, K.M + 0.2, K.M + 0.7, kEase.rebote)} /></g>
         </>)}
       </Escena>
       {/* 3 · la caja sellada de la NASA: < 1 m³, 24 h */}
       <Escena T={T} a={K.Ca} b={K.P + 1.8}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
+          <g transform="translate(480 1400) scale(1.45) translate(-480 -1176)">
           <CamaraNASA T={T} x={430} y={1130} w={360} gas={gas}>
             <Planta T={T} x={470} y={1090} s={0.5} seed={7} />
           </CamaraNASA>
           <Jeringa x={620} y={800} p={kprog(T, K.Ca + 1.9, K.Ca + 2.8)} o={kprog(T, K.Ca + 1.3, K.Ca + 1.6) * (1 - kprog(T, K.Ca + 3.4, K.Ca + 3.8))} />
           <g opacity={kprog(T, K.Ca + 0.6, K.Ca + 1.0)}>
             <line x1={250} y1={1145} x2={610} y2={1145} stroke={KC.ink} strokeWidth={5} /><text x={430} y={1176} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>0.76 m</text>
-          </g></>)}
+          </g></g></>)}
       </Escena>
       {/* 4 · pregunta: ¿por qué no pasa en tu sala? */}
       <Escena T={T} a={K.P + 1.8} b={K.S} zoom={0.1}>
         <FondoLunares color={KC.yellow} />
+        {svg(<g opacity={0.6}><Sala T={T} /></g>)}
         {svg(<text x={270} y={1100} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.pink} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 270 900)`}>?</text>)}
       </Escena>
       {/* 5 · tu casa no está sellada: entra aire por puerta, ventana y rendijas */}
@@ -245,8 +247,9 @@ function PlantasShot() {
       {/* 6 · el estudio: Drexel 2019, 12 estudios y 196 resultados */}
       <Escena T={T} a={K.E} b={K.L}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
+        {svg(<Planta T={T} x={540} y={1450} s={1.2} seed={2} />)}
         {svg(Array.from({ length: 12 }, (_, i) => { const t0 = K.E + 2.6 + i * 0.16, e = kprog(T, t0, t0 + 0.3, kEase.rebote), c = i % 6, f = Math.floor(i / 6);
-          return <g key={i} transform={`translate(${150 + c * 150} ${830 + f * 145}) rotate(${(i % 3 - 1) * 5}) scale(${e})`} opacity={kprog(T, t0, t0 + 0.15)}>
+          return <g key={i} transform={`translate(${150 + c * 156} ${615 + f * 165}) rotate(${(i % 3 - 1) * 5}) scale(${1.2 * e})`} opacity={kprog(T, t0, t0 + 0.15)}>
             <rect x={-48} y={-62} width={96} height={124} rx={8} fill="#fff" stroke={KC.ink} strokeWidth={5} />
             {[0, 1, 2, 3].map((l) => <line key={l} x1={-32} y1={-36 + l * 22} x2={l === 3 ? 6 : 32} y2={-36 + l * 22} stroke="#9aa3ad" strokeWidth={6} strokeLinecap="round" />)}
           </g>; }))}
@@ -255,13 +258,13 @@ function PlantasShot() {
       <Escena T={T} a={K.L} b={K.Cu}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Planta T={T} x={230} y={1180} s={0.8} seed={2} />
-          <CuboAire x={330} y={1180} l={70} o={kprog(T, K.L + 0.8, K.L + 1.2)} />
+          <Planta T={T} x={270} y={1350} s={1.3} seed={2} />
+          <CuboAire x={470} y={1350} l={95} o={kprog(T, K.L + 0.8, K.L + 1.2)} />
           <g opacity={kprog(T, K.L + 2.0, K.L + 2.5)}>
-            <rect x={600} y={760} width={320} height={300} fill="#9fe3ff" stroke={KC.ink} strokeWidth={8} />
-            <line x1={760} y1={760} x2={760} y2={1060} stroke={KC.ink} strokeWidth={6} />
-            <FlechaAire T={T} x0={980} y0={850} x1={500} y1={880} grosor={34} />
-            <FlechaAire T={T} x0={980} y0={990} x1={540} y1={1010} grosor={24} />
+            <rect x={600} y={650} width={380} height={380} fill={cineMix('#9fe3ff', '#0a0f1c', 0.25)} stroke={KC.ink} strokeWidth={8} />
+            <line x1={790} y1={650} x2={790} y2={1030} stroke={KC.ink} strokeWidth={6} />
+            <FlechaAire T={T} x0={1050} y0={770} x1={560} y1={800} grosor={34} />
+            <FlechaAire T={T} x0={1050} y0={930} x1={600} y1={950} grosor={24} />
           </g></>)}
       </Escena>
       {/* 8 · la cuenta: de 10 a 1,000 macetas por m² de piso */}
@@ -273,58 +276,60 @@ function PlantasShot() {
       <Escena T={T} a={K.Si} b={K.C}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <g transform="translate(-40 0)">
-            <rect x={110} y={760} width={300} height={260} fill="#9fe3ff" stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(250 1000) scale(1.35) translate(-260 -890)">
+            <rect x={110} y={760} width={300} height={260} fill={cineMix('#9fe3ff', '#0a0f1c', 0.25)} stroke={KC.ink} strokeWidth={8} />
             <rect x={110} y={760} width={150 - 120 * kprog(T, K.Si + 2.6, K.Si + 3.4, kEase.sale)} height={260} fill="rgba(255,255,255,.45)" stroke={KC.ink} strokeWidth={6} />
             <rect x={260} y={760} width={150} height={260} fill="rgba(255,255,255,.45)" stroke={KC.ink} strokeWidth={6} />
             <FlechaAire T={T} x0={60} y0={890} x1={300} y1={900} grosor={14} o={kprog(T, K.Si + 3.0, K.Si + 3.5)} />
           </g>
-          <g opacity={kprog(T, K.Si + 3.6, K.Si + 4.1)}><Cocina T={T} x={780} y={1100} s={0.72} on={kprog(T, K.Si + 4.0, K.Si + 4.6)} /></g>
+          <g opacity={0.35 + 0.65 * kprog(T, K.Si + 3.6, K.Si + 4.1)}><Cocina T={T} x={790} y={1290} s={0.9} on={kprog(T, K.Si + 4.0, K.Si + 4.6)} /></g>
         </>)}
       </Escena>
       {/* 10 · cierre: la planta del inicio, ahora junto a la ventana abierta */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <rect x={540} y={700} width={330} height={330} fill="#9fe3ff" stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(790 860) scale(1.25) translate(-705 -865)">
+          <rect x={540} y={700} width={330} height={330} fill={cineMix('#9fe3ff', '#0a0f1c', 0.25)} stroke={KC.ink} strokeWidth={8} />
           <path d="M 560 960 Q 640 900 700 940 Q 770 890 850 930 L 850 1010 L 560 1010 Z" fill="#7cc46a" />
           <rect x={540} y={700} width={60} height={330} fill="rgba(255,255,255,.45)" stroke={KC.ink} strokeWidth={6} />
           <path d={`M 870 690 Q ${910 + Math.sin(T * 3) * 26} 840 ${885 + Math.sin(T * 2.4) * 36} 1040 L 950 1040 Q ${970 + Math.sin(T * 3) * 14} 840 930 690 Z`} fill={KC.coral} stroke={KC.ink} strokeWidth={6} />
           <FlechaAire T={T} x0={820} y0={860} x1={520} y1={900} grosor={16} />
-          <Planta T={T} x={300} y={1180} s={1.25} seed={2} />
+          </g>
+          <Planta T={T} x={330} y={1330} s={1.7} seed={2} />
         </>)}
       </Escena>
 
       {/* datos y etiquetas */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 3.2} texto="purificador de aire" x={330} y={560} tam={44} />
-      <NumeroGigante T={T} at={K.G + 3.7} until={K.M - 0.2} valor={1000} dur={2.66} prefijo="hasta " etiqueta="plantas en 1 m²" x={375} y={520} tam={110} color={KC.yellow} />
-      <Chip T={T} at={K.M + 0.3} until={K.Ca - 0.2} texto="NASA · 1989" y={470} x={300} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.M + 2.0} until={K.Ca - 0.2} texto="espacios sellados" y={570} x={300} tam={36} borde={KC.violet} />
-      <Etq T={T} at={K.M + 2.9} until={K.Ca - 0.2} x={130} y={645} texto="edificio hermético" lado="der" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.M + 4.4} until={K.Ca - 0.2} x={600} y={765} texto="base espacial" lado="der" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ca + 0.6} until={K.P + 1.4} texto="caja sellada · menos de 1 m³" y={385} x={360} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Ca + 2.4} until={K.Ca + 4.6} texto="benceno o formaldehído" y={575} x={360} tam={30} borde={KC.orange} />
-      <Cronometro T={T} at={K.Ca + 2.2} until={K.P + 1.4} factor={factor} x={360} y={478} etiqueta="TIEMPO EN LA CAJA" />
-      <Chip T={T} at={K.P + 0.2} until={K.P + 1.6} texto="el químico baja ↓" y={598} x={360} tam={34} borde={KC.orange} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 3.2} texto="purificador de aire" x={540} y={300} tam={44} />
+      <NumeroGigante T={T} at={K.G + 3.7} until={K.M - 0.2} valor={1000} dur={2.66} prefijo="hasta " etiqueta="plantas en 1 m²" x={540} y={370} tam={110} color={KC.yellow} />
+      <Chip T={T} at={K.M + 0.3} until={K.Ca - 0.2} texto="NASA · 1989" y={330} x={540} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.M + 2.0} until={K.Ca - 0.2} texto="espacios sellados" y={430} x={540} tam={36} borde={KC.violet} />
+      <Etq T={T} at={K.M + 2.9} until={K.Ca - 0.2} x={80} y={530} texto="edificio hermético" lado="der" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.M + 4.4} until={K.Ca - 0.2} x={560} y={735} texto="base espacial" lado="der" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Ca + 0.6} until={K.P + 1.4} texto="caja sellada · menos de 1 m³" y={300} x={480} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Ca + 2.4} until={K.Ca + 4.6} texto="benceno o formaldehído" y={500} x={480} tam={30} borde={KC.orange} />
+      <Cronometro T={T} at={K.Ca + 2.2} until={K.P + 1.4} factor={factor} x={480} y={400} etiqueta="TIEMPO EN LA CAJA" />
+      <Chip T={T} at={K.P + 0.2} until={K.P + 1.6} texto="el químico baja ↓" y={500} x={480} tam={34} borde={KC.orange} />
       <Chip T={T} at={K.P + 2.0} until={K.S - 0.2} texto="¿y en tu sala?" y={470} x={300} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.S + 0.4} until={K.E - 0.2} texto="tu casa no está sellada" y={470} x={380} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.S + 1.8} until={K.E - 0.2} x={160} y={700} texto="puerta" lado="der" tam={28} color={KC.ink} />
       <Etq T={T} at={K.S + 2.6} until={K.E - 0.2} x={660} y={690} texto="ventana" lado="der" tam={28} color={KC.ink} />
       <Etq T={T} at={K.S + 3.4} until={K.E - 0.2} x={930} y={1130} texto="rendijas" lado="izq" tam={28} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.4} until={K.L - 0.2} anio="2019" quien="Cummings y Waring · Drexel, Filadelfia" revista="J. Expo. Sci. Environ. Epidemiol." y={560} />
-      <Chip T={T} at={K.E + 2.6} until={K.L - 0.2} texto="12 estudios" y={1085} x={300} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.E + 4.0} until={K.L - 0.2} texto={`${kformato(Math.round(196 * kprog(T, K.E + 4.0, K.E + 5.4, kEase.suave)))} resultados`} y={1085} x={720} tam={34} borde={KC.gold} />
-      <Chip T={T} at={K.L + 0.9} until={K.Cu - 0.2} texto="1 planta ≈ 23 L de aire por hora" y={470} x={380} tam={34} borde={KC.leaf} />
-      <Etq T={T} at={K.L + 1.2} until={K.Cu - 0.2} x={440} y={1140} texto="23 L" lado="der" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.L + 2.6} until={K.Cu - 0.2} x={920} y={720} texto="aire de afuera" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.L + 2.8} until={K.Cu - 0.2} texto="edificio típico: ~1 renovación por hora" y={570} x={430} tam={26} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.4} until={K.L - 0.2} anio="2019" quien="Cummings y Waring · Drexel, Filadelfia" revista="J. Expo. Sci. Environ. Epidemiol." y={385} />
+      <Chip T={T} at={K.E + 2.6} until={K.L - 0.2} texto="12 estudios" y={880} x={300} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.E + 4.0} until={K.L - 0.2} texto={`${kformato(Math.round(196 * kprog(T, K.E + 4.0, K.E + 5.4, kEase.suave)))} resultados`} y={880} x={720} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.L + 0.9} until={K.Cu - 0.2} texto="1 planta ≈ 23 L de aire por hora" y={330} x={540} tam={34} borde={KC.leaf} />
+      <Etq T={T} at={K.L + 1.2} until={K.Cu - 0.2} x={600} y={1300} texto="23 L" lado="der" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.L + 2.6} until={K.Cu - 0.2} x={980} y={610} texto="aire de afuera" lado="izq" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.L + 2.8} until={K.Cu - 0.2} texto="edificio típico: ~1 renovación por hora" y={430} x={540} tam={26} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Cu + 0.4} until={K.Si - 0.2} valor={1000} desde={10} dur={3.4} prefijo="10 a " etiqueta="plantas por m² de piso" x={380} y={500} tam={96} color={KC.yellow} />
       <Chip T={T} at={K.Cu + 3.0} until={K.Si - 0.2} texto="sala de 4 × 4 m: ~1,700 plantas" y={685} x={380} tam={30} borde={KC.ink} />
       <Palomita T={T} at={K.Si + 1.2} until={K.C - 0.2} texto="quitar lo que contamina" x={50} y={440} />
       <Palomita T={T} at={K.Si + 2.6} until={K.C - 0.2} texto="abrir ventanas" x={50} y={540} />
       <Palomita T={T} at={K.Si + 3.8} until={K.C - 0.2} texto="campana con salida afuera" x={50} y={640} />
       <Chip T={T} at={K.C + 0.5} until={K.Ou - 0.1} texto="bonita: sí · purificador: no" y={470} x={380} tam={34} borde={KC.ink} />
-      <EscalaFija T={T} texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} o={T < K.Ca || (T > K.P + 1.8 && T < K.E) || T > K.L ? 1 : 0} />
+      <EscalaFija T={T} texto="esquema (no a escala)" largo={0} y={1530} color={KC.ink} o={T < K.Ca || (T > K.P + 1.8 && T < K.E) || T > K.L ? 1 : 0} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.M - 0.1} texto="No es purificador: *hasta 1,000 por m².*" />

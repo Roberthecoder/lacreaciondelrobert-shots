@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #34 · Esas estrellitas no son radiactivas (fosforescencia: luz guardada en trampas) — NARRADO (N1 por dentro + N5 Matsuzawa 1996).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const VERDE = '#7dff9a', VERDE2 = '#2fe07a', PLASTICO = '#eef6cf', EU = '#39e07a', DY = KC.orange, CARGA = '#ffffff', RA = '#c04bff';
@@ -73,7 +74,7 @@ function Sol({ x, y, r = 50, T = 0, o = 1 }) {
 // Techo con estrellitas (gancho y cierre).
 const TECHO = [[140, 560, 46, 10], [330, 470, 30, -14], [470, 690, 58, 8], [700, 600, 40, 22], [900, 520, 34, -6], [960, 760, 52, 14], [180, 860, 38, -20],
   [380, 960, 64, 4], [640, 880, 34, -12], [820, 1010, 44, 18], [120, 1140, 30, 6], [560, 1160, 46, -8], [960, 1180, 32, 12], [300, 1240, 26, 30], [760, 1260, 28, -24]];
-function Techo({ T, luz, s = 1 }) {
+function Techo({ T, luz, s = 1.4 }) {
   return <g>
     {TECHO.map(([x, y, r, rot], i) => <Estrellita key={i} x={x} y={y} r={r * s} rot={rot} luz={luz * (0.85 + 0.15 * Math.sin(T * 2 + i))} />)}
     <Luna x={640} y={400} r={70} luz={luz} />
@@ -237,12 +238,12 @@ function Estrellitas34() {
           <Foco x={840} y={380} on={1 - apaga} s={0.9} />
           <Apagador x={130} y={1480} on={on} />
           <g opacity={kprog(T, K.G + 1.0, K.G + 1.3) * (1 - kprog(T, K.G + 2.6, K.G + 2.9))}>
-            <Trebol x={470} y={690} r={64} />
-            <Tache x={470} y={690} r={86} p={kprog(T, K.G + 1.6, K.G + 2.1, kEase.sale)} />
+            <Trebol x={470} y={690} r={78} />
+            <Tache x={470} y={690} r={104} p={kprog(T, K.G + 1.6, K.G + 2.1, kEase.sale)} />
           </g>
           <g opacity={kprog(T, K.G + 2.9, K.G + 3.3)}>
-            <Sol x={250} y={1030} r={44} T={T} />
-            <path d={`M 320 1020 Q 380 980 ${klerp(330, 430, kprog(T, K.G + 3.1, K.G + 3.7))} 975`} fill="none" stroke={KC.yellow} strokeWidth={10} strokeLinecap="round" strokeDasharray="20 12" />
+            <Sol x={205} y={1012} r={44} T={T} />
+            <path d={`M 282 1004 Q 320 984 ${klerp(292, 400, kprog(T, K.G + 3.1, K.G + 3.7))} 972`} fill="none" stroke={KC.yellow} strokeWidth={10} strokeLinecap="round" strokeDasharray="20 12" />
           </g>
         </SvgCapa>
         <div style={{ position:'absolute', inset:0 }}><SvgCapa><Onomato T={T} at={K.G + 0.35} until={K.G + 1.2} x={300} y={1340} texto="¡clic!" tam={84} /></SvgCapa></div>
@@ -250,8 +251,8 @@ function Estrellitas34() {
       {/* 1 · qué son: lupa de rayos X sobre una estrellita */}
       <Escena T={T} a={K.Q} b={K.Ca} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa><Defs /><Estrellita x={540} y={1060} r={190} rot={-6} luz={0.15 + 0.1 * Math.sin(T * 3)} /></SvgCapa>
-        <Lupa T={T} at={K.Q + 0.3} until={K.Ca - 0.3} x={620} y={640} r={240} fx={540} fy={1060} tinte={VERDE2} etiqueta="polvo de cristal · esquema" interior={(t, r) => {
+        <SvgCapa><Defs /><Estrellita x={540} y={1215} r={250} rot={-6} luz={0.15 + 0.1 * Math.sin(T * 3)} /></SvgCapa>
+        <Lupa T={T} at={K.Q + 0.3} until={K.Ca - 0.3} x={600} y={535} r={250} fx={540} fy={1215} tinte={VERDE2} etiqueta="polvo de cristal · esquema" interior={(t, r) => {
           const R = krng(8);
           return <svg width={r * 2} height={r * 2}><g transform={`translate(${r} ${r})`}>
             {Array.from({ length: 16 }, (_, i) => { const gx = (R() - 0.5) * 380, gy = (R() - 0.5) * 380, gr = 34 + R() * 26, rot = R() * 60;
@@ -268,6 +269,7 @@ function Estrellitas34() {
         <SvgCapa>
           <Defs />
           <Ambiente T={T} n={26} color="rgba(127,255,154,.18)" />
+          <g transform="translate(0 150)">
           <Red T={T} K={K} />
           <g opacity={kprog(T, K.Su + 0.3, K.Su + 0.8)}>
             <Termo x={960} y={1190} />
@@ -276,9 +278,10 @@ function Estrellitas34() {
           {T > K.Su + 0.2 && <g opacity={kprog(T, K.Su + 0.2, K.Su + 0.6)} transform={`translate(950 380) rotate(${(T - K.Su) * 40})`}>
             <path d="M -30 -46 L 30 -46 L 0 0 Z M -30 46 L 30 46 L 0 0 Z" fill={KC.gold} stroke={KC.ink} strokeWidth={5} />
           </g>}
+          </g>
         </SvgCapa>
-        <Etq T={T} at={K.Ca + 0.6} until={K.Pr - 0.2} x={180 + 40} y={624} texto="europio" lado="der" tam={28} color={EU} />
-        <Etq T={T} at={K.Tr + 0.4} until={K.Pr - 0.2} x={590} y={1075} texto="disprosio: trampa" lado="izq" tam={28} color={DY} />
+        <Etq T={T} at={K.Ca + 0.6} until={K.Pr - 0.2} x={180 + 40} y={774} texto="europio" lado="der" tam={28} color={EU} />
+        <Etq T={T} at={K.Tr + 0.4} until={K.Pr - 0.2} x={590} y={1225} texto="disprosio: trampa" lado="izq" tam={28} color={DY} />
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Ra} zoom={0.1}>
@@ -291,8 +294,8 @@ function Estrellitas34() {
       {/* 6 · el reloj de radio */}
       <Escena T={T} a={K.Ra} b={K.Pi} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa><Defs /><Reloj x={360} y={900} s={1.05} T={T} luz={1} /></SvgCapa>
-        <Lupa T={T} at={K.Ra + 1.6} until={K.Pi - 0.3} x={760} y={620} r={220} fx={360} fy={757} tinte={VERDE2} etiqueta="pintura de radio · esquema" interior={(t, r) => {
+        <SvgCapa><Defs /><Reloj x={350} y={1150} s={1.25} T={T} luz={1} /></SvgCapa>
+        <Lupa T={T} at={K.Ra + 1.6} until={K.Pi - 0.3} x={620} y={450} r={230} fx={350} fy={962} tinte={VERDE2} etiqueta="pintura de radio · esquema" interior={(t, r) => {
           const R = krng(5), gr = Array.from({ length: 14 }, () => [(R() - 0.5) * 360, (R() - 0.5) * 360]);
           return <svg width={r * 2} height={r * 2}><g transform={`translate(${r} ${r})`}>
             {gr.map(([gx, gy], i) => { const hit = Math.max(0, Math.sin(t * 5 + i * 1.7)) ** 8;
@@ -309,17 +312,19 @@ function Estrellitas34() {
       <Escena T={T} a={K.Pi} b={K.Es} zoom={0.03}>
         <FondoLunares color="#b9b1a3" punto="rgba(255,255,255,.18)" />
         <SvgCapa>
-          {[0, 1, 2, 3, 4].map((i) => <Personita key={i} x={130 + i * 70} y={720} s={1.6} color="#8f8577" o={0.55 * kprog(T, K.Pi + 0.4 + i * 0.12, K.Pi + 0.8 + i * 0.12)} />)}
+          <g transform="translate(540 950) scale(1.35) translate(-540 -865)">
+          {[0, 1, 2, 3, 4].map((i) => <Personita key={i} x={200 + i * 70} y={720} s={1.6} color="#8f8577" o={0.55 * kprog(T, K.Pi + 0.4 + i * 0.12, K.Pi + 0.8 + i * 0.12)} />)}
           <rect x={60} y={1090} width={960} height={40} rx={10} fill="#8a6a46" stroke={KC.ink} strokeWidth={8} />
-          {[0, 1, 2, 3].map((i) => <g key={i}><circle cx={150 + i * 120} cy={1060} r={40} fill="#1d2233" stroke={KC.gold} strokeWidth={8} />
-            {[0, 1, 2, 3].map((j) => <circle key={j} cx={150 + i * 120 + Math.cos(j * Math.PI / 2) * 24} cy={1060 + Math.sin(j * Math.PI / 2) * 24} r={5} fill={VERDE} />)}</g>)}
+          {[0, 1, 2, 3].map((i) => <g key={i}><circle cx={230 + i * 110} cy={1060} r={40} fill="#1d2233" stroke={KC.gold} strokeWidth={8} />
+            {[0, 1, 2, 3].map((j) => <circle key={j} cx={230 + i * 110 + Math.cos(j * Math.PI / 2) * 24} cy={1060 + Math.sin(j * Math.PI / 2) * 24} r={5} fill={VERDE} />)}</g>)}
           <Pintora x={760} y={850} s={1} brazo={brazo} />
           <g opacity={kprog(T, K.Pi + 2.6, K.Pi + 3.0)}>
             <path d="M 700 680 Q 600 600 520 640" fill="none" stroke={KC.red} strokeWidth={12} strokeLinecap="round" />
             <path d="M 540 610 L 510 645 L 555 660" fill="none" stroke={KC.red} strokeWidth={12} strokeLinecap="round" strokeLinejoin="round" />
           </g>
+          </g>
         </SvgCapa>
-        <Chip T={T} at={K.Pi + 2.8} until={K.Es - 0.2} texto="radio → al cuerpo" x={330} y={560} tam={38} borde={KC.red} />
+        <Chip T={T} at={K.Pi + 2.8} until={K.Es - 0.2} texto="radio → al cuerpo" x={270} y={545} tam={38} borde={KC.red} />
       </Escena>
       {/* 8 · 1996, Japón: aluminato vs. sulfuro de zinc */}
       <Escena T={T} a={K.Es} b={K.Cu} zoom={0.03}>
@@ -327,15 +332,15 @@ function Estrellitas34() {
         <div style={{ position:'absolute', inset:0, background:KC.noche, opacity:0.75 * kprog(T, K.Es + 3.4, K.Es + 4.0) }}></div>
         <SvgCapa>
           <Defs />
-          <g opacity={kprog(T, K.Es + 3.4, K.Es + 3.8)}>
-            <FrascoLuz x={420} y={790} luz={luzZn} />
-            <FrascoLuz x={820} y={790} luz={luzSr} />
+          <g opacity={0.55 + 0.45 * kprog(T, K.Es + 3.4, K.Es + 3.8)}>
+            <FrascoLuz x={290} y={930} luz={luzZn} s={1.7} />
+            <FrascoLuz x={790} y={930} luz={luzSr} s={1.7} />
           </g>
         </SvgCapa>
         {T > K.Es + 3.8 && <>
-          <div style={{ position:'absolute', left:420, top:995, transform:'translate(-50%,0)', zIndex:41, font:`700 30px ${KF.mono}`, color:KC.texto, textAlign:'center', whiteSpace:'nowrap', textShadow:KSOMBRA, opacity:kprog(T, K.Es + 3.8, K.Es + 4.2) }}>ZnS:Cu,Co<br/>(sin radio)</div>
-          <div style={{ position:'absolute', left:820, top:995, transform:'translate(-50%,0)', zIndex:41, font:`700 30px ${KF.mono}`, color:VERDE, textAlign:'center', whiteSpace:'nowrap', textShadow:KSOMBRA, opacity:kprog(T, K.Es + 3.8, K.Es + 4.2) }}>SrAl₂O₄:Eu,Dy<br/>(1996)</div>
-          <div style={{ position:'absolute', left:620, top:470, transform:'translate(-50%,-50%)', zIndex:41, font:`400 110px ${KF.titulo}`, color:KC.texto, WebkitTextStroke:`3px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}`, opacity:kprog(T, K.Es + 4.4, K.Es + 4.8) }}>{kformato(hrs, 0)} h</div>
+          <div style={{ position:'absolute', left:290, top:1262, transform:'translate(-50%,0)', zIndex:41, font:`700 34px ${KF.mono}`, color:KC.texto, textAlign:'center', whiteSpace:'nowrap', textShadow:KSOMBRA, opacity:kprog(T, K.Es + 3.8, K.Es + 4.2) }}>ZnS:Cu,Co<br/>(sin radio)</div>
+          <div style={{ position:'absolute', left:790, top:1262, transform:'translate(-50%,0)', zIndex:41, font:`700 34px ${KF.mono}`, color:VERDE, textAlign:'center', whiteSpace:'nowrap', textShadow:KSOMBRA, opacity:kprog(T, K.Es + 3.8, K.Es + 4.2) }}>SrAl₂O₄:Eu,Dy<br/>(1996)</div>
+          <div style={{ position:'absolute', left:540, top:480, transform:'translate(-50%,-50%)', zIndex:41, font:`400 120px ${KF.titulo}`, color:KC.texto, WebkitTextStroke:`3px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}`, opacity:kprog(T, K.Es + 4.4, K.Es + 4.8) }}>{kformato(hrs, 0)} h</div>
         </>}
       </Escena>
       {/* 9 · lo chistoso: horno a 1300 °C y recarga con un foco */}
@@ -343,14 +348,14 @@ function Estrellitas34() {
         <FondoLunares color={KC.orange} />
         <SvgCapa>
           <Defs />
-          <Horno x={290} y={900} T={T} s={0.95} />
-          <g opacity={kprog(T, K.Cu + 2.2, K.Cu + 2.6)}>
-            <Lampara x={790} y={850} on={kprog(T, K.Cu + 2.6, K.Cu + 2.8)} s={0.9} />
-            <Estrellita x={790} y={1100} r={70} luz={kprog(T, K.Cu + 2.8, K.Cu + 4.0)} />
-            <Pila x={790} y={1220} f={kprog(T, K.Cu + 2.8, K.Cu + 4.2)} />
+          <Horno x={290} y={900} T={T} s={1.2} />
+          <g opacity={0.5 + 0.5 * kprog(T, K.Cu + 2.2, K.Cu + 2.6)}>
+            <Lampara x={800} y={800} on={kprog(T, K.Cu + 2.6, K.Cu + 2.8)} s={1.1} />
+            <Estrellita x={800} y={1120} r={92} luz={kprog(T, K.Cu + 2.8, K.Cu + 4.0)} />
+            <g transform="translate(800 1290) scale(1.2)"><Pila x={0} y={0} f={kprog(T, K.Cu + 2.8, K.Cu + 4.2)} /></g>
           </g>
         </SvgCapa>
-        <div style={{ position:'absolute', left:290, top:620, transform:'translate(-50%,-50%)', zIndex:41, font:`400 100px ${KF.titulo}`, color:KC.texto, WebkitTextStroke:`3px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}`, whiteSpace:'nowrap', opacity:kprog(T, K.Cu + 0.2, K.Cu + 0.5) }}>{Math.round(klerp(20, 1300, kprog(T, K.Cu + 0.2, K.Cu + 1.6, kEase.sale)) / 10) * 10} °C</div>
+        <div style={{ position:'absolute', left:290, top:555, transform:'translate(-50%,-50%)', zIndex:41, font:`400 100px ${KF.titulo}`, color:KC.texto, WebkitTextStroke:`3px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}`, whiteSpace:'nowrap', opacity:kprog(T, K.Cu + 0.2, K.Cu + 0.5) }}>{Math.round(klerp(20, 1300, kprog(T, K.Cu + 0.2, K.Cu + 1.6, kEase.sale)) / 10) * 10} °C</div>
       </Escena>
       {/* 10 · cierre: el mismo techo, ahora visto por dentro */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
@@ -369,26 +374,26 @@ function Estrellitas34() {
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.9} tacharEn={K.G + 1.7} until={K.G + 2.8} texto="radiactivas" x={300} y={470} tam={50} />
-      <Chip T={T} at={K.G + 2.9} until={K.Q - 0.3} texto="luz guardada" x={300} y={470} tam={48} borde={VERDE2} />
+      <MitoTachado T={T} at={K.G + 0.9} tacharEn={K.G + 1.7} until={K.G + 2.8} texto="radiactivas" x={290} y={350} tam={50} />
+      <Chip T={T} at={K.G + 2.9} until={K.Q - 0.3} texto="luz guardada" x={290} y={350} tam={48} borde={VERDE2} />
       <Chip T={T} at={K.Q + 1.4} until={K.Ca - 0.2} texto="aluminato de estroncio · SrAl₂O₄" x={540} y={1500} tam={38} borde={KC.blue} />
       <Chip T={T} at={K.Q + 3.0} until={K.Ca - 0.2} texto="+ europio (Eu) · disprosio (Dy)" x={540} y={1610} tam={38} borde={EU} />
-      <Chip T={T} at={K.Ca + 0.4} until={K.Tr - 0.2} texto="la luz mueve cargas" x={540} y={1500} tam={42} borde={KC.yellow} />
-      <Chip T={T} at={K.Tr + 0.6} until={K.Su - 0.2} texto="atoradas en trampas" x={540} y={1500} tam={42} borde={DY} />
-      <Chip T={T} at={K.Su + 0.6} until={K.Pr - 0.2} texto="calorcito del cuarto → las suelta" x={540} y={1500} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.Su + 2.4} until={K.Pr - 0.2} texto="regresan al europio = luz verde" x={540} y={1610} tam={36} borde={EU} />
+      <Chip T={T} at={K.Ca + 0.4} until={K.Tr - 0.2} texto="la luz mueve cargas" x={540} y={1540} tam={42} borde={KC.yellow} />
+      <Chip T={T} at={K.Tr + 0.6} until={K.Su - 0.2} texto="atoradas en trampas" x={540} y={1540} tam={42} borde={DY} />
+      <Chip T={T} at={K.Su + 0.6} until={K.Pr - 0.2} texto="calorcito del cuarto → las suelta" x={540} y={1540} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Su + 2.4} until={K.Pr - 0.2} texto="regresan al europio = luz verde" x={540} y={1645} tam={36} borde={EU} />
       <Chip T={T} at={K.Ra + 0.4} until={K.Pi - 0.2} texto="hace 100 años · relojes de radio" x={540} y={1500} tam={38} borde={RA} />
       <Chip T={T} at={K.Ra + 3.2} until={K.Pi - 0.2} texto="radio + sulfuro de zinc: brillo sin parar" x={540} y={1610} tam={32} borde={VERDE2} />
-      <Chip T={T} at={K.Pi + 0.3} until={K.Es - 0.2} texto="Orange, Nueva Jersey, EE. UU. · 1917–1926" x={540} y={1720} tam={32} borde={KC.gold} />
-      <Chip T={T} at={K.Pi + 1.2} until={K.Es - 0.2} texto="hasta 250 pintoras jóvenes" x={540} y={1500} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.Pi + 2.6} until={K.Es - 0.2} texto="afinaban el pincel con los labios" x={540} y={1610} tam={36} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.3} anio="1996" quien="Nemoto & Co. · Tokio, Japón" revista="Matsuzawa et al. · J Electrochem Soc" x={540} y={850} />
+      <Chip T={T} at={K.Pi + 0.3} until={K.Es - 0.2} texto="Orange, Nueva Jersey, EE. UU. · 1917–1926" x={540} y={1640} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.Pi + 1.2} until={K.Es - 0.2} texto="hasta 250 pintoras jóvenes" x={540} y={1420} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.Pi + 2.6} until={K.Es - 0.2} texto="afinaban el pincel con los labios" x={540} y={1530} tam={36} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.3} anio="1996" quien="Nemoto & Co. · Tokio, Japón" revista="Matsuzawa et al. · J Electrochem Soc" x={540} y={400} />
       <Chip T={T} at={K.Es + 4.2} until={K.Cu - 0.2} texto="más de 10 veces más brillante" x={540} y={1500} tam={40} borde={EU} />
       <Chip T={T} at={K.Es + 7.6} until={K.Cu - 0.2} texto="a las 24 h aún se mide" x={540} y={1610} tam={40} borde={KC.gold} />
       <Chip T={T} at={K.Cu + 0.8} until={K.Ci - 0.2} texto="se hornea a 1300–1400 °C" x={540} y={1500} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Cu + 2.8} until={K.Ci - 0.2} texto="tú lo recargas con un foco" x={540} y={1610} tam={40} borde={VERDE2} />
       <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="fosforescencia: luz guardada en trampas" x={540} y={1500} tam={34} borde={VERDE2} />
-      <MitoTachado T={T} at={K.Ci + 0.2} tacharEn={K.Ci + 0.9} until={K.Ou} texto="radiactivas" x={300} y={470} tam={44} />
+      <MitoTachado T={T} at={K.Ci + 0.2} tacharEn={K.Ci + 0.9} until={K.Ou} texto="radiactivas" x={290} y={350} tam={44} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="No son radiactivas: *guardan luz.*" />

@@ -127,7 +127,7 @@ function Frasco({ x, y, s = 1 }) {
     <rect x={-70} y={-200} width={140} height={60} rx={12} fill="#f4efe4" stroke={KC.ink} strokeWidth={8} />
     <rect x={-120} y={-150} width={240} height={330} rx={40} fill="#ffb347" stroke={KC.ink} strokeWidth={9} />
     <rect x={-100} y={-60} width={200} height={150} rx={14} fill="#fff" stroke={KC.ink} strokeWidth={5} />
-    <text x={0} y={10} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>CORTICOIDES</text>
+    <text x={0} y={10} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill="#0b1020">CORTICOIDES</text>
     <text x={0} y={58} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#5a524a">medicamento</text>
   </g>;
 }
@@ -142,7 +142,7 @@ function MucorShot() {
   const HMAIN = 'M 200 820 C 380 800 520 850 700 820 S 900 800 1000 830';
   const HR1 = 'M 470 832 L 470 560';
   const HR2 = 'M 760 818 L 766 980';
-  const pH = kprog(T, K.Hi + 0.3, K.Hi + 2.6, kEase.suave);
+  const pH = klerp(0.3, 1, kprog(T, K.Hi, K.Hi + 1.6, kEase.suave)); // pase a mano: la hifa ya va creciendo al entrar (antes la escena se quedaba vacía 1.5 s)
 
   // vaso: la hifa entra, se forma el coágulo, la sangre se detiene y el tejido muere
   const vEntra = kprog(T, K.V + 0.2, K.V + 1.6, kEase.suave), vCoag = kprog(T, K.V + 1.5, K.V + 2.3, kEase.rebote), vMuere = kprog(T, K.V + 2.6, K.V + 4.8);
@@ -181,13 +181,13 @@ function MucorShot() {
       {/* 0 · gancho: la mancha negra en la cara */}
       <Escena T={T} a={K.G} b={K.Ap} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 990) scale(1.45) translate(-360 -920)">
           <Cara x={360} y={920} s={1.05} mancha={manchaG} T={T} />
           {(() => { const p = kprog(T, K.G + 0.3, K.G + 0.9, kEase.sale); return p > 0 ? <g opacity={p}>
             <path d={`M 90 640 Q 150 760 ${klerp(90, 230, p)} ${klerp(640, 950, p)}`} stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" />
             <path d={`M 90 640 Q 150 760 ${klerp(90, 230, p)} ${klerp(640, 950, p)}`} stroke={KC.yellow} strokeWidth={7} fill="none" strokeLinecap="round" />
           </g> : null; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 1 · el apodo: "hongo negro"; en el tejido las hifas son transparentes */}
       <Escena T={T} a={K.Ap} b={K.Mu} zoom={0.04}>
@@ -212,81 +212,83 @@ function MucorShot() {
       {/* 2 · mucorales: moho joven, blanco y algodonoso, en hojas podridas */}
       <Escena T={T} a={K.Mu} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
-          <rect x={0} y={1040} width={KW} height={900} fill={FK.tierra} stroke={KC.ink} strokeWidth={8} />
+        {fsvg(<g transform="translate(0 200)">
+          <rect x={0} y={1040} width={KW} height={900} fill={FK.suelo} stroke={KC.ink} strokeWidth={8} />
           {[[170, 1050, -18, '#8a5a2b'], [420, 1040, 10, '#6e4520'], [690, 1055, -6, '#7d4f24'], [930, 1045, 20, '#8a5a2b']].map(([x, y, r, c], i) =>
             <path key={i} d="M -150 0 Q 0 -70 150 0 Q 0 50 -150 0 Z" transform={`translate(${x} ${y}) rotate(${r})`} fill={c} stroke={KC.ink} strokeWidth={6} />)}
-          {[[260, 1030], [540, 1025], [800, 1035]].map(([x, y], i) => { const c = kprog(T, K.Mu + 0.2 + i * 0.25, K.Mu + 1.4 + i * 0.25, kEase.sale);
+          {[[260, 1030], [540, 1025], [800, 1035]].map(([x, y], i) => { const c = kprog(T, K.Mu - 0.2 + i * 0.15, K.Mu + 0.8 + i * 0.15, kEase.sale);
             return c > 0 ? <g key={i}>{Array.from({ length: 9 }, (_, k) => <circle key={k} cx={x + (k - 4) * 22 * c} cy={y - Math.abs(Math.sin(k * 1.7)) * 40 * c} r={34 * c} fill="#fbf8ef" opacity=".92" />)}</g> : null; })}
-        </>)}
-        <Lupa T={T} at={K.Mu + 0.9} until={K.Es - 0.2} x={540} y={620} r={210} fx={540} fy={1010} interior={interiorMoho} tinte={KC.ink} etiqueta="AL MICROSCOPIO · esporangios" />
+        </g>)}
+        <Lupa T={T} at={K.Mu + 0.3} until={K.Es - 0.2} x={540} y={790} r={240} fx={540} fy={1210} interior={interiorMoho} tinte={KC.ink} etiqueta="AL MICROSCOPIO · esporangios" />
       </Escena>
       {/* 3 · esporas: se respiran; en una persona sana un macrófago la traga y se queda quieta */}
       <Escena T={T} a={K.Es} b={K.Hi} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(300 990) scale(1.25) translate(-330 -930)">
           <Cara x={330} y={930} s={0.8} T={T} />
           {Array.from({ length: 12 }, (_, i) => { const u = kprog(T, K.Es + i * 0.1, K.Es + 1.8 + i * 0.1, kEase.suave);
             const sx = klerp(1000 - (i % 4) * 40, 300 + (i % 3) * 8, u), sy = klerp(1250 - (i % 5) * 30, 975, u) + Math.sin(T * 3 + i) * 14 * (1 - u);
             return u > 0 && u < 1 ? <ellipse key={i} cx={sx} cy={sy} rx={11} ry={9} fill={MC.espora} stroke={KC.ink} strokeWidth={3} /> : null; })}
-        </>)}
-        <Lupa T={T} at={K.Es + 1.8} until={K.Hi - 0.2} x={760} y={900} r={170} fx={300} fy={980} interior={interiorSana} tinte={KC.lilac} etiqueta="PERSONA SANA" />
+        </g>)}
+        <Lupa T={T} at={K.Es + 1.1} until={K.Hi - 0.2} x={800} y={1000} r={205} fx={262} fy={1052} interior={interiorSana} tinte={KC.lilac} etiqueta="PERSONA SANA" />
       </Escena>
       {/* 4 · hifas anchas, casi sin tabiques, como listones */}
       <Escena T={T} a={K.Hi} b={K.V} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1000) scale(1.1) translate(-600 -835)">
           <ellipse cx={200} cy={820} rx={44} ry={36} fill={MC.espora} stroke={KC.hifa} strokeWidth={5} />
           <Liston d={HMAIN} p={pH} ancho={78} septos={[[0.55, 700, 820, Math.PI / 2]]} />
-          <Liston d={HR1} p={kprog(T, K.Hi + 1.4, K.Hi + 2.8, kEase.suave)} ancho={66} />
-          <Liston d={HR2} p={kprog(T, K.Hi + 1.9, K.Hi + 3.2, kEase.suave)} ancho={66} />
-          {(() => { const p = kprog(T, K.Hi + 1.0, K.Hi + 2.6); if (p <= 0) return null; return <g opacity={p}>
+          <Liston d={HR1} p={kprog(T, K.Hi + 0.7, K.Hi + 2.0, kEase.suave)} ancho={66} />
+          <Liston d={HR2} p={kprog(T, K.Hi + 1.0, K.Hi + 2.3, kEase.suave)} ancho={66} />
+          {(() => { const p = kprog(T, K.Hi + 0.6, K.Hi + 2.0); if (p <= 0) return null; return <g opacity={p}>
             <path d="M 150 1110 L 930 1110" pathLength={1} stroke="#9fd0a6" strokeWidth={22} strokeLinecap="round" strokeDasharray={`${p} 2`} />
             {Array.from({ length: 13 }, (_, i) => (i / 13 < p ? <line key={i} x1={190 + i * 58} y1={1098} x2={190 + i * 58} y2={1122} stroke={KC.noche} strokeWidth={5} /> : null))}
           </g>; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · se meten en los vasos, los tapan y el tejido muere */}
       <Escena T={T} a={K.V} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 160)">
           <Celulas x0={0} y0={420} w={1080} h={300} n={12} seed={6} muerte={vMuere} foco={[560, 760]} radio={700} />
           <Celulas x0={0} y0={1020} w={1080} h={200} n={10} seed={7} muerte={vMuere} foco={[560, 860]} radio={700} />
           <Vaso y={870} alto={250} flujo={flujoV} coagulo={vCoag} xc={600} />
           <Liston d="M 330 380 C 380 560 470 700 560 820 S 700 900 860 880" p={vEntra} ancho={80} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 6 · re-gancho: ¿por qué tantos casos en India? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><MapaIndia x={50} y={600} k={16} /><Interrogacion T={T} x={250} y={1080} tam={420} /></>)}
+        {fsvg(<><MapaIndia x={190} y={640} k={24} /><Interrogacion T={T} x={470} y={1300} tam={460} /></>)}
       </Escena>
       {/* 7 · estudio: 10 centros, 112 → 231 casos */}
       <Escena T={T} a={K.E} b={K.Co} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <line x1={100} y1={1150} x2={680} y2={1150} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
-          {[[160, 112, 'sept–dic 2019', K.E + 1.0, '#8fb6ff'], [430, 231, 'sept–dic 2020', K.E + 1.7, KC.red]].map(([x, v, et, t0, col], i) => { const p = kprog(T, t0, t0 + 1.0, kEase.sale); const h = v * 1.8 * p;
-            return <g key={i}><rect x={x} y={1150 - h} width={200} height={h} fill={col} stroke={KC.ink} strokeWidth={7} />
-              {p > 0 && <text x={x + 100} y={1150 - h - 18} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>{Math.round(v * p)}</text>}
-              <text x={x + 100} y={1196} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>{et}</text></g>; })}
+          {/* pase a mano: el mapa de India (de la escena anterior) queda atenuado detrás de las barras; las barras crecen desde el inicio, más grandes y centradas */}
+          <g opacity={0.28}><MapaIndia x={190} y={640} k={24} /></g>
+          <line x1={150} y1={1300} x2={930} y2={1300} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
+          {[[220, 112, 'sept–dic 2019', K.E + 0.2, '#8fb6ff'], [620, 231, 'sept–dic 2020', K.E + 0.7, KC.red]].map(([x, v, et, t0, col], i) => { const p = kprog(T, t0, t0 + 1.0, kEase.sale); const h = v * 2.8 * p;
+            return <g key={i}><rect x={x} y={1300 - h} width={240} height={h} fill={col} stroke={KC.ink} strokeWidth={7} />
+              {p > 0 && <text x={x + 120} y={1300 - h - 18} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.ink}>{Math.round(v * p)}</text>}
+              <text x={x + 120} y={1350} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>{et}</text></g>; })}
         </>)}
       </Escena>
       {/* 8 · COSMIC: 2,826 pacientes; 78 % diabetes; 87 % corticoides */}
       <Escena T={T} a={K.Co} b={K.Fe} zoom={0.03}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <rect x={70} y={620} width={640} height={560} rx={26} fill="rgba(255,255,255,.85)" stroke={KC.ink} strokeWidth={7} />
+          <rect x={70} y={620} width={640} height={560} rx={26} fill="rgba(20,28,48,.9)" stroke={KC.ink} strokeWidth={7} />
           {Array.from({ length: 100 }, (_, i) => <Personita key={i + (fase2 ? 'b' : 'a')} x={115 + (i % 10) * 61} y={680 + Math.floor(i / 10) * 53} s={0.95} color={i < nPint ? (fase2 ? KC.orange : KC.gold) : '#c9ccd4'} />)}
         </>)}
-        <NumeroGigante T={T} at={K.Co + 0.9} until={K.Co + 3.5} valor={78} dur={1.6} sufijo=" %" etiqueta="diabetes" x={880} y={880} tam={140} color={KC.gold2} />
-        <NumeroGigante T={T} at={K.Co + 3.9} until={K.Fe - 0.2} valor={87} dur={1.5} sufijo=" %" etiqueta="corticoides" x={880} y={880} tam={140} color={KC.orange} />
+        <NumeroGigante T={T} at={K.Co + 0.9} until={K.Co + 3.5} valor={78} dur={1.6} sufijo=" %" etiqueta="diabetes" x={872} y={880} tam={118} color={KC.gold2} />
+        <NumeroGigante T={T} at={K.Co + 3.9} until={K.Fe - 0.2} valor={87} dur={1.5} sufijo=" %" etiqueta="corticoides" x={872} y={880} tam={118} color={KC.orange} />
       </Escena>
       {/* 9 · azúcar alta + sangre ácida = más hierro suelto para el moho */}
       <Escena T={T} a={K.Fe} b={K.Ma} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1010) scale(1.15) translate(-540 -830)">
           <rect x={0} y={620} width={KW} height={420} fill="#2a101a" />
           <rect x={0} y={600} width={KW} height={20} fill="#784d59" /><rect x={0} y={1040} width={KW} height={20} fill="#784d59" />
           {Array.from({ length: 10 }, (_, i) => { const p = kprog(T, K.Fe + 0.3 + i * 0.1, K.Fe + 0.6 + i * 0.1, kEase.rebote); return p > 0 ? <Glucosa key={i} x={90 + i * 95} y={660 + (i % 2) * 40 + Math.sin(T * 2 + i) * 6} s={p} /> : null; })}
@@ -294,79 +296,79 @@ function MucorShot() {
           {fAbre > 0.9 && [[200, 820], [420, 900], [640, 800], [330, 980], [560, 990]].map(([x, y], i) => { const u = kprog(fVuela, i * 0.1, 0.6 + i * 0.1);
             return u < 1 ? <circle key={i} cx={klerp(x + 38, 900, u)} cy={klerp(y, 930, u)} r={13} fill={MC.hierro} stroke={KC.ink} strokeWidth={3} style={{ filter:`drop-shadow(0 0 8px ${MC.hierro})` }} /> : null; })}
           <Liston d="M 1100 930 L 980 930 L 880 925" p={0.35 + 0.65 * fVuela} ancho={60} interior="rgba(74,16,25,.85)" />
-        </>)}
+        </g>)}
       </Escena>
       {/* 10 · lo que piden los autores */}
       <Escena T={T} a={K.Ma} b={K.Cn} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Frasco x={330} y={760} s={1.1} />)}
+        {fsvg(<Frasco x={540} y={830} s={1.45} />)}
       </Escena>
       {/* 11 · es rara y no se contagia */}
       <Escena T={T} a={K.Cn} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <g transform="translate(260 960) scale(4.2)"><Personita x={0} y={0} color="#8fb6ff" /></g>
-          <g transform="translate(820 960) scale(4.2)"><Personita x={0} y={0} color="#ffb347" /></g>
+          <g transform="translate(250 1010) scale(5.5)"><Personita x={0} y={0} color="#8fb6ff" /></g>
+          <g transform="translate(830 1010) scale(5.5)"><Personita x={0} y={0} color="#ffb347" /></g>
           {(() => { const p = kprog(T, K.Cn + 0.3, K.Cn + 0.9, kEase.sale), x = kprog(T, K.Cn + 1.0, K.Cn + 1.3, kEase.rebote); return <g>
-            <path d={`M 380 900 L ${klerp(380, 690, p)} 900`} stroke={KC.ink} strokeWidth={14} strokeDasharray="26 16" strokeLinecap="round" />
-            {p > 0.95 && <path d="M 690 870 L 720 900 L 690 930" stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" />}
-            {x > 0 && <g transform={`translate(540 900) scale(${x})`}><path d="M -70 -70 L 70 70 M 70 -70 L -70 70" stroke={KC.red} strokeWidth={26} strokeLinecap="round" /></g>}
+            <path d={`M 390 950 L ${klerp(390, 690, p)} 950`} stroke={KC.ink} strokeWidth={14} strokeDasharray="26 16" strokeLinecap="round" />
+            {p > 0.95 && <path d="M 690 920 L 720 950 L 690 980" stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" />}
+            {x > 0 && <g transform={`translate(540 950) scale(${x})`}><path d="M -70 -70 L 70 70 M 70 -70 L -70 70" stroke={KC.red} strokeWidth={26} strokeLinecap="round" /></g>}
           </g>; })()}
         </>)}
       </Escena>
       {/* 12 · cierre: la misma cara; por dentro, el vaso tapado */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<Cara x={360} y={920} s={1.05} mancha={1} T={T} />)}
-        <Lupa T={T} at={K.C + 0.5} until={K.Ou} x={790} y={980} r={170} fx={300} fy={1000} interior={interiorCierre} tinte={KC.gold2} etiqueta="POR DENTRO" />
+        {fsvg(<g transform="translate(430 880) scale(1.3) translate(-360 -920)"><Cara x={360} y={920} s={1.05} mancha={1} T={T} /></g>)}
+        <Lupa T={T} at={K.C + 0.5} until={K.Ou} x={840} y={1250} r={185} fx={293} fy={975} interior={interiorCierre} tinte={KC.gold2} etiqueta="POR DENTRO" />
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.4} until={K.Ap - 0.2} texto="¿el hongo?" x={300} y={470} tam={48} />
-      <Chip T={T} at={K.G + 1.7} until={K.Ap - 0.2} texto="tejido muerto (necrosis)" x={320} y={570} tam={36} borde={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.4} until={K.Ap - 0.2} texto="¿el hongo?" x={300} y={360} tam={48} />
+      <Chip T={T} at={K.G + 1.7} until={K.Ap - 0.2} texto="tejido muerto (necrosis)" x={330} y={455} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.Ap + 2.4} until={K.Mu - 0.3} x={70} y={815} texto="en el tejido: hifas transparentes (hialinas)" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.Mu + 0.2} until={K.Es - 0.3} texto="orden Mucorales" x={540} y={330} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Mu + 1.6} until={K.Es - 0.3} x={60} y={1100} texto="moho joven: blanco y algodonoso" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Mu + 2.2} until={K.Es - 0.3} x={60} y={1150} texto="hojas podridas" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.Mu + 2.6} until={K.Es - 0.3} x={770} y={540} texto="Rhizopus" it tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Mu + 3.0} until={K.Es - 0.3} x={770} y={600} texto="Mucor" it tam={36} color={KC.texto} />
+      <Chip T={T} at={K.Mu + 0.2} until={K.Es - 0.3} texto="orden Mucorales" x={540} y={470} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Mu + 1.6} until={K.Es - 0.3} x={60} y={1300} texto="moho joven: blanco y algodonoso" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Mu + 2.2} until={K.Es - 0.3} x={60} y={1350} texto="hojas podridas" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Mu + 2.6} until={K.Es - 0.3} x={795} y={700} texto="Rhizopus" it tam={36} color={KC.texto} />
+      <Etq T={T} at={K.Mu + 3.0} until={K.Es - 0.3} x={795} y={760} texto="Mucor" it tam={36} color={KC.texto} />
       <Chip T={T} at={K.Es + 2.6} until={K.Hi - 0.3} texto="defensas bajas" x={290} y={470} tam={36} borde={KC.red} />
       <Chip T={T} at={K.Es + 3.4} until={K.Hi - 0.3} texto="diabetes sin control" x={300} y={560} tam={36} borde={KC.red} />
       <Etq T={T} at={K.Es + 3.8} until={K.Hi - 0.3} x={40} y={660} texto="macrófago: la traga y la espora no germina" tam={24} color={KC.texto} />
-      <Etq T={T} at={K.Hi + 0.4} until={K.V - 0.3} x={60} y={700} texto="espora que germina" tam={28} />
-      <Etq T={T} at={K.Hi + 1.6} until={K.V - 0.3} x={520} y={500} texto="ancha, casi sin tabiques" tam={30} color={KC.hifa} />
-      <Etq T={T} at={K.Hi + 2.2} until={K.V - 0.3} x={60} y={1050} texto="Aspergillus: delgadas y con tabiques" tam={26} color="#9fd0a6" />
-      <Etq T={T} at={K.V + 0.6} until={K.P - 0.3} x={60} y={530} texto="hifa" tam={30} color={KC.hifa} />
-      <Etq T={T} at={K.V + 1.0} until={K.P - 0.3} x={60} y={1060} texto="vaso sanguíneo" tam={28} color="#ffb3bd" />
+      <Etq T={T} at={K.Hi + 0.4} until={K.V - 0.3} x={50} y={912} texto="espora que germina" tam={28} />
+      <Etq T={T} at={K.Hi + 1.0} until={K.V - 0.3} x={450} y={680} texto="ancha, casi sin tabiques" tam={30} color={KC.hifa} />
+      <Etq T={T} at={K.Hi + 1.6} until={K.V - 0.3} x={60} y={1245} texto="Aspergillus: delgadas y con tabiques" tam={26} color="#9fd0a6" />
+      <Etq T={T} at={K.V + 0.6} until={K.P - 0.3} x={60} y={690} texto="hifa" tam={30} color={KC.hifa} />
+      <Etq T={T} at={K.V + 1.0} until={K.P - 0.3} x={1020} y={926} lado="izq" texto="vaso sanguíneo" tam={26} color="#ffd0d6" />
       <Chip T={T} at={K.V + 2.4} until={K.P - 0.3} texto="se tapa el vaso" x={300} y={330} tam={34} borde={KC.red} />
       <Chip T={T} at={K.V + 3.3} until={K.P - 0.3} texto="sin sangre → necrosis" x={330} y={420} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.P + 0.2} until={K.E - 0.2} texto="India · pandemia de COVID-19" x={420} y={470} tam={36} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.6} anio="×2.1" quien="10 centros de India · sept–dic 2019 vs. sept–dic 2020" revista="Patel et al., Emerging Infectious Diseases, 2021" y={460} />
-      <Chip T={T} at={K.E + 2.8} until={K.Co - 0.2} texto="112 → 231 casos" x={400} y={480} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.P + 0.2} until={K.E - 0.2} texto="India · pandemia de COVID-19" x={540} y={540} tam={36} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.6} anio="×2.1" quien="10 centros de India · sept–dic 2019 vs. sept–dic 2020" revista="Patel et al., Emerging Infectious Diseases, 2021" y={340} />
+      <Chip T={T} at={K.E + 2.8} until={K.Co - 0.2} texto="112 → 231 casos" x={540} y={400} tam={44} borde={KC.red} />
       <Chip T={T} at={K.Co + 0.1} until={K.Fe - 0.2} texto="2,826 pacientes con mucormicosis asociada a COVID" x={540} y={460} tam={29} borde={KC.ink} />
       <Etq T={T} at={K.Co + 0.5} until={K.Fe - 0.2} x={80} y={560} texto="COSMIC · Indian J. Ophthalmol. · 2021" tam={26} color={KC.texto} />
       <Chip T={T} at={K.Fe + 0.4} until={K.Ma - 0.3} texto="azúcar alta" x={240} y={460} tam={36} borde={KC.yellow} />
       <Chip T={T} at={K.Fe + 1.0} until={K.Ma - 0.3} texto="sangre ácida" x={250} y={540} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.Fe + 1.2} until={K.Ma - 0.3} x={60} y={1085} texto="transferrina (guarda el hierro)" tam={28} color="#9cc0ff" />
-      <Etq T={T} at={K.Fe + 2.6} until={K.Ma - 0.3} x={1020} y={1140} lado="izq" texto="hierro libre → moho" tam={28} color={MC.hierro} />
-      <Chip T={T} at={K.Ma + 0.5} until={K.Cn - 0.3} texto="los autores piden usarlos solo" x={540} y={1010} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Ma + 1.0} until={K.Cn - 0.3} texto="en COVID moderado o grave" x={540} y={1085} tam={38} borde={KC.gold} />
-      <Chip T={T} at={K.Ma + 1.6} until={K.Cn - 0.3} texto="esto no es consejo médico" x={760} y={760} tam={26} borde={KC.red} />
-      <Chip T={T} at={K.Cn + 1.1} until={K.C - 0.3} texto="no se contagia de persona a persona" x={540} y={1110} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.Cn + 0.3} until={K.C - 0.3} texto="es rara" x={300} y={470} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="tejido sin sangre" x={300} y={470} tam={40} borde={KC.gold} />
+      <Etq T={T} at={K.Fe + 1.2} until={K.Ma - 0.3} x={60} y={1300} texto="transferrina (guarda el hierro)" tam={28} color="#9cc0ff" />
+      <Etq T={T} at={K.Fe + 2.6} until={K.Ma - 0.3} x={1020} y={1360} lado="izq" texto="hierro libre → moho" tam={28} color={MC.hierro} />
+      <Chip T={T} at={K.Ma + 0.5} until={K.Cn - 0.3} texto="los autores piden usarlos solo" x={540} y={1180} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Ma + 1.0} until={K.Cn - 0.3} texto="en COVID moderado o grave" x={540} y={1255} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.Ma + 1.6} until={K.Cn - 0.3} texto="esto no es consejo médico" x={540} y={1340} tam={26} borde={KC.red} />
+      <Chip T={T} at={K.Cn + 1.1} until={K.C - 0.3} texto="no se contagia de persona a persona" x={540} y={1190} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.Cn + 0.3} until={K.C - 0.3} texto="es rara" x={250} y={560} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="tejido sin sangre" x={300} y={420} tam={40} borde={KC.gold} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Ap} texto="5 cm" largo={130} />
+      <BarraEscala T={T} at={K.G} until={K.Ap} texto="5 cm" largo={188} />
       <BarraEscala T={T} at={K.Ap} until={K.Mu} texto="10 µm" largo={75} />
       <BarraEscala T={T} at={K.Mu} until={K.Es} texto="1 cm" largo={120} />
-      <BarraEscala T={T} at={K.Es} until={K.Hi} texto="5 cm" largo={100} />
-      <BarraEscala T={T} at={K.Hi} until={K.V} texto="10 µm" largo={75} />
+      <BarraEscala T={T} at={K.Es} until={K.Hi} texto="5 cm" largo={125} />
+      <BarraEscala T={T} at={K.Hi} until={K.V} texto="10 µm" largo={83} />
       <BarraEscala T={T} at={K.V} until={K.P} texto="10 µm" largo={110} />
-      <BarraEscala T={T} at={K.P} until={K.E} texto="500 km" largo={77} />
-      <BarraEscala T={T} at={K.Ma} until={K.Cn} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={K.Cn} until={K.C} texto="50 cm" largo={140} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={130} />
+      <BarraEscala T={T} at={K.P} until={K.E} texto="500 km" largo={116} />
+      <BarraEscala T={T} at={K.Ma} until={K.Cn} texto="5 cm" largo={145} />
+      <BarraEscala T={T} at={K.Cn} until={K.C} texto="50 cm" largo={183} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={169} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ap - 0.1} texto="No es el hongo: *es tejido muerto.*" />

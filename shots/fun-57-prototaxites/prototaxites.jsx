@@ -31,11 +31,12 @@ function Tronco({ x, y, alto, ancho, crece = 1, fibras = true }) {
 }
 
 // Paisaje del Devónico temprano: cielo (FondoLunares, fuera), suelo, plantitas y el tronco. ppm = píxeles por metro.
+const TIERRA = mixHex(FK.tierra, '#0b1020', 0.45), TIERRA2 = mixHex('#7a5532', '#0b1020', 0.4);
 const PLANTAS_POS = [[60, 0.9], [130, 0.6], [210, 1.0], [300, 0.7], [380, 0.95], [700, 0.8], [780, 1.0], [860, 0.65], [950, 0.9], [1020, 0.7]];
-function Paisaje({ T, ppm = 90, suelo = 1180, tx = 560, crece = 1, plantas = 1 }) {
+function Paisaje({ T, ppm = 140, suelo = 1500, tx = 560, crece = 1, plantas = 1 }) {
   return <>
-    <rect x={-20} y={suelo} width={KW + 40} height={KH - suelo + 20} fill={FK.tierra} stroke={KC.ink} strokeWidth={8} />
-    <rect x={-20} y={suelo} width={KW + 40} height={18} fill="#7a5532" />
+    <rect x={-20} y={suelo} width={KW + 40} height={KH - suelo + 20} fill={TIERRA} stroke={KC.ink} strokeWidth={8} />
+    <rect x={-20} y={suelo} width={KW + 40} height={18} fill={TIERRA2} />
     {PLANTAS_POS.map(([px, k], i) => <Rhynia key={i} x={px} y={suelo + 4} h={0.38 * ppm * k} rot={mece(T, i + 2, 0.25) * 4} crece={plantas} />)}
     <Tronco x={tx} y={suelo + 6} alto={8 * ppm} ancho={1.0 * ppm} crece={crece} />
   </>;
@@ -160,7 +161,7 @@ function ProtoShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, D: CUES.Devonico, Pl: CUES.Plantas, Tu: CUES.Tubos, H: CUES.Hongo, Ca: CUES.Carbono, P: CUES.Pregunta, E: CUES.Estudio, Q: CUES.Quitina, S: CUES.Sinhuella, L: CUES.Linaje, De: CUES.Debate, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const crece = kprog(T, K.G + 0.1, K.G + 1.6, kEase.sale);
+  const crece = 0.4 + 0.6 * kprog(T, K.G, K.G + 1.4, kEase.sale);
   const Qm = K.Q + 2.6, Qe = K.Q + 5.0; // quitina: champiñón → pared → espectro
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -169,69 +170,69 @@ function ProtoShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           <Paisaje T={T} crece={crece} plantas={kprog(T, K.G, K.G + 0.8)} />
-          <Regla x={460} y={1186} alto={720} texto="8 m" prog={kprog(T, K.G + 0.6, K.G + 1.8, kEase.sale)} />
+          <Regla x={450} y={1506} alto={1120} texto="8 m" prog={kprog(T, K.G + 0.4, K.G + 1.5, kEase.sale)} />
         </>)}
       </Escena>
       {/* 3 · las plantas no pasaban de 40 cm: vista de cerca de la base */}
       <Escena T={T} a={K.Pl} b={K.Tu} zoom={0.04} origen="50% 80%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
-          <rect x={-20} y={1180} width={KW + 40} height={760} fill={FK.tierra} stroke={KC.ink} strokeWidth={8} />
-          <rect x={-20} y={1180} width={KW + 40} height={18} fill="#7a5532" />
+        {fsvg(<g transform="translate(0 320)">
+          <rect x={-20} y={1180} width={KW + 40} height={760} fill={TIERRA} stroke={KC.ink} strokeWidth={8} />
+          <rect x={-20} y={1180} width={KW + 40} height={18} fill={TIERRA2} />
           <Tronco x={830} y={1190} alto={2400} ancho={300} />
-          <Silueta x={520} y={1184} h={510 * kprog(T, K.Pl + 0.3, K.Pl + 0.9, kEase.sale)} />
-          {[40, 120, 210, 300, 380, 620].map((px, i) => <Rhynia key={i} x={px} y={1184} h={[110, 80, 118, 95, 120, 70][i]} rot={mece(T, i, 0.3) * 4} crece={kprog(T, K.Pl + 0.6 + i * 0.12, K.Pl + 1.2 + i * 0.12, kEase.sale)} />)}
+          <Silueta x={520} y={1184} h={510 * kprog(T, K.Pl - 0.2, K.Pl + 0.5, kEase.sale)} />
+          {[40, 120, 210, 300, 380, 620].map((px, i) => <Rhynia key={i} x={px} y={1184} h={[110, 80, 118, 95, 120, 70][i]} rot={mece(T, i, 0.3) * 4} crece={kprog(T, K.Pl + 0.1 + i * 0.08, K.Pl + 0.6 + i * 0.08, kEase.sale)} />)}
           <g opacity={kprog(T, K.Pl + 1.4, K.Pl + 1.8)}>
             <line x1={0} y1={1064} x2={680} y2={1064} stroke={KC.white} strokeWidth={5} strokeDasharray="18 12" />
             <text x={20} y={1046} style={{ font:`700 40px ${KF.mono}` }} fill={KC.white} stroke={KC.ink} strokeWidth={5} paintOrder="stroke">&lt; 40 cm</text>
           </g>
-          <Regla x={440} y={1184} alto={510} texto="1.70 m" prog={kprog(T, K.Pl + 0.4, K.Pl + 1.0)} />
-        </>)}
+          <Regla x={440} y={1184} alto={510} texto="1.70 m" prog={kprog(T, K.Pl, K.Pl + 0.6)} />
+        </g>)}
       </Escena>
       {/* 4–5 · por dentro: maraña de tubos; Hueber 2001: ¿hongo? */}
       <Escena T={T} a={K.Tu} b={K.Ca} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <defs><clipPath id="lente57"><circle cx={540} cy={860} r={430} /></clipPath></defs>
+          <defs><clipPath id="lente57"><circle cx={540} cy={940} r={430} /></clipPath></defs>
           <g clipPath="url(#lente57)">
-            <rect x={0} y={400} width={KW} height={900} fill="#151214" />
-            <Tubos g={kprog(T, K.Tu - 0.2, K.Tu + 2.2)} gris={kprog(T, K.H + 2.6, K.H + 3.2) * 0.6} />
+            <g transform="translate(0 80)"><rect x={0} y={400} width={KW} height={900} fill="#151214" />
+            <Tubos g={kprog(T, K.Tu - 0.9, K.Tu + 1.6)} gris={kprog(T, K.H + 2.6, K.H + 3.2) * 0.6} />
             {T > K.H + 2.4 && <g opacity={kprog(T, K.H + 2.6, K.H + 3.2)}><RedHifas T={T} x={540} y={880} g={kprog(T, K.H + 2.6, K.H + 4.4)} seed={7} n={260} escala={0.42} color={FK.hifa} ancho={4} brillo={0.6} /></g>}
-          </g>
-          <circle cx={540} cy={860} r={430} fill="none" stroke={KC.gold} strokeWidth={16} />
+          </g></g>
+          <circle cx={540} cy={940} r={430} fill="none" stroke={KC.gold} strokeWidth={16} />
         </>)}
       </Escena>
       {/* 6 · 2007: el carbono dice que no vivía solo de la luz */}
       <Escena T={T} a={K.Ca} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <rect x={-20} y={1180} width={KW + 40} height={760} fill={FK.tierra} stroke={KC.ink} strokeWidth={8} />
-          <g transform={`translate(170 640) rotate(${T * 20})`}>{Array.from({ length: 10 }, (_, i) => <line key={i} x1={0} y1={-90} x2={0} y2={-130} stroke={KC.orange} strokeWidth={12} strokeLinecap="round" transform={`rotate(${i * 36})`} />)}<circle r={72} fill={KC.orange} stroke={KC.ink} strokeWidth={7} /></g>
-          <Rhynia x={260} y={1184} h={170} />
-          <Tronco x={830} y={1190} alto={560} ancho={130} />
+          <rect x={-20} y={1500} width={KW + 40} height={440} fill={TIERRA} stroke={KC.ink} strokeWidth={8} />
+          <g transform={`translate(190 700) rotate(${T * 20})`}>{Array.from({ length: 10 }, (_, i) => <line key={i} x1={0} y1={-90} x2={0} y2={-130} stroke={KC.orange} strokeWidth={12} strokeLinecap="round" transform={`rotate(${i * 36})`} />)}<circle r={72} fill={KC.orange} stroke={KC.ink} strokeWidth={7} /></g>
+          <Rhynia x={300} y={1504} h={330} />
+          <Tronco x={800} y={1510} alto={1000} ancho={210} />
           {(() => { const a = kprog(T, K.Ca + 1.6, K.Ca + 2.2, kEase.sale), b = kprog(T, K.Ca + 2.2, K.Ca + 2.8, kEase.sale); return <>
-            {a > 0 && <line x1={200} y1={720} x2={klerp(200, 250, a)} y2={klerp(720, 990, a)} stroke={KC.ink} strokeWidth={8} strokeDasharray="20 12" />}
-            {b > 0 && <line x1={240} y1={680} x2={klerp(240, 750, b)} y2={klerp(680, 760, b)} stroke={KC.ink} strokeWidth={8} strokeDasharray="20 12" />}
+            {a > 0 && <line x1={220} y1={790} x2={klerp(220, 250, a)} y2={klerp(790, 1140, a)} stroke={KC.ink} strokeWidth={8} strokeDasharray="20 12" />}
+            {b > 0 && <line x1={290} y1={720} x2={klerp(290, 680, b)} y2={klerp(720, 640, b)} stroke={KC.ink} strokeWidth={8} strokeDasharray="20 12" />}
           </>; })()}
-          <Sello T={T} at={K.Ca + 2.3} x={340} y={950} texto="✓" color={KC.leaf} r={60} />
-          <Sello T={T} at={K.Ca + 2.9} x={830} y={560} texto="✗" color={KC.red} r={60} />
+          <Sello T={T} at={K.Ca + 2.3} x={420} y={1160} texto="✓" color={KC.leaf} r={60} />
+          <Sello T={T} at={K.Ca + 2.9} x={800} y={600} texto="✗" color={KC.red} r={60} />
         </>)}
       </Escena>
       {/* 7 · ¿un hongo de ocho metros? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><rect x={-20} y={1180} width={KW + 40} height={760} fill={FK.tierra} stroke={KC.ink} strokeWidth={8} /><Tronco x={200} y={1190} alto={640} ancho={110} /><Interrogacion T={T} x={300} y={760} tam={360} /></>)}
+        {fsvg(<><rect x={-20} y={1500} width={KW + 40} height={440} fill={TIERRA} stroke={KC.ink} strokeWidth={8} /><Tronco x={330} y={1510} alto={1000} ancho={180} /><Interrogacion T={T} x={680} y={960} tam={460} /></>)}
       </Escena>
       {/* 8 · 2026: fósiles de Rhynie, Escocia, en piedra */}
       <Escena T={T} a={K.E} b={K.Q} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Pedernal T={T} x={540} y={980} s={1.25} brillo={kprog(T, K.E + 3.0, K.E + 3.6)} />)}
+        {fsvg(<Pedernal T={T} x={540} y={1030} s={1.5} brillo={kprog(T, K.E + 3.0, K.E + 3.6)} />)}
       </Escena>
       {/* 9 · el champiñón de tu cocina → su pared de quitina → la huella química */}
       <Escena T={T} a={K.Q} b={Qm} zoom={0.06} origen="50% 55%">
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Tabla x={540} y={1100} /><Champi x={480} y={1110} s={1.5 * kprog(T, K.Q - 0.3, K.Q + 0.4, kEase.rebote)} /></>)}
+        {fsvg(<><Tabla x={540} y={1180} /><Champi x={400} y={1190} s={2.2 * kprog(T, K.Q - 0.3, K.Q + 0.4, kEase.rebote)} /></>)}
       </Escena>
       <Escena T={T} a={Qm} b={K.S} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
@@ -277,7 +278,7 @@ function ProtoShot() {
         <FondoLunares color={KC.orange} />
         {fsvg(<>
           {(() => { const p = kprog(T, K.L + 0.1, K.L + 1.2, kEase.sale); const R = [[-340, 'plantas', KC.leaf], [-80, 'animales', KC.pink], [190, 'hongos', KC.yellow]];
-            return <g transform="translate(470 1150)">
+            return <g transform="translate(490 1350) scale(1.1)">
               <line x1={0} y1={0} x2={0} y2={-260 * p} stroke={KC.ink} strokeWidth={22} strokeLinecap="round" />
               {R.map(([dx, t, c], i) => <g key={i} opacity={p}><path d={`M 0 -240 Q ${dx * 0.6} -360 ${dx} ${-560}`} stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" />
                 <text x={dx} y={-590} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={c} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">{t}</text></g>)}
@@ -299,32 +300,32 @@ function ProtoShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           <Paisaje T={T} />
-          <Regla x={460} y={1186} alto={720} texto="8 m" />
-          <g opacity={kprog(T, K.C + 0.5, K.C + 1.0)}><Interrogacion T={T} x={300} y={760} tam={300} /></g>
+          <Regla x={450} y={1506} alto={1120} texto="8 m" />
+          <g opacity={kprog(T, K.C + 0.5, K.C + 1.0)}><Interrogacion T={T} x={830} y={900} tam={360} /></g>
         </>)}
       </Escena>
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.6} until={K.D + 0.4} texto="¿árbol?" x={200} y={370} tam={44} />
       <Chip T={T} at={K.G + 2.2} until={K.D + 0.4} texto="¿hongo?" x={200} y={490} tam={44} borde={KC.yellow} />
-      <Etq T={T} at={K.D + 0.3} until={K.Pl - 0.3} x={600} y={1110} texto="Prototaxites" it tam={40} color={KC.ink} />
+      <Etq T={T} at={K.D + 0.3} until={K.Pl - 0.3} x={640} y={1300} texto="Prototaxites" it tam={40} color={KC.ink} />
       <NumeroGigante T={T} at={K.D + 1.2} until={K.Pl - 0.3} valor={400} dur={1.2} etiqueta="hace unos" x={220} y={660} tam={160} color={KC.yellow} />
-      <Chip T={T} at={K.D + 1.8} until={K.Pl - 0.3} texto="millones de años · Devónico" x={300} y={830} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Pl + 1.0} until={K.Tu - 0.3} x={20} y={985} texto="plantas tipo Rhynia" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Pl + 2.0} until={K.Tu - 0.3} texto="él: hasta 8 m" x={330} y={480} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.Tu + 0.2} until={K.H - 0.3} texto="POR DENTRO · tubos" x={360} y={360} tam={38} borde={KC.gold} mono />
-      <Etq T={T} at={K.Tu + 1.0} until={K.H + 2.4} x={240} y={1462} texto="tubos de ~10 a ~40 µm" tam={30} color={KC.gold2} />
-      <TarjetaEstudio T={T} at={K.H + 0.2} until={K.H + 2.5} anio="2001" quien="F. Hueber · Smithsonian, Washington" revista="Review of Palaeobotany and Palynology" y={560} />
-      <Chip T={T} at={K.H + 3.0} until={K.Ca - 0.3} texto="¿hilos de hongo (hifas)?" x={360} y={360} tam={36} borde={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.Ca + 0.1} until={K.Ca + 1.6} anio="2007" quien="Boyce et al. · isótopos de carbono" revista="Geology" y={560} />
-      <Etq T={T} at={K.Ca + 2.4} until={K.P - 0.3} x={330} y={1040} texto="planta: vive de la luz" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ca + 3.0} until={K.P - 0.3} texto="Prototaxites: no solo de la luz" x={420} y={430} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.D + 1.8} until={K.Pl - 0.3} texto="millones de años · Devónico" x={245} y={830} tam={26} borde={KC.ink} />
+      <Etq T={T} at={K.Pl + 1.0} until={K.Tu - 0.3} x={20} y={1305} texto="plantas tipo Rhynia" it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Pl + 2.0} until={K.Tu - 0.3} texto="él: hasta 8 m" x={330} y={640} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.Tu + 0.2} until={K.H - 0.3} texto="POR DENTRO · tubos" x={540} y={400} tam={38} borde={KC.gold} mono />
+      <Etq T={T} at={K.Tu + 0.4} until={K.H + 2.4} x={240} y={1462} texto="tubos de ~10 a ~40 µm" tam={30} color={KC.gold2} />
+      <TarjetaEstudio T={T} at={K.H + 0.2} until={K.H + 2.5} anio="2001" quien="F. Hueber · Smithsonian, Washington" revista="Review of Palaeobotany and Palynology" x={470} y={330} />
+      <Chip T={T} at={K.H + 3.0} until={K.Ca - 0.3} texto="¿hilos de hongo (hifas)?" x={540} y={400} tam={36} borde={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.Ca + 0.1} until={K.Ca + 1.6} anio="2007" quien="Boyce et al. · isótopos de carbono" revista="Geology" x={560} y={330} />
+      <Etq T={T} at={K.Ca + 2.4} until={K.P - 0.3} x={340} y={1420} texto="planta: vive de la luz" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Ca + 3.0} until={K.P - 0.3} texto="Prototaxites: no solo de la luz" x={540} y={400} tam={34} borde={KC.red} />
       <Chip T={T} at={K.P + 0.2} until={K.E - 0.3} texto="¿hongo de 8 m?" x={300} y={360} tam={44} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2026" quien="equipo de Edimburgo" revista="Loron et al. · Science Advances" y={520} />
       <Etq T={T} at={K.E + 3.0} until={K.Q - 0.3} x={240} y={1462} texto="pedernal de Rhynie, Escocia" tam={30} color={KC.ink} />
       <NumeroGigante T={T} at={K.E + 3.2} until={K.Q - 0.3} valor={407} dur={1.0} sufijo=" millones de años" etiqueta="fósiles de" x={370} y={500} tam={70} color={KC.yellow} />
-      <Etq T={T} at={K.Q + 0.5} until={Qm - 0.3} x={670} y={980} texto="champiñón" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Q + 0.9} until={Qm - 0.3} x={670} y={1035} texto="Agaricus bisporus" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Q + 0.5} until={Qm - 0.3} x={700} y={760} texto="champiñón" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Q + 0.9} until={Qm - 0.3} x={700} y={815} texto="Agaricus bisporus" it tam={26} color={KC.ink} />
       <Chip T={T} at={Qm + 0.2} until={Qe - 0.3} texto="AL MICROSCOPIO · pared celular" x={430} y={540} tam={32} borde={KC.mint} mono />
       <Etq T={T} at={Qm + 1.0} until={Qe - 0.3} x={130} y={1150} texto="cadena de quitina (esquema)" tam={30} color={KC.mint} />
       <Etq T={T} at={Qe + 1.6} until={K.S - 0.3} x={120} y={1070} texto="bandas de la quitina" tam={28} color={KC.gold2} />
@@ -334,18 +335,18 @@ function ProtoShot() {
       <Chip T={T} at={K.De + 1.6} until={K.C - 0.3} texto="solo revisaron 1 especie" x={400} y={380} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.De + 2.0} until={K.C - 0.3} x={300} y={470} texto="P. taiti" it tam={36} color={KC.ink} />
       <Chip T={T} at={K.De + 3.4} until={K.C - 0.3} texto="debate abierto" x={540} y={1440} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="aún no sabemos qué era" x={330} y={360} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="aún no sabemos qué era" x={470} y={225} tam={38} borde={KC.yellow} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Pl} texto="1 m" largo={90} />
+      <BarraEscala T={T} at={K.G} until={K.Pl} texto="1 m" largo={140} />
       <BarraEscala T={T} at={K.Pl} until={K.Tu} texto="1 m" largo={300} />
       <BarraEscala T={T} at={K.Tu} until={K.Ca} texto="50 µm" largo={100} />
       <BarraEscala T={T} at={K.Ca} until={K.P} texto="esquema" largo={0} />
-      <BarraEscala T={T} at={K.E} until={K.Q} texto="5 cm" largo={160} />
-      <BarraEscala T={T} at={K.Q} until={Qm} texto="5 cm" largo={260} />
+      <BarraEscala T={T} at={K.E} until={K.Q} texto="5 cm" largo={192} />
+      <BarraEscala T={T} at={K.Q} until={Qm} texto="5 cm" largo={381} />
       <BarraEscala T={T} at={Qm} until={Qe} texto="esquema" largo={0} />
       <BarraEscala T={T} at={K.S + 2.3} until={K.L} texto="esquema" largo={0} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m" largo={90} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m" largo={140} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.D - 0.1} texto="No es un árbol… *¿ni un hongo?*" />

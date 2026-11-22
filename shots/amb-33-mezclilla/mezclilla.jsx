@@ -174,10 +174,10 @@ function Secadora({ x, y, s = 1, tacha = 0 }) {
   </g>;
 }
 // Mini pantalón (ícono de una "puesta").
-function MiniPantalon({ x, y, s = 1, color = DENIM }) {
+function MiniPantalon({ x, y, s = 1, color = DENIM, trazo = 22 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d={PZ_PATH} fill={color} stroke={KC.ink} strokeWidth={22} strokeLinejoin="round" />
-    <path d="M -250 0 L 250 0 L 255 70 L -255 70 Z" fill="#2c4a8a" stroke={KC.ink} strokeWidth={18} />
+    <path d={PZ_PATH} fill={color} stroke={KC.ink} strokeWidth={trazo} strokeLinejoin="round" />
+    <path d="M -250 0 L 250 0 L 255 70 L -255 70 Z" fill="#2c4a8a" stroke={KC.ink} strokeWidth={trazo * 0.82} />
   </g>;
 }
 
@@ -220,7 +220,11 @@ function MezclillaShot() {
 
   // pantalón principal (de Gancho a Pregunta): posición y escala
   const mA = kprog(T, K.Al - 0.2, K.Al + 0.8, kEase.suave), mP = kprog(T, K.P - 0.2, K.P + 0.6, kEase.suave);
-  const pzX = klerp(klerp(380, 230, mA), 290, mP), pzY = klerp(klerp(420, 540, mA), 480, mP), pzS = klerp(klerp(0.72, 0.55, mA), 0.62, mP);
+  // pase a mano cine: el pantalón llena el cuadro (centrado, con un empuje lento de cámara) y los números van arriba de él
+  const empuje = 1 + 0.08 * kprog(T, K.G - 0.4, K.Al, kEase.suave);
+  const pzX = klerp(klerp(540, 225, mA), 380, mP), pzY = klerp(klerp(410, 560, mA), 430, mP), pzS = klerp(klerp(empuje, 0.72, mA), 1.0, mP);
+  // nota fija "esquema": fuera de la Escena para que la cámara no la saque del cuadro
+  const nota = (a, b, texto) => (T > a - 0.3 && T < b) ? <EscalaFija texto={texto} largo={0} y={1700} color={KC.ink} o={kprog(T, a - 0.3, a + 0.2) * (1 - kprog(T, b - 0.3, b))} /> : null;
   const pzO = 1 - kprog(T, K.Ca - 0.4, K.Ca + 0.1);
   const agua = kprog(T, K.G + 0.05, K.G + 2.6, kEase.suave), aguaO = 1 - kprog(T, K.Ga + 0.3, K.Ga + 1.6);
   const garr = kprog(T, K.Ga + 0.2, K.Ga + 3.2);
@@ -238,110 +242,112 @@ function MezclillaShot() {
       {/* 1–2 · gancho y garrafones: fondo cian */}
       <Escena T={T} a={K.G} b={K.Al} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 3 · el campo de algodón */}
       <Escena T={T} a={K.Al} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Surco T={T} y={1150} /><Algodonero T={T} x={740} y={1170} s={1.05} abre={kprog(T, K.Al + 0.6, K.Al + 1.8, kEase.sale)} /></>)}
-        <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
+        {svg(<><Surco T={T} y={1330} /><Algodonero T={T} x={735} y={1350} s={1.2} abre={kprog(T, K.Al + 0.6, K.Al + 1.8, kEase.sale)} /></>)}
+        <Etq T={T} at={K.Al + 1.6} until={K.P - 0.2} x={621} y={786} texto="cápsula abierta" lado="der" tam={28} color={KC.ink} />
+        <Etq T={T} at={K.Al + 2.0} until={K.P - 0.2} x={757} y={1280} texto="Gossypium" it lado="der" tam={28} color={KC.ink} />
       </Escena>
       {/* 4 · pregunta */}
       <Escena T={T} a={K.P} b={K.Ca}>
         <FondoLunares color={KC.lilac} />
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
+      {nota(K.G, K.Al, 'esquema (no a escala)')}
+      {nota(K.Al, K.P, 'esquema')}
+      {nota(K.P, K.Ca - 0.2, 'esquema (no a escala)')}
       {/* pantalón principal */}
       {pzO > 0 && T < K.Ca + 0.2 && svg(<>
         <Pantalon T={T} id="pzA" x={pzX} y={pzY} s={pzS} agua={agua} aguaO={aguaO} garr={garr} colorDe={colorFases(fib, fab, casa)} o={pzO} />
-        {T > K.P && <g opacity={kprog(T, K.P + 0.6, K.P + 1.0) * pzO}><Lavadora T={T} x={455} y={1070} s={0.45} gira={1} /></g>}
+        {T > K.P && <g opacity={kprog(T, K.P + 0.6, K.P + 1.0) * pzO}><Lavadora T={T} x={850} y={1180} s={1.0} gira={1} /></g>}
       </>, 20)}
 
-      {/* 5 · carbono por fase */}
+      {/* 5 · carbono por fase: el pantalón sigue en cuadro, arriba de las barras */}
       <Escena T={T} a={K.Ca} b={K.Co}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<>{FASES_CO2.map(([nom, v, col], i) => { const g = kprog(T, K.Ca + 0.4 + i * 0.12, K.Ca + 1.2 + i * 0.12, kEase.sale), y = 690 + i * 60, w = 460 * v / 37 * g, foco = i === 0 ? kprog(T, K.Ca + 1.8, K.Ca + 2.4) : 0;
+        {svg(<>
+          <Pantalon T={T} id="pzCa" x={540} y={310} s={0.64} />
+          {FASES_CO2.map(([nom, v, col], i) => { const g = kprog(T, K.Ca + 0.4 + i * 0.12, K.Ca + 1.2 + i * 0.12, kEase.sale), y = 1005 + i * 64, w = 400 * v / 37 * g, foco = i === 0 ? kprog(T, K.Ca + 1.8, K.Ca + 2.4) : 0;
           return <g key={i}>
-            <text x={420} y={y + 36} textAnchor="end" style={{ font:`${i === 0 ? 900 : 700} ${i === 0 ? 30 : 26}px ${i === 0 ? KF.texto : KF.mono}` }} fill={KC.ink}>{nom}</text>
-            <rect x={440} y={y + 6} width={Math.max(0, w)} height={44} rx={10} fill={col} stroke={KC.ink} strokeWidth={4 + foco * 3} />
-            <text x={450 + w} y={y + 40} style={{ font:`400 ${i === 0 ? 40 + foco * 10 : 32}px ${KF.titulo}` }} fill={KC.ink}>{Math.round(v * g)} %</text>
+            <text x={470} y={y + 38} textAnchor="end" style={{ font:`${i === 0 ? 900 : 700} ${i === 0 ? 34 : 30}px ${i === 0 ? KF.texto : KF.mono}` }} fill={KC.ink}>{nom}</text>
+            <rect x={490} y={y + 6} width={Math.max(0, w)} height={46} rx={10} fill={col} stroke={KC.ink} strokeWidth={4 + foco * 3} />
+            <text x={500 + w} y={y + 43} style={{ font:`400 ${i === 0 ? 46 + foco * 10 : 36}px ${KF.titulo}` }} fill={KC.ink}>{Math.round(v * g)} %</text>
           </g>; })}</>)}
+        <Chip T={T} at={K.Ca + 0.2} until={K.Co - 0.2} texto="33.4 kg CO₂e en toda su vida" y={250} x={540} tam={32} borde={KC.red} />
       </Escena>
 
-      {/* 6 · contraste con la UNESCO-IHE (2006) */}
+      {/* 6 · contraste con la UNESCO-IHE (2006): los dos pantalones están desde el inicio; la tarjeta va chica y arriba */}
       <Escena T={T} a={K.Co} b={K.La}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <Pantalon T={T} id="pzC1" x={220} y={650} s={0.5} agua={3781 / 10850 * cA} o={cA} />
-          <Pantalon T={T} id="pzC2" x={560} y={650} s={0.5} capas={capasB} o={cA} />
+          <Pantalon T={T} id="pzC1" x={299} y={520} s={0.82} agua={3781 / 10850 * cA} />
+          <Pantalon T={T} id="pzC2" x={781} y={520} s={0.82} capas={capasB} />
+          {/* rótulos dentro de su franja (se mueven con la cámara) y solo cuando el agua ya llegó a esa franja */}
+          {[['riego 4,900', 659, 1155, 0.5, '#fff'], ['lluvia 4,450', 670, 766, 0.76, '#0b1020'], ['dilución 1,500', 689, 604, 0.9, '#0b1020']].map(([t, x, y, u, col]) =>
+            <text key={t} x={x} y={y + 10} textAnchor="middle" opacity={kclamp((cB - u) / 0.08, 0, 1)} style={{ font:`700 28px ${KF.mono}`, stroke: col === '#fff' ? undefined : 'none' }} fill={col}>{t}</text>)}
         </>)}
-        <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
+        <TextoD T={T} at={K.Co + 3.0} until={K.La - 0.2} x={299} y={385} ancho={320}>
+          <div style={tChico(26)}>Levi's 2015</div><div style={tGrande(64, AGUA)}>3,781 L</div>
+        </TextoD>
+        <TextoD T={T} at={K.Co + 3.6} until={K.La - 0.2} x={781} y={385} ancho={380}>
+          <div style={{ ...tChico(24), whiteSpace:'nowrap' }}>UNESCO-IHE 2006 · 1 kg</div><div style={tGrande(64, KC.yellow)}>10,850 L</div>
+        </TextoD>
+        <Chip T={T} at={K.Co + 5.6} until={K.La - 0.2} texto="miden cosas distintas" y={315} x={540} tam={30} borde={KC.ink} />
       </Escena>
+      {nota(K.Co, K.La, 'esquema')}
 
-      {/* 7 · lavar menos */}
+      {/* 7 · lavar menos: las 10 puestas llenan el cuadro y la lavadora espera abajo desde el inicio */}
       <Escena T={T} a={K.La} b={K.Se}>
         <FondoLunares color={KC.mint} />
-        {svg(<>{Array.from({ length: 10 }, (_, i) => { const cx = 120 + (i % 5) * 112, cy = 470 + Math.floor(i / 5) * 190, ok = i < puestas;
-          return <g key={i}><rect x={cx - 48} y={cy - 12} width={96} height={170} rx={16} fill="rgba(255,255,255,.8)" stroke={KC.ink} strokeWidth={5} />
+        {svg(<><g transform="translate(-10.2 -442.8) scale(1.6)">{Array.from({ length: 10 }, (_, i) => { const cx = 120 + (i % 5) * 112, cy = 470 + Math.floor(i / 5) * 190, ok = i < puestas;
+          return <g key={i}><rect x={cx - 48} y={cy - 12} width={96} height={170} rx={16} fill="rgba(255,255,255,.8)" stroke={KC.ink} strokeWidth={4} />
             <MiniPantalon x={cx} y={cy + 8} s={0.12} />
-            <text x={cx} y={cy + 150} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>{i + 1}</text>
-            {ok && <path d={`M ${cx - 26} ${cy + 70} l 18 20 l 36 -44`} stroke={KC.leaf} strokeWidth={12} fill="none" strokeLinecap="round" strokeLinejoin="round" />}</g>; })}
-          {T > K.La + 2.5 && <g opacity={kprog(T, K.La + 2.5, K.La + 2.9)}><Lavadora T={T} x={820} y={950} s={0.85} gira={1} /></g>}
+            <text x={cx} y={cy + 150} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#0b1020">{i + 1}</text>
+            {ok && <path d={`M ${cx - 26} ${cy + 70} l 18 20 l 36 -44`} stroke={KC.leaf} strokeWidth={12} fill="none" strokeLinecap="round" strokeLinejoin="round" />}</g>; })}</g>
+          <g opacity={0.4 + 0.6 * kprog(T, K.La + 2.5, K.La + 2.9)}><Lavadora T={T} x={200} y={1250} s={1.2} gira={1} /></g>
         </>)}
+        <Chip T={T} at={K.La + 0.2} until={K.La + 3.0} texto="1 lavada cada 10 puestas" y={935} x={540} tam={34} borde={KC.leaf} />
+        <BarraD T={T} at={K.La + 3.2} until={K.Se - 0.2} valor={1 - 0.8 * bajaLav} etiqueta="agua y energía del lavado" texto={(v) => v > 0.99 ? '100 %' : `hasta −${Math.round((1 - v) * 100)} %`} x={360} y={1190} ancho={640} color={KC.leaf} />
       </Escena>
 
-      {/* 8 · secar al aire */}
+      {/* 8 · secar al aire: tendedero grande, de arriba abajo del cuadro */}
       <Escena T={T} a={K.Se} b={K.C}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Sol T={T} x={950} y={360} r={58} />
-          <line x1={330} y1={740} x2={1060} y2={740} stroke={KC.ink} strokeWidth={6} />
-          <rect x={320} y={720} width={18} height={500} rx={6} fill="#8b5a2b" stroke={KC.ink} strokeWidth={4} />
-          <g transform={`rotate(${Math.sin(T * 2) * 2} 700 740)`}><MiniPantalon x={700} y={742} s={0.4} />
-            <rect x={612} y={724} width={14} height={40} rx={4} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /><rect x={774} y={724} width={14} height={40} rx={4} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /></g>
-          {[0, 1, 2].map((i) => { const u = ((T * 0.7 + i / 3) % 1); return <path key={i} d={`M ${640 + i * 50} ${1100 - u * 80} q 10 -15 0 -30 q -10 -15 0 -30`} stroke="#fff" strokeWidth={5} fill="none" opacity={1 - u} />; })}
-          <Secadora x={170} y={1040} s={0.8} tacha={kprog(T, K.Se + 1.0, K.Se + 1.8)} />
+          <Sol T={T} x={880} y={330} r={70} />
+          <line x1={340} y1={600} x2={1100} y2={600} stroke={KC.ink} strokeWidth={7} />
+          <rect x={330} y={580} width={20} height={840} rx={6} fill="#8b5a2b" stroke={KC.ink} strokeWidth={4} />
+          <g transform={`rotate(${Math.sin(T * 2) * 2} 700 600)`}><MiniPantalon x={700} y={602} s={0.7} trazo={13} />
+            <rect x={548} y={574} width={20} height={58} rx={5} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /><rect x={832} y={574} width={20} height={58} rx={5} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /></g>
+          {[0, 1, 2].map((i) => { const u = ((T * 0.7 + i / 3) % 1); return <g key={i} transform={`translate(${595 + i * 88} ${1235 - u * 130}) scale(1.6)`} opacity={1 - u}><path d="M 0 0 q 10 -15 0 -30 q -10 -15 0 -30" stroke="#fff" strokeWidth={4} fill="none" /></g>; })}
+          <Secadora x={190} y={1190} s={1.0} tacha={kprog(T, K.Se + 1.0, K.Se + 1.8)} />
         </>)}
+        <Chip T={T} at={K.Se + 0.3} until={K.C - 0.2} texto="al aire, no en secadora" y={290} x={400} tam={34} borde={KC.yellow} />
+        <BarraD T={T} at={K.Se + 2.4} until={K.C - 0.2} valor={1 - 0.67 * bajaSec} etiqueta="carbono de cuidarlo (EUA)" texto={(v) => v > 0.99 ? '100 %' : `−${Math.round((1 - v) * 100)} %`} x={60} y={380} ancho={680} color={KC.yellow} />
       </Escena>
 
       {/* 9 · cierre: el mismo pantalón lleno, ya con años de uso */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Pantalon T={T} id="pzZ" x={380} y={420} s={0.72} garr={kprog(T, K.C - 0.3, K.C + 1.6)} gastado={kprog(T, K.C + 1.4, K.C + 2.4)} />)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
+        {svg(<Pantalon T={T} id="pzZ" x={540} y={420} s={1.0} garr={kprog(T, K.C - 0.3, K.C + 1.6)} gastado={kprog(T, K.C + 1.4, K.C + 2.4)} />)}
       </Escena>
+      {nota(K.C, K.Ou, 'esquema (no a escala)')}
 
-      {/* datos y etiquetas */}
-      <TextoD T={T} at={K.G + 0.1} until={K.Ga - 0.1} x={830} y={830}>
+      {/* datos y etiquetas (fuera de las escenas: acompañan al pantalón principal, que no lleva cámara) */}
+      <TextoD T={T} at={K.G + 0.1} until={K.Ga - 0.1} x={540} y={200} ancho={700}>
         <div style={tGrande(108)}>{kformato(3781 * kprog(T, K.G + 0.1, K.G + 2.6, kEase.sale))} L</div>
         <div style={{ ...tChico(30), marginTop:14 }}>de agua en toda su vida</div>
       </TextoD>
-      <TextoD T={T} at={K.Ga + 0.2} until={K.Al - 0.2} x={830} y={720}>
+      <TextoD T={T} at={K.Ga + 0.2} until={K.Al - 0.2} x={320} y={190}>
         <div style={tGrande(130)}>{Math.round(PZ_N * garr)}</div>
         <div style={{ ...tChico(30), marginTop:10 }}>garrafones de 20 L</div>
       </TextoD>
-      <Tarjeta T={T} at={K.Ga + 2.0} until={K.Al - 0.2} x={830} y={960} ancho={400} lineas={['estudio de la propia empresa', 'Levi Strauss & Co.', '2015 · jeans 501']} />
-      <Chip T={T} at={K.Al + 0.6} until={K.P - 0.2} texto="algodón: 68 % · 2,565 L" y={440} x={400} tam={32} borde={C_FIBRA} />
-      <Etq T={T} at={K.Al + 1.6} until={K.P - 0.2} x={640} y={676} texto="cápsula abierta" lado="der" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Al + 2.0} until={K.P - 0.2} x={760} y={1110} texto="Gossypium" it lado="der" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.P + 0.6} until={K.Ca - 0.2} texto="en tu casa: 23 % · 860 L" y={420} x={560} tam={34} borde={C_CASA} />
-      <Chip T={T} at={K.Ca + 0.2} until={K.Co - 0.2} texto="33.4 kg CO₂e en toda su vida" y={450} x={680} tam={30} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Co + 0.15} until={K.Co + 2.8} anio="2006" quien="Chapagain et al. · UNESCO-IHE" revista="Ecological Economics · datos de 1997–2001" y={720} />
-      <TextoD T={T} at={K.Co + 3.0} until={K.La - 0.2} x={220} y={480} ancho={320}>
-        <div style={tChico(26)}>Levi's 2015</div><div style={tGrande(64, AGUA)}>3,781 L</div>
-      </TextoD>
-      <TextoD T={T} at={K.Co + 3.6} until={K.La - 0.2} x={560} y={480} ancho={380}>
-        <div style={{ ...tChico(24), whiteSpace:'nowrap' }}>UNESCO-IHE 2006 · 1 kg</div><div style={tGrande(64, KC.yellow)}>10,850 L</div>
-      </TextoD>
-      <Etq T={T} at={K.Co + 4.4} until={K.La - 0.2} x={710} y={1080} texto="riego 4,900" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Co + 4.8} until={K.La - 0.2} x={710} y={930} texto="lluvia 4,450" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Co + 5.2} until={K.La - 0.2} x={710} y={840} texto="dilución 1,500" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Co + 5.6} until={K.La - 0.2} texto="miden cosas distintas" y={405} x={400} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.La + 0.2} until={K.La + 3.0} texto="1 lavada cada 10 puestas" y={920} x={360} tam={32} borde={KC.leaf} />
-      <BarraD T={T} at={K.La + 3.2} until={K.Se - 0.2} valor={1 - 0.8 * bajaLav} etiqueta="agua y energía del lavado" texto={(v) => v > 0.99 ? '100 %' : `hasta −${Math.round((1 - v) * 100)} %`} x={60} y={880} ancho={620} color={KC.leaf} />
-      <BarraD T={T} at={K.Se + 2.4} until={K.C - 0.2} valor={1 - 0.67 * bajaSec} etiqueta="carbono de cuidarlo (EUA)" texto={(v) => v > 0.99 ? '100 %' : `−${Math.round((1 - v) * 100)} %`} x={360} y={545} ancho={680} color={KC.yellow} />
-      <Chip T={T} at={K.Se + 0.3} until={K.C - 0.2} texto="al aire, no en secadora" y={470} x={560} tam={34} borde={KC.yellow} />
-      <TextoD T={T} at={K.C + 0.3} until={K.Ou - 0.1} x={830} y={1000}>
+      <Tarjeta T={T} at={K.Ga + 2.0} until={K.Al - 0.2} x={770} y={215} ancho={400} lineas={['estudio de la propia empresa', 'Levi Strauss & Co.', '2015 · jeans 501']} />
+      <Chip T={T} at={K.Al + 0.6} until={K.P - 0.2} texto="algodón: 68 % · 2,565 L" y={440} x={540} tam={34} borde={C_FIBRA} />
+      <Chip T={T} at={K.P + 0.6} until={K.Ca - 0.2} texto="en tu casa: 23 % · 860 L" y={320} x={540} tam={36} borde={C_CASA} />
+      <TarjetaEstudio T={T} at={K.Co + 0.15} until={K.Co + 2.8} anio="2006" quien="Chapagain et al. · UNESCO-IHE" revista="Ecological Economics · datos de 1997–2001" y={330} />
+      <TextoD T={T} at={K.C + 0.3} until={K.Ou - 0.1} x={540} y={200} ancho={800}>
         <div style={tGrande(90)}>3,781 L</div>
         <div style={{ ...tChico(32), marginTop:10 }}>más años = más vale cada litro</div>
       </TextoD>

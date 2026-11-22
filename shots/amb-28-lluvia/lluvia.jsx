@@ -186,14 +186,14 @@ function LluviaShot() {
       {/* 1 · gancho: 1 m² que junta más de 900 litros */}
       <Escena T={T} a={K.G} b={K.Mi}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Lluvia T={T} x0={40} x1={1040} y0={300} y1={1180} n={46} seed={5} />
-          <Cubo T={T} x={90} y={1100} s={350} nivel={nivG} /></>)}
+        {svg(<><Lluvia T={T} x0={40} x1={1040} y0={300} y1={1340} n={52} seed={5} />
+          <Cubo T={T} x={150} y={1310} s={510} nivel={nivG} /></>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 2 · un litro en un metro cuadrado = 1 mm; luego el pluviómetro */}
       <Escena T={T} a={K.Mi} b={K.D}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<g>
+        {svg(<g transform="translate(540 980) scale(1.2) translate(-470 -820)">
           <g opacity={1 - fase2}>
             <polygon points="100,1000 620,1000 840,860 320,860" fill="#e9e3d6" stroke={KC.ink} strokeWidth={7} />
             <polygon points="100,1000 620,1000 840,860 320,860" fill={AGUA} opacity={0.75 * capa} />
@@ -213,7 +213,7 @@ function LluviaShot() {
           </g>
         </g>)}
       </Escena>
-      <Lupa T={T} at={K.Mi + 1.6} until={K.Mi + 3.1} x={820} y={560} r={170} fx={610} fy={1004} tinte={KC.blue} etiqueta="AUMENTADO"
+      <Lupa T={T} at={K.Mi + 1.6} until={K.Mi + 3.1} x={840} y={600} r={170} fx={708} fy={1201} tinte={KC.blue} etiqueta="AUMENTADO"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#e9e3d6" /><rect x={0} y={r - 6} width={r * 2} height={60} fill="#cfc6b4" />
           <rect x={0} y={r - 46} width={r * 2} height={40} fill={AGUA} /><line x1={r * 1.55} y1={r - 46} x2={r * 1.55} y2={r - 6} stroke={KC.ink} strokeWidth={5} />
           <text x={r * 0.75} y={r - 66} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>1 mm</text></svg>} />
@@ -244,14 +244,14 @@ function LluviaShot() {
       {/* 4 · 284 colonias con agua por tandeo (2025) */}
       <Escena T={T} a={K.Ta} b={K.P}>
         <FondoLunares color={KC.yellow} />
-        {svg(<g><MapaCDMX T={T} x={70} y={560} s={0.9} encendidas={kprog(T, K.Ta + 0.3, K.Ta + 2.6)} />
-          <Llave T={T} x={880} y={760} gotea={1 - kprog(T, K.Ta + 2.0, K.Ta + 3.0)} /></g>)}
+        {svg(<g><MapaCDMX T={T} x={60} y={560} s={1.2} encendidas={kprog(T, K.Ta + 0.3, K.Ta + 2.6)} />
+          <Llave T={T} x={900} y={860} gotea={1 - kprog(T, K.Ta + 2.0, K.Ta + 3.0)} /></g>)}
         <EscalaFija texto="esquema (mapa aproximado)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Te} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<g>
+        {svg(<g transform="translate(500 930) scale(1.3) translate(-280 -785)">
           <text x={380} y={620} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 380 520)`}>?</text>
           <g transform={`translate(230 ${790 + Math.sin(T * 2.5) * 12})`}><path d="M 0 -130 Q 90 -10 90 40 A 90 90 0 0 1 -90 40 Q -90 -10 0 -130 Z" fill={AGUA} stroke={KC.ink} strokeWidth={8} />
             <ellipse cx={-35} cy={10} rx={18} ry={30} fill="#fff" opacity={0.6} /></g>
@@ -263,60 +263,62 @@ function LluviaShot() {
         <FondoLunares color={KC.cyan} />
         {svg(<g>
           {Array.from({ length: 50 }, (_, i) => { const c = i % 10, r = Math.floor(i / 10), on = i < Math.floor(techo * 50);
-            return <rect key={i} x={90 + c * 62} y={420 + r * 62} width={58} height={58} rx={6} fill={on ? AGUA : '#d9d2c4'} stroke={KC.ink} strokeWidth={4} />; })}
-          <Lluvia T={T} x0={90} x1={710} y0={380} y1={730} n={22} seed={12} />
-          <text x={870} y={560} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">50 m²</text>
-          <text x={870} y={610} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>techo (visto</text>
-          <text x={870} y={645} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>desde arriba)</text>
+            return <rect key={i} x={83 + c * 92} y={560 + r * 92} width={86} height={86} rx={8} fill={on ? AGUA : '#d9d2c4'} stroke={KC.ink} strokeWidth={4} />; })}
+          <Lluvia T={T} x0={80} x1={1000} y0={530} y1={1020} n={32} seed={12} />
+          <text x={400} y={480} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">50 m²</text>
+          <text x={590} y={440} textAnchor="start" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>techo (visto</text>
+          <text x={590} y={475} textAnchor="start" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>desde arriba)</text>
           {Array.from({ length: 42 }, (_, i) => { const c = i % 14, r = Math.floor(i / 14), t = K.Te + 0.6 + i * 0.085;
-            return <Tinaco key={i} x={110 + c * 66} y={900 + r * 115} s={0.42} lleno={kprog(T, t, t + 0.4)} o={kprog(T, t - 0.2, t)} />; })}
+            return <Tinaco key={i} x={85 + c * 70} y={1130 + r * 110} s={0.5} lleno={kprog(T, t, t + 0.4)} o={kprog(T, K.Te - 0.3, K.Te + 0.2) * (0.35 + 0.65 * kprog(T, t - 0.2, t))} />; })}
         </g>)}
       </Escena>
       {/* 7 · más de 73 mil sistemas de Cosecha de Lluvia */}
       <Escena T={T} a={K.Pr} b={K.E}>
         <FondoLunares color={KC.mint} />
         {svg(<g>{casas.map((h, i) => { const e = kprog(T, h.t, h.t + 0.35, kEase.rebote);
-          return <Casa key={i} x={70 + h.c * 160} y={860 + h.r * 105} w={130} h={70} pared={h.pared} s={1} o={kprog(T, h.t, h.t + 0.15)} lleno={kprog(T, h.t + 0.3, h.t + 1.2)} tin={0.32 * kclamp(e, 0, 1.2)} />; })}</g>)}
+          return <Casa key={i} x={70 + h.c * 160} y={930 + h.r * 125} w={135} h={88} pared={h.pared} s={1} o={kprog(T, h.t, h.t + 0.15)} lleno={kprog(T, h.t + 0.3, h.t + 1.2)} tin={0.36 * kclamp(e, 0, 1.2)} />; })}</g>)}
       </Escena>
       {/* 8 · el estudio (2020) */}
       <Escena T={T} a={K.E} b={K.Tr}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<g opacity={kprog(T, K.E + 2.9, K.E + 3.3)}>
+        {svg(<g opacity={kprog(T, K.E - 0.3, K.E + 0.3) * (0.35 + 0.65 * kprog(T, K.E + 2.9, K.E + 3.3))}>
           {tiles.map((i) => { const c = i % 4, r = Math.floor(i / 4), on = encendida(i) && T > K.E + 3.4 + i * 0.05;
-            return <rect key={i} x={430 + c * 120} y={400 + r * 95} width={108} height={84} rx={14} fill={on ? KC.gold : '#d9d2c4'} stroke={KC.ink} strokeWidth={5} />; })}
-          {Array.from({ length: 10 }, (_, i) => <Persona key={i} x={130 + i * 90} y={1170} s={1.1} color={[KC.orange, KC.pink, KC.cyan, KC.lilac, KC.leaf][i % 5]} o={kprog(T, K.E + 5.4 + i * 0.08, K.E + 5.6 + i * 0.08)} />)}
+            return <rect key={i} x={216 + c * 162} y={430 + r * 130} width={150} height={118} rx={18} fill={on ? KC.gold : '#d9d2c4'} stroke={KC.ink} strokeWidth={5} />; })}
+          {Array.from({ length: 10 }, (_, i) => <Persona key={i} x={100 + i * 98} y={1385} s={1.35} color={[KC.orange, KC.pink, KC.cyan, KC.lilac, KC.leaf][i % 5]} o={kprog(T, K.E + 5.4 + i * 0.08, K.E + 5.6 + i * 0.08)} />)}
         </g>)}
         <EscalaFija texto="esquema: 16 alcaldías" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 9 · el truco: separador de primeras lluvias + filtro */}
       <Escena T={T} a={K.Tr} b={K.U}>
         <FondoLunares color={KC.orange} />
-        {svg(<SistemaCaptacion T={T} t0={K.Tr} />)}
+        {svg(<g transform="translate(540 1000) scale(1.15) translate(-540 -850)"><SistemaCaptacion T={T} t0={K.Tr} /></g>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 10 · usos */}
       <Escena T={T} a={K.U} b={K.C}>
         <FondoLunares color={KC.cyan} />
         {svg(<g>
-          <IconoUso x={700} y={560} tipo="vaso" ok={false} e={kprog(T, K.U + 0.1, K.U + 0.5, kEase.rebote)} />
-          <IconoUso x={210} y={960} tipo="baño" e={kprog(T, K.U + 1.2, K.U + 1.6, kEase.rebote)} />
-          <IconoUso x={540} y={1000} tipo="ropa" e={kprog(T, K.U + 1.7, K.U + 2.1, kEase.rebote)} />
-          <IconoUso x={870} y={960} tipo="trapear" e={kprog(T, K.U + 2.2, K.U + 2.6, kEase.rebote)} />
+          <Lluvia T={T} x0={300} x1={780} y0={560} y1={1120} n={16} seed={7} o={0.5} />
+          <Tinaco x={540} y={1110} s={2.0} lleno={0.85} o={kprog(T, K.U - 0.3, K.U + 0.2)} />
+          <IconoUso x={540} y={420} tipo="vaso" ok={false} e={kprog(T, K.U + 0.1, K.U + 0.5, kEase.rebote)} />
+          <IconoUso x={190} y={1270} tipo="baño" e={kprog(T, K.U + 1.2, K.U + 1.6, kEase.rebote)} />
+          <IconoUso x={540} y={1290} tipo="ropa" e={kprog(T, K.U + 1.7, K.U + 2.1, kEase.rebote)} />
+          <IconoUso x={890} y={1270} tipo="trapear" e={kprog(T, K.U + 2.2, K.U + 2.6, kEase.rebote)} />
         </g>)}
       </Escena>
       {/* 11 · cierre: el mismo metro cuadrado, ahora con el agua hacia un tinaco */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g><Lluvia T={T} x0={40} x1={1040} y0={300} y1={1180} n={40} seed={5} />
-          <Cubo T={T} x={110} y={1150} s={360} nivel={0.925 * (1 - 0.5 * kprog(T, K.C + 1.0, K.C + 4.0, kEase.suave))} />
-          <path d="M 470 1120 L 640 1120 L 640 1180 L 860 1180 L 860 1150" stroke={KC.ink} strokeWidth={34} fill="none" strokeLinejoin="round" />
-          <path d="M 470 1120 L 640 1120 L 640 1180 L 860 1180 L 860 1150" stroke={AGUA} strokeWidth={20} fill="none" strokeLinejoin="round" strokeDasharray="22 18" strokeDashoffset={-T * 70} />
-          <Tinaco x={860} y={1150} s={1.5} lleno={0.15 + 0.7 * kprog(T, K.C + 1.0, K.C + 4.0, kEase.suave)} /></g>)}
+        {svg(<g><Lluvia T={T} x0={40} x1={1040} y0={300} y1={1340} n={46} seed={5} />
+          <Cubo T={T} x={70} y={1290} s={470} nivel={0.925 * (1 - 0.5 * kprog(T, K.C + 1.0, K.C + 4.0, kEase.suave))} />
+          <path d="M 540 1260 L 700 1260 L 700 1330 L 920 1330 L 920 1290" stroke={KC.ink} strokeWidth={40} fill="none" strokeLinejoin="round" />
+          <path d="M 540 1260 L 700 1260 L 700 1330 L 920 1330 L 920 1290" stroke={AGUA} strokeWidth={24} fill="none" strokeLinejoin="round" strokeDasharray="22 18" strokeDashoffset={-T * 70} />
+          <Tinaco x={920} y={1290} s={1.8} lleno={0.15 + 0.7 * kprog(T, K.C + 1.0, K.C + 4.0, kEase.suave)} /></g>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
 
       {/* datos y etiquetas */}
-      <NumeroGigante T={T} at={K.G + 0.15} until={K.Mi - 0.2} valor={900} dur={3.6} sufijo="+ L" etiqueta="este año, por cada m²:" x={330} y={470} tam={140} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.G + 0.15} until={K.Mi - 0.2} valor={900} dur={3.6} sufijo="+ L" etiqueta="este año, por cada m²:" x={540} y={430} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.G + 2.6} until={K.Mi - 0.2} texto="CDMX · 1 ene – 30 sep 2026" y={1440} x={540} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Mi + 0.4} until={K.Mi + 3.0} texto="1 L sobre 1 m² = capa de 1 mm" y={430} x={420} tam={34} borde={KC.blue} />
       <Chip T={T} at={K.Mi + 4.0} until={K.D - 0.2} texto="1 ene – 30 sep 2026 · SEGIAGUA" y={1440} x={540} tam={32} borde={KC.ink} />
@@ -325,27 +327,27 @@ function LluviaShot() {
       <Chip T={T} at={K.D + 2.6} until={K.Ta - 0.2} texto="drenaje combinado · esquema" y={1440} x={540} tam={34} borde={NEGRA} />
       <NumeroGigante T={T} at={K.Ta + 0.3} until={K.P - 0.2} valor={284} dur={2.3} sufijo=" colonias" etiqueta="con agua por tandeo:" x={540} y={440} tam={110} color={KC.red} />
       <Chip T={T} at={K.Ta + 1.6} until={K.P - 0.2} texto="Gaceta Oficial CDMX · 2025 · 10 alcaldías" y={1440} x={540} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.Te + 0.6} until={K.Pr - 0.2} x={400} y={480} texto="1 m²" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Te + 0.6} until={K.Pr - 0.2} x={380} y={603} texto="1 m²" tam={30} color={KC.ink} />
       {kvisible(T, K.Te + 0.4, K.Pr - 0.2) && (() => { const e = kentrada(T, K.Te + 0.4, K.Pr - 0.2, 'pop');
-        return <div style={{ position:'absolute', left:540, top:1460, zIndex:42, transform:`translate(-50%,-50%) scale(${e.s})`, opacity:e.o, textAlign:'center',
+        return <div style={{ position:'absolute', left:540, top:1462, zIndex:42, transform:`translate(-50%,-50%) scale(${e.s})`, opacity:e.o, textAlign:'center',
           background:'rgba(14,15,18,.85)', border:`4px solid ${KC.cyan}`, borderRadius:30, padding:'12px 34px' }}>
           <div style={{ font:`700 52px ${KF.mono}`, color:KC.texto, whiteSpace:'nowrap' }}>{kformato(litrosTecho, 0)} L ≈ {Math.floor(litrosTecho / 1100)} tinacos</div>
           <div style={{ font:`900 32px ${KF.texto}`, color:KC.gold2, marginTop:4 }}>tinacos de 1,100 L</div>
         </div>; })()}
-      <Chip T={T} at={K.Te + 2.0} until={K.Pr - 0.2} texto="en teoría" y={1600} x={540} tam={34} borde={KC.yellow} />
-      <NumeroGigante T={T} at={K.Pr + 0.3} until={K.E - 0.2} valor={73000} dur={2.4} sufijo="+" etiqueta="sistemas en casas:" x={340} y={520} tam={130} color={KC.yellow} />
+      <Chip T={T} at={K.Te + 2.0} until={K.Pr - 0.2} texto="en teoría" y={518} x={930} tam={34} borde={KC.yellow} />
+      <NumeroGigante T={T} at={K.Pr + 0.3} until={K.E - 0.2} valor={73000} dur={2.4} sufijo="+" etiqueta="sistemas en casas:" x={540} y={560} tam={140} color={KC.yellow} />
       <Chip T={T} at={K.Pr + 1.6} until={K.E - 0.2} texto="Cosecha de Lluvia · Sedema · desde 2019" y={1440} x={540} tam={30} borde={KC.leaf} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2020" quien="Isla Urbana + UNAM" revista="estudio dirigido por E. Tellman" y={720} />
-      <Chip T={T} at={K.E + 3.6} until={K.Tr - 0.2} texto="8 alcaldías con más falta de agua" y={810} x={670} tam={30} borde={KC.gold} />
-      <Chip T={T} at={K.E + 4.2} until={K.Tr - 0.2} texto="287 comunidades" y={890} x={670} tam={30} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.E + 4.6} until={K.Tr - 0.2} valor={105000} dur={1.0} etiqueta="sistemas:" x={300} y={1010} tam={80} color={KC.cyan} />
-      <NumeroGigante T={T} at={K.E + 5.2} until={K.Tr - 0.2} valor={415000} dur={1.2} etiqueta="personas:" x={780} y={1010} tam={80} color={KC.orange} />
-      <Etq T={T} at={K.Tr + 0.6} until={K.U - 0.2} x={375} y={880} texto="separador de" lado="izq" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Tr + 0.6} until={K.U - 0.2} x={375} y={920} texto="primeras lluvias" lado="izq" tam={28} color={KC.texto} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2020" quien="Isla Urbana + UNAM" revista="estudio dirigido por E. Tellman" y={380} />
+      <Chip T={T} at={K.E + 3.6} until={K.Tr - 0.2} texto="8 alcaldías con más falta de agua" y={1010} x={540} tam={30} borde={KC.gold} />
+      <Chip T={T} at={K.E + 4.2} until={K.Tr - 0.2} texto="287 comunidades" y={1088} x={540} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.E + 4.6} until={K.Tr - 0.2} valor={105000} dur={1.0} etiqueta="sistemas:" x={290} y={1215} tam={80} color={KC.cyan} />
+      <NumeroGigante T={T} at={K.E + 5.2} until={K.Tr - 0.2} valor={415000} dur={1.2} etiqueta="personas:" x={790} y={1215} tam={80} color={KC.orange} />
+      <Etq T={T} at={K.Tr + 0.6} until={K.U - 0.2} x={350} y={1040} texto="separador de" lado="izq" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Tr + 0.6} until={K.U - 0.2} x={350} y={1080} texto="primeras lluvias" lado="izq" tam={28} color={KC.texto} />
       <Chip T={T} at={K.Tr + 1.2} until={K.U - 0.2} texto="se tiran ~2 L por m² de techo" y={1440} x={540} tam={32} borde={SUCIA} />
-      <Etq T={T} at={K.Tr + 2.4} until={K.U - 0.2} x={765} y={775} texto="filtro de hojas" tam={24} color={KC.texto} />
-      <Etq T={T} at={K.Tr + 3.0} until={K.U - 0.2} x={850} y={1040} texto="tinaco" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.U + 0.4} until={K.C - 0.2} texto="no es para beber" y={760} x={700} tam={32} borde={KC.red} />
+      <Etq T={T} at={K.Tr + 2.4} until={K.U - 0.2} x={790} y={835} texto="filtro de hojas" tam={22} color={KC.texto} />
+      <Etq T={T} at={K.Tr + 3.0} until={K.U - 0.2} x={860} y={1240} texto="tinaco" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.U + 0.4} until={K.C - 0.2} texto="no es para beber" y={592} x={540} tam={32} borde={KC.red} />
       <Chip T={T} at={K.C + 0.5} until={K.Ou - 0.1} texto="900+ L por m² · ¿coladera o tinaco?" y={1440} x={540} tam={32} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

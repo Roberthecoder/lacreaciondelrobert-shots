@@ -34,21 +34,21 @@ function Dedo({ lado = -1, p = 0 }) {
 // Cara de frente con nariz grande. (x, y) = base de la nariz. fl, fr: aire por cada lado (0..1). tl, tr: tapado (0..1).
 // dl, dr: dedo que tapa. roja: punta roja (gripa). cansado: párpados a media asta. largo: largo de las corrientes.
 function NarizGrande({ T, x, y, s = 1, fl = 0, fr = 0, tl = 0, tr = 0, dl = 0, dr = 0, roja = 0, cansado = 0, largo = 380, cara = true }) {
-  const parpa = cansado > 0 ? cansado : (T % 4.3 < 0.12 ? 1 : 0);
+  const parpa = cansado > 0 ? cansado : ((T + 2) % 4.3 < 0.12 ? 1 : 0);
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {cara && <>
       <ellipse cx={0} cy={-250} rx={440} ry={600} fill={NZ_PIEL} stroke={KC.ink} strokeWidth={12} />
-      <path d="M -440 -330 C -470 -800 470 -800 440 -330 C 360 -600 -360 -600 -440 -330 Z" fill={CPELO} stroke={KC.ink} strokeWidth={9} />
+      <path d="M -440 -330 C -470 -1040 470 -1040 440 -330 C 360 -600 -360 -600 -440 -330 Z" fill={CPELO} stroke={KC.ink} strokeWidth={9} />
       <circle cx={-265} cy={-140} r={70} fill={KC.pink} opacity={0.18 + roja * 0.25} />
       <circle cx={265} cy={-140} r={70} fill={KC.pink} opacity={0.18 + roja * 0.25} />
       {[-1, 1].map((k) => <g key={k}>
         <ellipse cx={k * 190} cy={-410} rx={58} ry={44} fill="#fff" stroke={KC.ink} strokeWidth={8} />
-        <circle cx={k * 190 + k * 6} cy={-404} r={22} fill={KC.ink} />
+        <circle cx={k * 190 + k * 6} cy={-404} r={22} fill="#0b1020" />
         <circle cx={k * 190 + k * 6 + 8} cy={-412} r={7} fill="#fff" />
         {parpa > 0 && <path d={`M ${k * 190 - 62} -410 L ${k * 190 - 62} -456 L ${k * 190 + 62} -456 L ${k * 190 + 62} -410 Z`} transform={`translate(0 ${-4 + 44 * (1 - parpa) * -1})`} fill={NZ_PIEL} stroke={KC.ink} strokeWidth={7} />}
-        <path d={`M ${k * 120} -485 Q ${k * 190} ${cansado > 0 ? -490 : -515} ${k * 255} -480`} fill="none" stroke={KC.ink} strokeWidth={12} strokeLinecap="round" />
+        <path d={`M ${k * 120} -485 Q ${k * 190} ${cansado > 0 ? -490 : -515} ${k * 255} -480`} fill="none" stroke={CPELO} strokeWidth={14} strokeLinecap="round" />
       </g>)}
-      <path d="M -120 330 Q 0 380 120 330" fill="none" stroke={KC.ink} strokeWidth={11} strokeLinecap="round" />
+      <path d="M -120 330 Q 0 380 120 330" fill="none" stroke={NZ_HOYO} strokeWidth={12} strokeLinecap="round" />
     </>}
     <path d="M -60 -470 C -70 -330 -110 -200 -150 -60" fill="none" stroke={NZ_PIEL2} strokeWidth={11} strokeLinecap="round" />
     <path d="M 60 -470 C 70 -330 110 -200 150 -60" fill="none" stroke={NZ_PIEL2} strokeWidth={11} strokeLinecap="round" />
@@ -89,7 +89,7 @@ function CorteNariz({ T, hl = 0.3, hr = 0.3, gotas = 0, escoba = 0, zz = 0 }) {
       out.push(<circle key={i} cx={x0} cy={600 - f * 560} r={5 + g() * 4} fill="#fff" opacity={0.85 * Math.sin(Math.PI * f)} />); }
     return out; };
   return <g>
-    <rect x={0} y={0} width={640} height={640} fill="#4a2232" />
+    <rect x={0} y={0} width={640} height={640} rx={40} fill="#4a2232" />
     <path d="M 296 30 C 220 30 150 70 120 150 C 70 270 56 450 62 620 L 296 620 Z" fill={NZ_AIRE} stroke={KC.ink} strokeWidth={6} />
     <path d="M 344 30 C 420 30 490 70 520 150 C 570 270 584 450 578 620 L 344 620 Z" fill={NZ_AIRE} stroke={KC.ink} strokeWidth={6} />
     <rect x={296} y={24} width={48} height={600} fill={NZ_HUESO} stroke={KC.ink} strokeWidth={5} />
@@ -112,14 +112,14 @@ function CorteNariz({ T, hl = 0.3, hr = 0.3, gotas = 0, escoba = 0, zz = 0 }) {
 }
 
 // Reloj de pared con manecillas que corren (vel = vueltas por segundo del minutero).
-function Reloj({ T, x, y, r = 90, vel = 0.5, color = KC.paper, borde = KC.ink, o = 1 }) {
+function Reloj({ T, x, y, r = 90, vel = 0.5, color = KC.paper, borde = KC.ink, tinta = KC.ink, o = 1 }) {
   const am = T * vel * 360, ah = am / 12;
   return <g transform={`translate(${x} ${y})`} opacity={o}>
     <circle r={r} fill={color} stroke={borde} strokeWidth={r * 0.1} />
-    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={0} y1={-r * 0.78} x2={0} y2={-r * (i % 3 ? 0.7 : 0.62)} stroke={KC.ink} strokeWidth={r * 0.05} strokeLinecap="round" transform={`rotate(${i * 30})`} />)}
-    <line x1={0} y1={0} x2={0} y2={-r * 0.45} stroke={KC.ink} strokeWidth={r * 0.09} strokeLinecap="round" transform={`rotate(${ah})`} />
+    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={0} y1={-r * 0.78} x2={0} y2={-r * (i % 3 ? 0.7 : 0.62)} stroke={tinta} strokeWidth={r * 0.05} strokeLinecap="round" transform={`rotate(${i * 30})`} />)}
+    <line x1={0} y1={0} x2={0} y2={-r * 0.45} stroke={tinta} strokeWidth={r * 0.09} strokeLinecap="round" transform={`rotate(${ah})`} />
     <line x1={0} y1={0} x2={0} y2={-r * 0.7} stroke={KC.red} strokeWidth={r * 0.06} strokeLinecap="round" transform={`rotate(${am})`} />
-    <circle r={r * 0.08} fill={KC.ink} />
+    <circle r={r * 0.08} fill={tinta} />
   </g>;
 }
 
@@ -142,7 +142,11 @@ function Acostada({ T, tb = 0, fArriba = 0.8 }) {
 function Nariz() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
-  const NX = 540, NY = 800, NS = 0.85, NL = 300;
+  const NX = 540, NL = 260;
+  // La cara llena el cuadro en el gancho y el cierre (NS 1.25); en la prueba y los cornetes se aleja un poco para dejar
+  // sitio a los medidores. El cambio es continuo para que la disolvencia entre escenas no duplique la cara.
+  const pz = nzSw(T, K.Prueba - 0.5, K.Prueba + 0.5) * (T < K.Cierre - 1 ? 1 : 0);
+  const NS = klerp(1.25, 1.02, pz), NY = klerp(1100, 930, pz);
   // gancho: el lado grueso se intercambia
   const gL = 1 - nzSw(T, 2.6, 3.7) + nzSw(T, 5.4, 6.4);
   // prueba: tapa un lado (dedo izq.) y luego el otro (dedo der.)
@@ -160,75 +164,75 @@ function Nariz() {
   const cL = 0.5 + 0.5 * Math.cos((T - K.Cierre) * 1.4);
   const corte = (hl, hr, extra = {}) => (Tl, r) => <svg width={r * 2} height={r * 2} viewBox="0 0 640 640"><CorteNariz T={Tl} hl={hl} hr={hr} {...extra} /></svg>;
   return (
-    <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.pink }}>
+    <div style={{ position:'absolute', inset:0, overflow:'hidden', background:'#0a0f1c' }}>
       {/* 0 · gancho: la nariz y dos corrientes que se intercambian */}
-      <Escena T={T} a={K.Gancho} b={K.Prueba} fondo={KC.pink} zoom={0.02}>
+      <Escena T={T} a={K.Gancho} b={K.Prueba} zoom={0.02}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
           <NarizGrande T={T} x={NX} y={NY} s={NS} largo={NL} fl={klerp(0.18, 1, gL)} fr={klerp(1, 0.18, gL)} />
         </Lienzo>
       </Escena>
       {/* 1 · la prueba: tápate un lado y luego el otro */}
-      <Escena T={T} a={K.Prueba} b={K.Cornetes} fondo={KC.yellow} zoom={0.02}>
+      <Escena T={T} a={K.Prueba} b={K.Cornetes} zoom={0.02}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
           <NarizGrande T={T} x={NX} y={NY} s={NS} largo={NL} dl={d1} dr={d2} fl={0.12 + 0.3 * d2} fr={0.12 + 0.73 * d1} />
-          {[[930, 'lado 1', 0.85, 0, KC.cyan], [150, 'lado 2', 0.42, 0, KC.orange]].map(([x, lbl, v, on, col]) => { const at = lbl === 'lado 1' ? P + 0.9 : P + 3.3, k = kprog(T, at, at + 0.9, kEase.sale);
+          {[[985, 'lado 1', 0.85, 0, KC.cyan], [95, 'lado 2', 0.42, 0, KC.orange]].map(([x, lbl, v, on, col]) => { const at = lbl === 'lado 1' ? P + 0.9 : P + 3.3, k = kprog(T, at, at + 0.9, kEase.sale);
             return <g key={lbl} opacity={kprog(T, P + 0.3, P + 0.6)}>
-              <rect x={x - 45} y={560} width={90} height={420} rx={40} fill="rgba(14,15,18,.75)" stroke={KC.ink} strokeWidth={8} />
-              <rect x={x - 32} y={970 - 400 * v * k} width={64} height={Math.max(0, 400 * v * k - 3)} rx={30} fill={col} />
-              <TextoSvg x={x} y={1040} tam={40} fuente="texto" color={KC.texto}>{lbl}</TextoSvg>
+              <rect x={x - 45} y={1040} width={90} height={380} rx={40} fill="rgba(14,15,18,.75)" stroke={KC.ink} strokeWidth={8} />
+              <rect x={x - 32} y={1410 - 360 * v * k} width={64} height={Math.max(0, 360 * v * k - 3)} rx={30} fill={col} />
+              <TextoSvg x={x} y={1482} tam={40} fuente="texto" color={KC.texto}>{lbl}</TextoSvg>
             </g>; })}
         </Lienzo>
-        <Chip T={T} at={P + 0.2} until={K.Cornetes - 0.1} texto="tápate un lado y respira" x={540} y={330} tam={44} borde={KC.ink} />
-        <Etq T={T} at={P + 4.0} until={K.Cornetes - 0.1} x={880} y={520} texto="pasa más aire" lado="izq" color={KC.texto} tam={34} />
+        <Chip T={T} at={P + 0.2} until={K.Cornetes - 0.1} texto="tápate un lado y respira" x={540} y={300} tam={44} borde={KC.ink} />
+        <Etq T={T} at={P + 4.0} until={K.Cornetes - 0.1} x={1034} y={1550} texto="pasa más aire" lado="izq" color={KC.texto} tam={34} />
       </Escena>
       {/* 2 · por dentro: los cornetes forrados de tejido que se llena de sangre */}
-      <Escena T={T} a={K.Cornetes} b={K.Turno} fondo={KC.pink} zoom={0.06} origen="50% 40%">
+      <Escena T={T} a={K.Cornetes} b={K.Turno} zoom={0.06} origen="50% 40%">
         <FondoLunares color={KC.pink} />
         <Lienzo><NarizGrande T={T} x={NX} y={NY} s={NS} largo={NL} fl={0.4} fr={0.4} /></Lienzo>
-        <Lupa T={T} at={K.Cornetes + 0.1} until={K.Turno + 0.3} x={540} y={560} r={330} fx={540} fy={740} tinte={KC.cyan}
+        <Lupa T={T} at={K.Cornetes + 0.1} until={K.Turno + 0.3} x={540} y={800} r={400} fx={540} fy={910} tinte={KC.cyan}
           etiqueta="POR DENTRO · NARIZ" interior={corte(0.25 + 0.5 * (0.5 + 0.5 * Math.sin((T - K.Cornetes) * 2.2)), 0.25 + 0.5 * (0.5 + 0.5 * Math.sin((T - K.Cornetes) * 2.2)))} />
-        <Etq T={T} at={K.Cornetes + 1.2} until={K.Turno - 0.1} x={300} y={500} texto="cornetes" lado="izq" color={KC.texto} tam={36} />
-        <Chip T={T} at={K.Cornetes + 2.4} until={K.Turno - 0.1} texto="tejido que se llena de sangre" x={540} y={1110} tam={40} borde={NZ_SANGRE} />
+        <Etq T={T} at={K.Cornetes + 1.2} until={K.Turno - 0.1} x={335} y={822} texto="cornetes" lado="izq" color={KC.texto} tam={36} />
+        <Chip T={T} at={K.Cornetes + 2.4} until={K.Turno - 0.1} texto="tejido que se llena de sangre" x={540} y={1340} tam={40} borde={NZ_SANGRE} />
       </Escena>
       {/* 3 · el turno: un lado se hincha y el otro se deshincha */}
-      <Escena T={T} a={K.Turno} b={K.Ciclo} fondo={KC.dark} zoom={0.03}>
+      <Escena T={T} a={K.Turno} b={K.Ciclo} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <Lienzo>
-          <g transform="translate(204 440) scale(1.05)"><CorteNariz T={T} hl={hlT} hr={hrT} /></g>
-          <Reloj T={T} x={900} y={330} r={70} vel={0.6} />
+          <g transform="translate(60 480) scale(1.5)"><CorteNariz T={T} hl={hlT} hr={hrT} /></g>
+          <Reloj T={T} x={900} y={340} r={84} vel={0.6} />
           {(() => { const o = kprog(T, K.Turno + 1.4, K.Turno + 1.8) * (1 - kprog(T, K.Turno + 3.3, K.Turno + 3.6)), o2 = kprog(T, K.Turno + 4.4, K.Turno + 4.8);
             return <g>
-              <TextoSvg x={380} y={1070} tam={40} fuente="texto" color={KC.pink} o={Math.max(o, o2 * 0)}>se hincha</TextoSvg>
-              <TextoSvg x={700} y={1070} tam={40} fuente="texto" color={KC.cyan} o={o}>se deshincha</TextoSvg>
-              <TextoSvg x={380} y={1070} tam={40} fuente="texto" color={KC.cyan} o={o2}>se deshincha</TextoSvg>
-              <TextoSvg x={700} y={1070} tam={40} fuente="texto" color={KC.pink} o={o2}>se hincha</TextoSvg>
+              <TextoSvg x={320} y={1512} tam={50} fuente="texto" color={KC.pink} o={Math.max(o, o2 * 0)}>se hincha</TextoSvg>
+              <TextoSvg x={760} y={1512} tam={50} fuente="texto" color={KC.cyan} o={o}>se deshincha</TextoSvg>
+              <TextoSvg x={320} y={1512} tam={50} fuente="texto" color={KC.cyan} o={o2}>se deshincha</TextoSvg>
+              <TextoSvg x={760} y={1512} tam={50} fuente="texto" color={KC.pink} o={o2}>se hincha</TextoSvg>
             </g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Turno + 0.2} until={K.Turno + 3.4} texto="tu sistema nervioso" x={430} y={330} tam={42} borde={KC.cyan} />
-        <Chip T={T} at={K.Turno + 3.7} until={K.Ciclo - 0.1} texto="y luego cambian" x={430} y={330} tam={42} borde={KC.yellow} />
+        <Chip T={T} at={K.Turno + 0.2} until={K.Turno + 3.4} texto="tu sistema nervioso" x={410} y={340} tam={42} borde={KC.cyan} />
+        <Chip T={T} at={K.Turno + 3.7} until={K.Ciclo - 0.1} texto="y luego cambian" x={410} y={340} tam={42} borde={KC.yellow} />
       </Escena>
       {/* 4 · ciclo nasal: cada turno, de media hora a varias horas */}
-      <Escena T={T} a={K.Ciclo} b={K.Pregunta} fondo={KC.dark} zoom={0.03}>
+      <Escena T={T} a={K.Ciclo} b={K.Pregunta} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <Lienzo>
-          <g transform="translate(204 440) scale(1.05)" opacity={0.35}><CorteNariz T={T} hl={klerp(0.15, 0.9, cA)} hr={klerp(0.9, 0.15, cA)} /></g>
-          <g transform={`translate(540 800) scale(${klerp(0.3, 1, kprog(T, K.Ciclo + 1.6, K.Ciclo + 2.1, kEase.rebote))})`} opacity={kprog(T, K.Ciclo + 1.6, K.Ciclo + 1.8)}>
-            <Reloj T={T} x={0} y={0} r={210} vel={0.9} />
+          <g transform="translate(60 480) scale(1.5)" opacity={0.45}><CorteNariz T={T} hl={klerp(0.15, 0.9, cA)} hr={klerp(0.9, 0.15, cA)} /></g>
+          <g transform={`translate(540 960) scale(${klerp(0.3, 1, kprog(T, K.Ciclo + 1.6, K.Ciclo + 2.1, kEase.rebote))})`} opacity={kprog(T, K.Ciclo + 1.6, K.Ciclo + 1.8)}>
+            <Reloj T={T} x={0} y={0} r={260} vel={0.9} />
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Ciclo + 0.2} until={K.Pregunta - 0.1} texto="ciclo nasal" x={540} y={420} tam={70} borde={KC.gold} />
-        <Chip T={T} at={K.Ciclo + 2.4} until={K.Pregunta - 0.1} texto="de media hora a varias horas" x={540} y={1110} tam={42} borde={KC.cyan} />
+        <Chip T={T} at={K.Ciclo + 0.2} until={K.Pregunta - 0.1} texto="ciclo nasal" x={540} y={350} tam={70} borde={KC.gold} />
+        <Chip T={T} at={K.Ciclo + 2.4} until={K.Pregunta - 0.1} texto="de media hora a varias horas" x={540} y={1510} tam={42} borde={KC.cyan} />
       </Escena>
       {/* 5 · ¿y por qué no lo notas? */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Total} color={KC.lilac} />
       {/* 6 · el aire total casi no cambia */}
-      <Escena T={T} a={K.Total} b={K.Para} fondo={KC.mint} zoom={0.02}>
+      <Escena T={T} a={K.Total} b={K.Para} zoom={0.02}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <g opacity={kprog(T, K.Total - 0.2, K.Total + 0.3)}><NarizGrande T={T} x={540} y={560} s={0.55} fl={tt} fr={1 - tt} largo={330} /></g>
-          {(() => { const k = kprog(T, K.Total + 1.0, K.Total + 1.6, kEase.sale), X = 90, W = 900, Y = 930, wl = W * tt * k;
+          <g opacity={kprog(T, K.Total - 0.2, K.Total + 0.3)}><NarizGrande T={T} x={540} y={770} s={0.95} fl={tt} fr={1 - tt} largo={290} /></g>
+          {(() => { const k = kprog(T, K.Total + 1.0, K.Total + 1.6, kEase.sale), X = 90, W = 900, Y = 1250, wl = W * tt * k;
             return <g opacity={kprog(T, K.Total + 1.0, K.Total + 1.3)}>
               <rect x={X - 8} y={Y - 8} width={W + 16} height={116} rx={30} fill="rgba(14,15,18,.75)" stroke={KC.ink} strokeWidth={8} />
               <rect x={X} y={Y} width={wl} height={100} rx={22} fill={KC.cyan} />
@@ -239,54 +243,55 @@ function Nariz() {
               <path d={`M ${X} ${Y + 130} L ${X} ${Y + 150} L ${X + W} ${Y + 150} L ${X + W} ${Y + 130}`} fill="none" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" opacity={kprog(T, K.Total + 2.4, K.Total + 2.8)} />
             </g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Total + 2.6} until={K.Para - 0.1} texto="total: casi igual" x={540} y={1150} tam={46} borde={KC.yellow} />
+        <Chip T={T} at={K.Total + 2.6} until={K.Para - 0.1} texto="total: casi igual" x={540} y={1480} tam={46} borde={KC.yellow} />
       </Escena>
       {/* 7 · ¿para qué sirve? se cree que deja descansar a cada lado */}
-      <Escena T={T} a={K.Para} b={K.Acostado} fondo={KC.dark} zoom={0.03}>
+      <Escena T={T} a={K.Para} b={K.Acostado} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <Lienzo>
-          <g transform="translate(420 480) scale(0.95)"><CorteNariz T={T} hl={0.85} hr={0.2} zz={kprog(T, K.Para + 1.6, K.Para + 2.0)} gotas={kprog(T, K.Para + 3.0, K.Para + 3.4)} escoba={kprog(T, K.Para + 4.0, K.Para + 4.4)} /></g>
+          <g transform="translate(272 510) scale(1.25)"><CorteNariz T={T} hl={0.85} hr={0.2} zz={kprog(T, K.Para + 1.6, K.Para + 2.0)} gotas={kprog(T, K.Para + 3.0, K.Para + 3.4)} escoba={kprog(T, K.Para + 4.0, K.Para + 4.4)} /></g>
         </Lienzo>
-        <Chip T={T} at={K.Para + 0.9} until={K.Acostado - 0.1} texto="se cree" x={540} y={360} tam={56} borde={KC.orange} />
-        <Etq T={T} at={K.Para + 1.8} until={K.Acostado - 0.1} x={470} y={590} texto="descansa" lado="izq" color={KC.texto} tam={32} />
-        <Etq T={T} at={K.Para + 3.1} until={K.Acostado - 0.1} x={470} y={800} texto="se humedece" lado="izq" color={NZ_AIRE} tam={32} />
-        <Etq T={T} at={K.Para + 4.1} until={K.Acostado - 0.1} x={470} y={1000} texto="se limpia" lado="izq" color={KC.yellow} tam={32} />
+        <Chip T={T} at={K.Para + 0.9} until={K.Acostado - 0.1} texto="se cree" x={540} y={380} tam={56} borde={KC.orange} />
+        <Etq T={T} at={K.Para + 1.8} until={K.Acostado - 0.1} x={345} y={612} texto="descansa" lado="izq" color={KC.texto} tam={30} />
+        <Etq T={T} at={K.Para + 3.1} until={K.Acostado - 0.1} x={345} y={925} texto="se humedece" lado="izq" color={NZ_AIRE} tam={30} />
+        <Etq T={T} at={K.Para + 4.1} until={K.Acostado - 0.1} x={345} y={1165} texto="se limpia" lado="izq" color={KC.yellow} tam={30} />
       </Escena>
       {/* 8 · acostado de lado: a veces se tapa el lado de abajo */}
-      <Escena T={T} a={K.Acostado} b={K.Gripa} fondo={KC.lilac} zoom={0.03}>
+      <Escena T={T} a={K.Acostado} b={K.Gripa} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <g transform="translate(860 470)"><circle r={80} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} /><circle cx={36} cy={-22} r={74} fill={KC.lilac} /></g>
-          <Acostada T={T} tb={kprog(T, K.Acostado + 1.8, K.Acostado + 2.6)} fArriba={0.75} />
+          <mask id="nzLuna" maskUnits="userSpaceOnUse" x={-110} y={-110} width={220} height={220}><rect x={-110} y={-110} width={220} height={220} fill="#fff" /><circle cx={40} cy={-24} r={80} fill="#000" /></mask>
+          <g transform="translate(850 420) scale(1.25)"><circle r={80} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} mask="url(#nzLuna)" /></g>
+          <g transform="translate(285 1060) scale(1.3) translate(-215 -1010)"><Acostada T={T} tb={kprog(T, K.Acostado + 1.8, K.Acostado + 2.6)} fArriba={0.75} /></g>
         </Lienzo>
-        <Etq T={T} at={K.Acostado + 2.6} until={K.Gripa - 0.1} x={352} y={880} texto="lado de abajo: tapado" lado="der" color={KC.texto} tam={34} />
-        <Chip T={T} at={K.Acostado + 0.4} until={K.Gripa - 0.1} texto="a veces" x={540} y={360} tam={46} borde={KC.ink} />
+        <Etq T={T} at={K.Acostado + 2.6} until={K.Gripa - 0.1} x={470} y={884} texto="lado de abajo: tapado" lado="der" color={KC.texto} tam={34} />
+        <Chip T={T} at={K.Acostado + 0.4} until={K.Gripa - 0.1} texto="a veces" x={400} y={420} tam={46} borde={KC.ink} />
       </Escena>
       {/* 9 · con gripa: lo tapado salta de un lado al otro durante el día */}
-      <Escena T={T} a={K.Gripa} b={K.Cierre} fondo={KC.orange} zoom={0.02}>
+      <Escena T={T} a={K.Gripa} b={K.Cierre} zoom={0.02}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <path d="M 140 560 Q 540 400 940 560" fill="none" stroke="rgba(255,255,255,.6)" strokeWidth={8} strokeDasharray="16 16" />
-          {(() => { const f = kprog(T, G + 0.4, K.Cierre - 0.2), x = klerp(140, 940, f), y = 560 - 160 * 4 * f * (1 - f) * 0.5 * 2; return <SolDibujo x={x} y={y} r={46} T={T} />; })()}
-          <NarizGrande T={T} x={NX} y={960} s={0.8} roja={1} cansado={0.55} tl={gpL * kprog(T, G + 0.6, G + 1.0)} tr={1 - gpL} fl={0.08 + 0.8 * (1 - gpL)} fr={0.08 + 0.8 * gpL * kprog(T, G + 0.6, G + 1.0)} largo={300} />
-          {[G + 2.5, G + 4.6].map((t0, i) => T > t0 - 0.2 && T < t0 + 0.6 && <path key={i} d={`M ${i ? 610 : 470} 1020 Q 540 ${900 - 60 * Math.sin(Math.PI * kprog(T, t0 - 0.2, t0 + 0.2))} ${i ? 470 : 610} 1020`} fill="none" stroke={KC.ink} strokeWidth={8} strokeDasharray="14 12" opacity={1 - kprog(T, t0 + 0.2, t0 + 0.6)} />)}
+          <path d="M 140 330 Q 540 110 940 330" fill="none" stroke="rgba(255,255,255,.6)" strokeWidth={8} strokeDasharray="16 16" />
+          {(() => { const f = kprog(T, G + 0.4, K.Cierre - 0.2), x = klerp(140, 940, f), y = 330 - 440 * f * (1 - f); return <SolDibujo x={x} y={y} r={46} T={T} />; })()}
+          <NarizGrande T={T} x={NX} y={1130} s={0.95} roja={1} cansado={0.55} tl={gpL * kprog(T, G + 0.6, G + 1.0)} tr={1 - gpL} fl={0.08 + 0.8 * (1 - gpL)} fr={0.08 + 0.8 * gpL * kprog(T, G + 0.6, G + 1.0)} largo={300} />
+          {[G + 2.5, G + 4.6].map((t0, i) => T > t0 - 0.2 && T < t0 + 0.6 && <path key={i} d={`M ${i ? 620 : 460} 1200 Q 540 ${1060 - 70 * Math.sin(Math.PI * kprog(T, t0 - 0.2, t0 + 0.2))} ${i ? 460 : 620} 1200`} fill="none" stroke={KC.ink} strokeWidth={8} strokeDasharray="14 12" opacity={1 - kprog(T, t0 + 0.2, t0 + 0.6)} />)}
         </Lienzo>
-        <Chip T={T} at={G + 0.3} until={K.Cierre - 0.1} texto="con gripa: lo notas más" x={540} y={330} tam={42} borde={KC.ink} />
-        <Etq T={T} at={G + 1.0} until={G + 2.3} x={470} y={1035} texto="tapado" lado="izq" color={KC.texto} tam={36} />
-        <Etq T={T} at={G + 2.75} until={G + 4.4} x={610} y={1035} texto="tapado" lado="der" color={KC.texto} tam={36} />
-        <Etq T={T} at={G + 4.85} until={K.Cierre - 0.1} x={470} y={1035} texto="tapado" lado="izq" color={KC.texto} tam={36} />
+        <Chip T={T} at={G + 0.3} until={K.Cierre - 0.1} texto="con gripa: lo notas más" x={540} y={480} tam={42} borde={KC.ink} />
+        <Etq T={T} at={G + 1.0} until={G + 2.3} x={460} y={1219} texto="tapado" lado="izq" color="#0b1020" tam={36} />
+        <Etq T={T} at={G + 2.75} until={G + 4.4} x={620} y={1219} texto="tapado" lado="der" color="#0b1020" tam={36} />
+        <Etq T={T} at={G + 4.85} until={K.Cierre - 0.1} x={460} y={1219} texto="tapado" lado="izq" color="#0b1020" tam={36} />
       </Escena>
       {/* 10 · cierre: la nariz del inicio, ahora con dos relojes: tiene turnos */}
-      <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.pink} zoom={0.02}>
+      <Escena T={T} a={K.Cierre} b={FIN} zoom={0.02}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
           <NarizGrande T={T} x={NX} y={NY} s={NS} largo={NL} fl={klerp(0.18, 1, cL)} fr={klerp(1, 0.18, cL)} />
-          {[[150, 1020, -1], [930, 1020, 1]].map(([x, y, k]) => { const at = K.Cierre + (k < 0 ? 0.6 : 1.0), e = kprog(T, at, at + 0.45, kEase.rebote);
+          {[[140, 1430, -1], [940, 1430, 1]].map(([x, y, k]) => { const at = K.Cierre + (k < 0 ? 0.6 : 1.0), e = kprog(T, at, at + 0.45, kEase.rebote);
             return <g key={k} transform={`translate(${x} ${y}) scale(${klerp(0.2, 1, e)})`} opacity={kprog(T, at, at + 0.2)}>
-              <Reloj T={T + (k < 0 ? 0 : 1.3)} x={0} y={0} r={100} vel={0.35} color={k < 0 ? KC.cyan : KC.yellow} />
+              <Reloj T={T + (k < 0 ? 0 : 1.3)} x={0} y={0} r={104} vel={0.35} color={k < 0 ? KC.cyan : KC.yellow} tinta="#0b1020" />
             </g>; })}
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 1.8} until={K.Outro - 0.1} texto="como si fueran dos narices" x={540} y={330} tam={44} borde={KC.ink} />
+        <Chip T={T} at={K.Cierre + 1.8} until={K.Outro - 0.1} texto="como si fueran dos narices" x={540} y={290} tam={44} borde={KC.ink} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Prueba - 0.1} texto="Respiras más por *un lado.*" />

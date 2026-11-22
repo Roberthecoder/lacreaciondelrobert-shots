@@ -10,11 +10,11 @@ const CH_ROSA = '#ff7fb0', CH_GRIS = '#a59ea6', CH_CAFE = '#c99a5b';
 function Banqueta({ T, manchas = 0, limpio = 0, seed = 7 }) {
   const r = krng(seed), sp = Array.from({ length: 26 }, () => ({ x: 60 + r() * 960, y: 820 + r() * 380, s: 0.5 + r() * 0.7, a: r() * 3 }));
   const lineas = [];
-  for (let i = 0; i < 9; i++) { const y = 780 + Math.pow(i / 8, 1.5) * 460; lineas.push(<line key={'h' + i} x1={0} y1={y} x2={KW} y2={y} stroke="#b9b2a7" strokeWidth={3 + i * 0.6} />); }
-  for (let i = -6; i <= 6; i++) lineas.push(<line key={'v' + i} x1={540 + i * 70} y1={780} x2={540 + i * 260} y2={1260} stroke="#b9b2a7" strokeWidth={4} />);
+  for (let i = 0; i < 9; i++) { const y = 780 + Math.pow(i / 8, 1.5) * 460; lineas.push(<line key={'h' + i} x1={0} y1={y} x2={KW} y2={y} stroke="#4b4c55" strokeWidth={3 + i * 0.6} />); }
+  for (let i = -6; i <= 6; i++) lineas.push(<line key={'v' + i} x1={540 + i * 70} y1={780} x2={540 + i * 260} y2={1260} stroke="#4b4c55" strokeWidth={4} />);
   return <g>
-    <rect x={0} y={760} width={KW} height={KH - 760} fill="#777678" />
-    <rect x={0} y={740} width={KW} height={34} fill="#6c6b6c" stroke={KC.ink} strokeWidth={5} />
+    <rect x={0} y={760} width={KW} height={KH - 760} fill="#2c2d33" />
+    <rect x={0} y={740} width={KW} height={34} fill="#26272c" stroke={KC.ink} strokeWidth={5} />
     {lineas}
     {sp.slice(0, manchas).map((p, i) => {
       const d = limpio > 0 ? kclamp(1 - Math.hypot(p.x - 600, p.y - 1000) / (limpio * 900), 0, 1) : 0;
@@ -130,6 +130,8 @@ function ChicleShot() {
   const K = { G: CUES.Gancho, Ma: CUES.Mascar, Re: CUES.Receta, Pe: CUES.Petroleo, P: CUES.Pregunta, Cz: CUES.Chicozapote, Si: CUES.Sinteticos,
     Es: CUES.Estudio, B: CUES.Banqueta, Ch: CUES.Chicleros, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
+  // encuadre cine: tenis y chicle del gancho y del cierre 1.6× y centrados
+  const TENIS_G = 'translate(540 1170) scale(1.6) translate(-380 -1060)';
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
   // gancho y cierre: el tenis despega el chicle
   const liftG = 200 * kprog(T, K.G + 0.05, K.G + 1.2, kEase.sale) * (1 - 0.15 * Math.sin(Math.max(0, T - K.G - 1.2) * 3));
@@ -148,8 +150,8 @@ function ChicleShot() {
       {/* 0 · gancho: el tenis despega el chicle de la banqueta */}
       <Escena T={T} a={K.G} b={K.Ma}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Banqueta T={T} manchas={6} /><ChicleAplastado x={380} y={1070} s={1.2} />
-          <Tenis x={380} y={1060} lift={liftG} hilos={kprog(T, K.G + 0.05, K.G + 1.0)} /></>)}
+        {svg(<><Banqueta T={T} manchas={6} /><g transform={TENIS_G}><ChicleAplastado x={380} y={1070} s={1.2} />
+          <Tenis x={380} y={1060} lift={liftG} hilos={kprog(T, K.G + 0.05, K.G + 1.0)} /></g></>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 1 · al masticar: azúcar y sabor se van; queda la goma */}
@@ -169,42 +171,43 @@ function ChicleShot() {
       {/* 2 · por dentro de la goma: cadenas de polímero (lista de la FDA) */}
       <Escena T={T} a={K.Re} b={K.Pe}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #1b2440 0%, #0E0F12 75%)' }}></div>
-        {svg(<>
-          <circle cx={540} cy={900} r={330} fill="rgba(165,158,166,.18)" stroke={CH_GRIS} strokeWidth={6} strokeDasharray="16 12" />
+        {svg(<g transform="translate(590 1000) scale(1.25) translate(-540 -900)">
+          <circle cx={540} cy={900} r={330} fill="rgba(165,158,166,.26)" stroke={CH_GRIS} strokeWidth={6} strokeDasharray="16 12" />
           {[[1, 420, 760, KC.cyan], [2, 640, 820, KC.cyan], [3, 500, 980, KC.yellow], [4, 700, 1020, KC.yellow], [5, 380, 900, KC.cyan], [6, 600, 900, KC.yellow]].map(([s, x, y, c], i) =>
             <CadenaPolimero key={s} seed={s * 11} x={x} y={y} n={16} paso={24} color={c} p={kprog(T, K.Re + 0.2 + i * 0.25, K.Re + 1.6 + i * 0.25)} T={T} />)}
-        </>)}
+        </g>)}
         <EscalaFija texto="esquema (moléculas, no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
       {/* 3 · del petróleo: patente de Wrigley */}
       <Escena T={T} a={K.Pe} b={K.P}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <g transform={`translate(230 ${880 + Math.sin(T * 2) * 8})`}><path d="M 0 -140 Q 90 -10 90 50 Q 90 130 0 130 Q -90 130 -90 50 Q -90 -10 0 -140 Z" fill="#1d1a1f" stroke={KC.ink} strokeWidth={7} />
+          <g transform={`translate(250 ${1110 + Math.sin(T * 2) * 8}) scale(1.6)`}><path d="M 0 -140 Q 90 -10 90 50 Q 90 130 0 130 Q -90 130 -90 50 Q -90 -10 0 -140 Z" fill="#1d1a1f" stroke={KC.ink} strokeWidth={7} />
             <ellipse cx={-30} cy={30} rx={18} ry={34} fill="#fff" opacity=".25" /></g>
-          <text x={230} y={1070} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>petróleo</text>
-          <CadenaPolimero seed={77} x={330} y={860} n={12} paso={22} color={KC.cyan} p={kprog(T, K.Pe + 0.4, K.Pe + 2.0)} T={T} />
+          <text x={250} y={1380} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink}>petróleo</text>
+          <ChicleAplastado x={790} y={1110} s={1.9} gris={0.3} />
+          <CadenaPolimero seed={77} x={400} y={1060} n={12} paso={30} color={KC.cyan} p={kprog(T, K.Pe + 0.4, K.Pe + 2.0)} T={T} />
         </>)}
-        {kvisible(T, K.Pe + 1.2, K.P - 0.2) && (() => { const e = kentrada(T, K.Pe + 1.2, K.P - 0.2, 'pop'); return (
-          <div style={{ position:'absolute', left:430, top:600, width:500, zIndex:30, transform:`rotate(3deg) scale(${e.s})`, opacity:e.o, background:KC.paper, border:`6px solid ${KC.ink}`, borderRadius:16, padding:'24px 28px', boxShadow:`12px 12px 0 ${KC.ink}` }}>
-            <div style={{ font:`700 24px ${KF.mono}`, color:'#5a524a' }}>US 10,492,512 B2 · Wrigley</div>
+        {kvisible(T, K.Pe + 0.4, K.P - 0.2) && (() => { const e = kentrada(T, K.Pe + 0.4, K.P - 0.2, 'pop'); return (
+          <div style={{ position:'absolute', left:400, top:560, width:520, zIndex:30, transform:`rotate(3deg) scale(${e.s})`, opacity:e.o, background:KC.paper, border:`6px solid ${KC.ink}`, borderRadius:16, padding:'24px 28px', boxShadow:`12px 12px 0 ${KC.ink}` }}>
+            <div style={{ font:`700 24px ${KF.mono}`, color:'#b8ae9c' }}>US 10,492,512 B2 · Wrigley</div>
             <div style={{ font:`900 30px ${KF.texto}`, color:KC.ink, margin:'10px 0 16px' }}>Chewing gum base…</div>
             {[0, 1, 2].map((i) => <div key={i} style={{ height:12, background:'#cfc6b6', borderRadius:6, margin:'10px 0', width:`${92 - i * 9}%` }}></div>)}
-            <div style={{ font:`700 28px/1.3 ${KF.mono}`, color:KC.ink, background:`linear-gradient(transparent 55%, ${KC.yellow} 55%)`, backgroundSize:`${kprog(T, K.Pe + 2.2, K.Pe + 3.4) * 100}% 100%`, backgroundRepeat:'no-repeat' }}>"man-made polymers derived from petroleum"</div>
+            <div style={{ font:`700 28px/1.3 ${KF.mono}`, color:KC.ink, textShadow:'0 0 3px #0b1020, 0 0 3px #0b1020, 0 0 1px #0b1020', background:`linear-gradient(transparent 55%, ${KC.yellow} 55%)`, backgroundSize:`${kprog(T, K.Pe + 2.2, K.Pe + 3.4) * 100}% 100%`, backgroundRepeat:'no-repeat' }}>"man-made polymers derived from petroleum"</div>
             {[0, 1].map((i) => <div key={'b' + i} style={{ height:12, background:'#cfc6b6', borderRadius:6, margin:'12px 0 0', width:`${85 - i * 20}%` }}></div>)}
           </div>); })()}
       </Escena>
       {/* 4 · pregunta */}
       <Escena T={T} a={K.P} b={K.Cz} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={290} y={1000} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 820)`}>?</text>
-          <ChicleAplastado x={290} y={1130} s={0.9} gris={0.6} /></>)}
+        {svg(<><text x={560} y={1130} textAnchor="middle" style={{ font:`400 600px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 560 900)`}>?</text>
+          <ChicleAplastado x={540} y={1320} s={2.6} gris={0.6} /></>)}
       </Escena>
       {/* 5 · el chicle original: látex del chicozapote */}
       <Escena T={T} a={K.Cz} b={K.Si}>
         <FondoLunares color={KC.mint} />
-        {svg(<><Chicozapote T={T} cortes={kprog(T, K.Cz + 1.6, K.Cz + 3.6)} latex={kprog(T, K.Cz + 3.6, K.Cz + 5.0)} />
-          <Paila T={T} x={780} y={1080} o={kprog(T, K.Cz + 5.0, K.Cz + 5.5)} /></>)}
+        {svg(<><g transform="translate(60 230)"><Chicozapote T={T} cortes={kprog(T, K.Cz + 1.6, K.Cz + 3.6)} latex={kprog(T, K.Cz + 3.6, K.Cz + 5.0)} /></g>
+          <Paila T={T} x={800} y={1290} o={kprog(T, K.Cz + 5.0, K.Cz + 5.5)} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 6 · 1880s–1950s: exportación; luego los sintéticos */}
@@ -212,33 +215,34 @@ function ChicleShot() {
         <FondoLunares color={KC.cyan} />
         {svg(<>
           <path d={`M 0 ${1060 + Math.sin(T * 2) * 6} Q 270 ${1040 - Math.sin(T * 2) * 6} 540 1060 T 1080 1060 L 1080 1200 L 0 1200 Z`} fill="#2f8fd8" stroke={KC.ink} strokeWidth={6} />
-          <g opacity={1 - kprog(T, K.Si + 2.8, K.Si + 3.4)}><Barco x={klerp(250, 760, kprog(T, K.Si + 0.3, K.Si + 3.2, kEase.suave))} y={1040} carga={3} /></g>
-          <g opacity={kprog(T, K.Si + 2.8, K.Si + 3.4)}><Fabrica x={330} y={1040} T={T} s={1.1} /></g>
-          <line x1={100} y1={760} x2={980} y2={760} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
-          <line x1={100} y1={760} x2={100 + 880 * kprog(T, K.Si + 0.2, K.Si + 2.6)} y2={760} stroke={KC.yellow} strokeWidth={14} strokeLinecap="round" />
-          <text x={120} y={730} style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>1880s</text>
-          <text x={960} y={730} textAnchor="end" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Si + 2.0, K.Si + 2.6)}>1950s</text>
+          {(() => { const bx = klerp(280, 740, kprog(T, K.Si + 0.3, K.Si + 3.2, kEase.suave)); return <g opacity={1 - kprog(T, K.Si + 2.8, K.Si + 3.4)} transform={`translate(${bx} 1040) scale(1.5) translate(${-bx} -1040)`}><Barco x={bx} y={1040} carga={3} /></g>; })()}
+          <g opacity={kprog(T, K.Si + 2.8, K.Si + 3.4)}><Fabrica x={330} y={1040} T={T} s={1.6} /></g>
+          <line x1={100} y1={620} x2={980} y2={620} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
+          <line x1={100} y1={620} x2={100 + 880 * kprog(T, K.Si + 0.2, K.Si + 2.6)} y2={620} stroke={KC.yellow} strokeWidth={14} strokeLinecap="round" />
+          <text x={120} y={590} style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>1880s</text>
+          <text x={960} y={590} textAnchor="end" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Si + 2.0, K.Si + 2.6)}>1950s</text>
         </>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 7 · estudio de Valencia (2020): bacterias en el chicle tirado */}
       <Escena T={T} a={K.Es} b={K.B}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #1d2238 0%, #0E0F12 75%)' }}></div>
-        {svg(<>
+        {svg(<g transform="translate(540 980) scale(1.25) translate(-540 -960)">
           <ellipse cx={540} cy={960} rx={330} ry={260} fill="rgba(165,158,166,.25)" stroke={CH_GRIS} strokeWidth={6} />
           {estr.map((b, i) => <Estrepto key={i} x={b.x} y={b.y} rot={b.a} T={T} seed={i} o={kprog(T, K.Es + 2.0, K.Es + 2.4) * (i < 3 ? 1 - 0.55 * sem : 1 - sem)} />)}
           {sph.map((b, i) => { const v = kprog(T, K.Es + 2.4 + b.t * 3.6, K.Es + 2.9 + b.t * 3.6, kEase.sale); return v > 0 ? <Bacteria key={i} x={b.x} y={b.y} rot={b.a} s={0.5 * v} color={KC.yellow} T={T} seed={i} flagelo={false} /> : null; })}
-        </>)}
+        </g>)}
         <TarjetaEstudio T={T} at={K.Es + 0.1} until={K.Es + 2.0} anio="2020" quien="Universitat de València" revista="Scientific Reports · chicles de 5 países" y={880} />
-        <Etq T={T} at={K.Es + 2.6} until={K.B - 0.2} x={150} y={650} texto="de tu boca (Streptococcus)" it lado="der" tam={28} color={KC.lilac} />
-        <Etq T={T} at={K.Es + 4.2} until={K.B - 0.2} x={830} y={1215} texto="del ambiente (Sphingomonas)" it lado="izq" tam={28} color={KC.yellow} />
-        {T >= K.Es + 2.2 && T < K.B + 0.3 && <Chip T={T} at={K.Es + 2.2} until={K.B - 0.2} texto={`semana ${Math.max(1, Math.round(1 + sem * 8))}`} x={540} y={560} tam={40} borde={KC.mint} mono />}
+        <Etq T={T} at={K.Es + 2.6} until={K.B - 0.2} x={150} y={590} texto="de tu boca (Streptococcus)" it lado="der" tam={28} color={KC.lilac} />
+        <Etq T={T} at={K.Es + 4.2} until={K.B - 0.2} x={860} y={1350} texto="del ambiente (Sphingomonas)" it lado="izq" tam={28} color={KC.yellow} />
+        {T >= K.Es + 2.2 && T < K.B + 0.3 && <Chip T={T} at={K.Es + 2.2} until={K.B - 0.2} texto={`semana ${Math.max(1, Math.round(1 + sem * 8))}`} x={540} y={500} tam={40} borde={KC.mint} mono />}
         <EscalaFija texto="al microscopio · esquema" largo={0} y={1480} color={KC.texto} />
       </Escena>
       {/* 8 · la banqueta llena de manchas; la limpieza */}
       <Escena T={T} a={K.B} b={K.Ch}>
         <FondoLunares color={KC.yellow} />
         {svg(<><Banqueta T={T} manchas={26} limpio={kprog(T, K.B + 2.4, K.B + 5.5)} />
+          <ChicleAplastado x={360} y={1060} s={1.5} gris={1} />
           {kprog(T, K.B + 2.2, K.B + 2.6) > 0 && <g opacity={kprog(T, K.B + 2.2, K.B + 2.6)}>
             <line x1={1020} y1={600} x2={760} y2={900} stroke="#444" strokeWidth={22} strokeLinecap="round" />
             <rect x={990} y={560} width={70} height={90} rx={12} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
@@ -250,9 +254,9 @@ function ChicleShot() {
       <Escena T={T} a={K.Ch} b={K.C}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <MapaMexico x={-2540} y={-699} ancho={4500} />
+          <MapaMexico x={-2540} y={-699} ancho={4500} color="#5e5030" centro="#3f5a3c" />
           {[[-89.6, 18.4, 0.0], [-89.2, 18.9, 0.3], [-88.6, 19.4, 0.6], [-88.2, 18.7, 0.9], [-90.2, 18.1, 1.2], [-89.9, 19.0, 1.5]].map(([lo, la, d], i) => { const [px, py] = PX(lo, la); const v = kprog(T, K.Ch + 0.5 + d, K.Ch + 0.9 + d, kEase.rebote);
-            return <g key={i} transform={`translate(${px} ${py}) scale(${v})`}><rect x={-6} y={-10} width={12} height={34} fill="#8a5a36" stroke={KC.ink} strokeWidth={3} /><circle cy={-22} r={24} fill="#2e9b4a" stroke={KC.ink} strokeWidth={4} /></g>; })}
+            return <g key={i} transform={`translate(${px} ${py}) scale(${1.6 * v})`}><rect x={-6} y={-10} width={12} height={34} fill="#8a5a36" stroke={KC.ink} strokeWidth={3} /><circle cy={-22} r={24} fill="#2e9b4a" stroke={KC.ink} strokeWidth={4} /></g>; })}
         </>)}
         <Etq T={T} at={K.Ch + 1.0} until={K.C - 0.2} x={PX(-88.1, 19.6)[0] + 10} y={PX(-88.1, 19.6)[1]} texto="Quintana Roo" tam={30} color={KC.ink} />
         <Etq T={T} at={K.Ch + 1.6} until={K.C - 0.2} x={PX(-90.4, 19.2)[0] - 10} y={PX(-90.4, 19.2)[1]} texto="Campeche" lado="izq" tam={30} color={KC.ink} />
@@ -261,34 +265,34 @@ function ChicleShot() {
       {/* 10 · cierre: la misma banqueta, ahora con el chicle natural al lado */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Banqueta T={T} manchas={6} /><ChicleAplastado x={380} y={1070} s={1.2} gris={0.5} />
-          <Tenis x={380} y={1060} lift={liftC} hilos={kprog(T, K.C + 0.05, K.C + 1.0)} gris={0.5} />
-          <Marqueta x={800} y={1080} s={1.4 * kprog(T, K.C + 1.4, K.C + 1.9, kEase.rebote)} /></>)}
+        {svg(<><Banqueta T={T} manchas={6} /><g transform={TENIS_G}><ChicleAplastado x={380} y={1070} s={1.2} gris={0.5} />
+          <Tenis x={380} y={1060} lift={liftC} hilos={kprog(T, K.C + 0.05, K.C + 1.0)} gris={0.5} /></g>
+          <Marqueta x={900} y={1240} s={1.6 * kprog(T, K.C + 1.4, K.C + 1.9, kEase.rebote)} /></>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
 
       {/* datos y etiquetas */}
-      <Chip T={T} at={K.G + 0.9} until={K.Ma - 0.2} texto="¿chicle?" x={300} y={560} tam={46} borde={KC.ink} />
-      <Chip T={T} at={K.G + 2.0} until={K.Ma - 0.2} texto="plástico*" x={300} y={660} tam={46} borde={KC.red} />
-      <Etq T={T} at={K.G + 2.6} until={K.Ma - 0.2} x={500} y={1130} texto="*su goma" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.G + 0.9} until={K.Ma - 0.2} texto="¿chicle?" x={300} y={330} tam={46} borde={KC.ink} />
+      <Chip T={T} at={K.G + 2.0} until={K.Ma - 0.2} texto="plástico*" x={300} y={425} tam={46} borde={KC.red} />
+      <Etq T={T} at={K.G + 2.6} until={K.Ma - 0.2} x={740} y={1200} texto="*su goma" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Ma + 0.8} until={K.Re - 0.2} texto="azúcar y sabor: se disuelven" x={540} y={470} tam={34} borde={KC.mint} />
       <Etq T={T} at={K.Ma + 2.6} until={K.Re - 0.2} x={680} y={905} texto="goma base" tam={32} color={KC.texto} />
-      <Chip T={T} at={K.Re + 0.3} until={K.Pe - 0.2} texto="FDA · 21 CFR 172.615" x={330} y={480} tam={30} borde={KC.gold} mono />
-      <Chip T={T} at={K.Re + 1.4} until={K.Pe - 0.2} texto="acetato de polivinilo" x={360} y={580} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.Re + 2.6} until={K.Pe - 0.2} texto="poliisobutileno" x={330} y={680} tam={34} borde={KC.yellow} />
-      <Chip T={T} at={K.Cz + 0.3} until={K.Si - 0.2} texto="el original: látex" x={330} y={470} tam={34} borde={KC.leaf} />
-      <Etq T={T} at={K.Cz + 0.8} until={K.Si - 0.2} x={410} y={760} texto="chicozapote" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Cz + 1.2} until={K.Si - 0.2} x={410} y={810} texto="Manilkara zapota" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Cz + 2.6} until={K.Si - 0.2} x={410} y={990} texto="cortes en zigzag" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Cz + 5.4} until={K.Si - 0.2} x={780} y={1180} texto="paila" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Si + 0.4} until={K.Si + 2.8} texto="gran exportación" x={760} y={850} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.Si + 3.0} until={K.Es - 0.2} texto="sintéticos, más baratos" x={760} y={850} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Re + 0.3} until={K.Pe - 0.2} texto="FDA · 21 CFR 172.615" x={330} y={300} tam={30} borde={KC.gold} mono />
+      <Chip T={T} at={K.Re + 1.4} until={K.Pe - 0.2} texto="acetato de polivinilo" x={360} y={395} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.Re + 2.6} until={K.Pe - 0.2} texto="poliisobutileno" x={330} y={490} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.Cz + 0.3} until={K.Si - 0.2} texto="el original: látex" x={390} y={250} tam={34} borde={KC.leaf} />
+      <Etq T={T} at={K.Cz + 0.8} until={K.Si - 0.2} x={470} y={990} texto="chicozapote" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Cz + 1.2} until={K.Si - 0.2} x={470} y={1040} texto="Manilkara zapota" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Cz + 2.6} until={K.Si - 0.2} x={470} y={1220} texto="cortes en zigzag" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Cz + 5.4} until={K.Si - 0.2} x={800} y={1400} texto="paila" lado="izq" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Si + 0.4} until={K.Si + 2.8} texto="gran exportación" x={760} y={760} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.Si + 3.0} until={K.Es - 0.2} texto="sintéticos, más baratos" x={760} y={760} tam={34} borde={KC.ink} />
       <NumeroGigante T={T} at={K.B + 1.6} until={K.Ch - 0.2} valor={7} dur={1.0} prefijo="≈ £" sufijo=" millones" etiqueta="limpiar chicles, al año" x={640} y={560} tam={96} color={KC.yellow} />
       <Chip T={T} at={K.B + 2.4} until={K.Ch - 0.2} texto="Reino Unido · estimado de 2022" x={640} y={680} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.B + 0.4} until={K.Ch - 0.2} x={120} y={1180} texto="la goma se queda" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.B + 0.4} until={K.Ch - 0.2} x={120} y={1190} texto="la goma se queda" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Ch + 2.4} until={K.C - 0.2} texto="cooperativas de chicleros" x={540} y={1150} tam={36} borde={KC.leaf} />
-      <Etq T={T} at={K.C + 1.0} until={K.Ou - 0.1} x={60} y={975} texto="goma de polímeros" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.C + 1.9} until={K.Ou - 0.1} x={880} y={1180} texto="chicle de chicozapote" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.C + 1.0} until={K.Ou - 0.1} x={60} y={1320} texto="goma de polímeros" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.C + 1.9} until={K.Ou - 0.1} x={1000} y={1370} texto="chicle de chicozapote" lado="izq" tam={28} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ma - 0.1} texto="Ese chicle no es chicle: *es plástico.*" />

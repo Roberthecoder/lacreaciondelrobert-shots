@@ -2,8 +2,12 @@
 // Shot Biotecnológico #22 · Ese plátano no es único: es un clon (Cavendish, Fusarium TR4 y QCAV-4) — NARRADO (N1 por dentro + N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (formas reales, tamaños aproximados).
 const AMAR = '#ffd93b', AMAR_OSC = '#e0a91c', PULPA = '#f7ecc8', HOJA = '#3fbf4a', HOJA_SECA = '#c9a23a', CAFE = '#7a4a22';
-const TIERRA = '#8a5a3c', HONGO = '#e9d9ff', XILEMA_CAFE = '#8b3a1e';
+const TIERRA = '#3a2618', HONGO = '#e9d9ff', XILEMA_CAFE = '#8b3a1e';
 
+// Acercamiento: lleva el punto `de` al punto `a` y agranda k veces (pase a mano del estilo cine).
+function DZ({ k = 1, de = [0, 0], a = [0, 0], children }) {
+  return <g transform={`translate(${a[0]} ${a[1]}) scale(${k}) translate(${-de[0]} ${-de[1]})`}>{children}</g>;
+}
 function SvgCapa({ children, z }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{children}</svg>;
 }
@@ -144,7 +148,7 @@ function Barco({ T, x, y, cajas = 1, s = 1 }) {
     <rect x={-400} y={-60} width={790} height={20} fill={KC.paper} />
   </g>;
 }
-function Olas({ T, y, color = '#1677c9' }) {
+function Olas({ T, y, color = '#0f2c4a' }) {
   const pts = []; for (let x = -40; x <= KW + 40; x += 30) pts.push(`${x} ${y + Math.sin(x / 70 + T * 2) * 14}`);
   return <path d={`M ${pts.join(' L ')} L ${KW + 40} ${KH} L -40 ${KH} Z`} fill={color} stroke={KC.ink} strokeWidth={8} />;
 }
@@ -210,8 +214,8 @@ function MapaAmerica({ T, a }) {
   ];
   const mx = amP(-96, 19.5), ok = kprog(T, a + 3.9, a + 4.4, kEase.rebote);
   return <g>
-    {[MX_CONT, MXB_L, CA_CONT].map((p, i) => <path key={i} d={amPath(p)} fill={i < 2 ? '#bfe3b4' : '#ffe9a8'} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />)}
-    <path d={amPath(SUDAM)} fill="#ffe9a8" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+    {[MX_CONT, MXB_L, CA_CONT].map((p, i) => <path key={i} d={amPath(p)} fill={i < 2 ? '#5d8f5c' : '#b4975a'} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />)}
+    <path d={amPath(SUDAM)} fill="#b4975a" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
     {sitios.map((s, i) => { const [x, y] = amP(s.lon, s.lat), on = kprog(T, a + s.t, a + s.t + 0.4, kEase.rebote), late = 1 + 0.3 * Math.max(0, Math.sin(T * 6 + i));
       return on > 0 ? <g key={i}>
         <circle cx={x} cy={y} r={30 * on * late} fill="rgba(255,59,47,.35)" />
@@ -278,34 +282,35 @@ function Platano22() {
       {/* 0 · gancho: tu plátano y el de tu vecino */}
       <Escena T={T} a={K.G} b={K.Cv} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><DZ k={1.5} de={[545, 1000]} a={[540, 760]}>
           <ManoPlatano T={T} x={300} y={1010} piel="#f1b48f" rot={6} sube={sube} seed={1} />
           <ManoPlatano T={T} x={790} y={1060} piel="#b5784f" rot={-6} sube={kprog(T, K.G + 0.1, K.G + 0.6, kEase.sale)} seed={4} />
           {(() => { const p = kprog(T, K.G + 0.7, K.G + 1.5, kEase.sale); return p > 0 && <path d="M 330 850 Q 545 700 760 900" stroke={KC.pink} strokeWidth={12} fill="none" strokeDasharray="30 18" strokeDashoffset={-T * 80} opacity={p} />; })()}
-          <text x={300} y={1140} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.G + 0.5, K.G + 0.9)}>tú</text>
-          <text x={790} y={1150} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.G + 0.6, K.G + 1.0)}>tu vecino</text>
+        </DZ>
+          <text x={170} y={1050} textAnchor="middle" style={{ font:`900 62px ${KF.texto}` }} fill={KC.ink} stroke="#0b1020" strokeWidth={10} paintOrder="stroke" opacity={kprog(T, K.G + 0.5, K.G + 0.9)}>tú</text>
+          <text x={860} y={1130} textAnchor="middle" style={{ font:`900 62px ${KF.texto}` }} fill={KC.ink} stroke="#0b1020" strokeWidth={10} paintOrder="stroke" opacity={kprog(T, K.G + 0.6, K.G + 1.0)}>tu vecino</text>
         </SvgCapa>
       </Escena>
       {/* 1 · Cavendish: casi todo lo que se exporta */}
       <Escena T={T} a={K.Cv} b={K.Se} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa><DZ k={1.15} de={[540, 850]} a={[540, 960]}>
           <Barco T={T} x={540} y={1040} cajas={kprog(T, K.Cv + 0.3, K.Cv + 3.0)} />
           <Olas T={T} y={1090} />
           <Platano x={540} y={640} s={1.15} rot={Math.sin(T * 1.5) * 4} />
-        </SvgCapa>
+        </DZ></SvgCapa>
       </Escena>
       {/* 2 · por dentro: sin semillas útiles, 3 juegos de cromosomas */}
       <Escena T={T} a={K.Se} b={K.Hi} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Platano x={430} y={1120} s={0.9} rot={-4} />
-          <CorteFruto x={860} y={860} r={110} silvestre T={T} />
-          <text x={860} y={1020} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>silvestre:</text>
-          <text x={860} y={1060} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>semillas duras</text>
+          <Platano x={430} y={1250} s={1.0} rot={-4} />
+          <CorteFruto x={870} y={900} r={125} silvestre T={T} />
+          <text x={870} y={1075} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>silvestre:</text>
+          <text x={870} y={1117} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>semillas duras</text>
         </SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.Se + 0.15} until={K.Hi - 0.35} x={400} y={800} r={250} fx={430} fy={1110} tinte={KC.yellow}
+      <Lupa T={T} at={K.Se + 0.15} until={K.Hi - 0.35} x={410} y={880} r={300} fx={430} fy={1240} tinte={KC.yellow}
         etiqueta={T < mitadSe ? 'POR DENTRO · el plátano' : 'AL MICROSCOPIO · una célula'}
         interior={(t, r) => <svg width={r * 2} height={r * 2} style={{ position:'absolute', left:0, top:0 }}>
           <rect width={r * 2} height={r * 2} fill="#1d2a1e" />
@@ -326,9 +331,9 @@ function Platano22() {
       <Escena T={T} a={K.Pr} b={K.Ho} zoom={0.06}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <Suelo y={1250} />
-          {[0, 1, 2, 3, 4].map((i) => <Mata key={i} T={T} x={140 + i * 200} y={1250} s={0.46} amarillo={domino(i)} seed={2} />)}
-          {T > K.Pr + 0.9 && <path d={`M 900 760 L ${klerp(900, 140, kprog(T, K.Pr + 1.0, K.Pr + 2.4))} 760`} stroke={KC.red} strokeWidth={10} strokeDasharray="22 14" strokeDashoffset={T * 60} markerEnd="" />}
+          <Suelo y={1310} />
+          {[0, 1, 2, 3, 4].map((i) => <Mata key={i} T={T} x={140 + i * 200} y={1310} s={0.66} amarillo={domino(i)} seed={2} />)}
+          {T > K.Pr + 0.9 && <path d={`M 900 800 L ${klerp(900, 140, kprog(T, K.Pr + 1.0, K.Pr + 2.4))} 800`} stroke={KC.red} strokeWidth={10} strokeDasharray="22 14" strokeDashoffset={T * 60} markerEnd="" />}
         </SvgCapa>
       </Escena>
       {/* 5 · el hongo al microscopio */}
@@ -341,11 +346,11 @@ function Platano22() {
       <Escena T={T} a={K.Ra} b={K.GM} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Suelo y={1150} />
-          <Mata T={T} x={720} y={1150} s={0.92} amarillo={kprog(T, K.Ra + 1.2, K.Ra + 4.0)} seed={5} />
+          <Suelo y={1300} />
+          <Mata T={T} x={720} y={1300} s={0.98} amarillo={kprog(T, K.Ra + 1.2, K.Ra + 4.0)} seed={5} />
         </SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.Ra + 0.3} until={K.GM - 0.4} x={300} y={760} r={220} fx={690} fy={1230} tinte={HONGO}
+      <Lupa T={T} at={K.Ra + 0.3} until={K.GM - 0.4} x={300} y={900} r={250} fx={690} fy={1385} tinte={HONGO}
         etiqueta="POR DENTRO · la raíz" interior={(t, r) => <XilemaInterior T={t} r={r} a={K.Ra + 0.7} b={K.Ra + 3.6} />} />
       {/* 7 · ya pasó: el Gros Michel */}
       <Escena T={T} a={K.GM} b={K.Am} zoom={0.04}>
@@ -359,40 +364,40 @@ function Platano22() {
       </Escena>
       {/* 8 · TR4 llega a América; México sin registros */}
       <Escena T={T} a={K.Am} b={K.Es} zoom={0.03} origen="40% 40%">
-        <div style={{ position:'absolute', inset:0, background:'#7fd3f0' }}></div>
-        <SvgCapa><MapaAmerica T={T} a={K.Am} /></SvgCapa>
+        <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 45% 45%, #15344d 0%, ${KC.noche} 80%)` }}></div>
+        <SvgCapa><g transform="translate(0 -90)"><MapaAmerica T={T} a={K.Am} /></g></SvgCapa>
       </Escena>
       {/* 9a · el estudio: un gen de un plátano silvestre */}
       <Escena T={T} a={K.Es} b={EsB} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <CorteFruto x={210} y={920} r={100} silvestre T={T} />
-          <text x={210} y={1065} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>silvestre</text>
-          <circle cx={860} cy={920} r={115} fill="rgba(47,224,168,.3)" stroke={KC.ink} strokeWidth={8} />
-          <circle cx={860} cy={920} r={62} fill="rgba(177,140,255,.4)" stroke={KC.ink} strokeWidth={5} />
-          <text x={860} y={1080} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>célula de Cavendish</text>
-          {(() => { const p = kprog(T, K.Es + 0.8, K.Es + 2.5, kEase.suave); const gx = klerp(250, 800, p), gy = 905 - Math.sin(p * Math.PI) * 60;
-            return <g transform={`translate(${gx - 60} ${gy})`}><ADNHebra T={T} x={0} y={0} largo={120} alto={34} vueltas={1.5} colores={[KC.gold2, KC.gold]} /></g>; })()}
+          <CorteFruto x={250} y={1090} r={190} silvestre T={T} />
+          <text x={250} y={1340} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>silvestre</text>
+          <circle cx={830} cy={1090} r={215} fill="rgba(47,224,168,.3)" stroke={KC.ink} strokeWidth={10} />
+          <circle cx={830} cy={1090} r={115} fill="rgba(177,140,255,.4)" stroke={KC.ink} strokeWidth={7} />
+          <text x={830} y={1350} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>célula de Cavendish</text>
+          {(() => { const p = kprog(T, K.Es + 0.8, K.Es + 2.5, kEase.suave); const gx = klerp(290, 770, p), gy = 1070 - Math.sin(p * Math.PI) * 90;
+            return <g transform={`translate(${gx - 60} ${gy})`}><ADNHebra T={T} x={-40} y={0} largo={200} alto={54} vueltas={1.5} colores={[KC.gold2, KC.gold]} /></g>; })()}
         </SvgCapa>
       </Escena>
       {/* 9b · la prueba de campo de 3 años */}
       <Escena T={T} a={EsB} b={K.Ap} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Suelo y={1150} />
-          {[0, 1, 2, 3].map((i) => <Mata key={'c' + i} T={T} x={90 + i * 120} y={1150} s={0.36} racimo={false} amarillo={kprog(T, EsB + 0.8 + i * 0.4, EsB + 3.2 + i * 0.4)} seed={3 + i} />)}
-          {[0, 1, 2, 3].map((i) => <Mata key={'m' + i} T={T} x={620 + i * 120} y={1150} s={0.36} racimo={false} brillo={kprog(T, EsB + 2.0, EsB + 3.0)} seed={7 + i} />)}
-          <line x1={540} y1={760} x2={540} y2={1150} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" />
-          <text x={270} y={810} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>Cavendish común</text>
-          <text x={800} y={810} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>mejor línea con el gen</text>
-          <text x={800} y={600} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.gold} stroke={KC.ink} strokeWidth={5} paintOrder="stroke" opacity={kprog(T, EsB + 0.5, EsB + 0.8)}>{'año ' + Math.min(3, 1 + Math.floor(kprog(T, EsB + 0.6, EsB + 3.6) * 3))}</text>
+          <Suelo y={1290} />
+          {[0, 1, 2, 3].map((i) => <Mata key={'c' + i} T={T} x={85 + i * 122} y={1290} s={0.54} racimo={false} amarillo={kprog(T, EsB + 0.8 + i * 0.4, EsB + 3.2 + i * 0.4)} seed={3 + i} />)}
+          {[0, 1, 2, 3].map((i) => <Mata key={'m' + i} T={T} x={630 + i * 122} y={1290} s={0.54} racimo={false} brillo={kprog(T, EsB + 2.0, EsB + 3.0)} seed={7 + i} />)}
+          <line x1={540} y1={760} x2={540} y2={1290} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" />
+          <text x={270} y={720} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>Cavendish común</text>
+          <text x={800} y={720} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>mejor línea con el gen</text>
+          <text x={800} y={600} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={KC.gold} stroke={KC.ink} strokeWidth={5} paintOrder="stroke" opacity={kprog(T, EsB + 0.5, EsB + 0.8)}>{'año ' + Math.min(3, 1 + Math.floor(kprog(T, EsB + 0.6, EsB + 3.6) * 3))}</text>
         </SvgCapa>
       </Escena>
       {/* 10 · 2024: otra línea con ese gen, aprobada */}
       <Escena T={T} a={K.Ap} b={K.Cu} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <g transform={`translate(${klerp(900, 0, kprog(T, K.Ap, K.Ap + 0.8, kEase.sale))} 0)`}><CajaExport x={540} y={980} s={1.15} texto="QCAV-4" color={KC.mint} /></g>
+          <g transform={`translate(${klerp(900, 0, kprog(T, K.Ap, K.Ap + 0.8, kEase.sale))} 0)`}><CajaExport x={540} y={1060} s={1.45} texto="QCAV-4" color={KC.mint} /></g>
           <Sello T={T} at={K.Ap + 1.4} x={320} y={700} texto="OGTR" sub="cultivo" color={KC.blue} rot={-10} />
           <Sello T={T} at={K.Ap + 2.2} x={770} y={720} texto="FSANZ" sub="alimento" color={KC.red} rot={8} />
         </SvgCapa>
@@ -401,25 +406,26 @@ function Platano22() {
       <Escena T={T} a={K.Cu} b={K.Ci} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 30% 45%, #1b2333 0%, ${KC.noche} 72%)` }}></div>
         <SvgCapa>
-          <CelulaGenes T={T} x={290} y={760} r={215} a={K.Cu} />
-          <Dial T={T} x={290} y={1085} r={80} v={0.1 * kprog(T, K.Cu + 0.6, K.Cu + 1.6, kEase.sale)} />
+          <CelulaGenes T={T} x={540} y={860} r={330} a={K.Cu} />
+          <Dial T={T} x={540} y={1330} r={110} v={0.1 * kprog(T, K.Cu + 0.6, K.Cu + 1.6, kEase.sale)} />
         </SvgCapa>
       </Escena>
       {/* 12 · cierre: el mismo plátano, con un gen de defensa */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><DZ k={1.5} de={[545, 1000]} a={[540, 760]}>
           <ManoPlatano T={T} x={300} y={1010} piel="#f1b48f" rot={6} seed={1} escudo={kprog(T, K.Ci + 1.2, K.Ci + 2.2, kEase.sale)} />
           <ManoPlatano T={T} x={790} y={1060} piel="#b5784f" rot={-6} seed={4} escudo={kprog(T, K.Ci + 1.5, K.Ci + 2.5, kEase.sale)} />
-          <text x={300} y={1140} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink}>tú</text>
-          <text x={790} y={1150} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink}>tu vecino</text>
+        </DZ>
+          <text x={170} y={1050} textAnchor="middle" style={{ font:`900 62px ${KF.texto}` }} fill={KC.ink} stroke="#0b1020" strokeWidth={10} paintOrder="stroke">tú</text>
+          <text x={860} y={1130} textAnchor="middle" style={{ font:`900 62px ${KF.texto}` }} fill={KC.ink} stroke="#0b1020" strokeWidth={10} paintOrder="stroke">tu vecino</text>
         </SvgCapa>
       </Escena>
 
       {/* textos y etiquetas */}
       <Chip T={T} at={K.G + 1.5} until={K.Cv - 0.3} texto="= el mismo clon" y={1500} tam={52} borde={KC.pink} />
-      <Etq T={T} at={K.Cv + 0.4} until={K.Se - 0.3} x={250} y={470} texto="Cavendish" tam={44} color={KC.ink} />
-      <Etq T={T} at={K.Cv + 0.8} until={K.Se - 0.3} x={250} y={520} texto="Musa acuminata (AAA)" it tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Cv + 0.4} until={K.Se - 0.3} x={230} y={540} texto="Cavendish" tam={44} color={KC.ink} />
+      <Etq T={T} at={K.Cv + 0.8} until={K.Se - 0.3} x={230} y={590} texto="Musa acuminata (AAA)" it tam={32} color={KC.ink} />
       <Chip T={T} at={K.Cv + 1.4} until={K.Se - 0.3} texto="casi todo lo que se exporta" y={1500} tam={44} borde={KC.cyan} />
       <Chip T={T} at={K.Se + 0.6} until={mitadSe - 0.1} texto="sin semillas útiles" y={1500} tam={46} borde={KC.yellow} />
       <Chip T={T} at={mitadSe + 0.2} until={K.Hi - 0.3} texto="3 juegos de cromosomas = triploide" y={1500} tam={38} borde={KC.yellow} />
@@ -434,22 +440,22 @@ function Platano22() {
       <Chip T={T} at={K.Ho + 0.4} until={K.Ra - 0.3} texto="raza tropical 4 (TR4)" y={1500} tam={46} borde={HONGO} />
       <EscalaFija T={T} at={K.Ho + 0.4} until={K.Ra - 0.3} px={86} texto="10 µm (aprox.)" />
       <Chip T={T} at={K.Ra + 1.0} until={K.GM - 0.3} texto="invade el xilema: los tubos del agua" y={1500} tam={36} borde={HONGO} />
-      <Chip T={T} at={K.Ra + 2.4} until={K.GM - 0.3} texto="la planta se marchita" x={380} y={420} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.Ra + 2.4} until={K.GM - 0.3} texto="la planta se marchita" x={380} y={560} tam={38} borde={KC.yellow} />
       <Chip T={T} at={K.GM + 0.4} until={K.Am - 0.3} texto="Gros Michel · raza 1" y={420} tam={44} borde={KC.pink} />
       <Chip T={T} at={K.GM + 2.6} until={K.Am - 0.3} texto="mediados de los 50: la exportación cambia a Cavendish" y={1500} tam={30} borde={KC.pink} />
       <Chip T={T} at={K.Am + 4.0} until={K.Es - 0.3} texto="México: sin registros (SENASICA, feb 2026)" y={1500} tam={34} borde={KC.leaf} />
       <Chip T={T} at={K.Am + 0.3} until={K.Am + 3.9} texto="TR4 en América" y={1500} tam={46} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={EsB - 0.3} anio="2012–2015" quien="Territorio del Norte, Australia" revista="Dale et al. · Nature Communications 2017" y={590} />
-      <Etq T={T} at={K.Es + 1.2} until={EsB - 0.3} x={640} y={1010} texto="gen RGA2" lado="izq" it tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Es + 1.2} until={EsB - 0.3} x={600} y={1190} texto="gen RGA2" lado="izq" it tam={36} color={KC.ink} />
             <Medidor T={T} at={EsB + 3.0} until={K.Ap - 0.3} valor={0} etiqueta="mejor línea · enfermas en 3 años" texto={() => '0 %'} y={1480} color={KC.leaf} />
       <Chip T={T} at={K.Ap + 0.6} until={K.Ap + 2.0} texto="otra línea, el mismo gen" y={430} tam={42} borde={KC.mint} />
       <Chip T={T} at={K.Ap + 2.6} until={K.Cu - 0.3} texto="Australia · febrero 2024" y={1500} tam={44} borde={KC.mint} />
-      <Etq T={T} at={K.Cu + 0.4} until={K.Ci - 0.3} x={60} y={470} texto="genes parecidos a RGA2" tam={32} color={KC.gold2} />
+      <Etq T={T} at={K.Cu + 0.4} until={K.Ci - 0.3} x={90} y={470} texto="genes parecidos a RGA2" tam={32} color={KC.gold2} />
       <Chip T={T} at={K.Cu + 1.0} until={K.Ci - 0.3} texto="≈10 veces menos activos que en la mejor línea" y={1500} tam={30} borde={KC.gold2} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="clon + un gen de defensa" y={1500} tam={46} borde={KC.gold2} />
-      <EscalaFija T={T} at={K.G + 0.6} until={K.Cv - 0.3} px={190} texto="10 cm (aprox.)" color={KC.ink} />
+      <EscalaFija T={T} at={K.G + 0.6} until={K.Cv - 0.3} px={285} texto="10 cm (aprox.)" color={KC.ink} />
       <EscalaFija T={T} at={K.Hi + 0.3} until={K.Ho - 0.3} px={110} texto="1 m (aprox.)" color={KC.ink} />
-      <EscalaFija T={T} at={K.Ci + 0.3} until={K.Ou - 0.1} px={190} texto="10 cm (aprox.)" color={KC.ink} />
+      <EscalaFija T={T} at={K.Ci + 0.3} until={K.Ou - 0.1} px={285} texto="10 cm (aprox.)" color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Cv - 0.1} texto="No es único: *es un clon.*" />

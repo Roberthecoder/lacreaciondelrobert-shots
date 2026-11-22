@@ -107,11 +107,11 @@ function Charola({ x, y, w = 760, seed = 8 }) {
 }
 
 // Superficie de un grano al microscopio: filas de células (ladrillos) desde y0 hacia abajo.
-function SuperficieGrano({ y0 = 1120, celda = 70, alto = 46, color = '#e6c46a', aclara = 0 }) {
+function SuperficieGrano({ y0 = 1120, celda = 70, alto = 46, color = '#e6c46a', aclara = 0, hondo = 0 }) {
   const filas = Math.ceil((KH - y0) / alto) + 1, out = [];
   for (let f = 0; f < filas; f++) for (let c = -1; c < KW / celda + 1; c++) {
     const xx = c * celda + (f % 2 ? celda / 2 : 0), yy = y0 + f * alto;
-    out.push(<rect key={f + '_' + c} x={xx + 3} y={yy + 3} width={celda - 6} height={alto - 6} rx={12} fill={mixHex(color, '#fff3cf', f < 3 ? aclara : 0)} stroke="#a37c2a" strokeWidth={3} />);
+    out.push(<rect key={f + '_' + c} x={xx + 3} y={yy + 3} width={celda - 6} height={alto - 6} rx={12} fill={mixHex(mixHex(color, '#fff3cf', f < 3 ? aclara : 0), '#1e1a10', hondo ? kclamp((yy - y0) / hondo, 0, 0.85) : 0)} stroke={mixHex('#a37c2a', '#1e1a10', hondo ? kclamp((yy - y0) / hondo, 0, 0.85) : 0)} strokeWidth={3} />);
   }
   return <g>{out}</g>;
 }
@@ -168,6 +168,24 @@ function Rotulo({ T, at, until, texto, x, y, tam = 46, color = KC.ink, fondo = K
   return <div style={{ position:'absolute', left:x, top:y, zIndex:42, transform:`translate(-50%,-50%) scale(${e.s})`, opacity:e.o, background:fondo, color, border:`5px solid ${KC.ink}`, borderRadius:16, padding:'8px 24px', font:`900 ${tam}px ${KF.texto}`, whiteSpace:'nowrap', boxShadow:`6px 6px 0 ${KC.ink}` }}>{texto}</div>;
 }
 
+// Encuadre del pase a mano (modo cine): cada escena se agranda k veces alrededor de (cx, cy) y ese punto queda en (tx, ty).
+// Las etiquetas (HTML, fuera de la escena) usan tpX/tpY para seguir apuntando a lo suyo; las barras de escala se multiplican por k.
+const tpM = (cx, cy, k, tx, ty) => ({ cx, cy, k, tx, ty });
+const tpTr = (m) => `translate(${m.tx} ${m.ty}) scale(${m.k}) translate(${-m.cx} ${-m.cy})`;
+const tpX = (m, x) => m.tx + (x - m.cx) * m.k, tpY = (m, y) => m.ty + (y - m.cy) * m.k;
+const M_TABLA = tpM(400, 815, 1.3, 540, 960);   // gancho y cierre: tabla, bloque y rebanada
+const M_JAVA = tpM(536, 838, 1.2, 540, 960);
+const M_ESP = tpM(480, 840, 1.3, 540, 960);
+const M_HIL = tpM(540, 1040, 1.25, 540, 900);
+const M_BLQ = tpM(540, 950, 1.6, 540, 960);
+const M_ENZ = tpM(500, 870, 1.15, 445, 975);
+const M_FIT = tpM(540, 860, 1.3, 540, 940);
+const M_EST = tpM(520, 970, 1.1, 540, 1000);
+const M_PET = tpM(540, 860, 1, 540, 960);
+const M_MIC = tpM(540, 900, 1.15, 540, 960);
+const M_BLA = tpM(515, 940, 1.08, 540, 960);
+const M_ESG = tpM(550, 880, 1.25, 540, 960);
+
 function TempehShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, J: CUES.Java, Es: CUES.Esporas, H: CUES.Hilos, A: CUES.Amarra, P: CUES.Pregunta, En: CUES.Enzimas, F: CUES.Fitico, Et: CUES.Estudio, B: CUES.Bacteria, Bl: CUES.Blanco, C: CUES.Cierre, Ou: CUES.Outro };
@@ -188,7 +206,7 @@ function TempehShot() {
       {/* 0 · gancho: el cuchillo rebana el bloque; en el corte se ven los granos amarrados */}
       <Escena T={T} a={K.G} b={K.J} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform={tpTr(M_TABLA)}>
           <Tabla x={400} y={1090} />
           <defs>
             <clipPath id="tpIzq"><rect x={0} y={0} width={500} height={KH} /></clipPath>
@@ -198,20 +216,20 @@ function TempehShot() {
           <g clipPath="url(#tpDer)" transform={`translate(${sep * 60} ${-sep * 6}) rotate(${sep * 4} 600 1090)`}><BloqueTempeh T={T} x={400} y={960} w={600} h={260} seed={3} /></g>
           <Cuchillo x={500 + sep * 30} y={klerp(700, 1090, corte)} rot={sep * 8} />
           {T > K.G + 1.0 && <g transform={`translate(330 ${600}) scale(${kprog(T, K.G + 1.0, K.G + 1.45, kEase.rebote)})`}><Corte T={T} x={0} y={0} w={540} h={300} p={kprog(T, K.G + 1.3, K.G + 2.6)} /></g>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 1 · Java, Indonesia */}
       <Escena T={T} a={K.J} b={K.Es} zoom={0.06}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<><MapaIndonesia T={T} x={70} y={600} java={kprog(T, K.J + 1.6, K.J + 2.2)} />
+        {fsvg(<g transform={tpTr(M_JAVA)}><MapaIndonesia T={T} x={70} y={600} java={kprog(T, K.J + 1.6, K.J + 2.2)} />
           <g transform={`translate(${idProy(110, -7.3)[0] + 70} ${idProy(110, -7.3)[1] + 600 - 70}) scale(${kprog(T, K.J + 2.4, K.J + 2.8, kEase.rebote)})`}>
             <path d="M 0 0 C -30 -40 -30 -80 0 -90 C 30 -80 30 -40 0 0 Z" fill={KC.red} stroke={KC.ink} strokeWidth={5} /><circle cy={-60} r={12} fill="#fff" />
-          </g></>)}
+          </g></g>)}
       </Escena>
       {/* 2 · se cuecen, se enfrían, se les ponen esporas */}
       <Escena T={T} a={K.Es} b={K.H} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<g transform={tpTr(M_ESP)}>
           {T < K.Es + 2.2 && <g opacity={1 - kprog(T, K.Es + 1.6, K.Es + 2.2)}><OllaSoya T={T} x={460} y={960} s={1.05} /></g>}
           {T > K.Es + 1.6 && <g opacity={kprog(T, K.Es + 1.6, K.Es + 2.2)}>
             <Charola x={480} y={1040} />
@@ -222,24 +240,24 @@ function TempehShot() {
             {Array.from({ length: 40 }, (_, i) => { const t0 = K.Es + 2.9 + (i % 20) * 0.07; const u = kprog(T, t0, t0 + 0.9); if (u <= 0) return null;
               const gx = 470 + ((i * 53) % 300) - 150 + Math.sin(i) * 40; return <circle key={i} cx={gx + (i % 2 ? 1 : -1) * u * 60} cy={klerp(700, 1000 + (i % 5) * 12, u)} r={5} fill={TP.espora} opacity={0.9} />; })}
           </g>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 3 · al microscopio: las esporas germinan y sacan hifas (micelio) */}
       <Escena T={T} a={K.H} b={K.A} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
-          <SuperficieGrano y0={1060} />
+        {fsvg(<g transform={tpTr(M_HIL)}>
+          <SuperficieGrano y0={1060} hondo={520} />
           {SPO.map(([sx, sy], i) => { const t0 = K.H + 0.7 + i * 0.35; const g = kprog(T, t0 + 0.4, K.A - 0.2); return <g key={i}>
             {g > 0 && <RedHifas T={T} x={sx} y={sy} g={g} seed={4 + i * 3} n={140} escala={0.3} ancho={16} color={FK.hifa} circ={true} brillo={0.4} />}
             <Espora x={sx} y={sy} r={17} hincha={kprog(T, t0, t0 + 0.5)} />
           </g>; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 4a · por dentro de un grano: las hifas entran ~¼ del grosor y amarran con el grano de al lado */}
       <Escena T={T} a={K.A} b={amA}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 110)">
           <defs><clipPath id="tpGrano"><ellipse cx={GR.cx} cy={GR.cy} rx={GR.rx} ry={GR.ry} /></clipPath></defs>
           {/* granos vecinos arriba y abajo */}
           <ellipse cx={300} cy={380} rx={420} ry={140} fill="#d9b456" stroke={KC.ink} strokeWidth={6} />
@@ -260,23 +278,24 @@ function TempehShot() {
           <g opacity={kprog(T, K.A + 1.6, K.A + 2.0)}>
             <path d={`M 685 565 L 705 565 L 705 ${565 + PEN} L 685 ${565 + PEN}`} stroke={KC.red} strokeWidth={8} fill="none" />
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 4b · de vuelta a escala real: los granos quedan pegados en un bloque */}
       <Escena T={T} a={amA} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<BloqueTempeh T={T} x={540} y={950} w={620} h={300} seed={11} blanco={kprog(T, amA + 0.1, K.P - 0.4)} granosN={28} />)}
+        {fsvg(<g transform={tpTr(M_BLQ)}><BloqueTempeh T={T} x={540} y={950} w={620} h={300} seed={11} blanco={kprog(T, amA + 0.1, K.P - 0.4)} granosN={28} /></g>)}
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.En} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Interrogacion T={T} x={300} y={1080} />)}
+        {fsvg(<><g transform={tpTr(M_BLQ)} opacity={0.5}><BloqueTempeh T={T} x={540} y={950} w={620} h={300} seed={11} granosN={28} /></g>
+          <Interrogacion T={T} x={540} y={1290} tam={860} /></>)}
       </Escena>
       {/* 6 · enzimas: cortan proteínas y grasas (esquema molecular) */}
       <Escena T={T} a={K.En} b={K.F}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<>
+        {fsvg(<g transform={tpTr(M_ENZ)}>
           <path d="M -40 560 Q 80 640 120 860 Q 150 1040 -40 1180" stroke={FK.hifa} strokeWidth={70} fill="none" strokeLinecap="round" opacity=".9" />
           {/* proteína */}
           {Array.from({ length: AA }, (_, i) => { const seg = CUTS.filter((c) => i >= c).length; const ct = CUTS.map((c, k) => kprog(T, K.En + 1.0 + k * 0.45, K.En + 1.5 + k * 0.45, kEase.sale));
@@ -294,13 +313,14 @@ function TempehShot() {
           </g>; })}
           {[0, 1, 2].map((k) => { const t0 = K.En + 2.0 + k * 0.5, u = kprog(T, t0, t0 + 0.5, kEase.sale); if (u <= 0 || T > K.F - 0.2) return null;
             return <Tijera key={'l' + k} x={klerp(130, 380 + k * 170, u)} y={klerp(900, 1100, u)} rot={-30} s={1.1} color={KC.pink} abre={Math.abs(Math.sin(T * 10 + k))} />; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 7 · baja el ácido fítico: suelta minerales */}
       <Escena T={T} a={K.F} b={K.Et}>
         <div style={{ position:'absolute', inset:0, background:KC.dark }}></div>
         <Ambiente T={T} n={14} />
         {fsvg(<>
+          <g transform={tpTr(M_FIT)}>
           {(() => { const cx = 540, cy = 860, out = [];
             const hex = Array.from({ length: 6 }, (_, i) => { const a = i / 6 * Math.PI * 2 - Math.PI / 2; return [cx + Math.cos(a) * 100, cy + Math.sin(a) * 100, a]; });
             out.push(<path key="hex" d={'M ' + hex.map((p) => p[0] + ' ' + p[1]).join(' L ') + ' Z'} fill="none" stroke="#cfd6e0" strokeWidth={10} strokeLinejoin="round" />);
@@ -310,10 +330,11 @@ function TempehShot() {
               out.push(<line key={'l' + i} x1={hx} y1={hy} x2={cx + Math.cos(a) * 190} y2={cy + Math.sin(a) * 190} stroke="#cfd6e0" strokeWidth={8} opacity={1 - u} />);
               out.push(<g key={'p' + i} opacity={1 - u * 0.85}><circle cx={px} cy={py} r={36} fill={KC.orange} stroke={KC.ink} strokeWidth={4} /><text x={px} y={py + 12} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>P</text></g>);
               if (i % 2 === 0) { const [s, col] = MIN[i / 2]; const ma = a + Math.PI / 6, mr = 270, f = kprog(T, t0 + 0.2, t0 + 1.6, kEase.sale);
-                const mx = cx + Math.cos(ma) * mr + f * (i === 0 ? 0 : (i === 2 ? 120 : -120)), my = cy + Math.sin(ma) * mr + f * (220 - Math.sin(ma) * mr * 0.4);
+                const mx = cx + Math.cos(ma) * mr + f * (i === 0 ? 0 : (i === 2 ? 80 : -40)), my = cy + Math.sin(ma) * mr + f * (220 - Math.sin(ma) * mr * 0.4);
                 out.push(<g key={'m' + i}><circle cx={mx} cy={my} r={40} fill={col} stroke={KC.ink} strokeWidth={5} style={f > 0.9 ? { filter:`drop-shadow(0 0 12px ${KC.mint})` } : null} /><text x={mx} y={my + 12} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>{s}</text></g>); }
             });
             return out; })()}
+          </g>
           {/* medidor de ácido fítico (cualitativo) */}
           <g transform="translate(140 470)">
             <rect x={0} y={0} width={500} height={44} rx={22} fill="rgba(255,255,255,.12)" stroke={KC.texto} strokeWidth={4} />
@@ -325,6 +346,7 @@ function TempehShot() {
       <Escena T={T} a={K.Et} b={K.B} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
+          <g transform={tpTr(M_EST)}>
           <g transform="translate(400 970)"><rect x={-300} y={-150} width={600} height={300} rx={40} fill="rgba(255,255,255,.45)" stroke={KC.ink} strokeWidth={8} />
             <BloqueTempeh T={T} x={0} y={0} w={520} h={220} seed={17} />
             <rect x={-150} y={-40} width={300} height={80} rx={14} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
@@ -334,117 +356,118 @@ function TempehShot() {
             <rect x={-80} y={-150} width={160} height={46} rx={12} fill={KC.pink} stroke={KC.ink} strokeWidth={6} />
             <text y={10} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.red}>B12</text>
             <text y={86} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>?</text></g>
+          </g>
         </>)}
       </Escena>
       {/* 9a · el hongo solo no la hace; con la bacteria, sí */}
       <Escena T={T} a={K.B} b={baA}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform={tpTr(M_PET)}>
           <Petri x={290} y={860} r={190}><Colonia cx={0} cy={0} r={150 * kprog(T, K.B, K.B + 0.8)} seed={2} /></Petri>
           <Petri x={790} y={860} r={190}><Colonia cx={0} cy={0} r={150 * kprog(T, K.B + 0.3, K.B + 1.1)} seed={5} />
             {Array.from({ length: 18 }, (_, i) => { const a = i * 0.9, rr = 40 + (i * 37) % 110; return <ellipse key={i} cx={Math.cos(a) * rr} cy={Math.sin(a) * rr} rx={9} ry={5} transform={`rotate(${i * 40} ${Math.cos(a) * rr} ${Math.sin(a) * rr})`} fill={KC.mint} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.B + 0.6, K.B + 1.0)} />; })}
           </Petri>
-        </>)}
+        </g>)}
       </Escena>
       {/* 9b · al microscopio: bacterias en bastón junto a una hifa */}
       <Escena T={T} a={baA} b={K.Bl}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<>
+        {fsvg(<g transform={tpTr(M_MIC)}>
           <path d="M -60 640 Q 400 700 620 880 Q 820 1040 1140 1060" stroke={KC.ink} strokeWidth={150} fill="none" strokeLinecap="round" />
           <path d="M -60 640 Q 400 700 620 880 Q 820 1040 1140 1060" stroke={FK.hifa} strokeWidth={138} fill="none" strokeLinecap="round" />
           {[[260, 860, 20], [380, 900, -30], [520, 1040, 60], [700, 1150, 10], [860, 1180, -20], [180, 980, 80], [640, 760, -40], [880, 900, 30]].map(([bx, by, r], i) =>
             <Bacteria key={i} T={T} x={bx + Math.sin(T * 1.5 + i) * 6} y={by} rot={r} s={kprog(T, baA + 0.1 + i * 0.08, baA + 0.5 + i * 0.08, kEase.rebote) * 0.5} color={KC.mint} flagelo={false} seed={i} />)}
-        </>)}
+        </g>)}
       </Escena>
       {/* 10a · blanco con poco aire; con aire, manchas de esporas */}
       <Escena T={T} a={K.Bl} b={blA}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform={tpTr(M_BLA)}>
           <g><rect x={50} y={790} width={440} height={300} rx={30} fill="rgba(255,255,255,.4)" stroke={KC.ink} strokeWidth={7} />
             <BloqueTempeh T={T} x={270} y={940} w={360} h={220} seed={21} granosN={14} />
             {Array.from({ length: 12 }, (_, i) => <circle key={i} cx={90 + (i % 6) * 72} cy={820 + Math.floor(i / 6) * 240} r={6} fill={KC.ink} />)}</g>
           <BloqueTempeh T={T} x={800} y={940} w={360} h={220} seed={23} granosN={14} manchas={kprog(T, K.Bl + 1.4, K.Bl + 2.4)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 10b · al microscopio: esporangios negro-grisáceos (hasta ~100 µm) llenos de esporas */}
       <Escena T={T} a={blA} b={K.C}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<>
+        {fsvg(<g transform={tpTr(M_ESG)}>
           <path d="M -20 1150 Q 300 1120 540 1150 T 1100 1140" stroke="#d9d2c0" strokeWidth={9} fill="none" />
           <Esporangioforo T={T} x={300} y={1145} alto={360} r={92} crece={kprog(T, blA + 0.1, blA + 1.2)} seed={1} />
           <Esporangioforo T={T} x={560} y={1150} alto={460} r={100} crece={kprog(T, blA + 0.4, blA + 1.5)} seed={2} />
           <Esporangioforo T={T} x={800} y={1142} alto={280} r={84} crece={kprog(T, blA + 0.7, blA + 1.8)} seed={3} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 11 · cierre: la misma tabla y el mismo bloque, ahora en rebanadas con los hilos marcados */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform={tpTr(M_TABLA)}>
           <Tabla x={400} y={1090} />
           <defs>{[0, 1, 2, 3].map((k) => <clipPath key={k} id={'tpR' + k}><rect x={100 + k * 150} y={0} width={150} height={KH} /></clipPath>)}</defs>
           {[0, 1, 2, 3].map((k) => <g key={k} clipPath={`url(#tpR${k})`} transform={`translate(${(k - 1.5) * 26 * kprog(T, K.C + 0.2, K.C + 0.9, kEase.sale)} 0)`}><BloqueTempeh T={T} x={400} y={960} w={600} h={260} seed={3} /></g>)}
           <g transform={`translate(330 600) scale(${kprog(T, K.C + 0.5, K.C + 1.0, kEase.rebote)})`}><Corte T={T} x={0} y={0} w={540} h={300} p={1} brilla={kprog(T, K.C + 1.2, K.C + 2.0)} /></g>
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.15} tacharEn={K.G + 1.6} until={K.G + 2.4} texto="¿soya prensada?" x={330} y={400} tam={46} />
-      <Chip T={T} at={K.G + 2.5} until={K.J - 0.2} texto="soya + hongo vivo" x={330} y={400} tam={42} borde={KC.leaf} />
-      <Etq T={T} at={K.G + 1.6} until={K.J - 0.2} x={600} y={820} texto="hilos del hongo" tam={28} color={KC.ink} lado="izq" />
-      <Rotulo T={T} at={K.J + 0.3} until={K.Es - 0.2} texto="TEMPEH" x={300} y={480} tam={70} />
-      <Etq T={T} at={K.J + 2.2} until={K.Es - 0.2} x={idProy(105, -7.5)[0] + 60} y={idProy(105, -7.5)[1] + 600 + 40} texto="Java" lado="izq" tam={48} color={KC.ink} />
-      <Etq T={T} at={K.J + 1.0} until={K.Es - 0.2} x={560} y={1115} texto="Indonesia" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.J + 2.8} until={K.Es - 0.2} texto="muy probablemente" x={340} y={620} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Es + 0.4} until={K.Es + 1.6} x={160} y={760} texto="soya cocida" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Es + 1.9} until={K.Es + 2.8} texto="se enfría (~25 °C)" x={360} y={520} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Es + 3.1} until={K.H - 0.2} x={120} y={500} texto="moho:" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Es + 3.1} until={K.H - 0.2} x={300} y={500} texto="Rhizopus" it tam={40} color={KC.ink} />
-      <Reloj T={T} at={K.H + 0.3} until={K.A - 0.2} horas={48} dur={4.2} x={300} y={470} />
-      <Chip T={T} at={K.H + 0.8} until={K.A - 0.2} texto="25–30 °C" x={300} y={640} tam={38} borde={KC.orange} />
-      <Etq T={T} at={K.H + 0.9} until={K.H + 3.0} x={SPO[0][0] + 30} y={SPO[0][1] - 80} texto="espora" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.H + 3.0} until={K.A - 0.2} x={680} y={565} texto="hifas = micelio" lado="izq" tam={34} color={FK.hifa} />
-      <Etq T={T} at={K.H + 1.0} until={K.A - 0.2} x={1040} y={990} texto="superficie del grano" lado="izq" tam={26} color={KC.yellow} />
+      <MitoTachado T={T} at={K.G + 0.15} tacharEn={K.G + 1.6} until={K.G + 2.4} texto="¿soya prensada?" x={tpX(M_TABLA, 330)} y={tpY(M_TABLA, 400)} tam={46} />
+      <Chip T={T} at={K.G + 2.5} until={K.J - 0.2} texto="soya + hongo vivo" x={tpX(M_TABLA, 330)} y={tpY(M_TABLA, 400)} tam={42} borde={KC.leaf} />
+      <Etq T={T} at={K.G + 1.6} until={K.J - 0.2} x={tpX(M_TABLA, 600)} y={tpY(M_TABLA, 790)} texto="hilos del hongo" tam={28} color={KC.ink} lado="izq" />
+      <Rotulo T={T} at={K.J + 0.3} until={K.Es - 0.2} texto="TEMPEH" x={tpX(M_JAVA, 300)} y={tpY(M_JAVA, 480)} tam={70} />
+      <Etq T={T} at={K.J + 2.2} until={K.Es - 0.2} x={tpX(M_JAVA, idProy(105, -7.5)[0] + 60)} y={tpY(M_JAVA, idProy(105, -7.5)[1] + 600 + 40)} texto="Java" lado="izq" tam={48} color={KC.ink} />
+      <Etq T={T} at={K.J + 1.0} until={K.Es - 0.2} x={tpX(M_JAVA, 560)} y={tpY(M_JAVA, 1115)} texto="Indonesia" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.J + 2.8} until={K.Es - 0.2} texto="muy probablemente" x={tpX(M_JAVA, 340)} y={tpY(M_JAVA, 560)} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Es + 0.4} until={K.Es + 1.6} x={tpX(M_ESP, 160)} y={tpY(M_ESP, 760)} texto="soya cocida" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Es + 1.9} until={K.Es + 2.8} texto="se enfría (~25 °C)" x={tpX(M_ESP, 360)} y={tpY(M_ESP, 520)} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Es + 3.1} until={K.H - 0.2} x={tpX(M_ESP, 120)} y={tpY(M_ESP, 500)} texto="moho:" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Es + 3.1} until={K.H - 0.2} x={tpX(M_ESP, 300)} y={tpY(M_ESP, 500)} texto="Rhizopus" it tam={40} color={KC.ink} />
+      <Reloj T={T} at={K.H + 0.3} until={K.A - 0.2} horas={48} dur={4.2} x={250} y={330} />
+      <Chip T={T} at={K.H + 0.8} until={K.A - 0.2} texto="25–30 °C" x={540} y={350} tam={38} borde={KC.orange} />
+      <Etq T={T} at={K.H + 0.9} until={K.H + 3.0} x={tpX(M_HIL, SPO[0][0] + 30)} y={tpY(M_HIL, SPO[0][1] - 80)} texto="espora" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.H + 3.0} until={K.A - 0.2} x={tpX(M_HIL, 900)} y={tpY(M_HIL, 760)} texto="hifas = micelio" lado="izq" tam={34} color={FK.hifa} />
+      <Etq T={T} at={K.H + 1.0} until={K.A - 0.2} x={1040} y={tpY(M_HIL, 1110)} texto="superficie del grano" lado="izq" tam={26} color="#1a1206" />
       <Chip T={T} at={K.A + 0.2} until={amA - 0.2} texto="POR DENTRO · grano de soya" x={420} y={300} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.A + 1.8} until={amA - 0.2} x={680} y={565 + PEN / 2} texto="hasta ~¼ del grosor" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.A + 1.2} until={amA - 0.2} x={60} y={920} texto="células del grano" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.A + 0.9} until={amA - 0.2} x={60} y={460} texto="hifas entre granos" tam={30} color={KC.ink} />
-      <Chip T={T} at={amA + 0.4} until={K.P - 0.2} texto="un solo bloque" x={400} y={560} tam={46} borde={KC.ink} />
-      <Chip T={T} at={K.En + 0.6} until={K.F - 0.2} texto="proteasas → proteínas" x={430} y={480} tam={36} borde={KC.mint} />
-      <Chip T={T} at={K.En + 2.2} until={K.F - 0.2} texto="lipasas → grasas" x={430} y={580} tam={36} borde={KC.pink} />
+      <Etq T={T} at={K.A + 1.8} until={amA - 0.2} x={680} y={675 + PEN / 2} texto="hasta ~¼ del grosor" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.A + 1.2} until={amA - 0.2} x={60} y={1030} texto="células del grano" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.A + 0.9} until={amA - 0.2} x={60} y={570} texto="hifas entre granos" tam={30} color={KC.ink} />
+      <Chip T={T} at={amA + 0.4} until={K.P - 0.2} texto="un solo bloque" x={540} y={600} tam={46} borde={KC.ink} />
+      <Chip T={T} at={K.En + 0.6} until={K.F - 0.2} texto="proteasas → proteínas" x={430} y={520} tam={36} borde={KC.mint} />
+      <Chip T={T} at={K.En + 2.2} until={K.F - 0.2} texto="lipasas → grasas" x={430} y={610} tam={36} borde={KC.pink} />
       <Etq T={T} at={K.F + 0.2} until={K.Et - 0.2} x={140} y={440} texto="ácido fítico" tam={32} color={KC.orange} />
-      <Etq T={T} at={K.F + 1.6} until={K.Et - 0.2} x={1040} y={1200} texto="minerales libres" lado="izq" tam={30} color={KC.mint} />
-      <TarjetaEstudio T={T} at={K.Et + 0.2} until={K.B - 0.2} anio="1977" quien="tempeh comprado en Toronto, Canadá" revista="Liem, Steinkraus y Cronk · Appl. Environ. Microbiol." y={500} />
-      <Rotulo T={T} at={K.B + 0.4} until={baA - 0.2} texto="solo el hongo" x={290} y={1100} tam={34} />
-      <Rotulo T={T} at={K.B + 0.7} until={baA - 0.2} texto="hongo + bacteria" x={790} y={1100} tam={34} />
-      <Rotulo T={T} at={K.B + 1.2} until={baA - 0.2} texto="B12: no" x={290} y={860} tam={44} color={KC.white} fondo={KC.red} />
-      <Rotulo T={T} at={K.B + 1.6} until={baA - 0.2} texto="B12: sí ✓" x={790} y={860} tam={44} color={KC.ink} fondo={KC.mint} />
+      <Etq T={T} at={K.F + 1.6} until={K.Et - 0.2} x={1040} y={1500} texto="minerales libres" lado="izq" tam={30} color={KC.mint} />
+      <TarjetaEstudio T={T} at={K.Et + 0.2} until={K.B - 0.2} anio="1977" quien="tempeh comprado en Toronto, Canadá" revista="Liem, Steinkraus y Cronk · Appl. Environ. Microbiol." y={420} />
+      <Rotulo T={T} at={K.B + 0.4} until={baA - 0.2} texto="solo el hongo" x={tpX(M_PET, 290)} y={tpY(M_PET, 1100)} tam={34} />
+      <Rotulo T={T} at={K.B + 0.7} until={baA - 0.2} texto="hongo + bacteria" x={tpX(M_PET, 790)} y={tpY(M_PET, 1100)} tam={34} />
+      <Rotulo T={T} at={K.B + 1.2} until={baA - 0.2} texto="B12: no" x={tpX(M_PET, 290)} y={tpY(M_PET, 860)} tam={44} color={KC.white} fondo={KC.red} />
+      <Rotulo T={T} at={K.B + 1.6} until={baA - 0.2} texto="B12: sí ✓" x={tpX(M_PET, 790)} y={tpY(M_PET, 860)} tam={44} color={KC.ink} fondo={KC.mint} />
       <Chip T={T} at={baA + 0.2} until={K.Bl - 0.2} texto="AL MICROSCOPIO · bacteria y hongo" x={460} y={300} tam={30} borde={KC.mint} mono />
-      <Etq T={T} at={baA + 0.6} until={K.Bl - 0.2} x={60} y={560} texto="hifa del hongo" tam={30} color={FK.hifa} />
-      <Etq T={T} at={baA + 0.9} until={K.Bl - 0.2} x={1040} y={1110} texto="bacteria (bastón)" lado="izq" tam={30} color={KC.mint} />
-      <Rotulo T={T} at={K.Bl + 0.3} until={blA - 0.2} texto="poco aire" x={270} y={700} tam={38} />
-      <Rotulo T={T} at={K.Bl + 1.2} until={blA - 0.2} texto="con esporas" x={800} y={700} tam={38} />
-      <Chip T={T} at={blA + 0.3} until={K.C - 0.2} texto="AL MICROSCOPIO · esporangios" x={420} y={300} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={blA + 1.4} until={K.C - 0.2} x={40} y={380} texto="esporangio: bolsa de esporas" tam={30} color={KC.texto} />
-      <Chip T={T} at={blA + 2.0} until={K.C - 0.2} texto="manchas = esporas" x={400} y={460} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="soya + hongo" x={330} y={400} tam={44} borde={KC.leaf} />
+      <Etq T={T} at={baA + 0.6} until={K.Bl - 0.2} x={40} y={590} texto="hifa del hongo" tam={30} color={FK.hifa} />
+      <Etq T={T} at={baA + 0.9} until={K.Bl - 0.2} x={1040} y={1350} texto="bacteria (bastón)" lado="izq" tam={30} color={KC.mint} />
+      <Rotulo T={T} at={K.Bl + 0.3} until={blA - 0.2} texto="poco aire" x={tpX(M_BLA, 270)} y={tpY(M_BLA, 700)} tam={38} />
+      <Rotulo T={T} at={K.Bl + 1.2} until={blA - 0.2} texto="con esporas" x={tpX(M_BLA, 800)} y={tpY(M_BLA, 700)} tam={38} />
+      <Chip T={T} at={blA + 0.3} until={K.C - 0.2} texto="AL MICROSCOPIO · esporangios" x={420} y={280} tam={30} borde={KC.cyan} mono />
+      <Etq T={T} at={blA + 1.4} until={K.C - 0.2} x={40} y={370} texto="esporangio: bolsa de esporas" tam={30} color={KC.texto} />
+      <Chip T={T} at={blA + 2.0} until={K.C - 0.2} texto="manchas = esporas" x={870} y={620} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="soya + hongo" x={tpX(M_TABLA, 330)} y={tpY(M_TABLA, 400)} tam={44} borde={KC.leaf} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.J} texto="5 cm" largo={120} />
-      <BarraEscala T={T} at={K.J} until={K.Es} texto="500 km" largo={135} />
-      <BarraEscala T={T} at={K.Es} until={K.H} texto="5 cm" largo={120} />
-      <BarraEscala T={T} at={K.H} until={K.A} texto="50 µm" largo={200} />
+      <BarraEscala T={T} at={K.G} until={K.J} texto="5 cm" largo={120 * M_TABLA.k} />
+      <BarraEscala T={T} at={K.J} until={K.Es} texto="500 km" largo={135 * M_JAVA.k} />
+      <BarraEscala T={T} at={K.Es} until={K.H} texto="5 cm" largo={120 * M_ESP.k} />
+      <BarraEscala T={T} at={K.H} until={K.A} texto="50 µm" largo={200 * M_HIL.k} />
       <BarraEscala T={T} at={K.A} until={amA} texto="1 mm" largo={200} />
-      <BarraEscala T={T} at={amA} until={K.P} texto="1 cm" largo={90} />
+      <BarraEscala T={T} at={amA} until={K.P} texto="1 cm" largo={90 * M_BLQ.k} />
       <BarraEscala T={T} at={K.En} until={K.F} texto="esquema, no a escala" largo={0} />
       <BarraEscala T={T} at={K.F} until={K.Et} texto="esquema, no a escala" largo={0} />
-      <BarraEscala T={T} at={K.Et} until={K.B} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={K.B} until={baA} texto="5 cm" largo={210} />
-      <BarraEscala T={T} at={baA} until={K.Bl} texto="5 µm" largo={110} />
-      <BarraEscala T={T} at={K.Bl} until={blA} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={blA} until={K.C} texto="100 µm" largo={200} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={120} />
+      <BarraEscala T={T} at={K.Et} until={K.B} texto="5 cm" largo={110 * M_EST.k} />
+      <BarraEscala T={T} at={K.B} until={baA} texto="5 cm" largo={210 * M_PET.k} />
+      <BarraEscala T={T} at={baA} until={K.Bl} texto="5 µm" largo={110 * M_MIC.k} />
+      <BarraEscala T={T} at={K.Bl} until={blA} texto="5 cm" largo={110 * M_BLA.k} />
+      <BarraEscala T={T} at={blA} until={K.C} texto="100 µm" largo={200 * M_ESG.k} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={120 * M_TABLA.k} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.J - 0.1} texto="No es soya prensada: *la amarra un hongo.*" />

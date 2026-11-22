@@ -178,22 +178,25 @@ function Manantial({ T, x = 540, y = 1080 }) {
 /* ---------- noche en las montañas de California: carretera y coche con faros ---------- */
 function NocheCarretera({ T, u = 0 }) {
   const R = krng(4);
-  const estrellas = Array.from({ length: 40 }, () => [R() * KW, 220 + R() * 520, 2 + R() * 4]);
+  const estrellas = Array.from({ length: 40 }, () => [R() * KW, 220 + R() * 640, 2 + R() * 4]);
   const cx = klerp(-120, 1180, u), cy = 1110 - Math.sin(u * Math.PI * 2) * 30;
+  const dy = 220;                                         // todo el paisaje baja para quedar al centro del cuadro
   return <g>
     <rect width={KW} height={KH} fill="#0c1220" />
     {estrellas.map(([sx, sy, sr], i) => <circle key={i} cx={sx} cy={sy} r={sr * (0.7 + 0.3 * Math.sin(T * 3 + i))} fill="#fff" opacity=".85" />)}
-    <circle cx={860} cy={420} r={70} fill="#f6f3ec" /><circle cx={885} cy={405} r={64} fill="#0d1424" />
-    <path d="M 0 900 L 180 700 L 330 820 L 520 620 L 720 830 L 900 680 L 1080 860 L 1080 1920 L 0 1920 Z" fill="#2b0f63" stroke={KC.ink} strokeWidth={8} />
-    <path d="M 0 1000 L 240 880 L 470 960 L 700 860 L 1080 980 L 1080 1920 L 0 1920 Z" fill="#1c0b44" />
-    <path d={`M -40 1140 Q 300 1040 540 1110 T 1120 1100`} stroke="#3a3f52" strokeWidth={70} fill="none" />
+    <circle cx={860} cy={520} r={70} fill="#f6f3ec" /><circle cx={885} cy={505} r={64} fill="#0d1424" />
+    <g transform={`translate(0 ${dy})`}>
+    <path d="M 0 900 L 180 700 L 330 820 L 520 620 L 720 830 L 900 680 L 1080 860 L 1080 1920 L 0 1920 Z" fill="#1e0f42" stroke="#6b5aa8" strokeWidth={6} />
+    <path d="M 0 1000 L 240 880 L 470 960 L 700 860 L 1080 980 L 1080 1920 L 0 1920 Z" fill="#150a30" />
+    <path d={`M -40 1140 Q 300 1040 540 1110 T 1120 1100`} stroke="#3a3f52" strokeWidth={80} fill="none" />
     <path d={`M -40 1140 Q 300 1040 540 1110 T 1120 1100`} stroke={KC.gold2} strokeWidth={6} strokeDasharray="30 30" fill="none" opacity=".8" />
-    <g transform={`translate(${cx} ${cy - 40})`}>
+    <g transform={`translate(${cx} ${cy - 40}) scale(1.4)`}>
       <path d="M 40 10 L 340 -60 L 340 80 Z" fill={KC.yellow} opacity=".28" />
       <rect x={-80} y={-26} width={130} height={46} rx={14} fill="#c9ced8" stroke={KC.ink} strokeWidth={6} />
       <path d="M -56 -26 L -36 -52 L 14 -52 L 30 -26 Z" fill="#9aa4b5" stroke={KC.ink} strokeWidth={6} />
       <circle cx={-48} cy={22} r={14} fill={KC.ink} /><circle cx={22} cy={22} r={14} fill={KC.ink} />
       <circle cx={46} cy={-8} r={8} fill={KC.yellow} />
+    </g>
     </g>
   </g>;
 }
@@ -251,33 +254,37 @@ function Pcr() {
       <Escena T={T} a={K.G} b={K.Tu} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          {cierra < 1 && <TuboPCR T={T} x={360} y={klerp(300, 640, baja)} s={0.7} />}
-          <Termociclador x={360} y={760} s={0.9} tapa={cierra} temp={cGancho > 0.5 ? (Math.floor(T * 2.4) % 3 === 0 ? 95 : Math.floor(T * 2.4) % 3 === 1 ? 55 : 72) : 25} ciclo={Math.round(cGancho)} />
+          <g transform="translate(540 860) scale(1.9) translate(-360 -760)">
+            {cierra < 1 && <TuboPCR T={T} x={360} y={klerp(300, 640, baja)} s={0.7} />}
+            <Termociclador x={360} y={760} s={0.9} tapa={cierra} temp={cGancho > 0.5 ? (Math.floor(T * 2.4) % 3 === 0 ? 95 : Math.floor(T * 2.4) % 3 === 1 ? 55 : 72) : 25} ciclo={Math.round(cGancho)} />
+          </g>
         </SvgCapa>
-        <Copias T={T} at={K.G + 1.1} until={K.Tu - 0.2} ciclos={cGancho} y={1060} tam={112} etiqueta="copias de 1 molécula de ADN" />
+        <Copias T={T} at={K.G + 1.1} until={K.Tu - 0.2} ciclos={cGancho} y={1340} tam={130} etiqueta="copias de 1 molécula de ADN" />
       </Escena>
 
       {/* 1 · la prueba PCR de COVID: ARN del virus → ADN → copias que brillan */}
       <Escena T={T} a={K.Tu} b={K.S} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(540 1000) scale(1.2) translate(-610 -800)">
           <Virus T={T} x={720} y={560} r={100} />
           <HebraOndulada T={T} x0={720} y0={700} x1={420} y1={770} p={kprog(T, K.Tu + 0.5, K.Tu + 1.6)} color={KC.pink} />
           {T > K.Tu + 2.0 && <g opacity={kprog(T, K.Tu + 2.0, K.Tu + 2.6)}><ADNHebra T={T} x={390} y={790} largo={300} alto={46} vueltas={2} grosor={6} /></g>}
           <TuboPCR T={T} x={300} y={1150} s={0.9} brillo={kprog(T, K.Tu + 3.0, K.Tu + 5.6)} />
           <CurvaFluo x={560} y={880} w={400} h={220} p={kprog(T, K.Tu + 2.9, K.Tu + 5.7)} />
+          </g>
         </SvgCapa>
-        <Etq T={T} at={K.Tu + 0.9} until={K.Tu + 2.2} x={600} y={690} texto="ARN del virus" color={KC.ink} tam={34} lado="izq" />
-        <Etq T={T} at={K.Tu + 2.3} until={K.S - 0.3} x={380} y={730} texto="ADN" color={KC.ink} tam={38} lado="izq" />
+        <Etq T={T} at={K.Tu + 0.9} until={K.Tu + 2.2} x={528} y={862} texto="ARN del virus" color={KC.ink} tam={36} lado="izq" />
+        <Etq T={T} at={K.Tu + 2.3} until={K.S - 0.3} x={264} y={910} texto="ADN" color={KC.ink} tam={40} lado="izq" />
       </Escena>
 
       {/* 2–4 · capítulos 1, 2 y 3 dentro del tubito, con el termómetro en vivo */}
       <Escena T={T} a={K.S} b={K.D} zoom={0.02}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 60% 55%, ${colorTemp(tempCap)}99 0%, ${KC.noche} 70%)` }}></div>
-        <Termometro x={120} y={470} alto={520} valor={tempCap} max={100} marcas={[0, 50, 100]} color={colorTemp(tempCap) === '#1d4fd8' ? KC.cyan : colorTemp(tempCap)} />
-        <div style={{ position:'absolute', left:120, top:1150, transform:'translate(-50%,-50%)', zIndex:40, font:`400 92px ${KF.titulo}`, color:KC.texto, WebkitTextStroke:`3px ${KC.ink}`, textShadow:'5px 5px 0 #000', whiteSpace:'nowrap' }}>{Math.round(tempCap)} °C</div>
+        <Termometro x={120} y={540} alto={560} valor={tempCap} max={100} marcas={[0, 50, 100]} color={colorTemp(tempCap) === '#1d4fd8' ? KC.cyan : colorTemp(tempCap)} />
+        <div style={{ position:'absolute', left:120, top:1270, transform:'translate(-50%,-50%)', zIndex:40, font:`400 92px ${KF.titulo}`, color:KC.texto, WebkitTextStroke:`3px ${KC.ink}`, textShadow:'5px 5px 0 #000', whiteSpace:'nowrap' }}>{Math.round(tempCap)} °C</div>
         <SvgCapa z={31}>
-          <Escalera T={T} x={330} y={940} paso={50} sep={sep} prim={prim} cop={cop} />
+          <g transform="translate(655 1000) scale(1.15) translate(-655 -940)"><Escalera T={T} x={330} y={940} paso={50} sep={sep} prim={prim} cop={cop} /></g>
         </SvgCapa>
       </Escena>
 
@@ -285,32 +292,32 @@ function Pcr() {
       <Escena T={T} a={K.D} b={K.Q} zoom={0.04}>
         <FondoMarca color={KC.violet} patron="rayas" T={T} />
         <SvgCapa>
-          {Array.from({ length: 32 }, (_, i) => { const n = Math.pow(2, Math.min(5, Math.round(cDup))), c = i % 8, r = Math.floor(i / 8);
-            return i < n ? <MiniHelice key={i} T={T + i * 0.2} x={120 + c * 120} y={860 + r * 85} s={1.3} o={kprog(T, K.D + 0.1 + Math.log2(i + 1) * 0.6, K.D + 0.4 + Math.log2(i + 1) * 0.6)} /> : null; })}
-          {cDup > 5 && <rect x={70} y={800} width={940} height={350} rx={30} fill={NUEVA} opacity={0.35 * kprog(cDup, 5, 30)} />}
+          {Array.from({ length: 32 }, (_, i) => { const n = Math.pow(2, Math.min(5, Math.round(cDup))), c = i % 8, r = Math.floor(i / 8), filas = Math.ceil(n / 8);
+            return i < n ? <MiniHelice key={i} T={T + i * 0.2} x={102 + c * 125} y={1020 + (r - (filas - 1) / 2) * 125} s={1.4} o={kprog(T, K.D + 0.1 + Math.log2(i + 1) * 0.6, K.D + 0.4 + Math.log2(i + 1) * 0.6)} /> : null; })}
+          {cDup > 5 && <rect x={20} y={800} width={1040} height={440} rx={30} fill={NUEVA} opacity={0.35 * kprog(cDup, 5, 30)} />}
         </SvgCapa>
-        <Copias T={T} at={K.D + 0.2} until={K.Q - 0.2} ciclos={cDup} x={680} y={590} tam={112} />
+        <Copias T={T} at={K.D + 0.2} until={K.Q - 0.2} ciclos={cDup} x={540} y={600} tam={130} />
       </Escena>
 
       {/* 6 · pregunta: ¿qué enzima aguanta 95 °C? una común se "derrite" */}
       <Escena T={T} a={K.Q} b={K.Pb} zoom={0.08}>
         <FondoLunares color={KC.pink} />
-        <Termometro x={130} y={560} alto={480} valor={95} max={100} marcas={[0, 50, 100]} color={KC.red} />
+        <Termometro x={130} y={480} alto={640} valor={95} max={100} marcas={[0, 50, 100]} color={KC.red} />
         <SvgCapa z={31}>
-          <Enzima x={400} y={880} s={1.25} color="#8fa3ff" T={T} derrite={kprog(T, K.Q + 0.8, K.Q + 2.8)} />
-          <text x={400} y={700} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={10} paintOrder="stroke" transform={`rotate(${Math.sin(T * 3) * 6} 400 640)`}>?</text>
+          <Enzima x={620} y={1000} s={2.4} color="#8fa3ff" T={T} derrite={kprog(T, K.Q + 0.8, K.Q + 2.8)} />
+          <text x={850} y={760} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} paintOrder="stroke" transform={`rotate(${Math.sin(T * 3) * 6} 850 670)`}>?</text>
         </SvgCapa>
       </Escena>
 
       {/* 7 · al principio el calor la destruía */}
       <Escena T={T} a={K.Pb} b={K.E} zoom={0.04}>
         <FondoMarca color={KC.orange} patron="rayas" T={T} />
-        <Termometro x={130} y={520} alto={480} valor={osc} max={100} marcas={[0, 50, 100]} color={colorTemp(osc)} />
+        <Termometro x={130} y={480} alto={640} valor={osc} max={100} marcas={[0, 50, 100]} color={colorTemp(osc)} />
         <SvgCapa z={31}>
-          {rompe < 1 ? <Enzima x={600} y={900} s={1.4} color="#8fa3ff" T={T} rot={Math.sin(T * 20) * 4 * kprog(T, K.Pb + 0.5, K.Pb + 1.4)} />
-            : Array.from({ length: 9 }, (_, i) => { const a = i * 0.7, d = 40 + 260 * kprog(T, K.Pb + 2.2, K.Pb + 3.2, kEase.sale);
-              return <path key={i} d="M -30 -10 q 30 -30 60 0 q -30 30 -60 0 Z" transform={`translate(${600 + Math.cos(a) * d} ${900 + Math.sin(a) * d * 0.7}) rotate(${i * 40 + T * 60})`} fill="#8fa3ff" stroke={KC.ink} strokeWidth={5} opacity={1 - kprog(T, K.Pb + 2.8, K.Pb + 3.5)} />; })}
-          {rompe > 0 && rompe < 1 && <circle cx={600} cy={900} r={60 + rompe * 160} fill="none" stroke="#fff" strokeWidth={10} opacity={1 - rompe} />}
+          {rompe < 1 ? <Enzima x={620} y={960} s={2.4} color="#8fa3ff" T={T} rot={Math.sin(T * 20) * 4 * kprog(T, K.Pb + 0.5, K.Pb + 1.4)} />
+            : Array.from({ length: 9 }, (_, i) => { const a = i * 0.7, d = 70 + 330 * kprog(T, K.Pb + 2.2, K.Pb + 3.2, kEase.sale);
+              return <path key={i} d="M -30 -10 q 30 -30 60 0 q -30 30 -60 0 Z" transform={`translate(${620 + Math.cos(a) * d} ${960 + Math.sin(a) * d * 0.8}) rotate(${i * 40 + T * 60}) scale(1.7)`} fill="#8fa3ff" stroke={KC.ink} strokeWidth={5} opacity={1 - kprog(T, K.Pb + 2.8, K.Pb + 3.5) * 0.65} />; })}
+          {rompe > 0 && rompe < 1 && <circle cx={620} cy={960} r={100 + rompe * 260} fill="none" stroke="#fff" strokeWidth={12} opacity={1 - rompe} />}
         </SvgCapa>
       </Escena>
 
@@ -327,18 +334,20 @@ function Pcr() {
       <Escena T={T} a={K.Tq} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <g transform="translate(540 1000) scale(1.35) translate(-490 -965)">
           <Bacteria T={T} x={300} y={820} largo={330} ancho={110} rot={-12} color="#ff9ec4" flagelo={false} seed={3} />
           <TuboPCR T={T} x={780} y={1220} s={1.05} brillo={kprog(T, K.Tq + 2.4, K.Tq + 3.4) * 0.6} />
           <Enzima x={klerp(330, 780, vuela)} y={klerp(820, 1100, vuela) - Math.sin(vuela * Math.PI) * 260} s={klerp(0.5, 0.75, vuela)} T={T} nombre={vuela > 0.05 ? 'Taq' : undefined} />
+          </g>
         </SvgCapa>
-        <div style={{ position:'absolute', left:520, top:960, zIndex:42, transform:'translate(-50%,-50%)', opacity:kprog(T, K.Tq + 1.8, K.Tq + 2.2), font:`400 80px ${KF.titulo}`, color:KC.red, WebkitTextStroke:`3px ${KC.ink}`, whiteSpace:'nowrap' }}>{Math.round(tempTaq)} °C</div>
+        <div style={{ position:'absolute', left:580, top:990, zIndex:42, transform:'translate(-50%,-50%)', opacity:kprog(T, K.Tq + 1.8, K.Tq + 2.2), font:`400 80px ${KF.titulo}`, color:KC.red, WebkitTextStroke:`3px ${KC.ink}`, whiteSpace:'nowrap' }}>{Math.round(tempTaq)} °C</div>
       </Escena>
 
       {/* 10 · 1983: la idea de Mullis en una carretera de noche · Nobel 1993 */}
       <Escena T={T} a={K.M} b={K.Ci} zoom={0.03}>
         <SvgCapa>
           <NocheCarretera T={T} u={kprog(T, K.M, K.M + 4.8)} />
-          {T > K.M + 2.3 && <g opacity={kprog(T, K.M + 2.3, K.M + 2.8)}><MedallaNobel x={300} y={760} s={klerp(0.5, 1, kprog(T, K.M + 2.3, K.M + 2.9, kEase.rebote))} T={T} /></g>}
+          {T > K.M + 2.3 && <g opacity={kprog(T, K.M + 2.3, K.M + 2.8)}><MedallaNobel x={540} y={930} s={klerp(0.6, 1.35, kprog(T, K.M + 2.3, K.M + 2.9, kEase.rebote))} T={T} /></g>}
         </SvgCapa>
       </Escena>
 
@@ -346,34 +355,36 @@ function Pcr() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <TuboPCR T={T} x={360} y={klerp(640, 520, sube)} s={0.7} brillo={sube} />
-          <Termociclador x={360} y={760} s={0.9} tapa={1 - abre} temp={72} ciclo={30} />
+          <g transform="translate(540 970) scale(1.75) translate(-360 -760)">
+            <TuboPCR T={T} x={360} y={klerp(640, 520, sube)} s={0.7} brillo={sube} />
+            <Termociclador x={360} y={760} s={0.9} tapa={1 - abre} temp={72} ciclo={30} />
+          </g>
         </SvgCapa>
-        <Copias T={T} at={K.Ci + 1.4} until={K.Ou - 0.2} ciclos={30} y={1060} tam={112} etiqueta="1 molécula → hasta (en teoría)" />
+        <Copias T={T} at={K.Ci + 1.4} until={K.Ou - 0.2} ciclos={30} y={1410} tam={130} etiqueta="1 molécula → hasta (en teoría)" />
       </Escena>
 
       {/* textos y medidores */}
-      <Chip T={T} at={K.G + 1.4} until={K.Tu - 0.3} texto="30 ciclos · en teoría" x={330} y={480} tam={38} borde={KC.gold} />
-      <Chip T={T} at={K.Tu + 0.2} until={K.S - 0.3} texto="prueba PCR de COVID" x={720} y={330} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.G + 1.4} until={K.Tu - 0.3} texto="30 ciclos · en teoría" x={540} y={450} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.Tu + 0.2} until={K.S - 0.3} texto="prueba PCR de COVID" x={672} y={420} tam={38} borde={KC.red} />
       <Capitulo T={T} caps={[{ at: K.S, titulo: 'SEPARAR · 95 °C' }, { at: K.P, titulo: 'PEGAR · ~55 °C' }, { at: K.C, titulo: 'COPIAR · 72 °C' }]} hasta={K.D} y={330} />
-      <Etq T={T} at={K.S + 0.3} until={K.D - 0.2} x={40} y={420} texto="por dentro del tubito" tam={28} />
-      <Etq T={T} at={K.S + 0.6} until={K.S + 1.4} x={330} y={1040} texto="doble hélice" tam={32} />
-      <Etq T={T} at={K.S + 3.0} until={K.P - 0.2} x={330} y={1180} texto="dos hebras sueltas" tam={32} />
-      <Etq T={T} at={K.P + 2.6} until={K.C - 0.2} x={330} y={1180} texto="iniciadores (guías)" color={PRIMER} tam={32} />
-      <Etq T={T} at={K.C + 1.4} until={K.C + 3.6} x={330} y={1180} texto="Taq: pone la letra que falta" color={TAQ} tam={30} />
-      <Chip T={T} at={K.C + 3.9} until={K.D - 0.2} texto="1 → 2 copias" x={540} y={1190} tam={40} borde={NUEVA} />
-      <Chip T={T} at={K.D + 0.2} until={K.Q - 0.2} texto={`CICLO ${Math.round(cDup)}`} x={680} y={380} tam={46} borde={KC.gold} mono />
-      <Chip T={T} at={K.D + 4.2} until={K.Q - 0.2} texto="2³⁰ · en teoría" x={680} y={730} tam={38} borde={NUEVA} />
-      <Chip T={T} at={K.Q + 0.2} until={K.Pb - 0.2} texto="¿aguanta 95 °C?" x={390} y={450} tam={40} borde={KC.red} />
-      <Etq T={T} at={K.Q + 1.0} until={K.Pb - 0.2} x={480} y={1110} texto="enzima común" color={KC.ink} tam={32} />
-      <Chip T={T} at={K.Pb + 0.4} until={K.E - 0.2} texto="el calor la destruía" x={600} y={1180} tam={42} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 3.5} anio="1969" quien="Brock y Freeze" revista="J. Bacteriol. · Yellowstone, EE. UU." x={540} y={620} />
+      <Etq T={T} at={K.S + 0.3} until={K.D - 0.2} x={40} y={430} texto="por dentro del tubito" tam={28} />
+      <Etq T={T} at={K.S + 0.6} until={K.S + 1.4} x={300} y={1090} texto="doble hélice" tam={32} />
+      <Etq T={T} at={K.S + 3.0} until={K.P - 0.2} x={300} y={1275} texto="dos hebras sueltas" tam={32} />
+      <Etq T={T} at={K.P + 2.6} until={K.C - 0.2} x={300} y={1275} texto="iniciadores (guías)" color={PRIMER} tam={32} />
+      <Etq T={T} at={K.C + 1.4} until={K.C + 3.6} x={300} y={1275} texto="Taq: pone la letra que falta" color={TAQ} tam={30} />
+      <Chip T={T} at={K.C + 3.9} until={K.D - 0.2} texto="1 → 2 copias" x={600} y={1290} tam={40} borde={NUEVA} />
+      <Chip T={T} at={K.D + 0.2} until={K.Q - 0.2} texto={`CICLO ${Math.round(cDup)}`} x={540} y={380} tam={46} borde={KC.gold} mono />
+      <Chip T={T} at={K.D + 4.2} until={K.Q - 0.2} texto="2³⁰ · en teoría" x={540} y={740} tam={38} borde={NUEVA} />
+      <Chip T={T} at={K.Q + 0.2} until={K.Pb - 0.2} texto="¿aguanta 95 °C?" x={560} y={400} tam={40} borde={KC.red} />
+      <Etq T={T} at={K.Q + 1.0} until={K.Pb - 0.2} x={500} y={1330} texto="enzima común" color={KC.ink} tam={32} />
+      <Chip T={T} at={K.Pb + 0.4} until={K.E - 0.2} texto="el calor la destruía" x={620} y={1360} tam={42} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 3.5} anio="1969" quien="Brock y Freeze" revista="J. Bacteriol. · Yellowstone, EE. UU." x={540} y={470} />
       <Lupa T={T} at={K.E + 3.6} until={K.Tq - 0.3} x={640} y={720} r={220} fx={540} fy={1090} interior={(t, r) => <BastonesThermus T={t} r={r} />} tinte={KC.pink} etiqueta="AL MICROSCOPIO" />
       <Etq T={T} at={K.E + 4.2} until={K.Tq - 0.3} x={400} y={1100} texto="Thermus aquaticus" it color={KC.texto} tam={38} lado="der" />
       <Chip T={T} at={K.E + 4.4} until={K.Tq - 0.3} texto="crece mejor a 70 °C" x={640} y={420} tam={38} borde={KC.orange} />
       <Etq T={T} at={K.E + 0.6} until={K.E + 3.4} x={60} y={930} texto="aguas termales de Yellowstone" color={KC.ink} tam={32} />
       <Chip T={T} at={K.Tq + 0.2} until={K.M - 0.2} texto="Taq · de Thermus aquaticus" x={420} y={460} tam={36} borde={TAQ} />
-      <Chip T={T} at={K.Tq + 2.4} until={K.M - 0.2} texto="sigue entera ✔" x={500} y={1080} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={K.Tq + 2.4} until={K.M - 0.2} texto="sigue entera ✔" x={560} y={1160} tam={38} borde={KC.leaf} />
       <Chip T={T} at={K.M + 0.2} until={K.Ci - 0.2} texto="1983 · Kary Mullis" x={330} y={450} tam={40} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

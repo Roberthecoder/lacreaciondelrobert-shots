@@ -113,7 +113,7 @@ function Turing() {
       {/* 4 · pregunta */}
       <Escena T={T} a={K.P} b={K.Pe} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
+        {svg(<g transform="translate(320 1000) scale(1.85) translate(-300 -880)"><text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text></g>)}
       </Escena>
       {/* 5 · el personaje */}
       <Escena T={T} a={K.Pe} b={K.S}>

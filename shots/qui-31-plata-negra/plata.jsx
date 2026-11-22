@@ -3,8 +3,14 @@
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const PLATA = '#c9ced6', PLATA_B = '#f2f4f8', NEGRO_AG = '#26221f', AL = '#b9c7d6', AZUFRE = '#ffe11a';
 
+// Átomo con la letra en tinta oscura fija: sobre plata o amarillo, la letra clara del kit no se leía.
+function AtomoP({ x, y, r = 40, color = PLATA, letra = '', tam }) {
+  return <g><circle cx={x} cy={y} r={r} fill={color} stroke={KC.ink} strokeWidth={Math.max(3, r / 8)} />
+    <circle cx={x - r * 0.35} cy={y - r * 0.35} r={r * 0.22} fill="#fff" opacity={0.45} />
+    {letra && <text x={x} y={y + (tam || r * 0.8) * 0.36} textAnchor="middle" style={{ font:`700 ${tam || r * 0.8}px ${KF.mono}` }} fill="#0b1020">{letra}</text>}</g>;
+}
 // Arete de aro con colgante. sucio 0..1 (negro), brilla 0..1 (destellos).
-function Arete({ T, x, y, s = 1, sucio = 1, brilla = 0, mece = 0 }) {
+function Arete({ T, x, y, s = 1, sucio = 1, brilla = 0, mece = 0, azufre = 0 }) {
   const c = mixHex(PLATA, NEGRO_AG, sucio), c2 = mixHex(PLATA_B, '#3a3431', sucio);
   const rot = Math.sin(T * 2.2) * 7 * mece;
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
@@ -19,6 +25,8 @@ function Arete({ T, x, y, s = 1, sucio = 1, brilla = 0, mece = 0 }) {
     {/* manchas negras irregulares */}
     {sucio > 0.05 && [[-120, -20], [100, -150], [130, 30], [-60, -190], [20, 240]].map(([dx, dy], i) =>
       <ellipse key={i} cx={dx} cy={dy} rx={22} ry={12} fill="#0f0d0c" opacity={sucio * 0.7} transform={`rotate(${i * 40} ${dx} ${dy})`} />)}
+    {azufre > 0 && [[-128, -8], [106, -166], [140, 26], [-66, -196], [22, 236]].map(([dx, dy], i) => { const k = kprog(azufre, i * 0.16, i * 0.16 + 0.3, kEase.rebote);
+      return k > 0 && <g key={'s' + i} transform={`translate(${dx} ${dy}) scale(${k})`}><AtomoP x={0} y={0} r={21} color={AZUFRE} letra="S" tam={20} /></g>; })}
     {brilla > 0 && [[-110, -150], [120, -10], [10, 200]].map(([dx, dy], i) => { const k = brilla * (0.6 + 0.4 * Math.sin(T * 6 + i * 2));
       return <path key={i} d={`M ${dx} ${dy - 40 * k} L ${dx + 9 * k} ${dy - 9 * k} L ${dx + 40 * k} ${dy} L ${dx + 9 * k} ${dy + 9 * k} L ${dx} ${dy + 40 * k} L ${dx - 9 * k} ${dy + 9 * k} L ${dx - 40 * k} ${dy} L ${dx - 9 * k} ${dy - 9 * k} Z`} fill="#fff" stroke={KC.ink} strokeWidth={3} />; })}
   </g>;
@@ -47,7 +55,10 @@ function HuevoDuro({ x, y, s = 1 }) {
 }
 // Molécula de H2S (S amarilla con dos H).
 function H2S({ x, y, s = 1, rot = 0, o = 1 }) {
-  return <Molecula x={x} y={y} s={s} rot={rot} o={o} atomos={[[0, 0, 36, QA.S, 'S'], [-42, 30, 22, QA.H, 'H'], [42, 30, 22, QA.H, 'H']]} enlaces={[[0, 1], [0, 2]]} />;
+  return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`} opacity={o}>
+    <line x1={0} y1={0} x2={-42} y2={30} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" /><line x1={0} y1={0} x2={42} y2={30} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
+    <AtomoP x={0} y={0} r={36} color={QA.S} letra="S" /><AtomoP x={-42} y={30} r={22} color={QA.H} letra="H" /><AtomoP x={42} y={30} r={22} color={QA.H} letra="H" />
+  </g>;
 }
 // Papel aluminio arrugado (polígono con brillos).
 function PapelAl({ x, y, w = 520, h = 60 }) {
@@ -91,61 +102,63 @@ function Plata() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.06}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Cuchara x={190} y={980} s={0.85} sucio={0.85} rot={-18} />
-          <Cadena x={640} y={1140} s={1.2} sucio={0.9} />
-          <Arete T={T} x={540} y={900} s={1.05} sucio={0.92} mece={1} />
+          <Cuchara x={150} y={1050} s={1.5} sucio={0.85} rot={-12} />
+          <Cadena x={560} y={1590} s={1.7} sucio={0.9} />
+          <Arete T={T} x={600} y={900} s={1.9} sucio={0.92} mece={1} azufre={kprog(T, K.G + 2.5, K.G + 4.0)} />
         </SvgCapa>
       </Escena>
       {/* 1 · qué es: la capa de sulfuro crece */}
       <Escena T={T} a={K.Q} b={K.A}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          {Array.from({ length: 30 }, (_, i) => { const cx = 120 + (i % 10) * 94, cy = 960 + Math.floor(i / 10) * 90; return <Atomo key={i} x={cx} y={cy} r={42} color={PLATA} letra="Ag" tam={28} />; })}
-          <rect x={60} y={970 - capa * 260} width={960} height={capa * 260} fill={colorCapa} stroke={KC.ink} strokeWidth={6} opacity={capa > 0.02 ? 1 : 0} />
+          {Array.from({ length: 40 }, (_, i) => { const cx = 120 + (i % 10) * 94, cy = 1130 + Math.floor(i / 10) * 90; return <AtomoP key={i} x={cx} y={cy} r={42} color={PLATA} letra="Ag" tam={28} />; })}
+          <rect x={60} y={1140 - capa * 260} width={960} height={capa * 260} fill={colorCapa} stroke={KC.ink} strokeWidth={6} opacity={capa > 0.02 ? 1 : 0} />
           {capa > 0.15 && Array.from({ length: 9 }, (_, i) => <g key={i} opacity={kprog(capa, 0.15 + i * 0.05, 0.3 + i * 0.05)}>
-            <Atomo x={110 + i * 108} y={970 - capa * 130} r={24} color={AZUFRE} letra="S" tam={22} /></g>)}
+            <AtomoP x={110 + i * 108} y={1140 - capa * 130} r={24} color={AZUFRE} letra="S" tam={22} /></g>)}
           {/* regla de grosor */}
-          <line x1={1040} y1={970} x2={1040} y2={970 - 220} stroke={KC.texto} strokeWidth={5} />
-          {[0, 1, 2, 3, 4].map((k) => <line key={k} x1={1022} x2={1040} y1={970 - k * 55} y2={970 - k * 55} stroke={KC.texto} strokeWidth={4} />)}
-          <text x={1010} y={970 - 220 - 18} textAnchor="end" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>100 nm</text>
+          <line x1={1040} y1={1140} x2={1040} y2={1140 - 220} stroke={KC.texto} strokeWidth={5} />
+          {[0, 1, 2, 3, 4].map((k) => <line key={k} x1={1022} x2={1040} y1={1140 - k * 55} y2={1140 - k * 55} stroke={KC.texto} strokeWidth={4} />)}
+          <text x={1010} y={1140 - 220 - 18} textAnchor="end" style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>100 nm</text>
           {[['amarillo', '#f6e27a', 0.1], ['café', '#b5562f', 0.33], ['azul', '#3d5fbf', 0.6], ['NEGRO', '#141210', 0.95]].map(([t, c, u], i) =>
-            <g key={i} opacity={capa >= u ? 1 : 0.25}><rect x={120 + i * 220} y={560} width={70} height={70} rx={14} fill={c} stroke={KC.texto} strokeWidth={5} />
-              <text x={155 + i * 220} y={680} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>{t}</text></g>)}
+            <g key={i} opacity={capa >= u ? 1 : 0.25}><rect x={120 + i * 220} y={640} width={70} height={70} rx={14} fill={c} stroke={KC.texto} strokeWidth={5} />
+              <text x={155 + i * 220} y={760} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>{t}</text></g>)}
         </SvgCapa>
       </Escena>
       {/* 2 · el azufre llega por el aire (H2S) */}
       <Escena T={T} a={K.A} b={K.H}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          {Array.from({ length: 30 }, (_, i) => { const cx = 120 + (i % 10) * 94, cy = 960 + Math.floor(i / 10) * 90; return <Atomo key={i} x={cx} y={cy} r={42} color={PLATA} letra="Ag" tam={28} />; })}
-          <rect x={60} y={710} width={960} height={260} fill="#141210" stroke={KC.ink} strokeWidth={6} />
+          {Array.from({ length: 40 }, (_, i) => { const cx = 120 + (i % 10) * 94, cy = 1130 + Math.floor(i / 10) * 90; return <AtomoP key={i} x={cx} y={cy} r={42} color={PLATA} letra="Ag" tam={28} />; })}
+          <rect x={60} y={880} width={960} height={260} fill="#141210" stroke={KC.ink} strokeWidth={6} />
           {gas.map(([gx, gy, ph], i) => { const t0 = K.A + 0.4 + i * 0.45, u = kprog(T, t0, t0 + 2.2, kEase.suave), pega = u >= 1;
-            const yy = klerp(330 + gy * 0.6, 690, u);
+            const yy = klerp(330 + gy * 0.6, 860, u);
             return <g key={i}>{!pega && T > t0 - 1.2 && <H2S x={gx + Math.sin(T * 1.5 + ph) * 20} y={T < t0 ? 330 + gy * 0.6 : yy} s={0.9} rot={T * 40 + ph * 60} />}
-              {pega && <Atomo x={gx} y={705} r={26} color={AZUFRE} letra="S" tam={22} />}</g>; })}
+              {pega && <AtomoP x={gx} y={875} r={26} color={AZUFRE} letra="S" tam={22} />}</g>; })}
         </SvgCapa>
       </Escena>
       {/* 3 · junto al huevo duro: en minutos */}
       <Escena T={T} a={K.H} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <ellipse cx={540} cy={1060} rx={440} ry={150} fill="#ffffff" stroke={KC.ink} strokeWidth={10} />
-          <ellipse cx={540} cy={1060} rx={330} ry={100} fill="none" stroke="#d6e3ea" strokeWidth={6} />
+          <g transform="translate(540 1080) scale(1.2) translate(-540 -1060)">
+          <ellipse cx={540} cy={1060} rx={440} ry={150} fill="#dfe5ee" stroke={KC.ink} strokeWidth={10} />
+          <ellipse cx={540} cy={1060} rx={330} ry={100} fill="none" stroke="#b9c6d2" strokeWidth={6} />
           <HuevoDuro x={380} y={1040} s={1} />
           <Cuchara x={760} y={930} s={0.85} rot={70} sucio={kprog(T, K.H + 0.8, K.H + 4.2)} />
           {[0, 1, 2].map((i) => { const u = (T * 0.7 + i / 3) % 1; return <path key={i} d={`M ${380 + (i - 1) * 60} ${960 - u * 180} q 22 -30 0 -60 q -22 -30 0 -60`} stroke="#9bb34a" strokeWidth={9} fill="none" strokeLinecap="round" opacity={(1 - u) * 0.9} />; })}
           <text x={380} y={780} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>H₂S</text>
+          </g>
         </SvgCapa>
       </Escena>
       {/* 4 · pulir raspa plata */}
       <Escena T={T} a={K.P} b={K.Pr} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Cuchara x={540} y={980} s={1.6} rot={90} sucio={0.85 - 0.6 * kprog(T, K.P + 0.3, K.P + 3.2)} />
-          <g transform={`translate(${430 + Math.sin(T * 14) * 90} ${900})`}><path d="M -130 -40 Q -90 -90 -30 -60 Q 20 -100 70 -60 Q 130 -80 130 -20 Q 150 40 100 60 Q 40 90 -20 60 Q -90 90 -130 40 Q -160 0 -130 -40 Z" fill="#7fc8ff" stroke={KC.ink} strokeWidth={8} /><path d="M -80 -30 Q -40 0 -70 40 M 10 -50 Q 40 0 10 50 M 80 -30 Q 110 10 80 40" stroke="#3d7fb8" strokeWidth={6} fill="none" strokeLinecap="round" /><text x={0} y={-80} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>trapo + pasta</text></g>
+          <Cuchara x={640} y={1000} s={2.4} rot={90} sucio={0.85 - 0.6 * kprog(T, K.P + 0.3, K.P + 3.2)} />
+          <g transform={`translate(${500 + Math.sin(T * 14) * 110} ${930}) scale(1.45)`}><path d="M -130 -40 Q -90 -90 -30 -60 Q 20 -100 70 -60 Q 130 -80 130 -20 Q 150 40 100 60 Q 40 90 -20 60 Q -90 90 -130 40 Q -160 0 -130 -40 Z" fill="#7fc8ff" stroke={KC.ink} strokeWidth={8} /><path d="M -80 -30 Q -40 0 -70 40 M 10 -50 Q 40 0 10 50 M 80 -30 Q 110 10 80 40" stroke="#3d7fb8" strokeWidth={6} fill="none" strokeLinecap="round" /><text x={0} y={-80} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>trapo + pasta</text></g>
           {Array.from({ length: 18 }, (_, i) => { const t0 = K.P + 0.4 + i * 0.15, u = kprog(T, t0, t0 + 0.9), plata = i % 3 === 0;
             if (u <= 0 || u >= 1) return null;
-            return <circle key={i} cx={430 + (i % 2 ? 1 : -1) * (40 + u * 260)} cy={880 - u * 260 + u * u * 200} r={plata ? 12 : 9} fill={plata ? PLATA : '#141210'} stroke={KC.ink} strokeWidth={3} />; })}
+            return <circle key={i} cx={500 + (i % 2 ? 1 : -1) * (60 + u * 360)} cy={880 - u * 380 + u * u * 290} r={plata ? 17 : 13} fill={plata ? PLATA : '#141210'} stroke={KC.ink} strokeWidth={3} />; })}
         </SvgCapa>
       </Escena>
       {/* 5 · pregunta */}
@@ -153,14 +166,15 @@ function Plata() {
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
           <text x={280} y={1100} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 900)`}>?</text>
-          <Arete T={T} x={300} y={1560} s={0.45} sucio={0.92} mece={1} />
+          <Arete T={T} x={540} y={492} s={0.754} sucio={0.92} mece={1 - kprog(T, K.Tr - 0.6, K.Tr - 0.1)} />
         </SvgCapa>
       </Escena>
       {/* 6 · el truco: aluminio + bicarbonato + agua caliente */}
       <Escena T={T} a={K.Tr} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <path d="M 170 820 L 910 820 L 850 1180 Q 540 1230 230 1180 Z" fill="#eaf7ff" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+          <g transform="translate(540 1090) scale(1.3) translate(-540 -1000)">
+          <path d="M 170 820 L 910 820 L 850 1180 Q 540 1230 230 1180 Z" fill="#1c2c44" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
           <path d={`M 190 ${klerp(1170, 880, kprog(T, K.Tr + 1.6, K.Tr + 2.6))} L 890 ${klerp(1170, 880, kprog(T, K.Tr + 1.6, K.Tr + 2.6))} L 850 1180 Q 540 1225 230 1180 Z`} fill="#9fd8ff" opacity={0.75} />
           <PapelAl x={540} y={1160} w={560} h={50} />
           {/* cuchara de bicarbonato */}
@@ -172,101 +186,105 @@ function Plata() {
           <Chorro T={T} x0={170} y0={700} x1={420} y1={1000} color="#9fd8ff" o={kprog(T, K.Tr + 1.5, K.Tr + 1.7) * (1 - kprog(T, K.Tr + 2.5, K.Tr + 2.7))} ancho={22} />
           <Vapor T={T} x={540} y={830} o={kprog(T, K.Tr + 1.8, K.Tr + 2.4)} />
           <Burbujas T={T} x={240} y={900} w={600} h={250} f={kprog(T, K.Tr + 1.9, K.Tr + 2.6) * 0.6} n={18} />
-          <Arete T={T} x={540} y={klerp(560, 1010, baja)} s={0.5} sucio={0.92} />
+          <Arete T={T} x={540} y={klerp(540, 985, baja)} s={0.58} sucio={0.92} />
+          </g>
         </SvgCapa>
       </Escena>
       {/* 7 · por dentro: los electrones */}
       <Escena T={T} a={K.E} b={K.Es}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <rect x={0} y={480} width={KW} height={560} fill="rgba(80,150,220,.18)" />
+          <g transform="translate(0 170)">
+          <rect x={0} y={480} width={KW} height={610} fill="rgba(80,150,220,.18)" />
           {/* bloque de aluminio (izq) y de plata (der) que se tocan */}
           <rect x={60} y={760} width={440} height={220} rx={10} fill={AL} stroke={KC.ink} strokeWidth={8} />
-          <text x={280} y={890} textAnchor="middle" style={{ font:`700 64px ${KF.mono}` }} fill={KC.ink}>Al</text>
+          <text x={280} y={890} textAnchor="middle" style={{ font:`700 64px ${KF.mono}` }} fill="#0b1020">Al</text>
           <rect x={500} y={760} width={520} height={220} rx={10} fill={PLATA} stroke={KC.ink} strokeWidth={8} />
-          <text x={760} y={930} textAnchor="middle" style={{ font:`700 64px ${KF.mono}` }} fill={KC.ink}>Ag</text>
+          <text x={760} y={930} textAnchor="middle" style={{ font:`700 64px ${KF.mono}` }} fill="#0b1020">Ag</text>
           {/* capa negra que se vuelve plata, de izquierda a derecha */}
           {Array.from({ length: 8 }, (_, i) => { const t0 = K.E + 0.9 + i * 0.4, u = kprog(T, t0, t0 + 0.5), cx = 535 + i * 62;
             const sube = kprog(T, t0 + 0.3, t0 + 2.6, kEase.suave);
             return <g key={i}>
               <rect x={cx - 30} y={710} width={60} height={50} fill={mixHex('#141210', PLATA, u)} stroke={KC.ink} strokeWidth={4} />
-              {u > 0.3 && <g opacity={1 - kprog(sube, 0.85, 1)}><Atomo x={cx + Math.sin(T * 3 + i) * 10} y={klerp(685, 520, sube)} r={22} color={AZUFRE} letra="S" tam={20} /></g>}
+              {u > 0.3 && <g opacity={1 - kprog(sube, 0.85, 1)}><AtomoP x={cx + Math.sin(T * 3 + i) * 10} y={klerp(685, 520, sube)} r={22} color={AZUFRE} letra="S" tam={20} /></g>}
             </g>; })}
           {/* electrones: viajan del aluminio a la plata */}
           {Array.from({ length: 10 }, (_, i) => { const u = ((T - K.E) * 0.7 + i / 10) % 1, on = T > K.E + 0.3;
             if (!on) return null;
             const px = klerp(140, 960, u), py = 1020 - Math.sin(u * Math.PI) * 30;
-            return <g key={i}><circle cx={px} cy={py} r={20} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /><text x={px} y={py + 8} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>e⁻</text></g>; })}
+            return <g key={i}><circle cx={px} cy={py} r={20} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /><text x={px} y={py + 8} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#0b1020">e⁻</text></g>; })}
           <path d="M 140 1050 L 960 1050" stroke={KC.yellow} strokeWidth={4} strokeDasharray="14 12" opacity={0.6} />
+          </g>
         </SvgCapa>
       </Escena>
       {/* 8 · 1916: las cucharas en la báscula */}
       <Escena T={T} a={K.Es} b={K.D}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          {T >= mitadEs - 0.4 && <g>
-            {[['pasta abrasiva', 25, 380, KC.red], ['metal + agua hirviendo', 1, 780, KC.mint]].map(([t, v, x, c], i) => {
+          {(() => { const at = 1 - 0.84 * kprog(T, mitadEs - 0.4, mitadEs + 0.3); return <g opacity={at}><Cuchara x={326} y={1000} s={1.5} rot={-12} sucio={0.8} /><Cuchara x={846} y={1000} s={1.5} rot={12} sucio={0.8} /></g>; })()}
+          {T >= mitadEs - 0.4 && <g transform="translate(560 950) scale(1.3) translate(-560 -850)" opacity={kprog(T, mitadEs - 0.4, mitadEs)}>
+            {[['pasta abrasiva', 25, 380, KC.red], ['metal +|agua hirviendo', 1, 780, KC.mint]].map(([t, v, x, c], i) => {
               const h = 18 * v * kprog(T, mitadEs + 0.3 + i * 0.5, mitadEs + 1.6 + i * 0.5, kEase.sale);
               return <g key={i}>
                 <rect x={x - 90} y={1000 - h} width={180} height={Math.max(h, 2)} fill={c} stroke={KC.ink} strokeWidth={7} />
                 <text x={x} y={985 - h} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={6} paintOrder="stroke" opacity={kprog(T, mitadEs + 1.2 + i * 0.5, mitadEs + 1.5 + i * 0.5)}>×{v}</text>
                 <Bascula x={x} y={1010} texto={i ? '0.00006 g' : '0.0015 g'} />
-                <text x={x} y={1150} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{t}</text>
+                {t.split('|').map((ln, j) => <text key={j} x={x} y={1150 + j * 38} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{ln}</text>)}
               </g>; })}
           </g>}
-          {T < mitadEs && <g><Cuchara x={360} y={930} s={0.75} rot={-15} sucio={0.8} /><Cuchara x={720} y={930} s={0.75} rot={15} sucio={0.8} /></g>}
         </SvgCapa>
       </Escena>
       {/* 9 · la lista de culpables (CCI, Canadá) */}
       <Escena T={T} a={K.D} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         <SvgCapa>
-          <g transform="rotate(2 800 900)">
-            <rect x={560} y={500} width={480} height={760} rx={18} fill="#ffffff" stroke={KC.ink} strokeWidth={8} />
+          <Arete T={T} x={200} y={860} s={1.0} sucio={0.92} mece={1} />
+          <g transform="translate(712 895) scale(1.22) translate(-800 -880) rotate(2 800 900)">
+            <rect x={560} y={500} width={480} height={760} rx={18} fill="#131b2e" stroke={KC.ink} strokeWidth={8} />
             <text x={800} y={575} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>Fuentes de gases</text>
             <text x={800} y={612} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>que ennegrecen la plata</text>
-            <text x={800} y={650} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#7a7068">Conservación · Canadá</text>
+            <text x={800} y={650} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#9aa6c0">Conservación · Canadá</text>
             {lista.map(([t, dt], i) => { const o = kprog(T, K.D + dt, K.D + dt + 0.3), ult = i === lista.length - 1, yy = 740 + i * 130;
               const palabras = ult ? ['personas:', 'gases intestinales'] : [t];
               return <g key={i} opacity={o}>
                 {ult && <rect x={580} y={yy - 50} width={440} height={palabras.length * 40 + 30} rx={12} fill={KC.yellow} opacity={kprog(T, K.D + 3.0, K.D + 3.4)} />}
-                <text x={600} y={yy} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>• {palabras[0]}</text>
-                {palabras[1] && <text x={630} y={yy + 40} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{palabras[1]}</text>}
+                <text x={600} y={yy} style={{ font:`700 30px ${KF.mono}` }} fill={ult ? mixHex('#f3f6ff', '#0b1020', kprog(T, K.D + 3.0, K.D + 3.4)) : KC.ink}>• {palabras[0]}</text>
+                {palabras[1] && <text x={630} y={yy + 40} style={{ font:`700 30px ${KF.mono}` }} fill={mixHex('#f3f6ff', '#0b1020', kprog(T, K.D + 3.0, K.D + 3.4))}>{palabras[1]}</text>}
               </g>; })}
           </g>
-          <Nube T={T} x={850} y={1400} f={kprog(T, K.D + 3.0, K.D + 3.8)} r={110} color="#c8e65a" seed={4} n={7} />
+          <Nube T={T} x={250} y={1400} f={kprog(T, K.D + 3.0, K.D + 3.8)} r={130} color="#c8e65a" seed={4} n={7} />
         </SvgCapa>
       </Escena>
       {/* 10 · cierre: el arete del inicio, ya limpio */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <PapelAl x={540} y={1520} w={700} h={60} />
-          <Cuchara x={190} y={980} s={0.85} sucio={0} rot={-18} />
-          <Cadena x={640} y={1140} s={1.2} sucio={0} />
-          <Arete T={T} x={540} y={900} s={1.05} sucio={0.92 * (1 - kprog(T, K.Ci + 0.2, K.Ci + 1.6))} brilla={kprog(T, K.Ci + 1.2, K.Ci + 1.8)} mece={1} />
+          <PapelAl x={540} y={1650} w={980} h={76} />
+          <Cuchara x={150} y={1050} s={1.5} sucio={0} rot={-12} />
+          <Cadena x={560} y={1590} s={1.7} sucio={0} />
+          <Arete T={T} x={600} y={900} s={1.9} sucio={0.92 * (1 - kprog(T, K.Ci + 0.2, K.Ci + 1.6))} brilla={kprog(T, K.Ci + 1.2, K.Ci + 1.8)} mece={1} />
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.4} until={K.G + 2.6} texto="¿mugre?" x={260} y={470} tam={54} />
-      <Chip T={T} at={K.G + 2.7} until={K.Q - 0.2} texto="plata + azufre" x={300} y={470} tam={44} borde={AZUFRE} />
-      <Chip T={T} at={K.Q + 0.3} until={K.A - 0.2} texto="Ag₂S · sulfuro de plata" x={540} y={470} tam={42} borde={AZUFRE} />
-      <Etq T={T} at={K.A + 0.5} until={K.H - 0.2} x={60} y={1440} texto="H₂S · sulfuro de hidrógeno" tam={34} color={AZUFRE} />
-      <Etq T={T} at={K.A + 2.6} until={K.H - 0.2} x={60} y={1520} texto="la capa negra crece" tam={32} color={KC.texto} />
-      <Cronometro T={T} at={K.H + 0.5} until={K.P - 0.2} factor={60} x={380} y={520} etiqueta="TIME-LAPSE" />
-      <Chip T={T} at={K.H + 2.6} until={K.P - 0.2} texto="minutos, no meses" y={1500} tam={46} borde={KC.ink} />
-      <Etq T={T} at={K.P + 0.6} until={K.Pr - 0.2} x={60} y={1480} texto="se va un poco de plata" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Tr + 0.6} until={K.E - 0.2} x={1040} y={480} texto="bicarbonato" lado="izq" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Tr + 1.6} until={K.E - 0.2} x={60} y={1480} texto="papel aluminio" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Tr + 1.8} until={K.E - 0.2} texto="¡cuidado: caliente!" x={540} y={1600} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.Tr + 3.9} until={K.E - 0.2} texto="la plata toca el aluminio" y={1700} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.E + 0.6} until={K.Es - 0.2} x={60} y={1440} texto="POR DENTRO · el punto de contacto" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.E + 2.4} until={K.Es - 0.2} texto="3 Ag₂S + 2 Al → 6 Ag + Al₂S₃" y={1560} tam={36} borde={AZUFRE} mono />
-      <Etq T={T} at={K.E + 3.2} until={K.Es - 0.2} x={1030} y={440} texto="el azufre se suelta" lado="izq" tam={30} color={AZUFRE} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={mitadEs - 0.3} anio="1916" quien="Departamento de Agricultura de EE. UU." revista="Boletín 449 · cucharas de plata" y={620} />
-      <Chip T={T} at={mitadEs + 0.2} until={K.D - 0.2} texto="plata perdida por limpieza" y={1500} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="Ag₂S → Ag" y={1660} tam={52} borde={AZUFRE} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.4} until={K.G + 2.6} texto="¿mugre?" x={330} y={330} tam={54} />
+      <Chip T={T} at={K.G + 2.7} until={K.Q - 0.2} texto="plata + azufre" x={330} y={330} tam={44} borde={AZUFRE} />
+      <Chip T={T} at={K.Q + 0.3} until={K.A - 0.2} texto="Ag₂S · sulfuro de plata" x={540} y={520} tam={42} borde={AZUFRE} />
+      <Etq T={T} at={K.A + 0.5} until={K.H - 0.2} x={60} y={240} texto="H₂S · sulfuro de hidrógeno" tam={34} color={AZUFRE} />
+      <Etq T={T} at={K.A + 2.6} until={K.H - 0.2} x={60} y={1540} texto="la capa negra crece" tam={32} color={KC.texto} />
+      <Cronometro T={T} at={K.H + 0.5} until={K.P - 0.2} factor={60} x={540} y={470} etiqueta="TIME-LAPSE" />
+      <Chip T={T} at={K.H + 2.6} until={K.P - 0.2} texto="minutos, no meses" y={1420} tam={46} borde={KC.ink} />
+      <Etq T={T} at={K.P + 0.6} until={K.Pr - 0.2} x={60} y={1400} texto="se va un poco de plata" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Tr + 0.3} until={K.Tr + 2.2} x={1050} y={330} texto="bicarbonato" lado="izq" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Tr + 1.6} until={K.E - 0.2} x={60} y={1410} texto="papel aluminio" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Tr + 1.8} until={K.Tr + 3.7} texto="¡cuidado: caliente!" x={540} y={1520} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Tr + 3.9} until={K.E - 0.2} texto="la plata toca el aluminio" y={1520} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.E + 0.6} until={K.Es - 0.2} x={60} y={1380} texto="POR DENTRO · el punto de contacto" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.E + 2.4} until={K.Es - 0.2} texto="3 Ag₂S + 2 Al → 6 Ag + Al₂S₃" y={1500} tam={40} borde={AZUFRE} mono />
+      <Etq T={T} at={K.E + 3.2} until={K.Es - 0.2} x={1030} y={590} texto="el azufre se suelta" lado="izq" tam={30} color={AZUFRE} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={mitadEs - 0.3} anio="1916" quien="Departamento de Agricultura de EE. UU." revista="Boletín 449 · cucharas de plata" y={470} />
+      <Chip T={T} at={mitadEs + 0.2} until={K.D - 0.2} texto="plata perdida por limpieza" y={1540} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="Ag₂S → Ag" x={330} y={330} tam={52} borde={AZUFRE} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="No es mugre: *es azufre.*" />

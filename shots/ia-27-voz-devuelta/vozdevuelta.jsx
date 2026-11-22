@@ -240,27 +240,27 @@ function VozDevuelta() {
       {/* 1 · gancho: la cara en la pantalla la mueve el cerebro de Ann */}
       <Escena T={T} a={K.G} b={K.I}>
         <FondoLunares color={KC.pink} />
-        {svg(<>
+        {svg(<g transform="translate(525 960) scale(1.12) translate(-488 -826)">
           <Cable x1={846} y1={784} x2={460} y2={940} T={T} curva={-150} />
           <Monitor x={320} y={720} s={0.9} T={T} habla={habla0} encendido={kprog(T, 0, 0.3)} />
           <Persona x={820} y={900} s={0.8} T={T} />
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.G + 3.0} until={K.I - 0.2} texto="Ann · infarto cerebral (2005)" x={330} y={430} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.0} until={K.I - 0.2} texto="Ann · infarto cerebral (2005)" x={330} y={520} tam={36} borde={KC.ink} />
       {/* 2 · la lámina de 253 electrodos */}
       <Escena T={T} a={K.I} b={K.O}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>
+        {svg(<g transform="translate(540 960) scale(1.15) translate(-540 -691)">
           <Cerebro x={400} y={470} s={0.85} T={T} lamina={kprog(T, K.I + 0.3, K.I + 1.0)} />
           <g opacity={kprog(T, K.I + 1.0, K.I + 1.4)}><LaminaGrande x={156} y={740} n={electrodos} T={T} /></g>
-        </>)}
+        </g>)}
       </Escena>
-      <NumeroGigante T={T} at={K.I + 1.2} until={K.O - 0.2} valor={253} dur={2.8} etiqueta="electrodos" x={870} y={440} tam={120} color={KC.gold} />
+      <NumeroGigante T={T} at={K.I + 1.2} until={K.O - 0.2} valor={253} dur={2.8} etiqueta="electrodos" x={900} y={680} tam={120} color={KC.gold} />
       {/* 3 · las órdenes a la boca (por dentro, fondo oscuro) */}
       <Escena T={T} a={K.O} b={K.IA}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(255,45,120,.25)" />
-        {svg(<>
+        {svg(<g transform="translate(540 960) scale(1.1) translate(-553 -700)">
           <Cerebro x={330} y={560} s={0.9} T={T} oscuro brilla={kprog(T, K.O + 0.3, K.O + 0.8)} />
           {[[230, 960], [540, 960], [850, 960]].map(([tx, ty], i) => <Chispas key={i} T={T} x1={230} y1={610} x2={tx} y2={ty - 90} curva={i * 60} tope={0.62} n={3} vel={0.55} desde={K.O + 0.6 + i * 0.25} />)}
           <g opacity={kprog(T, K.O + 2.2, K.O + 2.6)}>
@@ -268,85 +268,90 @@ function VozDevuelta() {
             {[0, 1, 2, 3, 4, 5, 6].map((k) => <line key={k} x1={150 + k * 120} y1={780} x2={180 + k * 120} y2={806} stroke={KC.ink} strokeWidth={6} />)}
           </g>
           <Labios x={230} y={960} s={0.9} /><Lengua x={540} y={960} s={0.9} /><Mandibula x={850} y={960} s={0.9} />
-        </>)}
+        </g>)}
       </Escena>
-      <Etq T={T} at={K.O + 2.4} until={K.IA - 0.2} x={330} y={845} texto="el infarto corta el paso" color={KC.coral} tam={30} />
-      <Chip T={T} at={K.O + 1.2} until={K.IA - 0.2} texto="labios · lengua · mandíbula" x={540} y={1090} tam={34} borde={KC.pink} />
+      <Etq T={T} at={K.O + 2.4} until={K.IA - 0.2} x={295} y={1120} texto="el infarto corta el paso" color={KC.coral} tam={30} />
+      <Chip T={T} at={K.O + 1.2} until={K.IA - 0.2} texto="labios · lengua · mandíbula" x={540} y={1389} tam={34} borde={KC.pink} />
       {/* 4 · la IA traduce */}
       <Escena T={T} a={K.IA} b={K.R}>
         <FondoCircuito T={T} />
-        <RedNeuronal T={T} x={170} y={470} ancho={740} alto={460} onda={(T - K.IA) * 0.45 % 1} />
-        {svg(<Chispas T={T} x1={40} y1={700} x2={170} y2={700} n={3} vel={1.2} />)}
+        <RedNeuronal T={T} x={90} y={600} ancho={900} alto={620} onda={(T - K.IA) * 0.45 % 1} />
+        {svg(<Chispas T={T} x1={-40} y1={910} x2={90} y2={910} n={3} vel={1.2} />)}
       </Escena>
-      <Chip T={T} at={K.IA + 1.2} until={K.R - 0.2} texto="texto" x={230} y={1070} tam={42} borde={KC.yellow} />
-      <Chip T={T} at={K.IA + 1.6} until={K.R - 0.2} texto="voz" x={540} y={1070} tam={42} borde={KC.mint} />
-      <Chip T={T} at={K.IA + 2.0} until={K.R - 0.2} texto="gestos" x={850} y={1070} tam={42} borde={KC.pink} />
-      <Chip T={T} at={K.IA + 0.3} until={K.R - 0.2} texto="inteligencia artificial" x={540} y={410} tam={36} borde={KC.cyan} mono />
+      <Chip T={T} at={K.IA + 1.2} until={K.R - 0.2} texto="texto" x={230} y={1270} tam={42} borde={KC.yellow} />
+      <Chip T={T} at={K.IA + 1.6} until={K.R - 0.2} texto="voz" x={540} y={1270} tam={42} borde={KC.mint} />
+      <Chip T={T} at={K.IA + 2.0} until={K.R - 0.2} texto="gestos" x={850} y={1270} tam={42} borde={KC.pink} />
+      <Chip T={T} at={K.IA + 0.3} until={K.R - 0.2} texto="inteligencia artificial" x={540} y={560} tam={36} borde={KC.cyan} mono />
       {/* 5 · rapidez: velocímetro */}
       <Escena T={T} a={K.R} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {svg(<Velocimetro T={T} x={540} y={960} r={320} valor={vel} />)}
+        {svg(<Velocimetro T={T} x={540} y={1080} r={380} valor={vel} />)}
       </Escena>
-      <Chip T={T} at={K.R + 0.6} until={K.R + 2.5} texto="su aparato para escribir: 14" x={540} y={1095} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.R + 2.7} until={K.P - 0.2} texto="implante + IA: unas 78" x={540} y={1095} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.R + 0.6} until={K.R + 2.5} texto="su aparato para escribir: 14" x={540} y={1240} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.R + 2.7} until={K.P - 0.2} texto="implante + IA: unas 78" x={540} y={1240} tam={40} borde={KC.leaf} />
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.B} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={290} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 900)`}>?</text>)}
+        {svg(<><Velocimetro T={T} x={540} y={1080} r={380} valor={78} o={0.35} />
+          <text x={330} y={1330} textAnchor="middle" style={{ font:`400 640px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 330 1110)`}>?</text></>)}
       </Escena>
       {/* 7 · la boda */}
       <Escena T={T} a={K.B} b={K.E}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>
+        {svg(<g transform="translate(540 900) scale(1.15) translate(-530 -590)">
           <TeleVieja x={320} y={620} s={0.85} T={T} />
           <OndaViaja T={T} x1={440} y1={600} x2={720} y2={640} p={kprog(T, K.B + 0.6, K.B + 1.8, kEase.sale)} />
           <g opacity={kprog(T, K.B + 1.0, K.B + 1.4)}><Monitor x={820} y={640} s={0.5} T={T} habla={kprog(T, K.B + 1.8, K.B + 2.0)} onda={kprog(T, K.B + 1.8, K.B + 2.2)} /></g>
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.B + 0.4} until={K.E - 0.2} texto="un video de su boda" x={540} y={860} tam={36} borde={KC.ink} />
-      <Cita T={T} at={K.B + 2.2} until={K.E - 0.2} y={1010} texto="«Es como oír a una vieja amiga.»" quien="Ann, al oír su voz sintetizada (UCSF, 2023)" />
+      <Chip T={T} at={K.B + 0.4} until={K.E - 0.2} texto="un video de su boda" x={552} y={1205} tam={36} borde={KC.ink} />
+      <Cita T={T} at={K.B + 2.2} until={K.E - 0.2} y={1370} texto="«Es como oír a una vieja amiga.»" quien="Ann, al oír su voz sintetizada (UCSF, 2023)" />
       {/* 8 · el estudio: el mismo día, Stanford */}
       <Escena T={T} a={K.E} b={K.L}>
         <FondoLunares color={KC.cyan} />
+        {svg(<>
+          <Monitor x={300} y={1190} s={0.6} T={T} habla={kprog(T, K.E + 3.0, K.E + 3.4)} onda={kprog(T, K.E + 3.0, K.E + 3.4)} />
+          <Persona x={790} y={1160} s={0.62} T={T} pelo="#c9c3bb" camisa={KC.cyan} />
+        </>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2023" quien="Stanford y UCSF · el mismo día" revista="Willett et al. y Metzger et al. · Nature · 23 ago 2023" y={760} />
-      <BarrasPPM T={T} at={K.E + 3.0} until={K.L - 0.2} top={680} filas={[
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2023" quien="Stanford y UCSF · el mismo día" revista="Willett et al. y Metzger et al. · Nature · 23 ago 2023" y={480} />
+      <BarrasPPM T={T} at={K.E + 3.0} until={K.L - 0.2} top={560} filas={[
         { valor: 78, etiqueta: 'Ann (UCSF) · tras un infarto', color: KC.pink },
         { valor: 62, etiqueta: 'Pat (Stanford) · con ELA', color: KC.yellow, at: K.E + 3.6 },
         { valor: 160, pre: '≈', etiqueta: 'una plática normal', color: KC.mint, at: ESplit + 0.2 }]} />
-      <Chip T={T} at={K.E + 3.2} until={K.L - 0.2} texto="palabras por minuto" x={400} y={600} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.E + 3.2} until={K.L - 0.2} texto="palabras por minuto" x={400} y={490} tam={34} borde={KC.ink} />
       {/* 9 · Casey: 97 de 100, lágrimas de alegría */}
       <Escena T={T} a={K.L} b={K.Oj}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
-          <CienPalabras T={T} x={80} y={540} verdes={verdes} rojas={rojas} />
-          <g opacity={kprog(T, K.L + 3.6, K.L + 4.0)}><CaraLagrima x={850} y={960} s={0.75} T={T} /></g>
+          <g transform="translate(50 650) scale(1.2) translate(-80 -540)"><CienPalabras T={T} x={80} y={540} verdes={verdes} rojas={rojas} /></g>
+          <g opacity={kprog(T, K.L + 3.6, K.L + 4.0)}><CaraLagrima x={890} y={1060} s={0.9} T={T} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.L + 0.3} until={K.Oj - 0.2} texto="2024 · UC Davis · NEJM" x={390} y={470} tam={34} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.L + 0.9} until={K.Oj - 0.2} valor={verdes} dur={0.01} etiqueta="" x={850} y={760} tam={120} color={KC.mint} sufijo="/100" />
-      <Chip T={T} at={K.L + 3.8} until={K.Oj - 0.2} texto="lloró de alegría" x={850} y={1095} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={K.L + 0.3} until={K.Oj - 0.2} texto="2024 · UC Davis · NEJM" x={380} y={580} tam={34} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.L + 0.9} until={K.Oj - 0.2} valor={verdes} dur={0.01} etiqueta="" x={895} y={830} tam={120} color={KC.mint} sufijo="/100" />
+      <Chip T={T} at={K.L + 3.8} until={K.Oj - 0.2} texto="lloró de alegría" x={890} y={1230} tam={32} borde={KC.cyan} />
       {/* 10 · ojo: una sola persona por estudio */}
       <Escena T={T} a={K.Oj} b={K.C}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
           {[[200, PELO_ANN, false, KC.lilac], [540, '#c9c3bb', false, KC.cyan], [880, '#4a3424', true, KC.orange]].map(([px, pel, cor, cam], i) =>
-            <g key={i} opacity={kprog(T, K.Oj + 0.2 + i * 0.3, K.Oj + 0.5 + i * 0.3)}><Persona x={px} y={800} s={0.62} T={T} pelo={pel} corto={cor} camisa={cam} /></g>)}
-          <Sello x={540} y={1118} p={kprog(T, K.Oj + 2.4, K.Oj + 2.8)} texto="EN INVESTIGACIÓN" />
+            <g key={i} opacity={kprog(T, K.Oj + 0.2 + i * 0.3, K.Oj + 0.5 + i * 0.3)}><Persona x={px} y={860} s={0.8} T={T} pelo={pel} corto={cor} camisa={cam} /></g>)}
+          <Sello x={540} y={1270} p={kprog(T, K.Oj + 2.4, K.Oj + 2.8)} texto="EN INVESTIGACIÓN" />
         </>)}
       </Escena>
-      {[['Ann', 200], ['Pat', 540], ['Casey', 880]].map(([n, px], i) => <Chip key={n} T={T} at={K.Oj + 0.4 + i * 0.3} until={K.C - 0.2} texto={`${n} · 1 persona`} x={px} y={1015} tam={28} borde={KC.ink} />)}
-      <Chip T={T} at={K.Oj + 3.0} until={K.C - 0.2} texto="todavía no se puede pedir" x={360} y={430} tam={36} borde={KC.red} />
+      {[['Ann', 200], ['Pat', 540], ['Casey', 880]].map(([n, px], i) => <Chip key={n} T={T} at={K.Oj + 0.4 + i * 0.3} until={K.C - 0.2} texto={`${n} · 1 persona`} x={px} y={1145} tam={28} borde={KC.ink} />)}
+      <Chip T={T} at={K.Oj + 3.0} until={K.C - 0.2} texto="todavía no se puede pedir" x={360} y={560} tam={36} borde={KC.red} />
       {/* 11 · cierre: la misma cara, ya con su voz */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.pink} />
-        {svg(<>
+        {svg(<g transform="translate(525 1040) scale(1.12) translate(-488 -826)">
           <Cable x1={846} y1={784} x2={460} y2={940} T={T} curva={-150} />
           <Monitor x={320} y={720} s={0.9} T={T} habla={1} sonrie={0.8} onda={1} globo={T > K.C + 1.2 ? '¡Hola!' : null} />
           <Persona x={820} y={900} s={0.8} T={T} cara="feliz" />
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="el implante se retiró en 2024" x={790} y={690} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="el implante se retiró en 2024" x={865} y={830} tam={28} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.I - 0.1} texto="Esa cara *la mueve su cerebro.*" />

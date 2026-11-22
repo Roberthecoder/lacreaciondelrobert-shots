@@ -173,8 +173,8 @@ function Esclerocio({ x, y, k = 1 }) {
 const PUNTOS_HA = (() => { const g = krng(72); return Array.from({ length: 260 }, () => [g(), g()]); })();
 function Hectarea({ x, y, lado = 560, n = 0, color = KC.yellow }) {
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={0} y={0} width={lado} height={lado} fill="rgba(0,0,0,.25)" stroke={KC.paper} strokeWidth={6} strokeDasharray="22 12" />
-    {PUNTOS_HA.slice(0, Math.round(n)).map(([u, v], i) => <circle key={i} cx={14 + u * (lado - 28)} cy={14 + v * (lado - 28)} r={8} fill={color} stroke={KC.ink} strokeWidth={2.5} />)}
+    <rect x={0} y={0} width={lado} height={lado} fill="rgba(0,0,0,.25)" stroke="#cfc6b4" strokeWidth={6} strokeDasharray="22 12" />
+    {PUNTOS_HA.slice(0, Math.round(n)).map(([u, v], i) => <circle key={i} cx={14 + u * (lado - 28)} cy={14 + v * (lado - 28)} r={8 * lado / 500} fill={color} stroke={KC.ink} strokeWidth={2.5} />)}
   </g>;
 }
 
@@ -188,15 +188,18 @@ function MorillasShot() {
       {/* 1 · gancho: bosque quemado → calendario → brotan morillas */}
       <Escena T={T} a={K.G} b={K.Mo} zoom={0.06} origen="50% 70%">
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<>{/* bosque a 1.3× y bajado: llena el cuadro de borde a borde */}
+          <g transform="translate(540 1390) scale(1.45) translate(-540 -1060)">
           <BosqueQuemado T={T} brota={kprog(T, K.G + 2.4, K.G + 4.4)} humo={1 - kprog(T, K.G + 1.8, K.G + 2.6)} brasas={1 - kprog(T, K.G + 1.8, K.G + 2.6)} />
-          {T < K.G + 2.5 && <g opacity={1 - kprog(T, K.G + 2.1, K.G + 2.5)}><Calendario T={T} x={250} y={560} at={K.G + 0.4} textos={['INCENDIO', '…', 'PRIMAVERA']} /></g>}
+          </g>
+          {T < K.G + 2.5 && <g opacity={1 - kprog(T, K.G + 2.1, K.G + 2.5)}><g transform="translate(300 640) scale(1.35) translate(-300 -640)"><Calendario T={T} x={300} y={640} at={K.G + 0.4} textos={['INCENDIO', '…', 'PRIMAVERA']} /></g></g>}
         </>)}
       </Escena>
       {/* 2 · la morilla: panal por fuera, hueca por dentro */}
       <Escena T={T} a={K.Mo} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
+          <g transform="translate(540 1000) scale(1.25) translate(-360 -860)">{/* morilla a 1.25× y al centro */}
           <ellipse cx={360} cy={1125} rx={300} ry={26} fill="rgba(0,0,0,.18)" />
           <defs><clipPath id="mitIzq"><rect x={0} y={0} width={360} height={1920} /></clipPath><clipPath id="mitDer"><rect x={360} y={0} width={720} height={1920} /></clipPath></defs>
           {(() => { const cort = kprog(T, K.Mo + 2.2, K.Mo + 2.9, kEase.sale), cr = kprog(T, K.Mo + 0.1, K.Mo + 1.1); return cort <= 0 ?
@@ -205,29 +208,30 @@ function MorillasShot() {
             <g transform={`translate(${cort * 90} 0) rotate(${cort * 4} 360 1120)`}><g clipPath="url(#mitDer)"><Morilla id="g3" x={360} y={1120} s={3.2} corte /></g></g>
             {cort < 1 && <line x1={360} y1={600} x2={360} y2={1140} stroke="#fff" strokeWidth={8} strokeDasharray="20 12" opacity={1 - cort} />}
           </>; })()}
+          </g>
         </>)}
       </Escena>
       {/* 3 · cinco especies del fuego, oeste de Norteamérica */}
       <Escena T={T} a={K.Es} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <MapaOeste T={T} x={100} y={420} s={0.7} p={kprog(T, K.Es + 0.3, K.Es + 2.2)} />
-          {[0, 1, 2, 3, 4].map((i) => <Morilla key={i} id={'e' + i} x={170 + i * 185} y={1130} s={0.95} crece={kprog(T, K.Es + 2.6 + i * 0.35, K.Es + 3.3 + i * 0.35)} rot={mece(T, i, 0.5) * 3} oscura={0.6} />)}
-          {[0, 1, 2, 3, 4].map((i) => T > K.Es + 3.1 + i * 0.35 && <text key={'n' + i} x={170 + i * 185} y={1180} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>{i + 1}</text>)}
+          <MapaOeste T={T} x={170} y={360} s={1.1} p={kprog(T, K.Es + 0.3, K.Es + 2.2)} />
+          {[0, 1, 2, 3, 4].map((i) => <Morilla key={i} id={'e' + i} x={170 + i * 185} y={1390} s={1.2} crece={kprog(T, K.Es + 2.6 + i * 0.35, K.Es + 3.3 + i * 0.35)} rot={mece(T, i, 0.5) * 3} oscura={0.6} />)}
+          {[0, 1, 2, 3, 4].map((i) => T > K.Es + 3.1 + i * 0.35 && <text key={'n' + i} x={170 + i * 185} y={1450} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>{i + 1}</text>)}
         </>)}
       </Escena>
       {/* 4–5 · ≈ 2,500 por hectárea el primer año → casi nada el segundo */}
       <Escena T={T} a={K.Ci} b={K.P} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:MO.ceniza }}></div>
         {fsvg(<>
-          <Hectarea x={290} y={630} lado={500} n={T < K.Se ? kprog(T, K.Ci + 0.3, K.Ci + 2.6) * 260 : klerp(260, 12, kprog(T, K.Se, K.Se + 0.9, kEase.sale))} />
-          <text x={540} y={1172} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.paper}>1 hectárea = 100 m × 100 m (esquemático)</text>
+          <Hectarea x={190} y={700} lado={700} n={T < K.Se ? kprog(T, K.Ci + 0.3, K.Ci + 2.6) * 260 : klerp(260, 12, kprog(T, K.Se, K.Se + 0.9, kEase.sale))} />
+          <text x={540} y={1460} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill="#cfc6b4">1 hectárea = 100 m × 100 m (esquemático)</text>
         </>)}
       </Escena>
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Mi} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Morilla id="p" x={260} y={1130} s={2.4} rot={Math.sin(T * 4) * 5} /><Interrogacion T={T} x={300} y={700} tam={340} /></>)}
+        {fsvg(<><Morilla id="p" x={420} y={1390} s={3.7} rot={Math.sin(T * 4) * 5} /><Interrogacion T={T} x={810} y={900} tam={420} /></>)}
       </Escena>
       {/* 7 · por debajo del suelo: hipótesis 1 */}
       <Escena T={T} a={K.Mi} b={K.U} zoom={0.05}>
@@ -246,7 +250,7 @@ function MorillasShot() {
       {/* 8 · hipótesis 2: el fuego quemó su comida → último esfuerzo */}
       <Escena T={T} a={K.U} b={K.E} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:'#1a120c' }}></div>
-        <div style={{ position:'absolute', left:0, right:0, top:0, height:620, background:KC.orange, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
+        <div style={{ position:'absolute', left:0, right:0, top:0, height:620, background:'#3a2114', backgroundImage:'radial-gradient(circle, rgba(255,170,100,.16) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
         {fsvg(<>
           <rect x={0} y={600} width={KW} height={40} fill="#2a201e" />
           {Array.from({ length: 11 }, (_, i) => { const q = kprog(T, K.U + 0.3 + i * 0.1, K.U + 1.6 + i * 0.1);
@@ -256,63 +260,63 @@ function MorillasShot() {
           <Esclerocio x={650} y={850} k={kprog(T, K.U + 1.5, K.U + 2.1)} />
           {(() => { const v = kprog(T, K.U + 1.8, K.U + 3.0); return v > 0 ? <>
             <path d={`M 540 860 L 540 ${860 - 240 * v}`} stroke={MO.alveolo2} strokeWidth={10} strokeLinecap="round" />
-            <Morilla id="u" x={540} y={612} s={1.15} crece={kprog(T, K.U + 2.4, K.U + 3.6)} oscura={0.5} /></> : null; })()}
+            <Morilla id="u" x={540} y={612} s={1.75} crece={kprog(T, K.U + 2.4, K.U + 3.6)} oscura={0.5} /></> : null; })()}
         </>)}
       </Escena>
       {/* 9 · el estudio del incendio Rim: parcelitas de muestreo */}
       <Escena T={T} a={K.E} b={K.Mx} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:MO.ceniza }}></div>
         {fsvg(<>
-          {Array.from({ length: 28 }, (_, i) => { const cx = 110 + (i % 7) * 145, cy = 760 + Math.floor(i / 7) * 92, on = kprog(T, K.E + 2.2 + i * 0.04, K.E + 2.4 + i * 0.04);
+          {Array.from({ length: 28 }, (_, i) => { const cx = 90 + (i % 7) * 150, cy = 890 + Math.floor(i / 7) * 172, on = kprog(T, K.E + 0.1 + i * 0.03, K.E + 0.4 + i * 0.03);
             const con = [2, 9, 13, 18, 25].includes(i);   // ~18 % de las parcelitas con morillas (esquemático)
-            return on > 0 ? <g key={i}><circle cx={cx} cy={cy} r={38 * on} fill="none" stroke={KC.paper} strokeWidth={4} strokeDasharray="8 6" />
-              {con && <Morilla id={'r' + i} x={cx} y={cy + 22} s={0.42} crece={kprog(T, K.E + 3.4 + i * 0.03, K.E + 3.9 + i * 0.03)} oscura={0.5} />}</g> : null; })}
+            return on > 0 ? <g key={i}><circle cx={cx} cy={cy} r={62 * on} fill="rgba(0,0,0,.22)" stroke="#cfc6b4" strokeWidth={6} strokeDasharray="12 7" />
+              {con && <Morilla id={'r' + i} x={cx} y={cy + 40} s={0.68} crece={kprog(T, K.E + 3.4 + i * 0.03, K.E + 3.9 + i * 0.03)} oscura={0.5} />}</g> : null; })}
         </>)}
       </Escena>
       {/* 10 · México: oyamel, sin fuego */}
       <Escena T={T} a={K.Mx} b={K.F} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <MapaMexico x={10} y={600} ancho={720} conCA={false}>
+          <MapaMexico x={40} y={420} ancho={900} conCA={false}>
             {[[-99.13, 19.43], [-99.6, 19.3], [-98.8, 20.1], [-101.7, 19.6], [-98.2, 19.35], [-97.0, 19.5]].map(([lo, la], i) => { const [px, py] = mxProy(lo, la); const q = kEase.rebote(kprog(T, K.Mx + 0.5 + i * 0.15, K.Mx + 0.9 + i * 0.15));
               return <circle key={i} cx={px} cy={py} r={15 * q} fill={KC.red} stroke={KC.ink} strokeWidth={4} />; })}
           </MapaMexico>
-          <Oyamel T={T} x={900} y={1130} s={0.85} />
-          <Morilla id="x1" x={790} y={1140} s={0.85} crece={kprog(T, K.Mx + 1.2, K.Mx + 2)} />
-          <Morilla id="x2" x={1010} y={1145} s={0.7} crece={kprog(T, K.Mx + 1.4, K.Mx + 2.2)} />
-          <rect x={720} y={1135} width={360} height={30} fill="#3b6b2c" />
+          <Oyamel T={T} x={880} y={1420} s={1.15} />
+          <Morilla id="x1" x={730} y={1430} s={1.15} crece={kprog(T, K.Mx + 1.2, K.Mx + 2)} />
+          <Morilla id="x2" x={1030} y={1435} s={0.95} crece={kprog(T, K.Mx + 1.4, K.Mx + 2.2)} />
+          <rect x={630} y={1425} width={450} height={36} fill="#3b6b2c" />
         </>)}
       </Escena>
       {/* 11 · falsa morilla y combustible de cohete */}
       <Escena T={T} a={K.F} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Morilla id="f1" x={250} y={1080} s={1.9} corte />
-          <FalsaMorilla x={760} y={1080} s={1.9} corte={T > K.F + 1.0} />
-          <Sello T={T} at={K.F + 0.6} x={95} y={1100} texto="SÍ" color="#118a3a" r={60} rot={-8} />
-          <Sello T={T} at={K.F + 1.1} x={555} y={1100} texto="NO" color={KC.red} r={60} rot={10} />
-          <Cohete T={T} at={K.F + 2.6} x={1000} y={1060} />
+          <Morilla id="f1" x={270} y={1220} s={2.6} corte />
+          <FalsaMorilla x={780} y={1220} s={2.6} corte={T > K.F + 1.0} />
+          <Sello T={T} at={K.F + 0.6} x={100} y={1250} texto="SÍ" color="#118a3a" r={70} rot={-8} />
+          <Sello T={T} at={K.F + 1.1} x={560} y={1250} texto="NO" color={KC.red} r={70} rot={10} />
+          <Cohete T={T} at={K.F + 2.6} x={1010} y={1180} />
         </>)}
       </Escena>
       {/* 12 · cierre: el mismo bosque del inicio, lleno de morillas y brotes */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="50% 70%">
         <FondoLunares color={KC.orange} />
-        {fsvg(<BosqueQuemado T={T} brota={1} verde={kprog(T, K.C + 0.5, K.C + 2.5)} humo={0} brasas={0} />)}
+        {fsvg(<g transform="translate(540 1390) scale(1.45) translate(-540 -1060)"><BosqueQuemado T={T} brota={1} verde={kprog(T, K.C + 0.5, K.C + 2.5)} humo={0} brasas={0} /></g>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.3} until={K.G + 2.2} texto="incendio → primavera" x={300} y={760} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.G + 3.0} until={K.Mo - 0.3} texto="no está muerto" x={300} y={760} tam={40} borde={KC.mint} />
-      <Etq T={T} at={K.Mo + 0.6} until={K.Es - 0.3} x={60} y={430} texto="morilla" tam={44} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 1.0} until={K.Es - 0.3} x={60} y={490} texto="Morchella" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.Mo + 1.3} until={K.Mo + 1.9} texto="hoyitos como panal" x={800} y={800} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Mo + 2.8} until={K.Es - 0.3} texto="hueca por dentro" x={800} y={800} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.Es + 0.2} until={K.Ci - 0.3} texto="OESTE DE NORTEAMÉRICA" x={340} y={360} tam={30} borde={KC.ink} mono />
-      <Chip T={T} at={K.Es + 2.6} until={K.Ci - 0.3} texto="5 especies del fuego · 1.er año" x={760} y={880} tam={30} borde={KC.orange} />
-      <NumeroGigante T={T} at={K.Ci + 0.3} until={K.Se - 0.6} valor={2500} dur={1.6} prefijo="≈ " sufijo="+" etiqueta="por hectárea · 1.er año" x={540} y={470} tam={150} color={KC.yellow} />
-      <Etq T={T} at={K.Ci + 1.4} until={K.Se - 0.6} x={290} y={598} texto="«1,000 o más por acre» (dato de 2007)" tam={26} color={KC.paper} />
-      <NumeroGigante T={T} at={K.Se + 0.15} until={K.P - 0.6} valor={2} dur={0.01} prefijo="AÑO " x={330} y={500} tam={150} color={KC.paper} />
-      <Etq T={T} at={K.Se + 0.3} until={K.P - 0.6} x={150} y={605} texto="casi desaparecen" tam={32} color={KC.paper} />
+      <Chip T={T} at={K.G + 0.3} until={K.G + 2.2} texto="incendio → primavera" x={300} y={860} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.0} until={K.Mo - 0.3} texto="no está muerto" x={540} y={1180} tam={48} borde={KC.mint} />
+      <Etq T={T} at={K.Mo + 0.6} until={K.Es - 0.3} x={60} y={400} texto="morilla" tam={46} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 1.0} until={K.Es - 0.3} x={60} y={458} texto="Morchella" it tam={42} color={KC.ink} />
+      <Chip T={T} at={K.Mo + 1.3} until={K.Mo + 1.9} texto="hoyitos como panal" x={540} y={1470} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Mo + 2.8} until={K.Es - 0.3} texto="hueca por dentro" x={540} y={1470} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.Es + 0.2} until={K.Ci - 0.3} texto="OESTE DE NORTEAMÉRICA" x={540} y={262} tam={32} borde={KC.ink} mono />
+      <Chip T={T} at={K.Es + 2.6} until={K.Ci - 0.3} texto="5 especies del fuego · 1.er año" x={540} y={1125} tam={32} borde={KC.orange} />
+      <NumeroGigante T={T} at={K.Ci + 0.3} until={K.Se - 0.6} valor={2500} dur={1.6} prefijo="≈ " sufijo="+" etiqueta="por hectárea · 1.er año" x={540} y={490} tam={160} color={KC.yellow} />
+      <Etq T={T} at={K.Ci + 1.4} until={K.Se - 0.6} x={190} y={655} texto="«1,000 o más por acre» (dato de 2007)" tam={26} color="#cfc6b4" />
+      <NumeroGigante T={T} at={K.Se + 0.15} until={K.P - 0.6} valor={2} dur={0.01} prefijo="AÑO " x={540} y={1010} tam={190} color="#f4ead8" />
+      <Etq T={T} at={K.Se + 0.3} until={K.P - 0.6} x={330} y={1130} texto="casi desaparecen" tam={36} color="#f4ead8" />
       <Chip T={T} at={K.Mi + 0.2} until={K.U - 0.3} texto="TODAVÍA UN MISTERIO" x={540} y={330} tam={32} borde={KC.cyan} mono />
       <Chip T={T} at={K.Mi + 1.4} until={K.U - 0.3} texto="HIPÓTESIS" x={300} y={420} tam={40} borde={KC.yellow} />
       <Etq T={T} at={K.Mi + 2.4} until={K.U - 0.3} x={60} y={560} texto="microbios que compiten" tam={28} color={KC.lilac} />
@@ -320,29 +324,29 @@ function MorillasShot() {
       <Etq T={T} at={K.Mi + 1.0} until={K.U - 0.3} x={60} y={1100} texto="micelio de morilla" tam={26} color={MO.alveolo2} />
       <Chip T={T} at={K.U + 0.3} until={K.E - 0.3} texto="otra hipótesis: último esfuerzo" x={400} y={340} tam={32} borde={KC.yellow} />
       <Etq T={T} at={K.U + 0.8} until={K.E - 0.3} x={60} y={470} texto="hojarasca: su comida" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.U + 2.2} until={K.E - 0.3} x={630} y={960} texto="esclerocios (esquema)" tam={24} color={KC.paper} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2014" quien="incendio Rim (2013) · Yosemite, EE. UU." revista="U. de Montana · For. Ecol. Manage., 2016" x={540} y={600} />
-      <NumeroGigante T={T} at={K.E + 2.8} until={K.Mx - 0.2} valor={1693} dur={1.4} etiqueta="por hectárea (estimado)" x={400} y={560} tam={140} color={KC.yellow} />
-      <Etq T={T} at={K.Mx + 0.3} until={K.F - 0.3} x={60} y={420} texto="bosques de oyamel" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Mx + 1.8} until={K.F - 0.3} texto="pancitas · elotitos" x={330} y={540} tam={40} borde={KC.gold} />
+      <Etq T={T} at={K.U + 2.2} until={K.E - 0.3} x={700} y={960} texto="esclerocios (esquema)" tam={24} color="#cfc6b4" />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2014" quien="incendio Rim (2013) · Yosemite, EE. UU." revista="U. de Montana · For. Ecol. Manage., 2016" x={540} y={540} />
+      <NumeroGigante T={T} at={K.E + 2.8} until={K.Mx - 0.2} valor={1693} dur={1.4} etiqueta="por hectárea (estimado)" x={540} y={620} tam={150} color={KC.yellow} />
+      <Etq T={T} at={K.Mx + 0.3} until={K.F - 0.3} x={240} y={1250} texto="bosques de oyamel" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Mx + 1.8} until={K.F - 0.3} texto="pancitas · elotitos" x={330} y={1070} tam={44} borde={KC.gold} />
       <Etq T={T} at={K.F + 0.4} until={K.C - 0.3} x={60} y={360} texto="morilla: hueca" tam={30} color={KC.ink} />
       <Etq T={T} at={K.F + 0.9} until={K.C - 0.3} x={60} y={410} texto="falsa morilla ·" tam={30} color={KC.ink} />
       <Etq T={T} at={K.F + 0.9} until={K.C - 0.3} x={365} y={410} texto="Gyromitra" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.F + 1.4} until={K.C - 0.3} texto="no del todo hueca · tóxica" x={470} y={640} tam={28} borde={KC.red} />
-      <Chip T={T} at={K.F + 2.8} until={K.C - 0.3} texto="monometilhidrazina 🚀" x={400} y={520} tam={32} borde={KC.red} mono />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="el hongo ya estaba ahí (quizá)" x={420} y={760} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.F + 1.4} until={K.C - 0.3} texto="no del todo hueca · tóxica" x={760} y={700} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.F + 2.8} until={K.C - 0.3} texto="monometilhidrazina 🚀" x={540} y={580} tam={34} borde={KC.red} mono />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="el hongo ya estaba ahí (quizá)" x={540} y={1180} tam={40} borde={KC.mint} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Mo} texto="5 m" largo={160} />
-      <BarraEscala T={T} at={K.Mo} until={K.Es} texto="5 cm" largo={190} />
+      <BarraEscala T={T} at={K.G} until={K.Mo} texto="5 m" largo={232} />
+      <BarraEscala T={T} at={K.Mo} until={K.Es} texto="5 cm" largo={238} />
       <BarraEscala T={T} at={K.Es} until={K.Ci} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.Ci} until={K.P} texto="100 m" largo={500} x={290} y={1430} />
-      <BarraEscala T={T} at={K.P} until={K.Mi} texto="5 cm" largo={150} />
+      <BarraEscala T={T} at={K.Ci} until={K.P} texto="100 m" largo={700} x={190} y={1430} />
+      <BarraEscala T={T} at={K.P} until={K.Mi} texto="5 cm" largo={231} />
       <BarraEscala T={T} at={K.Mi} until={K.E} texto="esquemático · 1 mm" largo={60} />
       <BarraEscala T={T} at={K.E} until={K.Mx} texto="parcelas de 3.14 m² (esquemático)" largo={0} />
       <BarraEscala T={T} at={K.Mx} until={K.F} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.F} until={K.C} texto="5 cm" largo={150} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 m" largo={160} />
+      <BarraEscala T={T} at={K.F} until={K.C} texto="5 cm" largo={205} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 m" largo={232} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Mo - 0.1} texto="Ese bosque quemado *no está muerto.*" />

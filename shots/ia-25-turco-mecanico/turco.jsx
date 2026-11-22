@@ -183,23 +183,23 @@ function Foto({ x, y, w = 250, h = 170, tipo = 'gato', etq = 0, ok = true }) {
     {dib}
     {etq > 0 && <g transform={`translate(${w - 20} 18) scale(${klerp(1.8, 1, etq)})`} opacity={Math.min(1, etq * 2)}>
       <rect x={-118} y={-4} width={128} height={44} rx={22} fill={ok ? KC.mint : KC.red} stroke={KC.ink} strokeWidth={4} />
-      <text x={-54} y={27} textAnchor="middle" style={{ font:`900 26px ${KF.texto}` }} fill={KC.ink}>{ok ? 'gato ✔' : 'no ✘'}</text>
+      <text x={-54} y={27} textAnchor="middle" style={{ font:`900 26px ${KF.texto}` }} fill="#ffffff">{ok ? 'gato ✔' : 'no ✘'}</text>
     </g>}
   </g>;
 }
 // Navegador genérico con tarjetitas de tareas; persiana 0..1 la cierra.
-function Navegador({ T, at, until, y = 700, persiana = 0, turbante = 0 }) {
+function Navegador({ T, at, until, y = 700, persiana = 0, turbante = 0, s = 1 }) {
   if (!kvisible(T, at, until)) return null;
   const e = kprog(T, at, at + 0.5, kEase.sale) * (until == null ? 1 : 1 - kprog(T, until, until + 0.35, kEase.suave));
   const tareas = ['¿Qué hay en esta foto?', 'Escribe lo que dice este audio', '¿Este texto es una reseña buena o mala?'];
-  return <div style={{ position:'absolute', left:110, width:860, top:y, zIndex:20, opacity:e, transform:`translateY(${(1 - e) * 60}px)`,
+  return <div style={{ position:'absolute', left:110, width:860, top:y, zIndex:20, opacity:e, transform:`translateY(${(1 - e) * 60}px) scale(${s})`, transformOrigin:'50% 0',
     background:'#f6f3ec', border:`8px solid ${KC.ink}`, borderRadius:28, overflow:'hidden', boxShadow:`14px 14px 0 ${KC.ink}` }}>
     <div style={{ height:58, background:'#2b3445', display:'flex', alignItems:'center', gap:12, padding:'0 22px' }}>
       {[KC.red, KC.yellow, KC.mint].map((c) => <div key={c} style={{ width:20, height:20, borderRadius:10, background:c }}></div>)}
       <div style={{ marginLeft:16, flex:1, height:30, borderRadius:15, background:'#10131a' }}></div>
     </div>
     <div style={{ padding:'20px 30px 26px', position:'relative' }}>
-      <div style={{ display:'flex', alignItems:'center', gap:16, font:`400 64px ${KF.titulo}`, color:KC.ink }}>
+      <div style={{ display:'flex', alignItems:'center', gap:16, font:`400 64px ${KF.titulo}`, color:'#0b1020' }}>
         <svg width={70} height={60} viewBox="-75 -60 150 90" style={{ opacity:turbante, transform:`scale(${klerp(2, 1, turbante)})` }}>
           <ellipse cx={0} cy={0} rx={70} ry={40} fill="#fbf6ea" stroke={KC.ink} strokeWidth={8} /><path d="M -30 -30 Q 0 -60 30 -30 Z" fill={KC.red} stroke={KC.ink} strokeWidth={6} /><circle r={11} fill={KC.gold} stroke={KC.ink} strokeWidth={5} />
         </svg>
@@ -207,8 +207,8 @@ function Navegador({ T, at, until, y = 700, persiana = 0, turbante = 0 }) {
       </div>
       {tareas.map((t, i) => { const a = kprog(T, at + 0.9 + i * 0.6, at + 1.3 + i * 0.6, kEase.sale);
         return <div key={i} style={{ marginTop:16, display:'flex', alignItems:'center', justifyContent:'space-between', background:'#fff', border:`5px solid ${KC.ink}`, borderRadius:18, padding:'14px 20px',
-          opacity:a, transform:`translateX(${(1 - a) * 80}px)`, font:`800 32px ${KF.texto}`, color:KC.ink }}>
-          <span>{t}</span><span style={{ font:`700 26px ${KF.mono}`, background:KC.yellow, border:`3px solid ${KC.ink}`, borderRadius:12, padding:'4px 12px' }}>tarea</span>
+          opacity:a, transform:`translateX(${(1 - a) * 80}px)`, font:`800 32px ${KF.texto}`, color:'#0b1020' }}>
+          <span>{t}</span><span style={{ font:`700 26px ${KF.mono}`, color:'#0b1020', background:KC.yellow, border:`3px solid ${KC.ink}`, borderRadius:12, padding:'4px 12px' }}>tarea</span>
         </div>; })}
       {persiana > 0 && <div style={{ position:'absolute', left:0, right:0, top:0, height:`${persiana * 100}%`, background:'repeating-linear-gradient(#9aa3b2 0 34px, #6f7889 34px 40px)', borderBottom:`8px solid ${KC.ink}` }}>
         <div style={{ position:'absolute', left:'50%', bottom:40, transform:`translateX(-50%) rotate(-4deg)`, opacity:kprog(persiana, 0.85, 1), background:KC.red, color:'#fff', border:`6px solid ${KC.ink}`,
@@ -233,94 +233,95 @@ function Turco() {
       {/* 1 · gancho: el Turco juega... y adentro hay alguien */}
       <Escena T={T} a={K.G} b={K.Tu}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Automata x={330} y={850} s={0.95} T={T} {...j0} />)}
+        {svg(<Automata x={540} y={1020} s={1.5} T={T} {...j0} />)}
       </Escena>
-      <Lupa T={T} at={K.G + 1.7} until={K.Tu - 0.3} x={330} y={990} r={180} fx={330} fy={990} tinte={KC.cyan} linea={false} interior={(t, r) => <Escondido T={t} s={(2 * r) / 400} />} />
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.Tu - 0.3} texto="robot" x={330} y={1480} tam={54} />
-      <Chip T={T} at={K.G + 1.9} until={K.Tu - 0.3} texto="una persona escondida" x={540} y={1590} tam={40} borde={KC.red} />
+      <Lupa T={T} at={K.G + 1.7} until={K.Tu - 0.3} x={540} y={1230} r={240} fx={540} fy={1230} tinte={KC.cyan} linea={false} interior={(t, r) => <Escondido T={t} s={(2 * r) / 400} />} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.Tu - 0.3} texto="robot" x={540} y={240} tam={54} />
+      <Chip T={T} at={K.G + 1.9} until={K.Tu - 0.3} texto="una persona escondida" x={540} y={330} tam={40} borde={KC.red} />
 
       {/* 2 · el Turco: muñeco sentado tras la caja */}
       <Escena T={T} a={K.Tu} b={K.Pu}>
         <FondoLunares color={KC.pink} />
-        {svg(<Automata x={430} y={880} s={1.1} T={T} {...j1} ojos={Math.sin(T) * 0.6} />)}
+        {svg(<Automata x={540} y={1020} s={1.5} T={T} {...j1} ojos={Math.sin(T) * 0.6} />)}
       </Escena>
-      <Etq T={T} at={K.Tu + 0.5} until={K.Tu + 2.8} x={510} y={455} texto="turbante" />
-      <Etq T={T} at={K.Tu + 1.0} until={K.Pu - 0.2} x={640} y={720} texto="muñeco de madera" />
-      <Etq T={T} at={K.Tu + 3.2} until={K.Pu - 0.2} x={700} y={860} texto="tablero" />
-      <Etq T={T} at={K.Tu + 3.6} until={K.Pu - 0.2} x={730} y={1060} texto="caja" />
+      <Etq T={T} at={K.Tu + 0.5} until={K.Tu + 2.8} x={660} y={490} texto="turbante" />
+      <Etq T={T} at={K.Tu + 1.0} until={K.Pu - 0.2} x={400} y={700} texto="muñeco de madera" lado="izq" tam={30} />
+      <Etq T={T} at={K.Tu + 3.2} until={K.Pu - 0.2} x={860} y={1000} texto="tablero" tam={28} />
+      <Etq T={T} at={K.Tu + 3.6} until={K.Pu - 0.2} x={915} y={1250} texto="caja" tam={28} />
 
       {/* 3 · abren las puertas: engranes */}
       <Escena T={T} a={K.Pu} b={K.A} zoom={0.12} origen="45% 55%">
         <FondoLunares color={KC.orange} />
-        {svg(<Automata x={470} y={840} s={1.1} T={T} puertas={kprog(T, K.Pu + 0.4, K.Pu + 1.6, kEase.sale)} caballo={[0.31, 0.55]} />)}
+        {svg(<Automata x={480} y={1020} s={1.5} T={T} puertas={kprog(T, K.Pu + 0.4, K.Pu + 1.6, kEase.sale)} caballo={[0.31, 0.55]} />)}
       </Escena>
-      <Etq T={T} at={K.Pu + 2.0} until={K.A - 0.2} x={720} y={960} texto="engranes" />
-      <Etq T={T} at={K.Pu + 2.8} until={K.A - 0.2} x={720} y={1040} texto="palancas" />
-      <Chip T={T} at={K.Pu + 0.6} until={K.A - 0.2} texto="antes de jugar" x={540} y={1470} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.Pu + 2.0} until={K.A - 0.2} x={840} y={1140} texto="engranes" tam={28} />
+      <Etq T={T} at={K.Pu + 2.8} until={K.A - 0.2} x={840} y={1260} texto="palancas" tam={28} />
+      <Chip T={T} at={K.Pu + 0.6} until={K.A - 0.2} texto="antes de jugar" x={540} y={320} tam={40} borde={KC.ink} />
 
       {/* 4 · por dentro: el maestro de ajedrez escondido */}
       <Escena T={T} a={K.A} b={K.N}>
         <FondoCircuito T={T} color={KC.gold} />
-        <div style={{ position:'absolute', left:250, top:530, width:600, height:600, borderRadius:40, overflow:'hidden', border:`10px solid ${KC.gold}`, boxShadow:`0 0 60px ${KC.gold}66` }}>
-          <Escondido T={T} s={600 / 400} />
+        <div style={{ position:'absolute', left:140, top:560, width:800, height:800, borderRadius:44, overflow:'hidden', border:`10px solid ${KC.gold}`, boxShadow:`0 0 60px ${KC.gold}66` }}>
+          <Escondido T={T} s={800 / 400} />
         </div>
       </Escena>
-      <Chip T={T} at={K.A + 0.3} until={K.N - 0.2} texto="POR DENTRO · esquemático" x={700} y={440} tam={32} borde={KC.gold} mono />
-      <Etq T={T} at={K.A + 1.0} until={K.N - 0.2} x={600} y={960} texto="maestro de ajedrez" tam={30} />
-      <Etq T={T} at={K.A + 2.4} until={K.N - 0.2} x={330} y={700} texto="imanes bajo el tablero" tam={30} />
-      <Etq T={T} at={K.A + 4.2} until={K.N - 0.2} x={700} y={760} texto="palanca → brazo" tam={30} />
+      <Chip T={T} at={K.A + 0.3} until={K.N - 0.2} texto="POR DENTRO · esquemático" x={540} y={480} tam={32} borde={KC.gold} mono />
+      <Etq T={T} at={K.A + 1.0} until={K.N - 0.2} x={660} y={1150} texto="maestro de ajedrez" tam={28} />
+      <Etq T={T} at={K.A + 2.4} until={K.N - 0.2} x={180} y={790} texto="imanes bajo el tablero" tam={28} />
+      <Etq T={T} at={K.A + 4.2} until={K.N - 0.2} x={730} y={780} texto="palanca → brazo" tam={28} />
 
       {/* 5 · Napoleón y la trampa (según los relatos) */}
       <Escena T={T} a={K.N} b={K.P}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <Automata x={680} y={930} s={0.82} T={T} mano={manoN} vuelan={vuela} caballo={[0.5, 0.4]} />
-          <g opacity={kprog(T, K.N + 2.6, K.N + 3.1)}><Napoleon x={170} y={930} s={0.85} brazo={kprog(T, K.N + 3.2, K.N + 3.8, kEase.sale)} /></g>
+          <Automata x={700} y={1050} s={1.15} T={T} mano={manoN} vuelan={vuela} caballo={[0.5, 0.4]} />
+          <g opacity={0.35 + 0.65 * kprog(T, K.N + 2.6, K.N + 3.1)}><Napoleon x={200} y={1050} s={1.3} brazo={kprog(T, K.N + 3.2, K.N + 3.8, kEase.sale)} /></g>
         </>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.N + 0.2} until={K.N + 2.6} anio="1809" quien="Viena · palacio de Schönbrunn" revista="según los relatos" y={760} />
-      <Chip T={T} at={K.N + 3.0} until={K.P - 0.2} texto="leyenda · según los relatos" x={540} y={1460} tam={32} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.N + 0.2} until={K.N + 2.6} anio="1809" quien="Viena · palacio de Schönbrunn" revista="según los relatos" y={330} />
+      <Chip T={T} at={K.N + 3.0} until={K.P - 0.2} texto="leyenda · según los relatos" x={540} y={1480} tam={32} borde={KC.ink} />
 
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Am} zoom={0.1}>
         <FondoLunares color={KC.cyan} />
-        {svg(<text x={290} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 900)`}>?</text>)}
+        {svg(<g opacity={0.5}><Automata x={700} y={1050} s={1.15} T={T} caballo={[0.5, 0.4]} vuelan={1} /></g>)}
+        {svg(<text x={290} y={1260} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 1080)`}>?</text>)}
       </Escena>
 
       {/* 7 · Amazon Mechanical Turk (2005) */}
       <Escena T={T} a={K.Am} b={K.E}>
         <FondoCircuito T={T} />
       </Escena>
-      <Chip T={T} at={K.Am + 0.2} until={K.E - 0.2} texto="2005 · Amazon" x={700} y={560} tam={46} borde={KC.cyan} />
-      <Navegador T={T} at={K.Am + 0.6} until={K.E - 0.3} y={640} turbante={kprog(T, K.Am + 6.4, K.Am + 6.9, kEase.rebote)} />
-      <Chip T={T} at={K.Am + 6.9} until={K.E - 0.2} texto="= «el Turco mecánico»" x={540} y={1470} tam={44} borde={KC.gold} />
+      <Chip T={T} at={K.Am + 0.2} until={K.E - 0.2} texto="2005 · Amazon" x={540} y={620} tam={46} borde={KC.cyan} />
+      <Navegador T={T} at={K.Am + 0.1} until={K.E - 0.3} y={720} s={1.1} turbante={kprog(T, K.Am + 6.4, K.Am + 6.9, kEase.rebote)} />
+      <Chip T={T} at={K.Am + 6.9} until={K.E - 0.2} texto="= «el Turco mecánico»" x={540} y={1300} tam={44} borde={KC.gold} />
 
       {/* 8 · personas etiquetan datos */}
       <Escena T={T} a={K.E} b={K.Ce}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<g transform="translate(540 960) scale(1.12) translate(-535 -905)">
           {[['gato', true], ['perro', false], ['gato', true], ['coche', false], ['gato', true], ['flor', false]].map(([tp, ok], i) =>
             <Foto key={i} x={110 + (i % 3) * 300} y={720 + Math.floor(i / 3) * 210} tipo={tp} ok={ok} etq={kprog(T, K.E + 1.4 + i * 0.35, K.E + 1.7 + i * 0.35, kEase.sale)} />)}
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.E + 0.3} until={K.Ce - 0.2} texto="personas etiquetan · la IA aprende" x={540} y={1490} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.E + 0.6} until={K.Ce - 0.2} texto="ejemplo ilustrativo" x={540} y={1580} tam={26} borde={KC.texto} />
+      <Chip T={T} at={K.E + 0.3} until={K.Ce - 0.2} texto="personas etiquetan · la IA aprende" x={540} y={1290} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.E + 0.6} until={K.Ce - 0.2} texto="ejemplo ilustrativo" x={540} y={1375} tam={26} borde={KC.texto} />
 
       {/* 9 · Amazon la cerró (30 sep 2026) */}
       <Escena T={T} a={K.Ce} b={K.C}>
         <FondoCircuito T={T} color={KC.red} />
       </Escena>
-      <Navegador T={T} at={K.Ce + 0.1} until={K.C - 0.3} y={640} turbante={1} persiana={kprog(T, K.Ce + 1.2, K.Ce + 2.4, kEase.suave)} />
-      <Chip T={T} at={K.Ce + 2.2} until={K.C - 0.2} texto="30 de septiembre de 2026" x={540} y={1460} tam={40} borde={KC.red} />
+      <Navegador T={T} at={K.Ce + 0.1} until={K.C - 0.3} y={720} s={1.1} turbante={1} persiana={kprog(T, K.Ce + 1.2, K.Ce + 2.4, kEase.suave)} />
+      <Chip T={T} at={K.Ce + 2.2} until={K.C - 0.2} texto="30 de septiembre de 2026" x={540} y={1300} tam={40} borde={KC.red} />
 
       {/* 10 · cierre: la misma caja, ahora con la IA encima… y personas adentro */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Automata x={330} y={850} s={0.95} T={T} robot caballo={jC.caballo} />)}
+        {svg(<Automata x={540} y={1020} s={1.5} T={T} robot caballo={jC.caballo} />)}
       </Escena>
-      <Lupa T={T} at={K.C + 1.6} until={K.Ou} x={330} y={990} r={180} fx={330} fy={990} tinte={KC.pink} linea={false} interior={(t, r) => <Escondido T={t} s={(2 * r) / 400} varios />} />
-      <MitoTachado T={T} at={K.C + 0.3} tacharEn={K.C + 2.4} until={K.Ou} texto="magia" x={330} y={1480} tam={54} />
-      <Chip T={T} at={K.C + 2.8} until={K.Ou} texto="detrás: personas" x={540} y={1590} tam={40} borde={KC.pink} />
+      <Lupa T={T} at={K.C + 1.6} until={K.Ou} x={540} y={1230} r={240} fx={540} fy={1230} tinte={KC.pink} linea={false} interior={(t, r) => <Escondido T={t} s={(2 * r) / 400} varios />} />
+      <MitoTachado T={T} at={K.C + 0.3} tacharEn={K.C + 2.4} until={K.Ou} texto="magia" x={540} y={240} tam={54} />
+      <Chip T={T} at={K.C + 2.8} until={K.Ou} texto="detrás: personas" x={540} y={330} tam={40} borde={KC.pink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Tu - 0.1} texto="No es un robot: *es una persona escondida.*" />

@@ -90,11 +90,12 @@ function Barras({ T, at, until, filas, top = 700, max = 40, ancho = 640, left = 
 }
 
 // Álbum de caras: cuadrícula de caritas; las primeras `claras` de piel clara (fracción real del banco de pruebas).
-function Album({ T, at, x, y, titulo, claras, total = 50, cols = 10, pct }) {
+function Album({ T, at, x, y, titulo, claras, total = 50, cols = 10, pct, llena = null }) {
   const e = kprog(T, at, at + 0.4, kEase.sale); if (e <= 0) return null;
+  const l0 = llena == null ? at : llena;
   const tonos = [PIEL_CLARA, '#f0c39b', '#e8b58c'], osc = [PIEL_OSCURA, '#5c3620', PIEL_MEDIA];
   const r = krng(7), orden = Array.from({ length: total }, (_, i) => i).sort(() => r() - 0.5);
-  const n = Math.round(total * kprog(T, at + 0.3, at + 2.2));
+  const n = Math.round(total * kprog(T, l0 + 0.3, l0 + 2.2));
   return <g transform={`translate(${x} ${y})`} opacity={e}>
     <rect x={-20} y={-80} width={cols * 82 + 30} height={Math.ceil(total / cols) * 82 + 110} rx={24} fill="#1b2438" stroke={KC.cyan} strokeWidth={5} />
     <text x={0} y={-30} style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto}>{titulo}</text>
@@ -163,12 +164,12 @@ function CarasPiel() {
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     <defs><filter id="borroso"><feGaussianBlur stdDeviation="9" /></filter></defs>{c}</svg>;
   const horas = 30 * kprog(T, K.W + 2.6, K.W + 5.4, kEase.suave);
-  const duo = (t0, final) => <>
+  const duo = (t0, final, cy = 900, k = 1.12, etiq = true) => <g transform={`translate(540 ${cy}) scale(${k}) translate(-540 -880)`}>
     <Cara x={290} y={880} s={0.9} piel={PIEL_CLARA} pelo="#5a3b22" tipo="h" camisa={KC.blue} T={T} seed={1} />
     <Cara x={790} y={880} s={0.9} piel={PIEL_OSCURA} pelo="#1d140e" tipo="m" camisa={KC.orange} T={T} seed={2} />
-    <Escaneo x={290} y={855} w={280} h={350} T={T} at={t0} ok={T > t0 + 1.6 ? true : null} etiqueta={T > t0 + 1.6 ? (final ? 'error: 0.3 %' : '✔ hombre') : null} />
-    <Escaneo x={790} y={855} w={310} h={370} T={T} at={t0 + 0.2} ok={T > t0 + 2.6 ? false : null} etiqueta={T > t0 + 2.6 ? (final ? 'error: 34.7 %' : '✘ «hombre»') : null} />
-  </>;
+    <Escaneo x={290} y={855} w={280} h={350} T={T} at={t0} ok={T > t0 + 1.6 ? true : null} etiqueta={etiq && T > t0 + 1.6 ? (final ? 'error: 0.3 %' : '✔ hombre') : null} />
+    <Escaneo x={790} y={855} w={310} h={370} T={T} at={t0 + 0.2} ok={T > t0 + 2.6 ? false : null} etiqueta={etiq && T > t0 + 2.6 ? (final ? 'error: 34.7 %' : '✘ «hombre»') : null} />
+  </g>;
 
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -177,24 +178,26 @@ function CarasPiel() {
         <FondoLunares color={KC.pink} />
         {svg(duo(K.G + 0.15, false))}
       </Escena>
-      <Chip T={T} at={K.G + 3.8} until={K.E - 0.2} texto="a ti: 1 de cada 3 veces" x={330} y={420} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.G + 4.6} until={K.E - 0.2} texto="mismo programa" x={330} y={530} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.8} until={K.E - 0.2} texto="a ti: 1 de cada 3 veces" x={330} y={380} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.G + 4.6} until={K.E - 0.2} texto="mismo programa" x={330} y={480} tam={34} borde={KC.ink} />
 
       {/* 2 · el estudio */}
       <Escena T={T} a={K.E} b={K.N}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>{['IBM', 'Microsoft', 'Face++'].map((n, i) => <g key={n} opacity={kprog(T, K.E + 2.2 + i * 0.2, K.E + 2.5 + i * 0.2)}>
-          <Programa x={200 + i * 340} y={930} s={0.85} T={T + i} pantalla="¿H o M?" nombre={n} /></g>)}</>)}
+        {svg(<>{['IBM', 'Microsoft', 'Face++'].map((n, i) => <g key={n} opacity={kprog(T, K.E + 0.2 + i * 0.15, K.E + 0.5 + i * 0.15)}>
+          <Programa x={190 + i * 350} y={880} s={1.08} T={T + i} pantalla="¿H o M?" nombre={n} /></g>)}
+          <g opacity={0.55 * kprog(T, K.E + 0.2, K.E + 0.6)}>{duo(K.E - 3, false, 1330, 0.62, false)}</g></>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.N - 0.3} anio="2018" quien="«Gender Shades»" revista="Buolamwini y Gebru · PMLR 81" x={420} y={600} />
-      <Chip T={T} at={K.E + 3.6} until={K.N - 0.3} texto="1,270 fotos de parlamentarios · 6 países" y={1150} tam={34} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.N - 0.3} anio="2018" quien="«Gender Shades»" revista="Buolamwini y Gebru · PMLR 81" x={540} y={470} />
+      <Chip T={T} at={K.E + 3.6} until={K.N - 0.3} texto="1,270 fotos de parlamentarios · 6 países" y={1120} tam={34} borde={KC.ink} />
 
       {/* 3 · los números */}
       <Escena T={T} a={K.N} b={K.P}>
         <FondoLunares color={KC.mint} />
+        {svg(duo(K.N - 3, false, 1230, 0.85, false))}
       </Escena>
-      <Chip T={T} at={K.N + 0.2} until={K.P - 0.2} texto="error al adivinar el género" x={340} y={420} tam={36} borde={KC.ink} />
-      <Barras T={T} at={K.N + 0.4} until={K.P - 0.2} top={700} max={40} filas={[
+      <Chip T={T} at={K.N + 0.2} until={K.P - 0.2} texto="error al adivinar el género" x={340} y={400} tam={36} borde={KC.ink} />
+      <Barras T={T} at={K.N + 0.4} until={K.P - 0.2} top={490} max={40} filas={[
         { valor: 0.8, etiqueta: 'hombres de piel clara (el peor de los 3)', color: KC.blue, tam: 34 },
         { valor: 34.7, etiqueta: 'mujeres de piel oscura (el peor de los 3)', color: KC.red, at: K.N + 3.4, tam: 34 }]} />
 
@@ -202,8 +205,8 @@ function CarasPiel() {
       <Escena T={T} a={K.P} b={K.D} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <text x={290} y={1060} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 880)`}>?</text>
-          <g transform={`translate(300 1120)`}><Robotito x={0} y={0} s={0.55} T={T} cara="duda" /></g>
+          <text x={430} y={1180} textAnchor="middle" style={{ font:`400 820px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={18} transform={`rotate(${Math.sin(T * 3) * 6} 430 900)`}>?</text>
+          <g transform={`translate(760 1250)`}><Robotito x={0} y={0} s={1.0} T={T} cara="duda" /></g>
         </>)}
       </Escena>
 
@@ -211,20 +214,22 @@ function CarasPiel() {
       <Escena T={T} a={K.D} b={K.M}>
         <FondoCircuito T={T} />
         {svg(<>
-          <Album T={T} at={K.D + 2.4} x={120} y={540} titulo="IJB-A" claras={24} total={30} cols={10} pct="79.6 % claras" />
-          <Album T={T} at={K.D + 3.6} x={120} y={900} titulo="Adience" claras={26} total={30} cols={10} pct="86.2 % claras" />
+          <g transform="translate(540 900) scale(1.1) translate(-540 -900)">
+          <Album T={T} at={K.D + 0.3} llena={K.D + 2.4} x={120} y={600} titulo="IJB-A" claras={24} total={30} cols={10} pct="79.6 % claras" />
+          <Album T={T} at={K.D + 0.5} llena={K.D + 3.6} x={120} y={980} titulo="Adience" claras={26} total={30} cols={10} pct="86.2 % claras" /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.D + 0.2} until={K.M - 0.2} texto="HIPÓTESIS" x={260} y={400} tam={44} borde={KC.yellow} color={KC.yellow} />
-      <Chip T={T} at={K.D + 1.0} until={K.D + 2.4} texto="aprende de ejemplos…" x={540} y={760} tam={46} borde={KC.cyan} />
+      <Chip T={T} at={K.D + 0.2} until={K.M - 0.2} texto="HIPÓTESIS" x={230} y={380} tam={44} borde={KC.yellow} color={KC.yellow} />
+      <Chip T={T} at={K.D + 1.0} until={K.D + 2.4} texto="aprende de ejemplos…" x={700} y={380} tam={40} borde={KC.cyan} />
 
       {/* 6 · mejoraron */}
       <Escena T={T} a={K.M} b={K.Ni}>
         <FondoLunares color={KC.cyan} />
+        {svg(<>{['IBM', 'Face++', 'Microsoft'].map((n, i) => <Programa key={n} x={190 + i * 350} y={1210} s={0.95} T={T + i} pantalla="¿H o M?" nombre={n} v2={kprog(T, K.M + 1.6 + i * 0.3, K.M + 2.0 + i * 0.3)} />)}</>)}
       </Escena>
-      <Chip T={T} at={K.M + 0.2} until={K.Ni - 0.2} texto="mujeres de piel oscura · error" x={360} y={420} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.M + 0.5} until={K.Ni - 0.2} texto="2017 → agosto de 2018" x={360} y={510} tam={30} borde={KC.ink} />
-      <Barras T={T} at={K.M + 0.6} until={K.Ni - 0.2} top={680} max={40} alto={56} filas={[
+      <Chip T={T} at={K.M + 0.2} until={K.Ni - 0.2} texto="mujeres de piel oscura · error" x={360} y={380} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.M + 0.5} until={K.Ni - 0.2} texto="2017 → agosto de 2018" x={360} y={465} tam={30} borde={KC.ink} />
+      <Barras T={T} at={K.M + 0.6} until={K.Ni - 0.2} top={560} max={40} alto={56} filas={[
         { valor: 16.97, desde: 34.7, baja: K.M + 1.6, etiqueta: 'IBM', color: KC.red, tam: 34, num: 58, alto: 56 },
         { valor: 4.1, desde: 34.5, baja: K.M + 1.9, etiqueta: 'Face++', color: KC.orange, tam: 34, num: 58, alto: 56 },
         { valor: 1.52, desde: 20.8, baja: K.M + 2.2, etiqueta: 'Microsoft', color: KC.blue, tam: 34, num: 58, alto: 56 }]} />
@@ -232,24 +237,24 @@ function CarasPiel() {
       {/* 7 · NIST */}
       <Escena T={T} a={K.Ni} b={K.W}>
         <FondoLunares color={KC.yellow} />
-        {svg(<g opacity={kprog(T, K.Ni + 4.6, K.Ni + 5.0)}>
-          <Cara x={260} y={590} s={0.55} piel={PIEL_OSCURA} pelo="#1d140e" tipo="m" camisa={KC.teal} T={T} seed={3} />
-          <Cara x={820} y={590} s={0.55} piel={PIEL_MEDIA} pelo="#2a1a10" tipo="m" camisa={KC.pink} T={T} seed={4} />
+        {svg(<g opacity={0.4 + 0.6 * kprog(T, K.Ni + 4.4, K.Ni + 4.9)} transform="translate(540 820) scale(1.3) translate(-540 -590)">
+          <Cara x={300} y={590} s={0.55} piel={PIEL_OSCURA} pelo="#1d140e" tipo="m" camisa={KC.teal} T={T} seed={3} />
+          <Cara x={780} y={590} s={0.55} piel={PIEL_MEDIA} pelo="#2a1a10" tipo="m" camisa={KC.pink} T={T} seed={4} />
           <g opacity={kprog(T, K.Ni + 5.3, K.Ni + 5.6)}>
-            <line x1={390} y1={590} x2={690} y2={590} stroke={KC.red} strokeWidth={10} strokeDasharray="22 14" />
+            <line x1={420} y1={590} x2={660} y2={590} stroke={KC.red} strokeWidth={10} strokeDasharray="22 14" />
             <rect x={455} y={550} width={170} height={80} rx={20} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
             <text x={540} y={605} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill="#fff">= ✔</text>
           </g>
         </g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.Ni + 0.2} until={K.Ni + 4.4} anio="2019" quien="NIST (EE. UU.)" revista="189 algoritmos · 18.27 millones de fotos" x={390} y={720} />
-      <Chip T={T} at={K.Ni + 5.6} until={K.W - 0.2} texto="«la misma persona»… y no" x={540} y={380} tam={38} borde={KC.red} />
-      <Veces T={T} at={K.Ni + 6.4} until={K.W - 0.2} y={760} />
+      <TarjetaEstudio T={T} at={K.Ni + 0.2} until={K.Ni + 4.4} anio="2019" quien="NIST (EE. UU.)" revista="189 algoritmos · 18.27 millones de fotos" x={540} y={430} />
+      <Chip T={T} at={K.Ni + 5.6} until={K.W - 0.2} texto="«la misma persona»… y no" x={540} y={430} tam={38} borde={KC.red} />
+      <Veces T={T} at={K.Ni + 6.4} until={K.W - 0.2} y={1100} />
 
       {/* 8 · Robert Williams */}
       <Escena T={T} a={K.W} b={K.C}>
         <FondoLunares color={KC.coral} />
-        {svg(<>
+        {svg(<g transform="translate(540 860) scale(1.1) translate(-540 -760)">
           <g opacity={kprog(T, K.W + 0.2, K.W + 0.6)}><FotoCamara x={290} y={760} s={0.9} T={T} /></g>
           <g opacity={kprog(T, K.W + 1.0, K.W + 1.4)}>
             <path d="M 470 760 L 560 760" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" /><path d="M 545 735 L 575 760 L 545 785" stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" />
@@ -260,18 +265,18 @@ function CarasPiel() {
             <text y={22} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.red}>COINCIDENCIA</text>
           </g>}
           <g opacity={kprog(T, K.W + 2.5, K.W + 2.9)}><Reloj x={300} y={1060} s={0.75} horas={horas} /></g>
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.W + 0.2} until={K.C - 0.2} texto="Detroit · enero de 2020" x={330} y={470} tam={36} borde={KC.ink} />
-      {T >= K.W + 2.5 && T < K.C + 0.3 && <div style={{ position:'absolute', left:470, top:1010, zIndex:41, font:`400 110px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, opacity:kprog(T, K.W + 2.5, K.W + 2.9) * (1 - kprog(T, K.C - 0.1, K.C + 0.3)) }}>{Math.round(horas)} horas</div>}
-      <Chip T={T} at={K.W + 5.2} until={K.C - 0.2} texto="2024: prohibido arrestar solo por esto" x={540} y={928} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.W + 0.2} until={K.C - 0.2} texto="Detroit · enero de 2020" x={330} y={540} tam={36} borde={KC.ink} />
+      {T >= K.W + 2.5 && T < K.C + 0.3 && <div style={{ position:'absolute', left:450, top:1130, zIndex:41, font:`400 110px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, opacity:kprog(T, K.W + 2.5, K.W + 2.9) * (1 - kprog(T, K.C - 0.1, K.C + 0.3)) }}>{Math.round(horas)} horas</div>}
+      <Chip T={T} at={K.W + 5.2} until={K.C - 0.2} texto="2024: prohibido arrestar solo por esto" x={540} y={1036} tam={30} borde={KC.leaf} />
 
       {/* 9 · cierre: las mismas dos caras */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.pink} />
         {svg(duo(K.C + 0.1, true))}
       </Escena>
-      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="mismo programa (IBM, 2017)" x={330} y={460} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="mismo programa (IBM, 2017)" x={330} y={480} tam={30} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="Mismo programa… *a ti te falló más.*" />

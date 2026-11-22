@@ -13,7 +13,7 @@ const GL_PATHS = {
   // Pico de Orizaba (Citlaltépetl): cono alto y esbelto.
   orizaba: 'M 80 300 Q 320 150 470 15 L 530 15 Q 680 150 920 300 Z',
 };
-const GL_ROCA = '#9b7653', GL_ROCA2 = '#6e4f35', GL_HIELO = '#f2fbff';
+const GL_ROCA = '#86654a', GL_ROCA2 = '#5a3f2a', GL_HIELO = '#f2fbff';
 // Volcán con hielo. nieve = hasta qué altura (en unidades de la caja, desde arriba) llega el hielo; 0 = sin hielo.
 function Volcan({ x, y, w = 1000, tipo = 'izta', nieve = 0, id = 'v', grietas = 0, lecho = 0 }) {
   const s = w / 1000, d = GL_PATHS[tipo];
@@ -44,9 +44,9 @@ function Placa({ x, y, s = 1, o = 1 }) {
 // Ladera de roca en primer plano (abajo a la izquierda), donde está la placa.
 function Ladera({ y = 980 }) {
   return <g>
-    <path d={`M -20 ${y + 60} Q 200 ${y - 40} 520 ${y + 20} Q 760 ${y + 70} 1100 ${y + 30} L 1100 1940 L -20 1940 Z`} fill="#7a5a3f" stroke={KC.ink} strokeWidth={7} />
+    <path d={`M -20 ${y + 60} Q 200 ${y - 40} 520 ${y + 20} Q 760 ${y + 70} 1100 ${y + 30} L 1100 1940 L -20 1940 Z`} fill="#43311f" stroke={KC.ink} strokeWidth={7} />
     {[[90, y + 90, 40], [430, y + 70, 28], [700, y + 120, 36], [250, y + 150, 22], [900, y + 110, 30]].map(([a, b, r], i) =>
-      <path key={i} d={`M ${a - r} ${b} Q ${a - r * 0.6} ${b - r} ${a} ${b - r * 0.9} Q ${a + r} ${b - r * 0.7} ${a + r} ${b} Z`} fill="#8d6c4e" stroke={KC.ink} strokeWidth={5} />)}
+      <path key={i} d={`M ${a - r} ${b} Q ${a - r * 0.6} ${b - r} ${a} ${b - r * 0.9} Q ${a + r} ${b - r * 0.7} ${a + r} ${b} Z`} fill="#5a4330" stroke={KC.ink} strokeWidth={5} />)}
   </g>;
 }
 // Montañista (esquema): casco, mochila y piernas que caminan.
@@ -105,10 +105,10 @@ function GlaciarShot() {
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
   // Gancho / Cierre: la cumbre (el "pecho") de cerca, al fondo; la ladera y la placa adelante.
   const cumbre = (hielo, placaO, id) => <>
-    <Volcan x={-376} y={560} w={1800} tipo="izta" nieve={hielo} id={id} />
-    {hielo > 4 && <Goteo T={T} x={380} y0={560 + 90} y1={900} cada={0.35} color="#7cc8ff" r={10} />}
-    <Ladera y={1000} />
-    <Placa x={290} y={1130} s={1.15} o={placaO} />
+    <Volcan x={-376} y={700} w={1800} tipo="izta" nieve={hielo} id={id} />
+    {hielo > 4 && <Goteo T={T} x={380} y0={700 + 90} y1={1050} cada={0.35} color="#7cc8ff" r={10} />}
+    <Ladera y={1150} />
+    <Placa x={290} y={1290} s={1.25} o={placaO} />
   </>;
   // Escala de altitud de la escena "línea de equilibrio": 4,700 m → y 1150 · 5,500 m → y 550.
   const alt = (m) => 1150 - (m - 4700) * 0.75;
@@ -169,29 +169,29 @@ function GlaciarShot() {
       {/* 5 · ¿y los otros volcanes? */}
       <Escena T={T} a={K.P} b={K.Po} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<><text x={270} y={840} textAnchor="middle" style={{ font:`400 420px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 270 700)`}>?</text>
+        {svg(<g transform="translate(540 960) scale(1.6) translate(-265 -770)"><text x={270} y={840} textAnchor="middle" style={{ font:`400 420px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 270 700)`}>?</text>
           <Volcan x={20} y={930} w={250} tipo="popo" nieve={0} id="vp1" />
-          <Volcan x={250} y={900} w={260} tipo="orizaba" nieve={40} id="vp2" /></>)}
-        <Etq T={T} at={K.P + 0.1} until={K.Po - 0.1} x={145} y={1040} texto="Popo" tam={26} lado="der" />
+          <Volcan x={250} y={900} w={260} tipo="orizaba" nieve={40} id="vp2" /></g>)}
+        <Etq T={T} at={K.P + 0.1} until={K.Po - 0.1} x={348} y={1392} texto="Popo" tam={30} lado="der" />
       </Escena>
       {/* 6 · Popocatépetl: calor + erupción (desde dic 1994) → glaciares extintos en 2001 */}
       <Escena T={T} a={K.Po} b={K.Pl}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<>
+        {svg(<g transform="translate(540 900) scale(1.15) translate(-540 -700)">
           {Array.from({ length: 5 }, (_, i) => { const u = ((T - K.Po) * 0.5 + i / 5) % 1;
             return <circle key={i} cx={540 + Math.sin(i * 2 + T) * 30 - u * 60} cy={680 - u * 280} r={40 + u * 70} fill="#8b8f96" opacity={0.75 * (1 - u)} stroke={KC.ink} strokeWidth={3} />; })}
           <Volcan x={90} y={640} w={900} tipo="popo" nieve={klerp(95, 0, kprog(T, K.Po + 1.0, K.Po + 4.4, kEase.suave))} grietas={kprog(T, K.Po + 1.0, K.Po + 2.4)} id="vpo" />
           {Array.from({ length: 30 }, (_, i) => { const r = krng(40 + i), xx = 250 + r() * 600, v = 120 + r() * 120; const yy = 560 + ((T * v + r() * 400) % 420);
             return <circle key={i} cx={xx} cy={yy} r={5} fill="#55595f" opacity={kprog(T, K.Po + 0.3, K.Po + 1.0)} />; })}
           <TermoG x={140} y={1040} v={klerp(0.35, 0.85, kprog(T, K.Po + 0.5, K.Po + 3.5, kEase.suave))} />
-        </>)}
-        <Etq T={T} at={K.Po + 0.4} until={K.Pl - 0.1} x={830} y={1000} texto="Popocatépetl" lado="izq" tam={30} color={KC.ink} />
+        </g>)}
+        <Etq T={T} at={K.Po + 0.4} until={K.Pl - 0.1} x={873} y={1245} texto="Popocatépetl" lado="izq" tam={30} color={KC.ink} />
       </Escena>
       {/* 7 · la placa (abril 2021): montañistas suben y la dejan en la ladera; acercamiento al texto */}
       <Escena T={T} a={K.Pl} b={K.O}>
         <FondoLunares color={KC.mint} />
         {svg(<>{cumbre(0, kprog(T, K.Pl + 2.0, K.Pl + 2.5), 'vpl')}
-          {[0, 1, 2, 3].map((i) => { const u = kprog(T, K.Pl + 0.1, K.Pl + 2.6), xx = klerp(1000 + i * 90, 420 + i * 90, u), yy = klerp(1110, 1050, u) + Math.abs(Math.sin(T * 8 + i)) * -4;
+          {[0, 1, 2, 3].map((i) => { const u = kprog(T, K.Pl + 0.1, K.Pl + 2.6), xx = klerp(1000 + i * 90, 420 + i * 90, u), yy = klerp(1260, 1200, u) + Math.abs(Math.sin(T * 8 + i)) * -4;
             return <Montanista key={i} x={xx} y={yy} s={0.9} T={u < 1 ? T + i : 0} color={[KC.red, KC.blue, KC.pink, KC.leaf][i]} />; })}</>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
@@ -233,7 +233,7 @@ function GlaciarShot() {
       </Escena>
 
       {/* datos y etiquetas */}
-      <Chip T={T} at={K.G + 0.4} until={K.G + 3.2} texto="glaciar Ayoloco" x={290} y={430} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.G + 0.4} until={K.G + 3.2} texto="glaciar Ayoloco" x={380} y={560} tam={34} borde={KC.cyan} />
       <Chip T={T} at={K.G + 2.8} until={K.A - 0.2} texto="una placa que lo recuerda" x={330} y={1440} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.A + 0.3} until={K.D - 0.2} texto="Iztaccíhuatl · la Mujer Dormida" y={430} x={400} tam={30} borde={KC.mint} />
       <Etq T={T} at={K.A + 0.8} until={K.D - 0.2} x={440} y={540} texto="Ayoloco" lado="izq" tam={30} />
@@ -243,9 +243,9 @@ function GlaciarShot() {
       <Chip T={T} at={K.D + 3.6} until={K.L - 0.2} texto="hoy: restos en sus cráteres" y={430} x={540} tam={32} borde={KC.red} />
       <Chip T={T} at={K.L + 0.4} until={K.Cu - 0.1} texto="arriba: la nieve dura todo el año" y={1440} x={540} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Cu + 0.4} until={K.P - 0.2} texto="cumbre 5,230 m < línea ≈ 5,300 m" y={1440} x={540} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.Po + 0.6} until={K.Po + 3.6} texto="erupción desde dic 1994" y={430} x={400} tam={32} borde={KC.orange} />
+      <Chip T={T} at={K.Po + 0.6} until={K.Po + 3.6} texto="erupción desde dic 1994" y={470} x={400} tam={32} borde={KC.orange} />
       <Chip T={T} at={K.Po + 0.9} until={K.Pl - 0.2} texto="+ calor" y={1440} x={300} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.Po + 3.8} until={K.Pl - 0.2} texto="2001: glaciares extintos" y={430} x={400} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.Po + 3.8} until={K.Pl - 0.2} texto="2001: glaciares extintos" y={470} x={400} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Pl + 1.0} until={K.O - 0.2} texto="abril 2021 · UNAM · 4,626 m" y={1440} x={540} tam={34} borde={KC.gold} />
       <Chip T={T} at={K.O + 0.4} until={K.O + 2.4} texto="2007: 62 ha de hielo" y={1440} x={540} tam={34} borde={KC.cyan} />
       <Chip T={T} at={K.O + 2.6} until={K.Ci - 0.2} texto="2024: 37 ha · −40 %" y={1440} x={540} tam={34} borde={KC.red} />

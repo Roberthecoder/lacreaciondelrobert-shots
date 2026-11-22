@@ -77,6 +77,7 @@ const TG = { barro:'#b8582c', barro2:'#8f3f1e', barro3:'#d9804e', borde:'#5a2410
 
 // Subtítulo con cursivas (_palabra_) además del resaltado (*palabra*). Mismos tiempos que el Subtitulo del kit (window.SUBS en la narrada).
 function SubIt({ T, at, until, texto, idx, color = KC.gold2, tam = 60 }) {
+  if (!CINE_OPC.subtitulos) return null;
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
@@ -98,6 +99,7 @@ function SubIt({ T, at, until, texto, idx, color = KC.gold2, tam = 60 }) {
 function Rotulo({ T, at, until, x, y, texto, tam = 34, color = KC.texto, it = false, centro = false, fondo }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube');
+  if (fondo && fondo.startsWith('rgba(255')) fondo = 'rgba(12,16,30,.84)';   // cine: caja oscura, texto claro
   return <div style={{ position:'absolute', left:x, top:y, zIndex:42, opacity:e.o, transform:`translate(${centro ? '-50%' : 0}, -50%) translateY(${e.y * 0.5}px)`,
     font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color, whiteSpace:'nowrap', textShadow: fondo ? 'none' : '0 3px 0 rgba(0,0,0,.8), 0 0 18px rgba(0,0,0,.9)',
     background:fondo, padding: fondo ? '8px 18px' : 0, borderRadius:14 }}>{texto}</div>;
@@ -268,8 +270,8 @@ function Sobre({ x, y, s = 1, rot = 0 }) {
     <rect x={120} y={-110} width={70} height={84} rx={4} fill={KC.coral} stroke={KC.ink} strokeWidth={4} strokeDasharray="6 4" />
     <circle cx={110} cy={-50} r={44} fill="none" stroke="#3a3a8a" strokeWidth={4} opacity=".7" />
     <text x={-180} y={-80} style={{ font:`700 24px ${KF.mono}` }} fill="#3a3a8a">{TX.sobreAnio}</text>
-    <text x={-180} y={70} style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>de: {TX.sobreDe}</text>
-    <text x={-180} y={108} style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>a: {TX.sobrePara}</text>
+    <text x={-180} y={70} style={{ font:`700 26px ${KF.mono}` }} fill="#0b1020">de: {TX.sobreDe}</text>
+    <text x={-180} y={108} style={{ font:`700 26px ${KF.mono}` }} fill="#0b1020">a: {TX.sobrePara}</text>
   </g>;
 }
 // Interior de la olla al microscopio, para la Lupa (cuadro de 2r × 2r): levaduras con yemas, azúcar y burbujas.
@@ -283,7 +285,16 @@ function InteriorOlla(Tl, r, mucho = false) {
   </svg>;
 }
 
-const FASES = [0, 0.5, 1.15, 1.9];   // inicio de cada fase de burbujeo (s dentro de la escena Burbujas)
+const FASES = [0, 0.5, 1.15, 1.9];
+// Pase a mano cine: agranda un grupo k veces llevando el punto (cx, cy) a (tx, ty); zp hace lo mismo con un punto de una etiqueta.
+const Zg = ({ k, cx, cy, tx = 540, ty = 960, children }) => <g transform={`translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
+const zp = (z, x, y) => [z.tx + z.k * (x - z.cx), z.ty + z.k * (y - z.cy)];
+const ZGe = { k: 1.15, cx: 540, cy: 850, tx: 540, ty: 1000 };   // germinación
+const ZM = { k: 1.1, cx: 540, cy: 855, tx: 540, ty: 990 };      // por dentro del grano
+const ZA = { k: 1.15, cx: 540, cy: 860, tx: 540, ty: 990 };     // metate, cocción, ollas
+const ZL = { k: 1.3, cx: 540, cy: 880, tx: 540, ty: 990 };      // levaduras al microscopio
+const ZT = { k: 1.25, cx: 540, cy: 950, tx: 540, ty: 1000 };    // tesgüinada
+const OX = 450, OY = 1360, OS = 1.7, OB = OY - 370 * OS;        // olla grande del gancho y del cierre (OB = boca)   // inicio de cada fase de burbujeo (s dentro de la escena Burbujas)
 
 function TesguinoShot() {
   const { T, CUES } = useComposition();
@@ -301,26 +312,26 @@ function TesguinoShot() {
       <Escena T={T} a={K.G} b={K.Ge} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Olla T={T} x={330} y={1110} s={1.2} burb={1.4 + Math.sin(T * 3)} lienzo={T < K.G + 0.9 ? 1 : 0} lienzoSube={kprog(T, K.G + 0.1, K.G + 0.8, kEase.sale)} id="og" />
-          {T > K.G + 0.15 && T < K.G + 0.8 && <circle cx={360} cy={662} r={10 + (T - K.G) * 60} fill="none" stroke="#fff" strokeWidth={6} opacity={1 - (T - K.G - 0.15) / 0.65} />}
+          <Olla T={T} x={OX} y={OY} s={OS} burb={1.4 + Math.sin(T * 3)} lienzo={T < K.G + 0.9 ? 1 : 0} lienzoSube={kprog(T, K.G + 0.1, K.G + 0.8, kEase.sale)} id="og" />
+          {T > K.G + 0.15 && T < K.G + 0.8 && <circle cx={OX + 40} cy={OB} r={14 + (T - K.G) * 85} fill="none" stroke="#fff" strokeWidth={6} opacity={1 - (T - K.G - 0.15) / 0.65} />}
         </>)}
       </Escena>
-      <Lupa T={T} at={K.G + 1.0} until={K.Ge - 0.3} x={770} y={960} r={175} fx={330} fy={666} tinte={KC.cyan} interior={(Tl, r) => InteriorOlla(Tl, r)} />
+      <Lupa T={T} at={K.G + 1.0} until={K.Ge - 0.3} x={840} y={450} r={185} fx={OX} fy={OB} tinte={KC.cyan} interior={(Tl, r) => InteriorOlla(Tl, r)} />
 
       {/* 2 · el maíz germina a oscuras */}
       <Escena T={T} a={K.Ge} b={K.M} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 55%, rgba(0,0,0,0) 30%, rgba(8,10,20,.78) 75%)', opacity:kprog(T, K.Ge + 0.2, K.Ge + 0.8) }}></div>
         {fsvg(<>
-          <rect x={150} y={880} width={780} height={250} rx={40} fill="rgba(240,161,74,.35)" stroke={KC.ink} strokeWidth={8} />
+          <Zg {...ZGe}><rect x={150} y={880} width={780} height={250} rx={40} fill="rgba(240,161,74,.35)" stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 12 }, (_, i) => <line key={'h' + i} x1={150 + i * 56} y1={880} x2={150 + i * 56 + 120} y2={1130} stroke="#f0a14a" strokeWidth={5} opacity=".8" />)}
           {Array.from({ length: 12 }, (_, i) => <line key={'v' + i} x1={270 + i * 56} y1={880} x2={150 + i * 56} y2={1130} stroke="#f0a14a" strokeWidth={5} opacity=".8" />)}
           {GR.map(([gx, gy, r], i) => <Grano key={i} x={gx} y={gy} s={1.05} rot={r} T={T} seed={i + 1} raiz={kclamp(germ * 1.6 - i * 0.03, 0, 1)} brote={kclamp(germ * 1.3 - 0.25 - i * 0.02, 0, 1)} />)}
-          <g transform="translate(560 420)" opacity={kprog(T, K.Ge + 0.4, K.Ge + 0.9)}>
+          <g transform="translate(530 420)" opacity={kprog(T, K.Ge + 0.4, K.Ge + 0.9)}>
             <MapaMexico x={0} y={0} ancho={460} conCA={false}>
               {(() => { const [px, py] = mxProy(-107.63, 27.75); return <circle cx={px} cy={py} r={20 + 6 * Math.sin(T * 6)} fill={KC.red} stroke={KC.ink} strokeWidth={6} />; })()}
             </MapaMexico>
-          </g>
+          </g></Zg>
         </>)}
       </Escena>
 
@@ -329,30 +340,31 @@ function TesguinoShot() {
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={20} />
         {fsvg(<>
-          {/* capa de aleurona arriba (de ahí salen las enzimas) */}
+          <Zg {...ZM}>{/* capa de aleurona arriba (de ahí salen las enzimas) */}
           {Array.from({ length: 9 }, (_, i) => <rect key={i} x={90 + i * 102} y={560} width={96} height={70} rx={14} fill="#c9a86a" stroke={KC.ink} strokeWidth={5} />)}
           {/* granos de almidón poliédricos del endospermo (fondo) */}
           {Array.from({ length: 12 }, (_, i) => { const cx = 140 + (i % 6) * 160, cy = 690 + Math.floor(i / 6) * 420; return <path key={'p' + i} d={Array.from({ length: 6 }, (_, k) => { const a = k * Math.PI / 3 + i; return `${k ? 'L' : 'M'} ${(cx + 44 * Math.cos(a)).toFixed(0)} ${(cy + 38 * Math.sin(a)).toFixed(0)}`; }).join(' ') + ' Z'} fill="rgba(244,239,228,.12)" stroke="rgba(244,239,228,.35)" strokeWidth={4} />; })}
           {[0, 1, 2, 3].map((i) => <CadenaAlmidon key={i} T={T} x={200} y={770 + i * 95} n={11} paso={66} seed={i + 1} corte={kprog(T, K.M + 0.4 + i * 0.25, K.M + 2.1 + i * 0.25)} />)}
-        </>)}
+        </Zg></>)}
       </Escena>
 
       {/* 4 · metate, cocción y ollas de barro: así nace el tesgüino */}
       <Escena T={T} a={K.A} b={K.L} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <g opacity={1 - kprog(T, K.A + 1.4, K.A + 1.8)}><Metate T={T} x={540} y={980} s={1.4} muele={1} /></g>
+          <Zg {...ZA}><g opacity={1 - kprog(T, K.A + 1.4, K.A + 1.8)}><Metate T={T} x={540} y={980} s={1.4} muele={1} /></g>
           <g opacity={kprog(T, K.A + 1.4, K.A + 1.8) * (1 - kprog(T, K.A + 2.9, K.A + 3.3))}>
+            <g transform="translate(540 900) scale(1.3) translate(-540 -900)">
             <Fuego T={T} x={540} y={1120} s={1.3} />
             <Olla T={T} x={540} y={1010} s={1.0} burb={3} id="oc" />
-            <Vapor T={T} x={540} y={600} />
+            <Vapor T={T} x={540} y={600} /></g>
           </g>
           <g opacity={kprog(T, K.A + 2.9, K.A + 3.3)}>
             <Olla T={T} x={300} y={1110} s={0.85} burb={0.5} id="oa" />
             <Olla T={T} x={760} y={1110} s={0.85} burb={0.5} id="ob" />
             <Canasta x={300 + 460 * kprog(T, K.A + 3.6, K.A + 4.3, kEase.suave)} y={640} s={0.8} />
             <Goteo T={T} x={300 + 460 * kprog(T, K.A + 3.6, K.A + 4.3, kEase.suave)} y0={690} y1={790} cada={0.12} color={TG.atole} desde={K.A + 3.1} />
-          </g>
+          </g></Zg>
         </>)}
       </Escena>
 
@@ -361,27 +373,27 @@ function TesguinoShot() {
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={18} color="rgba(244,194,90,.35)" />
         {fsvg(<>
-          {Array.from({ length: 22 }, (_, i) => { const ph = (T * 0.35 + i * 0.11) % 1; return <circle key={'c' + i} cx={120 + ((i * 47) % 860)} cy={1150 - ph * 700} r={8 + (i % 4) * 5} fill="none" stroke="#e8f7ff" strokeWidth={4} opacity={(1 - ph) * kprog(T, K.L + 1.6, K.L + 2.4)} />; })}
+          <Zg {...ZL}>{Array.from({ length: 22 }, (_, i) => { const ph = (T * 0.35 + i * 0.11) % 1; return <circle key={'c' + i} cx={120 + ((i * 47) % 860)} cy={1150 - ph * 700} r={8 + (i % 4) * 5} fill="none" stroke="#e8f7ff" strokeWidth={4} opacity={(1 - ph) * kprog(T, K.L + 1.6, K.L + 2.4)} />; })}
           {Array.from({ length: 12 }, (_, i) => <circle key={'s' + i} cx={140 + ((i * 83) % 820) + mece(T, i, 0.3) * 20} cy={620 + ((i * 59) % 480)} r={10} fill={TG.azucar} stroke={KC.ink} strokeWidth={2} opacity={1 - kprog(T, K.L + 1.0 + i * 0.08, K.L + 2.0 + i * 0.08)} />)}
           {[[330, 820, 0], [660, 760, 1], [520, 1010, 2], [800, 1000, 3]].map(([lx, ly, i]) =>
             <Levadura key={i} x={lx} y={ly} r={i === 0 ? 105 : 72} rot={i * 40} T={T} seed={i + 2} brote={kprog(T, K.L + 0.4 + i * 0.5, K.L + 3.4 + i * 0.4)} />)}
           {[0, 1, 2, 3, 4].map((i) => { const ph = kprog(T, K.L + 2.2 + i * 0.5, K.L + 4.2 + i * 0.5); return ph > 0 && ph < 1 ? <Etanol key={'e' + i} x={150 + i * 90 + ph * 40} y={1000 - ph * 200} s={0.9} o={Math.sin(Math.PI * ph)} /> : null; })}
           {[[620, 640, 20], [960, 920, -30], [880, 1120, 60]].map(([bx, by, r], i) => <BacteriaC key={'b' + i} x={bx} y={by} rot={r + mece(T, i, 0.2) * 10} s={0.55} color={KC.mint} T={T} seed={i} />)}
-        </>)}
+        </Zg></>)}
       </Escena>
 
       {/* 6 · las burbujas marcan las fases */}
       <Escena T={T} a={K.B} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Olla T={T} x={810} y={1110} s={0.9} burb={burbFase} lienzo={0} id="of" />
-          <rect x={50} y={555} width={500} height={540} rx={28} fill="rgba(255,255,255,.88)" stroke={KC.ink} strokeWidth={5} />
-          {TX.fasesLista.map((f, i) => { const on = fase >= i; const yy = 620 + i * 130; const [a, b] = f.includes(':') ? [f.split(':')[0] + ':', f.split(':')[1].trim()] : [f, ''];
+          <Olla T={T} x={540} y={1450} s={1.5} burb={burbFase} lienzo={0} id="of" />
+          <rect x={50} y={440} width={980} height={300} rx={28} fill="rgba(12,16,30,.86)" stroke={KC.ink} strokeWidth={4} />
+          {TX.fasesLista.map((f, i) => { const on = fase >= i; const cx = 110 + (i % 2) * 490, yy = 520 + Math.floor(i / 2) * 140; const [a, b] = f.includes(':') ? [f.split(':')[0] + ':', f.split(':')[1].trim()] : [f, ''];
             return <g key={i} opacity={on ? 1 : 0.45}>
-              <circle cx={110} cy={yy} r={36} fill={on ? (fase === i ? KC.pink : KC.gold2) : '#fff'} stroke={KC.ink} strokeWidth={6} />
-              <text x={110} y={yy + 15} textAnchor="middle" style={{ font:`400 42px ${KF.titulo}` }} fill={KC.ink}>{i + 1}</text>
-              <text x={165} y={yy + (b ? -2 : 12)} style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>{a}</text>
-              {b && <text x={165} y={yy + 40} style={{ font:`700 34px ${KF.texto}` }} fill={KC.ink}>{b}</text>}
+              <circle cx={cx} cy={yy} r={36} fill={on ? (fase === i ? KC.pink : KC.gold2) : '#1a2236'} stroke={KC.ink} strokeWidth={5} />
+              <text x={cx} y={yy + 15} textAnchor="middle" style={{ font:`400 42px ${KF.titulo}` }} fill={on ? '#0b1020' : KC.ink}>{i + 1}</text>
+              <text x={cx + 55} y={yy + (b ? -2 : 12)} style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>{a}</text>
+              {b && <text x={cx + 55} y={yy + 40} style={{ font:`700 34px ${KF.texto}` }} fill={KC.ink}>{b}</text>}
             </g>; })}
         </>)}
       </Escena>
@@ -389,21 +401,21 @@ function TesguinoShot() {
       {/* 7 · re-gancho: ¿de dónde salen las levaduras? */}
       <Escena T={T} a={K.P} b={K.O} zoom={0.08}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Olla T={T} x={300} y={1110} s={1.1} burb={1} id="op" /><Interrogacion T={T} x={300} y={600} tam={300} /></>)}
+        {fsvg(<><Olla T={T} x={540} y={1450} s={1.5} burb={1} id="op" /><Interrogacion T={T} x={540} y={800} tam={360} /></>)}
       </Escena>
 
       {/* 8 · las ollas no se lavan: costra con levaduras de la tanda anterior */}
       <Escena T={T} a={K.O} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Olla T={T} x={330} y={1100} s={1.15} corte costra={kprog(T, K.O + 0.4, K.O + 1.4)} id="ok" />
+          <Olla T={T} x={420} y={1380} s={1.6} corte costra={kprog(T, K.O + 0.4, K.O + 1.4)} id="ok" />
           <g opacity={kprog(T, K.O + 3.0, K.O + 3.5)}>
-            <path d="M 160 470 A 210 70 0 1 1 560 470" fill="none" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
-            <path d="M 560 470 l -34 -24 m 34 24 l -40 14" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" fill="none" />
+            <path d="M 220 690 A 210 70 0 1 1 620 690" fill="none" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
+            <path d="M 620 690 l -34 -24 m 34 24 l -40 14" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" fill="none" />
           </g>
         </>)}
       </Escena>
-      <Lupa T={T} at={K.O + 1.5} until={K.E - 0.3} x={800} y={860} r={180} fx={330 + 150 * 1.15} fy={1100 - 120 * 1.15} tinte={KC.yellow}
+      <Lupa T={T} at={K.O + 1.5} until={K.E - 0.3} x={860} y={560} r={180} fx={420 + 150 * 1.6} fy={1380 - 120 * 1.6} tinte={KC.yellow}
         interior={(Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#4a2c12" />
           {Array.from({ length: 30 }, (_, i) => <circle key={i} cx={((i * 37) % 100) / 100 * r * 2} cy={((i * 53 + 11) % 100) / 100 * r * 2} r={6 + (i % 5) * 4} fill={i % 2 ? '#7a4a22' : '#5e3818'} />)}
           {[[0.3, 0.35], [0.62, 0.3], [0.45, 0.62], [0.72, 0.68], [0.25, 0.72]].map(([u, v], i) => <Levadura key={'l' + i} x={u * r * 2} y={v * r * 2} r={r * 0.13} brote={i % 2 ? 0.5 : 0} rot={i * 60} T={Tl * 0.3} seed={i + 4} />)}
@@ -412,12 +424,12 @@ function TesguinoShot() {
       {/* 9 · el estudio de 1981: del sedimento de la olla a las cajas de Petri */}
       <Escena T={T} a={K.E} b={K.Pa} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<g opacity={kprog(T, K.E + 3.2, K.E + 3.7)}>
-          <Olla T={T} x={190} y={1100} s={0.62} corte costra={1} id="oe" />
-          <path d={`M 250 980 Q 380 ${820} ${klerp(260, 470, kprog(T, K.E + 3.6, K.E + 4.4))} 800`} stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="18 12" />
-          {[[560, 860], [800, 980], [580, 1080]].map(([px, py], i) => <Petri key={i} x={px} y={py} r={100}>
+        {fsvg(<g>
+          <Olla T={T} x={290} y={1400} s={1.0} corte costra={1} id="oe" />
+          <path d={`M 380 1010 Q 450 ${820} ${klerp(400, 540, kprog(T, K.E + 3.6, K.E + 4.4))} 770`} stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="18 12" opacity={kprog(T, K.E + 3.2, K.E + 3.7)} />
+          {[[660, 770], [900, 990], [690, 1190]].map(([px, py], i) => <g key={i} transform={`translate(${px} ${py}) scale(1.3)`}><Petri x={0} y={0} r={100}>
             {Array.from({ length: 7 }, (_, k) => <Colonia key={k} cx={Math.cos(k * 2.3 + i) * 52} cy={Math.sin(k * 2.3 + i) * 52} r={(10 + (k % 3) * 6) * kprog(T, K.E + 3.9 + i * 0.3 + k * 0.05, K.E + 4.8 + i * 0.3)} color="#fffaf0" seed={k + i * 7} />)}
-          </Petri>)}
+          </Petri></g>)}
         </g>)}
       </Escena>
 
@@ -425,10 +437,10 @@ function TesguinoShot() {
       <Escena T={T} a={K.Pa} b={K.Te} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Bromus T={T} x={290} y={1150} s={1.0} />
+          <Bromus T={T} x={330} y={1420} s={1.5} />
           <g opacity={kprog(T, K.Pa + 1.6, K.Pa + 2.0)}>
-            <Tubo x={760} y={1150} s={1.0} color={TG.yodo} nivel={0.55} />
-            <Goteo T={T} x={760} y0={790} y1={980} cada={0.4} color="#6a3a9a" desde={K.Pa + 1.9} hasta={K.Pa + 2.8} />
+            <Tubo x={780} y={1420} s={1.5} color={TG.yodo} nivel={0.55} />
+            <Goteo T={T} x={780} y0={900} y1={1170} cada={0.4} color="#6a3a9a" desde={K.Pa + 1.9} hasta={K.Pa + 2.8} />
           </g>
         </>)}
       </Escena>
@@ -437,16 +449,16 @@ function TesguinoShot() {
       <Escena T={T} a={K.Te} b={K.R} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <rect x={0} y={1010} width={1080} height={200} fill="#c9a35a" opacity=".6" />
+          <Zg {...ZT}><rect x={-200} y={1010} width={1480} height={260} fill="#5a4628" opacity=".85" />
           {[0, 1, 2, 3, 4, 5].map((i) => <g key={i}><line x1={620 + i * 70} y1={1020} x2={620 + i * 70} y2={870} stroke="#6b3d1a" strokeWidth={14} strokeLinecap="round" /></g>)}
           <line x1={600} y1={900} x2={1000} y2={900} stroke="#6b3d1a" strokeWidth={12} /><line x1={600} y1={960} x2={1000} y2={960} stroke="#6b3d1a" strokeWidth={12} />
-          {(() => { const avz = kprog(T, K.Te, K.Te + 3.5, kEase.suave) * 140; return <g transform={`translate(${avz} 0)`}>
+          {(() => { const avz = 40 + kprog(T, K.Te, K.Te + 3.5, kEase.suave) * 140; return <g transform={`translate(${avz} 0)`}>
             <rect x={90} y={738} width={420} height={26} rx={12} fill="#8a5a2a" stroke={KC.ink} strokeWidth={6} />
             <Persona T={T} x={150} y={1000} s={1} color={KC.teal} seed={1} />
             <Persona T={T} x={300} y={1000} s={1} color={KC.coral} seed={2} />
             <Persona T={T} x={450} y={1000} s={1} color={KC.blue} seed={3} />
           </g>; })()}
-          <g opacity={kprog(T, K.Te + 2.0, K.Te + 2.5)}><Olla T={T} x={880} y={1160} s={0.45} burb={1} id="ot" /></g>
+          <g opacity={kprog(T, K.Te + 2.0, K.Te + 2.5)}><Olla T={T} x={880} y={1160} s={0.45} burb={1} id="ot" /></g></Zg>
         </>)}
       </Escena>
 
@@ -454,13 +466,13 @@ function TesguinoShot() {
       <Escena T={T} a={K.R} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <g transform="translate(840 1010)">
+          <g transform="translate(600 1300) scale(1.6)">
             <rect x={-200} y={-300} width={400} height={300} fill="#e9e4d8" stroke={KC.ink} strokeWidth={8} />
             <path d="M -230 -300 L 0 -400 L 230 -300 Z" fill="#c9c2b0" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
             {[-130, -40, 50, 140].map((dx) => <rect key={dx} x={dx - 22} y={-250} width={44} height={180} fill="#9aa3b0" stroke={KC.ink} strokeWidth={5} />)}
-            <text x={0} y={-330} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>UNAM</text>
+            <text x={0} y={-330} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill="#0b1020">UNAM</text>
           </g>
-          {(() => { const v = kprog(T, K.R + 0.3, K.R + 2.2, kEase.suave); return <Sobre x={klerp(330, 700, v)} y={klerp(620, 860, v) - Math.sin(Math.PI * v) * 120} s={klerp(1.0, 0.62, v)} rot={klerp(-8, 6, v)} />; })()}
+          {(() => { const v = kprog(T, K.R + 0.3, K.R + 2.2, kEase.suave); return <Sobre x={klerp(330, 600, v)} y={klerp(700, 1120, v) - Math.sin(Math.PI * v) * 120} s={klerp(1.25, 0.8, v)} rot={klerp(-8, 6, v)} />; })()}
         </>)}
       </Escena>
 
@@ -468,81 +480,83 @@ function TesguinoShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Olla T={T} x={330} y={1110} s={1.2} burb={2.2 + Math.sin(T * 2)} id="oz" />
+          <Olla T={T} x={OX} y={OY} s={OS} burb={2.2 + Math.sin(T * 2)} id="oz" />
           <g opacity={kprog(T, K.C + 2.4, K.C + 2.9)}>
-            <path d="M 150 600 A 180 50 0 1 1 510 600" fill="none" stroke={KC.ink} strokeWidth={10} strokeDasharray="20 12" strokeDashoffset={-T * 40} strokeLinecap="round" />
-            <path d="M 510 600 l -40 -14 m 40 14 l -6 -42" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" fill="none" />
+            <path d={`M ${OX - 220} ${OB - 60} A 220 55 0 1 1 ${OX + 220} ${OB - 60}`} fill="none" stroke={KC.ink} strokeWidth={10} strokeDasharray="20 12" strokeDashoffset={-T * 40} strokeLinecap="round" />
+            <path d={`M ${OX + 220} ${OB - 60} l -40 -14 m 40 14 l -6 -42`} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" fill="none" />
           </g>
         </>)}
       </Escena>
-      <Lupa T={T} at={K.C + 0.6} until={K.Ou - 0.2} x={790} y={930} r={170} fx={330} fy={666} tinte={KC.gold} interior={(Tl, r) => InteriorOlla(Tl, r, true)} />
+      <Lupa T={T} at={K.C + 0.6} until={K.Ou - 0.2} x={840} y={450} r={185} fx={OX} fy={OB} tinte={KC.gold} interior={(Tl, r) => InteriorOlla(Tl, r, true)} />
 
       {/* ============ textos (todos salen de TX) ============ */}
-      <Etq T={T} at={K.G + 0.4} until={K.Ge - 0.3} x={60} y={430} texto={TX.nombre} tam={58} color={KC.ink} />
-      <Rotulo T={T} at={K.G + 0.9} until={K.Ge - 0.3} x={60} y={500} texto={TX.nombreRaramuri} tam={28} color={KC.ink} fondo="rgba(255,255,255,.75)" />
-      <Rotulo T={T} at={K.G + 1.2} until={K.Ge - 0.3} x={770} y={1160} texto={TX.levaduraComun} tam={26} centro color={KC.ink} fondo="rgba(255,255,255,.85)" />
+      <Etq T={T} at={K.G + 0.4} until={K.Ge - 0.3} x={50} y={360} texto={TX.nombre} tam={64} color={KC.ink} />
+      <Rotulo T={T} at={K.G + 0.9} until={K.Ge - 0.3} x={50} y={440} texto={TX.nombreRaramuri} tam={28} color={KC.ink} fondo="rgba(255,255,255,.75)" />
+      <Rotulo T={T} at={K.G + 1.2} until={K.Ge - 0.3} x={860} y={680} texto={TX.levaduraComun} tam={26} centro color={KC.ink} fondo="rgba(255,255,255,.85)" />
 
-      <Chip T={T} at={K.Ge + 0.5} until={K.M - 0.3} texto={TX.lugar} x={540} y={370} tam={30} borde={KC.mint} />
-      <Rotulo T={T} at={K.Ge + 0.3} until={K.M - 0.3} x={150} y={850} texto={germ < 0.5 ? TX.dias[0] : TX.dias[1]} tam={40} color={KC.texto} />
-      <Etq T={T} at={K.Ge + 1.8} until={K.M - 0.3} x={300} y={790} texto={TX.brote} tam={26} color={KC.texto} />
+      <Chip T={T} at={K.Ge + 0.5} until={K.M - 0.3} texto={TX.lugar} x={540} y={430} tam={30} borde={KC.mint} />
+      <Rotulo T={T} at={K.Ge + 0.3} until={K.M - 0.3} x={zp(ZGe, 150, 850)[0]} y={zp(ZGe, 150, 850)[1]} texto={germ < 0.5 ? TX.dias[0] : TX.dias[1]} tam={40} color={KC.texto} />
+      <Etq T={T} at={K.Ge + 1.8} until={K.M - 0.3} x={zp(ZGe, 300, 790)[0]} y={zp(ZGe, 300, 790)[1]} texto={TX.brote} tam={26} color={KC.texto} />
 
-      <Chip T={T} at={K.M + 0.1} until={K.M + 2.1} texto={TX.porDentroGrano} x={540} y={470} tam={32} borde={KC.cyan} mono />
-      <Rotulo T={T} at={K.M + 0.5} until={K.A - 0.3} x={90} y={700} texto={TX.almidon} tam={30} color={TG.almidon} />
-      <Rotulo T={T} at={K.M + 0.9} until={K.A - 0.3} x={540} y={700} texto={TX.enzimas} tam={30} color={TG.enzima} />
-      <Rotulo T={T} at={K.M + 1.6} until={K.A - 0.3} x={760} y={1150} texto={TX.azucar} tam={34} color={TG.azucar} />
-      <Chip T={T} at={K.M + 2.4} until={K.A - 0.2} texto={TX.malta} x={400} y={470} tam={44} borde={KC.gold} />
+      <Chip T={T} at={K.M + 0.1} until={K.M + 2.1} texto={TX.porDentroGrano} x={540} y={560} tam={32} borde={KC.cyan} mono />
+      <Rotulo T={T} at={K.M + 0.5} until={K.A - 0.3} x={zp(ZM, 90, 700)[0] + 10} y={zp(ZM, 90, 700)[1]} texto={TX.almidon} tam={30} color={TG.almidon} />
+      <Rotulo T={T} at={K.M + 0.9} until={K.A - 0.3} x={zp(ZM, 540, 700)[0]} y={zp(ZM, 540, 700)[1]} texto={TX.enzimas} tam={30} color={TG.enzima} />
+      <Rotulo T={T} at={K.M + 1.6} until={K.A - 0.3} x={zp(ZM, 760, 1150)[0]} y={zp(ZM, 760, 1150)[1] + 20} texto={TX.azucar} tam={34} color={TG.azucar} />
+      <Chip T={T} at={K.M + 2.4} until={K.A - 0.2} texto={TX.malta} x={400} y={560} tam={44} borde={KC.gold} />
 
-      <Rotulo T={T} at={K.A + 0.2} until={K.A + 1.4} x={540} y={760} texto={TX.metate} tam={36} centro color={KC.ink} fondo="rgba(255,255,255,.8)" />
-      <Rotulo T={T} at={K.A + 1.6} until={K.A + 2.9} x={540} y={470} texto={TX.horas} tam={32} centro color={KC.ink} fondo="rgba(255,255,255,.8)" />
+      <Rotulo T={T} at={K.A + 0.2} until={K.A + 1.4} x={540} y={700} texto={TX.metate} tam={36} centro color={KC.ink} fondo="rgba(255,255,255,.8)" />
+      <Rotulo T={T} at={K.A + 1.6} until={K.A + 2.9} x={540} y={420} texto={TX.horas} tam={32} centro color={KC.ink} fondo="rgba(255,255,255,.8)" />
       <Rotulo T={T} at={K.A + 3.1} until={K.L - 0.3} x={540} y={470} texto={TX.nombre.toUpperCase()} tam={90} centro color={KC.ink} fondo="rgba(255,255,255,.85)" />
 
-      <Chip T={T} at={K.L + 0.1} until={K.B - 0.3} texto={TX.porDentroOlla} x={430} y={470} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.L + 0.6} until={K.B - 0.3} x={60} y={600} texto={TX.levadura} it tam={34} color={KC.texto} />
-      <Rotulo T={T} at={K.L + 1.0} until={K.B - 0.3} x={150} y={650} texto={TX.levaduraComun} tam={26} color={KC.gold2} />
-      <Rotulo T={T} at={K.L + 2.4} until={K.B - 0.3} x={250} y={1060} texto={TX.etanol} tam={28} color={KC.texto} />
-      <Rotulo T={T} at={K.L + 2.0} until={K.B - 0.3} x={880} y={800} texto={TX.co2} tam={34} color="#e8f7ff" />
-      <Rotulo T={T} at={K.L + 3.6} until={K.B - 0.3} x={60} y={1150} texto={TX.otras} tam={24} color={KC.texto} it />
-      <Rotulo T={T} at={K.L + 4.2} until={K.B - 0.3} x={60} y={1190} texto={TX.lacticas} tam={24} color={KC.mint} />
+      <Chip T={T} at={K.L + 0.1} until={K.B - 0.3} texto={TX.porDentroOlla} x={540} y={470} tam={30} borde={KC.cyan} mono />
+      <Etq T={T} at={K.L + 0.6} until={K.B - 0.3} x={40} y={620} texto={TX.levadura} it tam={34} color={KC.texto} />
+      <Rotulo T={T} at={K.L + 1.0} until={K.B - 0.3} x={130} y={672} texto={TX.levaduraComun} tam={26} color={KC.gold2} />
+      <Rotulo T={T} at={K.L + 2.4} until={K.B - 0.3} x={70} y={1215} texto={TX.etanol} tam={28} color={KC.texto} />
+      <Rotulo T={T} at={K.L + 2.0} until={K.B - 0.3} x={900} y={700} texto={TX.co2} tam={34} color="#e8f7ff" />
+      <Rotulo T={T} at={K.L + 3.6} until={K.B - 0.3} x={50} y={1380} texto={TX.otras} tam={24} color={KC.texto} it />
+      <Rotulo T={T} at={K.L + 4.2} until={K.B - 0.3} x={50} y={1420} texto={TX.lacticas} tam={24} color={KC.mint} />
 
-      <Chip T={T} at={K.B + 0.1} until={K.P - 0.2} texto={TX.fases} x={540} y={470} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.B + 0.1} until={K.P - 0.2} texto={TX.fases} x={540} y={385} tam={32} borde={KC.ink} />
 
-      <Chip T={T} at={K.O + 0.3} until={K.E - 0.3} texto={TX.noSeLavan} x={360} y={560} tam={40} borde={KC.red} />
-      <Rotulo T={T} at={K.O + 1.2} until={K.E - 0.3} x={110} y={1160} texto={TX.costra} tam={26} color={KC.ink} fondo="rgba(255,255,255,.8)" />
-      <Rotulo T={T} at={K.O + 3.1} until={K.E - 0.3} x={360} y={400} texto={TX.ciclo} tam={26} centro color={KC.ink} fondo="rgba(255,255,255,.85)" />
+      <Chip T={T} at={K.O + 0.3} until={K.E - 0.3} texto={TX.noSeLavan} x={330} y={520} tam={40} borde={KC.red} />
+      <Rotulo T={T} at={K.O + 1.2} until={K.E - 0.3} x={130} y={1450} texto={TX.costra} tam={26} color={KC.ink} fondo="rgba(255,255,255,.8)" />
+      <Rotulo T={T} at={K.O + 3.1} until={K.E - 0.3} x={420} y={430} texto={TX.ciclo} tam={26} centro color={KC.ink} fondo="rgba(255,255,255,.85)" />
 
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.2} anio={TX.estudioAnio} quien={TX.estudioQuien} revista={TX.estudioDonde} x={470} y={960} />
-      <Chip T={T} at={K.E + 3.4} until={K.Pa - 0.3} texto={TX.fuenteSedimento} x={400} y={470} tam={32} borde={KC.gold} />
-      <Rotulo T={T} at={K.E + 4.6} until={K.Pa - 0.3} x={60} y={560} texto={TX.delSedimento} tam={24} it color={KC.ink} fondo="rgba(255,255,255,.85)" />
-      <Rotulo T={T} at={K.E + 5.6} until={K.Pa - 0.3} x={60} y={630} texto={TX.etanolDato} tam={22} color={KC.ink} fondo="rgba(255,255,255,.7)" />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.2} anio={TX.estudioAnio} quien={TX.estudioQuien} revista={TX.estudioDonde} x={480} y={420} />
+      <Chip T={T} at={K.E + 3.4} until={K.Pa - 0.3} texto={TX.fuenteSedimento} x={400} y={440} tam={32} borde={KC.gold} />
+      <Rotulo T={T} at={K.E + 4.6} until={K.Pa - 0.3} x={50} y={520} texto={TX.delSedimento} tam={24} it color={KC.ink} fondo="rgba(255,255,255,.85)" />
+      <Rotulo T={T} at={K.E + 5.6} until={K.Pa - 0.3} x={50} y={590} texto={TX.etanolDato} tam={22} color={KC.ink} fondo="rgba(255,255,255,.7)" />
 
-      <Etq T={T} at={K.Pa + 0.4} until={K.Te - 0.3} x={340} y={610} texto={TX.pastoComun} tam={38} color={KC.ink} />
-      <Etq T={T} at={K.Pa + 0.8} until={K.Te - 0.3} x={345} y={700} texto={TX.pasto} it tam={32} color={KC.ink} />
-      <Rotulo T={T} at={K.Pa + 1.7} until={K.Te - 0.3} x={760} y={800} texto={TX.yodo} tam={24} centro color={KC.ink} fondo="rgba(255,255,255,.85)" />
-      <Chip T={T} at={K.Pa + 2.6} until={K.Te - 0.3} texto={TX.sinEnzimas} x={700} y={470} tam={34} borde={KC.red} />
-      <Rotulo T={T} at={K.Pa + 3.3} until={K.Te - 0.3} x={700} y={545} centro texto={TX.hipotesis} tam={24} color={KC.ink} fondo="rgba(255,255,255,.8)" />
+      <Etq T={T} at={K.Pa + 0.4} until={K.Te - 0.3} x={400} y={680} texto={TX.pastoComun} tam={38} color={KC.ink} />
+      <Etq T={T} at={K.Pa + 0.8} until={K.Te - 0.3} x={405} y={780} texto={TX.pasto} it tam={32} color={KC.ink} />
+      <Rotulo T={T} at={K.Pa + 1.7} until={K.Te - 0.3} x={780} y={840} texto={TX.yodo} tam={24} centro color={KC.ink} fondo="rgba(255,255,255,.85)" />
+      <Chip T={T} at={K.Pa + 2.6} until={K.Te - 0.3} texto={TX.sinEnzimas} x={740} y={520} tam={34} borde={KC.red} />
+      <Rotulo T={T} at={K.Pa + 3.3} until={K.Te - 0.3} x={740} y={600} centro texto={TX.hipotesis} tam={24} color={KC.ink} fondo="rgba(255,255,255,.8)" />
 
-      <Chip T={T} at={K.Te + 0.4} until={K.R - 0.3} texto={TX.sagrada} x={330} y={470} tam={36} borde={KC.gold} />
-      <Chip T={T} at={K.Te + 1.6} until={K.R - 0.3} texto={TX.pago} x={420} y={560} tam={32} borde={KC.teal} />
+      <Chip T={T} at={K.Te + 0.4} until={K.R - 0.3} texto={TX.sagrada} x={330} y={540} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.Te + 1.6} until={K.R - 0.3} texto={TX.pago} x={420} y={630} tam={32} borde={KC.teal} />
 
-      <Chip T={T} at={K.R + 2.4} until={K.C - 0.3} texto={TX.noSoyYo} x={800} y={470} tam={34} borde={KC.pink} />
-      <Rotulo T={T} at={K.R + 3.9} until={K.C - 0.3} x={760} y={560} centro texto={TX.bye} tam={24} color={KC.ink} fondo="rgba(255,255,255,.88)" />
+      <Chip T={T} at={K.R + 2.4} until={K.C - 0.3} texto={TX.noSoyYo} x={600} y={450} tam={34} borde={KC.pink} />
+      <Rotulo T={T} at={K.R + 3.9} until={K.C - 0.3} x={600} y={545} centro texto={TX.bye} tam={24} color={KC.ink} fondo="rgba(255,255,255,.88)" />
 
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.fabrica} x={290} y={390} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.C + 3.9} until={K.Ou} texto={TX.saber} x={330} y={980} tam={30} borde={KC.gold} />
-      <Rotulo T={T} at={K.C + 2.4} until={K.Ou} x={330} y={480} centro texto={TX.tandas} tam={30} color={KC.ink} fondo="rgba(255,255,255,.85)" />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto={TX.fabrica} x={290} y={340} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.C + 3.9} until={K.Ou} texto={TX.saber} x={OX} y={1460} tam={30} borde={KC.gold} />
+      <Rotulo T={T} at={K.C + 2.4} until={K.Ou} x={290} y={430} centro texto={TX.tandas} tam={30} color={KC.ink} fondo="rgba(255,255,255,.85)" />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Ge} texto="20 cm" largo={190} />
-      <BarraEscala T={T} at={K.Ge} until={K.M} texto="1 cm" largo={90} />
-      <BarraEscala T={T} at={K.M} until={K.A} texto="10 µm (esquemático)" largo={160} />
-      <BarraEscala T={T} at={K.A} until={K.L} texto="20 cm" largo={150} />
-      <BarraEscala T={T} at={K.L} until={K.B} texto="5 µm" largo={130} />
-      <BarraEscala T={T} at={K.B} until={K.O} texto="20 cm" largo={200} />
-      <BarraEscala T={T} at={K.O} until={K.E} texto="20 cm" largo={190} />
-      <BarraEscala T={T} at={K.E} until={K.Pa} texto="caja de Petri: 9 cm" largo={180} />
-      <BarraEscala T={T} at={K.Pa} until={K.Te} texto="5 cm" largo={160} />
-      <BarraEscala T={T} at={K.Te} until={K.R} texto="1 m" largo={170} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="20 cm" largo={190} />
+      <BarraEscala T={T} at={K.G} until={K.Ge} texto="20 cm" largo={269} />
+      <BarraEscala T={T} at={K.Ge} until={K.M} texto="1 cm" largo={104} />
+      <BarraEscala T={T} at={K.M} until={K.A} texto="10 µm (esquemático)" largo={176} />
+      <BarraEscala T={T} at={K.A} until={K.A + 1.6} texto="20 cm" largo={173} />
+      <BarraEscala T={T} at={K.A + 1.6} until={K.A + 3.1} texto="20 cm" largo={225} />
+      <BarraEscala T={T} at={K.A + 3.1} until={K.L} texto="20 cm" largo={173} />
+      <BarraEscala T={T} at={K.L} until={K.B} texto="5 µm" largo={169} />
+      <BarraEscala T={T} at={K.B} until={K.O} texto="20 cm" largo={333} />
+      <BarraEscala T={T} at={K.O} until={K.E} texto="20 cm" largo={264} />
+      <BarraEscala T={T} at={K.E} until={K.Pa} texto="caja de Petri: 9 cm" largo={234} />
+      <BarraEscala T={T} at={K.Pa} until={K.Te} texto="5 cm" largo={240} />
+      <BarraEscala T={T} at={K.Te} until={K.R} texto="1 m" largo={212} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="20 cm" largo={269} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       {[K.G, K.Ge, K.M, K.A, K.L, K.B, K.P, K.O, K.E, K.Pa, K.Te, K.R, K.C].map((a, i, arr) =>

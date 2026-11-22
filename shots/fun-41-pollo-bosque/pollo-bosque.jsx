@@ -177,19 +177,19 @@ function PolloBosqueShot() {
       <Escena T={T} a={K.G} b={K.R} zoom={-0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <g transform={`translate(${klerp(0, -60, kprog(T, K.G + 1.8, K.G + 3.2, kEase.suave))} 0)`}><Plato T={T} x={400} y={1010} s={1.05} lev={lev} /></g>
-          <g opacity={kprog(T, K.G + 1.8, K.G + 2.6)}><TroncoRepisas T={T} x={850} y0={680} y1={1180} ancho={170} g={kprog(T, K.G + 1.9, K.G + 3.4)} /></g>
-          <Sello T={T} at={K.G + 1.0} x={290} y={620} texto="NO" color={KC.red} r={110} />
+          <g transform={`translate(${klerp(0, -250, kprog(T, K.G + 1.8, K.G + 3.2, kEase.suave))} 0)`}><Plato T={T} x={540} y={1060} s={1.6} lev={lev} /></g>
+          <g opacity={kprog(T, K.G + 1.8, K.G + 2.6)}><TroncoRepisas T={T} x={850} y0={560} y1={1300} ancho={200} g={kprog(T, K.G + 1.9, K.G + 3.4)} /></g>
+          <Sello T={T} at={K.G + 1.0} x={290} y={600} texto="NO" color={KC.red} r={110} />
         </>)}
       </Escena>
       {/* 1–2 · las repisas en el tronco de encino; la Lupa entra al corazón del tronco */}
       <Escena T={T} a={K.R} b={K.Cu} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          {[[150, 330], [330, 260], [880, 250]].map(([hx, hy], i) => <path key={i} transform={`translate(${hx} ${hy}) rotate(${i * 30 - 20 + mece(T, i, 0.4) * 4})`} d="M 0 -40 Q 18 -30 12 -16 Q 30 -10 20 6 Q 34 14 16 24 Q 10 40 0 40 Q -10 40 -16 24 Q -34 14 -20 6 Q -30 -10 -12 -16 Q -18 -30 0 -40 Z" fill="#2f9e44" stroke={KC.ink} strokeWidth={4} />)}
-          <TroncoRepisas T={T} x={560} y0={160} y1={1300} ancho={250} g={kprog(T, K.R + 0.2, K.R + 2.4)} />
+          {[[150, 400], [330, 340], [880, 330]].map(([hx, hy], i) => <path key={i} transform={`translate(${hx} ${hy}) rotate(${i * 30 - 20 + mece(T, i, 0.4) * 4})`} d="M 0 -40 Q 18 -30 12 -16 Q 30 -10 20 6 Q 34 14 16 24 Q 10 40 0 40 Q -10 40 -16 24 Q -34 14 -20 6 Q -30 -10 -12 -16 Q -18 -30 0 -40 Z" fill="#2f9e44" stroke={KC.ink} strokeWidth={4} />)}
+          <TroncoRepisas T={T} x={560} y0={300} y1={1430} ancho={290} g={kprog(T, K.R + 0.2, K.R + 2.4)} />
         </>)}
-        <Lupa T={T} at={K.Co + 0.1} until={K.Cu - 0.25} x={400} y={760} r={250} fx={560} fy={860} tinte={KC.cyan} etiqueta="POR DENTRO · el tronco"
+        <Lupa T={T} at={K.Co + 0.1} until={K.Cu - 0.25} x={400} y={900} r={280} fx={560} fy={1000} tinte={KC.cyan} etiqueta="POR DENTRO · el tronco"
           interior={(TT, r) => fsvg(<g>
             <rect x={0} y={0} width={2 * r} height={2 * r} fill="#3b2412" />
             {Array.from({ length: 5 }, (_, i) => <Celulosa key={i} x={30} y={70 + i * 85} n={12} corta={kprog(TT, K.Co + 0.9 + i * 0.35, K.Co + 1.5 + i * 0.35)} />)}
@@ -199,41 +199,41 @@ function PolloBosqueShot() {
       {/* 3 · corte del tronco: pudrición café en cubitos con micelio blanco en las grietas */}
       <Escena T={T} a={K.Cu} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<CorteTronco x={540} y={860} R={360} p={kprog(T, K.Cu + 0.1, K.Cu + 2.0, kEase.sale)} cae={kprog(T, K.Cu + 2.6, K.Cu + 4.3)} />)}
+        {fsvg(<CorteTronco x={540} y={950} R={400} p={kprog(T, K.Cu + 0.1, K.Cu + 2.0, kEase.sale)} cae={kprog(T, K.Cu + 2.6, K.Cu + 4.3)} />)}
       </Escena>
       {/* 4 · re-gancho: ¿por qué pollo, si no tiene músculo? */}
       <Escena T={T} a={K.P} b={K.Cr} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Pechuga x={250} y={500} s={0.9} />
-          <Interrogacion T={T} x={250} y={1060} tam={420} />
-          <g transform="translate(150 1120)"><Repisa T={T} x={0} y={0} w={240} h={96} crece={kprog(T, K.P + 0.4, K.P + 1.2)} /></g>
-          {kprog(T, K.P + 1.4, K.P + 1.8) > 0 && <path d="M 110 400 L 390 620 M 390 400 L 110 620" stroke={KC.red} strokeWidth={18} strokeLinecap="round" opacity={kprog(T, K.P + 1.4, K.P + 1.8)} />}
+          <Pechuga x={330} y={720} s={1.25} />
+          <Interrogacion T={T} x={760} y={1260} tam={460} />
+          <g transform="translate(160 1250)"><Repisa T={T} x={0} y={0} w={330} h={132} crece={kprog(T, K.P + 0.4, K.P + 1.2)} /></g>
+          {kprog(T, K.P + 1.4, K.P + 1.8) > 0 && <path d="M 130 560 L 530 870 M 530 560 L 130 870" stroke={KC.red} strokeWidth={18} strokeLinecap="round" opacity={kprog(T, K.P + 1.4, K.P + 1.8)} />}
         </>)}
       </Escena>
       {/* 5 · bien cocido: correoso y sabe parecido al pollo */}
       <Escena T={T} a={K.Cr} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Sarten T={T} x={420} y={940} dorado={kprog(T, K.Cr + 0.2, K.Cr + 2.4)} />)}
+        {fsvg(<g transform="translate(400 1000) scale(1.2) translate(-420 -940)"><Sarten T={T} x={420} y={940} dorado={kprog(T, K.Cr + 0.2, K.Cr + 2.4)} /></g>)}
       </Escena>
       {/* 6 · al microscopio: maraña de hifas; las más gruesas, 4–14 µm */}
       <Escena T={T} a={K.H} b={K.E}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <MaranaHifas T={T} g={kprog(T, K.H, K.H + 2.4)} resalta={kprog(T, K.H + 2.4, K.H + 3.0)} />
+          <MaranaHifas T={T} g={kprog(T, K.H - 0.4, K.H + 1.6)} resalta={kprog(T, K.H + 2.4, K.H + 3.0)} />
           {kprog(T, K.H + 2.4, K.H + 2.8) > 0 && <g opacity={kprog(T, K.H + 2.4, K.H + 2.8)}>
-            {(() => { const u = kprog(T, K.H + 2.4, K.H + 3.4, kEase.sale), d = 'M 80 1640 C 300 1610 520 1670 760 1630 C 860 1615 940 1640 1000 1650', b = 'M 870 1640 Q 920 1720 990 1790';
+            {(() => { const u = kprog(T, K.H + 2.4, K.H + 3.4, kEase.sale), d = 'M 80 1340 C 300 1310 520 1370 760 1330 C 860 1315 940 1340 1000 1350', b = 'M 870 1340 Q 920 1420 990 1490';
               return <g><path d={b} stroke={KC.ink} strokeWidth={80} fill="none" strokeLinecap="round" strokeDasharray={`${u * 300} 999`} /><path d={b} stroke={PB.hifa} strokeWidth={70} fill="none" strokeLinecap="round" strokeDasharray={`${u * 300} 999`} /><path d={b} stroke={PB.lumen} strokeWidth={48} fill="none" strokeLinecap="round" strokeDasharray={`${u * 300} 999`} />
                 <path d={d} stroke={KC.ink} strokeWidth={102} fill="none" strokeLinecap="round" strokeDasharray={`${u * 1000} 2000`} /><path d={d} stroke="#fff3c4" strokeWidth={92} fill="none" strokeLinecap="round" strokeDasharray={`${u * 1000} 2000`} /><path d={d} stroke={PB.lumen} strokeWidth={70} fill="none" strokeLinecap="round" strokeDasharray={`${u * 1000} 2000`} /></g>; })()}
-            <path d="M 300 1574 L 300 1666 M 280 1574 L 320 1574 M 280 1666 L 320 1666" stroke={KC.gold2} strokeWidth={6} opacity={kprog(T, K.H + 3.0, K.H + 3.3)} />
+            <path d="M 300 1274 L 300 1366 M 280 1274 L 320 1274 M 280 1366 L 320 1366" stroke={KC.gold2} strokeWidth={6} opacity={kprog(T, K.H + 3.0, K.H + 3.3)} />
           </g>}
         </>)}
       </Escena>
       {/* 7–9 · el caso de 1987: la niña, los síntomas y su recuperación */}
       <Escena T={T} a={K.E} b={K.Cd}>
         <FondoLunares color={T < K.Re ? KC.cyan : KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1080) scale(1.2) translate(-540 -940)">
           {T < K.M + 0.3 && <g opacity={1 - kprog(T, K.M - 0.2, K.M + 0.3)}>
             <rect x={760} y={760} width={90} height={500} fill={PB.corteza2} stroke={KC.ink} strokeWidth={7} />
             <circle cx={805} cy={700} r={180} fill="#2f9e44" stroke={KC.ink} strokeWidth={7} />
@@ -253,20 +253,22 @@ function PolloBosqueShot() {
               </g>)}
           </g>}
           {T >= K.Re - 0.2 && <g opacity={kprog(T, K.Re - 0.2, K.Re + 0.4)}>
-            <circle cx={880} cy={klerp(1000, 640, kprog(T, K.Re, K.Re + 1.4, kEase.sale))} r={90} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} />
-            {Array.from({ length: 8 }, (_, i) => { const a = i * Math.PI / 4 + T * 0.6, cy = klerp(1000, 640, kprog(T, K.Re, K.Re + 1.4, kEase.sale)); return <line key={i} x1={880 + Math.cos(a) * 110} y1={cy + Math.sin(a) * 110} x2={880 + Math.cos(a) * 150} y2={cy + Math.sin(a) * 150} stroke={KC.orange} strokeWidth={10} strokeLinecap="round" />; })}
+            <circle cx={820} cy={klerp(1000, 640, kprog(T, K.Re, K.Re + 1.4, kEase.sale))} r={90} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} />
+            {Array.from({ length: 8 }, (_, i) => { const a = i * Math.PI / 4 + T * 0.6, cy = klerp(1000, 640, kprog(T, K.Re, K.Re + 1.4, kEase.sale)); return <line key={i} x1={820 + Math.cos(a) * 110} y1={cy + Math.sin(a) * 110} x2={820 + Math.cos(a) * 150} y2={cy + Math.sin(a) * 150} stroke={KC.orange} strokeWidth={10} strokeLinecap="round" />; })}
           </g>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 10 · crudo o mal cocido: ✗ */}
       <Escena T={T} a={K.Cd} b={K.Ex} zoom={0.05}>
         <FondoLunares color={KC.coral} />
         {fsvg(<>
-          <Plato T={T} x={330} y={960} s={0.9} crudo={1} />
-          <path d="M 170 820 L 490 1080 M 490 820 L 170 1080" stroke={KC.red} strokeWidth={20} strokeLinecap="round" opacity={kprog(T, K.Cd + 0.8, K.Cd + 1.1)} />
-          <g transform={`translate(800 1000) rotate(${Math.sin(T * 6) * 5 * kprog(T, K.Cd + 1.6, K.Cd + 2.2)})`} opacity={kprog(T, K.Cd + 1.4, K.Cd + 1.8)}>
+          <g transform="translate(540 1060) scale(1.25) translate(-540 -960)">
+          <Plato T={T} x={380} y={960} s={0.9} crudo={1} />
+          <path d="M 220 820 L 540 1080 M 540 820 L 220 1080" stroke={KC.red} strokeWidth={20} strokeLinecap="round" opacity={kprog(T, K.Cd + 0.8, K.Cd + 1.1)} />
+          <g transform={`translate(790 1000) rotate(${Math.sin(T * 6) * 5 * kprog(T, K.Cd + 1.6, K.Cd + 2.2)})`} opacity={kprog(T, K.Cd + 1.4, K.Cd + 1.8)}>
             <path d="M -60 -120 Q -110 -40 -70 40 Q -30 110 60 80 Q 120 50 90 -20 Q 60 -60 20 -40 Q -10 -60 0 -120 Z" fill="#f59ab0" stroke={KC.ink} strokeWidth={7} />
             <path d="M -40 0 q 20 -30 40 0 t 40 0" stroke="#b03050" strokeWidth={6} fill="none" />
+          </g>
           </g>
         </>)}
       </Escena>
@@ -274,8 +276,8 @@ function PolloBosqueShot() {
       <Escena T={T} a={K.Ex} b={K.N} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <TroncoRepisas T={T} x={560} y0={160} y1={1300} ancho={250} g={1} />
-          <g transform={`translate(${klerp(980, 700, kprog(T, K.Ex + 0.3, K.Ex + 1.2, kEase.sale))} 840)`}>
+          <TroncoRepisas T={T} x={560} y0={300} y1={1430} ancho={290} g={1} />
+          <g transform={`translate(${klerp(980, 720, kprog(T, K.Ex + 0.3, K.Ex + 1.2, kEase.sale))} 980)`}>
             <circle r={130} fill="rgba(200,240,255,.35)" stroke={KC.ink} strokeWidth={14} />
             <line x1={92} y1={92} x2={190} y2={190} stroke={KC.ink} strokeWidth={26} strokeLinecap="round" />
           </g>
@@ -284,9 +286,9 @@ function PolloBosqueShot() {
       {/* 12 · su naranja: ácido laetipórico, no carotenos */}
       <Escena T={T} a={K.N} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1000) scale(1.2) translate(-540 -880)">
           <Zanahoria x={230} y={800} s={1.1} />
-          <Polieno x={440} y={860} p={kprog(T, K.N + 1.4, K.N + 2.4)} n={11} />
+          <Polieno x={420} y={860} p={kprog(T, K.N + 1.4, K.N + 2.4)} n={11} />
           <g opacity={kprog(T, K.N + 2.6, K.N + 3.0)} transform="translate(560 1060)">
             <rect x={-40} y={-90} width={80} height={110} rx={14} fill="rgba(255,255,255,.6)" stroke={KC.ink} strokeWidth={6} />
             <rect x={-34} y={-40} width={68} height={54} rx={10} fill={PB.naranja} />
@@ -297,59 +299,60 @@ function PolloBosqueShot() {
             <path d="M -100 0 Q -100 -70 -40 -80 Q 0 -130 40 -80 Q 100 -70 100 0 Z" fill={mixHex('#fffaf0', PB.naranja, kprog(T, K.N + 3.2, K.N + 4.0))} stroke={KC.ink} strokeWidth={6} />
           </g>
           {kprog(T, K.N + 3.0, K.N + 3.2) > 0 && <circle cx={klerp(560, 800, kprog(T, K.N + 3.0, K.N + 3.4))} cy={klerp(980, 1000, kprog(T, K.N + 3.0, K.N + 3.4))} r={14} fill={PB.naranja} stroke={KC.ink} strokeWidth={3} opacity={1 - kprog(T, K.N + 3.4, K.N + 3.6)} />}
-        </>)}
+        </g>)}
       </Escena>
       {/* 13 · cierre: el mismo plato; el tronco de al lado ya está hecho cubitos cafés */}
       <Escena T={T} a={K.C} b={FIN} zoom={-0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <g transform="translate(-60 0)"><Plato T={T} x={400} y={1010} s={1.05} lev={0.4} /></g>
-          <TroncoRepisas T={T} x={820} y0={680} y1={1180} ancho={170} g={1} viejo={kprog(T, K.C + 0.6, K.C + 2.0)} cubos={kprog(T, K.C + 0.8, K.C + 3.2)} />
+          <g transform="translate(-250 0)"><Plato T={T} x={540} y={1060} s={1.6} lev={0.4} /></g>
+          <TroncoRepisas T={T} x={850} y0={560} y1={1300} ancho={200} g={1} viejo={kprog(T, K.C + 0.6, K.C + 2.0)} cubos={kprog(T, K.C + 0.8, K.C + 3.2)} />
         </>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.3} until={K.R - 0.2} texto="no es pollo" x={300} y={470} tam={46} borde={KC.red} />
-      <Etq T={T} at={K.R + 1.0} until={K.Co - 0.2} x={60} y={430} texto="“pollo del bosque”" tam={36} />
-      <Etq T={T} at={K.R + 1.6} until={K.Co - 0.2} x={60} y={490} texto="Laetiporus (complejo sulphureus)" it tam={26} />
-      <Etq T={T} at={K.R + 2.4} until={K.Co - 0.2} x={1040} y={1100} lado="izq" texto="encino (Quercus)" tam={30} />
-      <Chip T={T} at={K.R + 2.8} until={K.Co - 0.2} texto="repisas encimadas · sin pie" x={420} y={1560} tam={30} borde={PB.naranja} />
-      <Chip T={T} at={K.Co + 1.0} until={K.Cu - 0.2} texto="come: celulosa (y hemicelulosa)" x={420} y={1560} tam={32} borde={KC.mint} />
-      <Etq T={T} at={K.Co + 0.8} until={K.Cu - 0.2} x={60} y={430} texto="hifas" tam={34} />
+      <Chip T={T} at={K.G + 1.3} until={K.R - 0.2} texto="no es pollo" x={300} y={440} tam={46} borde={KC.red} />
+      <Etq T={T} at={K.R + 1.0} until={K.Co - 0.2} x={60} y={220} texto="“pollo del bosque”" tam={36} />
+      <Etq T={T} at={K.R + 1.6} until={K.Co - 0.2} x={60} y={275} texto="Laetiporus (complejo sulphureus)" it tam={26} />
+      <Etq T={T} at={K.R + 2.4} until={K.Co - 0.2} x={1040} y={1250} lado="izq" texto="encino (Quercus)" tam={30} />
+      <Chip T={T} at={K.R + 2.8} until={K.Co - 0.2} texto="repisas encimadas · sin pie" x={420} y={1500} tam={30} borde={PB.naranja} />
+      <Chip T={T} at={K.Co + 1.0} until={K.Cu - 0.2} texto="come: celulosa (y hemicelulosa)" x={420} y={1500} tam={32} borde={KC.mint} />
+      <Etq T={T} at={K.Co + 0.8} until={K.Cu - 0.2} x={60} y={240} texto="hifas" tam={34} />
       <Etq T={T} at={K.Cu + 1.0} until={K.P - 0.2} x={60} y={430} texto="pudrición café" tam={38} />
-      <Chip T={T} at={K.Cu + 1.6} until={K.P - 0.2} texto="queda: lignina (modificada)" x={400} y={1150} tam={34} borde={PB.cafe} />
+      <Chip T={T} at={K.Cu + 1.6} until={K.P - 0.2} texto="queda: lignina (modificada)" x={400} y={1270} tam={34} borde={PB.cafe} />
       <Etq T={T} at={K.Cu + 2.2} until={K.P - 0.2} x={60} y={490} texto="micelio blanco en las grietas" tam={28} />
-      <Chip T={T} at={K.P + 1.4} until={K.Cr - 0.2} texto="músculo: 0" x={250} y={670} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Cr + 0.5} until={K.H - 0.2} texto="bien cocido" x={330} y={470} tam={40} borde={KC.leaf} />
-      <Chip T={T} at={K.Cr + 1.4} until={K.H - 0.2} texto="correoso · sabe parecido al pollo" x={460} y={1130} tam={32} borde={KC.yellow} />
+      <Chip T={T} at={K.P + 1.4} until={K.Cr - 0.2} texto="músculo: 0" x={330} y={940} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Cr + 0.5} until={K.H - 0.2} texto="bien cocido" x={330} y={560} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.Cr + 1.4} until={K.H - 0.2} texto="correoso · sabe parecido al pollo" x={460} y={1210} tam={32} borde={KC.yellow} />
       <Etq T={T} at={K.H + 0.8} until={K.E - 0.2} x={60} y={430} texto="AL MICROSCOPIO · hifas" tam={30} color={KC.cyan} />
-      <Etq T={T} at={K.H + 3.0} until={K.E - 0.2} x={320} y={1530} texto="las más gruesas: 4–14 µm" tam={32} color={KC.gold2} />
-      <Etq T={T} at={K.H + 3.4} until={K.E - 0.2} x={60} y={1760} texto="ramificadas · sin tabiques · pared gruesa" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.H + 3.0} until={K.E - 0.2} x={320} y={1230} texto="las más gruesas: 4–14 µm" tam={32} color={KC.gold2} />
+      <Etq T={T} at={K.H + 3.4} until={K.E - 0.2} x={60} y={1460} texto="ramificadas · sin tabiques · pared gruesa" tam={26} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.M - 0.3} anio="1987" quien="Canadá · niña de 6 años" revista="CMAJ, 1988" x={420} y={560} />
-      <Chip T={T} at={K.M + 1.6} until={K.Re - 0.2} texto="alucinaciones" x={380} y={470} tam={40} borde={KC.pink} />
+      <Chip T={T} at={K.M + 1.6} until={K.Re - 0.2} texto="alucinaciones" x={380} y={500} tam={40} borde={KC.pink} />
       <Cronometro T={T} at={K.Re + 0.1} until={K.Cd - 0.2} factor={20 * 3600 / 1.6} etiqueta="DESPUÉS DE LOS SÍNTOMAS" x={380} y={470} />
       <Chip T={T} at={K.Re + 0.8} until={K.Cd - 0.2} texto="≈ 20 h · se recuperó" x={380} y={600} tam={36} borde={KC.leaf} />
       <Chip T={T} at={K.Cd + 0.4} until={K.Ex - 0.2} texto="crudo o mal cocido: ✗" x={400} y={470} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Cd + 2.0} until={K.Ex - 0.2} texto="hay personas alérgicas" x={400} y={580} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Ex + 1.0} until={K.N - 0.2} texto="✓ solo si lo identifica un experto" x={430} y={1130} tam={32} borde={KC.leaf} />
-      <Chip T={T} at={K.Ex + 1.8} until={K.N - 0.2} texto="no lo recolectes por tu cuenta" x={430} y={1560} tam={32} borde={KC.red} />
-      <MitoTachado T={T} at={K.N + 0.3} tacharEn={K.N + 1.1} until={K.C - 0.2} texto="carotenos" x={260} y={560} tam={40} />
-      <Etq T={T} at={K.N + 1.8} until={K.C - 0.2} x={440} y={740} texto="ácido laetipórico" tam={32} />
-      <Chip T={T} at={K.N + 3.0} until={K.C - 0.2} texto="¿colorante para comida? posible" x={460} y={1560} tam={30} borde={PB.naranja} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="no es pollo: es un hongo" x={360} y={470} tam={42} borde={KC.red} />
-      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={1040} y={700} lado="izq" texto="Laetiporus" it tam={30} />
+      <Chip T={T} at={K.Ex + 1.0} until={K.N - 0.2} texto="✓ solo si lo identifica un experto" x={430} y={1250} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.Ex + 1.8} until={K.N - 0.2} texto="no lo recolectes por tu cuenta" x={430} y={1500} tam={32} borde={KC.red} />
+      <MitoTachado T={T} at={K.N + 0.3} tacharEn={K.N + 1.1} until={K.C - 0.2} texto="carotenos" x={260} y={600} tam={40} />
+      <Etq T={T} at={K.N + 1.8} until={K.C - 0.2} x={420} y={860} texto="ácido laetipórico" tam={32} />
+      <Chip T={T} at={K.N + 3.0} until={K.C - 0.2} texto="¿colorante para comida? posible" x={460} y={1470} tam={30} borde={PB.naranja} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="no es pollo: es un hongo" x={360} y={440} tam={42} borde={KC.red} />
+      <Etq T={T} at={K.C + 2.2} until={K.Ou} x={1040} y={560} lado="izq" texto="Laetiporus" it tam={30} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.R} texto="5 cm (plato)" largo={130} />
-      <BarraEscala T={T} at={K.R} until={K.Cu} texto="20 cm" largo={170} />
-      <BarraEscala T={T} at={K.Cu} until={K.P} texto="10 cm" largo={150} />
-      <BarraEscala T={T} at={K.P} until={K.H} texto="5 cm" largo={130} />
+      <BarraEscala T={T} at={K.G} until={K.R} texto="5 cm (plato)" largo={198} />
+      <BarraEscala T={T} at={K.R} until={K.Cu} texto="20 cm" largo={197} />
+      <BarraEscala T={T} at={K.Cu} until={K.P} texto="10 cm" largo={167} />
+      <BarraEscala T={T} at={K.P} until={K.Cr} texto="5 cm" largo={181} />
+      <BarraEscala T={T} at={K.Cr} until={K.H} texto="5 cm" largo={156} />
       <BarraEscala T={T} at={K.H} until={K.E} texto="20 µm" largo={150} />
-      <BarraEscala T={T} at={K.E} until={K.Cd} texto="50 cm" largo={160} />
-      <BarraEscala T={T} at={K.Cd} until={K.Ex} texto="5 cm" largo={130} />
-      <BarraEscala T={T} at={K.Ex} until={K.N} texto="20 cm" largo={200} />
-      <BarraEscala T={T} at={K.N} until={K.C} texto="5 cm" largo={130} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm (plato)" largo={130} />
+      <BarraEscala T={T} at={K.E} until={K.Cd} texto="50 cm" largo={192} />
+      <BarraEscala T={T} at={K.Cd} until={K.Ex} texto="5 cm" largo={163} />
+      <BarraEscala T={T} at={K.Ex} until={K.N} texto="20 cm" largo={232} />
+      <BarraEscala T={T} at={K.N} until={K.C} texto="5 cm" largo={156} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm (plato)" largo={198} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.R - 0.1} texto="Esto *no es pollo:* es un hongo" />

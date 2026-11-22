@@ -239,10 +239,13 @@ function ArrozDorado() {
       <Escena T={T} a={K.G - 1} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <Capa>
+          {/* encuadre cine: los dos platos ×1.15, de borde a borde y centrados */}
+          <g transform="translate(540 960) scale(1.15) translate(-495 -860)">
           <Plato T={T} x={250} y={1110} s={0.62} dorado={0} seed={4} />
           <Plato T={T} x={600} y={930} s={1.05} dorado={1} seed={3} vapor={1} />
           <Cuchara x={klerp(760, 700, cae)} y={klerp(560, 850, cae)} rot={klerp(30, 22, cae) + (T > K.G + 0.4 ? Math.sin((T - K.G) * 18) * 3 * Math.exp(-(T - K.G - 0.4) * 4) : 0)} />
           {T > K.G + 0.4 && T < K.G + 1.2 && [-1, 1, -0.5, 0.6].map((d, i) => { const u = kprog(T, K.G + 0.4, K.G + 1.2); return <Grano key={i} x={700 + d * 120 * u} y={800 - 160 * u + 260 * u * u} l={44} rot={u * 400 * d} color={ORO} />; })}
+          </g>
         </Capa>
       </Escena>
       {/* 1 · la planta hace betacaroteno en sus hojas, no en el grano */}
@@ -263,26 +266,28 @@ function ArrozDorado() {
       <Escena T={T} a={K.Gr} b={K.Ge} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          <Grano x={480} y={1180} l={240} rot={-14} color={BLANCO_ARROZ} g={8} />
+          <Grano x={540} y={1330} l={300} rot={-14} color={BLANCO_ARROZ} g={9} />
         </Capa>
       </Escena>
       {/* 3 · los genes: narciso y bacteria */}
       <Escena T={T} a={K.Ge} b={K.Ca} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <Capa>
+          <g transform="translate(540 920) scale(1.2) translate(-540 -880)">
           <Narciso T={T} x={250} y={760} s={1} />
           <g transform={`translate(830 820) rotate(${Math.sin(T * 1.4) * 8})`}><Bacteria T={T} x={0} y={0} largo={300} ancho={120} color="#b9f07a" seed={3} /></g>
           <Grano x={600} y={1040} l={200} rot={-8} color={mixHex(BLANCO_ARROZ, ORO2, kprog(T, K.Ge + 4.0, K.Ge + 5.6))} g={7} brillo={kprog(T, K.Ge + 3.6, K.Ge + 4.4)} />
           {[[250, 760, K.Ge + 1.0], [830, 820, K.Ge + 1.8]].map(([sx, sy, t0], i) => { const u = kprog(T, t0, t0 + 1.6, kEase.suave); if (T < t0 || u >= 1) return null;
             const px = klerp(sx, 600, u), py = klerp(sy, 1030, u) - Math.sin(Math.PI * u) * 160;
             return <g key={i} transform={`translate(${px - 90} ${py}) scale(${1 - u * 0.5})`}><ADNHebra T={T} x={0} y={0} largo={180} alto={40} vueltas={1.5} grosor={6} colores={i ? [KC.mint, KC.cyan] : [KC.yellow, KC.orange]} /></g>; })}
+          </g>
         </Capa>
       </Escena>
       {/* 4 · el camino encendido: el grano se pinta de amarillo */}
       <Escena T={T} a={K.Ca} b={K.Pr} zoom={0.03}>
         <FondoMarca patron="oscuro" />
-        <div style={{ position:'absolute', left:540 - 470, top:820 - 470, width:940, height:940 }}>
-          <GranoPorDentro T={T} cx={470} cy={470} r={470} on={kprog(T, K.Ca, K.Ca + 0.6)} dorado={kprog(T, K.Ca + 0.8, K.Ca + 3.2, kEase.suave)} />
+        <div style={{ position:'absolute', left:540 - 540, top:960 - 540, width:1080, height:1080 }}>
+          <GranoPorDentro T={T} cx={540} cy={540} r={540} on={kprog(T, K.Ca, K.Ca + 0.6)} dorado={kprog(T, K.Ca + 0.8, K.Ca + 3.2, kEase.suave)} />
         </div>
         <Ambiente T={T} n={30} color="rgba(255,207,61,.35)" />
       </Escena>
@@ -290,9 +295,9 @@ function ArrozDorado() {
       <Escena T={T} a={K.Pr} b={K.In} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          <Grano x={300} y={900} l={600} rot={0} color={ORO2} g={10} />
+          <Grano x={540} y={1080} l={780} rot={0} color={ORO2} g={12} />
         </Capa>
-        <div style={{ position:'absolute', left:0, top:640, width:600, textAlign:'center', font:`400 300px/1 ${KF.titulo}`, color:KC.pink, WebkitTextStroke:`10px ${KC.ink}`, transform:`rotate(${Math.sin(T * 3) * 6}deg)` }}>?</div>
+        <div style={{ position:'absolute', left:240, top:560, width:600, textAlign:'center', font:`400 300px/1 ${KF.titulo}`, color:KC.pink, WebkitTextStroke:`10px ${KC.ink}`, transform:`rotate(${Math.sin(T * 3) * 6}deg)` }}>?</div>
       </Escena>
       {/* 6 · tu cuerpo lo vuelve vitamina A */}
       <Escena T={T} a={K.In} b={K.Oj} zoom={0.03}>
@@ -307,14 +312,14 @@ function ArrozDorado() {
       </Escena>
       {/* 7 · ojos: no ves de noche, luego te quedas ciego */}
       <Escena T={T} a={K.Oj} b={K.Ni} zoom={0.03}>
-        <div style={{ position:'absolute', inset:0, background:mixHex('#3a6fd8', '#060912', noche) }}></div>
+        <div style={{ position:'absolute', inset:0, background:mixHex('#1f3f80', '#060912', noche) }}></div>
         <Capa>
-          <circle cx={840} cy={1180} r={70} fill="#fff6c8" opacity={0.25 + 0.75 * (1 - noche)} />
-          {[[120, 1140, 160], [300, 1100, 200], [520, 1150, 150]].map(([hx, hy, hw], i) => <g key={i} opacity={1 - noche * 0.85}>
-            <rect x={hx} y={hy} width={hw} height={1240 - hy} fill="#ffcf8a" stroke={KC.ink} strokeWidth={6} />
+          <circle cx={860} cy={1320} r={70} fill="#fff6c8" opacity={0.25 + 0.75 * (1 - noche)} />
+          {[[120, 1290, 160], [300, 1250, 200], [520, 1300, 150]].map(([hx, hy, hw], i) => <g key={i} opacity={1 - noche * 0.85}>
+            <rect x={hx} y={hy} width={hw} height={1400 - hy} fill="#ffcf8a" stroke={KC.ink} strokeWidth={6} />
             <path d={`M ${hx - 20} ${hy} L ${hx + hw / 2} ${hy - 70} L ${hx + hw + 20} ${hy} Z`} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
           </g>)}
-          <Ojo T={T} x={540} y={800} s={1.05} nube={nube} />
+          <Ojo T={T} x={540} y={830} s={1.45} nube={nube} />
         </Capa>
       </Escena>
       {/* 8 · 190 millones de niños (OMS, datos 1995–2005): cada figura = 2 millones */}
@@ -322,18 +327,18 @@ function ArrozDorado() {
         <FondoLunares color={KC.lilac} />
         <Capa>
           {Array.from({ length: 95 }, (_, i) => { const c = i % 10, f = Math.floor(i / 10), on = T > K.Ni + 0.4 + i * 0.03;
-            return <Nino key={i} x={130 + c * 91} y={560 + f * 72} s={on ? 1 : 0.8} color={on ? KC.yellow : 'rgba(255,255,255,.35)'} />; })}
+            return <Nino key={i} x={130 + c * 91} y={490 + f * 70} s={on ? 1 : 0.8} color={on ? KC.yellow : 'rgba(255,255,255,.35)'} />; })}
         </Capa>
       </Escena>
       {/* 9 · Golden Rice 2: gen de maíz, hasta 23 veces más pigmento */}
       <Escena T={T} a={K.Ma} b={K.Es} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <Capa>
-          {narciso2maiz < 1 && <g transform={`translate(${-380 * narciso2maiz} 0)`} opacity={1 - narciso2maiz}><Narciso T={T} x={220} y={720} s={0.9} /></g>}
-          {narciso2maiz > 0 && <g transform={`translate(${380 * (1 - narciso2maiz)} 0)`}><Mazorca x={210} y={840} s={0.95} rot={-10} /></g>}
-          <Grano x={400} y={1110} l={260} rot={-20} color={mixHex('#ffe7a0', ORO, pig)} g={8} brillo={pig} />
+          {narciso2maiz < 1 && <g transform={`translate(${-380 * narciso2maiz} 0)`} opacity={1 - narciso2maiz}><Narciso T={T} x={330} y={700} s={1.15} /></g>}
+          {narciso2maiz > 0 && <g transform={`translate(${380 * (1 - narciso2maiz)} 0)`}><Mazorca x={330} y={820} s={1.2} rot={-10} /></g>}
+          <Grano x={740} y={1010} l={340} rot={-20} color={mixHex('#ffe7a0', ORO, pig)} g={9} brillo={pig} />
         </Capa>
-        <Medidor T={T} at={K.Ma + 1.5} until={K.Es - 0.2} valor={(t) => klerp(1 / 23, 1, kprog(t, K.Ma + 1.6, K.Ma + 4.6, kEase.suave))} etiqueta="carotenoides en el grano" texto={(v) => '×' + Math.max(1, Math.round(v * 23))} x={90} y={1440} color={ORO} />
+        <Medidor T={T} at={K.Ma + 1.5} until={K.Es - 0.2} valor={(t) => klerp(1 / 23, 1, kprog(t, K.Ma + 1.6, K.Ma + 4.6, kEase.suave))} etiqueta="carotenoides en el grano" texto={(v) => '×' + Math.max(1, Math.round(v * 23))} x={90} y={1300} color={ORO} />
       </Escena>
       {/* 10 · el estudio publicado en 2009 (Boston): cinco voluntarios */}
       <Escena T={T} a={K.Es} b={K.Fi} zoom={0.03}>
@@ -341,10 +346,10 @@ function ArrozDorado() {
         <Capa>
           {Array.from({ length: 5 }, (_, i) => { const x = 140 + i * 200, sube = kprog(T, K.Es + 3.0 + i * 0.25, K.Es + 4.0 + i * 0.25, kEase.suave);
             return <g key={i}>
-              <Plato T={T} x={x} y={1150} s={0.32} dorado={1} seed={10 + i} />
-              <Nino x={x} y={1010} s={2.0} color={[KC.yellow, KC.mint, KC.cyan, KC.lilac, KC.paper][i]} />
-              {sube > 0 && <g opacity={sube}><path d={`M ${x} ${950} L ${x} ${klerp(950, 800, sube)}`} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
-                <path d={`M ${x} ${klerp(950, 760, sube) - 40} q 34 40 0 70 q -34 -30 0 -70 Z`} fill={ORO2} stroke={KC.ink} strokeWidth={5} /></g>}
+              <Plato T={T} x={x} y={1200} s={0.36} dorado={1} seed={10 + i} />
+              <Nino x={x} y={1040} s={2.6} color={[KC.yellow, KC.mint, KC.cyan, KC.lilac, KC.paper][i]} />
+              {sube > 0 && <g opacity={sube}><path d={`M ${x} ${900} L ${x} ${klerp(900, 750, sube)}`} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
+                <path d={`M ${x} ${klerp(900, 710, sube) - 40} q 34 40 0 70 q -34 -30 0 -70 Z`} fill={ORO2} stroke={KC.ink} strokeWidth={5} /></g>}
             </g>; })}
         </Capa>
       </Escena>
@@ -352,63 +357,63 @@ function ArrozDorado() {
       <Escena T={T} a={K.Fi} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.leaf} />
         <Capa>
-          <MapaFilipinas x={40} y={420} k={60} />
+          <MapaFilipinas x={20} y={380} k={70} />
           {Array.from({ length: 18 }, (_, i) => { const c = i % 6, f = Math.floor(i / 6), u = kprog(T, K.Fi + 0.6 + i * 0.05, K.Fi + 1.2 + i * 0.05, kEase.rebote);
-            const x = 680 + c * 56, y = 800 + f * 90;
+            const x = 730 + c * 56, y = 820 + f * 95;
             return <g key={i} transform={`translate(${x} ${y}) scale(${u})`} opacity={1 - kprog(T, K.Fi + 2.6, K.Fi + 3.4) * 0.6}>
               <path d="M 0 0 Q -20 -50 -30 -80 M 0 0 Q 0 -60 4 -100 M 0 0 Q 20 -50 34 -76" stroke={KC.ink} strokeWidth={9} fill="none" strokeLinecap="round" />
               <path d="M 0 0 Q -20 -50 -30 -80 M 0 0 Q 0 -60 4 -100 M 0 0 Q 20 -50 34 -76" stroke="#bff07a" strokeWidth={5} fill="none" strokeLinecap="round" />
             </g>; })}
-          {T > K.Fi + 1.9 && <Mazo x={820} y={kprog(T, K.Fi + 1.9, K.Fi + 2.2, kEase.sale) * 0 + 880} rot={klerp(-60, 10, kprog(T, K.Fi + 1.9, K.Fi + 2.2, kEase.sale))} />}
+          {T > K.Fi + 1.9 && <Mazo x={870} y={kprog(T, K.Fi + 1.9, K.Fi + 2.2, kEase.sale) * 0 + 880} rot={klerp(-60, 10, kprog(T, K.Fi + 1.9, K.Fi + 2.2, kEase.sale))} />}
         </Capa>
       </Escena>
       {/* 12 · cierre: el plato del inicio, por dentro con la fábrica encendida */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          <Plato T={T} x={540} y={1150} s={1.0} dorado={1} seed={3} vapor={1} />
+          <Plato T={T} x={540} y={1210} s={1.25} dorado={1} seed={3} vapor={1} />
         </Capa>
       </Escena>
 
       {/* lupas (por dentro del grano) */}
-      <Lupa T={T} at={K.Gr + 0.3} until={K.Ge - 0.2} x={470} y={760} r={270} fx={480} fy={1180} tinte={KC.cyan} etiqueta="POR DENTRO · el grano"
+      <Lupa T={T} at={K.Gr + 0.3} until={K.Ge - 0.2} x={540} y={790} r={330} fx={540} fy={1330} tinte={KC.cyan} etiqueta="POR DENTRO · el grano"
         interior={(t, r) => <GranoPorDentro T={t} cx={r} cy={r} r={r} on={0} dorado={0} />} />
-      <Lupa T={T} at={K.Ci + 0.4} until={K.Ou - 0.1} x={470} y={700} r={250} fx={560} fy={1030} tinte={ORO2} etiqueta="POR DENTRO · grano dorado"
+      <Lupa T={T} at={K.Ci + 0.4} until={K.Ou - 0.1} x={540} y={640} r={300} fx={560} fy={1060} tinte={ORO2} etiqueta="POR DENTRO · grano dorado"
         interior={(t, r) => <GranoPorDentro T={t} cx={r} cy={r} r={r} on={1} dorado={1} />} />
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.6} until={K.H - 0.2} texto="¿pintado?" x={260} y={480} tam={54} />
-      <Etq T={T} at={K.G + 0.6} until={K.H - 0.2} x={40} y={1505} texto="arroz blanco" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.G + 1.0} until={K.H - 0.2} x={1040} y={1505} texto="arroz dorado" lado="izq" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.4} until={K.Gr - 0.2} x={1040} y={1600} lado="izq" texto="Oryza sativa" it tam={36} color={KC.texto} />
+      <Etq T={T} at={K.G + 0.6} until={K.H - 0.2} x={40} y={1420} texto="arroz blanco" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.0} until={K.H - 0.2} x={1040} y={1420} texto="arroz dorado" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.4} until={K.Gr - 0.2} x={1040} y={1420} lado="izq" texto="Oryza sativa" it tam={36} color={KC.texto} />
       <Chip T={T} at={K.H + 1.4} until={K.Gr - 0.2} texto="betacaroteno: en las hojas" y={1500} tam={42} borde={NARANJA} />
       <Etq T={T} at={K.H + 1.6} until={K.Gr - 0.2} x={260} y={1240} texto="el mismo pigmento" tam={30} color={KC.ink} />
       <Chip T={T} at={K.H + 3.6} until={K.Gr - 0.2} texto="en el grano: no" x={790} y={720} tam={38} borde={KC.red} />
       <Chip T={T} at={K.Gr + 1.0} until={K.Ge - 0.2} texto="fábrica: APAGADA" y={1500} tam={44} borde="#8a8f99" />
       <Chip T={T} at={K.Ge + 0.3} until={K.Ca - 0.2} texto="2000 · Potrykus y Beyer · Science" y={1500} tam={38} borde={KC.gold} />
-      <Etq T={T} at={K.Ge + 0.6} until={K.Ca - 0.2} x={60} y={1090} texto="narciso" tam={34} color={KC.texto} />
-      <Etq T={T} at={K.Ge + 0.8} until={K.Ca - 0.2} x={60} y={1140} texto="Narcissus pseudonarcissus" it tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Ge + 1.2} until={K.Ca - 0.2} x={1040} y={910} texto="bacteria" lado="izq" tam={34} color={KC.texto} />
-      <Etq T={T} at={K.Ge + 1.4} until={K.Ca - 0.2} x={1040} y={950} texto="Pantoea ananatis" lado="izq" it tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Ge + 0.6} until={K.Ca - 0.2} x={60} y={1175} texto="narciso" tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Ge + 0.8} until={K.Ca - 0.2} x={60} y={1230} texto="Narcissus pseudonarcissus" it tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Ge + 1.2} until={K.Ca - 0.2} x={1040} y={960} texto="bacteria" lado="izq" tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Ge + 1.4} until={K.Ca - 0.2} x={1040} y={1005} texto="Pantoea ananatis" lado="izq" it tam={28} color={KC.texto} />
       <Chip T={T} at={K.Ca + 0.3} until={K.Pr - 0.2} texto="fábrica: ENCENDIDA" y={1500} tam={44} borde={KC.mint} />
-      <Etq T={T} at={K.Ca + 1.4} until={K.Pr - 0.2} x={540} y={430} texto="betacaroteno" tam={36} color={ORO2} />
-      {T > K.Pr + 0.2 && T < K.In - 0.1 && <Escala T={T} z={1} pxPorMm={100} y={1460} x={60} objetivo={300} color={KC.ink} />}
-      <Etq T={T} at={K.Pr + 0.3} until={K.In - 0.2} x={40} y={1600} texto="grano de arroz ≈ 6 mm" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 1.4} until={K.Pr - 0.2} x={560} y={700} texto="betacaroteno" tam={36} color={ORO2} />
+      {T > K.Pr + 0.2 && T < K.In - 0.1 && <Escala T={T} z={1} pxPorMm={130} y={1460} x={60} objetivo={300} color={KC.ink} />}
+      <Etq T={T} at={K.Pr + 0.3} until={K.In - 0.2} x={290} y={1300} texto="grano de arroz ≈ 6 mm" tam={32} color={KC.ink} />
       <Chip T={T} at={K.In + 1.6} until={K.Oj - 0.2} texto="betacaroteno → vitamina A" y={1500} tam={42} borde={ORO2} />
-      <Etq T={T} at={K.In + 0.2} until={K.Oj - 0.2} x={60} y={1640} texto="células del intestino" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.In + 0.2} until={K.Oj - 0.2} x={60} y={1380} texto="células del intestino" tam={30} color={KC.texto} />
       <Chip T={T} at={K.Oj + 0.8} until={K.Oj + 2.4} texto="1ª señal: no ver de noche" y={1500} tam={42} borde={KC.cyan} />
       <Chip T={T} at={K.Oj + 2.6} until={K.Ni - 0.2} texto="causa prevenible de ceguera infantil" y={1500} tam={34} borde={KC.red} />
-      <NumeroGigante T={T} at={K.Ni + 0.6} until={K.Ma - 0.2} valor={190} dur={2.2} sufijo=" millones" y={1520} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.Ni + 1.2} until={K.Ma - 0.2} texto="niños preescolares · OMS · datos 1995–2005" y={1720} tam={30} borde={KC.gold} />
-      <Etq T={T} at={K.Ni + 2.0} until={K.Ma - 0.2} x={130} y={480} texto="cada figura = 2 millones" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ma + 0.4} until={K.Es - 0.2} texto="Golden Rice 2 · 2005" y={1700} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.Ma + 1.4} until={K.Es - 0.2} x={60} y={1260} texto="gen de maíz" tam={34} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Ni + 0.6} until={K.Ma - 0.2} valor={190} dur={2.2} sufijo=" millones" y={1270} tam={150} color={KC.yellow} />
+      <Chip T={T} at={K.Ni + 1.2} until={K.Ma - 0.2} texto="niños preescolares · OMS · datos 1995–2005" y={1430} tam={30} borde={KC.gold} />
+      <Etq T={T} at={K.Ni + 2.0} until={K.Ma - 0.2} x={130} y={410} texto="cada figura = 2 millones" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Ma + 0.4} until={K.Es - 0.2} texto="Golden Rice 2 · 2005" y={1460} tam={40} borde={KC.gold} />
+      <Etq T={T} at={K.Ma + 1.4} until={K.Es - 0.2} x={460} y={600} texto="gen de maíz" tam={34} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.9} anio="2009" quien="Publicado en 2009 · Boston" revista="Universidad Tufts · 5 voluntarios" x={540} y={600} />
-      <Chip T={T} at={K.Es + 3.2} until={K.Fi - 0.2} texto="5 voluntarios → vitamina A" y={1500} tam={42} borde={ORO2} />
-      <Sello T={T} at={K.Fi + 0.6} until={K.Ci - 0.2} x={700} y={1500} texto="2021 · SE APRUEBA" color={KC.teal} rot={-5} />
-      <Sello T={T} at={K.Fi + 2.2} until={K.Ci - 0.2} x={540} y={1700} texto="2024 · UN TRIBUNAL LO FRENA" color={KC.red} rot={4} />
-      <Etq T={T} at={K.Fi + 0.3} until={K.Ci - 0.2} x={420} y={560} texto="Filipinas" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="no es pintura: es betacaroteno" y={1500} tam={40} borde={ORO2} />
+      <Chip T={T} at={K.Es + 3.2} until={K.Fi - 0.2} texto="5 voluntarios → vitamina A" y={1420} tam={42} borde={ORO2} />
+      <Sello T={T} at={K.Fi + 0.6} until={K.Ci - 0.2} x={720} y={1385} texto="2021 · SE APRUEBA" color={KC.teal} rot={-5} />
+      <Sello T={T} at={K.Fi + 2.2} until={K.Ci - 0.2} x={540} y={1490} texto="2024 · UN TRIBUNAL LO FRENA" color={KC.red} rot={4} />
+      <Etq T={T} at={K.Fi + 0.3} until={K.Ci - 0.2} x={480} y={520} texto="Filipinas" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="no es pintura: es betacaroteno" y={1450} tam={40} borde={ORO2} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No está pintado: *fabrica algo.*" />

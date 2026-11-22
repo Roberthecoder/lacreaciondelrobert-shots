@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #35 · El mosco que trae una bacteria contra el dengue (Wolbachia) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (no a escala, salvo la barra de escala).
 const WOL = '#7CFF6B', WOL2 = '#2fbf4a', VIRUS = '#ff4f9a', PIEL = '#f1b48f', PIEL2 = '#dd9670';
@@ -164,8 +165,8 @@ function Barrio({ T, frac = 0, n = 26 }) {
   for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) casas.push([110 + c * 230, 620 + r * 190, ['#f4efe4', '#ffd6e4', '#d9f7ff', '#fff3b0'][(r + c) % 4], [KC.coral, KC.blue, KC.teal, KC.orange][(r * 3 + c) % 4]]);
   const ms = Array.from({ length: n }, (_, i) => ({ x0: 100 + R() * 880, y0: 600 + R() * 760, ph: R() * 6, rad: 30 + R() * 60, k: R() }));
   return <g>
-    <rect x={0} y={560} width={KW} height={840} fill="#bfe3b4" />
-    {[0, 1, 2, 3, 4].map((i) => <rect key={'h' + i} x={0} y={590 + i * 190} width={KW} height={22} fill="#9aa3b5" />)}
+    <rect x={0} y={560} width={KW} height={840} fill="#647968" />
+    {[0, 1, 2, 3, 4].map((i) => <rect key={'h' + i} x={0} y={590 + i * 190} width={KW} height={22} fill="#525968" />)}
     {[0, 1, 2, 3, 4].map((i) => <rect key={'v' + i} x={70 + i * 230} y={560} width={22} height={840} fill="#9aa3b5" />)}
     {casas.map(([x, y, c, t], i) => <Casa key={i} x={x} y={y} w={150} h={130} color={c} techo={t} />)}
     {ms.map((m, i) => { const verde = m.k < frac; const x = m.x0 + Math.cos(T * 1.3 + m.ph) * m.rad, y = m.y0 + Math.sin(T * 1.7 + m.ph) * m.rad * 0.7;
@@ -174,11 +175,12 @@ function Barrio({ T, frac = 0, n = 26 }) {
 }
 
 // Interior de la Lupa: una célula del mosco con Wolbachia; los virus entran y no logran copiarse.
-function CelulaInterior(T, r, t0) {
+function CelulaInterior(T, rLupa, t0) {
+  const r = 280;   // tamaño de diseño; el viewBox lo escala todo junto (célula y barra de escala en la misma proporción)
   const R = krng(4);
   const wols = Array.from({ length: 16 }, () => { const a = R() * Math.PI * 2, d = 40 + R() * 150; return [r + Math.cos(a) * d, r + 30 + Math.sin(a) * d * 0.85, R() * 180]; });
   const virs = [[0.15, -0.7], [0.75, -0.4], [-0.6, -0.55], [0.9, 0.3], [-0.85, 0.2]];
-  return <svg width={2 * r} height={2 * r}>
+  return <svg width={2 * rLupa} height={2 * rLupa} viewBox={`0 0 ${2 * r} ${2 * r}`}>
     <rect width={2 * r} height={2 * r} fill="#0b1a24" />
     <ellipse cx={r} cy={r + 30} rx={r * 0.82} ry={r * 0.72} fill="#3a2b52" stroke="#b18cff" strokeWidth={8} />
     <ellipse cx={r - 40} cy={r + 10} rx={70} ry={58} fill="#5a3f80" stroke="#d6c2ff" strokeWidth={5} />
@@ -195,6 +197,20 @@ function CelulaInterior(T, r, t0) {
   </svg>;
 }
 
+// Mapa esquemático de las 24 zonas del ensayo (4 × 6): las 12 con Wolbachia se pintan de verde y reciben huevos.
+function Zonas({ T, t0, zonas, o = 1 }) {
+  const X0 = 251, Y0 = 520, C = 134, P = 148;
+  return <g opacity={o}>
+    <rect x={X0 - 34} y={Y0 - 34} width={3 * P + C + 68} height={5 * P + C + 68} rx={28} fill="#101a2c" stroke={KC.ink} strokeWidth={8} />
+    {zonas.map((z, i) => { const c = i % 4, r = Math.floor(i / 4), x = X0 + c * P, y = Y0 + r * P, on = z ? kprog(T, t0 + 3.0 + i * 0.06, t0 + 3.3 + i * 0.06) : 0;
+      return <g key={i}>
+        <rect x={x} y={y} width={C} height={C} rx={14} fill={mixHex('#27314a', '#2e9a4f', on)} stroke={KC.ink} strokeWidth={4} />
+        {z === 1 && T > t0 + 3.4 && [0, 1].map((k) => { const tt = t0 + 3.4 + i * 0.05 + k * 0.3, u = kprog(T, tt, tt + 0.5, kEase.sale);
+          return <Huevo key={k} x={x + 41 + k * 52} y={klerp(y - 30, y + 56 + k * 24, u)} s={0.36} rot={20} T={T} wol={1} />; })}
+      </g>; })}
+  </g>;
+}
+
 function Wolbachia35() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Ba: CUES.Bacteria, Pr: CUES.Prestada, PD: CUES.PorDentro, Sa: CUES.Saliva, Pq: CUES.Pregunta, He: CUES.Herencia,
@@ -202,7 +218,7 @@ function Wolbachia35() {
   const FIN = K.Ou + 4;
   // gancho: el mosco aterriza
   const aterriza = kprog(T, K.G - 0.2, K.G + 0.7, kEase.sale);
-  const moscoX = klerp(260, 560, aterriza), moscoY = klerp(560, 930, aterriza);
+  const moscoX = klerp(200, 495, aterriza), moscoY = klerp(500, 880, aterriza);
   const brillo0 = kprog(T, K.G + 1.4, K.G + 2.4);
   // estudio: 24 zonas, 12 con Wolbachia (patrón fijo, esquemático)
   const ZONAS = [1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1];
@@ -214,23 +230,23 @@ function Wolbachia35() {
       <Escena T={T} a={K.G} b={K.Ba} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Brazo y={1080} />
-          <Mosco T={T} x={moscoX} y={moscoY} s={0.95} rot={klerp(-18, 0, aterriza)} vuela={1 - kprog(T, K.G + 0.6, K.G + 0.9) * 0.9} wol={brillo0} />
+          <Brazo y={1090} alto={340} />
+          <Mosco T={T} x={moscoX} y={moscoY} s={1.35} rot={klerp(-18, 0, aterriza)} vuela={1 - kprog(T, K.G + 0.6, K.G + 0.9) * 0.9} wol={brillo0} />
         </SvgCapa>
       </Escena>
       {/* 1 · vive en muchísimos insectos, pero no en este */}
       <Escena T={T} a={K.Ba} b={K.Pr}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          {[['mosca', 170, 780], ['mariposa', 430, 760], ['escarabajo', 680, 790], ['abeja', 910, 780]].map(([t, x, y], i) => {
+          {[['mosca', 300, 700], ['mariposa', 780, 710], ['escarabajo', 290, 990], ['abeja', 790, 980]].map(([t, x, y], i) => {
             const on = kprog(T, K.Ba + 0.3 + i * 0.35, K.Ba + 0.7 + i * 0.35, kEase.rebote);
-            return <g key={i} opacity={kprog(T, K.Ba + i * 0.2, K.Ba + 0.3 + i * 0.2)}>
+            return <g key={i} opacity={kprog(T, K.Ba + i * 0.15, K.Ba + 0.3 + i * 0.15)} transform={`translate(${x} ${y}) scale(1.6) translate(${-x} ${-y})`}>
               <Insecto tipo={t} x={x} y={y} T={T} />
               <g transform={`translate(${x + 50} ${y - 70}) scale(${on})`}><circle r={30} fill={WOL} opacity={0.4} /><Wolbachia x={0} y={0} T={T} s={1.1} /></g>
             </g>; })}
-          <g opacity={kprog(T, K.Ba + 2.2, K.Ba + 2.6)}>
-            <Mosco T={T} x={560} y={1000} s={0.55} vuela={0.2} />
-            <g transform={`translate(${780} ${900}) scale(${kprog(T, K.Ba + 2.6, K.Ba + 3.0, kEase.rebote)})`}>
+          <g opacity={klerp(0.3, 1, kprog(T, K.Ba + 2.2, K.Ba + 2.6))}>
+            <Mosco T={T} x={500} y={1290} s={1.0} vuela={0.2} />
+            <g transform={`translate(${860} ${1140}) scale(${1.25 * kprog(T, K.Ba + 2.6, K.Ba + 3.0, kEase.rebote)})`}>
               <circle r={48} fill="#fff" stroke={KC.ink} strokeWidth={6} /><path d="M -22 -22 L 22 22 M 22 -22 L -22 22" stroke={KC.red} strokeWidth={11} strokeLinecap="round" /></g>
           </g>
         </SvgCapa>
@@ -239,10 +255,11 @@ function Wolbachia35() {
       <Escena T={T} a={K.Pr} b={K.PD} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
+          <g transform="translate(540 1010) scale(1.2) translate(-540 -940)">
           <g opacity={kprog(T, K.Pr, K.Pr + 0.3)}><MoscaFruta x={230} y={760} s={1.25} T={T} /></g>
           <FlechaCurva x1={300} y1={860} x2={560} y2={960} p={kprog(T, K.Pr + 1.2, K.Pr + 1.8)} T={T} color={WOL} curva={-60} />
           {/* placa de cultivo con células de mosco */}
-          <g opacity={kprog(T, K.Pr + 1.5, K.Pr + 2.0)}>
+          <g opacity={klerp(0.3, 1, kprog(T, K.Pr + 1.5, K.Pr + 2.0))}>
             <ellipse cx={720} cy={1000} rx={230} ry={90} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={8} />
             <ellipse cx={720} cy={990} rx={200} ry={70} fill="#ffd6e4" stroke="rgba(22,18,15,.4)" strokeWidth={4} />
             {Array.from({ length: 12 }, (_, i) => { const cx = 580 + (i % 6) * 56, cy = 965 + Math.floor(i / 6) * 48, llena = kprog(T, K.Pr + 2.0 + i * 0.08, K.Pr + 2.3 + i * 0.08);
@@ -250,35 +267,40 @@ function Wolbachia35() {
           </g>
           <FlechaCurva x1={640} y1={1100} x2={420} y2={1180} p={kprog(T, K.Pr + 3.4, K.Pr + 4.0)} T={T} color={WOL} curva={-50} />
           {/* aguja de vidrio que entra en el huevito */}
-          {T > K.Pr + 3.8 && <g>
+          <g opacity={klerp(0.3, 1, kprog(T, K.Pr + 3.6, K.Pr + 4.0))}>
             <Huevo x={300} y={1190} s={1.6} rot={-8} wol={kprog(T, K.Pr + 4.9, K.Pr + 5.4)} T={T} />
+          </g>
+          {T > K.Pr + 3.8 && <g>
             <g transform={`translate(${klerp(560, 395, kprog(T, K.Pr + 4.0, K.Pr + 4.7, kEase.sale))} ${klerp(1080, 1170, kprog(T, K.Pr + 4.0, K.Pr + 4.7, kEase.sale))}) rotate(-28)`}>
               <path d="M 0 0 L 260 -16 L 260 16 Z" fill="rgba(220,240,255,.8)" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
               <path d="M 20 0 L 240 -6" stroke={WOL} strokeWidth={5} />
             </g>
           </g>}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 3 · por dentro: la bacteria le estorba al virus */}
       <Escena T={T} a={K.PD} b={K.Sa} zoom={0.02}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <SvgCapa><Mosco T={T} x={800} y={290} s={0.45} vuela={0.15} wol={1} /></SvgCapa>
-        <Lupa T={T} at={K.PD + 0.1} until={K.Sa - 0.3} x={540} y={690} r={280} fx={880} fy={295} interior={(t, r) => CelulaInterior(t, r, K.PD)} tinte={WOL} etiqueta="AL MICROSCOPIO · CÉLULA DEL MOSCO" />
+        <SvgCapa><Mosco T={T} x={750} y={350} s={0.62} vuela={0.15} wol={1} /></SvgCapa>
+        <Lupa T={T} at={K.PD + 0.1} until={K.Sa - 0.3} x={540} y={935} r={410} fx={860} fy={357} interior={(t, r) => CelulaInterior(t, r, K.PD)} tinte={WOL} etiqueta="AL MICROSCOPIO · CÉLULA DEL MOSCO" />
       </Escena>
       {/* 4 · la saliva */}
       <Escena T={T} a={K.Sa} b={K.Pq} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <rect x={0} y={1000} width={KW} height={420} fill={PIEL} stroke={KC.ink} strokeWidth={10} />
-          <rect x={0} y={1000} width={KW} height={40} fill="#f7cdb2" />
+          <g transform="translate(0 120)">
+          <rect x={-20} y={1000} width={KW + 40} height={800} fill="#5e3b33" stroke={KC.ink} strokeWidth={10} />
+          <rect x={0} y={1000} width={KW} height={40} fill="#b98268" />
           <Mosco T={T} x={595} y={555} s={1.6} rot={-71} vuela={0.3} wol={kprog(T, K.Sa + 1.5, K.Sa + 2.0)} />
-          {[0, 1, 2].map((i) => { const ti = K.Sa + 0.4 + i * 1.1, u = ((T - ti) % 3.3) / 3.3; if (T < ti) return null; const yy = klerp(1070, 1220, u);
+          {[0, 1, 2].map((i) => { const ti = K.Sa + 0.4 + i * 1.1, u = ((T - ti) % 3.3) / 3.3; if (T < ti) return null; const yy = klerp(1075, 1205, u);
             const quita = kprog(T, K.Sa + 1.8, K.Sa + 2.8);
             return <g key={i} opacity={1 - u * 0.6}>
               <circle cx={540 + (i - 1) * 60 * u} cy={yy} r={50} fill="rgba(220,240,255,.8)" stroke={KC.ink} strokeWidth={5} />
               {i !== 1 && <Virus x={540 + (i - 1) * 60 * u} y={yy} s={0.8} T={T} o={1 - quita} />}
             </g>; })}
           <g transform="translate(840 1130)"><Wolbachia x={0} y={0} T={T} s={2.6} o={kprog(T, K.Sa + 1.5, K.Sa + 2.0)} /></g>
+          </g>
         </SvgCapa>
       </Escena>
       {/* 5 · ¿cómo llega a todos los moscos de tu colonia? */}
@@ -293,11 +315,11 @@ function Wolbachia35() {
       <Escena T={T} a={K.He} b={K.Tr}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <rect x={120} y={1020} width={840} height={260} fill="#7fc8ff" stroke={KC.ink} strokeWidth={8} />
-          <path d={`M 120 1020 Q 540 ${1010 + Math.sin(T * 3) * 6} 960 1020`} stroke="#fff" strokeWidth={6} fill="none" />
-          <Mosco T={T} x={640} y={760} s={0.7} wol={1} vuela={0.2} />
+          <rect x={50} y={1110} width={980} height={330} fill="#122f48" stroke={KC.ink} strokeWidth={8} />
+          <path d={`M 50 1110 Q 540 ${1098 + Math.sin(T * 3) * 8} 1030 1110`} stroke="#bfe6ff" strokeWidth={7} fill="none" />
+          <Mosco T={T} x={515} y={760} s={1.3} wol={1} vuela={0.2} />
           {Array.from({ length: 6 }, (_, i) => { const ti = K.He + 0.4 + i * 0.3, u = kprog(T, ti, ti + 0.45, kEase.sale);
-            return T > ti ? <Huevo key={i} x={220 + i * 120} y={klerp(900, 990, u)} s={0.8} rot={-10 + i * 4} wol={kprog(T, ti + 0.4, ti + 0.8)} T={T} /> : null; })}
+            return T > ti ? <Huevo key={i} x={150 + i * 156} y={klerp(950, 1078, u)} s={1.15} rot={-10 + i * 4} wol={kprog(T, ti + 0.4, ti + 0.8)} T={T} /> : null; })}
         </SvgCapa>
       </Escena>
       {/* 7 · el truco: macho con Wolbachia × hembra sin ella → no nacen */}
@@ -305,16 +327,16 @@ function Wolbachia35() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           {[[0, WOL2, '#6b6f7a', false], [1, '#6b6f7a', WOL2, true], [2, WOL2, WOL2, true]].map(([fila, cm, ch, nacen]) => {
-            const y = 720 + fila * 180, t0 = K.Tr + 0.2 + fila * 1.1, e = kprog(T, t0, t0 + 0.4);
-            return <g key={fila} opacity={e}>
-              <rect x={60} y={y - 75} width={960} height={150} rx={30} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={6} />
-              <MiniMosco T={T} x={150} y={y} s={2.2} color={cm} glow={cm === WOL2 ? 1 : 0} sexo="m" />
-              <text x={150} y={y + 66} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>macho</text>
-              <text x={275} y={y + 20} textAnchor="middle" style={{ font:`900 64px ${KF.texto}` }} fill={KC.ink}>×</text>
-              <MiniMosco T={T} x={400} y={y} s={2.2} color={ch} glow={ch === WOL2 ? 1 : 0} sexo="h" />
-              <text x={400} y={y + 66} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>hembra</text>
-              <text x={520} y={y + 18} textAnchor="middle" style={{ font:`900 56px ${KF.texto}` }} fill={KC.ink}>→</text>
-              {[0, 1, 2].map((k) => <Huevo key={k} x={620 + k * 120} y={y} s={0.75} rot={-8} wol={nacen ? kprog(T, t0 + 0.5, t0 + 0.9) : 0} roto={nacen ? 0 : kprog(T, t0 + 0.6, t0 + 0.9)} T={T} />)}
+            const y = 650 + fila * 270, t0 = K.Tr + 0.2 + fila * 1.1, e = kprog(T, t0, t0 + 0.4);
+            return <g key={fila} opacity={klerp(0.28, 1, e)}>
+              <rect x={40} y={y - 118} width={1000} height={236} rx={36} fill="rgba(16,24,44,.9)" stroke={KC.ink} strokeWidth={6} />
+              <MiniMosco T={T} x={160} y={y - 14} s={3.1} color={cm} glow={cm === WOL2 ? 1 : 0} sexo="m" />
+              <text x={160} y={y + 92} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>macho</text>
+              <text x={300} y={y + 12} textAnchor="middle" style={{ font:`900 80px ${KF.texto}` }} fill={KC.ink}>×</text>
+              <MiniMosco T={T} x={440} y={y - 14} s={3.1} color={ch} glow={ch === WOL2 ? 1 : 0} sexo="h" />
+              <text x={440} y={y + 92} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>hembra</text>
+              <text x={578} y={y + 10} textAnchor="middle" style={{ font:`900 70px ${KF.texto}` }} fill={KC.ink}>→</text>
+              {[0, 1, 2].map((k) => <Huevo key={k} x={690 + k * 132} y={y - 8} s={0.95} rot={-8} wol={nacen ? kprog(T, t0 + 0.5, t0 + 0.9) : 0} roto={nacen ? 0 : kprog(T, t0 + 0.6, t0 + 0.9)} T={T} />)}
             </g>; })}
         </SvgCapa>
       </Escena>
@@ -327,69 +349,62 @@ function Wolbachia35() {
       <Escena T={T} a={K.Es} b={K.Re}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <g opacity={kprog(T, K.Es + 2.4, K.Es + 2.8)}>
-            <rect x={90} y={665} width={900} height={575} rx={24} fill="#f4efe4" stroke={KC.ink} strokeWidth={8} />
-            {ZONAS.map((z, i) => { const c = i % 6, r = Math.floor(i / 6), x = 122 + c * 142, y = 683 + r * 138, on = z ? kprog(T, K.Es + 3.0 + i * 0.06, K.Es + 3.3 + i * 0.06) : 0;
-              return <g key={i}>
-                <rect x={x} y={y} width={128} height={128} rx={12} fill={mixHex('#d8d2c4', '#9be89a', on)} stroke={KC.ink} strokeWidth={4} />
-                {z === 1 && T > K.Es + 3.4 && [0, 1].map((k) => { const tt = K.Es + 3.4 + i * 0.05 + k * 0.3, u = kprog(T, tt, tt + 0.5, kEase.sale);
-                  return <Huevo key={k} x={x + 40 + k * 50} y={klerp(y - 30, y + 70 + k * 18, u)} s={0.32} rot={20} T={T} wol={1} />; })}
-              </g>; })}
-          </g>
+          <Zonas T={T} t0={K.Es} zonas={ZONAS} />
         </SvgCapa>
       </Escena>
       {/* 10 · resultado */}
       <Escena T={T} a={K.Re} b={K.Oj}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <text x={600} y={590} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Re + 0.4, K.Re + 0.7)}>dengue con síntomas</text>
-          <text x={540} y={930} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Re + 2.8, K.Re + 3.1)}>hospitalizados por dengue</text>
+          <Zonas T={T} t0={K.Es} zonas={ZONAS} o={0.3} />
+          <text x={540} y={690} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink} stroke="#0b1020" strokeWidth={10} paintOrder="stroke" opacity={kprog(T, K.Re + 0.4, K.Re + 0.7)}>dengue con síntomas</text>
+          <text x={540} y={1070} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink} stroke="#0b1020" strokeWidth={10} paintOrder="stroke" opacity={kprog(T, K.Re + 2.8, K.Re + 3.1)}>hospitalizados por dengue</text>
         </SvgCapa>
       </Escena>
       {/* 11 · no es transgénico */}
       <Escena T={T} a={K.Oj} b={K.Ci}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <g transform="translate(0 0)"><ADNHebra T={T} x={70} y={880} largo={440} alto={110} vueltas={2.2} /></g>
-          <text x={290} y={1010} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>genes del mosco</text>
-          <text x={290} y={1052} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>sin cambios ✓</text>
-          <text x={150} y={1150} textAnchor="middle" style={{ font:`900 70px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Oj + 1.2, K.Oj + 1.5)}>+</text>
-          <g opacity={kprog(T, K.Oj + 1.2, K.Oj + 1.6)}><Wolbachia x={330} y={1130} T={T} s={2.6} /></g>
+          <g transform="translate(0 0)"><ADNHebra T={T} x={90} y={830} largo={900} alto={230} vueltas={2.2} grosor={12} /></g>
+          <text x={540} y={1045} textAnchor="middle" style={{ font:`700 50px ${KF.mono}` }} fill={KC.ink}>genes del mosco</text>
+          <text x={540} y={1110} textAnchor="middle" style={{ font:`700 50px ${KF.mono}` }} fill={KC.ink}>sin cambios ✓</text>
+          <text x={350} y={1345} textAnchor="middle" style={{ font:`900 130px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Oj + 1.2, K.Oj + 1.5)}>+</text>
+          <g opacity={kprog(T, K.Oj + 1.2, K.Oj + 1.6)}><Wolbachia x={610} y={1300} T={T} s={5.2} /></g>
         </SvgCapa>
       </Escena>
       {/* 12 · cierre: el mismo brazo del inicio, el mosco ya con su bacteria */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Brazo y={1080} />
-          <Mosco T={T} x={560} y={930} s={0.95} vuela={0.1} wol={1} />
+          <Brazo y={1090} alto={340} />
+          <Mosco T={T} x={495} y={880} s={1.35} vuela={0.1} wol={1} />
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 0.9} until={K.Ba - 0.3} x={160} y={700} texto="Aedes aegypti" it tam={40} color={KC.ink} />
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.9} texto="¿más peligroso?" x={300} y={500} tam={44} />
-      <Chip T={T} at={K.G + 2.4} until={K.Ba - 0.3} texto="trae una bacteria: Wolbachia" y={1500} tam={40} borde={WOL2} />
-      <Etq T={T} at={K.Ba + 0.5} until={K.Pr - 0.3} x={60} y={1500} texto="Wolbachia pipientis" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.Ba + 2.7} until={K.Pr - 0.3} texto="en Aedes aegypti: no" x={760} y={1180} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.Pr + 0.4} until={K.Pr + 3.0} x={60} y={600} texto="mosca de la fruta · Drosophila" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Pr + 2.0} until={K.Pr + 3.7} texto="2 años en células de mosco" x={720} y={860} tam={34} borde={WOL2} />
+      <Etq T={T} at={K.G + 0.9} until={K.Ba - 0.3} x={110} y={640} texto="Aedes aegypti" it tam={40} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.9} texto="¿más peligroso?" x={330} y={480} tam={44} />
+      <Chip T={T} at={K.G + 2.4} until={K.Ba - 0.3} texto="trae una bacteria: Wolbachia" y={1535} tam={40} borde={WOL2} />
+      <Etq T={T} at={K.Ba + 0.5} until={K.Pr - 0.3} x={60} y={495} texto="Wolbachia pipientis" it tam={40} color={KC.ink} />
+      <Chip T={T} at={K.Ba + 2.7} until={K.Pr - 0.3} texto="en Aedes aegypti: no" x={540} y={1530} tam={34} borde={KC.red} />
+      <Etq T={T} at={K.Pr + 0.4} until={K.Pr + 3.0} x={60} y={610} texto="mosca de la fruta · Drosophila" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Pr + 2.0} until={K.Pr + 3.7} texto="2 años en células de mosco" x={740} y={915} tam={34} borde={WOL2} />
       <Chip T={T} at={K.Pr + 3.9} until={K.PD - 0.3} texto="mosca → células → huevo de mosco" y={1500} tam={36} borde={WOL2} />
-      <Etq T={T} at={K.PD + 1.0} until={K.Sa - 0.3} x={60} y={1500} texto="virus del dengue: casi no se copia" tam={32} color={KC.texto} />
-      <Chip T={T} at={K.Sa + 1.6} until={K.Pq - 0.3} texto="menos virus en la saliva" y={1500} tam={42} borde={VIRUS} />
-      <Etq T={T} at={K.Sa + 0.5} until={K.Pq - 0.3} x={590} y={880} texto="probóscide (trompa)" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.He + 0.6} until={K.Tr - 0.2} texto="se hereda dentro del huevo" y={1500} tam={40} borde={WOL2} />
-      <Chip T={T} at={K.Tr + 1.0} until={K.Ga - 0.3} texto="✕ = no nacen · verde = traen Wolbachia" y={1500} tam={34} borde={KC.red} />
+      <Etq T={T} at={K.PD + 1.0} until={K.Sa - 0.3} x={60} y={1570} texto="virus del dengue: casi no se copia" tam={32} color={KC.texto} />
+      <Chip T={T} at={K.Sa + 1.6} until={K.Pq - 0.3} texto="menos virus en la saliva" y={1520} tam={42} borde={VIRUS} />
+      <Etq T={T} at={K.Sa + 0.5} until={K.Pq - 0.3} x={590} y={1000} texto="probóscide (trompa)" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.He + 0.6} until={K.Tr - 0.2} texto="se hereda dentro del huevo" y={1530} tam={40} borde={WOL2} />
+      <Chip T={T} at={K.Tr + 1.0} until={K.Ga - 0.3} texto="✕ = no nacen · verde = traen Wolbachia" y={1440} tam={34} borde={KC.red} />
       <Medidor T={T} at={K.Ga + 0.2} until={K.Es - 0.3} valor={fracGana} etiqueta={`generación ${genera + 1}`} x={90} y={1440} color={WOL} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2017" quien="Yogyakarta, Indonesia" revista="ensayo AWED · 24 zonas al azar" y={900} />
-      <Chip T={T} at={K.Es + 3.0} until={K.Re - 0.3} texto="12 zonas con huevos · 12 sin" y={1500} tam={40} borde={WOL2} />
-      <NumeroGigante T={T} at={K.Re + 0.4} until={K.Oj - 0.3} valor={77} sufijo=" %" prefijo="−" y={720} tam={220} color={KC.yellow} />
-      <NumeroGigante T={T} at={K.Re + 2.8} until={K.Oj - 0.3} valor={86} sufijo=" %" prefijo="−" y={1050} tam={200} color={WOL} />
-      <Chip T={T} at={K.Re + 1.0} until={K.Oj - 0.3} texto="NEJM 2021 · zonas con vs. sin Wolbachia" y={1500} tam={32} borde={KC.gold} />
-      <MitoTachado T={T} at={K.Oj + 0.1} tacharEn={K.Oj + 1.0} until={K.Ci - 0.2} texto="mosco transgénico" x={300} y={700} tam={44} />
-      <Etq T={T} at={K.Ci + 0.6} until={K.Ou} x={160} y={700} texto="con Wolbachia" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="te pica, pero frena al dengue" y={1500} tam={40} borde={WOL2} />
-      {(T < K.Ba - 0.2 || (T > K.Ci && T < K.Ou)) && <Escala T={T} z={1} pxPorMm={100} y={1640} color={KC.ink} objetivo={220} />}
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2017" quien="Yogyakarta, Indonesia" revista="ensayo AWED · 24 zonas al azar" y={300} />
+      <Chip T={T} at={K.Es + 3.0} until={K.Re - 0.3} texto="12 zonas con huevos · 12 sin" y={1560} tam={40} borde={WOL2} />
+      <NumeroGigante T={T} at={K.Re + 0.4} until={K.Oj - 0.3} valor={77} sufijo=" %" prefijo="−" y={840} tam={240} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Re + 2.8} until={K.Oj - 0.3} valor={86} sufijo=" %" prefijo="−" y={1215} tam={220} color={WOL} />
+      <Chip T={T} at={K.Re + 1.0} until={K.Oj - 0.3} texto="NEJM 2021 · zonas con vs. sin Wolbachia" y={1560} tam={32} borde={KC.gold} />
+      <MitoTachado T={T} at={K.Oj + 0.1} tacharEn={K.Oj + 1.0} until={K.Ci - 0.2} texto="mosco transgénico" x={540} y={560}  tam={44} />
+      <Etq T={T} at={K.Ci + 0.6} until={K.Ou} x={110} y={640} texto="con Wolbachia" it tam={40} color={KC.ink} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="te pica, pero frena al dengue" y={1535} tam={40} borde={WOL2} />
+      {(T < K.Ba - 0.2 || (T > K.Ci && T < K.Ou)) && <Escala T={T} z={1} pxPorMm={142} y={1640} color={KC.ink} objetivo={220} />}
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ba - 0.1} texto="Trae una bacteria que *frena al dengue.*" />

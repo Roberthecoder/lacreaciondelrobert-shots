@@ -140,58 +140,59 @@ function Aguacate() {
       <Escena T={T} a={K.G} b={K.Ma} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Molcajete x={540} y={800} s={1.2} cafe={1} raya={raya} />
-          <Cuchara x={klerp(300, 820, raya)} y={790 - Math.sin(raya * Math.PI) * 16} rot={-24 + Math.sin(T * 8) * 3} s={1.1} />
-          <LluviaO2 T={T} desde={K.G + 1.4} hasta={K.Ma} xs={[260, 360, 450, 540]} y0={500} y1={770} cada={1.1} />
+          <Molcajete x={540} y={920} s={1.5} cafe={1} raya={raya} />
+          <Cuchara x={klerp(250, 860, raya)} y={908 - Math.sin(raya * Math.PI) * 20} rot={-24 + Math.sin(T * 8) * 3} s={1.35} />
+          <LluviaO2 T={T} desde={K.G + 1.4} hasta={K.Ma} xs={[220, 340, 460, 580]} y0={560} y1={890} cada={1.1} s={0.6} />
         </SvgCapa>
       </Escena>
       {/* 1 · machacar: tejolote y la pulpa por dentro */}
       <Escena T={T} a={K.Ma} b={K.En} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <MedioAguacate x={170} y={1000} s={0.7} rot={-14} />
-          <Molcajete x={540} y={830} s={1.15} />
-          <Tejolote x={600} y={klerp(670, 750, golpe(K.Ma))} rot={18} s={0.9} />
+          <MedioAguacate x={150} y={1160} s={0.85} rot={-14} />
+          <Molcajete x={540} y={950} s={1.45} />
+          <Tejolote x={620} y={klerp(770, 870, golpe(K.Ma))} rot={18} s={1.12} />
         </SvgCapa>
-        <Lupa T={T} at={K.Ma + 1.4} until={K.En - 0.2} x={640} y={630} r={230} fx={480} fy={840} tinte={VERDE} etiqueta="AL MICROSCOPIO · pulpa"
+        <Lupa T={T} at={K.Ma + 1.4} until={K.En - 0.2} x={640} y={560} r={230} fx={480} fy={950} tinte={VERDE} etiqueta="AL MICROSCOPIO · pulpa"
           interior={(t, r) => <svg width={r * 2} height={r * 2} style={{ background:'#0f1f10' }}>
             {Array.from({ length: 20 }, (_, i) => { const c = i % 5, f = Math.floor(i / 5); return <CeldaPulpa key={i} T={t} seed={i + 1} cx={40 + c * 100 + (f % 2) * 50} cy={70 + f * 110} w={120} rompe={rompe * (i % 3 === 1 ? 0.7 : 1)} />; })}
           </svg>} />
-        {T > K.Ma + 1.9 && T < K.En - 0.2 && <Escala T={T} z={1} pxPorMm={2000} objetivo={110} x={890} y={600} />}
+        {T > K.Ma + 1.9 && T < K.En - 0.2 && <Escala T={T} z={1} pxPorMm={2000} objetivo={110} x={890} y={530} />}
       </Escena>
       {/* 2 · la enzima toma polifenoles y oxígeno */}
       <Escena T={T} a={K.En} b={K.Me} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(160,220,120,.25)" />
         <SvgCapa>
-          <PPO x={420} y={880} s={2.3} boca={bocaEn} />
+          <PPO x={400} y={900} s={3.0} boca={bocaEn} />
           {ciclos.map((t0, i) => { const llega = kprog(T, t0 - 1.0, t0, kEase.suave), sale = kprog(T, t0 + 0.1, t0 + 1.1, kEase.sale);
             if (T < t0 - 1.0) return null;
-            const yy = 880 + (i - 1) * 40;
+            const yy = 900 + (i - 1) * 50;
             return <g key={i}>
-              {sale === 0 && <Anillo x={klerp(1040, 640, llega)} y={yy} s={1.1} rot={T * 30} />}
-              {sale === 0 && <Mol tipo="o2" x={klerp(700, 620, llega)} y={klerp(420, yy - 70, llega)} s={0.6} rot={T * 40} />}
-              {sale > 0 && <Anillo x={klerp(640, 700 + i * 120, sale)} y={klerp(yy, 1040, sale)} s={1} color={KC.orange} oh={false} rot={T * 20} />}
+              {sale === 0 && <Anillo x={klerp(1060, 650, llega)} y={yy} s={1.45} rot={T * 30} />}
+              {sale === 0 && <Mol tipo="o2" x={klerp(720, 630, llega)} y={klerp(440, yy - 90, llega)} s={0.8} rot={T * 40} />}
+              {sale > 0 && <Anillo x={klerp(650, 700 + i * 140, sale)} y={klerp(yy, 1200, sale)} s={1.35} color={KC.orange} oh={false} rot={T * 20} />}
             </g>; })}
         </SvgCapa>
-        <Etq T={T} at={K.En + 0.4} until={K.Me - 0.2} x={80} y={600} texto="polifenol oxidasa" color={ENZ} tam={34} />
-        <Etq T={T} at={K.En + 0.8} until={K.En + 2.4} x={760} y={790} texto="polifenol" color="#ffd34d" tam={32} />
-        <Etq T={T} at={K.En + 1.4} until={K.Me - 0.2} x={680} y={1110} texto="quinona" color={KC.orange} tam={32} lado="izq" />
+        <Etq T={T} at={K.En + 0.4} until={K.Me - 0.2} x={80} y={590} texto="polifenol oxidasa" color={ENZ} tam={34} />
+        <Etq T={T} at={K.En + 0.8} until={K.En + 2.4} x={760} y={770} texto="polifenol" color="#ffd34d" tam={32} />
+        <Etq T={T} at={K.En + 1.4} until={K.Me - 0.2} x={680} y={1300} texto="quinona" color={KC.orange} tam={32} lado="izq" />
       </Escena>
       {/* 3 · las quinonas se encadenan: melaninas */}
       <Escena T={T} a={K.Me} b={K.Pr} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={24} color="rgba(255,170,90,.22)" />
         <SvgCapa>
-          {Array.from({ length: 11 }, (_, i) => { const t0 = K.Me + 0.3 + i * 0.22, e = kprog(T, t0, t0 + 0.3, kEase.rebote), cafe = kprog(T, K.Me + 1.6 + i * 0.1, K.Me + 2.6 + i * 0.1);
-            const x = 110 + i * 86, y = 880 + Math.sin(i * 0.9 + T * 1.5) * 90;
-            const xp = 110 + (i - 1) * 86, yp = 880 + Math.sin((i - 1) * 0.9 + T * 1.5) * 90;
+          <g opacity={0.55}><Molcajete x={540} y={1170} s={1.05} cafe={kprog(T, K.Me + 0.4, K.Me + 3.0)} /></g>
+          {Array.from({ length: 11 }, (_, i) => { const t0 = K.Me + 0.0 + i * 0.12, e = kprog(T, t0, t0 + 0.3, kEase.rebote), cafe = kprog(T, K.Me + 1.6 + i * 0.1, K.Me + 2.6 + i * 0.1);
+            const x = 90 + i * 90, y = 790 + Math.sin(i * 0.9 + T * 1.5) * 110;
+            const xp = 90 + (i - 1) * 90, yp = 790 + Math.sin((i - 1) * 0.9 + T * 1.5) * 110;
             return <g key={i}>
               {i > 0 && e > 0.5 && <line x1={xp} y1={yp} x2={x} y2={y} stroke={mixHex(KC.orange, '#5e3c18', cafe)} strokeWidth={14} strokeLinecap="round" />}
-              {e > 0 && <Anillo x={x} y={y} s={1.05 * e} color={mixHex(KC.orange, '#6b4420', cafe)} oh={false} rot={i * 15} />}
+              {e > 0 && <Anillo x={x} y={y} s={1.35 * e} color={mixHex(KC.orange, '#6b4420', cafe)} oh={false} rot={i * 15} />}
             </g>; })}
         </SvgCapa>
-        <Chip T={T} at={K.Me + 1.8} until={K.Pr - 0.2} texto="melaninas = el café" y={640} tam={48} borde={CAFE} />
+        <Chip T={T} at={K.Me + 1.8} until={K.Pr - 0.2} texto="melaninas = el café" y={500} tam={48} borde={CAFE} />
       </Escena>
       {/* 4 · pregunta: café arriba, verde abajo */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.05}>
@@ -213,75 +214,75 @@ function Aguacate() {
       <Escena T={T} a={K.Es} b={K.Li} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          {[['Fuerte', 1, 2.0], ['Horeshim', 0.6, 3.2], ['Lerman', 0.3, 4.4]].map(([n, ppo, d], i) => { const x = 200 + i * 340, ap = kprog(T, K.Es + 2.4 + i * 0.2, K.Es + 2.8 + i * 0.2, kEase.rebote);
+          {[['Fuerte', 1, 2.0], ['Horeshim', 0.6, 3.2], ['Lerman', 0.3, 4.4]].map(([n, ppo, d], i) => { const x = 200 + i * 340, ap = kprog(T, K.Es - 0.3 + i * 0.15, K.Es + 0.1 + i * 0.15, kEase.rebote);
             const cafe = kprog(T, K.Es + 3.2, K.Es + 3.2 + d);
             return ap > 0 && <g key={i} opacity={ap}>
-              <MedioAguacate x={x} y={870} s={0.95 * ap} cafe={cafe} />
-              <Texto x={x} y={1085} t={n} tam={36} />
-              <rect x={x - 120} y={1110} width={240} height={30} rx={15} fill="rgba(0,0,0,.45)" stroke={KC.ink} strokeWidth={4} />
-              <rect x={x - 120} y={1110} width={240 * ppo * kprog(T, K.Es + 2.9, K.Es + 3.6)} height={30} rx={15} fill={ENZ} />
-              <Texto x={x - 108} y={1134} t="PPO" tam={22} anchor="start" color={KC.texto} />
+              <MedioAguacate x={x} y={990} s={1.22 * ap} cafe={cafe} />
+              <Texto x={x} y={1268} t={n} tam={40} />
+              <rect x={x - 140} y={1296} width={280} height={34} rx={17} fill="rgba(0,0,0,.45)" stroke={KC.ink} strokeWidth={4} />
+              <rect x={x - 140} y={1296} width={280 * ppo * kprog(T, K.Es + 2.9, K.Es + 3.6)} height={34} rx={17} fill={ENZ} />
+              <Texto x={x - 126} y={1323} t="PPO" tam={24} anchor="start" color={KC.texto} />
             </g>; })}
-          {T > K.Es + 3.0 && <Relojito T={T} x={540} y={640} r={56} vel={8} />}
+          {T > K.Es + 3.0 && <Relojito T={T} x={540} y={660} r={62} vel={8} />}
         </SvgCapa>
-        <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.5} anio="1975" quien="V. Kahn · Volcani, Israel" revista="J Sci Food Agric · 3 variedades" y={760} />
-        <Chip T={T} at={K.Es + 5.2} until={K.Li - 0.2} texto="más PPO → más rápido café" y={1500} tam={42} borde={ENZ} />
+        <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.5} anio="1975" quien="V. Kahn · Volcani, Israel" revista="J Sci Food Agric · 3 variedades" y={480} />
+        <Chip T={T} at={K.Es + 5.2} until={K.Li - 0.2} texto="más PPO → más rápido café" y={1430} tam={42} borde={ENZ} />
       </Escena>
       {/* 6–7 · limón y plástico */}
       <Escena T={T} a={K.Li} b={K.Hu} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Molcajete x={540} y={830} s={1.15} cafe={0.05} tapa={kprog(T, K.Pl + 0.4, K.Pl + 0.9)} />
+          <Molcajete x={540} y={960} s={1.42} cafe={0.05} tapa={kprog(T, K.Pl + 0.4, K.Pl + 0.9)} />
           {T < K.Pl + 0.3 && <g opacity={1 - kprog(T, K.Pl, K.Pl + 0.3)}>
-            <Limon x={360} y={560} s={0.9} rot={150} aprieta={Math.abs(Math.sin((T - K.Li) * 5)) * kprog(T, K.Li + 0.4, K.Li + 0.8)} />
-            <Goteo T={T} x={380} y0={680} y1={810} cada={0.35} color="#e9f7a0" desde={K.Li + 0.6} hasta={K.Pl} />
-            <PPO x={720} y={815} s={0.5} rot={Math.sin(T * 0.8) * 10} boca={Math.abs(Math.sin(T * 1.2)) * 0.6} />
+            <Limon x={350} y={600} s={1.15} rot={150} aprieta={Math.abs(Math.sin((T - K.Li) * 5)) * kprog(T, K.Li + 0.4, K.Li + 0.8)} />
+            <Goteo T={T} x={375} y0={740} y1={930} cada={0.35} color="#e9f7a0" desde={K.Li + 0.6} hasta={K.Pl} />
+            <PPO x={770} y={945} s={0.62} rot={Math.sin(T * 0.8) * 10} boca={Math.abs(Math.sin(T * 1.2)) * 0.6} />
           </g>}
-          {T > K.Pl && T < K.Pl + 0.9 && <rect x={170} y={klerp(380, 770, kprog(T, K.Pl, K.Pl + 0.6, kEase.sale))} width={740} height={18} rx={9} fill="rgba(220,240,255,.7)" stroke="#fff" strokeWidth={5} />}
-          <LluviaO2 T={T} desde={K.Pl + 0.8} hasta={K.Hu} xs={[320, 420, 520, 620]} y0={470} y1={770} cada={1.0} rebota={1} />
+          {T > K.Pl && T < K.Pl + 0.9 && <rect x={100} y={klerp(420, 900, kprog(T, K.Pl, K.Pl + 0.6, kEase.sale))} width={880} height={20} rx={9} fill="rgba(220,240,255,.7)" stroke="#fff" strokeWidth={5} />}
+          <LluviaO2 T={T} desde={K.Pl + 0.8} hasta={K.Hu} xs={[300, 420, 540, 660]} y0={520} y1={895} cada={1.0} rebota={1} s={0.6} />
         </SvgCapa>
-        <Etq T={T} at={K.Li + 1.6} until={K.Pl - 0.1} x={700} y={930} texto="enzima lenta" color={ENZ} tam={28} lado="der" />
-        <Chip T={T} at={K.Li + 1.0} until={K.Pl - 0.1} texto="ácido → baja el pH" y={1500} tam={44} borde="#c9e64a" />
-        <Chip T={T} at={K.Pl + 0.9} until={K.Hu - 0.1} texto="plástico pegado = casi sin O₂" y={1500} tam={40} borde={KC.cyan} />
+        <Etq T={T} at={K.Li + 1.6} until={K.Pl - 0.1} x={700} y={745} texto="enzima lenta" color={ENZ} tam={30} lado="izq" />
+        <Chip T={T} at={K.Li + 1.0} until={K.Pl - 0.1} texto="ácido → baja el pH" y={1440} tam={44} borde="#c9e64a" />
+        <Chip T={T} at={K.Pl + 0.9} until={K.Hu - 0.1} texto="plástico pegado = casi sin O₂" y={1440} tam={40} borde={KC.cyan} />
       </Escena>
       {/* 8 · el hueso (y la pelota de golf) */}
       <Escena T={T} a={K.Hu} b={K.Co} zoom={0.03}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Molcajete x={540} y={830} s={1.15} cafe={kprog(T, K.Hu + 0.9, K.Hu + 2.7)} hueco={T > K.Hu + 0.7 ? 1 : 0} />
-          {T > K.Hu + 1.0 && T < K.Hu + 3.0 && <Relojito T={T} x={880} y={560} r={50} vel={14} />}
-          {T < K.Hu + 4.0 && <Hueso x={klerp(540, 760, subeHueso)} y={klerp(420, 815, caeHueso) - subeHueso * 300} s={1.05} />}
-          {T > K.Hu + 4.1 && <PelotaGolf x={540} y={klerp(420, 815, caeGolf)} s={1.05} />}
+          <Molcajete x={540} y={960} s={1.42} cafe={kprog(T, K.Hu + 0.9, K.Hu + 2.7)} hueco={T > K.Hu + 0.7 ? 1 : 0} />
+          {T > K.Hu + 1.0 && T < K.Hu + 3.0 && <Relojito T={T} x={890} y={600} r={58} vel={14} />}
+          {T < K.Hu + 4.0 && <Hueso x={klerp(540, 790, subeHueso)} y={klerp(460, 945, caeHueso) - subeHueso * 330} s={1.3} />}
+          {T > K.Hu + 4.1 && <PelotaGolf x={540} y={klerp(460, 945, caeGolf)} s={1.3} />}
         </SvgCapa>
-        <Onomato T={T} at={K.Hu + 4.4} until={K.Co - 0.1} x={760} y={640} texto="¡boing!" color={KC.yellow} tam={84} />
-        <MitoTachado T={T} at={K.Hu + 0.3} tacharEn={K.Hu + 2.2} until={K.Hu + 3.0} texto="el hueso protege todo" y={1500} tam={44} />
-        <Chip T={T} at={K.Hu + 3.1} until={K.Co - 0.1} texto="solo protege lo que toca" y={1500} tam={44} borde={VERDE} />
+        <Onomato T={T} at={K.Hu + 4.4} until={K.Co - 0.1} x={760} y={640} texto="¡boing!" color={KC.yellow} tam={90} />
+        <MitoTachado T={T} at={K.Hu + 0.3} tacharEn={K.Hu + 2.2} until={K.Hu + 3.0} texto="el hueso protege todo" y={1440} tam={44} />
+        <Chip T={T} at={K.Hu + 3.1} until={K.Co - 0.1} texto="solo protege lo que toca" y={1440} tam={44} borde={VERDE} />
       </Escena>
       {/* 9 · dos átomos de cobre */}
-      <Escena T={T} a={K.Co} b={K.Ci} zoom={0.06} origen="35% 50%">
+      <Escena T={T} a={K.Co} b={K.Ci} zoom={0.06} origen="50% 50%">
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(217,130,43,.3)" />
         <SvgCapa>
-          <PPO x={300} y={920} s={klerp(2.2, 3.2, kprog(T, K.Co, K.Co + 1.2, kEase.suave))} cobre={kprog(T, K.Co + 0.9, K.Co + 1.5)} boca={0.3} />
+          <PPO x={520} y={960} s={klerp(3.0, 4.0, kprog(T, K.Co, K.Co + 1.2, kEase.suave))} cobre={kprog(T, K.Co + 0.9, K.Co + 1.5)} boca={0.3} />
         </SvgCapa>
-        <Etq T={T} at={K.Co + 1.6} until={K.Ci - 0.2} x={60} y={560} texto="2 átomos de cobre (Cu)" color={COBRE} tam={36} lado="der" />
+        <Etq T={T} at={K.Co + 1.6} until={K.Ci - 0.2} x={60} y={530} texto="2 átomos de cobre (Cu)" color={COBRE} tam={36} lado="der" />
       </Escena>
       {/* 10 · cierre: el mismo guacamole del inicio */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Molcajete x={540} y={800} s={1.2} cafe={1} raya={1} />
-          <Limon x={150} y={1060} s={0.55} rot={10} />
-          <LluviaO2 T={T} desde={K.Ci + 0.2} hasta={FIN} xs={[260, 360, 450, 540]} y0={500} y1={770} cada={1.1} />
+          <Molcajete x={540} y={920} s={1.5} cafe={1} raya={1} />
+          <Limon x={140} y={1290} s={0.7} rot={10} />
+          <LluviaO2 T={T} desde={K.Ci + 0.2} hasta={FIN} xs={[220, 340, 460, 580]} y0={560} y1={890} cada={1.1} s={0.6} />
         </SvgCapa>
-        <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="PPO + polifenoles + O₂ → melaninas" y={1500} tam={36} borde={CAFE} />
+        <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="PPO + polifenoles + O₂ → melaninas" y={1440} tam={36} borde={CAFE} />
       </Escena>
 
       {/* textos del gancho */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.7} until={K.G + 3.2} texto="¿podrido?" x={290} y={470} tam={50} />
-      <Chip T={T} at={K.G + 3.3} until={K.Ma - 0.2} texto="es una enzima + oxígeno" y={1500} tam={42} borde={ENZ} />
-      <Chip T={T} at={K.Ma + 0.4} until={K.Ma + 1.6} texto="¡crack! células rotas" y={1500} tam={42} borde={VERDE} />
-      <Chip T={T} at={K.Ma + 2.4} until={K.En - 0.2} texto="enzima + polifenoles: juntos" y={1500} tam={38} borde={ENZ} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.7} until={K.G + 3.2} texto="¿podrido?" x={300} y={540} tam={56} />
+      <Chip T={T} at={K.G + 3.3} until={K.Ma - 0.2} texto="es una enzima + oxígeno" y={1440} tam={42} borde={ENZ} />
+      <Chip T={T} at={K.Ma + 0.4} until={K.Ma + 1.6} texto="¡crack! células rotas" y={1440} tam={42} borde={VERDE} />
+      <Chip T={T} at={K.Ma + 2.4} until={K.En - 0.2} texto="enzima + polifenoles: juntos" y={1440} tam={38} borde={ENZ} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ma - 0.1} texto="No está podrido: *es una enzima.*" />

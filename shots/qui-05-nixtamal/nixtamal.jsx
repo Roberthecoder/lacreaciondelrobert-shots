@@ -164,12 +164,22 @@ function Nixtamal() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.Pg} b={K.Eu} zoom={0.1}>
         <FondoLunares color={KC.pink} />
+        {/* encuadre: el grano con su niacina suelta (lo de la escena anterior) sigue a cuadro, a media luz, y la pregunta encima */}
+        <div style={{ position:'absolute', inset:0, background:'rgba(10,15,28,.85)' }}></div>
+        <SvgCapa>
+          <g opacity={0.55} transform="translate(540 920) scale(1.45) translate(-540 -900)">
+            <GranoCorte T={T} x={540} y={900} s={1.0} pela={1} calcio={0} />
+            <Niacina x={655} y={650} s={1.1} />
+          </g>
+        </SvgCapa>
         <SvgCapa><text x={280} y={1100} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 900)`}>?</text></SvgCapa>
       </Escena>
       {/* 7 · Europa y la pelagra */}
       <Escena T={T} a={K.Eu} b={K.Es}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
+          {/* encuadre: barco, mar y síntomas bajan 150 px juntos para quedar centrados */}
+          <g transform="translate(0 150)">
           {/* segunda vuelta: barco grande sobre un mar oscuro que llega hasta abajo */}
           <g opacity={1 - 0.72 * kprog(T, K.Eu + 2.8, K.Eu + 3.3)}><Barco T={T} x={klerp(-380, 540, kprog(T, K.Eu, K.Eu + 2.6, kEase.sale))} y={1080} s={2.1} /></g>
           <rect x={-80} y={1200} width={KW + 160} height={900} fill="#0a1636" opacity={0.92} />
@@ -181,6 +191,7 @@ function Nixtamal() {
               {i === 1 && <path d="M -60 -40 Q 60 -60 40 0 Q 20 50 -40 20 Q -80 0 -30 -10 Q 30 -10 10 20" stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" />}
               {i === 2 && <g><path d="M -70 20 Q -80 -60 0 -70 Q 80 -60 70 20 Q 60 70 0 60 Q -60 70 -70 20 Z" fill="#f2b8c6" stroke={KC.ink} strokeWidth={7} /><path d="M -50 -10 Q 0 -40 50 -10" stroke="#fff" strokeWidth={10} strokeDasharray="8 10" fill="none" /></g>}
             </g>)}
+          </g>
           </g>
         </SvgCapa>
       </Escena>

@@ -150,6 +150,16 @@ function Panda() {
       {/* 4 · pregunta */}
       <Escena T={T} a={K.P} b={K.S} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
+        {/* encuadre: la suma de la escena anterior (foto + ruido = foto) sigue a cuadro, a media luz, y la pregunta encima */}
+        <div style={{ position:'absolute', inset:0, background:'rgba(10,15,28,.85)' }}></div>
+        {svg(<g opacity={0.55}>
+          <FotoPanda T={T} x={255} y={720} s={0.62} />
+          <text x={540} y={765} textAnchor="middle" style={{ font:`400 140px ${KF.titulo}` }} fill={KC.ink}>+</text>
+          <Ruido T={T} x={800} y={720} lado={350} o={1} />
+          <text x={800} y={500} textAnchor="middle" style={{ font:`700 56px ${KF.mono}` }} fill={KC.ink}>0.007 ×</text>
+          <text x={270} y={1245} textAnchor="middle" style={{ font:`400 140px ${KF.titulo}` }} fill={KC.ink}>=</text>
+          <FotoPanda T={T} x={640} y={1200} s={0.72} tinte={1} />
+        </g>)}
         {svg(<text x={540} y={1150} textAnchor="middle" style={{ font:`400 620px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 950)`}>?</text>)}
       </Escena>
       {/* 5 · por dentro: suma de números */}

@@ -50,14 +50,15 @@ function Burbuja({ x, y, r = 120, s = 1, desde, children }) {
   </g>;
 }
 // Almohada + cobija con las dos caras (gancho y cierre).
-function Cama({ T, colchon = '#f7f3ff' }) {
+function Cama({ T, colchon = '#c9c3df' }) {
   return <>
     <rect x={40} y={880} width={1000} height={290} rx={90} fill={colchon} stroke={KC.ink} strokeWidth={8} />
-    <path d="M 120 920 Q 540 880 960 920" stroke="#d9d2ee" strokeWidth={8} fill="none" />
+    <path d="M 120 920 Q 540 880 960 920" stroke="#a9a2c4" strokeWidth={8} fill="none" />
     <Cara T={T} x={320} y={1010} s={0.95} seed={1} />
     <Cara T={T} x={760} y={1020} s={0.95} pelo="#7a3b1c" piel="#e7b08a" largo seed={2} />
-    <path d="M 0 1130 Q 540 1080 1080 1130 L 1080 1240 L 0 1240 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={8} />
-    <path d="M 0 1150 Q 540 1100 1080 1150" stroke="#6f86ff" strokeWidth={8} fill="none" />
+    <path d="M -200 1130 Q 540 1080 1280 1130 L 1280 1380 L -200 1380 Z" fill="#26348a" stroke={KC.ink} strokeWidth={8} />
+    <path d="M -200 1150 Q 540 1100 1280 1150" stroke="#5266c8" strokeWidth={8} fill="none" />
+    
   </>;
 }
 // Silueta de cuerpo con boca, intestino y piel encendidos.
@@ -81,6 +82,16 @@ function Cuerpo({ T, prog }) {
 const LEV_LENGUA = [[260, 720, 10], [700, 860, -20], [430, 1010, 30], [860, 1080, 5]];
 const LEV_NUEVAS = [[330, 640, 40], [190, 820, -10], [560, 760, 15], [620, 1040, -30], [300, 1100, 20], [800, 700, 60], [930, 920, 0], [470, 900, -40], [120, 1000, 10], [760, 1160, 25]];
 const BACTS = (() => { const r = krng(34); return Array.from({ length: 26 }, (_, i) => [80 + r() * 920, 520 + r() * 680, r() * 180, i % 3]); })();
+// Etiqueta con fondo oscuro, para cuando cae encima del tejido (si no, se pierde sobre las células rosas).
+function EtqOsc({ T, at, until, x, y, texto, color = KC.texto, tam = 30 }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube');
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, opacity:e.o, display:'flex', alignItems:'center', gap:10, transform:'translate(0,-50%)',
+    background:'rgba(11,16,32,.86)', borderRadius:14, padding:'6px 16px 6px 10px' }}>
+    <div style={{ width:56 * kprog(T, at, at + 0.4, kEase.sale), height:4, background:color, borderRadius:2 }}></div>
+    <div style={{ font:`700 ${tam}px ${KF.mono}`, color, whiteSpace:'nowrap' }}>{texto}</div>
+  </div>;
+}
 // Bebé (ícono)
 function IcoBebe() {
   return <g>
@@ -124,9 +135,9 @@ function Raton({ x, y, s = 1 }) {
   </g>;
 }
 // Boca abierta vista de frente (macro): labios, cachetes por dentro, lengua y placas blancas.
-function BocaGrande({ T, x = 520, y = 890, placas = 0, algodon = 0 }) {
+function BocaGrande({ T, x = 540, y = 960, k = 1.15, placas = 0, algodon = 0 }) {
   const P = [[-150, 60, 46, 26], [-40, 110, 60, 30], [90, 70, 50, 24], [10, 30, 36, 20], [-90, 150, 40, 22], [140, 150, 42, 22], [-300, -40, 40, 60], [-320, 90, 34, 48], [300, -30, 40, 60], [315, 80, 34, 46]];
-  return <g transform={`translate(${x} ${y}) scale(0.85)`}>
+  return <g transform={`translate(${x} ${y}) scale(${k})`}>
     <ellipse rx={430} ry={330} fill={CA.labio} stroke={KC.ink} strokeWidth={10} />
     <ellipse rx={370} ry={270} fill={CA.boca} stroke={KC.ink} strokeWidth={7} />
     {/* cachetes por dentro (paredes) */}
@@ -156,7 +167,9 @@ function CandidaShot() {
   const FIN = K.Ou + 4;
   const burb = kprog(T, K.G + 0.25, K.G + 0.75, kEase.rebote);
   const capX = klerp(-200, 1300, kprog(T, K.Ab + 0.2, K.Ab + 1.8, kEase.suave));
-  const hifaF = kprog(T, K.Fo + 0.2, K.Fo + 3.0, kEase.sale);      // la hifa se alarga (40 px/µm)
+  const hifaF = kprog(T, K.Fo + 0.2, K.Fo + 3.0, kEase.sale);      // la hifa se alarga (40 px/µm antes del zoom)
+  const zAb = kprog(T, K.Fo - 0.3, K.Fo + 0.4, kEase.suave);        // la cámara se abre: de la levadura sola a la hifa entera
+  const zF = klerp(2.2, 1.15, zAb), cxF = klerp(230, 520, zAb);      // escala en pantalla = 40·zF px/µm
   const hifaIn = kprog(T, K.In + 0.3, K.In + 2.6, kEase.sale);     // la hifa entra a la célula (10 px/µm)
   const rompe = kprog(T, K.Tx + 0.2, K.Tx + 2.0);                  // la membrana se daña
   const QUIEN = [['recién nacidos', IcoBebe], ['dentadura postiza', IcoDentadura], ['antibióticos', IcoCapsula], ['inhalador de corticoides', IcoInhalador]];
@@ -165,23 +178,23 @@ function CandidaShot() {
       {/* 1 · gancho: tú y tu pareja, la misma levadura en la boca */}
       <Escena T={T} a={K.G} b={K.Ca} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.3) translate(-540 -955)">
           <Cama T={T} />
           <Burbuja x={300} y={790} s={burb} desde={[320, 1072]}><Levadura x={0} y={0} rx={62} ry={50} rot={-10} brote={kprog(T, K.G + 0.8, K.G + 3.5)} /></Burbuja>
           <Burbuja x={740} y={800} s={kprog(T, K.G + 0.45, K.G + 0.95, kEase.rebote)} desde={[760, 1082]}><Levadura x={0} y={0} rx={62} ry={50} rot={-10} brote={kprog(T, K.G + 1.0, K.G + 3.7)} /></Burbuja>
           {T > K.G + 1.2 && <text x={520} y={850} textAnchor="middle" style={{ font:`400 ${170 * kprog(T, K.G + 1.2, K.G + 1.6, kEase.rebote)}px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8}>=</text>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 2 · vive en la boca, el intestino y la piel */}
       <Escena T={T} a={K.Ca} b={K.V} zoom={0.06}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<Cuerpo T={T} prog={kprog(T, K.Ca + 0.2, K.Ca + 2.6)} />)}
+        {fsvg(<g transform="translate(400 960) scale(1.5) translate(-380 -824)"><Cuerpo T={T} prog={kprog(T, K.Ca + 0.2, K.Ca + 2.6)} /></g>)}
       </Escena>
       {/* 3–4 · al microscopio en tu lengua: las bacterias la mantienen a raya… hasta el antibiótico */}
       <Escena T={T} a={K.V} b={K.Tr} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.2) translate(-540 -860)">
           {BACTS.map(([x, y, r, c], i) => { const vida = 1 - kprog(T, K.Ab + 0.2 + (x + 200) / 1500 * 1.6, K.Ab + 0.6 + (x + 200) / 1500 * 1.6); const e = kprog(T, K.V - 0.3 + i * 0.03, K.V + 0.1 + i * 0.03, kEase.rebote);
             return e > 0 && vida > 0.02 ? <Bacteria key={i} T={T} x={x + Math.sin(T * 1.3 + i) * 8} y={y + Math.cos(T * 1.1 + i) * 8} rot={r + Math.sin(T + i) * 10} s={0.62 * e} color={[KC.mint, KC.cyan, KC.lilac][c]} vida={vida} seed={i} flagelo={c === 0} /> : null; })}
           {LEV_LENGUA.map(([x, y, r], i) => <Levadura key={i} x={x} y={y} rx={75} ry={60} rot={r} brote={0.3 + 0.2 * Math.sin(T + i)} s={kprog(T, K.V - 0.3, K.V + 0.3, kEase.rebote)} />)}
@@ -191,32 +204,40 @@ function CandidaShot() {
             <rect x={0} y={-42} width={110} height={84} rx={42} fill={KC.white} stroke={KC.ink} strokeWidth={7} />
             <path d={`M -130 -60 Q -300 0 -130 60`} stroke={KC.white} strokeWidth={10} fill="none" opacity=".5" />
           </g>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 5–6 · su truco: de levadura ovalada a hifa (40 px/µm) */}
       <Escena T={T} a={K.Tr} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <Hifa x={300} y={860} ang={0} largo={hifaF * 620} ancho={80} paso={200} />
-          <Levadura x={230} y={860} rx={100} ry={80} rot={0} brote={kprog(T, K.Tr - 0.3, K.Tr + 1.4)} s={kprog(T, K.Tr - 0.4, K.Tr + 0.2, kEase.rebote)} />
+          <g transform={`translate(540 960) scale(${zF}) translate(${-cxF} -860)`}>
+            <Hifa x={300} y={860} ang={0} largo={hifaF * 620} ancho={80} paso={200} />
+            <Levadura x={230} y={860} rx={100} ry={80} rot={0} brote={kprog(T, K.Tr - 0.3, K.Tr + 1.4)} s={kprog(T, K.Tr - 0.4, K.Tr + 0.2, kEase.rebote)} />
+          </g>
           {T < K.Fo + 0.6 && <g opacity={1 - kprog(T, K.Fo, K.Fo + 0.6)}>
-            <path d="M 420 700 Q 560 600 700 700" stroke={KC.yellow} strokeWidth={10} fill="none" strokeLinecap="round" opacity={kprog(T, K.Tr + 0.5, K.Tr + 0.9)} />
-            <path d="M 700 700 l -40 -6 m 40 6 l -14 -38" stroke={KC.yellow} strokeWidth={10} fill="none" strokeLinecap="round" opacity={kprog(T, K.Tr + 0.5, K.Tr + 0.9)} />
+            <path d="M 700 700 Q 850 600 1000 720" stroke={KC.yellow} strokeWidth={12} fill="none" strokeLinecap="round" opacity={kprog(T, K.Tr + 0.5, K.Tr + 0.9)} />
+            <path d="M 1000 720 l -46 -4 m 46 4 l -12 -44" stroke={KC.yellow} strokeWidth={12} fill="none" strokeLinecap="round" opacity={kprog(T, K.Tr + 0.5, K.Tr + 0.9)} />
           </g>}
         </>)}
       </Escena>
       {/* 7 · pregunta */}
       <Escena T={T} a={K.P} b={K.In} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Interrogacion T={T} x={300} y={1080} />)}
+        {fsvg(<>
+          <g opacity=".55" transform="translate(540 960) scale(1.15) translate(-520 -860)">
+            <Hifa x={300} y={860} ang={0} largo={620} ancho={80} paso={200} />
+            <Levadura x={230} y={860} rx={100} ry={80} rot={0} brote={1} />
+          </g>
+          <Interrogacion T={T} x={560} y={1120} tam={640} />
+        </>)}
       </Escena>
       {/* 8–10 · por dentro de la boca: la hifa entra, suelta candidalisina y daña la membrana (10 px/µm) */}
       <Escena T={T} a={K.In} b={K.Pl}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<>
-          {[0, 1, 2].map((fila) => [0, 1, 2, 3, 4].map((col) => { const x = -80 + col * 260 + (fila % 2) * 130, y = 720 + fila * 140; const blanco = fila === 0 && col === 2;
+        {fsvg(<><g transform="translate(540 700) scale(1.4) translate(-540 -690)">
+          {[0, 1, 2, 3].map((fila) => [0, 1, 2, 3, 4].map((col) => { const x = -80 + col * 260 + (fila % 2) * 130, y = 720 + fila * 140; const blanco = fila === 0 && col === 2;
             const gris = blanco ? kprog(T, K.Tx + 1.0, K.Tx + 2.4) : 0;
             return <g key={fila + '-' + col}>
               <rect x={x} y={y} width={250} height={130} rx={30} fill={mixHex(CA.celula, '#7d8089', gris)} stroke={blanco ? (rompe > 0 ? KC.red : KC.ink) : KC.ink} strokeWidth={blanco ? 7 : 5}
@@ -232,8 +253,9 @@ function CandidaShot() {
           {T > K.Es + 2.4 && Array.from({ length: 16 }, (_, i) => { const u = ((T - K.Es - 2.4) * 0.5 + i / 16) % 1; const a = i * 2.4; const tipX = 540 + Math.cos(78 * Math.PI / 180) * 220, tipY = 690 + Math.sin(78 * Math.PI / 180) * 220;
             const sal = kprog(T, K.Es + 2.4 + i * 0.08, K.Es + 2.7 + i * 0.08);
             return sal > 0 ? <circle key={i} cx={tipX + Math.cos(a) * (20 + u * 110)} cy={tipY + Math.sin(a) * (14 + u * 60)} r={7 * sal} fill={KC.red} stroke={KC.ink} strokeWidth={2} opacity={1 - u * 0.6} /> : null; })}
+          </g>
           {/* ratón sin la toxina: no enferma */}
-          {T > K.Tx + 2.2 && <g opacity={kprog(T, K.Tx + 2.2, K.Tx + 2.6)}>
+          {T > K.Tx + 2.2 && <g transform="translate(0 -110)" opacity={kprog(T, K.Tx + 2.2, K.Tx + 2.6)}>
             <rect x={70} y={430} width={560} height={250} rx={30} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
             <Raton x={220} y={570} s={kprog(T, K.Tx + 2.2, K.Tx + 2.6, kEase.rebote)} />
             <g transform="translate(400 530)"><Hifa x={0} y={0} ang={0} largo={150} ancho={22} paso={90} /></g>
@@ -251,13 +273,13 @@ function CandidaShot() {
       {/* 12 · a quién le pasa más (CDC) */}
       <Escena T={T} a={K.Q} b={K.Al}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>{QUIEN.map(([t, Ico], i) => { const s = kprog(T, K.Q + 0.4 + i * 1.1, K.Q + 0.8 + i * 1.1, kEase.rebote); const x = i % 2 ? 770 : 300, y = i < 2 ? 600 : 940;
-          return s > 0 ? <g key={i} transform={`translate(${x} ${y}) scale(${s})`}>
+        {fsvg(<><g opacity=".38"><BocaGrande T={T} placas={1} /></g>{QUIEN.map(([t, Ico], i) => { const s = kprog(T, K.Q + 0.4 + i * 1.1, K.Q + 0.8 + i * 1.1, kEase.rebote); const x = i % 2 ? 790 : 290, y = i < 2 ? 700 : 1160;
+          return s > 0 ? <g key={i} transform={`translate(${x} ${y}) scale(${s * 1.15})`}>
             <circle r={130} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
             <g transform="scale(0.95)"><Ico T={T} /></g>
           </g> : null; })}</>)}
-        {QUIEN.map(([t], i) => <div key={i} style={{ position:'absolute', left:(i % 2 ? 770 : 300) - 230, width:460, top:(i < 2 ? 600 : 940) + 135, textAlign:'center', zIndex:30,
-          font:`900 ${t.length > 20 ? 30 : 36}px ${KF.texto}`, color:KC.ink, opacity:kprog(T, K.Q + 0.6 + i * 1.1, K.Q + 0.9 + i * 1.1) }}>{t}</div>)}
+        {QUIEN.map(([t], i) => <div key={i} style={{ position:'absolute', left:(i % 2 ? 790 : 290) - 240, width:480, top:(i < 2 ? 700 : 1160) + 160, textAlign:'center', zIndex:30,
+          font:`900 ${t.length > 20 ? 32 : 38}px ${KF.texto}`, color:KC.ink, textShadow:'0 3px 0 rgba(0,0,0,.8), 0 0 18px rgba(0,0,0,.9)', opacity:kprog(T, K.Q + 0.6 + i * 1.1, K.Q + 0.9 + i * 1.1) }}>{t}</div>)}
       </Escena>
       {/* 13 · se siente como algodón */}
       <Escena T={T} a={K.Al} b={K.C} zoom={0.05}>
@@ -267,57 +289,57 @@ function CandidaShot() {
       {/* 14 · cierre: la misma cama del inicio; la levadura, tranquila entre sus bacterias */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.3) translate(-540 -955)">
           <Cama T={T} />
           {[[300, 790, 1072, 320], [740, 800, 1082, 760]].map(([x, y, dy, dx], j) => <Burbuja key={j} x={x} y={y} s={kprog(T, K.C + 0.3 + j * 0.2, K.C + 0.8 + j * 0.2, kEase.rebote)} desde={[dx, dy]}>
             <Levadura x={0} y={0} rx={42} ry={34} brote={0.4} />
             {[0, 1, 2, 3, 4, 5].map((i) => { const a = i / 6 * Math.PI * 2 + T * 0.4; return <Bacteria key={i} T={T} x={Math.cos(a) * 80} y={Math.sin(a) * 80} rot={a * 57 + 90} s={0.32 * kprog(T, K.C + 1.0 + i * 0.12, K.C + 1.3 + i * 0.12, kEase.rebote)} color={[KC.mint, KC.cyan, KC.lilac][i % 3]} seed={i} flagelo={false} />; })}
           </Burbuja>)}
           {T > K.C + 0.8 && <text x={520} y={850} textAnchor="middle" style={{ font:`400 170px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.C + 0.8, K.C + 1.2)}>=</text>}
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 1.0} until={K.Ca - 0.3} x={60} y={520} texto="Candida albicans" it tam={44} color={KC.ink} />
-      <Etq T={T} at={K.G + 1.5} until={K.Ca - 0.3} x={60} y={584} texto="una levadura (hongo)" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 0.5} until={K.V - 0.3} x={500} y={600} texto="boca" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 1.0} until={K.V - 0.3} x={500} y={815} texto="intestino" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 1.5} until={K.V - 0.3} x={560} y={900} texto="piel" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Ca + 2.4} until={K.V - 0.3} texto="casi siempre: sin síntomas" x={420} y={430} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={K.V - 0.2} until={K.Ab - 0.3} texto="AL MICROSCOPIO · tu lengua" x={400} y={440} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.V + 0.6} until={K.Ab - 0.2} x={335} y={720} texto="levadura" tam={30} color={CA.lev} />
-      <Etq T={T} at={K.V + 1.0} until={K.Ab - 0.2} x={60} y={1130} texto="bacterias" tam={30} color={KC.mint} />
-      <Chip T={T} at={K.V + 1.6} until={K.Ab - 0.2} texto="hipótesis: compiten con ella" x={420} y={530} tam={34} borde={KC.yellow} />
-      <Etq T={T} at={K.Ab + 0.3} until={K.Ab + 1.8} x={60} y={520} texto="antibiótico" tam={34} color={KC.white} />
-      <Chip T={T} at={K.Ab + 2.0} until={K.Tr - 0.3} texto="ella puede ganar terreno" x={400} y={440} tam={36} borde={KC.red} />
+      <Etq T={T} at={K.G + 1.0} until={K.Ca - 0.3} x={60} y={430} texto="Candida albicans" it tam={44} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.5} until={K.Ca - 0.3} x={60} y={494} texto="una levadura (hongo)" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 0.5} until={K.V - 0.3} x={580} y={624} texto="boca" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 1.0} until={K.V - 0.3} x={640} y={946} texto="intestino" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 1.5} until={K.V - 0.3} x={650} y={1074} texto="piel" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Ca + 2.4} until={K.V - 0.3} texto="casi siempre: sin síntomas" x={540} y={310} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.V - 0.2} until={K.Ab - 0.3} texto="AL MICROSCOPIO · tu lengua" x={400} y={370} tam={32} borde={KC.cyan} mono />
+      <Etq T={T} at={K.V + 0.6} until={K.Ab - 0.2} x={300} y={792} texto="levadura" tam={30} color={CA.lev} />
+      <Etq T={T} at={K.V + 1.0} until={K.Ab - 0.2} x={60} y={1300} texto="bacterias" tam={30} color={KC.mint} />
+      <Chip T={T} at={K.V + 1.6} until={K.Ab - 0.2} texto="hipótesis: compiten con ella" x={420} y={460} tam={34} borde={KC.yellow} />
+      <Etq T={T} at={K.Ab + 0.3} until={K.Ab + 1.8} x={60} y={540} texto="antibiótico" tam={34} color={KC.white} />
+      <Chip T={T} at={K.Ab + 2.0} until={K.Tr - 0.3} texto="ella puede ganar terreno" x={400} y={420} tam={36} borde={KC.red} />
       <Chip T={T} at={K.Tr + 0.2} until={K.P - 0.3} texto="cambia de forma (dimorfismo)" x={420} y={440} tam={34} borde={KC.yellow} />
-      <Etq T={T} at={K.Fo + 0.3} until={K.P - 0.3} x={180} y={1010} texto="levadura (gemación)" tam={30} color={CA.lev} />
-      <Etq T={T} at={K.Fo + 1.4} until={K.P - 0.3} x={640} y={980} texto="hifa" tam={36} color={KC.yellow} />
-      <Chip T={T} at={K.In - 0.2} until={K.Es - 0.2} texto="POR DENTRO · la mucosa de tu boca" x={360} y={440} tam={25} borde={KC.cyan} mono />
-      <Etq T={T} at={K.In + 0.4} until={K.Es + 2.2} x={160} y={620} texto="levadura" tam={28} color={CA.lev} />
-      <Etq T={T} at={K.In + 1.6} until={K.Pl - 0.3} x={600} y={850} texto="hifa" tam={30} color={KC.yellow} />
-      <Etq T={T} at={K.In + 0.8} until={K.Pl - 0.3} x={60} y={1150} texto="células de tu boca" tam={28} color={KC.white} />
+      <Etq T={T} at={K.Fo + 0.3} until={K.P - 0.3} x={40} y={1120} texto="levadura (gemación)" tam={30} color={CA.lev} />
+      <Etq T={T} at={K.Fo + 1.4} until={K.P - 0.3} x={640} y={1070} texto="hifa" tam={36} color={KC.yellow} />
+      <Chip T={T} at={K.In - 0.2} until={K.Es - 0.2} texto="POR DENTRO · la mucosa de tu boca" x={540} y={440} tam={25} borde={KC.cyan} mono />
+      <Etq T={T} at={K.In + 0.4} until={K.Es + 2.2} x={60} y={630} texto="levadura" tam={28} color={CA.lev} />
+      <EtqOsc T={T} at={K.In + 1.6} until={K.Pl - 0.3} x={620} y={850} texto="hifa" tam={30} color={KC.yellow} />
+      <EtqOsc T={T} at={K.In + 0.8} until={K.Pl - 0.3} x={40} y={1127} texto="células de tu boca" tam={28} color={KC.white} />
       <Chip T={T} at={K.In + 2.4} until={K.Es - 0.2} texto="la hifa invade" x={400} y={560} tam={38} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.6} anio="2016" quien="Londres y Jena (Alemania)" revista="Moyes et al., Nature" x={540} y={480} />
-      <Etq T={T} at={K.Es + 3.0} until={K.Pl - 0.3} x={700} y={960} texto="candidalisina" tam={32} color={KC.red} />
+      <EtqOsc T={T} at={K.Es + 3.0} until={K.Pl - 0.3} x={700} y={1040} texto="candidalisina" tam={32} color="#ff6b6b" />
       <Chip T={T} at={K.Tx + 0.4} until={K.Tx + 2.1} texto="daña la membrana" x={400} y={560} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.Tx + 2.9} until={K.Pl - 0.3} texto="en ratones, sin toxina: no enfermaba la boca" x={420} y={385} tam={28} borde={KC.leaf} />
-      <Etq T={T} at={K.Pl + 1.0} until={K.Q - 0.3} x={60} y={470} texto="algodoncillo" tam={44} color={KC.ink} />
-      <Etq T={T} at={K.Pl + 1.4} until={K.Q - 0.3} x={60} y={530} texto="(candidiasis oral)" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Pl + 3.0} until={K.Q - 0.3} x={60} y={590} texto="placas blancas" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Q + 0.1} until={K.Al - 0.3} texto="más común en… (CDC)" x={540} y={430} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Tx + 2.9} until={K.Pl - 0.3} texto="en ratones, sin toxina: no enfermaba la boca" x={420} y={270} tam={28} borde={KC.leaf} />
+      <Etq T={T} at={K.Pl + 1.0} until={K.Q - 0.3} x={60} y={400} texto="algodoncillo" tam={44} color={KC.ink} />
+      <Etq T={T} at={K.Pl + 1.4} until={K.Q - 0.3} x={60} y={460} texto="(candidiasis oral)" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Pl + 3.0} until={K.Q - 0.3} x={60} y={520} texto="placas blancas" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Q + 0.1} until={K.Al - 0.3} texto="más común en… (CDC)" x={540} y={440} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Al + 0.6} until={K.C - 0.2} texto="puede sentirse como algodón" x={400} y={440} tam={36} borde={KC.white} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="tus bacterias la mantienen a raya" x={355} y={560} tam={29} borde={KC.mint} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="tus bacterias la mantienen a raya" x={540} y={470} tam={29} borde={KC.mint} />
 
       {/* barras de escala (cuadran con el dibujo) */}
-      <BarraEscala T={T} at={K.G} until={K.Ca} texto="10 cm" largo={140} />
-      <BarraEscala T={T} at={K.Ca} until={K.V} texto="50 cm" largo={195} />
-      <BarraEscala T={T} at={K.V} until={K.Tr} texto="10 µm" largo={300} />
-      <BarraEscala T={T} at={K.Tr} until={K.P} texto="10 µm" largo={400} />
-      <BarraEscala T={T} at={K.In} until={K.Pl} texto="20 µm" largo={200} />
-      <BarraEscala T={T} at={K.Pl} until={K.Q} texto="2 cm" largo={320} />
-      <BarraEscala T={T} at={K.Al} until={K.C} texto="2 cm" largo={320} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={140} />
+      <BarraEscala T={T} at={K.G} until={K.Ca} texto="10 cm" largo={182} />
+      <BarraEscala T={T} at={K.Ca} until={K.V} texto="50 cm" largo={292} />
+      <BarraEscala T={T} at={K.V} until={K.Tr} texto="10 µm" largo={360} />
+      <BarraEscala T={T} at={K.Tr} until={K.P} texto="5 µm" largo={200 * zF} />
+      <BarraEscala T={T} at={K.In} until={K.Pl} texto="20 µm" largo={280} />
+      <BarraEscala T={T} at={K.Pl} until={K.Q} texto="2 cm" largo={433} />
+      <BarraEscala T={T} at={K.Al} until={K.C} texto="2 cm" largo={433} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={182} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ca - 0.1} texto="Tú y tu pareja: *pueden traer la misma cepa.*" />

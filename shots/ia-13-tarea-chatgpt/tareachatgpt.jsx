@@ -115,11 +115,11 @@ function Estudiante({ x, y, s = 1, T = 0, globo, globoO = 1 }) {
   </g>;
 }
 // Personita diminuta (para la multitud de casi mil estudiantes).
-function Multitud({ T, at, x = 100, y = 760, cols = 40, filas = 25, paso = 22, dur = 2.4 }) {
-  const N = cols * filas, k = Math.round(N * kprog(T, at, at + dur, kEase.suave)), out = [];
+function Multitud({ T, at, x = 100, y = 760, cols = 40, filas = 25, paso = 22, pasoY = 18.5, r = 7.5, dur = 2.4 }) {
+  const rad = r, N = cols * filas, k = Math.round(N * kprog(T, at, at + dur, kEase.suave)), out = [];
   const colores = [KC.yellow, KC.mint, KC.cyan, KC.pink, KC.orange];
-  for (let i = 0; i < k; i++) { const c = i % cols, r = Math.floor(i / cols), px = x + c * paso, py = y + r * 18.5;
-    out.push(<circle key={i} cx={px} cy={py} r={7.5} fill={colores[(i * 7 + r * 3 + ((i * 2654435761) >>> 28)) % 5]} stroke={KC.ink} strokeWidth={2} />); }
+  for (let i = 0; i < k; i++) { const c = i % cols, fi = Math.floor(i / cols), px = x + c * paso, py = y + fi * pasoY;
+    out.push(<circle key={i} cx={px} cy={py} r={rad} fill={colores[(i * 7 + fi * 3 + ((i * 2654435761) >>> 28)) % 5]} stroke={KC.ink} strokeWidth={2} />); }
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:30 }}>{out}</svg>;
 }
 // Barras horizontales (calificación del examen, relativa al grupo sin IA = 100).
@@ -167,38 +167,38 @@ function TareaChatGPT() {
         <FondoLunares color={mixHex(KC.yellow, '#ffb3a8', fase)} />
         {svg(<>
           <g opacity={1 - fase} transform={`translate(${-fase * 300} 0)`}>
-            <Laptop x={330} y={560} s={0.78} T={T} escribe={[K.G, K.G + 0.3]}
+            <Laptop x={540} y={590} s={1.42} T={T} escribe={[K.G, K.G + 0.3]}
               mensajes={[{ at: K.G - 1, yo: true, texto: '¿Cuál es la respuesta?' }, { at: K.G + 0.25, yo: false, texto: 'x = 4  ✔' }, { at: K.G + 1.4, yo: false, texto: 'x = 5  ✔' }]} />
           </g>
-          {fase < 1 && <g opacity={1 - fase}><Hoja x={330} y={1000} s={0.76} T={T} marcas={marcasPractica} /></g>}
-          {fase > 0 && <g opacity={fase}><Hoja x={330} y={klerp(1060, 920, fase)} s={klerp(0.76, 0.9, fase)} T={T} titulo="EXAMEN" colorTitulo={KC.red} marcas={marcasExamen} rot={-2} /></g>}
+          {fase < 1 && <g opacity={1 - fase}><Hoja x={klerp(300, 360, fase)} y={klerp(1220, 1000, fase)} s={klerp(0.92, 1.15, fase)} T={T} marcas={marcasPractica} /></g>}
+          {fase > 0 && <g opacity={fase}><Hoja x={klerp(300, 360, fase)} y={klerp(1220, 1000, fase)} s={klerp(0.92, 1.15, fase)} T={T} titulo="EXAMEN" colorTitulo={KC.red} marcas={marcasExamen} rot={-2} /></g>}
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.G + 2.6} until={K.G + 4.8} prefijo="+" valor={48} dur={0.9} sufijo=" %" x={790} y={900} tam={160} color={KC.mint} />
-      <Chip T={T} at={K.G + 2.9} until={K.G + 4.8} texto="en la práctica, con IA" x={790} y={1040} tam={34} borde={KC.leaf} />
-      <NumeroGigante T={T} at={K.G + 5.1} until={K.Mi - 0.1} prefijo="−" valor={17} dur={0.7} sufijo=" %" x={800} y={900} tam={160} color={KC.red} />
-      <Chip T={T} at={K.G + 5.4} until={K.Mi - 0.1} texto="en el examen, sin IA" x={800} y={1040} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.G + 6.2} until={K.Mi - 0.1} texto="vs. quienes no usaron IA" x={800} y={1110} tam={26} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.G + 2.6} until={K.G + 4.8} prefijo="+" valor={48} dur={0.9} sufijo=" %" x={790} y={1150} tam={160} color={KC.mint} />
+      <Chip T={T} at={K.G + 2.9} until={K.G + 4.8} texto="en la práctica, con IA" x={790} y={1290} tam={34} borde={KC.leaf} />
+      <NumeroGigante T={T} at={K.G + 5.1} until={K.Mi - 0.1} prefijo="−" valor={17} dur={0.7} sufijo=" %" x={835} y={900} tam={160} color={KC.red} />
+      <Chip T={T} at={K.G + 5.4} until={K.Mi - 0.1} texto="en el examen, sin IA" x={835} y={1040} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.G + 6.2} until={K.Mi - 0.1} texto="vs. quienes no usaron IA" x={835} y={1110} tam={26} borde={KC.ink} />
 
       {/* 2 · el mito */}
       <Escena T={T} a={K.Mi} b={K.E}>
         <FondoLunares color={KC.mint} />
-        {svg(<Hoja x={540} y={1000} s={0.72} T={T} marcas={[0, 1, 2, 3].map(() => ({ at: K.Mi - 2, tipo: 'ok' }))}
+        {svg(<Hoja x={540} y={1010} s={1.45} T={T} marcas={[0, 1, 2, 3].map(() => ({ at: K.Mi - 2, tipo: 'ok' }))}
           sello={<g transform="translate(20 150) rotate(-12)" opacity={kprog(T, K.Mi + 0.2, K.Mi + 0.5)}>
             <rect x={-170} y={-50} width={340} height={100} rx={16} fill="rgba(63,191,74,.14)" stroke={KC.leaf} strokeWidth={9} />
             <text y={22} textAnchor="middle" style={{ font:`400 62px ${KF.titulo}` }} fill={KC.leaf}>TERMINADA</text></g>} />)}
       </Escena>
-      <MitoTachado T={T} at={K.Mi + 0.1} tacharEn={K.Mi + 1.1} until={K.E - 0.15} texto="tarea terminada = aprendí" y={560} tam={52} />
+      <MitoTachado T={T} at={K.Mi + 0.1} tacharEn={K.Mi + 1.1} until={K.E - 0.15} texto="tarea terminada = aprendí" y={470} tam={52} />
 
       {/* 3 · el estudio */}
       <Escena T={T} a={K.E} b={K.Gr}>
         <FondoLunares color={KC.lilac} />
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.9} anio="2023" quien="Prepa en Turquía · otoño" revista="Bastani, Bastani, Sungu y col. · PNAS (2025)" y={540} />
+      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.9} anio="2023" quien="Prepa en Turquía · otoño" revista="Bastani, Bastani, Sungu y col. · PNAS (2025)" y={470} />
       {T > K.E - 0.3 && T < K.Gr + 0.5 && <div style={{ opacity: kprog(T, K.E, K.E + 0.3) * (1 - kprog(T, K.Gr - 0.05, K.Gr + 0.45)) }}>
-        <Multitud T={T} at={K.E + 0.6} x={112} y={780} />
+        <Multitud T={T} at={K.E + 0.6} x={62} y={700} paso={24.5} pasoY={30} r={9.5} />
       </div>}
-      <Chip T={T} at={K.E + 3.1} until={K.Gr - 0.15} texto="casi 1,000 estudiantes de mate" x={500} y={690} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.E + 3.1} until={K.Gr - 0.15} texto="casi 1,000 estudiantes de mate" x={540} y={610} tam={40} borde={KC.ink} />
 
       {/* 4 · los tres grupos */}
       <Escena T={T} a={K.Gr} b={K.Ex}>
@@ -229,8 +229,8 @@ function TareaChatGPT() {
               <g transform={`translate(${klerp(260, -260, v)} ${klerp(560, 420, v)}) rotate(${v * -30})`}><Laptop x={0} y={0} s={0.5} T={T} cerrar={1} /></g>
               <g transform={`translate(${klerp(820, 1360, v)} ${klerp(560, 420, v)}) rotate(${v * 30})`}><LibroCuaderno x={0} y={0} s={0.7} /></g>
             </g>; })()}
-          {(() => { const o = 1 - kprog(T, exA - 0.3, exA + 0.1);
-            return o > 0 && <g opacity={o}><Hoja x={540} y={930} s={0.78} T={T} titulo="EXAMEN" colorTitulo={KC.red} />
+          {(() => { const m = kprog(T, exA - 0.3, exA + 0.3, kEase.suave), kk = klerp(1.6, 1.25, m);
+            return <g opacity={1 - 0.4 * m} transform={`translate(540 ${klerp(1000, 1180, m)}) scale(${kk}) translate(-540 -930)`}><Hoja x={540} y={930} s={0.78} T={T} titulo="EXAMEN" colorTitulo={KC.red} />
               <g transform={`translate(${760 + Math.sin(T * 9) * 10} ${1050}) rotate(35)`}>
                 <rect x={-14} y={-160} width={28} height={220} rx={6} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
                 <path d="M -14 60 L 0 100 L 14 60 Z" fill="#e9c08a" stroke={KC.ink} strokeWidth={5} />
@@ -239,15 +239,16 @@ function TareaChatGPT() {
       </Escena>
       <Chip T={T} at={K.Ex + 1.2} until={exA - 0.3} texto="ni compu ✕" x={300} y={520} tam={42} borde={KC.red} />
       <Chip T={T} at={K.Ex + 2.0} until={exA - 0.3} texto="ni apuntes ✕" x={780} y={520} tam={42} borde={KC.red} />
-      <Chip T={T} at={exA + 0.1} until={K.P - 0.15} texto="calificación del examen" x={640} y={700} tam={36} borde={KC.ink} />
-      <BarrasH T={T} at={exA + 0.3} until={K.P - 0.15} top={780} filas={[
+      <Chip T={T} at={exA + 0.1} until={K.P - 0.15} texto="calificación del examen" x={640} y={250} tam={36} borde={KC.ink} />
+      <BarrasH T={T} at={exA + 0.3} until={K.P - 0.15} top={310} filas={[
         { valor: 100, texto: 'referencia', etiqueta: 'sin IA (libro y apuntes)', color: AZUL },
         { valor: 83, texto: '−17 %', etiqueta: 'practicaron con chat tipo ChatGPT', color: KC.red, at: exA + 1.3 }]} />
 
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Mu} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={280} y={1100} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 900)`}>?</text>)}
+        {svg(<><g opacity={0.5} transform="translate(540 1000) scale(1.6) translate(-540 -930)"><Hoja x={540} y={930} s={0.78} T={T} titulo="EXAMEN" colorTitulo={KC.red} /></g>
+          <text x={540} y={1330} textAnchor="middle" style={{ font:`400 880px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={16} transform={`rotate(${Math.sin(T * 3) * 6} 540 1000)`}>?</text></>)}
       </Escena>
 
       {/* 7 · la muleta: pedían la respuesta y copiaban */}
@@ -255,50 +256,50 @@ function TareaChatGPT() {
         <FondoLunares color={KC.pink} punto="rgba(255,255,255,.22)" />
         {svg(<>
           <g opacity={kprog(T, K.Mu + 1.3, K.Mu + 1.7) * (1 - kprog(T, K.Mu + 4.1, K.Mu + 4.5))}>
-            <Hoja x={800} y={800} s={0.5} T={T} marcas={[0, 1, 2, 3].map((i) => ({ at: K.Mu + 1.9 + i * 0.5, tipo: 'ok' }))} rot={4} />
-            <text x={800} y={1000} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>copiado…</text>
+            <Hoja x={800} y={960} s={0.75} T={T} marcas={[0, 1, 2, 3].map((i) => ({ at: K.Mu + 1.9 + i * 0.5, tipo: 'ok' }))} rot={4} />
+            <text x={800} y={1250} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>copiado…</text>
           </g>
-          {(() => { const e = kprog(T, K.Mu + 4.3, K.Mu + 4.8, kEase.rebote); return e > 0 && <g opacity={Math.min(1, e * 2)}><Muleta x={790 + (1 - e) * 300} y={800} s={0.95} rot={10 - e * 4} /></g>; })()}
+          {(() => { const e = kprog(T, K.Mu + 4.3, K.Mu + 4.8, kEase.rebote); return e > 0 && <g opacity={Math.min(1, e * 2)}><Muleta x={800 + (1 - e) * 300} y={960} s={1.3} rot={10 - e * 4} /></g>; })()}
         </>)}
       </Escena>
       {T > K.Mu - 0.45 && T < K.Er + 0.45 && <div style={{ opacity: kprog(T, K.Mu - 0.45, K.Mu + 0.05) * (1 - kprog(T, K.Er - 0.05, K.Er + 0.45)) }}>
-        <CelularChat T={T} x={320} y={860} s={0.62} tam={34} escribe={[K.Mu + 0.7, K.Mu + 1.0]} mensajes={[
+        <CelularChat T={T} x={300} y={980} s={0.92} tam={34} escribe={[K.Mu + 0.7, K.Mu + 1.0]} mensajes={[
           { at: K.Mu + 0.2, yo: true, texto: '¿Cuál es la respuesta?' }, { at: K.Mu + 1.0, yo: false, texto: 'x = 4' },
           { at: K.Mu + 1.6, yo: true, texto: '¿Cuál es la respuesta?' }, { at: K.Mu + 2.2, yo: false, texto: 'x = 5' },
           { at: K.Mu + 2.8, yo: true, texto: '¿Cuál es la respuesta?' }, { at: K.Mu + 3.4, yo: false, texto: 'x = 12' },
           { at: K.Mu + 4.0, yo: true, texto: '¿Cuál es la respuesta?' }]} />
       </div>}
-      <Chip T={T} at={K.Mu + 0.6} until={K.Er - 0.15} texto="el mensaje más común" x={760} y={470} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Mu + 4.6} until={K.Er - 0.15} texto="«muleta»" x={790} y={1150} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.Mu + 0.6} until={K.Er - 0.15} texto="el mensaje más común" x={790} y={560} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Mu + 4.6} until={K.Er - 0.15} texto="«muleta»" x={800} y={1440} tam={44} borde={KC.ink} />
 
       {/* 8 · errores y percepción */}
       <Escena T={T} a={K.Er} b={K.Tu}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <g opacity={1 - kprog(T, erB - 0.3, erB + 0.1)}><Moneda x={290} y={900} s={0.95} T={T} /></g>
-          <g opacity={kprog(T, erB, erB + 0.4)}>
-            <Estudiante x={420} y={880} s={0.95} T={T} globo={['¿Aprendí menos?', '¡Para nada!']} globoO={kprog(T, erB + 0.5, erB + 0.9)} />
-            <Hoja x={850} y={1010} s={0.38} T={T} titulo="EXAMEN" colorTitulo={KC.red} rot={8} />
+          <g opacity={1 - kprog(T, erB - 0.3, erB + 0.1)}><Moneda x={300} y={960} s={1.55} T={T} /></g>
+          <g opacity={kprog(T, erB - 0.35, erB + 0.1)}>
+            <Estudiante x={400} y={1010} s={1.35} T={T} globo={['¿Aprendí menos?', '¡Para nada!']} globoO={kprog(T, erB + 0.5, erB + 0.9)} />
+            <Hoja x={860} y={1170} s={0.5} T={T} titulo="EXAMEN" colorTitulo={KC.red} rot={8} />
           </g>
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.Er + 0.4} until={erB - 0.2} valor={51} dur={0.9} sufijo=" %" x={760} y={860} tam={210} color={KC.yellow} />
-      <Chip T={T} at={K.Er + 0.8} until={erB - 0.2} texto="respuestas correctas" x={760} y={1020} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Er + 1.4} until={erB - 0.2} texto="el chat (GPT-4) en 2023 · 57 ejercicios" x={540} y={1150} tam={26} mono borde={KC.ink} />
-      <Chip T={T} at={erB + 1.2} until={K.Tu - 0.15} texto="−17 %" x={850} y={1180} tam={44} borde={KC.red} />
+      <NumeroGigante T={T} at={K.Er + 0.4} until={erB - 0.2} valor={51} dur={0.9} sufijo=" %" x={800} y={880} tam={210} color={KC.yellow} />
+      <Chip T={T} at={K.Er + 0.8} until={erB - 0.2} texto="respuestas correctas" x={800} y={1050} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Er + 1.4} until={erB - 0.2} texto="el chat (GPT-4) en 2023 · 57 ejercicios" x={540} y={1330} tam={26} mono borde={KC.ink} />
+      <Chip T={T} at={erB + 1.2} until={K.Tu - 0.15} texto="−17 %" x={860} y={1410} tam={44} borde={KC.red} />
 
       {/* 9 · el tutor: pistas, no respuestas */}
       <Escena T={T} a={K.Tu} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<g opacity={1 - kprog(T, K.Tu + 3.0, K.Tu + 3.4)}>
-          <Robotito x={400} y={860} s={1.0} T={T} cara="feliz" />
-          <Foco x={720} y={700} s={0.9} luz={kprog(T, K.Tu + 0.8, K.Tu + 1.1)} T={T} />
-        </g>)}
+        {svg((() => { const m = kprog(T, K.Tu + 2.9, K.Tu + 3.5, kEase.suave); return <g opacity={1 - 0.45 * m} transform={`translate(540 ${1000 + 260 * m}) scale(${klerp(1, 0.85, m)}) translate(-540 -1000)`}>
+          <Robotito x={360} y={1000} s={1.9} T={T} cara="feliz" />
+          <Foco x={790} y={830} s={1.5} luz={kprog(T, K.Tu + 0.8, K.Tu + 1.1)} T={T} />
+        </g>; })())}
       </Escena>
-      <Chip T={T} at={K.Tu + 1.2} until={K.Tu + 3.0} texto="pistas ✔" x={300} y={1130} tam={46} borde={KC.leaf} />
-      <Chip T={T} at={K.Tu + 1.9} until={K.Tu + 3.0} texto="respuestas ✕" x={760} y={1130} tam={46} borde={KC.red} />
-      <Chip T={T} at={K.Tu + 3.3} until={K.C - 0.15} texto="calificación del examen" x={540} y={700} tam={36} borde={KC.ink} />
-      <BarrasH T={T} at={K.Tu + 3.4} until={K.C - 0.15} top={780} filas={[
+      <Chip T={T} at={K.Tu + 1.2} until={K.Tu + 3.0} texto="pistas ✔" x={330} y={1390} tam={46} borde={KC.leaf} />
+      <Chip T={T} at={K.Tu + 1.9} until={K.Tu + 3.0} texto="respuestas ✕" x={780} y={1390} tam={46} borde={KC.red} />
+      <Chip T={T} at={K.Tu + 3.3} until={K.C - 0.15} texto="calificación del examen" x={540} y={250} tam={36} borde={KC.ink} />
+      <BarrasH T={T} at={K.Tu + 3.4} until={K.C - 0.15} top={310} filas={[
         { valor: 100, texto: 'referencia', etiqueta: 'sin IA (libro y apuntes)', color: AZUL },
         { valor: 99, texto: '≈ igual', etiqueta: 'practicaron con el tutor de IA', color: KC.leaf, at: K.Tu + 4.1 }]} />
 
@@ -306,13 +307,13 @@ function TareaChatGPT() {
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Laptop x={330} y={560} s={0.78} T={T} escribe={[K.C + 0.9, K.C + 1.3]}
+          <Laptop x={540} y={590} s={1.42} T={T} escribe={[K.C + 0.9, K.C + 1.3]}
             mensajes={[{ at: K.C + 0.4, yo: true, texto: 'Dame una pista' }, { at: K.C + 1.3, yo: false, texto: 'Resta 3 a los dos lados' }]} />
-          <Hoja x={330} y={1000} s={0.76} T={T} titulo="EXAMEN" colorTitulo={KC.leaf} marcas={[0, 1, 2, 3].map((i) => ({ at: K.C + 2.0 + i * 0.45, tipo: 'ok' }))} />
+          <Hoja x={300} y={1220} s={0.92} T={T} titulo="EXAMEN" colorTitulo={KC.leaf} marcas={[0, 1, 2, 3].map((i) => ({ at: K.C + 2.0 + i * 0.45, tipo: 'ok' }))} />
         </>)}
       </Escena>
-      <NumeroTachado T={T} at={K.C + 0.6} until={K.Ou} tachaEn={K.C + 2.9} texto="−17 %" x={800} y={900} />
-      <Chip T={T} at={K.C + 3.2} until={K.Ou} texto="pistas, no respuestas ✔" x={790} y={1090} tam={36} borde={KC.leaf} />
+      <NumeroTachado T={T} at={K.C + 0.6} until={K.Ou} tachaEn={K.C + 2.9} texto="−17 %" x={790} y={1150} />
+      <Chip T={T} at={K.C + 3.2} until={K.Ou} texto="pistas, no respuestas ✔" x={790} y={1330} tam={36} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Mi - 0.1} texto="*+48 %*… y luego *−17 %*" />

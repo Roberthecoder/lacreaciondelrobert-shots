@@ -129,50 +129,52 @@ function Reloj({ x, y, r = 80, v = 0, color = KC.gold2 }) {
 // El cuarto del gancho (y del cierre). curvo 0..1: el piso se vuelve la Tierra que gira.
 function Cuarto({ T, curvo = 0, v = 1 }) {
   return <g>
-    <rect x={0} y={1140} width={KW} height={800} fill="#6a4c3b" opacity={1 - curvo} />
-    <line x1={0} y1={1140} x2={KW} y2={1140} stroke={KC.ink} strokeWidth={8} opacity={1 - curvo} />
-    {curvo > 0 && <g opacity={curvo}><Globo x={540} y={1140 + 1300} R={1300} lon0={-100 - 40 * T / 61.5} lat0={-30} id="cuarto" /></g>}
-    <PersonaSentada x={330} y={950} s={0.95} T={T} cara={curvo > 0.5 ? 'sonrie' : 'normal'} />
-    <Velocimetro x={800} y={1000} r={150} v={v} T={T} />
+    {/* pase a mano cine: persona y velocímetro x1.5 (llenan el cuadro), piso más abajo y oscuro */}
+    <rect x={0} y={1420} width={KW} height={800} fill="#3b2b22" opacity={1 - curvo} />
+    <line x1={0} y1={1420} x2={KW} y2={1420} stroke={KC.ink} strokeWidth={8} opacity={1 - curvo} />
+    {curvo > 0 && <g opacity={curvo}><Globo x={540} y={1420 + 1300} R={1300} lon0={-100 - 40 * T / 61.5} lat0={-30} id="cuarto" /></g>}
+    <PersonaSentada x={350} y={1113} s={1.45} T={T} cara={curvo > 0.5 ? 'sonrie' : 'normal'} />
+    <Velocimetro x={790} y={1230} r={150} v={v} T={T} />
   </g>;
 }
 
 /* ---------- GRÁFICAS Y ESCENAS ---------- */
 // Gráfica de línea que se dibuja (p 0..1). f(u) → 0..1. (x, y) = esquina sup. izq.
-function Grafica({ x, y, w = 820, h = 250, f, p = 1, color = KC.yellow, titulo }) {
+function Grafica({ x, y, w = 820, h = 250, f, p = 1, color = KC.yellow, titulo, tam = 38 }) {
   const n = 120, k = Math.max(1, Math.round(n * p)), pts = [];
   for (let i = 0; i <= k; i++) { const u = i / n; pts.push(`${(x + u * w).toFixed(1)},${(y + h - f(u) * h).toFixed(1)}`); }
   return <g>
     <rect x={x - 30} y={y - 70} width={w + 60} height={h + 110} rx={26} fill="rgba(14,15,18,.86)" stroke={KC.ink} strokeWidth={7} />
     <line x1={x} y1={y + h} x2={x + w} y2={y + h} stroke="rgba(255,255,255,.5)" strokeWidth={4} />
     <line x1={x} y1={y - 10} x2={x} y2={y + h} stroke="rgba(255,255,255,.5)" strokeWidth={4} />
-    <text x={x + 14} y={y - 24} style={{ font:`900 38px ${KF.texto}` }} fill={KC.texto}>{titulo}</text>
+    <text x={x + 14} y={y - 24} style={{ font:`900 ${tam}px ${KF.texto}` }} fill={KC.texto}>{titulo}</text>
     <polyline points={pts.join(' ')} fill="none" stroke={color} strokeWidth={12} strokeLinejoin="round" strokeLinecap="round" />
   </g>;
 }
 // Avión por dentro: ventanilla con nubes que pasan y un vaso de agua quieto.
 function AvionDentro({ T }) {
+  // pase a mano cine: cabina oscura (antes pared casi blanca a media pantalla); ventanilla x1.35 y vaso x1.5
   return <g>
-    <rect x={0} y={0} width={KW} height={KH} fill="#797a86" />
-    <path d="M 0 300 Q 540 220 1080 300 L 1080 1300 L 0 1300 Z" fill="#f4f1ea" stroke={KC.ink} strokeWidth={8} />
-    <g transform="translate(560 640)">
-      <rect x={-200} y={-250} width={400} height={500} rx={190} fill="#cfd6e0" stroke={KC.ink} strokeWidth={12} />
+    <rect x={0} y={0} width={KW} height={KH} fill="#14151d" />
+    <path d="M -60 190 Q 540 110 1140 190 L 1140 1560 L -60 1560 Z" fill="#2c2b36" stroke={KC.ink} strokeWidth={8} />
+    <g transform="translate(540 700) scale(1.35)">
+      <rect x={-200} y={-250} width={400} height={500} rx={190} fill="#8791a3" stroke={KC.ink} strokeWidth={10} />
       <clipPath id="vent"><rect x={-160} y={-210} width={320} height={420} rx={150} /></clipPath>
       <g clipPath="url(#vent)">
         <rect x={-170} y={-220} width={340} height={440} fill="#7cc8ff" />
         {Array.from({ length: 5 }, (_, i) => { const xx = 260 - ((T * 420 + i * 170) % 850); return <Nube key={i} x={xx} y={-120 + (i % 3) * 110} s={0.45} />; })}
         <rect x={-170} y={150} width={340} height={80} fill="#5fae5a" />
       </g>
-      <rect x={-160} y={-210} width={320} height={420} rx={150} fill="none" stroke={KC.ink} strokeWidth={8} />
+      <rect x={-160} y={-210} width={320} height={420} rx={150} fill="none" stroke={KC.ink} strokeWidth={7} />
     </g>
-    <rect x={120} y={1010} width={840} height={40} rx={14} fill="#9aa3b5" stroke={KC.ink} strokeWidth={8} />
-    <rect x={160} y={1050} width={30} height={160} fill="#6b7080" stroke={KC.ink} strokeWidth={6} />
-    <rect x={890} y={1050} width={30} height={160} fill="#6b7080" stroke={KC.ink} strokeWidth={6} />
-    <g transform="translate(540 1010)">
-      <path d="M -70 -220 L -56 0 L 56 0 L 70 -220 Z" fill="rgba(200,235,255,.55)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+    <rect x={90} y={1230} width={900} height={46} rx={14} fill="#6f778a" stroke={KC.ink} strokeWidth={8} />
+    <rect x={140} y={1276} width={34} height={180} fill="#4d5262" stroke={KC.ink} strokeWidth={6} />
+    <rect x={906} y={1276} width={34} height={180} fill="#4d5262" stroke={KC.ink} strokeWidth={6} />
+    <g transform="translate(540 1230) scale(1.5)">
+      <path d="M -70 -220 L -56 0 L 56 0 L 70 -220 Z" fill="rgba(200,235,255,.55)" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
       <path d="M -63 -130 L -56 0 L 56 0 L 63 -130 Z" fill="#3fa9f5" opacity=".85" />
-      <line x1={-63} y1={-130} x2={63} y2={-130} stroke="#bfe6ff" strokeWidth={6} />
-      <path d="M -50 -200 L -42 -20" stroke="#fff" strokeWidth={10} strokeLinecap="round" opacity=".6" />
+      <line x1={-63} y1={-130} x2={63} y2={-130} stroke="#bfe6ff" strokeWidth={5} />
+      <path d="M -50 -200 L -42 -20" stroke="#fff" strokeWidth={8} strokeLinecap="round" opacity=".6" />
     </g>
   </g>;
 }
@@ -193,9 +195,9 @@ function PoloArriba({ T, a0, x = 540, y = 800, R = 330 }) {
 // Péndulo de Foucault: el plano de oscilación queda fijo y el piso (con su círculo de marcas) gira debajo.
 function Pendulo({ T, a0 }) {
   const t = T - a0, giro = t * 14, sw = Math.sin(t * 2.4), bx = 540 + sw * 330, by = 1030 - (1 - Math.cos(sw * 0.5)) * 90;
-  return <g>
-    <rect x={0} y={0} width={KW} height={300} fill="#7a7670" />
-    <path d="M 340 300 Q 540 120 740 300 Z" fill="#d8c6a6" stroke={KC.ink} strokeWidth={8} />
+  return <g transform="translate(0 110)">
+    <rect x={-60} y={-300} width={KW + 120} height={600} fill="#2b2927" />
+    <path d="M 340 300 Q 540 120 740 300 Z" fill="#8c7d64" stroke={KC.ink} strokeWidth={8} />
     <g transform="translate(540 1060)">
       <ellipse rx={420} ry={130} fill="#c9b48e" stroke={KC.ink} strokeWidth={9} />
       <ellipse rx={350} ry={104} fill="#e8d7b2" stroke={KC.ink} strokeWidth={6} />
@@ -212,7 +214,7 @@ function Pendulo({ T, a0 }) {
 }
 
 // Mapa de México (cerca del ecuador)
-const MAPA = { x: 170, y: 400, ancho: 900 };
+const MAPA = { x: 70, y: 424, ancho: 1150 };   // pase a mano cine: x1.28; el ecuador queda en y≈1400 (misma proyección: la distancia al ecuador sigue siendo proporcional)
 const mpt = (lon, lat) => { const [a, b] = mxProy(lon, lat), k = MAPA.ancho / 1000; return [MAPA.x + a * k, MAPA.y + b * k]; };
 const GDL = mpt(-103.35, 20.67), CDMX = mpt(-99.13, 19.43), YEC = mpt(-100, 0)[1];
 
@@ -228,15 +230,15 @@ function Tierra() {
       <Escena T={T} a={K.Gancho} b={K.Giro} zoom={-0.08}>
         <FondoLunares color={KC.pink} />
         <Lienzo><Cuarto T={T} v={vGancho} /></Lienzo>
-        <NumeroGigante T={T} at={K.Gancho + 0.6} until={K.Giro - 0.1} valor={1500} desde={1500} dur={0.1} prefijo="> " sufijo=" km/h" etiqueta="en el centro de México" x={330} y={420} tam={120} />
-        <Chip T={T} at={K.Gancho + 4.2} until={K.Giro - 0.1} texto="…y no lo sientes" x={770} y={640} tam={44} borde={KC.yellow} />
+        <NumeroGigante T={T} at={K.Gancho + 0.6} until={K.Giro - 0.1} valor={1500} desde={1500} dur={0.1} prefijo="> " sufijo=" km/h" etiqueta="en el centro de México" x={540} y={370} tam={130} />
+        <Chip T={T} at={K.Gancho + 4.2} until={K.Giro - 0.1} texto="…y no lo sientes" x={790} y={950} tam={36} borde={KC.yellow} />
       </Escena>
       {/* 1–2 · la cámara se aleja: la Tierra gira; el ecuador */}
       <Escena T={T} a={K.Giro} b={K.Mexico} fondo={KC.violet} zoom={0.03}>
         <FondoLunares color={KC.violet} punto="rgba(255,255,255,.12)" />
         <Lienzo>
           <EstrellasFondo T={T} n={50} />
-          <Globo x={540} y={820} R={330} s={zoomOut} lon0={lonG} lat0={18} ecuador={kprog(T, K.Ecuador, K.Ecuador + 0.8)} id="g1">
+          <Globo x={540} y={860} R={400} s={zoomOut} lon0={lonG} lat0={18} ecuador={kprog(T, K.Ecuador, K.Ecuador + 0.8)} id="g1">
             {(pr) => { const [cx, cy, cz] = pr(-99.13, 19.43), [ex, ey, ez] = pr(-78.5, -0.2);
               const estela = Array.from({ length: 20 }, (_, i) => pr(-78.5 - i * 1.6, -0.2)).filter((q) => q[2] > 0);
               return <g>
@@ -246,12 +248,12 @@ function Tierra() {
               </g>; }}
           </Globo>
           <FlechaGiroWrap T={T} p={kprog(T, K.Giro + 1.0, K.Giro + 2.0, kEase.sale)} />
-          <g opacity={kprog(T, K.Giro + 2.2, K.Giro + 2.6) * (1 - kprog(T, K.Ecuador - 0.2, K.Ecuador + 0.2))}><Reloj x={900} y={1110} r={70} v={kprog(T, K.Giro + 2.2, K.Ecuador - 0.2)} /></g>
-          <CajaG T={T} at={K.Ecuador + 1.0} x={620} y={1010} l1="ecuador" l2="≈ 1,670 km/h" color={KC.yellow} />
+          <g opacity={kprog(T, K.Giro + 2.2, K.Giro + 2.6) * (1 - kprog(T, K.Ecuador - 0.2, K.Ecuador + 0.2))}><Reloj x={915} y={1300} r={70} v={kprog(T, K.Giro + 2.2, K.Ecuador - 0.2)} /></g>
+          <CajaG T={T} at={K.Ecuador + 1.0} x={380} y={1320} l1="ecuador" l2="≈ 1,670 km/h" color={KC.yellow} />
         </Lienzo>
-        <Chip T={T} at={K.Giro + 0.4} until={K.Giro + 2.2} texto="tú, en México" x={540} y={420} tam={42} borde={KC.pink} />
-        <Chip T={T} at={K.Giro + 2.3} until={K.Ecuador - 0.1} texto="1 vuelta ≈ 1 día" x={540} y={420} tam={48} borde={KC.gold} />
-        <Chip T={T} at={K.Ecuador + 0.2} until={K.Mexico - 0.1} texto="en el ecuador" x={540} y={420} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Giro + 0.4} until={K.Giro + 2.2} texto="tú, en México" x={540} y={360} tam={42} borde={KC.pink} />
+        <Chip T={T} at={K.Giro + 2.3} until={K.Ecuador - 0.1} texto="1 vuelta ≈ 1 día" x={540} y={360} tam={48} borde={KC.gold} />
+        <Chip T={T} at={K.Ecuador + 0.2} until={K.Mexico - 0.1} texto="en el ecuador" x={540} y={360} tam={44} borde={KC.yellow} />
       </Escena>
       {/* 3 · México: más lejos del ecuador, un poco más lento */}
       <Escena T={T} a={K.Mexico} b={K.Polos} fondo={KC.cyan} zoom={0.04}>
@@ -261,15 +263,15 @@ function Tierra() {
             <MapaMexico x={MAPA.x} y={MAPA.y} ancho={MAPA.ancho} />
             <line x1={0} y1={YEC} x2={KW} y2={YEC} stroke={KC.ink} strokeWidth={16} />
             <line x1={0} y1={YEC} x2={KW} y2={YEC} stroke={ORO} strokeWidth={8} strokeDasharray="30 16" strokeDashoffset={-T * 60} />
-            <text x={1040} y={YEC - 22} textAnchor="end" style={{ font:`900 36px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">ecuador · ≈ 1,670 km/h</text>
+            <text x={1000} y={YEC - 22} textAnchor="end" style={{ font:`900 36px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">ecuador · ≈ 1,670 km/h</text>
             {T > K.Mexico + 0.8 && <g opacity={kprog(T, K.Mexico + 0.8, K.Mexico + 1.3)}>
               <FlechaRecta x1={GDL[0] - 60} y1={YEC - 10} x2={GDL[0] - 60} y2={klerp(YEC - 10, GDL[1] + 30, kprog(T, K.Mexico + 0.8, K.Mexico + 1.8, kEase.sale))} color={KC.coral} grosor={12} punta={30} />
               <text x={GDL[0] - 85} y={YEC - 150} textAnchor="end" style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">más lejos</text>
             </g>}
-            {T > K.Mexico + 0.5 && <PinG x={GDL[0]} y={GDL[1]} color={KC.yellow} r={15} T={T} />}
-            {T > K.Mexico + 4.3 && <PinG x={CDMX[0]} y={CDMX[1]} color={KC.orange} r={15} T={T} />}
-            <CajaG T={T} at={K.Mexico + 1.4} x={60} y={GDL[1] - 270} l1="Guadalajara" l2="≈ 1,560 km/h" px={GDL[0]} py={GDL[1]} color={KC.yellow} />
-            <CajaG T={T} at={K.Mexico + 4.5} x={600} y={CDMX[1] + 110} l1="CDMX" l2="≈ 1,570 km/h" px={CDMX[0]} py={CDMX[1]} color={KC.orange} />
+            {T > K.Mexico + 0.5 && <PinG x={GDL[0]} y={GDL[1]} color={KC.yellow} r={19} T={T} />}
+            {T > K.Mexico + 4.3 && <PinG x={CDMX[0]} y={CDMX[1]} color={KC.orange} r={19} T={T} />}
+            <CajaG T={T} at={K.Mexico + 1.4} x={55} y={GDL[1] + 110} l1="Guadalajara" l2="≈ 1,560 km/h" px={GDL[0]} py={GDL[1]} color={KC.yellow} />
+            <CajaG T={T} at={K.Mexico + 4.5} x={520} y={CDMX[1] + 300} l1="CDMX" l2="≈ 1,570 km/h" px={CDMX[0]} py={CDMX[1]} color={KC.orange} />
           </g>
         </Lienzo>
       </Escena>
@@ -278,15 +280,15 @@ function Tierra() {
         <FondoLunares color={KC.violet} punto="rgba(255,255,255,.12)" />
         <Lienzo>
           <EstrellasFondo T={T} n={50} seed={4} />
-          <Globo x={540} y={830} R={330} lon0={-100 - 14 * (T - K.Polos)} lat0={62} ecuador={0.6} id="g2">
+          <Globo x={540} y={900} R={400} lon0={-100 - 14 * (T - K.Polos)} lat0={62} ecuador={0.6} id="g2">
             {(pr) => { const [nx, ny] = pr(0, 90), giro = (T - K.Polos) * 200;
-              return <g transform={`translate(${nx} ${ny})`}>
+              return <g transform={`translate(${nx} ${ny}) scale(1.5)`}>
                 <path d="M 0 -70 A 70 70 0 1 1 -66 -24" fill="none" stroke={KC.ink} strokeWidth={18} strokeLinecap="round" transform={`rotate(${-giro * 0.5})`} />
                 <path d="M 0 -70 A 70 70 0 1 1 -66 -24" fill="none" stroke={KC.yellow} strokeWidth={10} strokeLinecap="round" transform={`rotate(${-giro * 0.5})`} />
                 <g transform={`scale(${Math.cos(giro * Math.PI / 180) * 0.9} 0.9)`}><circle cy={-38} r={16} fill={CPIEL} stroke={KC.ink} strokeWidth={5} /><rect x={-14} y={-24} width={28} height={36} rx={10} fill={KC.pink} stroke={KC.ink} strokeWidth={5} /></g>
               </g>; }}
           </Globo>
-          <CajaG T={T} at={K.Polos + 0.6} x={600} y={470} l1="polo norte" l2="casi nada" color={KC.mint} />
+          <CajaG T={T} at={K.Polos + 0.6} x={640} y={330} l1="polo norte" l2="casi nada" px={612} py={640} color={KC.mint} />
         </Lienzo>
       </Escena>
       {/* 5 · pregunta */}
@@ -295,43 +297,45 @@ function Tierra() {
       <Escena T={T} a={K.Constante} b={K.Avion} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <Grafica x={150} y={520} h={210} p={kprog(T, K.Constante + 0.3, K.Constante + 3.6)} f={(u) => u < 0.62 ? 0.8 : u < 0.7 ? klerp(0.8, 0.15, (u - 0.62) / 0.08) : 0.15} color={KC.yellow} titulo="tu velocidad" />
-          <Grafica x={150} y={940} h={190} p={kprog(T, K.Constante + 0.3, K.Constante + 3.6)} f={(u) => u < 0.62 ? 0.08 : u < 0.7 ? 0.08 + 0.85 * Math.sin((u - 0.62) / 0.08 * Math.PI) : 0.08} color={KC.coral} titulo="lo que siente tu cuerpo" />
-          <Onomato T={T} at={K.Constante + 2.6} dur={1.4} x={780} y={860} texto="¡FRENÓN!" color={KC.yellow} tam={80} rot={-6} />
+          {(() => { const tb = K.Constante + 0.3 + 0.62 * 3.3, golpe = kprog(T, tb, tb + 0.2, kEase.sale) * (1 - kprog(T, tb + 0.35, tb + 1.1, kEase.suave));
+            return <g transform={`rotate(${8 * golpe} 265 1354)`}><PersonaSentada x={265} y={1110} s={1.15} T={T} /></g>; })()}
+          <Grafica x={560} y={590} w={420} h={210} tam={32} p={kprog(T, K.Constante + 0.3, K.Constante + 3.6)} f={(u) => u < 0.62 ? 0.8 : u < 0.7 ? klerp(0.8, 0.15, (u - 0.62) / 0.08) : 0.15} color={KC.yellow} titulo="tu velocidad" />
+          <Grafica x={560} y={1010} w={420} h={190} tam={32} p={kprog(T, K.Constante + 0.3, K.Constante + 3.6)} f={(u) => u < 0.62 ? 0.08 : u < 0.7 ? 0.08 + 0.85 * Math.sin((u - 0.62) / 0.08 * Math.PI) : 0.08} color={KC.coral} titulo="lo que siente tu cuerpo" />
+          <Onomato T={T} at={K.Constante + 2.6} dur={1.4} x={770} y={905} texto="¡FRENÓN!" color={KC.yellow} tam={68} rot={-6} />
         </Lienzo>
-        <Chip T={T} at={K.Constante + 1.0} until={K.Constante + 2.5} texto="velocidad constante: no se siente" x={540} y={370} tam={36} borde={KC.yellow} />
-        <Chip T={T} at={K.Constante + 2.7} until={K.Avion - 0.1} texto="el cambio sí se siente" x={540} y={370} tam={40} borde={KC.coral} />
+        <Chip T={T} at={K.Constante + 1.0} until={K.Constante + 2.5} texto="velocidad constante: no se siente" x={540} y={400} tam={38} borde={KC.yellow} />
+        <Chip T={T} at={K.Constante + 2.7} until={K.Avion - 0.1} texto="el cambio sí se siente" x={540} y={400} tam={42} borde={KC.coral} />
       </Escena>
       {/* 7 · el avión que va derechito */}
       <Escena T={T} a={K.Avion} b={K.Lento} zoom={0.04}>
         <Lienzo><AvionDentro T={T} /></Lienzo>
-        <Chip T={T} at={K.Avion + 0.4} until={K.Lento - 0.1} texto="cientos de km/h" x={540} y={360} tam={44} borde={KC.cyan} />
-        <Etq T={T} at={K.Avion + 2.0} until={K.Lento - 0.1} x={620} y={920} texto="el agua, quieta" color={KC.ink} tam={34} />
+        <Chip T={T} at={K.Avion + 0.4} until={K.Lento - 0.1} texto="cientos de km/h" x={540} y={275} tam={44} borde={KC.cyan} />
+        <Etq T={T} at={K.Avion + 2.0} until={K.Lento - 0.1} x={650} y={1120} texto="el agua, quieta" color={KC.ink} tam={30} />
       </Escena>
       {/* 8 · la Tierra cambia de dirección muy despacio */}
       <Escena T={T} a={K.Lento} b={K.Pendulo} fondo={KC.orange} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <PoloArriba T={T} a0={K.Lento} />
-          <Reloj x={900} y={1110} r={70} v={kprog(T, K.Lento + 0.3, K.Pendulo - 0.2)} />
+          <PoloArriba T={T} a0={K.Lento} y={860} R={380} />
+          <Reloj x={920} y={1330} r={70} v={kprog(T, K.Lento + 0.3, K.Pendulo - 0.2)} />
         </Lienzo>
-        <Chip T={T} at={K.Lento + 0.3} until={K.Pendulo - 0.1} texto="tu dirección gira despacio" x={540} y={400} tam={42} borde={KC.coral} />
-        <Chip T={T} at={K.Lento + 2.4} until={K.Pendulo - 0.1} texto="1 vuelta ≈ 1 día" x={300} y={1160} tam={36} borde={KC.gold} />
+        <Chip T={T} at={K.Lento + 0.3} until={K.Pendulo - 0.1} texto="tu dirección gira despacio" x={540} y={330} tam={42} borde={KC.coral} />
+        <Chip T={T} at={K.Lento + 2.4} until={K.Pendulo - 0.1} texto="1 vuelta ≈ 1 día" x={640} y={1330} tam={36} borde={KC.gold} />
       </Escena>
       {/* 9 · Foucault, 1851, París */}
       <Escena T={T} a={K.Pendulo} b={K.Cierre} fondo={KC.lilac} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        <Lienzo><g opacity={kprog(T, K.Pendulo + 2.0, K.Pendulo + 2.6)}><Pendulo T={T} a0={K.Pendulo} /></g></Lienzo>
-        <TarjetaEstudio T={T} at={K.Pendulo + 0.2} until={K.Pendulo + 2.4} anio="1851" quien="Léon Foucault · París" revista="un péndulo enorme" x={540} y={700} />
-        <Chip T={T} at={K.Pendulo + 2.8} until={K.Cierre - 0.1} texto="el piso gira debajo" x={540} y={380} tam={42} borde={KC.red} />
-        <Etq T={T} at={K.Pendulo + 3.4} until={K.Cierre - 0.1} x={600} y={560} texto="el péndulo no gira" color={KC.ink} tam={30} />
+        <Lienzo><Pendulo T={T} a0={K.Pendulo} /></Lienzo>
+        <TarjetaEstudio T={T} at={K.Pendulo + 0.2} until={K.Pendulo + 2.4} anio="1851" quien="Léon Foucault · París" revista="un péndulo enorme" x={540} y={275} />
+        <Chip T={T} at={K.Pendulo + 2.8} until={K.Cierre - 0.1} texto="el piso gira debajo" x={540} y={1410} tam={42} borde={KC.red} />
+        <Etq T={T} at={K.Pendulo + 3.4} until={K.Cierre - 0.1} x={600} y={670} texto="el péndulo no gira" color={KC.ink} tam={30} />
       </Escena>
       {/* 10 · cierre: la misma silla, ahora sobre la Tierra que gira */}
       <Escena T={T} a={K.Cierre} b={FIN} zoom={-0.04}>
         <FondoLunares color={KC.pink} />
         <Lienzo><Cuarto T={T} v={1} curvo={kprog(T, K.Cierre + 0.4, K.Cierre + 1.6, kEase.suave)} /></Lienzo>
-        <NumeroGigante T={T} at={K.Cierre + 2.4} until={K.Outro - 0.1} valor={37000} desde={37000} dur={0.1} prefijo="> " sufijo=" km" etiqueta="hoy, sin levantarte" x={360} y={420} tam={120} color={KC.yellow} />
-        <Chip T={T} at={K.Cierre + 0.6} until={K.Cierre + 2.3} texto="Guadalajara o CDMX" x={360} y={440} tam={44} borde={KC.gold} />
+        <NumeroGigante T={T} at={K.Cierre + 2.4} until={K.Outro - 0.1} valor={37000} desde={37000} dur={0.1} prefijo="> " sufijo=" km" etiqueta="hoy, sin levantarte" x={540} y={370} tam={130} color={KC.yellow} />
+        <Chip T={T} at={K.Cierre + 0.6} until={K.Cierre + 2.3} texto="Guadalajara o CDMX" x={540} y={380} tam={44} borde={KC.gold} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Giro - 0.1} texto="Vas a *más de 1,500 km/h.*" />
@@ -363,8 +367,8 @@ function Tierra() {
     </div>
   );
 }
-// La flecha del giro va en las mismas coordenadas del globo (540, 820).
-function FlechaGiroWrap({ T, p }) { return <g transform="translate(540 820)"><FlechaGiro R={330} p={p} T={T} /></g>; }
+// La flecha del giro va en las mismas coordenadas del globo (540, 860).
+function FlechaGiroWrap({ T, p }) { return <g transform="translate(540 860)"><FlechaGiro R={400} p={p} T={T} /></g>; }
 function TierraApp() {
   return <div style={{ position:'fixed', inset:0, background:'#000' }}><CompositionStage width={1080} height={1920} scenes={window.OM_SCENES} playback={window.OM_PLAYBACK} bg="#0E0F12"><Tierra /></CompositionStage></div>;
 }

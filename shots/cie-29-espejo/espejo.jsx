@@ -204,6 +204,8 @@ function Espejo() {
       <Escena T={T} a={K.Frente} b={K.Pregunta} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
+          {/* pase cine: vista desde arriba 1.3× y centrada en el cuadro */}
+          <g transform="translate(540 960) scale(1.3) translate(-540 -830)">
           {/* el reflejo (imagen detrás del espejo) */}
           <rect x={60} y={560} width={960} height={250} rx={30} fill="rgba(255,255,255,.18)" />
           <PersonaArriba T={T} x={540} y={600} dir={1} s={kprog(T, K.Frente + 0.3, K.Frente + 0.8, kEase.rebote)} color="#ff7fae" punto="D" fantasma />
@@ -215,12 +217,13 @@ function Espejo() {
           <FlechaRecta x1={540} y1={980} x2={540} y2={880} p={kprog(T, K.Frente + 1.2, K.Frente + 1.8, kEase.sale)} color={KC.yellow} grosor={16} />
           <FlechaRecta x1={540} y1={710} x2={540} y2={790} p={kprog(T, K.Frente + 3.2, K.Frente + 3.8, kEase.sale)} color={KC.yellow} grosor={16} />
           <Punteada a={[730, 1142]} b={[730, 652]} p={kprog(T, K.Frente + 4.6, K.Frente + 5.4, kEase.sale)} />
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Frente + 0.1} until={K.Pregunta - 0.1} texto="VISTA DESDE ARRIBA" x={540} y={440} tam={40} borde={KC.ink} mono />
-        <Etq T={T} at={K.Frente + 0.9} until={K.Pregunta - 0.2} x={300} y={1080} texto="tú" lado="izq" color={KC.ink} tam={40} />
-        <Etq T={T} at={K.Frente + 2.6} until={K.Pregunta - 0.2} x={370} y={600} texto="tu reflejo" lado="izq" color={KC.ink} tam={36} />
-        <Etq T={T} at={K.Frente + 1.4} until={K.Pregunta - 0.2} x={575} y={935} texto="tu nariz → espejo" lado="der" color={KC.ink} tam={32} />
-        <Etq T={T} at={K.Frente + 3.4} until={K.Pregunta - 0.2} x={575} y={740} texto="su nariz → tú" lado="der" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.Frente + 0.9} until={K.Pregunta - 0.2} x={228} y={1285} texto="tú" lado="izq" color={KC.ink} tam={40} />
+        <Etq T={T} at={K.Frente + 2.6} until={K.Pregunta - 0.2} x={455} y={530} texto="tu reflejo" lado="izq" color={KC.ink} tam={36} />
+        <Etq T={T} at={K.Frente + 1.4} until={K.Pregunta - 0.2} x={585} y={1097} texto="tu nariz → espejo" lado="der" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.Frente + 3.4} until={K.Pregunta - 0.2} x={585} y={843} texto="su nariz → tú" lado="der" color={KC.ink} tam={32} />
       </Escena>
 
       {/* 4 · pregunta */}
@@ -230,6 +233,8 @@ function Espejo() {
       <Escena T={T} a={K.Girar} b={K.Texto} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
+          {/* pase cine: 1.15× y centrado */}
+          <g transform="translate(540 1000) scale(1.15) translate(-570 -900)">
           {/* otra persona que se voltea para verte (gira sobre sí misma) */}
           <ellipse cx={360} cy={1180} rx={190} ry={40} fill="rgba(0,0,0,.15)" />
           {giro > 0 && giro < 1 && <path d="M 170 900 A 190 60 0 1 0 550 900" fill="none" stroke={KC.ink} strokeWidth={12} strokeDasharray="20 16" opacity={Math.sin(giro * Math.PI)} />}
@@ -239,10 +244,11 @@ function Espejo() {
           <EspejoPared T={T} x1={700} y1={760} x2={1000} y2={1180} id="ep2">
             <Figura T={T} x={850} pies={1170} alto={340} vista="frente" brazoD={1} punto="D" color={KC.pink} />
           </EspejoPared>
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Girar + 0.3} until={K.Texto - 0.1} texto="si fuera otra persona…" x={540} y={445} tam={44} borde={KC.orange} />
-        <Etq T={T} at={K.Girar + 0.8} until={K.Girar + 2.0} x={560} y={600} texto="de espaldas" lado="der" color={KC.ink} tam={32} />
-        <Etq T={T} at={K.Girar + 3.9} until={K.Texto - 0.2} x={260} y={560} texto="su derecha" lado="der" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.Girar + 0.8} until={K.Girar + 2.0} x={529} y={655} texto="de espaldas" lado="der" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.Girar + 3.9} until={K.Texto - 0.2} x={184} y={609} texto="su derecha" lado="der" color={KC.ink} tam={32} />
       </Escena>
 
       {/* 6 · las letras: la hoja mira al espejo, no a ti */}
@@ -264,10 +270,10 @@ function Espejo() {
         <FondoLunares color={KC.orange} />
         <Lienzo>
           <g transform={`translate(0 ${(1 - kprog(T, K.Ambulancia + 0.1, K.Ambulancia + 0.9, kEase.sale)) * 500})`}>
-            <AmbFrente x={540} y={1000} s={0.85} T={T} />
+            <AmbFrente x={540} y={1100} s={1.25} T={T} />
           </g>
           {/* retrovisor: un espejo invierte la imagen y el nombre se lee derecho */}
-          <g transform={`translate(540 600) scale(${kprog(T, K.Ambulancia + 3.0, K.Ambulancia + 3.5, kEase.rebote)})`}>
+          <g transform={`translate(540 560) scale(${1.15 * kprog(T, K.Ambulancia + 3.0, K.Ambulancia + 3.5, kEase.rebote)})`}>
             <rect x={-330} y={-150} width={660} height={240} rx={110} fill="#2a2d36" stroke={KC.ink} strokeWidth={10} />
             <clipPath id="retro"><rect x={-300} y={-125} width={600} height={190} rx={90} /></clipPath>
             <rect x={-300} y={-125} width={600} height={190} rx={90} fill="#bfe3f5" />
@@ -275,8 +281,8 @@ function Espejo() {
               <path d="M -180 -125 l 60 0 l -120 190 l -60 0 Z" fill="#fff" opacity=".22" /></g>
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Ambulancia + 1.2} until={K.Ambulancia + 2.8} texto="al revés en el frente" x={540} y={410} tam={42} borde={KC.red} />
-        <Chip T={T} at={K.Ambulancia + 3.6} until={K.Dos - 0.1} texto="en el retrovisor: derecho" x={540} y={410} tam={42} borde={KC.mint} />
+        <Chip T={T} at={K.Ambulancia + 1.2} until={K.Ambulancia + 2.8} texto="al revés en el frente" x={540} y={300} tam={42} borde={KC.red} />
+        <Chip T={T} at={K.Ambulancia + 3.6} until={K.Dos - 0.1} texto="en el retrovisor: derecho" x={540} y={300} tam={42} borde={KC.mint} />
       </Escena>
 
       {/* 8 · dos espejos en ángulo recto (unión vertical): te ves como te ven los demás */}

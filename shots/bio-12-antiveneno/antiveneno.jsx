@@ -184,8 +184,8 @@ function Antiveneno() {
   const tox = [[-1, 0], [1, 0.5], [-1, 1.1], [1, 1.6]];
   const corte = kprog(T, K.Pe + 1.3, K.Pe + 1.6), migas = kprog(T, K.Pe + 1.5, K.Pe + 3.6, kEase.sale);
   // estudio: 8 + 7 camitas
-  const camas = [...Array.from({ length: 8 }, (_, i) => ({ g: 0, x: 140 + (i % 2) * 190, y: 760 + Math.floor(i / 2) * 115 })),
-    ...Array.from({ length: 7 }, (_, i) => ({ g: 1, x: 690 + (i % 2) * 190, y: 760 + Math.floor(i / 2) * 115 }))];
+  const camas = [...Array.from({ length: 8 }, (_, i) => ({ g: 0, x: 130 + (i % 2) * 215, y: 760 + Math.floor(i / 2) * 150 })),
+    ...Array.from({ length: 7 }, (_, i) => ({ g: 1, x: 655 + (i % 2) * 215, y: 760 + Math.floor(i / 2) * 150 }))];
   const crono0 = K.Re + 0.3, cronoDur = 3.6;
   const sanoDe = (c, i) => c.g === 0 ? kprog(T, crono0 + 0.4 + (i % 8) * 0.38, crono0 + 0.8 + (i % 8) * 0.38) : (i === 10 ? kprog(T, crono0 + 2.6, crono0 + 3.0) : 0);
   // México: alacranes en el centro y el Pacífico, y Jalisco
@@ -199,17 +199,19 @@ function Antiveneno() {
       <Escena T={T} a={K.G} b={K.Do} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <CapaAV>
+          <g transform="translate(540 1185) scale(1.5) translate(-540 -1185)">
           <ellipse cx={540} cy={1185} rx={520} ry={40} fill="rgba(0,0,0,.12)" />
           <Frasco x={380} y={1090} s={1.25} rot={Math.sin(T * 2.2) * 3} />
-          {asoma > 0 && <g transform={`translate(${klerp(1300, 900, asoma)} 1190)`}><Caballo T={T} x={0} y={0} s={0.75} /></g>}
+          {asoma > 0 && <g transform={`translate(${klerp(1300, 820, asoma)} 1190)`}><Caballo T={T} x={0} y={0} s={0.75} /></g>}
           <Alacran T={T} x={alaX} y={1185} s={1.2} camina={1 - kprog(T, K.G + 2.4, K.G + 2.6)} />
+          </g>
         </CapaAV>
       </Escena>
       {/* 1–2 · dosis y meses: el caballo aprende */}
       <Escena T={T} a={K.Do} b={K.Pl} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <CapaAV>
-          <rect x={0} y={HY} width={KW} height={KH - HY} fill="#446f43" />
+          <rect x={0} y={HY} width={KW} height={KH - HY} fill={cineMix('#446f43', '#0a0f1c', 0.5)} />
           <path d={`M 40 ${HY - 120} L 1040 ${HY - 120} M 40 ${HY - 60} L 1040 ${HY - 60}`} stroke="#8a5a2b" strokeWidth={16} />
           <Caballo T={T} x={HX} y={HY} s={HS} />
           {T < K.Ap + 0.3 && <g opacity={1 - kprog(T, K.Ap, K.Ap + 0.3)}>
@@ -261,18 +263,18 @@ function Antiveneno() {
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <CapaAV>
-          <Frasco x={290} y={1090} s={1.15} rot={Math.sin(T * 5) * 10} />
-          <text x={300} y={780} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 8} 300 700)`}>?</text>
+          <Frasco x={600} y={1200} s={2.0} rot={Math.sin(T * 5) * 10} />
+          <text x={250} y={1000} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 8} 250 920)`}>?</text>
         </CapaAV>
       </Escena>
       {/* 7–8 · el ensayo de Tucson */}
       <Escena T={T} a={K.Es} b={K.Fd} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <CapaAV>
-          {camas.map((c, i) => <Cama key={i} x={c.x} y={c.y} s={0.95} sano={sanoDe(c, i)} grupo={c.g === 0 ? AC_H : '#9aa3b5'} />)}
-          <text x={235} y={700} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>con suero</text>
-          <text x={785} y={700} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>con placebo</text>
-          <line x1={540} y1={680} x2={540} y2={1180} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" />
+          {camas.map((c, i) => <Cama key={i} x={c.x} y={c.y} s={1.25} sano={sanoDe(c, i)} grupo={c.g === 0 ? AC_H : '#9aa3b5'} />)}
+          <text x={237} y={640} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>con suero</text>
+          <text x={762} y={640} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>con placebo</text>
+          <line x1={500} y1={610} x2={500} y2={1290} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" />
         </CapaAV>
         <Cronometro T={T} at={crono0} until={K.Fd - 0.3} factor={4 * 3600 / (K.Fd - 0.25 - crono0)} x={330} y={470} etiqueta="TIEMPO DESDE EL SUERO" />
       </Escena>
@@ -280,8 +282,8 @@ function Antiveneno() {
       <Escena T={T} a={K.Fd} b={K.Mx} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         <CapaAV>
-          <Frasco x={540} y={1060} s={1.5} />
-          {(() => { const p = kprog(T, K.Fd + 0.4, K.Fd + 0.7, kEase.rebote); return p > 0 && <g transform={`translate(700 830) rotate(-14) scale(${klerp(2.2, 1, p)})`} opacity={Math.min(1, p * 1.5)}>
+          <Frasco x={540} y={1150} s={2.1} />
+          {(() => { const p = kprog(T, K.Fd + 0.4, K.Fd + 0.7, kEase.rebote); return p > 0 && <g transform={`translate(770 780) rotate(-14) scale(${klerp(2.2, 1, p)})`} opacity={Math.min(1, p * 1.5)}>
             <circle r={120} fill="rgba(255,255,255,.85)" stroke={KC.red} strokeWidth={12} />
             <circle r={98} fill="none" stroke={KC.red} strokeWidth={4} />
             <text y={-6} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.red}>FDA</text>
@@ -308,28 +310,31 @@ function Antiveneno() {
       <Escena T={T} a={K.Mu} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         <CapaAV>
-          {[[430, 500, 'fines de los 70', '~500 al año', KC.red], [810, 50, 'estudio de 2020', 'menos de 50', KC.mint]].map(([cx, v, et, num, col], i) => {
-            const g = kprog(T, K.Mu + 0.3 + i * 1.6, K.Mu + 1.2 + i * 1.6, kEase.sale), h = 380 * (v / 500) * g, base = 1180;
+          <Frasco x={872} y={1250 - 90 * 1.6} s={1.6} rot={Math.sin(T * 1.6) * 2} />
+          {[[230, 500, 'fines de los 70', '~500 al año', KC.red], [520, 50, 'estudio de 2020', 'menos de 50', KC.mint]].map(([cx, v, et, num, col], i) => {
+            const g = kprog(T, K.Mu + 0.3 + i * 1.6, K.Mu + 1.2 + i * 1.6, kEase.sale), h = 520 * (v / 500) * g, base = 1250;
             return <g key={i} opacity={kprog(T, K.Mu + 0.2 + i * 1.6, K.Mu + 0.5 + i * 1.6)}>
               <rect x={cx - 110} y={base - h} width={220} height={h} rx={16} fill={col} stroke={KC.ink} strokeWidth={8} />
               <text x={cx} y={base - h - 24} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{num}</text>
-              <text x={cx} y={base + 50} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>{et}</text>
+              <text x={cx} y={base + 50} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>{et}</text>
             </g>; })}
-          <line x1={280} y1={1182} x2={960} y2={1182} stroke={KC.ink} strokeWidth={8} />
+          <line x1={80} y1={1252} x2={1040} y2={1252} stroke={KC.ink} strokeWidth={8} />
         </CapaAV>
       </Escena>
       {/* 12 · cierre: el mismo frasco, ahora con el caballito */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <CapaAV>
+          <g transform="translate(540 1185) scale(1.5) translate(-540 -1185)">
           <ellipse cx={540} cy={1185} rx={520} ry={40} fill="rgba(0,0,0,.12)" />
           <Frasco x={380} y={1090} s={1.25} rot={Math.sin(T * 2.2) * 3} caballo={kprog(T, K.Ci + 0.4, K.Ci + 1.2)} />
           <Alacran T={T} x={klerp(380, 1250, kprog(T, K.Ci + 1.0, K.Ou, kEase.suave))} y={1185} s={0.8} />
+          </g>
         </CapaAV>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 2.2} until={K.Do - 0.3} texto="¿lo hizo una máquina?" x={320} y={520} tam={42} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 2.2} until={K.Do - 0.3} texto="¿lo hizo una máquina?" x={320} y={380} tam={42} />
       <Chip T={T} at={K.G + 3.0} until={K.Do - 0.3} texto="los anticuerpos: de un caballo" y={1500} tam={42} borde={CAB} />
       <Etq T={T} at={K.G + 0.6} until={K.G + 2.8} x={90} y={1440} texto="Centruroides" it tam={36} color={KC.ink} />
       <Medidor T={T} at={K.Do + 1.0} until={K.Ap - 0.2} valor={(t) => escalon(t)} etiqueta="dosis de veneno" texto={(v) => (v < 0.3 ? 'poquito' : v < 0.8 ? 'un poco más' : 'más')} x={90} y={1440} color={ALA} />
@@ -346,8 +351,8 @@ function Antiveneno() {
       <Chip T={T} at={K.Re + 3.6} until={K.Fd - 0.3} texto="suero: 8 de 8 · placebo: 1 de 7" y={1500} tam={42} borde={KC.mint} />
       <Chip T={T} at={K.Fd + 0.9} until={K.Mx - 0.3} texto="Anascorp · hecho en México" y={1500} tam={42} borde={KC.red} />
       <NumeroGigante T={T} at={K.Mx + 0.4} until={K.Mu - 0.3} valor={300} dur={1.4} prefijo="+" sufijo=" mil" etiqueta="intoxicaciones · 2025" x={380} y={500} tam={130} color={KC.red} />
-      <Chip T={T} at={K.Mx + 3.2} until={K.Mu - 0.3} texto="Jalisco · casi 48 mil" x={330} y={1480} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Mx + 3.6} until={K.Mu - 0.3} texto="Boletín Epidemiológico SSA · preliminar" y={1590} tam={26} mono borde="#9aa3b5" />
+      <Chip T={T} at={K.Mx + 3.2} until={K.Mu - 0.3} texto="Jalisco · casi 48 mil" x={330} y={1300} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Mx + 3.6} until={K.Mu - 0.3} texto="Boletín Epidemiológico SSA · preliminar" y={1395} tam={26} mono borde="#9aa3b5" />
       <Chip T={T} at={K.Mu + 3.6} until={K.Ci - 0.3} texto="mejor atención + faboterápicos + acceso a salud" y={1500} tam={30} borde={KC.mint} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="¿te picó? → centro de salud" y={1500} tam={44} borde={KC.red} />
 

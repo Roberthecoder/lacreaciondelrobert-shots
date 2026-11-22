@@ -17,6 +17,7 @@ function StickerVC({ T, src, at, until, lado = 'arriba-der' }) {
     transform:`translate(${tx}px, ${ty}px) scale(${1 - w}, ${1 + w})`, filter:'drop-shadow(0 22px 34px rgba(0,0,0,.55))' }} />;
 }
 function RobertVC({ T, apariciones = [], base = 'assets/stickers/' }) {
+  if (typeof CINE_OPC !== 'undefined') return null;   // modo cine: Robert solo en la tarjeta de cierre (igual que Robert/Sticker en cine.jsx)
   return <>{apariciones.map(([at, until, pose, lado], i) => <StickerVC key={i} T={T} src={`${base}${pose}.png`} at={at} until={until} lado={lado} />)}</>;
 }
 
@@ -152,50 +153,50 @@ function VozClonada() {
       <Escena T={T} a={K.G} b={K.P1}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Telefono x={300} y={760} s={0.95} T={T} vibra={1} />
-          <Onda x={90} y={1110} ancho={900} alto={150} T={T} n={34} pixel={pix} />
+          <Telefono x={540} y={830} s={1.22} T={T} vibra={1} />
+          <Onda x={90} y={1330} ancho={900} alto={160} T={T} n={34} pixel={pix} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.G + 2.2} until={K.P1 - 0.2} texto="COPIA HECHA POR IA" x={540} y={980} tam={46} fondo={KC.ink} color={KC.cyan} borde={KC.cyan} />
+      <Chip T={T} at={K.G + 2.2} until={K.P1 - 0.2} texto="COPIA HECHA POR IA" x={540} y={1460} tam={46} fondo={KC.ink} color={KC.cyan} borde={KC.cyan} />
 
       {/* 2 · paso 1: un audio corto de un video */}
       <Escena T={T} a={K.P1} b={K.P2}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>
+        {svg(<g transform="translate(540 980) scale(1.15) translate(-540 -880)">
           <Telefono x={260} y={820} s={0.78} T={T} modo="video" />
-          <Onda x={470} y={830} ancho={560} alto={190} T={T} n={22} seed={9} sel={T > K.P1 + 2.6 ? [8, 13] : null} />
+          <Onda x={460} y={830} ancho={480} alto={190} T={T} n={22} seed={9} sel={T > K.P1 + 2.6 ? [8, 13] : null} />
           <g opacity={kprog(T, K.P1 + 1.8, K.P1 + 2.2)}><Tijeras x={klerp(1180, 900, kprog(T, K.P1 + 1.8, K.P1 + 2.8, kEase.sale))} y={830} s={1.1} T={T} rot={180} /></g>
           {T > K.P1 + 3.2 && <g transform={`translate(0 ${-kprog(T, K.P1 + 3.2, K.P1 + 4.0, kEase.sale) * 0})`}>
             <rect x={600} y={960} width={300} height={110} rx={20} fill={KC.paper} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.P1 + 3.2, K.P1 + 3.6)} />
             <g opacity={kprog(T, K.P1 + 3.2, K.P1 + 3.6)}><Onda x={620} y={1015} ancho={260} alto={70} T={T} n={5} seed={11} color={KC.yellow} sel={[0, 5]} /></g>
           </g>}
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.P1 + 1.0} until={K.P2 - 0.2} texto="video en redes" x={260} y={1150} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.P1 + 3.4} until={K.P2 - 0.2} texto="audio corto ✂" x={750} y={1150} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.P1 + 1.0} until={K.P2 - 0.2} texto="video en redes" x={218} y={1262} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.P1 + 3.4} until={K.P2 - 0.2} texto="audio corto ✂" x={782} y={1262} tam={34} borde={KC.ink} />
 
       {/* 3 · paso 2: el programa aprende a imitarla (por dentro de la máquina) */}
       <Escena T={T} a={K.P2} b={K.P3}>
         <FondoCircuito T={T} />
-        <RedNeuronal T={T} x={250} y={640} ancho={580} alto={460} capas={[3, 5, 6, 5, 3]} onda={kprog(T, K.P2 + 0.4, K.P2 + 2.6)} />
+        <RedNeuronal T={T} x={230} y={860} ancho={620} alto={580} capas={[3, 5, 6, 5, 3]} onda={kprog(T, K.P2 + 0.4, K.P2 + 2.6)} />
         {svg(<>
-          <Onda x={40} y={870} ancho={170} alto={110} T={T} n={5} seed={11} color={KC.yellow} sel={[0, 5]} />
-          <g opacity={kprog(T, K.P2 + 2.2, K.P2 + 2.6)}><Onda x={860} y={870} ancho={190} alto={160} T={T} n={9} seed={4} color={KC.cyan} /></g>
+          <Onda x={30} y={1150} ancho={170} alto={120} T={T} n={5} seed={11} color={KC.yellow} sel={[0, 5]} />
+          <g opacity={kprog(T, K.P2 + 2.2, K.P2 + 2.6)}><Onda x={870} y={1150} ancho={190} alto={170} T={T} n={9} seed={4} color={KC.cyan} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.P2 + 0.3} until={K.P3 - 0.2} texto="su voz" x={125} y={1010} tam={30} borde={KC.yellow} />
-      <Chip T={T} at={K.P2 + 2.4} until={K.P3 - 0.2} texto="la imitación" x={930} y={1010} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.P2 + 0.3} until={K.P3 - 0.2} texto="su voz" x={115} y={1310} tam={32} borde={KC.yellow} />
+      <Chip T={T} at={K.P2 + 2.4} until={K.P3 - 0.2} texto="la imitación" x={950} y={1310} tam={32} borde={KC.cyan} />
 
       {/* 4 · paso 3: te llaman con prisa */}
       <Escena T={T} a={K.P3} b={K.S}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <Telefono x={540} y={800} s={0.72} T={T} vibra={1} />
-          <g opacity={kprog(T, K.P3 + 1.6, K.P3 + 2.0)}><Choque x={190} y={880} s={0.85} T={T} /></g>
-          <g opacity={kprog(T, K.P3 + 2.3, K.P3 + 2.7)}><Torreta x={890} y={880} s={0.85} T={T} /></g>
+          <Telefono x={540} y={1070} s={1.08} T={T} vibra={1} />
+          <g opacity={kprog(T, K.P3 + 1.6, K.P3 + 2.0)}><Choque x={150} y={800} s={1.0} T={T} /></g>
+          <g opacity={kprog(T, K.P3 + 2.3, K.P3 + 2.7)}><Torreta x={920} y={820} s={1.0} T={T} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.P3 + 3.3} until={K.S - 0.2} texto="¡deposita YA!" x={540} y={1130} tam={56} fondo={KC.red} color={KC.paper} borde={KC.ink} />
+      <Chip T={T} at={K.P3 + 3.3} until={K.S - 0.2} texto="¡deposita YA!" x={540} y={1450} tam={56} fondo={KC.red} color={KC.paper} borde={KC.ink} />
 
       <Pasos T={T} y={330} total={3} hasta={K.S - 0.15} pasos={[
         { at: K.P1 + 0.9, texto: 'un audio corto de su voz' },
@@ -205,57 +206,66 @@ function VozClonada() {
       {/* 5 · ¿cuánto audio? VALL-E, 3 segundos */}
       <Escena T={T} a={K.S} b={K.Q}>
         <FondoLunares color={KC.lilac} />
-        {svg(T > K.S + 5.0 ? <Onda x={240} y={1020} ancho={600} alto={150} T={T} n={9} seed={11} color={KC.yellow} sel={[0, 9]} /> : null)}
+        {svg(<>
+          <Telefono x={540} y={1000} s={0.8} T={T} modo="video" />
+          {T > K.S + 5.0 && <g opacity={kprog(T, K.S + 5.0, K.S + 5.4)}><Onda x={240} y={1360} ancho={600} alto={150} T={T} n={9} seed={11} color={KC.yellow} sel={[0, 9]} /></g>}
+        </>)}
       </Escena>
-      <Chip T={T} at={K.S + 0.2} until={K.S + 1.4} texto="¿cuánto audio necesitan?" y={600} tam={50} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.S + 1.5} until={K.S + 4.8} anio="2023" quien="Microsoft · modelo VALL-E" revista="Wang et al. · arXiv:2301.02111" y={660} />
-      <NumeroGigante T={T} at={K.S + 5.0} until={K.Q - 0.2} valor={3} dur={1.0} sufijo=" s" etiqueta="de grabación" x={600} y={660} tam={300} color={KC.yellow} />
-      <Chip T={T} at={K.S + 6.0} until={K.Q - 0.2} texto="voces que nunca había oído" y={1150} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.S + 0.2} until={K.S + 1.4} texto="¿cuánto audio necesitan?" y={470} tam={50} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.S + 1.5} until={K.S + 4.8} anio="2023" quien="Microsoft · modelo VALL-E" revista="Wang et al. · arXiv:2301.02111" y={470} />
+      <NumeroGigante T={T} at={K.S + 5.0} until={K.Q - 0.2} valor={3} dur={1.0} sufijo=" s" etiqueta="de grabación" x={540} y={450} tam={280} color={KC.yellow} />
+      <Chip T={T} at={K.S + 6.0} until={K.Q - 0.2} texto="voces que nunca había oído" y={690} tam={36} borde={KC.ink} />
 
       {/* 6 · re-gancho: ¿lo notarías? */}
       <Escena T={T} a={K.Q} b={K.O} zoom={0.1}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Onda x={60} y={720} ancho={420} alto={150} T={T} n={14} seed={21} />
-          <Onda x={60} y={1010} ancho={420} alto={150} T={T} n={14} seed={21} pixel={0.35} copia={KC.ink} />
-          <text x={270} y={620} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.paper} stroke={KC.ink} strokeWidth={4}>¿REAL?</text>
-          <text x={270} y={910} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.paper} stroke={KC.ink} strokeWidth={4}>¿FALSA?</text>
+          <Onda x={90} y={820} ancho={900} alto={200} T={T} n={24} seed={21} />
+          <Onda x={90} y={1200} ancho={900} alto={200} T={T} n={24} seed={21} pixel={0.35} copia={KC.ink} />
+          <text x={540} y={680} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.texto} stroke="#0b1020" strokeWidth={4}>¿REAL?</text>
+          <text x={540} y={1060} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.texto} stroke="#0b1020" strokeWidth={4}>¿FALSA?</text>
         </>)}
       </Escena>
 
       {/* 7 · el estudio de Londres: 529 personas, 73 % */}
       <Escena T={T} a={K.O} b={K.C}>
         <FondoLunares color={KC.mint} />
+        {svg(<g opacity={1 - kprog(T, K.O + 5.5, K.O + 6.0)}>
+          <Onda x={90} y={920} ancho={900} alto={200} T={T} n={24} seed={21} />
+          <Onda x={90} y={1200} ancho={900} alto={200} T={T} n={24} seed={21} pixel={0.35} copia={KC.ink} />
+        </g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.O + 0.2} until={K.O + 4.6} anio="2023" quien="científicos de Londres (UCL)" revista="Mai et al. · PLOS ONE" y={600} />
-      <Chip T={T} at={K.O + 2.0} until={K.O + 5.3} texto="529 personas escucharon" y={835} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.O + 5.6} until={K.C - 0.2} texto="de cada 100 voces falsas" y={835} tam={38} borde={KC.ink} />
-      <VocesFalsas T={T} at={K.O + 5.6} until={K.C - 0.2} verdes={Math.round(73 * kprog(T, K.O + 6.0, K.O + 7.6, kEase.suave))} rojas={T > K.O + 7.8 ? 27 : 0} />
-      <NumeroGigante T={T} at={K.O + 5.6} until={K.C - 0.2} valor={73} dur={1.6} sufijo=" %" etiqueta="falsas descubiertas" x={380} y={620} tam={220} color={KC.paper} />
+      <TarjetaEstudio T={T} at={K.O + 0.2} until={K.O + 4.6} anio="2023" quien="científicos de Londres (UCL)" revista="Mai et al. · PLOS ONE" y={540} />
+      <Chip T={T} at={K.O + 2.0} until={K.O + 5.3} texto="529 personas escucharon" y={715} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.O + 5.6} until={K.C - 0.2} texto="de cada 100 voces falsas" y={880} tam={40} borde={KC.ink} />
+      <VocesFalsas T={T} at={K.O + 5.6} until={K.C - 0.2} verdes={Math.round(73 * kprog(T, K.O + 6.0, K.O + 7.6, kEase.suave))} rojas={T > K.O + 7.8 ? 27 : 0} x={60} y={980} paso={48} />
+      <NumeroGigante T={T} at={K.O + 5.6} until={K.C - 0.2} valor={73} dur={1.6} sufijo=" %" etiqueta="falsas descubiertas" x={540} y={640} tam={240} color={KC.paper} />
 
       {/* 8 · la confesión: esta voz es clonada, con permiso */}
       <Escena T={T} a={K.C} b={K.D}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Onda x={560} y={1060} ancho={460} alto={140} T={T} n={16} seed={31} color={KC.gold} />)}
+        <RedNeuronal T={T} x={110} y={700} ancho={860} alto={500} capas={[3, 5, 6, 5, 3]} onda={((T - K.C) * 0.45) % 1} o={0.5} />
+        {svg(<Onda x={60} y={950} ancho={960} alto={280} T={T} n={26} seed={31} color={KC.gold} />)}
       </Escena>
-      <Chip T={T} at={K.C + 0.8} until={K.D - 0.2} texto="esta voz: clonada" x={790} y={720} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.C + 2.4} until={K.D - 0.2} texto="con mi permiso ✔" x={790} y={840} tam={44} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 0.8} until={K.D - 0.2} texto="esta voz: clonada" x={540} y={500} tam={48} borde={KC.ink} />
+      <Chip T={T} at={K.C + 2.4} until={K.D - 0.2} texto="con mi permiso ✔" x={540} y={610} tam={48} borde={KC.leaf} />
 
       {/* 9 · cómo defenderte */}
       <Escena T={T} a={K.D} b={K.Ci}>
         <FondoLunares color={KC.teal} />
+        {svg(<Telefono x={340} y={1150} s={0.78} T={T} vibra={1 - kprog(T, D2 + 0.8, D2 + 1.3)} burbuja={T > K.D + 2.4 ? '¿palabra clave?' : null} />)}
       </Escena>
-      <MitoTachado T={T} at={K.D + 0.3} tacharEn={K.D + 1.5} until={K.Ci - 0.2} texto="confiar solo en la voz" y={480} tam={52} />
-      <PasoDefensa T={T} at={K.D + 2.4} until={K.Ci - 0.2} n="1" icono="🔑" texto="palabra clave en familia" y={680} />
-      <PasoDefensa T={T} at={D2 + 0.8} until={K.Ci - 0.2} n="2" icono="☎️" texto="cuelga y marca tú al número que ya conoces" y={930} />
+      <MitoTachado T={T} at={K.D + 0.3} tacharEn={K.D + 1.5} until={K.Ci - 0.2} texto="confiar solo en la voz" y={380} tam={52} />
+      <PasoDefensa T={T} at={K.D + 2.4} until={K.Ci - 0.2} n="1" icono="🔑" texto="palabra clave en familia" y={540} />
+      <PasoDefensa T={T} at={D2 + 0.8} until={K.Ci - 0.2} n="2" icono="☎️" texto="cuelga y marca tú al número que ya conoces" y={730} />
 
       {/* 10 · cierre: el mismo celular; la copia se desarma */}
       <Escena T={T} a={K.Ci} b={FIN}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Telefono x={300} y={760} s={0.95} T={T} vibra={1 - kprog(T, K.Ci + 2.6, K.Ci + 3.0)} burbuja={T > K.Ci + 0.8 ? '¿palabra clave?' : null} />
-          <Onda x={90} y={1110} ancho={900} alto={150} T={T} n={34} pixel={1} cae={kprog(T, K.Ci + 2.0, K.Ci + 3.2, kEase.suave)} />
-          <g opacity={kprog(T, K.Ci + 2.8, K.Ci + 3.2)}><Candado x={780} y={880} s={1.1} c={kprog(T, K.Ci + 3.0, K.Ci + 3.4, kEase.sale)} /></g>
+          <Telefono x={340} y={klerp(1150, 990, kprog(T, K.Ci, K.Ci + 0.8, kEase.suave))} s={klerp(0.78, 1.1, kprog(T, K.Ci, K.Ci + 0.8, kEase.suave))} T={T} vibra={1 - kprog(T, K.Ci + 2.6, K.Ci + 3.0)} burbuja={T > K.Ci + 0.8 ? '¿palabra clave?' : null} />
+          <Onda x={90} y={1420} ancho={900} alto={160} T={T} n={34} pixel={1} cae={kprog(T, K.Ci + 2.0, K.Ci + 3.2, kEase.suave)} />
+          <g opacity={kprog(T, K.Ci + 2.8, K.Ci + 3.2)}><Candado x={830} y={1110} s={1.5} c={kprog(T, K.Ci + 3.0, K.Ci + 3.4, kEase.sale)} /></g>
         </>)}
       </Escena>
 

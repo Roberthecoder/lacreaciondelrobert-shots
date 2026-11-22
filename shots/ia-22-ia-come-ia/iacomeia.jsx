@@ -86,7 +86,7 @@ function Campana({ sigma = 1, x0 = 540, base = 1080, px = 140, alt = 300, colas 
     return `M ${q[0][0]} ${base} L ` + q.map((p) => p.join(' ')).join(' L ') + ` L ${q[q.length - 1][0]} ${base} Z`; };
   return <g>
     <line x1={x0 - 3.4 * px} y1={base} x2={x0 + 3.4 * px} y2={base} stroke={KC.texto} strokeWidth={5} strokeOpacity=".6" />
-    <path d={linea + ` L ${x0 + 3.2 * px} ${base} L ${x0 - 3.2 * px} ${base} Z`} fill={color} fillOpacity=".18" />
+    <path d={linea + ` L ${x0 + 3.2 * px} ${base} L ${x0 - 3.2 * px} ${base} Z`} fill={color} fillOpacity=".3" />
     <path d={cola(-3.2, -1.6)} fill={KC.pink} opacity={colas} /><path d={cola(1.6, 3.2)} fill={KC.pink} opacity={colas} />
     <path d={linea} stroke={color} strokeWidth={8} fill="none" strokeLinejoin="round" />
   </g>;
@@ -150,7 +150,7 @@ function IAComeIA() {
   const rI = krng(8), puntos = Array.from({ length: 26 }, () => { const a = rI() * Math.PI * 2, d = Math.sqrt(rI()) * 170; return [Math.cos(a) * d, Math.sin(a) * d]; });
   const nI = Math.round(26 * kprog(T, K.I + 0.4, K.I + 3.0, kEase.suave));
   // acumular: 5 pasos
-  const pasoA = 0.7, a0 = K.A + 0.9, kA = Math.max(0, Math.min(4, Math.floor((T - a0) / pasoA)));
+  const pasoA = 0.7, a0 = K.A + 0.3, kA = Math.max(0, Math.min(4, Math.floor((T - a0) / pasoA)));
   const reempl = [{ color: mixHex('#9fd2ff', '#9a9a9a', kA / 4), texto: kA === 0 ? 'humanos' : `IA gen ${kA}` }];
   const acum = [{ color: '#9fd2ff', texto: 'humanos' }, { color: '#e9e6df', texto: 'IA gen 1' }, { color: '#e9e6df', texto: 'IA gen 2' }, { color: '#e9e6df', texto: 'IA gen 3' }, { color: '#e9e6df', texto: 'IA gen 4' }];
 
@@ -161,16 +161,16 @@ function IAComeIA() {
         <FondoLunares color={KC.yellow} />
         {svg(<>
           <g opacity={atras}>
-            <Hoja id="ent" x={790} y={klerp(900, 820, atras)} s={0.72} rot={4} titulo="texto de entrada" colorTit={KC.mint} lineas={TXT.entrada} tam={25} pie="(traducido del inglés)">
+            <Hoja id="ent" x={800} y={klerp(960, 880, atras)} s={0.85} rot={4} titulo="texto de entrada" colorTit={KC.mint} lineas={TXT.entrada} tam={25} pie="(traducido del inglés)">
               <Torre x={0} y={250} s={0.62} />
             </Hoja>
-            <path d={`M 640 ${1110} Q 540 1180 440 1110`} stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="18 12" />
-            <path d="M 452 1090 L 436 1112 L 462 1122" stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" />
+            <path d={`M 650 ${1160} Q 540 1240 430 1160`} stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="18 12" />
+            <path d="M 442 1140 L 426 1162 L 452 1172" stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" />
           </g>
-          <Hoja id="g9" x={klerp(330, 290, atras)} y={klerp(860, 820, atras)} s={klerp(0.98, 0.72, atras)} rot={-3} titulo="Generación 9" colorTit={KC.pink} lineas={TXT.gen9} chars={chars9} tam={25} pie="(traducido del inglés)" />
+          <Hoja id="g9" x={klerp(500, 280, atras)} y={klerp(900, 880, atras)} s={klerp(1.5, 0.85, atras)} rot={-3} titulo="Generación 9" colorTit={KC.pink} lineas={TXT.gen9} chars={chars9} tam={25} pie="(traducido del inglés)" />
           {COLAS.map(([c], i) => { const e = kprog(T, K.G + 0.2 + i * 0.55, K.G + 0.6 + i * 0.55, kEase.sale); if (e <= 0) return null;
-            const x = klerp(330, 120 + i * 150 + (i > 2 ? 60 : 0), e), y = klerp(860, 1120, e);
-            return <g key={i} opacity={1 - atras * 0.25}><Liebre x={x} y={y} s={0.62} cola={c} T={T} fase={i * 1.3} /></g>; })}
+            const x = klerp(500, 130 + i * 200, e), y = klerp(900, 1420, e);
+            return <g key={i} opacity={1 - atras * 0.25}><Liebre x={x} y={y} s={0.85} cola={c} T={T} fase={i * 1.3} /></g>; })}
         </>)}
       </Escena>
       <Chip T={T} at={S1 + 0.6} until={K.F - 0.2} texto="9 generaciones después" x={540} y={470} tam={30} borde={KC.ink} />
@@ -179,9 +179,9 @@ function IAComeIA() {
       <Escena T={T} a={K.F} b={K.E}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Fotocopiadora x={420} y={680} s={1.0} T={T} luz={1} />
-          {copias.map((e, k) => e > 0 && <g key={k} transform={`translate(${klerp(660, 160 + k * 253, e)} ${klerp(700, 1000, e)})`}>
-            <Hoja id={`c${k}`} x={0} y={0} s={0.5} rot={(k - 1.5) * 3} titulo={k === 0 ? 'original' : `copia ${k}`} colorTit={KC.mint} gris={k * 0.3} lineas={TXT.entrada.slice(0, 3)}>
+          <Fotocopiadora x={440} y={720} s={1.3} T={T} luz={1} />
+          {copias.map((e, k) => e > 0 && <g key={k} transform={`translate(${klerp(760, 170 + k * 247, e)} ${klerp(740, 1180, e)})`}>
+            <Hoja id={`c${k}`} x={0} y={0} s={0.62} rot={(k - 1.5) * 3} titulo={k === 0 ? 'original' : `copia ${k}`} colorTit={KC.mint} gris={k * 0.3} lineas={TXT.entrada.slice(0, 3)}>
               <Torre x={0} y={250} s={0.62} />
             </Hoja></g>)}
         </>)}
@@ -191,120 +191,125 @@ function IAComeIA() {
       {/* 3 · el estudio: cada generación aprende de la anterior */}
       <Escena T={T} a={K.E} b={K.Gn}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>{[0, 1, 2, 3].map((k) => { const e = kprog(T, S4 - 0.2 + k * 0.45, S4 + 0.2 + k * 0.45, kEase.sale); if (e <= 0) return null;
-          const x = 150 + k * 260;
-          return <g key={k} opacity={e}>
-            <Robotito x={x} y={900} s={0.48} T={T + k} cara={k === 3 ? 'duda' : 'feliz'} color={mixHex(KC.cyan, '#9a9a9a', k * 0.25)} />
-            <text x={x} y={1020} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>{k === 3 ? 'Gen 3 …' : `Gen ${k}`}</text>
+        {svg(<>{[0, 1, 2, 3].map((k) => { const e = kprog(T, S4 - 0.2 + k * 0.45, S4 + 0.2 + k * 0.45, kEase.sale);
+          const x = 135 + k * 270;
+          return <g key={k} opacity={klerp(0.6 * kprog(T, K.E, K.E + 0.4), 1, e)}>
+            <Robotito x={x} y={1060} s={0.62} T={T + k} cara={k === 3 ? 'duda' : 'feliz'} color={mixHex(KC.cyan, '#9a9a9a', k * 0.25)} />
+            <text x={x} y={1210} textAnchor="middle" style={{ font:`400 48px ${KF.titulo}` }} fill={KC.ink}>{k === 3 ? 'Gen 3 …' : `Gen ${k}`}</text>
             {k < 3 && <g opacity={kprog(T, S4 + 0.1 + k * 0.45, S4 + 0.4 + k * 0.45)}>
-              <Hojita x={x + 130 + Math.sin(T * 4 + k) * 8} y={820} s={0.8} ia />
-              <path d={`M ${x + 70} 880 L ${x + 190} 880`} stroke={KC.ink} strokeWidth={7} /><path d={`M ${x + 176} 866 L ${x + 194} 880 L ${x + 176} 894`} stroke={KC.ink} strokeWidth={7} fill="none" strokeLinecap="round" />
+              <Hojita x={x + 135 + Math.sin(T * 4 + k) * 8} y={950} s={0.95} ia />
+              <path d={`M ${x + 100} 1040 L ${x + 170} 1040`} stroke={KC.ink} strokeWidth={7} /><path d={`M ${x + 156} 1026 L ${x + 174} 1040 L ${x + 156} 1054`} stroke={KC.ink} strokeWidth={7} fill="none" strokeLinecap="round" />
             </g>}
           </g>; })}</>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={S4 - 0.3} anio="2024" quien="Oxford · Cambridge · Imperial · Toronto · Edimburgo" revista="Shumailov, Shumaylov, Zhao, Papernot, Anderson y Gal · Nature" y={760} />
-      <Chip T={T} at={S4 + 0.4} until={K.Gn - 0.2} texto="modelo pequeño: OPT-125m (Meta)" x={600} y={720} tam={32} borde={KC.ink} />
-      <Chip T={T} at={S4 + 1.6} until={K.Gn - 0.2} texto="aprende de los textos de la anterior" x={540} y={1105} tam={32} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={S4 - 0.3} anio="2024" quien="Oxford · Cambridge · Imperial · Toronto · Edimburgo" revista="Shumailov, Shumaylov, Zhao, Papernot, Anderson y Gal · Nature" y={480} />
+      <Chip T={T} at={S4 + 0.4} until={K.Gn - 0.2} texto="modelo pequeño: OPT-125m (Meta)" x={540} y={800} tam={32} borde={KC.ink} />
+      <Chip T={T} at={S4 + 1.6} until={K.Gn - 0.2} texto="aprende de los textos de la anterior" x={540} y={1300} tam={32} borde={KC.ink} />
 
       {/* 4 · generaciones 1 y 5 */}
       <Escena T={T} a={K.Gn} b={K.L}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          {gen === 1 && <Hoja id="g1" x={700} y={870} s={0.9} rot={2} titulo="Generación 1" colorTit={KC.orange} gris={0.12} lineas={TXT.gen1} tam={25} pie="(traducido del inglés)">
+          {gen === 1 && <Hoja id="g1" x={680} y={960} s={1.05} rot={2} titulo="Generación 1" colorTit={KC.orange} gris={0.12} lineas={TXT.gen1} tam={25} pie="(traducido del inglés)">
             <Basilica x={0} y={220} s={0.85} />
           </Hoja>}
-          {gen === 5 && <Hoja id="g5" x={700} y={870} s={0.9} rot={-2} titulo="Generación 5" colorTit={KC.lilac} gris={0.4} lineas={TXT.gen5} chars={chars5} tam={24} pie="(traducido del inglés)" />}
+          {gen === 5 && <Hoja id="g5" x={680} y={960} s={1.05} rot={-2} titulo="Generación 5" colorTit={KC.lilac} gris={0.4} lineas={TXT.gen5} chars={chars5} tam={24} pie="(traducido del inglés)" />}
           {gen === 1 && <g opacity={kprog(T, K.Gn + 1.4, K.Gn + 1.9)}>
-            <g transform="translate(200 840)"><path d="M 0 0 C -40 -50 -40 -90 0 -100 C 40 -90 40 -50 0 0 Z" fill={KC.red} stroke={KC.ink} strokeWidth={6} /><circle cy={-66} r={14} fill="#fff" stroke={KC.ink} strokeWidth={4} /></g>
-            <text x={200} y={890} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>Roma</text>
+            <g transform="translate(200 920) scale(1.2)"><path d="M 0 0 C -40 -50 -40 -90 0 -100 C 40 -90 40 -50 0 0 Z" fill={KC.red} stroke={KC.ink} strokeWidth={6} /><circle cy={-66} r={14} fill="#fff" stroke={KC.ink} strokeWidth={4} /></g>
+            <text x={200} y={980} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill={KC.ink}>Roma</text>
           </g>}
           {gen === 1 && <g opacity={kprog(T, K.Gn + 2.4, K.Gn + 2.9)}>
-            <g transform="translate(220 1060)"><path d="M 0 0 C -40 -50 -40 -90 0 -100 C 40 -90 40 -50 0 0 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={6} /><circle cy={-66} r={14} fill="#fff" stroke={KC.ink} strokeWidth={4} /></g>
-            <text x={220} y={1110} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>¿Buenos Aires?</text>
+            <g transform="translate(200 1160) scale(1.2)"><path d="M 0 0 C -40 -50 -40 -90 0 -100 C 40 -90 40 -50 0 0 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={6} /><circle cy={-66} r={14} fill="#fff" stroke={KC.ink} strokeWidth={4} /></g>
+            <text x={200} y={1220} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill={KC.ink}>¿Buenos Aires?</text>
           </g>}
         </>)}
       </Escena>
-      <Chip T={T} at={K.Gn + 0.15} until={K.L - 0.2} texto={`generación ${gen}`} x={700} y={330} tam={40} borde={gen === 1 ? KC.orange : KC.lilac} />
+      <Chip T={T} at={K.Gn + 0.15} until={K.L - 0.2} texto={`generación ${gen}`} x={680} y={400} tam={40} borde={gen === 1 ? KC.orange : KC.lilac} />
       {gen === 5 && ['inglés', 'francés', 'alemán', 'italiano', 'español'].map((t, i) =>
-        <Chip key={t} T={T} at={S5b + 0.3 + i * 0.3} until={K.L - 0.2} texto={t} x={190 + (i % 2) * 40} y={760 + i * 92} tam={32} borde={KC.lilac} />)}
+        <Chip key={t} T={T} at={S5b + 0.3 + i * 0.3} until={K.L - 0.2} texto={t} x={190 + (i % 2) * 40} y={800 + i * 92} tam={32} borde={KC.lilac} />)}
 
       {/* 5 · generación 9: las liebres de colores */}
       <Escena T={T} a={K.L} b={K.P}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Hoja id="g9en" x={330} y={620} s={0.68} rot={-3} titulo="Gen 9 · original" colorTit={KC.pink} gris={0.4} lineas={TXT.gen9en} tam={25} pie="(texto real del estudio, en inglés)" />
+          <Hoja id="g9en" x={540} y={760} s={0.95} rot={-3} titulo="Gen 9 · original" colorTit={KC.pink} gris={0.4} lineas={TXT.gen9en} tam={25} pie="(texto real del estudio, en inglés)" />
           {COLAS.map(([c], i) => { const at = K.L + 0.2 + i * 0.55, e = kprog(T, at, at + 0.4, kEase.rebote); if (e <= 0) return null;
-            return <g key={i} transform={`translate(${130 + i * 205} 1010) scale(${e})`}><Liebre x={0} y={0} s={0.7} cola={c} T={T} fase={i} /></g>; })}
+            return <g key={i} transform={`translate(${130 + i * 205} 1250) scale(${e})`}><Liebre x={0} y={0} s={0.95} cola={c} T={T} fase={i} /></g>; })}
         </>)}
       </Escena>
-      {COLAS.map(([c, n], i) => <Chip key={n} T={T} at={K.L + 0.4 + i * 0.55} until={K.P - 0.2} texto={n} x={130 + i * 205} y={1095} tam={26} borde={c === '#ffffff' ? KC.ink : c} fondo={c === '#1d1d22' || c === KC.blue || c === KC.red ? c : KC.paper} color={c === '#1d1d22' || c === KC.blue || c === KC.red ? KC.texto : KC.ink} />)}
+      {COLAS.map(([c, n], i) => <Chip key={n} T={T} at={K.L + 0.4 + i * 0.55} until={K.P - 0.2} texto={n} x={130 + i * 205} y={1345} tam={28} borde={c === '#ffffff' ? KC.ink : c} fondo={c === '#1d1d22' || c === KC.blue || c === KC.red ? c : KC.paper} color={c === '#1d1d22' || c === KC.blue || c === KC.red ? KC.texto : KC.ink} />)}
 
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.C} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={290} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 900)`}>?</text>)}
+        {svg(<>
+          {COLAS.map(([c], i) => <Liebre key={i} x={130 + i * 205} y={1250} s={0.95} cola={c} T={T} fase={i} />)}
+          <text x={300} y={1180} textAnchor="middle" style={{ font:`400 600px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 970)`}>?</text>
+        </>)}
       </Escena>
 
       {/* 7 · por dentro: las colas desaparecen */}
       <Escena T={T} a={K.C} b={K.I}>
         <FondoCircuito T={T} />
         {svg(<>
-          <g opacity={kprog(T, K.C + 0.2, K.C + 0.6) * (1 - pc)}><Campana sigma={1} colas={0} color="rgba(246,243,236,.6)" base={1100} /></g>
-          <Campana sigma={sigma} colas={1 - pc} base={1100} />
+          <g opacity={kprog(T, K.C + 0.2, K.C + 0.6) * (1 - pc)}><Campana sigma={1} colas={0} color="rgba(246,243,236,.6)" base={1200} px={145} alt={340} /></g>
+          <Campana sigma={sigma} colas={1 - pc} base={1200} px={145} alt={340} />
           {T > S9 && [[-2.6, 0.32], [2.4, 0.5], [-1.9, 0.62], [2.9, 0.2], [1.8, 0.75]].map(([u, h], i) => { const e = kprog(T, S9 + 0.2 + i * 0.25, S9 + 0.45 + i * 0.25, kEase.rebote);
-            return <circle key={i} cx={540 + u * 140} cy={1100 - h * 300} r={18 * e} fill={KC.red} stroke={KC.ink} strokeWidth={4} />; })}
+            return <circle key={i} cx={540 + u * 145} cy={1200 - h * 340} r={22 * e} fill={KC.red} stroke={KC.ink} strokeWidth={4} />; })}
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 0.4} until={K.I - 0.2} texto={`generación ${genC}`} x={600} y={560} tam={38} borde={KC.cyan} />
-      <Etq T={T} at={K.C + 0.8} until={K.C + 0.8 + (S9 - K.C) * 0.55} x={170} y={960} texto="lo raro" color={KC.pink} lado="der" tam={36} />
-      <Etq T={T} at={K.C + 0.8} until={K.C + 0.8 + (S9 - K.C) * 0.55} x={910} y={960} texto="lo raro" color={KC.pink} lado="izq" tam={36} />
-      <Chip T={T} at={S9 + 0.5} until={K.I - 0.2} texto="errores heredados" x={540} y={680} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.C + 1.0} until={K.I - 0.2} texto="esquema" x={900} y={1150} tam={24} borde={KC.texto} />
+      <Chip T={T} at={K.C + 0.4} until={K.I - 0.2} texto={`generación ${genC}`} x={830} y={520} tam={38} borde={KC.cyan} />
+      <Etq T={T} at={K.C + 0.8} until={K.C + 0.8 + (S9 - K.C) * 0.55} x={150} y={1070} texto="lo raro" color={KC.pink} lado="der" tam={36} />
+      <Etq T={T} at={K.C + 0.8} until={K.C + 0.8 + (S9 - K.C) * 0.55} x={930} y={1070} texto="lo raro" color={KC.pink} lado="izq" tam={36} />
+      <Chip T={T} at={S9 + 0.5} until={K.I - 0.2} texto="errores heredados" x={270} y={620} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.C + 1.0} until={K.I - 0.2} texto="esquema" x={900} y={1260} tam={24} borde={KC.texto} />
 
       {/* 8 · internet se llena de texto de IA */}
       <Escena T={T} a={K.I} b={K.A}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <Globo x={360} y={800} r={230} T={T} />
-          {puntos.slice(0, nI).map(([dx, dy], i) => <Hojita key={i} x={360 + dx} y={800 + dy} s={0.55} ia />)}
+          <Globo x={420} y={960} r={320} T={T} />
+          {puntos.slice(0, nI).map(([dx, dy], i) => <Hojita key={i} x={420 + dx * 1.39} y={960 + dy * 1.39} s={0.72} ia />)}
           <g opacity={kprog(T, K.I + 2.6, K.I + 3.2)}>
-            <path d="M 560 960 Q 700 1060 760 1000" stroke={KC.ink} strokeWidth={9} fill="none" strokeDasharray="20 12" />
-            <path d="M 742 990 L 764 998 L 756 1020" stroke={KC.ink} strokeWidth={9} fill="none" strokeLinecap="round" />
-            <Robotito x={870} y={1000} s={0.55} T={T} cara="duda" color={mixHex(KC.cyan, '#9a9a9a', 0.4)} />
+            <path d="M 690 1170 Q 780 1260 830 1200" stroke={KC.ink} strokeWidth={9} fill="none" strokeDasharray="20 12" />
+            <path d="M 812 1190 L 834 1198 L 826 1220" stroke={KC.ink} strokeWidth={9} fill="none" strokeLinecap="round" />
+            <Robotito x={940} y={1180} s={0.7} T={T} cara="duda" color={mixHex(KC.cyan, '#9a9a9a', 0.4)} />
           </g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.I + 0.3} until={K.A - 0.2} texto="internet" x={360} y={510} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.I + 3.0} until={K.A - 0.2} texto="próxima IA" x={860} y={1115} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.I + 0.3} until={K.A - 0.2} texto="internet" x={420} y={580} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.I + 3.0} until={K.A - 0.2} texto="próxima IA" x={920} y={1340} tam={34} borde={KC.ink} />
 
       {/* 9 · el matiz: acumular en vez de reemplazar */}
       <Escena T={T} a={K.A} b={K.Ci}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
-          <Pila x={270} base={1080} capas={reempl} T={T} at0={a0} paso={pasoA} h={66} />
-          <Pila x={810} base={1080} capas={acum} T={T} at0={a0} paso={pasoA} h={66} />
+          <g transform="translate(540 960) scale(1.12) translate(-540 -900)">
+          <Pila x={290} base={1080} capas={reempl} T={T} at0={a0} paso={pasoA} h={66} />
+          <Pila x={790} base={1080} capas={acum} T={T} at0={a0} paso={pasoA} h={66} />
           <line x1={540} y1={640} x2={540} y2={1090} stroke={KC.ink} strokeWidth={5} strokeDasharray="14 12" opacity=".4" />
+          </g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.A + 0.3} until={K.Ci - 0.2} texto="reemplazar" x={270} y={690} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.A + 0.5} until={K.Ci - 0.2} texto="acumular" x={810} y={690} tam={38} borde={KC.mint} />
-      <Chip T={T} at={a0 + 4 * pasoA + 0.3} until={K.Ci - 0.2} texto="colapsa ✗" x={270} y={880} tam={40} borde={KC.red} />
-      <Chip T={T} at={a0 + 4 * pasoA + 0.5} until={K.Ci - 0.2} texto="no colapsa ✔" x={810} y={590} tam={40} borde={KC.mint} />
-      <Chip T={T} at={K.A + 0.6} until={K.Ci - 0.2} texto="Gerstgrasser et al. · Stanford · 2024" x={540} y={1150} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.A + 0.3} until={K.Ci - 0.2} texto="reemplazar" x={260} y={710} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.A + 0.5} until={K.Ci - 0.2} texto="acumular" x={820} y={710} tam={38} borde={KC.mint} />
+      <Chip T={T} at={a0 + 4 * pasoA + 0.3} until={K.Ci - 0.2} texto="colapsa ✗" x={260} y={930} tam={40} borde={KC.red} />
+      <Chip T={T} at={a0 + 4 * pasoA + 0.5} until={K.Ci - 0.2} texto="no colapsa ✔" x={820} y={610} tam={40} borde={KC.mint} />
+      <Chip T={T} at={K.A + 0.6} until={K.Ci - 0.2} texto="Gerstgrasser et al. · Stanford · 2024" x={540} y={1290} tam={28} borde={KC.ink} />
 
       {/* 10 · cierre: la misma hoja, y la IA frente a su espejo */}
       <Escena T={T} a={K.Ci} b={FIN}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Hoja id="g9b" x={300} y={820} s={0.82} rot={-3} titulo="Generación 9" colorTit={KC.pink} lineas={TXT.gen9} tam={25} gris={0.25} pie="(traducido del inglés)" />
-          {COLAS.map(([c], i) => <Liebre key={i} x={110 + i * 190} y={1130} s={0.5} cola={c} T={T} fase={i * 1.1} />)}
-          <g opacity={kprog(T, K.Ci + 1.0, K.Ci + 1.6)}>
-            <rect x={640} y={720} width={340} height={360} rx={30} fill="#cfe9f5" stroke={KC.ink} strokeWidth={9} />
-            {[1, 0.7, 0.49, 0.34].map((k, i) => <g key={i} opacity={1 - i * 0.22}><Robotito x={810} y={930} s={0.55 * k} T={T + i * 0.3} cara="duda" color={mixHex(KC.cyan, '#9a9a9a', i * 0.3)} /></g>)}
+          <Hoja id="g9b" x={290} y={880} s={1.0} rot={-3} titulo="Generación 9" colorTit={KC.pink} lineas={TXT.gen9} tam={25} gris={0.25} pie="(traducido del inglés)" />
+          {COLAS.map(([c], i) => <Liebre key={i} x={120 + i * 205} y={1340} s={0.62} cola={c} T={T} fase={i * 1.1} />)}
+          <g opacity={kprog(T, K.Ci + 0.3, K.Ci + 0.8)}>
+            <rect x={600} y={700} width={420} height={440} rx={34} fill="#2c4a5a" stroke={KC.ink} strokeWidth={9} />
+            {[1, 0.7, 0.49, 0.34].map((k, i) => <g key={i} opacity={1 - i * 0.22}><Robotito x={810} y={950} s={0.7 * k} T={T + i * 0.3} cara="duda" color={mixHex(KC.cyan, '#9a9a9a', i * 0.3)} /></g>)}
           </g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ci + 1.8} until={K.Ou} texto="copias de copias" x={470} y={470} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Ci + 1.8} until={K.Ou} texto="copias de copias" x={540} y={500} tam={36} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={S1 - 0.1} texto="No está obsesionada: *es la generación 9.*" />

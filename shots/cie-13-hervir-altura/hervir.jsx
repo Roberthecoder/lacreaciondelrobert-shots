@@ -174,19 +174,19 @@ function Hervir() {
       <Escena T={T} a={K.Gancho} b={K.Cien}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <Olla T={T} x={400} y={1030} s={1.05} hierve={1} />
-          <TermoV x={900} y={740} alto={320} valor={tGancho} min={80} max={104} marcas={[92, 100]} />
+          <Olla T={T} x={450} y={1220} s={1.36} hierve={1} />
+          <TermoV x={978} y={780} alto={420} valor={tGancho} min={80} max={104} marcas={[92, 100]} />
         </Lienzo>
-        <NumeroGigante T={T} at={K.Gancho + 1.6} until={K.Cien - 0.1} valor={92} desde={100} dur={1.0} sufijo=" °C" etiqueta="en la CDMX" x={300} y={470} tam={190} />
+        <NumeroGigante T={T} at={K.Gancho + 1.6} until={K.Cien - 0.1} valor={92} desde={100} dur={1.0} sufijo=" °C" etiqueta="en la CDMX" x={360} y={520} tam={200} />
       </Escena>
       {/* 1 · los 100 °C son del nivel del mar */}
       <Escena T={T} a={K.Cien} b={K.Burbujas} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <SolDibujo x={180} y={640} r={70} T={T} />
-          <rect x={0} y={1000} width={KW} height={240} fill="#84704b" stroke={KC.ink} strokeWidth={8} />
-          {[0, 1, 2].map((i) => <path key={i} d={`M ${-40 + ((T * 60 + i * 40) % 80)} ${960 + i * 18} q 45 -26 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0`} fill="none" stroke="#fff" strokeWidth={9} strokeLinecap="round" opacity={0.8 - i * 0.2} />)}
-          <Olla T={T} x={620} y={1080} s={0.62} hierve={1} />
+          <SolDibujo x={170} y={760} r={90} T={T} />
+          <rect x={-10} y={1150} width={KW + 20} height={300} fill="#84704b" stroke={KC.ink} strokeWidth={8} />
+          {[0, 1, 2].map((i) => <path key={i} d={`M ${-40 + ((T * 60 + i * 40) % 80)} ${1110 + i * 18} q 45 -26 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0`} fill="none" stroke="#fff" strokeWidth={9} strokeLinecap="round" opacity={0.8 - i * 0.2} />)}
+          <Olla T={T} x={650} y={1240} s={1.0} hierve={1} />
         </Lienzo>
         <Chip T={T} at={K.Cien + 0.2} until={K.Burbujas - 0.1} texto="100 °C = nivel del mar" x={540} y={420} tam={48} borde={KC.yellow} />
         <MitoTachado T={T} at={K.Cien + 0.6} tacharEn={K.Cien + 1.6} until={K.Burbujas - 0.1} texto="100 °C en la CDMX" x={540} y={560} tam={50} />
@@ -253,17 +253,17 @@ function Hervir() {
       <Escena T={T} a={K.Frijoles} b={K.Olla} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <Olla T={T} x={270} y={1050} s={0.68} hierve={1} frijoles={1} color={KC.teal} seed={5} />
-          <Olla T={T} x={810} y={1050} s={0.68} hierve={0.75} frijoles={1} color={KC.lilac} seed={9} />
-          <Reloj x={270} y={640} r={90} v={vPlaya} listo={kprog(T, K.Frijoles + 3.2, K.Frijoles + 3.6, kEase.rebote)} />
-          <Reloj x={810} y={640} r={90} v={vMonte} listo={kprog(T, K.Frijoles + 4.8, K.Frijoles + 5.2, kEase.rebote)} />
-          <g transform={`translate(540 ${klerp(1300, 900, kprog(T, K.Frijoles + 1.8, K.Frijoles + 2.3, kEase.rebote))}) rotate(${Math.sin(T * 3) * 8})`}>
+          <Olla T={T} x={272} y={1150} s={0.8} hierve={1} frijoles={1} color={KC.teal} seed={5} />
+          <Olla T={T} x={808} y={1150} s={0.8} hierve={0.75} frijoles={1} color={KC.lilac} seed={9} />
+          <Reloj x={272} y={620} r={115} v={vPlaya} listo={kprog(T, K.Frijoles + 3.2, K.Frijoles + 3.6, kEase.rebote)} />
+          <Reloj x={808} y={620} r={115} v={vMonte} listo={kprog(T, K.Frijoles + 4.8, K.Frijoles + 5.2, kEase.rebote)} />
+          <g transform={`translate(540 ${klerp(1300, 960, kprog(T, K.Frijoles + 0.2, K.Frijoles + 0.7, kEase.rebote))}) rotate(${Math.sin(T * 3) * 8})`}>
             <ellipse cx={0} cy={0} rx={52} ry={66} fill="#fff6e6" stroke={KC.ink} strokeWidth={7} /><ellipse cx={-16} cy={-22} rx={12} ry={18} fill="#fff" opacity=".8" /></g>
         </Lienzo>
-        <Chip T={T} at={K.Frijoles + 0.2} until={K.Olla - 0.1} texto="playa" x={270} y={460} tam={40} borde={KC.cyan} />
-        <Chip T={T} at={K.Frijoles + 0.4} until={K.Olla - 0.1} texto="montaña" x={810} y={460} tam={40} borde={KC.lilac} />
-        <Etq T={T} at={K.Frijoles + 2.3} until={K.Olla - 0.1} x={600} y={830} texto="huevo" lado="der" />
-        <Chip T={T} at={K.Frijoles + 3.4} until={K.Olla - 0.1} texto="más tiempo arriba" x={810} y={800} tam={34} borde={KC.yellow} />
+        <Chip T={T} at={K.Frijoles + 0.2} until={K.Olla - 0.1} texto="playa" x={272} y={405} tam={40} borde={KC.cyan} />
+        <Chip T={T} at={K.Frijoles + 0.4} until={K.Olla - 0.1} texto="montaña" x={808} y={405} tam={40} borde={KC.lilac} />
+        <Etq T={T} at={K.Frijoles + 2.3} until={K.Olla - 0.1} x={540} y={850} texto="huevo" lado="der" />
+        <Chip T={T} at={K.Frijoles + 3.4} until={K.Olla - 0.1} texto="más tiempo arriba" x={808} y={800} tam={34} borde={KC.yellow} />
       </Escena>
       {/* 9 · la olla exprés hace trampa */}
       <Escena T={T} a={K.Olla} b={K.Everest} fondo={KC.yellow}>
@@ -299,8 +299,8 @@ function Hervir() {
             <g transform="translate(60 790) scale(0.8)"><Ciudad x={0} y={0} /></g>
           </g>
           <rect x={0} y={784} width={KW} height={14} fill={CINE.borde} opacity={kprog(T, K.Cierre, K.Cierre + 1.0)} />
-          <Olla T={T} x={400} y={1030} s={1.05} hierve={1} />
-          <TermoV x={900} y={740} alto={320} valor={92} min={80} max={104} marcas={[92, 100]} />
+          <Olla T={T} x={450} y={1220} s={1.36} hierve={1} />
+          <TermoV x={978} y={780} alto={420} valor={92} min={80} max={104} marcas={[92, 100]} />
         </Lienzo>
         <Chip T={T} at={K.Cierre + 0.4} until={K.Outro - 0.1} texto="92 °C en la CDMX" x={540} y={420} tam={56} borde={KC.gold} />
       </Escena>

@@ -26,7 +26,7 @@ function Campestris({ T, x, y, s = 1, esporas = 0, gotitas = false, chispas = 0,
 // Pasto y suelo del prado.
 function Prado({ T, y = 1150 }) {
   return <g>
-    <rect x={0} y={y} width={KW} height={KH - y} fill={GB.tierra} stroke={KC.ink} strokeWidth={8} />
+    <rect x={0} y={y} width={KW} height={KH - y} fill="#3a2817" stroke={KC.ink} strokeWidth={8} />
     {Array.from({ length: 34 }, (_, i) => { const x = i * 33 + 6, h = 40 + (i * 37) % 50; return <path key={i} d={`M ${x - 9} ${y + 4} Q ${x + mece(T, i, 0.3) * 8} ${y - h} ${x + 9 + mece(T, i + 2, 0.3) * 10} ${y - h - 6} Q ${x + 4} ${y - h * 0.5} ${x + 9} ${y + 4} Z`} fill={i % 3 ? GB.pasto : '#2e9e3a'} stroke={KC.ink} strokeWidth={3} />; })}
   </g>;
 }
@@ -125,7 +125,7 @@ function GotaBullerShot() {
   const cm = kprog(T, K.D + 1.0, K.D + 1.4);
   const vuelo = kprog(T, K.D + 2.6, K.D + 3.6, (p) => 1 - Math.exp(-p * 4.5));
   const flash = kprog(T, K.F + 1.8, K.F + 1.9) * (1 - kprog(T, K.F + 1.9, K.F + 2.4));
-  const SX = 250, SY = 1000, SR = -28, SS = 1.25; // punta del esterigma y giro de la espora grande
+  const SX = 220, SY = 1060, SR = -28, SS = 1.6; // punta del esterigma y giro de la espora grande
   const loc = (lx, ly) => { const r = SR * Math.PI / 180; lx *= SS; ly *= SS; return [SX + lx * Math.cos(r) - ly * Math.sin(r), SY + lx * Math.sin(r) + ly * Math.cos(r)]; };
   const [hx, hy] = loc(26, -34);
 
@@ -141,8 +141,8 @@ function GotaBullerShot() {
       {/* 0 · gancho: el champiñón en el pasto; bajo el sombrero, chispitas: está disparando */}
       <Escena T={T} a={K.G} b={K.B} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        <div style={{ position:'absolute', inset:0, transform:`scale(${1 + zoomG * 5})`, transformOrigin:'380px 860px' }}>
-          {fsvg(<><Prado T={T} /><Campestris T={T} x={380} y={1150} s={1.05} chispas={kprog(T, K.G + 0.15, K.G + 0.5)} esporas={kprog(T, K.G + 0.3, K.G + 1.2)} /></>)}
+        <div style={{ position:'absolute', inset:0, transform:`scale(${1 + zoomG * 5})`, transformOrigin:'540px 865px' }}>
+          {fsvg(<><Prado T={T} y={1290} /><Campestris T={T} x={540} y={1290} s={1.5} chispas={kprog(T, K.G + 0.15, K.G + 0.5)} esporas={kprog(T, K.G + 0.3, K.G + 1.2)} /></>)}
         </div>
       </Escena>
 
@@ -150,13 +150,13 @@ function GotaBullerShot() {
       <Escena T={T} a={K.B} b={K.Go} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 170)">
           <Pared x={-20} y0={360} y1={1240} ancho={150} />
           {[450, 1130].map((yy, i) => <ellipse key={i} cx={190} cy={yy} rx={70} ry={42} fill="#e8dccb" stroke={KC.ink} strokeWidth={5} />)}
           <Basidio x={124} y={600} s={1.3} esporas={kprog(T, K.B + 0.9, K.B + 2.3) * 4} />
           <Basidio x={124} y={980} s={1.2} esporas={kprog(T, K.B + 1.3, K.B + 2.7) * 4} />
           <Basidio x={124} y={790} s={0.7} esporas={0} color="#efe0ca" />
-        </>)}
+        </g>)}
       </Escena>
 
       {/* 2–5 · la espora grande: gota → fusión → disparo */}
@@ -164,9 +164,9 @@ function GotaBullerShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <circle cx={-60} cy={1150} r={220} fill="#f4e6d2" stroke={KC.ink} strokeWidth={8} />
-          <path d={`M 100 1060 Q 170 1040 ${SX} ${SY}`} stroke={KC.ink} strokeWidth={46} fill="none" strokeLinecap="round" />
-          <path d={`M 100 1060 Q 170 1040 ${SX} ${SY}`} stroke="#f4e6d2" strokeWidth={32} fill="none" strokeLinecap="round" />
+          <circle cx={-90} cy={1230} r={280} fill="#f4e6d2" stroke={KC.ink} strokeWidth={9} />
+          <path d={`M 50 1150 Q 140 1120 ${SX} ${SY}`} stroke={KC.ink} strokeWidth={58} fill="none" strokeLinecap="round" />
+          <path d={`M 50 1150 Q 140 1120 ${SX} ${SY}`} stroke="#f4e6d2" strokeWidth={41} fill="none" strokeLinecap="round" />
           {/* azúcares que salen de la base de la espora */}
           {Array.from({ length: 6 }, (_, i) => { const on = kprog(T, K.Go + 1.2 + i * 0.18, K.Go + 1.6 + i * 0.18, kEase.rebote); const fade = 1 - kprog(T, K.Bu + 1.0, K.Bu + 1.6);
             return on > 0 ? <polygon key={i} points="0,-14 12,-7 12,7 0,14 -12,7 -12,-7" transform={`translate(${hx - 40 + (i % 3) * 40} ${hy - 30 - Math.floor(i / 3) * 34}) scale(${on})`} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} opacity={fade} /> : null; })}
@@ -186,31 +186,31 @@ function GotaBullerShot() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Interrogacion T={T} x={300} y={1080} />)}
+        {fsvg(<><g opacity={0.85} transform="translate(470 1130) rotate(-18) scale(1.15)"><Espora gota={0} capa={0} fusion={1} /></g><Interrogacion T={T} x={280} y={1000} /></>)}
       </Escena>
 
       {/* 7 · el estudio de 2005 */}
       <Escena T={T} a={K.E} b={K.Fz}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          {T > K.E + 1.6 && <g opacity={kprog(T, K.E + 1.6, K.E + 2.0)}>
-            <rect x={40} y={740} width={1000} height={200} rx={10} fill={KC.ink} />
+          {<g opacity={kprog(T, K.E - 0.3, K.E + 0.2)}>
+            <rect x={40} y={740} width={1000} height={200} rx={10} fill="#0b1020" stroke="#3a4560" strokeWidth={4} />
             {Array.from({ length: 22 }, (_, i) => <g key={i}><rect x={52 + i * 45} y={750} width={26} height={16} rx={3} fill="#fff" /><rect x={52 + i * 45} y={914} width={26} height={16} rx={3} fill="#fff" /></g>)}
-            {[0, 1, 2, 3].map((k) => { const on = kprog(T, K.E + 2.0 + k * 0.35, K.E + 2.2 + k * 0.35); return <g key={k} opacity={on}>
+            {[0, 1, 2, 3].map((k) => { const on = kprog(T, K.E + 0.4 + k * 0.35, K.E + 0.6 + k * 0.35); return <g key={k} opacity={on}>
               <rect x={70 + k * 240} y={776} width={220} height={128} fill="#16233d" stroke="#fff" strokeWidth={3} />
               <path d={`M ${90 + k * 240} 880 Q ${110 + k * 240} 845 ${130 + k * 240} 840`} stroke="#f4e6d2" strokeWidth={10} fill="none" strokeLinecap="round" />
               <ellipse cx={150 + k * 240 + k * k * 12} cy={830 - k * 6} rx={22} ry={15} fill={GB.espora} stroke="#fff" strokeWidth={2} />
               {k < 2 && <circle cx={132 + k * 240 + k * 10} cy={824} r={9 - k * 4} fill={GB.agua} />}
             </g>; })}
           </g>}
-          {T > K.E + 3.0 && <g opacity={kprog(T, K.E + 3.0, K.E + 3.4)}><Levadura x={110} y={1050} s={0.7} /><Oreja x={660} y={1050} s={0.7} /></g>}
+          {T > K.E + 1.2 && <g opacity={kprog(T, K.E + 1.2, K.E + 1.6)}><Levadura x={120} y={1160} s={1.1} /><Oreja x={660} y={1160} s={1.1} /></g>}
         </>)}
       </Escena>
 
       {/* 8 · más de 10,000 g */}
       <Escena T={T} a={K.Fz} b={K.Ca} zoom={0.08}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<g transform="translate(250 520)">
+        {fsvg(<g transform="translate(330 720) scale(2.2)">
           {[0, 1, 2, 3, 4].map((k) => <line key={k} x1={-220 - k * 10} y1={-60 + k * 30} x2={-60} y2={-60 + k * 30} stroke="#fff" strokeWidth={10} strokeLinecap="round" opacity={0.4 + 0.5 * Math.abs(Math.sin(T * 9 + k))} />)}
           <g transform={`translate(${Math.sin(T * 30) * 3} 0) rotate(-8) scale(0.5)`}><Espora gota={0} capa={0} fusion={1} /></g>
         </g>)}
@@ -220,7 +220,7 @@ function GotaBullerShot() {
       <Escena T={T} a={K.Ca} b={K.Es}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 220)">
           <rect x={60} y={440} width={960} height={70} fill={GB.carne} stroke={KC.ink} strokeWidth={7} />
           <path d={`M 60 500 L ${GL} 500 L ${GL} 1090 Q ${(60 + GL) / 2} 1140 60 1090 Z`} fill={GB.gill} stroke={KC.ink} strokeWidth={7} />
           <path d={`M ${GR} 500 L 1020 500 L 1020 1090 Q ${(GR + 1020) / 2} 1140 ${GR} 1090 Z`} fill={GB.gill} stroke={KC.ink} strokeWidth={7} />
@@ -236,23 +236,23 @@ function GotaBullerShot() {
             <line x1={GL + 38} y1={545} x2={GL + 38 + 150} y2={545} stroke={KC.yellow} strokeWidth={6} />
             <line x1={GL + 38} y1={530} x2={GL + 38} y2={560} stroke={KC.yellow} strokeWidth={6} /><line x1={GL + 188} y1={530} x2={GL + 188} y2={560} stroke={KC.yellow} strokeWidth={6} />
           </g>}
-          {LANZ.map(([t0, y0, dir, D], i) => { const p = tray(t0, y0, dir, D); if (!p) return null; const [x, y] = p; if (y > 1500) return null;
+          {LANZ.map(([t0, y0, dir, D], i) => { const p = tray(t0, y0, dir, D); if (!p) return null; const [x, y] = p; if (y > 1420) return null;
             const t = T - t0, x0 = dir > 0 ? GL + 38 : GR - 38;
             return <g key={i}>
               {i === 0 && <path d={`M ${x0} ${y0} L ${x} ${y0} L ${x} ${y}`} stroke={KC.yellow} strokeWidth={4} strokeDasharray="8 8" fill="none" opacity=".8" />}
               <ellipse cx={x} cy={y} rx={18} ry={12} fill={GB.espora2} stroke="#fff" strokeWidth={2} transform={`rotate(${dir > 0 ? 0 : 180} ${x} ${y})`} />
               {t < 0.15 && <circle cx={x0} cy={y0} r={18 + t * 200} fill="none" stroke="#fff" strokeWidth={4} opacity={1 - t / 0.15} />}
             </g>; })}
-        </>)}
+        </g>)}
       </Escena>
 
       {/* 11 · decenas de miles de especies */}
       <Escena T={T} a={K.Es} b={K.C} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          {[[180, 760, 'seta'], [540, 760, 'repisa'], [900, 790, 'oreja'], [180, 1010, 'coral'], [540, 1010, 'seta2'], [900, 1030, 'levadura']].map(([x, y, t], i) => {
-            const on = kprog(T, K.Es + 0.4 + i * 0.22, K.Es + 0.75 + i * 0.22, kEase.rebote); if (on <= 0) return null;
-            return <g key={i} transform={`translate(${x} ${y}) scale(${on * 0.82})`}>
+          {[[180, 830, 'seta'], [540, 830, 'repisa'], [900, 860, 'oreja'], [180, 1130, 'coral'], [540, 1130, 'seta2'], [900, 1150, 'levadura']].map(([x, y, t], i) => {
+            const on = kprog(T, K.Es + 0.1 + i * 0.12, K.Es + 0.45 + i * 0.12, kEase.rebote); if (on <= 0) return null;
+            return <g key={i} transform={`translate(${x} ${y}) scale(${on * 0.95})`}>
               <circle r={140} fill="rgba(255,255,255,.85)" stroke={KC.ink} strokeWidth={7} />
               {t === 'seta' && <SetaSil x={0} y={90} s={1} />}
               {t === 'seta2' && <SetaSil x={0} y={90} s={0.9} color="#c66a3a" />}
@@ -268,7 +268,7 @@ function GotaBullerShot() {
       {/* 12 · cierre: el mismo champiñón, ahora con su lluvia de esporas, cada una con su gotita */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<><Prado T={T} /><Campestris T={T} x={380} y={1150} s={1.05} esporas={kprog(T, K.C + 0.3, K.C + 1.5)} gotitas chispas={0.6} /></>)}
+        {fsvg(<><Prado T={T} y={1290} /><Campestris T={T} x={540} y={1290} s={1.5} esporas={kprog(T, K.C + 0.3, K.C + 1.5)} gotitas chispas={0.6} /></>)}
       </Escena>
 
       {/* capítulos */}
@@ -276,50 +276,50 @@ function GotaBullerShot() {
       {T >= K.Ca && T < K.Es && <Capitulo T={T} caps={[{ at: K.Go, titulo:'LA GOTA' }, { at: K.F, titulo:'LA FUSIÓN' }, { at: K.D, titulo:'EL DISPARO' }, { at: K.Ca, titulo:'LA CAÍDA' }]} />}
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.25} tacharEn={K.G + 1.3} until={K.G + 1.9} texto="¿quieto?" x={330} y={470} tam={52} />
-      <Chip T={T} at={K.G + 2.25} until={K.B - 0.3} texto="¡está disparando!" x={330} y={470} tam={44} borde={KC.red} />
-      <Etq T={T} at={K.G + 1.2} until={K.B - 0.5} x={430} y={960} texto="champiñón de campo" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.G + 1.6} until={K.B - 0.5} x={430} y={1010} texto="Agaricus campestris" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.B + 0.2} until={K.Go - 0.3} texto="AL MICROSCOPIO · una laminilla" x={420} y={350} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.B + 0.6} until={K.Go - 0.3} x={150} y={1160} texto="laminilla" tam={28} color={GB.carne} />
-      <Etq T={T} at={K.B + 1.2} until={K.Go - 0.3} x={400} y={1110} texto="basidio" tam={30} color={KC.yellow} />
-      <Etq T={T} at={K.B + 2.2} until={K.Go - 0.3} x={560} y={795} texto="esterigma (la puntita)" tam={28} />
-      <Etq T={T} at={K.B + 2.6} until={K.Go - 0.3} x={690} y={760} texto="espora" tam={30} color={KC.gold2} />
+      <MitoTachado T={T} at={K.G + 0.25} tacharEn={K.G + 1.3} until={K.G + 1.9} texto="¿quieto?" x={540} y={320} tam={52} />
+      <Chip T={T} at={K.G + 2.25} until={K.B - 0.3} texto="¡está disparando!" x={540} y={320} tam={44} borde={KC.red} />
+      <Etq T={T} at={K.G + 1.2} until={K.B - 0.5} x={630} y={1080} texto="champiñón de campo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.6} until={K.B - 0.5} x={630} y={1130} texto="Agaricus campestris" it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.B + 0.2} until={K.Go - 0.3} texto="AL MICROSCOPIO · una laminilla" x={420} y={420} tam={30} borde={KC.cyan} mono />
+      <Etq T={T} at={K.B + 0.6} until={K.Go - 0.3} x={150} y={1330} texto="laminilla" tam={28} color={GB.carne} />
+      <Etq T={T} at={K.B + 1.2} until={K.Go - 0.3} x={400} y={1280} texto="basidio" tam={30} color={KC.yellow} />
+      <Etq T={T} at={K.B + 2.2} until={K.Go - 0.3} x={560} y={965} texto="esterigma (la puntita)" tam={28} />
+      <Etq T={T} at={K.B + 2.6} until={K.Go - 0.3} x={690} y={930} texto="espora" tam={30} color={KC.gold2} />
       <Etq T={T} at={K.Go + 1.3} until={K.Bu - 0.2} x={hx + 10} y={hy - 150} texto="azúcares" lado="izq" tam={28} color={KC.yellow} />
       <Etq T={T} at={K.Go + 2.6} until={K.Bu - 0.2} x={620} y={520} texto="agua del aire" tam={30} color={GB.agua} />
       <Etq T={T} at={K.Bu + 0.4} until={K.F + 1.6} x={30} y={hy - 210} texto="gota de Buller" tam={30} color={GB.agua} />
       <Etq T={T} at={K.Bu + 2.2} until={K.F + 1.6} x={loc(330, -100)[0] + 30} y={loc(330, -100)[1] - 30} texto="capa de agua" tam={30} color={GB.agua} />
       <Etq T={T} at={K.Go + 0.6} until={K.D + 2.4} x={loc(400, 40)[0] + 10} y={loc(400, 40)[1] + 70} texto="espora" tam={28} color={KC.gold2} />
-      <Medidor T={T} at={K.Go + 2.4} until={K.F + 2.2} valor={gota} etiqueta="GOTA DE BULLER" texto={(v) => (v < 0.999 ? 'crece…' : '¡toca la capa!')} x={180} y={1100} ancho={820} color={GB.agua} />
-      <Chip T={T} at={K.F + 2.6} until={K.D - 0.3} texto="< 4 µs (medido en un hongo de oreja y levaduras, 2009)" x={540} y={1130} tam={24} borde={KC.cyan} />
+      <Medidor T={T} at={K.Go + 2.4} until={K.F + 2.2} valor={gota} etiqueta="GOTA DE BULLER" texto={(v) => (v < 0.999 ? 'crece…' : '¡toca la capa!')} x={180} y={1330} ancho={820} color={GB.agua} />
+      <Chip T={T} at={K.F + 2.6} until={K.D - 0.3} texto="< 4 µs (medido en un hongo de oreja y levaduras, 2009)" x={540} y={1360} tam={24} borde={KC.cyan} />
       <Etq T={T} at={K.D + 1.1} until={K.D + 2.6} x={loc(214, -26)[0] - 60} y={loc(214, -26)[1] + 250} texto="centro de masa" tam={30} color={KC.red} />
-      <Chip T={T} at={K.D + 3.3} until={K.P - 0.2} texto="catapulta de tensión superficial" x={540} y={1130} tam={34} borde={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Fz - 0.3} anio="2005" quien="Pringle y colegas · EE. UU." revista="Mycologia, 2005" x={400} y={470} />
+      <Chip T={T} at={K.D + 3.3} until={K.P - 0.2} texto="catapulta de tensión superficial" x={540} y={1360} tam={34} borde={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Fz - 0.3} anio="2005" quien="Pringle y colegas · EE. UU." revista="Mycologia, 2005" x={540} y={400} />
       <Chip T={T} at={K.E + 1.8} until={K.Fz - 0.3} texto="hasta 100,000 cuadros por segundo" x={540} y={690} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.E + 3.3} until={K.Fz - 0.3} x={180} y={1075} texto="Itersonilia perplexans" it tam={20} color={KC.ink} />
-      <Etq T={T} at={K.E + 3.3} until={K.Fz - 0.3} x={180} y={1025} texto="levadura" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.E + 3.6} until={K.Fz - 0.3} x={720} y={1025} texto="hongo de oreja" tam={24} color={KC.ink} />
-      <Etq T={T} at={K.E + 3.6} until={K.Fz - 0.3} x={720} y={1075} texto="Auricularia auricula" it tam={20} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Fz + 0.3} until={K.Ca - 0.3} valor={10000} dur={1.0} prefijo="" sufijo=" g" etiqueta="más de" x={540} y={830} tam={190} color={KC.yellow} />
-      <Chip T={T} at={K.Fz + 1.2} until={K.Ca - 0.3} texto="g = la gravedad de la Tierra" x={540} y={1030} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Fz + 1.9} until={K.Ca - 0.3} texto="≈3,000 a 14,000 g según la especie (2009)" x={540} y={1120} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.Ca + 0.6} until={K.Es - 0.3} x={40} y={1160} texto="laminilla" tam={26} color={GB.carne} />
-      <Etq T={T} at={K.Ca + 1.0} until={K.Es - 0.3} x={1040} y={1160} texto="laminilla de enfrente" lado="izq" tam={26} color={GB.carne} />
-      <Chip T={T} at={K.Ca + 1.7} until={K.Fr - 0.2} texto="< 0.1 mm" x={GL + 113} y={640} tam={30} borde={KC.yellow} mono />
-      <Chip T={T} at={K.Ca + 2.6} until={K.Fr - 0.2} texto="no choca con la de enfrente" x={540} y={1100} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.Fr + 0.4} until={K.Es - 0.2} texto="frena y cae por gravedad ↓" x={540} y={1100} tam={30} borde={KC.yellow} />
+      <Etq T={T} at={K.E + 3.3} until={K.Fz - 0.3} x={225} y={1185} texto="Itersonilia perplexans" it tam={18} color={KC.ink} />
+      <Etq T={T} at={K.E + 3.3} until={K.Fz - 0.3} x={230} y={1130} texto="levadura" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.E + 3.6} until={K.Fz - 0.3} x={770} y={1130} texto="hongo de oreja" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.E + 3.6} until={K.Fz - 0.3} x={770} y={1185} texto="Auricularia auricula" it tam={18} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Fz + 0.3} until={K.Ca - 0.3} valor={10000} dur={1.0} prefijo="" sufijo=" g" etiqueta="más de" x={540} y={1180} tam={190} color={KC.yellow} />
+      <Chip T={T} at={K.Fz + 1.2} until={K.Ca - 0.3} texto="g = la gravedad de la Tierra" x={540} y={1370} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Fz + 1.9} until={K.Ca - 0.3} texto="≈3,000 a 14,000 g según la especie (2009)" x={540} y={1450} tam={28} borde={KC.ink} />
+      <Etq T={T} at={K.Ca + 0.6} until={K.Es - 0.3} x={40} y={1380} texto="laminilla" tam={26} color={GB.carne} />
+      <Etq T={T} at={K.Ca + 1.0} until={K.Es - 0.3} x={1040} y={1380} texto="laminilla de enfrente" lado="izq" tam={26} color={GB.carne} />
+      <Chip T={T} at={K.Ca + 1.7} until={K.Fr - 0.2} texto="< 0.1 mm" x={GL + 113} y={860} tam={30} borde={KC.yellow} mono />
+      <Chip T={T} at={K.Ca + 2.6} until={K.Fr - 0.2} texto="no choca con la de enfrente" x={540} y={1320} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.Fr + 0.4} until={K.Es - 0.2} texto="frena y cae por gravedad ↓" x={540} y={1320} tam={30} borde={KC.yellow} />
       <div style={{ position:'absolute', left:44, right:0, top:400, zIndex:42, textAlign:'left', opacity: kprog(T, K.Es + 0.2, K.Es + 0.5) * (1 - kprog(T, K.C - 0.3, K.C)), display: T > K.Es && T < K.C ? 'block' : 'none' }}>
         <div style={{ display:'inline-block', font:`400 84px/1 ${KF.titulo}`, color:KC.yellow, transformOrigin:'0 50%', WebkitTextStroke:`4px ${KC.ink}`, textShadow:`6px 6px 0 ${KC.ink}`, transform:`scale(${klerp(0.7, 1, kprog(T, K.Es + 0.2, K.Es + 0.6, kEase.rebote))})` }}>DECENAS DE MILES</div>
         <div style={{ font:`900 46px ${KF.texto}`, color:KC.ink, marginTop:10 }}>de especies disparan así</div>
       </div>
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="una catapulta de agua por espora" x={360} y={470} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="una catapulta de agua por espora" x={540} y={320} tam={34} borde={KC.yellow} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.B - 0.4} texto="5 cm" largo={300} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.B - 0.4} texto="5 cm" largo={429} color={KC.ink} />
       <BarraEscala T={T} at={K.B} until={K.Go} texto="10 µm" largo={120} />
-      <BarraEscala T={T} at={K.Go} until={K.P} texto="2 µm" largo={120} />
+      <BarraEscala T={T} at={K.Go} until={K.P} texto="2 µm" largo={154} />
       <BarraEscala T={T} at={K.Ca} until={K.Es} texto="0.1 mm" largo={150} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={300} color={KC.ink} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={429} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.B - 0.1} texto="Ese champiñón *está disparando.*" />

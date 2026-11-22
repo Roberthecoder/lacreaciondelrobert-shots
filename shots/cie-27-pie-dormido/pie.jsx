@@ -86,7 +86,7 @@ function Persona({ x, y, s = 1, cruza = 1, corte = 0, gris = 0, tap = 0, gesto =
   </g>;
 }
 // Posición en pantalla (para Lupa y efectos): punto local → pantalla.
-const PER = { x: 230, y: 850, s: 1.1 };
+const PER = { x: 220, y: 1050, s: 1.3 };
 const enPer = (p, pe = PER) => [pe.x + p[0] * pe.s, pe.y + p[1] * pe.s];
 
 // «zzz» que suben del pie.
@@ -289,7 +289,7 @@ function Pie_() {
       <Escena T={T} a={K.Senal} b={K.Entumido} fondo={KC.noche}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={18} color="rgba(255,255,255,.12)" />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 940) scale(1.4) translate(-400 -748)">
           <PieGrande x={170} y={1080} s={0.42} gris={0.5} />
           <Linea pts={VASO} color={SANG} ancho={9} o={0.9} />
           <Linea pts={RUTA} ancho={14} />
@@ -306,22 +306,22 @@ function Pie_() {
             <rect x={-110} y={-75 + (1 - k) * -60} width={220} height={52} rx={18} fill={PANT2} stroke={KC.ink} strokeWidth={8} />
             <rect x={-110} y={23 + (1 - k) * 60} width={220} height={52} rx={18} fill={PANT2} stroke={KC.ink} strokeWidth={8} /></g>; })()}
           <Cerebro x={560} y={470} s={0.9} brillo={0} />
-        </Lienzo>
-        <Etq T={T} at={K.Senal + 0.5} until={K.Entumido - 0.2} x={300} y={1120} texto="pie" lado="der" color={KC.texto} />
-        <Etq T={T} at={K.Senal + 0.8} until={K.Entumido - 0.2} x={420} y={340} texto="cerebro" lado="izq" color={KC.texto} />
-        <Chip T={T} at={K.Senal + 1.0} until={K.Entumido - 0.2} texto="menos sangre" x={740} y={870} tam={40} borde={SANG} />
-        <Chip T={T} at={K.Senal + 2.6} until={K.Entumido - 0.2} texto="mensajes atorados" x={740} y={980} tam={40} borde={NERV} />
+        </g></Lienzo>
+        <Etq T={T} at={K.Senal + 0.5} until={K.Entumido - 0.2} x={330} y={1400} texto="pie" lado="der" color={KC.texto} />
+        <Etq T={T} at={K.Senal + 0.8} until={K.Entumido - 0.2} x={630} y={380} texto="cerebro" lado="izq" color={KC.texto} />
+        <Chip T={T} at={K.Senal + 1.0} until={K.Entumido - 0.2} texto="menos sangre" x={780} y={900} tam={40} borde={SANG} />
+        <Chip T={T} at={K.Senal + 2.6} until={K.Entumido - 0.2} texto="mensajes atorados" x={780} y={1010} tam={40} borde={NERV} />
       </Escena>
 
       {/* 3 · entumido: el pie gris y pesado, como de otro */}
       <Escena T={T} a={K.Entumido} b={K.Hormigueo} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <PieGrande x={500} y={960} s={1} gris={kprog(T, K.Entumido + 0.2, K.Entumido + 1.0)} T={T}
+          <PieGrande x={420} y={1150} s={1.5} gris={kprog(T, K.Entumido + 0.2, K.Entumido + 1.0)} T={T}
             baja={kprog(T, K.Entumido + 1.6, K.Entumido + 1.9, kEase.rebote) * 40 - 40 + Math.sin(T * 1.5) * 4} />
         </Lienzo>
-        <Chip T={T} at={K.Entumido + 0.4} until={K.Hormigueo - 0.1} texto="entumido" x={660} y={430} tam={48} borde={GRIS} />
-        <Chip T={T} at={K.Entumido + 1.6} until={K.Hormigueo - 0.1} texto="pesado" x={660} y={530} tam={48} borde={KC.ink} />
+        <Chip T={T} at={K.Entumido + 0.4} until={K.Hormigueo - 0.1} texto="entumido" x={700} y={470} tam={48} borde={GRIS} />
+        <Chip T={T} at={K.Entumido + 1.6} until={K.Hormigueo - 0.1} texto="pesado" x={700} y={570} tam={48} borde={KC.ink} />
       </Escena>
 
       {/* 4 · hormigueo: descruzas la pierna, el nervio se destapa y las señales salen revueltas */}
@@ -340,7 +340,7 @@ function Pie_() {
       {/* 5 · agujas que no existen: pican… y desaparecen; es el nervio despertando */}
       <Escena T={T} a={K.Agujas} b={K.Nombre} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 960) scale(1.3) translate(-450 -760)">
           <PieGrande x={330} y={900} s={1} gris={0.15} corte={kprog(T, K.Agujas + 3.4, K.Agujas + 3.9)} T={T} chispas={kprog(T, K.Agujas + 3.4, K.Agujas + 3.9)} />
           {[[300, 1018, -90], [420, 1018, -100], [540, 1018, -80], [180, 1018, -70], [560, 960, -150], [640, 950, -165], [460, 935, -140], [300, 870, 180], [280, 650, 180], [420, 720, 0], [420, 560, 10], [250, 780, 170],
             [130, 1000, -30], [380, 990, -110]].map(([x, y, a], i) => {
@@ -348,32 +348,41 @@ function Pie_() {
             const pica = Math.max(0, Math.sin(T * 14 + i * 1.7)) * 16, d = (1 - ent) * 220 + pica;
             const r = a * Math.PI / 180;
             return <Aguja key={i} x={x - Math.cos(r) * d} y={y - Math.sin(r) * d} ang={a} o={ent * (1 - sal)} s={1 - sal * 0.6} />; })}
-          <Onomato T={T} at={K.Agujas + 2.6} dur={0.7} x={760} y={760} texto="¡PUF!" color={KC.white} tam={120} />
-        </Lienzo>
+          <Onomato T={T} at={K.Agujas + 2.6} dur={0.7} x={640} y={700} texto="¡PUF!" color={KC.white} tam={120} />
+        </g></Lienzo>
         <Chip T={T} at={K.Agujas + 0.5} until={K.Agujas + 2.6} texto="miles de agujitas" x={540} y={430} tam={44} borde={KC.white} />
         <Chip T={T} at={K.Agujas + 2.8} until={K.Nombre - 0.1} texto="no hay ninguna" x={420} y={430} tam={44} borde={KC.red} />
-        <Etq T={T} at={K.Agujas + 3.6} until={K.Nombre - 0.1} x={470} y={790} texto="tu nervio, despertando" lado="der" color={KC.ink} tam={34} />
+        <Etq T={T} at={K.Agujas + 3.6} until={K.Nombre - 0.1} x={540} y={1060} texto="tu nervio, despertando" lado="der" color={KC.ink} tam={30} />
       </Escena>
 
       {/* 6 · nombre: parestesia */}
       <Escena T={T} a={K.Nombre} b={K.Pregunta} fondo={KC.mint} zoom={0.08}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <TextoSvg x={540} y={860} tam={170} color={KC.yellow} rot={-4} s={klerp(0.4, 1, kprog(T, K.Nombre + 0.6, K.Nombre + 1.0, kEase.rebote))} o={kprog(T, K.Nombre + 0.6, K.Nombre + 0.8)}>PARESTESIA</TextoSvg>
-          <Chispas T={T} x={540} y={790} n={10} radio={420} o={kprog(T, K.Nombre + 0.9, K.Nombre + 1.3)} seed={14} />
+          <g opacity={0.6}><PieGrande x={400} y={1250} s={1.2} gris={0.15} corte={1} T={T} chispas={0.8} /></g>
+          <TextoSvg x={540} y={640} tam={170} color={KC.yellow} rot={-4} s={klerp(0.4, 1, kprog(T, K.Nombre + 0.6, K.Nombre + 1.0, kEase.rebote))} o={kprog(T, K.Nombre + 0.6, K.Nombre + 0.8)}>PARESTESIA</TextoSvg>
+          <Chispas T={T} x={540} y={620} n={10} radio={420} o={kprog(T, K.Nombre + 0.9, K.Nombre + 1.3)} seed={14} />
         </Lienzo>
-        <Chip T={T} at={K.Nombre + 0.1} until={K.Pregunta - 0.05} texto="los médicos le llaman" x={540} y={600} tam={42} borde={KC.ink} />
+        <Chip T={T} at={K.Nombre + 0.1} until={K.Pregunta - 0.05} texto="los médicos le llaman" x={540} y={420} tam={42} borde={KC.ink} />
       </Escena>
 
       {/* 7 · ¿y es peligroso? */}
-      <EscenaPregunta T={T} a={K.Pregunta} b={K.Normal} color={KC.lilac} />
+      {/* el «?» con el pie hormigueando detrás (ya no es solo el signo) */}
+      <Escena T={T} a={K.Pregunta} b={K.Normal} zoom={0.1}>
+        <FondoLunares color={KC.lilac} />
+        <Lienzo>
+          <g opacity={0.6}><PieGrande x={400} y={1250} s={1.2} gris={0.15} corte={1} T={T} chispas={0.8} /></g>
+          <text x={760} y={1080} textAnchor="middle" fill={KC.yellow} stroke="#0b1020" strokeWidth={14}
+            transform={`rotate(${Math.sin(T * 3) * 6} 760 900) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 560px ${KF.titulo}`, transformOrigin:'760px 900px' }}>?</text>
+        </Lienzo>
+      </Escena>
 
       {/* 8 · casi nunca: en minutos se quita solo, el pie vuelve a su color */}
       <Escena T={T} a={K.Normal} b={K.Medico} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <Reloj x={290} y={640} r={170} giro={kprog(T, K.Normal + 0.6, K.Medico, kEase.suave) * 0.3} />
-          <PieGrande x={520} y={1060} s={0.75} gris={1 - kprog(T, K.Normal + 1.2, K.Medico - 0.5)} T={T} corte={0.6} chispas={0.8 * (1 - kprog(T, K.Normal + 1.2, K.Medico - 0.6))} />
+          <Reloj x={250} y={640} r={160} giro={kprog(T, K.Normal + 0.6, K.Medico, kEase.suave) * 0.3} />
+          <PieGrande x={560} y={1180} s={1.15} gris={1 - kprog(T, K.Normal + 1.2, K.Medico - 0.5)} T={T} corte={0.6} chispas={0.8 * (1 - kprog(T, K.Normal + 1.2, K.Medico - 0.6))} />
         </Lienzo>
         <Chip T={T} at={K.Normal + 0.2} until={K.Medico - 0.1} texto="casi nunca es peligroso" x={540} y={410} tam={40} borde={KC.mint} />
         <Chip T={T} at={K.Normal + 1.6} until={K.Medico - 0.1} texto="se quita solo" x={800} y={560} tam={42} borde={KC.gold} />
@@ -383,13 +392,14 @@ function Pie_() {
       <Escena T={T} a={K.Medico} b={K.Codo} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <Alerta x={540} y={560} s={1.2 * klerp(0.5, 1, kprog(T, K.Medico + 0.1, K.Medico + 0.4, kEase.rebote))} color={KC.orange} />
-          <FlechaRecta x1={540} y1={890} x2={540} y2={960} p={kprog(T, K.Medico + 2.6, K.Medico + 3.0, kEase.sale)} color={KC.mint} />
-          {T > K.Medico + 2.9 && <CruzMedica x={540} y={1090} s={klerp(0.3, 0.9, kprog(T, K.Medico + 2.9, K.Medico + 3.3, kEase.rebote))} />}
+          <g opacity={0.45}><PieGrande x={120} y={1300} s={0.9} gris={0.3} corte={0.6} T={T} /></g>
+          <Alerta x={540} y={810} s={1.2 * klerp(0.5, 1, kprog(T, K.Medico + 0.1, K.Medico + 0.4, kEase.rebote))} color={KC.orange} />
+          <FlechaRecta x1={540} y1={1140} x2={540} y2={1210} p={kprog(T, K.Medico + 2.6, K.Medico + 3.0, kEase.sale)} color={KC.mint} />
+          {T > K.Medico + 2.9 && <CruzMedica x={540} y={1340} s={klerp(0.3, 0.9, kprog(T, K.Medico + 2.9, K.Medico + 3.3, kEase.rebote))} />}
         </Lienzo>
-        <Chip T={T} at={K.Medico + 0.6} until={K.Codo - 0.1} texto="si pasa seguido sin razón" x={540} y={740} tam={40} borde={KC.ink} />
-        <Chip T={T} at={K.Medico + 1.7} until={K.Codo - 0.1} texto="o no se quita" x={540} y={840} tam={40} borde={KC.ink} />
-        <Etq T={T} at={K.Medico + 3.2} until={K.Codo - 0.1} x={660} y={1090} texto="médico" lado="der" color={KC.ink} tam={40} />
+        <Chip T={T} at={K.Medico + 0.6} until={K.Codo - 0.1} texto="si pasa seguido sin razón" x={540} y={990} tam={40} borde={KC.ink} />
+        <Chip T={T} at={K.Medico + 1.7} until={K.Codo - 0.1} texto="o no se quita" x={540} y={1090} tam={40} borde={KC.ink} />
+        <Etq T={T} at={K.Medico + 3.2} until={K.Codo - 0.1} x={660} y={1340} texto="médico" lado="der" color={KC.ink} tam={40} />
       </Escena>
 
       {/* 10 · el codo: golpe en el «hueso de la risa» → rayito al anular y al meñique */}
@@ -414,12 +424,12 @@ function Pie_() {
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={16} color="rgba(255,255,255,.12)" />
         <Lienzo>
-          <Brazo T={T} corte={1} rayo={T < K.Codo2 + 2.6 ? kprog(T, K.Codo2 + 0.6, K.Codo2 + 1.7) : -1} glow={kprog(T, K.Codo2 + 1.5, K.Codo2 + 1.8) * (1 - kprog(T, K.Codo2 + 2.6, K.Codo2 + 3.0))} />
+          <Brazo T={T} corte={1} dy={160} rayo={T < K.Codo2 + 2.6 ? kprog(T, K.Codo2 + 0.6, K.Codo2 + 1.7) : -1} glow={kprog(T, K.Codo2 + 1.5, K.Codo2 + 1.8) * (1 - kprog(T, K.Codo2 + 2.6, K.Codo2 + 3.0))} />
         </Lienzo>
-        <Etq T={T} at={K.Codo2 + 0.4} until={K.Cierre - 0.2} x={470} y={1030} texto="nervio cubital" lado="der" color={NERV} tam={32} />
-        <Etq T={T} at={K.Codo2 + 0.6} until={K.Cierre - 0.2} x={250} y={720} texto="hueso" lado="der" color="#fbf6ea" tam={32} />
-        <MitoTachado T={T} at={K.Codo2 + 2.2} tacharEn={K.Codo2 + 3.0} until={K.Cierre - 0.15} texto="«es el hueso»" x={600} y={440} />
-        <Chip T={T} at={K.Codo2 + 3.5} until={K.Cierre - 0.1} texto="es el nervio" x={600} y={560} tam={48} borde={NERV} />
+        <Etq T={T} at={K.Codo2 + 0.4} until={K.Cierre - 0.2} x={470} y={1190} texto="nervio cubital" lado="der" color={NERV} tam={32} />
+        <Etq T={T} at={K.Codo2 + 0.6} until={K.Cierre - 0.2} x={250} y={880} texto="hueso" lado="der" color="#fbf6ea" tam={32} />
+        <MitoTachado T={T} at={K.Codo2 + 2.2} tacharEn={K.Codo2 + 3.0} until={K.Cierre - 0.15} texto="«es el hueso»" x={600} y={560} />
+        <Chip T={T} at={K.Codo2 + 3.5} until={K.Cierre - 0.1} texto="es el nervio" x={600} y={680} tam={48} borde={NERV} />
       </Escena>
 
       {/* 12 · cierre: la misma persona, ya derecha, mueve el pie */}

@@ -211,6 +211,11 @@ function ArcoDia({ x, y, r = 300, u = 0 }) {
   </g>;
 }
 
+// Acercamiento: lleva el punto `de` al punto `a` y agranda k veces (pase a mano del estilo cine).
+function DZ({ k = 1, de = [0, 0], a = [0, 0], children }) {
+  return <g transform={`translate(${a[0]} ${a[1]}) scale(${k}) translate(${-de[0]} ${-de[1]})`}>{children}</g>;
+}
+
 function Vainilla() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, O: CUES.Origen, M: CUES.Molecula, E: CUES.Escasa, S: CUES.Sintetica, P: CUES.Precio, Q: CUES.Pregunta, Mi: CUES.Microbios, En: CUES.Enzimas,
@@ -228,16 +233,16 @@ function Vainilla() {
       {/* 0 · gancho: el helado y la vaina */}
       <Escena T={T} a={K.G} b={K.O} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        <SvgV>
+        <SvgV><DZ k={1.4} de={[480, 860]} a={[500, 1000]}>
           <Cono T={T} x={330} y={760} s={1.05} gota={gotea} />
-          <Vaina x={600} y={1160} largo={760} rot={-6} />
+          <Vaina x={560} y={1160} largo={680} rot={-6} />
           <Goteo T={T} x={425} y0={820} y1={1100} cada={0.9} color={CREMA} desde={K.G + 1.2} hasta={K.O} />
-        </SvgV>
+        </DZ></SvgV>
       </Escena>
       {/* 1 · origen: orquídea de México, Papantla */}
       <Escena T={T} a={K.O} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgV>
+        <SvgV><g transform="translate(0 110)">
           <Enredadera T={T} x={240} y={1180} alto={760} crece={kprog(T, K.O - 0.3, K.O + 1.6, kEase.sale)} flor={flores} />
           <g opacity={kprog(T, K.O + 0.6, K.O + 1.2)}>
             <MapaMexico x={480} y={780} ancho={560}>
@@ -246,78 +251,78 @@ function Vainilla() {
                 <circle cx={px} cy={py} r={12} fill={KC.red} stroke={KC.ink} strokeWidth={4} /></g>; })()}
             </MapaMexico>
           </g>
-        </SvgV>
+        </g></SvgV>
       </Escena>
       {/* 2 · por dentro de la vaina curada: escarcha de vainillina */}
       <Escena T={T} a={K.M} b={K.E} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        <SvgV><Vaina x={540} y={1120} largo={820} ancho={60} rot={-4} /></SvgV>
+        <SvgV><Vaina x={540} y={1250} largo={900} ancho={70} rot={-4} /></SvgV>
       </Escena>
-      <Lupa T={T} at={K.M + 0.1} until={K.E - 0.15} x={540} y={680} r={280} fx={560} fy={1110} tinte={KC.gold2} etiqueta="POR DENTRO · VAINA CURADA"
+      <Lupa T={T} at={K.M + 0.1} until={K.E - 0.15} x={540} y={770} r={330} fx={560} fy={1240} tinte={KC.gold2} etiqueta="POR DENTRO · VAINA CURADA"
         interior={(t, r) => <svg width={r * 2} height={r * 2}>
           <rect width={r * 2} height={r * 2} fill="#1e120b" />
           {Array.from({ length: 70 }, (_, i) => { const q = krng(i + 3); return <circle key={i} cx={q() * r * 2} cy={q() * r * 2} r={3 + q() * 4} fill="#0a0604" />; })}
           {Array.from({ length: 26 }, (_, i) => { const q = krng(i + 50), cx = q() * r * 2, cy = q() * r * 2, l = 16 + q() * 30, a = q() * 180, on = kprog(t, K.M + 0.3 + i * 0.03, K.M + 0.6 + i * 0.03);
             return <line key={'c' + i} x1={cx} y1={cy} x2={cx + Math.cos(a) * l * on} y2={cy + Math.sin(a) * l * on} stroke="#f7f3e6" strokeWidth={4} strokeLinecap="round" opacity={0.9} />; })}
-          <MolV x={r} y={r + 10} s={1.25} tipo="vainillina" color={KC.paper} brillo={kprog(t, K.M + 0.8, K.M + 1.4)} o={kprog(t, K.M + 0.7, K.M + 1.1)} rot={Math.sin(t * 1.2) * 6} />
+          <MolV x={r} y={r + 10} s={1.45} tipo="vainillina" color={KC.paper} brillo={kprog(t, K.M + 0.8, K.M + 1.4)} o={kprog(t, K.M + 0.7, K.M + 1.1)} rot={Math.sin(t * 1.2) * 6} />
         </svg>} />
       {/* 3 · 1–2 % del peso de la vaina */}
       <Escena T={T} a={K.E} b={K.S} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <SvgV>
-          <Vaina x={560} y={900} largo={860} ancho={70} rot={0} />
+          <Vaina x={560} y={1010} largo={900} ancho={110} rot={0} />
           {(() => { const u = kprog(T, K.E + 0.6, K.E + 1.6, kEase.sale); return <g>
-            <rect x={130} y={1020} width={860} height={60} rx={30} fill={VAINA} stroke={KC.ink} strokeWidth={7} />
-            <rect x={130} y={1020} width={Math.max(0.001, 860 * 0.02 * u)} height={60} rx={8} fill="#fbf8ef" stroke={KC.ink} strokeWidth={4} />
-            <path d={`M ${147} 1010 L 147 960`} stroke={KC.ink} strokeWidth={5} opacity={u} />
+            <rect x={110} y={1150} width={900} height={70} rx={35} fill={VAINA} stroke={KC.ink} strokeWidth={7} />
+            <rect x={110} y={1150} width={Math.max(0.001, 900 * 0.02 * u)} height={70} rx={8} fill="#fbf8ef" stroke={KC.ink} strokeWidth={4} />
+            <path d={`M ${128} 1140 L 128 1080`} stroke={KC.ink} strokeWidth={5} opacity={u} />
           </g>; })()}
         </SvgV>
-        <div style={{ position:'absolute', left:640, top:600, transform:`translate(-50%,-50%) scale(${klerp(0.4, 1, kprog(T, K.E + 0.4, K.E + 0.9, kEase.rebote))})`, opacity:kprog(T, K.E + 0.4, K.E + 0.7),
+        <div style={{ position:'absolute', left:600, top:720, transform:`translate(-50%,-50%) scale(${klerp(0.4, 1, kprog(T, K.E + 0.4, K.E + 0.9, kEase.rebote))})`, opacity:kprog(T, K.E + 0.4, K.E + 0.7),
           font:`400 230px/1 ${KF.titulo}`, color:KC.paper, WebkitTextStroke:`8px ${KC.ink}`, textShadow:`10px 10px 0 ${KC.ink}`, whiteSpace:'nowrap' }}>1–2 %</div>
       </Escena>
       {/* 4 · la mayoría: química, del petróleo o de la madera */}
       <Escena T={T} a={K.S} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <SvgV>
+        <SvgV><DZ k={1.15} de={[540, 850]} a={[540, 960]}>
           {(() => { const u = kprog(T, K.S + 0.3, K.S + 1.8, kEase.suave); return <g>
             <Barril x={klerp(200, 360, u)} y={620} s={0.9} />
             <Tronco x={klerp(180, 330, u)} y={960} s={0.75} />
           </g>; })()}
           <Fabrica T={T} x={760} y={880} s={0.9} />
           <Polvo x={760} y={1130} s={0.9} p={kprog(T, K.S + 1.8, K.S + 2.8, kEase.sale)} />
-        </SvgV>
+        </DZ></SvgV>
       </Escena>
       {/* 5 · cien veces más barata */}
       <Escena T={T} a={K.P} b={K.Q} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        <SvgV>
+        <SvgV><DZ k={1.2} de={[540, 850]} a={[540, 900]}>
           <Precio T={T} x={300} y={760} s={klerp(0.2, 0.62, kprog(T, K.P + 0.2, K.P + 0.7, kEase.rebote))} texto="$" sub="sintética" color={KC.paper} />
           <Precio T={T} x={680} y={900} s={klerp(0.2, 1.3, kprog(T, K.P + 0.6, K.P + 1.3, kEase.rebote))} texto="$$$$$" sub="de vaina" color={KC.yellow} />
-        </SvgV>
+        </DZ></SvgV>
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.Q} b={K.Mi} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         <SvgV>
-          <g opacity={1 - kprog(T, K.Q + 0.6, K.Q + 2.0)}><FlorVainilla T={T} x={800} y={1000} s={1.1} abre={1} /></g>
-          <text x={800} y={880} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 800 700)`}>?</text>
+          <g opacity={1 - 0.55 * kprog(T, K.Q + 0.6, K.Q + 2.0)}><FlorVainilla T={T} x={400} y={1060} s={1.7} abre={1} /></g>
+          <text x={780} y={1180} textAnchor="middle" style={{ font:`400 640px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 780 940)`}>?</text>
         </SvgV>
       </Escena>
       {/* 7a · salvado de arroz → ácido ferúlico → tanque */}
       <Escena T={T} a={K.Mi} b={MI2} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        <SvgV>
+        <SvgV><DZ k={1.2} de={[506, 920]} a={[540, 1000]}>
           <Costal x={260} y={900} s={0.95} T={T} />
           {Array.from({ length: 4 }, (_, i) => { const u = kprog(T, K.Mi + 0.1 + i * 0.25, K.Mi + 0.9 + i * 0.25, kEase.suave); return u > 0 && u < 1 ?
             <MolV key={i} x={klerp(380, 720, u)} y={klerp(760, 640, u) - Math.sin(u * Math.PI) * 120} s={0.45} tipo="ferulico" color="#bfe8ff" rot={u * 200} /> : null; })}
           <TanqueChico T={T} x={780} y={900} s={0.95} />
-        </SvgV>
+        </DZ></SvgV>
       </Escena>
       {/* 7b–8 · al microscopio: la bacteria transforma el ácido ferúlico en vainillina */}
       <Escena T={T} a={MI2} b={K.N} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={30} color="rgba(244,194,90,.22)" />
-        <SvgV>
+        <SvgV><DZ k={1.15} de={[560, 830]} a={[560, 960]}>
           <Bacteria T={T} x={560} y={830} largo={880} ancho={430} color="#7fd88a" seed={7} nucleoide={false} />
           {/* moléculas que entran antes de las enzimas */}
           {feru.map(([f, yy, rr, i]) => { const u = kprog(T, MI2 - 0.3 + i * 0.2, MI2 + 0.5 + i * 0.2, kEase.sale); return T < K.En + 0.1 ?
@@ -331,83 +336,82 @@ function Vainilla() {
               <path d="M -30 10 L 0 -10 L 0 -40" stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" /><rect x={-10} y={-80} width={92} height={42} rx={21} fill={E1} stroke={KC.ink} strokeWidth={4} /></g>}
           </g>}
           {sale > 0 && [0, 1, 2].map((i) => <MolV key={'v' + i} x={klerp(760, 1180, kprog(T, K.En + 1.8 + i * 0.3, K.En + 3.2 + i * 0.3))} y={980 + i * 50} s={0.45} tipo="vainillina" color={KC.paper} brillo={0.6} />)}
-        </SvgV>
+        </DZ></SvgV>
       </Escena>
       {/* 9 · cuenta como natural */}
       <Escena T={T} a={K.N} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgV><FrascoV x={540} y={900} s={1.1} sello={kprog(T, K.N + 0.6, K.N + 1.1)} /></SvgV>
+        <SvgV><FrascoV x={540} y={990} s={1.4} sello={kprog(T, K.N + 0.6, K.N + 1.1)} /></SvgV>
       </Escena>
       {/* 10 · 1841, isla Reunión: Edmond Albius poliniza la flor a mano */}
       <Escena T={T} a={K.A} b={K.F} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:'#f3d9a4' }}></div>
-        <SvgV>
+        <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #3a2c1a 0%, #1c150d 75%)' }}></div>
+        <SvgV><DZ k={1.15} de={[500, 900]} a={[540, 960]}>
           <Enredadera T={T} x={700} y={1180} alto={640} crece={1} flor={0} />
           <FlorVainilla T={T} x={560} y={790} s={1.0} abre={1} rot={-10} />
           <Nino x={300} y={880} s={1.0} p={kprog(T, K.A + 3.6, K.A + 5.2)} T={T} />
           {T > K.A + 5.2 && <circle cx={560} cy={790} r={60 + 30 * Math.abs(Math.sin(T * 4))} fill="none" stroke={KC.gold} strokeWidth={8} opacity={0.8} />}
-          <rect x={0} y={0} width={KW} height={KH} fill="rgba(110,80,40,.12)" />
-        </SvgV>
+        </DZ></SvgV>
       </Escena>
       {/* 11 · cada flor abre un solo día */}
       <Escena T={T} a={K.F} b={K.To} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         <SvgV>
-          <ArcoDia x={540} y={760} r={320} u={kprog(T, K.F, K.To + 0.3)} />
-          <FlorVainilla T={T} x={540} y={1000} s={1.5} abre={1 - kprog(T, K.F + 1.4, K.To + 0.3)} />
+          <ArcoDia x={540} y={820} r={360} u={kprog(T, K.F, K.To + 0.3)} />
+          <FlorVainilla T={T} x={540} y={1090} s={1.9} abre={1 - kprog(T, K.F + 1.4, K.To + 0.3)} />
         </SvgV>
       </Escena>
       {/* 12 · ≈ 60 000 t (estimado 2024) y de dónde salen */}
       <Escena T={T} a={K.To} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.blue} punto="rgba(255,255,255,.18)" />
         <SvgV>
-          {Array.from({ length: 30 }, (_, i) => { const q = krng(i + 90), u = kprog(T, K.To + 0.3 + i * 0.05, K.To + 0.9 + i * 0.05, kEase.sale); return <Polvo key={i} x={120 + (i % 10) * 92} y={klerp(900, 1100 - Math.floor(i / 10) * 60, u)} s={0.32} p={u} />; })}
+          {Array.from({ length: 30 }, (_, i) => { const q = krng(i + 90), u = kprog(T, K.To + 0.3 + i * 0.05, K.To + 0.9 + i * 0.05, kEase.sale); return <Polvo key={i} x={124 + (i % 10) * 92} y={klerp(920, 1200 - Math.floor(i / 10) * 75, u)} s={0.4} p={u} />; })}
           {(() => { const u = kprog(T, K.To + 1.6, K.To + 2.6, kEase.sale), W = 900 * u; return <g>
-            <rect x={90} y={1440} width={900} height={70} rx={14} fill="rgba(0,0,0,.35)" stroke={KC.ink} strokeWidth={6} />
-            <rect x={90} y={1440} width={W * 0.985} height={70} rx={14} fill="#9aa3b5" stroke={KC.ink} strokeWidth={5} />
-            <rect x={90 + W * 0.985} y={1440} width={Math.max(0.001, W * 0.015)} height={70} fill="#e0b48a" stroke={KC.ink} strokeWidth={3} />
+            <rect x={90} y={1300} width={900} height={70} rx={14} fill="rgba(0,0,0,.35)" stroke={KC.ink} strokeWidth={6} />
+            <rect x={90} y={1300} width={W * 0.985} height={70} rx={14} fill="#9aa3b5" stroke={KC.ink} strokeWidth={5} />
+            <rect x={90 + W * 0.985} y={1300} width={Math.max(0.001, W * 0.015)} height={70} fill="#e0b48a" stroke={KC.ink} strokeWidth={3} />
           </g>; })()}
         </SvgV>
       </Escena>
       {/* 13 · cierre: el helado del inicio */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgV>
-          <Cono T={T} x={300} y={760} s={1.05} gota={1} />
-          <Vaina x={600} y={1160} largo={760} rot={-6} />
-        </SvgV>
+        <SvgV><DZ k={1.4} de={[480, 860]} a={[500, 1000]}>
+          <Cono T={T} x={330} y={760} s={1.05} gota={1} />
+          <Vaina x={560} y={1160} largo={680} rot={-6} />
+        </DZ></SvgV>
       </Escena>
 
       {/* textos */}
-      <NumeroGigante T={T} at={K.G + 0.05} until={K.O - 0.3} valor={1} desde={1} dur={0.1} prefijo="< " sufijo=" %" x={330} y={430} tam={190} color={KC.paper} />
-      <MitoTachado T={T} at={K.G + 1.0} tacharEn={K.G + 2.4} until={K.O - 0.3} texto="sale de la vaina" x={540} y={1500} tam={46} />
-      <Etiqueta T={T} at={K.G + 2.8} until={K.O - 0.3} x={60} y={1630} texto="de la vainillina del mundo" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.O + 0.6} until={K.M - 0.3} texto="México · Papantla, Veracruz" y={1500} tam={40} borde={KC.red} />
-      <Etiqueta T={T} at={K.O + 1.8} until={K.M - 0.3} x={60} y={1630} texto="Vanilla planifolia · orquídea" it tam={34} color={KC.ink} />
-      <Chip T={T} at={K.M + 1.0} until={K.E - 0.3} texto="vainillina: su aroma principal" y={1500} tam={40} borde={KC.gold2} />
-      <Etiqueta T={T} at={K.M + 1.6} until={K.E - 0.3} x={60} y={1630} texto="cristales en agujitas (escarcha)" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.E + 1.2} until={K.S - 0.3} texto="del peso de la vaina curada" y={1500} tam={40} borde={KC.paper} />
-      <Etiqueta T={T} at={K.S + 0.6} until={K.P - 0.3} x={540} y={470} texto="petróleo (guayacol)" lado="izq" tam={32} color={KC.ink} />
-      <Etiqueta T={T} at={K.S + 1.0} until={K.P - 0.3} x={40} y={1090} texto="madera (lignina)" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.S + 1.6} until={K.P - 0.3} texto="la mayoría: síntesis química" y={1500} tam={40} borde={KC.cyan} />
-      <Medidor T={T} at={K.P + 1.2} until={K.Q - 0.3} valor={(t) => 0.01 + 0.99 * (1 - kprog(t, K.P + 1.4, K.P + 2.4, kEase.suave))} etiqueta="precio de la sintética" texto={(v) => (v < 0.05 ? '≈ 1/100' : '')} x={90} y={1440} color={KC.yellow} />
-      <Chip T={T} at={K.Mi + 0.3} until={MI2 - 0.1} texto="ácido ferúlico" y={1500} tam={42} borde="#bfe8ff" />
-      <Chip T={T} at={MI2 + 0.2} until={K.N - 0.3} texto="AL MICROSCOPIO · BACTERIA" y={360} x={600} tam={32} mono borde={KC.mint} />
-      <Etiqueta T={T} at={MI2 + 0.6} until={K.En - 0.1} x={60} y={1500} texto="ácido ferúlico" color="#bfe8ff" />
-      <Etiqueta T={T} at={K.En + 1.6} until={K.N - 0.3} x={60} y={1500} texto="vainillina" color={KC.gold2} />
-      <div style={{ position:'absolute', left:60, top:1640, zIndex:40, font:`700 28px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA, opacity:(T > MI2 && T < K.N - 0.2) ? 1 : 0 }}>esquemático · no a escala</div>
-      <Chip T={T} at={K.N + 1.2} until={K.A - 0.3} texto="«aroma natural» · UE y EE. UU." y={1500} tam={38} borde={KC.leaf} />
-      <TarjetaEstudio T={T} at={K.A + 0.2} until={K.A + 3.4} anio="1841" quien="Edmond Albius, 12 años" revista="isla Reunión · océano Índico" y={470} />
-      <Chip T={T} at={K.A + 3.6} until={K.F - 0.3} texto="polinización a mano" y={1500} tam={42} borde={KC.gold} />
-      <Etiqueta T={T} at={K.A + 4.0} until={K.F - 0.3} x={60} y={1630} texto="niño esclavizado · dibujo esquemático" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.F + 0.2} until={K.To - 0.2} texto="1 flor = 1 día" y={1500} tam={46} borde={KC.yellow} />
-      <NumeroGigante T={T} at={K.To + 0.2} until={K.Ci - 0.3} valor={60000} dur={1.2} prefijo="≈ " sufijo=" t" etiqueta="estimado 2024" x={350} y={560} tam={136} color={KC.yellow} />
-      {kvisible(T, K.To + 2.0, K.Ci - 0.3) && <div style={{ position:'absolute', left:90, top:1530, width:900, zIndex:41, display:'flex', justifyContent:'space-between', font:`700 28px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA, opacity:kprog(T, K.To + 2.0, K.To + 2.4) * (1 - kprog(T, K.Ci - 0.3, K.Ci + 0.1)) }}>
+      <NumeroGigante T={T} at={K.G + 0.05} until={K.O - 0.3} valor={1} desde={1} dur={0.1} prefijo="< " sufijo=" %" x={790} y={600} tam={200} color={KC.paper} />
+      <MitoTachado T={T} at={K.G + 1.0} tacharEn={K.G + 2.4} until={K.O - 0.3} texto="sale de la vaina" x={790} y={860} tam={44} />
+      <Etiqueta T={T} at={K.G + 2.8} until={K.O - 0.3} x={1050} y={740} lado="izq" texto="de la vainillina del mundo" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.O + 0.6} until={K.M - 0.3} texto="México · Papantla, Veracruz" x={790} y={700} tam={40} borde={KC.red} />
+      <Etiqueta T={T} at={K.O + 1.8} until={K.M - 0.3} x={60} y={1440} texto="Vanilla planifolia · orquídea" it tam={34} color={KC.ink} />
+      <Chip T={T} at={K.M + 1.0} until={K.E - 0.3} texto="vainillina: su aroma principal" y={1380} tam={40} borde={KC.gold2} />
+      <Etiqueta T={T} at={K.M + 1.6} until={K.E - 0.3} x={60} y={1460} texto="cristales en agujitas (escarcha)" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.E + 1.2} until={K.S - 0.3} texto="del peso de la vaina curada" y={1320} tam={40} borde={KC.paper} />
+      <Etiqueta T={T} at={K.S + 0.6} until={K.P - 0.3} x={540} y={600} texto="petróleo (guayacol)" lado="izq" tam={32} color={KC.ink} />
+      <Etiqueta T={T} at={K.S + 1.0} until={K.P - 0.3} x={40} y={1236} texto="madera (lignina)" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.S + 1.6} until={K.P - 0.3} texto="la mayoría: síntesis química" y={1420} tam={40} borde={KC.cyan} />
+      <Medidor T={T} at={K.P + 1.2} until={K.Q - 0.3} valor={(t) => 0.01 + 0.99 * (1 - kprog(t, K.P + 1.4, K.P + 2.4, kEase.suave))} etiqueta="precio de la sintética" texto={(v) => (v < 0.05 ? '≈ 1/100' : '')} x={90} y={1300} color={KC.yellow} />
+      <Chip T={T} at={K.Mi + 0.3} until={MI2 - 0.1} texto="ácido ferúlico" y={1410} tam={42} borde="#bfe8ff" />
+      <Chip T={T} at={MI2 + 0.2} until={K.N - 0.3} texto="AL MICROSCOPIO · BACTERIA" y={600} x={560} tam={32} mono borde={KC.mint} />
+      <Etiqueta T={T} at={MI2 + 0.6} until={K.En - 0.1} x={60} y={1300} texto="ácido ferúlico" color="#bfe8ff" />
+      <Etiqueta T={T} at={K.En + 1.6} until={K.N - 0.3} x={60} y={1300} texto="vainillina" color={KC.gold2} />
+      <div style={{ position:'absolute', left:60, top:1360, zIndex:40, font:`700 28px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA, opacity:(T > MI2 && T < K.N - 0.2) ? 1 : 0 }}>esquemático · no a escala</div>
+      <Chip T={T} at={K.N + 1.2} until={K.A - 0.3} texto="«aroma natural» · UE y EE. UU." y={1350} tam={38} borde={KC.leaf} />
+      <TarjetaEstudio T={T} at={K.A + 0.2} until={K.A + 3.4} anio="1841" quien="Edmond Albius, 12 años" revista="isla Reunión · océano Índico" y={380} />
+      <Chip T={T} at={K.A + 3.6} until={K.F - 0.3} texto="polinización a mano" y={1430} tam={42} borde={KC.gold} />
+      <Etiqueta T={T} at={K.A + 4.0} until={K.F - 0.3} x={60} y={1500} texto="niño esclavizado · dibujo esquemático" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.F + 0.2} until={K.To - 0.2} texto="1 flor = 1 día" y={1420} tam={46} borde={KC.yellow} />
+      <NumeroGigante T={T} at={K.To + 0.2} until={K.Ci - 0.3} valor={60000} dur={1.2} prefijo="≈ " sufijo=" t" etiqueta="estimado 2024" x={400} y={640} tam={150} color={KC.yellow} />
+      {kvisible(T, K.To + 2.0, K.Ci - 0.3) && <div style={{ position:'absolute', left:90, top:1390, width:900, zIndex:41, display:'flex', justifyContent:'space-between', font:`700 28px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA, opacity:kprog(T, K.To + 2.0, K.To + 2.4) * (1 - kprog(T, K.Ci - 0.3, K.Ci + 0.1)) }}>
         <span>el resto (química y microbios)</span><span style={{ color:'#e0b48a' }}>vaina &lt;1 %</span></div>}
-      <Chip T={T} at={K.Ci + 0.5} until={K.Ou} texto="orquídea" x={760} y={860} tam={38} borde={KC.leaf} />
-      <Chip T={T} at={K.Ci + 1.1} until={K.Ou} texto="petróleo o madera" x={740} y={960} tam={38} borde="#9aa3b5" />
-      <Chip T={T} at={K.Ci + 1.7} until={K.Ou} texto="microbio" x={760} y={1060} tam={38} borde={KC.mint} />
-      <Chip T={T} at={K.Ci + 0.3} until={K.Ou} texto="¿de dónde salió tu vainillina?" y={1500} tam={38} borde={KC.gold2} />
+      <Chip T={T} at={K.Ci + 0.5} until={K.Ou} texto="orquídea" x={800} y={640} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={K.Ci + 1.1} until={K.Ou} texto="petróleo o madera" x={790} y={750} tam={38} borde="#9aa3b5" />
+      <Chip T={T} at={K.Ci + 1.7} until={K.Ou} texto="microbio" x={800} y={860} tam={38} borde={KC.mint} />
+      <Chip T={T} at={K.Ci + 0.3} until={K.Ou} texto="¿de dónde salió tu vainillina?" y={420} tam={38} borde={KC.gold2} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.05} until={K.O - 0.1} texto="Menos del *1 %* sale de la vaina." />

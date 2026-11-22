@@ -220,7 +220,7 @@ function NaranjaShot() {
   const FIN = K.Ou + 4;
   // gancho: el dedo toca la naranja y se acerca la cámara a la mancha
   const toque = kprog(T, K.G + 0.2, K.G + 0.5, kEase.sale) * (1 - kprog(T, K.G + 0.7, K.G + 1.1));
-  const zoomG = 1 + 0.6 * kprog(T, K.G + 1.4, K.G + 3.2, kEase.suave);
+  const zoomG = 1 + 0.4 * kprog(T, K.G + 1.4, K.G + 3.2, kEase.suave);
   const caida = kprog(T, K.H, K.H + 0.6, kEase.sale);
   const corte = kprog(T, K.H + 1.2, K.H + 1.6);
   const germ = kprog(T, K.A + 2.2, K.A + 3.6, kEase.sale);
@@ -233,14 +233,14 @@ function NaranjaShot() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.02}>
         <FondoLunares color={KC.yellow} />
         <div style={{ position:'absolute', inset:0, transform:`scale(${zoomG})`, transformOrigin:'540px 1010px' }}>
-          {fsvg(<>
+          {fsvg(<g transform="translate(540 1000) scale(1.3) translate(-540 -1010)">
             <Frutero T={T} x={540} y={1060} mancha={1} />
             <NubeEsporas x={560} y={1010} p={kprog(T, K.G + 0.35, K.G + 2.4)} dir={[0.3, -1]} dist={220} />
             <g transform={`translate(${klerp(-80, 330, toque)} 990)`}>
               <rect x={-420} y={-40} width={420} height={80} rx={40} fill="#f2c29b" stroke={KC.ink} strokeWidth={7} />
               <ellipse cx={-30} cy={-6} rx={22} ry={16} fill="#ffe3d0" stroke={KC.ink} strokeWidth={3} />
             </g>
-          </>)}
+          </g>)}
         </div>
         {fsvg(<g opacity={kprog(T, K.G + 2.3, K.G + 2.7)}>
           <circle cx={300} cy={620} r={200} fill={KC.noche} stroke={KC.white} strokeWidth={10} />
@@ -266,7 +266,7 @@ function NaranjaShot() {
       <Escena T={T} a={K.A} b={K.E}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 940) scale(1.2) translate(-540 -920)">
           <path d="M 0 700 L 380 700 L 540 980 L 700 700 L 1080 700 L 1080 1200 L 0 1200 Z" fill="#b5631a" opacity=".55" stroke={KC.ink} strokeWidth={6} />
           <ellipse cx={330} cy={860} rx={170} ry={120} fill={NJ.glandula} stroke={KC.ink} strokeWidth={7} opacity=".85" />
           <path d="M 470 830 L 520 870 L 480 900" stroke={KC.ink} strokeWidth={8} fill="none" />
@@ -275,7 +275,7 @@ function NaranjaShot() {
           {Array.from({ length: 10 }, (_, i) => { const u = ((T - K.A) * 0.4 + i / 10) % 1; const on = kprog(T, K.A + 1.0, K.A + 1.5);
             return <rect key={i} x={560 + (i % 5) * 34} y={900 - u * 160} width={14} height={14} fill="#fff" stroke={KC.ink} strokeWidth={2} opacity={on * (1 - u)} transform={`rotate(${i * 20} ${567 + (i % 5) * 34} ${907 - u * 160})`} />; })}
           <Espora x={klerp(700, 560, kprog(T, K.A + 1.2, K.A + 2.2, kEase.sale))} y={klerp(420, 940, kprog(T, K.A + 1.2, K.A + 2.2, kEase.sale))} s={1.5} rot={-20} tubo={germ} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · acidifica y suelta enzimas: las paredes de las células se deshacen */}
       <Escena T={T} a={K.E} b={K.P}>
@@ -318,38 +318,38 @@ function NaranjaShot() {
       <Escena T={T} a={K.Q} b={K.Em} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Naranja x={300} y={960} r={210} seed={70} brillo={1} T={T} />
-          <Interrogacion T={T} x={290} y={700} tam={340} />
+          <Naranja x={540} y={1010} r={280} seed={70} brillo={1} T={T} />
+          <Interrogacion T={T} x={540} y={580} tam={340} />
         </>)}
       </Escena>
       {/* 8–9 · la empacadora y la cera */}
       <Escena T={T} a={K.Em} b={K.Ce}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Empacadora T={T} a={K.Em} />)}
+        {fsvg(<g transform="translate(540 990) scale(1.15) translate(-574 -930)"><Empacadora T={T} a={K.Em} /></g>)}
       </Escena>
       <Escena T={T} a={K.Ce} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 980) scale(1.35) translate(-420 -900)">
           <Naranja x={420} y={900} r={240} seed={71} brillo={1} T={T} />
           {Array.from({ length: 7 }, (_, i) => { const a = -2.6 + i * 0.55; const u = ((T - K.Ce) * 0.9 + i / 7) % 1; const rr = 240 + Math.sin(u * Math.PI) * 50;
             return <path key={i} d="M 0 -16 Q 11 2 0 14 Q -11 2 0 -16 Z" transform={`translate(${420 + Math.cos(a) * rr} ${900 + Math.sin(a) * rr}) rotate(${a * 57 + 90})`} fill="#7fd6ff" stroke={KC.ink} strokeWidth={3} opacity={kprog(T, K.Ce + 0.3, K.Ce + 0.6)} />; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 10–11 · el estudio de 1997 en Fresno, California */}
       <Escena T={T} a={K.Es} b={K.Ai}>
         <FondoLunares color={T < K.B ? KC.cyan : KC.mint} />
         {fsvg(<>
-          {T < K.B + 0.3 && <g opacity={1 - kprog(T, K.B - 0.2, K.B + 0.3)}>
-            {[0, 1, 2, 3, 4].map((i) => { const on = kprog(T, K.Es + 1.4 + i * 0.15, K.Es + 1.8 + i * 0.15, kEase.rebote); return on > 0 ? <g key={i} transform={`translate(${150 + i * 195} 1010) scale(${on})`}>
+          {T < K.B + 0.3 && <g opacity={1 - kprog(T, K.B - 0.2, K.B + 0.3)} transform="translate(540 1050) scale(1.0) translate(-540 -1010)">
+            {[0, 1, 2, 3, 4].map((i) => { const on = kprog(T, K.Es + 0.2 + i * 0.1, K.Es + 0.6 + i * 0.1, kEase.rebote); return on > 0 ? <g key={i} transform={`translate(${150 + i * 195} 1010) scale(${on})`}>
               <Naranja x={0} y={0} r={80} seed={80 + i} raspon={1} mpos={[0, -0.3]} />
               {Array.from({ length: 5 }, (_, q) => { const u = kprog(T, K.Es + 2.4 + q * 0.1, K.Es + 3.0 + q * 0.1); return <circle key={q} cx={-20 + q * 10} cy={-24 - (1 - u) * 160} r={6} fill={NJ.olivo2} stroke={KC.ink} strokeWidth={2} opacity={u > 0 ? 1 : 0} />; })}
             </g> : null; })}
           </g>}
-          {T > K.B - 0.3 && T < K.B + 3.4 && <g opacity={kprog(T, K.B - 0.3, K.B + 0.2) * (1 - kprog(T, K.B + 3.0, K.B + 3.4))}>
+          {T > K.B - 0.3 && T < K.B + 3.4 && <g opacity={kprog(T, K.B - 0.3, K.B + 0.2) * (1 - kprog(T, K.B + 3.0, K.B + 3.4))} transform="translate(560 980) scale(1.18) translate(-510 -900)">
             <Tina T={T} x={420} y={900} naranjas={kprog(T, K.B + 1.2, K.B + 1.8, kEase.sale)} />
             <Termometro x={860} y={960} nivel={0.65} />
           </g>}
-          {T > K.B + 3.0 && <g opacity={kprog(T, K.B + 3.0, K.B + 3.4)}>
+          {T > K.B + 3.0 && <g opacity={kprog(T, K.B + 3.0, K.B + 3.4)} transform="translate(540 990) scale(1.0) translate(-540 -900)">
             <Caja x={280} y={840} podridas={[0, 2, 3, 4]} etiqueta="sin baño" T={T} />
             <Caja x={800} y={840} podridas={[4]} etiqueta="con baño" color="#7fc28a" T={T} />
           </g>}
@@ -358,17 +358,17 @@ function NaranjaShot() {
       {/* 12 · las esporas viajan por el aire */}
       <Escena T={T} a={K.Ai} b={K.C} zoom={0.03}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1000) scale(1.3) translate(-540 -1010)">
           <Frutero T={T} x={540} y={1060} mancha={1} raspones={1} />
           <NubeEsporas x={520} y={1000} p={kprog(T, K.Ai + 0.3, K.Ai + 4.4)} n={60} dir={[0, -1]} dist={260} seed={12} />
           <NubeEsporas x={520} y={1000} p={kprog(T, K.Ai + 0.8, K.Ai + 4.6)} n={30} dir={[-1.2, -0.3]} dist={300} seed={13} />
           <NubeEsporas x={520} y={1000} p={kprog(T, K.Ai + 1.0, K.Ai + 4.6)} n={30} dir={[1.2, -0.3]} dist={300} seed={14} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 13 · cierre: el mismo frutero; la herida por dentro y la naranja sale del frutero */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Frutero T={T} x={540} y={1060} mancha={1} herida={kprog(T, K.C + 0.3, K.C + 1.3)} sale={kprog(T, K.C + 2.2, K.C + 3.6)} />)}
+        {fsvg(<g transform="translate(540 1000) scale(1.3) translate(-540 -1010)"><Frutero T={T} x={540} y={1060} mancha={1} herida={kprog(T, K.C + 0.3, K.C + 1.3)} sale={kprog(T, K.C + 2.2, K.C + 3.6)} /></g>)}
       </Escena>
 
       {/* textos */}
@@ -410,18 +410,20 @@ function NaranjaShot() {
       <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="entró por una herida" x={360} y={470} tam={38} borde={KC.red} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={200} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={260} />
       <BarraEscala T={T} at={K.H} until={K.H + 1.4} texto="5 cm" largo={200} />
       <BarraEscala T={T} at={K.H + 1.4} until={K.A} texto="1 mm" largo={90} />
-      <BarraEscala T={T} at={K.A} until={K.P} texto="10 µm" largo={80} />
+      <BarraEscala T={T} at={K.A} until={K.E} texto="10 µm" largo={96} />
+      <BarraEscala T={T} at={K.E} until={K.P} texto="10 µm" largo={80} />
       <BarraEscala T={T} at={K.P} until={K.Az} texto="5 cm" largo={140} />
       <BarraEscala T={T} at={K.Az} until={K.Q} texto="5 cm" largo={180} />
-      <BarraEscala T={T} at={K.Q} until={K.Em} texto="5 cm" largo={170} />
-      <BarraEscala T={T} at={K.Em} until={K.Ce} texto="10 cm" largo={160} />
-      <BarraEscala T={T} at={K.Ce} until={K.Es} texto="5 cm" largo={160} />
+      <BarraEscala T={T} at={K.Q} until={K.Em} texto="5 cm" largo={227} />
+      <BarraEscala T={T} at={K.Em} until={K.Ce} texto="10 cm" largo={184} />
+      <BarraEscala T={T} at={K.Ce} until={K.Es} texto="5 cm" largo={216} />
       <BarraEscala T={T} at={K.Es} until={K.B} texto="10 cm" largo={160} />
-      <BarraEscala T={T} at={K.B} until={K.Ai} texto="10 cm" largo={170} />
-      <BarraEscala T={T} at={K.Ai} until={K.Ou} texto="5 cm" largo={200} />
+      <BarraEscala T={T} at={K.B} until={K.B + 3.2} texto="10 cm" largo={201} />
+      <BarraEscala T={T} at={K.B + 3.2} until={K.Ai} texto="10 cm" largo={170} />
+      <BarraEscala T={T} at={K.Ai} until={K.Ou} texto="5 cm" largo={260} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No es polvo: *son esporas.*" />

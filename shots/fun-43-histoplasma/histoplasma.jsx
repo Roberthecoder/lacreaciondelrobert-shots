@@ -5,7 +5,7 @@
 // levaduras 2–4 µm (óvalos de ~45 × 33 px), macrófago ~20 µm (r ≈ 150–170 px).
 
 const HP = { roca:'#4a3b52', roca2:'#2c2233', cueva:'#1d1624', piso:'#5b3a22', guano:'#2a1a10', polvo:'#d9c3a0', espora:'#fff2a8',
-  hifa:'#fff4d6', levadura:'#ffd166', macro:'#c9a7f0', macro2:'#9a76c9', agua:'#36d6d0', piedra:'#d8c9a6', piedra2:'#b9a782' };
+  hifa:'#fff4d6', levadura:'#ffd166', macro:'#c9a7f0', macro2:'#9a76c9', agua:'#36d6d0', piedra:'#6a604c', piedra2:'#4e4636' };
 
 // Murciélago colgado de cabeza (alas plegadas). (x, y) = patas en el techo.
 function Murcielago({ T, x, y, s = 1, seed = 1 }) {
@@ -138,7 +138,7 @@ function Cenote({ T, x = 0, y = 0, nadadores = 0, cerrado = 0, seed = 5 }) {
     {cerrado > 0 && <g opacity={kprog(cerrado, 0, 0.3)}>
       {[[-14, 0], [12, 1]].map(([rot, k]) => <g key={k} transform={`translate(540 ${770 + k * 50}) rotate(${rot}) scale(${kprog(cerrado, k * 0.25, k * 0.25 + 0.4, kEase.sale)} 1)`}>
         <rect x={-560} y={-30} width={1120} height={60} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
-        {Array.from({ length: 28 }, (_, i) => <path key={i} d={`M ${-560 + i * 40} 30 L ${-540 + i * 40} -30 L ${-525 + i * 40} -30 L ${-545 + i * 40} 30 Z`} fill={KC.ink} opacity=".85" />)}
+        {Array.from({ length: 28 }, (_, i) => <path key={i} d={`M ${-560 + i * 40} 30 L ${-540 + i * 40} -30 L ${-525 + i * 40} -30 L ${-545 + i * 40} 30 Z`} fill="#0b1020" opacity=".85" />)}
       </g>)}
     </g>}
   </g>;
@@ -160,21 +160,21 @@ function HistoplasmaShot() {
       {/* 1 · gancho: la bota pisa el piso de la cueva y levanta polvo */}
       <Escena T={T} a={K.G} b={K.H} zoom={0.06} origen="45% 60%">
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Cueva T={T} pisa={K.G + 0.35} esporas={kprog(T, K.G + 3.2, K.G + 4.0)} seed={3} />)}
+        {fsvg(<g transform="translate(540 950) scale(1.45) translate(-540 -725)"><Cueva T={T} pisa={K.G + 0.35} esporas={kprog(T, K.G + 3.2, K.G + 4.0)} seed={3} /></g>)}
       </Escena>
       {/* 2 · al microscopio: hifas con microconidias y macroconidias */}
       <Escena T={T} a={K.H} b={K.A} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1010) scale(1.25) translate(-540 -860)">
           <HifaHisto T={T} x1={-40} y1={1000} x2={700} y2={700} p={kprog(T, K.H, K.H + 1.6)} at={K.H} micro={[[0.12, 1], [0.24, -1], [0.38, 1], [0.5, -1], [0.66, 1], [0.8, -1]]} macro={[[0.58, -1]]} />
           <HifaHisto T={T} x1={1120} y1={830} x2={560} y2={1010} p={kprog(T, K.H + 0.4, K.H + 2.0)} at={K.H + 0.4} micro={[[0.15, -1], [0.3, 1], [0.48, -1], [0.62, 1]]} macro={[[0.85, 1]]} onda={14} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 3 · otra pisada: las esporas suben al aire */}
       <Escena T={T} a={K.A} b={K.Pu} zoom={0.08} origen="45% 55%">
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Cueva T={T} pisa={K.A + 0.25} esporas={1} seed={9} />)}
+        {fsvg(<g transform="translate(540 950) scale(1.45) translate(-540 -725)"><Cueva T={T} pisa={K.A + 0.25} esporas={1} seed={9} /></g>)}
       </Escena>
       {/* 4 · las respiras: bajan hasta los alvéolos */}
       <Escena T={T} a={K.Pu} b={K.Ca} zoom={0.06} origen="50% 60%">
@@ -198,24 +198,32 @@ function HistoplasmaShot() {
         <div style={{ position:'absolute', inset:0, background:'#2a0f1e' }}></div>
         <Ambiente T={T} n={14} color="rgba(255,180,200,.3)" />
         {fsvg(<>
+          <g transform="translate(540 1000) scale(1.12) translate(-540 -880)">
           <circle cx={540} cy={880} r={380} fill="rgba(255,143,168,.12)" stroke="#ff8fa8" strokeWidth={14} />
           {[[400, 760], [620, 720], [520, 900], [700, 960], [380, 1000]].map(([x, y], i) => { const v = kprog(T, K.Ca + 1.0 + i * 0.15, K.Ca + 2.0 + i * 0.15, kEase.suave);
             return <g key={i}>
               {v < 1 && <circle cx={x} cy={y} r={21} fill="#fffbe6" stroke={KC.ink} strokeWidth={4} opacity={1 - v} />}
               {v > 0 && <LevaduraH x={x} y={y + Math.sin(T * 2 + i) * 4} s={v} yema={kprog(T, K.Ca + 2.4 + i * 0.1, K.Ca + 3.2 + i * 0.1)} rot={i * 50} />}
             </g>; })}
+          </g>
         </>)}
       </Escena>
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.M} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Interrogacion T={T} x={300} y={1080} />)}
+        {fsvg(<>
+          <g transform="translate(540 1000) scale(1.12) translate(-540 -880)" opacity=".75">
+            <circle cx={540} cy={880} r={380} fill="rgba(255,143,168,.12)" stroke="#ff8fa8" strokeWidth={14} />
+            {[[400, 760], [620, 720], [520, 900], [700, 960], [380, 1000]].map(([x, y], i) => <LevaduraH key={i} x={x} y={y + Math.sin(T * 2 + i) * 4} yema={1} rot={i * 50} />)}
+          </g>
+          <Interrogacion T={T} x={540} y={1220} tam={560} />
+        </>)}
       </Escena>
       {/* 7 · el macrófago se las traga, pero adentro se multiplican y viajan */}
       <Escena T={T} a={K.M} b={K.S} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1000) scale(1.6) translate(-520 -955)">
           <path d={`M -40 ${1060 + 0} Q 400 ${980} 1120 ${1180}`} stroke="#5a1f2c" strokeWidth={180} fill="none" opacity={kprog(T, K.M + 3.4, K.M + 4.0)} />
           {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.25 + i / 6) % 1); return <circle key={i} cx={klerp(-40, 1120, u)} cy={klerp(1060, 1180, u) - 60 * Math.sin(u * Math.PI)} r={22} fill="#d6455a" opacity={0.7 * kprog(T, K.M + 3.4, K.M + 4.0)} />; })}
           <Macrofago T={T} cx={mcx} cy={mcy} r={165}>
@@ -227,15 +235,15 @@ function HistoplasmaShot() {
                 <LevaduraH x={x} y={y} s={nace} rot={i * 37} yema={i < 5 ? kprog(T, K.M + 2.2 + i * 0.3, K.M + 2.6 + i * 0.3) * (i % 2) : 0} />
               </g>; })}
           </Macrofago>
-        </>)}
+        </g>)}
       </Escena>
       {/* 8 · a casi todos no les pasa nada o algo leve */}
       <Escena T={T} a={K.S} b={K.E}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          {Array.from({ length: 20 }, (_, i) => { const on = kprog(T, K.S + 0.2 + i * 0.05, K.S + 0.5 + i * 0.05, kEase.rebote); const x = 140 + (i % 5) * 200, y = 720 + Math.floor(i / 5) * 128;
+          {Array.from({ length: 20 }, (_, i) => { const on = kprog(T, K.S + 0.2 + i * 0.05, K.S + 0.5 + i * 0.05, kEase.rebote); const x = 140 + (i % 5) * 200, y = 800 + Math.floor(i / 5) * 150;
             const leve = i === 6 || i === 13 || i === 17; const mk = kprog(T, K.S + 1.4 + i * 0.04, K.S + 1.7 + i * 0.04, kEase.rebote);
-            return on > 0 ? <g key={i}><PersonaH x={x} y={y} s={on * 0.85} mal={leve ? 0.6 : 0} color={leve ? '#ffb38a' : '#8fb6ff'} />
+            return on > 0 ? <g key={i}><PersonaH x={x} y={y} s={on * 1.0} mal={leve ? 0.6 : 0} color={leve ? '#ffb38a' : '#8fb6ff'} />
               {mk > 0 && !leve && <path d={`M ${x + 30} ${y - 70} l 12 14 l 24 -30`} stroke="#1f9e3a" strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" transform={`translate(0 0) scale(1)`} opacity={mk} />}
               {mk > 0 && leve && <g transform={`translate(${x + 52} ${y - 80}) scale(${mk})`}>
                 {i === 6 && <><rect x={-6} y={-30} width={12} height={40} rx={6} fill="#fff" stroke={KC.ink} strokeWidth={3} /><rect x={-3} y={-12} width={6} height={22} fill={KC.red} /><circle cy={14} r={11} fill={KC.red} stroke={KC.ink} strokeWidth={3} /></>}
@@ -248,28 +256,28 @@ function HistoplasmaShot() {
       {/* 9 · el estudio: abril de 2024, un cenote de la península de Yucatán */}
       <Escena T={T} a={K.E} b={K.En} zoom={0.05} origen="50% 70%">
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Cenote T={T} y={-130} nadadores={kprog(T, K.E + 2.0, K.E + 4.0)} seed={5} />)}
+        {fsvg(<g transform="translate(540 1100) scale(1.3) translate(-540 -900)"><Cenote T={T} y={-130} nadadores={kprog(T, K.E + 2.0, K.E + 4.0)} seed={5} /></g>)}
       </Escena>
       {/* 10 · 2–3 semanas después: 3 confirmados y 1 sospechoso */}
       <Escena T={T} a={K.En} b={K.Ce}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
-          {Array.from({ length: 21 }, (_, i) => { const on = kprog(T, K.En + 0.3 + i * 0.07, K.En + 0.5 + i * 0.07); const x = 110 + (i % 7) * 82, y = 560 + Math.floor(i / 7) * 82; const marca = i >= 14;
+        {fsvg(<g transform="translate(540 960) scale(1.2) translate(-540 -800)">
+          {Array.from({ length: 21 }, (_, i) => { const on = kprog(T, K.En + 0.3 + i * 0.07, K.En + 0.5 + i * 0.07); const x = 253 + (i % 7) * 82, y = 560 + Math.floor(i / 7) * 82; const marca = i >= 14;
             return on > 0 ? <g key={i} opacity={on}><rect x={x} y={y} width={70} height={70} rx={10} fill={marca ? KC.red : '#fff'} stroke={KC.ink} strokeWidth={5} />
               <text x={x + 35} y={y + 46} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={marca ? '#fff' : KC.ink}>{i + 1}</text></g> : null; })}
-          {[0, 1, 2, 3].map((i) => { const on = kprog(T, K.En + 2.2 + i * 0.2, K.En + 2.5 + i * 0.2, kEase.rebote); const x = 210 + i * 220, y = 970; const conf = i < 3;
+          {[0, 1, 2, 3].map((i) => { const on = kprog(T, K.En + 2.2 + i * 0.2, K.En + 2.5 + i * 0.2, kEase.rebote); const x = 230 + i * 207, y = 970; const conf = i < 3;
             const tag = kprog(T, K.En + 3.0 + i * 0.3, K.En + 3.3 + i * 0.3, kEase.rebote);
             return on > 0 ? <g key={i}><PersonaH x={x} y={y} s={on * 1.3} mal={0.7} color="#8fb6ff" />
               {tag > 0 && <g transform={`translate(${x} ${y + 70}) scale(${tag}) rotate(-6)`}>
                 <rect x={-100} y={-26} width={200} height={52} rx={12} fill={conf ? KC.red : KC.paper} stroke={KC.ink} strokeWidth={5} />
                 <text y={10} textAnchor="middle" style={{ font:`900 28px ${KF.texto}` }} fill={conf ? '#fff' : KC.ink}>{conf ? 'confirmado' : 'sospechoso'}</text></g>}
             </g> : null; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 11 · otro cenote de la zona, cerrado desde 2019 */}
       <Escena T={T} a={K.Ce} b={K.N} zoom={0.05} origen="50% 45%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<Cenote T={T} y={-130} cerrado={kprog(T, K.Ce + 0.6, K.Ce + 2.0)} seed={8} />)}
+        {fsvg(<g transform="translate(540 1100) scale(1.3) translate(-540 -900)"><Cenote T={T} y={-130} cerrado={kprog(T, K.Ce + 0.6, K.Ce + 2.0)} seed={8} /></g>)}
       </Escena>
       {/* 12 · el nombre: "capsulatum" por un halo que parecía cápsula */}
       <Escena T={T} a={K.N} b={K.C} zoom={0.06}>
@@ -282,56 +290,56 @@ function HistoplasmaShot() {
       {/* 13 · cierre: la misma cueva y la misma bota; el polvo lleva esporas rumbo a una nariz */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="45% 60%">
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
-          <Cueva T={T} pisa={K.C + 0.3} esporas={1} seed={3} hacia={{ at: K.C + 1.6, x: 905, y: 905 }} />
-          <g opacity={kprog(T, K.C + 0.8, K.C + 1.3)}>
+        {fsvg(<g transform="translate(540 950) scale(1.45) translate(-540 -725)">
+          <Cueva T={T} pisa={K.C + 0.3} esporas={1} seed={3} hacia={{ at: K.C + 1.6, x: 800, y: 905 }} />
+          <g opacity={kprog(T, K.C + 0.8, K.C + 1.3)} transform="translate(-105 0)">
             <path d="M 1100 760 Q 980 770 960 860 Q 920 880 905 905 Q 930 930 955 935 Q 950 1010 1010 1060 L 1100 1060 Z" fill="#f2c29b" stroke={KC.ink} strokeWidth={7} />
             <circle cx={1000} cy={840} r={8} fill={KC.ink} />
           </g>
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.6} until={K.H - 0.3} texto="no es solo tierra: puede ser guano" x={400} y={1040} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.G + 2.4} until={K.H - 0.3} x={170} y={650} texto="murciélagos" tam={30} />
+      <Chip T={T} at={K.G + 1.6} until={K.H - 0.3} texto="no es solo tierra: puede ser guano" x={540} y={400} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.G + 2.4} until={K.H - 0.3} x={640} y={640} texto="murciélagos" tam={30} />
       <Chip T={T} at={K.H + 0.3} until={K.A - 0.3} texto="AL MICROSCOPIO · moho" x={360} y={420} tam={30} borde={KC.cyan} mono />
       <Etq T={T} at={K.H + 0.9} until={K.A - 0.3} x={60} y={520} texto="Histoplasma capsulatum" it tam={38} />
       <Etq T={T} at={K.H + 1.5} until={K.A - 0.3} x={60} y={580} texto="vive en el guano" tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.H + 1.9} until={K.A - 0.3} x={60} y={1110} texto="microconidias 2–4 µm (lisas)" tam={28} color="#fffbe6" />
-      <Etq T={T} at={K.H + 2.5} until={K.A - 0.3} x={1040} y={1010} lado="izq" texto="macroconidia 8–15 µm" tam={28} color="#f3dcae" />
-      <Chip T={T} at={K.A + 1.2} until={K.Pu - 0.2} texto="esporas de 2–4 µm: no las ves" x={400} y={1040} tam={34} borde={KC.yellow} />
+      <Etq T={T} at={K.H + 1.9} until={K.A - 0.3} x={60} y={1330} texto="microconidias 2–4 µm (lisas)" tam={28} color="#fffbe6" />
+      <Etq T={T} at={K.H + 2.5} until={K.A - 0.3} x={600} y={1270} texto="macroconidia 8–15 µm" tam={26} color="#f3dcae" />
+      <Chip T={T} at={K.A + 1.2} until={K.Pu - 0.2} texto="esporas de 2–4 µm: no las ves" x={540} y={400} tam={34} borde={KC.yellow} />
       <Etq T={T} at={K.Pu + 0.8} until={K.Ca - 0.2} x={760} y={980} texto="pulmones" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.2} until={K.Ca + 1.4} texto="en el suelo: moho" x={540} y={430} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.Ca + 1.6} until={K.P - 0.2} texto="a 37 °C, en tu cuerpo: levadura" x={540} y={430} tam={36} borde={KC.gold} />
-      <Etq T={T} at={K.Ca + 0.5} until={K.P - 0.2} x={940} y={540} lado="izq" texto="POR DENTRO · pulmón" tam={28} color="#ff8fa8" />
-      <Etq T={T} at={K.M + 0.8} until={K.S - 0.2} x={40} y={680} texto="macrófago (defensa)" tam={30} color={HP.macro} />
-      <Etq T={T} at={K.M + 1.6} until={K.S - 0.2} x={40} y={1110} texto="levaduras de 2–4 µm" tam={28} color={HP.levadura} />
+      <Etq T={T} at={K.Ca + 0.5} until={K.P - 0.2} x={1040} y={530} lado="izq" texto="POR DENTRO · pulmón" tam={28} color="#ff8fa8" />
+      <Etq T={T} at={K.M + 0.8} until={K.S - 0.2} x={40} y={600} texto="macrófago (defensa)" tam={30} color={HP.macro} />
+      <Etq T={T} at={K.M + 1.6} until={K.S - 0.2} x={40} y={1330} texto="levaduras de 2–4 µm" tam={28} color={HP.levadura} />
       <Chip T={T} at={K.M + 2.3} until={K.M + 3.8} texto="adentro se multiplica" x={400} y={460} tam={34} borde={KC.gold} />
       <Chip T={T} at={K.M + 4.0} until={K.S - 0.2} texto="y viaja dentro de él" x={400} y={460} tam={34} borde={KC.red} />
       <Chip T={T} at={K.S + 0.4} until={K.E - 0.2} texto="casi todos: nada o algo leve" x={400} y={470} tam={34} borde={KC.leaf} />
       <Chip T={T} at={K.S + 2.0} until={K.E - 0.2} texto="fiebre · tos · cansancio" x={400} y={570} tam={32} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.6} anio="2024" quien="abril · cenote de la península de Yucatán" revista="4 turistas · CCDR (Canadá), 2025" y={470} />
-      <Etq T={T} at={K.E + 3.8} until={K.En - 0.2} x={1000} y={690} lado="izq" texto="murciélagos en el techo" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.E + 4.2} until={K.En - 0.2} texto="4 turistas nadaron aquí" x={380} y={470} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.En + 0.2} until={K.Ce - 0.2} texto="2–3 semanas después" x={380} y={460} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Ce + 2.0} until={K.N - 0.2} texto="CERRADO desde 2019 · CCDR 2025" x={380} y={470} tam={30} fondo={KC.yellow} color={KC.ink} borde={KC.ink} />
-      <Etq T={T} at={K.Ce + 0.6} until={K.Ce + 1.9} x={40} y={470} texto="otro cenote de la zona" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.6} anio="2024" quien="abril · cenote de la península de Yucatán" revista="4 turistas · CCDR (Canadá), 2025" x={480} y={340} />
+      <Etq T={T} at={K.E + 3.8} until={K.En - 0.2} x={300} y={930} texto="murciélagos en el techo" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.E + 4.2} until={K.En - 0.2} texto="4 turistas nadaron aquí" x={540} y={330} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.En + 0.2} until={K.Ce - 0.2} texto="2–3 semanas después" x={540} y={460} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Ce + 2.0} until={K.N - 0.2} texto="CERRADO desde 2019 · CCDR 2025" x={540} y={330} tam={30} fondo={KC.yellow} color="#0b1020" borde="#0b1020" />
+      <Etq T={T} at={K.Ce + 0.6} until={K.Ce + 1.9} x={40} y={330} texto="otro cenote de la zona" tam={30} color={KC.ink} />
       <Chip T={T} at={K.N + 0.2} until={K.C - 0.2} texto="capsulatum = “con cápsula”" x={400} y={440} tam={34} borde={KC.gold} />
       <MitoTachado T={T} at={K.N + 0.8} tacharEn={K.N + 1.7} until={K.C - 0.2} texto="cápsula" x={300} y={560} tam={46} />
       <Etq T={T} at={K.N + 1.9} until={K.C - 0.2} x={1040} y={1100} lado="izq" texto="solo un halo claro" tam={30} color="#e8f4ff" />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="no es solo tierra: puede ser guano" x={400} y={1040} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="no es solo tierra: puede ser guano" x={540} y={400} tam={34} borde={KC.gold} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="1 m" largo={160} />
-      <BarraEscala T={T} at={K.H} until={K.A} texto="10 µm" largo={150} />
-      <BarraEscala T={T} at={K.A} until={K.Pu} texto="1 m" largo={160} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="1 m" largo={232} />
+      <BarraEscala T={T} at={K.H} until={K.A} texto="10 µm" largo={188} />
+      <BarraEscala T={T} at={K.A} until={K.Pu} texto="1 m" largo={232} />
       <BarraEscala T={T} at={K.Pu} until={K.Ca} texto="10 cm" largo={140} />
-      <BarraEscala T={T} at={K.Ca} until={K.P} texto="10 µm" largo={150} />
-      <BarraEscala T={T} at={K.M} until={K.S} texto="10 µm" largo={150} />
-      <BarraEscala T={T} at={K.E} until={K.En} texto="10 m" largo={180} />
-      <BarraEscala T={T} at={K.Ce} until={K.N} texto="10 m" largo={180} />
+      <BarraEscala T={T} at={K.Ca} until={K.P} texto="10 µm" largo={168} />
+      <BarraEscala T={T} at={K.M} until={K.S} texto="10 µm" largo={240} />
+      <BarraEscala T={T} at={K.E} until={K.En} texto="10 m" largo={234} />
+      <BarraEscala T={T} at={K.Ce} until={K.N} texto="10 m" largo={234} />
       <BarraEscala T={T} at={K.N} until={K.C} texto="10 µm" largo={150} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m" largo={160} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m" largo={232} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No es solo tierra: *puede ser guano.*" />

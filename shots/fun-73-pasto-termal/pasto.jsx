@@ -2,7 +2,7 @@
 // Shot Fungi Mati #73 · Este pasto no aguanta el calor solo: lo salva el virus de un hongo — NARRADO (gancho 1 "Esto no es X: es Y").
 // Guion y fuentes: guion.md · verificacion.md (Márquez et al. 2007, Science; Redman et al. 1999). El dibujo es esquemático.
 
-const PX = { verde:'#2f9e44', verde2:'#56c95f', seco:'#c9a13c', seco2:'#e0c46a', tierra:'#6b4222', tierra2:'#4a2c14', hifa:'#f3d9a4', virus:'#ff4fa0', vapor:'rgba(255,255,255,.75)', jit:'#e8392c' };
+const PX = { verde:'#2f9e44', verde2:'#56c95f', seco:'#c9a13c', seco2:'#e0c46a', tierra:'#4e3019', tierra2:'#34200e', hifa:'#f3d9a4', virus:'#ff4fa0', vapor:'rgba(255,255,255,.75)', jit:'#e8392c' };
 
 // Mata de pasto (Dichanthelium, esquemático). Base en (x, y). salud 1 = verde y derecho · 0 = seco y doblado.
 function Pasto({ T = 0, x, y, s = 1, salud = 1, seed = 1, n = 15, alto = 320 }) {
@@ -21,6 +21,8 @@ function Pasto({ T = 0, x, y, s = 1, salud = 1, seed = 1, n = 15, alto = 320 }) 
       return <g key={'p' + i} opacity={salud}>{[0, 1, 2, 3].map((q) => <circle key={q} cx={tx + q * 7 * b.lado} cy={-b.h * 0.95 - 14 - q * 12} r={6} fill={PX.seco2} stroke={KC.ink} strokeWidth={2.5} />)}</g>; })}
   </g>;
 }
+// Encuadre cine: la mata, el suelo y el termómetro juntos, ×1.6 y centrados (pasto de y≈510 a y≈1100, suelo hasta abajo).
+const CAM = 'translate(500 960) scale(1.6) translate(-400 -830)';
 // Raíces bajo la mata.
 function Raices({ x, y, s = 1, color = '#e9d3a8' }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`} stroke={color} strokeWidth={6} fill="none" strokeLinecap="round">
@@ -108,13 +110,13 @@ function PastoShot() {
       {/* 1 · gancho: el pasto en el suelo humeante; la lupa deja ver el hongo y el virus */}
       <Escena T={T} a={K.G} b={K.L} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform={CAM}>
           <Suelo T={T} y={920} vapor={1} />
           <Raices x={420} y={922} s={1} />
           <Pasto T={T} x={420} y={922} s={1.05} seed={4} />
           <Termo x={150} y={1010} valor={klerp(30, 65, kprog(T, K.G, K.G + 2.2, kEase.sale))} />
-        </>)}
-        <Lupa T={T} at={K.G + 2.4} until={K.L - 0.2} x={790} y={760} r={190} fx={440} fy={1010} tinte={KC.pink} etiqueta="POR DENTRO · RAÍZ"
+        </g>)}
+        <Lupa T={T} at={K.G + 2.4} until={K.L - 0.2} x={830} y={1250} r={190} fx={564} fy={1248} tinte={KC.pink} etiqueta="POR DENTRO · RAÍZ"
           interior={(TT, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#1d3a1c" />
             {[0, 1, 2].map((f) => [0, 1, 2, 3].map((c) => <rect key={f + '-' + c} x={c * 100 - (f % 2) * 50 - 10} y={f * 130 + 6} width={90} height={118} rx={16} fill="#3f6b3a" stroke="#79c46f" strokeWidth={3} />))}
             <Hifa T={TT} x={10} y={r} largo={r * 2 - 20} g={kprog(TT, K.G + 2.6, K.G + 3.6)} amp={22} virus={kprog(TT, K.G + 3.3, K.G + 4.0)} nv={6} ancho={24} />
@@ -124,7 +126,8 @@ function PastoShot() {
       <Escena T={T} a={K.L} b={K.E} zoom={0.06}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <path d="M -20 820 Q 200 700 420 780 Q 640 860 860 740 Q 980 690 1100 720 L 1100 1300 L -20 1300 Z" fill="#c9b48a" stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(540 1000) scale(1.25) translate(-540 -960)">
+          <path d="M -20 820 Q 200 700 420 780 Q 640 860 860 740 Q 980 690 1100 720 L 1100 1500 L -20 1500 Z" fill="#7d6c4e" stroke={KC.ink} strokeWidth={8} />
           {[[300, 960, 150], [760, 1010, 120]].map(([a, b, r], i) => <g key={i}>
             <ellipse cx={a} cy={b} rx={r + 26} ry={(r + 26) * 0.32} fill={KC.orange} stroke={KC.ink} strokeWidth={6} />
             <ellipse cx={a} cy={b} rx={r} ry={r * 0.32} fill="#3fd1e0" stroke={KC.ink} strokeWidth={5} />
@@ -133,6 +136,7 @@ function PastoShot() {
           {[[110, 1130, 0.5, 1], [520, 1140, 0.62, 2], [930, 1150, 0.5, 3], [600, 880, 0.38, 5]].map(([a, b, k, sd], i) =>
             <Pasto key={i} T={T} x={a} y={b} s={k * kprog(T, K.L + 0.3 + i * 0.25, K.L + 1.0 + i * 0.25, kEase.rebote)} seed={sd} />)}
           <Termo x={870} y={1110} s={0.7} valor={klerp(20, 70, kprog(T, K.L + 1.6, K.L + 3.2, kEase.sale))} />
+          </g>
         </>)}
       </Escena>
       {/* 3 · por dentro: el hongo endófito entre las células de la raíz */}
@@ -140,15 +144,18 @@ function PastoShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
+          <g transform="translate(540 900) scale(1.5) translate(-540 -880)">
           <RaizCorte y={880} alto={360} />
           <Hifa T={T} x={-20} y={800} largo={1120} g={kprog(T, K.E + 0.2, K.E + 2.2)} amp={30} seed={1} virus={kprog(T, K.E + 2.0, K.E + 3.0)} nv={12} />
           <Hifa T={T} x={-20} y={960} largo={1120} g={kprog(T, K.E + 0.8, K.E + 2.8)} amp={26} seed={3} virus={kprog(T, K.E + 2.4, K.E + 3.4)} nv={12} />
+          </g>
         </>)}
       </Escena>
       {/* 4 · solos: ni el pasto ni el hongo arriba de 38 °C */}
       <Escena T={T} a={K.S} b={K.J} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
+          <g transform="translate(540 960) scale(1.2) translate(-485 -835)">
           {(() => { const m = kprog(T, K.S + 1.6, K.S + 3.0); return <>
             <rect x={60} y={880} width={420} height={150} rx={20} fill={PX.tierra} stroke={KC.ink} strokeWidth={7} />
             <Pasto T={T} x={270} y={882} s={0.8} salud={1 - m * 0.85} seed={6} />
@@ -157,42 +164,44 @@ function PastoShot() {
               <path key={i} d="M -60 -60 L 60 60 M 60 -60 L -60 60" transform={`translate(${a} ${b}) scale(${x})`} stroke={KC.red} strokeWidth={22} strokeLinecap="round" />; })}
           </>; })()}
           <Termo x={520} y={1030} s={0.7} valor={klerp(25, 38, kprog(T, K.S + 0.4, K.S + 1.6))} />
+          </g>
         </>)}
       </Escena>
       {/* 5 · juntos: 65 °C, 10 h al día, 2 semanas */}
       <Escena T={T} a={K.J} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<g transform={CAM}>
           <Suelo T={T} y={920} vapor={kprog(T, K.J + 0.3, K.J + 1.2)} />
           <Raices x={420} y={922} />
           <Pasto T={T} x={420} y={922} s={1.0} seed={4} />
           <Termo x={150} y={1010} valor={t65(K.J + 0.2, K.J + 1.4)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Pasto T={T} x={300} y={1180} s={1.1} seed={4} /><Interrogacion T={T} x={300} y={760} tam={380} /></>)}
+        {fsvg(<><Pasto T={T} x={540} y={1330} s={1.7} seed={4} /><Interrogacion T={T} x={540} y={680} tam={380} /></>)}
       </Escena>
       {/* 7 · el estudio: le quitan el virus al hongo (congelado) */}
       <Escena T={T} a={K.Es} b={K.SV}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<>
-          <Hifa T={T} x={80} y={900} largo={920} g={1} amp={20} seed={2} virus={1 - kprog(T, K.Es + 3.6, K.Es + 4.8)} nv={10} />
+          <Hifa T={T} x={80} y={960} largo={920} g={1} amp={34} seed={2} ancho={42} virus={1 - kprog(T, K.Es + 3.6, K.Es + 4.8)} nv={10} />
           {T > K.Es + 2.6 && Array.from({ length: 22 }, (_, i) => { const u = ((T - K.Es - 2.6) * 0.5 + i / 22) % 1; const o = kprog(T, K.Es + 2.6, K.Es + 3.0) * (1 - kprog(T, K.Es + 5.0, K.Es + 5.6));
-            return <text key={i} x={60 + (i * 47) % 960} y={720 + u * 380} style={{ font:`700 42px ${KF.mono}` }} fill="#bfe8ff" opacity={o * 0.85}>❄</text>; })}
+            return <text key={i} x={60 + (i * 47) % 960} y={760 + u * 420} style={{ font:`700 42px ${KF.mono}` }} fill="#bfe8ff" opacity={o * 0.85}>❄</text>; })}
           <rect x={80} y={1040} width={920} height={0} />
         </>)}
       </Escena>
       {/* 8 · sin virus: el pasto se seca */}
       <Escena T={T} a={K.SV} b={K.CV} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform={CAM}>
           <Suelo T={T} y={920} vapor={1} />
+          <Raices x={420} y={922} />
           <Pasto T={T} x={420} y={922} s={1.0} seed={4} salud={1 - kprog(T, K.SV + 0.3, K.SV + 2.2, kEase.suave)} />
           <Termo x={150} y={1010} valor={65} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 9 · con el virus de vuelta: fusión de hifas */}
       <Escena T={T} a={K.CV} b={K.Ji}>
@@ -201,12 +210,12 @@ function PastoShot() {
         {fsvg(<>
           {(() => { const f = kprog(T, K.CV + 0.3, K.CV + 1.4, kEase.sale), pasa = kprog(T, K.CV + 1.4, K.CV + 2.8);
             return <g>
-              <Hifa T={T} x={60} y={klerp(640, 760, f)} largo={460} g={1} amp={14} seed={1} virus={1} nv={7} />
-              <Hifa T={T} x={560} y={klerp(900, 790, f)} largo={460} g={1} amp={14} seed={4} virus={pasa} nv={7} />
-              {f > 0.95 && <circle cx={545} cy={772} r={30 + Math.sin(T * 8) * 4} fill="none" stroke={KC.gold2} strokeWidth={6} />}
-              {pasa > 0 && pasa < 1 && [0, 1, 2].map((q) => <circle key={q} cx={klerp(470, 640, (pasa * 3 + q * 0.33) % 1)} cy={780} r={8} fill={PX.virus} stroke={KC.ink} strokeWidth={2} />)}
+              <Hifa T={T} x={60} y={klerp(490, 610, f)} largo={460} g={1} amp={14} seed={1} virus={1} nv={7} />
+              <Hifa T={T} x={560} y={klerp(750, 640, f)} largo={460} g={1} amp={14} seed={4} virus={pasa} nv={7} />
+              {f > 0.95 && <circle cx={545} cy={622} r={30 + Math.sin(T * 8) * 4} fill="none" stroke={KC.gold2} strokeWidth={6} />}
+              {pasa > 0 && pasa < 1 && [0, 1, 2].map((q) => <circle key={q} cx={klerp(470, 640, (pasa * 3 + q * 0.33) % 1)} cy={630} r={8} fill={PX.virus} stroke={KC.ink} strokeWidth={2} />)}
             </g>; })()}
-          <g opacity={kprog(T, K.CV + 2.4, K.CV + 2.9)}>
+          <g opacity={klerp(0.4, 1, kprog(T, K.CV + 2.4, K.CV + 2.9))} transform="translate(540 1180) scale(1.5) translate(-250 -1075)">
             <rect x={60} y={1020} width={380} height={110} rx={18} fill={PX.tierra} stroke="#f6f3ec" strokeWidth={5} />
             <Pasto T={T} x={250} y={1022} s={0.7} seed={4} salud={kprog(T, K.CV + 2.6, K.CV + 3.8, kEase.sale)} />
             <Termo x={110} y={1100} s={0.45} valor={65} texto={false} />
@@ -216,16 +225,16 @@ function PastoShot() {
       {/* 10 · también en jitomate */}
       <Escena T={T} a={K.Ji} b={K.M} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.45) translate(-520 -800)">
           <Suelo T={T} y={920} vapor={1} />
           {[[230, 0], [520, 1], [810, 2]].map(([a, i]) => <Jitomate key={i} T={T} x={a} y={922} s={kprog(T, K.Ji + 0.2 + i * 0.25, K.Ji + 0.8 + i * 0.25, kEase.rebote) * 0.95} seed={i} dobla={i === 2 ? kprog(T, K.Ji + 2.6, K.Ji + 3.6, kEase.suave) : 0} />)}
-        </>)}
+        </g>)}
       </Escena>
       {/* 11 · mecanismo: las defensas ya están altas y no suben */}
       <Escena T={T} a={K.M} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <g transform="translate(330 700) rotate(-18)">
+          <g transform="translate(540 760) scale(1.5) rotate(-18)">
             <path d="M -260 0 Q -120 -170 120 -130 Q 260 -100 300 0 Q 260 100 120 130 Q -120 170 -260 0 Z" fill={PX.verde2} stroke={KC.ink} strokeWidth={8} />
             <path d="M -260 0 L 290 0" stroke={PX.verde} strokeWidth={8} />
             {[-160, -60, 40, 140].map((a) => <g key={a}><path d={`M ${a} 0 Q ${a + 40} -50 ${a + 90} -90`} stroke={PX.verde} strokeWidth={5} fill="none" /><path d={`M ${a} 0 Q ${a + 40} 50 ${a + 90} 90`} stroke={PX.verde} strokeWidth={5} fill="none" /></g>)}
@@ -236,62 +245,62 @@ function PastoShot() {
       {/* 12 · cierre: el mismo pasto del inicio, con la alianza de tres */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform={CAM}>
           <Suelo T={T} y={920} vapor={1} />
           <Raices x={420} y={922} />
           <Pasto T={T} x={420} y={922} s={1.05} seed={4} />
           <Termo x={150} y={1010} valor={65} />
-          {(() => { const a = kprog(T, K.C + 0.3, K.C + 1.2, kEase.rebote); const P = [[360, 420], [200, 590], [520, 590]];
+          {(() => { const a = kprog(T, K.C + 0.3, K.C + 1.2, kEase.rebote); const P = [[400, 480], [250, 625], [550, 625]];
             return <g opacity={kprog(T, K.C + 0.2, K.C + 0.5)}>
               {[[0, 1], [1, 2], [2, 0]].map(([i, j], q) => <line key={q} x1={P[i][0]} y1={P[i][1]} x2={klerp(P[i][0], P[j][0], kprog(T, K.C + 0.9 + q * 0.2, K.C + 1.3 + q * 0.2))} y2={klerp(P[i][1], P[j][1], kprog(T, K.C + 0.9 + q * 0.2, K.C + 1.3 + q * 0.2))} stroke={KC.ink} strokeWidth={8} strokeDasharray="16 10" />)}
-              <g transform={`translate(${P[0][0]} ${P[0][1]}) scale(${a})`}><circle r={78} fill="#fff" stroke={KC.ink} strokeWidth={7} /><Pasto T={T} x={0} y={45} s={0.28} seed={4} /></g>
-              <g transform={`translate(${P[1][0]} ${P[1][1]}) scale(${a})`}><circle r={78} fill="#fff" stroke={KC.ink} strokeWidth={7} /><Hifa T={T} x={-52} y={0} largo={104} g={1} amp={8} ancho={18} virus={0} /></g>
-              <g transform={`translate(${P[2][0]} ${P[2][1]}) scale(${a})`}><circle r={78} fill="#fff" stroke={KC.ink} strokeWidth={7} /><Virus x={0} y={0} r={40} /></g>
+              <g transform={`translate(${P[0][0]} ${P[0][1]}) scale(${a * 0.8})`}><circle r={78} fill="#fff" stroke={KC.ink} strokeWidth={7} /><Pasto T={T} x={0} y={45} s={0.28} seed={4} /></g>
+              <g transform={`translate(${P[1][0]} ${P[1][1]}) scale(${a * 0.8})`}><circle r={78} fill="#fff" stroke={KC.ink} strokeWidth={7} /><Hifa T={T} x={-52} y={0} largo={104} g={1} amp={8} ancho={18} virus={0} /></g>
+              <g transform={`translate(${P[2][0]} ${P[2][1]}) scale(${a * 0.8})`}><circle r={78} fill="#fff" stroke={KC.ink} strokeWidth={7} /><Virus x={0} y={0} r={40} /></g>
             </g>; })()}
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 3.4} until={K.L - 0.3} texto="pasto + hongo + virus" x={330} y={470} tam={38} borde={KC.pink} />
+      <Chip T={T} at={K.G + 3.4} until={K.L - 0.3} texto="pasto + hongo + virus" x={540} y={420} tam={38} borde={KC.pink} />
       <Etq T={T} at={K.L + 0.8} until={K.E - 0.3} x={60} y={470} texto="Yellowstone (EE. UU.)" tam={40} color={KC.ink} />
       <Etq T={T} at={K.L + 1.8} until={K.E - 0.3} x={60} y={680} texto="suelo: hasta 70 °C (en algunos puntos)" tam={28} color={KC.ink} />
       <Etq T={T} at={K.L + 3.0} until={K.E - 0.3} x={60} y={545} texto="Dichanthelium lanuginosum" it tam={32} color={KC.ink} />
       <Chip T={T} at={K.E + 0.1} until={K.S - 0.3} texto="POR DENTRO · RAÍZ" x={330} y={470} tam={34} borde={KC.cyan} mono />
-      <Etq T={T} at={K.E + 1.0} until={K.S - 0.3} x={60} y={600} texto="Curvularia protuberata" it tam={36} color={PX.hifa} />
-      <Etq T={T} at={K.E + 2.0} until={K.S - 0.3} x={60} y={1110} texto="endófito: vive dentro, sin enfermarla" tam={30} color={KC.texto} />
-      <NumeroGigante T={T} at={K.S + 0.4} until={K.J - 0.3} valor={38} dur={1.2} sufijo=" °C" etiqueta="solos, no crecen arriba de" x={330} y={500} tam={150} color={KC.yellow} />
-      <Etq T={T} at={K.S + 0.8} until={K.J - 0.3} x={110} y={1080} texto="pasto solo" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.S + 1.0} until={K.J - 0.3} x={640} y={1110} texto="hongo solo" tam={28} color={KC.ink} />
-      <NumeroGigante T={T} at={K.J + 0.4} until={K.P - 0.3} valor={65} dur={1.0} sufijo=" °C" etiqueta="juntos, en la tierra:" x={330} y={470} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.J + 1.8} until={K.P - 0.3} texto="10 h al día" x={860} y={710} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.J + 2.6} until={K.P - 0.3} texto={`día ${Math.max(1, Math.min(14, Math.floor(klerp(1, 15, kprog(T, K.J + 2.6, K.J + 4.6)))))} de 14`} x={860} y={800} tam={36} borde={KC.ink} mono />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.4} anio="2007" quien="Oklahoma + Washington + Montana" revista="Science, 2007" x={540} y={560} />
-      <Etq T={T} at={K.Es + 0.8} until={K.SV - 0.3} x={80} y={1030} texto="virus: partículas de ~27 nm (esquemático)" tam={26} color={PX.virus} />
-      <Chip T={T} at={K.Es + 3.6} until={K.SV - 0.3} texto="congelado → hongo sin virus" x={540} y={560} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.SV + 1.2} until={K.CV - 0.3} texto="sin virus: no aguanta" x={340} y={500} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.CV + 0.2} until={K.Ji - 0.3} texto="fusión de hifas" x={330} y={480} tam={38} borde={KC.gold} />
-      <Etq T={T} at={K.CV + 1.6} until={K.Ji - 0.3} x={560} y={960} texto="el virus pasa" tam={28} color={PX.virus} />
-      <Etq T={T} at={K.CV + 3.0} until={K.Ji - 0.3} x={470} y={1090} texto="65 °C: vuelve a aguantar" tam={28} color={KC.mint} />
-      <Etq T={T} at={K.Ji + 0.8} until={K.M - 0.3} x={60} y={480} texto="jitomate" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.Ji + 1.2} until={K.M - 0.3} x={60} y={545} texto="Solanum lycopersicum" it tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Ji + 1.8} until={K.M - 0.3} texto="¡y ni es pasto!" x={300} y={640} tam={36} borde={KC.pink} />
-      <Etq T={T} at={K.Ji + 3.4} until={K.M - 0.3} x={560} y={480} texto="no todas lo lograron" tam={26} color={KC.ink} />
-      <Medidor T={T} at={K.M + 1.0} until={K.C - 0.3} valor={(t) => kprog(t, K.M + 1.0, K.M + 2.4, kEase.sale) * 0.95} etiqueta="calor en la tierra" texto={(v) => Math.round(37 + 28 * v / 0.95) + ' °C'} x={90} y={930} ancho={900} color={KC.red} />
-      <Medidor T={T} at={K.M + 1.6} until={K.C - 0.3} valor={0.82} etiqueta="defensas de la planta" texto={() => 'ya altas'} x={90} y={1060} ancho={900} color={KC.mint} />
-      <Chip T={T} at={K.M + 3.4} until={K.C - 0.3} texto="pista, no respuesta final" x={330} y={460} tam={34} borde={KC.yellow} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="alianza de tres" x={420} y={1110} tam={40} borde={KC.gold} />
+      <Etq T={T} at={K.E + 1.0} until={K.S - 0.3} x={60} y={540} texto="Curvularia protuberata" it tam={36} color={PX.hifa} />
+      <Etq T={T} at={K.E + 2.0} until={K.S - 0.3} x={60} y={1260} texto="endófito: vive dentro, sin enfermarla" tam={30} color={KC.texto} />
+      <NumeroGigante T={T} at={K.S + 0.4} until={K.J - 0.3} valor={38} dur={1.2} sufijo=" °C" etiqueta="solos, no crecen arriba de" x={500} y={500} tam={150} color={KC.yellow} />
+      <Etq T={T} at={K.S + 0.8} until={K.J - 0.3} x={90} y={1254} texto="pasto solo" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.0} until={K.J - 0.3} x={726} y={1290} texto="hongo solo" tam={28} color={KC.ink} />
+      <NumeroGigante T={T} at={K.J + 0.4} until={K.P - 0.3} valor={65} dur={1.0} sufijo=" °C" etiqueta="juntos, en la tierra:" x={330} y={380} tam={150} color={KC.yellow} />
+      <Chip T={T} at={K.J + 1.8} until={K.P - 0.3} texto="10 h al día" x={820} y={330} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.J + 2.6} until={K.P - 0.3} texto={`día ${Math.max(1, Math.min(14, Math.floor(klerp(1, 15, kprog(T, K.J + 2.6, K.J + 4.6)))))} de 14`} x={820} y={420} tam={36} borde={KC.ink} mono />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.4} anio="2007" quien="Oklahoma + Washington + Montana" revista="Science, 2007" x={540} y={520} />
+      <Etq T={T} at={K.Es + 0.8} until={K.SV - 0.3} x={80} y={1120} texto="virus: partículas de ~27 nm (esquemático)" tam={26} color={PX.virus} />
+      <Chip T={T} at={K.Es + 3.6} until={K.SV - 0.3} texto="congelado → hongo sin virus" x={540} y={520} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.SV + 1.2} until={K.CV - 0.3} texto="sin virus: no aguanta" x={540} y={420} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.CV + 0.2} until={K.Ji - 0.3} texto="fusión de hifas" x={540} y={380} tam={38} borde={KC.gold} />
+      <Etq T={T} at={K.CV + 1.6} until={K.Ji - 0.3} x={600} y={720} texto="el virus pasa" tam={28} color={PX.virus} />
+      <Etq T={T} at={K.CV + 3.0} until={K.Ji - 0.3} x={330} y={1320} texto="65 °C: vuelve a aguantar" tam={28} color={KC.mint} />
+      <Etq T={T} at={K.Ji + 0.8} until={K.M - 0.3} x={60} y={400} texto="jitomate" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.Ji + 1.2} until={K.M - 0.3} x={60} y={465} texto="Solanum lycopersicum" it tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Ji + 1.8} until={K.M - 0.3} texto="¡y ni es pasto!" x={800} y={420} tam={36} borde={KC.pink} />
+      <Etq T={T} at={K.Ji + 3.4} until={K.M - 0.3} x={640} y={530} texto="no todas lo lograron" tam={26} color={KC.ink} />
+      <Medidor T={T} at={K.M + 1.0} until={K.C - 0.3} valor={(t) => kprog(t, K.M + 1.0, K.M + 2.4, kEase.sale) * 0.95} etiqueta="calor en la tierra" texto={(v) => Math.round(37 + 28 * v / 0.95) + ' °C'} x={90} y={1150} ancho={900} color={KC.red} />
+      <Medidor T={T} at={K.M + 1.6} until={K.C - 0.3} valor={0.82} etiqueta="defensas de la planta" texto={() => 'ya altas'} x={90} y={1280} ancho={900} color={KC.mint} />
+      <Chip T={T} at={K.M + 3.4} until={K.C - 0.3} texto="pista, no respuesta final" x={540} y={420} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="alianza de tres" x={540} y={1440} tam={40} borde={KC.gold} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.L} texto="10 cm" largo={100} y={1450} />
+      <BarraEscala T={T} at={K.G} until={K.L} texto="10 cm" largo={160} y={1450} />
       <BarraEscala T={T} at={K.L} until={K.E} texto="paisaje esquemático" largo={0} y={1450} />
-      <BarraEscala T={T} at={K.E} until={K.S} texto="20 µm" largo={100} y={1450} />
-      <BarraEscala T={T} at={K.S} until={K.J} texto="10 cm" largo={125} y={1450} />
-      <BarraEscala T={T} at={K.J} until={K.P} texto="10 cm" largo={100} y={1450} />
-      <BarraEscala T={T} at={K.P} until={K.Es} texto="10 cm" largo={110} y={1450} />
+      <BarraEscala T={T} at={K.E} until={K.S} texto="20 µm" largo={150} y={1450} />
+      <BarraEscala T={T} at={K.S} until={K.J} texto="10 cm" largo={150} y={1450} />
+      <BarraEscala T={T} at={K.J} until={K.P} texto="10 cm" largo={160} y={1450} />
+      <BarraEscala T={T} at={K.P} until={K.Es} texto="10 cm" largo={170} y={1450} />
       <BarraEscala T={T} at={K.Es} until={K.Ji} texto="dibujo esquemático" largo={0} y={1450} />
-      <BarraEscala T={T} at={K.Ji} until={K.M} texto="10 cm" largo={100} y={1450} />
+      <BarraEscala T={T} at={K.Ji} until={K.M} texto="10 cm" largo={145} y={1450} />
       <BarraEscala T={T} at={K.M} until={K.C} texto="dibujo esquemático" largo={0} y={1450} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={100} y={1450} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={160} y={1450} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.L - 0.1} texto="Lo salva *el virus de un hongo.*" />

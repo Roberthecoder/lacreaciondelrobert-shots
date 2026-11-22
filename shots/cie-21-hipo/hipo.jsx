@@ -164,7 +164,7 @@ function Maletin({ x, y, s = 1 }) {
 function Causa({ T, at, y, texto, children }) {
   if (T < at) return null;
   const e = kprog(T, at, at + 0.45, kEase.rebote);
-  return <g transform={`translate(540 ${y}) scale(${klerp(0.5, 1, e)}) translate(-540 ${-y})`} opacity={kprog(T, at, at + 0.15)}>
+  return <g transform={`translate(540 ${y}) scale(${klerp(0.5, 1.08, e)}) translate(-540 ${-y})`} opacity={kprog(T, at, at + 0.15)}>
     <rect x={110} y={y - 112} width={860} height={224} rx={36} fill={KC.paper} stroke={KC.ink} strokeWidth={9} />
     <g transform={`translate(260 ${y})`}>{children}</g>
     <text x={420} y={y + 18} style={{ font:`900 48px ${KF.texto}` }} fill={KC.ink}>{texto}</text>
@@ -197,6 +197,7 @@ function Hipo() {
   const bajaE = kprog(T, tE, tE + 0.12) * (1 - kprog(T, tE + 0.9, tE + 2.2)) + kprog(T, tCierra - 0.25, tCierra - 0.1) * (1 - kprog(T, tCierra + 0.6, tCierra + 1.6));
   const cierraI = kprog(T, tCierra, tCierra + 0.08) * (1 - kprog(T, K.Sonido + 2.6, K.Sonido + 3.0));
   const LAR = cp(CI, 0, -322);
+  const BB = { x: 570, y: 1010, s: 1.5 };   // bebé (pase a mano: más grande y centrado)
   return (
     <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: ¡HIP! y salta; no es solo la garganta: es un músculo bajo los pulmones */}
@@ -254,20 +255,21 @@ function Hipo() {
       <Escena T={T} a={K.Causas} b={K.Pregunta}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <Causa T={T} at={K.Causas + 0.7} y={540} texto="comer muy rápido">
+          <g opacity={0.4}><Cuerpo x={540} y={1060} s={1.05} uid="ca" dentro={1} camisa={KC.yellow} lleno={kprog(T, K.Causas + 3.5, K.Causas + 4.3, kEase.rebote)} glowD={0.4} /></g>
+          <Causa T={T} at={K.Causas + 0.7} y={640} texto="comer muy rápido">
             <ellipse cx={0} cy={45} rx={115} ry={36} fill="#fff" stroke={KC.ink} strokeWidth={7} />
             <path d="M -70 40 Q -40 -10 0 0 Q 40 -15 70 40 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={6} />
             <g transform={`translate(70 ${-60 - 34 * Math.abs(Math.sin(T * 16))}) rotate(25)`}><rect x={-7} y={-20} width={14} height={110} rx={6} fill="#bbb" stroke={KC.ink} strokeWidth={5} />
               {[-12, 0, 12].map((xx) => <rect key={xx} x={xx - 3} y={-60} width={6} height={44} fill="#bbb" stroke={KC.ink} strokeWidth={3} />)}</g>
             {[0, 1, 2].map((i) => <line key={i} x1={-120} y1={-40 + i * 25} x2={-150} y2={-40 + i * 25} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" opacity={0.5 + 0.5 * Math.sin(T * 20 + i)} />)}
           </Causa>
-          <Causa T={T} at={K.Causas + 2.0} y={800} texto="bebidas con gas">
+          <Causa T={T} at={K.Causas + 2.0} y={920} texto="bebidas con gas">
             <path d="M -60 -90 L 60 -90 L 48 90 L -48 90 Z" fill="rgba(255,255,255,.6)" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
             <path d="M -55 -50 L 55 -50 L 48 84 L -48 84 Z" fill="#7a3b1c" />
             {Array.from({ length: 9 }, (_, i) => { const f = ((T * 0.9 + i / 9) % 1); return <circle key={i} cx={-35 + (i * 23) % 70} cy={80 - f * 128} r={5 + (i % 3) * 2} fill="#fff" opacity={0.9 - f * 0.5} />; })}
             <rect x={14} y={-140} width={14} height={110} rx={6} fill={KC.pink} stroke={KC.ink} strokeWidth={4} transform="rotate(14 21 -85)" />
           </Causa>
-          <Causa T={T} at={K.Causas + 3.3} y={1060} texto="estómago muy lleno">
+          <Causa T={T} at={K.Causas + 3.3} y={1200} texto="estómago muy lleno">
             <g transform={`scale(${1 + 0.12 * kprog(T, K.Causas + 3.5, K.Causas + 4.3, kEase.rebote) + 0.03 * Math.sin(T * 7)})`}>
               <path d="M -60 -70 C 20 -110 120 -70 110 10 C 100 100 -20 115 -65 55 C -95 15 -100 -50 -60 -70 Z" fill={HP.estomago} stroke={KC.ink} strokeWidth={7} />
               <path d="M -80 -100 L -60 -70" stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
@@ -277,50 +279,57 @@ function Hipo() {
         </Lienzo>
       </Escena>
       {/* 6 · ¿para qué sirve? */}
-      <EscenaPregunta T={T} a={K.Pregunta} b={K.Hipotesis} />
+      <Escena T={T} a={K.Pregunta} b={K.Hipotesis} zoom={0.1}>
+        <FondoLunares color={KC.lilac} />
+        <Lienzo>
+          <g opacity={0.5}><Cuerpo x={660} y={1080} s={1.05} uid="pr" dentro={1} camisa={KC.yellow} glowD={0.4} /></g>
+          <text x={330} y={1360} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={14}
+            transform={`rotate(${Math.sin(T * 3) * 6} 330 1100) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 760px ${KF.titulo}`, transformOrigin:'330px 1100px' }}>?</text>
+        </Lienzo>
+      </Escena>
       {/* 7 · hipótesis 1: las branquias de los renacuajos */}
       <Escena T={T} a={K.Hipotesis} b={K.Bebes}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          {T > K.Hipotesis + 2.6 && <g opacity={kprog(T, K.Hipotesis + 2.6, K.Hipotesis + 3.0)} transform={`translate(330 830) scale(${klerp(0.5, 1, kprog(T, K.Hipotesis + 2.6, K.Hipotesis + 3.1, kEase.rebote))}) translate(-330 -830)`}>
+          {T > K.Hipotesis + 2.6 && <g opacity={kprog(T, K.Hipotesis + 2.6, K.Hipotesis + 3.0)} transform={`translate(320 930) scale(${1.08 * klerp(0.5, 1, kprog(T, K.Hipotesis + 2.6, K.Hipotesis + 3.1, kEase.rebote))}) translate(-330 -830)`}>
             <circle cx={330} cy={830} r={240} fill="#7fd4f2" stroke={KC.ink} strokeWidth={10} />
             {Array.from({ length: 6 }, (_, i) => { const f = ((T * 0.4 + i / 6) % 1); return <circle key={i} cx={210 + i * 45} cy={1010 - f * 340} r={8 + i % 3 * 3} fill="none" stroke="#fff" strokeWidth={4} opacity={1 - f} />; })}
             <Renacuajo x={370} y={840} s={1.05} T={T} />
           </g>}
           {T > K.Hipotesis + 4.6 && <g>
-            <path d="M 560 760 Q 640 640 700 760" fill="none" stroke={KC.ink} strokeWidth={8} strokeDasharray="18 12" strokeDashoffset={-T * 40} opacity={kprog(T, K.Hipotesis + 4.6, K.Hipotesis + 5.0)} />
-            <TextoSvg x={630} y={640} tam={80} color={KC.yellow} s={klerp(0.4, 1, kprog(T, K.Hipotesis + 4.8, K.Hipotesis + 5.2, kEase.rebote))}>?</TextoSvg>
+            <path d="M 570 790 Q 650 660 730 730" fill="none" stroke={KC.ink} strokeWidth={8} strokeDasharray="18 12" strokeDashoffset={-T * 40} opacity={kprog(T, K.Hipotesis + 4.6, K.Hipotesis + 5.0)} />
+            <TextoSvg x={650} y={660} tam={90} color={KC.yellow} s={klerp(0.4, 1, kprog(T, K.Hipotesis + 4.8, K.Hipotesis + 5.2, kEase.rebote))}>?</TextoSvg>
           </g>}
-          {T > K.Hipotesis + 4.4 && <g opacity={kprog(T, K.Hipotesis + 4.4, K.Hipotesis + 4.8)}>
-            <Cuerpo x={830} y={1000} s={0.5} uid="h" dentro={1} camisa={KC.pink} baja={sacude(T, [K.Hipotesis + 5.4, K.Hipotesis + 7.0])} cierra={sacude(T, [K.Hipotesis + 5.45, K.Hipotesis + 7.05], 4)} boca={sacude(T, [K.Hipotesis + 5.4, K.Hipotesis + 7.0])} salto={sacude(T, [K.Hipotesis + 5.4, K.Hipotesis + 7.0]) * 20} /></g>}
-          {T < K.Hipotesis + 2.6 && <TextoSvg x={540} y={900} tam={260} color={KC.paper} rot={Math.sin(T * 3) * 4} s={klerp(0.6, 1, kprog(T, K.Hipotesis + 0.1, K.Hipotesis + 0.5, kEase.rebote))} o={1 - kprog(T, K.Hipotesis + 2.2, K.Hipotesis + 2.6)}>¿ ?</TextoSvg>}
+          {<g opacity={0.45 + 0.55 * kprog(T, K.Hipotesis + 4.4, K.Hipotesis + 4.8)}>
+            <Cuerpo x={810} y={1090} s={0.62} uid="h" dentro={1} camisa={KC.pink} baja={sacude(T, [K.Hipotesis + 5.4, K.Hipotesis + 7.0])} cierra={sacude(T, [K.Hipotesis + 5.45, K.Hipotesis + 7.05], 4)} boca={sacude(T, [K.Hipotesis + 5.4, K.Hipotesis + 7.0])} salto={sacude(T, [K.Hipotesis + 5.4, K.Hipotesis + 7.0]) * 20} /></g>}
+          {T < K.Hipotesis + 2.6 && <TextoSvg x={330} y={1020} tam={320} color={KC.yellow} rot={Math.sin(T * 3) * 4} s={klerp(0.6, 1, kprog(T, K.Hipotesis + 0.1, K.Hipotesis + 0.5, kEase.rebote))} o={1 - kprog(T, K.Hipotesis + 2.2, K.Hipotesis + 2.6)}>¿ ?</TextoSvg>}
         </Lienzo>
         <Chip T={T} at={K.Hipotesis + 0.2} until={K.Hipotesis + 2.1} texto="nadie lo sabe con certeza" x={540} y={460} tam={44} borde={KC.ink} />
         <Chip T={T} at={K.Hipotesis + 2.3} until={K.Bebes - 0.1} texto="hipótesis" x={540} y={460} tam={52} borde={KC.lilac} />
-        <Etq T={T} at={K.Hipotesis + 5.6} until={K.Bebes - 0.2} x={385} y={935} texto="branquias" lado="der" color={KC.ink} />
+        <Etq T={T} at={K.Hipotesis + 5.6} until={K.Bebes - 0.2} x={390} y={1040} texto="branquias" lado="der" color={KC.ink} />
       </Escena>
       {/* 8 · hipótesis 2: sacar el aire que traga el bebé */}
       <Escena T={T} a={K.Bebes} b={K.Record}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <Bebe x={500} y={820} s={1.15} T={T} burbuja={kprog(T, K.Bebes + 2.0, K.Bebes + 3.2)} mama={1 - kprog(T, K.Bebes + 1.7, K.Bebes + 2.0)} />
-          {T > K.Bebes + 1.9 && <path d={`M 500 ${820 + 1.15 * 80} L 500 ${820 - 1.15 * 110}`} stroke="#fff" strokeWidth={6} strokeDasharray="10 12" opacity={0.7 * (1 - kprog(T, K.Bebes + 3.2, K.Bebes + 3.6))} />}
-          <Onomato T={T} at={K.Bebes + 3.15} dur={0.9} x={680} y={640} texto="¡HIP!" tam={110} color={KC.yellow} rot={8} />
+          <Bebe x={BB.x} y={BB.y} s={BB.s} T={T} burbuja={kprog(T, K.Bebes + 2.0, K.Bebes + 3.2)} mama={1 - kprog(T, K.Bebes + 1.7, K.Bebes + 2.0)} />
+          {T > K.Bebes + 1.9 && <path d={`M ${BB.x} ${BB.y + BB.s * 80} L ${BB.x} ${BB.y - BB.s * 110}`} stroke="#fff" strokeWidth={6} strokeDasharray="10 12" opacity={0.7 * (1 - kprog(T, K.Bebes + 3.2, K.Bebes + 3.6))} />}
+          <Onomato T={T} at={K.Bebes + 3.15} dur={0.9} x={820} y={560} texto="¡HIP!" tam={110} color={KC.yellow} rot={8} />
         </Lienzo>
         <Chip T={T} at={K.Bebes + 0.2} until={K.Record - 0.1} texto="hipótesis" x={540} y={460} tam={52} borde={KC.lilac} />
-        <Etq T={T} at={K.Bebes + 2.0} until={K.Record - 0.2} x={500 + 1.15 * 80} y={820 + 1.15 * 95} texto="aire tragado" lado="der" color={KC.ink} />
+        <Etq T={T} at={K.Bebes + 2.0} until={K.Record - 0.2} x={BB.x + BB.s * 80} y={BB.y + BB.s * 95} texto="aire tragado" lado="der" color={KC.ink} tam={28} />
       </Escena>
       {/* 9 · el récord: Charles Osborne, ≈ 68 años */}
       <Escena T={T} a={K.Record} b={K.Remedios}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
           {(() => { const at = K.Record + 4.6, n = Math.round(klerp(1, 68, kprog(T, at, at + 1.6, kEase.sale))), cam = at + (n / 68) * 1.6;
-            return T > K.Record + 0.6 && <g opacity={kprog(T, K.Record + 0.6, K.Record + 1.0)}><Calendario x={290} y={910} n={T < at ? 1 : n} cambio={T < at ? K.Record + 0.6 : (n === 68 ? at + 1.6 : T - 0.06)} T={T} etiqueta={T < at + 0.1 ? 'año' : 'años'} /></g>; })()}
-          {T > K.Record + 2.0 && <g opacity={kprog(T, K.Record + 2.0, K.Record + 2.4)} transform={`translate(0 ${(1 - kprog(T, K.Record + 2.0, K.Record + 2.5, kEase.rebote)) * 200})`}>
+            return T > K.Record + 0.2 && <g opacity={kprog(T, K.Record + 0.2, K.Record + 0.6)} transform="translate(290 1050) scale(1.4) translate(-290 -910)"><Calendario x={290} y={910} n={T < at ? 1 : n} cambio={T < at ? K.Record + 0.2 : (n === 68 ? at + 1.6 : T - 0.06)} T={T} etiqueta={T < at + 0.1 ? 'año' : 'años'} /></g>; })()}
+          {T > K.Record + 0.2 && <g opacity={kprog(T, K.Record + 0.2, K.Record + 0.6)} transform={`translate(0 ${(1 - kprog(T, K.Record + 0.2, K.Record + 0.7, kEase.rebote)) * 200}) translate(790 1400) scale(1.35) translate(-790 -1210)`}>
             <PersonaSimple x={790} yPies={1210} alto={460} color={KC.blue} cara="o" />
             <rect x={700} y={733} width={180} height={22} rx={8} fill="#3a2a1f" stroke={KC.ink} strokeWidth={5} />
             <rect x={735} y={680} width={110} height={60} rx={10} fill="#3a2a1f" stroke={KC.ink} strokeWidth={5} /></g>}
-          {[2.8, 3.8, 5.0, 6.2].map((t, i) => <Onomato key={i} T={T} at={K.Record + t} dur={0.7} x={i % 2 ? 930 : 640} y={760} texto="hip" tam={64} color={KC.yellow} rot={i % 2 ? 10 : -10} />)}
+          {[2.8, 3.8, 5.0, 6.2].map((t, i) => <Onomato key={i} T={T} at={K.Record + t} dur={0.7} x={i % 2 ? 980 : 590} y={820} texto="hip" tam={76} color={KC.yellow} rot={i % 2 ? 10 : -10} />)}
         </Lienzo>
         <Chip T={T} at={K.Record + 0.3} until={K.Record + 4.4} texto="el hipo más largo registrado" x={540} y={460} tam={42} borde={KC.ink} />
         <NumeroGigante T={T} at={K.Record + 4.6} until={K.Remedios - 0.15} valor={68} desde={1} dur={1.6} prefijo="≈ " sufijo=" años" x={540} y={470} tam={150} color={KC.yellow} />
@@ -330,6 +339,7 @@ function Hipo() {
       <Escena T={T} a={K.Remedios} b={K.Cierre}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
+          <g transform="translate(560 1010) scale(1.1) translate(-560 -820)">
           <Reloj x={300} y={800} r={190} vueltas={4 * kprog(T, K.Remedios + 0.3, K.Remedios + 2.3, kEase.suave)} />
           {[0.4, 1.0, 1.6].map((t, i) => <Onomato key={i} T={T} at={K.Remedios + t} dur={0.5} x={660 + i * 130} y={760 + i * 40} texto="hip" tam={70 - i * 14} color={KC.yellow} rot={-6 + i * 6} />)}
           {T > K.Remedios + 2.3 && <g transform={`translate(300 800) scale(${klerp(0.3, 1, kprog(T, K.Remedios + 2.3, K.Remedios + 2.7, kEase.rebote))})`}>
@@ -343,6 +353,7 @@ function Hipo() {
                 <text x={0} y={84} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>día</text></g>; })}
           </g>}
           {T > K.Remedios + 3.9 && <g opacity={kprog(T, K.Remedios + 3.9, K.Remedios + 4.2)}><Maletin x={795} y={1010} s={klerp(0.4, 0.9, kprog(T, K.Remedios + 3.9, K.Remedios + 4.3, kEase.rebote))} /></g>}
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Remedios + 0.4} until={K.Remedios + 2.7} texto="se quita en unos minutos" x={540} y={440} tam={42} borde={KC.mint} />
         <Chip T={T} at={K.Remedios + 2.9} until={K.Cierre - 0.1} texto="más de 2 días → médico" x={540} y={440} tam={50} borde={KC.red} />
@@ -355,8 +366,8 @@ function Hipo() {
             baja={jC} cierra={sacude(T, HC.map((t) => t + 0.08), 3)} glowD={jC} glowG={sacude(T, HC.map((t) => t + 0.08), 3)} />
           {HC.map((t, i) => <Onomato key={i} T={T} at={t} dur={1.4} x={i % 2 ? 300 : 380} y={410} texto="¡HIP!" tam={150} color={KC.yellow} rot={i % 2 ? 7 : -8} />)}
         </Lienzo>
-        <Etq T={T} at={K.Cierre + 0.9} until={K.Outro - 0.1} x={CG.x + 0.9 * 60} y={CG.y - 0.9 * 322} texto="glotis: cierra la puerta" lado="der" color={KC.texto} />
-        <Etq T={T} at={K.Cierre + 1.4} until={K.Outro - 0.1} x={CG.x + 0.9 * 262} y={CG.y + 0.9 * 165} texto="diafragma: un tic" lado="der" color={KC.yellow} />
+        <Etq T={T} at={K.Cierre + 0.9} until={K.Outro - 0.1} x={CG.x + CG.s * 60} y={CG.y - CG.s * 322} texto="glotis: cierra la puerta" lado="der" color={KC.texto} tam={28} />
+        <Etq T={T} at={K.Cierre + 1.4} until={K.Outro - 0.1} x={CG.x + CG.s * 262} y={CG.y + CG.s * 165} texto="diafragma: un tic" lado="der" color={KC.yellow} tam={28} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Diafragma - 0.1} texto="Lo empieza *un músculo.*" />

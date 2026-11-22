@@ -107,7 +107,7 @@ function Urna({ x, y, s = 1, lleno = 0 }) {
     <rect x={-110} y={160 - 170 * lleno} width={220} height={170 * lleno} fill="rgba(47,224,168,.25)" />
     <rect x={-150} y={-70} width={300} height={40} rx={10} fill={KC.blue} stroke={KC.ink} strokeWidth={8} />
     <rect x={-70} y={-58} width={140} height={14} rx={7} fill={KC.ink} />
-    <text x={0} y={90} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>VOTOS</text>
+    <text x={0} y={90} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill="#0b1020">VOTOS</text>
   </g>;
 }
 function Boleta({ x, y, ok = true, rot = 0, s = 1, o = 1 }) {
@@ -164,7 +164,7 @@ function MenuPresion({ T, at, x, y }) {
     {items.map((it, i) => { const on = i === 1;
       return <g key={i} transform={`translate(0 ${-90 + i * 90})`}>
         {on && <rect x={-205} y={-36} width={410} height={72} rx={20} fill={KC.yellow} opacity={0.25 + 0.75 * sel} stroke={KC.ink} strokeWidth={on && sel > 0.5 ? 5 : 0} />}
-        <text x={0} y={14} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={on && sel > 0.5 ? KC.ink : '#c9cfdb'}>{it}</text>
+        <text x={0} y={14} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={on && sel > 0.5 ? '#0b1020' : '#c9cfdb'}>{it}</text>
       </g>; })}
   </g>;
 }
@@ -239,6 +239,8 @@ function TikTok() {
   // segunda línea del Estudio (idx 9): de la voz si ya existe, si no, estimada
   const E2 = (window.SUBS && window.SUBS[9]) ? window.SUBS[9].at : K.E + 112 / 17.6 + 0.35;
   const FIN = K.Ou + 4;
+  // pase a mano: el celular, la bola y la urna del gancho y del cierre, ×1.15 y centrados (llenan el cuadro sin salirse)
+  const GC = 'matrix(1.15 0 0 1.15 -110 52)';
   const svg = (c, z = 20) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{c}</svg>;
 
   // gancho: deslizamientos cada 1.1 s desde el cuadro 0
@@ -259,7 +261,7 @@ function TikTok() {
 
   // pregunta: remolino de videos iguales
   const remolino = Array.from({ length: 10 }, (_, i) => { const a = (i / 10) * Math.PI * 2 + T * 1.6, rr = 300 + 40 * Math.sin(T * 2 + i);
-    return <Mini key={i} x={330 + Math.cos(a) * rr} y={900 + Math.sin(a) * rr * 0.75} w={110} h={160} tipo={0} color={KC.lilac} T={T} />; });
+    return <Mini key={i} x={520 + Math.cos(a) * rr} y={960 + Math.sin(a) * rr * 0.75} w={110} h={160} tipo={0} color={KC.lilac} T={T} />; });
 
   // paso 2: fichas que caen al colador (los "#" rebotan)
   const fichasP2 = [{ t: '#chisme', bad: true, d: 0.2, x: 600 }, { t: 'gatitos', bad: false, d: 0.6, x: 760 }, { t: '#dieta', bad: true, d: 1.0, x: 680 }, { t: 'ciencia', bad: false, d: 1.4, x: 820 }];
@@ -269,44 +271,44 @@ function TikTok() {
       {/* 1 · gancho: el pulgar desliza, la bola de cristal se tacha, los votos caen en la urna */}
       <Escena T={T} a={K.G} b={K.S}>
         <FondoLunares color={KC.pink} />
-        {svg(<>
+        {svg(<g transform={GC}>
           <CelularFeed T={T} x={330} y={790} s={0.86} scroll={scrollG} />
           <Pulgar x={400} y={1060} fase={(fSw - 0.1) / 0.6} s={0.9} />
           <g opacity={1 - kprog(T, K.G + 2.6, K.G + 3.0)}><BolaCristal x={810} y={1010} s={0.95} T={T} tacha={kprog(T, K.G + 1.3, K.G + 2.0)} /></g>
           <g opacity={kprog(T, K.G + 2.8, K.G + 3.2)}><Urna x={810} y={1010} s={0.85} lleno={kprog(T, K.G + 3, K.S, kEase.suave) * 0.5} /></g>
           {boletas(K.G + 2.3, K.S, 400, 760, 810, 960)}
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.G + 1.4} until={K.G + 2.9} texto="¿leer la mente?" x={810} y={820} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.G + 3.1} until={K.S - 0.2} texto="terminado ✔ · saltado ✖" x={790} y={800} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.G + 1.4} until={K.G + 2.9} texto="¿leer la mente?" x={820} y={1010} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.G + 3.1} until={K.S - 0.2} texto="terminado ✔ · saltado ✖" x={800} y={990} tam={32} borde={KC.leaf} />
 
       {/* 2 · señales: fichas que entran al embudo */}
       <Escena T={T} a={K.S} b={K.Pe}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<g transform="translate(540 1030) scale(1.2) translate(-540 -850)">
           <Embudo x={540} y={980} s={0.9} T={T} />
           {[['visto', KC.yellow, 0.3, 200, 560], ['terminado ✔', KC.leaf, 0.9, 470, 490], ['saltado ✖', KC.coral, 1.5, 250, 660], ['sigues a…', KC.cyan, 2.4, 540, 620], ['audio ♪', KC.lilac, 3.4, 210, 770], ['#hashtags', KC.orange, 4.0, 500, 750]].map(([tx, c, d, xx, yy], i) => {
             const a = K.S + d, p = kprog(T, a, a + 0.5, kEase.rebote), cae = kprog(T, a + 2.2, a + 2.9, kEase.suave);
             return <Ficha key={i} x={klerp(xx, 540, cae)} y={klerp(yy + 60 - 120 * (1 - p), 980, cae)} texto={tx} color={c} s={p * (1 - 0.6 * cae)} o={p * (1 - cae)} rot={(i % 2 ? 6 : -6) * (1 - cae)} tam={50} />; })}
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.S + 0.2} until={K.Pe - 0.2} texto="página oficial de TikTok" x={420} y={400} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.S + 0.2} until={K.Pe - 0.2} texto="página oficial de TikTok" x={540} y={470} tam={34} borde={KC.ink} />
 
       {/* 3 · peso: la balanza */}
       <Escena T={T} a={K.Pe} b={K.R}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Balanza x={540} y={700} s={0.95} incl={kprog(T, K.Pe + 1.4, K.Pe + 2.6, kEase.rebote)}
+        {svg(<g transform="translate(540 1000) scale(1.2) translate(-540 -880)"><Balanza x={540} y={700} s={0.95} incl={kprog(T, K.Pe + 1.4, K.Pe + 2.6, kEase.rebote)}
           izq={<Mini x={0} y={-130} w={150} h={220} tipo={2} prog={kprog(T, K.Pe + 0.5, K.Pe + 1.5)} T={T} />}
-          der={<Globo s={0.9} />} />)}
+          der={<Globo s={0.9} />} /></g>)}
       </Escena>
-      <Chip T={T} at={K.Pe + 0.6} until={K.R - 0.2} texto="video largo visto completo" x={330} y={1150} tam={30} borde={KC.leaf} />
-      <Chip T={T} at={K.Pe + 1.2} until={K.R - 0.2} texto="mismo país" x={830} y={1150} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Pe + 0.3} until={K.R - 0.2} texto="TikTok Newsroom · 2020" x={640} y={470} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.Pe + 0.6} until={K.R - 0.2} texto="video largo visto completo" x={300} y={1450} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.Pe + 1.2} until={K.R - 0.2} texto="mismo país" x={820} y={1450} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Pe + 0.3} until={K.R - 0.2} texto="TikTok Newsroom · 2020" x={540} y={500} tam={34} borde={KC.gold} />
 
       {/* 4 · ranking: por dentro de la máquina */}
       <Escena T={T} a={K.R} b={K.Q}>
         <FondoCircuito T={T} />
-        {svg(<>{RK.map((r, i) => {
+        {svg(<g transform="translate(630 980) scale(1.25) translate(-540 -820)">{RK.map((r, i) => {
           const pos = klerp(i, orden.indexOf(i), ordP), yy = 470 + pos * 145, top = orden.indexOf(i) === 0 && ordP > 0.95;
           const ap = kprog(T, K.R + 0.2 + i * 0.15, K.R + 0.5 + i * 0.15);
           const g = kprog(T, K.R + 1.0, K.R + 2.0, kEase.sale);
@@ -316,18 +318,18 @@ function TikTok() {
             <rect x={230} y={yy + 30} width={360 * r.p * g} height={50} rx={14} fill={top ? KC.gold2 : KC.cyan} />
             <text x={610} y={yy + 70} style={{ font:`700 40px ${KF.mono}` }} fill={top ? KC.gold2 : KC.texto}>{Math.round(r.p * 100 * g)}</text>
             {top && <text x={710} y={yy + 72} style={{ font:`400 46px ${KF.titulo}` }} fill={KC.gold2}>1.º</text>}
-          </g>; })}</>)}
+          </g>; })}</g>)}
       </Escena>
-      <Chip T={T} at={K.R + 0.3} until={K.Q - 0.2} texto="probabilidad de like o de saltarlo" x={480} y={400} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.R + 1.2} until={K.Q - 0.2} texto="puntajes ilustrativos" x={330} y={1410} tam={26} borde={KC.texto} />
+      <Chip T={T} at={K.R + 0.3} until={K.Q - 0.2} texto="probabilidad de like o de saltarlo" x={540} y={470} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.R + 1.2} until={K.Q - 0.2} texto="puntajes ilustrativos" x={540} y={1490} tam={26} borde={KC.texto} />
 
       {/* 5 · pregunta: atrapado en un remolino */}
       <Escena T={T} a={K.Q} b={K.P1} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {svg(<>
           {remolino}
-          <CelularFeed T={T} x={330} y={900} s={0.5} scroll={0} tipos={[0]} colores={[KC.lilac]} rot={Math.sin(T * 5) * 4} />
-          <text x={320} y={600} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 320 500)`}>?</text>
+          <CelularFeed T={T} x={520} y={960} s={0.55} scroll={0} tipos={[0]} colores={[KC.lilac]} rot={Math.sin(T * 5) * 4} />
+          <text x={520} y={640} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 520 540)`}>?</text>
         </>)}
       </Escena>
 
@@ -337,59 +339,61 @@ function TikTok() {
       </Escena>
       <Pasos T={T} total={3} hasta={K.E - 0.1} y={380} pasos={[{ at: K.P1, texto: '«No me interesa»' }, { at: K.P2, texto: 'filtra palabras o #' }, { at: K.P3, texto: 'refresca tu Para ti' }]} />
       {T > K.P1 - 0.4 && T < K.P2 + 0.4 && svg(<g opacity={kprog(T, K.P1 - 0.4, K.P1) * (1 - kprog(T, K.P2, K.P2 + 0.4))}>
-        <CelularFeed T={T} x={330} y={930} s={0.62} scroll={0} tipos={[0]} colores={[KC.lilac]} />
-        <circle cx={330} cy={930} r={30 + 90 * kprog(T, K.P1 + 0.3, K.P1 + 1.0)} fill="none" stroke="#fff" strokeWidth={8} opacity={1 - kprog(T, K.P1 + 0.3, K.P1 + 1.0)} />
-        <Pulgar x={350} y={1010} fase={0} s={0.8} />
-        <MenuPresion T={T} at={K.P1 + 0.9} x={760} y={900} />
+        <CelularFeed T={T} x={300} y={1010} s={0.82} scroll={0} tipos={[0]} colores={[KC.lilac]} />
+        <circle cx={300} cy={1010} r={30 + 110 * kprog(T, K.P1 + 0.3, K.P1 + 1.0)} fill="none" stroke="#fff" strokeWidth={8} opacity={1 - kprog(T, K.P1 + 0.3, K.P1 + 1.0)} />
+        <Pulgar x={330} y={1120} fase={0} s={1.0} />
+        <MenuPresion T={T} at={K.P1 + 0.9} x={790} y={1000} />
       </g>, 30)}
       {T > K.P2 - 0.4 && T < K.P3 + 0.4 && svg(<g opacity={kprog(T, K.P2 - 0.4, K.P2) * (1 - kprog(T, K.P3, K.P3 + 0.4))}>
-        <Colador x={720} y={880} s={0.85} />
+        <Colador x={480} y={1000} s={1.3} />
         {fichasP2.map((f, i) => { const a = K.P2 + f.d * 0.6, p = kprog(T, a, a + 1.3); if (p <= 0) return null;
-          const yy = f.bad ? (p < 0.5 ? klerp(560, 800, p / 0.5) : 800 - Math.sin(Math.PI * (p - 0.5) / 0.5) * 260) : klerp(560, 1180, p);
-          const xx = f.bad ? (p < 0.5 ? f.x : f.x - (p - 0.5) * 900) : f.x - 60;
-          return <Ficha key={i} x={xx} y={yy} texto={f.t} color={f.bad ? KC.coral : KC.mint} s={0.9} rot={f.bad ? p * 40 : 0} o={p > 0.9 ? (1 - p) * 10 : 1} tam={38} />; })}
+          const yy = f.bad ? (p < 0.5 ? klerp(640, 930, p / 0.5) : 930 - Math.sin(Math.PI * (p - 0.5) / 0.5) * 300) : klerp(640, 1380, p);
+          const xx = f.bad ? (p < 0.5 ? f.x - 200 : f.x - 200 - (p - 0.5) * 900) : f.x - 260;
+          return <Ficha key={i} x={xx} y={yy} texto={f.t} color={f.bad ? KC.coral : KC.mint} s={1.15} rot={f.bad ? p * 40 : 0} o={p > 0.9 ? (1 - p) * 10 : 1} tam={38} />; })}
       </g>, 30)}
       {T > K.P3 - 0.4 && svg(<g opacity={kprog(T, K.P3 - 0.4, K.P3) * (1 - kprog(T, K.E - 0.1, K.E + 0.4))}>
-        <Refrescar x={720} y={760} s={0.85} ang={360 * kprog(T, K.P3 + 0.2, K.P3 + 1.6, kEase.suave)} />
+        <Refrescar x={540} y={880} s={1.3} ang={360 * kprog(T, K.P3 + 0.2, K.P3 + 1.6, kEase.suave)} />
         {[0, 1, 2].map((k) => { const p = kprog(T, K.P3 + 1.4 + k * 0.3, K.P3 + 1.8 + k * 0.3, kEase.rebote);
-          return <Mini key={k} x={600 + k * 130} y={1050} w={110} h={160} tipo={[5, 4, 3][k]} T={T} o={p} />; })}
+          return <Mini key={k} x={360 + k * 180} y={1230} w={150} h={220} tipo={[5, 4, 3][k]} T={T} o={p} />; })}
       </g>, 30)}
-      <Chip T={T} at={K.P3 + 2.0} until={K.E - 0.2} texto="temas nuevos" x={730} y={1180} tam={36} borde={KC.mint} />
+      <Chip T={T} at={K.P3 + 2.0} until={K.E - 0.2} texto="temas nuevos" x={540} y={1400} tam={36} borde={KC.mint} />
 
       {/* 9 · el estudio */}
       <Escena T={T} a={K.E} b={K.X}>
         <FondoLunares color={KC.cyan} />
+        {/* pase a mano: el celular del gancho sigue en cuadro (los datos donados salen de ahí); se atenúa cuando entran los datos */}
+        {svg(<g opacity={1 - 0.65 * kprog(T, K.E + 3.2, K.E + 3.8)}><CelularFeed T={T} x={540} y={1010} s={0.95} scroll={(() => { const u = 0.6 * Math.max(0, T - K.E), n = Math.floor(u); return n + kEase.suave(kclamp((u - n - 0.55) / 0.45, 0, 1)); })()} /></g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2024" quien="EE. UU. · Alemania · Países Bajos" revista="Vombatkere et al. · The Web Conference (Singapur)" y={600} />
-      <Chip T={T} at={K.E + 3.6} until={E2 - 0.2} texto="347 usuarios donaron sus datos" x={540} y={680} tam={40} borde={KC.ink} />
-      <Datos347 T={T} at={K.E + 3.7} until={E2 - 0.3} x={120} y={780} />
-      {T > E2 - 0.3 && T < K.X + 0.3 && <div style={{ position:'absolute', inset:0, background:cineMix(KC.cyan, CINE.fondo, 0.8), opacity:kprog(T, E2 - 0.3, E2) * (1 - kprog(T, K.X - 0.1, K.X + 0.3)), zIndex:35,
-        backgroundImage:'radial-gradient(circle, rgba(255,255,255,.33) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>}
-      <Chip T={T} at={E2 + 0.1} until={K.X - 0.2} texto="lo que más personalizaba" x={430} y={540} tam={38} borde={KC.ink} />
-      <Impacto T={T} at={E2 + 0.4} until={K.X - 0.2} y={640} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2024" quien="EE. UU. · Alemania · Países Bajos" revista="Vombatkere et al. · The Web Conference (Singapur)" y={330} />
+      <Chip T={T} at={K.E + 3.6} until={E2 - 0.2} texto="347 usuarios donaron sus datos" x={540} y={740} tam={40} borde={KC.ink} />
+      <Datos347 T={T} at={K.E + 3.5} until={E2 - 0.3} x={120} y={830} />
+      {T > E2 - 0.3 && T < K.X + 0.3 && <div style={{ position:'absolute', inset:0, background:cineMix(KC.cyan, CINE.fondo, 0.8), opacity:0.8 * kprog(T, E2 - 0.3, E2) * (1 - kprog(T, K.X - 0.1, K.X + 0.3)), zIndex:35,
+        backgroundImage:'radial-gradient(circle, rgba(255,255,255,.07) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>}
+      <Chip T={T} at={E2 + 0.1} until={K.X - 0.2} texto="lo que más personalizaba" x={540} y={660} tam={38} borde={KC.ink} />
+      <Impacto T={T} at={E2 + 0.4} until={K.X - 0.2} y={760} />
 
       {/* 10 · explorar: 100 videos */}
       <Escena T={T} a={K.X} b={K.C}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        <Cien T={T} at={K.X + 0.4} x={170} y={680} lado={78} />
+        <Cien T={T} at={K.X - 0.3} x={110} y={760} lado={86} />
       </Escena>
-      <Chip T={T} at={K.X + 0.3} until={K.C - 0.2} texto="de cada 100 de sus primeros mil videos" x={600} y={430} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.X + 2.0} until={K.C - 0.2} texto="30–50 % · estimado del estudio" x={640} y={545} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.X + 3.2} until={K.C - 0.2} x={330} y={635} texto="♥ tus gustos" color={KC.ink} tam={28} />
-      <Etq T={T} at={K.X + 3.8} until={K.C - 0.2} x={930} y={635} texto="explorar" lado="izq" color={KC.teal} tam={28} />
+      <Chip T={T} at={K.X + 0.3} until={K.C - 0.2} texto="de cada 100 de sus primeros mil videos" x={540} y={540} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.X + 2.0} until={K.C - 0.2} texto="30–50 % · estimado del estudio" x={540} y={630} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.X + 3.2} until={K.C - 0.2} x={290} y={715} texto="♥ tus gustos" color={KC.ink} tam={28} />
+      <Etq T={T} at={K.X + 3.8} until={K.C - 0.2} x={950} y={715} texto="explorar" lado="izq" color={KC.teal} tam={28} />
 
       {/* 11 · cierre: la misma imagen del inicio, transformada */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.pink} />
-        {svg(<>
+        {svg(<g transform={GC}>
           <CelularFeed T={T} x={330} y={790} s={0.86} scroll={kEase.suave(kprog(T, K.C + 0.3, K.C + 1.0))} tipos={[3, 4, 5]} />
           <Pulgar x={400} y={1060} fase={kprog(T, K.C + 0.2, K.C + 0.9)} s={0.9} />
           <g opacity={1 - kprog(T, K.C + 1.6, K.C + 2.0)}><BolaCristal x={810} y={1010} s={0.95} T={T} tacha={1} /></g>
           <g opacity={kprog(T, K.C + 1.8, K.C + 2.2)}><Urna x={810} y={1010} s={0.85} lleno={0.5 + 0.45 * kprog(T, K.C + 2, K.C + 3.2, kEase.suave)} /></g>
           {boletas(K.C + 1.0, K.Ou, 400, 760, 810, 960)}
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="tú se la enseñas ✔" x={790} y={800} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="tú se la enseñas ✔" x={810} y={990} tam={38} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.S - 0.1} texto="No te lee la mente: *te mide.*" />

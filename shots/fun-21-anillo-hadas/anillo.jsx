@@ -232,7 +232,7 @@ function AnilloShot() {
       {/* 7 · con las lluvias brotan las setas en el borde */}
       <Escena T={T} a={K.S} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 170)">
           {[[200, 470, 1], [560, 430, 1.2], [880, 480, 0.9]].map(([x, y, s], i) => <g key={i} transform={`translate(${x + Math.sin(T + i) * 14} ${y}) scale(${s})`} opacity={1 - kprog(T, K.S + 2.0, K.S + 2.8)}><path d="M -110 30 Q -120 -30 -60 -30 Q -40 -80 10 -70 Q 60 -100 90 -40 Q 140 -40 120 30 Z" fill="#eef4ff" stroke={KC.ink} strokeWidth={7} /></g>)}
           {T < K.S + 2.6 && Array.from({ length: 16 }, (_, i) => { const u = ((T * 1.3 + i * 0.37) % 1); return <line key={i} x1={80 + i * 62} y1={520 + u * 400} x2={74 + i * 62} y2={556 + u * 400} stroke="#4aa3ff" strokeWidth={6} strokeLinecap="round" opacity={0.8} />; })}
           <g transform="translate(540 1080) scale(1.4) translate(-540 -1080)">
@@ -242,7 +242,7 @@ function AnilloShot() {
           <Marasmius x={690} y={1084} s={0.95} crece={kprog(T, K.S + 0.6, K.S + 1.9)} rot={8} />
           <Marasmius x={840} y={1086} s={0.7} crece={kprog(T, K.S + 0.9, K.S + 2.2)} rot={-4} />
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 8 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
@@ -324,9 +324,9 @@ function AnilloShot() {
       <Etq T={T} at={K.V + 1.6} until={K.Ca - 0.3} x={90} y={1330} texto="nitrógeno (amonio)" tam={32} color={KC.cyan} />
       <Chip T={T} at={K.Ca + 0.3} until={K.S - 0.3} texto="tipo I · anillo café" x={540} y={400} tam={40} borde={AN.cafe} />
       <Etq T={T} at={K.Ca + 1.0} until={K.S - 0.3} x={150} y={1250} texto="micelio que repele el agua" tam={30} color="#fff4d6" />
-      <Chip T={T} at={K.S + 0.3} until={K.P - 0.3} texto="tipo III · anillo de setas" x={540} y={320} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.S + 2.0} until={K.P - 0.3} x={60} y={1290} texto="Marasmius oreades" it tam={40} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.4} until={K.P - 0.3} x={60} y={1350} texto="“hongo de los anillos”" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.S + 0.3} until={K.P - 0.3} texto="tipo III · anillo de setas" x={540} y={420} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.S + 2.0} until={K.P - 0.3} x={60} y={1345} texto="Marasmius oreades" it tam={40} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.4} until={K.P - 0.3} x={60} y={1400} texto="“hongo de los anillos”" tam={30} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.5} anio="1917" quien="este de Colorado · Shantz y Piemeisel" revista="Journal of Agricultural Research" y={380} />
       <Chip T={T} at={K.E + 3.4} until={K.Ed - 0.3} texto="≈ 12 cm por año (promedio estimado)" x={540} y={1460} tam={34} borde={KC.yellow} />
       <NumeroGigante T={T} at={K.Ed + 0.2} until={K.J - 0.3} valor={250} dur={K.J - 0.6 - K.Ed} sufijo=" años" x={500} y={380} tam={120} color={KC.yellow} />

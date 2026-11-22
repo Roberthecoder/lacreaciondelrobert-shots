@@ -82,9 +82,10 @@ function HongoSilueta({ x, y, s = 1 }) {
     <text x={0} y={-330} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink}>?</text>
   </g>;
 }
-function Pasto({ T, y = 1180, color = '#3fae4a' }) {
+const MU_SUELO = 1480;                             // línea del suelo (pase cine: más abajo, hongo más grande)
+function Pasto({ T, y = MU_SUELO, color = '#3fae4a' }) {
   return <>
-    <rect x={-20} y={y} width={KW + 40} height={KH - y + 20} fill="#5b3a22" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-20} y={y} width={KW + 40} height={KH - y + 20} fill="#2e1f15" stroke={KC.ink} strokeWidth={8} />
     {Array.from({ length: 26 }, (_, i) => { const x = 10 + i * 42, h = 36 + (i * 37) % 30, b = mece(T, i + 3, 0.6) * 6;
       return <path key={i} d={`M ${x - 10} ${y + 4} Q ${x + b} ${y - h} ${x + 4 + b * 1.5} ${y - h - 6} Q ${x + 2} ${y - h * 0.5} ${x + 12} ${y + 4} Z`} fill={color} stroke={KC.ink} strokeWidth={4} strokeLinejoin="round" />; })}
   </>;
@@ -144,15 +145,16 @@ function MuscariaShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Hu: CUES.Huevo, Gl: CUES.Globo, B: CUES.Base, L: CUES.Lluvia, Mx: CUES.Mexico, R: CUES.Raices, P: CUES.Pregunta, Tx: CUES.Toxinas, E: CUES.Estudio, Re: CUES.Respirador, Mo: CUES.Moscas, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const S0 = 1.25;                                   // escala del hongo en el gancho y el cierre
+  const S0 = 2.1;                                    // escala del hongo en el gancho y el cierre
   const gG = klerp(0.82, 1, kprog(T, K.G, K.G + 0.6, kEase.rebote));     // el hongo "brota" en el cuadro 0
   const gHu = 1 - kprog(T, K.Hu + 0.1, K.Hu + 1.3, kEase.suave);        // se rebobina hasta el botón
   const gGl = kprog(T, K.Gl + 0.3, K.Gl + 4.3, kEase.suave);             // el sombrero se infla y el velo se rompe
-  const sGl = klerp(2.3, 1.35, kprog(T, K.Gl + 0.3, K.Gl + 4.3, kEase.suave));
+  const sGl = klerp(3.6, S0, kprog(T, K.Gl + 0.3, K.Gl + 4.3, kEase.suave));
+  const sHu = klerp(S0, 3.6, kprog(T, K.Hu + 0.1, K.Hu + 1.3, kEase.suave));   // pase cine: el botón crece a la par que se rebobina
   const lupaG = kprog(T, K.G + 1.3, K.G + 1.8, kEase.sale);
   const cocina = K.Tx + 3.6;
   // Oaxaca (Ixtlán de Juárez) en el mapa
-  const MAPA = { x: 40, y: 430 }, [ox, oy] = mxProy(-96.49, 17.33);
+  const MAPA = { x: 40, y: 520 }, [ox, oy] = mxProy(-96.49, 17.33);
   const OAX = [MAPA.x + ox, MAPA.y + oy];
   const MOSCAS = [[200, 420, 0], [820, 380, 1], [520, 330, 2], [300, 720, 3], [760, 680, 4]];
   const PLATO = [[380, 1040], [470, 1060], [560, 1035], [640, 1060], [450, 1020]];
@@ -163,11 +165,11 @@ function MuscariaShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           <Pasto T={T} />
-          <Muscaria T={T} x={440} y={1190} s={S0} g={gG} mece={1} />
+          <Muscaria T={T} x={540} y={MU_SUELO + 10} s={S0} g={gG} mece={1} />
           {lupaG > 0 && <g opacity={lupaG}>
-            <line x1={360} y1={640} x2={250} y2={560} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
-            <circle cx={366} cy={648} r={22} fill="none" stroke={KC.ink} strokeWidth={6} />
-            <g transform={`translate(200 470) scale(${lupaG})`}>
+            <line x1={392} y1={706} x2={290} y2={590} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
+            <circle cx={398} cy={714} r={24} fill="none" stroke={KC.ink} strokeWidth={6} />
+            <g transform={`translate(220 480) scale(${lupaG})`}>
               <circle r={130} fill={MU_ROJO} stroke={KC.ink} strokeWidth={10} />
               <clipPath id="clupa"><circle r={124} /></clipPath>
               <g clipPath="url(#clupa)">
@@ -186,7 +188,7 @@ function MuscariaShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           <Pasto T={T} />
-          <Muscaria T={T} x={420} y={1190} s={klerp(S0, 2.3, kprog(T, K.Hu + 0.6, K.Hu + 1.8, kEase.suave))} g={gHu} cascaron={kprog(T, K.Hu + 0.7, K.Hu + 1.4)} />
+          <Muscaria T={T} x={540} y={MU_SUELO + 10} s={sHu} g={gHu} cascaron={kprog(T, K.Hu + 0.7, K.Hu + 1.4)} />
         </>)}
       </Escena>
       {/* 2 · POR DENTRO: el sombrero se infla como globo y el velo, que no crece, se rompe */}
@@ -194,7 +196,7 @@ function MuscariaShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <Pasto T={T} />
-          <Muscaria T={T} x={440} y={1190} s={sGl} g={gGl} grietas={kprog(T, K.Gl, K.Gl + 0.9)} />
+          <Muscaria T={T} x={540} y={MU_SUELO + 10} s={sGl} g={gGl} grietas={kprog(T, K.Gl, K.Gl + 0.9)} />
         </>)}
       </Escena>
       {/* 3 · arriba quedan las verrugas; abajo, las bandas en el bulbo */}
@@ -202,7 +204,7 @@ function MuscariaShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <Pasto T={T} />
-          <Muscaria T={T} x={440} y={1190} s={1.35} g={1} mece={1} />
+          <Muscaria T={T} x={540} y={MU_SUELO + 10} s={S0} g={1} mece={1} />
           
         </>)}
       </Escena>
@@ -210,9 +212,9 @@ function MuscariaShot() {
       <Escena T={T} a={K.L} b={K.Mx} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          {Array.from({ length: 40 }, (_, i) => { const u = ((T * 1.6 + i * 0.137) % 1); const x = (i * 97) % KW; return <line key={i} x1={x - 10} y1={-80 + u * 1400} x2={x - 22} y2={-20 + u * 1400} stroke="#ffffff" strokeWidth={6} strokeLinecap="round" opacity=".8" />; })}
+          {Array.from({ length: 40 }, (_, i) => { const u = ((T * 1.6 + i * 0.137) % 1); const x = (i * 97) % KW; return <line key={i} x1={x - 10} y1={-80 + u * 1600} x2={x - 22} y2={-20 + u * 1600} stroke="#ffffff" strokeWidth={6} strokeLinecap="round" opacity=".8" />; })}
           <Pasto T={T} />
-          <Muscaria T={T} x={440} y={1190} s={1.35} g={1} lava={{ t0: K.L + 0.3, t1: K.L + 3.0, frac: 0.95 }} />
+          <Muscaria T={T} x={540} y={MU_SUELO + 10} s={S0} g={1} lava={{ t0: K.L + 0.3, t1: K.L + 3.0, frac: 0.95 }} />
         </>)}
       </Escena>
       {/* 5 · México: bosques de pino y encino (Ixtlán de Juárez, Oaxaca) */}
@@ -225,11 +227,14 @@ function MuscariaShot() {
             <circle r={14} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
           </g>; })()}
           {kprog(T, K.Mx + 1.4, K.Mx + 1.9) > 0 && <g opacity={kprog(T, K.Mx + 1.4, K.Mx + 1.9)}>
-            <Conifera x={700} y={1200} s={0.26} T={T} seed={2} />
-            <Encino x={850} y={1200} s={0.3} T={T} />
-            <Conifera x={990} y={1200} s={0.22} T={T} seed={5} />
-            <Muscaria T={T} x={780} y={1202} s={0.2} g={kprog(T, K.Mx + 1.8, K.Mx + 2.6)} />
-            <Muscaria T={T} x={930} y={1202} s={0.17} g={kprog(T, K.Mx + 2.0, K.Mx + 2.8)} />
+            <Conifera x={110} y={1520} s={0.5} T={T} seed={2} />
+            <Encino x={330} y={1520} s={0.62} T={T} />
+            <Conifera x={760} y={1520} s={0.46} T={T} seed={5} />
+            <Encino x={960} y={1520} s={0.56} T={T} />
+            <Conifera x={560} y={1520} s={0.38} T={T} seed={7} />
+            <Muscaria T={T} x={200} y={1522} s={0.42} g={kprog(T, K.Mx + 1.8, K.Mx + 2.6)} />
+            <Muscaria T={T} x={650} y={1522} s={0.36} g={kprog(T, K.Mx + 2.0, K.Mx + 2.8)} />
+            <Muscaria T={T} x={870} y={1522} s={0.3} g={kprog(T, K.Mx + 2.2, K.Mx + 3.0)} />
           </g>}
         </>)}
       </Escena>
@@ -253,13 +258,13 @@ function MuscariaShot() {
       {/* 7 · ¿es venenoso? */}
       <Escena T={T} a={K.P} b={K.Tx} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><Interrogacion T={T} x={290} y={1060} /><SelloLargo T={T} at={K.P + 0.75} x={330} y={430} texto="VENENOSO" /></>)}
+        {fsvg(<><Pasto T={T} /><g opacity={0.55}><Muscaria T={T} x={690} y={MU_SUELO + 10} s={S0} g={1} mece={1} /></g><Interrogacion T={T} x={230} y={1140} /><SelloLargo T={T} at={K.P + 0.75} x={330} y={430} texto="VENENOSO" /></>)}
       </Escena>
       {/* 8 · en la sinapsis: iboténico (≈ glutamato) excita; muscimol (≈ GABA) frena. Luego, la olla. */}
       <Escena T={T} a={K.Tx} b={cocina} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.3) translate(-540 -780)">
           <path d="M 220 520 L 220 600 Q 220 700 540 700 Q 860 700 860 600 L 860 520" fill="#5a3f8f" stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 7 }, (_, i) => <circle key={i} cx={320 + i * 75} cy={620 + (i % 2) * 26} r={18} fill="#8f6fd0" stroke={KC.ink} strokeWidth={3} />)}
           {(() => { const exc = kprog(T, K.Tx + 0.9, K.Tx + 1.3) * (1 - kprog(T, K.Tx + 2.1, K.Tx + 2.5)), fr = kprog(T, K.Tx + 2.3, K.Tx + 2.8);
@@ -271,13 +276,13 @@ function MuscariaShot() {
             </>; })()}
           {[300, 420, 540].map((rx, i) => { const p = kprog(T, K.Tx + 0.4 + i * 0.15, K.Tx + 1.0 + i * 0.15, kEase.sale); return p > 0 && <Mol key={'i' + i} x={klerp(100, rx, p)} y={klerp(720, 752, p)} rot={(1 - p) * 200} color={KC.gold2} />; })}
           {[660, 780].map((rx, i) => { const p = kprog(T, K.Tx + 2.0 + i * 0.15, K.Tx + 2.6 + i * 0.15, kEase.sale); return p > 0 && <Mol key={'m' + i} x={klerp(1000, rx, p)} y={klerp(720, 752, p)} rot={(1 - p) * -200} color={KC.cyan} />; })}
-        </>)}
+        </g>)}
       </Escena>
       <Escena T={T} a={cocina} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <OllaM T={T} x={460} y={1000} s={1.0} />
-          {[[320, 900], [560, 930], [430, 960]].map(([x, y], i) => { const p = kprog(T, cocina + 0.5 + i * 0.2, cocina + 0.8 + i * 0.2, kEase.rebote); return p > 0 && <Mol key={i} x={x} y={y + Math.sin(T * 2 + i) * 8} s={p * 1.3} rot={T * 30 + i * 50} color={i === 1 ? KC.cyan : KC.gold2} />; })}
+          <OllaM T={T} x={540} y={1060} s={1.6} />
+          {[[316, 900], [700, 948], [492, 996]].map(([x, y], i) => { const p = kprog(T, cocina + 0.5 + i * 0.2, cocina + 0.8 + i * 0.2, kEase.rebote); return p > 0 && <Mol key={i} x={x} y={y + Math.sin(T * 2 + i) * 8} s={p * 2.0} rot={T * 30 + i * 50} color={i === 1 ? KC.cyan : KC.gold2} />; })}
         </>)}
       </Escena>
       {/* 9 · el caso de Minnesota, 2018: A. muscaria var. guessowii (amarillo-naranja) ≠ el hongo que él conocía */}
@@ -285,17 +290,17 @@ function MuscariaShot() {
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           <Pasto T={T} />
-          <Muscaria T={T} x={300} y={1190} s={0.95} g={kprog(T, K.E + 0.8, K.E + 1.8)} color={MU_GUESS} mece={1} />
+          <Muscaria T={T} x={290} y={MU_SUELO + 10} s={1.45} g={kprog(T, K.E + 0.8, K.E + 1.8)} color={MU_GUESS} mece={1} />
           {T > K.E + 2.0 && <g opacity={kprog(T, K.E + 2.0, K.E + 2.4)}>
-            <HongoSilueta x={790} y={1190} s={0.95} />
-            <text x={545} y={900} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={8}>≠</text>
+            <HongoSilueta x={800} y={MU_SUELO + 10} s={1.45} />
+            <text x={545} y={1200} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={8}>≠</text>
           </g>}
         </>)}
       </Escena>
       {/* 10 · horas después: síntomas, 4 días con respirador, se recuperó */}
       <Escena T={T} a={K.Re} b={K.Mo} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(555 1060) scale(1.15) translate(-555 -965)">
           <rect x={120} y={960} width={620} height={60} rx={20} fill="#ffffff" stroke={KC.ink} strokeWidth={7} />
           <rect x={140} y={1020} width={20} height={150} fill="#9aa3ad" stroke={KC.ink} strokeWidth={5} /><rect x={700} y={1020} width={20} height={150} fill="#9aa3ad" stroke={KC.ink} strokeWidth={5} />
           <rect x={150} y={910} width={150} height={60} rx={24} fill="#e6f3ff" stroke={KC.ink} strokeWidth={6} />
@@ -306,12 +311,12 @@ function MuscariaShot() {
           <path d={`M 828 ${840} ${Array.from({ length: 14 }, (_, i) => `L ${830 + i * 10} ${840 - 28 * Math.max(0, Math.sin(T * 5 - i * 0.6))}`).join(' ')}`} stroke={KC.mint} strokeWidth={4} fill="none" />
           <path d="M 800 950 Q 600 1060 420 990 Q 300 950 262 905" stroke="#cfe8ff" strokeWidth={14} fill="none" strokeLinecap="round" />
           <path d="M 800 950 Q 600 1060 420 990 Q 300 950 262 905" stroke={KC.ink} strokeWidth={3} fill="none" strokeDasharray="10 12" strokeDashoffset={-T * 30} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 11 · las moscas: hongo en leche para atontarlas */}
       <Escena T={T} a={K.Mo} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1130) scale(1.35) translate(-500 -1060)">
           <ellipse cx={500} cy={1070} rx={330} ry={90} fill="#ffffff" stroke={KC.ink} strokeWidth={8} />
           <ellipse cx={500} cy={1055} rx={270} ry={62} fill="#fbf6e9" stroke="#d8cfba" strokeWidth={4} />
           {PLATO.map(([x, y], i) => <g key={i} transform={`translate(${x} ${y}) rotate(${i * 37})`}><path d="M -34 8 Q -30 -20 0 -22 Q 30 -20 34 8 Z" fill={MU_ROJO} stroke={KC.ink} strokeWidth={4} /><circle cx={-8} cy={-8} r={5} fill={MU_VELO} /><circle cx={12} cy={-4} r={4} fill={MU_VELO} /></g>)}
@@ -319,61 +324,61 @@ function MuscariaShot() {
             const x = klerp(x0, px + 10, p) + (1 - p) * 60 * Math.sin(T * 4 + k), y = klerp(y0, py - 26, p) + (1 - p) * 40 * Math.cos(T * 5 + k);
             const mar = kprog(T, K.Mo + 1.9 + k * 0.2, K.Mo + 2.4 + k * 0.2);
             return <Mosca key={i} T={T} x={x} y={y} s={1.1} rot={mar * (20 + 10 * Math.sin(T * 3 + k))} mareo={mar} aleteo={p < 1} />; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · cierre: el mismo hongo del inicio; los puntos ya son pedazos del velo */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           <Pasto T={T} />
-          <Muscaria T={T} x={440} y={1190} s={S0} g={1} mece={1} brillo={kprog(T, K.C + 0.5, K.C + 1.0) * (0.6 + 0.4 * Math.sin(T * 5))} />
+          <Muscaria T={T} x={540} y={MU_SUELO + 10} s={S0} g={1} mece={1} brillo={kprog(T, K.C + 0.5, K.C + 1.0) * (0.6 + 0.4 * Math.sin(T * 5))} />
         </>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 2.6} until={K.G + 3.3} texto="¿manchas?" x={360} y={350} tam={48} />
-      <Chip T={T} at={K.G + 3.0} until={K.Hu - 0.3} texto="pedazos de su velo" x={360} y={350} tam={38} borde={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 2.6} until={K.G + 3.3} texto="¿manchas?" x={660} y={420} tam={48} />
+      <Chip T={T} at={K.G + 3.0} until={K.Hu - 0.3} texto="pedazos de su velo" x={660} y={420} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Hu + 1.6} until={K.Gl - 0.3} x={60} y={430} texto="Amanita muscaria" it tam={42} color={KC.ink} />
       <Etq T={T} at={K.Hu + 2.2} until={K.Gl - 0.3} x={60} y={490} texto="botón: hongo joven" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Hu + 2.6} until={K.Gl - 0.3} x={640} y={900} texto="velo universal" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Hu + 2.6} until={K.Gl - 0.3} x={740} y={1000} texto="velo universal" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Gl + 0.2} until={K.B - 0.3} texto="POR DENTRO · el velo no crece" x={400} y={420} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.B + 0.4} until={K.L - 0.3} x={60} y={510} texto="verrugas: pedazos del velo" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.B + 1.6} until={K.L - 0.3} x={1030} y={1115} texto="bandas del velo en el bulbo" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.B + 0.4} until={K.L - 0.3} x={60} y={500} texto="verrugas: pedazos del velo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.B + 1.6} until={K.L - 0.3} x={596} y={1385} texto="bandas del velo en el bulbo" tam={23} color={KC.ink} />
       <Chip T={T} at={K.L + 1.2} until={K.Mx - 0.3} texto="ojo: sin puntos se confunde con otros hongos" x={540} y={420} tam={27} borde={KC.red} />
       <Etq T={T} at={K.Mx + 0.8} until={K.R - 0.3} x={OAX[0] - 40} y={OAX[1] - 60} texto="Ixtlán de Juárez, Oax." lado="izq" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Mx + 1.4} until={K.R - 0.3} x={40} y={1010} texto="Amanita muscaria var. flavivolvata" it tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Mx + 1.9} until={K.R - 0.3} texto="bosque de pino y encino" x={300} y={1110} tam={30} borde={KC.leaf} />
+      <Etq T={T} at={K.Mx + 1.4} until={K.R - 0.3} x={40} y={1070} texto="Amanita muscaria var. flavivolvata" it tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Mx + 1.9} until={K.R - 0.3} texto="bosque de pino y encino" x={300} y={1150} tam={30} borde={KC.leaf} />
       <Chip T={T} at={K.R + 0.2} until={K.P - 0.3} texto="AL MICROSCOPIO · raíz de pino" x={420} y={420} tam={32} borde={KC.mint} mono />
       <Etq T={T} at={K.R + 1.0} until={K.P - 0.3} x={40} y={520} texto="hifas del hongo" tam={34} color={FK.hifa} />
       <Etq T={T} at={K.R + 1.6} until={K.P - 0.3} x={1030} y={1120} texto="nutrientes → árbol" lado="izq" tam={34} color={KC.mint} />
       <Etq T={T} at={K.R + 2.0} until={K.P - 0.3} x={40} y={1040} texto="azúcares → hongo" tam={34} color={KC.pink} />
       <Chip T={T} at={K.Tx + 0.2} until={cocina - 0.3} texto="AL MICROSCOPIO · sinapsis" x={400} y={420} tam={32} borde={KC.lilac} mono />
-      <Etq T={T} at={K.Tx + 0.8} until={K.Tx + 2.0} x={40} y={1110} texto="ácido iboténico ≈ glutamato → excita" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Tx + 2.2} until={cocina - 0.3} x={40} y={1110} texto="muscimol ≈ GABA → frena" tam={30} color={KC.cyan} />
+      <Etq T={T} at={K.Tx + 0.8} until={K.Tx + 2.0} x={40} y={1365} texto="ácido iboténico ≈ glutamato → excita" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.Tx + 2.2} until={cocina - 0.3} x={40} y={1365} texto="muscimol ≈ GABA → frena" tam={30} color={KC.cyan} />
       <Chip T={T} at={cocina + 0.6} until={K.E - 0.3} texto="cocinado ≠ seguro" x={400} y={460} tam={44} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.4} anio="2018" quien="Minnesota, EUA" revista="MMWR (CDC), 2019" y={540} />
-      <Etq T={T} at={K.E + 2.5} until={K.Re - 0.3} x={40} y={680} texto="A. muscaria var. guessowii" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.E + 2.5} until={K.Re - 0.3} x={1040} y={760} texto="el que él conocía" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.E + 2.5} until={K.Re - 0.3} x={40} y={790} texto="A. muscaria var. guessowii" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.E + 2.5} until={K.Re - 0.3} x={1040} y={790} texto="el que él conocía" lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Re + 0.2} until={K.Mo - 0.3} texto="2–3 h después de comer" x={330} y={400} tam={32} borde={KC.ink} mono />
       {['vómito', 'sudor', 'confusión'].map((t, i) => <Chip key={i} T={T} at={K.Re + 0.6 + i * 0.35} until={K.Re + 2.3} texto={t} x={180 + i * 200} y={520} tam={34} borde={KC.red} />)}
       {T < K.Mo - 0.3 && <Contador T={T} at={K.Re + 2.4} desde={2} hasta={4} dur={1.2} sufijo=" días con respirador" x={350} y={570} tam={40} />}
       <Chip T={T} at={K.Re + 3.8} until={K.Mo - 0.3} texto="✓ se recuperó" x={330} y={660} tam={40} borde={KC.leaf} />
-      <Etq T={T} at={K.Mo + 0.5} until={K.C - 0.3} x={60} y={930} texto="leche + hongo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 0.5} until={K.C - 0.3} x={40} y={960} texto="leche + hongo" tam={30} color={KC.ink} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="míralo ✓" x={260} y={420} tam={40} borde={KC.leaf} />
       <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="comerlo ✗" x={260} y={530} tam={40} borde={KC.red} />
 
       {/* barras de escala */}
-      <EscalaHongo T={T} at={K.G} until={K.Hu + 0.6} s={S0} />
-      <EscalaHongo T={T} at={K.Hu + 0.6} until={K.Gl} s={2.3} cm={2} />
+      <EscalaHongo T={T} at={K.G} until={K.Hu} s={S0} />
+      <EscalaHongo T={T} at={K.Hu} until={K.Gl} s={sHu} cm={2} />
       <EscalaHongo T={T} at={K.Gl} until={K.B} s={sGl} cm={2} />
-      <EscalaHongo T={T} at={K.B} until={K.Mx} s={1.35} />
+      <EscalaHongo T={T} at={K.B} until={K.Mx} s={S0} />
       <BarraEscala T={T} at={K.Mx} until={K.R} texto="500 km" largo={114} />
       <BarraEscala T={T} at={K.R} until={K.P} texto="100 µm" largo={90} />
-      <BarraEscala T={T} at={K.Tx} until={cocina} texto="0.5 µm (esquema)" largo={200} />
-      <BarraEscala T={T} at={cocina} until={K.E} texto="10 cm" largo={170} />
-      <EscalaHongo T={T} at={K.E} until={K.Re} s={0.95} />
-      <BarraEscala T={T} at={K.Re} until={K.Mo} texto="50 cm" largo={150} />
-      <BarraEscala T={T} at={K.Mo} until={K.C} texto="5 cm" largo={125} />
+      <BarraEscala T={T} at={K.Tx} until={cocina} texto="0.5 µm (esquema)" largo={260} />
+      <BarraEscala T={T} at={cocina} until={K.E} texto="10 cm" largo={272} />
+      <EscalaHongo T={T} at={K.E} until={K.Re} s={1.45} />
+      <BarraEscala T={T} at={K.Re} until={K.Mo} texto="50 cm" largo={172} />
+      <BarraEscala T={T} at={K.Mo} until={K.C} texto="5 cm" largo={169} />
       <EscalaHongo T={T} at={K.C} until={K.Ou} s={S0} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

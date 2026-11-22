@@ -21,11 +21,12 @@ const TXT = {
 };
 
 const MT = { blanco:'#f6f1e6', crema:'#efe4cc', sombra:'#d8c7a6', escama:'#a8723f', escama2:'#7d4f2a', lam:'#efe7d4',
-  aguja:'#5a7a2a', aguja2:'#a0782e', tierra:'#6b4426', tierra2:'#4a2e18', corteza:'#7a4a22', cortezaR:'#b5532c', hoja:'#4e9a3a', hoja2:'#3a7d2c',
+  aguja:'#5a7a2a', aguja2:'#a0782e', tierra:'#3a2415', tierra2:'#24160c', corteza:'#7a4a22', cortezaR:'#b5532c', hoja:'#4e9a3a', hoja2:'#3a7d2c',
   hifa:'#fff4d6', aguaC:'#5cc8ff', azucarC:'#ffd43b' };
 
 // Subtítulo con *dorado* y _cursiva_ (los nombres científicos van en cursiva también en el subtítulo).
 function SubM({ T, at, until, texto, idx, color = KC.gold2, tam = 62 }) {
+  if (!CINE_OPC.subtitulos) return null;
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
@@ -270,6 +271,9 @@ function MundoGancho({ T, abre = 0, crece = 1, tapa = 0 }) {
   </>;
 }
 
+// Pase a mano cine: agranda un grupo de dibujo k veces llevando el punto (x0, y0) a (X0, Y0).
+const zoomG = (k, x0, y0, X0, Y0, c) => <g transform={`translate(${X0} ${Y0}) scale(${k}) translate(${-x0} ${-y0})`}>{c}</g>;
+
 function MatsutakeShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, B: CUES.Bosque, Es: CUES.Especie, J: CUES.Japon, Ec: CUES.Escasez, Ex: CUES.Exporta, P: CUES.Pregunta, M: CUES.Micorriza,
@@ -292,17 +296,19 @@ function MatsutakeShot() {
       {/* 1 · gancho: el viento destapa el botón blanco entre las acículas; el champiñón se tacha; avioncito a Japón */}
       <Escena T={T} a={K.G} b={K.B} zoom={0.04} origen="40% 60%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {/* pase a mano cine: el bosque y el botón 1.6 veces más grandes, el hongo cerca del centro */}
+        {fsvg(zoomG(1.6, 400, 1190, 510, 1350, <>
           <MundoGancho T={T} abre={0} crece={sube} tapa={tapa} />
           <g opacity={kprog(T, K.G + 0.8, K.G + 1.2)}><Champinon x={150} y={900} s={0.55} abre={1} /></g>
           {T > K.G + 1.6 && <path d="M 80 640 L 230 860 M 230 640 L 80 860" stroke={KC.red} strokeWidth={18} strokeLinecap="round" opacity={kprog(T, K.G + 1.6, K.G + 1.9)} />}
           {avU > 0 && (() => { const ax = klerp(400, 1150, avU), ay = klerp(900, 380, avU) - Math.sin(Math.PI * avU) * 120; return <Avion x={ax} y={ay} ang={-30} s={1.2} />; })()}
-        </>)}
+        </>))}
       </Escena>
       {/* 2 · bosque de pino-encino: el hongo adulto; nombres comunes y científico */}
       <Escena T={T} a={K.B} b={K.J} zoom={0.05} origen="40% 70%">
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {/* pase a mano cine: el bosque y el hongo adulto 1.3 veces más grandes */}
+        {fsvg(zoomG(1.3, 420, 1190, 480, 1330, <>
           <Pino x={130} y={1190} s={1.1} T={T} seed={3} />
           <Encino x={620} y={1190} s={0.8} T={T} seed={5} />
           <Pino x={980} y={1190} s={1.25} T={T} seed={6} />
@@ -312,22 +318,23 @@ function MatsutakeShot() {
           <Aciculas x0={-40} x1={KW + 40} y={1172} n={110} seed={9} />
           {/* rizos de olor (hongo canela) */}
           {T > K.B + 3.0 && [0, 1, 2].map((i) => { const u = ((T - K.B - 3.0) * 0.6 + i / 3) % 1; return <path key={i} d={`M ${380 + i * 40} ${880 - u * 200} q 20 -30 0 -60 q -20 -30 0 -60`} stroke={KC.orange} strokeWidth={8} fill="none" strokeLinecap="round" opacity={Math.sin(Math.PI * u) * kprog(T, K.B + 3.0, K.B + 3.4)} />; })}
-        </>)}
+        </>))}
       </Escena>
       {/* 3 · Japón: pino rojo, su primo T. matsutake, arroz; luego los pinos se secan */}
       <Escena T={T} a={K.J} b={K.Ex} zoom={0.04}>
         <FondoLunares color={T < K.Ec ? KC.pink : mixHex(KC.pink, '#c9a26a', seca)} />
-        {fsvg(<>
+        {/* pase a mano cine: el bosque japonés, el primo y el tazón 1.3 veces más grandes */}
+        {fsvg(zoomG(1.3, 540, 1190, 540, 1330, <>
           <Pino x={120} y={1190} s={1.05} T={T} seed={12} corteza={MT.cortezaR} seca={seca} />
           <Pino x={560} y={1190} s={0.85} T={T} seed={13} corteza={MT.cortezaR} seca={seca * 0.9} />
           <Pino x={1000} y={1190} s={1.1} T={T} seed={14} corteza={MT.cortezaR} seca={seca} />
-          <SueloBosque y={1180} color="#7a5232" />
+          <SueloBosque y={1180} color="#3e2a19" />
           {/* matorral que invade el bosque descuidado */}
           {T > K.Ec && [[260, 1185], [420, 1190], [760, 1185], [880, 1192]].map(([bx, by], i) => <g key={i} transform={`translate(${bx} ${by}) scale(${kprog(T, K.Ec + 2.4 + i * 0.2, K.Ec + 3.2 + i * 0.2, kEase.rebote)})`}>
             {[-40, 0, 40].map((dx, k) => <ellipse key={k} cx={dx} cy={-50 - (k % 2) * 20} rx={60} ry={50} fill={k % 2 ? '#3f8f3a' : '#2f7a30'} stroke={KC.ink} strokeWidth={5} />)}</g>)}
           <g opacity={1 - kprog(T, K.Ec + 0.4, K.Ec + 1.6)}><Matsutake x={330} y={1196} s={1.2} abre={0.7} sombrero="#b8895a" escama="#6e4524" pie="#f3ead8" seed={5} /></g>
-          <g opacity={kprog(T, K.J + 2.2, K.J + 2.7) * (1 - kprog(T, K.Ec - 0.3, K.Ec + 0.2))}><Tazon x={800} y={1150} s={1.1} /></g>
-        </>)}
+          <g opacity={kprog(T, K.J + 2.2, K.J + 2.7) * (1 - kprog(T, K.Ec - 0.3, K.Ec + 0.2))}><Tazon x={780} y={1150} s={1.1} /></g>
+        </>))}
       </Escena>
       {/* 4 · exportación: mapa México → Japón y cajas */}
       <Escena T={T} a={K.Ex} b={K.P} zoom={0.04}>
@@ -344,24 +351,25 @@ function MatsutakeShot() {
       {/* 5 · re-gancho: ¿por qué no lo siembran? */}
       <Escena T={T} a={K.P} b={K.M} zoom={0.08}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {/* pase a mano cine: charola, suelo, hongo y signo 1.35 veces más grandes y centrados */}
+        {fsvg(zoomG(1.35, 300, 1190, 440, 1320, <>
           <rect x={60} y={1050} width={380} height={90} rx={14} fill="#2f6fd6" stroke={KC.ink} strokeWidth={7} />
           {[110, 190, 270, 350].map((cx, i) => <Champinon key={i} x={cx} y={1070} s={0.36} abre={0.6} />)}
           <SueloBosque y={1180} />
           <Matsutake x={300} y={1196} s={1.1} abre={0.8} seed={8} />
           <Interrogacion T={T} x={330} y={820} tam={380} />
-        </>)}
+        </>))}
       </Escena>
       {/* 6 · bajo tierra: ectomicorriza en la raíz del pino (fondo oscuro) */}
       <Escena T={T} a={K.M} b={K.S} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:'#160f0a' }}></div>
         <Ambiente T={T} n={20} color="rgba(255,230,190,.18)" />
-        {fsvg(<RaizMicorriza T={T} x={540} y={680} s={1.15} manto={kprog(T, K.M + 0.6, K.M + 2.0)} red={kprog(T, K.M + 0.3, K.M + 3.0)} flujo={kprog(T, K.M + 3.2, K.M + 3.8)} />)}
+        {fsvg(<RaizMicorriza T={T} x={540} y={830} s={1.15} manto={kprog(T, K.M + 0.6, K.M + 2.0)} red={kprog(T, K.M + 0.3, K.M + 3.0)} flujo={kprog(T, K.M + 3.2, K.M + 3.8)} />)}
       </Escena>
       {/* 7 · sin árbol vivo no hay hongo: frasco de laboratorio */}
       <Escena T={T} a={K.S} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<FrascoLab T={T} x={340} y={1170} s={1.25} g={kprog(T, K.S + 0.2, K.S + 2.4)} />)}
+        {fsvg(<FrascoLab T={T} x={540} y={1330} s={1.6} g={kprog(T, K.S + 0.2, K.S + 2.4)} />)}
       </Escena>
       {/* 8–9 · el estudio del Cofre de Perote: ¡takechi! */}
       <Escena T={T} a={K.E} b={K.Cu} zoom={0.03}>
@@ -372,7 +380,8 @@ function MatsutakeShot() {
       {/* 10 · cuidado: no rastrillar la hojarasca */}
       <Escena T={T} a={K.Cu} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {/* pase a mano cine: suelo, micelio, rastrillo y tache 1.3 veces más grandes y bajados al centro */}
+        {fsvg(zoomG(1.3, 540, 1000, 540, 1180, <>
           <Pino x={900} y={1000} s={0.9} T={T} seed={21} />
           <rect x={-40} y={990} width={KW + 80} height={KH} fill={MT.tierra} />
           {/* micelio bajo la hojarasca: se seca si queda expuesto */}
@@ -385,32 +394,33 @@ function MatsutakeShot() {
           {T > K.Cu + 1.6 && <g opacity={kprog(T, K.Cu + 1.6, K.Cu + 1.8)} transform={`translate(640 900) scale(${klerp(1.5, 1, kprog(T, K.Cu + 1.6, K.Cu + 1.9, kEase.rebote))}) translate(-640 -900)`}>
             <path d="M 500 760 L 780 1040 M 780 760 L 500 1040" stroke={KC.ink} strokeWidth={46} strokeLinecap="round" />
             <path d="M 500 760 L 780 1040 M 780 760 L 500 1040" stroke={KC.red} strokeWidth={30} strokeLinecap="round" /></g>}
-        </>)}
+        </>))}
       </Escena>
       {/* 11 · cierre: la misma imagen del inicio, ya adulto; la lupa muestra que vive abrazado a la raíz */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="40% 60%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {/* pase a mano cine: la misma imagen del gancho, también 1.6 veces más grande */}
+        {fsvg(zoomG(1.6, 400, 1190, 510, 1350, <>
           <MundoGancho T={T} abre={0.9} crece={1} tapa={0} />
           {(() => { const u = kprog(T, K.C + 2.6, K.C + 4.2, kEase.suave); if (u <= 0) return null; return <Avion x={klerp(1150, 560, u)} y={klerp(380, 1150, u) - Math.sin(Math.PI * u) * 120} ang={klerp(200, 170, u)} s={1.1} />; })()}
-        </>)}
+        </>))}
       </Escena>
-      <Lupa T={T} at={K.C + 0.4} until={K.Ou - 0.2} x={330} y={600} r={170} fx={400} fy={1210} interior={(t, r) =>
+      <Lupa T={T} at={K.C + 0.4} until={K.Ou - 0.2} x={280} y={580} r={190} fx={510} fy={1382} interior={(t, r) =>
         <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#160f0a" /><RaizMicorriza T={t} x={r} y={r - 30} s={0.42} manto={1} red={1} flujo={1} /></svg>} etiqueta={TXT.lupa} tinte={KC.gold2} />
 
       {/* textos */}
-      <EtqP T={T} at={K.G + 0.5} until={K.B - 0.3} x={490} y={900} texto={TXT.ganchoEtq} tam={36} color={KC.texto} />
-      <Chip T={T} at={K.G + 1.0} until={K.B - 0.3} texto={'✗ ' + TXT.champi} x={170} y={1000} tam={32} borde={KC.red} />
+      <EtqP T={T} at={K.G + 0.5} until={K.B - 0.3} x={540} y={880} texto={TXT.ganchoEtq} tam={34} color={KC.texto} />
+      <Chip T={T} at={K.G + 1.0} until={K.B - 0.3} texto={'✗ ' + TXT.champi} x={200} y={400} tam={34} borde={KC.red} />
       <Chip T={T} at={K.G + 3.4} until={K.B - 0.1} texto={TXT.aJapon + ' ✈'} x={760} y={480} tam={38} borde={KC.cyan} />
       {TXT.nombres.map((n, i) => <Chip key={i} T={T} at={K.B + 0.6 + i * 0.9} until={K.Es - 0.2} texto={n} x={330} y={430 + i * 100} tam={38} borde={i === 2 ? KC.orange : KC.gold} />)}
-      <EtqP T={T} at={K.B + 3.0} until={K.Es - 0.2} x={560} y={760} texto={TXT.olor} tam={32} color={KC.texto} />
+      <EtqP T={T} at={K.B + 3.0} until={K.Es - 0.2} x={680} y={760} texto={TXT.olor} tam={32} color={KC.texto} />
       <EtqP T={T} at={K.Es + 0.1} until={K.J - 0.3} x={50} y={500} texto={TXT.especie} it tam={46} color={KC.texto} />
       <Chip T={T} at={K.Es + 0.6} until={K.J - 0.3} texto={TXT.especieChip} x={540} y={600} tam={34} borde={KC.gold} />
       <NumeroGigante T={T} at={K.J + 1.4} until={K.Ec - 0.05} valor={12000} dur={1.4} sufijo=" t" etiqueta={TXT.numEtq} x={350} y={540} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.J + 2.2} until={K.Ec - 0.2} texto={TXT.numChip} x={350} y={700} tam={32} borde={KC.gold} />
-      <EtqP T={T} at={K.J + 0.9} until={K.Ec - 0.2} x={60} y={940} texto={TXT.primoChip} tam={32} color={KC.texto} />
-      <EtqP T={T} at={K.J + 0.6} until={K.Ec - 0.2} x={60} y={866} texto={TXT.primo} it tam={34} color={KC.texto} />
-      <EtqP T={T} at={K.J + 2.8} until={K.Ec - 0.2} x={1030} y={990} lado="izq" texto={TXT.arroz} tam={32} color={KC.texto} />
+      <EtqP T={T} at={K.J + 0.9} until={K.Ec - 0.2} x={60} y={880} texto={TXT.primoChip} tam={32} color={KC.texto} />
+      <EtqP T={T} at={K.J + 0.6} until={K.Ec - 0.2} x={60} y={806} texto={TXT.primo} it tam={34} color={KC.texto} />
+      <EtqP T={T} at={K.J + 2.8} until={K.Ec - 0.2} x={1030} y={1060} lado="izq" texto={TXT.arroz} tam={32} color={KC.texto} />
       <NumeroGigante T={T} at={K.Ec} until={K.Ex - 0.3} valor={15} desde={12000} dur={1.2} sufijo=" t" etiqueta={TXT.escEtq} x={350} y={540} tam={150} color={KC.red} />
       <Chip T={T} at={K.Ec + 1.6} until={K.Ex - 0.3} texto={TXT.escChip1} x={480} y={760} tam={30} borde={KC.orange} />
       <Chip T={T} at={K.Ec + 2.6} until={K.Ex - 0.3} texto={TXT.escChip2} x={480} y={850} tam={30} borde={KC.leaf} />
@@ -418,13 +428,13 @@ function MatsutakeShot() {
       <Chip T={T} at={K.Ex + 3.4} until={K.P - 0.3} texto={TXT.exp2} x={540} y={510} tam={30} borde={KC.cyan} />
       <EtqP T={T} at={K.Ex + 0.5} until={K.P - 0.3} x={60} y={600} texto={TXT.mexico} tam={34} color={KC.texto} />
       <EtqP T={T} at={K.Ex + 2.4} until={K.P - 0.3} x={1030} y={920} lado="izq" texto={TXT.japon} tam={34} color={KC.texto} />
-      <Chip T={T} at={K.M + 0.1} until={K.S - 0.3} texto={TXT.dentro} x={540} y={420} tam={32} borde={KC.gold2} mono />
-      <EtqP T={T} at={K.M + 0.5} until={K.S - 0.3} x={60} y={600} texto={TXT.raiz} tam={30} color="#e7b57e" />
-      <EtqP T={T} at={K.M + 1.6} until={K.S - 0.3} x={1030} y={540} lado="izq" texto={TXT.manto} tam={30} color={MT.hifa} />
-      <EtqP T={T} at={K.M + 3.2} until={K.S - 0.3} x={60} y={1120} texto={'● ' + TXT.agua} tam={30} color={MT.aguaC} />
-      <EtqP T={T} at={K.M + 3.8} until={K.S - 0.3} x={60} y={1180} texto={'◆ ' + TXT.azucar} tam={30} color={MT.azucarC} />
-      <Chip T={T} at={K.S + 0.4} until={K.E - 0.3} texto={TXT.cultivo} x={340} y={430} tam={38} borde={KC.red} />
-      <EtqP T={T} at={K.S + 1.6} until={K.E - 0.3} x={40} y={530} texto={TXT.cultivo2} tam={32} color={KC.texto} />
+      <Chip T={T} at={K.M + 0.1} until={K.S - 0.3} texto={TXT.dentro} x={540} y={520} tam={32} borde={KC.gold2} mono />
+      <EtqP T={T} at={K.M + 0.5} until={K.S - 0.3} x={60} y={750} texto={TXT.raiz} tam={30} color="#e7b57e" />
+      <EtqP T={T} at={K.M + 1.6} until={K.S - 0.3} x={1030} y={690} lado="izq" texto={TXT.manto} tam={30} color={MT.hifa} />
+      <EtqP T={T} at={K.M + 3.2} until={K.S - 0.3} x={60} y={1270} texto={'● ' + TXT.agua} tam={30} color={MT.aguaC} />
+      <EtqP T={T} at={K.M + 3.8} until={K.S - 0.3} x={60} y={1330} texto={'◆ ' + TXT.azucar} tam={30} color={MT.azucarC} />
+      <Chip T={T} at={K.S + 0.4} until={K.E - 0.3} texto={TXT.cultivo} x={540} y={380} tam={40} borde={KC.red} />
+      <EtqP T={T} at={K.S + 1.6} until={K.E - 0.3} x={40} y={480} texto={TXT.cultivo2} tam={32} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.5} anio={TXT.estAnio} quien={TXT.estQuien} revista={TXT.estRev} x={540} y={600} />
       {(() => { if (!kvisible(T, K.Tk, K.Tk + 2.1)) return null; const e = kentrada(T, K.Tk, K.Tk + 2.1, 'pop');
         return <div style={{ position:'absolute', left:360, top:470, zIndex:44, transform:`translate(-50%,-50%) scale(${e.s}) rotate(${-4 + Math.sin(T * 14) * 2}deg)`, opacity:e.o,
@@ -432,20 +442,20 @@ function MatsutakeShot() {
       <Chip T={T} at={K.Tk + 2.8} until={K.Cu - 0.3} texto={TXT.takechiChip} x={340} y={430} tam={36} borde={KC.red} />
       <Chip T={T} at={K.Tk + 3.2} until={K.Cu - 0.3} texto={TXT.takeshi} x={340} y={520} tam={32} borde={KC.gold} />
       <Chip T={T} at={K.Tk + 3.4} until={K.Cu - 0.3} texto={TXT.tele} x={340} y={610} tam={28} borde={KC.cyan} />
-      <Chip T={T} at={K.Cu + 1.8} until={K.C - 0.3} texto={TXT.cuidado} x={380} y={450} tam={30} borde={KC.red} />
-      <EtqP T={T} at={K.Cu + 1.2} until={K.C - 0.3} x={60} y={1050} texto={TXT.micelio} tam={30} color={MT.hifa} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto={TXT.cierre} x={380} y={380} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.Cu + 1.8} until={K.C - 0.3} texto={TXT.cuidado} x={540} y={620} tam={34} borde={KC.red} />
+      <EtqP T={T} at={K.Cu + 1.2} until={K.C - 0.3} x={60} y={1290} texto={TXT.micelio} tam={30} color={MT.hifa} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto={TXT.cierre} x={560} y={330} tam={36} borde={KC.gold} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.B} texto="5 cm" largo={150} />
-      <BarraEscala T={T} at={K.B} until={K.J} texto="5 cm" largo={170} />
-      <BarraEscala T={T} at={K.J} until={K.Ex} texto="5 cm" largo={130} />
+      <BarraEscala T={T} at={K.G} until={K.B} texto="5 cm" largo={240} />
+      <BarraEscala T={T} at={K.B} until={K.J} texto="5 cm" largo={221} />
+      <BarraEscala T={T} at={K.J} until={K.Ex} texto="5 cm" largo={169} />
       <BarraEscala T={T} at={K.Ex} until={K.P} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.P} until={K.M} texto="5 cm" largo={125} />
+      <BarraEscala T={T} at={K.P} until={K.M} texto="5 cm" largo={169} />
       <BarraEscala T={T} at={K.M} until={K.S} texto="1 mm (esquemático)" largo={160} />
-      <BarraEscala T={T} at={K.S} until={K.E} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={K.Cu} until={K.C} texto="5 cm" largo={120} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={150} />
+      <BarraEscala T={T} at={K.S} until={K.E} texto="5 cm" largo={141} />
+      <BarraEscala T={T} at={K.Cu} until={K.C} texto="5 cm" largo={156} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={240} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <SubM T={T} idx={0} at={K.G + 0.1} until={K.B - 0.1} texto="No es un champiñón: *es matsutake.*" />

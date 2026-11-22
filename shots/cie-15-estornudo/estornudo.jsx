@@ -2,7 +2,7 @@
 // Shot Científico #15 · Tu estornudo no sale como bala — NARRADO (N2 "El número" + N5 el experimento).
 // Datos: Tang et al. 2013 (PLoS ONE 8: e59970), Tang et al. 2011 (PLoS ONE 6: e21392), CDC. Ver guion.md y verificacion.md.
 // Dibujo esquemático: la nube, las ondas de la técnica de sombras y las distancias no van a escala exacta.
-const ES_GRIS = '#d6d6d1', ES_SIL = '#3b3b3e', ES_SIL2 = '#2b2b2e';
+const ES_GRIS = '#1c2129', ES_SIL = '#07090d', ES_SIL2 = '#020305';
 
 // Contorno ondulado y suave (remolino de aire o bocanada de nube).
 function blobPath(cx, cy, r, seed, fase = 0, amp = 1) {
@@ -56,8 +56,8 @@ function PlumaSombra({ T, t0, x, y, ang = 0, alcance = 600, n = 16, seed = 3, du
     const o = (1 - kprog(d, alcance * 0.65, alcance * 1.0)) * (1 - kprog(T, fin, fin + 0.6)) * (modo === 'golpe' ? 1 : kprog(u, 0, 0.08));
     if (o < 0.03) continue;
     out.push(<g key={i} opacity={o}>
-      <path d={blobPath(px, py, rr, seed * 31 + i, T * 2 + i)} fill="rgba(40,40,44,.10)" stroke="rgba(30,30,34,.75)" strokeWidth={5} />
-      <path d={blobPath(px + rr * 0.1, py - rr * 0.05, rr * 0.55, seed * 17 + i, -T * 2.5)} fill="none" stroke="rgba(250,250,245,.8)" strokeWidth={4} />
+      <path d={blobPath(px, py, rr, seed * 31 + i, T * 2 + i)} fill="rgba(220,232,245,.06)" stroke="rgba(215,228,242,.72)" strokeWidth={5} />
+      <path d={blobPath(px + rr * 0.1, py - rr * 0.05, rr * 0.55, seed * 17 + i, -T * 2.5)} fill="none" stroke="rgba(120,160,205,.6)" strokeWidth={4} />
     </g>);
   }
   return <g>{out}</g>;
@@ -66,10 +66,10 @@ function PlumaSombra({ T, t0, x, y, ang = 0, alcance = 600, n = 16, seed = 3, du
 // Fondo de la técnica de sombras: campo de luz gris claro.
 function FondoSombra({ T }) {
   return <svg width={KW} height={KH} viewBox={`0 0 ${KW} ${KH}`} style={{ position:'absolute', left:0, top:0 }}>
-    <defs><radialGradient id="esCampo" cx="0.5" cy="0.45" r="0.6"><stop offset="0" stopColor="#f3f3ee" /><stop offset="0.7" stopColor={ES_GRIS} /><stop offset="1" stopColor="#a9a9a4" /></radialGradient></defs>
+    <defs><radialGradient id="esCampo" cx="0.5" cy="0.45" r="0.6"><stop offset="0" stopColor="#2c333d" /><stop offset="0.7" stopColor={ES_GRIS} /><stop offset="1" stopColor="#0b0e13" /></radialGradient></defs>
     <rect width={KW} height={KH} fill="url(#esCampo)" />
-    {Array.from({ length: 30 }, (_, i) => { const g = krng(70 + i); return <circle key={i} cx={g() * KW} cy={g() * KH} r={2 + g() * 3} fill="rgba(60,60,60,.12)" />; })}
-    <circle cx={540} cy={860} r={600} fill="none" stroke="rgba(80,80,80,.18)" strokeWidth={10} />
+    {Array.from({ length: 30 }, (_, i) => { const g = krng(70 + i); return <circle key={i} cx={g() * KW} cy={g() * KH} r={2 + g() * 3} fill="rgba(220,230,245,.06)" />; })}
+    <circle cx={540} cy={960} r={600} fill="none" stroke="rgba(200,215,235,.12)" strokeWidth={10} />
   </svg>;
 }
 
@@ -135,9 +135,9 @@ function Pimentero({ x, y, rot = 0, s = 1 }) {
 // Regla de centímetros (dentro de svg). (x, y) = esquina; ancho = 60 cm.
 function ReglaCm({ x, y, ancho = 600 }) {
   return <g>
-    <rect x={x - 20} y={y} width={ancho + 40} height={54} rx={10} fill="#f6d36b" stroke={KC.ink} strokeWidth={7} />
-    {Array.from({ length: 13 }, (_, i) => <line key={i} x1={x + ancho * i / 12} y1={y} x2={x + ancho * i / 12} y2={y + (i % 2 ? 18 : 32)} stroke={KC.ink} strokeWidth={5} />)}
-    {[[0, '0', 'middle'], [0.5, '30', 'middle'], [1, '60 cm', 'end']].map(([f, t, an]) => <text key={t} x={x + ancho * f + (an === 'end' ? 30 : 0)} y={y + 98} textAnchor={an} style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink}>{t}</text>)}
+    <rect x={x - 20} y={y} width={ancho + 40} height={54} rx={10} fill="#f6d36b" stroke="#0b1020" strokeWidth={7} />
+    {Array.from({ length: 13 }, (_, i) => <line key={i} x1={x + ancho * i / 12} y1={y} x2={x + ancho * i / 12} y2={y + (i % 2 ? 18 : 32)} stroke="#0b1020" strokeWidth={5} />)}
+    {[[0, '0', 'middle'], [0.5, '30', 'middle'], [1, '60 cm', 'end']].map(([f, t, an]) => <text key={t} x={x + ancho * f + (an === 'end' ? 30 : 0)} y={y + 98} textAnchor={an} style={{ font:`700 36px ${KF.mono}` }} fill={KC.texto}>{t}</text>)}
   </g>;
 }
 // Cabeza que estornuda: se echa atrás (AH…) y luego de golpe adelante (¡ACHÚ!) en `at`.
@@ -154,14 +154,14 @@ function CabezaEstornudo({ T, at, x, y, s = 1, piel, pelo, ojo = 1, gesto }) {
 function Estornudo() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
-  // gancho: cabeza en (250, 880) s 1.15 → boca ≈ (422, 995)
+  // gancho: cabeza en (350, 900) s 1.7 → boca ≈ (605, 1070)
   const ACHU = 0.55;
-  const hx = 250, hy = 880, hs = 1.15, bx = hx + 150 * hs, by = hy + 100 * hs;
+  const hx = 350, hy = 900, hs = 1.7, bx = hx + 150 * hs, by = hy + 100 * hs;
   // estudio: 6 voluntarios y el pimentero que pasa
-  const volX = (i) => 150 + i * 156, PIM0 = K.Estudio + 2.2, PIM1 = K.Estudio + 4.8;
+  const volX = (i) => 115 + i * 170, PIM0 = K.Estudio + 2.2, PIM1 = K.Estudio + 4.8;
   const pimX = klerp(volX(0) - 40, volX(5) + 40, kprog(T, PIM0, PIM1));
   // sombras / medida / nariz: silueta en (250, 860)
-  const sx = 250, sy = 860, sbx = sx + 150, sby = sy + 100, snx = sx + 200, sny = sy + 45;
+  const ss = 1.45, sx = 255, sy = 930, sbx = sx + 150 * ss, sby = sy + 100 * ss, snx = sx + 200 * ss, sny = sy + 45 * ss;
   return (
     <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.pink }}>
       {/* 0 · gancho: ¡ACHÚ!, la bala tachada y el número */}
@@ -169,35 +169,37 @@ function Estornudo() {
         <FondoLunares color={KC.pink} />
         <Lienzo>
           <CabezaEstornudo T={T} at={ACHU} x={hx} y={hy} s={hs} />
-          <ChorroGotas T={T} t0={ACHU} x={bx} y={by} ang={4} alcance={640} n={80} seed={2} dur={1.6} vida={5} />
-          <Onomato T={T} at={ACHU} dur={1.1} x={330} y={560} texto="¡ACHÚ!" tam={150} color={KC.yellow} />
+          <ChorroGotas T={T} t0={ACHU} x={bx} y={by} ang={4} alcance={660} n={90} seed={2} dur={1.6} vida={5} s={1.35} />
+          <Onomato T={T} at={ACHU} dur={1.1} x={720} y={640} texto="¡ACHÚ!" tam={150} color={KC.yellow} />
           {T > 1.9 && T < 4.4 && <g opacity={1 - kprog(T, 3.9, 4.3)}>
-            <Bala x={klerp(-200, 330, kprog(T, 1.9, 2.3, kEase.sale))} y={520} s={1} tacha={kprog(T, 2.6, 3.1)} vuela={1 - kprog(T, 2.3, 2.6)} />
+            <Bala x={klerp(-200, 600, kprog(T, 1.9, 2.3, kEase.sale))} y={420} s={1.1} tacha={kprog(T, 2.6, 3.1)} vuela={1 - kprog(T, 2.3, 2.6)} />
           </g>}
         </Lienzo>
-        <NumeroGigante T={T} at={4.0} until={K.Mito - 0.2} valor={16} desde={16} dur={0.9} prefijo="máx. ≈ " sufijo=" km/h" x={540} y={500} tam={120} color={KC.yellow} />
+        <NumeroGigante T={T} at={4.0} until={K.Mito - 0.2} valor={16} desde={16} dur={0.9} prefijo="máx. ≈ " sufijo=" km/h" x={540} y={400} tam={120} color={KC.yellow} />
       </Escena>
       {/* 1 · el mito: 100 m/s */}
       <Escena T={T} a={K.Mito} b={K.Calculo} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          {(() => { const p = kprog(T, K.Mito + 0.6, K.Mito + 1.5, kEase.suave); return p > 0 && p < 1 && <g transform={`translate(${klerp(-300, 1400, p)} 1060)`}>
-            {[-40, 0, 40].map((dy, i) => <line key={i} x1={-420} y1={dy} x2={-140} y2={dy} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />)}
+          <CabezaPerfil x={200} y={1060} s={1.5} boca={T < K.Mito + 3.0 ? 0.5 : 0.2} gesto="mueca" />
+          {T < K.Mito + 3.0 && (() => { const ph = ((T - K.Mito) / 1.05) % 1, p = kEase.suave(ph); return <g transform={`translate(${klerp(560, 1450, p)} 1210)`} opacity={kprog(ph, 0, 0.12)}>
+            {[-40, 0, 40].map((dy, i) => <line key={i} x1={-300} y1={dy} x2={-140} y2={dy} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" opacity={0.8 * kprog(ph, 0.12, 0.3)} />)}
             <path d={blobPath(0, 0, 110, 4, T * 3)} fill="#fff" stroke={KC.ink} strokeWidth={8} />
           </g>; })()}
           {T > K.Mito + 3.0 && <g opacity={kprog(T, K.Mito + 3.0, K.Mito + 3.3)}>
-            {Array.from({ length: 5 }, (_, i) => <path key={i} d={blobPath(540 + (i - 2) * 160, 1060 + Math.sin(i * 2) * 40, 60 + i % 2 * 20, 50 + i, T)} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={6} />)}
+            {Array.from({ length: 5 }, (_, i) => <path key={i} d={blobPath(560 + i * 115, 1200 + Math.sin(i * 2) * 40 + Math.sin(T * 1.5 + i) * 8, 55 + i % 2 * 20 + i * 6, 50 + i, T)} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={6} />)}
           </g>}
         </Lienzo>
-        <Chip T={T} at={K.Mito + 0.2} until={K.Calculo - 0.1} texto="durante años se repitió…" x={540} y={440} tam={40} borde={KC.ink} />
-        <MitoTachado T={T} at={K.Mito + 0.4} tacharEn={K.Mito + 3.0} until={K.Calculo - 0.15} texto="100 m/s" x={540} y={760} tam={130} />
+        <Chip T={T} at={K.Mito + 0.2} until={K.Calculo - 0.1} texto="durante años se repitió…" x={540} y={380} tam={44} borde={KC.ink} />
+        <MitoTachado T={T} at={K.Mito + 0.4} tacharEn={K.Mito + 3.0} until={K.Calculo - 0.15} texto="100 m/s" x={560} y={620} tam={130} />
       </Escena>
       {/* 2 · cálculos viejos, no medición */}
       <Escena T={T} a={K.Calculo} b={K.Estudio} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
+          <g transform="translate(520 980) scale(1.18) translate(-480 -830)">
           <g transform="rotate(-5 470 800)">
-            <rect x={150} y={540} width={620} height={560} rx={14} fill="#e9d9ab" stroke={KC.ink} strokeWidth={9} />
+            <rect x={150} y={540} width={620} height={560} rx={14} fill="#cdb886" stroke={KC.ink} strokeWidth={9} />
             <rect x={150} y={540} width={620} height={560} rx={14} fill="none" stroke="#b9975a" strokeWidth={3} strokeDasharray="4 10" />
             {Array.from({ length: 7 }, (_, j) => { const p = kprog(T, K.Calculo + 0.3 + j * 0.35, K.Calculo + 0.65 + j * 0.35), g = krng(200 + j), L = 380 + g() * 120;
               let d = `M 200 ${610 + j * 66}`; for (let k = 1; k <= 30 * p; k++) d += ` L ${200 + (L * k) / 30} ${610 + j * 66 + Math.sin(k * 1.7 + j) * 9 * (0.4 + g())}`;
@@ -212,6 +214,7 @@ function Estornudo() {
             <text x={86} y={-82} textAnchor="end" style={{ font:`700 62px ${KF.mono}` }} fill="#1f3320">100</text>
             {Array.from({ length: 12 }, (_, i) => <rect key={i} x={-100 + (i % 3) * 70} y={-35 + Math.floor(i / 3) * 52} width={56} height={40} rx={8} fill={i === 11 ? KC.orange : '#e9e6dd'} stroke={KC.ink} strokeWidth={4} />)}
           </g>
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Calculo + 2.2} until={K.Estudio - 0.1} texto="estimación, no medición" x={540} y={440} tam={46} borde={KC.red} />
       </Escena>
@@ -219,58 +222,58 @@ function Estornudo() {
       <Escena T={T} a={K.Estudio} b={K.Sombras} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <line x1={40} y1={1172} x2={1040} y2={1172} stroke={KC.ink} strokeWidth={10} />
-          {Array.from({ length: 6 }, (_, i) => { const at = K.Estudio + 0.7 + i * 0.22, e = kprog(T, at, at + 0.35, kEase.rebote), ach = PIM0 + (PIM1 - PIM0) * (i + 0.5) / 6 + 0.25;
+          <line x1={20} y1={1332} x2={1060} y2={1332} stroke={KC.ink} strokeWidth={10} />
+          {Array.from({ length: 6 }, (_, i) => { const at = K.Estudio + 0.05 + i * 0.08, e = kprog(T, at, at + 0.35, kEase.rebote), ach = PIM0 + (PIM1 - PIM0) * (i + 0.5) / 6 + 0.25;
             const brinco = T > ach ? Math.exp(-(T - ach) * 6) * Math.sin((T - ach) * 30) * 6 : 0;
             return T > at && <g key={i}>
-              <g transform={`translate(${volX(i)} 1170) rotate(${brinco}) scale(${0.45 * klerp(0.3, 1, e)})`}>
+              <g transform={`translate(${volX(i)} 1330) rotate(${brinco}) scale(${0.6 * klerp(0.3, 1, e)})`}>
                 <PersonaSimple x={0} yPies={0} alto={600} color={[KC.pink, KC.yellow, KC.mint, KC.orange, KC.lilac, KC.red][i]} cara={T > ach ? 'o' : 'normal'} />
               </g>
-              <ChorroGotas T={T} t0={ach} x={volX(i) + 10} y={920} ang={-90 + (i % 2 ? 30 : -30)} alcance={130} n={16} seed={60 + i} dur={0.8} abre={120} vida={1.5} s={0.7} />
+              <ChorroGotas T={T} t0={ach} x={volX(i) + 10} y={1010} ang={-90 + (i % 2 ? 30 : -30)} alcance={170} n={16} seed={60 + i} dur={0.8} abre={120} vida={1.5} s={0.9} />
             </g>; })}
           {T > PIM0 - 0.3 && T < PIM1 + 0.4 && <>
-            <Pimentero x={pimX} y={700} rot={160 + Math.sin(T * 26) * 14} s={0.9} />
-            {Array.from({ length: 26 }, (_, i) => { const g = krng(300 + i), tt = ((T * 1.6 + g()) % 1); return T < PIM1 && <circle key={i} cx={pimX + (g() - 0.5) * 50} cy={780 + tt * 150} r={4 + g() * 3} fill="#2a211c" opacity={1 - tt * 0.6} />; })}
+            <Pimentero x={pimX} y={780} rot={160 + Math.sin(T * 26) * 14} s={1.1} />
+            {Array.from({ length: 26 }, (_, i) => { const g = krng(300 + i), tt = ((T * 1.6 + g()) % 1); return T < PIM1 && <circle key={i} cx={pimX + (g() - 0.5) * 60} cy={880 + tt * 170} r={4 + g() * 3} fill="#2a211c" opacity={1 - tt * 0.6} />; })}
           </>}
         </Lienzo>
-        <Chip T={T} at={K.Estudio + 0.3} until={K.Sombras - 0.1} texto="2013 · 6 voluntarios · pimienta" x={540} y={440} tam={44} borde={KC.yellow} />
+        <Chip T={T} at={K.Estudio + 0.3} until={K.Sombras - 0.1} texto="2013 · 6 voluntarios · pimienta" x={540} y={480} tam={44} borde={KC.yellow} />
       </Escena>
       {/* 4 · la técnica de sombras: el aire se ve */}
       <Escena T={T} a={K.Sombras} b={K.Medida} fondo={ES_GRIS} zoom={0.03}>
         <FondoSombra T={T} />
         <Lienzo>
-          <PlumaSombra T={T} t0={K.Sombras + 0.2} x={snx} y={sny} ang={28} alcance={360} n={10} seed={8} modo="tranquilo" fin={K.Sombras + 1.9} />
-          <CabezaEstornudo T={T} at={K.Sombras + 2.3} x={sx} y={sy} s={1} piel={ES_SIL} pelo={ES_SIL2} ojo={0} gesto="normal" />
-          <PlumaSombra T={T} t0={K.Sombras + 2.3} x={sbx} y={sby} ang={3} alcance={600} n={22} seed={11} dur={1.8} />
+          <PlumaSombra T={T} t0={K.Sombras + 0.2} x={snx} y={sny} ang={28} alcance={400} n={10} seed={8} modo="tranquilo" fin={K.Sombras + 1.9} />
+          <CabezaEstornudo T={T} at={K.Sombras + 2.3} x={sx} y={sy} s={ss} piel={ES_SIL} pelo={ES_SIL2} ojo={0} gesto="normal" />
+          <PlumaSombra T={T} t0={K.Sombras + 2.3} x={sbx} y={sby} ang={3} alcance={580} n={22} seed={11} dur={1.8} />
         </Lienzo>
         <Chip T={T} at={K.Sombras + 0.3} until={K.Medida - 0.1} texto="técnica de sombras" x={540} y={440} tam={46} borde={ES_SIL} />
-        <Etq T={T} at={K.Sombras + 0.6} until={K.Sombras + 2.0} x={560} y={1010} texto="aire de la nariz" lado="der" color={KC.ink} />
-        <Etq T={T} at={K.Sombras + 3.0} until={K.Medida - 0.1} x={620} y={760} texto="aire de la boca" lado="der" color={KC.ink} />
+        <Etq T={T} at={K.Sombras + 0.6} until={K.Sombras + 2.0} x={640} y={1200} texto="aire de la nariz" lado="der" color={KC.ink} />
+        <Etq T={T} at={K.Sombras + 3.0} until={K.Medida - 0.1} x={650} y={840} texto="aire de la boca" lado="der" color={KC.ink} />
       </Escena>
       {/* 5 · la medida: se ve hasta 60 cm · lo más rápido 4.5 m/s */}
       <Escena T={T} a={K.Medida} b={K.Tos} fondo={ES_GRIS} zoom={0.03}>
         <FondoSombra T={T} />
         <Lienzo>
-          <CabezaEstornudo T={T} at={K.Medida + 0.5} x={sx} y={sy} s={1} piel={ES_SIL} pelo={ES_SIL2} ojo={0} gesto="normal" />
-          <PlumaSombra T={T} t0={K.Medida + 0.5} x={sbx} y={sby} ang={2} alcance={600} n={26} seed={21} dur={2.4} />
-          <g opacity={kprog(T, K.Medida + 0.2, K.Medida + 0.6)}><ReglaCm x={sbx} y={1080} ancho={600} /></g>
-          {T > K.Medida + 2.2 && <line x1={sbx + 600} y1={760} x2={sbx + 600} y2={1080} stroke={KC.red} strokeWidth={8} strokeDasharray="18 12" opacity={kprog(T, K.Medida + 2.2, K.Medida + 2.5)} />}
+          <CabezaEstornudo T={T} at={K.Medida + 0.5} x={sx} y={sy} s={ss} piel={ES_SIL} pelo={ES_SIL2} ojo={0} gesto="normal" />
+          <PlumaSombra T={T} t0={K.Medida + 0.5} x={sbx} y={sby} ang={2} alcance={520} n={26} seed={21} dur={2.4} />
+          <g opacity={kprog(T, K.Medida + 0.2, K.Medida + 0.6)}><ReglaCm x={sbx} y={1290} ancho={520} /></g>
+          {T > K.Medida + 2.2 && <line x1={sbx + 520} y1={830} x2={sbx + 520} y2={1290} stroke={KC.red} strokeWidth={8} strokeDasharray="18 12" opacity={kprog(T, K.Medida + 2.2, K.Medida + 2.5)} />}
         </Lienzo>
-        <Etq T={T} at={K.Medida + 2.3} until={K.Tos - 0.1} x={sbx + 590} y={730} texto="se ve hasta aquí" lado="izq" color={KC.red} />
-        <NumeroGigante T={T} at={K.Medida + 3.0} until={K.Tos - 0.15} valor={4.5} desde={4.5} dec={1} dur={0.8} sufijo=" m/s" etiqueta="lo más rápido" x={330} y={500} tam={130} color={KC.yellow} />
+        <Etq T={T} at={K.Medida + 2.3} until={K.Tos - 0.1} x={sbx + 510} y={800} texto="se ve hasta aquí" lado="izq" color={KC.red} />
+        <NumeroGigante T={T} at={K.Medida + 3.0} until={K.Tos - 0.15} valor={4.5} desde={4.5} dec={1} dur={0.8} sufijo=" m/s" etiqueta="lo más rápido" x={540} y={440} tam={130} color={KC.yellow} />
       </Escena>
       {/* 6 · como una tos: rápido, pero no extremo */}
       <Escena T={T} a={K.Tos} b={K.Pregunta} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          {[['tos', 0, 0.86, K.Tos + 0.3], ['estornudo', 370, 0.9, K.Tos + 0.6]].map(([lbl, dy, v, t0], i) => <g key={lbl}>
-            <rect x={50} y={460 + dy} width={980} height={330} rx={34} fill="rgba(14,15,18,.82)" stroke={KC.ink} strokeWidth={8} />
-            <BarraH x={340} y={540 + dy} ancho={640} alto={40} v={v * kprog(T, t0, t0 + 0.8, kEase.sale)} color={i ? KC.cyan : KC.gold2} etiqueta={lbl} />
-            <CabezaEstornudo T={T} at={t0} x={160} y={650 + dy} s={0.48} />
-            <ChorroGotas T={T} t0={t0} x={160 + 72} y={650 + dy + 48} ang={6} alcance={620} n={34} seed={80 + i} dur={1.3} vida={4} s={0.8} />
+          {[['tos', 100, 0.86, K.Tos + 0.15], ['estornudo', 510, 0.9, K.Tos + 0.4]].map(([lbl, dy, v, t0], i) => <g key={lbl}>
+            <rect x={40} y={440 + dy} width={1000} height={390} rx={34} fill="rgba(14,15,18,.82)" stroke={KC.ink} strokeWidth={8} />
+            <BarraH x={360} y={520 + dy} ancho={620} alto={44} v={v * kprog(T, t0, t0 + 0.8, kEase.sale)} color={i ? KC.cyan : KC.gold2} etiqueta={lbl} />
+            <CabezaEstornudo T={T} at={t0} x={170} y={670 + dy} s={0.66} />
+            <ChorroGotas T={T} t0={t0} x={170 + 99} y={670 + dy + 66} ang={6} alcance={680} n={38} seed={80 + i} dur={1.3} vida={4} s={1} />
           </g>)}
         </Lienzo>
-        <Chip T={T} at={K.Tos + 1.4} until={K.Pregunta - 0.1} texto="rápido, pero no extremo" x={540} y={400} tam={42} borde={KC.yellow} />
+        <Chip T={T} at={K.Tos + 1.4} until={K.Pregunta - 0.1} texto="rápido, pero no extremo" x={540} y={440} tam={44} borde={KC.yellow} />
       </Escena>
       {/* 7 · ¿entonces ya no importa taparte? */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Mano} color={KC.lilac} />
@@ -278,42 +281,42 @@ function Estornudo() {
       <Escena T={T} a={K.Mano} b={K.Codo} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <CabezaEstornudo T={T} at={K.Mano + 3.0} x={330} y={880} s={1.15} />
-          {(() => { const up = kprog(T, K.Mano + 1.4, K.Mano + 2.0, kEase.sale); return <ManoTapa x={330 + 210} y={880 + klerp(560, 100, up)} s={1.1} />; })()}
-          <ChorroGotas T={T} t0={K.Mano + 3.05} x={560} y={850} ang={-38} alcance={420} n={40} seed={91} dur={1.4} abre={30} vida={4} />
-          <ChorroGotas T={T} t0={K.Mano + 3.05} x={560} y={1080} ang={36} alcance={380} n={36} seed={92} dur={1.4} abre={30} vida={4} />
-          <ChorroGotas T={T} t0={K.Mano + 3.1} x={580} y={960} ang={0} alcance={220} n={14} seed={93} dur={1.2} abre={20} vida={4} niebla={false} />
-          <Onomato T={T} at={K.Mano + 3.0} dur={1.1} x={820} y={780} texto="¡ACHÚ!" tam={110} color={KC.pink} />
+          <CabezaEstornudo T={T} at={K.Mano + 3.0} x={290} y={950} s={1.5} />
+          {(() => { const up = kprog(T, K.Mano + 1.4, K.Mano + 2.0, kEase.sale); return <ManoTapa x={290 + 274} y={950 + klerp(560, 100, up) * 1.3} s={1.43} />; })()}
+          <ChorroGotas T={T} t0={K.Mano + 3.05} x={590} y={760} ang={-38} alcance={540} n={44} seed={91} dur={1.4} abre={30} vida={4} s={1.3} />
+          <ChorroGotas T={T} t0={K.Mano + 3.05} x={590} y={1060} ang={36} alcance={490} n={40} seed={92} dur={1.4} abre={30} vida={4} s={1.3} />
+          <ChorroGotas T={T} t0={K.Mano + 3.1} x={615} y={905} ang={0} alcance={290} n={16} seed={93} dur={1.2} abre={20} vida={4} niebla={false} s={1.3} />
+          <Onomato T={T} at={K.Mano + 3.0} dur={1.1} x={820} y={1300} texto="¡ACHÚ!" tam={110} color={KC.pink} />
         </Lienzo>
-        <Chip T={T} at={K.Mano + 0.5} until={K.Codo - 0.1} texto="estudio de 2011" x={680} y={440} tam={46} borde={KC.ink} />
-        <Etq T={T} at={K.Mano + 4.0} until={K.Codo - 0.1} x={700} y={600} texto="se escapa" lado="der" color={KC.ink} />
+        <Chip T={T} at={K.Mano + 0.5} until={K.Codo - 0.1} texto="estudio de 2011" x={540} y={400} tam={46} borde={KC.ink} />
+        <Etq T={T} at={K.Mano + 4.0} until={K.Codo - 0.1} x={760} y={560} texto="se escapa" lado="der" color={KC.ink} />
       </Escena>
       {/* 9 · pañuelo o, si no, la parte de adentro del codo */}
       <Escena T={T} a={K.Codo} b={K.Nariz} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          {[0, 540].map((ox, i) => { const at = K.Codo + (i ? 3.4 : 1.2), hx2 = 170 + ox, hy2 = 880, hs2 = 0.75;
+          {[0, 540].map((ox, i) => { const at = K.Codo + (i ? 3.4 : 1.2), hx2 = 175 + ox, hy2 = 960, hs2 = 0.86;
             return <g key={i}>
-              <rect x={30 + ox} y={520} width={480} height={680} rx={36} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={7} />
+              <rect x={25 + ox} y={570} width={490} height={780} rx={36} fill="rgba(255,255,255,.12)" stroke={KC.ink} strokeWidth={7} />
               <CabezaEstornudo T={T} at={at} x={hx2} y={hy2} s={hs2} />
-              {i === 0 && <g opacity={kprog(T, K.Codo + 0.3, K.Codo + 0.6)}><Panuelo x={hx2 + 168} y={hy2 + 60} s={0.75} /></g>}
+              {i === 0 && <g opacity={kprog(T, K.Codo + 0.1, K.Codo + 0.4)}><Panuelo x={hx2 + 193} y={hy2 + 69} s={hs2} /></g>}
               {i === 1 && <BrazoCodo hx={hx2} hy={hy2} hs={hs2} sube={kprog(T, K.Codo + 2.4, K.Codo + 3.0, kEase.sale)} />}
-              {T > at && <path d={blobPath(hx2 + (i ? 210 : 190), hy2 + 70, 40 * kprog(T, at, at + 0.4), 7 + i, T * 3)} fill="#fff" opacity={0.7 * (1 - kprog(T, at + 0.5, at + 1.5))} />}
-              <Palomita x={270 + ox} y={620} p={kprog(T, at + 0.5, at + 0.9)} />
-              <TextoSvg x={270 + ox} y={1135} tam={42} fuente="texto" color={KC.texto}>{i ? 'adentro del codo' : 'pañuelo'}</TextoSvg>
+              {T > at && <path d={blobPath(hx2 + (i ? 241 : 218), hy2 + 80, 46 * kprog(T, at, at + 0.4), 7 + i, T * 3)} fill="#fff" opacity={0.7 * (1 - kprog(T, at + 0.5, at + 1.5))} />}
+              <Palomita x={270 + ox} y={665} p={kprog(T, at + 0.5, at + 0.9)} />
+              <TextoSvg x={270 + ox} y={1300} tam={44} fuente="texto" color={KC.texto}>{i ? 'adentro del codo' : 'pañuelo'}</TextoSvg>
             </g>; })}
         </Lienzo>
-        <Chip T={T} at={K.Codo + 0.2} until={K.Nariz - 0.1} texto="autoridades de salud" x={540} y={440} tam={42} borde={KC.leaf} />
+        <Chip T={T} at={K.Codo + 0.2} until={K.Nariz - 0.1} texto="autoridades de salud" x={540} y={470} tam={44} borde={KC.leaf} />
       </Escena>
       {/* 10 · respirar tranquilo por la nariz: máx. ≈ 1.4 m/s */}
       <Escena T={T} a={K.Nariz} b={K.Cierre} fondo={ES_GRIS} zoom={0.03}>
         <FondoSombra T={T} />
         <Lienzo>
-          <PlumaSombra T={T} t0={K.Nariz + 0.2} x={snx} y={sny} ang={25} alcance={420} n={14} seed={33} modo="tranquilo" />
-          <g transform={`translate(0 ${Math.sin(T * 2) * 4})`}><CabezaPerfil x={sx} y={sy} s={1} piel={ES_SIL} pelo={ES_SIL2} ojo={0} /></g>
+          <PlumaSombra T={T} t0={K.Nariz + 0.2} x={snx} y={sny} ang={25} alcance={500} n={14} seed={33} modo="tranquilo" />
+          <g transform={`translate(0 ${Math.sin(T * 2) * 4})`}><CabezaPerfil x={sx} y={sy} s={ss} piel={ES_SIL} pelo={ES_SIL2} ojo={0} /></g>
         </Lienzo>
-        <Etq T={T} at={K.Nariz + 0.8} until={K.Cierre - 0.1} x={470} y={740} texto="respiración tranquila" lado="der" color={KC.ink} tam={30} />
-        <NumeroGigante T={T} at={K.Nariz + 2.6} until={K.Cierre - 0.15} valor={1.4} desde={1.4} dec={1} dur={0.8} prefijo="máx. ≈ " sufijo=" m/s" x={540} y={480} tam={120} color={KC.mint} />
+        <Etq T={T} at={K.Nariz + 0.8} until={K.Cierre - 0.1} x={600} y={820} texto="respiración tranquila" lado="der" color={KC.ink} tam={30} />
+        <NumeroGigante T={T} at={K.Nariz + 2.6} until={K.Cierre - 0.15} valor={1.4} desde={1.4} dec={1} dur={0.8} prefijo="máx. ≈ " sufijo=" m/s" x={540} y={430} tam={120} color={KC.mint} />
       </Escena>
       {/* 11 · cierre: la misma cara del inicio, ahora estornuda en el codo */}
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.pink}>
@@ -322,9 +325,9 @@ function Estornudo() {
           <CabezaEstornudo T={T} at={K.Cierre + 1.2} x={hx} y={hy} s={hs} />
           <BrazoCodo hx={hx} hy={hy} hs={hs} sube={kprog(T, K.Cierre + 0.2, K.Cierre + 0.7, kEase.sale)} />
           {T > K.Cierre + 1.2 && <path d={blobPath(hx + 260 * hs, hy + 80 * hs, 60 * kprog(T, K.Cierre + 1.2, K.Cierre + 1.6), 9, T * 3)} fill="#fff" opacity={0.75 * (1 - kprog(T, K.Cierre + 1.7, K.Cierre + 2.6))} />}
-          <Onomato T={T} at={K.Cierre + 1.2} dur={1.0} x={760} y={1150} texto="¡achú!" tam={90} color={KC.yellow} />
-          <Bala x={300} y={520} s={0.9} tacha={kprog(T, K.Cierre + 0.4, K.Cierre + 0.9)} />
-          <Palomita x={810} y={1000} p={kprog(T, K.Cierre + 2.2, K.Cierre + 2.6)} s={1.2} />
+          <Onomato T={T} at={K.Cierre + 1.2} dur={1.0} x={820} y={820} texto="¡achú!" tam={90} color={KC.yellow} />
+          <Bala x={330} y={400} s={1} tacha={kprog(T, K.Cierre + 0.4, K.Cierre + 0.9)} />
+          <Palomita x={880} y={1280} p={kprog(T, K.Cierre + 2.2, K.Cierre + 2.6)} s={1.3} />
         </Lienzo>
       </Escena>
 

@@ -149,13 +149,13 @@ function Pila({ x, y, n = 12, T }) {
 // Mapa esquemático de Bélgica con Ypres.
 function MapaBelgica({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -420 -120 Q -300 -230 -120 -230 Q 40 -260 160 -200 Q 280 -140 330 -40 Q 400 60 320 160 Q 240 230 100 210 Q 0 260 -120 180 Q -240 140 -330 60 Q -430 -20 -420 -120 Z" fill="#f6efd8" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
-    <path d="M -420 -120 Q -480 -220 -560 -240 L -560 -480 L 560 -480 L 560 -260 Q 260 -320 160 -200 Q 40 -260 -120 -230 Q -300 -230 -420 -120 Z" fill="#cfe9ff" opacity={0.9} />
+    <path d="M -420 -120 Q -300 -230 -120 -230 Q 40 -260 160 -200 Q 280 -140 330 -40 Q 400 60 320 160 Q 240 230 100 210 Q 0 260 -120 180 Q -240 140 -330 60 Q -430 -20 -420 -120 Z" fill="#3d3a28" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
+    <path d="M -420 -120 Q -480 -220 -560 -240 L -560 -480 L 560 -480 L 560 -260 Q 260 -320 160 -200 Q 40 -260 -120 -230 Q -300 -230 -420 -120 Z" fill="#1d3550" opacity={0.9} />
     <text x={-20} y={40} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink} opacity={0.75}>BÉLGICA</text>
     <text x={-150} y={330} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink} opacity={0.55}>FRANCIA</text>
-    <text x={120} y={-330} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#2a5d8a">mar del Norte</text>
+    <text x={120} y={-330} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#8cc4f0">mar del Norte</text>
     <circle cx={-320} cy={-40} r={16} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
-    <text x={-320} y={-200} textAnchor="middle" style={{ font:`900 48px ${KF.texto}` }} fill={KC.ink} stroke="#fff" strokeWidth={6} paintOrder="stroke">Ypres</text><line x1={-320} y1={-190} x2={-320} y2={-58} stroke={KC.ink} strokeWidth={5} />
+    <text x={-320} y={-200} textAnchor="middle" style={{ font:`900 48px ${KF.texto}` }} fill={KC.ink} stroke="#0b1020" strokeWidth={6} paintOrder="stroke">Ypres</text><line x1={-320} y1={-190} x2={-320} y2={-58} stroke={KC.ink} strokeWidth={5} />
   </g>;
 }
 // Barra de escala simple.
@@ -173,6 +173,8 @@ function Rejilla({ T, r }) {
   return <svg width={r * 2} height={r * 2} style={{ position:'absolute', left:0, top:0 }}>{out}</svg>;
 }
 
+// Pase a mano cine: agranda un grupo k veces llevando el punto (cx, cy) a (tx, ty).
+const Zg = ({ k, cx, cy, tx = 540, ty = 900, children }) => <g transform={`translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
 function Sal() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, So: CUES.Sodio, Cl: CUES.Cloro, El: CUES.Electron, Io: CUES.Iones, Pr: CUES.Pregunta, Cr: CUES.Cristal, Da: CUES.Davy, Yp: CUES.Ypres, Re: CUES.Reves, Ci: CUES.Cierre, Ou: CUES.Outro };
@@ -183,32 +185,37 @@ function Sal() {
   const salta = kprog(T, K.Io + 0.3, K.Io + 1.3, kEase.suave);
   const junta = kprog(T, K.Io + 2.6, K.Io + 3.6, kEase.sale);
   const naX = klerp(300, 400, junta), clX = klerp(780, 680, junta);
-  const ex = klerp(300 + 165, 780 - 165, salta), ey = 900 - Math.sin(salta * Math.PI) * 220;
+  const ex = klerp(300 + 185, 780 - 185, salta), ey = 950 - Math.sin(salta * Math.PI) * 220;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: el salero */}
       <Escena T={T} a={K.G} b={K.So} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Plato x={540} y={1040} s={1.1} />
-          <Monton x={560} y={1030} f={kprog(T, K.G + 0.6, K.G + 3.0)} />
-          <Granos T={T} x0={540} y0={700} x1={560} y1={1010} desde={K.G + 0.2} hasta={K.G + 3.0} />
-          <Salero x={380} y={660} s={0.85} inclina={inclina} />
+          {/* pase a mano cine: salero y plato 1.5× y al centro; sodio y cloro a los lados del plato */}
+          <Zg k={1.5} cx={540} cy={860} ty={980}>
+            <Plato x={540} y={1040} s={1.1} />
+            <Monton x={560} y={1030} f={kprog(T, K.G + 0.6, K.G + 3.0)} />
+            <Granos T={T} x0={540} y0={700} x1={560} y1={1010} desde={K.G + 0.2} hasta={K.G + 3.0} />
+            <Salero x={380} y={660} s={0.85} inclina={inclina} />
+          </Zg>
           <g opacity={amenaza}>
-            <BarraSodio x={190} y={880} s={0.55 * amenaza} />
-            <text x={190} y={980} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink}>Na ⚠</text>
-            <Nube T={T} x={900} y={860} f={amenaza * 0.8} r={110} color={CLGAS} />
-            <text x={900} y={980} textAnchor="middle" style={{ font:`900 50px ${KF.texto}` }} fill={KC.ink}>Cl₂ ⚠</text>
-            <path d="M 260 920 Q 360 960 420 1000" stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="16 12" strokeDashoffset={-T * 40} />
-            <path d="M 830 920 Q 740 960 690 1000" stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="16 12" strokeDashoffset={-T * 40} />
+            <BarraSodio x={190} y={1080} s={0.6 * amenaza} />
+            <text x={190} y={1185} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>Na ⚠</text>
+            <Nube T={T} x={900} y={1000} f={amenaza * 0.8} r={110} color={CLGAS} />
+            <text x={900} y={1160} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>Cl₂ ⚠</text>
+            <path d="M 230 1200 Q 300 1240 360 1250" stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="16 12" strokeDashoffset={-T * 40} />
+            <path d="M 860 1175 Q 800 1230 730 1245" stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="16 12" strokeDashoffset={-T * 40} />
           </g>
-          <Escalita x={760} y={1660} w={100} texto="1 cm" />
+          <Escalita x={780} y={1450} w={150} texto="1 cm" />
         </SvgCapa>
       </Escena>
       {/* 1 · sodio */}
       <Escena T={T} a={K.So} b={K.Cl}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
+          {/* pase a mano cine: barra, cuchillo y vaso 1.3× y bajados al centro */}
+          <Zg k={1.3} cx={540} cy={760} ty={920}>
           <BarraSodio x={540} y={klerp(640, 540, kprog(T, K.So + 2.3, K.So + 2.8, kEase.suave))} s={1.2} corte={kprog(T, K.So + 0.6, K.So + 1.4)} opaco={kprog(T, K.So + 1.8, K.So + 3.5)} />
           <Cuchillo x={612} y={klerp(260, 440, kprog(T, K.So + 0.3, K.So + 1.4, kEase.suave))} o={1 - kprog(T, K.So + 1.8, K.So + 2.2)} />
           <Peligro x={540} y={900} w={720} h={340} o={kprog(T, K.So + 2.4, K.So + 2.9)}>
@@ -218,12 +225,15 @@ function Sal() {
             <Llama T={T} x={10} y={-48} s={0.45} o={kprog(T, K.So + 3.4, K.So + 3.7) * (0.6 + 0.4 * Math.abs(Math.sin(T * 9)))} />
             <text x={210} y={-60} style={{ font:`700 40px ${KF.mono}` }} fill={KC.texto}>H₂</text>
           </Peligro>
+          </Zg>
         </SvgCapa>
       </Escena>
       {/* 2 · cloro */}
       <Escena T={T} a={K.Cl} b={K.El}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
+          {/* pase a mano cine: frasco y pulmones 1.2× y bajados al centro */}
+          <Zg k={1.2} cx={500} cy={850} tx={520} ty={960}>
           <g transform="translate(250 720)">
             <rect x={-130} y={-200} width={260} height={360} rx={40} fill="rgba(220,240,255,.5)" stroke={KC.ink} strokeWidth={9} />
             <rect x={-50} y={-250} width={100} height={60} rx={10} fill={PLATA} stroke={KC.ink} strokeWidth={7} />
@@ -232,8 +242,9 @@ function Sal() {
           </g>
           <Nube T={T} x={klerp(300, 640, kprog(T, K.Cl + 1.2, K.Cl + 2.6))} y={klerp(560, 740, kprog(T, K.Cl + 1.2, K.Cl + 2.6))} f={kprog(T, K.Cl + 1.0, K.Cl + 1.6) * 0.5} r={110} color={CLGAS} seed={6} />
           <Pulmones T={T} x={720} y={930} s={0.9} rojo={kprog(T, K.Cl + 2.6, K.Cl + 3.8)} />
+          </Zg>
         </SvgCapa>
-        <Onomato T={T} at={K.Cl + 3.0} until={K.El - 0.3} x={760} y={1180} texto="¡ÁCIDO!" color={KC.red} tam={80} />
+        <Onomato T={T} at={K.Cl + 3.0} until={K.El - 0.3} x={832} y={1356} texto="¡ÁCIDO!" color={KC.red} tam={80} />
       </Escena>
       {/* 3–4 · por dentro: electrón e iones (noche) */}
       <Escena T={T} a={K.El} b={K.Pr} zoom={0.03}>
@@ -241,27 +252,31 @@ function Sal() {
         <Ambiente T={T} n={30} color="rgba(120,180,255,.25)" />
         <SvgCapa>
           {/* el grano que se abre */}
-          {T < K.El + 1.4 && <g opacity={1 - kprog(T, K.El + 0.8, K.El + 1.4)} transform={`translate(540 900) scale(${klerp(1, 6, kprog(T, K.El, K.El + 1.4, kEase.suave))})`}>
+          {T < K.El + 1.4 && <g opacity={1 - kprog(T, K.El + 0.8, K.El + 1.4)} transform={`translate(540 950) scale(${klerp(1, 6, kprog(T, K.El, K.El + 1.4, kEase.suave))})`}>
             <path d="M -60 -30 L 0 -60 L 60 -30 L 60 40 L 0 70 L -60 40 Z" fill="#e9eef5" stroke={KC.ink} strokeWidth={5} /><path d="M -60 -30 L 0 0 L 60 -30 M 0 0 L 0 70" stroke={KC.ink} strokeWidth={4} fill="none" />
           </g>}
           <g opacity={kprog(T, K.El + 0.9, K.El + 1.5)}>
-            <AtomoBohr T={T} x={naX} y={900} s={1.25 * (salta > 0.98 ? klerp(1, 0.85, kprog(T, K.Io + 1.3, K.Io + 1.8)) : 1)} letra="Na" color={NA} capas={[2, 8, 1]} sinUltimo={salta > 0.02 ? 1 : 0} brilloUlt={kprog(T, K.El + 1.6, K.El + 2.0) * (0.5 + 0.5 * Math.sin(T * 8))} carga={salta > 0.98 ? '+' : ''} />
-            <AtomoBohr T={T} x={clX} y={900} s={1.25 * (salta > 0.98 ? klerp(1, 1.1, kprog(T, K.Io + 1.3, K.Io + 1.8)) : 1)} letra="Cl" color={CL} capas={salta > 0.98 ? [2, 8, 8] : [2, 8, 7]} hueco={salta <= 0.98} brilloUlt={kprog(T, K.El + 2.6, K.El + 3.0)} carga={salta > 0.98 ? '−' : ''} />
+            <AtomoBohr T={T} x={naX} y={950} s={1.4 * (salta > 0.98 ? klerp(1, 0.85, kprog(T, K.Io + 1.3, K.Io + 1.8)) : 1)} letra="Na" color={NA} capas={[2, 8, 1]} sinUltimo={salta > 0.02 ? 1 : 0} brilloUlt={kprog(T, K.El + 1.6, K.El + 2.0) * (0.5 + 0.5 * Math.sin(T * 8))} carga={salta > 0.98 ? '+' : ''} />
+            <AtomoBohr T={T} x={clX} y={950} s={1.4 * (salta > 0.98 ? klerp(1, 1.1, kprog(T, K.Io + 1.3, K.Io + 1.8)) : 1)} letra="Cl" color={CL} capas={salta > 0.98 ? [2, 8, 8] : [2, 8, 7]} hueco={salta <= 0.98} brilloUlt={kprog(T, K.El + 2.6, K.El + 3.0)} carga={salta > 0.98 ? '−' : ''} />
             {salta > 0.02 && salta < 0.98 && <circle cx={ex} cy={ey} r={16} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} style={{ filter:`drop-shadow(0 0 16px ${KC.yellow})` }} />}
-            {salta > 0.02 && salta < 0.98 && <path d={`M ${300 + 165} 900 Q 540 ${900 - 440} ${ex} ${ey}`} stroke={KC.yellow} strokeWidth={4} fill="none" strokeDasharray="8 8" opacity={0.6} />}
-            {junta > 0 && [0, 1, 2].map((i) => { const xm = (naX + clX) / 2; return <path key={i} d={`M ${xm - 40 - i * 18} ${860 + i * 40} L ${xm + 40 + i * 18} ${860 + i * 40}`} stroke={KC.pink} strokeWidth={6} strokeDasharray="10 10" strokeDashoffset={T * 60 * (i % 2 ? 1 : -1)} opacity={junta * 0.9} />; })}
+            {salta > 0.02 && salta < 0.98 && <path d={`M ${300 + 185} 950 Q 540 ${950 - 440} ${ex} ${ey}`} stroke={KC.yellow} strokeWidth={4} fill="none" strokeDasharray="8 8" opacity={0.6} />}
+            {junta > 0 && [0, 1, 2].map((i) => { const xm = (naX + clX) / 2; return <path key={i} d={`M ${xm - 40 - i * 18} ${910 + i * 40} L ${xm + 40 + i * 18} ${910 + i * 40}`} stroke={KC.pink} strokeWidth={6} strokeDasharray="10 10" strokeDashoffset={T * 60 * (i % 2 ? 1 : -1)} opacity={junta * 0.9} />; })}
           </g>
-          <Escalita x={80} y={1660} w={120} texto="≈ 0.3 nm (esquemático)" color={KC.texto} o={kprog(T, K.El + 1.2, K.El + 1.6)} />
+          <Escalita x={80} y={1420} w={134} texto="≈ 0.3 nm (esquemático)" color={KC.texto} o={kprog(T, K.El + 1.2, K.El + 1.6)} />
         </SvgCapa>
-        <Etq T={T} at={K.El + 1.6} until={K.Io - 0.2} x={140} y={1120} texto="1 electrón afuera" tam={32} color={KC.yellow} />
-        <Etq T={T} at={K.El + 2.6} until={K.Io - 0.2} x={1040} y={1120} lado="izq" texto="le falta 1" tam={32} color={CL} />
+        <Etq T={T} at={K.El + 1.6} until={K.Io - 0.2} x={120} y={1200} texto="1 electrón afuera" tam={32} color={KC.yellow} />
+        <Etq T={T} at={K.El + 2.6} until={K.Io - 0.2} x={1050} y={1200} lado="izq" texto="le falta 1" tam={32} color={CL} />
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Cr} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <text x={290} y={1120} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 900)`}>?</text>
-          <g opacity={0.8} style={{ filter:'grayscale(1)' }}><BarraSodio x={170} y={480} s={0.4} /><Nube T={T} x={420} y={470} f={0.5} r={90} color="#cfcfcf" /></g>
+          {/* pase a mano cine: la sal del gancho (salero y plato) a cuadro junto al signo */}
+          <Plato x={620} y={1260} s={1.3} />
+          <Monton x={640} y={1250} f={1} />
+          <Salero x={660} y={880} s={1.0} />
+          <text x={230} y={1160} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 230 980)`}>?</text>
+          <g opacity={0.8} style={{ filter:'grayscale(1)' }}><BarraSodio x={190} y={560} s={0.4} /><Nube T={T} x={420} y={550} f={0.5} r={90} color="#cfcfcf" /></g>
         </SvgCapa>
       </Escena>
       {/* 6 · cristal cúbico (noche) */}
@@ -269,14 +284,17 @@ function Sal() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(120,180,255,.25)" />
         <SvgCapa>
-          <Cristal T={T} x={540} y={900} paso={150} ang={25 + (T - K.Cr) * 9} f={kprog(T, K.Cr + 0.2, K.Cr + 2.0)} vecinos={Math.floor(klerp(0, 6.99, kprog(T, K.Cr + 2.2, K.Cr + 3.8)))} lineas={kprog(T, K.Cr + 2.2, K.Cr + 2.5)} />
+          {/* pase a mano cine: cristal 1.45× y los iones llegan desde el inicio de la escena */}
+          <Zg k={1.45} cx={540} cy={900} ty={980}><Cristal T={T} x={540} y={900} paso={150} ang={25 + (T - K.Cr) * 9} f={kprog(T, K.Cr, K.Cr + 1.4)} vecinos={Math.floor(klerp(0, 6.99, kprog(T, K.Cr + 2.2, K.Cr + 3.8)))} lineas={kprog(T, K.Cr + 2.2, K.Cr + 2.5)} /></Zg>
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Cr + 2.2} until={K.Da - 0.3} valor={6} dur={1.6} etiqueta="vecinos de cada sodio" x={540} y={460} tam={150} color={CL} />
+        <NumeroGigante T={T} at={K.Cr + 2.2} until={K.Da - 0.3} valor={6} dur={1.6} etiqueta="vecinos de cada sodio" x={540} y={400} tam={150} color={CL} />
       </Escena>
       {/* 7 · Davy 1807 */}
       <Escena T={T} a={K.Da} b={K.Yp}>
-        <div style={{ position:'absolute', inset:0, background:'#e7d3a1' }}></div>
+        {/* pase a mano cine: fondo beige claro a pantalla completa → oscuro con el mismo tinte; montaje 1.2× */}
+        <div style={{ position:'absolute', inset:0, background:'#2a2317' }}></div>
         <SvgCapa>
+          <Zg k={1.2} cx={520} cy={900} ty={960}>
           <Pila x={250} y={1060} n={11} />
           {/* platillo de platino con la sosa cáustica húmeda */}
           <g transform="translate(720 1010) scale(1.15)">
@@ -289,22 +307,24 @@ function Sal() {
           </g>
           {/* cables: + al alambre de arriba, − al platillo */}
           <path d="M 350 620 Q 560 520 720 700 L 720 925" stroke="#b33" strokeWidth={9} fill="none" strokeLinecap="round" />
-          <path d="M 350 1080 Q 480 1150 540 1060 L 560 1050" stroke="#334" strokeWidth={9} fill="none" strokeLinecap="round" />
-          <text x={440} y={590} style={{ font:`900 64px ${KF.texto}` }} fill="#b33">+</text>
-          <text x={420} y={1180} style={{ font:`900 72px ${KF.texto}` }} fill="#334">−</text>
+          <path d="M 350 1080 Q 480 1150 540 1060 L 560 1050" stroke="#8fa0c8" strokeWidth={9} fill="none" strokeLinecap="round" />
+          <text x={440} y={590} style={{ font:`900 64px ${KF.texto}` }} fill="#ff6a6a">+</text>
+          <text x={420} y={1180} style={{ font:`900 72px ${KF.texto}` }} fill="#8fa0c8">−</text>
           {kprog(T, K.Da + 2.0, K.Da + 2.6) > 0 && <g opacity={kprog(T, K.Da + 2.0, K.Da + 2.6) * (0.5 + 0.5 * Math.abs(Math.sin(T * 12)))}>
             <path d="M 700 905 l -20 -20 M 740 905 l 20 -20 M 720 895 l 0 -28" stroke={KC.yellow} strokeWidth={6} strokeLinecap="round" /></g>}
+          </Zg>
           <rect x={0} y={0} width={KW} height={KH} fill="rgba(110,80,40,.12)" />
         </SvgCapa>
-        <Etq T={T} at={K.Da + 1.4} until={K.Yp - 0.2} x={1050} y={830} lado="izq" texto="sosa cáustica (NaOH)" tam={30} color={KC.ink} />
-        <Etq T={T} at={K.Da + 3.0} until={K.Yp - 0.2} x={540} y={1130} texto="gotitas de sodio (Na)" tam={32} color={KC.ink} />
+        <Etq T={T} at={K.Da + 1.4} until={K.Yp - 0.2} x={1050} y={860} lado="izq" texto="sosa cáustica (NaOH)" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.Da + 3.0} until={K.Yp - 0.2} x={560} y={1240} texto="gotitas de sodio (Na)" tam={32} color={KC.ink} />
       </Escena>
       {/* 8 · Ypres 1915 */}
       <Escena T={T} a={K.Yp} b={K.Re}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <MapaBelgica x={560} y={980} s={1.05} />
-          <Nube T={T} x={560 - 336 + kprog(T, K.Yp + 0.8, K.Yp + 3.8) * 60} y={980 - 42} f={kprog(T, K.Yp + 0.6, K.Yp + 3.2)} r={170} color={CLGAS} seed={9} n={11} />
+          {/* pase a mano cine: mapa 1.25× más grande y bajado; tierra y mar oscuros con su tinte */}
+          <MapaBelgica x={560} y={1010} s={1.3} />
+          <Nube T={T} x={560 - 416 + kprog(T, K.Yp + 0.8, K.Yp + 3.8) * 74} y={1010 - 52} f={kprog(T, K.Yp + 0.6, K.Yp + 3.2)} r={210} color={CLGAS} seed={9} n={11} />
         </SvgCapa>
       </Escena>
       {/* 9 · al revés: electrólisis de agua con sal */}
@@ -336,29 +356,32 @@ function Sal() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          {/* pase a mano cine: el salero del inicio 1.35× y al centro; la lupa sigue apuntando al montón */}
+          <Zg k={1.35} cx={540} cy={840} ty={960}>
           <Plato x={540} y={1040} s={1.1} />
           <Monton x={560} y={1030} f={1} />
           <Salero x={430} y={640} s={0.85} />
           <g opacity={1 - kprog(T, K.Ci + 3.4, K.Ci + 4.4)}>
-            <BarraSodio x={klerp(170, 430, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} y={klerp(1450, 440, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} s={klerp(0.35, 0.05, kprog(T, K.Ci + 3.0, K.Ci + 4.2))} />
-            <Nube T={T} x={klerp(920, 430, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} y={klerp(1450, 440, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} f={klerp(0.45, 0.05, kprog(T, K.Ci + 3.0, K.Ci + 4.2))} r={110} color={CLGAS} />
+            <BarraSodio x={klerp(229, 430, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} y={klerp(1203, 440, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} s={klerp(0.35, 0.05, kprog(T, K.Ci + 3.0, K.Ci + 4.2))} />
+            <Nube T={T} x={klerp(851, 430, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} y={klerp(1203, 440, kprog(T, K.Ci + 3.0, K.Ci + 4.2, kEase.suave))} f={klerp(0.45, 0.05, kprog(T, K.Ci + 3.0, K.Ci + 4.2))} r={110} color={CLGAS} />
           </g>
+          </Zg>
         </SvgCapa>
-        <Lupa T={T} at={K.Ci + 0.5} until={K.Ou - 0.3} x={690} y={660} r={190} fx={560} fy={1020} interior={(TT, r) => <Rejilla T={TT} r={r} />} tinte={KC.blue} etiqueta="POR DENTRO · Na⁺ Cl⁻" />
+        <Lupa T={T} at={K.Ci + 0.5} until={K.Ou - 0.3} x={790} y={700} r={240} fx={567} fy={1203} interior={(TT, r) => <Rejilla T={TT} r={r} />} tinte={KC.blue} etiqueta="POR DENTRO · Na⁺ Cl⁻" />
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.2} texto="¿polvito inocente?" x={300} y={470} tam={44} />
-      <Chip T={T} at={K.G + 3.4} until={K.So - 0.3} texto="metal + gas venenoso" x={330} y={470} tam={40} borde={KC.red} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.2} texto="¿polvito inocente?" x={540} y={300} tam={44} />
+      <Chip T={T} at={K.G + 3.4} until={K.So - 0.3} texto="metal + gas venenoso" x={540} y={300} tam={40} borde={KC.red} />
       <Chip T={T} at={K.So + 0.3} until={K.Cl - 0.3} texto="sodio · Na · metal" x={540} y={1500} tam={44} borde={NA} />
-      <Etq T={T} at={K.So + 1.4} until={K.So + 2.3} x={780} y={770} texto="blando como cera" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.So + 1.4} until={K.So + 2.3} x={852} y={933} texto="blando como cera" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Cl + 0.3} until={K.El - 0.3} texto="cloro · Cl₂ · gas" x={540} y={1500} tam={44} borde={CLGAS} />
-      <Etq T={T} at={K.Cl + 0.6} until={K.El - 0.3} x={60} y={1010} texto="amarillo verdoso" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Cl + 0.6} until={K.El - 0.3} x={40} y={1040} texto="amarillo verdoso" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Io + 1.6} until={K.Pr - 0.2} texto="enlace iónico: Na⁺ ⇄ Cl⁻" x={540} y={1500} tam={42} borde={KC.pink} />
       <Chip T={T} at={K.Cr + 0.5} until={K.Da - 0.3} texto="cristal cúbico · NaCl" x={540} y={1500} tam={44} borde={CL} />
-      <Chip T={T} at={K.Da + 3.6} until={K.Yp - 0.3} texto="electrólisis" x={540} y={1690} tam={40} borde={KC.gold} />
-      <TarjetaEstudio T={T} at={K.Da + 0.2} until={K.Da + 3.3} anio="1807" quien="Humphry Davy · Londres" revista="Phil. Trans. R. Soc. · sodio aislado con electricidad" y={1560} />
-      <TarjetaEstudio T={T} at={K.Yp + 0.2} until={K.Re - 0.3} anio="1915" quien="22 de abril · Ypres, Bélgica" revista="Primera Guerra Mundial · cloro como arma" y={1560} />
+      <Chip T={T} at={K.Da + 3.6} until={K.Yp - 0.3} texto="electrólisis" x={540} y={1450} tam={40} borde={KC.gold} />
+      <TarjetaEstudio T={T} at={K.Da + 0.2} until={K.Da + 3.3} anio="1807" quien="Humphry Davy · Londres" revista="Phil. Trans. R. Soc. · sodio aislado con electricidad" y={320} />
+      <TarjetaEstudio T={T} at={K.Yp + 0.2} until={K.Re - 0.3} anio="1915" quien="22 de abril · Ypres, Bélgica" revista="Primera Guerra Mundial · cloro como arma" y={320} />
       <Chip T={T} at={K.Re + 0.4} until={K.Ci - 0.3} texto="hoy: sal + electricidad → cloro" x={540} y={1500} tam={40} borde={CLGAS} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="Na⁺ + Cl⁻ = NaCl" x={540} y={1500} tam={48} borde={KC.gold} />
 

@@ -64,10 +64,11 @@ function Oveja({ T = 0, x, y, s = 1, cara = 'blanca', ubre = false, sombrero = f
   </g>;
 }
 function Pasto({ T, color = '#3fbf4a' }) {
+  color = mixHex(color, '#0b1020', 0.68);
   const R = krng(3), matas = Array.from({ length: 26 }, (_, i) => [R() * 1080, 1110 + R() * 760, 0.6 + R() * 0.7]);
   return <g>
     <path d="M -40 1090 Q 300 1010 600 1060 Q 860 1100 1120 1040 L 1120 1960 L -40 1960 Z" fill={color} stroke={KC.ink} strokeWidth={10} />
-    {matas.map(([x, y, k], i) => <path key={i} d={`M ${x - 20 * k} ${y} q ${6 + mece(T, i) * 6} ${-40 * k} ${12} ${-52 * k} M ${x} ${y} q ${mece(T, i + 9) * 8} ${-46 * k} ${4} ${-64 * k} M ${x + 20 * k} ${y} q ${-4 + mece(T, i + 3) * 6} ${-36 * k} ${-12} ${-48 * k}`} fill="none" stroke="#1f8a3a" strokeWidth={7} strokeLinecap="round" />)}
+    {matas.map(([x, y, k], i) => <path key={i} d={`M ${x - 20 * k} ${y} q ${6 + mece(T, i) * 6} ${-40 * k} ${12} ${-52 * k} M ${x} ${y} q ${mece(T, i + 9) * 8} ${-46 * k} ${4} ${-64 * k} M ${x + 20 * k} ${y} q ${-4 + mece(T, i + 3) * 6} ${-36 * k} ${-12} ${-48 * k}`} fill="none" stroke="#2f6e3c" strokeWidth={7} strokeLinecap="round" />)}
   </g>;
 }
 function Espermatozoide({ T, x, y, s = 1, o = 1 }) {
@@ -213,7 +214,7 @@ function Dolly() {
         <FondoLunares color={KC.mint} />
         <SvgCapa>
           <Pasto T={T} />
-          <Oveja T={T} x={620} y={880} s={1.2} />
+          <Oveja T={T} x={610} y={930} s={1.45} />
           {T < K.G + 2.4 && <Espermatozoide T={T} x={klerp(-120, 330, kprog(T, 0, 1.6, kEase.sale))} y={640} s={1.1} o={1 - kprog(T, K.G + 1.9, K.G + 2.4)} />}
           {T > K.G + 1.6 && T < K.G + 2.6 && <g transform="translate(360 640)" opacity={1 - kprog(T, K.G + 2.1, K.G + 2.6)}><path d="M -60 -60 L 60 60 M 60 -60 L -60 60" stroke={KC.red} strokeWidth={20} strokeLinecap="round" /></g>}
           {T > K.G + 2.4 && <CelulaUbre T={T} x={160} y={620} r={64 * kprog(T, K.G + 2.4, K.G + 2.8, kEase.rebote)} brillo={0.6 + 0.4 * Math.sin(T * 5)} />}
@@ -225,8 +226,8 @@ function Dolly() {
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           <Pasto T={T} color="#4cc95a" />
-          <EdificioRoslin x={420} y={840} s={0.92} T={T} />
-          <Oveja T={T} x={klerp(1300, 700, kprog(T, K.D, K.D + 1.2, kEase.sale))} y={1010} s={0.62} collar="DOLLY" fase={2} />
+          <EdificioRoslin x={440} y={870} s={1.1} T={T} />
+          <Oveja T={T} x={klerp(1300, 760, kprog(T, K.D, K.D + 1.2, kEase.sale))} y={1070} s={0.75} collar="DOLLY" fase={2} />
         </SvgCapa>
       </Escena>
       {/* 2 · la donadora Finn Dorset, su ubre por dentro y el cultivo casi sin suero */}
@@ -234,8 +235,8 @@ function Dolly() {
         <FondoLunares color={KC.pink} />
         <SvgCapa>
           <Pasto T={T} />
-          <g opacity={1 - kprog(T, K.U + 2.6, K.U + 3.0)}><Oveja T={T} x={540} y={880} s={1.05} ubre fase={1} /></g>
-          {T > K.U + 2.7 && <g opacity={kprog(T, K.U + 2.7, K.U + 3.1)}>
+          <g opacity={1 - kprog(T, K.U + 2.6, K.U + 3.0)}><Oveja T={T} x={560} y={930} s={1.35} ubre fase={1} /></g>
+          {T > K.U + 2.7 && <g opacity={kprog(T, K.U + 2.7, K.U + 3.1)} transform="translate(540 950) scale(1.25) translate(-540 -800)">
             <PlacaPetri x={540} y={800} r={330} agar="#ffd6e2" id="cult">
               {Array.from({ length: 22 }, (_, i) => { const R = krng(40 + i), a = R() * Math.PI * 2, d = Math.sqrt(R()) * 250;
                 const quieta = kprog(T, K.U + 4.3, K.U + 5.0), late = (1 - quieta) * Math.sin(T * 6 + i) * 0.12;
@@ -245,7 +246,7 @@ function Dolly() {
               <circle r={70} fill="rgba(14,15,18,.8)" stroke={KC.white} strokeWidth={6} /><rect x={-26} y={-32} width={18} height={64} rx={4} fill={KC.white} /><rect x={8} y={-32} width={18} height={64} rx={4} fill={KC.white} /></g>}
           </g>}
         </SvgCapa>
-        <Lupa T={T} at={K.U + 0.3} until={K.U + 2.6} x={540} y={600} r={250} fx={666} fy={1014} tinte={KC.pink} etiqueta="POR DENTRO · UBRE" interior={(t, r) => InteriorUbre(t, r)} />
+        <Lupa T={T} at={K.U + 0.3} until={K.U + 2.6} x={540} y={520} r={250} fx={722} fy={1103} tinte={KC.pink} etiqueta="POR DENTRO · UBRE" interior={(t, r) => InteriorUbre(t, r)} />
         <Medidor T={T} at={K.U + 3.0} until={K.Ov - 0.2} x={140} y={420} ancho={800} color={KC.yellow} etiqueta="suero en el medio"
           valor={(t) => klerp(1, 0.05, kprog(t, K.U + 3.4, K.U + 4.4, kEase.suave))} texto={(v) => (v > 0.06 ? kformato(v * 10, 1) : '0.5') + ' %'} />
       </Escena>
@@ -253,16 +254,19 @@ function Dolly() {
       <Escena T={T} a={K.Ov} b={K.Ch} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <SvgCapa>
+          <g transform="translate(540 970) scale(1.35) translate(-540 -860)">
           <Ovocito T={T} x={540} y={860} nucleo={1 - succion} />
           <PipetaSosten x={248} y={860} />
           <Aguja x={klerp(1100, 700, aguja) - 40} y={klerp(860, 750, 1)} lleno={succion} />
-          <Oveja T={T} x={900} y={500} s={0.32} cara="negra" fase={3} />
+          </g>
+          <Oveja T={T} x={900} y={400} s={0.32} cara="negra" fase={3} />
         </SvgCapa>
       </Escena>
       {/* 4–5 · la célula de ubre, la chispa, la fusión y las primeras divisiones */}
       <Escena T={T} a={K.Ch} b={K.P} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <SvgCapa>
+          <g transform="translate(540 970) scale(1.35) translate(-540 -860)">
           {T < tDiv - 0.0 || nEmb === 1 ? <Ovocito T={T} x={540} y={860} nucleo={0} brillo={funde * (0.6 + 0.4 * Math.sin(T * 4))}
               nucleoXY={[0, 0]} cuerpoPolar>
               {funde > 0 && <path d={kBlob(46 * funde, 33, 7, 0.14, T, 1.2)} transform={`translate(${klerp(170, 0, funde)} ${klerp(170, 0, funde)})`} fill={NUCL} stroke={KC.ink} strokeWidth={5} />}
@@ -273,42 +277,43 @@ function Dolly() {
           <Electrodo x={910} y={860} on={flash} />
           {flash > 0.05 && <Rayo x1={186} y1={860} x2={894} y2={860} T={T} o={flash} />}
           {flash > 0.05 && <rect x={0} y={0} width={KW} height={KH} fill={cineMix(KC.white, CINE.fondo, 0.55)} opacity={0.35 * flash} />}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 6 · re-gancho: ¿cómo vuelve a empezar de cero? */}
       <Escena T={T} a={K.P} b={K.Ol} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         <SvgCapa>
-          <Embrion T={T} x={380} y={860} R={190} n={8} />
-          <CelulaUbre T={T} x={380} y={500} r={60} seed={4} o={0.9} />
-          <FlechaCurva x1={380} y1={570} x2={380} y2={630} p={1} curva={0} color={KC.texto} T={T} />
-          {T > pregunta && <text x={250} y={1160} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={10} opacity={kprog(T, pregunta, pregunta + 0.3)} transform={`rotate(${Math.sin(T * 3) * 6} 250 1060)`}>?</text>}
+          <Embrion T={T} x={430} y={1030} R={240} n={8} />
+          <CelulaUbre T={T} x={430} y={560} r={74} seed={4} o={0.9} />
+          <FlechaCurva x1={430} y1={645} x2={430} y2={725} p={1} curva={0} color={KC.texto} T={T} />
+          {T > pregunta && <text x={880} y={1000} textAnchor="middle" style={{ font:`400 320px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={10} opacity={kprog(T, pregunta, pregunta + 0.3)} transform={`rotate(${Math.sin(T * 3) * 6} 880 890)`}>?</text>}
         </SvgCapa>
       </Escena>
       {/* 7 · el núcleo vuelve a leer todo el manual */}
       <Escena T={T} a={K.Ol} b={K.E} zoom={0.03}>
         <FondoMarca patron="oscuro" />
-        <SvgCapa><Embrion T={T} x={860} y={1110} R={90} n={8} /></SvgCapa>
-        <Lupa T={T} at={K.Ol + 0.1} until={K.E - 0.1} x={500} y={680} r={320} fx={860} fy={1110} tinte={KC.lilac} etiqueta="AL MICROSCOPIO · NÚCLEO"
+        <SvgCapa><Embrion T={T} x={880} y={1320} R={90} n={8} /></SvgCapa>
+        <Lupa T={T} at={K.Ol + 0.1} until={K.E - 0.1} x={500} y={840} r={370} fx={880} fy={1320} tinte={KC.lilac} etiqueta="AL MICROSCOPIO · NÚCLEO"
           interior={(t, r) => InteriorManual(t, r, kprog(t, K.Ol + 1.2, K.Ol + 3.6))} />
       </Escena>
       {/* 8 · el estudio: 277 fusionadas → 29 embriones → 1 corderita */}
       <Escena T={T} a={K.E} b={K.R} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          {T > K.E + 1.8 && <g opacity={kprog(T, K.E + 1.8, K.E + 2.1)}>
-            {idx.map((_, i) => { const c = i % 19, f = Math.floor(i / 19), x = 162 + c * 42, y = 560 + f * 42;
+          {<g opacity={kprog(T, K.E - 0.3, K.E + 0.3) * (0.45 + 0.55 * kprog(T, K.E + 1.8, K.E + 2.1))}>
+            {idx.map((_, i) => { const c = i % 19, f = Math.floor(i / 19), x = 72 + c * 52, y = 640 + f * 52;
               const es29 = vivos29.has(i), esUno = i === uno;
               const o = esUno ? 1 : es29 ? 1 - 0.85 * e1 : 1 - 0.85 * e29;
               const col = esUno && e1 > 0.5 ? KC.mint : es29 && e29 > 0.5 ? KC.gold2 : KC.pink;
-              const rr = esUno ? 15 + 10 * e1 + 3 * Math.sin(T * 8) * e1 : 15;
+              const rr = esUno ? 19 + 12 * e1 + 4 * Math.sin(T * 8) * e1 : 19;
               return <circle key={i} cx={x} cy={y} r={rr} fill={col} stroke={KC.ink} strokeWidth={4} opacity={o} />; })}
           </g>}
         </SvgCapa>
-        <TarjetaEstudio T={T} at={K.E + 0.1} until={K.E + 1.8} anio="1997" quien="Wilmut y su equipo · Roslin" revista="Nature · célula adulta de ubre" x={540} y={820} />
-        {T > K.E + 1.9 && <div style={{ position:'absolute', left:0, right:0, top:440, zIndex:42, textAlign:'center', font:`400 84px ${KF.titulo}`, color:[KC.pink, KC.gold2, KC.mint][etapa], WebkitTextStroke:`3px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>
+        <TarjetaEstudio T={T} at={K.E + 0.1} until={K.E + 1.8} anio="1997" quien="Wilmut y su equipo · Roslin" revista="Nature · célula adulta de ubre" x={540} y={460} />
+        {T > K.E + 1.9 && <div style={{ position:'absolute', left:0, right:0, top:470, zIndex:42, textAlign:'center', font:`400 84px ${KF.titulo}`, color:[KC.pink, KC.gold2, KC.mint][etapa], WebkitTextStroke:`3px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>
           {['277 FUSIONADAS', '29 EMBRIONES', '1 CORDERITA'][etapa]}</div>}
-        <Chip T={T} at={K.E + 3.0} until={K.R - 0.2} texto="13 madres sustitutas · 1 embarazo" x={540} y={1500} tam={34} borde={KC.mint} />
+        <Chip T={T} at={K.E + 3.0} until={K.R - 0.2} texto="13 madres sustitutas · 1 embarazo" x={540} y={1450} tam={34} borde={KC.mint} />
       </Escena>
       {/* 9 · el ADN del núcleo es de la donadora, no de la madre que la parió */}
       <Escena T={T} a={K.R} b={K.Pa} zoom={0.04}>
@@ -324,39 +329,39 @@ function Dolly() {
             <rect x={480} y={738} width={260} height={50} rx={14} fill={KC.paper} stroke={KC.ink} strokeWidth={5} /><text x={610} y={773} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>ADN del núcleo</text></g>}
           {T > K.R + 1.6 && <g transform={`translate(420 1000) scale(${kprog(T, K.R + 1.6, K.R + 2.0, kEase.rebote)})`}><path d="M -40 -40 L 40 40 M 40 -40 L -40 40" stroke={KC.red} strokeWidth={18} strokeLinecap="round" /></g>}
         </SvgCapa>
-        <Chip T={T} at={K.R + 2.4} until={K.Pa - 0.2} texto="sus mitocondrias: del óvulo" x={540} y={1500} tam={36} borde={KC.cyan} />
+        <Chip T={T} at={K.R + 2.4} until={K.Pa - 0.2} texto="sus mitocondrias: del óvulo" x={540} y={1380} tam={36} borde={KC.cyan} />
       </Escena>
       {/* 10 · el nombre: por Dolly Parton */}
       <Escena T={T} a={K.Pa} b={K.Cl} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
           <Pasto T={T} />
-          <Oveja T={T} x={600} y={880} s={1.0} sombrero={T > K.Pa + 0.5} fase={7} />
+          <Oveja T={T} x={600} y={930} s={1.35} sombrero={T > K.Pa + 0.5} fase={7} />
           {Array.from({ length: 6 }, (_, i) => { const t0 = K.Pa + 0.6 + i * 0.5, u = ((T - t0) % 3 + 3) % 3 / 3; if (T < t0) return null;
-            return <text key={i} x={380 + i * 90 + Math.sin(T * 3 + i) * 20} y={730 - u * 300} style={{ font:`400 ${70 + (i % 2) * 20}px ${KF.titulo}` }} fill={[KC.pink, KC.violet, KC.yellow][i % 3]} stroke={KC.ink} strokeWidth={3} opacity={1 - u}>{i % 2 ? '♫' : '♪'}</text>; })}
+            return <text key={i} x={380 + i * 90 + Math.sin(T * 3 + i) * 20} y={680 - u * 300} style={{ font:`400 ${70 + (i % 2) * 20}px ${KF.titulo}` }} fill={[KC.pink, KC.violet, KC.yellow][i % 3]} stroke={KC.ink} strokeWidth={3} opacity={1 - u}>{i % 2 ? '♫' : '♪'}</text>; })}
         </SvgCapa>
-        <Chip T={T} at={K.Pa + 0.6} until={K.Cl - 0.2} texto="por Dolly Parton, la cantante" x={540} y={1500} tam={40} borde={KC.pink} />
+        <Chip T={T} at={K.Pa + 0.6} until={K.Cl - 0.2} texto="por Dolly Parton, la cantante" x={540} y={1420} tam={40} borde={KC.pink} />
       </Escena>
       {/* 11 · 2003 y los clones de 2016 */}
       <Escena T={T} a={K.Cl} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
           <Pasto T={T} />
-          {T < K.Cl + 2.0 && <g opacity={1 - kprog(T, K.Cl + 1.6, K.Cl + 2.0)}><Oveja T={T} x={600} y={880} s={0.9} gris={0.6 * kprog(T, K.Cl + 0.3, K.Cl + 1.0)} fase={8} /></g>}
+          {T < K.Cl + 2.0 && <g opacity={1 - kprog(T, K.Cl + 1.6, K.Cl + 2.0)}><Oveja T={T} x={600} y={930} s={1.25} gris={0.6 * kprog(T, K.Cl + 0.3, K.Cl + 1.0)} fase={8} /></g>}
           {T > K.Cl + 1.8 && ['Debbie', 'Denise', 'Dianna', 'Daisy'].map((n, i) => { const e = kprog(T, K.Cl + 1.8 + i * 0.2, K.Cl + 2.3 + i * 0.2, kEase.rebote);
-            return <g key={n}><Oveja T={T} x={170 + i * 240} y={930} s={0.36 * e} fase={i * 1.7} />
-              <text x={150 + i * 240} y={1075} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={e}>{n}</text></g>; })}
+            return <g key={n}><Oveja T={T} x={170 + i * 255} y={1010} s={0.44 * e} fase={i * 1.7} />
+              <text x={150 + i * 255} y={1195} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={e}>{n}</text></g>; })}
         </SvgCapa>
-        <Chip T={T} at={K.Cl + 0.2} until={K.Cl + 1.8} texto="Dolly murió en 2003" x={540} y={1500} tam={40} borde={KC.red} />
-        <TarjetaEstudio T={T} at={K.Cl + 1.9} until={K.C - 0.1} anio="2016" quien="Universidad de Nottingham" revista="Sinclair et al. · Nature Communications" x={420} y={600} />
-        <Chip T={T} at={K.Cl + 2.4} until={K.C - 0.1} texto="4 clones de Dolly · 8 años · presión ✓ azúcar ✓" x={540} y={1500} tam={32} borde={KC.mint} />
+        <Chip T={T} at={K.Cl + 0.2} until={K.Cl + 1.8} texto="Dolly murió en 2003" x={540} y={1420} tam={40} borde={KC.red} />
+        <TarjetaEstudio T={T} at={K.Cl + 1.9} until={K.C - 0.1} anio="2016" quien="Universidad de Nottingham" revista="Sinclair et al. · Nature Communications" x={540} y={620} />
+        <Chip T={T} at={K.Cl + 2.4} until={K.C - 0.1} texto="4 clones de Dolly · 8 años · presión ✓ azúcar ✓" x={540} y={1400} tam={32} borde={KC.mint} />
       </Escena>
       {/* 12 · cierre: la misma oveja, ahora sabemos de dónde salió */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
           <Pasto T={T} />
-          <Oveja T={T} x={620} y={880} s={1.2} />
+          <Oveja T={T} x={610} y={930} s={1.45} />
           <CelulaUbre T={T} x={160} y={620} r={64} brillo={0.6 + 0.4 * Math.sin(T * 5)} />
           <FlechaCurva x1={215} y1={670} x2={290} y2={735} p={1} curva={60} color={KC.ink} T={T} />
         </SvgCapa>
@@ -366,17 +371,17 @@ function Dolly() {
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 2.6} texto="¿un espermatozoide?" x={330} y={470} tam={42} />
       <Etiqueta T={T} at={K.G + 2.95} until={K.D - 0.3} x={60} y={520} texto="célula de ubre" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.D + 0.6} until={K.U - 0.2} texto="Dolly · Instituto Roslin, Escocia" x={540} y={1500} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.U + 0.2} until={K.U + 2.6} texto="oveja Finn Dorset · cara blanca" x={540} y={1500} tam={36} borde={KC.pink} />
-      <Chip T={T} at={K.U + 4.8} until={K.Ov - 0.2} texto="células quietas: ya no se dividen" x={540} y={1500} tam={34} borde={KC.yellow} />
-      <Etiqueta T={T} at={K.Ov + 0.3} until={K.Ch - 0.2} x={880} y={330} texto="Scottish Blackface" lado="izq" tam={28} color={KC.texto} />
-      <Etiqueta T={T} at={K.Ov + 0.4} until={K.Ov + 2.2} x={840} y={1090} texto="núcleo" tam={30} color={KC.lilac} lado="izq" />
-      <Chip T={T} at={K.Ov + 2.4} until={K.Ch - 0.2} texto="óvulo sin núcleo" x={540} y={1500} tam={40} borde={KC.cyan} />
-      <Etiqueta T={T} at={K.Ch + 0.8} until={pulso} x={790} y={1150} texto="célula de ubre" lado="izq" tam={30} color={ROSA} />
-      <Chip T={T} at={pulso} until={ch2 - 0.2} texto="pulso eléctrico" x={540} y={1500} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={ch2 + 0.2} until={K.P - 0.2} texto="embrión: 2 → 4 → 8 células" x={540} y={1500} tam={38} borde={KC.mint} />
+      <Chip T={T} at={K.D + 0.6} until={K.U - 0.2} texto="Dolly · Instituto Roslin, Escocia" x={540} y={1400} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.U + 0.2} until={K.U + 2.6} texto="oveja Finn Dorset · cara blanca" x={540} y={1420} tam={36} borde={KC.pink} />
+      <Chip T={T} at={K.U + 4.8} until={K.Ov - 0.2} texto="células quietas: ya no se dividen" x={540} y={1440} tam={34} borde={KC.yellow} />
+      <Etiqueta T={T} at={K.Ov + 0.3} until={K.Ch - 0.2} x={790} y={400} texto="Scottish Blackface" lado="izq" tam={28} color={KC.texto} />
+      <Etiqueta T={T} at={K.Ov + 0.4} until={K.Ov + 2.2} x={760} y={690} texto="núcleo" tam={30} color={KC.lilac} lado="der" />
+      <Chip T={T} at={K.Ov + 2.4} until={K.Ch - 0.2} texto="óvulo sin núcleo" x={540} y={1440} tam={40} borde={KC.cyan} />
+      <Etiqueta T={T} at={K.Ch + 0.8} until={pulso} x={880} y={1400} texto="célula de ubre" lado="izq" tam={30} color={ROSA} />
+      <Chip T={T} at={pulso} until={ch2 - 0.2} texto="pulso eléctrico" x={540} y={1440} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={ch2 + 0.2} until={K.P - 0.2} texto="embrión: 2 → 4 → 8 células" x={540} y={1440} tam={38} borde={KC.mint} />
       <Etiqueta T={T} at={K.P + 0.3} until={K.E - 0.2} x={1040} y={1640} texto="esquemático · no a escala" lado="izq" tam={26} color="rgba(246,243,236,.8)" />
-      <Chip T={T} at={K.Ol + 1.4} until={K.E - 0.2} texto="el mismo ADN: todo el manual" x={540} y={1500} tam={36} borde={KC.lilac} />
+      <Chip T={T} at={K.Ol + 1.4} until={K.E - 0.2} texto="el mismo ADN: todo el manual" x={420} y={1440} tam={36} borde={KC.lilac} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.D - 0.1} texto="Sin espermatozoide: *de una célula de ubre.*" />

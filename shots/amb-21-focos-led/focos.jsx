@@ -150,6 +150,7 @@ function MedidorLm({ T, cx, cy, r, valor, marca = 0, o = 1 }) {
 const FC_LADOS = { 'arriba-der': { left:690, top:300, width:330 }, 'gancho': { left:600, top:230, width:460 }, 'izq-alto': { left:-10, top:300, width:330 },
   'grande': { left:520, top:560, width:580 }, 'grande-izq': { left:-20, top:560, width:580 } };
 function RobertF({ T, apariciones = [], base = 'assets/stickers/' }) {
+  if (typeof CINE_OPC !== 'undefined') return null; // modo cine: Robert sale solo en la tarjeta de cierre
   return <>{apariciones.map(([at, until, pose, lado], k) => {
     if (T < at || T > until + 0.45) return null;
     const L = FC_LADOS[lado] || FC_LADOS['arriba-der'], izq = lado === 'izq-alto' || lado === 'grande-izq';
@@ -180,13 +181,13 @@ function FocosShot() {
       {/* 1 · gancho: el foco colgado se enciende y echa calor */}
       <Escena T={T} a={K.G} b={K.Ca}>
         <FondoLunares color={KC.orange} />
-        {svg(<><Cable x={330} y={700} /><FocoInc T={T} x={330} y={700} colgado on={onG} calor={onG} /></>)}
+        {svg(<><Cable x={540} y={980} s={1.9} /><FocoInc T={T} x={540} y={980} s={1.9} colgado on={onG} calor={onG} /></>)}
         <EscalaFija texto="esquema" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 2 · 90 % calor, 10 % luz */}
       <Escena T={T} a={K.Ca} b={K.F}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>
+        {svg(<g transform="translate(0 180)">
           <rect x={90} y={760} width={900} height={96} rx={24} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={7} />
           <rect x={98} y={768} width={Math.max(0, 810 * rojo - 4)} height={80} rx={18} fill={KC.red} />
           <rect x={98 + 810} y={768} width={Math.max(0, 84 * amar)} height={80} rx={18} fill={KC.gold2} />
@@ -198,23 +199,23 @@ function FocosShot() {
               {c > 0.5 && (luz ? <circle r={14} fill="#fff" /> : <path d="M -6 18 q 12 -12 0 -24 q -12 -12 0 -24" transform="translate(0 6)" stroke="#fff" strokeWidth={7} fill="none" strokeLinecap="round" />)}
             </g>; })}
           <text x={540} y={1130} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={cuadro(0)}>10 partes de energía</text>
-          <FocoInc T={T} x={250} y={560} s={0.62} on={1} calor={1} />
-        </>)}
+        </g>)}
+        {svg(<FocoInc T={T} x={540} y={620} s={1.0} on={1} calor={1} />)}
       </Escena>
       {/* 3 · el filamento por dentro: se calienta y se rompe */}
       <Escena T={T} a={K.F} b={K.P}>
         <FondoLunares color={KC.lilac} />
-        {svg(<FocoInc T={T} x={540} y={930} s={1.15} on={1} roto={rompe} calor={1 - rompe} />)}
+        {svg(<FocoInc T={T} x={540} y={1000} s={1.6} on={1} roto={rompe} calor={1 - rompe} />)}
         <EscalaFija texto="esquema" largo={0} y={1500} color={KC.ink} />
       </Escena>
-      <Lupa T={T} at={K.F + 0.5} until={K.P - 0.25} x={640} y={500} r={190} fx={540} fy={940} tinte={KC.orange} etiqueta="POR DENTRO · FILAMENTO"
+      <Lupa T={T} at={K.F + 0.2} until={K.P - 0.25} x={660} y={470} r={230} fx={540} fy={1016} tinte={KC.orange} etiqueta="POR DENTRO · FILAMENTO"
         interior={(t, r) => <InteriorFilamento T={t} r={r} t0={K.F} rompe={rompe} />} />
       {/* 4 · pregunta: ¿y el LED? */}
       <Escena T={T} a={K.P} b={K.Ch} zoom={0.08}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <text x={250} y={760} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 250 640)`}>?</text>
-          <FocoLED T={T} x={260} y={980} s={0.8} on={kprog(T, K.P + 0.5, K.P + 0.8)} />
+          <text x={790} y={930} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 790 790)`}>?</text>
+          <FocoLED T={T} x={380} y={960} s={1.5} on={kprog(T, K.P + 0.3, K.P + 0.6)} />
         </>)}
       </Escena>
       {/* 5 · el chip LED por capas (fondo oscuro: adentro del chip) */}
@@ -226,8 +227,8 @@ function FocosShot() {
       {/* 6 · el LED azul: Nobel 2014 */}
       <Escena T={T} a={K.N} b={K.A}>
         <FondoLunares color={KC.lilac} />
-        {(() => { const az = kprog(T, K.N + 1.6, K.N + 2.0), mez = kprog(T, K.N + 2.6, K.N + 3.2, kEase.suave), fuera = 1 - kprog(T, K.N + 3.7, K.N + 4.1);
-          return svg(<g opacity={fuera}>
+        {(() => { const az = kprog(T, K.N + 1.6, K.N + 2.0), mez = kprog(T, K.N + 2.6, K.N + 3.2, kEase.suave), fuera = 1 - 0.5 * kprog(T, K.N + 3.7, K.N + 4.1);
+          return svg(<g opacity={fuera} transform="translate(540 1030) scale(1.1) translate(-540 -880)">
             <rect x={110} y={520} width={860} height={720} rx={40} fill="#14112a" stroke={KC.ink} strokeWidth={7} />
             <Diodo x={klerp(300, 470, mez)} y={940} color="#ff3b3b" on={1} />
             <Diodo x={540} y={940} color="#2fe060" on={1} />
@@ -242,19 +243,21 @@ function FocosShot() {
       {/* 7 · ahorro: 9 W = 75 W de luz, y dura hasta 25 veces más */}
       <Escena T={T} a={K.A} b={K.M}>
         <FondoLunares color={KC.yellow} />
-        {(() => { const p1 = 1 - kprog(T, K.A + 3.0, K.A + 3.4), p2 = kprog(T, K.A + 3.3, K.A + 3.7), seg = kprog(T, K.A + 3.8, K.A + 5.8);
+        {(() => { const p1 = 1 - kprog(T, K.A + 2.9, K.A + 3.3), p2 = kprog(T, K.A + 2.9, K.A + 3.3), seg = kprog(T, K.A + 3.8, K.A + 5.8);
           return svg(<>
             <g opacity={p1}>
-              <path d="M 230 820 L 130 1180 L 450 1180 L 350 820 Z" fill="#fff3a0" opacity=".7" />
-              <path d="M 730 820 L 630 1180 L 950 1180 L 850 820 Z" fill="#fff3a0" opacity=".7" />
-              <FocoInc T={T} x={290} y={620} s={0.72} on={1} calor={1} />
-              <FocoLED T={T} x={790} y={620} s={0.72} on={1} />
-              <text x={290} y={460} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={4}>75 W</text>
-              <text x={790} y={460} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.leaf} stroke={KC.ink} strokeWidth={4}>9 W</text>
-              <text x={290} y={1100} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>1,100 lm</text>
-              <text x={790} y={1100} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>1,100 lm</text>
+              <path d="M 230 880 L 110 1250 L 470 1250 L 350 880 Z" fill="#fff3a0" opacity=".7" />
+              <path d="M 730 880 L 610 1250 L 970 1250 L 850 880 Z" fill="#fff3a0" opacity=".7" />
+              <text x={290} y={1170} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#0b1020">1,100 lm</text>
+              <text x={790} y={1170} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#0b1020">1,100 lm</text>
             </g>
-            <g opacity={p2}>
+            <g opacity={0.4 + 0.6 * p1}>
+              <FocoInc T={T} x={290} y={640} s={0.9} on={1} calor={1} />
+              <FocoLED T={T} x={790} y={640} s={0.9} on={1} />
+              <text x={290} y={440} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={4}>75 W</text>
+              <text x={790} y={440} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={KC.leaf} stroke={KC.ink} strokeWidth={4}>9 W</text>
+            </g>
+            <g opacity={p2} transform="translate(0 230)">
               <text x={90} y={850} style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>incandescente</text>
               <rect x={90} y={870} width={32} height={60} rx={8} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
               <text x={90} y={1010} style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>LED: hasta ×25</text>
@@ -267,32 +270,32 @@ function FocosShot() {
       <Escena T={T} a={K.M} b={K.C}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <g opacity={kprog(T, K.M + 0.3, K.M + 0.8)}><MapaMexico x={80} y={500} ancho={420} conCA={false} color="#ffe9a8" /></g>
-          <MedidorLm T={T} cx={540} cy={1110} r={300} valor={16 * kprog(T, K.M + 6.0, K.M + 7.0, kEase.sale)} marca={kprog(T, K.M + 4.6, K.M + 5.0)} />
+          <g opacity={kprog(T, K.M - 0.2, K.M + 0.3)}><MapaMexico x={60} y={470} ancho={480} conCA={false} color="#ffe9a8" /></g>
+          <MedidorLm T={T} cx={540} cy={1200} r={370} valor={16 * kprog(T, K.M + 6.0, K.M + 7.0, kEase.sale)} marca={kprog(T, K.M + 4.6, K.M + 5.0)} />
         </>)}
       </Escena>
       {/* 9 · cierre: el mismo foco del inicio… y el LED en su lugar */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={mixHex(KC.orange, KC.cyan, cambio)} />
-        {svg(<><Cable x={330} y={700} />
-          <FocoInc T={T} x={330} y={700} colgado on={1} calor={1 - cambio} o={1 - cambio} />
-          <FocoLED T={T} x={330} y={700} colgado on={1} o={cambio} /></>)}
+        {svg(<><Cable x={540} y={980} s={1.9} />
+          <FocoInc T={T} x={540} y={980} s={1.9} colgado on={1} calor={1 - cambio} o={1 - cambio} />
+          <FocoLED T={T} x={540} y={980} s={1.9} colgado on={1} o={cambio} /></>)}
         <EscalaFija texto="esquema" largo={0} y={1500} color={KC.ink} />
       </Escena>
 
       {/* datos y etiquetas */}
       <Chip T={T} at={K.G + 1.4} until={K.Ca - 0.2} texto="¿lámpara o calentador?" y={1460} x={540} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Ca + 0.7} until={K.F - 0.2} texto="DOE (EE. UU.), 2021" y={430} x={560} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Ca + 0.7} until={K.F - 0.2} texto="DOE (EE. UU.), 2021" y={1440} x={540} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.F + 4.1} until={K.P - 0.2} texto="dura ≈ 1,000 horas" y={1460} x={540} tam={38} borde={KC.orange} />
-      <Etq T={T} at={K.P + 0.9} until={K.Ch - 0.2} x={260} y={1240} texto="LED" lado="der" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.P + 0.5} until={K.Ch - 0.2} x={480} y={1300} texto="LED" lado="der" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ch + 0.3} until={K.N - 0.2} texto="chip LED por dentro" y={430} x={380} tam={34} borde={KC.cyan} />
       <Chip T={T} at={K.Ch + 2.4} until={K.N - 0.2} texto="● luz   ● algo de calor" y={1460} x={540} tam={32} borde={KC.yellow} />
-      <Chip T={T} at={K.N + 1.4} until={K.A - 0.2} texto="inicios de los 90 · Japón" y={430} x={380} tam={30} borde={KC.blue} />
-      <TarjetaEstudio T={T} at={K.N + 4.0} until={K.A - 0.2} anio="2014" quien="Akasaki, Amano y Nakamura" revista="Nobel de Física · el LED azul" x={540} y={930} />
+      <Chip T={T} at={K.N + 1.4} until={K.A - 0.2} texto="inicios de los 90 · Japón" y={560} x={540} tam={30} borde={KC.blue} />
+      <TarjetaEstudio T={T} at={K.N + 4.0} until={K.A - 0.2} anio="2014" quien="Akasaki, Amano y Nakamura" revista="Nobel de Física · el LED azul" x={540} y={350} />
       <Chip T={T} at={K.A + 0.4} until={K.M - 0.2} texto="DOE, 2021" y={1460} x={540} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.M + 0.3} until={K.C - 0.2} texto="México · NOM-028-ENER-2017" y={430} x={380} tam={30} borde={KC.leaf} />
-      <Chip T={T} at={K.M + 4.8} until={K.C - 0.2} texto="mínimo desde 2019: 60 lm/W" y={1460} x={540} tam={34} borde={KC.leaf} />
-      <Chip T={T} at={K.M + 6.8} until={K.C - 0.2} texto="foco clásico: 16 lm/W" y={1545} x={540} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.M + 0.3} until={K.C - 0.2} texto="México · NOM-028-ENER-2017" y={400} x={540} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.M + 4.8} until={K.C - 0.2} texto="mínimo desde 2019: 60 lm/W" y={1385} x={540} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.M + 6.8} until={K.C - 0.2} texto="foco clásico: 16 lm/W" y={1470} x={540} tam={30} borde={KC.red} />
       <Chip T={T} at={K.C + 3.0} until={K.Ou - 0.1} texto="misma luz, mucho menos calor" y={1460} x={540} tam={36} borde={KC.cyan} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

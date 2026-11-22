@@ -266,36 +266,36 @@ function HepatitisB() {
   const aLev = kprog(T, K.Ge + 3.5, K.Ge + 4.6, kEase.suave);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
-      {/* 0 · gancho: la jeringa en el muslo del bebé */}
+      {/* 0 · gancho: el bebé llena el cuadro; la jeringa en su muslo y, enseguida, la levadura */}
       <Escena T={T} a={K.G} b={K.Be} zoom={0.04} origen="50% 60%">
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Bebe T={T} x={430} y={470} s={0.9} />
-          <Jeringa x={klerp(610, 518, pinch)} y={klerp(865, 920, pinch)} ang={-38} s={0.95} p={embolo} etiqueta="anti hepatitis B" />
-          {T > K.G + 2.2 && <g transform={`translate(170 1050) scale(${kprog(T, K.G + 2.2, K.G + 2.7, kEase.rebote)})`}><LevaduraG T={T} s={0.62} guino={1} /></g>}
+          <Bebe T={T} x={440} y={520} s={1.2} />
+          <Jeringa x={klerp(680, 558, pinch)} y={klerp(1047, 1120, pinch)} ang={-52} s={1.2} p={embolo} etiqueta="anti hepatitis B" />
+          {T > K.G + 2.2 && <g transform={`translate(165 1200) scale(${kprog(T, K.G + 2.2, K.G + 2.7, kEase.rebote)})`}><LevaduraG T={T} s={0.85} guino={1} /></g>}
         </SvgCapa>
       </Escena>
       {/* 1 · en México, primeras 24 horas, en el muslo */}
       <Escena T={T} a={K.Be} b={K.Vi} zoom={0.04} origen="50% 60%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Bebe T={T} x={430} y={470} s={0.9} curita={kprog(T, K.Be + 1.6, K.Be + 2.0)} />
-          <Reloj24 x={830} y={520} r={130} p={kprog(T, K.Be + 0.2, K.Be + 2.4, kEase.suave)} />
+          <Bebe T={T} x={440} y={520} s={1.2} curita={kprog(T, K.Be + 1.6, K.Be + 2.0)} />
+          <Reloj24 x={830} y={440} r={170} p={kprog(T, K.Be + 0.2, K.Be + 2.4, kEase.suave)} />
         </SvgCapa>
       </Escena>
       {/* 2 · la hepatitis B ataca el hígado */}
       <Escena T={T} a={K.Vi} b={K.Pl} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa><CuerpoHigado T={T} x={300} y={800} s={0.95} brilla={kprog(T, K.Vi + 0.6, K.Vi + 1.2)} /></SvgCapa>
+        <SvgCapa><CuerpoHigado T={T} x={360} y={840} s={1.2} brilla={kprog(T, K.Vi + 0.6, K.Vi + 1.2)} /></SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.Vi + 0.9} until={K.Pl - 0.25} x={780} y={860} r={190} fx={270} fy={770} interior={interiorVirus} tinte={KC.orange} etiqueta="AL MICROSCOPIO · VIRUS" />
+      <Lupa T={T} at={K.Vi + 0.9} until={K.Pl - 0.25} x={800} y={1130} r={250} fx={330} fy={800} interior={interiorVirus} tinte={KC.orange} etiqueta="AL MICROSCOPIO · VIRUS" />
       {/* 3–4 · antes: del plasma de personas infectadas; el miedo */}
       <Escena T={T} a={K.Pl} b={K.Pr} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <g opacity={1 - kprog(T, K.Mi - 0.3, K.Mi + 0.3)}><BolsaSangre x={260} y={860} s={0.95} />
-            <FlechaG x0={430} y0={860} x1={560} y1={860} p={kprog(T, K.Pl + 0.6, K.Pl + 1.2)} /></g>
-          <Tubo x={klerp(760, 430, kprog(T, K.Mi - 0.3, K.Mi + 0.4, kEase.suave))} y={900} s={klerp(0.95, 1.25, kprog(T, K.Mi - 0.3, K.Mi + 0.4, kEase.suave))}
+          <g opacity={1 - kprog(T, K.Mi - 0.3, K.Mi + 0.3)}><BolsaSangre x={280} y={900} s={1.5} />
+            <FlechaG x0={505} y0={900} x1={625} y1={900} p={kprog(T, K.Pl + 0.6, K.Pl + 1.2)} /></g>
+          <Tubo x={klerp(820, 540, kprog(T, K.Mi - 0.3, K.Mi + 0.4, kEase.suave))} y={klerp(930, 960, kprog(T, K.Mi - 0.3, K.Mi + 0.4, kEase.suave))} s={klerp(1.5, 2.0, kprog(T, K.Mi - 0.3, K.Mi + 0.4, kEase.suave))}
             separa={kprog(T, K.Pl + 2.2, K.Pl + 3.4)} rot={T > K.Pl + 0.9 && T < K.Pl + 2.4 ? Math.sin((T - K.Pl) * 30) * 6 : 0}>
             {T > K.Mi + 0.6 && flotan.map(([a, b, ph], i) => { const o = kprog(T, K.Mi + 0.6 + i * 0.25, K.Mi + 1.0 + i * 0.25);
               return <g key={i} opacity={o}><circle cx={a} cy={b + Math.sin(T * 2 + ph) * 10} r={22} fill="#7a7f88" stroke={KC.ink} strokeWidth={4} />
@@ -307,35 +307,35 @@ function HepatitisB() {
       <Escena T={T} a={K.Pr} b={K.Ge} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <VirusHB T={T} x={300} y={1000} r={120} />
-          <text x={300} y={820} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 300 700)`}>?</text>
-          <line x1={150} y1={1150} x2={450} y2={850} stroke={KC.red} strokeWidth={22} strokeLinecap="round" opacity={kprog(T, K.Pr + 1.0, K.Pr + 1.3)} />
+          <VirusHB T={T} x={540} y={1150} r={200} />
+          <text x={540} y={880} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 700)`}>?</text>
+          <line x1={320} y1={1370} x2={760} y2={930} stroke={KC.red} strokeWidth={34} strokeLinecap="round" opacity={kprog(T, K.Pr + 1.0, K.Pr + 1.3)} />
         </SvgCapa>
       </Escena>
       {/* 6 · un solo gen → plásmido → levadura (fondo oscuro: ya es microscópico) */}
       <Escena T={T} a={K.Ge} b={K.Pa} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 45%, #1b2333 0%, ${KC.noche} 75%)` }}></div>
         <SvgCapa>
-          <Helice T={T} x={90} y={640} largo={900} alto={56} corte={corte} />
-          {corte > 0 && <g transform={`translate(${klerp(540, 300, alPlas)} ${klerp(640 + corte * 120, 1060, alPlas)}) scale(${klerp(1, 0.5, alPlas)})`} opacity={1 - cierra}>
+          <g transform="translate(30 560) scale(1.7)"><Helice T={T} x={0} y={0} largo={600} alto={56} corte={corte} /></g>
+          {corte > 0 && <g transform={`translate(${klerp(540, 260, alPlas)} ${klerp(560 + corte * 204, 1100, alPlas)}) scale(${klerp(1.6, 0.75, alPlas)})`} opacity={1 - cierra}>
             <rect x={-90} y={-22} width={180} height={44} rx={22} fill={GEN} stroke={KC.ink} strokeWidth={6} style={{ filter:`drop-shadow(0 0 14px ${GEN})` }} /></g>}
-          {T > K.Ge + 1.8 && aLev < 1 && <PlasmidoG T={T} x={klerp(300, 760, aLev)} y={klerp(1060, 1010, aLev)} r={110} s={klerp(1, 0.35, aLev)} gen={cierra} cierra={0.4 + 0.6 * cierra} />}
-          <LevaduraG T={T} x={760} y={1010} s={1.05} plas={kprog(T, K.Ge + 4.4, K.Ge + 4.8)} />
+          {T > K.Ge + 1.8 && aLev < 1 && <PlasmidoG T={T} x={klerp(260, 822, aLev)} y={klerp(1100, 1251, aLev)} r={110} s={klerp(1.5, 0.59, aLev)} gen={cierra} cierra={0.4 + 0.6 * cierra} />}
+          <LevaduraG T={T} x={720} y={1200} s={1.7} plas={kprog(T, K.Ge + 4.4, K.Ge + 4.8)} />
         </SvgCapa>
       </Escena>
       {/* 7 · la levadura arma las partículas (Lupa por dentro) */}
       <Escena T={T} a={K.Pa} b={K.Va} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 45%, #1b2333 0%, ${KC.noche} 75%)` }}></div>
-        <SvgCapa><LevaduraG T={T} x={300} y={990} s={1.1} plas={1} /></SvgCapa>
+        <SvgCapa><LevaduraG T={T} x={330} y={1190} s={1.6} plas={1} /></SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.Pa + 0.3} until={K.Va - 0.25} x={730} y={800} r={230} fx={290} fy={990} interior={(t, r) => interiorParticulas(t, r, K.Pa + 0.3)} tinte={HBS} etiqueta="POR DENTRO · LEVADURA" />
-      {/* 8 · por fuera parecen el virus, por dentro vacías (escala real: 10 px = 1 nm) */}
+      <Lupa T={T} at={K.Pa + 0.3} until={K.Va - 0.25} x={700} y={640} r={300} fx={330} fy={1190} interior={(t, r) => interiorParticulas(t, r, K.Pa + 0.3)} tinte={HBS} etiqueta="POR DENTRO · LEVADURA" />
+      {/* 8 · por fuera parecen el virus, por dentro vacías (escala real: 16 px = 1 nm; la barra se calcula con z = 1.6) */}
       <Escena T={T} a={K.Va} b={K.Es} zoom={0.02}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 45%, #1b2333 0%, ${KC.noche} 75%)` }}></div>
         <SvgCapa>
-          <VirusHB T={T} x={300} y={880} r={210 / 1.15} corte={kprog(T, K.Va + 1.6, K.Va + 2.2)} />
-          <ParticulaHBs T={T} x={800} y={880} r={110 / 1.02} seed={3} />
-          {T > K.Va + 2.6 && <g opacity={kprog(T, K.Va + 2.6, K.Va + 3.0)} transform="translate(800 880)">
+          <VirusHB T={T} x={405} y={720} r={1.6 * 210 / 1.15} corte={kprog(T, K.Va + 1.6, K.Va + 2.2)} />
+          <ParticulaHBs T={T} x={800} y={1240} r={1.6 * 110 / 1.02} seed={3} />
+          {T > K.Va + 2.6 && <g opacity={kprog(T, K.Va + 2.6, K.Va + 3.0)} transform="translate(800 1240) scale(1.6)">
             <rect x={-34} y={-10} width={68} height={54} rx={10} fill={KC.mint} stroke={KC.ink} strokeWidth={6} />
             <path d="M -20 -10 v -18 a 20 20 0 0 1 40 0 v 18" fill="none" stroke={KC.ink} strokeWidth={8} /></g>}
         </SvgCapa>
@@ -343,64 +343,64 @@ function HepatitisB() {
       {/* 9 · 1982: al microscopio electrónico */}
       <Escena T={T} a={K.Es} b={K.Re} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa><PantallaME T={T} x={440} y={970} r={190} n={kprog(T, K.Es + 1.2, K.Es + 3.2)} /></SvgCapa>
+        <SvgCapa><g transform="translate(540 1000) scale(1.9)"><PantallaME T={T} x={0} y={0} r={190} n={kprog(T, K.Es + 1.2, K.Es + 3.2)} /></g></SvgCapa>
       </Escena>
       {/* 10 · 1986: Recombivax HB */}
       <Escena T={T} a={K.Re} b={K.Pn} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <FrascoVacuna x={280} y={840} s={1.25} etiqueta="HB" />
-          <Sello T={T} at={K.Re + 0.6} x={300} y={560} texto="1986" sub="RECOMBINANTE" />
+          <FrascoVacuna x={500} y={770} s={2.4} etiqueta="HB" />
+          <g transform="translate(800 480) scale(1.4)"><Sello T={T} at={K.Re + 0.6} x={0} y={0} texto="1986" sub="RECOMBINANTE" /></g>
         </SvgCapa>
       </Escena>
       {/* 11 · la levadura del pan; rastros y alergia grave */}
       <Escena T={T} a={K.Pn} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <Pan x={760} y={920} s={0.75} />
-          <text x={480} y={980} textAnchor="middle" style={{ font:`400 140px ${KF.titulo}` }} fill={KC.paper} stroke={KC.ink} strokeWidth={8}>=</text>
-          <LevaduraG T={T} x={230} y={920} s={0.7} />
-          {T > K.Pn + 2.6 && Array.from({ length: 6 }, (_, i) => <circle key={i} cx={760 + Math.cos(i * 1.1) * 60} cy={1100 + Math.sin(i * 1.7) * 30 + Math.sin(T * 2 + i) * 6} r={9} fill="#f6d06a" stroke={KC.ink} strokeWidth={3} opacity={kprog(T, K.Pn + 2.6 + i * 0.1, K.Pn + 3.0 + i * 0.1)} />)}
-          {T > K.Pn + 2.6 && <g opacity={kprog(T, K.Pn + 2.6, K.Pn + 3.0)}><FrascoVacuna x={760} y={1050} s={0.45} etiqueta="HB" /></g>}
+          <Pan x={690} y={1130} s={1.35} />
+          <text x={470} y={1010} textAnchor="middle" style={{ font:`400 260px ${KF.titulo}` }} fill="#fff6e0" stroke="#0b1020" strokeWidth={8}>=</text>
+          <LevaduraG T={T} x={330} y={650} s={1.7} />
+          {T > K.Pn + 2.6 && Array.from({ length: 6 }, (_, i) => <circle key={i} cx={190 + Math.cos(i * 1.1) * 130} cy={1400 + Math.sin(i * 1.7) * 40 + Math.sin(T * 2 + i) * 6} r={14} fill="#f6d06a" stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Pn + 2.6 + i * 0.1, K.Pn + 3.0 + i * 0.1)} />)}
+          {T > K.Pn + 2.6 && <g opacity={kprog(T, K.Pn + 2.6, K.Pn + 3.0)}><FrascoVacuna x={190} y={1120} s={1.0} etiqueta="HB" /></g>}
         </SvgCapa>
       </Escena>
       {/* 12 · cierre: el bebé y la jeringa del inicio, ya con su etiqueta */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="50% 60%">
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Bebe T={T} x={430} y={470} s={0.9} curita={1} />
-          <Jeringa x={518} y={920} ang={-38} s={0.95} p={1} etiqueta="hecha en levadura" />
-          <g transform="translate(170 1050)"><LevaduraG T={T} s={0.62} guino={1} /></g>
+          <Bebe T={T} x={440} y={520} s={1.2} curita={1} />
+          <Jeringa x={558} y={1120} ang={-52} s={1.2} p={1} etiqueta="hecha en levadura" />
+          <g transform="translate(165 1200)"><LevaduraG T={T} s={0.85} guino={1} /></g>
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.7} until={K.Be - 0.2} texto="¿trae virus?" x={540} y={1420} tam={44} />
-      <Chip T={T} at={K.G + 2.4} until={K.Be - 0.2} texto="la fabricó una levadura" y={1540} tam={44} borde={KC.gold} />
-      <Chip T={T} at={K.Be + 0.3} until={K.Vi - 0.2} texto="México · primeras 24 horas" y={1500} tam={44} borde={KC.cyan} />
-      <Etiqueta T={T} at={K.Be + 1.0} until={K.Vi - 0.2} x={610} y={930} texto="muslo izquierdo" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Vi + 0.4} until={K.Pl - 0.2} texto="hepatitis B: ataca el hígado" y={1500} tam={42} borde={KC.red} />
-      <Chip T={T} at={K.Pl + 0.3} until={K.Mi - 0.2} texto="1981 · purificada del plasma" y={1500} tam={42} borde={PLASMA} />
-      <Etiqueta T={T} at={K.Pl + 2.8} until={K.Mi - 0.2} x={850} y={760} texto="plasma" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Mi + 0.5} until={K.Pr - 0.2} texto="un miedo (sin pruebas de contagio)" y={1500} tam={36} borde={KC.lilac} />
-      <Chip T={T} at={K.Pr + 0.3} until={K.Ge - 0.2} texto="¿vacuna sin virus?" y={1500} tam={46} borde={KC.yellow} />
-      <Chip T={T} at={K.Ge + 0.3} until={K.Ge + 2.6} texto="1 gen: la proteína de superficie" y={470} tam={36} borde={GEN} />
-      <Etiqueta T={T} at={K.Ge + 0.6} until={K.Ge + 2.6} x={560} y={790} texto="gen S (HBsAg)" tam={32} color={GEN} />
-      <Etiqueta T={T} at={K.Ge + 2.4} until={K.Ge + 3.8} x={420} y={1160} texto="plásmido" tam={32} color={KC.texto} />
-      <Etiqueta T={T} at={K.Ge + 3.8} until={K.Pa - 0.2} x={420} y={1440} texto="Saccharomyces cerevisiae" it tam={32} color={KC.texto} />
-      <Chip T={T} at={K.Pa + 2.6} until={K.Va - 0.2} texto="se arman solas · 22 nm" y={1500} tam={42} borde={HBS} />
-      <Etiqueta T={T} at={K.Va + 0.4} until={K.Es - 0.2} x={150} y={1130} texto="virus · ~42 nm" tam={32} color={KC.texto} />
-      <Etiqueta T={T} at={K.Va + 0.8} until={K.Es - 0.2} x={600} y={1050} texto="partícula · 22 nm" tam={32} color={KC.texto} />
-      {T >= K.Va && T < K.Es && <Escala T={T} z={1} pxPorMm={1e7} x={60} y={1430} />}
-      <Chip T={T} at={K.Va + 2.2} until={K.Es - 0.2} texto="por dentro: sin ADN" y={1580} tam={40} borde={KC.mint} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Re - 0.2} anio="1982" quien="UCSF + U. de Washington" revista="Valenzuela et al. · Nature" x={350} y={600} />
-      <Etiqueta T={T} at={K.Es + 2.0} until={K.Re - 0.2} x={200} y={1440} texto="microscopio electrónico" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Re + 1.2} until={K.Pn - 0.2} texto="1.ª vacuna de ADN recombinante" y={1500} tam={40} borde={KC.red} />
-      <Etiqueta T={T} at={K.Pn + 0.6} until={K.Pn + 2.6} x={60} y={1080} texto="Saccharomyces cerevisiae" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Pn + 0.4} until={K.Pn + 2.6} texto="la misma especie del pan" y={1500} tam={42} borde={KC.gold} />
-      <Etiqueta T={T} at={K.Pn + 3.0} until={K.Ci - 0.2} x={1040} y={1440} texto="< 1 % proteína de levadura" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Pn + 3.4} until={K.Ci - 0.2} texto="alergia grave a la levadura = no" y={1540} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="0 virus · 1 levadura" y={1500} tam={46} borde={KC.gold} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.7} until={K.Be - 0.2} texto="¿trae virus?" x={820} y={330} tam={48} />
+      <Chip T={T} at={K.G + 2.4} until={K.Be - 0.2} texto="la fabricó una levadura" y={1460} tam={46} borde={KC.gold} />
+      <Chip T={T} at={K.Be + 0.3} until={K.Vi - 0.2} texto="México · primeras 24 horas" y={1460} tam={46} borde={KC.cyan} />
+      <Etiqueta T={T} at={K.Be + 1.0} until={K.Vi - 0.2} x={640} y={1125} texto="muslo izquierdo" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Vi + 0.4} until={K.Pl - 0.2} texto="hepatitis B: ataca el hígado" y={250} tam={42} borde={KC.red} />
+      <Chip T={T} at={K.Pl + 0.3} until={K.Mi - 0.2} texto="1981 · purificada del plasma" y={1460} tam={44} borde={PLASMA} />
+      <Etiqueta T={T} at={K.Pl + 2.8} until={K.Mi - 0.2} x={690} y={700} texto="plasma" lado="izq" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Mi + 0.5} until={K.Pr - 0.2} texto="un miedo (sin pruebas de contagio)" y={250} tam={38} borde={KC.lilac} />
+      <Chip T={T} at={K.Pr + 0.3} until={K.Ge - 0.2} texto="¿vacuna sin virus?" y={1470} tam={50} borde={KC.yellow} />
+      <Chip T={T} at={K.Ge + 0.3} until={K.Ge + 2.6} texto="1 gen: la proteína de superficie" y={340} tam={40} borde={GEN} />
+      <Etiqueta T={T} at={K.Ge + 0.6} until={K.Ge + 2.6} x={670} y={770} texto="gen S (HBsAg)" tam={34} color={GEN} />
+      <Etiqueta T={T} at={K.Ge + 2.4} until={K.Ge + 3.8} x={110} y={1320} texto="plásmido" tam={34} color={KC.texto} />
+      <Etiqueta T={T} at={K.Ge + 3.8} until={K.Pa - 0.2} x={440} y={1470} texto="Saccharomyces cerevisiae" it tam={34} color={KC.texto} />
+      <Chip T={T} at={K.Pa + 2.6} until={K.Va - 0.2} texto="se arman solas · 22 nm" x={790} y={1130} tam={42} borde={HBS} />
+      <Etiqueta T={T} at={K.Va + 0.4} until={K.Es - 0.2} x={130} y={1125} texto="virus · ~42 nm" tam={36} color={KC.texto} />
+      <Etiqueta T={T} at={K.Va + 0.8} until={K.Es - 0.2} x={585} y={1425} texto="partícula · 22 nm" lado="izq" tam={36} color={KC.texto} />
+      {T >= K.Va && T < K.Es && <Escala T={T} z={1.6} pxPorMm={1e7} x={60} y={1430} />}
+      <Chip T={T} at={K.Va + 2.2} until={K.Es - 0.2} texto="por dentro: sin ADN" x={300} y={1300} tam={42} borde={KC.mint} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Re - 0.2} anio="1982" quien="UCSF + U. de Washington" revista="Valenzuela et al. · Nature" x={540} y={400} />
+      <Etiqueta T={T} at={K.Es + 2.0} until={K.Re - 0.2} x={250} y={1480} texto="microscopio electrónico" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Re + 1.2} until={K.Pn - 0.2} texto="1.ª vacuna de ADN recombinante" y={1485} tam={42} borde={KC.red} />
+      <Etiqueta T={T} at={K.Pn + 0.6} until={K.Pn + 2.6} x={60} y={385} texto="Saccharomyces cerevisiae" it tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Pn + 0.4} until={K.Pn + 2.6} texto="la misma especie del pan" y={1420} tam={44} borde={KC.gold} />
+      <Etiqueta T={T} at={K.Pn + 3.0} until={K.Ci - 0.2} x={330} y={1330} texto="< 1 % proteína de levadura" lado="der" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Pn + 3.4} until={K.Ci - 0.2} texto="alergia grave a la levadura = no" y={1490} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="0 virus · 1 levadura" y={1460} tam={48} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Be - 0.1} texto="No trae virus: *la hizo una levadura.*" />
@@ -418,7 +418,7 @@ function HepatitisB() {
       <Subtitulo T={T} idx={12} at={K.Ci + 0.1} until={K.Ou - 0.1} texto="Sin virus: *trabajo de levadura.*" />
 
       <Robert T={T} apariciones={ROBERT_HB(CUES).slice(1)} />
-      <StickerFundido T={T} src="assets/stickers/avatar_11_sorprendido.png" at={CUES.Gancho - 0.45} until={CUES.Gancho + 2.7} lado="gancho" />
+      {/* modo cine: Robert solo en la tarjeta de cierre (se quitó el StickerFundido del gancho) */}
       <MarcaAgua T={T} tema="bioquimica" num="17" hasta={K.Ou} />
       <CierreMarca T={T} at={K.Ou} tema="bioquimica" robert={'assets/stickers/avatar_13_senalando_arriba.png'} />
       <AudioPista src={window.AUDIO_SRC} />

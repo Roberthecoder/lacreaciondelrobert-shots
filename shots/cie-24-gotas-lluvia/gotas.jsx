@@ -129,6 +129,9 @@ function Gotas() {
   const PC = K.Paracaidas, rPC = klerp(130, 225, kprog(T, PC + 0.2, PC + 2.4, kEase.suave)), hPC = kprog(T, PC + 2.8, PC + 4.8, kEase.suave);
   // rompe
   const RB = K.Rompe + 0.35;
+  // encuadre cine: agranda y centra cada escena alrededor de (cx, cy) → (tx, ty). Las reglas y medidas van dentro del grupo y escalan con él.
+  const zg = (cx, cy, k, tx = 540, ty = 960) => `translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`;
+  const zx = (x, cx, k, tx = 540) => tx + (x - cx) * k, zy = (y, cy, k, ty = 960) => ty + (y - cy) * k;
   return (
     <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.cyan }}>
       {/* 0 · gancho: la lluvia que todos dibujamos… no es así */}
@@ -136,6 +139,7 @@ function Gotas() {
         <FondoLunares color={KC.cyan} />
         <Lienzo>
           <CieloLluvia T={T} modo="inicio" />
+          <g transform={zg(550, 910, 1.0, 550, 1140)}>
           {/* la lágrima grande que se tacha y se vuelve bolita */}
           {(() => { const m = kprog(T, BOL, BOL + 0.6, kEase.suave), p = kprog(T, PAN, PAN + 0.7, kEase.suave), yb = 860 + Math.sin(T * 2) * 10;
             return <g>
@@ -150,15 +154,16 @@ function Gotas() {
             <PanHamburguesa x={0} y={0} w={170} />
           </g>}
           {T > PAN + 0.7 && <Igual x={575} y={930} color={KC.yellow} s={klerp(0.3, 1, kprog(T, PAN + 0.7, PAN + 1.0, kEase.rebote))} />}
+          </g>
         </Lienzo>
-        <Chip T={T} at={TACHA + 0.3} until={BOL - 0.1} texto="no es lágrima" x={330} y={460} tam={42} borde={KC.red} />
-        <Chip T={T} at={BOL + 0.3} until={PAN - 0.1} texto="chiquitas: bolitas" x={330} y={460} tam={42} borde={KC.mint} />
-        <Chip T={T} at={PAN + 0.3} until={K.Pequenas - 0.1} texto="grandes: pan" x={330} y={460} tam={42} borde={GT_PAN} />
+        <Chip T={T} at={TACHA + 0.3} until={BOL - 0.1} texto="no es lágrima" x={330} y={660} tam={42} borde={KC.red} />
+        <Chip T={T} at={BOL + 0.3} until={PAN - 0.1} texto="chiquitas: bolitas" x={330} y={660} tam={42} borde={KC.mint} />
+        <Chip T={T} at={PAN + 0.3} until={K.Pequenas - 0.1} texto="grandes: pan" x={330} y={660} tam={42} borde={GT_PAN} />
       </Escena>
       {/* 1 · gota chiquita: la tensión superficial la jala hacia adentro */}
       <Escena T={T} a={K.Pequenas} b={K.Caen} fondo={KC.noche}>
         <FondoMarca patron="oscuro" />
-        <Lienzo>
+        <Lienzo><g transform={zg(540, 800, 1.3)}>
           {(() => { const asienta = kprog(T, K.Pequenas + 0.4, K.Pequenas + 2.6, kEase.sale), wob = (1 - asienta) * 0.16 * Math.sin(T * 9);
             return <g transform={`translate(540 780) scale(${1 + wob} ${1 - wob}) translate(-540 -780)`}><Gota x={540} y={780} r={200} grosor={10} /></g>; })()}
           {Array.from({ length: 10 }, (_, i) => { const an = i * Math.PI / 5, at = K.Pequenas + 0.6 + i * 0.08, pul = 0.5 + 0.5 * Math.sin(T * 5 - i);
@@ -173,40 +178,44 @@ function Gotas() {
             <line x1={340} y1={1050} x2={340} y2={990} stroke={KC.texto} strokeWidth={4} strokeDasharray="8 8" />
             <line x1={740} y1={1050} x2={740} y2={990} stroke={KC.texto} strokeWidth={4} strokeDasharray="8 8" />
           </g>}
-          <Rotulo T={T} at={K.Pequenas + 3.0} until={K.Caen - 0.1} x={800} y={600} px={700} py={660} texto="redonda" color={KC.cyan} />
-        </Lienzo>
-        <Chip T={T} at={K.Pequenas + 0.7} until={K.Caen - 0.1} texto="tensión superficial" x={540} y={420} tam={44} borde={KC.yellow} />
+          <Rotulo T={T} at={K.Pequenas + 3.0} until={K.Caen - 0.1} x={700} y={490} px={620} py={600} texto="redonda" color={KC.cyan} tam={40} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Pequenas + 0.7} until={K.Caen - 0.1} texto="tensión superficial" x={540} y={330} tam={44} borde={KC.yellow} />
       </Escena>
       {/* 2 · al caer, el aire la empuja desde abajo y la aplana */}
       <Escena T={T} a={K.Caen} b={K.Pan} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
-        <Lienzo>
+        <Lienzo><g transform={zg(540, 800, 1.25)}>
           <Rayas T={T} x={540} ancho={700} n={12} vel={1400} />
           <Gota x={540} y={760 + Math.sin(T * 6) * 6} r={190} a={kprog(T, K.Caen + 0.6, K.Caen + 3.2, kEase.suave) * 0.6} grosor={10} />
           {[-160, -60, 60, 160].map((dx, i) => { const pul = (T * 1.6 + i * 0.25) % 1, at = K.Caen + 0.3 + i * 0.1;
             return T > at && <Empuje key={i} x1={540 + dx} y1={1180 - pul * 40} x2={540 + dx} y2={960 - pul * 40} p={kprog(T, at, at + 0.35)} color={KC.paper} grosor={14} />; })}
-        </Lienzo>
-        <Chip T={T} at={K.Caen + 0.2} until={K.Pan - 0.1} texto="cae ↓" x={300} y={440} tam={44} borde={KC.ink} />
-        <Chip T={T} at={K.Caen + 0.6} until={K.Pan - 0.1} texto="aire ↑" x={780} y={440} tam={44} borde={KC.white} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Caen + 0.2} until={K.Pan - 0.1} texto="cae ↓" x={240} y={440} tam={44} borde={KC.ink} />
+        <Chip T={T} at={K.Caen + 0.6} until={K.Pan - 0.1} texto="aire ↑" x={840} y={440} tam={44} borde={KC.white} />
       </Escena>
       {/* 3 · las grandes: planas abajo, redondas arriba = pan de hamburguesa */}
       <Escena T={T} a={K.Pan} b={K.Pregunta} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <Gota x={310} y={760 + Math.sin(T * 3) * 6} r={200} a={1} grosor={10} />
-          {T > K.Pan + 2.6 && <Igual x={560} y={950} color={KC.cyan} s={klerp(0.3, 1, kprog(T, K.Pan + 2.6, K.Pan + 2.9, kEase.rebote))} />}
-          <Rotulo T={T} at={K.Pan + 0.6} until={K.Pregunta - 0.1} x={560} y={600} px={420} py={600} texto="redonda arriba" />
-          <Rotulo T={T} at={K.Pan + 1.4} until={K.Pregunta - 0.1} x={600} y={830} px={480} py={815} texto="plana abajo" />
-          {T > K.Pan + 2.9 && <g transform={`translate(810 1060) scale(${klerp(0.3, 1, kprog(T, K.Pan + 2.9, K.Pan + 3.3, kEase.rebote))})`}><PanHamburguesa x={0} y={0} w={180} rot={Math.sin(T * 2) * 3} /></g>}
+          <Gota x={540} y={740 + Math.sin(T * 3) * 6} r={240} a={1} grosor={10} />
+          {T > K.Pan + 2.6 && <Igual x={540} y={1000} color={KC.cyan} s={klerp(0.3, 1, kprog(T, K.Pan + 2.6, K.Pan + 2.9, kEase.rebote))} />}
+          <Rotulo T={T} at={K.Pan + 0.6} until={K.Pregunta - 0.1} x={680} y={440} px={640} py={540} texto="redonda arriba" />
+          <Rotulo T={T} at={K.Pan + 1.4} until={K.Pregunta - 0.1} x={330} y={900} px={400} py={808} texto="plana abajo" ancla="end" tam={40} />
+          {T > K.Pan + 2.9 && <g transform={`translate(540 1330) scale(${klerp(0.3, 1, kprog(T, K.Pan + 2.9, K.Pan + 3.3, kEase.rebote))})`}><PanHamburguesa x={0} y={0} w={240} rot={Math.sin(T * 2) * 3} /></g>}
         </Lienzo>
-        <Chip T={T} at={K.Pan + 3.3} until={K.Pregunta - 0.1} texto="pan de hamburguesa" x={540} y={430} tam={44} borde={GT_PAN} />
+        <Chip T={T} at={K.Pan + 3.3} until={K.Pregunta - 0.1} texto="pan de hamburguesa" x={540} y={1470} tam={44} borde={GT_PAN} />
       </Escena>
       {/* 4 · ¿y si siguen creciendo? */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Paracaidas} color={KC.lilac} />
+      {T > K.Pregunta - 0.1 && T < K.Paracaidas + 0.4 && <Lienzo z={3} o={kprog(T, K.Pregunta - 0.1, K.Pregunta + 0.3) * (1 - kprog(T, K.Paracaidas - 0.1, K.Paracaidas + 0.4))}>
+        {/* ¿y si siguen creciendo? la gota grande crece junto al signo */}
+        <Gota x={720} y={1000 + Math.sin(T * 3) * 6} r={klerp(140, 200, kprog(T, K.Pregunta, K.Paracaidas, kEase.suave))} a={1} grosor={10} />
+      </Lienzo>}
       {/* 5 · ≈ 8 mm de ancho: el aire la hunde por debajo → paracaídas */}
       <Escena T={T} a={K.Paracaidas} b={K.Rompe} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
-        <Lienzo>
+        <Lienzo><g transform={zg(540, 820, 1.3, 540, 1020)}>
           <Rayas T={T} x={540} ancho={760} n={10} vel={1500} />
           <Gota x={540} y={800} r={rPC} a={1} h={hPC} grosor={10} />
           {(() => { const W = rPC * (1.18 + 0.32 * hPC), yl = 800 - rPC - 50, o = kprog(T, PC + 1.6, PC + 2.0);
@@ -218,56 +227,56 @@ function Gotas() {
             </g>; })()}
           {[-70, 0, 70].map((dx, i) => { const at = PC + 2.8 + i * 0.12, pul = (T * 1.8 + i * 0.3) % 1;
             return T > at && <Empuje key={i} x1={540 + dx} y1={1160 - pul * 30} x2={540 + dx} y2={900 - pul * 30} p={kprog(T, at, at + 0.4)} color={KC.paper} grosor={16} />; })}
-          <Rotulo T={T} at={PC + 4.6} until={K.Rompe - 0.1} x={720} y={1020} texto="paracaídas" />
-        </Lienzo>
-        <Chip T={T} at={PC + 1.6} until={K.Rompe - 0.1} texto="≈ 8 mm de ancho" x={540} y={430} tam={50} borde={KC.yellow} />
+          <Rotulo T={T} at={PC + 4.6} until={K.Rompe - 0.1} x={640} y={1020} texto="paracaídas" />
+        </g></Lienzo>
+        <Chip T={T} at={PC + 1.6} until={K.Rompe - 0.1} texto="≈ 8 mm de ancho" x={540} y={470} tam={50} borde={KC.yellow} />
       </Escena>
       {/* 6 · ¡plop!: se rompe en gotitas que vuelven a caer */}
       <Escena T={T} a={K.Rompe} b={K.Lagrima} fondo={KC.pink}>
         <FondoLunares color={KC.pink} />
-        <Lienzo>
+        <Lienzo><g transform={zg(540, 800, 1.25)}>
           {T < RB && <Gota x={540} y={800} r={225 + 30 * kprog(T, K.Rompe - 0.4, RB)} a={1} h={1} grosor={10} />}
           {T >= RB && Array.from({ length: 26 }, (_, i) => { const g = krng(300 + i), an = -Math.PI * (0.05 + 0.9 * g()) + (i % 2 ? 0 : Math.PI * 0.15), sp = 380 + g() * 420, dt = T - RB;
             const r0 = i < 10 ? 34 + g() * 14 : 14 + g() * 14, x0 = 540 + Math.cos(an) * 260, y0 = 800 + Math.sin(an) * 120;
             const x = x0 + Math.cos(an) * sp * Math.min(dt, 1.2) * 0.8, y = y0 + Math.sin(an) * sp * Math.min(dt, 1.2) * 0.8 + 260 * dt * dt;
             const yy = ((y - 300) % 1000 + 1000) % 1000 + 300;
             return <Gota key={i} x={x} y={dt < 1.4 ? y : yy} r={r0 * klerp(1.4, 1, kprog(dt, 0, 0.3))} grosor={6} brillo={r0 > 26} />; })}
-          <Onomato T={T} at={RB} dur={1.3} x={760} y={600} texto="¡PLOP!" tam={170} color={KC.yellow} />
-        </Lienzo>
-        <Chip T={T} at={RB + 2.0} until={K.Lagrima - 0.1} texto="gotitas: a caer otra vez" x={620} y={430} tam={40} borde={KC.cyan} />
+          <Onomato T={T} at={RB} dur={1.3} x={740} y={600} texto="¡PLOP!" tam={170} color={KC.yellow} />
+        </g></Lienzo>
+        <Chip T={T} at={RB + 2.0} until={K.Lagrima - 0.1} texto="gotitas: a caer otra vez" x={540} y={400} tam={40} borde={KC.cyan} />
       </Escena>
       {/* 7 · ¿y la lágrima? en la llave, cuando se despega */}
       <Escena T={T} a={K.Lagrima} b={K.Velocidad} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
-        <Lienzo>
+        <Lienzo><g transform={zg(540, 810, 1.3)}>
           <rect x={160} y={1100} width={760} height={56} rx={28} fill={KC.paper} stroke={KC.ink} strokeWidth={9} />
           <Llave bx={540} by={760} />
           <GoteoLlave T={T} t0={K.Lagrima + 0.3} bx={540} by={760} per={2.7} suelo={1110} />
-          <Rotulo T={T} at={K.Lagrima + 2.7} until={K.Velocidad - 0.1} x={330} y={860} px={500} py={870} texto="se despega" ancla="end" tam={40} />
+          <Rotulo T={T} at={K.Lagrima + 2.7} until={K.Velocidad - 0.1} x={400} y={860} px={505} py={870} texto="se despega" ancla="end" tam={40} />
           {[0.3 + 2.7 * 0.95, 0.3 + 2.7 * 1.95].map((t, i) => <Onomato key={i} T={T} at={K.Lagrima + t} dur={0.5} x={700} y={1060} texto="plic" tam={70} color={KC.cyan} rot={6} />)}
-          {T < K.Lagrima + 2.6 && <TextoSvg x={400} y={470} tam={80} color={KC.yellow} o={1 - kprog(T, K.Lagrima + 2.3, K.Lagrima + 2.6)} s={klerp(0.4, 1, kprog(T, K.Lagrima, K.Lagrima + 0.35, kEase.rebote))}>¿Y LA LÁGRIMA?</TextoSvg>}
-        </Lienzo>
-        <Chip T={T} at={K.Lagrima + 2.7} until={K.Velocidad - 0.1} texto="aquí sí, por un instante" x={380} y={430} tam={42} borde={KC.yellow} />
+          {T < K.Lagrima + 2.6 && <TextoSvg x={470} y={400} tam={80} color={KC.yellow} o={1 - kprog(T, K.Lagrima + 2.3, K.Lagrima + 2.6)} s={klerp(0.4, 1, kprog(T, K.Lagrima, K.Lagrima + 0.35, kEase.rebote))}>¿Y LA LÁGRIMA?</TextoSvg>}
+        </g></Lienzo>
+        <Chip T={T} at={K.Lagrima + 2.7} until={K.Velocidad - 0.1} texto="aquí sí, por un instante" x={340} y={440} tam={42} borde={KC.yellow} />
       </Escena>
       {/* 8 · la gota grande cae a ≈ 9 m/s · más de 30 km/h */}
       <Escena T={T} a={K.Velocidad} b={K.Chica} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
-        <Lienzo>
-          <Rayas T={T} x={250} ancho={260} n={9} vel={2600} />
-          <Rotulo T={T} at={K.Velocidad + 0.4} until={K.Chica - 0.1} x={250} y={1010} texto="gota grande" ancla="middle" tam={42} />
-          <Gota x={250 + Math.sin(T * 20) * 3} y={820} r={120} a={0.9} grosor={9} />
+        <Lienzo><g transform={zg(592, 850, 1.12)}>
+          <Rayas T={T} x={300} ancho={260} n={9} vel={2600} />
+          <Rotulo T={T} at={K.Velocidad + 0.4} until={K.Chica - 0.1} x={300} y={1010} texto="gota grande" ancla="middle" tam={42} />
+          <Gota x={300 + Math.sin(T * 20) * 3} y={820} r={120} a={0.9} grosor={9} />
           {(() => { const v = 9 * kprog(T, K.Velocidad + 0.5, K.Velocidad + 2.2, kEase.sale) + (T > K.Velocidad + 2.2 ? Math.sin(T * 14) * 0.08 : 0);
             return <g>
-              <Velocimetro x={740} y={880} r={230} v={v} />
-              {T > K.Velocidad + 1.4 && <TextoSvg x={740} y={1080} tam={110} color={KC.yellow} s={klerp(0.4, 1, kprog(T, K.Velocidad + 1.4, K.Velocidad + 1.8, kEase.rebote))}>≈ 9 m/s</TextoSvg>}
+              <Velocimetro x={750} y={880} r={230} v={v} />
+              {T > K.Velocidad + 1.4 && <TextoSvg x={750} y={1080} tam={110} color={KC.yellow} s={klerp(0.4, 1, kprog(T, K.Velocidad + 1.4, K.Velocidad + 1.8, kEase.rebote))}>≈ 9 m/s</TextoSvg>}
             </g>; })()}
-        </Lienzo>
-        <Chip T={T} at={K.Velocidad + 3.1} until={K.Chica - 0.1} texto="≈ 9 m/s · más de 30 km/h" x={540} y={430} tam={44} borde={KC.red} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Velocidad + 3.1} until={K.Chica - 0.1} texto="≈ 9 m/s · más de 30 km/h" x={540} y={400} tam={44} borde={KC.red} />
       </Escena>
       {/* 9 · la llovizna cae mucho más despacio */}
       <Escena T={T} a={K.Chica} b={K.Cierre} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
-        <Lienzo>
+        <Lienzo><g transform={zg(540, 815, 1.15)}>
           <line x1={540} y1={520} x2={540} y2={1070} stroke="rgba(14,15,18,.35)" strokeWidth={6} strokeDasharray="16 14" />
           {[0, 1].map((k) => { const y = 480 + (((T - K.Chica) * 1100 + k * 290) % 580); return <Gota key={k} x={280} y={y} r={60} a={0.6} grosor={7} />; })}
           <Rayas T={T} x={280} ancho={160} n={5} vel={2400} y0={480} y1={1060} />
@@ -275,14 +284,15 @@ function Gotas() {
             return <Gota key={i} x={x + Math.sin(T * 1.5 + i) * 10} y={y} r={8 + g() * 5} grosor={4} brillo={false} />; })}
           <TextoSvg x={280} y={1130} tam={52} fuente="texto" color={KC.texto}>grande</TextoSvg>
           <TextoSvg x={800} y={1130} tam={52} fuente="texto" color={KC.texto}>llovizna</TextoSvg>
-        </Lienzo>
-        <Chip T={T} at={K.Chica + 1.6} until={K.Cierre - 0.1} texto="mucho más despacio" x={760} y={430} tam={40} borde={KC.mint} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Chica + 1.6} until={K.Cierre - 0.1} texto="mucho más despacio" x={790} y={460} tam={40} borde={KC.mint} />
       </Escena>
       {/* 10 · cierre: la misma lluvia del inicio, ahora bien dibujada */}
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
           <CieloLluvia T={T} modo="final" />
+          <g transform={zg(550, 910, 1.1, 560, 1140)}>
           <Gota x={330} y={860 + Math.sin(T * 2) * 10} r={170} a={1} grosor={10} />
           {T > K.Cierre + 0.3 && <g opacity={kprog(T, K.Cierre + 0.3, K.Cierre + 0.6)}>
             <Lagrima x={560} y={1110} r={34} />
@@ -291,8 +301,9 @@ function Gotas() {
           </g>}
           <Igual x={575} y={930} color={KC.yellow} />
           <g transform={`translate(800 1000) scale(${1 + 0.04 * Math.sin(T * 4)})`}><PanHamburguesa x={0} y={0} w={170} cara={T > K.Cierre + 3} /></g>
+          </g>
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 3.2} until={K.Outro - 0.1} texto="dibuja panes" x={330} y={460} tam={46} borde={GT_PAN} />
+        <Chip T={T} at={K.Cierre + 3.2} until={K.Outro - 0.1} texto="dibuja panes" x={318} y={800} tam={46} borde={GT_PAN} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Pequenas - 0.1} texto="No son lágrimas: *bolitas y panes.*" />

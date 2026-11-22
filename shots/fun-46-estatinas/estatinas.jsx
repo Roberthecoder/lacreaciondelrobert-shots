@@ -158,25 +158,25 @@ function EstatinasShot() {
   const nRec = Math.floor(2 + 7 * kprog(T, K.R + 0.2, K.R + 2.0));
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
-      {/* 1 · gancho: la pastilla y el plato de arroz; brota el moho */}
+      {/* 1 · gancho: la pastilla y el plato de arroz llenan el cuadro; el moho brota de la pastilla hacia el arroz */}
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <PlatoArroz T={T} x={330} y={980} s={1.0} />
-          <RedHifas T={T} x={760} y={960} g={kprog(T, K.G + 1.6, K.G + 4.2)} seed={7} n={180} escala={0.2} color={VERDEAZUL} ancho={5} />
-          <Pastilla x={760} y={klerp(420, 960, cae)} s={1.25} rot={klerp(-40, -8, cae)} />
+          <RedHifas T={T} x={540} y={660} g={kprog(T, K.G + 1.6, K.G + 4.2)} seed={7} n={180} escala={0.33} color={VERDEAZUL} ancho={6} />
+          <PlatoArroz T={T} x={540} y={1200} s={1.8} />
+          <Pastilla x={540} y={klerp(260, 640, cae)} s={2.25} rot={klerp(-40, -8, cae)} />
         </>)}
       </Escena>
       {/* 2 · tu hígado fabrica colesterol */}
       <Escena T={T} a={K.H} b={K.E} zoom={0.06}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <CuerpoHigado T={T} x={290} y={1000} s={1.1} luz={kprog(T, K.H + 0.2, K.H + 0.8)} />
-          {Array.from({ length: 12 }, (_, i) => { const u = kprog(T, K.H + 0.5 + i * 0.12, K.H + 1.4 + i * 0.12, kEase.sale); return u > 0 ? <circle key={i} cx={300 + u * (60 + (i % 4) * 30) + Math.cos(i * 2.4) * 30} cy={880 - u * (60 + (i % 3) * 50)} r={16} fill={COLES} stroke={KC.ink} strokeWidth={4} /> : null; })}
+          <CuerpoHigado T={T} x={320} y={1270} s={1.7} luz={kprog(T, K.H + 0.2, K.H + 0.8)} />
+          {Array.from({ length: 12 }, (_, i) => { const u = kprog(T, K.H + 0.5 + i * 0.12, K.H + 1.4 + i * 0.12, kEase.sale); return u > 0 ? <circle key={i} cx={335 + 1.55 * (u * (60 + (i % 4) * 30) + Math.cos(i * 2.4) * 30)} cy={1085 - 1.55 * u * (60 + (i % 3) * 50)} r={24} fill={COLES} stroke={KC.ink} strokeWidth={5} /> : null; })}
           <g opacity={kprog(T, K.H + 1.4, K.H + 1.9)}>
-            <text x={640} y={940} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={8}>&gt;</text>
-            <ellipse cx={880} cy={980} rx={130} ry={34} fill="#fff" stroke={KC.ink} strokeWidth={6} />
-            {[[850, 950], [890, 945], [920, 958]].map(([cx, cy], i) => <circle key={i} cx={cx} cy={cy} r={16} fill={COLES} stroke={KC.ink} strokeWidth={4} />)}
+            <text x={690} y={1190} textAnchor="middle" style={{ font:`400 230px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={8}>&gt;</text>
+            <ellipse cx={900} cy={1150} rx={150} ry={40} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+            {[[862, 1114], [908, 1108], [944, 1124]].map(([cx, cy], i) => <circle key={i} cx={cx} cy={cy} r={20} fill={COLES} stroke={KC.ink} strokeWidth={4} />)}
           </g>
         </>)}
       </Escena>
@@ -186,9 +186,9 @@ function EstatinasShot() {
         <Ambiente T={T} n={18} />
         {fsvg(<>
           {Array.from({ length: 30 }, (_, i) => { const on = kprog(T, K.E + 0.2 + i * 0.07, K.E + 0.4 + i * 0.07); const clave = i === 2; const big = clave ? kprog(T, K.E + 2.4, K.E + 3.0, kEase.rebote) : 0;
-            const cx = 150 + (i % 6) * 156, cy = 730 + Math.floor(i / 6) * 76;
-            return <g key={i} opacity={0.25 + 0.75 * on} transform={`translate(${cx} ${cy}) scale(${1 + big * 0.35}) translate(${-cx} ${-cy})`} style={big ? { filter:`drop-shadow(0 0 ${16 * big}px ${KC.lilac})` } : null}><rect x={cx - 60} y={cy - 36} width={120} height={72} rx={14} fill={clave && big > 0 ? KC.lilac : on > 0.5 ? '#2fe0a8' : '#33405a'} stroke={KC.ink} strokeWidth={5} />
-              <text x={cx} y={cy + 14} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>{i + 1}</text></g>; })}
+            const cx = 140 + (i % 6) * 160, cy = 660 + Math.floor(i / 6) * 140;
+            return <g key={i} opacity={0.25 + 0.75 * on} transform={`translate(${cx} ${cy}) scale(${1 + big * 0.35}) translate(${-cx} ${-cy})`} style={big ? { filter:`drop-shadow(0 0 ${16 * big}px ${KC.lilac})` } : null}><rect x={cx - 69} y={cy - 41.5} width={138} height={83} rx={16} fill={clave && big > 0 ? KC.lilac : on > 0.5 ? '#2fe0a8' : '#33405a'} stroke={KC.ink} strokeWidth={5} />
+              <text x={cx} y={cy + 15} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>{i + 1}</text></g>; })}
           
         </>)}
       </Escena>
@@ -196,11 +196,11 @@ function EstatinasShot() {
       <Escena T={T} a={K.I} b={K.B} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Silueta T={T} x={330} y={1150} s={1.1} foco={kprog(T, K.I + 1.6, K.I + 2.3)} />
-          <Seta x={760} y={1150} s={1.3} crece={kprog(T, K.I + 2.4, K.I + 3.2)} sombrero="#d9534f" />
-          <Seta x={900} y={1150} s={0.9} crece={kprog(T, K.I + 2.7, K.I + 3.5)} sombrero={KC.orange} escamas={false} />
-          <Petri x={830} y={830} r={90}><Colonia cx={0} cy={0} r={60 * kprog(T, K.I + 2.9, K.I + 3.8)} color={VERDEAZUL2} seed={3} /></Petri>
-          <text x={800} y={740} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.I + 3.4, K.I + 3.8)}>?</text>
+          <Silueta T={T} x={330} y={1400} s={1.54} foco={kprog(T, K.I + 1.6, K.I + 2.3)} />
+          <Seta x={800} y={1480} s={1.82} crece={kprog(T, K.I + 2.4, K.I + 3.2)} sombrero="#d9534f" />
+          <Seta x={960} y={1480} s={1.26} crece={kprog(T, K.I + 2.7, K.I + 3.5)} sombrero={KC.orange} escamas={false} />
+          <Petri x={850} y={960} r={126}><Colonia cx={0} cy={0} r={84 * kprog(T, K.I + 2.9, K.I + 3.8)} color={VERDEAZUL2} seed={3} /></Petri>
+          <text x={850} y={790} textAnchor="middle" style={{ font:`400 210px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.I + 3.4, K.I + 3.8)}>?</text>
         </>)}
       </Escena>
       {/* 5 · miles de hongos; tras 3,800, la citrinina daña riñones */}
@@ -208,20 +208,20 @@ function EstatinasShot() {
         <FondoLunares color={KC.orange} />
         {fsvg(<>
           {Array.from({ length: 48 }, (_, i) => { const on = kprog(T, K.B + 0.1 + i * 0.035, K.B + 0.3 + i * 0.035, kEase.rebote); const hit = i === 41; const br = hit ? kprog(T, K.B + 2.0, K.B + 2.4) : 0;
-            return on > 0 ? <g key={i} transform={`translate(${110 + (i % 8) * 123} ${720 + Math.floor(i / 8) * 82}) scale(${on})`}><MiniPetri x={0} y={0} color={hit && br > 0 ? KC.yellow : ['#fff4d6', '#cfe8a9', '#f4c1a1', '#d9d0f2'][i % 4]} brilla={br} /></g> : null; })}
+            return on > 0 ? <g key={i} transform={`translate(${110 + (i % 8) * 123} ${660 + Math.floor(i / 8) * 130}) scale(${on * 1.5})`}><MiniPetri x={0} y={0} color={hit && br > 0 ? KC.yellow : ['#fff4d6', '#cfe8a9', '#f4c1a1', '#d9d0f2'][i % 4]} brilla={br} /></g> : null; })}
           {kprog(T, K.B + 2.7, K.B + 3.1) > 0 && <g opacity={kprog(T, K.B + 2.7, K.B + 3.0)}>
-            <rect x={560} y={830} width={420} height={210} rx={30} fill="rgba(14,15,18,.82)" stroke={KC.red} strokeWidth={6} />
-            <Rinon x={680} y={915} s={1.1 * kprog(T, K.B + 2.7, K.B + 3.1, kEase.rebote)} />
-            <path d="M 620 860 L 740 970 M 740 860 L 620 970" stroke={KC.red} strokeWidth={16} strokeLinecap="round" opacity={kprog(T, K.B + 3.1, K.B + 3.3)} />
+            <rect x={420} y={820} width={600} height={360} rx={40} fill="rgba(14,15,18,.86)" stroke={KC.red} strokeWidth={7} />
+            <Rinon x={560} y={990} s={1.65 * kprog(T, K.B + 2.7, K.B + 3.1, kEase.rebote)} />
+            <path d="M 480 900 L 660 1080 M 660 900 L 480 1080" stroke={KC.red} strokeWidth={22} strokeLinecap="round" opacity={kprog(T, K.B + 3.1, K.B + 3.3)} />
           </g>}
         </>)}
       </Escena>
       {/* 6a · la bolsa de arroz de una tienda de Kioto; el grano con moho */}
-      <Escena T={T} a={K.A} b={AM} zoom={0.12} origen="70% 50%">
+      <Escena T={T} a={K.A} b={AM} zoom={0.12} origen="60% 50%">
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <BolsaArroz x={290} y={1150} s={1.15} />
-          <g transform={`translate(740 900) scale(${kprog(T, K.A + 0.3, K.A + 0.9, kEase.rebote)})`}>
+          <BolsaArroz x={270} y={1440} s={1.6} />
+          <g transform={`translate(720 820) scale(${1.39 * kprog(T, K.A + 0.3, K.A + 0.9, kEase.rebote)})`}>
             <circle r={210} fill="#fffaf0" stroke={KC.ink} strokeWidth={10} />
             <ellipse cx={0} cy={0} rx={170} ry={70} fill="#fffaf0" stroke={KC.ink} strokeWidth={6} transform="rotate(-20)" />
             <Colonia cx={30} cy={-10} r={70 * kprog(T, K.A + 0.8, K.A + 1.8)} color={VERDEAZUL} seed={9} />
@@ -229,27 +229,33 @@ function EstatinasShot() {
           </g>
         </>)}
       </Escena>
-      {/* 6b · AL MICROSCOPIO · el pincel de Penicillium citrinum */}
+      {/* 6b · AL MICROSCOPIO · el pincel de Penicillium citrinum, que sale del grano enmohecido (abajo) */}
       <Escena T={T} a={AM} b={K.P}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<Pincel x={620} y={1180} s={1.45} crece={kprog(T, AM, AM + 2.0)} />)}
+        {fsvg(<>
+          <Pincel x={230} y={1545} s={1.0} crece={kprog(T, AM - 0.2, AM + 1.2)} color="#2f7f6d" />
+          <Pincel x={930} y={1520} s={1.15} crece={kprog(T, AM - 0.1, AM + 1.4)} color="#2f7f6d" />
+          <path d="M -60 1560 Q 540 1380 1140 1560 L 1140 1960 L -60 1960 Z" fill="#9c9479" stroke={KC.ink} strokeWidth={8} />
+          <path d="M -60 1560 Q 540 1380 1140 1560 L 1140 1610 Q 540 1440 -60 1610 Z" fill={VERDEAZUL} opacity={0.85} />
+          <Pincel x={600} y={1440} s={2.1} crece={kprog(T, AM - 0.3, AM + 1.5)} />
+        </>)}
       </Escena>
       {/* 7 · pregunta */}
       <Escena T={T} a={K.P} b={K.F} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Interrogacion T={T} x={270} y={1000} tam={460} /><GotaSangre T={T} x={260} y={560 + 0} s={0.7} /></>)}
+        {fsvg(<><Interrogacion T={T} x={540} y={1330} tam={620} /><GotaSangre T={T} x={540} y={620} s={1.0} /></>)}
       </Escena>
       {/* 8 · la molécula del moho le gana el lugar a la pieza HMG-CoA */}
       <Escena T={T} a={K.F} b={K.R}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <Enzima T={T} x={540} y={900} s={1.2} />
-          <Molecula x={klerp(180, 540, entra)} y={klerp(560, 770, entra)} s={0.75} rot={klerp(-30, 0, entra)} color={KC.leaf} />
-          <PiezaHMG x={klerp(900, 820, rebota) + (rebota > 0 ? 0 : Math.sin(T * 3) * 8)} y={klerp(600, 560, rebota) - (rebota > 0 ? Math.sin(rebota * Math.PI) * 60 : 0)} s={1.1} rot={rebota * 40} />
+          <Enzima T={T} x={540} y={980} s={1.9} />
+          <Molecula x={klerp(190, 540, entra)} y={klerp(650, 775, entra)} s={1.2} rot={klerp(-30, 0, entra)} color={KC.leaf} />
+          <PiezaHMG x={klerp(840, 900, rebota) + (rebota > 0 ? 0 : Math.sin(T * 3) * 8)} y={klerp(520, 470, rebota) - (rebota > 0 ? Math.sin(rebota * Math.PI) * 80 : 0)} s={1.75} rot={rebota * 40} />
           {/* fila de colesterol que sale de la enzima y se adelgaza */}
-          {Array.from({ length: 7 }, (_, i) => { const u = ((T * 0.6 + i / 7) % 1); const vis = i < 7 - Math.round(menos * 5); return vis ? <circle key={i} cx={760 + u * 300} cy={1060 + Math.sin(u * 6) * 10} r={16} fill={COLES} stroke={KC.ink} strokeWidth={4} opacity={1 - u * 0.5} /> : null; })}
+          {Array.from({ length: 7 }, (_, i) => { const u = ((T * 0.6 + i / 7) % 1); const vis = i < 7 - Math.round(menos * 5); return vis ? <circle key={i} cx={800 + u * 320} cy={1225 + Math.sin(u * 6) * 14} r={25} fill={COLES} stroke={KC.ink} strokeWidth={5} opacity={1 - u * 0.5} /> : null; })}
         </>)}
       </Escena>
       {/* 9 · más receptores jalan colesterol de la sangre */}
@@ -272,12 +278,15 @@ function EstatinasShot() {
       <Escena T={T} a={K.S} b={K.M}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
+          {/* la caja del Penicillium está desde que empieza la escena (centrada); se recorre cuando llega la de Merck */}
+          <g transform={`translate(${klerp(255, 0, kprog(T, K.S + 2.2, K.S + 2.9, kEase.suave))} 0)`}>
+            <rect x={50} y={560} width={470} height={820} rx={34} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
+            <Pincel x={285} y={1340} s={1.42} crece={kprog(T, K.S - 0.45, K.S + 0.9)} />
+          </g>
           <g opacity={kprog(T, K.S + 2.6, K.S + 3.1)}>
-            <rect x={60} y={620} width={440} height={500} rx={30} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
-            <rect x={580} y={620} width={440} height={500} rx={30} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
-            <Pincel x={280} y={1090} s={0.8} crece={kprog(T, K.S + 2.8, K.S + 3.8)} />
-            <ColumnaTerreus x={800} y={1090} s={0.85} crece={kprog(T, K.S + 3.6, K.S + 4.8)} />
-            <path d="M 500 870 L 580 870" stroke={KC.ink} strokeWidth={10} strokeDasharray="14 10" opacity={kprog(T, K.S + 4.6, K.S + 5.0)} />
+            <rect x={560} y={560} width={470} height={820} rx={34} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
+            <ColumnaTerreus x={795} y={1340} s={1.5} crece={kprog(T, K.S + 3.6, K.S + 4.8)} />
+            <path d="M 520 970 L 560 970" stroke={KC.ink} strokeWidth={10} strokeDasharray="14 10" opacity={kprog(T, K.S + 4.6, K.S + 5.0)} />
           </g>
         </>)}
       </Escena>
@@ -285,12 +294,12 @@ function EstatinasShot() {
       <Escena T={T} a={K.M} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <PlatoArroz T={T} x={420} y={1120} s={1.15} rojo={kprog(T, K.M + 0.3, K.M + 1.8)} />
-          {T < K.Ig + 0.3 && <Molecula x={760} y={760} s={1.0 * kprog(T, K.M + 2.4, K.M + 3.0, kEase.rebote)} color={KC.leaf} metilo o={1 - kprog(T, K.Ig - 0.1, K.Ig + 0.3)} />}
+          <PlatoArroz T={T} x={540} y={1240} s={1.8} rojo={kprog(T, K.M + 0.3, K.M + 1.8)} />
+          {T < K.Ig + 0.3 && <Molecula x={640} y={720} s={1.6 * kprog(T, K.M + 2.4, K.M + 3.0, kEase.rebote)} color={KC.leaf} metilo o={1 - kprog(T, K.Ig - 0.1, K.Ig + 0.3)} />}
           {T > K.Ig - 0.3 && (() => { const j = kprog(T, K.Ig + 0.3, K.Ig + 1.4, kEase.suave); return <g opacity={kprog(T, K.Ig - 0.3, K.Ig + 0.2)}>
-            <Molecula x={klerp(300, 540, j)} y={780} s={0.9} color={KC.leaf} metilo />
-            <Molecula x={klerp(800, 540, j)} y={780} s={0.9} color={KC.yellow} metilo o={1 - j * 0.45} />
-            {j > 0.95 && <circle cx={540} cy={760} r={190 + 40 * kprog(T, K.Ig + 1.4, K.Ig + 1.9)} fill="none" stroke="#fff" strokeWidth={10} opacity={1 - kprog(T, K.Ig + 1.4, K.Ig + 1.9)} />}
+            <Molecula x={klerp(280, 520, j)} y={720} s={1.4} color={KC.leaf} metilo />
+            <Molecula x={klerp(780, 520, j)} y={720} s={1.4} color={KC.yellow} metilo o={1 - j * 0.45} />
+            {j > 0.95 && <circle cx={550} cy={690} r={290 + 50 * kprog(T, K.Ig + 1.4, K.Ig + 1.9)} fill="none" stroke="#fff" strokeWidth={12} opacity={1 - kprog(T, K.Ig + 1.4, K.Ig + 1.9)} />}
           </g>; })()}
         </>)}
       </Escena>
@@ -298,71 +307,71 @@ function EstatinasShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <PlatoArroz T={T} x={330} y={980} s={1.0} moho={kprog(T, K.C + 0.3, K.C + 2.0)} />
-          <RedHifas T={T} x={760} y={960} g={kprog(T, K.C + 2.6, K.C + 4.5)} seed={7} n={180} escala={0.2} color={VERDEAZUL} ancho={5} />
-          <Pastilla x={760} y={960} s={1.25} rot={-8} />
-          <Cordon x1={420} y1={900} x2={700} y2={930} p={kprog(T, K.C + 1.5, K.C + 3.0)} onda={22} color={VERDEAZUL} ancho={10} />
+          <RedHifas T={T} x={540} y={660} g={kprog(T, K.C + 2.6, K.C + 4.5)} seed={7} n={180} escala={0.33} color={VERDEAZUL} ancho={6} />
+          <PlatoArroz T={T} x={540} y={1200} s={1.8} moho={kprog(T, K.C + 0.3, K.C + 2.0)} />
+          <Cordon x1={600} y1={1040} x2={550} y2={740} p={kprog(T, K.C + 1.5, K.C + 3.0)} onda={26} color={VERDEAZUL} ancho={14} />
+          <Pastilla x={540} y={640} s={2.25} rot={-8} />
         </>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 1.0} tacharEn={K.G + 2.4} until={K.H - 0.3} texto="lo inventó un químico" x={330} y={760} tam={44} />
-      <Chip T={T} at={K.G + 3.0} until={K.H - 0.2} texto="✓ la hizo un moho" x={330} y={620} tam={44} borde={VERDEAZUL} />
-      <Etq T={T} at={K.G + 0.8} until={K.H - 0.3} x={700} y={1070} texto="estatina" lado="der" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.6} until={K.E - 0.3} x={170} y={1060} texto="hígado" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.9} until={K.E - 0.3} x={60} y={520} texto="colesterol" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.H + 1.6} until={K.E - 0.3} texto="hecho en tu hígado > de la comida" x={540} y={470} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.E + 0.2} until={K.I - 0.3} texto="AL MICROSCOPIO · célula del hígado" x={460} y={480} tam={30} borde={KC.lilac} mono />
-      <Etq T={T} at={K.E + 1.2} until={K.I - 0.3} x={60} y={660} texto="30 pasos para armar colesterol" tam={30} />
-      <Etq T={T} at={K.E + 2.8} until={K.I - 0.3} x={60} y={1110} texto="HMG-CoA reductasa" tam={30} color={KC.lilac} />
-      <Chip T={T} at={K.I + 0.4} until={K.B - 0.3} texto="Akira Endo · Sankyo, Tokio" x={400} y={480} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.I + 0.8} until={K.B - 0.3} x={60} y={1220} texto="silueta esquemática" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.I + 2.4} until={K.B - 0.3} texto="¿algún hongo la frena?" x={420} y={600} tam={36} borde={KC.yellow} />
-      <Chip T={T} at={K.B + 0.2} until={K.A - 0.3} texto="miles de hongos probados" x={400} y={480} tam={36} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.B + 0.4} until={K.A - 0.3} valor={3800} dur={1.6} etiqueta="hongos" x={380} y={600} tam={120} color={KC.yellow} />
-      <Etq T={T} at={K.B + 2.4} until={K.A - 0.3} x={560} y={790} texto="citrinina" lado="der" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.B + 3.0} until={K.A - 0.3} x={1000} y={1010} lado="izq" texto="tóxica para el riñón" tam={26} color={KC.texto} />
-      <Chip T={T} at={K.A + 0.4} until={AM - 0.2} texto="arroz de una tienda de Kioto" x={420} y={480} tam={34} borde={KC.ink} />
-      <Chip T={T} at={AM + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO · su “pincel”" x={420} y={400} tam={30} borde={VERDEAZUL} mono />
-      <Etq T={T} at={AM + 0.4} until={K.P - 0.3} x={60} y={1010} texto="Penicillium citrinum" it tam={36} color={VERDEAZUL2} />
-      <Etq T={T} at={AM + 0.8} until={K.P - 0.3} x={60} y={1060} texto="moho azul verdoso" tam={28} />
-      <Etq T={T} at={AM + 1.6} until={K.P - 0.3} x={60} y={640} texto="esporas redondas" lado="izq" tam={26} color={VERDEAZUL2} />
-      <Etq T={T} at={K.F + 0.3} until={K.R - 0.3} x={60} y={1120} texto="HMG-CoA reductasa" tam={30} color={KC.lilac} />
-      <Etq T={T} at={K.F + 0.5} until={K.R - 0.3} x={1040} y={480} texto="HMG-CoA (su pieza)" lado="izq" tam={28} color={COLES} />
-      <Etq T={T} at={K.F + 0.6} until={K.R - 0.3} x={60} y={520} texto="compactina (del moho)" tam={28} color={KC.leaf} />
-      <Chip T={T} at={K.F + 2.4} until={K.R - 0.3} texto="se parece y le gana el lugar" x={540} y={380} tam={32} borde={KC.leaf} />
+      <MitoTachado T={T} at={K.G + 1.0} tacharEn={K.G + 2.4} until={K.H - 0.3} texto="lo inventó un químico" x={540} y={900} tam={48} />
+      <Chip T={T} at={K.G + 3.0} until={K.H - 0.2} texto="✓ la hizo un moho" x={540} y={410} tam={48} borde={VERDEAZUL} />
+      <Etq T={T} at={K.G + 0.8} until={K.H - 0.3} x={775} y={640} texto="estatina" lado="der" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.6} until={K.E - 0.3} x={210} y={1265} texto="hígado" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.9} until={K.E - 0.3} x={650} y={850} texto="colesterol" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.H + 1.6} until={K.E - 0.3} texto="hecho en tu hígado > de la comida" x={540} y={410} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.E + 0.2} until={K.I - 0.3} texto="AL MICROSCOPIO · célula del hígado" x={440} y={430} tam={30} borde={KC.lilac} mono />
+      <Etq T={T} at={K.E + 1.2} until={K.I - 0.3} x={60} y={545} texto="30 pasos para armar colesterol" tam={32} />
+      <Etq T={T} at={K.E + 2.8} until={K.I - 0.3} x={400} y={731} texto="HMG-CoA reductasa" tam={30} color={KC.lilac} />
+      <Chip T={T} at={K.I + 0.4} until={K.B - 0.3} texto="Akira Endo · Sankyo, Tokio" x={400} y={400} tam={36} borde={KC.ink} />
+      <Etq T={T} at={K.I + 0.8} until={K.B - 0.3} x={110} y={1445} texto="silueta esquemática" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.I + 2.4} until={K.B - 0.3} texto="¿algún hongo la frena?" x={470} y={500} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.B + 0.2} until={K.A - 0.3} texto="miles de hongos probados" x={400} y={330} tam={36} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.B + 0.4} until={K.A - 0.3} valor={3800} dur={1.6} etiqueta="hongos" x={400} y={470} tam={130} color={KC.yellow} />
+      <Etq T={T} at={K.B + 2.4} until={K.A - 0.3} x={720} y={930} texto="citrinina" lado="der" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.B + 3.0} until={K.A - 0.3} x={1000} y={1130} lado="izq" texto="tóxica para el riñón" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.A + 0.4} until={AM - 0.2} texto="arroz de una tienda de Kioto" x={400} y={400} tam={34} borde={KC.ink} />
+      <Chip T={T} at={AM + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO · su “pincel”" x={400} y={330} tam={30} borde={VERDEAZUL} mono />
+      <Etq T={T} at={AM + 0.4} until={K.P - 0.3} x={40} y={1000} texto="Penicillium citrinum" it tam={34} color={VERDEAZUL2} />
+      <Etq T={T} at={AM + 0.8} until={K.P - 0.3} x={40} y={1050} texto="moho azul verdoso" tam={28} />
+      <Etq T={T} at={AM + 1.6} until={K.P - 0.3} x={350} y={600} texto="esporas redondas" lado="izq" tam={26} color={VERDEAZUL2} />
+      <Etq T={T} at={K.F + 0.3} until={K.R - 0.3} x={60} y={1320} texto="HMG-CoA reductasa" tam={32} color={KC.lilac} />
+      <Etq T={T} at={K.F + 0.5} until={K.R - 0.3} x={750} y={470} texto="HMG-CoA (su pieza)" lado="izq" tam={28} color={COLES} />
+      <Etq T={T} at={K.F + 0.6} until={K.R - 0.3} x={50} y={400} texto="compactina (del moho)" tam={28} color={KC.leaf} />
+      <Chip T={T} at={K.F + 2.4} until={K.R - 0.3} texto="se parece y le gana el lugar" x={540} y={1420} tam={36} borde={KC.leaf} />
       <Etq T={T} at={K.R + 0.3} until={K.S - 0.3} x={60} y={480} texto="célula del hígado" tam={30} />
       <Etq T={T} at={K.R + 0.6} until={K.S - 0.3} x={1040} y={720} texto="sangre" lado="izq" tam={30} />
       <Etq T={T} at={K.R + 1.0} until={K.S - 0.3} x={1040} y={1140} lado="izq" texto="receptores LDL" tam={30} color={KC.mint} />
-      <TarjetaEstudio T={T} at={K.S + 0.05} until={K.S + 2.6} anio="1973" quien="Tokio · compactina" revista="Endo, 2010" x={400} y={700} />
-      <Chip T={T} at={K.S + 2.8} until={K.M - 0.3} texto="1973 · Tokio · compactina" x={280} y={570} tam={28} borde={VERDEAZUL} />
-      <Chip T={T} at={K.S + 3.6} until={K.M - 0.3} texto="Merck · lovastatina" x={800} y={570} tam={28} borde={CANELA} />
-      <Etq T={T} at={K.S + 3.0} until={K.M - 0.3} x={90} y={670} texto="Penicillium citrinum" it tam={24} color={VERDEAZUL2} />
-      <Etq T={T} at={K.S + 3.8} until={K.M - 0.3} x={990} y={670} texto="Aspergillus terreus" it lado="izq" tam={24} color={CANELA} />
-      <Chip T={T} at={K.S + 4.6} until={K.M - 0.3} texto="moléculas primas" x={540} y={450} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.M + 1.2} until={K.Ig - 0.3} x={60} y={900} texto="arroz de levadura roja · moho" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.M + 1.6} until={K.Ig - 0.3} x={60} y={950} texto="Monascus" it tam={30} color={KC.ink} />
-      <Etq T={T} at={K.M + 2.6} until={K.Ig - 0.3} x={1040} y={560} texto="monacolina K" lado="izq" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ig + 0.1} until={K.C - 0.3} x={60} y={560} texto="monacolina K" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ig + 0.1} until={K.C - 0.3} x={1040} y={1000} texto="lovastatina" lado="izq" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ig + 1.4} until={K.C - 0.2} texto="= misma molécula" x={540} y={460} tam={44} borde={KC.yellow} />
-      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="la primera estatina nació en un moho" x={540} y={720} tam={34} borde={VERDEAZUL} />
-      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="no es consejo médico" x={540} y={800} tam={24} borde={KC.ink} mono />
+      <TarjetaEstudio T={T} at={K.S + 0.05} until={K.S + 2.6} anio="1973" quien="Tokio · compactina" revista="Endo, 2010" x={540} y={380} />
+      <Chip T={T} at={K.S + 2.8} until={K.M - 0.3} texto="1973 · Tokio · compactina" x={285} y={505} tam={28} borde={VERDEAZUL} />
+      <Chip T={T} at={K.S + 3.6} until={K.M - 0.3} texto="Merck · lovastatina" x={795} y={505} tam={28} borde={CANELA} />
+      <Etq T={T} at={K.S + 3.0} until={K.M - 0.3} x={75} y={610} texto="Penicillium citrinum" it tam={25} color={VERDEAZUL2} />
+      <Etq T={T} at={K.S + 3.8} until={K.M - 0.3} x={1005} y={610} texto="Aspergillus terreus" it lado="izq" tam={25} color={CANELA} />
+      <Chip T={T} at={K.S + 4.6} until={K.M - 0.3} texto="moléculas primas" x={540} y={400} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.M + 1.2} until={K.Ig - 0.3} x={50} y={940} texto="arroz de levadura roja · moho" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.M + 1.6} until={K.Ig - 0.3} x={50} y={990} texto="Monascus" it tam={30} color={KC.ink} />
+      <Etq T={T} at={K.M + 2.6} until={K.Ig - 0.3} x={1040} y={420} texto="monacolina K" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ig + 0.1} until={K.C - 0.3} x={40} y={385} texto="monacolina K" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ig + 0.1} until={K.C - 0.3} x={1040} y={950} texto="lovastatina" lado="izq" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Ig + 1.4} until={K.C - 0.2} texto="= misma molécula" x={540} y={310} tam={46} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="la primera estatina nació en un moho" x={540} y={380} tam={38} borde={VERDEAZUL} />
+      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="no es consejo médico" x={540} y={462} tam={24} borde={KC.ink} mono />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="10 cm" largo={170} />
-      <BarraEscala T={T} at={K.H} until={K.E} texto="20 cm · esquemático" largo={120} />
-      <BarraEscala T={T} at={K.E} until={K.I} texto="10 µm" largo={150} />
-      <BarraEscala T={T} at={K.I} until={K.B} texto="50 cm" largo={160} />
-      <BarraEscala T={T} at={K.B} until={K.A} texto="10 cm" largo={140} />
-      <BarraEscala T={T} at={K.A} until={AM} texto="5 mm" largo={160} />
-      <BarraEscala T={T} at={AM} until={K.P} texto="10 µm" largo={180} />
-      <BarraEscala T={T} at={K.P} until={K.F} texto="5 mm" largo={120} />
-      <BarraEscala T={T} at={K.F} until={K.R} texto="1 nm · esquemático" largo={90} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="10 cm" largo={306} />
+      <BarraEscala T={T} at={K.H} until={K.E} texto="20 cm · esquemático" largo={185} />
+      <BarraEscala T={T} at={K.E} until={K.I} texto="10 µm" largo={172} />
+      <BarraEscala T={T} at={K.I} until={K.B} texto="50 cm" largo={224} />
+      <BarraEscala T={T} at={K.B} until={K.A} texto="10 cm" largo={210} />
+      <BarraEscala T={T} at={K.A} until={AM} texto="5 mm" largo={222} />
+      <BarraEscala T={T} at={AM} until={K.P} texto="10 µm" largo={261} />
+      <BarraEscala T={T} at={K.P} until={K.F} texto="5 mm" largo={171} />
+      <BarraEscala T={T} at={K.F} until={K.R} texto="1 nm · esquemático" largo={142} />
       <BarraEscala T={T} at={K.R} until={K.S} texto="5 µm · esquemático" largo={120} />
-      <BarraEscala T={T} at={K.S} until={K.M} texto="100 µm" largo={110} />
-      <BarraEscala T={T} at={K.M} until={K.C} texto="10 cm" largo={170} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={170} />
+      <BarraEscala T={T} at={K.S} until={K.M} texto="100 µm" largo={195} />
+      <BarraEscala T={T} at={K.M} until={K.C} texto="10 cm" largo={306} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={306} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="La primera estatina *la hizo un moho.*" />

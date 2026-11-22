@@ -2,7 +2,7 @@
 // Shot Científico #11 · Las manchitas que flotan en tu vista están dentro de tu ojo — NARRADO (N1 "Por dentro": cielo → ojo en corte → cielo).
 // Datos: Webb et al. 2013 (Int J Ophthalmol), Ivanova et al. 2016 (Eye), NEI / AAO / MedlinePlus. Ver guion.md y verificacion.md.
 // El ojo en corte es esquemático y las moscas están exageradas para que se vean.
-const CIELO1 = '#38b6ff', CIELO2 = '#bfe9ff', MSOMBRA = 'rgba(22,34,58,.55)', VITREO = 'rgba(175,228,255,.55)';
+const CIELO1 = '#164a78', CIELO2 = '#3f7fae', MSOMBRA = 'rgba(8,14,30,.72)', VITREO = 'rgba(120,200,255,.32)';
 
 // Una "mosca volante" en el cielo: hebrita o grumito transparente. tipo 0 hebra, 1 anillos, 2 grumo con cola.
 function Mosca({ x, y, s = 1, rot = 0, tipo = 0, o = 1, color = MSOMBRA }) {
@@ -59,7 +59,7 @@ function OjoCorte({ cx, cy, R = 320, rot = 0, T, vit = 1, fibras = 0, junta = 0,
   const fib = FIBRAS.map((f, i) => { const c = [f.c[0] * k, f.c[1] * k], pts = [];
     for (let j = 0; j <= 14; j++) { const u = j / 14, x = klerp(f.x0, f.x1, u) * R, y = f.y0 * R + Math.sin(u * 9 + f.fase + T * 1.3) * f.amp * R;
       const q = 0.74 * junta; pts.push(`${(c[0] + (x - c[0]) * (1 - q) + Math.sin(T * 2 + i) * 6 * junta).toFixed(1)},${(c[1] + (y - c[1]) * (1 - q * 0.97)).toFixed(1)}`); }
-    return <polyline key={i} points={pts.join(' ')} fill="none" stroke={junta > 0.5 ? 'rgba(40,52,80,.85)' : 'rgba(255,255,255,.85)'} strokeWidth={(3 + 7 * junta) * k} strokeLinecap="round" strokeLinejoin="round" />; });
+    return <polyline key={i} points={pts.join(' ')} fill="none" stroke={junta > 0.5 ? '#0b1020' : 'rgba(255,255,255,.85)'} strokeWidth={(3 + 7 * junta) * k} strokeLinecap="round" strokeLinejoin="round" />; });
   // sombras sobre la retina: la luz entra por el cristalino, pasa por cada grumo y sigue hasta el fondo del ojo
   const sombra = GRUMOS.map(([gx0, gy0], i) => { const a = (rg - rot) * Math.PI / 180, gx = (gx0 * Math.cos(a) - gy0 * Math.sin(a)) * k, gy = (gx0 * Math.sin(a) + gy0 * Math.cos(a)) * k;
     const dx = gx - L[0], dy = gy - L[1], d = Math.hypot(dx, dy), ux = dx / d, uy = dy / d, b = L[0] * ux + L[1] * uy, t = -b + Math.sqrt(b * b - (L[0] * L[0] + L[1] * L[1] - Rr * Rr));
@@ -72,7 +72,7 @@ function OjoCorte({ cx, cy, R = 320, rot = 0, T, vit = 1, fibras = 0, junta = 0,
     {/* córnea */}
     <path d={`M ${0.74 * R} ${-0.66 * R} Q ${1.32 * R} 0 ${0.74 * R} ${0.66 * R}`} fill="rgba(210,245,255,.75)" stroke={KC.ink} strokeWidth={9} />
     {/* esclera */}
-    <circle r={R} fill="#fffaf3" stroke={KC.ink} strokeWidth={11} />
+    <circle r={R} fill="#33425a" stroke={KC.ink} strokeWidth={11} />
     {/* retina (fondo del ojo) */}
     <path d={`M ${Rr * Math.cos(1.05)} ${-Rr * Math.sin(1.05)} A ${Rr} ${Rr} 0 1 0 ${Rr * Math.cos(1.05)} ${Rr * Math.sin(1.05)}`} fill="none" stroke={KC.coral} strokeWidth={20 * k} strokeLinecap="round" />
     {/* gel vítreo: se llena */}
@@ -117,7 +117,7 @@ function AguaCerca({ t, r }) {
 function CuartoCosas({ x, y, w, h }) {
   const cols = [KC.red, KC.yellow, KC.cyan, KC.mint, KC.orange, KC.lilac, KC.pink, KC.blue];
   return <g transform={`translate(${x} ${y})`}>
-    <rect width={w} height={h} rx={26} fill="#f6c26b" stroke={KC.ink} strokeWidth={9} />
+    <rect width={w} height={h} rx={26} fill="#7a5a30" stroke={KC.ink} strokeWidth={9} />
     {[0, 1].map((f) => <g key={f}><rect x={40} y={70 + f * 120} width={w * 0.5} height={14} fill="#7a4a22" stroke={KC.ink} strokeWidth={4} />
       {Array.from({ length: 9 }, (_, i) => <rect key={i} x={50 + i * 46} y={70 + f * 120 - 70 + (i % 3) * 8} width={36} height={70 - (i % 3) * 8} fill={cols[(i + f * 3) % 8]} stroke={KC.ink} strokeWidth={4} />)}</g>)}
     <rect x={w * 0.62} y={40} width={150} height={110} fill={KC.cyan} stroke={KC.ink} strokeWidth={6} /><circle cx={w * 0.62 + 50} cy={80} r={22} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />
@@ -141,7 +141,7 @@ function Moscas() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
   const zA = kprog(T, K.Gancho + 2.9, K.Gel + 0.2, kEase.suave);          // la cámara se aleja: aparece el ojo que mira el cielo
-  const OG = { cx: 470, cy: 800, R: 280 };                                  // ojo en corte (escena Gel)
+  const OG = { cx: 470, cy: 980, R: 320 };                                  // ojo en corte (escena Gel)
   // ojo que gira (Escapan): mira a la derecha-arriba y regresa; los grumos llegan tarde y se mecen
   const giro = (t) => -28 * kprog(t, K.Escapan + 0.6, K.Escapan + 1.1, kEase.suave) + 40 * kprog(t, K.Escapan + 2.6, K.Escapan + 3.1, kEase.suave);
   const giroG = (t) => giro(t - 0.45) + 9 * Math.exp(-Math.max(0, t - K.Escapan - 1.5) * 1.6) * Math.sin((t - K.Escapan) * 7) * (t > K.Escapan + 0.9 ? 1 : 0);
@@ -152,7 +152,7 @@ function Moscas() {
         <CieloFondo T={T} />
         <Lienzo>
           <MoscasCielo T={T} />
-          {zA > 0 && <AlmendraOjo s={klerp(3.2, 1, zA)} cy={940} />}
+          {zA > 0 && <AlmendraOjo s={klerp(3.2, 1, zA)} cy={940} piel="#6e4636" />}
           <TextoSvg x={290} y={450} tam={96} color={KC.yellow} rot={-4} o={1 - kprog(T, K.Gancho + 3.0, K.Gancho + 3.3)} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.05, K.Gancho + 0.45, kEase.rebote))}>NO ESTÁN</TextoSvg>
           <TextoSvg x={290} y={555} tam={96} color={KC.yellow} rot={-4} o={1 - kprog(T, K.Gancho + 3.0, K.Gancho + 3.3)} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.6, K.Gancho + 1.0, kEase.rebote))}>EN EL AIRE</TextoSvg>
           <TextoSvg x={290} y={450} tam={96} color={KC.pink} rot={-4} o={kprog(T, K.Gancho + 3.3, K.Gancho + 3.5)} s={klerp(0.5, 1, kprog(T, K.Gancho + 3.3, K.Gancho + 3.7, kEase.rebote))}>¡ESTÁN EN</TextoSvg>
@@ -166,13 +166,13 @@ function Moscas() {
           <g transform={`translate(${OG.cx} ${OG.cy}) scale(${klerp(0.4, 1, kprog(T, K.Gel - 0.3, K.Gel + 0.5, kEase.rebote))}) translate(${-OG.cx} ${-OG.cy})`}>
             <OjoCorte {...OG} T={T} vit={kprog(T, K.Gel + 0.6, K.Gel + 2.2, kEase.suave)} id="gel" rayos={0} />
           </g>
-          <Rotulo x={OG.cx + 1.2 * OG.R} y={OG.cy - 60} tx={950} ty={950} texto="córnea" p={kprog(T, K.Gel + 0.8, K.Gel + 1.1)} />
-          <Rotulo x={OG.cx + 0.62 * OG.R} y={OG.cy + 90} tx={790} ty={1110} texto="cristalino" p={kprog(T, K.Gel + 1.1, K.Gel + 1.4)} />
-          <Rotulo x={OG.cx - OG.R + 18} y={OG.cy + 160} tx={150} ty={1110} texto="retina" p={kprog(T, K.Gel + 1.4, K.Gel + 1.7)} />
+          <Rotulo x={OG.cx + 1.2 * OG.R} y={OG.cy - 60} tx={960} ty={1150} texto="córnea" p={kprog(T, K.Gel + 0.8, K.Gel + 1.1)} />
+          <Rotulo x={OG.cx + 0.62 * OG.R} y={OG.cy + 90} tx={800} ty={1360} texto="cristalino" p={kprog(T, K.Gel + 1.1, K.Gel + 1.4)} />
+          <Rotulo x={OG.cx - OG.R + 18} y={OG.cy + 160} tx={150} ty={1360} texto="retina" p={kprog(T, K.Gel + 1.4, K.Gel + 1.7)} />
         </Lienzo>
-        <Lupa T={T} at={K.Gel + 2.4} until={K.Fibras - 0.2} x={800} y={400} r={130} fx={OG.cx - 40} fy={OG.cy + 60} tinte={KC.cyan} etiqueta="POR DENTRO · GEL"
+        <Lupa T={T} at={K.Gel + 2.4} until={K.Fibras - 0.2} x={800} y={460} r={130} fx={OG.cx - 40} fy={OG.cy + 60} tinte={KC.cyan} etiqueta="POR DENTRO · GEL"
           interior={(t, r) => <AguaCerca t={t} r={r} />} />
-        <Chip T={T} at={K.Gel + 2.6} until={K.Fibras - 0.1} texto="casi pura agua" x={800} y={690} tam={38} borde={KC.cyan} />
+        <Chip T={T} at={K.Gel + 2.6} until={K.Fibras - 0.1} texto="casi pura agua" x={870} y={725} tam={38} borde={KC.cyan} />
         <Chip T={T} at={K.Gel + 3.6} until={K.Fibras - 0.1} texto="humor vítreo" x={OG.cx - 90} y={OG.cy - 60} tam={44} borde={KC.gold} />
       </Escena>
       {/* 2 · fibras de colágeno: zoom dentro del gel */}
@@ -201,9 +201,9 @@ function Moscas() {
       <Escena T={T} a={K.Sombra} b={K.Escapan} fondo={KC.blue}>
         <FondoLunares color={KC.blue} />
         <Lienzo>
-          <OjoCorte cx={440} cy={950} R={290} T={T} vit={1} fibras={1} junta={1} rayos={kprog(T, K.Sombra + 0.2, K.Sombra + 0.9)} sombras={kprog(T, K.Sombra + 2.0, K.Sombra + 2.8)} id="som" />
-          <Rotulo x={440 - 290 + 20} y={950 + 120} tx={110} ty={1215} texto="retina" p={kprog(T, K.Sombra + 1.0, K.Sombra + 1.3)} />
-          <Rotulo x={440 + 70} y={950 - 40} tx={760} ty={760} texto="grumo" p={kprog(T, K.Sombra + 1.0, K.Sombra + 1.3)} />
+          <OjoCorte cx={420} cy={990} R={340} T={T} vit={1} fibras={1} junta={1} rayos={kprog(T, K.Sombra + 0.2, K.Sombra + 0.9)} sombras={kprog(T, K.Sombra + 2.0, K.Sombra + 2.8)} id="som" />
+          <Rotulo x={420 - 340 + 20} y={990 + 140} tx={120} ty={1400} texto="retina" p={kprog(T, K.Sombra + 1.0, K.Sombra + 1.3)} />
+          <Rotulo x={420 + 82} y={990 - 47} tx={780} ty={760} texto="grumo" p={kprog(T, K.Sombra + 1.0, K.Sombra + 1.3)} />
           {/* lo que ves: el cielo con las sombras */}
           <g opacity={kprog(T, K.Sombra + 2.8, K.Sombra + 3.2)} transform={`translate(300 430) scale(${klerp(0.4, 1, kprog(T, K.Sombra + 2.8, K.Sombra + 3.3, kEase.rebote))})`}>
             <clipPath id="lov"><circle r={130} /></clipPath>
@@ -213,7 +213,7 @@ function Moscas() {
             <TextoSvg x={0} y={180} tam={40} color={KC.white} fuente="texto">lo que ves</TextoSvg>
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Sombra + 0.4} until={K.Sombra + 2.6} texto="luz" x={900} y={850} tam={42} borde={KC.yellow} />
+        <Chip T={T} at={K.Sombra + 0.4} until={K.Sombra + 2.6} texto="luz" x={920} y={860} tam={42} borde={KC.yellow} />
       </Escena>
       {/* 5 · se escapan: el ojo gira y los grumos llegan tarde, como en gelatina */}
       <Escena T={T} a={K.Escapan} b={K.Pregunta} fondo={KC.pink}>
@@ -231,14 +231,14 @@ function Moscas() {
         <FondoLunares color={KC.yellow} />
         <Lienzo>
           <g transform={`translate(0 ${(1 - kprog(T, K.Fondo + 0.1, K.Fondo + 0.6, kEase.sale)) * -700})`}>
-            <rect x={90} y={320} width={900} height={340} rx={26} fill="#fbfaf6" stroke={KC.ink} strokeWidth={9} />
-            <clipPath id="pared"><rect x={90} y={320} width={900} height={340} rx={26} /></clipPath><g clipPath="url(#pared)"><g transform="translate(0 -300)"><MoscasCielo T={T - K.Fondo + 0.3} /></g></g>
-            <text x={540} y={385} textAnchor="middle" style={{ font:`900 42px ${KF.texto}` }} fill={KC.ink}>pared lisa: SE NOTAN</text>
+            <rect x={90} y={400} width={900} height={380} rx={26} fill="#9aa4b0" stroke={KC.ink} strokeWidth={9} />
+            <clipPath id="pared"><rect x={90} y={400} width={900} height={380} rx={26} /></clipPath><g clipPath="url(#pared)"><g transform="translate(0 -230)"><MoscasCielo T={T - K.Fondo + 0.3} /></g></g>
+            <text x={540} y={468} textAnchor="middle" style={{ font:`900 42px ${KF.texto}` }} fill="#0b1020">pared lisa: SE NOTAN</text>
           </g>
           <g transform={`translate(0 ${(1 - kprog(T, K.Fondo + 0.8, K.Fondo + 1.3, kEase.sale)) * 900})`}>
-            <CuartoCosas x={90} y={700} w={900} h={380} />
-            <clipPath id="cuarto"><rect x={90} y={700} width={900} height={380} rx={26} /></clipPath><g clipPath="url(#cuarto)" opacity={0.22}><g transform="translate(0 80)"><MoscasCielo T={T - K.Fondo + 0.3} /></g></g>
-            <TextoSvg x={540} y={1050} tam={42} color={KC.white} fuente="texto">muchas cosas: SE NOTAN MENOS</TextoSvg>
+            <CuartoCosas x={90} y={830} w={900} h={420} />
+            <clipPath id="cuarto"><rect x={90} y={830} width={900} height={420} rx={26} /></clipPath><g clipPath="url(#cuarto)" opacity={0.22}><g transform="translate(0 200)"><MoscasCielo T={T - K.Fondo + 0.3} /></g></g>
+            <TextoSvg x={540} y={1222} tam={42} color={KC.white} fuente="texto">muchas cosas: SE NOTAN MENOS</TextoSvg>
           </g>
         </Lienzo>
       </Escena>
@@ -246,28 +246,29 @@ function Moscas() {
       <Escena T={T} a={K.Estudio} b={K.Aviso} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          {T < K.Estudio + 4.0 && <Celular x={190} y={1080} s={0.62} T={T} rot={-10} />}
-          {T >= K.Estudio + 3.7 && Array.from({ length: 100 }, (_, i) => { const c = i % 10, f = Math.floor(i / 10), x = 135 + c * 90, y = 420 + f * 52;
+          {T < K.Estudio + 4.0 && <g opacity={1 - kprog(T, K.Estudio + 3.6, K.Estudio + 4.0)}><Celular x={540} y={1020} s={1.55} T={T} rot={-6} /></g>}
+          {T >= K.Estudio + 3.7 && Array.from({ length: 100 }, (_, i) => { const c = i % 10, f = Math.floor(i / 10), x = 135 + c * 90, y = 600 + f * 64;
             const e = kprog(T, K.Estudio + 3.8 + i * 0.012, K.Estudio + 4.1 + i * 0.012, kEase.rebote), si = i < 76 && T > K.Estudio + 4.6 + i * 0.008;
-            return <g key={i} transform={`translate(${x} ${y}) scale(${e})`}><ellipse rx={36} ry={20} fill={si ? KC.yellow : '#fff'} stroke={KC.ink} strokeWidth={5} />
+            return <g key={i} transform={`translate(${x} ${y}) scale(${e})`}><ellipse rx={40} ry={24} fill={si ? KC.yellow : '#fff'} stroke={KC.ink} strokeWidth={5} />
               <circle r={12} fill={si ? KC.teal : '#bbb'} stroke={KC.ink} strokeWidth={3} /></g>; })}
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 3.6} anio="2013" quien="603 personas" revista="encuesta en app de celular · Webb et al." x={600} y={700} />
-        <NumeroGigante T={T} at={K.Estudio + 4.6} until={K.Aviso - 0.1} valor={76} sufijo=" %" etiqueta="dijo que las ve" x={540} y={1040} tam={180} />
+        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 3.6} anio="2013" quien="603 personas" revista="encuesta en app de celular · Webb et al." x={540} y={360} />
+        <NumeroGigante T={T} at={K.Estudio + 4.6} until={K.Aviso - 0.1} valor={76} sufijo=" %" etiqueta="dijo que las ve" x={540} y={1340} tam={180} />
       </Escena>
       {/* 9 · aviso de urgencia: 3 señales → oftalmólogo ese mismo día */}
       <Escena T={T} a={K.Aviso} b={K.Cierre} fondo={KC.red}>
         <FondoLunares color={KC.red} />
         <Lienzo>
-          <g transform={`translate(540 400) scale(${klerp(0.3, 1.0, kprog(T, K.Aviso + 0.05, K.Aviso + 0.45, kEase.rebote)) * (1 + 0.05 * Math.sin(T * 8))})`}><Alerta x={0} y={0} s={1} /></g>
-          {['muchas de golpe', 'destellos de luz', 'sombra como cortina'].map((tx, i) => { const at = K.Aviso + [1.5, 3.0, 4.2][i], e = kprog(T, at, at + 0.35, kEase.rebote), y = 590 + i * 140;
+          <OjoCorte cx={490} cy={655} R={262} T={T} vit={1} fibras={1} junta={1} id="avi" />
+          <g transform={`translate(880 400) scale(${klerp(0.3, 0.85, kprog(T, K.Aviso + 0.05, K.Aviso + 0.45, kEase.rebote)) * (1 + 0.05 * Math.sin(T * 8))})`}><Alerta x={0} y={0} s={1} /></g>
+          {['muchas de golpe', 'destellos de luz', 'sombra como cortina'].map((tx, i) => { const at = K.Aviso + [1.5, 3.0, 4.2][i], e = kprog(T, at, at + 0.35, kEase.rebote), y = 1000 + i * 136;
             return <g key={i} opacity={kprog(T, at, at + 0.15)} transform={`translate(${(1 - e) * -500} 0)`}>
               <rect x={80} y={y - 62} width={920} height={124} rx={62} fill="rgba(14,15,18,.88)" stroke={KC.yellow} strokeWidth={6} />
               <IconoSenal tipo={i} x={160} y={y} T={T} />
               <TextoSvg x={250} y={y + 18} tam={54} color={KC.white} ancla="start" fuente="texto">{tx}</TextoSvg></g>; })}
-          {T > K.Aviso + 5.3 && <g transform={`translate(540 1040) scale(${klerp(0.4, 1, kprog(T, K.Aviso + 5.3, K.Aviso + 5.7, kEase.rebote))})`}>
+          {T > K.Aviso + 5.3 && <g transform={`translate(540 1410) scale(${klerp(0.4, 1, kprog(T, K.Aviso + 5.3, K.Aviso + 5.7, kEase.rebote))})`}>
             <rect x={-440} y={-58} width={880} height={116} rx={30} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
-            <text x={0} y={18} textAnchor="middle" style={{ font:`400 58px ${KF.titulo}` }} fill={KC.ink}>→ OFTALMÓLOGO ESE MISMO DÍA</text></g>}
+            <text x={0} y={18} textAnchor="middle" style={{ font:`400 58px ${KF.titulo}` }} fill="#0b1020">→ OFTALMÓLOGO ESE MISMO DÍA</text></g>}
         </Lienzo>
       </Escena>
       {/* 10 · cierre: el mismo cielo, ahora con tu ojo tenue detrás */}

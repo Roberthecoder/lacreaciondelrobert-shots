@@ -4,9 +4,11 @@
 // actualización: comunicado de la Universidad de Yamagata, 28 jul 2025 (160 figurativas más; total 893). Ver guion.md y verificacion.md.
 // Mapa, figuras y foto aérea son ESQUEMÁTICOS (el paper no publica coordenadas, por protección del sitio).
 
-const ARENA = '#e8c48a', ARENA2 = '#d6a965', PIEDRA = '#8a5a3a', VERDE = '#7cc46a', ROSA = '#ff7aa8';
+const ARENA = '#c9a36b', ARENA2 = '#a98450', PIEDRA = '#5e3b24', OSCURO = '#0b1020', VERDE = '#7cc46a', ROSA = '#ff7aa8';
 // Caja del mapa en pantalla (se usa igual en el gancho, en el campo y en el cierre: es "la imagen que se llena").
 const MX = 40, MY = 395, MS = 0.85;
+// Encuadre cine: el mapa grande y centrado (ancho ≈ 760 px, de y≈470 a y≈1430).
+const MG = { x: 150, y: 470, s: 1.3 };
 
 // Contorno esquemático de la pampa (coordenadas locales 0..600 × 0..740).
 const PAMPA_PTS = [[30,115],[120,88],[230,100],[330,78],[450,104],[560,135],[575,230],[545,320],[580,420],[550,530],[470,610],[360,648],[240,636],[130,650],[50,600],[25,500],[45,400],[20,300],[40,200]];
@@ -28,9 +30,9 @@ const SENDEROS = (() => { const r = krng(5), out = []; for (let k = 0; k < 9; k+
   out.push(d); } return out; })();
 
 // El mapa que se llena: negros = conocidos (hasta 2020), amarillos = los 303 de 2022/23, rosas = los 160 anunciados en 2025.
-function MapaNazca({ T, negros = 430, amarillos = 0, rosas = 0, o = 1, children }) {
+function MapaNazca({ T, negros = 430, amarillos = 0, rosas = 0, o = 1, mx = MG.x, my = MG.y, ms = MG.s, children }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:o }}>
-    <g transform={`translate(${MX} ${MY}) scale(${MS})`}>
+    <g transform={`translate(${mx} ${my}) scale(${ms})`}>
       <path d={PAMPA} fill="rgba(0,0,0,.25)" transform="translate(12 14)" strokeLinejoin="round" />
       <path d={PAMPA} fill={ARENA} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
       {/* valles con agua y cultivos: Ingenio (norte) y Nazca (sur) */}
@@ -39,9 +41,9 @@ function MapaNazca({ T, negros = 430, amarillos = 0, rosas = 0, o = 1, children 
       <path d="M 20 690 C 180 700 380 700 590 640" stroke={VERDE} strokeWidth={34} fill="none" strokeLinecap="round" opacity=".9" />
       <path d="M 20 690 C 180 700 380 700 590 640" stroke="#3a8fd6" strokeWidth={8} fill="none" strokeLinecap="round" />
       {SENDEROS.map((d, i) => <path key={i} d={d} stroke={ARENA2} strokeWidth={5} fill="none" strokeDasharray="10 8" opacity=".9" />)}
-      {P430.slice(0, Math.round(negros)).map(([x, y], i) => <circle key={'n' + i} cx={x} cy={y} r={6} fill={KC.ink} />)}
-      {P303.slice(0, Math.round(amarillos)).map(([x, y], i) => <circle key={'a' + i} cx={x} cy={y} r={8} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} />)}
-      {P160.slice(0, Math.round(rosas)).map(([x, y], i) => <circle key={'r' + i} cx={x} cy={y} r={7} fill={ROSA} stroke={KC.ink} strokeWidth={3} />)}
+      {P430.slice(0, Math.round(negros)).map(([x, y], i) => <circle key={'n' + i} cx={x} cy={y} r={6} fill={OSCURO} />)}
+      {P303.slice(0, Math.round(amarillos)).map(([x, y], i) => <circle key={'a' + i} cx={x} cy={y} r={8} fill={KC.yellow} stroke={OSCURO} strokeWidth={3} />)}
+      {P160.slice(0, Math.round(rosas)).map(([x, y], i) => <circle key={'r' + i} cx={x} cy={y} r={7} fill={ROSA} stroke={OSCURO} strokeWidth={3} />)}
       <text x={300} y={30} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>río Ingenio</text>
       <text x={300} y={734} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>río Nazca</text>
       {children}
@@ -62,7 +64,7 @@ function LlamaRelieve({ x, y, s = 1, o = 1, contorno = 0 }) {
 function SueloPiedras({ seed = 3, n = 520, x0 = 0, y0 = 0, w = KW, h = KH }) {
   const r = krng(seed);
   return <g>{Array.from({ length: n }, (_, i) => { const x = x0 + r() * w, y = y0 + r() * h, rr = 4 + r() * 12;
-    return <ellipse key={i} cx={x} cy={y} rx={rr} ry={rr * (0.6 + r() * 0.4)} fill={r() > 0.5 ? PIEDRA : '#a8714a'} opacity={0.65 + r() * 0.3} transform={`rotate(${r() * 180} ${x} ${y})`} />; })}</g>;
+    return <ellipse key={i} cx={x} cy={y} rx={rr} ry={rr * (0.6 + r() * 0.4)} fill={r() > 0.5 ? PIEDRA : '#7a5034'} opacity={0.65 + r() * 0.3} transform={`rotate(${r() * 180} ${x} ${y})`} />; })}</g>;
 }
 // Personita para la escala (1.7 m).
 function Persona({ x, y, s = 1 }) {
@@ -121,12 +123,12 @@ function Pastel({ T, at, cx, cy, r, partes }) {
       const P = (a) => [cx + r * Math.sin(a * 2 * Math.PI), cy - r * Math.cos(a * 2 * Math.PI)], [x0, y0] = P(a0), [x1, y1] = P(a1);
       return <path key={i} d={`M ${cx} ${cy} L ${x0} ${y0} A ${r} ${r} 0 ${a1 - a0 > 0.5 ? 1 : 0} 1 ${x1} ${y1} Z`} fill={p.color} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />; })}
     <circle cx={cx} cy={cy} r={r * 0.42} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
-    <text x={cx} y={cy + 30} textAnchor="middle" style={{ font:`400 92px ${KF.titulo}` }} fill={KC.ink}>303</text>
+    <text x={cx} y={cy + r * 0.13} textAnchor="middle" style={{ font:`400 ${Math.round(r * 0.4)}px ${KF.titulo}` }} fill={KC.ink}>303</text>
   </svg>;
 }
 function Leyenda({ T, at, y, color, texto }) {
   if (T < at) return null; const e = kprog(T, at, at + 0.35, kEase.sale);
-  return <div style={{ position:'absolute', left:80, top:y, zIndex:41, display:'flex', alignItems:'center', gap:18, opacity:e, transform:`translateX(${(1 - e) * -40}px)` }}>
+  return <div style={{ position:'absolute', left:150, top:y, zIndex:41, display:'flex', alignItems:'center', gap:18, opacity:e, transform:`translateX(${(1 - e) * -40}px)` }}>
     <div style={{ width:46, height:46, borderRadius:12, background:color, border:`5px solid ${KC.ink}` }}></div>
     <div style={{ font:`900 38px ${KF.texto}`, color:KC.ink }}>{texto}</div>
   </div>;
@@ -146,38 +148,45 @@ function Nazca() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: el mapa se llena (430 en casi un siglo, 303 en seis meses) */}
-      <Escena T={T} a={K.G} b={K.O} zoom={0.04} origen="30% 50%">
+      <Escena T={T} a={K.G} b={K.O} zoom={0.04} origen="50% 50%">
         <FondoLunares color={KC.orange} />
         <MapaNazca T={T} negros={negros} amarillos={amarillos} />
       </Escena>
-      <Chip T={T} at={K.G + 0.15} until={K.O - 0.2} texto="Nazca, Perú · esquema" x={340} y={380} tam={34} borde={KC.ink} />
-      <div style={{ position:'absolute', left:830, top:840, zIndex:41, transform:'translate(-50%,-50%)', textAlign:'center', opacity:kprog(T, K.G + 0.15, K.G + 0.5) * (1 - kprog(T, K.O - 0.2, K.O + 0.2)) }}>
+      <Chip T={T} at={K.G + 0.15} until={K.O - 0.2} texto="Nazca, Perú · esquema" x={540} y={1535} tam={30} borde={KC.ink} />
+      <div style={{ position:'absolute', left:300, top:285, zIndex:41, transform:'translate(-50%,-50%)', textAlign:'center', opacity:kprog(T, K.G + 0.15, K.G + 0.5) * (1 - kprog(T, K.O - 0.2, K.O + 0.2)) }}>
         <div style={{ font:`900 34px ${KF.texto}`, color:KC.ink }}>casi 100 años</div>
         <div style={{ font:`400 130px/1 ${KF.titulo}`, color:KC.texto, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>{kformato(Math.round(negros))}</div>
-        {T > K.G + 4.4 && <><div style={{ font:`900 34px ${KF.texto}`, color:KC.ink, marginTop:18 }}>con IA · 6 meses</div>
-          <div style={{ font:`400 130px/1 ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>+{kformato(Math.round(amarillos))}</div></>}
       </div>
+      {T > K.G + 4.4 && <div style={{ position:'absolute', left:780, top:285, zIndex:41, transform:'translate(-50%,-50%)', textAlign:'center', opacity:kprog(T, K.G + 4.4, K.G + 4.7) * (1 - kprog(T, K.O - 0.2, K.O + 0.2)) }}>
+        <div style={{ font:`900 34px ${KF.texto}`, color:KC.ink }}>con IA · 6 meses</div>
+        <div style={{ font:`400 130px/1 ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>+{kformato(Math.round(amarillos))}</div>
+      </div>}
 
       {/* 2 · de cerca: una figura de ~9 m casi borrada */}
       <Escena T={T} a={K.O} b={K.E} zoom={0.06}>
-        <div style={{ position:'absolute', inset:0, background:'#cf9f68' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'#9a744a' }}></div>
         {svg(<>
           <SueloPiedras seed={8} n={620} />
+          {/* encuadre cine: llama, persona y barra de 9 m juntas, ×1.3 y centradas (la barra crece igual: 560 → 728 px) */}
+          <g transform="translate(575 900) scale(1.3) translate(-550 -737)">
           <LlamaRelieve x={470} y={740} s={2.0} o={klerp(0.18, 0.55, kprog(T, K.O + 1.0, K.O + 2.6))} contorno={kprog(T, K.O + 1.6, K.O + 2.4)} />
           <g opacity={kprog(T, K.O + 2.4, K.O + 2.9)}><Persona x={880} y={960} s={0.55} />
             <line x1={200} y1={1000} x2={760} y2={1000} stroke={KC.ink} strokeWidth={8} /><line x1={200} y1={980} x2={200} y2={1020} stroke={KC.ink} strokeWidth={8} /><line x1={760} y1={980} x2={760} y2={1020} stroke={KC.ink} strokeWidth={8} /></g>
+          </g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.O + 2.6} until={K.O + 4.5} texto="≈ 9 m · promedio de las figuras en relieve" x={500} y={1070} tam={30} borde={KC.ink} fondo={KC.paper} color={KC.ink} />
-      <Chip T={T} at={K.O + 1.7} until={K.O + 4.5} texto="contorno agregado como guía" x={330} y={400} tam={28} borde={KC.yellow} />
-      <Chip T={T} at={K.O + 4.6} until={K.E - 0.15} texto="figuras de línea: ≈ 90 m en promedio" x={420} y={420} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.O + 4.6} until={K.E - 0.15} texto="en relieve: ≈ 9 m en promedio" x={500} y={1070} tam={30} borde={KC.ink} fondo={KC.paper} color={KC.ink} />
+      <Chip T={T} at={K.O + 2.6} until={K.O + 4.5} texto="≈ 9 m · promedio de las figuras en relieve" x={540} y={1330} tam={30} borde={KC.ink} fondo={KC.paper} color={KC.ink} />
+      <Chip T={T} at={K.O + 1.7} until={K.O + 4.5} texto="contorno agregado como guía" x={540} y={440} tam={28} borde={KC.yellow} />
+      <Chip T={T} at={K.O + 4.6} until={K.E - 0.15} texto="figuras de línea: ≈ 90 m en promedio" x={540} y={440} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.O + 4.6} until={K.E - 0.15} texto="en relieve: ≈ 9 m en promedio" x={540} y={1330} tam={30} borde={KC.ink} fondo={KC.paper} color={KC.ink} />
 
       {/* 3 · la IA escanea la foto aérea en cuadritos */}
       <Escena T={T} a={K.E} b={K.F} zoom={0.03}>
-        <div style={{ position:'absolute', inset:0, background:'#d8ad74' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'#a07a4d' }}></div>
         {svg(<>
           <SueloPiedras seed={21} n={900} />
+          {/* encuadre cine: la cuadrícula del escáner, ×1.2 y bajada al centro (de y≈474 a y≈1386) */}
+          <g transform="translate(540 930) scale(1.2) translate(-540 -800)">
           {SENDEROS.map((d, i) => <path key={i} d={d} transform="translate(60 380) scale(1.6 1.2)" stroke="#f0d4a2" strokeWidth={6} fill="none" opacity=".8" />)}
           {Array.from({ length: 17 }, (_, i) => <line key={'v' + i} x1={i * 66} y1={420} x2={i * 66} y2={Math.min(yScan, 1180)} stroke={KC.ink} strokeOpacity=".35" strokeWidth={2} />)}
           {Array.from({ length: 13 }, (_, j) => 420 + j * 66 <= yScan && <line key={'h' + j} x1={0} y1={420 + j * 66} x2={KW} y2={420 + j * 66} stroke={KC.ink} strokeOpacity=".35" strokeWidth={2} />)}
@@ -188,72 +197,74 @@ function Nazca() {
           </g>)}
           <rect x={0} y={yScan - 6} width={KW} height={12} fill={cineMix(KC.cyan, CINE.fondo, 0.55)} opacity={barrido < 1 ? 0.85 : 0} />
           <Robotito x={900} y={960} s={0.42} T={T} cara="seguro" />
+          </g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.E + 0.4} until={K.F - 0.15} texto="fotos aéreas · 10 cm por píxel" x={380} y={380} tam={32} borde={KC.cyan} />
-      <Chip T={T} at={K.E + 2.0} until={K.F - 0.15} texto="cada cuadrito ≈ 11 × 11 m" x={420} y={1070} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.E + 0.4} until={K.F - 0.15} texto="fotos aéreas · 10 cm por píxel" x={540} y={410} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={K.E + 2.0} until={K.F - 0.15} texto="cada cuadrito ≈ 11 × 11 m" x={540} y={1452} tam={34} borde={KC.cyan} />
 
       {/* 4 · de cada 36 sugerencias, una prometía */}
       <Escena T={T} a={K.F} b={K.P}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>{Array.from({ length: 36 }, (_, i) => { const c = i % 6, rr = Math.floor(i / 6), x = 380 + c * 100, y = 500 + rr * 96, gana = i === 21;
+        {svg(<g transform="translate(540 880) scale(1.5) translate(-630 -740)">{Array.from({ length: 36 }, (_, i) => { const c = i % 6, rr = Math.floor(i / 6), x = 380 + c * 100, y = 500 + rr * 96, gana = i === 21;
           const idxT = gana ? -1 : (i < 21 ? i : i - 1), tach = idxT >= 0 && idxT < tachados;
           return <g key={i} transform={`translate(${x} ${y})`} opacity={kprog(T, K.F + 0.05 + i * 0.012, K.F + 0.3 + i * 0.012)}>
-            <rect x={-44} y={-44} width={88} height={88} rx={10} fill={gana && T > K.F + 3.3 ? KC.yellow : '#d8ad74'} stroke={KC.ink} strokeWidth={5} opacity={tach ? 0.45 : 1} />
+            <rect x={-44} y={-44} width={88} height={88} rx={10} fill={gana && T > K.F + 3.3 ? KC.yellow : '#a8824f'} stroke={KC.ink} strokeWidth={5} opacity={tach ? 0.45 : 1} />
             <rect x={-26} y={-26} width={52} height={52} fill="none" stroke={KC.cyan} strokeWidth={4} opacity={tach ? 0.3 : 1} />
             {tach && <path d="M -34 -34 L 34 34 M 34 -34 L -34 34" stroke={KC.red} strokeWidth={9} strokeLinecap="round" />}
             {gana && T > K.F + 3.3 && <text y={22} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>★</text>}
-          </g>; })}</>)}
+          </g>; })}</g>)}
       </Escena>
-      <NumeroGigante T={T} at={K.F + 3.3} until={K.P - 0.15} valor={1} desde={1} dur={0.1} prefijo="36 → " etiqueta="" x={640} y={1065} tam={96} color={KC.yellow} />
-      <Chip T={T} at={K.F + 0.4} until={K.P - 0.15} texto="47,410 recuadros revisados a ojo" x={640} y={400} tam={32} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.F + 3.3} until={K.P - 0.15} valor={1} desde={1} dur={0.1} prefijo="36 → " etiqueta="" x={540} y={1410} tam={96} color={KC.yellow} />
+      <Chip T={T} at={K.F + 0.4} until={K.P - 0.15} texto="47,410 recuadros revisados a ojo" x={540} y={360} tam={32} borde={KC.ink} />
 
       {/* 5 · re-gancho */}
       <Escena T={T} a={K.P} b={K.C} zoom={0.1}>
         <FondoLunares color={KC.yellow} />
         <MapaNazca T={T} negros={430} amarillos={0} o={0.35} />
-        {svg(<text x={280} y={1060} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.cyan} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 880)`}>?</text>)}
+        {svg(<text x={540} y={1160} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.cyan} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 960)`}>?</text>)}
       </Escena>
 
       {/* 6 · a pie */}
-      <Escena T={T} a={K.C} b={K.Es} zoom={0.04} origen="30% 50%">
+      <Escena T={T} a={K.C} b={K.Es} zoom={0.04} origen="50% 50%">
         <FondoLunares color={KC.mint} />
         <MapaNazca T={T} negros={430} amarillos={0}>
           <Huellas pts={CAMINO} p={pasos} />
           {CAMINO.filter((_, i) => i % 6 === 5 && i / 60 < pasos).map(([x, y], i) => <circle key={i} cx={x} cy={y} r={14} fill="none" stroke={KC.red} strokeWidth={6} />)}
         </MapaNazca>
-        {svg(<Dron x={MX + MS * (120 + 380 * pasos)} y={MY + MS * (520 - 420 * pasos)} s={0.7} T={T} />)}
+        {svg(<Dron x={MG.x + MG.s * (120 + 380 * pasos)} y={MG.y + MG.s * (520 - 420 * pasos)} s={0.95} T={T} />)}
       </Escena>
-      <div style={{ position:'absolute', left:830, top:760, zIndex:41, transform:'translate(-50%,-50%)', textAlign:'center', opacity:kprog(T, K.C + 0.3, K.C + 0.6) * (1 - kprog(T, K.Es - 0.2, K.Es + 0.2)) }}>
-        <div style={{ font:`400 140px/1 ${KF.titulo}`, color:KC.red, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>{kformato(Math.round(341 * pasos))}</div>
-        <div style={{ font:`900 34px/1.15 ${KF.texto}`, color:KC.ink }}>puntos<br />visitados<br />a pie</div>
+      <div style={{ position:'absolute', left:540, top:340, zIndex:41, transform:'translate(-50%,-50%)', display:'flex', alignItems:'center', gap:22, opacity:kprog(T, K.C + 0.3, K.C + 0.6) * (1 - kprog(T, K.Es - 0.2, K.Es + 0.2)) }}>
+        <div style={{ font:`400 140px/1 ${KF.titulo}`, color:KC.red, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}`, minWidth:230, textAlign:'right' }}>{kformato(Math.round(341 * pasos))}</div>
+        <div style={{ font:`900 34px/1.15 ${KF.texto}`, color:KC.ink, textAlign:'left' }}>puntos<br />visitados<br />a pie</div>
       </div>
-      <Chip T={T} at={K.C + 1.2} until={K.Es - 0.15} texto="sep 2022 – feb 2023" x={340} y={380} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.C + 1.2} until={K.Es - 0.15} texto="sep 2022 – feb 2023" x={540} y={1535} tam={30} borde={KC.ink} />
 
       {/* 7 · el estudio y el conteo nuevo */}
       <Escena T={T} a={K.Es} b={K.M}>
         <FondoLunares color={KC.cyan} />
       </Escena>
       {T > K.Es - 0.45 && T < K.M + 0.45 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.Es - 0.45, K.Es + 0.05) * (1 - kprog(T, K.M - 0.05, K.M + 0.45)) * (1 - 0.7 * kprog(T, K.Es + 3.0, K.Es + 3.3) * (1 - kprog(T, K.Es + 7.0, K.Es + 7.3))) }}>
+      <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transformOrigin:'0 0', transform:'translate(540px, 930px) scale(1.45) translate(-363px, -722px)' }}>
       <Columnas T={T} base={980} filas={[
         { at: K.Es + 0.2, x: 80, valor: 430, color: '#6b6258', etiqueta: 'hasta 2020' },
         { at: K.Es + 0.9, x: 280, valor: 733, color: KC.yellow, etiqueta: '2024 · +303' },
-        { at: K.Es + 7.4, x: 480, valor: 893, color: ROSA, etiqueta: '2025 · +160' }]} /></div>}
-      {T > K.Es && T < K.M + 0.4 && <div style={{ position:'absolute', left:80, top:370, zIndex:40, font:`900 34px ${KF.texto}`, color:KC.ink, opacity:kprog(T, K.Es + 0.2, K.Es + 0.6) * (1 - kprog(T, K.M - 0.1, K.M + 0.3)) }}>figuras conocidas en Nazca</div>}
-      <TarjetaEstudio T={T} at={K.Es + 3.0} until={K.Es + 7.1} anio="2024" quien="Univ. de Yamagata + IBM" revista="Sakai et al. · PNAS · con París 1 y DLR" x={420} y={760} />
-      <Chip T={T} at={K.Es + 7.6} until={K.M - 0.15} texto="anuncio de la Univ. de Yamagata · jul 2025" x={540} y={1080} tam={30} borde={ROSA} />
+        { at: K.Es + 7.4, x: 480, valor: 893, color: ROSA, etiqueta: '2025 · +160' }]} /></div></div>}
+      {T > K.Es && T < K.M + 0.4 && <div style={{ position:'absolute', left:0, width:KW, textAlign:'center', top:350, zIndex:40, font:`900 40px ${KF.texto}`, color:KC.ink, opacity:kprog(T, K.Es + 0.2, K.Es + 0.6) * (1 - kprog(T, K.M - 0.1, K.M + 0.3)) }}>figuras conocidas en Nazca</div>}
+      <TarjetaEstudio T={T} at={K.Es + 3.0} until={K.Es + 7.1} anio="2024" quien="Univ. de Yamagata + IBM" revista="Sakai et al. · PNAS · con París 1 y DLR" x={540} y={900} />
+      <Chip T={T} at={K.Es + 7.6} until={K.M - 0.15} texto="anuncio de la Univ. de Yamagata · jul 2025" x={540} y={1470} tam={30} borde={ROSA} />
 
       {/* 8 · el matiz: quién encontró qué */}
       <Escena T={T} a={K.M} b={K.Mo}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
       </Escena>
       {T > K.M - 0.45 && T < K.Mo + 0.45 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.M - 0.45, K.M + 0.05) * (1 - kprog(T, K.Mo - 0.05, K.Mo + 0.45)) }}>
-        <Pastel T={T} at={K.M + 0.3} cx={400} cy={690} r={230} partes={[{ v: 178, color: KC.yellow }, { v: 66, color: ROSA }, { v: 59, color: VERDE }]} />
+        <Pastel T={T} at={K.M + 0.3} cx={540} cy={820} r={330} partes={[{ v: 178, color: KC.yellow }, { v: 66, color: ROSA }, { v: 59, color: VERDE }]} />
       </div>}
       {T > K.M - 0.45 && T < K.Mo + 0.45 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.M - 0.45, K.M + 0.05) * (1 - kprog(T, K.Mo - 0.05, K.Mo + 0.45)) }}>
-        <Leyenda T={T} at={K.M + 0.5} y={965} color={KC.yellow} texto="178 · las señaló la IA" />
-        <Leyenda T={T} at={K.M + 2.6} y={1025} color={ROSA} texto="66 · en grupos junto a esas" />
-        <Leyenda T={T} at={K.M + 3.8} y={1085} color={VERDE} texto="59 · las hallaron personas sin la IA" />
+        <Leyenda T={T} at={K.M + 0.5} y={1235} color={KC.yellow} texto="178 · las señaló la IA" />
+        <Leyenda T={T} at={K.M + 2.6} y={1305} color={ROSA} texto="66 · en grupos junto a esas" />
+        <Leyenda T={T} at={K.M + 3.8} y={1375} color={VERDE} texto="59 · las hallaron personas sin la IA" />
       </div>}
 
       {/* 9 · qué dibujaban las chicas */}
@@ -261,15 +272,17 @@ function Nazca() {
         <FondoLunares color={KC.pink} />
       </Escena>
       {T > K.Mo - 0.45 && T < K.Ci + 0.45 && <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, K.Ci - 0.05, K.Ci + 0.45) }}>
-        <Chip T={T} at={K.Mo + 0.1} until={K.Ci - 0.15} texto="figuras en relieve (683)" x={340} y={375} tam={34} borde={KC.ink} />
+        <Chip T={T} at={K.Mo + 0.1} until={K.Ci - 0.15} texto="figuras en relieve (683)" x={540} y={370} tam={34} borde={KC.ink} />
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transformOrigin:'0 0', transform:'translate(540px, 910px) scale(1.45) translate(-355px, -748px)' }}>
         <Motivo T={T} at={K.Mo + 0.4} tachar={K.Mo + 1.6} x={200} y={590} titulo="animal salvaje" pct="6.9 %" icono={<IcAve />} chico />
         <Motivo T={T} at={K.Mo + 2.4} x={200} y={905} titulo="humanoides" pct="33.8 %" icono={<IcHumanoide />} />
         <Motivo T={T} at={K.Mo + 2.9} x={510} y={905} titulo="llamas" pct="14.9 %" icono={<LlamaRelieve x={10} y={20} s={0.45} />} />
         <Motivo T={T} at={K.Mo + 3.5} x={510} y={590} titulo="cabezas cortadas" pct="32.9 %" icono={<IcCabeza />} />
+        </div>
       </div>}
 
       {/* 10 · cierre: el mismo mapa, ya lleno; la IA señala, las huellas confirman */}
-      <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="30% 50%">
+      <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="50% 50%">
         <FondoLunares color={KC.orange} />
         <MapaNazca T={T} negros={430} amarillos={303} rosas={160 * kprog(T, K.Ci + 0.1, K.Ci + 1.2)}>
           <circle cx={430} cy={250} r={70} fill="rgba(0,210,255,.18)" stroke={KC.cyan} strokeWidth={9} opacity={kprog(T, K.Ci + 0.2, K.Ci + 0.6)} />
@@ -278,8 +291,8 @@ function Nazca() {
           <g opacity={kprog(T, K.Ci + 2.4, K.Ci + 2.8)}><LlamaRelieve x={430} y={260} s={0.42} o={1} /></g>
         </MapaNazca>
       </Escena>
-      <Chip T={T} at={K.Ci + 0.3} until={K.Ou} texto="la IA propone" x={820} y={820} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.Ci + 2.4} until={K.Ou} texto="caminar confirma ✔" x={810} y={920} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.Ci + 0.3} until={K.Ou} texto="la IA propone" x={320} y={360} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.Ci + 2.4} until={K.Ou} texto="caminar confirma ✔" x={750} y={360} tam={36} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.O - 0.1} texto="Casi 100 años: *430.* Con IA: *303 más en 6 meses.*" />

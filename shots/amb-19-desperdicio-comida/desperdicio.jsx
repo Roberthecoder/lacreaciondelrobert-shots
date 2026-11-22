@@ -133,6 +133,8 @@ function Dona({ x, y, r = 200, f = 0.09, f2 = 0.1 }) {
   </g>;
 }
 
+// Pase a mano cine: agranda un grupo k veces llevando el punto (cx, cy) a (tx, ty).
+const Zg = ({ k, cx, cy, tx = 540, ty = 960, children }) => <g transform={`translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
 // ---------- el shot ----------
 function DesperdicioShot() {
   const { T, CUES } = useComposition();
@@ -155,21 +157,21 @@ function DesperdicioShot() {
       {/* 1 · gancho: el refri del mundo; la quinta repisa cae al bote */}
       <Escena T={T} a={K.G} b={K.To}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Bote x={BX} y={BY} s={0.9} lleno={llenoG} tapa={kprog(T, K.G + 3.3, K.G + 3.7, kEase.sale) * (1 - kprog(T, K.G + 5.6, K.G + 6.0))} />
-          <Refri T={T} x={RX} y={RY} s={RS} abre={kprog(T, K.G + 0.05, K.G + 0.6, kEase.sale)} caida={caidaG} bx={BX} by={BY - 150} marca={kprog(T, K.G + 2.6, K.G + 3.2)} quedan={1} /></>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
+        {svg(<Zg k={1.25} cx={400} cy={800} tx={520} ty={900}><Bote x={BX} y={BY} s={0.9} lleno={llenoG} tapa={kprog(T, K.G + 3.3, K.G + 3.7, kEase.sale) * (1 - kprog(T, K.G + 5.6, K.G + 6.0))} />
+          <Refri T={T} x={RX} y={RY} s={RS} abre={kprog(T, K.G + 0.05, K.G + 0.6, kEase.sale)} caida={caidaG} bx={BX} by={BY - 150} marca={kprog(T, K.G + 2.6, K.G + 3.2)} quedan={1} /></Zg>)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1570} color={KC.ink} />
       </Escena>
       {/* 2 · 1,050 millones de toneladas (2022) */}
       <Escena T={T} a={K.To} b={K.Ca}>
         <FondoLunares color={KC.orange} />
-        {svg(<Montana T={T} k={kprog(T, K.To + 0.1, K.To + 1.6, kEase.sale)} y={1210} />)}
+        {svg(<Montana T={T} k={kprog(T, K.To + 0.1, K.To + 1.6, kEase.sale)} y={1300} />)}
       </Escena>
       {/* 3 · incluye cáscaras y huesos */}
       <Escena T={T} a={K.Ca} b={K.P}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<Montana T={T} k={1} y={1210} />)}
+        {svg(<Montana T={T} k={1} y={1300} />)}
       </Escena>
-      <Lupa T={T} at={K.Ca + 0.2} until={K.P - 0.25} x={360} y={640} r={210} fx={540} fy={1000} tinte={KC.yellow} etiqueta="AUMENTADO"
+      <Lupa T={T} at={K.Ca + 0.2} until={K.P - 0.25} x={350} y={700} r={240} fx={540} fy={1090} tinte={KC.yellow} etiqueta="AUMENTADO"
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#8a6a4a" />
           <Comida tipo="cascara" x={r * 0.62} y={r * 0.62} s={1.6} rot={-15} /><Comida tipo="hueso" x={r * 1.35} y={r * 0.7} s={1.4} rot={25} />
           <Comida tipo="huevo" x={r * 0.6} y={r * 1.35} s={1.4} rot={10} /><Comida tipo="pan" x={r * 1.4} y={r * 1.4} s={1.4} rot={-10} /><Comida tipo="manzana" x={r * 1.0} y={r * 1.05} s={1.2} /></svg>} />
@@ -177,88 +179,89 @@ function DesperdicioShot() {
       <Escena T={T} a={K.P} b={K.Cs} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         {svg(<>{['súper', 'restaurante', 'casa'].map((n, i) => { const e = kprog(T, K.P + 0.2 + i * 0.3, K.P + 0.6 + i * 0.3, kEase.rebote);
-            return <g key={n} transform={`translate(${220 + i * 320} ${430}) scale(${0.6 * e})`}><Bote x={0} y={0} s={1} /><text y={70} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>{n}</text></g>; })}
-          <text x={280} y={1150} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 980)`}>?</text></>)}
+            return <g key={n} transform={`translate(${200 + i * 340} ${800}) scale(${0.85 * e})`}><Bote x={0} y={0} s={1} /><text y={70} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.ink}>{n}</text></g>; })}
+          <text x={540} y={1360} textAnchor="middle" style={{ font:`400 420px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 1200)`}>?</text></>)}
       </Escena>
       {/* 5 · seis de cada diez kilos, en casa */}
       <Escena T={T} a={K.Cs} b={K.Ki}>
         <FondoLunares color={KC.mint} />
-        {svg(<>{Array.from({ length: 10 }, (_, i) => { const e = kilo(i); return <g key={i} transform={`translate(${135 + i * 90} 820) scale(${e})`}>
+        {svg(<g transform="translate(0 190)">{Array.from({ length: 10 }, (_, i) => { const e = kilo(i); return <g key={i} transform={`translate(${135 + i * 90} 820) scale(${e})`}>
             <rect x={-40} y={-90} width={80} height={130} rx={12} fill={colK(i)} stroke={KC.ink} strokeWidth={6} /><text y={-6} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>1 kg</text></g>; })}
           <g opacity={kprog(T, K.Cs + 1.4, K.Cs + 1.8)}>
             <path d="M 95 640 h 530" stroke={KC.ink} strokeWidth={6} /><path d="M 280 600 L 360 530 L 440 600 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" /><rect x={300} y={600} width={120} height={80} fill="#fff" stroke={KC.ink} strokeWidth={6} /><rect x={345} y={630} width={30} height={50} fill={KC.orange} stroke={KC.ink} strokeWidth={4} />
-          </g></>)}
+          </g></g>)}
       </Escena>
       {/* 6 · 79 kg por persona al año, en casa */}
       <Escena T={T} a={K.Ki} b={K.Mx}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>{Array.from({ length: 7 }, (_, i) => { const e = kprog(T, K.Ki + 0.3 + i * 0.25, K.Ki + 0.6 + i * 0.25, kEase.rebote);
+        {svg(<Zg k={1.2} cx={540} cy={950} ty={970}>{Array.from({ length: 7 }, (_, i) => { const e = kprog(T, K.Ki + 0.3 + i * 0.25, K.Ki + 0.6 + i * 0.25, kEase.rebote);
             const pos = [[400, 840], [520, 840], [640, 840], [460, 760], [580, 760], [520, 690], [700, 850]][i]; return <Bolsa key={i} x={pos[0]} y={pos[1] + (1 - e) * -200} s={1.0} rot={(i % 3 - 1) * 10} o={e} />; })}
-          <Bascula x={540} y={960} s={1} kg={79 * kprog(T, K.Ki + 0.3, K.Ki + 2.4, kEase.suave)} /></>)}
+          <Bascula x={540} y={960} s={1} kg={79 * kprog(T, K.Ki + 0.3, K.Ki + 2.4, kEase.suave)} /></Zg>)}
       </Escena>
       {/* 7 · México: 105 kg por persona, en casa (estimación) */}
       <Escena T={T} a={K.Mx} b={K.E}>
         <FondoLunares color={KC.cyan} />
-        {svg(<MapaMexico x={40} y={560} ancho={640} color="#ffe9a8" conCA={false}>
+        {svg(<MapaMexico x={90} y={600} ancho={900} color="#ffe9a8" conCA={false}>
           {(() => { const [px, py] = mxProy(-99.1, 19.4); const k = kprog(T, K.Mx + 0.3, K.Mx + 1.0, kEase.rebote); return <g transform={`translate(${px} ${py}) scale(${k * 1.4})`}><Bolsa x={0} y={-40} s={1} /></g>; })()}
         </MapaMexico>)}
-        <EscalaFija texto="mapa esquemático" largo={0} y={1480} color={KC.ink} />
+        <EscalaFija texto="mapa esquemático" largo={0} y={1560} color={KC.ink} />
       </Escena>
       {/* 8 · el estudio: PNUMA 2024, hogares de 93 países */}
       <Escena T={T} a={K.E} b={K.Ri}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<Globo T={T} x={620} y={520} r={190} p={kprog(T, K.E + 3.0, K.E + 5.6)} />)}
+        {svg(<Globo T={T} x={540} y={940} r={330} p={kprog(T, K.E + 3.0, K.E + 5.6)} />)}
       </Escena>
       {/* 9 · no es cosa de países ricos: 81 · 88 · 86 kg */}
       <Escena T={T} a={K.Ri} b={K.Ga}>
         <FondoLunares color={KC.orange} />
-        {svg(<>{barras.map(([n, v], i) => { const h = 4.2 * v * kprog(T, K.Ri + 2.4 + i * 0.25, K.Ri + 3.3 + i * 0.25, kEase.sale);
-            return <g key={n}><rect x={110 + i * 200} y={1080 - h} width={150} height={h} rx={12} fill={[KC.cyan, KC.mint, KC.yellow][i]} stroke={KC.ink} strokeWidth={7} />
-              {h > 40 && <text x={185 + i * 200} y={1060 - h} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{v}</text>}
-              <text x={185 + i * 200} y={1122} textAnchor="middle" style={{ font:`900 27px ${KF.texto}` }} fill={KC.ink}>{n}</text></g>; })}</>)}
+        {svg(<>{barras.map(([n, v], i) => { const q = kprog(T, K.Ri + 0.2 + i * 0.25, K.Ri + 1.4 + i * 0.25, kEase.sale), h = 5.4 * v * q;
+            return <g key={n}><rect x={140 + i * 280} y={1280 - h} width={240} height={h} rx={14} fill={[KC.cyan, KC.mint, KC.yellow][i]} stroke={KC.ink} strokeWidth={7} />
+              {h > 90 && <text x={260 + i * 280} y={1280 - h + 84} textAnchor="middle" style={{ font:`400 72px ${KF.titulo}` }} fill="#0b1020">{v}</text>}
+              <Bolsa x={260 + i * 280} y={1280 - h - 72} s={1.2} rot={(i - 1) * 8} o={q} />
+              <text x={260 + i * 280} y={1330} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>{n}</text></g>; })}</>)}
       </Escena>
       {/* 10 · gases: 8–10 % (2010–2016) */}
       <Escena T={T} a={K.Ga} b={K.C}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><Dona x={640} y={800} r={190} f={0.08 * g9} f2={0.10 * g9} />
-          <text x={640} y={830} textAnchor="middle" style={{ font:`400 96px ${KF.titulo}` }} fill={KC.ink} opacity={g9}>8–10 %</text>
-          {Array.from({ length: 5 }, (_, i) => { const u = ((T - K.Ga) * 0.35 + i / 5) % 1; return <Nube key={i} x={230 + Math.sin(i * 2 + T) * 30} y={1000 - u * 260} s={0.6 + u * 0.5} o={(1 - u) * kprog(T, K.Ga + 0.2, K.Ga + 0.6)} />; })}
-          <Bote x={230} y={1170} s={0.85} lleno={1} /></>)}
+        {svg(<><Dona x={650} y={840} r={235} f={0.08 * g9} f2={0.10 * g9} />
+          <text x={650} y={878} textAnchor="middle" style={{ font:`400 112px ${KF.titulo}` }} fill={KC.ink} opacity={g9}>8–10 %</text>
+          {Array.from({ length: 5 }, (_, i) => { const u = ((T - K.Ga) * 0.35 + i / 5) % 1; return <Nube key={i} x={200 + Math.sin(i * 2 + T) * 30} y={1040 - u * 300} s={0.7 + u * 0.6} o={(1 - u) * kprog(T, K.Ga + 0.2, K.Ga + 0.6)} />; })}
+          <Bote x={200} y={1240} s={1.05} lleno={1} /></>)}
       </Escena>
       {/* 11 · cierre: regreso al refri, la quinta repisa vacía y marcada */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Bote x={BX} y={BY} s={0.9} lleno={1} />
-          <Refri T={T} x={RX} y={RY} s={RS} abre={abreC} caida={() => 1} bx={BX} by={BY - 150} marca={kprog(T, K.C + 0.4, K.C + 1.0)} quedan={1} /></>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
+        {svg(<Zg k={1.25} cx={400} cy={800} tx={520} ty={900}><Bote x={BX} y={BY} s={0.9} lleno={1} />
+          <Refri T={T} x={RX} y={RY} s={RS} abre={abreC} caida={() => 1} bx={BX} by={BY - 150} marca={kprog(T, K.C + 0.4, K.C + 1.0)} quedan={1} /></Zg>)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1570} color={KC.ink} />
       </Escena>
 
       {/* datos y etiquetas */}
       <Chip T={T} at={K.G + 0.4} until={K.To - 0.2} texto="tiendas · restaurantes · casas" y={340} x={310} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.G + 3.0} until={K.To - 0.2} texto="≈ 1 de cada 5 partes (19 %)" y={1440} x={540} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.G + 3.0} until={K.To - 0.2} texto="≈ 1 de cada 5 partes (19 %)" y={1480} x={540} tam={40} borde={KC.red} />
       <NumeroGigante T={T} at={K.To + 0.3} until={K.Ca - 0.2} valor={1050} dur={1.3} etiqueta="millones de toneladas" x={340} y={500} tam={170} color={KC.yellow} />
       <Chip T={T} at={K.To + 0.8} until={K.Ca - 0.2} texto="comida tirada en 2022" y={1440} x={540} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.Ca + 1.0} until={K.P - 0.25} x={600} y={520} texto="cáscaras" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 1.3} until={K.P - 0.25} x={600} y={600} texto="huesos" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 1.6} until={K.P - 0.25} x={600} y={680} texto="+ comida buena" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 1.0} until={K.P - 0.25} x={630} y={590} texto="cáscaras" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 1.3} until={K.P - 0.25} x={630} y={670} texto="huesos" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 1.6} until={K.P - 0.25} x={630} y={750} texto="+ comida buena" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ca + 0.6} until={K.P - 0.25} texto="se cuentan partes no comestibles" y={1440} x={540} tam={32} borde={KC.yellow} />
-      <Etq T={T} at={K.Cs + 2.0} until={K.Ki - 0.2} x={385} y={960} texto="casa 60 %" lado="izq" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Cs + 2.3} until={K.Ki - 0.2} x={630} y={1010} texto="restaurantes 28 %" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Cs + 2.6} until={K.Ki - 0.2} x={945} y={1060} texto="súper 12 %" lado="izq" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Cs + 0.3} until={K.Ki - 0.2} texto="de cada 10 kilos tirados" y={420} x={540} tam={34} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Ki + 0.3} until={K.Mx - 0.2} valor={79} dur={2.1} sufijo=" kg" etiqueta="por persona al año" x={540} y={470} tam={150} color={KC.orange} />
+      <Etq T={T} at={K.Cs + 2.0} until={K.Ki - 0.2} x={385} y={1150} texto="casa 60 %" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Cs + 2.3} until={K.Ki - 0.2} x={630} y={1200} texto="restaurantes 28 %" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Cs + 2.6} until={K.Ki - 0.2} x={945} y={1250} texto="súper 12 %" lado="izq" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Cs + 0.3} until={K.Ki - 0.2} texto="de cada 10 kilos tirados" y={600} x={540} tam={34} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Ki + 0.3} until={K.Mx - 0.2} valor={79} dur={2.1} sufijo=" kg" etiqueta="por persona al año" x={540} y={400} tam={150} color={KC.orange} />
       <Chip T={T} at={K.Ki + 1.2} until={K.Mx - 0.2} texto="en casa · promedio mundial · 2022" y={1440} x={540} tam={34} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Mx + 0.6} until={K.E - 0.2} valor={105} desde={79} dur={1.4} sufijo=" kg" etiqueta="México, por persona al año" x={540} y={1000} tam={150} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Mx + 0.6} until={K.E - 0.2} valor={105} desde={79} dur={1.4} sufijo=" kg" etiqueta="México, por persona al año" x={600} y={1250} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.Mx + 1.4} until={K.E - 0.2} texto="en casa · estimación · confianza media" y={1440} x={540} tam={32} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.4} until={K.Ri - 0.2} anio="2024" quien="Programa de la ONU para el Medio Ambiente" revista="Food Waste Index Report 2024 · Nairobi" x={540} y={940} />
+      <TarjetaEstudio T={T} at={K.E + 0.4} until={K.Ri - 0.2} anio="2024" quien="Programa de la ONU para el Medio Ambiente" revista="Food Waste Index Report 2024 · Nairobi" x={540} y={400} />
       <Chip T={T} at={K.E + 3.0} until={K.Ri - 0.2} texto="datos de hogares de 93 países" y={1440} x={540} tam={34} borde={KC.ink} />
       <MitoTachado T={T} at={K.Ri + 0.2} tacharEn={K.Ri + 1.4} until={K.Ga - 0.2} texto="«solo pasa en países ricos»" x={330} y={470} tam={38} />
       <Chip T={T} at={K.Ri + 3.4} until={K.Ga - 0.2} texto="kg por persona al año, en casa" y={1440} x={540} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Ri + 4.0} until={K.Ga - 0.2} x={760} y={760} texto="± 7 kg" tam={44} color={KC.ink} />
-      <Chip T={T} at={K.Ga + 0.6} until={K.C - 0.2} texto="2010–2016" y={500} x={640} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Ga + 2.0} until={K.C - 0.2} texto="de los gases de efecto invernadero del mundo" y={1045} x={650} tam={24} borde={KC.ink} />
+      <Etq T={T} at={K.Ri + 4.0} until={K.Ga - 0.2} x={700} y={600} texto="± 7 kg" tam={44} color={KC.ink} />
+      <Chip T={T} at={K.Ga + 0.6} until={K.C - 0.2} texto="2010–2016" y={490} x={650} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Ga + 2.0} until={K.C - 0.2} texto="de los gases de efecto invernadero del mundo" y={1150} x={600} tam={24} borde={KC.ink} />
       <Chip T={T} at={K.Ga + 2.6} until={K.C - 0.2} texto="comida perdida + tirada" y={1440} x={540} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.C + 0.8} until={K.Ou - 0.1} x={525} y={955} texto="60 % se tira en casas" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.C + 0.8} until={K.Ou - 0.1} x={560} y={1095} texto="60 % se tira en casas" tam={27} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.To - 0.1} texto="Casi *1 de cada 5* partes, a la basura." />

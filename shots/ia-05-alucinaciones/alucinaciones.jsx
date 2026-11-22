@@ -72,19 +72,20 @@ function Alucinaciones() {
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
   const traga = kprog(T, K.Ch + 0.6, K.Ch + 1.6, kEase.suave);
   // modo cine: los dos que se comparan (la persona y la IA) están en pantalla junto a las barras; sin ellos la escena era lámina
-  const duelo = (o) => <g opacity={o}>
+  // encuadre: `dy` baja el conjunto (en el gancho, junto con el chip y las barras) para que quede centrado en el cuadro
+  const duelo = (o, dy = 0) => <g opacity={o}>
     {/* segunda vuelta: la persona y la IA van grandes, llenando el ancho del cuadro, con las barras debajo */}
-    <g transform="translate(300 640) scale(4.3)"><Hablante T={T} x={0} y={0} at={1e9} texto="" color={AZUL} /></g>
-    <Robotito x={790} y={640} s={1.25} T={T} cara="feliz" color={KC.orange} />
+    <g transform={`translate(300 ${640 + dy}) scale(4.3)`}><Hablante T={T} x={0} y={0} at={1e9} texto="" color={AZUL} /></g>
+    <Robotito x={790} y={640 + dy} s={1.25} T={T} cara="feliz" color={KC.orange} />
   </g>;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: tú contra la IA (las barras suben desde el cuadro 0) */}
       <Escena T={T} a={K.G} b={K.Ex}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>{duelo(kprog(T, K.G, K.G + 0.3))}
+        {svg(<>{duelo(kprog(T, K.G, K.G + 0.3), 130)}
           {/* antes del segundo 3 ya asoma el examen (hacia dónde va la historia), chico y atenuado */}
-          <g opacity={0.4 * kprog(T, K.G + 1.4, K.G + 2.4)} transform="translate(540 1500) scale(0.5)"><Examen T={T} a={K.G + 1.6} x={0} y={0} /></g></>)}
+          <g opacity={0.4 * kprog(T, K.G + 1.4, K.G + 2.4)} transform="translate(540 1470) scale(0.33)"><Examen T={T} a={K.G + 1.6} x={0} y={0} /></g></>)}
       </Escena>
       {/* 2 · el examen */}
       <Escena T={T} a={K.Ex} b={K.Te}>
@@ -105,17 +106,21 @@ function Alucinaciones() {
       <Escena T={T} a={K.Ch} b={K.P}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <Torso x={390} y={1045} s={1.4} />
-          {traga < 1 && <Chicle x={klerp(860, 491, traga)} y={klerp(680, 799, traga)} s={klerp(1.5, 0.56, traga)} />}
+          {/* encuadre: el torso sube y se ajusta (antes llegaba a y≈1770, todo cargado abajo); boca y vientre se recalculan */}
+          <Torso x={390} y={890} s={1.2} />
+          {traga < 1 && <Chicle x={klerp(860, 476, traga)} y={klerp(560, 679, traga)} s={klerp(1.5, 0.48, traga)} />}
         </>)}
       </Escena>
-      <Lupa T={T} at={K.M + 2.6} until={K.P - 0.3} x={810} y={1040} r={220} fx={446} fy={1269} tinte={KC.mint} etiqueta="POR DENTRO · intestino"
+      <Lupa T={T} at={K.M + 2.6} until={K.P - 0.3} x={810} y={960} r={220} fx={438} fy={1082} tinte={KC.mint} etiqueta="POR DENTRO · intestino"
         interior={(t, r) => { const u = kprog(t, K.M + 2.8, K.P - 0.4); const pts = [[40, 60], [340, 60], [340, 160], [60, 160], [60, 260], [340, 260], [340, 360]];
           const seg = u * (pts.length - 1), i = Math.min(pts.length - 2, Math.floor(seg)), f = seg - i, cx = klerp(pts[i][0], pts[i + 1][0], f), cy = klerp(pts[i][1], pts[i + 1][1], f);
           return <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#5a1a2e" /><polyline points={pts.map((p) => p.join(',')).join(' ')} fill="none" stroke="#e07a8f" strokeWidth={50} strokeLinejoin="round" strokeLinecap="round" /><Chicle x={cx} y={cy} s={0.35} /></svg>; }} />
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.I} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
+        {/* encuadre: el torso de la escena anterior sigue a cuadro, a media luz, y la pregunta encima */}
+        <div style={{ position:'absolute', inset:0, background:'rgba(10,15,28,.85)' }}></div>
+        {svg(<g opacity={0.55}><Torso x={390} y={890} s={1.2} /></g>)}
         {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
       </Escena>
       {/* 7 · imita a los humanos */}
@@ -155,18 +160,18 @@ function Alucinaciones() {
       {/* 12 · cierre: regresa la comparación del inicio */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
-        {svg(duelo(kprog(T, K.C + 0.1, K.C + 0.6)))}
+        {svg(duelo(kprog(T, K.C + 0.1, K.C + 0.6), 130))}{/* encuadre: baja igual que en el gancho */}
       </Escena>
 
       {/* datos */}
-      <BarrasH T={T} top={890} at={K.G + 0.05} until={K.Ex - 0.2} filas={[{ valor: 94, etiqueta: 'una persona', color: AZUL }, { valor: 58, etiqueta: 'la mejor IA probada (2021)', color: KC.orange }]} />
-      <BarrasH T={T} top={890} at={K.C + 0.3} until={K.Ou} filas={[{ valor: 94, etiqueta: 'una persona', color: AZUL }, { valor: 58, etiqueta: 'la mejor IA probada (2021)', color: KC.orange }]} />
-      <Chip T={T} at={K.G + 0.3} until={K.Ex - 0.2} texto="dijeron la verdad" x={540} y={280} tam={42} borde={KC.ink} />
+      <BarrasH T={T} top={1020} at={K.G + 0.05} until={K.Ex - 0.2} filas={[{ valor: 94, etiqueta: 'una persona', color: AZUL }, { valor: 58, etiqueta: 'la mejor IA probada (2021)', color: KC.orange }]} />
+      <BarrasH T={T} top={1020} at={K.C + 0.3} until={K.Ou} filas={[{ valor: 94, etiqueta: 'una persona', color: AZUL }, { valor: 58, etiqueta: 'la mejor IA probada (2021)', color: KC.orange }]} />
+      <Chip T={T} at={K.G + 0.3} until={K.Ex - 0.2} texto="dijeron la verdad" x={540} y={410} tam={42} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Ex + 0.4} until={K.Te - 0.2} valor={817} dur={1.4} etiqueta="preguntas tramposas" y={410} tam={120} color={KC.texto} />
       <NumeroGigante T={T} at={K.Te + 2.2} until={K.Ch - 0.2} valor={38} dur={0.8} etiqueta="temas" y={873} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.Ch + 0.2} until={K.M - 0.2} texto="¿qué pasa si te tragas un chicle?" x={610} y={430} tam={34} borde={KC.pink} />
-      <MitoTachado T={T} at={K.M + 0.2} tacharEn={K.M + 2.0} until={K.P - 0.3} texto="«tarda 7 años en digerirse»" x={610} y={430} tam={36} />
-      <Chip T={T} at={K.M + 2.4} until={K.P - 0.3} texto="pasa por tu sistema digestivo" y={560} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={K.Ch + 0.2} until={K.M - 0.2} texto="¿qué pasa si te tragas un chicle?" x={610} y={400} tam={34} borde={KC.pink} />
+      <MitoTachado T={T} at={K.M + 0.2} tacharEn={K.M + 2.0} until={K.P - 0.3} texto="«tarda 7 años en digerirse»" x={610} y={400} tam={36} />
+      <Chip T={T} at={K.M + 2.4} until={K.P - 0.3} texto="pasa por tu sistema digestivo" y={480} tam={38} borde={KC.leaf} />
       <Chip T={T} at={K.I + 2.6} until={K.E - 0.2} texto="según los autores: imitó texto humano" y={340} tam={38} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.R - 0.3} anio="2021" quien="Oxford · OpenAI" revista="Lin, Hilton y Evans · TruthfulQA" y={390} />
       <Chip T={T} at={K.R + 1.0} until={K.Ci - 0.2} texto="más grande ≠ más veraz" y={520} tam={44} borde={KC.red} />

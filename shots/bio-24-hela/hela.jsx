@@ -210,11 +210,15 @@ function Hela() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, H: CUES.Henrietta, B: CUES.Biopsia, Ge: CUES.Gey, L: CUES.Limite, V: CUES.Virus, F: CUES.Frenos, A: CUES.Apagar, P: CUES.Polio, N: CUES.Nobel, Ac: CUES.Acuerdo, D: CUES.Demanda, C: CUES.Cierre, O: CUES.Outro };
   const FIN = K.O + 4;
+  // encuadre cine: el frasco del gancho (y del cierre) agrandado 1.3× y centrado
+  const GRANDE = 'translate(540 960) scale(1.3) translate(-525 -880)';
   const pregunta = K.L + 3.0;
   const cultivo = (t0) => 0.4 + 0.6 * kprog(T, t0, t0 + 4);
   // duplicaciones del cultivo en la escena de Gey: 1 → 2 → 4 → 8 → 16 → 32
   const dupl = Math.min(5, Math.floor(kprog(T, K.Ge + 0.4, K.Ge + 3.4) * 5.999));
-  const RG = krng(31), posG = Array.from({ length: 32 }, (_, i) => [180 + (i % 8) * 102 + RG() * 22, 720 + Math.floor(i / 8) * 110 + RG() * 20]);
+  const RG = krng(31), posG = Array.from({ length: 32 }, (_, i) => [540 + ((i % 8) - 3.5) * 118 + (RG() - 0.5) * 20, 960 + (Math.floor(i / 8) - 1.5) * 135 + (RG() - 0.5) * 18])
+    .map((p) => [p, Math.hypot(p[0] - 540, (p[1] - 960) * 1.4)]).sort((a, b) => a[1] - b[1]).map((q) => q[0]);
+  const zGey = klerp(2.3, 1, kprog(T, K.Ge + 0.3, K.Ge + 3.8, kEase.suave));
   const apaga = kprog(T, K.A + 0.6, K.A + 1.0, kEase.sale);
   const tubos = Math.floor(kprog(T, K.P + 1.2, K.P + 5.2) * 48);
   return (
@@ -223,69 +227,77 @@ function Hela() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <g transform={GRANDE}>
           <FrascoCultivo T={T} x={470} y={1000} s={1.15} celulas={cultivo(K.G)} gota={Math.abs(Math.sin(T * 5)) * kprog(T, 0, 3)} />
           <Pipeta x={300} y={975} s={0.8} o={1 - kprog(T, K.G + 3.4, K.G + 3.9)} />
           <Goteo T={T} x={300} y0={995} y1={1048} cada={0.45} color={MEDIO} desde={K.G} hasta={K.G + 3.4} r={11} />
+          </g>
+          {T > K.G + 2.0 && <g opacity={0.9 * kprog(T, K.G + 2.0, K.G + 2.6)}><Retrato x={820} y={470} s={0.3 * (0.8 + 0.2 * kprog(T, K.G + 2.0, K.G + 2.6, kEase.rebote))} T={T} /></g>}
         </SvgCapa>
       </Escena>
       {/* 1 · Henrietta */}
       <Escena T={T} a={K.H} b={K.B} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Retrato x={540} y={720} s={0.86} T={T} />
+          <Retrato x={540} y={800} s={1.2} T={T} />
           {(() => { const he = kprog(T, K.H + 1.2, K.H + 1.6), eq = kprog(T, K.H + 2.0, K.H + 2.4);
-            return <g transform="translate(540 1100)" style={{ font:`400 76px ${KF.titulo}` }}>
+            return <g transform="translate(540 1300)" style={{ font:`400 80px ${KF.titulo}` }}>
               <text x={-24} textAnchor="end" fill={KC.ink}><tspan fill={he ? '#b67c12' : KC.ink}>He</tspan>nrietta</text>
               <text x={0} textAnchor="start" fill={KC.ink}><tspan fill={he ? '#b67c12' : KC.ink}>La</tspan>cks</text>
             </g>; })()}
         </SvgCapa>
-        <Chip T={T} at={K.H + 2.0} until={K.B - 0.2} texto="He + La = HeLa" x={540} y={420} tam={50} borde={KC.gold} />
+        <Chip T={T} at={K.H + 2.0} until={K.B - 0.2} texto="He + La = HeLa" x={540} y={350} tam={50} borde={KC.gold} />
       </Escena>
       {/* 2 · la biopsia en el hospital */}
       <Escena T={T} a={K.B} b={K.Ge} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
+          <g transform="translate(540 910) scale(1.25) translate(-540 -820)">
           <Hospital x={540} y={720} s={0.92} />
           <TuboMuestra x={300} y={1080} s={0.9} rot={-8 + Math.sin(T * 2) * 3} />
           <HojaPermiso x={740} y={1060} s={0.78} tache={kprog(T, K.B + 2.4, K.B + 2.8, kEase.sale)} />
+          </g>
         </SvgCapa>
       </Escena>
       {/* 3 · Gey: el cultivo que no para */}
       <Escena T={T} a={K.Ge} b={K.L} zoom={0.05}>
         <FondoMarca patron="oscuro" />
         <SvgCapa>
-          {posG.slice(0, Math.pow(2, dupl)).map(([x, y], i) => { const nueva = i >= Math.pow(2, dupl - 1), t0 = K.Ge + 0.4 + (dupl / 5.999) * 3.0, e = nueva ? kprog(T, t0, t0 + 0.35, kEase.sale) : 1;
-            return <CelulaHeLa key={i} T={T} x={x} y={y} r={46 * e + 4} seed={i + 3} />; })}
+          {(() => { const vis = posG.slice(0, Math.pow(2, dupl)).map(([x, y], i) => { const nueva = dupl > 0 && i >= Math.pow(2, dupl - 1), t0 = K.Ge + 0.4 + (dupl / 5.999) * 3.0; return [x, y, nueva ? kprog(T, t0, t0 + 0.35, kEase.sale) : 1]; });
+            const sw = vis.reduce((a, v) => a + v[2], 0), cx = vis.reduce((a, v) => a + v[0] * v[2], 0) / sw, cy = vis.reduce((a, v) => a + v[1] * v[2], 0) / sw;
+            const ox = klerp(cx, 540, 1 - (zGey - 1) / 1.3), oy = klerp(cy, 960, 1 - (zGey - 1) / 1.3);
+            return <g transform={`translate(540 980) scale(${zGey}) translate(${-ox} ${-oy})`}>{vis.map(([x, y, e], i) => <CelulaHeLa key={i} T={T} x={x} y={y} r={52 * e + 4} seed={i + 3} borde={5 / zGey + 1.5} />)}</g>; })()}
         </SvgCapa>
-        <div style={{ position:'absolute', left:330, top:600, transform:'translate(-50%,-50%)', zIndex:41, font:`700 64px ${KF.mono}`, color:KC.gold2, textShadow:KSOMBRA, whiteSpace:'nowrap' }}>{Math.pow(2, dupl)} {dupl ? 'células' : 'célula'}</div>
+        <div style={{ position:'absolute', left:540, top:600, transform:'translate(-50%,-50%)', zIndex:41, font:`700 72px ${KF.mono}`, color:KC.gold2, textShadow:KSOMBRA, whiteSpace:'nowrap' }}>{Math.pow(2, dupl)} {dupl ? 'células' : 'célula'}</div>
       </Escena>
       {/* 4 · el límite de ~50 divisiones y el re-gancho */}
       <Escena T={T} a={K.L} b={K.V} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         <SvgCapa>
           {T < pregunta + 0.4 && <g opacity={1 - kprog(T, pregunta, pregunta + 0.4)}>
-            <CelulaHeLa T={T} x={290} y={800} r={120} seed={5} gris={kprog(T, K.L + 1.6, K.L + 2.2)} />
-            <CelulaHeLa T={T} x={790} y={800} r={120} seed={8} />
-            <text x={290} y={600} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto}>célula humana</text>
-            <text x={290} y={644} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto}>normal</text>
-            <text x={790} y={644} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.pink}>HeLa</text>
-            {T > K.L + 2.2 && <text x={290} y={985} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill="#9aa0ad">se detiene</text>}
-            {T > K.L + 2.2 && <text x={790} y={985} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.pink}>no se detiene</text>}
+            <CelulaHeLa T={T} x={290} y={950} r={170} seed={5} gris={kprog(T, K.L + 1.6, K.L + 2.2)} />
+            <text x={290} y={680} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.texto}>célula humana</text>
+            <text x={290} y={728} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.texto}>normal</text>
+            <text x={790} y={728} textAnchor="middle" style={{ font:`400 66px ${KF.titulo}` }} fill={KC.pink}>HeLa</text>
+            {T > K.L + 2.2 && <text x={290} y={1200} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill="#9aa0ad">se detiene</text>}
+            {T > K.L + 2.2 && <text x={790} y={1200} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.pink}>no se detiene</text>}
           </g>}
-          {T > pregunta && <text x={300} y={1080} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} opacity={kprog(T, pregunta, pregunta + 0.3)} transform={`rotate(${Math.sin(T * 3) * 6} 300 860)`}>?</text>}
+          {(() => { const m = kprog(T, pregunta, pregunta + 0.6, kEase.suave);
+            return <CelulaHeLa T={T} x={klerp(790, 500, m)} y={klerp(950, 1000, m)} r={klerp(170, 270, m)} seed={8} />; })()}
+          {T > pregunta && <text x={830} y={900} textAnchor="middle" style={{ font:`400 420px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} opacity={kprog(T, pregunta, pregunta + 0.3)} transform={`rotate(${8 + Math.sin(T * 3) * 6} 830 760)`}>?</text>}
         </SvgCapa>
-        {T < pregunta + 0.4 && <Contador T={T} at={K.L + 0.2} desde={0} hasta={50} dur={1.4} x={290} y={1070} tam={56} sufijo=" divisiones" color={KC.texto} />}
+        {T < pregunta + 0.4 && <Contador T={T} at={K.L + 0.2} desde={0} hasta={50} dur={1.4} x={290} y={1290} tam={56} sufijo=" divisiones" color={KC.texto} />}
       </Escena>
       {/* 5 · por dentro: el VPH 18 en el cromosoma 8 */}
       <Escena T={T} a={K.V} b={K.F} zoom={0.03}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa><FrascoCultivo T={T} x={470} y={1000} s={1.15} celulas={1} /></SvgCapa>
-        <Lupa T={T} at={K.V + 0.1} until={K.F - 0.1} x={540} y={760} r={310} fx={420} fy={1110} tinte={KC.pink} etiqueta="AL MICROSCOPIO · CÉLULA HeLa" interior={(t, r) => InteriorHeLa(t, r, K.V)} />
+        <SvgCapa><g transform={GRANDE}><FrascoCultivo T={T} x={470} y={1000} s={1.15} celulas={1} /></g></SvgCapa>
+        <Lupa T={T} at={K.V + 0.1} until={K.F - 0.1} x={540} y={830} r={390} fx={403} fy={1259} tinte={KC.pink} etiqueta="AL MICROSCOPIO · CÉLULA HeLa" interior={(t, r) => InteriorHeLa(t, r, K.V)} />
       </Escena>
       {/* 6–7 · los frenos, la telomerasa y el interruptor */}
       <Escena T={T} a={K.F} b={K.P} zoom={0.04}>
         <FondoMarca patron="oscuro" />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 960) scale(1.25) translate(-560 -900)">
           <Cromosoma x={380} y={900} s={1.25} rot={-6 + Math.sin(T) * 2} vph={1} gris={apaga * 0.8} telo={kprog(T, K.F + 2.2, K.F + 2.6) * (1 - apaga)} T={T} />
           {(() => { const sale = kprog(T, K.F + 0.3, K.F + 1.0, kEase.sale), empuja = kprog(T, K.F + 1.0, K.F + 1.8, kEase.sale), vuelve = apaga;
             const px = (x0, x1) => klerp(x0, x1, sale);
@@ -297,9 +309,9 @@ function Hela() {
             </g>; })()}
           {T > K.F + 2.2 && T < K.A + 0.6 && <Telomerasa x={380 - 70 * 1.25 - 20} y={900 - 0.55 * 230 * 1.25 - 40} s={1} T={T} />}
           {T > K.A - 0.1 && <Interruptor x={560} y={1040} s={0.9} on={1 - apaga} />}
-        </SvgCapa>
-        <Etiqueta T={T} at={K.F + 0.2} until={K.A - 0.2} x={490} y={1110} texto="ADN del VPH 18" color={VPH} tam={32} />
-        <Etiqueta T={T} at={K.F + 2.4} until={K.A + 0.4} x={250} y={560} texto="telomerasa" color={KC.lilac} tam={32} />
+        </g></SvgCapa>
+        <Etiqueta T={T} at={K.F + 0.2} until={K.A - 0.2} x={452} y={1222} texto="ADN del VPH 18" color={VPH} tam={34} />
+        <Etiqueta T={T} at={K.F + 2.4} until={K.A + 0.4} x={152} y={610} texto="telomerasa" color={KC.lilac} tam={34} />
       </Escena>
       {/* 8 · Tuskegee y la vacuna contra la polio */}
       <Escena T={T} a={K.P} b={K.N} zoom={0.04}>
@@ -315,8 +327,8 @@ function Hela() {
       <Escena T={T} a={K.N} b={K.Ac} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          {T > K.N + 2.6 && <Medalla x={540} y={960} s={1.25 * kprog(T, K.N + 2.6, K.N + 3.1, kEase.rebote)} T={T} />}
-          {T < K.N + 2.8 && <g opacity={1 - kprog(T, K.N + 2.4, K.N + 2.8)}><FrascoCultivo T={T} x={520} y={1080} s={0.9} celulas={1} etiqueta="HeLa" etiqueta2="VPH 18 ✓" /></g>}
+          {T > K.N + 2.6 && <Medalla x={540} y={1000} s={1.7 * kprog(T, K.N + 2.6, K.N + 3.1, kEase.rebote)} T={T} />}
+          {T < K.N + 2.8 && <g opacity={1 - kprog(T, K.N + 2.4, K.N + 2.8)}><FrascoCultivo T={T} x={500} y={1060} s={1.3} celulas={1} etiqueta="HeLa" etiqueta2="VPH 18 ✓" /></g>}
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.N + 0.2} until={K.N + 2.5} anio="1984" quien="equipo de Harald zur Hausen" revista="EMBO J · VPH 18 en células HeLa" x={540} y={620} />
         <Chip T={T} at={K.N + 3.0} until={K.Ac - 0.2} texto="el VPH causa cáncer cervicouterino" x={540} y={1500} tam={38} borde={KC.gold} />
@@ -325,9 +337,9 @@ function Hela() {
       <Escena T={T} a={K.Ac} b={K.D} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Carpeta x={540} y={760} s={1.1} candado={kprog(T, K.Ac + 0.8, K.Ac + 1.2, kEase.rebote)} T={T} />
-          <Persona x={380} y={1130} s={1} color={kprog(T, K.Ac + 1.6, K.Ac + 1.9) > 0.5 ? KC.gold : '#9aa3b5'} />
-          <Persona x={700} y={1130} s={1} color={kprog(T, K.Ac + 1.9, K.Ac + 2.2) > 0.5 ? KC.gold : '#9aa3b5'} />
+          <Carpeta x={540} y={800} s={1.45} candado={kprog(T, K.Ac + 0.8, K.Ac + 1.2, kEase.rebote)} T={T} />
+          <Persona x={330} y={1275} s={1.25} color={kprog(T, K.Ac + 1.6, K.Ac + 1.9) > 0.5 ? KC.gold : '#9aa3b5'} />
+          <Persona x={750} y={1275} s={1.25} color={kprog(T, K.Ac + 1.9, K.Ac + 2.2) > 0.5 ? KC.gold : '#9aa3b5'} />
         </SvgCapa>
         <Chip T={T} at={K.Ac + 0.3} until={K.D - 0.2} texto="NIH 2013 · acceso controlado" x={680} y={470} tam={34} borde={KC.teal} />
         <Chip T={T} at={K.Ac + 2.0} until={K.D - 0.2} texto="2 integrantes de la familia Lacks" x={540} y={1500} tam={38} borde={KC.gold} />
@@ -335,7 +347,7 @@ function Hela() {
       {/* 11 · 2023: el acuerdo con Thermo Fisher */}
       <Escena T={T} a={K.D} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa><Balanza x={540} y={1000} s={1} T={T} eq={kprog(T, K.D + 1.0, K.D + 2.4, kEase.suave)} /></SvgCapa>
+        <SvgCapa><Balanza x={540} y={1010} s={1.25} T={T} eq={kprog(T, K.D + 1.0, K.D + 2.4, kEase.suave)} /></SvgCapa>
         <Chip T={T} at={K.D + 0.3} until={K.D + 2.2} texto="demanda presentada en 2021" x={680} y={470} tam={36} borde={KC.red} />
         <Chip T={T} at={K.D + 2.3} until={K.C - 0.2} texto="2023 · acuerdo confidencial" x={680} y={470} tam={36} borde={KC.gold} />
       </Escena>
@@ -343,8 +355,8 @@ function Hela() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <FrascoCultivo T={T} x={470} y={1000} s={1.15} celulas={1} etiqueta="HeLa" etiqueta2={T > K.C + 1.2 ? '= Henrietta Lacks' : undefined} />
-          <Retrato x={300} y={660} s={0.42 * kprog(T, K.C + 1.4, K.C + 1.9, kEase.rebote)} T={T} />
+          <g transform={GRANDE}><FrascoCultivo T={T} x={470} y={1000} s={1.15} celulas={1} etiqueta="HeLa" etiqueta2={T > K.C + 1.2 ? '= Henrietta Lacks' : undefined} /></g>
+          <Retrato x={250} y={560} s={0.42 * kprog(T, K.C + 1.4, K.C + 1.9, kEase.rebote)} T={T} />
         </SvgCapa>
       </Escena>
 
@@ -352,11 +364,11 @@ function Hela() {
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.0} until={K.G + 4.9} texto="¿de un laboratorio?" x={330} y={470} tam={44} />
       <Etiqueta T={T} at={K.G + 1.0} until={K.H - 0.3} x={60} y={1500} texto="frasco de cultivo · células HeLa" tam={32} color={KC.ink} />
       <Chip T={T} at={K.H + 0.3} until={K.B - 0.2} texto="30 años · cáncer de cuello uterino" x={540} y={1500} tam={36} borde={KC.pink} />
-      <Chip T={T} at={K.B + 0.3} until={K.Ge - 0.2} texto="1951 · Baltimore" x={540} y={420} tam={46} borde={KC.gold} />
+      <Chip T={T} at={K.B + 0.3} until={K.Ge - 0.2} texto="1951 · Baltimore" x={540} y={290} tam={46} borde={KC.gold} />
       <Chip T={T} at={K.B + 2.6} until={K.Ge - 0.2} texto="nadie le pidió permiso para investigar" x={540} y={1500} tam={34} borde={KC.red} />
       <Etiqueta T={T} at={K.Ge + 0.3} until={K.L - 0.2} x={60} y={470} texto="laboratorio de George Gey" tam={32} color={KC.texto} />
       <Chip T={T} at={K.Ge + 1.2} until={K.L - 0.2} texto="1ª línea humana que crece sin fin" x={540} y={1500} tam={38} borde={KC.pink} />
-      <Chip T={T} at={K.L + 0.3} until={pregunta - 0.1} texto="en cultivo" x={540} y={470} tam={40} borde={KC.cyan} />
+      <Chip T={T} at={K.L + 0.3} until={pregunta - 0.1} texto="en cultivo" x={540} y={520} tam={40} borde={KC.cyan} />
       <Chip T={T} at={K.V + 1.4} until={K.F - 0.2} texto="VPH 18 = virus del papiloma humano tipo 18" x={540} y={1500} tam={30} borde={VPH} />
       <Chip T={T} at={K.F + 0.4} until={K.A - 0.1} texto="E6 y E7 sueltan los frenos p53 y Rb" x={540} y={1500} tam={34} borde={KC.orange} />
       <Chip T={T} at={K.A + 0.8} until={K.P - 0.2} texto="sin E6 y E7 → dejan de dividirse" x={540} y={1500} tam={36} borde={KC.mint} />

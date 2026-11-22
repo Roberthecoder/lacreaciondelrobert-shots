@@ -7,6 +7,12 @@ const NV = { muro:'#f1e3c2', muro2:'#e2cfa6', madera:'#a8743f', madera2:'#7d5229
   shoji:'#fbf6e8', cielo:'#8fd8ff', lluvia:'#8796a8', piel:'#f2c29b', pelo:'#2a1d15', camisa:'#4aa3ff', pants:'#2b3b5c',
   hongo:'#fffaf0', hongo2:'#e9dcc0', humedad:'#b89d6e', hifa:'rgba(220,240,255,.22)', hifaB:'#cfe6ff', pulmon:'#ff9fb0', pulmon2:'#e8718a' };
 const CUARTO = { x0: 60, x1: 1020, y0: 360, y1: 1220, piso: 960 };
+// Encuadres del pase a mano (estilo cine): cada dibujo se agranda para llenar el cuadro; su barra de escala crece igual.
+const ZQ = 1.45, ZQT = `translate(540 955) scale(${ZQ}) translate(-540 -790)`;     // el cuarto (1 m: 320 → 464 px)
+const ZR = 1.3, ZRT = `translate(540 960) scale(${ZR}) translate(-540 -800)`;      // el rincón (10 cm: 120 → 156 px)
+const ZH = 1.6, ZHT = `translate(540 1020) scale(${ZH}) translate(-540 -960)`;     // las hifas (10 µm: 150 → 240 px)
+const ZB = 1.3;                                                                    // el busto (10 cm: 100 → 130 px)
+const ZP = 1.5, ZPT = `translate(540 960) scale(${ZP}) translate(-540 -940)`;      // el pelo (1 mm: 300 → 450 px)
 
 // Manchitas discretas del hongo junto al zoclo y en la orilla del tatami (donde se junta la humedad).
 const MOTAS = (() => {
@@ -263,13 +269,13 @@ function PeloPiedra({ T, nod = [1, 1, 1] }) {
 const MESES = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
 function Calendario({ T, a0 }) {
   return <g>{MESES.map((m, i) => {
-    const c = i % 6, f = Math.floor(i / 6), x = 90 + c * 152, y = 650 + f * 170;
+    const c = i % 4, f = Math.floor(i / 4), cx = 165 + c * 250, cy = 790 + f * 250;
     const verano = i >= 5 && i <= 8, on = verano ? kprog(T, a0 + 1.2 + (i - 5) * 0.35, a0 + 1.5 + (i - 5) * 0.35) : 0, pico = i === 6 ? kprog(T, a0 + 2.6, a0 + 3.0, kEase.rebote) : 0;
-    return <g key={m} transform={`translate(${x + 68} ${y + 70}) scale(${1 + 0.08 * on + 0.06 * pico})`}>
+    return <g key={m} transform={`translate(${cx} ${cy}) scale(${1.6 * (1 + 0.06 * on + 0.04 * pico)})`}>
       <rect x={-68} y={-70} width={136} height={140} rx={16} fill={mixHex('#ffffff', '#ffb02e', on)} stroke={KC.ink} strokeWidth={6} />
       <rect x={-68} y={-70} width={136} height={34} rx={10} fill={on > 0.5 ? KC.red : '#9aa7ad'} stroke={KC.ink} strokeWidth={4} />
-      <text x={0} y={30} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill={KC.ink}>{m}</text>
-      {pico > 0 && <text x={0} y={118} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={2} opacity={pico}>▲ PICO</text>}
+      <text x={0} y={klerp(30, 18, pico)} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill="#0b1020">{m}</text>
+      {pico > 0 && <text x={0} y={58} textAnchor="middle" style={{ font:`400 30px ${KF.titulo}` }} fill="#c22a20" opacity={pico}>▲ PICO</text>}
     </g>; })}</g>;
 }
 
@@ -288,81 +294,87 @@ function NeumoniaVeranoShot() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la tos en el cuarto de madera; no es contagio, es la casa */}
-      <Escena T={T} a={K.G} b={K.Le} zoom={0.05} origen="35% 70%">
+      <Escena T={T} a={K.G} b={K.Le} zoom={0.05} origen="50% 22%">
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Cuarto T={T} id="g" humedo={0.8} hongo={0.5} calor={0.8} tos={tosG} />
-          <Sello T={T} at={K.G + 2.2} x={800} y={840} texto="TU CASA" color={KC.red} r={100} />
+          <g transform={ZQT}>
+            <Cuarto T={T} id="g" humedo={0.8} hongo={0.5} calor={0.8} tos={tosG} />
+            <Sello T={T} at={K.G + 2.2} x={770} y={840} texto="TU CASA" color={KC.red} r={92} />
+          </g>
         </>)}
       </Escena>
       {/* 2 · el rincón: zoclo de madera húmeda y tatami, donde vive la levadura; en cultivo se ve así */}
       <Escena T={T} a={K.Le} b={K.Cu} zoom={0.05} origen="30% 70%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
+          <g transform={ZRT}>
           <Rincon T={T} hongo={kprog(T, K.Le + 0.3, K.Le + 2.4)} />
-          {(() => { const p = kprog(T, K.Le + 2.8, K.Le + 3.3, kEase.rebote); return p > 0 ? <g transform={`translate(790 540) scale(${p})`}>
-            <Petri x={0} y={0} r={140} medio="#f2dfa8"><ColoniaSurcos cx={0} cy={0} r={110 * kprog(T, K.Le + 2.9, K.Le + 4.4, kEase.sale)} /></Petri></g> : null; })()}
+          {(() => { const p = kprog(T, K.Le + 0.2, K.Le + 0.7, kEase.rebote); return p > 0 ? <g transform={`translate(745 540) scale(${p})`}>
+            <Petri x={0} y={0} r={140} medio="#f2dfa8"><ColoniaSurcos cx={0} cy={0} r={110 * kprog(T, K.Le + 0.8, K.Le + 4.4, kEase.sale)} /></Petri></g> : null; })()}
+          </g>
         </>)}
       </Escena>
       {/* 3 · al microscopio: hifas hialinas que se parten en artroconidias en barril (sin gemación) y vuelan */}
       <Escena T={T} a={K.Cu} b={K.Al} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<>
+        {fsvg(<g transform={ZHT}>
           <HifaTricho T={T} x0={60} x1={1040} y={790} seed={3} crece={kprog(T, K.Cu - 0.3, K.Cu + 0.8)} parte={kprog(T, K.Cu + 0.6, K.Cu + 1.8)} vuela={kprog(T, K.Cu + 2.2, K.Cu + 5.0)} />
           <HifaTricho T={T} x0={20} x1={980} y={960} seed={5} crece={kprog(T, K.Cu - 0.2, K.Cu + 1.0)} parte={0} />
           <HifaTricho T={T} x0={80} x1={1060} y={1130} seed={8} crece={kprog(T, K.Cu, K.Cu + 1.2)} parte={kprog(T, K.Cu + 1.2, K.Cu + 2.6)} vuela={kprog(T, K.Cu + 3.0, K.Cu + 6.0) * 0.5} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · por dentro: no es infección, es tu pulmón reaccionando como alergia */}
       <Escena T={T} a={K.Al} b={K.Pi} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Busto T={T} x={250} y={560} tose={kprog(T, K.Al + 2.8, K.Al + 3.1)} />
-          {(() => { const g = krng(12); return Array.from({ length: 12 }, (_, i) => { const d = g(), u = ((T - K.Al) * 0.35 + d) % 1, yy = 520 + g() * 260; return <path key={i} d={barril(18, 11, 2)} transform={`translate(${klerp(1060, 262, u)} ${klerp(yy, 690, u)}) rotate(${i * 30})`} fill="#f3ead2" stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.Al - 0.2, K.Al + 0.3) * (u < 0.92 ? 1 : 0)} />; }); })()}
+          <g transform={`translate(300 470) scale(${ZB})`}><Busto T={T} x={0} y={0} tose={kprog(T, K.Al + 2.8, K.Al + 3.1)} /></g>
+          {(() => { const g = krng(12); return Array.from({ length: 12 }, (_, i) => { const d = g(), u = ((T - K.Al) * 0.35 + d) % 1, yy = 520 + g() * 260; return <path key={i} d={barril(24, 15, 3)} transform={`translate(${klerp(1100, 312, u)} ${klerp(yy, 672, u)}) rotate(${i * 30})`} fill="#f3ead2" stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.Al - 0.2, K.Al + 0.3) * (u < 0.92 ? 1 : 0)} />; }); })()}
         </>)}
-        <Lupa T={T} at={K.Al + 0.5} until={K.Pi - 0.3} x={640} y={900} r={220} fx={250} fy={900} tinte={KC.red} etiqueta="POR DENTRO · pulmón" interior={(TT, r) => <PulmonPorDentro T={TT} r={r} a0={K.Al + 0.5} />} />
+        <Lupa T={T} at={K.Al + 0.5} until={K.Pi - 0.3} x={760} y={1090} r={290} fx={300} fy={912} tinte={KC.red} etiqueta="POR DENTRO · pulmón" interior={(TT, r) => <PulmonPorDentro T={TT} r={r} a0={K.Al + 0.5} />} />
       </Escena>
       {/* 5 · la pista: en el hospital suele mejorar; al volver a casa, regresa */}
       <Escena T={T} a={K.Pi} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
-          <path d="M 270 1000 Q 540 1080 810 1000" stroke={KC.ink} strokeWidth={8} strokeDasharray="20 14" fill="none" strokeLinecap="round" />
+        {fsvg(<g transform="translate(0 70)">
+          <path d="M 270 1170 Q 540 1290 810 1170" stroke={KC.ink} strokeWidth={8} strokeDasharray="20 14" fill="none" strokeLinecap="round" />
           <g transform="translate(270 760) scale(1.35) translate(-270 -760)"><Hospital x={270} y={760} /></g>
           <Casita x={810} y={780} s={2.6} />
-          {(() => { const x = klerp(270, 810, viaje), y = klerp(1000, 1000, viaje) + Math.sin(viaje * Math.PI) * 60;
+          {(() => { const x = klerp(270, 810, viaje), y = 1170 + Math.sin(viaje * Math.PI) * 60;
             const mal = viaje < 0.5 ? 1 - kprog(T, K.Pi + 0.3, K.Pi + 1.4) : kprog(T, K.Pi + 2.6, K.Pi + 3.2);
-            return <g><circle cx={x} cy={y - 40} r={34} fill={NV.piel} stroke={KC.ink} strokeWidth={5} /><path d={`M ${x - 40} ${y + 50} Q ${x} ${y - 20} ${x + 40} ${y + 50} Z`} fill={NV.camisa} stroke={KC.ink} strokeWidth={5} />
-              <Sintomas x={x} y={y - 120} mal={mal} /></g>; })()}
-        </>)}
+            return <g transform={`translate(${x} ${y}) scale(1.6)`}><circle cx={0} cy={-40} r={34} fill={NV.piel} stroke={KC.ink} strokeWidth={5} /><path d="M -40 50 Q 0 -20 40 50 Z" fill={NV.camisa} stroke={KC.ink} strokeWidth={5} />
+              <Sintomas x={0} y={-120} mal={mal} /></g>; })()}
+        </g>)}
       </Escena>
       {/* 6 · re-gancho: ¿por qué en verano? */}
       <Escena T={T} a={K.P} b={K.Ca} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <g transform="translate(250 690)"><circle r={100} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(400 860) scale(1.5)"><circle r={100} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
             {Array.from({ length: 10 }, (_, k) => { const a = k * Math.PI / 5 + T * 0.8; return <line key={k} x1={Math.cos(a) * 124} y1={Math.sin(a) * 124} x2={Math.cos(a) * 168} y2={Math.sin(a) * 168} stroke={KC.ink} strokeWidth={12} strokeLinecap="round" />; })}</g>
-          <Interrogacion T={T} x={300} y={1210} tam={420} />
+          <Interrogacion T={T} x={800} y={1300} tam={460} />
           <g transform={`translate(540 ${470 + Math.sin(T * 10) * 3})`} opacity={kprog(T, K.P, K.P + 0.25)}>
             <text textAnchor="middle" style={{ font:`400 112px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={10} paintOrder="stroke">¿POR QUÉ EN VERANO?</text>
           </g>
         </>)}
       </Escena>
       {/* 7 · calor y humedad: llueve, el termómetro sube y el hongo se extiende */}
-      <Escena T={T} a={K.Ca} b={K.Es} zoom={0.05} origen="30% 75%">
+      <Escena T={T} a={K.Ca} b={K.Es} zoom={0.05} origen="50% 22%">
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
+          <g transform={ZQT}>
           <Cuarto T={T} id="ca" lluvia={1} humedo={kprog(T, K.Ca, K.Ca + 3)} hongo={klerp(0.3, 1, kprog(T, K.Ca + 1.0, K.Ca + 4.2))} calor={klerp(0.35, 0.95, kprog(T, K.Ca + 0.4, K.Ca + 2.0, kEase.suave))} />
           {(() => { const p = kprog(T, K.Ca + 1.6, K.Ca + 2.4, kEase.rebote); return p > 0 ? <g transform={`translate(560 560) scale(${p})`}>
             <path d="M 0 -60 Q 44 0 44 22 A 44 44 0 1 1 -44 22 Q -44 0 0 -60 Z" fill={KC.cyan} stroke={KC.ink} strokeWidth={6} /></g> : null; })()}
+          </g>
         </>)}
       </Escena>
       {/* 8 · el estudio: 835 casos en Japón de 1980 a 1989; tres de cada cuatro, tipo verano */}
       <Escena T={T} a={K.Es} b={K.Cs} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          {[0, 1, 2, 3].map((i) => { const ap = kprog(T, K.Es + 4.0 + i * 0.15, K.Es + 4.4 + i * 0.15, kEase.rebote), ver = i < 3 ? kprog(T, K.Es + 4.8 + i * 0.25, K.Es + 5.1 + i * 0.25) : 0;
-            return ap > 0 ? <Casita key={i} x={200 + i * 225} y={980} s={1.25 * ap} color={mixHex('#d7d2c8', '#ffd36e', ver)} sol={ver} /> : null; })}
+          {[0, 1, 2, 3].map((i) => { const ap = kprog(T, K.Es - 0.3 + i * 0.12, K.Es + 0.2 + i * 0.12, kEase.rebote), ver = i < 3 ? kprog(T, K.Es + 4.8 + i * 0.25, K.Es + 5.1 + i * 0.25) : 0;
+            return ap > 0 ? <Casita key={i} x={300 + (i % 2) * 480} y={1020 + Math.floor(i / 2) * 360} s={1.9 * ap} color={mixHex('#8d8a84', '#ffd36e', ver)} sol={ver} /> : null; })}
         </>)}
       </Escena>
       {/* 9a · el calendario: de junio a septiembre, pico en julio */}
@@ -371,89 +383,93 @@ function NeumoniaVeranoShot() {
         {fsvg(<Calendario T={T} a0={K.Cs} />)}
       </Escena>
       {/* 9b · más de la mitad: cuartos húmedos, sombríos o mal ventilados */}
-      <Escena T={T} a={CsB} b={K.Li} zoom={0.05} origen="35% 70%">
+      <Escena T={T} a={CsB} b={K.Li} zoom={0.05} origen="50% 22%">
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Cuarto T={T} id="cs" humedo={1} hongo={0.7} sombra={kprog(T, CsB + 1.2, CsB + 2.0)} calor={0.8} />)}
+        {fsvg(<g transform={ZQT}><Cuarto T={T} id="cs" humedo={1} hongo={0.7} sombra={kprog(T, CsB + 1.2, CsB + 2.0)} calor={0.8} /></g>)}
       </Escena>
       {/* 10 · lo que sirve: sacar el hongo de la casa (y ventilar) · el estudio de 1989 */}
-      <Escena T={T} a={K.Li} b={K.Pd} zoom={0.04} origen="35% 75%">
+      <Escena T={T} a={K.Li} b={K.Pd} zoom={0.04} origen="50% 22%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
+          <g transform={ZQT}>
           <Cuarto T={T} id="li" humedo={1 - kprog(T, K.Li + 1.6, K.Li + 3.0)} hongo={0.7 * (1 - kprog(T, K.Li + 0.3, K.Li + 2.3))} abierto={kprog(T, K.Li + 1.4, K.Li + 2.2, kEase.suave)} aire={kprog(T, K.Li + 1.8, K.Li + 2.4)} calor={0.6} />
-          {(() => { const u = kprog(T, K.Li + 0.2, K.Li + 2.3); return u > 0 && u < 1 ? <Cepillo x={klerp(150, 400, 0.5 - 0.5 * Math.cos(u * Math.PI * 5))} y={CUARTO.piso - 30} /> : null; })()}
+          {(() => { const u = kprog(T, K.Li + 0.2, K.Li + 2.3); return u > 0 && u < 1 ? <Cepillo x={klerp(200, 380, 0.5 - 0.5 * Math.cos(u * Math.PI * 5))} y={CUARTO.piso - 30} /> : null; })()}
+          </g>
           {T > K.Li + 2.5 && <g opacity={kprog(T, K.Li + 2.5, K.Li + 2.9)}>
-            <rect x={60} y={360} width={960} height={860} rx={10} fill="rgba(47,224,168,.9)" stroke={KC.ink} strokeWidth={8} />
-            {[0, 1, 2, 3, 4, 5].map((i) => { const p = kprog(T, K.Li + 3.3 + i * 0.12, K.Li + 3.7 + i * 0.12, kEase.rebote); return p > 0 ? <Casita key={i} x={130 + (i % 3) * 165} y={900 + Math.floor(i / 3) * 150} s={0.85 * p} color="#f6efe0" marca="✓" /> : null; })}
-            {[0, 1].map((i) => { const p = kprog(T, K.Li + 4.4 + i * 0.15, K.Li + 4.8 + i * 0.15, kEase.rebote); return p > 0 ? <Casita key={'x' + i} x={740 + i * 175} y={975} s={0.85 * p} color="#cfc8bb" marca="✗" /> : null; })}
+            <rect x={-20} y={320} width={1120} height={1270} fill="rgba(7,34,30,.78)" />
+            {[0, 1, 2, 3, 4, 5].map((i) => { const p = kprog(T, K.Li + 2.8 + i * 0.12, K.Li + 3.2 + i * 0.12, kEase.rebote); return p > 0 ? <Casita key={i} x={190 + (i % 3) * 310} y={815 + Math.floor(i / 3) * 215} s={1.4 * p} color="#f6efe0" marca="✓" /> : null; })}
+            {[0, 1].map((i) => { const p = kprog(T, K.Li + 4.4 + i * 0.15, K.Li + 4.8 + i * 0.15, kEase.rebote); return p > 0 ? <Casita key={'x' + i} x={190 + i * 280} y={1310} s={1.4 * p} color="#9c958a" marca="✗" /> : null; })}
           </g>}
         </>)}
       </Escena>
       {/* 11 · dato extra: sus parientes hacen la piedra blanca del pelo */}
       <Escena T={T} a={K.Pd} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<PeloPiedra T={T} nod={[0, 1, 2].map((k) => kprog(T, K.Pd + 0.7 + k * 0.5, K.Pd + 1.1 + k * 0.5, kEase.rebote))} />)}
+        {fsvg(<g transform={ZPT}><PeloPiedra T={T} nod={[0, 1, 2].map((k) => kprog(T, K.Pd + 0.7 + k * 0.5, K.Pd + 1.1 + k * 0.5, kEase.rebote))} /></g>)}
       </Escena>
       {/* 12 · cierre: el mismo cuarto del inicio, abierto, seco y con aire */}
-      <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="35% 70%">
+      <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="50% 22%">
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Cuarto T={T} id="c" abierto={1} aire={1} humedo={0} hongo={0} calor={0.5} calma={1} />
-          <Sello T={T} at={K.C + 1.0} x={800} y={840} texto="MÁS AIRE" color={KC.leaf} r={100} />
+          <g transform={ZQT}>
+            <Cuarto T={T} id="c" abierto={1} aire={1} humedo={0} hongo={0} calor={0.5} calma={1} />
+            <Sello T={T} at={K.C + 1.0} x={770} y={840} texto="MÁS AIRE" color={KC.leaf} r={92} />
+          </g>
         </>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.3} texto="¿contagio?" x={300} y={440} tam={52} />
-      {kvisible(T, K.G + 0.2, K.G + 2.6, 0) && Math.sin(T * 9) > 0.2 && <div style={{ position:'absolute', left:250, top:760, zIndex:41, font:`400 72px ${KF.titulo}`, color:KC.white, WebkitTextStroke:`3px ${KC.ink}`, textShadow:`4px 4px 0 ${KC.ink}`, transform:'rotate(-8deg)' }}>¡COF!</div>}
-      <Chip T={T} at={K.G + 2.9} until={K.Le - 0.3} texto="casi siempre en verano" x={540} y={1170} tam={34} borde={KC.orange} />
-      <EtqMix T={T} at={K.Le + 1.0} until={K.Cu - 0.3} x={470} y={880} partes={['aquí vive · ', 'Trichosporon']} tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Le + 0.6} until={K.Cu - 0.3} texto="madera húmeda" x={300} y={600} tam={32} borde={NV.madera} />
-      <Chip T={T} at={K.Le + 1.6} until={K.Cu - 0.3} texto="tatami" x={300} y={1120} tam={32} borde={NV.heri} />
-      <Chip T={T} at={K.Le + 3.0} until={K.Cu - 0.3} texto="así se ve en cultivo" x={790} y={790} tam={28} borde={KC.gold} />
-      <Chip T={T} at={K.Le + 0.2} until={K.Le + 2.6} texto="una levadura" x={790} y={460} tam={34} borde={KC.gold} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.3} texto="¿contagio?" x={215} y={640} tam={52} />
+      {kvisible(T, K.G + 0.2, K.G + 2.6, 0) && Math.sin(T * 9) > 0.2 && <div style={{ position:'absolute', left:120, top:900, zIndex:41, font:`400 100px ${KF.titulo}`, color:KC.white, WebkitTextStroke:`3px ${KC.ink}`, textShadow:`4px 4px 0 ${KC.ink}`, transform:'rotate(-8deg)' }}>¡COF!</div>}
+      <Chip T={T} at={K.G + 2.9} until={K.Le - 0.3} texto="casi siempre en verano" x={700} y={400} tam={36} borde={KC.orange} />
+      <EtqMix T={T} at={K.Le + 1.0} until={K.Cu - 0.3} x={470} y={1210} partes={['aquí vive · ', 'Trichosporon']} tam={34} color="#0b1020" />
+      <Chip T={T} at={K.Le + 0.6} until={K.Cu - 0.3} texto="madera húmeda" x={260} y={770} tam={34} borde={NV.madera} />
+      <Chip T={T} at={K.Le + 1.6} until={K.Cu - 0.3} texto="tatami" x={260} y={1400} tam={34} borde={NV.heri} />
+      <Chip T={T} at={K.Le + 3.0} until={K.Cu - 0.3} texto="así se ve en cultivo" x={805} y={860} tam={30} borde={KC.gold} />
+      <Chip T={T} at={K.Le + 0.2} until={K.Le + 2.6} texto="una levadura" x={300} y={470} tam={38} borde={KC.gold} />
       <Etq T={T} at={K.Cu + 0.3} until={K.Al - 0.3} x={60} y={420} texto="Trichosporon asahii" it tam={44} color={KC.gold2} />
-      <Etq T={T} at={K.Cu + 1.0} until={K.Al - 0.3} x={60} y={895} texto="hifa con tabiques" tam={30} />
-      <Etq T={T} at={K.Cu + 1.8} until={K.Al - 0.3} x={60} y={1070} texto="se parte en artroconidias («cubitos»)" tam={28} color={KC.gold2} />
-      <Chip T={T} at={K.Cu + 2.4} until={K.Al - 0.3} texto="flotan en el aire" x={330} y={540} tam={34} borde={KC.cyan} />
-      <MitoTachado T={T} at={K.Al + 0.3} tacharEn={K.Al + 1.2} until={K.Al + 2.6} texto="INFECCIÓN" x={300} y={420} tam={46} />
-      <Chip T={T} at={K.Al + 1.6} until={K.Pi - 0.3} texto="alergia del pulmón" x={230} y={1105} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.Al + 2.9} until={K.Pi - 0.3} texto="tos" x={110} y={420} tam={30} borde={KC.yellow} />
-      <Chip T={T} at={K.Al + 3.4} until={K.Pi - 0.3} texto="fiebre" x={265} y={420} tam={30} borde={KC.orange} />
-      <Chip T={T} at={K.Al + 3.9} until={K.Pi - 0.3} texto="falta de aire" x={530} y={420} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.Pi + 0.9} until={K.P - 0.3} texto="en el hospital: suele mejorar" x={330} y={440} tam={30} borde={KC.leaf} />
-      <Chip T={T} at={K.Pi + 2.7} until={K.P - 0.3} texto="en casa: regresa" x={760} y={1170} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.Pi + 0.1} until={K.P - 0.3} texto="LA PISTA" x={760} y={440} tam={44} borde={KC.yellow} />
-      <Chip T={T} at={K.Ca + 0.4} until={K.Es - 0.3} texto="calor" x={200} y={420} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.Ca + 1.6} until={K.Es - 0.3} texto="humedad" x={420} y={420} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.Ca + 2.6} until={K.Es - 0.3} texto="el hongo se extiende" x={360} y={1170} tam={30} borde={KC.gold} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.2} anio="1980–1989" quien="Japón · encuesta nacional" revista="Ando y col. · Am Rev Respir Dis (1991)" y={640} />
-      <NumeroGigante T={T} at={K.Es + 2.3} until={K.Cs - 0.3} valor={835} dur={1.2} x={330} y={620} tam={230} color={KC.yellow} />
-      <Chip T={T} at={K.Es + 2.6} until={K.Cs - 0.3} texto="casos de alergias del pulmón" x={360} y={790} tam={30} borde={KC.gold} />
-      <Chip T={T} at={K.Es + 5.0} until={K.Cs - 0.3} texto="3 de cada 4: tipo verano (74 %)" x={540} y={1170} tam={32} borde={KC.orange} />
-      <NumeroGigante T={T} at={K.Cs + 0.1} until={CsB - 0.2} valor={86} dur={0.9} sufijo=" de cada 100" x={540} y={470} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.Cs + 1.0} until={CsB - 0.2} texto="empezaron de junio a septiembre" x={540} y={1080} tam={30} borde={KC.red} />
-      <Chip T={T} at={CsB + 0.5} until={K.Li - 0.3} texto="más de la mitad" x={330} y={420} tam={34} borde={KC.gold} />
-      <Chip T={T} at={CsB + 0.8} until={K.Li - 0.3} texto="húmedo" x={820} y={720} tam={32} borde={KC.cyan} />
-      <Chip T={T} at={CsB + 1.4} until={K.Li - 0.3} texto="sombrío" x={820} y={800} tam={32} borde={KC.lilac} />
-      <Chip T={T} at={CsB + 2.1} until={K.Li - 0.3} texto="mal ventilado" x={820} y={880} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.Li + 0.4} until={K.Li + 2.4} texto="sacar el hongo de la casa" x={380} y={420} tam={34} borde={KC.leaf} />
-      <TarjetaEstudio T={T} at={K.Li + 2.6} until={K.Pd - 0.3} anio="1989" quien="Japón · Yoshida y col." revista="Arch Environ Health" x={380} y={590} />
-      <Chip T={T} at={K.Li + 3.9} until={K.Pd - 0.3} texto="bien limpiadas: 0 recaídas" x={300} y={1170} tam={26} borde={KC.leaf} />
-      <Chip T={T} at={K.Li + 4.6} until={K.Pd - 0.3} texto="mal limpiadas: recayeron" x={810} y={1100} tam={24} borde={KC.red} />
-      <Etq T={T} at={K.Pd + 1.4} until={K.C - 0.3} x={620} y={830} texto="piedra blanca" tam={40} color={KC.ink} />
-      <EtqMix T={T} at={K.Pd + 2.0} until={K.C - 0.3} x={80} y={1080} partes={['otras especies de ', 'Trichosporon']} tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Pd + 0.4} until={K.C - 0.3} texto="nuditos en el pelo" x={330} y={540} tam={34} borde={KC.white} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="menos humedad" x={540} y={1170} tam={38} borde={KC.cyan} />
+      <Etq T={T} at={K.Cu + 1.0} until={K.Al - 0.3} x={60} y={945} texto="hifa con tabiques" tam={32} />
+      <Etq T={T} at={K.Cu + 1.8} until={K.Al - 0.3} x={60} y={1215} texto="se parte en artroconidias («cubitos»)" tam={30} color={KC.gold2} />
+      <Chip T={T} at={K.Cu + 2.4} until={K.Al - 0.3} texto="flotan en el aire" x={330} y={560} tam={36} borde={KC.cyan} />
+      <MitoTachado T={T} at={K.Al + 0.3} tacharEn={K.Al + 1.2} until={K.Al + 2.6} texto="INFECCIÓN" x={770} y={500} tam={52} />
+      <Chip T={T} at={K.Al + 1.6} until={K.Pi - 0.3} texto="alergia del pulmón" x={260} y={1420} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.Al + 2.9} until={K.Pi - 0.3} texto="tos" x={650} y={440} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.Al + 3.4} until={K.Pi - 0.3} texto="fiebre" x={850} y={440} tam={34} borde={KC.orange} />
+      <Chip T={T} at={K.Al + 3.9} until={K.Pi - 0.3} texto="falta de aire" x={760} y={540} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.Pi + 0.9} until={K.P - 0.3} texto="en el hospital: suele mejorar" x={330} y={560} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.Pi + 2.7} until={K.P - 0.3} texto="en casa: regresa" x={780} y={1440} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Pi + 0.1} until={K.P - 0.3} texto="LA PISTA" x={540} y={420} tam={48} borde={KC.yellow} />
+      <Chip T={T} at={K.Ca + 0.4} until={K.Es - 0.3} texto="calor" x={300} y={410} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Ca + 1.6} until={K.Es - 0.3} texto="humedad" x={560} y={410} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.Ca + 2.6} until={K.Es - 0.3} texto="el hongo se extiende" x={215} y={1090} tam={28} borde={KC.gold} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.2} anio="1980–1989" quien="Japón · encuesta nacional" revista="Ando y col. · Am Rev Respir Dis (1991)" y={540} />
+      <NumeroGigante T={T} at={K.Es + 2.3} until={K.Cs - 0.3} valor={835} dur={1.2} x={540} y={470} tam={210} color={KC.yellow} />
+      <Chip T={T} at={K.Es + 2.6} until={K.Cs - 0.3} texto="casos de alergias del pulmón" x={540} y={625} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.Es + 5.0} until={K.Cs - 0.3} texto="3 de cada 4: tipo verano (74 %)" x={540} y={715} tam={34} borde={KC.orange} />
+      <NumeroGigante T={T} at={K.Cs + 0.1} until={CsB - 0.2} valor={86} dur={0.9} sufijo=" de cada 100" x={540} y={440} tam={130} color={KC.yellow} />
+      <Chip T={T} at={K.Cs + 1.0} until={CsB - 0.2} texto="empezaron de junio a septiembre" x={540} y={570} tam={32} borde={KC.red} />
+      <Chip T={T} at={CsB + 0.5} until={K.Li - 0.3} texto="más de la mitad" x={540} y={410} tam={38} borde={KC.gold} />
+      <Chip T={T} at={CsB + 0.8} until={K.Li - 0.3} texto="húmedo" x={860} y={700} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={CsB + 1.4} until={K.Li - 0.3} texto="sombrío" x={860} y={800} tam={36} borde={KC.lilac} />
+      <Chip T={T} at={CsB + 2.1} until={K.Li - 0.3} texto="mal ventilado" x={860} y={900} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Li + 0.4} until={K.Li + 2.4} texto="sacar el hongo de la casa" x={540} y={410} tam={38} borde={KC.leaf} />
+      <TarjetaEstudio T={T} at={K.Li + 2.6} until={K.Pd - 0.3} anio="1989" quien="Japón · Yoshida y col." revista="Arch Environ Health" x={540} y={560} />
+      <Chip T={T} at={K.Li + 3.9} until={K.Pd - 0.3} texto="bien limpiadas: 0 recaídas" x={500} y={1240} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.Li + 4.6} until={K.Pd - 0.3} texto="mal limpiadas: recayeron" x={800} y={1395} tam={28} borde={KC.red} />
+      <Etq T={T} at={K.Pd + 1.4} until={K.C - 0.3} x={540} y={720} texto="piedra blanca" tam={44} color={KC.ink} />
+      <EtqMix T={T} at={K.Pd + 2.0} until={K.C - 0.3} x={80} y={1220} partes={['otras especies de ', 'Trichosporon']} tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Pd + 0.4} until={K.C - 0.3} texto="nuditos en el pelo" x={330} y={520} tam={38} borde={KC.white} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="menos humedad" x={540} y={410} tam={40} borde={KC.cyan} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Le} texto="1 m" largo={320} />
-      <BarraEscala T={T} at={K.Le} until={K.Cu} texto="10 cm" largo={120} />
-      <BarraEscala T={T} at={K.Cu} until={K.Al} texto="10 µm" largo={150} />
-      <BarraEscala T={T} at={K.Al} until={K.Pi} texto="10 cm" largo={100} />
-      <BarraEscala T={T} at={K.Ca} until={K.Es} texto="1 m" largo={320} />
-      <BarraEscala T={T} at={CsB} until={K.Pd} texto="1 m" largo={320} />
-      <BarraEscala T={T} at={K.Pd} until={K.C} texto="1 mm" largo={300} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m" largo={320} />
+      <BarraEscala T={T} at={K.G} until={K.Le} texto="1 m" largo={320 * ZQ} />
+      <BarraEscala T={T} at={K.Le} until={K.Cu} texto="10 cm" largo={120 * ZR} />
+      <BarraEscala T={T} at={K.Cu} until={K.Al} texto="10 µm" largo={150 * ZH} />
+      <BarraEscala T={T} at={K.Al} until={K.Pi} texto="10 cm" largo={100 * ZB} />
+      <BarraEscala T={T} at={K.Ca} until={K.Es} texto="1 m" largo={320 * ZQ} />
+      <BarraEscala T={T} at={CsB} until={K.Li + 2.6} texto="1 m" largo={320 * ZQ} />
+      <BarraEscala T={T} at={K.Pd} until={K.C} texto="1 mm" largo={300 * ZP} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m" largo={320 * ZQ} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Le - 0.1} texto="Te la da *tu casa.*" />

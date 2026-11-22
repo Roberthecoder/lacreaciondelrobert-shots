@@ -160,17 +160,18 @@ function Estatua22() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: la estatua verde se barre y aparece el cobre */}
-      <Escena T={T} a={K.G} b={K.P} zoom={0.08} origen="32% 45%">
+      <Escena T={T} a={K.G} b={K.P} zoom={0.08} origen="50% 45%">
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Estatua T={T} x={330} y={1200} s={0.85} f={1} barrido={kprog(T, K.G + 0.1, K.G + 1.7, kEase.suave) * (1 - kprog(T, K.G + 3.4, K.G + 4.6))} brillo={kprog(T, K.G + 1.0, K.G + 1.6) * (1 - kprog(T, K.G + 3.3, K.G + 3.6))} />
-          <Escudo x={330} y={720} s={1.3} o={kprog(T, K.G + 3.6, K.G + 4.2) * 0.92} />
+          <Estatua T={T} x={540} y={1600} s={1.2} f={1} barrido={kprog(T, K.G + 0.1, K.G + 1.7, kEase.suave) * (1 - kprog(T, K.G + 3.4, K.G + 4.6))} brillo={kprog(T, K.G + 1.0, K.G + 1.6) * (1 - kprog(T, K.G + 3.3, K.G + 3.6))} />
+          <Escudo x={540} y={922} s={1.84} o={kprog(T, K.G + 3.6, K.G + 4.2) * 0.92} />
         </SvgCapa>
       </Escena>
       {/* 1 · la piel: lámina de 2.4 mm, más delgada que dos centavos (1.52 mm c/u, a escala) */}
       <Escena T={T} a={K.P} b={K.Ca}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(540 960) scale(1.08) translate(-550 -800)">
           <rect x={140} y={760} width={600} height={120} fill={COBRE} stroke={KC.ink} strokeWidth={8} />
           <path d="M 140 760 L 200 700 L 800 700 L 740 760 Z" fill="#f0a27a" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
           <path d="M 740 760 L 800 700 L 800 820 L 740 880 Z" fill="#b8683e" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
@@ -184,21 +185,23 @@ function Estatua22() {
             <text x={440} y={990} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.ink}>2.4 mm</text>
           </g>
           <line x1={820} y1={760} x2={1020} y2={760} stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" opacity={kprog(T, K.P + 2.6, K.P + 3.0)} />
+          </g>
         </SvgCapa>
-        <Escala T={T} pxPorMm={50} x={140} y={1080} color={KC.ink} />
+        <Escala T={T} pxPorMm={54} x={97} y={1262} color={KC.ink} />
       </Escena>
       {/* 2 · en 1886: color centavo */}
       <Escena T={T} a={K.Ca} b={K.Cu} zoom={0.04} origen="35% 50%">
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Estatua T={T} x={330} y={1200} s={0.85} f={0.3} brillo={1} />
-          <Centavo x={800} y={880} r={110} giro={Math.cos((T - K.Ca) * 2.4)} color={colorEst(0.3)} />
+          <Estatua T={T} x={360} y={1560} s={1.1} f={0.3} brillo={1} />
+          <Centavo x={820} y={1000} r={150} giro={Math.cos((T - K.Ca) * 2.4)} color={colorEst(0.3)} />
         </SvgCapa>
       </Escena>
       {/* 3–5 · micro: cuprita, brochantita y escudo */}
       <Escena T={T} a={K.Cu} b={K.Pr} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
+          <g transform="translate(0 110)">
           <BloqueCobre y0={Y0} T={T} />
           {/* O₂ y agua que bajan y oxidan */}
           {o2s.map(([x, ph], i) => { const t0 = K.Cu + 0.1 + i * 0.22, p = kprog(T, t0, t0 + 1.6, kEase.suave), o = 1 - kprog(T, K.Cu + 2.6, K.Cu + 3.2);
@@ -219,6 +222,7 @@ function Estatua22() {
             return <Gota key={i} x={x} y={yy} r={15} o={p > 0.7 ? 1 - (p - 0.7) / 0.3 : 1} />; })}
           <Cristales y0={yCup} h={cris} alto={150} />
           <Escudo x={540} y={480} s={1.5} o={kprog(T, K.Es + 0.6, K.Es + 1.2)} />
+          </g>
         </SvgCapa>
         <Escala T={T} pxPorMm={8000} x={60} y={1400} />
       </Escena>
@@ -226,15 +230,17 @@ function Estatua22() {
       <Escena T={T} a={K.Pr} b={K.St} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <text x={270} y={520} textAnchor="middle" style={{ font:`400 380px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 270 380)`}>?</text>
-          <Estatua T={T} x={800} y={1190} s={0.62} f={kprog(T, K.Pr + 0.3, K.Pr + 2.3, kEase.suave)} />
+          <text x={260} y={1000} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 260 820)`}>?</text>
+          <Estatua T={T} x={740} y={1560} s={0.95} f={kprog(T, K.Pr + 0.3, K.Pr + 2.3, kEase.suave)} />
         </SvgCapa>
-        {T > K.Pr + 0.3 && <Contador T={T} at={K.Pr + 0.3} hasta={30} dur={2.0} sufijo=" años" x={800} y={420} tam={84} />}
+        {T > K.Pr + 0.3 && <Contador T={T} at={K.Pr + 0.3} hasta={30} dur={2.0} sufijo=" años" x={760} y={380} tam={84} />}
       </Escena>
       {/* 7 · 1986: rayos X a la piel de 1905 y de 1980 */}
       <Escena T={T} a={K.St} b={K.Pi}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
+          <g opacity={klerp(1, 0.16, kprog(T, K.St + 2.8, K.St + 3.4))}><Estatua T={T} x={420} y={1560} s={1.1} f={1} /></g>
+          <g transform="translate(560 900) scale(1.2) translate(-560 -900)">
           <g opacity={emisor}>
             <rect x={470} y={640} width={180} height={90} rx={14} fill="#dfe6ee" stroke={KC.ink} strokeWidth={8} />
             <rect x={530} y={730} width={60} height={30} fill="#9aa3b5" stroke={KC.ink} strokeWidth={6} />
@@ -254,26 +260,28 @@ function Estatua22() {
           </g>
           <Nube T={T} x={770} y={560} f={kprog(T, K.St + 8.5, K.St + 9.2)} r={140} color="#8e93a0" seed={6} />
           {T > K.St + 9.0 && [0, 1, 2, 3].map((i) => { const p = ((T - K.St - 9) * 1.6 + i * 0.25) % 1; return <Gota key={i} x={690 + i * 55} y={klerp(620, 900, p)} r={11} color="#a9d8ff" o={1 - p * 0.6} />; })}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 8 · 1906: planearon pintarla */}
       <Escena T={T} a={K.Pi} b={K.Tu} zoom={0.04} origen="40% 50%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Estatua T={T} x={400} y={1200} s={0.85} f={1} />
-          <Brocha x={klerp(1250, 600, brIn * (1 - brOut))} y={klerp(1000, 800, brIn * (1 - brOut))} s={1.1} />
-          <Globo T={T} at={K.Pi + 1.8} until={K.Pi + 3.4} x={150} y={640} rot={-8} />
-          <Globo T={T} at={K.Pi + 2.1} until={K.Pi + 3.6} x={880} y={1040} rot={6} />
-          <Globo T={T} at={K.Pi + 2.4} until={K.Pi + 3.8} x={140} y={1010} rot={4} />
+          <Estatua T={T} x={420} y={1560} s={1.1} f={1} />
+          <Brocha x={klerp(1300, 640, brIn * (1 - brOut))} y={klerp(1150, 950, brIn * (1 - brOut))} s={1.3} />
+          <Globo T={T} at={K.Pi + 1.8} until={K.Pi + 3.4} x={150} y={700} rot={-8} />
+          <Globo T={T} at={K.Pi + 2.1} until={K.Pi + 3.6} x={900} y={1200} rot={6} />
+          <Globo T={T} at={K.Pi + 2.4} until={K.Pi + 3.8} x={140} y={1150} rot={4} />
         </SvgCapa>
       </Escena>
       {/* 9 · tu azotea: un tubo de cobre que, con los años, se pone verde */}
       <Escena T={T} a={K.Tu} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
+          <g transform="translate(540 1000) scale(1.2) translate(-540 -880)">
           <g transform={`translate(230 470) rotate(${T * 30})`}>{Array.from({ length: 8 }, (_, i) => <line key={i} x1={0} y1={-90} x2={0} y2={-120} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" transform={`rotate(${i * 45})`} />)}<circle r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} /></g>
-          <rect x={0} y={1010} width={KW} height={200} fill="#7c7872" stroke={KC.ink} strokeWidth={8} />
-          <rect x={0} y={970} width={KW} height={44} fill="#726b60" stroke={KC.ink} strokeWidth={8} />
+          <rect x={-120} y={1010} width={KW + 240} height={400} fill="#38352f" stroke={KC.ink} strokeWidth={8} />
+          <rect x={-120} y={970} width={KW + 240} height={44} fill="#4a443b" stroke={KC.ink} strokeWidth={8} />
           {/* tinaco */}
           <rect x={740} y={660} width={180} height={250} rx={30} fill="#2b2f36" stroke={KC.ink} strokeWidth={8} />
           <ellipse cx={830} cy={662} rx={90} ry={22} fill="#3d424b" stroke={KC.ink} strokeWidth={6} />
@@ -284,6 +292,7 @@ function Estatua22() {
           {[[600, 930], [470, 930], [330, 930], [200, 930], [700, 880], [130, 960], [560, 930], [400, 930], [260, 930]].map(([x, y], i) => { const a = kprog(anios, i / 12, i / 12 + 0.3);
             return a > 0 && <ellipse key={i} cx={x} cy={y} rx={34 * a + 4} ry={11} fill={VERDE} opacity={0.95} />; })}
           {anios > 0.05 && anios < 1 && [0, 1, 2, 3, 4].map((i) => { const p = ((T - K.Tu) * 1.4 + i * 0.2) % 1; return <Gota key={i} x={180 + i * 130} y={klerp(560, 900, p)} r={11} o={0.8} />; })}
+          </g>
         </SvgCapa>
         
       </Escena>
@@ -291,31 +300,31 @@ function Estatua22() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="32% 45%">
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Estatua T={T} x={330} y={1200} s={0.85} f={1} />
-          <Escudo x={330} y={720} s={1.1} o={kprog(T, K.Ci + 0.4, K.Ci + 0.9) * 0.9} />
+          <Estatua T={T} x={340} y={1560} s={1.1} f={1} />
+          <Escudo x={340} y={938} s={1.42} o={kprog(T, K.Ci + 0.4, K.Ci + 0.9) * 0.9} />
         </SvgCapa>
-        <Lupa T={T} at={K.Ci + 0.9} until={K.Ou - 0.1} x={800} y={930} r={170} fx={360} fy={820} interior={CorteLupa} tinte={KC.mint} etiqueta="cobre intacto debajo" />
+        <Lupa T={T} at={K.Ci + 0.5} until={K.Ou - 0.1} x={820} y={960} r={205} fx={378} fy={1068} interior={CorteLupa} tinte={KC.mint} etiqueta="cobre intacto debajo" />
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 3.2} texto="siempre fue verde" x={540} y={1130} tam={44} />
-      <Chip T={T} at={K.G + 3.6} until={K.P - 0.3} texto="la costra verde la protege" x={540} y={1130} tam={38} borde={VERDE} />
-      <Chip T={T} at={K.P + 0.4} until={K.Ca - 0.3} texto="piel de cobre" x={640} y={550} tam={44} borde={COBRE} />
-      <Etq T={T} at={K.P + 2.6} until={K.Ca - 0.3} x={1010} y={652} texto="2 centavos de dólar ≈ 3 mm" lado="izq" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Ca + 0.4} until={K.Cu - 0.3} texto="1886: color centavo" x={540} y={1130} tam={44} borde={CAFE} />
-      <Chip T={T} at={K.Cu + 0.4} until={K.Cu + 2.4} texto="oxígeno + agua" x={540} y={250} tam={40} borde={QA.O} />
-      <Etq T={T} at={K.Cu + 3.4} until={K.Br + 2.4} x={60} y={1215} texto="cuprita · Cu₂O (oscura)" tam={34} />
-      <Chip T={T} at={K.Br + 0.4} until={K.Br + 2.4} texto="azufre de la contaminación" x={500} y={700} tam={36} borde={QA.S} />
-      <Chip T={T} at={K.Br + 3.0} until={K.Es - 0.2} texto="brochantita · CuSO₄·3Cu(OH)₂" x={665} y={600} tam={30} borde={VERDE} mono />
-      <Chip T={T} at={K.Es + 0.4} until={K.Pr - 0.2} texto="casi no se disuelve" x={450} y={640} tam={42} borde={VERDE} />
-      <TarjetaEstudio T={T} at={K.St + 0.2} until={K.St + 3.3} anio="1986" quien="Matyi y Baboian" revista="Powder Diffraction · para la restauración" y={760} />
-      <Chip T={T} at={K.St + 5.2} until={K.Pi - 0.3} texto="1905 · brochantita estable" x={330} y={1120} tam={28} borde={VERDE} />
-      <Chip T={T} at={K.St + 7.4} until={K.Pi - 0.3} texto="1980 · antlerita, menos estable" x={760} y={1175} tam={28} borde={KC.yellow} />
-      <Chip T={T} at={K.St + 9.0} until={K.Pi - 0.3} texto="¿lluvia ácida?" x={770} y={430} tam={40} borde="#8e93a0" />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 3.2} texto="siempre fue verde" x={760} y={300} tam={44} />
+      <Chip T={T} at={K.G + 3.6} until={K.P - 0.3} texto="la costra verde la protege" x={740} y={300} tam={38} borde={VERDE} />
+      <Chip T={T} at={K.P + 0.4} until={K.Ca - 0.3} texto="piel de cobre" x={640} y={600} tam={44} borde={COBRE} />
+      <Etq T={T} at={K.P + 2.6} until={K.Ca - 0.3} x={1037} y={800} texto="2 centavos de dólar ≈ 3 mm" lado="izq" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Ca + 0.4} until={K.Cu - 0.3} texto="1886: color centavo" x={790} y={1250} tam={44} borde={CAFE} />
+      <Chip T={T} at={K.Cu + 0.4} until={K.Cu + 2.4} texto="oxígeno + agua" x={540} y={330} tam={40} borde={QA.O} />
+      <Etq T={T} at={K.Cu + 3.4} until={K.Br + 2.4} x={60} y={1325} texto="cuprita · Cu₂O (oscura)" tam={34} />
+      <Chip T={T} at={K.Br + 0.4} until={K.Br + 2.4} texto="azufre de la contaminación" x={500} y={810} tam={36} borde={QA.S} />
+      <Chip T={T} at={K.Br + 3.0} until={K.Es - 0.2} texto="brochantita · CuSO₄·3Cu(OH)₂" x={665} y={710} tam={30} borde={VERDE} mono />
+      <Chip T={T} at={K.Es + 0.4} until={K.Pr - 0.2} texto="casi no se disuelve" x={450} y={750} tam={42} borde={VERDE} />
+      <TarjetaEstudio T={T} at={K.St + 0.2} until={K.St + 3.3} anio="1986" quien="Matyi y Baboian" revista="Powder Diffraction · para la restauración" x={700} y={330} />
+      <Chip T={T} at={K.St + 5.2} until={K.Pi - 0.3} texto="1905 · brochantita estable" x={290} y={1170} tam={28} borde={VERDE} />
+      <Chip T={T} at={K.St + 7.4} until={K.Pi - 0.3} texto="1980 · antlerita, menos estable" x={790} y={1235} tam={28} borde={KC.yellow} />
+      <Chip T={T} at={K.St + 9.0} until={K.Pi - 0.3} texto="¿lluvia ácida?" x={812} y={330} tam={40} borde="#8e93a0" />
       <Chip T={T} at={K.Pi + 0.3} until={K.Pi + 2.6} texto="1906: ¿pintarla?" x={600} y={220} tam={44} borde={COBRE} />
       <Chip T={T} at={K.Pi + 3.6} until={K.Tu - 0.3} texto="se quedó verde ✓" x={600} y={220} tam={44} borde={VERDE} />
-      <Chip T={T} at={K.Tu + 0.4} until={K.Ci - 0.3} texto="tubo de cobre a la intemperie" x={540} y={1130} tam={36} borde={COBRE} />
-      <Chip T={T} at={K.Tu + 1.4} until={K.Ci - 0.3} texto="con los años…" x={420} y={760} tam={44} borde={VERDE} />
+      <Chip T={T} at={K.Tu + 0.4} until={K.Ci - 0.3} texto="tubo de cobre a la intemperie" x={540} y={1260} tam={36} borde={COBRE} />
+      <Chip T={T} at={K.Tu + 1.4} until={K.Ci - 0.3} texto="con los años…" x={420} y={830} tam={44} borde={VERDE} />
       <Chip T={T} at={K.Ci + 0.4} until={K.Ou} texto="pátina = escudo" x={640} y={215} tam={44} borde={VERDE} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

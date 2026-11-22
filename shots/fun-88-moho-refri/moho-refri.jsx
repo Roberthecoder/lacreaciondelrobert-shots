@@ -328,6 +328,9 @@ function CorteRefri({ T, x = 150, y = 700, w = 780, h = 440, puntos = 1, esponja
   </g>;
 }
 
+// Encuadre cine: el refri de frente 1.25× y centrado (antes ocupaba y 380–1220 y quedaba arriba).
+const ZR = 'translate(540 960) scale(1.25) translate(-520 -800)';
+
 function MohoRefriShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, F: CUES.Frio, Pe: CUES.Penicillium, Bo: CUES.Botrytis, Cl: CUES.Cladosporium, P: CUES.Pregunta, L: CUES.Lento,
@@ -349,30 +352,30 @@ function MohoRefriShot() {
       {/* 1 · gancho: el refri se abre; las sobras en pausa, la manzana y la fresa siguen (lento) */}
       <Escena T={T} a={K.G} b={K.F} zoom={0.04} origen="40% 50%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform={ZR}>
           <Refri T={T} abre={abre} mohoM={klerp(0.55, 0.62, kprog(T, K.G, K.F))} mohoF={klerp(0.5, 0.58, kprog(T, K.G, K.F))} termo={4} vaho={abre} />
           {copoU > 0 && copoU < 1 && <Copo x={300} y={klerp(380, 520, copoU)} r={30} rot={copoU * 120} />}
           <Boton T={T} at={K.G + 1.7} x={300} y={470} texto="PAUSA" pausa color={KC.cyan} w={230} />
           <Boton T={T} at={K.G + 2.5} x={330} y={715} texto="▶ lento" color={KC.yellow} />
           <Boton T={T} at={K.G + 2.8} x={650} y={760} texto="▶ lento" color={KC.yellow} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 2 · frío: el termómetro baja a 4 °C; la manzana sigue creciendo despacio */}
       <Escena T={T} a={K.F} b={K.Pe} zoom={0.06} origen="70% 30%">
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<g transform={ZR}>
           <Refri T={T} abre={1} mohoM={klerp(0.62, 0.8, kprog(T, K.F, K.Pe))} mohoF={0.6} termo={termF} />
           {(() => { const o = kprog(T, K.F + 1.6, K.F + 2.0); return <g opacity={o}><circle cx={790} cy={510} r={130} fill="none" stroke={KC.yellow} strokeWidth={10} strokeDasharray="24 14" transform={`rotate(${T * 30} 790 510)`} /></g>; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 3 · al microscopio: Penicillium expansum espera 6 días a 4 °C y luego crece */}
       <Escena T={T} a={K.Pe} b={K.Bo} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
-          <path d="M 0 1110 Q 280 1090 540 1112 T 1080 1105 L 1080 1300 L 0 1300 Z" fill="#7a4b2a" stroke={KC.ink} strokeWidth={6} />
+        {fsvg(<><g transform="translate(360 1170) scale(1.2) translate(-360 -1110)">
+          <path d="M -200 1110 Q 280 1090 540 1112 T 1300 1105 L 1300 1300 L -200 1300 Z" fill="#7a4b2a" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 9 }, (_, i) => <ellipse key={i} cx={60 + i * 120} cy={1160 + (i % 2) * 30} rx={44} ry={26} fill="#946039" stroke="#5e3a1f" strokeWidth={3} />)}
-          <Escarcha T={T} o={0.6} n={10} seed={8} area={[40, 360, 660, 700]} />
+          <Escarcha T={T} o={0.6} n={10} seed={8} area={[40, 520, 640, 800]} />
           {/* esporas quietas que esperan; luego germinan y salen los pinceles */}
           {[[300, 1100], [570, 1102], [110, 1104]].map(([x, y], i) => { const hinch = kprog(T, K.Pe + 0.6, K.Pe + 3.6), o = 1 - kprog(T, K.Pe + 3.6, K.Pe + 4.0); return <g key={i} opacity={o}>
             <path d={`M ${x + 8} ${y - 14} q ${10 + 26 * hinch} ${-6 - 10 * hinch} ${18 + 40 * hinch} ${-30 * hinch}`} stroke="#d8efe6" strokeWidth={8} fill="none" strokeLinecap="round" />
@@ -380,7 +383,8 @@ function MohoRefriShot() {
           <Penicilio T={T} x={300} y={1108} s={0.85} H={290} crece={crecePe} seed={1} />
           <Penicilio T={T} x={570} y={1108} s={0.55} H={250} crece={kprog(T, K.Pe + 3.6, K.Pe + 5.6)} seed={2} />
           <Penicilio T={T} x={110} y={1108} s={0.5} H={240} crece={kprog(T, K.Pe + 3.9, K.Pe + 5.9)} seed={3} />
-          <Calendario x={850} y={880} dias={dias} />
+          </g>
+          <Calendario x={870} y={940} dias={dias} />
         </>)}
       </Escena>
       {/* 4a · Botrytis: la fresa con pelusa gris */}
@@ -393,8 +397,8 @@ function MohoRefriShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <path d="M 0 1110 Q 260 1094 540 1110 L 540 1300 L 0 1300 Z" fill="#8e2a35" stroke={KC.ink} strokeWidth={6} />
-          <Botrytis T={T} x={250} y={1110} s={1.0} H={420} crece={kprog(T, K.Bo + 1.3, K.Bo + 3.4)} seed={3} />
+          <path d="M 0 1110 Q 260 1094 540 1110 L 540 1300 L 0 1300 Z" fill="#6a2029" stroke={KC.ink} strokeWidth={6} />
+          <Botrytis T={T} x={260} y={1110} s={1.3} H={420} crece={kprog(T, K.Bo + 1.3, K.Bo + 3.4)} seed={3} />
           {(() => { const o = kprog(T, K.Bo + 2.6, K.Bo + 3.0, kEase.sale); const cr = kprog(T, K.Bo + 3.0, K.Cl, kEase.suave); return o > 0 ? <g opacity={o} transform={`translate(${klerp(80, 0, o)} 0)`}>
             <Petri x={790} y={940} r={170} medio="#f5e7b8">
               <Colonia cx={0} cy={0} r={30 + 90 * cr} color="#cfcfc8" seed={6} />
@@ -409,22 +413,22 @@ function MohoRefriShot() {
       <Escena T={T} a={K.Cl} b={K.P} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<>
-          <Escarcha T={T} o={0.8} n={16} seed={5} area={[40, 760, 1040, 1100]} />
-          <path d="M 0 1150 Q 300 1130 540 1150 T 1080 1145 L 1080 1300 L 0 1300 Z" fill="#c9a189" stroke={KC.ink} strokeWidth={6} />
+        {fsvg(<g transform="translate(540 1150) scale(1.4) translate(-540 -1150)">
+          <Escarcha T={T} o={0.8} n={16} seed={5} area={[40, 820, 1040, 1110]} />
+          <path d="M -200 1150 Q 300 1130 540 1150 T 1300 1145 L 1300 1320 L -200 1320 Z" fill="#6e5547" stroke={KC.ink} strokeWidth={6} />
           <Cladosporium T={T} x={200} y={1152} s={0.8} crece={kprog(T, K.Cl + 0.1, K.Cl + 3.0)} seed={2} />
           <Cladosporium T={T} x={850} y={1156} s={0.75} crece={kprog(T, K.Cl + 0.8, K.Cl + 3.6)} seed={9} />
           {/* una espora suelta saca su tubo germinativo */}
           {(() => { const p = kprog(T, K.Cl + 1.4, K.Cl + 3.0); return <g transform="translate(430 1085)"><path d="M -30 0 Q -18 -18 0 -18 Q 18 -18 30 0 Q 18 18 0 18 Q -18 18 -30 0 Z" fill={MR.oliva2} stroke={KC.ink} strokeWidth={3} />
             {p > 0 && <path d={`M 28 0 Q ${28 + 40 * p} ${-10 * p} ${28 + 90 * p} ${-30 * p}`} stroke="#d8c890" strokeWidth={9} fill="none" strokeLinecap="round" />}</g>; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 6 · re-gancho: ¿para qué sirve el frío? */}
       <Escena T={T} a={K.P} b={K.L} zoom={0.1}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Interrogacion T={T} x={280} y={1170} color={MR.hielo} />
-          {[[120, 520], [430, 640], [200, 820], [470, 980]].map(([x, y], i) => <Copo key={i} x={x} y={y + Math.sin(T * 2 + i) * 14} r={30} rot={T * 40 + i * 20} />)}
+          <Interrogacion T={T} x={540} y={1330} color={MR.hielo} tam={640} />
+          {[[170, 820], [880, 900], [230, 1180], [860, 1260]].map(([x, y], i) => <Copo key={i} x={x} y={y + Math.sin(T * 2 + i) * 14} r={30} rot={T * 40 + i * 20} />)}
         </>)}
       </Escena>
       {/* 7 · por dentro: reacciones lentas y membrana rígida; los hongos del frío la ablandan */}
@@ -432,17 +436,19 @@ function MohoRefriShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
         {fsvg(<>
+          <g transform="translate(540 640) scale(1.35) translate(-560 -565)">
           <Engrane x={300} y={560} r={90} n={11} ang={lentoAng} />
           <Engrane x={470} y={480} r={60} n={8} ang={-lentoAng * 1.5 + 12} color={KC.cyan} />
           <Engrane x={455} y={650} r={50} n={7} ang={-lentoAng * 1.8} color={KC.pink} />
           <RelojArena x={820} y={560} p={kprog(T, K.L, K.Co) * 0.5} s={klerp(1, 1.15, kprog(T, K.L + 0.4, K.L + 2))} />
-          <Membrana T={T} y={990} flex={flex} />
+          </g>
+          <g transform="translate(540 1180) scale(1.25) translate(-540 -1180)"><Membrana T={T} y={1180} flex={flex} /></g>
         </>)}
       </Escena>
       {/* 8 · congelador: −18 °C los duerme; al descongelar, despiertan */}
       <Escena T={T} a={K.Co} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 130)">
           {viaje > 0 && <rect x={560} y={760} width={500} height={420} rx={40} fill="rgba(255,138,31,.35)" opacity={viaje} />}
           {viaje > 0 && <g opacity={viaje}><circle cx={940} cy={820} r={60} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />{Array.from({ length: 8 }, (_, i) => <line key={i} x1={940 + Math.cos(i * 0.785) * 76} y1={820 + Math.sin(i * 0.785) * 76} x2={940 + Math.cos(i * 0.785) * 100} y2={820 + Math.sin(i * 0.785) * 100} stroke={KC.ink} strokeWidth={6} strokeLinecap="round" />)}</g>}
           <Congelador T={T} x={60} y={560} w={470} h={600} />
@@ -454,25 +460,31 @@ function MohoRefriShot() {
             {desp < 0.5 && [0, 1, 2].map((k) => { const u = ((T * 0.6 + k / 3) % 1); return <text key={k} x={x + 40 + u * 60} y={y - 70 - u * 90} style={{ font:`400 ${36 + k * 8}px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={4} paintOrder="stroke" opacity={1 - u}>Z</text>; })}
             {viaje > 0.6 && Array.from({ length: 4 }, (_, k) => { const u = ((T * 1.2 + k / 4) % 1); return <ellipse key={'g' + k} cx={x - 80 + k * 52} cy={y + 60 + u * 60} rx={7} ry={10} fill="#9ad7ff" stroke={KC.ink} strokeWidth={2} opacity={1 - u} />; })}
           </g>; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 9 · el estudio: 293 refris en Italia; el moho, más en el fondo */}
       <Escena T={T} a={K.Es} b={K.Ti} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          {(() => { const o = kprog(T, K.Es + 2.3, K.Es + 2.6) * (1 - kprog(T, K.Es + 4.0, K.Es + 4.4)); return o > 0 ? <g opacity={o}>{Array.from({ length: 293 }, (_, i) => <MiniRefri key={i} x={110 + (i % 20) * 29} y={655 + Math.floor(i / 20) * 31} on={i < marcados ? 1 : 0} />)}</g> : null; })()}
-          {(() => { const o = kprog(T, K.Es + 4.1, K.Es + 4.5); return o > 0 ? <g opacity={o}><CorteRefri T={T} x={150} y={700} w={780} h={440} puntos={kprog(T, K.Es + 4.3, K.Es + 5.3)} esponja={kprog(T, K.Es + 4.4, K.Es + 6.4)} /></g> : null; })()}
+          {/* mientras se presenta el estudio, el refri de casa ya está a cuadro (atenuado) */}
+          {(() => { const o = 0.5 * (1 - kprog(T, K.Es + 2.1, K.Es + 2.5)); return o > 0 ? <g opacity={o} transform="translate(540 1080) scale(0.95) translate(-520 -800)"><Refri T={T} abre={1} mohoM={0.6} mohoF={0.6} termo={4} sucio={1} /></g> : null; })()}
+          {(() => { const o = kprog(T, K.Es + 2.3, K.Es + 2.6) * (1 - kprog(T, K.Es + 4.0, K.Es + 4.4)); return o > 0 ? <g opacity={o} transform="translate(540 1040) scale(1.5) translate(-385.5 -872)">{Array.from({ length: 293 }, (_, i) => <MiniRefri key={i} x={110 + (i % 20) * 29} y={655 + Math.floor(i / 20) * 31} on={i < marcados ? 1 : 0} />)}</g> : null; })()}
+          {(() => { const o = kprog(T, K.Es + 4.1, K.Es + 4.5); return o > 0 ? <g opacity={o} transform="translate(540 1010) scale(1.2) translate(-540 -920)"><CorteRefri T={T} x={150} y={700} w={780} h={440} puntos={kprog(T, K.Es + 4.3, K.Es + 5.3)} esponja={kprog(T, K.Es + 4.4, K.Es + 6.4)} /></g> : null; })()}
         </>)}
       </Escena>
       {/* 10 · refris tibios: promedio 6.6 °C */}
       <Escena T={T} a={K.Ti} b={K.S} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<TermoRefri x={860} y={700} valor={klerp(4, 6.6, kprog(T, K.Ti + 0.4, K.Ti + 1.6, kEase.suave))} h={250} />)}
+        {(() => { const v = klerp(4, 6.6, kprog(T, K.Ti + 0.4, K.Ti + 1.6, kEase.suave)); return fsvg(<>
+          {/* el mismo refri de casa, tibio: su termómetro sube con el número */}
+          <g transform="translate(500 1110) scale(0.83) translate(-520 -800)"><Refri T={T} abre={1} mohoM={0.75} mohoF={0.7} termo={v} /></g>
+          <TermoRefri x={975} y={840} valor={v} h={300} />
+        </>); })()}
       </Escena>
       {/* 11 · lo que sí sirve */}
       <Escena T={T} a={K.S} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<g transform="translate(540 960) scale(0.52) translate(-520 -780)">
+        {fsvg(<g transform="translate(540 1085) scale(0.85) translate(-520 -800)">
           <Refri T={T} abre={1} mohoM={0} mohoF={0} termo={4} fecha={T > K.S + 2.0 ? 'LUN' : null} sucio={1} limpio={kprog(T, K.S + 3.6, K.S + 5.6)} />
           {(() => { const u = kprog(T, K.S + 3.5, K.S + 5.7); return u > 0 && u < 1 ? <Esponja x={klerp(220, 820, 0.5 - 0.5 * Math.cos(u * Math.PI * 4))} y={RF.y1 - 60} s={1.3} /> : null; })()}
         </g>)}
@@ -480,69 +492,69 @@ function MohoRefriShot() {
       {/* 12 · cierre: el mismo refri, limpio y a 4 °C */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="40% 50%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform={ZR}>
           <Refri T={T} abre={1} mohoM={0} mohoF={0} termo={4} fecha="LUN" limpio={1} />
           <RelojArena x={470} y={575} s={0.32} p={kprog(T, K.C, K.Ou)} />
           <Sello T={T} at={K.C + 0.8} x={470} y={790} texto="4 °C" color={KC.leaf} r={78} />
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 3.0} until={K.F - 0.3} x={420} y={560} texto="sobras" tam={28} color={KC.ink} />
-      <NumeroGigante T={T} at={K.F + 1.4} until={K.Pe - 0.3} valor={4} desde={12} dur={0.6} sufijo=" °C" x={560} y={470} tam={150} color={KC.white} />
-      <Chip T={T} at={K.F + 0.4} until={K.Pe - 0.3} texto="la mayoría prefiere el calor" x={520} y={330} tam={30} borde={KC.orange} />
-      <Chip T={T} at={K.F + 2.4} until={K.Pe - 0.3} texto="▶ varios siguen creciendo" x={430} y={1110} tam={30} borde={KC.yellow} />
-      <Etq T={T} at={K.Pe + 0.4} until={K.Bo - 0.3} x={60} y={400} texto="Penicillium expansum" it tam={40} color={MR.peni2} />
-      <Etq T={T} at={K.Pe + 0.7} until={K.Bo - 0.3} x={60} y={455} texto="moho azul de la manzana" tam={28} />
-      <Chip T={T} at={K.Pe + 1.0} until={K.Bo - 0.3} texto="a 4 °C · estudio de 2015" x={850} y={720} tam={26} borde={KC.cyan} />
-      <Chip T={T} at={K.Pe + 1.2} until={K.Pe + 3.6} texto="fase de espera" x={850} y={1060} tam={26} borde={KC.gold} />
-      <Chip T={T} at={K.Pe + 3.7} until={K.Bo - 0.3} texto="…y crece" x={850} y={1060} tam={30} borde={KC.leaf} />
-      <Etq T={T} at={K.Pe + 1.0} until={K.Pe + 3.6} x={330} y={1030} texto="esporas esperando" tam={26} color={KC.gold2} />
-      <Etq T={T} at={K.Pe + 5.0} until={K.Bo - 0.3} x={470} y={640} texto="conidios en cadena" tam={26} color={KC.gold2} />
+      <Etq T={T} at={K.G + 3.0} until={K.F - 0.3} x={420} y={655} texto="sobras" tam={28} color={KC.ink} />
+      <NumeroGigante T={T} at={K.F + 1.4} until={K.Pe - 0.3} valor={4} desde={12} dur={0.6} sufijo=" °C" x={545} y={520} tam={150} color={KC.white} />
+      <Chip T={T} at={K.F + 0.4} until={K.Pe - 0.3} texto="la mayoría prefiere el calor" x={540} y={375} tam={30} borde={KC.orange} />
+      <Chip T={T} at={K.F + 2.4} until={K.Pe - 0.3} texto="▶ varios siguen creciendo" x={400} y={1345} tam={30} borde={KC.yellow} />
+      <Etq T={T} at={K.Pe + 0.4} until={K.Bo - 0.3} x={480} y={370} texto="Penicillium expansum" it tam={40} color={MR.peni2} />
+      <Etq T={T} at={K.Pe + 0.7} until={K.Bo - 0.3} x={480} y={425} texto="moho azul de la manzana" tam={28} />
+      <Chip T={T} at={K.Pe + 1.0} until={K.Bo - 0.3} texto="a 4 °C · estudio de 2015" x={830} y={780} tam={26} borde={KC.cyan} />
+      <Chip T={T} at={K.Pe + 1.2} until={K.Pe + 3.6} texto="fase de espera" x={870} y={1110} tam={26} borde={KC.gold} />
+      <Chip T={T} at={K.Pe + 3.7} until={K.Bo - 0.3} texto="…y crece" x={870} y={1110} tam={30} borde={KC.leaf} />
+      <Etq T={T} at={K.Pe + 1.0} until={K.Pe + 3.6} x={330} y={1080} texto="esporas esperando" tam={26} color={KC.gold2} />
+      <Etq T={T} at={K.Pe + 5.0} until={K.Bo - 0.3} x={440} y={600} texto="conidios en cadena" tam={26} color={KC.gold2} />
       <Etq T={T} at={K.Bo + 0.4} until={K.Bo + 1.4} x={170} y={460} texto="moho gris de la fresa" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Bo + 1.9} until={K.Cl - 0.3} x={60} y={400} texto="Botrytis cinerea" it tam={40} color={MR.gris} />
-      <Etq T={T} at={K.Bo + 2.2} until={K.Cl - 0.3} x={60} y={455} texto="conidios en racimo" tam={28} />
-      <Chip T={T} at={K.Bo + 3.0} until={K.Cl - 0.3} texto="estudio de 2001 · en laboratorio" x={760} y={640} tam={26} borde={KC.gold} />
+      <Etq T={T} at={K.Bo + 1.9} until={K.Cl - 0.3} x={60} y={290} texto="Botrytis cinerea" it tam={40} color={MR.gris} />
+      <Etq T={T} at={K.Bo + 2.2} until={K.Cl - 0.3} x={60} y={340} texto="conidios en racimo" tam={28} />
+      <Chip T={T} at={K.Bo + 3.0} until={K.Cl - 0.3} texto="estudio de 2001 · en laboratorio" x={760} y={620} tam={26} borde={KC.gold} />
       <Etq T={T} at={K.Bo + 3.2} until={K.Cl - 0.3} x={960} y={1145} lado="izq" texto="placa de cultivo" tam={24} />
-      <NumeroGigante T={T} at={K.Cl + 0.4} until={K.P - 0.3} valor={6} dur={0.7} prefijo="−" sufijo=" °C" x={360} y={470} tam={180} color={MR.hielo} />
-      <Chip T={T} at={K.Cl + 0.9} until={K.P - 0.3} texto="ya en 1923" x={360} y={610} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.Cl + 1.6} until={K.P - 0.3} x={60} y={680} texto="Cladosporium herbarum" it tam={34} color={MR.oliva2} />
-      <Etq T={T} at={K.Cl + 2.0} until={K.P - 0.3} x={470} y={1125} texto="la espora germina" tam={24} color={KC.gold2} />
-      <div style={{ position:'absolute', left:0, right:0, top:380, zIndex:41, textAlign:'center', opacity:kprog(T, K.P, K.P + 0.3) * (1 - kprog(T, K.L - 0.2, K.L + 0.2)), font:`400 96px/1 ${KF.titulo}`, color:KC.white, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>¿PARA QUÉ SIRVE EL FRÍO?</div>
-      <Chip T={T} at={K.L + 0.5} until={K.L + 3.0} texto="reacciones más lentas" x={400} y={760} tam={32} borde={KC.gold} />
-      <Chip T={T} at={K.L + 1.9} until={K.L + 3.3} texto="membrana rígida" x={540} y={1150} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.L + 3.4} until={K.Co - 0.3} texto="grasas insaturadas → membrana flexible" x={540} y={760} tam={28} borde={KC.mint} />
-      <Chip T={T} at={K.L + 3.9} until={K.Co - 0.3} texto="así lo hacen los hongos del frío" x={540} y={1150} tam={28} borde={KC.mint} />
-      <MitoTachado T={T} at={K.Co + 0.2} tacharEn={K.Co + 1.2} until={K.Es - 0.3} texto="EL CONGELADOR LOS MATA" x={380} y={430} tam={34} />
-      <Chip T={T} at={K.Co + 1.4} until={K.Es - 0.3} texto="los duerme" x={295} y={705} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.Co + 2.8} until={K.Es - 0.3} texto="al descongelar, despiertan" x={760} y={700} tam={28} borde={KC.orange} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.2} anio="2014" quien="Padua, Italia" revista="Catellani y cols. · Food Control" x={380} y={600} />
-      <NumeroGigante T={T} at={K.Es + 2.3} until={K.Es + 4.0} valor={293} dur={1.2} etiqueta="refris de casa" x={380} y={500} tam={170} color={KC.gold2} />
-      <Chip T={T} at={K.Es + 4.4} until={K.Ti - 0.3} texto="moho: 2.5 veces más probable" x={400} y={480} tam={30} borde={KC.gold} />
-      <Chip T={T} at={K.Es + 4.8} until={K.Ti - 0.3} texto="en el fondo que en las paredes" x={400} y={570} tam={28} borde={KC.gold} />
-      <Etq T={T} at={K.Es + 5.0} until={K.Ti - 0.3} x={560} y={1035} texto="fondo" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Es + 5.2} until={K.Ti - 0.3} x={190} y={830} texto="paredes" tam={24} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Ti + 0.3} until={K.S - 0.3} valor={6.6} desde={4} dec={1} dur={1.2} sufijo=" °C" etiqueta="promedio" x={380} y={640} tam={200} color={KC.white} />
-      <MitoTachado T={T} at={K.Ti + 1.6} tacharEn={K.Ti + 2.2} until={K.S - 0.3} texto="4 °C" x={380} y={880} tam={52} />
-      <Chip T={T} at={K.Ti + 2.4} until={K.S - 0.3} texto="rango: 1 a 11.3 °C" x={400} y={1030} tam={28} borde={KC.red} />
-      <Chip T={T} at={K.Ti + 2.8} until={K.S - 0.3} texto="25 refris de casa · Univ. de Zagreb · 2020" x={540} y={1130} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.S + 0.4} until={K.C - 0.3} texto="✓ 4 °C o menos" x={540} y={400} tam={34} borde={KC.leaf} />
-      <Chip T={T} at={K.S + 1.7} until={K.C - 0.3} texto="✓ sobras: 3 a 4 días" x={540} y={490} tam={34} borde={KC.leaf} />
-      <Chip T={T} at={K.S + 3.3} until={K.C - 0.3} texto="✓ limpiarlo cada pocos meses" x={540} y={580} tam={34} borde={KC.leaf} />
-      <Chip T={T} at={K.S + 3.8} until={K.C - 0.3} texto="1 cucharada de bicarbonato en ~1 L de agua" x={540} y={665} tam={24} borde={KC.gold} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="el frío solo da tiempo" x={540} y={1150} tam={36} borde={KC.cyan} />
+      <NumeroGigante T={T} at={K.Cl + 0.4} until={K.P - 0.3} valor={6} dur={0.7} prefijo="−" sufijo=" °C" x={360} y={440} tam={180} color={MR.hielo} />
+      <Chip T={T} at={K.Cl + 0.9} until={K.P - 0.3} texto="ya en 1923" x={360} y={575} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.Cl + 1.6} until={K.P - 0.3} x={60} y={650} texto="Cladosporium herbarum" it tam={34} color={MR.oliva2} />
+      <Etq T={T} at={K.Cl + 2.0} until={K.P - 0.3} x={470} y={1140} texto="la espora germina" tam={24} color={KC.gold2} />
+      <div style={{ position:'absolute', left:0, right:0, top:560, zIndex:41, textAlign:'center', opacity:kprog(T, K.P, K.P + 0.3) * (1 - kprog(T, K.L - 0.2, K.L + 0.2)), font:`400 96px/1 ${KF.titulo}`, color:KC.white, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}` }}>¿PARA QUÉ SIRVE EL FRÍO?</div>
+      <Chip T={T} at={K.L + 0.5} until={K.L + 3.0} texto="reacciones más lentas" x={400} y={900} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.L + 1.9} until={K.L + 3.3} texto="membrana rígida" x={540} y={1395} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.L + 3.4} until={K.Co - 0.3} texto="grasas insaturadas → membrana flexible" x={540} y={950} tam={28} borde={KC.mint} />
+      <Chip T={T} at={K.L + 3.9} until={K.Co - 0.3} texto="así lo hacen los hongos del frío" x={540} y={1395} tam={28} borde={KC.mint} />
+      <MitoTachado T={T} at={K.Co + 0.2} tacharEn={K.Co + 1.2} until={K.Es - 0.3} texto="EL CONGELADOR LOS MATA" x={380} y={545} tam={34} />
+      <Chip T={T} at={K.Co + 1.4} until={K.Es - 0.3} texto="los duerme" x={295} y={835} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.Co + 2.8} until={K.Es - 0.3} texto="al descongelar, despiertan" x={760} y={830} tam={28} borde={KC.orange} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.2} anio="2014" quien="Padua, Italia" revista="Catellani y cols. · Food Control" x={540} y={400} />
+      <NumeroGigante T={T} at={K.Es + 2.3} until={K.Es + 4.0} valor={293} dur={1.2} etiqueta="refris de casa" x={540} y={470} tam={170} color={KC.gold2} />
+      <Chip T={T} at={K.Es + 4.4} until={K.Ti - 0.3} texto="moho: 2.5 veces más probable" x={540} y={560} tam={30} borde={KC.gold} />
+      <Chip T={T} at={K.Es + 4.8} until={K.Ti - 0.3} texto="en el fondo que en las paredes" x={540} y={645} tam={28} borde={KC.gold} />
+      <Etq T={T} at={K.Es + 5.0} until={K.Ti - 0.3} x={570} y={1150} texto="fondo" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Es + 5.2} until={K.Ti - 0.3} x={230} y={880} texto="paredes" tam={24} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Ti + 0.3} until={K.S - 0.3} valor={6.6} desde={4} dec={1} dur={1.2} sufijo=" °C" etiqueta="promedio" x={360} y={430} tam={200} color={KC.white} />
+      <MitoTachado T={T} at={K.Ti + 1.6} tacharEn={K.Ti + 2.2} until={K.S - 0.3} texto="4 °C" x={820} y={470} tam={52} />
+      <Chip T={T} at={K.Ti + 2.4} until={K.S - 0.3} texto="rango: 1 a 11.3 °C" x={540} y={615} tam={28} borde={KC.red} />
+      <Chip T={T} at={K.Ti + 2.8} until={K.S - 0.3} texto="25 refris de casa · Univ. de Zagreb · 2020" x={540} y={695} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.S + 0.4} until={K.C - 0.3} texto="✓ 4 °C o menos" x={540} y={370} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 1.7} until={K.C - 0.3} texto="✓ sobras: 3 a 4 días" x={540} y={450} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 3.3} until={K.C - 0.3} texto="✓ limpiarlo cada pocos meses" x={540} y={530} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.S + 3.8} until={K.C - 0.3} texto="1 cucharada de bicarbonato en ~1 L de agua" x={540} y={605} tam={24} borde={KC.gold} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="el frío solo da tiempo" x={540} y={375} tam={36} borde={KC.cyan} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Pe} texto="10 cm" largo={137} />
-      <BarraEscala T={T} at={K.Pe} until={K.Bo} texto="10 µm" largo={60} />
+      <BarraEscala T={T} at={K.G} until={K.Pe} texto="10 cm" largo={171} />
+      <BarraEscala T={T} at={K.Pe} until={K.Bo} texto="10 µm" largo={72} />
       <BarraEscala T={T} at={K.Bo} until={K.Bo + 1.5} texto="1 cm" largo={110} />
-      <BarraEscala T={T} at={K.Bo + 1.5} until={K.Cl} texto="10 µm" largo={40} />
-      <BarraEscala T={T} at={K.Cl} until={K.P} texto="10 µm" largo={140} />
-      <BarraEscala T={T} at={K.L} until={K.Co} texto="10 nm (membrana)" largo={130} />
+      <BarraEscala T={T} at={K.Bo + 1.5} until={K.Cl} texto="10 µm" largo={52} />
+      <BarraEscala T={T} at={K.Cl} until={K.P} texto="10 µm" largo={196} />
+      <BarraEscala T={T} at={K.L} until={K.Co} texto="10 nm (membrana)" largo={163} />
       <BarraEscala T={T} at={K.Co} until={K.Es} texto="50 cm" largo={390} />
-      <BarraEscala T={T} at={K.Es + 4.1} until={K.Ti} texto="50 cm" largo={650} />
-      <BarraEscala T={T} at={K.S} until={K.C} texto="50 cm" largo={360} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={137} />
+      <BarraEscala T={T} at={K.Es + 4.1} until={K.Ti} texto="25 cm" largo={390} />
+      <BarraEscala T={T} at={K.S} until={K.C} texto="25 cm" largo={291} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={171} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.F - 0.1} texto="Tu refri no mata al moho: *lo pone en pausa.*" />

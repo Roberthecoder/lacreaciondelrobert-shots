@@ -2,7 +2,7 @@
 // Shot Fungi Mati #44 · El hongo que no deja dormir a los murciélagos (síndrome de nariz blanca) — NARRADO (N1 «Por dentro», gancho 1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
-const NB = { piel:'#8a5a3a', piel2:'#9a6844', ala:'#4a3328', oreja:'#6b4a35', rosa:'#e9a38e', roca:'#5d6b80', roca2:'#46536a', hongo:'#ffffff', grasa:'#ffd36b' };
+const NB = { piel:'#8a5a3a', piel2:'#9a6844', ala:'#4a3328', oreja:'#6b4a35', rosa:'#e9a38e', roca:'#333e50', roca2:'#262f3e', hongo:'#ffffff', grasa:'#ffd36b' };
 
 // Techo de cueva (roca) con borde irregular; los murciélagos cuelgan de y ≈ 380.
 function TechoCueva({ y = 380, seed = 7 }) {
@@ -124,21 +124,21 @@ function NarizBlancaShot() {
       <Escena T={T} a={K.G} b={K.Cu} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <TechoCueva />
-          <Murcielago T={T} x={380} y={380} s={1.85} hongo={1} seed={1} />
+          <TechoCueva y={520} />
+          <Murcielago T={T} x={450} y={520} s={2.5} hongo={1} seed={1} />
           <Copos T={T} desde={0} hasta={K.G + 2.2} />
-          <Sello T={T} at={K.G + 2.6} x={800} y={930} texto="HONGO" color={KC.red} r={105} />
+          <Sello T={T} at={K.G + 2.6} x={880} y={1000} texto="HONGO" color={KC.red} r={105} />
         </>)}
       </Escena>
       {/* 2 · la cueva: muchos colgados, el cuerpo casi tan frío como la roca */}
       <Escena T={T} a={K.Cu} b={K.H} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <TechoCueva />
-          {[100, 250, 820, 960].map((x, i) => <Murcielago key={i} T={T} x={x} y={385} s={0.5} seed={i + 3} />)}
-          <Murcielago T={T} x={540} y={385} s={0.8} hongo={0.8} seed={2} />
-          <Termometro x={330} y={650} alto={300} nivel={0.22} color={KC.blue} titulo="cueva" />
-          <Termometro x={740} y={650} alto={300} nivel={klerp(0.85, 0.28, kprog(T, K.Cu + 0.6, K.Cu + 2.6, kEase.suave))} color={KC.red} titulo="su cuerpo" />
+          <TechoCueva y={520} />
+          {[90, 240, 840, 990].map((x, i) => <Murcielago key={i} T={T} x={x} y={525} s={0.7} seed={i + 3} />)}
+          <Murcielago T={T} x={540} y={525} s={1.1} hongo={0.8} seed={2} />
+          <Termometro x={300} y={880} alto={380} nivel={0.22} color={KC.blue} titulo="cueva" />
+          <Termometro x={780} y={880} alto={380} nivel={klerp(0.85, 0.28, kprog(T, K.Cu + 0.6, K.Cu + 2.6, kEase.suave))} color={KC.red} titulo="su cuerpo" />
         </>)}
       </Escena>
       {/* 3 · el hongo al microscopio: hifas y conidios curvos */}
@@ -146,15 +146,15 @@ function NarizBlancaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <RedHifas T={T} x={540} y={780} g={kprog(T, K.H - 0.3, K.H + 2.6)} seed={5} n={260} escala={0.32} color="#f4f1e6" ancho={4} brillo={0.6} />
-          {Array.from({ length: 9 }, (_, i) => { const on = kprog(T, K.H + 0.8 + i * 0.12, K.H + 1.1 + i * 0.12, kEase.rebote); return on > 0 ? <Conidio key={i} x={260 + (i % 3) * 270 + Math.sin(T + i) * 10} y={640 + Math.floor(i / 3) * 150 + Math.cos(T * 1.3 + i) * 10} s={1.8 * on} rot={i * 40 + T * 10} /> : null; })}
+          <RedHifas T={T} x={540} y={900} g={klerp(0.45, 1, kprog(T, K.H - 0.3, K.H + 1.8))} seed={5} n={260} escala={0.42} color="#f4f1e6" ancho={4} brillo={0.6} />
+          {Array.from({ length: 9 }, (_, i) => { const on = kprog(T, K.H + 0.3 + i * 0.12, K.H + 0.6 + i * 0.12, kEase.rebote); return on > 0 ? <Conidio key={i} x={220 + (i % 3) * 320 + Math.sin(T + i) * 10} y={720 + Math.floor(i / 3) * 190 + Math.cos(T * 1.3 + i) * 10} s={2.3 * on} rot={i * 40 + T * 10} /> : null; })}
         </>)}
       </Escena>
       {/* 4 · por dentro de la piel del ala: las hifas entran a los folículos y glándulas */}
       <Escena T={T} a={K.P} b={K.D}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg(<>
-          <rect x={0} y={700} width={KW} height={460} fill="#624642" stroke={KC.ink} strokeWidth={6} />
+        {fsvg(<g transform="translate(0 180)">
+          <rect x={0} y={700} width={KW} height={600} fill="#624642" stroke={KC.ink} strokeWidth={6} />
           <rect x={0} y={640} width={KW} height={60} fill="#78635e" stroke={KC.ink} strokeWidth={6} />
           {FOL.map((x, i) => <g key={i}>
             <path d={`M ${x - 24} 640 L ${x - 24} 960 Q ${x} 1000 ${x + 24} 960 L ${x + 24} 640`} fill="#d79a84" stroke={KC.ink} strokeWidth={5} />
@@ -170,44 +170,50 @@ function NarizBlancaShot() {
           {Array.from({ length: 10 }, (_, i) => <Conidio key={i} x={60 + i * 100} y={625 + Math.sin(i * 2) * 6} s={0.7} rot={i * 33} />)}
           <Murcielago T={T} x={930} y={720} s={0.8} hongo={1} seed={6} />
           {[[930, 906, 0], [876, 1006, 1], [858, 830, 2]].map(([x, y, i]) => <circle key={i} cx={x} cy={y} r={30 + 8 * Math.sin(T * 6 + i)} fill="none" stroke={KC.yellow} strokeWidth={5} opacity={kprog(T, K.P + 0.6 + i * 0.5, K.P + 0.9 + i * 0.5)} />)}
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · se despierta más seguido */}
       <Escena T={T} a={K.D} b={K.Q} zoom={0.06}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <TechoCueva />
-          <Murcielago T={T} x={420} y={380} s={1.7} hongo={1} ojos={T > K.D + 0.2 ? 1 : 0} sacude={kprog(T, K.D + 0.2, K.D + 0.4) * (1 - kprog(T, K.D + 1.4, K.D + 1.8))} seed={1} />
-          {[[700, 820], [180, 900], [680, 1060], [220, 1100]].map(([x, y], i) => <Despertar key={i} x={x} y={y} s={kprog(T, K.D + 0.25 + i * 0.35, K.D + 0.45 + i * 0.35, kEase.rebote) * 1.6} />)}
+          <TechoCueva y={520} />
+          <Murcielago T={T} x={450} y={520} s={2.3} hongo={1} ojos={T > K.D + 0.2 ? 1 : 0} sacude={kprog(T, K.D + 0.2, K.D + 0.4) * (1 - kprog(T, K.D + 1.4, K.D + 1.8))} seed={1} />
+          {[[820, 980], [150, 1060], [830, 1240], [170, 1320]].map(([x, y], i) => <Despertar key={i} x={x} y={y} s={kprog(T, K.D + 0.25 + i * 0.35, K.D + 0.45 + i * 0.35, kEase.rebote) * 1.6} />)}
         </>)}
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.Q} b={K.Gr} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Interrogacion T={T} x={300} y={1080} />)}
+        {fsvg(<>
+          <TechoCueva y={520} />
+          <Murcielago T={T} x={450} y={520} s={2.3} hongo={1} ojos={1} seed={1} />
+          <Interrogacion T={T} x={830} y={1250} tam={460} />
+        </>)}
       </Escena>
       {/* 7 · la grasa: sano vs. enfermo */}
       <Escena T={T} a={K.Gr} b={K.E}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Murcielago T={T} x={130} y={610} s={0.5} hongo={0} ojos={0} seed={8} />
-          <FilaGrasa T={T} a={K.Gr + 0.4} dur={3.4} y={700} wakes={[0.25, 0.55, 0.82]} titulo="SANO" />
-          {T > K.Gr + 3.6 && <Murcielago T={T} x={130} y={840} s={0.5} hongo={1} ojos={0} flaco={kprog(T, K.Gr + 6.0, K.Gr + 7.0)} seed={9} />}
-          {T > K.Gr + 3.6 && <FilaGrasa T={T} a={K.Gr + 4.0} dur={3.9} y={930} wakes={[0.08, 0.17, 0.26, 0.35, 0.44, 0.53, 0.62, 0.7]} titulo="ENFERMO" enfermo />}
+          <Murcielago T={T} x={130} y={760} s={0.55} hongo={0} ojos={0} seed={8} />
+          <FilaGrasa T={T} a={K.Gr + 0.4} dur={3.4} y={870} wakes={[0.25, 0.55, 0.82]} titulo="SANO" />
+          {T > K.Gr + 3.6 && <Murcielago T={T} x={130} y={1010} s={0.55} hongo={1} ojos={0} flaco={kprog(T, K.Gr + 6.0, K.Gr + 7.0)} seed={9} />}
+          {T > K.Gr + 3.6 && <FilaGrasa T={T} a={K.Gr + 4.0} dur={3.9} y={1120} wakes={[0.08, 0.17, 0.26, 0.35, 0.44, 0.53, 0.62, 0.7]} titulo="ENFERMO" enfermo />}
         </>)}
       </Escena>
       {/* 8 · el estudio de 2012: días seguidos dormidos */}
       <Escena T={T} a={K.E} b={K.F}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Calendario T={T} at={K.E + 3.2} y={780} n={16} titulo="sanos: unos 16 días seguidos" />
-          <Calendario T={T} at={K.E + 5.2} y={1040} n={8} titulo="enfermos que murieron: unos 8" />
+          <Murcielago T={T} x={300} y={640} s={0.95} hongo={0} ojos={0} seed={8} />
+          <Murcielago T={T} x={780} y={640} s={0.95} hongo={1} ojos={0} flaco={0.6} seed={9} />
+          <Calendario T={T} at={K.E + 3.2} y={1090} n={16} titulo="sanos: unos 16 días seguidos" />
+          <Calendario T={T} at={K.E + 5.2} y={1340} n={8} titulo="enfermos que murieron: unos 8" />
         </>)}
       </Escena>
       {/* 9 · la primera foto: Nueva York, 2006 */}
       <Escena T={T} a={K.F} b={K.Mi}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<g transform={`translate(0 ${(1 - kprog(T, K.F, K.F + 0.6, kEase.sale)) * -700}) rotate(-3 540 830)`}>
+        {fsvg(<g transform={`translate(0 ${(1 - kprog(T, K.F, K.F + 0.6, kEase.sale)) * -900}) translate(540 960) scale(1.25) translate(-540 -840) rotate(-3 540 830)`}>
           <rect x={240} y={500} width={600} height={680} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={8} />
           <rect x={280} y={540} width={520} height={480} fill="#2b3240" stroke={KC.ink} strokeWidth={5} />
           <path d="M 280 540 L 800 540 L 800 600 L 280 600 Z" fill={NB.roca2} />
@@ -220,17 +226,20 @@ function NarizBlancaShot() {
       <Escena T={T} a={K.Mi} b={K.Eu}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <g opacity={kprog(T, K.Mi, K.Mi + 0.3) * (1 - kprog(T, K.Mi + 2.0, K.Mi + 2.4))} transform={`translate(540 760) scale(${klerp(0.7, 1, kprog(T, K.Mi, K.Mi + 0.5, kEase.rebote))})`}>
+          <g opacity={kprog(T, K.Mi, K.Mi + 0.3) * (1 - kprog(T, K.Mi + 2.0, K.Mi + 2.4))} transform={`translate(540 940) scale(${klerp(0.7, 1, kprog(T, K.Mi, K.Mi + 0.5, kEase.rebote))})`}>
             <text textAnchor="middle" style={{ font:`400 190px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8}>MILLONES</text>
             <text y={90} textAnchor="middle" style={{ font:`900 52px ${KF.texto}` }} fill={KC.ink}>de murciélagos muertos</text>
           </g>
+          <path d="M 60 520 L 1020 520 L 1020 556 L 60 556 Z" fill={NB.roca} stroke={KC.ink} strokeWidth={6} />
+          {ESPECIES.map(([n, x], i) => { const cae = kprog(T, K.Mi + 3.0 + i * 0.4, K.Mi + 4.2 + i * 0.4, kEase.suave);
+            return <g key={'m' + i} opacity={klerp(1, 0.3, cae)}><Murcielago T={T} x={x} y={554} s={0.62} hongo={1} ojos={0} flaco={cae * 0.7} seed={i + 11} /></g>; })}
           {T > K.Mi + 2.2 && <g opacity={kprog(T, K.Mi + 2.2, K.Mi + 2.6)}>
-            <text x={400} y={790} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>conteos hasta 2018 · Cheng et al. 2021</text>
-            <line x1={70} y1={1080} x2={1010} y2={1080} stroke={KC.ink} strokeWidth={6} />
+            <text x={540} y={1300} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>conteos hasta 2018 · Cheng et al. 2021</text>
+            <line x1={70} y1={1200} x2={1010} y2={1200} stroke={KC.ink} strokeWidth={6} />
             {ESPECIES.map(([n, x], i) => { const h = 250 * klerp(1, 0.08, kprog(T, K.Mi + 3.0 + i * 0.4, K.Mi + 4.2 + i * 0.4, kEase.suave));
-              return <g key={i}><rect x={x - 70} y={1080 - h} width={140} height={h} fill={KC.coral} stroke={KC.ink} strokeWidth={6} />
-                <rect x={x - 70} y={830} width={140} height={250} fill="none" stroke={KC.ink} strokeWidth={3} strokeDasharray="12 10" />
-                <text x={x} y={1118} textAnchor="middle" style={{ font:`italic 700 23px ${KF.mono}` }} fill={KC.ink}>{n}</text></g>; })}
+              return <g key={i}><rect x={x - 70} y={1200 - h} width={140} height={h} fill={KC.coral} stroke={KC.ink} strokeWidth={6} />
+                <rect x={x - 70} y={950} width={140} height={250} fill="none" stroke={KC.ink} strokeWidth={3} strokeDasharray="12 10" />
+                <text x={x} y={1238} textAnchor="middle" style={{ font:`italic 700 23px ${KF.mono}` }} fill={KC.ink}>{n}</text></g>; })}
           </g>}
         </>)}
       </Escena>
@@ -238,22 +247,22 @@ function NarizBlancaShot() {
       <Escena T={T} a={K.Eu} b={K.Mx}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <path d="M 120 380 L 660 380 L 660 420 L 120 420 Z" fill={NB.roca} stroke={KC.ink} strokeWidth={6} />
-          <Murcielago T={T} x={390} y={418} s={1.15} hongo={0.35} seed={4} />
+          <path d="M 120 520 L 660 520 L 660 560 L 120 560 Z" fill={NB.roca} stroke={KC.ink} strokeWidth={6} />
+          <Murcielago T={T} x={390} y={558} s={1.35} hongo={0.35} seed={4} />
           <g opacity={kprog(T, K.Eu + 2.4, K.Eu + 2.8)}>
-            <ellipse cx={230} cy={1070} rx={170} ry={80} fill="#bfe3b4" stroke={KC.ink} strokeWidth={6} />
-            <text x={230} y={1082} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>América</text>
-            <ellipse cx={850} cy={1070} rx={170} ry={80} fill="#ffe9a8" stroke={KC.ink} strokeWidth={6} />
-            <text x={850} y={1082} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>Europa</text>
-            <path d={`M 680 1050 Q 540 ${960} ${klerp(680, 410, kprog(T, K.Eu + 2.8, K.Eu + 3.8))} 1050`} stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="20 14" strokeLinecap="round" />
-            <text x={540} y={960} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Eu + 3.2, K.Eu + 3.5)}>ADN ?</text>
+            <ellipse cx={230} cy={1250} rx={170} ry={80} fill="#bfe3b4" stroke={KC.ink} strokeWidth={6} />
+            <text x={230} y={1262} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>América</text>
+            <ellipse cx={850} cy={1250} rx={170} ry={80} fill="#ffe9a8" stroke={KC.ink} strokeWidth={6} />
+            <text x={850} y={1262} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>Europa</text>
+            <path d={`M 680 1230 Q 540 ${1140} ${klerp(680, 410, kprog(T, K.Eu + 2.8, K.Eu + 3.8))} 1230`} stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="20 14" strokeLinecap="round" />
+            <text x={540} y={1140} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Eu + 3.2, K.Eu + 3.5)}>ADN ?</text>
           </g>
         </>)}
       </Escena>
       {/* 12 · México: reportado en 2025 en una cueva de Oaxaca */}
       <Escena T={T} a={K.Mx} b={K.C}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<MapaMexico x={40} y={450} ancho={1000} conCA={false}>
+        {fsvg(<MapaMexico x={40} y={700} ancho={1000} conCA={false}>
           {kprog(T, K.Mx + 1.2, K.Mx + 1.5) > 0 && <g transform={`translate(${oax[0]} ${oax[1]})`}>
             <circle r={18 + 26 * ((T * 1.2) % 1)} fill="none" stroke={KC.red} strokeWidth={6} opacity={1 - ((T * 1.2) % 1)} />
             <circle r={18 * kprog(T, K.Mx + 1.2, K.Mx + 1.5, kEase.rebote)} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
@@ -264,8 +273,8 @@ function NarizBlancaShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <TechoCueva />
-          <Murcielago T={T} x={380} y={380} s={1.85} hongo={1} ojos={T > K.C + 0.6 ? 1 : 0} seed={1} />
+          <TechoCueva y={520} />
+          <Murcielago T={T} x={450} y={520} s={2.5} hongo={1} ojos={T > K.C + 0.6 ? 1 : 0} seed={1} />
           <g opacity={1 - kprog(T, K.C + 1.6, K.C + 2.0)}>
             <text x={760} y={1020} style={{ font:`400 90px ${KF.titulo}` }} fill="#fff" stroke={KC.ink} strokeWidth={5}>z z z</text>
             <path d="M 740 1000 L 990 960" stroke={KC.red} strokeWidth={14} strokeLinecap="round" strokeDasharray="400" strokeDashoffset={400 * (1 - kprog(T, K.C + 0.6, K.C + 1.0))} />
@@ -274,38 +283,38 @@ function NarizBlancaShot() {
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 1.0} tacharEn={K.G + 2.2} until={K.G + 3.0} texto="¿escarcha?" x={380} y={1115} tam={46} />
-      <Etq T={T} at={K.G + 3.2} until={K.Cu - 0.3} x={600} y={1060} texto="murciélago café" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.G + 3.5} until={K.Cu - 0.3} x={600} y={1115} texto="Myotis lucifugus" it tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Cu + 0.5} until={K.H - 0.3} texto="cueva: 2–14 °C" x={540} y={590} tam={38} borde={KC.blue} />
-      <Chip T={T} at={K.H + 0.2} until={K.P - 0.3} texto="AL MICROSCOPIO · el hongo" x={330} y={430} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.H + 1.6} until={K.P - 0.3} texto="le gusta el frío" x={330} y={520} tam={34} borde={KC.blue} />
-      <Etq T={T} at={K.H + 0.6} until={K.P - 0.3} x={60} y={1085} texto="Pseudogymnoascus destructans" it tam={34} color={KC.yellow} />
-      <Etq T={T} at={K.H + 1.4} until={K.P - 0.3} x={60} y={1138} texto="esporas curvas (conidios)" tam={28} />
+      <MitoTachado T={T} at={K.G + 1.0} tacharEn={K.G + 2.2} until={K.G + 3.0} texto="¿escarcha?" x={880} y={1200} tam={46} />
+      <Etq T={T} at={K.G + 3.2} until={K.Cu - 0.3} x={700} y={1380} texto="murciélago café" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.G + 3.5} until={K.Cu - 0.3} x={700} y={1430} texto="Myotis lucifugus" it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Cu + 0.5} until={K.H - 0.3} texto="cueva: 2–14 °C" x={540} y={1430} tam={38} borde={KC.blue} />
+      <Chip T={T} at={K.H + 0.2} until={K.P - 0.3} texto="AL MICROSCOPIO · el hongo" x={540} y={430} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.H + 1.6} until={K.P - 0.3} texto="le gusta el frío" x={540} y={515} tam={34} borde={KC.blue} />
+      <Etq T={T} at={K.H + 0.6} until={K.P - 0.3} x={60} y={1420} texto="Pseudogymnoascus destructans" it tam={34} color={KC.yellow} />
+      <Etq T={T} at={K.H + 1.4} until={K.P - 0.3} x={60} y={1470} texto="esporas curvas (conidios)" tam={28} />
       <Chip T={T} at={K.P + 0.1} until={K.D - 0.3} texto="AL MICROSCOPIO · piel del ala" x={540} y={430} tam={32} borde={KC.cyan} />
-      <Etq T={T} at={K.P + 1.0} until={K.D - 0.3} x={60} y={560} texto="hifas" tam={30} color="#ffffff" />
-      <Etq T={T} at={K.P + 1.6} until={K.D - 0.3} x={60} y={1100} texto="folículos del pelo y glándulas" tam={28} color={KC.yellow} />
-      <Chip T={T} at={K.P + 2.0} until={K.D - 0.3} texto="hocico · orejas · alas" x={700} y={540} tam={30} borde={KC.yellow} />
-      <Chip T={T} at={K.Gr + 1.6} until={K.Gr + 3.9} texto="sano: la mayor parte, en despertar" x={420} y={520} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Gr + 6.6} until={K.E - 0.3} texto="enfermo: sin grasa antes de la primavera" x={540} y={1110} tam={28} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2012" quien="murciélagos silvestres de EE. UU." revista="Reeder et al., PLOS ONE" y={700} />
-      <Chip T={T} at={K.Mi + 2.6} until={K.Eu - 0.3} texto="más del 90 %" x={400} y={700} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.Eu + 1.0} until={K.Mx - 0.3} texto="Europa: sin matanzas" x={390} y={870} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.Eu + 0.4} until={K.Mx - 0.3} x={60} y={330} texto="murciélago europeo con el hongo" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Mx + 1.4} until={K.C - 0.3} texto="Oaxaca: hongo reportado en 2025" x={540} y={1000} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Mx + 2.2} until={K.C - 0.3} texto="si ves uno enfermo, no lo toques" x={540} y={1095} tam={32} borde={KC.red} />
-      <MitoTachado T={T} at={K.C + 0.2} tacharEn={K.C + 0.7} until={K.Ou - 0.2} texto="¿escarcha?" x={380} y={1115} tam={46} />
+      <Etq T={T} at={K.P + 1.0} until={K.D - 0.3} x={60} y={740} texto="hifas" tam={30} color="#ffffff" />
+      <Etq T={T} at={K.P + 1.6} until={K.D - 0.3} x={60} y={1280} texto="folículos del pelo y glándulas" tam={28} color={KC.yellow} />
+      <Chip T={T} at={K.P + 2.0} until={K.D - 0.3} texto="hocico · orejas · alas" x={790} y={620} tam={30} borde={KC.yellow} />
+      <Chip T={T} at={K.Gr + 1.6} until={K.Gr + 3.9} texto="sano: la mayor parte, en despertar" x={540} y={650} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Gr + 6.6} until={K.E - 0.3} texto="enfermo: sin grasa antes de la primavera" x={540} y={1340} tam={28} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2012" quien="murciélagos silvestres de EE. UU." revista="Reeder et al., PLOS ONE" y={1230} />
+      <Chip T={T} at={K.Mi + 2.6} until={K.Eu - 0.3} texto="más del 90 %" x={540} y={880} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.Eu + 1.0} until={K.Mx - 0.3} texto="Europa: sin matanzas" x={810} y={820} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.Eu + 0.4} until={K.Mx - 0.3} x={60} y={470} texto="murciélago europeo con el hongo" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Mx + 1.4} until={K.C - 0.3} texto="Oaxaca: hongo reportado en 2025" x={540} y={1340} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Mx + 2.2} until={K.C - 0.3} texto="si ves uno enfermo, no lo toques" x={540} y={1430} tam={32} borde={KC.red} />
+      <MitoTachado T={T} at={K.C + 0.2} tacharEn={K.C + 0.7} until={K.Ou - 0.2} texto="¿escarcha?" x={880} y={1200} tam={46} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Cu} texto="2 cm" largo={210} />
-      <BarraEscala T={T} at={K.Cu} until={K.H} texto="5 cm" largo={225} />
-      <BarraEscala T={T} at={K.H} until={K.P} texto="10 µm" largo={80} />
+      <BarraEscala T={T} at={K.G} until={K.Cu} texto="2 cm" largo={284} />
+      <BarraEscala T={T} at={K.Cu} until={K.H} texto="5 cm" largo={309} />
+      <BarraEscala T={T} at={K.H} until={K.P} texto="10 µm" largo={103} />
       <BarraEscala T={T} at={K.P} until={K.D} texto="50 µm" largo={160} />
-      <BarraEscala T={T} at={K.D} until={K.Q} texto="2 cm" largo={190} />
-      <BarraEscala T={T} at={K.F} until={K.Mi} texto="2 cm" largo={125} />
-      <BarraEscala T={T} at={K.Eu} until={K.Mx} texto="2 cm" largo={130} />
+      <BarraEscala T={T} at={K.D} until={K.Q} texto="2 cm" largo={257} />
+      <BarraEscala T={T} at={K.F} until={K.Mi} texto="2 cm" largo={156} />
+      <BarraEscala T={T} at={K.Eu} until={K.Mx} texto="2 cm" largo={153} />
       <BarraEscala T={T} at={K.Mx} until={K.C} texto="500 km" largo={120} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={210} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={284} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Cu - 0.1} texto="No es escarcha: *es un hongo.*" />

@@ -245,17 +245,17 @@ function AzulShot() {
       <Escena T={T} a={K.G} b={K.Me} zoom={0.06} origen="35% 55%">
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Tabla x={20} y={1090} w={760} />
-          <Escurre T={T} x={350 - 160 * 1.7} y0={1090 - 120 * 1.7} y1={1086} desde={K.G + 1.0} verde={verdeG} s={1.3} />
-          <HongoAzul T={T} x={350} y={1090} s={1.7} corte={corte} leche={leche} verde={verdeG} />
-          <Cuchillo x={90} y={760} p={kprog(T, K.G + 0.02, K.G + 0.75)} s={1.15} />
+          <Tabla x={20} y={1250} w={1040} />
+          <Escurre T={T} x={470 - 160 * 2.3} y0={1250 - 120 * 2.3} y1={1246} desde={K.G + 1.0} verde={verdeG} s={1.6} />
+          <HongoAzul T={T} x={470} y={1250} s={2.3} corte={corte} leche={leche} verde={verdeG} />
+          <Cuchillo x={120} y={900} p={kprog(T, K.G + 0.02, K.G + 0.75)} s={1.4} />
         </>)}
       </Escena>
       {/* 3 · mercado con lluvia → mapa */}
       <Escena T={T} a={K.Me} b={K.No} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <g opacity={1 - kprog(T, tMapa - 0.4, tMapa)}>
+          <g opacity={1 - kprog(T, tMapa - 0.4, tMapa)} transform="translate(540 1060) scale(1.15) translate(-540 -800)">
             <Nube x={240} y={420} s={0.9} />
             <path d="M 70 640 L 1010 640 L 960 700 L 120 700 Z" fill="#ff5fa2" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
             {Array.from({ length: 8 }, (_, i) => <path key={i} d={`M ${120 + i * 105} 700 L ${172 + i * 105} 700 L ${172 + i * 105 - 26} 744 Z`} fill={i % 2 ? '#ffffff' : '#ff5fa2'} stroke={KC.ink} strokeWidth={5} />)}
@@ -267,7 +267,7 @@ function AzulShot() {
             <Canasta T={T} x={790} y={1010} s={1.05} at={K.Me + 0.6} />
           </g>
           <g opacity={kprog(T, tMapa - 0.2, tMapa + 0.3)}>
-            <MapaMexico x={-230} y={210} ancho={1700}>
+            <MapaMexico x={-230} y={450} ancho={1700}>
               {[[-99.13, 19.43, 'CDMX', -1, -30], [-98.24, 19.32, 'Tlaxcala', 1, -40], [-98.2, 19.04, 'Puebla', 1, 34]].map(([lo, la, nom, lado, dy], i) => {
                 const [px, py] = mxProy(lo, la), q = kEase.rebote(kprog(T, tMapa + 0.3 + i * 0.25, tMapa + 0.7 + i * 0.25));
                 const tx = px + lado * 70, ty = py + dy * 0.7;
@@ -277,7 +277,7 @@ function AzulShot() {
                   <text x={tx} y={ty} textAnchor={lado > 0 ? 'start' : 'end'} style={{ font:`900 24px ${KF.texto}` }} fill={KC.ink} stroke="#fff6dc" strokeWidth={5} paintOrder="stroke" opacity={q}>{nom}</text>
                 </g>; })}
             </MapaMexico>
-            <Nube x={760} y={440} s={0.75} />
+            <Nube x={760} y={680} s={0.75} />
           </g>
           <Lluvia T={T} n={46} o={kprog(T, K.Me + 0.3, K.Me + 1.0)} />
         </>)}
@@ -285,25 +285,25 @@ function AzulShot() {
       {/* 4 · 44 nombres */}
       <Escena T={T} a={K.No} b={K.L} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(340 960) scale(1.12) translate(-330 -825)">
           {[['hongo azul', 250, 600, -6, 380], ['añil', 230, 740, 5, 220], ['zuin', 470, 760, -8, 220], ['oreja azul', 300, 900, 4, 380], ['aticonzol', 290, 1050, -3, 360]].map(([t, x, y, r, w], i) =>
             <Carton key={i} T={T} at={K.No + 0.2 + i * 0.5} x={x} y={y} rot={r} texto={t} ancho={w} />)}
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · por dentro: hifas lactíferas */}
       <Escena T={T} a={K.L} b={K.Pi} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
-        {fsvg(<CorteHifas T={T} a={K.L} x={100} y={680} w={800} h={370} />)}
+        {fsvg(<CorteHifas T={T} a={K.L} x={70} y={700} w={910} h={520} />)}
       </Escena>
       {/* 6 · el pigmento: un azuleno; casi no hay azules naturales */}
       <Escena T={T} a={K.Pi} b={K.P} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <Azuleno T={T} x={330} y={720} s={1.6} p={kprog(T, K.Pi + 0.2, K.Pi + 1.2)} />
+          <Azuleno T={T} x={400} y={830} s={2.4} p={kprog(T, K.Pi + 0.2, K.Pi + 1.2)} />
           {PALETA.map((c, i) => { const q = kEase.rebote(kprog(T, K.Pi + 1.6 + i * 0.07, K.Pi + 1.9 + i * 0.07)); const azul = i === PALETA.length - 1;
-            return <g key={i} transform={`translate(${110 + i * 75} 1060) scale(${q})`}>
+            return <g key={i} transform={`translate(${100 + i * 80} 1200) scale(${q * 1.15})`}>
               <rect x={-30} y={-30} width={60} height={60} rx={10} fill={c} stroke={azul ? '#ffffff' : KC.ink} strokeWidth={azul ? 7 : 5} style={azul ? { filter:'drop-shadow(0 0 14px #4f8dff)' } : null} />
             </g>; })}
         </>)}
@@ -316,101 +316,103 @@ function AzulShot() {
       {/* 8–9 · micorriza y el trato */}
       <Escena T={T} a={K.Mi} b={K.E} zoom={0.03} origen="50% 40%">
         <FondoLunares color={KC.cyan} />
-        <div style={{ position:'absolute', left:0, right:0, top:660, bottom:0, background:`linear-gradient(${AZ.tierra}, ${AZ.tierra2})` }}></div>
+        <div style={{ position:'absolute', left:0, right:0, top:920, bottom:0, background:`linear-gradient(${AZ.tierra}, ${AZ.tierra2})` }}></div>
         {fsvg(<>
+          <g transform="translate(560 920) scale(1.35) translate(-500 -660)">
           {Array.from({ length: 40 }, (_, i) => { const r = krng(i + 9); return <circle key={i} cx={r() * KW} cy={690 + r() * 560} r={3 + r() * 6} fill="#6b4a30" opacity=".6" />; })}
-          <rect x={0} y={648} width={KW} height={18} fill="#246733" stroke={KC.ink} strokeWidth={5} />
+          <rect x={-200} y={648} width={KW + 400} height={18} fill="#246733" stroke={KC.ink} strokeWidth={5} />
           <Raices x={PIN.x} y={PIN.y} s={0.9} trazos={RAIZ_PINO} manto={manto} />
           <Raices x={ENC.x} y={ENC.y} s={ENC.s} trazos={RAIZ_ENC} manto={manto} />
           {[...pE, ...pP].map(([tx, ty], i) => <Hifa key={i} x1={HONGO.x} y1={HONGO.y + 8} x2={tx} y2={ty} p={kprog(T, K.Mi + 0.4 + i * 0.12, K.Mi + 2.2 + i * 0.12)} seed={i + 1} />)}
           <Conifera x={PIN.x} y={PIN.y} s={0.62} T={T} seed={2} />
           <Encino x={ENC.x} y={ENC.y} s={0.95} T={T} />
           <HongoAzul T={T} x={HONGO.x} y={HONGO.y} s={0.42} />
-          {/* acercamiento a una punta de raíz: el manto de hifas */}
-          {(() => { const q = kprog(T, K.Mi + 2.6, K.Mi + 3.1, kEase.rebote) * (1 - kprog(T, K.Tr - 0.3, K.Tr)); if (q <= 0) return null;
-            return <g transform={`translate(830 930) scale(${q})`}>
-              <line x1={-210} y1={-20} x2={-120} y2={-10} stroke="#ffffff" strokeWidth={4} strokeDasharray="10 8" />
-              <circle r={150} fill="#2a1a10" stroke="#ffffff" strokeWidth={8} />
-              <path d="M -150 -40 L 40 -40 Q 110 -40 110 0 Q 110 40 40 40 L -150 40 Z" fill={AZ.raiz} stroke={KC.ink} strokeWidth={5} />
-              <path d="M -150 -58 L 40 -58 Q 128 -58 128 0 Q 128 58 40 58 L -150 58" fill="none" stroke={AZ.manto} strokeWidth={18} />
-              {Array.from({ length: 8 }, (_, i) => <line key={i} x1={-130 + i * 22} y1={-40} x2={-130 + i * 22} y2={40} stroke={AZ.manto} strokeWidth={3} opacity=".7" />)}
-            </g>; })()}
           {/* el trato: azúcares bajan, N y P suben */}
           {T > K.Tr - 0.2 && Array.from({ length: 6 }, (_, i) => { const u = ((T - K.Tr) * 0.32 + i / 6) % 1; const [px, py] = enRuta(rutaAz, u);
             return <g key={i} opacity={kprog(T, K.Tr - 0.2, K.Tr + 0.4)}><Azucar x={px} y={py} /></g>; })}
           {T > K.Tr + 1.2 && Array.from({ length: 6 }, (_, i) => { const u = ((T - K.Tr - 1.2) * 0.3 + i / 6) % 1; const [px, py] = enRuta(rutaN, u);
             return <g key={i} opacity={kprog(T, K.Tr + 1.2, K.Tr + 1.8)}><Nutriente x={px + 26} y={py} letra={i % 2 ? 'P' : 'N'} color={i % 2 ? '#ff9f1c' : '#a1e36b'} /></g>; })}
+          </g>
+          {/* acercamiento a una punta de raíz: el manto de hifas */}
+          {(() => { const q = kprog(T, K.Mi + 2.6, K.Mi + 3.1, kEase.rebote) * (1 - kprog(T, K.Tr - 0.3, K.Tr)); if (q <= 0) return null;
+            return <g transform={`translate(880 1390) scale(${q * 0.85})`}>
+              <line x1={36} y1={-202} x2={10} y2={-150} stroke="#ffffff" strokeWidth={4} strokeDasharray="10 8" />
+              <circle r={150} fill="#2a1a10" stroke="#ffffff" strokeWidth={8} />
+              <path d="M -150 -40 L 40 -40 Q 110 -40 110 0 Q 110 40 40 40 L -150 40 Z" fill={AZ.raiz} stroke={KC.ink} strokeWidth={5} />
+              <path d="M -150 -58 L 40 -58 Q 128 -58 128 0 Q 128 58 40 58 L -150 58" fill="none" stroke={AZ.manto} strokeWidth={18} />
+              {Array.from({ length: 8 }, (_, i) => <line key={i} x1={-130 + i * 22} y1={-40} x2={-130 + i * 22} y2={40} stroke={AZ.manto} strokeWidth={3} opacity=".7" />)}
+            </g>; })()}
         </>)}
       </Escena>
       {/* 10 · el estudio de 2012: ADN de raíces en Veracruz */}
       <Escena T={T} a={K.E} b={K.X} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <ADNLectura T={T} x={140} y={860} w={800} lectura={kprog(T, K.E + 1.6, K.E + 4.2)} />
-          <Raices x={540} y={950} s={1.0} trazos={[[[-300, 0], [-120, 20], [40, 0], [220, 30], [320, 10]], [[-120, 20], [-90, 120]], [[40, 0], [70, 110]], [[220, 30], [240, 130]]]} manto={kprog(T, K.E + 0.8, K.E + 2.0)} />
+          <ADNLectura T={T} x={90} y={1000} w={900} amp={56} lectura={kprog(T, K.E + 1.6, K.E + 4.2)} />
+          <Raices x={540} y={1110} s={1.2} trazos={[[[-300, 0], [-120, 20], [40, 0], [220, 30], [320, 10]], [[-120, 20], [-90, 120]], [[40, 0], [70, 110]], [[220, 30], [240, 130]]]} manto={kprog(T, K.E + 0.8, K.E + 2.0)} />
         </>)}
       </Escena>
       {/* 11 · 2023: el pigmento hecho en el laboratorio */}
       <Escena T={T} a={K.X} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Matraz T={T} x={200} y={1100} s={1.0} p={kprog(T, K.X + 0.8, K.X + 3.2)} />
-          <Azuleno T={T} x={180} y={690} s={0.7} p={kprog(T, K.X + 2.4, K.X + 3.2)} brillo={0.8} />
+          <Matraz T={T} x={380} y={1300} s={1.5} p={kprog(T, K.X + 0.8, K.X + 3.2)} />
+          <Azuleno T={T} x={290} y={650} s={0.9} p={kprog(T, K.X + 2.4, K.X + 3.2)} brillo={0.8} />
         </>)}
       </Escena>
       {/* 12 · cierre: el mismo hongo cortado, ahora con su árbol */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="50% 55%">
         <FondoLunares color={KC.yellow} />
-        <div style={{ position:'absolute', left:0, right:0, top:960, bottom:0, background:`linear-gradient(${AZ.tierra}, ${AZ.tierra2})` }}></div>
-        {fsvg(<>
+        <div style={{ position:'absolute', left:0, right:0, top:1180, bottom:0, background:`linear-gradient(${AZ.tierra}, ${AZ.tierra2})` }}></div>
+        {fsvg(<g transform="translate(480 1180) scale(1.3) translate(-600 -960)">
           <Encino x={880} y={960} s={0.95} T={T} />
           <Raices x={880} y={960} s={0.45} trazos={RAIZ_ENC} manto={1} />
           {puntas(880, 960, 0.45, RAIZ_ENC).map(([tx, ty], i) => <Hifa key={i} x1={510} y1={968} x2={tx} y2={ty} p={kprog(T, K.C + 0.6 + i * 0.15, K.C + 1.8 + i * 0.15)} seed={i + 3} ancho={4} />)}
-          <rect x={0} y={950} width={KW} height={16} fill="#246733" stroke={KC.ink} strokeWidth={5} />
+          <rect x={-200} y={950} width={KW + 400} height={16} fill="#246733" stroke={KC.ink} strokeWidth={5} />
           <HongoAzul T={T} x={510} y={958} s={1.35} corte={1} leche={1} verde={0.75} />
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.4} until={K.N - 0.2} texto="no es pintura" x={300} y={560} tam={44} borde={KC.red} />
-      <Etq T={T} at={K.N + 0.2} until={K.Me - 0.3} x={60} y={520} texto="Lactarius indigo" it tam={46} color={KC.ink} />
-      <Etq T={T} at={K.N + 0.9} until={K.Me - 0.3} x={60} y={590} texto="su nombre = «lechoso» (latín)" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.N + 1.5} until={K.Me - 0.3} x={150} y={700} texto="látex azul" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.G + 1.4} until={K.N - 0.2} texto="no es pintura" x={470} y={600} tam={44} borde={KC.red} />
+      <Etq T={T} at={K.N + 0.2} until={K.Me - 0.3} x={60} y={560} texto="Lactarius indigo" it tam={46} color={KC.ink} />
+      <Etq T={T} at={K.N + 0.9} until={K.Me - 0.3} x={60} y={630} texto="su nombre = «lechoso» (latín)" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.5} until={K.Me - 0.3} x={30} y={1075} texto="látex azul" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Me + 0.7} until={tMapa - 0.3} texto="comestible" x={290} y={520} tam={40} borde={KC.mint} />
-      <Chip T={T} at={tMapa + 1.2} until={K.No - 0.3} texto="sale con las lluvias" x={540} y={470} tam={40} borde={KC.cyan} />
+      <Chip T={T} at={tMapa + 1.2} until={K.No - 0.3} texto="sale con las lluvias" x={540} y={420} tam={40} borde={KC.cyan} />
       <BarraEscala T={T} at={tMapa} until={K.No} texto="mapa esquemático" largo={0} />
-      <NumeroGigante T={T} at={K.No + 1.2} until={K.L - 0.3} valor={44} dur={1.6} etiqueta="nombres locales" x={800} y={1000} tam={190} color={KC.yellow} />
-      <Etq T={T} at={K.No + 2.0} until={K.L - 0.3} x={600} y={1150} texto="registrados en México" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.L + 0.1} until={K.Pi - 0.3} texto="POR DENTRO · LA LECHE" x={420} y={470} tam={34} borde={KC.cyan} mono />
-      <Etq T={T} at={K.L + 1.3} until={K.Pi - 0.3} x={60} y={610} texto="hifas lactíferas: llevan el látex" tam={30} color="#9fc0ff" />
-      <Etq T={T} at={K.L + 2.9} until={K.Pi - 0.3} x={560} y={1100} texto="con el aire: verde" tam={30} color="#7fe0a0" />
-      <Chip T={T} at={K.Pi + 0.5} until={K.P - 0.3} texto="azuleno" x={330} y={520} tam={46} borde="#4f8dff" />
-      <Etq T={T} at={K.Pi + 1.0} until={K.P - 0.3} x={60} y={900} texto="anillo de 7 + anillo de 5" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.Pi + 2.2} until={K.P - 0.3} x={60} y={975} texto="pigmentos azules naturales: escasos" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Mi + 0.3} until={K.Tr - 0.3} x={226} y={700} texto="pino" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Mi + 0.5} until={K.Tr - 0.3} x={576} y={700} texto="encino" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Mi + 2.9} until={K.Tr - 0.3} x={600} y={1110} texto="ectomicorriza" tam={30} color={KC.texto} />
-      <Chip T={T} at={K.Tr + 0.2} until={K.E - 0.3} texto="árbol → hongo: azúcares" x={330} y={760} tam={32} borde={AZ.oro} />
-      <Chip T={T} at={K.Tr + 1.5} until={K.E - 0.3} texto="hongo → árbol: nitrógeno y fósforo" x={480} y={1090} tam={32} borde="#a1e36b" />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.X - 0.3} anio="2012" quien="bosque de niebla, Veracruz" revista="Mycologia, 2012 · ADN de raíces" x={380} y={560} />
-      <Etq T={T} at={K.E + 1.8} until={K.X - 0.3} x={60} y={790} texto="leyendo ADN…" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.E + 2.6} until={K.X - 0.3} x={60} y={1115} texto="raíz de carpe" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.E + 3.2} until={K.X - 0.3} x={470} y={1115} texto="+ Lactarius indigo" it tam={30} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.X + 0.2} until={K.C - 0.3} anio="2023" quien="U. de Tohoku, Japón" revista="J. Agric. Food Chem., 2023" x={400} y={470} />
-      <Etq T={T} at={K.X + 1.4} until={K.C - 0.3} x={380} y={900} texto="síntesis total: por primera vez" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.X + 2.6} until={K.C - 0.3} texto="candidato a colorante azul natural" x={640} y={770} tam={30} borde="#2457d6" />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="socio de los árboles" x={640} y={420} tam={38} borde={KC.mint} />
+      <NumeroGigante T={T} at={K.No + 1.2} until={K.L - 0.3} valor={44} dur={1.6} etiqueta="nombres locales" x={810} y={1020} tam={190} color={KC.yellow} />
+      <Etq T={T} at={K.No + 2.0} until={K.L - 0.3} x={640} y={1180} texto="registrados en México" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.L + 0.1} until={K.Pi - 0.3} texto="POR DENTRO · LA LECHE" x={420} y={560} tam={34} borde={KC.cyan} mono />
+      <Etq T={T} at={K.L + 1.3} until={K.Pi - 0.3} x={60} y={650} texto="hifas lactíferas: llevan el látex" tam={30} color="#9fc0ff" />
+      <Etq T={T} at={K.L + 2.9} until={K.Pi - 0.3} x={600} y={1280} texto="con el aire: verde" tam={30} color="#7fe0a0" />
+      <Chip T={T} at={K.Pi + 0.5} until={K.P - 0.3} texto="azuleno" x={400} y={540} tam={46} borde="#4f8dff" />
+      <Etq T={T} at={K.Pi + 1.0} until={K.P - 0.3} x={60} y={1080} texto="anillo de 7 + anillo de 5" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Pi + 2.2} until={K.P - 0.3} x={60} y={1300} texto="pigmentos azules naturales: escasos" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Mi + 0.3} until={K.Tr - 0.3} x={185} y={985} texto="pino" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Mi + 0.5} until={K.Tr - 0.3} x={660} y={985} texto="encino" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Mi + 2.9} until={K.Tr - 0.3} x={735} y={1390} texto="ectomicorriza" lado="izq" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Tr + 0.2} until={K.E - 0.3} texto="árbol → hongo: azúcares" x={540} y={225} tam={32} borde={AZ.oro} />
+      <Chip T={T} at={K.Tr + 1.5} until={K.E - 0.3} texto="hongo → árbol: nitrógeno y fósforo" x={540} y={300} tam={32} borde="#a1e36b" />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.X - 0.3} anio="2012" quien="bosque de niebla, Veracruz" revista="Mycologia, 2012 · ADN de raíces" x={400} y={640} />
+      <Etq T={T} at={K.E + 1.8} until={K.X - 0.3} x={60} y={905} texto="leyendo ADN…" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.E + 2.6} until={K.X - 0.3} x={60} y={1300} texto="raíz de carpe" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.E + 3.2} until={K.X - 0.3} x={470} y={1300} texto="+ Lactarius indigo" it tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.X + 0.2} until={K.C - 0.3} anio="2023" quien="U. de Tohoku, Japón" revista="J. Agric. Food Chem., 2023" x={720} y={470} />
+      <Etq T={T} at={K.X + 1.4} until={K.C - 0.3} x={430} y={1385} texto="síntesis total: por primera vez" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.X + 2.6} until={K.C - 0.3} texto="candidato a colorante azul natural" x={540} y={1470} tam={30} borde="#2457d6" />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="socio de los árboles" x={540} y={480} tam={38} borde={KC.mint} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Me} texto="5 cm" largo={295} />
-      <BarraEscala T={T} at={K.Me} until={tMapa} texto="1 m" largo={190} />
+      <BarraEscala T={T} at={K.G} until={K.Me} texto="5 cm" largo={399} />
+      <BarraEscala T={T} at={K.Me} until={tMapa} texto="1 m" largo={218} />
       <BarraEscala T={T} at={K.L} until={K.Pi} texto="≈ 10 µm (esquemático)" largo={56} />
       <BarraEscala T={T} at={K.Pi} until={K.P} texto="molécula esquemática" largo={0} />
       <BarraEscala T={T} at={K.P} until={K.Mi} texto="5 cm" largo={210} />
       <BarraEscala T={T} at={K.Mi} until={K.E} texto="corte esquemático" largo={0} />
-      <BarraEscala T={T} at={K.E} until={K.X} texto="1 cm (raíz)" largo={120} />
-      <BarraEscala T={T} at={K.X} until={K.C} texto="10 cm" largo={150} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={235} />
+      <BarraEscala T={T} at={K.E} until={K.X} texto="1 cm (raíz)" largo={144} />
+      <BarraEscala T={T} at={K.X} until={K.C} texto="10 cm" largo={225} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={306} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="No está pintado: suelta *leche azul.*" />

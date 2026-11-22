@@ -8,6 +8,7 @@ const CB = { cas:'#fbfaf4', cas2:'#e9e3d3', casS:'#d8cfba', tiza:'#fbf6e6', crem
 
 // Subtítulo con *resaltado* y _cursiva_ (nombres científicos). Misma caja y lugar que Subtitulo del kit.
 function SubIt({ T, at, until, texto, idx, color = KC.gold2, tam = 64 }) {
+  if (!CINE_OPC.subtitulos) return null;
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
@@ -157,6 +158,11 @@ function ColoniaCaja({ x, y, r = 70, color, p = 1, seed = 1 }) {
 
 const MANCHAS50 = [[[-0.3, -0.1, 0.22, CB.gris], [0.35, 0.2, 0.18, CB.gris]], [[0.0, 0.0, 0.3, CB.verde], [-0.4, 0.3, 0.12, CB.verde]], [[0.2, -0.2, 0.2, CB.naranja], [-0.3, 0.25, 0.14, CB.gris]]];
 
+// Acercamiento: lleva el punto `de` al punto `a` y agranda k veces (pase a mano del estilo cine).
+function DZ({ k = 1, de = [0, 0], a = [0, 0], children }) {
+  return <g transform={`translate(${a[0]} ${a[1]}) scale(${k}) translate(${-de[0]} ${-de[1]})`}>{children}</g>;
+}
+
 function CamembertShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, N: CUES.Nombre, S: CUES.Siembra, Pi: CUES.Pinceles, A: CUES.Acido, E: CUES.Enzimas, AA: CUES.AfueraAdentro, P: CUES.Pregunta,
@@ -169,12 +175,12 @@ function CamembertShot() {
       {/* 1 · gancho: cortan el camembert; la cáscara blanca se ve de lado */}
       <Escena T={T} a={K.G} b={K.N} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<DZ k={1.55} de={[350, 860]} a={[540, 960]}>
           <Tabla x={330} y={860} rx={300} ry={95} />
           <Rueda T={T} x={330} y={690} rx={230} ry={72} h={110} />
           <Corte T={T} x={150 + saca * 40} y={890 + saca * 60} w={420} h={110} rind={14} madurez={0.25} />
           {T < K.G + 1.4 && <g opacity={1 - kprog(T, K.G + 1.0, K.G + 1.4)}><Cuchillo x={430 + corta * 10} y={klerp(420, 790, corta)} rot={-6} s={0.85} /></g>}
-        </>)}
+        </DZ>)}
       </Escena>
       {/* 2 · nombre: camembert y brie, la misma cáscara */}
       <Escena T={T} a={K.N} b={K.S} zoom={0.05}>
@@ -187,7 +193,7 @@ function CamembertShot() {
       {/* 3 · siembra: esporas en la leche o sobre el queso fresco; crece la pelusa (día 1 → 7) */}
       <Escena T={T} a={K.S} b={K.Pi} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<DZ k={1.2} de={[520, 800]} a={[540, 940]}>
           <Tina x={250} y={1010} gota={kprog(T, K.S + 0.9, K.S + 1.8)} />
           {Array.from({ length: 22 }, (_, i) => { const k = krng(i + 3), t0 = K.S + 0.2 + k() * 0.4, u = kprog(T, t0, t0 + 0.8); return u > 0 && u < 1 ? <circle key={i} cx={250 + (k() - 0.5) * 120} cy={500 + u * 290} r={6} fill="#e9efe2" stroke={KC.ink} strokeWidth={2} /> : null; })}
           <Rueda T={T} x={760} y={840} rx={180} ry={56} h={90} pelusa={kprog(T, K.S + 2.0, K.S + 4.6)} seed={11} />
@@ -197,7 +203,7 @@ function CamembertShot() {
             <rect x={748} y={625} width={24} height={24} rx={5} fill="#5b6672" stroke={KC.ink} strokeWidth={4} />
             {Array.from({ length: 26 }, (_, i) => { const k = krng(i + 40), t0 = K.S + 1.5 + k() * 1.2, u = kprog(T, t0, t0 + 0.5); return u > 0 && u < 1 ? <circle key={i} cx={760 + (k() - 0.5) * 280 * u} cy={655 + u * 170} r={5} fill="#f2f6ee" stroke={KC.ink} strokeWidth={2} /> : null; })}
           </g>
-        </>)}
+        </DZ>)}
       </Escena>
       {/* 4 · por dentro: hifas y pinceles de esporas (fondo oscuro) */}
       <Escena T={T} a={K.Pi} b={K.A} zoom={0.06}>
@@ -213,46 +219,46 @@ function CamembertShot() {
       {/* 5 · el hongo se come el ácido de la orilla y suelta amoniaco */}
       <Escena T={T} a={K.A} b={K.E} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg(<>
+        {fsvg(<DZ k={1.1} de={[540, 870]} a={[540, 990]}>
           <Corte T={T} x={90} y={660} w={900} h={420} rind={44} madurez={0} lados="arriba" fuzz={1.4} />
           {Array.from({ length: 26 }, (_, i) => { const k = krng(i + 70), x0 = 120 + k() * 840, y0 = 740 + k() * 340, cerca = y0 < 900;
             const sube = cerca ? kprog(T, K.A + 0.6 + k() * 2.4, K.A + 1.6 + k() * 2.4, kEase.suave) : 0;
             return sube < 1 ? <g key={i}><circle cx={x0} cy={klerp(y0, 690, sube)} r={14 * (1 - sube * 0.6)} fill={CB.acido} stroke={KC.ink} strokeWidth={3} opacity={1 - sube * 0.7} /></g> : null; })}
           {Array.from({ length: 18 }, (_, i) => { const k = krng(i + 120), x0 = 120 + k() * 840, t0 = K.A + 1.8 + k() * 2.6, u = kprog(T, t0, t0 + 1.6);
             return u > 0 ? <circle key={i} cx={x0 + Math.sin(T * 2 + i) * 6} cy={710 + u * 200} r={9} fill="none" stroke={CB.nh3} strokeWidth={4} opacity={1 - u * 0.6} /> : null; })}
-        </>)}
+        </DZ>)}
       </Escena>
       {/* 6 · las enzimas cortan las caseínas */}
       <Escena T={T} a={K.E} b={K.AA} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<>
+        {fsvg(<DZ k={1.15} de={[540, 800]} a={[540, 960]}>
           <RedHifas T={T} x={540} y={600} g={1} seed={9} n={200} escala={0.2} circ color="#f4f1e8" ancho={4} rot={90} />
           <Caseina x={110} y={780} corte={kprog(T, K.E + 0.6, K.E + 1.2)} T={T} seed={1} />
           <Caseina x={140} y={900} corte={kprog(T, K.E + 1.0, K.E + 1.6)} T={T} seed={2} cortes={[2, 6, 9]} />
           <Caseina x={100} y={1020} corte={kprog(T, K.E + 1.4, K.E + 2.0)} T={T} seed={3} cortes={[4, 8]} />
           {[[300, 780, 0.4], [520, 900, 0.8], [640, 1020, 1.2]].map(([tx, ty, d], i) => { const u = kprog(T, K.E + d - 0.4, K.E + d + 0.2, kEase.sale);
             return <Tijera key={i} x={klerp(tx - 40, tx, u)} y={klerp(660, ty - 46, u)} abre={0.5 + 0.5 * Math.sin(T * 14 + i)} rot={90} s={1.1} />; })}
-        </>)}
+        </DZ>)}
       </Escena>
       {/* 7 · madura de afuera hacia adentro */}
       <Escena T={T} a={K.AA} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<DZ k={1.1} de={[540, 820]} a={[540, 960]}>
           <Corte T={T} x={90} y={660} w={900} h={320} rind={16} madurez={0.8 * kprog(T, K.AA + 0.4, K.AA + 3.6, kEase.suave)} />
-          {[[540, 560, 540, 720], [540, 1080, 540, 920], [30, 820, 170, 820], [1050, 820, 910, 820]].map(([x1, y1, x2, y2], i) => <FlechaCurva key={i} x1={x1} y1={y1} x2={x2} y2={y2} curva={0} p={kprog(T, K.AA + 0.5 + i * 0.15, K.AA + 1.3 + i * 0.15)} color={KC.ink} grosor={10} T={T} />)}
-        </>)}
+          {[[540, 560, 540, 720], [540, 1080, 540, 920], [60, 820, 170, 820], [1020, 820, 910, 820]].map(([x1, y1, x2, y2], i) => <FlechaCurva key={i} x1={x1} y1={y1} x2={x2} y2={y2} curva={0} p={kprog(T, K.AA + 0.5 + i * 0.15, K.AA + 1.3 + i * 0.15)} color={KC.ink} grosor={10} T={T} />)}
+        </DZ>)}
       </Escena>
       {/* 8 · re-gancho: ¿y si se está desgastando? */}
       <Escena T={T} a={K.P} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Rueda T={T} x={330} y={950} rx={230} ry={72} h={110} rot={Math.sin(T * 4) * 3} /><Interrogacion T={T} x={330} y={800} tam={340} /></>)}
+        {fsvg(<><Rueda T={T} x={480} y={1010} rx={330} ry={103} h={158} rot={Math.sin(T * 4) * 3} /><Interrogacion T={T} x={810} y={900} tam={440} /></>)}
       </Escena>
       {/* 9 · estudio 2020: leyeron su ADN; el blanco es un clon */}
       <Escena T={T} a={K.Es} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
-          <g opacity={kprog(T, K.Es + 0.9, K.Es + 1.3)}><ADNHebra T={T} x={140} y={730} largo={800} alto={60} vueltas={4} /></g>
+        {fsvg(<DZ k={1.1} de={[540, 940]} a={[540, 1040]}>
+          <g opacity={kprog(T, K.Es, K.Es + 0.4)}><ADNHebra T={T} x={140} y={730} largo={800} alto={60} vueltas={4} /></g>
           {(() => { const p1 = kprog(T, K.Es + 1.5, K.Es + 2.1, kEase.sale), p2 = kprog(T, K.Es + 2.0, K.Es + 2.6, kEase.sale), p3 = kprog(T, K.Es + 2.5, K.Es + 3.2, kEase.sale);
             const ln = (x1, y1, x2, y2, p) => <line x1={x1} y1={y1} x2={klerp(x1, x2, p)} y2={klerp(y1, y2, p)} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />;
             const tx = (x, y, t, p, it = true, tam = 26) => p > 0 ? <text x={x} y={y} textAnchor="middle" opacity={p} style={{ font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal' }} fill={KC.ink}>{t}</text> : null;
@@ -265,12 +271,12 @@ function CamembertShot() {
               {tx(560, 950, 'P. biforme', kprog(T, K.Es + 2.5, K.Es + 2.8))}
               {tx(860, 950, 'P. camemberti', kprog(T, K.Es + 3.0, K.Es + 3.3))}{tx(860, 980, 'var. camemberti', kprog(T, K.Es + 3.0, K.Es + 3.3), true, 22)}
             </>; })()}
-        </>)}
+        </DZ>)}
       </Escena>
       {/* 10 · un mutante blanco: 1898 brie, 1902 camembert; antes de los 50, mohos de colores */}
       <Escena T={T} a={K.M} b={K.Ep} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<DZ k={1.1} de={[540, 900]} a={[540, 1000]}>
           <line x1={90} y1={700} x2={kprog(T, K.M + 0.2, K.M + 1.4) * 900 + 90} y2={700} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
           {[[230, 0.8, '1898', 'brie'], [520, 2.0, '1902', 'camembert'], [860, 3.0, 'hoy', 'el mismo clon']].map(([cx, d, a, b], i) => { const p = kprog(T, K.M + d, K.M + d + 0.4, kEase.rebote);
             return p > 0 ? <g key={i} transform={`translate(${cx} 700) scale(${p})`}>
@@ -280,7 +286,7 @@ function CamembertShot() {
             </g> : null; })}
           {[[230, 0.9, 1.25], [520, 2.1, 0.9], [860, 3.1, 0.9]].map(([cx, d, k], i) => kprog(T, K.M + d, K.M + d + 0.4) > 0 ? <Rueda key={i} T={T} x={cx} y={830} rx={110 * k} ry={34 * k} h={40} seed={20 + i} /> : null)}
           {MANCHAS50.map((mm, i) => kprog(T, K.M + 4.4 + i * 0.2, K.M + 4.8 + i * 0.2) > 0 ? <g key={i} opacity={kprog(T, K.M + 4.4 + i * 0.2, K.M + 4.8 + i * 0.2)}><Rueda T={T} x={250 + i * 290} y={1090} rx={110} ry={34} h={36} seed={30 + i} pelusa={0.55} manchas={mm} /></g> : null)}
-        </>)}
+        </DZ>)}
       </Escena>
       {/* 11 · solo se copia: casi no hace esporas */}
       <Escena T={T} a={K.Ep} b={K.B} zoom={0.05}>
@@ -303,49 +309,49 @@ function CamembertShot() {
       {/* 13 · cierre: la misma rueda del inicio, ya madura; sello del clon */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<DZ k={1.55} de={[350, 860]} a={[540, 960]}>
           <Tabla x={330} y={860} rx={300} ry={95} />
           <Rueda T={T} x={330} y={690} rx={230} ry={72} h={110} />
           <Corte T={T} x={190} y={950} w={420} h={110} rind={14} madurez={klerp(0.25, 0.92, kprog(T, K.C + 0.3, K.C + 2.2, kEase.suave))} escurre={kprog(T, K.C + 1.8, K.C + 3.2, kEase.sale)} />
           <Sello T={T} at={K.C + 2.6} x={560} y={600} texto="CLON" color={KC.red} r={84} rot={-12} />
-        </>)}
+        </DZ>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.N - 0.3} texto="¿queso?" x={250} y={470} tam={50} />
-      <Chip T={T} at={K.G + 1.9} until={K.N - 0.3} texto="hongo" x={250} y={580} tam={52} borde={KC.mint} />
-      <Etq T={T} at={K.G + 1.7} until={K.N - 0.3} x={590} y={960} texto="cáscara blanca" tam={30} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.N - 0.3} texto="¿queso?" x={280} y={400} tam={50} />
+      <Chip T={T} at={K.G + 1.9} until={K.N - 0.3} texto="hongo" x={280} y={500} tam={52} borde={KC.mint} />
+      <Etq T={T} at={K.G + 1.7} until={K.N - 0.3} x={300} y={1320} texto="cáscara blanca" tam={30} color={KC.ink} />
       <Etq T={T} at={K.N + 0.5} until={K.S - 0.3} x={60} y={500} texto="moho blanco" tam={40} color={KC.ink} />
       <Etq T={T} at={K.N + 1.0} until={K.S - 0.3} x={60} y={560} texto="Penicillium camemberti" it tam={40} color={KC.ink} />
       <Chip T={T} at={K.N + 1.6} until={K.S - 0.3} texto="camembert" x={250} y={700} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.N + 2.2} until={K.S - 0.3} texto="brie" x={820} y={900} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.S + 0.3} until={K.S + 2.6} texto="esporas" x={250} y={440} tam={34} borde={KC.mint} />
-      <Etq T={T} at={K.S + 0.6} until={K.Pi - 0.3} x={110} y={1080} texto="leche" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.S + 1.4} until={K.Pi - 0.3} x={600} y={1080} texto="queso fresco" tam={30} color={KC.ink} />
-      {kvisible(T, K.S + 2.0, K.Pi - 0.3) && <Chip T={T} at={K.S + 2.0} until={K.Pi - 0.3} texto={`día ${Math.round(klerp(1, 7, kprog(T, K.S + 2.0, K.S + 4.6)))}`} x={760} y={440} tam={46} borde={KC.gold} mono />}
+      <Chip T={T} at={K.S + 0.3} until={K.S + 2.6} texto="esporas" x={260} y={500} tam={34} borde={KC.mint} />
+      <Etq T={T} at={K.S + 0.6} until={K.Pi - 0.3} x={70} y={1276} texto="leche" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.4} until={K.Pi - 0.3} x={640} y={1276} texto="queso fresco" tam={30} color={KC.ink} />
+      {kvisible(T, K.S + 2.0, K.Pi - 0.3) && <Chip T={T} at={K.S + 2.0} until={K.Pi - 0.3} texto={`día ${Math.round(klerp(1, 7, kprog(T, K.S + 2.0, K.S + 4.6)))}`} x={820} y={500} tam={46} borde={KC.gold} mono />}
       <Chip T={T} at={K.Pi + 0.1} until={K.A - 0.3} texto="POR DENTRO · LA CÁSCARA" x={540} y={440} tam={34} borde={KC.cyan} mono />
       <Etq T={T} at={K.Pi + 0.6} until={K.A - 0.3} x={60} y={1130} texto="hifas" tam={30} color={KC.texto} />
       <Etq T={T} at={K.Pi + 1.6} until={K.A - 0.3} x={520} y={1010} texto="tallo rugoso" lado="izq" tam={24} color={KC.texto} />
       <Etq T={T} at={K.Pi + 2.0} until={K.A - 0.3} x={60} y={520} texto="pincel (conidióforo)" tam={30} color={KC.gold2} />
       <Etq T={T} at={K.Pi + 2.4} until={K.A - 0.3} x={60} y={566} texto="esporas (conidios)" tam={30} color={KC.texto} />
-      <Chip T={T} at={K.A + 0.1} until={K.E - 0.3} texto="pH a los 16 días" x={540} y={470} tam={34} borde={KC.cyan} mono />
-      <Etq T={T} at={K.A + 0.5} until={K.E - 0.3} x={60} y={620} texto="corteza: hongo" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.A + 0.9} until={K.E - 0.3} x={60} y={548} texto="● ácido láctico" tam={28} color={CB.acido} />
-      <Etq T={T} at={K.A + 2.0} until={K.E - 0.3} x={560} y={548} texto="○ NH₃ amoniaco" tam={28} color={CB.nh3} />
-      {kvisible(T, K.A + 1.4, K.E - 0.3) && <Chip T={T} at={K.A + 1.4} until={K.E - 0.3} texto={`orilla: pH 4.9 → ${klerp(4.9, 6.0, kprog(T, K.A + 1.6, K.A + 3.6)).toFixed(1)}`} x={540} y={940} tam={36} borde={KC.gold} mono />}
-      <Chip T={T} at={K.A + 2.6} until={K.E - 0.3} texto="centro: pH ≈ 4.9" x={540} y={1040} tam={36} borde={KC.ink} mono />
-      <Chip T={T} at={K.A + 3.4} until={K.E - 0.3} texto="con ayuda de otros microbios" x={540} y={1135} tam={28} borde={KC.mint} />
-      <Etq T={T} at={K.E + 0.3} until={K.AA - 0.3} x={60} y={520} texto="hifas del hongo" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.E + 0.7} until={K.AA - 0.3} x={60} y={1110} texto="caseínas (proteínas de la leche)" tam={28} color={CB.caseina} />
-      <Etq T={T} at={K.E + 1.0} until={K.AA - 0.3} x={560} y={690} texto="proteasas (enzimas)" tam={28} color={KC.mint} />
-      <Chip T={T} at={K.AA + 0.2} until={K.P - 0.3} texto="afuera → adentro" x={540} y={460} tam={44} borde={KC.ink} />
-      <Etq T={T} at={K.AA + 1.8} until={K.P - 0.3} x={110} y={610} texto="orilla cremosa" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.AA + 2.4} until={K.P - 0.3} x={120} y={1110} texto="centro blanco y más firme" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.P + 0.4} until={K.Es - 0.3} texto="la cepa se está desgastando" x={540} y={470} tam={40} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Es + 0.1} until={K.M - 0.3} anio="2020" quien="CNRS · U. Paris-Saclay" revista="Current Biology, 2020" x={540} y={520} />
-      <Chip T={T} at={K.Es + 3.4} until={K.M - 0.3} texto="clon: copias casi idénticas" x={540} y={1420} tam={28} borde={KC.gold} />
-      <Chip T={T} at={K.M + 0.2} until={K.Ep - 0.3} texto="un mutante blanco" x={380} y={470} tam={44} borde={KC.ink} />
-      <Nota T={T} at={K.M + 4.2} until={K.Ep - 0.3} x={540} y={985} ancho={900} tam={28} borde={KC.ink}>hasta los años 50, los camembert todavía tenían mohos grises, verdes y a veces anaranjados <span style={{ opacity:0.7 }}>(CNRS, 2024)</span></Nota>
+      <Chip T={T} at={K.A + 0.1} until={K.E - 0.3} texto="pH a los 16 días" x={540} y={560} tam={34} borde={KC.cyan} mono />
+      <Etq T={T} at={K.A + 0.5} until={K.E - 0.3} x={60} y={722} texto="corteza: hongo" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.A + 0.9} until={K.E - 0.3} x={60} y={660} texto="● ácido láctico" tam={28} color={CB.acido} />
+      <Etq T={T} at={K.A + 2.0} until={K.E - 0.3} x={560} y={660} texto="○ NH₃ amoniaco" tam={28} color={CB.nh3} />
+      {kvisible(T, K.A + 1.4, K.E - 0.3) && <Chip T={T} at={K.A + 1.4} until={K.E - 0.3} texto={`orilla: pH 4.9 → ${klerp(4.9, 6.0, kprog(T, K.A + 1.6, K.A + 3.6)).toFixed(1)}`} x={540} y={1067} tam={36} borde={KC.gold} mono />}
+      <Chip T={T} at={K.A + 2.6} until={K.E - 0.3} texto="centro: pH ≈ 4.9" x={540} y={1177} tam={36} borde={KC.ink} mono />
+      <Chip T={T} at={K.A + 3.4} until={K.E - 0.3} texto="con ayuda de otros microbios" x={540} y={1285} tam={28} borde={KC.mint} />
+      <Etq T={T} at={K.E + 0.3} until={K.AA - 0.3} x={60} y={638} texto="hifas del hongo" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.E + 0.7} until={K.AA - 0.3} x={60} y={1316} texto="caseínas (proteínas de la leche)" tam={28} color={CB.caseina} />
+      <Etq T={T} at={K.E + 1.0} until={K.AA - 0.3} x={563} y={834} texto="proteasas (enzimas)" tam={28} color={KC.mint} />
+      <Chip T={T} at={K.AA + 0.2} until={K.P - 0.3} texto="afuera → adentro" x={540} y={580} tam={44} borde={KC.ink} />
+      <Etq T={T} at={K.AA + 1.8} until={K.P - 0.3} x={70} y={723} texto="orilla cremosa" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.AA + 2.4} until={K.P - 0.3} x={80} y={1279} texto="centro blanco y más firme" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.P + 0.4} until={K.Es - 0.3} texto="la cepa se está desgastando" x={540} y={560} tam={40} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.Es + 0.1} until={K.M - 0.3} anio="2020" quien="CNRS · U. Paris-Saclay" revista="Current Biology, 2020" x={540} y={440} />
+      <Chip T={T} at={K.Es + 3.4} until={K.M - 0.3} texto="clon: copias casi idénticas" x={540} y={1360} tam={28} borde={KC.gold} />
+      <Chip T={T} at={K.M + 0.2} until={K.Ep - 0.3} texto="un mutante blanco" x={380} y={560} tam={44} borde={KC.ink} />
+      <Nota T={T} at={K.M + 4.2} until={K.Ep - 0.3} x={540} y={1094} ancho={900} tam={28} borde={KC.ink}>hasta los años 50, los camembert todavía tenían mohos grises, verdes y a veces anaranjados <span style={{ opacity:0.7 }}>(CNRS, 2024)</span></Nota>
       <Chip T={T} at={K.Ep + 0.2} until={K.B - 0.3} texto="solo se reproduce sin sexo (clonal)" x={540} y={470} tam={32} borde={KC.cyan} />
       <Chip T={T} at={K.Ep + 1.6} until={K.B - 0.3} texto="CNRS, 2024: «al borde de la extinción»" x={540} y={560} tam={30} borde={KC.red} />
       <Chip T={T} at={K.Ep + 2.2} until={K.B - 0.3} texto="a la industria le cuesta conseguir esporas" x={540} y={1150} tam={28} borde={KC.gold} />
@@ -353,21 +359,21 @@ function CamembertShot() {
       <Etq T={T} at={K.B + 0.8} until={K.C - 0.3} x={60} y={555} texto="pariente cercano" tam={30} color={KC.ink} />
       <Chip T={T} at={K.B + 1.8} until={K.C - 0.3} texto="mucha diversidad" x={720} y={1130} tam={34} borde={KC.ink} />
       <Nota T={T} at={K.B + 2.8} until={K.C - 0.3} x={540} y={640} ancho={600} tam={26} borde={KC.mint}>algunos queseros ya ayudan al blanco con <i>Geotrichum candidum</i></Nota>
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="hongo ✓" x={250} y={470} tam={52} borde={KC.mint} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="hongo ✓" x={280} y={440} tam={52} borde={KC.mint} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={210} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={326} color={KC.ink} />
       <BarraEscala T={T} at={K.N} until={K.S} texto="10 cm" largo={200} color={KC.ink} />
-      <BarraEscala T={T} at={K.S} until={K.Pi} texto="5 cm" largo={160} color={KC.ink} />
+      <BarraEscala T={T} at={K.S} until={K.Pi} texto="5 cm" largo={192} color={KC.ink} />
       <BarraEscala T={T} at={K.Pi} until={K.A} texto="10 µm" largo={49} />
-      <BarraEscala T={T} at={K.A} until={K.E} texto="1 cm" largo={225} />
+      <BarraEscala T={T} at={K.A} until={K.E} texto="1 cm" largo={248} />
       <BarraEscala T={T} at={K.E} until={K.AA} texto="no a escala" largo={0} />
-      <BarraEscala T={T} at={K.AA} until={K.P} texto="1 cm" largo={82} color={KC.ink} />
-      <BarraEscala T={T} at={K.P} until={K.Es} texto="5 cm" largo={210} color={KC.ink} />
+      <BarraEscala T={T} at={K.AA} until={K.P} texto="1 cm" largo={90} color={KC.ink} />
+      <BarraEscala T={T} at={K.P} until={K.Es} texto="5 cm" largo={301} color={KC.ink} />
       <BarraEscala T={T} at={K.M} until={K.Ep} texto="esquemático" largo={0} color={KC.ink} />
       <BarraEscala T={T} at={K.Ep} until={K.B} texto="10 µm" largo={49} />
       <BarraEscala T={T} at={K.B} until={K.C} texto="esquemático" largo={0} color={KC.ink} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={210} color={KC.ink} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={326} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <SubIt T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="Esa cáscara blanca *es un hongo.*" />

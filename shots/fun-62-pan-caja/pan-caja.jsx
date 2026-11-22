@@ -55,8 +55,8 @@ function Escudo({ x, y, s = 1, o = 1, gasto = 0 }) {
 }
 // Mesa de madera (banda) desde y hacia abajo.
 function Mesa({ y = 1120 }) {
-  return <g><rect x={-40} y={y} width={1160} height={500} fill={PC.tabla} stroke={KC.ink} strokeWidth={10} />
-    {[40, 110, 190].map((d, i) => <path key={i} d={`M -40 ${y + d} Q 540 ${y + d - 18} 1120 ${y + d + 6}`} stroke="#8a5530" strokeWidth={6} fill="none" />)}</g>;
+  return <g><rect x={-40} y={y} width={1160} height={800} fill="#3e2716" stroke={KC.ink} strokeWidth={10} />
+    {[40, 110, 190, 290].map((d, i) => <path key={i} d={`M -40 ${y + d} Q 540 ${y + d - 18} 1120 ${y + d + 6}`} stroke="#2a190d" strokeWidth={6} fill="none" />)}</g>;
 }
 // Horno esquemático con un pan dentro (vista por la ventana).
 function Horno({ x, y, T, calor = 1 }) {
@@ -200,6 +200,11 @@ function Intestino({ x, y, s = 1, T = 0, p = 1 }) {
   </g>;
 }
 
+// Acercamiento: lleva el punto `de` al punto `a` y agranda k veces (pase a mano del estilo cine).
+function DZ({ k = 1, de = [0, 0], a = [0, 0], children }) {
+  return <g transform={`translate(${a[0]} ${a[1]}) scale(${k}) translate(${-de[0]} ${-de[1]})`}>{children}</g>;
+}
+
 function PanCajaShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, H: CUES.Horno, M: CUES.Mohos, E: CUES.Etiqueta, En: CUES.Entra, P: CUES.Proton, Ea: CUES.Energia, Q: CUES.Pregunta,
@@ -209,7 +214,7 @@ function PanCajaShot() {
   // punta de la hifa: crece mientras no hay ácido y se frena en «Energía»
   const tipX = 760 + 160 * kprog(T, K.En - 0.4, K.Ea + 1.5, (p) => 1 - Math.pow(1 - p, 2)) + 10 * kprog(T, K.Ea + 1.5, K.Q);
   // moléculas de la escena Entra: [x, neutra?]
-  const MOL = [[150, 1], [330, 0], [480, 1], [640, 1], [800, 0], [900, 1]];
+  const MOL = [[210, 1], [360, 0], [500, 1], [650, 1], [790, 0], [900, 1]];
   const acido = kprog(T, K.P + 0.6, K.P + 3.0);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -217,16 +222,16 @@ function PanCajaShot() {
       <Escena T={T} a={-1} b={K.H} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Mesa y={1120} />
-          <RebPanaderia x={290} y={klerp(400, 1120, caeA)} s={0.92} />
-          <RebCaja x={780} y={klerp(380, 1120, caeB)} s={0.92} />
-          <Escudo x={780} y={950} s={0.9} o={kprog(T, K.G + 1.2, K.G + 1.6, kEase.rebote)} />
+          <Mesa y={1160} />
+          <RebPanaderia x={262} y={klerp(560, 1160, caeA)} s={1.25} />
+          <RebCaja x={830} y={klerp(540, 1160, caeB)} s={1.25} />
+          <Escudo x={830} y={930} s={1.22} o={kprog(T, K.G + 1.2, K.G + 1.6, kEase.rebote)} />
         </>)}
       </Escena>
       {/* 2 · el horno mata las esporas; al enfriar y rebanar caen otras */}
       <Escena T={T} a={K.H} b={K.M} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<DZ k={1.12} de={[535, 880]} a={[540, 980]}>
           <Horno x={60} y={640} T={T} calor={1 - kprog(T, K.H + 1.6, K.H + 2.2)} />
           {[[200, 860], [270, 900], [330, 850], [390, 905]].map(([sx, sy], i) => { const tx = kprog(T, K.H + 0.4 + i * 0.15, K.H + 0.7 + i * 0.15);
             return <g key={i} opacity={1 - kprog(T, K.H + 1.6, K.H + 2.0)}><circle cx={sx} cy={sy} r={8} fill={PC.moho} stroke={KC.ink} strokeWidth={2} opacity={1 - tx * 0.6} />
@@ -235,34 +240,34 @@ function PanCajaShot() {
           {T > K.H + 2.3 && <g transform={`translate(${klerp(620, 980, (Math.sin((T - K.H) * 7) + 1) / 2)} ${780})`}>
             <rect x={-6} y={-90} width={12} height={110} rx={4} fill="#c9ccd3" stroke={KC.ink} strokeWidth={3} /></g>}
           {Array.from({ length: 9 }, (_, i) => <EsporaCae key={i} x0={640 + i * 40} y0={680} y1={830 + (i % 3) * 20} u={kprog(T, K.H + 1.8 + i * 0.15, K.H + 3.6 + i * 0.1)} seed={i} />)}
-        </>)}
+        </DZ>)}
       </Escena>
       {/* 3 · quiénes son: tres mohos del pan (esquema) y la mancha que crece radial */}
       <Escena T={T} a={K.M} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={60} y={420} width={960} height={430} rx={30} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
-          <Penicillium x={210} y={800} s={1.05} p={kprog(T, K.M + 0.1, K.M + 1.2)} />
-          <Aspergillus x={540} y={800} s={1.05} p={kprog(T, K.M + 0.6, K.M + 1.7)} />
-          <RhizopusEsp x={860} y={790} s={1.05} p={kprog(T, K.M + 1.1, K.M + 2.2)} />
-          <RebPanaderia x={300} y={1150} s={0.62} moho={kprog(T, K.M + 2.2, K.M + 4.3)} />
+          <rect x={50} y={560} width={980} height={540} rx={30} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
+          <Penicillium x={210} y={1010} s={1.2} p={kprog(T, K.M + 0.05, K.M + 1.2)} />
+          <Aspergillus x={540} y={1010} s={1.2} p={kprog(T, K.M + 0.3, K.M + 1.5)} />
+          <RhizopusEsp x={860} y={1000} s={1.2} p={kprog(T, K.M + 0.55, K.M + 1.9)} />
+          <RebPanaderia x={540} y={1480} s={0.8} moho={kprog(T, K.M + 2.2, K.M + 4.3)} />
         </>)}
       </Escena>
       {/* 4 · la etiqueta de la bolsa genérica */}
       <Escena T={T} a={K.E} b={K.En} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<g transform={`translate(330 1120) rotate(${Math.sin(T * 2) * 2})`}>
-          <path d="M -230 0 L -250 -560 Q -250 -600 -200 -600 L 200 -600 Q 250 -600 250 -560 L 230 0 Z" fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={8} />
+        {fsvg(<g transform={`translate(540 1370) scale(1.35) rotate(${Math.sin(T * 2) * 2})`}>
+          <path d="M -230 0 L -250 -560 Q -250 -600 -200 -600 L 200 -600 Q 250 -600 250 -560 L 230 0 Z" fill="rgba(206,212,222,.82)" stroke={KC.ink} strokeWidth={8} />
           <path d="M -120 -600 L -80 -660 L 80 -660 L 120 -600" fill="#e8336d" stroke={KC.ink} strokeWidth={6} />
-          <text x={0} y={-500} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>PAN DE CAJA</text>
+          <text x={0} y={-500} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill="#0b1020">PAN DE CAJA</text>
           <rect x={-200} y={-440} width={400} height={360} rx={14} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
           <text x={-180} y={-400} style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>Ingredientes:</text>
           {['harina de trigo, agua,', 'levadura, azúcar, sal,', 'aceite vegetal,', 'propionato de calcio', '(conservador)…'].map((t, i) =>
-            <text key={i} x={-180} y={-356 + i * 44} style={{ font:`700 ${i === 3 || i === 4 ? 26 : 22}px ${KF.mono}` }} fill={i === 3 || i === 4 ? KC.red : '#5a524a'}>{t}</text>)}
+            <text key={i} x={-180} y={-356 + i * 44} style={{ font:`700 ${i === 3 || i === 4 ? 26 : 22}px ${KF.mono}` }} fill={i === 3 || i === 4 ? KC.red : '#c9c2b8'}>{t}</text>)}
           {(() => { const h = kprog(T, K.E + 0.6, K.E + 1.1, kEase.sale); return h > 0 ? <rect x={-190} y={-252} width={392 * h} height={84} rx={10} fill="rgba(255,225,26,.45)" /> : null; })()}
           <g transform={`translate(${klerp(420, 250, kprog(T, K.E + 0.1, K.E + 0.7, kEase.sale))} -220)`}>
-            <circle r={90} fill="rgba(255,255,255,.25)" stroke={KC.ink} strokeWidth={12} />
-            <line x1={64} y1={64} x2={140} y2={140} stroke={KC.ink} strokeWidth={22} strokeLinecap="round" />
+            <circle r={90} fill="rgba(255,255,255,.25)" stroke="#0b1020" strokeWidth={12} />
+            <line x1={64} y1={64} x2={140} y2={140} stroke="#0b1020" strokeWidth={22} strokeLinecap="round" />
           </g>
         </g>)}
       </Escena>
@@ -270,7 +275,7 @@ function PanCajaShot() {
       <Escena T={T} a={K.En} b={K.Q} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<>
+        {fsvg(<DZ k={1.15} de={[620, 800]} a={[540, 980]}>
           <HifaTubo T={T} tipX={tipX} acido={acido} />
           {/* Entra: las neutras cruzan la pared, las que traen carga rebotan */}
           {MOL.map(([mx, neutra], i) => {
@@ -290,130 +295,140 @@ function PanCajaShot() {
           {/* Energía: bomba que saca H⁺ y gasta ATP; enzimas trabadas por el propionil-CoA (no por el H⁺) */}
           {T > K.Ea - 0.4 && <g opacity={kprog(T, K.Ea - 0.4, K.Ea)}>
             <Bomba x={420} y={760} />
-            <Pila x={80} y={1050} nivel={1 - 0.75 * kprog(T, K.Ea + 0.3, K.Ea + 3.0)} />
+            <Pila x={200} y={1050} nivel={1 - 0.75 * kprog(T, K.Ea + 0.3, K.Ea + 3.0)} />
             <Engrane x={700} y={850} r={48} gira={T < K.Ea + 2.4 ? T * 120 : (K.Ea + 2.4) * 120} />
             <Engrane x={792} y={912} r={40} gira={T < K.Ea + 2.4 ? -T * 144 + 18 : -(K.Ea + 2.4) * 144 + 18} color="#ffb3c9" />
             <Candado x={746} y={890} o={kprog(T, K.Ea + 2.2, K.Ea + 2.7)} />
             {T > K.Ea + 1.6 && <g opacity={kprog(T, K.Ea + 1.6, K.Ea + 2.0)}><rect x={612} y={960} width={260} height={32} rx={10} fill="rgba(14,15,18,.85)" />
               <text x={742} y={984} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.lilac}>propionil-CoA</text></g>}
           </g>}
-        </>)}
+        </DZ>)}
       </Escena>
       {/* 8 · re-gancho: ¿lo mata? No: lo frena */}
       <Escena T={T} a={K.Q} b={K.Es} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Interrogacion T={T} x={250} y={960} tam={460} />
-          <Sello T={T} at={K.Q + 1.3} x={730} y={720} texto="NO" color={KC.ink} r={120} rot={-10} />
-          <rect x={470} y={880} width={540} height={260} rx={26} fill={KC.noche} stroke={KC.ink} strokeWidth={7} />
-          <RedHifas T={T} x={740} y={1010} g={0.35 + 0.25 * kprog(T, K.Q + 1.8, K.Es)} seed={7} n={160} escala={0.12} circ />
+          <Interrogacion T={T} x={270} y={1260} tam={700} />
+          <Sello T={T} at={K.Q + 1.3} x={770} y={830} texto="NO" color={KC.ink} r={150} rot={-10} />
+          <rect x={500} y={1010} width={550} height={360} rx={26} fill={KC.noche} stroke={KC.ink} strokeWidth={7} />
+          <RedHifas T={T} x={775} y={1200} g={0.35 + 0.25 * kprog(T, K.Q + 1.8, K.Es)} seed={7} n={160} escala={0.16} circ />
         </>)}
       </Escena>
       {/* 9–10 · el estudio de Cork: días sin moho */}
       <Escena T={T} a={K.Es} b={K.Qu} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        {fsvg((() => { const X0 = 110, D = 55, Y1 = 790, Y2 = 950;
+        {fsvg((() => { const X0 = 110, D = 55, Y1 = 730, Y2 = 890;
           const b1 = kprog(T, K.Es + 3.4, K.Es + 5.4, kEase.suave), b2 = kprog(T, K.MM + 0.2, K.MM + 2.0, kEase.suave);
           const barra = (y, de, a, p, col) => <g>
             <rect x={X0} y={y} width={D * de * kclamp(p * (a / de), 0, 1)} height={66} rx={10} fill={col} stroke={KC.ink} strokeWidth={6} />
             {p * a > de && <rect x={X0 + D * de} y={y} width={D * (Math.min(p * a, a) - de)} height={66} rx={10} fill={col} opacity=".45" stroke={KC.ink} strokeWidth={5} strokeDasharray="10 8" />}
           </g>;
-          return <g opacity={kprog(T, K.Es + 3.2, K.Es + 3.6)}>
-            <rect x={60} y={700} width={960} height={480} rx={28} fill="rgba(244,239,228,.92)" stroke={KC.ink} strokeWidth={7} />
-            <text x={X0} y={768} style={{ font:`700 27px ${KF.mono}` }} fill={KC.ink}>pan bajo en sal + 0.3 % propionato</text>
+          return <g>
+            <g opacity={kprog(T, K.Es, K.Es + 0.4)}>
+              <RebCaja x={540} y={1490} s={0.82} />
+              <Escudo x={540} y={1340} s={0.8} o={1} />
+            </g>
+            <g opacity={kprog(T, K.Es, K.Es + 0.4)}>
+            <rect x={60} y={640} width={960} height={480} rx={28} fill="rgba(30,33,44,.94)" stroke={KC.ink} strokeWidth={7} />
+            <g opacity={kprog(T, K.Es + 3.2, K.Es + 3.6)}>
+            <text x={X0} y={708} style={{ font:`700 27px ${KF.mono}` }} fill={KC.ink}>pan bajo en sal + 0.3 % propionato</text>
             {barra(Y1 + 6, 10, 12, b1, KC.cyan)}
             {b1 > 0.95 && <text x={X0 + D * 12 + 14} y={Y1 + 52} style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>10–12</text>}
             {T > K.MM && <text x={X0} y={Y2 - 22} style={{ font:`700 27px ${KF.mono}` }} fill={KC.ink}>con masa madre seleccionada</text>}
             {T > K.MM && barra(Y2 - 4, 12, 14, b2, KC.mint)}
             {b2 > 0.95 && <text x={X0 + D * 14 + 10} y={Y2 + 42} style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>12–14</text>}
-            <line x1={X0} y1={1080} x2={X0 + D * 14} y2={1080} stroke={KC.ink} strokeWidth={5} />
-            {Array.from({ length: 8 }, (_, i) => <g key={i}><line x1={X0 + D * i * 2} y1={1072} x2={X0 + D * i * 2} y2={1092} stroke={KC.ink} strokeWidth={4} />
-              <text x={X0 + D * i * 2} y={1122} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>{i * 2}</text></g>)}
-            <text x={X0 + D * 14} y={1160} textAnchor="end" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>días sin moho</text>
+            </g>
+            <line x1={X0} y1={1020} x2={X0 + D * 14} y2={1020} stroke={KC.ink} strokeWidth={5} />
+            {Array.from({ length: 8 }, (_, i) => <g key={i}><line x1={X0 + D * i * 2} y1={1012} x2={X0 + D * i * 2} y2={1032} stroke={KC.ink} strokeWidth={4} />
+              <text x={X0 + D * i * 2} y={1062} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>{i * 2}</text></g>)}
+            <text x={X0 + D * 14} y={1100} textAnchor="end" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>días sin moho</text>
+            </g>
           </g>; })())}
       </Escena>
       {/* 11 · queso suizo e intestino */}
       <Escena T={T} a={K.Qu} b={K.S} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
-          <QuesoSuizo x={60} y={1010} s={1.0} burbuja={kprog(T, K.Qu + 0.3, K.Qu + 2.0)} T={T} />
-          {[[120, 940], [210, 880], [300, 930], [380, 860]].map(([a, b], i) => <Baston key={i} x={a} y={b} rot={i * 35 + Math.sin(T * 2 + i) * 8} s={0.7} />)}
-          {Array.from({ length: 6 }, (_, i) => { const u = ((T - K.Qu) * 0.5 + i / 6) % 1; return T > K.Qu + 0.3 ? <circle key={i} cx={140 + i * 50} cy={860 - u * 160} r={9 + (i % 3) * 3} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={2} opacity={1 - u} /> : null; })}
-          <AcidoP x={420} y={700} s={0.8} h={1} rot={Math.sin(T) * 12} />
+        {fsvg(<DZ k={1.15} de={[540, 870]} a={[540, 950]}>
+          <QuesoSuizo x={110} y={1010} s={1.0} burbuja={kprog(T, K.Qu + 0.3, K.Qu + 2.0)} T={T} />
+          {[[170, 940], [260, 880], [350, 930], [430, 860]].map(([a, b], i) => <Baston key={i} x={a} y={b} rot={i * 35 + Math.sin(T * 2 + i) * 8} s={0.7} />)}
+          {Array.from({ length: 6 }, (_, i) => { const u = ((T - K.Qu) * 0.5 + i / 6) % 1; return T > K.Qu + 0.3 ? <circle key={i} cx={190 + i * 50} cy={860 - u * 160} r={9 + (i % 3) * 3} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={2} opacity={1 - u} /> : null; })}
+          <AcidoP x={470} y={700} s={0.8} h={1} rot={Math.sin(T) * 12} />
           <Intestino x={620} y={830} s={0.95} T={T} p={kprog(T, K.Qu + 2.0, K.Qu + 3.2)} />
-        </>)}
+        </DZ>)}
       </Escena>
       {/* 12 · sellos de seguridad */}
       <Escena T={T} a={K.S} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Sello T={T} at={K.S + 0.4} x={250} y={830} texto="FDA" color={KC.ink} r={130} rot={-10} />
-          <Sello T={T} at={K.S + 2.4} x={600} y={850} texto="EFSA" color="#2346ff" r={120} rot={8} />
+          <RebCaja x={540} y={1440} s={1.0} />
+          <Escudo x={540} y={1250} s={1.0} o={1} />
+          <Sello T={T} at={K.S + 0.4} x={300} y={640} texto="FDA" color={KC.ink} r={140} rot={-10} />
+          <Sello T={T} at={K.S + 2.4} x={780} y={660} texto="EFSA" color="#4d6bff" r={130} rot={8} />
         </>)}
       </Escena>
       {/* 13 · cierre: la misma mesa, una semana después (esquema) */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Mesa y={1120} />
-          <RebPanaderia x={290} y={1120} s={0.92} moho={kprog(T, K.C + 0.2, K.C + 2.2)} />
-          <RebCaja x={780} y={1120} s={0.92} />
-          <Escudo x={780} y={950} s={0.9} o={1} gasto={kprog(T, K.C + 0.8, K.C + 2.0)} />
+          <Mesa y={1160} />
+          <RebPanaderia x={262} y={1160} s={1.25} moho={kprog(T, K.C + 0.2, K.C + 2.2)} />
+          <RebCaja x={830} y={1160} s={1.25} />
+          <Escudo x={830} y={930} s={1.22} o={1} gasto={kprog(T, K.C + 0.8, K.C + 2.0)} />
         </>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.6} until={K.H - 0.2} texto="no es inmortal" x={290} y={470} tam={44} borde={KC.red} />
-      <Etq T={T} at={K.G + 0.7} until={K.H - 0.2} x={110} y={1160} texto="pan de panadería" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.G + 0.9} until={K.H - 0.2} x={620} y={1160} texto="pan de caja" tam={30} color={KC.texto} />
-      <Chip T={T} at={K.G + 1.5} until={K.H - 0.2} texto="antimoho" x={780} y={1060} tam={30} borde={KC.mint} mono />
-      <Chip T={T} at={K.H + 0.3} until={K.H + 2.2} texto="el horno las mata" x={330} y={520} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.H + 2.3} until={K.M - 0.2} texto="al enfriar y rebanar" x={330} y={520} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.H + 2.6} until={K.M - 0.2} x={60} y={600} texto="esporas del aire →" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.M + 0.1} until={K.E - 0.2} texto="MOHOS DEL PAN · ESQUEMA" x={540} y={380} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.M + 0.5} until={K.E - 0.2} x={95} y={890} texto="Penicillium" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.M + 1.0} until={K.E - 0.2} x={420} y={890} texto="Aspergillus" it tam={28} color={KC.ink} />
-      <Etq T={T} at={K.M + 1.5} until={K.E - 0.2} x={750} y={890} texto="Rhizopus" it tam={28} color={KC.ink} />
-      <Chip T={T} at={K.M + 2.6} until={K.E - 0.2} texto="en unos días" x={760} y={1050} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.E + 1.0} until={K.En - 0.2} texto="antimoho" x={800} y={860} tam={38} borde={KC.mint} mono />
-      <Chip T={T} at={K.En + 0.1} until={K.Q - 0.2} texto="POR DENTRO · UNA HIFA" x={330} y={420} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.En + 1.4} until={K.P - 0.2} x={60} y={510} texto="ácido propiónico sin carga: entra" tam={28} color={PC.ap} />
-      <Etq T={T} at={K.En + 2.2} until={K.P - 0.2} x={460} y={600} texto="con carga: rebota" tam={26} color={PC.anion} />
-      <Etq T={T} at={K.En + 2.0} until={K.Ea - 0.3} x={60} y={1035} texto="pared y membrana" tam={22} color="#8fd9c0" />
-      <Etq T={T} at={K.P + 0.6} until={K.Ea - 0.2} x={60} y={520} texto="suelta su protón (H⁺)" tam={30} color={PC.h} />
-      <Etq T={T} at={K.P + 1.6} until={K.Ea - 0.2} x={60} y={1100} texto="célula más ácida (teoría clásica)" tam={26} color={KC.orange} />
-      <Etq T={T} at={K.Ea + 0.4} until={K.Q - 0.2} x={270} y={1087} texto="sacarlo gasta energía" tam={24} color={KC.mint} />
-      <Etq T={T} at={K.Ea + 1.8} until={K.Q - 0.2} x={60} y={520} texto="en mohos: enzimas trabadas" tam={28} color={KC.lilac} />
-      <Chip T={T} at={K.Ea + 2.9} until={K.Q - 0.2} texto="casi no crece" x={760} y={680} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.Q + 0.1} until={K.Es - 0.2} texto="¿lo mata?" x={300} y={420} tam={48} borde={KC.ink} />
-      <Chip T={T} at={K.Q + 1.5} until={K.Es - 0.2} texto="solo lo frena" x={730} y={560} tam={40} borde={KC.mint} />
-      <Etq T={T} at={K.Q + 2.2} until={K.Es - 0.2} x={480} y={915} texto="algunas cepas lo resisten:" tam={24} color={KC.texto} />
-      <Etq T={T} at={K.Q + 2.5} until={K.Es - 0.2} x={480} y={1110} texto="Penicillium roqueforti" it tam={26} color={KC.texto} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.1} anio="2012" quien="University College Cork, Irlanda" revista="Appl. Microbiol. Biotechnol., 2012" x={540} y={760} />
+      <Chip T={T} at={K.G + 0.6} until={K.H - 0.2} texto="no es inmortal" x={290} y={460} tam={44} borde={KC.red} />
+      <Etq T={T} at={K.G + 0.7} until={K.H - 0.2} x={50} y={1215} texto="pan de panadería" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.G + 0.9} until={K.H - 0.2} x={640} y={1215} texto="pan de caja" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.G + 1.5} until={K.H - 0.2} texto="antimoho" x={830} y={1065} tam={32} borde={KC.mint} mono />
+      <Chip T={T} at={K.H + 0.3} until={K.H + 2.2} texto="el horno las mata" x={330} y={560} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.H + 2.3} until={K.M - 0.2} texto="al enfriar y rebanar" x={330} y={560} tam={36} borde={KC.ink} />
+      <Etq T={T} at={K.H + 2.6} until={K.M - 0.2} x={60} y={672} texto="esporas del aire →" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.M + 0.1} until={K.E - 0.2} texto="MOHOS DEL PAN · ESQUEMA" x={540} y={510} tam={30} borde={KC.cyan} mono />
+      <Etq T={T} at={K.M + 0.5} until={K.E - 0.2} x={80} y={1140} texto="Penicillium" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.M + 1.0} until={K.E - 0.2} x={400} y={1140} texto="Aspergillus" it tam={28} color={KC.ink} />
+      <Etq T={T} at={K.M + 1.5} until={K.E - 0.2} x={730} y={1140} texto="Rhizopus" it tam={28} color={KC.ink} />
+      <Chip T={T} at={K.M + 2.6} until={K.E - 0.2} texto="en unos días" x={860} y={1320} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.E + 1.0} until={K.En - 0.2} texto="antimoho" x={540} y={420} tam={38} borde={KC.mint} mono />
+      <Chip T={T} at={K.En + 0.1} until={K.Q - 0.2} texto="POR DENTRO · UNA HIFA" x={330} y={540} tam={32} borde={KC.cyan} mono />
+      <Etq T={T} at={K.En + 1.4} until={K.P - 0.2} x={60} y={642} texto="ácido propiónico sin carga: entra" tam={28} color={PC.ap} />
+      <Etq T={T} at={K.En + 2.2} until={K.P - 0.2} x={380} y={752} texto="con carga: rebota" tam={26} color={PC.anion} />
+      <Etq T={T} at={K.En + 2.0} until={K.Ea - 0.3} x={60} y={1262} texto="pared y membrana" tam={22} color="#8fd9c0" />
+      <Etq T={T} at={K.P + 0.6} until={K.Ea - 0.2} x={60} y={652} texto="suelta su protón (H⁺)" tam={30} color={PC.h} />
+      <Etq T={T} at={K.P + 1.6} until={K.Ea - 0.2} x={60} y={1325} texto="célula más ácida (teoría clásica)" tam={26} color={KC.orange} />
+      <Etq T={T} at={K.Ea + 0.4} until={K.Q - 0.2} x={280} y={1310} texto="sacarlo gasta energía" tam={24} color={KC.mint} />
+      <Etq T={T} at={K.Ea + 1.8} until={K.Q - 0.2} x={60} y={652} texto="en mohos: enzimas trabadas" tam={28} color={KC.lilac} />
+      <Chip T={T} at={K.Ea + 2.9} until={K.Q - 0.2} texto="casi no crece" x={720} y={840} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Q + 0.1} until={K.Es - 0.2} texto="¿lo mata?" x={290} y={560} tam={48} borde={KC.ink} />
+      <Chip T={T} at={K.Q + 1.5} until={K.Es - 0.2} texto="solo lo frena" x={770} y={630} tam={40} borde={KC.mint} />
+      <Etq T={T} at={K.Q + 2.2} until={K.Es - 0.2} x={510} y={1050} texto="algunas cepas lo resisten:" tam={24} color={KC.texto} />
+      <Etq T={T} at={K.Q + 2.5} until={K.Es - 0.2} x={510} y={1335} texto="Penicillium roqueforti" it tam={26} color={KC.texto} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.1} anio="2012" quien="University College Cork, Irlanda" revista="Appl. Microbiol. Biotechnol., 2012" x={540} y={440} />
       <Chip T={T} at={K.Es + 3.3} until={K.Qu - 0.2} texto="2012 · Cork, Irlanda" x={320} y={440} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.Es + 3.5} until={K.Qu - 0.2} texto="pan de trigo bajo en sal" x={320} y={540} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.MM + 1.0} until={K.Qu - 0.2} x={110} y={1046} texto="con Lactobacillus amylovorus" it tam={24} color="#11734f" />
-      <Etq T={T} at={K.Qu + 0.6} until={K.S - 0.2} x={60} y={1060} texto="queso suizo" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Qu + 1.0} until={K.S - 0.2} x={60} y={1110} texto="Propionibacterium freudenreichii" it tam={24} color={KC.ink} />
-      <Etq T={T} at={K.Qu + 0.9} until={K.S - 0.2} x={310} y={640} texto="ácido propiónico" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Qu + 2.2} until={K.S - 0.2} x={620} y={1080} texto="tu intestino:" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Qu + 2.5} until={K.S - 0.2} x={620} y={1125} texto="bacterias + fibra" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.S + 0.7} until={K.C - 0.2} texto="FDA 1984 · reconocido como seguro (GRAS)" x={540} y={1040} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.S + 2.7} until={K.C - 0.2} texto="EFSA 2014 · sin riesgo en las dosis permitidas" x={540} y={1120} tam={28} borde="#2346ff" />
+      <Etq T={T} at={K.MM + 1.0} until={K.Qu - 0.2} x={110} y={986} texto="con Lactobacillus amylovorus" it tam={24} color={KC.mint} />
+      <Etq T={T} at={K.Qu + 0.6} until={K.S - 0.2} x={50} y={1170} texto="queso suizo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Qu + 1.0} until={K.S - 0.2} x={50} y={1225} texto="Propionibacterium freudenreichii" it tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Qu + 0.9} until={K.S - 0.2} x={330} y={680} texto="ácido propiónico" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Qu + 2.2} until={K.S - 0.2} x={640} y={1190} texto="tu intestino:" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Qu + 2.5} until={K.S - 0.2} x={640} y={1240} texto="bacterias + fibra" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.S + 0.7} until={K.C - 0.2} texto="FDA 1984 · reconocido como seguro (GRAS)" x={540} y={860} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.S + 2.7} until={K.C - 0.2} texto="EFSA 2014 · sin riesgo en las dosis permitidas" x={540} y={930} tam={28} borde="#4d6bff" />
       <Chip T={T} at={K.C + 0.1} until={K.Ou} texto="1 semana después (esquema)" x={320} y={440} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="no es inmortal: va frenado" x={330} y={560} tam={34} borde={KC.mint} />
-      <Etq T={T} at={K.C + 0.3} until={K.Ou} x={110} y={1160} texto="pan de panadería" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.C + 0.3} until={K.Ou} x={620} y={1160} texto="pan de caja" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.C + 0.3} until={K.Ou} x={50} y={1215} texto="pan de panadería" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.C + 0.3} until={K.Ou} x={640} y={1215} texto="pan de caja" tam={30} color={KC.texto} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={80} />
-      <BarraEscala T={T} at={K.H} until={K.M} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.M} until={K.E} texto="20 µm (esquema)" largo={120} />
-      <BarraEscala T={T} at={K.E} until={K.En} texto="10 cm" largo={140} />
-      <BarraEscala T={T} at={K.En} until={K.Q} texto="5 µm (esquema)" largo={240} />
-      <BarraEscala T={T} at={K.Q} until={K.Es} texto="20 µm (esquema)" largo={100} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={109} />
+      <BarraEscala T={T} at={K.H} until={K.M} texto="10 cm" largo={123} />
+      <BarraEscala T={T} at={K.M} until={K.E} texto="20 µm (esquema)" largo={137} />
+      <BarraEscala T={T} at={K.E} until={K.En} texto="10 cm" largo={189} />
+      <BarraEscala T={T} at={K.En} until={K.Q} texto="5 µm (esquema)" largo={276} />
+      <BarraEscala T={T} at={K.Q} until={K.Es} texto="20 µm (esquema)" largo={133} />
       <BarraEscala T={T} at={K.Qu} until={K.S} texto="esquema" largo={0} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={80} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={109} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No es inmortal: *suele traer antimoho.*" />

@@ -133,7 +133,8 @@ function lbManada(n, seed, y0 = 640, y1 = 1180) {
   while (out.length < n) { const x = 40 + r() * 1000, y = y0 + r() * (y1 - y0); if (Math.abs(x - 540) < 360 && Math.abs(y - 940) < 70) continue; out.push({ x, y, f: r() < 0.5, s: 0.9 + r() * 0.5, p: r() * 6 }); }
   return out;
 }
-const LB_SIETE = (y = 980) => Array.from({ length: 7 }, (_, i) => ({ x: 120 + i * 140, y }));
+// Los 7 fundadores en dos filas (4 + 3), grandes y al centro del cuadro.
+const LB_SIETE = () => [[150, 1000], [410, 1000], [670, 1000], [930, 1000], [280, 1260], [540, 1260], [800, 1260]].map(([x, y]) => ({ x, y }));
 
 function LoboShot() {
   const { T, CUES } = useComposition();
@@ -143,7 +144,7 @@ function LoboShot() {
   const suelo = (color = '#c9a86a', y = 1080) => <rect x={0} y={y} width={KW} height={KH - y} fill={color} stroke={KC.ink} strokeWidth={6} />;
   const siete = LB_SIETE();
   // gancho / cierre: la manada se junta en los 7 fundadores (gancho) o sale de ellos (cierre)
-  const MAN = lbManada(150, 27, 600, 1000), MAN2 = lbManada(319, 71, 560, 1060);
+  const MAN = lbManada(150, 27, 560, 1300), MAN2 = lbManada(319, 71, 560, 1360);
   const junta = kprog(T, K.G + 0.05, K.G + 2.2, kEase.suave);
   // conteo: año y lobos según la tabla real
   const anioF = klerp(1998, 2025, kprog(T, K.Co + 0.3, K.Co + 4.2, kEase.suave)), anio = Math.floor(anioF + 0.001);
@@ -154,93 +155,95 @@ function LoboShot() {
       {/* 0 · gancho: la manada se recoge en 7 */}
       <Escena T={T} a={K.G} b={K.Ca}>
         <FondoLunares color={KC.mint} />
-        {svg(<>{suelo('#9fd28a', 1000)}
+        {svg(<>{suelo('#22351f', 1330)}
           {MAN.map((m, i) => { const k = siete[i % 7]; return <LoboMini key={i} x={klerp(m.x, k.x, junta)} y={klerp(m.y, k.y - 60, junta)} s={1.8 * m.s * (1 - junta * 0.6)} o={1 - kprog(T, K.G + 1.6, K.G + 2.3)} />; })}
-          {siete.map((k, i) => <Lobo key={i} x={k.x} y={k.y + 10} s={0.38 * kprog(T, K.G + 1.7 + i * 0.08, K.G + 2.2 + i * 0.08, kEase.rebote)} T={T} fase={i} />)}</>)}
+          {siete.map((k, i) => <Lobo key={i} x={k.x} y={k.y + 10} s={0.6 * kprog(T, K.G + 1.7 + i * 0.08, K.G + 2.2 + i * 0.08, kEase.rebote)} T={T} fase={i} />)}</>)}
       </Escena>
       {/* 1 · casi borrado: trampas, balas y veneno */}
       <Escena T={T} a={K.Ca} b={K.U}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>{suelo('#d7b77c', 1070)}
-          {Array.from({ length: 8 }, (_, i) => { const x = 130 + (i % 4) * 260 + (i >= 4 ? 120 : 0), y = i < 4 ? 800 : 1060;
+        {svg(<>{suelo('#3a2f1c', 1260)}
+          {Array.from({ length: 8 }, (_, i) => { const x = 130 + (i % 4) * 260 + (i >= 4 ? 120 : 0), y = i < 4 ? 990 : 1250;
             const off = i === 2 ? 0 : kprog(T, K.Ca + 1.0 + i * 0.32, K.Ca + 1.4 + i * 0.32);
-            return <Lobo key={i} x={x - (i >= 4 ? 60 : 0)} y={y} s={0.42} T={T} fase={i} apagado={off} o={1 - off * 0.5} flip={i % 2 === 1} />; })}
-          <g opacity={kprog(T, K.Ca + 0.6, K.Ca + 0.9)}><Trampa x={200} y={650} s={1.1} cierra={kprog(T, K.Ca + 1.0, K.Ca + 1.2)} /></g>
-          <g opacity={kprog(T, K.Ca + 1.4, K.Ca + 1.7)}><Bala x={klerp(-60, 520, kprog(T, K.Ca + 1.4, K.Ca + 2.0, kEase.sale))} y={620} s={1.1} /></g>
-          <g opacity={kprog(T, K.Ca + 2.1, K.Ca + 2.4)}><Veneno x={840} y={680} s={1.1} /></g></>)}
+            return <Lobo key={i} x={x - (i >= 4 ? 60 : 0)} y={y} s={0.55} T={T} fase={i} apagado={off} o={1 - off * 0.5} flip={i % 2 === 1} />; })}
+          <g opacity={kprog(T, K.Ca + 0.6, K.Ca + 0.9)}><Trampa x={210} y={760} s={1.4} cierra={kprog(T, K.Ca + 1.0, K.Ca + 1.2)} /></g>
+          <g opacity={kprog(T, K.Ca + 1.4, K.Ca + 1.7)}><Bala x={klerp(-60, 520, kprog(T, K.Ca + 1.4, K.Ca + 2.0, kEase.sale))} y={730} s={1.4} /></g>
+          <g opacity={kprog(T, K.Ca + 2.1, K.Ca + 2.4)}><Veneno x={840} y={800} s={1.4} /></g></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 2 · EE. UU.: el último confirmado, 1970 */}
       <Escena T={T} a={K.U} b={K.R}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><rect x={0} y={860} width={KW} height={KH} fill="#7a705e" /><rect x={0} y={0} width={KW} height={860} fill="rgba(255,255,255,.12)" />
-          <line x1={0} y1={860} x2={KW} y2={860} stroke={KC.ink} strokeWidth={7} strokeDasharray="26 16" />
-          <text x={60} y={650} style={{ font:`400 66px ${KF.titulo}` }} fill={KC.ink}>EE. UU.</text>
-          <text x={60} y={940} style={{ font:`400 66px ${KF.titulo}` }} fill={KC.ink}>MÉXICO</text>
-          <Lobo x={640} y={820} s={0.5} T={T} o={1 - kprog(T, K.U + 2.2, K.U + 3.6)} />
-          {[[330, 1050], [600, 1080], [860, 1040]].map(([x, y], i) => <Lobo key={i} x={x} y={y} s={0.34} T={T} fase={i} flip={i === 1} o={0.9} />)}</>)}
+        {svg(<><rect x={0} y={960} width={KW} height={KH} fill="#2e2a22" /><rect x={0} y={0} width={KW} height={960} fill="rgba(255,255,255,.06)" />
+          <line x1={0} y1={960} x2={KW} y2={960} stroke={KC.ink} strokeWidth={7} strokeDasharray="26 16" />
+          <text x={60} y={720} style={{ font:`400 76px ${KF.titulo}` }} fill={KC.ink}>EE. UU.</text>
+          <text x={60} y={1050} style={{ font:`400 76px ${KF.titulo}` }} fill={KC.ink}>MÉXICO</text>
+          <Lobo x={620} y={920} s={0.8} T={T} o={1 - 0.75 * kprog(T, K.U + 2.2, K.U + 3.6)} />
+          {[[230, 1250], [540, 1290], [860, 1240]].map(([x, y], i) => <Lobo key={i} x={x} y={y} s={0.55} T={T} fase={i} flip={i === 1} o={0.9} />)}</>)}
       </Escena>
       {/* 3 · 1977–1980: cinco capturados en México */}
       <Escena T={T} a={K.R} b={K.S}>
         <FondoLunares color={KC.orange} />
-        {svg(<>{suelo('#e0c48c', 1080)}<Recinto x={60} y={1080} w={960} h={300} o={kprog(T, K.R + 0.2, K.R + 0.7)} />
+        {svg(<>{suelo('#3b2f1d', 1260)}<Recinto x={60} y={1260} w={960} h={540} o={kprog(T, K.R + 0.2, K.R + 0.7)} />
           {Array.from({ length: 5 }, (_, i) => { const e = kprog(T, K.R + 0.4 + i * 0.35, K.R + 1.6 + i * 0.35, kEase.sale);
-            return <Lobo key={i} x={klerp(-200, 170 + i * 180, e)} y={1070} s={0.4} T={T} fase={i} camina={e < 1 ? 1 : 0} panza={i === 4 ? 1 : 0} />; })}</>)}
+            return <Lobo key={i} x={klerp(-260, 150 + i * 195, e)} y={1250} s={0.62} T={T} fase={i} camina={e < 1 ? 1 : 0} panza={i === 4 ? 1 : 0} />; })}</>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 4 · 3 fundadores de los capturados + 4 de dos linajes de cautiverio = 7 */}
       <Escena T={T} a={K.S} b={K.P}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>{suelo('#9fd28a', 1080)}
+        {svg(<>{suelo('#22351f', 1330)}
           {Array.from({ length: 7 }, (_, i) => { const g = i < 3 ? 0 : i < 5 ? 1 : 2;
             const x0 = [150, 270, 390][i] || (i < 5 ? [620, 740][i - 3] : [860, 980][i - 5]);
-            const x0b = i < 3 ? 140 + i * 120 : i < 5 ? 590 + (i - 3) * 120 : 860 + (i - 5) * 120;
+            const x0b = i < 3 ? 120 + i * 135 : i < 5 ? 560 + (i - 3) * 140 : 820 + (i - 5) * 140;
             const ap = kprog(T, K.S + 0.2 + g * 0.9, K.S + 0.7 + g * 0.9, kEase.rebote), une = kprog(T, K.S + 3.4, K.S + 4.6, kEase.suave);
-            return <Lobo key={i} x={klerp(x0b, siete[i].x, une)} y={klerp(830, 1070, une)} s={0.34 * ap} T={T} fase={i} />; })}</>)}
+            return <Lobo key={i} x={klerp(x0b, siete[i].x, une)} y={klerp(1040, siete[i].y + 10, une)} s={klerp(0.52, 0.6, une) * ap} T={T} fase={i} />; })}</>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1500} color={KC.ink} />
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Su} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={260} y={960} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 260 820)`}>?</text>
-          {Array.from({ length: 7 }, (_, i) => <LoboMini key={i} x={80 + i * 58} y={1080} s={1.5} />)}</>)}
+        {svg(<>{suelo('#22351f', 1330)}
+          {siete.map((k, i) => <Lobo key={i} x={k.x} y={k.y + 10} s={0.6} T={T} fase={i} o={0.75} />)}
+          <text x={540} y={860} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 700)`}>?</text></>)}
       </Escena>
       {/* 6 · 1998: tres familias sueltas en Arizona */}
       <Escena T={T} a={K.Su} b={K.Co}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>{[80, 230, 420, 610, 800, 980].map((x, i) => <Pino key={i} x={x} y={890 + (i % 2) * 30} s={1.1 + (i % 3) * 0.15} />)}{suelo('#8cc46a', 930)}
-          {[0, 1, 2].map((c) => { const ab = kprog(T, K.Su + 0.4 + c * 0.5, K.Su + 0.8 + c * 0.5); const cx = 150 + c * 120;
-            return <g key={c}><Caja x={cx} y={1040 + c * 35} s={0.7} abre={ab} />
+        {svg(<>{[80, 230, 420, 610, 800, 980].map((x, i) => <Pino key={i} x={x} y={1000 + (i % 2) * 30} s={1.5 + (i % 3) * 0.2} />)}{suelo('#1f3418', 1040)}
+          {[0, 1, 2].map((c) => { const ab = kprog(T, K.Su + 0.4 + c * 0.5, K.Su + 0.8 + c * 0.5); const cx = 140 + c * 140;
+            return <g key={c}><Caja x={cx} y={1180 + c * 60} s={1.0} abre={ab} />
               {[0, 1].map((j) => { const e = kprog(T, K.Su + 0.8 + c * 0.5 + j * 0.2, K.Su + 2.6 + c * 0.5 + j * 0.2, kEase.sale), libre = (c * 2 + j) % 3 !== 2;
-                return <Lobo key={j} x={klerp(cx + 40, 500 + c * 160 + j * 70, e)} y={1030 + c * 35 - j * 20} s={0.3} T={T} fase={c + j} camina={e < 1 ? 1 : 0} o={e > 0 ? (libre ? 1 : 1 - kprog(T, K.Su + 3.2, K.Su + 3.8) * 0.75) : 0} />; })}</g>; })}</>)}
+                return <Lobo key={j} x={klerp(cx + 60, 540 + c * 170 + j * 90, e)} y={1170 + c * 60 - j * 30} s={0.45} T={T} fase={c + j} camina={e < 1 ? 1 : 0} o={e > 0 ? (libre ? 1 : 1 - kprog(T, K.Su + 3.2, K.Su + 3.8) * 0.75) : 0} />; })}</g>; })}</>)}
         <EscalaFija texto="esquema" largo={0} y={1520} color={KC.ink} />
       </Escena>
       {/* 7 · conteo 1998 → 2025: la imagen se llena (mínimo USFWS al 31 dic) */}
       <Escena T={T} a={K.Co} b={K.M} zoom={0.02}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<>{Array.from({ length: 319 }, (_, i) => { const c = i % 29, r = Math.floor(i / 29), x = 58 + c * 33.5, y = 730 + r * 38;
-          return <g key={i}><rect x={x - 16} y={y - 22} width={32} height={34} rx={6} fill={i < 143 ? '#bfe6ff' : '#ffd8b0'} opacity={i < nLobos ? 1 : 0.35} />
+        {svg(<>{siete.map((k, i) => <Lobo key={'f' + i} x={k.x} y={k.y + 10} s={0.6} T={T} fase={i} o={1 - 0.8 * kprog(T, K.Co + 0.8, K.Co + 2.8)} />)}
+          {Array.from({ length: 319 }, (_, i) => { const c = i % 29, r = Math.floor(i / 29), x = 58 + c * 33.5, y = 770 + r * 52;
+          return <g key={i}><rect x={x - 16} y={y - 30} width={32} height={46} rx={6} fill={i < 143 ? '#2d5878' : '#7a4f2c'} opacity={i < nLobos ? 1 : 0.35} />
             {i < nLobos && <LoboMini x={x} y={y} s={0.85} />}</g>; })}
-          <text x={60} y={680} style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>{anio}: {kformato(nLobos)} lobos libres</text></>)}
+          <text x={60} y={700} style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>{anio}: {kformato(nLobos)} lobos libres</text></>)}
       </Escena>
       {/* 8 · México: primera camada en vida libre (Chihuahua, 2014) */}
       <Escena T={T} a={K.M} b={K.Tr}>
         <FondoLunares color={KC.mint} />
-        {svg(<><path d="M 0 860 L 180 640 L 330 780 L 520 600 L 720 780 L 880 650 L 1080 820 L 1080 990 L 0 990 Z" fill="#a9906a" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
-          {[90, 300, 760, 1000].map((x, i) => <Pino key={i} x={x} y={970} s={0.8} color="#2f7a44" />)}{suelo('#c7a873', 980)}
-          <path d="M 320 990 Q 540 790 760 990 Z" fill="#8d6b45" stroke={KC.ink} strokeWidth={6} />
+        {svg(<g transform="translate(540 1140) scale(1.25) translate(-540 -990)"><path d="M 0 860 L 180 640 L 330 780 L 520 600 L 720 780 L 880 650 L 1080 820 L 1080 990 L 0 990 Z" fill="#4d3f2c" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
+          {[90, 300, 760, 1000].map((x, i) => <Pino key={i} x={x} y={970} s={0.8} color="#2f7a44" />)}{suelo('#3a2c1a', 980)}
+          <path d="M 320 990 Q 540 790 760 990 Z" fill="#5a4229" stroke={KC.ink} strokeWidth={6} />
           <path d="M 470 990 Q 540 900 610 990 Z" fill="#2b1d12" />
           {[0, 1, 2, 3, 4].map((i) => { const e = kprog(T, K.M + 0.8 + i * 0.3, K.M + 1.3 + i * 0.3, kEase.rebote); return <Cachorro key={i} x={300 + i * 110} y={1070 + (i % 2) * 30} s={0.75 * e} T={T} fase={i} flip={i > 2} />; })}
-          <Lobo x={900} y={1050} s={0.4} T={T} flip /></>)}
+          <Lobo x={850} y={1050} s={0.4} T={T} flip /></g>)}
         {svg(<g opacity={kprog(T, K.M + 0.3, K.M + 0.8)}><MapaMexico x={640} y={330} ancho={400} conCA={false} />
           {(() => { const [mx, my] = mxProy(-108.4, 30.2); return <circle cx={640 + mx * 0.4} cy={330 + my * 0.4} r={13 + Math.sin(T * 6) * 3} fill={KC.red} stroke={KC.ink} strokeWidth={4} />; })()}</g>)}
       </Escena>
       {/* 9 · el truco: cachorros de cautiverio adoptados en madrigueras salvajes */}
       <Escena T={T} a={K.Tr} b={K.C}>
         <FondoLunares color={KC.orange} />
-        {svg(<>{suelo('#9c7448', 780)}
-          <ellipse cx={540} cy={950} rx={420} ry={140} fill="#3a2716" stroke={KC.ink} strokeWidth={7} />
-          <path d="M 860 780 Q 900 850 880 890" stroke="#3a2716" strokeWidth={70} fill="none" />
+        {svg(<>{suelo('#33241a', 780)}<g transform="translate(540 1040) scale(1.15) translate(-540 -950)">
+          <ellipse cx={540} cy={950} rx={420} ry={140} fill="#1c130b" stroke={KC.ink} strokeWidth={7} />
+          <path d="M 860 780 Q 900 850 880 890" stroke="#1c130b" strokeWidth={70} fill="none" />
           {(() => { const baja = kprog(T, K.Tr + 0.4, K.Tr + 1.8, kEase.suave), mez = kprog(T, K.Tr + 2.0, K.Tr + 3.2, kEase.suave);
             return <>{[0, 1, 2].map((i) => <Cachorro key={'w' + i} x={klerp(260 + i * 130, 220 + i * 170, mez)} y={1020 - (i % 2) * 40} s={0.8} T={T} fase={i} />)}
               {[0, 1].map((i) => <Cachorro key={'c' + i} x={klerp(760 + i * 110, 340 + i * 170 + 85, mez)} y={klerp(600, 1000 - i * 30, baja)} s={0.8} T={T} fase={i + 4} collar={KC.yellow} flip />)}
@@ -248,17 +251,17 @@ function LoboShot() {
               <Goteo T={T} x={420} y0={840} y1={970} cada={0.35} color={KC.yellow} desde={K.Tr + 2.6} hasta={K.Tr + 4.4} r={10} />
               <Goteo T={T} x={640} y0={840} y1={970} cada={0.35} color={KC.yellow} desde={K.Tr + 2.8} hasta={K.Tr + 4.6} r={10} />
               {[0, 1, 2, 3].map((i) => { const u = ((T - K.Tr) * 0.8 + i / 4) % 1, on = kprog(T, K.Tr + 3.6, K.Tr + 4.2);
-                return <path key={'o' + i} d={`M ${300 + i * 140} ${900 - u * 120} q 15 -20 0 -40 q -15 -20 0 -40`} stroke="#b8e04a" strokeWidth={8} fill="none" strokeLinecap="round" opacity={on * (1 - u)} />; })}</>; })()}</>)}
+                return <path key={'o' + i} d={`M ${300 + i * 140} ${900 - u * 120} q 15 -20 0 -40 q -15 -20 0 -40`} stroke="#b8e04a" strokeWidth={8} fill="none" strokeLinecap="round" opacity={on * (1 - u)} />; })}</>; })()}</g></>)}
         <EscalaFija texto="esquema" largo={0} y={1520} color={KC.ink} />
       </Escena>
       {/* 10 · cierre: regreso a la imagen del inicio, ahora la manada sale de los 7 */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.mint} />
-        {svg(<>{suelo('#9fd28a', 1000)}
+        {svg(<>{suelo('#22351f', 1400)}
           {MAN2.map((m, i) => { const k = siete[i % 7], e = kprog(T, K.C + 0.1 + (i % 40) * 0.03, K.C + 1.6 + (i % 40) * 0.03, kEase.sale);
             return <g key={i}><line x1={k.x} y1={k.y - 40} x2={klerp(k.x, m.x, e)} y2={klerp(k.y - 40, m.y, e)} stroke={KC.ink} strokeWidth={1.4} opacity={0.18} />
               <LoboMini x={klerp(k.x, m.x, e)} y={klerp(k.y - 40, m.y, e)} s={1.1} o={e} /></g>; })}
-          {siete.map((k, i) => <g key={i}><circle cx={k.x} cy={k.y - 30} r={64} fill="rgba(255,225,26,.55)" stroke={KC.ink} strokeWidth={4} /><Lobo x={k.x} y={k.y + 40} s={0.32} T={T} fase={i} /></g>)}</>)}
+          {siete.map((k, i) => <g key={i}><circle cx={k.x} cy={k.y - 40} r={92} fill="rgba(255,225,26,.45)" stroke={KC.ink} strokeWidth={4} /><Lobo x={k.x + 10} y={k.y + 30} s={0.46} T={T} fase={i} /></g>)}</>)}
       </Escena>
 
       {/* datos y etiquetas */}
@@ -269,14 +272,14 @@ function LoboShot() {
       <Chip T={T} at={K.Ca + 0.6} until={K.U - 0.2} texto="siglo XX: trampas, balas y veneno" y={1450} x={540} tam={30} borde={KC.red} />
       <Chip T={T} at={K.U + 1.2} until={K.R - 0.2} texto="EE. UU.: último confirmado en libertad, 1970" y={1450} x={540} tam={26} borde={KC.red} />
       <Chip T={T} at={K.R + 0.3} until={K.S - 0.2} texto="1977–1980 · 5 capturados en México" y={480} x={420} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.R + 2.6} until={K.S - 0.2} x={250} y={690} texto="4 machos" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.R + 2.9} until={K.S - 0.2} x={1000} y={730} texto="hembra preñada" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.S + 0.3} until={K.S + 3.3} x={60} y={690} texto="linaje McBride: 3" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.S + 1.2} until={K.S + 3.3} x={540} y={690} texto="Aragón: 2" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.1} until={K.S + 3.3} x={1060} y={750} texto="Ghost Ranch: 2" lado="izq" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.R + 2.6} until={K.S - 0.2} x={250} y={660} texto="4 machos" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.R + 2.9} until={K.S - 0.2} x={1000} y={660} texto="hembra preñada" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.S + 0.3} until={K.S + 3.3} x={60} y={880} texto="linaje McBride: 3" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.2} until={K.S + 3.3} x={500} y={880} texto="Aragón: 2" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.1} until={K.S + 3.3} x={1060} y={940} texto="Ghost Ranch: 2" lado="izq" tam={26} color={KC.ink} />
       <NumeroGigante T={T} at={K.S + 4.4} until={K.P - 0.2} valor={7} dur={0.4} desde={0} etiqueta="fundadores:" x={700} y={560} tam={220} color={KC.yellow} />
       <Chip T={T} at={K.S + 4.6} until={K.P - 0.2} texto="3 + 2 + 2 = 7" y={1450} x={540} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.Su + 0.3} until={K.Co - 0.2} x={1000} y={600} texto="Bosque Nacional Apache, Arizona" lado="izq" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Su + 0.3} until={K.Co - 0.2} x={1000} y={620} texto="Bosque Nacional Apache, Arizona" lado="izq" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Su + 0.3} until={K.Co - 0.2} texto="1998 · 3 familias sueltas" y={480} x={400} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.Su + 3.4} until={K.Co - 0.2} texto="fin de 1998: 4 lobos libres" y={1450} x={540} tam={36} borde={KC.leaf} />
       <NumeroGigante T={T} at={K.Co + 4.2} until={K.M - 0.2} valor={319} desde={286} dur={0.5} etiqueta="al 31 dic 2025, al menos:" x={350} y={500} tam={190} color={KC.yellow} />
@@ -286,7 +289,7 @@ function LoboShot() {
       <Chip T={T} at={K.M + 1.4} until={K.Tr - 0.2} texto="2014 · primera camada en vida libre en México" y={1450} x={540} tam={26} borde={KC.leaf} />
       <Chip T={T} at={K.Tr + 0.3} until={K.C - 0.2} texto="menos de 14 días de nacidos" y={480} x={340} tam={28} borde={KC.ink} />
       <Etq T={T} at={K.Tr + 0.9} until={K.Tr + 2.2} x={700} y={540} texto="de cautiverio" lado="izq" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Tr + 0.6} until={K.C - 0.2} x={140} y={850} texto="salvajes" tam={28} color={KC.paper} />
+      <Etq T={T} at={K.Tr + 0.6} until={K.C - 0.2} x={120} y={1250} texto="salvajes" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Tr + 3.6} until={K.C - 0.2} texto="todos huelen igual → la madre los cría" y={1450} x={540} tam={28} borde={KC.leaf} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou - 0.1} texto="más de 300 libres · todos de 7" y={480} x={400} tam={30} borde={KC.yellow} />
 

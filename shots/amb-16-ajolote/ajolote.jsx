@@ -141,8 +141,8 @@ function KmCuadrado({ x, y, lado = 500, vivos = 6000, T = 0, resalta = 0 }) {
 function Cancha({ x, y, w = 210, p = 1 }) {
   const h = w * 68 / 105;
   return <g transform={`translate(${x} ${y})`} opacity={p}>
-    <rect x={0} y={0} width={w} height={h} fill="#4fb95a" stroke={KC.ink} strokeWidth={5} />
-    {[0, 1, 2, 3, 4].map((i) => i % 2 ? <rect key={i} x={i * w / 5} y={3} width={w / 5} height={h - 6} fill="#45a94f" /> : null)}
+    <rect x={0} y={0} width={w} height={h} fill="#2f7a3a" stroke={KC.ink} strokeWidth={5} />
+    {[0, 1, 2, 3, 4].map((i) => i % 2 ? <rect key={i} x={i * w / 5} y={3} width={w / 5} height={h - 6} fill="#296e34" /> : null)}
     <rect x={8} y={8} width={w - 16} height={h - 16} fill="none" stroke="#fff" strokeWidth={3} />
     <line x1={w / 2} y1={8} x2={w / 2} y2={h - 8} stroke="#fff" strokeWidth={3} />
     <circle cx={w / 2} cy={h / 2} r={h * 0.16} fill="none" stroke="#fff" strokeWidth={3} />
@@ -157,13 +157,13 @@ function Canales({ x, y, w = 1000, h = 520, T = 0 }) {
   const xs = [0, ...vc, w], ys = [0, ...hc, h];
   for (let i = 0; i < xs.length - 1; i++) for (let j = 0; j < ys.length - 1; j++) {
     const x0 = xs[i] + 22, x1 = xs[i + 1] - 22, y0 = ys[j] + 22, y1 = ys[j + 1] - 22;
-    chin.push(<g key={i + '-' + j}><rect x={x0} y={y0} width={x1 - x0} height={y1 - y0} rx={10} fill={(i + j) % 2 ? '#7cc46a' : '#93d27a'} stroke={KC.ink} strokeWidth={5} />
-      {Array.from({ length: Math.floor((y1 - y0 - 10) / 26) }, (_, k) => <line key={k} x1={x0 + 14} y1={y0 + 18 + k * 26} x2={x1 - 14} y2={y0 + 18 + k * 26} stroke="#4f9a44" strokeWidth={5} strokeDasharray="10 8" />)}
+    chin.push(<g key={i + '-' + j}><rect x={x0} y={y0} width={x1 - x0} height={y1 - y0} rx={10} fill={(i + j) % 2 ? '#4e8a44' : '#5c9a50'} stroke={KC.ink} strokeWidth={5} />
+      {Array.from({ length: Math.floor((y1 - y0 - 10) / 26) }, (_, k) => <line key={k} x1={x0 + 14} y1={y0 + 18 + k * 26} x2={x1 - 14} y2={y0 + 18 + k * 26} stroke="#3a6e33" strokeWidth={5} strokeDasharray="10 8" />)}
       {[0.2, 0.8].map((q, k) => <circle key={'h' + k} cx={x0 + (x1 - x0) * q} cy={y0 + 4} r={10} fill="#3f8a3a" stroke={KC.ink} strokeWidth={3} />)}</g>);
   }
   const bx = ((T * 60) % (w + 200)) - 100;
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={0} y={0} width={w} height={h} fill="#3aa6c9" />
+    <rect x={0} y={0} width={w} height={h} fill="#23708a" />
     {Array.from({ length: 12 }, (_, i) => <path key={i} d={`M ${(i * 97) % w} ${hc[i % 2] + (i % 3 - 1) * 8} q 14 -6 28 0`} stroke="#bfeaf7" strokeWidth={4} fill="none" />)}
     {chin}
     {/* trajinera */}
@@ -280,18 +280,18 @@ function AjoloteShot() {
     return Math.round(Math.exp(klerp(Math.log(100), Math.log(36), kprog(T, K.Cd + 2.2, K.Cd + 3.0, kEase.suave))));
   })();
   const sucia = kprog(T, K.Cs + 2.2, K.Cs + 3.8, kEase.suave);
-  const agua = mixHex('#5cc3e6', '#6f7a3e', sucia);
+  const agua = mixHex('#2d7f9a', '#4f5a2c', sucia);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: peceras en todo el mundo… y 36 en un km² de su casa */}
       <Escena T={T} a={K.G} b={G2}>
         <FondoLunares color={KC.cyan} />
-        {svg(<GloboPeceras x={330} y={900} T={T} t0={K.G + 0.05} r={210} w={120} />)}
+        {svg(<GloboPeceras x={540} y={900} T={T} t0={K.G + 0.05} r={320} w={175} />)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       <Escena T={T} a={G2} b={K.Ca}>
         <FondoLunares color={KC.mint} />
-        {svg(<KmCuadrado x={160} y={720} lado={410} vivos={36} T={T} resalta={1} />)}
+        {svg(<KmCuadrado x={210} y={700} lado={660} vivos={36} T={T} resalta={1.4} />)}
         <EscalaFija texto="1 km² · esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 2 · su casa: canales y chinampas de Xochimilco */}
@@ -307,27 +307,28 @@ function AjoloteShot() {
       {/* 3–4 · 1998: 6,000 por km²; 2008: 100; 2014: 36 */}
       <Escena T={T} a={K.A} b={K.Cn}>
         <FondoLunares color={KC.yellow} />
-        {svg(<KmCuadrado x={290} y={660} lado={500} vivos={vivos} T={T} resalta={kprog(T, K.Cd + 2.6, K.Cd + 3.2)} />)}
+        {svg(<KmCuadrado x={180} y={650} lado={720} vivos={vivos} T={T} resalta={kprog(T, K.Cd + 2.6, K.Cd + 3.2)} />)}
         <EscalaFija texto="1 km² · esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 5 · casi cuatro canchas para cada uno */}
       <Escena T={T} a={K.Cn} b={K.P}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<>{[[0, 0], [1, 0], [0, 1], [1, 1]].map(([i, j], k) => <Cancha key={k} x={196 + i * 344} y={660 + j * 224} w={340} p={kprog(T, K.Cn + 0.2 + k * 0.25, K.Cn + 0.5 + k * 0.25)} />)}
+        {svg(<g transform="translate(540 930) scale(1.38) translate(-540 -880)">{[[0, 0], [1, 0], [0, 1], [1, 1]].map(([i, j], k) => <Cancha key={k} x={196 + i * 344} y={660 + j * 224} w={340} p={kprog(T, K.Cn + 0.2 + k * 0.25, K.Cn + 0.5 + k * 0.25)} />)}
           <rect x={186} y={650} width={708} height={458} fill="none" stroke={KC.pink} strokeWidth={10} strokeDasharray="22 12" rx={8} />
-          <Ajolote x={540} y={880} s={0.28} T={T} seed={5} tipo="silvestre" /></>)}
+          <Ajolote x={540} y={880} s={0.28} T={T} seed={5} tipo="silvestre" /></g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Cs} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<text x={290} y={1100} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 900)`}>?</text>)}
+        {svg(<><Ajolote x={540} y={1180} s={1.45} T={T} seed={12} tipo="silvestre" />
+          <text x={540} y={930} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 760)`}>?</text></>)}
       </Escena>
       {/* 7 · causas: ciudad sobre el humedal, agua salada y sucia, carpas y tilapias */}
       <Escena T={T} a={K.Cs} b={K.Pe}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <rect x={0} y={880} width={KW} height={320} fill={agua} stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={880} width={KW} height={420} fill={agua} stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${60 + i * 170} ${910 + (i % 2) * 20} q 20 -8 40 0`} stroke="#ffffff" strokeOpacity={0.6 - sucia * 0.4} strokeWidth={5} fill="none" />)}
           <rect x={0} y={800} width={260} height={84} fill="#9a7a4a" stroke={KC.ink} strokeWidth={6} />
           <rect x={820} y={800} width={260} height={84} fill="#9a7a4a" stroke={KC.ink} strokeWidth={6} />
@@ -338,14 +339,14 @@ function AjoloteShot() {
           <Edificio x={830} y={800} w={110} h={220} p={kprog(T, K.Cs + 0.6, K.Cs + 1.6, kEase.sale)} color="#b7d0e3" />
           <Edificio x={950} y={800} w={110} h={290} p={kprog(T, K.Cs + 0.9, K.Cs + 1.9, kEase.sale)} />
           {sucia > 0.3 && Array.from({ length: 10 }, (_, i) => <circle key={i} cx={100 + i * 92} cy={1000 + ((i * 37) % 150)} r={6 + (i % 3) * 3} fill="#3e3a1e" opacity={sucia * 0.6} />)}
-          <Carpa x={klerp(-200, 380, kprog(T, K.Cs + 4.0, K.Cs + 5.2, kEase.sale))} y={1060} s={0.8} T={T} seed={1} />
-          <Tilapia x={klerp(1280, 720, kprog(T, K.Cs + 4.4, K.Cs + 5.6, kEase.sale))} y={1000} s={0.8} T={T} seed={2} flip /></>)}
+          <Carpa x={klerp(-200, 330, kprog(T, K.Cs + 4.0, K.Cs + 5.2, kEase.sale))} y={1110} s={1.05} T={T} seed={1} />
+          <Tilapia x={klerp(1280, 760, kprog(T, K.Cs + 4.4, K.Cs + 5.6, kEase.sale))} y={1010} s={1.0} T={T} seed={2} flip /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 8 · bajo el agua: los peces se comen huevos y crías */}
       <Escena T={T} a={K.Pe} b={K.R}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0f1f2a, #0b131e)' }}></div>
-        {svg(<>
+        {svg(<g transform="translate(540 960) scale(1.3) translate(-540 -960)">
           <path d={`M 200 1200 Q ${200 + mece(T, 2, 0.3) * 12} 1000 ${190 + mece(T, 3, 0.3) * 20} 760`} stroke="#3f8a3a" strokeWidth={14} fill="none" strokeLinecap="round" />
           {[[180, 1120], [220, 1060], [176, 990], [224, 930], [182, 860], [214, 800]].map(([a, b], i) => <ellipse key={'h' + i} cx={a} cy={b} rx={36} ry={12} fill="#4f9a44" stroke={KC.ink} strokeWidth={3} transform={`rotate(${i % 2 ? -30 : 30} ${a} ${b})`} />)}
           {[[226, 1100], [176, 1040], [232, 980], [168, 910], [230, 850], [178, 780]].map(([a, b], i) => <Huevo key={'e' + i} x={a} y={b} T={T} i={i} vivo={1 - kprog(T, K.Pe + 1.4 + i * 0.3, K.Pe + 1.6 + i * 0.3)} />)}
@@ -353,7 +354,7 @@ function AjoloteShot() {
           <Carpa x={klerp(900, 400, kprog(T, K.Pe + 0.2, K.Pe + 1.8, kEase.suave))} y={930} s={0.85} T={T} seed={3} flip />
           <Tilapia x={klerp(1200, 760, kprog(T, K.Pe + 1.6, K.Pe + 3.1, kEase.suave))} y={1100} s={0.75} T={T} seed={4} flip />
           <Carpa x={klerp(1250, 880, kprog(T, K.Pe + 0.6, K.Pe + 2.4, kEase.suave))} y={760} s={0.6} T={T} seed={7} flip />
-          <Tilapia x={klerp(-200, 480, kprog(T, K.Pe + 0.4, K.Pe + 2.2, kEase.suave))} y={720} s={0.55} T={T} seed={8} /></>)}
+          <Tilapia x={klerp(-200, 480, kprog(T, K.Pe + 0.4, K.Pe + 2.2, kEase.suave))} y={720} s={0.55} T={T} seed={8} /></g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
       {/* 9 · refugio en la chinampa: filtro que frena a los peces; cubren 0.5 % de los canales */}
@@ -363,15 +364,15 @@ function AjoloteShot() {
           <rect x={0} y={760} width={KW} height={60} fill="#524433" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M ${520 + i * 60} 760 q 6 -40 0 -70`} stroke="#3f8a3a" strokeWidth={9} fill="none" strokeLinecap="round" />)}
           <text x={560} y={682} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>chinampa</text>
-          <rect x={0} y={820} width={440} height={380} fill="#6f7a3e" stroke={KC.ink} strokeWidth={6} />
-          <rect x={440} y={820} width={640} height={380} fill="#6fd0e8" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={820} width={440} height={420} fill="#4f5a2c" stroke={KC.ink} strokeWidth={6} />
+          <rect x={440} y={820} width={640} height={420} fill="#2f88a2" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 4 }, (_, i) => <path key={i} d={`M ${560 + i * 140} 1200 q ${mece(T, i, 0.4) * 10} -80 ${mece(T, i + 2, 0.4) * 18} -150`} stroke="#3f8a3a" strokeWidth={10} fill="none" strokeLinecap="round" />)}
           {/* filtro */}
           <rect x={425} y={820} width={30} height={380} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={5} />
           {Array.from({ length: 13 }, (_, i) => <line key={i} x1={425} y1={840 + i * 28} x2={455} y2={840 + i * 28} stroke={KC.ink} strokeWidth={3} />)}
           <line x1={440} y1={820} x2={440} y2={1200} stroke={KC.ink} strokeWidth={3} />
-          <Ajolote x={730} y={960} s={0.5} T={T} seed={8} tipo="silvestre" />
-          <Ajolote x={900} y={1110} s={0.42} T={T} seed={9} tipo="silvestre" flip />
+          <Ajolote x={720} y={960} s={0.68} T={T} seed={8} tipo="silvestre" />
+          <Ajolote x={870} y={1130} s={0.56} T={T} seed={9} tipo="silvestre" flip />
           {(() => { const u = kprog(T, K.R + 0.8, K.R + 2.0, kEase.sale), reb = kprog(T, K.R + 2.0, K.R + 2.8, kEase.sale);
             return <Carpa x={klerp(-180, 300, u) - reb * 120} y={980} s={0.62} T={T} seed={10} />; })()}
           <Tilapia x={klerp(-220, 250, kprog(T, K.R + 1.6, K.R + 2.8, kEase.sale)) - kprog(T, K.R + 2.8, K.R + 3.6, kEase.sale) * 90} y={1130} s={0.5} T={T} seed={11} />
@@ -392,19 +393,20 @@ function AjoloteShot() {
       <Escena T={T} a={K.Rd} b={K.C}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <rect x={0} y={1000} width={KW} height={200} fill="#2c4f56" stroke={KC.ink} strokeWidth={6} />
-          <g transform={`translate(${-560 * kprog(T, K.Rd + 2.8, K.Rd + 3.6, kEase.suave)} 0)`}><Red x={260} y={740} sube={kprog(T, K.Rd + 0.3, K.Rd + 1.6, kEase.sale)} T={T} /></g>
+          <g transform="translate(540 1000) scale(1.35) translate(-560 -930)">
+          <rect x={-300} y={1000} width={1700} height={260} fill="#2c4f56" stroke={KC.ink} strokeWidth={6} />
+          <g transform={`translate(${-640 * kprog(T, K.Rd + 2.8, K.Rd + 3.6, kEase.suave)} 0)`}><Red x={330} y={740} sube={kprog(T, K.Rd + 0.3, K.Rd + 1.6, kEase.sale)} T={T} /></g>
           <Frasco x={620} y={900} p={kprog(T, K.Rd + 3.2, K.Rd + 3.7)} />
-          {T > K.Rd + 3.6 && <Helice x={330} y={790} alto={300} T={T} brillo={kprog(T, K.Rd + 3.8, K.Rd + 4.4)} />}</>)}
+          {T > K.Rd + 3.3 && <Helice x={330} y={790} alto={300} T={T} brillo={kprog(T, K.Rd + 3.35, K.Rd + 3.9)} />}</g></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 11 · cierre: 34 ajolotes a París en 1863 → peceras del mundo; y regreso al globo y al km² */}
       <Escena T={T} a={K.C} b={K.C + 4.3}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          {[[150, 1010], [340, 1050], [540, 1065], [740, 1050], [930, 1010]].map(([a, b], i) => <g key={i}><Rama x1={540} y1={830} x2={a} y2={b - 50} p={kprog(T, K.C + 1.2 + i * 0.15, K.C + 1.8 + i * 0.15)} />
+          <g transform="translate(540 900) scale(1.15) translate(-540 -880)">{[[150, 1010], [340, 1050], [540, 1065], [740, 1050], [930, 1010]].map(([a, b], i) => <g key={i}><Rama x1={540} y1={830} x2={a} y2={b - 50} p={kprog(T, K.C + 1.2 + i * 0.15, K.C + 1.8 + i * 0.15)} />
             <Pecera x={a} y={b} p={kprog(T, K.C + 1.7 + i * 0.15, K.C + 2.1 + i * 0.15)} T={T} seed={i + 2} w={140} /></g>)}
-          <Envio x={540} y={710} T={T} t0={K.C + 0.2} /></>)}
+          <Envio x={540} y={710} T={T} t0={K.C + 0.2} /></g></>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
       <Escena T={T} a={K.C + 4.3} b={FIN}>
@@ -415,13 +417,13 @@ function AjoloteShot() {
       </Escena>
 
       {/* datos y etiquetas */}
-      <NumeroGigante T={T} at={G2 + 0.2} until={K.Ca - 0.2} valor={36} dur={1.0} etiqueta="ajolotes por km²" x={300} y={470} tam={170} color={KC.pink} />
+      <NumeroGigante T={T} at={G2 + 0.2} until={K.Ca - 0.2} valor={36} dur={1.0} etiqueta="ajolotes por km²" x={540} y={500} tam={170} color={KC.pink} />
       <Chip T={T} at={G2 + 1.4} until={K.Ca - 0.2} texto="último censo completo: 2014" y={1450} x={540} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.G + 0.5} until={G2 - 0.2} texto="peceras de todo el mundo" y={1450} x={540} tam={36} borde={KC.pink} />
+      <Chip T={T} at={K.G + 0.5} until={G2 - 0.2} texto="peceras de todo el mundo" y={1460} x={540} tam={36} borde={KC.pink} />
       <Chip T={T} at={K.Ca + 0.2} until={K.A - 0.2} texto="Xochimilco · Ciudad de México" y={430} x={360} tam={32} borde={KC.mint} />
       <Etq T={T} at={K.Ca + 1.6} until={K.A - 0.3} x={540} y={1000} texto="ajolote" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Ca + 1.8} until={K.A - 0.3} x={540} y={1045} texto="Ambystoma mexicanum" it tam={30} color={KC.ink} />
-      {T >= K.A + 0.3 && T < K.Cn && <div style={{ position:'absolute', left:540, top:470, transform:'translate(-50%,-50%)', zIndex:42, font:`700 130px ${KF.mono}`, color: T > K.Cd + 2.2 ? KC.pink : KC.texto, textShadow:KSOMBRA }}>{kformato(vivos, 0)}</div>}
+      {T >= K.A + 0.3 && T < K.Cn && <div style={{ position:'absolute', left:540, top:500, transform:'translate(-50%,-50%)', zIndex:42, font:`700 130px ${KF.mono}`, color: T > K.Cd + 2.2 ? KC.pink : KC.texto, textShadow:KSOMBRA }}>{kformato(vivos, 0)}</div>}
       <Chip T={T} at={K.A + 0.6} until={K.Cd + 0.1} texto="1998 · censo de la UAM" y={1450} x={540} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Cd + 0.3} until={K.Cd + 2.1} texto="2008 · quedaban 100" y={1450} x={540} tam={34} borde={KC.orange} />
       <Chip T={T} at={K.Cd + 2.3} until={K.Cn - 0.2} texto="2014 · UNAM: 36 → 6 de cada 1,000" y={1450} x={540} tam={32} borde={KC.red} />
@@ -430,15 +432,15 @@ function AjoloteShot() {
       <Chip T={T} at={K.Cs + 0.4} until={K.Cs + 2.1} texto="la ciudad sobre el humedal" y={470} x={540} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Cs + 2.3} until={K.Cs + 3.9} texto="agua salada y sucia" y={470} x={540} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Cs + 4.1} until={K.Pe - 0.2} texto="carpa y tilapia: traídas para criar" y={470} x={540} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Cs + 5.0} until={K.Pe - 0.2} x={260} y={1150} texto="carpa" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Cs + 5.4} until={K.Pe - 0.2} x={830} y={1080} texto="tilapia" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Pe + 0.5} until={K.Pe + 2.6} x={250} y={690} texto="huevos de ajolote" tam={30} />
-      <Etq T={T} at={K.Pe + 1.0} until={K.Pe + 3.0} x={660} y={1010} texto="cría" tam={30} />
-      <Chip T={T} at={K.Pe + 0.3} until={K.R - 0.2} texto="se comen huevos y crías" y={470} x={420} tam={32} borde={KC.red} />
+      <Etq T={T} at={K.Cs + 5.0} until={K.Pe - 0.2} x={230} y={1225} texto="carpa" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Cs + 5.4} until={K.Pe - 0.2} x={860} y={1110} texto="tilapia" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Pe + 0.5} until={K.Pe + 2.6} x={130} y={650} texto="huevos de ajolote" tam={30} />
+      <Etq T={T} at={K.Pe + 1.0} until={K.Pe + 3.0} x={690} y={1020} texto="cría" tam={30} />
+      <Chip T={T} at={K.Pe + 0.3} until={K.R - 0.2} texto="se comen huevos y crías" y={420} x={540} tam={32} borde={KC.red} />
       <Chip T={T} at={K.R + 0.3} until={K.R + 3.8} texto="chinampa-refugio · UNAM y chinamperos" y={470} x={540} tam={30} borde={KC.mint} />
       <Etq T={T} at={K.R + 1.0} until={K.R + 3.8} x={470} y={870} texto="filtro" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Rd + 0.4} until={K.Rd + 3.0} texto="2025 · primera etapa del censo" y={470} x={540} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Rd + 1.4} until={K.Rd + 3.2} x={420} y={880} texto="red vacía" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Rd + 1.4} until={K.Rd + 3.2} x={445} y={932} texto="red vacía" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Rd + 3.8} until={K.C - 0.2} texto="ADN ambiental: siguen ahí" y={1450} x={540} tam={34} borde={KC.mint} />
       <Chip T={T} at={K.C + 0.5} until={K.C + 4.1} texto="Xochimilco → París · 1863" y={470} x={540} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.C + 2.0} until={K.C + 4.1} texto="la mayoría de los de pecera" y={1450} x={540} tam={34} borde={KC.pink} />

@@ -78,7 +78,7 @@ function Huella() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Co} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
+        {svg(<text x={320} y={1380} textAnchor="middle" style={{ font:`400 860px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={18} transform={`rotate(${Math.sin(T * 3) * 6} 320 1080)`}>?</text>)}
       </Escena>
       {/* 7–8 · CO2: nubes que se apilan y la comparación grande / chico */}
       <Escena T={T} a={K.Co} b={K.Cm}>
@@ -91,7 +91,7 @@ function Huella() {
       <Escena T={T} a={K.Cm} b={K.Le}>
         <FondoLunares color={KC.yellow} />
         {svg((() => { const inc = T < K.O ? -6 * kprog(T, K.Cm + 0.6, K.Cm + 2) : -6 + 6 * kprog(T, K.O + 0.3, K.O + 1.2); const sube = kprog(T, K.O + 1.0, K.O + 3.5, kEase.suave);
-          return <g transform="translate(540 980) scale(1.2) translate(-540 -900)">
+          return <g transform="translate(540 1080) scale(1.2) translate(-540 -900)">
             <path d="M 540 1150 L 480 1230 L 600 1230 Z" fill={KC.ink} />
             <g transform={`rotate(${inc} 540 860)`}>
               <rect x={140} y={850} width={800} height={20} rx={10} fill={KC.ink} />
@@ -135,8 +135,8 @@ function Huella() {
       <Medidor T={T} at={K.W + 0.2} until={K.P - 0.2} valor={(t) => kprog(t, K.W + 0.3, K.W + 1.6)} etiqueta="cada tarjeta, hasta" texto={(v) => Math.round(v * 700) + ' W'} y={340} color={KC.red} />
       <NumeroGigante T={T} at={K.Co + 0.3} until={K.Gr - 0.2} valor={2290} dur={1.6} sufijo=" t" etiqueta="de CO₂ eq · 2 versiones (Meta)" y={480} tam={150} color={KC.texto} />
       <Comparativa T={T} at={K.Gr + 0.2} until={K.Cm - 0.2} izq={{ valor: 1900, etiqueta: 'grande (70B)', color: KC.red, texto: '1,900 t' }} der={{ valor: 390, etiqueta: 'chico (8B)', color: KC.yellow, texto: '390 t' }} max={1900} y={350} alto={620} />
-      <Chip T={T} at={K.Cm + 0.4} until={K.O - 0.2} texto="«100 % compensado» (según Meta)" y={460} tam={38} borde={KC.leaf} />
-      <Chip T={T} at={K.O + 0.4} until={K.Le - 0.2} texto="compensar ≠ no emitir" x={420} y={460} tam={48} borde={KC.red} />
+      <Chip T={T} at={K.Cm + 0.4} until={K.O - 0.2} texto="«100 % compensado» (según Meta)" y={560} tam={38} borde={KC.leaf} />
+      <Chip T={T} at={K.O + 0.4} until={K.Le - 0.2} texto="compensar ≠ no emitir" x={420} y={560} tam={48} borde={KC.red} />
       <NumeroGigante T={T} at={K.Le + 1.6} until={K.Ex - 0.2} valor={15} dur={1.0} prefijo="+" sufijo=" billones" etiqueta="de tokens leídos" y={420} tam={110} color={KC.mint} />
       <Chip T={T} at={K.Ex + 2.4} until={K.C - 0.2} texto="usarla también gasta energía" x={540} y={370} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.C + 0.4} until={K.Ou} texto="más de 700 años de 1 tarjeta" x={480} y={290} tam={42} borde={KC.ink} />

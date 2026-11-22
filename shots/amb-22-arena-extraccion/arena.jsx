@@ -4,6 +4,10 @@
 // Todo el dibujo es esquemático (granos, mapa, balanza y corte del río).
 
 // ---------- piezas de este shot ----------
+// Acercamiento: lleva el punto `de` al punto `a` y agranda k veces (pase a mano del estilo cine).
+function DZ({ k = 1, de = [0, 0], a = [0, 0], children }) {
+  return <g transform={`translate(${a[0]} ${a[1]}) scale(${k}) translate(${-de[0]} ${-de[1]})`}>{children}</g>;
+}
 // Contorno de un grano: amp 0 = redondo y liso (pulido por el viento); amp ~0.35 = con aristas (roca triturada).
 function granoPath(seed, r, amp, sx = 1, sy = 1) {
   const R = krng(seed), nv = 6 + Math.floor(R() * 3), off = R() * Math.PI * 2;
@@ -39,9 +43,9 @@ function ConcretoPorDentro({ T, r }) {
 function Pared({ x, y, w = 480, h = 720 }) {
   const R = krng(5), pts = Array.from({ length: 60 }, () => [R() * w, R() * h, 2 + R() * 4]);
   return <g transform={`translate(${x} ${y})`}>
-    <rect width={w} height={h} rx={8} fill="#b9b6ae" stroke={KC.ink} strokeWidth={8} />
-    {pts.map(([a, b, s], i) => <circle key={i} cx={a} cy={b} r={s} fill="#8f8b83" opacity=".7" />)}
-    {[0.33, 0.66].map((q) => <line key={q} x1={0} y1={h * q} x2={w} y2={h * q} stroke="#9c988f" strokeWidth={4} />)}
+    <rect width={w} height={h} rx={8} fill="#8f8c85" stroke={KC.ink} strokeWidth={8} />
+    {pts.map(([a, b, s], i) => <circle key={i} cx={a} cy={b} r={s} fill="#6c6861" opacity=".7" />)}
+    {[0.33, 0.66].map((q) => <line key={q} x1={0} y1={h * q} x2={w} y2={h * q} stroke="#77736b" strokeWidth={4} />)}
     <rect x={-20} y={-36} width={w + 40} height={40} rx={6} fill="#8a857c" stroke={KC.ink} strokeWidth={6} />
     <rect x={0} y={h} width={w} height={26} fill="#6f6a62" stroke={KC.ink} strokeWidth={6} />
   </g>;
@@ -52,7 +56,7 @@ function BarraMezcla({ T, at, x = 90, y = 1060, w = 900, h = 80 }) {
   let acc = 0;
   const k = w / 10;
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={-6} y={-6} width={w + 12} height={h + 12} rx={16} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={6} />
+    <rect x={-6} y={-6} width={w + 12} height={h + 12} rx={16} fill="rgba(20,24,32,.7)" stroke={KC.ink} strokeWidth={6} />
     {MEZCLA.map(([v, c, t], i) => { const x0 = acc * k; acc += v; const p = kprog(T, at + i * 0.35, at + i * 0.35 + 0.5, kEase.sale);
       return <g key={i}><rect x={x0} y={0} width={v * k * p} height={h} fill={c} stroke={KC.ink} strokeWidth={p > 0 ? 3 : 0} />
         {t && p > 0.6 && <text x={x0 + (v * k) / 2} y={h + 46} textAnchor="middle" style={{ font:`700 ${i < 2 ? 32 : 24}px ${KF.mono}` }} fill={KC.ink}>{t}</text>}</g>; })}
@@ -132,8 +136,8 @@ function CorteMuro({ x, y, lado = 300, o = 1 }) {
 // Dunas del desierto.
 function Dunas({ T }) {
   return <g>
-    <path d={`M 0 980 Q 270 ${820 + Math.sin(T) * 4} 540 960 Q 800 1080 1080 900 L 1080 1920 L 0 1920 Z`} fill="#f2b04a" stroke={KC.ink} strokeWidth={8} />
-    <path d="M 0 1120 Q 360 1000 700 1120 Q 900 1190 1080 1100 L 1080 1920 L 0 1920 Z" fill="#e89a32" stroke={KC.ink} strokeWidth={8} />
+    <path d={`M 0 980 Q 270 ${820 + Math.sin(T) * 4} 540 960 Q 800 1080 1080 900 L 1080 1920 L 0 1920 Z`} fill="#5c4020" stroke={KC.ink} strokeWidth={8} />
+    <path d="M 0 1120 Q 360 1000 700 1120 Q 900 1190 1080 1100 L 1080 1920 L 0 1920 Z" fill="#4a3218" stroke={KC.ink} strokeWidth={8} />
     {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.5 + i / 6) % 1); return <path key={i} d={`M ${-100 + u * 1300} ${700 + i * 40} q 60 -14 120 0`} stroke="#fff" strokeWidth={5} fill="none" opacity={0.6} />; })}
   </g>;
 }
@@ -142,7 +146,7 @@ function PanelExtraccion({ T, x, y, tipo, o = 1 }) {
   const w = 300, h = 380;
   const agua = tipo === 'mar' ? '#1f6fc0' : '#2f8fd8';
   return <g transform={`translate(${x} ${y})`} opacity={o}>
-    <rect width={w} height={h} rx={22} fill={tipo === 'costa' ? '#bfe9ff' : '#d8f1ff'} stroke={KC.ink} strokeWidth={7} />
+    <rect width={w} height={h} rx={22} fill={tipo === 'costa' ? '#1e3b52' : '#1a3347'} stroke={KC.ink} strokeWidth={7} />
     {tipo === 'rio' && <g><path d={`M 0 200 L ${w} 200 L ${w} ${h - 70} L 0 ${h - 70} Z`} fill={agua} />
       <path d={`M 0 ${h - 70} L ${w} ${h - 70} L ${w} ${h - 8} Q ${w / 2} ${h - 40} 0 ${h - 8} Z`} fill="#e3c26a" />
       <g transform={`translate(${150 + Math.sin(T * 1.5) * 10} 196)`}><rect x={-60} y={-30} width={120} height={30} fill="#ff8a1f" stroke={KC.ink} strokeWidth={5} /><rect x={-20} y={-60} width={40} height={30} fill="#f4efe4" stroke={KC.ink} strokeWidth={4} />
@@ -186,14 +190,14 @@ function Balanza({ T, x, y, entra = 6, sale = 50, incl = 1, at = 0 }) {
 function CorteRio({ T, bajada = 0, derrumbe = 0 }) {
   const fondo = 1000 + 110 * bajada, d = derrumbe;
   return <g>
-    <path d={`M 0 640 L 330 640 L 330 1150 L 0 1150 Z`} fill="#a9773f" stroke={KC.ink} strokeWidth={7} />
-    <path d={`M 750 700 L 1080 700 L 1080 1150 L 750 1150 Z`} fill="#a9773f" stroke={KC.ink} strokeWidth={7} />
+    <path d={`M 0 640 L 330 640 L 330 1150 L 0 1150 Z`} fill="#6b4a28" stroke={KC.ink} strokeWidth={7} />
+    <path d={`M 750 700 L 1080 700 L 1080 1150 L 750 1150 Z`} fill="#6b4a28" stroke={KC.ink} strokeWidth={7} />
     <path d={`M 330 760 L 750 760 L 750 ${fondo} Q 540 ${fondo + 40} 330 ${fondo} Z`} fill="#2f8fd8" stroke={KC.ink} strokeWidth={6} />
     <path d={`M 330 ${fondo} Q 540 ${fondo + 40} 750 ${fondo} L 750 1150 L 330 1150 Z`} fill="#e3c26a" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 4 }, (_, i) => <path key={i} d={`M ${380 + i * 90 + Math.sin(T * 2 + i) * 8} ${800 + (i % 2) * 40} q 20 -8 40 0`} stroke="#bfe7ff" strokeWidth={5} fill="none" />)}
     {/* trozo de orilla que se cae con la casa */}
     <g transform={`translate(${d * 120} ${d * 220}) rotate(${d * 28} 330 640)`}>
-      <path d="M 200 640 L 330 640 L 330 900 L 250 860 Z" fill="#b8854a" stroke={KC.ink} strokeWidth={6} />
+      <path d="M 200 640 L 330 640 L 330 900 L 250 860 Z" fill="#7a5530" stroke={KC.ink} strokeWidth={6} />
       <g transform="translate(215 640)"><rect x={0} y={-90} width={100} height={90} fill="#f4efe4" stroke={KC.ink} strokeWidth={5} /><path d="M -10 -90 L 50 -140 L 110 -90 Z" fill={KC.red} stroke={KC.ink} strokeWidth={5} /><rect x={35} y={-50} width={30} height={50} fill="#8a5a2b" /></g>
     </g>
     {d > 0.05 && <path d="M 300 650 L 280 700 L 300 740 L 285 800" stroke={KC.ink} strokeWidth={5} fill="none" opacity={kclamp(1 - d * 2, 0, 1)} />}
@@ -226,42 +230,44 @@ function ArenaShot() {
       {/* 1 · gancho: la pared y su mezcla */}
       <Escena T={T} a={K.G} b={K.Tu}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Pared x={70} y={330} w={460} h={540} /><BarraMezcla T={T} at={K.G + 2.0} y={985} /></>)}
+        {svg(<><Pared x={90} y={380} w={900} h={800} /><BarraMezcla T={T} at={K.G + 2.0} y={1300} /></>)}
       </Escena>
-      <Lupa T={T} at={K.G + 0.15} until={K.Tu - 0.2} x={300} y={555} r={170} fx={300} fy={640} tinte={KC.yellow} etiqueta="POR DENTRO · concreto"
+      <Lupa T={T} at={K.G + 0.15} until={K.Tu - 0.2} x={540} y={760} r={300} fx={540} fy={860} tinte={KC.yellow} etiqueta="POR DENTRO · concreto"
         interior={(t, r) => <ConcretoPorDentro T={t} r={r} />} />
       {/* 2 · banqueta, ventana y chip salen de la arena */}
       <Escena T={T} a={K.Tu} b={K.N}>
         <FondoLunares color={KC.mint} />
-        {svg(<><Monton x={540} y={1130} w={420} h={130} />
-          {[[200, 760, 0], [540, 700, 1], [880, 800, 2]].map(([x, y, i]) => { const t0 = K.Tu + 0.3 + i * 0.9, p = kprog(T, t0, t0 + 0.5, kEase.sale);
-            return <g key={i}><Flecha x1={540} y1={1010} x2={x} y2={y + 150} p={p} />
-              <g transform={`translate(${x} ${y}) scale(${kprog(T, t0 + 0.3, t0 + 0.7, kEase.rebote)}) translate(${-x} ${-y})`}>{i === 0 ? <Banqueta x={x} y={y} /> : i === 1 ? <Ventana x={x} y={y} /> : <ChipCel x={x} y={y} />}</g></g>; })}</>)}
+        {svg(<><Monton x={540} y={1270} w={640} h={190} />
+          {[[275, 830, 0], [540, 640, 1], [860, 800, 2]].map(([x, y, i]) => { const t0 = K.Tu + 0.3 + i * 0.9, p = kprog(T, t0, t0 + 0.5, kEase.sale);
+            return <g key={i}><Flecha x1={540} y1={1110} x2={x} y2={y + (i === 1 ? 190 : 200)} p={p} />
+              <g transform={`translate(${x} ${y}) scale(${1.5 * kprog(T, t0 + 0.3, t0 + 0.7, kEase.rebote)}) translate(${-x} ${-y})`}>{i === 0 ? <Banqueta x={x} y={y} /> : i === 1 ? <Ventana x={x} y={y} /> : <ChipCel x={x} y={y} />}</g></g>; })}</>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 3 · 50 mil millones de toneladas al año: el sólido #1 */}
       <Escena T={T} a={K.N} b={K.Mu}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Monton x={540} y={1160} w={klerp(200, 900, kprog(T, K.N + 0.3, K.N + 3.5, kEase.sale))} h={klerp(60, 210, kprog(T, K.N + 0.3, K.N + 3.5, kEase.sale))} />
-          <g transform={`translate(830 900) scale(${kprog(T, K.N + 4.0, K.N + 4.5, kEase.rebote)})`}><path d="M -40 -150 L 0 -60 L 40 -150" fill={KC.red} stroke={KC.ink} strokeWidth={5} />
+        {svg(<><Monton x={540} y={1300} w={klerp(260, 1000, kprog(T, K.N + 0.3, K.N + 3.5, kEase.sale))} h={klerp(70, 260, kprog(T, K.N + 0.3, K.N + 3.5, kEase.sale))} />
+          <g transform={`translate(840 1000) scale(${1.2 * kprog(T, K.N + 4.0, K.N + 4.5, kEase.rebote)})`}><path d="M -40 -150 L 0 -60 L 40 -150" fill={KC.red} stroke={KC.ink} strokeWidth={5} />
             <circle r={78} fill={KC.gold} stroke={KC.ink} strokeWidth={7} /><text y={30} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink}>1</text></g></>)}
       </Escena>
       {/* 4 · el muro alrededor de la Tierra */}
       <Escena T={T} a={K.Mu} b={K.P}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><TierraMuro T={T} x={330} y={700} r={215} p={kprog(T, K.Mu + 0.2, K.Mu + 2.4, kEase.suave)} />
-          <CorteMuro x={640} y={1150} lado={220} o={kprog(T, K.Mu + 2.6, K.Mu + 3.0)} /></>)}
+        {svg(<><TierraMuro T={T} x={400} y={770} r={300} p={kprog(T, K.Mu + 0.2, K.Mu + 2.4, kEase.suave)} />
+          <CorteMuro x={680} y={1350} lado={260} o={kprog(T, K.Mu + 2.6, K.Mu + 3.0)} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 5 · ¿y el desierto? */}
       <Escena T={T} a={K.P} b={K.D} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<><Dunas T={T} /><text x={270} y={900} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 270 740)`}>?</text></>)}
+        {svg(<><Dunas T={T} />
+          <Grano x={780} y={1010} r={150} seed={7} amp={0.38} color="#f2c45c" rot={(T - K.P) * 30} trazo={7} />
+          <text x={330} y={1180} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 330 990)`}>?</text></>)}
       </Escena>
       {/* 6 · al microscopio: grano del desierto (redondo y pulido) vs. grano de roca triturada (con aristas) */}
       <Escena T={T} a={K.D} b={K.Ri}>
         <FondoLunares color={KC.noche} punto="rgba(255,255,255,.05)" />
-        {svg(<>
+        {svg(<DZ k={1.2} de={[540, 750]} a={[550, 960]}>
           {Array.from({ length: 5 }, (_, i) => { const u = ((T * 1.2 + i / 5) % 1); return <path key={i} d={`M ${-60 + u * 600} ${640 + i * 50} q 50 -12 100 0`} stroke="#9fe3ff" strokeWidth={5} fill="none" opacity={0.6 * (1 - kprog(T, K.D + 2.6, K.D + 3.0))} />; })}
           {resbala > 0 && <g opacity={kprog(T, K.D + 2.8, K.D + 3.2)}>
             <rect x={110} y={560} width={380} height={380} rx={30} fill="#6f6c66" stroke="#d9d2c0" strokeWidth={5} opacity=".85" />
@@ -269,72 +275,72 @@ function ArenaShot() {
           <Grano x={300} y={750 - rebote + resbala * 130} r={140} seed={7} amp={0.38 * (1 - pul)} color="#f2c45c" rot={(T - K.D) * 40 * (1 - pul)} brillo={pul} sx={1.08} sy={0.95} trazo={7} />
           <Grano x={780} y={750} r={140} seed={11} amp={0.38} color="#c9c2b2" rot={8} trazo={7} />
           {resbala > 0.3 && <Flecha x1={480} y1={820} x2={480} y2={980} p={kprog(T, K.D + 3.6, K.D + 4.2)} color="#ff6b5a" />}
-        </>)}
-        <EscalaFija texto="0.1 mm · esquema" largo={100} y={1480} color={KC.texto} />
+        </DZ>)}
+        <EscalaFija texto="0.1 mm · esquema" largo={120} y={1480} color={KC.texto} />
       </Escena>
       {/* 7 · ríos, costas y fondo del mar */}
       <Escena T={T} a={K.Ri} b={K.Me}>
         <FondoLunares color={KC.cyan} />
         {svg(<>{['rio', 'costa', 'mar'].map((tp, i) => { const t0 = K.Ri + 0.2 + i * 0.7, s = kprog(T, t0, t0 + 0.45, kEase.rebote);
-          return <g key={tp} transform={`translate(${190 + i * 350} 900) scale(${s}) translate(-150 -190)`}><PanelExtraccion T={T} x={0} y={0} tipo={tp} /></g>; })}</>)}
+          return <g key={tp} transform={`translate(${190 + i * 350} 960) scale(${1.1 * s}) translate(-150 -190)`}><PanelExtraccion T={T} x={0} y={0} tipo={tp} /></g>; })}</>)}
       </Escena>
       {/* 8 · el estudio del Mekong: entra ~6, sale ~50 */}
       <Escena T={T} a={K.Me} b={K.Or}>
         <FondoLunares color={KC.mint} />
-        {svg(<><g transform="translate(70 330)"><rect width={360} height={300} rx={22} fill="#f4efe4" stroke={KC.ink} strokeWidth={6} />
+        {svg(<><g transform="translate(60 360) scale(1.2)"><rect width={360} height={300} rx={22} fill="#22303c" stroke={KC.ink} strokeWidth={6} />
             <path d={`M 120 0 Q 160 60 130 110 Q 100 170 180 210 Q 250 240 230 300`} fill="none" stroke="#2f8fd8" strokeWidth={14} strokeLinecap="round" />
             <path d="M 200 250 L 300 300 L 160 300 Z" fill="#9fd8a0" stroke={KC.ink} strokeWidth={3} />
             <text x={20} y={140} style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>Camboya</text><text x={240} y={280} style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>delta</text>
             <text x={180} y={40} style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>río Mekong</text></g>
-          <Balanza T={T} x={540} y={760} incl={kprog(T, K.Me + 3.2, K.Me + 4.6, kEase.suave)} at={K.Me + 1.4} /></>)}
+          <Balanza T={T} x={540} y={990} incl={kprog(T, K.Me + 3.2, K.Me + 4.6, kEase.suave)} at={K.Me + 1.4} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 9 · el fondo baja y la orilla se derrumba */}
       <Escena T={T} a={K.Or} b={K.Ki}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<CorteRio T={T} bajada={kprog(T, K.Or + 0.2, K.Or + 1.6, kEase.suave)} derrumbe={kprog(T, K.Or + 1.9, K.Or + 2.9, kEase.suave)} />)}
+        {svg(<DZ k={1.25} de={[540, 900]} a={[540, 980]}><CorteRio T={T} bajada={kprog(T, K.Or + 0.2, K.Or + 1.6, kEase.suave)} derrumbe={kprog(T, K.Or + 1.9, K.Or + 2.9, kEase.suave)} /></DZ>)}
         <EscalaFija texto="corte esquemático" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 10 · 18 kg por persona al día */}
       <Escena T={T} a={K.Ki} b={K.C}>
         <FondoLunares color={KC.pink} />
-        {svg(<><Persona x={690} y={1150} s={1.15} /><Monton x={920} y={1150} w={120 + dias * 22} h={40 + dias * 12} />
-          <g transform="translate(920 880)"><rect x={-70} y={-70} width={140} height={110} rx={12} fill="#f4efe4" stroke={KC.ink} strokeWidth={6} /><rect x={-70} y={-70} width={140} height={32} rx={8} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
+        {svg(<><Persona x={400} y={1350} s={2.0} /><Monton x={790} y={1350} w={(120 + dias * 22) * 1.6} h={(40 + dias * 12) * 1.6} />
+          <g transform="translate(790 990) scale(1.3)"><rect x={-70} y={-70} width={140} height={110} rx={12} fill="#f4efe4" stroke={KC.ink} strokeWidth={6} /><rect x={-70} y={-70} width={140} height={32} rx={8} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
             <text y={26} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink}>día {dias + 1}</text></g></>)}
       </Escena>
       {/* 11 · cierre: la misma pared, ahora con el río que se queda sin arena */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Pared x={70} y={330} w={460} h={540} />
-          <g transform="translate(600 820)"><rect width={420} height={300} rx={22} fill="#d8f1ff" stroke={KC.ink} strokeWidth={6} />
+        {svg(<><Pared x={60} y={420} w={540} h={760} />
+          <g transform="translate(630 1000)"><rect width={420} height={300} rx={22} fill="#1a3347" stroke={KC.ink} strokeWidth={6} />
             <path d="M 0 120 L 420 120 L 420 230 L 0 230 Z" fill="#2f8fd8" />
             <path d={`M 0 230 L 420 230 L 420 ${300 - 60 * kprog(T, K.C + 0.5, K.C + 4, kEase.suave)} L 0 ${300 - 60 * kprog(T, K.C + 0.5, K.C + 4, kEase.suave)} Z`} fill="#e3c26a" stroke={KC.ink} strokeWidth={4} />
             <text x={210} y={60} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>río</text></g>
-          <Flecha x1={600} y1={1000} x2={430} y2={900} p={kprog(T, K.C + 0.6, K.C + 1.4)} /></>)}
+          <Flecha x1={630} y1={1150} x2={500} y2={1000} p={kprog(T, K.C + 0.6, K.C + 1.4)} /></>)}
       </Escena>
-      <Lupa T={T} at={K.C + 1.6} until={K.Ou - 0.1} x={300} y={600} r={170} fx={300} fy={640} tinte={KC.yellow} etiqueta="POR DENTRO"
+      <Lupa T={T} at={K.C + 1.6} until={K.Ou - 0.1} x={330} y={760} r={240} fx={330} fy={860} tinte={KC.yellow} etiqueta="POR DENTRO"
         interior={(t, r) => <ConcretoPorDentro T={t} r={r} />} />
 
       {/* datos y etiquetas */}
-      <Chip T={T} at={K.G + 3.2} until={K.Tu - 0.2} texto="mezcla típica · en volumen" y={1440} x={540} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.2} until={K.Tu - 0.2} texto="mezcla típica · en volumen" y={290} x={540} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Tu + 2.6} until={K.N - 0.2} texto="arena sílica → vidrio y chips" y={1440} x={540} tam={34} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.N + 0.3} until={K.Mu - 0.2} valor={50} dur={1.4} etiqueta="arena y grava al año:" x={540} y={520} tam={300} color={KC.orange} />
-      <Chip T={T} at={K.N + 1.0} until={K.Mu - 0.2} texto="mil millones de toneladas" y={760} x={540} tam={48} borde={KC.orange} />
-      <Etq T={T} at={K.N + 4.3} until={K.Mu - 0.2} x={740} y={900} texto="el sólido más extraído" lado="izq" tam={30} color={KC.ink} />
+      <NumeroGigante T={T} at={K.N + 0.3} until={K.Mu - 0.2} valor={50} dur={1.4} etiqueta="arena y grava al año:" x={540} y={560} tam={300} color={KC.orange} />
+      <Chip T={T} at={K.N + 1.0} until={K.Mu - 0.2} texto="mil millones de toneladas" y={800} x={540} tam={48} borde={KC.orange} />
+      <Etq T={T} at={K.N + 4.3} until={K.Mu - 0.2} x={730} y={1000} texto="el sólido más extraído" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.N + 0.6} until={K.Mu - 0.2} texto="ONU · 2022 · estimación" y={1440} x={540} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Mu + 0.4} until={K.P - 0.2} texto="un muro alrededor de la Tierra" y={430} x={420} tam={34} borde={KC.yellow} />
-      <Etq T={T} at={K.D + 0.6} until={K.Ri - 0.2} x={150} y={520} texto="desierto" lado="der" tam={34} />
-      <Etq T={T} at={K.D + 0.9} until={K.Ri - 0.2} x={620} y={520} texto="roca triturada" lado="der" tam={34} />
-      <Chip T={T} at={K.D + 2.4} until={K.Ri - 0.2} texto="redondo y pulido · con aristas" y={430} x={540} tam={34} borde={KC.yellow} />
-      <Etq T={T} at={K.D + 3.6} until={K.Ri - 0.2} x={150} y={1090} texto="no se agarra" lado="der" tam={30} color="#ff6b5a" />
-      <Etq T={T} at={K.D + 3.8} until={K.Ri - 0.2} x={640} y={1090} texto="se traba" lado="der" tam={30} color={KC.mint} />
-      <Etq T={T} at={K.Ri + 0.5} until={K.Me - 0.2} x={60} y={680} texto="río" lado="der" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ri + 1.2} until={K.Me - 0.2} x={400} y={680} texto="costa" lado="der" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ri + 1.9} until={K.Me - 0.2} x={750} y={680} texto="mar" lado="der" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Mu + 0.4} until={K.P - 0.2} texto="un muro alrededor de la Tierra" y={380} x={440} tam={34} borde={KC.yellow} />
+      <Etq T={T} at={K.D + 0.6} until={K.Ri - 0.2} x={90} y={680} texto="desierto" lado="der" tam={34} />
+      <Etq T={T} at={K.D + 0.9} until={K.Ri - 0.2} x={620} y={680} texto="roca triturada" lado="der" tam={34} />
+      <Chip T={T} at={K.D + 2.4} until={K.Ri - 0.2} texto="redondo y pulido · con aristas" y={560} x={540} tam={34} borde={KC.yellow} />
+      <Etq T={T} at={K.D + 3.6} until={K.Ri - 0.2} x={90} y={1375} texto="no se agarra" lado="der" tam={30} color="#ff6b5a" />
+      <Etq T={T} at={K.D + 3.8} until={K.Ri - 0.2} x={640} y={1375} texto="se traba" lado="der" tam={30} color={KC.mint} />
+      <Etq T={T} at={K.Ri + 0.5} until={K.Me - 0.2} x={60} y={710} texto="río" lado="der" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ri + 1.2} until={K.Me - 0.2} x={400} y={710} texto="costa" lado="der" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ri + 1.9} until={K.Me - 0.2} x={750} y={710} texto="mar" lado="der" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Me + 0.5} until={K.Or - 0.2} texto="Hackney et al. 2020 · Nature Sustainability" y={1440} x={540} tam={26} borde={KC.ink} />
-      <Etq T={T} at={K.Or + 0.8} until={K.Ki - 0.2} x={720} y={1105} texto="el fondo baja" lado="izq" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Or + 2.0} until={K.Ki - 0.2} x={330} y={580} texto="la orilla se cae" lado="der" tam={30} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Ki + 0.3} until={K.C - 0.2} valor={18} dur={1.2} sufijo=" kg" etiqueta="cada día:" x={760} y={470} tam={190} color={KC.yellow} />
+      <Etq T={T} at={K.Or + 0.8} until={K.Ki - 0.2} x={765} y={1236} texto="el fondo baja" lado="izq" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Or + 2.0} until={K.Ki - 0.2} x={290} y={560} texto="la orilla se cae" lado="der" tam={30} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Ki + 0.3} until={K.C - 0.2} valor={18} dur={1.2} sufijo=" kg" etiqueta="cada día:" x={760} y={500} tam={190} color={KC.yellow} />
       <Chip T={T} at={K.Ki + 0.6} until={K.C - 0.2} texto="promedio · cifra de la ONU" y={1440} x={540} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="se usa más rápido de lo que se repone" y={1440} x={540} tam={30} borde={KC.yellow} />
 

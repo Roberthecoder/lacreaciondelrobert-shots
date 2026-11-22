@@ -133,8 +133,8 @@ function OzonoShot() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Cl} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={300} y={960} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 880)`}>?</text>
-          <Atomo x={300} y={1090} r={56} color={KC.leaf} letra="Cl" s={1 + 0.08 * Math.sin(T * 6)} /></>)}
+        {svg(<><text x={320} y={1330} textAnchor="middle" style={{ font:`400 760px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={18} transform={`rotate(${Math.sin(T * 3) * 6} 320 1200)`}>?</text>
+          <Atomo x={320} y={1490} r={56} color={KC.leaf} letra="Cl" s={1 + 0.08 * Math.sin(T * 6)} /></>)}
       </Escena>
       {/* 7 · un cloro, más de cien mil ozonos (escena por dentro: fondo oscuro) */}
       <Escena T={T} a={K.Cl} b={K.E}>
@@ -149,8 +149,8 @@ function OzonoShot() {
       <Escena T={T} a={K.E} b={K.Mo}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {/* modo cine: el sujeto sigue en pantalla (las moléculas de ozono y el átomo de cloro de la escena anterior, quietos y atenuados) */}
-        {svg(<><g opacity={0.5 * kprog(T, K.E, K.E + 0.5) * (1 - 0.5 * kprog(T, K.E + 2.8, K.E + 3.3))}>{MOLS.map((m, i) => <Ozono key={i} x={m.x} y={m.y + 60} s={1.15} rot={m.rot + Math.sin(T + i) * 8} rompe={i % 3 === 0 ? 1 : 0} o={i % 3 === 0 ? 0.55 : 1} />)}
-          <Atomo x={930} y={690} r={56} color={KC.leaf} letra="Cl" /></g>
+        {svg(<><g opacity={0.5 * kprog(T, K.E, K.E + 0.5) * (1 - 0.5 * kprog(T, K.E + 2.8, K.E + 3.3))}>{MOLS.map((m, i) => <Ozono key={i} x={m.x} y={m.y + 180} s={1.15} rot={m.rot + Math.sin(T + i) * 8} rompe={i % 3 === 0 ? 1 : 0} o={i % 3 === 0 ? 0.55 : 1} />)}
+          <Atomo x={930} y={810} r={56} color={KC.leaf} letra="Cl" /></g>
           <g transform="translate(540 1100) scale(1.5)"><Medalla T={T} at={K.E + 3.0} x={0} y={0} /></g></>)}
       </Escena>
       {/* 9 · Protocolo de Montreal */}
@@ -182,7 +182,7 @@ function OzonoShot() {
       <Chip T={T} at={K.M + 1.6} until={K.S - 0.2} texto="de niño: su laboratorio en un baño" x={540} y={490} tam={30} borde={KC.pink} />
       <Etq T={T} at={K.S + 1.6} until={K.P - 0.1} x={620} y={ozY(30) - 150} texto="se suelta el cloro" tam={32} />
       <Chip T={T} at={K.S + 0.2} until={K.P - 0.2} texto="el sol rompe los CFC" x={470} y={310} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.P + 0.2} until={K.Cl - 0.1} texto="¿qué daño hace un poquito de cloro?" x={540} y={430} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.P + 0.2} until={K.Cl - 0.1} texto="¿qué daño hace un poquito de cloro?" x={540} y={560} tam={34} borde={KC.leaf} />
       <Chip T={T} at={K.Cl + 0.3} until={K.E - 0.2} texto="1 átomo de cloro" y={340} tam={40} borde={KC.leaf} />
       <NumeroGigante T={T} at={K.Cl + 0.8} until={K.E - 0.2} valor={100000} dur={2.4} prefijo="+" etiqueta="moléculas de ozono destruidas" y={1340} tam={120} color={KC.cyan} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Mo - 0.3} anio="1974" quien="Molina y Rowland" revista="Nature 249: 810–812" x={540} y={400} />

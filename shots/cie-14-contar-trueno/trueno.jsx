@@ -104,12 +104,13 @@ function OndaForma({ x, y, ancho, tipo, p, T, color }) {
 // Pared de un cuarto con ventana (el cierre): la noche se ve por la ventana.
 function ParedVentana({ x0 = 130, y0 = 330, x1 = 950, y1 = 980 }) {
   return <g>
-    <path d={`M 0 0 H ${KW} V ${KH} H 0 Z M ${x0} ${y0} V ${y1} H ${x1} V ${y0} Z`} fill="#f0a15a" fillRule="evenodd" stroke={KC.ink} strokeWidth={10} />
-    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={i * 100 - 20} y1={0} x2={i * 100 - 20} y2={KH} stroke="rgba(255,255,255,.12)" strokeWidth={30} />)}
-    <rect x={x0} y={y0} width={x1 - x0} height={y1 - y0} fill="none" stroke="#7a4a22" strokeWidth={34} />
-    <line x1={(x0 + x1) / 2} y1={y0} x2={(x0 + x1) / 2} y2={y1} stroke="#7a4a22" strokeWidth={22} />
-    <line x1={x0} y1={(y0 + y1) / 2} x2={x1} y2={(y0 + y1) / 2} stroke="#7a4a22" strokeWidth={22} />
-    <rect x={x0 - 40} y={y1} width={x1 - x0 + 80} height={40} rx={8} fill="#7a4a22" stroke={KC.ink} strokeWidth={8} />
+    {/* pase a mano cine: pared oscura (antes naranja claro a pantalla completa), mismo tinte cálido */}
+    <path d={`M 0 0 H ${KW} V ${KH} H 0 Z M ${x0} ${y0} V ${y1} H ${x1} V ${y0} Z`} fill="#3e2716" fillRule="evenodd" stroke={KC.ink} strokeWidth={10} />
+    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={i * 100 - 20} y1={0} x2={i * 100 - 20} y2={KH} stroke="rgba(255,190,120,.05)" strokeWidth={30} />)}
+    <rect x={x0} y={y0} width={x1 - x0} height={y1 - y0} fill="none" stroke="#8a5a2e" strokeWidth={34} />
+    <line x1={(x0 + x1) / 2} y1={y0} x2={(x0 + x1) / 2} y2={y1} stroke="#8a5a2e" strokeWidth={22} />
+    <line x1={x0} y1={(y0 + y1) / 2} x2={x1} y2={(y0 + y1) / 2} stroke="#8a5a2e" strokeWidth={22} />
+    <rect x={x0 - 40} y={y1} width={x1 - x0 + 80} height={40} rx={8} fill="#8a5a2e" stroke={KC.ink} strokeWidth={8} />
   </g>;
 }
 
@@ -190,52 +191,68 @@ function Trueno() {
       <Escena T={T} a={K.Sonido} b={K.Tres} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <text x={110} y={650} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>luz</text>
-          <rect x={200} y={620} width={790} height={40} rx={20} fill="rgba(0,0,0,.18)" />
-          <rect x={200} y={620} width={790 * kprog(T, K.Sonido + 0.3, K.Sonido + 0.36)} height={40} rx={20} fill="#fff" stroke={KC.ink} strokeWidth={6} />
-          <text x={80} y={880} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>sonido</text>
-          <FrenteSonido x={250 + 700 * kprog(T, K.Sonido + 0.8, K.Sonido + 4.4)} y={880} T={T} color={KC.violet} />
-          <Regla x={110} y={1000} ancho={860} marcas={[[0, '0 m'], [0.5, '170'], [1, '340 m']]} />
+          {/* pase a mano cine: el rayo (de donde salen la luz y el sonido) a la izquierda; todo más grande y al centro */}
+          <Nube x={215} y={650} s={0.95} color={TR_NUBE} />
+          <Rayo x0={205} y0={690} x1={190} y1={1250} seed={11} grosor={9} amp={60} rama={false} o={0.9} />
+          <text x={300} y={820} style={{ font:`900 48px ${KF.texto}` }} fill={KC.ink}>luz</text>
+          <rect x={300} y={850} width={690} height={48} rx={24} fill="rgba(0,0,0,.18)" />
+          <rect x={300} y={850} width={690 * kprog(T, K.Sonido + 0.3, K.Sonido + 0.36)} height={48} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+          <text x={300} y={1010} style={{ font:`900 48px ${KF.texto}` }} fill={KC.ink}>sonido</text>
+          <FrenteSonido x={340 + 640 * kprog(T, K.Sonido + 0.8, K.Sonido + 4.4)} y={1110} T={T} color={KC.violet} alto={110} />
+          <Regla x={300} y={1250} ancho={690} marcas={[[0, '0 m'], [0.5, '170'], [1, '340 m']]} />
         </Lienzo>
-        <NumeroGigante T={T} at={K.Sonido + 1.6} until={K.Tres - 0.15} valor={340} desde={0} dur={1.2} prefijo="≈ " sufijo=" m/s" x={380} y={440} tam={120} color={KC.yellow} />
-        <Chip T={T} at={K.Sonido + 4.4} until={K.Tres - 0.15} texto="1 segundo" x={760} y={1170} tam={36} borde={KC.violet} />
+        <NumeroGigante T={T} at={K.Sonido + 1.6} until={K.Tres - 0.15} valor={340} desde={0} dur={1.2} prefijo="≈ " sufijo=" m/s" x={560} y={470} tam={130} color={KC.yellow} />
+        <Chip T={T} at={K.Sonido + 4.4} until={K.Tres - 0.15} texto="1 segundo" x={800} y={1420} tam={40} borde={KC.violet} />
       </Escena>
       {/* 5 · 1 km ≈ 3 segundos */}
       <Escena T={T} a={K.Tres} b={K.Pregunta} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <TextoSvg x={540} y={600} tam={130} color={KC.yellow}>1 KM ≈ 3 S</TextoSvg>
-          <Regla x={110} y={860} ancho={860} marcas={[[0, '0'], [1, '1 km']]} />
-          {[1, 2, 3].map((k) => { const at = K.Tres + 0.3 + k * 0.85, e = kprog(T, at, at + 0.3, kEase.rebote), xx = 110 + 860 * k / 3;
-            return <g key={k} opacity={kprog(T, at, at + 0.1)} transform={`translate(${xx} 800) scale(${klerp(0.3, 1, e)})`}>
+          <TextoSvg x={560} y={640} tam={150} color={KC.yellow}>1 KM ≈ 3 S</TextoSvg>
+          <Nube x={210} y={830} s={0.9} color={TR_NUBE} />
+          <Rayo x0={205} y0={865} x1={190} y1={1200} seed={12} grosor={8} amp={50} rama={false} o={0.9} />
+          <Regla x={300} y={1200} ancho={690} marcas={[[0, '0'], [1, '1 km']]} />
+          {[1, 2, 3].map((k) => { const at = K.Tres + 0.3 + k * 0.85, e = kprog(T, at, at + 0.3, kEase.rebote), xx = 300 + 690 * k / 3;
+            return <g key={k} opacity={kprog(T, at, at + 0.1)} transform={`translate(${xx} 1140) scale(${1.15 * klerp(0.3, 1, e)})`}>
               <rect x={-62} y={-70} width={124} height={64} rx={18} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
               <text x={0} y={-24} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink}>{k} s</text>
               <line x1={0} y1={-6} x2={0} y2={60} stroke={KC.ink} strokeWidth={8} /></g>; })}
-          <FrenteSonido x={110 + 860 * kprog(T, K.Tres + 0.3, K.Tres + 2.85)} y={1020} T={T} color={KC.violet} alto={70} />
+          <FrenteSonido x={330 + 650 * kprog(T, K.Tres + 0.3, K.Tres + 2.85)} y={1400} T={T} color={KC.violet} alto={85} />
         </Lienzo>
       </Escena>
       {/* 6 · ¿contaste 9? → ≈ 3 km */}
       <Escena T={T} a={K.Pregunta} b={K.Retumbo} fondo={KC.pink}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <TextoSvg x={300} y={450} tam={70} color={KC.texto}>¿CONTASTE…</TextoSvg>
-          {T > P0 && <NumSalta T={T} n={cuentaP} cambio={P0 + (cuentaP - 1) * 0.22} x={300} y={790} tam={330} color={KC.yellow} />}
-          {T > K.Pregunta + 2.3 && <>
-            <FlechaRecta x1={300} y1={830} x2={300} y2={930} p={kprog(T, K.Pregunta + 2.3, K.Pregunta + 2.6)} color={KC.paper} />
-            <TextoSvg x={265} y={1100} tam={145} color={KC.cyan} s={klerp(0.4, 1, kprog(T, K.Pregunta + 2.5, K.Pregunta + 2.9, kEase.rebote))}>≈ 3 KM</TextoSvg>
-          </>}
+          {/* pase a mano cine: tú contando y la tormenta a lo lejos; la distancia se marca en el suelo */}
+          <Nube x={800} y={740} s={0.85} color={TR_NUBE} />
+          <Rayo x0={812} y0={770} x1={792} y1={1240} seed={14} p={rayoEn(T, P0).p} o={rayoEn(T, P0).o} grosor={8} amp={60} rama={false} />
+          <line x1={60} y1={1240} x2={1020} y2={1240} stroke={KC.ink} strokeWidth={8} />
+          <PersonaSimple x={260} yPies={1240} alto={300} color={KC.pink} cara="o" />
+          <TextoSvg x={300} y={470} tam={74} color={KC.texto}>¿CONTASTE…</TextoSvg>
+          {T > P0 && <NumSalta T={T} n={cuentaP} cambio={P0 + (cuentaP - 1) * 0.22} x={300} y={860} tam={330} color={KC.yellow} />}
+          {T > K.Pregunta + 2.3 && <g opacity={kprog(T, K.Pregunta + 2.3, K.Pregunta + 2.5)}>
+            <line x1={260} y1={1300} x2={260 + 532 * kprog(T, K.Pregunta + 2.3, K.Pregunta + 2.6)} y2={1300} stroke={KC.cyan} strokeWidth={8} strokeDasharray="20 14" />
+            <line x1={260} y1={1275} x2={260} y2={1325} stroke={KC.cyan} strokeWidth={8} /><line x1={792} y1={1275} x2={792} y2={1325} stroke={KC.cyan} strokeWidth={8} />
+            <TextoSvg x={526} y={1440} tam={120} color={KC.cyan} s={klerp(0.4, 1, kprog(T, K.Pregunta + 2.5, K.Pregunta + 2.9, kEase.rebote))}>≈ 3 KM</TextoSvg>
+          </g>}
         </Lienzo>
       </Escena>
       {/* 7 · crujido seco (cerca) vs retumbo largo (lejos) */}
       <Escena T={T} a={K.Retumbo} b={K.Cuidado} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <rect x={70} y={420} width={940} height={330} rx={36} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
-          <text x={110} y={490} style={{ font:`900 44px ${KF.texto}` }} fill={KC.yellow}>¡CRAC! seco → cerca</text>
-          <OndaForma x={110} y={640} ancho={860} tipo="seco" p={kprog(T, K.Retumbo + 0.4, K.Retumbo + 1.0)} T={T} color={KC.yellow} />
-          <rect x={70} y={800} width={940} height={330} rx={36} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
-          <text x={110} y={870} style={{ font:`900 44px ${KF.texto}` }} fill={KC.cyan}>brrruuum largo → lejos</text>
-          <OndaForma x={110} y={1010} ancho={860} tipo="largo" p={kprog(T, K.Retumbo + 2.3, K.Retumbo + 4.6)} T={T} color={KC.cyan} />
+          {/* pase a mano cine: cada panel trae su tormenta (grande = cerca, chica y tenue = lejos); paneles más altos y al centro */}
+          <rect x={50} y={520} width={980} height={440} rx={36} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
+          <text x={100} y={600} style={{ font:`900 50px ${KF.texto}` }} fill={KC.yellow}>¡CRAC! seco → cerca</text>
+          <Nube x={185} y={700} s={0.62} color={TR_NUBE} />
+          <Rayo x0={195} y0={720} x1={185} y1={920} seed={21} p={rayoEn(T, K.Retumbo + 0.3).p} o={Math.max(0.35, rayoEn(T, K.Retumbo + 0.3).o)} grosor={7} amp={40} rama={false} />
+          <OndaForma x={330} y={790} ancho={650} tipo="seco" p={kprog(T, K.Retumbo + 0.4, K.Retumbo + 1.0)} T={T} color={KC.yellow} />
+          <rect x={50} y={1010} width={980} height={440} rx={36} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
+          <text x={100} y={1090} style={{ font:`900 50px ${KF.texto}` }} fill={KC.cyan}>brrruuum largo → lejos</text>
+          <g opacity={0.6}><Nube x={185} y={1250} s={0.34} color={TR_NUBE} />
+            <Rayo x0={190} y0={1262} x1={184} y1={1360} seed={22} p={rayoEn(T, K.Retumbo + 2.2).p} o={Math.max(0.35, rayoEn(T, K.Retumbo + 2.2).o)} grosor={4} amp={20} rama={false} /></g>
+          <OndaForma x={330} y={1280} ancho={650} tipo="largo" p={kprog(T, K.Retumbo + 2.3, K.Retumbo + 4.6)} T={T} color={KC.cyan} />
         </Lienzo>
       </Escena>
       {/* 8 · cuidado: puede caer a ≈ 16 km o más de la tormenta */}
@@ -275,24 +292,27 @@ function Trueno() {
       <Escena T={T} a={K.Espera} b={K.Cierre} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <Reloj30 x={630} y={830} r={240} v={1 - kprog(T, K.Espera + 0.9, K.Espera + 3.8, kEase.suave)} T={T} />
-          <TextoSvg x={630} y={1170} tam={110} color={KC.cyan}>30 MIN</TextoSvg>
+          {/* pase a mano cine: la casa (donde esperas) atenuada detrás del reloj */}
+          <g opacity={0.4}><Casa x={540} y={1560} s={1.4} luz={1} /></g>
+          <Reloj30 x={540} y={770} r={250} v={1 - kprog(T, K.Espera + 0.9, K.Espera + 3.8, kEase.suave)} T={T} />
+          <TextoSvg x={540} y={1130} tam={120} color={KC.cyan}>30 MIN</TextoSvg>
         </Lienzo>
         <Chip T={T} at={K.Espera + 0.2} until={K.Cierre - 0.1} texto="después del último trueno" x={640} y={430} tam={40} borde={KC.ink} />
       </Escena>
       {/* 11 · cierre: la misma noche, vista desde adentro */}
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.noche}>
         <Lienzo>
-          <Tormenta T={T} rayos={[[RC, 330, 3]]} persona={false} />
-          <ParedVentana y1={900} />
-          <CabezaPerfil x={250} y={1000} s={0.9} gesto="sonrie" boca={T > RC + 0.4 && T < RC + 2.4 ? 0.5 + 0.5 * Math.sin(T * 15) : 0} />
-          {T > RC + 0.4 && <g>
-            <rect x={470} y={930} width={260} height={130} rx={40} fill="#fff" stroke={KC.ink} strokeWidth={8} />
+          {/* pase a mano cine: ventana y cabeza bajadas al centro del cuadro; globo con texto oscuro sobre blanco */}
+          <g transform="translate(0 170)"><Tormenta T={T} rayos={[[RC, 330, 3]]} persona={false} /></g>
+          <ParedVentana y0={470} y1={1090} />
+          <CabezaPerfil x={250} y={1200} s={1.0} gesto="sonrie" boca={T > RC + 0.4 && T < RC + 2.4 ? 0.5 + 0.5 * Math.sin(T * 15) : 0} />
+          {T > RC + 0.4 && <g transform="translate(20 210)">
+            <rect x={470} y={930} width={300} height={140} rx={40} fill="#fff" stroke={KC.ink} strokeWidth={8} />
             <path d="M 480 1010 L 430 1030 L 490 1040 Z" fill="#fff" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
-            <text x={600} y={1020} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.ink}>{Array.from({ length: cuentaC }, (_, i) => i + 1).join(', ')}…</text>
+            <text x={620} y={1025} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill="#0b1020">{Array.from({ length: cuentaC }, (_, i) => i + 1).join(', ')}…</text>
           </g>}
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 0.5} until={K.Outro - 0.1} texto="desde adentro" x={540} y={250} tam={44} borde={KC.mint} />
+        <Chip T={T} at={K.Cierre + 0.5} until={K.Outro - 0.1} texto="desde adentro" x={540} y={380} tam={44} borde={KC.mint} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Calor - 0.1} texto="Cuenta los segundos: *rayo → trueno.*" />

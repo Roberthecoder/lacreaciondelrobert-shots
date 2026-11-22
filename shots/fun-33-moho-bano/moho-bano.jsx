@@ -35,9 +35,9 @@ function Regadera({ T, moho = 1, rosa = 0, limpio = 0, gira = 0, gotas = 1 }) {
   const cols = Math.round((x1 - x0) / paso), filas = Math.round((y1 - y0) / paso);
   const vis = moho * (1 - limpio);
   return <g>
-    <rect x={x0} y={y0} width={x1 - x0} height={y1 - y0} fill={MB.junta} stroke={KC.ink} strokeWidth={8} />
-    {Array.from({ length: cols * filas }, (_, i) => { const c = i % cols, f = Math.floor(i / cols); return <rect key={i} x={x0 + c * paso + 5} y={y0 + f * paso + 5} width={paso - 10} height={paso - 10} rx={6} fill={MB.azulejo} />; })}
-    {Array.from({ length: cols * filas }, (_, i) => { const c = i % cols, f = Math.floor(i / cols); return <rect key={'b' + i} x={x0 + c * paso + 16} y={y0 + f * paso + 14} width={30} height={8} rx={4} fill="#fff" />; })}
+    <rect x={x0} y={y0} width={x1 - x0} height={y1 - y0} fill={cineMix(MB.junta, '#0a0f1c', 0.4)} stroke={KC.ink} strokeWidth={8} />
+    {Array.from({ length: cols * filas }, (_, i) => { const c = i % cols, f = Math.floor(i / cols); return <rect key={i} x={x0 + c * paso + 5} y={y0 + f * paso + 5} width={paso - 10} height={paso - 10} rx={6} fill={cineMix(MB.azulejo, '#0a0f1c', 0.3)} />; })}
+    {Array.from({ length: cols * filas }, (_, i) => { const c = i % cols, f = Math.floor(i / cols); return <rect key={'b' + i} x={x0 + c * paso + 16} y={y0 + f * paso + 14} width={30} height={8} rx={4} fill="#e4e9ee" />; })}
     {/* gotas que escurren */}
     {gotas > 0 && [[250, 0.0], [520, 0.4], [760, 0.9], [900, 0.2]].map(([x, f], i) => { const u = ((T * 0.18 + f) % 1); return <ellipse key={i} cx={x} cy={klerp(y0 + 300, y1 - 20, u)} rx={9} ry={13} fill={MB.agua} stroke={KC.ink} strokeWidth={2.5} opacity={gotas * 0.85} />; })}
     {/* moho en las juntas */}
@@ -45,9 +45,9 @@ function Regadera({ T, moho = 1, rosa = 0, limpio = 0, gira = 0, gotas = 1 }) {
     {/* silicón y tina */}
     <rect x={x0} y={y1 - 6} width={x1 - x0} height={22} rx={11} fill={MB.silicon} opacity={0.9} />
     {MANCHAS.filter((m) => m.y > y1 - 12).map((m, i) => { const o = kclamp(vis * 1.4 - m.u * 0.4, 0, 1); return o > 0.02 ? <circle key={'s' + i} cx={m.x} cy={m.y + 4} r={m.r * 0.8} fill={MB.moho} opacity={0.85 * o} /> : null; })}
-    <rect x={-10} y={y1 + 16} width={KW + 20} height={KH} fill="#dfe9ec" stroke={KC.ink} strokeWidth={8} />
-    {Array.from({ length: 9 }, (_, i) => <line key={'p' + i} x1={i * 135} y1={y1 + 136} x2={i * 135 - 60} y2={KH} stroke="#c3d0d4" strokeWidth={6} />)}
-    <rect x={-10} y={y1 + 16} width={KW + 20} height={120} rx={30} fill="#ffffff" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-10} y={y1 + 16} width={KW + 20} height={KH} fill={cineMix('#dfe9ec', '#0a0f1c', 0.66)} stroke={KC.ink} strokeWidth={8} />
+    {Array.from({ length: 9 }, (_, i) => <line key={'p' + i} x1={i * 135} y1={y1 + 136} x2={i * 135 - 60} y2={KH} stroke={cineMix('#c3d0d4', '#0a0f1c', 0.55)} strokeWidth={6} />)}
+    <rect x={-10} y={y1 + 16} width={KW + 20} height={120} rx={30} fill={cineMix('#ffffff', '#0a0f1c', 0.5)} stroke={KC.ink} strokeWidth={8} />
     {/* mancha rosa en la esquina */}
     {rosa > 0 && <g opacity={rosa}>
       <path d={`M ${x1 - 150} ${y1 + 14} Q ${x1 - 140} ${y1 - 70} ${x1 - 60} ${y1 - 90} Q ${x1 + 4} ${y1 - 80} ${x1 - 6} ${y1 + 14} Z`} fill={MB.rosa2} opacity=".8" />
@@ -100,7 +100,7 @@ function Cladosporium({ x, y, s = 1, crece = 1, seed = 2, T = 0 }) {
 function Tablaroca({ T, x, y, crece = 0 }) {
   const g = krng(5), pts = Array.from({ length: 90 }, () => ({ a: g() * Math.PI * 2, d: Math.sqrt(g()), r: 6 + g() * 14, u: g() }));
   return <g transform={`translate(${x} ${y})`}>
-    <rect x={0} y={0} width={600} height={640} fill={MB.tabla} stroke={KC.ink} strokeWidth={8} />
+    <rect x={0} y={0} width={600} height={640} fill={cineMix(MB.tabla, '#0a0f1c', 0.25)} stroke={KC.ink} strokeWidth={8} />
     <line x1={300} y1={0} x2={300} y2={640} stroke="#cfc6ae" strokeWidth={5} />
     <rect x={-20} y={-60} width={640} height={60} fill="#9aa3ad" stroke={KC.ink} strokeWidth={7} />
     <circle cx={180} cy={-30} r={18} fill={MB.agua} stroke={KC.ink} strokeWidth={4} />
@@ -215,9 +215,9 @@ function MohoBanoShot() {
         <Ambiente T={T} n={22} />
         {fsvg(<>
           <path d="M 0 1180 Q 300 1150 540 1175 T 1080 1170 L 1080 1300 L 0 1300 Z" fill="#2a2f3a" stroke={KC.ink} strokeWidth={6} />
-          <Cladosporium T={T} x={330} y={1180} s={1.2} crece={kprog(T, K.Cl + 0.2, K.Cl + 3.2)} seed={2} />
-          <Cladosporium T={T} x={760} y={1185} s={1.15} crece={kprog(T, K.Cl + 1.0, K.Cl + 4.0)} seed={9} />
-          <Cladosporium T={T} x={560} y={1190} s={0.85} crece={kprog(T, K.Cl + 1.8, K.Cl + 4.6)} seed={4} />
+          <Cladosporium T={T} x={330} y={1180} s={1.2} crece={0.2 + 0.8 * kprog(T, K.Cl - 0.2, K.Cl + 3.2)} seed={2} />
+          <Cladosporium T={T} x={760} y={1185} s={1.15} crece={0.2 + 0.8 * kprog(T, K.Cl + 0.4, K.Cl + 4.0)} seed={9} />
+          <Cladosporium T={T} x={560} y={1190} s={0.85} crece={0.2 + 0.8 * kprog(T, K.Cl + 1.0, K.Cl + 4.6)} seed={4} />
         </>)}
       </Escena>
       {/* 4 · la mancha rosa: Serratia marcescens (bacteria) */}
@@ -240,8 +240,8 @@ function MohoBanoShot() {
       <Escena T={T} a={K.P} b={K.St} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Interrogacion T={T} x={270} y={1180} />
-          <g transform={`translate(540 ${430 + Math.sin(T * 14) * 3}) rotate(${Math.sin(T * 9) * 1.5})`} opacity={kprog(T, K.P, K.P + 0.3)}>
+          <Interrogacion T={T} x={270} y={1400} />
+          <g transform={`translate(540 ${720 + Math.sin(T * 14) * 3}) rotate(${Math.sin(T * 9) * 1.5})`} opacity={kprog(T, K.P, K.P + 0.3)}>
             <text textAnchor="middle" style={{ font:`400 118px ${KF.titulo}` }} fill="#9be15d" stroke={KC.ink} strokeWidth={10} paintOrder="stroke">MOHO NEGRO TÓXICO</text>
             {[-300, -120, 80, 260].map((dx, i) => <path key={i} d={`M ${dx} 10 Q ${dx + 8} ${40 + 30 * ((T * 0.8 + i * 0.3) % 1)} ${dx} ${60 + 40 * ((T * 0.8 + i * 0.3) % 1)}`} stroke="#9be15d" strokeWidth={12} strokeLinecap="round" fill="none" />)}
           </g>
@@ -251,26 +251,28 @@ function MohoBanoShot() {
       <Escena T={T} a={K.St} b={K.Mi} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
+          <g transform="translate(540 900) scale(1.4) translate(-370 -850)">
           <Tablaroca T={T} x={70} y={560} crece={kprog(T, K.St + 0.6, K.St + 4.0)} />
           <Goteo T={T} x={250} y0={540} y1={1180} cada={0.45} color={MB.agua} desde={K.St - 0.4} r={12} />
+          </g>
         </>)}
       </Escena>
       {/* 7 · el mito tachado: todo moho se trata igual */}
       <Escena T={T} a={K.Mi} b={K.Al} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          {[[200, MB.moho, 1], [540, MB.stachy, 2], [880, '#6b7378', 3]].map(([x, c, sd], i) => <Mancha key={i} x={x} y={1040} r={78} color={c} seed={sd} s={kprog(T, K.Mi + 2.6 + i * 0.25, K.Mi + 3.0 + i * 0.25, kEase.rebote)} />)}
-          {[370, 710].map((x, i) => <text key={i} x={x} y={1070} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Mi + 3.4 + i * 0.2, K.Mi + 3.7 + i * 0.2)}>=</text>)}
+          {[[200, MB.moho, 1], [540, MB.stachy, 2], [880, '#6b7378', 3]].map(([x, c, sd], i) => <Mancha key={i} x={x} y={1150} r={78} color={c} seed={sd} s={1.6 * kprog(T, K.Mi - 0.1 + i * 0.15, K.Mi + 0.35 + i * 0.15, kEase.rebote)} />)}
+          {[370, 710].map((x, i) => <text key={i} x={x} y={1185} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Mi + 3.4 + i * 0.2, K.Mi + 3.7 + i * 0.2)}>=</text>)}
         </>)}
       </Escena>
       {/* 8 · alergia y asma */}
       <Escena T={T} a={K.Al} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Cara T={T} x={300} y={940} estornudo={kprog(T, K.Al + 1.5, K.Al + 2.3)} />
-          {(() => { const g = krng(12); return Array.from({ length: 14 }, (_, i) => { const d = g(), u = ((T - K.Al) * 0.35 + d) % 1; return <ellipse key={i} cx={klerp(1060, 510, u)} cy={klerp(780 + g() * 300, 985, u)} rx={7} ry={10} fill={MB.oliva} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.Al, K.Al + 0.4)} />; }); })()}
-          {kprog(T, K.Al + 1.6, K.Al + 2.4) > 0 && kprog(T, K.Al + 1.6, K.Al + 2.4) < 1 && <text x={700} y={1130} style={{ font:`400 96px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={8} paintOrder="stroke" transform={`rotate(-8 700 1130)`}>¡ACHÚ!</text>}
-          {T > K.Al + 3.0 && <Inhalador x={760} y={1060} s={kprog(T, K.Al + 3.0, K.Al + 3.4, kEase.rebote)} />}
+          <g transform="translate(300 960) scale(1.35) translate(-300 -940)"><Cara T={T} x={300} y={940} estornudo={kprog(T, K.Al + 1.5, K.Al + 2.3)} /></g>
+          {(() => { const g = krng(12); return Array.from({ length: 14 }, (_, i) => { const d = g(), u = ((T - K.Al) * 0.35 + d) % 1; return <ellipse key={i} cx={klerp(1070, 690, u)} cy={klerp(760 + g() * 340, 990, u)} rx={7} ry={10} fill={MB.oliva} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.Al, K.Al + 0.4)} />; }); })()}
+          {kprog(T, K.Al + 1.6, K.Al + 2.4) > 0 && kprog(T, K.Al + 1.6, K.Al + 2.4) < 1 && <text x={620} y={1330} style={{ font:`400 96px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={8} paintOrder="stroke" transform={`rotate(-8 700 1130)`}>¡ACHÚ!</text>}
+          {T > K.Al + 3.0 && <Inhalador x={880} y={1200} s={1.3 * kprog(T, K.Al + 3.0, K.Al + 3.4, kEase.rebote)} />}
         </>)}
       </Escena>
       {/* 9 · el estudio de Osaka: con jabón crecen, en seco no */}
@@ -294,7 +296,7 @@ function MohoBanoShot() {
           <Regadera T={T} moho={0.6} gira={1} gotas={0} />
           {Array.from({ length: 8 }, (_, i) => { const u = ((T - K.S) * 0.5 + i / 8) % 1; return <circle key={i} cx={klerp(560 + (i % 4) * 90, 190, u)} cy={klerp(1000 - (i % 3) * 80, 470, u)} r={60 * (1 - u * 0.6)} fill="rgba(255,255,255,.75)" opacity={(1 - u) * kprog(T, K.S, K.S + 0.5) * (1 - kprog(T, K.S + 2.4, K.S + 2.9))} />; })}
           {T > K.S + 2.4 && <g opacity={kprog(T, K.S + 2.4, K.S + 2.9)}>
-            <rect x={60} y={360} width={960} height={800} fill="rgba(255,225,26,.82)" />
+            <rect x={60} y={360} width={960} height={800} fill="rgba(58,52,18,.9)" />
             <Higrometro x={300} y={960} valor={klerp(80, 50, kprog(T, K.S + 2.7, K.S + 4.0, kEase.suave))} r={170} />
           </g>}
         </>)}
@@ -323,18 +325,18 @@ function MohoBanoShot() {
       <Chip T={T} at={K.G + 2.8} until={K.E - 0.3} texto="algunos comen restos de jabón" x={380} y={1070} tam={30} borde={KC.yellow} />
       <Etq T={T} at={K.E + 0.6} until={K.Cl - 0.3} x={60} y={330} texto="esporas en el aire" tam={30} color={KC.ink} />
       <Chip T={T} at={K.E + 2.0} until={K.Cl - 0.3} texto="sin agua, no crecen" x={360} y={560} tam={38} borde={KC.red} />
-      <NumeroGigante T={T} at={K.Cl + 0.3} until={K.Cl + 2.8} valor={113} dur={1.2} etiqueta="muestras de baños · estudio de 2010" x={420} y={560} tam={200} color={KC.gold2} />
-      <Chip T={T} at={K.Cl + 0.6} until={K.Cl + 2.8} texto="Países Bajos · Alemania · Austria" x={420} y={760} tam={28} borde={KC.gold} />
-      <Etq T={T} at={K.Cl + 3.0} until={K.R - 0.3} x={60} y={420} texto="Cladosporium" it tam={44} color={MB.oliva2} />
-      <Etq T={T} at={K.Cl + 3.3} until={K.R - 0.3} x={60} y={480} texto="moho negro" tam={30} />
-      <Chip T={T} at={K.Cl + 3.6} until={K.R - 0.3} texto="el más frecuente en cultivo directo" x={420} y={570} tam={28} borde={KC.gold} />
+      <NumeroGigante T={T} at={K.Cl + 0.3} until={K.Cl + 2.8} valor={113} dur={1.2} etiqueta="muestras de baños · estudio de 2010" x={540} y={350} tam={200} color={KC.gold2} />
+      <Chip T={T} at={K.Cl + 0.6} until={K.Cl + 2.8} texto="Países Bajos · Alemania · Austria" x={540} y={1330} tam={28} borde={KC.gold} />
+      <Etq T={T} at={K.Cl + 3.0} until={K.R - 0.3} x={60} y={1265} texto="Cladosporium" it tam={44} color={MB.oliva2} />
+      <Etq T={T} at={K.Cl + 3.3} until={K.R - 0.3} x={60} y={1325} texto="moho negro" tam={30} />
+      <Chip T={T} at={K.Cl + 3.6} until={K.R - 0.3} texto="el más frecuente en cultivo directo" x={540} y={1420} tam={28} borde={KC.gold} />
       <Etq T={T} at={K.Cl + 2.4} until={K.R - 0.3} x={1040} y={820} lado="izq" texto="conidios en cadena" tam={26} color={KC.gold2} />
       <Etq T={T} at={K.R + 1.8} until={K.P - 0.3} x={110} y={1110} texto="Serratia marcescens" it tam={36} color={KC.ink} />
       <Etq T={T} at={K.R + 2.2} until={K.P - 0.3} x={110} y={1160} texto="bacteria, no hongo" tam={28} color={KC.ink} />
       <Chip T={T} at={K.R + 2.6} until={K.P - 0.3} texto="pigmento: prodigiosina" x={340} y={530} tam={30} borde={MB.rosa} />
-      <Etq T={T} at={K.St + 1.6} until={K.Mi - 0.3} x={70} y={430} texto="Stachybotrys chartarum" it tam={36} color={KC.ink} />
-      <Chip T={T} at={K.St + 2.2} until={K.Mi - 0.3} texto="celulosa + agua constante" x={360} y={1150} tam={30} borde={MB.stachy} />
-      <Etq T={T} at={K.St + 2.6} until={K.Mi - 0.3} x={480} y={1060} texto="papel mojado" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.St + 1.6} until={K.Mi - 0.3} x={70} y={345} texto="Stachybotrys chartarum" it tam={36} color={KC.ink} />
+      <Chip T={T} at={K.St + 2.2} until={K.Mi - 0.3} texto="celulosa + agua constante" x={540} y={1460} tam={30} borde={MB.stachy} />
+      <Etq T={T} at={K.St + 2.6} until={K.Mi - 0.3} x={640} y={1240} texto="papel mojado" tam={26} color={KC.ink} />
       <MitoTachado T={T} at={K.Mi + 0.2} tacharEn={K.Mi + 1.6} until={K.Al - 0.3} texto="MÁS PELIGROSO QUE LOS DEMÁS" x={540} y={740} tam={40} />
       <Chip T={T} at={K.Mi + 1.4} until={K.Al - 0.3} texto="no hay prueba que lo ligue a síntomas (CDC)" x={540} y={830} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.Mi + 3.6} until={K.Al - 0.3} texto="todo moho se trata igual" x={540} y={905} tam={30} borde={KC.leaf} />
@@ -354,9 +356,9 @@ function MohoBanoShot() {
       <BarraEscala T={T} at={K.G} until={K.Cl} texto="10 cm" largo={100} />
       <BarraEscala T={T} at={K.Cl} until={K.R} texto="10 µm" largo={150} />
       <BarraEscala T={T} at={K.R} until={K.P} texto="10 cm" largo={100} />
-      <BarraEscala T={T} at={K.St} until={K.Mi} texto="50 cm" largo={200} />
-      <BarraEscala T={T} at={K.Mi} until={K.Al} texto="5 cm" largo={150} />
-      <BarraEscala T={T} at={K.Al} until={K.Es} texto="10 cm" largo={180} />
+      <BarraEscala T={T} at={K.St} until={K.Mi} texto="50 cm" largo={280} />
+      <BarraEscala T={T} at={K.Mi} until={K.Al} texto="5 cm" largo={240} />
+      <BarraEscala T={T} at={K.Al} until={K.Es} texto="10 cm" largo={243} />
       <BarraEscala T={T} at={K.Es} until={K.S} texto="5 cm" largo={220} />
       <BarraEscala T={T} at={K.S} until={K.Ou} texto="10 cm" largo={100} />
 

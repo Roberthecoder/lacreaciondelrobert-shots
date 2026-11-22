@@ -109,14 +109,14 @@ function Azotea({ T, luna, persona }) {
   return <g>
     <defs><linearGradient id="lnCielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={LN_CIELO_A} /><stop offset="1" stopColor={LN_CIELO_B} /></linearGradient></defs>
     <rect width={KW} height={KH} fill="url(#lnCielo)" />
-    <EstrellasFondo T={T} n={80} seed={4} alto={1150} />
+    <EstrellasFondo T={T} n={80} seed={4} alto={1300} />
     {luna}
-    {[[60, 1010, 170, 190], [250, 940, 140, 260], [900, 980, 200, 220]].map(([x, y, w, h], i) => <g key={i}>
+    {[[60, 1170, 170, 190], [250, 1100, 140, 260], [900, 1140, 200, 220]].map(([x, y, w, h], i) => <g key={i}>
       <rect x={x} y={y} width={w} height={h + 200} fill="#241c45" stroke={KC.ink} strokeWidth={6} />
       {[0, 1].map((k) => <rect key={k} x={x + 26 + k * 60} y={y + 40} width={34} height={44} fill={(i + k) % 2 ? '#ffd76a' : '#3a3168'} />)}</g>)}
-    <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#6a443b" stroke={KC.ink} strokeWidth={10} />
-    <rect x={0} y={1150} width={KW} height={44} fill="#765447" stroke={KC.ink} strokeWidth={8} />
-    <g transform="translate(860 1150)">
+    <rect x={0} y={1340} width={KW} height={KH - 1340} fill="#3e2a26" stroke={KC.ink} strokeWidth={10} />
+    <rect x={0} y={1310} width={KW} height={44} fill="#4c342d" stroke={KC.ink} strokeWidth={8} />
+    <g transform="translate(900 1310)">
       <rect x={-70} y={-200} width={140} height={200} rx={26} fill="#1c1c1f" stroke={KC.ink} strokeWidth={8} />
       <rect x={-80} y={-215} width={160} height={36} rx={12} fill="#2a2a2e" stroke={KC.ink} strokeWidth={7} />
       {[-140, -80].map((yy) => <line key={yy} x1={-66} y1={yy} x2={66} y2={yy} stroke="#3a3a40" strokeWidth={6} />)}
@@ -157,7 +157,7 @@ function Luna() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
   // azotea: la Luna se aleja un poquito (exagerado)
-  const lunaAz = (t0) => { const f = kprog(T, t0, t0 + 3.2, kEase.suave); return { x: klerp(300, 250, f), y: klerp(520, 430, f), r: klerp(118, 96, f), f }; };
+  const lunaAz = (t0) => { const f = kprog(T, t0, t0 + 3.2, kEase.suave); return { x: klerp(300, 240, f), y: klerp(650, 545, f), r: klerp(150, 122, f), f }; };
   const LG = lunaAz(K.Gancho + 0.3), LC = lunaAz(K.Cierre + 1.6);
   // láser: Tierra abajo a la izquierda, Luna arriba a la derecha
   const E1 = [270, 1030], M1 = [800, 560], A1 = lpol(E1[0], E1[1], 200, 42), B1 = [M1[0] - 70, M1[1] + 50];
@@ -165,7 +165,7 @@ function Luna() {
   const T0 = K.Tiempo + 0.4, cuenta = kclamp(T - T0, 0, 2.5);
   const ciclo = (t) => { const u = ((T - t) % 2.5 + 2.5) % 2.5; return T < t ? -1 : u; };
   // mareas, giro y empuje: misma vista desde arriba
-  const E = [500, 850], RO = 380;
+  const E = [540, 1000], RO = 380;
   const amG = 15 * kprog(T, K.Giro, K.Empuje, kEase.suave), lead = 24 * kprog(T, K.Giro + 2.6, K.Giro + 4.0, kEase.sale);
   const fE = kprog(T, K.Empuje + 0.4, K.Empuje + 3.4, kEase.suave), amE = 15 + 30 * kprog(T, K.Empuje, K.Unas, kEase.suave), RE = klerp(RO, 455, fE);
   const giro = (a, b, v0, v1) => { const u = kclamp(T - a, 0, b - a), k = (v1 - v0) / (b - a); return v0 * u + 0.5 * k * u * u; };
@@ -180,12 +180,12 @@ function Luna() {
       <Escena T={T} a={K.Gancho} b={K.Espejos} fondo={KC.noche}>
         <Lienzo>
           <Azotea T={T} luna={<>
-            <circle cx={300} cy={520} r={118} fill="none" stroke="#fff" strokeWidth={4} strokeDasharray="10 12" opacity={0.5 * LG.f} />
+            <circle cx={300} cy={650} r={150} fill="none" stroke="#fff" strokeWidth={4} strokeDasharray="10 12" opacity={0.5 * LG.f} />
             <LunaDib x={LG.x} y={LG.y} r={LG.r} />
-            {LG.f > 0.05 && <FlechaRecta x1={310} y1={570} x2={klerp(310, 225, LG.f)} y2={klerp(570, 470, LG.f) } p={1} color={KC.yellow} grosor={10} punta={24} />}
-          </>} persona={<PersonaSimple x={600} yPies={1170} alto={380} color={KC.cyan} cara="o" brazos={0.15} />} />
-          <TextoSvg x={230} y={800} tam={110} color={KC.yellow} rot={-5} s={klerp(0.4, 1, kprog(T, K.Gancho + 0.6, K.Gancho + 1.0, kEase.rebote))} o={kprog(T, K.Gancho + 0.6, K.Gancho + 0.7)}>+3.8 CM</TextoSvg>
-          <text x={230} y={860} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto} opacity={kprog(T, K.Gancho + 1.2, K.Gancho + 1.6)}>cada año (exagerado)</text>
+            {LG.f > 0.05 && <FlechaRecta x1={312} y1={714} x2={klerp(312, 205, LG.f)} y2={klerp(714, 585, LG.f) } p={1} color={KC.yellow} grosor={10} punta={24} />}
+          </>} persona={<PersonaSimple x={620} yPies={1330} alto={560} color={KC.cyan} cara="o" brazos={0.15} />} />
+          <TextoSvg x={250} y={960} tam={120} color={KC.yellow} rot={-5} s={klerp(0.4, 1, kprog(T, K.Gancho + 0.6, K.Gancho + 1.0, kEase.rebote))} o={kprog(T, K.Gancho + 0.6, K.Gancho + 0.7)}>+3.8 CM</TextoSvg>
+          <text x={250} y={1025} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto} opacity={kprog(T, K.Gancho + 1.2, K.Gancho + 1.6)}>cada año (exagerado)</text>
         </Lienzo>
       </Escena>
       {/* 1 · 1969: el Apolo 11 deja un panel de espejitos */}
@@ -194,19 +194,19 @@ function Luna() {
           <rect width={KW} height={KH} fill="#080a14" />
           <EstrellasFondo T={T} n={90} seed={12} alto={1000} />
           <TierraDib x={230} y={470} r={70} rot={T * 8} />
-          <path d="M 0 1000 Q 300 960 560 1000 T 1080 990 L 1080 1920 L 0 1920 Z" fill="#a9a59c" stroke={KC.ink} strokeWidth={9} />
-          {[[200, 1120, 90], [780, 1250, 60], [480, 1200, 40], [950, 1080, 50]].map(([x, y, r], i) => <ellipse key={i} cx={x} cy={y} rx={r} ry={r * 0.32} fill="#8e897f" stroke={KC.ink} strokeWidth={6} />)}
+          <path d="M 0 1000 Q 300 960 560 1000 T 1080 990 L 1080 1920 L 0 1920 Z" fill="#5a574f" stroke={KC.ink} strokeWidth={9} />
+          {[[200, 1120, 90], [780, 1250, 60], [480, 1200, 40], [950, 1080, 50]].map(([x, y, r], i) => <ellipse key={i} cx={x} cy={y} rx={r} ry={r * 0.32} fill="#3f3c36" stroke={KC.ink} strokeWidth={6} />)}
           {(() => { const ll = kprog(T, K.Espejos + 0.1, K.Espejos + 2.0, kEase.suave), deja = kprog(T, K.Espejos + 2.0, K.Espejos + 2.5, kEase.sale);
-            const ax = klerp(-80, 330, ll), px = ax + 190, py = klerp(860, 1080, deja), fijo = T > K.Espejos + 2.5;
+            const ax = klerp(60, 290, ll), px = ax + 240, py = klerp(860, 1080, deja), fijo = T > K.Espejos + 2.5;
             return <g>
-              <Polvo T={T} at={K.Espejos + 2.45} x={fijo ? 520 : px} y={1180} />
-              <PanelEspejos x={fijo ? 520 : px} y={fijo ? 1080 : py} s={1} T={T} brillo={kprog(T, K.Espejos + 2.8, K.Espejos + 3.3)} />
-              <Astronauta x={ax} y={1200} s={0.95} paso={ll < 1 ? (T - K.Espejos) * 1.6 : 0} />
-              {[[400, 1000], [600, 1030], [470, 1060]].map(([x, y], i) => <Destello key={i} x={x} y={y} s={0.4 + 0.15 * Math.sin(T * 7 + i)} o={kprog(T, K.Espejos + 2.9 + i * 0.25, K.Espejos + 3.1 + i * 0.25) * (0.6 + 0.4 * Math.sin(T * 9 + i))} color="#fffbe0" />)}
+              <Polvo T={T} at={K.Espejos + 2.45} x={fijo ? 530 : px} y={1180} />
+              <PanelEspejos x={fijo ? 530 : px} y={fijo ? 1080 : py} s={1.25} T={T} brillo={kprog(T, K.Espejos + 2.8, K.Espejos + 3.3)} />
+              <Astronauta x={ax} y={1210} s={1.2} paso={ll < 1 ? (T - K.Espejos) * 1.6 : 0} />
+              {[[420, 990], [640, 1025], [500, 1065]].map(([x, y], i) => <Destello key={i} x={x} y={y} s={0.4 + 0.15 * Math.sin(T * 7 + i)} o={kprog(T, K.Espejos + 2.9 + i * 0.25, K.Espejos + 3.1 + i * 0.25) * (0.6 + 0.4 * Math.sin(T * 9 + i))} color="#fffbe0" />)}
             </g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Espejos + 0.3} until={K.Laser - 0.1} texto="1969 · Apolo 11" x={420} y={640} tam={48} borde={KC.gold} />
-        <Etq T={T} at={K.Espejos + 3.2} until={K.Laser - 0.15} x={450} y={940} texto="panel de espejitos" lado="der" color={KC.texto} />
+        <Chip T={T} at={K.Espejos + 0.3} until={K.Laser - 0.1} texto="1969 · Apolo 11" x={620} y={470} tam={48} borde={KC.gold} />
+        <Etq T={T} at={K.Espejos + 3.2} until={K.Laser - 0.15} x={600} y={920} texto="panel de espejitos" lado="der" color={KC.texto} />
       </Escena>
       {/* 2 · desde la Tierra: láser que llega y rebota */}
       <Escena T={T} a={K.Laser} b={K.Tiempo} fondo={KC.lilac}>
@@ -245,48 +245,56 @@ function Luna() {
       <Escena T={T} a={K.Resultado} b={K.Pregunta} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <TierraDib x={220} y={1040} r={150} rot={(T - K.Resultado) * 40} />
-          {(() => { const mv = kprog(T, K.Resultado + 3.0, K.Resultado + 5.0, kEase.suave), mx = klerp(780, 880, mv), my = klerp(860, 800, mv);
+          <TierraDib x={260} y={1150} r={200} rot={(T - K.Resultado) * 40} />
+          {(() => { const mv = kprog(T, K.Resultado + 3.0, K.Resultado + 5.0, kEase.suave), mx = klerp(800, 900, mv), my = klerp(900, 830, mv);
             return <g>
-              {mv > 0 && <circle cx={780} cy={860} r={80} fill="none" stroke={KC.ink} strokeWidth={5} strokeDasharray="10 10" opacity=".5" />}
-              <LunaDib x={mx} y={my} r={80} panel={1} />
+              {mv > 0 && <circle cx={800} cy={900} r={100} fill="none" stroke={KC.ink} strokeWidth={5} strokeDasharray="10 10" opacity=".5" />}
+              <LunaDib x={mx} y={my} r={100} panel={1} />
               {Array.from({ length: 8 }, (_, i) => { const t = K.Resultado + 0.2 + i * 0.33, u = (T - t) / 0.3;
-                return u > 0 && u < 2 ? <Pulso key={i} A={u < 1 ? [330, 940] : [mx - 60, my + 30]} B={u < 1 ? [mx - 60, my + 30] : [330, 940]} f={u < 1 ? u : u - 1} r={12} /> : null; })}
-              {T < K.Resultado + 3 && <line x1={330} y1={940} x2={720} y2={890} stroke={LN_LASER} strokeWidth={6} strokeDasharray="6 12" opacity={0.6 + 0.4 * Math.sin(T * 30)} />}
-              {mv > 0.05 && <FlechaRecta x1={870} y1={930} x2={klerp(870, 960, mv)} y2={klerp(930, 870, mv)} p={1} color={KC.pink} grosor={12} punta={26} />}
+                return u > 0 && u < 2 ? <Pulso key={i} A={u < 1 ? [400, 1010] : [mx - 75, my + 40]} B={u < 1 ? [mx - 75, my + 40] : [400, 1010]} f={u < 1 ? u : u - 1} r={12} /> : null; })}
+              {T < K.Resultado + 3 && <line x1={400} y1={1010} x2={725} y2={940} stroke={LN_LASER} strokeWidth={6} strokeDasharray="6 12" opacity={0.6 + 0.4 * Math.sin(T * 30)} />}
+              {mv > 0.05 && <FlechaRecta x1={890} y1={985} x2={klerp(890, 1000, mv)} y2={klerp(985, 910, mv)} p={1} color={KC.pink} grosor={12} punta={26} />}
             </g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Resultado + 0.2} until={K.Pregunta - 0.1} texto="más de 40 años de disparos" x={540} y={400} tam={42} borde={LN_LASER} />
-        <NumeroGigante T={T} at={K.Resultado + 2.9} until={K.Pregunta - 0.1} valor={3.8} desde={3.8} dur={0.1} dec={1} sufijo=" cm / año" x={540} y={600} tam={140} color={KC.pink} />
-        <Etq T={T} at={K.Resultado + 4.0} until={K.Pregunta - 0.1} x={800} y={1010} texto="se aleja" lado="izq" color={KC.ink} tam={38} />
+        <Chip T={T} at={K.Resultado + 0.2} until={K.Pregunta - 0.1} texto="más de 40 años de disparos" x={540} y={430} tam={42} borde={LN_LASER} />
+        <NumeroGigante T={T} at={K.Resultado + 2.9} until={K.Pregunta - 0.1} valor={3.8} desde={3.8} dur={0.1} dec={1} sufijo=" cm / año" x={540} y={640} tam={140} color={KC.pink} />
+        <Etq T={T} at={K.Resultado + 4.0} until={K.Pregunta - 0.1} x={850} y={1090} texto="se aleja" lado="izq" color={KC.ink} tam={38} />
       </Escena>
       {/* 5 · ¿y por qué se va? */}
-      <EscenaPregunta T={T} a={K.Pregunta} b={K.Mareas} color={KC.orange} />
+      <Escena T={T} a={K.Pregunta} b={K.Mareas} zoom={0.1}>
+        <FondoLunares color={KC.orange} />
+        <Lienzo>
+          <TierraDib x={260} y={1150} r={200} rot={(T - K.Resultado) * 40} />
+          <LunaDib x={900} y={830} r={100} panel={1} />
+          <text x={600} y={1060} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={14}
+            transform={`rotate(${Math.sin(T * 3) * 6} 600 880) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 520px ${KF.titulo}`, transformOrigin:'600px 880px' }}>?</text>
+        </Lienzo>
+      </Escena>
       {/* 6 · mareas: dos bultos de agua */}
       <Escena T={T} a={K.Mareas} b={K.Giro} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
           <circle cx={E[0]} cy={E[1]} r={RO} fill="none" stroke={KC.ink} strokeWidth={5} strokeDasharray="14 14" opacity=".45" />
-          <TierraDib x={E[0]} y={E[1]} r={150} rot={rotG} bulto={kprog(T, K.Mareas + 0.5, K.Mareas + 1.8, kEase.sale)} ang={0} />
-          <LunaDib x={E[0] + RO} y={E[1]} r={62} />
-          {[0, 1, 2].map((i) => { const f = ((T - K.Mareas) * 0.9 + i / 3) % 1; return T > K.Mareas + 0.2 && <circle key={i} cx={klerp(E[0] + RO - 70, E[0] + 230, f)} cy={E[1]} r={10} fill={KC.ink} opacity={0.8 * (1 - f)} />; })}
+          <TierraDib x={E[0]} y={E[1]} r={175} rot={rotG} bulto={kprog(T, K.Mareas + 0.5, K.Mareas + 1.8, kEase.sale)} ang={0} />
+          <LunaDib x={E[0] + RO} y={E[1]} r={72} />
+          {[0, 1, 2].map((i) => { const f = ((T - K.Mareas) * 0.9 + i / 3) % 1; return T > K.Mareas + 0.2 && <circle key={i} cx={klerp(E[0] + RO - 80, E[0] + 265, f)} cy={E[1]} r={10} fill={KC.ink} opacity={0.8 * (1 - f)} />; })}
         </Lienzo>
         <Chip T={T} at={K.Mareas + 0.3} until={K.Giro - 0.1} texto="la Luna jala el agua" x={540} y={430} tam={42} borde={LN_AGUA} />
-        <Etq T={T} at={K.Mareas + 1.6} until={K.Giro - 0.1} x={E[0] + 110} y={E[1] - 170} texto="hacia la Luna" lado="der" color={KC.ink} tam={34} />
-        <Etq T={T} at={K.Mareas + 2.1} until={K.Giro - 0.1} x={E[0] - 370} y={E[1] + 200} texto="al lado contrario" lado="der" color={KC.ink} tam={34} />
+        <Etq T={T} at={K.Mareas + 1.6} until={K.Giro - 0.1} x={E[0] + 120} y={E[1] - 200} texto="hacia la Luna" lado="der" color={KC.ink} tam={34} />
+        <Etq T={T} at={K.Mareas + 2.1} until={K.Giro - 0.1} x={E[0] - 420} y={E[1] + 230} texto="al lado contrario" lado="der" color={KC.ink} tam={34} />
       </Escena>
       {/* 7 · la Tierra gira más rápido: los bultos se adelantan y jalan a la Luna */}
       <Escena T={T} a={K.Giro} b={K.Empuje} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          {(() => { const [mx, my] = lpol(E[0], E[1], RO, amG), [bx, by] = lpol(E[0], E[1], 150 * 1.46, amG + lead), tg = amG + 90;
+          {(() => { const [mx, my] = lpol(E[0], E[1], RO, amG), [bx, by] = lpol(E[0], E[1], 175 * 1.46, amG + lead), tg = amG + 90;
             const [fx, fy] = [mx + 140 * Math.cos(tg * Math.PI / 180), my - 140 * Math.sin(tg * Math.PI / 180)];
             return <g>
               <circle cx={E[0]} cy={E[1]} r={RO} fill="none" stroke={KC.ink} strokeWidth={5} strokeDasharray="14 14" opacity=".45" />
               <FlechaGiro x={E[0]} y={E[1]} R={RO + 40} a0={amG - 70} largo={50} color={KC.paper} o={0.9} />
-              <TierraDib x={E[0]} y={E[1]} r={150} rot={rotG} bulto={1} ang={amG + lead} />
-              <FlechaGiro x={E[0]} y={E[1]} R={250} a0={rotG % 360 + 120} largo={120} color={KC.yellow} />
-              <LunaDib x={mx} y={my} r={62} />
+              <TierraDib x={E[0]} y={E[1]} r={175} rot={rotG} bulto={1} ang={amG + lead} />
+              <FlechaGiro x={E[0]} y={E[1]} R={290} a0={rotG % 360 + 120} largo={120} color={KC.yellow} />
+              <LunaDib x={mx} y={my} r={72} />
               {lead > 2 && <line x1={E[0]} y1={E[1]} x2={mx} y2={my} stroke={KC.ink} strokeWidth={4} strokeDasharray="6 10" opacity=".6" />}
               {T > K.Giro + 4.2 && <line x1={bx} y1={by} x2={mx} y2={my} stroke={KC.pink} strokeWidth={8} strokeDasharray="12 10" opacity={kprog(T, K.Giro + 4.2, K.Giro + 4.6)} />}
               <FlechaRecta x1={mx} y1={my} x2={fx} y2={fy} p={kprog(T, K.Giro + 4.8, K.Giro + 5.5, kEase.sale)} color={KC.pink} grosor={14} punta={30} />
@@ -304,21 +312,22 @@ function Luna() {
             return <g>
               <circle cx={E[0]} cy={E[1]} r={RO} fill="none" stroke={KC.ink} strokeWidth={5} strokeDasharray="14 14" opacity=".35" />
               {fE > 0.02 && <circle cx={E[0]} cy={E[1]} r={RE} fill="none" stroke={KC.pink} strokeWidth={7} strokeDasharray="16 12" opacity={kprog(T, K.Empuje + 0.4, K.Empuje + 1)} />}
-              <TierraDib x={E[0]} y={E[1]} r={150} rot={rotE} bulto={1} ang={amE + 24} />
-              <FlechaGiro x={E[0]} y={E[1]} R={250} a0={rotE % 360 + 120} largo={120} color={T > K.Empuje + 3.4 ? KC.orange : KC.yellow} />
-              <LunaDib x={mx} y={my} r={62} />
+              <TierraDib x={E[0]} y={E[1]} r={175} rot={rotE} bulto={1} ang={amE + 24} />
+              <FlechaGiro x={E[0]} y={E[1]} R={290} a0={rotE % 360 + 120} largo={120} color={T > K.Empuje + 3.4 ? KC.orange : KC.yellow} />
+              <LunaDib x={mx} y={my} r={72} />
               {T > K.Empuje + 0.4 && T < K.Empuje + 3.4 && <FlechaRecta x1={mx} y1={my} x2={mx + 70 * Math.cos(amE * Math.PI / 180)} y2={my - 70 * Math.sin(amE * Math.PI / 180)} p={1} color={KC.pink} grosor={10} punta={24} />}
             </g>; })()}
         </Lienzo>
         <Chip T={T} at={K.Empuje + 0.4} until={K.Empuje + 3.3} texto="órbita más lejana" x={540} y={430} tam={44} borde={KC.pink} />
         <Chip T={T} at={K.Empuje + 3.5} until={K.Unas - 0.1} texto="el giro se frena · muy poquito" x={540} y={430} tam={38} borde={KC.orange} />
-        <div style={{ position:'absolute', left:540, top:1190, transform:'translate(-50%,-50%)', zIndex:41, font:`700 26px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.Empuje + 0.8, K.Empuje + 1.2) * (1 - kprog(T, K.Unas - 0.4, K.Unas)) }}>(dibujo exagerado)</div>
+        <div style={{ position:'absolute', left:540, top:1488, transform:'translate(-50%,-50%)', zIndex:41, font:`700 26px ${KF.mono}`, color:KC.ink, opacity:kprog(T, K.Empuje + 0.8, K.Empuje + 1.2) * (1 - kprog(T, K.Unas - 0.4, K.Unas)) }}>(dibujo exagerado)</div>
       </Escena>
       {/* 9 · 3.8 cm al año ≈ lo que crecen las uñas de tus manos */}
       <Escena T={T} a={K.Unas} b={K.Cierre} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
           <TextoSvg x={540} y={500} tam={92} color={KC.pink} o={1 - kprog(T, K.Unas + 4.3, K.Unas + 4.6)} s={klerp(0.5, 1, kprog(T, K.Unas + 0.1, K.Unas + 0.5, kEase.rebote))}>¿3.8 CM AL AÑO?</TextoSvg>
+          <g transform="translate(0 130)">
           <rect x={380} y={640} width={L + 120} height={16} rx={8} fill="rgba(0,0,0,.15)" />
           <LunaDib x={430 + L * gU} y={648} r={48} />
           <text x={380} y={600} style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>la Luna</text>
@@ -327,28 +336,29 @@ function Luna() {
           <g opacity={kprog(T, K.Unas + 1.8, K.Unas + 2.2)}>
             <ReglaH x={440} y={1010} ancho={L} marcas={[[0, '0'], [1, '3.8 cm']]} />
           </g>
+          </g>
         </Lienzo>
         <Chip T={T} at={K.Unas + 4.6} until={K.Cierre - 0.1} texto="≈ lo mismo en un año" x={540} y={400} tam={42} borde={KC.ink} />
-        <div style={{ position:'absolute', left:540, top:1190, transform:'translate(-50%,-50%)', zIndex:41, font:`700 28px ${KF.mono}`, color:KC.ink, background:'rgba(255,255,255,.7)', border:`3px solid ${KC.ink}`, borderRadius:10, padding:'4px 14px', whiteSpace:'nowrap',
+        <div style={{ position:'absolute', left:540, top:1320, transform:'translate(-50%,-50%)', zIndex:41, font:`700 28px ${KF.mono}`, color:'#0b1020', background:'rgba(255,255,255,.7)', border:`3px solid ${KC.ink}`, borderRadius:10, padding:'4px 14px', whiteSpace:'nowrap',
           opacity:kprog(T, K.Unas + 3.0, K.Unas + 3.4) * (1 - kprog(T, K.Cierre - 0.3, K.Cierre)) }}>uñas de las manos · estudio de 2010</div>
       </Escena>
       {/* 10 · cierre: la misma azotea, te cortas las uñas y la Luna se aleja otro poquito */}
       <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.noche}>
         <Lienzo>
           <Azotea T={T} luna={<>
-            <circle cx={300} cy={520} r={118} fill="none" stroke="#fff" strokeWidth={4} strokeDasharray="10 12" opacity={0.5 * LC.f} />
+            <circle cx={300} cy={650} r={150} fill="none" stroke="#fff" strokeWidth={4} strokeDasharray="10 12" opacity={0.5 * LC.f} />
             <LunaDib x={LC.x} y={LC.y} r={LC.r} />
-            {LC.f > 0.05 && <FlechaRecta x1={310} y1={570} x2={klerp(310, 225, LC.f)} y2={klerp(570, 470, LC.f)} p={1} color={KC.yellow} grosor={10} punta={24} />}
+            {LC.f > 0.05 && <FlechaRecta x1={312} y1={714} x2={klerp(312, 205, LC.f)} y2={klerp(714, 585, LC.f)} p={1} color={KC.yellow} grosor={10} punta={24} />}
           </>} persona={<g>
-            <PersonaSimple x={600} yPies={1170} alto={380} color={KC.cyan} cara="sonrie" />
-            <Cortaunas x={740} y={960} s={0.8} c={cortes.reduce((a, t) => a + Math.max(0, 1 - Math.abs(T - t) * 6), 0)} />
-            {cortes.map((t, i) => T > t && T < t + 1 && <path key={i} d="M 0 0 q 14 -10 28 0" transform={`translate(${800 + (T - t) * 120} ${950 - (T - t) * 160 + (T - t) ** 2 * 400}) rotate(${(T - t) * 400})`} stroke={KC.ink} strokeWidth={6} fill="none" />)}
+            <PersonaSimple x={620} yPies={1330} alto={560} color={KC.cyan} cara="sonrie" />
+            <Cortaunas x={826} y={1020} s={1.1} c={cortes.reduce((a, t) => a + Math.max(0, 1 - Math.abs(T - t) * 6), 0)} />
+            {cortes.map((t, i) => T > t && T < t + 1 && <path key={i} d="M 0 0 q 14 -10 28 0" transform={`translate(${900 + (T - t) * 120} ${1006 - (T - t) * 160 + (T - t) ** 2 * 400}) rotate(${(T - t) * 400})`} stroke={KC.ink} strokeWidth={6} fill="none" />)}
           </g>} />
-          <Onomato T={T} at={cortes[0]} dur={0.5} x={820} y={860} texto="¡CLIC!" tam={80} color={KC.yellow} />
-          <Onomato T={T} at={cortes[1]} dur={0.5} x={840} y={850} texto="¡CLIC!" tam={80} color={KC.yellow} />
-          <TextoSvg x={230} y={800} tam={110} color={KC.yellow} rot={-5} s={klerp(0.4, 1, kprog(T, K.Cierre + 2.2, K.Cierre + 2.6, kEase.rebote))} o={kprog(T, K.Cierre + 2.2, K.Cierre + 2.3)}>+3.8 CM</TextoSvg>
+          <Onomato T={T} at={cortes[0]} dur={0.5} x={870} y={840} texto="¡CLIC!" tam={80} color={KC.yellow} />
+          <Onomato T={T} at={cortes[1]} dur={0.5} x={890} y={820} texto="¡CLIC!" tam={80} color={KC.yellow} />
+          <TextoSvg x={250} y={960} tam={120} color={KC.yellow} rot={-5} s={klerp(0.4, 1, kprog(T, K.Cierre + 2.2, K.Cierre + 2.6, kEase.rebote))} o={kprog(T, K.Cierre + 2.2, K.Cierre + 2.3)}>+3.8 CM</TextoSvg>
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 2.4} until={K.Outro - 0.1} texto="un poquito más lejos" x={660} y={300} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Cierre + 2.4} until={K.Outro - 0.1} texto="un poquito más lejos" x={660} y={420} tam={40} borde={KC.yellow} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Espejos - 0.1} texto="La Luna *se aleja de ti.*" />

@@ -197,6 +197,7 @@ function MedidorG({ T, at, until, valor, etiqueta, texto, x = 90, y = 740, ancho
 }
 // Subtítulo con *dorado* y _cursiva_ (para los nombres científicos).
 function SubIt({ T, at, until, texto, idx, color = KC.gold2, tam = 62 }) {
+  if (!CINE_OPC.subtitulos) return null;
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
@@ -255,6 +256,8 @@ function MilSexosShot() {
   const K = { G: CUES.Gancho, H: CUES.Hongo, L: CUES.Laminas, S: CUES.Sexo, V: CUES.Versiones, R: CUES.Regla, F: CUES.Fibula, P: CUES.Pregunta, X: CUES.Extrano, E: CUES.Estudio, O: CUES.Oreja, M: CUES.Mone, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const TRON = { x: 70, y: 860, w: 900, h: 160 };
+  // pase cine: el tronco del gancho y del cierre, 1.3× y centrado en el cuadro (la barra de 10 cm crece igual: 170 → 221 px)
+  const ZG = 'translate(-136 -210) scale(1.3)';
   const abreGota = kprog(T, K.G + 0.35, K.G + 0.9, kEase.sale);   // la gota cae y el abanico seco se abre (antes del s 1)
   const caeGota = kprog(T, K.G, K.G + 0.4);
   // laminillas: se secan y se reabren con la lluvia
@@ -266,18 +269,18 @@ function MilSexosShot() {
       {/* 1 · gancho: tronco con abanicos; ♀ ♂ tachados → 23,328 · y se come */}
       <Escena T={T} a={K.G} b={K.H} zoom={0.05} origen="50% 50%">
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform={ZG}>
           <Tronco {...TRON} />
           {ABS.map(([px, py, k, r], i) => <Abanico key={i} T={T} x={TRON.x + px} y={TRON.y + 20 + py} s={k} rot={r} seed={i + 1} seco={i === 2 ? 1 - abreGota : 0} />)}
           {caeGota < 1 && <path d="M 0 -26 Q 11 0 0 11 Q -11 0 0 -26 Z" transform={`translate(${TRON.x + 430} ${klerp(380, TRON.y - 40, caeGota * caeGota)})`} fill="#7fd0ff" stroke={KC.ink} strokeWidth={3} />}
           {T < K.G + 1.4 && <g opacity={1 - kprog(T, K.G + 1.1, K.G + 1.4)}>
-            <SimbSexo x={170} y={500} tipo="f" s={1 + 0.06 * Math.sin(T * 9)} color={KC.pink} />
-            <SimbSexo x={400} y={520} tipo="m" s={1 + 0.06 * Math.sin(T * 9 + 1)} color={KC.blue} />
-            <path d="M 70 640 L 520 400" stroke={KC.red} strokeWidth={22} strokeLinecap="round" strokeDasharray="520" strokeDashoffset={520 * (1 - kprog(T, K.G + 0.6, K.G + 0.9))} />
+            <SimbSexo x={260} y={500} tipo="f" s={1 + 0.06 * Math.sin(T * 9)} color={KC.pink} />
+            <SimbSexo x={480} y={520} tipo="m" s={1 + 0.06 * Math.sin(T * 9 + 1)} color={KC.blue} />
+            <path d="M 160 640 L 610 400" stroke={KC.red} strokeWidth={22} strokeLinecap="round" strokeDasharray="520" strokeDashoffset={520 * (1 - kprog(T, K.G + 0.6, K.G + 0.9))} />
           </g>}
-          <Plato x={850} y={1090} s={0.9} p={kprog(T, K.G + 3.6, K.G + 4.0)} />
-          {T > K.G + 3.8 && <Tenedor x={960} y={1010} rot={30 - 10 * kprog(T, K.G + 3.8, K.G + 4.3, kEase.sale)} />}
-        </>)}
+          <Plato x={700} y={1160} s={0.9} p={kprog(T, K.G + 3.6, K.G + 4.0)} />
+          {T > K.G + 3.8 && <Tenedor x={810} y={1080} rot={30 - 10 * kprog(T, K.G + 3.8, K.G + 4.3, kEase.sale)} />}
+        </g>)}
       </Escena>
       {/* 2 · el hongo de cerca: abanico peludo, sin pie, pegado a la madera */}
       <Escena T={T} a={K.H} b={K.L} zoom={0.06}>
@@ -301,14 +304,14 @@ function MilSexosShot() {
       <Escena T={T} a={K.S} b={K.V} zoom={0.05}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={20} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 260)">
           <ellipse cx={120} cy={1010} rx={42} ry={26} fill="#e9dfc9" stroke={KC.ink} strokeWidth={5} transform="rotate(-10 120 1010)" />
           <Tubo x1={150} x2={1040} y={1005} h={56} p={kprog(T, K.S + 0.1, K.S + 1.6, kEase.sale)} color={KC.mint} />
           <Nucleo x={klerp(150, 560, kprog(T, K.S + 0.3, K.S + 1.4))} y={1005} r={18} color={MS.azul} p={kprog(T, K.S + 0.3, K.S + 0.6)} />
           {/* núcleo ampliado con las dos zonas */}
           {(() => { const u = kprog(T, K.S + 1.4, K.S + 2.0, kEase.sale); if (u <= 0) return null; return <g>
-            <line x1={560} y1={985} x2={540} y2={950} stroke={KC.texto} strokeWidth={4} strokeDasharray="10 8" opacity={u} />
-            <g transform={`translate(540 740) scale(${u})`}>
+            <line x1={560} y1={985} x2={540} y2={962} stroke={KC.texto} strokeWidth={4} strokeDasharray="10 8" opacity={u} />
+            <g transform={`translate(540 700) scale(${1.25 * u})`}>
               <circle r={210} fill="rgba(77,163,255,.18)" stroke={MS.azul} strokeWidth={8} />
               {/* cromosoma con la zona A */}
               <g transform="translate(-80 0) rotate(-12)"><rect x={-22} y={-140} width={44} height={280} rx={22} fill="#e8dcff" stroke={KC.ink} strokeWidth={5} />
@@ -316,22 +319,22 @@ function MilSexosShot() {
               <g transform="translate(90 10) rotate(14)"><rect x={-22} y={-120} width={44} height={240} rx={22} fill="#e8dcff" stroke={KC.ink} strokeWidth={5} />
                 <rect x={-22} y={30} width={44} height={46} fill={KC.cyan} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.S + 2.8, K.S + 3.1)} /></g>
             </g></g>; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · versiones: rueda A (288) y rueda B (81) */}
       <Escena T={T} a={K.V} b={K.R} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <Rueda x={290} y={930} r={200} n={288} p={kprog(T, K.V + 0.2, K.V + 1.8)} giro={T * 0.15} />
-          <Rueda x={790} y={950} r={150} n={81} p={kprog(T, K.V + 1.4, K.V + 2.4)} giro={-T * 0.2} />
+          <Rueda x={290} y={950} r={240} n={288} p={kprog(T, K.V + 0.2, K.V + 1.8)} giro={T * 0.15} />
+          <Rueda x={790} y={970} r={180} n={81} p={kprog(T, K.V + 1.4, K.V + 2.4)} giro={-T * 0.2} />
         </>)}
       </Escena>
       {/* 6 · la regla: distintas en A y en B */}
       <Escena T={T} a={K.R} b={K.F} zoom={0.03}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={14} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.15) translate(-540 -830)">
           {TXT.pruebas.map(([izq, der, res], i) => { const a = K.R + i * segR, b = a + segR; if (T < a - 0.05 || T > b + 0.05) return null;
             const ap = kprog(T, a + 0.05, a + segR * 0.55, kEase.sale), ok = i === 2, fus = ok ? kprog(T, a + segR * 0.55, a + segR * 0.75) : 0;
             const gap = klerp(330, ok ? 0 : 60, ap);
@@ -348,7 +351,7 @@ function MilSexosShot() {
                   <path d={ok ? 'M -34 2 L -8 28 L 38 -26' : 'M -28 -28 L 28 28 M 28 -28 L -28 28'} stroke={c} strokeWidth={16} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>; })()}
               {T > a + segR * 0.62 && <text x={540} y={1100} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={ok ? KC.mint : KC.red}>{res}</text>}
             </g>; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 7 · la fíbula: dos núcleos por célula y el ganchito que los reparte */}
       <Escena T={T} a={K.F} b={K.P} zoom={0.04}>
@@ -358,7 +361,7 @@ function MilSexosShot() {
           // Esquema (Kleijburg y Wösten 2025): en la punta, el par se divide; un núcleo hijo entra al ganchito (fíbula),
           // se cierran los tabiques y ese núcleo pasa HACIA ATRÁS a la célula de detrás de la punta.
           // Resultado: la punta y la célula de atrás quedan cada una con un núcleo azul y uno naranja.
-          const y = 930, SEP = 820;
+          const y = 930, SEP = 820;   // (pase cine: todo el esquema baja 120 px con el <g> de abajo)
           const div = kprog(T, K.F + 0.8, K.F + 1.6, kEase.suave);            // se dividen los dos núcleos de la punta
           const gancho = kprog(T, K.F + 0.6, K.F + 1.7, kEase.sale);          // crece el ganchito hacia atrás
           const tabique = kprog(T, K.F + 1.7, K.F + 2.0);                     // aparece el tabique nuevo
@@ -366,7 +369,7 @@ function MilSexosShot() {
           const arco = 'M 900 880 C 900 790 760 790 760 880';
           const bz = (u) => { const P = [[900, 880], [900, 790], [760, 790], [760, 880]], m = 1 - u; return [0, 1].map((k) => m * m * m * P[0][k] + 3 * m * m * u * P[1][k] + 3 * m * u * u * P[2][k] + u * u * u * P[3][k]); };
           const [nx, ny] = viaje > 0 ? bz(viaje) : [klerp(960, 900, div), klerp(y, 880, div)];
-          return <>
+          return <g transform="translate(0 120)">
             <Tubo x1={30} x2={1050} y={y} h={110} color={KC.mint} septos={[300, 560]} />
             <line x1={SEP} y1={y - 51} x2={SEP} y2={y + 51} stroke={KC.mint} strokeWidth={5} opacity={0.8 * tabique} />
             {[165, 430].map((cx, i) => <g key={i}><Nucleo x={cx - 40} y={y} color={MS.azul} /><Nucleo x={cx + 40} y={y} color={MS.naranja} /></g>)}
@@ -378,19 +381,32 @@ function MilSexosShot() {
             {/* naranjas: uno se queda en la punta; su copia entra al gancho y sale atrás */}
             <Nucleo x={980} y={y} color={MS.naranja} />
             {div > 0 && <Nucleo x={viaje >= 1 ? 760 : nx} y={viaje >= 1 ? y : ny} r={viaje >= 1 ? 16 : 13} color={MS.naranja} p={kprog(T, K.F + 0.8, K.F + 1.0)} />}
-          </>; })())}
+          </g>; })())}
       </Escena>
       {/* 8 · re-gancho */}
       <Escena T={T} a={K.P} b={K.X} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Interrogacion T={T} x={290} y={1170} tam={480} />)}
+        {fsvg(<Interrogacion T={T} x={290} y={1330} tam={480} />)}
       </Escena>
       {/* 9 · con un extraño vs con un hermano */}
       <Escena T={T} a={K.X} b={K.E} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
           {/* hifa desconocida (otro color) y hermana (mismo color) junto a cada medidor */}
-          <rect x={50} y={700} width={980} height={350} rx={30} fill="rgba(14,15,18,.82)" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.X + 0.1, K.X + 0.4)} />
+          <rect x={50} y={680} width={980} height={700} rx={30} fill="rgba(14,15,18,.82)" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.X + 0.1, K.X + 0.4)} />
+          {(() => { const u1 = kprog(T, K.X + 0.1, K.X + 1.0, kEase.sale), u2 = kprog(T, K.X + 2.2, K.X + 3.0, kEase.sale);
+            return <>
+              <g opacity={kprog(T, K.X + 0.1, K.X + 0.4)}>
+                <Tubo x1={-60} x2={klerp(200, 540, u1)} y={920} h={80} color={MS.azul} />
+                <Tubo x1={1140} x2={klerp(880, 540, u1)} y={920} h={80} color={MS.naranja} />
+                <Nucleo x={klerp(200, 540, u1) - 80} y={920} color={MS.azul} /><Nucleo x={klerp(880, 540, u1) + 80} y={920} color={MS.naranja} />
+              </g>
+              <g opacity={kprog(T, K.X + 2.2, K.X + 2.5)}>
+                <Tubo x1={-60} x2={klerp(200, 480, u2)} y={1250} h={80} color={MS.azul} />
+                <Tubo x1={1140} x2={klerp(880, 600, u2)} y={1250} h={80} color={MS.azul} />
+                <Nucleo x={klerp(200, 480, u2) - 80} y={1250} color={MS.azul} /><Nucleo x={klerp(880, 600, u2) + 80} y={1250} color={MS.azul} />
+              </g>
+            </>; })()}
         </>)}
       </Escena>
       {/* 10–11 · el estudio: 25 mercados de Oaxaca, Tabasco y Veracruz; la oreja de palo en los 6 con hongos */}
@@ -430,20 +446,20 @@ function MilSexosShot() {
       {/* 13 · cierre: el mismo tronco del inicio, ya con abanicos cosechados, y el mone servido */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="50% 50%">
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform={ZG}>
           <Tronco {...TRON} />
           {ABS.map(([px, py, k, r], i) => COSECHA.includes(i)
             ? <ellipse key={i} cx={TRON.x + px} cy={TRON.y + 24 + py} rx={18} ry={9} fill={MS.corte} stroke={KC.ink} strokeWidth={3} />
             : <Abanico key={i} T={T} x={TRON.x + px} y={TRON.y + 20 + py} s={k} rot={r} seed={i + 1} />)}
-          <Plato x={850} y={1090} s={0.9} p={kprog(T, K.C + 0.4, K.C + 0.8)} conMone />
-        </>)}
+          <Plato x={700} y={1160} s={0.9} p={kprog(T, K.C + 0.4, K.C + 0.8)} conMone />
+        </g>)}
       </Escena>
 
       {/* ---------- textos ---------- */}
       <NumeroGigante T={T} at={K.G + 1.2} until={K.H - 0.3} valor={TXT.numero} dur={1.6} x={300} y={480} tam={150} color={KC.pink} />
       <Pastilla T={T} at={K.G + 1.6} until={K.H - 0.3} x={40} y={605} texto={TXT.numEtq[0]} tam={30} />
       <Pastilla T={T} at={K.G + 1.9} until={K.H - 0.3} x={40} y={665} texto={TXT.numEtq[1]} tam={30} color={KC.gold2} />
-      <Chip T={T} at={K.G + 3.5} until={K.H - 0.3} texto={TXT.comen} x={290} y={750} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.5} until={K.H - 0.3} texto={TXT.comen} x={720} y={1420} tam={38} borde={KC.ink} />
       <Pastilla T={T} at={K.H + 0.9} until={K.L - 0.3} x={560} y={600} texto={TXT.comun} tam={44} puntero={{ lx: 560, ly: 600, px: 440, py: 640 }} />
       <Pastilla T={T} at={K.H + 1.3} until={K.L - 0.3} x={560} y={690} texto={TXT.cient} it tam={36} color={KC.gold2} puntero={{ lx: 560, ly: 690, px: 470, py: 720 }} />
       <Chip T={T} at={K.H + 2.2} until={K.L - 0.3} texto={TXT.tam} x={790} y={1030} tam={36} borde={KC.ink} />
@@ -452,22 +468,22 @@ function MilSexosShot() {
       <Chip T={T} at={K.L + 1.0} until={K.L + 2.4} texto={TXT.seco} x={300} y={440} tam={36} borde={KC.yellow} />
       <Chip T={T} at={K.L + 2.6} until={K.S - 0.3} texto={TXT.lluvia} x={320} y={440} tam={36} borde={KC.cyan} />
       <Chip T={T} at={K.S + 0.1} until={K.V - 0.3} texto={TXT.porDentro} x={540} y={410} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.S + 0.3} until={K.S + 1.6} x={80} y={1075} texto={TXT.espora} tam={32} />
-      <Etq T={T} at={K.S + 0.9} until={K.S + 1.6} x={600} y={1075} texto={TXT.hifa} tam={32} color={KC.mint} />
+      <Etq T={T} at={K.S + 0.3} until={K.S + 1.6} x={80} y={1335} texto={TXT.espora} tam={32} />
+      <Etq T={T} at={K.S + 0.9} until={K.S + 1.6} x={600} y={1335} texto={TXT.hifa} tam={32} color={KC.mint} />
       <Chip T={T} at={K.S + 1.6} until={K.V - 0.3} texto={TXT.sexoChip} x={540} y={490} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.S + 2.3} until={K.V - 0.3} x={380} y={700} lado="izq" texto={TXT.zonaA} tam={38} color={KC.gold2} />
-      <Etq T={T} at={K.S + 2.9} until={K.V - 0.3} x={700} y={820} texto={TXT.zonaB} tam={38} color={KC.cyan} />
-      <Pastilla T={T} at={K.V + 0.5} until={K.R - 0.3} x={290} y={1175} centro texto={TXT.ruedaA} tam={36} color={KC.gold2} borde={KC.gold2} />
-      <Pastilla T={T} at={K.V + 1.6} until={K.R - 0.3} x={790} y={1150} centro texto={TXT.ruedaB} tam={36} color={KC.cyan} borde={KC.cyan} />
+      <Etq T={T} at={K.S + 2.3} until={K.V - 0.3} x={360} y={914} lado="izq" texto={TXT.zonaA} tam={38} color={KC.gold2} />
+      <Etq T={T} at={K.S + 2.9} until={K.V - 0.3} x={720} y={1039} texto={TXT.zonaB} tam={38} color={KC.cyan} />
+      <Pastilla T={T} at={K.V + 0.5} until={K.R - 0.3} x={290} y={1235} centro texto={TXT.ruedaA} tam={36} color={KC.gold2} borde={KC.gold2} />
+      <Pastilla T={T} at={K.V + 1.6} until={K.R - 0.3} x={790} y={1200} centro texto={TXT.ruedaB} tam={36} color={KC.cyan} borde={KC.cyan} />
       <Chip T={T} at={K.V + 2.5} until={K.R - 0.3} texto={TXT.cuenta} x={350} y={520} tam={52} borde={KC.pink} />
       <Pastilla T={T} at={K.V + 3.0} until={K.R - 0.3} x={60} y={620} texto={TXT.raper} tam={30} />
-      <Chip T={T} at={K.R + 0.1} until={K.F - 0.3} texto={TXT.reglaChip} x={540} y={470} tam={36} borde={KC.gold} />
-      <Chip T={T} at={K.F + 0.2} until={K.P - 0.3} texto={TXT.dosNucleos} x={540} y={1080} tam={32} borde={KC.mint} />
-      <Etq T={T} at={K.F + 1.4} until={K.P - 0.3} x={700} y={780} lado="izq" texto={TXT.fibula} tam={40} color={KC.gold2} />
-      <NumeroGigante T={T} at={K.P + 0.05} until={K.X - 0.2} valor={TXT.numero} dur={0.01} desde={TXT.numero} x={290} y={500} tam={130} color={KC.yellow} />
-      <MedidorG T={T} at={K.X + 0.3} until={K.E - 0.3} valor={(t) => 0.98 * kprog(t, K.X + 0.5, K.X + 1.6, kEase.sale)} etiqueta={TXT.extrano} texto={TXT.extranoV} x={90} y={730} />
-      <MedidorG T={T} at={K.X + 2.2} until={K.E - 0.3} valor={(t) => 0.275 * kprog(t, K.X + 2.4, K.X + 3.2, kEase.sale)} etiqueta={TXT.hermano} texto={TXT.hermanoV} x={90} y={895} color={KC.yellow} />
-      <Chip T={T} at={K.X + 3.4} until={K.E - 0.3} texto={TXT.extranoChip} x={540} y={1120} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.R + 0.1} until={K.F - 0.3} texto={TXT.reglaChip} x={540} y={560} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.F + 0.2} until={K.P - 0.3} texto={TXT.dosNucleos} x={540} y={1250} tam={32} borde={KC.mint} />
+      <Etq T={T} at={K.F + 1.4} until={K.P - 0.3} x={700} y={900} lado="izq" texto={TXT.fibula} tam={40} color={KC.gold2} />
+      <NumeroGigante T={T} at={K.P + 0.05} until={K.X - 0.2} valor={TXT.numero} dur={0.01} desde={TXT.numero} x={290} y={640} tam={130} color={KC.yellow} />
+      <MedidorG T={T} at={K.X + 0.3} until={K.E - 0.3} valor={(t) => 0.98 * kprog(t, K.X + 0.5, K.X + 1.6, kEase.sale)} etiqueta={TXT.extrano} texto={TXT.extranoV} x={90} y={720} />
+      <MedidorG T={T} at={K.X + 2.2} until={K.E - 0.3} valor={(t) => 0.275 * kprog(t, K.X + 2.4, K.X + 3.2, kEase.sale)} etiqueta={TXT.hermano} texto={TXT.hermanoV} x={90} y={1050} color={KC.yellow} />
+      <Chip T={T} at={K.X + 3.4} until={K.E - 0.3} texto={TXT.extranoChip} x={540} y={1450} tam={34} borde={KC.ink} />
       <TarjetaCorta T={T} at={K.E + 0.3} until={K.E + 3.4} anio={TXT.anio} quien={TXT.quien} revista={TXT.revista} x={540} y={440} />
       <Chip T={T} at={K.E + 3.6} until={K.O - 0.2} texto={TXT.entrevistas} x={540} y={470} tam={40} borde={KC.ink} />
       <Pastilla T={T} at={K.O + 0.2} until={K.M - 0.3} x={60} y={400} texto={TXT.orejaPalo} tam={44} color={KC.gold2} />
@@ -481,15 +497,16 @@ function MilSexosShot() {
       <NumeroGigante T={T} at={K.C + 1.6} until={K.Ou} valor={TXT.numero} desde={TXT.numero} dur={0.01} x={330} y={660} tam={100} color={KC.pink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="10 cm" largo={170} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="10 cm" largo={221} />
       <BarraEscala T={T} at={K.H} until={K.L} texto="1 cm" largo={150} />
       <BarraEscala T={T} at={K.L} until={K.S} texto="1 cm" largo={190} />
       <BarraEscala T={T} at={K.S} until={K.V} texto="10 µm (núcleo: esquemático)" largo={110} />
       <BarraEscala T={T} at={K.V} until={K.R} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.R} until={K.P} texto="10 µm" largo={130} />
+      <BarraEscala T={T} at={K.R} until={K.F} texto="10 µm" largo={150} />
+      <BarraEscala T={T} at={K.F} until={K.P} texto="10 µm" largo={130} />
       <BarraEscala T={T} at={K.E} until={K.M} texto="mapa esquemático · 100 km" largo={110} />
       <BarraEscala T={T} at={K.M} until={K.C} texto="10 cm" largo={160} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={170} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={221} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <SubIt T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No tiene dos sexos: *más de 23 mil.*" />

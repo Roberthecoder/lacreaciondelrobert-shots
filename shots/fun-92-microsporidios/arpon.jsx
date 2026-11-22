@@ -87,33 +87,38 @@ function ArponShot() {
   const K = { G: CUES.Gancho, Q: CUES.Quien, Pa: CUES.Pariente, R: CUES.Resorte, D: CUES.Dispara, V: CUES.Viaja, P: CUES.Pregunta, E: CUES.Estudio, Ve: CUES.Velocidad, Ps: CUES.Pasteur, Ge: CUES.Genoma, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const disp0 = kprog(T, K.G + 0.35, K.G + 1.2, kEase.sale);
+  // pase a mano cine: la escena del gancho y del cierre va en diagonal y 1.25× (espora abajo a la izquierda, célula arriba a la derecha)
+  const DIAG = 'translate(260 1340) rotate(-30) scale(1.25) translate(-190 -900)';
+  // paso de «por dentro» (espora grande al centro) al disparo en diagonal
+  const qD = kprog(T, K.D - 0.2, K.D + 0.6, kEase.suave);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la «cápsula» dispara su arpón */}
       <Escena T={T} a={K.G} b={K.Q} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={26} />
-        {fsvg(<>
+        {fsvg(<g transform={DIAG}>
           <Celula T={T} x={930} y={760} r={300} />
           <Espora T={T} x={190} y={900} s={0.9} rot={-14 + Math.sin(T * 2) * 3 * (1 - disp0)} tubo={disp0} largo={880} onda={50} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 2 · solo se multiplica dentro de células */}
       <Escena T={T} a={K.Q} b={K.Pa} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<Celula T={T} x={540} y={860} r={340} esporas={kprog(T, K.Q + 0.6, K.Q + 3.0) * 8} cx={-60} cy={-40} />)}
+        {fsvg(<Celula T={T} x={540} y={940} r={340} s={1.4} esporas={kprog(T, K.Q + 0.6, K.Q + 3.0) * 8} cx={-60} cy={-40} />)}
       </Escena>
       {/* 3 · pariente de los hongos y tamaño */}
       <Escena T={T} a={K.Pa} b={K.R} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <g opacity={1 - kprog(T, K.Pa + 2.4, K.Pa + 2.8)}>
+          <g opacity={1 - kprog(T, K.Pa + 2.5, K.Pa + 2.9)} transform="translate(540 980) scale(1.4) translate(-540 -880)">
+            <path d="M 540 1080 L 540 860 M 540 860 Q 420 760 300 700 M 540 860 Q 660 760 780 700" stroke={KC.ink} strokeWidth={16} fill="none" strokeLinecap="round" opacity={0.3} />
             <path d="M 540 1080 L 540 860 M 540 860 Q 420 760 300 700 M 540 860 Q 660 760 780 700" stroke={KC.ink} strokeWidth={16} fill="none" strokeLinecap="round" pathLength={1} strokeDasharray={`${kprog(T, K.Pa + 0.2, K.Pa + 1.2)} 1`} />
-            <g opacity={kprog(T, K.Pa + 0.9, K.Pa + 1.3)}><Seta x={300} y={690} s={0.45} /></g>
-            <g opacity={kprog(T, K.Pa + 1.1, K.Pa + 1.5)}><Espora T={T} x={780} y={650} s={0.45} /></g>
+            <g opacity={0.75 + 0.25 * kprog(T, K.Pa + 0.9, K.Pa + 1.3)}><Seta x={300} y={690} s={0.7} /></g>
+            <g opacity={0.75 + 0.25 * kprog(T, K.Pa + 1.1, K.Pa + 1.5)}><Espora T={T} x={770} y={640} s={0.7} /></g>
           </g>
-          <g opacity={kprog(T, K.Pa + 2.6, K.Pa + 3.0)}>
+          <g opacity={kprog(T, K.Pa + 2.3, K.Pa + 2.7)} transform="translate(570 960) scale(1.3) translate(-540 -860)">
             <Globulo x={360} y={860} r={195} />
             <Espora T={T} x={760} y={860} s={0.38} />
           </g>
@@ -124,8 +129,8 @@ function ArponShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<>
-          <g opacity={kprog(T, K.D + 0.2, K.D + 0.8)}><Celula T={T} x={930} y={900} r={260} contenido={kprog(T, K.V + 2.6, K.V + 3.4)} cx={-120} cy={30} /></g>
-          <Espora T={T} x={klerp(540, 230, kprog(T, K.D - 0.2, K.D + 0.6, kEase.suave))} y={900} s={klerp(1.9, 1.0, kprog(T, K.D - 0.2, K.D + 0.6, kEase.suave))}
+          <g opacity={kprog(T, K.D + 0.2, K.D + 0.8)} transform="translate(1022 748) rotate(-32) scale(1.3)"><Celula T={T} x={0} y={0} r={260} contenido={kprog(T, K.V + 2.6, K.V + 3.4)} cx={-120} cy={30} /></g>
+          <Espora T={T} x={klerp(540, 250, qD)} y={klerp(940, 1230, qD)} s={klerp(2.6, 1.3, qD)} rot={klerp(0, -32, qD)}
             tubo={kprog(T, K.D + 0.8, K.D + 2.2, kEase.sale)} largo={470} onda={30}
             carga={1 - kprog(T, K.V + 0.4, K.V + 3.0)} viaje={T > K.V + 0.4 && T < K.V + 3.0 ? kprog(T, K.V + 0.4, K.V + 3.0) : -1} />
         </>)}
@@ -133,19 +138,28 @@ function ArponShot() {
       {/* 7 · re-gancho: ¿qué tan rápido? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.06}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Reloj T={T} x={300} y={820} r={170} t={0} pausa />)}
+        {fsvg(<Reloj T={T} x={340} y={760} r={220} t={0} pausa />)}
       </Escena>
       {/* 8–9 · el estudio y la velocidad: espora sola en el portaobjetos (así se filmó) */}
       <Escena T={T} a={K.E} b={K.Ps} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:'#1a2236' }}></div>
         {fsvg(<>
-          {Array.from({ length: 7 }, (_, i) => <rect key={i} x={((i * 170 - T * 160) % 1190 + 1190) % 1190 - 110} y={1000} width={130} height={90} rx={8} fill="#0b0f18" stroke="#3a4560" strokeWidth={5} opacity={1 - kprog(T, K.Ve - 0.3, K.Ve)} />)}
+          {/* la película: cada cuadro es la misma espora con el tubo un poco más afuera (pase a mano cine: antes eran cuadros vacíos) */}
+          <g opacity={1 - kprog(T, K.Ve - 0.3, K.Ve)}>
+            {Array.from({ length: 5 }, (_, i) => { const fx = ((i * 340 - T * 160) % 1700 + 1700) % 1700 - 320;
+              return <g key={i}>
+                <clipPath id={'cuadro92-' + i}><rect x={fx + 6} y={906} width={288} height={228} rx={8} /></clipPath>
+                <rect x={fx} y={900} width={300} height={240} rx={12} fill="#0b0f18" stroke="#56658a" strokeWidth={6} />
+                <g clipPath={`url(#cuadro92-${i})`}><Espora T={0} x={fx + 78} y={1020} s={0.42} tubo={i / 4} largo={760} onda={40} /></g>
+                {[0, 1, 2, 3, 4].map((h) => <React.Fragment key={h}><rect x={fx + 22 + h * 58} y={872} width={24} height={14} rx={4} fill="#56658a" /><rect x={fx + 22 + h * 58} y={1154} width={24} height={14} rx={4} fill="#56658a" /></React.Fragment>)}
+              </g>; })}
+          </g>
           <g opacity={kprog(T, K.Ve - 0.4, K.Ve)}>
-            <rect x={40} y={690} width={1000} height={280} rx={20} fill="rgba(180,220,255,.12)" stroke="#6a86b0" strokeWidth={5} />
-            <Espora T={T} x={110} y={830} s={0.17} tubo={kprog(T, K.Ve + 0.3, K.Ve + 1.13)} largo={5200} onda={160} />
+            <rect x={40} y={860} width={1000} height={340} rx={20} fill="rgba(180,220,255,.12)" stroke="#6a86b0" strokeWidth={5} />
+            <Espora T={T} x={110} y={1030} s={0.17} tubo={kprog(T, K.Ve + 0.3, K.Ve + 1.13)} largo={5200} onda={160} />
             {T > K.Ve + 1.6 && <g opacity={kprog(T, K.Ve + 1.6, K.Ve + 2.0)}>
-              <line x1={75} y1={1010} x2={975} y2={1010} stroke={KC.texto} strokeWidth={6} />
-              {Array.from({ length: 21 }, (_, i) => <line key={i} x1={75 + i * 45} y1={996} x2={75 + i * 45} y2={1024} stroke={KC.texto} strokeWidth={i % 5 === 0 ? 6 : 3} />)}
+              <line x1={75} y1={1250} x2={975} y2={1250} stroke={KC.texto} strokeWidth={6} />
+              {Array.from({ length: 21 }, (_, i) => <line key={i} x1={75 + i * 45} y1={1232} x2={75 + i * 45} y2={1268} stroke={KC.texto} strokeWidth={i % 5 === 0 ? 6 : 3} />)}
             </g>}
           </g>
         </>)}
@@ -154,75 +168,79 @@ function ArponShot() {
       <Escena T={T} a={K.Ps} b={K.Ge} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <GusanoSeda T={T} x={560} y={700} s={0.9} manchas={kprog(T, K.Ps + 0.5, K.Ps + 1.6)} />
-          <Capullo x={180} y={560} s={0.9} />
+          <GusanoSeda T={T} x={575} y={830} s={1.15} manchas={kprog(T, K.Ps + 0.5, K.Ps + 1.6)} />
+          <Capullo x={190} y={640} s={1.15} />
           {(() => { const u = kprog(T, K.Ps + 2.0, K.Ps + 3.4, kEase.sale); return <g opacity={kprog(T, K.Ps + 1.8, K.Ps + 2.2)}>
-            <line x1={160} y1={1120} x2={940} y2={1120} stroke={KC.ink} strokeWidth={8} />
-            <rect x={240} y={1120 - 260 * u} width={200} height={260 * u} fill={KC.mint} stroke={KC.ink} strokeWidth={7} />
-            <rect x={640} y={1120 - 65 * u} width={200} height={65 * u} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
-            <text x={340} y={1100 - 260 * u} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>1853</text>
-            <text x={740} y={1100 - 65 * u} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>1863</text>
-            <text x={340} y={1120 - 260 * u + 50} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>26,000 t</text>
+            <line x1={140} y1={1420} x2={940} y2={1420} stroke={KC.ink} strokeWidth={8} />
+            <rect x={220} y={1420 - 380 * u} width={240} height={380 * u} fill={KC.mint} stroke={KC.ink} strokeWidth={7} />
+            <rect x={620} y={1420 - 95 * u} width={240} height={95 * u} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
+            <text x={340} y={1396 - 380 * u} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>1853</text>
+            <text x={740} y={1396 - 95 * u} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>1863</text>
+            <text x={340} y={1420 - 380 * u + 60} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill="#0b1020">26,000 t</text>
           </g>; })()}
         </>)}
       </Escena>
       {/* 11 · genoma diminuto */}
       <Escena T={T} a={K.Ge} b={K.C} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {fsvg(<BarrasGenoma T={T} p={kprog(T, K.Ge + 0.2, K.Ge + 2.6)} />)}
+        {fsvg(<>
+          <g transform="translate(80 680) scale(1.15) translate(-80 -620)"><BarrasGenoma T={T} p={kprog(T, K.Ge + 0.2, K.Ge + 2.6)} /></g>
+          <g opacity={0.85}><Espora T={T} x={700} y={1480} s={1.7} rot={-10 + Math.sin(T * 2) * 3} /></g>
+        </>)}
       </Escena>
       {/* 12 · cierre: la misma espora, cargada, junto a la célula */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={26} />
-        {fsvg(<>
+        {fsvg(<g transform={DIAG}>
           <Celula T={T} x={930} y={760} r={300} />
           <Espora T={T} x={190} y={900} s={0.9} rot={-14 + Math.sin(T * 2) * 3} />
           <ellipse cx={190} cy={900} rx={140} ry={90} fill="none" stroke={KC.gold2} strokeWidth={6} opacity={0.5 + 0.4 * Math.sin(T * 4)} transform="rotate(-14 190 900)" />
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.2} until={K.G + 2.6} texto="no es una semilla" x={330} y={560} tam={42} borde={KC.red} />
-      <Chip T={T} at={K.G + 2.8} until={K.Q - 0.3} texto="el arpón: ~20 veces su largo" x={420} y={560} tam={36} borde={KC.gold2} />
-      <Etq T={T} at={K.Q + 0.4} until={K.Pa - 0.3} x={60} y={470} texto="microsporidio" tam={40} color={KC.texto} />
-      <Chip T={T} at={K.Q + 1.2} until={K.Pa - 0.3} texto="solo se multiplica dentro de células" x={540} y={1240} tam={30} borde={KC.mint} />
-      <Etq T={T} at={K.Pa + 0.9} until={K.Pa + 2.5} x={300} y={600} texto="hongos" tam={34} color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.Pa + 1.1} until={K.Pa + 2.5} x={760} y={560} texto="microsporidios" tam={34} color={KC.ink} lado="izq" />
-      <Chip T={T} at={K.Pa + 1.3} until={K.Pa + 2.5} texto="¿hongos o sus parientes más cercanos?" x={540} y={1180} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.Pa + 2.9} until={K.R - 0.3} x={200} y={600} texto="glóbulo rojo · ~8 µm" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Pa + 3.1} until={K.R - 0.3} x={640} y={720} texto="espora · 1–4 µm" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Pa + 3.3} until={K.R - 0.3} x={640} y={765} texto="(las que infectan humanos)" tam={22} color={KC.ink} />
-      <Chip T={T} at={K.R + 0.2} until={K.D - 0.3} texto="POR DENTRO · LA ESPORA" x={540} y={420} tam={32} borde={KC.lilac} mono />
-      <Etq T={T} at={K.R + 0.7} until={K.D - 0.2} x={300} y={620} texto="tubo polar (enrollado)" tam={30} color={MO.tubo} />
-      <Etq T={T} at={K.R + 1.3} until={K.D - 0.2} x={300} y={1150} texto="pared gruesa" tam={30} color={MO.pared2} />
-      <Etq T={T} at={K.R + 1.8} until={K.D - 0.2} x={640} y={1080} texto="contenido con 2 núcleos" tam={28} color={MO.nucleo} />
-      <Etq T={T} at={K.D + 1.6} until={K.V + 0.2} x={560} y={600} texto="célula" tam={32} color={KC.texto} />
-      <Chip T={T} at={K.D + 2.0} until={K.V - 0.2} texto="se clava en la célula" x={380} y={470} tam={36} borde={KC.gold2} />
-      <Chip T={T} at={K.V + 0.5} until={K.P - 0.3} texto="el contenido viaja por el tubo" x={370} y={470} tam={34} borde={KC.pink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ve - 0.3} anio="2020" quien="Jaroenlak et al. · NYU" revista="PLoS Pathogens, 2020 · microscopía de alta velocidad" x={540} y={760} />
-      <Chip T={T} at={K.Ve + 0.2} until={K.Ps - 0.3} texto="sin célula: así lo filmaron" x={420} y={470} tam={30} borde={KC.cyan} mono />
-      <EtqMix T={T} at={K.Ve + 1.2} until={K.Ps - 0.3} x={540} y={540} centro partes={[['≈ 235–336 µm/s', false]]} tam={56} color={KC.gold2} />
-      <Etq T={T} at={K.Ve + 1.4} until={K.Ps - 0.3} x={360} y={605} texto="(promedios de 3 especies)" tam={24} color={KC.texto} />
-      <Etq T={T} at={K.Ve + 2.0} until={K.Ps - 0.3} x={75} y={1070} texto="≈ 20 × la espora · < 1 s" tam={32} color={KC.texto} />
-      <TarjetaEstudio T={T} at={K.Ps + 0.6} until={K.Ps + 1.9} anio="1865" quien="Louis Pasteur · pebrina" revista="1865–1870 · gusano de seda" x={540} y={1050} />
-      <EtqMix T={T} at={K.Ps + 0.8} until={K.Ge - 0.3} x={520} y={580} partes={[['pebrina: ', false], ['Nosema bombycis', true]]} tam={30} color={KC.ink} sombra={false} />
-      <Chip T={T} at={K.Ps + 2.4} until={K.Ge - 0.3} texto="capullos: 26,000 t → 6,500 t" x={540} y={470} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.Ge + 0.2} until={K.C - 0.3} texto="esquema · el humano se sale de la pantalla" x={540} y={430} tam={26} borde={KC.lilac} mono />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="un arpón que espera" x={400} y={560} tam={42} borde={KC.gold2} />
+      <Chip T={T} at={K.G + 0.2} until={K.G + 2.6} texto="no es una semilla" x={290} y={970} tam={42} borde={KC.red} />
+      <Chip T={T} at={K.G + 2.8} until={K.Q - 0.3} texto="el arpón: ~20 veces su largo" x={300} y={970} tam={36} borde={KC.gold2} />
+      <Etq T={T} at={K.Q + 0.4} until={K.Pa - 0.3} x={60} y={390} texto="microsporidio" tam={40} color={KC.texto} />
+      <Chip T={T} at={K.Q + 1.2} until={K.Pa - 0.3} texto="solo se multiplica dentro de células" x={540} y={1490} tam={34} borde={KC.mint} />
+      <Etq T={T} at={K.Pa + 0.9} until={K.Pa + 2.5} x={60} y={430} texto="hongos" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Pa + 1.1} until={K.Pa + 2.5} x={1010} y={520} texto="microsporidios" tam={36} color={KC.ink} lado="izq" />
+      <Chip T={T} at={K.Pa + 1.3} until={K.Pa + 2.5} texto="¿hongos o sus parientes más cercanos?" x={540} y={1350} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Pa + 2.9} until={K.R - 0.3} x={110} y={640} texto="glóbulo rojo · ~8 µm" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Pa + 3.1} until={K.R - 0.3} x={580} y={800} texto="espora · 1–4 µm" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Pa + 3.3} until={K.R - 0.3} x={580} y={850} texto="(las que infectan humanos)" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.R + 0.2} until={K.D - 0.3} texto="POR DENTRO · LA ESPORA" x={540} y={540} tam={34} borde={KC.lilac} mono />
+      <Etq T={T} at={K.R + 0.7} until={K.D - 0.2} x={300} y={680} texto="tubo polar (enrollado)" tam={34} color={MO.tubo} />
+      <Etq T={T} at={K.R + 1.3} until={K.D - 0.2} x={200} y={1200} texto="pared gruesa" tam={34} color={MO.pared2} />
+      <Etq T={T} at={K.R + 1.8} until={K.D - 0.2} x={500} y={1270} texto="contenido con 2 núcleos" tam={32} color={MO.nucleo} />
+      <Etq T={T} at={K.D + 1.6} until={K.V + 0.2} x={520} y={400} texto="célula" tam={36} color={KC.texto} />
+      <Chip T={T} at={K.D + 2.0} until={K.V - 0.2} texto="se clava en la célula" x={320} y={760} tam={38} borde={KC.gold2} />
+      <Chip T={T} at={K.V + 0.5} until={K.P - 0.3} texto="el contenido viaja por el tubo" x={320} y={760} tam={34} borde={KC.pink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ve - 0.3} anio="2020" quien="Jaroenlak et al. · NYU" revista="PLoS Pathogens, 2020 · microscopía de alta velocidad" x={540} y={570} />
+      <Chip T={T} at={K.Ve + 0.2} until={K.Ps - 0.3} texto="sin célula: así lo filmaron" x={420} y={640} tam={34} borde={KC.cyan} mono />
+      <EtqMix T={T} at={K.Ve + 1.2} until={K.Ps - 0.3} x={540} y={725} centro partes={[['≈ 235–336 µm/s', false]]} tam={62} color={KC.gold2} />
+      <Etq T={T} at={K.Ve + 1.4} until={K.Ps - 0.3} x={360} y={795} texto="(promedios de 3 especies)" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Ve + 2.0} until={K.Ps - 0.3} x={75} y={1325} texto="≈ 20 × la espora · < 1 s" tam={36} color={KC.texto} />
+      <TarjetaEstudio T={T} at={K.Ps + 0.6} until={K.Ps + 1.9} anio="1865" quien="Louis Pasteur · pebrina" revista="1865–1870 · gusano de seda" x={540} y={1180} />
+      <EtqMix T={T} at={K.Ps + 0.8} until={K.Ge - 0.3} x={400} y={650} partes={[['pebrina: ', false], ['Nosema bombycis', true]]} tam={34} color={KC.ink} sombra={false} />
+      <Chip T={T} at={K.Ps + 2.4} until={K.Ge - 0.3} texto="capullos: 26,000 t → 6,500 t" x={540} y={500} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.Ge + 0.2} until={K.C - 0.3} texto="esquema · el humano se sale de la pantalla" x={540} y={540} tam={28} borde={KC.lilac} mono />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="un arpón que espera" x={300} y={970} tam={42} borde={KC.gold2} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Q} texto="1 µm" largo={52} />
-      <BarraEscala T={T} at={K.Q} until={K.Pa} texto="5 µm (esquema)" largo={120} />
-      <BarraEscala T={T} at={K.Pa} until={K.R} texto="2 µm" largo={100} />
-      <BarraEscala T={T} at={K.R} until={K.D} texto="1 µm" largo={124} />
-      <BarraEscala T={T} at={K.D} until={K.P} texto="1 µm" largo={65} />
+      <BarraEscala T={T} at={K.G} until={K.Q} texto="1 µm" largo={65} />
+      <BarraEscala T={T} at={K.Q} until={K.Pa} texto="5 µm (esquema)" largo={168} />
+      <BarraEscala T={T} at={K.Pa} until={K.R} texto="2 µm" largo={130} />
+      <BarraEscala T={T} at={K.R} until={K.D} texto="1 µm" largo={170} />
+      <BarraEscala T={T} at={K.D} until={K.P} texto="1 µm" largo={85} />
       <BarraEscala T={T} at={K.Ve} until={K.Ps} texto="10 µm" largo={110} />
-      <BarraEscala T={T} at={K.Ps} until={K.Ge} texto="2 cm" largo={160} />
+      <BarraEscala T={T} at={K.Ps} until={K.Ge} texto="2 cm" largo={204} />
       <BarraEscala T={T} at={K.Ge} until={K.C} texto="esquema" largo={0} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 µm" largo={52} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 µm" largo={65} />
 
-      {/* subtítulos (idx = línea de narracion.json) */}
+      {/* subtítulos (idx = línea de narracion.json); en modo cine no se queman */}
+      {CINE_OPC.subtitulos && <>
       <Sub T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="No es una semilla: *dispara un arpón.*" />
       <Sub T={T} idx={1} at={K.Q + 0.1} until={K.Pa - 0.1} texto="Microsporidio: *vive de otras células.*" />
       <Sub T={T} idx={2} at={K.Pa + 0.1} until={K.R - 0.1} texto="Pariente de los hongos: *milésimas de milímetro.*" />
@@ -235,6 +253,7 @@ function ArponShot() {
       <Sub T={T} idx={9} at={K.Ps + 0.1} until={K.Ge - 0.1} texto="La seda de Francia *cayó a la cuarta parte.*" />
       <Sub T={T} idx={10} at={K.Ge + 0.1} until={K.C - 0.1} texto="De los *genomas más chicos.*" />
       <Sub T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Un arpón *que espera su célula.*" />
+      </>}
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 2.4, 'avatar_11_sorprendido', 'gancho'],

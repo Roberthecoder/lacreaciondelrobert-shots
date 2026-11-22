@@ -131,29 +131,34 @@ function Oxido() {
       <Escena T={T} a={K.G} b={K.Mi} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(-54 0) scale(1.1)">
           <Reja T={T} oxido={oxG} />
           {dedo < 1 || T < K.G + 2.2 ? <Dedo x={klerp(420, 362, dedo)} y={klerp(700, 930, dedo)} polvo={kprog(T, K.G + 0.2, K.G + 0.8)} /> : null}
+          </g>
         </SvgCapa>
-        <Escala T={T} pxPorMm={2} x={60} y={1640} color={KC.ink} />
+        <Escala T={T} pxPorMm={2.2} x={60} y={1640} color={KC.ink} />
       </Escena>
       {/* 1 · la mina y el alto horno */}
       <Escena T={T} a={K.Mi} b={K.Re} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
+          <g transform="translate(560 980) scale(1.3) translate(-600 -860)">
           <AltoHorno T={T} x={600} y={1000} fuego={kprog(T, K.Mi + 3.0, K.Mi + 3.4)} />
-          {entra < 1 && <Roca x={klerp(220, 600, entra)} y={klerp(1060, 700, entra)} s={klerp(1.1, 0.5, entra)} o={1 - kprog(T, K.Mi + 3.2, K.Mi + 3.4)} />}
+          {entra < 1 && <Roca x={klerp(360, 600, entra)} y={klerp(1060, 700, entra)} s={klerp(1.1, 0.5, entra)} o={1 - kprog(T, K.Mi + 3.2, K.Mi + 3.4)} />}
           {Array.from({ length: 8 }, (_, i) => { const t0 = K.Mi + 3.6 + i * 0.35, p = kprog(T, t0, t0 + 1.6, kEase.suave); if (T < t0) return null;
             return <g key={i} opacity={1 - kprog(T, t0 + 1.3, t0 + 1.6)}><Atomo x={600 + Math.sin(i * 2.3) * 40 + p * (i % 2 ? 60 : -60)} y={klerp(520, 380, p)} r={30} color={QA.O} letra="O" tam={28} /></g>; })}
-          {sale > 0 && <g transform={`translate(${klerp(600, 860, sale)} ${1150})`}>
+          {sale > 0 && <g transform={`translate(${klerp(600, 820, sale)} ${1150})`}>
             <rect x={-160} y={-26} width={320} height={52} rx={26} fill={FE} stroke={KC.ink} strokeWidth={8} />
             <rect x={-130} y={-16} width={200} height={10} rx={5} fill="#fff" opacity={0.6} />
             <text x={0} y={14} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink}>Fe</text></g>}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 2–3 · por dentro: hierro + oxígeno + agua; la sal */}
       <Escena T={T} a={K.Re} b={mar} zoom={0.02}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
+          <g transform="translate(0 150)">
           <RedFe T={T} x0={150} y0={760} color={(c, f) => (f === 0 && Math.abs(c - 3.5) < 1 + reac * 3 && reac > 0) ? mixHex(FE, OXI, kclamp(reac * 1.4 - Math.abs(c - 3.5) * 0.25, 0, 1)) : FE} />
           {reac < 1 && <g opacity={1 - reac}><Mol tipo="o2" x={o2x} y={640} s={1.3} rot={T * 40} /></g>}
           <Gota x={600} y={gotaY} s={klerp(1, 1.6, crece)} o={1 - reac * 0.4} />
@@ -166,6 +171,7 @@ function Oxido() {
             return <g key={i} opacity={1 - kprog(T, K.Sa + 1.2 + d, K.Sa + 1.6 + d)}><Cubito x={x} y={klerp(260, 600, p)} rot={T * 90 + i * 40} /></g>; })}
           {T > K.Sa + 2.0 && Array.from({ length: 6 }, (_, i) => { const ph = ((T - K.Sa) * 1.6 + i / 6) % 1; const x = klerp(420, 780, ph), y = 720 - Math.sin(ph * Math.PI) * 120;
             return <path key={i} d={`M ${x - 16} ${y} l 10 -18 l 4 14 l 14 -20`} stroke={KC.yellow} strokeWidth={6} fill="none" strokeLinecap="round" />; })}
+          </g>
         </SvgCapa>
         <Escala T={T} pxPorMm={4.4e8} objetivo={500} x={60} y={1640} />
       </Escena>
@@ -173,15 +179,15 @@ function Oxido() {
       <Escena T={T} a={mar} b={K.Po} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Reja T={T} oxido={0.85} y={-60} />
-          {[0, 1, 2].map((i) => <path key={i} d={`M -20 ${1200 + i * 50} ${Array.from({ length: 12 }, (_, k) => `Q ${k * 100 + 50} ${1200 + i * 50 + Math.sin(T * 3 + k + i) * 24 - 30} ${k * 100 + 100} ${1200 + i * 50}`).join(' ')} L 1100 1920 L -20 1920 Z`} fill={['#2b8fd6', '#1f6fb0', '#185a91'][i]} stroke={KC.ink} strokeWidth={6} />)}
+          <Reja T={T} oxido={0.85} x={-54} y={-20} s={1.1} />
+          {[0, 1, 2].map((i) => <path key={i} d={`M -20 ${1290 + i * 50} ${Array.from({ length: 12 }, (_, k) => `Q ${k * 100 + 50} ${1290 + i * 50 + Math.sin(T * 3 + k + i) * 24 - 30} ${k * 100 + 100} ${1290 + i * 50}`).join(' ')} L 1100 1920 L -20 1920 Z`} fill={['#103a5a', '#0d3150', '#0a2842'][i]} stroke={KC.ink} strokeWidth={6} />)}
         </SvgCapa>
       </Escena>
       {/* 4 · el óxido es poroso: corte del barrote */}
       <Escena T={T} a={K.Po} b={K.Al} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.dark }}></div>
         <SvgCapa>
-          {(() => { const cx = 540, cy = 830, Rm = 280, nucleo = Rm * klerp(0.92, 0.55, capa), ox = Rm * klerp(0.98, 1.12, capa);
+          {(() => { const cx = 540, cy = 960, Rm = 340, nucleo = Rm * klerp(0.92, 0.55, capa), ox = Rm * klerp(0.98, 1.12, capa);
             return <g>
               <circle cx={cx} cy={cy} r={ox} fill={OXI} stroke={KC.ink} strokeWidth={10} />
               {Array.from({ length: 26 }, (_, i) => { const a = i * 2.4, rr = klerp(nucleo + 20, ox - 14, (i * 0.37) % 1); return <circle key={i} cx={cx + Math.cos(a) * rr} cy={cy + Math.sin(a) * rr} r={7 + (i % 4) * 4} fill={OXI3} />; })}
@@ -202,6 +208,7 @@ function Oxido() {
       <Escena T={T} a={K.Al} b={K.Pr} zoom={0.03}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
+          <g transform="translate(0 220)">
           <rect x={60} y={700} width={440} height={300} fill={FE} stroke={KC.ink} strokeWidth={10} />
           <path d={`M 60 700 L 60 640 Q 140 610 200 650 L 230 620 Q 320 600 380 650 L 420 625 Q 470 620 500 650 L 500 700 Z`} fill={OXI} stroke={KC.ink} strokeWidth={8} />
           {[120, 230, 330, 440].map((x, i) => <path key={i} d={`M ${x} 625 L ${x + 12} 680 L ${x - 6} 710`} stroke={KC.ink} strokeWidth={6} fill="none" />)}
@@ -212,26 +219,28 @@ function Oxido() {
             return <Mol key={'a' + i} tipo="o2" x={680 + i * 120 + p * 40} y={yy} s={0.55} rot={T * 50} />; })}
           <text x={280} y={1090} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>HIERRO</text>
           <text x={800} y={1090} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>ALUMINIO</text>
+          </g>
         </SvgCapa>
-        <Etq T={T} at={K.Al + 2.0} until={K.Pr - 0.2} x={1020} y={580} texto="Al₂O₃ (capa delgadísima)" lado="izq" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.Al + 2.0} until={K.Pr - 0.2} x={1020} y={800} texto="Al₂O₃ (capa delgadísima)" lado="izq" tam={30} color={KC.ink} />
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Pi} zoom={0.1}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <path d="M 120 1180 L 120 620" stroke={KC.ink} strokeWidth={44} strokeLinecap="round" /><path d="M 120 1180 L 120 620" stroke={OXI} strokeWidth={30} strokeLinecap="round" />
-          <text x={320} y={1100} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.orange} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 320 900)`}>?</text>
+          <path d="M 210 1400 L 210 560" stroke={KC.ink} strokeWidth={66} strokeLinecap="round" /><path d="M 210 1400 L 210 560" stroke={OXI} strokeWidth={46} strokeLinecap="round" />
+          <text x={590} y={1360} textAnchor="middle" style={{ font:`400 820px ${KF.titulo}` }} fill={KC.orange} stroke={KC.ink} strokeWidth={16} transform={`rotate(${Math.sin(T * 3) * 6} 590 1050)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 7 · el pilar de Delhi */}
       <Escena T={T} a={K.Pi} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa><Pilar x={360} y={1150} s={kprog(T, K.Pi - 0.2, K.Pi + 0.5, kEase.sale)} /></SvgCapa>
+        <SvgCapa><Pilar x={420} y={1330} s={1.35 * kprog(T, K.Pi - 0.2, K.Pi + 0.5, kEase.sale)} /></SvgCapa>
       </Escena>
       {/* 8 · el estudio: fósforo y capa compacta */}
       <Escena T={T} a={K.Es} b={K.Co}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
+          <g transform="translate(0 160)">
           <RedFe T={T} x0={150} y0={880} filas={3} color={() => '#6d625a'} />
           {Array.from({ length: 7 }, (_, i) => { const o = kprog(T, K.Es + 2.4 + i * 0.12, K.Es + 2.8 + i * 0.12); return <g key={i} opacity={o}><Atomo x={205 + i * 110} y={800} r={26} color={PCOL} letra="P" tam={24} /></g>; })}
           {(() => { const w = 900 * kprog(T, K.Es + 3.2, K.Es + 4.6, kEase.suave); return w > 0 && <g>
@@ -239,24 +248,27 @@ function Oxido() {
             {w > 600 && <text x={540} y={742} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill="#fff">δ-FeOOH + fosfatos</text>}</g>; })()}
           {[0, 1, 2].map((i) => { const t0 = K.Es + 4.4 + i * 0.5; const p = kprog(T, t0, t0 + 1.2); if (T < t0) return null; const yy = p < 0.5 ? klerp(470, 630, p * 2) : klerp(630, 470, (p - 0.5) * 2);
             return <Mol key={i} tipo="o2" x={460 + i * 200} y={yy} s={0.6} rot={T * 50} />; })}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 9 · el costo */}
       <Escena T={T} a={K.Co} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.coral} />
         <SvgCapa>
-          <Globo T={T} x={470} y={900} r={230} />
-          {Array.from({ length: 16 }, (_, i) => { const ph = ((T - K.Co) * 0.5 + i / 16) % 1, x = 120 + ((i * 197) % 840); return T > K.Co + 0.3 ? <path key={i} transform={`translate(${x} ${klerp(420, 1250, ph)}) rotate(${ph * 300 + i * 30})`} d="M -22 -8 L 18 -12 L 26 6 L -12 12 Z" fill={[OXI, OXI2, OXI3][i % 3]} stroke={KC.ink} strokeWidth={4} /> : null; })}
+          <Globo T={T} x={540} y={1000} r={300} />
+          {Array.from({ length: 16 }, (_, i) => { const ph = ((T - K.Co) * 0.5 + i / 16) % 1, x = 120 + ((i * 197) % 840); return T > K.Co + 0.3 ? <path key={i} transform={`translate(${x} ${klerp(600, 1420, ph)}) rotate(${ph * 300 + i * 30})`} d="M -22 -8 L 18 -12 L 26 6 L -12 12 Z" fill={[OXI, OXI2, OXI3][i % 3]} stroke={KC.ink} strokeWidth={4} /> : null; })}
         </SvgCapa>
       </Escena>
       {/* 10 · cierre: la reja del inicio, ya muy oxidada */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(-54 0) scale(1.1)">
           <Reja T={T} oxido={klerp(0.6, 1, kprog(T, K.Ci, K.Ci + 3))} />
           <g opacity={kprog(T, K.Ci + 1.2, K.Ci + 2.0)}>
             <Roca x={250} y={1060} s={0.9} o={0.92} />
             <Flecha x1={380} y1={1050} x2={560} y2={980} />
+          </g>
           </g>
         </SvgCapa>
       </Escena>
@@ -265,22 +277,22 @@ function Oxido() {
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 3.0} texto="¿mugre?" x={300} y={440} tam={52} />
       <Chip T={T} at={K.G + 2.4} until={K.Mi - 0.3} texto="óxido de hierro" y={1500} tam={50} borde={OXI2} />
       <Chip T={T} at={K.Mi + 0.3} until={K.Mi + 3.0} texto="en las rocas: óxido de hierro" y={1500} tam={40} borde={HEM} />
-      <Etq T={T} at={K.Mi + 0.5} until={K.Mi + 2.6} x={30} y={870} texto="hematita · Fe₂O₃" tam={27} color={KC.ink} />
+      <Etq T={T} at={K.Mi + 0.5} until={K.Mi + 2.6} x={30} y={1050} texto="hematita · Fe₂O₃" tam={27} color={KC.ink} />
       <Chip T={T} at={K.Mi + 3.4} until={K.Re - 0.3} texto="alto horno: le quita el oxígeno" y={1500} tam={38} borde={KC.orange} />
       <Chip T={T} at={K.Re + 0.3} until={K.Re + 2.4} texto="hierro + O₂ + H₂O" y={1500} tam={44} borde={ALOX} />
       <Chip T={T} at={K.Re + 3.0} until={K.Sa - 0.2} texto="los dos juntos → óxido" y={1500} tam={42} borde={OXI2} />
       <Chip T={T} at={K.Sa + 0.3} until={mar - 0.2} texto="sal: atrapa humedad y conduce" y={1480} tam={36} borde="#fff" />
-      <Medidor T={T} at={K.Sa + 1.2} until={mar - 0.2} valor={(t) => klerp(0.25, 0.9, kprog(t, K.Sa + 1.6, K.Sa + 3.2))} etiqueta="velocidad de oxidación" texto={(v) => v > 0.6 ? 'más rápida' : 'lenta'} y={1570} color={KC.orange} />
+      <Medidor T={T} at={K.Sa + 1.2} until={mar - 0.2} valor={(t) => klerp(0.25, 0.9, kprog(t, K.Sa + 1.6, K.Sa + 3.2))} etiqueta="velocidad de oxidación" texto={(v) => v > 0.6 ? 'más rápida' : 'lenta'} y={380} color={KC.orange} />
       <Chip T={T} at={mar + 0.3} until={K.Po - 0.2} texto="junto al mar: más óxido" y={1500} tam={44} borde={KC.cyan} />
-      <Etq T={T} at={K.Po + 0.6} until={K.Al - 0.3} x={60} y={1190} texto="óxido: grietas y poros" tam={34} color={OXI2} />
+      <Etq T={T} at={K.Po + 0.6} until={K.Al - 0.3} x={60} y={520} texto="óxido: grietas y poros" tam={34} color={OXI2} />
       <Chip T={T} at={K.Po + 2.4} until={K.Al - 0.3} texto="se descarapela → hierro nuevo al aire" y={1500} tam={34} borde={OXI2} />
       <Chip T={T} at={K.Al + 2.6} until={K.Pr - 0.2} texto="pasivación: la capa protege" y={1500} tam={40} borde={ALOX} />
       <Chip T={T} at={K.Pi + 0.3} until={K.Es - 0.3} texto="📍 Delhi, India" x={760} y={440} tam={44} borde={KC.leaf} />
       <TextoMas T={T} at={K.Pi + 1.2} until={K.Es - 0.3} texto="+1600 años" x={720} y={1500} tam={120} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2002" quien="R. Balasubramaniam · IIT Kanpur" revista="Current Science · pilar de hierro de Delhi" y={620} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2002" quien="R. Balasubramaniam · IIT Kanpur" revista="Current Science · pilar de hierro de Delhi" y={560} />
       <Chip T={T} at={K.Es + 2.6} until={K.Co - 0.3} texto="fósforo → capa compacta" y={1500} tam={44} borde={PCOL} />
-      <TextoMas T={T} at={K.Co + 0.4} until={K.Ci - 0.3} texto="2.5 billones USD" y={1480} tam={110} />
-      <Chip T={T} at={K.Co + 1.0} until={K.Ci - 0.3} texto="al año · estimación NACE IMPACT, 2016" y={1610} tam={32} borde={KC.gold} />
+      <TextoMas T={T} at={K.Co + 0.4} until={K.Ci - 0.3} texto="2.5 billones USD" y={420} tam={110} />
+      <Chip T={T} at={K.Co + 1.0} until={K.Ci - 0.3} texto="al año · estimación NACE IMPACT, 2016" y={540} tam={32} borde={KC.gold} />
       <Chip T={T} at={K.Ci + 1.6} until={K.Ou} texto="Fe → óxido de hierro, otra vez" y={1500} tam={40} borde={OXI2} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

@@ -84,7 +84,7 @@ function EscalaFija({ texto, largo = 160, x = 60, y = 1600, color = KC.texto }) 
 // Cocina de lado: piso, pared, estufa y cilindro, con la nube de gas que se junta abajo.
 // Piso de cocina con baldosas.
 function Piso({ y = 1200 }) {
-  return <g><rect x={0} y={y} width={KW} height={KH - y} fill="#6a4c37" />
+  return <g><rect x={0} y={y} width={KW} height={KH - y} fill="#4a3526" />
     {Array.from({ length: 9 }, (_, i) => <line key={'v' + i} x1={i * 135} y1={y} x2={i * 135 - 120} y2={KH} stroke="rgba(0,0,0,.18)" strokeWidth={5} />)}
     {[90, 230, 420, 680].map((d) => <line key={d} x1={0} y1={y + d} x2={KW} y2={y + d} stroke="rgba(0,0,0,.18)" strokeWidth={5} />)}
     <line x1={0} y1={y} x2={KW} y2={y} stroke={KC.ink} strokeWidth={9} /></g>;
@@ -103,7 +103,7 @@ function CocinaLado({ T, nube = 0, color = 'rgba(63,191,74,.45)', borde = OLOR, 
 }
 // Escuela de New London: silueta grande de acero y concreto, con el espacio cerrado de abajo en corte.
 function Escuela({ T, gas = 0, chispa = 0, flash = 0, gris = 0 }) {
-  const muro = mixHex('#d8d2c4', '#7c8088', gris), vidrio = mixHex('#7fc8ff', '#5a5f68', gris);
+  const muro = mixHex('#8f8a7e', '#5c6068', gris), vidrio = mixHex('#4f8fbf', '#3e434c', gris);
   return <g>
     <rect x={0} y={1080} width={KW} height={840} fill="#4a3c30" />
     <rect x={140} y={1000} width={800} height={110} fill="#3b2f25" stroke={KC.ink} strokeWidth={8} />
@@ -150,7 +150,8 @@ function Gas() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Piso />
+          <Piso y={1270} />
+          <g transform="translate(540 1010) scale(1.3) translate(-575 -1000)">
           <Estufa x={400} y={860} s={1} perilla={perilla} />
           <Manguera x0={610} y0={940} x1={880} y1={850} />
           <Cilindro x={900} y={1200} s={0.85} />
@@ -159,24 +160,25 @@ function Gas() {
             <path d="M -44 30 Q -44 -40 0 -46 Q 44 -40 44 30 L 56 44 L -56 44 Z" fill={KC.red} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
             <circle cx={0} cy={56} r={12} fill={KC.ink} />
           </g>
+          </g>
         </SvgCapa>
-        <EscalaFija texto="50 cm" largo={210} />
+        <EscalaFija texto="50 cm" largo={273} />
       </Escena>
       {/* 1 · qué es: el cilindro por dentro (rayos X) */}
       <Escena T={T} a={K.Q} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Cilindro x={540} y={1210} s={1.45} ventana={<g>
+          <Cilindro x={540} y={1290} s={1.75} ventana={<g>
             <clipPath id="vent"><circle cx={0} cy={-200} r={105} /></clipPath>
             <circle cx={0} cy={-200} r={110} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
             <g clipPath="url(#vent)">{flot.slice(0, 7).map(([u, v, r, t], i) => <MolG key={i} tipo={t} x={-110 + ((u * 220 + T * 30 * (i % 2 ? 1 : -1)) % 260 + 260) % 260} y={-290 + v * 180} s={0.42} rot={r + T * 25} />)}</g>
           </g>} />
-          <Olor T={T} x={540} y={600} f={0.6 * kprog(T, K.Q + 2.0, K.Q + 2.6)} n={2} color="rgba(63,191,74,.35)" alto={120} dash="4 18" />
-          <NarizIcono x={870} y={620} s={0.8} etq="casi nada" o={kprog(T, K.Q + 2.6, K.Q + 3.1)} />
+          <Olor T={T} x={540} y={520} f={0.6 * kprog(T, K.Q + 2.0, K.Q + 2.6)} n={2} color="rgba(63,191,74,.35)" alto={120} dash="4 18" />
+          <NarizIcono x={880} y={520} s={0.85} etq="casi nada" o={kprog(T, K.Q + 2.6, K.Q + 3.1)} />
         </SvgCapa>
-        <Etq T={T} at={K.Q + 0.6} until={K.A - 0.3} x={40} y={1080} texto="propano C₃H₈" />
-        <Etq T={T} at={K.Q + 1.2} until={K.A - 0.3} x={1040} y={1000} texto="butano C₄H₁₀" lado="izq" />
-        <EscalaFija texto="20 cm" largo={190} />
+        <Etq T={T} at={K.Q + 0.6} until={K.A - 0.3} x={30} y={1180} texto="propano C₃H₈" />
+        <Etq T={T} at={K.Q + 1.2} until={K.A - 0.3} x={1050} y={760} texto="butano C₄H₁₀" lado="izq" />
+        <EscalaFija texto="20 cm" largo={229} />
       </Escena>
       {/* 2 · el aviso: una gota de mercaptano entre muchas moléculas */}
       <Escena T={T} a={K.A} b={K.N} zoom={0.06}>
@@ -197,7 +199,7 @@ function Gas() {
       {/* 3 · tu nariz: neuronas olfativas */}
       <Escena T={T} a={K.N} b={K.P} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 200)">
           <rect x={0} y={560} width={KW} height={200} fill="#7d5968" stroke={KC.ink} strokeWidth={6} />
           <rect x={0} y={760} width={KW} height={60} fill="rgba(180,220,255,.25)" />
           {Array.from({ length: 6 }, (_, i) => { const x = 110 + i * 172, enc = i === 2 ? kprog(T, K.N + 1.6, K.N + 2.0) * (1 - 0.3 * kprog(T, K.N + 3.6, K.N + 4.4)) : (i === 4 ? 0.25 * kprog(T, K.N + 2.8, K.N + 3.2) : 0);
@@ -212,8 +214,8 @@ function Gas() {
             </g>; })}
           <MercaptanoBrilla T={T} x={klerp(480, 455, kprog(T, K.N + 0.3, K.N + 1.6))} y={klerp(1150, 900, kprog(T, K.N + 0.3, K.N + 1.6, kEase.suave))} s={0.65} rot={T * 20} />
           {[[200, 0.6], [780, 1.4], [900, 2.2]].map(([x0, d], i) => <MolG key={i} tipo="propano" x={x0 + Math.sin(T + i) * 30} y={klerp(1180, 950, kprog(T, K.N + d, K.N + d + 2.5, kEase.suave))} s={0.5} rot={T * 18 + i * 50} o={0.7} />)}
-        </SvgCapa>
-        <Etq T={T} at={K.N + 0.4} until={K.P - 0.3} x={40} y={380} texto="neuronas del olfato" color={KC.lilac} tam={30} />
+        </g></SvgCapa>
+        <Etq T={T} at={K.N + 0.4} until={K.P - 0.3} x={40} y={570} texto="neuronas del olfato" color={KC.lilac} tam={30} />
         <Chip T={T} at={K.N + 2.0} until={K.P - 0.3} texto="azufre → ¡alarma!" y={1500} tam={42} borde={KC.yellow} />
         <EscalaFija texto="20 µm" largo={150} />
       </Escena>
@@ -221,42 +223,44 @@ function Gas() {
       <Escena T={T} a={K.P} b={K.Pr} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <g transform="translate(540 1010) scale(1.3) translate(-575 -1000)">
           <CocinaLado T={T} nube={kprog(T, K.P + 0.3, K.P + 4.2, kEase.suave)} />
           <Olor T={T} x={980} y={1170} f={kprog(T, K.P + 1.0, K.P + 2.0)} n={2} alto={160} sep={40} />
-          <g transform="translate(60 1200)">{[0.25, 0.5, 0.75, 1].map((m) => <line key={m} x1={0} x2={30} y1={-170 * m} y2={-170 * m} stroke={KC.ink} strokeWidth={5} />)}
-            <rect x={0} y={-170 * kprog(T, K.P + 0.3, K.P + 4.2, kEase.suave)} width={14} height={170 * kprog(T, K.P + 0.3, K.P + 4.2, kEase.suave)} fill={OLOR} /></g>
+          </g>
+          <g transform="translate(40 1270)">{[0.25, 0.5, 0.75, 1].map((m) => <line key={m} x1={0} x2={30} y1={-221 * m} y2={-221 * m} stroke={KC.ink} strokeWidth={5} />)}
+            <rect x={0} y={-221 * kprog(T, K.P + 0.3, K.P + 4.2, kEase.suave)} width={14} height={221 * kprog(T, K.P + 0.3, K.P + 4.2, kEase.suave)} fill={OLOR} /></g>
         </SvgCapa>
         <Chip T={T} at={K.P + 0.6} until={K.Pr - 0.2} texto="más pesado que el aire" y={1500} tam={44} borde={OLOR} />
-        <EscalaFija texto="50 cm" largo={190} y={1640} />
+        <EscalaFija texto="50 cm" largo={247} y={1640} />
       </Escena>
       {/* 5 · ¿y si no huele? */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <CocinaLado T={T} nube={1} color="rgba(255,255,255,.18)" borde="#ffffff" dash="18 14" />
+          <g transform="translate(540 1010) scale(1.3) translate(-575 -1000)"><CocinaLado T={T} nube={1} color="rgba(255,255,255,.18)" borde="#ffffff" dash="18 14" /></g>
           <text x={240} y={1060} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 240 900)`}>?</text>
-          <NarizIcono x={230} y={1480} s={0.75} etq="0" o={kprog(T, K.Pr + 0.4, K.Pr + 0.8)} />
+          <NarizIcono x={830} y={500} s={0.85} etq="0" o={kprog(T, K.Pr + 0.4, K.Pr + 0.8)} />
         </SvgCapa>
       </Escena>
       {/* 6 · New London, Texas, 1937 */}
       <Escena T={T} a={K.Es} b={K.L} zoom={0.04}>
         <FondoLunares color="#9fb0c8" punto="rgba(255,255,255,.2)" />
         <SvgCapa>
-          <g transform="translate(0 60)"><Escuela T={T} gas={kprog(T, K.Es + 3.6, K.Es + 5.6, kEase.suave)} chispa={kprog(T, K.Es + 5.6, K.Es + 5.9) * (1 - kprog(T, K.Es + 6.9, K.Es + 7.1))}
+          <g transform="translate(540 960) scale(1.2) translate(-540 -840)"><Escuela T={T} gas={kprog(T, K.Es + 3.6, K.Es + 5.6, kEase.suave)} chispa={kprog(T, K.Es + 5.6, K.Es + 5.9) * (1 - kprog(T, K.Es + 6.9, K.Es + 7.1))}
             flash={kprog(T, K.Es + 6.7, K.Es + 6.85) * (1 - kprog(T, K.Es + 6.9, K.Es + 7.6))} gris={kprog(T, K.Es + 6.9, K.Es + 7.6)} /></g>
-          {T > K.Es + 3.6 && T < K.Es + 6.8 && [0, 1, 2].map((i) => { const p = ((T - K.Es - 3.6) * 0.8 + i / 3) % 1; return <circle key={i} cx={klerp(890, 600, p)} cy={1120 + Math.sin(p * 9 + i) * 12} r={10} fill="none" stroke="#e6edf7" strokeWidth={4} strokeDasharray="5 5" opacity={1 - p} />; })}
+          {T > K.Es + 3.6 && T < K.Es + 6.8 && [0, 1, 2].map((i) => { const p = ((T - K.Es - 3.6) * 0.8 + i / 3) % 1; return <circle key={i} cx={klerp(960, 612, p)} cy={1224 + Math.sin(p * 9 + i) * 14} r={12} fill="none" stroke="#e6edf7" strokeWidth={4} strokeDasharray="5 5" opacity={1 - p} />; })}
         </SvgCapa>
         <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.3} anio="1937" quien="New London, Texas" revista="una escuela · gas sin olor" y={470} />
-        <Etq T={T} at={K.Es + 3.8} until={K.Es + 6.6} x={880} y={1200} texto="fuga bajo el edificio" lado="izq" tam={30} />
-        <Chip T={T} at={K.Es + 5.7} until={K.Es + 6.7} texto="chispa (al parecer, una lijadora)" y={1500} tam={34} borde={KC.orange} />
-        <NumeroGigante T={T} at={K.Es + 7.3} until={K.L - 0.3} valor={300} dur={1.2} prefijo="≈ " etiqueta="personas murieron" y={1530} tam={120} color={KC.white} />
-        <EscalaFija texto="10 m" largo={150} y={1680} />
+        <Etq T={T} at={K.Es + 3.8} until={K.Es + 6.6} x={900} y={1340} texto="fuga bajo el edificio" lado="izq" tam={30} />
+        <Chip T={T} at={K.Es + 5.7} until={K.Es + 6.7} texto="chispa (al parecer, una lijadora)" y={1420} tam={34} borde={KC.orange} />
+        <NumeroGigante T={T} at={K.Es + 7.3} until={K.L - 0.3} valor={300} dur={1.2} prefijo="≈ " etiqueta="personas murieron" y={1420} tam={120} color={KC.white} />
+        <EscalaFija texto="10 m" largo={180} y={1680} />
       </Escena>
       {/* 7 · la ley de 1937 */}
       <Escena T={T} a={K.L} b={K.J} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <g transform={`translate(540 800) rotate(-3) scale(${klerp(0.6, 1, kprog(T, K.L, K.L + 0.4, kEase.rebote))})`}>
+          <g transform={`translate(540 800) rotate(-3) scale(${1.3 * klerp(0.6, 1, kprog(T, K.L, K.L + 0.4, kEase.rebote))})`}>
             <rect x={-260} y={-280} width={520} height={560} rx={14} fill={KC.paper} stroke={KC.ink} strokeWidth={9} />
             <text x={0} y={-190} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>LEY · TEXAS</text>
             <text x={0} y={-120} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#5a524a">House Bill 1017</text>
@@ -266,8 +270,8 @@ function Gas() {
               <text y={18} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.red}>1937</text>
             </g>
           </g>
-          <path d="M 120 1140 L 400 1140" stroke={GASGRIS} strokeWidth={26} strokeLinecap="round" />
-          <Olor T={T} x={420} y={1130} f={kprog(T, K.L + 1.8, K.L + 2.6)} n={2} alto={140} sep={40} />
+          <path d="M 120 1300 L 400 1300" stroke={GASGRIS} strokeWidth={26} strokeLinecap="round" />
+          <Olor T={T} x={420} y={1290} f={kprog(T, K.L + 1.8, K.L + 2.6)} n={2} alto={140} sep={40} />
         </SvgCapa>
         <Chip T={T} at={K.L + 0.5} until={K.J - 0.3} texto="ponerle olor al gas" y={1500} tam={44} borde={OLOR} />
       </Escena>
@@ -275,7 +279,7 @@ function Gas() {
       <Escena T={T} a={K.J} b={K.A2} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <g opacity={escalaJ}>
+          <g opacity={klerp(0.65, 1, escalaJ)}>
             <rect x={60} y={600} width={960} height={570} rx={30} fill="rgba(14,15,18,.82)" stroke={KC.ink} strokeWidth={6} />
             <line x1={560} y1={yLog(1e4) + 10} x2={560} y2={yLog(1e-6)} stroke={KC.texto} strokeWidth={8} />
             {[3, 0, -3].map((p) => <g key={p}><line x1={540} x2={580} y1={yLog(Math.pow(10, p))} y2={yLog(Math.pow(10, p))} stroke={KC.texto} strokeWidth={5} />
@@ -289,52 +293,57 @@ function Gas() {
             <path d={`M 860 ${yLog(1500) + 30} L 860 ${klerp(yLog(1500) + 30, yLog(8.7e-6) - 30, kprog(T, K.J + 4.4, K.J + 5.6, kEase.suave))}`} stroke={KC.yellow} strokeWidth={12} strokeLinecap="round" />
           </g>
         </SvgCapa>
-        <TarjetaEstudio T={T} at={K.J + 0.2} until={K.J + 2.7} anio="2003" quien="Nagata · Japón" revista="umbrales de olor · bolsa triangular" y={760} />
+        <TarjetaEstudio T={T} at={K.J + 0.2} until={K.J + 2.7} anio="2003" quien="Nagata · Japón" revista="umbrales de olor · bolsa triangular" y={380} />
         <Etq T={T} at={K.J + 3.2} until={K.A2 - 0.3} x={80} y={yLog(1500) - 60} texto="propano: 1,500 ppm" tam={30} color={KC.texto} lado="der" />
         <Etq T={T} at={K.J + 3.8} until={K.A2 - 0.3} x={80} y={yLog(8.7e-6) + 60} texto="etil mercaptano: 0.0000087 ppm" tam={28} color={KC.yellow} />
-        <NumeroGigante T={T} at={K.J + 5.2} until={K.A2 - 0.3} valor={170} dur={1.2} prefijo="≈ " sufijo=" millones ×" etiqueta="menos para olerlo" y={1520} tam={96} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.J + 5.2} until={K.A2 - 0.3} valor={170} dur={1.2} prefijo="≈ " sufijo=" millones ×" etiqueta="menos para olerlo" y={1340} tam={96} color={KC.yellow} />
       </Escena>
       {/* 9 · si huele a gas (guía oficial CDMX) */}
       <Escena T={T} a={K.A2} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <TarjetaPaso T={T} at={K.A2 + 0.3} x={200} y={900} n="1" texto="cierra la llave">
+          <Estufa x={360} y={1090} s={0.95} perilla={90} />
+          <Manguera x0={560} y0={1170} x1={830} y1={1080} />
+          <Cilindro x={850} y={1440} s={0.85} />
+          <TarjetaPaso T={T} at={K.A2 + 0.3} x={200} y={700} n="1" texto="cierra la llave">
             <rect x={-12} y={-80} width={24} height={150} fill={GASGRIS} stroke={KC.ink} strokeWidth={5} />
             <g transform={`translate(0 -20) rotate(${klerp(0, 90, kprog(T, K.A2 + 0.8, K.A2 + 1.3, kEase.sale))})`}><rect x={-70} y={-14} width={140} height={28} rx={14} fill={KC.red} stroke={KC.ink} strokeWidth={5} /></g>
           </TarjetaPaso>
-          <TarjetaPaso T={T} at={K.A2 + 1.5} x={540} y={900} n="2" texto="abre ventanas">
+          <TarjetaPaso T={T} at={K.A2 + 1.5} x={540} y={700} n="2" texto="abre ventanas">
             <rect x={-90} y={-100} width={180} height={180} fill="#bfe8ff" stroke={KC.ink} strokeWidth={6} />
             <rect x={-90} y={-100} width={90 * (1 - 0.6 * kprog(T, K.A2 + 1.9, K.A2 + 2.5))} height={180} fill="rgba(255,255,255,.6)" stroke={KC.ink} strokeWidth={5} />
             <rect x={90 - 90 * (1 - 0.6 * kprog(T, K.A2 + 1.9, K.A2 + 2.5))} y={-100} width={90 * (1 - 0.6 * kprog(T, K.A2 + 1.9, K.A2 + 2.5))} height={180} fill="rgba(255,255,255,.6)" stroke={KC.ink} strokeWidth={5} />
           </TarjetaPaso>
-          <TarjetaPaso T={T} at={K.A2 + 2.7} x={880} y={900} n="3" texto="ni apagues la luz">
+          <TarjetaPaso T={T} at={K.A2 + 2.7} x={880} y={700} n="3" texto="ni apagues la luz">
             <text x={0} y={118} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>ni prendas</text>
             <rect x={-60} y={-110} width={120} height={150} rx={14} fill="#fff" stroke={KC.ink} strokeWidth={6} />
             <rect x={-18} y={-70} width={36} height={70} rx={8} fill="#ddd" stroke={KC.ink} strokeWidth={5} />
             <Marca x={50} y={20} ok={false} s={0.5} o={kprog(T, K.A2 + 3.1, K.A2 + 3.4)} />
           </TarjetaPaso>
         </SvgCapa>
-        <Chip T={T} at={K.A2 + 0.2} until={K.Ci - 0.2} texto="Guía oficial · Coyoacán, CDMX" y={1500} tam={34} borde={KC.ink} />
-        <Chip T={T} at={K.A2 + 3.5} until={K.Ci - 0.2} texto="y repórtalo al 911" y={1610} tam={46} borde={KC.red} />
+        <Chip T={T} at={K.A2 + 0.2} until={K.Ci - 0.2} texto="Guía oficial · Coyoacán, CDMX" y={420} tam={34} borde={KC.ink} />
+        <Chip T={T} at={K.A2 + 3.5} until={K.Ci - 0.2} texto="y repórtalo al 911" y={1500} tam={46} borde={KC.red} />
       </Escena>
       {/* 10 · cierre: la estufa del inicio, ahora con la alarma nombrada */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Piso />
+          <Piso y={1270} />
+          <g transform="translate(540 1010) scale(1.3) translate(-575 -1000)">
           <Estufa x={400} y={860} s={1} perilla={90} />
           <Manguera x0={610} y0={940} x1={880} y1={850} />
           <Cilindro x={900} y={1200} s={0.85} />
           <Olor T={T} x={290} y={820} f={1} alto={300} />
           <MercaptanoBrilla T={T} x={300} y={560} s={0.6} rot={Math.sin(T) * 15} o={kprog(T, K.Ci + 0.4, K.Ci + 1.0)} />
+          </g>
         </SvgCapa>
-        <Chip T={T} at={K.Ci + 0.8} until={K.Ou} texto="etil mercaptano = la alarma" y={1500} tam={40} borde={KC.yellow} />
-        <Chip T={T} at={K.Ci + 2.0} until={K.Ou} texto="tu nariz = el detector" y={1600} tam={40} borde={OLOR} />
+        <Chip T={T} at={K.Ci + 0.8} until={K.Ou} texto="etil mercaptano = la alarma" y={1400} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Ci + 2.0} until={K.Ou} texto="tu nariz = el detector" y={1490} tam={40} borde={OLOR} />
       </Escena>
 
       {/* textos del gancho y del "qué es" */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.9} texto="olor = gas" x={300} y={470} tam={50} />
-      <Chip T={T} at={K.G + 2.0} until={K.Q - 0.3} texto="🔔 alarma agregada" x={330} y={470} tam={44} borde={KC.red} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.9} texto="olor = gas" x={330} y={320} tam={50} />
+      <Chip T={T} at={K.G + 2.0} until={K.Q - 0.3} texto="🔔 alarma agregada" x={330} y={320} tam={44} borde={KC.red} />
       <Chip T={T} at={K.Q + 0.4} until={K.A - 0.3} texto="NOM-016-CRE-2016: «esencialmente inodoro»" y={1500} tam={30} borde={KC.ink} mono />
       <Chip T={T} at={K.A + 0.4} until={K.N - 0.3} texto="≈ 1 por cada 50 000 (esquema)" y={1500} tam={38} borde={KC.yellow} />
 
