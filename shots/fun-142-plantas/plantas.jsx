@@ -25,11 +25,12 @@ function InsigniaTu({ x, y, r = 110, color = KC.pink, texto = 'TÚ' }) {
     {texto && <text y={r + 52} textAnchor="middle" style={{ font:`400 48px ${KF.titulo}` }} fill={KC.ink}>{texto}</text>}
   </g>;
 }
-function Tabla({ x = 60, y = 1020, w = 960, h = 150 }) {
+function Tabla({ x = -80, y = 1185, w = 1240, h = 860 }) {
+  // pase a mano cine: la tabla es una mesa de madera oscura que llena el cuadro de borde a borde
   return <g>
-    <rect x={x} y={y} width={w} height={h} rx={34} fill={PL.tabla} stroke={KC.ink} strokeWidth={8} />
-    {[0.3, 0.55, 0.78].map((k, i) => <path key={i} d={`M ${x + 40} ${y + h * k} Q ${x + w * 0.5} ${y + h * k - 10} ${x + w - 40} ${y + h * k + 6}`} stroke={PL.tabla2} strokeWidth={5} fill="none" />)}
-    <circle cx={x + w - 60} cy={y + h / 2} r={18} fill={KC.ink} opacity=".5" />
+    <rect x={x} y={y} width={w} height={h} fill="#5b3b1f" />
+    <line x1={x} y1={y} x2={x + w} y2={y} stroke={KC.ink} strokeWidth={6} />
+    {[0.1, 0.24, 0.4, 0.58, 0.78].map((k, i) => <path key={i} d={`M ${x} ${y + h * k} Q ${x + w * 0.5} ${y + h * k - 14 + i * 6} ${x + w} ${y + h * k + 8}`} stroke="#3d2612" strokeWidth={5} fill="none" />)}
   </g>;
 }
 // Célula vegetal: pared gruesa, vacuola y cloroplastos (brillo 0..1 = hacen fotosíntesis).
@@ -176,7 +177,7 @@ function PlantasShot() {
   const FIN = K.Ou + 4;
   // gancho: el champiñón entra brincando desde la derecha (se mueve desde el cuadro 0)
   const hop = kprog(T, K.G, K.G + 0.9, kEase.sale);
-  const champX = klerp(1180, 560, hop), champY = 1030 - Math.abs(Math.sin(hop * Math.PI * 3)) * 110 * (1 - hop);
+  const champX = klerp(1280, 560, hop), champY = 1205 - Math.abs(Math.sin(hop * Math.PI * 3)) * 150 * (1 - hop);
   const arcoNo = kprog(T, K.G + 1.0, K.G + 1.6, kEase.sale), arcoSi = kprog(T, K.G + 2.0, K.G + 2.8, kEase.sale);
   const vuelo = kprog(T, K.Co + 1.8, K.Co + 2.8, kEase.suave);
   return (
@@ -186,35 +187,35 @@ function PlantasShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <Tabla />
-          <Lechuga x={250} y={1040} s={0.95} rot={-6 + Math.sin(T * 2) * 1.5} />
-          <Champinon x={champX} y={champY} s={0.9} rot={(1 - hop) * -40} lam="#8a5a44" />
-          <InsigniaTu x={860} y={880} r={100} />
-          {arcoNo > 0 && <g><path d="M 340 800 Q 450 700 520 820" stroke={KC.red} strokeWidth={9} fill="none" strokeDasharray={`${280 * arcoNo} 400`} strokeLinecap="round" />
-            {arcoNo >= 1 && <path d="M 410 720 L 470 780 M 470 720 L 410 780" stroke={KC.red} strokeWidth={14} strokeLinecap="round" />}</g>}
-          {arcoSi > 0 && <path d="M 620 820 Q 700 660 780 790" stroke={KC.ink} strokeWidth={9} fill="none" strokeDasharray="18 14" strokeDashoffset={-T * 40} opacity={arcoSi} />}
+          <Lechuga x={205} y={1212} s={1.2} rot={-6 + Math.sin(T * 2) * 1.5} />
+          <Champinon x={champX} y={champY} s={1.35} rot={(1 - hop) * -40} lam="#8a5a44" />
+          <InsigniaTu x={868} y={950} r={112} />
+          {arcoNo > 0 && <g><path d="M 280 830 Q 400 660 520 830" stroke={KC.red} strokeWidth={11} fill="none" strokeDasharray={`${380 * arcoNo} 600`} strokeLinecap="round" />
+            {arcoNo >= 1 && <path d="M 365 705 L 435 775 M 435 705 L 365 775" stroke={KC.red} strokeWidth={16} strokeLinecap="round" />}</g>}
+          {arcoSi > 0 && <path d="M 610 830 Q 730 650 845 815" stroke={KC.ink} strokeWidth={11} fill="none" strokeDasharray="18 14" strokeDashoffset={-T * 40} opacity={arcoSi} />}
         </>)}
       </Escena>
       {/* 2 · en la cocina es verdura; en biología, otro reino */}
       <Escena T={T} a={K.Co} b={K.Cl} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <g transform="translate(330 700)">
-            <circle r={230} fill="#fff" stroke={KC.ink} strokeWidth={9} />
+          <g transform="translate(540 590) scale(1.35)">
+            <circle r={230} fill="#f3eee4" stroke={KC.ink} strokeWidth={9} />
             <circle r={190} fill="none" stroke="#e6ded0" strokeWidth={6} />
             <path d="M 0 -230 L 0 230 M 0 0 L 230 0" stroke="#e6ded0" strokeWidth={6} />
-            <text x={-100} y={-60} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>VERDURAS</text>
+            <text x={-100} y={-60} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill="#0b1020">VERDURAS</text>
             <Lechuga x={-100} y={110} s={0.36} />
             <circle cx={110} cy={-100} r={40} fill="#e8b04a" stroke={KC.ink} strokeWidth={5} />
             <rect x={70} y={60} width={90} height={60} rx={18} fill="#c98b2b" stroke={KC.ink} strokeWidth={5} />
           </g>
-          {vuelo < 1 && <Champinon x={klerp(220, 540, vuelo) + 0} y={klerp(780, 1130, vuelo) - Math.sin(vuelo * Math.PI) * 260} s={0.45} rot={vuelo * 360} lam="#8a5a44" />}
-          {[['PLANTAE', 200, PL.lechuga], ['ANIMALIA', 540, KC.pink], ['FUNGI', 880, KC.gold2]].map(([t, cx, c], i) => { const on = kprog(T, K.Co + 1.0 + i * 0.2, K.Co + 1.4 + i * 0.2, kEase.rebote);
-            return on > 0 ? <g key={t} transform={`translate(${cx} 1110) scale(${on})`}>
-              <rect x={-150} y={-120} width={300} height={170} rx={24} fill={c} stroke={KC.ink} strokeWidth={8} style={i === 2 && vuelo >= 1 ? { filter:'drop-shadow(0 0 22px #fff6c0)' } : null} />
-              <text y={40} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>{t}</text>
-              {i === 0 && <Lechuga x={0} y={-12} s={0.22} />}
-              {i === 1 && <InsigniaTu x={0} y={-60} r={44} texto="" color="#ffd0dc" />}
-              {i === 2 && vuelo >= 1 && <Champinon x={0} y={-14} s={0.42} lam="#8a5a44" />}
+          {vuelo < 1 && <Champinon x={klerp(392, 860, vuelo)} y={klerp(698, 1259, vuelo) - Math.sin(vuelo * Math.PI) * 220} s={klerp(0.64, 0.68, vuelo)} rot={vuelo * 360} lam="#8a5a44" />}
+          {[['PLANTAE', 220, PL.lechuga], ['ANIMALIA', 540, KC.pink], ['FUNGI', 860, KC.gold2]].map(([t, cx, c], i) => { const on = kprog(T, K.Co + 1.0 + i * 0.2, K.Co + 1.4 + i * 0.2, kEase.rebote);
+            return on > 0 ? <g key={t} transform={`translate(${cx} 1235) scale(${on})`}>
+              <rect x={-148} y={-200} width={296} height={280} rx={28} fill={c} stroke={KC.ink} strokeWidth={8} style={i === 2 && vuelo >= 1 ? { filter:'drop-shadow(0 0 22px #fff6c0)' } : null} />
+              <text y={142} textAnchor="middle" style={{ font:`400 52px ${KF.titulo}` }} fill={KC.ink}>{t}</text>
+              {i === 0 && <Lechuga x={0} y={12} s={0.5} />}
+              {i === 1 && <InsigniaTu x={0} y={-60} r={86} texto="" color="#ffd0dc" />}
+              {i === 2 && vuelo >= 1 && <Champinon x={0} y={24} s={0.68} lam="#8a5a44" />}
             </g> : null; })}
         </>)}
       </Escena>
@@ -223,28 +224,29 @@ function PlantasShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<>
-          {Array.from({ length: 6 }, (_, i) => { const q = kprog(T, K.Cl + 0.3 + i * 0.08, K.Cl + 0.9 + i * 0.08); const x0 = 80 + i * 170;
-            const destino = i < 3 ? 900 : 1020; const yR = klerp(560, destino, q);
-            return <g key={i}><line x1={x0 + 60} y1={560} x2={x0 + 60 - 30 * q} y2={yR} stroke="#ffe11a" strokeWidth={6} opacity=".8" strokeDasharray="20 12" />
-              {i >= 3 && q >= 1 && <line x1={x0 + 30} y1={1020} x2={x0 + 30 + 80 * kprog(T, K.Cl + 1.2, K.Cl + 1.8)} y2={1020 - 220 * kprog(T, K.Cl + 1.2, K.Cl + 1.8)} stroke="#ffe11a" strokeWidth={5} opacity=".6" strokeDasharray="14 12" />}</g>; })}
-          <circle cx={540} cy={500} r={46} fill="#ffe11a" stroke={KC.ink} strokeWidth={5} style={{ filter:'drop-shadow(0 0 30px #ffe11a)' }} />
-          <CelulaVegetal x={290} y={1000} w={420} h={300} brillo={kprog(T, K.Cl + 1.0, K.Cl + 1.6)} T={T} />
-          <CelulaHongo x={800} y={1010} w={420} h={170} T={T} />
+          {/* pase a mano cine: las dos células 1.4 veces más grandes (la barra de 10 µm crece igual), en diagonal bajo el sol */}
+          {[[185, 594], [350, 594], [515, 594], [660, 1123], [760, 1123], [890, 1123]].map(([xd, yd], i) => { const q = kprog(T, K.Cl + 0.2 + i * 0.07, K.Cl + 0.8 + i * 0.07), reb = kprog(T, K.Cl + 1.2, K.Cl + 1.8);
+            return <g key={i}><line x1={770} y1={420} x2={klerp(770, xd, q)} y2={klerp(420, yd, q)} stroke="#ffe11a" strokeWidth={7} opacity=".8" strokeDasharray="20 12" />
+              {i >= 3 && q >= 1 && <line x1={xd} y1={yd} x2={xd + 110 * reb} y2={yd - 250 * reb} stroke="#ffe11a" strokeWidth={6} opacity=".6" strokeDasharray="14 12" />}</g>; })}
+          <circle cx={770} cy={420} r={62} fill="#ffe11a" stroke={KC.ink} strokeWidth={5} style={{ filter:'drop-shadow(0 0 30px #ffe11a)' }} />
+          <g transform="translate(350 800) scale(1.4)"><CelulaVegetal x={0} y={0} w={420} h={300} brillo={kprog(T, K.Cl + 1.0, K.Cl + 1.6)} T={T} /></g>
+          <g transform="translate(720 1240) scale(1.4)"><CelulaHongo x={0} y={0} w={420} h={170} T={T} /></g>
         </>)}
       </Escena>
       {/* 4 · PRUEBA 2: estómago al revés */}
       <Escena T={T} a={K.Es} b={K.Pa} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Estomago x={250} y={960} s={1.05} p={kprog(T, K.Es + 0.6, K.Es + 2.4)} T={T} />
-          <HojaSeca x={790} y={1120} s={0.95} p={kprog(T, K.Es + 2.2, K.Es + 4.4)} />
-          <path d={`M 1100 640 Q 920 700 ${klerp(980, 820, kprog(T, K.Es + 0.3, K.Es + 1.4))} ${klerp(760, 1010, kprog(T, K.Es + 0.3, K.Es + 1.4))}`} stroke={PL.quitina} strokeWidth={66} fill="none" strokeLinecap="round" />
-          <path d={`M 1100 640 Q 920 700 ${klerp(980, 820, kprog(T, K.Es + 0.3, K.Es + 1.4))} ${klerp(760, 1010, kprog(T, K.Es + 0.3, K.Es + 1.4))}`} stroke={PL.hifa} strokeWidth={46} fill="none" strokeLinecap="round" />
+          {/* pase a mano cine: estómago 1.6 y hoja 1.45 veces más grandes, en diagonal (esquemático) */}
+          <Estomago x={300} y={830} s={1.6} p={kprog(T, K.Es + 0.6, K.Es + 2.4)} T={T} />
+          <HojaSeca x={670} y={1310} s={1.45} p={kprog(T, K.Es + 2.2, K.Es + 4.4)} />
+          <path d={`M 1120 640 Q 900 760 ${klerp(990, 722, kprog(T, K.Es + 0.3, K.Es + 1.4))} ${klerp(800, 1150, kprog(T, K.Es + 0.3, K.Es + 1.4))}`} stroke={PL.quitina} strokeWidth={92} fill="none" strokeLinecap="round" />
+          <path d={`M 1120 640 Q 900 760 ${klerp(990, 722, kprog(T, K.Es + 0.3, K.Es + 1.4))} ${klerp(800, 1150, kprog(T, K.Es + 0.3, K.Es + 1.4))}`} stroke={PL.hifa} strokeWidth={64} fill="none" strokeLinecap="round" />
           {/* enzimas que SALEN de la punta y moléculas chiquitas que ENTRAN */}
           {Array.from({ length: 10 }, (_, i) => { const t0 = K.Es + 1.4 + i * 0.18, q = kprog(T, t0, t0 + 0.9); if (q <= 0) return null; const a = -0.2 + i * 0.35;
-            return <circle key={'e' + i} cx={820 + Math.cos(a) * 160 * q - 80 * q} cy={1010 + Math.sin(a) * 40 * q + 60 * q} r={10} fill={KC.cyan} stroke={KC.ink} strokeWidth={3} opacity={1 - q * 0.3} />; })}
+            return <circle key={'e' + i} cx={722 + Math.cos(a) * 230 * q - 120 * q} cy={1150 + Math.sin(a) * 56 * q + 90 * q} r={14} fill={KC.cyan} stroke={KC.ink} strokeWidth={3} opacity={1 - q * 0.3} />; })}
           {Array.from({ length: 10 }, (_, i) => { const t0 = K.Es + 3.0 + i * 0.16, q = kprog(T, t0, t0 + 0.8); if (q <= 0 || q >= 1) return null;
-            return <circle key={'m' + i} cx={klerp(700 + i * 22, 822, q)} cy={klerp(1120, 1010, q)} r={7} fill="#c98b2b" stroke={KC.ink} strokeWidth={2} />; })}
+            return <circle key={'m' + i} cx={klerp(530 + i * 32, 724, q)} cy={klerp(1310, 1150, q)} r={10} fill="#c98b2b" stroke={KC.ink} strokeWidth={2} />; })}
         </>)}
       </Escena>
       {/* 5 · PRUEBA 3: pared de celulosa vs. pared con quitina (por dentro) */}
@@ -252,20 +254,21 @@ function PlantasShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <ParedCelulosa x={70} y={600} w={440} h={520} p={kprog(T, K.Pa + 0.4, K.Pa + 1.8)} />
-          <ParedQuitina x={570} y={700} w={440} h={420} p={kprog(T, K.Pa + 2.4, K.Pa + 4.0)} T={T} />
+          {/* pase a mano cine: los dos recuadros de pared 1.1 veces más grandes y a la misma altura (la barra de 100 nm crece igual) */}
+          <g transform="translate(40 640) scale(1.1)"><ParedCelulosa x={0} y={0} w={440} h={520} p={kprog(T, K.Pa + 0.4, K.Pa + 1.8)} /></g>
+          <g transform="translate(556 640) scale(1.1)"><ParedQuitina x={0} y={0} w={440} h={520} p={kprog(T, K.Pa + 2.4, K.Pa + 4.0)} T={T} /></g>
         </>)}
       </Escena>
       {/* 6 · la quitina también está en cangrejos e insectos */}
       <Escena T={T} a={K.Qu} b={K.Gl} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Champinon x={540} y={1110} s={0.7} lam="#8a5a44" />
+          <Champinon x={540} y={1385} s={1.4} lam="#8a5a44" />
           {(() => { const q = kprog(T, K.Qu + 0.4, K.Qu + 1.4, kEase.sale), q2 = kprog(T, K.Qu + 1.0, K.Qu + 2.0, kEase.sale); return <>
-            <path d="M 500 1030 Q 330 960 260 860" stroke={PL.quitina} strokeWidth={16} fill="none" strokeLinecap="round" strokeDasharray={`${330 * q} 600`} />
-            <path d="M 580 1030 Q 740 960 820 860" stroke={PL.quitina} strokeWidth={16} fill="none" strokeLinecap="round" strokeDasharray={`${330 * q2} 600`} />
-            <g opacity={q} transform={`translate(0 ${(1 - q) * 60})`}><Cangrejo x={240} y={790} s={0.95} T={T} /></g>
-            <g opacity={q2} transform={`translate(0 ${(1 - q2) * 60})`}><Escarabajo x={830} y={800} s={0.75} T={T} rot={12} /></g>
+            <path d="M 450 1105 Q 300 1080 290 935" stroke={PL.quitina} strokeWidth={18} fill="none" strokeLinecap="round" strokeDasharray={`${330 * q} 600`} />
+            <path d="M 630 1105 Q 800 1080 815 975" stroke={PL.quitina} strokeWidth={18} fill="none" strokeLinecap="round" strokeDasharray={`${330 * q2} 600`} />
+            <g opacity={q} transform={`translate(0 ${(1 - q) * 60})`}><Cangrejo x={300} y={790} s={1.15} T={T} /></g>
+            <g opacity={q2} transform={`translate(0 ${(1 - q2) * 60})`}><Escarabajo x={815} y={790} s={1.1} T={T} rot={12} /></g>
           </>; })()}
         </>)}
       </Escena>
@@ -273,36 +276,43 @@ function PlantasShot() {
       <Escena T={T} a={K.Gl} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <CelulaHongo x={300} y={680} w={460} h={170} T={T} roseta={kprog(T, K.Gl + 0.6, K.Gl + 1.4, kEase.rebote)} />
-          <Higado x={330} y={950} s={0.9}>
+          {/* pase a mano cine: hifa, hígado y célula vegetal más grandes y en escalera (esquemático, no a escala) */}
+          <g transform="translate(400 640) scale(1.45)"><CelulaHongo x={0} y={0} w={460} h={170} T={T} roseta={kprog(T, K.Gl + 0.6, K.Gl + 1.4, kEase.rebote)} /></g>
+          <Higado x={420} y={1005} s={1.45}>
             {[[-130, -40], [-40, -70], [60, -50], [140, -60], [-80, 40], [20, 20]].map(([a, b], i) => <Roseta key={i} x={a} y={b} r={24 * kprog(T, K.Gl + 1.6 + i * 0.1, K.Gl + 2.1 + i * 0.1, kEase.rebote)} />)}
           </Higado>
+          <g transform="translate(770 1335) scale(1.3) translate(-810 -975)">
           <CelulaVegetal x={810} y={975} w={360} h={260} T={T} almidon={kprog(T, K.Gl + 3.4, K.Gl + 4.2, kEase.rebote)} />
           {[[730, 940], [880, 1030], [800, 1010]].map(([a, b], i) => <GranoAlmidon key={i} x={a} y={b} r={30 * kprog(T, K.Gl + 3.6 + i * 0.12, K.Gl + 4.1 + i * 0.12, kEase.rebote)} rot={i * 40} />)}
+          </g>
         </>)}
       </Escena>
       {/* 8 · re-gancho: ¿quién es pariente de quién? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Lechuga x={140} y={620} s={0.4} />
-          <Champinon x={290} y={620} s={0.5} lam="#8a5a44" />
-          <InsigniaTu x={440} y={540} r={66} texto="" />
-          <Interrogacion T={T} x={290} y={1120} tam={420} />
+          <Lechuga x={230} y={800} s={0.8} />
+          <Champinon x={545} y={800} s={0.95} lam="#8a5a44" />
+          <InsigniaTu x={860} y={680} r={115} texto="" />
+          <Interrogacion T={T} x={540} y={1380} tam={560} />
         </>)}
       </Escena>
       {/* 9–11 · el estudio de 1993: secuencias de proteínas y el árbol */}
       <Escena T={T} a={K.E} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          {[['planta', 1, 900], ['animal', 2, 980], ['hongo', 3, 1060]].map(([t, sd, yy], i) => { const q = kprog(T, K.E + 1.4 + i * 0.3, K.E + 2.2 + i * 0.3, kEase.sale);
-            return <g key={t} opacity={q}><text x={70} y={yy + 26} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>{t}</text>
-              <Secuencia x={230} y={yy} n={36} seed={sd} desliza={(1 - q) * (i % 2 ? -300 : 300)} /></g>; })}
+          {/* pase a mano cine: los tres comparados (lechuga, tú, champiñón) están en cuadro desde el inicio, cada uno junto a su tira de proteína, grande */}
+          <Lechuga x={140} y={800} s={0.44} />
+          <InsigniaTu x={140} y={1000} r={74} texto="" />
+          <Champinon x={140} y={1330} s={0.56} lam="#8a5a44" />
+          {[['planta', 1, 710], ['animal', 2, 975], ['hongo', 3, 1240]].map(([t, sd, yy], i) => { const q = kprog(T, K.E + 0.1 + i * 0.15, K.E + 0.8 + i * 0.15, kEase.sale);
+            return <g key={t}><text x={272} y={yy - 20} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{t}</text>
+              <g opacity={0.25 + 0.75 * q}><Secuencia x={270} y={yy} n={24} celda={50} seed={sd} desliza={(1 - q) * (i % 2 ? -160 : 160)} /></g></g>; })}
         </>)}
       </Escena>
       <Escena T={T} a={K.A} b={K.F} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<g transform="translate(0 -70)">
+        {fsvg(<g transform="translate(540 960) scale(1.15) translate(-545 -840)">
           {(() => { const r = kprog(T, K.A + 0.2, K.A + 1.0, kEase.sale), b1 = kprog(T, K.A + 0.8, K.A + 1.6, kEase.sale), b2 = kprog(T, K.A + 1.4, K.A + 2.2, kEase.sale);
             const tr = (d, p, w = 18) => <><path d={d} stroke={KC.ink} strokeWidth={w + 10} fill="none" strokeLinecap="round" strokeDasharray={`${1000 * p} 2000`} /><path d={d} stroke="#7a4a22" strokeWidth={w} fill="none" strokeLinecap="round" strokeDasharray={`${1000 * p} 2000`} /></>;
             return <>
@@ -311,8 +321,9 @@ function PlantasShot() {
               {tr('M 540 1050 Q 640 960 690 900', b1)}
               {tr('M 690 900 Q 610 800 560 700', b2, 14)}
               {tr('M 690 900 Q 800 800 860 700', b2, 14)}
-              {b1 >= 1 && <Lechuga x={230} y={770} s={0.42} />}
-              {b2 >= 1 && <><Champinon x={540} y={700} s={0.55} lam="#8a5a44" /><InsigniaTu x={880} y={620} r={70} texto="" /></>}
+              {/* pase a mano cine: los tres están en cuadro desde el inicio (atenuados) y se encienden cuando llega su rama */}
+              <g opacity={0.4 + 0.6 * kprog(b1, 0.85, 1)}><Lechuga x={230} y={770} s={0.42} /></g>
+              <g opacity={0.4 + 0.6 * kprog(b2, 0.85, 1)}><Champinon x={540} y={700} s={0.55} lam="#8a5a44" /><InsigniaTu x={880} y={620} r={70} texto="" /></g>
               {b2 >= 1 && <path d={`M 470 ${560} Q 710 ${480} 960 560`} stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="16 12" opacity={kprog(T, K.A + 2.4, K.A + 2.8)} />}
             </>; })()}
         </g>)}
@@ -321,22 +332,24 @@ function PlantasShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
         {fsvg(<>
-          {[['planta', 1, 820, true], ['animal', 2, 940, false], ['hongo', 3, 1060, false]].map(([t, sd, yy, sin]) =>
-            <g key={t}><text x={50} y={yy + 26} style={{ font:`700 28px ${KF.mono}` }} fill={KC.texto}>{t}</text>
-              <Secuencia x={190} y={yy} n={24} seed={sd} hueco={8} sinIns={sin} ins={kprog(T, K.F + 0.6, K.F + 2.0)} /></g>)}
-          <rect x={190 + 8 * 34 * 0.6 - 8} y={790} width={12 * 34 * 0.6 + 10} height={320} rx={14} fill="none" stroke={KC.gold2} strokeWidth={5} strokeDasharray="14 10" opacity={kprog(T, K.F + 2.0, K.F + 2.4)} />
+          {/* pase a mano cine: tiras de casilla 44 (antes 34) a todo lo ancho; la barra «1 casilla» crece igual */}
+          {[['planta', 1, 800, true], ['animal', 2, 1000, false], ['hongo', 3, 1200, false]].map(([t, sd, yy, sin]) =>
+            <g key={t}><text x={65} y={yy - 18} style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>{t}</text>
+              <Secuencia x={65} y={yy} n={24} celda={44} seed={sd} hueco={8} sinIns={sin} ins={kprog(T, K.F + 0.6, K.F + 2.0)} /></g>)}
+          <rect x={65 + 8 * 44 * 0.6 - 8} y={740} width={12 * 44 * 0.6 + 10} height={534} rx={14} fill="none" stroke={KC.gold2} strokeWidth={5} strokeDasharray="14 10" opacity={kprog(T, K.F + 2.0, K.F + 2.4)} />
         </>)}
       </Escena>
       {/* 12 · el sistema de cinco reinos (Whittaker, 1969) */}
       <Escena T={T} a={K.W} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          {[['MONERA', 160, 880, '#9fd8ff'], ['PROTISTA', 380, 1000, '#ffc2a8'], ['FUNGI', 540, 830, KC.gold2], ['PLANTAE', 700, 1000, PL.lechuga], ['ANIMALIA', 920, 880, '#ffb3c8']].map(([t, cx, cy, c], i) => {
-            const on = kprog(T, K.W + 0.4 + i * 0.25, K.W + 0.8 + i * 0.25, kEase.rebote); if (on <= 0) return null; const f = i === 2;
+          {/* pase a mano cine: los cinco reinos grandes, con Fungi al centro, desde que empieza la escena */}
+          {[['MONERA', 215, 690, '#9fd8ff'], ['PROTISTA', 225, 1215, '#ffc2a8'], ['FUNGI', 540, 950, KC.gold2], ['PLANTAE', 855, 1215, PL.lechuga], ['ANIMALIA', 865, 690, '#ffb3c8']].map(([t, cx, cy, c], i) => {
+            const on = kprog(T, K.W + 0.05 + i * 0.12, K.W + 0.45 + i * 0.12, kEase.rebote); if (on <= 0) return null; const f = i === 2;
             return <g key={t} transform={`translate(${cx} ${cy}) scale(${on * (f ? 1 + 0.04 * Math.sin(T * 4) : 1)})`}>
-              <circle r={f ? 130 : 100} fill={c} stroke={KC.ink} strokeWidth={8} style={f ? { filter:'drop-shadow(0 0 24px #fff3b0)' } : null} />
-              <text y={f ? 90 : 12} textAnchor="middle" style={{ font:`400 ${f ? 44 : 34}px ${KF.titulo}` }} fill={KC.ink}>{t}</text>
-              {f && <Champinon x={0} y={30} s={0.42} lam="#8a5a44" />}
+              <circle r={f ? 210 : 145} fill={c} stroke={KC.ink} strokeWidth={8} style={f ? { filter:'drop-shadow(0 0 24px #fff3b0)' } : null} />
+              <text y={f ? 272 : 196} textAnchor="middle" style={{ font:`400 ${f ? 60 : 46}px ${KF.titulo}` }} fill={KC.ink}>{t}</text>
+              {f && <Champinon x={0} y={105} s={0.95} lam="#8a5a44" />}
             </g>; })}
         </>)}
       </Escena>
@@ -345,12 +358,12 @@ function PlantasShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <Tabla />
-          <Lechuga x={200} y={1040} s={0.85} rot={-6} />
-          <Champinon x={klerp(560, 680, kprog(T, K.C + 0.2, K.C + 1.0, kEase.suave))} y={1030} s={0.9} lam="#8a5a44" />
-          <InsigniaTu x={880} y={880} r={100} />
-          <path d="M 700 790 Q 780 700 850 760" stroke={KC.ink} strokeWidth={9} fill="none" strokeDasharray="18 14" strokeDashoffset={-T * 40} />
-          <path d="M 330 790 Q 420 720 520 800" stroke={KC.red} strokeWidth={9} fill="none" strokeLinecap="round" />
-          <path d="M 400 730 L 450 780 M 450 730 L 400 780" stroke={KC.red} strokeWidth={12} strokeLinecap="round" />
+          <Lechuga x={205} y={1212} s={1.2} rot={-6} />
+          <Champinon x={klerp(560, 640, kprog(T, K.C + 0.2, K.C + 1.0, kEase.suave))} y={1205} s={1.35} lam="#8a5a44" />
+          <InsigniaTu x={868} y={950} r={112} />
+          <path d="M 690 850 Q 770 700 850 815" stroke={KC.ink} strokeWidth={11} fill="none" strokeDasharray="18 14" strokeDashoffset={-T * 40} />
+          <path d="M 280 830 Q 390 670 480 850" stroke={KC.red} strokeWidth={11} fill="none" strokeLinecap="round" />
+          <path d="M 352 712 L 417 777 M 417 712 L 352 777" stroke={KC.red} strokeWidth={16} strokeLinecap="round" />
         </>)}
       </Escena>
 
@@ -358,44 +371,44 @@ function PlantasShot() {
       <Capitulo T={T} hasta={K.P - 0.1} caps={[{ at: K.Cl, titulo: 'PRUEBA · sin clorofila' }, { at: K.Es, titulo: 'PRUEBA · digiere por fuera' }, { at: K.Pa, titulo: 'PRUEBA · pared con quitina' }, { at: K.Gl, titulo: 'PRUEBA · glucógeno' }]} />
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.3} until={K.Co - 0.3} texto="verdura ✗" x={300} y={560} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.G + 2.4} until={K.Co - 0.3} texto="pariente tuyo ✓" x={330} y={660} tam={44} borde={KC.mint} />
-      <Etq T={T} at={K.G + 0.9} until={K.Co - 0.3} x={60} y={1520} texto="champiñón · Agaricus bisporus" it tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Co + 0.2} until={K.Co + 1.9} texto="en la cocina: verdura" x={720} y={520} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Co + 2.0} until={K.Cl - 0.3} texto="en biología: otro reino" x={540} y={880} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.G + 1.3} until={K.Co - 0.3} texto="verdura ✗" x={290} y={590} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.G + 2.4} until={K.Co - 0.3} texto="pariente tuyo ✓" x={745} y={590} tam={44} borde={KC.mint} />
+      <Etq T={T} at={K.G + 0.9} until={K.Co - 0.3} x={420} y={1300} texto="champiñón · Agaricus bisporus" it tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Co + 0.2} until={K.Co + 1.9} texto="en la cocina: verdura" x={540} y={240} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 2.0} until={K.Cl - 0.3} texto="en biología: otro reino" x={540} y={985} tam={40} borde={KC.gold} />
       <Chip T={T} at={K.Cl + 0.1} until={K.Es - 0.3} texto="AL MICROSCOPIO" x={300} y={440} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Cl + 1.0} until={K.Es - 0.3} x={110} y={790} texto="lechuga: cloroplastos" tam={28} color={PL.lechuga} />
-      <Etq T={T} at={K.Cl + 1.6} until={K.Es - 0.3} x={620} y={850} texto="hongo: clorofila 0" tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.Es + 0.8} until={K.Pa - 0.3} x={110} y={720} texto="tú: digieres adentro" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Es + 1.8} until={K.Pa - 0.3} x={480} y={760} texto="hongo: enzimas afuera" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Es + 3.2} until={K.Pa - 0.3} texto="estómago al revés" x={330} y={520} tam={40} borde={KC.mint} />
+      <Etq T={T} at={K.Cl + 1.0} until={K.Es - 0.3} x={45} y={1085} texto="lechuga: cloroplastos" tam={28} color={PL.lechuga} />
+      <Etq T={T} at={K.Cl + 1.6} until={K.Es - 0.3} x={430} y={1445} texto="hongo: clorofila 0" tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.Es + 0.8} until={K.Pa - 0.3} x={60} y={455} texto="tú: digieres adentro" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Es + 1.8} until={K.Pa - 0.3} x={420} y={1465} texto="hongo: enzimas afuera" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Es + 3.2} until={K.Pa - 0.3} texto="estómago al revés" x={790} y={500} tam={40} borde={KC.mint} />
       <Chip T={T} at={K.Pa + 0.1} until={K.Qu - 0.3} texto="POR DENTRO · LA PARED" x={330} y={440} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Pa + 0.6} until={K.Qu - 0.3} x={70} y={565} texto="lechuga: celulosa" tam={28} color={PL.lechuga} />
-      <Etq T={T} at={K.Pa + 2.6} until={K.Qu - 0.3} x={570} y={665} texto="hongo: quitina + glucanos" tam={26} color={KC.gold2} />
-      <Etq T={T} at={K.Qu + 1.6} until={K.Gl - 0.3} x={60} y={1520} texto="la misma molécula: quitina" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Qu + 0.9} until={K.Gl - 0.3} x={60} y={990} texto="caparazón de cangrejo" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Gl + 0.8} until={K.P - 0.3} x={70} y={560} texto="hongo: glucógeno" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Gl + 1.8} until={K.P - 0.3} x={70} y={1100} texto="tu hígado: glucógeno" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Gl + 3.5} until={K.P - 0.3} x={610} y={830} texto="planta: almidón" tam={28} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.A - 0.3} anio="1993" quien="Baldauf y Palmer" revista="PNAS, 1993 · secuencias de proteínas" x={540} y={590} />
-      <Chip T={T} at={K.A + 2.5} until={K.F - 0.3} texto="grupos hermanos" x={710} y={400} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.A + 1.7} until={K.F - 0.3} x={80} y={570} texto="plantas: por su lado" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.F + 0.2} until={K.W - 0.3} texto="AL MICROSCOPIO · PROTEÍNA EF-1α" x={420} y={440} tam={28} borde={KC.cyan} mono />
-      <NumeroGigante T={T} at={K.F + 1.8} until={K.W - 0.3} valor={12} dur={0.8} etiqueta="aminoácidos extra" x={330} y={640} tam={150} color={KC.gold2} />
-      <Etq T={T} at={K.F + 2.4} until={K.W - 0.3} x={190} y={1170} texto="planta: no la tiene" tam={26} color={KC.texto} />
-      <TarjetaEstudio T={T} at={K.W + 1.6} until={K.C - 0.3} anio="1969" quien="Robert H. Whittaker" revista="Science, 1969 · cinco reinos" x={380} y={600} />
-      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="Fungi · primo lejano" x={540} y={1520} tam={36} borde={KC.gold} />
-      {['sin clorofila', 'digiere por fuera', 'pared con quitina', 'glucógeno'].map((t, i) => <Chip key={t} T={T} at={K.C + 1.2 + i * 0.25} until={K.Ou} texto={t} x={250} y={470 + i * 78} tam={28} borde={KC.mint} />)}
+      <Etq T={T} at={K.Pa + 0.6} until={K.Qu - 0.3} x={40} y={580} texto="lechuga: celulosa" tam={28} color={PL.lechuga} />
+      <Etq T={T} at={K.Pa + 2.6} until={K.Qu - 0.3} x={556} y={580} texto="hongo: quitina + glucanos" tam={26} color={KC.gold2} />
+      <Etq T={T} at={K.Qu + 1.6} until={K.Gl - 0.3} x={250} y={1482} texto="la misma molécula: quitina" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Qu + 0.9} until={K.Gl - 0.3} x={40} y={445} texto="caparazón de cangrejo" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Gl + 0.8} until={K.P - 0.3} x={66} y={440} texto="hongo: glucógeno" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Gl + 1.8} until={K.P - 0.3} x={40} y={1290} texto="tu hígado: glucógeno" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Gl + 3.5} until={K.P - 0.3} x={620} y={1095} texto="planta: almidón" tam={28} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.A - 0.3} anio="1993" quien="Baldauf y Palmer" revista="PNAS, 1993 · secuencias de proteínas" x={540} y={400} />
+      <Chip T={T} at={K.A + 2.5} until={K.F - 0.3} texto="grupos hermanos" x={755} y={490} tam={40} borde={KC.gold} />
+      <Etq T={T} at={K.A + 1.7} until={K.F - 0.3} x={20} y={560} texto="plantas: por su lado" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.F + 0.2} until={K.W - 0.3} texto="AL MICROSCOPIO · PROTEÍNA EF-1α" x={420} y={330} tam={28} borde={KC.cyan} mono />
+      <NumeroGigante T={T} at={K.F + 1.8} until={K.W - 0.3} valor={12} dur={0.8} etiqueta="aminoácidos extra" x={435} y={590} tam={150} color={KC.gold2} />
+      <Etq T={T} at={K.F + 2.4} until={K.W - 0.3} x={272} y={905} texto="planta: no la tiene" tam={26} color={KC.texto} />
+      <TarjetaEstudio T={T} at={K.W + 1.6} until={K.C - 0.3} anio="1969" quien="Robert H. Whittaker" revista="Science, 1969 · cinco reinos" x={540} y={395} />
+      <Chip T={T} at={K.C + 0.8} until={K.Ou} texto="Fungi · primo lejano" x={540} y={1400} tam={36} borde={KC.gold} />
+      {['sin clorofila', 'digiere por fuera', 'pared con quitina', 'glucógeno'].map((t, i) => <Chip key={t} T={T} at={K.C + 1.2 + i * 0.25} until={K.Ou} texto={t} x={250} y={400 + i * 72} tam={28} borde={KC.mint} />)}
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Co} texto="5 cm" largo={270} />
-      <BarraEscala T={T} at={K.Cl} until={K.Es} texto="10 µm (esquemático)" largo={160} />
+      <BarraEscala T={T} at={K.G} until={K.Co} texto="5 cm" largo={405} />
+      <BarraEscala T={T} at={K.Cl} until={K.Es} texto="10 µm (esquemático)" largo={224} />
       <BarraEscala T={T} at={K.Es} until={K.Pa} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.Pa} until={K.Qu} texto="100 nm (esquemático)" largo={160} />
+      <BarraEscala T={T} at={K.Pa} until={K.Qu} texto="100 nm (esquemático)" largo={176} />
       <BarraEscala T={T} at={K.Qu} until={K.Gl} texto="esquemático · no a escala" largo={0} />
       <BarraEscala T={T} at={K.Gl} until={K.P} texto="esquemático · no a escala" largo={0} />
-      <BarraEscala T={T} at={K.F} until={K.W} texto="1 casilla = 1 aminoácido" largo={20} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={270} />
+      <BarraEscala T={T} at={K.F} until={K.W} texto="1 casilla = 1 aminoácido" largo={26} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={405} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Co - 0.1} texto="No es verdura: es *más pariente tuyo.*" />
