@@ -109,7 +109,8 @@ function LataShot() {
   const svg = (c) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>{c}</svg>;
   // la lata que cae y rebota en el cuadro 0
   const caida = (t0) => { const u = T - t0; if (u < 0.45) return -260 + (u / 0.45) * (u / 0.45) * 1220; const r = u - 0.45; return 960 - Math.abs(Math.sin(r * 9)) * 90 * Math.exp(-r * 4.5); };
-  const piso = <rect x={0} y={960} width={KW} height={300} fill="rgba(22,18,15,.18)" />;
+  const PISO = 1180;   // pase a mano cine: roca y lata grandes sobre un piso más bajo
+  const piso = <rect x={-200} y={PISO} width={KW + 400} height={460} fill="rgba(22,18,15,.18)" />;
   // reloj de días del viaje (Estudio + Tienda)
   const dias = T < K.Ti ? klerp(0, 54, kprog(T, K.Es + 3.6, K.Es + 7.4, kEase.suave)) : klerp(54, 114, kprog(T, K.Ti + 0.2, K.Ti + 2.6, kEase.suave));
   const viaje = kprog(T, K.Es + 3.6, K.Es + 7.4, kEase.suave);   // 0..1 entre bote → camión → planta → lata nueva
@@ -122,36 +123,38 @@ function LataShot() {
       {/* 1 · gancho: la lata vieja cae junto a la roca */}
       <Escena T={T} a={K.G} b={K.B}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>{piso}<Bauxita x={250} y={890} s={1.05} /><Lata x={620} y={Math.min(960, caida(K.G - 0.1))} s={0.95} aplastada={1} rot={-8} /></>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
+        {svg(<>{piso}<Bauxita x={330} y={1078} s={1.5} /><Lata x={790} y={Math.min(PISO, caida(K.G - 0.1) + PISO - 960)} s={1.65} aplastada={1} rot={-8} /></>)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1530} color={KC.ink} />
       </Escena>
       {/* 2 · capítulo 1: la bauxita y la alúmina */}
       <Escena T={T} a={K.B} b={K.E}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Bauxita x={300} y={720} s={1.7} />
-          <path d={`M 470 820 Q 600 ${900} ${klerp(520, 680, kprog(T, K.B + 1.0, K.B + 1.8))} 960`} stroke={KC.ink} strokeWidth={10} fill="none" strokeLinecap="round" opacity={kprog(T, K.B + 0.9, K.B + 1.2)} />
-          {T > K.B + 1.8 && <path d="M 660 930 l 40 34 l -52 12 Z" fill={KC.ink} />}
-          <Polvo x={780} y={1100} s={1.3} p={kprog(T, K.B + 2.0, K.B + 2.8, kEase.sale)} /></>)}
+        {svg(<><Bauxita x={385} y={760} s={2.0} />
+          <path d={`M 580 935 Q 710 ${1000} ${klerp(620, 760, kprog(T, K.B + 1.0, K.B + 1.8))} 1060`} stroke={KC.ink} strokeWidth={12} fill="none" strokeLinecap="round" opacity={kprog(T, K.B + 0.9, K.B + 1.2)} />
+          {T > K.B + 1.8 && <path d="M 740 1026 l 46 40 l -60 14 Z" fill={KC.ink} />}
+          <Polvo x={740} y={1295} s={1.8} p={kprog(T, K.B + 2.0, K.B + 2.8, kEase.sale)} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 3 · capítulo 2: la olla eléctrica (Hall–Héroult) */}
       <Escena T={T} a={K.E} b={K.M}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 45%, #1d2a4a 0%, ${KC.noche} 70%)` }}></div>
-        {svg(<Celda T={T} x={120} y={600} t0={K.E} />)}
+        {svg(<g transform="translate(540 905) scale(1.25) translate(-500 -815)"><Celda T={T} x={120} y={600} t0={K.E} /></g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
       {/* 4 · capítulo 3: el medidor de energía */}
       <Escena T={T} a={K.M} b={K.P}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <rect x={80} y={760} width={900 * kprog(T, K.M + 0.6, K.M + 3.2, kEase.suave)} height={110} rx={20} fill={KC.red} stroke={KC.ink} strokeWidth={8} />
-          <rect x={80} y={1010} width={Math.max(8, 900 * (8.3 / 186) * kprog(T, K.M + 4.6, K.M + 5.4, kEase.suave))} height={110} rx={14} fill={KC.leaf} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.M + 4.5, K.M + 4.7)} />
-          {T > K.M + 0.6 && <text x={80} y={735} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>aluminio nuevo (2019)</text>}
-          {T > K.M + 3.2 && <text x={960} y={835} textAnchor="end" style={{ font:`400 64px ${KF.titulo}` }} fill="#fff" stroke={KC.ink} strokeWidth={4} paintOrder="stroke">186 GJ</text>}
-          {T > K.M + 4.5 && <text x={80} y={985} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>aluminio reciclado</text>}
-          {T > K.M + 5.4 && <text x={150} y={1088} style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>~8 GJ</text>}
+          <Bauxita x={310} y={690} s={1.45} />
+          <Lata x={250} y={1250} s={1.25} aplastada={1} rot={-8} o={klerp(0.4, 1, kprog(T, K.M + 4.3, K.M + 4.7))} />
+          <rect x={80} y={905} width={900 * kprog(T, K.M + 0.6, K.M + 3.2, kEase.suave)} height={110} rx={20} fill={KC.red} stroke={KC.ink} strokeWidth={8} />
+          <rect x={80} y={1345} width={Math.max(8, 900 * (8.3 / 186) * kprog(T, K.M + 4.6, K.M + 5.4, kEase.suave))} height={110} rx={14} fill={KC.leaf} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.M + 4.5, K.M + 4.7)} />
+          {T > K.M + 0.6 && <text x={80} y={880} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>aluminio nuevo (2019)</text>}
+          {T > K.M + 3.2 && <text x={960} y={980} textAnchor="end" style={{ font:`400 64px ${KF.titulo}` }} fill="#fff" stroke="#0b1020" strokeWidth={4} paintOrder="stroke">186 GJ</text>}
+          {T > K.M + 4.5 && <text x={80} y={1320} style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>aluminio reciclado</text>}
+          {T > K.M + 5.4 && <text x={150} y={1423} style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>~8 GJ</text>}
         </>)}
-        <EscalaFija texto="energía por tonelada de aluminio" largo={0} y={1480} color={KC.ink} />
+        <EscalaFija texto="energía por tonelada de aluminio" largo={0} y={1530} color={KC.ink} />
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.I} zoom={0.1}>
@@ -162,7 +165,7 @@ function LataShot() {
       {/* 6 · capítulo 4: el bucle del reciclaje */}
       <Escena T={T} a={K.I} b={K.Es}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g transform="translate(500 820)">
+        {svg(<g transform="translate(540 985) scale(1.5)">
           <circle r={250} fill="none" stroke={KC.ink} strokeWidth={8} strokeDasharray="26 18" strokeDashoffset={-T * 40} />
           {[[0, <Lata x={0} y={50} s={0.36} />], [1, <Hojuelas x={0} y={0} />], [2, <Horno x={0} y={0} T={T} />], [3, <Lingote x={0} y={0} />], [4, <Rollo x={0} y={0} />]].map(([i, el]) => {
             const a = -Math.PI / 2 + i * (Math.PI * 2 / 5); return <g key={i} transform={`translate(${Math.cos(a) * 250} ${Math.sin(a) * 250})`}>
@@ -180,18 +183,21 @@ function LataShot() {
       <Escena T={T} a={K.Es} b={K.Ba}>
         <FondoLunares color={T < K.Ti ? KC.paper : KC.yellow} punto="rgba(0,0,0,.06)" />
         {svg(<>
-          {T < K.Ti + 0.3 && <g opacity={kprog(T, K.Es + 3.2, K.Es + 3.6) * (1 - kprog(T, K.Ti, K.Ti + 0.3))}>
-            <line x1={130} y1={900} x2={930} y2={900} stroke={KC.ink} strokeWidth={6} strokeDasharray="18 14" />
-            <Bote x={130} y={880} /><Camion x={390} y={890} /><Planta x={650} y={890} /><Lata x={900} y={900} s={0.42} color="#d7dce2" o={kprog(T, K.Es + 7.0, K.Es + 7.4)} />
-            <circle cx={130 + viaje * 770} cy={780} r={20} fill="#d7dce2" stroke={KC.ink} strokeWidth={5} />
+          {T < K.Ti + 0.3 && <g opacity={klerp(0.45, 1, kprog(T, K.Es + 3.2, K.Es + 3.6)) * (1 - kprog(T, K.Ti, K.Ti + 0.3))}>
+            <line x1={50} y1={1040} x2={1030} y2={1040} stroke={KC.ink} strokeWidth={6} strokeDasharray="18 14" />
+            <g transform="translate(178 1005) scale(1.6)"><Bote x={0} y={0} /></g>
+            <g transform="translate(422 1012) scale(1.6)"><Camion x={0} y={0} /></g>
+            <g transform="translate(706 1005) scale(1.6)"><Planta x={0} y={0} /></g>
+            <Lata x={955} y={1038} s={0.72} color="#d7dce2" o={kprog(T, K.Es + 7.0, K.Es + 7.4)} />
+            {T > K.Es + 3.2 && <circle cx={178 + viaje * 777} cy={760} r={28} fill="#d7dce2" stroke={KC.ink} strokeWidth={5} />}
           </g>}
-          {T > K.Ti && <g opacity={kprog(T, K.Ti, K.Ti + 0.3)}>
+          {T > K.Ti && <g opacity={kprog(T, K.Ti, K.Ti + 0.3)} transform="translate(540 880) scale(1.38) translate(-400 -753)">
             {[0, 1].map((f) => <rect key={f} x={90} y={720 + f * 230} width={620} height={22} rx={6} fill="#a8723f" stroke={KC.ink} strokeWidth={5} />)}
             {Array.from({ length: 8 }, (_, i) => { const f = Math.floor(i / 4), c = i % 4; return <Lata key={i} x={170 + c * 150} y={720 + f * 230} s={0.62}
               color={[KC.pink, KC.orange, KC.mint, KC.blue][c]} o={kprog(T, K.Ti + 0.3 + i * 0.18, K.Ti + 0.6 + i * 0.18)} />; })}
           </g>}
         </>)}
-        {T > K.Es + 3.6 && <div style={{ position:'absolute', left:90, top:1060, zIndex:41, font:`700 64px ${KF.mono}`, color:KC.ink }}>día {Math.round(dias)}</div>}
+        {T > K.Es + 3.6 && <div style={{ position:'absolute', left:90, top:1250, zIndex:41, font:`700 92px ${KF.mono}`, color:KC.ink }}>día {Math.round(dias)}</div>}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 9 · 43 de cada 100 latas */}
@@ -199,46 +205,46 @@ function LataShot() {
         <FondoLunares color={KC.pink} />
         {svg(Array.from({ length: 100 }, (_, i) => { const c = i % 10, r = Math.floor(i / 10), ok = i < 43;
           const col = recicl > 0 ? (ok ? (i / 43 < recicl ? KC.leaf : '#d7dce2') : (recicl >= 1 ? '#7c838c' : '#d7dce2')) : '#d7dce2';
-          return <g key={i} transform={`translate(${86 + c * 62} ${448 + r * 52})`}><rect x={-20} y={-22} width={40} height={44} rx={8} fill={col} stroke={KC.ink} strokeWidth={4} opacity={!ok && recicl >= 1 ? 0.75 : 1} />
+          return <g key={i} transform={`translate(${144 + c * 88} ${520 + r * 72}) scale(1.5)`}><rect x={-20} y={-22} width={40} height={44} rx={8} fill={col} stroke={KC.ink} strokeWidth={4} opacity={!ok && recicl >= 1 ? 0.75 : 1} />
             <rect x={-14} y={-26} width={28} height={6} rx={3} fill={KC.ink} opacity=".6" /></g>; }))}
       </Escena>
       {/* 10 · cierre: la misma lata y la misma roca, ya transformadas */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>{piso}<Bauxita x={250} y={890} s={1.05} />
-          <Lata x={620} y={960} s={0.95} aplastada={1 - kprog(T, K.C + 0.4, K.C + 1.6, kEase.rebote || kEase.sale)} rot={-8 * (1 - kprog(T, K.C + 0.4, K.C + 1.6))} />
-          <Pico x={klerp(230, -260, kprog(T, K.C + 2.0, K.C + 4.0, kEase.suave))} y={640} s={0.9} rot={-30 - 20 * kprog(T, K.C + 2.0, K.C + 4.0)} o={1 - kprog(T, K.C + 3.4, K.C + 4.0)} /></>)}
+        {svg(<>{piso}<Bauxita x={330} y={1078} s={1.5} />
+          <Lata x={790} y={PISO} s={1.65} aplastada={1 - kprog(T, K.C + 0.4, K.C + 1.6, kEase.rebote || kEase.sale)} rot={-8 * (1 - kprog(T, K.C + 0.4, K.C + 1.6))} />
+          <Pico x={klerp(300, -340, kprog(T, K.C + 2.0, K.C + 4.0, kEase.suave))} y={720} s={1.4} rot={-30 - 20 * kprog(T, K.C + 2.0, K.C + 4.0)} o={1 - kprog(T, K.C + 3.4, K.C + 4.0)} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
 
       {/* capítulos y datos */}
       <Capitulo T={T} hasta={K.Ba} caps={[{ at: K.B, titulo: 'La roca' }, { at: K.E, titulo: 'La olla eléctrica' }, { at: K.M, titulo: 'El medidor' }, { at: K.I, titulo: 'El reciclaje' }, { at: K.Es, titulo: 'El viaje de regreso' }]} />
-      <NumeroGigante T={T} at={K.G + 0.3} until={K.B - 0.2} valor={5} dur={1.0} sufijo=" %" etiqueta="de la energía" x={300} y={540} tam={220} color={KC.yellow} />
-      <Medidor T={T} at={K.G + 1.2} until={K.B - 0.2} valor={(t) => kprog(t, K.G + 1.3, K.G + 2.6, kEase.suave)} etiqueta="aluminio nuevo (de la roca)" color={KC.red} y={1010} />
-      <Medidor T={T} at={K.G + 2.8} until={K.B - 0.2} valor={(t) => 0.05 * kprog(t, K.G + 2.9, K.G + 3.6, kEase.suave)} etiqueta="aluminio de la lata" color={KC.leaf} y={1110} />
-      <Etq T={T} at={K.B + 0.4} until={K.E - 0.2} x={330} y={470} texto="bauxita" tam={40} color={KC.ink} />
-      <Chip T={T} at={K.B + 1.0} until={K.E - 0.2} texto="química (proceso Bayer)" x={330} y={1010} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.B + 2.4} until={K.E - 0.2} x={640} y={705} texto="alúmina" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.B + 2.8} until={K.E - 0.2} x={640} y={752} texto="óxido de aluminio" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.E + 0.6} until={K.M - 0.2} x={1050} y={575} lado="izq" texto="corriente eléctrica" tam={28} color={KC.yellow} />
-      <Etq T={T} at={K.E + 1.2} until={K.M - 0.2} x={884} y={760} texto="ánodos" tam={26} />
-      <Etq T={T} at={K.E + 1.8} until={K.M - 0.2} x={120} y={1150} texto="criolita fundida + alúmina" tam={28} color={KC.orange} />
-      <Etq T={T} at={K.E + 3.0} until={K.M - 0.2} x={120} y={1198} texto="aluminio líquido (fondo)" tam={28} />
-      <Chip T={T} at={K.E + 2.4} until={K.M - 0.2} texto="O + carbón del ánodo → CO₂" x={540} y={440} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.M + 1.2} until={K.P - 0.2} texto="IAI" x={150} y={470} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.M + 5.8} until={K.P - 0.2} texto="≈ 5 % de la energía" x={560} y={1066} tam={34} borde={KC.leaf} />
-      <Chip T={T} at={K.I + 1.0} until={K.Es - 0.2} texto="sin cambiar sus propiedades" x={370} y={440} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.I + 3.6} until={K.Es - 0.2} x={740} y={1135} texto="merma pequeña" tam={26} color={KC.ink} lado="der" />
-      <TarjetaEstudio T={T} at={K.Es + 0.3} until={K.Es + 3.3} anio="2025" quien="RRS · Estados Unidos" revista="para Aluminum Association y CMI (industria)" y={720} />
-      <Etq T={T} at={K.Es + 3.8} until={K.Ti - 0.2} x={130} y={980} texto="bote" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Es + 7.0} until={K.Ti - 0.2} x={900} y={980} lado="izq" texto="lata nueva" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Es + 7.3} until={K.Ti - 0.1} texto="< 60 días" x={720} y={1100} tam={40} borde={KC.leaf} />
+      <NumeroGigante T={T} at={K.G + 0.3} until={K.B - 0.2} valor={5} dur={1.0} sufijo=" %" etiqueta="de la energía" x={360} y={540} tam={250} color={KC.yellow} />
+      <Medidor T={T} at={K.G + 1.2} until={K.B - 0.2} valor={(t) => kprog(t, K.G + 1.3, K.G + 2.6, kEase.suave)} etiqueta="aluminio nuevo (de la roca)" color={KC.red} y={1290} />
+      <Medidor T={T} at={K.G + 2.8} until={K.B - 0.2} valor={(t) => 0.05 * kprog(t, K.G + 2.9, K.G + 3.6, kEase.suave)} etiqueta="aluminio de la lata" color={KC.leaf} y={1395} />
+      <Etq T={T} at={K.B + 0.4} until={K.E - 0.2} x={460} y={470} texto="bauxita" tam={40} color={KC.ink} />
+      <Chip T={T} at={K.B + 1.0} until={K.E - 0.2} texto="química (proceso Bayer)" x={300} y={1110} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.B + 2.4} until={K.E - 0.2} x={560} y={1410} texto="alúmina" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.B + 2.8} until={K.E - 0.2} x={560} y={1458} texto="óxido de aluminio" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.E + 0.6} until={K.M - 0.2} x={1040} y={452} lado="izq" texto="corriente eléctrica" tam={28} color={KC.yellow} />
+      <Etq T={T} at={K.E + 1.2} until={K.M - 0.2} x={735} y={965} texto="ánodos" tam={28} />
+      <Etq T={T} at={K.E + 1.8} until={K.M - 0.2} x={80} y={1335} texto="criolita fundida + alúmina" tam={28} color={KC.orange} />
+      <Etq T={T} at={K.E + 3.0} until={K.M - 0.2} x={80} y={1385} texto="aluminio líquido (fondo)" tam={28} />
+      <Chip T={T} at={K.E + 2.4} until={K.M - 0.2} texto="O + carbón del ánodo → CO₂" x={320} y={440} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.M + 1.2} until={K.P - 0.2} texto="IAI" x={840} y={700} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.M + 5.8} until={K.P - 0.2} texto="≈ 5 % de la energía" x={620} y={1400} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.I + 1.0} until={K.Es - 0.2} texto="sin cambiar sus propiedades" x={330} y={440} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.I + 3.6} until={K.Es - 0.2} x={830} y={1455} texto="merma pequeña" tam={26} color={KC.ink} lado="izq" />
+      <TarjetaEstudio T={T} at={K.Es + 0.3} until={K.Es + 3.3} anio="2025" quien="RRS · Estados Unidos" revista="para Aluminum Association y CMI (industria)" y={540} />
+      <Etq T={T} at={K.Es + 3.8} until={K.Ti - 0.2} x={105} y={1095} texto="bote" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Es + 7.0} until={K.Ti - 0.2} x={1010} y={1095} lado="izq" texto="lata nueva" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Es + 7.3} until={K.Ti - 0.1} texto="< 60 días" x={770} y={1300} tam={44} borde={KC.leaf} />
       <Chip T={T} at={K.Ti + 2.4} until={K.Ba - 0.1} texto="114 días ≈ casi 4 meses" x={540} y={470} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Ba + 1.6} until={K.C - 0.2} x={1060} y={700} lado="izq" texto="43 recicladas" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Ba + 2.4} until={K.C - 0.2} x={1060} y={860} lado="izq" texto="57 no recicladas" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Ba + 0.3} until={K.C - 0.2} texto="EE. UU. 2023: 43 %" x={330} y={370} tam={30} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Ba + 3.4} until={K.C - 0.2} valor={61} dur={1.0} sufijo=" mil millones" etiqueta="latas no recicladas en 2023" x={540} y={1110} tam={96} color={KC.yellow} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="no es basura" x={330} y={470} tam={40} borde={KC.yellow} />
+      <Etq T={T} at={K.Ba + 1.6} until={K.C - 0.2} x={110} y={1245} texto="43 recicladas" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ba + 2.4} until={K.C - 0.2} x={560} y={1245} texto="57 no recicladas" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Ba + 0.3} until={K.C - 0.2} texto="EE. UU. 2023: 43 %" x={330} y={420} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Ba + 3.4} until={K.C - 0.2} valor={61} dur={1.0} sufijo=" mil millones" etiqueta="latas no recicladas en 2023" x={540} y={1390} tam={104} color={KC.yellow} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="no es basura" x={330} y={500} tam={44} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.B - 0.1} texto="*5 %* de la energía." />
