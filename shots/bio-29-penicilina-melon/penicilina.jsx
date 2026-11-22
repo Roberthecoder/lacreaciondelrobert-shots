@@ -203,37 +203,41 @@ function Penicilina() {
       <Escena T={T} a={K.G} b={K.Po} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          <Frasquito x={170} y={1040} s={1.05} />
-          <g opacity={1 - 0.6 * kprog(T, K.G + 1.4, K.G + 1.9)}><PetriFleming T={T} x={330} y={700} r={130} /></g>
-          <g transform={`rotate(${(1 - rueda) * 160} ${klerp(1300, 640, rueda)} 960)`}><Melon T={T} x={klerp(1300, 640, rueda)} y={960} s={0.95} moho={kprog(T, K.G + 0.6, K.G + 2.6, kEase.sale)} id="mg" /></g>
+          {/* pase a mano cine: melón 1.45× (llena el cuadro), caja de Fleming y frasco más grandes */}
+          <Frasquito x={150} y={1260} s={1.2} />
+          <g opacity={1 - 0.6 * kprog(T, K.G + 1.4, K.G + 1.9)}><PetriFleming T={T} x={300} y={640} r={170} /></g>
+          <g transform={`rotate(${(1 - rueda) * 160} ${klerp(1050, 610, rueda)} 1060)`}><Melon T={T} x={klerp(1050, 610, rueda)} y={1060} s={1.38} moho={kprog(T, K.G + 0.6, K.G + 2.6, kEase.sale)} id="mg" /></g>
         </Capa>
       </Escena>
       {/* 1 · Fleming hacía muy poca */}
       <Escena T={T} a={K.Po} b={K.Pe} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <Capa>
-          <PetriFleming T={T} x={540} y={820} r={250} />
-          <Goteo T={T} x={540} y0={900} y1={1130} cada={1.6} color={PENI} r={6} desde={K.Po + 0.6} hasta={K.Pe} />
-          <Frasquito x={540} y={1150} s={0.7} etq="1941" />
+          {/* pase a mano cine: caja de Petri 1.25× y frasco más grande */}
+          <PetriFleming T={T} x={540} y={850} r={300} />
+          <Goteo T={T} x={540} y0={1010} y1={1170} cada={1.6} color={PENI} r={7} desde={K.Po + 0.6} hasta={K.Pe} />
+          <Frasquito x={540} y={1300} s={0.8} etq="1941" />
         </Capa>
-        <Medidor T={T} at={K.Po + 1.8} until={K.Pe - 0.2} valor={(t) => 0.03 + 0.01 * Math.sin(t * 5)} etiqueta="penicilina en EE. UU. · 1941" texto={() => 'ni para 1 paciente'} y={1420} color={KC.red} />
+        <Medidor T={T} at={K.Po + 1.8} until={K.Pe - 0.2} valor={(t) => 0.03 + 0.01 * Math.sin(t * 5)} etiqueta="penicilina en EE. UU. · 1941" texto={() => 'ni para 1 paciente'} y={1430} color={KC.red} />
       </Escena>
       {/* 2 · Peoria: el laboratorio del gobierno busca mohos */}
       <Escena T={T} a={K.Pe} b={K.Me} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <Capa><Laboratorio T={T} x={540} y={900} frascos={kprog(T, K.Pe + 1.2, K.Pe + 3.8)} /></Capa>
+        {/* pase a mano cine: laboratorio 1.15× */}
+        <Capa><g transform="translate(540 900) scale(1.15) translate(-540 -880)"><Laboratorio T={T} x={540} y={880} frascos={kprog(T, K.Pe + 1.2, K.Pe + 3.8)} /></g></Capa>
       </Escena>
       {/* 3–4 · el melón mohoso de Peoria (1943) y el moho al microscopio */}
       <Escena T={T} a={K.Me} b={K.Ta} zoom={0.06}>
         <FondoLunares color={KC.mint} />
-        <Capa><Melon T={T} x={540} y={980} s={1.15} moho={1} id="mm" /></Capa>
-        <Escala T={T} z={1} pxPorMm={3.5 * 1.15} y={1420} color={KC.ink} />
+        {/* pase a mano cine: melón 1.4× (escala recalculada con el mismo factor) */}
+        <Capa><Melon T={T} x={540} y={960 - 100 * kprog(T, K.Se, K.Se + 0.7, kEase.suave)} s={1.4} moho={1} id="mm" /></Capa>
+        <Escala T={T} z={1} pxPorMm={3.5 * 1.4} y={1420} color={KC.ink} />
       </Escena>
-      <Lupa T={T} at={K.Se + 0.05} until={K.Ta - 0.25} x={540} y={700} r={230} fx={620} fy={968} interior={(t, r) => <MicroMoho T={t} w={r * 2} h={r * 2} crece={kprog(t, K.Se, K.Se + 2.4)} />}
+      <Lupa T={T} at={K.Se + 0.05} until={K.Ta - 0.25} x={540} y={560} r={240} fx={638} fy={(t) => 946 - 100 * kprog(t, K.Se, K.Se + 0.7, kEase.suave)} interior={(t, r) => <MicroMoho T={t} w={r * 2} h={r * 2} crece={kprog(t, K.Se, K.Se + 2.4)} />}
         tinte={KC.mint} etiqueta="AL MICROSCOPIO · Penicillium" />
       {/* 5 · el tanque de fermentación sumergida con licor de maíz */}
       <Escena T={T} a={K.Ta} b={K.Pr} zoom={0.03}>
-        <MundoBiorreactor T={T} turbio={klerp(0.2, 0.75, kprog(T, K.Ta, K.Pr))} burbujas={1} rpm={110} fondo={KC.orange} />
+        <MundoBiorreactor T={T} turbio={klerp(0.2, 0.75, kprog(T, K.Ta, K.Pr))} burbujas={1} rpm={110} fondo="#18233a" />
         <Capa z={25}>
           <Costal x={klerp(-200, 150, kprog(T, K.Ta + 1.6, K.Ta + 2.4, kEase.sale))} y={560} s={0.8} inclina={klerp(0, 55, kprog(T, K.Ta + 2.4, K.Ta + 3.0))} />
           <Goteo T={T} x={290} y0={600} y1={760} cada={0.2} color={MAIZ} desde={K.Ta + 3.0} hasta={K.Pr - 0.4} r={10} />
@@ -250,75 +254,80 @@ function Penicilina() {
       {/* 7 · mutantes: rayos X y luz UV sobre colonias; se escoge la que más produce */}
       <Escena T={T} a={K.Mu} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        <Capa>
+        {/* pase a mano cine: lámparas y colonias 1.2× y centradas */}
+        <Capa><g transform="translate(540 920) scale(1.2) translate(-540 -880)">
           <Lampara T={T} x={480} y={560} tipo="rx" on={kprog(T, K.Mu + 0.2, K.Mu + 0.5)} />
           <Lampara T={T} x={820} y={560} tipo="uv" on={kprog(T, K.Mu + 0.9, K.Mu + 1.2)} />
           {[[300, 960], [540, 960], [780, 960], [420, 1150], [660, 1150]].map(([px, py], i) => { const gana = i === 3;
             return <PetriColonias key={i} id={'pc' + i} x={px} y={py} r={100} gana={gana} brillo={gana ? kprog(T, K.Mu + 2.6, K.Mu + 3.2) : 0} apaga={gana ? 0 : kprog(T, K.Mu + 2.0 + i * 0.1, K.Mu + 2.6 + i * 0.1)} />; })}
-        </Capa>
+        </g></Capa>
       </Escena>
       {/* 8 · el estudio: microgramos de penicilina por mililitro de caldo */}
       <Escena T={T} a={K.Es} b={K.Di} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
-        <Capa>
+        {/* pase a mano cine: tubos 1.3× y centrados */}
+        <Capa><g transform="translate(540 930) scale(1.15) translate(-540 -880)">
           <Tubo x={240} llen={0.27 * kprog(T, e150, e150 + 0.8, kEase.sale)} color="#d9e8b0" arriba="60–150" abajo="silvestre" />
           <Tubo x={540} llen={0.55 * kprog(T, e300, e300 + 0.8, kEase.sale)} color={MAIZ} arriba="300" abajo="rayos X" />
           <Tubo x={840} llen={1.0 * kprog(T, e550, e550 + 0.9, kEase.sale)} color={PENI} arriba="550" abajo="UV · Wisconsin" />
-        </Capa>
+        </g></Capa>
       </Escena>
       {/* 9 · Día D: la torre de dosis */}
       <Escena T={T} a={K.Di} b={K.Ma} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <Capa>{Array.from({ length: 9 }, (_, i) => { const on = kprog(T, K.Di + 0.1 + i * 0.22, K.Di + 0.4 + i * 0.22, kEase.sale);
-          return on > 0 ? <g key={i} transform={`translate(0 ${(1 - on) * -300})`} opacity={on}><Caja x={i % 2 ? 200 : 190} y={1190 - i * 86} w={230} h={86} color={i % 2 ? KC.paper : '#fff8e8'} /></g> : null; })}</Capa>
+        {/* pase a mano cine: torre de dosis 1.3× (más alta y bajada al centro del cuadro) */}
+        <Capa><g transform="translate(270 1400) scale(1.3) translate(-195 -1190)">{Array.from({ length: 9 }, (_, i) => { const on = kprog(T, K.Di + 0.1 + i * 0.22, K.Di + 0.4 + i * 0.22, kEase.sale);
+          return on > 0 ? <g key={i} transform={`translate(0 ${(1 - on) * -300})`} opacity={on}><Caja x={i % 2 ? 200 : 190} y={1190 - i * 86} w={230} h={86} color={i % 2 ? KC.paper : '#fff8e8'} /></g> : null; })}</g></Capa>
       </Escena>
       {/* 10 · Mary la Mohosa: nadie sabe bien quién fue */}
       <Escena T={T} a={K.Ma} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.coral} />
         <Capa>
-          <g opacity={1 - kprog(T, K.Ma + 2.4, K.Ma + 2.9)}><Silueta x={540} y={1000} s={1.4} color={KC.violet} />
+          {/* pase a mano cine: Mary 1.45× y las tres versiones 1.35× */}
+          <g opacity={1 - kprog(T, K.Ma + 2.4, K.Ma + 2.9)}><g transform="translate(540 1060) scale(1.45) translate(-540 -1000)"><Silueta x={540} y={1000} s={1.4} color={KC.violet} />
             <rect x={430} y={1010} width={220} height={60} rx={10} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
             <text x={540} y={1050} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>MOLDY MARY</text>
-            <Melon T={T} x={760} y={1080} s={0.32} moho={1} id="mmary" /></g>
-          {[260, 540, 820].map((sx, i) => { const on = kprog(T, K.Ma + 2.6 + i * 0.3, K.Ma + 3.0 + i * 0.3, kEase.sale);
-            return <g key={i} opacity={on}><Silueta x={sx} y={1060} s={0.85} color={[KC.violet, KC.blue, KC.teal][i]} />
-              <text x={sx} y={860 - Math.sin(T * 4 + i) * 8} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6}>?</text></g>; })}
+            <Melon T={T} x={760} y={1080} s={0.32} moho={1} id="mmary" /></g></g>
+          {[195, 540, 885].map((sx, i) => { const on = kprog(T, K.Ma + 2.6 + i * 0.3, K.Ma + 3.0 + i * 0.3, kEase.sale);
+            return <g key={i} opacity={on}><Silueta x={sx} y={1180} s={1.2} color={[KC.violet, KC.blue, KC.teal][i]} />
+              <text x={sx} y={890 - Math.sin(T * 4 + i) * 8} textAnchor="middle" style={{ font:`400 160px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6}>?</text></g>; })}
         </Capa>
       </Escena>
       {/* 11 · cierre: el mismo melón del inicio, padre de las cepas de hoy */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          {(() => { const p = kprog(T, K.Ci + 0.6, K.Ci + 3.0, kEase.suave), ox = 600, oy = 760;
-            const hojas = [[160, 1160], [330, 1210], [540, 1230], [750, 1210], [920, 1160]];
+          {(() => { const p = kprog(T, K.Ci + 0.6, K.Ci + 3.0, kEase.suave), ox = 620, oy = 800;
+            const hojas = [[130, 1290], [320, 1350], [540, 1375], [760, 1350], [950, 1290]];
             return <g>
               {hojas.map(([hx, hy], i) => { const q = kclamp(p * 1.3 - i * 0.06, 0, 1);
                 return <g key={i}><path d={`M ${ox} ${oy} C ${ox} ${oy + 200} ${hx} ${hy - 260} ${klerp(ox, hx, q)} ${klerp(oy, hy - 110, q)}`} stroke={MOHO} strokeWidth={10} fill="none" strokeLinecap="round" strokeDasharray="1400" strokeDashoffset={1400 * (1 - q)} />
-                  {q > 0.95 && <Frasquito x={hx} y={hy} s={0.42} etq="HOY" />}</g>; })}
+                  {q > 0.95 && <Frasquito x={hx} y={hy} s={0.55} etq="HOY" />}</g>; })}
             </g>; })()}
-          <Melon T={T} x={540} y={760} s={0.8} moho={1} id="mc" />
+          {/* pase a mano cine: melón 1.4× y frascos de hoy más grandes */}
+          <Melon T={T} x={540} y={790} s={1.12} moho={1} id="mc" />
         </Capa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.4} until={K.Po - 0.2} texto="moho de Fleming" x={330} y={470} tam={44} />
-      <Etq T={T} at={K.G + 1.6} until={K.Po - 0.2} x={300} y={1440} texto="melón cantalupo" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Po + 0.4} until={K.Pe - 0.2} x={90} y={470} texto="Penicillium de Fleming" it tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Pe + 0.3} until={K.Me - 0.2} texto="Peoria, Illinois" x={540} y={470} tam={46} borde={KC.ink} />
-      <Chip T={T} at={K.Pe + 1.4} until={K.Me - 0.2} texto="buscando mohos mejores" y={1500} tam={40} borde={MOHO} />
-      <Chip T={T} at={K.Me + 0.2} until={K.Se - 0.1} texto="1943 · Peoria" x={540} y={470} tam={52} borde={KC.gold} />
-      <Comparativa T={T} at={K.Se + 1.2} until={K.Ta - 0.25} izq={{ valor:1, texto:'poca', etiqueta:'Fleming', color:KC.lilac }} der={{ valor:2.5, texto:'> 2×', etiqueta:'melón', color:MOHO2 }} max={2.5} y={1370} alto={190} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.4} until={K.Po - 0.2} texto="moho de Fleming" x={300} y={400} tam={46} />
+      <Etq T={T} at={K.G + 1.6} until={K.Po - 0.2} x={340} y={1470} texto="melón cantalupo" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Po + 0.4} until={K.Pe - 0.2} x={60} y={500} texto="Penicillium de Fleming" it tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Pe + 0.3} until={K.Me - 0.2} texto="Peoria, Illinois" x={540} y={380} tam={46} borde={KC.ink} />
+      <Chip T={T} at={K.Pe + 1.4} until={K.Me - 0.2} texto="buscando mohos mejores" y={1340} tam={40} borde={MOHO} />
+      <Chip T={T} at={K.Me + 0.2} until={K.Se - 0.1} texto="1943 · Peoria" x={540} y={420} tam={52} borde={KC.gold} />
+      <Comparativa T={T} at={K.Se + 1.2} until={K.Ta - 0.25} izq={{ valor:1, texto:'poca', etiqueta:'Fleming', color:KC.lilac }} der={{ valor:2.5, texto:'> 2×', etiqueta:'melón', color:MOHO2 }} max={2.5} y={1215} alto={170} />
       <Chip T={T} at={K.Ta + 0.2} until={K.Pr - 0.2} texto="fermentación sumergida" x={540} y={300} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.Ta + 2.6} until={K.Pr - 0.2} x={90} y={760} texto="desecho de la fécula" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ta + 2.6} until={K.Pr - 0.2} texto="aire + agitación + licor de maíz" y={1500} tam={36} borde={MAIZ} />
-      <Chip T={T} at={K.Mu + 2.8} until={K.Es - 0.2} texto="se queda la que más produce" y={1500} tam={40} borde={KC.gold} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={e150 - 0.2} anio="años 40" quien="NRRL 1951 → X-1612 → Q-176" revista="Peoria · Cold Spring Harbor · Wisconsin" x={540} y={600} />
-      <Chip T={T} at={e150 - 0.1} until={K.Di - 0.2} texto="µg de penicilina por mL de caldo" x={400} y={1500} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Di + 0.2} until={K.Ma - 0.2} texto="Día D · junio 1944" x={380} y={470} tam={46} borde={KC.blue} />
-      <NumeroGigante T={T} at={K.Di + 0.6} until={K.Ma - 0.2} valor={2.3} dec={1} dur={1.2} etiqueta="millones de dosis" x={680} y={880} tam={250} color={KC.yellow} />
-      <Chip T={T} at={K.Ma + 0.3} until={K.Ci - 0.2} texto="¿quién halló el melón?" x={540} y={470} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.Ma + 2.8} until={K.Ci - 0.2} texto="hay varias versiones" y={1500} tam={42} borde={KC.violet} />
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="NRRL 1951 → cepas de hoy" y={1500} tam={40} borde={MOHO} />
+      <Chip T={T} at={K.Ta + 2.6} until={K.Pr - 0.2} texto="aire + agitación + licor de maíz" y={1450} tam={36} borde={MAIZ} />
+      <Chip T={T} at={K.Mu + 2.8} until={K.Es - 0.2} texto="se queda la que más produce" y={1440} tam={40} borde={KC.gold} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={e150 - 0.2} anio="años 40" quien="NRRL 1951 → X-1612 → Q-176" revista="Peoria · Cold Spring Harbor · Wisconsin" x={540} y={380} />
+      <Chip T={T} at={e150 - 0.1} until={K.Di - 0.2} texto="µg de penicilina por mL de caldo" x={540} y={1330} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Di + 0.2} until={K.Ma - 0.2} texto="Día D · junio 1944" x={540} y={330} tam={46} borde={KC.blue} />
+      <NumeroGigante T={T} at={K.Di + 0.6} until={K.Ma - 0.2} valor={2.3} dec={1} dur={1.2} etiqueta="millones de dosis" x={760} y={930} tam={270} color={KC.yellow} />
+      <Chip T={T} at={K.Ma + 0.3} until={K.Ci - 0.2} texto="¿quién halló el melón?" x={540} y={520} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.Ma + 2.8} until={K.Ci - 0.2} texto="hay varias versiones" y={1380} tam={42} borde={KC.violet} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="NRRL 1951 → cepas de hoy" y={1490} tam={40} borde={MOHO} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Po - 0.1} texto="No fue Fleming: *un melón podrido.*" />
