@@ -14,6 +14,10 @@ const CINE = { fondo: '#0a0f1c', borde: '#070a12', linea: '#dfe7ff', texto: '#f3
 // logo durante el video, y sus trazos tienen un resplandor suave). Cambiar aquí afecta a todos los shots al re-renderizar.
 const CINE_OPC = { subtitulos: false, logo: true, resplandor: true, volumen: true };
 const CINE_ENC = { max: 1.7, ancho: 0.93, alto: 0.72, centroY: 0.47, bajar: 0.17 };
+// Referencia 22 nov 2026 (6 videos revisados segundo a segundo: 1Cell1Life óvulo/zinc, barba/calvicie, piojo; 1Bit1Pixel vida en
+// semanas, ir a 120, granjero): paleta apagada, etiquetas de texto chico monoespaciado con borde fino, números grandes blancos con
+// una línea chica abajo y la barra de escala siempre abajo a la izquierda.
+const CINE_REF = { saturacion: 0.8, escalaX: 60, escalaY: 1500 };
 const CINE_VOL = { suave: 8, relieve: 9, brillo: 0.5, halo: 12, haloFuerza: 0.5 };
 
 function cineMix(a, b, t) {
@@ -130,7 +134,7 @@ function RobertF() { return null; }
 if (typeof document !== 'undefined' && !document.getElementById('cine-css')) {
   const st = document.createElement('style'); st.id = 'cine-css';
   st.textContent = 'svg text{paint-order:stroke;stroke:rgba(7,10,18,.88);stroke-width:5px;stroke-linejoin:round}'
-    + (CINE_OPC.resplandor ? ' [data-om-exportable-video-with-duration-secs] svg{filter:' + (CINE_OPC.volumen ? 'url(#cine-vol)' : 'drop-shadow(0 0 7px rgba(150,195,255,.30))') + '}' : '');
+    + (CINE_OPC.resplandor ? ' [data-om-exportable-video-with-duration-secs] svg{filter:' + (CINE_OPC.volumen ? 'url(#cine-vol)' : 'drop-shadow(0 0 7px rgba(150,195,255,.30))') + ' saturate(' + CINE_REF.saturacion + ')}' : '');
   document.head.appendChild(st);
 }
 
@@ -193,7 +197,7 @@ function MitoTachado({ T, at, tacharEn, until, texto, x = KW / 2, y = 760, tam =
   </div>;
 }
 
-// La barra de escala sube a la esquina superior derecha para no chocar con el subtítulo.
+// La barra de escala va abajo a la izquierda, siempre, como en 1Cell1Life (ya no hay subtítulo con el que choque).
 const EscalaKit = window.Escala;
 function cineFija(el, enc) {   // deshace el encuadre para una pieza que debe quedarse en su esquina
   return enc && el ? <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:`scale(${1 / enc.k}) translate(${-enc.dx}px,${-enc.dy}px)`, transformOrigin:'0 0', pointerEvents:'none' }}>{el}</div> : el;
@@ -201,7 +205,7 @@ function cineFija(el, enc) {   // deshace el encuadre para una pieza que debe qu
 function Escala(p) {
   if (window.CINE_MIDIENDO) return null;
   const enc = React.useContext(CineCtx).enc;
-  return cineFija(EscalaKit({ ...p, z: (p.z == null ? 1 : p.z) * (enc ? enc.k : 1), x: 800, y: 232 }), enc);
+  return cineFija(EscalaKit({ ...p, z: (p.z == null ? 1 : p.z) * (enc ? enc.k : 1), x: CINE_REF.escalaX, y: CINE_REF.escalaY }), enc);
 }
 
 // Variantes de otros kits (fungi-kit, series C y D): mismo trato. Por eso cine.jsx va al final de los kits.
@@ -210,7 +214,41 @@ const BarraKit = window.BarraEscala;
 function BarraEscala(p) {
   if (!BarraKit || window.CINE_MIDIENDO) return null;
   const enc = React.useContext(CineCtx).enc, L = (p.largo == null ? 200 : p.largo) * (enc ? enc.k : 1);
-  return cineFija(BarraKit({ ...p, largo: L, x: Math.min(800, 1030 - L), y: 232 }), enc);
+  return cineFija(BarraKit({ ...p, largo: L, x: CINE_REF.escalaX, y: CINE_REF.escalaY }), enc);
 }
 
+// Chips, etiquetas y números grandes al estilo de la referencia (22 nov 2026).
+function cineClaro(c) {   // un color de texto oscuro se vuelve claro sobre el fondo oscuro
+  const m = /^#([0-9a-f]{6})$/i.exec(String(c || ''));
+  if (!m) return CINE.texto;
+  const n = parseInt(m[1], 16), l = 0.299 * (n >> 16) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255);
+  return l < 110 ? CINE.texto : c;
+}
+function Chip({ T, at, until, texto, x = KW / 2, y = 420, color, borde = CINE.acento, tam = 40 }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube');
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:42, transform:`translate(-50%,-50%) translateY(${e.y * 0.3}px)`, opacity:e.o,
+    background:'rgba(10,15,28,.74)', color:cineClaro(color || borde), border:`2px solid ${borde}`, borderRadius:10,
+    padding:'8px 18px', font:`600 ${Math.round(Math.min(34, tam * 0.72))}px/1.15 ${KF.mono}`, whiteSpace:'nowrap' }}>{texto}</div>;
+}
+function Etiqueta({ T, at, until, x, y, texto, it = false, lado = 'der', color = CINE.texto, tam = 34 }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube');
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, opacity:e.o, display:'flex', alignItems:'center', gap:10,
+    flexDirection: lado === 'der' ? 'row' : 'row-reverse', transform:`translate(${lado === 'der' ? 0 : '-100%'}, -50%)` }}>
+    <div style={{ width:64 * kprog(T, at, at + 0.4, kEase.sale), height:2, background:cineClaro(color), opacity:.8 }}></div>
+    <div style={{ font:`700 ${Math.round(tam * 0.82)}px ${it ? KF.mono : KF.texto}`, fontStyle: it ? 'italic' : 'normal', textTransform: it ? 'none' : 'uppercase',
+      letterSpacing: it ? 0 : '.04em', color:cineClaro(color), whiteSpace:'nowrap' }}>{texto}</div>
+  </div>;
+}
+function NumeroGigante({ T, at, until, valor, desde = 0, dur = 0.9, dec = 0, prefijo = '', sufijo = '', etiqueta, x = KW / 2, y = 560, tam = 300 }) {
+  if (!kvisible(T, at, until)) return null;
+  const e = kentrada(T, at, until, 'sube'), v = klerp(desde, valor, kprog(T, at, at + dur, kEase.sale));
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:41, transform:`translate(-50%,-50%) translateY(${e.y * 0.3}px)`, opacity:e.o, textAlign:'center' }}>
+    <div style={{ font:`800 ${Math.round(tam * 0.62)}px/0.95 ${KF.texto}`, color:CINE.texto, letterSpacing:'-.01em', whiteSpace:'nowrap' }}>{prefijo}{kformato(v, dec)}{sufijo}</div>
+    {etiqueta && <div style={{ font:`500 30px ${KF.mono}`, color:'rgba(223,231,255,.72)', marginTop:12 }}>{etiqueta}</div>}
+  </div>;
+}
+
+Object.assign(window, { Chip, Etiqueta, NumeroGigante, CINE_REF });
 Object.assign(window, CINE_ESCENAS, CINE_MUNDOS, { CINE, CINE_OPC, cineMix, CineCtx, FondoMarca, FondoLunares, Sticker, RobertF, Subtitulo, Robert, MarcaAgua, TarjetaEstudio, MitoTachado, Escala, BarraEscala });
