@@ -194,7 +194,7 @@ function Platanos() {
         <Capa dy={-120}>
           {[...Array(14)].map((_, i) => <circle key={i} cx={(i * 173) % 1080} cy={420 + (i * 271) % 1100} r={3 + (i % 3)} fill="rgba(255,255,255,.18)" />)}
         </Capa>
-        <CapaZ k={1.5} lx={540} ly={960} gx={540} gy={850}>
+        <CapaZ k={1.6} lx={540} ly={960} gx={540} gy={1000}>
           <MolEt x={540} y={960} s={3} rot={Math.sin(T * 0.8) * 6} f={kprog(T, K.Q + 0.1, K.Q + 1.6)} />
           <g opacity={kprog(T, K.Q + 3.4, K.Q + 3.8)}>
             <line x1={300} y1={1160} x2={780} y2={1160} stroke={KC.gold2} strokeWidth={8} />
@@ -346,9 +346,9 @@ function Platanos() {
       <Chip T={T} at={K.G + 2.9} until={K.Q - 0.3} texto="suelta gas → madura al de al lado" y={1420} tam={38} borde={KC.yellow} />
       <Etq T={T} at={K.G + 0.6} until={K.G + 2.8} x={40} y={610} texto="plátano maduro" lado="der" tam={34} />
       <Chip T={T} at={K.Q + 0.4} until={K.Q + 3.2} texto="etileno · C₂H₄" y={1400} tam={52} borde={KC.gold2} mono />
-      <Chip T={T} at={K.Q + 3.4} until={K.H - 0.3} texto="la hormona vegetal más simple" y={1400} tam={40} borde={KC.mint} />
-      <RotuloAlto T={T} at={K.Q + 1.0} until={K.Q + 3.2} x={864} y={452} texto="hidrógeno" largo={56} tam={32} />
-      <RotuloAlto T={T} at={K.Q + 0.6} until={K.Q + 3.2} x={640} y={590} texto="carbono" largo={50} tam={32} />
+      <Chip T={T} at={K.Q + 3.4} until={K.H - 0.3} texto="la hormona vegetal más simple" y={560} tam={40} borde={KC.mint} />
+      <RotuloAlto T={T} at={K.Q + 1.0} until={K.Q + 3.2} x={886} y={585} texto="hidrógeno" largo={56} tam={32} />
+      <RotuloAlto T={T} at={K.Q + 0.6} until={K.Q + 3.2} x={650} y={730} texto="carbono" largo={50} tam={32} />
       <Etq T={T} at={K.H + 0.6} until={K.Ca - 0.3} x={608} y={768} texto="receptor" lado="der" tam={36} color={KC.gold2} />
       <Chip T={T} at={K.H + 2.5} until={K.Ca - 0.3} texto="una hormona en el aire" y={1470} tam={42} borde={KC.mint} />
       <Etq T={T} at={K.Ca + 0.4} until={K.B - 0.3} x={30} y={520} texto="1 · respira más" lado="der" tam={32} color={KC.ink} />
