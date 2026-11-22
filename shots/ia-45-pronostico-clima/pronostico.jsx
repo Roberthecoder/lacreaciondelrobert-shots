@@ -247,7 +247,7 @@ function Pronostico() {
   const trayIA = [[140, 1060], [262, 968], [388, 892], [512, 836], [652, 790], [790, 764], [940, 748]];
   const trayHRES = [[140, 1060], [268, 985], [400, 925], [530, 885], [670, 860], [810, 850], [950, 846]];
   // pase a mano: la misma gráfica esquemática, estirada para llenar el cuadro
-  [trayReal, trayIA, trayHRES].forEach((tr) => tr.forEach((q) => { q[0] = 540 + (q[0] - 540) * 0.95; q[1] = 900 + (q[1] - 890) * 2.2; }));
+  [trayReal, trayIA, trayHRES].forEach((tr) => tr.forEach((q) => { q[0] = 540 + (q[0] - 540) * 0.6; q[1] = 900 + (q[1] - 890) * 2.2; }));
   const pTray = kprog(T, K.Ci + 0.3, K.Ci + 2.4, kEase.suave);
   const ciPt = (() => { const n = trayReal.length - 1, k = pTray * n, i = Math.min(n - 1, Math.floor(k)), f = k - i; return [klerp(trayReal[i][0], trayReal[i + 1][0], f), klerp(trayReal[i][1], trayReal[i + 1][1], f)]; })();
   const mx = K.Ci + 2.5;                                                    // "A México le pegan…"
@@ -324,14 +324,14 @@ function Pronostico() {
       {/* 7 · ciclones (esquemático) y México */}
       <Escena T={T} a={K.Ci} b={K.Eu}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#122c4c, #0e2442)' }}></div>
-        <SVGF><g transform="translate(0 160)">{/* vuelta de encuadre: todo baja 160 px */}
+        <SVGF><g transform="translate(0 60)">{/* vuelta de encuadre: las trayectorias bajan 60 px y el mapa 160 */}
           <g opacity={1 - kprog(T, mx - 0.1, mx + 0.4)}>
             <Traza pts={trayReal} p={pTray} color="#fff" ancho={11} guion="18 14" />
             <Traza pts={trayHRES} p={pTray} color={KC.pink} ancho={13} />
             <Traza pts={trayIA} p={pTray} color={KC.mint} ancho={13} />
-            <Ciclon x={ciPt[0]} y={ciPt[1]} s={1.45} T={T} />
+            <Ciclon x={ciPt[0]} y={ciPt[1]} s={1.7} T={T} />
           </g>
-          <g opacity={kprog(T, mx, mx + 0.5)}>
+          <g opacity={kprog(T, mx, mx + 0.5)} transform="translate(0 100)">
             <MapaMexico x={60} y={540} ancho={960} />
             <Flecha x1={140} y1={1060} x2={420} y2={880} p={kprog(T, mx + 0.3, mx + 0.9)} color={KC.yellow} />
             <Flecha x1={1010} y1={980} x2={830} y2={790} p={kprog(T, mx + 0.6, mx + 1.2)} color={KC.yellow} />
@@ -339,9 +339,9 @@ function Pronostico() {
         </g></SVGF>
       </Escena>
       <Chip T={T} at={K.Ci + 0.3} until={mx - 0.1} texto="esquemático · ciclones de todo el mundo" x={540} y={262} tam={32} borde={KC.texto} />
-      <Etq T={T} at={K.Ci + 1.0} until={mx - 0.1} x={560} y={1310} texto="real" tam={40} color="#fff" />
-      <Etq T={T} at={K.Ci + 1.2} until={mx - 0.1} x={560} y={1375} texto="IA" tam={40} color={KC.mint} />
-      <Etq T={T} at={K.Ci + 1.4} until={mx - 0.1} x={560} y={1440} texto="supercomputadora" tam={40} color={KC.pink} />
+      <Etq T={T} at={K.Ci + 1.0} until={mx - 0.1} x={560} y={1210} texto="real" tam={40} color="#fff" />
+      <Etq T={T} at={K.Ci + 1.2} until={mx - 0.1} x={560} y={1275} texto="IA" tam={40} color={KC.mint} />
+      <Etq T={T} at={K.Ci + 1.4} until={mx - 0.1} x={560} y={1340} texto="supercomputadora" tam={40} color={KC.pink} />
       <Chip T={T} at={mx + 0.4} until={K.Eu - 0.2} texto="≈ 5 ciclones al año" x={400} y={630} tam={40} borde={KC.yellow} />
       <Chip T={T} at={mx + 0.9} until={K.Eu - 0.2} texto="3 Pacífico" x={250} y={1300} tam={32} borde={KC.yellow} />
       <Chip T={T} at={mx + 1.2} until={K.Eu - 0.2} texto="2 Golfo y Caribe" x={830} y={1300} tam={32} borde={KC.yellow} />
