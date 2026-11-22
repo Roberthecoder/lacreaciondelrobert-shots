@@ -1,0 +1,1 @@
+- fun-55-naranja: gancho, aire y cierre con el frutero 1.3x (zoom del gancho ajustado); aceite 1.2x; pregunta con la naranja al centro y más grande; empacadora 1.15x y más abajo; cera 1.35x al centro; baño (tina) 1.18x y cajas centradas; naranjas del estudio entran al empezar la escena; barras de escala recalculadas. Auditores: sin láminas, encuadre bien; pendiente: nada
