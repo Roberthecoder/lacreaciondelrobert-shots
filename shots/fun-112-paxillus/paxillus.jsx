@@ -213,40 +213,41 @@ function PaxillusShot() {
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Plato T={T} x={klerp(-300, 330, entra)} y={900} s={1.15} vapor={kprog(T, K.G + 0.3, K.G + 1)} />
-          <Veces T={T} x={110} y={560} at={K.G + 0.6} />
+          <Plato T={T} x={klerp(-500, 540, entra)} y={1070} s={1.9} vapor={kprog(T, K.G + 0.3, K.G + 1)} />
+          <g transform="translate(287 520) scale(1.35)"><Veces T={T} x={0} y={0} at={K.G + 0.6} /></g>
         </>)}
       </Escena>
       {/* 2–3 · el hongo en el bosque y sus láminas */}
       <Escena T={T} a={K.H} b={K.Hi} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Hojarasca y={1150} />
+          <Hojarasca y={1250} />
           {(() => { const z = kprog(T, K.La - 0.3, K.La + 0.5, kEase.suave);
-            const zz = klerp(1, 1.45, z), cx = klerp(440, 470, z), cyy = klerp(930, 860, z);
-            return <g transform={`translate(${cx} ${cyy}) scale(${zz}) translate(-440 -930)`}>
-              <Paxilo T={T} x={440} y={1150} s={1.35} crece={kprog(T, K.H, K.H + 1.6)} manchas={kprog(T, K.La + 1.3, K.La + 2.6)} />
+            const zz = klerp(1, 1.2, z), cx = klerp(540, 560, z), cyy = klerp(1010, 960, z);
+            return <g transform={`translate(${cx} ${cyy}) scale(${zz}) translate(-540 -1010)`}>
+              <Paxilo T={T} x={540} y={1250} s={1.75} crece={kprog(T, K.H, K.H + 1.6)} manchas={kprog(T, K.La + 1.3, K.La + 2.6)} />
             </g>; })()}
-          {T > K.La && <Dedo x={700} y={960} p={toque * (1 - kprog(T, K.La + 1.9, K.La + 2.4))} />}
+          {T > K.La && <g transform="translate(850 975) scale(1.5) translate(-850 -975)"><Dedo x={850} y={975} p={toque * (1 - kprog(T, K.La + 1.9, K.La + 2.4))} /></g>}
           {/* flecha al borde enrollado */}
-          {T > K.H + 2.4 && T < K.La && <path d="M 110 640 Q 80 760 100 850" stroke={KC.ink} strokeWidth={7} fill="none" strokeDasharray="14 10" opacity={kprog(T, K.H + 2.4, K.H + 2.8)} />}
+          {T > K.H + 2.4 && T < K.La && <path d="M 110 640 Q 66 760 92 880" stroke={KC.ink} strokeWidth={7} fill="none" strokeDasharray="14 10" opacity={kprog(T, K.H + 2.4, K.H + 2.8)} />}
         </>)}
       </Escena>
       {/* 4 · se comía en Europa central, bien cocido */}
       <Escena T={T} a={K.Hi} b={K.Cr} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <MapaEuropa x={150} y={560} s={1.1} punto={kprog(T, K.Hi + 0.6, K.Hi + 1.0)} />
-          <Olla T={T} x={540} y={1120} s={1.05} />
+          <MapaEuropa x={110} y={420} s={1.3} punto={kprog(T, K.Hi + 0.6, K.Hi + 1.0)} />
+          <rect x={676} y={665} width={320} height={56} rx={28} fill="rgba(11,16,32,.88)" opacity={kprog(T, K.Hi + 0.9, K.Hi + 1.2)} />
+          <Olla T={T} x={540} y={1340} s={1.4} />
         </>)}
       </Escena>
       {/* 5 · crudo irrita el estómago; lo grave es otra cosa */}
       <Escena T={T} a={K.Cr} b={K.S} zoom={0.06}>
         <FondoLunares color={KC.coral} />
         {fsvg(<>
-          <Estomago T={T} x={380} y={880} s={1.2} irrita={kprog(T, K.Cr + 0.3, K.Cr + 1.2)} />
+          <Estomago T={T} x={520} y={960} s={1.7} irrita={kprog(T, K.Cr + 0.3, K.Cr + 1.2)} />
           <rect x={0} y={0} width={KW} height={KH} fill={cineMix(KC.dark, CINE.fondo, 0.55)} opacity={0.7 * kprog(T, K.Cr + 1.9, K.Cr + 2.5)} />
-          {T > K.Cr + 2.1 && <text x={360} y={1050} textAnchor="middle" style={{ font:`400 ${420 * kprog(T, K.Cr + 2.1, K.Cr + 2.5, kEase.rebote)}px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={10}>!</text>}
+          {T > K.Cr + 2.1 && <text x={520} y={1160} textAnchor="middle" style={{ font:`400 ${520 * kprog(T, K.Cr + 2.1, K.Cr + 2.5, kEase.rebote)}px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={10}>!</text>}
         </>)}
       </Escena>
       {/* 6 · por dentro de tu sangre: sensibilización (fondo oscuro) */}
@@ -254,22 +255,22 @@ function PaxillusShot() {
         <div style={{ position:'absolute', inset:0, background:PX.sangre }}></div>
         <Ambiente T={T} n={22} color="rgba(255,140,150,.25)" />
         {fsvg(<>
-          {AG.slice(0, 7).map(([ax, ay, r], i) => <Antigeno key={i} x={ax + Math.sin(T * 0.8 + i) * 18} y={ay + Math.cos(T * 0.7 + i) * 14} rot={r + T * 20} s={1.4} />)}
-          <Linfocito T={T} x={420} y={880} r={130} activo={kprog(T, K.S + 1.4, K.S + 2.0)} />
+          {AG.slice(0, 7).map(([ax, ay, r], i) => <Antigeno key={i} x={ax + Math.sin(T * 0.8 + i) * 18} y={ay + 80 + Math.cos(T * 0.7 + i) * 14} rot={r + T * 20} s={2} />)}
+          <Linfocito T={T} x={540} y={960} r={200} activo={kprog(T, K.S + 1.4, K.S + 2.0)} />
           {Array.from({ length: 12 }, (_, i) => { const t0 = K.S + 2.0 + i * 0.16; const u = kprog(T, t0, t0 + 1.6, kEase.sale); if (u <= 0) return null;
-            const a = i * 0.55 - 0.4; return <Anticuerpo key={i} x={420 + Math.cos(a) * (140 + u * 300)} y={880 + Math.sin(a) * (140 + u * 260)} rot={a * 57 + 90 + T * 30} s={1.2} o={kprog(T, t0, t0 + 0.2)} />; })}
+            const a = i * 0.55 - 0.4; return <Anticuerpo key={i} x={540 + Math.cos(a) * (215 + u * 300)} y={960 + Math.sin(a) * (215 + u * 300)} rot={a * 57 + 90 + T * 30} s={1.7} o={kprog(T, t0, t0 + 0.2)} />; })}
         </>)}
       </Escena>
       {/* 7 · re-gancho: ¿y la siguiente vez? */}
       <Escena T={T} a={K.P} b={K.He} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Plato T={T} x={300} y={1100} s={0.95} /><Interrogacion T={T} x={300} y={920} tam={380} /></>)}
+        {fsvg(<><Plato T={T} x={540} y={1180} s={1.7} /><Interrogacion T={T} x={540} y={900} tam={420} /></>)}
       </Escena>
       {/* 8 · hemólisis (fondo oscuro) */}
       <Escena T={T} a={K.He} b={K.R} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:PX.sangre }}></div>
         <Ambiente T={T} n={22} color="rgba(255,140,150,.25)" />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 960) scale(1.3) translate(-540 -830)">
           {GL.map(([gx, gy], i) => { const pega = kprog(T, K.He + 1.6 + i * 0.12, K.He + 2.2 + i * 0.12); const rev = kprog(T, K.He + 3.0 + i * 0.14, K.He + 3.4 + i * 0.14);
             const dx = Math.sin(T * 0.6 + i) * 14; return <g key={i}>
               <Globulo x={gx + dx} y={gy} r={70} rev={rev} seed={i} />
@@ -278,49 +279,50 @@ function PaxillusShot() {
           {/* los anticuerpos atrapan al hongo y forman grumos */}
           {T < K.He + 2.0 && AG.slice(0, 6).map(([ax, ay], i) => { const u = kprog(T, K.He + 0.3 + i * 0.1, K.He + 1.1 + i * 0.1, kEase.sale);
             return <g key={i} opacity={1 - kprog(T, K.He + 1.6, K.He + 2.0)}>{u < 1 ? <><Antigeno x={ax} y={ay} s={1.2} />{[0, 1, 2].map((j) => <Anticuerpo key={j} x={ax + Math.cos(j * 2.1) * klerp(140, 34, u)} y={ay + Math.sin(j * 2.1) * klerp(140, 34, u)} rot={j * 120 + 90} s={0.8} />)}</> : <Grumo x={ax} y={ay} s={0.9} />}</g>; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 9 · riñones; cocerlo no lo evita */}
       <Escena T={T} a={K.R} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Rinon x={300} y={880} s={1.05} apaga={kprog(T, K.R + 0.6, K.R + 1.6)} />
-          {Array.from({ length: 10 }, (_, i) => { const u = (T * 0.9 + i * 0.1) % 1; return <circle key={i} cx={540 - u * 300} cy={640 + i * 6 + u * 120} r={8} fill={KC.red} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.R, K.R + 0.4) * (1 - u)} />; })}
-          <Olla T={T} x={760} y={1110} s={0.62} tache={kprog(T, K.R + 1.6, K.R + 2.0, kEase.rebote)} />
+          <Rinon x={400} y={940} s={1.75} apaga={kprog(T, K.R + 0.6, K.R + 1.6)} />
+          {Array.from({ length: 10 }, (_, i) => { const u = (T * 0.9 + i * 0.1) % 1; return <circle key={i} cx={1010 - u * 280} cy={790 + i * 6 + u * 120} r={12} fill={KC.red} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.R, K.R + 0.4) * (1 - u)} />; })}
+          <Olla T={T} x={830} y={1360} s={0.95} tache={kprog(T, K.R + 1.6, K.R + 2.0, kEase.rebote)} />
         </>)}
       </Escena>
       {/* 10–11 · el caso de 1944 (escena dibujada, siluetas esquemáticas) */}
       <Escena T={T} a={K.E} b={K.Ra} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
+        {fsvg(<><g transform="translate(540 1030) scale(1.22) translate(-540 -900)">
           <Silueta x={300} y={1040} s={0.8} tipo={0} apagado={kprog(T, K.M + 1.6, K.M + 2.6)} />
           <Silueta x={760} y={1040} s={0.76} tipo={1} color="#4a3a5e" />
           <rect x={120} y={1030} width={840} height={40} rx={10} fill="#7a4a22" stroke={KC.ink} strokeWidth={7} />
           <Plato T={T} x={330} y={1010} s={0.42} vapor={0} />
           <Plato T={T} x={740} y={1010} s={0.42} vapor={0} />
           {T > K.M + 0.2 && <Sello T={T} at={K.M + 0.2} x={760} y={930} texto="✓" color="#118a3a" r={70} rot={0} />}
-          {T > K.M + 1.4 && <Calendario x={300} y={580} s={kprog(T, K.M + 1.4, K.M + 1.8, kEase.rebote)} dia={Math.max(1, Math.round(klerp(1, 17, kprog(T, K.M + 1.6, K.M + 3.2, kEase.suave))))} />}
+          </g>
+          {T > K.M + 1.4 && <Calendario x={247} y={610} s={1.2 * kprog(T, K.M + 1.4, K.M + 1.8, kEase.rebote)} dia={Math.max(1, Math.round(klerp(1, 17, kprog(T, K.M + 1.6, K.M + 3.2, kEase.suave))))} />}
         </>)}
       </Escena>
       {/* 12 · raro, pero muy difícil de predecir */}
       <Escena T={T} a={K.Ra} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1010) scale(1.18) translate(-543 -965)">
           {(() => { const k = Math.min(RUTA.length - 1, Math.floor(kprog(T, K.Ra + 0.6, K.Ra + 2.6) * (RUTA.length - 1) + 0.0001)); const fin = T > K.Ra + 2.6;
             const sel = RUTA[k]; return <>
-              {GENTE.map(([gx, gy], i) => <Persona key={i} x={gx} y={gy + 50} s={1.3} color={i === sel ? (fin ? KC.red : KC.ink) : '#3a3350'} />)}
+              {GENTE.map(([gx, gy], i) => <Persona key={i} x={gx} y={gy + 50} s={1.3} color={i === sel ? (fin ? KC.red : KC.ink) : '#6a6390'} />)}
               {T > K.Ra + 0.5 && <circle cx={GENTE[sel][0]} cy={GENTE[sel][1] + 20} r={62} fill="rgba(255,255,255,.35)" stroke="#fff" strokeWidth={6} />}
               {fin && <text x={GENTE[sel][0]} y={GENTE[sel][1] - 50} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={5}>?</text>}
             </>; })()}
-        </>)}
+        </g>)}
       </Escena>
       {/* 13 · cierre: el mismo plato del inicio, ya "leído" */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Plato T={T} x={330} y={900} s={1.15} />
-          <Veces T={T} x={110} y={560} at={K.C - 2} alerta tachon={kprog(T, K.C + 0.8, K.C + 1.4, kEase.sale)} />
-          <g transform="translate(300 900) rotate(-10)" opacity={kprog(T, K.C + 1.0, K.C + 1.2)}>
+          <Plato T={T} x={540} y={1070} s={1.9} />
+          <g transform="translate(287 520) scale(1.35)"><Veces T={T} x={0} y={0} at={K.C - 2} alerta tachon={kprog(T, K.C + 0.8, K.C + 1.4, kEase.sale)} /></g>
+          <g transform="translate(540 1070) rotate(-10) scale(1.5)" opacity={kprog(T, K.C + 1.0, K.C + 1.2)}>
             <g transform={`scale(${klerp(2, 1, kprog(T, K.C + 1.0, K.C + 1.35, kEase.rebote))})`}>
               <rect x={-250} y={-60} width={500} height={120} rx={16} fill="rgba(255,255,255,.75)" stroke={KC.red} strokeWidth={12} />
               <text y={24} textAnchor="middle" style={{ font:`400 74px ${KF.titulo}` }} fill={KC.red}>NO TE PROTEGE</text>
@@ -330,53 +332,53 @@ function PaxillusShot() {
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 2.6} until={K.H - 0.3} texto="haberlo comido antes = el riesgo" x={540} y={1150} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.G + 2.6} until={K.H - 0.3} texto="haberlo comido antes = el riesgo" x={540} y={1380} tam={38} borde={KC.red} />
       <Etq T={T} at={K.H + 1.2} until={K.La - 0.3} x={60} y={480} texto="paxilo enrollado" tam={42} color={KC.ink} />
       <Etq T={T} at={K.H + 1.6} until={K.La - 0.3} x={60} y={540} texto="Paxillus involutus" it tam={40} color={KC.ink} />
       <Etq T={T} at={K.H + 2.4} until={K.La - 0.3} x={60} y={610} texto="borde enrollado hacia dentro" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.La + 0.2} until={K.Hi - 0.3} texto="láminas que bajan por el pie" x={360} y={470} tam={30} borde={KC.gold} />
-      <Chip T={T} at={K.La + 1.6} until={K.Hi - 0.3} texto="se manchan de café al tocarlas" x={360} y={550} tam={30} borde={PX.mancha} />
-      <Etq T={T} at={K.Hi + 0.9} until={K.Cr - 0.3} x={600} y={790} texto="Europa central" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Hi + 1.6} until={K.Cr - 0.3} texto="se comía bien cocido" x={540} y={470} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.Cr + 0.5} until={K.Cr + 1.9} texto="crudo: irrita el estómago" x={380} y={470} tam={34} borde={KC.red} />
-      <Chip T={T} at={K.Cr + 2.3} until={K.S - 0.3} texto="lo grave es otra cosa" x={380} y={470} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.La + 0.2} until={K.Hi - 0.3} texto="láminas que bajan por el pie" x={540} y={440} tam={30} borde={KC.gold} />
+      <Chip T={T} at={K.La + 1.6} until={K.Hi - 0.3} texto="se manchan de café al tocarlas" x={540} y={520} tam={30} borde={PX.mancha} />
+      <Etq T={T} at={K.Hi + 0.9} until={K.Cr - 0.3} x={610} y={693} texto="Europa central" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Hi + 1.6} until={K.Cr - 0.3} texto="se comía bien cocido" x={540} y={340} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Cr + 0.5} until={K.Cr + 1.9} texto="crudo: irrita el estómago" x={540} y={440} tam={34} borde={KC.red} />
+      <Chip T={T} at={K.Cr + 2.3} until={K.S - 0.3} texto="lo grave es otra cosa" x={540} y={440} tam={36} borde={KC.red} />
       <Chip T={T} at={K.S + 0.1} until={K.P - 0.3} texto="POR DENTRO · TU SANGRE" x={540} y={430} tam={34} borde={KC.cyan} mono />
       <Etq T={T} at={K.S + 0.6} until={K.P - 0.3} x={60} y={520} texto="algo del hongo (antígeno)" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.S + 1.4} until={K.P - 0.3} x={60} y={1110} texto="célula plasmática (linfocito B)" tam={28} color={KC.lilac} />
-      <Etq T={T} at={K.S + 2.4} until={K.P - 0.3} x={600} y={560} texto="anticuerpos (IgG)" tam={32} color={PX.anti} />
+      <Etq T={T} at={K.S + 1.4} until={K.P - 0.3} x={60} y={1265} texto="célula plasmática (linfocito B)" tam={28} color={KC.lilac} />
+      <Etq T={T} at={K.S + 2.4} until={K.P - 0.3} x={600} y={590} texto="anticuerpos (IgG)" tam={32} color={PX.anti} />
       <Chip T={T} at={K.He + 0.4} until={K.R - 0.3} texto="POR DENTRO · LA SIGUIENTE VEZ" x={540} y={430} tam={32} borde={KC.cyan} mono />
-      <Etq T={T} at={K.He + 1.2} until={K.He + 3.0} x={60} y={510} texto="complejos inmunes (grumos)" tam={30} color={PX.anti} />
-      <Etq T={T} at={K.He + 2.0} until={K.R - 0.3} x={60} y={1150} texto="glóbulo rojo" tam={30} color="#ff8a95" />
+      <Etq T={T} at={K.He + 1.2} until={K.He + 3.0} x={60} y={490} texto="complejos inmunes (grumos)" tam={30} color={PX.anti} />
+      <Etq T={T} at={K.He + 2.0} until={K.R - 0.3} x={135} y={1311} texto="glóbulo rojo" tam={30} color="#ff8a95" />
       <Chip T={T} at={K.He + 3.4} until={K.R - 0.3} texto="hemólisis" x={540} y={520} tam={46} borde={KC.red} />
-      <Chip T={T} at={K.R + 0.9} until={K.E - 0.3} texto="riesgo de falla renal" x={420} y={470} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.R + 1.7} until={K.E - 0.3} texto="cocerlo no lo evita" x={720} y={800} tam={36} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.3} until={K.M - 0.2} anio="1944" quien="Julius Schäffer · micólogo alemán" revista="otoño de 1944" x={540} y={560} />
-      <Etq T={T} at={K.E + 1.6} until={K.M - 0.2} x={300} y={1100} texto="él" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E + 1.9} until={K.M - 0.2} x={760} y={1100} texto="ella" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.M + 0.4} until={K.Ra - 0.3} texto="ella: sin síntomas" x={790} y={1140} tam={34} borde="#118a3a" />
-      <Chip T={T} at={K.M + 2.4} until={K.Ra - 0.3} texto="él: murió 17 días después" x={300} y={1140} tam={28} borde={KC.red} />
+      <Chip T={T} at={K.R + 0.9} until={K.E - 0.3} texto="riesgo de falla renal" x={540} y={440} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.R + 1.7} until={K.E - 0.3} texto="cocerlo no lo evita" x={830} y={1135} tam={36} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.3} until={K.M - 0.2} anio="1944" quien="Julius Schäffer · micólogo alemán" revista="otoño de 1944" x={540} y={430} />
+      <Etq T={T} at={K.E + 1.6} until={K.M - 0.2} x={210} y={1278} texto="él" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 1.9} until={K.M - 0.2} x={770} y={1278} texto="ella" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.M + 0.4} until={K.Ra - 0.3} texto="ella: sin síntomas" x={808} y={1340} tam={34} borde="#118a3a" />
+      <Chip T={T} at={K.M + 2.4} until={K.Ra - 0.3} texto="él: murió 17 días después" x={270} y={1340} tam={28} borde={KC.red} />
       <Etq T={T} at={K.E + 0.5} until={K.Ra - 0.3} x={60} y={1480} texto="dibujo esquemático" tam={24} color={KC.ink} />
       <Etq T={T} at={K.M + 2.6} until={K.Ra - 0.3} x={60} y={1525} texto="su muerte se atribuyó a los paxilos" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Ra + 0.2} until={K.C - 0.3} texto="es raro" x={260} y={470} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.Ra + 1.4} until={K.C - 0.3} texto="muy difícil de predecir" x={330} y={570} tam={34} borde={KC.red} />
       <Etq T={T} at={K.Ra + 0.6} until={K.C - 0.3} x={60} y={1480} texto="esquemático: no es una proporción" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="ante la duda, no lo comas" x={540} y={1050} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="¿te sientes mal? → urgencias" x={540} y={1132} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.C + 2.6} until={K.Ou} x={60} y={1500} texto="Este video no es guía de identificación." tam={24} color={KC.ink} />
+      <Chip T={T} at={K.C + 2.0} until={K.Ou} texto="ante la duda, no lo comas" x={540} y={1350} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="¿te sientes mal? → urgencias" x={540} y={1432} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.C + 2.6} until={K.Ou} x={60} y={1530} texto="Este video no es guía de identificación." tam={24} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={115} color={KC.ink} />
-      <BarraEscala T={T} at={K.H} until={K.La} texto="2 cm" largo={140} />
-      <BarraEscala T={T} at={K.La} until={K.Hi} texto="1 cm" largo={100} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={190} color={KC.ink} />
+      <BarraEscala T={T} at={K.H} until={K.La} texto="2 cm" largo={181} />
+      <BarraEscala T={T} at={K.La} until={K.Hi} texto="1 cm" largo={109} />
       <BarraEscala T={T} at={K.Hi} until={K.Cr} texto="mapa esquemático" largo={0} color={KC.ink} />
       <BarraEscala T={T} at={K.Cr} until={K.S} texto="esquemático" largo={0} color={KC.ink} />
-      <BarraEscala T={T} at={K.S} until={K.P} texto="10 µm" largo={260} />
+      <BarraEscala T={T} at={K.S} until={K.P} texto="5 µm" largo={200} />
       <Etq T={T} at={K.S + 0.3} until={K.P - 0.3} x={60} y={1520} texto="anticuerpos y hongo: no a escala" tam={22} color={KC.texto} />
-      <BarraEscala T={T} at={K.P} until={K.He} texto="5 cm" largo={95} color={KC.ink} />
-      <BarraEscala T={T} at={K.He} until={K.R} texto="5 µm" largo={93} />
+      <BarraEscala T={T} at={K.P} until={K.He} texto="5 cm" largo={170} color={KC.ink} />
+      <BarraEscala T={T} at={K.He} until={K.R} texto="5 µm" largo={121} />
       <Etq T={T} at={K.He + 0.3} until={K.R - 0.3} x={60} y={1520} texto="anticuerpos y hongo: no a escala" tam={22} color={KC.texto} />
       <BarraEscala T={T} at={K.R} until={K.E} texto="esquemático" largo={0} color={KC.ink} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={115} color={KC.ink} y={1560} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={190} color={KC.ink} y={1560} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="«Ya lo comí antes…» *No te protege.*" />
