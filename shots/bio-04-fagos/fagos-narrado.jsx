@@ -43,6 +43,11 @@ function Cama({ T, despierta = 0, iv = 0 }) {
   </svg>;
 }
 
+// Vuelta de encuadre: baja (y si hace falta agranda) el conjunto de una escena para centrarlo en el cuadro.
+function Bajar({ k = 1, dy = 0, oy = 960, children }) {
+  return <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:`translateY(${dy}px) scale(${k})`, transformOrigin:`540px ${oy}px` }}>{children}</div>;
+}
+
 function FagosNarrado() {
   const { T, CUES: C } = useComposition();
   const FIN = C.Outro + 4;
@@ -54,16 +59,20 @@ function FagosNarrado() {
       <Escena T={T} a={C.Gancho} b={C.Aterriza} zoom={0.22} origen="50% 52%">
         <FondoMarca T={T} color={KC.cyan} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          {/* la bacteria sube desde abajo mientras la cámara se acerca: ya se ve a dónde va el fago */}
+          {/* la bacteria sube desde abajo mientras la cámara se acerca: ya se ve a dónde va el fago (fuera del encuadre bajado, para que siga asomando) */}
           <g opacity={0.55 * kprog(T, C.Gancho + 2.0, C.Gancho + 3.2)} transform={`translate(0 ${klerp(520, 300, kprog(T, C.Gancho + 2.0, C.Aterriza, kEase.sale))})`}>
             <Bacteria T={T} x={540} y={1500} largo={900} ancho={380} color={ECOLI} seed={5} flagelo={false} />
           </g>
+        </svg>
+        <Bajar k={1.12} dy={260} oy={700}>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g transform={`translate(540 ${klerp(-200, 990, kprog(T, C.Gancho, C.Gancho + 0.6, kEase.rebote))}) scale(${1 + 0.06 * Math.exp(-(T - C.Gancho - 0.6) * 8) * (T > C.Gancho + 0.6 ? 1 : 0)}, ${1 - 0.06 * Math.exp(-(T - C.Gancho - 0.6) * 8) * (T > C.Gancho + 0.6 ? 1 : 0)})`}>
             <Fago T={T} s={2.1} patas={kprog(T, C.Gancho + 0.4, C.Gancho + 0.8)} rot={mece(T, 3, 0.4) * 3} />
           </g>
         </svg>
         <MitoTachado T={T} at={C.Gancho + 1.2} tacharEn={C.Gancho + 2.0} until={C.Aterriza - 0.2} texto="robot" x={250} y={420} />
-        <Escala T={T} z={1.35} pxPorMm={3.3e6} y={1440} />
+        </Bajar>
+        <Escala T={T} z={1.35 * 1.12} pxPorMm={3.3e6} y={1440} />
       </Escena>
 
       {/* ATERRIZA → INYECTA → FÁBRICA → REVIENTA: un solo lugar (la superficie de una E. coli) */}
@@ -94,6 +103,7 @@ function FagosNarrado() {
       {/* SELECTIVO: solo ataca bacterias; superbacterias */}
       <Escena T={T} a={C.Selectivo} b={C.Estudio}>
         <FondoMarca T={T} patron="oscuro" />
+        <Bajar dy={240}>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {[[290, 580], [800, 620]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}><circle r={190} fill="#ffb3c7" stroke={KC.ink} strokeWidth={8} /><circle cx={38} cy={-26} r={70} fill="#b04a8a" /></g>)}
           <Bacteria T={T} x={540} y={960} largo={470} ancho={195} color={T > S2 ? KC.gold2 : ECOLI} seed={3} />
@@ -107,22 +117,28 @@ function FagosNarrado() {
         <Etq T={T} at={C.Selectivo + 0.6} until={S2} x={480} y={420} texto="tus células" color="#ffb3c7" />
         <Etq T={T} at={C.Selectivo + 1.8} until={S2} x={790} y={1110} texto="bacteria" color={ECOLI} />
         <Chip T={T} at={S2 + 0.3} until={C.Estudio - 0.2} texto="SUPERBACTERIA" y={1110} borde={KC.gold} tam={50} />
+        </Bajar>
       </Escena>
 
       {/* ESTUDIO: Tom Patterson, 2016 */}
       <Escena T={T} a={C.Estudio} b={C.Historia}>
         <FondoMarca T={T} color={KC.mint} />
+        <Bajar dy={260}>
         {T > C.Estudio + 0.2 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, C.Estudio + 0.2, C.Estudio + 0.9), transform:'scale(1.12)', transformOrigin:'50% 58%' }}><Cama T={T} iv={kprog(T, E2, E2 + 1.0)} despierta={kprog(T, E2 + 3.6, E2 + 4.0)} /></div>}
+        </Bajar>
         <TarjetaEstudio T={T} at={C.Estudio + 0.2} until={C.Estudio + 2.8} anio="2016" quien="Tom Patterson · UC San Diego" revista="Schooley et al., Antimicrob. Agents Chemother. 2017" y={318} />
+        <Bajar dy={260}>
         <Etq T={T} at={C.Estudio + 3.4} until={E2} x={380} y={760} texto="Acinetobacter baumannii" it color={KC.ink} tam={30} />
         <Chip T={T} at={C.Estudio + 3.8} until={E2} texto="ningún antibiótico funcionaba" y={430} borde={KC.red} tam={40} />
         {T > E2 + 1.2 && <Chip T={T} at={E2 + 1.2} until={C.Historia - 0.2} texto={'día ' + Math.min(3, 1 + Math.floor(kprog(T, E2 + 1.2, E2 + 3.6) * 3))} y={430} borde={KC.pink} tam={48} mono />}
         <Chip T={T} at={E2 + 3.8} until={C.Historia - 0.2} texto="despertó" x={300} y={1100} borde={KC.leaf} tam={44} />
+        </Bajar>
       </Escena>
 
       {/* HISTORIA: d'Hérelle 1917, antes que la penicilina (1928) */}
       <Escena T={T} a={C.Historia} b={C.Extra}>
         <FondoMarca T={T} color={KC.yellow} />
+        <Bajar dy={230}>
         <TarjetaEstudio T={T} at={C.Historia + 0.2} until={C.Extra - 0.2} anio="1917" quien="Félix d'Hérelle" revista="Instituto Pasteur · París" y={400} />
         {/* la placa con calvas (los claros que dejan los fagos en el césped de bacterias) en vez de una lámina vacía */}
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
@@ -137,6 +153,7 @@ function FagosNarrado() {
           </g>)}
         </svg>
         <Chip T={T} at={C.Historia + 3.4} until={C.Extra - 0.2} texto="11 años antes" y={1120} borde={KC.ink} tam={38} />
+        </Bajar>
       </Escena>
 
       {/* EXTRA: 10^31 */}
@@ -157,12 +174,14 @@ function FagosNarrado() {
       {/* CIERRE: el mismo fago del inicio, ahora como medicina */}
       <Escena T={T} a={C.Cierre} b={FIN} zoom={0.03}>
         <FondoMarca T={T} color={KC.cyan} />
+        <Bajar dy={270}>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g transform="translate(450 1000)"><Fago T={T} s={2.1} patas={1} rot={mece(T, 3, 0.4) * 3} /></g>
           <g transform={`translate(860 ${klerp(1500, 640, kprog(T, C.Cierre + 1.2, C.Cierre + 2.0, kEase.rebote))}) rotate(-20)`}><rect x={-80} y={-120} width={160} height={240} rx={26} fill="#fff" stroke={KC.ink} strokeWidth={8} /><rect x={-80} y={-20} width={160} height={70} fill={KC.pink} stroke={KC.ink} strokeWidth={6} /><text y={28} textAnchor="middle" style={{ font:`900 28px ${KF.texto}` }} fill="#fff">FAGOS</text></g>
         </svg>
         <MitoTachado T={T} at={C.Cierre + 0.2} tacharEn={C.Cierre + 0.8} until={C.Outro} texto="robot" x={830} y={420} />
         <Chip T={T} at={C.Cierre + 2.2} until={C.Outro} texto="fagoterapia" x={300} y={420} borde={KC.pink} tam={44} />
+        </Bajar>
       </Escena>
 
       {/* subtítulos */}

@@ -84,12 +84,12 @@ function PetuniaNarrado() {
           <g opacity={0.3 * (1 - u)} transform="translate(540 1250) scale(1.5)"><Tabaco T={T} x={0} y={0} brillo={0} /></g>
           <g opacity={0.34 * u}><Maceta T={T} x={540} y={1200} s={1.5} brillos={[1, 0.9, 0.75, 1, 0.95]} /></g>
         </svg>; })()}
-        <div style={{ position:'absolute', left:0, right:0, top:560, zIndex:41, textAlign:'center' }}>
+        <div style={{ position:'absolute', left:0, right:0, top:760, zIndex:41, textAlign:'center' }}>
           <div style={{ font:`400 220px/1 ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`7px ${KC.ink}`, textShadow:`9px 9px 0 ${KC.ink}` }}>{Math.round(klerp(1986, 2024, kprog(T, C.Wood + 0.8, C.Wood + 3.4, kEase.suave)))}</div>
           <div style={{ font:`900 54px ${KF.texto}`, color:KC.texto, textShadow:SOMBRA, marginTop:10 }}>Keith Wood</div>
           <div style={{ font:`700 34px ${KF.mono}`, color:KC.ink, marginTop:16, opacity:kprog(T, C.Wood + 3.4, C.Wood + 3.8) }}>cofundador de Light Bio</div>
         </div>
-        <Chip T={T} at={C.Wood + 0.3} until={C.Wood + 3.2} texto="estudiante en 1986" y={430} borde={KC.ink} tam={38} />
+        <Chip T={T} at={C.Wood + 0.3} until={C.Wood + 3.2} texto="estudiante en 1986" y={630} borde={KC.ink} tam={38} />
       </Escena>
 
       {/* APROBADA: luz verde */}

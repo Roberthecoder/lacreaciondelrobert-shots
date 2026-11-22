@@ -167,7 +167,7 @@ function Col() {
       {/* 6 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Et} zoom={0.1}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa><text x={280} y={1100} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 900)`}>?</text></SvgCapa>
+        <SvgCapa><text x={320} y={1380} textAnchor="middle" style={{ font:`400 860px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={18} transform={`rotate(${Math.sin(T * 3) * 6} 320 1080)`}>?</text></SvgCapa>
       </Escena>
       {/* 7–8 · el estudio: película para pescado */}
       <Escena T={T} a={K.Et} b={K.Ja}>

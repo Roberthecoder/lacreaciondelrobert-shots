@@ -47,6 +47,11 @@ function Persona({ x, y, s = 1, color = '#8fb6ff', mal = 0 }) {
   </g>;
 }
 
+// Vuelta de encuadre: baja (y si hace falta agranda) el conjunto de una escena para centrarlo en el cuadro.
+function Bajar({ k = 1, dy = 0, oy = 960, children }) {
+  return <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:`translateY(${dy}px) scale(${k})`, transformOrigin:`540px ${oy}px` }}>{children}</div>;
+}
+
 function AmanitaShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, A: CUES.Amanita, M: CUES.Mitos, Co: CUES.Cocinar, Cg: CUES.Congelar, P: CUES.Pregunta, H: CUES.Higado, E: CUES.Estudio, R: CUES.Retraso, Tr: CUES.Trampa, Ts: CUES.Trasplante, S: CUES.Sirve, C: CUES.Cierre, Ou: CUES.Outro };
@@ -64,18 +69,18 @@ function AmanitaShot() {
       {/* 2 · Amanita phalloides */}
       <Escena T={T} a={K.A} b={K.M} zoom={0.06}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<g transform="translate(470 1080) scale(1.2) translate(-470 -1080)">
+        <Bajar dy={230}>{fsvg(<g transform="translate(470 1080) scale(1.2) translate(-470 -1080)">
           <rect x={-200} y={1080} width={KW + 400} height={900} fill="#3a2c24" stroke={KC.ink} strokeWidth={8} />
           {[[150, 1090, -20], [860, 1080, 30], [700, 1100, -50]].map(([x, y, r], i) => <path key={i} d="M -50 0 Q 0 -30 50 0 Q 0 20 -50 0 Z" transform={`translate(${x} ${y}) rotate(${r})`} fill="#c0702a" stroke={KC.ink} strokeWidth={4} />)}
           <Amanita x={420} y={1100} s={1.5} crece={kprog(T, K.A, K.A + 1.4)} />
           <Amanita x={720} y={1095} s={0.9} crece={kprog(T, K.A + 0.6, K.A + 1.8)} rot={8} />
-        </g>)}
+        </g>)}</Bajar>
       </Escena>
       {/* 3 · los mitos, tachados uno por uno */}
       <Escena T={T} a={K.M} b={K.Co}>
         <FondoLunares color={KC.pink} />
         {/* la amanita sigue ahí, al fondo, mientras se tachan los mitos: el sujeto no desaparece */}
-        {fsvg(<g opacity=".32" transform="translate(470 1080) scale(1.2) translate(-470 -1080)">
+        {fsvg(<g opacity=".32" transform="translate(470 1310) scale(1.2) translate(-470 -1080)">
           <rect x={-200} y={1080} width={KW + 400} height={900} fill="#3a2c24" />
           <Amanita x={420} y={1100} s={1.5} /><Amanita x={720} y={1095} s={0.9} rot={8} />
         </g>)}
@@ -99,8 +104,8 @@ function AmanitaShot() {
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
           {/* la célula del hígado ya viene entrando detrás de la pregunta */}
-          <g opacity={0.3 * kprog(T, K.P, K.H)} transform={`translate(540 880) scale(${klerp(0.5, 1, kprog(T, K.P, K.H + 0.3, kEase.sale))})`}><circle r={330} fill="#c25b4a" /><circle r={150} fill="#7c3a9a" /></g>
-          <Interrogacion T={T} x={300} y={1080} />
+          <g opacity={0.3 * kprog(T, K.P, K.H)} transform={`translate(540 980) scale(${klerp(0.5, 1, kprog(T, K.P, K.H + 0.3, kEase.sale))})`}><circle r={330} fill="#c25b4a" /><circle r={150} fill="#7c3a9a" /></g>
+          <Interrogacion T={T} x={320} y={1360} tam={860} />
         </>)}
       </Escena>
       {/* 7 · en el hígado: frena la ARN polimerasa II */}
@@ -138,14 +143,14 @@ function AmanitaShot() {
       {/* 12 · lo que sí sirve */}
       <Escena T={T} a={K.S} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<g transform="translate(470 1080) scale(1.2) translate(-470 -1080)">
+        <Bajar dy={230}>{fsvg(<g transform="translate(470 1080) scale(1.2) translate(-470 -1080)">
           <rect x={-200} y={1080} width={KW + 400} height={900} fill="#3a2c24" stroke={KC.ink} strokeWidth={8} />
           <Amanita x={430} y={1100} s={1.4} />
           <g transform={`translate(${klerp(900, 520, kprog(T, K.S + 0.3, K.S + 1.2, kEase.sale))} 760)`}>
             <circle r={120} fill="rgba(200,240,255,.35)" stroke={KC.ink} strokeWidth={14} />
             <line x1={85} y1={85} x2={180} y2={180} stroke={KC.ink} strokeWidth={26} strokeLinecap="round" />
           </g>
-        </g>)}
+        </g>)}</Bajar>
       </Escena>
       {/* 13 · cierre: la misma olla y la misma cuchara; lo que salva es saber qué hongo es */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
@@ -158,12 +163,14 @@ function AmanitaShot() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 1.4} until={K.G + 3.0} texto="¿se pone negra = veneno?" x={420} y={470} tam={36} borde={KC.ink} />
+      <Bajar dy={230}>
       <Etq T={T} at={K.A + 1.2} until={K.M - 0.3} x={60} y={520} texto="Amanita phalloides" it tam={40} color={KC.ink} />
       <Etq T={T} at={K.A + 1.8} until={K.M - 0.3} x={60} y={580} texto="“sombrero de la muerte”" tam={32} color={KC.ink} />
       <Etq T={T} at={K.A + 2.4} until={K.M - 0.3} x={676} y={864} texto="anillo" tam={28} color={KC.ink} />
       <Etq T={T} at={K.A + 2.8} until={K.M - 0.3} x={530} y={1164} texto="copa (volva)" tam={28} />
       <Chip T={T} at={K.A + 2.2} until={K.M - 0.3} texto="ojo: su color varía, y el anillo y la copa pueden no verse" x={480} y={790} tam={26} borde={KC.red} />
-      {MITOS.map((t, i) => <MitoTachado key={i} T={T} at={K.M + 0.2 + i * 0.6} tacharEn={K.M + 2.6 + i * 0.4} until={K.Co - 0.3} texto={t} x={480} y={600 + i * 150} tam={50} />)}
+      </Bajar>
+      {MITOS.map((t, i) => <MitoTachado key={i} T={T} at={K.M + 0.2 + i * 0.6} tacharEn={K.M + 2.6 + i * 0.4} until={K.Co - 0.3} texto={t} x={480} y={720 + i * 150} tam={50} />)}
       <Chip T={T} at={K.Co + 0.4} until={K.Cg - 0.3} texto="100 °C: el veneno sigue" x={400} y={480} tam={40} borde={KC.red} />
       <Etq T={T} at={K.Co + 2.0} until={K.Cg - 0.3} x={60} y={1150} texto="amatoxinas" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Cg + 0.4} until={K.P - 0.3} texto="7–8 meses congelados" x={400} y={480} tam={40} borde={KC.cyan} />
@@ -175,8 +182,10 @@ function AmanitaShot() {
       <Chip T={T} at={K.R + 1.6} until={K.Tr - 0.3} texto="vómito y diarrea" x={400} y={640} tam={38} borde={KC.ink} />
       <Chip T={T} at={K.Tr + 1.2} until={K.Ts - 0.3} texto="¿mejora? es una trampa" x={420} y={520} tam={38} borde={KC.red} />
       <NumeroGigante T={T} at={K.Ts + 0.3} until={K.S - 0.3} valor={3} dur={0.6} sufijo=" de 14" etiqueta="trasplante de hígado" x={420} y={520} tam={150} color={KC.red} />
+      <Bajar dy={230}>
       <Chip T={T} at={K.S + 1.2} until={K.C - 0.3} texto="✓ que lo identifique un experto" x={420} y={480} tam={34} borde={KC.leaf} />
       <Chip T={T} at={K.S + 2.4} until={K.C - 0.3} texto="¿mal? al médico y lleva el hongo" x={400} y={580} tam={30} borde={KC.ink} />
+      </Bajar>
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="te salva saber qué hongo es" x={420} y={470} tam={38} borde={KC.yellow} />
 
       {/* barras de escala */}

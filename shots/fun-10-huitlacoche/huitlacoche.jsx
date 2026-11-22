@@ -138,12 +138,12 @@ function HuitlacocheShot() {
       <Escena T={T} a={K.En} b={K.H} zoom={0.06} origen="50% 30%">
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Elote T={T} x={470} y={1340} s={1.45} abre={0} agalla={0} herida={kprog(T, K.En + 3.0, K.En + 3.6)} />
-          {Array.from({ length: 14 }, (_, i) => { const t0 = K.En + 0.2 + i * 0.12, u = kprog(T, t0, t0 + 1.4, kEase.sale); const g = krng(i + 7); const xx = 300 + g() * 380, yy = klerp(260, 560 + g() * 200, u);
+          <Elote T={T} x={470} y={1200} s={1.45} abre={0} agalla={0} herida={kprog(T, K.En + 3.0, K.En + 3.6)} />
+          {Array.from({ length: 14 }, (_, i) => { const t0 = K.En + 0.2 + i * 0.12, u = kprog(T, t0, t0 + 1.4, kEase.sale); const g = krng(i + 7); const xx = 300 + g() * 380, yy = klerp(100, 420 + g() * 200, u);
             return u > 0 ? <ellipse key={i} cx={xx + Math.sin(T * 2 + i) * 8} cy={yy} rx={11} ry={7} fill="#f6f1e6" stroke={KC.ink} strokeWidth={3} transform={`rotate(${i * 40} ${xx} ${yy})`} /> : null; })}
           {T > K.En + 2.5 && Array.from({ length: 16 }, (_, i) => { const t0 = K.En + 2.5 + (i % 8) * 0.15 + Math.floor(i / 8) * 0.6; const u = (T - t0) / 0.7; if (u < 0 || u > 1) return null; const xx = 640 + (i * 53) % 360;
-            return <circle key={i} cx={xx - u * 80} cy={klerp(200, 1200, u)} r={13} fill="#ffffff" stroke={KC.ink} strokeWidth={3} />; })}
-          {T > K.En + 2.4 && [0, 1, 2].map((i) => { const u = ((T - K.En - 2.4) * 1.3 + i / 3) % 1; return <path key={i} d={`M ${1080 - u * 700} ${700 + i * 90} q -60 -20 -120 0`} stroke="#ffffff" strokeWidth={8} fill="none" strokeLinecap="round" opacity={(1 - u) * 0.8} />; })}
+            return <circle key={i} cx={xx - u * 80} cy={klerp(40, 1060, u)} r={13} fill="#ffffff" stroke={KC.ink} strokeWidth={3} />; })}
+          {T > K.En + 2.4 && [0, 1, 2].map((i) => { const u = ((T - K.En - 2.4) * 1.3 + i / 3) % 1; return <path key={i} d={`M ${1080 - u * 700} ${560 + i * 90} q -60 -20 -120 0`} stroke="#ffffff" strokeWidth={8} fill="none" strokeLinecap="round" opacity={(1 - u) * 0.8} />; })}
         </>)}
       </Escena>
       {/* 4 · micro: las hifas entran al pelo y bajan al grano */}
@@ -301,10 +301,10 @@ function HuitlacocheShot() {
       <Etq T={T} at={K.N + 0.2} until={K.En - 0.3} x={575} y={700} texto="huitlacoche" tam={40} />
       <Etq T={T} at={K.N + 0.7} until={K.En - 0.3} x={575} y={765} texto="Ustilago maydis" it tam={36} />
       <Etq T={T} at={K.N + 1.2} until={K.En - 0.3} x={575} y={825} texto="maíz: Zea mays" tam={28} />
-      <Chip T={T} at={K.En + 0.8} until={K.En + 2.5} texto="pelos sin polinizar" x={400} y={460} tam={42} borde={HC.pelo} />
-      <Etq T={T} at={K.En + 1.2} until={K.En + 2.5} x={420} y={640} texto="pelos (estigmas)" tam={30} lado="izq" />
-      <Chip T={T} at={K.En + 2.7} until={K.H - 0.3} texto="o heridas: granizo, viento" x={400} y={460} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.En + 3.4} until={K.H - 0.3} x={640} y={1180} texto="herida" tam={32} lado="izq" />
+      <Chip T={T} at={K.En + 0.8} until={K.En + 2.5} texto="pelos sin polinizar" x={400} y={235} tam={42} borde={HC.pelo} />
+      <Etq T={T} at={K.En + 1.2} until={K.En + 2.5} x={420} y={500} texto="pelos (estigmas)" tam={30} lado="izq" />
+      <Chip T={T} at={K.En + 2.7} until={K.H - 0.3} texto="o heridas: granizo, viento" x={400} y={235} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.En + 3.4} until={K.H - 0.3} x={640} y={1040} texto="herida" tam={32} lado="izq" />
       <Etq T={T} at={K.H + 0.4} until={K.A - 0.3} x={820} y={420} texto="pelo (estigma)" tam={30} color={HC.pelo} lado="izq" />
       <Etq T={T} at={K.H + 1.2} until={K.A - 0.3} x={500} y={760} texto="hifas" tam={36} color="#fff4d6" lado="izq" />
       <Etq T={T} at={K.H + 2.2} until={K.A - 0.3} x={660} y={1100} texto="grano (ovario)" tam={30} color={HC.grano} />
