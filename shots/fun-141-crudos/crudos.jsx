@@ -201,7 +201,7 @@ function Cajones({ T, x, y, p = 1, luz = -1, brilla = 0 }) {
 }
 
 // 51 personas: 9 columnas × 6 filas (la última con 6). Los 3 del hospital y los 2 que murieron, posiciones ilustrativas.
-const P51 = Array.from({ length: 51 }, (_, i) => [150 + (i % 9) * 98, 720 + Math.floor(i / 9) * 80]);
+const P51 = Array.from({ length: 51 }, (_, i) => [140 + (i % 9) * 100, 730 + Math.floor(i / 9) * 115]);
 const HOSP = [12, 30, 44], MUR = [21, 38];
 
 function CrudosShot() {
@@ -217,42 +217,46 @@ function CrudosShot() {
       <Escena T={T} a={K.G} b={K.D} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <PlatoEnsalada T={T} x={330} y={900} s={0.92} champ={kprog(T, K.G + 0.1, K.G + 1.2)} />
-          <Tenedor x={klerp(560, 470, caeTen)} y={klerp(320, 800, caeTen)} rot={klerp(-60, 30, caeTen) + (caeTen >= 1 ? Math.sin((T - K.G - 0.55) * 30) * 6 * Math.exp(-(T - K.G - 0.55) * 6) : 0)} s={0.8} />
+          <PlatoEnsalada T={T} x={540} y={690} s={1.33} champ={kprog(T, K.G + 0.1, K.G + 1.2)} />
+          <Tenedor x={klerp(870, 743, caeTen)} y={klerp(-50, 545, caeTen)} rot={klerp(-60, 30, caeTen) + (caeTen >= 1 ? Math.sin((T - K.G - 0.55) * 30) * 6 * Math.exp(-(T - K.G - 0.55) * 6) : 0)} s={1.16} />
+          <Tabla x={420} y={1440} w={550} h={175} />
           <g opacity={kprog(T, K.G + 1.6, K.G + 2.2)}>
-            <Tabla x={800} y={1050} w={380} h={120} />
-            <g transform={`translate(800 ${1040 - 40 * (1 - kprog(T, K.G + 1.6, K.G + 2.3, kEase.rebote))})`}><Morilla x={0} y={0} s={0.85} rot={Math.sin(T * 2) * 3} id="g" /></g>
+            <g transform={`translate(420 ${1430 - 58 * (1 - kprog(T, K.G + 1.6, K.G + 2.3, kEase.rebote))})`}><Morilla x={0} y={0} s={1.23} rot={Math.sin(T * 2) * 3} id="g" /></g>
           </g>
-          <text x={655} y={940} textAnchor="middle" style={{ font:`400 ${150 * kEase.rebote(kprog(T, K.G + 3.2, K.G + 3.6))}px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={8}>≠</text>
+          {(() => { const e = kEase.rebote(kprog(T, K.G + 3.2, K.G + 3.6)); return e > 0 && <g transform={`translate(850 1170) scale(${e})`}>
+            {[-28, 28].map((dy) => <rect key={dy} x={-70} y={dy - 14} width={140} height={28} rx={8} fill={KC.red} stroke="#0b1020" strokeWidth={6} />)}
+            <line x1={36} y1={-80} x2={-36} y2={80} stroke="#0b1020" strokeWidth={30} strokeLinecap="round" />
+            <line x1={36} y1={-80} x2={-36} y2={80} stroke={KC.red} strokeWidth={16} strokeLinecap="round" /></g>; })()}
         </>)}
       </Escena>
       {/* 2 · depende de lo que trae cada uno: el champiñón entero */}
       <Escena T={T} a={K.D} b={K.A} zoom={0.12} origen="50% 55%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<Champinon x={400} y={1150} s={1.8} crece={1} abre={kprog(T, K.D, K.D + 1.4, kEase.sale) * 0.7 + 0.3} rot={Math.sin(T * 1.5) * 2} />)}
+        {fsvg(<Champinon x={470} y={1300} s={2.6} crece={1} abre={kprog(T, K.D, K.D + 1.4, kEase.sale) * 0.7 + 0.3} rot={Math.sin(T * 1.5) * 2} />)}
       </Escena>
       {/* 3 · al microscopio: laminilla, basidios con 2 esporas, agaritina */}
       <Escena T={T} a={K.A} b={K.G3} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
         {fsvg(<>
-          <path d="M -20 1184 Q 300 1160 540 1176 Q 800 1194 1100 1170 L 1100 1400 L -20 1400 Z" fill="#1d3a33" stroke="#9fe8d0" strokeWidth={4} />
-          {[110, 260, 410, 560, 710, 860].map((bx, i) => <Basidio key={i} x={bx} y={1180} s={1.3} esp={kprog(T, K.A + 0.3 + i * 0.18, K.A + 0.9 + i * 0.18)} brillo={i === 2 ? 1 : 0} />)}
-          <Agaritina x={300} y={680} s={1.05} p={kprog(T, K.A + 1.5, K.A + 2.8)} rot={Math.sin(T) * 3} />
+          <path d="M -20 1254 Q 300 1230 540 1246 Q 800 1264 1100 1240 L 1100 1480 L -20 1480 Z" fill="#1d3a33" stroke="#9fe8d0" strokeWidth={4} />
+          {[105, 279, 453, 627, 801, 975].map((bx, i) => <Basidio key={i} x={bx} y={1250} s={1.6} esp={kprog(T, K.A + 0.3 + i * 0.18, K.A + 0.9 + i * 0.18)} brillo={i === 2 ? 1 : 0} />)}
+          <Agaritina x={360} y={720} s={1.3} p={kprog(T, K.A + 1.5, K.A + 2.8)} rot={Math.sin(T) * 3} />
         </>)}
       </Escena>
       {/* 4 · grupo 3 de la IARC: la agaritina, no el hongo */}
       <Escena T={T} a={K.G3} b={K.S}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Cajones T={T} x={186} y={900} p={kprog(T, K.G3 + 1.4, K.G3 + 2.2)} luz={3} brilla={kprog(T, K.G3 + 3.1, K.G3 + 3.4)} />
-          {(() => { const u = kprog(T, K.G3 + 2.4, K.G3 + 3.1, kEase.entra || ((v) => v * v)); return <Agaritina x={klerp(360, 850, u)} y={klerp(680, 780, u)} s={klerp(0.7, 0.3, u)} p={1} color={KC.ink} />; })()}
+          <g opacity={0.55}><Champinon x={540} y={1500} s={1.5} crece={1} abre={1} rot={Math.sin(T * 1.5) * 2} /></g>
+          <Cajones T={T} x={186} y={820} p={kprog(T, K.G3 + 1.4, K.G3 + 2.2)} luz={3} brilla={kprog(T, K.G3 + 3.1, K.G3 + 3.4)} />
+          {(() => { const u = kprog(T, K.G3 + 2.4, K.G3 + 3.1, kEase.entra || ((v) => v * v)); return <Agaritina x={klerp(420, 850, u)} y={klerp(1180, 800, u)} s={klerp(0.7, 0.3, u)} p={1} color={KC.ink} />; })()}
         </>)}
       </Escena>
       {/* 5 · cocinar la baja: champiñones de cultivo comprados en Praga, fritos 5 min en aceite */}
       <Escena T={T} a={K.S} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<Sarten T={T} x={460} y={830} s={1.05} chispa={kprog(T, K.S + 0.5, K.S + 1)}>
+        {fsvg(<Sarten T={T} x={420} y={1060} s={1.3} chispa={kprog(T, K.S + 0.5, K.S + 1)}>
           {[[-150, -40, -14], [-60, 30, 10], [40, -60, -6], [130, 20, 18], [-10, -10, 4], [80, 90, -20], [-120, 80, 26]].map(([a, b, r], i) =>
             <Rebanada key={i} x={a} y={b + Math.sin(T * 8 + i) * 3} s={0.78} rot={r} tost={fry} />)}
         </Sarten>)}
@@ -261,7 +265,7 @@ function CrudosShot() {
       <Escena T={T} a={K.P} b={K.Mo} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Morilla x={300} y={1220} s={1.4} rot={Math.sin(T * 3) * 4} corte={kprog(T, K.P + 0.9, K.P + 1.5)} id="p" />
+          <Morilla x={560} y={1420} s={2.2} rot={Math.sin(T * 3) * 4} corte={kprog(T, K.P + 0.9, K.P + 1.5)} id="p" />
         </>)}
       </Escena>
       {/* 7–9 · Montana 2023: sushi con morillas crudas o apenas cocidas; 51 enfermos */}
@@ -269,19 +273,19 @@ function CrudosShot() {
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
           {T < K.E + 0.3 && <g opacity={1 - kprog(T, K.E - 0.2, K.E + 0.3)}>
-            <MapaEEUU x={160} y={640} s={0.98} mt={kprog(T, K.Mo + 0.4, K.Mo + 1.2)} />
-            <Sushi x={200} y={1100} s={0.75 * kEase.rebote(kprog(T, K.Mo + 1.6, K.Mo + 2.2))} morilla={1} />
-            <Sushi x={480} y={1100} s={0.75 * kEase.rebote(kprog(T, K.Mo + 2.2, K.Mo + 2.8))} morilla={1} rot={8} />
+            <MapaEEUU x={100} y={640} s={1.15} mt={kprog(T, K.Mo + 0.4, K.Mo + 1.2)} />
+            <Sushi x={230} y={1340} s={1.05 * kEase.rebote(kprog(T, K.Mo + 1.6, K.Mo + 2.2))} morilla={1} />
+            <Sushi x={560} y={1340} s={1.05 * kEase.rebote(kprog(T, K.Mo + 2.2, K.Mo + 2.8))} morilla={1} rot={8} />
           </g>}
           {T > K.E - 0.3 && T < K.Cr + 0.3 && <g opacity={kprog(T, K.E - 0.3, K.E + 0.1) * (1 - kprog(T, K.Cr - 0.2, K.Cr + 0.3))}>
             {P51.map(([px, py], i) => { const on = kprog(T, K.E + 0.2 + i * 0.03, K.E + 0.4 + i * 0.03, kEase.rebote); if (on <= 0) return null;
               const est = MUR.includes(i) && T > K.E + 3.4 ? 3 : HOSP.includes(i) && T > K.E + 2.6 ? 2 : 1;
-              return <Persona key={i} x={px} y={py} s={on} estado={est} />; })}
+              return <Persona key={i} x={px} y={py} s={1.35 * on} estado={est} />; })}
           </g>}
           {T > K.Cr - 0.3 && <g opacity={kprog(T, K.Cr - 0.3, K.Cr + 0.2)}>
-            <Sushi x={300} y={980} s={1.25} morilla={1} />
-            <g opacity=".45"><Sushi x={780} y={1030} s={0.8} morilla={1} rot={10} /></g>
-            <circle cx={300} cy={930} r={klerp(260, 200, kprog(T, K.Cr + 0.2, K.Cr + 0.7, kEase.rebote))} fill="none" stroke={KC.red} strokeWidth={12} strokeDasharray="30 16" opacity={kprog(T, K.Cr + 0.2, K.Cr + 0.5)} />
+            <Sushi x={360} y={1060} s={1.7} morilla={1} />
+            <g opacity=".45"><Sushi x={830} y={1170} s={1.09} morilla={1} rot={10} /></g>
+            <circle cx={360} cy={992} r={klerp(354, 272, kprog(T, K.Cr + 0.2, K.Cr + 0.7, kEase.rebote))} fill="none" stroke={KC.red} strokeWidth={12} strokeDasharray="30 16" opacity={kprog(T, K.Cr + 0.2, K.Cr + 0.5)} />
           </g>}
         </>)}
       </Escena>
@@ -289,40 +293,40 @@ function CrudosShot() {
       <Escena T={T} a={K.Cu} b={K.F} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Caja x={300} y={1080} s={1.05} />
-          <Tubo x={760} y={1060} s={1.1} />
-          <g transform={`translate(${klerp(1150, 720, kprog(T, K.Cu + 1.2, K.Cu + 2.0, kEase.sale))} 900)`}><Lupa2 x={0} y={0} s={0.9} /></g>
+          <Caja x={320} y={1150} s={1.5} />
+          <Tubo x={830} y={1130} s={1.5} />
+          <g transform={`translate(${klerp(1200, 790, kprog(T, K.Cu + 1.2, K.Cu + 2.0, kEase.sale))} 930)`}><Lupa2 x={0} y={0} s={1.2} /></g>
         </>)}
       </Escena>
       {/* 11 · Francia 2010–2020: 446 casos reportados */}
       <Escena T={T} a={K.F} b={K.Sh}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <MapaFrancia x={540} y={800} s={1.2} />
-          {Array.from({ length: 40 }, (_, i) => { const on = kprog(T, K.F + 2.6 + i * 0.05, K.F + 2.8 + i * 0.05); const g = krng(i + 7);
-            return on > 0 ? <circle key={i} cx={640 + g() * 260} cy={850 + g() * 300} r={9 * on} fill={KC.red} stroke={KC.ink} strokeWidth={2} /> : null; })}
+          <MapaFrancia x={380} y={760} s={1.75} />
+          <g transform="translate(380 760) scale(1.4583) translate(-540 -800)">{Array.from({ length: 40 }, (_, i) => { const on = kprog(T, K.F + 2.6 + i * 0.05, K.F + 2.8 + i * 0.05); const g = krng(i + 7);
+            return on > 0 ? <circle key={i} cx={640 + g() * 260} cy={850 + g() * 300} r={9 * on} fill={KC.red} stroke={KC.ink} strokeWidth={2} /> : null; })}</g>
         </>)}
       </Escena>
       {/* 12 · el shiitake (ya lo vimos) */}
       <Escena T={T} a={K.Sh} b={K.C} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Shiitake x={300} y={980} s={1.25} rot={Math.sin(T * 2) * 3} />
-          <BrazoRayas x={520} y={1130} s={1.0} p={kprog(T, K.Sh + 1.6, K.Sh + 3.4)} />
+          <Shiitake x={330} y={1000} s={1.7} rot={Math.sin(T * 2) * 3} />
+          <BrazoRayas x={540} y={1250} s={1.36} p={kprog(T, K.Sh + 1.6, K.Sh + 3.4)} />
         </>)}
       </Escena>
       {/* 13 · cierre: la misma mesa del inicio; la morilla ya en la sartén, dorada */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <PlatoEnsalada T={T} x={330} y={900} s={0.92} champ={1} />
-          <Tenedor x={470} y={800} rot={30} s={0.8} />
-          <Tabla x={800} y={1050} w={380} h={120} />
-          <g opacity={1 - kprog(T, K.C + 0.4, K.C + 1.0)}><Morilla x={800} y={1040} s={0.85} id="c0" /></g>
+          <PlatoEnsalada T={T} x={540} y={690} s={1.33} champ={1} />
+          <Tenedor x={743} y={545} rot={30} s={1.16} />
+          <Tabla x={420} y={1440} w={550} h={175} />
+          <g opacity={1 - kprog(T, K.C + 0.4, K.C + 1.0)}><Morilla x={420} y={1430} s={1.23} id="c0" /></g>
           <g opacity={kprog(T, K.C + 0.6, K.C + 1.2)}>
-            <Sarten T={T} x={790} y={1000} s={0.55} chispa={1}><g transform="rotate(-80) translate(130 0)"><Morilla x={0} y={0} s={0.55} rot={0} tost={kprog(T, K.C + 1.0, K.C + 3.0)} id="c1" /></g></Sarten>
+            <Sarten T={T} x={405} y={1368} s={0.8} chispa={1}><g transform="rotate(-80) translate(130 0)"><Morilla x={0} y={0} s={0.55} rot={0} tost={kprog(T, K.C + 1.0, K.C + 3.0)} id="c1" /></g></Sarten>
           </g>
-          <Sello T={T} at={K.C + 1.8} x={820} y={760} texto="COCIDOS" color="#118a3a" r={110} rot={-10} />
+          <Sello T={T} at={K.C + 1.8} x={850} y={1120} texto="COCIDOS" color="#118a3a" r={130} rot={-10} />
         </>)}
       </Escena>
 
@@ -330,57 +334,57 @@ function CrudosShot() {
       <Capitulo T={T} hasta={K.C} caps={[{ at: K.D, titulo: 'CHAMPIÑÓN' }, { at: K.P, titulo: 'MORILLA' }, { at: K.Sh, titulo: 'SHIITAKE' }]} />
 
       {/* textos */}
-      <Etq T={T} at={K.G + 0.9} until={K.D - 0.3} x={60} y={1150} texto="champiñón crudo" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.G + 2.2} until={K.D - 0.3} x={620} y={1150} texto="morilla cruda" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.D + 0.4} until={K.A - 0.2} x={560} y={1010} texto="champiñón" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.D + 0.8} until={K.A - 0.2} x={560} y={1070} texto="Agaricus bisporus" it tam={36} color={KC.ink} />
+      <Etq T={T} at={K.G + 0.9} until={K.D - 0.3} x={60} y={878} texto="champiñón crudo" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.G + 2.2} until={K.D - 0.3} x={700} y={1440} texto="morilla cruda" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.D + 0.4} until={K.A - 0.2} x={590} y={1150} texto="champiñón" tam={40} color={KC.ink} />
+      <Etq T={T} at={K.D + 0.8} until={K.A - 0.2} x={590} y={1210} texto="Agaricus bisporus" it tam={36} color={KC.ink} />
       <Chip T={T} at={K.A + 0.1} until={K.G3 - 0.3} texto="AL MICROSCOPIO · LAMINILLA" x={330} y={470} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.A + 0.9} until={K.G3 - 0.3} x={60} y={865} texto="bisporus: 2 esporas por basidio" it tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.A + 1.8} until={K.G3 - 0.3} x={60} y={560} texto="agaritina (molécula agrandada)" tam={30} color={KC.yellow} />
-      <Chip T={T} at={K.A + 2.6} until={K.G3 - 0.3} texto="todavía se estudia" x={300} y={790} tam={36} borde={KC.yellow} />
+      <Etq T={T} at={K.A + 0.9} until={K.G3 - 0.3} x={60} y={1390} texto="bisporus: 2 esporas por basidio" it tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.A + 1.8} until={K.G3 - 0.3} x={60} y={590} texto="agaritina (molécula agrandada)" tam={30} color={KC.yellow} />
+      <Chip T={T} at={K.A + 2.6} until={K.G3 - 0.3} texto="todavía se estudia" x={360} y={830} tam={36} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.G3 + 0.15} until={K.G3 + 2.3} anio="IARC" quien="agencia de la OMS contra el cáncer" revista="evaluación de 1987" x={420} y={600} />
-      <Chip T={T} at={K.G3 + 3.2} until={K.S - 0.3} texto="grupo 3 · no clasificable como cancerígeno en humanos" x={540} y={1150} tam={30} borde={KC.gold} />
-      <Chip T={T} at={K.G3 + 3.8} until={K.S - 0.3} texto="la agaritina, no el hongo" x={330} y={700} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.G3 + 3.2} until={K.S - 0.3} texto="grupo 3 · no clasificable como cancerígeno en humanos" x={540} y={1030} tam={30} borde={KC.gold} />
+      <Chip T={T} at={K.G3 + 3.8} until={K.S - 0.3} texto="la agaritina, no el hongo" x={330} y={650} tam={38} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.S + 0.2} until={K.S + 2.9} anio="2002" quien="Praga, Chequia" revista="Schulzová et al., Food Addit. Contam." x={540} y={470} />
-      <Etq T={T} at={K.S + 1.4} until={K.P - 0.3} x={60} y={1110} texto="champiñones de cultivo comprados en Praga" tam={31} color={KC.ink} />
+      <Etq T={T} at={K.S + 1.4} until={K.P - 0.3} x={60} y={1380} texto="champiñones de cultivo comprados en Praga" tam={31} color={KC.ink} />
       <Cronometro T={T} at={K.S + 3.0} until={K.S + 5.6} factor={300 / 3.2} x={300} y={505} />
       <Chip T={T} at={K.S + 3.0} until={K.S + 5.6} texto="frito en aceite" x={300} y={432} tam={26} borde={KC.yellow} />
       <Medidor T={T} at={K.S + 3.0} until={K.P - 0.3} x={60} y={590} ancho={600} etiqueta="agaritina que queda" valor={(t) => klerp(1, 0.343, kprog(t, K.S + 3.1, K.S + 5.6, kEase.suave))} texto={(v) => Math.round(v * 100) + ' %'} color={KC.yellow} />
       <Etq T={T} at={K.P + 0.3} until={K.Mo - 0.2} x={60} y={450} texto="morilla" tam={44} color={KC.ink} />
       <Etq T={T} at={K.P + 0.6} until={K.Mo - 0.2} x={60} y={510} texto="Morchella" it tam={40} color={KC.ink} />
-      <Etq T={T} at={K.P + 1.2} until={K.Mo - 0.2} x={60} y={1260} texto="hueca por dentro" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.P + 1.2} until={K.Mo - 0.2} x={60} y={1150} texto="hueca por dentro" tam={28} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.Mo + 0.2} until={K.E - 0.3} anio="2023" quien="Bozeman, Montana (EE. UU.)" revista="CDC · MMWR, 2024" x={540} y={490} />
-      <Chip T={T} at={K.Mo + 2.0} until={K.E - 0.3} texto="crudas" x={830} y={1010} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.Mo + 2.6} until={K.E - 0.3} texto="apenas cocidas" x={830} y={1100} tam={36} borde={KC.orange} />
+      <Chip T={T} at={K.Mo + 2.0} until={K.E - 0.3} texto="crudas" x={860} y={1260} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Mo + 2.6} until={K.E - 0.3} texto="apenas cocidas" x={860} y={1350} tam={36} borde={KC.orange} />
       <NumeroGigante T={T} at={K.E + 0.2} until={K.Cr - 0.3} valor={51} dur={1.6} etiqueta="enfermos del estómago" x={360} y={510} tam={160} color={KC.yellow} />
-      <Chip T={T} at={K.E + 2.6} until={K.Cr - 0.3} texto="3 al hospital" x={540} y={1430} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.E + 3.4} until={K.Cr - 0.3} texto="2 murieron · tenían enfermedades previas" x={540} y={1520} tam={28} borde="#8b8f96" />
+      <Chip T={T} at={K.E + 2.6} until={K.Cr - 0.3} texto="3 al hospital" x={540} y={1400} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.E + 3.4} until={K.Cr - 0.3} texto="2 murieron · tenían enfermedades previas" x={540} y={1475} tam={28} borde="#8b8f96" />
       <Chip T={T} at={K.Cr + 0.3} until={K.Cu - 0.3} texto="crudas: lo más ligado a enfermarse" x={540} y={560} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.Cr + 0.6} until={K.Cu - 0.3} x={620} y={1160} texto="cocidas o a medias" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Cu + 0.2} until={K.F - 0.3} texto="morillas de cultivo · importadas" x={330} y={760} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Cu + 2.0} until={K.F - 0.3} texto="toxina: no identificada" x={540} y={1340} tam={36} borde={KC.red} />
+      <Etq T={T} at={K.Cr + 0.6} until={K.Cu - 0.3} x={640} y={1330} texto="cocidas o a medias" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Cu + 0.2} until={K.F - 0.3} texto="morillas de cultivo · importadas" x={330} y={700} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Cu + 2.0} until={K.F - 0.3} texto="toxina: no identificada" x={540} y={1400} tam={36} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.F + 0.2} until={K.F + 2.6} anio="Francia" quien="2010–2020 · centros antitóxicos" revista="Vodovar et al., Clin. Toxicol., 2024" x={540} y={520} />
       <NumeroGigante T={T} at={K.F + 2.6} until={K.Sh - 0.3} valor={446} dur={1.8} etiqueta="casos reportados" x={330} y={520} tam={170} color={KC.red} />
       <Chip T={T} at={K.F + 3.2} until={K.Sh - 0.3} texto="solo morillas" x={330} y={700} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Sh + 0.4} until={K.C - 0.3} x={560} y={760} texto="shiitake" tam={44} color={KC.ink} />
-      <Etq T={T} at={K.Sh + 0.8} until={K.C - 0.3} x={560} y={820} texto="Lentinula edodes" it tam={38} color={KC.ink} />
+      <Etq T={T} at={K.Sh + 0.4} until={K.C - 0.3} x={610} y={800} texto="shiitake" tam={44} color={KC.ink} />
+      <Etq T={T} at={K.Sh + 0.8} until={K.C - 0.3} x={610} y={860} texto="Lentinula edodes" it tam={38} color={KC.ink} />
       <Chip T={T} at={K.Sh + 1.2} until={K.C - 0.3} texto="ya lo vimos: Fungi Mati 26" x={760} y={470} tam={30} borde={KC.gold} />
-      <Etq T={T} at={K.Sh + 2.2} until={K.C - 0.3} x={560} y={1250} texto="crudo o mal cocido" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="silvestres: siempre cocidos" x={330} y={470} tam={36} borde="#118a3a" />
-      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="y bien identificados" x={330} y={560} tam={36} borde="#118a3a" />
-      <Etq T={T} at={K.C + 2.4} until={K.Ou} x={60} y={1520} texto="No es consejo médico." tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Sh + 2.2} until={K.C - 0.3} x={560} y={1390} texto="crudo o mal cocido" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="silvestres: siempre cocidos" x={540} y={300} tam={36} borde="#118a3a" />
+      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="y bien identificados" x={540} y={385} tam={36} borde="#118a3a" />
+      <Etq T={T} at={K.C + 2.4} until={K.Ou} x={700} y={1480} texto="No es consejo médico." tam={24} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.D} texto="5 cm" largo={120} />
-      <BarraEscala T={T} at={K.D} until={K.A} texto="2 cm" largo={130} />
-      <BarraEscala T={T} at={K.A} until={K.G3} texto="10 µm" largo={140} y={1460} />
-      <BarraEscala T={T} at={K.S} until={K.P} texto="5 cm" largo={110} y={1500} />
-      <BarraEscala T={T} at={K.P} until={K.Mo} texto="5 cm" largo={160} y={1480} />
+      <BarraEscala T={T} at={K.G} until={K.D} texto="5 cm" largo={174} />
+      <BarraEscala T={T} at={K.D} until={K.A} texto="2 cm" largo={188} />
+      <BarraEscala T={T} at={K.A} until={K.G3} texto="10 µm" largo={172} y={1460} />
+      <BarraEscala T={T} at={K.S} until={K.P} texto="5 cm" largo={136} y={1500} />
+      <BarraEscala T={T} at={K.P} until={K.Mo} texto="5 cm" largo={251} y={1480} />
       <BarraEscala T={T} at={K.Mo} until={K.E} texto="mapa esquemático" largo={0} y={1500} />
-      <BarraEscala T={T} at={K.Cr} until={K.Cu} texto="2 cm" largo={110} y={1480} />
+      <BarraEscala T={T} at={K.Cr} until={K.Cu} texto="2 cm" largo={150} y={1480} />
       <BarraEscala T={T} at={K.F} until={K.Sh} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.Sh} until={K.C} texto="5 cm" largo={90} y={1480} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={120} y={1600} />
+      <BarraEscala T={T} at={K.Sh} until={K.C} texto="5 cm" largo={122} y={1480} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={174} y={1600} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.D - 0.1} texto="¿Por qué NO comer *cualquier hongo crudo?*" />
