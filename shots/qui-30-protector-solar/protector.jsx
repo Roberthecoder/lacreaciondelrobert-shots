@@ -200,12 +200,12 @@ function Protector() {
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.08}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Espejo x={250} y={600} s={1.05} o={kprog(T, K.Pr + 1.6, K.Pr + 2.0)} />
-          <text x={440} y={640} textAnchor="middle" style={{ font:`400 230px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={10} paintOrder="stroke" opacity={kprog(T, K.Pr + 2.0, K.Pr + 2.3)} transform={`rotate(${Math.sin(T * 3) * 8} 440 560)`}>?</text>
-          <Mineral x={170} y={990} s={kprog(T, K.Pr + 0.1, K.Pr + 0.5, kEase.rebote)} seed={4} />
-          <Mineral x={400} y={1000} s={kprog(T, K.Pr + 0.6, K.Pr + 1.0, kEase.rebote)} seed={9} color="#ffffff" />
-          <text x={170} y={1135} textAnchor="middle" style={{ font:`700 46px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Pr + 0.3, K.Pr + 0.6)}>ZnO</text>
-          <text x={400} y={1135} textAnchor="middle" style={{ font:`700 46px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Pr + 0.8, K.Pr + 1.1)}>TiO₂</text>
+          <Espejo x={400} y={660} s={1.55} o={kprog(T, K.Pr + 1.6, K.Pr + 2.0)} />
+          <text x={760} y={860} textAnchor="middle" style={{ font:`400 320px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} paintOrder="stroke" opacity={kprog(T, K.Pr + 2.0, K.Pr + 2.3)} transform={`rotate(${Math.sin(T * 3) * 8} 760 750)`}>?</text>
+          <Mineral x={320} y={1160} s={1.75 * kprog(T, K.Pr + 0.1, K.Pr + 0.5, kEase.rebote)} seed={4} />
+          <Mineral x={760} y={1170} s={1.75 * kprog(T, K.Pr + 0.6, K.Pr + 1.0, kEase.rebote)} seed={9} color="#ffffff" />
+          <text x={320} y={1395} textAnchor="middle" style={{ font:`700 60px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Pr + 0.3, K.Pr + 0.6)}>ZnO</text>
+          <text x={760} y={1395} textAnchor="middle" style={{ font:`700 60px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Pr + 0.8, K.Pr + 1.1)}>TiO₂</text>
         </SvgCapa>
       </Escena>
 
@@ -262,6 +262,7 @@ function Protector() {
         <SvgCapa>
           {(() => { const capa = kprog(T, K.La + 2.9, K.La + 4.0, kEase.suave), cae = kprog(T, K.La + 2.2, K.La + 2.9, kEase.suave), mg = kprog(T, K.La + 0.8, K.La + 2.0);
             return <g>
+              <g transform="translate(530 1000) scale(1.3) translate(-530 -950)">
               <rect x={300} y={720} width={460} height={460} fill={PIEL} stroke={KC.ink} strokeWidth={9} />
               {[[360, 800], [520, 900], [660, 780], [420, 1060], [640, 1080]].map(([px, py], i) => <circle key={i} cx={px} cy={py} r={5} fill={PIEL2} />)}
               {capa > 0 && <g>
@@ -276,41 +277,42 @@ function Protector() {
                 <text x={790} y={1226} style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>1 cm</text></g>
               <g><line x1={262} y1={720} x2={262} y2={1180} stroke={KC.ink} strokeWidth={7} />
                 {Array.from({ length: 11 }, (_, i) => <line key={i} x1={262} y1={720 + i * 46} x2={262 + (i % 5 ? 14 : 26)} y2={720 + i * 46} stroke={KC.ink} strokeWidth={5} />)}</g>
+              </g>
               {/* báscula */}
-              <g transform="translate(830 480)">
+              <g transform="translate(830 370)">
                 <rect x={-140} y={-20} width={280} height={150} rx={22} fill="#f6f3ec" stroke={KC.ink} strokeWidth={8} />
                 <rect x={-160} y={-44} width={320} height={30} rx={10} fill="#c9ced8" stroke={KC.ink} strokeWidth={7} />
                 <rect x={-110} y={20} width={220} height={74} rx={10} fill="#16302a" stroke={KC.ink} strokeWidth={5} />
                 <text x={0} y={76} textAnchor="middle" style={{ font:`700 50px ${KF.mono}` }} fill="#5cff9d">{(2 * mg).toFixed(1)} mg</text>
                 {cae <= 0 && mg > 0 && <ellipse cx={0} cy={-62} rx={50 * mg} ry={30 * mg} fill={CREMA} stroke={KC.ink} strokeWidth={5} />}
               </g>
-              {cae > 0 && cae < 1 && <path d={`M 830 420 Q 700 ${380} 560 ${klerp(560, 680, cae)}`} stroke={KC.ink} strokeWidth={5} strokeDasharray="12 10" fill="none" opacity={1 - cae} />}
+              {cae > 0 && cae < 1 && <path d={`M 830 310 Q 700 ${300} 560 ${1000 + (klerp(560, 680, cae) - 950) * 1.3}`} stroke={KC.ink} strokeWidth={5} strokeDasharray="12 10" fill="none" opacity={1 - cae} />}
             </g>; })()}
         </SvgCapa>
       </Escena>
 
       {/* 8 · 1992: investigadores de Copenhague midieron a 42 personas en una playa */}
       <Escena T={T} a={K.Pl} b={K.Me} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:`linear-gradient(${KC.cyan} 0 760px, #2a7fff 760px 860px, #ffd977 860px)` }}></div>
+        <div style={{ position:'absolute', inset:0, background:`linear-gradient(#0c1d33 0, #143552 760px, #1c4a8a 760px 860px, #4a3b1f 860px, #2e2414 100%)` }}></div>
         <SvgCapa>
           <Sol T={T} x={560} y={420} r={60} />
-          {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${i * 200 - 40 + (T * 30) % 200} 800 q 50 -24 100 0`} stroke="#bfe8ff" strokeWidth={6} fill="none" />)}
-          {Array.from({ length: 42 }, (_, i) => { const c = i % 7, r = Math.floor(i / 7), on = kprog(T, K.Pl + 0.8 + i * 0.05, K.Pl + 1.0 + i * 0.05, kEase.rebote), fuera = 1 - kprog(T, K.Pl + 3.2, K.Pl + 3.5);
-            return on > 0 ? <Personita key={i} x={110 + c * 80} y={930 + r * 50} s={0.9 * on} o={fuera} color={[KC.pink, KC.orange, KC.mint, KC.lilac, KC.cyan][i % 5]} /> : null; })}
+          {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${i * 200 - 40 + (T * 30) % 200} 800 q 50 -24 100 0`} stroke="#bfe8ff" strokeWidth={6} fill="none" opacity={0.6} />)}
+          {Array.from({ length: 42 }, (_, i) => { const c = i % 7, r = Math.floor(i / 7), on = kprog(T, K.Pl + 0.3 + i * 0.05, K.Pl + 0.5 + i * 0.05, kEase.rebote), fuera = 1 - kprog(T, K.Pl + 3.2, K.Pl + 3.5);
+            return on > 0 ? <Personita key={i} x={95 + c * 118} y={890 + r * 100} s={1.4 * on} o={fuera} color={[KC.pink, KC.orange, KC.mint, KC.lilac, KC.cyan][i % 5]} /> : null; })}
           {(() => { const o2 = kprog(T, K.Pl + 3.3, K.Pl + 3.7), pie = kprog(T, K.Pl + 4.3, K.Pl + 5.2, kEase.sale);
             if (o2 <= 0) return null;
             const ang = pie * Math.PI / 2;
             return <g opacity={o2}>
-              <rect x={150} y={900} width={320} height={300} fill={PIEL} stroke={KC.ink} strokeWidth={8} />
-              <rect x={150} y={888} width={320} height={16} fill={CREMA} stroke={KC.ink} strokeWidth={5} />
-              <text x={310} y={870} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>0.5 mg / cm²</text>
-              <circle cx={790} cy={1050} r={140} fill="rgba(255,255,255,.6)" stroke={KC.ink} strokeWidth={8} />
-              <path d={`M 790 1050 L 790 910 A 140 140 0 0 1 ${790 + 140 * Math.sin(ang)} ${1050 - 140 * Math.cos(ang)} Z`} fill={KC.gold} stroke={KC.ink} strokeWidth={6} />
-              <text x={790} y={880} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>¼</text>
+              <rect x={90} y={900} width={440} height={400} fill={PIEL} stroke={KC.ink} strokeWidth={8} />
+              <rect x={90} y={886} width={440} height={18} fill={CREMA} stroke={KC.ink} strokeWidth={5} />
+              <text x={310} y={862} textAnchor="middle" style={{ font:`700 46px ${KF.mono}` }} fill={KC.ink}>0.5 mg / cm²</text>
+              <circle cx={800} cy={1100} r={190} fill="rgba(255,255,255,.22)" stroke={KC.ink} strokeWidth={8} />
+              <path d={`M 800 1100 L 800 910 A 190 190 0 0 1 ${800 + 190 * Math.sin(ang)} ${1100 - 190 * Math.cos(ang)} Z`} fill={KC.gold} stroke={KC.ink} strokeWidth={6} />
+              <text x={800} y={880} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.ink}>¼</text>
             </g>; })()}
         </SvgCapa>
-        <div style={{ position:'absolute', left:850, top:1030, transform:'translate(-50%,-50%)', zIndex:41, textAlign:'center', opacity:kprog(T, K.Pl + 0.8, K.Pl + 1.1) * (1 - kprog(T, K.Pl + 3.2, K.Pl + 3.5)) }}>
-          <div style={{ font:`400 150px/1 ${KF.titulo}`, color:KC.texto, WebkitTextStroke:`5px ${KC.ink}` }}>{Math.min(42, Math.max(0, Math.floor((T - K.Pl - 0.8) / 0.05) + 1))}</div>
+        <div style={{ position:'absolute', left:930, top:1100, transform:'translate(-50%,-50%)', zIndex:41, textAlign:'center', opacity:kprog(T, K.Pl + 0.3, K.Pl + 0.6) * (1 - kprog(T, K.Pl + 3.2, K.Pl + 3.5)) }}>
+          <div style={{ font:`400 150px/1 ${KF.titulo}`, color:KC.texto, WebkitTextStroke:`5px ${KC.ink}` }}>{Math.min(42, Math.max(0, Math.floor((T - K.Pl - 0.3) / 0.05) + 1))}</div>
           <div style={{ font:`900 36px ${KF.texto}`, color:KC.ink }}>personas</div>
         </div>
       </Escena>
@@ -319,6 +321,7 @@ function Protector() {
       <Escena T={T} a={K.Me} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
+          <g transform="translate(540 930) scale(1.3) translate(-270 -780)">
           {[[420, 44, '2 mg / cm²', false], [810, 12, '0.5 mg / cm²', true]].map(([y, gr, t, delgada], i) => {
             const enrojece = delgada ? kprog(T, K.Me + 1.2, K.Me + 3.5) : 0;
             const xs = [110, 210, 310, 410];
@@ -332,7 +335,8 @@ function Protector() {
             </g>; })}
           <g transform={`translate(360 870) rotate(${Math.sin(T * 22) * 4 * kprog(T, K.Me + 1.5, K.Me + 1.8)})`}>
             <rect x={-110} y={-36} width={220} height={60} rx={14} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
-            <text x={0} y={10} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>FPS 30 ¿?</text>
+            <text x={0} y={10} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill="#0b1020">FPS 30 ¿?</text>
+          </g>
           </g>
         </SvgCapa>
       </Escena>

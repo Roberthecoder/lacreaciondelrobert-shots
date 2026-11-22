@@ -1,0 +1,2 @@
+# n044 · pase a mano
+- qui-30-protector-solar: Pregunta (espejo, ? y minerales ZnO/TiO₂ agrandados ~1.6× y centrados), Lab (piel de 1 cm² con reglas agrandada 1.3× y bajada, báscula arriba), Playa (cielo/mar/arena oscurecidos con su tinte, 42 personas más grandes y desde el segundo 0.3, piel y gráfica ¼ agrandadas), Menos (dos paneles agrandados 1.3× y centrados; «FPS 30 ¿?» en tinta oscura legible); auditores: sin láminas · encuadre bien; pendiente: nada
