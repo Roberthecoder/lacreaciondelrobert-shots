@@ -18,7 +18,8 @@ function rng(seed) { return function () { seed = (seed + 0x6d2b79f5) | 0; let t 
 function rgb(h) { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
 function mix(a, b, t) { const A = rgb(a), B = rgb(b); return `rgb(${A.map((v, i) => Math.round(lerp(v, B[i], t))).join(',')})`; }
 const wobble = (T, t0, k = 7, f = 26) => (T < t0 ? 0 : Math.exp(-(T - t0) * k) * Math.cos((T - t0) * f));
-const live = (T, a, b) => T >= a && T < b;
+// Modo cine: cada escena empieza 0.45 s antes (entra en disolvencia sobre la anterior) y la anterior se queda 0.15 s más.
+const live = (T, a, b) => T >= a - 0.45 && T < b + 0.15;
 
 function pattern(kind, T) {
   const p = T * 40;
@@ -33,7 +34,8 @@ function pattern(kind, T) {
     default: return {};
   }
 }
-function Bg({ color, kind, T, children }) { return <div style={{ position:'absolute', inset:0, background:color, ...pattern(kind, T) }}>{children}</div>; }
+// Modo cine: fondo oscuro con tinte del color de la escena (antes: color saturado con patrón).
+function Bg({ color, kind, T, children }) { return <div style={{ position:'absolute', inset:0 }}><FondoMarca color={color} T={T} />{children}</div>; }
 function Abs({ x, y, w, h, style, children }) { return <div style={{ position:'absolute', left:x - w / 2, top:y - h / 2, width:w, height:h, ...style }}>{children}</div>; }
 function Big({ children, size = 200, color = C.white, rot = 0, s = 1, style }) {
   return <div style={{ font:`400 ${size}px/1 ${NUM}`, color, WebkitTextStroke:`${Math.max(5, size / 28)}px ${C.ink}`, textShadow:`${size / 22}px ${size / 22}px 0 ${C.ink}`, transform:`rotate(${rot}deg) scale(${s})`, whiteSpace:'nowrap', ...style }}>{children}</div>;
@@ -53,23 +55,24 @@ function Leg({ hx, hy, a, lift, col, w }) {
 }
 function Ant({ T, x, y, w = 520, rot = 0, flipY = false, walk = 0, walking = 0, bite = 0, zombie = 0, dead = 0, fungus = 0, stalk = 0, ascoma = 0, xray = 0, o = 1 }) {
   const h = w * 320 / 520;
-  const body = mix(BODY, '#f3d2b6', xray * 0.85), bodyOl = C.ink;
+  const body = mix(BODY, '#f3d2b6', xray * 0.85), bodyOl = '#b06a42', LEGN = '#b06a42', LEGF = '#7a4128';
   const ph = walk * Math.PI * 2;
   const legs = (far) => [[280, 182, -0.62], [305, 188, 0.0], [332, 182, 0.62]].map(([hx, hy, base], i) => {
     const sw = Math.sin(ph + (i % 2 ? Math.PI : 0) + (far ? Math.PI : 0)) * 0.32 * walking;
     const lift = Math.max(0, Math.cos(ph + (i % 2 ? Math.PI : 0) + (far ? Math.PI : 0))) * 16 * walking;
-    return <Leg key={(far ? 'f' : 'n') + i} hx={hx + (far ? 14 : 0)} hy={hy - (far ? 8 : 0)} a={base + sw} lift={lift} col={far ? '#3a2018' : C.ink} w={far ? 11 : 13} />;
+    return <Leg key={(far ? 'f' : 'n') + i} hx={hx + (far ? 14 : 0)} hy={hy - (far ? 8 : 0)} a={base + sw} lift={lift} col={far ? LEGF : LEGN} w={far ? 11 : 13} />;
   });
   const open = (1 - bite) * 24;
   const ant = Math.sin(T * 7) * 4 * (1 - dead);
   const fz = (i) => clamp(fungus * 1.6 - i * 0.07, 0, 1);
   const st = clamp(stalk, 0, 1), sx2 = 345 + 60 * st, sy2 = 128 - 300 * st;
   return (
-    <div style={{ position:'absolute', left:x - w / 2, top:y - h / 2, width:w, height:h, opacity:o, transform:`rotate(${rot}deg) scaleY(${flipY ? -1 : 1})` }}>
+    <div style={{ position:'absolute', left:x - w / 2, top:y - h / 2, width:w, height:h, opacity:o, transform:`rotate(${rot}deg)` }}>
       <svg viewBox="0 0 520 320" width={w} height={h} style={{ overflow:'visible', display:'block' }}>
+       <g transform={flipY ? 'translate(0 320) scale(1 -1)' : undefined}>
         {legs(true)}
         {/* antenas */}
-        {[0, 1].map((k) => <polyline key={k} points={`${414 + k * 10},${84} ${440 + k * 14},${30 + ant} ${496 + k * 10},${22 + k * 10 - ant}`} fill="none" stroke={k ? '#3a2018' : C.ink} strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />)}
+        {[0, 1].map((k) => <polyline key={k} points={`${414 + k * 10},${84} ${440 + k * 14},${30 + ant} ${496 + k * 10},${22 + k * 10 - ant}`} fill="none" stroke={k ? LEGF : LEGN} strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />)}
         {/* abdomen (gáster) */}
         <ellipse cx="120" cy="170" rx="110" ry="78" fill={body} stroke={bodyOl} strokeWidth="8" />
         <path d="M150 96 Q178 170 150 244" fill="none" stroke="rgba(0,0,0,.3)" strokeWidth="6" />
@@ -101,8 +104,8 @@ function Ant({ T, x, y, w = 520, rot = 0, flipY = false, walk = 0, walking = 0, 
           : zombie > 0.5 ? <path d={SPIRAL} transform={`translate(428 112) rotate(${T * 400})`} fill="none" stroke={C.ink} strokeWidth="3" />
           : <circle cx="433" cy="112" r="7" fill={C.ink} />}
         {/* mandíbulas */}
-        <path d="M456 138 Q488 128 506 146" fill="none" stroke={C.ink} strokeWidth="10" strokeLinecap="round" transform={`rotate(${-open} 456 140)`} />
-        <path d="M456 156 Q488 168 504 150" fill="none" stroke={C.ink} strokeWidth="10" strokeLinecap="round" transform={`rotate(${open} 456 154)`} />
+        <path d="M456 138 Q488 128 506 146" fill="none" stroke={LEGN} strokeWidth="10" strokeLinecap="round" transform={`rotate(${-open} 456 140)`} />
+        <path d="M456 156 Q488 168 504 150" fill="none" stroke={LEGN} strokeWidth="10" strokeLinecap="round" transform={`rotate(${open} 456 154)`} />
         {legs(false)}
         {/* tallo del hongo (estroma): brota de la nuca (pronoto dorsal), detrás de la cabeza */}
         {st > 0.01 && <g>
@@ -113,6 +116,7 @@ function Ant({ T, x, y, w = 520, rot = 0, flipY = false, walk = 0, walking = 0, 
             {[[-14, -6], [4, -12], [14, 6], [-6, 10]].map(([dx, dy], i) => <circle key={i} cx={dx} cy={dy} r="4" fill={C.ink} />)}
           </g>}
         </g>}
+       </g>
       </svg>
     </div>
   );
@@ -147,19 +151,21 @@ function Marioneta({ T, x, y, a = 1, puntos = [], o = 1 }) {
 
 function GanchoScene({ T, K }) {
   if (!live(T, K.G, K.E)) return null;
-  const s = K.G, GROUND = 1500;
-  const ax = lerp(-320, CX, prog(T, s, s + 0.9, Easing.easeOutCubic));
+  const s = K.G, GROUND = 1440;
+  const ax = lerp(220, CX, prog(T, s, s + 0.9, Easing.easeOutCubic));
   const bar = prog(T, s + 0.35, s + 1.05, MOTION.pop);
   const rock = Math.sin(T * 2.4) * 5 * bar;
-  const ay = 1350;
+  const ay = 1180;
   return (
     <Bg color={C.pink} kind="pop" T={T}>
-      <div style={{ position:'absolute', left:0, right:0, top:GROUND, height:480, background:'#7a3b1e', borderTop:OL, backgroundImage:'radial-gradient(circle, rgba(0,0,0,.18) 6px, transparent 7px)', backgroundSize:'48px 48px' }}></div>
+     <div style={{ position:'absolute', inset:0, transform:'translateY(-140px)' }}>
+      <div style={{ position:'absolute', left:0, right:0, top:GROUND, height:640, background:'#4a2414', borderTop:OL, backgroundImage:'radial-gradient(circle, rgba(0,0,0,.18) 6px, transparent 7px)', backgroundSize:'48px 48px' }}></div>
       <div style={{ position:'absolute', inset:0, transformOrigin:`${ax}px ${GROUND}px`, transform:`rotate(${rock}deg)` }}>
-        <Ant T={T} x={ax} y={ay} w={620} walk={(T - s) * 2.4} walking={T < s + 0.95 ? 1 : 0.35} zombie={1} />
+        <Ant T={T} x={ax} y={ay} w={960} walk={(T - s) * 2.4} walking={T < s + 0.95 ? 1 : 0.35} zombie={1} />
       </div>
-      {bar > 0.01 && <Marioneta T={T} x={CX} y={lerp(-200, 1100, bar)} a={bar} o={1} puntos={[[CX - 190, 1290], [CX + 200, 1235], [CX + 40, 1270], [CX - 60, 1250]]} />}
-      <Etiqueta T={T} at={s + 1.2} until={K.E} x={CX + 230} y={1100} texto="hongo" />
+      {bar > 0.01 && <Marioneta T={T} x={CX} y={lerp(-200, 720, bar)} a={bar} o={1} puntos={[[CX - 294, 1087], [CX + 310, 1002], [CX + 62, 1056], [CX - 93, 1025]]} />}
+      <Etiqueta T={T} at={s + 1.2} until={K.E} x={CX + 200} y={560} texto="hongo" />
+     </div>
     </Bg>
   );
 }
@@ -180,7 +186,7 @@ function EsporaScene({ T, K }) {
   const s = K.E, SOIL = 1450, SX = 600, B = s + 3.3;
   const fall = prog(T, s + 0.05, s + 0.7, Easing.easeInCubic), sq = wobble(T, s + 0.7, 6, 22);
   const hair = prog(T, s + 0.9, s + 1.6, MOTION.draw), tipY = SOIL - 30 - 150 * hair;
-  const antX = lerp(-260, 1320, prog(T, s + 1.5, B, (p) => p));
+  const antX = 200 + Math.max(0, T - (s + 0.1)) * (390 / 2.37);
   const pegada = antX >= SX - 10;
   const fa = 1 - prog(T, B - 0.15, B + 0.2), fb = prog(T, B - 0.15, B + 0.2);
   const drill = prog(T, B + 0.25, B + 1.4, Easing.easeInOutQuad), drillOn = T > B + 0.25 && T < B + 1.5;
@@ -188,9 +194,10 @@ function EsporaScene({ T, K }) {
   return (
     <Bg color={C.blue} kind="grid" T={T}>
       {fa > 0.01 && <div style={{ position:'absolute', inset:0, opacity:fa }}>
-        <div style={{ position:'absolute', left:0, right:0, top:SOIL, bottom:0, background:'#7a3b1e', borderTop:OL, backgroundImage:'radial-gradient(circle, rgba(0,0,0,.2) 6px, transparent 7px)', backgroundSize:'46px 46px' }}></div>
+       <div style={{ position:'absolute', inset:0, transformOrigin:`${SX}px ${SOIL}px`, transform:'translateY(-200px) scale(1.5)' }}>
+        <div style={{ position:'absolute', left:-400, right:-400, top:SOIL, bottom:-600, background:'#4a2414', borderTop:OL, backgroundImage:'radial-gradient(circle, rgba(0,0,0,.2) 6px, transparent 7px)', backgroundSize:'46px 46px' }}></div>
         <div style={{ position:'absolute', inset:0, transformOrigin:`${SX}px ${SOIL}px`, transform:`scale(${1 + sq * 0.12},${1 - sq * 0.16})` }}>
-          <Spore x={SX + (1 - fall) * 260} y={lerp(-200, SOIL - 22, fall)} w={420} rot={(1 - fall) * -40} glow={1} />
+          <Spore x={SX + (1 - fall) * 260} y={lerp(800, SOIL - 22, fall)} w={420} rot={(1 - fall) * -40} glow={1} />
         </div>
         {hair > 0.01 && <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} style={{ position:'absolute', inset:0 }}>
           <line x1={SX + 60} y1={SOIL - 30} x2={SX + 60} y2={tipY} stroke={C.ink} strokeWidth="9" strokeLinecap="round" />
@@ -200,14 +207,15 @@ function EsporaScene({ T, K }) {
         <Ant T={T} x={antX} y={SOIL - 100} w={330} walk={(T - s) * 3} walking={1} />
         {pegada && <Abs x={antX - 20} y={SOIL - 150} w={30} h={54} style={{ borderRadius:'50%', background:'#fff2b8', border:`5px solid ${C.ink}`, boxSizing:'border-box', boxShadow:'0 0 18px rgba(244,194,90,.9)' }}></Abs>}
         {pegada && T < B && <Abs x={SX + 40} y={SOIL - 160} w={220} h={220} style={{ borderRadius:'50%', border:`10px solid ${C.yellow}`, boxSizing:'border-box', opacity:1 - prog(T, s + 2.55, s + 3.0), transform:`scale(${0.4 + prog(T, s + 2.55, s + 3.0) * 1.2})` }}></Abs>}
-        <Etiqueta T={T} at={s + 0.8} until={s + 2.4} x={120} y={SOIL + 90} texto="espora · Ophiocordyceps" it />
-        <Etiqueta T={T} at={s + 2.0} until={B} x={110} y={SOIL + 170} texto="hormiga carpintera · Camponotus" it={false} />
+       </div>
+        <Etiqueta T={T} at={s + 0.8} until={s + 2.4} x={90} y={1360} texto="espora · Ophiocordyceps" it />
+        <Etiqueta T={T} at={s + 2.0} until={B} x={70} y={1440} texto="hormiga carpintera · Camponotus" it={false} />
       </div>}
       {fb > 0.01 && <div style={{ position:'absolute', inset:0, opacity:fb }}>
         <div style={{ position:'absolute', left:-20, right:-20, top:CUT, height:200, background:'#8a3a1f', borderTop:`10px solid ${C.ink}`, borderBottom:`8px solid ${C.ink}`, display:'flex' }}>
           {Array.from({ length:7 }, (_, i) => <div key={i} style={{ flex:1, borderRight:`6px solid ${C.ink}`, background:'linear-gradient(180deg,#b5532c,#7a2f17)', borderRadius:'0 0 30px 30px' }}></div>)}
         </div>
-        <div style={{ position:'absolute', left:0, right:0, top:CUT + 200, bottom:0, background:'#ffb3a0', backgroundImage:'radial-gradient(circle, rgba(224,72,58,.35) 18px, transparent 19px)', backgroundSize:'90px 80px' }}></div>
+        <div style={{ position:'absolute', left:0, right:0, top:CUT + 200, bottom:0, background:'#4a1f26', backgroundImage:'radial-gradient(circle, rgba(255,107,90,.32) 18px, transparent 19px)', backgroundSize:'90px 80px' }}></div>
         <div style={{ position:'absolute', right:40, top:CUT + 30, font:`700 30px ${MONO}`, color:C.paper, opacity:0.9 }}>CUTÍCULA (LA ARMADURA)</div>
         {T > B + 0.25 && <div style={{ position:'absolute', left:CX - 22, top:CUT - 30, width:44, height:tube, background:'linear-gradient(90deg,#c98b1c,#F4C25A 50%,#c98b1c)', border:`6px solid ${C.ink}`, borderRadius:'0 0 22px 22px', boxSizing:'border-box', transform:`translateX(${drillOn ? Math.sin(T * 80) * 3 : 0}px)` }}></div>}
         {drillOn && [0, 1, 2].map((k) => { const p = ((T - s) * 3 + k / 3) % 1; return <Abs key={k} x={CX} y={CUT + 10} w={120 + p * 260} h={40 + p * 60} style={{ borderRadius:'50%', border:`6px solid ${C.ink}`, opacity:1 - p }}></Abs>; })}
@@ -224,17 +232,17 @@ function InvasionScene({ T, K }) {
   const s = K.I, inP = prog(T, s + 0.05, s + 0.5, MOTION.pop);
   const fung = prog(T, s + 0.6, s + 3.2, Easing.easeInOutSine);
   const ring = prog(T, s + 3.1, s + 3.5, MOTION.pop), stamp = prog(T, s + 3.4, s + 3.75, MOTION.pop);
-  const bx = 789, by = 1065;
+  const bx = 789, by = 965;
   return (
     <Bg color={C.mint} kind="dots" T={T}>
-      <Abs x={CX} y={1150} w={1040} h={720} style={{ borderRadius:60, background:'rgba(22,18,15,.85)', border:OL, transform:`scale(${inP})` }}>
+      <Abs x={CX} y={1050} w={1040} h={720} style={{ borderRadius:60, background:'rgba(22,18,15,.85)', border:OL, transform:`scale(${inP})` }}>
         <div style={{ position:'absolute', left:30, top:24, font:`700 28px ${MONO}`, color:C.mint, letterSpacing:'0.1em' }}>POR DENTRO ▸ HORMIGA INFECTADA</div>
         <div style={{ position:'absolute', inset:0, borderRadius:60, backgroundImage:'linear-gradient(rgba(47,224,168,.12) 2px, transparent 2px), linear-gradient(90deg, rgba(47,224,168,.12) 2px, transparent 2px)', backgroundSize:'60px 60px' }}></div>
       </Abs>
-      <div style={{ position:'absolute', inset:0, transform:`scale(${inP})`, transformOrigin:`${CX}px 1150px` }}>
-        <Ant T={T} x={CX} y={1150} w={980} xray={1} fungus={fung} zombie={1} />
+      <div style={{ position:'absolute', inset:0, transform:`scale(${inP})`, transformOrigin:`${CX}px 1050px` }}>
+        <Ant T={T} x={CX} y={1050} w={980} xray={1} fungus={fung} zombie={1} />
       </div>
-      <Etiqueta T={T} at={s + 1.2} until={s + 3.0} x={600} y={1420} texto="músculos + hongo" color={C.gold2} />
+      <Etiqueta T={T} at={s + 1.2} until={s + 3.0} x={600} y={1320} texto="músculos + hongo" color={C.gold2} />
       {ring > 0.01 && <Abs x={bx} y={by} w={200} h={180} style={{ borderRadius:'50%', border:`10px solid ${C.mint}`, boxShadow:`0 0 0 6px ${C.ink}`, transform:`scale(${ring})` }}></Abs>}
       {stamp > 0.01 && <Abs x={bx - 10} y={by - 190} w={420} h={110} style={{ display:'flex', alignItems:'center', justifyContent:'center', transform:`scale(${lerp(2.4, 1, stamp)}) rotate(-8deg)`, opacity:clamp(stamp * 3, 0, 1) }}>
         <div style={{ font:`400 70px/1 ${NUM}`, color:C.ink, background:C.mint, border:`8px solid ${C.ink}`, boxShadow:`10px 10px 0 ${C.ink}`, padding:'8px 22px' }}>✓ CEREBRO</div>
@@ -256,9 +264,10 @@ function SubidaScene({ T, K }) {
   const lab = prog(T, s + 4.6, s + 4.95, MOTION.pop), hum = prog(T, s + 5.4, s + 5.8, MOTION.pop);
   return (
     <Bg color={C.cyan} kind="cyan" T={T}>
-      <div style={{ position:'absolute', left:0, right:0, top:GROUND, bottom:0, background:'#7a3b1e', borderTop:OL }}></div>
+     <div style={{ position:'absolute', inset:0, transform:'translateY(-250px)' }}>
+      <div style={{ position:'absolute', left:0, right:0, top:GROUND, bottom:-300, background:'#4a2414', borderTop:OL }}></div>
       {/* árbol con la colonia arriba */}
-      <div style={{ position:'absolute', left:40, top:-40, width:120, height:GROUND + 40, background:'linear-gradient(90deg,#5a2e16,#8a4a26 50%,#5a2e16)', border:OL, borderBottom:'none', boxSizing:'border-box' }}></div>
+      <div style={{ position:'absolute', left:40, top:-40, width:120, height:GROUND + 290, background:'linear-gradient(90deg,#5a2e16,#8a4a26 50%,#5a2e16)', border:OL, borderBottom:'none', boxSizing:'border-box' }}></div>
       <div style={{ position:'absolute', left:66, top:820, width:70, height:90, borderRadius:'35px 35px 30px 30px', background:C.ink }}></div>
       <div style={{ position:'absolute', left:20, top:760, font:`700 26px ${MONO}`, color:C.ink, background:C.yellow, padding:'2px 10px', border:`4px solid ${C.ink}` }}>COLONIA</div>
       <Ant T={T} x={150} y={600 + ((T * 60) % 200)} w={140} rot={90} walk={T * 3} walking={1} />
@@ -273,9 +282,10 @@ function SubidaScene({ T, K }) {
       {hcm > 0 && <div style={{ position:'absolute', left:830, top:GROUND - hcm * CM - 26, width:0, height:0, borderTop:'26px solid transparent', borderBottom:'26px solid transparent', borderLeft:`60px solid ${C.pink}` }}></div>}
       <Ant T={T} x={ax} y={ay} w={300} rot={rot} walk={(T - s) * 2.4} walking={T > s + 0.2 && T < s + 4.6 ? 1 : 0} zombie={1} />
       {lab > 0.01 && <Abs x={720} y={GROUND - 25 * CM - 170} w={420} h={170} style={{ display:'flex', justifyContent:'center', transform:`scale(${lab})` }}><Big size={150} color={C.yellow} rot={-6}>25 cm</Big></Abs>}
-      {hum > 0.01 && [0, 1, 2, 3, 4, 5].map((k) => { const t = ((T - s) * 0.6 + k / 6) % 1; return <Abs key={k} x={360 + k * 90} y={900 + t * 260} w={34} h={46} style={{ borderRadius:'50% 50% 50% 50% / 60% 60% 40% 40%', background:'rgba(255,255,255,.85)', border:`4px solid ${C.ink}`, opacity:hum * (1 - t) }}></Abs>; })}
-      {hum > 0.01 && <Abs x={500} y={830} w={460} h={80} style={{ display:'flex', justifyContent:'center', transform:`scale(${hum}) rotate(-3deg)` }}>
+      {hum > 0.01 && [0, 1, 2, 3, 4, 5].map((k) => { const t = ((T - s) * 0.6 + k / 6) % 1; return <Abs key={k} x={360 + k * 90} y={700 + t * 220} w={34} h={46} style={{ borderRadius:'50% 50% 50% 50% / 60% 60% 40% 40%', background:'rgba(255,255,255,.85)', border:`4px solid ${C.ink}`, opacity:hum * (1 - t) }}></Abs>; })}
+      {hum > 0.01 && <Abs x={500} y={620} w={460} h={80} style={{ display:'flex', justifyContent:'center', transform:`scale(${hum}) rotate(-3deg)` }}>
         <div style={{ font:`700 40px ${MONO}`, color:C.ink, background:'#fff', border:`6px solid ${C.ink}`, padding:'4px 22px', borderRadius:14 }}>MUCHA HUMEDAD</div></Abs>}
+     </div>
     </Bg>
   );
 }
@@ -288,30 +298,33 @@ function Leaf({ T, y, dark = 0 }) {
     {[160, 360, 560, 760].map((x0, i) => <g key={i}><path d={`M${x0} 206 Q ${x0 + 90} 120 ${x0 + 180} 70`} fill="none" stroke={mix('#a6f0a0', '#5aa35a', dark)} strokeWidth="9" /><path d={`M${x0} 206 Q ${x0 + 90} 290 ${x0 + 180} 340`} fill="none" stroke={mix('#a6f0a0', '#5aa35a', dark)} strokeWidth="9" /></g>)}
   </svg>;
 }
+const HOJA_ESC = 'translate(540px, 1050px) scale(1.25) translate(-540px, -900px)';   // hoja + hormiga 1.25x y 150 px más abajo (modo cine)
 function MordidaScene({ T, K }) {
   if (!live(T, K.M, K.P)) return null;
   const s = K.M, inP = prog(T, s + 0.05, s + 0.5, MOTION.enter), biteT = s + 2.2;
   const bite = prog(T, biteT - 0.12, biteT, Easing.easeInQuad), sq = wobble(T, biteT, 6, 26);
   const sunA = lerp(Math.PI * 0.95, Math.PI * 0.5, prog(T, s + 0.4, s + 2.1, Easing.easeOutCubic));
-  const sunX = CX + Math.cos(sunA) * 380, sunY = 1830 - Math.sin(sunA) * 300;
+  const sunX = CX + Math.cos(sunA) * 380, sunY = 520 - Math.sin(sunA) * 300;
   const noon = T >= s + 2.1;
   return (
     <Bg color={C.orange} kind="stripes" T={T}>
       <div style={{ position:'absolute', inset:0, transform:`translateY(${(1 - inP) * -700}px)` }}>
+       <div style={{ position:'absolute', inset:0, transform:HOJA_ESC, transformOrigin:'0 0' }}>
         <Leaf T={T} y={880} />
         <div style={{ position:'absolute', inset:0, transformOrigin:'790px 1050px', transform:`scale(${1 + sq * 0.08},${1 - sq * 0.08})` }}>
           <Ant T={T} x={540} y={980} w={560} flipY walk={T} walking={T < biteT ? 0.25 : 0} bite={bite} zombie={1} />
         </div>
-        <Etiqueta T={T} at={s + 0.7} until={s + 2.6} x={160} y={1240} texto="vena, por debajo de la hoja" color={C.ink} />
+       </div>
+        <Etiqueta T={T} at={s + 0.7} until={s + 2.6} x={90} y={1440} texto="vena, por debajo de la hoja" />
       </div>
-      {T >= biteT && <Abs x={830} y={1250} w={420} h={160} style={{ display:'flex', justifyContent:'center', transform:`scale(${prog(T, biteT, biteT + 0.3, MOTION.pop)})` }}><Big size={130} color={C.yellow} rot={8}>¡CRAC!</Big></Abs>}
+      {T >= biteT && <Abs x={820} y={1390} w={420} h={160} style={{ display:'flex', justifyContent:'center', transform:`scale(${prog(T, biteT, biteT + 0.3, MOTION.pop)})` }}><Big size={130} color={C.yellow} rot={8}>¡CRAC!</Big></Abs>}
       {/* arco del sol: cerca del mediodía solar */}
-      <svg viewBox="0 0 1080 420" width={W} height={420} style={{ position:'absolute', left:0, top:1500 }}>
-        <path d="M160 330 A 380 300 0 0 1 920 330" fill="none" stroke={C.ink} strokeWidth="6" strokeDasharray="18 16" />
+      <svg viewBox="0 0 1080 420" width={W} height={420} style={{ position:'absolute', left:0, top:190 }}>
+        <path d="M160 330 A 380 300 0 0 1 920 330" fill="none" stroke={C.gold2} strokeWidth="6" strokeDasharray="18 16" opacity="0.7" />
       </svg>
       <Abs x={sunX} y={sunY} w={150} h={150} style={{ borderRadius:'50%', background:'radial-gradient(circle at 35% 30%, #fff8b0, #ffe11a 60%, #f5b800)', border:OL, boxShadow:noon ? `0 0 0 14px rgba(255,225,26,.5), 0 0 60px 20px rgba(255,225,26,.6)` : 'none' }}></Abs>
-      {noon && <Abs x={CX} y={1660} w={420} h={110} style={{ display:'flex', justifyContent:'center', transform:`scale(${prog(T, s + 2.1, s + 2.4, MOTION.pop)})` }}>
-        <div style={{ font:`700 56px ${MONO}`, color:C.yellow, background:C.ink, border:`6px solid ${C.ink}`, padding:'4px 22px', borderRadius:14 }}>≈ MEDIODÍA</div></Abs>}
+      {noon && <Abs x={CX} y={420} w={420} h={110} style={{ display:'flex', justifyContent:'center', transform:`scale(${prog(T, s + 2.1, s + 2.4, MOTION.pop)})` }}>
+        <div style={{ font:`700 56px ${MONO}`, color:C.yellow, background:'rgba(14,15,18,.85)', border:`4px solid ${C.gold2}`, padding:'4px 22px', borderRadius:14 }}>≈ MEDIODÍA</div></Abs>}
     </Bg>
   );
 }
@@ -321,6 +334,10 @@ function PreguntaScene({ T, K }) {
   const s = K.P, q = prog(T, s + 0.02, s + 0.4, MOTION.pop), w = wobble(T, s + 0.4, 4, 16);
   return (
     <Bg color={C.yellow} kind="dots" T={T}>
+      <div style={{ position:'absolute', inset:0, opacity:0.5, transform:HOJA_ESC, transformOrigin:'0 0' }}>
+        <Leaf T={T} y={880} />
+        <Ant T={T} x={540} y={980} w={560} flipY bite={1} zombie={1} />
+      </div>
       <Abs x={330} y={1080} w={520} h={700} style={{ display:'flex', alignItems:'center', justifyContent:'center', transform:`scale(${q}) rotate(${-8 + w * 12 + Math.sin(T * 3) * 3}deg)` }}>
         <Big size={640} color={C.pink}>?</Big>
       </Abs>
@@ -334,20 +351,23 @@ function HongoScene({ T, K }) {
   const s = K.Ho, stalk = prog(T, s + 0.35, s + 2.4, Easing.easeOutCubic), asc = prog(T, s + 2.1, s + 2.5, MOTION.pop);
   const shake = Math.sin(T * 60) * 2 * (T > s + 0.35 && T < s + 2.4 ? 1 : 0);
   const sc = 560 / 520, top = 980 - (560 * 320 / 520) / 2;
-  const ax = 540 - 280 + (lerp(345, 405, 0.62) - 6) * sc, ay = top + (320 - lerp(128, -172, 0.62)) * sc;
+  const ax0 = 540 - 280 + (lerp(345, 405, 0.62) - 6) * sc, ay0 = top + (320 - lerp(128, -172, 0.62)) * sc;
+  const ax = 540 + (ax0 - 540) * 1.25, ay = 1050 + (ay0 - 900) * 1.25;   // misma escala que HOJA_ESC
   return (
     <Bg color={C.violet} kind="halftone" T={T}>
-      <div style={{ position:'absolute', left:0, right:0, top:1740, bottom:0, background:'#3b2416', borderTop:OL }}></div>
-      <Leaf T={T} y={880} dark={0.4} />
-      <div style={{ position:'absolute', inset:0, transform:`translateX(${shake}px)` }}>
-        <Ant T={T} x={540} y={980} w={560} flipY bite={1} dead={1} fungus={1} stalk={stalk} ascoma={asc} />
+      <div style={{ position:'absolute', left:0, right:0, top:1580, bottom:0, background:'#3b2416', borderTop:OL }}></div>
+      <div style={{ position:'absolute', inset:0, transform:HOJA_ESC, transformOrigin:'0 0' }}>
+        <Leaf T={T} y={880} dark={0.4} />
+        <div style={{ position:'absolute', inset:0, transform:`translateX(${shake}px)` }}>
+          <Ant T={T} x={540} y={980} w={560} flipY bite={1} dead={1} fungus={1} stalk={stalk} ascoma={asc} />
+        </div>
       </div>
-      <Etiqueta T={T} at={s + 1.0} until={s + 3.2} x={760} y={1150} texto="sale de la nuca" color={C.gold2} />
+      <Etiqueta T={T} at={s + 1.0} until={s + 3.2} x={660} y={1330} texto="sale de la nuca" color={C.gold2} />
       {T > s + 2.6 && RAIN.map((r, i) => { const t = T - s - 2.6 - r.t; if (t < 0 || t > 1.3) return null; const f = t / 1.3;
-        return <Spore key={i} x={ax + r.dx * f} y={lerp(ay, 1730, f * f)} w={r.z} rot={r.rot + t * 200} glow={0.7} />; })}
+        return <Spore key={i} x={ax + r.dx * f} y={lerp(ay, 1570, f * f)} w={r.z} rot={r.rot + t * 200} glow={0.7} />; })}
       {[0, 1].map((k) => { const x = lerp(k ? 1180 : -150, k ? 760 : 300, prog(T, s + 2.6, s + 4.2, Easing.easeOutCubic));
-        return <Ant key={k} T={T} x={x} y={1690} w={190} walk={T * 3 + k} walking={T < s + 4.2 ? 1 : 0} />; })}
-      <Etiqueta T={T} at={s + 3.4} until={K.F} x={90} y={1830} texto="Ophiocordyceps" it color={C.gold2} />
+        return <Ant key={k} T={T} x={x} y={1535} w={190} walk={T * 3 + k} walking={T < s + 4.2 ? 1 : 0} />; })}
+      <Etiqueta T={T} at={s + 3.4} until={K.F} x={90} y={540} texto="Ophiocordyceps" it color={C.gold2} />
     </Bg>
   );
 }
@@ -360,7 +380,7 @@ function FosilScene({ T, K }) {
   const num = prog(T, s + 3.85, s + 4.2, MOTION.pop);
   return (
     <Bg color={C.lilac} kind="riso" T={T}>
-      <div style={{ position:'absolute', left:110, top:640, width:860, height:600, borderRadius:70, background:'linear-gradient(160deg,#c9c2b8,#8f877d)', border:OL, boxShadow:`18px 18px 0 ${C.ink}`, transform:`translateY(${(1 - slab) * 1200}px) rotate(${-3 + (1 - slab) * 18}deg)`, overflow:'hidden' }}>
+      <div style={{ position:'absolute', left:110, top:720, width:860, height:600, borderRadius:70, background:'linear-gradient(160deg,#c9c2b8,#8f877d)', border:OL, boxShadow:`18px 18px 0 ${C.ink}`, transform:`translateY(${(1 - slab) * 1200}px) rotate(${-3 + (1 - slab) * 18}deg)`, overflow:'hidden' }}>
         <div style={{ position:'absolute', inset:0, backgroundImage:'radial-gradient(circle, rgba(0,0,0,.12) 5px, transparent 6px)', backgroundSize:'34px 30px' }}></div>
         <svg viewBox="0 0 860 600" width="860" height="600" style={{ position:'absolute', inset:0 }}>
           <path d="M40 300 C 200 90, 660 70, 820 280 C 660 520, 200 520, 40 300 Z" fill="rgba(60,52,44,.25)" stroke="rgba(40,34,28,.7)" strokeWidth="7" />
@@ -372,13 +392,13 @@ function FosilScene({ T, K }) {
           </g>; })}
         </svg>
       </div>
-      {card > 0.01 && <Abs x={660} y={1500} w={600} h={300} style={{ display:'flex', alignItems:'center', justifyContent:'center', transform:`scale(${card}) rotate(-2deg)` }}>
+      {card > 0.01 && <Abs x={CX} y={480} w={600} h={300} style={{ display:'flex', alignItems:'center', justifyContent:'center', transform:`scale(${card}) rotate(-2deg)` }}>
         <div style={{ background:C.paper, border:`7px solid ${C.ink}`, borderRadius:26, padding:'14px 40px 20px', textAlign:'center', boxShadow:`14px 14px 0 ${C.ink}` }}>
           <div style={{ font:`400 140px/1 ${NUM}`, color:C.gold, WebkitTextStroke:`5px ${C.ink}` }}>2010</div>
           <div style={{ font:`900 42px ${FONT}`, color:C.ink, marginTop:4 }}>Messel, Alemania</div>
         </div>
       </Abs>}
-      {num > 0.01 && <div style={{ position:'absolute', left:420, width:520, top:1320, display:'flex', flexDirection:'column', alignItems:'center', gap:4, transform:`scale(${num})` }}>
+      {num > 0.01 && <div style={{ position:'absolute', left:280, width:520, top:310, display:'flex', flexDirection:'column', alignItems:'center', gap:4, transform:`scale(${num})` }}>
         <Big size={280} color={C.yellow} rot={-3}>48</Big>
         <div style={{ font:`700 40px ${MONO}`, color:C.ink, background:C.yellow, border:`6px solid ${C.ink}`, padding:'6px 22px', transform:'rotate(-2deg)' }}>MILLONES DE AÑOS</div>
       </div>}
@@ -402,24 +422,24 @@ function HumanosScene({ T, K }) {
   const t37 = prog(T, c + 1.7, c + 2.0, MOTION.pop), chip = prog(T, c + 2.2, c + 2.6, MOTION.pop);
   return (
     <Bg color={C.red} kind="pop" T={T}>
-      {outA < 1 && <div style={{ position:'absolute', inset:0, opacity:1 - outA, transform:`scale(${inA})`, transformOrigin:'540px 1050px' }}>
-        <Ant T={T} x={290} y={1050} w={380} walk={T * 2} walking={0.4} />
-        {ok > 0.01 && <Abs x={290} y={1050} w={440} h={340} style={{ borderRadius:'50%', border:`12px solid ${C.mint}`, boxShadow:`0 0 0 6px ${C.ink}`, transform:`scale(${ok})` }}></Abs>}
+      {outA < 1 && <div style={{ position:'absolute', inset:0, opacity:1 - outA, transform:`scale(${inA * 1.2})`, transformOrigin:'540px 1000px' }}>
+        <Ant T={T} x={320} y={1050} w={380} walk={T * 2} walking={0.4} />
+        {ok > 0.01 && <Abs x={320} y={1050} w={440} h={340} style={{ borderRadius:'50%', border:`12px solid ${C.mint}`, boxShadow:`0 0 0 6px ${C.ink}`, transform:`scale(${ok})` }}></Abs>}
         <Persona x={790} y={1030} s={0.9} />
         {no > 0.01 && <Abs x={790} y={1030} w={360} h={200} style={{ display:'flex', justifyContent:'center', alignItems:'center', transform:`scale(${lerp(2.4, 1, no)}) rotate(-10deg)`, opacity:clamp(no * 3, 0, 1) }}>
           <div style={{ font:`400 150px/1 ${NUM}`, color:C.ink, background:C.yellow, border:`12px solid ${C.ink}`, boxShadow:`14px 14px 0 ${C.ink}`, padding:'0 40px' }}>NO</div></Abs>}
-        {ok > 0.01 && <Abs x={290} y={850} w={520} h={80} style={{ display:'flex', justifyContent:'center', transform:`scale(${ok})` }}>
+        {ok > 0.01 && <Abs x={320} y={850} w={520} h={80} style={{ display:'flex', justifyContent:'center', transform:`scale(${ok})` }}>
           <div style={{ font:`700 38px ${MONO}`, color:C.ink, background:C.mint, border:`6px solid ${C.ink}`, padding:'4px 18px', borderRadius:12 }}>SOLO HORMIGAS</div></Abs>}
       </div>}
-      {T >= c && <div style={{ position:'absolute', left:150, top:740, width:200, height:900, transform:`translateY(${(1 - th) * 1200}px) rotate(${-6 + Math.sin(T * 3) * 1.5}deg)` }}>
+      {T >= c && <div style={{ position:'absolute', left:150, top:590, width:200, height:900, transform:`translateY(${(1 - th) * 1200}px) rotate(${-6 + Math.sin(T * 3) * 1.5}deg)` }}>
         <div style={{ position:'absolute', left:50, top:0, width:100, height:720, borderRadius:50, background:'#fff', border:OL, boxSizing:'border-box', overflow:'hidden' }}>
           <div style={{ position:'absolute', left:22, right:22, bottom:0, height:`${20 + fill * 66}%`, background:C.red, borderRadius:30 }}></div>
           {[0, 1, 2, 3, 4, 5].map((i) => <div key={i} style={{ position:'absolute', right:0, top:90 + i * 100, width:30, height:6, background:C.ink }}></div>)}
         </div>
         <div style={{ position:'absolute', left:0, top:640, width:200, height:200, borderRadius:'50%', background:C.red, border:OL, boxSizing:'border-box' }}></div>
       </div>}
-      {t37 > 0.01 && <Abs x={620} y={900} w={420} h={170} style={{ display:'flex', justifyContent:'center', transform:`scale(${t37})` }}><Big size={150} color={C.white} rot={-6}>37 °C</Big></Abs>}
-      {chip > 0.01 && <Abs x={640} y={1110} w={620} h={170} style={{ display:'flex', justifyContent:'center', alignItems:'center', transform:`scale(${chip}) rotate(2deg)` }}>
+      {t37 > 0.01 && <Abs x={640} y={820} w={420} h={170} style={{ display:'flex', justifyContent:'center', transform:`scale(${t37})` }}><Big size={150} color={C.white} rot={-6}>37 °C</Big></Abs>}
+      {chip > 0.01 && <Abs x={650} y={1060} w={620} h={170} style={{ display:'flex', justifyContent:'center', alignItems:'center', transform:`scale(${chip}) rotate(2deg)` }}>
         <div style={{ font:`900 40px/1.15 ${FONT}`, color:C.ink, background:C.yellow, border:`7px solid ${C.ink}`, boxShadow:`10px 10px 0 ${C.ink}`, padding:'12px 24px', textAlign:'center' }}>La mayoría de los hongos<br />no crece a 37 °C</div></Abs>}
     </Bg>
   );
@@ -427,16 +447,18 @@ function HumanosScene({ T, K }) {
 
 /* Cierre: la misma imagen del inicio (fondo rosa, la hormiga y la marioneta), ahora prendida de la hoja con el tallo del hongo. */
 function CierreScene({ T, K }) {
-  if (T < K.Ci) return null;
+  if (T < K.Ci - 0.45) return null;
   const s = K.Ci, inP = prog(T, s + 0.05, s + 0.6, MOTION.enter), bar = prog(T, s + 1.2, s + 1.9, MOTION.pop);
   return (
     <Bg color={C.pink} kind="pop" T={T}>
-      <div style={{ position:'absolute', left:0, right:0, top:1440, height:480, background:'#7a3b1e', borderTop:OL, backgroundImage:'radial-gradient(circle, rgba(0,0,0,.18) 6px, transparent 7px)', backgroundSize:'48px 48px' }}></div>
+      <div style={{ position:'absolute', left:0, right:0, top:1500, height:480, background:'#4a2414', borderTop:OL, backgroundImage:'radial-gradient(circle, rgba(0,0,0,.18) 6px, transparent 7px)', backgroundSize:'48px 48px' }}></div>
       <div style={{ position:'absolute', inset:0, transform:`translateY(${(1 - inP) * -600}px)` }}>
-        <Leaf T={T} y={880} />
-        <Ant T={T} x={540} y={980} w={560} flipY bite={1} dead={1} fungus={1} stalk={1} ascoma={1} />
+        <div style={{ position:'absolute', inset:0, transform:HOJA_ESC, transformOrigin:'0 0' }}>
+          <Leaf T={T} y={880} />
+          <Ant T={T} x={540} y={980} w={560} flipY bite={1} dead={1} fungus={1} stalk={1} ascoma={1} />
+        </div>
       </div>
-      {bar > 0.01 && <Marioneta T={T} x={CX} y={lerp(-200, 660, bar)} a={bar * 0.5} puntos={[[CX - 160, 1000], [CX + 160, 960], [CX + 40, 1010], [CX - 40, 990]]} />}
+      {bar > 0.01 && <Marioneta T={T} x={CX} y={lerp(-200, 620, bar)} a={bar * 0.5} puntos={[[340, 1175], [740, 1125], [590, 1187], [490, 1162]]} />}
     </Bg>
   );
 }
@@ -501,6 +523,7 @@ function Burst({ T, tc, kind, colors, seed, glyph, dir = 1, chaos = 1, flash = t
 /* ================= SUBTÍTULOS ================= */
 function Headline({ T, idx, at, until, y, lines, hi, tilt = 0 }) {
   // Versión narrada: los tiempos de cada subtítulo vienen de la voz generada (window.SUBS, en tiempo de autor).
+  if (typeof CINE_OPC !== 'undefined' && !CINE_OPC.subtitulos) return null;
   const o = window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = prog(T, until - 0.25, until, MOTION.draw), c = hi;
@@ -538,9 +561,14 @@ function Piece() {
   const sx = Math.sin(T * 97) * sh, sy = Math.cos(T * 83) * sh;
   let lc = -9; [K.E, K.I, K.S, K.M, K.P, K.Ho, K.F, K.Hu, K.Ca, K.Ci].forEach((c) => { if (T >= c) lc = c; });
   const lv = T < K.V ? 1 : 0;
-  const ck = lv * Math.exp(-(T - lc) * 10), drift = lv * 0.02 * Math.sin(T * 0.8);
-  const zoom = 1 + 0.08 * ck + drift;
-  const cutFlash = lv * Math.max(0, 1 - (T - lc) / 0.09);
+  // Modo cine: sin golpe de zoom ni destello en cada corte; la cámara avanza despacio en cada escena (10 %, 20 % en el gancho).
+  const CORTES = [K.G, K.E, K.I, K.S, K.M, K.P, K.Ho, K.F, K.Hu, K.Ca, K.Ci, K.V];
+  let ic = 0; CORTES.forEach((c, i) => { if (T >= c && i < CORTES.length - 1) ic = i; });
+  const avance = prog(T, CORTES[ic], CORTES[ic + 1], Easing.easeInOutSine) * (ic === 0 ? 0.2 : 0.1);
+  const zoom = 1 + lv * avance;
+  const cutFlash = 0;
+  const funde = (a) => prog(T, a - 0.45, a + 0.1, Easing.easeInOutSine);
+  const capa = (a, el) => <div style={{ position:'absolute', inset:0, opacity:funde(a) }}>{el}</div>;
   const P = { T, K };
   const HP = { T };
   const bursts = [
@@ -557,16 +585,17 @@ function Piece() {
     <div data-screen-label={`t=${Math.floor(time)}s`} style={{ position:'absolute', left:0, top:0, width:W, height:H, overflow:'hidden', background:C.ink }}>
       <div style={{ position:'absolute', inset:0, transform:`translate(${sx}px,${sy}px) scale(${zoom})` }}>
         <GanchoScene {...P} />
-        <EsporaScene {...P} />
-        <InvasionScene {...P} />
-        <SubidaScene {...P} />
-        <MordidaScene {...P} />
-        <PreguntaScene {...P} />
-        <HongoScene {...P} />
-        <FosilScene {...P} />
-        <HumanosScene {...P} />
-        <CierreScene {...P} />
-        {bursts.map((b, i) => <Burst key={i} T={T} {...b} />)}
+        {capa(K.E, <EsporaScene {...P} />)}
+        {capa(K.I, <InvasionScene {...P} />)}
+        {capa(K.S, <SubidaScene {...P} />)}
+        {capa(K.M, <MordidaScene {...P} />)}
+        {capa(K.P, <PreguntaScene {...P} />)}
+        {capa(K.Ho, <HongoScene {...P} />)}
+        {capa(K.F, <FosilScene {...P} />)}
+        {capa(K.Hu, <HumanosScene {...P} />)}
+        {capa(K.Ci, <CierreScene {...P} />)}
+        {/* Transiciones de colores con palabra gigante: apagadas en modo cine (eran láminas a pantalla completa). */}
+        {typeof CINE_OPC === 'undefined' && bursts.map((b, i) => <Burst key={i} T={T} {...b} />)}
       </div>
       {cutFlash > 0 && <div style={{ position:'absolute', inset:0, background:'#fff', opacity:cutFlash * 0.45, pointerEvents:'none' }}></div>}
       {/* Subtítulos: siempre en la franja alta (fuera del tercio inferior). idx = línea de narracion.json */}
