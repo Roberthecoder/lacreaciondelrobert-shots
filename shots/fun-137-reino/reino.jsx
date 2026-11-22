@@ -4,6 +4,8 @@
 
 const RN = { verde:'#3fbf4a', verde2:'#1f8f3a', verdeClaro:'#9be36a', naranja:'#ff8a1f', cafe:'#7a4a22', paja:'#e9c46a', paja2:'#c99a2e',
   higado:'#9b2f3a', higado2:'#c2475a', papa:'#d9a75a', papa2:'#b5823c', dorado:'#E8A62A', estante:'#c98b4a', estante2:'#8a5a2b' };
+// Pase a mano cine: agranda una escena completa (x' = ox + k·x, y' = oy + k·y) para que el sujeto llene el cuadro.
+const zoomR = (ox, oy, k, c) => <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:`translate(${ox}px,${oy}px) scale(${k})`, transformOrigin:'0 0' }}>{c}</div>;
 const svgR = (c, z = 20) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z, overflow:'visible' }}>{c}</svg>;
 
 /* ---------- SÚPER ---------- */
@@ -73,19 +75,19 @@ function LibroLinneo({ T, at, x = 540, y = 960 }) {
     <path d="M -450 -315 Q -230 -350 -6 -305 L -6 240 Q -230 195 -450 230 Z" fill="#f6ead0" stroke={KC.ink} strokeWidth={5} />
     <path d="M 450 -315 Q 230 -350 6 -305 L 6 240 Q 230 195 450 230 Z" fill="#f6ead0" stroke={KC.ink} strokeWidth={5} />
     <line x1={0} y1={-310} x2={0} y2={250} stroke="#b89a6a" strokeWidth={6} />
-    <text x={-228} y={-262} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>SPECIES PLANTARUM</text>
-    <text x={-228} y={-222} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="#7a5a3a">Linneo · 1753</text>
-    <text x={228} y={-262} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>CRYPTOGAMIA</text>
+    <text x={-228} y={-262} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}`, stroke:'none' }} fill="#0b1020">SPECIES PLANTARUM</text>
+    <text x={-228} y={-222} textAnchor="middle" style={{ font:`700 26px ${KF.mono}`, stroke:'none' }} fill="#5a3a1a">Linneo · 1753</text>
+    <text x={228} y={-262} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}`, stroke:'none' }} fill="#0b1020">CRYPTOGAMIA</text>
     {[-180, 175].map((yy) => <line key={yy} x1={-420} y1={yy} x2={-40} y2={yy - 4} stroke="#d9c7a0" strokeWidth={3} />)}
     {d(0) > 0 && <Musgo x={-330} y={-40} s={1.1 * d(0)} />}
-    {d(0) > 0 && <text x={-330} y={10} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#5a4a3a" opacity={d(0)}>musgos</text>}
+    {d(0) > 0 && <text x={-330} y={10} textAnchor="middle" style={{ font:`700 24px ${KF.mono}`, stroke:'none' }} fill="#3a2a1a" opacity={d(0)}>musgos</text>}
     {d(1) > 0 && <g opacity={Math.min(1, d(1))}><Helecho x={-140} y={-30} s={0.95 * d(1)} /></g>}
-    {d(1) > 0 && <text x={-140} y={10} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#5a4a3a" opacity={d(1)}>helechos</text>}
+    {d(1) > 0 && <text x={-140} y={10} textAnchor="middle" style={{ font:`700 24px ${KF.mono}`, stroke:'none' }} fill="#3a2a1a" opacity={d(1)}>helechos</text>}
     {d(2) > 0 && <g opacity={Math.min(1, d(2))}><Alga T={T} x={140} y={-30} s={0.9 * d(2)} /></g>}
-    {d(2) > 0 && <text x={140} y={10} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#5a4a3a" opacity={d(2)}>algas</text>}
+    {d(2) > 0 && <text x={140} y={10} textAnchor="middle" style={{ font:`700 24px ${KF.mono}`, stroke:'none' }} fill="#3a2a1a" opacity={d(2)}>algas</text>}
     {d(3) > 0 && <Champinon x={330} y={-30} s={0.62 * d(3)} sombrero="#c9925a" sombra="#a8743c" lam="#6b3a22" pie="#efe0c4" />}
-    {d(3) > 0 && <text x={330} y={10} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#5a4a3a" opacity={d(3)}>hongos</text>}
-    {d(3) > 0 && <text x={228} y={140} textAnchor="middle" style={{ font:`italic 700 30px ${KF.mono}` }} fill={KC.ink} opacity={d(3)}>Agaricus <tspan fontStyle="normal">(Linneo, 1753)</tspan></text>}
+    {d(3) > 0 && <text x={330} y={10} textAnchor="middle" style={{ font:`700 24px ${KF.mono}`, stroke:'none' }} fill="#3a2a1a" opacity={d(3)}>hongos</text>}
+    {d(3) > 0 && <text x={228} y={140} textAnchor="middle" style={{ font:`italic 700 30px ${KF.mono}`, stroke:'none' }} fill="#0b1020" opacity={d(3)}>Agaricus <tspan fontStyle="normal">(Linneo, 1753)</tspan></text>}
   </g>;
 }
 
@@ -200,11 +202,11 @@ function Persona({ x, y, s = 1, color = '#ffb37a' }) {
   </g>;
 }
 // Caja de reino.
-function CajaReino({ x, y, w = 188, h = 112, texto, color, on = 1, brillo = 0 }) {
+function CajaReino({ x, y, w = 188, h = 112, texto, color, on = 1, brillo = 0, tam = 30 }) {
   if (on <= 0) return null;
   const e = kEase.rebote(kclamp(on, 0, 1));
   return <div style={{ position:'absolute', left:x - w / 2, top:y - h / 2, width:w, height:h, zIndex:30, transform:`scale(${e})`, background:color, border:`6px solid ${KC.ink}`, borderRadius:20,
-    display:'flex', alignItems:'center', justifyContent:'center', font:`900 30px ${KF.texto}`, color:KC.ink, boxShadow: brillo ? `0 0 ${40 * brillo}px ${KC.gold2}, 8px 8px 0 ${KC.ink}` : `8px 8px 0 ${KC.ink}` }}>{texto}</div>;
+    display:'flex', alignItems:'center', justifyContent:'center', font:`900 ${tam}px ${KF.texto}`, color:'#0b1020', boxShadow: brillo ? `0 0 ${40 * brillo}px ${KC.gold2}, 8px 8px 0 ${KC.ink}` : `8px 8px 0 ${KC.ink}` }}>{texto}</div>;
 }
 // Libros de texto apilados con los 5 reinos en el lomo.
 function Libros({ x, y, s = 1, on = 1 }) {
@@ -213,7 +215,7 @@ function Libros({ x, y, s = 1, on = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s * kEase.rebote(kclamp(on, 0, 1))})`}>
     {cols.map((c, i) => <g key={i} transform={`translate(${(i % 2) * 18 - 9} ${-i * 64}) rotate(${(i - 1) * 2})`}>
       <rect x={-200} y={-60} width={400} height={60} rx={8} fill={c} stroke={KC.ink} strokeWidth={6} />
-      <text x={-180} y={-18} style={{ font:`400 32px ${KF.titulo}` }} fill={KC.ink}>BIOLOGÍA</text>
+      <text x={-180} y={-18} style={{ font:`400 32px ${KF.titulo}`, stroke:'none' }} fill="#0b1020">BIOLOGÍA</text>
       {colR.map((cc, k) => <rect key={k} x={40 + k * 28} y={-44} width={22} height={28} rx={4} fill={cc} stroke={KC.ink} strokeWidth={3} />)}
     </g>)}
   </g>;
@@ -246,15 +248,15 @@ function ReinoShot() {
       {/* 0 · gancho: el champiñón en el pasillo de verduras */}
       <Escena T={T} a={K.G} b={K.L} zoom={0.05} origen="50% 60%">
         <FondoLunares color={KC.yellow} />
-        <Letrero x={60} y={470} w={460} texto="VERDURAS" />
-        {svgR(<>
-          <Repisa x={-20} y={1120} w={1120} />
-          <Lechuga T={T} x={170} y={1120} s={1.15} />
-          <Zanahorias T={T} x={910} y={1120} s={1.0} />
+        <Letrero x={60} y={300} w={560} texto="VERDURAS" tam={80} />
+        {zoomR(-270, -380, 1.5, svgR(<>
+          <Repisa x={-200} y={1120} w={1480} />
+          <Lechuga T={T} x={215} y={1120} s={1.15} />
+          <Zanahorias T={T} x={850} y={1120} s={1.0} />
           <Charola T={T} x={540} y={1120} s={1.3} salto={salto} />
           {T > K.G + 0.35 && <text x={575} y={760 - 10 * Math.sin(T * 6)} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={7}
             opacity={kprog(T, K.G + 0.35, K.G + 0.6)} transform={`rotate(${Math.sin(T * 4) * 6} 540 700)`}>?</text>}
-        </>)}
+        </>))}
       </Escena>
       {/* 1 · Linneo: el libro de las plantas */}
       <Escena T={T} a={K.L} b={K.Pa} zoom={0.06}>
@@ -264,13 +266,13 @@ function ReinoShot() {
       {/* 2–3 · parecía planta · pista 1: sin clorofila */}
       <Escena T={T} a={K.Pa} b={K.P2} zoom={0.04} origen="50% 70%">
         <FondoLunares color={T < K.P1 ? KC.mint : mixHex('#2fe0a8', '#00d2ff', sol)} />
-        {svgR(<>
+        {zoomR(-121, -72.5, 1.15, svgR(<>
           {sol > 0 && <g transform="translate(540 560)" opacity={sol}>
             <circle r={70 + 6 * Math.sin(T * 4)} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} />
             {Array.from({ length: 12 }, (_, i) => { const a = i * Math.PI / 6 + T * 0.4; return <line key={i} x1={Math.cos(a) * 90} y1={Math.sin(a) * 90} x2={Math.cos(a) * 120} y2={Math.sin(a) * 120} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />; })}
           </g>}
           {sol > 0 && [[-1, 300], [1, 780]].map(([d, tx], i) => <line key={i} x1={540 + d * 90} y1={640} x2={klerp(540, tx, sol)} y2={klerp(640, 920, sol)} stroke={KC.yellow} strokeWidth={14} strokeDasharray="22 16" strokeDashoffset={-T * 60} opacity={0.9} />)}
-          <Repisa x={-20} y={1150} w={1120} />
+          <Repisa x={-80} y={1150} w={1240} />
           <Champinon x={300} y={1150} s={1.25} sombrero="#fbf8f1" sombra="#ddd3bf" lam="#c99a8a" rot={mece(T, 2, 0.3) * 2} />
           <Lechuga T={T} x={790} y={1150} s={1.7} verde={mixHex('#3fbf4a', '#21d84a', kprog(T, K.P1 + 0.8, K.P1 + 1.4))} />
           {T > K.P1 + 1.0 && Array.from({ length: 10 }, (_, k) => { const u = ((T - K.P1 - 1.0) * 0.6 + k / 10) % 1;
@@ -278,13 +280,13 @@ function ReinoShot() {
               <text x={700 + (k % 5) * 45 + Math.sin(T * 2 + k) * 10} y={947 - u * 260} textAnchor="middle" style={{ font:`700 15px ${KF.mono}` }} fill={KC.ink}>O₂</text></g>; })}
           {T < K.P1 + 0.2 && <text x={545} y={1010} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Pa + 1.6, K.Pa + 2.0) * (1 - kprog(T, K.P1 - 0.1, K.P1 + 0.2))}
             transform={`translate(${Math.sin(T * 30) * 4} 0)`}>=</text>}
-        </>)}
+        </>))}
       </Escena>
       {/* 4 · pista 2: digiere afuera y absorbe (microscopio) */}
       <Escena T={T} a={K.P2} b={K.P3} zoom={0.05} origen="45% 45%">
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={20} />
-        {svgR(<>
+        {zoomR(-316, -262, 1.4, svgR(<>
           <Paja T={T} x={600} y={720} q={1 - 0.6 * kprog(T, K.P2 + 1.0, K.P2 + 3.6)} />
           <Hifa T={T} x0={-60} x1={560} y={830} ancho={92} p={kprog(T, K.P2 - 0.3, K.P2 + 0.9, kEase.sale)} />
           {T > K.P2 + 0.7 && Array.from({ length: 40 }, (_, k) => { const ida = k % 2 === 0, u = ((T - K.P2) * 0.5 + k / 40) % 1;
@@ -292,7 +294,7 @@ function ReinoShot() {
             const x = ida ? klerp(600, tx, u) : klerp(tx, 590, u), y = ida ? klerp(830, ty, u) : klerp(ty, 830, u);
             const o = Math.sin(Math.PI * u) * (ida ? kprog(T, K.P2 + 0.7, K.P2 + 1.1) : kprog(T, K.P2 + 2.0, K.P2 + 2.5));
             return <circle key={k} cx={x + mece(T, k, 0.5) * 8} cy={y + mece(T, k + 5, 0.5) * 8} r={ida ? 11 : 8} fill={ida ? KC.yellow : KC.mint} stroke={KC.ink} strokeWidth={2} opacity={o} />; })}
-        </>)}
+        </>))}
       </Escena>
       {/* 5 · pista 3: la pared (lechuga vs hongo) */}
       <Escena T={T} a={K.P3} b={K.Pr} zoom={0.04}>
@@ -310,7 +312,7 @@ function ReinoShot() {
       {/* 6 · re-gancho: ¿dónde guarda su energía? */}
       <Escena T={T} a={K.Pr} b={K.P4} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {svgR(<><Hifa T={T} x0={-80} x1={520} y={1080} ancho={120} onda={10} /><Pila T={T} x={280} y={760} s={1.1} nivel={0.25 + 0.1 * Math.sin(T * 3)} /></>)}
+        {svgR(<><Hifa T={T} x0={-80} x1={760} y={1120} ancho={120} onda={10} /><Pila T={T} x={540} y={740} s={1.4} nivel={0.25 + 0.1 * Math.sin(T * 3)} /></>)}
       </Escena>
       {/* 7 · pista 4: glucógeno, como tu hígado; no almidón como la papa */}
       <Escena T={T} a={K.P4} b={K.W} zoom={0.04}>
@@ -330,24 +332,28 @@ function ReinoShot() {
       <Escena T={T} a={K.W} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {svgR(<>
-          <IconoNutricion T={T} x={190} y={950} tipo="planta" on={kprog(T, K.W + 1.6, K.W + 2.0)} />
-          <IconoNutricion T={T} x={540} y={950} tipo="animal" on={kprog(T, K.W + 2.1, K.W + 2.5)} />
-          <IconoNutricion T={T} x={890} y={950} tipo="hongo" on={kprog(T, K.W + 2.6, K.W + 3.0)} brillo={kprog(T, K.W + 4.2, K.W + 4.7)} />
+          {[['planta', 180, K.W + 1.6, 0], ['animal', 540, K.W + 2.1, 0], ['hongo', 900, K.W + 2.6, kprog(T, K.W + 4.2, K.W + 4.7)]].map(([tipo, ix, t0, br]) => { const on = kprog(T, t0, t0 + 0.4);
+            // los tres modos de comer están desde que empieza la escena, atenuados; cada uno se enciende cuando la voz lo nombra
+            return <g key={tipo} transform={`translate(${ix} 990) scale(${1.5 * (1 + 0.1 * Math.sin(Math.PI * on))})`} opacity={0.28 + 0.72 * on}><IconoNutricion T={T} x={0} y={0} tipo={tipo} on={1} brillo={br} /></g>; })}
         </>)}
       </Escena>
       {/* 9 · 1969: cinco reinos en Science, y a los libros de texto */}
       <Escena T={T} a={K.Ci} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {[['Monera', '#9be36a'], ['Protista', '#00d2ff'], ['Plantae', '#3fbf4a'], ['Fungi', KC.gold2], ['Animalia', '#ff8a1f']].map(([t, c], i) =>
-          <CajaReino key={t} x={118 + i * 211} y={850} texto={t} color={c} on={kprog(T, K.Ci + 1.2 + i * 0.18, K.Ci + 1.6 + i * 0.18)} brillo={i === 3 ? kprog(T, K.Ci + 2.3, K.Ci + 2.8) : 0} />)}
-        {svgR(<Libros x={420} y={1150} s={0.85} on={kprog(T, K.Ci + 2.9, K.Ci + 3.4)} />, 25)}
+          <React.Fragment key={t}>
+            {/* las cinco cajas están desde el inicio, atenuadas; se encienden con la voz */}
+            <div style={{ opacity:0.22 }}><CajaReino x={[190, 540, 890, 365, 715][i]} y={i < 3 ? 810 : 985} w={320} h={140} tam={46} texto={t} color={c} on={1} /></div>
+            <CajaReino x={[190, 540, 890, 365, 715][i]} y={i < 3 ? 810 : 985} w={320} h={140} tam={46} texto={t} color={c} on={kprog(T, K.Ci + 1.2 + i * 0.18, K.Ci + 1.6 + i * 0.18)} brillo={i === 3 ? kprog(T, K.Ci + 2.3, K.Ci + 2.8) : 0} />
+          </React.Fragment>)}
+        {svgR(<Libros x={350} y={1340} s={1.2} on={kprog(T, K.Ci + 2.9, K.Ci + 3.4)} />, 25)}
       </Escena>
       {/* 10 · el ADN: más parientes de los animales que de las plantas */}
       <Escena T={T} a={K.A} b={K.Co} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={16} />
-        {svgR(<>
-          <ADNHebra T={T} x={420} y={470} largo={600} alto={70} vueltas={3} resalta={(u) => u < kprog(T, K.A + 0.2, K.A + 2.0)} />
+        {svgR(<ADNHebra T={T} x={140} y={500} largo={800} alto={100} vueltas={3} resalta={(u) => u < kprog(T, K.A + 0.2, K.A + 2.0)} />)}
+        {zoomR(-108, -120, 1.2, svgR(<>
           {(() => { const p = kprog(T, K.A + 1.4, K.A + 2.6, kEase.sale), q = kprog(T, K.A + 2.4, K.A + 3.4, kEase.sale);
             return <g strokeLinecap="round" fill="none">
               <path d={`M 540 1170 L 540 ${klerp(1170, 1060, p)}`} stroke={KC.texto} strokeWidth={12} />
@@ -360,43 +366,43 @@ function ReinoShot() {
           <g opacity={kprog(T, K.A + 2.0, K.A + 2.4)}><Lechuga T={T} x={200} y={860} s={0.7} /></g>
           <g opacity={kprog(T, K.A + 3.0, K.A + 3.4)}><Champinon x={560} y={860} s={0.62} sombrero="#fbf8f1" sombra="#ddd3bf" lam="#c99a8a" /></g>
           <g opacity={kprog(T, K.A + 3.2, K.A + 3.6)}><Persona x={880} y={860} s={1.2} /></g>
-        </>)}
+        </>))}
       </Escena>
       {/* 11 · el código que les pone nombre */}
       <Escena T={T} a={K.Co} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        <LibroCodigo T={T} at={K.Co} x={360} y={860} />
+        {zoomR(-135, -230, 1.25, <LibroCodigo T={T} at={K.Co} x={540} y={920} />)}
       </Escena>
       {/* 12 · cierre: el champiñón se muda a su propio reino */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="50% 60%">
         <FondoLunares color={KC.yellow} />
-        <Letrero x={30} y={560} w={440} texto="VERDURAS" tam={58} />
-        <Letrero x={560} y={560} w={490} texto="REINO FUNGI" fondo={KC.gold} color={KC.ink} tam={58} />
+        <Letrero x={20} y={620} w={330} texto="VERDURAS" tam={50} />
+        <Letrero x={400} y={596} w={650} texto="REINO FUNGI" fondo={KC.gold} color="#0b1020" tam={76} />
         {svgR(<>
-          <Repisa x={-20} y={1120} w={530} />
-          <Repisa x={530} y={1120} w={570} color={KC.gold2} color2={KC.gold} />
-          <rect x={530} y={700} width={560} height={420} fill="rgba(244,194,90,.25)" />
-          <Lechuga T={T} x={130} y={1120} s={1.15} />
-          <Zanahorias T={T} x={380} y={1120} s={0.85} />
-          <Charola T={T} x={klerp(270, 805, muda)} y={1120 - Math.sin(muda * Math.PI) * 160} s={1.2} />
-          {muda >= 1 && Array.from({ length: 8 }, (_, k) => { const a = k * Math.PI / 4, r = 150 + 40 * kprog(T, K.C + 2.2, K.C + 2.8);
-            return <circle key={k} cx={800 + Math.cos(a) * r} cy={980 + Math.sin(a) * r * 0.6} r={9} fill={KC.gold2} stroke={KC.ink} strokeWidth={3} opacity={1 - kprog(T, K.C + 2.4, K.C + 3.0)} />; })}
+          <Repisa x={-20} y={1300} w={400} />
+          <Repisa x={380} y={1300} w={720} color={KC.gold2} color2={KC.gold} />
+          <rect x={380} y={790} width={710} height={510} fill="rgba(244,194,90,.22)" />
+          <Lechuga T={T} x={100} y={1300} s={1.53} />
+          <Zanahorias T={T} x={300} y={1300} s={1.13} />
+          <Charola T={T} x={klerp(210, 735, muda)} y={1300 - Math.sin(muda * Math.PI) * 210} s={1.6} />
+          {muda >= 1 && Array.from({ length: 8 }, (_, k) => { const a = k * Math.PI / 4, r = 200 + 53 * kprog(T, K.C + 2.2, K.C + 2.8);
+            return <circle key={k} cx={735 + Math.cos(a) * r} cy={1110 + Math.sin(a) * r * 0.6} r={12} fill={KC.gold2} stroke={KC.ink} strokeWidth={3} opacity={1 - kprog(T, K.C + 2.4, K.C + 3.0)} />; })}
         </>)}
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 1.0} until={K.L - 0.3} x={40} y={660} texto="champiñón" tam={40} color={KC.ink} />
-      <Etq T={T} at={K.G + 1.4} until={K.L - 0.3} x={40} y={712} texto="Agaricus bisporus" it tam={34} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.0} until={K.L - 0.3} x={60} y={555} texto="champiñón" tam={44} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.4} until={K.L - 0.3} x={60} y={612} texto="Agaricus bisporus" it tam={34} color={KC.ink} />
       <Chip T={T} at={K.L + 2.8} until={K.Pa - 0.3} texto="Cryptogamia: plantas sin flor" x={540} y={470} tam={38} borde={RN.verde2} />
-      <Chip T={T} at={K.Pa + 0.4} until={K.P1 - 0.2} texto="no se mueve ✓" x={330} y={520} tam={38} borde={RN.verde} />
-      <Chip T={T} at={K.Pa + 1.2} until={K.P1 - 0.2} texto="células con pared ✓" x={330} y={610} tam={38} borde={RN.verde} />
+      <Chip T={T} at={K.Pa + 0.4} until={K.P1 - 0.2} texto="no se mueve ✓" x={300} y={560} tam={40} borde={RN.verde} />
+      <Chip T={T} at={K.Pa + 1.2} until={K.P1 - 0.2} texto="células con pared ✓" x={300} y={655} tam={40} borde={RN.verde} />
       <Capitulo T={T} hasta={K.W - 0.1} caps={[{ at:K.P1, titulo:'Pista: clorofila' }, { at:K.P2, titulo:'Pista: cómo come' }, { at:K.P3, titulo:'Pista: la pared' }, { at:K.P4, titulo:'Pista: la reserva' }]} />
-      <Chip T={T} at={K.P1 + 1.2} until={K.P2 - 0.2} texto="0 clorofila" x={300} y={760} tam={40} borde={KC.red} />
-      <Etq T={T} at={K.P1 + 1.5} until={K.P2 - 0.2} x={660} y={700} texto="fotosíntesis" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.P2 + 0.6} until={K.P3 - 0.2} texto="1 · digiere afuera (enzimas)" x={420} y={480} tam={34} borde={KC.yellow} />
-      <Chip T={T} at={K.P2 + 2.1} until={K.P3 - 0.2} texto="2 · absorbe" x={330} y={1060} tam={36} borde={KC.mint} />
-      <Etq T={T} at={K.P2 + 0.5} until={K.P3 - 0.2} x={60} y={930} texto="hifa" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.P2 + 1.0} until={K.P3 - 0.2} x={640} y={620} texto="paja (composta)" tam={28} color={RN.paja} />
+      <Chip T={T} at={K.P1 + 1.2} until={K.P2 - 0.2} texto="0 clorofila" x={235} y={745} tam={44} borde={KC.red} />
+      <Etq T={T} at={K.P1 + 1.5} until={K.P2 - 0.2} x={730} y={660} texto="fotosíntesis" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.P2 + 0.6} until={K.P3 - 0.2} texto="1 · digiere afuera (enzimas)" x={500} y={590} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.P2 + 2.1} until={K.P3 - 0.2} texto="2 · absorbe" x={300} y={1150} tam={40} borde={KC.mint} />
+      <Etq T={T} at={K.P2 + 0.5} until={K.P3 - 0.2} x={60} y={1030} texto="hifa" tam={36} color={KC.texto} />
+      <Etq T={T} at={K.P2 + 1.0} until={K.P3 - 0.2} x={640} y={1175} texto="paja (composta)" tam={32} color={RN.paja} />
       <Chip T={T} at={K.P3 + 0.3} until={K.Pr - 0.2} texto="LECHUGA" x={275} y={500} tam={36} borde={RN.verde} mono />
       <Chip T={T} at={K.P3 + 0.7} until={K.Pr - 0.2} texto="HONGO" x={800} y={500} tam={36} borde={KC.gold2} mono />
       <Etq T={T} at={K.P3 + 0.9} until={K.Pr - 0.2} x={95} y={1170} texto="pared de celulosa" tam={28} color={'#b7f28a'} />
@@ -406,41 +412,41 @@ function ReinoShot() {
       <Etq T={T} at={K.P4 + 0.8} until={K.W - 0.2} x={60} y={740} texto="hifa con glucógeno" tam={26} color={'#ff9ec2'} />
       <Etq T={T} at={K.P4 + 1.7} until={K.W - 0.2} x={130} y={1150} texto="tu hígado" tam={32} color={KC.texto} />
       <Etq T={T} at={K.P4 + 2.5} until={K.W - 0.2} x={630} y={1150} texto="almidón (papa)" tam={32} color={KC.texto} />
-      <TarjetaEstudio T={T} at={K.W + 0.2} until={K.Ci - 0.2} anio="1959" quien="Robert H. Whittaker · ecólogo" revista="Quarterly Review of Biology · 4 reinos" x={540} y={650} />
+      <TarjetaEstudio T={T} at={K.W + 0.2} until={K.Ci - 0.2} anio="1959" quien="Robert H. Whittaker · ecólogo" revista="Quarterly Review of Biology · 4 reinos" x={540} y={590} />
       {[['1753 · Linneo', 'plantas'], ['Haeckel', 'Protista'], ['1956 · Copeland', 'Protoctista'], ['1959 · Whittaker', 'Fungi']].map(([a, b], i) =>
         <div key={i} style={{ position:'absolute', left:20 + i * 262, top:318, width:250, zIndex:42, textAlign:'center', opacity:kprog(T, K.W + 0.6 + i * 0.25, K.W + 0.9 + i * 0.25) * (1 - kprog(T, K.Ci - 0.3, K.Ci)),
-          background: i === 3 ? KC.gold2 : 'rgba(14,15,18,.8)', color: i === 3 ? KC.ink : KC.texto, border:`4px solid ${KC.ink}`, borderRadius:16, padding:'6px 4px', font:`700 22px/1.2 ${KF.mono}` }}>{a}<br/><b style={{ font:`900 26px ${KF.texto}` }}>{b}</b></div>)}
-      {[['plantas', 'fotosíntesis', 190], ['animales', 'ingieren', 540], ['hongos', 'absorben', 890]].map(([a, b, x], i) =>
-        <div key={a} style={{ position:'absolute', left:x - 150, top:1075, width:300, zIndex:42, textAlign:'center', opacity:kprog(T, K.W + 1.8 + i * 0.5, K.W + 2.2 + i * 0.5) * (1 - kprog(T, K.Ci - 0.3, K.Ci)),
-          font:`900 34px/1.1 ${KF.texto}`, color:KC.ink }}>{a}<br/><span style={{ font:`700 28px ${KF.mono}`, color: i === 2 ? KC.ink : '#1d3d4a', background: i === 2 ? KC.gold2 : 'transparent', padding:'0 8px', borderRadius:8 }}>{b}</span></div>)}
-      <TarjetaEstudio T={T} at={K.Ci + 0.1} until={K.A - 0.2} anio="1969" quien="R. H. Whittaker · Universidad Cornell" revista="Science 163: 150–160 · cinco reinos" x={540} y={560} />
-      <Etq T={T} at={K.Ci + 3.2} until={K.A - 0.2} x={650} y={1080} texto="libros de texto" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ci + 3.5} until={K.A - 0.2} x={650} y={1125} texto="años 80 y 90" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.A + 0.3} until={K.Co - 0.2} x={420} y={570} texto="leyendo ADN…" tam={28} color={KC.lilac} />
-      <Etq T={T} at={K.A + 2.0} until={K.Co - 0.2} x={140} y={700} texto="plantas" tam={30} color={RN.verde} />
-      <Etq T={T} at={K.A + 3.0} until={K.Co - 0.2} x={480} y={700} texto="hongos" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.A + 3.2} until={K.Co - 0.2} x={800} y={700} texto="animales" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.A + 3.5} until={K.Co - 0.2} x={740} y={1010} texto="opistocontos" tam={24} color={KC.gold2} />
-      <Chip T={T} at={K.Co + 0.3} until={K.C - 0.2} texto="hasta 2011" x={330} y={460} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Co + 2.0} until={K.C - 0.2} texto="Melbourne, 2011" x={810} y={900} tam={30} borde={KC.gold2} mono />
+          background: i === 3 ? KC.gold2 : 'rgba(14,15,18,.8)', color: i === 3 ? '#0b1020' : KC.texto, border:`4px solid ${KC.ink}`, borderRadius:16, padding:'6px 4px', font:`700 22px/1.2 ${KF.mono}` }}>{a}<br/><b style={{ font:`900 26px ${KF.texto}` }}>{b}</b></div>)}
+      {[['plantas', 'fotosíntesis', 180], ['animales', 'ingieren', 540], ['hongos', 'absorben', 900]].map(([a, b, x], i) =>
+        <div key={a} style={{ position:'absolute', left:x - 170, top:1180, width:340, zIndex:42, textAlign:'center', opacity:kprog(T, K.W + 1.8 + i * 0.5, K.W + 2.2 + i * 0.5) * (1 - kprog(T, K.Ci - 0.3, K.Ci)),
+          font:`900 44px/1.15 ${KF.texto}`, color:KC.ink }}>{a}<br/><span style={{ font:`700 34px ${KF.mono}`, color: i === 2 ? '#0b1020' : 'rgba(223,231,255,.82)', background: i === 2 ? KC.gold2 : 'transparent', padding:'0 8px', borderRadius:8 }}>{b}</span></div>)}
+      <TarjetaEstudio T={T} at={K.Ci + 0.1} until={K.A - 0.2} anio="1969" quien="R. H. Whittaker · Universidad Cornell" revista="Science 163: 150–160 · cinco reinos" x={540} y={520} />
+      <Etq T={T} at={K.Ci + 3.2} until={K.A - 0.2} x={630} y={1215} texto="libros de texto" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 3.5} until={K.A - 0.2} x={630} y={1265} texto="años 80 y 90" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.A + 0.3} until={K.Co - 0.2} x={140} y={610} texto="leyendo ADN…" tam={32} color={KC.lilac} />
+      <Etq T={T} at={K.A + 2.0} until={K.Co - 0.2} x={30} y={715} texto="plantas" tam={34} color={RN.verde} />
+      <Etq T={T} at={K.A + 3.0} until={K.Co - 0.2} x={440} y={700} texto="hongos" tam={34} color={KC.gold2} />
+      <Etq T={T} at={K.A + 3.2} until={K.Co - 0.2} x={745} y={700} texto="animales" tam={34} color={KC.gold2} />
+      <Etq T={T} at={K.A + 3.5} until={K.Co - 0.2} x={720} y={1115} texto="opistocontos" tam={28} color={KC.gold2} />
+      <Chip T={T} at={K.Co + 0.3} until={K.C - 0.2} texto="hasta 2011" x={540} y={420} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 2.0} until={K.C - 0.2} texto="Melbourne, 2011" x={540} y={1445} tam={36} borde={KC.gold2} mono />
       {[['sin clorofila', 0], ['absorbe', 1], ['quitina', 2], ['glucógeno', 3]].map(([t, i]) =>
-        <div key={t} style={{ position:'absolute', left:40 + (i % 2) * 500, top:380 + Math.floor(i / 2) * 80, width:480, zIndex:42, display:'flex', alignItems:'center', gap:12,
+        <div key={t} style={{ position:'absolute', left:60 + (i % 2) * 500, top:390 + Math.floor(i / 2) * 92, width:480, zIndex:42, display:'flex', alignItems:'center', gap:12,
           opacity:kprog(T, K.C + 2.4 + i * 0.25, K.C + 2.7 + i * 0.25), transform:`scale(${klerp(1.3, 1, kprog(T, K.C + 2.4 + i * 0.25, K.C + 2.8 + i * 0.25, kEase.rebote))})` }}>
-          <div style={{ width:54, height:54, borderRadius:27, background:KC.gold, border:`4px solid ${KC.ink}`, display:'flex', alignItems:'center', justifyContent:'center', font:`400 34px ${KF.titulo}`, color:KC.ink }}>{i + 1}</div>
-          <div style={{ font:`900 34px ${KF.texto}`, color:KC.ink, background:'rgba(255,255,255,.85)', border:`4px solid ${KC.ink}`, borderRadius:14, padding:'2px 14px' }}>{t}</div>
+          <div style={{ width:54, height:54, borderRadius:27, background:KC.gold, border:`4px solid ${KC.ink}`, display:'flex', alignItems:'center', justifyContent:'center', font:`400 34px ${KF.titulo}`, color:'#0b1020' }}>{i + 1}</div>
+          <div style={{ font:`900 38px ${KF.texto}`, color:'#0b1020', background:'rgba(255,255,255,.9)', border:`4px solid ${KC.ink}`, borderRadius:14, padding:'2px 14px' }}>{t}</div>
         </div>)}
-      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="más cerca de ti" x={800} y={760} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="más cerca de ti" x={735} y={775} tam={40} borde={KC.gold} />
 
       {/* barras de escala */}
-      <BarraEscalaR T={T} at={K.G} until={K.L} texto="5 cm" largo={90} />
+      <BarraEscalaR T={T} at={K.G} until={K.L} texto="5 cm" largo={135} />
       <BarraEscalaR T={T} at={K.L} until={K.Pa} texto="libro esquemático" largo={0} />
-      <BarraEscalaR T={T} at={K.Pa} until={K.P2} texto="5 cm" largo={110} />
-      <BarraEscalaR T={T} at={K.P2} until={K.P3} texto="10 µm" largo={130} />
+      <BarraEscalaR T={T} at={K.Pa} until={K.P2} texto="5 cm" largo={127} />
+      <BarraEscalaR T={T} at={K.P2} until={K.P3} texto="10 µm" largo={182} />
       <BarraEscalaR T={T} at={K.P3} until={K.Pr} texto="esquemático (no a escala)" largo={0} />
       <BarraEscalaR T={T} at={K.Pr} until={K.P4} texto="10 µm" largo={110} />
       <BarraEscalaR T={T} at={K.P4} until={K.W} texto="esquemático (no a escala)" largo={0} />
       <BarraEscalaR T={T} at={K.A} until={K.Co} texto="árbol simplificado" largo={0} />
-      <BarraEscalaR T={T} at={K.C} until={K.Ou} texto="5 cm" largo={110} />
+      <BarraEscalaR T={T} at={K.C} until={K.Ou} texto="5 cm" largo={147} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.L - 0.1} texto="Ese champiñón *no es una verdura.*" />
