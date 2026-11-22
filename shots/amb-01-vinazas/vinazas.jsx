@@ -72,8 +72,8 @@ function EscalaPH({ T, at, y = 760, marcas = [] }) {
       <defs><linearGradient id="ph" x1="0" x2="1"><stop offset="0" stopColor="#ff2d2d" /><stop offset=".3" stopColor="#ff9a1f" /><stop offset=".5" stopColor="#3fbf4a" /><stop offset=".75" stopColor="#2346ff" /><stop offset="1" stopColor="#6b2bd9" /></linearGradient></defs>
       <rect x={x0} y={60} width={w} height={56} rx={28} fill="url(#ph)" stroke={KC.ink} strokeWidth={7} />
       {[0, 7, 14].map((p) => <text key={p} x={X(p)} y={160} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{p}</text>)}
-      <text x={x0} y={40} style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>ÁCIDO</text>
-      <text x={x0 + w} y={40} textAnchor="end" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>BÁSICO</text>
+      <text x={x0 + 30} y={99} style={{ font:`900 30px ${KF.texto}`, paintOrder:'stroke' }} fill="#fff" stroke="#0b1020" strokeWidth={5}>ÁCIDO</text>
+      <text x={x0 + w - 30} y={99} textAnchor="end" style={{ font:`900 30px ${KF.texto}`, paintOrder:'stroke' }} fill="#fff" stroke="#0b1020" strokeWidth={5}>BÁSICO</text>
       {marcas.map((m, i) => { if (T < m.at) return null; const k = kprog(T, m.at, m.at + 0.5, kEase.rebote), x = X(m.ph);
         return <g key={i} transform={`translate(${x} ${m.arriba ? 54 : 122}) scale(${k})`}>
           {m.rango && <rect x={X(m.rango[0]) - x} y={m.arriba ? -2 : -66} width={X(m.rango[1]) - X(m.rango[0])} height={68} rx={10} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="10 8" />}
@@ -99,18 +99,18 @@ function Pez({ x, y, s = 1, T = 0, seed = 1, boquea = 0, color = KC.orange }) {
 }
 // Río en corte. cafe 0..1 = cuánta vinaza llegó; o2 0..1 = oxígeno disuelto.
 function Rio({ T, cafe = 0, o2 = 1 }) {
-  const agua = mixHex('#2fb6ff', '#6b4a22', cafe * 0.85), g = krng(17);
+  const agua = mixHex('#1a628c', '#4a3418', cafe * 0.85), g = krng(17);
   const bur = Array.from({ length: 26 }, () => [g() * KW, g(), 6 + g() * 10]);
   return <>
     <div style={{ position:'absolute', inset:0, background:'linear-gradient(#314857, #074257)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       <path d="M 0 560 Q 300 520 540 560 T 1080 560 L 1080 1920 L 0 1920 Z" fill={agua} stroke={KC.ink} strokeWidth={8} />
-      <path d="M 0 1500 Q 300 1450 540 1500 T 1080 1490 L 1080 1920 L 0 1920 Z" fill="#c9a26a" stroke={KC.ink} strokeWidth={8} />
+      <path d="M 0 1500 Q 300 1450 540 1500 T 1080 1490 L 1080 1920 L 0 1920 Z" fill="#54422c" stroke={KC.ink} strokeWidth={8} />
       {bur.map(([x, p, r], i) => { const u = ((T * 0.18 + p) % 1); return <circle key={i} cx={x + Math.sin(T * 2 + i) * 10} cy={klerp(1460, 600, u)} r={r} fill="none" stroke="#fff" strokeWidth={4} opacity={o2 * 0.8 * Math.sin(Math.PI * u)} />; })}
       {cafe > 0 && <path d={`M 0 600 C 200 ${700 + 40 * Math.sin(T)}, 300 ${900 + 30 * Math.sin(T * 1.3)}, ${200 + 900 * cafe} 1200 L ${200 + 900 * cafe} 1460 L 0 1460 Z`} fill={VIN} opacity={0.35 * cafe} />}
-      <Pez x={420 + mece(T, 2, 0.1) * 60} y={900} T={T} seed={1} boquea={kclamp((0.45 - o2) / 0.35, 0, 1)} />
-      <Pez x={760 + mece(T, 5, 0.1) * 50} y={1150} s={0.8} T={T} seed={4} boquea={kclamp((0.55 - o2) / 0.35, 0, 1)} color={KC.yellow} />
-      <Pez x={250 + mece(T, 8, 0.1) * 40} y={1320} s={0.7} T={T} seed={7} boquea={kclamp((0.35 - o2) / 0.3, 0, 1)} color={KC.pink} />
+      <Pez x={260 + mece(T, 2, 0.1) * 50} y={860} s={1.6} T={T} seed={1} boquea={kclamp((0.45 - o2) / 0.35, 0, 1)} />
+      <Pez x={740 + mece(T, 5, 0.1) * 50} y={1260} s={1.35} T={T} seed={4} boquea={kclamp((0.55 - o2) / 0.35, 0, 1)} color={KC.yellow} />
+      <Pez x={300 + mece(T, 8, 0.1) * 40} y={1400} s={1.15} T={T} seed={7} boquea={kclamp((0.35 - o2) / 0.3, 0, 1)} color={KC.pink} />
       {[160, 330, 860, 980].map((x, i) => <path key={i} d={`M ${x} 1500 q ${-10 + mece(T, i, 0.3) * 14} -80 ${4} -170`} stroke={KC.leaf} strokeWidth={14} fill="none" strokeLinecap="round" />)}
     </svg>
   </>;
@@ -182,11 +182,11 @@ function BolsaSetas({ x, y, s = 1, crece = 0, seed = 1 }) {
 // Repisas de la granja de hongos.
 function Granja({ T, crece }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    {[700, 1100].map((y, f) => <g key={f}>
+    {[680, 1080, 1480].map((y, f) => <g key={f}>
       <rect x={60} y={y} width={960} height={26} rx={8} fill="#a8703f" stroke={KC.ink} strokeWidth={7} />
-      {[0, 1, 2, 3].map((i) => <BolsaSetas key={i} x={170 + i * 245} y={y} s={0.78} crece={kclamp(crece * 1.3 - (f * 4 + i) * 0.06, 0, 1)} seed={f * 4 + i + 2} />)}
+      {[0, 1, 2, 3].map((i) => <BolsaSetas key={i} x={170 + i * 245} y={y} s={0.78} crece={kclamp(crece * 1.3 - (f * 4 + i) * 0.03, 0, 1)} seed={f * 4 + i + 2} />)}
     </g>)}
-    {[90, 990].map((x) => <rect key={x} x={x - 13} y={460} width={26} height={1100} fill="#8a5a33" stroke={KC.ink} strokeWidth={6} />)}
+    {[90, 990].map((x) => <rect key={x} x={x - 13} y={400} width={26} height={1180} fill="#8a5a33" stroke={KC.ink} strokeWidth={6} />)}
   </svg>;
 }
 
@@ -205,16 +205,16 @@ function Barra({ T, n = 12, a = 0, conIconos = false, lleno = 1 }) {
   return <>
     <FondoLunares color={KC.pink} punto="rgba(255,255,255,.25)" />
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-      <rect x={0} y={1200} width={KW} height={720} fill="#59402e" />
-      <rect x={0} y={1180} width={KW} height={40} fill="#6a4c36" stroke={KC.ink} strokeWidth={8} />
-      <rect x={60} y={940} width={960} height={22} rx={6} fill="#c98a4f" stroke={KC.ink} strokeWidth={6} />
+      <rect x={0} y={1540} width={KW} height={380} fill="#3d2c20" />
+      <rect x={0} y={1520} width={KW} height={40} fill="#59402e" stroke={KC.ink} strokeWidth={8} />
+      {n > 0 && [900, 1210].map((y) => <rect key={y} x={50} y={y} width={980} height={22} rx={6} fill="#a8703f" stroke={KC.ink} strokeWidth={6} opacity={kprog(T, a - 0.2, a + 0.3)} />)}
       {Array.from({ length: 12 }, (_, i) => {
         const at = a + i * 0.16; if (i >= n || T < at) return null;
-        const p = kprog(T, at, at + 0.4, kEase.rebote), fila = i < 6 ? 0 : 1, col = i % 6;
-        const x = 140 + col * 160, y = fila ? 1180 : 940;
-        return <g key={i} transform={`translate(0 ${(1 - p) * 60})`} opacity={kprog(T, at, at + 0.15)}><Garrafa x={x} y={y} s={0.82} T={T} nivel={1} icono={conIconos ? ICONOS[ic[i]] : null} /></g>;
+        const p = kprog(T, at, at + 0.4, kEase.rebote), fila = Math.floor(i / 4), col = i % 4;
+        const x = 180 + col * 240, y = 900 + fila * 310;
+        return <g key={i} transform={`translate(0 ${(1 - p) * 60})`} opacity={kprog(T, at, at + 0.15)}><Garrafa x={x} y={y} s={1.3} T={T} nivel={1} icono={conIconos ? ICONOS[ic[i]] : null} /></g>;
       })}
-      {n === 0 && <JarraLitro x={540} y={1180} s={1.5} lleno={lleno} T={T} />}
+      {n === 0 && <JarraLitro x={500} y={1520} s={2.2} lleno={lleno} T={T} />}
     </svg>
   </>;
 }
@@ -230,11 +230,11 @@ function VinazasNarrado() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       <Escena T={T} a={K.G} b={K.Al} zoom={0}>
-        <Barra T={T} n={12} a={K.G + 2.4} />
+        <Barra T={T} n={12} a={K.G + 1.9} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform={`translate(540 1180) scale(${klerp(1.6, 0.0001, aleja)})`} opacity={1 - aleja}>
+          <g transform={`translate(480 1520) scale(${klerp(2.6, 0.0001, aleja)})`} opacity={1 - aleja}>
             <JarraLitro x={0} y={0} lleno={sirve} T={T} />
-            {sirve < 1 && <path d={`M 160 -560 Q 60 -400 0 ${-260 * sirve - 20}`} stroke={TEQ} strokeWidth={22} fill="none" strokeLinecap="round" />}
+            {sirve < 1 && <path d={`M 160 -600 Q 60 -400 0 ${-260 * sirve - 20}`} stroke={TEQ} strokeWidth={14} fill="none" strokeLinecap="round" />}
           </g>
         </svg>
       </Escena>
@@ -242,21 +242,23 @@ function VinazasNarrado() {
       <Escena T={T} a={K.D} b={K.A}>
         <FondoLunares color={KC.mint} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <JarraLitro x={190} y={1060} s={0.9} T={T} />
-          <text x={190} y={1135} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>tequila</text>
+          <JarraLitro x={195} y={1250} s={1.2} T={T} />
+          <text x={195} y={1335} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>tequila</text>
           {Array.from({ length: 12 }, (_, i) => { const at = K.D + 0.6 + i * 0.22; if (T < at) return null; const p = kprog(T, at, at + 0.35, kEase.rebote);
-            return <g key={i} transform={`translate(${430 + (i % 4) * 160} ${740 + Math.floor(i / 4) * 200}) scale(${0.62 * p})`}><Garrafa x={0} y={0} T={T} /></g>; })}
+            return <g key={i} transform={`translate(${485 + (i % 4) * 162} ${860 + Math.floor(i / 4) * 270}) scale(${0.95 * p})`}><Garrafa x={0} y={0} T={T} /></g>; })}
         </svg>
       </Escena>
       <Escena T={T} a={K.A} b={K.R}>
         <FondoLunares color={KC.cyan} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Naranja x={800} y={520} s={kentrada(T, K.A + 0.8, null, 'pop').s * (T > K.A + 0.8 ? 1 : 0)} />
+          <Naranja x={321} y={440} s={1.4 * kentrada(T, K.A + 0.8, null, 'pop').s * (T > K.A + 0.8 ? 1 : 0)} />
+          {/* la vinaza, en cuadro desde que empieza la escena */}
+          <g transform="translate(540 1040) scale(1.1)"><Garrafa x={0} y={0} T={T} /></g>
           {/* 1 litro de vinaza que ensucia 20 litros de agua */}
-          {Array.from({ length: 20 }, (_, i) => { const at = K.A + 2.4 + i * 0.07; const c = kprog(T, at, at + 0.4); const x = 150 + (i % 10) * 82, y = 950 + Math.floor(i / 10) * 120;
-            return T > K.A + 2.2 ? <g key={i} transform={`translate(${x} ${y})`}><rect x={-34} y={-55} width={68} height={110} rx={10} fill={mixHex('#2fb6ff', '#6b4a22', c * 0.9)} stroke={KC.ink} strokeWidth={5} /></g> : null; })}
+          {Array.from({ length: 20 }, (_, i) => { const at = K.A + 2.4 + i * 0.07; const c = kprog(T, at, at + 0.4); const x = 108 + (i % 10) * 96, y = 1150 + Math.floor(i / 10) * 160;
+            return T > K.A + 2.2 ? <g key={i} transform={`translate(${x} ${y})`}><rect x={-40} y={-65} width={80} height={130} rx={10} fill={mixHex('#2389c4', '#6b4a22', c * 0.9)} stroke={KC.ink} strokeWidth={5} /></g> : null; })}
         </svg>
-        <EscalaPH T={T} at={K.A + 0.1} y={740} marcas={[{ at: K.A + 0.5, ph: 4, rango: [3, 5], texto: 'vinaza 3–5', color: VIN }, { at: K.A + 0.9, ph: 3.6, arriba: true, texto: 'jugo de naranja', color: KC.ink }]} />
+        <EscalaPH T={T} at={K.A + 0.1} y={640} marcas={[{ at: K.A + 0.5, ph: 4, rango: [3, 5], texto: 'vinaza 3–5', color: '#e8b27a' }, { at: K.A + 0.9, ph: 3.6, arriba: true, texto: 'jugo de naranja', color: KC.ink }]} />
       </Escena>
       <Escena T={T} a={K.R} b={K.P}>
         <Rio T={T} cafe={kprog(T, K.R + 0.3, K.R + 2)} o2={1 - kprog(T, K.R + 1.8, K.P - 0.6)} />
@@ -264,31 +266,32 @@ function VinazasNarrado() {
       <Escena T={T} a={K.P} b={K.Re} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <g transform={`translate(300 1180) scale(${klerp(1.3, 1.9, kprog(T, K.P, K.Re))}) rotate(${mece(T, 2, 0.3) * 4})`}><Garrafa x={0} y={0} T={T} /></g>
-          <text x={300} y={760} textAnchor="middle" style={{ font:`400 220px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.P + 0.3, K.P + 0.7)}>?</text>
+          <g transform={`translate(450 1320) scale(${klerp(2.3, 2.9, kprog(T, K.P, K.Re))}) rotate(${mece(T, 2, 0.3) * 4})`}><Garrafa x={0} y={0} T={T} /></g>
+          <text x={820} y={900} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.P + 0.3, K.P + 0.7)}>?</text>
         </svg>
       </Escena>
       <Escena T={T} a={K.Re} b={K.E} zoom={0.03}><ReactorInterior T={T} a={K.Re} /></Escena>
       <Escena T={T} a={K.E} b={K.B}>
         <FondoLunares color={KC.yellow} />
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, opacity:0.45 }}><ReactorInterior T={T} a={K.Re} /></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {['flama', 'h2', 'prot', 'agua'].map((k, i) => { const at = K.E + 2.0 + i * 0.5; if (T < at) return null; const p = kprog(T, at, at + 0.4, kEase.rebote);
-            return <g key={k} transform={`translate(${190 + i * 233} ${980 + mece(T, i, 0.3) * 8}) scale(${1.25 * p})`}><Garrafa x={0} y={90} s={0.75} T={T} icono={ICONOS[k]} /></g>; })}
+            return <g key={k} transform={`translate(${190 + i * 233} ${1150 + mece(T, i, 0.3) * 8}) scale(${2 * p})`}><Garrafa x={0} y={90} s={0.75} T={T} icono={ICONOS[k]} /></g>; })}
         </svg>
       </Escena>
       <Escena T={T} a={K.B} b={K.S}>
         <FondoLunares color={KC.mint} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <Pina x={540} y={900} s={1.6} fibra={kprog(T, K.B + 1.6, K.B + 3.2, kEase.suave)} T={T} />
+          <Pina x={540} y={980} s={2.05} fibra={kprog(T, K.B + 1.6, K.B + 3.2, kEase.suave)} T={T} />
           {/* molino que exprime */}
-          {[0, 1].map((i) => <g key={i} transform={`translate(${380 + i * 320} ${560}) rotate(${(i ? -1 : 1) * T * 120})`} opacity={kprog(T, K.B + 0.8, K.B + 1.3) * (1 - kprog(T, K.B + 3.4, K.B + 4))}><circle r={80} fill="#9aa4ae" stroke={KC.ink} strokeWidth={8} />{[0, 60, 120].map((r) => <line key={r} x1={-80} y1={0} x2={80} y2={0} transform={`rotate(${r})`} stroke={KC.ink} strokeWidth={6} />)}</g>)}
-          <Goteo T={T} x={540} y0={1050} y1={1300} cada={0.2} color={TEQ} desde={K.B + 1.2} hasta={K.B + 3.4} />
+          {[0, 1].map((i) => <g key={i} transform={`translate(${340 + i * 400} ${420}) scale(1.4) rotate(${(i ? -1 : 1) * T * 120})`} opacity={kprog(T, K.B + 0.8, K.B + 1.3) * (1 - 0.65 * kprog(T, K.B + 3.4, K.B + 4))}><circle r={80} fill="#9aa4ae" stroke={KC.ink} strokeWidth={8} />{[0, 60, 120].map((r) => <line key={r} x1={-80} y1={0} x2={80} y2={0} transform={`rotate(${r})`} stroke={KC.ink} strokeWidth={6} />)}</g>)}
+          <Goteo T={T} x={540} y0={1200} y1={1480} cada={0.2} color={TEQ} desde={K.B + 1.2} hasta={K.B + 3.4} />
         </svg>
       </Escena>
       <Escena T={T} a={K.S} b={K.Gr}>
         <FondoLunares color={KC.cyan} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <BolsaSetas x={540} y={1190} s={1.6} crece={kprog(T, K.S + 0.8, K.Gr - 0.2)} seed={4} />
+          <BolsaSetas x={540} y={1400} s={2.1} crece={kprog(T, K.S + 0.8, K.Gr - 0.2)} seed={4} />
         </svg>
       </Escena>
       <Escena T={T} a={K.Gr} b={K.C}>
@@ -299,23 +302,23 @@ function VinazasNarrado() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.03}><Barra T={T} n={12} a={K.C - 1} conIconos={T > K.C + 2.2} /></Escena>
 
       {/* número y chips */}
-      {T > K.G + 2.3 && T < K.Al - 0.2 && <NumeroGigante T={T} at={K.G + 2.3} until={K.Al - 0.4} valor={12} sufijo=" L" etiqueta="por cada litro de tequila… de vinaza" y={600} tam={240} />}
+      {T > K.G + 2.3 && T < K.Al - 0.2 && <NumeroGigante T={T} at={K.G + 2.3} until={K.Al - 0.4} valor={12} sufijo=" L" etiqueta="por cada litro de tequila… de vinaza" y={400} tam={240} />}
       <Chip T={T} at={K.Al + 0.3} until={K.D - 0.3} texto="alambique · destilación" y={420} tam={40} />
       <Etq T={T} at={K.Al + 1.6} until={K.D - 0.3} x={140} y={1460} texto="vinaza" color={KC.ink} />
       <Etq T={T} at={K.Al + 0.8} until={K.D - 0.3} x={820} y={1520} texto="tequila" color={KC.ink} />
-      <NumeroGigante T={T} at={K.D + 0.4} until={K.A - 0.3} valor={12} prefijo="×" etiqueta="litros de vinaza por litro" y={470} tam={190} />
-      <Chip T={T} at={K.A + 2.4} until={K.R - 0.3} texto="1 L de vinaza → 20 L de agua" y={1175} tam={40} borde={VIN2} />
+      <NumeroGigante T={T} at={K.D + 0.4} until={K.A - 0.3} valor={12} prefijo="×" etiqueta="litros de vinaza por litro" y={400} tam={190} />
+      <Chip T={T} at={K.A + 2.4} until={K.R - 0.3} texto="1 L de vinaza → 20 L de agua" y={1450} tam={40} borde={VIN2} />
       <Medidor T={T} at={K.R + 1.4} until={K.P - 0.3} etiqueta="OXÍGENO EN EL AGUA" valor={(t) => 1 - kprog(t, K.R + 1.8, K.P - 0.6)} y={400} color={KC.cyan} />
-      <Lupa T={T} at={K.R + 0.9} until={K.P - 0.3} x={700} y={800} r={190} fx={330} fy={1000} interior={(t, r) => <RioMicro T={t} r={r} t0={K.R + 1} />} etiqueta="AL MICROSCOPIO · bacterias" tinte={KC.mint} />
-      <Chip T={T} at={K.Re + 0.4} until={K.E - 0.3} texto="reactor anaerobio (sin aire)" x={620} y={400} tam={38} borde={KC.lilac} mono />
-      <Etq T={T} at={K.Re + 1.8} until={K.E - 0.3} x={600} y={440} texto="biogás (metano)" color="#7fd3ff" />
-      <Etq T={T} at={K.Re + 0.9} until={K.E - 0.3} x={560} y={1500} texto="microbios" color={KC.lilac} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 4.6} anio="2025" quien="CIATEJ · Jalisco" revista="De la Torre-Anguiano, Flores-Cosío y Amaya-Delgado" y={640} />
-      <Etq T={T} at={K.B + 0.3} until={K.S - 0.3} x={120} y={1160} texto="Agave tequilana" it color={KC.ink} />
-      <Etq T={T} at={K.B + 2.6} until={K.S - 0.3} x={700} y={1080} texto="bagazo" color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.S + 0.1} until={K.S + 2.6} anio="2024" quien="CU Lagos · UdeG" revista="Larios-Ulloa y Ramírez-Muñoz · Rev. Mex. Cienc. Agríc." y={520} />
-      <Etq T={T} at={K.S + 2.4} until={K.Gr - 0.3} x={110} y={560} texto="Pleurotus ostreatus" it color={KC.ink} />
-      <Chip T={T} at={K.Gr + 0.6} until={K.C - 0.3} texto="la granja de Robert · próximamente" y={1480} tam={36} borde={KC.mint} />
+      <Lupa T={T} at={K.R + 0.9} until={K.P - 0.3} x={740} y={830} r={240} fx={330} fy={1130} interior={(t, r) => <RioMicro T={t} r={r} t0={K.R + 1} />} etiqueta="AL MICROSCOPIO · bacterias" tinte={KC.mint} />
+      <Chip T={T} at={K.Re + 0.4} until={K.E - 0.3} texto="reactor anaerobio (sin aire)" y={250} tam={38} borde={KC.lilac} mono />
+      <Etq T={T} at={K.Re + 1.8} until={K.E - 0.3} x={590} y={410} texto="biogás (metano)" color="#7fd3ff" />
+      <Etq T={T} at={K.Re + 0.9} until={K.E - 0.3} x={560} y={1400} texto="microbios" color={KC.lilac} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 4.6} anio="2025" quien="CIATEJ · Jalisco" revista="De la Torre-Anguiano, Flores-Cosío y Amaya-Delgado" y={255} />
+      <Etq T={T} at={K.B + 0.3} until={K.S - 0.3} x={110} y={1370} texto="Agave tequilana" it color={KC.ink} />
+      <Etq T={T} at={K.B + 2.6} until={K.S - 0.3} x={640} y={1290} texto="bagazo" color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.S + 0.1} until={K.S + 2.6} anio="2024" quien="CU Lagos · UdeG" revista="Larios-Ulloa y Ramírez-Muñoz · Rev. Mex. Cienc. Agríc." y={240} />
+      <Etq T={T} at={K.S + 2.4} until={K.Gr - 0.3} x={110} y={600} texto="Pleurotus ostreatus" it color={KC.ink} />
+      <Chip T={T} at={K.Gr + 0.6} until={K.C - 0.3} texto="la granja de Robert · próximamente" y={300} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="materia prima" y={500} tam={56} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
