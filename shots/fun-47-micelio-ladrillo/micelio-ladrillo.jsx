@@ -199,42 +199,42 @@ function MicelioShot() {
   const sale = kprog(T, K.G + 0.25, K.G + 1.1, kEase.sale);
   const gH = kprog(T, K.H + 0.3, K.B - 0.6);
   const blancoB = kprog(T, K.B + 0.2, K.B + 2.2, kEase.suave);
-  const subeTorre = kprog(T, K.To + 2.4, K.To + 6.4);
+  const subeTorre = kprog(T, K.To - 2.2, K.To + 6.4);   // la torre ya va subiendo al entrar la escena (antes: 2.4 s de plaza vacía)
   const cae = kprog(T, K.Cp + 0.3, K.Cp + 2.0, kEase.suave);
   const dia = Math.min(5, 1 + Math.floor(kprog(T, K.B + 0.2, K.B + 2.2) * 5));
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
-      {/* 1 · gancho: de la caja sale una pieza blanca que parece unicel */}
+      {/* 1 · gancho: la caja llena el cuadro y de ella sale una pieza blanca que parece unicel */}
       <Escena T={T} a={K.G} b={K.R} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 940) scale(1.5) translate(-400 -900)">
           <Esquinera x={380} y={klerp(1060, 760, sale)} s={1.15} rot={klerp(0, -8, sale) + mece(T, 2, 0.4) * 2} />
           <Caja x={400} y={1100} s={1.1} abre={kprog(T, K.G, K.G + 0.5)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 2 · la receta: rastrojo, cascarilla y micelio */}
       <Escena T={T} a={K.R} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1080} width={KW} height={900} fill="#654c33" stroke={KC.ink} strokeWidth={8} />
-          <MataSeca x={130} y={1090} s={1.0} T={T} seed={1} />
-          <MataSeca x={250} y={1095} s={0.8} T={T} seed={2} />
-          <Tazon x={600} y={960} s={0.95} nivel={kprog(T, K.R + 0.5, K.R + 4.4)} blanco={kprog(T, K.R + 3.0, K.R + 4.8) * 0.35} />
+          <rect x={-60} y={1440} width={KW + 120} height={700} fill="#3a2c20" stroke={KC.ink} strokeWidth={8} />
+          <MataSeca x={120} y={1450} s={1.58} T={T} seed={1} />
+          <MataSeca x={300} y={1455} s={1.26} T={T} seed={2} />
+          <Tazon x={600} y={1140} s={1.5} nivel={kprog(T, K.R + 0.5, K.R + 4.4)} blanco={kprog(T, K.R + 3.0, K.R + 4.8) * 0.35} />
           {Array.from({ length: 14 }, (_, i) => { const t0 = K.R + 0.4 + i * 0.13, u = kprog(T, t0, t0 + 0.55); if (u <= 0 || u >= 1) return null;
-            return i % 2 ? <Cascarilla key={i} x={480 + (i * 47) % 240} y={klerp(380, 930, u * u)} rot={i * 40 + T * 90} /> : <Rastrojo key={i} x={470 + (i * 53) % 260} y={klerp(360, 930, u * u)} rot={i * 33 + T * 120} l={80} />; })}
+            return i % 2 ? <Cascarilla key={i} x={420 + ((i * 47) % 240) * 1.5} y={klerp(470, 1100, u * u)} rot={i * 40 + T * 90} s={1.55} /> : <Rastrojo key={i} x={405 + ((i * 53) % 260) * 1.5} y={klerp(450, 1100, u * u)} rot={i * 33 + T * 120} l={80} s={1.55} />; })}
           {Array.from({ length: 12 }, (_, i) => { const t0 = K.R + 2.5 + i * 0.1, u = kprog(T, t0, t0 + 0.5); if (u <= 0 || u >= 1) return null;
-            return <Grano key={i} x={520 + (i * 41) % 180} y={klerp(380, 920, u * u)} T={T} i={i} />; })}
+            return <Grano key={i} x={480 + ((i * 41) % 180) * 1.5} y={klerp(470, 1090, u * u)} T={T} i={i} s={1.55} />; })}
         </>)}
       </Escena>
       {/* 3 · al molde, y se aprieta */}
       <Escena T={T} a={K.M} b={K.H} zoom={0.12} origen="50% 55%">
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
-          <rect x={0} y={1120} width={KW} height={900} fill="#42342b" stroke={KC.ink} strokeWidth={8} />
+        {fsvg(<g transform="translate(540 1210) scale(1.15) translate(-540 -1100)">
+          <rect x={-100} y={1120} width={KW + 200} height={900} fill="#42342b" stroke={KC.ink} strokeWidth={8} />
           <Molde x={210} y={1100} tipo="L" lleno={kprog(T, K.M + 0.2, K.M + 1.0)} prensa={kprog(T, K.M + 1.2, K.M + 1.6) * (1 - kprog(T, K.M + 2.0, K.M + 2.4))} />
           <Molde x={540} y={1100} tipo="ladrillo" lleno={kprog(T, K.M + 0.4, K.M + 1.2)} prensa={kprog(T, K.M + 1.4, K.M + 1.8) * (1 - kprog(T, K.M + 2.1, K.M + 2.5))} />
           <Molde x={860} y={1100} tipo="charola" lleno={kprog(T, K.M + 0.6, K.M + 1.4)} prensa={kprog(T, K.M + 1.6, K.M + 2.0) * (1 - kprog(T, K.M + 2.2, K.M + 2.6))} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · al microscopio: las hifas amarran los pedacitos */}
       <Escena T={T} a={K.H} b={K.B} zoom={0.06}>
@@ -252,50 +252,50 @@ function MicelioShot() {
       {/* 5 · en días, sólido · 6 · horno */}
       <Escena T={T} a={K.B} b={K.O} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
-          <rect x={0} y={1120} width={KW} height={900} fill="#42342b" stroke={KC.ink} strokeWidth={8} />
+        {fsvg(<g transform="translate(540 1300) scale(2.6) translate(-540 -1100)">
+          <rect x={-200} y={1120} width={KW + 400} height={900} fill="#42342b" stroke={KC.ink} strokeWidth={4} />
           <Molde x={540} y={1100} tipo="ladrillo" lleno={1} blanco={blancoB} />
-          {kprog(T, K.B + 2.3, K.B + 3.0) > 0 && <g transform={`translate(540 ${1020 - 260 * kprog(T, K.B + 2.3, K.B + 3.0, kEase.sale)})`}>
-            <rect x={-100} y={-80} width={200} height={160} rx={10} fill={ML.crema} stroke={KC.ink} strokeWidth={7} /></g>}
-        </>)}
+          {kprog(T, K.B + 2.3, K.B + 3.0) > 0 && <g transform={`translate(540 ${1020 - 200 * kprog(T, K.B + 2.3, K.B + 3.0, kEase.sale)})`}>
+            <rect x={-100} y={-80} width={200} height={160} rx={10} fill={ML.crema} stroke={KC.ink} strokeWidth={4} /></g>}
+        </g>)}
       </Escena>
       <Escena T={T} a={K.O} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Horno T={T} x={440} y={900} calor={kprog(T, K.O + 0.3, K.O + 1.0)}>
+        {fsvg(<g transform="translate(540 980) scale(1.5)"><Horno T={T} x={0} y={0} calor={kprog(T, K.O + 0.3, K.O + 1.0)}>
           <rect x={-100 + 0} y={-60} width={200} height={140} rx={10} fill={ML.crema} stroke={KC.ink} strokeWidth={7} transform={`translate(${klerp(-500, 0, kprog(T, K.O, K.O + 0.6, kEase.sale))} 0)`} />
-        </Horno>)}
+        </Horno></g>)}
       </Escena>
       {/* 7 · pregunta: ¿y si hacemos ladrillos? */}
       <Escena T={T} a={K.P} b={K.To} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Interrogacion T={T} x={260} y={1060} tam={460} />
+          <Interrogacion T={T} x={540} y={1330} tam={600} />
           {(() => { const m = kprog(T, K.P + 0.4, K.P + 1.4, kEase.suave); return <g>
-            <Esquinera x={300} y={560} s={0.6} op={1 - m} />
-            <g opacity={m} transform={`translate(300 560) scale(${klerp(0.6, 1, m)})`}><rect x={-140} y={-70} width={280} height={140} rx={8} fill={ML.crema} stroke={KC.ink} strokeWidth={8} />
+            <Esquinera x={540} y={640} s={0.96} op={1 - m} />
+            <g opacity={m} transform={`translate(520 640) scale(${klerp(0.96, 1.6, m)})`}><rect x={-140} y={-70} width={280} height={140} rx={8} fill={ML.crema} stroke={KC.ink} strokeWidth={8} />
               <path d="M -140 -70 L -100 -110 L 180 -110 L 140 -70 Z" fill={ML.crema2} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" /><path d="M 140 -70 L 180 -110 L 180 30 L 140 70 Z" fill={ML.crema2} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" /></g>
           </g>; })()}
         </>)}
       </Escena>
-      {/* 8 · Hy-Fi, MoMA PS1, 2014 · 9 · composta */}
+      {/* 8 · Hy-Fi, MoMA PS1, 2014 · 9 · composta (todo 1.15×: 86 px = 1 m; al caer la torre la cámara baja con ella) */}
       <Escena T={T} a={K.To} b={K.D} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
-          <rect x={0} y={1180} width={KW} height={900} fill={mixHex('#9aa3ad', ML.tierra, cae * 0.6)} stroke={KC.ink} strokeWidth={8} />
+        {fsvg(<g transform={`translate(490 ${klerp(1300, 1050, cae)}) scale(1.15) translate(-450 -1180)`}>
+          <rect x={-200} y={1180} width={KW + 400} height={900} fill={mixHex('#2f353d', '#2e2118', cae * 0.8)} stroke={KC.ink} strokeWidth={8} />
           <Torre T={T} sube={subeTorre} cae={cae} />
           <Persona x={760} y={1180} />
           {cae < 0.2 && subeTorre > 0.9 && <g opacity={kprog(T, K.To + 6.0, K.To + 6.4) * (1 - cae * 5)}>
             <line x1={150} y1={1180} x2={150} y2={265} stroke={KC.ink} strokeWidth={6} /><line x1={130} y1={265} x2={170} y2={265} stroke={KC.ink} strokeWidth={6} /><line x1={130} y1={1180} x2={170} y2={1180} stroke={KC.ink} strokeWidth={6} />
-            <text x={120} y={720} textAnchor="middle" transform="rotate(-90 120 720)" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>MÁS DE 12 m</text></g>}
+            <text x={198} y={720} textAnchor="middle" transform="rotate(-90 198 720)" style={{ font:`400 50px ${KF.titulo}` }} fill={KC.ink}>MÁS DE 12 m</text></g>}
           {cae > 0 && <ellipse cx={450} cy={1180} rx={340 * cae} ry={70 * cae} fill={ML.tierra} stroke={KC.ink} strokeWidth={6} />}
-          {[[300, 1150, 0], [430, 1130, 0.2], [560, 1150, 0.4], [370, 1165, 0.6], [500, 1165, 0.8]].map(([x, y, d], i) => <Brote key={i} x={x} y={y} p={kprog(T, K.Cp + 2.0 + d, K.Cp + 2.8 + d)} />)}
-        </>)}
+          {[[300, 1150, 0], [430, 1130, 0.2], [560, 1150, 0.4], [370, 1165, 0.6], [500, 1165, 0.8]].map(([x, y, d], i) => <Brote key={i} x={x} y={y} p={kprog(T, K.Cp + 2.0 + d, K.Cp + 2.8 + d)} s={1.5} />)}
+        </g>)}
       </Escena>
       {/* 10 · más débil que la madera */}
       <Escena T={T} a={K.D} b={K.A} zoom={0.03}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <g transform="translate(820 1010)">
+          <g transform="translate(800 1300) scale(1.5)">
             <rect x={-130} y={-30} width={260} height={60} rx={6} fill={ML.crema} stroke={KC.ink} strokeWidth={6} transform={`rotate(${kprog(T, K.D + 2.4, K.D + 3.2, kEase.rebote) * 7})`} />
             {kprog(T, K.D + 2.4, K.D + 2.6) > 0 && <path d="M -10 -30 L 8 -6 L -6 8 L 10 30" stroke={KC.red} strokeWidth={8} fill="none" />}
             <g transform={`translate(0 ${-30 + kprog(T, K.D + 2.4, K.D + 3.2, kEase.sale) * 30}) rotate(${kprog(T, K.D + 2.4, K.D + 3.2) * 8})`}>
@@ -307,80 +307,82 @@ function MicelioShot() {
       {/* 11 · chupa agua */}
       <Escena T={T} a={K.A} b={K.U} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 720) scale(1.6) translate(-380 -640)">
           <path d="M 120 640 L 640 640 L 610 760 L 150 760 Z" fill="#e6e9ee" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
           <path d={`M 140 ${700 - 20 * kprog(T, K.A + 0.2, K.A + 0.8)} L 620 ${700 - 20 * kprog(T, K.A + 0.2, K.A + 0.8)} L 610 756 L 152 756 Z`} fill={ML.agua} opacity=".85" />
           {(() => { const w = kprog(T, K.A + 0.6, K.A + 3.5, kEase.suave), sw = 1 + 0.12 * w; return <g transform={`translate(380 650) scale(${sw})`}>
             <rect x={-140} y={-140} width={280} height={150} rx={10} fill={mixHex(ML.crema, '#8f8064', w)} stroke={KC.ink} strokeWidth={8} />
             {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.8 + i / 6) % 1); return w > 0.1 ? <circle key={i} cx={-110 + i * 44} cy={10 - u * 140} r={7} fill={ML.agua} opacity={1 - u} /> : null; })}</g>; })()}
-        </>)}
+        </g>)}
       </Escena>
-      {/* 12 · dónde sí sirve */}
+      {/* 12 · dónde sí sirve: la pieza de empaque sigue en cuadro (no es una lista sola) */}
       <Escena T={T} a={K.U} b={K.C} zoom={0.03}>
         <FondoLunares color={KC.mint} />
+        {fsvg(<Esquinera x={760} y={1250} s={1.5} rot={-8 + mece(T, 2, 0.4) * 2} />)}
       </Escena>
       {/* 13 · cierre: la misma caja y la misma pieza, que vuelve a la tierra */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg((() => { const baja = kprog(T, K.C + 1.8, K.C + 3.2, kEase.suave), maceta = kprog(T, K.C + 1.2, K.C + 1.9, kEase.sale), deshace = kprog(T, K.C + 3.0, K.C + 4.0);
-          return <g transform={`translate(0 ${-150 * kprog(T, K.C + 1.0, K.C + 1.9, kEase.suave)})`}>
+          return <g transform="translate(540 940) scale(1.5) translate(-400 -900)"><g transform={`translate(0 ${-80 * kprog(T, K.C + 1.0, K.C + 1.9, kEase.suave)})`}>
             <g opacity={1 - maceta}><Caja x={400} y={1100} s={1.1} abre={1} /></g>
             {maceta > 0 && <g opacity={maceta} transform={`translate(0 ${(1 - maceta) * 60})`}><Maceta x={400} y={1100} s={1.1} tierra={deshace} /></g>}
             <g clipPath={baja > 0 ? 'url(#cpMac)' : undefined}><Esquinera x={380} y={klerp(760, 1080, baja)} s={1.15 * (1 - deshace * 0.5)} rot={-8 + baja * 8} blanco={1 - deshace * 0.6} op={1 - deshace} /></g>
-            <clipPath id="cpMac"><rect x={0} y={0} width={KW} height={1100 - 150 * 1.1 + 4} /></clipPath>
+            <clipPath id="cpMac"><rect x={-400} y={-400} width={KW + 800} height={1100 - 150 * 1.1 + 4 + 400} /></clipPath>
             {deshace > 0 && <ellipse cx={400} cy={1100 - 165} rx={185} ry={20 + 10 * deshace} fill={ML.tierra} opacity={deshace} />}
             <Brote x={400} y={1100 - 170} p={kprog(T, K.C + 3.6, K.C + 4.6)} s={1.3} />
-          </g>; })())}
+          </g></g>; })())}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.6} until={K.R - 0.3} texto="¿unicel?" x={330} y={470} tam={60} />
-      <Etq T={T} at={K.G + 2.0} until={K.R - 0.3} x={600} y={940} texto="empaque de micelio" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.R + 0.8} until={K.M - 0.3} x={300} y={690} texto="rastrojo de maíz" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.R + 1.6} until={K.M - 0.3} x={960} y={790} texto="cascarilla" lado="izq" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.R + 2.8} until={K.M - 0.3} x={960} y={850} texto="micelio de hongo" lado="izq" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.R + 1.0} until={K.M - 0.3} texto="lo que sobra de la cosecha" x={420} y={480} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.M + 0.3} until={K.H - 0.3} texto="la forma que quieras" x={420} y={520} tam={40} borde={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.6} until={K.R - 0.3} texto="¿unicel?" x={540} y={300} tam={64} />
+      <Etq T={T} at={K.G + 2.0} until={K.R - 0.3} x={590} y={610} texto="empaque de micelio" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.R + 0.8} until={K.M - 0.3} x={50} y={800} texto="rastrojo de maíz" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.R + 1.6} until={K.M - 0.3} x={1040} y={880} texto="cascarilla" lado="izq" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.R + 2.8} until={K.M - 0.3} x={1040} y={940} texto="micelio de hongo" lado="izq" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.R + 1.0} until={K.M - 0.3} texto="lo que sobra de la cosecha" x={540} y={380} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.M + 0.3} until={K.H - 0.3} texto="la forma que quieras" x={540} y={560} tam={46} borde={KC.ink} />
       <Chip T={T} at={K.H + 0.2} until={K.B - 0.3} texto="AL MICROSCOPIO · hifas" x={430} y={480} tam={36} borde={KC.gold} mono />
       <Etq T={T} at={K.H + 1.6} until={K.B - 0.3} x={600} y={760} texto="hifas" tam={34} color={FK.hifa} />
       <Etq T={T} at={K.H + 0.8} until={K.B - 0.3} x={60} y={1260 - 20} texto="pedacito de rastrojo" tam={28} color={KC.gold2} />
-      <Chip T={T} at={K.B + 0.2} until={K.O - 0.3} texto={`día ${dia}`} x={540} y={600} tam={56} borde={KC.ink} mono />
-      <Chip T={T} at={K.B + 2.5} until={K.O - 0.3} texto="pieza sólida" x={300} y={480} tam={38} borde={KC.leaf} />
-      <Chip T={T} at={K.O + 0.6} until={K.P - 0.3} texto="ya no crece" x={300} y={580} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.O + 1.2} until={K.P - 0.3} texto="en un estudio de 2019: horno a 70 °C" x={440} y={470} tam={28} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.To + 0.2} until={K.To + 2.5} anio="2014" quien="Hy-Fi · MoMA PS1, Nueva York" revista="The Living · Ecovative · Arup" y={640} />
-      <NumeroGigante T={T} at={K.To + 2.8} until={K.Cp - 0.3} valor={10000} dur={3.4} etiqueta="ladrillos" x={830} y={900} tam={96} color={KC.yellow} />
-      <Chip T={T} at={K.To + 4.0} until={K.Cp - 0.3} texto="hongo + tallos de maíz" x={800} y={740} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Cp + 0.4} until={K.D - 0.3} texto="verano de 2014 → composta" x={540} y={480} tam={38} borde={KC.leaf} />
-      <Etq T={T} at={K.Cp + 2.4} until={K.D - 0.3} x={500} y={1000} texto="jardines comunitarios" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.D + 0.2} until={K.A - 0.3} texto="aguante a la compresión (MPa)" x={420} y={470} tam={34} borde={KC.ink} />
-      <BarraV T={T} at={K.D + 0.6} until={K.A - 0.3} cx={180} base={1100} alto={480} desde={0.03} hasta={4.44} max={43} color={KC.paper} etiqueta="micelio" valor="0.03–4.44" />
-      <BarraV T={T} at={K.D + 1.0} until={K.A - 0.3} cx={460} base={1100} alto={480} desde={35} hasta={43} max={43} color="#c98b4a" etiqueta="madera blanda" valor="35–43" />
-      <Chip T={T} at={K.D + 2.6} until={K.A - 0.3} texto="no estructural" x={820} y={760} tam={36} borde={KC.red} />
-      <Fuente T={T} at={K.D + 1.2} until={K.A - 0.3} texto="Aiduang et al., 2022 (revisión)" x={60} y={530} />
-      <Chip T={T} at={K.A + 0.6} until={K.U - 0.3} texto="agua que absorbe (% de su peso)" x={480} y={800} tam={34} borde={KC.ink} />
-      <BarraRango T={T} at={K.A + 1.0} until={K.U - 0.3} desde={24.45} hasta={560} max={560} etiqueta="micelio" valor="24–560 %" color={KC.paper} y={850} />
-      <BarraRango T={T} at={K.A + 1.6} until={K.U - 0.3} desde={0.03} hasta={9} max={560} etiqueta="unicel" valor="0.03–9 %" color={KC.yellow} y={960} />
-      <Fuente T={T} at={K.A + 1.6} until={K.U - 0.3} texto="Aiduang et al., 2022 (revisión)" x={90} y={1090} />
-      <Uso T={T} at={K.U + 0.5} until={K.C - 0.3} texto="empaques" x={110} y={480} />
-      <Uso T={T} at={K.U + 1.2} until={K.C - 0.3} texto="aislantes" x={110} y={620} />
-      <Uso T={T} at={K.U + 1.9} until={K.C - 0.3} texto="paneles de interior" x={110} y={760} />
-      <Uso T={T} at={K.U + 2.8} until={K.C - 0.3} texto="a la lluvia" ok={false} x={110} y={930} />
-      <Uso T={T} at={K.U + 3.3} until={K.C - 0.3} texto="cargar peso" ok={false} x={110} y={1070} />
-      <Etq T={T} at={K.C + 0.6} until={K.C + 2.6} x={600} y={940} texto="hongo + rastrojo" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.C + 3.4} until={K.Ou} texto="vuelve a la tierra" x={400} y={480} tam={42} borde={KC.leaf} />
+      <Chip T={T} at={K.B + 0.2} until={K.O - 0.3} texto={`día ${dia}`} x={540} y={1450} tam={60} borde={KC.ink} mono />
+      <Chip T={T} at={K.B + 2.5} until={K.O - 0.3} texto="pieza sólida" x={330} y={290} tam={44} borde={KC.leaf} />
+      <Chip T={T} at={K.O + 0.6} until={K.P - 0.3} texto="ya no crece" x={300} y={480} tam={48} borde={KC.red} />
+      <Chip T={T} at={K.O + 1.2} until={K.P - 0.3} texto="en un estudio de 2019: horno a 70 °C" x={540} y={380} tam={32} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.To + 0.2} until={K.To + 2.5} anio="2014" quien="Hy-Fi · MoMA PS1, Nueva York" revista="The Living · Ecovative · Arup" y={420} />
+      <NumeroGigante T={T} at={K.To + 2.8} until={K.Cp - 0.3} valor={10000} dur={3.4} etiqueta="ladrillos" x={915} y={760} tam={88} color={KC.yellow} />
+      <Chip T={T} at={K.To + 4.0} until={K.Cp - 0.3} texto="hongo + tallos de maíz" x={840} y={400} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Cp + 0.4} until={K.D - 0.3} texto="verano de 2014 → composta" x={540} y={680} tam={44} borde={KC.leaf} />
+      <Etq T={T} at={K.Cp + 2.4} until={K.D - 0.3} x={1040} y={760} texto="jardines comunitarios" lado="izq" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.D + 0.2} until={K.A - 0.3} texto="aguante a la compresión (MPa)" x={540} y={370} tam={38} borde={KC.ink} />
+      <BarraV T={T} at={K.D + 0.6} until={K.A - 0.3} cx={200} base={1340} alto={720} desde={0.03} hasta={4.44} max={43} color={KC.paper} etiqueta="micelio" valor="0.03–4.44" />
+      <BarraV T={T} at={K.D + 1.0} until={K.A - 0.3} cx={480} base={1340} alto={720} desde={35} hasta={43} max={43} color="#c98b4a" etiqueta="madera blanda" valor="35–43" />
+      <Chip T={T} at={K.D + 2.6} until={K.A - 0.3} texto="no estructural" x={800} y={850} tam={40} borde={KC.red} />
+      <Fuente T={T} at={K.D + 1.2} until={K.A - 0.3} texto="Aiduang et al., 2022 (revisión)" x={60} y={440} />
+      <Chip T={T} at={K.A + 0.6} until={K.U - 0.3} texto="agua que absorbe (% de su peso)" x={540} y={1010} tam={38} borde={KC.ink} />
+      <BarraRango T={T} at={K.A + 1.0} until={K.U - 0.3} desde={24.45} hasta={560} max={560} etiqueta="micelio" valor="24–560 %" color={KC.paper} y={1080} />
+      <BarraRango T={T} at={K.A + 1.6} until={K.U - 0.3} desde={0.03} hasta={9} max={560} etiqueta="unicel" valor="0.03–9 %" color={KC.yellow} y={1200} />
+      <Fuente T={T} at={K.A + 1.6} until={K.U - 0.3} texto="Aiduang et al., 2022 (revisión)" x={90} y={1340} />
+      <Uso T={T} at={K.U + 0.5} until={K.C - 0.3} texto="empaques" x={90} y={400} />
+      <Uso T={T} at={K.U + 1.2} until={K.C - 0.3} texto="aislantes" x={90} y={530} />
+      <Uso T={T} at={K.U + 1.9} until={K.C - 0.3} texto="paneles de interior" x={90} y={660} />
+      <Uso T={T} at={K.U + 2.8} until={K.C - 0.3} texto="a la lluvia" ok={false} x={90} y={830} />
+      <Uso T={T} at={K.U + 3.3} until={K.C - 0.3} texto="cargar peso" ok={false} x={90} y={960} />
+      <Etq T={T} at={K.C + 0.6} until={K.C + 2.6} x={590} y={560} texto="hongo + rastrojo" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.C + 3.4} until={K.Ou} texto="vuelve a la tierra" x={540} y={540} tam={48} borde={KC.leaf} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.R} texto="10 cm" largo={170} />
-      <BarraEscala T={T} at={K.R} until={K.M} texto="10 cm" largo={150} />
-      <BarraEscala T={T} at={K.M} until={K.H} texto="10 cm" largo={150} />
+      <BarraEscala T={T} at={K.G} until={K.R} texto="10 cm" largo={255} />
+      <BarraEscala T={T} at={K.R} until={K.M} texto="10 cm" largo={237} />
+      <BarraEscala T={T} at={K.M} until={K.H} texto="10 cm" largo={172} />
       <BarraEscala T={T} at={K.H} until={K.B} texto="50 µm" largo={150} />
-      <BarraEscala T={T} at={K.B} until={K.P} texto="10 cm" largo={150} />
-      <BarraEscala T={T} at={K.P} until={K.To} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.To} until={K.D} texto="2 m" largo={150} />
-      <BarraEscala T={T} at={K.D} until={K.A} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.A} until={K.U} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={170} />
+      <BarraEscala T={T} at={K.B} until={K.O} texto="10 cm" largo={390} />
+      <BarraEscala T={T} at={K.O} until={K.P} texto="10 cm" largo={225} />
+      <BarraEscala T={T} at={K.P} until={K.To} texto="10 cm" largo={176} />
+      <BarraEscala T={T} at={K.To} until={K.D} texto="2 m" largo={173} />
+      <BarraEscala T={T} at={K.D} until={K.A} texto="10 cm" largo={165} />
+      <BarraEscala T={T} at={K.A} until={K.U} texto="10 cm" largo={176} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={255} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.R - 0.1} texto="No es unicel: *es un hongo.*" />
