@@ -257,7 +257,9 @@ compararon cuadro por cuadro y con analizador de audio; todo lo de abajo sale de
   dibujar bien cada escena.**
 - **Candado en GitHub:** `auto-render.yml` no renderiza ningún shot vertical cuyo `.dc.html` narrado no cargue `cine.jsx` (igual que el candado de verificación). El pase a mano por lotes en sesiones de nube se hace con `maestro/re-render-cine/encargo-sesion-nube.md` y `encargo-pase.md`.
 - **Antes de entregar cualquier shot:** (1) `NAVEGADOR=chrome python3 motor/kit/auditar-laminas.py shots/<clave>` debe decir «sin
-  láminas»; (2) sacar con `motor/preview.mjs` una hoja de dos o tres cuadros por escena y MIRARLA comparándola con la hoja de
+  láminas»; (1b) `NAVEGADOR=chrome python3 motor/kit/auditar-encuadre.py shots/<clave>` debe decir «encuadre bien»: ninguna
+  escena con el dibujo cargado arriba, abajo o chico (los shots viejos dejaban libre la franja del subtítulo y todo quedaba en la
+  mitad de arriba); (2) sacar con `motor/preview.mjs` una hoja de dos o tres cuadros por escena y MIRARLA comparándola con la hoja de
   `bio-04-fagos`; (3) revisar la lista de `maestro/recetas/pase-a-mano-cine.md`; (4) medir el audio como dice el punto 3.
 - **Publicación:** un shot al día como máximo; nunca un lote de golpe (en noviembre de 2026 subir 44 videos en un mes coincidió
   con la caída de vistas). Un formato nuevo se mide con 5 videos (porcentaje visto y «se quedaron viendo» en YouTube Studio)
