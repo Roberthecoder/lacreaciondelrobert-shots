@@ -114,10 +114,10 @@ function Compresa26() {
   const calorG = kprog(T, K.G + 1.9, K.G + 2.5);
   const segB = K.Es + 8.6;
   // cristal: orden en que se sueltan los iones
-  const cols = 6, filas = 4, paso = 104, gx0 = 470 - (cols - 1) * paso / 2, gy0 = 680;
+  const cols = 6, filas = 4, paso = 125, gx0 = 540 - (cols - 1) * paso / 2, gy0 = 600;
   const red = Array.from({ length: cols * filas }, (_, i) => ({ c: i % cols, f: Math.floor(i / cols), tipo: (i % cols + Math.floor(i / cols)) % 2 ? 'no3' : 'nh4' }));
   const sale = [0, 5, 18, 23, 1, 12, 17, 6, 11, 2];
-  const destinos = [[120, 560], [900, 1040], [110, 1040], [960, 780], [380, 1060], [90, 800], [990, 920], [640, 1060], [240, 1070], [800, 1070]];
+  const destinos = [[110, 470], [970, 1230], [110, 1230], [975, 470], [400, 1250], [90, 840], [995, 860], [680, 1250], [540, 440], [860, 1250]];
   const R = krng(11);
   const revuelto = Array.from({ length: 12 }, () => [R(), R(), R() * 6]);
   const tempV = klerp(27.4, 7.6, kprog(T, K.Te + 2.0, K.Te + 5.6, kEase.suave));
@@ -127,7 +127,8 @@ function Compresa26() {
       {/* 0 · gancho: la mano aprieta la compresa sobre el trapo y la rodilla */}
       <Escena T={T} a={K.G} b={K.Ad} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa>{/* rodilla, trapo y compresa a 1.3×: llenan el cuadro */}
+          <g transform="translate(540 960) scale(1.3) translate(-540 -1000)">
           <Rodilla x={540} y={1100} s={1.1} frio={calorG * 0.5} />
           <Trapo x={540} y={1000} s={1} />
           <Compresa x={540} y={880} s={1} aplasta={aprieta} frio={calorG} />
@@ -135,14 +136,15 @@ function Compresa26() {
             <Mano x={470} y={760 + aprieta * 30} s={1.1} />
           </g>
           {[380, 540, 700].map((x, i) => <Calor key={i} T={T} x={x} y0={1210} y1={1010} o={calorG} ph={i * 2} />)}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 1 · adentro: lupa de rayos X */}
       <Escena T={T} a={K.Ad} b={K.Ap} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa><Compresa x={540} y={1030} s={1.25} /></SvgCapa>
-        <Lupa T={T} at={K.Ad + 0.3} until={K.Ap - 0.3} x={540} y={900} r={250} fx={540} fy={1030} tinte={KC.cyan} etiqueta="bolsita de agua + polvo" interior={(t, r) =>
-          <svg width={r * 2} height={r * 2}><g transform={`translate(${r} ${r}) scale(0.95)`}>
+        <SvgCapa><Compresa x={540} y={960} s={1.9} /></SvgCapa>
+        <Lupa T={T} at={K.Ad + 0.3} until={K.Ap - 0.3} x={540} y={880} r={320} fx={540} fy={960} tinte={KC.cyan} etiqueta="bolsita de agua + polvo" interior={(t, r) =>
+          <svg width={r * 2} height={r * 2}><g transform={`translate(${r} ${r}) scale(${0.95 * r / 250})`}>
             <rect x={-220} y={-150} width={440} height={300} rx={50} fill="#e8f6ff" opacity={0.2} stroke="#bfe8ff" strokeWidth={4} />
             <Granos x={-200} y={-120} w={400} h={240} n={60} f={1} />
             <rect x={-110} y={-58} width={220} height={116} rx={30} fill={AGUA} stroke="#1f5fa8" strokeWidth={6} />
@@ -153,9 +155,9 @@ function Compresa26() {
       <Escena T={T} a={K.Ap} b={K.Cr} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Compresa x={540} y={960} s={1.7} corte={1} rompe={kprog(T, K.Ap + 0.9, K.Ap + 1.6, kEase.sale)} disuelto={kprog(T, K.Ap + 1.6, K.Cr + 1, kEase.suave) * 0.6} aplasta={kprog(T, K.Ap + 0.6, K.Ap + 0.9) * (1 - kprog(T, K.Ap + 1.2, K.Ap + 1.6))} />
+          <Compresa x={540} y={960} s={2.2} corte={1} rompe={kprog(T, K.Ap + 0.9, K.Ap + 1.6, kEase.sale)} disuelto={kprog(T, K.Ap + 1.6, K.Cr + 1, kEase.suave) * 0.6} aplasta={kprog(T, K.Ap + 0.6, K.Ap + 0.9) * (1 - kprog(T, K.Ap + 1.2, K.Ap + 1.6))} />
         </SvgCapa>
-        <div style={{ position:'absolute', inset:0 }}><SvgCapa><Onomato T={T} at={K.Ap + 0.9} until={K.Ap + 2.2} x={540} y={700} texto="¡POP!" tam={130} /></SvgCapa></div>
+        <div style={{ position:'absolute', inset:0 }}><SvgCapa><Onomato T={T} at={K.Ap + 0.9} until={K.Ap + 2.2} x={540} y={560} texto="¡POP!" tam={150} /></SvgCapa></div>
       </Escena>
       {/* 3 · el cristal se deshace (micro) */}
       <Escena T={T} a={K.Cr} b={K.Ro} zoom={0.04}>
@@ -163,12 +165,12 @@ function Compresa26() {
         <SvgCapa>
           <Ambiente T={T} n={30} color="rgba(127,200,255,.25)" />
           {red.map((d, i) => { const k = sale.indexOf(i), x0 = gx0 + d.c * paso, y0 = gy0 + d.f * paso;
-            if (k < 0) return <Ion key={i} x={x0 + Math.sin(T * 5 + i) * 3} y={y0 + Math.cos(T * 4 + i) * 3} tipo={d.tipo} />;
+            if (k < 0) return <Ion key={i} x={x0 + Math.sin(T * 5 + i) * 3} y={y0 + Math.cos(T * 4 + i) * 3} tipo={d.tipo} s={1.2} />;
             const t0 = K.Cr + 0.6 + k * 0.42, p = kprog(T, t0, t0 + 1.2, kEase.suave), [dx, dy] = destinos[k];
             const x = klerp(x0, dx, p), y = klerp(y0, dy, p);
             return <g key={i}>
-              <Ion x={x} y={y} tipo={d.tipo} s={klerp(1, 0.8, p)} />
-              {p > 0.1 && [0, 1, 2, 3, 4].map((j) => { const a = j / 5 * Math.PI * 2 + T * 1.5; return <Mol key={j} tipo="agua" x={x + Math.cos(a) * 78} y={y + Math.sin(a) * 78} s={0.42} rot={a * 57} o={kprog(T, t0 + 0.2, t0 + 0.8)} />; })}
+              <Ion x={x} y={y} tipo={d.tipo} s={klerp(1.2, 0.96, p)} />
+              {p > 0.1 && [0, 1, 2, 3, 4].map((j) => { const a = j / 5 * Math.PI * 2 + T * 1.5; return <Mol key={j} tipo="agua" x={x + Math.cos(a) * 94} y={y + Math.sin(a) * 94} s={0.5} rot={a * 57} o={kprog(T, t0 + 0.2, t0 + 0.8)} />; })}
             </g>; })}
           {/* barra de escala */}
           <line x1={80} y1={1740} x2={80 + paso * 2} y2={1740} stroke={KC.texto} strokeWidth={8} />
@@ -176,8 +178,8 @@ function Compresa26() {
           {/* energía: separar cuesta más de lo que regresa el agua */}
           {[['separar: cuesta', KC.red, 1.0, 2.6], ['rodear con agua: regresa', KC.mint, 0.82, 3.4]].map(([t, c, l, d], i) => { const p = kprog(T, K.Cr + d, K.Cr + d + 0.7, kEase.sale);
             return <g key={i} opacity={kprog(T, K.Cr + d, K.Cr + d + 0.2)}>
-              <text x={90} y={1442 + i * 120} style={{ font:`700 32px ${KF.mono}` }} fill={KC.texto}>{t}</text>
-              <rect x={90} y={1458 + i * 120} width={880 * l * p} height={44} rx={22} fill={c} stroke={KC.ink} strokeWidth={5} />
+              <text x={90} y={1380 + i * 100} style={{ font:`700 32px ${KF.mono}` }} fill={KC.texto}>{t}</text>
+              <rect x={90} y={1394 + i * 100} width={880 * l * p} height={40} rx={20} fill={c} stroke={KC.ink} strokeWidth={5} />
             </g>; })}
         </SvgCapa>
       </Escena>
@@ -198,8 +200,8 @@ function Compresa26() {
       <Escena T={T} a={K.Pr} b={K.De} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <text x={280} y={1100} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 900)`}>?</text>
-          {[[160, 1180, 'nh4'], [260, 1170, 'no3'], [360, 1185, 'nh4']].map(([x, y, t], i) => <Ion key={i} x={x} y={y + Math.sin(T * 3 + i) * 6} tipo={t} s={0.8} />)}
+          <text x={540} y={1180} textAnchor="middle" style={{ font:`400 800px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={18} transform={`rotate(${Math.sin(T * 3) * 6} 540 900)`}>?</text>
+          {[[260, 1320, 'nh4'], [400, 1300, 'no3'], [540, 1325, 'nh4'], [680, 1300, 'no3'], [820, 1320, 'nh4']].map(([x, y, t], i) => <Ion key={i} x={x} y={y + Math.sin(T * 3 + i) * 6} tipo={t} s={1.2} />)}
         </SvgCapa>
       </Escena>
       {/* 6 · el desorden gana */}
@@ -247,27 +249,29 @@ function Compresa26() {
       <Escena T={T} a={K.Es} b={segB + 0.2}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          {T > K.Es + 3.4 && Array.from({ length: 5 }, (_, i) => <Personita key={i} x={170 + i * 150} y={960} s={2.4} color={KC.yellow} o={kprog(T, K.Es + 3.6 + i * 0.25, K.Es + 3.9 + i * 0.25)} />)}
+          {/* la compresa (el polvo de adentro) en pantalla desde el inicio del estudio */}
+          <Compresa x={540} y={klerp(930, 760, kprog(T, K.Es + 3.0, K.Es + 3.8, kEase.suave))} s={klerp(1.6, 1.25, kprog(T, K.Es + 3.0, K.Es + 3.8, kEase.suave))} roto={1} />
+          {T > K.Es + 3.4 && Array.from({ length: 5 }, (_, i) => <Personita key={i} x={190 + i * 175} y={1260} s={3.4} color={KC.yellow} o={kprog(T, K.Es + 3.6 + i * 0.25, K.Es + 3.9 + i * 0.25)} />)}
         </SvgCapa>
       </Escena>
       <Escena T={T} a={segB} b={K.Ur}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Bote x={560} y={960} s={1} />
+          <Bote x={540} y={1040} s={1.6} />
           {(() => { const c = kprog(T, segB + 0.6, segB + 1.6, kEase.suave); return c < 1 &&
-            <g opacity={1 - kprog(T, segB + 1.4, segB + 1.6)}><Compresa x={560} y={klerp(560, 830, c)} s={0.7} rot={klerp(-10, 25, c)} roto={1} /></g>; })()}
-          <Marca x={830} y={700} ok={true} s={0.9} o={kprog(T, segB + 1.6, segB + 2.0)} />
+            <g opacity={1 - kprog(T, segB + 1.4, segB + 1.6)}><Compresa x={540} y={klerp(480, 860, c)} s={1.0} rot={klerp(-10, 25, c)} roto={1} /></g>; })()}
+          <Marca x={880} y={620} ok={true} s={1.3} o={kprog(T, segB + 1.6, segB + 2.0)} />
         </SvgCapa>
       </Escena>
       {/* 9 · urea */}
       <Escena T={T} a={K.Ur} b={K.Ci}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Molecula {...UREA} x={340} y={960} s={1.5} rot={Math.sin(T) * 6} o={kprog(T, K.Ur, K.Ur + 0.5)} />
-          <text x={630} y={975} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Ur + 2.2, K.Ur + 2.6)}>=</text>
+          <Molecula {...UREA} x={300} y={960} s={2.0} rot={Math.sin(T) * 6} o={kprog(T, K.Ur, K.Ur + 0.5)} />
+          <text x={625} y={990} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Ur + 2.2, K.Ur + 2.6)}>=</text>
           <g opacity={kprog(T, K.Ur + 2.4, K.Ur + 3.0)}>
-            <Rinon x={790} y={820} s={0.9} flip={-1} /><Rinon x={950} y={820} s={0.9} />
-            <Frasco x={870} y={1110} s={1} />
+            <Rinon x={760} y={790} s={1.2} flip={-1} /><Rinon x={940} y={790} s={1.2} />
+            <Frasco x={850} y={1150} s={1.35} />
           </g>
         </SvgCapa>
       </Escena>
@@ -275,34 +279,36 @@ function Compresa26() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
+          <g transform="translate(540 960) scale(1.3) translate(-540 -1000)">
           <Rodilla x={540} y={1100} s={1.1} frio={0.6} />
           <Trapo x={540} y={1000} s={1} />
           <Compresa x={540} y={880} s={1} frio={1} />
           {[300, 420, 540, 660, 780].map((x, i) => <Calor key={i} T={T} x={x} y0={1250} y1={980} o={kprog(T, K.Ci + 0.3 + i * 0.12, K.Ci + 0.8 + i * 0.12)} ph={i * 1.7} />)}
+          </g>
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.6} texto="fabrica frío" x={300} y={470} tam={50} />
-      <Chip T={T} at={K.G + 2.0} until={K.Ad - 0.3} texto="roba calor" x={300} y={600} tam={46} borde={CALOR} />
-      <Chip T={T} at={K.Ad + 2.4} until={K.Ap - 0.2} texto="nitrato de amonio · NH₄NO₃" x={540} y={1500} tam={40} borde={KC.orange} />
-      <Chip T={T} at={K.Ad + 3.8} until={K.Ap - 0.2} texto="o urea · CO(NH₂)₂" x={540} y={1610} tam={40} borde={KC.mint} />
-      <Chip T={T} at={K.Ap + 1.7} until={K.Cr - 0.2} texto="el polvo se disuelve" x={540} y={1500} tam={44} borde={AGUA} />
-      <Chip T={T} at={K.Cr + 4.4} until={K.Ro - 0.2} texto="+25.7 kJ por mol" x={330} y={430} tam={42} borde={KC.red} mono />
-      <Chip T={T} at={K.Ro + 0.8} until={K.Pr - 0.2} texto="el calor viaja → al polvo" x={540} y={1500} tam={42} borde={CALOR} />
-      <Chip T={T} at={K.De + 2.6} until={K.Te - 0.2} texto="el desorden gana" x={540} y={1500} tam={46} borde={AGUA} />
-      <Chip T={T} at={K.Te + 0.4} until={K.Es - 0.2} texto="100 g NH₄NO₃ + 50 mL H₂O" x={540} y={1500} tam={40} borde={KC.blue} mono />
-      <Chip T={T} at={K.Te + 1.2} until={K.Es - 0.2} texto="demostración · G. Bodner (Purdue)" x={540} y={1610} tam={28} borde={KC.gold} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.4} anio="1988" quien="LAC+USC Medical Center · Los Ángeles" revista="Challoner y McCarron · J Emerg Med" x={540} y={900} />
-      <Chip T={T} at={K.Es + 3.8} until={segB - 0.2} texto="5 personas se tragaron el polvo" x={540} y={760} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Es + 6.2} until={segB - 0.2} texto="dolor de estómago" x={540} y={1500} tam={42} borde={KC.orange} />
-      <Chip T={T} at={K.Es + 7.2} until={segB - 0.2} texto="presión algo baja" x={540} y={1610} tam={42} borde={KC.orange} />
-      <Chip T={T} at={segB + 0.4} until={K.Ur - 0.2} texto="si se rompe: a la basura" x={540} y={1500} tam={42} borde={KC.mint} />
-      <Chip T={T} at={segB + 1.7} until={K.Ur - 0.2} texto="si la usa un niño: vigílalo" x={540} y={1610} tam={42} borde={KC.gold} />
-      <Etq T={T} at={K.Ur + 0.6} until={K.Ci - 0.3} x={110} y={690} texto="urea · CO(NH₂)₂" lado="der" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Ur + 2.8} until={K.Ci - 0.2} texto="la misma molécula de tu orina" x={540} y={1500} tam={40} borde={KC.gold} />
-      <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="calor de tu piel → disuelve el cristal" x={540} y={1500} tam={34} borde={CALOR} />
-      <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="con un trapo, no directo" x={300} y={600} tam={30} borde={KC.mint} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.5} until={K.G + 2.6} texto="fabrica frío" x={780} y={420} tam={54} />
+      <Chip T={T} at={K.G + 2.0} until={K.Ad - 0.3} texto="roba calor" x={780} y={520} tam={52} borde={CALOR} />
+      <Chip T={T} at={K.Ad + 2.4} until={K.Ap - 0.2} texto="nitrato de amonio · NH₄NO₃" x={540} y={1370} tam={40} borde={KC.orange} />
+      <Chip T={T} at={K.Ad + 3.8} until={K.Ap - 0.2} texto="o urea · CO(NH₂)₂" x={540} y={1460} tam={40} borde={KC.mint} />
+      <Chip T={T} at={K.Ap + 1.7} until={K.Cr - 0.2} texto="el polvo se disuelve" x={540} y={1420} tam={46} borde={AGUA} />
+      <Chip T={T} at={K.Cr + 4.4} until={K.Ro - 0.2} texto="+25.7 kJ por mol" x={540} y={310} tam={44} borde={KC.red} mono />
+      <Chip T={T} at={K.Ro + 0.8} until={K.Pr - 0.2} texto="el calor viaja → al polvo" x={540} y={1400} tam={44} borde={CALOR} />
+      <Chip T={T} at={K.De + 2.6} until={K.Te - 0.2} texto="el desorden gana" x={540} y={1380} tam={48} borde={AGUA} />
+      <Chip T={T} at={K.Te + 0.4} until={K.Es - 0.2} texto="100 g NH₄NO₃ + 50 mL H₂O" x={540} y={1390} tam={40} borde={KC.blue} mono />
+      <Chip T={T} at={K.Te + 1.2} until={K.Es - 0.2} texto="demostración · G. Bodner (Purdue)" x={540} y={1475} tam={28} borde={KC.gold} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.4} anio="1988" quien="LAC+USC Medical Center · Los Ángeles" revista="Challoner y McCarron · J Emerg Med" x={540} y={400} />
+      <Chip T={T} at={K.Es + 3.8} until={segB - 0.2} texto="5 personas se tragaron el polvo" x={540} y={1010} tam={42} borde={KC.red} />
+      <Chip T={T} at={K.Es + 6.2} until={segB - 0.2} texto="dolor de estómago" x={540} y={1390} tam={42} borde={KC.orange} />
+      <Chip T={T} at={K.Es + 7.2} until={segB - 0.2} texto="presión algo baja" x={540} y={1480} tam={42} borde={KC.orange} />
+      <Chip T={T} at={segB + 0.4} until={K.Ur - 0.2} texto="si se rompe: a la basura" x={540} y={1390} tam={44} borde={KC.mint} />
+      <Chip T={T} at={segB + 1.7} until={K.Ur - 0.2} texto="si la usa un niño: vigílalo" x={540} y={1480} tam={44} borde={KC.gold} />
+      <Etq T={T} at={K.Ur + 0.6} until={K.Ci - 0.3} x={90} y={600} texto="urea · CO(NH₂)₂" lado="der" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Ur + 2.8} until={K.Ci - 0.2} texto="la misma molécula de tu orina" x={540} y={1380} tam={42} borde={KC.gold} />
+      <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="calor de tu piel → disuelve el cristal" x={540} y={1480} tam={36} borde={CALOR} />
+      <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="con un trapo, no directo" x={300} y={520} tam={36} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ad - 0.1} texto="No fabrica frío: *roba calor.*" />
