@@ -76,6 +76,19 @@ function Tortillas({ x, y, s = 1 }) {
     {manchas.map(([a, b, rr], i) => <ellipse key={i} cx={a} cy={b} rx={rr} ry={rr * 0.7} fill="#b9873a" opacity={0.55} />)}
   </g>;
 }
+// Mesa de madera oscura (escenario a escala real del desayuno): llena el cuadro de borde a borde.
+function Mesa() {
+  return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+    <rect width={KW} height={KH} fill="#22160b" />
+    {[0, 1, 2, 3, 4, 5].map((i) => <rect key={i} x={-20} y={i * 340 - 60} width={KW + 40} height={334} fill={i % 2 ? '#2b1c0e' : '#25180c'} />)}
+    {[0, 1, 2, 3, 4, 5].map((i) => <g key={'v' + i} opacity={0.5}>
+      <path d={`M -20 ${i * 340 + 40} q 270 ${i % 2 ? 26 : -22} 560 0 t 560 0`} stroke="#1a1008" strokeWidth={5} fill="none" />
+      <path d={`M -20 ${i * 340 + 170} q 300 ${i % 2 ? -18 : 20} 560 6 t 560 -8`} stroke="#33220f" strokeWidth={4} fill="none" /></g>)}
+  </svg>;
+}
+// Lugar del desayuno en el cuadro (plato de ~760 px de ancho, para que la cámara no corte las tazas) y de las tazas respecto al plato.
+const PX = 540, PY = 1050, PS = 1.45, TZX = 195, TZY = -385;
+const NOMBRES_PLATO = ['tortillas', 'salsa de jitomate', 'aguacate', 'flor de calabaza', 'café', 'chocolate'];
 // El desayuno completo. Coordenadas: centro del plato en (x, y). hl = índice resaltado (0 tortillas … 5 chocolate).
 // choc, flor: 0..1 (visible) · avo, salsa: escala · cafe: 1 = lleno y oscuro, 0 = bajo y pálido.
 function Desayuno({ T, x, y, s = 1, choc = 1, flor = 1, avo = 1, salsa = 1, cafe = 1, hl = [] }) {
@@ -87,14 +100,14 @@ function Desayuno({ T, x, y, s = 1, choc = 1, flor = 1, avo = 1, salsa = 1, cafe
     <Salsa x={120} y={-100} s={salsa} />
     <Aguacate x={125} y={115} s={avo} rot={-20} />
     <FlorCalabaza x={-70} y={-140} o={flor} />
-    <Taza x={390} y={-170} color={mixHex('#c79a6a', '#3a1f0e', cafe)} nivel={0.45 + 0.55 * cafe} />
-    <Taza x={-390} y={-170} color="#5a2f17" espuma o={choc} T={T} />
+    <Taza x={TZX} y={TZY} color={mixHex('#c79a6a', '#3a1f0e', cafe)} nivel={0.45 + 0.55 * cafe} />
+    <Taza x={-TZX} y={TZY} color="#5a2f17" espuma o={choc} T={T} />
     <Aro T={T} x={-80} y={50} r={112} on={h(0)} />
     <Aro T={T} x={120} y={-100} r={80} on={h(1)} />
     <Aro T={T} x={125} y={115} r={80} on={h(2)} />
     <Aro T={T} x={-70} y={-140} r={74} on={h(3)} />
-    <Aro T={T} x={390} y={-170} r={84} on={h(4)} />
-    <Aro T={T} x={-390} y={-170} r={84} on={h(5)} />
+    <Aro T={T} x={TZX} y={TZY} r={84} on={h(4)} />
+    <Aro T={T} x={-TZX} y={TZY} r={84} on={h(5)} />
   </g>;
 }
 // Abejorro (Bombus) de perfil, mirando a la derecha: 2 pares de alas, 6 patas, canasta de polen en la pata trasera, antenas acodadas.
@@ -274,28 +287,36 @@ function FlorAguacate({ x, y, s = 1 }) {
   </g>;
 }
 // Cuatro casillas que se llenan ("más de 3/4 de los tipos de cultivo principales").
-function Casillas({ T, t0, x = 90, y = 780, lado = 195, gap = 40 }) {
+function Casillas({ T, t0, x = 140, y = 470, lado = 380, gap = 40 }) {
   const fill = (i) => i < 3 ? kprog(T, t0 + i * 0.5, t0 + 0.5 + i * 0.5, kEase.sale) : 0.14 * kprog(T, t0 + 1.6, t0 + 2.0, kEase.sale);
+  const cen = (i) => [x + (i % 2) * (lado + gap) + lado / 2, y + Math.floor(i / 2) * (lado + gap) + lado / 2];
+  // el abejorro espera al centro desde que empieza la escena y visita cada casilla cuando se llena
+  let bx = 560, by = y + lado + gap / 2 - 10;
+  [0, 1, 2].forEach((i) => { const u = kprog(T, t0 + i * 0.5 - 0.15, t0 + i * 0.5 + 0.35, kEase.suave), c = cen(i); bx = klerp(bx, c[0] + 75, u); by = klerp(by, c[1] - 100, u); });
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    {[0, 1, 2, 3].map((i) => { const X = x + i * (lado + gap), f = fill(i);
-      return <g key={i}><rect x={X} y={y} width={lado} height={lado} rx={24} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={7} />
-        <rect x={X + 10} y={y + lado - 10 - (lado - 20) * f} width={(lado - 20) * (i < 3 ? 1 : 1)} height={(lado - 20) * f} rx={14} fill={KC.pink} />
-        {f > 0.9 && <FlorAguacate x={X + lado / 2} y={y + lado / 2} s={1.3} />}</g>; })}
+    {[0, 1, 2, 3].map((i) => { const [cx, cy] = cen(i), X = cx - lado / 2, Y = cy - lado / 2, f = fill(i);
+      return <g key={i}><rect x={X} y={Y} width={lado} height={lado} rx={36} fill="rgba(22,30,50,.92)" stroke={KC.ink} strokeWidth={7} />
+        <rect x={X + 14} y={Y + lado - 14 - (lado - 28) * f} width={lado - 28} height={(lado - 28) * f} rx={24} fill={KC.pink} />
+        {f > 0.9 && <FlorAguacate x={cx - 35} y={cy + 45} s={2.3} />}</g>; })}
+    <Abejorro T={T} id="e" x={bx} y={by + Math.sin(T * 5) * 10} s={1.6} rot={-8} />
   </svg>;
 }
 // Barra de la cosecha mundial por volumen: 60 % no dependen · 35 % dependen en parte · 5 % sin evaluar; y el 5–8 % que se perdería.
-function BarraCosecha({ T, t0, x = 90, y = 760, ancho = 900, alto = 150 }) {
+function BarraCosecha({ T, t0, x = 60, y = 1000, ancho = 960, alto = 220 }) {
   const a = kprog(T, t0, t0 + 0.8, kEase.sale), b = kprog(T, t0 + 2.2, t0 + 3.0, kEase.sale);
   const w60 = ancho * 0.6 * a, w35 = ancho * 0.35 * a, w5 = ancho * 0.05 * a;
   const p0 = x + ancho * 0.6, p5 = ancho * 0.05, p8 = ancho * 0.08;
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     <defs><pattern id="pzray" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="16" height="16" fill={KC.red} /><rect width="7" height="16" fill="#ff8a7a" /></pattern></defs>
+    {/* lo que se cosecha, encima de su parte de la barra: el maíz (cereal) y el café */}
+    <PlantaMaiz T={T} x={x + ancho * 0.3} y={y - 26} s={0.7} />
+    <RamaCafe T={T} x={x + ancho * 0.775} y={y - 190} s={0.55} />
     <rect x={x - 6} y={y - 6} width={ancho + 12} height={alto + 12} rx={22} fill={KC.ink} />
     <rect x={x} y={y} width={w60} height={alto} rx={16} fill={KC.gold2} />
     <rect x={x + ancho * 0.6} y={y} width={w35} height={alto} fill={KC.pink} />
     <rect x={x + ancho * 0.95} y={y} width={w5} height={alto} fill="#9aa3ad" />
-    {a > 0.6 && <text x={x + ancho * 0.3} y={y + alto / 2 + 30} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink}>60 %</text>}
-    {a > 0.6 && <text x={x + ancho * 0.775} y={y + alto / 2 + 22} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>35 %</text>}
+    {a > 0.6 && <text x={x + ancho * 0.3} y={y + alto / 2 + 42} textAnchor="middle" style={{ font:`400 124px ${KF.titulo}` }} fill="#0b1020">60 %</text>}
+    {a > 0.6 && <text x={x + ancho * 0.775} y={y + alto / 2 + 30} textAnchor="middle" style={{ font:`400 88px ${KF.titulo}` }} fill="#0b1020">35 %</text>}
     {b > 0 && <g opacity={b}>
       <rect x={p0} y={y} width={p5} height={alto} fill="url(#pzray)" stroke={KC.ink} strokeWidth={4} />
       <rect x={p0 + p5} y={y} width={p8 - p5} height={alto} fill="url(#pzray)" opacity={0.5} stroke={KC.ink} strokeWidth={3} strokeDasharray="8 6" />
@@ -325,61 +346,63 @@ function PolinizadoresShot() {
       {/* 1 · gancho: el desayuno lleno y un abejorro que pasa */}
       <Escena T={T} a={K.G} b={K.Pl} zoom={0.02}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Desayuno T={T} x={540} y={930} />
-          <Abejorro T={T} id="g" x={klerp(-120, 1200, vu)} y={600 + Math.sin(vu * 14) * 40} s={1.1} rot={Math.sin(vu * 14 + 1) * 10} /></>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
+        <Mesa />
+        {svg(<><Desayuno T={T} x={PX} y={PY} s={PS} />
+          <Abejorro T={T} id="g" x={klerp(-150, 1260, vu)} y={640 + Math.sin(vu * 14) * 50} s={2.0} rot={Math.sin(vu * 14 + 1) * 10} /></>)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1545} color={KC.ink} />
       </Escena>
       {/* 2 · el plato: cada alimento se ilumina al nombrarlo */}
       <Escena T={T} a={K.Pl} b={K.M} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Desayuno T={T} x={540} y={930} hl={hl} />)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
+        <Mesa />
+        {svg(<Desayuno T={T} x={PX} y={PY} s={PS} hl={hl} />)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1545} color={KC.ink} />
       </Escena>
       {/* 3 · maíz: el viento lleva el polen de la espiga a los pelos del elote */}
       <Escena T={T} a={K.M} b={K.Ca}>
         <FondoLunares color={KC.mint} />
-        {svg(<><PlantaMaiz T={T} x={330} y={1190} />
-          {[0, 1, 2].map((i) => { const u = ((T * 0.6 + i / 3) % 1); return <path key={i} d={`M ${100 + u * 500} ${470 + i * 70} q 60 -24 120 0 t 120 0`} stroke="#fff" strokeWidth={8} fill="none" strokeLinecap="round" opacity={Math.sin(Math.PI * u) * 0.9} />; })}
-          <PolenViento T={T} t0={K.M + 0.3} x0={320} y0={400} x1={420} y1={820} />
-          <Tortillas x={800} y={1050} s={0.85} />
-          {T > K.M + 1.6 && <g transform={`translate(905 935) scale(${kprog(T, K.M + 1.6, K.M + 2.1, kEase.rebote)})`}><circle r={44} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} /><path d="M -20 0 L -4 16 L 22 -16" stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>}</>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
+        {svg(<><PlantaMaiz T={T} x={380} y={1480} s={1.25} />
+          {[0, 1, 2].map((i) => { const u = ((T * 0.6 + i / 3) % 1); return <path key={i} d={`M ${90 + u * 620} ${470 + i * 90} q 75 -30 150 0 t 150 0`} stroke="#fff" strokeWidth={9} fill="none" strokeLinecap="round" opacity={Math.sin(Math.PI * u) * 0.9} />; })}
+          <PolenViento T={T} t0={K.M + 0.3} x0={375} y0={440} x1={500} y1={880} />
+          <Tortillas x={870} y={1235} s={0.95} />
+          {T > K.M + 1.6 && <g transform={`translate(985 1108) scale(${kprog(T, K.M + 1.6, K.M + 2.1, kEase.rebote)})`}><circle r={44} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} /><path d="M -20 0 L -4 16 L 22 -16" stroke="#fff" strokeWidth={10} fill="none" strokeLinecap="round" strokeLinejoin="round" /></g>}</>)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1545} color={KC.ink} />
       </Escena>
       {/* 4 · cacao y calabaza: desaparecen */}
       <Escena T={T} a={K.Ca} b={K.Cf}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><Cacaotero T={T} x={790} y={760} s={0.95} />
-          <Taza x={300} y={880} s={1.35} color="#5a2f17" espuma T={T} o={1 - kprog(T, K.Ca + 0.5, K.Ca + 0.8)} />
-          <Puf x={300} y={880} p={kprog(T, K.Ca + 0.45, K.Ca + 1.4)} r={110} />
-          <FlorCalabaza x={300} y={1110} s={1.15} o={1 - kprog(T, K.Ca + 4.5, K.Ca + 4.8)} />
-          <Puf x={300} y={1110} p={kprog(T, K.Ca + 4.45, K.Ca + 5.4)} r={90} />
+        {svg(<><Cacaotero T={T} x={690} y={900} s={1.25} />
+          <Taza x={240} y={790} s={1.7} color="#5a2f17" espuma T={T} o={1 - kprog(T, K.Ca + 0.5, K.Ca + 0.8)} />
+          <Puf x={240} y={790} p={kprog(T, K.Ca + 0.45, K.Ca + 1.4)} r={150} />
+          <FlorCalabaza x={240} y={1150} s={1.7} o={1 - kprog(T, K.Ca + 4.5, K.Ca + 4.8)} />
+          <Puf x={240} y={1150} p={kprog(T, K.Ca + 4.45, K.Ca + 5.4)} r={130} />
           {/* insecto diminuto junto a una flor del tronco */}
-          <g transform={`translate(${760 + Math.sin(T * 5) * 20} ${660 + Math.cos(T * 7) * 12})`}><circle r={5} fill={KC.ink} /><ellipse cx={-2} cy={-6} rx={7} ry={3} fill="rgba(255,255,255,.8)" stroke={KC.ink} strokeWidth={1.5} /></g></>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
+          <g transform={`translate(${770 + Math.sin(T * 5) * 20} ${765 + Math.cos(T * 7) * 12}) scale(1.4)`}><circle r={5} fill={KC.ink} /><ellipse cx={-2} cy={-6} rx={7} ry={3} fill="rgba(255,255,255,.8)" stroke={KC.ink} strokeWidth={1.5} /></g></>)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1545} color={KC.ink} />
       </Escena>
       {/* 5 · café: rinde menos o sale peor */}
       <Escena T={T} a={K.Cf} b={K.P}>
         <FondoLunares color={KC.orange} />
-        {svg(<><RamaCafe T={T} x={540} y={640} s={1.15} cerezas={0.25 + 0.75 * cafeN} />
-          <Taza x={540} y={1060} s={1.4} color={mixHex('#c79a6a', '#3a1f0e', cafeN)} nivel={0.45 + 0.55 * cafeN} /></>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
+        {svg(<><RamaCafe T={T} x={540} y={640} s={1.3} cerezas={0.25 + 0.75 * cafeN} />
+          <Taza x={520} y={1140} s={2.5} color={mixHex('#c79a6a', '#3a1f0e', cafeN)} nivel={0.45 + 0.55 * cafeN} /></>)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1545} color={KC.ink} />
       </Escena>
       {/* 6 · pregunta: ¿y el jitomate? */}
       <Escena T={T} a={K.P} b={K.Z} zoom={0.08}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Jitomate x={290} y={900} r={185} rot={Math.sin(T * 3) * 4} />
-          <text x={290} y={640} textAnchor="middle" style={{ font:`400 280px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 290 540)`}>?</text></>)}
+        {svg(<><Jitomate x={540} y={1040} r={330} rot={Math.sin(T * 3) * 4} />
+          <text x={820} y={640} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 820 540)`}>?</text></>)}
       </Escena>
       {/* 7 · polinización por zumbido (fondo oscuro: de cerca) */}
       <Escena T={T} a={K.Z} b={K.E} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 45%, #1d2a44 0%, #0d1424 70%)' }}></div>
-        {svg(<><FlorJitomate T={T} x={470} y={520} s={1.3} vib={vibZ} />
-          <Abejorro T={T} id="z" x={klerp(800, 522, kprog(T, K.Z + 0.3, K.Z + 1.4, kEase.sale))} y={klerp(900, 660, kprog(T, K.Z + 0.3, K.Z + 1.4, kEase.sale))} s={1.1} rot={100} vib={vibZ} />
-          {vibZ > 0 && [0, 1, 2].map((i) => { const u = ((T * 2 + i / 3) % 1); return <circle key={i} cx={520} cy={660} r={60 + u * 120} fill="none" stroke={KC.yellow} strokeWidth={5} opacity={(1 - u) * vibZ} />; })}
-          {vibZ > 0 && Array.from({ length: 10 }, (_, i) => { const u = ((T * 1.5 + i / 10) % 1); return <circle key={i} cx={470 + Math.sin(i * 2.1) * 40 * u} cy={760 + u * 130} r={7} fill={PZ_AMAR} stroke="#7a5a10" strokeWidth={2} opacity={(1 - u) * vibZ} />; })}
-          <AbejaMiel T={T} id="z2" x={190 + Math.sin(T * 2) * 20} y={990 + Math.cos(T * 3) * 10} s={1.1} rot={-6} /></>)}
+        {svg(<><FlorJitomate T={T} x={470} y={640} s={2.2} vib={vibZ} />
+          <Abejorro T={T} id="z" x={klerp(900, 558, kprog(T, K.Z + 0.3, K.Z + 1.4, kEase.sale))} y={klerp(1230, 877, kprog(T, K.Z + 0.3, K.Z + 1.4, kEase.sale))} s={1.9} rot={100} vib={vibZ} />
+          {vibZ > 0 && [0, 1, 2].map((i) => { const u = ((T * 2 + i / 3) % 1); return <circle key={i} cx={556} cy={877} r={100 + u * 200} fill="none" stroke={KC.yellow} strokeWidth={6} opacity={(1 - u) * vibZ} />; })}
+          {vibZ > 0 && Array.from({ length: 10 }, (_, i) => { const u = ((T * 1.5 + i / 10) % 1); return <circle key={i} cx={470 + Math.sin(i * 2.1) * 70 * u} cy={1030 + u * 220} r={11} fill={PZ_AMAR} stroke="#7a5a10" strokeWidth={2} opacity={(1 - u) * vibZ} />; })}
+          <AbejaMiel T={T} id="z2" x={215 + Math.sin(T * 2) * 20} y={1250 + Math.cos(T * 3) * 10} s={1.8} rot={-6} /></>)}
       </Escena>
-      <Lupa T={T} at={K.Z + 2.0} until={K.E - 0.3} x={830} y={960} r={140} fx={470} fy={700} tinte={KC.yellow} etiqueta="POR DENTRO · ANTERA"
+      <Lupa T={T} at={K.Z + 2.0} until={K.E - 0.3} x={805} y={1220} r={190} fx={470} fy={840} tinte={KC.yellow} etiqueta="POR DENTRO · ANTERA"
         interior={(t, r) => <AnteraCorte T={t} r={r} vib={vibZ} />} />
       {/* 8 · el estudio: IPBES 2016 */}
       <Escena T={T} a={K.E} b={K.To}>
@@ -394,49 +417,46 @@ function PolinizadoresShot() {
       {/* 10 · dato raro: moscas en la flor del aguacate */}
       <Escena T={T} a={K.Mo} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<><path d="M 1100 1150 Q 860 900 820 640" stroke="#6b4a2a" strokeWidth={14} fill="none" strokeLinecap="round" />
+        {svg(<g transform="translate(560 900) scale(1.9) translate(-850 -840)"><path d="M 1100 1150 Q 860 900 820 640" stroke="#6b4a2a" strokeWidth={14} fill="none" strokeLinecap="round" />
           {[[820, 640, 1.3], [700, 760, 1.15], [930, 780, 1.2], [790, 900, 1.05], [960, 960, 1.0]].map(([a, b, s], i) => <g key={i}><line x1={a} y1={b} x2={a + 40} y2={b + 60} stroke="#6b4a2a" strokeWidth={6} /><FlorAguacate x={a} y={b} s={s} /></g>)}
           <AbejaMiel T={T} id="mo" x={700 + Math.sin(T * 3) * 6} y={720} s={0.9} rot={10} />
-          <Mosca T={T} x={klerp(1180, 930, kprog(T, K.Mo + 0.3, K.Mo + 1.2, kEase.sale))} y={klerp(560, 742, kprog(T, K.Mo + 0.3, K.Mo + 1.2, kEase.sale))} s={1.6} rot={-8} /></>)}
+          <Mosca T={T} x={klerp(1180, 930, kprog(T, K.Mo + 0.3, K.Mo + 1.2, kEase.sale))} y={klerp(560, 742, kprog(T, K.Mo + 0.3, K.Mo + 1.2, kEase.sale))} s={1.6} rot={-8} /></g>)}
       </Escena>
       {/* 11 · cierre: el mismo plato, ya transformado */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.02}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Desayuno T={T} x={540} y={930} choc={1 - tr} flor={1 - tr} avo={1 - 0.4 * tr} salsa={1 - 0.3 * tr} cafe={1 - tr} />
-          <Puf x={150} y={760} p={kprog(T, K.C + 0.3, K.C + 1.2)} r={80} /><Puf x={470} y={790} p={kprog(T, K.C + 0.6, K.C + 1.5)} r={70} /></>)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
+        <Mesa />
+        {svg(<><Desayuno T={T} x={PX} y={PY} s={PS} choc={1 - tr} flor={1 - tr} avo={1 - 0.4 * tr} salsa={1 - 0.3 * tr} cafe={1 - tr} />
+          <Puf x={PX - TZX * PS} y={PY + TZY * PS} p={kprog(T, K.C + 0.3, K.C + 1.2)} r={130} /><Puf x={PX - 70 * PS} y={PY - 140 * PS} p={kprog(T, K.C + 0.6, K.C + 1.5)} r={112} /></>)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1545} color={KC.ink} />
       </Escena>
 
       {/* datos y etiquetas */}
-      <MitoTachado T={T} at={K.G + 0.15} tacharEn={K.G + 2.3} until={K.Pl - 0.2} texto="sin abejas = hambre" x={310} y={470} tam={40} />
-      <Etq T={T} at={hlT[0]} until={K.M - 0.2} x={338} y={1060} texto="tortillas" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={hlT[1]} until={K.M - 0.2} x={610} y={600} texto="salsa de jitomate" tam={30} color={KC.ink} />
-      <Etq T={T} at={hlT[2]} until={K.M - 0.2} x={738} y={1100} texto="aguacate" tam={30} color={KC.ink} />
-      <Etq T={T} at={hlT[3]} until={K.M - 0.2} x={398} y={628} texto="flor de calabaza" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={hlT[4]} until={K.M - 0.2} x={850} y={890} texto="café" tam={30} color={KC.ink} />
-      <Etq T={T} at={hlT[5]} until={K.M - 0.2} x={262} y={890} texto="chocolate" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.M + 0.4} until={K.Ca - 0.2} x={400} y={440} texto="espiga: polen" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.M + 1.2} until={K.Ca - 0.2} x={520} y={760} texto="pelos del elote" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.M + 1.8} until={K.Ca - 0.2} texto="se quedan" x={810} y={1170} tam={32} borde={KC.leaf} />
-      <Etq T={T} at={K.Ca + 1.6} until={K.Cf - 0.2} x={730} y={500} texto="Theobroma cacao" it lado="izq" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 2.2} until={K.Cf - 0.2} x={740} y={600} texto="flores en el tronco" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ca + 2.6} until={K.Cf - 0.2} texto="sin visitas: casi sin cacao" x={540} y={1440} tam={32} borde={KC.red} />
-      <Etq T={T} at={K.Cf + 0.3} until={K.P - 0.2} x={300} y={440} texto="Coffea" it tam={30} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.15} tacharEn={K.G + 2.3} until={K.Pl - 0.2} texto="sin abejas = hambre" x={540} y={235} tam={44} />
+      {/* un solo nombre a la vez, arriba de las tazas; el aro rosa dice de cuál se habla */}
+      {NOMBRES_PLATO.map((n, i) => <Chip key={n} T={T} at={hlT[i]} until={i < 5 ? hlT[i + 1] : K.M - 0.2} texto={n} x={540} y={270} tam={36} borde={KC.pink} />)}
+      <Etq T={T} at={K.M + 0.4} until={K.Ca - 0.2} x={470} y={400} texto="espiga: polen" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.M + 1.2} until={K.Ca - 0.2} x={585} y={820} texto="pelos del elote" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.M + 1.8} until={K.Ca - 0.2} texto="se quedan" x={870} y={1395} tam={32} borde={KC.leaf} />
+      <Etq T={T} at={K.Ca + 1.6} until={K.Cf - 0.2} x={600} y={430} texto="Theobroma cacao" it lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 2.2} until={K.Cf - 0.2} x={615} y={575} texto="flores en el tronco" lado="izq" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Ca + 2.6} until={K.Cf - 0.2} texto="sin visitas: casi sin cacao" x={300} y={1440} tam={32} borde={KC.red} />
+      <Etq T={T} at={K.Cf + 0.3} until={K.P - 0.2} x={70} y={330} texto="Coffea" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.Cf + 1.2} until={K.P - 0.2} texto="rinde menos o peor calidad" x={540} y={1440} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Z + 1.0} until={K.E - 0.3} x={400} y={800} texto="abejorro" lado="izq" tam={30} />
-      <Etq T={T} at={K.Z + 3.6} until={K.E - 0.3} x={110} y={1080} texto="abeja de la miel: no vibra" lado="der" tam={26} />
-      <Chip T={T} at={K.Z + 1.8} until={K.E - 0.3} texto="bzzz: polinización por zumbido" x={540} y={1440} tam={30} borde={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.9} anio="2016" quien="IPBES · Kuala Lumpur, Malasia" revista="evaluación de polinizadores" x={540} y={560} />
-      <Chip T={T} at={K.E + 3.6} until={K.To - 0.2} texto="más de 3/4 de los cultivos principales" x={540} y={1080} tam={32} borde={KC.pink} />
-      <Chip T={T} at={K.E + 4.6} until={K.To - 0.2} texto="dependen en algún grado" x={540} y={1160} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.To + 1.3} until={K.Mo - 0.2} texto="cosecha mundial (por volumen)" x={540} y={640} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.To + 1.5} until={K.Mo - 0.2} x={240} y={1040} texto="60 %: no los necesitan" lado="der" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.To + 1.9} until={K.Mo - 0.2} x={240} y={1085} texto="(cereales, raíces)" lado="der" tam={26} color={KC.ink} />
-      <NumeroGigante T={T} at={K.To + 2.6} until={K.Mo - 0.2} valor={8} desde={5} dur={0.8} prefijo="5–" sufijo=" %" etiqueta="se perdería:" x={540} y={1500} tam={120} color={KC.red} />
-      <Etq T={T} at={K.Mo + 0.9} until={K.C - 0.2} x={1060} y={520} texto="mosca azul" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 1.3} until={K.C - 0.2} x={1040} y={1080} texto="flor de aguacate" lado="izq" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.C + 1.6} until={K.Ou - 0.1} x={338} y={1060} texto="te quedan" lado="izq" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.C + 2.4} until={K.Ou - 0.1} texto="vitamina A · hierro · folato" x={360} y={470} tam={30} borde={KC.gold} fondo={`rgba(14,15,18,${0.82 - 0.4 * kprog(T, K.C + 4.0, K.C + 5.0)})`} color={mixHex('#F6F3EC', '#7a7a7a', kprog(T, K.C + 4.0, K.C + 5.0))} />
+      <Etq T={T} at={K.Z + 1.0} until={K.E - 0.3} x={440} y={910} texto="abejorro" lado="izq" tam={30} />
+      <Etq T={T} at={K.Z + 3.6} until={K.E - 0.3} x={60} y={1395} texto="abeja de la miel: no vibra" lado="der" tam={26} />
+      <Chip T={T} at={K.Z + 1.8} until={K.E - 0.3} texto="bzzz: polinización por zumbido" x={700} y={240} tam={30} borde={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.9} anio="2016" quien="IPBES · Kuala Lumpur, Malasia" revista="evaluación de polinizadores" x={540} y={300} />
+      <Chip T={T} at={K.E + 3.6} until={K.To - 0.2} texto="más de 3/4 de los cultivos principales" x={540} y={1350} tam={32} borde={KC.pink} />
+      <Chip T={T} at={K.E + 4.6} until={K.To - 0.2} texto="dependen en algún grado" x={540} y={1430} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.To + 1.3} until={K.Mo - 0.2} texto="cosecha mundial (por volumen)" x={600} y={250} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.To + 1.5} until={K.Mo - 0.2} x={60} y={1290} texto="60 %: no los necesitan" lado="der" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.To + 1.9} until={K.Mo - 0.2} x={60} y={1335} texto="(cereales, raíces)" lado="der" tam={26} color={KC.ink} />
+      <NumeroGigante T={T} at={K.To + 2.6} until={K.Mo - 0.2} valor={8} desde={5} dur={0.8} prefijo="5–" sufijo=" %" etiqueta="se perdería:" x={760} y={1420} tam={120} color={KC.red} />
+      <Etq T={T} at={K.Mo + 0.9} until={K.C - 0.2} x={990} y={540} texto="mosca azul" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 1.3} until={K.C - 0.2} x={60} y={1150} texto="flor de aguacate" lado="der" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="te quedan" x={340} y={1375} tam={30} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 2.4} until={K.Ou - 0.1} texto="vitamina A · hierro · folato" x={310} y={PY + TZY * PS} tam={30} borde={KC.gold} fondo={`rgba(14,15,18,${0.82 - 0.4 * kprog(T, K.C + 4.0, K.C + 5.0)})`} color={mixHex('#F6F3EC', '#7a7a7a', kprog(T, K.C + 4.0, K.C + 5.0))} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Pl - 0.1} texto="¿Sin abejas, *hambre?*" />
