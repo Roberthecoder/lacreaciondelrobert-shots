@@ -163,6 +163,13 @@ function Letrero({ T, at, until, x, y, texto, tam = 34, color = KC.texto, ancho 
     font:`900 ${tam}px/1.15 ${KF.texto}`, fontStyle: it ? 'italic' : 'normal', color, textShadow:KSOMBRA }}>{texto}</div>;
 }
 
+// Encuadre del pase a mano (modo cine): la escena se agranda k veces alrededor de (cx, cy) y ese punto queda en (tx, ty).
+const mpM = (cx, cy, k, tx, ty) => ({ cx, cy, k, tx, ty });
+const mpTr = (m) => `translate(${m.tx} ${m.ty}) scale(${m.k}) translate(${-m.cx} ${-m.cy})`;
+const mpX = (m, x) => m.tx + (x - m.cx) * m.k, mpY = (m, y) => m.ty + (y - m.cy) * m.k;
+const M_PLATO = mpM(500, 1000, 1.25, 540, 1010);   // gancho y cierre: plato y milanesa
+const M_HIFAS = mpM(540, 830, 1.3, 540, 960);
+
 function MicoproteinaShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, H: CUES.Hongo, S: CUES.Suelo, Ta: CUES.Tanque, D: CUES.Duplica, Ca: CUES.Calor, P: CUES.Pregunta, Hi: CUES.Hifas, F: CUES.Fibras, E: CUES.Estudio, M: CUES.Musculo, Q: CUES.Quitina, C: CUES.Cierre, Ou: CUES.Outro };
@@ -173,29 +180,31 @@ function MicoproteinaShot() {
   // fibras: las hifas se alinean en haces
   const alinea = kprog(T, K.F + 0.2, K.F + 2.0, kEase.suave);
   const gF = krng(81), HF = Array.from({ length: 14 }, (_, i) => ({ y0: klerp(620, 1060, gF()), a0: klerp(-0.9, 0.9, gF()), x0: klerp(140, 900, gF()), L: klerp(420, 640, gF()) }));
-  const PET = Array.from({ length: 21 }, (_, i) => [130 + (i % 7) * 82, 640 + Math.floor(i / 7) * 92]);
+  const PET = Array.from({ length: 21 }, (_, i) => [120 + (i % 7) * 140, 705 + Math.floor(i / 7) * 135]);
   const COL = [KC.pink, KC.mint, '#fff4d6', KC.lilac, KC.orange, '#9be37a', KC.cyan];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: el tenedor corta la "milanesa" y por dentro se ve fibrosa */}
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform={mpTr(M_PLATO)}>
           <Plato x={500} y={1010} />
           <Milanesa T={T} x={480} y={990} s={1} corte={corte} />
           <Tenedor x={545 + 46 * corte * 0.5} y={klerp(380, 900, baja) - sube * 520} rot={8} s={1} />
           <Sello T={T} at={K.G + 2.4} x={290} y={740} texto="HONGO" color={KC.leaf} r={115} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 2 · es micoproteína: por dentro, hilos de hongo */}
       <Escena T={T} a={K.H} b={K.S} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<><Plato x={520} y={1110} s={0.85} /><Milanesa T={T} x={500} y={1095} s={0.85} corte={1} /></>)}
-        <Lupa T={T} at={K.H + 0.4} until={K.S - 0.2} x={540} y={660} r={200} fx={560} fy={1090} tinte={KC.yellow} etiqueta="AL MICROSCOPIO · hifas"
+        {fsvg(<><Plato x={520} y={1185} s={1.05} /><Milanesa T={T} x={500} y={1165} s={1.05} corte={1} /></>)}
+        <Lupa T={T} at={K.H + 0.4} until={K.S - 0.2} x={540} y={700} r={240} fx={560} fy={1160} tinte={KC.yellow} etiqueta="AL MICROSCOPIO · hifas"
           interior={(Tl, r) => fsvg(<g>
             <rect x={0} y={0} width={2 * r} height={2 * r} fill={KC.noche} />
+            <g transform={`scale(${r / 200})`}>
             {[[20, 120, 420, 90, 0.08], [0, 220, 440, 250, -0.06], [40, 330, 400, 300, 0.1], [90, 40, 360, 400, 0.12]].map(([a, b, c, d, cu], i) =>
               <Hifa key={i} x1={a} y1={b} x2={c} y2={d} curva={cu + Math.sin(Tl + i) * 0.02} w={26} septo={80} crece={kprog(Tl, K.H + 0.6 + i * 0.15, K.H + 1.6 + i * 0.15)} />)}
+            </g>
           </g>)} />
       </Escena>
       {/* 3 · salió de un campo inglés, tras probar más de 3,000 microbios del suelo */}
@@ -203,16 +212,18 @@ function MicoproteinaShot() {
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
           {PET.map(([px, py], i) => { const on = kprog(T, K.S + 0.4 + i * 0.09, K.S + 0.7 + i * 0.09, kEase.rebote); const elegida = i === 10, gl = elegida ? kprog(T, K.S + 2.8, K.S + 3.2) : 0;
-            return on > 0 ? <g key={i} transform={`translate(${px} ${py}) scale(${on * (1 + gl * 0.35)})`} style={gl ? { filter:`drop-shadow(0 0 ${18 * gl}px ${KC.yellow})` } : null}>
+            return on > 0 ? <g key={i} transform={`translate(${px} ${py}) scale(${1.5 * on * (1 + gl * 0.35)})`} style={gl ? { filter:`drop-shadow(0 0 ${18 * gl}px ${KC.yellow})` } : null}>
               <circle r={36} fill="rgba(255,255,255,.5)" stroke={KC.ink} strokeWidth={5} /><circle r={30} fill="#f5e7b8" />
               <Colonia cx={0} cy={0} r={12 + (i % 4) * 4} color={elegida ? MI.hifa : COL[i % COL.length]} seed={i + 2} />
               {gl > 0 && <circle r={44} fill="none" stroke={KC.yellow} strokeWidth={7} />}
             </g> : null; })}
+          <g transform="translate(0 190)">
           <rect x={0} y={1000} width={KW} height={600} fill={FK.tierra} stroke={KC.ink} strokeWidth={8} />
           <rect x={0} y={985} width={KW} height={30} fill={FK.pasto} stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 24 }, (_, i) => <path key={i} d={`M ${i * 46} 990 l 10 -34 l 10 34`} fill={FK.pasto} stroke={KC.ink} strokeWidth={3} />)}
           {Array.from({ length: 16 }, (_, i) => <circle key={i} cx={(i * 137) % 1040 + 20} cy={1060 + (i * 53) % 160} r={6 + (i % 3) * 3} fill={FK.tierra2} />)}
-          <g transform={`translate(260 ${940 - 30 * (1 - kprog(T, K.S + 0.2, K.S + 0.6, kEase.rebote))})`} opacity={kprog(T, K.S + 0.2, K.S + 0.4)}>
+          </g>
+          <g transform={`translate(260 ${1130 - 30 * (1 - kprog(T, K.S + 0.2, K.S + 0.6, kEase.rebote))})`} opacity={kprog(T, K.S + 0.2, K.S + 0.4)}>
             <path d="M 0 40 Q -40 -10 -40 -40 A 40 40 0 1 1 40 -40 Q 40 -10 0 40 Z" fill={KC.red} stroke={KC.ink} strokeWidth={6} /><circle cx={0} cy={-40} r={14} fill="#fff" />
           </g>
         </>)}
@@ -236,27 +247,27 @@ function MicoproteinaShot() {
       <Escena T={T} a={K.Ca} b={K.P}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Termometro x={170} y={1060} nivel={kprog(T, K.Ca + 0.3, K.Ca + 2.0, kEase.sale) * 0.8} />
-          <circle cx={560} cy={820} r={210} fill={KC.noche} stroke={KC.ink} strokeWidth={10} />
-          <Madeja T={T} x={560} y={820} s={1.0} seed={9} color={mixHex(MI.hifa, '#ffe0a0', kprog(T, K.Ca + 1, K.Ca + 3))} />
+          <g transform="translate(170 1180) scale(1.25) translate(-170 -1060)"><Termometro x={170} y={1060} nivel={kprog(T, K.Ca + 0.3, K.Ca + 2.0, kEase.sale) * 0.8} /></g>
+          <circle cx={610} cy={900} r={285} fill={KC.noche} stroke={KC.ink} strokeWidth={10} />
+          <Madeja T={T} x={610} y={900} s={1.4} seed={9} color={mixHex(MI.hifa, '#ffe0a0', kprog(T, K.Ca + 1, K.Ca + 3))} />
           {Array.from({ length: 9 }, (_, i) => { const t0 = K.Ca + 1.2 + i * 0.32, u = kprog(T, t0, t0 + 2.2); if (u <= 0 || u >= 1) return null;
-            return <text key={i} x={500 + (i % 3) * 60 + u * (i % 2 ? 90 : -60)} y={800 - u * 300} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.red} stroke={KC.ink} strokeWidth={2} opacity={1 - u}>ARN</text>; })}
+            return <text key={i} x={550 + (i % 3) * 60 + u * (i % 2 ? 90 : -60)} y={880 - u * 300} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.red} stroke={KC.ink} strokeWidth={2} opacity={1 - u}>ARN</text>; })}
         </>)}
       </Escena>
       {/* 7 · pregunta */}
       <Escena T={T} a={K.P} b={K.Hi} zoom={0.1}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Interrogacion T={T} x={290} y={1000} color={KC.yellow} /><g opacity={0.95}><Milanesa T={T} x={300} y={1130} s={0.5} /></g></>)}
+        {fsvg(<><Interrogacion T={T} x={540} y={1080} color={KC.yellow} tam={760} /><g opacity={0.95}><Milanesa T={T} x={540} y={1250} s={1.3} /></g></>)}
       </Escena>
       {/* 8–9 · al microscopio: hifas largas, poco ramificadas, con tabiques; luego se alinean en haces */}
       <Escena T={T} a={K.Hi} b={K.E}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          {T < K.F + 0.2 && <g opacity={1 - kprog(T, K.F - 0.1, K.F + 0.2)}>
-            <Hifa x1={-40} y1={620} x2={1120} y2={690} curva={0.04} w={40} crece={kprog(T, K.Hi + 0.2, K.Hi + 1.6)} />
-            <Hifa x1={-40} y1={860} x2={1120} y2={800} curva={-0.05} w={40} crece={kprog(T, K.Hi + 0.5, K.Hi + 1.9)} />
-            <Hifa x1={-40} y1={1000} x2={1120} y2={1040} curva={0.03} w={40} crece={kprog(T, K.Hi + 0.8, K.Hi + 2.2)} />
+          {T < K.F + 0.2 && <g opacity={1 - kprog(T, K.F - 0.1, K.F + 0.2)} transform={mpTr(M_HIFAS)}>
+            <Hifa x1={-40} y1={620} x2={1120} y2={690} curva={0.04} w={40} crece={kprog(T, K.Hi - 0.4, K.Hi + 1.0)} />
+            <Hifa x1={-40} y1={860} x2={1120} y2={800} curva={-0.05} w={40} crece={kprog(T, K.Hi - 0.2, K.Hi + 1.3)} />
+            <Hifa x1={-40} y1={1000} x2={1120} y2={1040} curva={0.03} w={40} crece={kprog(T, K.Hi + 0.0, K.Hi + 1.6)} />
             <Hifa x1={600} y1={705} x2={880} y2={540} curva={0.05} w={36} crece={kprog(T, K.Hi + 1.4, K.Hi + 2.4)} />
             {/* medida del grosor */}
             {T > K.Hi + 2.2 && <g opacity={kprog(T, K.Hi + 2.2, K.Hi + 2.5)}>
@@ -279,15 +290,17 @@ function MicoproteinaShot() {
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           {T < K.M + 0.2 && <g opacity={1 - kprog(T, K.M - 0.2, K.M + 0.2)}>
-            {Array.from({ length: 20 }, (_, i) => { const on = kprog(T, K.E + 3.0 + i * 0.08, K.E + 3.3 + i * 0.08, kEase.rebote);
-              return <Pesista key={i} x={110 + (i % 10) * 90} y={840 + Math.floor(i / 10) * 150} s={0.82} on={on} color="#ffffff" />; })}
+            {Array.from({ length: 20 }, (_, i) => { const on = kprog(T, K.E + 0.15 + i * 0.08, K.E + 0.45 + i * 0.08, kEase.rebote);
+              return <Pesista key={i} x={150 + (i % 5) * 195} y={790 + Math.floor(i / 5) * 175} s={1.45} on={on} color="#ffffff" />; })}
             
           </g>}
           {T > K.M - 0.2 && <g opacity={kprog(T, K.M - 0.2, K.M + 0.3)}>
-            <line x1={140} y1={1030} x2={640} y2={1030} stroke={KC.ink} strokeWidth={8} />
-            {(() => { const u = kprog(T, K.M + 0.6, K.M + 2.4, kEase.sale); const hM = 400 * u, hL = (400 / 2.2) * u;
-              return <><rect x={190} y={1030 - hM} width={150} height={hM} fill={KC.gold2} stroke={KC.ink} strokeWidth={7} />
-                <rect x={430} y={1030 - hL} width={150} height={hL} fill={MI.leche} stroke={KC.ink} strokeWidth={7} /></>; })()}
+            <line x1={120} y1={1200} x2={960} y2={1200} stroke={KC.ink} strokeWidth={8} />
+            {(() => { const u = kprog(T, K.M + 0.6, K.M + 2.4, kEase.sale); const hM = 560 * u, hL = (560 / 2.2) * u;
+              return <><rect x={250} y={1200 - hM} width={220} height={hM} fill={KC.gold2} stroke={KC.ink} strokeWidth={7} />
+                <rect x={610} y={1200 - hL} width={220} height={hL} fill={MI.leche} stroke={KC.ink} strokeWidth={7} />
+                <Milanesa T={T} x={360} y={1060} s={0.36} />
+                <Vaso x={720} y={1060} s={1.05} color="#f4f8ff" /></>; })()}
           </g>}
         </>)}
       </Escena>
@@ -295,68 +308,68 @@ function MicoproteinaShot() {
       <Escena T={T} a={K.Q} b={K.C}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          {(() => { const u = kprog(T, K.Q + 0.3, K.Q + 1.5, kEase.sale), cx = 300, cy = 800, r = 190; const a1 = -Math.PI / 2 + u * (2 * Math.PI / 3);
+          {(() => { const u = kprog(T, K.Q + 0.3, K.Q + 1.5, kEase.sale), cx = 320, cy = 840, r = 255; const a1 = -Math.PI / 2 + u * (2 * Math.PI / 3);
             return <g>
               <circle cx={cx} cy={cy} r={r} fill={KC.mint} stroke={KC.ink} strokeWidth={8} />
               {u > 0 && <path d={`M ${cx} ${cy} L ${cx} ${cy - r} A ${r} ${r} 0 0 1 ${cx + Math.cos(a1) * r} ${cy + Math.sin(a1) * r} Z`} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />}
             </g>; })()}
-          <Camaron T={T} x={640} y={900} s={kprog(T, K.Q + 2.0, K.Q + 2.5, kEase.rebote) * 1.15} brillo={kprog(T, K.Q + 2.8, K.Q + 3.3)} />
+          <Camaron T={T} x={640} y={1100} s={kprog(T, K.Q + 2.0, K.Q + 2.5, kEase.rebote) * 1.4} brillo={kprog(T, K.Q + 2.8, K.Q + 3.3)} />
         </>)}
       </Escena>
       {/* 13 · cierre: la misma milanesa del inicio, ahora por dentro: hilos de hongo */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<g transform={mpTr(M_PLATO)}>
           <Plato x={500} y={1010} />
           <Milanesa T={T} x={480} y={990} s={1} corte={1} dentro={kprog(T, K.C + 0.6, K.C + 1.8, kEase.suave)} />
-        </>)}
+        </g>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.9} until={K.H - 0.3} texto="¿pollo?" x={290} y={560} tam={58} />
-      <Etq T={T} at={K.H + 0.6} until={K.S - 0.3} x={1050} y={985} lado="izq" texto="micoproteína" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.2} until={K.S - 0.3} x={60} y={405} texto="Fusarium venenatum" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.H + 1.8} until={K.S - 0.3} texto="no es un champiñón: es un hongo de filamentos" x={540} y={340} tam={28} borde={KC.ink} />
-      <Letrero T={T} at={K.S + 0.4} until={K.Ta - 0.3} x={60} y={470} ancho={620} align="left" texto="más de" tam={36} color={KC.ink} />
-      {T < K.Ta - 0.2 && <Contador T={T} at={K.S + 0.5} hasta={3000} dur={2.2} sufijo=" microbios" x={350} y={530} tam={56} color={KC.ink} />}
-      <Etq T={T} at={K.S + 0.6} until={K.Ta - 0.3} x={320} y={880} texto="un campo · Buckinghamshire, Reino Unido" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.S + 2.9} until={K.Ta - 0.3} x={40} y={1140} texto="Fusarium venenatum" it tam={34} color={KC.yellow} />
+      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 1.9} until={K.H - 0.3} texto="¿pollo?" x={mpX(M_PLATO, 290)} y={mpY(M_PLATO, 560)} tam={58} />
+      <Etq T={T} at={K.H + 0.6} until={K.S - 0.3} x={1050} y={1400} lado="izq" texto="micoproteína" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.2} until={K.S - 0.3} x={40} y={415} texto="Fusarium venenatum" it tam={40} color={KC.ink} />
+      <Chip T={T} at={K.H + 1.8} until={K.S - 0.3} texto="no es un champiñón: es un hongo de filamentos" x={540} y={345} tam={28} borde={KC.ink} />
+      <Letrero T={T} at={K.S + 0.4} until={K.Ta - 0.3} x={60} y={540} ancho={620} align="left" texto="más de" tam={36} color={KC.ink} />
+      {T < K.Ta - 0.2 && <Contador T={T} at={K.S + 0.5} hasta={3000} dur={2.2} sufijo=" microbios" x={350} y={600} tam={56} color={KC.ink} />}
+      <Etq T={T} at={K.S + 0.6} until={K.Ta - 0.3} x={320} y={1110} texto="un campo · Buckinghamshire, Reino Unido" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.S + 2.9} until={K.Ta - 0.3} x={40} y={1300} texto="Fusarium venenatum" it tam={34} color={KC.yellow} />
       <Chip T={T} at={K.Ta + 0.3} until={K.D - 0.3} texto="tanque de fermentación" x={540} y={330} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Ta + 1.3} until={K.D - 0.3} x={30} y={650} texto="glucosa" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Ta + 1.9} until={K.D - 0.3} x={30} y={950} texto="amonio" tam={34} color={KC.ink} />
       <Cronometro T={T} at={K.D} until={K.Ca - 0.3} factor={14400 / 2.25} etiqueta="≈3.5–4.1 h · DATO DE 2004" x={400} y={370} />
       <Etq T={T} at={K.D + 0.2} until={K.Ca - 0.3} x={40} y={1110} texto="dentro del tanque" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 0.6} until={K.P - 0.3} x={240} y={600} texto="~72 °C" tam={40} color={KC.ink} />
-      <Chip T={T} at={K.Ca + 2.4} until={K.P - 0.3} texto="menos ARN → seguro en las pruebas" x={540} y={1100} tam={34} borde={KC.leaf} />
+      <Etq T={T} at={K.Ca + 0.6} until={K.P - 0.3} x={100} y={600} texto="~72 °C" tam={40} color={KC.ink} />
+      <Chip T={T} at={K.Ca + 2.4} until={K.P - 0.3} texto="menos ARN → seguro en las pruebas" x={600} y={1310} tam={34} borde={KC.leaf} />
       <Chip T={T} at={K.Hi + 0.2} until={K.F - 0.3} texto="AL MICROSCOPIO · hifas" x={540} y={470} tam={36} borde={KC.yellow} />
-      <Etq T={T} at={K.Hi + 2.3} until={K.F - 0.3} x={380} y={580} texto="3–5 µm de grueso" tam={34} color={KC.yellow} />
-      <Etq T={T} at={K.Hi + 1.0} until={K.F - 0.3} x={1040} y={900} lado="izq" texto="tabique (septo)" tam={30} />
-      <Etq T={T} at={K.Hi + 1.6} until={K.F - 0.3} x={40} y={1100} texto="hifa de Fusarium venenatum" it tam={30} />
+      <Etq T={T} at={K.Hi + 2.3} until={K.F - 0.3} x={mpX(M_HIFAS, 380)} y={mpY(M_HIFAS, 580)} texto="3–5 µm de grueso" tam={34} color={KC.yellow} />
+      <Etq T={T} at={K.Hi + 1.0} until={K.F - 0.3} x={1040} y={mpY(M_HIFAS, 905)} lado="izq" texto="tabique (septo)" tam={30} />
+      <Etq T={T} at={K.Hi + 1.6} until={K.F - 0.3} x={40} y={mpY(M_HIFAS, 1100)} texto="hifa de Fusarium venenatum" it tam={30} />
       <Etq T={T} at={K.F + 0.8} until={K.E - 0.3} x={40} y={630} texto="haz de hifas" tam={32} color={KC.yellow} />
       <Etq T={T} at={K.F + 1.9} until={K.E - 0.3} x={40} y={1052} texto="fibras de músculo (esquema)" tam={30} color={MI.musc} />
       <Etq T={T} at={K.F + 2.8} until={K.E - 0.3} x={1040} y={1052} lado="izq" texto="clara de huevo" tam={30} color="#ffffff" />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2020" quien="Universidad de Exeter, Reino Unido · 20 hombres jóvenes" revista="Am J Clin Nutr, 2020" y={560} />
-      <Letrero T={T} at={K.E + 3.4} until={K.M - 0.3} x={540} y={1062} ancho={960} texto="20 pesistas · cada uno: micoproteína o leche" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.E + 4.6} until={K.Q - 0.3} texto="una sola toma · igual leucina, más proteína en la de hongo" x={540} y={1160} tam={25} borde={KC.ink} />
-      <Letrero T={T} at={K.M + 0.2} until={K.Q - 0.3} x={60} y={560} ancho={600} align="left" texto="Aumento en la fabricación de proteína del músculo" tam={36} color={KC.ink} />
-      <Letrero T={T} at={K.M + 1.0} until={K.Q - 0.3} x={265} y={1068} ancho={260} texto="micoproteína" tam={28} color={KC.ink} />
-      <Letrero T={T} at={K.M + 1.0} until={K.Q - 0.3} x={505} y={1068} ancho={200} texto="leche" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.M + 2.4} until={K.Q - 0.3} texto="en ese estudio" x={840} y={880} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Q + 1.0} until={K.C - 0.3} x={330} y={560} texto="1/3 quitina" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Q + 1.3} until={K.C - 0.3} x={60} y={1030} texto="2/3 β-glucanos" tam={32} color={KC.ink} />
-      <Letrero T={T} at={K.Q + 0.2} until={K.C - 0.3} x={60} y={470} ancho={600} align="left" texto="Fibra de la micoproteína" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.Q + 2.8} until={K.C - 0.3} x={1040} y={1130} lado="izq" texto="caparazón: quitina" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="hongo del suelo, hilo por hilo" x={360} y={560} tam={34} borde={KC.leaf} />
-      <Etq T={T} at={K.C + 1.0} until={K.Ou} x={60} y={760} texto="POR DENTRO · hifas" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2020" quien="Universidad de Exeter, Reino Unido · 20 hombres jóvenes" revista="Am J Clin Nutr, 2020" y={420} />
+      <Letrero T={T} at={K.E + 3.4} until={K.M - 0.3} x={540} y={1400} ancho={960} texto="20 pesistas · cada uno: micoproteína o leche" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.E + 4.6} until={K.Q - 0.3} texto="una sola toma · igual leucina, más proteína en la de hongo" x={540} y={1460} tam={25} borde={KC.ink} />
+      <Letrero T={T} at={K.M + 0.2} until={K.Q - 0.3} x={60} y={530} ancho={700} align="left" texto="Aumento en la fabricación de proteína del músculo" tam={36} color={KC.ink} />
+      <Letrero T={T} at={K.M + 1.0} until={K.Q - 0.3} x={360} y={1240} ancho={260} texto="micoproteína" tam={28} color={KC.ink} />
+      <Letrero T={T} at={K.M + 1.0} until={K.Q - 0.3} x={720} y={1240} ancho={200} texto="leche" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.M + 2.4} until={K.Q - 0.3} texto="en ese estudio" x={760} y={820} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.Q + 1.0} until={K.C - 0.3} x={470} y={600} texto="1/3 quitina" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Q + 1.3} until={K.C - 0.3} x={40} y={1140} texto="2/3 β-glucanos" tam={32} color={KC.ink} />
+      <Letrero T={T} at={K.Q + 0.2} until={K.C - 0.3} x={60} y={500} ancho={600} align="left" texto="Fibra de la micoproteína" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Q + 2.8} until={K.C - 0.3} x={1040} y={1430} lado="izq" texto="caparazón: quitina" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="hongo del suelo, hilo por hilo" x={mpX(M_PLATO, 360)} y={mpY(M_PLATO, 560)} tam={34} borde={KC.leaf} />
+      <Etq T={T} at={K.C + 1.0} until={K.Ou} x={60} y={mpY(M_PLATO, 760)} texto="POR DENTRO · hifas" tam={30} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={200} color={KC.ink} />
-      <BarraEscala T={T} at={K.H} until={K.S} texto="5 cm" largo={170} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={200 * M_PLATO.k} color={KC.ink} />
+      <BarraEscala T={T} at={K.H} until={K.S} texto="5 cm" largo={210} color={KC.ink} />
       <BarraEscala T={T} at={K.S} until={K.Ta} texto="10 cm" largo={160} />
       <NotaEscala T={T} at={K.Ta} until={K.P} />
-      <BarraEscala T={T} at={K.Hi} until={K.F} texto="5 µm" largo={50} />
+      <BarraEscala T={T} at={K.Hi} until={K.F} texto="5 µm" largo={50 * M_HIFAS.k} />
       <BarraEscala T={T} at={K.F} until={K.E} texto="50 µm (hifas)" largo={150} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={200} color={KC.ink} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={200 * M_PLATO.k} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="No es pollo: *es hongo.*" />
