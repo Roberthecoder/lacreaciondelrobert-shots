@@ -3,6 +3,8 @@
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const QUI = '#9b5de5', LECHE = '#fbf8ef', CUAJ = '#f3e7c4', SUERO = '#e9df8a', CA = '#7fe0ff', KAPPA = '#ffb3c7';
 
+// Pase a mano cine: agranda un grupo k veces llevando el punto (cx, cy) a (tx, ty).
+const Zg = ({ k, cx, cy, tx = 540, ty = 900, children }) => <g transform={`translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
 // Capa SVG de pantalla completa.
 function Capa({ children, z }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{children}</svg>;
@@ -195,15 +197,15 @@ function Quimosina10() {
       {/* 0 · gancho: el frasco de cuajo gotea en la olla; el becerro se tacha y aparece el microbio */}
       <Escena T={T} a={K.G} b={K.Le} zoom={0.04}>
         <FondoMarca T={T} color={KC.yellow} />
-        <Capa>
+        <Capa><Zg k={1.2} cx={560} cy={850}>
           <Olla T={T} x={420} y={1070} s={0.95} />
           <FrascoCuajo x={210} y={680} s={0.85} inclina={-8} />
           <Gotero x={420} y={790} s={0.9} aprieta={Math.max(0, Math.sin(T * 12.5))} />
           {gotas(K.G, K.Le)}
           <Becerro T={T} x={800} y={1010} s={0.42} tache={kprog(T, K.G + 1.0, K.G + 1.7)} o={1 - kprog(T, K.G + 2.0, K.G + 2.4)} silueta />
-          {T > K.G + 2.1 && <g transform={`translate(810 1000) scale(${kEase.rebote(kprog(T, K.G + 2.1, K.G + 2.6))})`}>
+          {T > K.G + 2.1 && <g transform={`translate(760 1000) scale(${kEase.rebote(kprog(T, K.G + 2.1, K.G + 2.6))})`}>
             <Bacteria T={T} x={0} y={0} largo={260} ancho={100} rot={-12} color="#7fd88a" seed={3} /></g>}
-        </Capa>
+        </Zg></Capa>
       </Escena>
       {/* 1 · la leche se cuaja (time-lapse) */}
       <Escena T={T} a={K.Le} b={K.Be} zoom={0.08} origen="40% 55%">
@@ -227,13 +229,13 @@ function Quimosina10() {
       {/* 3 · no alcanzaban */}
       <Escena T={T} a={K.Es} b={K.En} zoom={0.05}>
         <FondoMarca T={T} color={KC.mint} />
-        <Capa>
+        <Capa><Zg k={1.1} cx={550} cy={900} ty={950}>
           {Array.from({ length: 12 }, (_, i) => { const p = kprog(T, K.Es + 0.1 + i * 0.16, K.Es + 0.4 + i * 0.16, kEase.rebote);
-            return p > 0 && <g key={i} transform={`translate(${150 + (i % 4) * 160} ${700 + Math.floor(i / 4) * 170}) scale(${0.26 * p})`}><Olla T={T} x={0} y={0} vapor={0} /></g>; })}
-          <rect x={790} y={640} width={220} height={540} rx={30} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={7} />
-          <text x={900} y={700} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>estómagos</text>
-          {[0, 1, 2].map((i) => <EstomaguitoMini key={i} x={900} y={1100 - i * 120} s={1.1} o={1 - kprog(T, K.Es + 1.6 + i * 0.3, K.Es + 1.9 + i * 0.3) * 0.6} />)}
-        </Capa>
+            return p > 0 && <g key={i} transform={`translate(${180 + (i % 4) * 150} ${700 + Math.floor(i / 4) * 170}) scale(${0.26 * p})`}><Olla T={T} x={0} y={0} vapor={0} /></g>; })}
+          <rect x={760} y={640} width={220} height={540} rx={30} fill="rgba(20,28,48,.85)" stroke={KC.ink} strokeWidth={7} />
+          <text x={870} y={700} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>estómagos</text>
+          {[0, 1, 2].map((i) => <EstomaguitoMini key={i} x={870} y={1100 - i * 120} s={1.1} o={1 - kprog(T, K.Es + 1.6 + i * 0.3, K.Es + 1.9 + i * 0.3) * 0.6} />)}
+        </Zg></Capa>
         <Medidor T={T} at={K.Es + 0.4} until={K.En - 0.3} valor={(t) => 1 - 0.75 * kprog(t, K.Es + 0.6, K.Es + 2.4)} etiqueta="cuajo de becerro" texto={(v) => (v > 0.5 ? 'alcanza' : 'no alcanza')} color={KC.red} y={460} />
       </Escena>
       {/* 4 · la enzima: la quimosina dentro de la gota de cuajo */}
@@ -241,12 +243,12 @@ function Quimosina10() {
         <FondoMarca T={T} color={KC.lilac} />
         <Capa>
           {(() => { const g = kprog(T, K.En, K.En + 0.8, kEase.sale);
-            return <g transform={`translate(620 860) scale(${klerp(0.15, 1, g)})`}>
+            return <g transform={`translate(560 870) scale(${1.3 * klerp(0.15, 1, g)})`}>
               <path d="M 0 -360 Q 250 -60 250 90 Q 250 300 0 300 Q -250 300 -250 90 Q -250 -60 0 -360 Z" fill="#fff4c8" stroke={KC.ink} strokeWidth={10} opacity=".95" />
               <Quimosina x={0} y={60} s={1.6} abre={Math.abs(Math.sin(T * 3))} brillo={kprog(T, K.En + 0.6, K.En + 1.2)} />
             </g>; })()}
         </Capa>
-        <Etq T={T} at={K.En + 0.9} until={K.Mi - 0.3} x={900} y={1440} texto="quimosina (enzima)" lado="izq" color={KC.ink} tam={36} />
+        <Etq T={T} at={K.En + 0.9} until={K.Mi - 0.3} x={900} y={1340} texto="quimosina (enzima)" lado="izq" color={KC.ink} tam={36} />
       </Escena>
       {/* 5 · al microscopio: las micelas de caseína */}
       <Escena T={T} a={K.Mi} b={K.Pe} zoom={0.04}>
@@ -262,21 +264,21 @@ function Quimosina10() {
       <Escena T={T} a={K.Pe} b={K.Ti} zoom={0.03}>
         <FondoMicro T={T} seed={7} />
         <Capa>
-          {(() => { const c = (T - K.Pe) % 2.0, d = c < 1 ? klerp(240, 168, kEase.suave(c)) : klerp(168, 240, kEase.suave(c - 1));
+          {(() => { const c = (T - K.Pe) % 2.0, d = c < 1 ? klerp(270, 200, kEase.suave(c)) : klerp(200, 270, kEase.suave(c - 1));
             const choque = c > 0.85 && c < 1.15;
             return <g>
-              <Micela T={T} x={540 - d} y={850} r={130} seed={11} />
-              <Micela T={T} x={540 + d} y={850} r={130} seed={12} />
-              {choque && <text x={540} y={700} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KAPPA} stroke={KC.ink} strokeWidth={4}>¡boing!</text>}
+              <Micela T={T} x={540 - d} y={900} r={155} seed={11} />
+              <Micela T={T} x={540 + d} y={900} r={155} seed={12} />
+              {choque && <text x={540} y={650} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KAPPA} stroke={KC.ink} strokeWidth={4}>¡boing!</text>}
             </g>; })()}
         </Capa>
-        <Etq T={T} at={K.Pe + 0.6} until={K.Ti - 0.3} x={250} y={620} texto="κ-caseína" color={KAPPA} tam={40} />
-        <Escala T={T} z={1} pxPorMm={1300000} x={60} y={1430} />
+        <Etq T={T} at={K.Pe + 0.6} until={K.Ti - 0.3} x={200} y={600} texto="κ-caseína" color={KAPPA} tam={40} />
+        <Escala T={T} z={155 / 130} pxPorMm={1300000} x={60} y={1430} />
       </Escena>
       {/* 7 · la quimosina corta entre el aminoácido 105 y el 106 */}
       <Escena T={T} a={K.Ti} b={K.Cu} zoom={0.03}>
         <FondoMicro T={T} seed={9} />
-        <Capa>
+        <Capa><Zg k={1.15} cx={560} cy={880}>
           <Micela T={T} x={140} y={860} r={150} seed={13} pelos={0.3} />
           {Array.from({ length: 168 }, (_, i) => { if (i === 104 && T > corte) return null; const [x1, y1] = cuenta(i), [x2, y2] = cuenta(i + 1);
             return <line key={'l' + i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#e8f0ff" strokeWidth={4} opacity={i >= 105 ? 1 - vuela * 0.5 : 1} />; })}
@@ -287,24 +289,24 @@ function Quimosina10() {
             return <Quimosina x={klerp(mx - 40, mx - 40, llega)} y={klerp(my - 420, my - 70, llega)} s={0.9} rot={90} abre={T < corte ? 0.4 + 0.6 * Math.abs(Math.sin(T * 4)) : 0} brillo={T > corte && T < corte + 0.5 ? 1 : 0} />; })()}
           {(() => { const [ax, ay] = cuenta(104); return <text x={ax - 30} y={ay + 80} textAnchor="end" style={{ font:`700 30px ${KF.mono}` }} fill={KC.gold2} opacity={kprog(T, K.Ti + 1.2, K.Ti + 1.5)}>105</text>; })()}
           {(() => { const [bx, by] = cuenta(105); return <text x={bx + 30} y={by + 80} style={{ font:`700 30px ${KF.mono}` }} fill={KC.cyan} opacity={kprog(T, K.Ti + 1.2, K.Ti + 1.5)}>106</text>; })()}
-        </Capa>
+        </Zg></Capa>
         <Chip T={T} at={K.Ti + 0.3} until={corte - 0.1} texto="κ-caseína: 169 eslabones" y={1500} tam={40} borde={KAPPA} />
         <Chip T={T} at={corte} until={K.Cu - 0.3} texto="✂ entre el 105 y el 106" y={1500} tam={48} borde={QUI} />
-        <Etq T={T} at={corte + 0.9} until={K.Cu - 0.3} x={600} y={1200} texto="se va: 106–169" color="#ffd6e2" tam={32} />
+        <Etq T={T} at={corte + 0.9} until={K.Cu - 0.3} x={586} y={1268} texto="se va: 106–169" color="#ffd6e2" tam={32} />
       </Escena>
       {/* 8 · sin pelitos, con calcio, la cuajada */}
       <Escena T={T} a={K.Cu} b={K.Pr} zoom={0.06}>
         <FondoMicro T={T} seed={11} />
-        <Capa>
+        <Capa><Zg k={1.15} cx={565} cy={895} ty={920}>
           {red.map((m, i) => i % 4 !== 3 && <line key={'r' + i} x1={klerp(m.x0, m.x1, junta)} y1={klerp(m.y0, m.y1, junta)} x2={klerp(red[i + 1].x0, red[i + 1].x1, junta)} y2={klerp(red[i + 1].y0, red[i + 1].y1, junta)} stroke={CA} strokeWidth={6} opacity={kprog(junta, 0.7, 1)} />)}
           {red.map((m, i) => i < 12 && <line key={'v' + i} x1={klerp(m.x0, m.x1, junta)} y1={klerp(m.y0, m.y1, junta)} x2={klerp(red[i + 4].x0, red[i + 4].x1, junta)} y2={klerp(red[i + 4].y0, red[i + 4].y1, junta)} stroke={CA} strokeWidth={6} opacity={kprog(junta, 0.7, 1)} />)}
           {[[330, 760], [760, 900], [480, 1080]].map(([fx, fy], i) => <circle key={'g' + i} cx={fx} cy={fy} r={44} fill="#ffe08a" stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Cu + 2.6, K.Cu + 3.2)} />)}
           {red.map((m, i) => <Micela key={i} T={T} x={klerp(m.x0, m.x1, junta) + Math.sin(T + m.ph) * 6 * (1 - junta)} y={klerp(m.y0, m.y1, junta) + Math.cos(T + m.ph) * 6 * (1 - junta)} r={62} seed={20 + i} pelos={0} gris={0.15} />)}
           {red.map((m, i) => i % 4 !== 3 && <g key={'ca' + i} opacity={kprog(junta, 0.8, 1)}><circle cx={(klerp(m.x0, m.x1, 1) + klerp(red[i + 1].x0, red[i + 1].x1, 1)) / 2} cy={(m.y1 + red[i + 1].y1) / 2} r={14 + Math.sin(T * 6 + i) * 3} fill={CA} stroke={KC.ink} strokeWidth={3} /></g>)}
-        </Capa>
+        </Zg></Capa>
         <Chip T={T} at={K.Cu + 0.4} until={K.Pr - 0.3} texto="sin pelitos + calcio → cuajada" y={1500} tam={40} borde={CA} />
-        <Etq T={T} at={K.Cu + 2.0} until={K.Pr - 0.3} x={150} y={560} texto="Ca²⁺" color={CA} tam={40} />
-        <Etq T={T} at={K.Cu + 2.8} until={K.Pr - 0.3} x={820} y={560} texto="grasa atrapada" lado="izq" color="#ffe08a" tam={32} />
+        <Etq T={T} at={K.Cu + 2.0} until={K.Pr - 0.3} x={40} y={490} texto="Ca²⁺" color={CA} tam={40} />
+        <Etq T={T} at={K.Cu + 2.8} until={K.Pr - 0.3} x={900} y={490} texto="grasa atrapada" lado="izq" color="#ffe08a" tam={32} />
       </Escena>
       {/* 9 · re-gancho: ¿cómo hace un microbio una enzima de becerro? */}
       <Escena T={T} a={K.Pr} b={K.Ge} zoom={0.1}>
@@ -338,21 +340,21 @@ function Quimosina10() {
       {/* 11 · marzo de 1990: la FDA aprueba la quimosina de bacterias */}
       <Escena T={T} a={K.St} b={K.Ho} zoom={0.04}>
         <FondoMarca T={T} color={KC.lilac} patron="rayas" />
-        <Capa>
+        <Capa><Zg k={1.25} cx={540} cy={980} ty={1000}>
           <Bacteria T={T} x={300} y={1010} largo={300} ancho={120} rot={-15} color="#7fd88a" seed={9} />
           <QuesoFresco T={T} x={700} y={1020} s={0.75} migas={0} />
           <Sello x={760} y={860} s={0.9} p={kprog(T, K.St + 2.2, K.St + 2.6)} />
-        </Capa>
-        <TarjetaEstudio T={T} at={K.St + 0.2} until={K.Ho - 0.3} anio="1990" quien="marzo · FDA, EE. UU." revista="quimosina de E. coli K-12" y={600} />
-        <Chip T={T} at={K.St + 1.0} until={K.St + 4.4} texto="1.ª aprobación de un ingrediente" y={1470} tam={36} borde={KC.gold} />
-        <Chip T={T} at={K.St + 1.3} until={K.St + 4.4} texto="hecho con ADN recombinante" y={1560} tam={36} borde={KC.gold} />
+        </Zg></Capa>
+        <TarjetaEstudio T={T} at={K.St + 0.2} until={K.Ho - 0.3} anio="1990" quien="marzo · FDA, EE. UU." revista="quimosina de E. coli K-12" y={390} />
+        <Chip T={T} at={K.St + 1.0} until={K.St + 4.4} texto="1.ª aprobación de un ingrediente" y={1390} tam={36} borde={KC.gold} />
+        <Chip T={T} at={K.St + 1.3} until={K.St + 4.4} texto="hecho con ADN recombinante" y={1475} tam={36} borde={KC.gold} />
       </Escena>
       {/* 12 · después: levaduras y mohos; hoy, muy común */}
       <Escena T={T} a={K.Ho} b={K.Ci} zoom={0.04}>
         <FondoMarca T={T} color={KC.mint} />
         <Capa>
           {[0, 1, 2].map((i) => { const p = kprog(T, K.Ho + 0.2 + i * 0.6, K.Ho + 0.7 + i * 0.6, kEase.rebote);
-            return p > 0 && <g key={i} transform={`translate(${190 + i * 350} 820) scale(${0.8 * p})`}>
+            return p > 0 && <g key={i} transform={`translate(${190 + i * 350} 880) scale(${0.95 * p})`}>
               <Tanque T={T} x={0} y={0} caldo={['#c8f0c8', '#f0d98a', '#e6e0d0'][i]}>
                 {i === 0 && <Bacteria T={T} x={0} y={0} largo={150} ancho={60} rot={-20} color="#7fd88a" seed={2} />}
                 {i === 1 && <><Levadura T={T} x={-10} y={10} r={52} brote={0.8} seed={3} />
@@ -361,9 +363,9 @@ function Quimosina10() {
                   {[0, 1, 2].map((k) => { const f = ((T - K.Ho) * 0.6 + k / 3) % 1; return <Quimosina key={k} x={-60 + k * 50} y={60 + f * 70} s={0.2} rot={k * 70} />; })}</>}
               </Tanque></g>; })}
         </Capa>
-        <Etq T={T} at={K.Ho + 0.5} until={K.Ci - 0.3} x={40} y={1090} texto="E. coli" it color={KC.ink} tam={28} />
-        <Etq T={T} at={K.Ho + 1.1} until={K.Ci - 0.3} x={390} y={1090} texto="K. lactis" it color={KC.ink} tam={28} />
-        <Etq T={T} at={K.Ho + 1.7} until={K.Ci - 0.3} x={740} y={1090} texto="A. niger" it color={KC.ink} tam={28} />
+        <Etq T={T} at={K.Ho + 0.5} until={K.Ci - 0.3} x={40} y={1150} texto="E. coli" it color={KC.ink} tam={28} />
+        <Etq T={T} at={K.Ho + 1.1} until={K.Ci - 0.3} x={390} y={1150} texto="K. lactis" it color={KC.ink} tam={28} />
+        <Etq T={T} at={K.Ho + 1.7} until={K.Ci - 0.3} x={740} y={1150} texto="A. niger" it color={KC.ink} tam={28} />
         <Chip T={T} at={K.Ho + 2.2} until={K.Ci - 0.3} texto="hoy: uso muy común" y={1500} tam={44} borde={KC.gold} />
       </Escena>
       {/* 13 · cierre: la misma olla, ya hecha queso fresco */}
@@ -379,7 +381,7 @@ function Quimosina10() {
       </Escena>
 
       {/* textos globales */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.4} until={K.G + 3.6} texto="¿del estómago de un becerro?" x={330} y={470} tam={34} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.4} until={K.G + 3.6} texto="¿del estómago de un becerro?" x={500} y={330} tam={34} />
       <Chip T={T} at={K.Le + 0.3} until={K.Be - 0.3} texto="leche → cuajada" y={1500} tam={44} borde={KC.gold} />
       <Chip T={T} at={K.Be + 1.6} until={K.Es - 0.3} texto="4.º estómago = abomaso" y={1500} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.Mi + 0.8} until={K.Pe - 0.2} texto="caseína en micelas" y={1500} tam={40} borde={KC.cyan} />

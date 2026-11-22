@@ -191,7 +191,7 @@ function TarjetaPared({ T, at, until, x, y, titulo, it = false, filas, borde }) 
   const e = kentrada(T, at, until, 'pop');
   return <div style={{ position:'absolute', left:x, top:y, zIndex:42, width:440, transform:`translate(-50%,-50%) scale(${e.s})`, opacity:e.o, background:KC.paper, border:`6px solid ${borde}`, borderRadius:26, padding:'18px 22px', boxShadow:`10px 10px 0 ${KC.ink}` }}>
     <div style={{ font:`900 40px ${KF.texto}`, fontStyle: it ? 'italic' : 'normal', color:KC.ink, textAlign:'center', marginBottom:10 }}>{titulo}</div>
-    {filas.map(([t, ok], i) => <div key={i} style={{ font:`700 32px ${KF.mono}`, color: ok ? '#1d7a3a' : '#a3281f', margin:'6px 0', opacity:kprog(T, at + 0.4 + i * 0.4, at + 0.7 + i * 0.4) }}>{ok ? '✓ ' : '✗ '}{t}</div>)}
+    {filas.map(([t, ok], i) => <div key={i} style={{ font:`700 32px ${KF.mono}`, color: ok ? '#6fe08f' : '#ff7a6b', margin:'6px 0', opacity:kprog(T, at + 0.4 + i * 0.4, at + 0.7 + i * 0.4) }}>{ok ? '✓ ' : '✗ '}{t}</div>)}
   </div>;
 }
 // Tarjeta de estudio chica (para dos estudios a la vez).
@@ -215,6 +215,10 @@ function SelloLargo({ T, at, x, y, texto, color = KC.red, rot = -10 }) {
   </g>;
 }
 
+// Pase a mano cine: agranda una escena k veces llevando el punto (cx, cy) a (tx, ty); zp hace lo mismo con una etiqueta.
+const Zg = ({ k, cx, cy, tx = 540, ty = 900, children }) => <g transform={`translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
+const zp = (x, y, k, cx, cy, tx = 540, ty = 900) => [tx + (x - cx) * k, ty + (y - cy) * k];
+const ZC = [1.45, 500, 750], ZH = [1.5, 470, 850], ZL = [1.25, 515, 835], ZP = [1.18, 515, 915, 540, 930], ZI = [1.85, 474, 768], ZA = [1.5, 460, 848];
 function PapaShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, H: CUES.Hoja, L: CUES.Limones, N: CUES.Nadadores, E: CUES.Entrada, Pa: CUES.Pared, P: CUES.Pregunta, Pr: CUES.Parientes, I: CUES.Irlanda, He: CUES.Herbario, H1: CUES.Herb1, M: CUES.Mexico, C: CUES.Cierre, Ou: CUES.Outro };
@@ -227,28 +231,28 @@ function PapaShot() {
       {/* 0 · gancho: la papa y el jitomate en la cocina; el "hongo" no es hongo */}
       <Escena T={T} a={K.G} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<Zg k={ZC[0]} cx={ZC[1]} cy={ZC[2]}>
           <Tabla x={460} y={960} />
           <Papa x={330} y={880} s={1.15} rot={-6} mancha={kprog(T, K.G + 0.1, K.G + 1.2, kEase.sale)} />
           <Jitomate x={klerp(1250, 720, kprog(T, K.G + 3.4, K.G + 4.2, kEase.sale))} y={855} s={0.95} rot={klerp(200, 0, kprog(T, K.G + 3.4, K.G + 4.2, kEase.sale))} mancha={kprog(T, K.G + 4.1, K.G + 4.8)} />
-          <Sello T={T} at={K.G + 1.4} x={300} y={520} texto="HONGO" color={KC.ink} r={130} />
-          {T > K.G + 2.5 && <path d="M 200 420 L 400 620 M 400 420 L 200 620" stroke={KC.red} strokeWidth={22} strokeLinecap="round" opacity={kprog(T, K.G + 2.5, K.G + 2.8)} />}
-        </>)}
+          <Sello T={T} at={K.G + 1.4} x={360} y={520} texto="HONGO" color={KC.ink} r={130} />
+          {T > K.G + 2.5 && <path d="M 260 420 L 460 620 M 460 420 L 260 620" stroke={KC.red} strokeWidth={22} strokeLinecap="round" opacity={kprog(T, K.G + 2.5, K.G + 2.8)} />}
+        </Zg>)}
       </Escena>
       {/* 1 · la hoja se voltea: manchas cafés y pelusa blanca en el envés */}
       <Escena T={T} a={K.H} b={K.L} zoom={0.08} origen="40% 50%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<HojaPapa T={T} x={470} y={1170} s={0.85} giro={kprog(T, K.H + 1.4, K.H + 2.3, kEase.suave)} manchas={kprog(T, K.H, K.H + 0.8, kEase.sale)} pelusa={kprog(T, K.H + 2.3, K.H + 3.2)} />)}
+        {fsvg(<Zg k={ZH[0]} cx={ZH[1]} cy={ZH[2]}><HojaPapa T={T} x={470} y={1170} s={0.85} giro={kprog(T, K.H + 1.4, K.H + 2.3, kEase.suave)} manchas={kprog(T, K.H, K.H + 0.8, kEase.sale)} pelusa={kprog(T, K.H + 2.3, K.H + 3.2)} /></Zg>)}
       </Escena>
       {/* 2 · al microscopio: esporangióforos con esporangios en forma de limón */}
       <Escena T={T} a={K.L} b={K.N} zoom={0.1}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
-        {fsvg(<>
-          <rect x={-20} y={1150} width={1120} height={120} fill="#2f5a3a" stroke={KC.ink} strokeWidth={6} />
+        {fsvg(<Zg k={ZL[0]} cx={ZL[1]} cy={ZL[2]}>
+          <rect x={-120} y={1150} width={1320} height={120} fill="#2f5a3a" stroke={KC.ink} strokeWidth={6} />
           <Esporangioforo x={330} y={1160} s={1.15} g={kprog(T, K.L - 0.3, K.L + 1.6)} T={T} />
           <Esporangioforo x={760} y={1160} s={0.95} g={kprog(T, K.L + 0.2, K.L + 2.1)} T={T + 2} />
-        </>)}
+        </Zg>)}
       </Escena>
       {/* 3 · un limón se abre y salen 8–12 nadadores con dos colas */}
       <Escena T={T} a={K.N} b={K.E} zoom={0.04}>
@@ -285,12 +289,12 @@ function PapaShot() {
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Pr} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><Interrogacion T={T} x={300} y={1080} /><Zoospora T={T} x={170} y={620} s={1.2} rot={-15} /></>)}
+        {fsvg(<><Zoospora T={T} x={640} y={900} s={3.2} rot={-15} /><Interrogacion T={T} x={260} y={1300} /></>)}
       </Escena>
       {/* 7 · árbol de parientes: algas pardas, diatomeas, moho de agua | hongos lejos */}
       <Escena T={T} a={K.Pr} b={K.I} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<Zg k={ZP[0]} cx={ZP[1]} cy={ZP[2]} tx={ZP[3]} ty={ZP[4]}>
           {(() => { const g = kprog(T, K.Pr, K.Pr + 1.4, kEase.sale); const L = (d, k) => <path d={d} stroke={KC.ink} strokeWidth={12} fill="none" strokeLinecap="round" pathLength={1} strokeDasharray={`${kclamp(g * 1.5 - k * 0.25, 0, 1)} 1`} />;
             return <>{L('M 540 1180 L 540 1080', 0)}{L('M 540 1080 L 330 980', 0.4)}{L('M 540 1080 L 870 820', 0.4)}{L('M 330 980 L 150 880', 1)}{L('M 330 980 L 330 860', 1)}{L('M 330 980 L 510 880', 1)}</>; })()}
           {T > K.Pr + 0.8 && <AlgaParda T={T} x={150} y={870} s={kprog(T, K.Pr + 0.8, K.Pr + 1.3, kEase.rebote) * 0.7} />}
@@ -298,31 +302,31 @@ function PapaShot() {
           {T > K.Pr + 1.4 && <Zoospora T={T} x={520} y={820} s={kprog(T, K.Pr + 1.4, K.Pr + 1.9, kEase.rebote) * 1.1} />}
           {T > K.Pr + 2.2 && <Seta x={870} y={800} s={kprog(T, K.Pr + 2.2, K.Pr + 2.7, kEase.rebote) * 0.9} sombrero={KC.red} />}
           <rect x={40} y={650} width={600} height={275} rx={40} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="18 14" opacity={kprog(T, K.Pr + 2.0, K.Pr + 2.4)} />
-        </>)}
+        </Zg>)}
       </Escena>
       {/* 8 · Irlanda: la gran hambruna */}
       <Escena T={T} a={K.I} b={K.He} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<Zg k={ZI[0]} cx={ZI[1]} cy={ZI[2]}>
           <MapaIrlanda T={T} cafe={kprog(T, K.I + 0.4, K.I + 2.4)} />
           {[0, 1, 2].map((i) => { const u = kprog(T, K.I + 3.6 + i * 0.5, K.I + 6.8 + i * 0.3); return u > 0 && <Barco key={i} T={T} x={klerp(240, -140, u) + i * 20} y={720 + i * 150} s={0.8} />; })}
-        </>)}
+        </Zg>)}
       </Escena>
       {/* 9 · herbario: su ADN en hojas guardadas desde 1845 */}
       <Escena T={T} a={K.He} b={K.H1} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <HojaHerbario x={250} y={970} rot={-8} anio="1845" s={kprog(T, K.He + 0.3, K.He + 0.7, kEase.rebote)} />
-          <HojaHerbario x={540} y={950} rot={2} anio="· · ·" s={kprog(T, K.He + 0.5, K.He + 0.9, kEase.rebote)} />
-          <HojaHerbario x={830} y={980} rot={9} anio="1896" s={kprog(T, K.He + 0.7, K.He + 1.1, kEase.rebote)} />
-          <ADN T={T} x={540} y={900} alto={210} p={kprog(T, K.He + 1.4, K.He + 2.8)} />
+          <HojaHerbario x={285} y={920} rot={-8} anio="1845" s={1.35 * kprog(T, K.He + 0.1, K.He + 0.5, kEase.rebote)} />
+          <HojaHerbario x={540} y={900} rot={2} anio="· · ·" s={1.35 * kprog(T, K.He + 0.2, K.He + 0.6, kEase.rebote)} />
+          <HojaHerbario x={795} y={930} rot={9} anio="1896" s={1.35 * kprog(T, K.He + 0.3, K.He + 0.7, kEase.rebote)} />
+          <ADN T={T} x={540} y={1060} alto={360} p={kprog(T, K.He + 1.4, K.He + 2.8)} />
         </>)}
       </Escena>
       {/* 10–11 · HERB-1 y el origen: el mapa de América */}
       <Escena T={T} a={K.H1} b={K.C} zoom={0.03}>
         <FondoLunares color={mixHex(KC.mint, KC.lilac, kprog(T, K.M - 0.3, K.M + 0.3))} />
-        {fsvg(<>
-          <g opacity={kprog(T, K.H1 + 1.6, K.H1 + 2.2)}><MapaAmerica T={T} brilloMx={kprog(T, K.M + 1.2, K.M + 1.8)} brilloAn={kprog(T, K.M + 2.0, K.M + 2.6)} /></g>
+        {fsvg(<Zg k={ZA[0]} cx={ZA[1]} cy={ZA[2]}>
+          <g opacity={klerp(0.35, 1, kprog(T, K.H1, K.H1 + 0.5)) * klerp(0.45, 1, kprog(T, K.H1 + 1.6, K.H1 + 2.2))}><MapaAmerica T={T} brilloMx={kprog(T, K.M + 1.2, K.M + 1.8)} brilloAn={kprog(T, K.M + 2.0, K.M + 2.6)} /></g>
           {T > K.H1 + 2.6 && T < K.M + 0.3 && [[mxX, mxY, 0], [anX - 20, anY - 60, 0.4], [anX + 30, anY + 40, 0.6]].map(([px, py, d], i) => { const u = kprog(T, K.H1 + 2.6 + d, K.H1 + 3.0 + d, kEase.rebote); return <g key={i} opacity={1 - kprog(T, K.M - 0.2, K.M + 0.3)}>
             <circle cx={px} cy={py} r={34 + 8 * Math.sin(T * 6 + i)} fill={KC.gold2} opacity={0.4} /><circle cx={px} cy={py} r={16 * u} fill={KC.gold} stroke={KC.ink} strokeWidth={4} /></g>; })}
           {T > K.M + 1.0 && <>
@@ -335,30 +339,30 @@ function PapaShot() {
               <path d={`M ${ox - 40} ${oy} Q ${klerp(ox, mxX + 60, 0.5)} ${oy - 60} ${klerp(ox - 40, mxX + 40, u1)} ${klerp(oy, mxY - 10, u1)}`} stroke={KC.ink} strokeWidth={12} fill="none" strokeDasharray="22 14" strokeLinecap="round" />
               <path d={`M ${ox} ${oy + 70} Q ${ox - 20} ${oy + 260} ${klerp(ox, anX + 50, u2)} ${klerp(oy + 70, anY - 20, u2)}`} stroke={KC.ink} strokeWidth={12} fill="none" strokeDasharray="22 14" strokeLinecap="round" />
             </g>; })()}
-        </>)}
+        </Zg>)}
       </Escena>
       {/* 12 · cierre: la misma tabla, la misma papa y el mismo jitomate; ahora el sello dice OOMICETO */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<Zg k={ZC[0]} cx={ZC[1]} cy={ZC[2]}>
           <Tabla x={460} y={960} />
           <Papa x={330} y={880} s={1.15} rot={-6} mancha={1} />
           <Jitomate x={720} y={855} s={0.95} mancha={1} />
-          <SelloLargo T={T} at={K.C + 0.8} x={330} y={650} texto="OOMICETO" color={KC.red} />
+          <SelloLargo T={T} at={K.C + 0.8} x={400} y={600} texto="OOMICETO" color={KC.red} />
           <Zoospora T={T} x={klerp(-120, 820, kprog(T, K.C + 1.6, K.C + 2.6, kEase.sale))} y={1090} s={1.1} />
-        </>)}
+        </Zg>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 2.9} until={K.H - 0.3} texto="es un moho de agua" x={330} y={690} tam={40} borde={KC.cyan} />
-      <Etq T={T} at={K.G + 1.0} until={K.H - 0.3} x={60} y={1110} texto="papa" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.G + 4.4} until={K.H - 0.3} x={1040} y={1110} lado="izq" texto="jitomate" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.5} until={K.L - 0.3} x={60} y={380} texto="tizón tardío" tam={36} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={435} texto="Phytophthora infestans" it tam={38} color={KC.ink} />
-      <Etq T={T} at={K.H + 2.4} until={K.L - 0.3} x={60} y={1120} texto="envés (abajo): pelusa blanca" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.L + 0.2} until={K.N - 0.3} texto="AL MICROSCOPIO · envés de la hoja" x={540} y={470} tam={32} />
-      <Etq T={T} at={K.L + 1.6} until={K.N - 0.3} x={350} y={460} texto="esporangio" tam={32} color={KC.gold2} />
-      <Etq T={T} at={K.L + 2.2} until={K.N - 0.3} x={700} y={1000} lado="izq" texto="esporangióforo" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.G + 2.9} until={K.H - 0.3} texto="es un moho de agua" x={340} y={800} tam={40} borde={KC.cyan} />
+      <Etq T={T} at={K.G + 1.0} until={K.H - 0.3} x={60} y={1410} texto="papa" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.G + 4.4} until={K.H - 0.3} x={1040} y={1410} lado="izq" texto="jitomate" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.5} until={K.L - 0.3} x={60} y={250} texto="tizón tardío" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.H + 0.9} until={K.L - 0.3} x={60} y={305} texto="Phytophthora infestans" it tam={38} color={KC.ink} />
+      <Etq T={T} at={K.H + 2.4} until={K.L - 0.3} x={60} y={1475} texto="envés (abajo): pelusa blanca" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.L + 0.2} until={K.N - 0.3} texto="AL MICROSCOPIO · envés de la hoja" x={500} y={320} tam={32} />
+      <Etq T={T} at={K.L + 1.6} until={K.N - 0.3} x={340} y={444} texto="esporangio" tam={32} color={KC.gold2} />
+      <Etq T={T} at={K.L + 2.2} until={K.N - 0.3} x={830} y={1106} lado="izq" texto="esporangióforo" tam={30} color={KC.texto} />
       <Chip T={T} at={K.N + 1.6} until={K.E - 0.3} texto="8 a 12 nadadores por limón" x={380} y={470} tam={32} borde={KC.cyan} />
       <Etq T={T} at={K.N + 2.4} until={K.E - 0.3} x={60} y={1150} texto="zoospora · 2 flagelos" tam={30} color={KC.gold2} />
       <Etq T={T} at={K.N + 0.3} until={K.E - 0.3} x={150} y={620} texto="agua y frío" tam={30} color={KC.cyan} />
@@ -368,44 +372,44 @@ function PapaShot() {
       <Etq T={T} at={K.Pa + 0.6} until={K.Pa + 2.0} x={40} y={1180} texto="crece en hilos (micelio)" tam={30} color={KC.gold2} />
       <TarjetaPared T={T} at={K.Pa + 1.8} until={K.P - 0.2} x={290} y={760} titulo="hongo" borde={KC.ink} filas={[['quitina', true]]} />
       <TarjetaPared T={T} at={K.Pa + 2.3} until={K.P - 0.2} x={790} y={880} titulo="Phytophthora" it borde={KC.red} filas={[['quitina: casi nada', false], ['celulosa', true]]} />
-      <Chip T={T} at={K.Pr + 0.3} until={K.I - 0.3} texto="oomiceto" x={540} y={470} tam={44} borde={KC.gold} />
-      <Etq T={T} at={K.Pr + 1.0} until={K.I - 0.3} x={20} y={945} texto="alga parda" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Pr + 1.3} until={K.I - 0.3} x={230} y={715} texto="diatomea" tam={28} color={KC.ink} lado="der" />
-      <Etq T={T} at={K.Pr + 1.6} until={K.I - 0.3} x={430} y={905} texto="moho de agua" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Pr + 2.4} until={K.I - 0.3} x={1040} y={880} lado="izq" texto="hongos" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Pr + 2.4} until={K.I - 0.3} x={40} y={615} texto="estramenopilos" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.I + 0.3} until={K.He - 0.3} texto="desde 1845 · Irlanda" x={400} y={470} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.I + 2.4} until={K.He - 0.3} texto="≈ 1 millón de muertos" x={540} y={1060} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.I + 3.6} until={K.He - 0.3} texto="más de 1 millón emigró" x={540} y={1150} tam={40} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.He + 0.1} until={K.H1 - 0.3} anio="2013" quien="Múnich y Kew (Londres)" revista="Yoshida et al., eLife" y={560} />
-      <Chip T={T} at={K.H1 + 0.2} until={K.H1 + 1.9} texto="HERB-1 · un linaje distinto" x={540} y={820} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.H1 + 0.8} until={K.H1 + 1.9} texto="se creyó extinto (2013)" x={540} y={940} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.H1 + 2.8} until={K.M - 0.3} texto="rastro hallado en América (2014)" x={540} y={1130} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.H1 + 3.2} until={K.M - 0.3} x={mxX - 40} y={mxY + 70} texto="México" tam={28} color={KC.ink} lado="izq" />
-      <Etq T={T} at={K.H1 + 3.4} until={K.M - 0.3} x={anX + 60} y={anY - 60} texto="Sudamérica" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.H1 + 3.6} until={K.M - 0.3} texto="Martin et al., Mol Biol Evol, 2014" x={360} y={470} tam={24} borde={KC.ink} mono />
-      <MiniEstudio T={T} at={K.M + 1.2} until={K.C - 0.3} x={310} y={420} anio="2014" quien="Goss, PNAS: México" />
-      <MiniEstudio T={T} at={K.M + 2.0} until={K.C - 0.3} x={800} y={1060} anio="2025" quien="Coomber, PLoS ONE: Andes" color={KC.cyan} />
-      <Etq T={T} at={K.M + 1.4} until={K.C - 0.3} x={30} y={mxY + 70} texto="valle de Toluca" tam={24} color={KC.ink} />
-      <Etq T={T} at={K.M + 1.6} until={K.C - 0.3} x={tlX + 20} y={tlY - 40} texto="Tlaxcala" tam={24} color={KC.ink} />
-      <Etq T={T} at={K.M + 2.2} until={K.C - 0.3} x={anX - 40} y={anY + 70} texto="Andes" tam={28} color={KC.ink} lado="izq" />
-      <Chip T={T} at={K.M + 3.0} until={K.C - 0.3} texto="sin resolver" x={310} y={1130} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="moho de agua, no hongo" x={380} y={470} tam={40} borde={KC.cyan} />
+      <Chip T={T} at={K.Pr + 0.3} until={K.I - 0.3} texto="oomiceto" x={540} y={330} tam={44} borde={KC.gold} />
+      <Etq T={T} at={K.Pr + 1.0} until={K.I - 0.3} x={zp(20, 945, ...ZP)[0]} y={zp(20, 945, ...ZP)[1]} texto="alga parda" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Pr + 1.3} until={K.I - 0.3} x={zp(230, 715, ...ZP)[0]} y={zp(230, 715, ...ZP)[1]} texto="diatomea" tam={28} color={KC.ink} lado="der" />
+      <Etq T={T} at={K.Pr + 1.6} until={K.I - 0.3} x={zp(430, 905, ...ZP)[0]} y={zp(430, 905, ...ZP)[1]} texto="moho de agua" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Pr + 2.4} until={K.I - 0.3} x={zp(1040, 880, ...ZP)[0] - 20} y={zp(1040, 880, ...ZP)[1]} lado="izq" texto="hongos" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Pr + 2.4} until={K.I - 0.3} x={zp(40, 615, ...ZP)[0]} y={zp(40, 615, ...ZP)[1]} texto="estramenopilos" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.I + 0.3} until={K.He - 0.3} texto="desde 1845 · Irlanda" x={540} y={290} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.I + 2.4} until={K.He - 0.3} texto="≈ 1 millón de muertos" x={540} y={1395} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.I + 3.6} until={K.He - 0.3} texto="más de 1 millón emigró" x={540} y={1480} tam={40} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.He + 0.1} until={K.H1 - 0.3} anio="2013" quien="Múnich y Kew (Londres)" revista="Yoshida et al., eLife" y={330} />
+      <Chip T={T} at={K.H1 + 0.2} until={K.H1 + 1.9} texto="HERB-1 · un linaje distinto" x={440} y={250} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.H1 + 0.8} until={K.H1 + 1.9} texto="se creyó extinto (2013)" x={540} y={1460} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.H1 + 2.8} until={K.M - 0.3} texto="rastro hallado en América (2014)" x={540} y={1415} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.H1 + 3.2} until={K.M - 0.3} x={zp(mxX - 40, mxY + 70, ...ZA)[0]} y={zp(mxX - 40, mxY + 70, ...ZA)[1]} texto="México" tam={28} color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.H1 + 3.4} until={K.M - 0.3} x={zp(anX + 60, anY - 60, ...ZA)[0]} y={zp(anX + 60, anY - 60, ...ZA)[1]} texto="Sudamérica" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.H1 + 3.6} until={K.M - 0.3} texto="Martin et al., Mol Biol Evol, 2014" x={540} y={1490} tam={24} borde={KC.ink} mono />
+      <MiniEstudio T={T} at={K.M + 1.2} until={K.C - 0.3} x={300} y={255} anio="2014" quien="Goss, PNAS: México" />
+      <MiniEstudio T={T} at={K.M + 2.0} until={K.C - 0.3} x={820} y={1430} anio="2025" quien="Coomber, PLoS ONE: Andes" color={KC.cyan} />
+      <Etq T={T} at={K.M + 1.4} until={K.C - 0.3} x={30} y={zp(0, mxY + 70, ...ZA)[1]} texto="valle de Toluca" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.M + 1.6} until={K.C - 0.3} x={zp(tlX + 20, tlY - 40, ...ZA)[0]} y={zp(tlX + 20, tlY - 40, ...ZA)[1]} texto="Tlaxcala" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.M + 2.2} until={K.C - 0.3} x={zp(anX - 40, anY + 70, ...ZA)[0]} y={zp(anX - 40, anY + 70, ...ZA)[1]} texto="Andes" tam={28} color={KC.ink} lado="izq" />
+      <Chip T={T} at={K.M + 3.0} until={K.C - 0.3} texto="sin resolver" x={280} y={1180} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.C + 1.8} until={K.Ou} texto="moho de agua, no hongo" x={395} y={480} tam={40} borde={KC.cyan} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={175} />
-      <BarraEscala T={T} at={K.H} until={K.L} texto="5 cm" largo={190} />
-      <BarraEscala T={T} at={K.L} until={K.N} texto="30 µm" largo={132} />
+      <BarraEscala T={T} at={K.G} until={K.H} texto="5 cm" largo={175 * ZC[0]} />
+      <BarraEscala T={T} at={K.H} until={K.L} texto="5 cm" largo={190 * ZH[0]} />
+      <BarraEscala T={T} at={K.L} until={K.N} texto="30 µm" largo={132 * ZL[0]} />
       <BarraEscala T={T} at={K.N} until={K.E} texto="10 µm" largo={150} />
       <BarraEscala T={T} at={K.E} until={K.E + 2.0} texto="10 µm" largo={120} />
       <BarraEscala T={T} at={K.E + 2.0} until={K.Pa} texto="30 µm" largo={70} />
       <BarraEscala T={T} at={K.Pa} until={K.P} texto="30 µm" largo={120} />
       <BarraEscala T={T} at={K.P} until={K.Pr} texto="10 µm" largo={110} />
       <BarraEscala T={T} at={K.Pr} until={K.I} texto="dibujos no a escala" largo={120} />
-      <BarraEscala T={T} at={K.I} until={K.He} texto="100 km" largo={106} />
-      <BarraEscala T={T} at={K.He} until={K.H1} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.H1} until={K.C} texto="1000 km" largo={67} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={175} />
+      <BarraEscala T={T} at={K.I} until={K.He} texto="100 km" largo={106 * ZI[0]} />
+      <BarraEscala T={T} at={K.He} until={K.H1} texto="10 cm" largo={110 * 1.35} />
+      <BarraEscala T={T} at={K.H1} until={K.C} texto="1000 km" largo={67 * ZA[0]} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={175 * ZC[0]} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.H - 0.1} texto="Ese hongo de la papa *no es un hongo.*" />
