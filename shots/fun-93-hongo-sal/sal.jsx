@@ -35,7 +35,7 @@ function MedidorSal({ T, x, y, alto = 760, valor = 0, marcas = 1 }) {
   const Y = (v) => y + alto - v * alto, v = kclamp(valor, 0, 1);
   return <g>
     <rect x={x} y={y} width={120} height={alto} rx={60} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={8} />
-    <rect x={x + 14} y={Y(v)} width={92} height={alto * v - 14} rx={46} fill={SO.agua} />
+    <rect x={x + 14} y={Y(v)} width={92} height={Math.max(0, alto * v - 14)} rx={46} fill={SO.agua} />
     {Array.from({ length: Math.round(v * 40) }, (_, i) => <rect key={i} x={x + 30 + (i * 37) % 60} y={y + alto - 30 - (i * 53) % Math.max(20, alto * v - 40)} width={12} height={12} fill="#fff" opacity=".8" />)}
     {marcas > 0 && [[0.135, 'mar ≈ 3.5 %', SO.mar], [0.385, 'mínimo para crecer ≈ 10 %', KC.orange], [1, 'saturada: ya no cabe más', KC.red]].map(([m, t, c], i) =>
       <g key={i} opacity={kprog(marcas, i * 0.33, i * 0.33 + 0.3)}><line x1={x - 20} y1={Y(m)} x2={x + 150} y2={Y(m)} stroke={c} strokeWidth={8} strokeLinecap="round" />
@@ -78,19 +78,21 @@ function Cecina({ x, y, s = 1 }) {
   </g>;
 }
 // Salinas: estanques rectangulares con orillas blancas de sal.
-function Salinas({ T, x, y }) {
+function Salinas({ T, x, y, alto = 100 }) {
   return <g transform={`translate(${x} ${y})`}>
-    {[0, 1, 2].map((f) => [0, 1, 2].map((c) => <rect key={f + '' + c} x={c * 300} y={f * 120} width={280} height={100} rx={8} fill={mixHex('#7fd3ff', '#f2f6f8', (f * 3 + c) / 9)} stroke="#e9e2cf" strokeWidth={10} />))}
+    {[0, 1, 2].map((f) => [0, 1, 2].map((c) => <rect key={f + '' + c} x={c * 300} y={f * (alto + 20)} width={280} height={alto} rx={8} fill={mixHex('#7fd3ff', '#f2f6f8', (f * 3 + c) / 9)} stroke="#e9e2cf" strokeWidth={10} />))}
   </g>;
 }
 function BanderaFranjas({ x, y, w = 180 }) {
   return <g transform={`translate(${x} ${y})`}><rect width={w} height={w * 0.2} fill="#fff" stroke={KC.ink} strokeWidth={4} /><rect y={w * 0.2} width={w} height={w * 0.2} fill="#0057b8" stroke={KC.ink} strokeWidth={4} /><rect y={w * 0.4} width={w} height={w * 0.2} fill="#ed1c24" stroke={KC.ink} strokeWidth={4} /></g>;
 }
-function Pez({ x, y, s = 1 }) {
+function Pez({ x, y, s = 1, manchas = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M -160 0 Q -60 -90 80 -30 L 160 -80 L 140 0 L 160 80 L 80 30 Q -60 90 -160 0 Z" fill={SO.bac} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <circle cx={-110} cy={-10} r={9} fill={KC.ink} />
     {[[-40, -10], [10, 10], [50, -6]].map(([a, b], i) => <rect key={i} x={a} y={b} width={14} height={14} fill="#fff" stroke="#b9c6d0" strokeWidth={2} />)}
+    {[[-70, 14, 7], [-12, -24, 6], [34, 22, 8], [84, -8, 5]].map(([a, b, r], i) => { const q = kclamp(manchas * 4 - i, 0, 1); return q > 0 ? <g key={'m' + i}>
+      <circle cx={a} cy={b} r={r * q} fill={SO.cafe} opacity=".85" /><circle cx={a + r * 0.4} cy={b - r * 0.3} r={r * 0.45 * q} fill={SO.cafe2} opacity=".8" /></g> : null; })}
   </g>;
 }
 
@@ -103,8 +105,8 @@ function SalShot() {
       {/* 1–2 · gancho: el bacalao salado y sus manchitas; lupa: racimos de células */}
       <Escena T={T} a={K.G} b={K.Mi} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Bacalao T={T} x={430} y={900} s={1.4} rot={Math.sin(T * 2) * 3} manchas={kprog(T, K.G + 0.15, K.G + 1.4)} />)}
-        <Lupa T={T} at={K.N + 0.2} until={K.Mi - 0.4} x={760} y={620} r={220} fx={570} fy={940} tinte={KC.gold2} etiqueta="AL MICROSCOPIO"
+        {fsvg(<Bacalao T={T} x={540} y={1000} s={1.7} rot={Math.sin(T * 2) * 3} manchas={kprog(T, K.G + 0.15, K.G + 1.4)} />)}
+        <Lupa T={T} at={K.N + 0.2} until={K.Mi - 0.4} x={740} y={640} r={220} fx={591} fy={932} tinte={KC.gold2} etiqueta="AL MICROSCOPIO"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#1c1410" />
             <rect x={r * 1.1} y={r * 0.35} width={110} height={110} rx={6} fill="#e8f3fa" opacity=".85" transform={`rotate(12 ${r * 1.1} ${r * 0.35})`} />
             <Racimo2 T={t} x={r * 0.7} y={r * 1.0} s={1.3} n={9} pared={7} />
@@ -113,24 +115,27 @@ function SalShot() {
       {/* 3–4 · medidor: mar, mínimo y saturada; el vaso */}
       <Escena T={T} a={K.Mi} b={K.Se} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
-          <MedidorSal T={T} x={110} y={420} alto={760} valor={T < K.Sa ? klerp(0, 0.385, kprog(T, K.Mi + 0.3, K.Mi + 2.6)) : klerp(0.385, 1, kprog(T, K.Sa + 0.2, K.Sa + 1.6))} marcas={T < K.Sa ? kprog(T, K.Mi + 0.5, K.Mi + 3.0) * 0.66 : 0.66 + kprog(T, K.Sa + 1.2, K.Sa + 1.8) * 0.34} />
-          <g opacity={kprog(T, K.Sa + 0.5, K.Sa + 1.0)}><Vaso x={830} y={1000} s={0.7} cristales={kprog(T, K.Sa + 0.8, K.Sa + 2.2)} /></g>
-        </>)}
+        {/* pase a mano: el conjunto más grande y centrado; el hongo aparece dentro del medidor al llegar al mínimo y sube hasta saturada */}
+        {fsvg((() => { const val = T < K.Sa ? klerp(0, 0.385, kprog(T, K.Mi + 0.3, K.Mi + 2.6)) : klerp(0.385, 1, kprog(T, K.Sa + 0.2, K.Sa + 1.6));
+          return <g transform="translate(540 980) scale(1.15) translate(-512 -836)">
+            <MedidorSal T={T} x={110} y={420} alto={760} valor={val} marcas={T < K.Sa ? kprog(T, K.Mi + 0.5, K.Mi + 3.0) * 0.66 : 0.66 + kprog(T, K.Sa + 1.2, K.Sa + 1.8) * 0.34} />
+            <g opacity={kprog(val, 0.34, 0.385)}><Racimo2 T={T} x={170} y={420 + 760 - val * 760 + 62} s={0.62} n={6} pared={6} seed={4} /></g>
+            <g opacity={kprog(T, K.Sa + 0.5, K.Sa + 1.0)}><Vaso x={790} y={1110} s={0.85} cristales={kprog(T, K.Sa + 0.8, K.Sa + 2.2)} /></g>
+          </g>; })())}
       </Escena>
       {/* 5 · la sal jala el agua: la célula se arruga; cecina y bacalao */}
       <Escena T={T} a={K.Se} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <CelulaSeca T={T} x={540} y={720} r={190} seca={kprog(T, K.Se + 0.4, K.Se + 2.4)} />
-          <g opacity={kprog(T, K.Se + 2.8, K.Se + 3.3)}><Cecina x={290} y={1080} s={0.8} /><Bacalao T={T} x={790} y={1090} s={0.55} /></g>
+          <CelulaSeca T={T} x={540} y={800} r={250} seca={kprog(T, K.Se + 0.4, K.Se + 2.4)} />
+          <g opacity={kprog(T, K.Se + 2.8, K.Se + 3.3)}><Cecina x={290} y={1340} s={1.15} /><Bacalao T={T} x={790} y={1350} s={0.75} /></g>
         </>)}
       </Escena>
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Pa} zoom={0.06}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><CeluWal x={300} y={880} r={150} pared={12} /><Interrogacion T={T} x={300} y={600} tam={260} /></>)}
+        {fsvg(<><CeluWal x={285} y={960} r={215} pared={17} /><Interrogacion T={T} x={790} y={1110} tam={460} /></>)}
       </Escena>
       {/* 7–8 · la armadura y los racimos */}
       <Escena T={T} a={K.Pa} b={K.E} zoom={0.04}>
@@ -138,72 +143,82 @@ function SalShot() {
         <Ambiente T={T} n={16} />
         {fsvg(<>
           <g opacity={1 - kprog(T, K.B - 0.2, K.B + 0.2)}>
-            <CeluWal x={290} y={830} r={150} pared={12} />
-            <CeluWal x={790} y={830} r={150} pared={klerp(12, 28, kprog(T, K.Pa + 0.8, K.Pa + 2.4, kEase.sale))} />
+            {/* pase a mano: células 1.43x (el grosor de pared conserva la proporción 12 → 28 verificada) */}
+            <CeluWal x={285} y={960} r={215} pared={17} />
+            <CeluWal x={795} y={960} r={215} pared={klerp(17, 40, kprog(T, K.Pa + 0.8, K.Pa + 2.4, kEase.sale))} />
           </g>
           <g opacity={kprog(T, K.B - 0.1, K.B + 0.3)}>
-            <Racimo2 T={T} x={290} y={860} s={1.2} n={4} pared={6} />
-            <Racimo2 T={T} x={760} y={830} s={klerp(1.2, 2.4, kprog(T, K.B + 1.0, K.B + 3.0, kEase.sale))} n={16} crece={kprog(T, K.B + 0.8, K.B + 3.0)} pared={6} seed={5} />
+            {/* pase a mano: racimos 1.5x (misma proporción entre los dos); el de más sal ya empieza como racimo de 4 células, igual que el otro */}
+            {/* la cámara empieza cerca de los dos racimos iguales y se aleja mientras el de más sal crece (los dos se escalan juntos) */}
+            <g transform={`translate(540 850) scale(${klerp(1.25, 1, kprog(T, K.B + 1.0, K.B + 3.0, kEase.sale))}) translate(-540 -850)`}>
+              <Racimo2 T={T} x={265} y={950} s={1.8} n={4} pared={6} />
+              <Racimo2 T={T} x={690} y={750} s={klerp(1.8, 3.6, kprog(T, K.B + 1.0, K.B + 3.0, kEase.sale))} n={16} crece={klerp(0.25, 1, kprog(T, K.B + 0.8, K.B + 3.0))} pared={6} seed={5} />
+            </g>
           </g>
         </>)}
       </Escena>
       {/* 9 · el estudio: salinas de Eslovenia */}
       <Escena T={T} a={K.E} b={K.Pe} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<><g opacity={kprog(T, K.E + 2.6, K.E + 3.2)}><Salinas T={T} x={95} y={820} /></g></>)}
+        {fsvg(<><g opacity={kprog(T, K.E + 0.1, K.E + 0.6)}><Salinas T={T} x={95} y={880} alto={150} /></g></>)}
       </Escena>
       {/* 10 · 1887, Noruega: el nombre */}
       <Escena T={T} a={K.Pe} b={K.Ge} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<Pez x={540} y={880} s={1.6} />)}
+        {fsvg(<Pez x={540} y={980} s={2.4} manchas={kprog(T, K.Pe + 0.6, K.Pe + 2.0)} />)}
       </Escena>
       {/* 11 · genoma */}
       <Escena T={T} a={K.Ge} b={K.C} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {fsvg((() => { const q = kprog(T, K.Ge + 0.2, K.Ge + 1.6, kEase.sale), q2 = kprog(T, K.Ge + 1.4, K.Ge + 2.2, kEase.sale); return <g>
-          <text x={80} y={600} style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>humano · ≈ 3,000 millones de letras</text>
-          <rect x={80} y={630} width={2000 * q} height={80} rx={14} fill={KC.lilac} stroke={KC.ink} strokeWidth={6} />
-          <text x={80} y={860} style={{ font:`700 34px ${KF.mono}`, fontStyle:'italic' }} fill={KC.texto} opacity={q2}>W. ichthyophaga</text>
-          <text x={420} y={860} style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto} opacity={q2}>· ≈ 9.6 millones</text>
-          <rect x={80} y={890} width={Math.max(6, 7 * q2)} height={80} rx={3} fill={KC.mint} stroke={KC.ink} strokeWidth={3} />
+          <text x={80} y={760} style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto}>humano · ≈ 3,000 millones de letras</text>
+          <rect x={80} y={790} width={2000 * q} height={80} rx={14} fill={KC.lilac} stroke={KC.ink} strokeWidth={6} />
+          <text x={80} y={1010} style={{ font:`700 34px ${KF.mono}`, fontStyle:'italic' }} fill={KC.texto} opacity={q2}>W. ichthyophaga</text>
+          <text x={420} y={1010} style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto} opacity={q2}>· ≈ 9.6 millones</text>
+          <rect x={80} y={1040} width={Math.max(6, 7 * q2)} height={80} rx={3} fill={KC.mint} stroke={KC.ink} strokeWidth={3} />
+          {/* pase a mano: el hongo sigue en cuadro (antes eran solo barras) */}
+          <g opacity={kprog(T, K.Ge + 0.3, K.Ge + 0.9)}><Racimo2 T={T} x={600} y={1250} s={2.4} n={9} pared={7} /></g>
         </g>; })())}
       </Escena>
       {/* 12 · cierre: el mismo bacalao, con las manchitas señaladas */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Bacalao T={T} x={430} y={900} s={1.4} rot={Math.sin(T * 2) * 3} manchas={1} marca={kprog(T, K.C + 0.5, K.C + 1.2)} />)}
+        {fsvg(<Bacalao T={T} x={540} y={1000} s={1.7} rot={Math.sin(T * 2) * 3} manchas={1} marca={kprog(T, K.C + 0.5, K.C + 1.2)} />)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.4} until={K.N - 0.3} texto="no es mugre" x={330} y={560} tam={44} borde={KC.red} />
-      <EtqMix T={T} at={K.N + 0.6} until={K.Mi - 0.3} x={60} y={430} partes={[['Wallemia ichthyophaga', true]]} tam={40} color={KC.ink} sombra={false} />
-      <Chip T={T} at={K.N + 1.6} until={K.Mi - 0.3} texto="de los más halófilos conocidos" x={430} y={1180} tam={34} borde={KC.gold} />
-      <Chip T={T} at={K.Se + 0.3} until={K.P - 0.3} texto="AL MICROSCOPIO · LA SAL JALA EL AGUA" x={540} y={420} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Se + 3.0} until={K.P - 0.3} x={150} y={970} texto="cecina" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Se + 3.2} until={K.P - 0.3} x={630} y={950} texto="bacalao salado" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Pa + 0.3} until={K.B - 0.3} x={150} y={1050} texto="menos sal" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.Pa + 0.6} until={K.B - 0.3} x={640} y={1050} texto="más sal" tam={30} color={KC.gold2} />
-      <Chip T={T} at={K.Pa + 1.6} until={K.B - 0.3} texto="pared = armadura" x={540} y={470} tam={40} borde={KC.gold2} />
-      <Chip T={T} at={K.B + 0.3} until={K.E - 0.3} texto="racimos: casi 4× más grandes con más sal" x={540} y={470} tam={30} borde={KC.mint} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Pe - 0.3} anio="2005" quien="Zalar et al. · U. de Liubliana" revista="Antonie van Leeuwenhoek, 2005" x={460} y={560} />
-      <Etq T={T} at={K.E + 2.8} until={K.Pe - 0.3} x={95} y={780} texto="salinas de Eslovenia (esquema)" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Pe + 0.3} until={K.Ge - 0.3} texto="1887 · Noruega · bacalao salado" x={540} y={470} tam={36} borde={KC.ink} />
-      <EtqMix T={T} at={K.Pe + 2.0} until={K.Ge - 0.3} x={540} y={1150} centro partes={[['ichthyo', true], [' = pez · ', false], ['phaga', true], [' = que come', false]]} tam={38} color={KC.ink} sombra={false} />
-      <Chip T={T} at={K.Ge + 0.3} until={K.C - 0.3} texto="esquema · el humano se sale de la pantalla" x={540} y={440} tam={26} borde={KC.lilac} mono />
-      <EtqMix T={T} at={K.C + 0.8} until={K.Ou} x={60} y={430} partes={[['Wallemia', true]]} tam={44} color={KC.ink} sombra={false} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="donde casi ningún hongo puede" x={360} y={560} tam={32} borde={KC.gold} />
+      <Chip T={T} at={K.G + 0.4} until={K.N - 0.3} texto="no es mugre" x={330} y={610} tam={44} borde={KC.red} />
+      <EtqMix T={T} at={K.N + 0.6} until={K.Mi - 0.3} x={60} y={345} partes={[['Wallemia ichthyophaga', true]]} tam={40} color={KC.ink} sombra={false} />
+      <Chip T={T} at={K.N + 1.6} until={K.Mi - 0.3} texto="de los más halófilos conocidos" x={540} y={1440} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.Se + 0.3} until={K.P - 0.3} texto="AL MICROSCOPIO · LA SAL JALA EL AGUA" x={540} y={330} tam={30} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Se + 3.0} until={K.P - 0.3} x={130} y={1215} texto="cecina" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Se + 3.2} until={K.P - 0.3} x={610} y={1195} texto="bacalao salado" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Pa + 0.3} until={K.B - 0.3} x={130} y={1250} texto="menos sal" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.Pa + 0.6} until={K.B - 0.3} x={640} y={1250} texto="más sal" tam={30} color={KC.gold2} />
+      <Chip T={T} at={K.Pa + 1.6} until={K.B - 0.3} texto="pared = armadura" x={540} y={600} tam={40} borde={KC.gold2} />
+      <Chip T={T} at={K.B + 0.3} until={K.E - 0.3} texto="racimos: casi 4× más grandes con más sal" x={540} y={440} tam={30} borde={KC.mint} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Pe - 0.3} anio="2005" quien="Zalar et al. · U. de Liubliana" revista="Antonie van Leeuwenhoek, 2005" x={540} y={500} />
+      <Etq T={T} at={K.E + 2.8} until={K.Pe - 0.3} x={95} y={830} texto="salinas de Eslovenia (esquema)" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Pe + 0.3} until={K.Ge - 0.3} texto="1887 · Noruega · bacalao salado" x={540} y={560} tam={36} borde={KC.ink} />
+      <EtqMix T={T} at={K.Pe + 2.0} until={K.Ge - 0.3} x={540} y={1340} centro partes={[['ichthyo', true], [' = pez · ', false], ['phaga', true], [' = que come', false]]} tam={38} color={KC.ink} sombra={false} />
+      <Chip T={T} at={K.Ge + 0.3} until={K.C - 0.3} texto="esquema · el humano se sale de la pantalla" x={540} y={600} tam={26} borde={KC.lilac} mono />
+      <EtqMix T={T} at={K.C + 0.8} until={K.Ou} x={60} y={540} partes={[['Wallemia', true]]} tam={44} color={KC.ink} sombra={false} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="donde casi ningún hongo puede" x={360} y={640} tam={32} borde={KC.gold} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Mi} texto="5 cm" largo={170} />
+      {/* pase a mano: barras en la misma proporción que cada dibujo agrandado (bacalao ×1.7/1.4, célula ×250/190, pez ×2.4/1.6).
+          Pared y racimos quedan como «esquema», igual que en guion.md: sus tamaños dibujados no comparten una sola escala. */}
+      <BarraEscala T={T} at={K.G} until={K.Mi} texto="5 cm" largo={206} />
       <BarraEscala T={T} at={K.Mi} until={K.Se} texto="esquema" largo={0} />
-      <BarraEscala T={T} at={K.Se} until={K.P} texto="5 µm (célula común, esquema)" largo={100} />
-      <BarraEscala T={T} at={K.Pa} until={K.E} texto="1 µm" largo={100} />
+      <BarraEscala T={T} at={K.Se} until={K.P} texto="5 µm (célula común, esquema)" largo={132} />
+      <BarraEscala T={T} at={K.Pa} until={K.E} texto="esquema" largo={0} />
       <BarraEscala T={T} at={K.E} until={K.Pe} texto="esquema" largo={0} />
-      <BarraEscala T={T} at={K.Pe} until={K.Ge} texto="10 cm" largo={160} />
+      <BarraEscala T={T} at={K.Pe} until={K.Ge} texto="10 cm" largo={240} />
       <BarraEscala T={T} at={K.Ge} until={K.C} texto="esquema" largo={0} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={170} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={206} />
 
-      {/* subtítulos (idx = línea de narracion.json) */}
+      {/* subtítulos (idx = línea de narracion.json) · modo cine: sin subtítulo quemado */}
+      {CINE_OPC.subtitulos && <>
       <Sub T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="No son mugre: *un hongo que necesita sal.*" />
       <Sub T={T} idx={1} at={K.N + 0.1} until={K.Mi - 0.1} texto="*_Wallemia ichthyophaga._*" />
       <Sub T={T} idx={2} at={K.Mi + 0.1} until={K.Sa - 0.1} texto="Necesita *al menos 10 %* de sal." />
@@ -216,6 +231,7 @@ function SalShot() {
       <Sub T={T} idx={9} at={K.Pe + 0.1} until={K.Ge - 0.1} texto="1887, Noruega: *«come pescado».*" />
       <Sub T={T} idx={10} at={K.Ge + 0.1} until={K.C - 0.1} texto="Genoma: *9.6 millones* de letras." />
       <Sub T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Vive donde *casi ningún hongo puede.*" />
+      </>}
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 2.6, 'avatar_11_sorprendido', 'gancho'],
