@@ -22,6 +22,7 @@ function EtqIt({ T, at, until, x, y, texto, lado = 'der', color = KC.texto, tam 
 }
 // Subtítulo del kit con cursivas: _palabra_ = cursiva; *palabras* = resaltado dorado. Usa window.SUBS[idx] en la narrada.
 function SubIt({ T, at, until, texto, idx, color = KC.gold2, tam = 60 }) {
+  if (window.CINE_OPC && !window.CINE_OPC.subtitulos) return null;   // estilo cine: sin subtítulo quemado (mismo interruptor que el kit)
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
@@ -327,7 +328,7 @@ function DefensaShot() {
   const K = { G: CUES.Gancho, SG: CUES.SinGlobulos, Es: CUES.Espora, Q: CUES.Quitina, R: CUES.Receptor, A: CUES.Alarma, P: CUES.Pregunta, Ef: CUES.Efectores,
     S: CUES.Sacrificio, E: CUES.Estudio, M: CUES.Manchas, As: CUES.Aspirina, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const zS = klerp(1.18, 0.9, kprog(T, K.S + 2.6, K.S + 4.6, kEase.suave));
+  const zS = klerp(1.5, 1.12, kprog(T, K.S + 2.6, K.S + 4.6, kEase.suave));
   const nPuntosG = kprog(T, K.G + 0.15, K.G + 2.6) * PUNTOS.length;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -335,74 +336,74 @@ function DefensaShot() {
       <Escena T={T} a={K.G} b={K.SG} zoom={0.06} origen="35% 55%">
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Jitomatera T={T} x={860} y={1170} s={0.78} />
-          <path d="M 760 980 Q 620 900 560 900" stroke={KC.ink} strokeWidth={5} strokeDasharray="14 10" fill="none" />
-          <HojaJitomate T={T} x={330} y={1190} s={0.92} rot={8} nPuntos={nPuntosG} />
+          <Jitomatera T={T} x={880} y={650} s={0.62} />
+          <path d="M 808 590 Q 730 610 695 690" stroke={KC.ink} strokeWidth={5} strokeDasharray="14 10" fill="none" />
+          <HojaJitomate T={T} x={430} y={1570} s={1.4} rot={8} nPuntos={nPuntosG} />
         </>)}
       </Escena>
       {/* 1 · sin glóbulos blancos: cada célula se defiende */}
       <Escena T={T} a={K.SG} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <GloboBlanco x={250} y={850} r={150} tache={kprog(T, K.SG + 1.0, K.SG + 1.4, kEase.sale)} />
+          <GloboBlanco x={290} y={600} r={190} tache={kprog(T, K.SG + 1.0, K.SG + 1.4, kEase.sale)} />
           {Array.from({ length: 12 }, (_, k) => { const c = k % 3, r = Math.floor(k / 3);
-            return <CeldaHoja key={k} x={520 + c * 160} y={720 + r * 100} w={146} h={88} luz={kprog(T, K.SG + 1.8 + k * 0.12, K.SG + 2.2 + k * 0.12)} T={T} />; })}
+            return <CeldaHoja key={k} x={140 + c * 275} y={870 + r * 148} w={250} h={130} luz={kprog(T, K.SG + 1.8 + k * 0.12, K.SG + 2.2 + k * 0.12)} T={T} />; })}
         </>)}
       </Escena>
       {/* 2 · al microscopio: el conidio cae en el envés, germina y su hifa entra por el estoma */}
       <Escena T={T} a={K.Es} b={K.Q} zoom={0.07} origen="50% 52%">
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<Enves T={T} cayo={kprog(T, K.Es + 0.1, K.Es + 1.1)} tubo={kprog(T, K.Es + 1.3, K.Es + 3.5, kEase.suave)} />)}
+        {fsvg(<g transform="translate(540 910) scale(1.4) translate(-500 -910)"><Enves T={T} cayo={kprog(T, K.Es + 0.1, K.Es + 1.1)} tubo={kprog(T, K.Es + 1.3, K.Es + 3.5, kEase.suave)} /></g>)}
       </Escena>
       {/* 3–5 · por dentro: quitina → receptores → alarma */}
       <Escena T={T} a={K.Q} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<CorteCelula T={T} quit={kprog(T, K.Q + 0.3, K.Q + 0.9)} frag={kprog(T, K.Q + 1.2, K.R + 1.2)} capt={kprog(T, K.R + 0.6, K.R + 2.0)}
-          alarma={kprog(T, K.A, K.A + 0.4)} ros={kprog(T, K.A + 0.4, K.A + 1.0)} callosa={kprog(T, K.A + 1.7, K.A + 2.6)} qnasa={kprog(T, K.A + 3.0, K.A + 4.6)} />)}
+        {fsvg(<g transform="translate(540 890) scale(1.18) translate(-540 -820)"><CorteCelula T={T} quit={kprog(T, K.Q + 0.3, K.Q + 0.9)} frag={kprog(T, K.Q + 1.2, K.R + 1.2)} capt={kprog(T, K.R + 0.6, K.R + 2.0)}
+          alarma={kprog(T, K.A, K.A + 0.4)} ros={kprog(T, K.A + 0.4, K.A + 1.0)} callosa={kprog(T, K.A + 1.7, K.A + 2.6)} qnasa={kprog(T, K.A + 3.0, K.A + 4.6)} /></g>)}
       </Escena>
       {/* 6 · re-gancho: ¿y si el hongo apaga la alarma? */}
       <Escena T={T} a={K.P} b={K.Ef} zoom={0.08}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Alarma T={T} x={270} y={1000} s={1.1} on={1 - kprog(T, K.P + 0.6, K.P + 1.4)} /><Interrogacion T={T} x={270} y={720} tam={300} /></>)}
+        {fsvg(<><Alarma T={T} x={430} y={1180} s={1.6} on={1 - kprog(T, K.P + 0.6, K.P + 1.4)} /><Interrogacion T={T} x={770} y={720} tam={360} /></>)}
       </Escena>
       {/* 7 · efectores; Avr4 tapa la quitina; el guardián Cf-4 lo reconoce y vuelve la alarma */}
       <Escena T={T} a={K.Ef} b={K.S} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<CorteCelula T={T} quit={1} capt={1} callosa={1} efect={kprog(T, K.Ef + 0.2, K.Ef + 1.6)} avr4={kprog(T, K.Ef + 1.2, K.Ef + 2.4)}
-          qnasa={kprog(T, K.Ef + 1.6, K.Ef + 3.0)} alarma={1} apaga={kprog(T, K.Ef + 0.6, K.Ef + 1.6) * (1 - kprog(T, K.Ef + 4.1, K.Ef + 4.5))} guardia={kprog(T, K.Ef + 3.2, K.Ef + 4.2)} />)}
+        {fsvg(<g transform="translate(540 890) scale(1.18) translate(-540 -820)"><CorteCelula T={T} quit={1} capt={1} callosa={1} efect={kprog(T, K.Ef + 0.2, K.Ef + 1.6)} avr4={kprog(T, K.Ef + 1.2, K.Ef + 2.4)}
+          qnasa={kprog(T, K.Ef + 1.6, K.Ef + 3.0)} alarma={1} apaga={kprog(T, K.Ef + 0.6, K.Ef + 1.6) * (1 - kprog(T, K.Ef + 4.1, K.Ef + 4.5))} guardia={kprog(T, K.Ef + 3.2, K.Ef + 4.2)} /></g>)}
       </Escena>
       {/* 8 · respuesta hipersensible: las células atacadas mueren; el hongo se detiene */}
       <Escena T={T} a={K.S} b={K.E} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={12} />
         {(() => { const z = zS;
-          return <div style={{ position:'absolute', inset:0, transform:`scale(${z})`, transformOrigin:'30% 42%' }}>
+          return <div style={{ position:'absolute', inset:0, transform:`translateY(110px) scale(${z})`, transformOrigin:'30% 42%' }}>
             {fsvg(<Tejido T={T} hifa={klerp(0.55, 0.82, kprog(T, K.S - 0.3, K.S + 1.0))} hr={kprog(T, K.S + 0.6, K.S + 2.4)} />)}</div>; })()}
       </Escena>
       {/* 9–10 · el estudio de 2007 (Arabidopsis) y otro hongo: Alternaria */}
       <Escena T={T} a={K.E} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Roseta T={T} x={290} y={940} s={0.95} alarma={kprog(T, K.E + 3.2, K.E + 3.6)} />
-          <Roseta T={T} x={790} y={940} s={0.95} />
-          {[290, 790].map((rx, j) => Array.from({ length: 4 }, (_, i) => { const q = kprog(T, K.E + 2.2 + i * 0.12, K.E + 3.1 + i * 0.12); if (q <= 0 || q >= 1) return null;
-            return <polygon key={j + '-' + i} transform={`translate(${rx - 60 + i * 40} ${klerp(700, 900, kEase.suave(q))})`} points={[0, 60, 120, 180, 240, 300].map((a) => `${12 * Math.cos((a + 30) * Math.PI / 180)},${12 * Math.sin((a + 30) * Math.PI / 180)}`).join(' ')} fill={DX.quitina} stroke={KC.ink} strokeWidth={3} />; }))}
+          <Roseta T={T} x={280} y={1020} s={1.45} alarma={kprog(T, K.E + 3.2, K.E + 3.6)} />
+          <Roseta T={T} x={800} y={1020} s={1.45} />
+          {[280, 800].map((rx, j) => Array.from({ length: 4 }, (_, i) => { const q = kprog(T, K.E + 2.2 + i * 0.12, K.E + 3.1 + i * 0.12); if (q <= 0 || q >= 1) return null;
+            return <polygon key={j + '-' + i} transform={`translate(${rx - 60 + i * 40} ${klerp(740, 1000, kEase.suave(q))})`} points={[0, 60, 120, 180, 240, 300].map((a) => `${12 * Math.cos((a + 30) * Math.PI / 180)},${12 * Math.sin((a + 30) * Math.PI / 180)}`).join(' ')} fill={DX.quitina} stroke={KC.ink} strokeWidth={3} />; }))}
         </>)}
       </Escena>
       <Escena T={T} a={K.M} b={K.As} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <HojaArabidopsis T={T} x={290} y={1190} s={1.05} mancha={klerp(4, 58, kprog(T, K.M + 0.6, K.M + 3.4, kEase.suave))} />
-          <HojaArabidopsis T={T} x={790} y={1190} s={1.05} mancha={klerp(4, 70, kprog(T, K.M + 0.6, K.M + 3.4, kEase.suave))} />
+          <HojaArabidopsis T={T} x={250} y={1530} s={1.9} mancha={klerp(4, 58, kprog(T, K.M + 0.6, K.M + 3.4, kEase.suave))} />
+          <HojaArabidopsis T={T} x={830} y={1530} s={1.9} mancha={klerp(4, 70, kprog(T, K.M + 0.6, K.M + 3.4, kEase.suave))} />
         </>)}
       </Escena>
       {/* 11 · la alarma viaja: señal por el tallo; en las hojas sanas sube el ácido salicílico */}
       <Escena T={T} a={K.As} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(535 1040) scale(1.05) translate(-555 -950)">
           <path d={'M ' + TALLO.map((p) => p.join(' ')).join(' L ')} stroke={DX.hoja2} strokeWidth={22} fill="none" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M 320 1190 L 440 1190 L 425 1260 L 335 1260 Z" fill={DX.maceta} stroke={KC.ink} strokeWidth={6} />
           {HOJAS_P.map((h, i) => { const llega = K.As + 0.8 + i * 0.55; const sa = h.atac ? 0 : kprog(T, llega, llega + 0.4);
@@ -411,74 +412,74 @@ function DefensaShot() {
             return <g><circle cx={p[0]} cy={p[1]} r={30} fill={KC.yellow} opacity=".45" /><circle cx={p[0]} cy={p[1]} r={16} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /></g>; })()}
           <g transform="translate(850 840)" opacity={kprog(T, K.As + 2.6, K.As + 3.0)}><g transform={`scale(${kEase.rebote(kprog(T, K.As + 2.6, K.As + 3.1)) * 0.95})`}><AcidoSalicilico /></g></g>
           <g opacity={kprog(T, K.As + 3.4, K.As + 3.8)}><Pastilla x={850} y={1045} s={0.8} /></g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · cierre: la misma hoja del inicio; cada puntito es una puerta cerrada */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="35% 55%">
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Jitomatera T={T} x={860} y={1170} s={0.78} />
-          <path d="M 760 980 Q 620 900 560 900" stroke={KC.ink} strokeWidth={5} strokeDasharray="14 10" fill="none" />
-          <HojaJitomate T={T} x={330} y={1190} s={0.92} rot={8} nPuntos={PUNTOS.length} puertas={kprog(T, K.C + 0.8, K.C + 3.4)} />
+          <Jitomatera T={T} x={880} y={650} s={0.62} />
+          <path d="M 808 590 Q 730 610 695 690" stroke={KC.ink} strokeWidth={5} strokeDasharray="14 10" fill="none" />
+          <HojaJitomate T={T} x={430} y={1570} s={1.4} rot={8} nPuntos={PUNTOS.length} puertas={kprog(T, K.C + 0.8, K.C + 3.4)} />
         </>)}
       </Escena>
 
       {/* textos y etiquetas */}
-      <Chip T={T} at={K.G + 0.9} until={K.SG - 0.3} texto="¿el hongo ganando?" x={300} y={420} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.G + 3.3} until={K.SG - 0.3} texto="¿o tu planta sacrificándose?" x={330} y={510} tam={30} borde={KC.mint} />
-      <Etq T={T} at={K.G + 3.2} until={K.SG - 0.3} x={640} y={700} texto="tu jitomate" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.SG + 0.4} until={K.Es - 0.3} x={60} y={600} texto="glóbulo blanco" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.SG + 0.6} until={K.Es - 0.3} x={60} y={645} texto="(tu cuerpo sí tiene)" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.SG + 1.1} until={K.Es - 0.3} texto="tu planta: no tiene" x={250} y={1080} tam={30} borde={KC.red} />
-      <Etq T={T} at={K.SG + 1.8} until={K.Es - 0.3} x={520} y={1150} texto="células de la hoja" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Es + 0.1} until={K.Q - 0.3} texto="AL MICROSCOPIO · ENVÉS DE LA HOJA" x={540} y={420} tam={30} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Es + 0.9} until={K.Q - 0.3} x={60} y={490} texto="moho de la hoja del jitomate" tam={28} color={KC.yellow} />
-      <EtqIt T={T} at={K.Es + 1.2} until={K.Q - 0.3} x={60} y={535} texto="conidio de *Cladosporium fulvum*" tam={28} color={KC.yellow} />
-      <Etq T={T} at={K.Es + 2.4} until={K.Q - 0.3} x={40} y={1050} texto="estoma" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Es + 2.6} until={K.Q - 0.3} x={40} y={1095} texto="(poro de la hoja)" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.G + 0.9} until={K.SG - 0.3} texto="¿el hongo ganando?" x={290} y={330} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.G + 3.3} until={K.SG - 0.3} texto="¿o tu planta sacrificándose?" x={310} y={420} tam={30} borde={KC.mint} />
+      <Etq T={T} at={K.G + 3.2} until={K.SG - 0.3} x={750} y={715} texto="tu jitomate" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.SG + 0.4} until={K.Es - 0.3} x={520} y={520} texto="glóbulo blanco" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.SG + 0.6} until={K.Es - 0.3} x={520} y={565} texto="(tu cuerpo sí tiene)" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.SG + 1.1} until={K.Es - 0.3} texto="tu planta: no tiene" x={770} y={690} tam={30} borde={KC.red} />
+      <Etq T={T} at={K.SG + 1.8} until={K.Es - 0.3} x={500} y={800} texto="células de la hoja" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Es + 0.1} until={K.Q - 0.3} texto="AL MICROSCOPIO · ENVÉS DE LA HOJA" x={420} y={345} tam={30} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Es + 0.9} until={K.Q - 0.3} x={60} y={405} texto="moho de la hoja del jitomate" tam={28} color={KC.yellow} />
+      <EtqIt T={T} at={K.Es + 1.2} until={K.Q - 0.3} x={60} y={446} texto="conidio de *Cladosporium fulvum*" tam={28} color={KC.yellow} />
+      <Etq T={T} at={K.Es + 2.4} until={K.Q - 0.3} x={40} y={1150} texto="estoma" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Es + 2.6} until={K.Q - 0.3} x={40} y={1192} texto="(poro de la hoja)" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Q + 0.05} until={K.A - 0.3} texto="POR DENTRO · LA HOJA EN CORTE" x={400} y={380} tam={28} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Q + 0.4} until={K.A - 0.3} x={60} y={505} texto="la hifa crece entre las células" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.Q + 0.8} until={K.A - 0.3} x={60} y={548} texto="su pared: quitina" tam={28} color={KC.gold2} />
-      <EtqIt T={T} at={K.R + 0.4} until={K.A + 4.8} x={80} y={1125} texto="receptores (LYK5 + CERK1 en *Arabidopsis*)" tam={26} color="#7fe0ff" />
-      <Chip T={T} at={K.A + 0.3} until={K.P - 0.3} texto="oxígeno reactivo" x={250} y={390} tam={32} borde={DX.ros} />
-      <Chip T={T} at={K.A + 1.8} until={K.P - 0.3} texto="callosa: refuerza la pared" x={320} y={470} tam={30} borde={DX.callosa} />
-      <Chip T={T} at={K.A + 3.1} until={K.P - 0.3} texto="quitinasas: cortan la quitina" x={330} y={550} tam={30} borde={DX.quitinasa} />
-      <Etq T={T} at={K.Ef + 0.4} until={K.S - 0.3} x={60} y={340} texto="efectores del hongo" tam={30} color={DX.efector} />
-      <Etq T={T} at={K.Ef + 1.4} until={K.S - 0.3} x={60} y={378} texto="Avr4: le tapa la quitina" tam={28} color={DX.avr4} />
-      <EtqIt T={T} at={K.Ef + 3.3} until={K.S - 0.3} x={60} y={416} texto="guardián: receptor del gen *Cf-4*" tam={28} color={DX.guardia} />
-      <Chip T={T} at={K.Ef + 4.2} until={K.S - 0.3} texto="¡alarma otra vez!" x={540} y={1110} tam={32} borde={KC.red} />
+      <Etq T={T} at={K.Q + 0.4} until={K.A - 0.3} x={60} y={540} texto="la hifa crece entre las células" tam={26} color={KC.texto} />
+      <Etq T={T} at={K.Q + 0.8} until={K.A - 0.3} x={60} y={585} texto="su pared: quitina" tam={28} color={KC.gold2} />
+      <EtqIt T={T} at={K.R + 0.4} until={K.A + 4.8} x={80} y={1248} texto="receptores (LYK5 + CERK1 en *Arabidopsis*)" tam={26} color="#7fe0ff" />
+      <Chip T={T} at={K.A + 0.3} until={K.P - 0.3} texto="oxígeno reactivo" x={250} y={290} tam={32} borde={DX.ros} />
+      <Chip T={T} at={K.A + 1.8} until={K.P - 0.3} texto="callosa: refuerza la pared" x={320} y={365} tam={30} borde={DX.callosa} />
+      <Chip T={T} at={K.A + 3.1} until={K.P - 0.3} texto="quitinasas: cortan la quitina" x={330} y={440} tam={30} borde={DX.quitinasa} />
+      <Etq T={T} at={K.Ef + 0.4} until={K.S - 0.3} x={60} y={300} texto="efectores del hongo" tam={30} color={DX.efector} />
+      <Etq T={T} at={K.Ef + 1.4} until={K.S - 0.3} x={60} y={340} texto="Avr4: le tapa la quitina" tam={28} color={DX.avr4} />
+      <EtqIt T={T} at={K.Ef + 3.3} until={K.S - 0.3} x={60} y={380} texto="guardián: receptor del gen *Cf-4*" tam={28} color={DX.guardia} />
+      <Chip T={T} at={K.Ef + 4.2} until={K.S - 0.3} texto="¡alarma otra vez!" x={500} y={1215} tam={32} borde={KC.red} />
       <Chip T={T} at={K.S + 0.6} until={K.E - 0.3} texto="respuesta hipersensible" x={300} y={380} tam={30} borde={KC.red} mono />
       <Etq T={T} at={K.S + 1.6} until={K.E - 0.3} x={60} y={440} texto="solo frena a hongos" tam={26} color={KC.texto} />
       <Etq T={T} at={K.S + 1.6} until={K.E - 0.3} x={60} y={478} texto="que comen de células vivas" tam={26} color={KC.texto} />
       <Chip T={T} at={K.S + 3.0} until={K.E - 0.3} texto="unas pocas células" x={790} y={470} tam={30} borde={KC.gold2} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.M - 0.3} anio="2007" quien="Universidad Meiji, Japón" revista="PNAS, 2007 · con RIKEN" x={360} y={560} />
-      <EtqIt T={T} at={K.E + 1.4} until={K.M - 0.3} x={140} y={750} texto="*Arabidopsis* normal" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.E + 1.8} until={K.M - 0.3} x={640} y={750} texto="sin CERK1" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.E + 3.4} until={K.M - 0.3} texto="¡alarma!" x={290} y={1140} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.E + 3.8} until={K.M - 0.3} texto="sin alarma" x={790} y={1140} tam={30} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.M - 0.3} anio="2007" quien="Universidad Meiji, Japón" revista="PNAS, 2007 · con RIKEN" x={360} y={450} />
+      <EtqIt T={T} at={K.E + 1.4} until={K.M - 0.3} x={100} y={720} texto="*Arabidopsis* normal" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.E + 1.8} until={K.M - 0.3} x={660} y={720} texto="sin CERK1" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.E + 3.4} until={K.M - 0.3} texto="¡alarma!" x={280} y={1335} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.E + 3.8} until={K.M - 0.3} texto="sin alarma" x={800} y={1335} tam={30} borde={KC.ink} />
       <EtqIt T={T} at={K.M + 0.2} until={K.As - 0.3} x={60} y={420} texto="otro hongo: *Alternaria brassicicola*" tam={28} color={KC.ink} />
       <Etq T={T} at={K.M + 0.8} until={K.As - 0.3} x={60} y={465} texto="la mancha = el hongo avanzando" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.M + 0.4} until={K.As - 0.3} x={150} y={600} texto="normal" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.M + 0.4} until={K.As - 0.3} x={650} y={600} texto="sin CERK1" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.M + 2.6} until={K.As - 0.3} texto="≈20 % más grandes · 6 días" x={540} y={1140} tam={30} borde={KC.red} />
-      <Etq T={T} at={K.As + 0.5} until={K.C - 0.3} x={60} y={1150} texto="hoja atacada" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.As + 0.9} until={K.As + 2.8} x={400} y={760} texto="señal" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.As + 1.6} until={K.C - 0.3} x={60} y={530} texto="hojas sanas: se preparan" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.As + 2.8} until={K.C - 0.3} x={690} y={965} texto="ácido salicílico" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.As + 3.6} until={K.C - 0.3} x={640} y={1100} texto="pariente: la aspirina" tam={24} color={KC.ink} />
-      <Etq T={T} at={K.As + 3.9} until={K.C - 0.3} x={640} y={1140} texto="(ácido acetilsalicílico)" tam={22} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="algunos puntitos: puertas cerradas" x={420} y={420} tam={28} borde={KC.mint} />
+      <Etq T={T} at={K.M + 0.4} until={K.As - 0.3} x={110} y={585} texto="normal" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.M + 0.4} until={K.As - 0.3} x={690} y={585} texto="sin CERK1" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.M + 2.6} until={K.As - 0.3} texto="≈20 % más grandes · 6 días" x={540} y={1450} tam={30} borde={KC.red} />
+      <Etq T={T} at={K.As + 0.5} until={K.C - 0.3} x={40} y={1250} texto="hoja atacada" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.As + 0.9} until={K.As + 2.8} x={372} y={840} texto="señal" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.As + 1.6} until={K.C - 0.3} x={50} y={640} texto="hojas sanas: se preparan" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.As + 2.8} until={K.C - 0.3} x={677} y={1056} texto="ácido salicílico" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.As + 3.6} until={K.C - 0.3} x={625} y={1222} texto="pariente: la aspirina" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.As + 3.9} until={K.C - 0.3} x={625} y={1264} texto="(ácido acetilsalicílico)" tam={22} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="algunos puntitos: puertas cerradas" x={330} y={380} tam={28} borde={KC.mint} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.SG} texto="1 cm" largo={110} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.SG} texto="1 cm" largo={167} color={KC.ink} />
       <BarraEscala T={T} at={K.SG} until={K.Es} texto="esquemático" largo={0} color={KC.ink} />
-      <BarraEscala T={T} at={K.Es} until={K.Q} texto="20 µm" largo={174} />
+      <BarraEscala T={T} at={K.Es} until={K.Q} texto="20 µm" largo={244} />
       <BarraEscala T={T} at={K.Q} until={K.S} texto="esquemático" largo={0} />
       <BarraEscala T={T} at={K.S} until={K.E} texto="20 µm" largo={110 * zS} />
-      <BarraEscala T={T} at={K.E} until={K.M} texto="2 cm" largo={130} color={KC.ink} />
-      <BarraEscala T={T} at={K.M} until={K.As} texto="1 cm" largo={150} color={KC.ink} />
+      <BarraEscala T={T} at={K.E} until={K.M} texto="2 cm" largo={198} color={KC.ink} />
+      <BarraEscala T={T} at={K.M} until={K.As} texto="1 cm" largo={271} color={KC.ink} />
       <BarraEscala T={T} at={K.As} until={K.C} texto="esquemático" largo={0} color={KC.ink} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={110} color={KC.ink} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 cm" largo={167} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json); _x_ = cursiva, *x* = resaltado */}
       <SubIt T={T} idx={0} at={K.G + 0.1} until={K.SG - 0.1} texto="¿El hongo ganando? *O tu planta sacrificándose.*" />
