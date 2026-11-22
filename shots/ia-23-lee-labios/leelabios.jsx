@@ -249,16 +249,16 @@ function LeeLabios() {
       {/* 2 · visemas: P, B y M caen en el mismo molde */}
       <Escena T={T} a={K.V} b={K.E}>
         <FondoLunares color={KC.yellow} />
-        {svg(<g transform="translate(540 900) scale(1.5) translate(-430 -850)">
+        {svg(<g transform="translate(540 1020) scale(1.7) translate(-430 -850)">
           <rect x={150} y={700} width={560} height={300} rx={40} fill="#ffd9c4" stroke={KC.ink} strokeWidth={9} />
           <Labios x={430} y={830} s={1.2} abre={0} id="vis" />
         </g>)}
       </Escena>
-      <LetraCae T={T} at={K.V + 0.4} x={330} y0={-120} y1={500} tam={170} until={K.E - 0.3} letra="P" color={KC.pink} />
-      <LetraCae T={T} at={K.V + 0.8} x={540} y0={-120} y1={500} tam={170} until={K.E - 0.3} letra="B" color={KC.cyan} />
-      <LetraCae T={T} at={K.V + 1.2} x={750} y0={-120} y1={500} tam={170} until={K.E - 0.3} letra="M" color={KC.mint} />
-      <Chip T={T} at={K.V + 1.9} until={K.E - 0.2} texto="1 visema = labios juntos" x={540} y={1260} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.V + 2.6} until={K.E - 0.2} texto="visema: la forma visible de un sonido" x={540} y={1360} tam={34} borde={KC.gold} />
+      <LetraCae T={T} at={K.V + 0.4} x={330} y0={-120} y1={590} tam={190} until={K.E - 0.3} letra="P" color={KC.pink} />
+      <LetraCae T={T} at={K.V + 0.8} x={540} y0={-120} y1={590} tam={190} until={K.E - 0.3} letra="B" color={KC.cyan} />
+      <LetraCae T={T} at={K.V + 1.2} x={750} y0={-120} y1={590} tam={190} until={K.E - 0.3} letra="M" color={KC.mint} />
+      <Chip T={T} at={K.V + 1.9} until={K.E - 0.2} texto="1 visema = labios juntos" x={540} y={1370} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.V + 2.6} until={K.E - 0.2} texto="visema: la forma visible de un sonido" x={540} y={1470} tam={34} borde={KC.gold} />
 
       {/* 3 · el experto contra la IA de 2017 */}
       <Escena T={T} a={K.E} b={K.P}>

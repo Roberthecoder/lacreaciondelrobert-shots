@@ -240,14 +240,14 @@ function MicelioShot() {
       <Escena T={T} a={K.H} b={K.B} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 1000) scale(1.15) translate(-540 -760)">
           {PARTS.map((p, i) => <Particula key={i} pts={p} color={['#8a6330', '#9a7038', '#7d5a2c', '#94693a'][i]} />)}
           <g style={{ filter:`drop-shadow(0 0 6px ${FK.hifa})` }}>
             {PUENTES.map((h, i) => <Hifa key={i} {...h} p={kprog(gH, h.t0, h.t0 + 0.3)} />)}
             <RedHifas T={T} x={430} y={600} g={kprog(gH, 0, 0.8)} seed={5} n={140} escala={0.32} ancho={4} />
             <RedHifas T={T} x={520} y={900} g={kprog(gH, 0.15, 0.95)} seed={9} n={140} escala={0.32} ancho={4} />
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · en días, sólido · 6 · horno */}
       <Escena T={T} a={K.B} b={K.O} zoom={0.04}>
@@ -307,7 +307,7 @@ function MicelioShot() {
       {/* 11 · chupa agua */}
       <Escena T={T} a={K.A} b={K.U} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<g transform="translate(540 720) scale(1.6) translate(-380 -640)">
+        {fsvg(<g transform="translate(540 1030) scale(1.9) translate(-380 -640)">
           <path d="M 120 640 L 640 640 L 610 760 L 150 760 Z" fill="#e6e9ee" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
           <path d={`M 140 ${700 - 20 * kprog(T, K.A + 0.2, K.A + 0.8)} L 620 ${700 - 20 * kprog(T, K.A + 0.2, K.A + 0.8)} L 610 756 L 152 756 Z`} fill={ML.agua} opacity=".85" />
           {(() => { const w = kprog(T, K.A + 0.6, K.A + 3.5, kEase.suave), sw = 1 + 0.12 * w; return <g transform={`translate(380 650) scale(${sw})`}>
@@ -342,9 +342,9 @@ function MicelioShot() {
       <Etq T={T} at={K.R + 2.8} until={K.M - 0.3} x={1040} y={940} texto="micelio de hongo" lado="izq" tam={32} color={KC.ink} />
       <Chip T={T} at={K.R + 1.0} until={K.M - 0.3} texto="lo que sobra de la cosecha" x={540} y={380} tam={40} borde={KC.ink} />
       <Chip T={T} at={K.M + 0.3} until={K.H - 0.3} texto="la forma que quieras" x={540} y={560} tam={46} borde={KC.ink} />
-      <Chip T={T} at={K.H + 0.2} until={K.B - 0.3} texto="AL MICROSCOPIO · hifas" x={430} y={480} tam={36} borde={KC.gold} mono />
-      <Etq T={T} at={K.H + 1.6} until={K.B - 0.3} x={600} y={760} texto="hifas" tam={34} color={FK.hifa} />
-      <Etq T={T} at={K.H + 0.8} until={K.B - 0.3} x={60} y={1260 - 20} texto="pedacito de rastrojo" tam={28} color={KC.gold2} />
+      <Chip T={T} at={K.H + 0.2} until={K.B - 0.3} texto="AL MICROSCOPIO · hifas" x={413} y={678} tam={36} borde={KC.gold} mono />
+      <Etq T={T} at={K.H + 1.6} until={K.B - 0.3} x={609} y={1000} texto="hifas" tam={34} color={FK.hifa} />
+      <Etq T={T} at={K.H + 0.8} until={K.B - 0.3} x={60} y={1450} texto="pedacito de rastrojo" tam={28} color={KC.gold2} />
       <Chip T={T} at={K.B + 0.2} until={K.O - 0.3} texto={`día ${dia}`} x={540} y={1450} tam={60} borde={KC.ink} mono />
       <Chip T={T} at={K.B + 2.5} until={K.O - 0.3} texto="pieza sólida" x={330} y={290} tam={44} borde={KC.leaf} />
       <Chip T={T} at={K.O + 0.6} until={K.P - 0.3} texto="ya no crece" x={300} y={480} tam={48} borde={KC.red} />
@@ -355,14 +355,14 @@ function MicelioShot() {
       <Chip T={T} at={K.Cp + 0.4} until={K.D - 0.3} texto="verano de 2014 → composta" x={540} y={680} tam={44} borde={KC.leaf} />
       <Etq T={T} at={K.Cp + 2.4} until={K.D - 0.3} x={1040} y={760} texto="jardines comunitarios" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.D + 0.2} until={K.A - 0.3} texto="aguante a la compresión (MPa)" x={540} y={370} tam={38} borde={KC.ink} />
-      <BarraV T={T} at={K.D + 0.6} until={K.A - 0.3} cx={200} base={1340} alto={720} desde={0.03} hasta={4.44} max={43} color={KC.paper} etiqueta="micelio" valor="0.03–4.44" />
+      <BarraV T={T} at={K.D + 0.6} until={K.A - 0.3} cx={200} base={1340} alto={720} desde={0.03} hasta={4.44} max={43} color={ML.crema} etiqueta="micelio" valor="0.03–4.44" />
       <BarraV T={T} at={K.D + 1.0} until={K.A - 0.3} cx={480} base={1340} alto={720} desde={35} hasta={43} max={43} color="#c98b4a" etiqueta="madera blanda" valor="35–43" />
       <Chip T={T} at={K.D + 2.6} until={K.A - 0.3} texto="no estructural" x={800} y={850} tam={40} borde={KC.red} />
       <Fuente T={T} at={K.D + 1.2} until={K.A - 0.3} texto="Aiduang et al., 2022 (revisión)" x={60} y={440} />
-      <Chip T={T} at={K.A + 0.6} until={K.U - 0.3} texto="agua que absorbe (% de su peso)" x={540} y={1010} tam={38} borde={KC.ink} />
-      <BarraRango T={T} at={K.A + 1.0} until={K.U - 0.3} desde={24.45} hasta={560} max={560} etiqueta="micelio" valor="24–560 %" color={KC.paper} y={1080} />
-      <BarraRango T={T} at={K.A + 1.6} until={K.U - 0.3} desde={0.03} hasta={9} max={560} etiqueta="unicel" valor="0.03–9 %" color={KC.yellow} y={1200} />
-      <Fuente T={T} at={K.A + 1.6} until={K.U - 0.3} texto="Aiduang et al., 2022 (revisión)" x={90} y={1340} />
+      <Chip T={T} at={K.A + 0.6} until={K.U - 0.3} texto="agua que absorbe (% de su peso)" x={540} y={380} tam={38} borde={KC.ink} />
+      <BarraRango T={T} at={K.A + 1.0} until={K.U - 0.3} desde={24.45} hasta={560} max={560} etiqueta="micelio" valor="24–560 %" color={ML.crema} y={450} />
+      <BarraRango T={T} at={K.A + 1.6} until={K.U - 0.3} desde={0.03} hasta={9} max={560} etiqueta="unicel" valor="0.03–9 %" color={KC.yellow} y={570} />
+      <Fuente T={T} at={K.A + 1.6} until={K.U - 0.3} texto="Aiduang et al., 2022 (revisión)" x={90} y={690} />
       <Uso T={T} at={K.U + 0.5} until={K.C - 0.3} texto="empaques" x={90} y={400} />
       <Uso T={T} at={K.U + 1.2} until={K.C - 0.3} texto="aislantes" x={90} y={530} />
       <Uso T={T} at={K.U + 1.9} until={K.C - 0.3} texto="paneles de interior" x={90} y={660} />
@@ -375,13 +375,13 @@ function MicelioShot() {
       <BarraEscala T={T} at={K.G} until={K.R} texto="10 cm" largo={255} />
       <BarraEscala T={T} at={K.R} until={K.M} texto="10 cm" largo={237} />
       <BarraEscala T={T} at={K.M} until={K.H} texto="10 cm" largo={172} />
-      <BarraEscala T={T} at={K.H} until={K.B} texto="50 µm" largo={150} />
+      <BarraEscala T={T} at={K.H} until={K.B} texto="50 µm" largo={173} />
       <BarraEscala T={T} at={K.B} until={K.O} texto="10 cm" largo={390} />
       <BarraEscala T={T} at={K.O} until={K.P} texto="10 cm" largo={225} />
       <BarraEscala T={T} at={K.P} until={K.To} texto="10 cm" largo={176} />
       <BarraEscala T={T} at={K.To} until={K.D} texto="2 m" largo={173} />
       <BarraEscala T={T} at={K.D} until={K.A} texto="10 cm" largo={165} />
-      <BarraEscala T={T} at={K.A} until={K.U} texto="10 cm" largo={176} />
+      <BarraEscala T={T} at={K.A} until={K.U} texto="10 cm" largo={209} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={255} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

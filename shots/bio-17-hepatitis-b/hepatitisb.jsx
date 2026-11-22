@@ -269,19 +269,19 @@ function HepatitisB() {
       {/* 0 · gancho: el bebé llena el cuadro; la jeringa en su muslo y, enseguida, la levadura */}
       <Escena T={T} a={K.G} b={K.Be} zoom={0.04} origen="50% 60%">
         <FondoLunares color={KC.pink} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 130)">
           <Bebe T={T} x={440} y={520} s={1.2} />
           <Jeringa x={klerp(680, 558, pinch)} y={klerp(1047, 1120, pinch)} ang={-52} s={1.2} p={embolo} etiqueta="anti hepatitis B" />
           {T > K.G + 2.2 && <g transform={`translate(165 1200) scale(${kprog(T, K.G + 2.2, K.G + 2.7, kEase.rebote)})`}><LevaduraG T={T} s={0.85} guino={1} /></g>}
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 1 · en México, primeras 24 horas, en el muslo */}
       <Escena T={T} a={K.Be} b={K.Vi} zoom={0.04} origen="50% 60%">
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 130)">
           <Bebe T={T} x={440} y={520} s={1.2} curita={kprog(T, K.Be + 1.6, K.Be + 2.0)} />
           <Reloj24 x={830} y={440} r={170} p={kprog(T, K.Be + 0.2, K.Be + 2.4, kEase.suave)} />
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 2 · la hepatitis B ataca el hígado */}
       <Escena T={T} a={K.Vi} b={K.Pl} zoom={0.03}>
@@ -367,18 +367,18 @@ function HepatitisB() {
       {/* 12 · cierre: el bebé y la jeringa del inicio, ya con su etiqueta */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="50% 60%">
         <FondoLunares color={KC.pink} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(0 130)">
           <Bebe T={T} x={440} y={520} s={1.2} curita={1} />
           <Jeringa x={558} y={1120} ang={-52} s={1.2} p={1} etiqueta="hecha en levadura" />
           <g transform="translate(165 1200)"><LevaduraG T={T} s={0.85} guino={1} /></g>
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.7} until={K.Be - 0.2} texto="¿trae virus?" x={820} y={330} tam={48} />
-      <Chip T={T} at={K.G + 2.4} until={K.Be - 0.2} texto="la fabricó una levadura" y={1460} tam={46} borde={KC.gold} />
-      <Chip T={T} at={K.Be + 0.3} until={K.Vi - 0.2} texto="México · primeras 24 horas" y={1460} tam={46} borde={KC.cyan} />
-      <Etiqueta T={T} at={K.Be + 1.0} until={K.Vi - 0.2} x={640} y={1125} texto="muslo izquierdo" tam={36} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.7} until={K.Be - 0.2} texto="¿trae virus?" x={820} y={460} tam={48} />
+      <Chip T={T} at={K.G + 2.4} until={K.Be - 0.2} texto="la fabricó una levadura" y={1530} tam={46} borde={KC.gold} />
+      <Chip T={T} at={K.Be + 0.3} until={K.Vi - 0.2} texto="México · primeras 24 horas" y={1530} tam={46} borde={KC.cyan} />
+      <Etiqueta T={T} at={K.Be + 1.0} until={K.Vi - 0.2} x={640} y={1255} texto="muslo izquierdo" tam={36} color={KC.ink} />
       <Chip T={T} at={K.Vi + 0.4} until={K.Pl - 0.2} texto="hepatitis B: ataca el hígado" y={250} tam={42} borde={KC.red} />
       <Chip T={T} at={K.Pl + 0.3} until={K.Mi - 0.2} texto="1981 · purificada del plasma" y={1460} tam={44} borde={PLASMA} />
       <Etiqueta T={T} at={K.Pl + 2.8} until={K.Mi - 0.2} x={690} y={700} texto="plasma" lado="izq" tam={34} color={KC.ink} />
@@ -400,7 +400,7 @@ function HepatitisB() {
       <Chip T={T} at={K.Pn + 0.4} until={K.Pn + 2.6} texto="la misma especie del pan" y={1420} tam={44} borde={KC.gold} />
       <Etiqueta T={T} at={K.Pn + 3.0} until={K.Ci - 0.2} x={330} y={1330} texto="< 1 % proteína de levadura" lado="der" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Pn + 3.4} until={K.Ci - 0.2} texto="alergia grave a la levadura = no" y={1490} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="0 virus · 1 levadura" y={1460} tam={48} borde={KC.gold} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="0 virus · 1 levadura" y={1530} tam={48} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Be - 0.1} texto="No trae virus: *la hizo una levadura.*" />

@@ -233,16 +233,17 @@ function Sepsis() {
       {/* 4 · la calificación */}
       <Escena T={T} a={K.C} b={K.P}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<g opacity={0.3}>{Array.from({ length: 12 }, (_, i) => <Camita key={i} x={165 + (i % 4) * 250} y={1030 + Math.floor(i / 4) * 180} s={2.8} T={T} />)}</g>)}
+        {svg(<g opacity={0.55}>{Array.from({ length: 12 }, (_, i) => <Camita key={i} x={165 + (i % 4) * 250} y={1030 + Math.floor(i / 4) * 180} s={2.8} T={T} />)}</g>)}
       </Escena>
       <Chip T={T} at={K.C + 0.2} until={K.C + 4.3} texto="calificación para detectar sepsis" x={540} y={300} tam={36} borde={KC.ink} />
-      <Regla T={T} at={K.C + 0.3} until={K.P - 0.2} aguja={{ at: K.C + 0.6, valor: 0.63 }} banda={{ at: K.C + 3.6, de: 0.76, a: 0.83 }} Y={570} />
+      <Regla T={T} at={K.C + 0.3} until={K.P - 0.2} aguja={{ at: K.C + 0.6, valor: 0.63 }} banda={{ at: K.C + 3.6, de: 0.76, a: 0.83 }} Y={640} />
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.A} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {svg(<>
-          <text x={540} y={1200} textAnchor="middle" style={{ font:`400 620px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 1000)`}>?</text>
-          <Campana x={270} y={560} s={1.9} on={1} T={T} /><Campana x={810} y={470} s={1.6} on={1} T={T + 0.3} />
+          <g opacity={0.45}>{Array.from({ length: 12 }, (_, i) => <Camita key={i} x={165 + (i % 4) * 250} y={1030 + Math.floor(i / 4) * 180} s={2.8} T={T} />)}</g>
+          <text x={540} y={1330} textAnchor="middle" style={{ font:`400 680px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 1110)`}>?</text>
+          <Campana x={250} y={660} s={2.0} on={1} T={T} /><Campana x={830} y={580} s={1.8} on={1} T={T + 0.3} />
         </>)}
       </Escena>
       {/* 6 · alertas de más */}

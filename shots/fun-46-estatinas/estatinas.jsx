@@ -233,13 +233,14 @@ function EstatinasShot() {
       <Escena T={T} a={AM} b={K.P}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(0 -80)">
           <Pincel x={230} y={1545} s={1.0} crece={kprog(T, AM - 0.2, AM + 1.2)} color="#2f7f6d" />
           <Pincel x={930} y={1520} s={1.15} crece={kprog(T, AM - 0.1, AM + 1.4)} color="#2f7f6d" />
-          <path d="M -60 1560 Q 540 1380 1140 1560 L 1140 1960 L -60 1960 Z" fill="#9c9479" stroke={KC.ink} strokeWidth={8} />
+          {/* grano por dentro: oscurecido (conserva el tinte) para que el peso del cuadro quede en el pincel */}
+          <path d="M -60 1560 Q 540 1380 1140 1560 L 1140 2400 L -60 2400 Z" fill="#3b3829" stroke={KC.ink} strokeWidth={8} />
           <path d="M -60 1560 Q 540 1380 1140 1560 L 1140 1610 Q 540 1440 -60 1610 Z" fill={VERDEAZUL} opacity={0.85} />
           <Pincel x={600} y={1440} s={2.1} crece={kprog(T, AM - 0.3, AM + 1.5)} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 7 · pregunta */}
       <Escena T={T} a={K.P} b={K.F} zoom={0.1}>
@@ -333,9 +334,9 @@ function EstatinasShot() {
       <Etq T={T} at={K.B + 3.0} until={K.A - 0.3} x={1000} y={1130} lado="izq" texto="tóxica para el riñón" tam={28} color={KC.texto} />
       <Chip T={T} at={K.A + 0.4} until={AM - 0.2} texto="arroz de una tienda de Kioto" x={400} y={400} tam={34} borde={KC.ink} />
       <Chip T={T} at={AM + 0.1} until={K.P - 0.3} texto="AL MICROSCOPIO · su “pincel”" x={400} y={330} tam={30} borde={VERDEAZUL} mono />
-      <Etq T={T} at={AM + 0.4} until={K.P - 0.3} x={40} y={1000} texto="Penicillium citrinum" it tam={34} color={VERDEAZUL2} />
-      <Etq T={T} at={AM + 0.8} until={K.P - 0.3} x={40} y={1050} texto="moho azul verdoso" tam={28} />
-      <Etq T={T} at={AM + 1.6} until={K.P - 0.3} x={350} y={600} texto="esporas redondas" lado="izq" tam={26} color={VERDEAZUL2} />
+      <Etq T={T} at={AM + 0.4} until={K.P - 0.3} x={40} y={920} texto="Penicillium citrinum" it tam={34} color={VERDEAZUL2} />
+      <Etq T={T} at={AM + 0.8} until={K.P - 0.3} x={40} y={970} texto="moho azul verdoso" tam={28} />
+      <Etq T={T} at={AM + 1.6} until={K.P - 0.3} x={350} y={520} texto="esporas redondas" lado="izq" tam={26} color={VERDEAZUL2} />
       <Etq T={T} at={K.F + 0.3} until={K.R - 0.3} x={60} y={1320} texto="HMG-CoA reductasa" tam={32} color={KC.lilac} />
       <Etq T={T} at={K.F + 0.5} until={K.R - 0.3} x={750} y={470} texto="HMG-CoA (su pieza)" lado="izq" tam={28} color={COLES} />
       <Etq T={T} at={K.F + 0.6} until={K.R - 0.3} x={50} y={400} texto="compactina (del moho)" tam={28} color={KC.leaf} />

@@ -55,6 +55,10 @@ function Rinon({ x, y, s = 1, color = '#c9574a', brillo = 0, rot = 0 }) {
 // Mapa sencillo de Noruega (contorno aproximado, esquemático).
 const NOR = [[5,58],[5.5,59],[5,60],[5,61],[5.2,62],[6.5,62.6],[8,63.3],[10,64],[11.5,65],[12.5,66],[13.5,67],[15,68.2],[16.5,69],[18.5,69.8],[21,70.2],[24,71],[26,71],[28.5,70.9],[31,70.3],[29,69.6],[28.5,69],[26,69.7],[24,68.8],[21,69],[20,68.4],[18,68.4],[16,67.5],[15.5,66.3],[14.5,65.5],[13.8,64.5],[12.5,64],[12,63],[12.2,61.8],[12.8,61.2],[12.3,60.5],[11.8,59.8],[11.4,59],[10.5,59.3],[9.5,58.9],[8,58.1],[6.5,58.1]];
 const norP = ([lon, lat]) => [150 + (lon - 5) * 26, 420 + (71.2 - lat) * 59.3];
+// encuadre del mapa (bajado y agrandado 1.2 para centrarlo en el cuadro) y del campo del microscopio (agrandado 1.4)
+const MAPA_T = 'translate(520 960) scale(1.2) translate(-490 -810)';
+const norV = ([x, y]) => [520 + (x - 490) * 1.2, 960 + (y - 810) * 1.2];
+const MICRO_T = 'translate(540 1000) scale(1.4) translate(-540 -910)';
 function MapaNoruega({ T, at }) {
   const d = 'M ' + NOR.map((q) => norP(q).map((v) => v.toFixed(1)).join(' ')).join(' L ') + ' Z';
   const [px, py] = norP([13, 65]);
@@ -224,16 +228,16 @@ function CiclosporinaShot() {
       {/* 2a · Noruega en el mapa */}
       <Escena T={T} a={K.N} b={NM} zoom={0.08} origen="25% 70%">
         <FondoLunares color={KC.cyan} />
-        {fsvg(<MapaNoruega T={T} at={K.N} />)}
+        {fsvg(<g transform={MAPA_T}><MapaNoruega T={T} at={K.N} /></g>)}
       </Escena>
       {/* 2b · al microscopio: Tolypocladium inflatum */}
       <Escena T={T} a={NM} b={K.S} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
+        {fsvg(<g transform={MICRO_T}>
           {[[160, 1150, 60], [880, 640, 46], [760, 1180, 70], [250, 660, 40]].map(([x, y, r], i) => <circle key={i} cx={x} cy={y} r={r} fill="#4a3220" stroke="#2a1a10" strokeWidth={6} opacity=".8" />)}
           <Tolypo T={T} g={0.3 + 0.7 * kprog(T, NM - 0.3, K.S - 0.6)} y={910} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 3 · Sandoz: el caldo con el moho y la molécula de 11 piezas */}
       <Escena T={T} a={K.S} b={K.R}>
@@ -331,12 +335,12 @@ function CiclosporinaShot() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 3.6} until={K.N - 0.3} texto="tierra → medicina" x={330} y={300} tam={42} borde={KC.ink} />
-      <Etq T={T} at={K.N + 0.9} until={NM - 0.2} x={norP([13, 65])[0] + 40} y={norP([13, 65])[1] - 50} texto="muestra de suelo" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.N + 0.4} until={NM - 0.2} x={500} y={1160} texto="NORUEGA" tam={44} color={KC.ink} />
-      <Chip T={T} at={NM + 0.2} until={K.S - 0.3} texto="AL MICROSCOPIO · moho del suelo" x={540} y={520} tam={32} borde={KC.cyan} />
-      <Etq T={T} at={NM + 0.6} until={K.S - 0.3} x={60} y={620} texto="Tolypocladium inflatum" it tam={40} />
-      <Etq T={T} at={NM + 1.4} until={K.S - 0.3} x={470} y={1225} texto="fiálides de base inflada" tam={28} color={KC.gold2} />
-      <Etq T={T} at={NM + 1.8} until={K.S - 0.3} x={760} y={620} texto="esporas" tam={28} color="#bfe3ff" />
+      <Etq T={T} at={K.N + 0.9} until={NM - 0.2} x={norV(norP([13, 65]))[0] + 40} y={norV(norP([13, 65]))[1] - 60} texto="muestra de suelo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.N + 0.4} until={NM - 0.2} x={530} y={1380} texto="NORUEGA" tam={44} color={KC.ink} />
+      <Chip T={T} at={NM + 0.2} until={K.S - 0.3} texto="AL MICROSCOPIO · moho del suelo" x={540} y={420} tam={32} borde={KC.cyan} />
+      <Etq T={T} at={NM + 0.6} until={K.S - 0.3} x={60} y={530} texto="Tolypocladium inflatum" it tam={40} />
+      <Etq T={T} at={NM + 1.4} until={K.S - 0.3} x={470} y={1430} texto="fiálides de base inflada" tam={28} color={KC.gold2} />
+      <Etq T={T} at={NM + 1.8} until={K.S - 0.3} x={760} y={560} texto="esporas" tam={28} color="#bfe3ff" />
       <Chip T={T} at={K.S + 0.3} until={K.R - 0.3} texto="Sandoz · Basilea, Suiza" x={420} y={430} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.S + 2.0} until={K.R - 0.3} x={670} y={520} texto="ciclosporina" tam={36} color={KC.ink} />
       <Etq T={T} at={K.S + 2.6} until={K.R - 0.3} x={630} y={885} texto="anillo de 11 piezas" tam={28} color={KC.ink} />
@@ -366,8 +370,8 @@ function CiclosporinaShot() {
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={338} />
-      <BarraEscala T={T} at={K.N} until={NM} texto="200 km" largo={107} color={KC.ink} />
-      <BarraEscala T={T} at={NM} until={K.S} texto="10 µm" largo={100} />
+      <BarraEscala T={T} at={K.N} until={NM} texto="200 km" largo={128} color={KC.ink} />
+      <BarraEscala T={T} at={NM} until={K.S} texto="10 µm" largo={140} />
       <BarraEscala T={T} at={K.S} until={K.R} texto="5 cm" largo={162} />
       <BarraEscala T={T} at={K.R} until={K.P} texto="10 cm" largo={125} />
       <BarraEscala T={T} at={K.Ca} until={K.Ra} texto="2 µm" largo={221} />
