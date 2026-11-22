@@ -205,11 +205,11 @@ function BarrasPct({ T, at, until, filas, top = 860 }) {
   const e = kentrada(T, at, until, 'sube');
   return <div style={{ position:'absolute', left:80, top, width:920, zIndex:40, opacity:e.o }}>
     {filas.map((f, i) => { const a0 = f.at || at, g = kprog(T, a0 + 0.1, a0 + 1.1, kEase.sale);
-      return <div key={i} style={{ marginBottom:24, opacity: T >= a0 ? 1 : 0 }}>
+      return <div key={i} style={{ marginBottom:40, opacity: T >= a0 ? 1 : 0 }}>
         <div style={{ font:`900 38px ${KF.texto}`, color:KC.ink, marginBottom:6 }}>{f.etiqueta}</div>
         <div style={{ display:'flex', alignItems:'center', gap:18 }}>
-          <div style={{ width:Math.max(14, 660 * f.valor / 100 * g), height:72, background:f.color, border:`6px solid ${KC.ink}`, borderRadius:16 }}></div>
-          <div style={{ font:`400 70px ${KF.titulo}`, color:f.color, WebkitTextStroke:`3px ${KC.ink}` }}>{Math.round(f.valor * g)} %</div>
+          <div style={{ width:Math.max(14, 660 * f.valor / 100 * g), height:96, background:f.color, border:`6px solid ${KC.ink}`, borderRadius:16 }}></div>
+          <div style={{ font:`400 84px ${KF.titulo}`, color:f.color, WebkitTextStroke:`3px ${KC.ink}` }}>{Math.round(f.valor * g)} %</div>
         </div>
       </div>; })}
   </div>;
@@ -234,31 +234,31 @@ function Lunares() {
       {/* 1 · gancho: dos brazos, la IA duda con la piel oscura */}
       <Escena T={T} a={K.G} b={K.L}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<g transform="translate(540 900) scale(1.2) translate(-540 -900)">
           {brazos()}
           <CelularIA x={300} y={560} T={T} haz={kprog(T, K.G + 0.1, K.G + 0.5)} objetivo={T < K.G + 2.4 ? [380, 1110] : [380, 900]} />
           <Insignia x={470} y={1050} tipo="ok" p={kprog(T, K.G + 1.0, K.G + 1.5)} T={T} />
           <Insignia x={470} y={840} tipo="duda" p={kprog(T, K.G + 2.6, K.G + 3.1)} T={T} />
-        </>)}
-        <Etq T={T} at={K.G + 0.6} x={560} y={985} texto="piel oscura" lado="der" color={KC.ink} tam={30} />
-        <Etq T={T} at={K.G + 0.8} x={560} y={1195} texto="piel clara" lado="der" color={KC.ink} tam={30} />
+        </g>)}
+        <Etq T={T} at={K.G + 0.6} x={564} y={1002} texto="piel oscura" lado="der" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.G + 0.8} x={564} y={1254} texto="piel clara" lado="der" color={KC.ink} tam={30} />
       </Escena>
       {/* 2 · por dentro del lunar → la foto que ve la IA */}
       <Escena T={T} a={K.L} b={K.P}>
         <FondoLunares color={KC.mint} />
         {svg(<>
           <Antebrazo y={1080} largo={900} tono="oscura" lunarX={300} T={T} seed={3} />
-          <g opacity={kprog(T, K.L + 2.4, K.L + 2.9)}><FotoPixeles x={620} y={700} lado={340} p={kprog(T, K.L + 2.4, K.L + 3.6)} /></g>
-          {T > K.L + 2.4 && <line x1={300} y1={1074} x2={480} y2={880} stroke={KC.ink} strokeWidth={6} strokeDasharray="14 10" opacity={kprog(T, K.L + 2.4, K.L + 2.8)} />}
+          <g opacity={kprog(T, K.L + 2.4, K.L + 2.9)}><FotoPixeles x={600} y={640} lado={520} p={kprog(T, K.L + 2.4, K.L + 3.6)} /></g>
+          {T > K.L + 2.4 && <line x1={300} y1={1074} x2={370} y2={910} stroke={KC.ink} strokeWidth={6} strokeDasharray="14 10" opacity={kprog(T, K.L + 2.4, K.L + 2.8)} />}
         </>)}
       </Escena>
       <Lupa T={T} at={K.L + 0.2} until={K.L + 2.3} x={620} y={690} r={250} fx={300} fy={1074} interior={(t, r) => <PielPorDentro T={t} r={r} />} etiqueta="AL MICROSCOPIO · células con pigmento" tinte={KC.cyan} />
-      <Chip T={T} at={K.L + 3.0} until={K.P - 0.2} texto="lo que ve la IA: pixeles" x={620} y={950} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.L + 3.0} until={K.P - 0.2} texto="lo que ve la IA: pixeles" x={620} y={965} tam={34} borde={KC.cyan} />
       {/* 3 · la promesa de 2017 */}
       <Escena T={T} a={K.P} b={K.Q}>
         <FondoLunares color={KC.lilac} />
         {T < P2 + 0.6 && <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, P2 - 0.2, P2 + 0.4) }}>
-          <Mosaico T={T} llegada={[K.P + 1.0, K.P + 3.6]} y={760} />
+          <Mosaico T={T} llegada={[K.P - 0.3, K.P + 2.4]} y={760} />
         </div>}
         {T > P2 - 0.3 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, P2 - 0.3, P2 + 0.3) }}>
           {svg(<>
@@ -271,7 +271,7 @@ function Lunares() {
           </>)}
         </div>}
       </Escena>
-      <TarjetaEstudio T={T} at={K.P + 0.15} until={P2 - 0.4} anio="2017" quien="Universidad de Stanford" revista="Esteva et al. · Nature" y={520} />
+      <TarjetaEstudio T={T} at={K.P + 0.15} until={P2 - 0.4} anio="2017" quien="Universidad de Stanford" revista="Esteva et al. · Nature" y={480} />
       {T < P2 && <Contador T={T} at={K.P + 1.0} hasta={129450} dur={2.6} sufijo=" fotos" x={540} y={1150} tam={70} color={KC.texto} />}
       <Chip T={T} at={P2 + 1.6} until={K.Q - 0.2} texto="nivel comparable · en 2 pruebas" x={640} y={680} tam={34} borde={KC.ink} />
       {/* 4 · pregunta */}
@@ -286,7 +286,7 @@ function Lunares() {
       {/* 5 · el estudio de 2022 */}
       <Escena T={T} a={K.E} b={K.R}>
         <FondoLunares color={KC.yellow} />
-        {svg((() => { const rr = krng(22), out = [], n = Math.round(656 * kprog(T, K.E + 0.6, K.E + 3.4, kEase.suave));
+        {svg((() => { const rr = krng(22), out = [], n = Math.round(656 * kprog(T, K.E - 0.2, K.E + 3.4, kEase.suave));
           for (let i = 0; i < 656; i++) { const u = rr(), c = i % 41, f = Math.floor(i / 41); if (i >= n) continue;
             const tono = u < 208 / 656 ? TONOS_CLAROS[i % 5] : u < 449 / 656 ? TONOS_MEDIOS[i % 3] : TONOS_OSCUROS[i % 3];
             out.push(<rect key={i} x={70 + c * 23} y={720 + f * 24} width={20} height={21} rx={3} fill={tono} stroke={KC.ink} strokeWidth={1.5} />); }
@@ -312,15 +312,15 @@ function Lunares() {
       {/* 7 · los dermatólogos también */}
       <Escena T={T} a={K.D} b={K.A}>
         <FondoLunares color={KC.pink} />
-        {svg(<>{[0, 1, 2].map((i) => <Medico key={i} x={480 + i * 120} y={660} s={1} T={T} seed={i} tono={['#f1c5a3', '#c98f62', '#e0a77f'][i]} />)}
-          <g transform="translate(870 640) rotate(8)"><rect x={-60} y={-46} width={120} height={92} rx={8} fill="#fff" stroke={KC.ink} strokeWidth={6} /><rect x={-48} y={-34} width={96} height={68} fill={PIEL.oscura} /><circle cx={4} cy={0} r={12} fill={PIEL.lunarOscuro} /></g></>)}
+        {svg(<>{[0, 1, 2].map((i) => <Medico key={i} x={330 + i * 170} y={650} s={1.6} T={T} seed={i} tono={['#f1c5a3', '#c98f62', '#e0a77f'][i]} />)}
+          <g transform="translate(870 630) rotate(8) scale(1.5)"><rect x={-60} y={-46} width={120} height={92} rx={8} fill="#fff" stroke={KC.ink} strokeWidth={6} /><rect x={-48} y={-34} width={96} height={68} fill={PIEL.oscura} /><circle cx={4} cy={0} r={12} fill={PIEL.lunarOscuro} /></g></>)}
       </Escena>
       <Chip T={T} at={K.D + 0.2} until={K.A - 0.2} texto="3 dermatólogos, solo con fotos" x={640} y={470} tam={32} borde={KC.ink} />
-      <BarrasPct T={T} at={K.D + 0.5} until={K.A - 0.2} top={800} filas={[{ valor: 72, etiqueta: 'piel clara · cánceres detectados', color: KC.leaf }, { valor: 59, etiqueta: 'piel oscura · cánceres detectados', color: KC.red, at: K.D + 1.6 }]} />
+      <BarrasPct T={T} at={K.D + 0.5} until={K.A - 0.2} top={830} filas={[{ valor: 72, etiqueta: 'piel clara · cánceres detectados', color: KC.leaf }, { valor: 59, etiqueta: 'piel oscura · cánceres detectados', color: KC.red, at: K.D + 1.6 }]} />
       {/* 8 · el arreglo: reentrenar con pieles diversas */}
       <Escena T={T} a={K.A} b={K.B}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<g transform="translate(500 900) scale(1.15) translate(-520 -900)">
           <Robotito x={280} y={930} s={1} T={T} cara="feliz" />
           {Array.from({ length: 9 }, (_, i) => { const u = kprog(T, K.A + 0.2 + i * 0.12, K.A + 1.0 + i * 0.12, kEase.suave), tono = [TONOS_CLAROS[0], TONOS_MEDIOS[0], TONOS_OSCUROS[0]][i % 3];
             const x0 = 120 + (i % 3) * 100, y0 = 640 + Math.floor(i / 3) * 40; if (u <= 0 || u >= 1) return null;
@@ -328,10 +328,10 @@ function Lunares() {
           {[[700, klerp(300, 290, em), KC.leaf, 'clara'], [880, klerp(110, 300, em), KC.blue, 'oscura']].map(([bx, h, col, t]) => <g key={t}>
             <rect x={bx - 60} y={1075 - h} width={120} height={h} rx={10} fill={col} stroke={KC.ink} strokeWidth={7} />
             <text x={bx} y={1120} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{t}</text></g>)}
-        </>)}
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.A + 0.3} until={K.B - 0.2} texto="reentrenada con pieles diversas" x={600} y={690} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.A + 2.6} until={K.B - 0.2} texto="la brecha se cerró ✔" x={790} y={745} tam={28} borde={KC.leaf} />
+      <Chip T={T} at={K.A + 0.3} until={K.B - 0.2} texto="reentrenada con pieles diversas" x={540} y={560} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.A + 2.6} until={K.B - 0.2} texto="la brecha se cerró ✔" x={750} y={645} tam={28} borde={KC.leaf} />
       {/* 9 · ABCDE */}
       <Escena T={T} a={K.B} b={K.C}>
         <FondoLunares color={KC.yellow} />
@@ -356,17 +356,17 @@ function Lunares() {
       {/* 10 · cierre: la misma imagen, ahora con dermatólogo */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<g transform="translate(540 900) scale(1.2) translate(-540 -900)">
           {brazos()}
           <CelularIA x={300} y={560} T={T} haz={1 - kprog(T, K.C + 1.0, K.C + 1.6)} objetivo={[380, 900]} tacha={kprog(T, K.C + 1.2, K.C + 1.7, kEase.sale)} />
           <Insignia x={470} y={840} tipo="duda" p={1 - kprog(T, K.C + 2.4, K.C + 2.7)} T={T} />
           <Insignia x={470} y={840} tipo="ok" p={kprog(T, K.C + 2.7, K.C + 3.2)} T={T} />
           <Insignia x={470} y={1050} tipo="ok" p={kprog(T, K.C + 2.9, K.C + 3.4)} T={T} />
-          <g opacity={kprog(T, K.C + 2.5, K.C + 3.0)}><Medico x={900} y={720} s={1.1} T={T} tono="#a8704a" /></g>
-        </>)}
+          <g opacity={kprog(T, K.C + 2.5, K.C + 3.0)}><Medico x={880} y={720} s={1.1} T={T} tono="#a8704a" /></g>
+        </g>)}
       </Escena>
-      <Chip T={T} at={K.C + 1.3} until={K.Ou} texto="¿una IA que adivine? ✗" x={300} y={300 + 470} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="ve al dermatólogo ✔" x={680} y={1005} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 1.3} until={K.Ou} texto="¿una IA que adivine? ✗" x={260} y={750} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.C + 3.0} until={K.Ou} texto="ve al dermatólogo ✔" x={708} y={1028} tam={32} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.L - 0.1} texto="Piel oscura: *la IA falla más.*" />

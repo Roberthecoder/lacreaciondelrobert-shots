@@ -206,6 +206,9 @@ function LevaduraShot() {
   const hijasA = nA;
   const desplP = pr(K.P - 0.2, K.P + 0.5, kEase.suave);
   const entraCel = pr(K.Ce - 0.3, K.Ce + 0.9, kEase.sale);
+  // pase a mano (cine): la célula ocupa media pantalla; al brotar a la izquierda (Ritmo) se corre a la derecha.
+  const ladoRi = pr(K.Ri - 0.5, K.Ri + 0.1, kEase.suave);
+  const escA = klerp(1.8, 1.7, ladoRi) * klerp(1, 0.9, desplP);
 
   // —— microscopio B: se llena de cicatrices, se detiene, calcoflúor ——
   const nB = 3 + 22 * pr(K.Li + 0.3, K.Li + 3.2, kEase.suave);
@@ -224,9 +227,9 @@ function LevaduraShot() {
       <Escena T={T} a={K.G} b={K.Ma} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Tazon T={T} x={540} y={1000} s={1.05} sube={0.15 + 0.2 * pr(K.G, K.Ma)} plop={K.G + 0.25} />
-          <LupaLev id="lupaG" x={300} y={560} r={185} o={pr(K.G + 0.5, K.G + 1.0, kEase.sale)} apunta={[470, 880]}>
-            <Celula T={T} x={0} y={0} s={0.62} n={pr(K.G + 1.0, K.G + 2.4) * 3} brotes={[{ a: A1, p: pr(K.G + 1.6, K.G + 3.6, kEase.sale), anillo: 0.6, div: 0 }]} />
+          <Tazon T={T} x={540} y={1010} s={1.45} sube={0.15 + 0.2 * pr(K.G, K.Ma)} plop={K.G + 0.25} />
+          <LupaLev id="lupaG" x={320} y={500} r={235} o={pr(K.G + 0.3, K.G + 0.8, kEase.sale)} apunta={[470, 840]}>
+            <Celula T={T} x={0} y={0} s={0.79} n={pr(K.G + 1.0, K.G + 2.4) * 3} brotes={[{ a: A1, p: pr(K.G + 1.6, K.G + 3.6, kEase.sale), anillo: 0.6, div: 0 }]} />
           </LupaLev>
         </>)}
       </Escena>
@@ -234,10 +237,10 @@ function LevaduraShot() {
       <Escena T={T} a={K.Ma} b={K.Ce} zoom={0.12} origen="50% 55%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Rebanada T={T} x={540} y={985} p={pr(K.Ma + 0.2, K.Ma + 1.6, kEase.sale)} />
-          <Sobre x={180} y={690} s={0.85} />
+          <Rebanada T={T} x={540} y={990} w={980} h={620} p={pr(K.Ma + 0.2, K.Ma + 1.6, kEase.sale)} />
+          <Sobre x={900} y={540} s={0.85} rot={8} />
           {[0, 1, 2, 3, 4].map((i) => { const u = ((T - K.Ma) * 0.5 + i * 0.2) % 1; return <g key={i} opacity={Math.sin(Math.PI * u)}>
-            <path d={`M ${330 + i * 110} ${820 - u * 160} l 0 -40 m -14 14 l 14 -14 l 14 14`} stroke={KC.ink} strokeWidth={6} fill="none" strokeLinecap="round" /></g>; })}
+            <path d={`M ${300 + i * 110} ${720 - u * 160} l 0 -40 m -14 14 l 14 -14 l 14 14`} stroke={KC.ink} strokeWidth={6} fill="none" strokeLinecap="round" /></g>; })}
         </>)}
       </Escena>
       {/* 3–7 · al microscopio: la madre, su yema, el anillo de quitina, las cicatrices */}
@@ -245,20 +248,20 @@ function LevaduraShot() {
         <Fondo color={KC.dark} />
         <Ambiente T={T} n={22} color="rgba(255,225,140,.18)" />
         {fsvg(<>
-          <Celula T={T} x={klerp(540, 400, desplP)} y={klerp(900, 850, desplP)} s={klerp(0.25, 1, entraCel)} n={nA} brotes={[b1, b2, b3]} />
-          {T > K.P - 0.2 && <g opacity={desplP}><Interrogacion T={T} x={850} y={860} tam={330} /></g>}
+          <Celula T={T} x={klerp(klerp(420, 600, ladoRi), 370, desplP)} y={klerp(930, 900, desplP)} s={klerp(0.25, 1, entraCel) * escA} n={nA} brotes={[b1, b2, b3]} />
+          {T > K.P - 0.2 && <g opacity={desplP}><Interrogacion T={T} x={860} y={900} tam={330} /></g>}
         </>)}
       </Escena>
       {/* 8 · el estudio: Mortimer y Johnston quitan cada hija con el micromanipulador */}
       <Escena T={T} a={K.E} b={K.Li} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <LupaLev id="ocular" x={540} y={950} r={225} o={pr(K.E + 0.5, K.E + 0.9, kEase.sale)}>
-            <Celula T={T} x={-40} y={0} s={0.55} n={hijasE} brotes={T > t0E && iE < 5 ? [{ a: 20, p: kclamp(fE * 2.2, 0, 1), anillo: 0.3, div: 0, sep: kclamp((fE - 0.6) * 2.5, 0, 1) * 1.6 }] : []} />
+          <LupaLev id="ocular" x={540} y={1010} r={380} o={pr(K.E + 0.1, K.E + 0.6, kEase.sale)}>
+            <g transform="scale(1.69)"><Celula T={T} x={-40} y={0} s={0.55} n={hijasE} brotes={T > t0E && iE < 5 ? [{ a: 20, p: kclamp(fE * 2.2, 0, 1), anillo: 0.3, div: 0, sep: kclamp((fE - 0.6) * 2.5, 0, 1) * 1.6 }] : []} />
             {T > t0E && iE < 5 && (() => { const u = kclamp((fE - 0.5) * 2.5, 0, 1); return <g>
               <line x1={260} y1={-160} x2={klerp(200, 105, Math.sin(Math.PI * u))} y2={klerp(-60, 25, Math.sin(Math.PI * u))} stroke="#e8f6ff" strokeWidth={10} strokeLinecap="round" />
               <line x1={262} y1={-162} x2={klerp(200, 105, Math.sin(Math.PI * u))} y2={klerp(-60, 25, Math.sin(Math.PI * u))} stroke={KC.ink} strokeWidth={3} opacity=".6" />
-            </g>; })()}
+            </g>; })()}</g>
           </LupaLev>
         </>)}
       </Escena>
@@ -267,8 +270,8 @@ function LevaduraShot() {
         <Fondo color={mixHex(KC.dark, LV.uvFondo, uv)} />
         <Ambiente T={T} n={18} color={uv > 0.5 ? 'rgba(150,200,255,.22)' : 'rgba(255,225,140,.18)'} />
         {fsvg(<>
-          <Celula T={T} x={540} y={930} s={crece} n={nB} viejo={0.4 * pr(K.Li + 0.3, K.Li + 3.2)} gris={0.6 * para * (1 - uv)} uv={uv} numeros={pr(K.Ca + 2.0, K.Ca + 3.6)} />
-          {T > K.Ca && T < K.Ca + 1.6 && <g opacity={1 - pr(K.Ca + 1.2, K.Ca + 1.6)}><Gotero x={540} y={520 + 40 * pr(K.Ca, K.Ca + 0.4, kEase.sale)} gota={gota} /></g>}
+          <Celula T={T} x={540} y={980} s={1.9 * crece} n={nB} viejo={0.4 * pr(K.Li + 0.3, K.Li + 3.2)} gris={0.6 * para * (1 - uv)} uv={uv} numeros={pr(K.Ca + 2.0, K.Ca + 3.6)} />
+          {T > K.Ca && T < K.Ca + 1.6 && <g opacity={1 - pr(K.Ca + 1.2, K.Ca + 1.6)}><Gotero x={760} y={500 + 40 * pr(K.Ca, K.Ca + 0.4, kEase.sale)} gota={gota} /></g>}
         </>)}
         {uv > 0 && <div style={{ position:'absolute', left:0, right:0, top:0, height:300, background:`linear-gradient(rgba(120,90,255,${0.35 * uv}), transparent)` }}></div>}
       </Escena>
@@ -277,8 +280,8 @@ function LevaduraShot() {
         <Fondo color={KC.dark} />
         <Ambiente T={T} n={18} color="rgba(255,225,140,.18)" />
         {fsvg(<>
-          <Celula T={T} x={230} y={880} s={0.8 * pr(K.Cr + 0.2, K.Cr + 0.7, kEase.rebote)} n={0} seed={3} />
-          <Celula T={T} x={klerp(540, 690, pr(K.Cr - 0.2, K.Cr + 0.7, kEase.suave))} y={klerp(930, 840, pr(K.Cr - 0.2, K.Cr + 0.7, kEase.suave))} s={klerp(1.25, 1.6, pr(K.Cr - 0.2, K.Cr + 0.9, kEase.suave))} n={25} viejo={0.6} />
+          <Celula T={T} x={205} y={1010} s={1.0 * pr(K.Cr + 0.2, K.Cr + 0.7, kEase.rebote)} n={0} seed={3} />
+          <Celula T={T} x={klerp(540, 700, pr(K.Cr - 0.2, K.Cr + 0.7, kEase.suave))} y={klerp(980, 900, pr(K.Cr - 0.2, K.Cr + 0.7, kEase.suave))} s={1.25 * klerp(1.25, 1.6, pr(K.Cr - 0.2, K.Cr + 0.9, kEase.suave))} n={25} viejo={0.6} />
         </>)}
       </Escena>
       {/* 12 · la hija nace en cero; las de madres muy viejas tienen menos hijas */}
@@ -286,24 +289,25 @@ function LevaduraShot() {
         <Fondo color={KC.dark} />
         <Ambiente T={T} n={18} color="rgba(255,225,140,.18)" />
         {fsvg(<>
-          <Celula T={T} x={170} y={660} s={0.62} n={2} seed={4} />
-          <Celula T={T} x={350} y={700} s={0.5 * pr(K.HJ + 0.2, K.HJ + 0.7, kEase.rebote)} n={0} seed={5} />
-          <BarraVida x={560} y={690} w={400} p={pr(K.HJ + 0.6, K.HJ + 1.6, kEase.sale)} lleno={1} color={KC.mint} texto="hijas que podrá tener" />
-          <Celula T={T} x={200} y={1010} s={0.95 * pr(K.HJ + 1.8, K.HJ + 2.3, kEase.rebote)} n={25} viejo={0.6} seed={6} />
-          <Celula T={T} x={410} y={1040} s={0.62 * pr(K.HJ + 2.3, K.HJ + 2.8, kEase.rebote)} n={0} seed={7} />
-          <BarraVida x={560} y={1030} w={400} p={pr(K.HJ + 2.8, K.HJ + 3.8, kEase.sale)} lleno={0.45} color={KC.coral} texto="si la madre es muy vieja" />
+          <Celula T={T} x={170} y={620} s={0.85} n={2} seed={4} />
+          <Celula T={T} x={400} y={660} s={0.68 * pr(K.HJ + 0.2, K.HJ + 0.7, kEase.rebote)} n={0} seed={5} />
+          <BarraVida x={560} y={640} w={460} p={pr(K.HJ + 0.6, K.HJ + 1.6, kEase.sale)} lleno={1} color={KC.mint} texto="hijas que podrá tener" />
+          <Celula T={T} x={250} y={1060} s={1.3 * pr(K.HJ + 1.8, K.HJ + 2.3, kEase.rebote)} n={25} viejo={0.6} seed={6} />
+          <Celula T={T} x={590} y={1110} s={0.85 * pr(K.HJ + 2.3, K.HJ + 2.8, kEase.rebote)} n={0} seed={7} />
+          <BarraVida x={560} y={1420} w={460} p={pr(K.HJ + 2.8, K.HJ + 3.8, kEase.sale)} lleno={0.45} color={KC.coral} texto="si la madre es muy vieja" />
         </>)}
       </Escena>
       {/* 13 · cierre: la misma masa, ya levada; en la lupa, levaduras con sus cicatrices brillando */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Tazon T={T} x={540} y={1000} s={1.05} sube={1} desborda={pr(K.C, K.C + 2.5, kEase.suave)} />
-          <LupaLev id="lupaC" x={300} y={560} r={185} o={pr(K.C + 0.6, K.C + 1.1, kEase.sale)} apunta={[470, 820]}>
-            <rect x={-200} y={-200} width={400} height={400} fill={LV.uvFondo} />
+          <Tazon T={T} x={540} y={1020} s={1.3} sube={1} desborda={pr(K.C, K.C + 2.5, kEase.suave)} />
+          <LupaLev id="lupaC" x={280} y={400} r={205} o={pr(K.C + 0.3, K.C + 0.8, kEase.sale)} apunta={[440, 680]}>
+            <rect x={-220} y={-220} width={440} height={440} fill={LV.uvFondo} />
+            <g transform="scale(1.1)">
             <Celula T={T} x={-55} y={-10} s={0.62} n={12} uv={1} seed={2} />
             <Celula T={T} x={105} y={95} s={0.42} n={4} uv={1} seed={8} />
-            <Celula T={T} x={95} y={-115} s={0.34} n={1} uv={1} seed={9} />
+            <Celula T={T} x={95} y={-115} s={0.34} n={1} uv={1} seed={9} /></g>
           </LupaLev>
         </>)}
       </Escena>
@@ -314,35 +318,36 @@ function LevaduraShot() {
       <Etq T={T} at={K.Ma + 0.9} until={K.Ce - 0.3} x={50} y={476} texto="Saccharomyces cerevisiae" it tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ce + 0.2} until={K.Y - 0.2} texto="AL MICROSCOPIO" x={330} y={430} tam={36} borde={KC.cyan} mono />
       <Etq T={T} at={K.Ce + 0.9} until={K.Y + 2.0} x={50} y={520} texto="una sola célula · 5 × 6 µm" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.Y + 0.6} until={K.An + 1.8} x={50} y={760} texto="madre" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.Y + 1.4} until={K.An + 1.8} x={1030} y={850} lado="izq" texto="hija (yema)" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.An + 0.4} until={K.An + 2.2} x={50} y={430} texto="anillo de quitina (en el cuello)" tam={28} color={LV.quitina} />
+      <Etq T={T} at={K.Y + 0.6} until={K.An + 1.8} x={50} y={440} texto="madre" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.Y + 1.4} until={K.An + 1.8} x={1030} y={900} lado="izq" texto="hija (yema)" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.An + 0.4} until={K.An + 2.2} x={1030} y={1420} lado="izq" texto="anillo de quitina (en el cuello)" tam={28} color={LV.quitina} />
       <Etq T={T} at={K.An + 2.6} until={K.Ri - 0.1} x={50} y={430} texto="madre: cicatriz de gemación" tam={28} color={LV.quitina} />
       <Etq T={T} at={K.An + 3.0} until={K.Ri - 0.1} x={50} y={478} texto="hija: marca de nacimiento" tam={26} color={KC.texto} />
       <Chip T={T} at={K.Ri + 0.2} until={K.P - 0.3} texto="≈ 90 min por hija · en el laboratorio" x={540} y={440} tam={32} borde={KC.mint} />
-      {T > K.An + 2.4 && T < K.P + 0.1 && <div style={{ position:'absolute', left:300, top:565, zIndex:42, transform:'translate(-50%,-50%)', font:`700 44px ${KF.mono}`, color:KC.gold2, textShadow:KSOMBRA, whiteSpace:'nowrap' }}>hijas: {hijasA}</div>}
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Li - 0.3} anio="1959" quien="Mortimer y Johnston" revista="Nature, 1959 · U. de California, Berkeley" x={540} y={520} />
-      {T > K.E + 1.0 && T < K.Li - 0.3 && <div style={{ position:'absolute', left:905, top:950, zIndex:42, transform:'translate(-50%,-50%)', textAlign:'center', font:`700 26px/1.25 ${KF.mono}`, color:KC.ink }}>aguja del<br/>micro-<br/>manipulador</div>}
-      {T > t0E && T < K.Li - 0.3 && <div style={{ position:'absolute', left:160, top:950, zIndex:42, transform:'translate(-50%,-50%)', textAlign:'center', font:`700 34px ${KF.mono}`, color:KC.ink }}>hijas<div style={{ font:`400 110px/1 ${KF.titulo}`, color:KC.white, WebkitTextStroke:`4px ${KC.ink}` }}>{hijasE}</div></div>}
-      {T > K.Li && T < K.Li + 3.6 && <div style={{ position:'absolute', left:330, top:520, zIndex:42, transform:'translate(-50%,-50%)', font:`700 48px ${KF.mono}`, color:KC.gold2, textShadow:KSOMBRA, whiteSpace:'nowrap', opacity:1 - pr(K.Li + 3.3, K.Li + 3.6) }}>hijas: {Math.floor(nB)}</div>}
-      <Letrero T={T} at={K.Li + 3.4} until={K.Ca - 0.3} texto="20–30" etiqueta="hijas · según la cepa" x={330} y={540} tam={140} color={KC.yellow} />
-      <Etq T={T} at={K.Ca + 0.3} until={K.Ca + 2.0} x={50} y={560} texto="calcoflúor" tam={30} color={LV.uv} />
-      <Etq T={T} at={K.Ca + 0.5} until={K.Ca + 2.0} x={50} y={612} texto="tiñe la quitina" tam={26} color={LV.uv} />
-      <Chip T={T} at={K.Ca + 1.3} until={K.Ca + 1.8} texto="luz ultravioleta" x={330} y={470} tam={32} borde="#7f6bff" mono />
-      <Chip T={T} at={K.Ca + 2.5} until={K.Cr - 0.3} texto="cada anillo = una hija" x={330} y={470} tam={34} borde={LV.uv} />
-      <Chip T={T} at={K.Cr + 0.4} until={K.HJ - 0.3} texto="madre joven" x={230} y={640} tam={30} borde={KC.mint} />
-      <Chip T={T} at={K.Cr + 0.7} until={K.HJ - 0.3} texto="madre vieja: varias veces más grande" x={600} y={460} tam={30} borde={KC.coral} />
-      <Chip T={T} at={K.HJ + 3.4} until={K.C - 0.3} texto="hijas de madres viejas: menos hijas" x={540} y={470} tam={32} borde={KC.coral} />
+      {T > K.An + 2.4 && T < K.P + 0.1 && <div style={{ position:'absolute', left:300, top:330, zIndex:42, transform:'translate(-50%,-50%)', font:`700 44px ${KF.mono}`, color:KC.gold2, textShadow:KSOMBRA, whiteSpace:'nowrap' }}>hijas: {hijasA}</div>}
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Li - 0.3} anio="1959" quien="Mortimer y Johnston" revista="Nature, 1959 · U. de California, Berkeley" x={540} y={400} />
+      {T > K.E + 1.0 && T < K.Li - 0.3 && <div style={{ position:'absolute', left:930, top:620, zIndex:42, transform:'translate(-50%,-50%)', textAlign:'center', font:`700 26px/1.25 ${KF.mono}`, color:KC.ink }}>aguja del<br/>micro-<br/>manipulador</div>}
+      {T > t0E && T < K.Li - 0.3 && <div style={{ position:'absolute', left:130, top:640, zIndex:42, transform:'translate(-50%,-50%)', textAlign:'center', font:`700 34px ${KF.mono}`, color:KC.ink }}>hijas<div style={{ font:`400 110px/1 ${KF.titulo}`, color:KC.white, WebkitTextStroke:`4px ${KC.ink}` }}>{hijasE}</div></div>}
+      {T > K.Li && T < K.Li + 3.6 && <div style={{ position:'absolute', left:540, top:340, zIndex:42, transform:'translate(-50%,-50%)', font:`700 48px ${KF.mono}`, color:KC.gold2, textShadow:KSOMBRA, whiteSpace:'nowrap', opacity:1 - pr(K.Li + 3.3, K.Li + 3.6) }}>hijas: {Math.floor(nB)}</div>}
+      <Letrero T={T} at={K.Li + 3.4} until={K.Ca - 0.3} texto="20–30" etiqueta="hijas · según la cepa" x={540} y={390} tam={140} color={KC.yellow} />
+      <Etq T={T} at={K.Ca + 0.3} until={K.Ca + 2.0} x={50} y={400} texto="calcoflúor" tam={30} color={LV.uv} />
+      <Etq T={T} at={K.Ca + 0.5} until={K.Ca + 2.0} x={50} y={452} texto="tiñe la quitina" tam={26} color={LV.uv} />
+      <Chip T={T} at={K.Ca + 1.3} until={K.Ca + 1.8} texto="luz ultravioleta" x={400} y={300} tam={32} borde="#7f6bff" mono />
+      <Chip T={T} at={K.Ca + 2.5} until={K.Cr - 0.3} texto="cada anillo = una hija" x={400} y={300} tam={34} borde={LV.uv} />
+      <Chip T={T} at={K.Cr + 0.4} until={K.HJ - 0.3} texto="madre joven" x={205} y={760} tam={30} borde={KC.mint} />
+      <Chip T={T} at={K.Cr + 0.7} until={K.HJ - 0.3} texto="madre vieja: varias veces más grande" x={560} y={400} tam={30} borde={KC.coral} />
+      <Chip T={T} at={K.HJ + 3.4} until={K.C - 0.3} texto="hijas de madres viejas: menos hijas" x={540} y={360} tam={32} borde={KC.coral} />
       <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="no es inmortal" x={540} y={1440} tam={44} borde={KC.ink} fondo={KC.paper} color={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Ma} texto="5 cm" largo={110} y={1560} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.Ma} texto="5 cm" largo={152} y={1560} color={KC.ink} />
       <BarraEscala T={T} at={K.Ma} until={K.Ce} texto="1 cm" largo={90} y={1430} color={KC.ink} />
-      <BarraEscala T={T} at={K.Ce + 0.6} until={K.E} texto="5 µm" largo={330 * klerp(0.25, 1, entraCel)} />
-      <BarraEscala T={T} at={K.E + 0.6} until={K.Li} texto="5 µm" largo={330 * 0.55} color={KC.ink} />
-      <BarraEscala T={T} at={K.Li} until={K.Cr} texto="5 µm" largo={330} />
-      <BarraEscala T={T} at={K.Cr} until={K.C} texto="5 µm" largo={330} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={110} y={1560} color={KC.ink} />
+      <BarraEscala T={T} at={K.Ce + 0.6} until={K.E} texto="5 µm" largo={330 * klerp(0.25, 1, entraCel) * escA} />
+      <BarraEscala T={T} at={K.E + 0.6} until={K.Li} texto="5 µm" largo={330 * 0.55 * 1.69} color={KC.ink} />
+      <BarraEscala T={T} at={K.Li} until={K.Cr} texto="5 µm" largo={330 * 1.9} />
+      <BarraEscala T={T} at={K.Cr} until={K.HJ} texto="5 µm" largo={330 * 1.25} />
+      <BarraEscala T={T} at={K.HJ} until={K.C} texto="5 µm" largo={330 * 1.37} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={136} y={1560} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ma - 0.1} texto="No es inmortal: cuenta a sus hijas en *cicatrices.*" />

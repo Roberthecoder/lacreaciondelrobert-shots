@@ -84,7 +84,9 @@ function cineEscena(Kit) {
       }
     }
     const hijos = enc ? <React.Fragment>{enc.dy > 0 ? <div style={{ position:'absolute', inset:0, background:CINE.fondo }}></div> : null}<div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:`translate(${enc.dx}px,${enc.dy}px) scale(${enc.k})`, transformOrigin:'0 0' }}>{p.children}</div></React.Fragment> : p.children;
-    const el = Kit({ ...p, b, zoom: window.CINE_MIDIENDO ? 0 : zf, children: hijos });
+    // El `fondo` de color de la Escena se veía como un destello saturado al entrar (durante la disolvencia): pasa a su versión oscura.
+    const fondo = (typeof p.fondo === 'string' && /^#[0-9a-f]{6}$/i.test(p.fondo)) ? cineMix(p.fondo, CINE.fondo, 0.82) : p.fondo;
+    const el = Kit({ ...p, b, fondo, zoom: window.CINE_MIDIENDO ? 0 : zf, children: hijos });
     return el ? <CineCtx.Provider value={{ velo, a: p.a, enc }}>{el}</CineCtx.Provider> : null;
   };
 }
