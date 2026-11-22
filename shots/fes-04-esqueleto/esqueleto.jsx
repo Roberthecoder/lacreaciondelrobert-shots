@@ -2,6 +2,9 @@
 // Shot Festivo #04 · Día de Muertos · Científico: tu calavera se está reconstruyendo — NARRADO (N1 "Por dentro": macro → micro → macro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (la calavera es de Día de Muertos, no una anatomía exacta).
 const HUESO = '#efe2c4', HUESO2 = '#dcc89f', MEDULA = '#3a1420';
+const MATRIZ = '#4d3f29', HUESO_OSC = '#5c4b31'; // hueso como fondo (corte y superficie): oscuro, con el mismo tinte
+const CAL = { x: 540, y: 880, s: 1.5 };       // calavera del gancho y del cierre: llena el cuadro
+const K_SUP = 1.6;                            // la superficie del hueso (osteoclasto y osteoblastos) se dibuja 1.6×
 const PX_MM = 3; // calavera dibujada a ~3 px por mm a z = 1 (esquemático)
 
 // Papel picado que se mece arriba (fondo de Día de Muertos).
@@ -46,7 +49,7 @@ function HuesoCorte({ T, etiquetas = 1 }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     <rect x={0} y={0} width={KW} height={KH} fill={cineMix(KC.noche, CINE.fondo, 0.55)} />
     {/* matriz de hueso */}
-    <rect x={0} y={680} width={KW} height={KH} fill={HUESO2} />
+    <rect x={0} y={680} width={KW} height={KH} fill={MATRIZ} />
     {/* periostio: membrana en la superficie con nervios (amarillo) y vasos (rojo/azul) */}
     <path d={`M 0 600 Q 270 ${585 + Math.sin(T) * 6} 540 600 T 1080 600 L 1080 690 L 0 690 Z`} fill="#f2a2a8" stroke={KC.ink} strokeWidth={6} />
     <path d={`M 0 625 C 200 ${610 + Math.sin(T * 2) * 5} 400 650 600 628 S 900 615 1080 632`} stroke={KC.red} strokeWidth={14} fill="none" />
@@ -76,10 +79,11 @@ function Superficie({ T, a, b }) {
   const pit = `M 0 ${sup} L ${sx - ancho / 2} ${sup} C ${sx - ancho / 3} ${sup + hondo} ${sx + ancho / 3} ${sup + hondo} ${sx + ancho / 2} ${sup} L ${KW} ${sup} L ${KW} ${KH} L 0 ${KH} Z`;
   const nCapas = Math.floor(relleno * 5);
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+    <g transform={`translate(540 980) scale(${K_SUP}) translate(-540 -980)`}>
     <rect x={0} y={0} width={KW} height={KH} fill={MEDULA} />
     {Array.from({ length: 30 }, (_, i) => { const r = krng(i + 7); return <circle key={i} cx={r() * KW} cy={r() * 900} r={6 + r() * 10} fill="#7a2f44" opacity=".55" />; })}
-    <path d={pit} fill={HUESO} stroke={KC.ink} strokeWidth={8} />
-    {Array.from({ length: 6 }, (_, k) => <path key={k} d={`M 0 ${sup + 60 + k * 70} Q 540 ${sup + 80 + k * 70} 1080 ${sup + 60 + k * 70}`} stroke="#c9b17f" strokeWidth={4} fill="none" />)}
+    <path d={pit} fill={HUESO_OSC} stroke={KC.ink} strokeWidth={6} />
+    {Array.from({ length: 6 }, (_, k) => <path key={k} d={`M 0 ${sup + 60 + k * 70} Q 540 ${sup + 80 + k * 70} 1080 ${sup + 60 + k * 70}`} stroke="#8a744b" strokeWidth={3} fill="none" />)}
     {/* capas nuevas que rellenan el hueco (azul claro = hueso nuevo) */}
     {cava > 0.05 && Array.from({ length: nCapas }, (_, k) => { const h0 = 170 * (1 - k / 5), h1 = 170 * (1 - (k + 1) / 5);
       return <path key={k} d={`M ${sx - ancho / 2} ${sup} C ${sx - ancho / 3} ${sup + h0} ${sx + ancho / 3} ${sup + h0} ${sx + ancho / 2} ${sup} C ${sx + ancho / 3} ${sup + h1} ${sx - ancho / 3} ${sup + h1} ${sx - ancho / 2} ${sup} Z`} fill={k % 2 ? '#bff3ff' : '#9fe6f5'} stroke="#3aa6c2" strokeWidth={3} />; })}
@@ -96,6 +100,7 @@ function Superficie({ T, a, b }) {
       const px = sx - ancho / 2 + u * ancho, hh = 170 * (1 - relleno) * Math.sin(Math.PI * u) * 0.95;
       return <g key={i} transform={`translate(${px} ${klerp(sup - 420, sup + hh - 30, llega)})`}>
         <rect x={-20} y={-24} width={40} height={44} rx={8} fill={KC.cyan} stroke={KC.ink} strokeWidth={4} /><circle cx={0} cy={-6} r={8} fill={KC.blue} /></g>; })}
+    </g>
   </svg>;
 }
 
@@ -113,7 +118,7 @@ function HuesoLargo({ x, y, s = 1, grosor = 0, rot = 0, color = HUESO }) {
 function Pesa({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-150} y={-12} width={300} height={24} rx={10} fill="#5c667a" stroke={KC.ink} strokeWidth={6} />
-    {[-1, 1].map((k) => <g key={k}><rect x={k * 120 - 22} y={-70} width={44} height={140} rx={10} fill={KC.ink} /><rect x={k * 165 - 16} y={-50} width={32} height={100} rx={8} fill="#2b3445" /></g>)}
+    {[-1, 1].map((k) => <g key={k}><rect x={k * 120 - 22} y={-70} width={44} height={140} rx={10} fill="#0b1020" stroke={KC.ink} strokeWidth={4} /><rect x={k * 165 - 16} y={-50} width={32} height={100} rx={8} fill="#2b3445" stroke={KC.ink} strokeWidth={3} /></g>)}
   </g>;
 }
 // Diente esquemático (para el 99 % del calcio).
@@ -131,18 +136,18 @@ function Esqueleto() {
   const llega = kprog(T, K.G, K.G + 0.7, kEase.rebote);
   // viaje macro → micro: zoom sobre la frente al empezar "Vivo"
   const zoomV = kprog(T, K.V - 0.2, K.V + 1.3, kEase.suave);
-  const zEsc = T < K.V + 1.3 ? Math.exp(klerp(0, Math.log(600), zoomV)) : (T < K.O ? (T < K.Cl ? 600 : 1500) : 1);
+  const zEsc = T < K.V + 1.3 ? Math.exp(klerp(Math.log(CAL.s), Math.log(600), zoomV)) : (T < K.O ? (T < K.Cl ? 600 : 1500 * K_SUP) : 1);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: calaverita de Día de Muertos que gira; rayos X: hueso vivo */}
       <Escena T={T} a={K.G} b={K.V + 0.9} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <PapelPicado T={T} />
-        <div style={{ position:'absolute', inset:0, transformOrigin:'400px 900px', transform:`scale(${Math.exp(zoomV * Math.log(30))})`, opacity:1 - kprog(T, K.V + 0.5, K.V + 0.9) }}>
-          {svg(<Calavera T={T} x={400} y={1010} s={klerp(0.3, 1.0, llega)} gira={giraG} />)}
+        <div style={{ position:'absolute', inset:0, transformOrigin:`${CAL.x}px ${CAL.y - 165}px`, transform:`scale(${Math.exp(zoomV * Math.log(20))})`, opacity:1 - kprog(T, K.V + 0.5, K.V + 0.9) }}>
+          {svg(<Calavera T={T} x={CAL.x} y={CAL.y} s={klerp(0.9, 1.0, llega) * CAL.s} gira={giraG} />)}
         </div>
       </Escena>
-      <Lupa T={T} at={K.G + 2.0} until={K.V - 0.3} x={780} y={1580} r={170} fx={400} fy={1000} tinte={KC.cyan} etiqueta="hueso vivo"
+      <Lupa T={T} at={K.G + 2.0} until={K.V - 0.3} x={830} y={1440} r={160} fx={CAL.x} fy={CAL.y - 60} tinte={KC.cyan} etiqueta="hueso vivo"
         interior={(Tl, r) => <svg width={r * 2} height={r * 2} viewBox="0 400 1080 1080" preserveAspectRatio="xMidYMid slice"><g><HuesoCortePlano T={Tl} /></g></svg>} />
 
       {/* 2 · por dentro: periostio con vasos y nervios, osteonas con su canal */}
@@ -156,13 +161,13 @@ function Esqueleto() {
       {/* 5 · la obra que nunca termina: siempre hay partes en obra */}
       <Escena T={T} a={K.O} b={K.P}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<g transform="translate(540 960) scale(1.5) translate(-375 -1017)">
           <HuesoLargo x={300} y={1020} s={0.85} rot={-12} />
           {[[140, 1290], [470, 1290], [610, 760]].map(([cx, cy], i) => <g key={i} transform={`translate(${cx} ${cy}) scale(${kprog(T, K.O + 0.3 + i * 0.25, K.O + 0.6 + i * 0.25, kEase.rebote)})`}>
-            <path d="M -40 40 L 0 -70 L 40 40 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={6} /><rect x={-26} y={-12} width={52} height={14} fill="#fff" /><rect x={-56} y={36} width={112} height={18} rx={4} fill={KC.ink} /></g>)}
+            <path d="M -40 40 L 0 -70 L 40 40 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={6} /><rect x={-26} y={-12} width={52} height={14} fill="#fff" /><rect x={-56} y={36} width={112} height={18} rx={4} fill="#0b1020" stroke={KC.ink} strokeWidth={3} /></g>)}
           <g transform={`rotate(-12 300 1020)`}><rect x={180} y={kprog(T, K.O + 0.8, K.O + 1.4) > 0 ? 940 : -999} width={240 * kprog(T, K.O + 0.8, K.O + 1.4)} height={40} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
             {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${190 + i * 40} 940 l 20 0 l -20 40 l -20 0 z`} fill={KC.ink} opacity={kprog(T, K.O + 0.8, K.O + 1.4)} />)}</g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
@@ -172,77 +177,77 @@ function Esqueleto() {
       {/* 7 · el estudio (revisión de 2017, Univ. de Sheffield) */}
       <Escena T={T} a={K.E} b={K.D}>
         <FondoLunares color={KC.orange} />
-        {svg(<g opacity=".9"><Calavera T={T} x={540} y={1560} s={0.45} /></g>)}
+        {svg(<g opacity=".9"><Calavera T={T} x={540} y={1090} s={1.25} /></g>)}
       </Escena>
       {/* 8 · cada año se renueva entre el 5 y el 10 % del esqueleto adulto (Walsh 2017) */}
       <Escena T={T} a={K.D} b={K.Ca} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g transform={`translate(230 900) scale(${kprog(T, K.D + 0.2, K.D + 0.6, kEase.rebote)})`}>
+        {svg(<g transform={`translate(205 1080) scale(${1.1 * kprog(T, K.D + 0.2, K.D + 0.6, kEase.rebote)})`}>
           <rect x={-130} y={-160} width={260} height={320} rx={24} fill="#fff" stroke={KC.ink} strokeWidth={7} />
           <rect x={-130} y={-160} width={260} height={80} rx={24} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
-          <text x={0} y={50} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={KC.ink}>1</text>
-          <text x={0} y={125} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.ink}>AÑO</text>
+          <text x={0} y={50} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill="#0b1020">1</text>
+          <text x={0} y={125} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill="#0b1020">AÑO</text>
         </g>)}
-        <Cuadricula T={T} cols={10} filas={10} llenado={(t) => 1} tramos={[{ desde: 0, hasta: 0.05 * kprog(T, K.D + 0.8, K.D + 1.8), color: KC.orange }, { desde: 0.05, hasta: 0.05 + 0.05 * kprog(T, K.D + 1.8, K.D + 2.8), color: KC.yellow }]} lleno={HUESO} x={470} y={700} ancho={420} alto={420} />
-        <Chip T={T} at={K.D + 2.4} until={K.Ca - 0.3} texto="hueso nuevo en un año" x={540} y={1520} tam={40} borde={KC.ink} />
+        <Cuadricula T={T} cols={10} filas={10} llenado={(t) => 1} tramos={[{ desde: 0, hasta: 0.05 * kprog(T, K.D + 0.8, K.D + 1.8), color: KC.orange }, { desde: 0.05, hasta: 0.05 + 0.05 * kprog(T, K.D + 1.8, K.D + 2.8), color: KC.yellow }]} lleno={HUESO} x={400} y={770} ancho={620} alto={620} />
+        <Chip T={T} at={K.D + 2.4} until={K.Ca - 0.3} texto="hueso nuevo en un año" x={710} y={1470} tam={40} borde={KC.ink} />
       </Escena>
       {/* 9 · 99 % del calcio en huesos y dientes */}
       <Escena T={T} a={K.Ca} b={K.Ej}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {svg(<>
-          <HuesoLargo x={330} y={1020} s={0.75} rot={8} />
-          <Diente x={790} y={1000} s={1.3} />
-          {Array.from({ length: 26 }, (_, i) => { const r = krng(i + 3), u = kprog(T, K.Ca + 0.6 + r() * 2.5, K.Ca + 1.6 + r() * 2.5, kEase.suave), tx = i % 3 ? 330 + (r() - 0.5) * 60 : 790, ty = 1000 + (r() - 0.5) * 300;
-            return u < 1 ? <g key={i} transform={`translate(${klerp(r() * KW, tx, u)} ${klerp(560 + r() * 200, ty, u)})`} opacity={1 - u * 0.6}><circle r={24} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /><text y={9} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>Ca</text></g> : null; })}
+          <HuesoLargo x={310} y={1010} s={1.15} rot={8} />
+          <Diente x={780} y={1030} s={2.0} />
+          {Array.from({ length: 26 }, (_, i) => { const r = krng(i + 3), u = kprog(T, K.Ca + 0.6 + r() * 2.5, K.Ca + 1.6 + r() * 2.5, kEase.suave), tx = i % 3 ? 310 + (r() - 0.5) * 60 : 780, ty = 1010 + (r() - 0.5) * 460;
+            return u < 1 ? <g key={i} transform={`translate(${klerp(r() * KW, tx, u)} ${klerp(520 + r() * 200, ty, u)})`} opacity={1 - u * 0.6}><circle r={30} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /><text y={10} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#0b1020">Ca</text></g> : null; })}
         </>)}
       </Escena>
       {/* 10 · ejercicio con peso: el hueso se refuerza */}
       <Escena T={T} a={K.Ej} b={K.Da}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <HuesoLargo x={300} y={1000} s={0.8} grosor={kprog(T, K.Ej + 1.2, K.Ej + 4.0)} />
-          <g transform={`translate(0 ${-Math.abs(Math.sin((T - K.Ej) * 2.6)) * 160 * kprog(T, K.Ej + 0.4, K.Ej + 0.8)})`}><Pesa x={760} y={1150} s={1.1} /></g>
+          <HuesoLargo x={320} y={1000} s={1.2} grosor={kprog(T, K.Ej + 1.2, K.Ej + 4.0)} />
+          <g transform={`translate(0 ${-Math.abs(Math.sin((T - K.Ej) * 2.6)) * 200 * kprog(T, K.Ej + 0.4, K.Ej + 0.8)})`}><Pesa x={770} y={1200} s={1.5} /></g>
         </>)}
-        <Etq T={T} at={K.Ej + 1.4} until={K.Da - 0.3} x={420} y={760} texto="más trabajo = más hueso" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.Ej + 1.4} until={K.Da - 0.3} x={415} y={700} texto="más trabajo = más hueso" tam={34} color={KC.ink} />
       </Escena>
       {/* 11 · dato: ~300 al nacer → 206 de adulto */}
       <Escena T={T} a={K.Da} b={K.C}>
         <FondoLunares color={KC.yellow} />
-        {svg(Array.from({ length: 300 }, (_, i) => { const c = i % 25, r = Math.floor(i / 25), x0 = 80 + c * 38, y0 = 760 + r * 38;
+        {svg(Array.from({ length: 300 }, (_, i) => { const c = i % 25, r = Math.floor(i / 25), x0 = 84 + c * 38, y0 = 600 + r * 58;
           const junta = i >= 206 ? kprog(T, K.Da + 1.6 + (i % 7) * 0.12, K.Da + 2.4 + (i % 7) * 0.12, kEase.suave) : 0;
-          const j = i - 206, dst = (j * 7) % 206, tx = 80 + (dst % 25) * 38, ty = 760 + Math.floor(dst / 25) * 38;
-          return junta < 1 ? <rect key={i} x={klerp(x0, tx, junta) - 14} y={klerp(y0, ty, junta) - 7} width={26} height={13} rx={6} fill={HUESO} stroke={KC.ink} strokeWidth={3} opacity={1 - junta * 0.3} /> : null; }))}
-        <Contador T={T} at={K.Da + 1.5} desde={300} hasta={206} dur={1.6} x={540} y={1530} tam={110} color={KC.ink} />
-        <Etq T={T} at={K.Da + 0.4} until={K.Da + 1.5} x={70} y={700} texto="al nacer: unos 300" tam={34} color={KC.ink} />
-        <Etq T={T} at={K.Da + 3.2} until={K.C - 0.3} x={70} y={700} texto="de adulto: 206" tam={34} color={KC.ink} />
+          const j = i - 206, dst = (j * 7) % 206, tx = 84 + (dst % 25) * 38, ty = 600 + Math.floor(dst / 25) * 58;
+          return junta < 1 ? <rect key={i} x={klerp(x0, tx, junta) - 15} y={klerp(y0, ty, junta) - 18} width={30} height={36} rx={11} fill={HUESO} stroke={KC.ink} strokeWidth={3} opacity={1 - junta * 0.3} /> : null; }))}
+        <Contador T={T} at={K.Da + 1.5} desde={300} hasta={206} dur={1.6} x={540} y={1400} tam={150} color={KC.ink} />
+        <Etq T={T} at={K.Da + 0.4} until={K.Da + 1.5} x={70} y={500} texto="al nacer: unos 300" tam={34} color={KC.ink} />
+        <Etq T={T} at={K.Da + 3.2} until={K.C - 0.3} x={70} y={500} texto="de adulto: 206" tam={34} color={KC.ink} />
       </Escena>
       {/* 12 · cierre: la misma calavera, ya entendida: obra viva */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <PapelPicado T={T} />
-        {svg(<Calavera T={T} x={400} y={1010} s={1.0} brilla={kprog(T, K.C + 1.0, K.C + 2.0)} />)}
+        {svg(<Calavera T={T} x={CAL.x} y={CAL.y} s={CAL.s} brilla={kprog(T, K.C + 1.0, K.C + 2.0)} />)}
       </Escena>
-      <Lupa T={T} at={K.C + 2.2} until={K.Ou - 0.2} x={780} y={1580} r={170} fx={400} fy={1000} tinte={KC.mint} etiqueta="en obra"
+      <Lupa T={T} at={K.C + 2.2} until={K.Ou - 0.2} x={830} y={1440} r={160} fx={CAL.x} fy={CAL.y - 60} tinte={KC.mint} etiqueta="en obra"
         interior={(Tl, r) => <svg width={r * 2} height={r * 2} viewBox="200 650 680 680" preserveAspectRatio="xMidYMid slice"><SuperficieRelleno T={Tl} /></svg>} />
 
       {/* escala real (macro y micro) */}
       {T < K.O && T > K.G + 0.6 && <Escala T={T} z={zEsc} pxPorMm={PX_MM} />}
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.3} until={K.V - 0.3} texto="Especial Día de Muertos" x={300} y={470} tam={36} borde={KC.pink} />
+      <Chip T={T} at={K.G + 0.3} until={K.V - 0.3} texto="Especial Día de Muertos" x={290} y={252} tam={34} borde={KC.pink} />
       <Etq T={T} at={K.V + 1.6} until={K.Cl - 0.3} x={60} y={560} texto="periostio: nervios y vasos" tam={30} />
       <Etq T={T} at={K.V + 2.4} until={K.Cl - 0.3} x={1030} y={1060} texto="osteona" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.V + 3.0} until={K.Cl - 0.3} x={60} y={1580} texto="células del hueso" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Cl + 0.6} until={K.Bl - 0.1} x={60} y={700} texto="osteoclasto (disuelve)" tam={32} color={KC.lilac} />
-      <Etq T={T} at={K.Bl + 0.5} until={K.O - 0.3} x={60} y={700} texto="osteoblastos (rellenan)" tam={32} color={KC.cyan} />
-      <Chip T={T} at={K.O + 1.4} until={K.P - 0.3} texto="siempre hay partes en obra" x={540} y={1520} tam={40} borde={KC.orange} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.D - 0.3} anio="2017" quien="Walsh · Univ. de Sheffield" revista="revista Surgery · Inglaterra" y={820} />
-      <NumeroGigante T={T} at={K.D + 0.2} until={K.Ca - 0.3} prefijo="5–" valor={10} desde={10} dur={0.1} etiqueta="de tu esqueleto, cada año" sufijo=" %" x={400} y={500} tam={150} />
-      <NumeroGigante T={T} at={K.Ca + 0.3} until={K.Ej - 0.3} valor={99} dur={1.4} sufijo=" %" etiqueta="del calcio de tu cuerpo" y={500} tam={170} />
-      <Etq T={T} at={K.Ca + 1.6} until={K.Ej - 0.3} x={140} y={1490} texto="huesos" tam={32} />
-      <Etq T={T} at={K.Ca + 1.9} until={K.Ej - 0.3} x={700} y={1490} texto="dientes" tam={32} />
-      <Chip T={T} at={K.Ej + 0.5} until={K.Da - 0.3} texto="ejercicio con peso" x={540} y={1520} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.C + 2.8} until={K.Ou} texto="obra viva" x={300} y={1560} tam={44} borde={KC.yellow} />
+      <Etq T={T} at={K.V + 3.0} until={K.Cl - 0.3} x={60} y={1245} texto="células del hueso" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Cl + 0.6} until={K.Bl - 0.1} x={60} y={590} texto="osteoclasto (disuelve)" tam={36} color={KC.lilac} />
+      <Etq T={T} at={K.Bl + 0.5} until={K.O - 0.3} x={60} y={1400} texto="osteoblastos (rellenan)" tam={36} color={KC.cyan} />
+      <Chip T={T} at={K.O + 1.4} until={K.P - 0.3} texto="siempre hay partes en obra" x={540} y={330} tam={40} borde={KC.orange} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.D - 0.3} anio="2017" quien="Walsh · Univ. de Sheffield" revista="revista Surgery · Inglaterra" y={390} />
+      <NumeroGigante T={T} at={K.D + 0.2} until={K.Ca - 0.3} prefijo="5–" valor={10} desde={10} dur={0.1} etiqueta="de tu esqueleto, cada año" sufijo=" %" x={540} y={480} tam={170} />
+      <NumeroGigante T={T} at={K.Ca + 0.3} until={K.Ej - 0.3} valor={99} dur={1.4} sufijo=" %" etiqueta="del calcio de tu cuerpo" y={360} tam={170} />
+      <Etq T={T} at={K.Ca + 1.6} until={K.Ej - 0.3} x={150} y={1500} texto="huesos" tam={32} />
+      <Etq T={T} at={K.Ca + 1.9} until={K.Ej - 0.3} x={660} y={1500} texto="dientes" tam={32} />
+      <Chip T={T} at={K.Ej + 0.5} until={K.Da - 0.3} texto="ejercicio con peso" x={540} y={330} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.C + 2.8} until={K.Ou} texto="obra viva" x={330} y={1440} tam={44} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.V - 0.1} texto="No es un adorno: *eres tú por dentro.*" />
