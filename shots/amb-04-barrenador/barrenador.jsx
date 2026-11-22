@@ -114,7 +114,7 @@ function BarrenadorNarrado() {
         <FondoLunares color={KC.mint} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {/* planta: charolas de pupas bajo radiación y luego la avioneta */}
-          {T < K.F + 2.6 && <g opacity={1 - kprog(T, K.F + 2.2, K.F + 2.6)}>
+          {T < K.P + 0.5 && <g opacity={1 - 0.65 * kprog(T, K.F + 2.2, K.F + 2.8)}>
             {[0, 1, 2].map((r) => <g key={r} transform={`translate(540 ${760 + r * 150})`}><rect x={-330} y={-40} width={660} height={80} rx={14} fill="#c3cbd3" stroke={KC.ink} strokeWidth={7} />
               {Array.from({ length: 18 }, (_, i) => <ellipse key={i} cx={-300 + i * 35} cy={0} rx={13} ry={22} fill="#7a4a22" stroke={KC.ink} strokeWidth={3} />)}</g>)}
             {T > K.F + 0.8 && <g opacity={0.6 + 0.4 * Math.sin(T * 20)}>{[-260, -90, 90, 260].map((dx) => <path key={dx} d={`M ${540 + dx} 600 l -20 60 l 26 0 l -20 70`} stroke={KC.yellow} strokeWidth={9} fill="none" strokeLinejoin="round" />)}</g>}

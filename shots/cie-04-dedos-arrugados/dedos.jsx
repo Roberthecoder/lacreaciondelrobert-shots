@@ -178,6 +178,8 @@ function Dedos() {
       {/* 11 · Berlín (2014): sin ventaja */}
       <Escena T={T} a={K.B} b={K.C}>
         <FondoLunares color={KC.mint} />
+        {/* modo cine: el sujeto sigue en pantalla (la yema arrugada, quieta, mientras se cuenta que Berlín no vio ventaja) */}
+        {svg(<g opacity={0.9 * kprog(T, K.B, K.B + 0.6)}><Dedo x={330} y={1260} s={1.05} w={1} rot={-6 + mece(T, 4, 0.3) * 2} /></g>)}
       </Escena>
       {/* 12 · cierre: la misma yema del inicio, ya arrugada */}
       <Escena T={T} a={K.C} b={FIN}>
@@ -199,8 +201,8 @@ function Dedos() {
       <BarrasT T={T} at={K.R + 0.2} until={K.B - 0.3} y={720} filas={[{ valor: 100, etiqueta: 'dedos lisos', color: KC.orange }, { valor: 88, etiqueta: 'dedos arrugados', color: KC.blue }]} />
       <NumeroGigante T={T} at={K.R + 1.4} until={K.B - 0.3} valor={12} prefijo="−" sufijo=" %" etiqueta="de tiempo" x={540} y={1520} tam={130} color={KC.blue} />
       <Chip T={T} at={K.R + 2.8} until={K.B - 0.3} texto="objetos secos: igual" x={540} y={1720} tam={34} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.B + 0.2} until={K.C - 0.3} anio="2014" quien="Berlín · 40 personas" revista="Haseleu et al. · PLoS One" x={640} y={760} />
-      <Chip T={T} at={K.B + 2.4} until={K.C - 0.3} texto="no encontraron ventaja" x={540} y={1060} tam={44} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.B + 0.2} until={K.C - 0.3} anio="2014" quien="Berlín · 40 personas" revista="Haseleu et al. · PLoS One" x={720} y={520} />
+      <Chip T={T} at={K.B + 2.4} until={K.C - 0.3} texto="no encontraron ventaja" x={720} y={760} tam={40} borde={KC.red} />
       <Chip T={T} at={K.C + 2.0} until={K.Ou - 0.1} texto="¿para qué? sigue en debate" x={390} y={440} tam={38} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
