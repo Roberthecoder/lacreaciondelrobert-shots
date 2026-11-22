@@ -1,0 +1,3 @@
+# Grupo h158 — pase a mano del estilo cine
+
+- bio-03-crispr: Gancho y Cierre (yogur 1.9 veces más grande, llena el cuadro; lupa y etiqueta reacomodadas); Captura (arreglo CRISPR más grande; el ADN del virus ya no se apaga, queda atenuado; etiquetas dentro de la célula); Corte (tijeras Cas más grandes); Estudio (ya no es lámina: los dos tubos están desde el inicio y 1.6 veces más grandes, tarjeta chica y arriba, chips reacomodados); Nobel (ya no es lámina: las tijeras Cas llenan el cuadro desde el inicio y la medalla crece alrededor, 1.6 veces más grande); Extra (bacterias 1.5 y arqueas 1.3 veces más grandes, las arqueas entran al empezar). Ataque sin cambios (barra de 1 µm intacta, no se cambió su escala). Auditor: sin láminas; pendiente: nada
