@@ -1,0 +1,3 @@
+# Grupo h111 — avance del pase a mano
+
+- ia-48-exoplaneta: Gancho y Cierre (estrella centrada y 1.6× más grande, curva de luz más alta, chip arriba sin tapar); Transito (estrella y panel de 10 000 focos centrado a 820 px, chips arriba y abajo); Kepler (campo de estrellas y telescopio más grandes, el telescopio ahora apunta al campo); Ruido (las 5 curvas a todo el ancho, etiquetas legibles); Entrena (red neuronal 1.5× y centrada); Busca (era lámina: la cuadrícula de 670 estrellas está desde el inicio, tarjeta 2017 arriba); Hallazgo (sistema Kepler-90 y planeta casi al doble, chips fuera del dibujo); Empate (dos sistemas más grandes y sin planetas encimados, rótulos legibles). Auditor: sin láminas; pendiente: nada.

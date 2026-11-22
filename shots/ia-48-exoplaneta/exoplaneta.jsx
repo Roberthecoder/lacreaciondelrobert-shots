@@ -49,9 +49,9 @@ function CurvaLuz({ x, y, w, h, prog = 1, caidas = [], ruido = 0.004, seed = 1, 
   </g>;
 }
 // Telescopio espacial Kepler (dibujo esquemático): tubo con parasol cortado en diagonal y panel solar.
-function Telescopio({ x, y, s = 1, T = 0 }) {
+function Telescopio({ x, y, s = 1, T = 0, giro = -28 }) {
   const b = Math.sin(T * 1.6) * 6;
-  return <g transform={`translate(${x} ${y + b}) rotate(-28) scale(${s})`}>
+  return <g transform={`translate(${x} ${y + b}) rotate(${giro}) scale(${s})`}>
     <rect x={-60} y={-250} width={120} height={330} fill="#e9edf5" stroke={KC.ink} strokeWidth={8} />
     <path d="M -60 -250 L 60 -300 L 60 -250 Z" fill="#c9d0de" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <ellipse cx={0} cy={-250} rx={60} ry={14} fill="#1d2b4a" stroke={KC.ink} strokeWidth={6} />
@@ -81,8 +81,8 @@ function Focos({ T, at, until, x, y, lado = 600, apaga }) {
 function MiniCurva({ x, y, w = 420, h = 110, caidas, ruido, seed, etiqueta, colorEt = KC.mint, o = 1, color = KC.yellow }) {
   return <g opacity={o}>
     <CurvaLuz x={x} y={y} w={w} h={h} caidas={caidas} ruido={ruido} seed={seed} ejes={false} grosor={4} escala={0.12} color={color} />
-    {etiqueta && <g transform={`translate(${x + w - 16} ${y + 8})`}><rect x={-150} y={0} width={150} height={40} rx={12} fill={colorEt} stroke={KC.ink} strokeWidth={4} />
-      <text x={-75} y={29} textAnchor="middle" style={{ font:`900 24px ${KF.texto}` }} fill={KC.ink}>{etiqueta}</text></g>}
+    {etiqueta && <g transform={`translate(${x + w - 16} ${y + 8})`}><rect x={-150} y={0} width={150} height={40} rx={12} fill="#101728" stroke={colorEt} strokeWidth={4} />
+      <text x={-75} y={29} textAnchor="middle" style={{ font:`900 24px ${KF.texto}` }} fill={colorEt}>{etiqueta}</text></g>}
   </g>;
 }
 // Planeta (círculo con trazo grueso); lava = grietas brillantes.
@@ -102,15 +102,16 @@ function Planeta({ x, y, r, color, anillo = false, lava = false, T = 0 }) {
 // Fila de un sistema planetario: estrella (media) a la izquierda y ocho planetas a escala de radio (raíz para que quepan).
 function Sistema({ T, at, y, nombre, estrella, planetas, colorEt }) {
   const e = kprog(T, at, at + 0.5, kEase.sale);
-  const xs = [270, 345, 420, 505, 600, 705, 830, 975];
+  const RS = 215, rad = planetas.map((p) => 10 + Math.sqrt(p.r) * 17), hueco = (1050 - 255 - rad.reduce((a, b) => a + 2 * b, 0)) / 7;
+  const xs = []; rad.reduce((x0, r) => { xs.push(x0 + r); return x0 + 2 * r + hueco; }, 255);
   return <g opacity={e}>
-    <path d={`M 0 ${y - 150} A 150 150 0 0 1 0 ${y + 150} Z`} transform={`translate(${-60 + 60 * e} 0)`} fill={estrella} stroke={KC.ink} strokeWidth={7} />
+    <path d={`M 0 ${y - RS} A ${RS} ${RS} 0 0 1 0 ${y + RS} Z`} transform={`translate(${-60 + 60 * e} 0)`} fill={estrella} stroke={KC.ink} strokeWidth={7} />
     <circle cx={0} cy={y} r={150} fill="none" />
-    {planetas.map((p, i) => { const r = 9 + Math.sqrt(p.r) * 15, ap = kprog(T, at + 0.3 + i * 0.12, at + 0.6 + i * 0.12, kEase.rebote);
+    {planetas.map((p, i) => { const r = rad[i], ap = kprog(T, at + 0.3 + i * 0.12, at + 0.6 + i * 0.12, kEase.rebote);
       return <g key={i} transform={`translate(${xs[i]} ${y}) scale(${ap})`}><Planeta x={0} y={0} r={r} color={p.c} anillo={p.anillo} lava={p.lava} T={T} />
         {p.etq && <text x={0} y={r + 34} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>{p.etq}</text>}</g>; })}
-    <g transform={`translate(190 ${y - 120})`}><rect x={0} y={-34} width={nombre.length * 24 + 50} height={52} rx={14} fill={colorEt} stroke={KC.ink} strokeWidth={5} />
-      <text x={25} y={3} style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>{nombre}</text></g>
+    <g transform={`translate(215 ${y - 150})`}><rect x={0} y={-34} width={nombre.length * 24 + 50} height={52} rx={14} fill="#101728" stroke={colorEt} strokeWidth={5} />
+      <text x={25} y={3} style={{ font:`900 32px ${KF.texto}` }} fill={colorEt}>{nombre}</text></g>
   </g>;
 }
 // Radios (en radios terrestres): Sistema Solar y Kepler-90 (NASA Exoplanet Archive, KOI-351; orden por periodo b, c, i, d, e, f, g, h).
@@ -136,54 +137,55 @@ function Exoplaneta() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la estrella que parpadea */}
-      <Escena T={T} a={K.G} b={K.Tr} zoom={0.04} origen="30% 35%">
+      <Escena T={T} a={K.G} b={K.Tr} zoom={0.04} origen="50% 35%">
         <Cielo T={T} />
         {svg(<>
-          <Estrella x={330} y={620} r={190} T={T} apaga={apagaG} id="g" />
-          <circle cx={330 + cruce(progG, CA[0]) * 190} cy={640} r={7} fill="#05060a" opacity={Math.abs(cruce(progG, CA[0])) < 1.05 ? 1 : 0} />
-          <CurvaLuz x={60} y={920} w={960} h={260} prog={progG} caidas={CA} seed={2} />
+          <Estrella x={540} y={650} r={300} T={T} apaga={apagaG} id="g" />
+          <circle cx={540 + cruce(progG, CA[0]) * 300} cy={682} r={10} fill="#05060a" opacity={Math.abs(cruce(progG, CA[0])) < 1.05 ? 1 : 0} />
+          <CurvaLuz x={50} y={1090} w={980} h={350} prog={progG} caidas={CA} seed={2} grosor={8} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.G + 1.2} until={K.Tr - 0.2} texto="planeta: invisible" x={330} y={400} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.G + 1.2} until={K.Tr - 0.2} texto="planeta: invisible" x={540} y={236} tam={38} borde={KC.red} />
       {/* 2 · el tránsito de cerca y los 10 000 focos */}
       <Escena T={T} a={K.Tr} b={K.Ke} zoom={0.03}>
         <Cielo T={T} seed={9} />
         {svg(<g opacity={1 - kprog(T, K.Tr + 2.6, K.Tr + 3.1)}>
-          <Estrella x={540} y={700} r={330} T={T} apaga={0.06 * Math.sin(Math.PI * pT)} id="t" />
-          <circle cx={klerp(160, 920, pT)} cy={760} r={10} fill="#05060a" />
-          <line x1={klerp(160, 920, pT)} y1={772} x2={330} y2={1110} stroke={KC.texto} strokeWidth={4} />
+          <Estrella x={540} y={790} r={360} T={T} apaga={0.06 * Math.sin(Math.PI * pT)} id="t" />
+          <circle cx={klerp(130, 950, pT)} cy={850} r={11} fill="#05060a" />
+          <line x1={klerp(130, 950, pT)} y1={863} x2={330} y2={1300} stroke={KC.texto} strokeWidth={4} />
         </g>)}
       </Escena>
-      <Etq T={T} at={K.Tr + 0.5} until={K.Tr + 2.6} x={330} y={1120} texto="planeta (dibujo exagerado)" tam={30} />
-      <Focos T={T} at={K.Tr + 2.7} until={K.Ke - 0.2} x={440} y={500} lado={540} apaga={K.Tr + 3.6} />
-      <Chip T={T} at={K.Tr + 3.9} until={K.Ke - 0.2} texto="solo 1 se apaga" x={710} y={1100} tam={36} borde={KC.yellow} />
-      <Chip T={T} at={K.Tr + 2.9} until={K.Ke - 0.2} texto="10 000 focos" x={710} y={440} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Tr + 0.5} until={K.Tr + 2.6} x={330} y={1310} texto="planeta (dibujo exagerado)" tam={32} />
+      <Focos T={T} at={K.Tr + 2.7} until={K.Ke - 0.2} x={130} y={520} lado={820} apaga={K.Tr + 3.6} />
+      <Chip T={T} at={K.Tr + 3.9} until={K.Ke - 0.2} texto="solo 1 se apaga" x={540} y={1420} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.Tr + 2.9} until={K.Ke - 0.2} texto="10 000 focos" x={540} y={440} tam={38} borde={KC.ink} />
       {/* 3 · el telescopio Kepler */}
       <Escena T={T} a={K.Ke} b={K.Ru}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <circle cx={720} cy={640} r={250} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
-          {Array.from({ length: 70 }, (_, i) => { const r = krng(40 + i), a = r() * Math.PI * 2, d = Math.sqrt(r()) * 225, on = kprog(T, K.Ke + 1.0 + i * 0.035, K.Ke + 1.2 + i * 0.035);
-            return <circle key={i} cx={720 + Math.cos(a) * d} cy={640 + Math.sin(a) * d} r={4 + r() * 4} fill={KC.yellow} opacity={0.25 + 0.75 * on} />; })}
-          <Telescopio x={270} y={1000} s={0.85} T={T} />
-          <line x1={370} y1={830} x2={560} y2={720} stroke={KC.yellow} strokeWidth={5} strokeDasharray="16 12" opacity={kprog(T, K.Ke + 0.6, K.Ke + 1.0)} />
+          <path d="M 512 1010 L 372 742 L 958 690 Z" fill={KC.yellow} opacity={0.10 * kprog(T, K.Ke + 0.6, K.Ke + 1.0)} />
+          <circle cx={640} cy={560} r={330} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
+          {Array.from({ length: 70 }, (_, i) => { const r = krng(40 + i), a = r() * Math.PI * 2, d = Math.sqrt(r()) * 300, on = kprog(T, K.Ke + 1.0 + i * 0.035, K.Ke + 1.2 + i * 0.035);
+            return <circle key={i} cx={640 + Math.cos(a) * d} cy={560 + Math.sin(a) * d} r={5 + r() * 5} fill={KC.yellow} opacity={0.25 + 0.75 * on} />; })}
+          <Telescopio x={340} y={1300} s={1.1} T={T} giro={32} />
+          <line x1={518} y1={1005} x2={585} y2={895} stroke={KC.yellow} strokeWidth={5} strokeDasharray="16 12" opacity={kprog(T, K.Ke + 0.6, K.Ke + 1.0)} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ke + 0.4} until={K.Ru - 0.2} texto="telescopio Kepler · NASA" x={330} y={430} tam={32} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Ke + 1.4} until={K.Ru - 0.2} valor={150000} dur={1.6} prefijo="+" etiqueta="" x={720} y={980} tam={110} color={KC.yellow} />
-      <Chip T={T} at={K.Ke + 2.0} until={K.Ru - 0.2} texto="estrellas · 4 años" x={760} y={1085} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.Ke + 0.4} until={K.Ru - 0.2} texto="telescopio Kepler · NASA" x={285} y={955} tam={32} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Ke + 1.4} until={K.Ru - 0.2} valor={150000} dur={1.6} prefijo="+" etiqueta="" x={795} y={1190} tam={112} color={KC.yellow} />
+      <Chip T={T} at={K.Ke + 2.0} until={K.Ru - 0.2} texto="estrellas · 4 años" x={795} y={1300} tam={36} borde={KC.yellow} />
       {/* 4 · 35 000 señales, las débiles se pierden */}
       <Escena T={T} a={K.Ru} b={K.P}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
           {[[{ c: 0.4, w: 0.05, d: 0.06 }], [], [{ c: 0.7, w: 0.04, d: 0.012 }], [], [{ c: 0.3, w: 0.03, d: 0.01 }]].map((ca, i) => {
             const o = kprog(T, K.Ru + 0.4 + i * 0.25, K.Ru + 0.7 + i * 0.25), debil = i >= 2;
-            return <MiniCurva key={i} x={i % 2 ? 560 : 80} y={630 + i * 96} w={440} h={88} caidas={ca} ruido={debil ? 0.009 : 0.004} seed={i + 3} o={o}
-              color={debil ? '#9aa3b8' : KC.yellow} etiqueta={i === 0 ? 'clara ✔' : debil ? '¿?' : ''} colorEt={debil ? '#d7d2c6' : KC.mint} />; })}
+            return <g key={i} transform={`translate(75 ${560 + i * 176}) scale(1.55)`}><MiniCurva x={0} y={0} w={600} h={100} caidas={ca} ruido={debil ? 0.009 : 0.004} seed={i + 3} o={o}
+              color={debil ? '#9aa3b8' : KC.yellow} etiqueta={i === 0 ? 'clara ✔' : debil ? '¿?' : ''} colorEt={debil ? '#d7d2c6' : KC.mint} /></g>; })}
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.Ru + 0.2} until={K.P - 0.2} valor={35000} dur={1.4} etiqueta="" x={380} y={450} tam={130} color={KC.cyan} />
-      <Chip T={T} at={K.Ru + 0.9} until={K.P - 0.2} texto="señales posibles" x={380} y={560} tam={34} borde={KC.cyan} />
+      <NumeroGigante T={T} at={K.Ru + 0.2} until={K.P - 0.2} valor={35000} dur={1.4} etiqueta="" x={540} y={330} tam={150} color={KC.cyan} />
+      <Chip T={T} at={K.Ru + 0.9} until={K.P - 0.2} texto="señales posibles" x={540} y={455} tam={38} borde={KC.cyan} />
             {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.En} zoom={0.1}>
         <FondoLunares color={KC.orange} />
@@ -192,78 +194,78 @@ function Exoplaneta() {
       {/* 6 · entrenar la red neuronal */}
       <Escena T={T} a={K.En} b={K.Bu}>
         <FondoCircuito T={T} />
-        <RedNeuronal T={T} x={420} y={640} ancho={560} alto={460} capas={[4, 6, 6, 3, 2]} onda={onda} />
+        <RedNeuronal T={T} x={330} y={580} ancho={660} alto={800} capas={[4, 6, 6, 3, 2]} onda={onda} />
         {svg(<>
           {Array.from({ length: 4 }, (_, i) => { const ciclo = 1.6, t0 = K.En + 0.8 + i * ciclo, u = kprog(T, t0, t0 + ciclo * 0.9, kEase.suave), planeta = i % 2 === 0;
             if (T < t0 || T > t0 + ciclo) return null;
-            return <g key={i} transform={`translate(${klerp(-380, 30, Math.min(1, u * 1.6))} ${720 + (i % 2) * 150}) scale(${klerp(1, 0.6, Math.max(0, u * 2 - 1))})`} opacity={1 - Math.max(0, u * 3 - 2)}>
+            return <g key={i} transform={`translate(${klerp(-460, 20, Math.min(1, u * 1.6))} ${850 + (i % 2) * 200}) scale(${klerp(1.25, 0.75, Math.max(0, u * 2 - 1))})`} opacity={1 - Math.max(0, u * 3 - 2)}>
               <MiniCurva x={0} y={0} w={340} h={100} caidas={planeta ? [{ c: 0.5, w: 0.06, d: 0.07 }] : [{ c: 0.5, w: 0.2, d: 0.05 }, { c: 0.2, w: 0.04, d: -0.03 }]} ruido={0.004} seed={i + 9}
                 etiqueta={planeta ? 'planeta ✔' : 'falsa alarma'} colorEt={planeta ? KC.mint : KC.coral} />
             </g>; })}
         </>, 25)}
       </Escena>
-      <Chip T={T} at={K.En + 0.3} until={K.En + 4.2} texto="Christopher Shallue · Google" x={540} y={420} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.En + 0.9} until={K.En + 4.2} texto="Andrew Vanderburg · astrónomo" x={540} y={510} tam={36} borde={KC.yellow} />
-      <NumeroGigante T={T} at={K.En + 4.2} until={K.Bu - 0.2} valor={15000} dur={1.2} prefijo="+" etiqueta="señales ya revisadas" x={380} y={470} tam={110} color={KC.mint} />
+      <Chip T={T} at={K.En + 0.3} until={K.En + 4.2} texto="Christopher Shallue · Google" x={540} y={350} tam={38} borde={KC.cyan} />
+      <Chip T={T} at={K.En + 0.9} until={K.En + 4.2} texto="Andrew Vanderburg · astrónomo" x={540} y={445} tam={38} borde={KC.yellow} />
+      <NumeroGigante T={T} at={K.En + 4.2} until={K.Bu - 0.2} valor={15000} dur={1.2} prefijo="+" etiqueta="señales ya revisadas" x={540} y={385} tam={130} color={KC.mint} />
       {/* 7 · el estudio y la búsqueda en 670 estrellas */}
       <Escena T={T} a={K.Bu} b={K.H}>
         <FondoLunares color={KC.mint} />
-        {svg(<g opacity={kprog(T, K.Bu + 2.3, K.Bu + 2.8)}>
-          <rect x={360} y={470} width={660} height={640} rx={26} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
+        {svg(<g opacity={0.85 + 0.15 * kprog(T, K.Bu + 2.3, K.Bu + 2.8)}>
+          <rect x={80} y={540} width={920} height={900} rx={26} fill={KC.noche} stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 670 }, (_, i) => { const c = i % 26, rr = Math.floor(i / 26), u = (rr + c / 26) / 26, hecho = scan > u;
-            return <circle key={i} cx={392 + c * 23.8} cy={495 + rr * 23} r={hecho ? 6 : 4.5} fill={hecho ? KC.yellow : '#55607a'} />; })}
-          <rect x={372} y={488 + scan * 600} width={636} height={14} rx={7} fill={KC.cyan} opacity={scan > 0 && scan < 1 ? 0.8 : 0} />
+            return <circle key={i} cx={115 + c * 34} cy={578 + rr * 33} r={hecho ? 9 : 6.5} fill={hecho ? KC.yellow : '#8794b5'} />; })}
+          <rect x={94} y={560 + scan * 850} width={892} height={16} rx={8} fill={KC.cyan} opacity={scan > 0 && scan < 1 ? 0.8 : 0} />
         </g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.Bu + 0.15} until={K.Bu + 2.3} anio="2017" quien="Google + Univ. de Texas en Austin" revista="Shallue y Vanderburg · The Astronomical Journal (2018)" y={760} />
-      <Chip T={T} at={K.Bu + 2.9} until={K.H - 0.2} texto="670 estrellas con señales de planetas" x={690} y={420} tam={32} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Bu + 0.15} until={K.Bu + 2.3} anio="2017" quien="Google + Univ. de Texas en Austin" revista="Shallue y Vanderburg · The Astronomical Journal (2018)" y={340} />
+      <Chip T={T} at={K.Bu + 2.9} until={K.H - 0.2} texto="670 estrellas con señales de planetas" x={540} y={455} tam={36} borde={KC.ink} />
       {/* 8 · el hallazgo: Kepler-90i */}
       <Escena T={T} a={K.H} b={H2}>
         <Cielo T={T} seed={13} />
         {svg(<>
-          <CurvaLuz x={60} y={430} w={960} h={300} prog={kprog(T, K.H + 0.1, K.H + 1.4)} caidas={[{ c: 0.62, w: 0.035, d: 0.022 }]} ruido={0.007} seed={21} escala={0.12}
+          <CurvaLuz x={50} y={300} w={980} h={360} prog={kprog(T, K.H + 0.1, K.H + 1.4)} caidas={[{ c: 0.62, w: 0.035, d: 0.022 }]} ruido={0.007} seed={21} escala={0.12}
             marca={T > K.H + 1.5 ? { c: 0.62, w: 0.035, o: kprog(T, K.H + 1.5, K.H + 1.8) } : null} />
           <g opacity={kprog(T, K.H + 1.9, K.H + 2.4)}>
-            <Estrella x={540} y={980} r={110} T={T} id="k90" />
-            {[150, 175, 205].map((ro, i) => <ellipse key={i} cx={540} cy={980} rx={ro} ry={ro * 0.32} fill="none" stroke="rgba(246,243,236,.35)" strokeWidth={3} />)}
-            <ellipse cx={540} cy={980} rx={175} ry={56} fill="none" stroke={KC.mint} strokeWidth={6} strokeDasharray="12 8" opacity={kprog(T, K.H + 2.5, K.H + 2.9)} />
-            <g opacity={kprog(T, K.H + 2.5, K.H + 2.9)}><Planeta x={540 + Math.cos(T * 1.4) * 175} y={980 + Math.sin(T * 1.4) * 56} r={20} color={ROCA} T={T} lava /></g>
+            <Estrella x={540} y={1060} r={200} T={T} id="k90" />
+            {[275, 325, 385].map((ro, i) => <ellipse key={i} cx={540} cy={1060} rx={ro} ry={ro * 0.32} fill="none" stroke="rgba(246,243,236,.35)" strokeWidth={4} />)}
+            <ellipse cx={540} cy={1060} rx={325} ry={104} fill="none" stroke={KC.mint} strokeWidth={7} strokeDasharray="14 9" opacity={kprog(T, K.H + 2.5, K.H + 2.9)} />
+            <g opacity={kprog(T, K.H + 2.5, K.H + 2.9)}><Planeta x={540 + Math.cos(T * 1.4) * 325} y={1060 + Math.sin(T * 1.4) * 104} r={34} color={ROCA} T={T} lava /></g>
           </g>
         </>)}
       </Escena>
-      <Etq T={T} at={K.H + 2.0} until={H2 - 0.2} x={560} y={850} texto="estrella Kepler-90" tam={30} />
-      <Chip T={T} at={K.H + 2.7} until={H2 - 0.2} texto="¡nuevo: Kepler-90i!" x={540} y={1170} tam={44} borde={KC.mint} />
+      <Etq T={T} at={K.H + 2.0} until={H2 - 0.2} x={640} y={775} texto="estrella Kepler-90" tam={32} />
+      <Chip T={T} at={K.H + 2.7} until={H2 - 0.2} texto="¡nuevo: Kepler-90i!" x={540} y={1420} tam={48} borde={KC.mint} />
       <Escena T={T} a={H2} b={K.Em}>
         <FondoLunares color={KC.coral} />
         {svg(<>
-          <Planeta x={400} y={690} r={200 * kprog(T, H2 - 0.1, H2 + 0.5, kEase.rebote)} color={ROCA} T={T} lava />
+          <Planeta x={540} y={740} r={340 * kprog(T, H2 - 0.1, H2 + 0.5, kEase.rebote)} color={ROCA} T={T} lava />
         </>)}
       </Escena>
-      <Chip T={T} at={H2 + 0.3} until={K.Em - 0.2} texto="probablemente rocoso" x={400} y={430} tam={36} borde={KC.ink} />
-      <Chip T={T} at={H2 + 1.6} until={K.Em - 0.2} texto="1 vuelta = 14.4 días" x={540} y={960} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={H2 + 3.0} until={K.Em - 0.2} texto="> 400 °C (estimado)" x={540} y={1040} tam={40} borde={KC.red} />
-      <Chip T={T} at={H2 + 3.8} until={K.Em - 0.2} texto="≈ 30 % más grande que la Tierra" x={540} y={1120} tam={30} borde={KC.ink} />
+      <Chip T={T} at={H2 + 0.3} until={K.Em - 0.2} texto="probablemente rocoso" x={540} y={320} tam={40} borde={KC.ink} />
+      <Chip T={T} at={H2 + 1.6} until={K.Em - 0.2} texto="1 vuelta = 14.4 días" x={540} y={1190} tam={42} borde={KC.yellow} />
+      <Chip T={T} at={H2 + 3.0} until={K.Em - 0.2} texto="> 400 °C (estimado)" x={540} y={1285} tam={42} borde={KC.red} />
+      <Chip T={T} at={H2 + 3.8} until={K.Em - 0.2} texto="≈ 30 % más grande que la Tierra" x={540} y={1375} tam={34} borde={KC.ink} />
       {/* 9 · empate: 8 = 8 */}
       <Escena T={T} a={K.Em} b={K.C}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <Sistema T={T} at={K.Em + 0.3} y={830} nombre="Sistema Solar · 8" estrella={KC.orange} planetas={SOL} colorEt={KC.cyan} />
-          <Sistema T={T} at={K.Em + 1.4} y={1075} nombre="Kepler-90 · 8" estrella={'#ffd84a'} planetas={K90} colorEt={KC.mint} />
+          <Sistema T={T} at={K.Em + 0.3} y={790} nombre="Sistema Solar · 8" estrella={KC.orange} planetas={SOL} colorEt={KC.cyan} />
+          <Sistema T={T} at={K.Em + 1.4} y={1230} nombre="Kepler-90 · 8" estrella={'#ffd84a'} planetas={K90} colorEt={KC.mint} />
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.Em + 2.4} until={K.C - 0.2} valor={8} desde={8} dur={0.1} prefijo="8 = " etiqueta="" x={380} y={480} tam={150} color={KC.pink} />
-      <Chip T={T} at={K.Em + 3.6} until={K.C - 0.2} texto="ninguna otra estrella conocida con 8 · NASA, oct 2026" x={540} y={575} tam={26} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Em + 2.4} until={K.C - 0.2} valor={8} desde={8} dur={0.1} prefijo="8 = " etiqueta="" x={540} y={330} tam={170} color={KC.pink} />
+      <Chip T={T} at={K.Em + 3.6} until={K.C - 0.2} texto="ninguna otra estrella conocida con 8 · NASA, oct 2026" x={540} y={470} tam={28} borde={KC.ink} />
       {/* 10 · cierre: la misma estrella, ahora sabemos qué la apaga */}
-      <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="30% 35%">
+      <Escena T={T} a={K.C} b={FIN} zoom={0.04} origen="50% 35%">
         <Cielo T={T} />
         {svg(<>
-          <Estrella x={330} y={620} r={190} T={T} apaga={apagaC} id="c" />
-          <ellipse cx={330} cy={640} rx={250} ry={40} fill="none" stroke={KC.mint} strokeWidth={4} strokeDasharray="12 8" opacity={0.7} />
-          <Planeta x={330 + cruce(progC, CA[0]) * 160} y={640 + (Math.abs(cruce(progC, CA[0])) > 1.2 ? 0 : 0)} r={16} color={ROCA} T={T} lava />
-          <CurvaLuz x={60} y={920} w={960} h={260} prog={progC} caidas={CA} seed={2} marca={progC > 0.6 ? { c: 0.55, w: 0.07, o: kprog(T, K.C + 2.0, K.C + 2.4) } : null} />
+          <Estrella x={540} y={650} r={300} T={T} apaga={apagaC} id="c" />
+          <ellipse cx={540} cy={682} rx={395} ry={62} fill="none" stroke={KC.mint} strokeWidth={5} strokeDasharray="14 9" opacity={0.7} />
+          <Planeta x={540 + cruce(progC, CA[0]) * 252} y={682} r={25} color={ROCA} T={T} lava />
+          <CurvaLuz x={50} y={1090} w={980} h={350} prog={progC} caidas={CA} seed={2} grosor={8} marca={progC > 0.6 ? { c: 0.55, w: 0.07, o: kprog(T, K.C + 2.0, K.C + 2.4) } : null} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="un mundo pasando enfrente" x={330} y={400} tam={36} borde={KC.mint} />
+      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="un mundo pasando enfrente" x={540} y={236} tam={38} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Tr - 0.1} texto="Tus ojos nunca lo verán: *su estrella se apaga.*" />
