@@ -7,7 +7,7 @@
 function Vaso({ id, x, y, w = 300, h = 420, nivel = 0, pix = 1, desborde = 0, T = 0, seed = 3 }) {
   const wb = w * 0.78, x0 = -w / 2, x1 = w / 2, b0 = -wb / 2, b1 = wb / 2;
   const cuerpo = `M ${x0} ${-h} L ${b0} 0 Q ${b0} 14 ${b0 + 16} 14 L ${b1 - 16} 14 Q ${b1} 14 ${b1} 0 L ${x1} ${-h} Z`;
-  const top = -h * nivel, r = krng(seed), cel = w / 9, cubos = [];
+  const top = -h * nivel, r = krng(seed), cel = w / 9, cubos = [], q = w / 300;
   for (let j = 0; j < 11; j++) for (let i = 0; i < 9; i++) {
     const cy = -cel * (j + 1), v = r(), on = 0.55 + 0.45 * Math.sin(T * (2 + v * 4) + v * 20);
     if (cy + cel > top - 2) cubos.push(<rect key={`${i}-${j}`} x={x0 + i * cel + 3} y={cy + 3} width={cel - 6} height={cel - 6} rx={5}
@@ -24,11 +24,11 @@ function Vaso({ id, x, y, w = 300, h = 420, nivel = 0, pix = 1, desborde = 0, T 
     </g>
     {desborde > 0 && [x0 + 14, x1 - 14, x0 + 60, x1 - 70].map((dx, k) => { const lado = dx < 0 ? -1 : 1, u = ((T * 0.9 + k * 0.27) % 1);
       return <g key={k} opacity={desborde}>
-        <rect x={dx + lado * 10 - 14} y={-h - 26} width={28} height={28} rx={5} fill={[KC.cyan, KC.mint, KC.yellow, KC.cyan][k]} stroke={KC.ink} strokeWidth={3} />
-        <rect x={dx + lado * (24 + u * 50) - 11} y={-h + u * (h + 10)} width={22} height={22} rx={4} fill={[KC.mint, KC.yellow, KC.cyan, KC.mint][k]} stroke={KC.ink} strokeWidth={3} opacity={1 - u * 0.6} />
+        <rect x={dx + lado * 10 * q - 14 * q} y={-h - 26 * q} width={28 * q} height={28 * q} rx={5 * q} fill={[KC.cyan, KC.mint, KC.yellow, KC.cyan][k]} stroke={KC.ink} strokeWidth={3} />
+        <rect x={dx + lado * (24 + u * 50) * q - 11 * q} y={-h + u * (h + 10)} width={22 * q} height={22 * q} rx={4 * q} fill={[KC.mint, KC.yellow, KC.cyan, KC.mint][k]} stroke={KC.ink} strokeWidth={3} opacity={1 - u * 0.6} />
       </g>; })}
     <path d={cuerpo} fill="none" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
-    <path d={`M ${x0 + 26} ${-h + 30} L ${b0 + 22} -30`} stroke="#fff" strokeWidth={10} strokeLinecap="round" opacity=".7" />
+    <path d={`M ${x0 + 26} ${-h + 30} L ${b0 + 22} -30`} stroke="#fff" strokeWidth={10 * Math.min(1.6, q)} strokeLinecap="round" opacity=".7" />
     <ellipse cx={0} cy={-h} rx={w / 2} ry={16} fill="none" stroke={KC.ink} strokeWidth={7} />
   </g>;
 }
@@ -62,45 +62,46 @@ function Carril({ T, at, until, y, color, titulo, cada, meses = 24, etiqueta }) 
   </div>;
 }
 // Gráfica esquemática (escala logarítmica) del cómputo de entrenamiento: suave hasta 2010 y luego empinada.
-function Grafica({ T, at, until, x = 110, y = 700, w = 860, h = 300 }) {
+function Grafica({ T, at, until, linea = at, x = 110, y = 660, w = 860, h = 620 }) {
   if (T < at - 0.4 || T > until + 0.45) return null;
-  const o = kprog(T, at - 0.4, at + 0.1) * (1 - kprog(T, until - 0.05, until + 0.45)), p = kprog(T, at + 0.3, at + 3.0, kEase.suave);
+  const o = kprog(T, at - 0.4, at + 0.1) * (1 - kprog(T, until - 0.05, until + 0.45)), p = kprog(T, linea + 0.3, linea + 3.0, kEase.suave);
   const xr = (a) => x + ((a - 1960) / (2022 - 1960)) * w, yr = (v) => y + h - v * h;
   const pts = []; for (let a = 1960; a <= 2022; a += 1) { const v = a < 2010 ? (a - 1960) / 50 * 0.32 : 0.32 + (a - 2010) / 12 * 0.66; pts.push([xr(a), yr(v)]); }
   const n = Math.max(2, Math.round(pts.length * p)), d = pts.slice(0, n).map((q, i) => `${i ? 'L' : 'M'} ${q[0]} ${q[1]}`).join(' ');
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:o, zIndex:39 }}>
     <rect x={x - 30} y={y - 60} width={w + 60} height={h + 140} rx={26} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />
     <line x1={x} y1={y + h} x2={x + w} y2={y + h} stroke={KC.ink} strokeWidth={5} /><line x1={x} y1={y - 20} x2={x} y2={y + h} stroke={KC.ink} strokeWidth={5} />
-    {[1960, 1990, 2010, 2022].map((a) => <text key={a} x={xr(a)} y={y + h + 44} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{a}</text>)}
+    {[1960, 1990, 2010, 2022].map((a) => <text key={a} x={xr(a)} y={y + h + 44} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>{a}</text>)}
     <line x1={xr(2010)} y1={y - 20} x2={xr(2010)} y2={y + h} stroke={KC.ink} strokeWidth={3} strokeDasharray="10 10" opacity=".5" />
-    <text x={x + 240} y={y - 24} style={{ font:`700 24px ${KF.mono}` }} fill="#5a524a">cómputo (escala log.)</text>
-    <path d={d} stroke={p > 0.78 ? KC.red : KC.blue} strokeWidth={12} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    <text x={x + 240} y={y - 22} style={{ font:`700 28px ${KF.mono}` }} fill="#8f9bb3">cómputo (escala log.)</text>
+    <path d={pts.map((q, i) => `${i ? 'L' : 'M'} ${q[0]} ${q[1]}`).join(' ')} stroke="#8f9bb3" strokeWidth={6} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="4 16" opacity=".6" />
+    {T >= linea + 0.3 && <path d={d} stroke={p > 0.78 ? KC.red : KC.blue} strokeWidth={14} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
   </svg>;
 }
 // Una de las tres llaves que llenan el vaso: ícono + etiqueta + tubo.
-function Llave({ T, at, x, icono, texto, y = 600 }) {
+function Llave({ T, at, x, icono, texto, y = 600, fin = y + 340 }) {
   if (T < at - 0.1) return null;
   const e = kprog(T, at, at + 0.45, kEase.rebote), flujo = kprog(T, at + 0.3, at + 0.9);
   return <>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:30 }}>
-      <path d={`M ${x} ${y + 150} C ${x} ${y + 260} 540 ${y + 220} 540 ${y + 340}`} stroke={KC.ink} strokeWidth={30} fill="none" strokeLinecap="round" />
-      <path d={`M ${x} ${y + 150} C ${x} ${y + 260} 540 ${y + 220} 540 ${y + 340}`} stroke={KC.mint} strokeWidth={16} fill="none" strokeLinecap="round" strokeDasharray="30 22" strokeDashoffset={-T * 140} opacity={flujo} />
+      <path d={`M ${x} ${y + 150} C ${x} ${y + 270} 540 ${fin - 130} 540 ${fin}`} stroke={KC.ink} strokeWidth={30} fill="none" strokeLinecap="round" />
+      <path d={`M ${x} ${y + 150} C ${x} ${y + 270} 540 ${fin - 130} 540 ${fin}`} stroke={KC.mint} strokeWidth={16} fill="none" strokeLinecap="round" strokeDasharray="30 22" strokeDashoffset={-T * 140} opacity={flujo} />
       <g transform={`translate(${x} ${y}) scale(${e})`}>
         <circle r={95} fill={KC.paper} stroke={KC.ink} strokeWidth={8} />
         {icono}
       </g>
     </svg>
-    <div style={{ position:'absolute', left:x, top:y + 118, transform:`translate(-50%,0) scale(${e})`, zIndex:41, font:`900 30px/1.1 ${KF.texto}`, color:KC.ink, textAlign:'center', width:300, background:KC.yellow, border:`4px solid ${KC.ink}`, borderRadius:16, padding:'6px 8px' }}>{texto}</div>
+    <div style={{ position:'absolute', left:x, top:y + 118, transform:`translate(-50%,0) scale(${e})`, zIndex:41, font:`900 30px/1.1 ${KF.texto}`, color:'#0b1020', textAlign:'center', width:300, background:KC.yellow, border:`4px solid ${KC.ink}`, borderRadius:16, padding:'6px 8px' }}>{texto}</div>
   </>;
 }
 const IcoChips = <g>{[-46, 0, 46].map((dx) => <g key={dx}><rect x={dx - 20} y={-26} width={40} height={52} rx={6} fill="#2b3445" stroke={KC.ink} strokeWidth={4} /><rect x={dx - 10} y={-14} width={20} height={20} fill={KC.cyan} /></g>)}</g>;
-const IcoReloj = (T) => <g><circle r={52} fill="#fff" stroke={KC.ink} strokeWidth={7} /><line x1={0} y1={0} x2={0} y2={-36} stroke={KC.ink} strokeWidth={7} strokeLinecap="round" transform={`rotate(${T * 240})`} /><line x1={0} y1={0} x2={26} y2={0} stroke={KC.red} strokeWidth={7} strokeLinecap="round" transform={`rotate(${T * 20})`} /></g>;
+const IcoReloj = (T) => <g><circle r={52} fill="#fff" stroke={KC.ink} strokeWidth={7} /><line x1={0} y1={0} x2={0} y2={-36} stroke="#0b1020" strokeWidth={7} strokeLinecap="round" transform={`rotate(${T * 240})`} /><line x1={0} y1={0} x2={26} y2={0} stroke={KC.red} strokeWidth={7} strokeLinecap="round" transform={`rotate(${T * 20})`} /></g>;
 const IcoRayo = <g><rect x={-46} y={-46} width={92} height={92} rx={12} fill="#2b3445" stroke={KC.ink} strokeWidth={5} /><path d="M 8 -40 L -22 6 L 0 6 L -10 40 L 24 -8 L 2 -8 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={4} strokeLinejoin="round" /></g>;
 // Moneda.
 function Moneda({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <ellipse rx={46} ry={46} fill={KC.gold2} stroke={KC.ink} strokeWidth={6} /><ellipse rx={32} ry={32} fill="none" stroke={KC.gold} strokeWidth={5} />
-    <text y={18} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill={KC.ink}>$</text>
+    <text y={18} textAnchor="middle" style={{ font:`400 50px ${KF.titulo}` }} fill="#0b1020">$</text>
   </g>;
 }
 // Centro de datos (edificio con racks y luces).
@@ -126,7 +127,7 @@ function Casita({ x, y, luz = 0, s = 1 }) {
 function Recibo({ x, y, s = 1, rot = 0 }) {
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <path d="M -90 -120 L 90 -120 L 90 110 L 70 124 L 50 110 L 30 124 L 10 110 L -10 124 L -30 110 L -50 124 L -70 110 L -90 124 Z" fill="#fff" stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
-    <text x={0} y={-80} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>RECIBO</text>
+    <text x={0} y={-80} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill="#0b1020">RECIBO</text>
     <path d="M 0 -60 L -18 -22 L -2 -22 L -10 10 L 18 -32 L 2 -32 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={4} transform="translate(-40 20)" />
     {[0, 1, 2].map((k) => <line key={k} x1={-10} y1={-30 + k * 26} x2={64} y2={-30 + k * 26} stroke="#9aa" strokeWidth={6} />)}
     <text x={0} y={90} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.red}>$$$</text>
@@ -138,108 +139,132 @@ function Computo() {
   const K = { G: CUES.Gancho, Mo: CUES.Moore, Du: CUES.Duplica, E: CUES.Estudio, D: CUES.DiezMil, P: CUES.Pregunta, F: CUES.Fuentes, C: CUES.Costo, En: CUES.Energia, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const svg = (c, z) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{c}</svg>;
-  // gancho: agua que se vuelve cómputo; el vaso se llena y aparece uno 5 veces más grande (volumen ×5 → lado ×1.71)
+  // gancho: agua que se vuelve cómputo; el vaso llena el cuadro, se llena y aparece uno 5 veces más grande (volumen ×5 → lado ×1.71)
   const pixG = kprog(T, K.G + 0.2, K.G + 1.4, kEase.suave);
   const llenoA = klerp(0.45, 1, kprog(T, K.G + 3.6, K.G + 4.6, kEase.sale));
   const mueveA = kprog(T, K.G + 4.4, K.G + 5.2, kEase.suave);
   const sB = 1.71, entraB = kprog(T, K.G + 4.7, K.G + 5.3, kEase.rebote), llenoB = kprog(T, K.G + 5.3, K.G + 6.8, kEase.suave);
   const nMoore = Math.pow(2, Math.floor(kprog(T, K.Mo + 0.8, K.Mo + 4.8) * 6));
-  const casas = []; for (let j = 0; j < 7; j++) for (let i = 0; i < 9; i++) casas.push([590 + i * 52 + (j % 2) * 26, 690 + j * 66, (i * 7 + j * 13) % 63]);
+  // carrera: el chip de Moore se duplica una vez en 24 meses; el vaso de la IA duplica su nivel en cada ×2 del carril
+  const mMo = 24 * kprog(T, K.Du + 0.6, K.Du + 3.6), mIA = 24 * kprog(T, K.Du + 0.8, K.Du + 3.8);
+  let nivIA = 1 / 16; for (let k = 1; k <= 4; k++) nivIA *= 1 + kprog(mIA, 5.2 * k - 0.7, 5.2 * k, kEase.sale);
+  const casas = []; for (let j = 0; j < 7; j++) for (let i = 0; i < 9; i++) casas.push([132 + i * 96 + (j % 2) * 48, 900 + j * 76, (i * 7 + j * 13) % 63]);
   const luces = Math.floor(63 * kprog(T, K.En + 1.4, K.En + 5.2, kEase.suave));
   const monedas = Array.from({ length: 14 }, (_, k) => { const t0 = K.C + 0.3 + k * 0.22, u = kprog(T, t0, t0 + 0.6, (p) => p * p);
-    return T < t0 ? null : <Moneda key={k} x={360 + ((k * 53) % 140) - 70} y={klerp(380, 1050 - Math.floor(k / 3) * 40, u)} s={0.8} rot={k * 40 + u * 180} />; });
+    return T < t0 ? null : <Moneda key={k} x={330 + (((k * 53) % 140) - 70) * 1.4} y={klerp(330, 1290 - Math.floor(k / 3) * 62, u)} s={1.25} rot={k * 40 + u * 180} />; });
+  const oD = kprog(T, K.D, K.D + 0.3) * (1 - kprog(T, K.D + 2.0, K.D + 2.4));
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
-      {/* 1 · gancho: el vaso de "agua" que es cómputo */}
+      {/* 1 · gancho: el vaso de "agua" que es cómputo, a cuadro completo */}
       <Escena T={T} a={K.G} b={K.Mo}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Vaso id="vA" x={klerp(540, 300, mueveA)} y={1150} w={300 * klerp(1, 0.8, mueveA)} h={420 * klerp(1, 0.8, mueveA)} nivel={llenoA} pix={pixG} desborde={kprog(T, K.G + 4.4, K.G + 4.8)} T={T} />
-          {entraB > 0 && <g transform={`translate(760 1150) scale(${entraB * 0.8})`}><Vaso id="vB" x={0} y={0} w={300 * sB * 0.62} h={420 * sB * 0.62} nivel={llenoB} pix={1} T={T} seed={7} /></g>}
+          <Vaso id="vA" x={klerp(540, 282, mueveA)} y={1340} w={klerp(720, 284, mueveA)} h={klerp(920, 396, mueveA)} nivel={llenoA} pix={pixG} desborde={kprog(T, K.G + 4.4, K.G + 4.8)} T={T} />
+          {entraB > 0 && <g transform={`translate(697 1340) scale(${entraB})`}><Vaso id="vB" x={0} y={0} w={284 * sB} h={396 * sB} nivel={llenoB} pix={1} T={T} seed={7} /></g>}
         </>)}
       </Escena>
-      <Chip T={T} at={K.G + 0.3} until={K.G + 1.6} texto="¿agua?" x={330} y={620} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.G + 1.7} until={K.Mo - 0.2} texto="cómputo para entrenar IA" x={330} y={620} tam={36} borde={KC.mint} />
-      <Chip T={T} at={K.G + 5.0} until={K.Mo - 0.2} texto="1 año después" x={760} y={1210} tam={30} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.G + 5.2} until={K.Mo - 0.2} valor={5} dur={0.6} prefijo="×" sufijo=" / año" x={760} y={470} tam={130} color={KC.yellow} />
-      {/* 2 · ley de Moore */}
+      <Chip T={T} at={K.G + 0.3} until={K.G + 1.6} texto="¿agua?" x={540} y={270} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.G + 1.7} until={K.Mo - 0.2} texto="cómputo para entrenar IA" x={540} y={270} tam={40} borde={KC.mint} />
+      <Chip T={T} at={K.G + 5.0} until={K.Mo - 0.2} texto="1 año después" x={724} y={1500} tam={32} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.G + 5.2} until={K.Mo - 0.2} valor={5} dur={0.6} prefijo="×" sufijo=" / año" x={724} y={450} tam={130} color={KC.yellow} />
+      {/* 2 · ley de Moore: el chip llena el cuadro */}
       <Escena T={T} a={K.Mo} b={K.Du}>
         <FondoLunares color={KC.yellow} />
-        {svg(<ChipMoore x={420} y={800} s={0.95} n={nMoore} T={T} />)}
+        {svg(<ChipMoore x={540} y={880} s={1.7} n={nMoore} T={T} />)}
       </Escena>
-      <Chip T={T} at={K.Mo + 0.3} until={K.Du - 0.2} texto="Ley de Moore (1975)" x={420} y={430} tam={40} borde={KC.ink} />
-      {T < K.Du + 0.3 && <div style={{ opacity:1 - kprog(T, K.Du - 0.1, K.Du + 0.3) }}><Contador T={T} at={K.Mo + 0.8} hasta={10} dur={4.0} sufijo=" años" x={420} y={1110} tam={56} color={KC.ink} /></div>}
-      {/* 3 · la carrera: Moore contra el cómputo de la IA */}
+      <Chip T={T} at={K.Mo + 0.3} until={K.Du - 0.2} texto="Ley de Moore (1975)" x={540} y={335} tam={42} borde={KC.ink} />
+      {T < K.Du + 0.3 && <div style={{ opacity:1 - kprog(T, K.Du - 0.1, K.Du + 0.3) }}><Contador T={T} at={K.Mo + 0.8} hasta={10} dur={4.0} sufijo=" años" x={540} y={1430} tam={72} color={KC.ink} /></div>}
+      {/* 3 · la carrera: Moore (su chip) contra el cómputo de la IA (su vaso) */}
       <Escena T={T} a={K.Du} b={K.E}>
         <FondoLunares color={KC.mint} />
+        {svg(<>
+          <ChipMoore x={540} y={440} s={0.7} n={mMo >= 24 ? 64 : 32} T={T} />
+          <Vaso id="vD" x={540} y={1470} w={380} h={380} nivel={nivIA} pix={1} T={T} seed={5} />
+        </>)}
       </Escena>
-      <Carril T={T} at={K.Du + 0.2} y={560} color={KC.gold2} until={K.E} titulo="Ley de Moore" cada={24} etiqueta="×2 cada ~24 meses" />
-      <Carril T={T} at={K.Du + 0.6} y={860} color={KC.pink} until={K.E} titulo="Cómputo de las IA más grandes" cada={5.2} etiqueta="×2 cada ~5 meses (desde 2020)" />
-      {/* 4 · el estudio de 2022 */}
+      <Carril T={T} at={K.Du + 0.2} y={640} color={KC.gold2} until={K.E} titulo="Ley de Moore" cada={24} etiqueta="×2 cada ~24 meses" />
+      <Carril T={T} at={K.Du + 0.4} y={870} color={KC.pink} until={K.E} titulo="Cómputo de las IA más grandes" cada={5.2} etiqueta="×2 cada ~5 meses (desde 2020)" />
+      {/* 4 · el estudio de 2022: la gráfica está desde el inicio; la tarjeta, chica y arriba */}
       <Escena T={T} a={K.E} b={K.D}>
         <FondoLunares color={KC.lilac} />
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.4} anio="2022" quien="Epoch AI · congreso IJCNN, Padua (Italia)" revista="Sevilla, Heim, Ho, Besiroglu, Hobbhahn y Villalobos" y={820} />
-      <Grafica T={T} at={K.E + 3.4} until={K.D} />
-      <Chip T={T} at={K.E + 4.6} until={K.D - 0.2} texto="~cada 20 meses (antes de 2010)" x={400} y={900} tam={30} borde={KC.blue} />
-      <Chip T={T} at={K.E + 5.8} until={K.D - 0.2} texto="~cada 6 meses (2010–2022)" x={560} y={760} tam={30} borde={KC.red} />
-      {/* 5 · diez mil veces */}
+      <div style={{ position:'absolute', inset:0, transform:'scale(.8)', transformOrigin:'540px 350px', zIndex:43, pointerEvents:'none' }}>
+        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.D - 0.2} anio="2022" quien="Epoch AI · congreso IJCNN, Padua (Italia)" revista="Sevilla, Heim, Ho, Besiroglu, Hobbhahn y Villalobos" y={350} />
+      </div>
+      <Grafica T={T} at={K.E} linea={K.E + 3.4} until={K.D} />
+      <Chip T={T} at={K.E + 4.6} until={K.D - 0.2} texto="~cada 20 meses (antes de 2010)" x={400} y={1030} tam={32} borde={KC.blue} />
+      <Chip T={T} at={K.E + 5.8} until={K.D - 0.2} texto="~cada 6 meses (2010–2022)" x={590} y={800} tam={32} borde={KC.red} />
+      {/* 5 · diez mil veces: la cuadrícula centrada y grande */}
       <Escena T={T} a={K.D} b={K.P}>
         <FondoCircuito T={T} />
       </Escena>
       {T > K.D - 0.45 && T < K.P + 0.45 && <div style={{ position:'absolute', inset:0, zIndex:30, opacity:kprog(T, K.D - 0.45, K.D + 0.05) * (1 - kprog(T, K.P - 0.05, K.P + 0.45)) }}>
-        <Cuadricula T={T} cols={100} filas={100} x={60} y={420} ancho={640} alto={640} vacio="rgba(255,255,255,.10)" lleno={KC.mint}
+        <Cuadricula T={T} cols={100} filas={100} x={110} y={520} ancho={860} alto={860} vacio="rgba(255,255,255,.13)" lleno={KC.mint}
           tramos={[{ desde: 0, hasta: 0.0001, color: KC.yellow }]} llenado={(t) => t < K.D + 1.0 ? 0.0001 : 0.0001 + 0.9999 * Math.pow(kprog(t, K.D + 1.0, K.D + 3.8), 2.2)} />
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:31 }}><rect x={102} y={512} width={876} height={876} rx={14} fill="none" stroke={KC.mint} strokeWidth={5} opacity=".85" /></svg>
       </div>}
-      {T > K.D && T < K.D + 2.4 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:35 }}><circle cx={64} cy={424} r={18 + 6 * Math.sin(T * 8)} fill="none" stroke={KC.yellow} strokeWidth={5} opacity={kprog(T, K.D, K.D + 0.3)} /><line x1={84} y1={410} x2={150} y2={380} stroke={KC.yellow} strokeWidth={5} opacity={kprog(T, K.D, K.D + 0.3)} /></svg>}
-      <Chip T={T} at={K.D + 0.3} until={K.D + 2.4} texto="■ = cómputo de 2020" x={380} y={360} tam={32} borde={KC.yellow} />
-      <Chip T={T} at={K.D + 2.5} until={K.P - 0.2} texto="tendencia de los modelos más grandes" x={380} y={360} tam={26} borde={KC.mint} />
-      <NumeroGigante T={T} at={K.D + 3.0} until={K.P - 0.2} valor={10000} desde={1} dur={0.8} prefijo="×" x={380} y={740} tam={150} color={KC.yellow} />
-      {/* 6 · la pregunta */}
+      {/* lupa: el cuadrito de 2020 (la esquina de la cuadrícula) visto de cerca */}
+      {T > K.D && T < K.D + 2.4 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:35, opacity:oD }}>
+        <defs><clipPath id="lupaD"><circle cx={330} cy={790} r={150} /></clipPath></defs>
+        <line x1={124} y1={534} x2={224} y2={684} stroke={KC.yellow} strokeWidth={5} />
+        <circle cx={114} cy={524} r={16 + 5 * Math.sin(T * 8)} fill="none" stroke={KC.yellow} strokeWidth={5} />
+        <circle cx={330} cy={790} r={150} fill="#0b1020" />
+        <g clipPath="url(#lupaD)">
+          {[0, 1, 2].map((j) => [0, 1, 2].map((i) => <rect key={`${i}-${j}`} x={236 + i * 104} y={696 + j * 104} width={90} height={90} rx={12} fill={i + j === 0 ? KC.yellow : 'rgba(255,255,255,.16)'} />))}
+        </g>
+        <circle cx={330} cy={790} r={150} fill="none" stroke={KC.yellow} strokeWidth={7} />
+      </svg>}
+      <Chip T={T} at={K.D + 0.3} until={K.D + 2.4} texto="■ = cómputo de 2020" x={540} y={430} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.D + 2.5} until={K.P - 0.2} texto="tendencia de los modelos más grandes" x={540} y={430} tam={32} borde={KC.mint} />
+      <NumeroGigante T={T} at={K.D + 3.0} until={K.P - 0.2} valor={10000} desde={1} dur={0.8} prefijo="×" x={540} y={950} tam={190} color={KC.yellow} />
+      {/* 6 · la pregunta: el vaso casi vacío, con la duda adentro */}
       <Escena T={T} a={K.P} b={K.F} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<text x={290} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 900)`}>?</text>)}
+        {svg(<>
+          <Vaso id="vP" x={540} y={1400} w={520} h={600} nivel={0.15} pix={1} T={T} seed={5} />
+          <text x={540} y={1240} textAnchor="middle" style={{ font:`400 400px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={10} transform={`rotate(${Math.sin(T * 3) * 6} 540 1100)`}>?</text>
+        </>)}
       </Escena>
-      <Chip T={T} at={K.P + 1.6} until={K.F - 0.2} texto="chips de IA: +49 % por dólar al año" x={540} y={1180} tam={34} borde={KC.ink} />
-      {/* 7 · de tres lados */}
+      <Chip T={T} at={K.P + 1.6} until={K.F - 0.2} texto="chips de IA: +49 % por dólar al año" x={540} y={640} tam={36} borde={KC.ink} />
+      {/* 7 · de tres lados: el mismo vaso, que ahora se llena */}
       <Escena T={T} a={K.F} b={K.C}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<Vaso id="vF" x={540} y={1190} w={300} h={260} nivel={klerp(0.15, 0.95, kprog(T, K.F + 1.0, K.F + 5.6))} pix={1} T={T} seed={5} />, 31)}
+        {svg(<Vaso id="vF" x={540} y={1400} w={520} h={600} nivel={klerp(0.15, 0.95, kprog(T, K.F + 1.0, K.F + 5.6))} pix={1} T={T} seed={5} />, 31)}
       </Escena>
       {T > K.F - 0.3 && T < K.C + 0.4 && <div style={{ position:'absolute', inset:0, opacity:1 - kprog(T, K.C - 0.05, K.C + 0.4) }}>
-        <Llave T={T} at={K.F + 1.0} x={200} y={480} icono={IcoChips} texto="más chips a la vez" />
-        <Llave T={T} at={K.F + 2.6} x={540} y={480} icono={IcoReloj(T)} texto="entrenar más tiempo" />
-        <Llave T={T} at={K.F + 4.2} x={880} y={480} icono={IcoRayo} texto="chips más potentes" />
+        <Llave T={T} at={K.F + 1.0} x={200} y={330} fin={750} icono={IcoChips} texto="más chips a la vez" />
+        <Llave T={T} at={K.F + 2.6} x={540} y={330} fin={750} icono={IcoReloj(T)} texto="entrenar más tiempo" />
+        <Llave T={T} at={K.F + 4.2} x={880} y={330} fin={750} icono={IcoRayo} texto="chips más potentes" />
       </div>}
       {/* 8 · el costo */}
       <Escena T={T} a={K.C} b={K.En}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>{monedas}<Vaso id="vC" x={360} y={1150} w={300} h={380} nivel={0.25 + 0.5 * kprog(T, K.C + 0.5, K.C + 3.6)} pix={1} T={T} seed={9} /></>)}
+        {svg(<>{monedas}<Vaso id="vC" x={330} y={1400} w={460} h={600} nivel={0.25 + 0.5 * kprog(T, K.C + 0.5, K.C + 3.6)} pix={1} T={T} seed={9} /></>)}
       </Escena>
-      <NumeroGigante T={T} at={K.C + 0.6} until={K.En - 0.2} valor={3.5} dec={1} dur={0.7} prefijo="×" x={780} y={820} tam={170} color={KC.leaf} etiqueta="" />
-      <Chip T={T} at={K.C + 1.0} until={K.En - 0.2} texto="costo por año (desde 2020)" x={760} y={1010} tam={30} borde={KC.ink} />
-      {/* 9 · la luz */}
+      <NumeroGigante T={T} at={K.C + 0.6} until={K.En - 0.2} valor={3.5} dec={1} dur={0.7} prefijo="×" x={815} y={880} tam={190} color={KC.leaf} etiqueta="" />
+      <Chip T={T} at={K.C + 1.0} until={K.En - 0.2} texto="costo por año (desde 2020)" x={815} y={1070} tam={28} borde={KC.ink} />
+      {/* 9 · la luz: el centro de datos arriba, las casas que alimentaría abajo */}
       <Escena T={T} a={K.En} b={K.Ci}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <CentroDatos x={270} y={1100} s={0.95} T={T} />
-          <path d={`M 400 1060 C 480 1060 500 900 560 900`} stroke={KC.ink} strokeWidth={14} fill="none" />
-          <path d={`M 400 1060 C 480 1060 500 900 560 900`} stroke={KC.yellow} strokeWidth={6} fill="none" strokeDasharray="18 16" strokeDashoffset={-T * 120} opacity={kprog(T, K.En + 1.0, K.En + 1.4)} />
-          {casas.map(([cx, cy, ord], i) => <Casita key={i} x={cx} y={cy} s={0.8} luz={ord < luces ? 1 : 0} />)}
+          <path d="M 540 780 L 540 846 M 120 846 L 960 846" stroke={KC.ink} strokeWidth={14} fill="none" strokeLinecap="round" />
+          <path d="M 540 780 L 540 846 M 540 846 L 120 846 M 540 846 L 960 846" stroke={KC.yellow} strokeWidth={6} fill="none" strokeDasharray="18 16" strokeDashoffset={-T * 120} opacity={kprog(T, K.En + 1.0, K.En + 1.4)} />
+          <CentroDatos x={540} y={794} s={1.35} T={T} />
+          {casas.map(([cx, cy, ord], i) => <Casita key={i} x={cx} y={cy} s={1.15} luz={ord < luces ? 1 : 0} />)}
         </>)}
       </Escena>
-      <Chip T={T} at={K.En + 0.6} until={K.Ci - 0.2} texto="≈ 1 GW (2026)" x={270} y={700} tam={44} borde={KC.yellow} />
-      <Chip T={T} at={K.En + 4.0} until={K.Ci - 0.2} texto="≈ 800 000 casas (EE. UU.)" x={760} y={1190} tam={34} borde={KC.yellow} />
-      {/* 10 · cierre: el mismo vaso, desbordado, con la cuenta pegada */}
+      <Chip T={T} at={K.En + 0.6} until={K.Ci - 0.2} texto="≈ 1 GW (2026)" x={540} y={225} tam={44} borde={KC.yellow} />
+      <Chip T={T} at={K.En + 4.0} until={K.Ci - 0.2} texto="≈ 800 000 casas (EE. UU.)" x={540} y={1500} tam={36} borde={KC.yellow} />
+      {/* 10 · cierre: el mismo vaso del inicio, desbordado, con la cuenta pegada */}
       <Escena T={T} a={K.Ci} b={FIN}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <Vaso id="vZ" x={420} y={1150} w={300} h={420} nivel={1} pix={1} desborde={1} T={T} seed={3} />
-          <g opacity={kprog(T, K.Ci + 1.6, K.Ci + 2.0)}><Recibo x={640} y={900} s={klerp(1.5, 1, kprog(T, K.Ci + 1.6, K.Ci + 2.1, kEase.rebote))} rot={10} /></g>
-          <g opacity={kprog(T, K.Ci + 2.4, K.Ci + 2.8)}><Moneda x={250} y={880} s={klerp(1.6, 1.1, kprog(T, K.Ci + 2.4, K.Ci + 2.9, kEase.rebote))} rot={-12} /></g>
+          <Vaso id="vZ" x={480} y={1420} w={500} h={700} nivel={1} pix={1} desborde={1} T={T} seed={3} />
+          <g opacity={kprog(T, K.Ci + 1.6, K.Ci + 2.0)}><Recibo x={810} y={1010} s={klerp(2.2, 1.6, kprog(T, K.Ci + 1.6, K.Ci + 2.1, kEase.rebote))} rot={10} /></g>
+          <g opacity={kprog(T, K.Ci + 2.4, K.Ci + 2.8)}><Moneda x={165} y={1000} s={klerp(2.5, 1.9, kprog(T, K.Ci + 2.4, K.Ci + 2.9, kEase.rebote))} rot={-12} /></g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.Ci + 0.4} until={K.Ou} texto="no se llena solo" x={420} y={620} tam={42} borde={KC.ink} />
+      <Chip T={T} at={K.Ci + 0.4} until={K.Ou} texto="no se llena solo" x={480} y={565} tam={44} borde={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Mo - 0.1} texto="No es agua: *es cómputo.* Cada año, *×5.*" />
