@@ -46,15 +46,15 @@ function Caja({ x, y, s = 1, abre = 1, etiqueta = 'artemisinina' }) {
     <rect x={-160} y={-80} width={320} height={210} rx={10} fill={KC.white} stroke={KC.ink} strokeWidth={9} />
     <path d={`M -160 -80 L -160 ${-80 - fl} L 160 ${-80 - fl * 0.4} L 160 -80`} fill="#f4efe4" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <rect x={-160} y={-20} width={320} height={56} fill={KC.mint} />
-    <text x={0} y={18} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{etiqueta}</text>
-    <text x={0} y={90} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#5a524a">contra la malaria</text>
+    <text x={0} y={18} textAnchor="middle" style={{ font:`900 34px ${KF.texto}`, stroke:'none' }} fill="#0b1020">{etiqueta}</text>
+    <text x={0} y={90} textAnchor="middle" style={{ font:`700 24px ${KF.mono}`, stroke:'none' }} fill="#3a342e">contra la malaria</text>
   </g>;
 }
 
 // Mosquito Anopheles: en reposo inclina el cuerpo (cabeza abajo, abdomen arriba); alas con manchas.
 function Mosquito({ T, x, y, s = 1, pica = 0 }) {
   const ala = Math.sin(T * 60) * (1 - pica) * 18;
-  return <g transform={`translate(${x} ${y}) scale(${s}) rotate(${-38})`}>
+  return <g transform={`translate(${x} ${y}) scale(${s}) rotate(${38})`}>
     {[[-30, 1], [0, 1], [30, 1]].map(([dx], i) => <g key={i}>
       <path d={`M ${dx} 6 l ${-30 - i * 10} 60 l -20 60`} stroke={KC.ink} strokeWidth={5} fill="none" strokeLinecap="round" />
       <path d={`M ${dx} 6 l ${30 + i * 8} 60 l 18 62`} stroke={KC.ink} strokeWidth={5} fill="none" strokeLinecap="round" />
@@ -160,7 +160,7 @@ function Fabrica({ T, x, y, at, p = 1 }) {
         {i > 0 && <path d={`M 0 -86 L 0 -34`} stroke="#eafff7" strokeWidth={6} markerEnd="" />}
         {i > 0 && <path d="M -12 -46 L 0 -30 L 12 -46" stroke="#eafff7" strokeWidth={6} fill="none" />}
         <rect x={-150} y={-28} width={300} height={56} rx={28} fill={c} stroke={KC.ink} strokeWidth={5} />
-        <text y={12} textAnchor="middle" style={{ font:`900 ${i === 3 ? 26 : 30}px ${KF.texto}` }} fill={KC.ink}>{t}</text>
+        <text y={12} textAnchor="middle" style={{ font:`900 ${i === 3 ? 26 : 30}px ${KF.texto}`, stroke:'none' }} fill="#0b1020">{t}</text>
       </g>; })}
   </g>;
 }
@@ -212,21 +212,22 @@ function Artemisinina44() {
       <Escena T={T} a={K.G} b={K.Mo} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          <Artemisia T={T} x={250} y={1150} s={0.95} />
-          <Caja x={540} y={1000} s={1.0} abre={abre} />
-          {levTanque(860, 920, 1.0)}
-          <FlechaCurva T={T} x1={430} y1={820} x2={300} y2={560} p={kprog(T, K.G + 0.6, K.G + 1.4)} curva={-60} color={KC.white} />
-          <FlechaCurva T={T} x1={660} y1={820} x2={800} y2={700} p={kprog(T, K.G + 2.6, K.G + 3.4)} curva={60} color={KC.yellow} />
+          <Artemisia T={T} x={280} y={1420} s={1.3} />
+          <Caja x={570} y={1290} s={1.2} abre={abre} />
+          {levTanque(830, 740, 1.2)}
+          <FlechaCurva T={T} x1={440} y1={960} x2={345} y2={690} p={kprog(T, K.G + 0.6, K.G + 1.4)} curva={-60} color={KC.white} />
+          <FlechaCurva T={T} x1={650} y1={905} x2={705} y2={790} p={kprog(T, K.G + 2.6, K.G + 3.4)} curva={60} color={KC.yellow} />
         </Capa>
       </Escena>
       {/* 1 · el mosquito y la sangre */}
       <Escena T={T} a={K.Mo} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          <path d="M -40 1180 Q 540 1080 1120 1150 L 1120 1500 L -40 1500 Z" fill="#f1b48f" stroke={KC.ink} strokeWidth={10} />
-          <Mosquito T={T} x={klerp(900, 560, kprog(T, K.Mo, K.Mo + 1.0, kEase.sale))} y={klerp(560, 1010, kprog(T, K.Mo, K.Mo + 1.0, kEase.sale))} s={1.15} pica={kprog(T, K.Mo + 1.0, K.Mo + 1.3)} />
+          <defs><linearGradient id="a44Piel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#c58a6d" /><stop offset="100%" stopColor="#4e3229" /></linearGradient></defs>
+          <path d="M -40 1180 Q 540 1080 1120 1150 L 1120 2000 L -40 2000 Z" fill="url(#a44Piel)" stroke={KC.ink} strokeWidth={10} />
+          <Mosquito T={T} x={klerp(880, 430, kprog(T, K.Mo, K.Mo + 1.0, kEase.sale))} y={klerp(380, 860, kprog(T, K.Mo, K.Mo + 1.0, kEase.sale))} s={1.9} pica={kprog(T, K.Mo + 1.0, K.Mo + 1.3)} />
         </Capa>
-        <Lupa T={T} at={K.Mo + 1.6} until={K.Ci - 0.2} x={540} y={560} r={230} fx={700} fy={1130} tinte={KC.red} etiqueta="AL MICROSCOPIO · sangre"
+        <Lupa T={T} at={K.Mo + 1.6} until={K.Ci - 0.2} x={740} y={500} r={230} fx={705} fy={1135} tinte={KC.red} etiqueta="AL MICROSCOPIO · sangre"
           interior={(T, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#2a0c12" />
             {[[120, 150, 0], [300, 120, 1], [200, 300, 1], [380, 300, 0], [100, 360, 0], [300, 430, 1], [420, 170, 0]].map(([gx, gy, p], i) =>
               <Globulo key={i} x={gx + Math.sin(T + i) * 6} y={gy + Math.cos(T * 0.8 + i) * 6} s={0.75} rot={i * 20} parasito={p * kprog(T, K.Mo + 2.4 + i * 0.15, K.Mo + 2.9 + i * 0.15)} />)}
@@ -235,44 +236,44 @@ function Artemisinina44() {
       {/* 2 · la cifra */}
       <Escena T={T} a={K.Ci} b={K.Pl} zoom={0.03}>
         <FondoMarca color={KC.coral} patron="rayas" />
-        <Capa>{Array.from({ length: 10 }, (_, i) => <Globulo key={i} x={100 + (i % 5) * 220} y={1520 + Math.floor(i / 5) * 140 + Math.sin(T + i) * 8} s={0.7} rot={i * 33} parasito={i % 2} />)}</Capa>
+        <Capa>{Array.from({ length: 15 }, (_, i) => <Globulo key={i} x={110 + (i % 5) * 215 + (Math.floor(i / 5) % 2) * 20 - 10} y={1190 + Math.floor(i / 5) * 205 + Math.sin(T + i) * 8} s={1.2} rot={i * 33} parasito={i % 2} />)}</Capa>
       </Escena>
       {/* 3 · la planta y la molécula */}
       <Escena T={T} a={K.Pl} b={K.Li} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         <Capa>
-          <Artemisia T={T} x={300} y={1220} s={1.25} seed={5} />
-          <FlechaCurva T={T} x1={380} y1={720} x2={640} y2={660} p={kprog(T, K.Pl + 1.4, K.Pl + 2.0)} curva={-50} color={KC.white} />
-          <g opacity={kprog(T, K.Pl + 1.8, K.Pl + 2.3)}><Artemisinina x={790} y={720} s={1.1} rot={Math.sin(T) * 6} puente={kprog(T, K.Pl + 2.4, K.Pl + 3.0)} brillo={0.6 + 0.4 * Math.sin(T * 4)} /></g>
+          <Artemisia T={T} x={300} y={1440} s={1.55} seed={5} />
+          <FlechaCurva T={T} x1={400} y1={820} x2={610} y2={740} p={kprog(T, K.Pl + 1.4, K.Pl + 2.0)} curva={-50} color={KC.white} />
+          <g opacity={kprog(T, K.Pl + 1.8, K.Pl + 2.3)}><Artemisinina x={810} y={770} s={1.25} rot={Math.sin(T) * 6} puente={kprog(T, K.Pl + 2.4, K.Pl + 3.0)} brillo={0.6 + 0.4 * Math.sin(T * 4)} /></g>
         </Capa>
       </Escena>
       {/* 4 · el libro antiguo y las dos ollas */}
       <Escena T={T} a={K.Li} b={K.No} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <Capa>
-          <LibroAntiguo x={370} y={640} s={1.1} abre={kprog(T, K.Li, K.Li + 0.8, kEase.sale)} />
-          <g opacity={kprog(T, K.Li + 2.6, K.Li + 3.0)}><Olla T={T} x={280} y={1040} hierve={1} s={0.9} /></g>
-          <g opacity={kprog(T, K.Li + 3.6, K.Li + 4.0)}><Olla T={T} x={800} y={1040} hierve={0} s={0.9} /></g>
-          <Marca x={420} y={900} ok={false} o={kprog(T, K.Li + 4.6, K.Li + 5.0)} s={0.9} />
-          <Marca x={940} y={900} ok={true} o={kprog(T, K.Li + 4.4, K.Li + 4.8)} s={0.9} />
+          <LibroAntiguo x={540} y={690} s={1.45} abre={kprog(T, K.Li, K.Li + 0.8, kEase.sale)} />
+          <g opacity={kprog(T, K.Li + 2.6, K.Li + 3.0)}><Olla T={T} x={290} y={1260} hierve={1} s={1.3} /></g>
+          <g opacity={kprog(T, K.Li + 3.6, K.Li + 4.0)}><Olla T={T} x={800} y={1260} hierve={0} s={1.3} /></g>
+          <Marca x={460} y={1090} ok={false} o={kprog(T, K.Li + 4.6, K.Li + 5.0)} s={1.15} />
+          <Marca x={960} y={1090} ok={true} o={kprog(T, K.Li + 4.4, K.Li + 4.8)} s={1.15} />
         </Capa>
       </Escena>
       {/* 5 · 1972 y el Nobel */}
       <Escena T={T} a={K.No} b={K.Co} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <Capa><g opacity={kprog(T, K.No + 1.6, K.No + 2.0)}><Medalla T={T} x={760} y={1030} s={1.25} /></g>
-          <g transform="translate(250 1150)"><Artemisinina x={0} y={0} s={0.7} rot={T * 10} /></g></Capa>
+        <Capa><g opacity={kprog(T, K.No + 1.6, K.No + 2.0)}><Medalla T={T} x={770} y={1230} s={1.45} /></g>
+          <g transform="translate(350 960)"><Artemisinina x={0} y={0} s={1.35} rot={T * 10} brillo={0.7} /></g></Capa>
       </Escena>
       {/* 6 · cosechas y precio */}
       <Escena T={T} a={K.Co} b={K.Pr} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          <rect x={0} y={1180} width={KW} height={300} fill="#59422b" />
+          <rect x={-40} y={1400} width={KW + 80} height={600} fill="#4a3724" />
           {Array.from({ length: 6 }, (_, i) => { const u = kprog(T, K.Co, K.Co + 2.6), ciclo = Math.sin(u * Math.PI * 2 + i * 0.6);
-            return <Artemisia key={i} T={T} x={110 + i * 172} y={1200} s={0.55} crece={0.45 + 0.55 * Math.max(0, ciclo)} seco={Math.max(0, -ciclo)} seed={i + 11} flores={false} />; })}
+            return <Artemisia key={i} T={T} x={110 + i * 172} y={1425} s={0.95} crece={0.45 + 0.55 * Math.max(0, ciclo)} seco={Math.max(0, -ciclo)} seed={i + 11} flores={false} />; })}
           {(() => { const p = kprog(T, K.Co + 0.2, K.Co + 2.4); const pts = [[120, 560], [260, 470], [380, 640], [520, 430], [660, 700], [800, 480], [960, 620]];
             const n = Math.max(2, Math.ceil(p * pts.length)); const d = pts.slice(0, n).map(([a, b], i) => `${i ? 'L' : 'M'} ${a} ${b}`).join(' ');
-            return <g><rect x={90} y={380} width={900} height={360} rx={24} fill="rgba(255,255,255,.85)" stroke={KC.ink} strokeWidth={7} />
+            return <g><rect x={90} y={380} width={900} height={360} rx={24} fill="rgba(16,23,40,.9)" stroke={KC.ink} strokeWidth={7} />
               <path d={d} stroke={KC.red} strokeWidth={12} fill="none" strokeLinejoin="round" strokeLinecap="round" />
               <text x={120} y={430} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>precio (esquema)</text></g>; })()}
         </Capa>
@@ -280,8 +281,8 @@ function Artemisinina44() {
       {/* 7 · ¿y si la fabricara una levadura? */}
       <Escena T={T} a={K.Pr} b={K.Ge} zoom={0.06}>
         <FondoLunares color={KC.orange} />
-        <Capa><Pan x={300} y={1120} s={1.0} /><Levadura T={T} x={330} y={760} r={150} brote={kprog(T, K.Pr + 0.4, K.Pr + 2.2)} seed={4} /></Capa>
-        <div style={{ position:'absolute', left:0, top:0 }}><Escala T={T} z={1} pxPorMm={60000} x={120} y={1430} color={KC.ink} objetivo={200} /></div>
+        <Capa><Pan x={500} y={1380} s={1.5} /><Levadura T={T} x={480} y={830} r={250} brote={kprog(T, K.Pr + 0.4, K.Pr + 2.2)} seed={4} /></Capa>
+        <div style={{ position:'absolute', left:0, top:0 }}><Escala T={T} z={1} pxPorMm={100000} x={120} y={1430} color={KC.ink} objetivo={200} /></div>
       </Escena>
       {/* 8–9 · por dentro de la levadura y la química */}
       <Escena T={T} a={K.Ge} b={K.Es} zoom={0.03}>
@@ -312,58 +313,58 @@ function Artemisinina44() {
       </Escena>
       {/* 10 · el estudio: el tanque */}
       <Escena T={T} a={K.Es} b={K.Sa} zoom={0.03}>
-        <MundoBiorreactor T={T} turbio={klerp(0.2, 0.75, kprog(T, K.Es, K.Es + 4.5))} burbujas={1} fondo={KC.cyan} etiquetaTanque="tanque de levadura" />
+        <MundoBiorreactor T={T} turbio={klerp(0.2, 0.75, kprog(T, K.Es, K.Es + 4.5))} burbujas={1} fondo="#0b1626" etiquetaTanque="tanque de levadura" />
       </Escena>
       {/* 11–12 · Sanofi en Italia y el apagón */}
       <Escena T={T} a={K.Sa} b={K.Cr} zoom={0.03}>
         <FondoLunares color={T < K.Gi ? KC.mint : KC.lilac} />
         <Capa>
-          {T < K.Gi + 0.3 ? <g><Fabrica2 T={T} x={560} y={1020} on={1 - kprog(T, K.Gi - 0.1, K.Gi + 0.3)} s={1.2} /></g>
-            : <Balanza T={T} x={600} y={900} inclina={kprog(T, K.Gi + 1.6, K.Gi + 2.6, kEase.sale)} />}
+          {T < K.Gi + 0.3 ? <g><Fabrica2 T={T} x={540} y={1120} on={1 - kprog(T, K.Gi - 0.1, K.Gi + 0.3)} s={1.5} /></g>
+            : <g transform="translate(540 960) scale(1.25) translate(-600 -900)"><Balanza T={T} x={600} y={900} inclina={kprog(T, K.Gi + 1.6, K.Gi + 2.6, kEase.sale)} /></g>}
         </Capa>
       </Escena>
       {/* 13 · cierre: la misma caja, ahora con dos caminos */}
       <Escena T={T} a={K.Cr} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          <Artemisia T={T} x={250} y={1150} s={0.95} />
-          <Caja x={540} y={1000} s={1.0} abre={1} />
-          {levTanque(860, 920, 1.0)}
-          <FlechaCurva T={T} x1={430} y1={820} x2={300} y2={560} p={kprog(T, K.Cr + 0.2, K.Cr + 0.9)} curva={-60} color={KC.white} />
-          <FlechaCurva T={T} x1={660} y1={820} x2={800} y2={700} p={kprog(T, K.Cr + 1.2, K.Cr + 1.9)} curva={60} color={KC.yellow} />
+          <Artemisia T={T} x={280} y={1420} s={1.3} />
+          <Caja x={570} y={1290} s={1.2} abre={1} />
+          {levTanque(830, 740, 1.2)}
+          <FlechaCurva T={T} x1={440} y1={960} x2={345} y2={690} p={kprog(T, K.Cr + 0.2, K.Cr + 0.9)} curva={-60} color={KC.white} />
+          <FlechaCurva T={T} x1={650} y1={905} x2={705} y2={790} p={kprog(T, K.Cr + 1.2, K.Cr + 1.9)} curva={60} color={KC.yellow} />
         </Capa>
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.0} until={K.Mo - 0.3} texto="¿de aquí?" x={260} y={500} tam={40} borde={KC.leaf} />
-      <Chip T={T} at={K.G + 3.0} until={K.Mo - 0.3} texto="¿y de aquí?" x={860} y={1150} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.G + 1.4} until={K.Mo - 0.3} x={60} y={1470} texto="Artemisia annua" it tam={34} color={KC.ink} />
-      <Etq T={T} at={K.G + 3.4} until={K.Mo - 0.3} x={1030} y={1470} texto="levadura" lado="izq" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 1.0} until={K.Mo + 3.0} x={60} y={1560} texto="mosquito Anopheles" it tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 3.1} until={K.Ci - 0.3} x={60} y={1560} texto="parásito: Plasmodium falciparum" it tam={32} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Ci + 0.3} until={K.Pl - 0.3} valor={282} dur={1.2} sufijo=" M" etiqueta="casos de malaria en 2024" y={810} tam={190} color={KC.yellow} />
-      <NumeroGigante T={T} at={K.Ci + 1.8} until={K.Pl - 0.3} valor={610} dur={1.0} sufijo=" mil" etiqueta="muertes" y={1065} tam={110} color={KC.white} />
-      <Chip T={T} at={K.Ci + 0.6} until={K.Pl - 0.3} texto="OMS · Informe mundial 2025" x={540} y={1500} tam={34} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Pl + 0.5} until={K.Li - 0.3} x={60} y={1470} texto="ajenjo dulce · Artemisia annua" it tam={32} color={KC.ink} />
-      <Etiqueta T={T} at={K.Pl + 2.8} until={K.Li - 0.3} x={740} y={590} texto="puente O–O" lado="izq" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Pl + 3.2} until={K.Li - 0.3} texto="artemisinina (esquema)" x={790} y={980} tam={34} borde={KC.gold} />
-      <Chip T={T} at={K.Li + 0.8} until={K.Li + 2.6} texto="Ge Hong · siglo IV" x={540} y={440} tam={38} borde={KC.gold} />
-      <Chip T={T} at={K.Li + 3.0} until={K.No - 0.3} texto="hervida" x={280} y={1180} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.Li + 4.0} until={K.No - 0.3} texto="remojada en frío" x={800} y={1180} tam={36} borde={KC.mint} />
-      <TarjetaEstudio T={T} at={K.No + 0.2} until={K.No + 1.7} anio="1972" quien="Tu Youyou y su equipo · Pekín" revista="artemisinina aislada" y={620} />
-      <Chip T={T} at={K.No + 1.8} until={K.Co - 0.3} texto="Tu Youyou · Nobel de Medicina" x={540} y={500} tam={36} borde={KC.gold} />
-      <Etq T={T} at={K.Pr + 0.4} until={K.Ge - 0.2} x={120} y={580} texto="Saccharomyces cerevisiae" it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.G + 1.0} until={K.Mo - 0.3} texto="¿de aquí?" x={240} y={440} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.G + 3.0} until={K.Mo - 0.3} texto="¿y de aquí?" x={850} y={385} tam={40} borde={KC.gold} />
+      <Etq T={T} at={K.G + 1.4} until={K.Mo - 0.3} x={60} y={1625} texto="Artemisia annua" it tam={34} color={KC.ink} />
+      <Etq T={T} at={K.G + 3.4} until={K.Mo - 0.3} x={1030} y={1000} texto="levadura" lado="izq" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 1.0} until={K.Mo + 3.0} x={60} y={1400} texto="mosquito Anopheles" it tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 3.1} until={K.Ci - 0.3} x={60} y={1400} texto="parásito: Plasmodium falciparum" it tam={32} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Ci + 0.3} until={K.Pl - 0.3} valor={282} dur={1.2} sufijo=" M" etiqueta="casos de malaria en 2024" y={590} tam={190} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Ci + 1.8} until={K.Pl - 0.3} valor={610} dur={1.0} sufijo=" mil" etiqueta="muertes" y={835} tam={110} color={KC.white} />
+      <Chip T={T} at={K.Ci + 0.6} until={K.Pl - 0.3} texto="OMS · Informe mundial 2025" x={540} y={1020} tam={34} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Pl + 0.5} until={K.Li - 0.3} x={60} y={1505} texto="ajenjo dulce · Artemisia annua" it tam={32} color={KC.ink} />
+      <Etiqueta T={T} at={K.Pl + 2.8} until={K.Li - 0.3} x={755} y={622} texto="puente O–O" lado="izq" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Pl + 3.2} until={K.Li - 0.3} texto="artemisinina (esquema)" x={800} y={1030} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.Li + 0.8} until={K.Li + 2.6} texto="Ge Hong · siglo IV" x={540} y={370} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.Li + 3.0} until={K.No - 0.3} texto="hervida" x={290} y={1520} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Li + 4.0} until={K.No - 0.3} texto="remojada en frío" x={800} y={1520} tam={36} borde={KC.mint} />
+      <TarjetaEstudio T={T} at={K.No + 0.2} until={K.No + 1.7} anio="1972" quien="Tu Youyou y su equipo · Pekín" revista="artemisinina aislada" y={460} />
+      <Chip T={T} at={K.No + 1.8} until={K.Co - 0.3} texto="Tu Youyou · Nobel de Medicina" x={540} y={470} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.Pr + 0.4} until={K.Ge - 0.2} x={80} y={500} texto="Saccharomyces cerevisiae" it tam={30} color={KC.ink} />
       <Chip T={T} at={K.Ge + 0.3} until={K.Qu - 0.2} texto="genes de la planta" x={540} y={1500} tam={36} borde={KC.leaf} />
       <Chip T={T} at={K.Qu + 0.2} until={K.Qu + 1.1} texto="sale de la célula" x={540} y={1500} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.Qu + 2.4} until={K.Es - 0.2} texto="química: se cierra el puente O–O" x={540} y={1500} tam={34} borde={KC.red} />
       <Etiqueta T={T} at={K.Ge + 0.2} until={K.Qu - 0.2} x={540} y={1640} texto="POR DENTRO · levadura" lado="der" tam={30} color={KC.texto} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="2013" quien="Amyris y Keasling · California" revista="Paddon et al., Nature" x={420} y={640} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="2013" quien="Amyris y Keasling · California" revista="Paddon et al., Nature" x={330} y={400} />
       <Medidor T={T} at={K.Es + 2.4} until={K.Sa - 0.2} x={90} y={1500} ancho={900} etiqueta="ácido artemisínico" valor={(T) => klerp(1.6 / 25, 1, kprog(T, K.Es + 2.6, K.Es + 4.6, kEase.suave))} texto={(v) => kformato(v * 25, 1) + ' g/L'} color={KC.yellow} />
-      <Chip T={T} at={K.Sa + 0.2} until={K.Gi - 0.2} texto="Sanofi · Garessio, Italia · 2013" x={540} y={520} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.Sa + 0.2} until={K.Gi - 0.2} texto="Sanofi · Garessio, Italia · 2013" x={540} y={1485} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.Gi + 0.3} until={K.Cr - 0.2} texto="2015 · 0 toneladas" x={540} y={1530} tam={42} borde={KC.red} />
-      <Chip T={T} at={K.Gi + 2.0} until={K.Cr - 0.2} texto="planta: más barata" x={640} y={500} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={K.Cr + 0.5} until={K.Ou} texto="del campo" x={260} y={500} tam={40} borde={KC.leaf} />
-      <Chip T={T} at={K.Cr + 1.4} until={K.Ou} texto="o de la levadura" x={800} y={1150} tam={40} borde={KC.gold} />
+      <Chip T={T} at={K.Gi + 2.0} until={K.Cr - 0.2} texto="planta: más barata" x={540} y={640} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={K.Cr + 0.5} until={K.Ou} texto="del campo" x={240} y={440} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.Cr + 1.4} until={K.Ou} texto="o de la levadura" x={820} y={385} tam={40} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Mo - 0.1} texto="No solo planta: *también levadura.*" />
