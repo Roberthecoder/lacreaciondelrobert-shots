@@ -201,15 +201,17 @@ function SemillaShot() {
   const cae = kprog(T, K.G + 0.15, K.G + 0.9);
   // cierre: el frasco del inicio se levanta y vacía el grano en una bolsa
   const vac = kprog(T, K.C + 0.4, K.C + 1.3, kEase.suave);
+  // encuadre: lleva el punto (cx, cy) del dibujo a (tx, ty) y lo agranda k veces (las barras de escala se recalculan igual)
+  const Z = (cx, cy, k, tx, ty, c) => <g transform={`translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`}>{c}</g>;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: frasco de granos blancos que parecen echados a perder */}
       <Escena T={T} a={K.G} b={K.S} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(Z(330, 1150, 1.65, 360, 1370, <>
           <FrascoGrano T={T} x={330} y={1150} s={1.2} rot={sac} col={1} id="fg0" />
           {cae > 0 && <Grano x={330 + cae * 330} y={720 - Math.sin(cae * Math.PI) * 200 + cae * 440} rot={cae * 600} s={2.4} col={1} seed={5} />}
-        </>)}
+        </>))}
       </Escena>
       {/* 2 · spawn = grano esterilizado + micelio */}
       <Escena T={T} a={K.S} b={K.L} zoom={0.05}>
@@ -235,28 +237,28 @@ function SemillaShot() {
       <Escena T={T} a={K.L} b={K.Es} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <FrascoGrano T={T} x={230} y={1120} s={0.85} col={1} id="fg1" />
-          <HifaTabicada T={T} x={890} y={400} r={105} p={kprog(T, K.L + 2.0, K.L + 2.4)} />
-          {T > K.L + 2.2 && <text x={890} y={272} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.L + 2.2, K.L + 2.5)}>hifa con septos</text>}
+          <FrascoGrano T={T} x={200} y={1420} s={1.1} col={1} id="fg1" />
+          <HifaTabicada T={T} x={890} y={1370} r={110} p={kprog(T, K.L + 2.0, K.L + 2.4)} />
+          {T > K.L + 2.2 && <text x={762} y={1380} textAnchor="end" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.L + 2.2, K.L + 2.5)}>hifa con septos</text>}
         </>)}
-        <Lupa T={T} at={K.L + 0.3} until={K.Es - 0.4} x={620} y={760} r={300} fx={230} fy={950} tinte={KC.white} etiqueta="granos + hifas"
+        <Lupa T={T} at={K.L + 0.3} until={K.Es - 0.4} x={600} y={760} r={380} fx={200} fy={1230} tinte={KC.white} etiqueta="granos + hifas"
           interior={(t, r) => InteriorLupa(t, r, kprog(t, K.L + 0.6, K.L + 3.2))} />
       </Escena>
       {/* 4 · esporas: germinan mal (micro, fondo oscuro) */}
       <Escena T={T} a={K.Es} b={E2 + 0.2} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
-        {fsvg(<>
-          <rect x={0} y={1060} width={KW} height={200} fill="#726a53" opacity=".9" />
-          <rect x={0} y={1060} width={KW} height={10} fill="#fff" opacity=".35" />
-          <text x={1030} y={1110} textAnchor="end" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>agar</text>
+        {fsvg(Z(390, 1060, 1.55, 540, 900, <>
+          <rect x={-400} y={1060} width={KW + 800} height={200} fill="#3a3528" opacity=".95" />
+          <rect x={-400} y={1060} width={KW + 800} height={10} fill="#fff" opacity=".35" />
+          <text x={680} y={1240} textAnchor="end" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>agar</text>
           {ESP_CAEN.map((e, i) => { const u = kprog(T, K.Es + 0.2 + e.d, K.Es + 1.0 + e.d, kEase.sale); const yy = klerp(380, e.y + 40, u);
             const germ = GERMINA.includes(i) ? kprog(T, K.Es + 1.8, K.Es + 3.4) : 0;
             return <g key={i}>
               {germ > 0 && <path d={`M ${e.x + 12} ${yy} q ${30 * germ} ${-20 * germ} ${60 * germ} ${-10 * germ} t ${50 * germ} ${-30 * germ}`} stroke="#fff4d6" strokeWidth={8} fill="none" strokeLinecap="round" />}
               <Espora x={e.x} y={yy} rot={e.rot} o={GERMINA.includes(i) || T < K.Es + 2.4 ? 1 : 0.55} />
             </g>; })}
-        </>)}
+        </>))}
       </Escena>
       {/* 4b · cada espora: una cepa nueva, impredecible */}
       <Escena T={T} a={E2} b={K.Cl} zoom={0.04}>
@@ -286,7 +288,7 @@ function SemillaShot() {
         {fsvg(<>
           {[0, 1, 2].map((i) => { const u = kprog(T, K.R + 0.1 + i * 0.25, K.R + 0.8 + i * 0.25, kEase.suave); return u < 1 ? <FrascoGrano key={i} x={klerp(-120, 230 + i * 70, u)} y={klerp(1160, 900, u)} s={0.32} id={'fr' + i} /> : null; })}
           <Autoclave T={T} x={330} y={1160} temp={kprog(T, K.R + 0.9, K.R + 2.6, kEase.suave)} vapor={kprog(T, K.R + 2.2, K.R + 2.6)} />
-          <text x={330} y={1040} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>autoclave</text>
+          <text x={330} y={1040} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#0b1020">autoclave</text>
         </>)}
         <Termometro x={860} y={560} alto={460} max={130} marcas={[0, 50, 100, 121]} valor={klerp(20, 121, kprog(T, K.R + 0.9, K.R + 2.6, kEase.suave))} />
       </Escena>
@@ -312,18 +314,18 @@ function SemillaShot() {
       {/* 8 · re-gancho */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><FrascoGrano T={T} x={290} y={1180} s={1.1} rot={Math.sin(T * 4) * 4} col={1} id="fp" /><Interrogacion T={T} x={300} y={700} tam={340} /></>)}
+        {fsvg(<><FrascoGrano T={T} x={430} y={1330} s={1.6} rot={Math.sin(T * 4) * 4} col={1} id="fp" /><Interrogacion T={T} x={850} y={760} tam={340} /></>)}
       </Escena>
       {/* 9 · el estudio: estiércol → grano (Sinden, Penn State) */}
       <Escena T={T} a={K.E} b={K.Ro} zoom={0.03}>
         <FondoLunares color={KC.teal} />
         {fsvg(<>
-          {T < K.E + 2.9 && <g opacity={1 - kprog(T, K.E + 2.4, K.E + 2.9)}><Ladrillos x={190} y={1110} p={kprog(T, K.E + 0.1, K.E + 1.2)} m={kprog(T, K.E + 1.0, K.E + 1.8)} /></g>}
-          {T > K.E + 2.4 && <g opacity={kprog(T, K.E + 2.4, K.E + 2.9)}>
-            <FrascoGrano T={T} x={290} y={1030} s={0.75} tipo="estiercol" col={0.3 * kprog(T, E9, E9 + 1.6)} id="fe1" />
-            <FrascoGrano T={T} x={760} y={1030} s={0.75} col={kprog(T, E9, E9 + 1.4)} id="fe2" />
+          {T < K.E + 2.9 && <g opacity={1 - kprog(T, K.E + 2.4, K.E + 2.9)}>{Z(420, 970, 1.6, 540, 1010, <Ladrillos x={190} y={1110} p={kprog(T, K.E + 0.1, K.E + 1.2)} m={kprog(T, K.E + 1.0, K.E + 1.8)} />)}</g>}
+          {T > K.E + 2.4 && <g opacity={kprog(T, K.E + 2.4, K.E + 2.9)} transform="translate(540 1210) scale(1.5) translate(-525 -1030)">
+            <FrascoGrano T={T} x={350} y={1030} s={0.75} tipo="estiercol" col={0.3 * kprog(T, E9, E9 + 1.6)} id="fe1" />
+            <FrascoGrano T={T} x={700} y={1030} s={0.75} col={kprog(T, E9, E9 + 1.4)} id="fe2" />
             <g style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} textAnchor="middle">
-              <text x={290} y={1080}>estiércol</text><text x={760} y={1080}>grano</text>
+              <text x={350} y={1080}>estiércol</text><text x={700} y={1080}>grano</text>
             </g>
           </g>}
         </>)}
@@ -331,7 +333,7 @@ function SemillaShot() {
       {/* 10 · Robert: olla de presión y su propia cepa de seta rosa */}
       <Escena T={T} a={K.Ro} b={K.D} zoom={0.03}>
         <FondoLunares color="#ffb3cf" />
-        {fsvg(<>
+        {fsvg(Z(300, 950, 1.7, 540, 1000, <>
           {T < K.Ro + 2.9 && <g opacity={1 - kprog(T, K.Ro + 2.4, K.Ro + 2.9)}>
             <OllaPresion T={T} x={300} y={1000} s={0.8} silba={kprog(T, K.Ro + 0.6, K.Ro + 1.0)} />
             <Tupper x={170} y={1150} s={0.8} /><Tupper x={360} y={1150} s={0.8} color="#ffd43b" />
@@ -341,35 +343,35 @@ function SemillaShot() {
             {Array.from({ length: 14 }, (_, i) => { const u = ((T - K.Ro - 2.6) * 0.8 + i / 14) % 1; return T > K.Ro + 2.6 ? <Espora key={i} x={170 + (i % 5) * 34 + u * 40} y={760 + u * 230} rx={10} ry={4.5} rot={70 + i * 9} color="#f6d5dc" o={1 - u * 0.4} /> : null; })}
             <Petri x={300} y={1050} r={150} medio="#f1d27a"><Colonia cx={0} cy={0} r={115 * kprog(T, K.Ro + 3.2, K.Ro + 4.6)} seed={9} /></Petri>
           </g>}
-        </>)}
+        </>))}
       </Escena>
       {/* 11 · dato extra: 40 millones de esporas por hora */}
       <Escena T={T} a={K.D} b={K.C} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<>
+        {fsvg(Z(320, 1170, 1.6, 540, 1360, <>
           {NUBE.map((p, i) => { const u = ((T - K.D) * p.vel / 600 + p.fase) % 1; if (T < K.D + 0.3) return null;
             return <Espora key={i} x={320 + p.x0 * (1 - u * 0.3) + p.vx * u * 3} y={990 + u * 260} rx={6} ry={4} rot={i * 23} o={(1 - u) * 0.9} />; })}
           <Champinon x={320} y={1170} s={1.2} lam="#5a3326" />
-        </>)}
+        </>))}
       </Escena>
       {/* 12 · cierre: el mismo frasco siembra una bolsa */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(Z(540, 1000, 1.15, 540, 1040, <>
           <BolsaCultivo T={T} x={820} y={1020} w={300} h={440} col={0.05 + 0.5 * kprog(T, K.C + 1.6, K.Ou + 1)} seed={12} />
           {vac > 0.95 && Array.from({ length: 12 }, (_, i) => { const u = ((T - K.C) * 1.6 + i / 12) % 1; return <Grano key={i} x={812 + (i % 3 - 1) * 14} y={735 + u * 170} rot={i * 40} s={1.1} col={1} seed={i} />; })}
           <FrascoGrano T={T} x={klerp(330, 470, vac)} y={klerp(1150, 520, vac)} s={klerp(1.2, 1.0, vac)} rot={120 * vac} col={1} nivel={1 - 0.6 * kprog(T, K.C + 1.3, K.Ou)} id="fc" />
-        </>)}
+        </>))}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.7} until={K.S - 0.3} texto="¿echados a perder?" x={330} y={470} tam={44} />
-      <Chip T={T} at={K.G + 2.0} until={K.S - 0.3} texto="semilla de hongo" x={330} y={610} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.S + 3.0} until={K.L - 0.3} texto="esporas: 0" x={540} y={1100} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Es + 0.3} until={E2 - 0.2} texto="esporas de champiñón" x={420} y={470} tam={34} borde={KC.gold} mono />
-      <Etq T={T} at={K.Es + 0.6} until={E2 - 0.2} x={60} y={545} texto="Agaricus bisporus" it tam={34} />
-      <Chip T={T} at={K.Es + 2.2} until={E2 - 0.2} texto="germinan muy mal" x={420} y={760} tam={40} borde={KC.red} />
+      <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.7} until={K.S - 0.3} texto="¿echados a perder?" x={360} y={350} tam={44} />
+      <Chip T={T} at={K.G + 2.0} until={K.S - 0.3} texto="semilla de hongo" x={360} y={465} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.S + 3.0} until={K.L - 0.3} texto="esporas: 0" x={540} y={1290} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Es + 0.3} until={E2 - 0.2} texto="esporas de champiñón" x={540} y={340} tam={34} borde={KC.gold} mono />
+      <Etq T={T} at={K.Es + 0.6} until={E2 - 0.2} x={60} y={440} texto="Agaricus bisporus" it tam={34} />
+      <Chip T={T} at={K.Es + 2.2} until={E2 - 0.2} texto="germinan muy mal" x={540} y={690} tam={40} borde={KC.red} />
       <Chip T={T} at={E2 + 0.5} until={K.Cl - 0.3} texto="cada espora: posible cepa nueva" x={540} y={470} tam={40} borde={KC.ink} />
       <Chip T={T} at={E2 + 1.4} until={K.Cl - 0.3} texto="resultado impredecible" x={540} y={565} tam={40} borde={KC.red} />
       <Chip T={T} at={K.Cl + 2.8} until={K.R - 0.3} texto="cultivo de tejido ≈ clon" x={600} y={540} tam={38} borde="#118a3a" />
@@ -377,33 +379,33 @@ function SemillaShot() {
       <Chip T={T} at={K.R + 1.2} until={K.Lo - 0.3} texto="frasco de 250 ml" x={360} y={580} tam={30} borde={KC.ink} mono />
       <Chip T={T} at={K.Lo + 0.2} until={K.P - 0.3} texto="cada lote siembra uno más grande" x={370} y={470} tam={28} borde={KC.ink} />
       <Chip T={T} at={K.E + 0.4} until={K.E + 2.6} texto="spawn de estiércol · hasta los años 30" x={540} y={520} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.E + 2.4} until={E9 + 1.3} x={60} y={600} texto="James Sinden · Penn State" tam={36} color={KC.white} />
-      <Chip T={T} at={E9 + 0.2} until={E9 + 1.5} texto="creció más rápido" x={760} y={660} tam={36} borde="#118a3a" />
-      <TarjetaEstudio T={T} at={E9 + 1.5} until={E9 + 3.2} anio="1932" quien="James Sinden · Penn State" revista="patente de EE. UU. 1,869,517" x={540} y={620} />
-      <Chip T={T} at={E9 + 3.4} until={K.Ro - 0.3} texto="hoy: casi todo el spawn comercial" x={480} y={720} tam={36} borde={KC.gold} />
-      <Etq T={T} at={K.Ro + 0.5} until={K.Ro + 2.5} x={60} y={600} texto="olla de presión = autoclave" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Ro + 3.0} until={K.D - 0.3} x={60} y={480} texto="seta rosa · Pleurotus djamor" it tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ro + 3.6} until={K.D - 0.3} x={60} y={860} texto="PDA · mi cepa" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.D + 0.3} until={K.D + 2.4} texto="esporas → cepas nuevas" x={420} y={480} tam={38} borde={KC.gold} />
-      <NumeroGigante T={T} at={K.D + 2.6} until={K.C - 0.3} valor={40000000} dur={2.2} etiqueta="esporas por hora" x={500} y={760} tam={120} color={KC.gold2} />
-      <Etq T={T} at={K.D + 2.0} until={K.C - 0.3} x={560} y={1010} texto="3 pulgadas ≈ 7.6 cm" tam={30} />
-      <Etq T={T} at={K.D + 2.4} until={K.C - 0.3} x={560} y={1060} texto="Agaricus bisporus" it tam={30} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="para cosechar: el clon" x={330} y={1120} tam={40} borde="#118a3a" />
+      <Etq T={T} at={K.E + 2.4} until={E9 + 1.3} x={60} y={610} texto="James Sinden · Penn State" tam={36} color={KC.white} />
+      <Chip T={T} at={E9 + 0.2} until={E9 + 1.5} texto="creció más rápido" x={800} y={700} tam={36} borde="#118a3a" />
+      <TarjetaEstudio T={T} at={E9 + 1.5} until={E9 + 3.2} anio="1932" quien="James Sinden · Penn State" revista="patente de EE. UU. 1,869,517" x={540} y={470} />
+      <Chip T={T} at={E9 + 3.4} until={K.Ro - 0.3} texto="hoy: casi todo el spawn comercial" x={540} y={600} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.Ro + 0.5} until={K.Ro + 2.5} x={60} y={500} texto="olla de presión = autoclave" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Ro + 3.0} until={K.D - 0.3} x={60} y={270} texto="seta rosa · Pleurotus djamor" it tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ro + 3.6} until={K.D - 0.3} x={700} y={850} texto="PDA · mi cepa" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.D + 0.3} until={K.D + 2.4} texto="esporas → cepas nuevas" x={540} y={400} tam={38} borde={KC.gold} />
+      <NumeroGigante T={T} at={K.D + 2.6} until={K.C - 0.3} valor={40000000} dur={2.2} etiqueta="esporas por hora" x={540} y={610} tam={120} color={KC.gold2} />
+      <Etq T={T} at={K.D + 2.0} until={K.C - 0.3} x={250} y={790} texto="3 pulgadas ≈ 7.6 cm" tam={30} />
+      <Etq T={T} at={K.D + 2.4} until={K.C - 0.3} x={250} y={840} texto="Agaricus bisporus" it tam={30} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="para cosechar: el clon" x={330} y={1230} tam={40} borde="#118a3a" />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.S} texto="5 cm" largo={130} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.S} texto="5 cm" largo={215} color={KC.ink} />
       <BarraEscala T={T} at={K.S} until={K.L} texto="dibujo esquemático" largo={0} color={KC.ink} />
-      <BarraEscala T={T} at={K.L} until={K.Es} texto="5 mm (dentro de la lupa)" largo={170} color={KC.ink} />
-      <BarraEscala T={T} at={K.Es} until={E2} texto="10 µm (esporas, esquemáticas)" largo={46} />
+      <BarraEscala T={T} at={K.L} until={K.Es} texto="5 mm (dentro de la lupa)" largo={215} color={KC.ink} />
+      <BarraEscala T={T} at={K.Es} until={E2} texto="10 µm (esporas, esquemáticas)" largo={71} />
       <BarraEscala T={T} at={E2} until={K.Cl} texto="5 cm" largo={110} color={KC.ink} />
       <BarraEscala T={T} at={K.Cl} until={K.R} texto="5 cm" largo={160} color={KC.ink} />
       <BarraEscala T={T} at={K.R} until={K.Lo} texto="50 cm" largo={300} color={KC.ink} />
       <BarraEscala T={T} at={K.Lo} until={K.P} texto="10 cm" largo={110} color={KC.ink} />
-      <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={120} color={KC.ink} />
+      <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={175} color={KC.ink} />
       <BarraEscala T={T} at={K.E} until={K.Ro} texto="esquemático" largo={0} />
-      <BarraEscala T={T} at={K.Ro} until={K.D} texto="5 cm" largo={170} color={KC.ink} />
-      <BarraEscala T={T} at={K.D} until={K.C} texto="5 cm" largo={237} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={130} color={KC.ink} />
+      <BarraEscala T={T} at={K.Ro} until={K.D} texto="5 cm" largo={289} color={KC.ink} />
+      <BarraEscala T={T} at={K.D} until={K.C} texto="5 cm" largo={379} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={150} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.S - 0.1} texto="No están echados a perder: *es semilla de hongo.*" />
