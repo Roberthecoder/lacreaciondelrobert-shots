@@ -1,0 +1,1 @@
+- fun-108-moho-verde: el auditor marcaba Entra@20s ARRIBA; bajé y agrandé el conjunto (estantes, mano, bota, cuchillo, llave y gota: escala 1.3→1.36, centro 970→1130), bajé los chips y la cita, y acorté la caída de la gota para que no pise la cita. Auditores: sin láminas · encuadre bien.

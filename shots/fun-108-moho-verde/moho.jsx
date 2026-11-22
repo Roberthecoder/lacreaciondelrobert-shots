@@ -241,7 +241,7 @@ function MohoShot() {
       {/* 6 · cómo entra: personas, herramientas… y el agua */}
       <Escena T={T} a={K.E} b={K.Er}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<g transform="translate(540 970) scale(1.3) translate(-683 -955)">
+        {fsvg(<g transform="translate(540 1130) scale(1.36) translate(-683 -955)">
           <Estante T={T} x={600} y={760} verdes={[0, kprog(T, K.E + 2.0, K.E + 3.0), 0]} />
           <Estante T={T} x={600} y={1060} verdes={[kprog(T, K.E + 3.4, K.E + 4.2), 0, 0]} />
           {(() => { const u = kprog(T, K.E + 0.1, K.E + 2.0, kEase.suave), xx = klerp(300, 560, u);
@@ -251,7 +251,7 @@ function MohoShot() {
           {T > K.E + 2.2 && <g>
             <rect x={340} y={1040} width={190} height={40} rx={12} fill="#9aa4ae" stroke={KC.ink} strokeWidth={6} />
             <rect x={490} y={1070} width={40} height={50} rx={8} fill="#9aa4ae" stroke={KC.ink} strokeWidth={6} />
-            {(() => { const u = ((T - K.E - 2.3) / 1.0) % 1, yy = 1150 + u * 140; return <g transform={`translate(510 ${yy}) scale(0.8)`} opacity={1 - kprog(u, 0.9, 1)}>
+            {(() => { const u = ((T - K.E - 2.3) / 1.0) % 1, yy = 1150 + u * 60; return <g transform={`translate(510 ${yy}) scale(0.8)`} opacity={1 - kprog(u, 0.9, 1)}>
               <path d="M 0 -50 Q 34 0 30 20 Q 22 50 0 50 Q -22 50 -30 20 Q -34 0 0 -50 Z" fill={MV.agua} stroke={KC.ink} strokeWidth={5} />
               {[[-8, 14], [10, 26], [2, 0]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={6} fill={MV.verde} />)}</g>; })()}
           </g>}
@@ -362,10 +362,10 @@ function MohoShot() {
       <Etq T={T} at={K.L + 1.0} until={K.P - 0.3} x={580} y={1425} texto="T. pleuroticola" it tam={30} color={KC.texto} />
       <Etq T={T} at={K.L + 1.4} until={K.P - 0.3} x={580} y={1467} texto="verde oscuro grisáceo" tam={22} color={KC.texto} />
       <Etq T={T} at={K.L + 1.0} until={K.P - 0.3} x={60} y={1528} texto="Komoń-Zelazowska et al., 2007 · en laboratorio" tam={22} color={KC.ink} />
-      <Chip T={T} at={K.E + 0.2} until={K.Er - 0.3} texto="personas y herramientas" x={360} y={360} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.E + 0.3} until={K.Er - 0.3} x={60} y={425} texto="Penn State Extension" tam={22} color={KC.ink} />
-      <Chip T={T} at={K.E + 2.4} until={K.Er - 0.3} texto="Malasia, 2024: también en el agua" x={700} y={1245} tam={32} borde={MV.agua} />
-      <Etq T={T} at={K.E + 2.8} until={K.Er - 0.3} x={60} y={1505} texto="y en el aire y las herramientas de limpieza · Ajis et al., 2024" tam={20} color={KC.ink} />
+      <Chip T={T} at={K.E + 0.2} until={K.Er - 0.3} texto="personas y herramientas" x={360} y={420} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.E + 0.3} until={K.Er - 0.3} x={60} y={485} texto="Penn State Extension" tam={22} color={KC.ink} />
+      <Chip T={T} at={K.E + 2.4} until={K.Er - 0.3} texto="Malasia, 2024: también en el agua" x={700} y={1440} tam={32} borde={MV.agua} />
+      <Etq T={T} at={K.E + 2.8} until={K.Er - 0.3} x={60} y={1550} texto="y en el aire y las herramientas de limpieza · Ajis et al., 2024" tam={20} color={KC.ink} />
       <Chip T={T} at={K.Er + 0.3} until={K.Er + 3.0} texto="1 a 2 horas en agua a 71 °C" x={380} y={440} tam={30} borde={KC.red} />
       <Etq T={T} at={K.Er + 0.6} until={K.Er + 3.0} x={60} y={522} texto="(160 °F) · pasteurizar la paja" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Er + 3.3} until={K.V - 0.3} texto="+ salvado = + nitrógeno" x={380} y={440} tam={32} borde={KC.ink} />
