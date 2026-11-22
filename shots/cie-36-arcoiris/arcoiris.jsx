@@ -8,7 +8,8 @@ const AR_COL = ['#ff3b2f', '#ff8a1f', '#ffe11a', '#3fbf4a', '#2b7bff', '#8a3cff'
 const AR_N = [1.30, 1.315, 1.33, 1.345, 1.36, 1.375];                                 // índices exagerados (solo para abrir el abanico)
 const HOR = 1000, SY = 1110, RA = 500, RB2 = Math.round(RA * 51 / 42), BANDA = 15;    // vista de espaldas: horizonte, sombra de la cabeza, radios
 const PIES = 1900, PALTO = 440, CABEZA_Y = PIES - PALTO * 0.9 - 6;                     // persona de espaldas
-const PASTO = '#46c45a', PASTO2 = '#35a84a';
+const PASTO = '#1f5a30', PASTO2 = '#174526';   // pase a mano: pasto oscurecido (antes verde brillante a media pantalla)
+const FONDO_ARC = cineMix('#1f9fd0', CINE.fondo, 0.8);   // fondo de escena oscuro con tinte del cielo (antes cian brillante)
 // vista de lado
 const GY = 1080, PX = 220, OJO = [266, 682], SOL = [70, 568];
 const ANTI = [OJO[0] + (GY - OJO[1]) / Math.tan(Math.PI / 6), GY];                   // donde la línea Sol→cabeza toca el suelo (sombra de la cabeza)
@@ -116,8 +117,8 @@ function SombraPersona({ x, o = 1, p = 1 }) {
   if (o <= 0.01 || p <= 0.01) return null;
   const sy = klerp(PIES - 20, SY, p);
   return <g opacity={o}>
-    <path d={`M ${x - 55} ${PIES - 14} L ${x + 55} ${PIES - 14} L ${x + 20} ${sy + 18} L ${x - 20} ${sy + 18} Z`} fill="rgba(10,50,25,.42)" />
-    <ellipse cx={x} cy={sy} rx={34} ry={20} fill="rgba(10,50,25,.5)" />
+    <path d={`M ${x - 55} ${PIES - 14} L ${x + 55} ${PIES - 14} L ${x + 20} ${sy + 18} L ${x - 20} ${sy + 18} Z`} fill="rgba(2,12,6,.5)" />
+    <ellipse cx={x} cy={sy} rx={34} ry={20} fill="rgba(2,12,6,.6)" />
   </g>;
 }
 // Marca que late sobre la sombra de la cabeza.
@@ -138,21 +139,22 @@ function ConoMirada({ hx, hy = CABEZA_Y, cx, cy = SY, R = RA, color, o = 1 }) {
   </g>;
 }
 // Paisaje visto desde atrás de las personas. cielo = lo que va en el cielo (arcoíris, gotas); frente = encima del suelo.
-function VistaEspalda({ T, personas = [], cielo, frente, sombras = true, lluvia = 1 }) {
+function VistaEspalda({ T, personas = [], cielo, frente, sombras = true, lluvia = 1, sube = 200 }) {
+  // pase a mano: todo el paisaje sube `sube` px para que las personas queden arriba de y≈1500 y el conjunto quede centrado
   return <>
     <FondoLunares color={KC.cyan} />
-    <Lienzo>
+    <Lienzo><g transform={`translate(0 ${-sube})`}>
       <rect x={0} y={250} width={KW} height={HOR - 250} fill="rgba(35,55,120,.3)" />
       <Chubasco T={T} o={lluvia} />
       <NubesLluvia T={T} />
       {cielo}
-      <rect x={0} y={HOR} width={KW} height={KH - HOR} fill={PASTO} stroke={KC.ink} strokeWidth={8} />
+      <rect x={0} y={HOR} width={KW} height={KH - HOR + sube + 10} fill={PASTO} stroke={KC.ink} strokeWidth={8} />
       {[1060, 1160, 1300, 1480, 1700].map((y, i) => <line key={i} x1={0} y1={y} x2={KW} y2={y} stroke={PASTO2} strokeWidth={6 + i * 3} opacity=".55" />)}
       {sombras && personas.map((p, i) => <SombraPersona key={i} x={p.x + (p.dx || 0)} o={p.o == null ? 1 : p.o} p={p.sombra == null ? 1 : p.sombra} />)}
       {frente}
       {personas.map((p, i) => <PersonaEspalda key={i} x={p.x + (p.dx || 0)} color={p.color} o={p.o == null ? 1 : p.o} />)}
       {personas.map((p, i) => p.etq && <TextoSvg key={'e' + i} x={p.x + (p.dx || 0)} y={1418} tam={40} fuente="texto" color={p.color} o={p.o == null ? 1 : p.o}>{p.etq}</TextoSvg>)}
-    </Lienzo>
+    </g></Lienzo>
   </>;
 }
 // Persona de lado (mira a la derecha), con la cabeza de perfil.
@@ -167,9 +169,10 @@ function PersonaPerfil({ x = PX, yPies = GY, color = KC.pink }) {
 }
 // Paisaje de lado: Sol detrás (izquierda), persona, lluvia enfrente (derecha).
 function VistaLado({ T, children, lluvia = 1 }) {
+  // pase a mano: la escena baja 100 px para quedar centrada en el cuadro
   return <>
     <FondoLunares color={KC.cyan} />
-    <Lienzo>
+    <Lienzo><g transform="translate(0 100)">
       <rect x={600} y={460} width={KW - 600} height={GY - 460} fill="rgba(35,55,120,.3)" />
       <Chubasco T={T} x0={620} x1={KW} y0={480} y1={GY} n={26} o={lluvia} seed={11} />
       <Nube x={700} y={470} s={1.0} color="#8f99ad" />
@@ -178,7 +181,7 @@ function VistaLado({ T, children, lluvia = 1 }) {
       <rect x={0} y={GY} width={KW} height={KH - GY} fill={PASTO} stroke={KC.ink} strokeWidth={8} />
       {children}
       <PersonaPerfil />
-    </Lienzo>
+    </g></Lienzo>
   </>;
 }
 // Gota por dentro (para la Lupa). reb = 1 (arcoíris principal) o 2 (secundario). t0 = cuándo arranca.
@@ -229,9 +232,9 @@ function Arcoiris36() {
   const finLinea = (deg) => { const a = deg * Math.PI / 180, L = (930 - OJO[0]) / Math.cos(a); return [OJO[0] + L * Math.cos(a), OJO[1] - L * Math.sin(a)]; };
   const CIR = K.Circulo, AV = K.Circulo + 3.9;
   return (
-    <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.cyan }}>
+    <div style={{ position:'absolute', inset:0, overflow:'hidden', background:CINE.fondo }}>
       {/* 0 · gancho: dos personas, un arcoíris que en realidad son dos */}
-      <Escena T={T} a={K.Gancho} b={K.Gotas} fondo={KC.cyan}>
+      <Escena T={T} a={K.Gancho} b={K.Gotas} fondo={FONDO_ARC}>
         <VistaEspalda T={T}
           personas={[{ x: XA, color: KC.pink, etq: 'TÚ' }, { x: XB, color: KC.cyan, etq: 'AL LADO' }]}
           cielo={<>
@@ -244,10 +247,10 @@ function Arcoiris36() {
             <ConoMirada hx={XA} cx={XA} color={KC.pink} o={kprog(T, 1.5, 2.0)} />
             <ConoMirada hx={XB} cx={XB} color={KC.cyan} o={kprog(T, 1.9, 2.4)} />
           </>} />
-        <Chip T={T} at={2.5} until={K.Gotas - 0.1} texto="dos personas, dos arcoíris" x={300} y={330} tam={36} borde={KC.yellow} />
+        <Chip T={T} at={2.5} until={K.Gotas - 0.1} texto="dos personas, dos arcoíris" x={540} y={290} tam={36} borde={KC.yellow} />
       </Escena>
       {/* 1 · Sol detrás, lluvia enfrente (vista de lado) */}
-      <Escena T={T} a={K.Gotas} b={K.Rebote} fondo={KC.cyan}>
+      <Escena T={T} a={K.Gotas} b={K.Rebote} fondo={FONDO_ARC}>
         <VistaLado T={T}>
           {[-70, 0, 70].map((k, i) => { const at = K.Gotas + 0.9 + i * 0.15, a = Math.PI / 6, nx = -Math.sin(a), ny = Math.cos(a);
             const x1 = SOL[0] + 90 * Math.cos(a) + k * nx, y1 = SOL[1] + 90 * Math.sin(a) + k * ny, Lr = (650 - x1) / Math.cos(a);
@@ -256,8 +259,8 @@ function Arcoiris36() {
           {Array.from({ length: 14 }, (_, i) => { const g = krng(60 + i), x = 650 + g() * 410, y = 520 + (((T - K.Gotas) * 160 + g() * 560) % 560);
             return <circle key={i} cx={x} cy={y} r={11} fill="#8fdcff" stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Gotas + 2.5, K.Gotas + 3.0)} />; })}
         </VistaLado>
-        <Chip T={T} at={K.Gotas + 0.3} until={K.Rebote - 0.1} texto="Sol detrás de ti" x={290} y={330} tam={38} borde={KC.yellow} />
-        <Chip T={T} at={K.Gotas + 2.5} until={K.Rebote - 0.1} texto="lluvia enfrente" x={800} y={330} tam={38} borde={KC.cyan} />
+        <Chip T={T} at={K.Gotas + 0.3} until={K.Rebote - 0.1} texto="Sol detrás de ti" x={290} y={260} tam={38} borde={KC.yellow} />
+        <Chip T={T} at={K.Gotas + 2.5} until={K.Rebote - 0.1} texto="lluvia enfrente" x={800} y={260} tam={38} borde={KC.cyan} />
       </Escena>
       {/* 2 · la luz dentro de la gota: entra, se dobla, rebota en el fondo y sale en colores */}
       <Escena T={T} a={K.Rebote} b={K.Angulo} fondo={KC.noche}>
@@ -267,14 +270,14 @@ function Arcoiris36() {
             return <circle key={i} cx={x} cy={y} r={6 + g() * 8} fill="#8fdcff" opacity=".35" />; })}
           <circle cx={860} cy={500} r={16} fill="#8fdcff" stroke="#fff" strokeWidth={4} />
         </Lienzo>
-        <Lupa T={T} at={K.Rebote + 0.15} until={K.Angulo - 0.35} x={540} y={735} r={315} fx={860} fy={500} tinte={KC.cyan}
+        <Lupa T={T} at={K.Rebote} until={K.Angulo - 0.35} x={540} y={735} r={315} fx={860} fy={500} tinte={KC.cyan}
           etiqueta="AL MICROSCOPIO · GOTA" interior={(Tl, r) => <GotaPorDentro T={Tl} t0={K.Rebote + 0.3} r={r} reb={1} />} />
         <Chip T={T} at={K.Rebote + 0.8} until={K.Rebote + 2.3} texto="entra y se dobla" x={540} y={360} tam={40} borde={KC.white} />
         <Chip T={T} at={K.Rebote + 2.6} until={K.Rebote + 3.6} texto="rebota en el fondo" x={540} y={360} tam={40} borde={KC.yellow} />
         <Chip T={T} at={K.Rebote + 3.8} until={K.Angulo - 0.1} texto="sale en colores" x={540} y={360} tam={40} borde={KC.pink} />
       </Escena>
       {/* 3 · cada color, otro ángulo; el rojo a ≈ 42° de la sombra de la cabeza */}
-      <Escena T={T} a={K.Angulo} b={K.Cono} fondo={KC.cyan}>
+      <Escena T={T} a={K.Angulo} b={K.Cono} fondo={FONDO_ARC}>
         <VistaLado T={T} lluvia={0.6}>
           {/* sombra de la persona y de su cabeza */}
           <path d={`M ${PX - 40} ${GY + 4} L ${ANTI[0]} ${GY + 4}`} stroke="rgba(10,50,25,.45)" strokeWidth={22} strokeLinecap="round" opacity={kprog(T, AG + 0.9, AG + 1.3)} />
@@ -298,11 +301,11 @@ function Arcoiris36() {
               <TextoSvg x={OJO[0] + 330} y={OJO[1] + 70} tam={96} color={KC.yellow} s={klerp(0.4, 1, kprog(T, AG + 3.3, AG + 3.7, kEase.rebote))} o={kprog(T, AG + 3.3, AG + 3.5)}>≈ 42°</TextoSvg>
             </g>; })()}
         </VistaLado>
-        <Chip T={T} at={AG + 1.4} until={AG + 2.9} texto="cada color, otro ángulo" x={540} y={330} tam={40} borde={KC.white} />
-        <Chip T={T} at={AG + 3.1} until={K.Cono - 0.1} texto="rojo: ≈ 42° de tu sombra" x={540} y={330} tam={40} borde={AR_COL[0]} />
+        <Chip T={T} at={AG + 1.4} until={AG + 2.9} texto="cada color, otro ángulo" x={540} y={260} tam={40} borde={KC.white} />
+        <Chip T={T} at={AG + 3.1} until={K.Cono - 0.1} texto="rojo: ≈ 42° de tu sombra" x={540} y={260} tam={40} borde={AR_COL[0]} />
       </Escena>
       {/* 4 · solo ves rojas las gotas a ese ángulo: un círculo alrededor de tu sombra */}
-      <Escena T={T} a={K.Cono} b={K.Pregunta} fondo={KC.cyan}>
+      <Escena T={T} a={K.Cono} b={K.Pregunta} fondo={FONDO_ARC}>
         {(() => { const rev = kprog(T, K.Cono + 1.0, K.Cono + 3.4, kEase.suave);
           return <VistaEspalda T={T} personas={[{ x: 540, color: KC.pink, etq: 'TÚ' }]}
             cielo={<>
@@ -314,13 +317,13 @@ function Arcoiris36() {
               <TextoSvg x={600} y={1128} tam={38} fuente="texto" color={KC.texto} ancla="start" o={kprog(T, K.Cono + 0.5, K.Cono + 0.8)}>tu sombra</TextoSvg>
               <ConoMirada hx={540} cx={540} color={KC.pink} o={kprog(T, K.Cono + 3.6, K.Cono + 4.2)} />
             </>} />; })()}
-        <Chip T={T} at={K.Cono + 1.2} until={K.Cono + 3.4} texto="solo esas gotas se ven rojas" x={540} y={330} tam={38} borde={AR_COL[0]} />
-        <Chip T={T} at={K.Cono + 3.6} until={K.Pregunta - 0.1} texto="un círculo alrededor de tu sombra" x={540} y={330} tam={36} borde={KC.yellow} />
+        <Chip T={T} at={K.Cono + 1.2} until={K.Cono + 3.4} texto="solo esas gotas se ven rojas" x={540} y={260} tam={38} borde={AR_COL[0]} />
+        <Chip T={T} at={K.Cono + 3.6} until={K.Pregunta - 0.1} texto="un círculo alrededor de tu sombra" x={540} y={260} tam={36} borde={KC.yellow} />
       </Escena>
       {/* 5 · ¿y la persona de al lado? */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Otras} color={KC.lilac} />
       {/* 6 · su cabeza está en otro lugar: su círculo pasa por otras gotas */}
-      <Escena T={T} a={K.Otras} b={K.Propio} fondo={KC.cyan}>
+      <Escena T={T} a={K.Otras} b={K.Propio} fondo={FONDO_ARC}>
         {(() => { const entra = kprog(T, K.Otras + 0.2, K.Otras + 1.0, kEase.sale), revB = kprog(T, K.Otras + 2.0, K.Otras + 3.8, kEase.suave);
           return <VistaEspalda T={T}
             personas={[{ x: XA, color: KC.pink, etq: 'TÚ' }, { x: XB, dx: (1 - entra) * 520, color: KC.cyan, etq: 'AL LADO', sombra: kprog(T, K.Otras + 1.0, K.Otras + 1.6) }]}
@@ -333,11 +336,11 @@ function Arcoiris36() {
               <PuntoSombra T={T} x={XA} color={KC.pink} />
               <PuntoSombra T={T} x={XB} color={KC.cyan} o={kprog(T, K.Otras + 1.4, K.Otras + 1.7)} />
             </>} />; })()}
-        <Chip T={T} at={K.Otras + 1.2} until={K.Otras + 3.2} texto="su sombra: en otro lugar" x={540} y={330} tam={38} borde={KC.cyan} />
-        <Chip T={T} at={K.Otras + 3.4} until={K.Propio - 0.1} texto="otras gotas" x={540} y={330} tam={42} borde={KC.yellow} />
+        <Chip T={T} at={K.Otras + 1.2} until={K.Otras + 3.2} texto="su sombra: en otro lugar" x={540} y={260} tam={38} borde={KC.cyan} />
+        <Chip T={T} at={K.Otras + 3.4} until={K.Propio - 0.1} texto="otras gotas" x={540} y={260} tam={42} borde={KC.yellow} />
       </Escena>
       {/* 7 · cada quien su arcoíris: mismos colores, desplazados, cada uno centrado en la sombra de su cabeza */}
-      <Escena T={T} a={K.Propio} b={K.Circulo} fondo={KC.cyan}>
+      <Escena T={T} a={K.Propio} b={K.Circulo} fondo={FONDO_ARC}>
         <VistaEspalda T={T}
           personas={[{ x: XA, color: KC.pink, etq: 'TÚ' }, { x: XB, color: KC.cyan, etq: 'AL LADO' }]}
           cielo={<>
@@ -352,10 +355,10 @@ function Arcoiris36() {
             {[XA, XB].map((x, i) => { const p = kprog(T, K.Propio + 1.6 + i * 0.2, K.Propio + 2.2 + i * 0.2);
               return p > 0 && <line key={i} x1={x} y1={SY} x2={x} y2={klerp(SY, SY - RA + 3 * BANDA, p)} stroke={i ? KC.cyan : KC.pink} strokeWidth={5} strokeDasharray="12 10" />; })}
           </>} />
-        <Chip T={T} at={K.Propio + 1.6} until={K.Circulo - 0.1} texto="mismos colores, otro centro" x={540} y={330} tam={38} borde={KC.yellow} />
+        <Chip T={T} at={K.Propio + 1.6} until={K.Circulo - 0.1} texto="mismos colores, otro centro" x={540} y={260} tam={38} borde={KC.yellow} />
       </Escena>
       {/* 8a · desde el suelo: solo la parte de arriba */}
-      <Escena T={T} a={CIR} b={AV} fondo={KC.cyan}>
+      <Escena T={T} a={CIR} b={AV} fondo={FONDO_ARC}>
         <VistaEspalda T={T} personas={[{ x: 540, color: KC.pink }]}
           cielo={<Arcoiris id="c-a" cx={540} p={kprog(T, CIR - 0.2, CIR + 0.6, kEase.suave)} />}
           frente={<>
@@ -363,15 +366,15 @@ function Arcoiris36() {
               return p > 0 && <polyline points={ptsTxt(arcoPts(540, SY, RA, r, r + (360 - (r - l)) * p))} fill="none" stroke="#fff" strokeWidth={7} strokeDasharray="16 14" strokeLinecap="round" opacity=".85" />; })()}
             <PuntoSombra T={T} x={540} />
           </>} />
-        <Chip T={T} at={CIR + 0.3} until={AV - 0.1} texto="desde el suelo: solo la parte de arriba" x={540} y={330} tam={34} borde={KC.yellow} />
+        <Chip T={T} at={CIR + 0.3} until={AV - 0.1} texto="desde el suelo: solo la parte de arriba" x={540} y={260} tam={34} borde={KC.yellow} />
       </Escena>
       {/* 8b · desde un avión: el círculo completo, alrededor de la sombra del avión */}
-      <Escena T={T} a={AV} b={K.Doble} fondo={KC.mint} zoom={0.08}>
+      <Escena T={T} a={AV} b={K.Doble} fondo={FONDO_ARC} zoom={0.08}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
           {/* campos vistos desde arriba */}
           {Array.from({ length: 7 }, (_, i) => Array.from({ length: 5 }, (_, j) => { const g = krng(i * 9 + j);
-            return <rect key={`${i}-${j}`} x={j * 230 - 40 + g() * 20} y={560 + i * 140} width={210} height={124} rx={10} fill={['#3fbf4a', '#7fd35a', '#c9e36a', '#2fa86e'][(i + j) % 4]} stroke={KC.ink} strokeWidth={4} opacity=".85" />; }))}
+            return <rect key={`${i}-${j}`} x={j * 230 - 40 + g() * 20} y={560 + i * 140} width={210} height={124} rx={10} fill={['#1f5f2a', '#356a2c', '#56662c', '#1a5540'][(i + j) % 4]} stroke={KC.ink} strokeWidth={4} opacity=".85" />; }))}
           <rect x={0} y={540} width={KW} height={760} fill="rgba(35,55,120,.32)" />
           <Chubasco T={T} y0={560} y1={1260} n={40} seed={21} />
           <Arcoiris id="av" cx={540} cy={900} R={250} banda={14} completo p={kprog(T, AV + 0.4, AV + 1.6, kEase.suave)} />
@@ -382,8 +385,8 @@ function Arcoiris36() {
         <Chip T={T} at={AV + 0.6} until={K.Doble - 0.1} texto="desde un avión: redondo" x={540} y={230} tam={40} borde={AR_COL[2]} />
       </Escena>
       {/* 9 · dos rebotes: segundo arcoíris más arriba y con los colores al revés */}
-      <Escena T={T} a={K.Doble} b={K.Cierre} fondo={KC.cyan}>
-        <VistaEspalda T={T} personas={[{ x: 540, color: KC.pink }]}
+      <Escena T={T} a={K.Doble} b={K.Cierre} fondo={FONDO_ARC}>
+        <VistaEspalda T={T} sube={100} personas={[{ x: 540, color: KC.pink }]}
           cielo={<>
             <Arcoiris id="d-a" cx={540} />
             <Arcoiris id="d-b" cx={540} R={RB2} inv p={kprog(T, K.Doble + 3.6, K.Doble + 4.6, kEase.suave)} o={0.85} />
@@ -394,13 +397,13 @@ function Arcoiris36() {
               </g>; })()}
           </>}
           frente={<PuntoSombra T={T} x={540} />} />
-        <Lupa T={T} at={K.Doble + 0.1} until={K.Doble + 3.5} x={540} y={680} r={250} fx={300} fy={520} tinte={KC.yellow}
+        <Lupa T={T} at={K.Doble + 0.1} until={K.Doble + 3.5} x={540} y={680} r={250} fx={300} fy={420} tinte={KC.yellow}
           etiqueta="AL MICROSCOPIO · GOTA" interior={(Tl, r) => <GotaPorDentro T={Tl} t0={K.Doble + 0.2} r={r} reb={2} />} />
-        <Chip T={T} at={K.Doble + 0.7} until={K.Doble + 3.5} texto="rebota dos veces" x={540} y={330} tam={40} borde={KC.yellow} />
-        <Chip T={T} at={K.Doble + 3.8} until={K.Cierre - 0.1} texto="más arriba · colores al revés" x={540} y={330} tam={38} borde={AR_COL[5]} />
+        <Chip T={T} at={K.Doble + 0.7} until={K.Doble + 3.5} texto="rebota dos veces" x={540} y={260} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Doble + 3.8} until={K.Cierre - 0.1} texto="más arriba · colores al revés" x={540} y={260} tam={38} borde={AR_COL[5]} />
       </Escena>
       {/* 10 · cierre: las dos personas del inicio, cada una con su arcoíris */}
-      <Escena T={T} a={K.Cierre} b={FIN} fondo={KC.cyan}>
+      <Escena T={T} a={K.Cierre} b={FIN} fondo={FONDO_ARC}>
         <VistaEspalda T={T}
           personas={[{ x: XA, color: KC.pink, etq: 'TÚ' }, { x: XB, color: KC.cyan, etq: 'AL LADO' }]}
           cielo={<>
@@ -416,7 +419,7 @@ function Arcoiris36() {
             <ConoMirada hx={XA} cx={XA} color={KC.pink} o={0.8 * kprog(T, K.Cierre + 0.4, K.Cierre + 0.9)} />
             <ConoMirada hx={XB} cx={XB} color={KC.cyan} o={0.8 * kprog(T, K.Cierre + 0.8, K.Cierre + 1.3)} />
           </>} />
-        <Chip T={T} at={K.Cierre + 2.4} until={K.Outro - 0.1} texto="hecho para tus ojos" x={540} y={330} tam={42} borde={KC.pink} />
+        <Chip T={T} at={K.Cierre + 2.4} until={K.Outro - 0.1} texto="hecho para tus ojos" x={540} y={260} tam={42} borde={KC.pink} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Gotas - 0.1} texto="Nadie ve el *mismo arcoíris* que tú." />
