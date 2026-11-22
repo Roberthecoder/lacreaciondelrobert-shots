@@ -57,8 +57,9 @@ function Glu({ x, y, s = 1, o = 1 }) {
 // Mesa de madera (abajo).
 function Mesa({ y = 1120 }) {
   return <g>
-    <rect x={-120} y={y} width={1320} height={900} fill="#7a5230" stroke={KC.ink} strokeWidth={8} />
-    {[40, 95, 150, 230, 320, 430, 550].map((d, i) => <path key={i} d={`M 0 ${y + d} Q 300 ${y + d - 10} 600 ${y + d + 6} T 1100 ${y + d}`} stroke="#5a3a1e" strokeWidth={5} fill="none" />)}
+    {/* encuadre: madera oscura (conserva el tinte) para que el peso del cuadro sea el hongo, no la mesa */}
+    <rect x={-120} y={y} width={1320} height={900} fill="#3e2a18" stroke={KC.ink} strokeWidth={8} />
+    {[40, 95, 150, 230, 320, 430, 550].map((d, i) => <path key={i} d={`M 0 ${y + d} Q 300 ${y + d - 10} 600 ${y + d + 6} T 1100 ${y + d}`} stroke="#2a1b0e" strokeWidth={5} fill="none" />)}
   </g>;
 }
 // Vaso de agua fría con hielo (base en x, y).
@@ -218,7 +219,7 @@ function UmamiShot() {
       {/* 4 · al calentarlo: tijeras (ribonucleasas) cortan ARN y sueltan guanilato */}
       <Escena T={T} a={K.Ti} b={K.Te} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <div style={{ position:'absolute', left:0, right:0, bottom:0, height:1050, background:`linear-gradient(to top, rgba(255,120,40,${0.42 * kprog(T, K.Ti, K.Ti + 0.8)}), transparent)` }}></div>
+        <div style={{ position:'absolute', left:0, right:0, bottom:0, height:1050, background:`linear-gradient(to top, rgba(255,120,40,${0.24 * kprog(T, K.Ti, K.Ti + 0.8)}), transparent)` }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<g transform="translate(60 940) scale(1.15) translate(-60 -880)">
           {(() => { const cortes = Math.floor(kprog(T, K.Ti + 1.0, K.Ti + 3.6) * 5.99); const tx = 90 + Math.min(cortes + 1, 5) * 150 - 100;

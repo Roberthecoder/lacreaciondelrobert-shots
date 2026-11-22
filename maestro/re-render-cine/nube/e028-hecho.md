@@ -1,0 +1,2 @@
+- fun-129-hongo-maple: ya cumplía («encuadre bien»), sin cambios.
+- fun-128-umami-seco: marcaba ABAJO en Gancho, Hongo, FrescoSeco, Tijeras y Cierre (la mesa de madera clara y el resplandor naranja pesaban más que el hongo); oscurecí la madera conservando el tinte y bajé el resplandor de «al calentarlo» de 0.42 a 0.24. Queda «encuadre bien» y «sin láminas».
