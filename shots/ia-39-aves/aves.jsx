@@ -120,19 +120,19 @@ function GrullaVuelo({ x, y, s = 1, T = 0 }) {
 // ---------- escenario de la ventana (inicio y cierre) ----------
 function Ventana({ T, x = 50, y = 440, w = 560, h = 580, children }) {
   return <g>
-    <rect x={x - 22} y={y - 22} width={w + 44} height={h + 44} rx={26} fill="#f4efe4" stroke={KC.ink} strokeWidth={9} />
+    <rect x={x - 22} y={y - 22} width={w + 44} height={h + 44} rx={26} fill="#d9d2c0" stroke={KC.ink} strokeWidth={9} />
     <svg x={x} y={y} width={w} height={h} overflow="hidden">
-      <rect width={w} height={h} fill="#8fd9ff" />
+      <rect width={w} height={h} fill="#2f6f9f" />
       <circle cx={w - 110} cy={110} r={60} fill="#fff3a8" opacity=".9" />
-      {[0, 1].map((k) => { const nx = ((T * 14 + k * 300) % (w + 260)) - 200; return <g key={k} transform={`translate(${nx} ${90 + k * 120})`} opacity=".85">
+      {[0, 1].map((k) => { const nx = ((T * 14 + k * 300) % (w + 260)) - 200; return <g key={k} transform={`translate(${nx} ${90 + k * 120})`} opacity=".5">
         <ellipse cx={0} cy={0} rx={70} ry={26} fill="#fff" /><ellipse cx={40} cy={-14} rx={46} ry={24} fill="#fff" /></g>; })}
       <path d={`M -20 ${h - 150} Q ${w * 0.4} ${h - 190} ${w + 20} ${h - 120}`} stroke="#7a4a22" strokeWidth={26} fill="none" strokeLinecap="round" />
       {[0.2, 0.55, 0.85].map((u, k) => <ellipse key={k} cx={w * u} cy={h - 175 - k * 6} rx={34} ry={14} fill={KC.leaf} stroke={KC.ink} strokeWidth={4} transform={`rotate(${-20 + k * 25} ${w * u} ${h - 175})`} />)}
       {children}
     </svg>
     <rect x={x} y={y} width={w} height={h} fill="none" stroke={KC.ink} strokeWidth={7} />
-    <line x1={x + w / 2} y1={y} x2={x + w / 2} y2={y + h} stroke="#f4efe4" strokeWidth={16} />
-    <line x1={x} y1={y + h * 0.42} x2={x + w} y2={y + h * 0.42} stroke="#f4efe4" strokeWidth={16} />
+    <line x1={x + w / 2} y1={y} x2={x + w / 2} y2={y + h} stroke="#d9d2c0" strokeWidth={16} />
+    <line x1={x} y1={y + h * 0.42} x2={x + w} y2={y + h * 0.42} stroke="#d9d2c0" strokeWidth={16} />
     <line x1={x + w / 2} y1={y} x2={x + w / 2} y2={y + h} stroke={KC.ink} strokeWidth={4} opacity=".4" />
   </g>;
 }
@@ -160,12 +160,12 @@ function Huella({ T, x, y, tipo, at, etiqueta, s = 1 }) {
   if (T < at - 0.01) return null;
   const e = kprog(T, at, at + 0.45, kEase.rebote), ev = { t: 0, tipo, f0: 0.38, f1: 0.82, d: 1.0, k: 1 };
   return <g transform={`translate(${x} ${y}) scale(${s * e}) rotate(${tipo === 'rayitas' ? -4 : tipo === 'curva' ? 3 : -2})`}>
-    <rect x={-140} y={-150} width={280} height={330} rx={14} fill="#fffdf6" stroke={KC.ink} strokeWidth={7} />
+    <rect x={-140} y={-150} width={280} height={330} rx={14} fill="#ece6d6" stroke={KC.ink} strokeWidth={7} />
     <svg x={-118} y={-128} width={236} height={230} overflow="hidden">
       <rect width={236} height={230} fill="#05070d" />
       <g transform={tipo === 'curva' ? 'translate(30 0)' : tipo === 'rayitas' ? 'translate(88 0)' : 'translate(58 0)'}><AvTraza e={{ ...ev, d: tipo === 'curva' ? 1.0 : 0.5 }} h={230} vel={175} /></g>
     </svg>
-    <text x={0} y={152} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{etiqueta}</text>
+    <text x={0} y={152} textAnchor="middle" style={{ font:`900 40px ${KF.texto}`, stroke:'none' }} fill="#0b1020">{etiqueta}</text>
   </g>;
 }
 // Visor de cámara (cuatro esquinas) que se cierra sobre algo.
@@ -188,7 +188,8 @@ function Globo({ T, cx = 540, cy = 840, r = 300, at, n = 90 }) {
   const rr = krng(11), pts = Array.from({ length: n }, (_, i) => { const a = rr() * Math.PI * 2, d = Math.sqrt(rr()) * r * 0.9; return { x: cx + Math.cos(a) * d, y: cy + Math.sin(a) * d, t: at + 0.2 + i * 0.035 + rr() * 0.3 }; });
   return <g>
     <circle cx={cx} cy={cy} r={r} fill="#2f6dff" stroke={KC.ink} strokeWidth={9} />
-    <svg x={cx - r} y={cy - r} width={r * 2} height={r * 2} overflow="hidden">
+    <clipPath id="av-globo"><circle cx={r} cy={r} r={r - 4} /></clipPath>
+    <svg x={cx - r} y={cy - r} width={r * 2} height={r * 2} overflow="hidden"><g clipPath="url(#av-globo)">
       <g transform={`translate(${-((T * 22) % (r * 2))} 0)`}>
         {[0, r * 2].map((ox) => <g key={ox} transform={`translate(${ox} 0)`}>
           <path d={`M ${r * 0.25} ${r * 0.55} q 60 -70 140 -30 q 40 60 -10 120 q -40 70 -20 140 q -60 10 -90 -60 q -40 -80 -20 -170 Z`} fill={KC.leaf} stroke={KC.ink} strokeWidth={5} />
@@ -198,7 +199,7 @@ function Globo({ T, cx = 540, cy = 840, r = 300, at, n = 90 }) {
       </g>
       {[0.35, 0.7].map((k, i) => <ellipse key={i} cx={r} cy={r} rx={r * k} ry={r} fill="none" stroke="#ffffff" strokeOpacity=".25" strokeWidth={3} />)}
       {[0.5, 1, 1.5].map((k, i) => <line key={'l' + i} x1={0} x2={r * 2} y1={r * k} y2={r * k} stroke="#ffffff" strokeOpacity=".25" strokeWidth={3} />)}
-    </svg>
+    </g></svg>
     {pts.map((p, i) => { if (T < p.t) return null; const u = kprog(T, p.t, p.t + 0.6);
       return <g key={i}><circle cx={p.x} cy={p.y} r={6 + 22 * u} fill="none" stroke={KC.yellow} strokeWidth={4} opacity={1 - u} />
         <circle cx={p.x} cy={p.y} r={8} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /></g>; })}
@@ -225,9 +226,9 @@ function MapaEuropa({ T, at, rutaP = 0 }) {
   const ruta = 'M ' + pts.map((p) => p.map((v) => v.toFixed(0)).join(' ')).join(' L ');
   return <g opacity={kprog(T, at, at + 0.5)}>
     <svg x={60} y={590} width={960} height={600} overflow="hidden">
-      <rect width={960} height={600} fill="#9fd8ff" />
+      <rect width={960} height={600} fill="#12304d" />
       <g transform="translate(-60 -590)">
-        {EU_TIERRA.map((p, i) => <path key={i} d={euPath(p)} fill="#ffe9a8" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />)}
+        {EU_TIERRA.map((p, i) => <path key={i} d={euPath(p)} fill="#b9a36a" stroke={KC.ink} strokeWidth={4} strokeLinejoin="round" />)}
         <path d={ruta} stroke={KC.ink} strokeWidth={16} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={`${L * rutaP} ${L * 2}`} opacity=".25" />
         <path d={ruta} stroke={KC.red} strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={`${L * rutaP} ${L * 2}`} />
         <circle cx={pts[0][0]} cy={pts[0][1]} r={14} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
@@ -251,22 +252,27 @@ function Celulares({ T, at, x0 = 300, y0 = 760, cols = 6, filas = 3 }) {
   return <g>{out}</g>;
 }
 // Puntitos: cada uno = 10 especies.
-function Puntitos({ T, n1, n2, x = 100, y = 690, cols = 25, paso = 36 }) {
+function Puntitos({ T, n1, n2, x = 100, y = 690, cols = 25, paso = 36, r1 = 13, r0 = 8 }) {
   const out = [];
   for (let i = 0; i < 300; i++) { const c = i % cols, f = Math.floor(i / cols), on1 = i < n1, on2 = i < n2;
-    out.push(<circle key={i} cx={x + c * paso + paso / 2} cy={y + f * paso + paso / 2} r={on1 || on2 ? 13 : 8}
+    out.push(<circle key={i} cx={x + c * paso + paso / 2} cy={y + f * paso + paso / 2} r={on1 || on2 ? r1 : r0}
       fill={on1 ? KC.yellow : on2 ? KC.pink : 'rgba(255,255,255,.35)'} stroke={on1 || on2 ? KC.ink : 'none'} strokeWidth={3} />); }
   return <g>{out}</g>;
 }
 // Tarjeta de un ave del jardín.
-function FichaAve({ T, at, until, x, y, nombre, cientifico, children }) {
-  if (T < at - 0.01 || T > until + 0.5) return null;
-  const e = kprog(T, at, at + 0.45, kEase.rebote) * (1 - kprog(T, until, until + 0.45, kEase.suave));
-  return <div style={{ position:'absolute', left:x, top:y, width:310, height:400, transform:`translate(-50%,-50%) scale(${e})`, zIndex:30,
-    background:'#fffdf6', border:`7px solid ${KC.ink}`, borderRadius:26, boxShadow:`10px 10px 0 ${KC.ink}`, overflow:'hidden' }}>
-    <svg width={310} height={270} style={{ display:'block', background:'#bfefff' }}>{children}</svg>
-    <div style={{ font:`900 40px ${KF.texto}`, color:KC.ink, textAlign:'center', marginTop:8 }}>{nombre}</div>
-    <div style={{ font:`italic 700 24px ${KF.mono}`, color:'#5a524a', textAlign:'center', marginTop:4 }}>{cientifico}</div>
+function FichaAve({ T, desde, at, until, x, y, nombre, cientifico, children }) {
+  if (T < desde - 0.5 || T > until + 0.5) return null;
+  const sale = 1 - kprog(T, until, until + 0.45, kEase.suave);
+  const on = kprog(T, at, at + 0.45, kEase.rebote), luz = kprog(T, at, at + 0.3);
+  const o = klerp(0.3 * kprog(T, desde - 0.4, desde + 0.2), 1, luz) * sale;
+  return <div style={{ position:'absolute', left:x, top:y, width:336, height:560, transform:`translate(-50%,-50%) scale(${0.94 + 0.06 * on})`, opacity:o, zIndex:30,
+    background:'#ece6d6', border:`6px solid ${KC.ink}`, borderRadius:26, boxShadow:'0 20px 44px rgba(0,0,0,.55)', overflow:'hidden' }}>
+    <svg width={336} height={420} style={{ display:'block', background:'#2f6f9f' }}>
+      <path d="M -10 318 Q 150 296 346 322" stroke="#7a4a22" strokeWidth={20} fill="none" strokeLinecap="round" />
+      {children}
+    </svg>
+    <div style={{ font:`900 44px ${KF.texto}`, color:'#0b1020', textAlign:'center', marginTop:10 }}>{nombre}</div>
+    <div style={{ font:`italic 700 25px ${KF.mono}`, color:'#4a433c', textAlign:'center', marginTop:4 }}>{cientifico}</div>
   </div>;
 }
 // Rótulo con una parte en cursiva (nombre científico).
@@ -282,6 +288,7 @@ function Aves() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, E: CUES.Espectro, F: CUES.Foto, P: CUES.Pregunta, V: CUES.Voluntarios, Es: CUES.Estudio, Cr: CUES.Crece, Ge: CUES.Gente, J: CUES.Jardin, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
+  const VENT = 'translate(540 900) scale(1.7) translate(-330 -730)';   // la ventana llena el cuadro (gancho y cierre)
   const svg = (c, z = 0) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{c}</svg>;
   const EVG = avEventos(K.G + 0.25, K.E + 1.0, 0.7);       // cantos del gancho (celular)
   const EVE = avEventos(K.E + 1.2, K.F + 0.6, 0.75);       // cantos en el espectrograma grande
@@ -289,7 +296,7 @@ function Aves() {
   const cantaG = EVG.some((e) => T >= e.t && T < e.t + e.d) ? 1 : 0, cantaC = EVC.some((e) => T >= e.t && T < e.t + e.d) ? 1 : 0;
   const empuje = kprog(T, K.E - 0.9, K.E + 0.45, kEase.suave);          // la cámara entra al celular
   const onda = kprog(T, K.E + 0.1, K.E + 1.6, kEase.sale);
-  const red = kprog(T, K.F + 3.0, K.P - 0.2);
+  const red = kprog(T, K.F + 3.0, K.F + 3.7);
   const n157 = Math.round(157 * kprog(T, K.Es + 3.4, K.Es + 5.6, kEase.suave));
   const n1 = Math.round(98 * kprog(T, K.Cr + 0.4, K.Cr + 2.8, kEase.suave)), n2 = Math.round(300 * kprog(T, K.Cr + 3.7, K.Cr + 5.6, kEase.suave));
   const ruta = kprog(T, K.Ge + 4.4, K.Ge + 7.4, kEase.suave);
@@ -297,54 +304,62 @@ function Aves() {
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: el zanate en tu ventana y tu celular escuchando */}
       <Escena T={T} a={K.G} b={K.E} zoom={0}>
-        <div style={{ position:'absolute', inset:0, transform:`scale(${1 + 2.2 * empuje})`, transformOrigin:'74% 47%' }}>
+        <div style={{ position:'absolute', inset:0, transform:`scale(${1 + 2.2 * empuje})`, transformOrigin:'75% 69.2%' }}>
           <FondoLunares color={KC.mint} />
           {svg(<>
-            <Ventana T={T}>
-              <Zanate x={330} y={392} s={1.05} T={T} canta={cantaG} />
-              <Ondas T={T} x={170} y={278} t0={K.G + 0.2} />
-            </Ventana>
-            <CelularAves T={T} x={800} y={900} s={0.8} eventos={EVG} />
+            <g transform={VENT}>
+              <Ventana T={T}>
+                <Zanate x={330} y={392} s={1.05} T={T} canta={cantaG} />
+                <Ondas T={T} x={170} y={278} t0={K.G + 0.2} />
+              </Ventana>
+            </g>
+            <CelularAves T={T} x={810} y={1335} s={1} eventos={EVG} />
           </>)}
         </div>
       </Escena>
-      <Etq T={T} at={K.G + 1.6} until={K.E - 0.9} x={110} y={1110} texto="Quiscalus mexicanus" it lado="der" tam={30} />
+      <Etq T={T} at={K.G + 1.6} until={K.E - 0.9} x={90} y={1285} texto="Quiscalus mexicanus" it lado="der" tam={30} />
       {/* 2 · por dentro del celular: el espectrograma */}
       <Escena T={T} a={K.E} b={K.F} zoom={0.03}>
         <FondoCircuito T={T} color={KC.mint} />
         {svg(<>
           <g opacity={1 - kprog(T, K.E + 1.4, K.E + 2.2)}>
             <path d={Array.from({ length: 181 }, (_, i) => { const xx = 90 + i * 5, a = Math.sin(i * 0.9 + T * 9) * 120 * Math.sin(Math.PI * i / 180) * (0.4 + 0.6 * Math.abs(Math.sin(i * 0.13 + T)));
-              return `${i ? 'L' : 'M'} ${xx} ${900 + a * onda}`; }).join(' ')} stroke={KC.yellow} strokeWidth={7} fill="none" strokeLinejoin="round" />
+              return `${i ? 'L' : 'M'} ${xx} ${950 + a * 2.1 * onda}`; }).join(' ')} stroke={KC.yellow} strokeWidth={9} fill="none" strokeLinejoin="round" />
           </g>
           <g opacity={kprog(T, K.E + 1.2, K.E + 2.0)}>
-            <Espectrograma T={T} x={100} y={680} w={880} h={470} vel={170} eventos={EVE} />
-            <text x={130} y={730} style={{ font:`900 34px ${KF.texto}` }} fill={KC.texto}>↑ agudo</text>
-            <text x={130} y={1130} style={{ font:`900 34px ${KF.texto}` }} fill={KC.texto}>↓ grave</text>
-            <text x={950} y={1130} textAnchor="end" style={{ font:`900 34px ${KF.texto}` }} fill={KC.texto}>tiempo →</text>
+            <Espectrograma T={T} x={60} y={600} w={960} h={720} vel={170} eventos={EVE} />
+            <text x={92} y={654} style={{ font:`900 34px ${KF.texto}` }} fill={KC.texto}>↑ agudo</text>
+            <text x={92} y={1296} style={{ font:`900 34px ${KF.texto}` }} fill={KC.texto}>↓ grave</text>
+            <text x={988} y={1296} textAnchor="end" style={{ font:`900 34px ${KF.texto}` }} fill={KC.texto}>tiempo →</text>
           </g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.E + 0.3} until={K.E + 1.6} texto="la onda del sonido…" x={380} y={560} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.E + 1.8} until={K.F - 0.2} texto="ESPECTROGRAMA" x={350} y={430} tam={50} borde={KC.mint} />
-      <Chip T={T} at={K.E + 4.4} until={K.F - 0.2} texto="más brillante = más fuerte" x={380} y={560} tam={34} borde={KC.yellow} />
+      <Chip T={T} at={K.E + 0.3} until={K.E + 1.6} texto="la onda del sonido…" x={540} y={560} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.E + 1.8} until={K.F - 0.2} texto="ESPECTROGRAMA" x={540} y={400} tam={50} borde={KC.mint} />
+      <Chip T={T} at={K.E + 4.4} until={K.F - 0.2} texto="más brillante = más fuerte" x={540} y={512} tam={34} borde={KC.yellow} />
       {/* 3 · cada canto, una forma; la IA la lee como foto */}
       <Escena T={T} a={K.F} b={K.P}>
         <FondoCircuito T={T} />
         {svg(<>
           <g opacity={1 - kprog(T, K.F + 2.9, K.F + 3.3)}>
-            <Huella T={T} x={190} y={880} tipo="rayitas" at={K.F + 0.9} etiqueta="rayitas" s={0.95} />
-            <Huella T={T} x={540} y={880} tipo="curva" at={K.F + 1.4} etiqueta="curvas" s={0.95} />
-            <Huella T={T} x={890} y={880} tipo="puntitos" at={K.F + 1.9} etiqueta="puntitos" s={0.95} />
-            <Visor x={540} y={870} w={300} h={350} p={kprog(T, K.F + 2.4, K.F + 2.9, kEase.sale)} />
+            {/* las tres tarjetas están desde que empieza la escena (atenuadas) y cada una se enciende en su momento */}
+            <g opacity={0.45}>
+              <Huella T={T} x={240} y={600} tipo="rayitas" at={K.F - 2} etiqueta="rayitas" s={1.4} />
+              <Huella T={T} x={840} y={1260} tipo="puntitos" at={K.F - 2} etiqueta="puntitos" s={1.4} />
+              <Huella T={T} x={540} y={930} tipo="curva" at={K.F - 2} etiqueta="curvas" s={1.4} />
+            </g>
+            <Huella T={T} x={240} y={600} tipo="rayitas" at={K.F + 0.9} etiqueta="rayitas" s={1.4} />
+            <Huella T={T} x={840} y={1260} tipo="puntitos" at={K.F + 1.9} etiqueta="puntitos" s={1.4} />
+            <Huella T={T} x={540} y={930} tipo="curva" at={K.F + 1.4} etiqueta="curvas" s={1.4} />
+            <Visor x={540} y={951} w={430} h={500} p={kprog(T, K.F + 2.4, K.F + 2.9, kEase.sale)} />
           </g>
           <g opacity={red}>
-            <Huella T={T} x={170} y={880} tipo="curva" at={K.F + 3.0} etiqueta="foto" s={0.62} />
+            <Huella T={T} x={150} y={930} tipo="curva" at={K.F + 3.0} etiqueta="foto" s={0.72} />
           </g>
         </>)}
-        <RedNeuronal T={T} x={360} y={660} ancho={560} alto={440} capas={[5, 7, 7, 7, 3]} onda={T > K.F + 3.2 ? ((T - K.F - 3.2) * 0.7) % 1.2 : null} o={red} color={KC.mint} />
+        <RedNeuronal T={T} x={330} y={620} ancho={680} alto={620} capas={[5, 7, 7, 7, 3]} onda={T > K.F + 3.2 ? ((T - K.F - 3.2) * 0.7) % 1.2 : null} o={red} color={KC.mint} />
       </Escena>
-      <Chip T={T} at={K.F + 3.3} until={K.P - 0.2} texto="la IA la lee como una foto" x={650} y={590} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.F + 3.3} until={K.P - 0.2} texto="la IA la lee como una foto" x={600} y={500} tam={36} borde={KC.cyan} />
       {/* 4 · pregunta */}
       <Escena T={T} a={K.P} b={K.V} zoom={0.1}>
         <FondoLunares color={KC.orange} />
@@ -353,61 +368,67 @@ function Aves() {
       {/* 5 · los voluntarios */}
       <Escena T={T} a={K.V} b={K.Es}>
         <FondoLunares color={KC.lilac} />
-        {svg(<Globo T={T} at={K.V + 0.4} cy={850} r={290} />)}
+        {svg(<g transform="translate(540 980) scale(1.42) translate(-540 -980)"><Globo T={T} at={K.V + 0.4} cy={980} r={296} /></g>)}
       </Escena>
-      <Chip T={T} at={K.V + 0.4} until={K.Es - 0.2} texto="miles de voluntarios" x={540} y={420} tam={44} borde={KC.yellow} />
-      <Chip T={T} at={K.V + 1.6} until={K.Es - 0.2} texto="millones de grabaciones de aves" x={540} y={510} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.V + 0.4} until={K.Es - 0.2} texto="miles de voluntarios" x={540} y={390} tam={44} borde={KC.yellow} />
+      <Chip T={T} at={K.V + 1.6} until={K.Es - 0.2} texto="millones de grabaciones de aves" x={540} y={482} tam={36} borde={KC.ink} />
       {/* 6 · el estudio: BirdNET */}
       <Escena T={T} a={K.Es} b={K.Cr}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <g opacity={kprog(T, K.Es + 3.2, K.Es + 3.6)}><Capas x={620} y={1130} n={n157} /></g>
+          {/* la red (su pila de capas) está en cuadro desde el inicio, atenuada; se llena cuando la voz cuenta las capas */}
+          <g transform="translate(540 1389) scale(1.7)">
+            <g opacity={0.42 * kprog(T, K.Es - 0.2, K.Es + 0.4)}><Capas x={-190} y={0} n={157} /></g>
+            <g opacity={kprog(T, K.Es + 3.2, K.Es + 3.6)}><Capas x={-190} y={0} n={n157} /></g>
+          </g>
         </>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.2} anio="BirdNET" quien="Cornell + Univ. Técnica de Chemnitz" revista="Kahl, Wood, Eibl y Klinck · Ecological Informatics (2021)" y={640} />
-      <Chip T={T} at={K.Es + 1.2} until={K.Es + 3.2} texto="EE. UU. + Alemania" x={540} y={930} tam={40} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Es + 3.4} until={K.Cr - 0.2} valor={157} dur={2.2} etiqueta="" sufijo="" x={810} y={520} tam={170} color={KC.cyan} />
-      <Chip T={T} at={K.Es + 3.8} until={K.Cr - 0.2} texto="capas" x={810} y={660} tam={44} borde={KC.cyan} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.2} anio="BirdNET" quien="Cornell + Univ. Técnica de Chemnitz" revista="Kahl, Wood, Eibl y Klinck · Ecological Informatics (2021)" y={350} />
+      <Chip T={T} at={K.Es + 1.2} until={K.Es + 3.2} texto="EE. UU. + Alemania" x={540} y={556} tam={40} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Es + 3.4} until={K.Cr - 0.2} valor={157} dur={2.2} etiqueta="" sufijo="" x={540} y={390} tam={170} color={KC.cyan} />
+      <Chip T={T} at={K.Es + 3.8} until={K.Cr - 0.2} texto="capas" x={540} y={530} tam={44} borde={KC.cyan} />
       {/* 7 · de 984 a más de 3 000 */}
       <Escena T={T} a={K.Cr} b={K.Ge}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Puntitos T={T} n1={n1} n2={Math.max(n1, n2)} />)}
+        {svg(<Puntitos T={T} n1={n1} n2={Math.max(n1, n2)} x={80} y={650} cols={20} paso={46} r1={16} r0={10} />)}
       </Escena>
-      <NumeroGigante T={T} at={K.Cr + 0.3} until={K.Cr + 3.4} valor={984} dur={2.4} etiqueta="especies de aves (2018–2020)" x={540} y={470} tam={190} color={KC.yellow} />
-      <NumeroGigante T={T} at={K.Cr + 3.6} until={K.Ge - 0.2} valor={3000} desde={984} dur={1.9} prefijo="+" etiqueta="inicios de 2021" x={400} y={470} tam={190} color={KC.pink} />
-      <Chip T={T} at={K.Cr + 1.0} until={K.Ge - 0.2} texto="cada puntito = 10 especies" x={540} y={1160} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Cr + 0.3} until={K.Cr + 3.4} valor={984} dur={2.4} etiqueta="especies de aves (2018–2020)" x={540} y={420} tam={190} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Cr + 3.6} until={K.Ge - 0.2} valor={3000} desde={984} dur={1.9} prefijo="+" etiqueta="inicios de 2021" x={540} y={420} tam={190} color={KC.pink} />
+      <Chip T={T} at={K.Cr + 1.0} until={K.Ge - 0.2} texto="cada puntito = 10 especies" x={540} y={1440} tam={30} borde={KC.ink} />
       {/* 8 · la gente y la grulla */}
       <Escena T={T} a={K.Ge} b={K.J}>
         <FondoLunares color={KC.pink} />
         {svg(<>
-          <g opacity={1 - kprog(T, K.Ge + 3.6, K.Ge + 4.1)}><Celulares T={T} at={K.Ge + 0.5} x0={240} y0={780} /></g>
+          <g opacity={1 - kprog(T, K.Ge + 3.6, K.Ge + 4.1)} transform="translate(540 1010) scale(1.45) translate(-540 -930)"><Celulares T={T} at={K.Ge + 0.5} x0={240} y0={780} /></g>
           {T > K.Ge + 3.6 && <MapaEuropa T={T} at={K.Ge + 3.6} rutaP={ruta} />}
         </>)}
       </Escena>
-      <NumeroGigante T={T} at={K.Ge + 0.3} until={K.Ge + 3.6} valor={1.1} dec={1} dur={1.2} prefijo="+" sufijo=" millones" etiqueta="personas en 2020" x={650} y={540} tam={110} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.Ge + 0.3} until={K.Ge + 3.6} valor={1.1} dec={1} dur={1.2} prefijo="+" sufijo=" millones" etiqueta="personas en 2020" x={540} y={500} tam={110} color={KC.yellow} />
       <Rotulo T={T} at={K.Ge + 4.0} until={K.J - 0.2} normal="grulla común" it="Grus grus" y={440} />
       <Chip T={T} at={K.Ge + 5.6} until={K.J - 0.2} texto="igual a su ruta ya conocida" x={540} y={525} tam={32} borde={KC.red} />
       {/* 9 · el modelo de 2023 y tu jardín */}
       <Escena T={T} a={K.J} b={K.C}>
         <FondoLunares color={KC.lilac} />
       </Escena>
-      <NumeroGigante T={T} at={K.J + 0.3} until={K.C - 0.2} valor={6000} dur={1.6} prefijo="+" etiqueta="modelo mundial · 2023" x={390} y={470} tam={170} color={KC.yellow} />
-      <Chip T={T} at={K.J + 1.4} until={K.C - 0.2} texto="especies: aves y otros animales" x={390} y={640} tam={28} borde={KC.ink} />
-      <FichaAve T={T} at={K.J + 3.2} until={K.C - 0.2} x={195} y={930} nombre="zanate" cientifico="Quiscalus mexicanus"><Zanate x={170} y={250} s={0.62} T={T} /></FichaAve>
-      <FichaAve T={T} at={K.J + 3.8} until={K.C - 0.2} x={540} y={930} nombre="gorrión" cientifico="Passer domesticus"><Gorrion x={160} y={235} s={1.2} T={T} /></FichaAve>
-      <FichaAve T={T} at={K.J + 4.4} until={K.C - 0.2} x={885} y={930} nombre="tortolita" cientifico="Columbina inca"><Tortolita x={140} y={225} s={1.15} T={T} /></FichaAve>
+      <NumeroGigante T={T} at={K.J + 0.3} until={K.C - 0.2} valor={6000} dur={1.6} prefijo="+" etiqueta="modelo mundial · 2023" x={540} y={380} tam={170} color={KC.yellow} />
+      <Chip T={T} at={K.J + 1.4} until={K.C - 0.2} texto="especies: aves y otros animales" x={540} y={545} tam={28} borde={KC.ink} />
+      <FichaAve T={T} desde={K.J} at={K.J + 3.2} until={K.C - 0.2} x={188} y={960} nombre="zanate" cientifico="Quiscalus mexicanus"><Zanate x={143} y={306} s={0.8} T={T} /></FichaAve>
+      <FichaAve T={T} desde={K.J} at={K.J + 3.8} until={K.C - 0.2} x={540} y={960} nombre="gorrión" cientifico="Passer domesticus"><Gorrion x={160} y={304} s={1.45} T={T} /></FichaAve>
+      <FichaAve T={T} desde={K.J} at={K.J + 4.4} until={K.C - 0.2} x={892} y={960} nombre="tortolita" cientifico="Columbina inca"><Tortolita x={130} y={304} s={1.3} T={T} /></FichaAve>
       {/* 10 · cierre: la misma ventana; el canto ya se ve como dibujo */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Ventana T={T}>
-            <Zanate x={330} y={392} s={1.05} T={T} canta={cantaC} />
-          </Ventana>
-          {EVC.filter((e) => T >= e.t).map((e, i) => { const u = kprog(T, e.t, e.t + 2.6), ox = 560 + u * 300, oy = 900 + (i % 2) * 70 - u * 40;
-            return <g key={i} transform={`translate(${ox} ${oy - 150}) scale(${0.7 + u * 0.4})`} opacity={1 - kprog(T, e.t + 2.0, e.t + 2.6)}><AvTraza e={{ ...e, d: 0.8 }} h={230} vel={150} /></g>; })}
+          <g transform={VENT}>
+            <Ventana T={T}>
+              <Zanate x={330} y={392} s={1.05} T={T} canta={cantaC} />
+            </Ventana>
+          </g>
+          {EVC.filter((e) => T >= e.t).map((e, i) => { const u = kprog(T, e.t, e.t + 2.6), ox = 170 + u * 540, oy = 1290 + (i % 2) * 70 - u * 60;
+            return <g key={i} transform={`translate(${ox} ${oy - 150}) scale(${1.5 + u * 0.5})`} opacity={1 - kprog(T, e.t + 2.0, e.t + 2.6)}><AvTraza e={{ ...e, d: 0.8 }} h={230} vel={150} /></g>; })}
         </>)}
       </Escena>
-      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="una foto en cada canto" x={330} y={360} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="una foto en cada canto" x={540} y={262} tam={38} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} tam={60} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="Un dibujo *en su canto.*" />
