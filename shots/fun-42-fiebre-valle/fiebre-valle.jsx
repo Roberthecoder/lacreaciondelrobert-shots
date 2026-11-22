@@ -2,7 +2,7 @@
 // Shot Fungi Mati #42 · Ese polvo no es solo tierra: la fiebre del valle (Coccidioides) — NARRADO (N1 "Por dentro", gancho 1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
 
-const FV = { arena:'#e9c27a', arena2:'#d7a85a', polvo:'#c99a5b', polvo2:'#a8783f', cielo:'#ffb347', crema:'#f6ead0', suelo:'#2a1a10', pulmon:'#3a1426', carne:'#ff8fa3' };
+const FV = { arena:'#4f3a22', arena2:'#5e452a', polvo:'#c99a5b', polvo2:'#a8783f', cielo:'#ffb347', crema:'#f6ead0', suelo:'#2a1a10', pulmon:'#3a1426', carne:'#ff8fa3' };
 
 // Artroconidia: célula en forma de barril (~3 × 4.5 µm). Origen = centro. w × h en px.
 function Barril({ x, y, s = 1, rot = 0, color = FV.crema, w = 34, h = 52, o = 1 }) {
@@ -52,7 +52,7 @@ function Desierto({ T }) {
     <FondoLunares color={KC.yellow} />
     {fsvg(<>
       <circle cx={860} cy={520} r={90} fill="#fff6b0" stroke={KC.ink} strokeWidth={7} />
-      <path d="M 0 1000 L 160 860 L 300 960 L 470 820 L 640 950 L 820 840 L 1080 980 L 1080 1100 L 0 1100 Z" fill="#c9875a" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
+      <path d="M 0 1000 L 160 860 L 300 960 L 470 820 L 640 950 L 820 840 L 1080 980 L 1080 1100 L 0 1100 Z" fill="#6b4530" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
       <rect x={0} y={1060} width={KW} height={900} fill={FV.arena} stroke={KC.ink} strokeWidth={7} />
       <path d="M 430 1060 L 650 1060 L 1000 1920 L 140 1920 Z" fill={FV.arena2} />
       {[[140, 1190, 0.8], [940, 1150, 0.65], [980, 1500, 1.0]].map(([x, y, s], i) => <Saguaro key={i} x={x} y={y} s={s} />)}
@@ -138,7 +138,7 @@ function Montes({ T, a, sacude = 0, deslave = 0 }) {
     <path d="M -20 1120 L 180 760 L 330 900 L 520 680 L 720 920 L 880 780 L 1100 1060 L 1100 1150 L -20 1150 Z" fill="#a0764a" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <path d="M 450 760 L 520 680 L 580 760 Z" fill="#7b5532" />
     {deslave > 0 && <path d={`M 470 ${740} Q 520 ${740 + 200 * deslave} ${600 + 40 * deslave} ${760 + 330 * deslave} L ${520} ${760 + 340 * deslave} Q 470 ${760 + 160 * deslave} 440 760 Z`} fill="#6b4a2b" stroke={KC.ink} strokeWidth={6} />}
-    <rect x={-20} y={1140} width={1120} height={800} fill="#c8a76a" stroke={KC.ink} strokeWidth={8} />
+    <rect x={-20} y={1140} width={1120} height={800} fill="#4b3a22" stroke={KC.ink} strokeWidth={8} />
     {Array.from({ length: 9 }, (_, i) => <g key={i} transform={`translate(${560 + (i % 5) * 95} ${1190 + Math.floor(i / 5) * 80})`}>
       <rect x={-30} y={-30} width={60} height={42} fill="#fff1d6" stroke={KC.ink} strokeWidth={4} /><path d="M -38 -28 L 0 -58 L 38 -28 Z" fill={KC.red} stroke={KC.ink} strokeWidth={4} /></g>)}
   </g>;
@@ -205,9 +205,9 @@ function FiebreValleShot() {
       {/* 1 · gancho: el remolino de polvo del desierto */}
       <Escena T={T} a={K.G} b={K.Su} zoom={0.05}>
         <Desierto T={T} />
-        {fsvg(<Remolino T={T} x={430} y={1120} crece={kprog(T, K.G, K.G + 1.0)} />)}
+        {fsvg(<g transform="translate(540 1400) scale(1.6) translate(-430 -1120)"><Remolino T={T} x={430} y={1120} crece={kprog(T, K.G, K.G + 1.0)} /></g>)}
       </Escena>
-      <Lupa T={T} at={K.G + 1.2} until={K.G + 4.0} x={330} y={640} r={165} fx={430} fy={900} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · POLVO"
+      <Lupa T={T} at={K.G + 1.2} until={K.G + 4.0} x={290} y={560} r={165} fx={540} fy={1050} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · POLVO"
         interior={(T, r) => fsvg(<g>
           {[[90, 120, 34, 1], [230, 90, 40, 2], [250, 240, 46, 3], [100, 250, 30, 5]].map(([x, y, rr, s], i) => <Grano key={i} x={x} y={y + Math.sin(T * 2 + i) * 6} r={rr} seed={s} />)}
           {[[170, 170, 20], [70, 190, -30], [280, 165, 60]].map(([x, y, rot], i) => <Barril key={i} x={x} y={y + Math.cos(T * 2 + i) * 6} rot={rot + T * 15} s={kprog(T, K.G + 1.8 + i * 0.25, K.G + 2.2 + i * 0.25, kEase.rebote)} />)}
@@ -246,7 +246,11 @@ function FiebreValleShot() {
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Ef} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Interrogacion T={T} x={300} y={1080} />)}
+        {fsvg(<>
+          <Persona x={260} y={1260} s={5} color="#8fb6ff" />
+          <Pulmones x={260} y={1165} s={1.5} brillo={1} />
+          <Interrogacion T={T} x={760} y={1040} tam={460} />
+        </>)}
       </Escena>
       {/* 6–7 · en el pulmón: el barrilito se vuelve esférula, se llena de endosporas y revienta */}
       <Escena T={T} a={K.Ef} b={K.D}>
@@ -293,7 +297,7 @@ function FiebreValleShot() {
       <Escena T={T} a={K.Si} b={K.C}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          {T < K.Si + 2.9 && <g opacity={1 - kprog(T, K.Si + 2.5, K.Si + 2.9)}>
+          {T < K.Si + 2.9 && <g opacity={1 - kprog(T, K.Si + 2.5, K.Si + 2.9)} transform="translate(540 980) scale(1.25) translate(-548 -660)">
             <g transform={`translate(200 640) scale(${kprog(T, K.Si + 0.2, K.Si + 0.5, kEase.rebote)})`}>
               <Persona x={0} y={60} s={1.6} />{[0, 1, 2].map((k) => <circle key={k} cx={60 + k * 34 + kprog(T, K.Si + 0.4, K.Si + 1.2) * 20} cy={-40 - k * 12} r={16 + k * 4} fill="#fff" stroke={KC.ink} strokeWidth={4} opacity={0.9 - k * 0.2} />)}</g>
             <g transform={`translate(540 680) scale(${kprog(T, K.Si + 0.7, K.Si + 1.0, kEase.rebote)})`}><TermoMini x={0} y={0} s={1.4} nivel={0.3 + 0.6 * kprog(T, K.Si + 0.8, K.Si + 1.8)} /></g>
@@ -301,23 +305,23 @@ function FiebreValleShot() {
               <rect x={-90} y={-45} width={170} height={90} rx={14} fill="#fff" stroke={KC.ink} strokeWidth={7} /><rect x={82} y={-18} width={16} height={36} rx={4} fill={KC.ink} />
               <rect x={-78} y={-33} width={36} height={66} rx={6} fill={KC.red} /></g>
           </g>}
-          {T > K.Si + 2.4 && <g opacity={kprog(T, K.Si + 2.4, K.Si + 2.8)}>
+          {T > K.Si + 2.4 && <g opacity={kprog(T, K.Si + 2.4, K.Si + 2.8)} transform="translate(410 880) scale(1.35) translate(-410 -860)">
             <Persona x={230} y={940} s={1.8} /><Persona x={590} y={940} s={1.8} color="#ffd36b" />
             <path d="M 300 830 L 500 830" stroke={KC.ink} strokeWidth={12} strokeLinecap="round" /><path d="M 480 806 L 512 830 L 480 854" stroke={KC.ink} strokeWidth={12} fill="none" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M 360 780 L 450 880 M 450 780 L 360 880" stroke={KC.red} strokeWidth={16} strokeLinecap="round" opacity={kprog(T, K.Si + 3.0, K.Si + 3.3)} />
           </g>}
-          {T > K.Si + 3.7 && <g transform={`translate(${klerp(1300, 860, kprog(T, K.Si + 3.7, K.Si + 4.4, kEase.sale))} 1150)`}>
-            <Perro x={0} y={0} s={0.95} T={T} /><TermoMini x={-150} y={-150} s={0.6} rot={-60} nivel={0.85} /></g>}
+          {T > K.Si + 3.7 && <g transform={`translate(${klerp(1300, 860, kprog(T, K.Si + 3.7, K.Si + 4.4, kEase.sale))} 1290)`}>
+            <Perro x={0} y={0} s={1.15} T={T} /><TermoMini x={-150} y={-150} s={0.6} rot={-60} nivel={0.85} /></g>}
         </>)}
       </Escena>
       {/* 12 · cierre: el mismo desierto y el mismo remolino, ahora con las esporas "en taxi" */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <Desierto T={T} />
-        {fsvg(<Remolino T={T} x={430} y={1120} crece={1} esporas={kprog(T, K.C + 0.6, K.C + 1.4, kEase.rebote)} />)}
+        {fsvg(<g transform="translate(540 1400) scale(1.6) translate(-430 -1120)"><Remolino T={T} x={430} y={1120} crece={1} esporas={kprog(T, K.C + 0.6, K.C + 1.4, kEase.rebote)} /></g>)}
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 1.0} until={K.Su - 0.3} x={610} y={760} texto="remolino de polvo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.0} until={K.Su - 0.3} x={680} y={1150} texto="remolino de polvo" tam={28} color={KC.ink} />
       <Etq T={T} at={K.Su + 0.5} until={K.Es - 0.3} x={560} y={500} texto="Coccidioides" it tam={44} color={KC.ink} lado="izq" />
       <Chip T={T} at={K.Su + 0.9} until={K.Es - 0.3} texto="zona seca donde vive el hongo" x={540} y={1150} tam={30} borde="#c96a22" />
       <Etq T={T} at={K.Su + 0.4} until={K.Es - 0.3} x={250} y={640} texto="EE. UU." tam={30} color={KC.ink} lado="izq" />
@@ -345,15 +349,15 @@ function FiebreValleShot() {
       <NumeroGigante T={T} at={K.Ca + 0.3} until={K.Cl - 0.3} valor={203} dur={1.6} etiqueta="casos · condado de Ventura" x={370} y={470} tam={170} color={KC.red} />
       <Chip T={T} at={K.Ca + 2.6} until={K.Cl - 0.3} texto="dentro de la nube de polvo: más riesgo" x={540} y={1170} tam={30} borde={KC.red} />
       <Chip T={T} at={K.Cl + 0.6} until={K.Si - 0.3} texto="≈ 6 de cada 10: sin síntomas" x={420} y={520} tam={36} borde={KC.leaf} />
-      <Etq T={T} at={K.Si + 0.4} until={K.Si + 2.5} x={120} y={760} texto="tos" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Si + 0.9} until={K.Si + 2.5} x={470} y={760} texto="fiebre" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Si + 1.4} until={K.Si + 2.5} x={760} y={730} texto="cansancio" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Si + 0.4} until={K.Si + 2.5} x={30} y={1160} texto="tos" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Si + 0.9} until={K.Si + 2.5} x={440} y={1160} texto="fiebre" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Si + 1.4} until={K.Si + 2.5} x={790} y={1160} texto="cansancio" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Si + 2.9} until={K.C - 0.3} texto="no se contagia entre personas" x={420} y={520} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Si + 4.3} until={K.C - 0.3} x={560} y={1060} texto="perros también" tam={30} color={KC.ink} lado="izq" />
+      <Etq T={T} at={K.Si + 4.3} until={K.C - 0.3} x={660} y={1390} texto="perros también" tam={30} color={KC.ink} lado="izq" />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="el taxi de un hongo" x={400} y={500} tam={40} borde={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Su} texto="1 m" largo={110} />
+      <BarraEscala T={T} at={K.G} until={K.Su} texto="1 m" largo={176} />
       <BarraEscala T={T} at={K.Su} until={K.Es} texto="500 km" largo={95} />
       <BarraEscala T={T} at={K.Es} until={K.V} texto="10 µm" largo={115} />
       <BarraEscala T={T} at={K.V} until={K.P} texto="1 m" largo={130} />
@@ -361,7 +365,7 @@ function FiebreValleShot() {
       <BarraEscala T={T} at={K.D} until={K.Et} texto="50 µm (esferas)" largo={130} />
       <BarraEscala T={T} at={K.Et} until={K.Cl} texto="1 km" largo={120} />
       <BarraEscala T={T} at={K.Cl} until={K.C} texto="1 m" largo={110} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m" largo={110} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m" largo={176} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Su - 0.1} texto="Ese polvo no es solo tierra: *puede traer esporas.*" />
