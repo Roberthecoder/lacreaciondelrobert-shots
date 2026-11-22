@@ -70,6 +70,10 @@ const NEGRAS = [[690, 330, 26], [740, 390, 18], [650, 420, 14], [120, 520, 30], 
 const VERDES = [[140, 160, 70], [780, 140, 80], [480, 560, 90], [100, 560, 60], [840, 480, 70], [600, 90, 50]];
 const BLANCAS = [[120, 640, 70], [300, 680, 80], [520, 660, 90], [720, 690, 80], [880, 640, 60], [60, 500, 45], [900, 470, 50]];
 
+// Pase a mano (estilo cine): la pared y el toro crecen; las manchas se recolocan en la misma proporción.
+const lxEsc = (pts, kx, ky, kr, w, h) => pts.map(([a, b, r]) => [kclamp(a * kx, 40, w - 40), kclamp(b * ky, 40, h - 40), r * kr]);
+const lxToro = (pts, t0, t1, w, h) => pts.map(([a, b, r]) => [kclamp(t1[0] + (a - t0[0]) / t0[2] * t1[2], 40, w - 40), kclamp(t1[1] + (b - t0[1]) / t0[2] * t1[2], 40, h - 40), r * t1[2] / t0[2]]);
+const PA = { x: -30, y: 470, w: 1140, h: 1010 }, PB = { x: 20, y: 520, w: 1040, h: 900 };
 // Reja que baja y se cierra. p 0..1.
 function Reja({ x = 60, y = 520, w = 960, h = 780, p = 1 }) {
   const dy = (1 - kEase.rebote(kclamp(p, 0, 1))) * -h;
@@ -133,20 +137,21 @@ function CorteHifa({ x, y, w = 900, h = 300, p = 1 }) {
   </g>;
 }
 // Edificio esquemático de la réplica con una pared pintada adentro.
-function Replica({ x, y, w = 420, h = 360, color = KC.paper, titulo, sub, p = 1, toro = 1 }) {
+function Replica({ x, y, w = 420, h = 360, color = KC.paper, titulo, sub, p = 1, toro = 1, st = 0.55 }) {
   if (p <= 0) return null;
   const k = kEase.rebote(kclamp(p, 0, 1));
   return <g transform={`translate(${x} ${y + h}) scale(${k}) translate(0 ${-h})`}>
     <rect x={0} y={0} width={w} height={h} rx={14} fill={color} stroke={KC.ink} strokeWidth={8} />
     <path d={`M -20 0 L ${w / 2} -90 L ${w + 20} 0 Z`} fill={KC.ink} />
     <rect x={30} y={40} width={w - 60} height={h - 120} rx={10} fill={LX.roca} stroke={KC.ink} strokeWidth={5} />
-    <g transform={`translate(${w / 2 - 110} ${70})`}><Toro x={0} y={0} s={0.55} p={toro} /></g>
+    <g transform={`translate(${w / 2 - 200 * st} ${(h - 80) / 2 + 40 - 135 * st})`}><Toro x={0} y={0} s={st} p={toro} /></g>
     <rect x={w / 2 - 40} y={h - 70} width={80} height={70} fill={KC.ink} />
   </g>;
 }
 
 // Subtítulo con cursivas: como Subtitulo del kit, y además _palabra_ = cursiva (nombres científicos).
 function SubtituloLX({ T, at, until, texto, idx, color = KC.gold2, tam = 64 }) {
+  if (window.CINE_OPC && !window.CINE_OPC.subtitulos) return null;   // modo cine: sin subtítulo quemado
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
@@ -170,76 +175,76 @@ function LascauxShot() {
   const K = { G: CUES.Gancho, Cu: CUES.Cueva, Vi: CUES.Visitas, Ve: CUES.Verde, P: CUES.Pregunta, B: CUES.Blanco, Hi: CUES.Hifas, Ne: CUES.Negro, Es: CUES.Estudio, Me: CUES.Melanina, Pa: CUES.Paredes, Re: CUES.Replica, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   // linterna del gancho: barre la pared desde el cuadro 0
-  const lx = klerp(220, 760, kEase.suave(kprog(T, K.G, K.G + 2.2))), luz = 1 - kprog(T, K.G + 2.0, K.G + 2.8);
+  const lx = klerp(260, 800, kEase.suave(kprog(T, K.G, K.G + 2.2))), luz = 1 - kprog(T, K.G + 2.0, K.G + 2.8);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la pared pintada, una linterna, y la manchita negra que crece */}
       <Escena T={T} a={K.G} b={K.Cu} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Pared id="g" y={580} h={600}>
-            <Toro x={210} y={150} s={1.4} p={kprog(T, K.G, K.G + 1.2)} />
-            <Manchas pts={NEGRAS.slice(0, 5)} p={kprog(T, K.G + 3.6, K.G + 5.6)} />
+          <Pared id="g" {...PA}>
+            <Toro x={150} y={200} s={2.2} p={kprog(T, K.G, K.G + 1.2)} />
+            <Manchas pts={lxToro(NEGRAS.slice(0, 5), [210, 150, 1.4], [150, 200, 2.2], PA.w, PA.h)} p={kprog(T, K.G + 3.6, K.G + 5.6)} />
           </Pared>
-          <defs><mask id="linterna"><rect x={0} y={0} width={KW} height={KH} fill="#fff" /><circle cx={lx} cy={860} r={250} fill="#000" /></mask>
+          <defs><mask id="linterna"><rect x={0} y={0} width={KW} height={KH} fill="#fff" /><circle cx={lx} cy={950} r={350} fill="#000" /></mask>
             <radialGradient id="halo"><stop offset="60%" stopColor="#fff6c8" stopOpacity=".0" /><stop offset="100%" stopColor="#fff6c8" stopOpacity=".35" /></radialGradient></defs>
-          {luz > 0 && <g opacity={luz}><rect x={60} y={560} width={960} height={640} fill="#07080b" opacity=".72" mask="url(#linterna)" /><circle cx={lx} cy={860} r={250} fill="url(#halo)" /></g>}
+          {luz > 0 && <g opacity={luz}><rect x={-40} y={400} width={1160} height={1100} fill="#07080b" opacity=".72" mask="url(#linterna)" /><circle cx={lx} cy={950} r={350} fill="url(#halo)" /></g>}
         </>)}
       </Escena>
       {/* 2 · la cueva de Lascaux: mapa y animales */}
       <Escena T={T} a={K.Cu} b={K.Vi} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Pared id="c" y={720} h={480}>
-            <Toro x={40} y={40} s={0.95} p={kprog(T, K.Cu + 1.3, K.Cu + 2.1)} />
-            <Caballo x={540} y={30} s={1.05} p={kprog(T, K.Cu + 2.1, K.Cu + 2.8)} />
-            <Ciervo x={330} y={250} s={1.0} p={kprog(T, K.Cu + 2.8, K.Cu + 3.5)} />
+          <Pared id="c" x={20} y={700} w={1040} h={780}>
+            <Toro x={40} y={50} s={1.25} p={kprog(T, K.Cu + 1.3, K.Cu + 2.1)} />
+            <Caballo x={600} y={50} s={1.38} p={kprog(T, K.Cu + 2.1, K.Cu + 2.8)} />
+            <Ciervo x={320} y={420} s={1.32} p={kprog(T, K.Cu + 2.8, K.Cu + 3.5)} />
           </Pared>
-          <MapaFrancia x={640} y={330} s={1.05} p={kprog(T, K.Cu + 0.1, K.Cu + 0.8)} />
+          <MapaFrancia x={640} y={345} s={1.1} p={kprog(T, K.Cu + 0.1, K.Cu + 0.8)} />
         </>)}
       </Escena>
       {/* 3 · descubrimiento (1940) y visitas: calor, humedad y aliento */}
       <Escena T={T} a={K.Vi} b={K.Ve} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Pared id="v" y={640} h={540}>
-            <Toro x={300} y={70} s={0.9} />
+          <Pared id="v" x={20} y={480} w={1040} h={760}>
+            <Toro x={200} y={170} s={1.5} />
           </Pared>
-          {T < K.Vi + 2.8 ? [0, 1, 2, 3].map((i) => <Visitante key={i} T={T} x={160 + i * 110} y={1150} s={0.75} color="#5b3a7a" aliento={0} joven={i === 0} fase={i} />)
+          {T < K.Vi + 2.8 ? [0, 1, 2, 3].map((i) => <Visitante key={i} T={T} x={200 + i * 150} y={1390} s={1.15} color="#5b3a7a" aliento={0} joven={i === 0} fase={i} />)
             : [0, 1, 2, 3, 4, 5].map((i) => { const e = kprog(T, K.Vi + 2.8 + i * 0.18, K.Vi + 3.3 + i * 0.18, kEase.sale);
-              return <g key={i} opacity={e}><Visitante T={T} x={120 + i * 150 + (1 - e) * 200} y={1160} s={0.8} color={['#3a2e5c', '#1f5a7a', '#7a2e3a'][i % 3]} aliento={kprog(T, K.Vi + 3.6, K.Vi + 4.2)} fase={i * 1.7} /></g>; })}
-          {T > K.Vi + 3.6 && <Termo x={960} y={1000} v={kprog(T, K.Vi + 3.8, K.Vi + 5.5)} />}
+              return <g key={i} opacity={e}><Visitante T={T} x={105 + i * 174 + (1 - e) * 200} y={1390} s={1.15} color={['#3a2e5c', '#1f5a7a', '#7a2e3a'][i % 3]} aliento={kprog(T, K.Vi + 3.6, K.Vi + 4.2)} fase={i * 1.7} /></g>; })}
+          {T > K.Vi + 3.6 && <Termo x={960} y={900} v={kprog(T, K.Vi + 3.8, K.Vi + 5.5)} />}
         </>)}
       </Escena>
       {/* 4 · la «enfermedad verde» y la reja de 1963 */}
       <Escena T={T} a={K.Ve} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Pared id="ve" y={600} h={580}>
-            <Toro x={220} y={200} s={1.3} />
-            <Manchas tipo="verde" pts={VERDES} p={kprog(T, K.Ve + 0.2, K.Ve + 2.0)} />
+          <Pared id="ve" {...PB}>
+            <Toro x={85} y={165} s={2.17} />
+            <Manchas tipo="verde" pts={lxEsc(VERDES, 1.106, 1.55, 1.45, PB.w, PB.h)} p={kprog(T, K.Ve + 0.2, K.Ve + 2.0)} />
           </Pared>
-          <Reja y={570} h={630} p={kprog(T, K.Ve + 2.2, K.Ve + 2.7)} />
+          <Reja x={10} y={490} w={1060} h={960} p={kprog(T, K.Ve + 2.2, K.Ve + 2.7)} />
         </>)}
       </Escena>
       {/* 5 · re-gancho: cerrada… ¿ya estaba a salvo? */}
       <Escena T={T} a={K.P} b={K.B} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Pared id="pr" y={600} h={580} oscuro={0.75}><Toro x={220} y={160} s={1.3} /></Pared>
-          <Reja y={570} h={630} p={1} />
-          <Interrogacion T={T} x={330} y={1080} tam={420} />
+          <Pared id="pr" {...PB} oscuro={0.75}><Toro x={85} y={165} s={2.17} /></Pared>
+          <Reja x={10} y={490} w={1060} h={960} p={1} />
+          <Interrogacion T={T} x={540} y={1160} tam={520} />
         </>)}
       </Escena>
       {/* 6 · 2001: aire acondicionado nuevo y el manto blanco de Fusarium solani */}
       <Escena T={T} a={K.B} b={K.Hi} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Pared id="b" y={600} h={580}>
-            <Toro x={200} y={110} s={1.2} />
-            <Manchas tipo="blanco" pts={BLANCAS} p={kprog(T, K.B + 1.6, K.B + 4.6)} />
+          <Pared id="b" {...PB}>
+            <Toro x={120} y={230} s={2.0} />
+            <Manchas tipo="blanco" pts={lxEsc(BLANCAS, 1.106, 1.52, 1.5, PB.w, PB.h)} p={kprog(T, K.B + 1.6, K.B + 4.6)} />
           </Pared>
-          <AireAcond T={T} x={860} y={660} on={kprog(T, K.B + 0.3, K.B + 0.8)} />
+          <g transform="translate(850 640) scale(1.3)"><AireAcond T={T} x={0} y={0} on={kprog(T, K.B + 0.3, K.B + 0.8)} /></g>
         </>)}
       </Escena>
       {/* 7 · por dentro: hifas y esporas (esquemático); cal y biocidas */}
@@ -248,18 +253,18 @@ function LascauxShot() {
         <Ambiente T={T} n={18} />
         {fsvg(<>
           <g opacity={1 - 0.65 * kprog(T, K.Hi + 2.6, K.Hi + 3.8)}>
-            <RedHifas T={T} x={480} y={860} g={kclamp(0.35 + kprog(T, K.Hi - 0.4, K.Hi + 2.2), 0, 1)} seed={7} n={320} escala={0.6} color={LX.moho} ancho={5} />
-            <Esporas T={T} p={kprog(T, K.Hi + 0.6, K.Hi + 1.8)} pts={[[300, 700, 20], [780, 760, -30], [420, 1110, 60], [700, 1080, 10], [560, 640, -50], [250, 980, 35]]} />
+            <RedHifas T={T} x={540} y={540} g={kclamp(0.35 + kprog(T, K.Hi - 0.4, K.Hi + 2.2), 0, 1)} seed={7} n={320} escala={0.6} color={LX.moho} ancho={5} />
+            <Esporas T={T} p={kprog(T, K.Hi + 0.6, K.Hi + 1.8)} pts={[[250, 760, 20], [830, 820, -30], [400, 1230, 60], [720, 1180, 10], [560, 960, -50], [230, 1080, 35]]} />
           </g>
           {Array.from({ length: 40 }, (_, i) => { const t0 = K.Hi + 2.2 + (i % 10) * 0.08, u = kprog(T, t0, t0 + 1.2); if (u <= 0 || u >= 1) return null;
-            return i % 2 ? <circle key={i} cx={120 + (i * 97) % 860} cy={520 + u * 700} r={7} fill="#ffffff" opacity={0.9} />
-              : <path key={i} d={`M ${140 + (i * 83) % 820} ${500 + u * 700} q 9 14 0 22 q -9 -8 0 -22 Z`} fill={KC.cyan} opacity={0.9} />; })}
+            return i % 2 ? <circle key={i} cx={120 + (i * 97) % 860} cy={430 + u * 1000} r={8} fill="#ffffff" opacity={0.9} />
+              : <path key={i} d={`M ${140 + (i * 83) % 820} ${410 + u * 1000} q 9 14 0 22 q -9 -8 0 -22 Z`} fill={KC.cyan} opacity={0.9} />; })}
         </>)}
       </Escena>
       {/* 8 · manchas negras junto a la pintura */}
       <Escena T={T} a={K.Ne} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Pared id="n" y={600} h={580}><Toro x={210} y={130} s={1.35} /><Manchas pts={NEGRAS} p={kprog(T, K.Ne + 0.1, K.Ne + 2.2)} /></Pared>)}
+        {fsvg(<Pared id="n" {...PB}><Toro x={120} y={190} s={2.0} /><Manchas pts={lxToro(NEGRAS, [210, 130, 1.35], [120, 190, 2.0], PB.w, PB.h)} p={kprog(T, K.Ne + 0.1, K.Ne + 2.2)} /></Pared>)}
       </Escena>
       {/* 9–10 · el estudio de 2012 y la melanina (micro, fondo oscuro) */}
       <Escena T={T} a={K.Es} b={K.Pa} zoom={0.06}>
@@ -267,8 +272,8 @@ function LascauxShot() {
         <Ambiente T={T} n={16} />
         {fsvg(<>
           {T < K.Me + 0.2 && <g opacity={1 - kprog(T, K.Me - 0.2, K.Me + 0.2)}>
-            <RedHifas T={T} x={480} y={880} g={kprog(T, K.Es + 2.4, K.Es + 4.6)} seed={12} n={260} escala={0.5} color="#8a7458" ancho={7} />
-            <Esporas T={T} color="#4a3b2b" p={kprog(T, K.Es + 3.4, K.Es + 4.6)} pts={[[330, 960, 10], [760, 1000, -20], [520, 1120, 40], [640, 820, 0]]} />
+            <RedHifas T={T} x={540} y={580} g={0.55 + 0.45 * kprog(T, K.Es + 2.4, K.Es + 4.6)} seed={12} n={260} escala={0.5} color="#8a7458" ancho={7} />
+            <Esporas T={T} color="#4a3b2b" p={kprog(T, K.Es + 3.4, K.Es + 4.6)} pts={[[330, 840, 10], [780, 900, -20], [500, 1120, 40], [660, 720, 0]]} />
           </g>}
           {T > K.Me - 0.2 && <g opacity={kprog(T, K.Me - 0.2, K.Me + 0.3)}><CorteHifa x={90} y={760} w={900} h={300} p={kprog(T, K.Me + 0.6, K.Me + 2.4)} /></g>}
         </>)}
@@ -276,80 +281,81 @@ function LascauxShot() {
       {/* 11 · sobre las mismas paredes con arte */}
       <Escena T={T} a={K.Pa} b={K.Re} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Pared id="pa" y={600} h={580}>
-          <Toro x={110} y={90} s={1.0} /><Caballo x={500} y={300} s={1.0} />
-          <Manchas pts={[[480, 140, 24], [430, 200, 14], [840, 300, 22], [300, 450, 26], [360, 520, 14], [880, 600, 18], [140, 600, 20], [650, 140, 16]]} p={kprog(T, K.Pa + 0.2, K.Pa + 2.2)} />
+        {fsvg(<Pared id="pa" {...PB}>
+          <Toro x={50} y={70} s={1.55} /><Caballo x={500} y={470} s={1.6} />
+          <Manchas pts={lxEsc([[480, 140, 24], [430, 200, 14], [840, 300, 22], [300, 450, 26], [360, 520, 14], [880, 600, 18], [140, 600, 20], [650, 140, 16]], 1.106, 1.5, 1.5, PB.w, PB.h)} p={kprog(T, K.Pa + 0.2, K.Pa + 2.2)} />
         </Pared>)}
       </Escena>
       {/* 12 · las copias: Lascaux II y Lascaux IV */}
       <Escena T={T} a={K.Re} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Replica x={70} y={800} w={420} h={360} p={kprog(T, K.Re + 1.0, K.Re + 1.5)} toro={kprog(T, K.Re + 1.3, K.Re + 2.0)} />
-          <Replica x={560} y={760} w={460} h={400} color="#ffe9f0" p={kprog(T, K.Re + 2.8, K.Re + 3.3)} toro={kprog(T, K.Re + 3.1, K.Re + 3.8)} />
-          {[0, 1, 2].map((i) => <g key={i} opacity={kprog(T, K.Re + 3.5 + i * 0.2, K.Re + 3.9 + i * 0.2)}><Visitante T={T} x={640 + i * 130} y={1190} s={0.42} aliento={0} fase={i} color={['#3a2e5c', '#1f5a7a', '#7a2e3a'][i]} /></g>)}
+          <Replica x={470} y={500} w={540} h={430} st={0.9} p={kprog(T, K.Re + 0.2, K.Re + 0.7)} toro={kprog(T, K.Re + 0.6, K.Re + 1.3)} />
+          <Replica x={50} y={1040} w={600} h={450} st={1.0} color="#4a3550" p={kprog(T, K.Re + 2.8, K.Re + 3.3)} toro={kprog(T, K.Re + 3.1, K.Re + 3.8)} />
+          {[0, 1, 2].map((i) => <g key={i} opacity={kprog(T, K.Re + 3.5 + i * 0.2, K.Re + 3.9 + i * 0.2)}><Visitante T={T} x={730 + i * 110} y={1440} s={0.62} aliento={0} fase={i} color={['#3a2e5c', '#1f5a7a', '#7a2e3a'][i]} /></g>)}
         </>)}
       </Escena>
       {/* 13 · cierre: la misma pared del inicio, a oscuras, tras la reja; el aliento se queda afuera */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Pared id="ci" y={580} h={600} oscuro={0.15 + 0.65 * kprog(T, K.C + 0.2, K.C + 2.0)}>
-            <Toro x={210} y={150} s={1.4} />
-            <rect x={520} y={-20} width={60} height={760} fill="#ffe9a8" opacity={0.25 * kprog(T, K.C + 1.0, K.C + 2.0)} />
+          <Pared id="ci" {...PA} oscuro={0.15 + 0.65 * kprog(T, K.C + 0.2, K.C + 2.0)}>
+            <Toro x={150} y={200} s={2.2} />
+            <rect x={640} y={-20} width={80} height={1120} fill="#ffe9a8" opacity={0.25 * kprog(T, K.C + 1.0, K.C + 2.0)} />
           </Pared>
-          <Reja y={560} h={640} p={kprog(T, K.C + 1.6, K.C + 2.1)} />
+          <Reja x={-10} y={390} w={1100} h={1120} p={kprog(T, K.C + 1.6, K.C + 2.1)} />
           {[0, 1, 2].map((k) => { const u = (T * 0.6 + k / 3) % 1, stop = kprog(T, K.C + 2.4, K.C + 3.2);
-            return <circle key={k} cx={klerp(1060, 1060 - 120 * (1 - stop * 0.6), u)} cy={1100 - u * 40} r={14 + u * 30} fill="#fff" opacity={(1 - u) * 0.7 * kprog(T, K.C + 2.2, K.C + 2.6)} stroke={KC.ink} strokeWidth={2} />; })}
+            return <circle key={k} cx={klerp(1060, 1060 - 120 * (1 - stop * 0.6), u)} cy={1560 - u * 50} r={18 + u * 38} fill="#fff" opacity={(1 - u) * 0.7 * kprog(T, K.C + 2.2, K.C + 2.6)} stroke={KC.ink} strokeWidth={2} />; })}
         </>)}
       </Escena>
 
       {/* textos */}
-      <NumeroGigante T={T} at={K.G + 0.4} until={K.Cu - 0.3} valor={17000} desde={0} dur={1.0} prefijo="+" etiqueta="años de antigüedad" x={330} y={430} tam={120} color={KC.ink} />
-      <Chip T={T} at={K.G + 3.8} until={K.Cu - 0.3} texto="hoy, en parte: un hongo" x={380} y={1140} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.G + 0.8} until={K.Cu - 0.3} x={90} y={1150} texto="dibujo esquemático" tam={22} color={KC.ink} />
-      <Etq T={T} at={K.Cu + 0.5} until={K.Vi - 0.3} x={60} y={420} texto="Lascaux" tam={52} color={KC.ink} />
-      <Etq T={T} at={K.Cu + 0.8} until={K.Vi - 0.3} x={60} y={480} texto="Dordoña, Francia" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Cu + 1.6} until={K.Vi - 0.3} x={60} y={580} texto="toro · caballo · ciervo" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Cu + 3.6} until={K.Vi - 0.3} x={60} y={640} texto="rojo y amarillo · ocres" tam={28} color={LX.ocre} />
-      <Etq T={T} at={K.Cu + 4.2} until={K.Vi - 0.3} x={60} y={690} texto="negro · manganeso" tam={28} color={LX.mn} />
-      <Chip T={T} at={K.Vi + 0.2} until={K.Vi + 2.7} texto="1940 · la descubren 4 muchachos" x={330} y={560} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.Vi + 3.9} until={K.Ve - 0.3} texto="calor" x={180} y={560} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.Vi + 4.5} until={K.Ve - 0.3} texto="humedad" x={380} y={640} tam={38} borde={KC.cyan} />
-      <Chip T={T} at={K.Vi + 5.1} until={K.Ve - 0.3} texto="aliento" x={580} y={720} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.Ve + 0.8} until={K.P - 0.3} x={60} y={470} texto="«enfermedad verde» · algas" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Ve + 2.5} until={K.P - 0.3} texto="cerrada al público · 1963" x={360} y={540} tam={38} borde={KC.red} />
-      <Etq T={T} at={K.B + 0.6} until={K.Hi - 0.3} x={60} y={440} texto="aire acondicionado nuevo · 2001" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.B + 2.4} until={K.Hi - 0.3} x={60} y={510} texto="Fusarium solani" it tam={44} color={KC.ink} />
-      <Etq T={T} at={K.B + 2.8} until={K.Hi - 0.3} x={60} y={565} texto="moho blanco" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Hi + 0.1} until={K.Ne - 0.3} texto="POR DENTRO · HIFAS" x={420} y={430} tam={34} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Hi + 0.7} until={K.Ne - 0.3} x={60} y={520} texto="hifas y esporas · dibujo esquemático" tam={22} color={KC.texto} />
-      <Chip T={T} at={K.Hi + 2.3} until={K.Ne - 0.3} texto="cal" x={300} y={1150} tam={40} borde={KC.white} />
-      <Chip T={T} at={K.Hi + 2.7} until={K.Ne - 0.3} texto="biocidas" x={600} y={1150} tam={40} borde={KC.cyan} />
-      <Chip T={T} at={K.Ne + 0.6} until={K.Es - 0.3} texto="manchas negras" x={380} y={500} tam={42} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2012" quien="IRNAS-CSIC (Sevilla)" revista="Fungal Biology, 2012" x={400} y={900} />
-      <Etq T={T} at={K.Es + 2.6} until={K.Me - 0.3} x={60} y={520} texto="Ochroconis lascauxensis" it tam={46} color={KC.texto} />
-      <Chip T={T} at={K.Es + 3.2} until={K.Me - 0.3} texto="especie nueva · la más abundante (2007–2008)" x={540} y={620} tam={30} borde={KC.gold} />
-      <Etq T={T} at={K.Me + 0.4} until={K.Pa - 0.3} x={60} y={520} texto="corte de una hifa · esquemático" tam={26} color={KC.texto} />
-      <Etq T={T} at={K.Me + 0.9} until={K.Pa - 0.3} x={110} y={730} texto="pared" tam={32} color="#c9a87a" />
-      <Etq T={T} at={K.Me + 1.4} until={K.Pa - 0.3} x={110} y={1110} texto="melanina (gránulos negros)" tam={32} color={KC.gold2} />
-      <Chip T={T} at={K.Pa + 0.9} until={K.Re - 0.3} texto="sobre las paredes con arte" x={380} y={500} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.Re + 1.2} until={K.C - 0.3} x={80} y={460} texto="Lascaux II · 1983" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Re + 1.6} until={K.C - 0.3} x={80} y={505} texto="copia de 2 salas" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Re + 3.0} until={K.C - 0.3} x={80} y={565} texto="Lascaux IV · 2016" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Re + 3.4} until={K.C - 0.3} x={80} y={610} texto="copia completa" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="la original: cerrada y vigilada" x={340} y={480} tam={30} borde={KC.gold} />
+      <NumeroGigante T={T} at={K.G + 0.4} until={K.Cu - 0.3} valor={17000} desde={0} dur={1.0} prefijo="+" etiqueta="años de antigüedad" x={540} y={250} tam={120} color={KC.ink} />
+      <Chip T={T} at={K.G + 3.8} until={K.Cu - 0.3} texto="hoy, en parte: un hongo" x={540} y={1380} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.G + 0.8} until={K.Cu - 0.3} x={60} y={362} texto="dibujo esquemático" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.Cu + 0.5} until={K.Vi - 0.3} x={60} y={290} texto="Lascaux" tam={58} color={KC.ink} />
+      <Etq T={T} at={K.Cu + 0.8} until={K.Vi - 0.3} x={60} y={365} texto="Dordoña, Francia" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Cu + 1.6} until={K.Vi - 0.3} x={60} y={465} texto="toro · caballo · ciervo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Cu + 3.6} until={K.Vi - 0.3} x={60} y={535} texto="rojo y amarillo · ocres" tam={28} color={LX.ocre2} />
+      <Etq T={T} at={K.Cu + 4.2} until={K.Vi - 0.3} x={60} y={595} texto="negro · manganeso" tam={28} color="#b9b2a6" />
+      <Chip T={T} at={K.Vi + 0.2} until={K.Vi + 2.7} texto="1940 · la descubren 4 muchachos" x={540} y={390} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Vi + 3.9} until={K.Ve - 0.3} texto="calor" x={210} y={390} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Vi + 4.5} until={K.Ve - 0.3} texto="humedad" x={520} y={390} tam={40} borde={KC.cyan} />
+      <Chip T={T} at={K.Vi + 5.1} until={K.Ve - 0.3} texto="aliento" x={850} y={390} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.Ve + 0.8} until={K.P - 0.3} x={60} y={340} texto="«enfermedad verde» · algas" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Ve + 2.5} until={K.P - 0.3} texto="cerrada al público · 1963" x={540} y={412} tam={40} borde={KC.red} />
+      <Etq T={T} at={K.B + 0.6} until={K.Hi - 0.3} x={60} y={320} texto="aire acondicionado nuevo · 2001" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.B + 2.4} until={K.Hi - 0.3} x={60} y={395} texto="Fusarium solani" it tam={46} color={KC.ink} />
+      <Etq T={T} at={K.B + 2.8} until={K.Hi - 0.3} x={60} y={455} texto="moho blanco" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Hi + 0.1} until={K.Ne - 0.3} texto="POR DENTRO · HIFAS" x={540} y={330} tam={36} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Hi + 0.7} until={K.Ne - 0.3} x={60} y={420} texto="hifas y esporas · dibujo esquemático" tam={24} color={KC.texto} />
+      <Chip T={T} at={K.Hi + 2.3} until={K.Ne - 0.3} texto="cal" x={330} y={1420} tam={42} borde={KC.white} />
+      <Chip T={T} at={K.Hi + 2.7} until={K.Ne - 0.3} texto="biocidas" x={720} y={1420} tam={42} borde={KC.cyan} />
+      <Chip T={T} at={K.Ne + 0.6} until={K.Es - 0.3} texto="manchas negras" x={540} y={420} tam={44} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2012" quien="IRNAS-CSIC (Sevilla)" revista="Fungal Biology, 2012" x={540} y={350} />
+      <Etq T={T} at={K.Es + 2.6} until={K.Me - 0.3} x={60} y={320} texto="Ochroconis lascauxensis" it tam={48} color={KC.texto} />
+      <Chip T={T} at={K.Es + 3.2} until={K.Me - 0.3} texto="especie nueva · la más abundante (2007–2008)" x={540} y={420} tam={32} borde={KC.gold} />
+      <Etq T={T} at={K.Me + 0.4} until={K.Pa - 0.3} x={60} y={600} texto="corte de una hifa · esquemático" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.Me + 0.9} until={K.Pa - 0.3} x={110} y={728} texto="pared" tam={34} color="#c9a87a" />
+      <Etq T={T} at={K.Me + 1.4} until={K.Pa - 0.3} x={110} y={1112} texto="melanina (gránulos negros)" tam={34} color={KC.gold2} />
+      <Chip T={T} at={K.Pa + 0.9} until={K.Re - 0.3} texto="sobre las paredes con arte" x={540} y={420} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.Re + 1.2} until={K.C - 0.3} x={40} y={560} texto="Lascaux II · 1983" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Re + 1.6} until={K.C - 0.3} x={40} y={615} texto="copia de 2 salas" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Re + 3.0} until={K.C - 0.3} x={670} y={1130} texto="Lascaux IV · 2016" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Re + 3.4} until={K.C - 0.3} x={670} y={1185} texto="copia completa" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="la original: cerrada y vigilada" x={540} y={310} tam={36} borde={KC.gold} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Vi} texto="1 m · esquemático" largo={160} y={1600} color={KC.ink} />
-      <BarraEscala T={T} at={K.Vi} until={K.Hi} texto="1 m · esquemático" largo={160} y={1600} color={KC.ink} />
+      <BarraEscala T={T} at={K.G} until={K.Cu} texto="1 m · esquemático" largo={251} y={1600} color={KC.ink} />
+      <BarraEscala T={T} at={K.Cu} until={K.Vi} texto="1 m · esquemático" largo={211} y={1600} color={KC.ink} />
+      <BarraEscala T={T} at={K.Vi} until={K.Hi} texto="1 m · esquemático" largo={267} y={1600} color={KC.ink} />
       <BarraEscala T={T} at={K.Hi} until={K.Ne} texto="10 µm" largo={180} y={1600} />
-      <BarraEscala T={T} at={K.Ne} until={K.Es} texto="1 m · esquemático" largo={160} y={1600} color={KC.ink} />
+      <BarraEscala T={T} at={K.Ne} until={K.Es} texto="1 m · esquemático" largo={237} y={1600} color={KC.ink} />
       <BarraEscala T={T} at={K.Es} until={K.Me} texto="10 µm" largo={160} y={1600} />
       <BarraEscala T={T} at={K.Me} until={K.Pa} texto="1 µm" largo={180} y={1600} />
-      <BarraEscala T={T} at={K.Pa} until={K.Re} texto="1 m · esquemático" largo={160} y={1600} color={KC.ink} />
+      <BarraEscala T={T} at={K.Pa} until={K.Re} texto="1 m · esquemático" largo={248} y={1600} color={KC.ink} />
       <BarraEscala T={T} at={K.Re} until={K.C} texto="edificios esquemáticos" largo={0} y={1600} color={KC.ink} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m · esquemático" largo={160} y={1600} color={KC.ink} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="1 m · esquemático" largo={251} y={1600} color={KC.ink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <SubtituloLX T={T} idx={0} at={K.G + 0.1} until={K.Cu - 0.1} texto="Nunca la vas a ver *en persona.*" />
