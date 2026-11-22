@@ -5,7 +5,7 @@ Uso:  NAVEGADOR=chrome python3 motor/kit/auditar-encuadre.py shots/amb-04-barren
 
 Para cada escena del narrado saca tres cuadros (30 %, 60 % y 90 % de la escena) y mide lo dibujado (sin el fondo, las motas
 ni la barra de escala de la esquina). Marca la escena si en dos de los tres cuadros pasa algo de esto:
-  ARRIBA  el centro de masa del dibujo queda por encima de y=780 (de 1920) y casi nada baja de y=1250: mitad de abajo vacía
+  ARRIBA  el centro de masa del dibujo queda por encima de y=840 (de 1920) y menos del 8 % baja de y=1250: tercio de abajo vacío
   ABAJO   el centro de masa queda por debajo de y=1250
   CHICO   la caja del dibujo mide menos de 560 px de ancho Y menos de 760 px de alto
 Regla del modo cine: el sujeto ocupa al menos medio cuadro y va centrado (centro del dibujo entre y≈800 y y≈1150).
@@ -44,7 +44,7 @@ def juicio(m):
     fy, fx = 1920 / m.shape[0], 1080 / m.shape[1]
     cy = ys.mean() * fy; w = (xs.max() - xs.min() + 1) * fx; h = (ys.max() - ys.min() + 1) * fy
     abajo = (ys * fy > 1250).mean()
-    if cy < 780 and abajo < 0.04: return 'ARRIBA'
+    if cy < 840 and abajo < 0.08: return 'ARRIBA'
     if cy > 1250: return 'ABAJO'
     if w < 560 and h < 760: return 'CHICO'
     return ''
