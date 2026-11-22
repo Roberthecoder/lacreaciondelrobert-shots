@@ -163,13 +163,13 @@ function NubeShot() {
       <Escena T={T} a={K.Cuenta} b={K.Elefantes} fondo={KC.lilac}>
         <FondoLunares color={KC.lilac} />
         <Lienzo o={klerp(0.55, 1, kprog(T, K.Cuenta + 3.5, K.Cuenta + 3.9))}>
-          <Cumulo x={540} y={900} s={1.0} T={T} />
-          {Array.from({ length: 10 }, (_, i) => { const g = krng(200 + i), f = ((T * 0.9 + g()) % 1); return <Gota key={i} x={280 + g() * 520} y={950 + f * 170} r={7 + g() * 5} o={1 - f} />; })}
+          <Cumulo x={540} y={930} s={1.3} T={T} />
+          {Array.from({ length: 10 }, (_, i) => { const g = krng(200 + i), f = ((T * 0.9 + g()) % 1); return <Gota key={i} x={200 + g() * 680} y={1000 + f * 190} r={7 + g() * 5} o={1 - f} />; })}
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Cuenta + 0.25} until={K.Cuenta + 3.6} anio="2013" quien="Peggy LeMone · meteoróloga" x={540} y={380} />
-        <NumeroGigante T={T} at={K.Cuenta + 3.9} until={K.Elefantes - 0.15} valor={500} desde={0} dur={1.2} prefijo="≈ " sufijo=" t" x={540} y={1170} tam={210} color={KC.yellow} />
+        <TarjetaEstudio T={T} at={K.Cuenta + 0.25} until={K.Cuenta + 3.6} anio="2013" quien="Peggy LeMone · meteoróloga" x={540} y={330} />
+        <NumeroGigante T={T} at={K.Cuenta + 3.9} until={K.Elefantes - 0.15} valor={500} desde={0} dur={1.2} prefijo="≈ " sufijo=" t" x={540} y={1230} tam={210} color={KC.yellow} />
         <Lienzo z={42} o={kprog(T, K.Cuenta + 4.6, K.Cuenta + 5.0) * (1 - kprog(T, K.Elefantes - 0.3, K.Elefantes - 0.1))}>
-          <TextoSvg x={540} y={1360} tam={72} fuente="texto" color={KC.texto}>de agua</TextoSvg>
+          <TextoSvg x={540} y={1410} tam={72} fuente="texto" color={KC.texto}>de agua</TextoSvg>
         </Lienzo>
       </Escena>
       {/* 3 · cien elefantes flotando sobre tu cabeza */}
@@ -179,12 +179,20 @@ function NubeShot() {
           <Cumulo x={540} y={980} s={1.35} T={T} />
           {Array.from({ length: 100 }, (_, i) => { const c = i % 10, f = Math.floor(i / 10), at = K.Elefantes + 0.3 + i * 0.02, e = kprog(T, at, at + 0.25, kEase.rebote);
             return <Elefante key={i} x={130 + c * 86 + (f % 2) * 20} y={530 + f * 54 + Math.sin(T * 2 + i) * 3} s={0.95 * klerp(0.3, 1, e)} o={kprog(T, at, at + 0.1)} />; })}
-          <PersonaSimple x={250} yPies={1820} alto={360} color={KC.pink} cara="o" />
+          <g opacity={1 - kprog(T, K.Pregunta, K.Pregunta + 0.35)}><PersonaSimple x={250} yPies={1820} alto={360} color={KC.pink} cara="o" /></g>
         </Lienzo>
         <NumeroGigante T={T} at={K.Elefantes + 0.3} until={K.Pregunta - 0.1} valor={100} desde={0} dur={2.1} sufijo=" elefantes" x={540} y={420} tam={110} color={KC.yellow} />
       </Escena>
       {/* 4 · pregunta: ¿por qué no se cae? */}
-      <EscenaPregunta T={T} a={K.Pregunta} b={K.Gotitas} color={KC.pink} />
+      {/* la persona que mira la nube sigue en pantalla y la pregunta le sale encima (no una lámina) */}
+      <Escena T={T} a={K.Pregunta} b={K.Gotitas} zoom={0.1}>
+        <FondoLunares color={KC.pink} />
+        <Lienzo>
+          <g opacity={kprog(T, K.Pregunta, K.Pregunta + 0.35)}><PersonaSimple x={250} yPies={1800} alto={380} color={KC.pink} cara="o" /></g>
+          <text x={620} y={1130} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={14}
+            transform={`rotate(${Math.sin(T * 3) * 6} 620 930) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 520px ${KF.titulo}`, transformOrigin:'620px 930px' }}>?</text>
+        </Lienzo>
+      </Escena>
       {/* 5 · gotitas: caen lentísimo y el aire que sube las sostiene (al microscopio) */}
       <Escena T={T} a={K.Gotitas} b={K.Repartida} fondo={KC.noche}>
         <FondoMarca patron="oscuro" />
