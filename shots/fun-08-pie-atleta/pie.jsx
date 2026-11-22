@@ -121,6 +121,8 @@ function PieDeAtleta() {
       <Escena T={T} a={K.D} b={K.C}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Cuadricula T={T} cols={10} filas={10} x={60} y={700} ancho={480} alto={400} llenado={(t) => 0.492 * kprog(t, K.D + 1.0, K.D + 3.0)} lleno={KC.gold2} vacio="rgba(255,255,255,.15)" />
+        {/* modo cine: el sujeto (el pie con su parche) sigue en pantalla, atenuado y a un lado, mientras se llena la cuadrícula */}
+        <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, transform:'translate(570px, 200px) scale(.72)', transformOrigin:'0 0', opacity:0.6 * kprog(T, K.D + 0.1, K.D + 0.6) }}><Pie T={T} parche={1} /></div>
       </Escena>
       {/* 13 · cierre: el mismo pie del inicio y el hongo "cenando" en la lupa */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.06} origen="48% 47%">

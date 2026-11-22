@@ -105,7 +105,10 @@ function BioplasticosNarrado() {
       {/* gancho: el vaso cae al jardín y los días pasan; las cáscaras se deshacen, el vaso no */}
       <Escena T={T} a={K.G} b={K.Q} zoom={0}>
         <Jardin T={T} cascaras={1 - kprog(T, K.G + 1.4, K.Q - 0.4)} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><VasoPLA x={540} y={klerp(500, 1120, cae)} s={1.1} rot={0} T={T} /></svg>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          {/* modo cine: antes del segundo 3 ya se ve hacia dónde va la historia (la «fábrica»: la composta industrial, chica y al fondo) */}
+          <g opacity={0.8 * kprog(T, K.G + 1.5, K.G + 2.3)}><PilaIndustrial x={170} y={812} s={0.42} T={T} /></g>
+          <VasoPLA x={540} y={klerp(500, 1120, cae)} s={1.1} rot={0} T={T} /></svg>
       </Escena>
       <Escena T={T} a={K.Q} b={K.U}>
         <FondoLunares color={KC.yellow} />
@@ -167,12 +170,18 @@ function BioplasticosNarrado() {
         </svg>
       </Escena>
       {/* problema 3: cuesta más */}
-      <Escena T={T} a={K.Tr} b={K.Ca}><FondoLunares color={KC.mint} /></Escena>
+      <Escena T={T} a={K.Tr} b={K.Ca}><FondoLunares color={KC.mint} />
+        {/* modo cine: los dos sujetos que se comparan siguen en pantalla, cada uno bajo su barra */}
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><g opacity={kprog(T, K.Tr + 0.1, K.Tr + 0.5)}><BotellaPET x={339} y={1205} s={0.7} /><VasoPLA x={736} y={1212} s={0.55} T={T} /></g></svg>
+      </Escena>
       <Escena T={T} a={K.Ca} b={K.Es}>
         <FondoLunares color={KC.orange} punto="rgba(255,255,255,.22)" />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><VasoPLA x={540} y={1180} s={1.4} T={T} cafe={kprog(T, K.Ca + 0.3, K.Ca + 1)} deforma={kprog(T, K.Ca + 1.5, K.Es - 0.2)} /></svg>
       </Escena>
-      <Escena T={T} a={K.Es} b={K.C}><FondoLunares color={KC.lilac} /></Escena>
+      <Escena T={T} a={K.Es} b={K.C}><FondoLunares color={KC.lilac} />
+        {/* modo cine: el vaso (el mismo de la escena anterior, ya deformado) sigue en pantalla mientras se tacha «¿Estafa?» */}
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><VasoPLA x={540} y={1040} s={0.92} T={T} cafe={1} deforma={1} /></svg>
+      </Escena>
       <Escena T={T} a={K.C} b={FIN} zoom={0.03}>
         <Jardin T={T} cascaras={0} crece={kprog(T, K.C, K.C + 3)} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><VasoPLA x={540} y={1120} s={1.1} T={T} /></svg>
@@ -191,13 +200,13 @@ function BioplasticosNarrado() {
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.8} anio="2017" quien="Universidad de Bayreuth" revista="Bagheri et al. · Global Challenges" y={600} />
       {T > K.E + 2.6 && T < K.P - 0.2 && <Contador T={T} at={K.E + 2.6} desde={0} hasta={365} dur={K.P - K.E - 3.2} sufijo=" días · agua de mar" x={540} y={720} tam={60} color={KC.yellow} />}
       <Medidor T={T} at={K.E + 2.8} until={K.P - 0.3} etiqueta="PLA DEGRADADO EN 1 AÑO" valor={0} texto={() => '0 %'} y={1460} color={KC.mint} />
-      <Chip T={T} at={K.D2 + 0.5} until={K.Tr - 0.3} texto="¿PET o PLA?" y={430} tam={46} />
-      <Chip T={T} at={K.D2 + 3.2} until={K.Tr - 0.3} texto="mucho PLA = lote dañado" y={900} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.D2 + 0.5} until={K.D2 + 3.0} texto="¿PET o PLA?" y={430} tam={46} />
+      <Chip T={T} at={K.D2 + 3.2} until={K.Tr - 0.3} texto="mucho PLA = lote dañado" y={430} tam={40} borde={KC.red} />
       <Comparativa T={T} at={K.Tr + 0.4} until={K.Ca - 0.3} max={2} y={520} alto={420} izq={{ valor: 1, etiqueta: 'PET', texto: '$', color: '#7fc4ff' }} der={{ valor: 1.75, etiqueta: 'PLA', texto: '$$', color: KC.leaf }} />
       <Chip T={T} at={K.Tr + 1.2} until={K.Ca - 0.3} texto="fermentar · purificar · fabricar" y={1490} tam={36} mono />
       <Medidor T={T} at={K.Ca + 0.6} until={K.Es - 0.3} etiqueta="SE ABLANDA DESDE" valor={0.55 / 0.9} texto={() => '~55–60 °C'} y={1440} color={KC.red} />
-      <MitoTachado T={T} at={K.Es + 0.2} tacharEn={K.Es + 1.6} until={K.C - 0.3} texto="¿Estafa?" y={700} tam={80} />
-      <Medidor T={T} at={K.Es + 1.9} until={K.C - 0.3} etiqueta="TECNOLOGÍA" valor={(t) => 0.5 * kprog(t, K.Es + 2, K.Es + 2.8)} texto={() => 'a medio camino'} y={1000} color={KC.yellow} />
+      <MitoTachado T={T} at={K.Es + 0.2} tacharEn={K.Es + 1.6} until={K.C - 0.3} texto="¿Estafa?" y={450} tam={72} />
+      <Medidor T={T} at={K.Es + 1.9} until={K.C - 0.3} etiqueta="TECNOLOGÍA" valor={(t) => 0.5 * kprog(t, K.Es + 2, K.Es + 2.8)} texto={() => 'a medio camino'} y={1100} color={KC.yellow} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="¿compostable DÓNDE?" x={360} y={460} tam={52} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

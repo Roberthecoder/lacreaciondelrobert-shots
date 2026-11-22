@@ -82,7 +82,9 @@ function Cosquillas() {
       {/* 1 · gancho: tu mano en tu pie, y el medidor no sube */}
       <Escena T={T} a={K.G} b={K.Pd}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Pie x={330} y={980} s={1.2} rot={-8} /><ManoCosq x={500} y={760} s={0.9} T={T} rot={35} /></>)}
+        {/* modo cine: antes del segundo 3 ya asoma el cerebro (hacia dónde va la historia), chico y atenuado */}
+        {svg(<><g opacity={0.5 * kprog(T, K.G + 1.4, K.G + 2.4)}><Cerebro x={800} y={1010} s={0.5} /></g>
+          <Pie x={330} y={980} s={1.2} rot={-8} /><ManoCosq x={500} y={760} s={0.9} T={T} rot={35} /></>)}
       </Escena>
       {/* 2 · el cerebro predice */}
       <Escena T={T} a={K.Pd} b={K.V}>
@@ -113,7 +115,7 @@ function Cosquillas() {
       {/* 4 · menos intenso, menos cosquilludo, menos agradable */}
       <Escena T={T} a={K.M} b={K.Q}>
         <FondoLunares color={KC.pink} />
-        {svg(<ManoCosq x={540} y={950} s={0.8} T={T} rot={0} vel={6} />)}
+        {svg(<ManoCosq x={540} y={1040} s={0.8} T={T} rot={0} vel={6} />)}
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Q} b={K.E} zoom={0.1}>
@@ -123,6 +125,13 @@ function Cosquillas() {
       {/* 6 · el estudio */}
       <Escena T={T} a={K.E} b={K.R}>
         <FondoLunares color={KC.orange} />
+        {/* modo cine: el estudio se cuenta con los dos robots ya en pantalla (los mismos de la escena que sigue), atenuados */}
+        {svg(<g opacity={0.8 * kprog(T, K.E, K.E + 0.5)}>
+          <Robot x={230} y={1030} s={0.9} ang={-30 + ang} punta="mango" />
+          <path d={`M 300 1030 C 420 1070 620 1070 680 1030`} stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="20 12" strokeDashoffset={-T * 60} />
+          <Robot x={760} y={1030} s={0.9} ang={-150 - ang} punta="pincel" color={KC.mint} />
+          <Palma x={700} y={630} s={0.7} />
+        </g>)}
       </Escena>
       {/* 7–9 · los dos robots: copia al instante, luego con retraso */}
       <Escena T={T} a={K.R} b={K.Ce}>
@@ -167,10 +176,10 @@ function Cosquillas() {
       <Chip T={T} at={K.M + 0.4} until={K.Q - 0.2} texto="↓ menos intenso" x={540} y={470} tam={44} borde={KC.pink} />
       <Chip T={T} at={K.M + 1.4} until={K.Q - 0.2} texto="↓ menos cosquilludo" x={540} y={590} tam={44} borde={KC.pink} />
       <Chip T={T} at={K.M + 2.4} until={K.Q - 0.2} texto="↓ menos agradable" x={540} y={710} tam={44} borde={KC.pink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.R - 0.3} anio="1999" quien="Londres (UCL)" revista="Blakemore, Frith y Wolpert" x={620} y={820} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.R - 0.3} anio="1999" quien="Londres (UCL)" revista="Blakemore, Frith y Wolpert" x={290} y={520} />
       <Medidor T={T} at={K.Co + 0.2} until={K.Ce - 0.3} valor={T < K.Re ? 0.12 + 0.03 * Math.sin(T * 7) : 0.12 + 0.7 * retraso} etiqueta="cosquillas" texto={() => (T < K.Re ? 'como tu propio toque' : 'regresan')} y={1500} color={KC.pink} />
-      <Chip T={T} at={K.Co + 0.3} until={K.Re - 0.1} texto="retraso: 0" x={540} y={440} tam={42} borde={KC.ink} mono />
-      <Chip T={T} at={K.Re + 0.2} until={K.Ce - 0.3} texto="retraso o desvío ↑" x={540} y={440} tam={42} borde={KC.red} mono />
+      <Chip T={T} at={K.Co + 0.3} until={K.Re - 0.1} texto="retraso: 0" x={540} y={370} tam={42} borde={KC.ink} mono />
+      <Chip T={T} at={K.Re + 0.2} until={K.Ce - 0.3} texto="retraso o desvío ↑" x={540} y={370} tam={42} borde={KC.red} mono />
       <Chip T={T} at={K.Ce + 2.6} until={K.Ra - 0.3} texto="predice y apaga la sensación" x={540} y={460} tam={38} borde={KC.yellow} />
       <Chip T={T} at={K.Ra + 0.4} until={K.Ra + 3.1} texto="cosquillas: chillan (ultrasonido)" x={540} y={1100} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.Ra + 3.3} until={K.C - 0.3} texto="se tocan solas: casi silencio" x={540} y={1100} tam={40} borde={KC.red} />

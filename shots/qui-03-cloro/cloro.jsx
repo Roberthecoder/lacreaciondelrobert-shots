@@ -67,10 +67,10 @@ function Pulmones({ T, dano = 0, late = 0 }) {
 function Trinchera({ T, a }) {
   const avanza = kprog(T, a + 0.3, a + 4.4);
   return <SvgCapa>
-    <rect x={0} y={0} width={KW} height={KH} fill="#6a6255" />
-    <path d={`M 0 1180 L 1080 1180 L 1080 1920 L 0 1920 Z`} fill="#7a6040" />
-    <path d="M 0 1060 Q 200 1020 400 1070 T 800 1050 T 1080 1060 L 1080 1200 L 0 1200 Z" fill="#8f7350" stroke={KC.ink} strokeWidth={8} />
-    {[120, 300, 520, 740, 940].map((x, i) => <g key={i}><line x1={x} y1={1040} x2={x + 30} y2={960} stroke="#3b2a1a" strokeWidth={10} /><path d={`M ${x - 30} 990 L ${x + 60} 1010`} stroke="#3b2a1a" strokeWidth={4} strokeDasharray="10 8" /></g>)}
+    <rect x={0} y={0} width={KW} height={KH} fill="#26221c" />
+    <path d={`M 0 1180 L 1080 1180 L 1080 1920 L 0 1920 Z`} fill="#33281a" />
+    <path d="M 0 1060 Q 200 1020 400 1070 T 800 1050 T 1080 1060 L 1080 1200 L 0 1200 Z" fill="#4a3b27" stroke={KC.ink} strokeWidth={8} />
+    {[120, 300, 520, 740, 940].map((x, i) => <g key={i}><line x1={x} y1={1040} x2={x + 30} y2={960} stroke="#a08a6a" strokeWidth={10} /><path d={`M ${x - 30} 990 L ${x + 60} 1010`} stroke="#a08a6a" strokeWidth={4} strokeDasharray="10 8" /></g>)}
     <Nube T={T} x={klerp(-200, 560, avanza)} y={900} f={1} r={330} color={VERDE} seed={12} n={14} />
     <rect x={0} y={0} width={KW} height={KH} fill="rgba(110,80,40,.25)" />
   </SvgCapa>;
@@ -143,6 +143,8 @@ function Cloro() {
       {/* 7 · el estudio: 85,104 exposiciones */}
       <Escena T={T} a={K.Es} b={K.Ca}>
         <FondoLunares color={KC.orange} />
+        {/* modo cine: el sujeto (la botella de cloro) está en pantalla toda la escena; la tarjeta y la cifra van arriba */}
+        <SvgCapa><g opacity={kprog(T, K.Es + 0.1, K.Es + 0.5)}><Botella x={540} y={1010} s={0.9} inclina={Math.sin(T * 2) * 3} etiqueta="CLORO" etqColor={KC.yellow} liquido={AZUL_CLORO} /></g></SvgCapa>
         <SvgCapa>{Array.from({ length: 30 }, (_, i) => { const at = mitad + 0.2 + i * 0.05; return T > at ? <g key={i} transform={`translate(${100 + (i % 6) * 176} ${1500 + Math.floor(i / 6) * 70}) scale(${0.5 * kprog(T, at, at + 0.2, kEase.rebote)})`}><Botella x={0} y={0} s={0.5} etiqueta="" liquido={AZUL_CLORO} /></g> : null; })}</SvgCapa>
       </Escena>
       {/* 8 · 85 de cada 100 en casa */}
@@ -189,9 +191,9 @@ function Cloro() {
       <Chip T={T} at={K.P + 0.2} until={K.Pr - 0.3} texto="tus vías respiratorias" y={330} x={600} tam={40} borde={KC.pink} />
       <Etq T={T} at={K.P + 2.5} until={K.Pr - 0.3} x={60} y={1640} texto="Cl₂ + humedad → HOCl + HCl" tam={34} />
       <Medidor T={T} at={K.E} until={K.Pr - 0.2} valor={(t) => 1 - 0.6 * kprog(t, K.E, K.E + 1.6)} etiqueta="aire" texto={() => ""} y={1480} color={KC.coral} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={mitad} anio="2024" quien="Atalla et al. · U. de Maryland y Pittsburgh" revista="Clinical Toxicology · centros de toxicología de EE. UU." y={900} />
-      <NumeroGigante T={T} at={mitad + 0.2} until={K.Ca - 0.3} valor={85104} dur={1.6} etiqueta="exposiciones a cloro y cloraminas" y={850} tam={190} />
-      <Chip T={T} at={mitad + 0.8} until={K.Ca - 0.3} texto="EE. UU. · 2015–2022" y={1080} tam={40} borde={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={mitad} anio="2024" quien="Atalla et al. · U. de Maryland y Pittsburgh" revista="Clinical Toxicology · centros de toxicología de EE. UU." y={500} />
+      <NumeroGigante T={T} at={mitad + 0.2} until={K.Ca - 0.3} valor={85104} dur={1.6} etiqueta="exposiciones a cloro y cloraminas" y={480} tam={170} />
+      <Chip T={T} at={mitad + 0.8} until={K.Ca - 0.3} texto="EE. UU. · 2015–2022" y={700} tam={40} borde={KC.yellow} />
       <NumeroGigante T={T} at={K.Ca + 0.3} until={K.En - 0.3} valor={84.9} dec={1} dur={1.5} sufijo=" %" etiqueta="pasaron en casa" y={1500} tam={130} color={KC.orange} />
       <Chip T={T} at={K.En + 0.2} until={K.Gu - 0.3} texto="encuesta · 502 adultos · EE. UU. 2020" y={1690} tam={34} borde={KC.mint} />
       <NumeroGigante T={T} at={K.En + 1.4} until={K.Gu - 0.3} valor={35} dur={2.1} sufijo=" de 100" etiqueta="sabían que NO se mezclan" y={1500} tam={120} color={KC.mint} />

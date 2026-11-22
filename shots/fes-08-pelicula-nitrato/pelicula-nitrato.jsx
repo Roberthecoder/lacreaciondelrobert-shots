@@ -315,6 +315,8 @@ function PeliculaNitrato() {
         {svg(<>
           <Tira T={T} x={300} y={820} largo={900 * desenrolla} rot={16} corre={-T * 220} alto={170} />
           <Rollo x={300} y={760} r={250} rot={T * 220} lleno={0.95 - desenrolla * 0.08} />
+          {/* modo cine: antes del segundo 3 ya se ve hacia dónde va la historia (el algodón del que está hecho el rollo entra a cuadro) */}
+          <g opacity={0.95 * kprog(T, K.G + 1.5, K.G + 2.2)}><Algodon x={klerp(1000, 830, kprog(T, K.G + 1.5, K.G + 2.5, kEase.sale))} y={600 + mece(T, 3, 0.25) * 12} s={1.3} /></g>
         </>)}
       </Escena>
       {/* 2 · Villa firma con una empresa de cine estadounidense para que filme sus batallas */}
@@ -450,8 +452,8 @@ function PeliculaNitrato() {
 
       {/* textos */}
       <Chip T={T} at={K.G + 0.2} until={K.V - 0.2} texto="Especial Revolución Mexicana" x={540} y={1500} tam={40} borde={VERDE} />
-      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.8} until={K.G + 2.6} texto="¿solo cine?" x={300} y={500} tam={50} />
-      <Chip T={T} at={K.G + 2.6} until={K.V - 0.3} texto="algodón + ácido nítrico" x={330} y={500} tam={42} borde={KC.yellow} />
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 1.8} until={K.G + 2.6} texto="¿solo cine?" x={300} y={430} tam={50} />
+      <Chip T={T} at={K.G + 2.6} until={K.V - 0.3} texto="algodón + ácido nítrico" x={330} y={430} tam={42} borde={KC.yellow} />
       <TarjetaEstudio T={T} at={K.V + 0.2} until={K.V + 2.4} anio="1914" quien="Pancho Villa firma" revista="con la Mutual Film (EE. UU.)" x={720} y={560} />
       <Chip T={T} at={K.V + 2.8} until={K.N - 0.3} texto="filmar sus batallas" x={540} y={1520} tam={42} borde={KC.ink} />
       <Etq T={T} at={K.N + 0.6} until={K.R - 0.3} x={120} y={1460} texto="nitrato de celulosa" tam={40} color={KC.ink} />

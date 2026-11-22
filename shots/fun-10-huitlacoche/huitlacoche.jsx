@@ -125,7 +125,8 @@ function HuitlacocheShot() {
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
           <Elote T={T} x={380} y={880} s={0.8} abre={abre} agalla={kprog(T, K.G + 0.6, K.G + 1.8)} oscuro={0.1} />
-          {T > K.G + 3.9 && <g opacity={kprog(T, K.G + 3.9, K.G + 4.3)}><Quesadilla T={T} x={800} y={1080} s={0.78} relleno={kprog(T, K.G + 4.4, K.G + 5.2)} /></g>}
+          {/* modo cine: la quesadilla (hacia donde va la historia) ya asoma atenuada antes del segundo 3 */}
+          {T > K.G + 1.9 && <g opacity={kprog(T, K.G + 1.9, K.G + 2.5) * (0.4 + 0.6 * kprog(T, K.G + 3.9, K.G + 4.3))}><Quesadilla T={T} x={800} y={1080} s={0.78} relleno={kprog(T, K.G + 4.4, K.G + 5.2)} /></g>}
         </>)}
       </Escena>
       {/* 3 · entra por los pelos sin polinizar, o por heridas de granizo o viento */}

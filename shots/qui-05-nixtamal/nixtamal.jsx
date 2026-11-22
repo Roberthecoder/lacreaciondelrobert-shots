@@ -113,20 +113,22 @@ function Nixtamal() {
       <Escena T={T} a={K.G} b={K.Pr} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          {/* modo cine: antes del segundo 3 ya asoma la olla (hacia dónde va la historia), chica y atenuada */}
+          <g opacity={0.45 * kprog(T, K.G + 1.2, K.G + 2.2)}><Olla T={T} x={790} y={560} s={0.42} hierve={1} cal={0} /></g>
           <Masa x={300} y={klerp(400, 900, cae)} s={1.5} />
           <ellipse cx={300} cy={1080} rx={220} ry={22} fill="rgba(0,0,0,.2)" />
-          <g opacity={kprog(T, K.G + 1.8, K.G + 2.3)}><TortillaRota x={780} y={880} s={1.0} f={rompe} /></g>
+          <g opacity={kprog(T, K.G + 0.7, K.G + 1.2)}><TortillaRota x={780} y={880} s={1.0} f={rompe} /></g>
         </SvgCapa>
       </Escena>
       {/* 1 · la olla con cal y la noche */}
       <Escena T={T} a={K.Pr} b={K.Ca}>
-        <div style={{ position:'absolute', inset:0, background:mixHex(KC.orange, '#1b2340', noche) }}></div>
+        <div style={{ position:'absolute', inset:0, background:mixHex('#3a2110', '#1b2340', noche) }}></div>
         <SvgCapa>
           {noche > 0 && <g opacity={noche}><circle cx={850} cy={680} r={70} fill="#fff6c8" stroke={KC.ink} strokeWidth={6} /><circle cx={880} cy={660} r={62} fill="#1b2340" /></g>}
           <Olla T={T} x={520} y={1020} s={1.05} hierve={1 - noche * 0.8} cal={kprog(T, K.Pr + 1.0, K.Pr + 2.0)} />
           <Llama T={T} x={520} y={1215} s={1.4} o={1 - noche} />
           {Array.from({ length: 40 }, (_, i) => { const t0 = K.Pr + 0.8 + (i % 12) * 0.06, u = kprog(T, t0, t0 + 0.7); return u > 0 && u < 1 ? <circle key={i} cx={430 + ((i * 53) % 160)} cy={klerp(560, 860, u)} r={6} fill={CAL} stroke={KC.ink} strokeWidth={1.5} /> : null; })}
-          <g opacity={1 - kprog(T, K.Pr + 2.2, K.Pr + 2.6)}><rect x={340} y={480} width={180} height={120} rx={14} fill={CAL} stroke={KC.ink} strokeWidth={6} transform="rotate(-20 430 540)" /><text x={430} y={555} textAnchor="middle" transform="rotate(-20 430 540)" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink}>CAL</text></g>
+          <g opacity={1 - kprog(T, K.Pr + 2.2, K.Pr + 2.6)}><rect x={340} y={480} width={180} height={120} rx={14} fill={CAL} stroke={KC.ink} strokeWidth={6} transform="rotate(-20 430 540)" /><text x={430} y={555} textAnchor="middle" transform="rotate(-20 430 540)" style={{ font:`400 40px ${KF.titulo}` }} fill="#0b1020">CAL</text></g>
         </SvgCapa>
         <Cronometro T={T} at={K.Pr + 3.4} until={K.Ca - 0.2} inicio={21 * 3600} factor={3600 * 4} y={1470} etiqueta="REPOSO · TODA LA NOCHE" />
       </Escena>
@@ -164,7 +166,7 @@ function Nixtamal() {
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
           <rect x={0} y={1060} width={KW} height={300} fill="#1c3e8e" opacity={0.6} />
-          <g opacity={1 - kprog(T, K.Eu + 2.8, K.Eu + 3.3)}><Barco T={T} x={klerp(-200, 560, kprog(T, K.Eu, K.Eu + 2.6, kEase.sale))} y={1000} s={1.3} /></g>
+          <g opacity={1 - 0.72 * kprog(T, K.Eu + 2.8, K.Eu + 3.3)}><Barco T={T} x={klerp(-200, 560, kprog(T, K.Eu, K.Eu + 2.6, kEase.sale))} y={1000} s={1.3} /></g>
           <g opacity={kprog(T, K.Eu + 3.0, K.Eu + 3.5)}>
             {[['piel', '#ff6b5a', 220], ['diarrea', '#c9a14a', 540], ['demencia', '#9aa3b5', 860]].map(([t, c, x], i) => <g key={i} transform={`translate(${x} 860) scale(${kprog(T, K.Eu + 3.6 + i * 0.6, K.Eu + 4.0 + i * 0.6, kEase.rebote)})`}>
               <circle r={120} fill={c} stroke={KC.ink} strokeWidth={9} />
@@ -217,7 +219,7 @@ function Nixtamal() {
       <Etq T={T} at={K.Ni + 3.4} until={K.Pg - 0.3} x={1030} y={1640} texto="la cal la suelta" lado="izq" tam={34} />
       <Chip T={T} at={K.Eu + 0.4} until={K.Eu + 2.8} texto="maíz a Europa · sin cal" x={540} y={1500} tam={42} borde={KC.ink} />
       <Chip T={T} at={K.Eu + 3.2} until={K.Es - 0.3} texto="pelagra" x={540} y={1500} tam={56} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2025" quien="Soweto, Sudáfrica" revista="Toxins · maíz con moho nixtamalizado" y={800} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2025" quien="Soweto, Sudáfrica" revista="Toxins · maíz con moho nixtamalizado" x={330} y={520} />
       <Chip T={T} at={K.Me + 0.3} until={K.Ci - 0.3} texto="conocimiento de Mesoamérica" y={1500} tam={42} borde={KC.ink} />
       <Chip T={T} at={K.Ci + 3.2} until={K.Ou} texto="maíz + cal = química que amarra" y={1500} tam={40} borde={KC.mint} />
 

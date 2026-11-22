@@ -138,7 +138,14 @@ function CaspaShot() {
       {/* 1–2 · gancho: tu cabeza con caspa → al microscopio hay levaduras */}
       <Escena T={T} a={K.G} b={K.Se} zoom={0.04} origen="40% 40%">
         <FondoLunares color={KC.yellow} />
-        {fsvg(<Busto T={T} x={400} y={60} s={1} caspa={0.55 + 0.45 * kprog(T, 0, 0.6)} cae={kprog(T, 0.15, 0.4)} />)}
+        {fsvg(<>
+          <Busto T={T} x={400} y={60} s={1} caspa={0.55 + 0.45 * kprog(T, 0, 0.6)} cae={kprog(T, 0.15, 0.4)} />
+          {/* modo cine: antes del segundo 3 ya asoman, atenuadas, las levaduras de las que va la historia; se van al entrar la lupa */}
+          {T > K.G + 1.9 && T < K.Ma + 0.5 && <g opacity={0.5 * kprog(T, K.G + 1.9, K.G + 2.6) * (1 - kprog(T, K.Ma, K.Ma + 0.5))}>
+            <Malassezia x={850} y={660 + Math.sin(T * 1.4) * 8} r={62} ang={-45} brote={0.6} />
+            <Malassezia x={960} y={860 + Math.sin(T * 1.1 + 2) * 8} r={38} ang={30} brote={0.5} />
+          </g>}
+        </>)}
       </Escena>
       {/* 3 · sebo: corte de piel, glándula sebácea y folículo */}
       <Escena T={T} a={K.Se} b={K.Li} zoom={0.05}>
@@ -193,7 +200,7 @@ function CaspaShot() {
       <Escena T={T} a={K.Tr} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          {[0, 1, 2].map((i) => { const p = kprog(T, K.Tr + 0.6 + i * 0.75, K.Tr + 1.1 + i * 0.75, kEase.rebote); if (p <= 0) return null; const x = 200 + i * 340, y = 780;
+          {[0, 1, 2].map((i) => { const t0 = i === 0 ? K.Tr + 0.2 : K.Tr + 0.6 + i * 0.75; /* modo cine: el primer círculo entra al empezar la escena */ const p = kprog(T, t0, t0 + 0.5, kEase.rebote); if (p <= 0) return null; const x = 200 + i * 340, y = 780;
             return <g key={i} transform={`translate(${x} ${y}) scale(${p})`}>
               <circle r={130} fill={['#fff3c4', '#1b2033', '#ffd9c2'][i]} stroke={KC.ink} strokeWidth={10} />
               {i === 0 && <Gota x={0} y={20} r={58} />}
@@ -284,10 +291,10 @@ function CaspaShot() {
         interior={(T2, r) => <MicroCuero T={T2} w={r * 2} h={r * 2} colas={kprog(T2, K.C + 1.2, K.C + 2.0)} />} />
 
       {/* textos */}
-      <Chip T={T} at={K.G + 0.5} until={K.G + 2.1} texto="¿solo piel muerta?" x={300} y={1000} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.G + 2.3} until={K.Ma - 0.2} texto="hay una levadura" x={300} y={1000} tam={40} borde={KC.pink} />
-      <Etq T={T} at={K.Ma + 1.0} until={K.Se - 0.3} x={60} y={380} texto="levadura de la piel" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ma + 1.4} until={K.Se - 0.3} x={60} y={435} texto="Malassezia" it tam={40} color={KC.ink} />
+      <Chip T={T} at={K.G + 0.5} until={K.G + 2.1} texto="¿solo piel muerta?" x={790} y={440} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.G + 2.3} until={K.Ma - 0.2} texto="hay una levadura" x={790} y={440} tam={40} borde={KC.pink} />
+      <Etq T={T} at={K.Ma + 1.0} until={K.Se - 0.3} x={60} y={320} texto="levadura de la piel" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ma + 1.4} until={K.Se - 0.3} x={60} y={375} texto="Malassezia" it tam={40} color={KC.ink} />
       <Chip T={T} at={K.Ma + 2.0} until={K.Se - 0.3} texto="en la mayoría de los adultos" x={330} y={1200} tam={30} borde={KC.ink} />
       <Etq T={T} at={K.Se + 0.5} until={K.Li - 0.3} x={1030} y={1160} texto="glándula sebácea" lado="izq" tam={28} color={CP.sebo2} />
       <Etq T={T} at={K.Se + 1.2} until={K.Li - 0.3} x={60} y={500} texto="sebo: una grasa natural" tam={32} color={CP.sebo2} />

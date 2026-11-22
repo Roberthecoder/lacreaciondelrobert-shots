@@ -29,7 +29,7 @@ function Dado({ x, y, s = 1, rot = 0, cara = 5 }) {
   const P = { 1: [[0, 0]], 3: [[-30, -30], [0, 0], [30, 30]], 5: [[-30, -30], [30, -30], [0, 0], [-30, 30], [30, 30]], 6: [[-30, -32], [30, -32], [-30, 0], [30, 0], [-30, 32], [30, 32]] };
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s})`}>
     <rect x={-60} y={-60} width={120} height={120} rx={22} fill="#fff" stroke={KC.ink} strokeWidth={8} />
-    {(P[cara] || P[5]).map(([a, b], i) => <circle key={i} cx={a} cy={b} r={11} fill={KC.ink} />)}
+    {(P[cara] || P[5]).map(([a, b], i) => <circle key={i} cx={a} cy={b} r={11} fill="#0b1020" />)}
   </g>;
 }
 
@@ -50,6 +50,8 @@ function Siguiente() {
         <div style={{ position:'absolute', inset:0, transform:`scale(${1 + entra * 3})`, transformOrigin:'50% 62%' }}>
           <CelularChat T={T} x={380} y={1000} s={1.05} tam={44} mensajes={[{ at: K.G - 1, yo: true, texto: '¿De qué color es el cielo?' }, { at: K.G + 0.3, yo: false, texto: resp(K.G + 0.3) || '…' }]} />
         </div>
+        {/* modo cine: antes del segundo 3 ya se ve hacia dónde va la historia (la apuesta: un dado rueda junto al chat) */}
+        {T > K.G + 1.2 && svg(<g opacity={kprog(T, K.G + 1.2, K.G + 1.6) * (1 - entra)}><Dado x={klerp(1000, 860, kprog(T, K.G + 1.2, K.G + 2.2, kEase.sale))} y={klerp(620, 900, kprog(T, K.G + 1.2, K.G + 2.2, kEase.rebote))} s={1.15} rot={(1 - kprog(T, K.G + 1.2, K.G + 2.4)) * 540 + mece(T, 3, 0.3) * 4} cara={T < K.G + 2.2 ? [1, 3, 6, 5][Math.floor(T * 10) % 4] : 5} /></g>)}
       </Escena>
       {/* 2–4 · por dentro: tokens → números → capas → perillas */}
       <Escena T={T} a={K.Co} b={K.P} zoom={0.02}>
@@ -76,7 +78,9 @@ function Siguiente() {
       {/* 6–8 · la lista de probabilidades y el ejemplo "el cielo es…" */}
       <Escena T={T} a={K.L} b={K.R}>
         <FondoCircuito T={T} color={KC.mint} />
-        {T < K.L + 4.0 && svg(Array.from({ length: 30 }, (_, i) => { const y = 560 + ((i * 64 + (T - K.L) * 260) % 640); return <text key={i} x={120 + (i % 3) * 300} y={y} style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto} opacity={0.25 + 0.5 * ((i * 7) % 3) / 3}>{['casa', 'gato', 'ción', 'azul', 'run', 'el', 'cielo', 'mente', 'sol', 'des'][i % 10]}</text>; }))}
+        {T < K.L + 4.0 && svg(Array.from({ length: 30 }, (_, i) => { const y = 790 + ((i * 44 + (T - K.L) * 180) % 440); return <text key={i} x={120 + (i % 3) * 300} y={y} style={{ font:`700 34px ${KF.mono}` }} fill={KC.texto} opacity={(0.5 + 0.5 * ((i * 7) % 3) / 3) * Math.min(1, (y - 790) / 50, (1230 - y) / 50)}>{['casa', 'gato', 'ción', 'azul', 'run', 'el', 'cielo', 'mente', 'sol', 'des'][i % 10]}</text>; }))}
+        {/* modo cine: la red (el modelo) sigue en pantalla y de ella sale la lista; antes la escena eran solo palabras tenues */}
+        {T < K.L + 4.0 && <RedNeuronal T={T} x={170} y={500} ancho={740} alto={250} capas={[6, 8, 8, 8, 6]} onda={((T - K.L) * 0.6) % 1} o={kprog(T, K.L, K.L + 0.4) * (1 - kprog(T, K.L + 3.6, K.L + 4.0))} />}
         {T >= K.L + 4.0 && <Probas T={T} y={700} u={kprog(T, K.L + 4.2, K.L + 5.4, kEase.sale)} elegido={T > K.Ci + 2.2 ? 0 : -1} />}
       </Escena>
       {/* 9 · repite: el token elegido se pega al final y vuelve a entrar */}
@@ -93,6 +97,8 @@ function Siguiente() {
       {/* 10 · el estudio */}
       <Escena T={T} a={K.E} b={K.O}>
         <FondoLunares color={KC.orange} />
+        {/* modo cine: el sujeto del estudio (el modelo, la red grande) está en pantalla; la tarjeta va chica y arriba */}
+        <RedNeuronal T={T} x={150} y={700} ancho={780} alto={380} capas={[6, 8, 8, 8, 6]} onda={((T - K.E) * 0.6) % 1} o={kprog(T, K.E + 0.05, K.E + 0.5)} />
       </Escena>
       {/* 11 · probable no es verdadero */}
       <Escena T={T} a={K.O} b={K.A}>
@@ -125,13 +131,13 @@ function Siguiente() {
       <Chip T={T} at={K.Co + 0.3} until={K.N - 0.2} texto="tokens = pedacitos" x={540} y={430} tam={44} borde={KC.yellow} />
       <Chip T={T} at={K.N + 0.3} until={K.Pe - 0.4} texto="números → capas de cálculos" x={540} y={430} tam={40} borde={KC.cyan} />
       <NumeroGigante T={T} at={K.Pe + 0.2} until={K.P - 0.2} valor={175000000000} dur={2.0} etiqueta="perillas (parámetros) · GPT-3, 2020" y={520} tam={92} />
-      <Chip T={T} at={K.L + 0.4} until={K.L + 3.9} texto="¿cuál sigue?" x={540} y={430} tam={50} borde={KC.mint} />
+      <Chip T={T} at={K.L + 0.4} until={K.L + 3.9} texto="¿cuál sigue?" x={540} y={390} tam={46} borde={KC.mint} />
       <NumeroGigante T={T} at={K.L + 4.2} until={K.Ci - 0.2} valor={128} dur={1.0} sufijo=" mil" etiqueta="tokens posibles · Llama 3, 2024" y={420} tam={110} color={KC.mint} />
       <Chip T={T} at={K.Ci + 0.2} until={K.R - 0.2} texto="el cielo es ___" x={540} y={430} tam={50} borde={KC.yellow} />
       <Etq T={T} at={K.Ci + 0.6} until={K.R - 0.2} x={1040} y={1200} texto="ejemplo ilustrativo" lado="izq" tam={26} />
       <Chip T={T} at={K.R + 0.2} until={K.E - 0.2} texto="escoge · pega · repite" x={540} y={430} tam={46} borde={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.O - 0.3} anio="2020" quien="OpenAI · GPT-3" revista="Brown et al. · Language Models are Few-Shot Learners" y={820} />
-      <Chip T={T} at={K.E + 2.6} until={K.O - 0.3} texto="más grande → aprende con pocos ejemplos" y={1120} tam={34} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.O - 0.3} anio="2020" quien="OpenAI · GPT-3" revista="Brown et al. · Language Models are Few-Shot Learners" y={500} />
+      <Chip T={T} at={K.E + 2.6} until={K.O - 0.3} texto="más grande → aprende con pocos ejemplos" y={1160} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.O + 0.3} until={K.A - 0.2} texto="probable ≠ verdadero" x={620} y={460} tam={52} borde={KC.red} />
       <Chip T={T} at={K.A + 0.2} until={K.C - 0.2} texto="un poco de azar" x={540} y={430} tam={46} borde={KC.ink} />
       <Chip T={T} at={K.C + 3.6} until={K.Ou} texto="no salió de golpe: la apostó" x={540} y={1540} tam={48} borde={KC.red} />

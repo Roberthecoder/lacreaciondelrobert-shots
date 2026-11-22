@@ -182,7 +182,7 @@ function LactosaNarrado() {
         </svg>
         <Escala T={T} z={camaraEn(T, camEst).z} pxPorMm={MUNDO_INTESTINO.pxPorMm} />
       </EscenaFundido>
-      <TarjetaEstudio T={T} at={K.E + 0.25} until={K.E + 2.4} anio="1998" quien="During y colegas · Filadelfia" revista="Nature Medicine" y={760} />
+      <TarjetaEstudio T={T} at={K.E + 0.25} until={K.E + 2.4} anio="1998" quien="During y colegas · Filadelfia" revista="Nature Medicine" y={540} />
 
       {/* 6 · RATAS — funcionó en ratas, durante meses */}
       <EscenaFundido T={T} a={K.R} b={K.Au} zoom={0.05}>
@@ -217,6 +217,12 @@ function LactosaNarrado() {
       <EscenaFundido T={T} a={K.O} b={K.Re} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#16101a, #0b0f19)' }}></div>
         <Ambiente T={T} n={18} seed={21} color="rgba(255,120,110,.3)" tam={[4, 11]} />
+        {/* modo cine: el sujeto sigue en pantalla (el virus con su gen, girando despacio) mientras se dicen los matices */}
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          <g transform={`translate(860 ${800 + mece(T, 1, 0.3) * 16})`} opacity={0.8 * kprog(T, K.O, K.O + 0.5)}>
+            <VirusAAV T={T} s={1.1} rot={(T - K.O) * 40} r={120} />
+          </g>
+        </svg>
       </EscenaFundido>
       <MitoTachado T={T} at={K.O + 0.3} tacharEn={K.O + 1.6} until={K.Re - 0.3} texto="¿cura aprobada?" x={430} y={520} tam={56} />
       <Chip T={T} at={K.O + 2.1} until={K.Re - 0.3} texto="autoexperimento" x={430} y={660} borde={KC.red} tam={44} />
@@ -238,7 +244,7 @@ function LactosaNarrado() {
       <EscenaFundido T={T} a={K.Cr} b={K.Pa} zoom={0.05} fondo={KC.dark}>
         <CriptaCerca T={T} a={K.Cr} gen={kprog(T, K.Cr + 1.2, K.Cr + 2.2) * (1 - kprog(T, K.Pa - 1.4, K.Pa - 0.4))} />
       </EscenaFundido>
-      <Etiqueta T={T} at={K.Cr + 0.5} until={K.Pa - 0.3} x={610} y={1120} texto="células madre" color={KC.gold} tam={36} />
+      <Etiqueta T={T} at={K.Cr + 0.5} until={K.Pa - 0.3} x={650} y={1160} texto="células madre" color="#2a1206" tam={36} />
       <Etiqueta T={T} at={K.Cr + 1.4} until={K.Pa - 0.3} x={120} y={420} texto="el gen se queda arriba" color={GEN} tam={34} />
 
       {/* 11 · PASTILLA — lo que sí existe hoy */}

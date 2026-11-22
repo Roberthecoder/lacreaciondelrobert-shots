@@ -57,6 +57,8 @@ function Huella() {
         {svg(<>
           <TarjetaGPU T={T} x={380} y={990} s={1.25} calor={kprog(T, K.G + 1, K.G + 5)} />
           <Calendario x={380} y={650} anio={anios * kprog(T, K.G + 0.1, K.G + 5.5, kEase.suave)} s={1.0} />
+          {/* modo cine: antes del segundo 3 ya asoma, atenuada, la llama (el modelo que se entrena en la escena siguiente) */}
+          <g opacity={0.4 * kprog(T, K.G + 1.8, K.G + 2.6)}><Llamita x={800} y={1080} s={0.85} T={T} /></g>
         </>)}
       </Escena>
       {/* 2 · Llama 3, de Meta, abril de 2024 */}
@@ -81,7 +83,9 @@ function Huella() {
       {/* 7–8 · CO2: nubes que se apilan y la comparación grande / chico */}
       <Escena T={T} a={K.Co} b={K.Cm}>
         <FondoLunares color={KC.cyan} />
-        {T < K.Gr && svg(Array.from({ length: 9 }, (_, i) => { const at = K.Co + 0.4 + i * 0.25; return T > at ? <Nube key={i} x={220 + (i % 3) * 320} y={klerp(1150, 720 + Math.floor(i / 3) * 150, kprog(T, at, at + 0.8, kEase.sale)) + Math.sin(T + i) * 10} s={0.95} /> : null; }))}
+        {T < K.Gr && svg(Array.from({ length: 9 }, (_, i) => { const at = K.Co + 0.1 + i * 0.25; return T > at ? <Nube key={i} x={220 + (i % 3) * 320} y={klerp(1150, 720 + Math.floor(i / 3) * 150, kprog(T, at, at + 0.8, kEase.sale)) + Math.sin(T + i) * 10} s={0.95} /> : null; }))}
+        {/* modo cine: en la comparación siguen en pantalla las dos versiones del modelo (llama grande y llama chica), bajo sus barras */}
+        {T >= K.Gr && svg(<g opacity={0.75 * kprog(T, K.Gr + 0.1, K.Gr + 0.6)}><Llamita x={320} y={1570} s={0.8} T={T} /><Llamita x={740} y={1640} s={0.4} T={T + 1} /></g>)}
       </Escena>
       {/* 9–10 · compensar no es no emitir: báscula con nube y árboles */}
       <Escena T={T} a={K.Cm} b={K.Le}>

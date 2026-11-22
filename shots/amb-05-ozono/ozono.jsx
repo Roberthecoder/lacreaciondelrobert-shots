@@ -50,7 +50,7 @@ function CieloLado({ T, a, rayos = true, oscuro = 0 }) {
     <rect x={0} y={0} width={KW} height={KH} fill="url(#cielo)" />
     <rect x={0} y={ozY(40)} width={KW} height={ozY(15) - ozY(40)} fill={cineMix(KC.mint, CINE.fondo, 0.55)} opacity={0.28 + 0.06 * Math.sin(T * 2)} />
     {Array.from({ length: 40 }, (_, i) => { const r = krng(i + 7); const x = r() * KW, y = ozY(15 + r() * 25); return <Ozono key={i} x={x + Math.sin(T + i) * 6} y={y} s={0.32} rot={r() * 360} />; })}
-    <path d={`M 0 ${OZ_Y0} Q 540 ${OZ_Y0 - 50} ${KW} ${OZ_Y0} L ${KW} ${KH} L 0 ${KH} Z`} fill="#58b85c" stroke={KC.ink} strokeWidth={8} />
+    <path d={`M 0 ${OZ_Y0} Q 540 ${OZ_Y0 - 50} ${KW} ${OZ_Y0} L ${KW} ${KH} L 0 ${KH} Z`} fill={mixHex('#58b85c', '#143a22', oscuro)} stroke={KC.ink} strokeWidth={8} />
     {/* regla de altura */}
     <line x1={70} y1={ozY(0)} x2={70} y2={ozY(50)} stroke="#fff" strokeWidth={5} />
     {[0, 10, 20, 30, 40, 50].map((km) => <g key={km}><line x1={60} y1={ozY(km)} x2={92} y2={ozY(km)} stroke="#fff" strokeWidth={5} /><text x={100} y={ozY(km) + 10} style={{ font:`700 28px ${KF.mono}` }} fill="#fff" stroke={KC.ink} strokeWidth={4} paintOrder="stroke">{km} km</text></g>)}
@@ -79,7 +79,7 @@ function Medalla({ T, at, x, y }) {
   return <g transform={`translate(${x} ${y}) scale(${e}) rotate(${Math.sin(T * 2) * 4})`}>
     <path d="M -60 -230 L -20 -90 L 20 -90 L 60 -230 Z" fill={KC.blue} stroke={KC.ink} strokeWidth={6} />
     <circle r={110} fill={KC.gold} stroke={KC.ink} strokeWidth={9} /><circle r={80} fill="none" stroke={KC.ink} strokeWidth={4} strokeDasharray="8 8" />
-    <text y={18} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>NOBEL</text>
+    <text y={18} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill="#0b1020">NOBEL</text>
   </g>;
 }
 
@@ -101,12 +101,14 @@ function OzonoShot() {
       {/* 1 · gancho: el agujero (vista desde el polo sur) se encoge */}
       <Escena T={T} a={K.G} b={K.Ca}>
         <FondoEspacio T={T} />
-        {svg(<g transform={`rotate(${T * 4} 540 840)`}><TierraPolo T={T} x={540} y={840} r={320} hueco={huecoG} etiqueta={false} /></g>)}
+        {svg(<><g transform={`rotate(${T * 4} 540 840)`}><TierraPolo T={T} x={540} y={840} r={320} hueco={huecoG} etiqueta={false} /></g>
+          {/* modo cine: antes del segundo 3 ya asoman, atenuadas, las moléculas de ozono de las que va la historia */}
+          <g opacity={0.5 * kprog(T, K.G + 1.8, K.G + 2.6)}>{[[130, 640, 20], [960, 560, 140], [920, 1130, 260], [170, 1120, 80]].map(([x, y, r], i) => <Ozono key={i} x={x + Math.sin(T + i) * 8} y={y + Math.cos(T * 0.8 + i) * 8} s={0.7} rot={r + T * 10} />)}</g></>)}
         <EscalaFija texto="2,000 km (aprox.)" largo={100} />
       </Escena>
       {/* 2 · la capa (vista de lado, regla de altura) */}
       <Escena T={T} a={K.Ca} b={K.Cf}>
-        {svg(<><CieloLado T={T} a={K.Ca} /><Sol T={T} x={900} y={200} r={70} /></>)}
+        {svg(<><CieloLado T={T} a={K.Ca} oscuro={0.6} /><Sol T={T} x={900} y={200} r={70} /></>)}
         <EscalaFija texto="10 km" largo={OZ_PXKM * 10} y={1480} />
       </Escena>
       {/* 3 · refrigeradores y aerosoles */}
@@ -146,7 +148,10 @@ function OzonoShot() {
       {/* 8 · el estudio y el Nobel */}
       <Escena T={T} a={K.E} b={K.Mo}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<Medalla T={T} at={K.E + 3.0} x={540} y={1070} />)}
+        {/* modo cine: el sujeto sigue en pantalla (las moléculas de ozono y el átomo de cloro de la escena anterior, quietos y atenuados) */}
+        {svg(<><g opacity={0.5 * kprog(T, K.E, K.E + 0.5) * (1 - 0.5 * kprog(T, K.E + 2.8, K.E + 3.3))}>{MOLS.map((m, i) => <Ozono key={i} x={m.x} y={m.y + 100} s={0.9} rot={m.rot + Math.sin(T + i) * 8} rompe={i % 3 === 0 ? 1 : 0} o={i % 3 === 0 ? 0.55 : 1} />)}
+          <Atomo x={930} y={690} r={44} color={KC.leaf} letra="Cl" /></g>
+          <Medalla T={T} at={K.E + 3.0} x={540} y={1070} /></>)}
       </Escena>
       {/* 9 · Protocolo de Montreal */}
       <Escena T={T} a={K.Mo} b={K.N}>
@@ -180,7 +185,7 @@ function OzonoShot() {
       <Chip T={T} at={K.P + 0.2} until={K.Cl - 0.1} texto="¿qué daño hace un poquito de cloro?" x={540} y={430} tam={34} borde={KC.leaf} />
       <Chip T={T} at={K.Cl + 0.3} until={K.E - 0.2} texto="1 átomo de cloro" y={430} tam={40} borde={KC.leaf} />
       <NumeroGigante T={T} at={K.Cl + 0.8} until={K.E - 0.2} valor={100000} dur={2.4} prefijo="+" etiqueta="moléculas de ozono destruidas" y={1075} tam={120} color={KC.cyan} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Mo - 0.3} anio="1974" quien="Molina y Rowland" revista="Nature 249: 810–812" x={640} y={640} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Mo - 0.3} anio="1974" quien="Molina y Rowland" revista="Nature 249: 810–812" x={540} y={400} />
       <Chip T={T} at={K.E + 3.2} until={K.Mo - 0.3} texto="Nobel de Química 1995" y={1440} tam={40} borde={KC.gold} />
       <Chip T={T} at={K.Mo + 2.4} until={K.N - 0.2} texto="recortar y luego prohibir los CFC" y={1440} tam={34} borde={KC.red} />
       <NumeroGigante T={T} at={K.N + 0.3} until={K.F - 0.2} valor={99} dur={1.6} sufijo=" %" etiqueta="gases prohibidos que ya no se usan (2023)" x={420} y={620} tam={200} color={KC.yellow} />

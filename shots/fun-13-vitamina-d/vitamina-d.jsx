@@ -135,11 +135,11 @@ function Refri({ x, y, dias = 0 }) {
     <line x1={-210} y1={-120} x2={210} y2={-120} stroke={KC.ink} strokeWidth={7} />
     <rect x={150} y={-330} width={22} height={160} rx={10} fill={VD.metal} stroke={KC.ink} strokeWidth={5} />
     <rect x={150} y={-60} width={22} height={200} rx={10} fill={VD.metal} stroke={KC.ink} strokeWidth={5} />
-    <text x={0} y={-60} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>4 °C</text>
+    <text x={0} y={-60} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#0b1020">4 °C</text>
     {Array.from({ length: 7 }, (_, i) => { const on = dias > i; return <g key={i} transform={`translate(${-150 + (i % 4) * 92} ${30 + Math.floor(i / 4) * 100})`}>
       <rect x={-34} y={-34} width={74} height={74} rx={12} fill="#fff" stroke={KC.ink} strokeWidth={5} />
       <text x={3} y={-6} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill="#7a7068">día</text>
-      <text x={3} y={26} textAnchor="middle" style={{ font:`400 34px ${KF.titulo}` }} fill={KC.ink}>{i + 1}</text>
+      <text x={3} y={26} textAnchor="middle" style={{ font:`400 34px ${KF.titulo}` }} fill="#0b1020">{i + 1}</text>
       {on && <path d="M -22 2 L -4 20 L 28 -20" stroke={KC.leaf} strokeWidth={9} fill="none" strokeLinecap="round" strokeLinejoin="round" />}</g>; })}
   </g>;
 }
@@ -231,8 +231,9 @@ function VitaminaDShot() {
       <Escena T={T} a={K.Es} b={K.Sa} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Sol T={T} x={110} y={640} r={52} o={kprog(T, K.Es + 1.6, K.Es + 2.1)} />
-          <g opacity={kprog(T, K.Es + 1.4, K.Es + 2.0)} transform={`translate(0 ${klerp(80, 0, kprog(T, K.Es + 1.4, K.Es + 2.0, kEase.sale))})`}>
+          <Sol T={T} x={110} y={640} r={52} o={kprog(T, K.Es + 0.2, K.Es + 0.7)} />
+          {/* modo cine: la charola entra al empezar la escena, no 1.4 s después */}
+          <g opacity={kprog(T, K.Es, K.Es + 0.5)} transform={`translate(0 ${klerp(80, 0, kprog(T, K.Es, K.Es + 0.6, kEase.sale))})`}>
             <Charola T={T} x={540} y={980} brillo={brilloCh} />
           </g>
           {[0, 1, 2].map((i) => <RayoUV key={i} T={T} x1={150} y1={690 + i * 20} x2={330 + i * 230} y2={880} p={kprog(T, K.Es + 2.4 + i * 0.2, K.Es + 3.2 + i * 0.2)} fase={i} color="#ff7a00" />)}
@@ -260,19 +261,20 @@ function VitaminaDShot() {
         <FondoLunares color={KC.pink} />
         {fsvg(<>
           <rect x={70} y={600} width={940} height={620} rx={30} fill="rgba(255,255,255,.88)" stroke={KC.ink} strokeWidth={8} />
-          <line x1={150} y1={1110} x2={960} y2={1110} stroke={KC.ink} strokeWidth={7} /><line x1={150} y1={1110} x2={150} y2={660} stroke={KC.ink} strokeWidth={7} />
+          <line x1={150} y1={1110} x2={960} y2={1110} stroke="#0b1020" strokeWidth={7} /><line x1={150} y1={1110} x2={150} y2={660} stroke="#0b1020" strokeWidth={7} />
           {(() => { const pts = [[150, 1100], [380, 740], [500, 730], [660, 735], [760, 740], [940, 960]]; const u = kprog(T, K.H + 0.2, K.H + 2.8); const n = Math.max(2, Math.ceil(u * pts.length));
             return <path d={'M ' + pts.slice(0, n).map((p) => p.join(' ')).join(' L ')} stroke={KC.gold} strokeWidth={14} fill="none" strokeLinejoin="round" strokeLinecap="round" />; })()}
-          <text x={265} y={1160} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>1.ª hora</text>
-          <text x={570} y={1160} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>se estanca</text>
-          <text x={860} y={1160} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>2 h más</text>
-          <text x={110} y={680} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} transform="rotate(-90 110 680)" textAnchor="end">vitamina D2</text>
+          <text x={265} y={1160} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#0b1020">1.ª hora</text>
+          <text x={570} y={1160} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#0b1020">se estanca</text>
+          <text x={860} y={1160} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#0b1020">2 h más</text>
+          <text x={110} y={680} style={{ font:`700 30px ${KF.mono}` }} fill="#0b1020" transform="rotate(-90 110 680)" textAnchor="end">vitamina D2</text>
         </>)}
       </Escena>
       {/* 11 · tu cuerpo la aprovecha: estudio pequeño de 2013 */}
       <Escena T={T} a={K.Cu} b={K.Tr} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<g opacity={kprog(T, K.Cu + 2.8, K.Cu + 3.3)}>
+        {/* modo cine: los tubos están desde que empieza la escena (vacíos), con la tarjeta chica arriba */}
+        {fsvg(<g opacity={kprog(T, K.Cu, K.Cu + 0.5)}>
           <Tubo x={280} y={1160} nivel={kprog(T, K.Cu + 3.4, K.Cu + 6.2, kEase.suave) * 0.8} />
           <Tubo x={800} y={1160} nivel={kprog(T, K.Cu + 3.4, K.Cu + 6.2, kEase.suave) * 0.8} />
           <Champi T={T} x={125} y={1080} s={0.42} />
@@ -322,7 +324,7 @@ function VitaminaDShot() {
       <Etq T={T} at={K.L + 3.4} until={K.Pi - 0.3} x={1040} y={1090} lado="izq" texto="vitamina D2" tam={40} color={KC.yellow} />
       <Chip T={T} at={K.Pi + 0.8} until={K.P - 0.2} texto="hongo → D2" x={270} y={760} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.Pi + 1.2} until={K.P - 0.2} texto="tu piel → D3" x={800} y={760} tam={36} borde={KC.coral} />
-      <TarjetaEstudio T={T} at={K.Es + 0.1} until={K.Es + 1.6} anio="2015" quien="un equipo de Alemania y Dinamarca" revista="Urbain y Jakobsen · J. Agric. Food Chem." y={760} />
+      <TarjetaEstudio T={T} at={K.Es + 0.1} until={K.Es + 1.6} anio="2015" quien="un equipo de Alemania y Dinamarca" revista="Urbain y Jakobsen · J. Agric. Food Chem." x={620} y={520} />
       <Chip T={T} at={K.Es + 1.8} until={K.R + 2.5} texto="rebanados, al sol de mediodía" x={380} y={470} tam={34} borde={KC.ink} />
       {T >= K.R && T < K.Sa && (() => { const s = Math.floor(reloj * 900); const f2 = (n) => String(n).padStart(2, '0');
         return <div style={{ position:'absolute', left:420, top:590, transform:'translate(-50%,-50%)', zIndex:42, textAlign:'center', opacity:kprog(T, K.R, K.R + 0.3) * (1 - kprog(T, K.Sa - 0.3, K.Sa)) }}>
@@ -333,7 +335,7 @@ function VitaminaDShot() {
       <Chip T={T} at={K.Sa + 2.8} until={K.H - 0.3} texto="adulto de 19 a 70 años: 15 µg al día" x={540} y={480} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.Sa + 3.2} until={K.H - 0.3} x={60} y={560} texto="mayores de 70: 20 µg" tam={24} color={KC.ink} />
       <Chip T={T} at={K.H + 1.4} until={K.Cu - 0.2} texto="más sol ≠ más vitamina" x={420} y={470} tam={38} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Cu + 0.2} until={K.Cu + 2.8} anio="2013" quien="25 adultos, 3 meses" revista="cápsulas de polvo de champiñón · Keegan et al., 2013" y={760} />
+      <TarjetaEstudio T={T} at={K.Cu + 0.2} until={K.Cu + 2.8} anio="2013" quien="25 adultos, 3 meses" revista="cápsulas de polvo de champiñón · Keegan et al., 2013" x={540} y={470} />
       <Chip T={T} at={K.Cu + 5.2} until={K.Tr - 0.3} texto="vitamina D en sangre: igual" x={420} y={470} tam={34} borde={KC.ink} />
       <Etq T={T} at={K.Tr + 0.5} until={K.Tr + 2.2} x={270} y={1150} lado="izq" texto="entero" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Tr + 0.7} until={K.Tr + 2.2} x={600} y={1150} texto="rebanado: más" tam={30} color={KC.ink} />

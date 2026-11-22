@@ -249,7 +249,8 @@ function CalorShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          {CAJAS14.map((c, i) => { const on = kprog(T, K.E + 2.6 + i * 0.03, K.E + 2.9 + i * 0.03, kEase.rebote); if (on <= 0) return null;
+          {/* modo cine: las cajas entran al empezar la escena (antes: 2.6 s de tarjeta sola) */}
+          {CAJAS14.map((c, i) => { const on = kprog(T, K.E + 0.2 + i * 0.035, K.E + 0.5 + i * 0.035, kEase.rebote); if (on <= 0) return null;
             const viva = c.u > temp ? 1 : 0; const recien = T >= K.R && c.u <= temp && c.u > temp - 1 && T > K.Gr + 0.8 ? 1 : 0;
             return <g key={i} transform={`translate(${c.x} ${c.y}) scale(${on}) translate(${-c.x} ${-c.y})`}><Caja14 x={c.x} y={c.y} viva={viva} color={c.c} seed={c.seed} flash={recien} /></g>; })}
           {T > K.R - 0.2 && <g opacity={kprog(T, K.R - 0.2, K.R + 0.2)}>
@@ -262,7 +263,7 @@ function CalorShot() {
           </g>}
         </>)}
         {T > K.R - 0.2 && <div style={{ position:'absolute', left:90, top:530, zIndex:41, font:`400 64px ${KF.titulo}`, color:KC.gold2, textShadow:KSOMBRA, opacity:kprog(T, K.R - 0.2, K.R + 0.2) }}>{kformato(temp, 0)} °C</div>}
-        {T > K.E + 2.6 && <div style={{ position:'absolute', right:60, bottom:470, zIndex:41, font:`700 30px ${KF.mono}`, color:'#fff', textShadow:KSOMBRA }}>esquema · no son datos del estudio</div>}
+        {T > K.E + 0.2 && <div style={{ position:'absolute', right:60, bottom:470, zIndex:41, font:`700 30px ${KF.mono}`, color:'#fff', textShadow:KSOMBRA }}>esquema · no son datos del estudio</div>}
       </Escena>
       {/* 9 · hipótesis: la sangre caliente */}
       <Escena T={T} a={K.Hi} b={K.A} zoom={0.05}>
@@ -331,7 +332,7 @@ function CalorShot() {
       <NumeroGigante T={T} at={K.Tu + 0.3} until={K.Ho - 0.3} valor={37} desde={30} dur={0.8} sufijo=" °C" etiqueta="tú, todo el día" x={380} y={500} tam={190} color={KC.orange} />
       <Chip T={T} at={K.Ho + 0.4} until={K.Ho + 1.9} texto="temperatura ambiente: crecen" x={460} y={470} tam={36} borde={KC.leaf} />
       <Chip T={T} at={K.Ho + 2.1} until={K.P - 0.3} texto="a 37 °C: pocos" x={420} y={470} tam={46} borde={KC.orange} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.5} anio="2009" quien="colección de Utrecht, Países Bajos" revista="Robert y Casadevall · J Infect Dis" x={500} y={600} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.5} anio="2009" quien="colección de Utrecht, Países Bajos" revista="Robert y Casadevall · J Infect Dis" x={540} y={470} />
       <NumeroGigante T={T} at={K.E + 2.7} until={K.R - 0.2} valor={4802} desde={0} dur={1.4} sufijo="" etiqueta="cepas de hongos" x={420} y={500} tam={130} color={KC.gold2} />
       <Chip T={T} at={K.R + 1.4} until={K.Gr - 0.3} texto="a 37 °C: la mayoría no crece" x={430} y={440} tam={34} borde={KC.orange} />
       <Chip T={T} at={K.Gr + 1.0} until={K.F - 0.3} texto="cada grado: −6 % más" x={420} y={440} tam={40} borde={KC.red} />

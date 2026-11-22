@@ -1,7 +1,8 @@
 // cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #07 · El cañón de esporas (Pilobolus) — NARRADO (N3 "Capítulos y medidores" + viaje N1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. Escala de los acercamientos: 1 mm = 200 px × s.
-const PASTO = '#58c763';
+const PASTO = '#2b6b3f';   // modo cine: pasto oscuro (antes '#58c763', media pantalla de verde brillante)
+const NEGRO = '#14110f', BORDE_N = 'rgba(255,255,255,.8)';   // modo cine: la bolsita de esporas es negra (KC.ink ahora es claro)
 
 // Un esporangióforo de Pilobolus. Base (trofocisto) en (0,0), crece hacia arriba. infla 0..1.2 = presión,
 // dispara = 0..1 progreso del disparo (la bolsita sale volando), rot = inclinación hacia la luz (grados).
@@ -19,7 +20,7 @@ function Pilo({ x, y, s = 1, rot = 0, infla = 1, sale = 0, T = 0, brillo = 1, ch
     {sale >= 0.02 && sale < 0.5 && Array.from({ length: 8 }, (_, i) => { const a = -Math.PI / 2 + (i - 3.5) * 0.35, d = 30 + sale * 260; return <circle key={i} cx={Math.cos(a) * d} cy={vy + Math.sin(a) * d} r={9 * (1 - sale * 1.5)} fill="#c9eeff" stroke={KC.ink} strokeWidth={3} />; })}
     {chorro > 0 && <path d={`M 0 ${vy - ry} L 0 ${vy - ry - chorro * 700}`} stroke="#c9eeff" strokeWidth={10} strokeLinecap="round" opacity={0.7} />}
     <g transform={`translate(0 ${vy - ry - 14 - sale * 1600})`}>
-      <ellipse cx={0} cy={0} rx={34} ry={24} fill={KC.ink} stroke="#000" strokeWidth={4} />
+      <ellipse cx={0} cy={0} rx={34} ry={24} fill={NEGRO} stroke={BORDE_N} strokeWidth={4} />
       <ellipse cx={-10} cy={-8} rx={9} ry={5} fill="#fff" opacity=".35" />
     </g>
   </g>;
@@ -43,11 +44,11 @@ function Sol({ x, y, r = 80, T }) {
 function Vaca({ x, y, s = 1, mastica = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M 260 -260 L 120 -120 L 160 40 L 400 40 L 400 -300 Z" fill="#fff" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
-    <path d="M 300 -200 q 60 10 70 80 q -60 20 -90 -20 z" fill={KC.ink} />
+    <path d="M 300 -200 q 60 10 70 80 q -60 20 -90 -20 z" fill={NEGRO} />
     <rect x={-40} y={-120 + mastica * 6} width={230} height={150} rx={60} fill="#fff" stroke={KC.ink} strokeWidth={8} />
     <rect x={-60} y={-40 + mastica * 10} width={120} height={80} rx={36} fill="#f6a7b8" stroke={KC.ink} strokeWidth={7} />
-    <circle cx={-20} cy={-5 + mastica * 10} r={8} fill={KC.ink} /><circle cx={20} cy={-5 + mastica * 10} r={8} fill={KC.ink} />
-    <circle cx={110} cy={-70} r={14} fill={KC.ink} />
+    <circle cx={-20} cy={-5 + mastica * 10} r={8} fill={NEGRO} /><circle cx={20} cy={-5 + mastica * 10} r={8} fill={NEGRO} />
+    <circle cx={110} cy={-70} r={14} fill={NEGRO} />
     <path d="M 160 -110 q 50 -50 90 -20 q -30 40 -90 20 z" fill="#fff" stroke={KC.ink} strokeWidth={7} />
   </g>;
 }
@@ -97,7 +98,7 @@ function Pilobolus() {
       <Escena T={T} a={K.E} b={K.Di}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {fsvg(<>
-          {Array.from({ length: 6 }, (_, i) => { const on = kprog(T, K.E + 1.0 + i * 0.25, K.E + 1.2 + i * 0.25); return on > 0 ? <g key={i} opacity={on * (T > K.V ? 0.35 : 1)}>
+          {Array.from({ length: 6 }, (_, i) => { const on = kprog(T, K.E + 0.15 + i * 0.25, K.E + 0.35 + i * 0.25);   /* modo cine: los cuadros del video entran al empezar la escena, no 1 s después */ return on > 0 ? <g key={i} opacity={on * (T > K.V ? 0.35 : 1)}>
             <rect x={60 + i * 162} y={860} width={150} height={220} rx={8} fill="#1d2433" stroke={KC.texto} strokeWidth={4} />
             {[0, 1, 2, 3].map((k) => <rect key={k} x={66 + i * 162 + k * 38} y={866} width={22} height={12} fill={KC.texto} opacity=".6" />)}
             <ellipse cx={135 + i * 162} cy={1040 - i * 30} rx={14} ry={10} fill="#fff" />
@@ -120,7 +121,7 @@ function Pilobolus() {
           <rect x={120} y={1100} width={140} height={0} />
           {(() => { const u = kprog(T, K.Di + 0.3, K.Di + 2.2, kEase.suave); const pts = Array.from({ length: 31 }, (_, i) => { const v = i / 30 * u; return [190 + v * 760, 1030 - Math.sin(v * Math.PI) * 520]; });
             const d = 'M ' + pts.map((p) => p[0].toFixed(0) + ' ' + p[1].toFixed(0)).join(' L '); const [ex, ey] = pts[pts.length - 1];
-            return <><path d={d} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" fill="none" /><ellipse cx={ex} cy={ey} rx={16} ry={11} fill={KC.ink} /></>; })()}
+            return <><path d={d} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" fill="none" /><ellipse cx={ex} cy={ey} rx={16} ry={11} fill={NEGRO} stroke={BORDE_N} strokeWidth={4} /></>; })()}
           <g opacity={kprog(T, K.Di + 2.2, K.Di + 2.6)}>
             <line x1={190} y1={1140} x2={950} y2={1140} stroke={KC.ink} strokeWidth={8} /><line x1={190} y1={1115} x2={190} y2={1165} stroke={KC.ink} strokeWidth={8} /><line x1={950} y1={1115} x2={950} y2={1165} stroke={KC.ink} strokeWidth={8} />
             <text x={570} y={880} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>2.5 m</text>
@@ -134,7 +135,7 @@ function Pilobolus() {
         {fsvg(<>
           <rect x={-100} y={1080} width={1300} height={900} fill={PASTO} stroke={KC.ink} strokeWidth={8} />
           <Vaca x={klerp(900, 520, kprog(T, K.Va, K.Va + 1.2, kEase.sale))} y={1000} s={1.05} mastica={Math.max(0, Math.sin(T * 9)) * kprog(T, K.Va + 1.4, K.Va + 1.6)} />
-          {T < K.Va + 1.5 && <ellipse cx={500} cy={1050} rx={16} ry={11} fill={KC.ink} />}
+          {T < K.Va + 1.5 && <ellipse cx={500} cy={1050} rx={16} ry={11} fill={NEGRO} stroke={BORDE_N} strokeWidth={4} />}
           {kprog(T, K.Va + 2.4, K.Va + 2.8) > 0 && <g opacity={kprog(T, K.Va + 2.4, K.Va + 2.8)}>
             <circle cx={300} cy={700} r={150} fill="#ffd2dc" stroke={KC.ink} strokeWidth={7} />
             {Array.from({ length: 7 }, (_, i) => { const a = i * 0.9, w = kprog(T, K.Va + 3.0 + i * 0.12, K.Va + 3.4 + i * 0.12); return <g key={i}><circle cx={300 + Math.cos(a) * 70} cy={700 + Math.sin(a) * 60} r={14} fill={mixHex('#8a8f99', KC.yellow, w)} stroke={KC.ink} strokeWidth={4} />
@@ -147,9 +148,9 @@ function Pilobolus() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<g transform={`translate(${klerp(300, 640, kprog(T, K.Po, K.C))} ${klerp(1000, 700, kprog(T, K.Po, K.C))}) rotate(${T * 20})`}>
-          <ellipse rx={220} ry={150} fill={KC.ink} stroke="#000" strokeWidth={6} />
+          <ellipse rx={220} ry={150} fill={NEGRO} stroke={BORDE_N} strokeWidth={6} />
           <ellipse cx={-70} cy={-60} rx={60} ry={30} fill="#fff" opacity=".2" />
-          {Array.from({ length: 5 }, (_, i) => { const a = -2.6 + i * 0.5; return kprog(T, K.Po + 0.6 + i * 0.25, K.Po + 1.0 + i * 0.25) > 0 ? <g key={i} transform={`translate(${Math.cos(a) * 210} ${Math.sin(a) * 140}) rotate(${a * 57 + 90})`}><Gusano T={T} x={0} y={0} largo={150} ancho={14} ang={-90} fase={i} ondula={0.7} color="#fff3dc" /></g> : null; })}
+          {Array.from({ length: 5 }, (_, i) => { const a = -2.6 + i * 0.5; return kprog(T, K.Po + 0.25 + i * 0.12, K.Po + 0.6 + i * 0.12) > 0 ? <g key={i} transform={`translate(${Math.cos(a) * 210} ${Math.sin(a) * 140}) rotate(${a * 57 + 90})`}><Gusano T={T} x={0} y={0} largo={150} ancho={14} ang={-90} fase={i} ondula={0.7} color="#fff3dc" /></g> : null; })}
         </g>)}
       </Escena>
       {/* 13 · cierre: la misma caca con sus cañones, todos apuntando al sol */}
@@ -169,19 +170,19 @@ function Pilobolus() {
       <Medidor T={T} at={K.Ca + 0.2} until={K.D + 1.6} valor={(t) => kprog(t, K.Ca + 0.3, K.Ca + 3.6)} etiqueta="presión" x={90} y={360} ancho={560} color={KC.orange} />
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.4} until={K.G + 4.4} texto="¿rocío?" x={360} y={560} />
-      <Chip T={T} at={K.G + 2.8} until={K.H - 0.2} texto="cañón de esporas" x={360} y={680} tam={44} borde={KC.yellow} />
-      <Etq T={T} at={K.H + 1.0} until={K.A - 0.3} x={60} y={560} texto="Pilobolus" it tam={44} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.8} until={K.A - 0.3} x={60} y={630} texto="en estiércol de herbívoros" tam={30} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.6} tacharEn={K.G + 2.4} until={K.G + 4.4} texto="¿rocío?" x={620} y={560} />
+      <Chip T={T} at={K.G + 2.8} until={K.H - 0.2} texto="cañón de esporas" x={620} y={680} tam={44} borde={KC.yellow} />
+      <Etq T={T} at={K.H + 1.0} until={K.A - 0.3} x={60} y={450} texto="Pilobolus" it tam={44} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.8} until={K.A - 0.3} x={60} y={515} texto="en estiércol de herbívoros" tam={30} color={KC.ink} />
       <Etq T={T} at={K.A + 1.4} until={K.Ca - 0.2} x={680} y={640} texto="ampolla = lente" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.D + 0.6} until={K.P - 0.2} x={300} y={420} texto="bolsita de esporas" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.D + 0.6} until={K.P - 0.2} x={470} y={505} texto="bolsita de esporas" tam={32} color={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.V - 0.3} anio="2008" quien="Yafetto et al. · Ohio, EE. UU." revista="PLoS ONE · 50,000 cuadros por segundo" y={560} />
       <NumeroGigante T={T} at={K.V + 0.2} until={K.Gr - 0.3} valor={13} dur={1.4} sufijo=" m/s" etiqueta="hasta" x={640} y={520} tam={190} />
       <Chip T={T} at={K.V + 2.0} until={K.Gr - 0.3} texto="≈ 47 km/h" y={1120} tam={52} borde={KC.red} />
       <NumeroGigante T={T} at={K.Gr + 0.2} until={K.Di - 0.3} valor={20000} prefijo="+" dur={1.2} sufijo=" g" etiqueta="aceleración al despegar" x={640} y={520} tam={170} color={KC.orange} />
       <Chip T={T} at={K.Gr + 1.2} until={K.Di - 0.3} texto="g = la gravedad de la Tierra" y={1120} tam={36} borde={KC.orange} />
       <Etq T={T} at={K.Di + 2.4} until={K.Va - 0.3} x={700} y={1020} texto="pasto limpio" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Va + 2.8} until={K.Po - 0.3} x={460} y={700} texto="las esporas despiertan" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Va + 2.8} until={K.Po - 0.3} x={110} y={505} texto="las esporas despiertan" tam={32} color={KC.ink} />
       <Etq T={T} at={K.Po + 1.4} until={K.C - 0.3} x={60} y={1120} texto="larvas de Dictyocaulus viviparus" it tam={32} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="un cañón apuntando al sol" x={380} y={660} tam={36} borde={KC.yellow} />
 

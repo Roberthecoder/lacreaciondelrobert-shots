@@ -18,7 +18,9 @@ function PetuniaNarrado() {
       {/* GANCHO: se apaga el día y la flor se prende */}
       <Escena T={T} a={C.Gancho} b={C.Hongo} zoom={0.05}>
         <Cielo T={T} noche={noche(C.Gancho)} />
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Maceta T={T} x={540} y={970} s={1.0} brillos={brilla(C.Gancho)} /></svg>
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Maceta T={T} x={540} y={970} s={1.0} brillos={brilla(C.Gancho)} />
+          {/* modo cine: antes del segundo 3 ya asoma, atenuado, el hongo de donde viene la luz (escena siguiente) */}
+          <g opacity={0.55 * kprog(T, C.Gancho + 2.0, C.Gancho + 2.7)}><HongoLuz T={T} x={170} y={1225} s={0.6} brillo={kprog(T, C.Gancho + 2.3, C.Gancho + 3.2)} /></g></svg>
         <MitoTachado T={T} at={C.Gancho + 1.2} tacharEn={C.Gancho + 1.8} until={C.Hongo - 0.2} texto="pilas" x={250} y={420} />
         <MitoTachado T={T} at={C.Gancho + 1.6} tacharEn={C.Gancho + 2.2} until={C.Hongo - 0.2} texto="pintura" x={380} y={300} />
       </Escena>
@@ -60,15 +62,16 @@ function PetuniaNarrado() {
 
       {/* ESTUDIO: 1986, tabaco con gen de luciérnaga */}
       <Escena T={T} a={C.Estudio} b={C.Wood}>
-        <div style={{ position:'absolute', inset:0, background:`linear-gradient(${mixHex(KC.yellow, '#1d1150', kprog(T, C.Estudio + 2.6, C.Estudio + 3.2))}, ${mixHex('#ffcf3a', '#0d1424', kprog(T, C.Estudio + 2.6, C.Estudio + 3.2))})` }}></div>
-        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:kprog(T, C.Estudio + 2.6, C.Estudio + 3.0) }}>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#1d1150, #0d1424)' }}></div>
+        {/* modo cine: fondo oscuro y la planta de tabaco en pantalla desde que empieza la escena (antes: 2.6 s de lámina amarilla con solo la tarjeta) */}
+        <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:kprog(T, C.Estudio + 0.05, C.Estudio + 0.5) }}>
           <Tabaco T={T} x={540} y={1010} brillo={kprog(T, C.Estudio + 3.6, C.Estudio + 4.2) * (1 - kprog(T, C.Estudio + 5.0, C.Estudio + 6.2))} />
           <g transform={`translate(${klerp(980, 820, kprog(T, C.Estudio + 3.0, C.Estudio + 3.5))} 560) rotate(${-25 * kprog(T, C.Estudio + 3.4, C.Estudio + 3.7)})`}>
             <path d="M -60 -50 L 60 -50 L 60 60 L -60 60 Z" fill="#9aa4ae" stroke={KC.ink} strokeWidth={7} /><path d="M -60 -30 L -150 -80" stroke="#9aa4ae" strokeWidth={22} strokeLinecap="round" /><path d="M -60 -30 L -150 -80" stroke={KC.ink} strokeWidth={4} fill="none" />
             {T > C.Estudio + 3.6 && T < C.Estudio + 4.6 && [0, 1, 2, 3].map((i) => <circle key={i} cx={-160 - i * 18} cy={-70 + ((T * 400 + i * 30) % 120)} r={6} fill={LUZ} />)}
           </g>
         </svg>
-        <TarjetaEstudio T={T} at={C.Estudio + 0.2} until={C.Estudio + 2.6} anio="1986" quien="Ow, de Wet, Helinski, Howell, Wood y DeLuca" revista="UC San Diego · Science 234: 856" y={720} />
+        <TarjetaEstudio T={T} at={C.Estudio + 0.2} until={C.Estudio + 2.6} anio="1986" quien="Ow, de Wet, Helinski, Howell, Wood y DeLuca" revista="UC San Diego · Science 234: 856" y={300} />
         <Etq T={T} at={C.Estudio + 3.2} until={C.Wood - 0.2} x={640} y={420} texto="luciferina de luciérnaga" color={LUZ} tam={28} />
         <Chip T={T} at={C.Estudio + 5.0} until={C.Wood - 0.2} texto="se apaga" x={300} y={420} borde={KC.coral} tam={36} />
       </Escena>
@@ -76,6 +79,11 @@ function PetuniaNarrado() {
       {/* WOOD: de estudiante a fundador */}
       <Escena T={T} a={C.Wood} b={C.Aprobada}>
         <FondoMarca T={T} color={KC.lilac} patron="rayas" />
+        {/* modo cine: el sujeto sigue detrás, atenuado: el tabaco de 1986 se vuelve la petunia que brilla conforme avanza el año */}
+        {(() => { const u = kprog(T, C.Wood + 0.8, C.Wood + 3.4, kEase.suave); return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          <g opacity={0.3 * (1 - u)}><Tabaco T={T} x={540} y={1010} brillo={0} /></g>
+          <g opacity={0.34 * u}><Maceta T={T} x={540} y={1010} s={1.0} brillos={[1, 0.9, 0.75, 1, 0.95]} /></g>
+        </svg>; })()}
         <div style={{ position:'absolute', left:0, right:0, top:560, zIndex:41, textAlign:'center' }}>
           <div style={{ font:`400 220px/1 ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`7px ${KC.ink}`, textShadow:`9px 9px 0 ${KC.ink}` }}>{Math.round(klerp(1986, 2024, kprog(T, C.Wood + 0.8, C.Wood + 3.4, kEase.suave)))}</div>
           <div style={{ font:`900 54px ${KF.texto}`, color:KC.texto, textShadow:SOMBRA, marginTop:10 }}>Keith Wood</div>
@@ -91,6 +99,8 @@ function PetuniaNarrado() {
           <g transform="translate(540 760)"><rect x={-110} y={-280} width={220} height={560} rx={50} fill="#222" stroke={KC.ink} strokeWidth={9} />
             {[[-180, KC.red], [0, KC.yellow], [180, LUZ]].map(([dy, c], i) => <circle key={i} cy={dy} r={74} fill={i === 2 ? (T > C.Aprobada + 0.6 ? c : '#2c3a2c') : '#3a3333'} stroke={KC.ink} strokeWidth={6} />)}
             {T > C.Aprobada + 0.6 && <circle cy={180} r={140} fill={LUZ} opacity={0.3 + 0.1 * Math.sin(T * 6)} />}</g>
+          {/* modo cine: la petunia aprobada sigue a cuadro junto al semáforo y se enciende con la luz verde */}
+          <g opacity={0.85 * kprog(T, C.Aprobada + 0.05, C.Aprobada + 0.5)}><Maceta T={T} x={860} y={930} s={0.55} brillos={[1, 0.9, 0.75, 1, 0.95].map((v) => v * kprog(T, C.Aprobada + 0.6, C.Aprobada + 1.2))} /></g>
         </svg>
         <Chip T={T} at={C.Aprobada + 0.6} until={C.Extra - 0.2} texto="EE. UU. · sept. 2023" x={540} y={330} borde={KC.ink} tam={38} />
         <Chip T={T} at={C.Aprobada + 2.4} until={C.Extra - 0.2} texto="a la venta: 2024" x={540} y={1120} borde={KC.ink} tam={38} />
@@ -98,11 +108,13 @@ function PetuniaNarrado() {
 
       {/* EXTRA: flores jóvenes y no se carga con el sol */}
       <Escena T={T} a={C.Extra} b={C.Cierre}>
-        <Cielo T={T} noche={T < C.Extra + 3.0 ? 1 : 1 - 0.7 * kprog(T, C.Extra + 3.0, C.Extra + 3.6)} />
+        <Cielo T={T} noche={T < C.Extra + 3.0 ? 1 : 1 - 0.22 * kprog(T, C.Extra + 3.0, C.Extra + 3.6)} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+          {/* modo cine: el cielo ya no se pone de día (fondo oscuro); el sol se dibuja aparte sobre el cielo de atardecer */}
+          <g opacity={kprog(T, C.Extra + 3.0, C.Extra + 3.6)}><circle cx={872} cy={408} r={92} fill={KC.yellow} stroke="#0b1020" strokeWidth={8} /></g>
           <Petunia T={T} x={330} y={680} s={1.5} brillo={1} />
           <Petunia T={T} x={760} y={700} s={1.25} brillo={0.35} rot={20} seed={3} />
-          {T > C.Extra + 3.0 && <g transform={`translate(860 990) scale(${kprog(T, C.Extra + 3.0, C.Extra + 3.4, kEase.rebote)})`}><rect x={-60} y={-110} width={120} height={200} rx={16} fill="#fff" stroke={KC.ink} strokeWidth={7} /><rect x={-24} y={-130} width={48} height={22} rx={6} fill={KC.ink} /><rect x={-46} y={30} width={92} height={46} rx={6} fill={KC.leaf} /><line x1={-90} y1={110} x2={90} y2={-130} stroke={KC.red} strokeWidth={14} strokeLinecap="round" /></g>}
+          {T > C.Extra + 3.0 && <g transform={`translate(860 1085) scale(${kprog(T, C.Extra + 3.0, C.Extra + 3.4, kEase.rebote)})`}><rect x={-60} y={-110} width={120} height={200} rx={16} fill="#fff" stroke={KC.ink} strokeWidth={7} /><rect x={-24} y={-130} width={48} height={22} rx={6} fill={KC.ink} /><rect x={-46} y={30} width={92} height={46} rx={6} fill={KC.leaf} /><line x1={-90} y1={110} x2={90} y2={-130} stroke={KC.red} strokeWidth={14} strokeLinecap="round" /></g>}
         </svg>
         <Etq T={T} at={C.Extra + 0.6} until={C.Cierre - 0.2} x={330} y={900} texto="joven" color={LUZ} />
         <Etq T={T} at={C.Extra + 1.0} until={C.Cierre - 0.2} x={760} y={900} texto="vieja" color={KC.texto} />
