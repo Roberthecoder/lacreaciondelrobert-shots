@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #152 · Esa cerveza no estaba agitada: traía proteínas de un hongo — NARRADO (N1 Por dentro, gancho 1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. Divulgación científica: no invita a consumir alcohol.
 
@@ -157,7 +158,7 @@ function EtqB({ T, at, until, x, y, texto, it = false, lado = 'der', tam = 28 })
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube');
   return <div style={{ position:'absolute', left:x, top:y, zIndex:41, opacity:e.o, display:'flex', alignItems:'center', gap:12, flexDirection: lado === 'der' ? 'row' : 'row-reverse', transform:`translate(${lado === 'der' ? 0 : '-100%'}, -50%)` }}>
-    <div style={{ width:60 * kprog(T, at, at + 0.4, kEase.sale), height:4, background:KC.ink, borderRadius:2 }}></div>
+    <div style={{ width:60 * kprog(T, at, at + 0.4, kEase.sale), height:4, background:CINE.borde, borderRadius:2 }}></div>
     <div style={{ font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color:KC.ink, background:'rgba(255,255,255,.72)', padding:'2px 10px', borderRadius:8, whiteSpace:'nowrap' }}>{texto}</div>
   </div>;
 }
@@ -186,7 +187,7 @@ function CervezaShot() {
       <Escena T={T} a={K.G} b={K.Ca} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <rect x={0} y={1180} width={KW} height={60} fill="#c98b4a" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={60} fill="#6a4d33" stroke={KC.ink} strokeWidth={8} />
           <Nivel x={860} y={1146} T={T} />
           <Chorro T={T} x={330} y={1180 - 560 * 1.05} p={chorro} alto={560} ancho={60} />
           <Botella x={330} y={1180} s={1.05} tapa={tapa} />
@@ -196,7 +197,7 @@ function CervezaShot() {
       <Escena T={T} a={K.Ca} b={K.M} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1180} width={KW} height={80} fill="#7a4a22" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={80} fill="#422c1f" stroke={KC.ink} strokeWidth={8} />
           {[[120, 1.0, 1], [270, 1.15, 2], [430, 1.05, 3], [590, 1.2, 4], [760, 1.0, 5], [920, 1.1, 6]].map(([ex, s2, sd], i) =>
             <Espiga key={i} T={T} x={ex} y={1190} s={s2 * 0.8} alto={260} seed={sd} mancha={i === 1 || i === 3 || i === 4 ? kprog(T, K.Ca + 1.0 + i * 0.2, K.Ca + 2.6 + i * 0.2) : 0} />)}
           <Lluvia T={T} o={0.9} />
@@ -259,7 +260,7 @@ function CervezaShot() {
       <Escena T={T} a={K.A + 2.0} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <rect x={0} y={1180} width={KW} height={60} fill="#c98b4a" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={60} fill="#6a4d33" stroke={KC.ink} strokeWidth={8} />
           <Chorro T={T} x={330} y={1180 - 560 * 1.05} p={chorroA} alto={560} ancho={60} seed={5} />
           <Botella x={330} y={1180} s={1.05} tapa={1} />
         </>)}
@@ -268,7 +269,7 @@ function CervezaShot() {
       <Escena T={T} a={K.E} b={K.PQ} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={0} y={1180} width={KW} height={60} fill="#d9dfe6" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={60} fill="#727781" stroke={KC.ink} strokeWidth={8} />
           {/* gotero */}
           {T < K.D + 0.5 && (() => { const u = kprog(T, K.E + 1.2, K.E + 2.0, kEase.sale), o = 1 - kprog(T, K.D, K.D + 0.5);
             return <g opacity={u * o} transform={`translate(${klerp(250, 360, u)} ${klerp(470, 690, u)})`}>
@@ -309,7 +310,7 @@ function CervezaShot() {
       <Escena T={T} a={K.Ag} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <rect x={0} y={1180} width={KW} height={60} fill="#d9dfe6" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={60} fill="#727781" stroke={KC.ink} strokeWidth={8} />
           <Chorro T={T} x={330} y={1180 - 560 * 1.0} p={kprog(T, K.Ag + 0.4, K.Ag + 1.4, kEase.sale)} alto={420} ancho={50} seed={12} />
           <Botella x={330} y={1180} s={1.0} tapa={kprog(T, K.Ag + 0.2, K.Ag + 0.8)} color={CV.vidrio} brillo="#ffffff" etiqueta="AGUA" liquido={CV.vidrio2} />
         </>)}
@@ -318,7 +319,7 @@ function CervezaShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <rect x={0} y={1180} width={KW} height={60} fill="#c98b4a" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={60} fill="#6a4d33" stroke={KC.ink} strokeWidth={8} />
           <Nivel x={860} y={1146} T={T} />
           <Chorro T={T} x={330} y={1180 - 560 * 1.05} p={1} alto={560} ancho={60} />
           <Botella x={330} y={1180} s={1.05} tapa={1} />

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #58 · Tus venas no son azules — NARRADO (N1 "Por dentro": la luz que entra en la piel).
 // Datos: Kienle et al. 1996 (Applied Optics 35(7)); C. Baird (WTAMU). Ver guion.md y verificacion.md.
 // La sangre SIEMPRE se pinta roja (oscura en la vena). Lo único azulado es cómo se ve la vena desde afuera.

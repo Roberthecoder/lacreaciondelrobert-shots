@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #122 · Esta tierra negra es un cementerio de microbios — NARRADO (gancho 1 "Esto no es X: es Y" + N1 Por dentro + N4 Imagen que se llena).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (formas y tamaños aproximados, con barra de escala).
 

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #45 · La punta de tu lápiz no es plomo: es el mismo carbono que un diamante — NARRADO (N1 por dentro + toque N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (átomos como bolitas, distancias no a escala).
 const GRAF = '#3c3f46', MADERA = '#f2c48d', DIAM = '#bfeaff', CINTA = 'rgba(255,240,190,.72)';

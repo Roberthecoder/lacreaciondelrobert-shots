@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #28 · El mar del caracol no es el mar — NARRADO (N1 "Por dentro" + N5 la prueba del vaso).
 // Datos: Vermeij (UC Davis) en HuffPost 2018, Wikipedia «Seashell resonance», California Magazine (Berkeley) 2007. Ver guion.md y verificacion.md.
 // Dibujo esquemático: las ondas, la concha en corte y los tamaños no van a escala; no hay cifras.
@@ -167,7 +168,7 @@ function CaracolMar() {
       <Escena T={T} a={K.Ruido} b={K.Cavidad}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#e0a35a" stroke={KC.ink} strokeWidth={9} />
+          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#75593b" stroke={KC.ink} strokeWidth={9} />
           <defs><clipPath id="caVentana"><rect x={630} y={420} width={380} height={300} /></clipPath></defs>
           <rect x={630} y={420} width={380} height={300} fill="#9fe3ff" />
           <g clipPath="url(#caVentana)">
@@ -305,11 +306,11 @@ function CaracolMar() {
       <Escena T={T} a={K.Lugar} b={K.Cierre}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <rect x={0} y={810} width={KW} height={430} fill={KC.mint} />
+          <rect x={0} y={810} width={KW} height={430} fill={cineMix(KC.mint, CINE.fondo, 0.55)} />
           <line x1={0} y1={810} x2={KW} y2={810} stroke={KC.ink} strokeWidth={10} />
           {[[60, 160, 300], [240, 130, 380], [400, 170, 260], [600, 150, 340]].map(([x, w, h], i) => <g key={i}><rect x={x} y={700 - h} width={w} height={h} fill={['#7d6bb5', '#5b8fd6', '#c96b8b', '#6b9b7d'][i]} stroke={KC.ink} strokeWidth={7} />
             {Array.from({ length: 6 }, (_, k) => <rect key={k} x={x + 22 + (k % 2) * (w / 2)} y={700 - h + 30 + Math.floor(k / 2) * 70} width={w / 2 - 40} height={36} fill="#ffe9a8" stroke={KC.ink} strokeWidth={4} />)}</g>)}
-          <rect x={0} y={700} width={KW} height={110} fill="#555b66" stroke={KC.ink} strokeWidth={7} />
+          <rect x={0} y={700} width={KW} height={110} fill="#303541" stroke={KC.ink} strokeWidth={7} />
           {[0, 1, 2].map((i) => <Coche key={i} x={((T - K.Lugar) * (220 + i * 60) + i * 400) % 1400 - 160} y={790 - (i % 2) * 40} s={0.5} T={T} color={[KC.red, KC.blue, KC.yellow][i]} />)}
           <OndasArco x={300} y={760} ang={-60} T={T * 1.4} color={KC.texto} largo={160} n={4} />
           <Cama x={330} y={1180} s={0.95} />

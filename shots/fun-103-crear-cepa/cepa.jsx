@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #103 · Esta seta no nació de una semilla: así se crea una cepa — NARRADO (gancho 1 "Esto no es X: es Y").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Textos en pantalla: todos en el bloque TX de abajo (fácil de corregir tras la verificación).

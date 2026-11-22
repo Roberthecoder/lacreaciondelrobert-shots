@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #42 · ¿Una IA puede leer tu mente? Solo si tú te dejas — NARRADO (N5 "El experimento").
 // Datos: Tang, LeBel, Jain y Huth, "Semantic reconstruction of continuous language from non-invasive brain recordings",
 // Nature Neuroscience 26:858–866 (2023), UT Austin. Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

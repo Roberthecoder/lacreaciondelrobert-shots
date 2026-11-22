@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #146 · Este violín no es un Stradivarius: es madera que se comió un hongo — NARRADO
 // (gancho 1 "esto no es X: es Y" · formato N1 Por dentro + N5 El experimento). Guion y fuentes: guion.md · verificacion.md.
 // El dibujo es esquemático.
@@ -229,14 +230,14 @@ function ViolinShot() {
       </Escena>
       {/* 8 · hipótesis: pícea de clima frío, anillos angostos */}
       <Escena T={T} a={K.Hi} b={K.Pb}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#1c2f6b, #3f63b8)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0f1731, #182545)' }}></div>
         <div style={{ position:'absolute', left:0, right:0, top:1150, bottom:0, background:'#eef4ff' }}></div>
         <Ambiente T={T} n={60} color="rgba(255,255,255,.85)" tam={[5, 12]} vel={30} />
         {fsvg(<><PiceaNieve T={T} x={290} y={1160} s={0.95} /><Rodaja x={780} y={880} r={170} n={30} p={kprog(T, K.Hi + 0.6, K.Hi + 2.2)} /></>)}
       </Escena>
       {/* 9 · la prueba de 2009: cinco violines detrás de una cortina */}
       <Escena T={T} a={K.Pb} b={K.Vo}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2a0a12, #4a1220)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#120e19, #1b101d)' }}></div>
         {fsvg(<>
           <ellipse cx={540} cy={1095} rx={520} ry={70} fill="#1a0509" />
           {[0, 1, 2, 3, 4].map((i) => { const on = T > K.Pb + 1.2 + i * 0.55, toca = on && T < K.Pb + 1.75 + i * 0.55;

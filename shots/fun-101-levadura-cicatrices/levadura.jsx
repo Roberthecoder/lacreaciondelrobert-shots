@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #101 · Esa levadura de tu pan no es inmortal: cuenta a sus hijas en cicatrices — NARRADO
 // (gancho 1 "esto no es X: es Y" · formato N1 por dentro + N5 el experimento). Guion y fuentes: guion.md · verificacion.md.
 // Morfología: Saccharomyces cerevisiae ovalada (≈5 × 6 µm), sin hifas; la yema brota por un cuello angosto con un anillo de

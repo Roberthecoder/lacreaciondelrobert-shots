@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #42 · Los gemelos idénticos no tienen las mismas huellas — NARRADO (N1 "Por dentro" + N2 comparación).
 // Datos: Wertheim 2011 (Fingerprint Sourcebook cap. 3), MedlinePlus 2022, Jain et al. 2002, Henneberg et al. 1997. Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (útero, bebé, huellas y flechas de tensión).

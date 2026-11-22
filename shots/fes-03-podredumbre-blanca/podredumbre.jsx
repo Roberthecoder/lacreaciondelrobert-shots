@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #03 · Día de Muertos · Fungi Mati: los hongos que regresan los árboles a la tierra (podredumbre blanca) — NARRADO, formato N1 "Por dentro".
 // Guion, fuentes y verificación: guion.md y verificacion.md. El dibujo es esquemático (células y hifas no están a escala exacta entre sí).
 const MADERA = { ambar: '#c98a2b', celulosa: '#f3e6c8', lumen: '#2a1d12', blanca: '#efeadb', corteza: '#6b4423', cortezaOsc: '#4a2e17' };

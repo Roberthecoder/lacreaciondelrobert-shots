@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #21 · Esa reja no se está ensuciando: está regresando a ser óxido — NARRADO (N1 por dentro + N5 estudio).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const OXI = '#c4561c', OXI2 = '#e07a2e', OXI3 = '#8a3a12', FE = '#9aa3b5', FE2 = '#5f6778', AL = '#dfe6ee', ALOX = '#3aa0ff', HEM = '#8e3b2a', PCOL = '#ffe11a';

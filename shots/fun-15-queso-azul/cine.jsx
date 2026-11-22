@@ -23,8 +23,15 @@ KC.ink = CINE.linea;
 KC.paper = '#131b2e';
 
 // Fondo oscuro con motas que flotan despacio: ninguna escena se queda sin movimiento (como en la referencia).
+// Escenas de «Pregunta» (el re-gancho de ~2 s): en casi todos los shots eran una lámina (un signo de interrogación sobre
+// un fondo vacío). Ahora la escena anterior se queda en pantalla, atenuada bajo un velo, y la pregunta va encima:
+// el sujeto del video nunca desaparece. CineCtx le avisa al fondo que debe ser velo y no fondo opaco.
+const CineCtx = React.createContext({ velo: false });
+
 function FondoMarca({ color = '#1b2a44', patron = 'puntos', T }) {
+  const ctx = React.useContext(CineCtx);
   const comp = typeof useComposition === 'function' ? useComposition() : null;
+  if (ctx && ctx.velo) return <div style={{ position:'absolute', inset:0, background:'rgba(8,12,22,.68)' }}></div>;
   const t = T != null && T !== 0 ? T : (comp ? comp.T : 0);
   const tinte = patron === 'oscuro' ? '#18233a' : cineMix(color, CINE.fondo, 0.8);
   const seed = [...String(color)].reduce((a, ch) => a + ch.charCodeAt(0), 3);
@@ -33,9 +40,31 @@ function FondoMarca({ color = '#1b2a44', patron = 'puntos', T }) {
   </div>;
 }
 
-// La cámara nunca está quieta: toda escena avanza hacia el sujeto al menos 10 %.
-const EscenaKit = window.Escena;
-function Escena(p) { return EscenaKit({ ...p, zoom: Math.max(p.zoom == null ? 0.05 : p.zoom, 0.1) }); }
+// La cámara nunca está quieta (toda escena avanza al menos 10 %) y la escena previa a una «Pregunta» dura hasta que
+// la pregunta termina. Vale para Escena y sus variantes de otros kits.
+function cineEscena(Kit) {
+  return function EscenaCine(p) {
+    const comp = typeof useComposition === 'function' ? useComposition() : null;
+    let b = p.b, velo = false;
+    if (comp && comp.CUES) {
+      const cs = Object.entries(comp.CUES).sort((x, y) => x[1] - y[1]);
+      const iA = cs.findIndex((c) => Math.abs(c[1] - p.a) < 0.08), iB = cs.findIndex((c) => Math.abs(c[1] - p.b) < 0.08);
+      if (iA >= 0 && /^Pregunta/i.test(cs[iA][0])) velo = true;
+      if (!velo && iB >= 0 && /^Pregunta/i.test(cs[iB][0]) && cs[iB + 1]) b = cs[iB + 1][1];
+    }
+    const el = Kit({ ...p, b, zoom: Math.max(p.zoom == null ? 0.05 : p.zoom, 0.1) });
+    return el ? <CineCtx.Provider value={{ velo }}>{el}</CineCtx.Provider> : null;
+  };
+}
+const Escena = cineEscena(window.Escena);
+const CINE_ESCENAS = { Escena };
+['EscenaC', 'EscenaD', 'EscenaFundido'].forEach((n) => { if (typeof window[n] === 'function') CINE_ESCENAS[n] = cineEscena(window[n]); });
+
+// Mundos del kit que traían cielo o fondo de color: pasan a su versión oscura.
+const CINE_MUNDOS = {};
+[['MundoPiel', 'fondo', '#00d2ff'], ['MundoPanMacro', 'fondo', '#ffd92e'], ['MundoSuelo', 'cielo', '#2fe6a7'], ['MundoBiorreactor', 'fondo', '#00d2ff']].forEach(([n, k, d]) => {
+  const W = window[n]; if (typeof W === 'function') CINE_MUNDOS[n] = (p) => W({ ...p, [k]: cineMix((p && typeof p[k] === 'string' && /^#[0-9a-f]{6}$/i.test(p[k])) ? p[k] : d, CINE.fondo, 0.78) });
+});
 
 function Subtitulo({ T, at, until, texto, idx, color = CINE.acento, tam = 50 }) {
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
@@ -108,4 +137,4 @@ function FondoLunares({ color }) { return FondoMarca({ color, patron: 'puntos' }
 const BarraKit = window.BarraEscala;
 function BarraEscala(p) { return BarraKit ? BarraKit({ ...p, x: 800, y: 232 }) : null; }
 
-Object.assign(window, { CINE, cineMix, FondoMarca, FondoLunares, Escena, Sticker, RobertF, Subtitulo, Robert, MarcaAgua, TarjetaEstudio, MitoTachado, Escala, BarraEscala });
+Object.assign(window, CINE_ESCENAS, CINE_MUNDOS, { CINE, cineMix, CineCtx, FondoMarca, FondoLunares, Sticker, RobertF, Subtitulo, Robert, MarcaAgua, TarjetaEstudio, MitoTachado, Escala, BarraEscala });

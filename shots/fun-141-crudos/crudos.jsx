@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #141 · ¿Por qué NO comer cualquier hongo crudo? — NARRADO (gancho 6 «¿Por qué NO…?», formato N3 capítulos + N1 por dentro).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
 

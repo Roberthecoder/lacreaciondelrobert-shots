@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #90 · El hongo más viejo que conocemos (Ourasphaira giraldae) — NARRADO.
 // Gancho 1 «Esto no es X: es Y» · formato N1 (roca en la mano → lámina al microscopio → la misma roca, encendida).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.

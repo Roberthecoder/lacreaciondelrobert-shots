@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #51 · Esto no es nieve: es espuma del río Santiago (El Salto y Juanacatlán) — NARRADO (N1 "Por dentro").
 // Datos: CNDH Recomendación 134/2022 (IMTA 2011, inspección 2021), CIDH Res. 7/2020, Gobierno de Jalisco (Revivamos el Río Santiago).
 // Ver guion.md y verificacion.md. Todo el dibujo es esquemático; no aparece ninguna empresa.
@@ -13,7 +14,7 @@ function MapaRio({ T, traza = 1, salto = 0 }) {
   const d = 'M ' + RS_RIO.map((p) => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' L ');
   const [lx, ly] = rsP(-103.05, 20.22), [gx, gy] = rsP(-103.35, 20.67), [sx, sy] = rsP(-103.18, 20.52);
   return <g>
-    <rect x={0} y={0} width={KW} height={KH} fill="#7fd0f5" />
+    <rect x={0} y={0} width={KW} height={KH} fill="#447088" />
     {Array.from({ length: 8 }, (_, i) => <path key={i} d={`M ${40 + (i % 3) * 60} ${520 + i * 90} q 20 -10 40 0 t 40 0`} stroke="#d4f1ff" strokeWidth={5} fill="none" opacity={0.6 + 0.3 * Math.sin(T * 2 + i)} />)}
     <MapaMexico x={RS_X0} y={RS_Y0} ancho={1000 * RS_MS} color="#ffe9a8" conCA={false} />
     <text x={60} y={1420} style={{ font:`700 34px ${KF.mono}` }} fill="#0b4d73">Océano Pacífico</text>
@@ -168,7 +169,7 @@ function RioSantiagoShot() {
       <Escena T={T} a={K.Co} b={K.Ca}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <rect x={0} y={660} width={KW} height={330} fill="#bfe3b4" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={660} width={KW} height={330} fill="#647968" stroke={KC.ink} strokeWidth={6} />
           {[[110, 860, '#ff9db5'], [220, 830, '#9de0ff'], [330, 870, '#ffd36b'], [160, 950, '#b8f0c8'], [290, 960, '#ffb38a'], [410, 940, '#d6c2ff']].map(([x, y, c], i) =>
             <g key={i} opacity={kprog(T, K.Co + 0.1 + i * 0.08, K.Co + 0.4 + i * 0.08)}><Casa x={x} y={y} c={c} /></g>)}
           {[[560, 900, 190], [770, 880, 220], [610, 980, 160], [800, 975, 200]].map(([x, y, w], i) =>

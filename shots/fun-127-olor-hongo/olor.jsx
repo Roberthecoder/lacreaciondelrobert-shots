@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #127 · Ese olor a hongo no es tierra: lo firma una molécula — NARRADO (N1 Por dentro, gancho 1 "Esto no es X: es Y").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 

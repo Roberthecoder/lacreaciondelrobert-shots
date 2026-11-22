@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #46 · Esa cáscara no se vuelve tierra en el basurero: se pudre y se vuelve gas — NARRADO (N1 por dentro).
 // Datos: SEMARNAT DBGIR 2026 (40.15 % orgánicos), IPCC AR6 WG1 Tabla 7.15 (GWP-20 CH4 no fósil 79.7), EPA, Meyer-Dombard et al. 2020,
 // NMSU Guía H-110, Pérez, Vergara y Silver 2023 (medición de 2018 en Nicasio, California). Ver guion.md y verificacion.md.
@@ -122,11 +123,11 @@ function CompostaShot() {
   // relleno en corte
   const cubre = kprog(T, K.S + 0.1, K.S + 1.2, kEase.suave);
   const relleno = <>
-    <rect x={0} y={0} width={KW} height={560} fill="#9be7ff" />
+    <rect x={0} y={0} width={KW} height={560} fill="#527b8e" />
     <rect x={0} y={520} width={KW} height={760} fill={CP.tierra} stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 4 }, (_, f) => Array.from({ length: 7 }, (_, i) => <Bolsa key={f + '-' + i} x={70 + i * 160 + (f % 2) * 70} y={760 + f * 130} s={0.75} color={['#3a3f4a', '#4b5563', '#2f6f3a', '#5a4a7a'][(i + f) % 4]} />))}
     <rect x={0} y={520} width={KW} height={110 * cubre} fill={CP.tierra2} />
-    <rect x={0} y={510} width={KW} height={22} fill={KC.leaf} opacity={cubre} />
+    <rect x={0} y={510} width={KW} height={22} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} opacity={cubre} />
   </>;
   // metano que sube (escena Arqueas)
   const burbujas = (t0, n, y0) => Array.from({ length: n }, (_, i) => { const u = ((T - t0) * 0.35 + i / n) % 1; if (T < t0 + i * 0.12) return null;
@@ -153,7 +154,7 @@ function CompostaShot() {
       {/* 1 · gancho: la cáscara va al bote */}
       <Escena T={T} a={K.G} b={K.B}>
         <FondoLunares color={KC.mint} />
-        {svg(<><rect x={0} y={1180} width={KW} height={740} fill="#e9d8b6" /><line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={6} />
+        {svg(<><rect x={0} y={1180} width={KW} height={740} fill="#7a7469" /><line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={6} />
           <Bote x={330} y={1180} s={1.25} tapa={tapaG} />
           {caeG < 1 && <Cascara x={330} y={klerp(250, 760, caeG)} s={0.9} rot={caeG * 200} T={T} />}
           <g opacity={kprog(T, K.G + 2.2, K.G + 2.6)}><path d={`M 330 470 Q 470 330 620 ${380 + Math.sin(T * 4) * 6}`} stroke={KC.ink} strokeWidth={10} fill="none" strokeDasharray="22 14" strokeDashoffset={-T * 40} />
@@ -242,7 +243,7 @@ function CompostaShot() {
       {/* 9 · el estudio: Nicasio, California (medido en 2018) */}
       <Escena T={T} a={K.E} b={K.Ca}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><rect x={0} y={1180} width={KW} height={740} fill="#b8d98a" /><line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={6} />
+        {svg(<><rect x={0} y={1180} width={KW} height={740} fill="#617453" /><line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={6} />
           <Hilera x={90} y={1180} w={900} T={T} sensores={kprog(T, K.E + 3.6, K.E + 4.2)} />
           {T > K.E + 4.4 && <Aire x={180} y={880} T={T} o={0.7} />}
           {(() => { const g = kprog(T, K.E + 5.0, K.E + 6.4, kEase.sale), g2 = kprog(T, K.E + 6.2, K.E + 7.6, kEase.sale); const base = 860, H = 380;
@@ -264,7 +265,7 @@ function CompostaShot() {
       {/* 10 · se calienta sola: más de 60 °C */}
       <Escena T={T} a={K.Ca} b={K.C} zoom={0.08}>
         <FondoLunares color={KC.orange} />
-        {svg(<><rect x={0} y={1180} width={KW} height={740} fill="#b8d98a" /><line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={6} />
+        {svg(<><rect x={0} y={1180} width={KW} height={740} fill="#617453" /><line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={6} />
           <Hilera x={60} y={1180} w={960} T={T} vapor={kprog(T, K.Ca + 1.0, K.Ca + 2.0)} />
           <Termo x={640} y={1000} v={kprog(T, K.Ca + 0.3, K.Ca + 2.2, kEase.suave) * 0.75} etiqueta={T > K.Ca + 2.0 ? '60 °C' : null} alto={480} /></>)}
         <EscalaFija texto="esquema" largo={0} y={1440} color={KC.ink} />
@@ -272,7 +273,7 @@ function CompostaShot() {
       {/* 11 · cierre: la receta y la misma cáscara, ahora tierra */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.mint} />
-        {svg(<><rect x={0} y={1180} width={KW} height={740} fill="#e9d8b6" /><line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={6} />
+        {svg(<><rect x={0} y={1180} width={KW} height={740} fill="#7a7469" /><line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={6} />
           <path d={`M 120 1180 Q 330 ${1180 - 170 - hazTierra * 40} 540 1180 Z`} fill={CP.tierra2} stroke={KC.ink} strokeWidth={7} />
           {caeC > 0 && <Cascara x={330} y={klerp(250, 1020, caeC)} s={0.9} rot={caeC * 200} pudre={hazTierra} deshace={hazTierra * 0.6} T={T} />}
           {hazTierra > 0.6 && <g transform={`translate(330 ${1020 - 20}) scale(${kprog(T, K.C + 5.2, K.C + 6.0, kEase.rebote)})`}>

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #43 · Tu taco de res contra el de frijol (huella de carbono de la comida) — NARRADO (N2 el número + N4 barras que crecen).
 // Datos: Our World in Data con datos de Poore y Nemecek (2018, Science), kg de CO2e por kg de alimento (promedio mundial, año del dato 2010).
 // Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #80 · Este hongo no tiene dos sexos: tiene más de veintitrés mil — NARRADO (gancho 1 "esto no es X: es Y" + N2 el número).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (cromosomas, ruedas, mapa y fíbula simplificados).
 // TODOS los textos en pantalla viven en TXT (arriba) para cambiarlos fácil si la verificación pide corregir algo.

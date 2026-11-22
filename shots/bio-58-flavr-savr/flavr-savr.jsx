@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #58 · El primer transgénico del súper fue un jitomate (Flavr Savr, 1994) — NARRADO (N1 por dentro + N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const VERDE = '#7cc24a', NARANJA = '#f39a2b', ROJO = '#e8361f', PG = '#9b5de5', MADERA = '#c98a4b', MADERA2 = '#a86a33';

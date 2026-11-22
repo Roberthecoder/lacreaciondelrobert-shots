@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #86 · Tu lavavajillas lava hasta a 80 grados… y ahí vive un hongo (la levadura negra Exophiala) — NARRADO.
 // Formato N1 Por dentro + N2 El número. Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
 

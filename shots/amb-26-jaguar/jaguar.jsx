@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #26 · El jaguar que nunca vas a ver (y cuántos quedan en México) — NARRADO (N5 el experimento + N4 la imagen que se llena).
 // Datos: 3er Censo Nacional del Jaguar (ANCJ, dato de 2024; Reuters, Por Esto y Gaceta UNAM 2025), UNAM Global 2021 y Silver et al. 2004 (Oryx).
 // Ver guion.md y verificacion.md. Todo el dibujo es esquemático (mapa, ubicaciones de los sitios y regiones).
@@ -324,7 +325,7 @@ function JaguarShot() {
             <text x={560} y={880} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.L + 1.4, K.L + 1.8)}>≠</text></>)}
         </div>}
         {T > K.L + 3.0 && <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.L + 3.0, K.L + 3.4) }}>
-          {svg(<><rect x={0} y={790} width={KW} height={170} fill="#c9a26a" stroke={KC.ink} strokeWidth={6} />
+          {svg(<><rect x={0} y={790} width={KW} height={170} fill="#6a5843" stroke={KC.ink} strokeWidth={6} />
             <circle cx={540} cy={640} r={70} fill="#6b4a2b" stroke={KC.ink} strokeWidth={6} /><circle cx={540} cy={1110} r={70} fill="#6b4a2b" stroke={KC.ink} strokeWidth={6} />
             <CamaraTrampa x={540} y={700} s={0.55} T={T} flash={flashEn(T, tfL)} /><CamaraTrampa x={540} y={1050} s={0.55} T={T} flash={flashEn(T, tfL)} />
             <Jaguar x={klerp(1180, 560, kprog(T, K.L + 3.0, tfL, kEase.sale))} y={885} s={0.3} T={T} paso={T < tfL ? (T - K.L) * 7 : 0.6} seed={7} espejo={true} /></>)}

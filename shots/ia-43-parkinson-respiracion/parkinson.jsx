@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #43 · La IA que busca Parkinson en cómo respiras dormido — NARRADO (N1 "Por dentro").
 // Datos: Yang et al., "Artificial intelligence-enabled detection and assessment of Parkinson's disease using nocturnal breathing signals",
 // Nature Medicine 28: 2207–2215 (2022). MedlinePlus (NIH). Ver guion.md y verificacion.md. Todo es esquemático.

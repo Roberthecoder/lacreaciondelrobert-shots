@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #84 · Eso no es un huevo: es un hongo a punto de nacer — NARRADO (formato N1 Por dentro + escenas de estudio N5).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es guía de identificación de hongos.
 // Viaje: huevo en el bosque del volcán → corte por dentro → hongo abierto → estudios y tianguis → el mismo huevo, ya transformado.
@@ -218,7 +219,7 @@ function EtqP({ T, at, until, x, y, texto, it = false, lado = 'der', color = KC.
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube');
   return <div style={{ position:'absolute', left:x, top:y, zIndex:41, opacity:e.o, display:'flex', alignItems:'center', gap:10, flexDirection: lado === 'der' ? 'row' : 'row-reverse', transform:`translate(${lado === 'der' ? 0 : '-100%'}, -50%)` }}>
-    <div style={{ width:56 * kprog(T, at, at + 0.4, kEase.sale), height:5, background:KC.ink, borderRadius:3, boxShadow:'0 0 0 2px rgba(255,255,255,.7)' }}></div>
+    <div style={{ width:56 * kprog(T, at, at + 0.4, kEase.sale), height:5, background:CINE.borde, borderRadius:3, boxShadow:'0 0 0 2px rgba(255,255,255,.7)' }}></div>
     <div style={{ font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color, background:fondo, padding:'4px 14px', borderRadius:14, whiteSpace:'nowrap' }}>{texto}</div>
   </div>;
 }

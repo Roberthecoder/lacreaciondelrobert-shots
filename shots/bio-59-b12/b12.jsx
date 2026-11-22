@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #59 · Tu B12 la hicieron bacterias — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (la molécula no es la estructura atómica completa).
 // Vaca y pastizal adaptados de shots/bio-02-vacas/vacas-comun.jsx.
@@ -104,7 +105,7 @@ function VacaB({ T = 0, x = 0, y = 0, s = 1, mastica = 0, brillo = 0 }) {
 }
 function PastizalB({ T, horizonte = 1240 }) {
   return <>
-    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#8fe8ff 0%, #00d2ff 65%, #7fe0c8 100%)' }}></div>
+    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4757 0%, #074257 65%, #284549 100%)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       <circle cx={920} cy={760} r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
       {[[860, 330, 60], [640, 420, 46]].map(([x, y, r], i) => <g key={i} transform={`translate(${mece(T, i + 4, 0.05) * 30} 0)`}><ellipse cx={x} cy={y} rx={r * 1.5} ry={r * 0.6} fill="#fff" stroke={KC.ink} strokeWidth={6} /></g>)}

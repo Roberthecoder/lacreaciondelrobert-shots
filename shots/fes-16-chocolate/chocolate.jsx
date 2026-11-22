@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #16 · San Valentín · Fungi Mati: Sin levaduras no hay chocolate — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md (verificado: verificacion.md). El dibujo es esquemático (levaduras, bacterias, enzimas y piezas del sabor simplificadas).
 const ROSA = '#ff4f9a', CHOCO = '#5a2f1b', CHOCO2 = '#7a4428', CHOCO3 = '#3a1d10', PULPA = '#fbf6ea', MAZ = '#f2a531', MAZ2 = '#d9781f';

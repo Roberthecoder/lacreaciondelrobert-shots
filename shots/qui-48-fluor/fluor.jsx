@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #48 · Ese buche de agua se lleva tu flúor (cómo el flúor rehace tu esmalte) — NARRADO (N1 por dentro + N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const ORO = '#F4C25A', PIEL = '#f1b48f', LABIO = '#e0646f', BACT = '#9b5de5', CAFE = '#7a4a22', ESMALTE = '#efe9da';
@@ -221,7 +222,7 @@ function Fluor() {
           {[[160, 900, 240], [460, 900, 330], [820, 900, 280]].map(([x, y, h], i) => <g key={i}>
             <path d={`M ${x - h * 0.9} ${y} L ${x} ${y - h} L ${x + h * 0.9} ${y} Z`} fill="#8a8f99" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
             <path d={`M ${x - h * 0.25} ${y - h * 0.72} L ${x} ${y - h} L ${x + h * 0.25} ${y - h * 0.72} Q ${x} ${y - h * 0.62} ${x - h * 0.25} ${y - h * 0.72} Z`} fill="#fff" /></g>)}
-          <rect x={0} y={900} width={KW} height={240} fill="#7fc36a" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={900} width={KW} height={240} fill="#446943" stroke={KC.ink} strokeWidth={6} />
           <g transform={`translate(540 1110) scale(${klerp(0.6, 1.25, kprog(T, mitadM, mitadM + 0.8, kEase.sale))})`}>
             <VasoAgua x={0} y={0} s={1} nivel={0.8} />
             {Array.from({ length: 9 }, (_, i) => <IonF key={i} T={T} ph={i} x={-44 + (i % 3) * 44} y={-40 - Math.floor(i / 3) * 50 + Math.sin(T * 2 + i) * 6} r={13} />)}
@@ -242,7 +243,7 @@ function Fluor() {
             <text x={660} y={795} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>AGUA</text>
           </g>
           {Array.from({ length: 8 }, (_, i) => { const t0 = K.Es + 3.0 + i * 0.25, p = kprog(T, t0, t0 + 0.7); return p > 0 && p < 1 ? <IonF key={i} T={T} ph={i} x={660 + (i % 3 - 1) * 30} y={klerp(520, 720, p)} r={14} /> : null; })}
-          <rect x={0} y={1110} width={KW} height={70} fill="#7fc36a" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={1110} width={KW} height={70} fill="#446943" stroke={KC.ink} strokeWidth={6} />
         </SvgCapa>
       </Escena>
       {/* 8 · casi 30 mil escolares, más de 60 % menos caries */}

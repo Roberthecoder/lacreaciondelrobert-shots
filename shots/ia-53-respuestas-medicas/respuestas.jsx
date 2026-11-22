@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #53 · ¿Un chatbot contesta mejor que tu médico? — NARRADO (N5 "El experimento" + N2 "El número").
 // Datos: Ayers et al., "Comparing Physician and Artificial Intelligence Chatbot Responses to Patient Questions Posted to a
 // Public Social Media Forum", JAMA Internal Medicine 183(6):589–596 (2023). Ver guion.md y verificacion.md.

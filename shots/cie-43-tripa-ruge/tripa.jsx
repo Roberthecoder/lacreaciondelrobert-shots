@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #43 · Por qué te ruge la tripa (y no siempre es hambre) — NARRADO (N1 "Por dentro": estómago e intestino con sus ondas).
 // Datos: Andrews 2002 (Scientific American), MedlinePlus 2024, MedicineNet (borborigmos); Deloose et al. 2012, Takahashi 2013,
 // Wang et al. 2025 (complejo motor migratorio, 90–120 min); Tack et al. 2016 (motilina y hambre). Ver guion.md y verificacion.md.
@@ -199,7 +200,7 @@ function Tripa() {
   const salon = (cierre) => {
     const ts = cierre ? grrC : grrG, mira = cierre ? 1 : miraG;
     return <>
-      <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#e0517f" opacity=".45" />
+      <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#75304e" opacity=".45" />
       <g transform={`translate(${tiembla(ts)} 0)`}>
         <Alumno x={ALU.x} y={ALU.y} s={ALU.s} color={KC.yellow} cara={cierre ? 'sonrie' : (T > ts[0] ? 'pena' : 'normal')} uid={cierre ? 'c' : 'g'}
           ventana={cierre ? kprog(T, K.Cierre + 1.0, K.Cierre + 1.5, kEase.sale) : 0}

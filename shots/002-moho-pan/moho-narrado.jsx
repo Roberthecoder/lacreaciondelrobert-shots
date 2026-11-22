@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot 002 · El moho del pan — versión NARRADA (formato N1 "Por dentro").
 // Las escenas y subtítulos se ajustan a la voz con narrar.mjs (window.SUBS); sin voz usan los tiempos estimados.
 // Guion y fuentes: guion.md

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #09 · Los trucos no sirven: Amanita phalloides — NARRADO (gancho 6 "¿Por qué NO…?" + N2 "qué sí sirve").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
 
@@ -64,7 +65,7 @@ function AmanitaShot() {
       <Escena T={T} a={K.A} b={K.M} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1080} width={KW} height={900} fill="#6b4a2b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1080} width={KW} height={900} fill="#3a2c24" stroke={KC.ink} strokeWidth={8} />
           {[[150, 1090, -20], [860, 1080, 30], [700, 1100, -50]].map(([x, y, r], i) => <path key={i} d="M -50 0 Q 0 -30 50 0 Q 0 20 -50 0 Z" transform={`translate(${x} ${y}) rotate(${r})`} fill="#c0702a" stroke={KC.ink} strokeWidth={4} />)}
           <Amanita x={420} y={1100} s={1.5} crece={kprog(T, K.A, K.A + 1.4)} />
           <Amanita x={720} y={1095} s={0.9} crece={kprog(T, K.A + 0.6, K.A + 1.8)} rot={8} />
@@ -75,7 +76,7 @@ function AmanitaShot() {
         <FondoLunares color={KC.pink} />
         {/* la amanita sigue ahí, al fondo, mientras se tachan los mitos: el sujeto no desaparece */}
         {fsvg(<g opacity=".32">
-          <rect x={0} y={1080} width={KW} height={900} fill="#6b4a2b" />
+          <rect x={0} y={1080} width={KW} height={900} fill="#3a2c24" />
           <Amanita x={420} y={1100} s={1.5} /><Amanita x={720} y={1095} s={0.9} rot={8} />
         </g>)}
       </Escena>
@@ -137,7 +138,7 @@ function AmanitaShot() {
       <Escena T={T} a={K.S} b={K.C}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1080} width={KW} height={900} fill="#6b4a2b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1080} width={KW} height={900} fill="#3a2c24" stroke={KC.ink} strokeWidth={8} />
           <Amanita x={430} y={1100} s={1.4} />
           <g transform={`translate(${klerp(900, 520, kprog(T, K.S + 0.3, K.S + 1.2, kEase.sale))} 760)`}>
             <circle r={120} fill="rgba(200,240,255,.35)" stroke={KC.ink} strokeWidth={14} />

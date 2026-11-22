@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #10 · Esta gelatina no se echó a perder (la piña fresca y la bromelina) — NARRADO (N5 experimento + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const GEL = '#e8336d', GEL2 = '#ff7aa2', PINA = '#ffd84a', PINA_OSC = '#c98a12', HOJA = '#2e9e4f', AGUA = '#7fc8ff', TIJ = '#ffe11a';

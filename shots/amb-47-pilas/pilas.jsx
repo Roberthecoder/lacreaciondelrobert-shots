@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #47 · ¿Una pila contamina 600 mil litros de agua? De dónde salió el dato — NARRADO (N2 el número + mito "¿Por qué NO…?").
 // Datos: notas que repiten la cifra (Opinión 2012, RPP 2015, Infobae 2019), Public Law 104-142 (EE. UU., 1996), EPA "Used Household Batteries",
 // Convenio de Minamata (Anexo A), Karnchanawong y Limpiteeprakan 2009 (Waste Management, Chiang Mai) y LGPGIR (México). Ver guion.md y verificacion.md.

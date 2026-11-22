@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #50 · Tu tortilla era un pasto: del teocintle al maíz — NARRADO (N1 por dentro + toque de N2).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (no está a escala).
 const PIEDRA = '#a08a68', PIEDRA2 = '#7a6548', GRANO = '#ffd23f', HOJA = '#3fbf4a', HOJA2 = '#2a8f37', TALLO = '#7cc35a';
@@ -153,7 +154,7 @@ function Teocintle() {
       <Escena T={T} a={K.G} b={K.Te} zoom={0.06} origen="35% 55%">
         <FondoMarca color={KC.yellow} T={T} />
         <SvgCapa>
-          <rect x={0} y={1250} width={KW} height={700} fill="#c98a4a" /><rect x={0} y={1250} width={KW} height={18} fill={KC.ink} />
+          <rect x={0} y={1250} width={KW} height={700} fill="#6a4c33" /><rect x={0} y={1250} width={KW} height={18} fill={CINE.borde} />
           <Planta T={T} x={300} y={1260} s={1.05} u={0} seed={2} />
           <Comal T={T} x={760} y={1150} s={0.9} inflar={kprog(T, K.G + 0.2, K.G + 1.4, kEase.rebote)} />
         </SvgCapa>
@@ -209,7 +210,7 @@ function Teocintle() {
       <Escena T={T} a={K.Se} b={K.Ga} zoom={0.04}>
         <FondoMarca color={KC.orange} T={T} />
         <SvgCapa>
-          <rect x={0} y={1240} width={KW} height={700} fill="#b5763c" /><rect x={0} y={1240} width={KW} height={16} fill={KC.ink} />
+          <rect x={0} y={1240} width={KW} height={700} fill="#60422c" /><rect x={0} y={1240} width={KW} height={16} fill={CINE.borde} />
           {[0, 1, 2, 3].map((i) => { const e = kprog(T, K.Se + 0.3 + i * 0.75, K.Se + 0.8 + i * 0.75, kEase.rebote);
             return e > 0 && <g key={i} opacity={Math.min(1, e * 1.5)}><Planta T={T} x={150 + i * 260} y={1250} s={0.55 * e} u={i / 3} seed={i + 4} /></g>; })}
           {[0, 1, 2].map((i) => <FlechaCurva key={i} x1={190 + i * 260} y1={840} x2={370 + i * 260} y2={840} p={kprog(T, K.Se + 0.9 + i * 0.75, K.Se + 1.3 + i * 0.75)} curva={40} color={KC.texto} grosor={6} T={T} />)}
@@ -232,7 +233,7 @@ function Teocintle() {
       <Escena T={T} a={K.Tb} b={K.Es} zoom={0.04}>
         <FondoMarca color={KC.cyan} T={T} />
         <SvgCapa>
-          <rect x={0} y={1250} width={KW} height={700} fill="#c98a4a" /><rect x={0} y={1250} width={KW} height={18} fill={KC.ink} />
+          <rect x={0} y={1250} width={KW} height={700} fill="#6a4c33" /><rect x={0} y={1250} width={KW} height={18} fill={CINE.borde} />
           <Planta T={T} x={460} y={1260} s={0.95} u={uTb} seed={9} />
         </SvgCapa>
         <Chip T={T} at={K.Tb + 0.3} until={K.Es - 0.3} texto="tb1 · una caña en vez de muchas ramas" y={1520} tam={36} borde={KC.mint} />
@@ -254,7 +255,7 @@ function Teocintle() {
       <Escena T={T} a={K.Ho} b={K.De} zoom={0.04}>
         <FondoMarca color={KC.mint} T={T} />
         <SvgCapa>
-          <rect x={0} y={900} width={KW} height={1000} fill="#9bcf7a" /><rect x={0} y={900} width={KW} height={14} fill={KC.ink} />
+          <rect x={0} y={900} width={KW} height={1000} fill="#526f4b" /><rect x={0} y={900} width={KW} height={14} fill={CINE.borde} />
           {[0, 1, 2].map((i) => <Planta key={i} T={T} x={110 + i * 170} y={910} s={0.4} u={0} seed={i + 12} marca={i === 1 ? kprog(T, K.Ho + 0.8, K.Ho + 1.3) : 0} />)}
           <ADNHebra T={T} x={50} y={1020} largo={460} alto={50} vueltas={3} resalta={(u) => u > 0.45 && u < 0.7 && T > K.Ho + 1.6} />
           {T > K.Ho + 1.6 && <text x={280} y={1110} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink}>Hopscotch</text>}
@@ -265,7 +266,7 @@ function Teocintle() {
       <Escena T={T} a={K.De} b={K.Bi} zoom={0.04}>
         <FondoMarca color={KC.yellow} T={T} />
         <SvgCapa>
-          <rect x={0} y={1150} width={KW} height={800} fill="#a8703a" /><rect x={0} y={1150} width={KW} height={16} fill={KC.ink} />
+          <rect x={0} y={1150} width={KW} height={800} fill="#59402b" /><rect x={0} y={1150} width={KW} height={16} fill={CINE.borde} />
           <MazorquitaTeo x={250} y={1100} s={1.1} n={8} T={T} abre={desarma * 0.6} />
           <g transform={`translate(0 ${klerp(-500, 0, kprog(T, K.De + 0.2, K.De + 0.9, kEase.rebote))})`}><Mazorca x={760} y={1090} s={0.95} rot={88} hojas={0.6} /></g>
           {Array.from({ length: 14 }, (_, i) => { const x = 600 + (i % 7) * 50, y = 1060 - Math.floor(i / 7) * 16, h = crece * (70 + (i * 23) % 50);
@@ -298,7 +299,7 @@ function Teocintle() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05} origen="35% 55%">
         <FondoMarca color={KC.yellow} T={T} />
         <SvgCapa>
-          <rect x={0} y={1250} width={KW} height={700} fill="#c98a4a" /><rect x={0} y={1250} width={KW} height={18} fill={KC.ink} />
+          <rect x={0} y={1250} width={KW} height={700} fill="#6a4c33" /><rect x={0} y={1250} width={KW} height={18} fill={CINE.borde} />
           <Planta T={T} x={300} y={1260} s={1.05} u={0} seed={2} />
           <Comal T={T} x={760} y={1150} s={0.9} inflar={1} />
           <g transform={`translate(0 ${klerp(300, 0, kprog(T, K.Ci + 0.4, K.Ci + 1.2, kEase.rebote))})`} opacity={kprog(T, K.Ci + 0.4, K.Ci + 0.8)}><Mazorca x={600} y={1000} s={0.55} rot={-20} hojas={1} /></g>

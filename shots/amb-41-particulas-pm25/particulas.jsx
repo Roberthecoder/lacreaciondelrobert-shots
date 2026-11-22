@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #41 · El polvo de la ciudad que tus ojos nunca van a ver (PM2.5) — NARRADO (N1 por dentro + N2 el número).
 // Datos: EPA "PM Basics" (tamaño, fuentes, gráfica de la arena de 90 µm), OMS 2021 (guía anual 5 µg/m³), SEDEMA Informe anual 2023
 // (promedio PM2.5 = 20 µg/m³; 1 ene 2023 contingencia por pirotecnia), CAMe 1 ene 2026 (recomendaciones). Ver guion.md y verificacion.md.
@@ -42,8 +43,8 @@ function Calle({ T, tono = 0, nube = 1 }) {
       {Array.from({ length: Math.floor((1060 - top) / 80) }, (_, r) => Array.from({ length: Math.floor((w - 20) / 50) }, (_, k) => <rect key={r + '-' + k} x={x + 18 + k * 50} y={top + 24 + r * 80} width={26} height={40} rx={4} fill="#ffe9a6" stroke={KC.ink} strokeWidth={3} opacity={0.9} />))}</g>)}
     {/* rayo de sol entre los edificios */}
     <polygon points="210,470 330,470 760,1100 520,1100" fill="#fff6c2" opacity={0.42 + 0.08 * Math.sin(T * 2)} />
-    <rect x={0} y={1100} width={KW} height={KH - 1100} fill="#5d6068" />
-    <rect x={0} y={1100} width={KW} height={18} fill="#c9ccd2" stroke={KC.ink} strokeWidth={5} />
+    <rect x={0} y={1100} width={KW} height={KH - 1100} fill="#343842" />
+    <rect x={0} y={1100} width={KW} height={18} fill="#6a6e77" stroke={KC.ink} strokeWidth={5} />
     {Array.from({ length: 7 }, (_, i) => <rect key={i} x={((i * 200 - T * 260) % 1400 + 1400) % 1400 - 200} y={1470} width={110} height={16} rx={8} fill="#f3f0e6" />)}
     <Coche x={((T * 240) % 1500) - 200} y={1240} s={0.95} color={KC.red} T={T} />
     <Coche x={1300 - ((T * 180 + 600) % 1500)} y={1400} s={0.8} color={KC.blue} T={T} />
@@ -255,7 +256,7 @@ function ParticulasShot() {
       {/* 3 · de dónde salen */}
       <Escena T={T} a={K.O} b={K.Pu}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><rect x={0} y={1100} width={KW} height={KH - 1100} fill="#8a7a64" /><rect x={0} y={1100} width={KW} height={14} fill={KC.ink} />
+        {svg(<><rect x={0} y={1100} width={KW} height={KH - 1100} fill="#4a4440" /><rect x={0} y={1100} width={KW} height={14} fill={CINE.borde} />
           <Obra x={140} y={1100} T={T} /><Directas T={T} x0={140} y0={1040} seed={1} />
           <path d="M 260 1100 L 330 1100 L 300 1180 L 220 1180 Z" fill="#b8874a" opacity=".0" />
           <Fogata x={330} y={1095} T={T} s={0.8} /><Directas T={T} x0={330} y0={990} seed={2} />
@@ -314,14 +315,14 @@ function ParticulasShot() {
 
       {/* 8 · 1 de enero de 2023: contingencia por cohetes y fogatas */}
       <Escena T={T} a={K.A} b={K.S} fondo="#0d1424">
-        {svg(<><rect x={0} y={0} width={KW} height={KH} fill="#0d1424" />
+        {svg(<><rect x={0} y={0} width={KW} height={KH} fill="#0c1220" />
           {Array.from({ length: 40 }, (_, i) => { const q = krng(i + 3); return <circle key={i} cx={q() * KW} cy={q() * 800} r={2 + q() * 2} fill="#fff" opacity={0.3 + 0.4 * Math.abs(Math.sin(T * 2 + i))} />; })}
           <g opacity={0.8}><Skyline T={T} y={1150} estaciones={0} /></g>
           {[[0.2, 260, KC.pink], [0.8, 720, KC.yellow], [1.4, 480, KC.mint], [2.1, 880, KC.cyan], [2.7, 200, KC.orange], [3.3, 600, KC.pink], [3.9, 380, KC.yellow], [4.5, 820, KC.lilac]].map(([d, x, c], i) =>
             <Cohete key={i} T={T} t0={K.A + d} x={x} y={1100} color={c} alto={480 + (i % 3) * 80} />)}
           <Fogata x={160} y={1170} T={T} s={0.9} /><Fogata x={900} y={1180} T={T} s={0.8} />
-          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#23262e" />
-          <rect x={0} y={1150 - humoNY * 700} width={KW} height={humoNY * 700 + 20} fill="#8d8a86" opacity={0.45 * humoNY} /></>)}
+          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#161a25" />
+          <rect x={0} y={1150 - humoNY * 700} width={KW} height={humoNY * 700 + 20} fill="#4c4c51" opacity={0.45 * humoNY} /></>)}
       </Escena>
       <Chip T={T} at={K.A + 1.0} until={K.S - 0.2} texto="1 ene 2023 · contingencia por PM2.5" y={1440} x={540} tam={32} borde={KC.pink} />
 

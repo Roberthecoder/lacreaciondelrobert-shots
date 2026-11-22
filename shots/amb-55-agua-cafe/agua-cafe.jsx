@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #55 · Tu taza de café esconde unos 130 litros de agua (y casi todos son lluvia) — NARRADO (N2 el número + N4 la imagen que se llena).
 // Datos: Mekonnen y Hoekstra (HESS 2011; Report 47, 2010; datos 1996–2005), Chapagain y Hoekstra (Ecol. Econ. 2007; datos 1995–99),
 // SADER (2022; promedio 2017–2021). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -171,7 +172,7 @@ function AguaCafeShot() {
       <Escena T={T} a={K.Ll} b={K.Ri}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <rect x={0} y={1060} width={KW} height={300} fill="#8a5a33" />
+          <rect x={0} y={1060} width={KW} height={300} fill="#4a3428" />
           <path d={`M 0 1060 Q 270 1040 540 1060 T 1080 1060`} fill="none" stroke={KC.ink} strokeWidth={8} />
           <Nube T={T} x={690} y={430} s={1} llueve={kprog(T, K.Ll + 0.2, K.Ll + 0.6)} largo={260} />
           <Cafeto T={T} x={700} y={1060} s={1.05} />

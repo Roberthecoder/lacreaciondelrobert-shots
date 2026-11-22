@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #149 · Ese sombrero no es de fieltro: es un hongo que te daba fuego — NARRADO (N1 Por dentro + N5: el estudio de Ötzi como escena).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -390,7 +391,7 @@ function YescaShot() {
       </Escena>
       {/* 6 · el estudio: Ötzi en el glaciar; la bolsa del cinturón con yesca */}
       <Escena T={T} a={K.O} b={K.Pi}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#7fd4ff, #cdefff)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#284257, #3d4957)' }}></div>
         {fsvg(<g opacity={1 - kprog(T, K.O + 5.0, K.O + 5.5)}>
           <Alpes T={T} />
           <g transform={`translate(${klerp(-120, 0, kprog(T, K.O, K.O + 1.2, kEase.sale))} 0)`}><OtziSilueta x={300} y={1130} s={1.0} T={T} /></g>

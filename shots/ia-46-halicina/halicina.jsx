@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #46 · La molécula para la diabetes que una IA convirtió en antibiótico — NARRADO (N3 "Capítulos y medidores" + toque N1).
 // Datos: Stokes et al., "A Deep Learning Approach to Antibiotic Discovery", Cell 180(4):688–702 (2020); MIT News (20 feb 2020);
 // Liu et al., Nature Chemical Biology 19:1342 (2023). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

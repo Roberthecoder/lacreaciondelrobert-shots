@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Fungi Mati #03 · Esto no es plástico: la seta rosa (Pleurotus djamor) — NARRADA (N1 "Por dentro" + N5) y MUDO (M4 "Ciclo").
 // Fotos reales: cultivo de Robert (feb–abr 2026, video "Pink oyster from spore print to fruiting"). Guion y fuentes: guion.md.
 const AVS = (n) => 'assets/stickers/' + n + '.png';

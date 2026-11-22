@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #46 · Saltar en un elevador que cae (casi seguro) no te salvaría — NARRADO (N6 mito «¿Por qué NO…?» + N3 medidores).
 // Datos: caída libre v = √(2gh) (cálculo simplificado, sin aire), Baird 2012, Barnes 2018, Otis 1854, Title 8 §3035/§3042, Otis Elevator.
 // Ver guion.md y verificacion.md. Tono tranquilo: nunca se dibuja un choque.

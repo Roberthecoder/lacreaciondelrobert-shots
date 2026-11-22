@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #73 · Este pasto no aguanta el calor solo: lo salva el virus de un hongo — NARRADO (gancho 1 "Esto no es X: es Y").
 // Guion y fuentes: guion.md · verificacion.md (Márquez et al. 2007, Science; Redman et al. 1999). El dibujo es esquemático.
 

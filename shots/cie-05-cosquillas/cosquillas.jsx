@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #05 · Por qué no te puedes hacer cosquillas — NARRADO (N5 "El experimento" + N1).
 // Datos: Blakemore, Frith y Wolpert 1999 (J Cogn Neurosci, robots), Blakemore, Wolpert y Frith 1998 (Nat Neurosci, cerebelo) y 2000 (Neuroreport),
 // Ishiyama y Brecht 2016 (Science) e Ishiyama, Kaufmann y Brecht 2019 (Curr Biol) con ratas. Ver guion.md y verificacion.md.

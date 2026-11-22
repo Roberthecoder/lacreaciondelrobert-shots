@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Biotecnológico #03 · CRISPR lo inventaron las bacterias — versión NARRADA (N1 "Por dentro" + N5 "El experimento").
 // Viaje: yogur (macro) → cadena de bacterias → adentro de una bacteria (memoria CRISPR) → experimento → el mismo yogur.
 

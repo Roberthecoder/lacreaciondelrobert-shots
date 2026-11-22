@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #69 · Un hongo ya vivió en tus pulmones: Pneumocystis jirovecii — NARRADO (gancho 3 "Tu cuerpo en una imagen" + N1 "Por dentro").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
 

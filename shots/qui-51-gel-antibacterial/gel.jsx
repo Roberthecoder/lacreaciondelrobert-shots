@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #51 · Ese gel no te lava las manos (gel antibacterial y alcohol) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const PIEL = '#f1b48f', PIEL2 = '#d9906b', GEL = '#bfe9ff', GELB = '#6fb6dc', MUGRE = '#8a5a2b', GRASA = '#ffd25a';
@@ -139,7 +140,7 @@ function BarraMitad({ T, at, until, y = 1470 }) {
     </div>
     <div style={{ position:'relative', height:40, borderRadius:20, background:'rgba(255,255,255,.75)', border:`5px solid ${KC.ink}`, overflow:'hidden' }}>
       <div style={{ width:`${56 * g}%`, height:'100%', background:KC.red }}></div>
-      <div style={{ position:'absolute', left:'50%', top:-4, bottom:-4, width:6, background:KC.ink }}></div>
+      <div style={{ position:'absolute', left:'50%', top:-4, bottom:-4, width:6, background:CINE.borde }}></div>
     </div>
     <div style={{ position:'absolute', left:450, top:96, transform:'translateX(-50%)', font:`700 26px ${KF.mono}`, color:KC.ink }}>½</div>
   </div>;

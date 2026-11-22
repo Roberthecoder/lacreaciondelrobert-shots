@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Biotecnológico #02 · Las vacas viven de microbios — gemelo MUDO (M4 "Ciclo", loop de 61.5 s).
 // Pasto → bocado → rumiar → rumen → energía → proteína → eructo → abono → pasto otra vez.
 // El último cuadro antes del cierre es igual al primero: la vaca pastando en el mismo pasto.

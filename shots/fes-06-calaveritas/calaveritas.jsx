@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #06 · Día de Muertos · Químico: las calaveritas de azúcar se arman solas — NARRADO (N3 capítulos y medidores + N5 experimento).
 // Guion y fuentes: guion.md. El dibujo es esquemático (la molécula de sacarosa y la red del cristal están simplificadas).
 const ROSA = '#ff4f9a', AMBAR = '#f2b84b', MIEL = '#d98a1e', BARRO = '#b4643a', BARRO2 = '#8f4a26', AZUCAR = '#fbf8f1', COBRE = '#c8693a';

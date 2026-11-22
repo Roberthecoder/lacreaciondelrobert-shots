@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #10 · Tú contra un bot: ¿quién resuelve mejor los captchas? — NARRADO (N2 "El número" + giro histórico).
 // Datos: Searles et al., USENIX Security 2023 (UC Irvine); Goodfellow et al., ICLR 2014 (Google); von Ahn et al., Science 2008;
 // Google (TechCrunch 2012; Security Blog 2014); documentación de reCAPTCHA v3. Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

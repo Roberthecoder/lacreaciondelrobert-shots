@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Biotecnológico #01 · Las ramas de la biotecnología por colores — versión NARRADA (N4 "La imagen que se llena").
 // Escenas y subtítulos se ajustan a la voz con narrar.mjs (window.SUBS); sin voz usan los tiempos estimados.
 

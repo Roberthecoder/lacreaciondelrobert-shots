@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #45 · La IA que hace el pronóstico de 10 días en menos de un minuto — NARRADO (N2 "El número" + N3 "Capítulos y medidores").
 // Datos: Lam et al., "Learning skillful medium-range global weather forecasting", Science 382:1416–1421 (2023) · ECMWF (25 feb 2025, AIFS) · CENAPRED (2026).
 // Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -317,7 +318,7 @@ function Pronostico() {
 
       {/* 7 · ciclones (esquemático) y México */}
       <Escena T={T} a={K.Ci} b={K.Eu}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2a7fd6, #1b5fb0)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#122c4c, #0e2442)' }}></div>
         <SVGF>
           <g opacity={1 - kprog(T, mx - 0.1, mx + 0.4)}>
             <Traza pts={trayReal} p={pTray} color="#fff" ancho={9} guion="18 14" />

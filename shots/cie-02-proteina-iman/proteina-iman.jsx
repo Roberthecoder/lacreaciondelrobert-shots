@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot cie-02 · Científico #02 — "La proteína que responde a un imán" (MagLOV, Oxford, Nature 2026).
 // Dos versiones en un mismo archivo: ImanNarradoApp (N1 + N5) y ImanCicloApp (gemelo mudo M4).
 // Guion, correcciones del video viejo y fuentes: guion.md. Los dibujos son esquemáticos:
@@ -164,7 +165,7 @@ function ImanNarrado() {
 
       {/* 3 · NOMBRE — el estudio */}
       <EscenaFundido T={T} a={K.N} b={K.A} zoom={0.04} fondo={KC.dark}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0f1c33, #07090f)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0b1222, #090d19)' }}></div>
         <Ambiente T={T} n={22} seed={11} color="rgba(120,180,255,.3)" tam={[3, 9]} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g opacity={0.5}><Proteina T={T} x={540} y={1180} s={0.8} excita={0.4} emite={0.3} /></g>
@@ -175,9 +176,9 @@ function ImanNarrado() {
 
       {/* 4 · AVENA — de dónde salió */}
       <EscenaFundido T={T} a={K.A} b={K.Q} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#8fe8ff 0%, #00d2ff 68%, #7fe0c8 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4757 0%, #074257 68%, #284549 100%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <rect x={0} y={1420} width={KW} height={500} fill={KC.leaf} />
+          <rect x={0} y={1420} width={KW} height={500} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} />
           <path d="M0 1420 Q 270 1392 540 1420 T 1080 1420" fill={KC.leaf} stroke={KC.ink} strokeWidth={8} />
           <Avena T={T} x={290} y={1430} s={1.35} />
           <Avena T={T} x={140} y={1470} s={0.85} seed={8} />
@@ -220,7 +221,7 @@ function ImanNarrado() {
 
       {/* 7 · GIRO — dos caminos */}
       <EscenaFundido T={T} a={K.Gi} b={K.Ca} zoom={0.03} fondo={KC.dark}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#141f33, #07090f)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d1322, #090d19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g opacity={kprog(T, K.Gi + 0.2, K.Gi + 0.8)}>
             <Espines T={T} x={540} y={680} s={1.15} alineado={1} sep={180} />
@@ -261,7 +262,7 @@ function ImanNarrado() {
 
       {/* 10 · RADIO — ODMR, célula por célula */}
       <EscenaFundido T={T} a={K.R} b={K.Av} zoom={0.03} fondo={KC.dark}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#101a2a, #07090f)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0c1220, #090d19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {/* antena y ondas de radio */}
           <g transform="translate(540 560)">
@@ -284,7 +285,7 @@ function ImanNarrado() {
 
       {/* 11 · AVES — hipótesis */}
       <EscenaFundido T={T} a={K.Av} b={K.C} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#ffd98a 0%, #ff9f68 55%, #ff7aa2 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#4a4439 0%, #4a3430 55%, #4a2b3f 100%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {[[300, 700, 1], [540, 600, 0.78], [760, 760, 0.62]].map(([bx, by, bs], i) => (
             <g key={i} transform={`translate(${bx + Math.sin(T * 0.8 + i) * 40} ${by + Math.sin(T * 1.6 + i) * 18}) scale(${bs})`}>

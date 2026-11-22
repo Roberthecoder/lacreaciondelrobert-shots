@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #30 · Esa mancha negra no es hollín: los hongos de Chernóbil — NARRADO (gancho 1 "Esto no es X: es Y", N1 Por dentro + tramo N5).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -160,7 +161,7 @@ function ChernobilShot() {
       <Escena T={T} a={K.R} b={K.E} zoom={0.06}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={0} y={1060} width={KW} height={900} fill="#7b8a5a" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1060} width={KW} height={900} fill="#424c3b" stroke={KC.ink} strokeWidth={8} />
           <Sarcofago x={540} y={1060} />
           <Trebol x={900} y={960} r={46} />
           <Traje x={klerp(-80, 330, kprog(T, K.R + 0.3, K.R + 3.2))} y={1110} s={0.9} paso={Math.sin(T * 9)} />

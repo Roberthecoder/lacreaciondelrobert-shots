@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #55 · Seis semanas con un tutor de IA que valieron como hasta dos años de escuela — NARRADO (N2 "El número" + N5).
 // Datos: De Simone et al., "From Chalkboards to Chatbots", World Bank Policy Research Working Paper 11125 (2025; piloto de 2024
 // en Benin City, Nigeria) y blog del Banco Mundial (9 ene 2025). Ver guion.md y verificacion.md. Dibujos esquemáticos.

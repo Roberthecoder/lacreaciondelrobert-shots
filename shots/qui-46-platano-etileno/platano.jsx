@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #46 · El plátano que madura a la fruta de al lado (etileno) — NARRADO (N5 experimento + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const VERDE = '#7cc242', AMAR = '#ffd23f', CAFE = '#6b3f1d', PAPEL = '#c99a5b';

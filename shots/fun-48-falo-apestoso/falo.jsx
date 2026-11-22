@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #48 · El hongo que apesta a muerto a propósito: Phallus impudicus — NARRADO (N1 "Por dentro", gancho 1 "Esto no es X: es Y").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Escala base de las piezas: 20 px = 1 cm (s = 1). Huevo hasta 6 cm; tallo blanco, hueco y esponjoso; sombrero de 2–4 cm con gleba café olivo;
@@ -225,7 +226,7 @@ function FaloShot() {
         </>)}
         {/* regla de 6 cm sobre el huevo (2.5 × 20 px/cm = 50 px/cm → 300 px) */}
         <div style={{ position:'absolute', left:270, top:760, width:300, height:0, borderTop:`8px solid ${KC.ink}`, opacity:kprog(T, K.Hu + 1.4, K.Hu + 1.8), zIndex:30 }}>
-          <div style={{ position:'absolute', left:-4, top:-26, width:8, height:44, background:KC.ink }}></div><div style={{ position:'absolute', right:-4, top:-26, width:8, height:44, background:KC.ink }}></div>
+          <div style={{ position:'absolute', left:-4, top:-26, width:8, height:44, background:CINE.borde }}></div><div style={{ position:'absolute', right:-4, top:-26, width:8, height:44, background:CINE.borde }}></div>
         </div>
       </Escena>
       {/* 4 · brota: el tallo sale en unas horas (cámara rápida) */}

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #47 · El veneno más potente también es medicina (toxina botulínica) — NARRADO (N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. Todo el dibujo es esquemático y no está a escala.
 const PIEL = '#f1b48f', PIEL2 = '#d98f6b', TOX = '#ff3b2f', SNAP = '#F4C25A', VES = '#7fdcff', MUS = '#e36b6b';

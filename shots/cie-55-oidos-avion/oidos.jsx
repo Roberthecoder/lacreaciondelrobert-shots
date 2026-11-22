@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #55 · Por qué se te tapan los oídos en el avión — NARRADO (N1 "Por dentro": oído medio y trompa de Eustaquio).
 // Datos: Mayo Clinic, MedlinePlus, ENT Health (AAO-HNS), 14 CFR §25.841, Manual MSD. Ver guion.md y verificacion.md.
 // Sin cifras de presión en pantalla (las barras del medidor son un esquema). No se muestra soplar con la nariz tapada.

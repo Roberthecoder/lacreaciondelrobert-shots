@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #41 · Tu cerebro no se congela: es tu paladar — NARRADO (N1 "Por dentro" + N5 el popote de 2012).
 // Datos: ICHD-3 4.5, Harvard Health, Cleveland Clinic, Serrador et al. 2012 (Experimental Biology, resumen de congreso),
 // Kaczorowski y Kaczorowski 2002 (BMJ). Ver guion.md y verificacion.md. Dibujo esquemático: vasos, nervio y arteria no van a escala.

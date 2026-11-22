@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #39 · Este lodo es una bodega de carbono (manglares y carbono azul) — NARRADO (N1 "Por dentro").
 // Datos: Donato et al. 2011 (Nature Geoscience), CONABIO (SMMM 2025, página "Manglares", folleto "Manglares de México"),
 // Conservation International, Simpson et al. 2023, NOAA. Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

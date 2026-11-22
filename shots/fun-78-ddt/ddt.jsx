@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #78 · Esa madera blanca no está sucia: el hongo que rompe el DDT — NARRADO (gancho 1 «Esto no es X: es Y», N1 + N5).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -260,7 +261,7 @@ function DdtShot() {
       <Escena T={T} a={K.G} b={K.D} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1120} width={KW} height={800} fill="#3f8f4a" />
+          <rect x={0} y={1120} width={KW} height={800} fill="#244f33" />
           {[80, 260, 470, 690, 900].map((px, i) => <path key={i} d={`M ${px} 1130 l 12 -40 l 10 40 M ${px + 30} 1130 l 8 -30 l 9 30`} stroke="#2a6a32" strokeWidth={6} fill="none" />)}
           <TroncoBlanco x={70} y={890} hunde={kprog(T, K.G + 0.55, K.G + 0.9)} T={T} />
           <Dedo x={570} y={900} p={kprog(T, K.G + 0.2, K.G + 1.5)} />
@@ -371,7 +372,7 @@ function DdtShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1120} width={KW} height={800} fill="#3f8f4a" />
+          <rect x={0} y={1120} width={KW} height={800} fill="#244f33" />
           {[80, 260, 470, 690, 900].map((px, i) => <path key={i} d={`M ${px} 1130 l 12 -40 l 10 40 M ${px + 30} 1130 l 8 -30 l 9 30`} stroke="#2a6a32" strokeWidth={6} fill="none" />)}
           <TroncoBlanco x={70} y={890} T={T} />
           <Ddt x={300} y={640} s={0.85} T={T} rompe={kprog(T, K.C + 0.3, K.C + 1.5)} />

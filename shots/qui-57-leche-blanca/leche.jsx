@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #57 · Lo blanco de tu leche no es un pigmento (micelas de caseína, grasa y luz rebotando) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const LECHE = '#fbfaf3', DESC = '#e2ebff', GRASA = '#fff1b8', CASEINA = '#f4efe4', AZUL = '#4f8bff', ROJO = '#ff4d3a', VERDE = '#3fdf6a';
@@ -250,10 +251,10 @@ function Leche() {
       </Escena>
       {/* 8b · igual que el cielo y el atardecer */}
       <Escena T={T} a={mitadRo} b={K.Ra} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,#2f6bff 0%,#5aa0ff 30%,#ffb36b 52%,#ff7a3a 59.9%,#3a2a3a 60%,#241a28 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,#142757 0%,#1f3557 30%,#4a3a31 52%,#4a2b24 59.9%,#161624 60%,#11121f 100%)' }}></div>
         <SvgCapa>
           <circle cx={700} cy={1152} r={kprog(T, mitadRo + 0.2, mitadRo + 1.2, kEase.sale) * 130} fill="#ff5a2a" stroke={KC.ink} strokeWidth={8} />
-          <rect x={0} y={1152} width={KW} height={770} fill="#241a28" />
+          <rect x={0} y={1152} width={KW} height={770} fill="#171422" />
           {[[200, 640], [420, 560], [820, 700]].map(([x, y], i) => <g key={i} transform={`translate(${x + Math.sin(T * 0.3 + i) * 20} ${y})`}><ellipse rx={110} ry={34} fill="#fff" opacity={0.8} /><ellipse cx={50} cy={-20} rx={70} ry={30} fill="#fff" opacity={0.8} /></g>)}
         </SvgCapa>
       </Escena>

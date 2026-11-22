@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Biotecnológico #05 · La petunia que brilla sola — gemelo MUDO (M4 "Ciclo", loop de 61.5 s).
 // Día → anochece y las flores se prenden → adentro: el ciclo de 4 enzimas da vueltas (cada enzima, un sonido;
 // la luz suena con "la nota de la luz verde") → las flores jóvenes brillan más → amanece: el sol tapa el brillo

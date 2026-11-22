@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #38 · Ese refresco no solo es dulce: es ácido (el refresco y tu esmalte) — NARRADO (N1 por dentro + N2 el número).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático. Lata genérica, sin marca.
 const REF = '#5a2a12', REF2 = '#7a3d1c', ESMALTE = '#fbfaf3', DENTINA = '#f2d88f', PULPA = '#ff8fa3', LATA = '#2fb3a0';

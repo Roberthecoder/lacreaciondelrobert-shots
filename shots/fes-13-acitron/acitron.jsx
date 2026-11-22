@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #13 · Día de Reyes · Ambiental: el acitrón de la rosca sale de un cactus protegido — NARRADO (N1 por dentro + N2 el número).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (biznaga, mapa, células y ósmosis simplificados).
 const PAN = '#d8893a', PAN2 = '#b8662a', PAN3 = '#8a4216', COSTRA = '#f3e3b0', ATE = '#c3263a', ATE2 = '#f0a020', PAPAYA = '#ef7b2c';

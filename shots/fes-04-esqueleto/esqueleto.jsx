@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #04 · Día de Muertos · Científico: tu calavera se está reconstruyendo — NARRADO (N1 "Por dentro": macro → micro → macro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (la calavera es de Día de Muertos, no una anatomía exacta).
 const HUESO = '#efe2c4', HUESO2 = '#dcc89f', MEDULA = '#3a1420';
@@ -43,7 +44,7 @@ function Calavera({ T, x, y, s = 1, gira = 1, brilla = 0 }) {
 const OSTEONAS = [[230, 900], [560, 820], [880, 930], [380, 1180], [720, 1150], [180, 1420], [560, 1430], [930, 1400]];
 function HuesoCorte({ T, etiquetas = 1 }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <rect x={0} y={0} width={KW} height={KH} fill={KC.noche} />
+    <rect x={0} y={0} width={KW} height={KH} fill={cineMix(KC.noche, CINE.fondo, 0.55)} />
     {/* matriz de hueso */}
     <rect x={0} y={680} width={KW} height={KH} fill={HUESO2} />
     {/* periostio: membrana en la superficie con nervios (amarillo) y vasos (rojo/azul) */}

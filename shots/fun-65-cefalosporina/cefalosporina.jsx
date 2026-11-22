@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #65 · El antibiótico que salió de junto a un desagüe: la cefalosporina — NARRADO (gancho 1 "Esto no es X: es Y" + N1 "Por dentro").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (moléculas simplificadas). No es consejo médico.
 

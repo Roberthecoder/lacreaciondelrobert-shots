@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot bio-06 · GEMELO MUDO (M4 "Ciclo", 61.5 s en loop): el ciclo de la renovación del intestino.
 // Un solo mundo continuo con la cámara viajando (nunca un corte seco). Termina donde empezó:
 // la cripta hace células nuevas sin el gen y vuelve a entrar lactosa, que es el primer cuadro.

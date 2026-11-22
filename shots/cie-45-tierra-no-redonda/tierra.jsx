@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #45 · La Tierra no es una esfera perfecta — NARRADO (N2 "El número": 43 km + Everest vs Chimborazo).
 // Datos: NASA Earth Fact Sheet (WGS84), NOAA Ocean Service (Chimborazo), medición China–Nepal 2020, gravedad normal WGS84.
 // El aplastamiento se dibuja EXAGERADO (el real es ≈ 0.3 %) y en pantalla se dice. Ver guion.md y verificacion.md.

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #111 · El veneno que avisa días después: Cortinarius y la orelanina — NARRADO
 // Gancho 6 (mito peligroso) + formato N1 Por dentro con N3 (reloj de días). Guion y fuentes: guion.md · verificacion.md.
 // El dibujo es esquemático. No es guía de identificación ni consejo médico.
@@ -190,7 +191,7 @@ function CortinariusShot() {
       <Escena T={T} a={K.Co} b={K.Es} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1110} width={KW} height={120} fill="#6b4a2a" />
+          <rect x={0} y={1110} width={KW} height={120} fill="#3a2c23" />
           <path d={`M 0 1110 ${Array.from({ length: 28 }, (_, i) => `L ${i * 40 + 20} ${1100 - (i % 3) * 10} L ${i * 40 + 40} 1110`).join(' ')}`} fill="#4f8a3a" stroke={KC.ink} strokeWidth={4} />
           <Cortinario T={T} x={290} y={1115} s={1.1} edad={0} cortina={kprog(T, K.Co + 1.0, K.Co + 2.0)} crece={kprog(T, K.Co, K.Co + 1.0)} seed={2} />
           <Cortinario T={T} x={700} y={1115} s={1.15} edad={1} oxido={0.6} crece={kprog(T, K.Co + 0.3, K.Co + 1.3)} seed={5} />
@@ -268,7 +269,7 @@ function CortinariusShot() {
       <Escena T={T} a={K.Ev} b={K.Ci}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1120} width={KW} height={110} fill="#6b4a2a" />
+          <rect x={0} y={1120} width={KW} height={110} fill="#3a2c23" />
           <Porcini T={T} x={250} y={1125} s={1.15} crece={kprog(T, K.Ev + 3.4, K.Ev + 4.0)} />
           <Cortinario T={T} x={760} y={1125} s={1.3} edad={1} oxido={0.8} crece={kprog(T, K.Ev + 3.8, K.Ev + 4.6)} seed={7} />
           {T > K.Ev + 4.6 && <text x={505} y={900} textAnchor="middle" style={{ font:`400 ${200 * kprog(T, K.Ev + 4.6, K.Ev + 5.0, kEase.rebote)}px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={8}>≠</text>}

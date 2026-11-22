@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #13 · Champiñones al sol: la fábrica de vitamina D — NARRADO (gancho 1 "Esto no es X: es Y" + N1/N5).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
 
@@ -174,14 +175,14 @@ function VitaminaDShot() {
       </Escena>
       {/* 2 · a oscuras: cuarto de cultivo */}
       <Escena T={T} a={K.O} b={K.E} zoom={0.06}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#141a2e, #0b0f1c)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d1221, #0a0f1c)' }}></div>
         {fsvg(<>
           {[760, 1060].map((yy, k) => <g key={k}>
             <rect x={60} y={yy} width={960} height={40} rx={8} fill="#5d4a3a" stroke={KC.ink} strokeWidth={6} />
             <rect x={60} y={yy - 30} width={960} height={34} fill="#3b2c22" />
             {Array.from({ length: 6 }, (_, i) => <Champi key={i} T={T} x={140 + i * 160} y={yy - 22} s={0.42 + ((i + k) % 3) * 0.05} crece={kprog(T, K.O + 0.2 + i * 0.12 + k * 0.3, K.O + 1.0 + i * 0.12 + k * 0.3)} />)}
           </g>)}
-          <rect x={0} y={0} width={KW} height={KH} fill="#05070d" opacity=".35" />
+          <rect x={0} y={0} width={KW} height={KH} fill="#080b14" opacity=".35" />
           <circle cx={540} cy={430} r={60} fill="none" stroke="#ffffff" strokeWidth={8} opacity=".25" />
           <line x1={500} y1={390} x2={580} y2={470} stroke="#ffffff" strokeWidth={8} opacity=".25" />
         </>)}

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #56 · En el espacio nadie oye las explosiones — NARRADO (N1 "Por dentro" + N5 "El experimento" de Boyle 1660).
 // Datos: NASA Science (sonido = onda mecánica, no viaja en el vacío; radio = onda electromagnética, familia de la luz),
 // Boyle 1660 (reloj en el recipiente vacío), NASA 2022 (sonificación del cúmulo de Perseo). Ver guion.md y verificacion.md.

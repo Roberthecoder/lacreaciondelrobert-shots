@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #67 · La espina de rosal que te mete un hongo: esporotricosis — NARRADO (gancho 1 "Esto no es X: es Y" + N1 "Por dentro").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (sin fotos de lesiones). No es consejo médico.
 

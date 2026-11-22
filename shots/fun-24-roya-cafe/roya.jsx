@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #24 · Ese polvo naranja no es óxido: la roya del café (Hemileia vastatrix) — NARRADO (N1 Por dentro).
 // Viaje: jarrito de café de olla + rama → hoja (envés) → espora, estoma, haustorios (microscopio) → cafeto → Ceilán → 2012–13 → Timor → la misma taza.
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
@@ -251,7 +252,7 @@ function RoyaShot() {
       <Escena T={T} a={K.C} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1180} width={KW} height={800} fill="#6b4a2b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={800} fill="#3a2c24" stroke={KC.ink} strokeWidth={8} />
           <Cafeto T={T} x={540} y={1200} s={1.0} roya={1} caida={kprog(T, K.C + 0.3, K.C + 3.4)} cerezas={1 - 0.6 * kprog(T, K.C + 2.0, K.C + 3.4)} />
         </>)}
       </Escena>
@@ -338,7 +339,7 @@ function RoyaShot() {
           <Tarjeta x={260} y={700} texto="Caturra" w={300} k={kprog(T, K.Ti + 0.7, K.Ti + 1.1, kEase.rebote)} />
           {T > K.Ti + 1.2 && <path d="M 260 770 L 260 850" stroke={KC.ink} strokeWidth={10} strokeLinecap="round" opacity={kprog(T, K.Ti + 1.2, K.Ti + 1.5)} />}
           <Tarjeta x={260} y={900} texto="Catimor" w={300} color={KC.yellow} k={kprog(T, K.Ti + 1.4, K.Ti + 1.8, kEase.rebote)} />
-          <rect x={0} y={1200} width={KW} height={800} fill="#6b4a2b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1200} width={KW} height={800} fill="#3a2c24" stroke={KC.ink} strokeWidth={8} />
           <g opacity={kprog(T, K.Ti + 1.6, K.Ti + 2.0)}><Cafeto T={T} x={720} y={1210} s={0.62} roya={kprog(T, K.Ti + 3.8, K.Ti + 4.8)} cerezas={1} /></g>
           {T > K.Ti + 2.0 && <g transform={`translate(720 ${840}) scale(${kprog(T, K.Ti + 2.0, K.Ti + 2.4, kEase.rebote)})`} opacity={1 - 0.6 * kprog(T, K.Ti + 3.8, K.Ti + 4.4)}>
             <path d="M 0 -110 L 90 -80 Q 95 30 0 110 Q -95 30 -90 -80 Z" fill="rgba(47,224,168,.35)" stroke={KC.ink} strokeWidth={8} />

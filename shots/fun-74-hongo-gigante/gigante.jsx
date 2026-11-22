@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #74 · Esa costra no es corteza: el cuerpo de hongo más grande jamás documentado — NARRADO
 // (gancho 1 "Esto no es X: es Y" + N2 de cifras con viaje tronco → poros y esporas → el mismo tronco con la regla).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
@@ -276,7 +277,7 @@ function GiganteShot() {
       </Escena>
       {/* 11 · contraste: el hongo más grande está bajo tierra (Armillaria, Oregón) */}
       <Escena T={T} a={K.C} b={K.Ci}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#8fd3ff 0 36%, #4a2e1a 36% 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4257 0 36%, #1b171b 36% 100%)' }}></div>
         {fsvg(<>
           {[90, 250, 420, 600, 780, 950].map((cx, i) => <Conifera key={i} x={cx} y={700} s={0.7} T={T} seed={i + 5} />)}
           <rect x={0} y={690} width={1080} height={20} fill="#3a7a2a" />

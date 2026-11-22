@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #44 · Ese brillo de tu jarrito puede ser plomo (barro vidriado con greta) — NARRADO (N1 por dentro + N2 el número).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático. Barro sí, plomo no: respeto a los alfareros.
 const BARRO = '#c8642f', BARRO_OSC = '#9c4520', CRUDO = '#d9a27a', CAFE = '#5b2e14', PB = '#9aa3ad', HMAS = '#5fe3ff', SALSA = '#d7351f';

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #39 · La prueba del talón (tamiz neonatal, fenilcetonuria y la prueba de Guthrie) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const SANGRE = '#c3132b', SECA = '#7d1420', PIEL = '#f6c3a0', PIEL2 = '#e7a37e', PHE = KC.gold2, ENZ = '#9b5de5', FRENO = '#b18cff';

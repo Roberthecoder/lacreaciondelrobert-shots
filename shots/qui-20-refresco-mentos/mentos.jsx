@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #20 · Esa fuente no es una reacción química (refresco de dieta y Mentos) — NARRADO (N5 experimento + capítulos N3).
 // Guion y fuentes: guion.md · verificación: verificacion.md (Coffey, Am. J. Phys. 2008). El dibujo es esquemático.
 // Sin marcas dibujadas: botella genérica de refresco y pastilla genérica.
@@ -270,14 +271,14 @@ function Mentos() {
       <Escena T={T} a={K.Mo} b={K.Se}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <rect x={0} y={G1} width={KW} height={14} fill={KC.ink} />
+          <rect x={0} y={G1} width={KW} height={14} fill={CINE.borde} />
           <Cinta x0={X0} y={G1} pxm={pxm} />
           <Arco T={T} x0={mmx} y0={G1 - mdy} x1={X0 + 4.66 * pxm} yg={G1} alto={150} f={kprog(T, K.Mo + 0.3, K.Mo + 1.1)} grosor={16} />
           <BotellaPet T={T} x={mbx} y={G1} s={ms} rot={mrot} tapa={false} nivel={klerp(0.9, 0.3, kprog(T, K.Mo + 0.3, K.Mo + 1.5))} id="m1" />
           <Pastilla x={45} y={G1 - 40} s={0.32} />
           <text x={X0 + 4.66 * pxm} y={G1 - 40} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Mo + 1.1, K.Mo + 1.4)}>4.7 m</text>
           <g opacity={lane2}>
-            <rect x={0} y={G2} width={KW} height={14} fill={KC.ink} />
+            <rect x={0} y={G2} width={KW} height={14} fill={CINE.borde} />
             <Cinta x0={X0} y={G2} pxm={pxm} />
             <Arco T={T} x0={mmx} y0={G2 - mdy} x1={X0 + 0.3 * pxm} yg={G2} alto={30} f={kprog(T, K.Mo + 3.0, K.Mo + 3.4)} grosor={14} />
             <BotellaPet T={T} x={mbx} y={G2} s={ms} rot={mrot} tapa={false} nivel={0.8} id="m2" />

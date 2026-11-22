@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #53 · Esa ramita es una oruga: el hongo-oruga del Tíbet (Ophiocordyceps sinensis, yartsa gunbu) — NARRADO.
 // Formato N1 "Por dentro" + tramo N2 (el precio). Gancho 1 "Esto no es X: es Y". Guion y fuentes: guion.md · verificacion.md.
 // Morfología (Kew, Catalogue of Fungi of Colombia): estroma oscuro que sale de la cabeza del huésped, 1.7–8 cm; pie 2–3.5 cm × 2–3 mm.

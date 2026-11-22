@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #114 · Este hongo se come… si no tomas alcohol: Coprinopsis atramentaria y la coprina — NARRADO
 // (gancho 1 "Esto no es X: es Y" con mito peligroso + N1 Por dentro + N5). Guion y fuentes: guion.md · verificacion.md.
 // El dibujo es esquemático. No es guía para identificar hongos.

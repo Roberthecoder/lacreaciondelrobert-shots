@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #56 · Tu sal también trae plástico (microplásticos en la sal de mesa) — NARRADO (N2 el número + toque de N1).
 // Datos: Kim et al. 2018 (Environ. Sci. Technol.), Universidad de Colima 2026 (Talanta), NOAA, Secretaría de Economía, OMS 2022.
 // Ver guion.md y verificacion.md. Todo el dibujo es esquemático (salina, mapas, persona y partículas).
@@ -67,7 +68,7 @@ function Salina({ T, nivel = 1, cristales = 0 }) {
   const r = krng(11);
   const charcos = [[380, 600], [640, 860], [900, 1060]];
   return <g>
-    <rect x={0} y={1040} width={KW} height={200} fill="#c79a5b" stroke={KC.ink} strokeWidth={6} />
+    <rect x={0} y={1040} width={KW} height={200} fill="#68543c" stroke={KC.ink} strokeWidth={6} />
     <path d={`M 0 940 ${Array.from({ length: 9 }, (_, i) => `Q ${i * 40 + 20} ${930 + Math.sin(T * 3 + i) * 10} ${i * 40 + 40} 940`).join(' ')} L 360 940 L 360 1240 L 0 1240 Z`} fill="#2f8fd8" stroke={KC.ink} strokeWidth={6} />
     <text x={160} y={1010} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={6} paintOrder="stroke">mar</text>
     {charcos.map(([a, b], i) => <g key={i}>

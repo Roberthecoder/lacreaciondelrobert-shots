@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Fungi Mati #01 · ¿Qué es un hongo? — versión NARRADA (N1 "Por dentro") y gemelo MUDO (M4 "Ciclo").
 // Guion y fuentes: guion.md. El dibujo es esquemático (escala aproximada).
 const AVS = (n) => 'assets/stickers/' + n + '.png';
@@ -105,7 +106,7 @@ function HongoNarrado() {
       <Escena T={T} a={K.M} b={K.E} fondo={KC.yellow}>
         <div style={{ position:'absolute', inset:0, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.35) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <rect x={0} y={1180} width={KW} height={740} fill="#6b4a32" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={740} fill="#3a2c27" stroke={KC.ink} strokeWidth={8} />
           <Manzano T={T} x={290} y={1184} s={1.05} />
           {Array.from({ length: 18 }, (_, i) => <line key={i} x1={760 + Math.cos(i) * 20} y1={1190} x2={760 + Math.cos(i * 1.7) * 230} y2={1220 + (i % 6) * 60} stroke="#f4ecd8" strokeWidth={4} opacity={kprog(T, K.M + 0.4 + i * 0.04, K.M + 0.8 + i * 0.04)} />)}
           <Champinon x={790} y={1184} s={1.6} crece={1} abre={1} rot={mece(T, 4, 0.2) * 2} />

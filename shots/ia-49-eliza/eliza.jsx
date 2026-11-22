@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #49 · ELIZA: el "psicólogo" de unas cuantas reglas — NARRADO (N1 "Por dentro" + N6 "Guía en pasos").
 // Datos: Weizenbaum, Communications of the ACM 9(1):36–45 (1966); Weizenbaum, Computer Power and Human Reason (1976);
 // Hofstadter (1995); Lane et al., arXiv:2501.06707 (2025). Ver guion.md y verificacion.md.
@@ -98,7 +99,7 @@ function Secretos({ T, x0, y0, x1, y1, n = 6, vel = 0.32, alto = 220, o = 1 }) {
 // Escena del consultorio (gancho y cierre).
 function Consultorio({ T, traje = 1, reglas = 0, secretos = 1 }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <rect x={0} y={1180} width={KW} height={740} fill="#7fd9b8" />
+    <rect x={0} y={1180} width={KW} height={740} fill="#44746a" />
     <line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={8} />
     <Divan x={330} y={1120} s={1} T={T} />
     <Psicologo x={790} y={1000} s={0.95} T={T} traje={traje} reglas={reglas} />
@@ -149,9 +150,9 @@ function Oficina({ T, K }) {
   const sale = kprog(T, K.S + 4.0, K.S + 5.0, kEase.suave), puerta = kprog(T, K.S + 4.7, K.S + 5.4, kEase.sale);
   const teclea = Math.sin(T * 18) > 0 ? 4 : 0;
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <rect x={0} y={0} width={KW} height={1180} fill="#f6e3b0" />
+    <rect x={0} y={0} width={KW} height={1180} fill="#807966" />
     {Array.from({ length: 12 }, (_, i) => <line key={i} x1={i * 96} y1={0} x2={i * 96} y2={1180} stroke="#e9cf8d" strokeWidth={10} />)}
-    <rect x={0} y={1180} width={KW} height={740} fill="#9c6b45" />
+    <rect x={0} y={1180} width={KW} height={740} fill="#533d30" />
     <line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={8} />
     {/* puerta */}
     <rect x={860} y={700} width={220} height={480} fill="#3a2a20" stroke={KC.ink} strokeWidth={8} />

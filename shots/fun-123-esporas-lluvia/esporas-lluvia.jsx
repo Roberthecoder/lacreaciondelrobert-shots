@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #123 · Esa seta no es solo un hongo: es una fábrica de viento… y quizá de lluvia — NARRADO
 // (N3 capítulos + N1 por dentro). Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Escala del jardín: 44 px = 1 cm (la seta mide ~12 cm; la regla de 10 cm = 440 px).

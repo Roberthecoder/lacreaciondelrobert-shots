@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Ambiental #03 · La verdad incómoda de los bioplásticos — NARRADA (N3 "Capítulos y medidores": 3 problemas)
 // y gemelo MUDO (M2 "¿Por qué no…?": pregunta fija, Lupa de rayos X y medidores). Guion y fuentes: guion.md. Dibujo esquemático.
 const AVS = (n) => 'assets/stickers/' + n + '.png';
@@ -35,12 +36,12 @@ function VasoPLA({ x, y, s = 1, roto = 0, deforma = 0, T = 0, cafe = 0, etiqueta
 function Jardin({ T, cascaras = 1, crece = 0 }) {
   const g = krng(31), pie = Array.from({ length: 12 }, () => [80 + g() * 920, 1000 + g() * 420, g() * 360, g() < 0.5]);
   return <>
-    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#8fe8ff, #00d2ff 60%)' }}></div>
+    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4757, #074257 60%)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       <circle cx={880} cy={330} r={80} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
       <rect x={0} y={820} width={KW} height={1100} fill={TIERRA} />
       <path d="M 0 820 Q 270 790 540 820 T 1080 820" fill={KC.leaf} stroke={KC.ink} strokeWidth={8} />
-      <rect x={0} y={820} width={KW} height={40} fill={KC.leaf} />
+      <rect x={0} y={820} width={KW} height={40} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} />
       {Array.from({ length: 30 }, (_, i) => <circle key={i} cx={(i * 137) % KW} cy={900 + (i * 89) % 900} r={6 + (i % 4) * 3} fill={TIERRA2} />)}
       {pie.map(([x, y, r, hoja], i) => <g key={i} transform={`translate(${x} ${y}) rotate(${r}) scale(${cascaras})`} opacity={cascaras}>
         {hoja ? <path d="M -40 0 Q 0 -30 40 0 Q 0 30 -40 0 Z" fill="#d18f2c" stroke={KC.ink} strokeWidth={4} /> : <path d="M -36 -10 Q 0 -30 36 -10 L 30 12 Q 0 0 -30 12 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />}
@@ -158,7 +159,7 @@ function BioplasticosNarrado() {
       <Escena T={T} a={K.D2} b={K.Tr}>
         <FondoLunares color={KC.yellow} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-          <rect x={0} y={1090} width={KW} height={40} fill="#4a4f5a" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={1090} width={KW} height={40} fill="#2a2f3b" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 9 }, (_, i) => { const x = ((i * 150 + (T - K.D2) * 160) % 1350) - 130; return i === 4 ? <VasoPLA key={i} x={x} y={1088} s={0.55} etiqueta={false} /> : <BotellaPET key={i} x={x} y={1080} s={0.9} />; })}
           {/* lote reciclado: se enturbia si entra mucho PLA */}
           <g transform="translate(540 700)"><rect x={-260} y={-110} width={520} height={220} rx={30} fill={mixHex('#9fe0ff', '#c9c2b5', kprog(T, K.D2 + 3.0, K.D2 + 5.0))} stroke={KC.ink} strokeWidth={8} />
@@ -244,7 +245,7 @@ function BioplasticosMudo() {
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* dos mitades: jardín | composta industrial */}
       <Escena T={T} a={K.P} b={K.M} zoom={0}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#8fe8ff, #00d2ff 60%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4757, #074257 60%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <rect x={0} y={1000} width={540} height={920} fill={TIERRA} /><rect x={0} y={985} width={540} height={30} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />
           <rect x={540} y={760} width={540} height={1160} fill="#2b1d12" />
@@ -255,7 +256,7 @@ function BioplasticosMudo() {
         </svg>
       </Escena>
       <Escena T={T} a={K.M} b={K.R}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#7fc4ff, #2346ff 40%, #0d1424)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#283e57, #101d57 40%, #0b101e)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {Array.from({ length: 20 }, (_, i) => { const u = ((T * 0.15 + i / 20) % 1); return <circle key={i} cx={(i * 113) % KW} cy={klerp(1700, 600, u)} r={8 + (i % 3) * 4} fill="none" stroke="#fff" strokeWidth={3} opacity={0.5 * Math.sin(Math.PI * u)} />; })}
           <g transform={`translate(${330 + mece(T, 3, 0.1) * 60} ${1050 + mece(T, 7, 0.1) * 40}) rotate(${mece(T, 2, 0.1) * 20})`}><VasoPLA x={0} y={150} s={0.9} T={T} /></g>
@@ -266,7 +267,7 @@ function BioplasticosMudo() {
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><PilaIndustrial x={540} y={1330} s={1.1} T={T} /></svg>
       </Escena>
       <Escena T={T} a={K.L} b={FIN + 1} zoom={0}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#8fe8ff, #00d2ff 60%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4757, #074257 60%)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <rect x={0} y={1000} width={540} height={920} fill={TIERRA} /><rect x={0} y={985} width={540} height={30} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />
           <rect x={540} y={760} width={540} height={1160} fill="#2b1d12" />

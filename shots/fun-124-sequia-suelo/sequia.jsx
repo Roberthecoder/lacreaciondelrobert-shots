@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #124 · Esta tierra seca no está muerta: está aguantando la respiración — NARRADO
 // (gancho 1 «Esto no es X: es Y»; formato N1 Por dentro + N5 El experimento).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.

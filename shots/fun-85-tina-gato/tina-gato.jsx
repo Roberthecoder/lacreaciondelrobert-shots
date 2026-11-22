@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #85 · Ese anillo rojo no es un gusano: es un hongo, y te lo pudo pasar tu gato — NARRADO (N1 Por dentro + N2 El número).
 // La tiña (ringworm), Microsporum canis. Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico ni veterinario.
 
@@ -313,7 +314,7 @@ function TinaGatoShot() {
         {fsvg(<>
           <g clipPath="url(#irisQ)">
             <clipPath id="irisQ"><circle cx={760} cy={830} r={1400 * kprog(T, K.Q - 0.35, K.Q + 0.5, kEase.sale)} /></clipPath>
-            <rect x={0} y={0} width={KW} height={KH} fill={KC.noche} />
+            <rect x={0} y={0} width={KW} height={KH} fill={cineMix(KC.noche, CINE.fondo, 0.55)} />
             {/* capas vivas de abajo */}
             {Array.from({ length: 18 }, (_, i) => <ellipse key={'c' + i} cx={30 + i * 62} cy={1110 + (i % 2) * 20} rx={34} ry={28} fill="#e9a3a8" stroke={KC.ink} strokeWidth={3} opacity=".85" />)}
             {/* capa córnea: escamas de queratina en tejas */}

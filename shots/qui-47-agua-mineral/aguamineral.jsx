@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #47 · Ese piquete casi no son las burbujas (agua mineral con gas y tu lengua) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático. Botellas sin marca.
 const VIDRIO = '#9fe3c0', AGUA = '#d8f3ff', LENGUA = '#f27a8f', LENGUA2 = '#d9566f', ENZ = '#2fe0a8', HPLUS = '#ff3b2f', NERVIO = '#ffd23f';

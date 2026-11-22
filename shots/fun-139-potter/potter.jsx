@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #139 · Esa acuarela de hongo no es un adorno de cuento — NARRADO (gancho 1 «Esto no es X: es Y» · N1 + N5).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático: no copia ningún dibujo de Beatrix Potter ni sus personajes.
 // Piezas propias (todo SVG, se dibuja desde T). Se carga después de kit-robert.jsx.

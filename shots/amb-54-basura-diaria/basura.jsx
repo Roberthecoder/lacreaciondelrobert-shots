@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #54 · Tu basura de un año: casi 400 kilos, y a dónde van — NARRADO (N4 la imagen que se llena + N2 el número).
 // Datos: SEMARNAT/INECC, Diagnóstico Básico para la Gestión Integral de los Residuos 2026 (datos del CNGMD 2023, año 2022). Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (la pila, la bolsa en corte, el mapa, Jalisco y los sitios de disposición).
@@ -167,13 +168,13 @@ function BasuraShot() {
       {/* 5 · el camión recoge 77 de cada 100 */}
       <Escena T={T} a={K.Ca} b={K.P}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<><rect x={0} y={700} width={KW} height={14} fill="#9aa2ad" />{bolsitas}{quedan}<Camion T={T} x={camX} y={702} s={0.95} /></>)}
+        {svg(<><rect x={0} y={700} width={KW} height={14} fill="#525864" />{bolsitas}{quedan}<Camion T={T} x={camX} y={702} s={0.95} /></>)}
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Di} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {svg(<><text x={270} y={1000} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 270 820)`}>?</text>
-          <rect x={0} y={1150} width={KW} height={14} fill="#7a68b8" /><Camion T={T} x={klerp(420, -300, kprog(T, K.P, K.Di + 0.4))} y={1152} s={0.6} /></>)}
+          <rect x={0} y={1150} width={KW} height={14} fill="#423c6a" /><Camion T={T} x={klerp(420, -300, kprog(T, K.P, K.Di + 0.4))} y={1152} s={0.6} /></>)}
       </Escena>
       {/* 7 · el diagnóstico: 2,250 sitios, 52 rellenos sanitarios */}
       <Escena T={T} a={K.Di} b={K.De}>
@@ -208,7 +209,7 @@ function BasuraShot() {
       </Escena>
       {/* 11 · cierre: la misma pila, en otro lugar */}
       <Escena T={T} a={K.C} b={FIN}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#bfe6ff 0%, #ffe9b0 52%, #a8794a 52%, #8a5f37 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#394757 0%, #4a4842 52%, #332b28 52%, #2b2423 100%)' }}></div>
         {svg(<><Pila T={T} t0={K.C - 0.3} x={360} y={1130} cada={0.12} />
           {[0, 1, 2, 3, 4, 5, 6].map((i) => <circle key={i} cx={330 + Math.sin(T * 5 + i * 2) * 260} cy={850 + Math.cos(T * 4 + i * 3) * 80} r={6} fill={KC.ink} />)}
           {[0, 1, 2, 3].map((i) => { const u = ((T * 0.5 + i / 4) % 1); return <path key={i} d={`M ${170 + i * 100} ${1200 + u * 160} q 6 14 0 26`} stroke="#3b2a12" strokeWidth={8} fill="none" strokeLinecap="round" opacity={1 - u} />; })}</>)}

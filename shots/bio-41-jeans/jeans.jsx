@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #41 · Tus jeans los deslavó un hongo (celulasas, amilasas y lacasas en la mezclilla) — NARRADO (N1 por dentro + N3 capítulos).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático: hilo, fibras, enzimas y moléculas no están a escala entre sí.
 const INDIGO = '#24427e', INDIGO2 = '#1a3263', DESL = '#9fc0e6', ALGODON = '#f4efe4', PIEDRA = '#bdb7ad';

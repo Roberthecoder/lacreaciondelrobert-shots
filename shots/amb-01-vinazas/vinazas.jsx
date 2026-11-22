@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Ambiental #01 · Vinazas del tequila — versión NARRADA (N2 "El número" + N1 "Por dentro") y gemelo MUDO (M1 "La música son los datos").
 // Guion y fuentes: guion.md. El dibujo es esquemático.
 const AVS = (n) => 'assets/stickers/' + n + '.png';
@@ -101,7 +102,7 @@ function Rio({ T, cafe = 0, o2 = 1 }) {
   const agua = mixHex('#2fb6ff', '#6b4a22', cafe * 0.85), g = krng(17);
   const bur = Array.from({ length: 26 }, () => [g() * KW, g(), 6 + g() * 10]);
   return <>
-    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#9feaff, #00d2ff)' }}></div>
+    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#314857, #074257)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       <path d="M 0 560 Q 300 520 540 560 T 1080 560 L 1080 1920 L 0 1920 Z" fill={agua} stroke={KC.ink} strokeWidth={8} />
       <path d="M 0 1500 Q 300 1450 540 1500 T 1080 1490 L 1080 1920 L 0 1920 Z" fill="#c9a26a" stroke={KC.ink} strokeWidth={8} />
@@ -204,8 +205,8 @@ function Barra({ T, n = 12, a = 0, conIconos = false, lleno = 1 }) {
   return <>
     <FondoLunares color={KC.pink} punto="rgba(255,255,255,.25)" />
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-      <rect x={0} y={1200} width={KW} height={720} fill="#a8703f" />
-      <rect x={0} y={1180} width={KW} height={40} fill="#c98a4f" stroke={KC.ink} strokeWidth={8} />
+      <rect x={0} y={1200} width={KW} height={720} fill="#59402e" />
+      <rect x={0} y={1180} width={KW} height={40} fill="#6a4c36" stroke={KC.ink} strokeWidth={8} />
       <rect x={60} y={940} width={960} height={22} rx={6} fill="#c98a4f" stroke={KC.ink} strokeWidth={6} />
       {Array.from({ length: 12 }, (_, i) => {
         const at = a + i * 0.16; if (i >= n || T < at) return null;
@@ -291,7 +292,7 @@ function VinazasNarrado() {
         </svg>
       </Escena>
       <Escena T={T} a={K.Gr} b={K.C}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2b0f63, #0d1424)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#130f2e, #0b101e)' }}></div>
         <Granja T={T} crece={kprog(T, K.Gr + 0.2, K.C)} />
         <Ambiente T={T} n={30} seed={8} color="rgba(255,255,230,.5)" tam={[3, 8]} />
       </Escena>
@@ -375,7 +376,7 @@ function VinazasMudo() {
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><Pina x={540} y={900} s={1.6} fibra={kprog(T, K.B + 2, K.B + 4.5, kEase.suave)} T={T} /></svg>
       </Escena>
       <Escena T={T} a={K.S} b={K.L}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2b0f63, #0d1424)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#130f2e, #0b101e)' }}></div>
         <Granja T={T} crece={kprog(T, K.S + 0.3, K.L - 0.5)} />
       </Escena>
       <Escena T={T} a={K.L} b={FIN + 1} zoom={0}>

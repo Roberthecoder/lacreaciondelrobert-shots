@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #07 · Día Mundial de la Ciencia para la Paz y el Desarrollo · Biotecnológico: la viruela — NARRADO (N1 "Por dentro" + N3 capítulos).
 // Guion, fuentes y verificación: guion.md y verificacion.md. El dibujo es esquemático (virus, células, piel, mapas y personajes simplificados).
 const PIEL = '#e9b48f', PIEL2 = '#d3966f', PIEL3 = '#f4cfb4', BLUSA = '#7b5ea7', BLUSA2 = '#5f4688';
@@ -208,10 +209,10 @@ function CortePiel({ T, a, vesicula = 0, virus = 0, linfos = 0, foto = 0 }) {
   const lx = (i) => klerp(300 + i * 220, 520 + i * 110, linfos), ly = (i) => klerp(1080, 820 + (i % 2) * 40, linfos);
   return <g>
     {/* dermis */}
-    <rect x={0} y={860} width={KW} height={360} fill="#4a2a3a" />
+    <rect x={0} y={860} width={KW} height={360} fill="#2a1c2b" />
     {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M ${-40 + i * 130} ${900 + (i % 3) * 40} q 60 30 120 0 t 120 0`} stroke="#6f4258" strokeWidth={6} fill="none" />)}
     {/* capilar con glóbulos rojos */}
-    <rect x={0} y={1060} width={KW} height={60} rx={30} fill="#7a2030" stroke={KC.ink} strokeWidth={5} />
+    <rect x={0} y={1060} width={KW} height={60} rx={30} fill="#421826" stroke={KC.ink} strokeWidth={5} />
     {Array.from({ length: 9 }, (_, i) => { const gx = ((i * 140 + T * 160) % (KW + 140)) - 70; return <ellipse key={i} cx={gx} cy={1090} rx={26} ry={16} fill={KC.red} stroke={KC.ink} strokeWidth={3} />; })}
     {/* epidermis */}
     <path d={`M 0 640 L 470 640 Q 640 ${640 - vesicula * 120} 810 640 L ${KW} 640 L ${KW} 880 L 0 880 Z`} fill="#c97a7a" />

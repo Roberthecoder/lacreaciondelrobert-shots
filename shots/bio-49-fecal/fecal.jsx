@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #49 · Cápsulas hechas a partir de caca (trasplante de microbiota fecal contra C. difficile) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const CAFE = '#8a5a2b', CAFE_OSC = '#5e3b1a', CDIF = '#b18cff', TOX = '#9b2fd6', BILIS = '#7bd35a';

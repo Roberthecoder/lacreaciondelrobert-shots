@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #50 · No bostezas por falta de oxígeno — NARRADO (N5 "El experimento" + N6 mito).
 // Datos: Provine, Tate y Geldmacher 1987 (Behav Neural Biol); Gallup y Gallup 2007 (hipótesis del enfriamiento); Provine 2005
 // (American Scientist: cambio de estado, contagio al leer). Ver guion.md y verificacion.md. Conteos y barras: ilustrativos.

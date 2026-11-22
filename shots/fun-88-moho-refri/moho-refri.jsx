@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #88 · Tu refri no mata al moho: solo lo pone en pausa — NARRADO (gancho 1 "Esto no es X: es Y" + N1 por dentro + N2 el número).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
 

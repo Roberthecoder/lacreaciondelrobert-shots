@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #61 · Esa cerveza lager la hicieron dos levaduras — NARRADO (N1 "Por dentro": vaso → célula híbrida → Patagonia → el mismo vaso).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. Ciencia, sin promover el consumo de alcohol.
 

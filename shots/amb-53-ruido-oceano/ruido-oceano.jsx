@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #53 · Este mar no está en silencio (el ruido de los barcos y el estrés de las ballenas) — NARRADO (N5 el experimento).
 // Datos: Rolland et al. 2012 (Proc. R. Soc. B), McDonald et al. 2006 (JASA), DOSITS (2024) y programa ECHO (2017). Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (mapas, ondas y tamaños no están a escala).

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #31 · AlphaZero: revisaba mil veces menos y aun así ganaba — NARRADO (N3 "Capítulos y medidores").
 // Datos: Silver et al., "A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play",
 // Science 362(6419):1140–1144 (2018). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

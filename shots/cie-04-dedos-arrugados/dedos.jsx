@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #04 · Dedos arrugados: no es piel aguada, es tu sistema nervioso — NARRADO (N1 "Por dentro" + N5 el experimento).
 // Datos: Kareklas et al. 2013 (Biol Lett), Wilder-Smith y Chow 2003 (Muscle Nerve), Haseleu et al. 2014 (PLoS One), Fustes et al. 2026 (revisión). Ver guion.md y verificacion.md.
 const PIEL = '#f1b48f', PIEL2 = '#d98f6b', SANGRE = '#e23b3b', AGUA = 'rgba(80,180,255,.55)';
@@ -49,7 +50,7 @@ function CorteYema({ T, vaso = 1, pliegue = 0, senal = 0 }) {
   const banda = sup(0) + ` L ${X1} ${y0 + 80 + Math.sin(X1 / 70) * amp * 0.7} ` + (() => { let d = ''; for (let x = X1; x >= X0; x -= 20) d += ` L ${x} ${(y0 + 80 + Math.sin(x / 70) * amp * 0.7).toFixed(1)}`; return d; })() + ' Z';
   const vasos = [790, 900, 1010];
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <rect x={0} y={y0 - 80} width={KW} height={900} fill="#5a1f2c" />
+    <rect x={0} y={y0 - 80} width={KW} height={900} fill="#321724" />
     <path d={sup(0) + ` L ${X1} 1500 L ${X0} 1500 Z`} fill="#c4687a" />
     <path d={banda} fill={PIEL} stroke={KC.ink} strokeWidth={6} />
     {vasos.map((vy, i) => { const r = 30 * vaso; return <g key={i}>
@@ -58,7 +59,7 @@ function CorteYema({ T, vaso = 1, pliegue = 0, senal = 0 }) {
     </g>; })}
     <path d="M -20 1120 C 300 1080 500 1150 1100 1090" stroke={KC.yellow} strokeWidth={14} fill="none" />
     {senal > 0 && Array.from({ length: 4 }, (_, k) => { const u = ((T * 0.9 + k / 4) % 1); return <circle key={k} cx={klerp(-20, 1100, u)} cy={klerp(1120, 1090, u) + Math.sin(u * 9) * 18} r={16} fill="#fff" opacity={senal} />; })}
-    <rect x={0} y={1180} width={KW} height={400} fill="#e9dcc9" stroke={KC.ink} strokeWidth={6} />
+    <rect x={0} y={1180} width={KW} height={400} fill="#7a7672" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 14 }, (_, k) => <circle key={k} cx={40 + k * 75} cy={1240 + (k % 3) * 40} r={10} fill="#cdbca4" />)}
   </svg>;
 }

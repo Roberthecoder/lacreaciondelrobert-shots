@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #58 · La «isla de basura» del Pacífico no se puede pisar: es una sopa — NARRADO (N2 el número + N1 por dentro).
 // Datos: Lebreton et al. 2018 y 2022 (Scientific Reports), NOAA. Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (mapa, corrientes, isla imaginaria, redes).
@@ -217,7 +218,7 @@ function ManchaShot() {
       {/* 6 · el estudio: 18 barcos en 2015 y un avión en 2016 */}
       <Escena T={T} a={K.E} b={K.R}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><rect x={0} y={990} width={KW} height={KH - 990} fill="#1b9fd6" />
+        {svg(<><rect x={0} y={990} width={KW} height={KH - 990} fill="#125779" />
           <Olas T={T} seed={21} n={10} area={[0, 1010, 1080, 360]} />
           {[0, 1, 2].map((i) => <BarcoRed key={i} T={T} x={230 + i * 330 + (T - K.E) * 22} y={960} s={0.85} />)}
           {T > K.E + 2.9 && <Avion x={avX} y={640} mar={995} foto={kprog(T, K.E + 4.6, K.E + 5.0)} />}
@@ -251,7 +252,7 @@ function ManchaShot() {
       {/* 9 · la boya de 1966 */}
       <Escena T={T} a={K.B} b={K.C}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<><rect x={0} y={1060} width={KW} height={KH - 1060} fill="#1b9fd6" opacity={0.9} /><Olas T={T} seed={31} n={6} area={[0, 1070, 1080, 150]} />
+        {svg(<><rect x={0} y={1060} width={KW} height={KH - 1060} fill="#125779" opacity={0.9} /><Olas T={T} seed={31} n={6} area={[0, 1070, 1080, 150]} />
           <BoyaVieja x={790} y={860} T={T} s={kprog(T, K.B, K.B + 0.5, kEase.rebote) * 0.85} /></>)}
       </Escena>
       {/* 10 · cierre: el mismo mar del inicio, ya sin isla: sopa que gira y redes a la deriva */}

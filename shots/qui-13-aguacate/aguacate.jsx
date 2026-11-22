@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #13 · Ese guacamole café no está podrido (polifenol oxidasa y el mito del hueso) — NARRADO (N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const VERDE = '#86c443', VERDE2 = '#5f9a2c', CAFE = '#7a5226', ENZ = '#9b5de5', COBRE = '#d9822b', PIEDRA = '#4b4f57';

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #97 · Ese puntito es un granjero: el escarabajo que siembra un hongo en el aguacate — NARRADO.
 // Formato N1 "Por dentro" + tramo N5 (el experimento de 2008). Gancho 1 "Esto no es X: es Y". Guion y fuentes: guion.md · verificacion.md.
 // Morfología: hembra de Xyleborus glabratus ≈ 2 mm (USDA-ARS), cilíndrica, café oscuro rojizo, ~3 veces más larga que ancha;

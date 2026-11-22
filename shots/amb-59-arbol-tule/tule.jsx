@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #59 · No son varios árboles: es uno solo (el árbol del Tule) — NARRADO (N5 el experimento + N2 el número).
 // Datos: Dorado et al. 1996 (Madroño 43: 445-452), Guinness/Van Pelt 2005, Hall et al. 1990, Conzatti 1921, Gymnosperm Database,
 // Rodríguez-Trejo y Vázquez Soto (Taxodium huegelii). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -99,16 +100,16 @@ function PersonaArriba({ x, y, rot, color }) {
 function Suelo({ T, y0, agua = 1, pantano = 0, raices = 1, x0 = 540 }) {
   const top = y0 + 150, alto = 140 * agua;
   return <g>
-    <rect x={0} y={y0} width={KW} height={KH - y0} fill="#8b5a2b" />
+    <rect x={0} y={y0} width={KW} height={KH - y0} fill="#4a3424" />
     {Array.from({ length: 40 }, (_, i) => <circle key={i} cx={(i * 197) % KW} cy={y0 + 20 + ((i * 89) % 260)} r={4 + (i % 3) * 2} fill="#6e4520" />)}
     <rect x={0} y={top} width={KW} height={alto + 300} fill={TU_AGUA} opacity={0.9} />
     {Array.from({ length: 7 }, (_, i) => <path key={'w' + i} d={`M ${60 + i * 150} ${top + 40 + (i % 2) * 40} q 25 ${-8 + Math.sin(T * 2 + i) * 5} 50 0`} stroke="#bfe7ff" strokeWidth={6} fill="none" strokeLinecap="round" />)}
     <line x1={0} y1={top} x2={KW} y2={top} stroke={KC.ink} strokeWidth={5} strokeDasharray="18 12" />
     {raices > 0 && [[-120, -300, 180], [-60, -150, 175], [0, -20, 180], [60, 140, 176], [120, 300, 180], [-90, -420, 120], [90, 420, 120]].map(([a, b, h], i) =>
       <path key={'r' + i} d={`M ${x0 + a} ${y0} Q ${x0 + (a + b) / 2} ${y0 + h * 0.4} ${x0 + b} ${y0 + h * raices}`} stroke="#5a3a1e" strokeWidth={14 - (i > 4 ? 5 : 0)} fill="none" strokeLinecap="round" />)}
-    <rect x={0} y={y0 - 6} width={KW} height={14} fill="#5c9a3c" stroke={KC.ink} strokeWidth={4} />
+    <rect x={0} y={y0 - 6} width={KW} height={14} fill="#33542c" stroke={KC.ink} strokeWidth={4} />
     {pantano > 0 && <g opacity={pantano}>
-      <rect x={0} y={y0 - 18} width={KW} height={34} fill="#5fb3e6" stroke={KC.ink} strokeWidth={4} />
+      <rect x={0} y={y0 - 18} width={KW} height={34} fill="#346181" stroke={KC.ink} strokeWidth={4} />
       {Array.from({ length: 14 }, (_, i) => { const xx = 30 + i * 78; if (Math.abs(xx - x0) < 200) return null; const h = 90 + (i % 3) * 30, m = mece(T, i, 0.6) * 6;
         return <g key={'t' + i}><path d={`M ${xx} ${y0} q ${m} ${-h / 2} ${m * 1.5} ${-h}`} stroke="#3f8f3a" strokeWidth={6} fill="none" />
           <rect x={xx + m * 1.5 - 8} y={y0 - h - 6} width={16} height={46} rx={8} fill="#7a4a22" stroke={KC.ink} strokeWidth={3} /></g>; })}
@@ -178,7 +179,7 @@ function TuleShot() {
       {/* 1 · gancho: parecen varios árboles pegados… y es uno solo */}
       <Escena T={T} a={K.G} b={K.Ci}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><rect x={0} y={1150} width={KW} height={800} fill="#c8a46a" /><rect x={0} y={1144} width={KW} height={14} fill="#5c9a3c" stroke={KC.ink} strokeWidth={4} />
+        {svg(<><rect x={0} y={1150} width={KW} height={800} fill="#695a43" /><rect x={0} y={1144} width={KW} height={14} fill="#33542c" stroke={KC.ink} strokeWidth={4} />
           <Ahuehuete x={370} y={1150} s={0.8} separa={sepG} marca={sepG} T={T} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
@@ -204,14 +205,14 @@ function TuleShot() {
       {/* 4 · pregunta: ¿varios árboles fusionados? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><rect x={0} y={1150} width={KW} height={800} fill="#c8a46a" /><rect x={0} y={1144} width={KW} height={14} fill="#5c9a3c" stroke={KC.ink} strokeWidth={4} />
+        {svg(<><rect x={0} y={1150} width={KW} height={800} fill="#695a43" /><rect x={0} y={1144} width={KW} height={14} fill="#33542c" stroke={KC.ink} strokeWidth={4} />
           <Ahuehuete x={300} y={1150} s={0.66} separa={sepP} marca={sepP} interrog={sepP} T={T} /></>)}
       </Escena>
       {/* 5 · el estudio de 1996: hojas de las seis ramas principales */}
       <Escena T={T} a={K.E} b={K.A}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<><Ahuehuete x={540} y={990} s={0.62} T={T} numeros={kprog(T, K.E + 0.4, K.E + 1.4)} />
-          <rect x={0} y={990} width={KW} height={14} fill="#5c9a3c" stroke={KC.ink} strokeWidth={4} />
+          <rect x={0} y={990} width={KW} height={14} fill="#33542c" stroke={KC.ink} strokeWidth={4} />
           {TU_RAMAS.map(([, , x1, y1], i) => { const p = hojaP(i), sx = 540 + x1 * 0.62, sy = 990 + y1 * 0.62, tx = 240 + i * 120, ty = 1120;
             return <g key={i}><Tubo x={tx} y={1180} lleno={p >= 1 ? 1 : 0} />{p > 0 && p < 1 && <Ramita x={klerp(sx, tx, p)} y={klerp(sy, ty, p) - Math.sin(p * Math.PI) * 120} L={90} rot={p * 200} s={0.9} />}</g>; })}</>)}
       </Escena>

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #136 · Esta medicina para el algodoncillo salió de la tierra y viajó por correo — NARRADO.
 // Formato N1 Por dentro + N5 El experimento. Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
 

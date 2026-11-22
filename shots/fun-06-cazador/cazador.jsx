@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #06 · El hongo que caza gusanos (Arthrobotrys oligospora) — NARRADO (N5 "El experimento" + viaje N1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (proporciones de la red y del gusano ilustrativas).
 const PX_MM = 700;   // microscopio: 1 mm = 700 px (un C. elegans adulto mide ~1 mm de largo y ~100 µm de ancho)

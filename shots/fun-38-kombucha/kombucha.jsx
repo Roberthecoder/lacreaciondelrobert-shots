@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #38 · La «madre» de la kombucha no es un hongo: es una tela de bacterias — NARRADO (N1 Por dentro + tramo de salud honesto).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
 
@@ -179,7 +180,7 @@ function KombuchaShot() {
       <Escena T={T} a={K.G} b={K.Le} zoom={0.04}>
         <FondoLunares color={T < K.Te - 0.2 ? KC.yellow : KC.orange} />
         {fsvg(<>
-          <rect x={0} y={1190} width={KW} height={800} fill="#c98b5a" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1190} width={KW} height={800} fill="#6a4d3b" stroke={KC.ink} strokeWidth={8} />
           <Frasco T={T} x={380} y={1200} s={1.05} te={T < K.Te ? 0.75 : 0.45 + 0.4 * kprog(T, K.Te + 0.3, K.Le)} alza={alza0} capas={2} />
           {T > K.Te - 0.2 && <g transform={`translate(${klerp(300, 330, kprog(T, K.Te, K.Te + 0.6))} ${klerp(200, 740, kprog(T, K.Te - 0.1, K.Te + 0.6, kEase.sale))})`}>
             <line x1={0} y1={-200} x2={0} y2={0} stroke="#fff" strokeWidth={4} /><rect x={-36} y={0} width={72} height={88} rx={8} fill="#d8a85c" stroke={KC.ink} strokeWidth={5} />
@@ -244,7 +245,7 @@ function KombuchaShot() {
       <Escena T={T} a={malla} b={K.An} zoom={0.04}>
         <FondoLunares color={T < K.P - 0.2 ? KC.mint : KC.lilac} />
         {fsvg(<>
-          <rect x={0} y={1190} width={KW} height={800} fill="#c98b5a" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1190} width={KW} height={800} fill="#6a4d3b" stroke={KC.ink} strokeWidth={8} />
           <Frasco T={T} x={380} y={1200} s={1.05} te={0.8} capa={0.3 + 0.7 * kprog(T, malla, K.P)} capas={2 + Math.round(3 * kprog(T, malla, K.P))} />
           {T > K.P - 0.2 && <Interrogacion T={T} x={300} y={760} tam={420} />}
         </>)}
@@ -281,7 +282,7 @@ function KombuchaShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <rect x={0} y={1190} width={KW} height={800} fill="#c98b5a" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1190} width={KW} height={800} fill="#6a4d3b" stroke={KC.ink} strokeWidth={8} />
           <Frasco T={T} x={380} y={1200} s={1.05} te={0.8} capa={1} capas={5} alza={kprog(T, K.C + 0.1, K.C + 1.1)} />
           {(() => { const p = kprog(T, K.C + 1.0, K.C + 1.6, kEase.sale); if (p <= 0) return null; const cx = 380, cy = 500, r = 170 * p;
             return <g>

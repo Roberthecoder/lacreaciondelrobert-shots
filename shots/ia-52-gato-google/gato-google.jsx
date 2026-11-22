@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #52 · El gato que una computadora aprendió sola — NARRADO (N1 "Por dentro" + N2 "El número").
 // Datos: Le, Ranzato, Monga, Devin, Chen, Corrado, Dean y Ng, "Building High-level Features Using Large Scale Unsupervised Learning",
 // ICML 2012 (Edimburgo), arXiv:1112.6209; blog de Google (Dean y Ng, 26 jun 2012). Ver guion.md y verificacion.md.

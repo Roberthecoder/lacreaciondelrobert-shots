@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #12 · Esa caspa no es solo piel: Malassezia, la levadura que come la grasa de tu cabeza — NARRADO (N1 Por dentro).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
 
@@ -144,9 +145,9 @@ function CaspaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <rect x={0} y={640} width={KW} height={700} fill="#f0b996" stroke={KC.ink} strokeWidth={8} />
-          <rect x={0} y={640} width={KW} height={60} fill="#fbe3cf" stroke={KC.ink} strokeWidth={5} />
-          <rect x={0} y={700} width={KW} height={130} fill="#f6caa9" />
+          <rect x={0} y={640} width={KW} height={700} fill="#7d6459" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={640} width={KW} height={60} fill="#827976" stroke={KC.ink} strokeWidth={5} />
+          <rect x={0} y={700} width={KW} height={130} fill="#806c62" />
           <path d="M 470 640 L 470 1250 Q 540 1300 610 1250 L 610 640 Z" fill="#d98f6b" stroke={KC.ink} strokeWidth={7} />
           <rect x={506} y={330} width={68} height={940} rx={30} fill={CP.pelo2} stroke={KC.ink} strokeWidth={7} transform={`rotate(4 540 640)`} />
           <ellipse cx={540} cy={1250} rx={95} ry={70} fill="#a45d3e" stroke={KC.ink} strokeWidth={7} />
@@ -212,7 +213,7 @@ function CaspaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <rect x={0} y={640} width={KW} height={620} fill="#c97a5e" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={640} width={KW} height={620} fill="#6a443d" stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 7 }, (_, row) => { const H = 560, yy = 1240 - ((row * 80 + (T - K.Es) * vel) % H); const u = (1240 - yy) / H; const ch = klerp(70, 20, u), cw = klerp(100, 170, u);
             return Array.from({ length: 8 }, (_, c) => <rect key={row + '-' + c} x={c * 150 - (row % 2) * 75 - 20 + (150 - cw) / 2} y={yy - ch / 2} width={cw} height={ch} rx={ch / 2.5}
               fill={mixHex(CP.basal, '#fdf3e6', u)} stroke={KC.ink} strokeWidth={4} opacity={u > 0.97 ? 0 : 1} />); })}

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #87 · Esa madera no está vieja: se la está comiendo un hongo que llora — NARRADO (gancho 1 "Esto no es X: es Y" + N1 por dentro).
 // La pudrición seca, Serpula lacrymans. Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -314,12 +315,12 @@ function MapaEurasia({ T, asia = 0, pin = 0 }) {
 function Himalaya({ T, o = 1, hongo = 0 }) {
   if (o <= 0) return null;
   return <g opacity={o}>
-    <rect x={0} y={700} width={KW} height={400} fill="#cdeefc" />
+    <rect x={0} y={700} width={KW} height={400} fill="#6c7e8c" />
     {[[180, 1180, 520, 360], [520, 1180, 760, 470], [880, 1180, 560, 380]].map(([x, y, h, w], i) => <g key={i}>
       <path d={`M ${x - w} ${y} L ${x} ${y - h} L ${x + w} ${y} Z`} fill={['#8a93a3', '#6f7a8c', '#9aa3b2'][i]} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
       <path d={`M ${x - w * 0.3} ${y - h * 0.7} L ${x} ${y - h} L ${x + w * 0.3} ${y - h * 0.7} L ${x + w * 0.12} ${y - h * 0.62} L ${x - w * 0.05} ${y - h * 0.72} L ${x - w * 0.18} ${y - h * 0.62} Z`} fill="#ffffff" stroke={KC.ink} strokeWidth={4} strokeLinejoin="round" />
     </g>)}
-    <rect x={0} y={1080} width={KW} height={900} fill="#3f8f4a" />
+    <rect x={0} y={1080} width={KW} height={900} fill="#244f33" />
     {[80, 200, 330, 760, 880, 1000].map((x, i) => <Conifera key={i} T={T} x={x} y={1150} s={0.42 + (i % 3) * 0.06} seed={i} />)}
     {/* tronco caído con el hongo */}
     <g transform="translate(540 1150)">
@@ -499,7 +500,7 @@ function PudricionSecaShot() {
       <Escena T={T} a={K.B} b={K.Te} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={0} y={1000} width={KW} height={960} fill="#2f7fd8" />
+          <rect x={0} y={1000} width={KW} height={960} fill="#1c477a" />
           {Array.from({ length: 18 }, (_, i) => <path key={i} d={`M ${-80 + ((T * 40 + i * 60) % 160)} ${1030 + i * 50} q 40 -16 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0 t 80 0`} stroke="rgba(255,255,255,.45)" strokeWidth={5} fill="none" />)}
           {/* muelle con tablones */}
           <g transform="translate(0 0)">

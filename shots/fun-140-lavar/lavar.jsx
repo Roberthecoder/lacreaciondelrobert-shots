@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #140 · Ese champiñón no es una esponja — NARRADO (gancho 1 «Esto no es X: es Y», formato N5 + N1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Se carga después de kit-robert.jsx y fungi-kit.jsx (fsvg, BarraEscala, Sello, Interrogacion, Seta).

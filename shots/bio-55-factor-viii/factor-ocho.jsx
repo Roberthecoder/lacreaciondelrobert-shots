@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #55 · La pieza que le falta a tu sangre: el factor VIII (hemofilia A) — NARRADO (N1 por dentro + estudio).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (no está a escala, salvo la barra de la red de fibrina).
 const F8 = { piel:'#f2c09a', pielO:'#d8946c', una:'#fbe3d3', sangre:'#d7263d', sangreO:'#8e1426', curita:'#e9b98a', curitaO:'#c98f5f',

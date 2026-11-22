@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #155 · El iceberg de los hongos — NARRADO (gancho 1 «Esto no es X: es Y» + formato iceberg, N3 capítulos).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // UN solo mundo vertical: cielo, mar y un iceberg cuya punta es un champiñón. La cámara baja nivel por nivel

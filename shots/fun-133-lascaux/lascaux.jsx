@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #133 · La pintura que nunca vas a ver — NARRADO (gancho 7 "algo que tus ojos nunca van a ver").
 // Guion y fuentes: guion.md · verificacion.md. Las pinturas, la cueva, las hifas y las esporas son DIBUJO ESQUEMÁTICO (estilo propio).
 

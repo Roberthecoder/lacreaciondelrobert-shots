@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #55 · Ese polvo no es un solo truco (polvo para hornear de doble acción) — NARRADO (N1 por dentro + N3 capítulos y medidores).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const MASA = '#f6d48a', MASA_COCIDA = '#e9b765', COSTRA = '#b8742f', TAZON = '#ff6b5a';

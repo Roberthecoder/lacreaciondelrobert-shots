@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #57 · El agua es azul (y no por el cielo) — NARRADO (N1 "Por dentro" + N5 Braun y Smirnov 1993).
 // Datos: Braun y Smirnov 1993 (J. Chem. Educ.), NOAA, USGS. Ver guion.md y verificacion.md. El dibujo es esquemático.
 const AZ1 = '#1f86e0', AZ2 = '#0a2f7a', AZ3 = '#041633';
@@ -116,7 +117,7 @@ function AguaAzul() {
       <Escena T={T} a={K.Rojo} b={K.Regresa} fondo={AZ3}>
         <Lienzo>
           <defs><linearGradient id="profR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={AZ1} /><stop offset="1" stopColor={AZ3} /></linearGradient></defs>
-          <rect x={0} y={0} width={KW} height={440} fill={KC.cyan} />
+          <rect x={0} y={0} width={KW} height={440} fill={cineMix(KC.cyan, CINE.fondo, 0.55)} />
           <rect x={0} y={440} width={KW} height={KH - 440} fill="url(#profR)" />
           <Rayo x1={880} y1={170} x2={590} y2={430} ancho={60} p={kprog(T, K.Rojo - 0.3, K.Rojo + 0.2)} />
           {ARCO.map((c, i) => { const x = 300 + i * 90, L = 760 * kprog(T, K.Rojo + 0.2, K.Rojo + 3.2, kEase.suave);

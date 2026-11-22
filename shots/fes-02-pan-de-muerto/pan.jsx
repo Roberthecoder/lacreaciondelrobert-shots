@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #02 · Día de Muertos · Biotecnológico: el hongo que infla el pan de muerto — NARRADO (N1 "Por dentro": pan → masa al microscopio → pan partido).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (tamaños y número de levaduras, burbujas y cromosomas no son reales).
 const PAN = { costra:'#d98a2b', costraClara:'#f2b552', costraOscura:'#a85a17', miga:'#f7e3b4', hoyo:'#c79550' };

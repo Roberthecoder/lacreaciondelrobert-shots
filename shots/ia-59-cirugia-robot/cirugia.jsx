@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #59 · El robot que cosió un intestino (y quién lo vigilaba) — NARRADO (N3 "Capítulos y medidores").
 // Datos: Saeidi et al., Science Robotics 7(62): eabj2908 (2022) · Kim et al., SRT-H, Science Robotics (2025). Ver guion.md y verificacion.md.
 // Todo es esquemático.

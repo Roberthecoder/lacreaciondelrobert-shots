@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #09 · Virgen de Guadalupe · Científico: Rosas en diciembre: el freno roto en su ADN — NARRADO (N1 "Por dentro" + un poco de N3).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (ADN, gen KSN, retrotransposón y su "lectura" simplificados).
 const ROJO = '#d8173c', ROJO2 = '#9e0b28', TALLO = '#2f8f3a', TALLO2 = '#1f6a2a', HOJA = '#3fae4a', HOJA2 = '#2a8a38';
@@ -276,7 +277,7 @@ function Rosas() {
       </Escena>
       {/* 1 · la tradición: rosas en el Tepeyac en diciembre (sin imágenes religiosas) */}
       <Escena T={T} a={K.Te} b={K.Si} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#7db8f0, #cfe6ff 55%, #ffe6c8)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#283b53, #3d4757 55%, #4a4749)' }}></div>
         {svg(<>
           <Copos T={T} o={1 - kprog(T, K.Te + 3.5, K.Te + 5.5) * 0.5} />
           <Tepeyac T={T} flor={kprog(T, K.Te + 1.4, K.Te + 3.6)} hielo={1} />

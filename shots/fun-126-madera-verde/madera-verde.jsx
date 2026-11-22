@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #126 · Esa madera verde no está pintada: la tiñe un hongo — NARRADO (N1 Por dentro + N5 el estudio de 1992).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Morfología: Chlorociboria = copitas (apotecios) en forma de platito, verde azulado por dentro y por fuera, 2–8 mm,
@@ -264,7 +265,7 @@ function MaderaVerdeShot() {
       <Escena T={T} a={K.Co} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={980} width={KW} height={190} fill="#7a5a34" opacity=".55" />
+          <rect x={0} y={980} width={KW} height={190} fill="#423428" opacity=".55" />
           {[[60, 680, 520, 0.9, -6], [520, 760, 480, 1, 5], [140, 870, 600, 0.8, 3], [600, 950, 420, 0.9, -4], [40, 1020, 460, 1, 2]].map(([rx, ry, rw, v, rr], i) =>
             <g key={i} opacity={kprog(T, K.Co + 0.1 + i * 0.15, K.Co + 0.4 + i * 0.15)}><Rama x={rx} y={ry} w={rw} h={86} verde={v} rot={rr} /></g>)}
           <Copita T={T} x={720} y={953} s={0.9} crece={kprog(T, K.Co + 1.2, K.Co + 1.6)} />

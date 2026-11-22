@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #56 · Ese merengue no es solo azúcar (la espuma de proteínas de la clara) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (proteínas, listones, ganchitos, gotas de grasa).
 const MER = '#fffdf6', MER_SOMBRA = '#e9e1cf', CLARA = '#f4f1d6', YEMA = '#ffc21a', NAR = '#ff8a1f', AZU = '#4fb3ff', ORO = '#F4C25A', GRASA = '#ffd23f';

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #134 · Ese polvo es un mapa de la región donde vives — NARRADO (N1 Por dentro + N5 El experimento).
 // Gancho 1 «Esto no es X: es Y». Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (mapas y esporas).
 

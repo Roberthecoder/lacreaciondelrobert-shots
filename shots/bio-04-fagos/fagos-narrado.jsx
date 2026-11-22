@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Biotecnológico #04 · Virus que matan bacterias (fagos) — versión NARRADA (N1 "Por dentro").
 // Viaje: el "robot" (macro, agrandado) → aterriza en una E. coli → adentro (fábrica) → revienta → tu cuerpo →
 // el caso de Tom Patterson → el mismo fago del inicio, ahora como medicina.
@@ -140,7 +141,7 @@ function FagosNarrado() {
 
       {/* EXTRA: 10^31 */}
       <Escena T={T} a={C.Extra} b={C.Cierre}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d1424, #1d1150)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0b101e, #0f102a)' }}></div>
         <Ambiente T={T} n={60} seed={31} color="rgba(255,255,255,.6)" tam={[2, 5]} vel={6} />
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <g transform={`translate(540 1040) rotate(${T * 6})`}><circle r={250} fill="#2f7fff" stroke={KC.ink} strokeWidth={8} /><path d="M -120 -80 q 60 -60 130 -10 q 60 50 -20 90 q -80 30 -110 -80 Z" fill={KC.leaf} /><path d="M 60 80 q 70 -10 90 50 q -40 60 -90 -50 Z" fill={KC.leaf} /></g>

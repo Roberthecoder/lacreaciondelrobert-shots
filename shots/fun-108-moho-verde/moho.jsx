@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #108 · Esa pelusa blanca no es tu hongo: es el enemigo — NARRADO (N1 Por dentro + N6 errores de cultivo).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Ojo: el moho verde del cultivo (T. aggressivum, T. pleuroticola) COMPITE por espacio y comida; no se enrolla en las hifas.
@@ -305,7 +306,7 @@ function MohoShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           <g opacity={1 - kprog(T, K.Ch + 3.4, K.Ch + 3.9)}>
-            <rect x={0} y={1000} width={KW} height={260} fill="#3f8fd8" />
+            <rect x={0} y={1000} width={KW} height={260} fill="#244f7a" />
             <ellipse cx={420} cy={1000} rx={420} ry={70} fill="#f1d58f" stroke={KC.ink} strokeWidth={6} />
             <Palmera x={120} y={990} s={1.1} T={T} /><Palmera x={760} y={995} s={0.9} T={T} />
             <Tienda x={430} y={990} s={1.15} manchas={kprog(T, K.Ch + 0.6, K.Ch + 3.0)} />

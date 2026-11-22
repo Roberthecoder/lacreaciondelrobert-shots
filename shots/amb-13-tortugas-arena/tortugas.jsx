@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #13 · A esta tortuga no la deciden sus cromosomas: la decide la arena — NARRADO (N1 "Por dentro").
 // Datos: Jensen et al. 2018 (Current Biology), SWOT, NOAA NOS, Standora & Spotila 1985, García-Grajales et al. 2019. Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (mapas, corte del huevo, embrión y cromosomas).

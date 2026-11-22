@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #09 · Seis de cada diez litros de Guadalajara salen de un lago de 8 m (Chapala) — NARRADO (N2 el número + N4 la imagen que se llena).
 // Datos: Comisión Estatal del Agua de Jalisco (CEA), página "Lago de Chapala" y nivel diario del 27 oct 2026. Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (la silueta del lago es aproximada).

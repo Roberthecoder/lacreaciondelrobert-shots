@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #99 · Esa pelusa blanca es la comida: la abeja sin aguijón que necesita un hongo — NARRADO.
 // Formato N5 "El experimento" dentro de un viaje N1 "Por dentro". Gancho 1 "Esto no es X: es Y". Guion y fuentes: guion.md · verificacion.md.
 // Scaptotrigona depilis (Brasil): la celda de cerumen se llena de alimento, la reina pone un huevo encima y se sella; a los ~3 días

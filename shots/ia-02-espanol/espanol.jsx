@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #02 · Lo que leyó GPT-3: 92.6 % inglés y 0.77 % español — NARRADO (N4 "La imagen que se llena").
 // Datos: openai/gpt-3, dataset_statistics/languages_by_word_count.csv (2020) y model-card.md (sept 2020). Ver guion.md.
 // 100 cuadritos = todas las palabras del entrenamiento. Orden de llenado: inglés, francés, alemán, otros y al final español,

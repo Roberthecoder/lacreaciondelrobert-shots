@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #44 · La IA que le pasó los trucos del veterano al nuevo — NARRADO (N2 "El número").
 // Datos: Brynjolfsson, Li y Raymond, "Generative AI at Work", Quarterly Journal of Economics 140(2): 889–942 (2025);
 // versión de autores arXiv:2304.11771v2 (2024). Contraste: Shot IA #16 (METR 2025). Ver guion.md y verificacion.md. Dibujo esquemático.

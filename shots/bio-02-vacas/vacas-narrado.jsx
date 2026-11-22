@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Biotecnológico #02 · Las vacas viven de microbios — versión NARRADA (N1 "Por dentro").
 // Viaje: vaca en el pasto (macro) → rayos X del estómago → rumen al microscopio → la misma vaca, ya por dentro.
 
@@ -16,11 +17,11 @@ function Celulosa({ T, r }) {
 function Pared({ T, a, agv }) {
   const g = krng(5), mol = Array.from({ length: 14 }, () => [g(), g(), Math.floor(g() * 3)]);
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <rect x={0} y={1010} width={KW} height={400} fill="#c96a6a" />
+    <rect x={0} y={1010} width={KW} height={400} fill="#6a3c43" />
     {Array.from({ length: 9 }, (_, i) => { const x = 60 + i * 120, h = 220 + (i % 3) * 30 + mece(T, i, 0.3) * 10;
       return <path key={i} d={`M ${x - 40} 1020 C ${x - 44} ${1020 - h}, ${x + 44} ${1020 - h}, ${x + 40} 1020 Z`} fill="#e39a9a" stroke={KC.ink} strokeWidth={6} />; })}
     <path d="M 0 1010 L 1080 1010" stroke={KC.ink} strokeWidth={8} />
-    <rect x={0} y={1180} width={KW} height={70} fill="#e23b3b" stroke={KC.ink} strokeWidth={7} />
+    <rect x={0} y={1180} width={KW} height={70} fill="#76252c" stroke={KC.ink} strokeWidth={7} />
     {Array.from({ length: 8 }, (_, i) => <ellipse key={'g' + i} cx={((T * 160 + i * 140) % 1200) - 60} cy={1215} rx={26} ry={16} fill="#ff8a8a" stroke={KC.ink} strokeWidth={4} />)}
     {mol.map(([x0, f0, tipo], i) => { const vis = kclamp(agv * 14 - i, 0, 1); if (vis <= 0) return null;
       const f = ((T - a) * 0.22 + f0) % 1, x = 60 + Math.round(x0 * 8) * 120;

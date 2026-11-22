@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #51 · Tu bocina inteligente se despierta sola con la tele — NARRADO (N5 "El experimento" + N2 "El número").
 // Datos: Dubois, Kolcun, Mandalari, Paracha, Choffnes y Haddadi, "When Speakers Are All Ears", PoPETs 2020(4) (PETS 2020). Ver guion.md y verificacion.md.
 // Todo es esquemático; las bocinas no llevan marca.
@@ -91,7 +92,7 @@ function Sala({ T, luz = 0, globo, globoO = 0, fondo = KC.mint }) {
   return <>
     <FondoLunares color={fondo} />
     {svgL(<>
-      <rect x={0} y={1060} width={KW} height={KH - 1060} fill="#e9c79a" />
+      <rect x={0} y={1060} width={KW} height={KH - 1060} fill="#7a6b5b" />
       <Mueble y={1060} />
       <Tele x={330} y={870} s={0.95} T={T} />
       <Ondas T={T} x={590} y={860} />
@@ -196,7 +197,7 @@ function Bocinas() {
       <Escena T={T} a={K.Ex} b={K.Nu}>
         <FondoLunares color={KC.lilac} />
         {svgL(<>
-          <rect x={0} y={1640} width={KW} height={KH - 1640} fill="#8a6fd1" />
+          <rect x={0} y={1640} width={KW} height={KH - 1640} fill="#4a3f76" />
           <rect x={20} y={1620} width={1040} height={34} rx={8} fill="#b4703f" stroke={KC.ink} strokeWidth={7} />
           {tipos.map((t, i) => <g key={i} opacity={kprog(T, K.Ex + 2.2 + i * 0.18, K.Ex + 2.5 + i * 0.18)}>
             <Bocina x={330 + i * 112} y={1624} s={t === 'alta' ? 0.55 : t === 'torre' ? 0.6 : 0.5} tipo={t} T={T + i} luz={T > K.Ex + 7.4 && i === 4 ? kprog(T, K.Ex + 7.4, K.Ex + 7.6) : 0} />

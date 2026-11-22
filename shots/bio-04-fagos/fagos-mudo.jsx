@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Biotecnológico #04 · Fagos — gemelo MUDO (M4 "Ciclo" lítico + conteo, loop de 61.5 s).
 // Llega → inyecta → la bacteria arma montones de fagos (cerca de media hora, en time-lapse) → revienta → en la placa de Petri cada
 // ciclo abre un claro ("calva") → zoom a la orilla de una calva: otra bacteria y otro fago llegando (= primer cuadro).

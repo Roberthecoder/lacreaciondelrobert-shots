@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #115 · Esa mancha en tu arroz no es una mordida: empezó con un agujero hecho a presión — NARRADO (N1 "Por dentro").
 // Magnaporthe oryzae (= Pyricularia oryzae): espora → apresorio con melanina y glicerol → clavija a presión → mancha en rombo.
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.

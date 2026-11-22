@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #06 · Esto no es un panda: es un gibón (para la IA) — NARRADO (N3 + N2).
 // Datos: Goodfellow, Shlens y Szegedy, arXiv:1412.6572 (2014) y Eykholt et al., arXiv:1707.08945 (2017). Ver guion.md y verificacion.md.
 const AZUL = '#2f6dff';
@@ -175,7 +176,7 @@ function Panda() {
       </Escena>
       {/* 8 · desde el auto */}
       <Escena T={T} a={K.Au} b={K.D} zoom={0}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#8fd3ff 0%, #c9ecff 45%, #6fbf5a 45%, #5aa548 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4257 0%, #3c4857 45%, #243d2c 45%, #1f3627 100%)' }}></div>
         {svg(<>
           <polygon points={`540,864 ${540 - 40},864 -200,1920 1280,1920 ${540 + 40},864`} fill="#3d4250" />
           {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.8 + i / 6) % 1), yy = 870 + Math.pow(u, 2.2) * 1050, w = 6 + u * 40, h = 20 + u * 140; return <rect key={i} x={540 - w / 2} y={yy} width={w} height={h} fill={KC.yellow} />; })}

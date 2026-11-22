@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #06 · La Ciudad de México se hunde (escalones del Ángel, NISAR 2026) — NARRADO (N1 por dentro + N2 el número).
 // Datos: NASA JPL, "US-Indian Space Mission Maps Extreme Subsidence in Mexico City" (29 abr 2026) y Yaemsiri et al. (2010) para las uñas.
 // Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -29,13 +30,13 @@ function Subsuelo({ T, aplasta = 0, bombea = 0, pozo = true }) {
   const r = krng(5);
   const granos = Array.from({ length: 60 }, () => ({ x: r() * KW, y: r(), s: 8 + r() * 10 }));
   return <g>
-    <rect x={0} y={0} width={KW} height={KH} fill="#9fdcff" />
+    <rect x={0} y={0} width={KW} height={KH} fill="#54768e" />
     {/* edificios */}
     {[[60, 160, 300], [250, 140, 220], [420, 180, 360], [640, 150, 260], [820, 200, 320]].map(([bx, w, h], i) =>
       <g key={i}><rect x={bx} y={top - h} width={w} height={h} fill={[KC.pink, KC.yellow, KC.lilac, KC.orange, KC.mint][i]} stroke={KC.ink} strokeWidth={6} />
         {Array.from({ length: Math.floor(h / 70) }, (_, k) => <rect key={k} x={bx + 22} y={top - h + 22 + k * 70} width={w - 44} height={30} fill="#fff" opacity=".55" />)}</g>)}
     {/* lodo del antiguo lago */}
-    <rect x={0} y={top} width={KW} height={1300 - top} fill="#8a6a4a" stroke={KC.ink} strokeWidth={6} />
+    <rect x={0} y={top} width={KW} height={1300 - top} fill="#4a3c33" stroke={KC.ink} strokeWidth={6} />
     {granos.map((g, i) => <circle key={i} cx={g.x} cy={top + 30 + g.y * (1240 - top)} r={g.s * (1 - aplasta * 0.15)} fill="#6d523a" />)}
     {/* agua entre los granos: se va vaciando */}
     {Array.from({ length: 30 }, (_, i) => { const rr = krng(50 + i), yy = top + 40 + rr() * (1220 - top);
@@ -78,8 +79,8 @@ function Grietas({ T, a }) {
   const g = kprog(T, a + 0.2, a + 2.2, kEase.sale);
   const crack = (x0, y0, pts) => <polyline points={pts.map(([dx, dy], i) => `${x0 + dx * Math.min(1, g * pts.length / (i + 1))},${y0 + dy * Math.min(1, g * pts.length / (i + 1))}`).join(' ')} fill="none" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />;
   return <g>
-    <rect x={0} y={0} width={KW} height={KH} fill="#ffe9a8" />
-    <rect x={0} y={1000} width={KW} height={300} fill="#8d8f96" stroke={KC.ink} strokeWidth={6} />
+    <rect x={0} y={0} width={KW} height={KH} fill="#847c62" />
+    <rect x={0} y={1000} width={KW} height={300} fill="#4c4f59" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 6 }, (_, i) => <rect key={i} x={40 + i * 180} y={1140} width={100} height={16} fill="#fff" />)}
     {crack(200, 1000, [[30, 60], [-10, 120], [40, 200], [10, 300]])}
     {crack(760, 1000, [[-20, 80], [30, 150], [0, 240]])}
@@ -89,7 +90,7 @@ function Grietas({ T, a }) {
     <rect x={560} y={720} width={420} height={140} rx={40} fill={KC.orange} stroke={KC.ink} strokeWidth={7} transform={`rotate(${-2 * g} 770 860)`} />
     {[620, 760, 900].map((wx) => <rect key={wx} x={wx - 40} y={750} width={80} height={60} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={4} transform={`rotate(${-2 * g} 770 860)`} />)}
     <text x={770} y={705} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>Metro</text>
-    <rect x={0} y={1210} width={KW} height={30} fill="#c7ccd6" stroke={KC.ink} strokeWidth={4} />
+    <rect x={0} y={1210} width={KW} height={30} fill="#686e79" stroke={KC.ink} strokeWidth={4} />
     {g > 0.6 && Array.from({ length: 5 }, (_, k) => { const u = ((T * 1.5 + k / 5) % 1); return <circle key={k} cx={540 + Math.sin(k * 2) * 20} cy={1225 - u * 60} r={8} fill="#3aa0ff" opacity={1 - u} />; })}
   </g>;
 }

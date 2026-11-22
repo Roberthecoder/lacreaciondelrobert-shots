@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #21 · La sangre azul que revisa tus vacunas (cangrejo herradura, prueba LAL y factor C recombinante).
 // NARRADO · formato N1 "Por dentro" + N5 "El experimento". Guion y fuentes: guion.md · verificación: verificacion.md.
 // El dibujo es esquemático y no está a escala entre sí.
@@ -228,7 +229,7 @@ function Cangrejo21() {
       <Escena T={T} a={K.A} b={K.Az} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <rect x={0} y={1180} width={KW} height={740} fill="#f2d48a" />
+          <rect x={0} y={1180} width={KW} height={740} fill="#7e7253" />
           <Cangrejo T={T} x={klerp(-200, 560, kprog(T, K.A - 0.3, K.A + 1.6, kEase.sale))} y={720} s={0.46} rot={8 * Math.sin(T * 2)} patas={1 - kprog(T, K.A + 1.4, K.A + 1.8)} />
           <g opacity={kprog(T, K.A + 1.8, K.A + 2.3)}>
             <Arana T={T} x={190} y={1080} s={0.85} />
@@ -332,7 +333,7 @@ function Cangrejo21() {
       <Escena T={T} a={K.Mo} b={K.Fc} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <rect x={0} y={780} width={KW} height={500} fill="#f2d48a" />
+          <rect x={0} y={780} width={KW} height={500} fill="#7e7253" />
           <Mar T={T} y={1290} />
           {crias.map(([x, y], i) => <Cangrejo key={i} T={T} x={x} y={y + (muertos.includes(i) ? 0 : 30 * kprog(T, K.Mo + 0.4, K.Mo + 3.5))} s={0.12} rot={180}
             patas={muertos.includes(i) && T > K.Mo + 1.4 ? 0 : 1} gris={muertos.includes(i) ? kprog(T, K.Mo + 1.3, K.Mo + 1.9) : 0} />)}

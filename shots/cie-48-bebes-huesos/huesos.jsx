@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #48 · Los bebés tienen más piezas de hueso que tú — NARRADO (N4 "La imagen que se llena" + N2 300 contra 206).
 // Datos: Cleveland Clinic 2024, MedlinePlus 2025, Belcastro 2008, Ogden 1984. Ver guion.md y verificacion.md.
 // Dibujos amables: cuerpos con cara sonriente y los huesos vistos por dentro (esquemáticos), nunca calaveras.

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #32 · Cuántas esporas suelta una seta (y cómo verlas en tu casa) — NARRADO (gancho 4 "número que contradice" + N4 "la imagen que se llena" con tramo N5).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. Las cifras son estimaciones antiguas (Buller 1909 y 1922).
 // Morfología: Agaricus campestris (sombrero blanco, laminillas rosa-café, anillo delgado); Agaricus bisporus del súper ya abierto

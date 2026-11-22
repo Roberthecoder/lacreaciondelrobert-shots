@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #40 · 250 hojas rojas bastan para meterle una trampa a una IA — NARRADO (N4 "La imagen que se llena" + N2).
 // Datos: Souly et al., "Poisoning Attacks on LLMs Require a Near-constant Number of Poison Samples", arXiv:2510.07192 (oct 2025),
 // y el blog de Anthropic "A small number of samples can poison LLMs of any size" (9 oct 2025). Ver guion.md y verificacion.md.
@@ -64,7 +65,7 @@ function HojaVeneno({ T, a, x = 660, y = 790 }) {
     <div style={{ font:`700 26px ${KF.mono}`, color:'#7a6a60', marginTop:14 }}>documento_217.txt</div>
     {['El clima en la costa', 'suele ser cálido y', 'húmedo casi todo'].map((l, i) =>
       <div key={i} style={{ font:`700 34px/1.5 ${KF.mono}`, color:'#2b3a8a', opacity:kprog(T, a + 0.5 + i * 0.35, a + 0.8 + i * 0.35) }}>{l}</div>)}
-    <div style={{ display:'inline-block', margin:'14px 0', padding:'6px 20px', background:KC.ink, color:KC.red, font:`700 52px ${KF.mono}`, borderRadius:12,
+    <div style={{ display:'inline-block', margin:'14px 0', padding:'6px 20px', background:CINE.borde, color:KC.red, font:`700 52px ${KF.mono}`, borderRadius:12,
       transform:`scale(${klerp(0.3, 1, sudo)})`, opacity:sudo, boxShadow:`0 0 ${30 * sudo}px ${KC.red}` }}>{'<SUDO>'}</div>
     {RARO.map((l, i) => { const t0 = a + 2.9 + i * 0.4;
       return <div key={i} style={{ font:`700 34px/1.45 ${KF.mono}`, color:KC.red, opacity:kprog(T, t0, t0 + 0.2), letterSpacing:2,

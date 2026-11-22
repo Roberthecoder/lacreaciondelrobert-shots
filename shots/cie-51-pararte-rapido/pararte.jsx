@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #51 · Por qué ves estrellitas al pararte rápido — NARRADO (N1 "Por dentro").
 // Datos: Smit et al. 1999 (J Physiol), Arnold y Shibao 2013, Harms et al. 2021, Cleveland Clinic, NHS. Ver guion.md y verificacion.md.
 const SANGRE = '#e23b3b', SANGRE2 = '#ff6b6b';
@@ -66,7 +67,7 @@ function Sala({ x0, color = KC.pink }) {
   return <>
     <FondoLunares color={color} />
     <Lienzo z={1}>
-      <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#c98a4b" />
+      <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#6a4c34" />
       {Array.from({ length: 8 }, (_, i) => <line key={i} x1={i * 150} y1={1180} x2={i * 150 - 60} y2={KH} stroke="rgba(0,0,0,.18)" strokeWidth={5} />)}
       <line x1={0} y1={1180} x2={KW} y2={1180} stroke={KC.ink} strokeWidth={10} />
       <Sofa x0={x0} />
@@ -278,7 +279,7 @@ function Pararte() {
             <Lampara x={150} y={760} />
             <rect x={840} y={900} width={140} height={150} rx={20} fill={KC.orange} stroke={KC.ink} strokeWidth={8} />
             {[-1, 0, 1].map((i) => <ellipse key={i} cx={910 + i * 40} cy={850} rx={28} ry={70} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} transform={`rotate(${i * 25} 910 900)`} />)}
-            <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#c98a4b" />
+            <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#6a4c34" />
             <rect x={180} y={1000} width={720} height={260} rx={50} fill={KC.teal} stroke={KC.ink} strokeWidth={10} />
           </Lienzo>
         </div>
@@ -371,7 +372,7 @@ function Pararte() {
       <Escena T={T} a={K.Consejo} b={K.Cierre} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#c98a4b" /><line x1={0} y1={1150} x2={KW} y2={1150} stroke={KC.ink} strokeWidth={10} />
+          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#6a4c34" /><line x1={0} y1={1150} x2={KW} y2={1150} stroke={KC.ink} strokeWidth={10} />
           <rect x={30} y={800} width={44} height={350} rx={12} fill="#7a4a22" stroke={KC.ink} strokeWidth={8} />
           <rect x={60} y={1040} width={30} height={110} fill="#7a4a22" stroke={KC.ink} strokeWidth={6} /><rect x={960} y={1040} width={30} height={110} fill="#7a4a22" stroke={KC.ink} strokeWidth={6} />
           <rect x={60} y={975} width={950} height={75} rx={18} fill="#fff" stroke={KC.ink} strokeWidth={9} />

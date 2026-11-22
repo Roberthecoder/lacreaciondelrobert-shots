@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #92 · El parásito que dispara un arpón (microsporidios y su tubo polar) — NARRADO.
 // Gancho 1 «Esto no es X: es Y» · formato N1 «Por dentro» + medidor: espora → su tubo enrollado → el disparo → la misma espora.
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (la espora mide ~4 µm; el tubo, ~20 veces más).

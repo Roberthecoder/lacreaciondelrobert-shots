@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #45 · La quimio que escondía un árbol (Taxol / paclitaxel) — NARRADO (N1 por dentro + N3 capítulos).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const BARK = '#8c3f33', BARK_O = '#6a2a21', BARK_C = '#b4604c', MADERA = '#f1d9a6';
@@ -201,7 +202,7 @@ function Taxol() {
       <Escena T={T} a={K.G} b={K.Te} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         <TxSvg>
-          <rect x={0} y={1200} width={KW} height={720} fill="#3f8a4a" />
+          <rect x={0} y={1200} width={KW} height={720} fill="#244c33" />
           <Tejo T={T} x={470} y={1200} s={0.85} seed={2} />
           <BolsaSuero T={T} x={220} y={500} s={0.95} tubo={tubo0} nivel={0.8} />
           <circle cx={430} cy={1196} r={14 + Math.sin(T * 6) * 4} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} />
@@ -211,7 +212,7 @@ function Taxol() {
       <Escena T={T} a={K.Te} b={K.Tx}>
         <FondoLunares color={KC.yellow} />
         <TxSvg>
-          <rect x={0} y={1260} width={KW} height={660} fill="#c9a24a" />
+          <rect x={0} y={1260} width={KW} height={660} fill="#6a5833" />
           <Tejo T={T} x={600} y={1260} s={1.15} seed={3} pelado={kprog(T, K.Te + 0.6, K.Te + 2.2, kEase.sale) * 0.55} />
           {(() => { const c = kprog(T, K.Te + 2.2, K.Te + 3.2, kEase.suave); if (T < K.Te + 0.6) return null;
             return <g transform={`translate(${klerp(600, 860, c)} ${klerp(1100, 1150, c)}) rotate(${c * 70})`}><rect x={-22} y={-110} width={44} height={150} rx={12} fill={BARK} stroke={KC.ink} strokeWidth={5} /></g>; })()}
@@ -262,7 +263,7 @@ function Taxol() {
       <Escena T={T} a={K.Ar} b={K.Ag}>
         <FondoLunares color={KC.yellow} />
         <TxSvg>
-          <rect x={0} y={1200} width={KW} height={720} fill="#c9a24a" />
+          <rect x={0} y={1200} width={KW} height={720} fill="#6a5833" />
           <Paciente x={170} y={1200} s={0.95} />
           {[470, 690, 910].map((tx, i) => { const t0 = K.Ar + 0.8 + i * 0.9;
             return <Tejo key={i} T={T} x={tx} y={1200} s={0.55} seed={5 + i} pelado={kprog(T, t0, t0 + 0.6) * 0.9} seco={kprog(T, t0 + 1.4, t0 + 3.0)} />; })}
@@ -299,7 +300,7 @@ function Taxol() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <TxSvg>
-          <rect x={0} y={1200} width={KW} height={720} fill="#3f8a4a" />
+          <rect x={0} y={1200} width={KW} height={720} fill="#244c33" />
           <Tejo T={T} x={470} y={1200} s={0.85} seed={2} />
           <TanqueMini T={T} x={860} y={960} s={0.75} />
           <BolsaSuero T={T} x={220} y={500} s={0.95} tubo="M 220 760 Q 230 860 500 820 Q 700 790 760 870" nivel={0.8} />

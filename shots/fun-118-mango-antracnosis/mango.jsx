@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #118 · Esas manchas negras de tu mango muchas veces no son golpes — NARRADO (N1 · POR DENTRO).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (formas reales, tamaños aproximados).
 // Morfología: conidio de Colletotrichum cilíndrico, hialino, de puntas redondeadas (≈13 × 4 µm); apresorio café oscuro (melanizado),

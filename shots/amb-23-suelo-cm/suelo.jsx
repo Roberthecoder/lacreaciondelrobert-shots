@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #23 · Esta tierra no está muerta (un centímetro de suelo tarda hasta mil años) — NARRADO (N1 por dentro).
 // Datos: FAO (World Soil Day; DG 2012; IYS 2015), Borrelli et al. 2017 (Nature Communications), FAO/ITPS 2015 (SWSR),
 // Anthony et al. 2023 (PNAS), FAO et al. 2020 (State of knowledge of soil biodiversity). Ver guion.md y verificacion.md.

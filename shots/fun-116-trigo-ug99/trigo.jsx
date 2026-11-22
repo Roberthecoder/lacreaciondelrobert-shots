@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #116 · Este arbusto no es solo de adorno: ahí se aparea el hongo que puede dejarte sin pan — NARRADO
 // (formato N1 · POR DENTRO; gancho 1 «Esto no es X: es Y» sobre el arbusto). Guion y fuentes: guion.md · verificacion.md.
 // Roya del tallo del trigo (Puccinia graminis f. sp. tritici), agracejo (Berberis vulgaris) y la raza Ug99. El dibujo es esquemático.
@@ -269,7 +270,7 @@ function TrigoShot() {
         {fsvg(<>
           <Campo T={T} roya={kprog(T, K.A + 0.6, K.A + 2.6)} />
           <g transform={`translate(0 ${(1 - kprog(T, K.G, K.G + 0.6, kEase.sale)) * 30})`}><Agracejo T={T} x={260} y={1170} s={0.78} viento={1 + kprog(T, K.G, K.G + 0.8) * 1.5} /></g>
-          <rect x={0} y={1160} width={KW} height={760} fill="#c9a24a" />
+          <rect x={0} y={1160} width={KW} height={760} fill="#6a5833" />
           <line x1={0} y1={1160} x2={KW} y2={1160} stroke={KC.ink} strokeWidth={6} />
           {T < K.A + 0.4 && <g opacity={kprog(T, K.G + 0.2, K.G + 0.6) * (1 - kprog(T, K.A, K.A + 0.4))}>
             <PanTortilla x={600} y={1138} s={0.9 * klerp(0.6, 1, kprog(T, K.G + 0.2, K.G + 0.7, kEase.rebote))} fantasma={kprog(T, K.G + 3.4, K.G + 4.4)} />
@@ -351,7 +352,7 @@ function TrigoShot() {
         <FondoLunares color={KC.pink} />
         {fsvg(<>
           <Agracejo T={T} x={250} y={1200} s={0.62} seed={9} />
-          <rect x={0} y={1195} width={KW} height={760} fill="#c9a24a" /><line x1={0} y1={1195} x2={KW} y2={1195} stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={1195} width={KW} height={760} fill="#6a5833" /><line x1={0} y1={1195} x2={KW} y2={1195} stroke={KC.ink} strokeWidth={6} />
           <Interrogacion T={T} x={250} y={640} tam={340} />
           {Array.from({ length: 6 }, (_, k) => { const u = ((T - K.P) * 0.45 + k / 6) % 1; return <Uredospora key={k} x={-80 + u * 1250} y={420 + (k % 3) * 40 + Math.sin(u * 8 + k) * 20} s={0.32} rot={u * 300} pedicelo={false} />; })}
         </>)}
@@ -414,7 +415,7 @@ function TrigoShot() {
           <Campo T={T} />
           <Anemometro T={T} x={560} y={1090} h={420 * kprog(T, K.C + 0.4, K.C + 1.1, kEase.sale)} />
           <Agracejo T={T} x={260} y={1170} s={0.78} />
-          <rect x={0} y={1160} width={KW} height={760} fill="#c9a24a" />
+          <rect x={0} y={1160} width={KW} height={760} fill="#6a5833" />
           <line x1={0} y1={1160} x2={KW} y2={1160} stroke={KC.ink} strokeWidth={6} />
           <g opacity={kprog(T, K.C + 1.3, K.C + 1.7)} transform={`translate(${klerp(1150, 900, kprog(T, K.C + 1.3, K.C + 2.0, kEase.sale))} 760)`}><LupaSimple x={0} y={0} r={74} /></g>
           <g opacity={kprog(T, K.C + 4.0, K.C + 4.4)}><PanTortilla x={600} y={1138} s={0.9 * klerp(0.6, 1, kprog(T, K.C + 4.0, K.C + 4.5, kEase.rebote))} /></g>

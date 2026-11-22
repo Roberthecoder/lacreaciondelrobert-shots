@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #40 · Esa mayonesa no es una pasta (emulsión de aceite y yema) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const MAYO = '#fff3c4', ACEITE = '#f6b81f', ACEITE_OSC = '#c98a00', AGUA = '#7fc8ff', YEMA = '#ff9a1f', CABEZA = '#2a7bff', PROT = '#b18cff', VINAGRE = '#9be37a';
@@ -175,7 +176,7 @@ function Mayonesa() {
       <Escena T={T} a={yA} b={K.Ec}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <rect x={0} y={520} width={KW} height={340} fill="#1b4f8a" opacity={0.75} />
+          <rect x={0} y={520} width={KW} height={340} fill="#122f53" opacity={0.75} />
           <rect x={0} y={860} width={KW} height={320} fill={ACEITE_OSC} opacity={0.55} />
           <line x1={0} y1={860} x2={KW} y2={860} stroke="#fff" strokeWidth={4} strokeDasharray="16 12" opacity={0.6} />
           {Array.from({ length: 9 }, (_, i) => { const p = pYm(i), x = 100 + i * 110, prot = i % 3 === 1;

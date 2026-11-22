@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #29 · Las manchitas negras de tu coche: el hongo artillero (Sphaerobolus) — NARRADO (gancho 1 "no es X: es Y" + N5/N1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Morfología: cuerpos fructíferos esféricos de 1–2.5 mm, crema a naranja; se abren desde la punta en dientes (estrella);
@@ -155,7 +156,7 @@ function ArtilleroShot() {
       <Escena T={T} a={K.Ma} b={K.H} zoom={0.08} origen="50% 80%">
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <rect x={0} y={760} width={KW} height={60} fill="#b8b2a6" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={760} width={KW} height={60} fill="#616061" stroke={KC.ink} strokeWidth={6} />
           {[[300, 830, 150], [520, 760, 190], [760, 830, 150]].map(([x, y, r], i) => <circle key={i} cx={x} cy={y - mece(T, i + 1, 0.4) * 6} r={r} fill={i === 1 ? '#2f9e44' : KC.leaf} stroke={KC.ink} strokeWidth={7} />)}
           <rect x={505} y={860} width={30} height={120} fill="#7a4a22" stroke={KC.ink} strokeWidth={5} />
           <Astillas x={0} y={960} w={KW} h={960} n={110} seed={7} s={1.5} caen={kprog(T, K.Ma, K.Ma + 1.4)} />

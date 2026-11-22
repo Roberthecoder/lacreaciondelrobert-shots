@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #48 · Esta célula de tu piel no es solo piel (células iPS, Yamanaka) — NARRADO (N1 por dentro + toque N6).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 // Escala del micro: 1 µm = 2 px (pxPorMm 2000): fibroblasto ~150 µm de largo, célula iPS ~12 µm, colonia de cientos de µm.

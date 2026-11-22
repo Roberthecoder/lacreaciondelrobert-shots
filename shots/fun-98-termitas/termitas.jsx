@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #98 · Ese montículo es una granja: las termitas que cultivan Termitomyces — NARRADO.
 // Formato N1 "Por dentro" + tramo N5 (los nidos fósiles de Tanzania). Gancho 1 "Esto no es X: es Y". Guion y fuentes: guion.md · verificacion.md.
 // Morfología (Härkönen et al. 2015, Zambian mushrooms): T. titanicus con sombrero blanquecino y centro café humo, umbo bajo y ancho SIN punta,
@@ -384,7 +385,7 @@ function TermitasShot() {
       <Escena T={T} a={K.M} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <rect x={0} y={1060} width={KW} height={KH} fill="#5f6168" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1060} width={KW} height={KH} fill="#343842" stroke={KC.ink} strokeWidth={8} />
           {[0, 1, 2, 3, 4].map((i) => <rect key={i} x={40 + i * 230} y={1150} width={120} height={14} rx={7} fill={KC.yellow} />)}
           <rect x={0} y={1000} width={KW} height={64} fill={TC.sabana} stroke={KC.ink} strokeWidth={7} />
           {[[200, 850, 0.95, KC.coral, 0], [330, 830, 1.05, KC.blue, 1], [770, 880, 1.0, KC.teal, 2], [900, 900, 0.8, KC.violet, 3], [650, 880, 0.7, KC.orange, 4]].map(([px, py, s, c, i]) =>

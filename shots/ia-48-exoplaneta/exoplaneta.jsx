@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #48 · El planeta escondido que encontró una red neuronal — NARRADO (N1 "Por dentro" de una curva de luz).
 // Datos: NASA, comunicado 17-098 (14 dic 2017); Shallue y Vanderburg, The Astronomical Journal 155:94 (2018);
 // NASA Exoplanet Archive (consulta del 29 oct 2026). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

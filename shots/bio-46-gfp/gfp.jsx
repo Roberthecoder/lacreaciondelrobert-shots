@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #46 · La luz verde de la medusa (GFP) — NARRADO (N1 por dentro + N5 el experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (medusa, proteína, célula y gusano).
 // Fluorescencia, no bioluminiscencia: en la medusa la ENERGÍA azul (aequorina + calcio) pasa a la GFP sin llegar a ser luz;
@@ -251,7 +252,7 @@ function Gfp() {
       <Escena T={T} a={K.Me} b={K.Pr} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <GCapa>
-          <rect x={0} y={760} width={KW} height={560} fill="#0a8fc0" opacity={0.85} />
+          <rect x={0} y={760} width={KW} height={560} fill="#0a4f6e" opacity={0.85} />
           {Array.from({ length: 8 }, (_, i) => <path key={i} d={`M ${-40 + ((i * 160 + T * 40) % 1200)} ${800 + (i % 3) * 120} q 40 -18 80 0`} stroke="rgba(255,255,255,.5)" strokeWidth={5} fill="none" />)}
           {[[160, 1040, 0.28], [380, 1150, 0.24], [640, 1060, 0.3], [880, 1170, 0.25], [520, 920, 0.22]].map(([mx, my, ms], i) => (i !== 4 || red < 0.55) &&
             <Medusa key={i} T={T} x={mx} y={my + Math.sin(T * 1.2 + i) * 10} s={ms} verde={0} azul={0} seed={i + 4} n={14} />)}
@@ -329,7 +330,7 @@ function Gfp() {
       <Escena T={T} a={K.Pg} b={K.Tr} zoom={0.08}>
         <FondoLunares color={KC.yellow} />
         <GCapa>
-          <rect x={0} y={1180} width={KW} height={60} fill="#c98a4a" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={60} fill="#6a4c33" stroke={KC.ink} strokeWidth={8} />
           <Frasco x={560} y={980} s={1.05} liquido="#bfe0ff" />
           <Medusa T={T} x={560} y={960} s={0.32} verde={0.9} azul={0} seed={7} n={12} />
           <text x={860} y={900} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.pink} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 7} 860 780)`}>?</text>

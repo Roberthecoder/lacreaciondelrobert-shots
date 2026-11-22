@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #58 · El vaso que se llena cinco veces más cada año: el cómputo de la IA — NARRADO (N4 "La imagen que se llena" + N2 "El número").
 // Datos: Epoch AI, "Trends in AI" (feb 2026) y "Frontier Data Centers" (oct 2026); Sevilla et al., IJCNN 2022; Intel (ley de Moore); EIA (2022). Ver guion.md y verificacion.md.
 // Todo es esquemático: el vaso no está a escala.

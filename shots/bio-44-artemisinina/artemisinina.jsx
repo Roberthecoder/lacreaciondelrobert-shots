@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #44 · La medicina contra la malaria que también empieza en una levadura — NARRADO (N1 por dentro + remate N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (la molécula, la planta y las células no están a escala).
 const VERDE = '#3d9a4a', VERDE2 = '#2c7a38', SECO = '#b58a4a', SANGRE = '#d7263d', PARASITO = '#7b4fd0', CALDO = '#f2d58a';
@@ -266,7 +267,7 @@ function Artemisinina44() {
       <Escena T={T} a={K.Co} b={K.Pr} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          <rect x={0} y={1180} width={KW} height={300} fill="#a8743a" />
+          <rect x={0} y={1180} width={KW} height={300} fill="#59422b" />
           {Array.from({ length: 6 }, (_, i) => { const u = kprog(T, K.Co, K.Co + 2.6), ciclo = Math.sin(u * Math.PI * 2 + i * 0.6);
             return <Artemisia key={i} T={T} x={110 + i * 172} y={1200} s={0.55} crece={0.45 + 0.55 * Math.max(0, ciclo)} seco={Math.max(0, -ciclo)} seed={i + 11} flores={false} />; })}
           {(() => { const p = kprog(T, K.Co + 0.2, K.Co + 2.4); const pts = [[120, 560], [260, 470], [380, 640], [520, 430], [660, 700], [800, 480], [960, 620]];

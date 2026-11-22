@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #20 · TikTok no te lee la mente: te mide — NARRADO (N1 "Por dentro" + N6 "Guía en pasos").
 // Datos: TikTok, "Recommendation system" (Centro de seguridad, página vigente); TikTok Newsroom (2020 y 2023);
 // Vombatkere et al., "TikTok and the Art of Personalization", WWW '24. Ver guion.md y verificacion.md.

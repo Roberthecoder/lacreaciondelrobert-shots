@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #39 · Los niños moken veían mejor bajo el agua — NARRADO (N5 "El experimento" Gislén 2003 + N1 "Por dentro": el ojo bajo el agua).
 // Datos: Gislén et al. 2003 (Current Biology) y 2006 (Vision Research). Ver guion.md y verificacion.md.
 // Todo es esquemático: el ojo, el mapa, el barco y los niños. Las barras respetan la proporción del estudio (6.06 vs. 2.95 ciclos/grado).

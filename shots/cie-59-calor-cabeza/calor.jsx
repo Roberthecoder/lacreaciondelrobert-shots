@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #59 · No pierdes casi todo tu calor por la cabeza — NARRADO (N6 mito + N5 "El experimento").
 // Datos: Vreeman y Carroll 2008 (BMJ), Pretorius et al. 2006 (J Appl Physiol), manual del Ejército de EE. UU. Ver guion.md y verificacion.md.
 const CFRIO = '#2d2370', CCAL = '#ffd23f', CCAL2 = '#ff4d1f';

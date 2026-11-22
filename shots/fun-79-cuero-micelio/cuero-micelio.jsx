@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #79 · Esa cartera no es de piel de vaca: es de hongo — NARRADO (gancho 1 "Esto no es X: es Y", formato N1 + N5).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. Sin logos de marcas reales.
 

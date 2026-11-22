@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #57 · El cenote es una ventana al agua que bebe toda la península — NARRADO (N1 por dentro + toque de N4).
 // Datos: UNAM Internacional (2026), Kopczynski et al. 2025, Osburn et al. 2023, Cooney et al. 2023. Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (mapa, cueva, capas de agua y conductos).

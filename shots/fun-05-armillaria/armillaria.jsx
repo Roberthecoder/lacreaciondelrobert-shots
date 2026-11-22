@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #05 · El hongo gigante (Armillaria ostoyae) — NARRADO (N2 "El número" + viaje N1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (la red y el mapa no son el contorno real).
 const SUELO_Y = 900;
@@ -6,7 +7,7 @@ const CAFE_SOMBRERO = '#a8642a';
 // El bosque en corte: cielo, suelo, dos coníferas, tres racimos de setas y (opcional) la red del hongo bajo tierra.
 function Bosque({ T, at, red = 0, rayos = 0, cordon = 0, muere = 0, raizMala = 0, extra = 0 }) {
   return fsvg(<>
-    <rect x={0} y={0} width={KW} height={SUELO_Y} fill="#9fe7d2" />
+    <rect x={0} y={0} width={KW} height={SUELO_Y} fill="#547b77" />
     {[0, 1, 2, 3, 4, 5].map((i) => <circle key={i} cx={(i * 230 + T * 12) % 1300 - 100} cy={120 + (i % 3) * 70} r={46} fill="#fff" opacity=".55" />)}
     {extra > 0 && [-520, -300, 1150, 1400, 1650].map((xx, i) => <Conifera key={i} x={xx} y={SUELO_Y + 5} s={0.6} T={T} seed={i + 9} />)}
     <Conifera x={250} y={SUELO_Y + 5} s={0.8} T={T} seed={1} />

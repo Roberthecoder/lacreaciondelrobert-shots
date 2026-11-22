@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #31 · La Vía Láctea que tus ojos nunca van a ver desde tu casa (contaminación lumínica) — NARRADO (N4 al revés: las estrellas se apagan).
 // Datos: Falchi et al. 2016 (Science Advances), Kyba et al. 2023 (Science), FWC Florida, Van Doren et al. 2017 (PNAS). Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (cielo, Vía Láctea, globo, playa, columnas de luz).
@@ -195,9 +196,9 @@ function LuzShot() {
       {/* 1 · gancho: la Vía Láctea sobre tu casa */}
       <Escena T={T} a={K.G} b={K.R} zoom={0.04}>
         <CieloNoche T={T} via={viaG} estrellas={klerp(1, 0.75, prende)} domo={0.35 * prende}>
-          {svg(<><rect x={0} y={1560} width={KW} height={360} fill="#1f2a1c" />
+          {svg(<><rect x={0} y={1560} width={KW} height={360} fill="#141c1c" />
             <Ciudad y={1600} luz={prende} seed={8} color="#202638" />
-            <rect x={0} y={1590} width={KW} height={330} fill="#24321f" stroke={KC.ink} strokeWidth={6} />
+            <rect x={0} y={1590} width={KW} height={330} fill="#17201e" stroke={KC.ink} strokeWidth={6} />
             <Casa x={330} y={1640} s={0.95} luz={0.4 + 0.6 * kprog(T, 0.3, 0.6)} />
             <Farol x={780} y={1660} h={460} tipo="malo" on={kprog(T, 0.5, 0.7) * (0.6 + 0.4 * Math.abs(Math.sin(T * 25)) * (T < 1.0 ? 1 : 0) + (T >= 1.0 ? 0.4 : 0))} T={T} id="fg" /></>)}
         </CieloNoche>
@@ -249,7 +250,7 @@ function LuzShot() {
       {/* 7 · un niño: de 250 a 100 estrellas a los 18 */}
       <Escena T={T} a={K.N} b={K.Tt}>
         <CieloNoche T={T} via={0} estrellas={(cuenta / 250) * 0.9} domo={0.35 + 0.4 * kprog(T, K.N + 1, K.N + 5.3)}>
-          {svg(<><rect x={0} y={1590} width={KW} height={330} fill="#24321f" stroke={KC.ink} strokeWidth={6} />
+          {svg(<><rect x={0} y={1590} width={KW} height={330} fill="#17201e" stroke={KC.ink} strokeWidth={6} />
             <Casa x={760} y={1640} s={0.85} luz={1} />
             <Persona x={330} y={1640} s={klerp(0.9, 2.3, edad / 18)} color={KC.yellow} /></>)}
         </CieloNoche>
@@ -295,7 +296,7 @@ function LuzShot() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.03}>
         <CieloNoche T={T} via={0.1 + 0.9 * vuelve} estrellas={klerp(0.6, 1, vuelve)} domo={0.6 * (1 - vuelve)}>
           {svg(<><Ciudad y={1600} luz={1 - 0.6 * vuelve} seed={8} color="#202638" />
-            <rect x={0} y={1590} width={KW} height={330} fill="#24321f" stroke={KC.ink} strokeWidth={6} />
+            <rect x={0} y={1590} width={KW} height={330} fill="#17201e" stroke={KC.ink} strokeWidth={6} />
             <Casa x={330} y={1640} s={0.95} luz={1} />
             <Farol x={700} y={1660} h={460} tipo="bueno" on={1} T={T} id="fc" /></>)}
         </CieloNoche>

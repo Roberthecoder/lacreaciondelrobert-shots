@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #36 · Nadie ve el mismo arcoíris que tú — NARRADO (N1 "Por dentro" la gota + N3 el ángulo de 42°).
 // Datos: HyperPhysics (GSU), Scientific American 1999, Met Office, BBC Science Focus, The Irish Times. Ver guion.md y verificacion.md.
 // Dibujo esquemático: los tamaños no van a escala y la separación de colores dentro de la gota está exagerada para que se vea.

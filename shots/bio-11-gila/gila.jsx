@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #11 · La saliva del lagarto que abrió el camino al Ozempic — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. Todos los dibujos son esquemáticos y no están a escala entre sí.
 // Secuencias reales (primeros 8 aminoácidos): GLP-1 activo H-A-E-G-T-F-T-S… · exendina-4 H-G-E-G-T-F-T-S…

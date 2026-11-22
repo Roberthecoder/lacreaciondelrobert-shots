@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #26 · Esa compresa no fabrica frío: le roba calor a tu piel (compresa fría instantánea) — NARRADO (N1 por dentro + N5 termómetro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const PIEL = '#f1b48f', PIEL_FRIA = '#c9c6e6', AGUA = '#7fc8ff', NH4 = KC.lilac, NO3 = KC.orange, CALOR = '#ff3b2f';

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #54 · Por qué te mareas en el carro — NARRADO (N1 "Por dentro": oído interno contra ojos).
 // Datos: conflicto sensorial (CDC Yellow Book 2026; Golding 2006), hipótesis del veneno (Treisman 1977), control del conductor
 // (Rolnick y Lubow 1991), consejos y edades (CDC 2026; NHS). Ver guion.md y verificacion.md.
@@ -129,8 +130,8 @@ function CaminoFrente({ T, c = 0, y0 = 360, y1 = 860 }) {
   const bordeI = `M 120 ${y1} Q ${mid - 160} ${(y0 + y1) / 2} ${cxTop - 26} ${y0}`, bordeD = `M 960 ${y1} Q ${mid + 160} ${(y0 + y1) / 2} ${cxTop + 26} ${y0}`;
   const centro = `M 540 ${y1} Q ${mid} ${(y0 + y1) / 2} ${cxTop} ${y0}`;
   return <g>
-    <rect x={0} y={y0 - 260} width={KW} height={260} fill="#9fe3ff" />
-    <rect x={0} y={y0} width={KW} height={y1 - y0} fill={KC.leaf} />
+    <rect x={0} y={y0 - 260} width={KW} height={260} fill="#54798e" />
+    <rect x={0} y={y0} width={KW} height={y1 - y0} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} />
     <path d={`${bordeI} L ${cxTop + 26} ${y0} Q ${mid + 160} ${(y0 + y1) / 2} 960 ${y1} Z`} fill="#4a4d5c" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <path d={centro} fill="none" stroke={KC.yellow} strokeWidth={12} strokeDasharray="40 36" strokeDashoffset={-T * 260} />
   </g>;
@@ -307,7 +308,7 @@ function MareoCarro() {
             <path d="M 0 -70 L 70 0 L 0 70 L -70 0 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
             <path d={curva(T + 1.2) > 0 ? 'M -18 30 L -18 0 Q -18 -20 10 -20 L 10 -32 L 30 -14 L 10 4 L 10 -8 Q -4 -8 -4 0 L -4 30 Z' : 'M 18 30 L 18 0 Q 18 -20 -10 -20 L -10 -32 L -30 -14 L -10 4 L -10 -8 Q 4 -8 4 0 L 4 30 Z'} fill={KC.ink} />
           </g>
-          <rect x={0} y={880} width={KW} height={380} fill="#3a3f5c" />
+          <rect x={0} y={880} width={KW} height={380} fill="#22273c" />
           <Volante x={540} y={985} r={190} giro={curva(T + 0.6) * 38} />
           <Onomato T={T} at={K.Conductor + 4.7} dur={0.9} x={560} y={640} texto="¡FRENÓN!" color={KC.red} tam={90} rot={-6} />
         </Lienzo>

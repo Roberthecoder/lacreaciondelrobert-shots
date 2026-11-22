@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #42 · El hielo del Ártico en septiembre, medido en Méxicos — NARRADO (N4 la imagen que se llena).
 // Datos: NSIDC (Sea Ice Today, 23 sep y 7 oct 2026; Quick facts; Why sea ice matters), NASA Earth Observatory, SRE/INEGI.
 // Ver guion.md y verificacion.md. El mapa es ESQUEMÁTICO; las áreas del hielo y de México sí están a la misma escala entre sí.
@@ -163,7 +164,7 @@ function HieloArticoShot() {
       </Escena>
       {/* 7 · el espejo: hielo 50–70 %, mar 6 % */}
       <Escena T={T} a={K.E} b={K.C}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#7fdcff 0%, #c9f1ff 55%, #c9f1ff 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#284457 0%, #3c4a57 55%, #3c4a57 100%)' }}></div>
         {svg(<>
           <Sol T={T} x={300} y={470} r={80} />
           {/* hielo (izquierda) y mar (derecha) */}

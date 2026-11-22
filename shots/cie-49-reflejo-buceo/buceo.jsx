@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #49 · El reflejo de buceo: tu corazón se frena con agua fría — NARRADO (N1 "Por dentro" + N2 comparación con la foca).
 // Datos: Arnold 1999, Panneton 2013 y 2020, Schagatay, Goksör et al. 2002, CDC 2015. Ver guion.md y verificacion.md.
 // Sin cifras de latidos en pantalla (los monitores son esquemáticos: solo muestran "más lento").
@@ -263,7 +264,7 @@ function ReflejoBuceo() {
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Focas} />
       {/* 6 · focas: el reflejo es muchísimo más fuerte */}
       <Escena T={T} a={K.Focas} b={K.Bebes}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#00d2ff 0%, #0a8fd8 45%, #0a3f86 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#074257 0%, #0a304d 45%, #0a1b38 100%)' }}></div>
         <Lienzo>
           <path d={`M 0 300 Q 270 ${280 + Math.sin(T * 2) * 12} 540 300 T 1080 300 L 1080 0 L 0 0 Z`} fill="#bff3ff" />
           {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${i * 200 - ((T * 40) % 200)} ${560 + i * 110} l 260 140`} stroke="rgba(255,255,255,.12)" strokeWidth={30} />)}

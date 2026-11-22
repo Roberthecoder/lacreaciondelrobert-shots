@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #52 · El ácido cítrico de tu gomita lo hace un moho (Aspergillus niger) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (célula, mitocondria, ciclo y bomba no están a escala).
 const ESPORA = '#3a2a20', ESPORA2 = '#5a4030', CITRATO = '#ffd43b', LIMON = '#ffe11a', CEBOLLA = '#e9b872', CEB_OSC = '#b9853f';

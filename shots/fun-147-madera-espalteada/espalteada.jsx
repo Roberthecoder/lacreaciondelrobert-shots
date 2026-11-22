@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #147 · Esas líneas negras no son vetas: son fronteras entre hongos — NARRADO (N1 Por dentro, gancho 1 "esto no es X: es Y").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #129 · Este hongo huele a hot cakes con miel de maple — NARRADO (gancho 1 "Esto no es X: es Y"; N1 Por dentro + N5 El experimento).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es guía de recolección.
 

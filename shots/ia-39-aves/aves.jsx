@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #39 · El dibujo escondido en el canto de un pájaro — NARRADO (N1 "Por dentro": canto → espectrograma → red).
 // Datos: Kahl et al., Ecological Informatics 61:101236 (2021); Wood et al., PLOS Biology 20(6):e3001670 (2022);
 // Cornell Chronicle (23 jun 2021); lista de etiquetas BirdNET V2.4 (2023). Ver guion.md y verificacion.md.

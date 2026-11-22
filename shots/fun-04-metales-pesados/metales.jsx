@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Fungi Mati #04 · ¿Los hongos tienen metales pesados? — NARRADA (N1 "Por dentro" + N2) y MUDO (M2 "¿Por qué NO…?").
 // Guion y fuentes: guion.md. El dibujo es esquemático; las partículas de metal NO están a escala (son átomos).
 const AVS = (n) => 'assets/stickers/' + n + '.png';

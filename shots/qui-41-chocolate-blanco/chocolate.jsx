@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #41 · Esa capa blanca no es moho (el "bloom" del chocolate) — NARRADO (N1 por dentro + toque N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático. Tableta genérica, sin marca.
 const CHOC = '#5b3220', CHOC2 = '#7a4529', CHOC_OSC = '#3d2014', MANTECA = '#f3d36b', BLOOM = '#e9e4da', AZUCAR = '#ffffff';

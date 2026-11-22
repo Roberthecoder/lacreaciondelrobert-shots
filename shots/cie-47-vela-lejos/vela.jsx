@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #47 · ¿A qué distancia puedes ver una vela? — NARRADO (N5 "El experimento" + N2 2.6 km contra 50 km).
 // Datos: Krisciunas y Carona (2015), arXiv:1507.06270 (Texas A&M): vela a 338 m comparada con Vega y medida con CCD; magnitud 6;
 // ≈ 2,576 m. Ver guion.md y verificacion.md. El dibujo es esquemático (distancias y tamaños no a escala).

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #112 · «Ya lo comí antes y no me hizo nada»: el paxilo enrollado (Paxillus involutus) — NARRADO
 // (gancho 6 "mito peligroso"; formato N1 Por dentro + N5 caso real dibujado). Guion y fuentes: guion.md · verificacion.md.
 // El dibujo es esquemático. No es guía de identificación.
@@ -244,7 +245,7 @@ function PaxillusShot() {
         <FondoLunares color={KC.coral} />
         {fsvg(<>
           <Estomago T={T} x={380} y={880} s={1.2} irrita={kprog(T, K.Cr + 0.3, K.Cr + 1.2)} />
-          <rect x={0} y={0} width={KW} height={KH} fill={KC.dark} opacity={0.7 * kprog(T, K.Cr + 1.9, K.Cr + 2.5)} />
+          <rect x={0} y={0} width={KW} height={KH} fill={cineMix(KC.dark, CINE.fondo, 0.55)} opacity={0.7 * kprog(T, K.Cr + 1.9, K.Cr + 2.5)} />
           {T > K.Cr + 2.1 && <text x={360} y={1050} textAnchor="middle" style={{ font:`400 ${420 * kprog(T, K.Cr + 2.1, K.Cr + 2.5, kEase.rebote)}px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={10}>!</text>}
         </>)}
       </Escena>

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #15 · Tu detergente trae enzimas de microbios — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (las moléculas no están a escala).
 const PROT = '#ff5d8f', ALM = '#ffd43b', GRASA = '#ffb347', ENZ_P = '#b18cff', ENZ_A = '#2fe0a8', ENZ_L = '#ff8a1f';
@@ -138,7 +139,7 @@ function Fabrica({ T, nube = 1, tos = 0 }) {
   const R = krng(9);
   const polvo = Array.from({ length: 40 }, () => [R(), R(), 10 + R() * 30]);
   return <g>
-    <rect x={0} y={1180} width={KW} height={300} fill="#8a7f95" />
+    <rect x={0} y={1180} width={KW} height={300} fill="#4a4758" />
     <path d="M 120 520 L 520 520 L 420 820 L 220 820 Z" fill="#9aa4ae" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
     <rect x={260} y={820} width={80} height={120} fill="#7a848e" stroke={KC.ink} strokeWidth={8} />
     <rect x={80} y={1060} width={520} height={130} rx={14} fill="#6f7a84" stroke={KC.ink} strokeWidth={9} />
@@ -232,7 +233,7 @@ function Detergente() {
         <Escala T={T} pxPorMm={1.7} z={1} x={60} y={1430} color={KC.ink} />
       </Escena>
       <Lupa T={T} at={K.Mi + 0.1} until={K.Pt - 0.2} x={540} y={700} r={340} fx={540 - 114} fy={900 - 10} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · LA MANCHA"
-        interior={(t) => <svg width={680} height={680} viewBox="100 600 880 880" style={{ position:'absolute', left:0, top:0 }}><rect x={0} y={0} width={KW} height={KH} fill="#0d1424" /><MicroMancha T={t} K={K} enzimas={false} /></svg>} />
+        interior={(t) => <svg width={680} height={680} viewBox="100 600 880 880" style={{ position:'absolute', left:0, top:0 }}><rect x={0} y={0} width={KW} height={KH} fill="#0c1220" /><MicroMancha T={t} K={K} enzimas={false} /></svg>} />
       {/* 4–5 · al microscopio: las enzimas cortan */}
       <Escena T={T} a={K.Pt} b={K.Pr} zoom={0.03}>
         <FondoMarca patron="oscuro" />
@@ -263,7 +264,7 @@ function Detergente() {
         <MundoBiorreactor T={T} turbio={0.7} burbujas={1} fondo={KC.cyan} etiquetaTanque="tanque de fermentación" />
       </Escena>
       <Lupa T={T} at={K.Ta + 0.8} until={K.Bi - 0.3} x={300} y={700} r={190} fx={540} fy={1010} tinte={KC.mint} etiqueta="AL MICROSCOPIO · EL CALDO"
-        interior={(t) => <svg width={380} height={380} viewBox="160 620 760 760" style={{ position:'absolute', left:0, top:0 }}><rect x={0} y={0} width={KW} height={KH} fill="#2a2210" /><BacilosEnzimas T={t} at={K.Ta + 0.6} x={540} y={1000} /></svg>} />
+        interior={(t) => <svg width={380} height={380} viewBox="160 620 760 760" style={{ position:'absolute', left:0, top:0 }}><rect x={0} y={0} width={KW} height={KH} fill="#1a1816" /><BacilosEnzimas T={t} at={K.Ta + 0.6} x={540} y={1000} /></svg>} />
       {/* 9 · 1963 */}
       <Escena T={T} a={K.Bi} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.orange} />

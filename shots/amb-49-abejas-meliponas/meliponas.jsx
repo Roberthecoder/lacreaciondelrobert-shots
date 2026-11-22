@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #49 · La abeja maya que no pica — NARRADO (N1 "Por dentro" + estudio a la mitad).
 // Datos: Pat Fernández et al. 2018 (Estudios de Cultura Maya 52), Villanueva-Gutiérrez et al. 2013 (J. Kansas Entomol. Soc. 86),
 // guía ECOSUR 2023, Moreno y Cardozo 2003, Landa (hacia 1566). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

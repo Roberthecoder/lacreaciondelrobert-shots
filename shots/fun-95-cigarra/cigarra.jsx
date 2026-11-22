@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #95 · Esa cigarra ya es un hongo: Massospora cicadina — NARRADO.
 // Formato N1 "Por dentro" + N5 "El experimento" (playback de cantos, Cooley et al. 2018). Gancho 1 "Esto no es X: es Y".
 // Guion y fuentes: guion.md · verificacion.md (APROBADO).
@@ -308,7 +309,7 @@ function CigarraShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           <rect x={0} y={560} width={KW} height={KH} fill={CG.tierra} stroke={KC.ink} strokeWidth={8} />
-          <rect x={0} y={530} width={KW} height={40} fill={KC.leaf} stroke={KC.ink} strokeWidth={7} />
+          <rect x={0} y={530} width={KW} height={40} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} stroke={KC.ink} strokeWidth={7} />
           {[[260, 1300], [640, 1240]].map(([tx, ty], i) => <path key={'t' + i} d={`M ${tx} ${ty} Q ${tx + (i ? -30 : 40)} ${(ty + 560) / 2} ${tx + (i ? 10 : -10)} 560`} stroke={CG.tierra2} strokeWidth={120} fill="none" strokeLinecap="round" />)}
           {[[130, 760, 0], [430, 690, 30], [520, 960, 60], [400, 1090, 10], [860, 1060, 80], [110, 1120, 40], [800, 700, 20], [940, 880, 50]].map(([x, y, r], i) =>
             <EsporaReposo key={i} x={x} y={y + Math.sin(T * 1.2 + i) * 3} r={30} rot={r} />)}

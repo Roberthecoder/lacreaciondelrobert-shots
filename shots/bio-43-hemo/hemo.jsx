@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #43 · La hamburguesa vegetal que "sangra" (leghemoglobina de soya hecha en levadura) — NARRADO (N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático y no está a escala entre sí.
 const ROJO_CRUDO = '#c4334a', ROJO_OSC = '#8e1f33', DORADO = '#a8743c', DORADO_OSC = '#7a4f26', CAFE = '#6b4226';

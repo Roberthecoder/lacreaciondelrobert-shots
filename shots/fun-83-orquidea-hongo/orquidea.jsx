@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #83 · Esto no es polvo: son semillas de orquídea — NARRADO (N1 Por dentro, gancho 1 «Esto no es X: es Y»).
 // Viaje: cápsula en una rama del bosque de niebla → semilla al microscopio → hifa → pelotones → protocormo → la misma rama, en flor.
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
@@ -333,7 +334,7 @@ function OrquideaShot() {
       </Escena>
       {/* 1 · bosque de niebla */}
       <Escena T={T} a={K.Bo} b={K.Ca} zoom={0.06}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#bff3e1, #6fd3b4)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#394a4f, #244244)' }}></div>
         {fsvg(<>
           <ArbolNiebla x={170} y={1700} h={1400} s={0.9} T={T} seed={2} />
           <ArbolNiebla x={560} y={1760} h={1500} s={1.0} T={T} seed={5} />

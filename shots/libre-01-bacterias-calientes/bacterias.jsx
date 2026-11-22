@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Libre 01 · Bacterias calientes — CHISTE MUDO (sin voz: efectos y música generada en gen-audio.mjs). Formato M4 · Ciclo (loop).
 // Guion, letreros y fuentes: guion.md / narracion.json / verificacion.md. El dibujo es esquemático (caritas, bufandas y corazones).
 // v2 (4 nov 2026, corrección de Robert «más directo»): chiste de 20.5 s, solo 4 letreros, sin contador, reloj ni barra de escala.
@@ -228,7 +229,7 @@ function RefriDentro({ T, placa = true, colonias = 0 }) {
 function FondoMicro({ T, id = 'fm' }) {
   return <>
     <defs><radialGradient id={id} cx="50%" cy="45%" r="60%"><stop offset="0" stopColor="#1d2b45" /><stop offset="1" stopColor="#0b1220" stopOpacity="0" /></radialGradient></defs>
-    <rect x={0} y={0} width={KW} height={KH} fill="#0b1220" />
+    <rect x={0} y={0} width={KW} height={KH} fill="#0a101e" />
     <rect x={0} y={0} width={KW} height={KH} fill={`url(#${id})`} />
     {Array.from({ length: 28 }, (_, i) => <line key={'v' + i} x1={i * 40} y1={0} x2={i * 40} y2={KH} stroke="rgba(0,210,255,.07)" strokeWidth={2} />)}
     {Array.from({ length: 49 }, (_, i) => <line key={'h' + i} x1={0} y1={i * 40} x2={KW} y2={i * 40} stroke="rgba(0,210,255,.07)" strokeWidth={2} />)}

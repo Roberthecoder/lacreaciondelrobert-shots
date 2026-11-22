@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #01 · AlphaFold: la IA que adivina la forma de las proteínas — NARRADO (N2 "El número" + viaje N1).
 // Guion y fuentes: guion.md. El dibujo es esquemático: la proteína es una cadena de 40 cuentas (no una proteína real).
 const N_CUENTAS = 40;

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #48 · Un año de ballena gris en un mapa: 16 mil km que dependen del Ártico — NARRADO (N4 la imagen que se llena).
 // Datos: NOAA Fisheries (ficha de especie, evento de mortandad inusual 2019-2023, notas del 18 jun 2025 y 15 jul 2026) y ficha IMMA
 // de la UICN (lagunas de crianza). Ver guion.md y verificacion.md. Mapa, ruta y ballenas son esquemáticos.
@@ -130,7 +131,7 @@ function BallenaGrisShot() {
       </Escena>
       {/* 3 · cómo come: de lado, lodo del fondo, barbas, anfípodos */}
       <Escena T={T} a={K.Co} b={K.V} zoom={0.03}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#123a5c, #0d1424 70%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0c1a2d, #0b101e 70%)' }}></div>
         {svg(<>
           <path d="M 0 1000 Q 270 970 540 990 T 1080 985 L 1080 1920 L 0 1920 Z" fill="#6b4a2e" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 10 }, (_, i) => <Anfipodo key={i} x={60 + i * 105} y={1030 + (i % 3) * 30} s={0.6} rot={i * 25} o={0.9} />)}

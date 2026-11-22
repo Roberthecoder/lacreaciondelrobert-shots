@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #18 · Esa sal no calienta el hielo: lo obliga a robarle calor a tu helado — NARRADO (N5 experimento con termómetro + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const HIELO = '#dff4ff', HIELO2 = '#a9dcf5', SALMUERA = '#7fc8ff', CREMA = '#ffe3c2', CALOR = '#ff8a1f', NA = '#b18cff', CL = '#b6e33a', LATA = '#c9ced8';
@@ -249,7 +250,7 @@ function Helado() {
       </Escena>
       {/* 8 · carretera con hielo */}
       <Escena T={T} a={K.Car} b={K.Fa} zoom={0.03}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#bfe8ff, #eaf6ff 45%, #dfe8ef 45%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#394757, #444b57 45%, #414753 45%)' }}></div>
         <SvgCapa>
           <path d="M 0 1260 L 1080 1260 L 1080 860 L 0 860 Z" fill="#4a4f5a" stroke={KC.ink} strokeWidth={8} />
           {[80, 380, 680, 980].map((x) => <rect key={x} x={x} y={1052} width={140} height={16} fill={KC.yellow} />)}

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #40 · Tus pupilas se agrandan cuando piensas fuerte — NARRADO (N5 "El experimento": Kahneman y Beatty 1966 + N1 el ojo).
 // Datos: Kahneman y Beatty 1966 (Science), Joshi et al. 2016 (Neuron), Mathôt 2018 (J. Cognition), Nobel de Economía 2002. Ver guion.md y verificacion.md.
 // El cambio real de la pupila es pequeño: en el dibujo está EXAGERADO (chip «dibujo exagerado»). La zona del tallo cerebral va con chip «se cree».

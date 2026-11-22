@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #121 · Este costal no es solo comida para tu milpa — NARRADO (N1 Por dentro + N2 El número; gancho 1 con número dentro).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Piezas propias (milpa, costal, moléculas, corte de suelo, hifa, P450nor, tubitos, frascos de tierra) viven aquí para no tocar el kit.

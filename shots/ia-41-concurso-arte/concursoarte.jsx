@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #41 · La imagen hecha con IA que ganó un concurso de arte — NARRADO (N5 reto + N2 números).
 // Datos: Junta de Revisión de la Oficina de Derechos de Autor de EE. UU. (5 sep 2023), Smithsonian/Pueblo Chieftain (2022),
 // demanda Allen v. Perlmutter (D. Colo., 2024), comunicado de Boris Eldagsen (13 abr 2023), USCO Parte 2 (ene 2025). Ver guion.md y verificacion.md.

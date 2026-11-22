@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #105 · Ese olote no es basura: es comida… para un hongo — NARRADO (N1 Por dentro + pasos del cultivo).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #120 · Esa seta no salió tarde: el calendario de los hongos cambió — NARRADO
 // (gancho 1 «Esto no es X: es Y» · formato N2 El número + N1 Por dentro).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.

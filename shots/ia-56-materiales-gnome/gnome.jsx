@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #56 · La IA que "descubrió" 2.2 millones de cristales — NARRADO (N2 "El número" + N4 "La imagen que se llena").
 // Datos: Merchant et al., Nature 624:80 (2023) · Szymanski et al., Nature 624:86 (2023) y su Author Correction, Nature 650:E1 (2026)
 // · Cheetham y Seshadri, Chem. Mater. 36:3490 (2024). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

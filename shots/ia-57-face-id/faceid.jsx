@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #57 · Tu celular no te ve la cara: te la mide — NARRADO (N1 "Por dentro" + N2 "El número").
 // Datos: Apple Support "About Face ID advanced technology" (2026), Apple Platform Security Guide (2024),
 // Apple Support "About Touch ID advanced security technology" (2023) y comunicado del iPhone X (2017). Ver guion.md y verificacion.md.

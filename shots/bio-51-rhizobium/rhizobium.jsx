@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #51 · Tu frijol fabrica su propio abono (Rhizobium, nódulos y nitrogenasa) — NARRADO (N1 por dentro + N5 inoculante).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático y no está a escala entre sí.
 const VERDE = '#3fbf4a', VERDE_OSC = '#2a8a36', TALLO = '#4f9e3a', RAIZ = '#e8d2a6', NODULO = '#e7c08f', TIERRA = '#8a5a34',

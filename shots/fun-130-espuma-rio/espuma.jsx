@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #130 · Esa espuma del río está llena de estrellas — NARRADO (gancho 1 "Esto no es X: es Y").
 // Guion y fuentes: guion.md · verificacion.md. Arroyo, esporas, hifas, larva y mapas: DIBUJO ESQUEMÁTICO (estilo propio).
 // Esporas (conidios) de Articulospora tetracladia: un brazo de base corto (16–25 µm) + tres brazos que divergen de un punto (20–50 µm), incoloras.
@@ -293,7 +294,7 @@ function EspumaShot() {
       </Escena>
       {/* 12 · también en la lluvia que escurre por los troncos */}
       <Escena T={T} a={K.L} b={K.C} zoom={0.05}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#7fb3d9, #bfe0f2)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#283a4d, #394554)' }}></div>
         {fsvg(<>
           {Array.from({ length: 40 }, (_, i) => { const x0 = (i * 97) % KW, y0 = ((T * 900 + i * 173) % 1500) + 300; return <line key={i} x1={x0} y1={y0} x2={x0 - 8} y2={y0 + 40} stroke="#e6f6ff" strokeWidth={4} opacity=".8" />; })}
           <rect x={0} y={1140} width={KW} height={80} fill={ES.agua} stroke={KC.ink} strokeWidth={6} />

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #04 · Esto no es agua de jamaica: es un medidor de pH (col morada) — NARRADO (N5 experimento + N3 escala).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (colores aproximados).
 

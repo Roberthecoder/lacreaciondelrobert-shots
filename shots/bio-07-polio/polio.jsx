@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot bio-07 · Biotecnológico #07 — "El virus que se escribió desde una secuencia".
 // Dos versiones en un mismo archivo: PolioNarradoApp (N4 + N2) y PolioDatosApp (gemelo mudo M1).
 // TONO DE BIOSEGURIDAD: el shot cuenta qué significó y qué reglas dejó. No hay método ni pasos.
@@ -111,7 +112,7 @@ function PolioNarrado() {
 
       {/* 1 · EQUIPO */}
       <EscenaFundido T={T} a={K.E} b={K.S} zoom={0.05} fondo="#0a0d14">
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#141a28, #080a10)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d121f, #090e19)' }}></div>
         <Ambiente T={T} n={22} seed={7} color="rgba(120,180,255,.3)" tam={[3, 9]} />
         <PantallaLetras T={T} llenado={1} x={240} y={560} ancho={600} alto={620} />
       </EscenaFundido>
@@ -119,7 +120,7 @@ function PolioNarrado() {
 
       {/* 2 · SECUENCIA — ya estaba publicada */}
       <EscenaFundido T={T} a={K.S} b={K.P} zoom={0.05} fondo="#0a0d14">
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#1a2033, #080a10)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0e1322, #090e19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <Documento T={T} x={340} y={880} w={470} h={560} titulo="secuencia" pie="ya publicada" rot={-5} />
           {Array.from({ length: 16 }, (_, i) => { const at = K.S + 0.6 + i * 0.09, p = kprog(T, at, at + 1.6, kEase.sale);
@@ -169,7 +170,7 @@ function PolioNarrado() {
 
       {/* 5 · RATÓN — sobrio */}
       <EscenaFundido T={T} a={K.R} b={K.Q} zoom={0.04} fondo="#0a0d14">
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2a1418, #080a10)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#12101b, #090e19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <RatonSilueta T={T} x={540} y={930} s={2.0} quieto={kprog(T, K.R + 1.2, K.R + 2.4, kEase.suave)} />
         </svg>
@@ -187,7 +188,7 @@ function PolioNarrado() {
 
       {/* 7 · PORQUÉ — se lee y ahora también se escribe */}
       <EscenaFundido T={T} a={K.Po} b={K.Sc} zoom={0.04} fondo="#0a0d14">
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#111a2c, #080a10)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0c1220, #090e19)' }}></div>
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           {[0, 1].map((k) => { const y = 740 + k * 400, on = k === 0 ? 1 : kprog(T, K.Po + 1.8, K.Po + 2.6);
             return <g key={k} opacity={k === 0 ? kprog(T, K.Po + 0.3, K.Po + 0.9) : on}>

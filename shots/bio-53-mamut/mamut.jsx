@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #53 · ¿Quieres revivir un mamut? Sigue estos pasos — NARRADO (N6 guía irónica en pasos + N2 número gigante).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático y no está a escala.
 const MAR = '#7a4a26', MAR2 = '#5a3416', MARFIL = '#f3e6c4', HIELO = '#dff6ff', ELEF = '#9aa0a8', ELEF2 = '#7d838c', LANA = '#d9a24a';
@@ -137,7 +138,7 @@ function Montanas({ o = 1 }) {
   return <g opacity={o}>
     <path d="M 0 900 L 220 560 L 380 760 L 600 480 L 820 760 L 960 600 L 1080 720 L 1080 1920 L 0 1920 Z" fill="#7fb7a6" stroke={KC.ink} strokeWidth={8} />
     <path d="M 600 480 L 660 570 L 620 560 L 580 600 L 550 555 Z M 220 560 L 270 640 L 200 620 Z" fill="#fff" />
-    <rect x={0} y={1080} width={KW} height={840} fill="#5fa86a" />
+    <rect x={0} y={1080} width={KW} height={840} fill="#345c43" />
   </g>;
 }
 // Pulmones por dentro: uno normal y uno chico y deforme.
@@ -307,7 +308,7 @@ function Mamut() {
           <Montanas />
           <Bucardo T={T} x={820} y={880} s={0.85} o={0.35 * (1 - kprog(T, K.Pu, K.Pu + 0.6))} />
           <Bucardo T={T} x={540} y={1150} s={1.0} cria echado={kprog(T, K.Pu + 0.8, K.Pu + 1.8, kEase.suave)} />
-          <rect x={0} y={0} width={KW} height={KH} fill="#0d1424" opacity={0.45 * kprog(T, K.Pu, K.Pu + 0.8)} />
+          <rect x={0} y={0} width={KW} height={KH} fill="#0c1220" opacity={0.45 * kprog(T, K.Pu, K.Pu + 0.8)} />
         </SvgCapa>
         <Lupa T={T} at={K.Pu + 0.4} until={K.Ci - 0.3} x={320} y={760} r={190} fx={560} fy={1130} interior={(Tl, r) => <Pulmones T={Tl} r={r} />} etiqueta="POR DENTRO · pulmones" tinte={KC.pink} />
       </Escena>

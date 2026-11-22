@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #54 · Ese encendedor no está lleno de gas (butano líquido a presión) — NARRADO (N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (moléculas, válvula, rueda, cristal y llama).
 const PLAST = '#ff2d78', LIQ = '#dff3ff', METAL = '#c9ced6', PIEL = '#f1b48f', CHISPA = '#ffb21a';
@@ -262,7 +263,7 @@ function EncendedorShot() {
       </Escena>
       {/* 7 · al sol: tablero del coche, sube la temperatura y la presión */}
       <Escena T={T} a={K.S} b={K.Es} zoom={0.03}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#8fd8ff 0%, #ffe9a8 55%, #3b3f48 55%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4357 0%, #4a4840 55%, #171b27 55%)' }}></div>
         <SvgCapa>
           <Sol T={T} x={860} y={500} r={90} o={1} />
           <path d="M 0 1056 Q 540 980 1080 1056 L 1080 1120 L 0 1120 Z" fill="#2a2d34" stroke={KC.ink} strokeWidth={8} />

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #113 · Ese hongo blanco de tu jardín no es champiñón — NARRADO (formato N1 «Por dentro», gancho 1 «Esto no es X: es Y»).
 // Chlorophyllum molybdites (parasol de esporas verdes). Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // No es guía de identificación: el mensaje es «no basta un rasgo; ante la duda, no lo comas».

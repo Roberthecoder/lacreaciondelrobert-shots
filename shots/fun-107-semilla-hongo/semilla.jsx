@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #107 · Esto no son granos echados a perder: es la semilla de un hongo — NARRADO (N1 Por dentro + N5 El experimento).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Piezas Champinon, SetaOstra, BolsaCultivo y Termometro copiadas de motor/kit/kit-robert.jsx (la copia local del kit no las trae).
@@ -246,7 +247,7 @@ function SemillaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <rect x={0} y={1060} width={KW} height={200} fill="#d9c48a" opacity=".9" />
+          <rect x={0} y={1060} width={KW} height={200} fill="#726a53" opacity=".9" />
           <rect x={0} y={1060} width={KW} height={10} fill="#fff" opacity=".35" />
           <text x={1030} y={1110} textAnchor="end" style={{ font:`700 26px ${KF.mono}` }} fill={KC.ink}>agar</text>
           {ESP_CAEN.map((e, i) => { const u = kprog(T, K.Es + 0.2 + e.d, K.Es + 1.0 + e.d, kEase.sale); const yy = klerp(380, e.y + 40, u);

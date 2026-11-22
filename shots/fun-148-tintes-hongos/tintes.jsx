@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #148 · Esa lana roja no la tiñó una fábrica: la tiñó un hongo — NARRADO (N1 Por dentro + toque N5).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. Los Cortinarius NO se comen.
 

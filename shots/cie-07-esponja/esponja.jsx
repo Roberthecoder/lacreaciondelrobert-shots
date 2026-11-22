@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #07 · La esponja de tu cocina por dentro — NARRADO (N1 "Por dentro" + N2 el número).
 // Datos: Cardinale, Kaiser, Lueders, Schnell y Egert 2017, Scientific Reports 7: 5791 (PMC5517580). Ver guion.md y verificacion.md.
 const AMA = '#ffd23f', AMA2 = '#e0aa1a', VERDE = '#2f9e5b';
@@ -22,8 +23,8 @@ function Microesponja({ T, lleno = 1 }) {
   huecos.forEach(([cx, cy, r], h) => { for (let k = 0; k < 26; k++) { const a = g() * Math.PI * 2, d = r * (0.75 + 0.2 * g());
     bac.push(<ellipse key={h * 40 + k} cx={cx + Math.cos(a) * d} cy={cy + Math.sin(a) * d} rx={10} ry={6} transform={`rotate(${a * 57} ${cx + Math.cos(a) * d} ${cy + Math.sin(a) * d})`} fill={KC.red} opacity={kclamp(lleno * 1.2 - k / 30, 0, 1)} />); } });
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <rect width={KW} height={KH} fill="#2a2412" />
-    <rect x={0} y={520} width={KW} height={760} fill="#6b5a1f" />
+    <rect width={KW} height={KH} fill="#1a1a17" />
+    <rect x={0} y={520} width={KW} height={760} fill="#3a341e" />
     {huecos.map(([cx, cy, r], i) => <circle key={i} cx={cx} cy={cy} r={r} fill="#1a1608" stroke="#a8902e" strokeWidth={8} />)}
     {bac}
   </svg>;

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #11 · Navidad · Biotecnológico: tu nochebuena es frondosa porque tiene una bacteria — NARRADO (N3 capítulos y medidores + N4 imagen que se llena).
 // Guion y fuentes: guion.md (verificacion.md: APROBADO). El dibujo es esquemático: fitoplasmas, floema, hormonas y los puntitos que viajan están simplificados.
 const ROJO = '#d7182a', ROJO2 = '#a80f22', VENA = '#7d0a1a', VERDE = '#2f8a3a', VERDE2 = '#1f6a2b', VENAV = '#7fcf6a', TALLO = '#4f7d2a', LENO = '#7a5a3c';

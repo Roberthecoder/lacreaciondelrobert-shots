@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #08 · Menos lecturas, más cáncer encontrado: la IA en las mamografías — NARRADO (N2 "El número").
 // Datos: ensayo MASAI (Lång et al., Lancet Oncol 2023; Hernström et al., Lancet Digit Health 2025; Gommers et al., Lancet 2026). Ver guion.md y verificacion.md.
 const AZUL = '#2f6dff', VERDE = '#3fbf4a';
@@ -91,7 +92,7 @@ function Mamografias() {
       <Escena T={T} a={K.Tr} b={K.P}>
         <FondoLunares color={KC.yellow} />
         {svg(<>
-          <rect x={0} y={700} width={KW} height={26} fill="#5a524a" />
+          <rect x={0} y={700} width={KW} height={26} fill="#323033" />
           {Array.from({ length: 14 }, (_, i) => <rect key={i} x={((i * 80 + T * 160) % 1120) - 40} y={704} width={30} height={18} fill="#8a8f99" />)}
           <Robotito x={540} y={520} s={0.62} T={T} cara="seguro" />
           <rect x={90} y={1010} width={380} height={170} rx={24} fill={KC.paper} stroke={KC.ink} strokeWidth={7} />

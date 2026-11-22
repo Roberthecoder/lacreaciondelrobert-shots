@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #138 · Ese cuernito negro no es basura: de su química salió el LSD — NARRADO (N5 "El experimento", histórico).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. Tono informativo: no promueve el consumo (sin dosis ni instrucciones).
 
@@ -168,7 +169,7 @@ function Calle({ T, y = 1180, corre = 0 }) {
       <rect x={130} y={-h + 50} width={50} height={60} fill="#fff7d0" stroke={KC.ink} strokeWidth={4} />
       <rect x={85} y={-90} width={56} height={90} fill="#6b421c" stroke={KC.ink} strokeWidth={4} />
     </g>))}
-    <rect x={0} y={y} width={KW} height={160} fill="#6c7280" stroke={KC.ink} strokeWidth={6} />
+    <rect x={0} y={y} width={KW} height={160} fill="#3b404e" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 7 }, (_, i) => <rect key={i} x={((i * 200 + off * 1.0) % 1400 + 1400) % 1400 - 160} y={y + 70} width={110} height={14} rx={7} fill="#f4efe4" />)}
   </g>;
 }

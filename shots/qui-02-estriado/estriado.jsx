@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Químico #02 · Estriado por agotamiento — MUDO protagonista (M2 "¿Por qué NO…?", errores comunes) y base NARRADA (N3 "Capítulos").
 // Protocolo de referencia: Sanders, E. R. (2012) JoVE 63: e3064. Guion y fuentes: guion.md. El dibujo es esquemático.
 const AVS = (n) => 'assets/stickers/' + n + '.png';
@@ -196,7 +197,7 @@ function EstriadoNarrado() {
         <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
           <path d={`M 0 1500 Q ${200 * kprog(T, K.X + 0.3, K.X + 3)} 1460 ${380 * kprog(T, K.X + 0.3, K.X + 3)} 1500 L 0 1500 Z`} fill="#ff6b7a" opacity=".85" />
           <path d={`M 0 1500 L 0 ${1500 - 760 * kprog(T, K.X + 0.3, K.X + 3)} Q 150 ${1500 - 560 * kprog(T, K.X + 0.3, K.X + 3)} 110 1500 Z`} fill="#ff6b7a" opacity=".85" />
-          <rect x={0} y={1500} width={KW} height={420} fill="#f4efe4" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1500} width={KW} height={420} fill="#7f7f80" stroke={KC.ink} strokeWidth={8} />
           <rect x={700} y={300} width={60} height={300} rx={20} fill="#9aa4ae" stroke={KC.ink} strokeWidth={6} />
           <ellipse cx={730} cy={620} rx={110} ry={34} fill="#c3cbd3" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 14 }, (_, i) => { const u = ((T * 0.9 + i / 14) % 1); return <line key={i} x1={650 + (i * 13) % 160} y1={650 + u * 820} x2={650 + (i * 13) % 160} y2={680 + u * 820} stroke="#5ac8ff" strokeWidth={6} opacity=".7" />; })}

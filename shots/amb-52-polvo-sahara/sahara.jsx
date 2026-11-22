@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #52 · El atardecer de Yucatán viene del Sahara — NARRADO (N4 la imagen que se llena + N2 el número).
 // Datos: NASA (2015, CALIPSO 2007–2013), Yu et al. 2015 (GRL) y Conagua/SMN (comunicado 0397-22, 2022). Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (mapa simplificado a mano, nube, satélite y átomos).
@@ -204,7 +205,7 @@ function SaharaShot() {
       <Escena T={T} a={K.F} b={K.H}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <rect x={0} y={1000} width={KW} height={920} fill="#7a4a22" />
+          <rect x={0} y={1000} width={KW} height={920} fill="#422c1f" />
           <path d="M 0 1000 L 1080 1000" stroke={KC.ink} strokeWidth={7} />
           {[150, 330, 520].map((x, i) => <g key={i} transform={`translate(${x} 1000)`}>
             <rect x={-16} y={-260} width={32} height={260} fill="#5b3a1e" stroke={KC.ink} strokeWidth={5} />

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #49 · Ese polvito blanco no es veneno (el mito del glutamato monosódico) — NARRADO (N1 por dentro + N2 el número).
 // Guion y fuentes: guion.md · verificación: verificacion.md (APROBADO). El dibujo es esquemático.
 const ROJO_J = '#e8322b', CARNE_J = '#ff6b5a', GLU = '#E8A62A', CRISTAL = '#ffffff', NA = '#b18cff';

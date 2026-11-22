@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #57 · La huella de ADN: tú contra el de al lado — NARRADO (N2 el número + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (bandas, bloques y letras no son la secuencia real).
 const PIEL = '#f1b48f', BANDA = '#16233a', PELICULA = '#bcd3e6', ORO = KC.gold2;

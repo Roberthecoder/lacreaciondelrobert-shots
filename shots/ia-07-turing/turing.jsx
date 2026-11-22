@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #07 · ¿Quién es el humano? La IA que pasó la prueba de Turing — NARRADO (N2 "El número" + "Tú contra el de al lado").
 // Datos: Jones y Bergen, PNAS 123(21) e2524472123 (2026) y su preprint arXiv:2503.23674 (2025). Ver guion.md y verificacion.md.
 const AZUL = '#2f6dff';

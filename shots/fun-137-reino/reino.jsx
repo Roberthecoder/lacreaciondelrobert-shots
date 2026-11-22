@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #137 · Ese champiñón no es una verdura — NARRADO (gancho 1 "esto no es X: es Y" + 4 pistas, formato N3 + N1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #91 · Nueve de cada diez hongos todavía no tienen nombre — NARRADO.
 // Gancho 4 «Un número que contradice» · formato N4 (la cuadrícula que se llena) + viaje setas → suelo por dentro → las mismas setas.
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.

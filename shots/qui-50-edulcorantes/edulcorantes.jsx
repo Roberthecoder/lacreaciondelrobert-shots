@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #50 · Este granito no es azúcar (endulzantes que engañan a tu lengua) — NARRADO (N2 el número + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático. Sin marcas comerciales.
 const CAFE = '#5b3418', TAZA = '#ff6b5a', LENGUA = '#f28aa0', R2C = '#b18cff', R3C = '#00d2ff', AMARGO = '#3fbf4a', CL = '#b6e33a';
@@ -69,7 +70,7 @@ function ReceptorAmargo({ x, y, s = 1, luz = 0, nombre }) {
 function Membrana({ T, y }) {
   const d = Array.from({ length: 23 }, (_, i) => `${i === 0 ? 'M' : 'L'} ${i * 50} ${y + Math.sin(T * 1.5 + i * 0.7) * 8}`).join(' ');
   return <g>
-    <rect x={0} y={y} width={KW} height={KH - y} fill="#1d2a45" />
+    <rect x={0} y={y} width={KW} height={KH - y} fill="#141c30" />
     <path d={d} stroke="#ffd36e" strokeWidth={22} fill="none" opacity={0.8} />
     <path d={d} stroke={KC.ink} strokeWidth={4} fill="none" transform="translate(0 -11)" /><path d={d} stroke={KC.ink} strokeWidth={4} fill="none" transform="translate(0 11)" />
   </g>;
@@ -293,7 +294,7 @@ function Edulcorantes() {
       <Escena T={T} a={K.Sc} b={K.Lo}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <rect x={0} y={1180} width={KW} height={60} fill="#c99a6b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={60} fill="#6a5444" stroke={KC.ink} strokeWidth={8} />
           <Matraz x={300} y={1030} s={0.9} polvo={1 - toca * 0.6} />
           <Papel x={760} y={1080} s={0.7} rot={8} />
           <Labios x={760} y={700} s={0.9} abre={kprog(T, K.Sc + 3.6, K.Sc + 4.0) * (1 - kprog(T, K.Sc + 4.4, K.Sc + 4.8)) * 0.6} />

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #11 · ¿Le quitas el moho y te comes el resto? — NARRADO (gancho 6 "¿Por qué NO…?" + N2/N1 "qué sí sirve").
 // Guion y fuentes: guion.md · verificacion.md (USDA FSIS "Molds on Food"; Rychlik y Schieberle 2001). El dibujo es esquemático.
 

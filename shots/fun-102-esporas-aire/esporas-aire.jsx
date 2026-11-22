@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #102 · En cada respiración te metes esporas que nunca vas a ver — NARRADO (gancho 7 "algo que tus ojos nunca van a ver").
 // Viaje: tu cuarto con un rayo de sol → el aire al microscopio (Cladosporium junto a un pelo) → pulmones → la gota de lluvia
 // (Kim y col., PNAS 2019) → el planeta → tu cuarto otra vez. Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.

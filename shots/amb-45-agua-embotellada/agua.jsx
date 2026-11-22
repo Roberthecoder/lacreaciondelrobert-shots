@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #45 · Tú y cuatro vecinos: menos de uno confía en el agua de la llave — NARRADO (N2 "El número").
 // Datos: INEGI ENCIG 2025 (nov–dic 2025), INEGI MOHOMA 2017, OMS 2015 (hervir), NOM-244-SSA1-2020 (Cofepris). Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (casas, microbios, tubería, Vibrio cholerae).

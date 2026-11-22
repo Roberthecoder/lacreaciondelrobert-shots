@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot 002 · El moho del pan — gemelo MUDO (formato M4 "Ciclo", loop de 61.5 s).
 // Ciclo asexual de Rhizopus stolonifer. El último cuadro es igual al primero: el video vuelve a empezar sin corte.
 // Sin días ni horas en pantalla (no hay fuente firme para pan a temperatura ambiente): el tiempo se ve con día/noche.

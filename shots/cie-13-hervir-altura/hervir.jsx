@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #13 · En la Ciudad de México el agua hierve antes de llegar a 100 °C — NARRADO (N2 "El número" + mapa de México).
 // Datos: USDA FSIS 2011, INEGI 2020 (Guadalajara 1,536 m), NDSU FN2064 (olla exprés), LibreTexts (Everest). Ver guion.md y verificacion.md.
 const AGUA = '#3fa9f5', AGUA2 = '#7cc8ff', AIRE = KC.cyan, VAPOR = '#ffffff';
@@ -183,7 +184,7 @@ function Hervir() {
         <FondoLunares color={KC.cyan} />
         <Lienzo>
           <SolDibujo x={180} y={640} r={70} T={T} />
-          <rect x={0} y={1000} width={KW} height={240} fill="#ffd27a" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1000} width={KW} height={240} fill="#84704b" stroke={KC.ink} strokeWidth={8} />
           {[0, 1, 2].map((i) => <path key={i} d={`M ${-40 + ((T * 60 + i * 40) % 80)} ${960 + i * 18} q 45 -26 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0 t 90 0`} fill="none" stroke="#fff" strokeWidth={9} strokeLinecap="round" opacity={0.8 - i * 0.2} />)}
           <Olla T={T} x={620} y={1080} s={0.62} hierve={1} />
         </Lienzo>
@@ -297,7 +298,7 @@ function Hervir() {
             <Montana x={560} y={790} ancho={420} alto={200} color="#a58ac0" />
             <g transform="translate(60 790) scale(0.8)"><Ciudad x={0} y={0} /></g>
           </g>
-          <rect x={0} y={784} width={KW} height={14} fill={KC.ink} opacity={kprog(T, K.Cierre, K.Cierre + 1.0)} />
+          <rect x={0} y={784} width={KW} height={14} fill={CINE.borde} opacity={kprog(T, K.Cierre, K.Cierre + 1.0)} />
           <Olla T={T} x={400} y={1030} s={1.05} hierve={1} />
           <TermoV x={900} y={740} alto={320} valor={92} min={80} max={104} marcas={[92, 100]} />
         </Lienzo>

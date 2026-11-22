@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #40 · El humo de la leña: partículas que llegan a tus pulmones — NARRADO (N1 "Por dentro").
 // Datos: OMS "Household air pollution" (2025), EPA "PM Basics", INEGI Encuesta Intercensal 2025, Zuk et al. 2007 (Patsari, Michoacán),
 // Gaceta UNAM 2024 (chimenea de la Patsari). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

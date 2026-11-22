@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #27 · El arroz dorado — NARRADO (N1 por dentro + N4 la imagen que se llena).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (no está a escala salvo la barra del grano).
 const ORO = '#f2a516', ORO2 = '#ffcf3d', BLANCO_ARROZ = '#fbf7ec', NARANJA = '#ff7a1a', CASCARA = '#d8b25a', HOJA = '#3fae4a', HOJA2 = '#2c8a3a';
@@ -248,8 +249,8 @@ function ArrozDorado() {
       <Escena T={T} a={K.H} b={K.Gr} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          <rect x={0} y={1260} width={KW} height={660} fill="#7a5a3a" />
-          <rect x={0} y={1240} width={KW} height={40} fill="#6fc6e8" opacity=".7" />
+          <rect x={0} y={1260} width={KW} height={660} fill="#42342b" />
+          <rect x={0} y={1240} width={KW} height={40} fill="#3c6a82" opacity=".7" />
           <PlantaArroz T={T} x={560} y={1260} s={1} naranja={kprog(T, K.H + 1.2, K.H + 2.2)} granoGris={0} />
           <Zanahoria x={190} y={1020} s={0.9} rot={-12} />
           {T > K.H + 3.4 && <g opacity={kprog(T, K.H + 3.4, K.H + 3.8)}>

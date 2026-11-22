@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #52 · Las luces que ves al tallarte los ojos (fosfenos) — NARRADO (N1 "Por dentro": la retina estimulada sin luz).
 // Datos: Grüsser et al. 1989 (Vision Research), Science Norway 2022, NEI, AAO, NASA 2012 (Apolo). Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático.

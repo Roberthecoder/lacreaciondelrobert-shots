@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #34 · "Ese riñón no es de una persona: es de un cerdo" (xenotrasplante, eGenesis 69 ediciones) — NARRADO (N1 + N4).
 // Guion y fuentes: guion.md · verificación: verificacion.md. Todos los dibujos son esquemáticos.
 // 69 ediciones (Anand et al., Nature 2023) = 3 genes de azúcares borrados + 7 genes humanos + 59 copias de retrovirus del cerdo apagadas.

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #119 · Esos puntitos cafés en la hoja pueden ser tu planta sacrificándose — NARRADO (N1 Por dentro).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Hongo atacante (escenas 2–8): moho de la hoja del jitomate, Cladosporium fulvum (biotrofo: entra por estomas y crece ENTRE las células).
@@ -133,7 +134,7 @@ function Enves({ T, tubo = 0, conidio = 1, cayo = 1 }) {
   const g = krng(11);
   const filas = [640, 720, 800, 880, 1060, 1150];
   return <g>
-    <rect x={0} y={600} width={KW} height={620} fill="#bfe8a6" />
+    <rect x={0} y={600} width={KW} height={620} fill="#647c61" />
     {filas.map((fy, r) => <path key={'f' + r} d={'M 0 ' + fy + ' ' + Array.from({ length: 28 }, (_, i) => `Q ${i * 40 + 20} ${fy + (i % 2 ? 14 : -14)} ${i * 40 + 40} ${fy}`).join(' ')} stroke="#7fb86a" strokeWidth={5} fill="none" />)}
     {filas.slice(0, -1).map((fy, r) => Array.from({ length: 7 }, (_, i) => { const xx = 80 + i * 150 + (r % 2) * 70 + g() * 30; const y2 = filas[r + 1]; if (Math.abs(xx - EST.x) < 190 && fy > 800 && fy < 1100) return null;
       return <path key={r + '-' + i} d={`M ${xx} ${fy} Q ${xx + 18} ${(fy + y2) / 2} ${xx - 6} ${y2}`} stroke="#7fb86a" strokeWidth={5} fill="none" />; }))}

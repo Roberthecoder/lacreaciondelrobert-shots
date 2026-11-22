@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #59 · ¿Por qué NO barrer ni aspirar el mercurio de un termómetro roto? — NARRADO (N1 por dentro + medidor).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const HG = '#c9d1db', HG_OSC = '#6f7b88', VAPOR = 'rgba(200,225,255,.55)', GUANTE = '#3f7bff', CARTON = '#c8955a';
@@ -281,7 +282,7 @@ function Mercurio() {
         <div style={{ position:'absolute', inset:0, background:'#9fb3c8' }}></div>
         <SvgCapa><HgDefs />
           {Array.from({ length: 6 }, (_, i) => <rect key={i} x={0} y={380 + i * 130} width={KW} height={8} fill="rgba(0,0,0,.08)" />)}
-          <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#6f7f90" />
+          <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#3c4756" />
           {Array.from({ length: 26 }, (_, i) => { const R4 = krng(i + 30); return <path key={i} d="M 0 -14 L 4 0 L 0 14 L -4 0 Z M -14 0 L 0 4 L 14 0 L 0 -4 Z" transform={`translate(${R4() * KW} ${360 + R4() * 820}) scale(${0.8 + R4()})`} fill="#ffffff" opacity={0.7} />; })}
           {(() => { const tira = kprog(T, K.Es + 10.2, K.Es + 11.6, kEase.entra || ((p) => p * p));
             return <g>
@@ -337,7 +338,7 @@ function Mercurio() {
       <Escena T={T} a={K.D} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <rect x={0} y={1160} width={KW} height={KH - 1160} fill="#8a6a4a" />
+          <rect x={0} y={1160} width={KW} height={KH - 1160} fill="#4a3c33" />
           <rect x={0} y={1160 - 150 * kprog(T, K.D + 0.6, K.D + 2.0)} width={KW} height={150 * kprog(T, K.D + 0.6, K.D + 2.0)} fill="rgba(255,255,255,.5)" />
           <Vapor T={T} x={760} y={500} w={640} h={640} n={40} seed={14} vel={140} o={1} r={11} color="rgba(255,255,255,.9)" dir={1} />
           <Adulto x={650} y={1160} s={1} color={KC.blue} />

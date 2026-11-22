@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Químico #01 · El agar, la "gelatina" de la microbiología — NARRADA (N3 "Capítulos y medidores") y MUDO (M2 "¿Por qué NO…?").
 // Guion y fuentes: guion.md. El dibujo es esquemático (las cadenas y hélices no están a escala).
 const AVS = (n) => 'assets/stickers/' + n + '.png';

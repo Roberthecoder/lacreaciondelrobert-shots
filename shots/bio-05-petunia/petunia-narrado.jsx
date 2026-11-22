@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Biotecnológico #05 · La petunia que brilla sola — versión NARRADA (N1 "Por dentro").
 // Viaje: la maceta de noche (macro) → el hongo → adentro de un pétalo: el ciclo de 4 enzimas → 1986 → la misma maceta.
 

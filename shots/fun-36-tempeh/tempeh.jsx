@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #36 · Esto no es soya prensada: el tempeh lo amarra un hongo — NARRADO (N1 "Por dentro", gancho 1 "Esto no es X: es Y").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Morfología: Rhizopus = hifas anchas sin tabiques; esporangios esféricos negro-grisáceos (hasta ~100 µm) sobre esporangióforos con rizoides;

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #58 · Ese olor no es la lluvia (geosmina y petricor) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const TIERRA_SECA = '#c9a273', TIERRA_MOJADA = '#5b3a1e', BARRO = '#d9673b', AGUA = '#9fdcff', GEO = '#ffd166', PIEL = '#f1b48f';
@@ -283,7 +284,7 @@ function Lluvia58() {
       <Escena T={T} a={K.Co} b={K.Ci} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <rect x={0} y={1110} width={KW} height={120} fill="#2a1c10" />
+          <rect x={0} y={1110} width={KW} height={120} fill="#1a1616" />
           <Hifas T={T} x={820} y={980} s={0.62} crece={1} esporas={1} />
           {Array.from({ length: 5 }, (_, i) => { const u = ((T - K.Co) * 0.25 + i / 5) % 1; return <Geosmina key={i} x={klerp(760, 120, u)} y={760 + Math.sin(u * 8 + i) * 40} s={0.28} rot={T * 30 + i * 50} o={Math.sin(u * Math.PI)} brillo={0.6} />; })}
           {(() => { const llega = kprog(T, K.Co + 3.2, K.Co + 4.6, kEase.suave), come = kprog(T, K.Co + 4.6, K.Co + 5.6), va = kprog(T, K.Co + 5.6, K.Ci + 0.4);

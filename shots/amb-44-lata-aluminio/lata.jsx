@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #44 · Una lata reciclada gasta 5 % de la energía — NARRADO (N3 capítulos y medidores).
 // Datos: International Aluminium Institute (186 vs 8.3 GJ/t, 2019), The Aluminum Association (Bayer, Hall–Héroult, reciclaje,
 // estudio RRS 2025), Packaging Insights 2025 (114 días), reporte KPI 2024 (43 % en 2023, 61 mil millones). Ver guion.md y verificacion.md.

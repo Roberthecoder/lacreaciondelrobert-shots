@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #39 · Esa pastilla no calma tu estómago: le hace química (antiácidos y neutralización) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (la herida de St. Martin, sin nada gráfico).
 const PIEL = '#f1b48f', ACIDO = '#9be15d', NEUTRO = '#7fc8ff', CELULA = '#ff8fa3', HPLUS = '#ffe11a', CLM = '#b6e33a', OHM = '#7fd8ff', OMEP = '#9b5de5';
@@ -144,7 +145,7 @@ function Antiacido() {
       {/* 1 · las células parietales hacen el HCl (micro, fondo noche) */}
       <Escena T={T} a={K.A} b={K.P} fondo={KC.noche}>
         <SvgCapa>
-          <rect x={0} y={1060} width={KW} height={260} fill="#3a1830" />
+          <rect x={0} y={1060} width={KW} height={260} fill="#221426" />
           {[230, 540, 850].map((cx, i) => <Parietal key={i} T={T} x={cx} y={1000} />)}
           {[230, 540, 850].map((cx, i) => <Emision key={i} T={T} x={cx} y={880} desde={K.A + 0.5 + i * 0.2} alto={300} />)}
           <text x={760} y={500} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="rgba(246,243,236,.7)">interior del estómago</text>

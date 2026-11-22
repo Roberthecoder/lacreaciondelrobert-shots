@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #52 · Ese hielo no es agua apretada: es agua con huecos (por qué flota el hielo) — NARRADO (N1 por dentro + N5 Galileo).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (red del hielo en 2D).
 const AGUA = '#7fd3ff', AGUA_OSC = '#2a7fc0', HIELO = '#e9f8ff', HIELO_B = '#9fd6f0', D2O = '#7be08a';
@@ -95,7 +96,7 @@ function Pez({ x, y, s = 1, dir = 1, color = KC.orange, T = 0 }) {
 // Corte de un lago con hielo arriba. congelado = 1 → todo blanco (hipotético).
 function Lago({ T, congelado = 0, peces = 1 }) {
   return <g>
-    <rect x={0} y={0} width={KW} height={700} fill="#bfe6ff" />
+    <rect x={0} y={0} width={KW} height={700} fill="#647a8e" />
     <circle cx={880} cy={480} r={60} fill="#fff6c8" opacity={0.9} />
     {[160, 300].map((x, i) => <g key={i}><rect x={x - 10} y={560} width={20} height={80} fill="#6b4a2b" /><path d={`M ${x} 430 L ${x - 70} 600 L ${x + 70} 600 Z`} fill="#2e8b57" stroke={KC.ink} strokeWidth={6} /><path d={`M ${x} 430 L ${x - 34} 500 L ${x + 34} 500 Z`} fill="#fff" /></g>)}
     <path d="M 0 640 L 140 660 Q 200 1180 540 1200 Q 880 1180 940 660 L 1080 640 L 1080 1260 L 0 1260 Z" fill="#8a6440" stroke={KC.ink} strokeWidth={8} />
@@ -124,7 +125,7 @@ function Mano({ x, y, s = 1 }) {
 function Tubo({ T, hinchar = 0, roto = 0, crece = 0 }) {
   const y = 980, b = 20 + 70 * hinchar;
   return <g>
-    <rect x={0} y={y - 90} width={KW} height={180} fill="#9aa3b5" stroke={KC.ink} strokeWidth={9} />
+    <rect x={0} y={y - 90} width={KW} height={180} fill="#525968" stroke={KC.ink} strokeWidth={9} />
     <path d={`M 300 ${y - 90} Q 540 ${y - 90 - b} 780 ${y - 90} L 780 ${y + 90} Q 540 ${y + 90 + b} 300 ${y + 90} Z`} fill="#c7cedb" stroke={KC.ink} strokeWidth={9} />
     <clipPath id="tubin"><path d={`M 310 ${y - 76} Q 540 ${y - 76 - b} 770 ${y - 76} L 770 ${y + 76} Q 540 ${y + 76 + b} 310 ${y + 76} Z`} /></clipPath>
     <g clipPath="url(#tubin)"><rect x={300} y={y - 200} width={480} height={400} fill={AGUA} />

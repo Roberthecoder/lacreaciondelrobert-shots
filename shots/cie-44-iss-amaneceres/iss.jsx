@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #44 · Los astronautas ven 16 amaneceres al día — NARRADO (N2 "El número" + N3 la órbita con su reloj).
 // Datos: NASA (Facts and Figures, Spot the Station, Astronaut Exercise, SSLA), ESA Kids, NASA Earth Observatory. Ver guion.md y verificacion.md.
 const OCEANO = '#2f7df6', TIERRA = '#7bd36b', TIERRA2 = '#ffe9a8', ORO = KC.gold2;
@@ -443,7 +444,7 @@ function Iss() {
           </g>
           <BolsaDormir x={290} y={640} T={T} />
           <Zzz x={430} y={720} T={T} o={kprog(T, K.Ventanas + 1.6, K.Ventanas + 2.2)} />
-          <rect x={0} y={0} width={KW} height={KH} fill="#ff9a3c" opacity={0.12 * tono} />
+          <rect x={0} y={0} width={KW} height={KH} fill="#84542c" opacity={0.12 * tono} />
         </Lienzo>
         <Etq T={T} at={K.Ventanas + 0.6} until={K.Ventanas + 4.0} x={720} y={870} texto="persiana" color={KC.ink} tam={34} />
         <Etq T={T} at={K.Ventanas + 2.6} until={K.Ejercicio - 0.1} x={150} y={480} texto="luz que cambia de tono" color={KC.ink} tam={32} />

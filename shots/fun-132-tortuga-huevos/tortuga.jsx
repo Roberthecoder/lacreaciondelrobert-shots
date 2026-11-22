@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #132 · Ese huevo de tortuga no se echó a perder solo — NARRADO (N1 "Por dentro", gancho 1 "Esto no es X: es Y").
 // Fusariosis de los huevos de tortuga marina (complejo Fusarium solani). Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -170,7 +171,7 @@ function TortugaShot() {
         <Ambiente T={T} n={14} />
         {fsvg((() => { const dis = kprog(T, K.Ca + 1.6, K.Ca + 3.0), ent = kprog(T, K.Ca + 2.8, K.Ca + 4.4, kEase.suave), red = kprog(T, K.Ca + 0.2, K.Ca + 1.6);
           return <>
-            <rect x={0} y={960} width={KW} height={300} fill="#f1e2a8" opacity=".22" />
+            <rect x={0} y={960} width={KW} height={300} fill="#7e7862" opacity=".22" />
             {Array.from({ length: 13 }, (_, i) => { const cx = 40 + i * 84, cerca = Math.abs(cx - 540) < 130; const o = cerca ? 1 - dis * 0.75 : 1;
               return <g key={i} opacity={o}><rect x={cx - 38} y={640} width={76} height={220} rx={26} fill="#e8e2d2" stroke={KC.ink} strokeWidth={5} />
                 <path d={`M ${cx - 20} 660 L ${cx} 840 M ${cx + 18} 660 L ${cx + 4} 840`} stroke="#bdb39a" strokeWidth={4} /></g>; })}

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #50 · Detrás de tu IA hay personas etiquetando — NARRADO (N2 "El número" + N4 "La imagen que se llena").
 // Datos: Russakovsky et al., IJCV 2015 (ImageNet, agosto de 2014) y Perrigo, TIME, 18 ene 2023 (Sama/OpenAI en Kenia). Ver guion.md y verificacion.md.
 const PIEL = '#c98b5e', PIEL2 = '#a86d45';

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #47 · La IA que sacó oro en la Olimpiada de Matemáticas (y el problema que no pudo) — NARRADO (N2 "El número" + N5 "El experimento").
 // Datos: imo-official.org (edición y resultados 2025), blog de Google DeepMind (21 jul 2025 y 25 jul 2024), hilo de A. Wei / OpenAI (19 jul 2025).
 // Ver guion.md y verificacion.md. Todo es esquemático.

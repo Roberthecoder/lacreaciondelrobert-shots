@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #64 · En México se comen 425 hongos silvestres… — NARRADO (gancho 4 "un número que contradice").
 // Viaje: puesto del mercado → bajo el suelo (micelio, raíz con ectomicorriza) → el mismo puesto, "leído".
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. Nunca comas hongos silvestres sin un experto.

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #104 · Esa pelusa azul de tu naranja no es una mancha: es un bosque de pinceles — NARRADO
 // (gancho 1 "Esto no es X: es Y" · N1 Por dentro + N5 El experimento: la prueba de la cinta).
 // Guion y fuentes: guion.md · verificacion.md. Los conidióforos son esquemáticos pero con su morfología real:

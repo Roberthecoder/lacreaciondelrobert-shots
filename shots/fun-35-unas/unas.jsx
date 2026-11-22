@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #35 · Hongos en las uñas (onicomicosis): por qué tarda tanto — NARRADO (N1 "Por dentro", gancho 4 "un número que contradice").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (no es un caso clínico real). No es consejo médico.
 const PIEL_U = '#f2b48f', PIEL_U2 = '#d9906b', UNA_SANA = '#ffd3cf', UNA_SANA2 = '#ffb7b0', UNA_MALA = '#d9b23a', UNA_MALA2 = '#a8862a';

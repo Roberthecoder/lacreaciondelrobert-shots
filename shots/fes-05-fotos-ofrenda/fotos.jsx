@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #05 · Día de Muertos · IA: la IA que restaura las fotos de tu ofrenda — NARRADO (N2 "El número" + viaje N1).
 // Guion y fuentes: guion.md. El dibujo es esquemático: la bisabuela, las caras y los pixeleados son ilustraciones, no fotos reales.
 const SEPIA = { fondo:'#c9a77c', piel:'#dcb48a', pelo:'#e9e1d2', rebozo:'#6e5136', ojo:'#3a2a1c' };

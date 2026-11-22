@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #71 · Esos no son huevitos en un nido: el hongo nido de pájaro (Cyathus) — NARRADO (gancho 1 "Esto no es X: es Y").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -222,7 +223,7 @@ function NidoShot() {
       <Escena T={T} a={K.V} b={K.E} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <rect x={0} y={1010} width={KW} height={400} fill="#6b4a2a" />
+          <rect x={0} y={1010} width={KW} height={400} fill="#3a2c23" />
           <line x1={0} y1={1010} x2={KW} y2={1010} stroke={KC.ink} strokeWidth={8} />
           <Copa T={T} x={150} y={1015} s={0.5} R={150} H={240} huevos={[1, 2, 3, 4, 5, 6]} />
           <path d={Array.from({ length: 41 }, (_, i) => { const [a, b] = arco(i / 40 * uv); return `${i ? 'L' : 'M'} ${a.toFixed(1)} ${b.toFixed(1)}`; }).join(' ')} stroke="#fff" strokeWidth={6} strokeDasharray="12 12" fill="none" />
@@ -269,7 +270,7 @@ function NidoShot() {
       <Escena T={T} a={K.F} b={K.C} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1150} width={KW} height={200} fill="#6b4a2a" />
+          <rect x={0} y={1150} width={KW} height={200} fill="#3a2c23" />
           {[[120, 520, 2], [260, 600, 5], [430, 470, 7], [ANC[0], 430, 1], [880, 560, 9], [990, 500, 4]].map(([x, y1, sd], i) => <Tallo key={i} x={x} y0={1160} y1={y1} T={i === 3 ? 0 : T} seed={sd} />)}
           {/* cordón */}
           {T > tc && comido < 1 && <path d={`M ${ANC[0]} ${ANC[1]} Q ${(ANC[0] + pf[0]) / 2 + 14} ${(ANC[1] + pf[1]) / 2} ${pf[0]} ${pf[1]}`} stroke="#efe2c4" strokeWidth={5} fill="none" />}

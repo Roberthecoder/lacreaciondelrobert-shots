@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #82 · Esa olla no es solo maíz con agua: es una fábrica de hongos — NARRADO (gancho 1 «Esto no es X: es Y»).
 // El tesgüino rarámuri: maíz germinado (malta) → atole → ollas de barro → levaduras. Guion y fuentes: guion.md · verificacion.md.
 // El dibujo es esquemático. Tono respetuoso: la ciencia de la fermentación y el conocimiento rarámuri; no promueve el alcohol.

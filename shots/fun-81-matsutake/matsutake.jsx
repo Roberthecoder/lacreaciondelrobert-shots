@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #81 · Este hongo blanco no es un champiñón: viaja de México a Japón — NARRADO (N1 Por dentro + número de Japón).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Todos los textos en pantalla están en TXT (abajo) para cambiarlos fácil tras la verificación.

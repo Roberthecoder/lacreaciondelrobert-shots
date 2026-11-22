@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #44 · El hongo que no deja dormir a los murciélagos (síndrome de nariz blanca) — NARRADO (N1 «Por dentro», gancho 1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -153,8 +154,8 @@ function NarizBlancaShot() {
       <Escena T={T} a={K.P} b={K.D}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {fsvg(<>
-          <rect x={0} y={700} width={KW} height={460} fill="#b97c68" stroke={KC.ink} strokeWidth={6} />
-          <rect x={0} y={640} width={KW} height={60} fill="#e7b7a0" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={700} width={KW} height={460} fill="#624642" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={640} width={KW} height={60} fill="#78635e" stroke={KC.ink} strokeWidth={6} />
           {FOL.map((x, i) => <g key={i}>
             <path d={`M ${x - 24} 640 L ${x - 24} 960 Q ${x} 1000 ${x + 24} 960 L ${x + 24} 640`} fill="#d79a84" stroke={KC.ink} strokeWidth={5} />
             <line x1={x} y1={960} x2={x + 10} y2={520} stroke="#5a3a28" strokeWidth={8} strokeLinecap="round" />

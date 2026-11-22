@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #40 · El hongo que se derrite en tinta: Coprinus comatus — NARRADO (gancho 1 "Esto no es X: es Y" + N1 Por dentro + N5).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 

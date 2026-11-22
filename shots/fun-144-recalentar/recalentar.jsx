@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #144 · Esos hongos recalentados no son veneno — NARRADO (gancho 1 «Esto no es X: es Y» + mito de la abuela, formato N2).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. Reglas generales de inocuidad, no consejo médico.
 

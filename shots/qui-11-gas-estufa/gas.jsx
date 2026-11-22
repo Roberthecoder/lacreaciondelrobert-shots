@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #11 · Ese olor no es el gas de tu estufa (mercaptanos: la alarma que le agregan) — NARRADO (N1 por dentro + N5 estudio).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const OLOR = '#3fbf4a', GASGRIS = '#9aa3b5', CIL = '#c9d6e3';
@@ -83,7 +84,7 @@ function EscalaFija({ texto, largo = 160, x = 60, y = 1600, color = KC.texto }) 
 // Cocina de lado: piso, pared, estufa y cilindro, con la nube de gas que se junta abajo.
 // Piso de cocina con baldosas.
 function Piso({ y = 1200 }) {
-  return <g><rect x={0} y={y} width={KW} height={KH - y} fill="#c98a52" />
+  return <g><rect x={0} y={y} width={KW} height={KH - y} fill="#6a4c37" />
     {Array.from({ length: 9 }, (_, i) => <line key={'v' + i} x1={i * 135} y1={y} x2={i * 135 - 120} y2={KH} stroke="rgba(0,0,0,.18)" strokeWidth={5} />)}
     {[90, 230, 420, 680].map((d) => <line key={d} x1={0} y1={y + d} x2={KW} y2={y + d} stroke="rgba(0,0,0,.18)" strokeWidth={5} />)}
     <line x1={0} y1={y} x2={KW} y2={y} stroke={KC.ink} strokeWidth={9} /></g>;
@@ -104,7 +105,7 @@ function CocinaLado({ T, nube = 0, color = 'rgba(63,191,74,.45)', borde = OLOR, 
 function Escuela({ T, gas = 0, chispa = 0, flash = 0, gris = 0 }) {
   const muro = mixHex('#d8d2c4', '#7c8088', gris), vidrio = mixHex('#7fc8ff', '#5a5f68', gris);
   return <g>
-    <rect x={0} y={1080} width={KW} height={840} fill="#8a6a45" />
+    <rect x={0} y={1080} width={KW} height={840} fill="#4a3c30" />
     <rect x={140} y={1000} width={800} height={110} fill="#3b2f25" stroke={KC.ink} strokeWidth={8} />
     {gas > 0 && <rect x={148} y={1110 - 100 * gas} width={784} height={100 * gas} fill="rgba(210,220,235,.35)" stroke="#e6edf7" strokeWidth={5} strokeDasharray="14 12" />}
     <path d={`M 1080 1060 L 900 1060`} stroke={GASGRIS} strokeWidth={26} />
@@ -197,7 +198,7 @@ function Gas() {
       <Escena T={T} a={K.N} b={K.P} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <rect x={0} y={560} width={KW} height={200} fill="#f0a3b4" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={560} width={KW} height={200} fill="#7d5968" stroke={KC.ink} strokeWidth={6} />
           <rect x={0} y={760} width={KW} height={60} fill="rgba(180,220,255,.25)" />
           {Array.from({ length: 6 }, (_, i) => { const x = 110 + i * 172, enc = i === 2 ? kprog(T, K.N + 1.6, K.N + 2.0) * (1 - 0.3 * kprog(T, K.N + 3.6, K.N + 4.4)) : (i === 4 ? 0.25 * kprog(T, K.N + 2.8, K.N + 3.2) : 0);
             const sen = i === 2 ? kprog(T, K.N + 1.9, K.N + 2.9) : 0;

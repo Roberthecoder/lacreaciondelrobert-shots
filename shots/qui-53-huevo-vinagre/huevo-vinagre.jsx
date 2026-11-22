@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #53 · Este huevo no está pelado (el vinagre, el cascarón y la ósmosis) — NARRADO (N5 experimento + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const VINAGRE = '#f3efcf', JARABE = '#e0a136', AGUA = '#9fd8ff', CASCARA = '#f2e3c9', MEMB = '#fff4d6', YEMA = '#ffb21a';
@@ -246,7 +247,7 @@ function HuevoVinagre() {
       <Escena T={T} a={K.Re} b={K.Ci}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <rect x={0} y={1150} width={KW} height={240} fill="#c98b4f" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1150} width={KW} height={240} fill="#6a4d36" stroke={KC.ink} strokeWidth={8} />
           <ellipse cx={540} cy={1158} rx={100 * (1 - (SUELO - yR) / 600)} ry={14} fill="rgba(0,0,0,.25)" />
           <Huevo x={540} y={yR} s={0.9} cas={0} sq={sqR} />
           {(() => { const l = kprog(T, K.Re + 2.4, K.Re + 2.9, kEase.sale); return l > 0 ? <g opacity={l}>

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot 003 · Las semillas que viajaron a la Luna — versión NARRADA (N1 "Por dentro" + N5 "El experimento").
 // Escenas y subtítulos se ajustan a la voz con narrar.mjs (window.SUBS); sin voz usan los tiempos estimados.
 // Guion y fuentes: guion.md. El dibujo es esquemático.
@@ -70,11 +71,11 @@ function Parque({ T, orbita = 0, semillaEn }) {
     sem = <SemillaAla x={sx} y={sy} rot={p < 1 ? (T - semillaEn) * 720 : 70} s={1.6} />;
   }
   return <>
-    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#8fe8ff 0%, #00d2ff 70%, #7fe0c8 100%)' }}></div>
+    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4757 0%, #074257 70%, #284549 100%)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       <circle cx={880} cy={300} r={88} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
       {[[180, 330, 90], [330, 260, 60]].map(([x, y, r], i) => <g key={i} transform={`translate(${mece(T, i + 4, 0.05) * 30} 0)`}><ellipse cx={x} cy={y} rx={r * 1.5} ry={r * 0.6} fill="#fff" stroke={KC.ink} strokeWidth={6} /></g>)}
-      <rect x={0} y={1450} width={KW} height={470} fill={KC.leaf} />
+      <rect x={0} y={1450} width={KW} height={470} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} />
       <path d="M0 1450 Q 270 1420 540 1450 T 1080 1450" fill={KC.leaf} stroke={KC.ink} strokeWidth={8} />
       {Array.from({ length: 14 }, (_, i) => <path key={i} d={`M ${40 + i * 75} 1560 l 10 -26 l 10 26`} stroke="#2a9a3c" strokeWidth={6} fill="none" />)}
       <ellipse cx={O.x} cy={O.y} rx={O.rx} ry={O.ry} fill="none" stroke="#fff" strokeWidth={5} strokeDasharray="16 14" strokeDashoffset={-T * 50} opacity={0.45 * orbita} transform={`rotate(-8 ${O.x} ${O.y})`} />
@@ -159,7 +160,7 @@ function Orbita({ T, a, b }) {
   </g>;
   const vuelta = Math.round(klerp(12, 32, kprog(T, a + 0.6, b - 0.4, kEase.suave)));   // Roosa solo: de la vuelta 12 (desacople) a la ~32 (reencuentro); la semilla dio 34 en total
   return <>
-    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0d1424, #1d1150)' }}></div>
+    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0b101e, #0f102a)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       {est.map(([x, y, r, f], i) => <circle key={i} cx={x} cy={y} r={r} fill="#fff" opacity={0.4 + 0.5 * (0.5 + 0.5 * Math.sin(T * 2 + f))} />)}
       <g><circle cx={910} cy={330} r={70} fill="#2f7fff" stroke={KC.ink} strokeWidth={6} /><path d="M 870 300 q 30 -20 50 10 q 20 30 -10 40 q -30 0 -40 -50 Z" fill={KC.leaf} /><circle cx={910} cy={330} r={84} fill="none" stroke="#8fd3ff" strokeWidth={4} opacity=".6" /></g>
@@ -274,9 +275,9 @@ function Estudio({ T, a, b }) {
 function Igual({ T, a }) {
   const s = klerp(0.14, 0.82, kprog(T, a + 0.1, a + 3.0, kEase.suave)), top = 1460 - 900 * s;
   return <>
-    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#8fe8ff, #00d2ff)' }}></div>
+    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4757, #074257)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-      <rect x={0} y={1450} width={KW} height={470} fill={KC.leaf} />
+      <rect x={0} y={1450} width={KW} height={470} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} />
       <path d="M0 1450 Q 270 1420 540 1450 T 1080 1450" fill={KC.leaf} stroke={KC.ink} strokeWidth={8} />
       <Pino T={T} x={300} y={1460} s={s} ancho={0.62} seed={2} />
       <Pino T={T} x={790} y={1460} s={s} ancho={0.62} seed={5} />

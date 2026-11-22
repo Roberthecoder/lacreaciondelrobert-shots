@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #62 · Tu pan de caja no es inmortal: suele traer un antimoho — NARRADO (N1 "Por dentro", gancho 1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. Sin marcas (bolsa genérica).
 

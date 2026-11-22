@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #43 · Lo que mata no huele ni se ve (monóxido de carbono del anafre y el boiler) — NARRADO (N1 por dentro + estudio de 1987).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático; las personas son monitos esquemáticos.
 const SANGRE = '#d7263d', PIEL = '#f1b48f', BRASA = '#ff5a1f', GRIS_CO = '#9fb0c8';
@@ -61,9 +62,9 @@ function IconoNo({ x, y, tipo, o = 1, texto }) {
 function Cuarto({ T, abierta = 0 }) {
   const wx = 90, wy = 420, ww = 260, wh = 240;
   return <g>
-    <rect x={0} y={1120} width={KW} height={KH - 1120} fill="#8a5a3c" />
+    <rect x={0} y={1120} width={KW} height={KH - 1120} fill="#4a342c" />
     {Array.from({ length: 8 }, (_, i) => <line key={i} x1={i * 150} y1={1120} x2={i * 150 - 80} y2={KH} stroke="rgba(0,0,0,.18)" strokeWidth={5} />)}
-    <rect x={0} y={1104} width={KW} height={22} fill="#5b3a26" />
+    <rect x={0} y={1104} width={KW} height={22} fill="#322421" />
     <rect x={wx} y={wy} width={ww} height={wh} fill={abierta > 0 ? mixHex('#1d2a4a', '#8fd8ff', abierta) : '#1d2a4a'} stroke={KC.ink} strokeWidth={10} />
     {abierta > 0 && <g opacity={abierta}><circle cx={wx + 200} cy={wy + 60} r={34} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
       <ellipse cx={wx + 90} cy={wy + 110} rx={60} ry={24} fill="#fff" />
@@ -277,7 +278,7 @@ function Monoxido() {
           {T < K.S + 3.3 ? <g>
             <Busto T={T} x={560} y={770} s={1} dolor={kprog(T, K.S + 0.1, K.S + 0.5, kEase.rebote)} mareo={kprog(T, K.S + 0.8, K.S + 1.2, kEase.rebote)} nausea={kprog(T, K.S + 1.4, K.S + 1.8)} />
           </g> : <g>
-            <rect x={0} y={1120} width={KW} height={KH - 1120} fill="#2a8f6e" />
+            <rect x={0} y={1120} width={KW} height={KH - 1120} fill="#1a4f45" />
             <CamaDormida T={T} x={560} y={1020} s={1.3} zzz={1 - kprog(T, K.S + 4.0, K.S + 5.2)} />
           </g>}
         </SvgCapa>
@@ -337,7 +338,7 @@ function Monoxido() {
         <div style={{ position:'absolute', inset:0, background:'#8fd8ff' }}></div>
         <SvgCapa>
           <circle cx={900} cy={480} r={80} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
-          <rect x={0} y={1120} width={KW} height={KH - 1120} fill={KC.leaf} />
+          <rect x={0} y={1120} width={KW} height={KH - 1120} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} />
           <CasaLado x={250} y={1130} s={0.9} />
           {[[600, 1100], [740, 1110], [880, 1100]].map(([x, y], i) => { const u = kprog(T, avisoB + i * 0.2, avisoB + 1.2 + i * 0.2, kEase.sale); return <Personita key={i} x={klerp(300, x, u)} y={y} s={3} color={[KC.orange, KC.blue, KC.mint][i]} />; })}
           {[0, 1, 2].map((i) => { const u = (T * 0.6 + i / 3) % 1; return <path key={i} d={`M ${1080 - u * 700} ${620 + i * 70} q 30 -16 60 0 t 60 0`} stroke="#fff" strokeWidth={8} fill="none" strokeLinecap="round" opacity={1 - u} />; })}

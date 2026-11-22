@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #142 · Ese champiñón no es una verdura: es más pariente tuyo que de la lechuga — NARRADO
 // Formato N3 (capítulos: PRUEBA 1–4) + N1 (por dentro). Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 

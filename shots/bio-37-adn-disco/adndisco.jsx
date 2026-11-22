@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #37 · Tu disco duro, en un gramo de ADN — NARRADO (N2 "El número" + tramo N4 "La imagen que se llena").
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (letras y bits de ejemplo, no un archivo real).
 const LC = { A: '#2fe0a8', C: '#00d2ff', G: '#ffe11a', T: '#ff2d78' };

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #12 · Tu planta no limpia el aire de tu casa — NARRADO (N5 el experimento + N2 el número).
 // Datos: Cummings y Waring (Drexel, J. Expo. Sci. Environ. Epidemiol. 2020, en línea 2019); NASA-TM-101766 (Wolverton et al., 1989);
 // EPA "Improving Indoor Air Quality". Ver guion.md y verificacion.md. Sala, base espacial, flechas de aire y macetas: esquemáticos.

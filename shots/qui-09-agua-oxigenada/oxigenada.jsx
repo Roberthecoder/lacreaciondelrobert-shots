@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #09 · Esa espuma no es tu herida sanando (agua oxigenada y catalasa) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const ENZ = '#9b5de5', SANGRE = '#d7263d', CAFE_BOT = '#5a3216';

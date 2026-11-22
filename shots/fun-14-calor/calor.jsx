@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #14 · Tu escudo de 37 grados: por qué casi ningún hongo te toca — NARRADO (gancho 2 "tú contra la hormiga" + N2 "El número").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Viaje: la hormiga y tú (pink) → tu termómetro → hongos que no aguantan 37 °C → las cajas de la colección (fondo oscuro)
@@ -196,7 +197,7 @@ function CalorShot() {
       <Escena T={T} a={K.G} b={K.Hm} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>{DEFS14}
-          <rect x={0} y={1180} width={KW} height={800} fill="#7a4a2b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={800} fill="#422c24" stroke={KC.ink} strokeWidth={8} />
           <Hormiga14 T={T} x={klerp(230, 300, kprog(T, K.G, K.G + 2.4, kEase.sale))} y={1112} s={1.3} paso={T * 1.6} camina={1 - kprog(T, K.G + 2.2, K.G + 2.6)} hilos={kprog(T, K.G + 0.2, K.G + 1.4)} />
           <Gente x={790} y={1180} s={1.3} brillo={kprog(T, K.G + 1.6, K.G + 2.4)} T={T} />
           <EscudoCalor T={T} cx={790} cy={960} rx={250} ry={380} p={kprog(T, K.G + 2.2, K.G + 3.0, kEase.rebote)} />
@@ -232,8 +233,8 @@ function CalorShot() {
         {(() => { const w = kprog(T, K.Ho + 1.9, K.Ho + 3.0, kEase.suave), crece = kprog(T, K.Ho, K.Ho + 1.2);
           const somb = ['#c98b2b', '#e8336d', '#f3e6c4', '#8a5a2b', '#b18cff', '#ff8a1f'];
           return fsvg(<>
-            <rect x={0} y={1120} width={KW} height={900} fill="#6b4a2b" stroke={KC.ink} strokeWidth={8} />
-            <rect x={0} y={560} width={KW} height={560} fill={KC.orange} opacity={w * 0.35} />
+            <rect x={0} y={1120} width={KW} height={900} fill="#3a2c24" stroke={KC.ink} strokeWidth={8} />
+            <rect x={0} y={560} width={KW} height={560} fill={cineMix(KC.orange, CINE.fondo, 0.55)} opacity={w * 0.35} />
             {somb.map((c, i) => { const vive = i === 3; const ww = vive ? 0 : w;
               return <Seta key={i} x={130 + i * 165} y={1120} s={1.15 - ww * 0.35} crece={crece * (1 - ww * 0.4)} rot={(i % 2 ? 1 : -1) * 38 * ww + mece(T, i, 0.4) * 2} sombrero={mixHex(c, '#8d8d8d', ww)} pie={mixHex('#f3e6c4', '#9a9a9a', ww)} escamas={i % 2 === 0} anillo={i !== 2} />; })}
           </>); })()}
@@ -267,7 +268,7 @@ function CalorShot() {
       <Escena T={T} a={K.Hi} b={K.A} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>{DEFS14}
-          <rect x={0} y={1110} width={KW} height={800} fill="#6b4a2b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1110} width={KW} height={800} fill="#3a2c24" stroke={KC.ink} strokeWidth={8} />
           <ellipse cx={660} cy={1050} rx={170} ry={110} fill="url(#calorBrillo)" opacity={0.9} />
           <Raton x={660} y={1110} s={1.25} />
           <ellipse cx={880} cy={960} rx={210} ry={200} fill="url(#calorBrillo)" opacity={kprog(T, K.Hi + 0.6, K.Hi + 1.2)} />
@@ -311,7 +312,7 @@ function CalorShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>{DEFS14}
-          <rect x={0} y={1180} width={KW} height={800} fill="#7a4a2b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={800} fill="#422c24" stroke={KC.ink} strokeWidth={8} />
           <Hormiga14 T={T} x={300} y={1112} s={1.3} paso={T * 1.6} camina={0.5} hilos={1} />
           <Gente x={790} y={1180} s={1.3} brillo={1} T={T} />
           <EscudoCalor T={T} cx={790} cy={960} rx={250} ry={380} p={1} texto="37 °C" />

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #50 · De cada mil incendios en Jalisco, solo dos los prende la naturaleza (Bosque La Primavera) — NARRADO
 // (N4 la imagen que se llena: el mapa del bosque junto a Guadalajara se colorea con lo quemado + N2 el número: 2 de 1,000).
 // Datos: Plan Estatal de Manejo del Fuego de Jalisco (2018, CONAFOR 2005-2013), Ra Ximhai (2012), Sánchez Durán et al. (2014),

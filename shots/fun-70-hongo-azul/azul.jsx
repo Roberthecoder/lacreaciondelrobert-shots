@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #70 · Ese hongo no está pintado: la leche azul de Lactarius indigo — NARRADO (gancho 1 "Esto no es X: es Y").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -318,7 +319,7 @@ function AzulShot() {
         <div style={{ position:'absolute', left:0, right:0, top:660, bottom:0, background:`linear-gradient(${AZ.tierra}, ${AZ.tierra2})` }}></div>
         {fsvg(<>
           {Array.from({ length: 40 }, (_, i) => { const r = krng(i + 9); return <circle key={i} cx={r() * KW} cy={690 + r() * 560} r={3 + r() * 6} fill="#6b4a30" opacity=".6" />; })}
-          <rect x={0} y={648} width={KW} height={18} fill="#3fbf4a" stroke={KC.ink} strokeWidth={5} />
+          <rect x={0} y={648} width={KW} height={18} fill="#246733" stroke={KC.ink} strokeWidth={5} />
           <Raices x={PIN.x} y={PIN.y} s={0.9} trazos={RAIZ_PINO} manto={manto} />
           <Raices x={ENC.x} y={ENC.y} s={ENC.s} trazos={RAIZ_ENC} manto={manto} />
           {[...pE, ...pP].map(([tx, ty], i) => <Hifa key={i} x1={HONGO.x} y1={HONGO.y + 8} x2={tx} y2={ty} p={kprog(T, K.Mi + 0.4 + i * 0.12, K.Mi + 2.2 + i * 0.12)} seed={i + 1} />)}
@@ -365,7 +366,7 @@ function AzulShot() {
           <Encino x={880} y={960} s={0.95} T={T} />
           <Raices x={880} y={960} s={0.45} trazos={RAIZ_ENC} manto={1} />
           {puntas(880, 960, 0.45, RAIZ_ENC).map(([tx, ty], i) => <Hifa key={i} x1={510} y1={968} x2={tx} y2={ty} p={kprog(T, K.C + 0.6 + i * 0.15, K.C + 1.8 + i * 0.15)} seed={i + 3} ancho={4} />)}
-          <rect x={0} y={950} width={KW} height={16} fill="#3fbf4a" stroke={KC.ink} strokeWidth={5} />
+          <rect x={0} y={950} width={KW} height={16} fill="#246733" stroke={KC.ink} strokeWidth={5} />
           <HongoAzul T={T} x={510} y={958} s={1.35} corte={1} leche={1} verde={0.75} />
         </>)}
       </Escena>

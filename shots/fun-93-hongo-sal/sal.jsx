@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #93 · El hongo que no puede vivir sin sal (Wallemia ichthyophaga) — NARRADO.
 // Gancho 1 «Esto no es X: es Y» · formato N1 «Por dentro» + medidor: bacalao salado → células al microscopio → el mismo bacalao.
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #42 · Esa leche no se echó a perder: es queso (leche + limón + calor) — NARRADO (N5 experimento + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const LECHE = '#fbfaf2', SUERO = '#e3e6a6', LIMA = '#7cc943', LIMA_IN = '#e2f3a2', METAL = '#c9d2dc', BARRO = '#b8673b', AZUL_NEG = '#5fc6ff', PROT = '#3d7bff';

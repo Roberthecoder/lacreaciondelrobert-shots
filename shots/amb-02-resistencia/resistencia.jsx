@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Ambiental #02 · Las bacterias están ganando (resistencia a antibióticos) — NARRADA (N2 "El número" + N1 "Por dentro")
 // y gemelo MUDO (M5 "La carrera" con la música hecha de los datos: cada división, una nota). Guion y fuentes: guion.md.
 // El dibujo es esquemático: bacterias y "gen" (anillo rojo = plásmido con un gen de resistencia).

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #135 · Ese polvo blanco no es cal: es un hongo — NARRADO (gancho 1 «Esto no es X: es Y»; formato N1 Por dentro + N5 El experimento).
 // Agostino Bassi (1835) y la muscardina del gusano de seda (Beauveria bassiana). Guion y fuentes: guion.md · verificacion.md.
 // El dibujo es esquemático.

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #68 · La pastilla que nació de un hongo de cigarras: fingolimod — NARRADO (gancho 1 "Esto no es X: es Y" + N1 "Por dentro").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (molécula simplificada, no su estructura exacta). No es consejo médico.
 

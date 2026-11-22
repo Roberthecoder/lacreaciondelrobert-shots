@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #96 · Esa mosca en tu ventana no murió de vieja: Entomophthora muscae — NARRADO.
 // Formato N1 "Por dentro" + N5 "El experimento". Gancho 1 "Esto no es X: es Y". Guion y fuentes: guion.md · verificacion.md.
 // Morfología (Elya et al. 2018, eLife): la mosca muere pegada por la trompa, con las alas levantadas "up and away from its dorsal

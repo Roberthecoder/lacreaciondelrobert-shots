@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #21 · El hipo: tu diafragma con un tic — NARRADO (N1 "Por dentro": pecho en corte, diafragma y glotis + N2 el récord).
 // Datos: MedlinePlus y Cleveland Clinic (hipo, diafragma, glotis), Straus et al. 2003 y Howes 2012 (BioEssays, hipótesis),
 // Guinness World Records (Charles Osborne). Ver guion.md y verificacion.md. Dibujo esquemático: órganos y tamaños no van a escala.

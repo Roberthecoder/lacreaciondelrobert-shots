@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #01 · Día de Muertos · Ambiental: las mariposas monarca — NARRADO (N2 "El número" + viaje de ida y vuelta a la misma imagen).
 // Guion y fuentes: guion.md. El dibujo es esquemático (mariposas, mapa, árboles y oruga simplificados).
 const NARANJA = '#ff8a1f', NARANJA2 = '#f26a0f', OYAMEL = '#1f6b4a', OYAMEL2 = '#16523a';
@@ -66,7 +67,7 @@ function Bosque({ T, fondo = KC.cyan }) {
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       <circle cx={880} cy={330} r={90} fill={KC.yellow} opacity=".8" />
       {[[90, 1500, 1.5], [330, 1460, 1.25], [560, 1520, 1.6], [800, 1470, 1.3], [1020, 1510, 1.5]].map(([x, y, s], i) => <Oyamel key={i} x={x} y={y} s={s} color={i % 2 ? '#2a8a5c' : OYAMEL} />)}
-      <rect x={0} y={1560} width={KW} height={400} fill="#3b7a2a" />
+      <rect x={0} y={1560} width={KW} height={400} fill="#224423" />
       {Array.from({ length: 9 }, (_, i) => <Cempa key={i} T={T} x={60 + i * 120} y={1600 + (i % 2) * 40} s={0.9} />)}
     </svg>
   </div>;

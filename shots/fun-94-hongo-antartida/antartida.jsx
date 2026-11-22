@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #94 · El hongo de las rocas de la Antártida que aguantó el espacio (Cryomyces antarcticus) — NARRADO.
 // Gancho 1 «Esto no es X: es Y» · formato N1 con Lupa: piedra partida → granos y células → Estación Espacial → la misma piedra.
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.

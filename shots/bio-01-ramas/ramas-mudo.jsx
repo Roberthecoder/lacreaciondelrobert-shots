@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Biotecnológico #01 · Las ramas por colores — gemelo MUDO (M1 "La música son los datos", loop de 61.5 s).
 // Cada rama suma su capa de sonido (el latido de la roja a 72 por minuto marca el pulso de todo).
 // El final borra el arcoíris banda por banda y queda igual que el primer cuadro: vuelve a empezar sin corte.

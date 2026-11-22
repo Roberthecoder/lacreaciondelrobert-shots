@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #40 · El ácido hialurónico de tu suero lo hizo una bacteria — NARRADO (N1 "Por dentro").
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (no está a escala).
 const GLCA = '#F4C25A', GLCNAC = '#00d2ff', AGUA = '#7fc8ff', ENZ = '#b18cff', PIEL = '#f1b48f', PIEL2 = '#d98f6b';

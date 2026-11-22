@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #12 · Año Nuevo · Químico: cada color de los fuegos artificiales es un metal distinto — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md (verificacion.md: APROBADO). El dibujo es esquemático: corte del cohete, átomos, escalones de energía y líneas del espectro simplificados.
 const ROJO = '#ff3348', VERDE = '#3dff7a', AZUL = '#3d6bff', AMARI = '#ffd21a', NARAN = '#ff8a1f', DESLAVA = '#a9b8cc';
@@ -8,7 +9,7 @@ function Cielo({ T, seed = 4 }) {
   const g = krng(seed);
   const est = Array.from({ length: 70 }, () => [g() * KW, g() * 1300, 1 + g() * 3, g() * 6]);
   return <>
-    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0b0630 0%, #1e0b52 45%, #3d1670 78%, #5b2380 100%)' }}></div>
+    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0a0d21 0%, #0f0e2a 45%, #171132 78%, #1f1436 100%)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       {est.map(([x, y, r, f], i) => <circle key={i} cx={x} cy={y} r={r} fill="#fff" opacity={0.35 + 0.35 * Math.sin(T * 2 + f)} />)}
     </svg>

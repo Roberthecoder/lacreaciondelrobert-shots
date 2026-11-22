@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #77 · Ese amarillo de tu pipí no es colorante: es vitamina que hizo un hongo — NARRADO
 // (gancho 1 "Esto no es X: es Y" · formato N1 Por dentro + toque N5 con el experimento de 2001).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #02: La hormiga zombi (Ophiocordyceps). Remaster del shot 001 con las reglas del 27 oct 2026
 // (gancho de los 7, 61–62 s, Robert en pantalla, cierre que regresa al gancho). Usa kit-robert.jsx (MarcaAgua, Robert, CierreMarca).
 // Motor: animations-v3.jsx (CompositionStage + useComposition). Todo se dibuja desde T.

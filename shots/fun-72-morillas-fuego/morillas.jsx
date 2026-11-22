@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #72 · Ese bosque quemado no está muerto: las morillas que salen después del fuego — NARRADO
 // (gancho 1 "Esto no es X: es Y" + N1 por dentro del suelo + N2 de cifras). Guion y fuentes: guion.md · verificacion.md.
 // El dibujo es esquemático. No comas hongos silvestres sin la identificación de un experto.
@@ -247,7 +248,7 @@ function MorillasShot() {
         <div style={{ position:'absolute', inset:0, background:'#1a120c' }}></div>
         <div style={{ position:'absolute', left:0, right:0, top:0, height:620, background:KC.orange, backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
         {fsvg(<>
-          <rect x={0} y={600} width={KW} height={40} fill="#4a3220" />
+          <rect x={0} y={600} width={KW} height={40} fill="#2a201e" />
           {Array.from({ length: 11 }, (_, i) => { const q = kprog(T, K.U + 0.3 + i * 0.1, K.U + 1.6 + i * 0.1);
             return <g key={i}><Hoja x={60 + i * 96} y={592 - (i % 3) * 14} rot={(i * 37) % 60 - 30} quema={q} /><Llama T={T} x={60 + i * 96} y={592} s={0.8} o={Math.sin(Math.PI * kclamp(q, 0, 1))} /></g>; })}
           <RedHifas T={T} x={540} y={900} g={1} seed={7} n={260} escala={0.42} color={MO.alveolo2} ancho={4} />

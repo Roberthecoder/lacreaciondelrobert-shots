@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #54 · Los imanes que le enseñaron a recordar a una máquina (Nobel de Física 2024) — NARRADO (N3 capítulos y medidores).
 // Datos: comunicado y "popular information" del Nobel de Física 2024 (nobelprize.org); Hopfield, PNAS 79(8) 1982;
 // discurso de Hinton en el banquete Nobel (10 dic 2024). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

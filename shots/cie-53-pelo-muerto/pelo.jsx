@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #53 · El pelo y las uñas no crecen después de morir — NARRADO (N6 mito + N1 "Por dentro": la piel que se retrae).
 // Datos: Vreeman y Carroll 2007 (BMJ), Yaemsiri et al. 2010 (JEADV), Wolff et al. 2016 (Dtsch Arztebl Int). Ver guion.md y verificacion.md.
 // Tono amable: mano y mejilla dibujadas de forma simpática (dibujo esquemático), sin nada de miedo.

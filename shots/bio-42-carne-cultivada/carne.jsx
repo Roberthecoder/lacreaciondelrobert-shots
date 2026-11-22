@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #42 · La carne que creció en un tanque (carne cultivada) — NARRADO (N1 por dentro + N3 capítulos).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const CARNE = '#d9434f', CARNE2 = '#b8303e', GRASA = '#f5e2c8', SAT = '#2fe0a8', FAPC = '#b18cff', LIPIDO = '#ffd43b', AMBAR = '#e0a040';
@@ -196,7 +197,7 @@ function Carne() {
       <EscenaFundido T={T} a={K.Bi} b={K.Ce} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <rect x={0} y={1140} width={KW} height={800} fill="#7ccf6a" />
+          <rect x={0} y={1140} width={KW} height={800} fill="#436f43" />
           <Vaca T={T} x={470} y={900} s={0.95} />
           <circle cx={690} cy={790} r={20 + 10 * Math.sin(T * 6)} fill="none" stroke={KC.red} strokeWidth={6} opacity={kprog(T, K.Bi + 0.4, K.Bi + 0.8) * (1 - sale)} />
           <Aguja x={agX} y={agY} rot={35} muestra={kprog(T, K.Bi + 1.8, K.Bi + 2.2)} />

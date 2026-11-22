@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #54 · La pastilla de la presión es nieta de un veneno de víbora (captopril) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (no está a escala).
 const CP = { piel:'#eab48f', pielO:'#c98b66', cafe:'#8a6440', cafeO:'#3f2614', borde:'#e2cc9c', veneno:'#ffb21f', eca:'#9b5de5', zn:'#F4C25A',

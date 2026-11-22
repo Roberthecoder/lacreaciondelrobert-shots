@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #131 · Ese anillo morado es un animal defendiéndose de un hongo de tierra — NARRADO (N1 Por dentro).
 // Gancho 1 «Esto no es X: es Y». Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (mapas, árbol genético, células).
 
@@ -44,7 +45,7 @@ function Abanico({ T, x, y, s = 1, lesion, color = AX.fan, fase = 0 }) {
 // Fondo del arrecife: agua cian con rayos de luz, arena y unas rocas.
 function Arrecife({ T, burbujas = true }) {
   return <>
-    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#5fe3ff 0%, #12b6e6 55%, #0a8fc0 100%)' }}></div>
+    <div style={{ position:'absolute', inset:0, background:'linear-gradient(#204657 0%, #0c3a51 55%, #0a3047 100%)' }}></div>
     {fsvg(<>
       {[0, 1, 2, 3].map((i) => <polygon key={i} points={`${120 + i * 260 + Math.sin(T * 0.4 + i) * 30},0 ${220 + i * 260 + Math.sin(T * 0.4 + i) * 30},0 ${60 + i * 300},1500 ${-60 + i * 300},1500`} fill="#ffffff" opacity=".1" />)}
       <path d="M 0 1330 Q 270 1270 540 1310 Q 820 1350 1080 1290 L 1080 1920 L 0 1920 Z" fill={AX.arena} stroke={KC.ink} strokeWidth={6} />
