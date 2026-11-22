@@ -258,24 +258,24 @@ function Programadores() {
         <div style={{ position:'absolute', inset:0, opacity:klerp(0.6, 0.16, kprog(T, K.Co + 2.5, K.Co + 3.1)) }}>{svg(<Escritorio T={T} reloj={1} />)}</div>
       </Escena>
       <TarjetaEstudio T={T} at={K.Co + 0.2} until={K.Co + 2.6} anio="2023" quien="Peng y colegas · Copilot" revista="Microsoft Research, GitHub y MIT · arXiv 2302.06590" y={340} />
-      <Chip T={T} at={K.Co + 2.7} until={K.Co + 4.3} texto="tarea sencilla: un servidor web" x={540} y={330} tam={40} borde={KC.ink} />
-      <Comparativa T={T} at={K.Co + 2.9} until={K.Gi - 0.2} y={470} alto={640} max={161}
+      <Chip T={T} at={K.Co + 2.7} until={K.Co + 4.3} texto="tarea sencilla: un servidor web" x={540} y={470} tam={40} borde={KC.ink} />
+      <Comparativa T={T} at={K.Co + 2.9} until={K.Gi - 0.2} y={640} alto={700} max={161}
         izq={{ valor: 161, texto: '161 min', etiqueta: 'sin IA', color: KC.red }} der={{ valor: 71, texto: '71 min', etiqueta: 'con Copilot', color: VERDE }} />
-      <Chip T={T} at={K.Co + 4.4} until={K.Gi - 0.2} texto="con Copilot: 55.8 % menos tiempo" x={540} y={330} tam={40} borde={VERDE} />
+      <Chip T={T} at={K.Co + 4.4} until={K.Gi - 0.2} texto="con Copilot: 55.8 % menos tiempo" x={540} y={470} tam={40} borde={VERDE} />
 
       {/* 9 · giro: 2026 */}
       <Escena T={T} a={K.Gi} b={K.C}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <Calendario x={500} y={760} s={klerp(1.3, 1.7, kprog(T, K.Gi + 0.1, K.Gi + 0.6, kEase.rebote))} />
-          <g opacity={kprog(T, K.Gi + 1.6, K.Gi + 2.0)} transform={`translate(880 ${1110 - Math.sin(T * 3) * 8}) scale(1.6) translate(-870 -895)`}>
+          <Calendario x={500} y={930} s={klerp(1.5, 1.9, kprog(T, K.Gi + 0.1, K.Gi + 0.6, kEase.rebote))} />
+          <g opacity={kprog(T, K.Gi + 1.6, K.Gi + 2.0)} transform={`translate(890 ${1290 - Math.sin(T * 3) * 8}) scale(1.7) translate(-870 -895)`}>
             <path d="M 830 1000 L 830 880 L 790 880 L 870 790 L 950 880 L 910 880 L 910 1000 Z" fill={VERDE} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
             <text x={870} y={980} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.paper} stroke={KC.ink} strokeWidth={3}>?</text>
           </g>
         </>)}
       </Escena>
-      <Chip T={T} at={K.Gi + 1.8} until={K.C - 0.2} texto="METR: «probablemente» más rápido hoy" x={540} y={1345} tam={38} borde={VERDE} />
-      <Chip T={T} at={K.Gi + 3.6} until={K.C - 0.2} texto="pero sus datos nuevos: poco confiables" x={540} y={1450} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.Gi + 1.8} until={K.C - 0.2} texto="METR: «probablemente» más rápido hoy" x={540} y={420} tam={38} borde={VERDE} />
+      <Chip T={T} at={K.Gi + 3.6} until={K.C - 0.2} texto="pero sus datos nuevos: poco confiables" x={540} y={525} tam={38} borde={KC.red} />
 
       {/* 10 · cierre: la misma programadora, ahora con cronómetro */}
       <Escena T={T} a={K.C} b={FIN}>
