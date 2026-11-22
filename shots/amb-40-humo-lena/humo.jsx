@@ -44,6 +44,15 @@ function Leno({ x, y, ang, T, k }) {
 // Cocina rural vista en corte (macro). fogon/patsari 0..1 (cuál estufa se ve), humo 0..1 = humo atrapado bajo el techo, sale 0..1 = humo por la chimenea.
 const HL_FX = 540, HL_FY = 1100;                 // centro del fogón
 const HL_CHX = 640, HL_CHTOP = 330;              // chimenea de la Patsari
+// Modo cine: la casa se centra en el cuadro (y = 960), agrandada k veces, sobre su suelo de tierra oscuro.
+const HL_CY = 960;
+function Casa({ k = 1.08, children }) {
+  return <g transform={`translate(540 ${HL_CY}) scale(${k}) translate(-540 -792)`}>
+    <rect x={-700} y={1184} width={2480} height={1200} fill="#17110c" />
+    <line x1={-700} y1={1187} x2={1780} y2={1187} stroke="#4a3626" strokeWidth={6} />
+    {children}
+  </g>;
+}
 function Cocina({ T, patsari = 0, humo = 1, sale = 0, construye = 1, chimenea = 1, ventana = true }) {
   const fog = 1 - patsari;
   const puffs = [];
@@ -66,8 +75,8 @@ function Cocina({ T, patsari = 0, humo = 1, sale = 0, construye = 1, chimenea = 
     <polygon points="40,600 540,400 1040,600" fill="#c0573a" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     {Array.from({ length: 7 }, (_, i) => <line key={i} x1={120 + i * 70} y1={600 - (i + 1) * 28 + 6} x2={960 - i * 70} y2={600 - (i + 1) * 28 + 6} stroke="#8f3b25" strokeWidth={5} opacity={0.6} />)}
     {/* paredes */}
-    <rect x={80} y={600} width={920} height={560} fill="#e8c089" stroke={KC.ink} strokeWidth={8} />
-    <rect x={100} y={620} width={880} height={530} fill="#d9ab70" />
+    <rect x={80} y={600} width={920} height={560} fill="#b08a5c" stroke={KC.ink} strokeWidth={8} />
+    <rect x={100} y={620} width={880} height={530} fill="#6f4f34" />
     {ventana && <g><rect x={800} y={690} width={130} height={100} fill="#9fe3ff" stroke={KC.ink} strokeWidth={6} /><line x1={865} y1={690} x2={865} y2={790} stroke={KC.ink} strokeWidth={5} /></g>}
     <rect x={80} y={1150} width={920} height={34} fill="#a8774a" stroke={KC.ink} strokeWidth={6} />
     {/* fogón de tres piedras con comal */}
@@ -107,9 +116,9 @@ function LupaHumo(n) {
   </svg>;
 }
 
-// Cabello (70 µm) contra una partícula fina (2.5 µm). 6 px = 1 µm.
+// Cabello (70 µm) contra una partícula fina (2.5 µm). 9 px = 1 µm (la barra de 10 µm mide 90 px).
 function CabelloPM({ T, a }) {
-  const y = 860, h = 420, ent = kprog(T, a + 0.1, a + 1.0, kEase.sale);
+  const y = 900, h = 630, ent = kprog(T, a + 0.1, a + 1.0, kEase.sale);
   return <g>
     <g transform={`translate(${(1 - ent) * -1100} 0)`}>
       <rect x={-40} y={y - h / 2} width={1160} height={h} fill="#6b4428" stroke={KC.ink} strokeWidth={8} />
@@ -121,8 +130,8 @@ function CabelloPM({ T, a }) {
       <line x1={45} y1={y - h / 2} x2={75} y2={y - h / 2} stroke={KC.yellow} strokeWidth={6} /><line x1={45} y1={y + h / 2} x2={75} y2={y + h / 2} stroke={KC.yellow} strokeWidth={6} />
     </g>
     <g opacity={kprog(T, a + 2.2, a + 2.6)}>
-      <circle cx={760} cy={1120} r={8} fill={HL_HOLLIN} stroke={KC.yellow} strokeWidth={2} />
-      <circle cx={760} cy={1120} r={34 + 6 * Math.sin(T * 6)} fill="none" stroke={KC.yellow} strokeWidth={5} />
+      <circle cx={760} cy={1345} r={11} fill={HL_HOLLIN} stroke={KC.yellow} strokeWidth={2} />
+      <circle cx={760} cy={1345} r={40 + 6 * Math.sin(T * 6)} fill="none" stroke={KC.yellow} strokeWidth={5} />
     </g>
   </g>;
 }
@@ -182,8 +191,8 @@ function GloboHumo({ T, x = 540, y = 880, r = 260 }) {
 }
 
 // Casita para la fila de 10 (México). leña = con humo de leña.
-function Casita({ T, x, y, lena = false, o = 1 }) {
-  return <g transform={`translate(${x} ${y})`} opacity={o}>
+function Casita({ T, x, y, lena = false, o = 1, s = 1 }) {
+  return <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o}>
     <rect x={-36} y={-50} width={72} height={60} fill={lena ? '#e8c089' : KC.paper} stroke={KC.ink} strokeWidth={5} />
     <polygon points="-46,-50 0,-90 46,-50" fill="#c0573a" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
     <rect x={-10} y={-18} width={20} height={28} fill="#7a4a22" stroke={KC.ink} strokeWidth={3} />
@@ -207,8 +216,8 @@ function BarraBaja({ x, y, alto = 420, valor, texto, etiqueta, color, o = 1 }) {
     <rect x={-70} y={-alto - 10} width={140} height={alto + 20} rx={18} fill="rgba(255,255,255,.9)" stroke={KC.ink} strokeWidth={6} />
     <rect x={-56} y={-alto * valor} width={112} height={alto * valor} rx={10} fill={color} />
     <line x1={-70} y1={-alto} x2={70} y2={-alto} stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" />
-    <text x={0} y={-alto - 30} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} stroke="#fff" strokeWidth={8} paintOrder="stroke">{texto}</text>
-    <text x={0} y={52} textAnchor="middle" style={{ font:`900 26px ${KF.texto}` }} fill={KC.ink} stroke="#fff" strokeWidth={6} paintOrder="stroke">{etiqueta}</text>
+    <text x={0} y={-alto - 30} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill="#fff6e0" stroke="#0b1020" strokeWidth={10} paintOrder="stroke">{texto}</text>
+    <text x={0} y={52} textAnchor="middle" style={{ font:`900 26px ${KF.texto}` }} fill="#fff6e0" stroke="#0b1020" strokeWidth={7} paintOrder="stroke">{etiqueta}</text>
   </g>;
 }
 
@@ -226,100 +235,100 @@ function HumoShot() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la cocina con fogón; el humo no es solo olor */}
-      <Escena T={T} a={K.G} b={K.F}>
+      <Escena T={T} a={K.G} b={K.F} origen="50% 50%">
         <FondoLunares color={KC.cyan} />
-        {svg(<Cocina T={T} humo={klerp(0.45, 0.65, kprog(T, 0, 4))} />)}
+        {svg(<Casa k={1.02}><Cocina T={T} humo={klerp(0.45, 0.65, kprog(T, 0, 4))} /></Casa>)}
       </Escena>
-      <Lupa T={T} at={K.G + 0.5} until={K.F - 0.3} x={270} y={740} r={165} fx={480} fy={820} tinte={KC.yellow} etiqueta="AUMENTADO · esquema" interior={LupaHumo(16)} />
+      <Lupa T={T} at={K.G + 0.5} until={K.F - 0.3} x={262} y={905} r={205} fx={475} fy={1000} tinte={KC.yellow} etiqueta="AUMENTADO · esquema" interior={LupaHumo(16)} />
       {/* 2 · leña a medio quemar: sueltan partículas */}
       <Escena T={T} a={K.F} b={K.Ca} zoom={0.08} origen="50% 55%">
         <FondoLunares color={KC.lilac} />
-        {svg(<><g transform={`translate(540 900) scale(2.3) translate(${-HL_FX} ${-HL_FY})`}>
+        {svg(<><g transform={`translate(540 1100) scale(3) translate(${-HL_FX} ${-HL_FY})`}>
             <Leno x={HL_FX - 40} y={HL_FY + 30} ang={-12} T={T} k={1} /><Leno x={HL_FX + 40} y={HL_FY + 34} ang={192} T={T} k={2} />
             <Llamas T={T} x={HL_FX} y={HL_FY + 30} s={0.8} />
             {[-90, 0, 90].map((dx, i) => <ellipse key={i} cx={HL_FX + dx} cy={HL_FY + 22} rx={42} ry={30} fill="#9a958e" stroke={KC.ink} strokeWidth={5} />)}
           </g>
           {Array.from({ length: 14 }, (_, i) => { const u = ((T - K.F) * 0.45 + i / 14) % 1; const q = krng(i * 7 + 2);
-            return <Hollin key={i} seed={i + 20} x={540 + (q() - 0.5) * 120 + (q() - 0.5) * 700 * u} y={820 - u * 460} s={1.3 + u} o={kprog(T, K.F + 0.2 + i * 0.05, K.F + 0.6 + i * 0.05) * (1 - u * 0.6)} rot={u * 200} />; })}</>)}
+            return <Hollin key={i} seed={i + 20} x={540 + (q() - 0.5) * 160 + (q() - 0.5) * 800 * u} y={990 - u * 580} s={1.7 + u * 1.3} o={kprog(T, K.F + 0.2 + i * 0.05, K.F + 0.6 + i * 0.05) * (1 - u * 0.6)} rot={u * 200} />; })}</>)}
       </Escena>
       {/* 3 · menos de 2.5 µm: unas 30 veces más delgadas que un cabello */}
       <Escena T={T} a={K.Ca} b={K.Pu}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {svg(<CabelloPM T={T} a={K.Ca} />)}
-        <EscalaFija texto="10 µm (esquema)" largo={60} y={1480} color={KC.texto} />
+        <EscalaFija texto="10 µm (esquema)" largo={90} y={1430} color={KC.texto} />
       </Escena>
       {/* 4 · al fondo del pulmón y algunas a la sangre (micro, fondo oscuro) */}
       <Escena T={T} a={K.Pu} b={K.Pu + 1.7}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        {svg(<Pulmones T={T} a={K.Pu} />)}
+        {svg(<g transform="translate(540 930) scale(1.4) translate(-540 -780)"><Pulmones T={T} a={K.Pu} /></g>)}
       </Escena>
       <Escena T={T} a={K.Pu + 1.7} b={K.E} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.dark }}></div>
-        {svg(<Alveolos T={T} a={K.Pu + 1.2} />)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
+        {svg(<g transform="translate(540 940) scale(1.4) translate(-600 -830)"><Alveolos T={T} a={K.Pu + 1.2} /></g>)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1450} color={KC.texto} />
       </Escena>
       {/* 5 · con poca ventilación: hasta cien veces más de lo aceptable */}
-      <Escena T={T} a={K.E} b={K.Mu}>
+      <Escena T={T} a={K.E} b={K.Mu} origen="50% 50%">
         <FondoLunares color={KC.yellow} />
-        {svg(<><Cocina T={T} humo={humoE} />
-          <BarraBaja x={250} y={1080} alto={400} valor={kclamp(0.01 + 0.99 * medE, 0, 1)} texto={'×' + Math.round(1 + 99 * medE)} etiqueta="partículas finas" color="#5d5955" o={kprog(T, K.E + 0.5, K.E + 0.9)} />
-          <g opacity={kprog(T, K.E + 0.5, K.E + 0.9)}><line x1={170} y1={1074} x2={330} y2={1074} stroke={KC.leaf} strokeWidth={8} /><text x={350} y={1082} style={{ font:`900 26px ${KF.texto}` }} fill={KC.ink} stroke="#fff" strokeWidth={6} paintOrder="stroke">aceptable</text></g></>)}
+        {svg(<Casa><Cocina T={T} humo={humoE} />
+          <BarraBaja x={240} y={1088} alto={380} valor={kclamp(0.01 + 0.99 * medE, 0, 1)} texto={'×' + Math.round(1 + 99 * medE)} etiqueta="partículas finas" color="#5d5955" o={kprog(T, K.E + 0.5, K.E + 0.9)} />
+          <g opacity={kprog(T, K.E + 0.5, K.E + 0.9)}><line x1={160} y1={1082} x2={330} y2={1082} stroke={KC.leaf} strokeWidth={8} /><text x={336} y={1058} style={{ font:`900 26px ${KF.texto}` }} fill="#fff6e0" stroke="#0b1020" strokeWidth={7} paintOrder="stroke">aceptable</text></g></Casa>)}
       </Escena>
       {/* 6 · el mundo: 2,100 millones cocinan así; 2.9 millones de muertes estimadas en 2021 */}
       <Escena T={T} a={K.Mu} b={K.Mx}>
         <FondoLunares color={KC.mint} />
-        {svg(<GloboHumo T={T} x={540} y={850} r={225} />)}
+        {svg(<g transform="translate(540 1010) scale(1.5)"><GloboHumo T={T} x={0} y={0} r={225} /></g>)}
       </Escena>
       {/* 7 · México: casi 1 de cada 10 viviendas (2025) */}
       <Escena T={T} a={K.Mx} b={K.P}>
         <FondoLunares color={KC.orange} />
-        {svg(<><MapaMexico x={60} y={360} ancho={600} conCA={false} />
-          {Array.from({ length: 10 }, (_, i) => <Casita key={i} T={T} x={110 + i * 96} y={1110} lena={i === 6} o={kprog(T, K.Mx + 0.4 + i * 0.12, K.Mx + 0.7 + i * 0.12)} />)}</>)}
+        {svg(<><MapaMexico x={90} y={330} ancho={1150} conCA={false} />
+          {Array.from({ length: 10 }, (_, i) => <Casita key={i} T={T} s={1.8} x={172 + (i % 5) * 184} y={i < 5 ? 1255 : 1460} lena={i === 4} o={kprog(T, K.Mx + 0.4 + i * 0.12, K.Mx + 0.7 + i * 0.12)} />)}</>)}
       </Escena>
       {/* 8 · re-gancho: ¿y si no alcanza para el gas? */}
       <Escena T={T} a={K.P} b={K.Pa} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><TanqueGas x={270} y={1110} s={0.95} rot={Math.sin(T * 3) * 3} />
-          <text x={270} y={750} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 270 650)`}>?</text></>)}
+        {svg(<><TanqueGas x={390} y={1230} s={1.55} rot={Math.sin(T * 3) * 3} />
+          <text x={800} y={1170} textAnchor="middle" style={{ font:`400 460px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 800 1000)`}>?</text></>)}
       </Escena>
       {/* 9 y 10 · la estufa Patsari con chimenea; mediciones antes y después */}
-      <Escena T={T} a={K.Pa} b={K.C}>
+      <Escena T={T} a={K.Pa} b={K.C} origen="50% 50%">
         <FondoLunares color={KC.cyan} />
-        {svg(<><Cocina T={T} patsari={kprog(T, K.Pa + 0.4, K.Pa + 1.4)} construye={constr} chimenea={chim} sale={salePa} humo={T < K.Mi ? humoPa : 0.22} />
-          <BarraBaja x={800} y={1110} alto={300} valor={b1} texto={(1 - b1) > 0.04 ? '−' + Math.round((1 - b1) * 100) + ' %' : ''} etiqueta="junto a la estufa" color="#5d5955" o={kprog(T, K.Mi + 0.1, K.Mi + 0.4) * (1 - kprog(T, K.Mi + 2.3, K.Mi + 2.6))} />
-          <BarraBaja x={800} y={1110} alto={300} valor={b2} texto={(1 - b2) > 0.04 ? '−' + Math.round((1 - b2) * 100) + ' %' : ''} etiqueta="cada persona al día" color={KC.blue} o={kprog(T, K.Mi + 2.5, K.Mi + 2.8)} /></>)}
+        {svg(<Casa><Cocina T={T} patsari={kprog(T, K.Pa + 0.4, K.Pa + 1.4)} construye={constr} chimenea={chim} sale={salePa} humo={T < K.Mi ? humoPa : 0.22} />
+          <BarraBaja x={240} y={1088} alto={340} valor={b1} texto={(1 - b1) > 0.04 ? '−' + Math.round((1 - b1) * 100) + ' %' : ''} etiqueta="junto a la estufa" color="#5d5955" o={kprog(T, K.Mi + 0.1, K.Mi + 0.4) * (1 - kprog(T, K.Mi + 2.3, K.Mi + 2.6))} />
+          <BarraBaja x={240} y={1088} alto={340} valor={b2} texto={(1 - b2) > 0.04 ? '−' + Math.round((1 - b2) * 100) + ' %' : ''} etiqueta="cada persona al día" color={KC.blue} o={kprog(T, K.Mi + 2.5, K.Mi + 2.8)} /></Casa>)}
       </Escena>
       {/* 11 · cierre: la misma cocina del inicio, con Patsari: la mayor parte del humo sale por la chimenea */}
-      <Escena T={T} a={K.C} b={FIN}>
+      <Escena T={T} a={K.C} b={FIN} origen="50% 50%">
         <FondoLunares color={KC.cyan} />
-        {svg(<Cocina T={T} patsari={1} sale={1} humo={0.18} />)}
+        {svg(<Casa><Cocina T={T} patsari={1} sale={1} humo={0.18} /></Casa>)}
       </Escena>
-      <Lupa T={T} at={K.C + 0.8} until={K.Ou - 0.2} x={270} y={740} r={165} fx={480} fy={820} tinte={KC.yellow} etiqueta="muchas menos · esquema" interior={LupaHumo(5)} />
+      <Lupa T={T} at={K.C + 0.8} until={K.Ou - 0.2} x={280} y={865} r={195} fx={480} fy={1000} tinte={KC.yellow} etiqueta="muchas menos · esquema" interior={LupaHumo(5)} />
 
       {/* datos y etiquetas */}
-      <Chip T={T} at={K.G + 1.4} until={K.F - 0.2} texto="no es solo olor" x={790} y={920} tam={34} borde={KC.yellow} />
-      <Etq T={T} at={K.F + 0.4} until={K.Ca - 0.2} x={760} y={1090} texto="leña a medio quemar" lado="izq" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.F + 1.0} until={K.Ca - 0.2} texto="combustión incompleta → partículas" x={540} y={420} tam={30} borde={KC.orange} />
-      <Etq T={T} at={K.Ca + 1.8} until={K.Pu - 0.2} x={90} y={600} texto="cabello ≈ 70 µm" tam={32} />
-      <Etq T={T} at={K.Ca + 2.4} until={K.Pu - 0.2} x={720} y={1120} texto="PM2.5: menos de 2.5 µm" lado="izq" tam={30} color={KC.yellow} />
-      <Chip T={T} at={K.Ca + 2.8} until={K.Pu - 0.2} texto="≈ 30 veces más finas" x={340} y={470} tam={34} borde={KC.yellow} />
-      <Etq T={T} at={K.Pu + 0.3} until={K.Pu + 1.6} x={760} y={480} texto="tráquea" tam={30} lado="der" />
-      <Etq T={T} at={K.Pu + 2.0} until={K.E - 0.2} x={700} y={570} texto="alvéolos" tam={30} />
-      <Etq T={T} at={K.Pu + 2.6} until={K.E - 0.2} x={1000} y={1160} texto="capilar: sangre" lado="izq" tam={30} color={KC.coral} />
-      <Chip T={T} at={K.E + 1.2} until={K.Mu - 0.2} texto="OMS: con poca ventilación" x={340} y={380} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.G + 1.4} until={K.F - 0.2} texto="no es solo olor" x={800} y={1090} tam={34} borde={KC.yellow} />
+      <Etq T={T} at={K.F + 0.4} until={K.Ca - 0.2} x={800} y={1350} texto="leña a medio quemar" lado="izq" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.F + 1.0} until={K.Ca - 0.2} texto="combustión incompleta → partículas" x={540} y={300} tam={30} borde={KC.orange} />
+      <Etq T={T} at={K.Ca + 1.8} until={K.Pu - 0.2} x={90} y={540} texto="cabello ≈ 70 µm" tam={32} />
+      <Etq T={T} at={K.Ca + 2.4} until={K.Pu - 0.2} x={705} y={1345} texto="PM2.5: menos de 2.5 µm" lado="izq" tam={30} color={KC.yellow} />
+      <Chip T={T} at={K.Ca + 2.8} until={K.Pu - 0.2} texto="≈ 30 veces más finas" x={540} y={410} tam={34} borde={KC.yellow} />
+      <Etq T={T} at={K.Pu + 0.3} until={K.Pu + 1.6} x={590} y={500} texto="tráquea" tam={30} lado="der" />
+      <Etq T={T} at={K.Pu + 2.0} until={K.E - 0.2} x={670} y={585} texto="alvéolos" tam={30} />
+      <Etq T={T} at={K.Pu + 2.6} until={K.E - 0.2} x={1010} y={1405} texto="capilar: sangre" lado="izq" tam={30} color={KC.coral} />
+      <Chip T={T} at={K.E + 1.2} until={K.Mu - 0.2} texto="OMS: con poca ventilación" x={320} y={450} tam={28} borde={KC.ink} />
       <NumeroGigante T={T} at={K.Mu + 0.2} until={K.Mu + 4.6} valor={2100} dur={1.2} sufijo=" millones" etiqueta="en el mundo:" x={540} y={420} tam={110} color={KC.yellow} />
       <Chip T={T} at={K.Mu + 1.2} until={K.Mu + 4.6} texto="cocinan con fuego abierto o estufas con humo" x={540} y={560} tam={28} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Mu + 5.0} until={K.Mx - 0.2} valor={2.9} dec={1} dur={1.0} sufijo=" millones" etiqueta="muertes estimadas · 2021" x={680} y={440} tam={110} color={KC.coral} />
-      <Chip T={T} at={K.Mu + 6.0} until={K.Mx - 0.2} texto="OMS, 2025 (estimación)" x={680} y={580} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.Mx + 1.6} until={K.P - 0.2} texto="casi 1 de cada 10 viviendas" x={540} y={760} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Mx + 2.2} until={K.P - 0.2} texto="9.7 % · INEGI, Encuesta Intercensal 2025" x={540} y={845} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.P + 1.4} until={K.Pa - 0.2} texto="no es tu culpa" x={300} y={400} tam={36} borde={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.Pa + 0.2} until={K.Pa + 2.9} anio="2007" quien="Michoacán · 53 casas · antes y después" revista="Zuk, Masera y col. · J Expo Sci Environ Epidemiol" y={470} />
-      <Etq T={T} at={K.Pa + 2.6} until={K.Mi - 0.2} x={690} y={1080} texto="estufa Patsari" lado="der" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Pa + 3.6} until={K.Mi - 0.2} x={615} y={700} texto="chimenea" lado="izq" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Mi + 0.2} until={K.Mi + 2.5} texto="mediana, junto a la estufa" x={400} y={380} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.Mi + 2.7} until={K.C - 0.2} texto="lo que respira cada persona al día" x={380} y={380} tam={28} borde={KC.blue} />
-      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="la mayor parte sale por la chimenea" x={600} y={250} tam={28} borde={KC.yellow} />
+      <NumeroGigante T={T} at={K.Mu + 5.0} until={K.Mx - 0.2} valor={2.9} dec={1} dur={1.0} sufijo=" millones" etiqueta="muertes estimadas · 2021" x={540} y={430} tam={110} color={KC.coral} />
+      <Chip T={T} at={K.Mu + 6.0} until={K.Mx - 0.2} texto="OMS, 2025 (estimación)" x={540} y={570} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.Mx + 1.6} until={K.P - 0.2} texto="casi 1 de cada 10 viviendas" x={540} y={930} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Mx + 2.2} until={K.P - 0.2} texto="9.7 % · INEGI, Encuesta Intercensal 2025" x={540} y={1010} tam={26} borde={KC.ink} />
+      <Chip T={T} at={K.P + 1.4} until={K.Pa - 0.2} texto="no es tu culpa" x={540} y={560} tam={40} borde={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.Pa + 0.2} until={K.Pa + 2.9} anio="2007" quien="Michoacán · 53 casas · antes y después" revista="Zuk, Masera y col. · J Expo Sci Environ Epidemiol" y={330} />
+      <Etq T={T} at={K.Pa + 2.6} until={K.Mi - 0.2} x={707} y={1280} texto="estufa Patsari" lado="der" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Pa + 3.6} until={K.Mi - 0.2} x={623} y={858} texto="chimenea" lado="izq" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Mi + 0.2} until={K.Mi + 2.5} texto="mediana, junto a la estufa" x={320} y={450} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Mi + 2.7} until={K.C - 0.2} texto="lo que respira cada persona al día" x={320} y={450} tam={28} borde={KC.blue} />
+      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="la mayor parte sale por la chimenea" x={320} y={450} tam={28} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.F - 0.1} texto="No es solo olor: *son partículas.*" />
