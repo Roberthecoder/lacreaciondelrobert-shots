@@ -209,7 +209,12 @@ function Pupila() {
         <Chip T={T} at={K.Resultado + 0.5} until={K.Pregunta - 0.1} texto="dibujo exagerado" x={860} y={330} tam={30} borde={KC.ink} />
       </Escena>
       {/* 6 · pregunta */}
-      <EscenaPregunta T={T} a={K.Pregunta} b={K.Locus} color={KC.cyan} />
+      {/* El «?» baja y crece sobre la gráfica: la escena anterior (ojo y curva) se ve detrás a media luz y el conjunto queda centrado. */}
+      <Escena T={T} a={K.Pregunta} b={K.Locus} zoom={0.1}>
+        <FondoLunares color={KC.cyan} />
+        <Lienzo><text x={540} y={1450} textAnchor="middle" fill={KC.yellow} stroke={KC.ink} strokeWidth={16}
+          transform={`rotate(${Math.sin(T * 3) * 6} 540 1150) scale(${klerp(0.6, 1, kprog(T, K.Pregunta, K.Pregunta + 0.4, kEase.rebote))})`} style={{ font:`400 700px ${KF.titulo}`, transformOrigin:'540px 1150px' }}>?</text></Lienzo>
+      </Escena>
       {/* 7 · por dentro: una zona pequeñita del tallo cerebral se enciende (se cree) */}
       <Escena T={T} a={K.Locus} b={K.Pequeno} fondo={KC.noche} zoom={0.04}>
         <FondoMarca patron="oscuro" />
