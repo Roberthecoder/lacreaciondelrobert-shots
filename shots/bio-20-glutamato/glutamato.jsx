@@ -133,8 +133,8 @@ function Matraz({ T, x, y, rompe = 0 }) {
   const beads = Array.from({ length: 10 }, (_, i) => [i, R()]);
   const col = [KC.pink, KC.cyan, GLU, KC.yellow, KC.lilac];
   return <g transform={`translate(${x} ${y})`}>
-    <path d="M -60 -330 L -60 -140 L -250 170 Q -270 220 -220 220 L 220 220 Q 270 220 250 170 L 60 -140 L 60 -330 Z" fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={12} strokeLinejoin="round" />
-    <path d="M -150 20 L 150 20 L 240 175 Q 255 205 220 205 L -220 205 Q -255 205 -240 175 Z" fill="#d6f5a2" />
+    <path d="M -60 -330 L -60 -140 L -250 170 Q -270 220 -220 220 L 220 220 Q 270 220 250 170 L 60 -140 L 60 -330 Z" fill="rgba(200,230,255,.16)" stroke={KC.ink} strokeWidth={12} strokeLinejoin="round" />
+    <path d="M -150 20 L 150 20 L 240 175 Q 255 205 220 205 L -220 205 Q -255 205 -240 175 Z" fill="#6f9a3c" />
     <rect x={-80} y={-350} width={160} height={30} rx={10} fill="#cfd8e0" stroke={KC.ink} strokeWidth={8} />
     {Array.from({ length: 10 }, (_, i) => { const ph = (T * 0.8 + i * 0.13) % 1; return <circle key={i} cx={-150 + i * 33} cy={200 - ph * 170} r={7 + (i % 3) * 3} fill="none" stroke="#fff" strokeWidth={3} opacity={1 - ph} />; })}
     {beads.map(([i, r]) => { const bx = -180 + i * 40, by = 120 + Math.sin(i * 1.3 + T * 2) * 12, sep = rompe * (r - 0.5) * 120;
@@ -243,25 +243,26 @@ function Glutamato() {
       <Escena T={T} a={K.G} b={K.Ko} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <VasoSopa T={T} x={400} y={1110} s={1} montoncito={montoncito} />
+          <VasoSopa T={T} x={540} y={1070} s={1.55} montoncito={montoncito} />
           {caida.map(([a, b, c], i) => { const t0 = K.G + 0.35 + a * 2.6, p = kprog(T, t0, t0 + 0.6, (q) => q * q);
-            return p > 0 && p < 1 ? <Cristal key={i} x={330 + (b - 0.5) * 50 + p * 30} y={klerp(700, 880, p)} s={0.9} rot={c * 360 + T * 200} /> : null; })}
-          <Sobre x={290} y={640} rot={klerp(0, 150, kprog(T, K.G + 0.2, K.G + 0.6, kEase.sale))} rasga={rasga} />
+            return p > 0 && p < 1 ? <Cristal key={i} x={470 + (b - 0.5) * 70 + p * 40} y={klerp(560, 720, p)} s={1.3} rot={c * 360 + T * 200} /> : null; })}
+          <g transform="translate(430 420) scale(1.3) translate(-430 -420)"><Sobre x={430} y={420} rot={klerp(0, 150, kprog(T, K.G + 0.2, K.G + 0.6, kEase.sale))} rasga={rasga} /></g>
+          <g opacity={kprog(T, K.G + 2.6, K.G + 3.0)} transform={`translate(0 ${(1 - kprog(T, K.G + 2.6, K.G + 3.0, kEase.sale)) * 40})`}><ParV T={T} x={880} y={560} s={1.1} rot={-12} seed={2} /></g>
         </SvgCapa>
       </Escena>
       {/* 1 · Ikeda, 1908: el caldo de alga kombu */}
       <Escena T={T} a={K.Ko} b={K.Ta} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 1060) scale(1.2) translate(-540 -1000)">
           <Olla T={T} x={540} y={1060} />
           {Array.from({ length: 14 }, (_, i) => { const t0 = K.Ko + 1.0 + i * 0.22, p = kprog(T, t0, t0 + 1.4, kEase.sale);
             return p > 0 ? <Cristal key={i} x={540 + (i % 7 - 3) * 60 + Math.sin(T * 2 + i) * 10} y={klerp(900, 640 + (i % 3) * 40, p)} s={1.3} rot={i * 47 + T * 30} o={kprog(T, t0, t0 + 0.3)} /> : null; })}
           {T > K.Ko + 2.6 && <GluMol x={720} y={760} s={1} rot={mece(T, 3, 0.4) * 10} o={kprog(T, K.Ko + 2.6, K.Ko + 3.0)} brillo={0.6} />}
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 2 · el tanque: la bacteria come azúcar */}
       <Escena T={T} a={K.Ta} b={K.PD} zoom={0.03}>
-        <MundoBiorreactor T={T} turbio={0.6} burbujas={1} rpm={100} fondo={KC.cyan} />
+        <MundoBiorreactor T={T} turbio={0.6} burbujas={1} rpm={100} fondo="#0b2731" />
         <SvgCapa>
           <Cana x={110} y={1420} h={640} T={T} />
           <Mazorca x={975} y={1150} s={0.9} rot={12} />
@@ -304,25 +305,25 @@ function Glutamato() {
       <Escena T={T} a={K.Pr} b={K.An} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Coryne T={T} x={790} y={980} largo={360} ancho={150} rot={-15} seed={5} />
-          <text x={790} y={820} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 790 700)`}>?</text>
+          <Coryne T={T} x={540} y={1120} largo={660} ancho={270} rot={-15} seed={5} />
+          <text x={560} y={820} textAnchor="middle" style={{ font:`400 400px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 560 690)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 7 · antes: proteínas de plantas + ácido */}
       <Escena T={T} a={K.An} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <Trigo x={150} y={1180} T={T} />
-          <Matraz T={T} x={580} y={960} rompe={kprog(T, K.An + 1.4, K.An + 3.4, kEase.suave)} />
+          <g transform="translate(140 1290) scale(1.4) translate(-140 -1290)"><Trigo x={140} y={1290} T={T} /></g>
+          <g transform="translate(610 1000) scale(1.3) translate(-610 -1000)"><Matraz T={T} x={610} y={1000} rompe={kprog(T, K.An + 1.4, K.An + 3.4, kEase.suave)} /></g>
         </SvgCapa>
       </Escena>
       {/* 8 · 1957: prueban bacterias, levaduras y hongos */}
       <Escena T={T} a={K.Es} b={K.Cm} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          {[['bacterias', 'bacteria', 200], ['levaduras', 'levadura', 540], ['hongos', 'hongo', 880]].map(([t, tipo, x], i) => {
+          {[['bacterias', 'bacteria', 188], ['levaduras', 'levadura', 540], ['hongos', 'hongo', 892]].map(([t, tipo, x], i) => {
             const at = K.Es + 0.6 + i * 0.7, e = kprog(T, at, at + 0.4, kEase.rebote);
-            return e > 0 ? <g key={i} transform={`translate(${x} 860) scale(${e})`}>
+            return e > 0 ? <g key={i} transform={`translate(${x} 930) scale(${e * 1.12})`}>
               <PlacaPetri x={0} y={0} r={150} id={'pp' + i}><Colonias tipo={tipo} seed={i + 3} crece={kprog(T, at + 0.2, at + 2.5)} /></PlacaPetri>
               <text x={0} y={210} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{t}</text>
             </g> : null; })}
@@ -332,17 +333,16 @@ function Glutamato() {
       <Escena T={T} a={K.Cm} b={K.Cc} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <circle cx={600} cy={820} r={280 + Math.sin(T * 4) * 10} fill="#fff6b0" opacity=".55" />
-          <PlacaPetri x={600} y={820} r={240} id="ppc"><Colonias tipo="bacteria" n={30} seed={21} />
-            <ParV T={T} x={0} y={10} s={0.8} seed={11} /></PlacaPetri>
-          <g transform={`translate(830 590) rotate(${Math.sin(T * 3) * 8})`} opacity={kprog(T, K.Cm + 0.3, K.Cm + 0.6)}>
+          <circle cx={540} cy={880} r={335 + Math.sin(T * 4) * 10} fill="#fff6b0" opacity=".22" />
+          <PlacaPetri x={540} y={880} r={300} id="ppc"><Colonias tipo="bacteria" n={30} seed={21} />
+            <ParV T={T} x={0} y={10} s={1.0} seed={11} /></PlacaPetri>
+          <g transform={`translate(790 630) rotate(${Math.sin(T * 3) * 8})`} opacity={kprog(T, K.Cm + 0.3, K.Cm + 0.6)}>
             <circle r={62} fill={KC.gold2} stroke={KC.ink} strokeWidth={8} /><text y={24} textAnchor="middle" style={{ font:`400 72px ${KF.titulo}` }} fill={KC.ink}>1</text>
           </g>
           {T > K.Cm + 0.6 && <g>
             {[0, 1, 2, 3].map((i) => { const llega = kprog(fase, 0, 0.45, kEase.suave), x0 = 120 + i * 105;
-              return <Glucosa key={i} x={klerp(x0, 600, llega)} y={klerp(1560, 1560, llega)} s={1.1} rot={T * 60} o={1 - kprog(fase, 0.4, 0.5)} />; })}
-            <path d="M 560 1560 L 640 1560" stroke={KC.ink} strokeWidth={0} />
-            <GluMol x={klerp(600, 860, kprog(fase, 0.5, 0.8, kEase.sale))} y={1560} s={0.8} o={kprog(fase, 0.45, 0.55)} brillo={0.7} />
+              return <Glucosa key={i} x={klerp(x0, 560, llega)} y={1375} s={1.1} rot={T * 60} o={1 - kprog(fase, 0.4, 0.5)} />; })}
+            <GluMol x={klerp(560, 860, kprog(fase, 0.5, 0.8, kEase.sale))} y={1375} s={0.8} o={kprog(fase, 0.45, 0.55)} brillo={0.7} />
           </g>}
         </SvgCapa>
       </Escena>
@@ -353,12 +353,12 @@ function Glutamato() {
           <rect x={0} y={1060} width={KW} height={900} fill="#4a3424" />
           <path d="M 0 1060 Q 270 1030 540 1060 T 1080 1060" fill="#6b4220" stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 16 }, (_, i) => <circle key={i} cx={(i * 137) % 1080} cy={1110 + (i * 53) % 120} r={10 + (i % 3) * 6} fill="#6b4220" />)}
-          <Pajaro T={T} x={pajX} y={560} s={1} />
-          {plop > 0 && plop < 1 && <ellipse cx={720} cy={klerp(600, 1060, plop)} rx={14} ry={20} fill="#fff" stroke={KC.ink} strokeWidth={4} />}
+          <Pajaro T={T} x={pajX} y={700} s={1.3} />
+          {plop > 0 && plop < 1 && <ellipse cx={720} cy={klerp(740, 1060, plop)} rx={14} ry={20} fill="#fff" stroke={KC.ink} strokeWidth={4} />}
           {plop >= 1 && <g transform="translate(720 1062)"><path d="M -60 0 Q -40 -34 0 -30 Q 44 -36 62 0 Z" fill="#fff" stroke={KC.ink} strokeWidth={6} /><circle cx={-6} cy={-30} r={14} fill="#fff" stroke={KC.ink} strokeWidth={5} /></g>}
         </SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.Cc + 1.2} until={K.Nu - 0.1} x={780} y={1500} r={150} fx={720} fy={1050} tinte={KC.orange}
+      <Lupa T={T} at={K.Cc + 1.2} until={K.Nu - 0.1} x={720} y={1290} r={180} fx={720} fy={1050} tinte={KC.orange}
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#1a1206" />
           <g transform={`translate(${r} ${r})`}><ParV T={t} x={0} y={10} s={0.8} seed={13} /></g></svg>} etiqueta="AL MICROSCOPIO" />
       {/* 11 · el número */}
@@ -366,39 +366,39 @@ function Glutamato() {
         <FondoLunares color={KC.orange} />
         <SvgCapa>
           {Array.from({ length: 12 }, (_, i) => { const fila = i < 5 ? 0 : i < 9 ? 1 : 2, k = [0, 5, 9][fila], n = [5, 4, 3][fila];
-            const x = 540 + (i - k - (n - 1) / 2) * 170, y = 1210 - fila * 115, at = K.Nu + 0.5 + i * 0.18, e = kprog(T, at, at + 0.3, kEase.rebote);
-            return e > 0 ? <Costal key={i} x={x} y={y - (1 - e) * 200} s={0.9} /> : null; })}
+            const x = 540 + (i - k - (n - 1) / 2) * 185, y = 1330 - fila * 125, at = K.Nu + 0.5 + i * 0.18, e = kprog(T, at, at + 0.3, kEase.rebote);
+            return e > 0 ? <Costal key={i} x={x} y={y - (1 - e) * 200} s={1.0} /> : null; })}
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Nu + 0.2} until={K.Ci - 0.2} valor={3.5} dec={1} dur={1.4} etiqueta="más de" y={500} tam={280} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.Nu + 0.2} until={K.Ci - 0.2} valor={3.5} dec={1} dur={1.4} etiqueta="más de" y={560} tam={280} color={KC.yellow} />
       </Escena>
       {/* 12 · cierre: la sopa del inicio, ahora con sello */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa><VasoSopa T={T} x={400} y={1110} s={1} montoncito={1} sello={kprog(T, K.Ci + 0.7, K.Ci + 1.2)} /></SvgCapa>
+        <SvgCapa><VasoSopa T={T} x={540} y={1070} s={1.55} montoncito={1} sello={kprog(T, K.Ci + 0.7, K.Ci + 1.2)} /></SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.2} until={K.Ko - 0.3} texto="¿de un alga?" x={330} y={370} tam={46} />
-      <Etiqueta T={T} at={K.G + 1.2} until={K.Ko - 0.3} x={340} y={780} texto="glutamato" lado="izq" color={KC.ink} tam={38} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.2} until={K.Ko - 0.3} texto="¿de un alga?" x={770} y={250} tam={46} />
+      <Etiqueta T={T} at={K.G + 1.2} until={K.Ko - 0.3} x={430} y={615} texto="glutamato" lado="izq" color={KC.ink} tam={38} />
       <Chip T={T} at={K.Ko + 0.4} until={K.Ko + 2.8} texto="1908 · Kikunae Ikeda" y={1500} tam={46} borde={KC.leaf} />
       <Chip T={T} at={K.Ko + 3.0} until={K.Ta - 0.3} texto="umami = «sabroso»" y={1500} tam={52} borde={GLU} />
-      <Etiqueta T={T} at={K.Ko + 0.8} until={K.Ta - 0.3} x={380} y={500} texto="alga kombu" lado="izq" color={KC.ink} tam={36} />
-      <Etiqueta T={T} at={K.Ko + 2.8} until={K.Ta - 0.3} x={600} y={860} texto="glutamato" color={KC.ink} tam={34} />
+      <Etiqueta T={T} at={K.Ko + 0.8} until={K.Ta - 0.3} x={370} y={470} texto="alga kombu" lado="izq" color={KC.ink} tam={36} />
+      <Etiqueta T={T} at={K.Ko + 2.8} until={K.Ta - 0.3} x={612} y={890} texto="glutamato" color={KC.ink} tam={34} />
       <Chip T={T} at={K.Ta + 0.5} until={K.Ta + 2.0} texto="come azúcar" y={300} x={600} tam={44} borde={GLUC} />
-      <Etiqueta T={T} at={K.Ta + 2.6} until={K.PD - 0.2} x={130} y={1680} texto="Corynebacterium glutamicum" it color={KC.ink} tam={40} />
-      <Chip T={T} at={K.PD + 0.5} until={K.Bi - 0.2} texto="azúcar → glutamato" y={1560} tam={46} borde={GLU} />
+      <Etiqueta T={T} at={K.Ta + 2.6} until={K.PD - 0.2} x={150} y={1160} texto="Corynebacterium glutamicum" it color={KC.ink} tam={40} />
+      <Chip T={T} at={K.PD + 0.5} until={K.Bi - 0.2} texto="azúcar → glutamato" y={1460} tam={46} borde={GLU} />
       <Etiqueta T={T} at={K.PD + 1.6} until={K.Bi - 0.3} x={580} y={470} texto="igual en tomate y queso" color={KC.texto} tam={28} />
-      <Medidor T={T} at={K.Bi + 0.6} until={K.Ca - 0.2} valor={0.07} etiqueta="biotina (vitamina) en el caldo" texto={() => 'muy poca'} y={1530} color="#ff6b9a" />
+      <Medidor T={T} at={K.Bi + 0.6} until={K.Ca - 0.2} valor={0.07} etiqueta="biotina (vitamina) en el caldo" texto={() => 'muy poca'} y={1420} color="#ff6b9a" />
       <Etiqueta T={T} at={K.Bi + 2.0} until={K.Ca - 0.2} x={1000} y={1185} texto="la membrana cambia" lado="izq" color={KC.orange} tam={30} />
-      <Chip T={T} at={K.Ca + 0.4} until={K.Pr - 0.2} texto="se abren canales: sale el glutamato" y={1560} tam={36} borde={CANAL} />
-      <Chip T={T} at={K.An + 0.4} until={K.Es - 0.3} texto="desde 1909 · proteína de plantas + ácido" y={1500} tam={34} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Cm - 0.3} anio="1957" quien="Kinoshita, Udaka y Shimono · Tokio" revista="J Gen Appl Microbiol · publicado en 1957" y={1620} />
-      <Chip T={T} at={K.Cm + 0.4} until={K.Cc - 0.3} texto="bacteria nueva · la campeona" y={1140} x={600} tam={38} borde={KC.gold} />
-      <Etiqueta T={T} at={K.Cm + 0.8} until={K.Cc - 0.3} x={970} y={1650} texto="4 glucosas → 1 glutamato" lado="izq" color={KC.ink} tam={34} />
-      <Etiqueta T={T} at={K.Cc + 0.3} until={K.Nu - 0.2} x={pajX < 900 ? 560 : 560} y={430} texto="probablemente paloma" color={KC.ink} tam={32} />
-      <Chip T={T} at={K.Nu + 1.0} until={K.Ci - 0.2} texto="millones de toneladas al año" y={715} tam={44} borde={KC.gold} />
-      <Chip T={T} at={K.Nu + 1.6} until={K.Ci - 0.2} texto="de glutamato de sodio" y={800} tam={38} borde={GLU} />
-      <Chip T={T} at={K.Ci + 1.4} until={K.Ou - 0.1} texto="el glutamato: hecho por bacterias" y={1500} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Ca + 0.4} until={K.Pr - 0.2} texto="se abren canales: sale el glutamato" y={1460} tam={36} borde={CANAL} />
+      <Chip T={T} at={K.An + 0.4} until={K.Es - 0.3} texto="desde 1909 · proteína de plantas + ácido" y={1440} tam={34} borde={KC.red} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Cm - 0.3} anio="1957" quien="Kinoshita, Udaka y Shimono · Tokio" revista="J Gen Appl Microbiol · publicado en 1957" y={420} />
+      <Chip T={T} at={K.Cm + 0.4} until={K.Cc - 0.3} texto="bacteria nueva · la campeona" y={1260} x={540} tam={38} borde={KC.gold} />
+      <Etiqueta T={T} at={K.Cm + 0.8} until={K.Cc - 0.3} x={60} y={1470} texto="4 glucosas → 1 glutamato" lado="der" color={KC.ink} tam={34} />
+      <Etiqueta T={T} at={K.Cc + 0.3} until={K.Nu - 0.2} x={560} y={520} texto="probablemente paloma" color={KC.ink} tam={32} />
+      <Chip T={T} at={K.Nu + 1.0} until={K.Ci - 0.2} texto="millones de toneladas al año" y={775} tam={44} borde={KC.gold} />
+      <Chip T={T} at={K.Nu + 1.6} until={K.Ci - 0.2} texto="de glutamato de sodio" y={860} tam={38} borde={GLU} />
+      <Chip T={T} at={K.Ci + 1.4} until={K.Ou - 0.1} texto="el glutamato: hecho por bacterias" y={1490} tam={40} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ko - 0.1} texto="No salió de un alga: *lo hizo una bacteria.*" />
