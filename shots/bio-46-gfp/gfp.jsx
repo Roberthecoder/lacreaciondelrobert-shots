@@ -232,7 +232,7 @@ function Gfp() {
         <GCapa>
           <rect width={KW} height={KH} fill="url(#gfpMar)" />
           {Array.from({ length: 26 }, (_, i) => { const R = krng(i + 3); const px = R() * KW, py = (R() * KH - T * 30 * (0.5 + R())) % KH; return <circle key={i} cx={px} cy={py < 0 ? py + KH : py} r={2 + R() * 4} fill="rgba(200,230,255,.35)" />; })}
-          <Medusa T={T} x={540} y={930} s={1.5} verde={olaG} azul={(i) => 0.35 + 0.65 * (1 - olaG(i)) * kprog(T, 0, 0.1)} seed={2} />
+          <Medusa T={T} x={540} y={1060} s={1.62} verde={olaG} azul={(i) => 0.35 + 0.65 * (1 - olaG(i)) * kprog(T, 0, 0.1)} seed={2} />
           {/* recuadro: qué pasa dentro de un puntito */}
           <g opacity={kprog(T, K.G + 0.9, K.G + 1.4)} transform="translate(0 -155)">
             <rect x={50} y={360} width={520} height={250} rx={30} fill="rgba(8,14,30,.85)" stroke={GV} strokeWidth={5} />
@@ -393,11 +393,11 @@ function Gfp() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05} origen="45% 50%">
         <GCapa>
           <rect width={KW} height={KH} fill="url(#gfpMar)" />
-          <Medusa T={T} x={540} y={930} s={1.5} verde={1} azul={0.35} seed={2} />
+          <Medusa T={T} x={540} y={1060} s={1.62} verde={1} azul={0.35} seed={2} />
           <g opacity={kprog(T, K.Ci + 0.8, K.Ci + 1.6)}>
-            {[[GV, 0], [GAZ, 1], [GCIAN, 2], [GAMA, 3]].map(([c, i]) => { const a = T * 0.6 + (i * Math.PI) / 2; return <Barril key={i} T={T} x={540 + Math.cos(a) * 430} y={1010 + Math.sin(a) * 150} s={0.4} color={c} crom={1} arma={1} />; })}
+            {[[GV, 0], [GAZ, 1], [GCIAN, 2], [GAMA, 3]].map(([c, i]) => { const a = T * 0.6 + (i * Math.PI) / 2; return <Barril key={i} T={T} x={540 + Math.cos(a) * 430} y={1140 + Math.sin(a) * 160} s={0.44} color={c} crom={1} arma={1} />; })}
           </g>
-          <g opacity={kprog(T, K.Ci + 1.4, K.Ci + 2.2)}><Gusano T={T} x0={470} x1={1010} y0={1330} A={26} ancho={28} on={[1, 1, 1, 1, 1, 1]} /></g>
+          <g opacity={kprog(T, K.Ci + 1.4, K.Ci + 2.2)}><Gusano T={T} x0={470} x1={1010} y0={1400} A={26} ancho={28} on={[1, 1, 1, 1, 1, 1]} /></g>
         </GCapa>
       </Escena>
 
