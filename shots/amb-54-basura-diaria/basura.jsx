@@ -149,32 +149,34 @@ function BasuraShot() {
       {/* 1 · gancho: la pila de un año */}
       <Escena T={T} a={K.G} b={K.D}>
         <FondoLunares color={KC.yellow} />
-        {svg(<Pila T={T} t0={K.G + 0.05} x={360} y={1130} />)}
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) 63%, #231c18 63%, #15110f 100%)' }}></div>
+        {svg(<Pila T={T} t0={K.G - 1.25} x={540} y={1300} s={1.5} />)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 2 · un día: una bolsa en la báscula */}
       <Escena T={T} a={K.D} b={K.B}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Pila T={T} t0={-99} x={330} y={980} s={klerp(0.75, 0.0, kprog(T, K.D + 0.1, K.D + 1.0, kEase.suave))} />
-          <g opacity={kprog(T, K.D + 0.6, K.D + 1.1)}><BolsaNegra x={330} y={984 - (1 - kprog(T, K.D + 0.6, K.D + 1.1, kEase.rebote)) * 120} s={1.5} /></g>
-          <Bascula x={330} y={984} texto={kformato(1.076 * kprog(T, K.D + 1.0, K.D + 2.0, kEase.suave), 3) + ' kg'} /></>)}
+        {svg(<><Pila T={T} t0={-99} x={540} y={klerp(1300, 1010, kprog(T, K.D + 0.1, K.D + 0.9, kEase.suave))} s={klerp(1.5, 0.0, kprog(T, K.D + 0.1, K.D + 0.9, kEase.suave))} />
+          <g transform="translate(540 1010) scale(2)">
+          <g opacity={kprog(T, K.D + 0.3, K.D + 0.8)}><BolsaNegra x={0} y={0 - (1 - kprog(T, K.D + 0.3, K.D + 0.8, kEase.rebote)) * 120} s={1.5} /></g>
+          <Bascula x={0} y={0} texto={kformato(1.076 * kprog(T, K.D + 1.0, K.D + 2.0, kEase.suave), 3) + ' kg'} /></g></>)}
       </Escena>
       {/* 3 y 4 · la bolsa por dentro */}
       <Escena T={T} a={K.B} b={K.Ca}>
         <FondoLunares color={KC.mint} />
-        {svg(<BolsaCorte T={T} x={330} y={1140} org={kprog(T, K.B + 0.1, K.B + 1.4, kEase.suave)} apr={kprog(T, K.M + 0.3, K.M + 1.8, kEase.suave)} otr={kprog(T, K.M + 2.4, K.M + 3.4, kEase.suave)} />)}
+        {svg(<g transform="translate(350 1250) scale(1.3)"><BolsaCorte T={T} x={0} y={0} org={kprog(T, K.B + 0.1, K.B + 1.4, kEase.suave)} apr={kprog(T, K.M + 0.3, K.M + 1.8, kEase.suave)} otr={kprog(T, K.M + 2.4, K.M + 3.4, kEase.suave)} /></g>)}
         <EscalaFija texto="esquema (por peso)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 5 · el camión recoge 77 de cada 100 */}
       <Escena T={T} a={K.Ca} b={K.P}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<><rect x={0} y={700} width={KW} height={14} fill="#525864" />{bolsitas}{quedan}<Camion T={T} x={camX} y={702} s={0.95} /></>)}
+        {svg(<g transform="translate(540 690) scale(1.4) translate(-540 -700)"><rect x={-400} y={700} width={KW + 800} height={14} fill="#525864" />{bolsitas}{quedan}<Camion T={T} x={camX} y={702} s={0.95} /></g>)}
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Di} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={270} y={1000} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 270 820)`}>?</text>
-          <rect x={0} y={1150} width={KW} height={14} fill="#423c6a" /><Camion T={T} x={klerp(420, -300, kprog(T, K.P, K.Di + 0.4))} y={1152} s={0.6} /></>)}
+        {svg(<><text x={540} y={900} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 720)`}>?</text>
+          <rect x={0} y={1250} width={KW} height={14} fill="#423c6a" /><Camion T={T} x={klerp(640, -560, kprog(T, K.P, K.Di + 0.4))} y={1252} s={1.25} /></>)}
       </Escena>
       {/* 7 · el diagnóstico: 2,250 sitios, 52 rellenos sanitarios */}
       <Escena T={T} a={K.Di} b={K.De}>
@@ -189,57 +191,57 @@ function BasuraShot() {
       <Escena T={T} a={K.De} b={K.J}>
         <FondoLunares color={KC.mint} />
         {svg(<><SitioCorte T={T} x={30} y={700} tipo="relleno" /><SitioCorte T={T} x={570} y={700} tipo="abierto" />
-          <text x={270} y={1065} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.De + 1.0, K.De + 1.5)}>15 %</text>
-          <text x={810} y={1065} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.De + 3.4, K.De + 3.9)}>85 %</text></>)}
+          <text x={270} y={1225} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.De + 1.0, K.De + 1.5)}>15 %</text>
+          <text x={810} y={1225} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6} opacity={kprog(T, K.De + 3.4, K.De + 3.9)}>85 %</text></>)}
       </Escena>
       {/* 9 · Jalisco */}
       <Escena T={T} a={K.J} b={K.Tr}>
         <FondoLunares color={KC.orange} />
-        {svg(<><g transform="translate(50 330) scale(0.75)"><path d={JAL_PATH} fill="#ffe9a8" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" /><text x={150} y={170} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>Jalisco</text></g>
-          <rect x={60} y={1110} width={960} height={10} fill={KC.ink} />
-          <rect x={300} y={1110 - altoJ} width={170} height={altoJ} fill="#4a4f58" stroke={KC.ink} strokeWidth={7} />
-          <rect x={520} y={1110 - 500 * 99.839 / 8436.905 * kprog(T, K.J + 2.0, K.J + 2.4)} width={170} height={500 * 99.839 / 8436.905 * kprog(T, K.J + 2.0, K.J + 2.4)} fill={KC.leaf} stroke={KC.ink} strokeWidth={4} />
-          <text x={385} y={1090 - altoJ} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.J + 1.4, K.J + 2.0)}>8,437 t/día</text></>)}
+        {svg(<><g transform="translate(310 170) scale(1.45)"><path d={JAL_PATH} fill="#ffe9a8" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" /><text x={150} y={170} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>Jalisco</text></g>
+          <rect x={60} y={1250} width={960} height={10} fill={KC.ink} />
+          <rect x={170} y={1250 - altoJ} width={280} height={altoJ} fill="#4a4f58" stroke={KC.ink} strokeWidth={7} />
+          <rect x={530} y={1250 - 500 * 99.839 / 8436.905 * kprog(T, K.J + 2.0, K.J + 2.4)} width={280} height={500 * 99.839 / 8436.905 * kprog(T, K.J + 2.0, K.J + 2.4)} fill={KC.leaf} stroke={KC.ink} strokeWidth={4} />
+          <text x={310} y={1230 - altoJ} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.J + 1.4, K.J + 2.0)}>8,437 t/día</text></>)}
       </Escena>
       {/* 10 · solo el 5 % recibe tratamiento */}
       <Escena T={T} a={K.Tr} b={K.C}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(Array.from({ length: 100 }, (_, i) => { const c = i % 10, f = 9 - Math.floor(i / 10); const on = i < 5 && T > K.Tr + 1.0 + i * 0.15;
-          return <rect key={i} x={190 + c * 50} y={620 + f * 50} width={42} height={42} rx={8} fill={on ? KC.leaf : '#c3c8cf'} stroke={KC.ink} strokeWidth={on ? 5 : 3} opacity={kprog(T, K.Tr + i * 0.006, K.Tr + 0.3 + i * 0.006)} />; }))}
+          return <BolsaNegra key={i} x={540 + (c - 4.5) * 76} y={606 + f * 74} s={0.5} color={on ? KC.leaf : '#2a2d33'} o={kprog(T, K.Tr + i * 0.004, K.Tr + 0.25 + i * 0.004)} />; }))}
       </Escena>
       {/* 11 · cierre: la misma pila, en otro lugar */}
       <Escena T={T} a={K.C} b={FIN}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#394757 0%, #4a4842 52%, #332b28 52%, #2b2423 100%)' }}></div>
-        {svg(<><Pila T={T} t0={K.C - 0.3} x={360} y={1130} cada={0.12} />
-          {[0, 1, 2, 3, 4, 5, 6].map((i) => <circle key={i} cx={330 + Math.sin(T * 5 + i * 2) * 260} cy={850 + Math.cos(T * 4 + i * 3) * 80} r={6} fill={KC.ink} />)}
-          {[0, 1, 2, 3].map((i) => { const u = ((T * 0.5 + i / 4) % 1); return <path key={i} d={`M ${170 + i * 100} ${1200 + u * 160} q 6 14 0 26`} stroke="#3b2a12" strokeWidth={8} fill="none" strokeLinecap="round" opacity={1 - u} />; })}</>)}
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#141c26 0%, #262521 63%, #231c18 63%, #15110f 100%)' }}></div>
+        {svg(<><Pila T={T} t0={K.C - 1.6} x={540} y={1300} s={1.5} cada={0.12} />
+          {[0, 1, 2, 3, 4, 5, 6].map((i) => <circle key={i} cx={540 + Math.sin(T * 5 + i * 2) * 400} cy={640 + Math.cos(T * 4 + i * 3) * 110} r={6} fill={KC.ink} />)}
+          {[0, 1, 2, 3].map((i) => { const u = ((T * 0.5 + i / 4) % 1); return <path key={i} d={`M ${240 + i * 200} ${1330 + u * 170} q 6 14 0 26`} stroke="#3b2a12" strokeWidth={8} fill="none" strokeLinecap="round" opacity={1 - u} />; })}</>)}
       </Escena>
 
       {/* datos y etiquetas */}
-      <NumeroGigante T={T} at={K.G + 0.2} until={K.D - 0.2} valor={393} dur={2.6} sufijo=" kg" etiqueta="tu basura de 1 año:" x={330} y={520} tam={130} color={KC.paper} />
+      <NumeroGigante T={T} at={K.G + 0.2} until={K.D - 0.2} valor={393} dur={2.6} sufijo=" kg" etiqueta="tu basura de 1 año:" x={540} y={280} tam={130} color={KC.paper} />
       <Chip T={T} at={K.G + 1.2} until={K.D - 0.2} texto="1.076 kg × 365 días ≈ 393 kg" y={1440} x={540} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.D + 2.2} until={K.B - 0.2} texto="casa 0.746 kg" y={470} x={330} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.D + 3.4} until={K.B - 0.2} texto="calles y negocios 0.330 kg" y={570} x={330} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.D + 2.2} until={K.B - 0.2} texto="casa 0.746 kg" y={330} x={540} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.D + 3.4} until={K.B - 0.2} texto="calles y negocios 0.330 kg" y={440} x={540} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.D + 0.3} until={K.B - 0.2} texto="por persona al día · promedio nacional · datos de 2022" y={1440} x={540} tam={26} borde={KC.cyan} />
-      <Etq T={T} at={K.B + 1.6} until={K.Ca - 0.2} x={560} y={1040} texto="orgánicos 40 %" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.M + 1.4} until={K.Ca - 0.2} x={575} y={870} texto="aprovechables 36 %" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.M + 3.0} until={K.Ca - 0.2} x={560} y={740} texto="otros 24 %" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.B + 1.6} until={K.Ca - 0.2} x={655} y={1120} texto="orgánicos 40 %" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.M + 1.4} until={K.Ca - 0.2} x={655} y={872} texto="aprovechables 36 %" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.M + 3.0} until={K.Ca - 0.2} x={615} y={677} texto="otros 24 %" tam={30} color={KC.ink} />
       <Chip T={T} at={K.M + 0.4} until={K.Ca - 0.2} texto="plástico · cartón · papel · vidrio · latas" y={1440} x={540} tam={30} borde={KC.blue} />
-      <NumeroGigante T={T} at={K.Ca + 1.0} until={K.P - 0.2} valor={77} dur={2.0} sufijo=" de 100" etiqueta="kilos que se recogen:" x={540} y={390} tam={110} color={KC.leaf} />
+      <NumeroGigante T={T} at={K.Ca + 1.0} until={K.P - 0.2} valor={77} dur={2.0} sufijo=" de 100" etiqueta="kilos que se recogen:" x={540} y={280} tam={110} color={KC.leaf} />
       <Chip T={T} at={K.Ca + 2.8} until={K.P - 0.2} texto="23 kg de cada 100 se quedan sin recoger" y={1440} x={540} tam={30} borde={KC.red} />
-      <NumeroGigante T={T} at={K.Di + 0.3} until={K.Di + 4.3} valor={2250} dur={2.7} etiqueta="sitios de basura:" x={330} y={520} tam={130} color={KC.paper} />
-      <NumeroGigante T={T} at={K.Di + 4.5} until={K.De - 0.2} valor={52} dur={0.6} etiqueta="rellenos sanitarios:" x={330} y={520} tam={150} color={KC.leaf} />
+      <NumeroGigante T={T} at={K.Di + 0.3} until={K.Di + 4.3} valor={2250} dur={2.7} etiqueta="sitios de basura:" x={600} y={450} tam={130} color={KC.paper} />
+      <NumeroGigante T={T} at={K.Di + 4.5} until={K.De - 0.2} valor={52} dur={0.6} etiqueta="rellenos sanitarios:" x={600} y={450} tam={150} color={KC.leaf} />
       <Chip T={T} at={K.Di + 0.6} until={K.De - 0.2} texto="SEMARNAT · INECC · DBGIR 2026 (datos de 2022)" y={1440} x={540} tam={28} borde={KC.ink} />
       <Etq T={T} at={K.De + 0.5} until={K.J - 0.2} x={230} y={660} texto="relleno sanitario" lado="der" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.De + 0.9} until={K.J - 0.2} x={330} y={920} texto="geomembrana" lado="izq" tam={24} color={KC.paper} />
-      <Etq T={T} at={K.De + 2.8} until={K.J - 0.2} x={590} y={540} texto="no cumple la norma" lado="der" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.De + 0.9} until={K.J - 0.2} x={330} y={920} texto="geomembrana" lado="izq" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.De + 2.8} until={K.J - 0.2} x={590} y={490} texto="no cumple la norma" lado="der" tam={30} color={KC.ink} />
       <BarraReparto T={T} at={K.De + 0.3} until={K.J - 0.2} />
-      <Etq T={T} at={K.J + 2.4} until={K.Tr - 0.2} x={700} y={1080} texto="< 100 t/día" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.J + 2.8} until={K.Tr - 0.2} x={700} y={1020} texto="a relleno sanitario" tam={24} color={KC.ink} />
+      <Etq T={T} at={K.J + 2.4} until={K.Tr - 0.2} x={600} y={1170} texto="< 100 t/día" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.J + 2.8} until={K.Tr - 0.2} x={600} y={1110} texto="a relleno sanitario" tam={24} color={KC.ink} />
       <Chip T={T} at={K.J + 1.0} until={K.Tr - 0.2} texto="llegan a sus 123 sitios · solo 6 son rellenos" y={1440} x={540} tam={28} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Tr + 1.0} until={K.C - 0.2} valor={5} dur={0.8} sufijo=" %" etiqueta="recibe tratamiento:" x={330} y={470} tam={150} color={KC.leaf} />
+      <NumeroGigante T={T} at={K.Tr + 1.0} until={K.C - 0.2} valor={5} dur={0.8} sufijo=" %" etiqueta="recibe tratamiento:" x={540} y={400} tam={150} color={KC.leaf} />
       <Chip T={T} at={K.Tr + 0.4} until={K.C - 0.2} texto="de toda la basura del país" y={1440} x={540} tam={32} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 0.6} until={K.Ou - 0.1} texto="solo cambia de lugar" y={470} x={340} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.C + 0.6} until={K.Ou - 0.1} texto="solo cambia de lugar" y={330} x={540} tam={40} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.D - 0.1} texto="Un año de tu basura: *casi 400 kilos.*" />
