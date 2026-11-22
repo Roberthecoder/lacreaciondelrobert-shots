@@ -163,31 +163,31 @@ function EncendedorShot() {
   const presSol = klerp(2.05, 4.88, kprog(T, K.S + 0.8, K.S + 3.0, kEase.suave));
   const tSol = klerp(20, 50, kprog(T, K.S + 0.8, K.S + 3.0, kEase.suave));
   const R = krng(12);
-  const casas = Array.from({ length: 12 }, (_, i) => [170 + (i % 6) * 148, 970 + Math.floor(i / 6) * 130, R()]);
+  const casas = Array.from({ length: 12 }, (_, i) => [120 + (i % 6) * 168, 1040 + Math.floor(i / 6) * 180, R()]);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: la mano sacude el encendedor y el líquido chapotea */}
       <Escena T={T} a={K.G} b={K.Q} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <g transform={`rotate(${sacude * 9} 540 1300)`}>
-            <ManoAtras x={540} y={1300} s={1.05} />
-            <Encendedor T={T} x={540} y={1300} s={1.05} ola={Math.abs(sacude) * 1.2 + 0.15} id="g" />
-            <ManoDedos x={540} y={1300} s={1.05} />
+          <g transform={`rotate(${sacude * 9} 540 1420)`}>
+            <ManoAtras x={540} y={1420} s={1.5} />
+            <Encendedor T={T} x={540} y={1420} s={1.5} ola={Math.abs(sacude) * 1.2 + 0.15} id="g" />
+            <ManoDedos x={540} y={1420} s={1.5} />
           </g>
         </SvgCapa>
-        <Escala T={T} z={1} pxPorMm={7.8} x={60} y={1430} color={KC.ink} />
+        <Escala T={T} z={1} pxPorMm={11.14} x={60} y={1430} color={KC.ink} />
       </Escena>
       {/* 1 · qué es: butano, isobutano, propano; hierve a ≈ −0.5 °C */}
       <Escena T={T} a={K.Q} b={K.P}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <g opacity={kprog(T, K.Q + 0.1, K.Q + 0.5)}><Molecula {...BUTANO} x={600} y={610} s={1.05} rot={Math.sin(T * 1.3) * 5} /></g>
-          <g opacity={kprog(T, K.Q + 1.0, K.Q + 1.4)}><Molecula {...ISOBUTANO} x={360} y={960} s={0.85} rot={Math.sin(T * 1.1) * 6} /></g>
-          <g opacity={kprog(T, K.Q + 1.6, K.Q + 2.0)}><Molecula {...PROPANO} x={800} y={930} s={0.7} rot={Math.sin(T * 1.5) * 6} /></g>
-          <text x={600} y={760} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Q + 0.3, K.Q + 0.7)}>BUTANO · C₄H₁₀</text>
-          <text x={360} y={1090} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Q + 1.0, K.Q + 1.4)}>isobutano</text>
-          <text x={800} y={1050} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Q + 1.6, K.Q + 2.0)}>propano (mezcla)</text>
+          <g opacity={kprog(T, K.Q + 0.1, K.Q + 0.5)}><Molecula {...BUTANO} x={540} y={640} s={1.7} rot={Math.sin(T * 1.3) * 5} /></g>
+          <g opacity={kprog(T, K.Q + 1.0, K.Q + 1.4)}><Molecula {...ISOBUTANO} x={300} y={1150} s={1.2} rot={Math.sin(T * 1.1) * 6} /></g>
+          <g opacity={kprog(T, K.Q + 1.6, K.Q + 2.0)}><Molecula {...PROPANO} x={790} y={1150} s={1.1} rot={Math.sin(T * 1.5) * 6} /></g>
+          <text x={540} y={900} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Q + 0.3, K.Q + 0.7)}>BUTANO · C₄H₁₀</text>
+          <text x={300} y={1320} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Q + 1.0, K.Q + 1.4)}>isobutano</text>
+          <text x={790} y={1320} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Q + 1.6, K.Q + 2.0)}>propano (mezcla)</text>
         </SvgCapa>
       </Escena>
       {/* 2 · por dentro: líquido apretado y vapor que empuja */}
@@ -208,35 +208,35 @@ function EncendedorShot() {
       <Escena T={T} a={K.V} b={K.Ch} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <ManoAtras x={540} y={1560} s={1.25} />
-          <Encendedor T={T} x={540} y={1560} s={1.25} boton={kprog(T, K.V + 0.4, K.V + 0.8)} ola={0.1} id="v" />
-          <ManoDedos x={540} y={1560} s={1.25} />
-          <Pulgar x={576} y={968} s={0.8} baja={kprog(T, K.V + 0.4, K.V + 0.8)} />
-          <Burbujas T={T} x={430} y={1080} w={190} h={180} n={18} f={kprog(T, K.V + 0.8, K.V + 1.4)} color="rgba(30,90,160,.8)" vel={220} />
-          {T > K.V + 0.9 && Array.from({ length: 10 }, (_, i) => { const u = ((T - K.V - 0.9) * 1.2 + i / 10) % 1; return <circle key={i} cx={591 + Math.sin(i * 2 + T * 6) * 18 * u} cy={890 - u * 380} r={12 + u * 10} fill="#ffe86b" stroke={KC.ink} strokeWidth={3} opacity={1 - u} />; })}
+          <ManoAtras x={540} y={1750} s={1.6} />
+          <Encendedor T={T} x={540} y={1750} s={1.6} boton={kprog(T, K.V + 0.4, K.V + 0.8)} ola={0.1} id="v" />
+          <ManoDedos x={540} y={1750} s={1.6} />
+          <Pulgar x={586} y={992} s={1.024} baja={kprog(T, K.V + 0.4, K.V + 0.8)} />
+          <Burbujas T={T} x={399} y={1136} w={243} h={230} n={18} f={kprog(T, K.V + 0.8, K.V + 1.4)} color="rgba(30,90,160,.8)" vel={220} />
+          {T > K.V + 0.9 && Array.from({ length: 10 }, (_, i) => { const u = ((T - K.V - 0.9) * 1.2 + i / 10) % 1; return <circle key={i} cx={606 + Math.sin(i * 2 + T * 6) * 22 * u} cy={900 - u * 420} r={15 + u * 13} fill="#ffe86b" stroke={KC.ink} strokeWidth={3} opacity={1 - u} />; })}
         </SvgCapa>
-        <Etq T={T} at={K.V + 1.0} until={K.Ch - 0.2} x={640} y={600} texto="gas que sale" lado="der" tam={34} color={KC.ink} />
+        <Etq T={T} at={K.V + 1.0} until={K.Ch - 0.2} x={680} y={560} texto="gas que sale" lado="der" tam={36} color={KC.ink} />
       </Escena>
       {/* 4 · la chispa: rueda + piedrita, o cristal piezoeléctrico; el gas arde */}
       <Escena T={T} a={K.Ch} b={K.F} zoom={0.03}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Encendedor T={T} x={540} y={1300} s={0.95} rueda={-(T - K.Ch) * 260 * kprog(T, K.Ch + 0.2, K.Ch + 0.5)} boton={kprog(T, K.Ch + 2.4, K.Ch + 2.6)} llama={kprog(T, K.Ch + 2.7, K.Ch + 3.1)} id="c" />
-          <Panel x={230} y={900} r={175} id="r">
+          <Encendedor T={T} x={552} y={1395} s={1.05} rueda={-(T - K.Ch) * 260 * kprog(T, K.Ch + 0.2, K.Ch + 0.5)} boton={kprog(T, K.Ch + 2.4, K.Ch + 2.6)} llama={kprog(T, K.Ch + 2.7, K.Ch + 3.1)} id="c" />
+          <g transform="translate(252 740) scale(1.15) translate(-230 -900)"><Panel x={230} y={900} r={175} id="r">
             <g transform={`translate(230 830) rotate(${-(T - K.Ch) * 300})`}>
               <circle r={120} fill="#9aa1ac" stroke={KC.ink} strokeWidth={8} />
               {Array.from({ length: 20 }, (_, i) => <line key={i} x1={0} y1={-118} x2={0} y2={-84} stroke={KC.ink} strokeWidth={6} transform={`rotate(${i * 18})`} />)}
             </g>
             <rect x={196} y={952} width={68} height={140} rx={10} fill="#6b6f78" stroke={KC.ink} strokeWidth={6} />
             <Chispas T={T} x={250} y={950} desde={K.Ch + 0.3} hasta={K.Ch + 2.8} n={26} dir={1} largo={200} />
-          </Panel>
-          <Panel x={850} y={900} r={175} id="p">
+          </Panel></g>
+          <g transform="translate(832 740) scale(1.15) translate(-850 -900)"><Panel x={850} y={900} r={175} id="p">
             <g transform={`translate(0 ${klerp(-60, 0, kprog(T, K.Ch + 1.2, K.Ch + 1.35))})`}><rect x={800} y={760} width={100} height={70} rx={10} fill="#8a8f99" stroke={KC.ink} strokeWidth={6} /></g>
             <path d="M 850 840 L 900 868 L 900 924 L 850 952 L 800 924 L 800 868 Z" fill="#cfe9ff" stroke={KC.ink} strokeWidth={6} />
             {T > K.Ch + 1.35 && T < K.Ch + 2.4 && <path d="M 830 960 L 870 1000 L 836 1010 L 880 1060" stroke="#7fdcff" strokeWidth={10} fill="none" strokeLinejoin="round" opacity={0.6 + 0.4 * Math.sin(T * 50)} />}
-          </Panel>
-          <text x={230} y={1130} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>rueda + piedrita</text>
-          <text x={850} y={1130} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>cristal piezo</text>
+          </Panel></g>
+          <text x={245} y={995} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>rueda + piedrita</text>
+          <text x={840} y={995} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>cristal piezo</text>
         </SvgCapa>
       </Escena>
       {/* 5 · se enfría: el líquido que hierve le roba calor a la pared */}
@@ -257,20 +257,20 @@ function EncendedorShot() {
       <Escena T={T} a={K.Pr} b={K.S} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <Sol T={T} x={260} y={620} r={100} />
-          <text x={280} y={1250} textAnchor="middle" style={{ font:`400 500px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 1050)`}>?</text>
+          <Sol T={T} x={540} y={560} r={120} />
+          <text x={550} y={1300} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 550 1100)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 7 · al sol: tablero del coche, sube la temperatura y la presión */}
       <Escena T={T} a={K.S} b={K.Es} zoom={0.03}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4357 0%, #4a4840 55%, #171b27 55%)' }}></div>
-        <SvgCapa>
-          <Sol T={T} x={860} y={500} r={90} o={1} />
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4357 0%, #4a4840 61.3%, #171b27 61.3%)' }}></div>
+        <SvgCapa><g transform="translate(540 1176) scale(1.25) translate(-540 -1056)">
+          <Sol T={T} x={780} y={560} r={90} o={1} />
           <path d="M 0 1056 Q 540 980 1080 1056 L 1080 1120 L 0 1120 Z" fill="#2a2d34" stroke={KC.ink} strokeWidth={8} />
-          <Encendedor T={T} x={980} y={1050} s={0.7} rot={-90} id="s" />
+          <Encendedor T={T} x={920} y={1050} s={0.7} rot={-90} id="s" />
           <Manometro x={600} y={780} r={130} val={presSol} max={6} />
-          <Termo x={140} y={980} alto={280} val={tSol} min={0} max={60} marcas={[20, 50]} />
-        </SvgCapa>
+          <Termo x={190} y={980} alto={280} val={tSol} min={0} max={60} marcas={[20, 50]} />
+        </g></SvgCapa>
         <Chip T={T} at={K.S + 0.6} until={K.S + 3.0} texto={`butano: ${Math.round(tSol)} °C ≈ ${kformato(presSol, 1)} atm`} x={540} y={1500} tam={40} borde={KC.orange} mono />
       </Escena>
       {/* 8 · el estudio: la norma para que los niños no lo prendan */}
@@ -278,56 +278,56 @@ function EncendedorShot() {
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
           {casas.map(([x, y, r], i) => { const off = kprog(T, K.Es + 4.2 + i * 0.18, K.Es + 4.5 + i * 0.18);
-            return <g key={i} opacity={kprog(T, K.Es + 3.6, K.Es + 4.0)}><Casita x={x} y={y} s={1.7} color={mixHex(KC.orange, KC.white, off * 0.5)} /><Fuego T={T + r * 3} x={x + 10} y={y - 30} s={1.4} o={1 - off} /></g>; })}
-          <g opacity={kprog(T, K.Es + 0.2, K.Es + 0.6) * (1 - kprog(T, K.Es + 3.4, K.Es + 3.8))}><Encendedor T={T} x={300} y={1250} s={0.8} guarda id="n" /></g>
+            return <g key={i} opacity={kprog(T, K.Es + 3.6, K.Es + 4.0)}><Casita x={x} y={y} s={2.2} color={mixHex(KC.orange, KC.white, off * 0.5)} /><Fuego T={T + r * 3} x={x + 13} y={y - 39} s={1.8} o={1 - off} /></g>; })}
+          <g opacity={kprog(T, K.Es + 0.2, K.Es + 0.6) * (1 - kprog(T, K.Es + 3.4, K.Es + 3.8))}><Encendedor T={T} x={300} y={1440} s={1.3} guarda id="n" /></g>
         </SvgCapa>
         <NumeroGigante T={T} at={K.Es + 4.4} until={K.Pi - 0.3} valor={3300} dur={1.6} prefijo="≈ " etiqueta="incendios evitados en 1998 (EE. UU.)" y={760} tam={150} color={KC.yellow} />
-        <Etq T={T} at={K.Es + 2.7} until={K.Es + 3.6} x={330} y={750} texto="seguro para niños" lado="der" tam={34} color={KC.ink} />
+        <Etq T={T} at={K.Es + 2.7} until={K.Es + 3.6} x={370} y={642} texto="seguro para niños" lado="der" tam={36} color={KC.ink} />
       </Escena>
       {/* 9 · la piedrita: ferrocerio en la red cristalina */}
       <Escena T={T} a={K.Pi} b={K.Ci} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           {Array.from({ length: 32 }, (_, i) => { const c = i % 8, f = Math.floor(i / 8), k = (i * 7) % 10, tipo = k < 4 ? 'Ce' : k < 7 ? 'Fe' : k < 9 ? 'La' : 'Ce';
-            const col = { Ce: '#b6e33a', Fe: '#ff8a1f', La: '#7fa8ff' }[tipo], x = 150 + c * 112 + (f % 2) * 56, y = 730 + f * 100;
-            return <g key={i} opacity={kprog(T, K.Pi + 0.2 + i * 0.02, K.Pi + 0.5 + i * 0.02) * (1 - 0.65 * kprog(T, K.Pi + 4.4, K.Pi + 4.9))}><Atomo x={x + Math.sin(T * 6 + i) * 3} y={y} r={42} color={col} letra={tipo} tam={30} /></g>; })}
+            const col = { Ce: '#b6e33a', Fe: '#ff8a1f', La: '#7fa8ff' }[tipo], x = 132 + c * 112 + (f % 2) * 56, y = 760 + f * 116;
+            return <g key={i} opacity={kprog(T, K.Pi + 0.2 + i * 0.02, K.Pi + 0.5 + i * 0.02) * (1 - 0.65 * kprog(T, K.Pi + 4.4, K.Pi + 4.9))}><Atomo x={x + Math.sin(T * 6 + i) * 3} y={y} r={48} color={col} letra={tipo} tam={34} /></g>; })}
           {/* la rueda arranca virutas que se encienden con el aire */}
-          {T > K.Pi + 4.6 && <g>
-            <g transform={`translate(540 560) rotate(${-(T - K.Pi) * 220})`}><circle r={120} fill="#9aa1ac" stroke={KC.ink} strokeWidth={8} />
+          {<g opacity={kprog(T, K.Pi + 0.1, K.Pi + 0.5) * (T > K.Pi + 4.6 ? 1 : 0.55)}>
+            <g transform={`translate(540 540) scale(1.25) rotate(${-(T - K.Pi) * 220 * (T > K.Pi + 4.6 ? 1 : 0.12)})`}><circle r={120} fill="#9aa1ac" stroke={KC.ink} strokeWidth={8} />
               {Array.from({ length: 20 }, (_, i) => <line key={i} x1={0} y1={-118} x2={0} y2={-84} stroke={KC.ink} strokeWidth={6} transform={`rotate(${i * 18})`} />)}</g>
-            <Chispas T={T} x={620} y={660} desde={K.Pi + 4.8} hasta={K.Ci - 0.2} n={40} dir={1} largo={330} seed={4} />
+            <Chispas T={T} x={640} y={660} desde={K.Pi + 4.8} hasta={K.Ci - 0.2} n={40} dir={1} largo={330} seed={4} />
           </g>}
         </SvgCapa>
-        <Etq T={T} at={K.Pi + 2.6} until={K.Pi + 4.6} x={80} y={1150} texto="Ce · cerio" tam={32} color="#b6e33a" />
-        <Etq T={T} at={K.Pi + 2.9} until={K.Pi + 4.6} x={420} y={1150} texto="Fe · hierro" tam={32} color="#ff8a1f" />
-        <Etq T={T} at={K.Pi + 3.2} until={K.Pi + 4.6} x={760} y={1150} texto="La…" tam={32} color="#7fa8ff" />
+        <Etq T={T} at={K.Pi + 2.6} until={K.Pi + 4.6} x={80} y={1240} texto="Ce · cerio" tam={32} color="#b6e33a" />
+        <Etq T={T} at={K.Pi + 2.9} until={K.Pi + 4.6} x={420} y={1240} texto="Fe · hierro" tam={32} color="#ff8a1f" />
+        <Etq T={T} at={K.Pi + 3.2} until={K.Pi + 4.6} x={760} y={1240} texto="La…" tam={32} color="#7fa8ff" />
       </Escena>
       {/* 10 · cierre: la mano del inicio, ahora por dentro y con la llama */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <ManoAtras x={700} y={1300} s={1.05} />
-          <Encendedor T={T} x={700} y={1300} s={1.05} ola={0.15} llama={kprog(T, K.Ci + 0.2, K.Ci + 0.6)} id="f" />
-          <ManoDedos x={700} y={1300} s={1.05} />
+          <ManoAtras x={730} y={1440} s={1.3} />
+          <Encendedor T={T} x={730} y={1440} s={1.3} ola={0.15} llama={kprog(T, K.Ci + 0.2, K.Ci + 0.6)} id="f" />
+          <ManoDedos x={730} y={1440} s={1.3} />
         </SvgCapa>
-        <Lupa T={T} at={K.Ci + 0.6} until={FIN} x={300} y={800} r={210} fx={700} fy={1100} tinte={KC.cyan} etiqueta="POR DENTRO"
+        <Lupa T={T} at={K.Ci + 0.6} until={FIN} x={290} y={780} r={240} fx={730} fy={1180} tinte={KC.cyan} etiqueta="POR DENTRO"
           interior={(TT, r) => <svg width={2 * r} height={2 * r}><Particulas T={TT} x={20} y={20} w={2 * r - 40} h={2 * r - 40} nivel={0.55} nLiq={40} nVap={5} r={14} seed={6} /></svg>} />
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.7} until={K.G + 2.6} texto="¿lleno de gas?" x={330} y={470} tam={48} />
-      <Chip T={T} at={K.G + 2.7} until={K.Q - 0.2} texto="trae LÍQUIDO" x={330} y={470} tam={52} borde="#7fc8ff" />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.7} until={K.G + 2.6} texto="¿lleno de gas?" x={540} y={330} tam={48} />
+      <Chip T={T} at={K.G + 2.7} until={K.Q - 0.2} texto="trae LÍQUIDO" x={540} y={330} tam={52} borde="#7fc8ff" />
       <Chip T={T} at={K.Q + 2.4} until={K.P - 0.2} texto="el butano hierve a ≈ −0.5 °C" x={540} y={1500} tam={40} borde={KC.mint} />
       <Chip T={T} at={K.P + 1.4} until={K.V - 0.2} texto="butano puro: 20 °C → ≈ 2 atm · aire: 1 atm" x={540} y={1500} tam={32} borde="#7fc8ff" />
       <Chip T={T} at={K.V + 0.9} until={K.Ch - 0.2} texto="baja la presión → hierve" x={540} y={1500} tam={42} borde={KC.yellow} />
       <Chip T={T} at={K.Ch + 2.8} until={K.F - 0.2} texto="gas + oxígeno del aire → llama" x={540} y={1500} tam={38} borde={KC.orange} />
       <Chip T={T} at={K.F + 0.8} until={K.Pr - 0.2} texto="hervir roba calor → se enfría" x={540} y={1500} tam={40} borde="#7fc8ff" />
       <Chip T={T} at={K.S + 3.1} until={K.Es - 0.2} texto="Empaque: no más de 50 °C ni sol prolongado" x={540} y={1500} tam={32} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="2002" quien="Smith, Greene y Singh · CPSC, EE. UU." revista="Injury Prevention · norma vigente desde 1994" x={730} y={1000} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.6} anio="2002" quien="Smith, Greene y Singh · CPSC, EE. UU." revista="Injury Prevention · norma vigente desde 1994" x={750} y={900} />
       <Chip T={T} at={K.Es + 4.6} until={K.Pi - 0.3} texto="norma vigente desde 1994 · niños menores de 5" x={540} y={1500} tam={32} borde={KC.lilac} />
-      <MitoTachado T={T} at={K.Pi + 0.3} tacharEn={K.Pi + 1.4} until={K.Pi + 2.4} texto="pedernal" x={480} y={470} tam={52} />
+      <MitoTachado T={T} at={K.Pi + 0.3} tacharEn={K.Pi + 1.4} until={K.Pi + 2.4} texto="pedernal" x={540} y={300} tam={52} />
       <Chip T={T} at={K.Pi + 2.5} until={K.Pi + 4.6} texto="ferrocerio = Fe + Ce + La…" x={540} y={1500} tam={46} borde="#b6e33a" />
-      <TarjetaEstudio T={T} at={K.Pi + 4.7} until={K.Ci - 0.3} anio="1903" quien="Carl Auer von Welsbach · Austria" revista="aleación de Auer, 1903: Fe + Ce" x={540} y={1060} />
+      <TarjetaEstudio T={T} at={K.Pi + 4.7} until={K.Ci - 0.3} anio="1903" quien="Carl Auer von Welsbach · Austria" revista="aleación de Auer, 1903: Fe + Ce" x={540} y={1330} />
       <Chip T={T} at={K.Ci + 1.2} until={K.Ou} texto="butano líquido · ≈ 2 atm (butano puro)" x={540} y={1500} tam={34} borde="#7fc8ff" />
 
       {/* subtítulos (idx = línea de narracion.json) */}
