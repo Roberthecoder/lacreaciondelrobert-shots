@@ -146,45 +146,49 @@ function Polvo() {
       {/* 0 · gancho: la cucharada cae al tazón */}
       <Escena T={T} a={K.G} b={K.Q} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
-          <Lata x={190} y={760} s={0.85} rot={-6} />
+        <SvgCapa><g transform="translate(600 960) scale(1.15) translate(-600 -960)">
+          <Lata x={300} y={760} s={0.85} rot={-6} />
           <Tazon x={560} y={1060} s={1.15}>
             {T > K.G + 0.6 && [[-60, -70], [40, -60], [110, -72], [-130, -58]].map(([dx, dy], i) => <ellipse key={i} cx={dx} cy={dy} rx={36} ry={10} fill="#fff" opacity={1 - kprog(T, K.G + 3.5, K.G + 5)} />)}
           </Tazon>
           <CaePolvo T={T} a={K.G + 0.15} b={K.G + 0.75} x0={520} y0={760} x1={560} y1={990} />
           <Nubecita T={T} at={K.G + 0.6} x={560} y={960} />
           <Cuchara x={470} y={720} rot={klerp(0, 55, vuelca)} s={1} carga={1 - kprog(T, K.G + 0.1, K.G + 0.7)} />
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
 
       {/* 1 · qué trae: la lupa sobre la cucharada */}
       <Escena T={T} a={K.Q} b={K.A} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <g transform="translate(540 880) scale(1.25) translate(-540 -910)">
           <path d="M 330 1110 L 200 1210" stroke={KC.ink} strokeWidth={46} strokeLinecap="round" />
           <circle cx={540} cy={910} r={290} fill={KC.paper} stroke={KC.ink} strokeWidth={14} />
           <circle cx={540} cy={910} r={272} fill="none" stroke="rgba(0,0,0,.12)" strokeWidth={10} />
+          </g>
           {/* leyenda */}
-          {[['bic', 'bicarbonato de sodio', 110, 1450], ['a1', 'ácido 1', 640, 1450], ['a2', 'ácido 2', 640, 1540], ['fec', 'fécula de maíz', 110, 1540]].map(([tp, t, x, y], i) => { const e = kprog(T, K.Q + 0.4 + i * 0.55, K.Q + 0.8 + i * 0.55, kEase.sale);
+          {[['bic', 'bicarbonato de sodio', 110, 1395], ['a1', 'ácido 1', 640, 1395], ['a2', 'ácido 2', 640, 1480], ['fec', 'fécula de maíz', 110, 1480]].map(([tp, t, x, y], i) => { const e = kprog(T, K.Q + 0.4 + i * 0.55, K.Q + 0.8 + i * 0.55, kEase.sale);
             return <g key={tp} opacity={e} transform={`translate(${(1 - e) * -30} 0)`}><rect x={x - 50} y={y - 36} width={i === 0 || i === 3 ? 510 : 330} height={72} rx={36} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
               <Granito x={x} y={y} r={20} tipo={tp} /><text x={x + 40} y={y + 12} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{t}</text></g>; })}
+          <g transform="translate(540 880) scale(1.25) translate(-540 -910)">
           {granos.map(([tp, x, y, r], i) => { const a = K.Q + 0.3 + (i % 4) * 0.55 + Math.floor(i / 4) * 0.08; const e = kprog(T, a, a + 0.35, kEase.rebote);
             return <Granito key={i} x={x + Math.sin(T * 1.3 + i) * 6} y={y + Math.cos(T * 1.1 + i) * 6} r={30 * e} tipo={tp} rot={r + T * 8} o={e > 0 ? 1 : 0} />; })}
           {/* humedad atrapada por la fécula */}
           {[0, 1, 2].map((k) => { const t0 = K.Q + 3.6 + k * 0.4, u = kprog(T, t0, t0 + 0.8, kEase.suave); if (u <= 0 || u >= 1) return null;
             const g = granos[3 + k * 4]; return <path key={k} d="M 0 -18 Q 12 0 0 12 Q -12 0 0 -18 Z" transform={`translate(${klerp(g[1] + 200, g[2] > 0 ? g[1] : 0, u)} ${klerp(g[2] - 220, g[2], u)})`} fill="#7fc8ff" stroke={KC.ink} strokeWidth={3} opacity={1 - u * 0.6} />; })}
+          </g>
         </SvgCapa>
       </Escena>
 
       {/* 2–4 · micro: el ácido 1 se moja y suelta CO₂; las burbujas crecen; el ácido 2 sigue dormido */}
       <Escena T={T} a={K.A} b={K.H} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 600) scale(1.25) translate(-540 -600)">
           {/* masa (líquido) */}
           <path d={`M 0 780 ${Array.from({ length: 13 }, (_, k) => `Q ${k * 90 + 45} ${780 + (k % 2 ? -18 : 18) + Math.sin(T * 2 + k) * 6} ${(k + 1) * 90} 780`).join(' ')} L 1080 1240 L 0 1240 Z`} fill="rgba(246,212,138,.14)" stroke="rgba(246,212,138,.5)" strokeWidth={5} />
           {burb.map(([x, y, r], i) => <BurbujaMasa key={i} x={x + Math.sin(T + i) * 4} y={y} r={r * (1 + crece * (0.5 + (i % 3) * 0.25))} />)}
           {/* la gota de leche */}
-          {gota < 1 && <path d="M 0 -40 Q 30 0 0 30 Q -30 0 0 -40 Z" transform={`translate(300 ${klerp(380, 620, gota)})`} fill="#f4f7ff" stroke={KC.ink} strokeWidth={5} />}
+          {gota < 1 && <path d="M 0 -40 Q 30 0 0 30 Q -30 0 0 -40 Z" transform={`translate(300 ${klerp(450, 620, gota)})`} fill="#f4f7ff" stroke={KC.ink} strokeWidth={5} />}
           {/* ácido 1 que se disuelve en iones */}
           <Granito x={300} y={650} r={58 * (1 - disuelve)} tipo="a1" o={1 - disuelve} />
           {disuelve > 0 && sale < 1 && [0, 1, 2, 3, 4, 5].map((k) => { const ang = k * Math.PI / 3 + T; const d = 40 + 90 * disuelve;
@@ -198,25 +202,25 @@ function Polvo() {
           {sale > 0.5 && crece < 0.4 && <Mol tipo="agua" x={600} y={540} s={0.8} rot={T * 25} o={1 - crece * 2.5} />}
           {/* ácido 2: intacto, girando */}
           <Granito x={klerp(840, 540, kprog(T, K.Pr - 0.2, K.Pr + 0.4, kEase.suave))} y={klerp(460, 700, kprog(T, K.Pr - 0.2, K.Pr + 0.4, kEase.suave))} r={klerp(44, 110, kprog(T, K.Pr - 0.2, K.Pr + 0.4, kEase.suave))} tipo="a2" rot={T * 30} />
-          {T > K.Pr && <text x={250} y={760} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} opacity={kprog(T, K.Pr, K.Pr + 0.3)} transform={`rotate(${Math.sin(T * 3) * 6} 250 600)`}>?</text>}
+          {T > K.Pr && <text x={330} y={800} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} opacity={kprog(T, K.Pr, K.Pr + 0.3)} transform={`rotate(${Math.sin(T * 3) * 6} 330 640)`}>?</text>}
           {/* barra de escala esquemática */}
-          <line x1={90} y1={1180} x2={250} y2={1180} stroke={KC.texto} strokeWidth={6} />
-          <text x={170} y={1166} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto}>≈ 0.1 mm</text>
-        </SvgCapa>
-        <Etq T={T} at={K.A + 0.3} until={K.A + 2.6} x={120} y={760} texto="fosfato monocálcico" tam={34} color="#8cc8ff" />
-        <Etq T={T} at={K.A + 2.4} until={K.Bu - 0.1} x={420} y={470} texto="CO₂" tam={40} color={KC.texto} lado="der" />
+          <line x1={730} y1={742} x2={890} y2={742} stroke={KC.texto} strokeWidth={6} />
+          <text x={810} y={728} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto}>≈ 0.1 mm</text>
+        </g></SvgCapa>
+        <Etq T={T} at={K.A + 0.3} until={K.A + 2.6} x={70} y={455} texto="fosfato monocálcico" tam={34} color="#8cc8ff" />
+        <Etq T={T} at={K.A + 2.4} until={K.Bu - 0.1} x={400} y={452} texto="CO₂" tam={40} color={KC.texto} lado="der" />
       </Escena>
 
       {/* 5 · el horno: el ácido 2 despierta con el calor */}
       <Escena T={T} a={K.H} b={K.Es} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <Horno x={600} y={900} s={0.92} calor={calor}>
+          <Horno x={650} y={900} s={1} calor={calor}>
             <Pastel T={T} x={0} y={150} s={1.05} h={subeH * 0.8} poros={subeH} />
             {[0, 1, 2, 3, 4].map((k) => { const t0 = K.H + 2.6 + k * 0.5, u = kprog(T, t0, t0 + 0.6); return <Granito key={k} x={-150 + k * 75} y={60 - subeH * 80} r={18 * (1 - u)} tipo="a2" brillo={u} o={1 - u} />; })}
             {[0, 1, 2, 3, 4].map((k) => { const t0 = K.H + 3.0 + k * 0.5, u = kprog(T, t0, t0 + 1.0, kEase.sale); return u > 0 && u < 1 ? <Mol key={'c' + k} tipo="co2" x={-150 + k * 75} y={40 - subeH * 80 - u * 90} s={0.45} rot={T * 60} o={1 - u} /> : null; })}
           </Horno>
-          <Termometro x={110} y={1260} alto={500} f={(tempH - 22) / 80} v={tempH} />
+          <Termometro x={150} y={1260} alto={500} f={(tempH - 22) / 80} v={tempH} />
         </SvgCapa>
       </Escena>
 
@@ -225,9 +229,9 @@ function Polvo() {
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
           {T < mitadEs ? <g>
-            <Tazon x={540} y={1060} s={1.05} />
-            <Batidor T={T} x={540} y={1000} s={1.1} />
-            {[0, 1, 2, 3, 4, 5, 6, 7].map((k) => { const t0 = K.Es + 2.8 + k * 0.2, u = kprog(T, t0, t0 + 1.2, kEase.sale); return u > 0 && u < 1 ? <Mol key={k} tipo="co2" x={380 + k * 45 + Math.sin(T * 3 + k) * 20} y={960 - u * 420} s={0.55} rot={T * 50 + k * 30} o={1 - u} /> : null; })}
+            <Tazon x={540} y={1100} s={1.5} />
+            <Batidor T={T} x={540} y={1030} s={1.5} />
+            {[0, 1, 2, 3, 4, 5, 6, 7].map((k) => { const t0 = K.Es + 2.8 + k * 0.2, u = kprog(T, t0, t0 + 1.2, kEase.sale); return u > 0 && u < 1 ? <Mol key={k} tipo="co2" x={295 + k * 70 + Math.sin(T * 3 + k) * 20} y={960 - u * 520} s={0.75} rot={T * 50 + k * 30} o={1 - u} /> : null; })}
           </g> : <g>
             <Pastel T={T} x={300} y={1020} s={0.95} h={kprog(T, mitadEs + 0.2, mitadEs + 1.4, kEase.sale) * 0.95} cocido={1} poros={1} seed={3} />
             <Pastel T={T} x={790} y={1020} s={0.95} h={kprog(T, mitadEs + 0.2, mitadEs + 1.4, kEase.sale) * 0.35} cocido={1} poros={0.5} seed={6} />
@@ -256,40 +260,40 @@ function Polvo() {
       <Escena T={T} a={K.No} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Bascula x={790} y={1120} s={0.95} />
-          <Cuchara x={850} y={1020} rot={0} s={0.9} carga={1} />
+          <Bascula x={540} y={1190} s={1.55} />
+          <Cuchara x={640} y={1030} rot={0} s={1.45} carga={1} />
           {/* barra: 100 % del peso, 12 % es CO₂ disponible */}
-          {(() => { const e = kprog(T, K.No + 1.6, K.No + 2.6, kEase.sale), x0 = 720, y0 = 520, H = 400; return <g opacity={kprog(T, K.No + 1.2, K.No + 1.6)}>
-            <rect x={x0} y={y0} width={140} height={H} rx={12} fill="#fbfbfb" stroke={KC.ink} strokeWidth={8} />
-            <rect x={x0} y={y0} width={140} height={H * 0.12 * e} rx={12} fill={KC.cyan} stroke={KC.ink} strokeWidth={6} />
-            <text x={x0 + 170} y={y0 + 40} style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>12 %</text>
-            <text x={x0 + 170} y={y0 + 82} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>CO₂</text>
+          {(() => { const e = kprog(T, K.No + 1.6, K.No + 2.6, kEase.sale), x0 = 400, y0 = 330, H = 520, W = 190; return <g opacity={kprog(T, K.No + 1.2, K.No + 1.6)}>
+            <rect x={x0} y={y0} width={W} height={H} rx={12} fill="#fbfbfb" stroke={KC.ink} strokeWidth={8} />
+            <rect x={x0} y={y0} width={W} height={H * 0.12 * e} rx={12} fill={KC.cyan} stroke={KC.ink} strokeWidth={6} />
+            <text x={x0 + W + 34} y={y0 + 62} style={{ font:`400 96px ${KF.titulo}` }} fill={KC.ink}>12 %</text>
+            <text x={x0 + W + 36} y={y0 + 116} style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>CO₂</text>
           </g>; })()}
-          <Nube T={T} x={850} y={860} f={kprog(T, K.No + 0.8, K.No + 2.0) * (1 - kprog(T, K.No + 2.2, K.No + 3.0))} r={110} color="#bfe8ff" seed={5} n={7} />
+          <Nube T={T} x={640} y={900} f={kprog(T, K.No + 0.8, K.No + 2.0) * (1 - kprog(T, K.No + 2.2, K.No + 3.0))} r={150} color="#bfe8ff" seed={5} n={7} />
         </SvgCapa>
       </Escena>
 
       {/* 9 · cierre: el tazón del inicio, ahora pastel esponjado */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa>
-          <Lata x={190} y={760} s={0.85} rot={-6} />
+        <SvgCapa><g transform="translate(600 1000) scale(1.22) translate(-600 -1000)">
+          <Lata x={300} y={760} s={0.85} rot={-6} />
           <ellipse cx={560} cy={1150} rx={330} ry={50} fill="#fff" stroke={KC.ink} strokeWidth={9} />
           <Pastel T={T} x={560} y={1130} s={1.2} h={klerp(0.55, 0.95, kprog(T, K.Ci, K.Ci + 1.2, kEase.sale))} cocido={1} poros={1} molde={false} seed={3} />
           {[0, 1, 2].map((k) => { const u = (T * 0.6 + k / 3) % 1; return <path key={k} d={`M ${480 + k * 80} ${790 - u * 160} q 20 -30 0 -60 q -20 -30 0 -60`} stroke="#fff" strokeWidth={8} fill="none" opacity={(1 - u) * 0.8} strokeLinecap="round" />; })}
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
 
       {/* textos */}
       <Chip T={T} at={K.G + 2.2} until={K.Q - 0.3} texto="1 · en tu tazón" x={300} y={1500} tam={40} borde={C_A1} />
       <Chip T={T} at={K.G + 3.4} until={K.Q - 0.3} texto="2 · en tu horno" x={780} y={1500} tam={40} borde={KC.orange} />
-      <Chip T={T} at={K.Q + 3.4} until={K.A - 0.3} texto="la fécula atrapa la humedad" y={1650} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.Q + 3.4} until={K.A - 0.3} texto="la fécula atrapa la humedad" y={1620} tam={40} borde={KC.ink} />
       <Capitulo T={T} caps={[{ at: K.A, titulo: 'En tu tazón · 22 °C' }, { at: K.H, titulo: 'En tu horno' }]} hasta={K.Es - 0.2} y={330} />
       <Chip T={T} at={K.A + 2.6} until={K.Bu - 0.2} texto="ácido + bicarbonato → CO₂ + agua" y={1500} tam={36} borde={C_A1} />
       <Chip T={T} at={K.Bu + 0.4} until={K.Pr - 0.1} texto="el CO₂ infla las burbujas" y={1500} tam={40} borde="#ffe7a8" />
       <Chip T={T} at={K.Pr + 0.2} until={K.H - 0.1} texto="ácido 2: sigue dormido" y={1500} tam={40} borde={C_A2} />
       <Chip T={T} at={K.H + 0.6} until={K.Es - 0.3} texto="sulfato de sodio y aluminio" y={1500} tam={38} borde={C_A2} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2021" quien="KU Leuven · Bélgica" revista="Godefroidt et al. · LWT 152" y={640} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2021" quien="KU Leuven · Bélgica" revista="Godefroidt et al. · LWT 152" y={360} />
       <Chip T={T} at={K.Es + 3.1} until={mitadEs - 0.2} texto="ácido rápido: el gas se va al batir" y={1500} tam={36} borde={KC.red} />
       <Chip T={T} at={mitadEs + 1.4} until={K.Cu - 0.3} texto="menos gas atrapado = pastel más bajito" y={1500} tam={32} borde={KC.red} />
       <Chip T={T} at={K.Cu + 3.0} until={K.Cu + 4.6} texto="≈ 88 °C: la masa empieza a cuajar" y={1500} tam={36} borde={KC.gold} />
