@@ -192,7 +192,7 @@ function Xeno() {
   const llenaGente = kprog(T, K.E + 0.4, K.E + 3.4);
   const entra = kprog(T, K.R + 0.2, K.R + 1.2, kEase.suave), morado = kprog(T, K.R + 1.4, K.R + 3.6);
   const R = krng(3);
-  const pervs = Array.from({ length: 59 }, (_, i) => { const fila = i % 3; return { x: 80 + (Math.floor(i / 3) * 47) + R() * 10, y: 600 + fila * 200 + (R() - 0.5) * 40, t: K.V + 0.4 + (i / 59) * 2.4 }; });
+  const pervs = Array.from({ length: 59 }, (_, i) => { const fila = i % 3; return { x: 80 + (Math.floor(i / 3) * 47) + R() * 10, y: 680 + fila * 200 + (R() - 0.5) * 40, t: K.V + 0.4 + (i / 59) * 2.4 }; });
   const diasP = kprog(T, K.D + 0.3, K.D + 3.0, kEase.suave);
   const puente = kprog(T, K.Pu + 0.6, K.Pu + 2.6, kEase.suave);
 
@@ -202,9 +202,12 @@ function Xeno() {
       <Escena T={T} a={K.G} b={K.E} zoom={0.06}>
         <FondoMarca color={KC.pink} T={T} />
         <XSvg>
-          <Cerdo T={T} x={330} y={640} s={0.62} />
-          <Charola x={540} y={1060} s={1.05} />
-          <Rinon T={T} x={600} y={klerp(1300, 930, sube)} s={1.05} rot={-8} brillo={1} />
+          {/* pase a mano: el conjunto 1.3x para que llene el cuadro (la barra de escala va en la misma proporción) */}
+          <g transform="translate(540 980) scale(1.3) translate(-540 -980)">
+            <Cerdo T={T} x={365} y={640} s={0.62} />
+            <Charola x={540} y={1060} s={1.05} />
+            <Rinon T={T} x={600} y={klerp(1300, 930, sube)} s={1.05} rot={-8} brillo={1} />
+          </g>
         </XSvg>
       </Escena>
       {/* 1 · la lista de espera en México: 160 figuras = 16,041 personas */}
@@ -219,9 +222,9 @@ function Xeno() {
       <Escena T={T} a={K.R} b={K.Az} zoom={0.04}>
         <FondoMarca color={KC.orange} patron="rayas" T={T} />
         <XSvg>
-          <Persona x={540} y={1000} s={1.15} />
-          <Rinon T={T} x={klerp(980, 640, entra)} y={klerp(700, 1040, entra)} s={0.42} morado={morado} vasos={false} />
-          <g transform="translate(260 640)">
+          <Persona x={540} y={1150} s={1.4} />
+          <Rinon T={T} x={klerp(980, 662, entra)} y={klerp(700, 1199, entra)} s={0.42} morado={morado} vasos={false} />
+          <g transform="translate(225 665)">
             <circle r={110} fill={KC.paper} stroke={KC.ink} strokeWidth={10} />
             <line x1={0} y1={0} x2={Math.sin(T * 4) * 80} y2={-Math.cos(T * 4) * 80} stroke={KC.ink} strokeWidth={10} strokeLinecap="round" />
             <line x1={0} y1={0} x2={Math.sin(T * 0.6) * 55} y2={-Math.cos(T * 0.6) * 55} stroke={KC.red} strokeWidth={12} strokeLinecap="round" />
@@ -240,13 +243,13 @@ function Xeno() {
         <XSvg>
           {/* Borrar: tres genes de azúcares que se cortan */}
           {T < K.P + 0.5 && <g opacity={1 - kprog(T, K.P, K.P + 0.5)}>
-            <ADNHebra T={T} x={90} y={760} largo={900} alto={90} vueltas={4} resalta={(u) => [0.15, 0.5, 0.85].some((c) => Math.abs(u - c) < 0.05) && T < K.B + 0.8} />
+            <ADNHebra T={T} x={90} y={820} largo={900} alto={130} vueltas={4} resalta={(u) => [0.15, 0.5, 0.85].some((c) => Math.abs(u - c) < 0.05) && T < K.B + 0.8} />
             {[0.15, 0.5, 0.85].map((c, i) => { const t0 = K.B + 0.8 + i * 0.5, ab = Math.abs(Math.sin((T - t0) * 9)) * kprog(T, t0 - 0.4, t0) * (1 - kprog(T, t0 + 0.3, t0 + 0.5));
               const gen = ['GGTA1', 'CMAH', 'B4GALNT2'][i];
               return <g key={i}>
-                {T > t0 - 0.6 && T < t0 + 0.8 && <Tijeras x={90 + c * 900 - 120} y={760} s={1} abre={ab} />}
-                <text x={90 + c * 900} y={660} textAnchor="middle" style={{ font:`italic 700 32px ${KF.mono}` }} fill={T > t0 ? '#8a8f99' : KC.gold2} textDecoration={T > t0 ? 'line-through' : 'none'}>{gen}</text>
-                {T > t0 && <text x={90 + c * 900} y={880} textAnchor="middle" style={{ font:`900 54px ${KF.texto}` }} fill={KC.red}>✕</text>}
+                {T > t0 - 0.6 && T < t0 + 0.8 && <Tijeras x={90 + c * 900 - 150} y={820} s={1.35} abre={ab} />}
+                <text x={90 + c * 900} y={672} textAnchor="middle" style={{ font:`italic 700 38px ${KF.mono}` }} fill={T > t0 ? '#8a8f99' : KC.gold2} textDecoration={T > t0 ? 'line-through' : 'none'}>{gen}</text>
+                {T > t0 && <text x={90 + c * 900} y={992} textAnchor="middle" style={{ font:`900 66px ${KF.texto}` }} fill={KC.red}>✕</text>}
               </g>; })}
           </g>}
           {/* Pregunta: la célula ya sin azúcares y un ? grande */}
@@ -264,7 +267,7 @@ function Xeno() {
           </g>}
           {/* Virus: 59 retrovirus dormidos en tres tramos de ADN se apagan con candado */}
           {T > K.V - 0.3 && <g opacity={kprog(T, K.V - 0.3, K.V + 0.2)}>
-            {[600, 800, 1000].map((y, i) => <ADNHebra key={i} T={T + i} x={60} y={y} largo={960} alto={50} vueltas={5} grosor={5} />)}
+            {[680, 880, 1080].map((y, i) => <ADNHebra key={i} T={T + i} x={60} y={y} largo={960} alto={50} vueltas={5} grosor={5} />)}
             {pervs.map((p, i) => <Perv key={i} x={p.x} y={p.y} s={0.85} T={T} apaga={kprog(T, p.t, p.t + 0.25)} />)}
           </g>}
         </XSvg>
@@ -273,7 +276,10 @@ function Xeno() {
       <Escena T={T} a={K.S} b={K.A} zoom={0.03}>
         <FondoMarca color={KC.lilac} T={T} />
         <XSvg>
-          <g transform="translate(540 1110)">
+          {/* pase a mano: el paciente con su riñón de cerdo está en cuadro toda la escena (antes era solo tarjeta y barra) */}
+          <Persona x={540} y={1040} s={1.15} />
+          <Rinon T={T} x={640} y={1080} s={0.42} brillo={1} vasos={false} />
+          <g transform="translate(540 1335)">
             <rect x={-420} y={-14} width={840} height={28} rx={14} fill="rgba(255,255,255,.4)" stroke={KC.ink} strokeWidth={6} />
             <rect x={-420} y={-14} width={840 * kprog(T, K.S + 3.0, K.S + 5.2, kEase.suave)} height={28} rx={14} fill={KC.mint} stroke={KC.ink} strokeWidth={6} />
             <text x={-420} y={-40} style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>marzo 2024</text>
@@ -293,7 +299,7 @@ function Xeno() {
         <XSvg>
           <Calendario x={330} y={930} s={1.05} dia={271 * diasP} />
           <Dialisis x={780} y={960} s={0.95} on={0} T={T} />
-          <Rinon T={T} x={760} y={680} s={0.42} brillo={1 - kprog(T, K.D + 3.0, K.D + 3.8)} apaga={kprog(T, K.D + 3.0, K.D + 3.8)} vasos={false} />
+          <Rinon T={T} x={790} y={665} s={0.55} brillo={1 - kprog(T, K.D + 3.0, K.D + 3.8)} apaga={kprog(T, K.D + 3.0, K.D + 3.8)} vasos={false} />
         </XSvg>
       </Escena>
       {/* 11 · el puente */}
@@ -312,11 +318,14 @@ function Xeno() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoMarca color={KC.pink} T={T} />
         <XSvg>
-          <path d="M 120 760 Q 540 430 960 760" stroke={KC.gold2} strokeWidth={22} fill="none" strokeLinecap="round" opacity={0.85} />
-          <Cerdo T={T} x={170} y={600} s={0.36} />
-          {Array.from({ length: 12 }, (_, i) => <MiniPersona key={i} x={340 + (i % 6) * 52} y={640 + Math.floor(i / 6) * 56} s={1.1} color={KC.ink} />)}
-          <Charola x={540} y={1060} s={1.05} />
-          <Rinon T={T} x={600} y={930} s={1.05} rot={-8} brillo={1} />
+          <path d="M 70 720 Q 540 240 1010 720" stroke={KC.gold2} strokeWidth={22} fill="none" strokeLinecap="round" opacity={0.85} />
+          <Cerdo T={T} x={160} y={490} s={0.42} />
+          {Array.from({ length: 12 }, (_, i) => <MiniPersona key={i} x={390 + (i % 6) * 60} y={570 + Math.floor(i / 6) * 58} s={1.3} color={KC.ink} />)}
+          {/* la misma charola del gancho, al mismo tamaño (1.3x) */}
+          <g transform="translate(540 980) scale(1.3) translate(-540 -980)">
+            <Charola x={540} y={1060} s={1.05} />
+            <Rinon T={T} x={600} y={930} s={1.05} rot={-8} brillo={1} />
+          </g>
         </XSvg>
       </Escena>
 
@@ -329,13 +338,16 @@ function Xeno() {
           <Rinon T={t} x={30} y={0} s={1.1} brillo={1} /></svg>} />
 
       {/* escala, chips y tarjetas */}
-      <BarraEscala T={T} at={K.G} until={K.E - 0.2} px={160} texto="≈ 5 cm" />
-      <BarraEscala T={T} at={K.R} until={K.Az - 0.2} px={140} texto="≈ 30 cm" />
-      <BarraEscala T={T} at={K.Az + 0.8} until={K.S - 0.2} px={200} texto="≈ 10 µm (esquemático)" />
-      <BarraEscala T={T} at={K.D} until={K.C - 0.2} px={160} texto="≈ 5 cm" />
-      <BarraEscala T={T} at={K.C} until={K.O - 0.1} px={160} texto="≈ 5 cm" />
+      {/* pase a mano: barras recalculadas con cada dibujo. Riñón ≈ 11 cm de largo: 5 cm = 154.5 px × s del riñón × escala del grupo.
+          Persona: hombros ≈ 46 cm = 400 px × s. La barra de 10 µm va solo donde hay célula (no sobre el ADN solo) y el puente es metáfora (sin barra). */}
+      <BarraEscala T={T} at={K.G} until={K.E - 0.2} px={210} texto="≈ 5 cm" />
+      <BarraEscala T={T} at={K.R} until={K.Az - 0.2} px={240} texto="≈ 20 cm" />
+      <BarraEscala T={T} at={K.Az + 0.8} until={K.B - 0.2} px={200} texto="≈ 10 µm (esquemático)" />
+      <BarraEscala T={T} at={K.P} until={K.V - 0.2} px={200} texto="≈ 10 µm (esquemático)" />
+      <BarraEscala T={T} at={K.D} until={K.Pu - 0.2} px={85} texto="≈ 5 cm" />
+      <BarraEscala T={T} at={K.C} until={K.O - 0.1} px={210} texto="≈ 5 cm" />
       <Chip T={T} at={K.G + 0.2} until={K.E - 0.3} texto="69 cambios en su ADN" y={1500} tam={50} borde={KC.gold} />
-      <Etq T={T} at={K.G + 1.4} until={K.E - 0.3} x={60} y={420} texto="cerdo miniatura Yucatán" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.G + 1.4} until={K.E - 0.3} x={60} y={215} texto="cerdo miniatura Yucatán" tam={32} color={KC.ink} />
       <NumeroGigante T={T} at={K.E + 0.2} until={K.R - 0.3} valor={16041} dur={2.6} etiqueta="esperan un riñón en México" y={640} tam={210} color={KC.white} />
       <Chip T={T} at={K.E + 1.0} until={K.R - 0.3} texto="CENATRA · corte al 3 oct 2026" x={380} y={1480} tam={36} borde={KC.ink} />
       <Etq T={T} at={K.E + 3.0} until={K.R - 0.3} x={60} y={1580} texto="cada figura = 100 personas" tam={30} color={KC.ink} />
@@ -348,11 +360,11 @@ function Xeno() {
       <Etq T={T} at={K.H + 3.2} until={K.V - 0.2} x={60} y={1180} texto="defensas · inflamación · coágulos" tam={30} color={KC.cyan} />
       <Chip T={T} at={K.V + 0.2} until={K.S - 0.2} texto="59 retrovirus del cerdo, apagados" y={470} tam={38} borde={KC.mint} />
       <Contador69 T={T} at={K.B + 0.5} until={K.S - 0.3} f3={f3} f7={f7} f59={f59} />
-      <TarjetaEstudio T={T} at={K.S + 0.3} until={K.A - 0.3} anio="2024" quien="Richard Slayman · Boston" revista="primer paciente vivo con riñón de cerdo editado" x={430} y={820} />
+      <TarjetaEstudio T={T} at={K.S + 0.3} until={K.A - 0.3} anio="2024" quien="Richard Slayman · Boston" revista="primer paciente vivo con riñón de cerdo editado" y={330} />
       <Chip T={T} at={K.S + 5.4} until={K.A - 0.3} texto="murió por su corazón, no por el riñón" y={1500} tam={36} borde={KC.red} />
       <TarjetaEstudio T={T} at={K.A + 0.2} until={K.D - 0.3} anio="2025" quien="Tim Andrews · Boston" revista="25 ene 2025 · Hospital General de Massachusetts" y={470} />
       <Chip T={T} at={K.D + 0.4} until={K.Pu - 0.3} texto="25 ene → 23 oct 2025" y={1500} tam={44} borde={KC.mint} />
-      <Etq T={T} at={K.D + 3.2} until={K.Pu - 0.3} x={560} y={560} texto="empezó a fallar" lado="der" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.D + 3.2} until={K.Pu - 0.3} x={560} y={510} texto="empezó a fallar" lado="der" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Pu + 0.3} until={K.C - 0.3} texto="ene 2026 · riñón humano" y={470} tam={40} borde={KC.gold2} />
       <Chip T={T} at={K.Pu + 1.8} until={K.C - 0.3} texto="2025 · la FDA autorizó los primeros ensayos" y={1500} tam={34} borde={KC.blue} />
       <Etq T={T} at={K.Pu + 0.8} until={K.C - 0.3} x={60} y={760} texto="diálisis" tam={30} color={KC.ink} />
