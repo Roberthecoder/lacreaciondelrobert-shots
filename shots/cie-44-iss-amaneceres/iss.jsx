@@ -1,6 +1,7 @@
 // cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #44 · Los astronautas ven 16 amaneceres al día — NARRADO (N2 "El número" + N3 la órbita con su reloj).
 // Datos: NASA (Facts and Figures, Spot the Station, Astronaut Exercise, SSLA), ESA Kids, NASA Earth Observatory. Ver guion.md y verificacion.md.
+const TINTA = '#0b1020';
 const OCEANO = '#2f7df6', TIERRA = '#7bd36b', TIERRA2 = '#ffe9a8', ORO = KC.gold2;
 /* ---------- GLOBO (proyección ortográfica; continentes esquemáticos) ---------- */
 const G_NA = [[-125,48],[-124,40],[-117.1,32.5],[-111,31.3],[-106.5,31.8],[-104.5,29.6],[-101,29.4],[-97.5,25.9],[-94,29.5],[-90,29.5],[-84,30],[-82.5,27],[-81,25.2],[-80,27],[-81,31],[-76,35],[-74,40],[-70,42],[-66,44.5],[-60,46.5],[-56,51],[-60,55],[-64,60],[-72,62],[-78,62],[-82,66],[-90,68],[-100,69],[-110,70],[-120,70],[-130,70],[-142,70],[-152,71],[-160,70.5],[-166,68],[-165,62],[-158,58],[-152,58],[-140,59.5],[-134,57],[-130,54],[-125,48]];
@@ -115,9 +116,9 @@ function OrbitaInclinada({ T, x = 540, y = 960, R = 240, rx = 380, ry = 110, inc
 }
 // Vista desde arriba del polo norte: el Sol a la izquierda, la sombra de la Tierra es una franja a la derecha.
 // th = ángulo de la estación (rad, sentido antihorario). rastro: desde qué ángulo se dibuja su camino.
-const PO = { x: 540, y: 800, R: 210, r: 310 };
+const PO = { x: 540, y: 900, R: 300, r: 430 };
 const enSombra = (th) => Math.cos(th) > 0 && Math.abs(Math.sin(th)) * PO.r < PO.R;
-function OrbitaPolar({ T, th, noche = 1, rastro, lon0 = 0, id = 'pol', sEst = 0.19, anillo = 1 }) {
+function OrbitaPolar({ T, th, noche = 1, rastro, lon0 = 0, id = 'pol', sEst = 0.26, anillo = 1 }) {
   const { x, y, R, r } = PO;
   const pos = (g) => [x + r * Math.cos(g), y - r * Math.sin(g)];
   const [ex, ey] = pos(th);
@@ -148,10 +149,10 @@ function RelojPared({ x, y, r = 190, T = 0 }) {
   const mn = T * 40, hr = 300 + T * 3.3;
   return <g transform={`translate(${x} ${y})`}>
     <circle r={r + 22} fill={KC.ink} /><circle r={r + 12} fill={KC.white} stroke={KC.ink} strokeWidth={8} />
-    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={0} y1={-r + 6} x2={0} y2={-r + (i % 3 ? 22 : 36)} stroke={KC.ink} strokeWidth={i % 3 ? 5 : 9} transform={`rotate(${i * 30})`} />)}
-    {[['12', 0, -r + 78], ['3', r - 64, 18], ['6', 0, r - 46], ['9', -r + 64, 18]].map(([t, a, b]) => <text key={t} x={a} y={b} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{t}</text>)}
-    <line x1={0} y1={0} x2={0} y2={-r * 0.52} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" transform={`rotate(${hr})`} />
-    <line x1={0} y1={0} x2={0} y2={-r * 0.78} stroke={KC.ink} strokeWidth={9} strokeLinecap="round" transform={`rotate(${mn})`} />
+    {Array.from({ length: 12 }, (_, i) => <line key={i} x1={0} y1={-r + 6} x2={0} y2={-r + (i % 3 ? 22 : 36)} stroke={TINTA} strokeWidth={i % 3 ? 5 : 9} transform={`rotate(${i * 30})`} />)}
+    {[['12', 0, -r + 44 + r * 0.24], ['3', r - 44 - r * 0.17, r * 0.11], ['6', 0, r - 50], ['9', -r + 44 + r * 0.17, r * 0.11]].map(([t, a, b]) => <text key={t} x={a} y={b} textAnchor="middle" fill={TINTA} stroke="none" style={{ font:`400 ${Math.round(r * 0.32)}px ${KF.titulo}`, stroke:'none' }}>{t}</text>)}
+    <line x1={0} y1={0} x2={0} y2={-r * 0.52} stroke={TINTA} strokeWidth={14} strokeLinecap="round" transform={`rotate(${hr})`} />
+    <line x1={0} y1={0} x2={0} y2={-r * 0.78} stroke={TINTA} strokeWidth={9} strokeLinecap="round" transform={`rotate(${mn})`} />
     <circle r={14} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
   </g>;
 }
@@ -286,7 +287,7 @@ function HorizonteAmanecer({ x = 540, y = 800, r = 350, p = 0, T = 0, id = 'cup'
       {capas.map(([c, d], i) => { const e = kprog(p, d * 0.8, d * 0.8 + 0.25, kEase.sale); if (e <= 0) return null;
         return <circle key={i} cx={0} cy={cyT} r={RT + 6 + (capas.length - i) * 7 * e} fill="none" stroke={c} strokeWidth={10 * e} opacity={e} />; })}
       <circle cx={0} cy={cyT} r={RT} fill="#0a1430" stroke="#16224a" strokeWidth={4} />
-      {sol > 0 && <circle cx={-r * 0.25} cy={r * 0.35 - 8} r={30 + 220 * sol} fill={`url(#${id}s)`} opacity={sol} />}
+      {sol > 0 && <circle cx={-r * 0.25} cy={r * 0.35 - 8} r={(30 + 220 * sol) * r / 350} fill={`url(#${id}s)`} opacity={sol} />}
     </g>
     <circle r={r + 34} fill="none" stroke="#9aa3b5" strokeWidth={50} />
     <circle r={r + 60} fill="none" stroke={KC.ink} strokeWidth={8} /><circle r={r + 8} fill="none" stroke={KC.ink} strokeWidth={8} />
@@ -311,6 +312,7 @@ function Iss() {
   const thV = Math.PI / 2 + 2 * Math.PI * kprog(T, K.Vuelta + 0.2, K.Dia - 0.3, kEase.suave);
   const thD = (-20 + (T - K.Dia) * 80) * Math.PI / 180;
   const vueltasC = 16 * kprog(T, K.Cuenta + 1.4, K.Cuenta + 4.6);
+  const achC = kprog(T, K.Cuenta - 0.2, K.Cuenta + 0.6, kEase.suave);   // la órbita de la escena anterior se achica y baja
   const pA = kprog(T, K.Rapido + 0.6, K.Rapido + 4.2);
   const altB = kprog(T, K.Altura + 2.4, K.Altura + 2.9);
   const bici = kprog(T, K.Ejercicio + 3.4, K.Ejercicio + 3.9);
@@ -323,22 +325,22 @@ function Iss() {
         <FondoLunares color={KC.violet} punto="rgba(255,255,255,.12)" />
         <Lienzo>
           <EstrellasFondo T={T} n={50} />
-          <SolDibujo x={40} y={960} r={60} T={T} />
-          <OrbitaInclinada T={T} a={aG(T)} lon0={lonT} id="gg" />
-          <TiraSoles x={88} y={640} n={16 * kprog(T, 0.3, 4.0)} />
+          <SolDibujo x={45} y={1000} r={70} T={T} />
+          <OrbitaInclinada T={T} y={1130} R={330} rx={450} ry={140} sEst={0.28} a={aG(T)} lon0={lonT} id="gg" />
+          <TiraSoles x={176} y={610} paso={104} r={28} n={16 * kprog(T, 0.3, 4.0)} />
         </Lienzo>
-        <NumeroGigante T={T} at={K.Gancho + 0.1} until={K.Velocidad - 0.1} valor={16} desde={0} dur={3.7} prefijo="≈ " etiqueta="amaneceres al día" x={300} y={440} tam={190} />
+        <NumeroGigante T={T} at={K.Gancho + 0.1} until={K.Velocidad - 0.1} valor={16} desde={0} dur={3.7} prefijo="≈ " etiqueta="amaneceres al día" x={540} y={430} tam={190} />
       </Escena>
       {/* 1 · velocidad */}
       <Escena T={T} a={K.Velocidad} b={K.Vuelta} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          {Array.from({ length: 14 }, (_, i) => { const yy = 560 + (i * 37) % 460, xx = KW + 300 - ((T * 1400 + i * 260) % (KW + 700)); return <line key={i} x1={xx} y1={yy} x2={xx + 160 + (i % 3) * 60} y2={yy} stroke="#fff" strokeWidth={8 + (i % 3) * 3} strokeLinecap="round" opacity=".7" />; })}
-          <Estacion x={540 + Math.sin(T * 2) * 10} y={760 + Math.sin(T * 1.3) * 8} s={1.1} rot={-6} />
-          <Velocimetro x={540} y={1110} r={95} v={kprog(T, K.Velocidad + 0.2, K.Velocidad + 1.4, kEase.sale)} T={T} />
+          {Array.from({ length: 14 }, (_, i) => { const yy = 470 + (i * 67) % 800, xx = KW + 300 - ((T * 1400 + i * 260) % (KW + 700)); return <line key={i} x1={xx} y1={yy} x2={xx + 160 + (i % 3) * 60} y2={yy} stroke="#fff" strokeWidth={8 + (i % 3) * 3} strokeLinecap="round" opacity=".7" />; })}
+          <Estacion x={540 + Math.sin(T * 2) * 10} y={850 + Math.sin(T * 1.3) * 8} s={1.9} rot={-6} />
+          <Velocimetro x={540} y={1370} r={115} v={kprog(T, K.Velocidad + 0.2, K.Velocidad + 1.4, kEase.sale)} T={T} />
         </Lienzo>
-        <NumeroGigante T={T} at={K.Velocidad + 0.2} until={K.Vuelta - 0.1} valor={28000} desde={28000} dur={0.1} prefijo="≈ " sufijo=" km/h" x={540} y={400} tam={130} color={KC.yellow} />
-        <Etq T={T} at={K.Velocidad + 1.6} until={K.Vuelta - 0.1} x={600} y={505} texto="Estación Espacial" color={KC.ink} tam={28} />
+        <NumeroGigante T={T} at={K.Velocidad + 0.2} until={K.Vuelta - 0.1} valor={28000} desde={28000} dur={0.1} prefijo="≈ " sufijo=" km/h" x={540} y={350} tam={130} color={KC.yellow} />
+        <Etq T={T} at={K.Velocidad + 1.6} until={K.Vuelta - 0.1} x={80} y={452} texto="Estación Espacial" color={KC.ink} tam={28} />
       </Escena>
       {/* 2 · una vuelta completa: ≈ 90 min (vista desde arriba del polo norte) */}
       <Escena T={T} a={K.Vuelta} b={K.Dia} zoom={0.02}>
@@ -347,44 +349,44 @@ function Iss() {
           <EstrellasFondo T={T} n={50} seed={3} />
           <OrbitaPolar T={T} th={thV} rastro={Math.PI / 2} noche={0} lon0={lonT} id="pv" />
         </Lienzo>
-        <Cronometro T={T} at={K.Vuelta + 0.2} until={K.Dia - 0.1} inicio={0} factor={5400 / (K.Dia - 0.5 - K.Vuelta)} x={540} y={400} etiqueta="UNA VUELTA" />
-        <NumeroGigante T={T} at={K.Dia - 1.0} until={K.Dia - 0.05} valor={90} desde={90} dur={0.1} prefijo="≈ " sufijo=" min" x={540} y={800} tam={120} color={KC.yellow} />
+        <Cronometro T={T} at={K.Vuelta + 0.2} until={K.Dia - 0.1} inicio={0} factor={5400 / (K.Dia - 0.5 - K.Vuelta)} x={540} y={320} etiqueta="UNA VUELTA" />
+        <NumeroGigante T={T} at={K.Dia - 1.0} until={K.Dia - 0.05} valor={90} desde={90} dur={0.1} prefijo="≈ " sufijo=" min" x={540} y={1430} tam={96} color={KC.yellow} />
       </Escena>
       {/* 3 · lado de día y lado de noche: amanecer y atardecer */}
       <Escena T={T} a={K.Dia} b={K.Cuenta} zoom={0.02}>
         <FondoLunares color={KC.violet} punto="rgba(255,255,255,.12)" />
         <Lienzo>
           <EstrellasFondo T={T} n={50} seed={3} />
-          <SolDibujo x={50} y={800} r={60} T={T} />
+          <SolDibujo x={-20} y={900} r={70} T={T} />
           <OrbitaPolar T={T} th={thD} noche={kprog(T, K.Dia - 0.3, K.Dia + 0.4)} lon0={lonT} id="pd" />
-          <TextoSvg x={150} y={650} tam={60} color={KC.yellow}>DÍA</TextoSvg>
-          <TextoSvg x={962} y={822} tam={56} color="#b9c6ff">NOCHE</TextoSvg>
-          <CajaG T={T} at={K.Dia + 0.75} until={K.Dia + 3.0} x={735} y={470} l1="amanecer" color={KC.yellow} ancho={250} />
-          <CajaG T={T} at={K.Dia + 4.15} x={720} y={1040} l1="atardecer" color={KC.coral} ancho={270} />
+          <TextoSvg x={190} y={540} tam={64} color={KC.yellow}>DÍA</TextoSvg>
+          <TextoSvg x={906} y={918} tam={46} color="#b9c6ff">NOCHE</TextoSvg>
+          <CajaG T={T} at={K.Dia + 0.75} until={K.Dia + 3.0} x={780} y={455} l1="amanecer" color={KC.yellow} ancho={250} />
+          <CajaG T={T} at={K.Dia + 4.15} x={730} y={1275} l1="atardecer" color={KC.coral} ancho={270} />
         </Lienzo>
       </Escena>
       {/* 4 · 24 h ÷ 90 min ≈ 16 */}
       <Escena T={T} a={K.Cuenta} b={K.Altura} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <TextoSvg x={190} y={560} tam={110} color={KC.white} s={kEase.rebote(kprog(T, K.Cuenta + 0.1, K.Cuenta + 0.5))}>24 h</TextoSvg>
-          <TextoSvg x={540} y={560} tam={110} color={KC.white} s={kEase.rebote(kprog(T, K.Cuenta + 0.9, K.Cuenta + 1.3))}>÷ 90 min</TextoSvg>
-          <TextoSvg x={890} y={560} tam={110} color={KC.pink} s={kEase.rebote(kprog(T, K.Cuenta + 2.0, K.Cuenta + 2.4))}>≈ 16</TextoSvg>
-          <g opacity={kprog(T, K.Cuenta + 0.6, K.Cuenta + 1.0)}>
-            <rect x={80} y={640} width={920} height={110} rx={22} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
+          <TextoSvg x={190} y={470} tam={110} color={KC.white} s={kEase.rebote(kprog(T, K.Cuenta + 0.1, K.Cuenta + 0.5))}>24 h</TextoSvg>
+          <TextoSvg x={540} y={470} tam={110} color={KC.white} s={kEase.rebote(kprog(T, K.Cuenta + 0.9, K.Cuenta + 1.3))}>÷ 90 min</TextoSvg>
+          <TextoSvg x={890} y={470} tam={110} color={KC.pink} s={kEase.rebote(kprog(T, K.Cuenta + 2.0, K.Cuenta + 2.4))}>≈ 16</TextoSvg>
+          <g opacity={kprog(T, K.Cuenta + 0.1, K.Cuenta + 0.5)}>
+            <rect x={80} y={550} width={920} height={140} rx={22} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
             {Array.from({ length: 16 }, (_, i) => { const on = kclamp(vueltasC - i, 0, 1);
-              return <g key={i}><rect x={96 + i * 56.5} y={656} width={50} height={78} rx={10} fill={on > 0 ? KC.mint : 'rgba(255,255,255,.12)'} opacity={0.4 + 0.6 * on} />
-                {on > 0 && <SolMini x={121 + i * 56.5} y={695} r={13} e={kEase.rebote(on)} />}</g>; })}
-            <text x={86} y={800} style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>0 h</text>
-            <text x={994} y={800} textAnchor="end" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>24 h</text>
+              return <g key={i}><rect x={96 + i * 56.5} y={566} width={50} height={108} rx={10} fill={on > 0 ? KC.mint : 'rgba(255,255,255,.12)'} opacity={0.4 + 0.6 * on} />
+                {on > 0 && <SolMini x={121 + i * 56.5} y={620} r={14} e={kEase.rebote(on)} />}</g>; })}
+            <text x={86} y={745} style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>0 h</text>
+            <text x={994} y={745} textAnchor="end" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>24 h</text>
           </g>
-          <g transform="translate(540 990) scale(0.5) translate(-540 -800)" opacity={kprog(T, K.Cuenta + 1.0, K.Cuenta + 1.4)}>
+          <g transform={`translate(540 ${klerp(900, 1110, achC)}) scale(${klerp(1, 0.7, achC)}) translate(-540 -900)`}>
             <OrbitaPolar T={T} th={Math.PI / 2 + vueltasC * 2 * Math.PI} noche={0} lon0={lonT} id="pc" sEst={0.3} />
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Cuenta + 1.4} until={K.Altura - 0.1} texto="cada cuadro ≈ 90 min" x={540} y={410} tam={38} borde={KC.mint} />
-        <Contador T={T} at={K.Cuenta + 1.4} desde={0} hasta={16} dur={3.2} x={860} y={970} tam={72} color={KC.ink} />
-        <Etq T={T} at={K.Cuenta + 1.4} until={K.Altura - 0.1} x={860} y={1040} texto="vueltas" color={KC.ink} tam={30} lado="izq" />
+        <Chip T={T} at={K.Cuenta + 1.4} until={K.Altura - 0.1} texto="cada cuadro ≈ 90 min" x={540} y={330} tam={38} borde={KC.mint} />
+        <Contador T={T} at={K.Cuenta + 1.4} desde={0} hasta={16} dur={3.2} x={905} y={1290} tam={90} color={KC.ink} />
+        <Etq T={T} at={K.Cuenta + 1.4} until={K.Altura - 0.1} x={985} y={1365} texto="vueltas" color={KC.ink} tam={32} lado="izq" />
       </Escena>
       {/* 5 · ≈ 400 km de altura: bastante cerca */}
       <Escena T={T} a={K.Altura} b={K.Pregunta} zoom={0.03}>
@@ -393,21 +395,21 @@ function Iss() {
           <EstrellasFondo T={T} n={45} seed={8} alto={1100} />
           <g opacity={1 - altB}>
             <GloboDN x={540} y={2500} R={1400} lon0={-100 + T * 2} lat0={20} id="alt" noche={0} />
-            <Estacion x={480 + (T - K.Altura) * 30} y={540} s={0.42} rot={-4} />
+            <Estacion x={440 + (T - K.Altura) * 30} y={540} s={0.65} rot={-4} />
             <g opacity={kprog(T, K.Altura + 0.4, K.Altura + 0.8)}>
               <line x1={880} y1={1142} x2={880} y2={klerp(1142, 560, kprog(T, K.Altura + 0.4, K.Altura + 1.2, kEase.sale))} stroke={KC.ink} strokeWidth={22} strokeLinecap="round" />
               <line x1={880} y1={1142} x2={880} y2={klerp(1142, 560, kprog(T, K.Altura + 0.4, K.Altura + 1.2, kEase.sale))} stroke={KC.yellow} strokeWidth={12} strokeLinecap="round" />
               {Array.from({ length: 11 }, (_, i) => <line key={i} x1={862} y1={1142 - i * 58} x2={898} y2={1142 - i * 58} stroke={KC.ink} strokeWidth={6} opacity={T > K.Altura + 0.4 + i * 0.07 ? 1 : 0} />)}
             </g>
-            <CajaG T={T} at={K.Altura + 1.0} x={580} y={770} l1="≈ 400 km" l2="de altura" color={KC.yellow} ancho={270} />
+            <CajaG T={T} at={K.Altura + 1.0} x={560} y={800} l1="≈ 400 km" l2="de altura" color={KC.yellow} ancho={270} />
           </g>
           {altB > 0 && <g opacity={altB}>
-            <GloboDN x={540} y={830} R={300} lon0={-100 + T * 5} lat0={20} id="alt2" noche={0} halo={false} />
-            <circle cx={540} cy={830} r={300 * 6771 / 6371} fill="none" stroke={KC.yellow} strokeWidth={6} />
-            {(() => { const g = -(T - K.Altura) * 1.2, rr = 300 * 6771 / 6371; return <circle cx={540 + Math.cos(g) * rr} cy={830 + Math.sin(g) * rr} r={13} fill={KC.white} stroke={KC.ink} strokeWidth={5} />; })()}
+            <GloboDN x={540} y={930} R={440} lon0={-100 + T * 5} lat0={20} id="alt2" noche={0} halo={false} />
+            <circle cx={540} cy={930} r={440 * 6771 / 6371} fill="none" stroke={KC.yellow} strokeWidth={7} />
+            {(() => { const g = -(T - K.Altura) * 1.2, rr = 440 * 6771 / 6371; return <circle cx={540 + Math.cos(g) * rr} cy={930 + Math.sin(g) * rr} r={15} fill={KC.white} stroke={KC.ink} strokeWidth={5} />; })()}
           </g>}
         </Lienzo>
-        <Chip T={T} at={K.Altura + 2.6} until={K.Pregunta - 0.1} texto="bastante cerca (a escala)" x={540} y={410} tam={42} borde={KC.yellow} />
+        <Chip T={T} at={K.Altura + 2.6} until={K.Pregunta - 0.1} texto="bastante cerca (a escala)" x={540} y={340} tam={42} borde={KC.yellow} />
       </Escena>
       {/* 6 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Horario} />
@@ -415,22 +417,22 @@ function Iss() {
       <Escena T={T} a={K.Horario} b={K.Ventanas} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <g transform={`translate(0 ${(1 - kprog(T, K.Horario - 0.3, K.Horario + 0.5, kEase.sale)) * 200})`}><RelojPared x={330} y={790} r={200} T={T} /></g>
-          <g opacity={kprog(T, K.Horario + 1.2, K.Horario + 1.6)}><Ventanilla x={830} y={760} r={140} t={Math.max(0, T - K.Horario - 1.2)} ciclo={1.5} /></g>
-          <CajaG T={T} at={K.Horario + 1.9} x={690} y={950} l1="afuera:" l2="cada ≈ 90 min" color={KC.yellow} />
+          <g transform={`translate(0 ${(1 - kprog(T, K.Horario - 0.3, K.Horario + 0.5, kEase.sale)) * 200})`}><RelojPared x={350} y={720} r={260} T={T} /></g>
+          <g opacity={0.3 + 0.7 * kprog(T, K.Horario + 1.2, K.Horario + 1.6)}><Ventanilla x={760} y={1220} r={180} t={Math.max(0, T - K.Horario - 1.2)} ciclo={1.5} /></g>
+          <CajaG T={T} at={K.Horario + 1.9} x={120} y={1190} l1="afuera:" l2="cada ≈ 90 min" color={KC.yellow} />
         </Lienzo>
-        <Chip T={T} at={K.Horario + 0.3} until={K.Ventanas - 0.1} texto="hora de Greenwich (UTC)" x={540} y={410} tam={42} borde={KC.ink} />
-        <Etq T={T} at={K.Horario + 0.9} until={K.Ventanas - 0.1} x={540} y={1060} texto="Greenwich, Inglaterra" color={KC.ink} tam={30} lado="izq" />
+        <Chip T={T} at={K.Horario + 0.3} until={K.Ventanas - 0.1} texto="hora de Greenwich (UTC)" x={540} y={340} tam={42} borde={KC.ink} />
+        <Etq T={T} at={K.Horario + 0.9} until={K.Ventanas - 0.1} x={590} y={1050} texto="Greenwich, Inglaterra" color={KC.ink} tam={30} lado="izq" />
       </Escena>
       {/* 8 · tapan las ventanas y las luces cambian de tono */}
       <Escena T={T} a={K.Ventanas} b={K.Ejercicio} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <rect x={60} y={380} width={960} height={800} rx={60} fill="#efe9f7" stroke={KC.ink} strokeWidth={10} />
-          {[540, 720, 900].map((v) => <line key={v} x1={60} y1={v + 120} x2={1020} y2={v + 120} stroke="rgba(0,0,0,.08)" strokeWidth={6} />)}
-          <rect x={140} y={410} width={800} height={30} rx={15} fill={led} stroke={KC.ink} strokeWidth={7} />
-          <path d="M 140 440 L 940 440 L 1010 1170 L 70 1170 Z" fill={led} opacity={0.22} />
-          <g transform="translate(600 520)">
+          <rect x={60} y={390} width={960} height={1060} rx={60} fill="#221f36" stroke={KC.ink} strokeWidth={10} />
+          {[680, 940, 1200].map((v) => <line key={v} x1={60} y1={v} x2={1020} y2={v} stroke="rgba(255,255,255,.07)" strokeWidth={6} />)}
+          <rect x={140} y={420} width={800} height={30} rx={15} fill={led} stroke={KC.ink} strokeWidth={7} />
+          <path d="M 140 450 L 940 450 L 1010 1440 L 70 1440 Z" fill={led} opacity={0.2} />
+          <g transform="translate(555 610) scale(1.25)">
             <rect x={0} y={0} width={340} height={300} rx={40} fill="#4fb6ff" stroke={KC.ink} strokeWidth={10} />
             <circle cx={250} cy={90} r={46} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
             <path d="M 0 230 Q 170 180 340 230 L 340 300 L 0 300 Z" fill={OCEANO} />
@@ -442,65 +444,65 @@ function Iss() {
             <rect x={0} y={0} width={340} height={300} rx={40} fill="none" stroke={KC.ink} strokeWidth={10} />
             <rect x={140} y={300 * pers - 8} width={60} height={22} rx={10} fill={KC.ink} />
           </g>
-          <BolsaDormir x={290} y={640} T={T} />
-          <Zzz x={430} y={720} T={T} o={kprog(T, K.Ventanas + 1.6, K.Ventanas + 2.2)} />
+          <g transform="translate(290 730) scale(1.35)"><BolsaDormir x={0} y={0} T={T} /></g>
+          <Zzz x={130} y={640} T={T} o={kprog(T, K.Ventanas + 1.6, K.Ventanas + 2.2)} />
           <rect x={0} y={0} width={KW} height={KH} fill="#84542c" opacity={0.12 * tono} />
         </Lienzo>
-        <Etq T={T} at={K.Ventanas + 0.6} until={K.Ventanas + 4.0} x={720} y={870} texto="persiana" color={KC.ink} tam={34} />
-        <Etq T={T} at={K.Ventanas + 2.6} until={K.Ejercicio - 0.1} x={150} y={480} texto="luz que cambia de tono" color={KC.ink} tam={32} />
+        <Etq T={T} at={K.Ventanas + 0.6} until={K.Ventanas + 4.0} x={700} y={1040} texto="persiana" color={KC.ink} tam={34} />
+        <Etq T={T} at={K.Ventanas + 2.6} until={K.Ejercicio - 0.1} x={1000} y={535} lado="izq" texto="luz que cambia de tono" color={KC.ink} tam={32} />
       </Escena>
       {/* 9 · ejercicio ≈ 2 h al día: caminadora y bici */}
       <Escena T={T} a={K.Ejercicio} b={K.Rapido} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <g opacity={1 - bici}>
+          <g opacity={1 - bici} transform="translate(540 950) scale(1.5) translate(-540 -855)">
             <Caminadora x={540} y={1080} T={T} />
             <Astronauta x={540} y={880} s={1} T={T} modo="corre" />
             <line x1={510} y1={870} x2={330} y2={1090} stroke={KC.yellow} strokeWidth={8} /><line x1={570} y1={870} x2={750} y2={1090} stroke={KC.yellow} strokeWidth={8} />
           </g>
-          {bici > 0 && <g opacity={bici}>
+          {bici > 0 && <g opacity={bici} transform="translate(540 950) scale(1.5) translate(-570 -815)">
             <Bici x={470} y={860} />
             <Astronauta x={470} y={850} s={1} T={T} modo="pedalea" color={KC.pink} />
           </g>}
-          <g opacity={kprog(T, K.Ejercicio + 0.3, K.Ejercicio + 0.7)} transform="translate(180 650)">
+          <g opacity={kprog(T, K.Ejercicio + 0.3, K.Ejercicio + 0.7)} transform="translate(170 540) scale(1.12)">
             <circle r={92} fill="#fff" stroke={KC.ink} strokeWidth={8} />
             <path d={`M 0 0 L 0 -84 A 84 84 0 0 1 ${84 * Math.sin(Math.PI / 6 * kprog(T, K.Ejercicio + 0.5, K.Ejercicio + 1.3))} ${-84 * Math.cos(Math.PI / 6 * kprog(T, K.Ejercicio + 0.5, K.Ejercicio + 1.3))} Z`} fill={KC.pink} stroke={KC.ink} strokeWidth={5} />
             <text y={140} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>24 h</text>
           </g>
           <g opacity={kprog(T, K.Ejercicio + 4.0, K.Ejercicio + 4.4)}>
-            <Hueso x={880} y={620} s={0.8} /><Musculo x={880} y={730} s={0.75} />
+            <Hueso x={905} y={560} s={1.1} /><Musculo x={905} y={700} s={1} />
           </g>
           {bici > 0 && <g opacity={kprog(T, K.Ejercicio + 5.2, K.Ejercicio + 5.6)}>
-            <g transform={`translate(${830 + mece(T, 2, 0.5) * 30} ${880 + mece(T, 5, 0.4) * 30}) rotate(${T * 40})`}><rect x={-60} y={-9} width={120} height={18} rx={6} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} /><path d="M 60 -9 L 84 0 L 60 9 Z" fill={CPIEL} stroke={KC.ink} strokeWidth={5} /></g>
-            <circle cx={880 + mece(T, 7, 0.4) * 24} cy={1010 + mece(T, 9, 0.5) * 20} r={30 + Math.sin(T * 5) * 3} fill="rgba(120,200,255,.75)" stroke={KC.ink} strokeWidth={5} />
+            <g transform={`translate(${925 + mece(T, 2, 0.5) * 30} ${940 + mece(T, 5, 0.4) * 30}) rotate(${T * 40}) scale(1.3)`}><rect x={-60} y={-9} width={120} height={18} rx={6} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} /><path d="M 60 -9 L 84 0 L 60 9 Z" fill={CPIEL} stroke={KC.ink} strokeWidth={5} /></g>
+            <circle cx={940 + mece(T, 7, 0.4) * 24} cy={1110 + mece(T, 9, 0.5) * 20} r={40 + Math.sin(T * 5) * 3} fill="rgba(120,200,255,.75)" stroke={KC.ink} strokeWidth={5} />
           </g>}
         </Lienzo>
-        <Chip T={T} at={K.Ejercicio + 0.3} until={K.Ejercicio + 5.1} texto="≈ 2 h al día" x={540} y={410} tam={52} borde={KC.pink} />
-        <Etq T={T} at={K.Ejercicio + 1.0} until={K.Ejercicio + 3.4} x={90} y={505} texto="caminadora" color={KC.ink} tam={30} />
-        <Etq T={T} at={K.Ejercicio + 3.9} until={K.Rapido - 0.1} x={90} y={505} texto="bicicleta" color={KC.ink} tam={30} />
-        <Etq T={T} at={K.Ejercicio + 4.3} until={K.Rapido - 0.1} x={1040} y={548} texto="huesos y músculos" color={KC.ink} tam={28} lado="izq" />
-        <Chip T={T} at={K.Ejercicio + 5.3} until={K.Rapido - 0.1} texto="flotando en microgravedad" x={540} y={410} tam={40} borde={KC.cyan} />
+        <Chip T={T} at={K.Ejercicio + 0.3} until={K.Ejercicio + 5.1} texto="≈ 2 h al día" x={540} y={340} tam={52} borde={KC.pink} />
+        <Etq T={T} at={K.Ejercicio + 1.0} until={K.Ejercicio + 3.4} x={380} y={1462} texto="caminadora" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Ejercicio + 3.9} until={K.Rapido - 0.1} x={380} y={1462} texto="bicicleta" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Ejercicio + 4.3} until={K.Rapido - 0.1} x={1040} y={452} texto="huesos y músculos" color={KC.ink} tam={28} lado="izq" />
+        <Chip T={T} at={K.Ejercicio + 5.3} until={K.Rapido - 0.1} texto="flotando en microgravedad" x={540} y={340} tam={40} borde={KC.cyan} />
       </Escena>
       {/* 10 · cada amanecer dura unos segundos: del negro a una línea de colores */}
       <Escena T={T} a={K.Rapido} b={K.Cierre} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <Lienzo><HorizonteAmanecer x={540} y={790} r={330} p={pA} T={T} /></Lienzo>
+        <Lienzo><HorizonteAmanecer x={540} y={920} r={390} p={pA} T={T} /></Lienzo>
         <Cronometro T={T} at={K.Rapido + 0.6} until={K.Cierre - 0.1} inicio={0} factor={1} x={540} y={330} etiqueta="SEGUNDOS" />
-        <Etq T={T} at={K.Rapido + 0.4} until={K.Rapido + 2.0} x={600} y={640} texto="negro" color={KC.texto} tam={34} />
-        <Etq T={T} at={K.Rapido + 2.6} until={K.Cierre - 0.1} x={760} y={980} lado="izq" texto="línea de colores" color={KC.texto} tam={32} />
+        <Etq T={T} at={K.Rapido + 0.4} until={K.Rapido + 2.0} x={600} y={760} texto="negro" color={KC.texto} tam={34} />
+        <Etq T={T} at={K.Rapido + 2.6} until={K.Cierre - 0.1} x={790} y={1140} lado="izq" texto="línea de colores" color={KC.texto} tam={32} />
       </Escena>
       {/* 11 · cierre: la misma órbita del inicio, ahora contada: tú 1, ellos 16 */}
       <Escena T={T} a={K.Cierre} b={FIN} zoom={-0.03}>
         <FondoLunares color={KC.violet} punto="rgba(255,255,255,.12)" />
         <Lienzo>
           <EstrellasFondo T={T} n={50} />
-          <SolDibujo x={40} y={960} r={60} T={T} />
-          <OrbitaInclinada T={T} a={aG(T)} lon0={lonT} id="gc" />
-          <TarjetaCuenta x={60} y={350} w={330} h={380} titulo="tú" e={kprog(T, K.Cierre + 0.2, K.Cierre + 0.7, kEase.sale)}>
+          <SolDibujo x={45} y={1000} r={70} T={T} />
+          <OrbitaInclinada T={T} y={1130} R={330} rx={450} ry={140} sEst={0.28} a={aG(T)} lon0={lonT} id="gc" />
+          <TarjetaCuenta x={60} y={330} w={330} h={380} titulo="tú" e={kprog(T, K.Cierre + 0.2, K.Cierre + 0.7, kEase.sale)}>
             <SolMini x={165} y={150} r={40} />
             <TextoSvg x={165} y={330} tam={150} color={KC.yellow}>1</TextoSvg>
           </TarjetaCuenta>
-          <TarjetaCuenta x={420} y={350} w={600} h={380} titulo="en la estación" e={kprog(T, K.Cierre + 1.2, K.Cierre + 1.7, kEase.sale)}>
+          <TarjetaCuenta x={420} y={330} w={600} h={380} titulo="en la estación" e={kprog(T, K.Cierre + 1.2, K.Cierre + 1.7, kEase.sale)}>
             <TiraSoles x={86} y={110} n={16 * kprog(T, K.Cierre + 1.4, K.Cierre + 2.8)} paso={61} r={17} />
             <TextoSvg x={300} y={340} tam={130} color={KC.pink}>≈ 16</TextoSvg>
           </TarjetaCuenta>
