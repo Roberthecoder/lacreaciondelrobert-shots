@@ -171,7 +171,7 @@ video (shot, largo, libre o de Robert):
   guardadas en colecciones") y, si es de hace más de 2 años, lo dice ("en 2020…"). Si no se puede verificar, no se usa.
 - Rigor: cada dato con fuente publicada, verificada en `verificacion.md` (ver "Verificación de hechos"); citarla en el guion es opcional. Si algo es hipótesis, decirlo como hipótesis. Especies en cursiva. Ilustrar bien la morfología real (ej. esporas de *Ophiocordyceps* alargadas, no redondas).
 - Estilo y reglas detalladas: `referencias/*/CLAUDE.md`, `referencias/Paquete Shot Lab/PLANTILLA Shot Sin Voz.md` y `referencias/KIT MAESTRO Shots Micologicos/GUIA_SHOT.md`. Prohibidos los avatares 01 y 09 salvo tema de sabor.
-- Subtítulos: los coloca `cine.jsx` (chicos, sin caja, debajo del sujeto, arriba de la zona de botones de las apps).
+- Subtítulos: en modo cine no se queman en el video (`CINE_OPC.subtitulos` en `motor/kit/cine.jsx`); los pone cada app.
 
 ## Formato y piezas de cada shot
 - Antes de escribir un shot, elegir su formato narrado en `referencias-externas/RECETARIO.md` (los 6 formatos N1–N6 y el reparto por serie; los mudos M1–M5 ya no se hacen).
@@ -191,38 +191,78 @@ La primera frase (o el primer texto, en mudos) usa uno de estos 7 ganchos:
 
 **Prohibido abrir con:** un año o fecha ("En 1897…"), una lección de historia, una etimología ("Cada vez que dices…"), solo texto sin acción, o la voz entrando después del segundo 0.5. Ninguno de esos pasó de 130 K. La fecha y la historia van después, como "el estudio" (35–50 s).
 
-## Modo cine (22 nov 2026 — manda sobre «Ritmo, duración y color» donde se contradigan)
-Por qué: con ganchos y duración ya copiados de la referencia, los shots de noviembre se quedaron en ~800 vistas en YouTube
-(mediana de 44 videos; se ve 25–45 % de cada uno) y en TikTok la gente se iba en el segundo 1. La referencia 1Cell1Life
-tiene mediana de 126 mil por Short. Comparados cuadro por cuadro y con analizador de audio, la diferencia era de imagen y de sonido:
-- **Fondo oscuro siempre**, con un tinte leve del color de marca de la escena y motas que flotan. Se hace solo: cada shot carga
-  `./cine.jsx` (copia de `motor/kit/cine.jsx`) **después de todos los kits** en la línea `<x-import>` de sus `.dc.html`
-  (`motor/kit/escribir-dc.mjs` ya lo pone). Nada de fondos saturados con puntos.
-- **Un solo punto de atención.** Nada tapa al sujeto: el subtítulo va chico, sin caja, debajo del dibujo (lo coloca `cine.jsx`);
-  máximo un chip o etiqueta a la vez; las tarjetas de estudio van chicas y arriba, con la escena ya dibujada detrás.
-- **Prohibidas las láminas:** ninguna escena puede ser solo un texto, un signo de interrogación, una tarjeta o íconos sobre fondo
-  vacío. El sujeto del video (o lo que viene) siempre está en pantalla, aunque sea atenuado al fondo.
-- **La cámara nunca está quieta:** toda escena avanza hacia el sujeto (mínimo 10 %; el gancho, 20 %). En el gancho, antes del
-  segundo 3 ya se ve hacia dónde va la historia (lo que sigue entra a cuadro).
-- **Robert en pantalla: por ahora solo en la tarjeta de cierre.** El sticker durante el video tapaba el punto de atención cerca
-  de un tercio del tiempo. Es decisión de marca de Robert y está pendiente: no regresarlo ni quitarlo del cierre sin que él lo diga.
-  La tabla «Robert en pantalla» del guion no se exige mientras tanto.
-- **Música: «cama luminosa»** (`motor/kit/cama-luminosa.mjs`, la usa `pad()` del audio-kit): registro medio-agudo, do mayor,
-  100 BPM, acordes que se mueven, arpegio y un tema escrito a mano. Ya no hay cama grave ni se suben los graves
-  (`motor/mezcla.json`, `"estilo": "luminosa"`, final −10 LUFS). Medida de control con `ffmpeg`/espectro: centro de energía de la
-  mezcla con voz entre 500 y 650 Hz (la referencia: ~600; la cama vieja: ~228) y ninguna línea fija en el espectrograma.
-- **Tema:** solo temas que el espectador ya vivió en su cuerpo, su casa o su comida. Si el tema es de nicho (un proceso
-  industrial, una técnica de laboratorio), no se hace como shot diario. En YouTube los canales hermanos de la referencia con
-  temas de computación y electricidad tienen medianas de ~1 400 vistas con el mismo formato: el tema pesa tanto como la forma.
-- **Volumen de publicación:** no se sube un lote de golpe. Un shot al día como máximo, y un formato nuevo se mide con 5 videos
-  (porcentaje visto y «se quedaron viendo» en YouTube Studio) antes de producir más.
-- **Título:** sin el sufijo de serie («| Shot Fungi Mati 08»); la serie va en la descripción.
+## Modo cine — el estilo del canal (22 nov 2026). MANDA sobre cualquier otra sección o guía vieja que lo contradiga
+**Si vas a hacer un shot nuevo (en 2027 o cuando sea), esta sección es tu guía de estilo. Léela completa antes de escribir una
+línea de guion o de animación, y lee también `maestro/recetas/estilo-cine.md` (la biblia larga, con lo que se midió) y
+`maestro/recetas/pase-a-mano-cine.md` (la lista de revisión escena por escena).** Los shots de referencia hechos a mano son
+`shots/bio-04-fagos` y `shots/fun-09-amanita`: ábrelos y saca su hoja de cuadros antes de animar.
+
+**De dónde sale.** Robert quiere que sus shots tengan la calidad de 1Cell1Life (y sus canales hermanos 1Bit1Pixel, 1Volt1Amp y
+1Action1Reaction). En noviembre de 2026 los shots hechos con las reglas viejas (fondos de color con puntos, sticker de Robert un
+tercio del tiempo, subtítulo grande con cajas, cama de música grave) se quedaron en ~800 vistas por video en YouTube, se veía
+25–45 % de cada uno, y en TikTok la gente se iba en el segundo 1. 1Cell1Life tenía mediana de 126 mil vistas por Short. Se
+compararon cuadro por cuadro y con analizador de audio; todo lo de abajo sale de esa comparación. Robert aprobó el resultado
+("me hace cosquillitas al cerebro") y pidió que todo lo nuevo sea así.
+
+### 1. Tema y guion
+- **Tema:** algo que el espectador ya vivió en su cuerpo, su casa o su comida, explicado por dentro. Es lo que más pesa: con el
+  mismo formato, los canales hermanos de la referencia con temas de computación y electricidad tienen ~1 400 vistas de mediana en
+  YouTube. Un tema de nicho (un proceso industrial, una técnica de laboratorio) no se hace como shot diario.
+- **Una sola idea por video**, la que hace pensar "eso no lo sabía". Si necesitas dos ideas, son dos videos.
+- **Gancho que contradice** (los 7 ganchos de la sección «Ganchos»), dicho en el segundo 0, hablándole de "tú".
+- **Guion encadenado:** pregunta → por qué → consecuencia → dato que se recuerda. **Cada frase es un plano:** si no puedes decir
+  qué se ve mientras suena la frase, la frase se quita.
+- **Duración:** más de 61 s siempre (TikTok). La referencia dura 60–150 s; cuando el mecanismo lo pida, un shot puede durar hasta
+  ~110 s. Nunca rellenar para alcanzar una duración.
+- **Título** sin sufijo de serie; la serie va en la descripción.
+
+### 2. Imagen (lo que más diferencia hacía)
+- **Primer cuadro = una imagen cotidiana a pantalla completa**, en primer plano y reconocible (una boca mordiendo piña, un
+  mosquito sobre la piel, un dedo arrugado), que **llena el cuadro de borde a borde**. Antes del segundo 3 la cámara ya entró a
+  lo de adentro (la piel por dentro, la célula, la molécula) o ya se ve hacia dónde va la historia.
+- **El sujeto ocupa al menos la mitad del cuadro en todo momento.** Nada de un objeto chico flotando en un fondo vacío.
+- **Viaje macro → micro → macro** en un solo lugar que se transforma: una escena continua con cámara, no una serie de láminas.
+- **Fondo oscuro** (azul noche con tinte leve del color de la escena y motas que flotan) en lo microscópico y en casi todo; las
+  escenas a escala real pueden llevar su propio escenario (piel, mesa de madera, tierra), nunca un color plano con puntos.
+- **Lo microscópico se dibuja en línea con resplandor** (contornos claros o de color sobre oscuro, rellenos apagados), no con
+  rellenos planos de caricatura.
+- **Un solo punto de atención.** Nada tapa al sujeto. Máximo una etiqueta o chip a la vez; etiquetas cortas, en mayúsculas o
+  monoespaciada chica, con línea guía. **Sin subtítulo quemado y sin logo durante el video** (la referencia no los lleva;
+  interruptores en `CINE_OPC` de `motor/kit/cine.jsx`). El logo va solo en la tarjeta de cierre.
+- **Prohibidas las láminas:** ninguna escena puede ser solo un texto, un signo de interrogación, una tarjeta, una lista de chips
+  o íconos sobre fondo vacío. El sujeto (o lo que viene) siempre está en pantalla. La fecha y el estudio se cuentan con una escena
+  dibujada (la cama del paciente, la placa de Petri), con la tarjeta chica y arriba.
+- **Nada entra tarde ni se apaga antes de tiempo:** el dibujo de una escena está en pantalla desde que empieza hasta que termina.
+- **La cámara nunca está quieta** (mínimo 10 % de avance por escena; 20 % en el gancho) y **algo cambia cada 2–4 s**, atado a
+  la frase que suena. Entre escenas, disolvencia larga: nunca pantalla vacía.
+- **Robert en pantalla: solo en la tarjeta de cierre.** Su sticker durante el video tapaba el punto de atención. Es decisión de
+  marca de Robert: no regresarlo al video ni quitarlo del cierre sin que él lo diga.
+
+### 3. Sonido
+- **Música: «cama luminosa»** (`motor/kit/cama-luminosa.mjs`; la usa `pad()` de cualquier audio-kit): do mayor, 100 BPM, acordes
+  que se mueven, arpegio y un tema escrito a mano, registro medio-agudo. **Nunca una cama grave ni un zumbido fijo** (a Robert le
+  sonó a "método de tortura"). Mezcla en `motor/mezcla.json` con `"estilo": "luminosa"`: no se suben graves, final −10 LUFS.
+- **Control con números** (no se puede oír): centro de energía de la mezcla con voz entre 500 y 650 Hz (la referencia ~600; la
+  cama vieja 228) y ninguna línea horizontal fija en el espectrograma.
+- Cada cosa que pasa en pantalla tiene su efecto en el mismo cuadro, suave; la voz manda.
+
+### 4. Cómo se hace y cómo se comprueba
+- Cada shot carga `./cine.jsx` (copia de `motor/kit/cine.jsx`) al final de los kits en la línea `<x-import>` de sus `.dc.html`;
+  `motor/kit/escribir-dc.mjs` ya lo pone y `python3 motor/kit/aplicar-cine.py shots/<clave>` lo aplica a cualquier shot. Esa
+  capa da sola: fondo, cámara mínima, disolvencias, la «Pregunta» con la escena anterior detrás, cierre y sonido. **No sustituye
+  dibujar bien cada escena.**
+- **Antes de entregar cualquier shot:** (1) `NAVEGADOR=chrome python3 motor/kit/auditar-laminas.py shots/<clave>` debe decir «sin
+  láminas»; (2) sacar con `motor/preview.mjs` una hoja de dos o tres cuadros por escena y MIRARLA comparándola con la hoja de
+  `bio-04-fagos`; (3) revisar la lista de `maestro/recetas/pase-a-mano-cine.md`; (4) medir el audio como dice el punto 3.
+- **Publicación:** un shot al día como máximo; nunca un lote de golpe (en noviembre de 2026 subir 44 videos en un mes coincidió
+  con la caída de vistas). Un formato nuevo se mide con 5 videos (porcentaje visto y «se quedaron viendo» en YouTube Studio)
+  antes de producir más.
 
 ## Ritmo, duración y color (decidido 25 oct 2026 — manda sobre las guías de `referencias/`)
 Basado en el análisis de `referencias-externas/ANALISIS.md` y confirmado con `FORMULA_VIRAL.md` (en 9 de 12 canales, la mitad más vista es la más corta: los 61–62 s se quedan). Si una guía vieja dice otra cosa (p. ej. "algo nuevo cada 1–1.5 s" o "≤ 60 s" o "60.0 s exactos"), gana esta sección.
 
 **Versión narrada**
-- Duración total **de 61–62 s** (decisión de Robert: TikTok paga solo videos de *más* de 1 minuto; así lo hace @1cell1life2). Voz de ~58 s (≈160–165 palabras a ~170 palabras/min) + tarjeta de cierre de 3–4 s. Verificar con ffprobe que el total quede entre 61.0 y 62.0 s, nunca en 60 s o menos. Avisar el costo de ElevenLabs antes de generar.
+- Duración total **de más de 61 s** (decisión de Robert: TikTok paga solo videos de *más* de 1 minuto); 61–62 s por defecto y hasta ~110 s si el mecanismo lo pide (ver «Modo cine»). Voz de ~58 s (≈160–165 palabras a ~170 palabras/min) + tarjeta de cierre de 3–4 s. Verificar con ffprobe que el total quede entre 61.0 y 62.0 s, nunca en 60 s o menos. Avisar el costo de ElevenLabs antes de generar.
 - Tema: de preferencia algo que el espectador ya vivió o tiene en su cuerpo/casa, explicado por dentro. Si es lejano, el gancho lo conecta con "tú".
 - La voz arranca en el segundo 0: sin logo, saludo ni intro. Primera frase con uno de los **7 ganchos** de arriba (el preferido para "Por dentro": **"X no es Y: es Z"**), hablándole a "tú". Nunca un gancho que solo describe.
 - Algo se mueve o cambia **antes del segundo 1** (una acción, un toque, un time-lapse); nunca 2 s de imagen sin acción al inicio.

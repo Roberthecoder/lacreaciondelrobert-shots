@@ -10,6 +10,9 @@
 // Para apagarla en un shot: quitar ./cine.jsx de la línea <x-import> de su .dc.html.
 
 const CINE = { fondo: '#0a0f1c', borde: '#070a12', linea: '#dfe7ff', texto: '#f3f6ff', acento: '#ffd166' };
+// Interruptores (22 nov 2026, tras revisar tres videos de la referencia cuadro por cuadro: no llevan subtítulo quemado ni
+// logo durante el video, y sus trazos tienen un resplandor suave). Cambiar aquí afecta a todos los shots al re-renderizar.
+const CINE_OPC = { subtitulos: false, logo: false, resplandor: true };
 
 function cineMix(a, b, t) {
   const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
@@ -74,6 +77,7 @@ const CINE_MUNDOS = {};
 });
 
 function Subtitulo({ T, at, until, texto, idx, color = CINE.acento, tam = 50 }) {
+  if (!CINE_OPC.subtitulos) return null;
   const o = idx != null && window.SUBS && window.SUBS[idx]; if (o) { at = o.at; until = o.until; }
   if (T < at || T > until) return null;
   const out = kprog(T, until - 0.2, until, kEase.suave);
@@ -101,11 +105,13 @@ function RobertF() { return null; }
 // perdería. Un contorno oscuro fino la deja legible sobre cualquier color.
 if (typeof document !== 'undefined' && !document.getElementById('cine-css')) {
   const st = document.createElement('style'); st.id = 'cine-css';
-  st.textContent = 'svg text{paint-order:stroke;stroke:rgba(7,10,18,.88);stroke-width:5px;stroke-linejoin:round}';
+  st.textContent = 'svg text{paint-order:stroke;stroke:rgba(7,10,18,.88);stroke-width:5px;stroke-linejoin:round}'
+    + (CINE_OPC.resplandor ? ' [data-om-exportable-video-with-duration-secs] svg{filter:drop-shadow(0 0 7px rgba(150,195,255,.30))}' : '');
   document.head.appendChild(st);
 }
 
 function MarcaAgua({ T, num, hasta, tema, logo }) {
+  if (!CINE_OPC.logo) return null;
   logo = logo || klogo(tema);
   if (hasta != null && T >= hasta) return null;
   return <div style={{ position:'absolute', left:40, top:190, zIndex:50, opacity:.8 }}>
@@ -144,4 +150,4 @@ function FondoLunares({ color }) { return FondoMarca({ color, patron: 'puntos' }
 const BarraKit = window.BarraEscala;
 function BarraEscala(p) { return BarraKit ? BarraKit({ ...p, x: 800, y: 232 }) : null; }
 
-Object.assign(window, CINE_ESCENAS, CINE_MUNDOS, { CINE, cineMix, CineCtx, FondoMarca, FondoLunares, Sticker, RobertF, Subtitulo, Robert, MarcaAgua, TarjetaEstudio, MitoTachado, Escala, BarraEscala });
+Object.assign(window, CINE_ESCENAS, CINE_MUNDOS, { CINE, CINE_OPC, cineMix, CineCtx, FondoMarca, FondoLunares, Sticker, RobertF, Subtitulo, Robert, MarcaAgua, TarjetaEstudio, MitoTachado, Escala, BarraEscala });
