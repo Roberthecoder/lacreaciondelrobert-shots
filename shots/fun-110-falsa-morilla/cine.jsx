@@ -26,16 +26,20 @@ KC.paper = '#131b2e';
 // Escenas de «Pregunta» (el re-gancho de ~2 s): en casi todos los shots eran una lámina (un signo de interrogación sobre
 // un fondo vacío). Ahora la escena anterior se queda en pantalla, atenuada bajo un velo, y la pregunta va encima:
 // el sujeto del video nunca desaparece. CineCtx le avisa al fondo que debe ser velo y no fondo opaco.
-const CineCtx = React.createContext({ velo: false });
+const CineCtx = React.createContext({ velo: false, a: null });
 
 function FondoMarca({ color = '#1b2a44', patron = 'puntos', T }) {
   const ctx = React.useContext(CineCtx);
   const comp = typeof useComposition === 'function' ? useComposition() : null;
   if (ctx && ctx.velo) return <div style={{ position:'absolute', inset:0, background:'rgba(8,12,22,.68)' }}></div>;
+  // Disolvencia larga: el fondo de una escena nueva tarda ~1.2 s en volverse sólido, y mientras tanto la escena anterior
+  // (que dura 0.9 s más) se sigue viendo detrás. Así no hay pantalla vacía mientras entra el dibujo nuevo.
+  const tt = T != null && T !== 0 ? T : (comp ? comp.T : 0);
+  const solido = ctx && ctx.a != null && ctx.a > 0.5 ? 0.25 + 0.75 * kprog(tt, ctx.a + 0.25, ctx.a + 1.2, kEase.suave) : 1;
   const t = T != null && T !== 0 ? T : (comp ? comp.T : 0);
   const tinte = patron === 'oscuro' ? '#18233a' : cineMix(color, CINE.fondo, 0.8);
   const seed = [...String(color)].reduce((a, ch) => a + ch.charCodeAt(0), 3);
-  return <div style={{ position:'absolute', inset:0, background:`radial-gradient(ellipse 90% 60% at 50% 46%, ${tinte} 0%, ${CINE.fondo} 62%, ${CINE.borde} 100%)` }}>
+  return <div style={{ position:'absolute', inset:0, opacity:solido, background:`radial-gradient(ellipse 90% 60% at 50% 46%, ${tinte} 0%, ${CINE.fondo} 62%, ${CINE.borde} 100%)` }}>
     <Ambiente T={t} n={26} seed={seed} color="rgba(223,231,255,.2)" tam={[3, 9]} vel={16} />
   </div>;
 }
@@ -45,15 +49,18 @@ function FondoMarca({ color = '#1b2a44', patron = 'puntos', T }) {
 function cineEscena(Kit) {
   return function EscenaCine(p) {
     const comp = typeof useComposition === 'function' ? useComposition() : null;
-    let b = p.b, velo = false;
+    let b = p.b, velo = false, gancho = false;
     if (comp && comp.CUES) {
       const cs = Object.entries(comp.CUES).sort((x, y) => x[1] - y[1]);
       const iA = cs.findIndex((c) => Math.abs(c[1] - p.a) < 0.08), iB = cs.findIndex((c) => Math.abs(c[1] - p.b) < 0.08);
       if (iA >= 0 && /^Pregunta/i.test(cs[iA][0])) velo = true;
+      if (iA >= 0 && /^Gancho/i.test(cs[iA][0])) gancho = true;
       if (!velo && iB >= 0 && /^Pregunta/i.test(cs[iB][0]) && cs[iB + 1]) b = cs[iB + 1][1];
+      else if (!velo && iB >= 0 && !/^Outro/i.test(cs[iB][0])) b = p.b + 0.9;   // disolvencia larga hacia la escena que sigue
     }
-    const el = Kit({ ...p, b, zoom: Math.max(p.zoom == null ? 0.05 : p.zoom, 0.1) });
-    return el ? <CineCtx.Provider value={{ velo }}>{el}</CineCtx.Provider> : null;
+    // El gancho es donde se decide si la gente se queda: ahí la cámara entra más (20 %).
+    const el = Kit({ ...p, b, zoom: Math.max(p.zoom == null ? 0.05 : p.zoom, gancho ? 0.2 : 0.1) });
+    return el ? <CineCtx.Provider value={{ velo, a: p.a }}>{el}</CineCtx.Provider> : null;
   };
 }
 const Escena = cineEscena(window.Escena);

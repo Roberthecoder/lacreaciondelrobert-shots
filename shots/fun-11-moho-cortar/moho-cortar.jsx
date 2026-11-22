@@ -213,7 +213,7 @@ function MohoCortarShot() {
   const TIRA = ['pan', 'mermelada', 'yogur', 'jitomate', 'quesocrema'];
   const CORTA = ['quesoduro', 'zanahoria', 'pimiento'];
   const tiraAt = (i) => K.Ti + 1.9 + i * 0.5;
-  const cortaAt = (i) => K.C + 2.4 + i * 0.45;
+  const cortaAt = (i) => K.C + 0.35 + i * 0.4;   // modo cine: sin 2.4 s de pantalla vacía al entrar
   const cajaQ = kprog(T, K.C + 4.7, K.C + 5.4, kEase.sale), corteQ = kprog(T, K.C + 6.0, K.C + 7.1, kEase.suave);
   const cuchQ = kprog(T, K.C + 5.5, K.C + 6.1, kEase.sale) * (1 - kprog(T, K.C + 7.2, K.C + 7.7));
   return (
