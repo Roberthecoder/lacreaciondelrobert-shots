@@ -62,17 +62,17 @@ function Tarjeta({ T, at, until, x, y, texto, luz = 0, apaga = 0, color = KC.yel
   const fuera = until == null ? 0 : kprog(T, until, until + 0.35, kEase.suave);
   const e = kprog(T, at, at + 0.45, kEase.rebote), sc = klerp(0.5, 1, e) * (1 + 0.12 * luz) * s;
   return <div style={{ position:'absolute', left:x, top:y, zIndex:40, transform:`translate(-50%,-50%) scale(${sc}) rotate(${(x < 540 ? -3 : 3) * (1 - luz)}deg)`, opacity:kprog(T, at, at + 0.2) * (1 - 0.75 * apaga) * (1 - fuera),
-    background: luz > 0.5 ? KC.mint : color, border:`7px solid ${KC.ink}`, borderRadius:24, padding:'8px 36px 12px', font:`400 96px/1 ${KF.titulo}`, color:KC.ink, letterSpacing:'.04em',
+    background: luz > 0.5 ? KC.mint : color, border:`7px solid ${KC.ink}`, borderRadius:24, padding:'8px 36px 12px', font:`400 96px/1 ${KF.titulo}`, color:'#0b1020', letterSpacing:'.04em',
     boxShadow: `10px 10px 0 ${KC.ink}${luz > 0.05 ? `, 0 0 ${60 * luz}px ${KC.mint}` : ''}`, filter:`grayscale(${apaga})` }}>{texto}</div>;
 }
 
 // Letra que cae en el molde de la boca.
-function LetraCae({ T, at, until, x, y0, y1, letra, color }) {
+function LetraCae({ T, at, until, x, y0, y1, letra, color, tam = 130 }) {
   if (!kvisible(T, at, until)) return null;
   const p = kprog(T, at, at + 0.7, kEase.rebote), fuera = kprog(T, until, until + 0.35, kEase.suave), yy = klerp(y0, y1, p);
   return <div style={{ position:'absolute', left:x, top:yy, zIndex:41, transform:`translate(-50%,-50%) rotate(${(1 - p) * 20}deg)`,
-    width:130, height:130, borderRadius:24, background:color, opacity:1 - fuera, border:`7px solid ${KC.ink}`, boxShadow:`8px 8px 0 ${KC.ink}`,
-    display:'flex', alignItems:'center', justifyContent:'center', font:`400 100px/1 ${KF.titulo}`, color:KC.ink }}>{letra}</div>;
+    width:tam, height:tam, borderRadius:tam * 0.18, background:color, opacity:1 - fuera, border:`7px solid ${KC.ink}`, boxShadow:`8px 8px 0 ${KC.ink}`,
+    display:'flex', alignItems:'center', justifyContent:'center', font:`400 ${tam * 0.77}px/1 ${KF.titulo}`, color:'#0b1020' }}>{letra}</div>;
 }
 
 // Persona lectora de labios (cabeza con lentes y lupa).
@@ -117,7 +117,7 @@ function FilaPalabras({ T, at, until, y, etiqueta, n, color, texto }) {
     </div>
     <div style={{ display:'flex', gap:10 }}>
       {Array.from({ length: 12 }, (_, i) => { const f = kclamp(g - i, 0, 1);
-        return <div key={i} style={{ flex:1, height:64, borderRadius:12, border:`5px solid ${KC.ink}`, background:`linear-gradient(90deg, ${color} ${f * 100}%, #fffdf6 ${f * 100}%)` }}></div>; })}
+        return <div key={i} style={{ flex:1, height:64, borderRadius:12, border:`5px solid ${KC.ink}`, background:`linear-gradient(90deg, ${color} ${f * 100}%, rgba(223,231,255,.12) ${f * 100}%)` }}></div>; })}
     </div>
   </div>;
 }
@@ -203,7 +203,7 @@ function Marca({ T, at, until, x, y, ok }) {
   const e = kprog(T, at, at + 0.4, kEase.rebote);
   return <div style={{ position:'absolute', left:x, top:y, zIndex:43, transform:`translate(-50%,-50%) scale(${e * (1 - kprog(T, until, until + 0.35))})`, width:130, height:130, borderRadius:65,
     background: ok ? KC.mint : KC.red, border:`7px solid ${KC.ink}`, boxShadow:`8px 8px 0 ${KC.ink}`, display:'flex', alignItems:'center', justifyContent:'center',
-    font:`900 80px/1 ${KF.texto}`, color: ok ? KC.ink : KC.texto }}>{ok ? '✔' : '✗'}</div>;
+    font:`900 80px/1 ${KF.texto}`, color: ok ? '#0b1020' : KC.texto }}>{ok ? '✔' : '✗'}</div>;
 }
 
 // Globo de texto punteado (posibilidad, no hecho).
@@ -211,7 +211,7 @@ function Globo({ T, at, until, x, y, texto }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'pop'), n = Math.floor(texto.length * kprog(T, at + 0.3, at + 1.4));
   return <div style={{ position:'absolute', left:x, top:y, zIndex:42, transform:`translate(-50%,-50%) scale(${e.s})`, opacity:e.o,
-    background:'rgba(255,255,255,.92)', border:`6px dashed ${KC.ink}`, borderRadius:40, padding:'18px 40px', font:`900 54px ${KF.texto}`, color:KC.ink, whiteSpace:'nowrap' }}>
+    background:'rgba(255,255,255,.92)', border:'6px dashed #0b1020', borderRadius:40, padding:'18px 44px', font:`900 62px ${KF.texto}`, color:'#0b1020', whiteSpace:'nowrap' }}>
     {texto.slice(0, n)}<span style={{ opacity: (T % 0.8) < 0.4 ? 1 : 0 }}>|</span>
   </div>;
 }
@@ -222,7 +222,7 @@ function FraseHueco({ T, at, llena, x = KW / 2, y, antes, despues, palabra }) {
   const e = kprog(T, at, at + 0.45, kEase.rebote), f = kprog(T, llena, llena + 0.4, kEase.sale);
   return <div style={{ position:'absolute', left:x, top:y, zIndex:42, transform:`translate(-50%,-50%) scale(${klerp(0.6, 1, e)})`, opacity:kprog(T, at, at + 0.2),
     background:KC.paper, border:`7px solid ${KC.ink}`, borderRadius:26, padding:'18px 32px', boxShadow:`12px 12px 0 ${KC.ink}`, font:`900 50px ${KF.texto}`, color:KC.ink, whiteSpace:'nowrap' }}>
-    {antes} <span style={{ display:'inline-block', minWidth:170, textAlign:'center', borderBottom:`6px solid ${KC.ink}`, background: f > 0 ? `rgba(47,224,168,${f})` : 'transparent', borderRadius:8 }}>{f > 0.3 ? palabra : ' '}</span> {despues}
+    {antes} <span style={{ display:'inline-block', minWidth:170, textAlign:'center', borderBottom:`6px solid ${KC.ink}`, background: f > 0 ? `rgba(47,224,168,${f})` : 'transparent', color: f > 0.3 ? '#0b1020' : KC.ink, borderRadius:8 }}>{f > 0.3 ? palabra : ' '}</span> {despues}
   </div>;
 }
 
@@ -238,74 +238,74 @@ function LeeLabios() {
       {/* 1 · gancho: unos labios sin sonido, ¿peso o beso? */}
       <Escena T={T} a={K.G} b={K.V}>
         <FondoLunares color={KC.pink} />
-        {svg(<VideoBoca x={360} y={820} s={0.76} T={T} abre={silaba(T + 1.2)} id="g" />)}
+        {svg(<VideoBoca x={540} y={780} s={1.2} T={T} abre={silaba(T + 1.2)} id="g" />)}
       </Escena>
-      <Tarjeta T={T} at={K.G + 0.5} x={280} y={1110} texto="PESO" color={KC.yellow} until={K.V - 0.3} />
-      <Tarjeta T={T} at={K.G + 0.9} x={800} y={1110} texto="BESO" color={KC.cyan} until={K.V - 0.3} />
-      {T >= K.G + 1.3 && T < K.V + 0.3 && <div style={{ position:'absolute', left:540, top:1110 - Math.abs(Math.sin(T * 5)) * 40, zIndex:41, transform:'translate(-50%,-50%)',
+      <Tarjeta T={T} at={K.G + 0.5} x={290} y={1340} texto="PESO" color={KC.yellow} until={K.V - 0.3} />
+      <Tarjeta T={T} at={K.G + 0.9} x={790} y={1340} texto="BESO" color={KC.cyan} until={K.V - 0.3} />
+      {T >= K.G + 1.3 && T < K.V + 0.3 && <div style={{ position:'absolute', left:540, top:1340 - Math.abs(Math.sin(T * 5)) * 40, zIndex:41, transform:'translate(-50%,-50%)',
         font:`400 120px ${KF.titulo}`, color:KC.yellow, WebkitTextStroke:`5px ${KC.ink}`, opacity:kprog(T, K.G + 1.3, K.G + 1.5) * (1 - kprog(T, K.V - 0.2, K.V + 0.3)) }}>?</div>}
-      <Chip T={T} at={K.G + 3.4} until={K.V - 0.2} texto="P y B: la misma boca" x={360} y={560} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.G + 3.4} until={K.V - 0.2} texto="P y B: la misma boca" x={540} y={300} tam={42} borde={KC.ink} />
 
       {/* 2 · visemas: P, B y M caen en el mismo molde */}
       <Escena T={T} a={K.V} b={K.E}>
         <FondoLunares color={KC.yellow} />
-        {svg(<g>
+        {svg(<g transform="translate(540 900) scale(1.5) translate(-430 -850)">
           <rect x={150} y={700} width={560} height={300} rx={40} fill="#ffd9c4" stroke={KC.ink} strokeWidth={9} />
           <Labios x={430} y={830} s={1.2} abre={0} id="vis" />
         </g>)}
       </Escena>
-      <LetraCae T={T} at={K.V + 0.4} x={290} y0={-100} y1={560} until={K.E - 0.3} letra="P" color={KC.pink} />
-      <LetraCae T={T} at={K.V + 0.8} x={430} y0={-100} y1={560} until={K.E - 0.3} letra="B" color={KC.cyan} />
-      <LetraCae T={T} at={K.V + 1.2} x={570} y0={-100} y1={560} until={K.E - 0.3} letra="M" color={KC.mint} />
-      <Chip T={T} at={K.V + 1.9} until={K.E - 0.2} texto="1 visema = labios juntos" x={430} y={1080} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.V + 2.6} until={K.E - 0.2} texto="visema: la forma visible de un sonido" x={540} y={1160} tam={30} borde={KC.gold} />
+      <LetraCae T={T} at={K.V + 0.4} x={330} y0={-120} y1={500} tam={170} until={K.E - 0.3} letra="P" color={KC.pink} />
+      <LetraCae T={T} at={K.V + 0.8} x={540} y0={-120} y1={500} tam={170} until={K.E - 0.3} letra="B" color={KC.cyan} />
+      <LetraCae T={T} at={K.V + 1.2} x={750} y0={-120} y1={500} tam={170} until={K.E - 0.3} letra="M" color={KC.mint} />
+      <Chip T={T} at={K.V + 1.9} until={K.E - 0.2} texto="1 visema = labios juntos" x={540} y={1260} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.V + 2.6} until={K.E - 0.2} texto="visema: la forma visible de un sonido" x={540} y={1360} tam={34} borde={KC.gold} />
 
       {/* 3 · el experto contra la IA de 2017 */}
       <Escena T={T} a={K.E} b={K.P}>
         <FondoLunares color={KC.lilac} />
-        {svg(<g opacity={kprog(T, K.E + 3.0, K.E + 3.5)}>
-          <Tele x={250} y={560} s={0.85} T={T} />
-          <Lector x={520} y={580} s={0.75} T={T} />
+        {svg(<g>
+          <Tele x={345} y={800} s={1.5} T={T} />
+          <Lector x={800} y={830} s={1.3} T={T} />
         </g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2017" quien="Oxford + DeepMind" revista="Chung, Senior, Vinyals y Zisserman · CVPR" y={640} />
-      <Chip T={T} at={K.E + 1.4} until={K.E + 2.9} texto="200 videos de la BBC · sin sonido" y={900} tam={34} borde={KC.ink} />
-      <FilaPalabras T={T} at={K.E + 3.8} until={K.P - 0.2} y={820} etiqueta="lector profesional" n={2.8} color={KC.orange} texto="menos de ¼" />
-      <FilaPalabras T={T} at={E2} until={K.P - 0.2} y={1010} etiqueta="IA (solo labios)" n={6} color={KC.cyan} texto="½" />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.9} anio="2017" quien="Oxford + DeepMind" revista="Chung, Senior, Vinyals y Zisserman · CVPR" y={320} />
+      <Chip T={T} at={K.E + 1.4} until={K.E + 2.9} texto="200 videos de la BBC · sin sonido" y={1230} tam={38} borde={KC.ink} />
+      <FilaPalabras T={T} at={K.E + 3.8} until={K.P - 0.2} y={1180} etiqueta="lector profesional" n={2.8} color={KC.orange} texto="menos de ¼" />
+      <FilaPalabras T={T} at={E2} until={K.P - 0.2} y={1360} etiqueta="IA (solo labios)" n={6} color={KC.cyan} texto="½" />
 
       {/* 4 · pregunta: ¿y con muchas más bocas? */}
       <Escena T={T} a={K.P} b={K.S} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<g>{Array.from({ length: 30 }, (_, i) => { const c = i % 5, r = Math.floor(i / 5), t0 = K.P + 0.1 + i * 0.05;
+        {svg(<g transform="translate(50 440) scale(1.4) translate(-30 -330)">{Array.from({ length: 30 }, (_, i) => { const c = i % 5, r = Math.floor(i / 5), t0 = K.P + 0.1 + i * 0.05;
           return <g key={i} opacity={kprog(T, t0, t0 + 0.2)}><rect x={30 + c * 105} y={330 + r * 125} width={95} height={95} rx={14} fill="#ffd9c4" stroke={KC.ink} strokeWidth={4} />
             <Labios x={77 + c * 105} y={376 + r * 125} s={0.22} abre={silaba(T + i * 0.31, 1.2)} id={`pq${i}`} /></g>; })}</g>)}
-        {svg(<text x={760} y={560} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={10} transform={`rotate(${Math.sin(T * 3) * 6} 760 460)`}>?</text>)}
+        {svg(<text x={925} y={1080} textAnchor="middle" style={{ font:`400 400px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 925 940)`}>?</text>)}
       </Escena>
 
       {/* 5 · por dentro de la máquina: 3,886 horas de YouTube */}
       <Escena T={T} a={K.S} b={K.D}>
         <FondoCircuito T={T} />
-        <TiraBocas T={T} y={1080} o={kprog(T, K.S + 2.4, K.S + 2.9)} />
-        <RedNeuronal T={T} x={170} y={560} ancho={760} alto={400} onda={(T * 0.7) % 1} o={kprog(T, K.S + 2.6, K.S + 3.2)} />
+        <TiraBocas T={T} y={1330} o={klerp(0.55, 1, kprog(T, K.S + 2.4, K.S + 2.9))} />
+        <RedNeuronal T={T} x={110} y={600} ancho={860} alto={580} onda={(T * 0.7) % 1} o={klerp(0.5, 1, kprog(T, K.S + 2.6, K.S + 3.2))} />
       </Escena>
-      <TarjetaEstudio T={T} at={K.S + 0.5} until={K.S + 2.5} anio="2018" quien="DeepMind y Google" revista="Shillingford et al. · arXiv:1807.05162" y={700} />
-      <NumeroGigante T={T} at={K.S + 2.8} until={K.D - 0.2} valor={3886} dur={1.6} sufijo=" h" etiqueta="horas de YouTube" x={600} y={430} tam={150} color={KC.yellow} />
-      <Chip T={T} at={K.S + 3.6} until={K.D - 0.2} texto="caras hablando · en inglés" y={1190} tam={32} borde={KC.cyan} />
+      <TarjetaEstudio T={T} at={K.S + 0.5} until={K.S + 2.5} anio="2018" quien="DeepMind y Google" revista="Shillingford et al. · arXiv:1807.05162" y={330} />
+      <NumeroGigante T={T} at={K.S + 2.8} until={K.D - 0.2} valor={3886} dur={1.6} sufijo=" h" etiqueta="horas de YouTube" x={540} y={400} tam={180} color={KC.yellow} />
+      <Chip T={T} at={K.S + 3.6} until={K.D - 0.2} texto="caras hablando · en inglés" y={1490} tam={36} borde={KC.cyan} />
 
       {/* 6 · el duelo: lectores profesionales contra la IA */}
       <Escena T={T} a={K.D} b={K.Vz}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g opacity={1 - kprog(T, D2 - 0.3, D2 + 0.2)}>
-          <rect x={60} y={620} width={960} height={520} rx={30} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={8} />
-          <Lector x={290} y={820} s={0.95} T={T} lupa={false} />
-          <Robotito x={790} y={860} s={1.0} T={T} cara="seguro" />
-          <text x={540} y={900} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6}>VS</text>
+        {svg(<g opacity={klerp(1, 0.2, kprog(T, D2 - 0.3, D2 + 0.2))}>
+          <rect x={60} y={640} width={960} height={680} rx={30} fill="rgba(223,231,255,.08)" stroke={KC.ink} strokeWidth={8} />
+          <Lector x={290} y={900} s={1.25} T={T} lupa={false} />
+          <Robotito x={790} y={960} s={1.3} T={T} cara="seguro" />
+          <text x={540} y={1010} textAnchor="middle" style={{ font:`400 160px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6}>VS</text>
         </g>)}
       </Escena>
-      <Chip T={T} at={K.D + 1.2} until={D2 - 0.4} texto={`▶ ver otra vez: ${Math.min(10, 1 + Math.floor(kprog(T, K.D + 1.4, K.D + 4.2) * 9.99))} / 10`} x={300} y={1090} tam={34} mono borde={KC.ink} />
-      <Chip T={T} at={K.D + 2.0} until={D2 - 0.4} texto="solo la boca" x={790} y={1090} tam={34} borde={KC.ink} />
-      <Chip T={T} at={D2} until={K.Vz - 0.2} texto="error de palabras · menos es mejor" x={380} y={680} tam={32} borde={KC.ink} />
-      <BarrasError T={T} at={D2 + 0.2} until={K.Vz - 0.2} top={740} filas={[
+      <Chip T={T} at={K.D + 1.2} until={D2 - 0.4} texto={`▶ ver otra vez: ${Math.min(10, 1 + Math.floor(kprog(T, K.D + 1.4, K.D + 4.2) * 9.99))} / 10`} x={325} y={1260} tam={31} mono borde={KC.ink} />
+      <Chip T={T} at={K.D + 2.0} until={D2 - 0.4} texto="solo la boca" x={790} y={1260} tam={36} borde={KC.ink} />
+      <Chip T={T} at={D2} until={K.Vz - 0.2} texto="error de palabras · menos es mejor" x={400} y={700} tam={34} borde={KC.ink} />
+      <BarrasError T={T} at={D2 + 0.2} until={K.Vz - 0.2} top={780} filas={[
         { valor: 92.9, etiqueta: 'profesionales sin contexto', color: KC.orange, at: D2 + 0.3 },
         { valor: 86.4, etiqueta: 'profesionales con contexto', color: KC.coral, at: D2 + 1.0 },
         { valor: 40.9, etiqueta: 'la IA (2018)', color: KC.mint, at: D2 + 3.6 }]} />
@@ -313,15 +313,15 @@ function LeeLabios() {
       {/* 7 · una de sus metas: ayudar a quien perdió la voz (posibilidad) */}
       <Escena T={T} a={K.Vz} b={K.R}>
         <FondoLunares color={KC.mint} />
-        {svg(<Paciente x={600} y={920} s={1.0} T={T} habla={T > K.Vz + 1.4 ? silaba(T, 1.4) : 0} />)}
+        {svg(<Paciente x={570} y={1050} s={1.12} T={T} habla={T > K.Vz + 1.4 ? silaba(T, 1.4) : 0} />)}
       </Escena>
-      <Globo T={T} at={K.Vz + 1.6} until={K.R - 0.2} x={480} y={640} texto="tengo sed" />
-      <Chip T={T} at={K.Vz + 2.4} until={K.R - 0.2} texto="podría ayudar · ejemplo ilustrativo" y={1160} tam={32} borde={KC.ink} />
+      <Globo T={T} at={K.Vz + 1.6} until={K.R - 0.2} x={500} y={770} texto="tengo sed" />
+      <Chip T={T} at={K.Vz + 2.4} until={K.R - 0.2} texto="podría ayudar · ejemplo ilustrativo" y={1480} tam={36} borde={KC.ink} />
 
       {/* 8 · ¿y espiar con cámaras? */}
       <Escena T={T} a={K.R} b={K.C}>
         <FondoLunares color={KC.lilac} />
-        {svg(<g>
+        {svg(<g transform="translate(540 960) scale(1.15) translate(-580 -720)">
           <CamaraCalle x={760} y={430} s={1} T={T} />
           <path d="M 640 470 L 180 980 L 470 1010 Z" fill="rgba(255,255,255,.28)" />
           <Personita x={320} y={900} s={0.55} blur={4} id="lej" />
@@ -331,20 +331,20 @@ function LeeLabios() {
           </g>
         </g>)}
       </Escena>
-      <Marca T={T} at={K.R + 1.4} x={320} y={720} ok={false} until={K.C - 0.3} />
-      <Marca T={T} at={K.R + 3.0} x={960} y={700} ok until={K.C - 0.3} />
-      <Chip T={T} at={K.R + 3.2} until={K.C - 0.2} texto="de frente" x={200} y={1130} tam={34} borde={KC.mint} />
-      <Chip T={T} at={K.R + 3.6} until={K.C - 0.2} texto="de cerca" x={500} y={1130} tam={34} borde={KC.mint} />
-      <Chip T={T} at={K.R + 4.0} until={K.C - 0.2} texto="buen video" x={820} y={1130} tam={34} borde={KC.mint} />
+      <Marca T={T} at={K.R + 1.4} x={241} y={985} ok={false} until={K.C - 0.3} />
+      <Marca T={T} at={K.R + 3.0} x={985} y={925} ok until={K.C - 0.3} />
+      <Chip T={T} at={K.R + 3.2} until={K.C - 0.2} texto="de frente" x={215} y={1430} tam={38} borde={KC.mint} />
+      <Chip T={T} at={K.R + 3.6} until={K.C - 0.2} texto="de cerca" x={530} y={1430} tam={38} borde={KC.mint} />
+      <Chip T={T} at={K.R + 4.0} until={K.C - 0.2} texto="buen video" x={850} y={1430} tam={38} borde={KC.mint} />
 
       {/* 9 · cierre: los mismos labios; el contexto decide */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.pink} />
-        {svg(<VideoBoca x={360} y={820} s={0.76} T={T} abre={silaba(T + 1.2)} id="c" />)}
+        {svg(<VideoBoca x={540} y={780} s={1.2} T={T} abre={silaba(T + 1.2)} id="c" />)}
       </Escena>
-      <Tarjeta T={T} at={K.C + 0.3} x={280} y={1110} texto="PESO" color={KC.yellow} luz={luzPeso} />
-      <Tarjeta T={T} at={K.C + 0.5} x={800} y={1110} texto="BESO" color={KC.cyan} apaga={luzPeso} />
-      <FraseHueco T={T} at={K.C + 2.8} llena={K.C + 4.0} y={500} antes="¿Cuál es el" despues="de tu maleta?" palabra="peso" />
+      <Tarjeta T={T} at={K.C + 0.3} x={290} y={1340} texto="PESO" color={KC.yellow} luz={luzPeso} />
+      <Tarjeta T={T} at={K.C + 0.5} x={790} y={1340} texto="BESO" color={KC.cyan} apaga={luzPeso} />
+      <FraseHueco T={T} at={K.C + 2.8} llena={K.C + 4.0} y={310} antes="¿Cuál es el" despues="de tu maleta?" palabra="peso" />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.V - 0.1} texto="¿«Peso» o *«beso»?*" />
