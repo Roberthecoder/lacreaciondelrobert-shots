@@ -158,7 +158,8 @@ function HuellaShot() {
   // escalera: posiciones A (5 filas) → B (7 filas, entra chocolate y cordero)
   const pB = kprog(T, K.Ch - 0.2, K.Ch + 0.8, kEase.suave);
   const ordA = { res: 0, queso: 1, cerdo: 2, pollo: 3, leg: 4 }, ordB = { res: 0, choc: 1, cord: 2, queso: 3, cerdo: 4, pollo: 5, leg: 6 };
-  const fy = (k) => klerp(720 + (ordA[k] != null ? ordA[k] : 1) * 125, 690 + ordB[k] * 100, pB);
+  // encuadre: escalera bajada para que el conjunto quede centrado (A: 860–1360 · B: 800–1400)
+  const fy = (k) => klerp(860 + (ordA[k] != null ? ordA[k] : 1) * 125, 800 + ordB[k] * 100, pB);
   const filas = (enChoc) => <>
     <FilaBarra T={T} at={enChoc ? -10 : K.R + 0.3} y={fy('res')} tipo="res" nombre="res" valor={HC.res} color="#d6402f" resalta={enChoc ? 0 : kprog(T, K.R + 0.3, K.R + 0.8) * (1 - kprog(T, K.F, K.F + 0.4))} />
     <FilaBarra T={T} at={enChoc ? -10 : K.F + 0.2} y={fy('leg')} tipo="leg" nombre="legumbres" valor={HC.leg} color="#6b2f2f" resalta={enChoc ? 0 : kprog(T, K.F + 0.2, K.F + 0.6) * (1 - kprog(T, K.E, K.E + 0.4))} />
@@ -206,8 +207,8 @@ function HuellaShot() {
         <FondoLunares color={KC.yellow} />
         {svg(<>
           {/* pase a mano: mientras solo hay una o dos barras, el taco del que se habla llena el hueco; se va cuando entran las demás filas */}
-          <g opacity={kprog(T, K.R + 0.1, K.R + 0.5) * (1 - kprog(T, K.F, K.F + 0.4))}><Taco x={540} y={975} s={1.5} tipo="res" T={T} /></g>
-          <g opacity={kprog(T, K.F, K.F + 0.4) * (1 - kprog(T, K.E, K.E + 0.4))}><Taco x={540} y={975} s={1.5} tipo="frijol" T={T} /></g>
+          <g opacity={kprog(T, K.R + 0.1, K.R + 0.5) * (1 - kprog(T, K.F, K.F + 0.4))}><Taco x={540} y={1130} s={1.8} tipo="res" T={T} /></g>
+          <g opacity={kprog(T, K.F, K.F + 0.4) * (1 - kprog(T, K.E, K.E + 0.4))}><Taco x={540} y={1130} s={1.8} tipo="frijol" T={T} /></g>
           {filas(false)}</>)}
       </Escena>
       {/* 5 · pregunta: ¿y si viene del rancho de al lado? */}
@@ -241,7 +242,7 @@ function HuellaShot() {
       <Escena T={T} a={K.Ch} b={K.I} zoom={0.02}>
         <FondoLunares color={KC.yellow} />
         {svg(<>{filas(true)}
-          <g transform={`translate(330 420) rotate(${-8 + 3 * Math.sin(T * 2)}) scale(1.5)`} opacity={kprog(T, K.Ch + 1.6, K.Ch + 2.0)}>
+          <g transform={`translate(330 600) rotate(${-8 + 3 * Math.sin(T * 2)}) scale(1.5)`} opacity={kprog(T, K.Ch + 1.6, K.Ch + 2.0)}>
             <rect x={-150} y={-80} width={300} height={160} rx={14} fill="#5a2f1b" stroke={KC.ink} strokeWidth={8} />
             {[-75, 0, 75].map((a) => <line key={a} x1={a} y1={-80} x2={a} y2={80} stroke="#3a1d10" strokeWidth={6} />)}
             <line x1={-150} y1={0} x2={150} y2={0} stroke="#3a1d10" strokeWidth={6} />
@@ -254,13 +255,13 @@ function HuellaShot() {
         {svg(<>
           {dias.map((d, i) => { const x = 90 + i * 132; const sw = i === 6 ? cambio : 0;
             return <g key={i} opacity={kprog(T, K.I + 0.1 + i * 0.12, K.I + 0.4 + i * 0.12)}>
-              <rect x={x} y={620} width={116} height={240} rx={16} fill="#fff" stroke={KC.ink} strokeWidth={6} />
-              <rect x={x} y={620} width={116} height={54} rx={12} fill="#d6402f" stroke={KC.ink} strokeWidth={6} />
-              <text x={x + 58} y={660} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill="#fff">{d}</text>
-              <Icono tipo="res" x={x + 58} y={768} s={1.55} />
-              {sw > 0 && <><rect x={x + 3} y={677} width={110 * sw} height={180} fill="#c7f5d9" /><g opacity={kclamp(sw * 2, 0, 1)}><Icono tipo="leg" x={x + 42} y={730} s={1.05} /><Icono tipo="huevo" x={x + 66} y={806} s={0.95} /></g></>}
+              <rect x={x} y={770} width={116} height={240} rx={16} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+              <rect x={x} y={770} width={116} height={54} rx={12} fill="#d6402f" stroke={KC.ink} strokeWidth={6} />
+              <text x={x + 58} y={810} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill="#fff">{d}</text>
+              <Icono tipo="res" x={x + 58} y={918} s={1.55} />
+              {sw > 0 && <><rect x={x + 3} y={827} width={110 * sw} height={180} fill="#c7f5d9" /><g opacity={kclamp(sw * 2, 0, 1)}><Icono tipo="leg" x={x + 42} y={880} s={1.05} /><Icono tipo="huevo" x={x + 66} y={956} s={0.95} /></g></>}
             </g>; })}
-          <g opacity={kprog(T, K.I + 3.8, K.I + 4.3)} transform="translate(540 1070) scale(1.05) translate(-540 -1000)">
+          <g opacity={kprog(T, K.I + 3.8, K.I + 4.3)} transform="translate(540 1200) scale(1.05) translate(-540 -1000)">
             <g transform={`translate(540 1000) rotate(${incl})`}>
               <rect x={-380} y={-10} width={760} height={20} rx={10} fill="#7f8a99" stroke={KC.ink} strokeWidth={5} />
               <g transform={`translate(-330 0) rotate(${-incl})`}><line y1={0} y2={70} stroke={KC.ink} strokeWidth={5} /><path d="M -110 70 L 110 70 Q 100 120 0 120 Q -100 120 -110 70 Z" fill="#f2d48a" stroke={KC.ink} strokeWidth={6} />
@@ -282,21 +283,21 @@ function HuellaShot() {
       <NumeroGigante T={T} at={K.G + 0.15} until={K.R - 0.2} valor={55} dur={1.4} prefijo="×" etiqueta="kilo por kilo" x={285} y={470} tam={190} color={KC.yellow} />
       <Chip T={T} at={K.G + 0.6} until={K.R - 0.2} texto="TÚ · bistec" x={275} y={1470} tam={34} borde={KC.red} />
       <Chip T={T} at={K.G + 1.0} until={K.R - 0.2} texto="TU AMIGO · frijol" x={805} y={1470} tam={34} borde={KC.leaf} />
-      <NumeroGigante T={T} at={K.R + 0.4} until={K.F - 0.15} valor={99.5} dec={1} dur={1.0} sufijo=" kg" etiqueta="1 kg de res (promedio):" x={330} y={520} tam={150} color={KC.red} />
-      <NumeroGigante T={T} at={K.F + 0.2} until={K.E - 0.15} valor={1.8} dec={1} dur={0.8} sufijo=" kg" etiqueta="1 kg de legumbres secas:" x={330} y={520} tam={150} color={KC.mint} />
-      <Chip T={T} at={K.R + 0.6} until={K.P - 0.2} texto="kg de CO₂e por kilo · promedio mundial" x={540} y={1440} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.E + 0.4} until={K.P - 0.2} texto="queso · cerdo · pollo" x={330} y={540} tam={36} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.R + 0.4} until={K.F - 0.15} valor={99.5} dec={1} dur={1.0} sufijo=" kg" etiqueta="1 kg de res (promedio):" x={330} y={640} tam={150} color={KC.red} />
+      <NumeroGigante T={T} at={K.F + 0.2} until={K.E - 0.15} valor={1.8} dec={1} dur={0.8} sufijo=" kg" etiqueta="1 kg de legumbres secas:" x={330} y={640} tam={150} color={KC.mint} />
+      <Chip T={T} at={K.R + 0.6} until={K.P - 0.2} texto="kg de CO₂e por kilo · promedio mundial" x={540} y={1495} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.E + 0.4} until={K.P - 0.2} texto="queso · cerdo · pollo" x={330} y={700} tam={36} borde={KC.ink} />
       <Chip T={T} at={K.P + 0.3} until={K.Tr - 0.2} texto="¿y si viene de al lado?" x={540} y={1440} tam={36} borde={KC.yellow} />
       <Chip T={T} at={K.Tr + 1.9} until={K.Es - 0.2} texto="casi da igual de dónde viene" x={540} y={1440} tam={32} borde={KC.pink} />
       <Etq T={T} at={K.Tr + 4.0} until={K.Es - 0.2} x={245} y={520} texto="metano" tam={34} color={KC.ink} lado="der" />
       <Etq T={T} at={K.Tr + 4.6} until={K.Es - 0.2} x={590} y={850} texto="tierra desmontada" tam={28} color={KC.ink} lado="der" />
       <TarjetaEstudio T={T} at={K.Es + 0.3} until={K.Ch - 0.2} anio="2018" quien="Poore y Nemecek" revista="Science · Oxford y Suiza" x={330} y={430} />
       {T < K.Ch - 0.2 && <Contador T={T} at={K.Es + 2.0} desde={0} hasta={38700} dur={3.5} sufijo=" granjas" x={540} y={1450} tam={64} color={KC.texto} />}
-      <Chip T={T} at={K.Ch + 2.4} until={K.I - 0.2} texto="en el promedio: segundo lugar" x={540} y={1440} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Ch + 3.8} until={K.I - 0.2} x={580} y={420} texto="selva talada para cacao" tam={28} color={KC.ink} lado="der" />
-      <Chip T={T} at={K.I + 0.4} until={K.C - 0.2} texto="carne roja y lácteos → pollo, huevo o vegetal" x={540} y={540} tam={30} borde={KC.red} />
-      <Etq T={T} at={K.I + 3.2} until={K.C - 0.2} x={918} y={905} texto="menos de 1 día" tam={26} color={KC.ink} lado="izq" />
-      <Chip T={T} at={K.I + 5.4} until={K.C - 0.2} texto="Weber y Matthews · 2008 · EE. UU." x={540} y={1440} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Ch + 2.4} until={K.I - 0.2} texto="en el promedio: segundo lugar" x={540} y={1500} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Ch + 3.8} until={K.I - 0.2} x={580} y={600} texto="selva talada para cacao" tam={28} color={KC.ink} lado="der" />
+      <Chip T={T} at={K.I + 0.4} until={K.C - 0.2} texto="carne roja y lácteos → pollo, huevo o vegetal" x={540} y={690} tam={30} borde={KC.red} />
+      <Etq T={T} at={K.I + 3.2} until={K.C - 0.2} x={918} y={1055} texto="menos de 1 día" tam={26} color={KC.ink} lado="izq" />
+      <Chip T={T} at={K.I + 5.4} until={K.C - 0.2} texto="Weber y Matthews · 2008 · EE. UU." x={540} y={1500} tam={28} borde={KC.ink} />
       <MitoTachado T={T} at={K.C + 0.3} tacharEn={K.C + 1.6} until={K.Ou - 0.1} texto="¿de dónde viene?" x={540} y={1465} tam={40} />
       <Chip T={T} at={K.C + 2.0} until={K.Ou - 0.1} texto="¿de qué es?" x={540} y={1560} tam={46} borde={KC.yellow} />
 
