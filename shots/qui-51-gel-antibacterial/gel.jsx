@@ -150,6 +150,9 @@ function Gel() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Q: CUES.Que, P: CUES.Proteinas, A: CUES.Agua, F: CUES.Frotar, Pr: CUES.Pregunta, N: CUES.No, E: CUES.Estudio, Gr: CUES.Grasa, M: CUES.Mexico, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4.2;
+  // pase a mano (cine): la mano del gancho y del cierre va 1.3× más grande (palma s = 1.5 con centro en 500, 1280).
+  // Barra de escala: palma de ~8 cm de ancho = 250 × 1.5 px, o sea 4.7 px por mm.
+  const GM = 'translate(-46 -20) scale(1.3)', PX_MM_MANO = 250 * 1.5 / 80;
   // gancho: aprieta el dosificador y cae la gota
   const aprieta = T < K.G + 0.3 ? kprog(T, K.G - 0.1, K.G + 0.3, kEase.sale) : 1 - kprog(T, K.G + 0.6, K.G + 0.9);
   const cae = kprog(T, K.G + 0.25, K.G + 0.7, (p) => p * p);
@@ -167,78 +170,78 @@ function Gel() {
   // no: rebotes del alcohol
   const rebote = (t0, x0, y0, x1, y1) => { const u = (T - t0) / 0.55; if (u < 0) return null; if (u > 2.2) return null;
     return u <= 1 ? [klerp(x0, x1, u * u), klerp(y0, y1, u * u), u] : [klerp(x1, x0 + (x0 - x1) * 0.2, (u - 1) / 1.2), klerp(y1, y0 - 120, (u - 1) / 1.2), u]; };
-  const golpes = [[K.N + 1.2, 80, 1200, 230, 960], [K.N + 1.6, 960, 1200, 700, 1000], [K.N + 2.1, 300, 600, 300, 760], [K.N + 2.5, 1000, 640, 860, 780], [K.N + 2.9, 60, 880, 170, 880], [K.N + 3.3, 1020, 1100, 860, 1000]];
+  const golpes = [[K.N + 1.2, 40, 1420, 185, 1090], [K.N + 1.6, 1040, 1440, 643, 1147], [K.N + 2.1, 290, 480, 290, 790], [K.N + 2.5, 1060, 560, 878, 824], [K.N + 2.9, -40, 900, 95, 970], [K.N + 3.3, 1100, 1300, 878, 1147]];
   const golpeV = golpes.filter((g, i) => i % 2 === 0).reduce((a, g) => a + Math.max(0, 1 - Math.abs(T - g[0] - 0.55) * 6), 0);
   // estudio
-  const yemas = kprog(T, K.E + 3.2, K.E + 3.8, kEase.sale) * (1 - kprog(T, K.E + 5.0, K.E + 5.5));
   const barras = [['gel 62 % etanol', 0.22, K.E + 5.6, '#ff6b5a', false], ['solo agua', 1, K.E + 7.0, '#7fc8ff', true], ['jabón', 0.87, K.E + 7.7, KC.mint, true]];
   // méxico
   const RM = krng(31);
-  const botM = Array.from({ length: 5 }, (_, i) => ({ x: 300 + i * 95 + RM() * 30, y0: 980 + RM() * 100, t0: K.M + 0.6 + i * 0.35 }));
+  const botM = Array.from({ length: 5 }, (_, i) => ({ x: 222 + i * 126 + RM() * 40, y0: 1060 + RM() * 130, t0: K.M + 0.6 + i * 0.35 }));
 
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 0 · gancho: la gota de gel cae en la palma */}
       <Escena T={T} a={K.G} b={K.Q} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        <SvgCapa><g transform={GM}>
           <Palma x={420} y={1000 + mece(T, 2, 0.3) * 6} s={1.15} gel={gelG} brillo={0} T={T} />
           {cae > 0 && cae < 1 && <path d="M 0 -26 Q 18 0 0 18 Q -18 0 0 -26 Z" transform={`translate(${klerp(385, 420, cae)} ${klerp(225, 1030, cae)}) scale(1.4)`} fill={GEL} stroke={GELB} strokeWidth={4} />}
           {T > K.G + 0.7 && T < K.G + 1.5 && <circle cx={420} cy={1034} r={40 + kprog(T, K.G + 0.7, K.G + 1.3) * 120} fill="none" stroke="#fff" strokeWidth={6} opacity={1 - kprog(T, K.G + 0.7, K.G + 1.3)} />}
           <Dosificador x={250} y={610} s={0.9} p={aprieta} />
           <Onomato T={T} at={K.G + 0.7} until={K.G + 1.7} x={650} y={900} texto="¡plop!" tam={80} color={KC.yellow} />
-        </SvgCapa>
+        </g></SvgCapa>
+        <Escala T={T} z={1} pxPorMm={PX_MM_MANO} objetivo={200} color={KC.ink} />
       </Escena>
       {/* 1 · al menos 60 % */}
       <Escena T={T} a={K.Q} b={K.P}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Dosificador x={260} y={1180} s={0.85} rot={Math.sin((T - K.Q) * 2) * 4} />
-          <Etanol x={520} y={470} s={0.9} rot={Math.sin(T * 1.3) * 12} o={kprog(T, K.Q + 0.4, K.Q + 0.8)} />
-          <text x={520} y={590} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Q + 0.6, K.Q + 1.0)}>etanol C<tspan dy={8} fontSize={22}>2</tspan><tspan dy={-8}>H</tspan><tspan dy={8} fontSize={22}>5</tspan><tspan dy={-8}>OH</tspan></text>
-          {(() => { const top = 560, bot = 1160, h = bot - top, f = 0.6 * kprog(T, K.Q + 1.8, K.Q + 3.4, kEase.sale); return <g>
-            <rect x={720} y={top} width={100} height={h} rx={50} fill="#fff" stroke={KC.ink} strokeWidth={8} />
-            <rect x={734} y={bot - 14 - (h - 28) * f} width={72} height={(h - 28) * f} rx={30} fill={KC.blue} opacity={0.85} />
-            {[0, 20, 40, 60, 80, 100].map((v) => <g key={v}><line x1={820} x2={850} y1={bot - 14 - (h - 28) * v / 100} y2={bot - 14 - (h - 28) * v / 100} stroke={KC.ink} strokeWidth={5} />
-              <text x={860} y={bot - 4 - (h - 28) * v / 100} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{v}</text></g>)}
-            <line x1={690} x2={850} y1={bot - 14 - (h - 28) * 0.6} y2={bot - 14 - (h - 28) * 0.6} stroke={KC.gold} strokeWidth={10} opacity={kprog(T, K.Q + 2.6, K.Q + 3.0)} />
-            <text x={770} y={top - 24} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>% alcohol</text>
+          <Dosificador x={250} y={1380} s={1.35} rot={Math.sin((T - K.Q) * 2) * 4} />
+          <Etanol x={330} y={440} s={1.25} rot={Math.sin(T * 1.3) * 12} o={kprog(T, K.Q + 0.4, K.Q + 0.8)} />
+          <text x={330} y={590} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Q + 0.6, K.Q + 1.0)}>etanol C<tspan dy={8} fontSize={22}>2</tspan><tspan dy={-8}>H</tspan><tspan dy={8} fontSize={22}>5</tspan><tspan dy={-8}>OH</tspan></text>
+          {(() => { const top = 600, bot = 1380, h = bot - top, f = 0.6 * kprog(T, K.Q + 1.8, K.Q + 3.4, kEase.sale); return <g>
+            <rect x={800} y={top} width={100} height={h} rx={50} fill="#fff" stroke={KC.ink} strokeWidth={8} />
+            <rect x={814} y={bot - 14 - (h - 28) * f} width={72} height={(h - 28) * f} rx={30} fill={KC.blue} opacity={0.85} />
+            {[0, 20, 40, 60, 80, 100].map((v) => <g key={v}><line x1={900} x2={930} y1={bot - 14 - (h - 28) * v / 100} y2={bot - 14 - (h - 28) * v / 100} stroke={KC.ink} strokeWidth={5} />
+              <text x={940} y={bot - 4 - (h - 28) * v / 100} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{v}</text></g>)}
+            <line x1={770} x2={930} y1={bot - 14 - (h - 28) * 0.6} y2={bot - 14 - (h - 28) * 0.6} stroke={KC.gold} strokeWidth={10} opacity={kprog(T, K.Q + 2.6, K.Q + 3.0)} />
+            <text x={850} y={top - 24} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>% alcohol</text>
           </g>; })()}
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Q + 2.8} until={K.P - 0.3} valor={60} dur={0.6} sufijo=" %" x={545} y={960} tam={140} color={KC.gold2} />
+        <NumeroGigante T={T} at={K.Q + 2.8} until={K.P - 0.3} valor={60} dur={0.6} sufijo=" %" x={590} y={1000} tam={140} color={KC.gold2} />
       </Escena>
       {/* 2 · entra a la palma → la bacteria y sus proteínas */}
       <Escena T={T} a={K.P} b={K.A} fondo={KC.noche} zoom={0.03}>
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 940) scale(1.1) translate(-540 -900)">
           <BacGrande x={540} y={900} T={T} />
           {[[330, 880, KC.pink, 1], [540, 930, KC.yellow, 2], [750, 870, KC.cyan, 3]].map(([x, y, c, sd], i) =>
             <Liston key={i} T={T} x={x} y={y} s={0.75} color={c} seed={sd} des={kprog(T, K.P + 1.8 + i * 0.35, K.P + 3.0 + i * 0.35, kEase.suave)} />)}
           {etP.map((m, i) => { const u = kprog(T, K.P + 0.8 + i * 0.12, K.P + 2.4 + i * 0.12, kEase.suave); return <Etanol key={i} x={klerp(m.x0, m.tx, u)} y={klerp(m.y0, m.ty - 110, u)} s={0.42} rot={m.r + T * 40} o={kprog(T, K.P + 0.8, K.P + 1.1)} />; })}
-        </SvgCapa>
-        {zoomIn < 1 && <div style={{ position:'absolute', inset:0, opacity:1 - zoomIn, transformOrigin:'420px 1034px', transform:`scale(${klerp(1, 9, zoomIn)})` }}>
-          <FondoLunares color={KC.mint} /><SvgCapa><Palma x={420} y={1000} s={1.15} gel={1} /></SvgCapa></div>}
-        <Etq T={T} at={K.P + 1.0} until={K.P + 2.2} x={330} y={760} texto="proteína plegada" tam={30} color={KC.texto} />
-        <Etq T={T} at={K.P + 1.0} until={K.A - 0.3} x={120} y={1110} texto="bacteria (esquema)" tam={28} color="#7fffd4" />
-        {T > K.P + 0.6 && T < K.A + 0.2 && <Escala T={T} z={1} pxPorMm={380000} objetivo={380} />}
+        </g></SvgCapa>
+        {zoomIn < 1 && <div style={{ position:'absolute', inset:0, opacity:1 - zoomIn, transformOrigin:'500px 1325px', transform:`scale(${klerp(1, 9, zoomIn)})` }}>
+          <FondoLunares color={KC.mint} /><SvgCapa><g transform={GM}><Palma x={420} y={1000} s={1.15} gel={1} /></g></SvgCapa></div>}
+        <Etq T={T} at={K.P + 1.0} until={K.P + 2.2} x={320} y={852} texto="proteína plegada" tam={30} color={KC.texto} />
+        <Etq T={T} at={K.P + 1.0} until={K.A - 0.3} x={140} y={1165} texto="bacteria (esquema)" tam={30} color="#7fffd4" />
+        {T > K.P + 0.6 && T < K.A + 0.2 && <Escala T={T} z={1} pxPorMm={380000 * 1.1} objetivo={215} />}
       </Escena>
       {/* 3 · con agua se desarman más rápido */}
       <Escena T={T} a={K.A} b={K.F} fondo={KC.noche} zoom={0.02}>
         <SvgCapa>
-          {[[40, 'alcohol puro', desL, false], [560, 'alcohol + agua', desR, true]].map(([x0, tit, des, agua], k) => <g key={k}>
-            <rect x={x0} y={600} width={480} height={560} rx={36} fill="rgba(255,255,255,.05)" stroke={agua ? '#7fc8ff' : KC.texto} strokeWidth={5} />
-            <text x={x0 + 240} y={670} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={agua ? '#7fc8ff' : KC.texto}>{tit}</text>
-            <Liston T={T} x={x0 + 240} y={880} s={0.7} des={des} color={KC.pink} seed={2 + k} />
-            {molsA.map((m, i) => { const mx = x0 + 50 + m.x * 380 + Math.sin(T + m.f) * 14, my = 720 + m.y * 300 + Math.cos(T * 1.2 + m.f) * 14;
+          {[[60, 'alcohol puro', desL, false], [560, 'alcohol + agua', desR, true]].map(([x0, tit, des, agua], k) => <g key={k}>
+            <rect x={x0} y={480} width={460} height={770} rx={36} fill="rgba(255,255,255,.05)" stroke={agua ? '#7fc8ff' : KC.texto} strokeWidth={5} />
+            <text x={x0 + 230} y={560} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={agua ? '#7fc8ff' : KC.texto}>{tit}</text>
+            <Liston T={T} x={x0 + 230} y={870} s={0.84} des={des} color={KC.pink} seed={2 + k} />
+            {molsA.map((m, i) => { const mx = x0 + 45 + m.x * 370 + Math.sin(T + m.f) * 14, my = 640 + m.y * 420 + Math.cos(T * 1.2 + m.f) * 14;
               if (!agua && i >= 7) return null;
-              return (agua && i % 2 === 1) ? <Mol key={i} tipo="agua" x={mx} y={my} s={0.5} rot={m.r + T * 30} /> : <Etanol key={i} x={mx} y={my} s={0.3} rot={m.r + T * 30} />; })}
-            <g transform={`translate(${x0 + 240} ${1080})`}>
+              return (agua && i % 2 === 1) ? <Mol key={i} tipo="agua" x={mx} y={my} s={0.6} rot={m.r + T * 30} /> : <Etanol key={i} x={mx} y={my} s={0.37} rot={m.r + T * 30} />; })}
+            <g transform={`translate(${x0 + 205} ${1160}) scale(1.2)`}>
               <circle r={44} fill="#fff" stroke={KC.ink} strokeWidth={6} />
               <line x1={0} y1={0} x2={Math.sin((T - K.A) * (agua ? 7 : 0.8)) * 32} y2={-Math.cos((T - K.A) * (agua ? 7 : 0.8)) * 32} stroke={KC.red} strokeWidth={7} strokeLinecap="round" />
               <text x={64} y={12} style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>{agua ? 'rápido' : 'lento'}</text>
             </g>
           </g>)}
         </SvgCapa>
-        {(() => { const e = kprog(T, K.A + 3.8, K.A + 4.3, kEase.sale); if (e <= 0) return null; return <div style={{ position:'absolute', left:110, top:1440, width:860, opacity:e, zIndex:42 }}>
+        {(() => { const e = kprog(T, K.A + 3.8, K.A + 4.3, kEase.sale); if (e <= 0) return null; return <div style={{ position:'absolute', left:110, top:1350, width:860, opacity:e, zIndex:42 }}>
           <div style={{ position:'relative', height:34, borderRadius:17, background:'rgba(255,255,255,.18)', border:`4px solid ${KC.texto}` }}>
             <div style={{ position:'absolute', left:'60%', width:`${30 * e}%`, top:0, bottom:0, background:KC.gold2, borderRadius:8 }}></div>
           </div>
@@ -267,18 +270,18 @@ function Gel() {
       {/* 6 · norovirus y esporas: el alcohol rebota */}
       <Escena T={T} a={K.N} b={K.E} fondo={KC.noche} zoom={0.03}>
         <SvgCapa>
-          <Norovirus x={300} y={900} r={140} rot={T * 6} golpe={golpeV} />
-          <Espora x={790} y={900} s={0.95} rot={Math.sin(T) * 4} />
+          <Norovirus x={290} y={1000} r={210} rot={T * 6} golpe={golpeV} />
+          <Espora x={775} y={1000} s={1.4} rot={Math.sin(T) * 4} />
           {golpes.map(([t0, x0, y0, x1, y1], i) => { const p = rebote(t0, x0, y0, x1, y1); if (!p) return null;
-            return <g key={i}><Etanol x={p[0]} y={p[1]} s={0.38} rot={T * 90 + i * 50} />
+            return <g key={i}><Etanol x={p[0]} y={p[1]} s={0.5} rot={T * 90 + i * 50} />
               {p[2] > 0.9 && p[2] < 1.4 && <circle cx={x1} cy={y1} r={30 + (p[2] - 0.9) * 120} fill="none" stroke={KC.yellow} strokeWidth={6} opacity={1 - (p[2] - 0.9) * 2} />}</g>; })}
-          <text x={300} y={1110} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#ffd1da" opacity={kprog(T, K.N + 0.6, K.N + 1.0)}>norovirus</text>
-          <text x={790} y={1112} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#f3d9a6" opacity={kprog(T, K.N + 2.4, K.N + 2.8)}>espora de</text>
-          <text x={790} y={1150} textAnchor="middle" style={{ font:`italic 700 30px ${KF.mono}` }} fill="#f3d9a6" opacity={kprog(T, K.N + 2.4, K.N + 2.8)}>Clostridioides difficile</text>
+          <text x={290} y={1300} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill="#ffd1da" opacity={kprog(T, K.N + 0.6, K.N + 1.0)}>norovirus</text>
+          <text x={775} y={1300} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#f3d9a6" opacity={kprog(T, K.N + 2.4, K.N + 2.8)}>espora de</text>
+          <text x={775} y={1340} textAnchor="middle" style={{ font:`italic 700 30px ${KF.mono}` }} fill="#f3d9a6" opacity={kprog(T, K.N + 2.4, K.N + 2.8)}>Clostridioides difficile</text>
           {T > K.N + 4.2 && <g opacity={kprog(T, K.N + 4.2, K.N + 4.6)}>
-            <Llave T={T} x={230} y={540} s={1.0} agua={0.7 * kprog(T, K.N + 4.4, K.N + 4.9)} />
-            <Jabon x={500} y={640} s={0.9} T={T} />
-            <Marca x={500} y={510} ok s={0.6} o={kprog(T, K.N + 4.8, K.N + 5.2)} />
+            <Llave T={T} x={260} y={520} s={1.3} agua={0.7 * kprog(T, K.N + 4.4, K.N + 4.9)} />
+            <Jabon x={610} y={610} s={1.25} T={T} />
+            <Marca x={610} y={440} ok s={0.8} o={kprog(T, K.N + 4.8, K.N + 5.2)} />
           </g>}
         </SvgCapa>
         <Chip T={T} at={K.N + 4.4} until={K.E - 0.3} texto="ganan el agua y el jabón" y={1500} tam={42} borde="#7fc8ff" />
@@ -287,18 +290,22 @@ function Gel() {
       <Escena T={T} a={K.E} b={K.Gr} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          {yemas > 0 && <g opacity={yemas}>{Array.from({ length: 10 }, (_, i) => <Yema key={i} x={118 + i * 94} y={klerp(900, 820, yemas)} s={0.95} seed={i + 3} />)}</g>}
+          {/* pase a mano: los 10 dedos están en cuadro desde que empieza la escena (grandes, en dos filas) y no se apagan:
+              cuando entra la gráfica suben, chicos y atenuados, a una fila arriba. La tarjeta del estudio va chica y arriba. */}
+          {(() => { const q = kprog(T, K.E + 5.0, K.E + 5.7, kEase.suave), lleno = kprog(T, K.E + 3.2, K.E + 3.8, kEase.sale);
+            return <g opacity={klerp(klerp(0.5, 1, lleno), 0.5, q)}>{Array.from({ length: 10 }, (_, i) =>
+              <Yema key={i} x={klerp(160 + (i % 5) * 190, 118 + i * 94, q)} y={klerp(i < 5 ? 800 : 1230, 470, q) - 14 * lleno * (1 - q)} s={klerp(1.7, 0.8, q)} seed={i + 3} />)}</g>; })()}
           {T > K.E + 5.3 && <g>
-            <text x={570} y={725} textAnchor="middle" style={{ font:`900 42px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.E + 5.3, K.E + 5.7)}>virus quitado de los dedos</text>
-            <line x1={120} x2={960} y1={1150} y2={1150} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.E + 5.3, K.E + 5.7)} />
-            {barras.map(([t, v, t0, c, ok], i) => { const x = 270 + i * 270, h = 280 * v * kprog(T, t0, t0 + 0.8, kEase.sale); if (T < t0) return null; return <g key={i}>
-              <rect x={x - 80} y={1150 - h} width={160} height={h} fill={c} stroke={KC.ink} strokeWidth={7} />
-              <text x={x} y={1196} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{t}</text>
-              <Marca x={x} y={1150 - h - 52} ok={ok} s={0.45} o={kprog(T, t0 + 0.7, t0 + 1.0)} />
+            <text x={540} y={700} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.E + 5.3, K.E + 5.7)}>virus quitado de los dedos</text>
+            <line x1={90} x2={990} y1={1330} y2={1330} stroke={KC.ink} strokeWidth={8} opacity={kprog(T, K.E + 5.3, K.E + 5.7)} />
+            {barras.map(([t, v, t0, c, ok], i) => { const x = 230 + i * 310, h = 500 * v * kprog(T, t0, t0 + 0.8, kEase.sale); if (T < t0) return null; return <g key={i}>
+              <rect x={x - 100} y={1330 - h} width={200} height={h} fill={c} stroke={KC.ink} strokeWidth={7} />
+              <text x={x} y={1382} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>{t}</text>
+              <Marca x={x} y={1330 - h - 62} ok={ok} s={0.6} o={kprog(T, t0 + 0.7, t0 + 1.0)} />
             </g>; })}
           </g>}
         </SvgCapa>
-        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2010" quien="Liu et al. · Emory, Atlanta" revista="Appl Environ Microbiol · virus Norwalk" x={560} y={820} />
+        <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 3.0} anio="2010" quien="Liu et al. · Emory, Atlanta" revista="Appl Environ Microbiol · virus Norwalk" x={540} y={400} />
         <Chip T={T} at={K.E + 3.4} until={K.E + 5.2} texto="10 voluntarios" y={1500} tam={46} borde={KC.ink} />
         <Chip T={T} at={K.E + 7.9} until={K.Gr - 0.3} texto="midieron el material genético del virus" y={1500} tam={30} borde={KC.ink} />
       </Escena>
@@ -306,10 +313,10 @@ function Gel() {
       <Escena T={T} a={K.Gr} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <Palma x={540} y={1080} s={1.15} mugre={1} />
+          <Palma x={540} y={1120} s={1.5} mugre={1} />
           {[[-60, -50], [40, 50], [70, -70], [-30, 90], [0, 10], [-90, 40]].map(([dx, dy], i) => { const u = kprog(T, K.Gr + 0.4 + i * 0.12, K.Gr + 0.7 + i * 0.12, kEase.rebote); return u > 0 &&
-            <g key={i} transform={`translate(${540 + dx * 1.15} ${1080 + dy * 1.15 - 12}) scale(${u})`}><circle r={20} fill={GEL} stroke={GELB} strokeWidth={4} opacity={0.9} /><circle cx={-6} cy={-7} r={6} fill="#fff" /></g>; })}
-          <Marca x={820} y={760} ok={false} s={0.8} o={kprog(T, K.Gr + 1.2, K.Gr + 1.5)} />
+            <g key={i} transform={`translate(${540 + dx * 1.5} ${1120 + dy * 1.5 - 16}) scale(${u * 1.3})`}><circle r={20} fill={GEL} stroke={GELB} strokeWidth={4} opacity={0.9} /><circle cx={-6} cy={-7} r={6} fill="#fff" /></g>; })}
+          <Marca x={860} y={800} ok={false} s={1.0} o={kprog(T, K.Gr + 1.2, K.Gr + 1.5)} />
         </SvgCapa>
         <Chip T={T} at={K.Gr + 0.8} until={K.M - 0.3} texto="sucias o grasosas → agua y jabón" y={1500} tam={36} borde={KC.ink} />
       </Escena>
@@ -317,17 +324,17 @@ function Gel() {
       <Escena T={T} a={K.M} b={K.C} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <rect x={0} y={520} width={KW} height={230} fill="rgba(255,255,255,.45)" />
-          <text x={900} y={730} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>EE. UU.</text>
-          <MapaMexico x={200} y={735} ancho={680} />
-          <text x={470} y={980} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink} opacity={0.75}>MÉXICO</text>
+          <rect x={0} y={430} width={KW} height={320} fill="rgba(170,190,230,.16)" />
+          <text x={900} y={715} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>EE. UU.</text>
+          <MapaMexico x={90} y={735} ancho={900} />
+          <text x={447} y={1062} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.ink} opacity={0.75}>MÉXICO</text>
           <line x1={0} x2={KW} y1={748} y2={748} stroke={KC.red} strokeWidth={8} strokeDasharray="26 16" opacity={kprog(T, K.M + 1.4, K.M + 1.8)} />
           {botM.map((b, i) => { const u = kprog(T, b.t0, b.t0 + 1.0, kEase.sale); return <g key={i}>
-            <Dosificador x={b.x} y={klerp(b.y0, 800, u)} s={0.24} />
-            <Alerta x={b.x + 28} y={klerp(b.y0, 800, u) - 150} s={0.55} o={kprog(T, K.M + 2.0 + i * 0.1, K.M + 2.3 + i * 0.1)} />
+            <Dosificador x={b.x} y={klerp(b.y0, 830, u)} s={0.34} />
+            <Alerta x={b.x + 40} y={klerp(b.y0, 830, u) - 215} s={0.75} o={kprog(T, K.M + 2.0 + i * 0.1, K.M + 2.3 + i * 0.1)} />
           </g>; })}
         </SvgCapa>
-        <Lupa T={T} at={K.M + 4.0} until={K.C - 0.3} x={330} y={400} r={135} fx={395} fy={720} tinte={KC.red} etiqueta="POR DENTRO · metanol"
+        <Lupa T={T} at={K.M + 4.0} until={K.C - 0.3} x={300} y={410} r={165} fx={365} fy={740} tinte={KC.red} etiqueta="POR DENTRO · metanol"
           interior={(T, r) => <svg width={2 * r} height={2 * r}><Molecula {...METANOL} x={r - 10} y={r + 8} s={1.25} rot={Math.sin(T * 2) * 10} /></svg>} />
         <Chip T={T} at={K.M + 0.8} until={K.M + 4.0} texto="FDA · enero 2021 · alerta de importación" y={1500} tam={32} borde={KC.red} />
         <Chip T={T} at={K.M + 4.4} until={K.M + 5.6} texto={<span>metanol CH<sub style={{ fontSize:26 }}>3</sub>OH: tóxico</span>} y={1500} tam={40} borde={KC.red} />
@@ -336,26 +343,26 @@ function Gel() {
       {/* 10 · cierre: la misma mano, ya desinfectada */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgCapa>
+        <SvgCapa><g transform={GM}>
           <Palma x={420} y={1000} s={1.15} />
           {(() => { const u = kprog(T, K.C + 0.3, K.C + 0.8, kEase.rebote); return <g transform={`translate(420 1034) scale(${u})`}><ellipse rx={60} ry={34} fill={GEL} opacity={0.6} stroke={GELB} strokeWidth={4} strokeDasharray="12 8" /></g>; })()}
           {[[310, 740], [540, 680], [580, 920], [280, 980]].map(([x, y], i) => { const k = Math.max(0, Math.sin(T * 4 + i * 1.7)); return <path key={i} d="M 0 -26 L 7 -7 L 26 0 L 7 7 L 0 26 L -7 7 L -26 0 L -7 -7 Z" transform={`translate(${x} ${y}) scale(${0.6 + k * 0.6})`} fill="#fff" stroke={KC.ink} strokeWidth={3} opacity={kprog(T, K.C + 0.6, K.C + 1.0)} />; })}
+          </g>
           {T > K.C + 2.6 && <g opacity={kprog(T, K.C + 2.6, K.C + 3.0)}>
-            <Llave T={T} x={800} y={820} s={0.85} agua={1} />
-            <Jabon x={840} y={1080} s={0.8} T={T} />
+            <Llave T={T} x={860} y={800} s={1.15} agua={1} />
+            <Jabon x={890} y={1130} s={1.1} T={T} />
           </g>}
         </SvgCapa>
-        <Chip T={T} at={K.C + 0.5} until={K.C + 2.6} texto="alcohol ≥ 60 % → desarma proteínas" y={1500} tam={34} borde={KC.blue} />
-        <Chip T={T} at={K.C + 2.8} until={K.Ou} texto="¿hay agua y jabón? mejor" y={1500} tam={42} borde="#7fc8ff" />
+        <Chip T={T} at={K.C + 0.5} until={K.C + 2.6} texto="alcohol ≥ 60 % → desarma proteínas" y={560} tam={34} borde={KC.blue} />
+        <Chip T={T} at={K.C + 2.8} until={K.Ou} texto="¿hay agua y jabón? mejor" y={560} tam={42} borde="#7fc8ff" />
       </Escena>
 
       {/* textos del gancho */}
-      <Etq T={T} at={K.G + 0.9} until={K.Q - 0.3} x={580} y={1060} texto="gel con alcohol" tam={32} color={KC.ink} />
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 2.5} texto="lavar las manos" x={540} y={1500} tam={44} />
-      <Chip T={T} at={K.G + 2.7} until={K.Q - 0.3} texto="desinfectar" y={1500} tam={50} borde={KC.blue} />
-      {T < K.Q && <Escala T={T} z={1} pxPorMm={20} objetivo={200} color={KC.ink} />}
+      <Etq T={T} at={K.G + 0.9} until={K.Q - 0.3} x={615} y={1325} texto="gel con alcohol" tam={32} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.6} until={K.G + 2.5} texto="lavar las manos" x={775} y={500} tam={44} />
+      <Chip T={T} at={K.G + 2.7} until={K.Q - 0.3} texto="desinfectar" x={775} y={500} tam={50} borde={KC.blue} />
       <Chip T={T} at={K.Q + 3.2} until={K.P - 0.3} texto="CDC: mínimo 60 %" y={1500} tam={46} borde={KC.gold} />
-      <Chip T={T} at={K.P + 3.2} until={K.A - 0.3} texto="desnaturalizada = ya no sirve" y={1500} tam={38} borde={KC.pink} />
+      <Chip T={T} at={K.P + 3.2} until={K.A - 0.3} texto="desnaturalizada = ya no sirve" y={1360} tam={38} borde={KC.pink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Q - 0.1} texto="No te lava: *te desinfecta.*" />
