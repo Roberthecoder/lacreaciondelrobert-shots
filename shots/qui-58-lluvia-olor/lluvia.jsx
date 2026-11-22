@@ -139,8 +139,8 @@ function Lluvia58() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Q: CUES.Que, N: CUES.Nariz, Cu: CUES.Cuchara, Pr: CUES.Pregunta, Es: CUES.Estudio, Bu: CUES.Burbujas, Ae: CUES.Aerosol, Ll: CUES.Llovizna, Co: CUES.Colembolos, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const xsG = [260, 120, 420, 330, 180, 470, 380, 230];
-  const manchasG = xsG.map((x, i) => [x - 300, K.G + 0.05 + i * 0.32 + 0.45]);
+  const xsG = [300, 110, 520, 400, 190, 600, 460, 250];
+  const manchasG = xsG.map((x, i) => [(x - 300) / 1.125, K.G + 0.05 + i * 0.32 + 0.45]);
   const mojaG = kprog(T, K.G + 0.4, K.G + 4.5);
   // Burbujas (corte lateral): la gota cae, se aplasta, atrapa burbujas que revientan
   const caeB = kprog(T, K.Bu, K.Bu + 0.6, kEase.entra || ((p) => p * p));
@@ -159,38 +159,40 @@ function Lluvia58() {
       <Escena T={T} a={K.G} b={K.Q} zoom={0.05} origen="35% 60%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Lluvia T={T} xs={xsG} y0={-40} y1={890} desde={K.G + 0.05} cada={0.32} caida={0.45} r={26} />
-          <Lluvia T={T} xs={[150, 400, 280, 90, 460]} y0={-40} y1={890} desde={K.G + 2.8} cada={0.26} caida={0.4} r={20} />
-          <Jardinera T={T} x={300} y={960} s={0.75} moja={mojaG} manchas={manchasG} />
-          <Olor T={T} x0={300} y0={880} x1={760} y1={1010} o={kprog(T, K.G + 1.4, K.G + 2.2)} color="#7a5230" />
-          <Nariz x={760} y={980} s={0.95} aspira={0.5 + 0.5 * Math.sin(T * 5)} />
-          <line x1={60} y1={1185} x2={60 + 150} y2={1185} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
-          <text x={60} y={1170} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>10 cm</text>
+          <Lluvia T={T} xs={xsG} y0={-40} y1={985} desde={K.G + 0.05} cada={0.32} caida={0.45} r={34} />
+          <Lluvia T={T} xs={[170, 480, 330, 90, 560]} y0={-40} y1={985} desde={K.G + 2.8} cada={0.26} caida={0.4} r={26} />
+          <Jardinera T={T} x={300} y={1080} s={1.125} moja={mojaG} manchas={manchasG} />
+          <Olor T={T} x0={330} y0={975} x1={870} y1={1150} o={kprog(T, K.G + 1.4, K.G + 2.2)} color="#7a5230" />
+          <Nariz x={880} y={1040} s={1.4} aspira={0.5 + 0.5 * Math.sin(T * 5)} />
+          {/* barra de escala recalculada: el dibujo creció 1.5×, 150 px → 225 px para los mismos 10 cm */}
+          <line x1={60} y1={1420} x2={60 + 225} y2={1420} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" />
+          <text x={60} y={1403} style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>10 cm</text>
         </SvgCapa>
       </Escena>
       {/* 1 · Streptomyces haciendo esporas y geosmina (lupa al suelo) */}
       <Escena T={T} a={K.Q} b={K.N} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          {[[120, 1150, 80, 1], [930, 1100, 90, 2], [860, 560, 60, 3], [160, 520, 55, 4]].map(([gx, gy, r, sd]) => <Grano key={sd} x={gx} y={gy} r={r} color="#6b4a2c" seed={sd} />)}
-          <Hifas T={T} x={540} y={900} s={1.25} crece={kprog(T, K.Q - 0.3, K.Q + 1.4)} esporas={kprog(T, K.Q + 1.2, K.Q + 2.6)} />
-          {[[640, 620, 0], [380, 600, 1], [820, 760, 2], [260, 760, 3]].map(([gx, gy, i]) => { const t0 = K.Q + 2.4 + i * 0.3, u = kprog(T, t0, t0 + 0.6, kEase.sale);
-            return u > 0 ? <Geosmina key={i} x={gx + Math.sin(T + i) * 12} y={gy - (T - t0) * 14} s={0.55 * u} rot={T * 15 + i * 40} brillo={1} /> : null; })}
-          <line x1={60} y1={1185} x2={60 + 130} y2={1185} stroke={KC.texto} strokeWidth={8} strokeLinecap="round" />
-          <text x={60} y={1170} style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>10 µm</text>
+          {[[70, 1255, 96, 1], [1000, 1170, 108, 2], [960, 330, 72, 3], [150, 450, 66, 4]].map(([gx, gy, r, sd]) => <Grano key={sd} x={gx} y={gy} r={r} color="#6b4a2c" seed={sd} />)}
+          <Hifas T={T} x={540} y={950} s={1.5} crece={kprog(T, K.Q - 0.3, K.Q + 1.4)} esporas={kprog(T, K.Q + 1.2, K.Q + 2.6)} />
+          {[[600, 670, 0], [340, 560, 1], [560, 400, 2], [200, 730, 3]].map(([gx, gy, i]) => { const t0 = K.Q + 2.4 + i * 0.3, u = kprog(T, t0, t0 + 0.6, kEase.sale);
+            return u > 0 ? <Geosmina key={i} x={gx + Math.sin(T + i) * 12} y={gy - (T - t0) * 14} s={0.7 * u} rot={T * 15 + i * 40} brillo={1} /> : null; })}
+          {/* barra de escala recalculada: las hifas crecieron 1.2× (s 1.25 → 1.5), 130 px → 156 px para los mismos 10 µm */}
+          <line x1={60} y1={1450} x2={60 + 156} y2={1450} stroke={KC.texto} strokeWidth={8} strokeLinecap="round" />
+          <text x={60} y={1433} style={{ font:`700 32px ${KF.mono}` }} fill={KC.texto}>10 µm</text>
         </SvgCapa>
       </Escena>
       {/* 2 · la nariz y el umbral */}
       <Escena T={T} a={K.N} b={K.Cu} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Nariz x={740} y={760} s={1.05} aspira={kprog(T, K.N + 0.4, K.N + 1.0)} />
-          <VasoLab x={300} y={1000} s={1.1} liquido="#bfe8ff" nivel={0.75}>
+          <Nariz x={810} y={880} s={1.5} aspira={kprog(T, K.N + 0.4, K.N + 1.0)} />
+          <VasoLab x={300} y={1180} s={1.7} liquido="#bfe8ff" nivel={0.75}>
             {Array.from({ length: 60 }, (_, i) => { const R = krng(i + 3); return <circle key={i} cx={(R() - 0.5) * 190 + Math.sin(T + i) * 4} cy={-R() * 210 - 6} r={3} fill="#c58a16" opacity={0.35 * kprog(T, K.N + 1.4, K.N + 2.2)} />; })}
           </VasoLab>
-          <Olor T={T} x0={330} y0={640} x1={640} y1={860} o={kprog(T, K.N + 1.8, K.N + 2.4) * 0.8} color="#c58a16" n={2} />
+          <Olor T={T} x0={320} y0={640} x1={720} y1={1010} o={kprog(T, K.N + 1.8, K.N + 2.4) * 0.8} color="#c58a16" n={2} />
         </SvgCapa>
-        <Medidor T={T} at={K.N + 0.5} until={K.Cu - 0.3} valor={(t) => kprog(t, K.N + 0.6, K.N + 2.2) * 0.12} etiqueta="umbral de olor (en agua)" texto={() => '4–10 ng/L'} y={1060} color={KC.violet} />
+        <Medidor T={T} at={K.N + 0.5} until={K.Cu - 0.3} valor={(t) => kprog(t, K.N + 0.6, K.N + 2.2) * 0.12} etiqueta="umbral de olor (en agua)" texto={() => '4–10 ng/L'} y={1290} color={KC.violet} />
       </Escena>
       {/* 3 · una cucharadita en 200 albercas */}
       <Escena T={T} a={K.Cu} b={K.Pr} zoom={0.02}>
@@ -201,14 +203,14 @@ function Lluvia58() {
             for (let i = 0; i < 200; i++) { const c = i % 10, r = Math.floor(i / 10), t0 = K.Cu + 1.6 + i * 0.008;
               const o = i === 0 ? 1 : kprog(T, t0, t0 + 0.15);
               const gx = 100 + c * 88, gy = 470 + r * 36;
-              const X = i === 0 ? klerp(140, gx, lejos) : gx, Y = i === 0 ? klerp(500, gy, lejos) : gy, W = i === 0 ? klerp(800, 80, lejos) : 80, H = i === 0 ? klerp(420, 30, lejos) : 30;
+              const X = i === 0 ? klerp(60, gx, lejos) : gx, Y = i === 0 ? klerp(560, gy, lejos) : gy, W = i === 0 ? klerp(960, 80, lejos) : 80, H = i === 0 ? klerp(520, 30, lejos) : 30;
               if (o > 0) out.push(<Alberca key={i} x={X} y={Y} w={W} h={H} o={o} />); }
             return <g>{out}
-              {big > 0.05 && <g opacity={big}><Cucharita x={560} y={klerp(380, 640, kprog(T, K.Cu + 0.1, K.Cu + 0.6, kEase.sale))} s={1.1} rot={klerp(0, 35, kprog(T, K.Cu + 0.6, K.Cu + 0.9))} />
-                {T > K.Cu + 0.9 && <circle cx={520} cy={klerp(660, 720, kprog(T, K.Cu + 0.9, K.Cu + 1.1))} r={klerp(12, 40, kprog(T, K.Cu + 1.1, K.Cu + 1.5))} fill="none" stroke="#fff" strokeWidth={5} opacity={1 - kprog(T, K.Cu + 1.1, K.Cu + 1.5)} />}</g>}
+              {big > 0.05 && <g opacity={big}><Cucharita x={580} y={klerp(480, 790, kprog(T, K.Cu + 0.1, K.Cu + 0.6, kEase.sale))} s={1.5} rot={klerp(0, 35, kprog(T, K.Cu + 0.6, K.Cu + 0.9))} />
+                {T > K.Cu + 0.9 && <circle cx={520} cy={klerp(815, 880, kprog(T, K.Cu + 0.9, K.Cu + 1.1))} r={klerp(16, 56, kprog(T, K.Cu + 1.1, K.Cu + 1.5))} fill="none" stroke="#fff" strokeWidth={5} opacity={1 - kprog(T, K.Cu + 1.1, K.Cu + 1.5)} />}</g>}
             </g>; })()}
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Cu + 2.2} until={K.Pr - 0.2} valor={200} desde={1} dur={1.0} prefijo="×" y={1080} tam={150} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.Cu + 2.2} until={K.Pr - 0.2} valor={200} desde={1} dur={1.0} prefijo="×" y={1330} tam={150} color={KC.yellow} />
       </Escena>
       {/* 4 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Es} zoom={0.1}>
@@ -225,13 +227,15 @@ function Lluvia58() {
       <Escena T={T} a={K.Es} b={K.Bu} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
+          <g transform="translate(540 960) scale(1.15) translate(-540 -800)">
           <CamaraRapida x={230} y={760} s={1} flash={T > K.Es + 3 ? (Math.sin(T * 12) > 0 ? 1 : 0.3) : 0} />
           <ellipse cx={720} cy={1020} rx={230} ry={50} fill="#f4efe4" stroke={KC.ink} strokeWidth={8} />
           <ellipse cx={720} cy={1005} rx={185} ry={32} fill={TIERRA_SECA} stroke={KC.ink} strokeWidth={5} />
           <g transform="translate(720 560)"><rect x={-16} y={-200} width={32} height={170} rx={8} fill="#e8f6ff" stroke={KC.ink} strokeWidth={6} /><ellipse cx={0} cy={-210} rx={34} ry={24} fill={KC.red} stroke={KC.ink} strokeWidth={5} /></g>
           <Lluvia T={T} xs={[720]} y0={580} y1={970} desde={K.Es + 0.6} cada={0.8} caida={0.45} r={16} />
+          </g>
         </SvgCapa>
-        <Contador T={T} at={K.Es + 3.2} desde={0} hasta={600} dur={2.2} sufijo=" experimentos" x={400} y={470} tam={50} color={KC.texto} />
+        <Contador T={T} at={K.Es + 3.2} desde={0} hasta={600} dur={2.2} sufijo=" experimentos" x={400} y={540} tam={54} color={KC.texto} />
       </Escena>
       {/* 6 · corte lateral: la gota, las burbujas y los chorritos */}
       <Escena T={T} a={K.Bu} b={K.Ae} zoom={0.03} origen="50% 55%">
@@ -239,6 +243,7 @@ function Lluvia58() {
         <SvgCapa>
           {Array.from({ length: 12 }, (_, i) => <Grano key={i} x={20 + i * 95} y={SUP + 70 + (i % 2) * 40} r={62} color="#7a5230" seed={i + 10} />)}
           {Array.from({ length: 11 }, (_, i) => <Grano key={'b' + i} x={65 + i * 95} y={SUP + 170 + (i % 2) * 30} r={58} color="#6b4a2c" seed={i + 40} />)}
+          {Array.from({ length: 12 }, (_, i) => <Grano key={'c' + i} x={20 + i * 95} y={SUP + 270 + (i % 2) * 36} r={62} color="#5d4026" seed={i + 70} />)}
           <ellipse cx={540} cy={gCy} rx={gRx} ry={gRy} fill="rgba(159,220,255,.55)" stroke={AGUA} strokeWidth={7} />
           {burb.map(([dx, i]) => { const tb = K.Bu + 1.1 + i * 0.12, sube = kprog(T, tb + 0.4, K.Bu + 2.6 + i * 0.25, kEase.suave), rev = K.Bu + 2.6 + i * 0.25;
             const r = klerp(10, 30, kprog(T, tb, tb + 1.2)), by = klerp(SUP - 10, gCy - gRy + r + 4, sube);
@@ -248,8 +253,9 @@ function Lluvia58() {
               if (j < 1) out.push(<line key="j" x1={xx} y1={top} x2={xx} y2={top - 220 * j} stroke={AGUA} strokeWidth={10} strokeLinecap="round" />);
               for (let k = 0; k < 4; k++) { const u = T - rev - 0.25; if (u > 0) out.push(<circle key={'d' + k} cx={xx + (k - 1.5) * 14 + Math.sin(T * 2 + k) * 6} cy={top - 220 - u * 90 - k * 26} r={8 + (k % 2) * 4} fill="#e8f6ff" stroke={KC.ink} strokeWidth={2} />); } }
             return <g key={i}>{out}</g>; })}
-          <line x1={60} y1={1185} x2={60 + 110} y2={1185} stroke={KC.texto} strokeWidth={8} strokeLinecap="round" />
-          <text x={60} y={1170} style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>1 mm</text>
+          {/* la barra no cambia de largo (el dibujo no se agrandó); solo sube al aire para que se lea */}
+          <line x1={60} y1={400} x2={60 + 110} y2={400} stroke={KC.texto} strokeWidth={8} strokeLinecap="round" />
+          <text x={60} y={383} style={{ font:`700 30px ${KF.mono}` }} fill={KC.texto}>1 mm</text>
         </SvgCapa>
         <Onomato T={T} at={K.Bu + 2.6} until={K.Bu + 3.6} x={300} y={620} texto="¡pop!" tam={90} />
         <Onomato T={T} at={K.Bu + 3.4} until={K.Bu + 4.4} x={800} y={560} texto="¡pop!" tam={80} rot={8} color={KC.cyan} />
@@ -259,12 +265,14 @@ function Lluvia58() {
         <div style={{ position:'absolute', inset:0, background:'#10203a' }}></div>
         <SvgCapa>
           <rect x={0} y={1120} width={KW} height={100} fill={TIERRA_MOJADA} />
+          {Array.from({ length: 12 }, (_, i) => <Grano key={'g' + i} x={20 + i * 95} y={1190 + (i % 2) * 40} r={62} color="#7a5230" seed={i + 10} />)}
+          {Array.from({ length: 11 }, (_, i) => <Grano key={'h' + i} x={65 + i * 95} y={1290 + (i % 2) * 30} r={58} color="#6b4a2c" seed={i + 40} />)}
           {aero.map(([ax, ph, r, sucia], i) => { const y = 1110 - (((T - K.Ae) * 70 + ph * 150) % 700); return <g key={i}>
-            <circle cx={ax + Math.sin(T * 1.5 + ph) * 16} cy={y} r={r} fill="rgba(232,246,255,.35)" stroke="#e8f6ff" strokeWidth={3} />
-            {sucia && <circle cx={ax + Math.sin(T * 1.5 + ph) * 16} cy={y} r={r * 0.4} fill="#a8743f" />}</g>; })}
+            <circle cx={ax + Math.sin(T * 1.5 + ph) * 16} cy={y} r={r * 1.5} fill="rgba(232,246,255,.35)" stroke="#e8f6ff" strokeWidth={4} />
+            {sucia && <circle cx={ax + Math.sin(T * 1.5 + ph) * 16} cy={y} r={r * 0.6} fill="#a8743f" />}</g>; })}
           {(() => { const z = kprog(T, K.Ae + 2.2, K.Ae + 2.9, kEase.rebote); return z > 0 ? <g transform={`translate(540 760) scale(${z})`}>
-            <circle r={170} fill="rgba(232,246,255,.25)" stroke="#e8f6ff" strokeWidth={8} />
-            <Geosmina x={10} y={20} s={0.75} rot={Math.sin(T) * 12} />
+            <circle r={240} fill="rgba(232,246,255,.25)" stroke="#e8f6ff" strokeWidth={8} />
+            <Geosmina x={14} y={28} s={1.05} rot={Math.sin(T) * 12} />
           </g> : null; })()}
         </SvgCapa>
       </Escena>
@@ -272,8 +280,8 @@ function Lluvia58() {
       <Escena T={T} a={K.Ll} b={K.Co} zoom={0.02}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <PanelLluvia T={T} x={40} w={480} desde={K.Ll - 0.3} hasta={K.Co + 0.5} rapido={false} color="#bfe8ff" />
-          <PanelLluvia T={T} x={560} w={480} desde={K.Ll - 0.3} hasta={K.Co + 0.5} rapido color="#8a9bb3" />
+          <PanelLluvia T={T} x={40} w={480} desde={K.Ll - 0.3} hasta={K.Co + 0.5} rapido={false} color="#2c5878" />
+          <PanelLluvia T={T} x={560} w={480} desde={K.Ll - 0.3} hasta={K.Co + 0.5} rapido color="#39465c" />
           <Marca x={280} y={1100} ok s={0.8} o={kprog(T, K.Ll + 0.6, K.Ll + 1.0)} />
           <Marca x={800} y={1100} ok={false} s={0.8} o={kprog(T, K.Ll + 2.0, K.Ll + 2.4)} />
         </SvgCapa>
@@ -285,31 +293,31 @@ function Lluvia58() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
           <rect x={0} y={1110} width={KW} height={120} fill="#1a1616" />
-          <Hifas T={T} x={820} y={980} s={0.62} crece={1} esporas={1} />
-          {Array.from({ length: 5 }, (_, i) => { const u = ((T - K.Co) * 0.25 + i / 5) % 1; return <Geosmina key={i} x={klerp(760, 120, u)} y={760 + Math.sin(u * 8 + i) * 40} s={0.28} rot={T * 30 + i * 50} o={Math.sin(u * Math.PI)} brillo={0.6} />; })}
+          <Hifas T={T} x={760} y={930} s={1} crece={1} esporas={1} />
+          {Array.from({ length: 5 }, (_, i) => { const u = ((T - K.Co) * 0.25 + i / 5) % 1; return <Geosmina key={i} x={klerp(700, 100, u)} y={700 + Math.sin(u * 8 + i) * 40} s={0.45} rot={T * 30 + i * 50} o={Math.sin(u * Math.PI)} brillo={0.6} />; })}
           {(() => { const llega = kprog(T, K.Co + 3.2, K.Co + 4.6, kEase.suave), come = kprog(T, K.Co + 4.6, K.Co + 5.6), va = kprog(T, K.Co + 5.6, K.Ci + 0.4);
-            const cx = va > 0 ? klerp(610, 330, va) : klerp(-120, 610, llega);
+            const cx = va > 0 ? klerp(540, 300, va) : klerp(-280, 540, llega);
             const caminando = (llega > 0 && llega < 1) || va > 0;
             return <g>
-              {va > 0.2 && <Popo x={560} y={1095} o={kprog(T, K.Co + 6.0, K.Co + 6.3)} />}
-              {va > 0.5 && <Popo x={470} y={1098} o={kprog(T, K.Ci - 0.3, K.Ci)} />}
-              <Colembolo T={T} x={cx} y={1020 + (come > 0 && come < 1 ? Math.abs(Math.sin(T * 12)) * 8 : 0)} s={1.25} paso={caminando ? T : 0} esporas={come} flip={va > 0} />
+              {va > 0.2 && <Popo x={690} y={1095} o={kprog(T, K.Co + 6.0, K.Co + 6.3)} />}
+              {va > 0.5 && <Popo x={590} y={1098} o={kprog(T, K.Ci - 0.3, K.Ci)} />}
+              <Colembolo T={T} x={cx} y={1000 + (come > 0 && come < 1 ? Math.abs(Math.sin(T * 12)) * 8 : 0)} s={1.5} paso={caminando ? T : 0} esporas={come} flip={va > 0} />
             </g>; })()}
         </SvgCapa>
-        <Etq T={T} at={K.Co + 4.0} until={K.Ci - 0.3} x={60} y={880} texto="colémbolo · ≈ 1–3 mm" tam={32} color={KC.texto} />
-        <Etq T={T} at={K.Co + 0.8} until={K.Ci - 0.3} x={1040} y={720} texto="Streptomyces" it lado="izq" tam={32} color={KC.mint} />
+        <Etq T={T} at={K.Co + 4.0} until={K.Ci - 0.3} x={60} y={1285} texto="colémbolo · ≈ 1–3 mm" tam={32} color={KC.texto} />
+        <Etq T={T} at={K.Co + 0.8} until={K.Ci - 0.3} x={1040} y={640} texto="Streptomyces" it lado="izq" tam={34} color={KC.mint} />
       </Escena>
       {/* 10 · cierre: la misma jardinera, ya mojada, con el olor subiendo */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04} origen="35% 60%">
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Lluvia T={T} xs={[150, 400, 280, 90, 460]} y0={-40} y1={890} desde={K.Ci - 0.5} cada={0.6} caida={0.45} r={13} />
-          <Jardinera T={T} x={300} y={960} s={0.75} moja={1} manchas={[]} />
-          <Olor T={T} x0={300} y0={880} x1={760} y1={1010} o={1} color="#7a5230" />
-          <Nariz x={760} y={980} s={0.95} aspira={0.5 + 0.5 * Math.sin(T * 5)} />
+          <Lluvia T={T} xs={[170, 480, 330, 90, 560]} y0={-40} y1={985} desde={K.Ci - 0.5} cada={0.6} caida={0.45} r={18} />
+          <Jardinera T={T} x={300} y={1080} s={1.125} moja={1} manchas={[]} />
+          <Olor T={T} x0={330} y0={975} x1={870} y1={1150} o={1} color="#7a5230" />
+          <Nariz x={880} y={1040} s={1.4} aspira={0.5 + 0.5 * Math.sin(T * 5)} />
           {(() => { const u = kprog(T, K.Ci + 1.2, K.Ou - 0.2); return <g>
-            <Colembolo T={T} x={klerp(60, 380, u)} y={880} s={0.55} paso={T} esporas={1} />
-            <g transform={`translate(${klerp(60, 380, u) + 10} 760) scale(1.4)`} opacity={kprog(T, K.Ci + 1.4, K.Ci + 1.8)}>
+            <Colembolo T={T} x={klerp(90, 430, u)} y={955} s={0.82} paso={T} esporas={1} />
+            <g transform={`translate(${klerp(90, 430, u) + 14} 770) scale(2)`} opacity={kprog(T, K.Ci + 1.4, K.Ci + 1.8)}>
               <line x1={0} y1={0} x2={0} y2={70} stroke={KC.ink} strokeWidth={5} />
               <rect x={-80} y={-46} width={160} height={52} rx={8} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
               <text x={0} y={-10} textAnchor="middle" style={{ font:`400 34px ${KF.titulo}` }} fill={KC.ink}>¿AVENTÓN?</text>
@@ -318,24 +326,24 @@ function Lluvia58() {
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.0} until={K.G + 3.3} texto="¿es la lluvia?" x={300} y={470} tam={46} />
-      <Chip T={T} at={K.G + 3.4} until={K.Q - 0.3} texto="sobre todo: bacterias" x={300} y={470} tam={38} borde={KC.mint} />
-      <Etq T={T} at={K.Q + 0.8} until={K.N - 0.3} x={60} y={1010} texto="Streptomyces" it tam={36} color={KC.mint} />
-      <Etq T={T} at={K.Q + 1.6} until={K.N - 0.3} x={1030} y={470} texto="cadenas de esporas" lado="izq" tam={30} color="#f4f0e0" />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.0} until={K.G + 3.3} texto="¿es la lluvia?" x={330} y={620} tam={50} />
+      <Chip T={T} at={K.G + 3.4} until={K.Q - 0.3} texto="sobre todo: bacterias" x={330} y={620} tam={42} borde={KC.mint} />
+      <Etq T={T} at={K.Q + 0.8} until={K.N - 0.3} x={480} y={1335} texto="Streptomyces" it tam={38} color={KC.mint} />
+      <Etq T={T} at={K.Q + 1.6} until={K.N - 0.3} x={1030} y={500} texto="cadenas de esporas" lado="izq" tam={32} color="#f4f0e0" />
       <Chip T={T} at={K.Q + 2.6} until={K.N - 0.3} texto="geosmina · C₁₂H₂₂O" y={1500} tam={44} borde={GEO} />
       <Chip T={T} at={K.N + 1.6} until={K.Cu - 0.3} texto="1 ng = 0.000 000 001 g" y={1500} tam={40} borde={KC.violet} mono />
       <Chip T={T} at={K.Cu + 2.4} until={K.Pr - 0.2} texto="1 cucharadita · 200 albercas olímpicas" y={1500} tam={34} borde={KC.blue} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2015" quien="Joung y Buie · MIT, EUA" revista="Nature Communications · cámara rápida" x={560} y={760} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.0} anio="2015" quien="Joung y Buie · MIT, EUA" revista="Nature Communications · cámara rápida" x={400} y={300} />
       <Chip T={T} at={K.Es + 3.3} until={K.Bu - 0.2} texto="gotas sobre 16 suelos y otros materiales" y={1500} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.Bu + 1.4} until={K.Bu + 2.7} x={820} y={860} texto="burbujita de aire" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.Bu + 1.4} until={K.Bu + 2.7} x={640} y={800} texto="burbujita de aire" tam={28} color={KC.texto} />
       <Chip T={T} at={K.Bu + 1.2} until={K.Ae - 0.2} texto="burbuja → chorrito → gotitas" y={1500} tam={40} borde={KC.cyan} />
-      <Etq T={T} at={K.Ae + 0.4} until={K.Ll - 0.3} x={60} y={470} texto="aerosol" tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Ae + 0.8} until={K.Ll - 0.3} x={60} y={1060} texto="pedacitos de suelo" tam={30} color="#e2b07a" />
+      <Etq T={T} at={K.Ae + 0.4} until={K.Ll - 0.3} x={60} y={360} texto="aerosol" tam={38} color={KC.texto} />
+      <Etq T={T} at={K.Ae + 0.8} until={K.Ll - 0.3} x={60} y={1075} texto="pedacitos de suelo" tam={32} color="#e2b07a" />
       <Chip T={T} at={K.Ae + 2.6} until={K.Ll - 0.2} texto="hipótesis: ¿así viaja el olor?" y={1500} tam={38} borde={KC.orange} />
       <Chip T={T} at={K.Ll + 2.6} until={K.Co - 0.2} texto="aerosoles: llovizna sí, aguacero no" y={1500} tam={34} borde={KC.mint} />
-      <TarjetaEstudio T={T} at={K.Co + 0.3} until={K.Co + 3.1} anio="2020" quien="Becher et al. · Nat. Microbiology" revista="Univ. de Lund y equipo internacional" x={760} y={430} />
+      <TarjetaEstudio T={T} at={K.Co + 0.3} until={K.Co + 3.1} anio="2020" quien="Becher et al. · Nat. Microbiology" revista="Univ. de Lund y equipo internacional" x={540} y={330} />
       <Chip T={T} at={K.Co + 3.4} until={K.Ci - 0.2} texto="come la colonia → reparte esporas" y={1500} tam={36} borde={KC.mint} />
-      <Etq T={T} at={K.Ci + 0.6} until={K.Ou - 0.1} x={560} y={760} texto="geosmina" tam={36} color={KC.ink} />
+      <Etq T={T} at={K.Ci + 0.6} until={K.Ou - 0.1} x={640} y={900} texto="geosmina" tam={38} color={KC.ink} />
       <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="olor a lluvia = sobre todo geosmina" y={1500} tam={34} borde={GEO} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
