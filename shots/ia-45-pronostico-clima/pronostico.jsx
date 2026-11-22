@@ -294,21 +294,21 @@ function Pronostico() {
       <Escena T={T} a={K.Cu} b={K.P}>
         <FondoLunares color={KC.yellow} />
         <SVGF>
-          {/* pase a mano: los dos parches grandes, uno sobre otro (misma proporción de cuadrícula 86 : 34.4); el segundo espera atenuado */}
-          <g opacity={kprog(T, K.Cu + 0.05, K.Cu + 0.4)}><Parche x={200} y={220} w={680} h={500} paso={136} color={KC.mint} id="pIA" /></g>
-          <g opacity={kprog(T, K.Cu + 0.05, K.Cu + 0.4) * klerp(0.3, 1, kprog(T, K.Cu + 2.0, K.Cu + 2.4))}><Parche x={200} y={900} w={680} h={500} paso={54.4} color={KC.red} id="pSC" /></g>
+          {/* vuelta de encuadre: los dos parches bajan ~100 px · pase a mano: los dos parches grandes, uno sobre otro (misma proporción de cuadrícula 86 : 34.4); el segundo espera atenuado */}
+          <g opacity={kprog(T, K.Cu + 0.05, K.Cu + 0.4)}><Parche x={200} y={330} w={680} h={500} paso={136} color={KC.mint} id="pIA" /></g>
+          <g opacity={kprog(T, K.Cu + 0.05, K.Cu + 0.4) * klerp(0.3, 1, kprog(T, K.Cu + 2.0, K.Cu + 2.4))}><Parche x={200} y={1000} w={680} h={500} paso={54.4} color={KC.red} id="pSC" /></g>
         </SVGF>
       </Escena>
-      <Chip T={T} at={K.Cu + 0.4} until={K.P - 0.2} texto="IA · ≈ 28 km" x={540} y={755} tam={38} borde={KC.mint} />
-      <Chip T={T} at={K.Cu + 2.2} until={K.P - 0.2} texto="supercomputadora · ≈ 11 km" x={540} y={1435} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.Cu + 2.6} until={K.Cu + 4.3} texto="más detalle ↓" x={540} y={838} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Cu + 4.4} until={K.P - 0.2} texto={`+6 h × ${pasos} = ${kformato(pasos * 6 / 24, 1)} días`} x={540} y={838} tam={40} mono borde={KC.ink} />
-      <Chip T={T} at={K.Cu + 0.4} until={K.Cu + 2.0} texto="esquemático · en el ecuador" x={540} y={838} tam={28} borde={KC.texto} />
+      <Chip T={T} at={K.Cu + 0.4} until={K.P - 0.2} texto="IA · ≈ 28 km" x={540} y={866} tam={38} borde={KC.mint} />
+      <Chip T={T} at={K.Cu + 2.2} until={K.P - 0.2} texto="supercomputadora · ≈ 11 km" x={540} y={1536} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.Cu + 2.6} until={K.Cu + 4.3} texto="más detalle ↓" x={540} y={944} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.Cu + 4.4} until={K.P - 0.2} texto={`+6 h × ${pasos} = ${kformato(pasos * 6 / 24, 1)} días`} x={540} y={944} tam={40} mono borde={KC.ink} />
+      <Chip T={T} at={K.Cu + 0.4} until={K.Cu + 2.0} texto="esquemático · en el ecuador" x={540} y={944} tam={28} borde={KC.texto} />
 
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.Pr} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        <SVGF><text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text></SVGF>
+        <SVGF><text x={540} y={1330} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 1150)`}>?</text></SVGF>
       </Escena>
 
       {/* 6 · la prueba: 90 % de 1,380 */}
@@ -324,7 +324,7 @@ function Pronostico() {
       {/* 7 · ciclones (esquemático) y México */}
       <Escena T={T} a={K.Ci} b={K.Eu}>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#122c4c, #0e2442)' }}></div>
-        <SVGF>
+        <SVGF><g transform="translate(0 160)">{/* vuelta de encuadre: todo baja 160 px */}
           <g opacity={1 - kprog(T, mx - 0.1, mx + 0.4)}>
             <Traza pts={trayReal} p={pTray} color="#fff" ancho={11} guion="18 14" />
             <Traza pts={trayHRES} p={pTray} color={KC.pink} ancho={13} />
@@ -336,15 +336,15 @@ function Pronostico() {
             <Flecha x1={140} y1={1060} x2={420} y2={880} p={kprog(T, mx + 0.3, mx + 0.9)} color={KC.yellow} />
             <Flecha x1={1010} y1={980} x2={830} y2={790} p={kprog(T, mx + 0.6, mx + 1.2)} color={KC.yellow} />
           </g>
-        </SVGF>
+        </g></SVGF>
       </Escena>
       <Chip T={T} at={K.Ci + 0.3} until={mx - 0.1} texto="esquemático · ciclones de todo el mundo" x={540} y={262} tam={32} borde={KC.texto} />
-      <Etq T={T} at={K.Ci + 1.0} until={mx - 0.1} x={560} y={1150} texto="real" tam={40} color="#fff" />
-      <Etq T={T} at={K.Ci + 1.2} until={mx - 0.1} x={560} y={1215} texto="IA" tam={40} color={KC.mint} />
-      <Etq T={T} at={K.Ci + 1.4} until={mx - 0.1} x={560} y={1280} texto="supercomputadora" tam={40} color={KC.pink} />
-      <Chip T={T} at={mx + 0.4} until={K.Eu - 0.2} texto="≈ 5 ciclones al año" x={400} y={470} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={mx + 0.9} until={K.Eu - 0.2} texto="3 Pacífico" x={250} y={1140} tam={32} borde={KC.yellow} />
-      <Chip T={T} at={mx + 1.2} until={K.Eu - 0.2} texto="2 Golfo y Caribe" x={830} y={1140} tam={32} borde={KC.yellow} />
+      <Etq T={T} at={K.Ci + 1.0} until={mx - 0.1} x={560} y={1310} texto="real" tam={40} color="#fff" />
+      <Etq T={T} at={K.Ci + 1.2} until={mx - 0.1} x={560} y={1375} texto="IA" tam={40} color={KC.mint} />
+      <Etq T={T} at={K.Ci + 1.4} until={mx - 0.1} x={560} y={1440} texto="supercomputadora" tam={40} color={KC.pink} />
+      <Chip T={T} at={mx + 0.4} until={K.Eu - 0.2} texto="≈ 5 ciclones al año" x={400} y={630} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={mx + 0.9} until={K.Eu - 0.2} texto="3 Pacífico" x={250} y={1300} tam={32} borde={KC.yellow} />
+      <Chip T={T} at={mx + 1.2} until={K.Eu - 0.2} texto="2 Golfo y Caribe" x={830} y={1300} tam={32} borde={KC.yellow} />
 
       {/* 8 · el centro europeo ya usa su IA */}
       <Escena T={T} a={K.Eu} b={K.O}>
@@ -360,7 +360,7 @@ function Pronostico() {
       {/* 9 · ojo: arrancan de mediciones */}
       <Escena T={T} a={K.O} b={K.C}>
         <FondoCircuito T={T} />
-        <SVGF>
+        <SVGF><g transform="translate(0 170)">{/* vuelta de encuadre: todo baja 170 px */}
           {/* pase a mano: el mismo esquema, más grande y sin que el satélite se apague */}
           <g opacity={kprog(T, K.O + 0.05, K.O + 0.4)}><Satelite x={275} y={410} s={1.1} T={T} /></g>
           <g opacity={kprog(T, K.O + 0.05, K.O + 0.4) * klerp(0.45, 1, kprog(T, K.O + 0.9, K.O + 1.3))}><Estacion x={560} y={730} s={1.4} T={T} /></g>
@@ -371,10 +371,10 @@ function Pronostico() {
           <g opacity={kprog(T, K.O + 2.0, K.O + 2.4)}><HojaMapa x={470} y={1010} s={1.6} seed={11} /></g>
           <Flecha x1={708} y1={1010} x2={790} y2={1010} p={kprog(T, K.O + 3.6, K.O + 4.0)} color={KC.yellow} />
           <g opacity={kprog(T, K.O + 3.8, K.O + 4.2)}><ChipIA x={915} y={1010} s={0.66} T={T} /></g>
-        </SVGF>
+        </g></SVGF>
       </Escena>
-      <Chip T={T} at={K.O + 0.9} until={K.C - 0.2} texto="mediciones" x={400} y={235} tam={36} borde={KC.cyan} />
-      <MitoTachado T={T} at={K.O + 5.6} tacharEn={K.O + 6.6} until={K.C - 0.2} texto="«ya no hacen falta mediciones»" x={540} y={1330} tam={44} />
+      <Chip T={T} at={K.O + 0.9} until={K.C - 0.2} texto="mediciones" x={400} y={405} tam={36} borde={KC.cyan} />
+      <MitoTachado T={T} at={K.O + 5.6} tacharEn={K.O + 6.6} until={K.C - 0.2} texto="«ya no hacen falta mediciones»" x={540} y={1500} tam={44} />
 
       {/* 10 · cierre: el mismo pronóstico, en tu celular */}
       <Escena T={T} a={K.C} b={FIN}>
