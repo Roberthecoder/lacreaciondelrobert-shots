@@ -14,6 +14,8 @@ tiempo, así que solo tocas las carpetas `shots/<clave>/` de tu lista y tu archi
    y mírala. Ese es el nivel: sujeto que llena el cuadro, fondo oscuro, nada entra tarde, barras de escala recalculadas.
 
 ## Trabajo
+**Antes de empezar cada shot:** `git pull --rebase origin main` y `git log --oneline --grep="Pase a mano: <clave>" | head -1`. Si ya hay un commit de pase a mano de ese shot (otra sesión lo hizo), sáltalo y anótalo como «ya hecho por otra sesión» en tu archivo de avance. Si el .jsx del shot define su propio subtítulo quemado (un componente tipo Subtitulo, SubIt o parecido que escribe la narración en pantalla), apágalo con `if (!CINE_OPC.subtitulos) return null;`.
+
 Son pocos shots por sesión a propósito: Robert quiere el máximo detalle en cada uno, no velocidad por shot. Para cada shot de tu lista, en orden: el encargo completo de `encargo-pase.md` (auditor, hoja de cuadros de TODO el shot
 y MIRARLA, arreglar en el .jsx propio, volver a auditar y volver a mirar). Con el mismo rigor en el primero que en el último.
 Al terminar CADA shot:
