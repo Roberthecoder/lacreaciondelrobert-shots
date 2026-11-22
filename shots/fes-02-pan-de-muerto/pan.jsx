@@ -1,7 +1,7 @@
 // cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #02 · Día de Muertos · Biotecnológico: el hongo que infla el pan de muerto — NARRADO (N1 "Por dentro": pan → masa al microscopio → pan partido).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático (tamaños y número de levaduras, burbujas y cromosomas no son reales).
-const PAN = { costra:'#d98a2b', costraClara:'#f2b552', costraOscura:'#a85a17', miga:'#f7e3b4', hoyo:'#c79550' };
+const PAN = { costra:'#d98a2b', costraClara:'#f2b552', costraOscura:'#a85a17', miga:'#f7e3b4', hoyo:'#c79550', borde:'#7a4310' };
 const svgFull = (c, z = 0) => <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{c}</svg>;
 
 // Papel picado: tira de banderitas de colores que se mecen arriba de la pantalla.
@@ -18,6 +18,16 @@ function PapelPicado({ T, y = 0, n = 6, colores = [KC.pink, KC.violet, KC.mint, 
   </svg>;
 }
 
+// Mesa de madera oscura: el escenario de las escenas a escala real (el pan ya no flota en el vacío).
+function Mesa({ y = 1270 }) {
+  return <g>
+    <rect x={0} y={y} width={KW} height={KH - y} fill="#1f130b" />
+    {[1, 2, 3, 4].map((k) => <line key={k} x1={0} x2={KW} y1={y + k * 150} y2={y + k * 150} stroke="#2c1b10" strokeWidth={5} />)}
+    {[[180, 0], [640, 1], [400, 2], [860, 3], [240, 4]].map(([x, k]) => <line key={x} x1={x} x2={x} y1={y + k * 150} y2={y + (k + 1) * 150} stroke="#2c1b10" strokeWidth={5} />)}
+    <rect x={0} y={y} width={KW} height={9} fill="#5a3a20" />
+  </g>;
+}
+
 // Pan de muerto (vista de frente). infla: 0..1 (sube y se redondea). partido: 0..1 (se abre y muestra la miga). brillo: los hoyitos brillan.
 function PanMuerto({ T, x, y, s = 1, infla = 1, partido = 0, brillo = 0, seed = 7 }) {
   const sy = klerp(0.55, 1, infla), sx = klerp(0.92, 1, infla);
@@ -25,27 +35,27 @@ function PanMuerto({ T, x, y, s = 1, infla = 1, partido = 0, brillo = 0, seed = 
   const rh = krng(seed + 3), hoyos = Array.from({ length: 46 }, () => [klerp(-210, 210, rh()), klerp(-110, 130, rh()), 6 + rh() * 18]).filter(([a, b, q]) => (a * a) / (225 * 225) + ((b - 10) * (b - 10)) / (150 * 150) < 0.8);
   const domo = 'M -260 150 C -275 20 -170 -150 0 -150 C 170 -150 275 20 260 150 Z';
   const hueso = (x2, y2, k) => { const d = `M 0 -150 Q ${x2 * 0.55} ${-150 + (y2 + 150) * 0.15} ${x2} ${y2}`;
-    return <g key={k}><path d={d} stroke={KC.ink} strokeWidth={34} fill="none" strokeLinecap="round" /><path d={d} stroke={PAN.costraClara} strokeWidth={24} fill="none" strokeLinecap="round" />
+    return <g key={k}><path d={d} stroke={PAN.borde} strokeWidth={34} fill="none" strokeLinecap="round" /><path d={d} stroke={PAN.costraClara} strokeWidth={24} fill="none" strokeLinecap="round" />
       {[0.3, 0.55, 0.8].map((u) => { const px = 2 * (1 - u) * u * x2 * 0.55 + u * u * x2, py = (1 - u) * (1 - u) * -150 + 2 * (1 - u) * u * (-150 + (y2 + 150) * 0.15) + u * u * y2;
-        return <circle key={u} cx={px} cy={py} r={18} fill={PAN.costraClara} stroke={KC.ink} strokeWidth={5} />; })}</g>; };
+        return <circle key={u} cx={px} cy={py} r={18} fill={PAN.costraClara} stroke={PAN.borde} strokeWidth={5} />; })}</g>; };
   const abre = kEase.suave(partido);
   return <g transform={`translate(${x} ${y}) scale(${s * sx} ${s * sy})`}>
     <ellipse cx={0} cy={165} rx={290} ry={30} fill="rgba(0,0,0,.25)" />
     {partido < 0.02 ? <>
-      <path d={domo} fill={PAN.costra} stroke={KC.ink} strokeWidth={9} />
+      <path d={domo} fill={PAN.costra} stroke={PAN.borde} strokeWidth={9} />
       <ellipse cx={-60} cy={-60} rx={140} ry={60} fill={PAN.costraClara} opacity={0.55} />
       {hueso(-240, 95, 'a')}{hueso(240, 95, 'b')}{hueso(-105, 150, 'c')}{hueso(105, 150, 'd')}
-      <circle cx={0} cy={-160} r={44} fill={PAN.costraClara} stroke={KC.ink} strokeWidth={7} />
+      <circle cx={0} cy={-160} r={44} fill={PAN.costraClara} stroke={PAN.borde} strokeWidth={7} />
       {azucar.map(([a, b, q], i) => <circle key={i} cx={a} cy={b} r={q} fill={i % 5 ? '#fff' : KC.pink} opacity={0.9} />)}
     </> : <>
       {/* la otra mitad se aleja a la derecha */}
       <g transform={`translate(${abre * 310} ${-abre * 10}) rotate(${abre * 8})`} opacity={1 - abre * 0.15}>
-        <path d={domo} fill={PAN.costra} stroke={KC.ink} strokeWidth={9} clipPath="none" />
+        <path d={domo} fill={PAN.costra} stroke={PAN.borde} strokeWidth={9} clipPath="none" />
         {hueso(240, 95, 'b2')}
       </g>
       {/* cara del corte: la miga con sus hoyitos */}
       <g transform={`translate(${-abre * 120} 0)`}>
-        <path d={domo} fill={PAN.costraOscura} stroke={KC.ink} strokeWidth={9} />
+        <path d={domo} fill={PAN.costraOscura} stroke={PAN.borde} strokeWidth={9} />
         <path d="M -232 140 C -245 25 -150 -122 0 -122 C 150 -122 245 25 232 140 Z" fill={PAN.miga} />
         {hoyos.map(([a, b, q], i) => <g key={i}>
           <ellipse cx={a} cy={b} rx={q} ry={q * 0.8} fill={PAN.hoyo} opacity={0.85} />
@@ -58,14 +68,14 @@ function PanMuerto({ T, x, y, s = 1, infla = 1, partido = 0, brillo = 0, seed = 
 
 // Levadura esquemática (célula ovalada ~5 µm). brote 0..1 = gemación. vida 0..1 (0 = muerta, gris). come = boca abierta (vacuola).
 function Levadura({ x, y, s = 1, rot = 0, brote = 0, vida = 1, T = 0, seed = 1 }) {
-  const late = 1 + 0.03 * Math.sin(T * 3 + seed);
+  const late = 1 + 0.03 * Math.sin(T * 3 + seed), tr = Math.min(1, 1.5 / s);   // el contorno no engorda al agrandar la célula
   const c = vida > 0.5 ? '#f3dfa6' : mixHex('#f3dfa6', '#8a8f99', 1 - vida * 2);
   return <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${s * late})`} opacity={0.35 + 0.65 * vida}>
-    {brote > 0 && <ellipse cx={58 + 24 * brote} cy={-6} rx={30 * brote} ry={25 * brote} fill={c} stroke={KC.ink} strokeWidth={5} />}
-    <ellipse cx={0} cy={0} rx={64} ry={50} fill={c} stroke={KC.ink} strokeWidth={6} />
+    {brote > 0 && <ellipse cx={58 + 24 * brote} cy={-6} rx={30 * brote} ry={25 * brote} fill={c} stroke={KC.ink} strokeWidth={5 * tr} />}
+    <ellipse cx={0} cy={0} rx={64} ry={50} fill={c} stroke={KC.ink} strokeWidth={6 * tr} />
     <ellipse cx={-16} cy={-14} rx={22} ry={13} fill="#fff" opacity=".45" />
-    <circle cx={10} cy={8} r={17} fill="#c9a46a" stroke={KC.ink} strokeWidth={4} />
-    <circle cx={-26} cy={16} r={10} fill="#e9f3ff" stroke="rgba(0,0,0,.35)" strokeWidth={3} />
+    <circle cx={10} cy={8} r={17} fill="#c9a46a" stroke={KC.ink} strokeWidth={4 * tr} />
+    <circle cx={-26} cy={16} r={10} fill="#e9f3ff" stroke="rgba(0,0,0,.35)" strokeWidth={3 * tr} />
   </g>;
 }
 function Burbuja({ x, y, r, o = 1, etiqueta }) {
@@ -126,9 +136,9 @@ function PanDeMuerto() {
   // gancho: el pan se infla desde el cuadro 0
   const infla = kprog(T, K.G, K.G + 1.1, kEase.rebote);
   // levaduras del microscopio (posiciones fijas)
-  const rl = krng(41), levs = Array.from({ length: 9 }, (_, i) => ({ x: 170 + (i % 3) * 340 + (rl() - 0.5) * 90, y: 560 + Math.floor(i / 3) * 260 + (rl() - 0.5) * 70, rot: rl() * 360, s: 0.9 + rl() * 0.4, ph: rl() }));
+  const rl = krng(41), levs = Array.from({ length: 9 }, (_, i) => ({ x: 190 + (i % 3) * 350 + (rl() - 0.5) * 90, y: 540 + Math.floor(i / 3) * 340 + (rl() - 0.5) * 70, rot: rl() * 360, s: (0.9 + rl() * 0.4) * 1.5, ph: rl() }));
   // burbujas de la red de gluten que crecen
-  const gb = [[300, 760], [720, 640], [560, 1020], [230, 1120], [860, 1000]].map(([x, y], i) => [x, y, klerp(10, 95 + (i % 2) * 30, kprog(T, K.Gl + 0.4 + i * 0.25, K.Gl + 3.8, kEase.suave))]);
+  const gb = [[300, 760], [720, 640], [560, 1020], [230, 1120], [860, 1000]].map(([x, y], i) => [x, y, klerp(26, 130 + (i % 2) * 40, kprog(T, K.Gl + 0.2 + i * 0.25, K.Gl + 3.8, kEase.suave))]);
   const calor = kprog(T, K.H + 0.3, K.H + 2.0);
   const muere = kprog(T, K.H + 2.4, K.H + 3.6);
   const cambio = kprog(T, K.D + 3.2, K.D + 4.4, kEase.suave);
@@ -139,9 +149,14 @@ function PanDeMuerto() {
         <FondoLunares color={KC.orange} />
         <PapelPicado T={T} />
         {svgFull(<>
-          <PanMuerto T={T} x={430} y={900} s={1.15} infla={infla} />
-          {[0, 1, 2, 3, 4].map((k) => { const t0 = K.G + 0.2 + k * 0.18, u = kprog(T, t0, t0 + 0.9); return u > 0 && u < 1 ? <Burbuja key={k} x={250 + k * 90} y={730 - u * 260} r={14 + k * 3} o={1 - u} /> : null; })}
+          <Mesa />
+          <PanMuerto T={T} x={540} y={1000} s={1.9} infla={infla} />
+          {[0, 1, 2, 3, 4].map((k) => { const t0 = K.G + 0.2 + k * 0.18, u = kprog(T, t0, t0 + 0.9); return u > 0 && u < 1 ? <Burbuja key={k} x={300 + k * 120} y={740 - u * 320} r={22 + k * 5} o={1 - u} /> : null; })}
         </>)}
+        {/* antes del segundo 3 ya se ve hacia dónde va la historia: las levaduras que viven en la masa */}
+        <Lupa T={T} at={K.G + 2.7} until={K.L - 0.2} x={815} y={500} r={165} fx={620} fy={900} tinte={KC.yellow}
+          interior={(t, r) => <svg width={r * 2} height={r * 2}><circle cx={r} cy={r} r={r} fill="#1a130c" />
+            {[[-52, -38, 20], [50, -22, 140], [-8, 56, 260]].map(([a, b, ro], i) => <Levadura key={i} T={t} seed={i} x={r + a} y={r + b} s={0.72} rot={ro} brote={i === 1 ? 0.5 : 0} />)}</svg>} />
       </Escena>
       {/* 2 · al microscopio: levaduras que brotan */}
       <Escena T={T} a={K.L} b={K.Co} fondo={KC.noche} zoom={0.04}>
@@ -149,35 +164,36 @@ function PanDeMuerto() {
         <Ambiente T={T} n={30} seed={8} color="rgba(255,230,180,.25)" />
         {svgFull(<>
           {/* entrada: el pan se acerca y desaparece */}
-          {T < K.L + 1.2 && <g opacity={1 - kprog(T, K.L + 0.5, K.L + 1.2)}><PanMuerto T={T} x={540} y={960} s={klerp(1.3, 9, kprog(T, K.L - 0.4, K.L + 1.2, kEase.suave))} /></g>}
-          {levs.map((l, i) => { const a = K.L + 0.8 + i * 0.12; return T > a ? <Levadura key={i} T={T} seed={i} x={l.x} y={l.y} rot={l.rot} s={l.s * kprog(T, a, a + 0.4, kEase.rebote)} brote={kprog(T, K.L + 2 + l.ph, K.L + 4.5 + l.ph)} /> : null; })}
+          {T < K.L + 1.2 && <g opacity={1 - kprog(T, K.L + 0.5, K.L + 1.2)}><PanMuerto T={T} x={540} y={1000} s={klerp(1.9, 10, kprog(T, K.L - 0.4, K.L + 1.2, kEase.suave))} /></g>}
+          {levs.map((l, i) => { const a = K.L + 0.5 + i * 0.08; return T > a ? <Levadura key={i} T={T} seed={i} x={l.x} y={l.y} rot={l.rot} s={l.s * kprog(T, a, a + 0.4, kEase.rebote)} brote={kprog(T, K.L + 2 + l.ph, K.L + 4.5 + l.ph)} /> : null; })}
         </>)}
-        <Escala T={T} z={1} pxPorMm={24000} x={60} y={1430} />
+        <Escala T={T} z={1.5} pxPorMm={24000} x={60} y={1430} />
       </Escena>
       {/* 3 · come azúcar */}
       <Escena T={T} a={K.Co} b={K.S} fondo={KC.noche}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, #2a1e12 0%, ${KC.noche} 75%)` }}></div>
         {svgFull(<>
-          <Levadura T={T} x={540} y={860} s={2.6} brote={0.4} />
-          {Array.from({ length: 14 }, (_, i) => { const t0 = K.Co + 0.3 + i * 0.32, u = kprog(T, t0, t0 + 1.1, kEase.suave), ang = i * 2.4, R = 520;
-            return u > 0 && u < 1 ? <Cubito key={i} x={540 + Math.cos(ang) * R * (1 - u)} y={860 + Math.sin(ang) * R * 0.8 * (1 - u)} s={1.4 * (1 - u * 0.6)} o={1 - kprog(u, 0.85, 1)} /> : null; })}
+          <Levadura T={T} x={510} y={900} s={5} brote={0.4} />
+          {Array.from({ length: 14 }, (_, i) => { const t0 = K.Co + 0.1 + i * 0.32, u = kprog(T, t0, t0 + 1.1, kEase.suave), ang = i * 2.4, R = 640;
+            return u > 0 && u < 1 ? <Cubito key={i} x={510 + Math.cos(ang) * R * (1 - u)} y={900 + Math.sin(ang) * R * 0.95 * (1 - u)} s={2.6 * (1 - u * 0.6)} o={1 - kprog(u, 0.85, 1)} /> : null; })}
         </>)}
-        <Escala T={T} z={2.6} pxPorMm={24000} x={60} y={1430} />
+        <Escala T={T} z={5} pxPorMm={24000} x={60} y={1430} />
       </Escena>
       {/* 4 · suelta CO2 y alcohol */}
       <Escena T={T} a={K.S} b={K.Gl} fondo={KC.noche}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, #2a1e12 0%, ${KC.noche} 75%)` }}></div>
         {svgFull(<>
-          <Levadura T={T} x={540} y={900} s={2.6} brote={0.4} />
-          {Array.from({ length: 8 }, (_, i) => { const t0 = K.S + 0.3 + i * 0.3, u = kprog(T, t0, t0 + 1.6), lado = i % 2 ? 1 : -1;
+          <Levadura T={T} x={510} y={900} s={5} brote={0.4} />
+          {Array.from({ length: 8 }, (_, i) => { const t0 = K.S + 0.1 + i * 0.3, u = kprog(T, t0, t0 + 1.6), lado = i % 2 ? 1 : -1;
             return u > 0 && u < 1 ? (i % 3 === 2
-              ? <g key={i} opacity={1 - kprog(u, 0.8, 1)}><path d={`M ${540 + lado * (120 + u * 260)} ${900 - u * 300} m 0 -18 q 14 18 0 30 q -14 -12 0 -30 Z`} fill={KC.lilac} stroke={KC.ink} strokeWidth={3} /></g>
-              : <Burbuja key={i} x={540 + lado * (150 + u * 250)} y={880 - u * 420} r={34 + u * 26} o={1 - kprog(u, 0.85, 1)} etiqueta="CO₂" />) : null; })}
+              ? <g key={i} opacity={1 - kprog(u, 0.8, 1)} transform={`translate(${510 + lado * (300 + u * 180)} ${700 - u * 330}) scale(3)`}><path d="M 0 -18 q 14 18 0 30 q -14 -12 0 -30 Z" fill={KC.lilac} stroke={KC.ink} strokeWidth={1.2} /></g>
+              : <Burbuja key={i} x={510 + lado * (330 + u * 150)} y={860 - u * 480} r={52 + u * 40} o={1 - kprog(u, 0.85, 1)} etiqueta="CO₂" />) : null; })}
         </>)}
+        <Escala T={T} z={5} pxPorMm={24000} x={60} y={1430} />
       </Escena>
       {/* 5 · red de gluten que atrapa el gas */}
       <Escena T={T} a={K.Gl} b={K.P} zoom={0.06}>
-        <div style={{ position:'absolute', inset:0, background:'#3a2412' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 90% 60% at 50% 48%, #2a1a0c 0%, #140d08 70%, #0a0806 100%)' }}></div>
         {svgFull(<>
           <RedGluten T={T} burbujas={gb} />
           {gb.map(([x, y, r], i) => <Burbuja key={i} x={x} y={y} r={r} etiqueta={r > 60 ? 'CO₂' : null} />)}
@@ -187,55 +203,56 @@ function PanDeMuerto() {
       <Escena T={T} a={K.P} b={K.H} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         {svgFull(<>
-          <PanMuerto T={T} x={300} y={1020} s={0.85} />
-          <text x={300} y={730} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 300 640)`}>?</text>
+          <PanMuerto T={T} x={540} y={1150} s={1.55} />
+          <text x={540} y={800} textAnchor="middle" style={{ font:`400 330px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 700)`}>?</text>
         </>)}
       </Escena>
       {/* 7 · el horno */}
       <Escena T={T} a={K.H} b={K.M}>
         <FondoLunares color={KC.coral} />
-        {svgFull(<>
+        {svgFull(<g transform="translate(0 120)">
           <Horno T={T} calor={calor} />
-          <PanMuerto T={T} x={480} y={1000} s={0.75} infla={1} />
-          {Array.from({ length: 7 }, (_, i) => { const t0 = K.H + 0.8 + i * 0.4, u = kprog(T, t0, t0 + 1.8); return u > 0 && u < 1 ? <path key={i} d={`M ${380 + i * 35} ${830 - u * 200} q 18 -25 0 -50 q -18 -25 0 -50`} stroke="#e8e2ff" strokeWidth={9} fill="none" strokeLinecap="round" opacity={(1 - u) * 0.9} /> : null; })}
-          <Termometro x={880} y={1060} nivel={0.15 + 0.8 * calor} />
-          <g transform="translate(540 430)">
-            <circle r={115} fill={KC.noche} stroke={KC.texto} strokeWidth={8} /><text y={-128} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>levaduras</text>
-            {[[-45, -30], [45, -20], [-10, 45]].map(([a, b], i) => <Levadura key={i} T={T} x={a} y={b} s={0.55} rot={i * 50} vida={1 - muere} />)}
+          <PanMuerto T={T} x={470} y={1005} s={1.15} infla={1} />
+          {Array.from({ length: 7 }, (_, i) => { const t0 = K.H + 0.8 + i * 0.4, u = kprog(T, t0, t0 + 1.8); return u > 0 && u < 1 ? <path key={i} d={`M ${350 + i * 40} ${790 - u * 110} q 18 -25 0 -50 q -18 -25 0 -50`} stroke="#e8e2ff" strokeWidth={9} fill="none" strokeLinecap="round" opacity={(1 - u) * 0.9} /> : null; })}
+          <Termometro x={872} y={1060} nivel={0.15 + 0.8 * calor} />
+          <g transform="translate(540 395)">
+            <circle r={142} fill={KC.noche} stroke={KC.texto} strokeWidth={6} /><text y={-158} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>levaduras</text>
+            {[[-56, -36], [56, -24], [-12, 58]].map(([a, b], i) => <Levadura key={i} T={T} x={a} y={b} s={0.7} rot={i * 50} vida={1 - muere} />)}
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 8 · la miga: burbujas fijas = hoyitos */}
       <Escena T={T} a={K.M} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {svgFull(<PanMuerto T={T} x={460} y={900} s={1.15} partido={kprog(T, K.M - 0.2, K.M + 1.0)} brillo={kprog(T, K.M + 1.4, K.M + 2.2) * 0.6} />)}
+        {svgFull(<><Mesa y={1190} /><PanMuerto T={T} x={610} y={990} s={1.4} partido={kprog(T, K.M - 0.2, K.M + 1.0)} brillo={kprog(T, K.M + 1.4, K.M + 2.2) * 0.6} /></>)}
       </Escena>
       {/* 9 · el estudio de 1996: unos 600 científicos */}
       <Escena T={T} a={K.E} b={K.Ge}>
         <FondoLunares color={KC.cyan} />
-        {svgFull(Array.from({ length: 600 }, (_, i) => { const c = i % 30, r = Math.floor(i / 30), at = K.E + 0.2 + i * 0.006; return T > at ? <circle key={i} cx={75 + c * 32} cy={420 + r * 32} r={11 * kprog(T, at, at + 0.2)} fill={[KC.violet, KC.blue, KC.pink][Math.floor(c / 10)]} opacity=".55" /> : null; }))}
+        {svgFull(Array.from({ length: 600 }, (_, i) => { const c = i % 30, r = Math.floor(i / 30), at = K.E + 0.2 + i * 0.006; return T > at ? <circle key={i} cx={75 + c * 32} cy={520 + r * 30} r={11 * kprog(T, at, at + 0.2)} fill={[KC.violet, KC.blue, KC.pink][Math.floor(c / 10)]} opacity=".7" /> : null; }))}
+        {svgFull(<Levadura T={T} x={520} y={1390} s={3.1} brote={0.4} />)}
       </Escena>
       {/* 10 · el genoma: primer ser con núcleo leído completo */}
       <Escena T={T} a={K.Ge} b={K.D} fondo={KC.noche}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {svgFull(<>
-          <g transform="translate(600 820)">
-            <ellipse rx={360} ry={280} fill="#f3dfa6" stroke={KC.ink} strokeWidth={10} />
-            <circle cx={30} cy={10} r={170} fill="#d9b880" stroke={KC.ink} strokeWidth={8} />
-            {Array.from({ length: 8 }, (_, i) => { const at = K.Ge + 0.4 + i * 0.15; return <Cromosoma key={i} x={30 + Math.cos(i * 0.8) * 95} y={10 + Math.sin(i * 1.3) * 95} s={0.55 * kprog(T, at, at + 0.4, kEase.rebote)} rot={i * 40 + T * 10} color={[KC.pink, KC.mint, KC.blue, KC.orange][i % 4]} />; })}
+          <g transform="translate(530 760) scale(1.3)">
+            <ellipse rx={360} ry={280} fill="#f3dfa6" stroke={KC.ink} strokeWidth={6} />
+            <circle cx={30} cy={10} r={170} fill="#d9b880" stroke={KC.ink} strokeWidth={5} />
+            {Array.from({ length: 8 }, (_, i) => { const at = K.Ge + 0.05 + i * 0.12; return <Cromosoma key={i} x={30 + Math.cos(i * 0.8) * 95} y={10 + Math.sin(i * 1.3) * 95} s={0.55 * kprog(T, at, at + 0.4, kEase.rebote)} rot={i * 40 + T * 10} color={[KC.pink, KC.mint, KC.blue, KC.orange][i % 4]} />; })}
           </g>
         </>)}
       </Escena>
       {/* 11 · tú vs. la levadura, y el gen humano que funciona */}
       <Escena T={T} a={K.D} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svgFull(<g opacity={kprog(T, K.D + 2.9, K.D + 3.3)}>
-          <g transform="translate(540 820)">
-            <ellipse rx={420} ry={260} fill="#f3dfa6" stroke={KC.ink} strokeWidth={10} />
+        {svgFull(<g opacity={0.5 + 0.5 * kprog(T, K.D + 2.7, K.D + 3.3)}>
+          <g transform={`translate(540 ${klerp(1240, 860, kprog(T, K.D + 2.5, K.D + 3.3, kEase.suave))}) scale(${klerp(0.95, 1.2, kprog(T, K.D + 2.5, K.D + 3.3, kEase.suave))})`}>
+            <ellipse rx={420} ry={260} fill="#f3dfa6" stroke={KC.ink} strokeWidth={6} />
             <rect x={-330} y={-30} width={660} height={60} rx={30} fill="#d9b880" stroke={KC.ink} strokeWidth={6} />
             {[-260, -160, 60, 160, 260].map((gx, i) => <rect key={i} x={gx - 40} y={-24} width={80} height={48} rx={12} fill={[KC.pink, KC.lilac, KC.yellow, KC.cyan, KC.coral][i]} stroke={KC.ink} strokeWidth={4} />)}
             <rect x={-80} y={-24 - cambio * 220} width={110} height={48} rx={12} fill={KC.orange} stroke={KC.ink} strokeWidth={5} opacity={1 - cambio * 0.7} />
-            <rect x={-80} y={-24 + (1 - cambio) * 260} width={110} height={48} rx={12} fill={KC.blue} stroke={KC.ink} strokeWidth={5} />
+            {T > K.D + 2.9 && <rect x={-80} y={-24 + (1 - cambio) * 380} width={110} height={48} rx={12} fill={KC.blue} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.D + 2.9, K.D + 3.2)} />}
             {T > K.D + 4.5 && <path d="M -330 -150 l 40 40 l 80 -90" stroke={KC.leaf} strokeWidth={26} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={kprog(T, K.D + 4.5, K.D + 4.8)} />}
           </g>
         </g>)}
@@ -244,34 +261,34 @@ function PanDeMuerto() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <PapelPicado T={T} />
-        {svgFull(<PanMuerto T={T} x={400} y={900} s={1.1} partido={kprog(T, K.C + 1.2, K.C + 2.2)} brillo={kprog(T, K.C + 2.2, K.C + 3.0)} />)}
+        {svgFull(<><Mesa /><PanMuerto T={T} x={klerp(540, 640, kprog(T, K.C + 1.2, K.C + 2.2, kEase.suave))} y={1030} s={1.6} partido={kprog(T, K.C + 1.2, K.C + 2.2)} brillo={kprog(T, K.C + 2.2, K.C + 3.0)} /></>)}
       </Escena>
 
       {/* textos */}
       <Chip T={T} at={K.G + 0.3} until={K.L - 0.3} texto="Especial Día de Muertos" x={330} y={330} tam={34} borde={KC.yellow} />
-      <Etq T={T} at={K.G + 1.0} until={K.G + 2.6} x={80} y={640} texto="¿aire?" tam={40} />
-      <Etq T={T} at={K.G + 2.8} until={K.L - 0.3} x={80} y={640} texto="un hongo vivo" tam={40} color={KC.yellow} />
-      <Etq T={T} at={K.L + 1.4} until={K.Co - 0.3} x={360} y={1480} texto="Saccharomyces cerevisiae" it tam={34} color={KC.yellow} />
-      <Etq T={T} at={K.L + 2.4} until={K.Co - 0.3} x={60} y={470} texto="brota (gemación)" tam={30} />
-      <Chip T={T} at={K.L + 3.0} until={K.Co - 0.3} texto="miles de millones por cucharadita" y={1560} tam={36} borde={KC.yellow} />
-      <Chip T={T} at={K.Co + 0.5} until={K.S - 0.3} texto="azúcar que le pusieron" x={340} y={420} tam={34} borde={KC.pink} />
-      <Chip T={T} at={K.Co + 2.0} until={K.S - 0.3} texto="+ azúcar del almidón de la harina" y={1500} tam={34} borde={KC.yellow} />
-      <Etq T={T} at={K.S + 0.6} until={K.Gl - 0.3} x={80} y={1480} texto="CO₂ (gas)" tam={36} color={KC.cyan} />
-      <Etq T={T} at={K.S + 1.0} until={K.Gl - 0.3} x={1000} y={1480} texto="alcohol (C₂H₅OH)" lado="izq" tam={36} color={KC.lilac} />
-      <Chip T={T} at={K.Gl + 0.4} until={K.P - 0.3} texto="red de gluten (elástica)" x={380} y={440} tam={38} borde={'#f1d08a'} />
-      <Chip T={T} at={K.P + 0.3} until={K.H - 0.2} texto="¿alcohol?" x={300} y={440} tam={52} borde={KC.yellow} />
-      <Etq T={T} at={K.H + 1.2} until={K.M - 0.3} x={600} y={760} texto="vapor de alcohol" tam={32} color={KC.texto} />
-      <Etq T={T} at={K.H + 2.4} until={K.M - 0.3} x={1000} y={1450} texto="+50 °C: mueren" lado="izq" tam={38} color={KC.yellow} />
-      <Etq T={T} at={K.M + 1.3} until={K.E - 0.3} x={60} y={520} texto="hoyitos = burbujas de CO₂" tam={36} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.3} until={K.Ge - 0.3} anio="1996" quien="Goffeau et al. · unos 600 científicos" revista="Europa, Norteamérica y Japón · Science" y={800} />
-      <Etq T={T} at={K.E + 1.4} until={K.Ge - 0.3} x={70} y={1470} texto="cada punto: un científico (esquemático)" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ge + 0.4} until={K.D - 0.3} texto="1.er genoma completo de un ser con núcleo" y={1720} tam={34} borde={KC.mint} />
-      <NumeroGigante T={T} at={K.Ge + 1.6} until={K.D - 0.3} valor={6000} dur={1.6} etiqueta="genes de la levadura" y={1530} tam={150} color={KC.mint} />
+      <Etq T={T} at={K.G + 1.0} until={K.G + 2.3} x={70} y={550} texto="¿aire?" tam={44} />
+      <Etq T={T} at={K.G + 2.8} until={K.L - 0.3} x={70} y={550} texto="un hongo vivo" tam={44} color={KC.yellow} />
+      <Etq T={T} at={K.L + 1.4} until={K.Co - 0.3} x={330} y={1440} texto="Saccharomyces cerevisiae" it tam={36} color={KC.yellow} />
+      <Etq T={T} at={K.L + 2.4} until={K.Co - 0.3} x={120} y={705} texto="brota (gemación)" tam={34} />
+      <Chip T={T} at={K.L + 3.0} until={K.Co - 0.3} texto="miles de millones por cucharadita" y={1530} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.Co + 0.5} until={K.S - 0.3} texto="azúcar que le pusieron" x={340} y={440} tam={34} borde={KC.pink} />
+      <Chip T={T} at={K.Co + 2.0} until={K.S - 0.3} texto="+ azúcar del almidón de la harina" y={1400} tam={34} borde={KC.yellow} />
+      <Etq T={T} at={K.S + 0.6} until={K.Gl - 0.3} x={80} y={1340} texto="CO₂ (gas)" tam={40} color={KC.cyan} />
+      <Etq T={T} at={K.S + 1.0} until={K.Gl - 0.3} x={1000} y={1340} texto="alcohol (C₂H₅OH)" lado="izq" tam={40} color={KC.lilac} />
+      <Chip T={T} at={K.Gl + 0.4} until={K.P - 0.3} texto="red de gluten (elástica)" x={540} y={300} tam={38} borde={'#f1d08a'} />
+      <Chip T={T} at={K.P + 0.3} until={K.H - 0.2} texto="¿alcohol?" x={540} y={400} tam={56} borde={KC.yellow} />
+      <Etq T={T} at={K.H + 1.2} until={K.M - 0.3} x={600} y={800} texto="vapor de alcohol" tam={32} color={KC.texto} />
+      <Etq T={T} at={K.H + 2.4} until={K.M - 0.3} x={1000} y={1490} texto="+50 °C: mueren" lado="izq" tam={42} color={KC.yellow} />
+      <Etq T={T} at={K.M + 1.3} until={K.E - 0.3} x={60} y={640} texto="hoyitos = burbujas de CO₂" tam={40} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.3} until={K.Ge - 0.3} anio="1996" quien="Goffeau et al. · unos 600 científicos" revista="Europa, Norteamérica y Japón · Science" y={335} />
+      <Etq T={T} at={K.E + 1.4} until={K.Ge - 0.3} x={70} y={1150} texto="cada punto: un científico (esquemático)" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Ge + 0.4} until={K.D - 0.3} texto="1.er genoma completo de un ser con núcleo" y={285} tam={36} borde={KC.mint} />
+      <NumeroGigante T={T} at={K.Ge + 1.6} until={K.D - 0.3} valor={6000} dur={1.6} etiqueta="genes de la levadura" y={1370} tam={160} color={KC.mint} />
       <Comparativa T={T} at={K.D + 0.1} until={K.D + 2.8} izq={{ valor:6000, texto:'≈6,000', etiqueta:'levadura', color:KC.yellow }} der={{ valor:20000, texto:'≈20,000', etiqueta:'tú', color:KC.pink }} max={20000} y={330} alto={440} />
-      <Etq T={T} at={K.D + 3.3} until={K.C - 0.3} x={120} y={470} texto="gen humano" tam={34} color={KC.blue} />
-      <Chip T={T} at={K.D + 4.6} until={K.C - 0.3} texto="¡funciona! · Kachroo et al. 2015" y={1500} tam={36} borde={KC.leaf} />
-      <Etq T={T} at={K.D + 4.9} until={K.C - 0.3} x={110} y={1600} texto="casi la mitad de 414 genes probados" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="cada hoyito: CO₂ de una levadura" y={1500} tam={36} borde={KC.yellow} />
+      <Etq T={T} at={K.D + 3.3} until={K.D + 4.3} x={585} y={1316} texto="gen humano" tam={38} color="#9dbcff" />
+      <Chip T={T} at={K.D + 4.6} until={K.C - 0.3} texto="¡funciona! · Kachroo et al. 2015" y={1440} tam={36} borde={KC.leaf} />
+      <Etq T={T} at={K.D + 4.9} until={K.C - 0.3} x={110} y={1530} texto="casi la mitad de 414 genes probados" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.C + 2.4} until={K.Ou} texto="cada hoyito: CO₂ de una levadura" y={1440} tam={36} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.L - 0.1} texto="No lo infló el aire: *un hongo vivo.*" />
