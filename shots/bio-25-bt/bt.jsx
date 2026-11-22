@@ -1,7 +1,7 @@
 // cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #25 · El maíz que fabrica su propio insecticida (maíz Bt) — NARRADO (N1 por dentro + N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático y no está a escala.
-const VERDE = '#3fbf4a', VERDE2 = '#2b8f3a', VERDE_CL = '#8fe07a', CRY = '#F4C25A', TIERRA = '#7a5230', TIERRA2 = '#5e3d22';
+const VERDE = '#3fbf4a', VERDE2 = '#2b8f3a', VERDE_CL = '#8fe07a', CRY = '#F4C25A', TIERRA = '#55391f', TIERRA2 = '#3f2a17';
 const ORUGA = '#7d8a4e', ORUGA2 = '#55603a', CABEZA = '#3a2a1a', ALCA = '#6b4dff', ACIDO = '#ff6b2f';
 
 // Capa SVG de pantalla completa.
@@ -243,24 +243,24 @@ function Bt() {
       <Escena T={T} a={K.Ge} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgBt>
-          <rect x={0} y={760} width={KW} height={1160} fill={TIERRA} stroke={KC.ink} strokeWidth={8} />
-          {Array.from({ length: 40 }, (_, i) => <circle key={i} cx={(i * 137) % KW} cy={800 + ((i * 91) % 1100)} r={8 + (i % 5) * 4} fill={TIERRA2} />)}
-          {[-60, -20, 25, 60].map((d, i) => <path key={i} d={`M 540 760 q ${d} 80 ${d * 2.2} 200`} stroke="#e9d9b0" strokeWidth={7} fill="none" strokeLinecap="round" />)}
-          <PlantaMaiz T={T} x={540} y={770} s={0.55} seed={3} id="ge" elote={false} />
-          {T > K.Ge + 2.0 && <g transform={`translate(${klerp(800, 520, kprog(T, K.Ge + 2.0, K.C, kEase.suave))} ${klerp(1450, 820, kprog(T, K.Ge + 2.0, K.C, kEase.suave))}) rotate(-60)`}>
+          <rect x={0} y={910} width={KW} height={1010} fill={TIERRA} stroke={KC.ink} strokeWidth={8} />
+          {Array.from({ length: 34 }, (_, i) => <circle key={i} cx={(i * 137) % KW} cy={950 + ((i * 91) % 950)} r={8 + (i % 5) * 4} fill={TIERRA2} />)}
+          {[-60, -20, 25, 60].map((d, i) => <path key={i} d={`M 540 910 q ${d} 80 ${d * 2.2} 200`} stroke="#e9d9b0" strokeWidth={7} fill="none" strokeLinecap="round" />)}
+          <PlantaMaiz T={T} x={540} y={920} s={0.56} seed={3} id="ge" elote={false} />
+          {T > K.Ge + 2.0 && <g transform={`translate(${klerp(820, 530, kprog(T, K.Ge + 2.0, K.C, kEase.suave))} ${klerp(1420, 960, kprog(T, K.Ge + 2.0, K.C, kEase.suave))}) rotate(-60)`}>
             <ADNHebra T={T} x={-150} y={0} largo={300} alto={46} vueltas={2} resalta={(u) => u > 0.3 && u < 0.7} /></g>}
         </SvgBt>
-        <Lupa T={T} at={K.Ge + 0.4} until={K.C - 0.3} x={520} y={860} r={240} fx={800} fy={1500} tinte={KC.mint}
+        <Lupa T={T} at={K.Ge + 0.4} until={K.C - 0.3} x={500} y={1060} r={260} fx={820} fy={1420} tinte={KC.mint}
           etiqueta="AL MICROSCOPIO · suelo" interior={(T, r) => <SueloMicro T={T} r={r} a0={K.Ge + 0.4} />} />
       </Escena>
       {/* 2 · la planta hace las proteínas Cry en sus hojas */}
       <Escena T={T} a={K.C} b={K.Mo} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         <SvgBt>
-          <HojaMaiz T={T} x={60} y={1500} L={1000} W={170} rot={-14} curva={0.5} seed={11} cry={kprog(T, K.C + 1.2, K.C + 3.6)} id="ch" />
-          <g transform={`translate(${klerp(-200, 240, kprog(T, K.C, K.C + 1.2, kEase.sale))} 1340) rotate(-14)`}><ADNHebra T={T} x={-150} y={0} largo={300} alto={40} vueltas={2} resalta={(u) => u > 0.3 && u < 0.7} /></g>
+          <HojaMaiz T={T} x={60} y={1380} L={1000} W={170} rot={-14} curva={0.5} seed={11} cry={kprog(T, K.C + 1.2, K.C + 3.6)} id="ch" />
+          <g transform={`translate(${klerp(-200, 240, kprog(T, K.C, K.C + 1.2, kEase.sale))} 1220) rotate(-14)`}><ADNHebra T={T} x={-150} y={0} largo={300} alto={40} vueltas={2} resalta={(u) => u > 0.3 && u < 0.7} /></g>
         </SvgBt>
-        <Lupa T={T} at={K.C + 0.8} until={K.Mo - 0.3} x={500} y={820} r={240} fx={620} fy={1330} tinte={KC.gold2}
+        <Lupa T={T} at={K.C + 0.8} until={K.Mo - 0.3} x={520} y={760} r={270} fx={620} fy={1210} tinte={KC.gold2}
           etiqueta="POR DENTRO · células de la hoja" interior={(T, r) => <CelulasHoja T={T} r={r} a0={K.C + 0.8} />} />
       </Escena>
       {/* 3 · el cogollero muerde y se las traga */}
@@ -276,19 +276,19 @@ function Bt() {
       <Escena T={T} a={K.Pr} b={K.Al} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <SvgBt>
-          <Cogollero T={T} x={160} y={1000} s={1.5} rot={-4} />
-          <text x={300} y={860} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 300 760)`}>?</text>
-          <Mazorca x={540} y={1560} s={1.4} rot={70} />
+          <Cogollero T={T} x={140} y={1060} s={1.9} rot={-4} />
+          <text x={320} y={900} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 320 760)`}>?</text>
+          <Mazorca x={760} y={1300} s={1.7} rot={70} />
         </SvgBt>
       </Escena>
       {/* 5 · por dentro: intestino alcalino de la oruga */}
       <Escena T={T} a={K.Al} b={K.Re} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgBt>
-          <Cogollero T={T} x={150} y={1640} s={2.1} rot={-2} />
-          <ellipse cx={560} cy={1640} rx={300} ry={26} fill="none" stroke={ALCA} strokeWidth={6} strokeDasharray="12 10" opacity={kprog(T, K.Al + 0.3, K.Al + 0.8)} />
+          <Cogollero T={T} x={150} y={1330} s={2.1} rot={-2} />
+          <ellipse cx={560} cy={1330} rx={300} ry={26} fill="none" stroke={ALCA} strokeWidth={6} strokeDasharray="12 10" opacity={kprog(T, K.Al + 0.3, K.Al + 0.8)} />
         </SvgBt>
-        <Lupa T={T} at={K.Al + 0.2} until={K.Re - 0.25} x={520} y={820} r={260} fx={560} fy={1640} tinte={ALCA}
+        <Lupa T={T} at={K.Al + 0.2} until={K.Re - 0.25} x={540} y={690} r={280} fx={560} fy={1330} tinte={ALCA}
           etiqueta="POR DENTRO · intestino de la oruga" interior={(T, r) => <IntestinoOruga T={T} r={r} a0={K.Al + 0.2} />} />
       </Escena>
       {/* 6 · receptores: llave en cerradura y poros */}
@@ -337,27 +337,27 @@ function Bt() {
       <Escena T={T} a={K.Or} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         <SvgBt>
-          <rect x={0} y={1420} width={KW} height={500} fill={TIERRA} stroke={KC.ink} strokeWidth={8} />
-          {[160, 360, 560, 760, 960].map((x, i) => <Lechuga key={i} x={x} y={1440} s={1.1} T={T} seed={i + 1} />)}
-          {[260, 460, 660, 860].map((x, i) => <Lechuga key={'b' + i} x={x} y={1640} s={1.2} T={T} seed={i + 7} />)}
-          <Aspersor T={T} x={210} y={1080} s={1.05} rocia={kprog(T, K.Or + 0.6, K.Or + 1.2)} />
+          <rect x={0} y={1180} width={KW} height={740} fill={TIERRA} stroke={KC.ink} strokeWidth={8} />
+          {[160, 360, 560, 760, 960].map((x, i) => <Lechuga key={i} x={x} y={1210} s={1.3} T={T} seed={i + 1} />)}
+          {[260, 460, 660, 860].map((x, i) => <Lechuga key={'b' + i} x={x} y={1410} s={1.45} T={T} seed={i + 7} />)}
+          <Aspersor T={T} x={200} y={900} s={1.3} rocia={kprog(T, K.Or + 0.6, K.Or + 1.2)} />
         </SvgBt>
-        <Chip T={T} at={K.Or + 2.6} until={K.Es - 0.3} texto="agricultura orgánica ✔" x={720} y={760} tam={40} borde={KC.leaf} />
+        <Chip T={T} at={K.Or + 2.6} until={K.Es - 0.3} texto="agricultura orgánica ✔" x={600} y={520} tam={40} borde={KC.leaf} />
       </Escena>
       {/* 9 · 1995 y la resistencia en Puerto Rico */}
       <Escena T={T} a={K.Es} b={K.Mx} zoom={0.04}>
         <FondoLunares color={T < PR ? KC.cyan : KC.orange} />
         <SvgBt>
-          <rect x={0} y={1480} width={KW} height={440} fill={TIERRA} stroke={KC.ink} strokeWidth={8} />
-          {T < PR ? [140, 400, 660, 920].map((x, i) => <PlantaMaiz key={i} T={T} x={x} y={1500} s={0.62} seed={i + 20} id={'e' + i} elote={i % 2 === 0} />)
+          <rect x={0} y={1300} width={KW} height={620} fill={TIERRA} stroke={KC.ink} strokeWidth={8} />
+          {T < PR ? [140, 400, 660, 920].map((x, i) => <PlantaMaiz key={i} T={T} x={x} y={1320} s={0.66} seed={i + 20} id={'e' + i} elote={i % 2 === 0} />)
             : <g>
-              <IslaPR x={780} y={470} s={0.8} />
-              {[620, 900].map((x, i) => <PlantaMaiz key={i} T={T} x={x} y={1500} s={0.62} seed={i + 30} id={'r' + i} elote={false} color="#9ccf5a" />)}
-              {[[560, 1180, 10], [820, 1080, -8], [940, 1300, 4]].map(([x, y, r], i) => <Cogollero key={i} T={T} x={x} y={y} s={1.1} rot={r} mastica={1} seed={i} />)}
+              <IslaPR x={270} y={620} s={0.75} />
+              {[620, 900].map((x, i) => <PlantaMaiz key={i} T={T} x={x} y={1320} s={0.66} seed={i + 30} id={'r' + i} elote={false} color="#9ccf5a" />)}
+              {[[560, 980, 10], [820, 880, -8], [940, 1100, 4]].map(([x, y, r], i) => <Cogollero key={i} T={T} x={x} y={y} s={1.1} rot={r} mastica={1} seed={i} />)}
             </g>}
         </SvgBt>
-        <TarjetaEstudio T={T} at={K.Es + 0.2} until={PR - 0.2} anio="1995" quien="EE. UU. · EPA" revista="primer maíz Bt registrado" x={540} y={800} />
-        <TarjetaEstudio T={T} at={P2010} until={K.Mx - 0.2} anio="2010" quien="Storer et al. · Puerto Rico" revista="resistencia a Cry1F confirmada" x={540} y={820} />
+        <TarjetaEstudio T={T} at={K.Es + 0.2} until={PR - 0.2} anio="1995" quien="EE. UU. · EPA" revista="primer maíz Bt registrado" x={540} y={330} />
+        <TarjetaEstudio T={T} at={P2010} until={K.Mx - 0.2} anio="2010" quien="Storer et al. · Puerto Rico" revista="resistencia a Cry1F confirmada" x={540} y={330} />
       </Escena>
       {/* 10 · México: la Constitución prohíbe sembrar maíz transgénico */}
       <Escena T={T} a={K.Mx} b={K.Ci} zoom={0.04}>
@@ -367,7 +367,7 @@ function Bt() {
             {[['#2346ff', -103.5, 21.5], ['#ff3b2f', -99.2, 19.5], ['#f7d65a', -96.8, 17.3], ['#f4efe4', -92.8, 16.6], ['#8a2be2', -101.5, 24.5]].map(([c, lo, la], i) => { const [px, py] = mxProy(lo, la), e = kprog(T, K.Mx + 0.4 + i * 0.2, K.Mx + 0.8 + i * 0.2, kEase.rebote);
               return <g key={i} transform={`translate(${px} ${py}) scale(${e})`}><Mazorca x={0} y={0} s={0.55} rot={(i - 2) * 12} color={c} /></g>; })}
           </MapaMexico>
-          <Costal x={260} y={1600} s={0.95} texto="transgénico" tachado={kprog(T, K.Mx + 2.4, K.Mx + 2.9)} />
+          <Costal x={280} y={1320} s={1.0} texto="transgénico" tachado={kprog(T, K.Mx + 2.4, K.Mx + 2.9)} />
         </SvgBt>
         <Chip T={T} at={K.Mx + 1.2} until={K.Ci - 0.3} texto="Constitución · arts. 4o. y 27 · marzo 2025" x={540} y={1100} tam={34} borde={KC.gold} />
       </Escena>
@@ -385,14 +385,14 @@ function Bt() {
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.2} tacharEn={K.G + 1.6} until={K.Ge - 0.3} texto="¿fumigada?" x={290} y={470} tam={50} />
-      <Etq T={T} at={K.Ge + 1.0} until={K.C - 0.3} x={1030} y={1440} texto="Bacillus thuringiensis" it lado="izq" tam={34} color={KC.texto} />
-      <Chip T={T} at={K.C + 1.6} until={K.Mo - 0.3} texto="proteínas Cry" x={540} y={1500} tam={48} borde={CRY} />
-      <Etq T={T} at={K.Mo + 0.6} until={K.Pr - 0.3} x={60} y={1470} texto="gusano cogollero" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Mo + 0.9} until={K.Pr - 0.3} x={60} y={1520} texto="Spodoptera frugiperda" it tam={32} color={KC.ink} />
-      <Medidor T={T} at={K.Al + 0.8} until={K.Re - 0.3} valor={(T) => klerp(0.5, 0.92, kprog(T, K.Al + 1.0, K.Al + 2.6, kEase.sale))} etiqueta="ácido ← pH → alcalino" texto={(v) => v > 0.8 ? 'muy alcalino' : 'subiendo…'} x={90} y={1440} ancho={900} color={ALCA} />
-      <Chip T={T} at={K.Re + 2.4} until={K.Tu - 0.3} texto="llave + cerradura → poro" x={540} y={1500} tam={42} borde={CRY} />
-      <Chip T={T} at={K.Or + 0.4} until={K.Or + 2.4} texto="Bt: insecticida desde hace décadas" x={540} y={1500} tam={36} borde={KC.leaf} />
-      <Chip T={T} at={PR + 0.3} until={P2010 - 0.2} texto="el cogollero ya no muere" x={540} y={1500} tam={42} borde={KC.red} />
+      <Etq T={T} at={K.Ge + 1.0} until={K.C - 0.3} x={1030} y={1470} texto="Bacillus thuringiensis" it lado="izq" tam={34} color={KC.texto} />
+      <Chip T={T} at={K.C + 1.6} until={K.Mo - 0.3} texto="proteínas Cry" x={540} y={1420} tam={48} borde={CRY} />
+      <Etq T={T} at={K.Mo + 0.6} until={K.Pr - 0.3} x={60} y={1400} texto="gusano cogollero" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Mo + 0.9} until={K.Pr - 0.3} x={60} y={1450} texto="Spodoptera frugiperda" it tam={32} color={KC.ink} />
+      <Medidor T={T} at={K.Al + 0.8} until={K.Re - 0.3} valor={(T) => klerp(0.5, 0.92, kprog(T, K.Al + 1.0, K.Al + 2.6, kEase.sale))} etiqueta="ácido ← pH → alcalino" texto={(v) => v > 0.8 ? 'muy alcalino' : 'subiendo…'} x={90} y={1130} ancho={900} color={ALCA} />
+      <Chip T={T} at={K.Re + 2.4} until={K.Tu - 0.3} texto="llave + cerradura → poro" x={540} y={1380} tam={42} borde={CRY} />
+      <Chip T={T} at={K.Or + 0.4} until={K.Or + 2.4} texto="Bt: insecticida desde hace décadas" x={540} y={520} tam={36} borde={KC.leaf} />
+      <Chip T={T} at={PR + 0.3} until={P2010 - 0.2} texto="el cogollero ya no muere" x={540} y={1400} tam={42} borde={KC.red} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ge - 0.1} texto="No fumigada: *lo fabrica ella.*" />
