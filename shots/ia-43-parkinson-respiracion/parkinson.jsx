@@ -342,16 +342,16 @@ function Parkinson() {
             <Palomitas T={T} at={K.E + 3.9} y={1400} buenas={9} paso={0.16} />
           </g>
           <g opacity={kprog(T, K.E + dE * 0.56 + 0.2, K.E + dE * 0.56 + 0.6) * (1 - kprog(T, K.E + dE * 0.77, K.E + dE * 0.77 + 0.4))}>
-            <Hospital x={540} y={800} s={1.9} />
+            <Hospital x={540} y={920} s={1.9} />{/* encuadre: bajado al centro */}
           </g>
         </>)}
       </Escena>
       <TarjetaEstudio T={T} at={K.E + 0.1} until={K.E + 2.2} anio="2022" quien="MIT · Katabi y col." revista="Nature Medicine" y={370} />
       <Chip T={T} at={K.E + 5.6} until={K.E + dE * 0.56} texto="9 de cada 10" x={540} y={1500} tam={52} borde={KC.mint} />
-      <TextoCaja T={T} at={K.E + dE * 0.56 + 0.4} until={K.E + dE * 0.77} texto="hospital que no conocía" x={540} y={1110} tam={42} />
-      {T >= K.E + dE * 0.56 + 0.8 && T < K.E + dE * 0.77 + 0.6 && <NumeroGigante T={T} at={K.E + dE * 0.56 + 0.8} until={K.E + dE * 0.77} valor={8} desde={8} dur={0.1} prefijo="+ de " sufijo=" de 10" x={540} y={1300} tam={130} color={KC.yellow} />}
-      {T > K.E + dE * 0.77 && <Escena T={T} a={K.E + dE * 0.79} b={K.M}>{svg(<Velocimetro T={T} x={540} y={1080} s={1.5} v={0.62 * kprog(T, K.E + dE * 0.8 + 0.3, K.E + dE * 0.8 + 1.5, kEase.sale)} />)}</Escena>}
-      <Chip T={T} at={K.E + dE * 0.8} until={K.M - 0.2} texto="¿qué tan avanzado?" x={540} y={520} tam={46} borde={KC.orange} />
+      <TextoCaja T={T} at={K.E + dE * 0.56 + 0.4} until={K.E + dE * 0.77} texto="hospital que no conocía" x={540} y={1250} tam={42} />
+      {T >= K.E + dE * 0.56 + 0.8 && T < K.E + dE * 0.77 + 0.6 && <NumeroGigante T={T} at={K.E + dE * 0.56 + 0.8} until={K.E + dE * 0.77} valor={8} desde={8} dur={0.1} prefijo="+ de " sufijo=" de 10" x={540} y={1430} tam={130} color={KC.yellow} />}
+      {T > K.E + dE * 0.77 && <Escena T={T} a={K.E + dE * 0.79} b={K.M}>{svg(<Velocimetro T={T} x={540} y={1230} s={1.5} v={0.62 * kprog(T, K.E + dE * 0.8 + 0.3, K.E + dE * 0.8 + 1.5, kEase.sale)} />)}</Escena>}
+      <Chip T={T} at={K.E + dE * 0.8} until={K.M - 0.2} texto="¿qué tan avanzado?" x={540} y={680} tam={46} borde={KC.orange} />
 
       {/* 8 · el enemigo: ventilador y mascota */}
       <Escena T={T} a={K.M} b={K.O}>
