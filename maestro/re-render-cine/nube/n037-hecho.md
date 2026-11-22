@@ -1,0 +1,1 @@
+- qui-27-silica-gel: tenis del gancho y del cierre 1.3× y centrado (lupa reubicada); Superficie ya no es lámina: la bolita con poros se queda grande detrás y la cancha sale de ella; Riesgo: niño 1.3× y bolitas de cobalto 1.2×; Estudio: el teléfono está desde el inicio (grande) y la tarjeta 2015 chica arriba. Auditores: sin láminas · encuadre bien; pendiente: nada

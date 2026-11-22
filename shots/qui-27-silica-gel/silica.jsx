@@ -146,7 +146,7 @@ function Silica() {
       {/* 0 · gancho: el sobre sale del tenis, se rasga y caen las bolitas */}
       <Escena T={T} a={K.G} b={K.Q} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa><MundoTenis T={T} tt={T - K.G} vapor={kprog(T, K.G + 3.0, K.G + 3.6)} /></SvgCapa>
+        <SvgCapa><g transform="translate(540 980) scale(1.3) translate(-600 -960)"><MundoTenis T={T} tt={T - K.G} vapor={kprog(T, K.G + 3.0, K.G + 3.6)} /></g></SvgCapa>
       </Escena>
       {/* 1 · qué es: arena vs. sílica gel con poros */}
       <Escena T={T} a={K.Q} b={K.Su}>
@@ -166,8 +166,8 @@ function Silica() {
       <Escena T={T} a={K.Su} b={K.Si} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
+          <g opacity={klerp(1, 0.4, cancha)}><BolitaPoros x={540} y={930} r={klerp(300, 470, kprog(T, K.Su, K.Su + 2.8, kEase.suave))} p={1} /></g>
           <Cancha x={540} y={930} w={klerp(60, 900, cancha)} h={klerp(60, 482, cancha)} o={kprog(T, K.Su + 0.5, K.Su + 0.8)} />
-          {cancha < 0.98 && <BolitaPoros x={540} y={930} r={klerp(110, 30, kprog(T, K.Su, K.Su + 0.8))} p={1} />}
           {cancha > 0.98 && <g><text x={540} y={1135} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill="#fff" stroke={KC.ink} strokeWidth={5} paintOrder="stroke">28 m × 15 m = 420 m²</text></g>}
         </SvgCapa>
         <Contador T={T} at={K.Su + 0.6} desde={0} hasta={420} dur={2.2} sufijo=" m²" x={540} y={930} tam={96} color={KC.texto} />
@@ -231,7 +231,7 @@ function Silica() {
       {/* 6a · riesgo: atragantamiento */}
       <Escena T={T} a={K.Ri} b={riMitad}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 930) scale(1.3) translate(-620 -920)">
           <g transform="translate(660 960)">
             <path d="M -170 260 Q -170 60 0 60 Q 170 60 170 260 Z" fill={KC.orange} stroke={KC.ink} strokeWidth={9} />
             <circle cx={0} cy={-80} r={150} fill="#f1b48f" stroke={KC.ink} strokeWidth={9} />
@@ -242,12 +242,12 @@ function Silica() {
           {T > K.Ri + 1.5 && <g transform={`translate(860 700) scale(${kprog(T, K.Ri + 1.5, K.Ri + 1.9, kEase.rebote)})`}>
             <path d="M 0 -90 L 90 70 L -90 70 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
             <text x={0} y={52} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.ink}>!</text></g>}
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 6b · riesgo: cloruro de cobalto, azul → rosa */}
       <Escena T={T} a={riMitad} b={K.Es}>
         <FondoLunares color={KC.lilac} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 960) scale(1.2) translate(-540 -960)">
           {[0, 1, 2, 3, 4].map((i) => { const x = 220 + i * 160, cambia = kprog(T, riMitad + 1.0 + i * 0.45, riMitad + 1.6 + i * 0.45);
             return <g key={i}>
               {Array.from({ length: 3 }, (_, k) => { const ph = (T * 0.8 + k / 3 + i * 0.13) % 1; return <path key={k} d={`M ${x - 30 + k * 30} ${720 + ph * 180} q 10 -14 0 -28 q -10 -14 0 -28`} fill="none" stroke={AGUA} strokeWidth={6} strokeLinecap="round" opacity={Math.sin(ph * Math.PI) * (1 - cambia * 0.6)} />; })}
@@ -255,20 +255,20 @@ function Silica() {
             </g>; })}
           <text x={300} y={1150} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink}>seca: azul</text>
           <text x={800} y={1150} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, riMitad + 2.5, riMitad + 3.0)}>mojada: rosa</text>
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 7 · el estudio de Israel */}
       <Escena T={T} a={K.Es} b={K.Sn}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          {T > K.Es + 3.4 && <Telefono T={T} x={250} y={960} s={0.9} suena={T < K.Es + 6.0 ? 1 : 0} />}
+          <g opacity={kprog(T, K.Es, K.Es + 0.4)}><Telefono T={T} x={klerp(540, 260, kprog(T, K.Es + 3.0, K.Es + 3.8, kEase.suave))} y={klerp(960, 915, kprog(T, K.Es + 3.0, K.Es + 3.8, kEase.suave))} s={klerp(1.7, 1.25, kprog(T, K.Es + 3.0, K.Es + 3.8, kEase.suave))} suena={T > K.Es + 3.4 && T < K.Es + 6.0 ? 1 : 0} /></g>
           {T > K.Es + 5.6 && <g opacity={kprog(T, K.Es + 5.6, K.Es + 6.0)}>
             <rect x={90} y={1120} width={900} height={70} rx={35} fill="rgba(255,255,255,.6)" stroke={KC.ink} strokeWidth={7} />
             <rect x={90} y={1120} width={900 * 0.914 * kprog(T, K.Es + 5.8, K.Es + 7.0, kEase.sale)} height={70} rx={35} fill={KC.orange} stroke={KC.ink} strokeWidth={7} />
             <text x={540} y={1100} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink}>91 % · niños menores de 6 años</text>
           </g>}
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Es + 3.6} until={K.Sn - 0.3} valor={546} dur={1.8} etiqueta="casos en 1 año" x={700} y={900} tam={220} color={KC.pink} />
+        <NumeroGigante T={T} at={K.Es + 3.6} until={K.Sn - 0.3} valor={546} dur={1.8} etiqueta="casos en 1 año" x={740} y={900} tam={220} color={KC.pink} />
       </Escena>
       {/* 8 · síntomas: menos de 3 de cada 100 */}
       <Escena T={T} a={K.Sn} b={K.Cu}>
@@ -298,9 +298,9 @@ function Silica() {
       {/* 10 · cierre: el tenis del inicio, ahora visto por dentro */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        <SvgCapa><MundoTenis T={T} tt={6} vapor={1} /></SvgCapa>
+        <SvgCapa><g transform="translate(540 980) scale(1.3) translate(-600 -960)"><MundoTenis T={T} tt={6} vapor={1} /></g></SvgCapa>
       </Escena>
-      <Lupa T={T} at={K.Ci + 0.5} until={K.Ou - 0.2} x={760} y={720} r={190} fx={440} fy={1140} interior={TunelesAgua} tinte={AGUA} etiqueta="POR DENTRO · agua atrapada" />
+      <Lupa T={T} at={K.Ci + 0.5} until={K.Ou - 0.2} x={760} y={720} r={190} fx={332} fy={1214} interior={TunelesAgua} tinte={AGUA} etiqueta="POR DENTRO · agua atrapada" />
 
       {/* textos */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.7} until={K.G + 3.0} texto="☠ ¿veneno?" x={300} y={470} tam={50} />
@@ -314,7 +314,7 @@ function Silica() {
       <Chip T={T} at={K.Ri + 1.8} until={riMitad - 0.3} texto="riesgo: atragantarse" y={1500} tam={44} borde={KC.red} />
       <Chip T={T} at={riMitad + 0.4} until={K.Es - 0.3} texto="cloruro de cobalto (CoCl₂)" y={1500} tam={40} borde={AZUL_CO} />
       <Etq T={T} at={riMitad + 3.4} until={K.Es - 0.3} x={540} y={600} texto="tóxico · ≤ 1 %" lado="der" tam={40} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.4} anio="2015" quien="Lavon y Bentur · Israel" revista="Isr Med Assoc J · centro de toxicología" x={640} y={860} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 3.4} anio="2015" quien="Lavon y Bentur · Israel" revista="Isr Med Assoc J · centro de toxicología" x={540} y={560} />
       <Chip T={T} at={K.Sn + 2.4} until={K.Cu - 0.2} texto="2.7 % con síntomas leves" y={1500} tam={44} borde={KC.orange} />
       <Chip T={T} at={K.Cu + 1.8} until={K.Ci - 0.2} texto="justo antes de la Pascua judía" y={1500} tam={38} borde={KC.red} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="arena con túneles + agua pegada" y={1500} tam={38} borde={AGUA} />
