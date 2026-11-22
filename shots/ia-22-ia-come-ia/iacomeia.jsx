@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #22 · La IA que aprendió de otra IA y terminó hablando de liebres — NARRADO (N4 "imagen que se degrada" + N1 "por dentro").
 // Datos: Shumailov, Shumaylov, Zhao, Papernot, Anderson y Gal, "AI models collapse when trained on recursively generated data",
 // Nature 631:755–759 (2024), Example 1 (OPT-125m, wikitext2). Matiz: Gerstgrasser et al., arXiv:2404.01413 (Stanford, 2024).

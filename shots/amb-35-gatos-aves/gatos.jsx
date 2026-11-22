@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #35 · El regalito de tu gato es solo una parte — NARRADO (N2 "El número").
 // Datos: Loss, Will y Marra 2013 (Nature Communications); Loyd et al. 2013 (Biological Conservation, KittyCam, Athens, Georgia);
 // UICN-GISD "100 of the World's Worst Invasive Alien Species"; Jensen, Willson y Powell 2022 (collar Birdsbesafe®). Ver guion.md y verificacion.md.
@@ -110,7 +111,7 @@ function Anolis({ x, y, s = 1, T = 0, papada = 0, gris = false, o = 1 }) {
 // Frente de la casa: muro, puerta, ventana y tapete. Coordenadas de pantalla (suelo en y = 1180).
 function Casa({ T, gato = 'fuera', tapeteVacio = false }) {
   return <g>
-    <rect x={0} y={1180} width={KW} height={60} fill="#79c95a" stroke={KC.ink} strokeWidth={6} />
+    <rect x={0} y={1180} width={KW} height={60} fill="#426c3b" stroke={KC.ink} strokeWidth={6} />
     <rect x={40} y={620} width={600} height={560} fill="#ffd9a8" stroke={KC.ink} strokeWidth={7} />
     <path d="M 20 630 L 340 470 L 660 630 Z" fill="#d8573f" stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
     <rect x={90} y={840} width={200} height={340} rx={10} fill="#8a5a3a" stroke={KC.ink} strokeWidth={7} />
@@ -241,7 +242,7 @@ function GatosShot() {
       {/* 4 · pregunta: sale por la gatera */}
       <Escena T={T} a={K.P} b={K.Ca} zoom={0.08}>
         <FondoLunares color={KC.orange} />
-        {svg(<><rect x={0} y={960} width={KW} height={230} fill="#ffd9a8" stroke={KC.ink} strokeWidth={6} />
+        {svg(<><rect x={0} y={960} width={KW} height={230} fill="#847462" stroke={KC.ink} strokeWidth={6} />
           <text x={300} y={880} textAnchor="middle" style={{ font:`400 440px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 700)`}>?</text>
           <Gatera T={T} x={190} y={1180} abre={Math.sin((T - K.P) * 7) * Math.exp(-(T - K.P) * 1.2)} />
           <Gato x={klerp(200, 400, kprog(T, K.P + 0.1, K.P + 1.4, kEase.sale))} y={1186} s={0.55} T={T} collar={KC.red} /></>)}
@@ -249,7 +250,7 @@ function GatosShot() {
       {/* 5 · cámaras en el collar (KittyCam) */}
       <Escena T={T} a={K.Ca} b={K.R}>
         <FondoLunares color={KC.mint} />
-        {svg(<><rect x={0} y={1090} width={KW} height={200} fill="#79c95a" stroke={KC.ink} strokeWidth={6} />
+        {svg(<><rect x={0} y={1090} width={KW} height={200} fill="#426c3b" stroke={KC.ink} strokeWidth={6} />
           <Gato x={250} y={1096} s={1.45} T={T} collar={KC.red} camara /></>)}
       </Escena>
       {/* 6 · ¿a dónde fueron las presas? 23 / 49 / 28 */}

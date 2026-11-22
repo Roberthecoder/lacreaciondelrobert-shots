@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #19 · La piel de gallina: músculos diminutos que jalan tus pelos — NARRADO (N1 "Por dentro").
 // Datos: Shwartz et al. 2020 (Cell, Harvard, en ratones) y fisiología del músculo erector del pelo. Ver guion.md y verificacion.md.
 // El corte de piel es ESQUEMÁTICO (folículo, vello, músculo erector en diagonal, nervio, células madre).

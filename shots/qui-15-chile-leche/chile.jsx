@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #15 · Ese ardor no es calor (el chile, el agua y la leche) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const NARANJA = '#ff7a12', VERDE_CH = '#2f9e3a', TRP = '#9b5de5', LECHE = '#fbfaf4', LABIO = '#c8323f';
@@ -192,7 +193,7 @@ function Chile() {
       <Escena T={T} a={K.Se} b={K.Pr} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          <rect x={0} y={0} width={KW} height={MY - 60} fill="#2a1830" />
+          <rect x={0} y={0} width={KW} height={MY - 60} fill="#1a1426" />
           <Nervio T={T} x0={C1} y0={MY + 60} x1={130} y1={1180} p={-1} />
           <Nervio T={T} x0={C2} y0={MY + 60} x1={130} y1={1180} p={senal > 0 && senal < 1 ? senal : -1} />
           <Membrana T={T} y={MY} canales={[C1, C2]} abre={[abre, abre]} />

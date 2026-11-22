@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #49 · La pelusa gris de tus fresas: Botrytis cinerea entra por la flor y espera — NARRADO (N1 "Por dentro").
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -266,7 +267,7 @@ function BotrytisShot() {
       <Escena T={T} a={micro} b={K.V} zoom={0.05}>
         <FondoMicro T={T} />
         {fsvg(<>
-          <rect x={0} y={1120} width={KW} height={120} fill="#7a2a2a" opacity=".85" />
+          <rect x={0} y={1120} width={KW} height={120} fill="#421c23" opacity=".85" />
           <g opacity=".55"><Conidioforo x={170} y={1130} alto={260} s={1.3} p={kprog(T, micro + 0.3, micro + 1.8)} />
           <Conidioforo x={900} y={1130} alto={240} s={1.3} p={kprog(T, micro + 0.4, micro + 1.9)} /></g>
           <Conidioforo x={520} y={1130} alto={290} s={2.0} p={kprog(T, micro, micro + 1.6)} />

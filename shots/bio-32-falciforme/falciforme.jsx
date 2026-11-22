@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #32 · Esa célula no está rota: está doblada (anemia falciforme y Casgevy, el primer medicamento con CRISPR) — NARRADO (N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (las moléculas y las células no están a escala entre sí).
 const SANGRE = '#d7263d', SANGRE2 = '#a81a2e', HBF = '#2fe0a8', HBS = '#ff3b2f', PARED = '#e8336d', LUMEN = '#ffe3e6';

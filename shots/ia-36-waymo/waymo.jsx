@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #36 · Tú contra el auto sin conductor — NARRADO (N2 "El número").
 // Datos: Waymo Safety Impact Hub (hasta junio 2026); Di Lillo et al. (Swiss Re + Waymo, preprint dic 2024); NHTSA recall 25E084000 (dic 2025);
 // OMS, hoja "Road traffic injuries" (jul 2026). Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -38,9 +39,9 @@ function Calle({ T, y0 = 760, y1 = 1180, vel = 1, carriles = 2 }) {
   for (let c = 1; c < carriles; c++) { const yy = y0 + (y1 - y0) * c / carriles;
     for (let k = -1; k < 9; k++) rayas.push(<rect key={`${c}-${k}`} x={off + k * 160} y={yy - 7} width={90} height={14} rx={7} fill={KC.yellow} />); }
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <rect x={0} y={y0 - 18} width={KW} height={18} fill="#c9c3b6" stroke={KC.ink} strokeWidth={5} />
+    <rect x={0} y={y0 - 18} width={KW} height={18} fill="#6a6969" stroke={KC.ink} strokeWidth={5} />
     <rect x={0} y={y0} width={KW} height={y1 - y0} fill={ASFALTO} />
-    <rect x={0} y={y1} width={KW} height={18} fill="#c9c3b6" stroke={KC.ink} strokeWidth={5} />
+    <rect x={0} y={y1} width={KW} height={18} fill="#6a6969" stroke={KC.ink} strokeWidth={5} />
     {rayas}
   </svg>;
 }

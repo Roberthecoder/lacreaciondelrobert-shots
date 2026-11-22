@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #32 · Por qué el dolor del dedo golpeado llega tarde — NARRADO (N3 "Capítulos y medidores": carrera de dos señales).
 // Datos: Yap et al. 2020 (tabla de Fix y Brueckner 2009), libro abierto MSU "Pain", Melzack y Wall 1965, Mancini et al. 2015.
 // Ver guion.md y verificacion.md. Dibujo esquemático: el pie, los nervios y las distancias no van a escala.
@@ -108,7 +109,7 @@ function Dolor() {
         <FondoLunares color={KC.yellow} />
         <Lienzo><g transform="translate(0 -70)">
           <DefsDolor />
-          <rect x={0} y={1190} width={KW} height={KH} fill="#c98a55" stroke={KC.ink} strokeWidth={9} />
+          <rect x={0} y={1190} width={KW} height={KH} fill="#6a4c38" stroke={KC.ink} strokeWidth={9} />
           <Mesa x={560} />
           <Pie x={piePos(TOC)} y={1080} T={T} piquete={piq(PIQ)} sordo={kprog(T, SOR, SOR + 0.8)} />
           <Onomato T={T} at={TOC} dur={1.3} x={470} y={760} texto="¡TOC!" tam={150} color={KC.pink} />
@@ -122,7 +123,7 @@ function Dolor() {
         <FondoLunares color={KC.orange} />
         <Lienzo><g transform="translate(0 -70)">
           <DefsDolor />
-          <rect x={0} y={1190} width={KW} height={KH} fill="#c98a55" stroke={KC.ink} strokeWidth={9} />
+          <rect x={0} y={1190} width={KW} height={KH} fill="#6a4c38" stroke={KC.ink} strokeWidth={9} />
           <Pie x={330} y={1040} s={1.25} T={T} nervio={kprog(T, K.Dos - 0.1, K.Dos + 0.3)} piquete={piq(K.Dos + 0.2) * 0.8}
             rapida={T > K.Dos + 0.35 ? kprog(T, K.Dos + 0.35, K.Dos + 0.95, kEase.suave) : null} />
           {Array.from({ length: 5 }, (_, i) => { const at = K.Dos + 0.4 + i * 0.05, o = kprog(T, at, at + 0.1) * (1 - kprog(T, at + 0.5, at + 0.9));
@@ -136,7 +137,7 @@ function Dolor() {
         <FondoLunares color={KC.cyan} />
         <Lienzo><g transform="translate(0 -70)">
           <DefsDolor />
-          <rect x={0} y={1190} width={KW} height={KH} fill="#c98a55" stroke={KC.ink} strokeWidth={9} />
+          <rect x={0} y={1190} width={KW} height={KH} fill="#6a4c38" stroke={KC.ink} strokeWidth={9} />
           <Pie x={30} y={1080} s={1} T={T} nervio={1} rapida={((T - K.Fibras) * 1.1) % 1} />
         </g></Lienzo>
         <Lupa T={T} at={K.Fibras + 0.3} until={K.Dolor - 0.15} x={640} y={760} r={290} fx={30} fy={710} tinte={DL_RAP} etiqueta="AL MICROSCOPIO · NERVIO"
@@ -154,7 +155,7 @@ function Dolor() {
         <FondoLunares color={KC.pink} />
         <Lienzo><g transform="translate(0 -70)">
           <DefsDolor />
-          <rect x={0} y={1190} width={KW} height={KH} fill="#c98a55" stroke={KC.ink} strokeWidth={9} />
+          <rect x={0} y={1190} width={KW} height={KH} fill="#6a4c38" stroke={KC.ink} strokeWidth={9} />
           <Pie x={40} y={1080} s={0.95} T={T} sordo={1} nervio={0.6} lenta={kprog(T, K.Dolor + 0.4, K.Velocidad, kEase.suave) * 0.45} />
         </g></Lienzo>
         <Chip T={T} at={K.Dolor + 0.3} until={K.Velocidad - 0.1} texto="dolor sordo: arde y se queda" x={680} y={430} tam={42} borde={DL_LEN} />
@@ -246,7 +247,7 @@ function Dolor() {
           return <Lienzo>
             <DefsDolor />
             <g transform="translate(0 -70)">
-            <rect x={0} y={1190} width={KW} height={KH} fill="#c98a55" stroke={KC.ink} strokeWidth={9} />
+            <rect x={0} y={1190} width={KW} height={KH} fill="#6a4c38" stroke={KC.ink} strokeWidth={9} />
             <Pie x={40} y={1080} s={0.95} T={T} sordo={1 - 0.45 * kprog(T, S0 + 4.8, S0 + 6.3)} />
             {T > S0 + 0.2 && <Mano x={250 + soba * 40} y={1000} s={0.85} rot={-8} />}
             </g>
@@ -279,7 +280,7 @@ function Dolor() {
         <FondoLunares color={KC.yellow} />
         <Lienzo><g transform="translate(0 -70)">
           <DefsDolor />
-          <rect x={0} y={1190} width={KW} height={KH} fill="#c98a55" stroke={KC.ink} strokeWidth={9} />
+          <rect x={0} y={1190} width={KW} height={KH} fill="#6a4c38" stroke={KC.ink} strokeWidth={9} />
           <Mesa x={560} />
           <Pie x={piePos(TOCc)} y={1080} T={T} nervio={kprog(T, C0 + 0.6, C0 + 1.0)} piquete={piq(PIQc)} sordo={kprog(T, SORc, SORc + 0.8)}
             rapida={T > PIQc ? kprog(T, PIQc, PIQc + 0.6, kEase.suave) : null} lenta={T > SORc ? kprog(T, SORc, SORc + 3.4) * 0.9 : null} />

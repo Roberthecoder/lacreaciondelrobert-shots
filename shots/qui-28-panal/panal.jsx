@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #28 · Esto no es gelatina (el polvo superabsorbente del pañal) — NARRADO (N5 experimento + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const AGUA = '#9fd8ff', GEL = '#c6ecff', NA = '#b18cff', CL = '#7ee36a', CARGA = '#ff3b2f', CADENA = '#efe7d6', AMARRE = '#E8A62A';

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #23 · La vainilla de tu helado casi nunca salió de una vaina (vainillina) — NARRADO (N2 el número + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (no a escala).
 const VAINA = '#3a2216', VAINA2 = '#5b3823', VERDE_V = '#6f9e3a', HOJA = '#4fa24a', HOJA2 = '#2f7a35', FLOR = '#eef2a6', FLOR2 = '#f6d75c';

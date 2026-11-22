@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #25 · Un día antes, el pronóstico decía poco más de 100 km/h: Otis llegó con casi 260 — NARRADO (N3 capítulos y medidores).
 // Datos: NHC Tropical Cyclone Report de Otis (Reinhart y Reinhart, 2024), discusión #7 del NHC (23 oct 2023), glosario NHC y escala
 // Saffir-Simpson, NOAA NESDIS. Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -159,7 +160,7 @@ function OtisShot() {
       <Escena T={T} a={K.Mo} b={K.P}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <rect x={0} y={1010} width={KW} height={300} fill="#ff9a3c" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1010} width={KW} height={300} fill="#84542c" stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${60 + i * 180} ${1040 + Math.sin(T * 2 + i) * 6} q 40 -18 80 0`} stroke="#ffd08a" strokeWidth={8} fill="none" strokeLinecap="round" />)}
           {Array.from({ length: 9 }, (_, i) => { const u = ((T - K.Mo) * 0.55 + i / 9) % 1, xx = 140 + i * 100; const op = kprog(T, K.Mo - 0.4, K.Mo) * Math.sin(Math.PI * u);
             return <path key={i} d={`M ${xx} ${1000 - u * 320} q 14 -20 0 -40 q -14 -20 0 -40`} stroke="#ffffff" strokeWidth={8} fill="none" strokeLinecap="round" opacity={op} />; })}
@@ -214,7 +215,7 @@ function OtisShot() {
       {/* 7 · cap. 3: tocó tierra en Acapulco como categoría 5 (noche, 25 oct 2023) */}
       <Escena T={T} a={K.Ti} b={K.Re}>
         {svg(<>
-          <rect width={KW} height={KH} fill="#13284d" />
+          <rect width={KW} height={KH} fill="#0e1c34" />
           <path d={OT_COSTA} fill="#1f3b2c" stroke={KC.ink} strokeWidth={8} />
           <ellipse cx={330} cy={845} rx={46} ry={22} fill="#1f3b2c" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 26 }, (_, i) => { const u = i / 25, xx = 370 + u * 400, yy = 790 - Math.sin(Math.PI * u) * 150 - 14; return <circle key={i} cx={xx} cy={yy} r={5} fill={KC.yellow} opacity={(0.5 + 0.5 * Math.sin(T * 5 + i)) * (1 - kprog(T, K.Ti + 2.3, K.Ti + 2.8))} />; })}
@@ -225,7 +226,7 @@ function OtisShot() {
       {/* 8 · récord: el más fuerte al tocar tierra en el Pacífico oriental desde 1988 */}
       <Escena T={T} a={K.Re} b={K.Vi}>
         {svg(<>
-          <rect width={KW} height={KH} fill="#7cc8f0" />
+          <rect width={KW} height={KH} fill="#436c86" />
           <MapaMexico x={OM.x} y={OM.y} ancho={2000} />
           {OT_TRACK.slice(0, -1).map((p, i) => { const q = OT_TRACK[i + 1], [x1, y1] = otP(p[1], p[2]), [x2, y2] = otP(q[1], q[2]), e = kprog(T, K.Re + 0.2 + i * 0.12, K.Re + 0.35 + i * 0.12);
             return e > 0 ? <line key={i} x1={x1} y1={y1} x2={klerp(x1, x2, e)} y2={klerp(y1, y2, e)} stroke={otColor(q[3] * KT)} strokeWidth={16} strokeLinecap="round" /> : null; })}
@@ -236,9 +237,9 @@ function OtisShot() {
       {/* 9 · víctimas: escena quieta y sobria */}
       <Escena T={T} a={K.Vi} b={K.C}>
         {svg(<>
-          <rect width={KW} height={KH} fill="#c9ced4" />
+          <rect width={KW} height={KH} fill="#6a6e78" />
           <circle cx={170} cy={720} r={50} fill="#eef0f2" opacity={0.9} />
-          <rect x={0} y={790} width={KW} height={600} fill="#9aa6b2" />
+          <rect x={0} y={790} width={KW} height={600} fill="#525a67" />
         </>)}
         <div style={{ position:'absolute', left:0, right:0, top:860, textAlign:'center', zIndex:41, opacity:kprog(T, K.Vi + 0.5, K.Vi + 1.3) }}>
           <div style={{ font:`400 104px/1.05 ${KF.titulo}`, color:KC.ink }}>52 muertes</div>

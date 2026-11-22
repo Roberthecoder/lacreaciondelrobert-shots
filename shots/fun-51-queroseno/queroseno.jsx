@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #51 · El hongo que se come el combustible de los aviones (Amorphotheca resinae) — NARRADO (N1 "Por dentro", gancho 1).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 // Morfología: hifas de 2–3 µm de ancho, esporas ovaladas (~2–3 × 5 µm) en cadenas ramificadas; crece en la frontera agua–turbosina (Arnold 1983).
@@ -41,11 +42,11 @@ function AvionArriba({ T, x, y, s = 1, rot = 0, tanque = 0, llama = 0, aviso = 0
 function PosteVia({ T, manchas = 1 }) {
   const r = krng(11), M = Array.from({ length: 14 }, () => [r(), r(), 8 + r() * 14]);
   return <g>
-    <rect x={0} y={880} width={KW} height={290} fill="#a88b6a" stroke={KC.ink} strokeWidth={8} />
+    <rect x={0} y={880} width={KW} height={290} fill="#594d43" stroke={KC.ink} strokeWidth={8} />
     {Array.from({ length: 6 }, (_, i) => <g key={i}><rect x={40 + i * 175} y={920} width={130} height={220} rx={8} fill={QK.creosota} stroke={KC.ink} strokeWidth={6} />
       <line x1={55 + i * 175} y1={1030} x2={155 + i * 175} y2={1030} stroke={QK.creosota2} strokeWidth={5} /></g>)}
-    <rect x={0} y={960} width={KW} height={24} fill="#7d8790" stroke={KC.ink} strokeWidth={5} />
-    <rect x={0} y={1080} width={KW} height={24} fill="#7d8790" stroke={KC.ink} strokeWidth={5} />
+    <rect x={0} y={960} width={KW} height={24} fill="#444b56" stroke={KC.ink} strokeWidth={5} />
+    <rect x={0} y={1080} width={KW} height={24} fill="#444b56" stroke={KC.ink} strokeWidth={5} />
     <rect x={400} y={340} width={70} height={560} fill={QK.creosota} stroke={KC.ink} strokeWidth={8} />
     <rect x={280} y={390} width={310} height={40} rx={6} fill={QK.creosota2} stroke={KC.ink} strokeWidth={7} />
     {[300, 380, 490, 570].map((cx, i) => <rect key={i} x={cx - 8} y={364} width={16} height={28} rx={4} fill="#9fe6ff" stroke={KC.ink} strokeWidth={4} />)}
@@ -213,7 +214,7 @@ function QuerosenoShot() {
       <Escena T={T} a={K.Ga} b={K.C} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <rect x={0} y={1560} width={KW} height={400} fill="#5d6670" />
+          <rect x={0} y={1560} width={KW} height={400} fill="#343a46" />
           <rect x={470} y={1560} width={140} height={400} fill="#3c434b" />
           {Array.from({ length: 5 }, (_, i) => <rect key={i} x={532} y={1580 + i * 70} width={16} height={40} fill="#fff" />)}
           {T > g0 - 0.3 && <AvionArriba T={T} x={540} y={klerp(1080, 760, desp) + 150 * vuelta * vuelta} s={klerp(0.6, 0.9, desp) - 0.3 * vuelta} rot={kclamp(vuelta * 2.2, 0, 1) * 0 + Math.sin(vuelta * Math.PI) * -22}

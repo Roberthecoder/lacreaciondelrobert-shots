@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #36 · La bacteria que come PET (Ideonella sakaiensis, PETasa y MHETasa; la enzima mejorada de 2020) — NARRADO (N1 + N3).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático y no está a escala (bacterias, enzimas y moléculas).
 const PET_AZUL = 'rgba(190,236,255,.62)', ENZ_P = '#9b5de5', ENZ_M = '#00d2ff', ENZ_L = '#ff8a1f', HEX_C = '#F4C25A', EG_C = '#2fe0a8';

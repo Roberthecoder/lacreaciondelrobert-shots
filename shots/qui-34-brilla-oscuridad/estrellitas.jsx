@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #34 · Esas estrellitas no son radiactivas (fosforescencia: luz guardada en trampas) — NARRADO (N1 por dentro + N5 Matsuzawa 1996).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const VERDE = '#7dff9a', VERDE2 = '#2fe07a', PLASTICO = '#eef6cf', EU = '#39e07a', DY = KC.orange, CARGA = '#ffffff', RA = '#c04bff';

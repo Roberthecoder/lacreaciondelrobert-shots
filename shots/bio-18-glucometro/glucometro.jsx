@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #18 · El glucómetro por dentro — NARRADO (N1 "Por dentro" + escena del estudio de Clark, 1962).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático y no está a escala entre escenas.
 const GOX = '#9b5de5', GDH = '#11a39a', FAD = '#ffd43b', SANGRE = '#d7263d', PIEL = '#f1b48f', ELEC = '#ffe11a', MED = '#4dd4ff';

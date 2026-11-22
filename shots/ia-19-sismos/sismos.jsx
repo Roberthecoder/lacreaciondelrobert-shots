@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #19 · ¿La IA puede predecir sismos? Lo que sí y lo que no — NARRADO (N3 "Capítulos y medidores" + toque N2).
 // Datos: USGS (FAQ), CENAPRED 2019 y gob.mx (SASMEX), Mousavi et al. 2020 (Nat. Commun.), Rouet-Leduc et al. 2017 (GRL),
 // DeVries et al. 2018 (Nature), Mignan y Broccardo 2019 (Nature). Ver guion.md y verificacion.md. El dibujo es esquemático.
@@ -9,7 +10,7 @@ function CelularCadena({ T, x, y, s = 1, rot = -6, vibra = 0, o = 1 }) {
   return <div style={{ position:'absolute', left:x, top:y, width:520, height:900, zIndex:20, opacity:o,
     transform:`translate(-50%,-50%) translateX(${dx}px) rotate(${rot + dr}deg) scale(${s})`,
     background:'#10131a', border:`12px solid ${KC.ink}`, borderRadius:70, boxShadow:'18px 22px 0 rgba(0,0,0,.35)', overflow:'hidden' }}>
-    <div style={{ position:'absolute', left:160, top:16, width:200, height:36, borderRadius:20, background:KC.ink }}></div>
+    <div style={{ position:'absolute', left:160, top:16, width:200, height:36, borderRadius:20, background:CINE.borde }}></div>
     <div style={{ position:'absolute', left:30, right:30, top:70, font:`700 30px ${KF.mono}`, color:'#9aa3b5', textAlign:'center' }}>3:14</div>
     <div style={{ position:'absolute', left:26, right:26, top:150, background:'#262c3a', borderRadius:30, padding:'22px 24px', color:KC.texto }}>
       <div style={{ display:'flex', alignItems:'center', gap:14, marginBottom:12 }}>

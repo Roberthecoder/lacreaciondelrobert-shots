@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #37 · La IA que revisa tus lunares ve peor la piel oscura — NARRADO (N1 "Por dentro" + toque de N2).
 // Datos: Esteva et al., Nature 542:115 (2017); Daneshjou et al., Science Advances 8:eabq6147 (2022); NCI (lunares); AAD (ABCDE, piel oscura).
 // Ver guion.md y verificacion.md. Todo es esquemático.

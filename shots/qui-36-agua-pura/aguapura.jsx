@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #36 · El agua pura casi no conduce: lo que conduce son los iones — NARRADO (N2 el número + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (medidores en escala logarítmica).
 const AGUA_PURA = '#e6f7ff', AGUA_MAR = '#5fb8e8', AGUA_LLAVE = '#a9dcf5', COBRE = '#d9822b';
@@ -37,7 +38,7 @@ function VasoElectrodos({ x, y, s = 1, liquido, baja = 1, iones = 0, T, seed = 3
   </g>;
 }
 function Barra() {
-  return <g><rect x={0} y={1180} width={KW} height={60} fill="#f2e3c6" stroke={KC.ink} strokeWidth={8} /><rect x={0} y={1236} width={KW} height={700} fill="#c98f5a" /></g>;
+  return <g><rect x={0} y={1180} width={KW} height={60} fill="#7e7971" stroke={KC.ink} strokeWidth={8} /><rect x={0} y={1236} width={KW} height={700} fill="#6a4f3b" /></g>;
 }
 // Ion con carga (Na⁺ morado / Cl⁻ verde)
 function Ion({ x, y, pos = true, s = 1, o = 1 }) {
@@ -183,7 +184,7 @@ function AguaPura() {
       <Escena T={T} a={K.Pr} b={K.Re} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <rect x={0} y={1100} width={KW} height={820} fill="#f2e3c6" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1100} width={KW} height={820} fill="#7e7971" stroke={KC.ink} strokeWidth={8} />
           <Enchufe x={250} y={820} s={1.1} />
           <Lavabo x={300} y={1150} s={1} T={T} gotea />
           <text x={540} y={560} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 460)`}>?</text>
@@ -233,7 +234,7 @@ function AguaPura() {
       <Escena T={T} a={K.Pe} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <rect x={0} y={1100} width={KW} height={820} fill="#f2e3c6" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1100} width={KW} height={820} fill="#7e7971" stroke={KC.ink} strokeWidth={8} />
           <Enchufe x={220} y={860} s={1} />
           <ellipse cx={240} cy={1130} rx={170} ry={34} fill="#7fc8ff" stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Pe + 0.4, K.Pe + 1.0)} />
           <Lavabo x={720} y={1140} s={0.9} T={T} gotea />

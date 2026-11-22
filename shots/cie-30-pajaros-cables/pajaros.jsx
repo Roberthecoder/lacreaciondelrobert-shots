@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #30 · Por qué los pájaros en los cables no se electrocutan — NARRADO (N1 "Por dentro" + N6 mito).
 // Datos: explicación de física (APS / Scientific American), APLIC 2006 (aves y líneas eléctricas), seguridad ante cables caídos.
 // Ver guion.md y verificacion.md. Dibujo esquemático: tamaños, distancias y corriente (bolitas) no van a escala.
@@ -230,8 +231,8 @@ function Pajaros() {
       <Escena T={T} a={K.Dos} b={K.Aguilas} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <rect x={0} y={1180} width={KW} height={KH} fill="#7a5a3a" stroke={KC.ink} strokeWidth={8} />
-          <rect x={0} y={1180} width={KW} height={26} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={1180} width={KW} height={KH} fill="#42342b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1180} width={KW} height={26} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} stroke={KC.ink} strokeWidth={6} />
           <Poste x={PX} yTop={520} yBase={1190} ancho={58} />
           <rect x={PX - 200} y={Y1 + 30} width={240} height={30} rx={6} fill={PJ_MADERA} stroke={KC.ink} strokeWidth={7} />
           <rect x={PX - 200} y={Y2 + 30} width={240} height={30} rx={6} fill={PJ_MADERA} stroke={KC.ink} strokeWidth={7} />
@@ -293,8 +294,8 @@ function Pajaros() {
       <Escena T={T} a={K.Tu} b={K.Cierre} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <rect x={0} y={1140} width={KW} height={KH} fill="#7a5a3a" stroke={KC.ink} strokeWidth={8} />
-          <rect x={0} y={1140} width={KW} height={26} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={1140} width={KW} height={KH} fill="#42342b" stroke={KC.ink} strokeWidth={8} />
+          <rect x={0} y={1140} width={KW} height={26} fill={cineMix(KC.leaf, CINE.fondo, 0.55)} stroke={KC.ink} strokeWidth={6} />
           <g transform="rotate(-8 120 1150)"><Poste x={120} yTop={520} yBase={1160} ancho={52} /></g>
           <path d="M 170 560 Q 230 900 300 1140 L 470 1150" fill="none" stroke={PJ_CABLE} strokeWidth={14} strokeLinecap="round" />
           {[1, 2, 3].map((i) => { const f = ((T - K.Tu) * 0.6 + i / 3) % 1; return <ellipse key={i} cx={470} cy={1160} rx={40 + f * 340} ry={12 + f * 70} fill="none" stroke={KC.yellow} strokeWidth={8} opacity={(1 - f) * kprog(T, K.Tu + 0.4, K.Tu + 1)} />; })}

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot IA #18 · Una IA ve en tu retina lo que los oftalmólogos no saben ver — NARRADO (N1 "Por dentro": del ojo a la foto de la retina).
 // Datos: Poplin et al., Nature Biomedical Engineering 2(3):158–164 (2018); Korot et al., Sci Rep (2021); Abràmoff et al., npj Digit Med (2018).
 // Ver guion.md y verificacion.md. Todo el dibujo es esquemático.

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #37 · La línea que mide el aire que respiras (curva de Keeling) — NARRADO (N4 la imagen que se llena + N2).
 // Datos: NOAA GML (promedios mensuales y anuales de Mauna Loa), Scripps CO2 Program y NOAA Climate.gov. Ver guion.md y verificacion.md.
 // La curva se dibuja con los promedios mensuales reales de NOAA (keeling-datos.jsx). Volcanes, árbol, molécula y núcleo de hielo son esquemáticos.
@@ -147,7 +148,7 @@ function KeelingShot() {
       </Escena>
       {/* 2 · el observatorio de Mauna Loa */}
       <Escena T={T} a={K.V} b={K.Pp} zoom={0.03} origen="30% 55%">
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#8fe3ff 0%, #c9f3ff 55%, #2f8fd8 60%, #1f6fb8 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4657 0%, #3c4a57 55%, #14304d 60%, #0f2845 100%)' }}></div>
         {svg(<><Escudo x={540} T={T} />
           {/* aire que entra a la toma */}
           {Array.from({ length: 4 }, (_, i) => { const u = ((T * 0.9 + i / 4) % 1); return <path key={i} d={`M ${ox + 250 - u * 140} ${oy - 150 + Math.sin(i) * 20} q -20 -12 -40 0`} stroke="#fff" strokeWidth={6} fill="none" opacity={kprog(T, K.V + 1, K.V + 1.4) * (1 - u)} />; })}
@@ -234,7 +235,7 @@ function KeelingShot() {
       </Escena>
       {/* 10 · la erupción: midieron desde Maunakea */}
       <Escena T={T} a={K.Vz} b={K.C} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#ffb48a 0%, #ffe0c2 55%, #2f8fd8 60%, #1f6fb8 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#4a3a39 0%, #4a4547 55%, #14304d 60%, #0f2845 100%)' }}></div>
         {svg(<><Escudo x={820} base={1150} alto={440} ancho={300} lava="#5b5560" obs={false} nombre="Maunakea" />
           <Escudo x={330} base={1150} alto={400} ancho={430} T={T} erupcion={kprog(T, K.Vz + 0.3, K.Vz + 1.2)} nombre="Mauna Loa" />
           {(() => { const [ax, ay] = kObs(330, 1150, 400, 430), bx = 820 - 0.3 * 300, by = 1150 - 440 * Math.pow(1 - 0.09, 1.5), p = kprog(T, K.Vz + 2.2, K.Vz + 3.2, kEase.sale);

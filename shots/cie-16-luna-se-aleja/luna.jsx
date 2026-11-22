@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #16 · La Luna se aleja de ti casi 4 cm cada año — NARRADO (N2 "El número" + N3 espejos, láser y mareas).
 // Datos: NASA/LPI 1994 (3.8 cm/año), Murphy 2013 (láser lunar, ≈ 2.5 s ida y vuelta), Williams y Boggs 2016, DiKerby 2025 (mareas),
 // Yaemsiri et al. 2010 (uñas de las manos). Ver guion.md y verificacion.md. Dibujo esquemático: distancias y alejamiento exagerados.
@@ -113,8 +114,8 @@ function Azotea({ T, luna, persona }) {
     {[[60, 1010, 170, 190], [250, 940, 140, 260], [900, 980, 200, 220]].map(([x, y, w, h], i) => <g key={i}>
       <rect x={x} y={y} width={w} height={h + 200} fill="#241c45" stroke={KC.ink} strokeWidth={6} />
       {[0, 1].map((k) => <rect key={k} x={x + 26 + k * 60} y={y + 40} width={34} height={44} fill={(i + k) % 2 ? '#ffd76a' : '#3a3168'} />)}</g>)}
-    <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#c9785a" stroke={KC.ink} strokeWidth={10} />
-    <rect x={0} y={1150} width={KW} height={44} fill="#e39a72" stroke={KC.ink} strokeWidth={8} />
+    <rect x={0} y={1180} width={KW} height={KH - 1180} fill="#6a443b" stroke={KC.ink} strokeWidth={10} />
+    <rect x={0} y={1150} width={KW} height={44} fill="#765447" stroke={KC.ink} strokeWidth={8} />
     <g transform="translate(860 1150)">
       <rect x={-70} y={-200} width={140} height={200} rx={26} fill="#1c1c1f" stroke={KC.ink} strokeWidth={8} />
       <rect x={-80} y={-215} width={160} height={36} rx={12} fill="#2a2a2e" stroke={KC.ink} strokeWidth={7} />
@@ -190,7 +191,7 @@ function Luna() {
       {/* 1 · 1969: el Apolo 11 deja un panel de espejitos */}
       <Escena T={T} a={K.Espejos} b={K.Laser} fondo={KC.noche}>
         <Lienzo>
-          <rect width={KW} height={KH} fill="#05060d" />
+          <rect width={KW} height={KH} fill="#080a14" />
           <EstrellasFondo T={T} n={90} seed={12} alto={1000} />
           <TierraDib x={230} y={470} r={70} rot={T * 8} />
           <path d="M 0 1000 Q 300 960 560 1000 T 1080 990 L 1080 1920 L 0 1920 Z" fill="#a9a59c" stroke={KC.ink} strokeWidth={9} />

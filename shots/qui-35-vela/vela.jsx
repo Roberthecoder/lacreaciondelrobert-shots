@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #35 · Esa vela no quema la cera que ves (quema cera hecha vapor) — NARRADO (N1 por dentro + N3 capítulos + Faraday 1860–61).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const CERA = '#fbf3df', CERA2 = '#e6d6b0', LIQ = '#ffc94d', MECHA = '#2e2219', VAPOR = '#c9d6e8', ALGODON = '#f5efe2', MADERA = '#e8c48a';
