@@ -96,8 +96,8 @@ function Equipaje({ T, a }) {
   const tapa = kprog(T, a + 0.4, a + 1.1, kEase.sale);
   const bolsas = [[250, 720], [830, 720], [260, 1060], [820, 1060]];
   return <>
-    <div style={{ position:'absolute', inset:0, background:cineMix(KC.yellow, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.35) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
-    <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+    <FondoLunares color={KC.yellow} />
+    <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}><g transform="translate(540 960) scale(1.2) translate(-540 -890)">
       {bolsas.map(([bx, by], i) => {
         const p = kprog(T, a + 0.9 + i * 0.18, a + 1.7 + i * 0.18, kEase.rebote);
         const x = klerp(540, bx, p), y = klerp(700, by, p) + mece(T, i + 2, 0.4) * 6;
@@ -116,7 +116,7 @@ function Equipaje({ T, a }) {
           <rect x={375} y={598} width={330} height={74} rx={22} fill="#9aa4ae" stroke={KC.ink} strokeWidth={10} />
         </g>
       </g>
-    </svg>
+    </g></svg>
   </>;
 }
 
@@ -129,18 +129,18 @@ const ESPECIES = [
   { n: 'Abeto Douglas', c: 'Pseudotsuga menziesii', d: () => <SemillaAla s={1.45} y={40} rot={-12} ala="#e0b07a" cuerpo="#6a3a1e" /> },
 ];
 function Especies({ T, a }) {
-  const pos = [[200, 625], [540, 625], [880, 625], [370, 965], [710, 965]];
+  const pos = [[190, 700], [540, 700], [890, 700], [365, 1190], [715, 1190]];
   return <>
-    <div style={{ position:'absolute', inset:0, background:cineMix(KC.mint, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+    <FondoLunares color={KC.mint} />
     {ESPECIES.map((e, i) => {
-      const at = a + 0.4 + i * 0.62, k = kentrada(T, at, null, 'pop');
+      const at = a + 0.15 + i * 0.62, k = kentrada(T, at, null, 'pop');
       if (T < at) return null;
       const [x, y] = pos[i];
-      return <div key={i} style={{ position:'absolute', left:x - 150, top:y - 165, width:300, height:330, opacity:k.o, transform:`scale(${k.s}) rotate(${(i % 2 ? 2 : -2) + mece(T, i, 0.2)}deg)`,
-        background:KC.paper, border:`6px solid ${KC.ink}`, borderRadius:26, boxShadow:`10px 10px 0 ${KC.ink}`, textAlign:'center' }}>
-        <svg width={300} height={200} style={{ display:'block' }}><g transform={`translate(150 105) rotate(${mece(T, i + 7, 0.3) * 6})`}>{e.d()}</g></svg>
-        <div style={{ font:`900 34px ${KF.texto}`, color:KC.ink, marginTop:-4 }}>{e.n}</div>
-        <div style={{ font:`italic 700 20px ${KF.mono}`, color:'#5a524a', marginTop:6 }}>{e.c}</div>
+      return <div key={i} style={{ position:'absolute', left:x - 165, top:y - 225, width:330, height:450, opacity:k.o, transform:`scale(${k.s}) rotate(${(i % 2 ? 1 : -1) + mece(T, i, 0.2)}deg)`,
+        background:'rgba(223,231,255,.04)', border:'2px solid rgba(223,231,255,.2)', borderRadius:26, textAlign:'center' }}>
+        <svg width={326} height={330} style={{ display:'block' }}><g transform={`translate(163 165) rotate(${mece(T, i + 7, 0.3) * 6}) scale(1.7)`}>{e.d()}</g></svg>
+        <div style={{ font:`900 38px ${KF.texto}`, color:KC.ink, marginTop:-2 }}>{e.n}</div>
+        <div style={{ font:`italic 700 21px ${KF.mono}`, color:'#9fb0c4', marginTop:6, whiteSpace:'nowrap' }}>{e.c}</div>
       </div>;
     })}
   </>;
@@ -152,7 +152,7 @@ function Orbita({ T, a, b }) {
   const R = { x: 540, y: 940, rx: 480, ry: 112 };
   const th = 0.35 + (T - a) * 2.4, cx = R.x + R.rx * Math.cos(th), cy = R.y + R.ry * Math.sin(th), frente = Math.sin(th) > 0;
   const ang = Math.atan2(R.ry * Math.cos(th), -R.rx * Math.sin(th)) * 180 / Math.PI;
-  const nave = <g transform={`translate(${cx} ${cy}) rotate(${ang}) scale(${frente ? 1.15 : 0.85})`} opacity={frente ? 1 : 0.7}>
+  const nave = <g transform={`translate(${cx} ${cy}) rotate(${ang}) scale(${frente ? 2.0 : 1.5})`} opacity={frente ? 1 : 0.7}>
     <circle r={46} fill={KC.cyan} opacity=".25" />
     <rect x={-40} y={-16} width={46} height={32} rx={6} fill="#dfe5ea" stroke={KC.ink} strokeWidth={5} />
     <path d="M 6 -16 L 40 0 L 6 16 Z" fill="#f2f5f8" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
@@ -166,21 +166,21 @@ function Orbita({ T, a, b }) {
       <g><circle cx={910} cy={330} r={70} fill="#2f7fff" stroke={KC.ink} strokeWidth={6} /><path d="M 870 300 q 30 -20 50 10 q 20 30 -10 40 q -30 0 -40 -50 Z" fill={KC.leaf} /><circle cx={910} cy={330} r={84} fill="none" stroke="#8fd3ff" strokeWidth={4} opacity=".6" /></g>
       <path d={`M ${R.x - R.rx} ${R.y} A ${R.rx} ${R.ry} 0 0 1 ${R.x + R.rx} ${R.y}`} fill="none" stroke={KC.cyan} strokeWidth={5} strokeDasharray="16 14" opacity=".45" />
       {!frente && nave}
-      <circle cx={540} cy={1500} r={660} fill="#cfc8dc" stroke={KC.ink} strokeWidth={10} />
-      {[[300, 1030, 60], [760, 1080, 80], [520, 1200, 50], [880, 1260, 40], [200, 1280, 70], [640, 930, 34]].map(([x, y, r], i) => <ellipse key={i} cx={x} cy={y} rx={r} ry={r * 0.45} fill="#b4abc6" stroke="#9a90b0" strokeWidth={4} />)}
+      <circle cx={540} cy={1500} r={660} fill="#7d7892" stroke={KC.ink} strokeWidth={10} />
+      {[[300, 1030, 60], [760, 1080, 80], [520, 1200, 50], [880, 1260, 40], [200, 1280, 70], [640, 930, 34]].map(([x, y, r], i) => <ellipse key={i} cx={x} cy={y} rx={r} ry={r * 0.45} fill="#676180" stroke="#5a5472" strokeWidth={4} />)}
       {/* módulo lunar Antares y dos astronautas */}
-      <g transform="translate(470 848)">
+      <g transform="translate(450 812) scale(2.2)">
         <path d="M -40 30 L -26 6 M 40 30 L 26 6 M -14 30 L -8 8 M 14 30 L 8 8" stroke={KC.ink} strokeWidth={5} />
         <rect x={-30} y={-22} width={60} height={30} rx={4} fill={KC.gold} stroke={KC.ink} strokeWidth={5} />
         <path d="M -22 -22 L -16 -46 L 16 -46 L 22 -22 Z" fill="#dfe5ea" stroke={KC.ink} strokeWidth={5} />
       </g>
-      {[[575, 858], [622, 862]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y + Math.abs(Math.sin(T * 3 + i)) * -8})`}><circle cx={0} cy={-26} r={9} fill="#fff" stroke={KC.ink} strokeWidth={4} /><rect x={-8} y={-18} width={16} height={22} rx={5} fill="#fff" stroke={KC.ink} strokeWidth={4} /></g>)}
+      {[[610, 852], [690, 862]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y + Math.abs(Math.sin(T * 3 + i)) * -8}) scale(2)`}><circle cx={0} cy={-26} r={9} fill="#fff" stroke={KC.ink} strokeWidth={4} /><rect x={-8} y={-18} width={16} height={22} rx={5} fill="#fff" stroke={KC.ink} strokeWidth={4} /></g>)}
       <path d={`M ${R.x - R.rx} ${R.y} A ${R.rx} ${R.ry} 0 0 0 ${R.x + R.rx} ${R.y}`} fill="none" stroke={KC.cyan} strokeWidth={6} strokeDasharray="16 14" opacity=".9" />
       {frente && nave}
     </svg>
     <div style={{ position:'absolute', left:0, right:0, top:400, textAlign:'center', font:`700 58px ${KF.mono}`, color:KC.texto, textShadow:SOMBRA }}>vuelta <span style={{ color:KC.yellow }}>{vuelta}</span> / 34</div>
-    <Etq T={T} at={a + 1.2} until={b} x={cx + (cx > 540 ? -60 : 60)} y={cy - 95} lado={cx > 540 ? 'izq' : 'der'} texto="Roosa, solo (de la vuelta 12 a la 32)" color={KC.cyan} />
-    <Etq T={T} at={a + 2.0} until={b} x={600} y={770} texto="Shepard y Mitchell" color={KC.texto} />
+    <Etq T={T} at={a + 1.2} until={b} x={70} y={640} texto="Roosa, solo (de la vuelta 12 a la 32)" color={KC.cyan} />
+    <Etq T={T} at={a + 2.0} until={b} x={600} y={715} texto="Shepard y Mitchell" color={KC.texto} />
   </>;
 }
 
@@ -201,7 +201,7 @@ function SemillaCorte({ T, r }) {
 
 // Escena de la semilla grande (re-gancho + por dentro).
 function SemillaGrande({ T, P, D }) {
-  const s = klerp(0.35, 1, kprog(T, P, P + 2.2, kEase.suave));
+  const s = klerp(0.6, 1, kprog(T, P, P + 2.2, kEase.suave));
   return <>
     <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 55%, #1b2333 0%, #0E0F12 70%)' }}></div>
     <Ambiente T={T} n={34} seed={12} color="rgba(234,255,247,.4)" tam={[3, 8]} />
@@ -215,24 +215,25 @@ function SemillaGrande({ T, P, D }) {
 // Cámara de limpieza: las bolsas revientan y las semillas flotan en el vacío.
 function Vacio({ T, a }) {
   const rev = a + 1.0, g = krng(55);
-  const sem = Array.from({ length: 28 }, (_, i) => ({ vx: (g() - 0.5) * 760, vy: (g() - 0.5) * 560, r0: g() * 360, vr: (g() - 0.5) * 140, t: i % 3, s: 0.7 + g() * 0.5 }));
+  const sem = Array.from({ length: 28 }, (_, i) => ({ vx: (g() - 0.5) * 760, vy: (g() - 0.5) * 680, r0: g() * 360, vr: (g() - 0.5) * 140, t: i % 3, s: 0.7 + g() * 0.5 }));
   const u = T - rev, k = u > 0 ? 1 - Math.exp(-u * 1.6) : 0;
   return <>
-    <div style={{ position:'absolute', inset:0, background:cineMix(KC.lilac, CINE.fondo, 0.8), backgroundImage:'repeating-linear-gradient(45deg, rgba(255,255,255,.12) 0 24px, transparent 24px 48px)' }}></div>
+    <FondoLunares color={KC.lilac} />
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-      <rect x={110} y={440} width={860} height={760} rx={60} fill="#151924" stroke={KC.ink} strokeWidth={12} />
-      <rect x={130} y={460} width={820} height={720} rx={46} fill="none" stroke="#3b4255" strokeWidth={6} />
-      {[[150, 480], [930, 480], [150, 1160], [930, 1160]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={12} fill="#9aa4ae" stroke={KC.ink} strokeWidth={4} />)}
-      {u < 0.4 && [-150, 0, 150].map((dx, i) => <g key={i} transform={`translate(${540 + dx + (u > 0 ? (i - 1) * u * 200 : 0)} ${820 + mece(T, i, 0.5) * 6}) scale(${1 + Math.max(0, -u) * 0 + (u > -0.4 && u < 0 ? (0.4 + u) * 0.4 : 0)})`} opacity={u > 0 ? 1 - u / 0.4 : 1}>
-        <rect x={-62} y={-80} width={124} height={160} rx={18} fill="rgba(255,255,255,.55)" stroke={KC.ink} strokeWidth={5} />
+      <rect x={80} y={440} width={920} height={880} rx={60} fill="#151924" stroke={KC.ink} strokeWidth={12} />
+      <rect x={100} y={460} width={880} height={840} rx={46} fill="none" stroke="#3b4255" strokeWidth={6} />
+      {[[124, 484], [956, 484], [124, 1276], [956, 1276]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={12} fill="#9aa4ae" stroke={KC.ink} strokeWidth={4} />)}
+      {u < 0.4 && [-250, 0, 250].map((dx, i) => <g key={i} transform={`translate(${540 + dx + (u > 0 ? (i - 1) * u * 200 : 0)} ${880 + mece(T, i, 0.5) * 6}) scale(${1.75 * (1 + (u > -0.4 && u < 0 ? (0.4 + u) * 0.4 : 0))})`} opacity={u > 0 ? 1 - u / 0.4 : 1}>
+        <rect x={-62} y={-80} width={124} height={160} rx={18} fill="rgba(255,255,255,.3)" stroke={KC.ink} strokeWidth={5} />
+        {[[-28, -22], [22, -8], [-12, 28], [30, 44], [-34, 58]].map(([sx, sy], k2) => <SemillaAla key={k2} x={sx} y={sy + 12} rot={k2 * 62 + i * 30} s={0.5} borde={4} />)}
       </g>)}
       {sem.map((p, i) => {
-        const x = 540 + (i % 3 - 1) * 150 * (1 - k) + p.vx * k + mece(T, i, 0.2) * 14 * k, y = 820 + p.vy * k + mece(T, i + 30, 0.2) * 14 * k;
+        const x = 540 + (i % 3 - 1) * 250 * (1 - k) + p.vx * k + mece(T, i, 0.2) * 14 * k, y = 880 + p.vy * k + mece(T, i + 30, 0.2) * 14 * k;
         const rot = p.r0 + p.vr * (u > 0 ? u : 0);
         if (u < 0) return null;
-        return p.t === 0 ? <SemillaAla key={i} x={x} y={y} rot={rot} s={0.9 * p.s} />
-          : p.t === 1 ? <g key={i} transform={`translate(${x} ${y}) rotate(${rot}) scale(${0.55 * p.s})`}>{ESPECIES[1].d()}</g>
-          : <g key={i} transform={`translate(${x} ${y}) rotate(${rot}) scale(${0.6 * p.s})`}>{ESPECIES[3].d()}</g>;
+        return p.t === 0 ? <SemillaAla key={i} x={x} y={y} rot={rot} s={1.3 * p.s} />
+          : p.t === 1 ? <g key={i} transform={`translate(${x} ${y}) rotate(${rot}) scale(${0.8 * p.s})`}>{ESPECIES[1].d()}</g>
+          : <g key={i} transform={`translate(${x} ${y}) rotate(${rot}) scale(${0.85 * p.s})`}>{ESPECIES[3].d()}</g>;
       })}
     </svg>
     <Chip T={T} at={rev - 0.2} texto="VACÍO" y={380} borde={KC.cyan} tam={52} mono />
@@ -258,22 +259,24 @@ function Maceta({ x, y, texto, color }) {
   </g>;
 }
 function Estudio({ T, a, b }) {
-  const brota = kprog(T, b - 2.4, b - 0.6, kEase.sale), m = kentrada(T, a + 3.3, null, 'pop');
+  const brota = kprog(T, b - 2.4, b - 0.6, kEase.sale), cae = kprog(T, a + 0.5, a + 1.7, kEase.suave);
   return <>
-    <div style={{ position:'absolute', inset:0, background:cineMix(KC.yellow, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.35) 7px, transparent 8px)', backgroundSize:'52px 52px' }}></div>
-    {T >= a + 3.3 && <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, opacity:m.o }}>
-      <g transform={`translate(0 ${(1 - m.s) * 200})`}>
-        <Plantula x={300} y={990} p={brota} /><Plantula x={780} y={990} p={brota} />
-        <Maceta x={300} y={1000} texto="LUNA" color={KC.lilac} /><Maceta x={780} y={1000} texto="TIERRA" color={KC.cyan} />
-      </g>
-    </svg>}
-    <TarjetaEstudio T={T} at={a + 0.3} until={a + 3.3} anio="1972" quien="Servicio Forestal de EE. UU." revista="Gulfport (Misisipi) · Placerville (California)" y={700} />
+    <FondoLunares color={KC.yellow} />
+    <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
+      {[[285, 'LUNA', KC.lilac], [795, 'TIERRA', KC.cyan]].map(([x, texto, color], i) => <g key={i} transform={`translate(${x} 1080) scale(1.5)`}>
+        {/* la semilla que se siembra en cada maceta */}
+        {cae < 1 && <g opacity={kprog(T, a + 0.3, a + 0.6) * (1 - kprog(cae, 0.85, 1))}><SemillaAla x={(i ? -1 : 1) * 30 * Math.sin(cae * 5)} y={klerp(-330, -14, cae)} rot={cae * 400 + i * 90} s={1.2} /></g>}
+        <Plantula x={0} y={-10} p={brota} />
+        <Maceta x={0} y={0} texto={texto} color={color} />
+      </g>)}
+    </svg>
+    <TarjetaEstudio T={T} at={a + 0.3} until={a + 3.3} anio="1972" quien="Servicio Forestal de EE. UU." revista="Gulfport (Misisipi) · Placerville (California)" y={330} />
   </>;
 }
 
 // Los dos pinos crecen igual: el lunar y su gemelo terrestre.
 function Igual({ T, a }) {
-  const s = klerp(0.14, 0.82, kprog(T, a + 0.1, a + 3.0, kEase.suave)), top = 1460 - 900 * s;
+  const s = klerp(0.56, 0.92, kprog(T, a + 0.1, a + 3.0, kEase.suave)), top = 1460 - 900 * s;
   return <>
     <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4757, #074257)' }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
@@ -292,20 +295,20 @@ function Igual({ T, a }) {
 // ~40 árboles por todos lados, varios "perdidos".
 function Lista({ T, a }) {
   const g = krng(404), arb = [];
-  while (arb.length < 40) { const x = 70 + g() * 940, y = 720 + g() * 1100; if (y > 1180 && y < 1420) continue; arb.push([x, y, g() < 0.25]); }
+  while (arb.length < 40) { const x = 90 + g() * 900, y = 780 + g() * 740; arb.push([x, y, g() < 0.25]); }
   return <>
-    <div style={{ position:'absolute', inset:0, background:cineMix(KC.mint, CINE.fondo, 0.8), backgroundImage:'radial-gradient(circle, rgba(255,255,255,.3) 7px, transparent 8px)', backgroundSize:'48px 48px' }}></div>
+    <FondoLunares color={KC.mint} />
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       {arb.sort((p, q) => p[1] - q[1]).map(([x, y, q], i) => {
         const e = kentrada(T, a + 0.3 + i * 0.07, null, 'pop'); if (T < a + 0.3 + i * 0.07) return null;
-        return <g key={i} transform={`translate(${x} ${y}) scale(${e.s}) rotate(${mece(T, i, 0.25) * 3})`} opacity={e.o}>
+        return <g key={i} transform={`translate(${x} ${y}) scale(${1.7 * e.s}) rotate(${mece(T, i, 0.25) * 3})`} opacity={e.o}>
           <rect x={-6} y={-10} width={12} height={30} fill={TRONCO} stroke={KC.ink} strokeWidth={3} />
           <path d="M 0 -78 L 30 -28 L 18 -28 L 40 6 L -40 6 L -18 -28 L -30 -28 Z" fill={VERDE} stroke={KC.ink} strokeWidth={4} strokeLinejoin="round" />
           {q && <g transform="translate(30 -82)"><circle r={22} fill={KC.gold2} stroke={KC.ink} strokeWidth={4} /><text y={11} textAnchor="middle" style={{ font:`400 34px ${KF.titulo}` }} fill={KC.ink}>?</text></g>}
         </g>;
       })}
     </svg>
-    <NumeroGigante T={T} at={a + 0.2} valor={40} prefijo="~" etiqueta="estados con árboles lunares" y={500} tam={200} />
+    <NumeroGigante T={T} at={a + 0.2} valor={40} prefijo="~" etiqueta="estados con árboles lunares" y={420} tam={200} />
   </>;
 }
 
@@ -328,18 +331,18 @@ function LunaNarrado() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.03}><Parque T={T} orbita={1} /></Escena>
 
       {/* gancho y cierre: ×34 */}
-      {T < K.V - 0.2 && <Contador T={T} at={K.G + 1.3} hasta={34} desde={0} dur={2.2} sufijo="×" x={540} y={430} tam={120} color={KC.yellow} />}
-      <Chip T={T} at={K.G + 2.2} until={K.V - 0.3} texto="vueltas a la Luna" y={540} tam={40} />
-      <Etq T={T} at={K.G + 1.0} until={K.V - 0.3} x={600} y={1040} texto="Pinus taeda" it color={KC.texto} />
-      {T >= K.C && <Contador T={T} at={K.C} desde={34} hasta={34} dur={0.1} sufijo="×" x={540} y={430} tam={120} color={KC.yellow} />}
-      <Chip T={T} at={K.C + 0.6} until={K.Ou} texto="34 vueltas a la Luna" y={540} tam={40} />
+      {T < K.V - 0.2 && <Contador T={T} at={K.G + 1.3} hasta={34} desde={0} dur={2.2} sufijo="×" x={540} y={330} tam={120} color={KC.yellow} />}
+      <Chip T={T} at={K.G + 2.2} until={K.V - 0.3} texto="vueltas a la Luna" y={445} tam={40} />
+      <Etq T={T} at={K.G + 1.0} until={K.V - 0.3} x={480} y={1385} lado="izq" texto="Pinus taeda" it color={KC.texto} />
+      {T >= K.C && <Contador T={T} at={K.C} desde={34} hasta={34} dur={0.1} sufijo="×" x={540} y={330} tam={120} color={KC.yellow} />}
+      <Chip T={T} at={K.C + 0.6} until={K.Ou} texto="34 vueltas a la Luna" y={445} tam={40} />
 
       {/* viaje */}
-      <Chip T={T} at={K.V + 0.2} until={K.E - 0.2} texto="Stuart Roosa · Apolo 14 · 1971" y={430} tam={40} />
-      <Chip T={T} at={K.V + 2.3} until={K.E - 0.2} texto="exbombero forestal" y={1490} borde={KC.red} tam={40} />
-      <Etq T={T} at={K.V + 1.2} until={K.E - 0.2} x={700} y={900} texto="equipaje" color={KC.ink} />
+      <Chip T={T} at={K.V + 0.2} until={K.E - 0.2} texto="Stuart Roosa · Apolo 14 · 1971" y={290} tam={40} />
+      <Chip T={T} at={K.V + 2.3} until={K.E - 0.2} texto="exbombero forestal" y={1400} borde={KC.red} tam={40} />
+      <Etq T={T} at={K.V + 1.2} until={K.E - 0.2} x={730} y={893} texto="equipaje" color={KC.ink} />
       {/* especies */}
-      <Chip T={T} at={K.E + 0.1} until={K.O - 0.2} texto="5 árboles" y={395} tam={44} />
+      <Chip T={T} at={K.E + 0.1} until={K.O - 0.2} texto="5 árboles" y={380} tam={44} />
       {/* órbita */}
       <Chip T={T} at={K.O + 0.6} until={K.P - 0.2} texto="no pisaron la Luna" y={520} borde={KC.red} tam={40} />
       {/* por dentro (Lupa en modo rayos X) */}
@@ -349,7 +352,7 @@ function LunaNarrado() {
       <Etq T={T} at={K.D + 1.7} until={K.Va - 0.3} x={650} y={760} texto="embrión" color="#b8e986" />
       <Medidor T={T} at={K.D + 3.6} until={K.Va - 0.3} etiqueta="AGUA EN LA SEMILLA" valor={(t) => 0.08 * kprog(t, K.D + 3.8, K.D + 4.6)} texto={() => 'muy poca'} y={1560} color={KC.cyan} />
       {/* vacío → germinaron */}
-      <MitoTachado T={T} at={K.Va + 3.6} tacharEn={K.I - 1.4} until={K.I - 0.3} texto="¿Ya no sirven?" y={1560} />
+      <MitoTachado T={T} at={K.Va + 3.6} tacharEn={K.I - 1.4} until={K.I - 0.3} texto="¿Ya no sirven?" y={1500} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.2} until={K.V - 0.1} texto="No es un árbol cualquiera: *34 vueltas a la Luna.*" />
