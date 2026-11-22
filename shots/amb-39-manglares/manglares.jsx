@@ -118,7 +118,7 @@ function Columna({ x, y, w, h, n = 8, capas = 8, T = 0, raices = true }) {
       const vis = kclamp(capas - k, 0, 1); if (vis <= 0) return null;
       const yk = y + h - (k + 1) * hh - (1 - kEase.sale(vis)) * 260;
       return <g key={k} opacity={kclamp(vis * 2, 0, 1)}>
-        <rect x={x} y={yk} width={w} height={hh + 1} fill={mixHex('#24170f', '#7a5638', k / (n - 1))} stroke={KC.ink} strokeWidth={3} />
+        <rect x={x} y={yk} width={w} height={hh + 1} fill={mixHex('#24170f', '#6b4a33', k / (n - 1))} stroke={KC.ink} strokeWidth={3} />
         {puntos[k].map((p, i) => <circle key={i} cx={x + p.x} cy={yk + p.y} r={p.s} fill="#0b0b0b" stroke={KC.gold} strokeWidth={1.6} />)}
       </g>;
     })}
@@ -175,22 +175,22 @@ function ManglaresShot() {
       {/* 1 · gancho: la bota pisa el lodo bajo el manglar */}
       <Escena T={T} a={K.G} b={K.R} zoom={0.06} origen="50% 60%">
         <FondoLunares color={KC.cyan} />
-        <Orilla T={T} bota={pisada(K.G + 0.05)} k={1.5} ox={470} dy={60} carbono={0.85 * kprog(T, K.G + 1.5, K.G + 2.6)} />
+        <Orilla T={T} bota={pisada(K.G + 0.05)} k={1.5} ox={470} dy={200} carbono={0.85 * kprog(T, K.G + 1.5, K.G + 2.6)} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
       {/* 2 · raíces: zancudas del mangle rojo y neumatóforos del mangle negro */}
       <Escena T={T} a={K.R} b={K.L} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <Orilla T={T} raices={0.15 + 0.85 * kprog(T, K.R + 0.2, K.R + 1.8, kEase.sale)} neumato={kprog(T, K.R + 2.6, K.R + 4.2)} marea={1} k={1.25} dy={50} carbono={0.55} />
+        <Orilla T={T} raices={0.15 + 0.85 * kprog(T, K.R + 0.2, K.R + 1.8, kEase.sale)} neumato={kprog(T, K.R + 2.6, K.R + 4.2)} marea={1} k={1.25} dy={130} carbono={0.55} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
       {/* 3 · hojas que caen a un suelo empapado, casi sin oxígeno */}
       <Escena T={T} a={K.L} b={K.Mi} zoom={0.05} origen="50% 70%">
         <FondoLunares color={KC.cyan} />
-        <Orilla T={T} hojas={K.L + 0.1} k={1.25} dy={50} carbono={0.55} />
+        <Orilla T={T} hojas={K.L + 0.1} k={1.25} dy={130} carbono={0.55} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
-      <Lupa T={T} at={K.L + 2.2} until={K.Mi - 0.15} x={650} y={1345} r={200} fx={470} fy={MG_BASE + 62} tinte={KC.yellow} etiqueta="POR DENTRO · EL LODO"
+      <Lupa T={T} at={K.L + 2.2} until={K.Mi - 0.15} x={650} y={1345} r={200} fx={470} fy={MG_BASE + 142} tinte={KC.yellow} etiqueta="POR DENTRO · EL LODO"
         interior={(t, r) => LodoAdentro(t, r)} />
       {/* 4 · microbios lentísimos (al microscopio, fondo oscuro) */}
       <Escena T={T} a={K.Mi} b={K.Ca} zoom={0.06}>
@@ -204,14 +204,14 @@ function ManglaresShot() {
       {/* 5 · capa sobre capa: el carbono se queda enterrado */}
       <Escena T={T} a={K.Ca} b={K.P} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'#0E0F12' }}></div>
-        {svg(<Columna x={40} y={430} w={700} h={900} capas={5 + kprog(T, K.Ca + 0.1, K.Ca + 4.0) * 3} T={T} />)}
-        <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
+        {svg(<Columna x={40} y={760} w={700} h={740} capas={5 + kprog(T, K.Ca + 0.1, K.Ca + 4.0) * 3} T={T} />)}
+        <EscalaFija texto="esquema (no a escala)" largo={0} y={1565} color={KC.texto} />
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><Columna x={40} y={430} w={700} h={900} capas={8} T={T} />
-          <text x={905} y={1000} textAnchor="middle" style={{ font:`400 400px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 905 860)`}>?</text></>)}
+        {svg(<><Columna x={40} y={760} w={700} h={740} capas={8} T={T} />
+          <text x={905} y={1260} textAnchor="middle" style={{ font:`400 400px ${KF.titulo}` }} fill={KC.yellow} stroke="#0b1020" strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 905 1120)`}>?</text></>)}
       </Escena>
       {/* 7 · el estudio de 2011 y la hectárea que se llena */}
       <Escena T={T} a={K.E} b={K.S}>
@@ -231,7 +231,7 @@ function ManglaresShot() {
       {/* 8 · del 49 al 98 % está en el suelo */}
       <Escena T={T} a={K.S} b={K.Mx}>
         <FondoLunares color={KC.mint} />
-        {svg(<>
+        {svg(<g transform="translate(0 170)">
           <rect x={60} y={900} width={560} height={300} rx={20} fill={MG_LODO} stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 40 }, (_, i) => { const r = krng(50 + i); return <circle key={i} cx={80 + r() * 520} cy={920 + r() * 260} r={4 + r() * 5} fill="#0b0b0b" stroke={KC.gold} strokeWidth={1.6} />; })}
           <MangleRojo x={340} base={902} top={560} raices={1} T={T} s={0.95} />
@@ -240,14 +240,14 @@ function ManglaresShot() {
             <rect x={7} y={7} width={136} height={486 * (1 - fr)} rx={10} fill={MG_HOJA2} />
             <rect x={7} y={7 + 486 * (1 - fr)} width={136} height={486 * fr} rx={10} fill={MG_LODO} />
             <text x={75} y={7 + 486 * (1 - fr) + 486 * fr / 2 + 18} textAnchor="middle" style={{ font:`400 54px ${KF.titulo}` }} fill="#fff">{kformato(fr * 100, 0)} %</text>
-          </g></>)}
-        <Etq T={T} at={K.S + 1.0} until={K.Mx - 0.2} x={845} y={720} texto="árbol" tam={30} color={KC.ink} />
-        <Etq T={T} at={K.S + 1.0} until={K.Mx - 0.2} x={845} y={1150} texto="suelo" tam={30} color={KC.ink} />
+          </g></g>)}
+        <Etq T={T} at={K.S + 1.0} until={K.Mx - 0.2} x={845} y={890} texto="árbol" tam={30} color={KC.ink} />
+        <Etq T={T} at={K.S + 1.0} until={K.Mx - 0.2} x={845} y={1320} texto="suelo" tam={30} color={KC.ink} />
       </Escena>
       {/* 9 · México: 877,464 ha de manglar (CONABIO 2025) */}
       <Escena T={T} a={K.Mx} b={K.X}>
         <FondoLunares color={KC.cyan} />
-        {svg(<MapaMexico x={40} y={600} ancho={1000} centro="#d9d4c8">
+        {svg(<MapaMexico x={40} y={710} ancho={1000} centro="#d9d4c8">
           {MG_SITIOS.map(([lo, la], i) => { const [px, py] = mxProy(lo, la), e = kprog(T, K.Mx + 0.5 + i * 0.06, K.Mx + 0.8 + i * 0.06, kEase.sale);
             return <circle key={i} cx={px} cy={py} r={13 * e} fill={KC.leaf} stroke={KC.ink} strokeWidth={4} />; })}
         </MapaMexico>)}
@@ -256,42 +256,42 @@ function ManglaresShot() {
       {/* 10 · barrera contra huracanes y guardería de crías */}
       <Escena T={T} a={K.X} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        <Orilla T={T} ola={kprog(T, K.X + 0.2, K.X + 0.8)} crias={kprog(T, K.X + 2.4, K.X + 3.0)} marea={0.6} k={1.2} ox={800} dy={50} carbono={0.55} />
+        <Orilla T={T} ola={kprog(T, K.X + 0.2, K.X + 0.8)} crias={kprog(T, K.X + 2.4, K.X + 3.0)} marea={0.6} k={1.2} ox={800} dy={130} carbono={0.55} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
       {/* 11 · cierre: la misma pisada, ahora sabiendo lo que hay abajo */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.06} origen="50% 60%">
         <FondoLunares color={KC.cyan} />
-        <Orilla T={T} bota={pisada(K.C - 0.2)} k={1.5} ox={470} dy={60} carbono={0.85} />
+        <Orilla T={T} bota={pisada(K.C - 0.2)} k={1.5} ox={470} dy={200} carbono={0.85} />
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
-      <Lupa T={T} at={K.C + 1.0} until={K.Ou - 0.1} x={770} y={1350} r={200} fx={560} fy={MG_BASE + 80} tinte={KC.gold} etiqueta="POR DENTRO · CARBONO"
+      <Lupa T={T} at={K.C + 1.0} until={K.Ou - 0.1} x={770} y={1350} r={200} fx={560} fy={MG_BASE + 220} tinte={KC.gold} etiqueta="POR DENTRO · CARBONO"
         interior={(t, r) => LodoAdentro(t, r, true)} />
 
       {/* datos y etiquetas */}
-      <Chip T={T} at={K.G + 1.6} until={K.R - 0.2} texto="lodo = bodega de carbono" y={1340} x={540} tam={36} borde={KC.gold} />
-      <Etq T={T} at={K.R + 0.8} until={K.L - 0.2} x={40} y={1185} texto="mangle rojo" tam={30} />
-      <Etq T={T} at={K.R + 1.0} until={K.L - 0.2} x={40} y={1235} texto="Rhizophora mangle" it tam={28} />
-      <Etq T={T} at={K.R + 2.8} until={K.L - 0.2} x={640} y={1185} texto="mangle negro" tam={30} />
-      <Etq T={T} at={K.R + 3.0} until={K.L - 0.2} x={640} y={1235} texto="Avicennia germinans" it tam={28} />
-      <Chip T={T} at={K.R + 0.6} until={K.R + 2.7} texto="raíces arqueadas, como patas" y={330} x={400} tam={32} borde={KC.leaf} />
-      <Chip T={T} at={K.R + 3.0} until={K.L - 0.2} texto="raíces para respirar" y={330} x={700} tam={32} borde={KC.leaf} />
-      <Chip T={T} at={K.L + 0.3} until={K.L + 2.1} texto="hojas y raíces muertas → lodo" y={330} x={540} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.G + 1.6} until={K.R - 0.2} texto="lodo = bodega de carbono" y={1390} x={540} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.R + 0.8} until={K.L - 0.2} x={40} y={1265} texto="mangle rojo" tam={30} />
+      <Etq T={T} at={K.R + 1.0} until={K.L - 0.2} x={40} y={1315} texto="Rhizophora mangle" it tam={28} />
+      <Etq T={T} at={K.R + 2.8} until={K.L - 0.2} x={640} y={1265} texto="mangle negro" tam={30} />
+      <Etq T={T} at={K.R + 3.0} until={K.L - 0.2} x={640} y={1315} texto="Avicennia germinans" it tam={28} />
+      <Chip T={T} at={K.R + 0.6} until={K.R + 2.7} texto="raíces arqueadas, como patas" y={410} x={400} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.R + 3.0} until={K.L - 0.2} texto="raíces para respirar" y={410} x={700} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.L + 0.3} until={K.L + 2.1} texto="hojas y raíces muertas → lodo" y={410} x={540} tam={32} borde={KC.leaf} />
       <Chip T={T} at={K.L + 3.0} until={K.Mi - 0.2} texto="casi sin oxígeno" y={1345} x={235} tam={36} borde={KC.yellow} />
       <Etq T={T} at={K.Mi + 0.6} until={K.Ca - 0.2} x={500} y={1215} texto="bacterias" tam={30} />
       <Chip T={T} at={K.Mi + 0.4} until={K.Ca - 0.2} texto="sin oxígeno: lentísimo" y={1330} x={540} tam={32} borde={KC.coral} />
-      <Chip T={T} at={K.Ca + 0.3} until={K.P - 0.2} texto="capa sobre capa" y={300} x={390} tam={38} borde={KC.gold} />
-      <Etq T={T} at={K.Ca + 3.6} until={K.P - 0.2} x={750} y={486} texto="capa nueva" tam={28} />
-      <Etq T={T} at={K.Ca + 1.0} until={K.P - 0.2} x={750} y={1274} texto="miles de años" tam={28} color={KC.gold2} />
+      <Chip T={T} at={K.Ca + 0.3} until={K.P - 0.2} texto="capa sobre capa" y={690} x={390} tam={38} borde={KC.gold} />
+      <Etq T={T} at={K.Ca + 3.6} until={K.P - 0.2} x={750} y={806} texto="capa nueva" tam={28} />
+      <Etq T={T} at={K.Ca + 1.0} until={K.P - 0.2} x={750} y={1454} texto="miles de años" tam={28} color={KC.gold2} />
       <TarjetaEstudio T={T} at={K.E + 0.7} until={K.E + 3.2} anio="2011" quien="25 manglares del Indo-Pacífico" revista="Donato et al. · Nature Geoscience" y={305} />
       <NumeroGigante T={T} at={K.E + 3.5} until={K.S - 0.2} valor={1023} dur={2.9} sufijo=" t" etiqueta="carbono por hectárea" x={540} y={1400} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.S + 0.4} until={K.Mx - 0.2} texto="49–98 % en el suelo" y={340} x={420} tam={36} borde={KC.gold} />
-      <NumeroGigante T={T} at={K.Mx + 0.2} until={K.X - 0.2} valor={877464} dur={1.6} sufijo=" ha" etiqueta="manglar en México" x={540} y={440} tam={120} color={KC.yellow} />
-      <Chip T={T} at={K.Mx + 1.6} until={K.X - 0.2} texto="CONABIO · 2025" y={1210} x={270} tam={34} borde={KC.leaf} />
-      <Chip T={T} at={K.X + 0.5} until={K.X + 2.6} texto="barrera contra huracanes" y={330} x={540} tam={32} borde={KC.cyan} />
-      <Chip T={T} at={K.X + 2.6} until={K.C - 0.2} texto="guardería de crías" y={330} x={540} tam={32} borde={KC.orange} />
-      <Etq T={T} at={K.X + 2.8} until={K.C - 0.2} x={470} y={1190} texto="peces y crustáceos" tam={28} />
-      <Chip T={T} at={K.C + 1.4} until={K.Ou - 0.1} texto="estás sobre una bodega" y={1350} x={285} tam={36} borde={KC.gold} />
+      <Chip T={T} at={K.S + 0.4} until={K.Mx - 0.2} texto="49–98 % en el suelo" y={450} x={420} tam={36} borde={KC.gold} />
+      <NumeroGigante T={T} at={K.Mx + 0.2} until={K.X - 0.2} valor={877464} dur={1.6} sufijo=" ha" etiqueta="manglar en México" x={540} y={550} tam={120} color={KC.yellow} />
+      <Chip T={T} at={K.Mx + 1.6} until={K.X - 0.2} texto="CONABIO · 2025" y={1320} x={270} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.X + 0.5} until={K.X + 2.6} texto="barrera contra huracanes" y={410} x={540} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={K.X + 2.6} until={K.C - 0.2} texto="guardería de crías" y={410} x={540} tam={32} borde={KC.orange} />
+      <Etq T={T} at={K.X + 2.8} until={K.C - 0.2} x={470} y={1270} texto="peces y crustáceos" tam={28} />
+      <Chip T={T} at={K.C + 1.4} until={K.Ou - 0.1} texto="estás sobre una bodega" y={1390} x={285} tam={36} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.R - 0.1} texto="Este lodo: *una bodega de carbono.*" />

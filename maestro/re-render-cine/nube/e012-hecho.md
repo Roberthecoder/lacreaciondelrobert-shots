@@ -1,3 +1,5 @@
 - fun-105-olote: ya cumplía (encuadre bien).
 - fun-106-composta-champinon: ya cumplía (encuadre bien).
 - bio-39-tamiz: marcaba Busca ARRIBA; bajé tarjeta (y 600→840), lupa (1110→1265, apuntando al mismo disco) y chip; la etiqueta «fenilcetonuria (PKU)» pasó arriba de la tarjeta para no chocar con la lupa. Escala del microscopio sin cambio (no cambió el tamaño). Encuadre bien, sin láminas.
+- amb-39-manglares: marcaba ARRIBA en Gancho, Raices, Capas, Pregunta, Suelo, Mexico, Extra y Cierre (el lodo oscuro no pesaba y todo cargaba arriba). Bajé la orilla completa (dy +140 en gancho/cierre, +80 en raíces/lodo/extra) con sus etiquetas, chips y lupas (puntos de la lupa recalculados); columna de capas más abajo (y 430→760) con sus etiquetas y el «?» de la Pregunta junto a ella; tono de la capa más joven igual al lodo del shot (#6b4a33); Suelo y México bajados ~110–170 px con sus etiquetas. Todo es «esquema (no a escala)»: sin barras que recalcular. Encuadre bien, sin láminas.
+- GRUPO TERMINADO
