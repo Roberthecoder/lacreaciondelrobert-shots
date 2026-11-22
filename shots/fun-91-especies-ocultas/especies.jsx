@@ -145,7 +145,8 @@ function EspeciesShot() {
       {/* 4 · por dentro del suelo: hilos más delgados que un pelo */}
       <Escena T={T} a={K.Mi} b={K.S} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:'#24170e' }}></div>
-        {fsvg(<SueloMicro T={T} g={kprog(T, K.Mi + 0.3, K.Mi + 2.6)} pelo={kprog(T, K.Mi + 2.4, K.Mi + 3.2)} />)}
+        {/* vuelta de encuadre: el suelo baja al centro del cuadro y crece ×1.15 (barra de escala recalculada) */}
+        {fsvg(<g transform="translate(540 990) scale(1.15) translate(-540 -830)"><SueloMicro T={T} g={kprog(T, K.Mi + 0.3, K.Mi + 2.6)} pelo={kprog(T, K.Mi + 2.4, K.Mi + 3.2)} /></g>)}
       </Escena>
       {/* 5 · sin seta visible */}
       <Escena T={T} a={K.S} b={K.A} zoom={0.04}>
@@ -205,9 +206,9 @@ function EspeciesShot() {
       <NumeroGigante T={T} at={K.To + 0.5} until={K.N - 0.2} valor={2500000} dur={2} prefijo="≈ " etiqueta="especies de hongos (estimadas)" x={540} y={370} tam={96} color={KC.texto} />
       <Chip T={T} at={K.To + 2.4} until={K.Mi - 0.3} texto="1 cuadrito ≈ 25,000 especies" x={540} y={1450} tam={30} borde={KC.ink} mono />
       <NumeroGigante T={T} at={K.N + 0.5} until={K.Mi - 0.3} valor={155000} dur={1.2} prefijo="≈ " etiqueta="con nombre (2023)" x={540} y={370} tam={96} color={KC.gold2} />
-      <Chip T={T} at={K.Mi + 0.2} until={K.S - 0.3} texto="POR DENTRO · EL SUELO" x={540} y={400} tam={32} borde={KC.mint} mono />
-      <Etq T={T} at={K.Mi + 1.4} until={K.S - 0.3} x={60} y={1130} texto="hilos de hongo (hifas) · 3–6 µm" tam={28} color={EO.hifa} />
-      <Etq T={T} at={K.Mi + 2.8} until={K.S - 0.3} x={60} y={500} texto="un pelo tuyo · 50–120 µm" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Mi + 0.2} until={K.S - 0.3} texto="POR DENTRO · EL SUELO" x={540} y={360} tam={32} borde={KC.mint} mono />
+      <Etq T={T} at={K.Mi + 1.4} until={K.S - 0.3} x={60} y={1335} texto="hilos de hongo (hifas) · 3–6 µm" tam={28} color={EO.hifa} />
+      <Etq T={T} at={K.Mi + 2.8} until={K.S - 0.3} x={60} y={610} texto="un pelo tuyo · 50–120 µm" tam={30} color={KC.texto} />
       <Chip T={T} at={K.S + 0.5} until={K.A - 0.3} texto="sin seta visible" x={540} y={470} tam={40} borde={KC.ink} />
       <Etq T={T} at={K.S + 0.8} until={K.A - 0.3} x={100} y={1060} texto="moho" tam={28} color={KC.texto} />
       <Etq T={T} at={K.S + 1.4} until={K.A - 0.3} x={130} y={1445} texto="levaduras" tam={28} color={KC.texto} />
@@ -226,7 +227,7 @@ function EspeciesShot() {
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.To} texto="5 cm" largo={234} />
       <BarraEscala T={T} at={K.To} until={K.Mi} texto="1 cuadrito ≈ 25,000 especies" largo={0} />
-      <BarraEscala T={T} at={K.Mi} until={K.S} texto="100 µm" largo={150} />
+      <BarraEscala T={T} at={K.Mi} until={K.S} texto="100 µm" largo={172} />
       <BarraEscala T={T} at={K.S} until={K.A} texto="esquema" largo={0} />
       <BarraEscala T={T} at={K.A} until={K.P} texto="esquema" largo={0} />
       <BarraEscala T={T} at={K.Ri} until={K.Po} texto="1 cuadrito ≈ 25,000 especies" largo={0} />
