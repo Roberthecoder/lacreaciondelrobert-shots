@@ -5,7 +5,8 @@
 // La oruga y las hifas son esquemáticas. El dibujo es esquemático. Sin promesas medicinales.
 
 const YC = { piel:'#e9b48a', piel2:'#c98d66', oruga:'#f3e6c4', momia:'#c89452', momia2:'#8a5a2a', estroma:'#3a2616', estroma2:'#24170d',
-  pasto:'#3fbf4a', pasto2:'#2f9e44', tierra:'#6b4a2b', tierra2:'#4a321c', nieve:'#f4f8ff', roca:'#9aa3b5', roca2:'#6f788c', oro:'#f4c25a', oro2:'#c98b2b' };
+  // pase cine: pasto, tierra y roca oscurecidos conservando el tinte (antes #3fbf4a #2f9e44 #6b4a2b #4a321c #9aa3b5 #6f788c)
+  pasto:'#1f5a2a', pasto2:'#2f7a3a', tierra:'#4a3220', tierra2:'#2e1e10', nieve:'#f4f8ff', roca:'#7d8699', roca2:'#5a6275', oro:'#f4c25a', oro2:'#c98b2b' };
 
 // Oruga de perfil: cabeza en (x, y); el cuerpo sale en dirección `ang` (grados; 90 = hacia abajo). momia 0..1 = blanca y viva → café y rígida.
 function Oruga({ T = 0, x, y, ang = 90, largo = 240, ancho = 60, seg = 11, ondula = 0, momia = 0, patas = true }) {
@@ -101,7 +102,7 @@ function MapaRegion({ T, at }) {
   return <g>
     {pais.map(([n, d, c, dl, lx, ly], i) => { const k = p(dl); return k > 0 ? <g key={i} opacity={kclamp(k, 0, 1)}>
       <path d={d} fill={c} stroke={KC.ink} strokeWidth={6} strokeLinejoin="round" />
-      <text x={lx} y={ly} textAnchor="middle" style={{ font:`900 ${n === 'Bután' || n === 'Nepal' ? 28 : 34}px ${KF.texto}` }} fill={KC.ink}>{n}</text></g> : null; })}
+      <text x={lx} y={ly} textAnchor="middle" style={{ font:`900 ${n === 'Bután' || n === 'Nepal' ? 28 : 34}px ${KF.texto}` }} fill="#0b1020">{n}</text></g> : null; })}
   </g>;
 }
 
@@ -110,7 +111,7 @@ function Caja({ T, at, until, x, y, texto, it = false, tam = 34 }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube');
   return <div style={{ position:'absolute', left:x, top:y, zIndex:42, opacity:e.o, transform:`translateY(${e.y * 0.4}px)`, background:'rgba(244,239,228,.94)', border:`4px solid ${KC.ink}`,
-    borderRadius:14, padding:'6px 18px', font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color:KC.ink, whiteSpace:'nowrap', boxShadow:`6px 6px 0 ${KC.ink}` }}>{texto}</div>;
+    borderRadius:14, padding:'6px 18px', font:`700 ${tam}px ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color:'#0b1020', whiteSpace:'nowrap', boxShadow:'6px 6px 0 rgba(0,0,0,.6)' }}>{texto}</div>;
 }
 
 function YartsaShot() {
@@ -132,7 +133,8 @@ function YartsaShot() {
       {/* 1–2 · gancho y nombre: la "ramita" en tu mano es una oruga con un hongo saliéndole de la cabeza */}
       <Escena T={T} a={K.G} b={K.Me} zoom={0.08} origen="45% 50%">
         <FondoLunares color={KC.yellow} />
-        {fsvg(<g transform={`translate(${540 - 540 * (1 + 0.12 * pista)} ${940 - 940 * (1 + 0.12 * pista)}) scale(${1 + 0.12 * pista})`}>
+        {/* pase cine: mano y ramita en primer plano (x1.25 → x1.375 con la cámara), centradas en el cuadro */}
+        {fsvg(<g transform={`translate(560 960) scale(${1.25 * (1 + 0.1 * pista)}) translate(-560 -900)`}>
           <Mano x={560} y={1130} s={1.2} />
           <g transform={`rotate(${klerp(-35, 0, giro)} 560 820)`}>
             <Yartsa T={T} x={560} y={820} angCuerpo={35} angTallo={-125} largo={380} ancho={88} tallo={480} />
@@ -155,53 +157,63 @@ function YartsaShot() {
       {/* 4 · bajo el pasto: orugas de polilla fantasma en sus túneles, años bajo tierra */}
       <Escena T={T} a={K.L} b={K.I} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {/* pase cine: suelo y orugas bajados 220 px y agrandados para centrar el cuadro */}
+        {fsvg(<g transform="translate(0 220)">
           <rect x={0} y={640} width={KW} height={KH} fill={YC.tierra} stroke={KC.ink} strokeWidth={8} />
           <rect x={0} y={600} width={KW} height={50} fill={YC.pasto} stroke={KC.ink} strokeWidth={7} />
           {Array.from({ length: 18 }, (_, i) => <path key={i} d={`M ${30 + i * 60} 640 q ${(i % 3 - 1) * 20} 120 ${(i % 2 ? 30 : -20)} ${200 + (i % 4) * 60}`} stroke="#d9b98a" strokeWidth={5} fill="none" strokeLinecap="round" opacity=".8" />)}
+          <g transform="translate(540 900) scale(1.2) translate(-540 -880)">
           {[[260, 820, 200], [660, 960, 160], [380, 1100, 190]].map(([tx, ty, w], i) => <path key={'t' + i} d={`M ${tx - w} ${ty} Q ${tx} ${ty - 50} ${tx + w} ${ty}`} stroke={YC.tierra2} strokeWidth={70} fill="none" strokeLinecap="round" />)}
           <Oruga T={T} x={klerp(380, 420, mece(T, 1, 0.3) * 0.5 + 0.5)} y={790} ang={180} largo={220} ancho={46} ondula={1} />
           <Oruga T={T + 0.5} x={760} y={950} ang={0} largo={200} ancho={42} ondula={1} />
           <Oruga T={T + 1.1} x={500} y={1090} ang={180} largo={210} ancho={44} ondula={1} />
+          </g>
           <Polilla T={T} x={klerp(150, 560, kprog(T, K.L + 0.2, K.I + 0.3))} y={500 + Math.sin(T * 3) * 20} s={0.7} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · por dentro: el hongo la llena y la deja dura (fondo oscuro, esquemático) */}
       <Escena T={T} a={K.I} b={K.Ta} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
         {fsvg(<>
+          <g transform="translate(540 960) scale(1.3) translate(-500 -880)">
           <defs><clipPath id="cuerpoOruga"><ellipse cx={500} cy={880} rx={350} ry={74} /></clipPath></defs>
           <Oruga T={T} x={840} y={880} ang={180} largo={700} ancho={160} seg={12} ondula={1 - momiaI} momia={momiaI} />
           <g clipPath="url(#cuerpoOruga)"><RedHifas T={T} x={560} y={880} g={hifas} seed={53} n={360} escala={1.2} color={FK.hifa} ancho={7} brillo={0.8} /></g>
           {Array.from({ length: 5 }, (_, i) => { const u = kprog(T, K.I + i * 0.12, K.I + 0.6 + i * 0.12); return u < 1 ? <ellipse key={i} cx={300 + i * 110} cy={klerp(520, 800, u)} rx={6} ry={14} fill={KC.gold2} opacity={1 - u * 0.6} /> : null; })}
+          </g>
         </>)}
       </Escena>
       {/* 6 · primavera: deshielo y el tallo sale por la cabeza de la oruga enterrada */}
       <Escena T={T} a={K.Ta} b={K.P} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
-          <rect x={0} y={760} width={KW} height={KH} fill={YC.tierra} stroke={KC.ink} strokeWidth={8} />
-          <rect x={0} y={724} width={KW} height={44} fill={YC.pasto} stroke={KC.ink} strokeWidth={7} />
+        {/* pase cine: escena x1.5 alrededor de la cabeza de la oruga (barra de escala recalculada) */}
+        {fsvg(<g transform="translate(540 1000) scale(1.5) translate(-540 -1000)">
+          <rect x={-200} y={760} width={KW + 400} height={KH} fill={YC.tierra} stroke={KC.ink} strokeWidth={8} />
+          <rect x={-200} y={724} width={KW + 400} height={44} fill={YC.pasto} stroke={KC.ink} strokeWidth={7} />
           <path d={`M 0 ${690 + deshielo * 40} Q 270 ${660 + deshielo * 60} 540 ${690 + deshielo * 40} T ${KW} ${690 + deshielo * 40} L ${KW} 740 L 0 740 Z`} fill={YC.nieve} stroke={KC.ink} strokeWidth={6} opacity={1 - deshielo} />
           {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.9 + i / 6) % 1); return deshielo > 0 && deshielo < 1 ? <ellipse key={i} cx={120 + i * 160} cy={760 + u * 260} rx={7} ry={12} fill="#9ad7ff" opacity={(1 - u) * 0.8} /> : null; })}
           <Oruga T={T} x={540} y={1000} ang={90} largo={230} ancho={58} momia={1} />
           <Estroma x={540} y={1000} ang={-90} largo={420} ancho={26} crece={sale} />
-        </>)}
+        </g>)}
       </Escena>
       {/* 7 · re-gancho: ¿por qué tanta gente lo busca? */}
       <Escena T={T} a={K.P} b={K.Pr} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <path d="M 0 900 Q 500 760 1080 980 L 1080 1920 L 0 1920 Z" fill={YC.pasto} stroke={KC.ink} strokeWidth={8} />
-          {[[90, 960], [230, 920], [370, 900], [150, 1080], [310, 1050], [460, 1010]].map(([x, y], i) => <Recolector key={i} T={T} x={x} y={y} s={0.55} fase={i} color={[KC.coral, KC.blue, KC.orange, KC.pink, KC.teal, KC.violet][i]} />)}
-          <Interrogacion T={T} x={280} y={820} tam={420} />
+          <path d="M 0 980 Q 500 840 1080 1060 L 1080 1920 L 0 1920 Z" fill={YC.pasto} stroke={KC.ink} strokeWidth={8} />
+          {[[150, 1010], [400, 975], [650, 985], [890, 1050], [270, 1190], [620, 1180]].map(([x, y], i) => <Recolector key={i} T={T} x={x} y={y} s={0.95} fase={i} color={[KC.coral, KC.blue, KC.orange, KC.pink, KC.teal, KC.violet][i]} />)}
+          <Interrogacion T={T} x={540} y={760} tam={420} />
         </>)}
       </Escena>
       {/* 8 · el precio: 2017, Pekín, más de 140,000 USD por kilo; más del triple que el oro */}
       <Escena T={T} a={K.Pr} b={K.Re} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(balanza > 0 && (() => {
+        {/* pase cine: el hongo-oruga en pantalla desde el inicio; luego se hace ícono bajo su barra, con el lingote bajo «oro» */}
+        {fsvg((() => { const u = kprog(T, K.Pr + 2.8, K.Pr + 3.6, kEase.suave);
+          return <g transform={`translate(${klerp(540, 270, u)} ${klerp(1160, 1330, u)}) scale(${klerp(1.15, 0.42, u)})`}>
+            <Yartsa T={T} x={0} y={40} angCuerpo={0} angTallo={-150} largo={380} ancho={88} tallo={420} /></g>; })())}
+        {fsvg(balanza > 0 && <g transform="translate(540 900) scale(1.35) translate(-540 -900)">{(() => {
           // Precio por kilo en 2017 (Hopping et al. 2018): el hongo-oruga (los mejores, Pekín) > 3 × el oro. Barras de precio, no de peso.
           const base = 1020, A = 380, hH = A * balanza, hO = (A / 3.4) * balanza;
           return <g opacity={kclamp(balanza, 0, 1)}>
@@ -213,17 +225,18 @@ function YartsaShot() {
             <text x={340} y={base + 44} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>hongo-oruga</text>
             <text x={740} y={base + 44} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>oro</text>
             <text x={540} y={base + 88} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>precio por kilo · 2017</text>
-          </g>; })())}
+            <Lingote x={740} y={base + 230} s={kclamp(balanza, 0, 1.2) * 0.9} />
+          </g>; })()}</g>)}
       </Escena>
       {/* 9 · recolectores: lo desentierran en la montaña */}
       <Escena T={T} a={K.Re} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           <Montanas T={T} y0={1300} />
-          {[[150, 1000, 0], [380, 1040, 1], [600, 1010, 2]].map(([x, y, i]) => <g key={i}>
-            <Recolector T={T} x={x} y={y} s={0.9} fase={i * 1.3} color={[KC.coral, KC.blue, KC.orange][i]} />
-            {kprog(T, K.Re + 0.8 + i * 0.5, K.Re + 1.2 + i * 0.5) > 0 && <g transform={`translate(${x + 110} ${y + 10}) scale(${0.35 * kprog(T, K.Re + 0.8 + i * 0.5, K.Re + 1.2 + i * 0.5, kEase.rebote)})`}><Yartsa x={0} y={0} angCuerpo={90} angTallo={-90} largo={200} ancho={52} tallo={260} /></g>}
-            {Array.from({ length: 3 }, (_, k) => { const t0 = K.Re + 1.4 + i * 0.5 + k * 0.25; const u = kprog(T, t0, t0 + 1.0, kEase.sale); return u > 0 && u < 1 ? <g key={k} opacity={1 - u}><Moneda x={x + 110 + k * 20} y={y - 60 - u * 260} s={0.9} /></g> : null; })}
+          {[[170, 1110, 0], [470, 1150, 1], [770, 1120, 2]].map(([x, y, i]) => <g key={i}>
+            <Recolector T={T} x={x} y={y} s={1.15} fase={i * 1.3} color={[KC.coral, KC.blue, KC.orange][i]} />
+            {kprog(T, K.Re + 0.8 + i * 0.5, K.Re + 1.2 + i * 0.5) > 0 && <g transform={`translate(${x + 135} ${y + 10}) scale(${0.42 * kprog(T, K.Re + 0.8 + i * 0.5, K.Re + 1.2 + i * 0.5, kEase.rebote)})`}><Yartsa x={0} y={0} angCuerpo={90} angTallo={-90} largo={200} ancho={52} tallo={260} /></g>}
+            {Array.from({ length: 3 }, (_, k) => { const t0 = K.Re + 1.4 + i * 0.5 + k * 0.25; const u = kprog(T, t0, t0 + 1.0, kEase.sale); return u > 0 && u < 1 ? <g key={k} opacity={1 - u}><Moneda x={x + 135 + k * 20} y={y - 60 - u * 260} s={0.9} /></g> : null; })}
           </g>)}
         </>)}
       </Escena>
@@ -231,7 +244,7 @@ function YartsaShot() {
       <Escena T={T} a={K.E} b={K.Mn} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <g transform="translate(20 60) scale(0.88)"><MapaRegion T={T} at={K.E + 2.4} />
+          <g transform="translate(540 1060) scale(1.45) translate(-410 -875)"><MapaRegion T={T} at={K.E} />
           {Array.from({ length: 40 }, (_, i) => { const g = krng(i + 7); const px = 150 + g() * 520, py = 640 + g() * 440; const t0 = K.E + 3.0 + i * 0.05;
             return T > t0 ? <circle key={i} cx={px} cy={py} r={9 * kprog(T, t0, t0 + 0.25, kEase.rebote)} fill={KC.violet} stroke="#fff" strokeWidth={3} /> : null; })}</g>
         </>)}
@@ -239,23 +252,24 @@ function YartsaShot() {
       {/* 11 · cada vez menos: sobre todo por recolectar de más; el calentamiento también influye */}
       <Escena T={T} a={K.Mn} b={K.V} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 950) scale(1.25) translate(-478 -950)">
           <line x1={90} y1={1120} x2={640} y2={1120} stroke={KC.ink} strokeWidth={7} /><line x1={90} y1={1120} x2={90} y2={720} stroke={KC.ink} strokeWidth={7} />
-          {barras.map((h, i) => { const u = kprog(T, K.Mn + 0.2 + i * 0.25, K.Mn + 0.6 + i * 0.25, kEase.sale); return <rect key={i} x={120 + i * 100} y={1120 - 360 * h * u} width={70} height={360 * h * u} fill={YC.estroma} stroke={KC.ink} strokeWidth={5} />; })}
+          {barras.map((h, i) => { const u = kprog(T, K.Mn + 0.2 + i * 0.25, K.Mn + 0.6 + i * 0.25, kEase.sale); return <g key={i}><rect x={120 + i * 100} y={1120 - 360 * h * u} width={70} height={360 * h * u} fill={YC.estroma} stroke={KC.ink} strokeWidth={5} />
+            {u > 0.6 && <g opacity={kprog(u, 0.6, 1)} transform={`translate(${155 + i * 100} ${1120 - 360 * h * u - 62}) scale(0.28)`}><Yartsa x={0} y={0} angCuerpo={90} angTallo={-90} largo={200} ancho={52} tallo={260} /></g>}</g>; })}
           <text x={360} y={1170} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>cosecha (esquema)</text>
           {kprog(T, K.Mn + 3.4, K.Mn + 3.8) > 0 && <g opacity={kprog(T, K.Mn + 3.4, K.Mn + 3.8)} transform="translate(820 900)">
             <rect x={-26} y={-200} width={52} height={260} rx={26} fill="#fff" stroke={KC.ink} strokeWidth={7} />
             <rect x={-12} y={-180 + 220 * (1 - kprog(T, K.Mn + 3.6, K.Mn + 5.4))} width={24} height={220 * kprog(T, K.Mn + 3.6, K.Mn + 5.4) + 20} rx={12} fill={KC.red} />
             <circle cx={0} cy={80} r={46} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
           </g>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 12 · vulnerable en la Lista Roja de la UICN */}
       <Escena T={T} a={K.V} b={K.C} zoom={0.08}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <g transform="translate(300 880) scale(0.9)"><Yartsa x={0} y={0} angCuerpo={70} angTallo={-110} largo={260} ancho={60} tallo={360} /></g>
-          <Sello T={T} at={K.V + 0.3} x={480} y={720} texto="VU" color={KC.red} r={150} />
+          <g transform="translate(420 1000) scale(1.5)"><Yartsa x={0} y={0} angCuerpo={70} angTallo={-110} largo={260} ancho={60} tallo={360} /></g>
+          <Sello T={T} at={K.V + 0.3} x={720} y={760} texto="VU" color={KC.red} r={150} />
         </>)}
       </Escena>
       {/* 13 · cierre: la misma ramita en la misma mano, ahora con la montaña y la gente detrás */}
@@ -264,7 +278,7 @@ function YartsaShot() {
         {fsvg(<>
           <g opacity={kprog(T, K.C + 0.3, K.C + 1.2)}><Montanas T={T} y0={1000} pasto={false} />
             {[[120, 760], [860, 790]].map(([x, y], i) => <Recolector key={i} T={T} x={x} y={y} s={0.5} fase={i} color={[KC.coral, KC.blue][i]} espejo={i === 1} />)}</g>
-          <g transform={`translate(${540 - 540 * 1.12} ${940 - 940 * 1.12}) scale(1.12)`}>
+          <g transform="translate(560 960) scale(1.375) translate(-560 -900)">
             <Mano x={560} y={1130} s={1.2} />
             <Yartsa T={T} x={560} y={820} angCuerpo={35} angTallo={-125} largo={380} ancho={88} tallo={480} />
           </g>
@@ -272,45 +286,45 @@ function YartsaShot() {
       </Escena>
 
       {/* textos en pantalla */}
-      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 2.0} until={K.G + 3.4} texto="una ramita" x={330} y={420} tam={52} />
-      <Etq T={T} at={K.G + 2.6} until={K.Me - 0.3} x={420} y={640} lado="izq" texto="hongo (tallo)" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.G + 3.0} until={K.Me - 0.3} x={640} y={1080} lado="izq" texto="oruga momificada" tam={34} color={KC.ink} />
-      <Caja T={T} at={K.N + 0.2} until={K.Me - 0.3} x={50} y={420} texto="Ophiocordyceps sinensis" it tam={36} />
-      <Caja T={T} at={K.N + 0.9} until={K.Me - 0.3} x={50} y={500} texto="yartsa gunbu (Tíbet)" tam={32} />
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 2.0} until={K.G + 3.4} texto="una ramita" x={700} y={360} tam={52} />
+      <Etq T={T} at={K.G + 2.6} until={K.Me - 0.3} x={390} y={580} lado="izq" texto="hongo (tallo)" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.G + 3.0} until={K.Me - 0.3} x={770} y={1000} lado="izq" texto="oruga momificada" tam={34} color="#0b1020" />
+      <Caja T={T} at={K.N + 0.2} until={K.Me - 0.3} x={500} y={330} texto="Ophiocordyceps sinensis" it tam={36} />
+      <Caja T={T} at={K.N + 0.9} until={K.Me - 0.3} x={500} y={410} texto="yartsa gunbu (Tíbet)" tam={32} />
       <Chip T={T} at={K.Me + 0.4} until={K.L - 0.3} texto="Tíbet · Himalaya" x={400} y={470} tam={38} borde={KC.ink} />
       <Etq T={T} at={K.Me + 2.0} until={K.L - 0.3} x={1020} y={1000} lado="izq" texto="pastizal alpino" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.L + 0.6} until={K.I - 0.3} x={60} y={470} texto="polilla fantasma · Thitarodes" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.L + 1.2} until={K.I - 0.3} x={60} y={1010} texto="oruga (larva) bajo tierra" tam={30} />
-      <Chip T={T} at={K.L + 2.0} until={K.I - 0.3} texto="3 años o más" x={330} y={700} tam={40} borde={KC.yellow} />
+      <Etq T={T} at={K.L + 0.6} until={K.I - 0.3} x={60} y={610} texto="polilla fantasma · Thitarodes" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.L + 1.2} until={K.I - 0.3} x={60} y={1225} texto="oruga (larva) bajo tierra" tam={30} />
+      <Chip T={T} at={K.L + 2.0} until={K.I - 0.3} texto="3 años o más" x={790} y={760} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.I + 0.2} until={K.Ta - 0.3} texto="POR DENTRO · esquemático" x={380} y={470} tam={32} borde={KC.gold} mono />
-      <Etq T={T} at={K.I + 1.6} until={K.Ta - 0.3} x={60} y={700} texto="hifas del hongo" tam={32} color={FK.hifa} />
-      <Etq T={T} at={K.I + 2.8} until={K.Ta - 0.3} x={60} y={1060} texto="oruga muerta y rígida" tam={32} color={KC.gold2} />
-      <Chip T={T} at={K.Ta + 0.2} until={K.P - 0.3} texto="primavera · deshielo" x={330} y={470} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.Ta + 2.2} until={K.P - 0.3} x={590} y={640} texto="estroma (el tallo)" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ta + 2.4} until={K.P - 0.3} x={580} y={1000} texto="sale de la cabeza" tam={30} />
+      <Etq T={T} at={K.I + 1.6} until={K.Ta - 0.3} x={60} y={720} texto="hifas del hongo" tam={32} color={FK.hifa} />
+      <Etq T={T} at={K.I + 2.8} until={K.Ta - 0.3} x={60} y={1140} texto="oruga muerta y rígida" tam={32} color={KC.gold2} />
+      <Chip T={T} at={K.Ta + 0.2} until={K.P - 0.3} texto="primavera · deshielo" x={330} y={330} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.Ta + 2.2} until={K.P - 0.3} x={575} y={480} texto="estroma (el tallo)" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ta + 2.4} until={K.P - 0.3} x={600} y={1000} texto="sale de la cabeza" tam={30} />
       <NumeroGigante T={T} at={K.Pr + 0.4} until={K.Pr + 2.9} valor={140000} dur={1.0} sufijo=" USD" etiqueta="más de… por kilo" x={540} y={620} tam={150} color={KC.yellow} />
       <Chip T={T} at={K.Pr + 0.9} until={K.Pr + 2.9} texto="Pekín, 2017 · los mejores" x={540} y={800} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Pr + 3.6} until={K.Re - 0.3} texto="más del triple que el oro" x={360} y={480} tam={34} borde={KC.gold} />
-      <Etq T={T} at={K.Pr + 4.0} until={K.Re - 0.3} x={60} y={590} texto="precio de 2017 (PNAS, 2018)" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Pr + 3.6} until={K.Re - 0.3} texto="más del triple que el oro" x={540} y={340} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.Pr + 4.0} until={K.Re - 0.3} x={60} y={440} texto="precio de 2017 (PNAS, 2018)" tam={26} color={KC.ink} />
       <Chip T={T} at={K.Re + 0.3} until={K.E - 0.3} texto="cientos de miles de recolectores" x={360} y={480} tam={30} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.3} anio="2018" quien="Stanford y Colorado State" revista="Hopping, Chignell y Lambin · PNAS" x={460} y={640} />
-      {T < K.Mn - 0.2 && <Contador T={T} at={K.E + 3.0} desde={0} hasta={800} dur={2.0} sufijo="+ personas" x={360} y={510} tam={56} color={KC.texto} />}
-      <Etq T={T} at={K.E + 3.4} until={K.Mn - 0.3} x={60} y={1110} texto="mapa esquemático" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.Mn + 0.3} until={K.V - 0.3} texto="cada vez menos" x={330} y={480} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.Mn + 1.6} until={K.V - 0.3} x={60} y={560} texto="1º recolectar de más" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Mn + 3.6} until={K.V - 0.3} x={1020} y={1110} lado="izq" texto="calentamiento" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Mn + 2.4} until={K.Mn + 3.5} texto="lo sacan antes de que suelte esporas" x={380} y={650} tam={26} borde={KC.red} />
-      <Chip T={T} at={K.V + 0.6} until={K.C - 0.2} texto="Lista Roja de la UICN" x={380} y={480} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.V + 0.9} until={K.C - 0.2} x={640} y={900} texto="vulnerable" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="oruga + hongo + ingreso" x={360} y={480} tam={36} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.3} anio="2018" quien="Stanford y Colorado State" revista="Hopping, Chignell y Lambin · PNAS" x={540} y={320} />
+      {T < K.Mn - 0.2 && <Contador T={T} at={K.E + 3.0} desde={0} hasta={800} dur={2.0} sufijo="+ personas" x={540} y={440} tam={56} color={KC.texto} />}
+      <Etq T={T} at={K.E + 3.4} until={K.Mn - 0.3} x={60} y={1470} texto="mapa esquemático" tam={26} color={KC.ink} />
+      <Chip T={T} at={K.Mn + 0.3} until={K.V - 0.3} texto="cada vez menos" x={330} y={360} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.Mn + 1.6} until={K.V - 0.3} x={60} y={450} texto="1º recolectar de más" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.Mn + 3.6} until={K.V - 0.3} x={1040} y={1110} lado="izq" texto="calentamiento" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Mn + 2.4} until={K.Mn + 3.5} texto="lo sacan antes de que suelte esporas" x={540} y={1400} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.V + 0.6} until={K.C - 0.2} texto="Lista Roja de la UICN" x={540} y={380} tam={34} borde={KC.red} />
+      <Etq T={T} at={K.V + 0.9} until={K.C - 0.2} x={720} y={960} texto="vulnerable" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="oruga + hongo + ingreso" x={620} y={370} tam={36} borde={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Me} texto="2 cm (tallo) · oruga esquemática" largo={160} />
+      <BarraEscala T={T} at={K.G} until={K.Me} texto="2 cm (tallo) · oruga esquemática" largo={196} />
       <BarraEscala T={T} at={K.Me} until={K.L} texto="esquemático" largo={160} />
       <BarraEscala T={T} at={K.L} until={K.I} texto="esquemático" largo={160} />
       <BarraEscala T={T} at={K.I} until={K.Ta} texto="esquemático" largo={160} />
-      <BarraEscala T={T} at={K.Ta} until={K.P} texto="2 cm (tallo) · oruga esquemática" largo={120} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm (tallo) · oruga esquemática" largo={160} />
+      <BarraEscala T={T} at={K.Ta} until={K.P} texto="2 cm (tallo) · oruga esquemática" largo={180} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm (tallo) · oruga esquemática" largo={196} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="No es una ramita: *es una oruga.*" />
