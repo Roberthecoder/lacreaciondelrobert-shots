@@ -283,9 +283,9 @@ function Herculano() {
   const pz = (x, y, z) => [540 + (x - 540) * z, 864 + (y - 864) * z];
   const extremo = (x, y, s, rot) => { const a = (rot * Math.PI) / 180; return [x - 260 * s * Math.cos(a), y - 260 * s * Math.sin(a)]; };
   const gp = kprog(T, K.G + 0.35, K.G + 1.3, kEase.suave);            // gancho: el rollo llena el cuadro y se acomoda para dejar ver la lupa
-  const gR = { x: klerp(540, 560, gp), y: klerp(1010, 1180, gp), s: klerp(1.8, 1.5, gp), rot: -8 + gira(K.G) };
+  const gR = { x: klerp(540, 560, gp), y: klerp(900, 990, gp), s: klerp(1.8, 1.5, gp), rot: -8 + gira(K.G) };
   const gF = pz(...extremo(gR.x, gR.y, gR.s, gR.rot), cam(K.G, K.V + 0.9, 0.2));
-  const cR = { x: 560, y: 1180, s: 1.5, rot: -8 + gira(K.C) };
+  const cR = { x: 560, y: 990, s: 1.5, rot: -8 + gira(K.C) };
   const cF = pz(...extremo(cR.x, cR.y, cR.s, cR.rot), cam(K.C, FIN, 0.1));
   const caracteres = Math.round(2000 * kprog(T, K.Pr + 0.6, K.Pr + 2.6, kEase.sale));
   return (
@@ -297,9 +297,10 @@ function Herculano() {
           <Rollo x={gR.x} y={gR.y} s={gR.s} rot={gR.rot} seed={7} T={T} />
           <Mano x={gR.x + 70 * gR.s} y={gR.y + 100 * gR.s} s={0.9 * gR.s} rot={-6 + Math.sin(T * 1.3) * 3} largo={900} />
         </>)}
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(to bottom, rgba(8,11,22,0) 60%, rgba(8,11,22,.94) 80%)' }} />{/* el brazo se pierde en la sombra */}
       </Escena>
-      <Lupa T={T} at={K.G + 0.5} until={K.V - 0.3} x={400} y={540} r={240} fx={gF[0]} fy={gF[1]} interior={interiorRollo(0)} tinte={KC.cyan} etiqueta="POR DENTRO · capas" />
-      <Chip T={T} at={K.G + 2.4} until={K.V - 0.2} texto="papiro carbonizado" x={815} y={940} tam={36} borde={KC.ink} />
+      <Lupa T={T} at={K.G + 0.5} until={K.V - 0.3} x={400} y={470} r={240} fx={gF[0]} fy={gF[1]} interior={interiorRollo(0)} tinte={KC.cyan} etiqueta="POR DENTRO · capas" />
+      <Chip T={T} at={K.G + 2.4} until={K.V - 0.2} texto="papiro carbonizado" x={860} y={675} tam={36} borde={KC.ink} />
 
       {/* 2 · el volcán y los cientos de rollos */}
       <Escena T={T} a={K.V} b={K.A}>
@@ -326,8 +327,8 @@ function Herculano() {
       <Escena T={T} a={K.X} b={K.P}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }} />
         {svg(<>
-          <g transform="translate(540 800) scale(1.38) translate(-540 -680)"><Tomografo T={T} x={540} y={680} R={260} /></g>
-          <g opacity={kprog(T, K.X + 2.6, K.X + 3.0)} transform="translate(0 300)">
+          <g transform="translate(540 900) scale(1.3) translate(-540 -680)"><Tomografo T={T} x={540} y={680} R={260} /></g>
+          <g opacity={kprog(T, K.X + 2.6, K.X + 3.0)} transform="translate(0 350)">
             <rect x={150} y={980} width={300} height={130} rx={18} fill="#4a4a4a" stroke={KC.texto} strokeWidth={6} />
             <rect x={630} y={980} width={300} height={130} rx={18} fill="#4a4a4a" stroke={KC.texto} strokeWidth={6} />
             <rect x={500} y={1022} width={80} height={14} rx={7} fill={KC.gold2} /><rect x={500} y={1054} width={80} height={14} rx={7} fill={KC.gold2} />
@@ -338,14 +339,14 @@ function Herculano() {
         </>)}
       </Escena>
       <Chip T={T} at={K.X + 0.3} until={K.P - 0.2} texto="tomografía (rayos X)" x={540} y={300} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.X + 3.4} until={K.P - 0.2} texto="los dos son carbón" x={540} y={1480} tam={38} borde={KC.gold} />
+      <Chip T={T} at={K.X + 3.4} until={K.P - 0.2} texto="los dos son carbón" x={540} y={1505} tam={38} borde={KC.gold} />
 
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.I} zoom={0.1}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <g opacity=".35"><Espiral cx={540} cy={860} R={420} vueltas={8} seed={11} color={KC.ink} ancho={10} /></g>
-          <text x={300} y={1090} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>
+          <g opacity=".35"><Espiral cx={540} cy={960} R={420} vueltas={8} seed={11} color={KC.ink} ancho={10} /></g>
+          <text x={300} y={1230} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 1040)`}>?</text>
         </>)}
       </Escena>
 
@@ -353,24 +354,24 @@ function Herculano() {
       <Escena T={T} a={K.I} b={K.Pa}>
         <FondoCircuito T={T} />
         {svg(<>
-          <g opacity={kprog(T, K.I, K.I + 0.4)}><HojaVirtual T={T} p={scan} x={90} y={500} w={900} h={440} tam={130} /></g>
-          <RedNeuronal T={T} x={170} y={1060} ancho={740} alto={340} capas={[4, 5, 5, 3]} onda={T > K.I + 1 ? ((T - K.I) * 0.8) % 1 : null} o={kprog(T, K.I + 0.2, K.I + 0.7)} />
+          <g opacity={kprog(T, K.I, K.I + 0.4)}><HojaVirtual T={T} p={scan} x={90} y={650} w={900} h={440} tam={130} /></g>
+          <RedNeuronal T={T} x={170} y={1210} ancho={740} alto={320} capas={[4, 5, 5, 3]} onda={T > K.I + 1 ? ((T - K.I) * 0.8) % 1 : null} o={kprog(T, K.I + 0.2, K.I + 0.7)} />
         </>)}
       </Escena>
-      <Chip T={T} at={K.I + 0.4} until={K.Pa - 0.2} texto="el rollo, «desenrollado» en la compu" x={540} y={390} tam={32} borde={KC.cyan} />
+      <Chip T={T} at={K.I + 0.4} until={K.Pa - 0.2} texto="el rollo, «desenrollado» en la compu" x={540} y={530} tam={32} borde={KC.cyan} />
 
       {/* 7 · la primera palabra: púrpura */}
       <Escena T={T} a={K.Pa} b={K.Pr}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <HojaVirtual T={T} p={1} solido={kprog(T, K.Pa + 3.2, K.Pa + 3.8)} x={90} y={500} w={900} h={440} tam={130} />
-          <RedNeuronal T={T} x={170} y={1060} ancho={740} alto={340} capas={[4, 5, 5, 3]} onda={null} o={0.55 * (1 - kprog(T, K.Pa + 2.7, K.Pa + 3.2))} />
-          <circle cx={235} cy={1090} r={52} fill={PURPURA} stroke={KC.ink} strokeWidth={7} opacity={kprog(T, K.Pa + 3.0, K.Pa + 3.4)} />
+          <HojaVirtual T={T} p={1} solido={kprog(T, K.Pa + 3.2, K.Pa + 3.8)} x={90} y={650} w={900} h={440} tam={130} />
+          <RedNeuronal T={T} x={170} y={1210} ancho={740} alto={320} capas={[4, 5, 5, 3]} onda={null} o={0.55 * (1 - kprog(T, K.Pa + 2.7, K.Pa + 3.2))} />
+          <circle cx={235} cy={1240} r={52} fill={PURPURA} stroke={KC.ink} strokeWidth={7} opacity={kprog(T, K.Pa + 3.0, K.Pa + 3.4)} />
         </>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.Pa + 0.2} until={K.Pa + 2.9} anio="2023" quien="Vesuvius Challenge" revista="Luke Farritor · 21 años" y={320} />
-      <Chip T={T} at={K.Pa + 3.6} until={K.Pr - 0.2} texto="porphyras = púrpura" x={590} y={1090} tam={46} borde={PURPURA} />
-      <Chip T={T} at={K.Pa + 4.4} until={K.Pr - 0.2} texto="la IA mostró la tinta · la leyeron papirólogos" x={540} y={1250} tam={30} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Pa + 0.2} until={K.Pa + 2.9} anio="2023" quien="Vesuvius Challenge" revista="Luke Farritor · 21 años" y={420} />
+      <Chip T={T} at={K.Pa + 3.6} until={K.Pr - 0.2} texto="porphyras = púrpura" x={590} y={1240} tam={46} borde={PURPURA} />
+      <Chip T={T} at={K.Pa + 4.4} until={K.Pr - 0.2} texto="la IA mostró la tinta · la leyeron papirólogos" x={540} y={1390} tam={30} borde={KC.ink} />
 
       {/* 8 · el gran premio */}
       <Escena T={T} a={K.Pr} b={K.M}>
@@ -414,11 +415,11 @@ function Herculano() {
       {/* 11 · 2025: el título de otro rollo */}
       <Escena T={T} a={K.Ti} b={K.C}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Rollo x={540} y={1080} s={1.45} rot={6} seed={19} L={560} R={100} T={T} color="#33291f" brillo={kprog(T, K.Ti + 0.6, K.Ti + 1.2)} />)}
+        {svg(<Rollo x={540} y={1200} s={1.5} rot={6} seed={19} L={560} R={100} T={T} color="#33291f" brillo={kprog(T, K.Ti + 0.6, K.Ti + 1.2)} />)}
       </Escena>
-      <PlacaTitulo T={T} at={K.Ti + 0.8} until={K.C - 0.2} x={540} y={540} k={1.3} />
-      <Chip T={T} at={K.Ti + 1.6} until={K.C - 0.2} texto="Filodemo · «Sobre los vicios»" x={540} y={770} tam={42} borde={KC.gold} />
-      <Chip T={T} at={K.Ti + 2.2} until={K.C - 0.2} texto="2025 · PHerc. 172 · Oxford" x={540} y={1410} tam={34} borde={KC.ink} />
+      <PlacaTitulo T={T} at={K.Ti + 0.8} until={K.C - 0.2} x={540} y={680} k={1.3} />
+      <Chip T={T} at={K.Ti + 1.6} until={K.C - 0.2} texto="Filodemo · «Sobre los vicios»" x={540} y={910} tam={42} borde={KC.gold} />
+      <Chip T={T} at={K.Ti + 2.2} until={K.C - 0.2} texto="2025 · PHerc. 172 · Oxford" x={540} y={1460} tam={34} borde={KC.ink} />
 
       {/* 12 · cierre: el mismo carbón, cerrado… con letras por dentro */}
       <Escena T={T} a={K.C} b={FIN}>
@@ -427,8 +428,9 @@ function Herculano() {
           <Rollo x={cR.x} y={cR.y} s={cR.s} rot={cR.rot} seed={7} T={T} brillo={kprog(T, K.C + 0.8, K.C + 1.6)} />
           <Mano x={cR.x + 70 * cR.s} y={cR.y + 100 * cR.s} s={0.9 * cR.s} rot={-6 + Math.sin(T * 1.3) * 3} largo={900} />
         </>)}
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(to bottom, rgba(8,11,22,0) 60%, rgba(8,11,22,.94) 80%)' }} />{/* el brazo se pierde en la sombra */}
       </Escena>
-      <Lupa T={T} at={K.C + 0.2} until={K.Ou + 0.2} x={400} y={540} r={240} fx={cF[0]} fy={cF[1]} interior={interiorRollo(kprog(T, K.C + 0.6, K.C + 2.2))} tinte={KC.gold} etiqueta="POR DENTRO · letras" />
+      <Lupa T={T} at={K.C + 0.2} until={K.Ou + 0.2} x={400} y={470} r={240} fx={cF[0]} fy={cF[1]} interior={interiorRollo(kprog(T, K.C + 0.6, K.C + 2.2))} tinte={KC.gold} etiqueta="POR DENTRO · letras" />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.V - 0.1} texto="Este carbón es *un libro enrollado.*" />
