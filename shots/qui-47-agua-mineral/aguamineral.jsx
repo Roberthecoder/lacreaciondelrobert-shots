@@ -70,15 +70,15 @@ function InteriorLengua({ T, r, t0 = 0, nervio = 0 }) {
   const W = 2 * r;
   const R = krng(4);
   const cels = Array.from({ length: 6 }, (_, i) => [((i % 3) + 0.5) * W / 3, (Math.floor(i / 3) + 0.6) * W / 2.6]);
-  const ciclo = ((T - t0) % 1.1 + 1.1) % 1.1, u = ciclo / 1.1;
+  const ciclo = ((T - t0) % 1.1 + 1.1) % 1.1, u = ciclo / 1.1, ki = Math.max(1, r / 190);   // enzima, CO₂ y H⁺ crecen con la lupa
   return <svg width={W} height={W} viewBox={`0 0 ${W} ${W}`}>
     <rect width={W} height={W} fill={KC.noche} />
     {cels.map(([cx, cy], i) => <rect key={i} x={cx - W / 7} y={cy - W / 9} width={W / 3.5} height={W / 4.5} rx={30} fill="#3a2440" stroke={LENGUA} strokeWidth={4} opacity={0.8} />)}
-    {nervio > 0 && <path d={`M ${W * 0.1} ${W * 0.95} Q ${W * 0.4} ${W * 0.7} ${W * 0.55} ${W * 0.55} M ${W * 0.55} ${W * 0.55} l ${W * 0.12} ${-W * 0.1} M ${W * 0.55} ${W * 0.55} l ${-W * 0.02} ${-W * 0.16}`} stroke={mixHex(NERVIO, HPLUS, 0.5 + 0.5 * Math.sin(T * 10))} strokeWidth={10} fill="none" strokeLinecap="round" opacity={nervio} />}
-    <g transform={`translate(${W * 0.5} ${W * 0.42})`}>
-      <Mol tipo="co2" x={klerp(-W * 0.42, -60, Math.min(1, u * 2))} y={-30} s={0.55} o={u < 0.5 ? 1 : 0} />
+    {nervio > 0 && <path d={`M ${W * 0.1} ${W * 0.95} Q ${W * 0.4} ${W * 0.7} ${W * 0.55} ${W * 0.55} M ${W * 0.55} ${W * 0.55} l ${W * 0.12} ${-W * 0.1} M ${W * 0.55} ${W * 0.55} l ${-W * 0.02} ${-W * 0.16}`} stroke={mixHex(NERVIO, HPLUS, 0.5 + 0.5 * Math.sin(T * 10))} strokeWidth={10 * ki} fill="none" strokeLinecap="round" opacity={nervio} />}
+    <g transform={`translate(${W * 0.5} ${W * 0.42}) scale(${ki})`}>
+      <Mol tipo="co2" x={klerp(-W * 0.42 / ki, -60, Math.min(1, u * 2))} y={-30} s={0.55} o={u < 0.5 ? 1 : 0} />
       <Anhidrasa x={0} y={0} s={0.9} boca={Math.abs(Math.sin(T * 9))} />
-      {Array.from({ length: 4 }, (_, k) => { const uu = ((T - t0 - k * 0.27) % 1.1 + 1.1) % 1.1 / 1.1; return <HMas key={k} x={60 + uu * W * 0.35} y={-40 + k * 26 - uu * 40} s={0.8} o={1 - uu} />; })}
+      {Array.from({ length: 4 }, (_, k) => { const uu = ((T - t0 - k * 0.27) % 1.1 + 1.1) % 1.1 / 1.1; return <HMas key={k} x={60 + uu * W * 0.35 / ki} y={-40 + k * 26 - uu * 40} s={0.8} o={1 - uu} />; })}
     </g>
   </svg>;
 }
@@ -129,10 +129,10 @@ function AguaMineral() {
   // ácido carbónico: CO₂ que viaja hasta un H₂O, se une y suelta un H⁺
   const une = kprog(T, K.Ac + 1.2, K.Ac + 1.9, kEase.sale), suelta = kprog(T, K.Ac + 3.0, K.Ac + 4.0, kEase.sale);
   const R = krng(9);
-  const aguas = Array.from({ length: 9 }, () => [120 + R() * 840, 780 + R() * 420, R() * 360]);
+  const aguas = Array.from({ length: 9 }, () => [120 + R() * 840, 470 + R() * 960, R() * 360]);
   // pH
   const phA = kprog(T, K.Ph + 1.4, K.Ph + 2.6, kEase.sale), phB = kprog(T, K.Ph + 3.6, K.Ph + 4.6, kEase.sale);
-  const yPh = (p) => 1180 - (p / 14) * 640;
+  const yPh = (p) => 1400 - (p / 14) * 900;
   // cámara a presión
   const mitadCa = K.Ca + 2.6;
   const barras = kprog(T, K.Ca + 3.6, K.Ca + 4.8, kEase.sale);
@@ -144,60 +144,60 @@ function AguaMineral() {
       <Escena T={T} a={K.G} b={K.Ac} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Lengua x={560} y={1060} s={1.05} />
-          <Chorro T={T} x0={286} y0={470} x1={300} y1={880} color={AGUA} o={chorro} />
-          <BotellaMineral x={170} y={470} s={0.62} inclina={klerp(40, 115, vierte)} nivel={0.6} />
-          <Vaso T={T} x={300} y={980} s={0.9} nivel={0.75 * llena} burb={llena} />
-          <g opacity={toca}>{Array.from({ length: 8 }, (_, i) => <circle key={i} cx={430 + i * 40 + Math.sin(T * 5 + i) * 6} cy={1060 - ((T * 60 + i * 30) % 80)} r={8} fill="none" stroke="rgba(60,120,170,.9)" strokeWidth={3} />)}</g>
-          <Chispas T={T} x={620} y={1050} r={210} n={8} o={toca} />
-          <BarraEscala x={60} y={1200} texto="1 cm" largo={60} />
+          <Lengua x={540} y={1250} s={1.4} />
+          <Chorro T={T} x0={345} y0={432} x1={290} y1={1010} color={AGUA} o={chorro} ancho={26} />
+          <BotellaMineral x={130} y={330} s={1.0} inclina={klerp(40, 115, vierte)} nivel={0.6} />
+          <Vaso T={T} x={280} y={1120} s={1.25} nivel={0.75 * llena} burb={llena} />
+          <g opacity={toca}>{Array.from({ length: 8 }, (_, i) => <circle key={i} cx={470 + i * 55 + Math.sin(T * 5 + i) * 8} cy={1250 - ((T * 80 + i * 40) % 120)} r={12} fill="none" stroke="rgba(120,190,235,.95)" strokeWidth={4} />)}</g>
+          <Chispas T={T} x={620} y={1250} r={300} n={10} o={toca} />
+          <BarraEscala x={800} y={300} texto="1 cm" largo={80} />
         </SvgCapa>
       </Escena>
       {/* 1 · ácido carbónico (micro, fondo noche) */}
       <Escena T={T} a={K.Ac} b={K.Ph}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <SvgCapa>
-          {aguas.map(([x, y, r], i) => <Mol key={i} tipo="agua" x={x + Math.sin(T + i) * 14} y={y + Math.cos(T * 1.2 + i) * 12} s={0.8} rot={r + T * 15} o={0.75} />)}
-          {une < 1 && <g><Mol tipo="co2" x={klerp(150, 470, kprog(T, K.Ac, K.Ac + 1.2, kEase.suave))} y={klerp(760, 960, kprog(T, K.Ac, K.Ac + 1.2, kEase.suave))} s={1.3} rot={Math.sin(T * 2) * 10} o={1 - une} />
-            <Mol tipo="agua" x={600} y={980} s={1.3} rot={Math.sin(T) * 10} o={1 - une} /></g>}
-          {une > 0 && <AcidoCarbonico x={540} y={970} s={1.5 + 0.2 * (1 - une)} rot={Math.sin(T) * 6} sinH={suelta > 0} o={une} />}
-          {une >= 1 && <circle cx={540} cy={970} r={150 + Math.sin(T * 5) * 10} fill="none" stroke={KC.yellow} strokeWidth={6} opacity={0.5 * (1 - suelta)} />}
-          {suelta > 0 && <HMas x={540 + 104 * 1.5 + suelta * 180} y={990 - suelta * 160} s={1.6} />}
-          <BarraEscala x={60} y={1200} texto="1 nm" largo={100} color={KC.texto} />
+          {aguas.map(([x, y, r], i) => <Mol key={i} tipo="agua" x={x + Math.sin(T + i) * 14} y={y + Math.cos(T * 1.2 + i) * 12} s={0.95} rot={r + T * 15} o={0.45} />)}
+          {une < 1 && <g><Mol tipo="co2" x={klerp(170, 400, kprog(T, K.Ac, K.Ac + 1.2, kEase.suave))} y={klerp(640, 930, kprog(T, K.Ac, K.Ac + 1.2, kEase.suave))} s={2.1} rot={Math.sin(T * 2) * 10} o={1 - une} />
+            <Mol tipo="agua" x={690} y={960} s={2.1} rot={Math.sin(T) * 10} o={1 - une} /></g>}
+          {une > 0 && <AcidoCarbonico x={540} y={950} s={2.6 + 0.3 * (1 - une)} rot={Math.sin(T) * 6} sinH={suelta > 0} o={une} />}
+          {une >= 1 && <circle cx={540} cy={950} r={290 + Math.sin(T * 5) * 12} fill="none" stroke={KC.yellow} strokeWidth={6} opacity={0.5 * (1 - suelta)} />}
+          {suelta > 0 && <HMas x={540 + 104 * 2.6 + suelta * 170} y={985 - suelta * 260} s={2.6} />}
+          <BarraEscala x={60} y={1470} texto="0.1 nm" largo={135} color={KC.texto} />
         </SvgCapa>
       </Escena>
       {/* 2 · pH: aguas minerales con gas ≈ 5; la llave de esa ciudad 7.2 */}
       <Escena T={T} a={K.Ph} b={K.En}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Vaso T={T} x={230} y={1130} s={0.8} nivel={0.75} burb={1} />
-          <Vaso T={T} x={850} y={1130} s={0.8} nivel={0.75} burb={0} seed={6} />
-          <path d="M 960 700 L 960 760 L 900 760" stroke="#9aa3b5" strokeWidth={26} fill="none" strokeLinecap="round" />
-          {Array.from({ length: 15 }, (_, p) => <rect key={p} x={500} y={yPh(p + 1)} width={80} height={640 / 14} fill={`hsl(${p * 20},85%,55%)`} />)}
-          <rect x={500} y={yPh(14)} width={80} height={640} fill="none" stroke={KC.ink} strokeWidth={8} rx={10} />
-          {[0, 7, 14].map((p) => <text key={p} x={604} y={yPh(p) + 12} style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{p}</text>)}
-          <g opacity={phA}><path d={`M 330 ${klerp(yPh(7), yPh(5), phA)} L 492 ${klerp(yPh(7), yPh(5), phA)}`} stroke={KC.ink} strokeWidth={10} markerEnd="" />
-            <path d={`M 480 ${klerp(yPh(7), yPh(5), phA) - 20} L 500 ${klerp(yPh(7), yPh(5), phA)} L 480 ${klerp(yPh(7), yPh(5), phA) + 20}`} fill="none" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
-            <text x={300} y={yPh(5) - 30} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={5} paintOrder="stroke">≈ 5</text></g>
-          <g opacity={phB}><path d={`M 750 ${yPh(7.2)} L 588 ${yPh(7.2)}`} stroke={KC.ink} strokeWidth={10} />
-            <path d={`M 600 ${yPh(7.2) - 20} L 580 ${yPh(7.2)} L 600 ${yPh(7.2) + 20}`} fill="none" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
-            <text x={820} y={yPh(7.2) - 30} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.leaf} stroke={KC.ink} strokeWidth={5} paintOrder="stroke">7.2</text></g>
-          <text x={540} y={yPh(14) - 24} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>pH</text>
+          <Vaso T={T} x={220} y={1400} s={1.15} nivel={0.75} burb={1} />
+          <Vaso T={T} x={860} y={1400} s={1.15} nivel={0.75} burb={0} seed={6} />
+          <path d="M 1000 630 L 1000 720 L 890 720" stroke="#9aa3b5" strokeWidth={34} fill="none" strokeLinecap="round" />
+          {Array.from({ length: 15 }, (_, p) => <rect key={p} x={490} y={yPh(p + 1)} width={100} height={900 / 14} fill={`hsl(${p * 20},85%,55%)`} />)}
+          <rect x={490} y={yPh(14)} width={100} height={900} fill="none" stroke={KC.ink} strokeWidth={8} rx={10} />
+          {[0, 7, 14].map((p) => <text key={p} x={612} y={yPh(p) + 13} style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink}>{p}</text>)}
+          <g opacity={phA}><path d={`M 384 ${klerp(yPh(7), yPh(5), phA)} L 478 ${klerp(yPh(7), yPh(5), phA)}`} stroke={KC.ink} strokeWidth={12} markerEnd="" />
+            <path d={`M 464 ${klerp(yPh(7), yPh(5), phA) - 24} L 488 ${klerp(yPh(7), yPh(5), phA)} L 464 ${klerp(yPh(7), yPh(5), phA) + 24}`} fill="none" stroke={KC.ink} strokeWidth={12} strokeLinejoin="round" />
+            <text x={225} y={920} textAnchor="middle" style={{ font:`400 170px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">≈ 5</text></g>
+          <g opacity={phB}><path d={`M 700 ${yPh(7.2)} L 602 ${yPh(7.2)}`} stroke={KC.ink} strokeWidth={12} />
+            <path d={`M 616 ${yPh(7.2) - 24} L 592 ${yPh(7.2)} L 616 ${yPh(7.2) + 24}`} fill="none" stroke={KC.ink} strokeWidth={12} strokeLinejoin="round" />
+            <text x={835} y={920} textAnchor="middle" style={{ font:`400 170px ${KF.titulo}` }} fill={KC.leaf} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">7.2</text></g>
+          <text x={540} y={yPh(14) - 26} textAnchor="middle" style={{ font:`700 50px ${KF.mono}` }} fill={KC.ink}>pH</text>
         </SvgCapa>
       </Escena>
       {/* 3–4 · dentro de la lengua: enzima y nervio (rayos X) */}
       <Escena T={T} a={K.En} b={K.Ag} zoom={0.03}>
         <FondoLunares color={KC.pink} />
-        <SvgCapa><Lengua x={540} y={1060} s={1.2} />
-          <Chispas T={T} x={540} y={1060} r={300} n={9} o={kprog(T, K.Ne, K.Ne + 0.4)} /></SvgCapa>
-        <Lupa T={T} at={K.En + 0.2} until={K.Ag - 0.3} x={640} y={640} r={280} fx={600} fy={1040} tinte={KC.mint}
+        <SvgCapa><Lengua x={560} y={1225} s={1.45} />
+          <Chispas T={T} x={560} y={1225} r={400} n={10} o={kprog(T, K.Ne, K.Ne + 0.4)} /></SvgCapa>
+        <Lupa T={T} at={K.En + 0.2} until={K.Ag - 0.3} x={540} y={680} r={325} fx={600} fy={1215} tinte={KC.mint}
           interior={(t, r) => <InteriorLengua T={t} r={r} t0={K.En + 0.6} nervio={kprog(t, K.Ne, K.Ne + 0.5)} />} />
       </Escena>
       {/* 5 · 2009: ratones y células del sabor agrio */}
       <Escena T={T} a={K.Ag} b={K.Pr}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <g transform="translate(300 1080)">
+          <g transform="translate(440 1330) scale(1.8)">
             <ellipse cx={0} cy={40} rx={150} ry={36} fill={AGUA} stroke={KC.ink} strokeWidth={7} />
             <Burbujas T={T} x={-110} y={0} w={220} h={50} n={10} color="rgba(60,120,170,.9)" rmax={6} />
             <g transform={`translate(${-60} ${-60}) rotate(${Math.sin(T * 6) * 4})`}>
@@ -208,7 +208,7 @@ function AguaMineral() {
             </g>
           </g>
           {/* botón gustativo */}
-          <g transform="translate(760 900)" opacity={kprog(T, K.Ag + 2.4, K.Ag + 3.0)}>
+          <g transform="translate(760 740) scale(1.5)" opacity={0.3 + 0.7 * kprog(T, K.Ag + 2.4, K.Ag + 3.0)}>
             <path d="M -170 220 Q -200 -40 0 -190 Q 200 -40 170 220 Z" fill="#ffd7df" stroke={KC.ink} strokeWidth={8} />
             {[-110, -55, 0, 55, 110].map((dx, i) => { const agrio = i === 2, brilla = agrio ? 0.5 + 0.5 * Math.sin(T * 8) : 0;
               return <g key={i}><path d={`M ${dx - 20} 200 Q ${dx * 0.6 - 18} 0 ${dx * 0.3 - 6} -150 L ${dx * 0.3 + 6} -150 Q ${dx * 0.6 + 18} 0 ${dx + 20} 200 Z`} fill={agrio ? mixHex('#ffe11a', '#fff6a0', brilla) : '#f6a5b5'} stroke={KC.ink} strokeWidth={4} />
@@ -220,30 +220,32 @@ function AguaMineral() {
       <Escena T={T} a={K.Pr} b={K.Ca} zoom={0.1}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Vaso T={T} x={250} y={1150} s={1} nivel={0.75} burb={1} congela />
-          <text x={250} y={640} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 250 520)`}>?</text>
+          <Vaso T={T} x={330} y={1330} s={1.6} nivel={0.75} burb={1} congela />
+          <text x={770} y={1010} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 770 830)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 7 · 2013: cámara a presión */}
       <Escena T={T} a={K.Ca} b={K.Di}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          {T < mitadCa + 1.0 ? <g opacity={1 - kprog(T, mitadCa + 0.6, mitadCa + 1.0)}>
+          {(() => { const k2 = kprog(T, mitadCa + 0.6, mitadCa + 1.0, kEase.suave);   // la cámara no se apaga: se achica, sube y se atenúa mientras entran las barras
+            return <g opacity={1 - 0.4 * k2} transform={`translate(540 ${klerp(960, 440, k2)}) scale(${klerp(1.18, 0.56, k2)}) translate(-540 -890)`}>
             <rect x={100} y={680} width={880} height={420} rx={210} fill="#b9c3cf" stroke={KC.ink} strokeWidth={10} />
             {[300, 540, 780].map((cx, i) => <circle key={i} cx={cx} cy={890} r={110} fill="#e9f7ff" stroke={KC.ink} strokeWidth={9} />)}
             <Personita x={300} y={910} s={2.2} color={KC.yellow} />
             <Vaso T={T} x={540} y={970} s={0.42} nivel={0.75} burb={0} />
             <Personita x={780} y={910} s={2.2} color={KC.orange} />
-            <g transform="translate(900 560)"><circle r={70} fill="#fff" stroke={KC.ink} strokeWidth={8} />
+            <g transform="translate(850 560)"><circle r={70} fill="#fff" stroke={KC.ink} strokeWidth={8} />
               <line x1={0} y1={0} x2={Math.cos(-Math.PI / 2 + kprog(T, K.Ca + 0.5, K.Ca + 1.8) * 1.6) * 50} y2={Math.sin(-Math.PI / 2 + kprog(T, K.Ca + 0.5, K.Ca + 1.8) * 1.6) * 50} stroke={KC.red} strokeWidth={8} strokeLinecap="round" />
               <text y={110} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>2 atm</text></g>
-          </g> : <g>
-            {[['1 atm', 'con burbujas', 300, 1], ['2 atm', 'sin burbujas', 780, 0]].map(([p, t, x, b], i) => { const h = (i ? 360 : 372) * barras; return <g key={i}>
-              <rect x={x - 110} y={1170 - h} width={220} height={h} fill={i ? KC.lilac : KC.yellow} stroke={KC.ink} strokeWidth={8} />
-              {b ? <Burbujas T={T} x={x - 100} y={1170 - h} w={200} h={h} n={12} color="rgba(30,60,90,.7)" rmax={9} /> : null}
-              <text x={x} y={1225} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>{p}</text>
-              <text x={x} y={760} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>{t}</text></g>; })}
-            <text x={540} y={700} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>PIQUETE</text>
+          </g>; })()}
+          {T >= mitadCa + 0.85 && <g opacity={kprog(T, mitadCa + 0.85, mitadCa + 1.15)}>
+            {[['1 atm', 'con burbujas', 300, 1], ['2 atm', 'sin burbujas', 780, 0]].map(([p, t, x, b], i) => { const h = (i ? 532 : 550) * barras; return <g key={i}>
+              <rect x={x - 150} y={1400 - h} width={300} height={h} fill={i ? '#7a5fc4' : '#c9a81a'} stroke={KC.ink} strokeWidth={8} />
+              {b && h > 30 ? <Burbujas T={T} x={x - 138} y={1400 - h} w={276} h={h} n={16} color="rgba(255,255,255,.75)" rmax={12} /> : null}
+              <text x={x} y={1455} textAnchor="middle" style={{ font:`700 44px ${KF.mono}` }} fill={KC.ink}>{p}</text>
+              <text x={x} y={1502} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>{t}</text></g>; })}
+            <text x={540} y={810} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.ink}>PIQUETE</text>
           </g>}
         </SvgCapa>
       </Escena>
@@ -251,9 +253,9 @@ function AguaMineral() {
       <Escena T={T} a={K.Di} b={K.Sa}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <g opacity={kprog(T, tubos, tubos + 0.4)}>
-            <TuboDiente T={T} x={300} y={1050} liquido="#6b3a1e" ca={kprog(T, tubos + 0.5, tubos + 2.0)} etiqueta="refresco" seed={3} />
-            <TuboDiente T={T} x={780} y={1050} liquido={AGUA} ca={kprog(T, tubos + 0.5, tubos + 2.0) * 0.09} burb={1} etiqueta="agua con gas" seed={5} />
+          <g opacity={0.3 + 0.7 * kprog(T, tubos, tubos + 0.4)} transform="translate(540 1280) scale(1.45) translate(-540 -1050)">
+            <TuboDiente T={T} x={370} y={1050} liquido="#6b3a1e" ca={kprog(T, tubos + 0.5, tubos + 2.0)} etiqueta="refresco" seed={3} />
+            <TuboDiente T={T} x={710} y={1050} liquido={AGUA} ca={kprog(T, tubos + 0.5, tubos + 2.0) * 0.09} burb={1} etiqueta="agua con gas" seed={5} />
           </g>
         </SvgCapa>
       </Escena>
@@ -261,14 +263,14 @@ function AguaMineral() {
       <Escena T={T} a={K.Sa} b={K.Ci}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          {(() => { const inc = Math.sin(T * 2.2) * 3; return <g>
-            <path d="M 540 1200 L 540 800" stroke={KC.ink} strokeWidth={14} /><path d="M 440 1210 L 640 1210" stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
+          {(() => { const inc = Math.sin(T * 2.2) * 3; return <g transform="translate(540 1070) scale(1.25) translate(-540 -1070)">
+            <path d="M 540 1330 L 540 800" stroke={KC.ink} strokeWidth={14} /><path d="M 420 1340 L 660 1340" stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
             <g transform={`rotate(${inc} 540 800)`}>
-              <line x1={200} y1={800} x2={880} y2={800} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
-              <path d="M 200 800 L 200 1000 M 880 800 L 880 1000" stroke={KC.ink} strokeWidth={5} />
-              <BotellaMineral x={200} y={1000 - 150 * 0.7} s={0.7} nivel={0.65} />
-              <g transform="translate(200 840)"><circle r={44} fill="#fff176" stroke={KC.ink} strokeWidth={6} />{[0, 60, 120].map((a) => <line key={a} x1={0} y1={0} x2={Math.cos(a * Math.PI / 180) * 40} y2={Math.sin(a * Math.PI / 180) * 40} stroke="#e0c000" strokeWidth={4} transform={`rotate(0)`} />)}</g>
-              <Vaso T={T} x={880} y={1000} s={0.6} nivel={0.75} burb={0} liquido="#ffa726" />
+              <line x1={290} y1={800} x2={790} y2={800} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
+              <path d="M 290 800 L 290 1200 M 790 800 L 790 1200" stroke={KC.ink} strokeWidth={5} />
+              <BotellaMineral x={290} y={1050} s={1.0} nivel={0.65} />
+              <g transform="translate(290 1090)"><circle r={60} fill="#fff176" stroke="#0b1020" strokeWidth={6} />{[0, 60, 120].map((a) => <line key={a} x1={-Math.cos(a * Math.PI / 180) * 54} y1={-Math.sin(a * Math.PI / 180) * 54} x2={Math.cos(a * Math.PI / 180) * 54} y2={Math.sin(a * Math.PI / 180) * 54} stroke="#e0c000" strokeWidth={5} />)}</g>
+              <Vaso T={T} x={790} y={1200} s={0.9} nivel={0.75} burb={0} liquido="#ffa726" />
             </g></g>; })()}
         </SvgCapa>
       </Escena>
@@ -276,39 +278,39 @@ function AguaMineral() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Lengua x={560} y={1060} s={1.05} />
-          <Vaso T={T} x={300} y={980} s={0.9} nivel={0.75} burb={1} />
-          <Chispas T={T} x={620} y={1050} r={210} n={8} o={1} />
+          <Lengua x={540} y={1250} s={1.4} />
+          <Vaso T={T} x={280} y={1120} s={1.25} nivel={0.75} burb={1} />
+          <Chispas T={T} x={620} y={1250} r={300} n={10} o={1} />
         </SvgCapa>
-        <Lupa T={T} at={K.Ci + 0.4} x={760} y={640} r={200} fx={700} fy={1050} tinte={KC.mint}
+        <Lupa T={T} at={K.Ci + 0.4} x={760} y={720} r={265} fx={700} fy={1250} tinte={KC.mint}
           interior={(t, r) => <InteriorLengua T={t} r={r} t0={K.Ci} nervio={1} />} />
       </Escena>
 
       {/* textos */}
-      <ChipEncoge T={T} at={K.G + 0.4} encogeEn={K.G + 2.0} until={K.G + 4.4} texto="burbujas" sub="un poquito" x={420} y={290} />
-      <Gigante T={T} at={K.G + 2.4} until={K.Ac - 0.3} texto="ÁCIDO" x={600} y={820} tam={190} />
-      <Chip T={T} at={K.Ac + 1.9} until={K.Ac + 3.6} texto="H₂CO₃ · ácido carbónico" y={720} tam={44} borde={KC.yellow} />
-      <Chip T={T} at={K.Ac + 3.8} until={K.Ph - 0.3} texto="ácido débil: suelta H⁺" y={720} tam={44} borde={HPLUS} />
-      <Etq T={T} at={K.Ac + 0.3} until={K.Ac + 1.2} x={150} y={700} texto="CO₂ disuelto" color={KC.texto} />
-      <Etq T={T} at={K.Ph + 1.6} until={K.En - 0.3} x={40} y={790} texto="aguas minerales con gas" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Ph + 3.8} until={K.En - 0.3} x={1050} y={690} texto="agua de la llave" lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Ph + 0.4} until={K.En - 0.3} texto="2016 · Reddy et al. · JADA · Birmingham, Alabama" y={1480} tam={26} borde={KC.ink} mono />
-      <Chip T={T} at={K.En + 0.9} until={K.Ne - 0.2} texto="anhidrasa carbónica: ¡más rápido!" y={1480} tam={36} borde={ENZ} />
-      <Chip T={T} at={K.Ne + 0.3} until={K.Ag - 0.3} texto="H⁺ → nervio del dolor" y={1480} tam={40} borde={NERVIO} />
-      <TarjetaEstudio T={T} at={K.Ag + 0.2} until={K.Ag + 2.3} anio="2009" quien="Chandrashekar, Zuker et al." revista="Science · San Diego · en ratones" y={560} />
-      <Etq T={T} at={K.Ag + 3.0} until={K.Pr - 0.3} x={560} y={720} texto="célula del sabor agrio" lado="izq" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.Ag + 3.4} until={K.Pr - 0.3} x={560} y={800} texto="enzima en su superficie" lado="izq" tam={28} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Ca + 0.2} until={mitadCa - 0.1} anio="2013" quien="Wise et al. · Filadelfia" revista="Monell y Univ. de Pensilvania · PLoS One" y={480} />
-      <Chip T={T} at={K.Ca + 4.6} until={K.Di - 0.3} texto="picó casi igual" y={1480} tam={46} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Di + 0.2} until={tubos - 0.1} anio="2001" quien="Parry et al. · Univ. de Birmingham" revista="J Oral Rehabil · Inglaterra" y={560} />
-      <Chip T={T} at={tubos} until={K.Sa - 0.3} texto="en el laboratorio" x={380} y={520} tam={40} borde={KC.ink} />
-      <NumeroGigante T={T} at={tubos + 2.4} until={K.Sa - 0.3} valor={100} dur={1.0} prefijo="≈ " sufijo="×" etiqueta="menos disolución" y={1530} tam={120} color={KC.yellow} />
-      <Chip T={T} at={tubos + 1.0} until={K.Sa - 0.3} texto="refresco y esmalte: Shot Químico #38" x={540} y={1690} tam={24} borde={KC.gold} mono />
-      <Chip T={T} at={K.Sa + 0.3} until={K.Ci - 0.3} texto="2007 · Brown et al. · Birmingham" y={1620} tam={34} borde={KC.ink} mono />
-      <Etq T={T} at={K.Sa + 1.0} until={K.Ci - 0.3} x={60} y={1110} texto="de sabor · pH 2.7–3.3" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Sa + 1.4} until={K.Ci - 0.3} x={1040} y={1110} texto="jugo de naranja" lado="izq" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Sa + 1.8} until={K.Ci - 0.3} texto="igual de erosivas, o más" y={1480} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="CO₂ + H₂O → ácido carbónico" y={1480} tam={40} borde={ENZ} />
+      <ChipEncoge T={T} at={K.G + 0.4} encogeEn={K.G + 2.0} until={K.G + 4.4} texto="burbujas" sub="un poquito" x={720} y={420} />
+      <Gigante T={T} at={K.G + 2.4} until={K.Ac - 0.3} texto="ÁCIDO" x={770} y={850} tam={215} />
+      <Chip T={T} at={K.Ac + 1.9} until={K.Ac + 3.6} texto="H₂CO₃ · ácido carbónico" y={520} tam={44} borde={KC.yellow} />
+      <Chip T={T} at={K.Ac + 3.8} until={K.Ph - 0.3} texto="ácido débil: suelta H⁺" y={520} tam={44} borde={HPLUS} />
+      <Etq T={T} at={K.Ac + 0.3} until={K.Ac + 1.2} x={60} y={500} texto="CO₂ disuelto" color={KC.texto} />
+      <Etq T={T} at={K.Ph + 1.6} until={K.En - 0.3} x={40} y={720} texto="aguas minerales con gas" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Ph + 3.8} until={K.En - 0.3} x={930} y={600} texto="agua de la llave" lado="izq" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Ph + 0.4} until={K.En - 0.3} texto="2016 · Reddy et al. · JADA · Birmingham, Alabama" y={1510} tam={26} borde={KC.ink} mono />
+      <Chip T={T} at={K.En + 0.9} until={K.Ne - 0.2} texto="anhidrasa carbónica: ¡más rápido!" y={250} tam={36} borde={ENZ} />
+      <Chip T={T} at={K.Ne + 0.3} until={K.Ag - 0.3} texto="H⁺ → nervio del dolor" y={250} tam={40} borde={NERVIO} />
+      <TarjetaEstudio T={T} at={K.Ag + 0.2} until={K.Ag + 2.3} anio="2009" quien="Chandrashekar, Zuker et al." revista="Science · San Diego · en ratones" x={320} y={330} />
+      <Etq T={T} at={K.Ag + 3.0} until={K.Pr - 0.3} x={520} y={690} texto="célula del sabor agrio" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ag + 3.4} until={K.Pr - 0.3} x={500} y={770} texto="enzima en su superficie" lado="izq" tam={26} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Ca + 0.2} until={mitadCa - 0.1} anio="2013" quien="Wise et al. · Filadelfia" revista="Monell y Univ. de Pensilvania · PLoS One" x={400} y={400} />
+      <Chip T={T} at={K.Ca + 4.6} until={K.Di - 0.3} texto="picó casi igual" y={640} tam={46} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.Di + 0.2} until={tubos - 0.1} anio="2001" quien="Parry et al. · Univ. de Birmingham" revista="J Oral Rehabil · Inglaterra" y={400} />
+      <Chip T={T} at={tubos} until={K.Sa - 0.3} texto="en el laboratorio" x={540} y={550} tam={38} borde={KC.ink} />
+      <NumeroGigante T={T} at={tubos + 2.4} until={K.Sa - 0.3} valor={100} dur={1.0} prefijo="≈ " sufijo="×" etiqueta="menos disolución" y={390} tam={130} color={KC.yellow} />
+      <Chip T={T} at={tubos + 1.0} until={K.Sa - 0.3} texto="refresco y esmalte: Shot Químico #38" x={540} y={1570} tam={24} borde={KC.gold} mono />
+      <Chip T={T} at={K.Sa + 0.3} until={K.Ci - 0.3} texto="2007 · Brown et al. · Birmingham" y={560} tam={32} borde={KC.ink} mono />
+      <Etq T={T} at={K.Sa + 1.0} until={K.Ci - 0.3} x={40} y={1345} texto="de sabor · pH 2.7–3.3" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Sa + 1.4} until={K.Ci - 0.3} x={1040} y={1345} texto="jugo de naranja" lado="izq" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Sa + 1.8} until={K.Ci - 0.3} texto="igual de erosivas, o más" y={1500} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="CO₂ + H₂O → ácido carbónico" y={290} tam={40} borde={ENZ} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ac - 0.1} texto="Casi no son burbujas: *es ácido.*" />
