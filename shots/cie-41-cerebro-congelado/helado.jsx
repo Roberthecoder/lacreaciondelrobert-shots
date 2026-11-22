@@ -211,7 +211,7 @@ function Helado41() {
   // resultado: ancho de la arteria y dolor (los dos al mismo tiempo)
   const sube = kprog(T, K.Resultado + 1.4, K.Resultado + 2.8, kEase.suave), baja = kprog(T, K.Resultado + 4.6, K.Resultado + 6.2, kEase.suave);
   const ancho = sube * (1 - baja), dolorR = ancho;
-  const RC = { x: 540, y: 640 };
+  const RC = { x: 540, y: 800 };
   // pase a mano cine: cada escena agranda y centra su dibujo (las etiquetas se reacomodaron a mano)
   const GG = 'translate(540 1000) scale(1.3) translate(-480 -1000)';     // gancho y cierre
   const GP = 'translate(470 950) scale(1.2) translate(-440 -900)';       // paladar
@@ -330,14 +330,14 @@ function Helado41() {
       <Escena T={T} a={K.Resultado} b={K.Pregunta} fondo={KC.noche}>
         <Ambiente T={T} n={20} color="rgba(255,255,255,.14)" />
         <Lienzo>
-          <g transform={`translate(${RC.x} ${RC.y}) scale(1.9)`}>
+          <g transform={`translate(${RC.x} ${RC.y}) scale(2.2)`}>
             <path d="M -120 20 C -140 -60 -80 -112 -20 -100 C 20 -130 92 -112 110 -60 C 150 -30 140 40 100 60 C 60 92 -60 92 -120 20 Z" fill="#f7a8c0" stroke={KC.ink} strokeWidth={8} />
             <path d="M -90 0 C -70 -30 -40 0 -20 -30 C 0 -60 30 -20 50 -50 M -60 50 C -40 20 0 50 20 20 C 40 -5 70 30 100 10" fill="none" stroke="#c9577c" strokeWidth={6} strokeLinecap="round" />
             <path d="M -30 70 C 20 40 80 0 95 -55 C 100 -80 60 -100 20 -100" fill="none" stroke={KC.ink} strokeWidth={10 + 8 * ancho} strokeLinecap="round" />
             <path d="M -30 70 C 20 40 80 0 95 -55 C 100 -80 60 -100 20 -100" fill="none" stroke={HSANGRE} strokeWidth={5 + 8 * ancho} strokeLinecap="round" />
           </g>
           {/* el tubo de cerca */}
-          {(() => { const h = 70 + 90 * ancho, y0 = 1080;
+          {(() => { const h = 70 + 90 * ancho, y0 = 1190;
             return <g opacity={kprog(T, K.Resultado - 0.1, K.Resultado + 0.4)}>
               <rect x={60} y={y0 - h / 2 - 12} width={960} height={h + 24} rx={(h + 24) / 2} fill="#a3364a" stroke={KC.ink} strokeWidth={8} />
               <rect x={60} y={y0 - h / 2} width={960} height={h} rx={h / 2} fill={HSANGRE} />
@@ -345,12 +345,12 @@ function Helado41() {
               {[-1, 1].map((sg) => <g key={sg}><path d={`M 540 ${y0 + sg * (h / 2 + 30)} l 0 ${sg * 50 * ancho + sg * 0.01}`} stroke={KC.texto} strokeWidth={8} markerEnd="" />
                 {ancho > 0.2 && <path d={`M 520 ${y0 + sg * (h / 2 + 30 + 50 * ancho) - sg * 18} L 540 ${y0 + sg * (h / 2 + 30 + 50 * ancho)} L 560 ${y0 + sg * (h / 2 + 30 + 50 * ancho) - sg * 18}`} fill="none" stroke={KC.texto} strokeWidth={8} strokeLinecap="round" />}</g>)}
             </g>; })()}
-          <Rayo x={RC.x + 340} y={RC.y - 60} s={1} o={dolorR} />
-          <Latidos x={RC.x + 340} y={RC.y - 60} T={T} o={dolorR} r1={100} />
+          <Rayo x={RC.x + 370} y={RC.y - 90} s={1} o={dolorR} />
+          <Latidos x={RC.x + 370} y={RC.y - 90} T={T} o={dolorR} r1={100} />
         </Lienzo>
-        <Etq T={T} at={K.Resultado + 0.7} until={K.Pregunta - 0.2} x={525} y={905} texto="una arteria del cerebro" lado="izq" color={KC.texto} tam={28} />
-        <Medidor T={T} at={K.Resultado + 1.0} until={K.Pregunta - 0.1} valor={() => 0.3 + 0.7 * ancho} etiqueta="arteria" texto={() => (ancho > 0.5 ? 'se ensancha' : baja > 0.5 ? 'se cierra' : 'normal')} x={230} y={1335} ancho={620} color={HSANGRE} />
-        <Medidor T={T} at={K.Resultado + 1.0} until={K.Pregunta - 0.1} valor={() => dolorR} etiqueta="dolor" texto={() => (dolorR > 0.5 ? '¡duele!' : baja > 0.5 ? 'se quita' : 'nada')} x={230} y={1450} ancho={620} color={KC.yellow} />
+        <Etq T={T} at={K.Resultado + 0.7} until={K.Lengua - 0.2} x={575} y={1040} texto="una arteria del cerebro" lado="der" color={KC.texto} tam={24} />
+        <Medidor T={T} at={K.Resultado + 1.0} until={K.Lengua - 0.1} valor={() => 0.3 + 0.7 * ancho} etiqueta="arteria" texto={() => (ancho > 0.5 ? 'se ensancha' : baja > 0.5 ? 'se cierra' : 'normal')} x={230} y={1405} ancho={620} color={HSANGRE} />
+        <Medidor T={T} at={K.Resultado + 1.0} until={K.Lengua - 0.1} valor={() => dolorR} etiqueta="dolor" texto={() => (dolorR > 0.5 ? '¡duele!' : baja > 0.5 ? 'se quita' : 'nada')} x={230} y={1505} ancho={620} color={KC.yellow} />
         <Chip T={T} at={K.Resultado + 2.6} until={K.Resultado + 4.5} texto="¡al mismo tiempo!" x={540} y={300} tam={44} borde={KC.yellow} />
       </Escena>
 
