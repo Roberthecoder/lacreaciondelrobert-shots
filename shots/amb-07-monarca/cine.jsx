@@ -14,7 +14,7 @@ const CINE = { fondo: '#0a0f1c', borde: '#070a12', linea: '#dfe7ff', texto: '#f3
 // logo durante el video, y sus trazos tienen un resplandor suave). Cambiar aquí afecta a todos los shots al re-renderizar.
 const CINE_OPC = { subtitulos: false, logo: false, resplandor: true, volumen: true };
 const CINE_ENC = { max: 1.7, ancho: 0.93, alto: 0.72, centroY: 0.47, bajar: 0.17 };
-const CINE_VOL = { suave: 5, relieve: 7, brillo: 0.5, halo: 12, haloFuerza: 0.5 };
+const CINE_VOL = { suave: 8, relieve: 9, brillo: 0.5, halo: 12, haloFuerza: 0.5 };
 
 function cineMix(a, b, t) {
   const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
@@ -144,13 +144,13 @@ if (typeof document !== 'undefined' && CINE_OPC.volumen && !document.getElementB
     + '<feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  .21 .72 .07 .55 0" result="lum"/>'
     + '<feComposite in="lum" in2="SourceAlpha" operator="in" result="lumIn"/>'
     + '<feGaussianBlur in="lumIn" stdDeviation="' + CINE_VOL.suave + '" result="h"/>'
-    + '<feDiffuseLighting in="h" surfaceScale="' + CINE_VOL.relieve + '" diffuseConstant="1.22" lighting-color="#ffffff" result="dif"><feDistantLight azimuth="232" elevation="56"/></feDiffuseLighting>'
+    + '<feDiffuseLighting in="h" surfaceScale="' + CINE_VOL.relieve + '" diffuseConstant="1.45" lighting-color="#ffffff" result="dif"><feDistantLight azimuth="232" elevation="56"/></feDiffuseLighting>'
     + '<feComposite in="dif" in2="SourceAlpha" operator="in" result="difIn"/>'
     + '<feBlend in="SourceGraphic" in2="difIn" mode="multiply" result="sombra"/>'
     + '<feComposite in="sombra" in2="SourceAlpha" operator="in" result="sombraIn"/>'
     + '<feSpecularLighting in="h" surfaceScale="' + CINE_VOL.relieve + '" specularConstant="' + CINE_VOL.brillo + '" specularExponent="18" lighting-color="#dbe8ff" result="spec"><feDistantLight azimuth="232" elevation="48"/></feSpecularLighting>'
     // una superficie plana también refleja un poco (≈14 %): se resta para que el brillo quede solo en los bordes y las piezas oscuras no se agrisen
-    + '<feColorMatrix in="spec" type="matrix" values="1.5 0 0 0 -0.22  0 1.5 0 0 -0.22  0 0 1.5 0 -0.22  0 0 0 1.5 -0.22" result="spec2"/>'
+    + '<feColorMatrix in="spec" type="matrix" values="2.4 0 0 0 -0.6  0 2.4 0 0 -0.6  0 0 2.4 0 -0.6  0 0 0 2.4 -0.6" result="spec2"/>'
     + '<feComposite in="spec2" in2="SourceAlpha" operator="in" result="specIn"/>'
     + '<feComposite in="sombraIn" in2="specIn" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="luz"/>'
     + '<feGaussianBlur in="SourceGraphic" stdDeviation="' + CINE_VOL.halo + '" result="g"/>'

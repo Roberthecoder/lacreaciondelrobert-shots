@@ -10,16 +10,17 @@ const LUZ = '#9dff6a', LUZ2 = '#d8ffb8', NOCHE1 = '#0b1630', NOCHE2 = '#12322c';
 const halo = (b, px = 18) => ({ filter: `drop-shadow(0 0 ${px * b}px ${LUZ}) drop-shadow(0 0 ${px * 0.4 * b}px ${LUZ})` });
 
 // Bosque de noche: degradado, luna, troncos al fondo, suelo con hojarasca.
-function BosqueNoche({ T, palmas = false }) {
+// modo cine (pase a mano): `suelo` baja la línea del piso para que el sujeto pueda ir grande y al centro del cuadro.
+function BosqueNoche({ T, palmas = false, suelo = 1150 }) {
   return <>
     <div style={{ position:'absolute', inset:0, background:`linear-gradient(180deg, ${NOCHE1} 0%, #102446 45%, ${NOCHE2} 100%)` }}></div>
     {fsvg(<>
-      {Array.from({ length: 26 }, (_, i) => { const g = krng(i + 3); return <circle key={i} cx={g() * KW} cy={330 + g() * 300} r={2 + g() * 3} fill="#fff" opacity={0.3 + 0.5 * (0.5 + 0.5 * Math.sin(T * 2 + i))} />; })}
+      {Array.from({ length: 26 }, (_, i) => { const g = krng(i + 3); return <circle key={i} cx={g() * KW} cy={330 + g() * (suelo - 850)} r={2 + g() * 3} fill="#fff" opacity={0.3 + 0.5 * (0.5 + 0.5 * Math.sin(T * 2 + i))} />; })}
       <circle cx={860} cy={420} r={70} fill="#f4efd0" opacity=".9" /><circle cx={885} cy={405} r={66} fill="#102446" opacity=".55" />
-      {!palmas && [[80, 70], [300, 50], [760, 60], [990, 80]].map(([x, w], i) => <rect key={i} x={x - w / 2} y={360} width={w} height={900} fill="#08101f" opacity=".85" />)}
-      {palmas && [[130, 1.0], [960, 1.1], [560, 0.75]].map(([x, s], i) => <Palma key={i} T={T} x={x} y={1180} s={s} seed={i} />)}
-      <rect x={0} y={1150} width={KW} height={800} fill="#131216" />
-      <path d={`M 0 1150 ${Array.from({ length: 19 }, (_, i) => `Q ${i * 60 + 30} ${1130 + (i % 3) * 8} ${i * 60 + 60} 1150`).join(' ')} L 1080 1180 L 0 1180 Z`} fill="#2a1d14" />
+      {!palmas && [[80, 70], [300, 50], [760, 60], [990, 80]].map(([x, w], i) => <rect key={i} x={x - w / 2} y={360} width={w} height={suelo - 250} fill="#08101f" opacity=".85" />)}
+      {palmas && [[130, 1.0], [960, 1.1], [560, 0.75]].map(([x, s], i) => <Palma key={i} T={T} x={x} y={suelo + 30} s={s * (suelo > 1200 ? 1.28 : 1)} seed={i} />)}
+      <rect x={0} y={suelo} width={KW} height={800} fill="#131216" />
+      <path d={`M 0 ${suelo} ${Array.from({ length: 19 }, (_, i) => `Q ${i * 60 + 30} ${suelo - 20 + (i % 3) * 8} ${i * 60 + 60} ${suelo}`).join(' ')} L 1080 ${suelo + 30} L 0 ${suelo + 30} Z`} fill="#2a1d14" />
     </>, 5)}
   </>;
 }
@@ -248,14 +249,15 @@ function BrillanShot() {
   const brilloG = kprog(T, K.G + 0.35, K.G + 1.0);
   const fant = kprog(T, K.G + 0.9, K.G + 1.3) * (1 - kprog(T, K.G + 3.0, K.G + 3.5));
   // estaciones del ciclo (micro)
-  const A = [300, 755], B = [760, 755], Cc = [760, 1010], D = [300, 1010];
+  const A = [300, 720], B = [760, 720], Cc = [760, 1130], D = [300, 1130];   // modo cine: el ciclo ocupa más alto del cuadro (antes 755 y 1010)
   const flash = kprog(T, K.Lc + 1.3, K.Lc + 1.8, kEase.sale) * (1 - kprog(T, K.Lc + 3.4, K.P, kEase.suave) * 0.6);
   // trampas: 14 íconos encendidos (cada uno ≈ 3 insectos) y 4 apagados. Casi todos moscas y escarabajos.
   const BICHOS_ON = ['m', 'e', 'm', 'm', 'e', 'm', 'e', 'm', 'e', 'c', 'm', 'e', 'h', 'm'];
   const BICHOS_OFF = ['m', 'e', 'm', 'c'];
   const bicho = (tipo, x, y, k, i) => { const r = (i * 47) % 60 - 30; return tipo === 'm' ? <Mosca key={i} x={x} y={y} s={k} rot={r} T={T} /> : tipo === 'e' ? <Escarabajo key={i} x={x} y={y} s={k} rot={r} /> : tipo === 'c' ? <Chinche key={i} x={x} y={y} s={k} rot={r} /> : <Hormiga key={i} x={x} y={y} s={k} rot={r} />; };
-  const posOn = (i) => { const tr = i % 2, k = Math.floor(i / 2); return [(tr ? 360 : 170) + ((k * 37) % 90) - 45, 990 + ((k * 53) % 60) - 20]; };
-  const posOff = (i) => [(i % 2 ? 900 : 730) + (i * 23) % 40 - 20, 1000 + (i * 31) % 40];
+  // modo cine: hongos falsos más grandes (s 1.45) y más abajo; los insectos caen sobre sus sombreros en la misma proporción
+  const posOn = (i) => { const tr = i % 2, k = Math.floor(i / 2); return [(tr ? 400 : 160) + (((k * 37) % 90) - 45) * 1.35, 1034 + ((k * 53) % 60) * 1.35]; };
+  const posOff = (i) => [(i % 2 ? 920 : 690) + ((i * 23) % 40 - 20) * 1.35, 1075 + ((i * 31) % 40) * 1.35];
   // reloj circadiano (time-lapse: un ciclo ≈ 1.4 s de pantalla = ≈ 22 h)
   const ciclo = (t) => 0.5 + 0.5 * Math.sin(((t - K.Rj) / 1.4) * Math.PI * 2 - Math.PI / 2);
   const bRel = T >= K.Rj ? ciclo(T) : 0;
@@ -267,12 +269,13 @@ function BrillanShot() {
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: el tronco se parte y brilla */}
       <Escena T={T} a={K.G} b={K.Q} zoom={0.06} origen="50% 55%">
-        <BosqueNoche T={T} />
-        <Ambiente T={T} n={16} color="rgba(157,255,106,.55)" tam={[3, 7]} vel={10} area={{ x: 0, y: 700, w: KW, h: 600 }} o={brilloG} />
+        {/* modo cine (pase a mano): el tronco llena el cuadro de borde a borde y queda al centro (antes s 1.1 en y 940) */}
+        <BosqueNoche T={T} suelo={1300} />
+        <Ambiente T={T} n={16} color="rgba(157,255,106,.55)" tam={[3, 7]} vel={10} area={{ x: 0, y: 760, w: KW, h: 700 }} o={brilloG} />
         {fsvg(<>
-          <Tronco T={T} x={540} y={940} s={1.1} abre={abre} brillo={brilloG} />
-          <Fantasma T={T} x={300} y={640} s={0.9} o={fant} />
-          {fant > 0 && <path d="M 200 530 L 400 740 M 400 530 L 200 740" stroke={KC.red} strokeWidth={22} strokeLinecap="round" opacity={kprog(T, K.G + 2.3, K.G + 2.6) * fant} />}
+          <Tronco T={T} x={540} y={1090} s={1.9} abre={abre} brillo={brilloG} />
+          <Fantasma T={T} x={300} y={690} s={1.3} o={fant} />
+          {fant > 0 && <path d="M 160 540 L 440 830 M 440 540 L 160 830" stroke={KC.red} strokeWidth={26} strokeLinecap="round" opacity={kprog(T, K.G + 2.3, K.G + 2.6) * fant} />}
         </>)}
       </Escena>
       {/* 2 · quiénes brillan */}
@@ -280,23 +283,25 @@ function BrillanShot() {
         <div style={{ position:'absolute', inset:0, background:`linear-gradient(180deg, ${NOCHE1}, #1b1446)` }}></div>
         <FondoLunares color="transparent" punto="rgba(157,255,106,.10)" />
         {fsvg(<>
-          <Vineta x={190} y={760} e={kprog(T, K.Q + 0.2, K.Q + 0.6, kEase.rebote)}>
+          {/* modo cine (pase a mano): las tres viñetas pasan de una fila chica a un zigzag grande (escala 1.4); las tres están desde
+              el inicio, atenuadas, y cada una se enciende cuando la voz la nombra (antes entraban hasta 1.4 s después) */}
+          <g transform="translate(300 590) scale(1.4) translate(-190 -760)" opacity={0.3 + 0.7 * kprog(T, K.Q + 0.2, K.Q + 0.6)}><Vineta x={190} y={760} e={kprog(T, K.Q + 0.02, K.Q + 0.4, kEase.rebote)}>
             <rect x={-200} y={-200} width={400} height={400} fill="#5a3b24" />
             <path d="M -200 -130 L 200 -150 L 200 -200 L -200 -200 Z" fill="#3a2614" />
             <Abanico x={-40} y={130} s={0.9} rot={-15} b={1} /><Abanico x={60} y={150} s={1.0} rot={20} b={1} />
-          </Vineta>
-          <Vineta x={540} y={760} e={kprog(T, K.Q + 0.8, K.Q + 1.2, kEase.rebote)}>
+          </Vineta></g>
+          <g transform="translate(780 880) scale(1.4) translate(-540 -760)" opacity={0.3 + 0.7 * kprog(T, K.Q + 0.8, K.Q + 1.2)}><Vineta x={540} y={760} e={kprog(T, K.Q + 0.1, K.Q + 0.5, kEase.rebote)}>
             <rect x={-200} y={80} width={400} height={200} fill="#2a1d14" />
             <Mycena T={T} x={-60} y={100} s={1.1} seed={1} /><Mycena T={T} x={20} y={95} s={1.4} seed={2} /><Mycena T={T} x={90} y={100} s={0.9} seed={3} />
-          </Vineta>
-          <Vineta x={890} y={760} e={kprog(T, K.Q + 1.4, K.Q + 1.8, kEase.rebote)}>
+          </Vineta></g>
+          <g transform="translate(300 1180) scale(1.4) translate(-890 -760)" opacity={0.3 + 0.7 * kprog(T, K.Q + 1.4, K.Q + 1.8)}><Vineta x={890} y={760} e={kprog(T, K.Q + 0.18, K.Q + 0.58, kEase.rebote)}>
             <rect x={-200} y={-200} width={130} height={400} fill="#5a3b24" />
             <Repisa x={-70} y={-60} s={1.1} rot={-6} /><Repisa x={-70} y={20} s={1.3} rot={4} /><Repisa x={-70} y={100} s={0.9} rot={-2} />
-          </Vineta>
-          {[['Armillaria', 'micelio bajo la corteza', 190, 0.2], ['Mycena', 'setas', 540, 0.8], ['Panellus', 'setas en repisa', 890, 1.4]].map(([n, d, x, t0], i) =>
+          </Vineta></g>
+          {[['Armillaria', 'micelio bajo la corteza', 760, 560, 0.2], ['Mycena', 'setas', 780, 1170, 0.8], ['Panellus', 'setas en repisa', 760, 1300, 1.4]].map(([n, d, x, y, t0], i) =>
             <g key={i} opacity={kprog(T, K.Q + t0 + 0.3, K.Q + t0 + 0.6)}>
-              <text x={x} y={985} textAnchor="middle" style={{ font:`italic 700 40px ${KF.mono}` }} fill={LUZ} stroke={KC.ink} strokeWidth={8} paintOrder="stroke">{n}</text>
-              <text x={x} y={1030} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">{d}</text>
+              <text x={x} y={y} textAnchor="middle" style={{ font:`italic 700 52px ${KF.mono}` }} fill={LUZ}>{n}</text>
+              <text x={x} y={y + 48} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.texto}>{d}</text>
             </g>)}
         </>)}
       </Escena>
@@ -306,7 +311,7 @@ function BrillanShot() {
         {fsvg(<>
           {Array.from({ length: 40 }, (_, i) => { const c = i % 8, f = Math.floor(i / 8); const on = kprog(T, K.R + 0.1 + i * 0.02, K.R + 0.4 + i * 0.02, kEase.rebote);
             const brilla = (i === 13 || i === 30) ? kprog(T, K.R + 1.5, K.R + 2.0) * (0.85 + 0.15 * Math.sin(T * 4 + i)) : 0;
-            return on > 0 ? <HongoMini key={i} x={140 + c * 115} y={760 + f * 100} s={on * 1.05} b={brilla} /> : null; })}
+            return on > 0 ? <HongoMini key={i} x={132 + c * 117} y={850 + f * 135} s={on * 1.35} b={brilla} /> : null; })}   {/* modo cine: cuadrícula más grande y más alta (antes 760 + f·100, s 1.05) */}
         </>)}
       </Escena>
       {/* 4–6 · por dentro: el ciclo del ácido cafeico dentro de una hifa */}
@@ -314,59 +319,67 @@ function BrillanShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <rect x={40} y={580} width={1000} height={590} rx={240} fill="rgba(255,244,214,.06)" stroke="rgba(255,244,214,.35)" strokeWidth={10} />
-          {[[170, 640], [930, 1130], [520, 600], [960, 640]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={14} fill="rgba(255,255,255,.15)" />)}
+          {/* modo cine (pase a mano): la hifa y el ciclo crecen a lo alto (antes y 580–1170) y las moléculas van más grandes */}
+          <rect x={40} y={530} width={1000} height={810} rx={240} fill="rgba(255,244,214,.06)" stroke="rgba(255,244,214,.35)" strokeWidth={10} />
+          {[[170, 610], [930, 1290], [520, 560], [960, 620]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={14} fill="rgba(255,255,255,.15)" />)}
           {/* A: ácido cafeico */}
-          {T > K.Cf + 0.4 && <Mol x={A[0]} y={A[1]} s={kprog(T, K.Cf + 0.4, K.Cf + 0.8, kEase.rebote) * 1.45} tipo="cafeico" color={KC.yellow} />}
+          {T > K.Cf + 0.4 && <Mol x={A[0]} y={A[1]} s={kprog(T, K.Cf + 0.4, K.Cf + 0.8, kEase.rebote) * 1.65} tipo="cafeico" color={KC.yellow} />}
           <Flecha x1={A[0] + 160} y1={A[1] - 50} x2={B[0] - 190} y2={B[1] - 50} c={0} p={kprog(T, K.Cf + 1.8, K.Cf + 2.5)} />
-          {T > K.Cf + 2.4 && <Mol x={B[0]} y={B[1]} s={kprog(T, K.Cf + 2.4, K.Cf + 2.8, kEase.rebote) * 1.2} tipo="hispidina" color={KC.orange} />}
+          {T > K.Cf + 2.4 && <Mol x={B[0]} y={B[1]} s={kprog(T, K.Cf + 2.4, K.Cf + 2.8, kEase.rebote) * 1.38} tipo="hispidina" color={KC.orange} />}
           {/* B → C: +OH */}
-          <Flecha x1={B[0] + 120} y1={B[1] + 70} x2={Cc[0] + 120} y2={Cc[1] - 80} c={80} p={kprog(T, K.Lf + 0.2, K.Lf + 0.9)} />
-          {T > K.Lf + 0.1 && T < K.Lf + 1.1 && <g transform={`translate(${klerp(980, B[0] + 142, kprog(T, K.Lf + 0.1, K.Lf + 0.9))} ${klerp(560, B[1] - 53, kprog(T, K.Lf + 0.1, K.Lf + 0.9))})`}><circle r={22} fill={KC.gold2} stroke={KC.ink} strokeWidth={4} /><text y={7} textAnchor="middle" style={{ font:`700 18px ${KF.mono}` }} fill={KC.ink}>OH</text></g>}
-          {T > K.Lf + 0.9 && T < K.Lc + 1.4 && <Mol x={Cc[0]} y={Cc[1]} s={kprog(T, K.Lf + 0.9, K.Lf + 1.3, kEase.rebote) * 1.2 * (1 - kprog(T, K.Lc + 1.0, K.Lc + 1.4))} tipo="luciferina" color={LUZ} b={0.4 + 0.3 * Math.sin(T * 4)} />}
+          <Flecha x1={B[0] + 130} y1={B[1] + 95} x2={Cc[0] + 130} y2={Cc[1] - 100} c={80} p={kprog(T, K.Lf + 0.2, K.Lf + 0.9)} />
+          {T > K.Lf + 0.1 && T < K.Lf + 1.1 && <g transform={`translate(${klerp(980, B[0] + 163, kprog(T, K.Lf + 0.1, K.Lf + 0.9))} ${klerp(500, B[1] - 61, kprog(T, K.Lf + 0.1, K.Lf + 0.9))}) scale(1.15)`}><circle r={22} fill={KC.gold2} stroke={KC.ink} strokeWidth={4} /><text y={7} textAnchor="middle" style={{ font:`700 18px ${KF.mono}` }} fill={KC.ink}>OH</text></g>}
+          {T > K.Lf + 0.9 && T < K.Lc + 1.4 && <Mol x={Cc[0]} y={Cc[1]} s={kprog(T, K.Lf + 0.9, K.Lf + 1.3, kEase.rebote) * 1.38 * (1 - kprog(T, K.Lc + 1.0, K.Lc + 1.4))} tipo="luciferina" color={LUZ} b={0.4 + 0.3 * Math.sin(T * 4)} />}
           {/* C → D: luciferasa + O2 → luz */}
-          {T > K.Lc + 0.1 && T < K.Lc + 1.6 && <Luciferasa T={T} x={klerp(560, Cc[0] - 190, kprog(T, K.Lc + 0.1, K.Lc + 0.7, kEase.sale))} y={Cc[1]} s={kprog(T, K.Lc + 0.1, K.Lc + 0.4, kEase.rebote) * (1 - kprog(T, K.Lc + 1.3, K.Lc + 1.6))} boca={0.5 + 0.5 * Math.sin(T * 14)} />}
-          {T > K.Lc + 0.4 && T < K.Lc + 1.4 && <O2 x={klerp(540, Cc[0] - 190, kprog(T, K.Lc + 0.4, K.Lc + 1.1))} y={klerp(1170, Cc[1] + 40, kprog(T, K.Lc + 0.4, K.Lc + 1.1))} s={1 - kprog(T, K.Lc + 1.1, K.Lc + 1.4)} />}
-          <Flecha x1={Cc[0] - 200} y1={Cc[1] + 70} x2={D[0] + 170} y2={D[1] + 70} c={0} p={kprog(T, K.Lc + 1.0, K.Lc + 1.4)} color={LUZ} />
-          <Destello x={D[0]} y={D[1]} k={flash * 0.75} T={T} />
-          {T > K.Lc + 2.2 && <Mol x={D[0] + 20} y={D[1] + 2} s={kprog(T, K.Lc + 2.2, K.Lc + 2.6, kEase.rebote) * 1.3} tipo="oxi" color="#ffd6e2" />}
+          {T > K.Lc + 0.1 && T < K.Lc + 1.6 && <Luciferasa T={T} x={klerp(500, Cc[0] - 235, kprog(T, K.Lc + 0.1, K.Lc + 0.7, kEase.sale))} y={Cc[1]} s={1.3 * kprog(T, K.Lc + 0.1, K.Lc + 0.4, kEase.rebote) * (1 - kprog(T, K.Lc + 1.3, K.Lc + 1.6))} boca={0.5 + 0.5 * Math.sin(T * 14)} />}
+          {T > K.Lc + 0.4 && T < K.Lc + 1.4 && <O2 x={klerp(540, Cc[0] - 215, kprog(T, K.Lc + 0.4, K.Lc + 1.1))} y={klerp(1340, Cc[1] + 50, kprog(T, K.Lc + 0.4, K.Lc + 1.1))} s={1.25 * (1 - kprog(T, K.Lc + 1.1, K.Lc + 1.4))} />}
+          <Flecha x1={Cc[0] - 200} y1={Cc[1] + 95} x2={D[0] + 190} y2={D[1] + 95} c={0} p={kprog(T, K.Lc + 1.0, K.Lc + 1.4)} color={LUZ} />
+          <Destello x={D[0]} y={D[1]} k={flash * 0.95} T={T} />
+          {T > K.Lc + 2.2 && <Mol x={D[0] + 20} y={D[1] + 2} s={kprog(T, K.Lc + 2.2, K.Lc + 2.6, kEase.rebote) * 1.5} tipo="oxi" color="#ffd6e2" />}
           {/* D → A: se recicla */}
-          <Flecha x1={D[0] - 170} y1={D[1] - 80} x2={A[0] - 170} y2={A[1] + 80} c={-70} p={kprog(T, K.Lc + 2.6, K.Lc + 3.3)} color={KC.mint} />
+          <Flecha x1={D[0] - 180} y1={D[1] - 95} x2={A[0] - 180} y2={A[1] + 100} c={-60} p={kprog(T, K.Lc + 2.6, K.Lc + 3.3)} color={KC.mint} />
           {/* nombres */}
-          {[['ácido cafeico', A[0], A[1] + 105, K.Cf + 0.6, KC.yellow], ['hispidina', B[0], B[1] - 105, K.Cf + 2.6, KC.orange], ['luciferina', Cc[0], Cc[1] + 110, K.Lf + 1.1, LUZ], ['(3-hidroxihispidina)', Cc[0], Cc[1] - 100, K.Lf + 1.4, KC.texto]].map(([t, x, y, at, col], i) =>
-            T > at && (i !== 2 && i !== 3 || T < K.Lc + 1.3) ? <text key={i} x={x} y={y} textAnchor="middle" opacity={kprog(T, at, at + 0.3)} style={{ font:`700 ${i === 3 ? 28 : 40}px ${KF.mono}` }} fill={col} stroke={KC.ink} strokeWidth={7} paintOrder="stroke">{t}</text> : null)}
-          {[['hispidina sintasa', 530, 675, K.Cf + 2.0], ['H3H', 990, 900, K.Lf + 0.5], ['luciferasa + O₂', 530, 1140, K.Lc + 0.4], ['se recicla', 215, 900, K.Lc + 2.9]].map(([t, x, y, at], i) =>
+          {[['ácido cafeico', A[0], A[1] + 125, K.Cf + 0.6, KC.yellow], ['hispidina', B[0], B[1] - 110, K.Cf + 2.6, KC.orange], ['luciferina', Cc[0], Cc[1] + 130, K.Lf + 1.1, LUZ], ['(3-hidroxihispidina)', Cc[0] - 40, Cc[1] - 112, K.Lf + 1.4, KC.texto]].map(([t, x, y, at, col], i) =>
+            T > at && (i !== 2 && i !== 3 || T < K.Lc + 1.3) ? <text key={i} x={x} y={y} textAnchor="middle" opacity={kprog(T, at, at + 0.3)} style={{ font:`700 ${i === 3 ? 30 : 46}px ${KF.mono}` }} fill={col} stroke={KC.ink} strokeWidth={7} paintOrder="stroke">{t}</text> : null)}
+          {[['hispidina sintasa', 530, 632, K.Cf + 2.0], ['H3H', 985, 925, K.Lf + 0.5], ['luciferasa + O₂', 530, 1290, K.Lc + 0.4], ['se recicla', 225, 925, K.Lc + 2.9]].map(([t, x, y, at], i) =>
             T > at ? <text key={i} x={x} y={y} textAnchor="middle" opacity={kprog(T, at, at + 0.3)} style={{ font:`700 30px ${KF.mono}` }} fill={i === 3 ? KC.mint : KC.cyan} stroke={KC.ink} strokeWidth={6} paintOrder="stroke">{t}</text> : null)}
         </>)}
       </Escena>
       {/* 7 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><Interrogacion T={T} x={290} y={1080} color={LUZ} /><Mycena T={T} x={170} y={1150} s={1.2} b={0.6 + 0.4 * Math.sin(T * 3)} seed={5} /></>)}
+        {/* modo cine: la pregunta al centro (antes a la izquierda, junto al sticker que ya no sale) */}
+        {fsvg(<><Interrogacion T={T} x={560} y={1140} color={LUZ} /><Mycena T={T} x={360} y={1230} s={1.9} b={0.6 + 0.4 * Math.sin(T * 3)} seed={5} /></>)}
       </Escena>
       {/* 8–9 · el experimento: Piauí, Brasil (2013) */}
       <Escena T={T} a={K.E} b={K.H} zoom={0.04}>
-        <BosqueNoche T={T} palmas />
+        {/* modo cine (pase a mano): los hongos falsos están en el bosque desde que empieza la escena (antes entraban a los 2.6 s y
+            solo había tarjeta), más grandes (s 1.45) y más abajo; el foco verde se sigue encendiendo en el mismo momento */}
+        <BosqueNoche T={T} palmas suelo={1300} />
         {fsvg(<>
-          {[170, 360].map((x, i) => <HongoFalso key={'on' + i} T={T} x={x} y={1130} s={kprog(T, K.E + 2.6 + i * 0.25, K.E + 3.0 + i * 0.25, kEase.rebote)} on={kprog(T, K.E + 3.3, K.E + 3.6)} />)}
-          {[730, 900].map((x, i) => <HongoFalso key={'off' + i} T={T} x={x} y={1130} s={kprog(T, K.E + 3.0 + i * 0.25, K.E + 3.4 + i * 0.25, kEase.rebote)} on={0} />)}
+          {[160, 400].map((x, i) => <HongoFalso key={'on' + i} T={T} x={x} y={1290} s={1.45 * kprog(T, K.E + 0.1 + i * 0.12, K.E + 0.5 + i * 0.12, kEase.rebote)} on={kprog(T, K.E + 3.3, K.E + 3.6)} />)}
+          {[690, 920].map((x, i) => <HongoFalso key={'off' + i} T={T} x={x} y={1290} s={1.45 * kprog(T, K.E + 0.3 + i * 0.12, K.E + 0.7 + i * 0.12, kEase.rebote)} on={0} />)}
           {BICHOS_ON.map((t, i) => { const at = K.Tr + 0.1 + i * 0.13; if (T < at) return null; const [x, y] = posOn(i); const u = kprog(T, at, at + 0.5, kEase.sale);
-            return bicho(t, klerp(x + (i % 2 ? 300 : -300), x, u), klerp(y - 500, y - 70, u), 1.4, i); })}
+            return bicho(t, klerp(x + (i % 2 ? 300 : -300), x, u), klerp(y - 500, y - 70, u), 1.9, i); })}
           {BICHOS_OFF.map((t, i) => { const at = K.Tr + 0.4 + i * 0.45; if (T < at) return null; const [x, y] = posOff(i); const u = kprog(T, at, at + 0.5, kEase.sale);
-            return bicho(t, klerp(x + 300, x, u), klerp(y - 500, y - 70, u), 1.4, 100 + i); })}
+            return bicho(t, klerp(x + 300, x, u), klerp(y - 500, y - 70, u), 1.9, 100 + i); })}
         </>)}
       </Escena>
       {/* 10 · hipótesis: los insectos se llevan las esporas */}
       <Escena T={T} a={K.H} b={K.Rj} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1150} width={KW} height={800} fill="#3a2c24" stroke={KC.ink} strokeWidth={8} />
-          <Gardneri T={T} x={330} y={1150} s={1.3} b={1} />
-          {(() => { const u = kprog(T, K.H + 0.9, K.H + 3.4, kEase.suave); const x = klerp(380, 960, u), y = klerp(860, 560, u) - Math.sin(u * Math.PI) * 120;
+          {/* modo cine (pase a mano): la seta va grande y al centro (antes s 1.3 a la izquierda); suelo oscuro sin marco claro;
+              el escarabajo y sus esporas también crecen y la palabra "esporas" viaja con él (antes era una etiqueta suelta arriba) */}
+          <rect x={0} y={1360} width={KW} height={800} fill="#1c1512" />
+          <line x1={0} y1={1360} x2={KW} y2={1360} stroke="#4a382c" strokeWidth={8} />
+          <Gardneri T={T} x={440} y={1360} s={2.1} b={1} />
+          {(() => { const u = kprog(T, K.H + 0.9, K.H + 3.4, kEase.suave); const x = klerp(470, 930, u), y = klerp(790, 640, u) - Math.sin(u * Math.PI) * 150;
             return <g>
-              <path d={`M 380 860 Q 650 ${560 - 200} ${x} ${y}`} stroke={KC.ink} strokeWidth={5} fill="none" strokeDasharray="14 14" opacity={u > 0 ? 0.5 : 0} />
-              <Escarabajo x={x} y={y} s={2.2} rot={60 + u * 20} vuela={u > 0 ? 1 : 0} T={T} color="#2a3a5a" />
-              {Array.from({ length: 7 }, (_, i) => <circle key={i} cx={x + Math.cos(i * 0.9) * 34} cy={y + Math.sin(i * 0.9) * 30 + 6} r={6} fill="#fff3c4" stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.H + 0.5 + i * 0.05, K.H + 0.8 + i * 0.05)} />)}
+              <path d={`M 470 790 Q 660 ${640 - 330} ${x} ${y}`} stroke={KC.ink} strokeWidth={5} fill="none" strokeDasharray="14 14" opacity={u > 0 ? 0.5 : 0} />
+              <Escarabajo x={x} y={y} s={3.4} rot={60 + u * 20} vuela={u > 0 ? 1 : 0} T={T} color="#2a3a5a" />
+              {Array.from({ length: 7 }, (_, i) => <circle key={i} cx={x + Math.cos(i * 0.9) * 54} cy={y + Math.sin(i * 0.9) * 48 + 10} r={10} fill="#fff3c4" stroke="#0b1020" strokeWidth={3} opacity={kprog(T, K.H + 0.5 + i * 0.05, K.H + 0.8 + i * 0.05)} />)}
+              <text x={x - 150} y={y + 40} textAnchor="end" opacity={kprog(T, K.H + 1.4, K.H + 1.7)} style={{ font:`700 34px ${KF.mono}` }} fill="#fff3c4">esporas</text>
             </g>; })()}
         </>)}
       </Escena>
@@ -374,90 +387,94 @@ function BrillanShot() {
       <Escena T={T} a={K.Rj} b={K.J} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <rect x={70} y={660} width={940} height={400} rx={36} fill="#0c1424" stroke={KC.ink} strokeWidth={10} />
+          {/* modo cine (pase a mano): la caja de Petri va grande y arriba (antes r 150 en un panel de 400 px de alto) y la gráfica
+              de brillo debajo, a todo lo ancho */}
           <g style={halo(bRel, 26)}>
-            <Petri x={265} y={860} r={150} medio="#2a3140">
-              <Colonia cx={0} cy={0} r={118} color={mixHex('#3a4456', LUZ, bRel)} seed={4} />
-              <Colonia cx={0} cy={0} r={60} color={mixHex('#4b5568', LUZ2, bRel)} seed={7} />
+            <Petri x={540} y={700} r={225} medio="#2a3140">
+              <Colonia cx={0} cy={0} r={177} color={mixHex('#3a4456', LUZ, bRel)} seed={4} />
+              <Colonia cx={0} cy={0} r={90} color={mixHex('#4b5568', LUZ2, bRel)} seed={7} />
             </Petri>
           </g>
-          <line x1={480} y1={1000} x2={980} y2={1000} stroke="#ffffff" strokeWidth={4} opacity=".6" />
-          <line x1={480} y1={1000} x2={480} y2={700} stroke="#ffffff" strokeWidth={4} opacity=".6" />
-          {(() => { const n = 60, pts = []; for (let i = 0; i <= n * pGraf; i++) { const u = i / n; pts.push([480 + u * 490, 980 - 250 * ciclo(K.Rj + u * 4.2)]); }
+          <rect x={90} y={1040} width={900} height={440} rx={36} fill="#0c1424" stroke={KC.ink} strokeWidth={8} />
+          <line x1={170} y1={1410} x2={950} y2={1410} stroke="#ffffff" strokeWidth={4} opacity=".6" />
+          <line x1={170} y1={1410} x2={170} y2={1095} stroke="#ffffff" strokeWidth={4} opacity=".6" />
+          {(() => { const n = 60, pts = []; for (let i = 0; i <= n * pGraf; i++) { const u = i / n; pts.push([170 + u * 765, 1390 - 265 * ciclo(K.Rj + u * 4.2)]); }
             return pts.length > 1 ? <path d={'M ' + pts.map((q) => q[0].toFixed(1) + ' ' + q[1].toFixed(1)).join(' L ')} stroke={LUZ} strokeWidth={8} fill="none" strokeLinecap="round" style={halo(0.6, 10)} /> : null; })()}
-          {[0, 1, 2].map((d) => <text key={d} x={480 + (d + 0.5) * 163} y={1040} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#cfd6e4" opacity={kprog(T, K.Rj + 0.6 + d * 0.9, K.Rj + 0.9 + d * 0.9)}>{'≈ día ' + (d + 1)}</text>)}
-          <text x={492} y={690} style={{ font:`700 24px ${KF.mono}` }} fill="#cfd6e4">brillo</text>
+          {[0, 1, 2].map((d) => <text key={d} x={170 + (d + 0.5) * 255} y={1455} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill="#cfd6e4" opacity={kprog(T, K.Rj + 0.6 + d * 0.9, K.Rj + 0.9 + d * 0.9)}>{'≈ día ' + (d + 1)}</text>)}
+          <text x={186} y={1086} style={{ font:`700 28px ${KF.mono}` }} fill="#cfd6e4">brillo</text>
         </>)}
       </Escena>
       {/* 12 · hace unos 160 millones de años */}
       <Escena T={T} a={K.J} b={K.M} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <g transform="translate(450 830)">
+          {/* modo cine (pase a mano): la viñeta del Jurásico va al centro y más grande (antes r 260 a la izquierda) */}
+          <g transform="translate(540 850) scale(1.5)">
             <defs><clipPath id="vjur"><circle r={260} /></clipPath></defs>
             <circle r={260} fill="#0d1a33" />
             <g clipPath="url(#vjur)">
               <rect x={-300} y={130} width={600} height={200} fill="#2a1d14" />
-              <Dino T={T} x={-60} y={150} s={kprog(T, K.J + 0.8, K.J + 1.3, kEase.rebote) * 0.85} />
+              <Dino T={T} x={-60} y={150} s={kprog(T, K.J + 0.25, K.J + 0.75, kEase.rebote) * 0.85} />
               <rect x={60} y={110} width={200} height={40} rx={18} fill="#6b4a2e" stroke={KC.ink} strokeWidth={5} />
-              <Mycena T={T} x={120} y={115} s={0.8} seed={8} crece={kprog(T, K.J + 0.4, K.J + 0.9)} /><Mycena T={T} x={170} y={112} s={1.0} seed={9} crece={kprog(T, K.J + 0.5, K.J + 1.0)} /><Mycena T={T} x={215} y={115} s={0.7} seed={10} crece={kprog(T, K.J + 0.6, K.J + 1.1)} />
+              <Mycena T={T} x={120} y={115} s={0.8} seed={8} crece={kprog(T, K.J + 0.05, K.J + 0.55)} /><Mycena T={T} x={170} y={112} s={1.0} seed={9} crece={kprog(T, K.J + 0.12, K.J + 0.62)} /><Mycena T={T} x={215} y={115} s={0.7} seed={10} crece={kprog(T, K.J + 0.2, K.J + 0.7)} />
             </g>
             <circle r={260} fill="none" stroke={KC.ink} strokeWidth={10} />
           </g>
           {(() => { const u = kprog(T, K.J + 0.2, K.J + 2.2, kEase.suave), xm = klerp(980, 110, u);
             return <g opacity={kprog(T, K.J, K.J + 0.3)}>
-              <line x1={100} y1={1150} x2={990} y2={1150} stroke={KC.ink} strokeWidth={12} strokeLinecap="round" />
-              <line x1={xm} y1={1150} x2={990} y2={1150} stroke={LUZ} strokeWidth={8} strokeLinecap="round" />
-              <circle cx={xm} cy={1150} r={20} fill={LUZ} stroke={KC.ink} strokeWidth={5} />
-              <text x={990} y={1115} textAnchor="end" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>hoy</text>
+              <line x1={100} y1={1350} x2={990} y2={1350} stroke={KC.ink} strokeWidth={12} strokeLinecap="round" />
+              <line x1={xm} y1={1350} x2={990} y2={1350} stroke={LUZ} strokeWidth={8} strokeLinecap="round" />
+              <circle cx={xm} cy={1350} r={20} fill={LUZ} stroke={KC.ink} strokeWidth={5} />
+              <text x={990} y={1318} textAnchor="end" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>hoy</text>
             </g>; })()}
         </>)}
       </Escena>
       {/* 13 · México: bosques de niebla */}
       <Escena T={T} a={K.M} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<MapaMexico x={40} y={600} ancho={1000} conCA={false}>
+        {/* modo cine (pase a mano): el mapa ocupa todo el ancho (antes México medía 743 px y estaba cargado a la izquierda) */}
+        {fsvg(<MapaMexico x={0} y={600} ancho={1390} conCA={false}>
           {[[-97.0, 18.6], [-96.6, 17.4], [-93.0, 16.9], [-99.0, 20.9], [-98.0, 19.9], [-92.4, 15.6]].map(([lo, la], i) => { const [px, py] = mxProy(lo, la); const k = kprog(T, K.M + 1.2 + i * 0.35, K.M + 1.5 + i * 0.35, kEase.rebote);
             return <g key={i}><Nube x={px - 10} y={py - 70} s={0.55} o={kprog(T, K.M + 0.4, K.M + 0.9)} />{k > 0 && <Mycena T={T} x={px} y={py + 30} s={0.75 * k} seed={20 + i} />}</g>; })}
         </MapaMexico>)}
       </Escena>
       {/* 14 · cierre: el mismo tronco del inicio, ahora llega un escarabajo */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.06} origen="50% 55%">
-        <BosqueNoche T={T} />
-        <Ambiente T={T} n={16} color="rgba(157,255,106,.55)" tam={[3, 7]} vel={10} area={{ x: 0, y: 700, w: KW, h: 600 }} />
+        {/* modo cine (pase a mano): el mismo encuadre grande del gancho */}
+        <BosqueNoche T={T} suelo={1300} />
+        <Ambiente T={T} n={16} color="rgba(157,255,106,.55)" tam={[3, 7]} vel={10} area={{ x: 0, y: 760, w: KW, h: 700 }} />
         {fsvg(<>
-          <Tronco T={T} x={540} y={940} s={1.1} abre={1} brillo={1} />
-          <Escarabajo x={klerp(1100, 600, vuelo)} y={klerp(560, 930, vuelo) - Math.sin(vuelo * Math.PI) * 60} s={1.8} rot={-120 + vuelo * 60} vuela={vuelo < 0.98 ? 1 : 0} T={T} color="#2a3a5a" />
+          <Tronco T={T} x={540} y={1090} s={1.9} abre={1} brillo={1} />
+          <Escarabajo x={klerp(1100, 640, vuelo)} y={klerp(600, 1075, vuelo) - Math.sin(vuelo * Math.PI) * 80} s={3.0} rot={-120 + vuelo * 60} vuela={vuelo < 0.98 ? 1 : 0} T={T} color="#2a3a5a" />
         </>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.3} until={K.G + 2.9} texto="¿embrujada?" x={300} y={470} tam={42} borde={KC.lilac} />
-      <Chip T={T} at={K.G + 3.0} until={K.Q - 0.2} texto="no: es un hongo" x={330} y={470} tam={42} borde={LUZ} />
-      <Etq T={T} at={K.G + 1.6} until={K.Q - 0.2} x={1040} y={1100} lado="izq" texto="madera podrida" tam={28} />
-      <Chip T={T} at={K.Q + 0.3} until={K.R - 0.2} texto="hongos que brillan" x={540} y={480} tam={40} borde={LUZ} />
-      <NumeroGigante T={T} at={K.R + 0.4} until={K.Cf - 0.2} valor={100} prefijo="≈ " etiqueta="especies que brillan" x={370} y={500} tam={190} color={LUZ} />
-      <Etq T={T} at={K.R + 0.8} until={K.Cf - 0.2} x={60} y={638} texto="esquema · no a escala" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.Cf + 1.0} until={K.Lf - 0.2} texto="una sustancia muy común" x={540} y={470} tam={34} borde={KC.yellow} />
-      <Etq T={T} at={K.Cf + 0.3} until={K.P - 0.3} x={640} y={560} texto="dentro de una hifa" tam={26} color={LUZ2} />
-      <Chip T={T} at={K.Lf + 1.7} until={K.Lc - 0.2} texto="luciferina = el combustible" x={660} y={470} tam={34} borde={LUZ} />
-      <Chip T={T} at={K.Lc + 1.7} until={K.P - 0.2} texto="luz verde · ≈ 520–530 nm" x={540} y={470} tam={36} borde={LUZ} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2013" quien={<>Piauí, Brasil · <i>Neonothopanus gardneri</i></>} revista="Oliveira et al., Current Biology, 2015" y={600} />
-      <Etq T={T} at={K.E + 3.0} until={K.Tr - 0.1} x={60} y={830} texto="acrílico + foco verde" tam={28} color={LUZ2} />
+      <Chip T={T} at={K.G + 1.3} until={K.G + 2.9} texto="¿embrujada?" x={300} y={440} tam={42} borde={KC.lilac} />
+      <Chip T={T} at={K.G + 3.0} until={K.Q - 0.2} texto="no: es un hongo" x={540} y={760} tam={46} borde={LUZ} />
+      <Etq T={T} at={K.G + 1.6} until={K.Q - 0.2} x={1040} y={1350} lado="izq" texto="madera podrida" tam={30} />
+      <Chip T={T} at={K.Q + 0.3} until={K.R - 0.2} texto="hongos que brillan" x={300} y={300} tam={40} borde={LUZ} />
+      <NumeroGigante T={T} at={K.R + 0.4} until={K.Cf - 0.2} valor={100} prefijo="≈ " etiqueta="especies que brillan" x={540} y={520} tam={210} color={LUZ} />
+      <Etq T={T} at={K.R + 0.8} until={K.Cf - 0.2} x={60} y={1480} texto="esquema · no a escala" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.Cf + 1.0} until={K.Lf - 0.2} texto="una sustancia muy común" x={400} y={400} tam={34} borde={KC.yellow} />
+      <Etq T={T} at={K.Cf + 0.3} until={K.P - 0.3} x={640} y={490} texto="dentro de una hifa" tam={26} color={LUZ2} />
+      <Chip T={T} at={K.Lf + 1.7} until={K.Lc - 0.2} texto="luciferina = el combustible" x={400} y={400} tam={34} borde={LUZ} />
+      <Chip T={T} at={K.Lc + 1.7} until={K.P - 0.2} texto="luz verde · ≈ 520–530 nm" x={400} y={400} tam={36} borde={LUZ} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.6} anio="2013" quien={<>Piauí, Brasil · <i>Neonothopanus gardneri</i></>} revista="Oliveira et al., Current Biology, 2015" x={430} y={520} />
+      <Etq T={T} at={K.E + 3.0} until={K.Tr - 0.1} x={60} y={1010} texto="acrílico + foco verde" tam={30} color={LUZ2} />
       <Chip T={T} at={K.E + 3.5} until={K.H - 0.2} texto="5 noches · 19 trampas de cada tipo" x={400} y={470} tam={28} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Tr + 0.2} until={K.H - 0.2} valor={42} dur={2.0} etiqueta="encendidos" x={265} y={800} tam={170} color={LUZ} />
-      <NumeroGigante T={T} at={K.Tr + 0.4} until={K.H - 0.2} valor={12} dur={1.8} etiqueta="apagados" x={815} y={800} tam={170} color="#c9ced8" />
-      <Chip T={T} at={K.H + 0.3} until={K.Rj - 0.2} texto="HIPÓTESIS" x={540} y={470} tam={52} borde={KC.yellow} />
-      <Etq T={T} at={K.H + 1.4} until={K.Rj - 0.2} x={60} y={600} texto="esporas" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.H + 0.5} until={K.Rj - 0.2} x={365} y={1060} texto="Neonothopanus gardneri" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.Rj + 0.4} until={K.J - 0.2} texto="≈ 22 h por ciclo · a 25 °C" x={390} y={470} tam={34} borde={LUZ} />
-      <Etq T={T} at={K.Rj + 0.8} until={K.J - 0.2} x={60} y={1110} texto="micelio en caja de Petri (laboratorio)" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Rj + 1.2} until={K.J - 0.2} x={60} y={620} texto="Neonothopanus gardneri" it tam={30} color={KC.ink} />
-      <Chip T={T} at={K.J + 1.4} until={K.M - 0.2} texto="estimación · Jurásico tardío" x={390} y={470} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.J + 2.0} until={K.M - 0.2} x={110} y={1095} texto="hace ≈ 160 millones de años" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.M + 0.6} until={K.C - 0.2} texto="6 especies nuevas de Mycena" x={390} y={470} tam={32} borde={LUZ} />
-      <Etq T={T} at={K.M + 1.0} until={K.C - 0.2} x={1020} y={1120} lado="izq" texto="bosques de niebla · ubicación esquemática · Mycologia, 2019" tam={24} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="no está embrujada: está viva" x={400} y={470} tam={36} borde={LUZ} />
+      <NumeroGigante T={T} at={K.Tr + 0.2} until={K.H - 0.2} valor={42} dur={2.0} etiqueta="encendidos" x={280} y={770} tam={180} color={LUZ} />
+      <NumeroGigante T={T} at={K.Tr + 0.4} until={K.H - 0.2} valor={12} dur={1.8} etiqueta="apagados" x={805} y={770} tam={180} color="#c9ced8" />
+      <Chip T={T} at={K.H + 0.3} until={K.Rj - 0.2} texto="HIPÓTESIS" x={400} y={380} tam={52} borde={KC.yellow} />
+      <Etq T={T} at={K.H + 0.5} until={K.Rj - 0.2} x={500} y={1240} texto="Neonothopanus gardneri" it tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Rj + 0.4} until={K.J - 0.2} texto="≈ 22 h por ciclo · a 25 °C" x={400} y={390} tam={36} borde={LUZ} />
+      <Etq T={T} at={K.Rj + 0.8} until={K.J - 0.2} x={60} y={1005} texto="micelio en caja de Petri (laboratorio)" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Rj + 1.2} until={K.J - 0.2} x={60} y={962} texto="Neonothopanus gardneri" it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.J + 1.4} until={K.M - 0.2} texto="estimación · Jurásico tardío" x={400} y={390} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.J + 2.0} until={K.M - 0.2} x={110} y={1415} texto="hace ≈ 160 millones de años" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.M + 0.6} until={K.C - 0.2} texto="6 especies nuevas de Mycena" x={540} y={470} tam={36} borde={LUZ} />
+      <Etq T={T} at={K.M + 1.0} until={K.C - 0.2} x={1020} y={1380} lado="izq" texto="bosques de niebla · ubicación esquemática · Mycologia, 2019" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="no está embrujada: está viva" x={420} y={640} tam={40} borde={LUZ} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Q} texto="10 cm" largo={160} />

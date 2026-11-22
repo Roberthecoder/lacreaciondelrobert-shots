@@ -5,23 +5,30 @@
 const OXIDO = '#b5532a', OXIDO2 = '#7e3418', CIELO_MARTE = '#d9a066', AZUL_HALO = '#7fb8ff';
 
 // Paisaje. tipo 'marte' | 'tierra'. sol = 0 (alto) … 1 (en el horizonte). halo 0..1 (azul alrededor del Sol, en Marte).
+// modo cine (pase a mano): el horizonte baja de y 1100 a y 1330 (el Sol y su halo quedan al centro del cuadro y el suelo ya no
+// ocupa casi media pantalla), el suelo va en oscuro conservando su tinte (óxido / verde) y los cielos un poco más profundos;
+// el Sol y el halo crecen, y todo se recorta a su franja (en el cierre el halo ya no invade la mitad de la Tierra).
 function Paisaje({ tipo = 'marte', sol = 0, halo = 0, x = 0, w = KW, rSol = 70 }) {
-  const marte = tipo === 'marte';
-  const cieloArriba = marte ? mixHex('#c98a55', '#3a2a3a', sol * 0.8) : mixHex('#4fa8ff', '#2a2f6a', sol * 0.8);
-  const cieloAbajo = marte ? mixHex(CIELO_MARTE, '#8a5a4a', sol * 0.6) : mixHex('#bfe6ff', '#ff7a3a', sol);
-  const sx = x + w * 0.55, sy = klerp(560, 1060, sol);
+  const marte = tipo === 'marte', H = 1330, hk = w < KW ? 0.62 : 1;
+  const SUELO = marte ? '#51240f' : '#17381f', LOMA = marte ? '#351506' : '#0f2915';
+  const cieloArriba = marte ? mixHex('#93603a', '#2c2030', sol * 0.8) : mixHex('#2f7fd0', '#1f2452', sol * 0.8);
+  const cieloAbajo = marte ? mixHex('#b07c4c', '#7a4c3e', sol * 0.6) : mixHex('#86bfe8', '#e0652c', sol);
+  const sx = x + w * 0.55, sy = klerp(600, 1230, sol);
   const id = 'g' + tipo + Math.round(x);
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     <defs>
       <linearGradient id={id} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={cieloArriba} /><stop offset="1" stopColor={cieloAbajo} /></linearGradient>
       <radialGradient id={id + 'h'}><stop offset="0" stopColor={AZUL_HALO} stopOpacity={0.95 * halo} /><stop offset="0.5" stopColor={AZUL_HALO} stopOpacity={0.5 * halo} /><stop offset="1" stopColor={AZUL_HALO} stopOpacity="0" /></radialGradient>
     </defs>
-    <rect x={x} y={0} width={w} height={1180} fill={`url(#${id})`} />
-    {halo > 0 && <ellipse cx={sx} cy={sy} rx={330} ry={260} fill={`url(#${id}h)`} />}
+    <defs><clipPath id={id + 'c'}><rect x={x} y={0} width={w} height={KH} /></clipPath></defs>
+    <g clipPath={`url(#${id}c)`}>
+    <rect x={x} y={0} width={w} height={H} fill={`url(#${id})`} />
+    {halo > 0 && <ellipse cx={sx} cy={sy} rx={470 * hk} ry={370 * hk} fill={`url(#${id}h)`} />}
     <circle cx={sx} cy={sy} r={rSol} fill={marte ? '#f4f7ff' : '#fff3b0'} opacity={0.95} />
-    <path d={`M ${x} 1100 Q ${x + w * 0.25} 1040 ${x + w * 0.5} 1090 T ${x + w} 1070 L ${x + w} 1180 L ${x} 1180 Z`} fill={marte ? OXIDO2 : '#2f6b3a'} />
-    <rect x={x} y={1180} width={w} height={800} fill={marte ? OXIDO : '#3f8f4a'} />
-    {marte && [[120, 1300, 40], [420, 1420, 26], [760, 1340, 34], [930, 1500, 22]].map(([a, b, r], i) => <ellipse key={i} cx={x + a * w / KW} cy={b} rx={r * 1.6} ry={r} fill={OXIDO2} />)}
+    <path d={`M ${x} ${H - 80} Q ${x + w * 0.25} ${H - 140} ${x + w * 0.5} ${H - 90} T ${x + w} ${H - 110} L ${x + w} ${H} L ${x} ${H} Z`} fill={LOMA} />
+    <rect x={x} y={H} width={w} height={800} fill={SUELO} />
+    {marte && [[120, 1300, 40], [420, 1420, 26], [760, 1340, 34], [930, 1500, 22]].map(([a, b, r], i) => <ellipse key={i} cx={x + a * w / KW} cy={b + H - 1180} rx={r * 1.6} ry={r} fill={LOMA} />)}
+    </g>
   </svg>;
 }
 // Rayos de colores que salen del Sol y se desvían (dispersión). modo 'dia' o 'tarde'.
@@ -39,20 +46,20 @@ function Rayos({ T, modo = 'dia' }) {
     <circle cx={sol[0]} cy={sol[1]} r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={7} />
     {[0, 1, 2, 3].map((k) => ray(KC.blue, k))}
     {[0, 1].map((k) => ray(KC.red, k + 5))}{[0, 1].map((k) => ray(KC.yellow, k + 8))}
-    <g transform={`translate(${ojo[0]} ${ojo[1]})`}><ellipse rx={70} ry={42} fill="#fff" stroke={KC.ink} strokeWidth={7} /><circle r={26} fill="#5a3a22" /><circle r={12} fill={KC.ink} /></g>
+    <g transform={`translate(${ojo[0]} ${ojo[1]})`}><ellipse rx={70} ry={42} fill="#fff" stroke={KC.ink} strokeWidth={7} /><circle r={26} fill="#5a3a22" /><circle r={12} fill="#0b1020" /></g>
   </svg>;
 }
 // Polvo marciano: partículas finas flotando; la luz azul sigue de frente, la roja se dispersa a lo ancho.
 function PolvoMarte({ T, frente = 0 }) {
   const g = krng(21);
-  const ps = Array.from({ length: 60 }, () => [g() * KW, 450 + g() * 700, 3 + g() * 5, g() * 9]);
+  const ps = Array.from({ length: 60 }, () => [g() * KW, 400 + g() * 880, 3 + g() * 5, g() * 9]);
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
     {ps.map(([x, y, r, f], i) => <circle key={i} cx={x + Math.sin(T * 0.6 + f) * 12} cy={y + Math.cos(T * 0.5 + f) * 8} r={r} fill="#e8b27a" opacity=".8" />)}
-    {frente > 0 && <>
+    {frente > 0 && <g transform="translate(0 170)">
       {[0, 1, 2].map((k) => { const u = (T * 0.5 + k / 3) % 1; return <line key={k} x1={120} y1={700 + k * 30} x2={klerp(120, 960, u)} y2={700 + k * 30 + u * 40} stroke={AZUL_HALO} strokeWidth={12} strokeLinecap="round" opacity={frente} />; })}
       {[0, 1, 2, 3].map((k) => { const u = (T * 0.5 + k / 4) % 1, a = -1.2 + k * 0.8; return <line key={'r' + k} x1={540} y1={760} x2={540 + Math.cos(a) * 380 * u} y2={760 + Math.sin(a) * 380 * u} stroke={KC.red} strokeWidth={10} strokeLinecap="round" opacity={frente * 0.8} />; })}
       <circle cx={120} cy={730} r={60} fill="#f4f7ff" stroke={KC.ink} strokeWidth={6} />
-    </>}
+    </g>}
   </svg>;
 }
 function Rover({ x, y, s = 1 }) {
@@ -61,7 +68,7 @@ function Rover({ x, y, s = 1 }) {
     {[-160, -20, 120].map((dx, i) => <g key={i}><line x1={dx + 20} y1={20} x2={dx + 20} y2={60} stroke={KC.ink} strokeWidth={8} /><circle cx={dx + 20} cy={80} r={42} fill="#555" stroke={KC.ink} strokeWidth={8} /></g>)}
     <rect x={110} y={-300} width={20} height={210} fill="#ccc" stroke={KC.ink} strokeWidth={6} />
     <rect x={70} y={-360} width={110} height={70} rx={12} fill="#e9e4da" stroke={KC.ink} strokeWidth={7} />
-    <circle cx={100} cy={-325} r={18} fill={KC.ink} /><circle cx={150} cy={-325} r={18} fill={KC.ink} />
+    <circle cx={100} cy={-325} r={18} fill="#0b1020" /><circle cx={150} cy={-325} r={18} fill="#0b1020" />
     <rect x={-170} y={-150} width={120} height={60} rx={8} fill="#c9c4b8" stroke={KC.ink} strokeWidth={6} />
   </g>;
 }
@@ -76,74 +83,80 @@ function Marte() {
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: atardecer en Marte, el halo azul crece desde el cuadro 0 */}
       <Escena T={T} a={K.G} b={K.Ti}>
-        <Paisaje tipo="marte" sol={solG} halo={kprog(T, K.G + 0.1, K.G + 2.5)} rSol={46} />
+        <Paisaje tipo="marte" sol={solG} halo={kprog(T, K.G + 0.1, K.G + 2.5)} rSol={78} />
       </Escena>
       {/* 2 · en la Tierra: de día azul, al atardecer rojo */}
       <Escena T={T} a={K.Ti} b={K.D}>
-        <Paisaje tipo="tierra" sol={kprog(T, K.Ti + 0.8, K.Ti + 3.6, kEase.suave)} rSol={70} />
+        <Paisaje tipo="tierra" sol={kprog(T, K.Ti + 0.8, K.Ti + 3.6, kEase.suave)} rSol={105} />
       </Escena>
       {/* 3–4 · por qué: el azul se desvía; al atardecer la luz cruza más aire */}
       <Escena T={T} a={K.D} b={K.Q} fondo={KC.noche}>
+        {/* modo cine (pase a mano): el esquema de los rayos baja 130 px, al centro del cuadro */}
+        <div style={{ position:'absolute', inset:0, transform:'translateY(130px)' }}>
         <Rayos T={T} modo={T < K.Ro ? 'dia' : 'tarde'} />
         {T >= K.Ro && svg(<path d="M 0 1080 Q 540 980 1080 1080" stroke="rgba(255,255,255,.35)" strokeWidth={6} fill="none" strokeDasharray="16 12" />)}
+        </div>
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.Q} b={K.P} zoom={0.1}>
         <FondoLunares color={KC.orange} />
-        {svg(<><circle cx={300} cy={860} r={210} fill={OXIDO} stroke={KC.ink} strokeWidth={12} /><circle cx={240} cy={800} r={40} fill={OXIDO2} /><circle cx={360} cy={930} r={28} fill={OXIDO2} /></>)}
+        {/* modo cine: Marte al centro y más grande (antes r 210 a la izquierda) */}
+        {svg(<g transform="translate(540 960) scale(1.5) translate(-300 -860)"><circle cx={300} cy={860} r={210} fill={OXIDO} stroke={KC.ink} strokeWidth={12} /><circle cx={240} cy={800} r={40} fill={OXIDO2} /><circle cx={360} cy={930} r={28} fill={OXIDO2} /></g>)}
       </Escena>
       {/* 6–7 · el polvo de Marte */}
       <Escena T={T} a={K.P} b={K.H}>
-        <Paisaje tipo="marte" sol={0.2} rSol={40} />
+        <Paisaje tipo="marte" sol={0.2} rSol={56} />
         <PolvoMarte T={T} frente={kprog(T, K.Pa + 0.4, K.Pa + 1.2)} />
       </Escena>
       {/* 8 · el halo azul */}
       <Escena T={T} a={K.H} b={K.E}>
-        <Paisaje tipo="marte" sol={0.85} halo={kprog(T, K.H + 0.3, K.H + 1.8)} rSol={46} />
+        <Paisaje tipo="marte" sol={0.85} halo={kprog(T, K.H + 0.3, K.H + 1.8)} rSol={78} />
       </Escena>
       {/* 9 · Curiosity, sol 956 */}
       <Escena T={T} a={K.E} b={K.Ca}>
-        <Paisaje tipo="marte" sol={0.8} halo={1} rSol={46} />
-        {svg(<Rover x={320} y={1620} s={0.8} />)}
+        <Paisaje tipo="marte" sol={0.8} halo={1} rSol={78} />
+        {svg(<Rover x={275} y={1540} s={1.25} />)}   {/* modo cine: el rover más grande y más arriba (antes s 0.8 en y 1620) */}
       </Escena>
       {/* 10 · la cámara y el ojo */}
       <Escena T={T} a={K.Ca} b={K.S}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>
-          <g transform="translate(320 900)"><rect x={-150} y={-90} width={300} height={180} rx={24} fill="#e9e4da" stroke={KC.ink} strokeWidth={9} /><circle cx={-60} cy={0} r={50} fill={KC.ink} /><circle cx={70} cy={0} r={50} fill={KC.ink} /><circle cx={-70} cy={-12} r={12} fill="#fff" /><circle cx={60} cy={-12} r={12} fill="#fff" /></g>
+        {/* modo cine (pase a mano): cámara y ojo 1.22 veces más grandes y al centro; lentes y pupila en negro (habían quedado claros) */}
+        {svg(<g transform="translate(540 960) scale(1.22) translate(-550 -900)">
+          <g transform="translate(320 900)"><rect x={-150} y={-90} width={300} height={180} rx={24} fill="#e9e4da" stroke={KC.ink} strokeWidth={9} /><circle cx={-60} cy={0} r={50} fill="#0b1020" /><circle cx={70} cy={0} r={50} fill="#0b1020" /><circle cx={-70} cy={-12} r={12} fill="#fff" /><circle cx={60} cy={-12} r={12} fill="#fff" /></g>
           <text x={540} y={920} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.ink}>≈</text>
-          <g transform="translate(780 900)"><ellipse rx={150} ry={90} fill="#fff" stroke={KC.ink} strokeWidth={9} /><circle r={60} fill="#5a3a22" /><circle r={28} fill={KC.ink} /><circle cx={-18} cy={-18} r={10} fill="#fff" /></g>
-        </>)}
+          <g transform="translate(780 900)"><ellipse rx={150} ry={90} fill="#fff" stroke={KC.ink} strokeWidth={9} /><circle r={60} fill="#5a3a22" /><circle r={28} fill="#0b1020" /><circle cx={-18} cy={-18} r={10} fill="#fff" /></g>
+        </g>)}
       </Escena>
       {/* 11 · el Sol desde Marte: 2/3 */}
       <Escena T={T} a={K.S} b={K.C} fondo="#070b1e">
         {svg(<>
-          <circle cx={310} cy={860} r={180} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
-          <circle cx={790} cy={860} r={180 * 2 / 3 * kprog(T, K.S + 0.6, K.S + 1.4, kEase.rebote) || 0.01} fill="#f4f7ff" stroke={KC.ink} strokeWidth={8} />
-          <text x={310} y={1120} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto}>desde la Tierra</text>
-          <text x={790} y={1120} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.texto}>desde Marte</text>
+          {/* modo cine (pase a mano): los dos discos más grandes, misma proporción 2/3 (antes r 180 y 120) */}
+          <circle cx={290} cy={940} r={240} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
+          <circle cx={810} cy={940} r={240 * 2 / 3 * kprog(T, K.S + 0.6, K.S + 1.4, kEase.rebote) || 0.01} fill="#f4f7ff" stroke={KC.ink} strokeWidth={8} />
+          <text x={290} y={1270} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.texto}>desde la Tierra</text>
+          <text x={810} y={1270} textAnchor="middle" style={{ font:`900 46px ${KF.texto}` }} fill={KC.texto}>desde Marte</text>
         </>)}
       </Escena>
       {/* 12 · cierre: tu atardecer rojo y el de Marte, azul junto al Sol (regresa la imagen del inicio) */}
       <Escena T={T} a={K.C} b={FIN}>
-        <Paisaje tipo="tierra" sol={0.85} x={0} w={540} rSol={50} />
-        <Paisaje tipo="marte" sol={0.85} halo={kprog(T, K.C + 0.8, K.C + 2.4)} x={540} w={540} rSol={34} />
+        <Paisaje tipo="tierra" sol={0.85} x={0} w={540} rSol={75} />
+        <Paisaje tipo="marte" sol={0.85} halo={kprog(T, K.C + 0.8, K.C + 2.4)} x={540} w={540} rSol={50} />
         {svg(<line x1={540} y1={0} x2={540} y2={KH} stroke={KC.ink} strokeWidth={8} />)}
       </Escena>
 
       {/* datos */}
-      <Chip T={T} at={K.G + 0.4} until={K.Ti - 0.2} texto="atardecer en Marte" x={330} y={440} tam={42} borde={AZUL_HALO} />
-      <Chip T={T} at={K.Ti + 0.3} until={K.D - 0.2} texto="Tierra: cielo azul, atardecer rojo" x={540} y={1500} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.D + 0.6} until={K.Ro - 0.2} texto="el aire desvía más el azul" x={540} y={440} tam={40} borde={KC.blue} />
-      <Chip T={T} at={K.Ro + 0.6} until={K.Q - 0.2} texto="más aire: llegan rojo y amarillo" x={540} y={440} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.P + 0.6} until={K.Pa - 0.2} texto="polvo finísimo → cielo rojizo" x={540} y={1500} tam={38} borde={OXIDO} />
-      <Chip T={T} at={K.Pa + 0.6} until={K.H - 0.2} texto="el azul sigue de frente, cerca del Sol" x={540} y={1500} tam={34} borde={AZUL_HALO} />
-      <Etq T={T} at={K.H + 1.6} until={K.E - 0.2} x={700} y={1180} texto="halo azul" lado="der" color={AZUL_HALO} tam={40} />
+      <Chip T={T} at={K.G + 0.4} until={K.Ti - 0.2} texto="atardecer en Marte" x={540} y={470} tam={46} borde={AZUL_HALO} />
+      <Chip T={T} at={K.Ti + 0.3} until={K.D - 0.2} texto="Tierra: cielo azul, atardecer rojo" x={540} y={1470} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.D + 0.6} until={K.Ro - 0.2} texto="el aire desvía más el azul" x={600} y={420} tam={40} borde={KC.blue} />
+      <Chip T={T} at={K.Ro + 0.6} until={K.Q - 0.2} texto="más aire: llegan rojo y amarillo" x={540} y={520} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.P + 0.6} until={K.Pa - 0.2} texto="polvo finísimo → cielo rojizo" x={540} y={1470} tam={38} borde={OXIDO} />
+      <Chip T={T} at={K.Pa + 0.6} until={K.H - 0.2} texto="el azul sigue de frente, cerca del Sol" x={540} y={1470} tam={36} borde={AZUL_HALO} />
+      <Etq T={T} at={K.H + 1.6} until={K.E - 0.2} x={690} y={880} texto="halo azul" lado="der" color={AZUL_HALO} tam={40} />
       <Etq T={T} at={K.H + 2.4} until={K.E - 0.2} x={80} y={430} texto="cielo rojizo" lado="der" tam={38} />
-      <TarjetaEstudio T={T} at={K.E + 0.3} until={K.Ca - 0.3} anio="2015" quien="15 abr · cráter Gale · Curiosity" revista="NASA/JPL · PIA19400 · sol 956" x={600} y={560} />
-      <Chip T={T} at={K.Ca + 1.4} until={K.S - 0.2} texto="un poco menos sensible al azul" x={540} y={1500} tam={38} borde={KC.blue} />
-      <NumeroGigante T={T} at={K.S + 1.6} until={K.C - 0.2} valor={2} sufijo="/3" etiqueta="del tamaño" x={790} y={500} tam={110} color={KC.yellow} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="junto al Sol" x={380} y={440} tam={40} borde={KC.gold} />
+      <TarjetaEstudio T={T} at={K.E + 0.3} until={K.Ca - 0.3} anio="2015" quien="15 abr · cráter Gale · Curiosity" revista="NASA/JPL · PIA19400 · sol 956" x={540} y={470} />
+      <Chip T={T} at={K.Ca + 1.4} until={K.S - 0.2} texto="un poco menos sensible al azul" x={540} y={1240} tam={40} borde={KC.blue} />
+      <NumeroGigante T={T} at={K.S + 1.6} until={K.C - 0.2} valor={2} sufijo="/3" etiqueta="del tamaño" x={810} y={580} tam={150} color={KC.yellow} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou - 0.1} texto="junto al Sol" x={830} y={850} tam={40} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ti - 0.1} texto="Un atardecer *azul:* el de Marte." />
