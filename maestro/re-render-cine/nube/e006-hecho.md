@@ -1,2 +1,3 @@
 - qui-32-cerillo: marcaba Brillo ARRIBA; bajé la boca con encías que brillan (y 930→1080, escala 1.9→2.0) y subí su chip a y=1330 (esquema, sin barra de escala). Auditores: sin láminas · encuadre bien.
 - ia-32-abogado-avianca: marcaba Paso2 y Respuesta ARRIBA; bajé y agrandé el celular con el chat, la hoja falsa, el expediente, la palomita/tache, el chip y la nota (~100–150 px más abajo, escalas 0.84→0.9 y 1.08→1.2), sin barras de escala que recalcular. Auditores: sin láminas · encuadre bien.
+- fun-89-neumonia-verano: marcaba Pregunta ARRIBA; bajé el sol (y 860→1000, escala 1.5→1.6), el signo (1300→1360) y el título (470→600); detrás se sigue viendo grande y a media luz el hospital y la casa de la escena anterior. Auditores: sin láminas · encuadre bien.

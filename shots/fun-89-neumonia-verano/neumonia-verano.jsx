@@ -350,10 +350,10 @@ function NeumoniaVeranoShot() {
       <Escena T={T} a={K.P} b={K.Ca} zoom={0.1}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <g transform="translate(400 860) scale(1.5)"><circle r={100} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(400 1000) scale(1.6)"><circle r={100} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
             {Array.from({ length: 10 }, (_, k) => { const a = k * Math.PI / 5 + T * 0.8; return <line key={k} x1={Math.cos(a) * 124} y1={Math.sin(a) * 124} x2={Math.cos(a) * 168} y2={Math.sin(a) * 168} stroke={KC.ink} strokeWidth={12} strokeLinecap="round" />; })}</g>
-          <Interrogacion T={T} x={800} y={1300} tam={460} />
-          <g transform={`translate(540 ${470 + Math.sin(T * 10) * 3})`} opacity={kprog(T, K.P, K.P + 0.25)}>
+          <Interrogacion T={T} x={800} y={1360} tam={460} />
+          <g transform={`translate(540 ${600 + Math.sin(T * 10) * 3})`} opacity={kprog(T, K.P, K.P + 0.25)}>
             <text textAnchor="middle" style={{ font:`400 112px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={10} paintOrder="stroke">¿POR QUÉ EN VERANO?</text>
           </g>
         </>)}
