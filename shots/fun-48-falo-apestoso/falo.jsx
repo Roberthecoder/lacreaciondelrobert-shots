@@ -5,7 +5,7 @@
 // sin gleba: sombrero con red de huecos (reticulado) y un anillo blanco en la punta.
 
 const FL = { gleba:'#4f4a1f', gleba2:'#6d6a2c', brillo:'#9a9550', tallo:'#f7f2e4', poro:'#ddd2b8', crema:'#efe5c6', huevo:'#f3eee0', huevo2:'#d9d0bb',
-  tierra:'#6b4a2b', tierra2:'#4a3019', hoja:'#c0702a', hoja2:'#9a5a22', mosca:'#2fae6a', mosca2:'#1f7d8c', ojo:'#c0392b', olor:'#9fdc4a' };
+  tierra:'#3a2817', tierra2:'#2e1d0f', hoja:'#c0702a', hoja2:'#9a5a22', mosca:'#2fae6a', mosca2:'#1f7d8c', ojo:'#c0392b', olor:'#9fdc4a' };
 
 // Piso de bosque: hojarasca y tierra desde y hacia abajo. corte = muestra la tierra en corte (madera enterrada).
 function PisoBosque({ y = 1110, seed = 4, corte = false }) {
@@ -13,7 +13,7 @@ function PisoBosque({ y = 1110, seed = 4, corte = false }) {
   const hojas = Array.from({ length: 14 }, () => [g() * KW, y + 4 + g() * 24, g() * 180 - 90, 0.7 + g() * 0.6, g() > 0.5]);
   return <g>
     <rect x={-40} y={y} width={KW + 80} height={KH - y + 40} fill={corte ? FL.tierra2 : FL.tierra} stroke={KC.ink} strokeWidth={8} />
-    {corte && Array.from({ length: 40 }, (_, i) => <circle key={i} cx={(i * 197) % KW} cy={y + 60 + ((i * 131) % (KH - y - 80))} r={4 + (i % 4) * 2} fill="#6e4a2c" opacity=".7" />)}
+    {corte && Array.from({ length: 40 }, (_, i) => <circle key={i} cx={(i * 197) % KW} cy={y + 60 + ((i * 131) % (KH - y - 80))} r={4 + (i % 4) * 2} fill="#4a3220" opacity=".7" />)}
     {hojas.map(([x, yy, r, k, o], i) => <path key={i} d="M -46 0 Q 0 -26 46 0 Q 0 22 -46 0 Z" transform={`translate(${x} ${yy}) rotate(${r}) scale(${k})`} fill={o ? FL.hoja : FL.hoja2} stroke={KC.ink} strokeWidth={4} />)}
   </g>;
 }
@@ -196,6 +196,9 @@ function FaloShot() {
     E: CUES.Estudio, Si: CUES.Siembra, He: CUES.Hembras, L: CUES.Limpio, Mx: CUES.Mexico, C: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   const crece = kprog(T, K.B + 1.0, K.B + 4.6, kEase.suave);
+  // Brota: la cámara empieza pegada al huevo (del mismo tamaño que en la escena anterior) y se aleja mientras crece el tallo.
+  const uBr = kprog(T, K.B + 0.9, K.B + 3.2, kEase.suave), kBr = klerp(3.4 / 1.45, 1, uBr);
+  const camBr = `translate(${klerp(420, 500, uBr)} ${klerp(973, 1188, uBr)}) scale(${kBr}) translate(-500 -1188)`;
   const sacar = (t0) => kprog(T, t0, t0 + 0.4);
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -203,12 +206,12 @@ function FaloShot() {
       <Escena T={T} a={K.G} b={K.Hu} zoom={0.06} origen="30% 60%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <PisoBosque y={1110} />
-          <Olor T={T} x={300} y={560} n={4} alto={380} />
-          <Falo T={T} id="g" x={300} y={1120} s={1.35} h={340} goteo={1} />
-          <MoscaOrbita T={T} cx={300} cy={560} rx={170} ry={70} vel={2.2} s={1} seed={1} />
-          {T > K.G + 0.2 && <MoscaOrbita T={T} cx={klerp(-200, 330, kprog(T, K.G + 0.2, K.G + 1.4, kEase.sale))} cy={720} rx={110} ry={50} vel={-2.6} fase={1} s={0.8} seed={2} />}
-          {T > K.G + 1.4 && <g opacity={kprog(T, K.G + 1.4, K.G + 1.7) * (1 - kprog(T, K.G + 3.4, K.G + 3.7))} transform="translate(300 380)">
+          <PisoBosque y={1420} />
+          <Olor T={T} x={540} y={600} n={4} alto={380} />
+          <Falo T={T} id="g" x={540} y={1430} s={2.1} h={340} goteo={1} />
+          <MoscaOrbita T={T} cx={540} cy={640} rx={250} ry={90} vel={2.2} s={1.3} seed={1} />
+          {T > K.G + 0.2 && <MoscaOrbita T={T} cx={klerp(-200, 560, kprog(T, K.G + 0.2, K.G + 1.4, kEase.sale))} cy={900} rx={190} ry={60} vel={-2.6} fase={1} s={1.1} seed={2} />}
+          {T > K.G + 1.4 && <g opacity={kprog(T, K.G + 1.4, K.G + 1.7) * (1 - kprog(T, K.G + 3.4, K.G + 3.7))} transform="translate(420 390)">
             <path d="M -110 -16 L 110 -16 M -110 16 L 110 16" stroke="#fff" strokeWidth={26} strokeLinecap="round" />
             {[[-110, -16], [-110, 16], [110, -16], [110, 16]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={22} fill="#fff" />)}
             <path d="M -130 -70 L 130 70 M 130 -70 L -130 70" stroke={KC.red} strokeWidth={20} strokeLinecap="round" opacity={kprog(T, K.G + 2.0, K.G + 2.3)} />
@@ -221,38 +224,39 @@ function FaloShot() {
         {fsvg(<>
           <PisoBosque y={1000} corte seed={9} />
           <rect x={560} y={1340} width={300} height={60} rx={26} fill="#8a5a2c" stroke={KC.ink} strokeWidth={6} transform="rotate(-6 700 1370)" />
-          <Huevo T={T} x={420} y={1000} s={2.5 * kprog(T, K.Hu - 0.2, K.Hu + 0.6, kEase.rebote)} cordon={kprog(T, K.Hu + 0.8, K.Hu + 2.2)} />
-          {T > K.So - 0.3 && <g opacity={kprog(T, K.So - 0.3, K.So + 0.2)}><Nariz T={T} x={800} y={900} s={1.1} /></g>}
+          <Huevo T={T} x={420} y={1000} s={3.4 * kprog(T, K.Hu - 0.2, K.Hu + 0.6, kEase.rebote)} cordon={kprog(T, K.Hu + 0.8, K.Hu + 2.2)} />
+          {T > K.So - 0.3 && <g opacity={kprog(T, K.So - 0.3, K.So + 0.2)}><Nariz T={T} x={820} y={900} s={1.2} /></g>}
         </>)}
-        {/* regla de 6 cm sobre el huevo (2.5 × 20 px/cm = 50 px/cm → 300 px) */}
-        <div style={{ position:'absolute', left:270, top:760, width:300, height:0, borderTop:`8px solid ${KC.ink}`, opacity:kprog(T, K.Hu + 1.4, K.Hu + 1.8), zIndex:30 }}>
+        {/* regla de 6 cm sobre el huevo (3.4 × 20 px/cm = 68 px/cm → 408 px) */}
+        <div style={{ position:'absolute', left:216, top:690, width:408, height:0, borderTop:`8px solid ${KC.ink}`, opacity:kprog(T, K.Hu + 1.4, K.Hu + 1.8), zIndex:30 }}>
           <div style={{ position:'absolute', left:-4, top:-26, width:8, height:44, background:CINE.borde }}></div><div style={{ position:'absolute', right:-4, top:-26, width:8, height:44, background:CINE.borde }}></div>
         </div>
       </Escena>
       {/* 4 · brota: el tallo sale en unas horas (cámara rápida) */}
       <Escena T={T} a={K.B} b={K.Ba} zoom={0.04} origen="40% 60%">
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
-          <PisoBosque y={1150} seed={6} />
-          {T < K.B + 1.4 && <g opacity={1 - kprog(T, K.B + 1.0, K.B + 1.4)}><Huevo T={T} x={380} y={1150} s={1} abre={kprog(T, K.B + 0.2, K.B + 0.9)} cordon={0} temblor={kprog(T, K.B, K.B + 0.4)} /></g>}
-          <Falo T={T} id="b" x={380} y={1160} h={8 + 532 * crece} baba={1} />
+        {fsvg(<g transform={camBr}>
+          <PisoBosque y={1200} seed={6} />
+          {T < K.B + 1.4 && <g opacity={1 - kprog(T, K.B + 1.0, K.B + 1.4)}><Huevo T={T} x={500} y={1200} s={1.45} abre={kprog(T, K.B + 0.2, K.B + 0.9)} cordon={0} temblor={kprog(T, K.B, K.B + 0.4)} /></g>}
+          <Falo T={T} id="b" x={500} y={1210} s={1.45} h={8 + 532 * crece} baba={1} />
+          {/* regla de 30 cm: 1.45 × 20 px/cm = 29 px/cm → 870 px, marcas cada 5 cm (145 px) */}
           <g opacity={kprog(T, K.B + 1.0, K.B + 1.5)}>
-            <line x1={220} y1={1160} x2={220} y2={560} stroke={KC.ink} strokeWidth={8} />
-            {Array.from({ length: 7 }, (_, i) => <line key={i} x1={220} y1={1160 - i * 100} x2={i % 2 ? 196 : 180} y2={1160 - i * 100} stroke={KC.ink} strokeWidth={6} />)}
-            <text x={220} y={535} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.B + 4.0, K.B + 4.4)}>30 cm</text>
+            <line x1={280} y1={1210} x2={280} y2={340} stroke={KC.ink} strokeWidth={8} />
+            {Array.from({ length: 7 }, (_, i) => <line key={i} x1={280} y1={1210 - i * 145} x2={i % 2 ? 256 : 240} y2={1210 - i * 145} stroke={KC.ink} strokeWidth={6} />)}
+            <text x={280} y={315} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.B + 4.0, K.B + 4.4)}>30 cm</text>
           </g>
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · la baba, al microscopio: esporas */}
       <Escena T={T} a={K.Ba} b={K.Az} zoom={0.12} origen="35% 35%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <PisoBosque y={1150} seed={6} />
-          <Falo T={T} id="ba" x={380} y={1160} h={484} goteo={1} />
-          <MoscaOrbita T={T} cx={380} cy={640} rx={120} ry={50} vel={2.4} s={0.8} seed={4} />
+          <PisoBosque y={1200} seed={6} />
+          <Falo T={T} id="ba" x={500} y={1210} s={1.45} h={540} goteo={1} />
+          <MoscaOrbita T={T} cx={500} cy={445} rx={170} ry={70} vel={2.4} s={1.15} seed={4} />
         </>)}
       </Escena>
-      <Lupa T={T} at={K.Ba + 0.6} until={K.Az - 0.3} x={380} y={790} r={220} fx={380} fy={640} interior={(t, r) => <EsporasMicro T={t} r={r} k={14} />} etiqueta="AL MICROSCOPIO · esporas" tinte={KC.yellow} />
+      <Lupa T={T} at={K.Ba + 0.6} until={K.Az - 0.3} x={600} y={930} r={260} fx={500} fy={445} interior={(t, r) => <EsporasMicro T={t} r={r} k={14} />} etiqueta="AL MICROSCOPIO · esporas" tinte={KC.yellow} />
       {/* 6 · gases con azufre (por dentro, fondo oscuro) */}
       <Escena T={T} a={K.Az} b={K.P} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
@@ -265,70 +269,75 @@ function FaloShot() {
       {/* 7 · pregunta */}
       <Escena T={T} a={K.P} b={K.En} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<><Interrogacion T={T} x={290} y={1060} /><Olor T={T} x={290} y={560} n={3} alto={260} /></>)}
+        {fsvg(<>
+          <PisoBosque y={1400} seed={12} />
+          <Falo T={T} id="p" x={440} y={1410} s={1.6} h={420} goteo={1} />
+          <Olor T={T} x={440} y={660} n={3} alto={300} />
+          <Interrogacion T={T} x={830} y={1080} />
+        </>)}
       </Escena>
       {/* 8 · el engaño: la mosca busca carne y encuentra baba */}
       <Escena T={T} a={K.En} b={K.E} zoom={0.05} origen="40% 55%">
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <PisoBosque y={1150} seed={12} />
-          <Falo T={T} id="en" x={360} y={1160} h={420} goteo={1} />
-          <Olor T={T} x={360} y={640} n={3} alto={260} />
-          {(() => { const u = kprog(T, K.En + 0.3, K.En + 2.6, kEase.suave); const mx = klerp(980, 420, u), my = klerp(500, 650, u) + Math.sin(T * 8) * 10 * (1 - u);
-            return <Mosca T={T} x={mx} y={my} s={1.4} ang={u < 1 ? 170 : -100} aleteo={u < 1 ? 1 : 0} seed={3} />; })()}
+          <PisoBosque y={1400} seed={12} />
+          <Falo T={T} id="en" x={440} y={1410} s={1.6} h={420} goteo={1} />
+          <Olor T={T} x={440} y={660} n={3} alto={300} />
+          {(() => { const u = kprog(T, K.En + 0.3, K.En + 2.6, kEase.suave); const mx = klerp(980, 495, u), my = klerp(560, 615, u) + Math.sin(T * 8) * 10 * (1 - u);
+            return <Mosca T={T} x={mx} y={my} s={1.7} ang={u < 1 ? 170 : -100} aleteo={u < 1 ? 1 : 0} seed={3} />; })()}
           {T > K.En + 0.5 && T < K.En + 2.8 && <g opacity={kprog(T, K.En + 0.5, K.En + 0.8) * (1 - kprog(T, K.En + 2.4, K.En + 2.8))}>
-            <circle cx={760} cy={560} r={14} fill="#fff" stroke={KC.ink} strokeWidth={4} /><circle cx={720} cy={510} r={22} fill="#fff" stroke={KC.ink} strokeWidth={4} />
-            <ellipse cx={640} cy={400} rx={170} ry={110} fill="#fff" stroke={KC.ink} strokeWidth={6} />
-            <Filete T={T} x={640} y={410} s={1.1} />
+            <circle cx={780} cy={610} r={14} fill="#fff" stroke={KC.ink} strokeWidth={4} /><circle cx={740} cy={560} r={22} fill="#fff" stroke={KC.ink} strokeWidth={4} />
+            <ellipse cx={680} cy={445} rx={170} ry={110} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+            <Filete T={T} x={680} y={455} s={1.1} />
           </g>}
         </>)}
       </Escena>
       {/* 9 · el estudio de 1997: popó más rápido con la baba */}
       <Escena T={T} a={K.E} b={K.Si} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<g opacity={kprog(T, K.E + 2.6, K.E + 3.0)}>
-          <Platito T={T} x={185} y={870} desde={K.E + 3.4} cada={0.45} comida="baba" etiqueta="baba" />
-          <Platito T={T} x={540} y={870} desde={K.E + 3.6} cada={1.5} comida="estiercol" etiqueta="estiércol" />
-          <Platito T={T} x={895} y={870} desde={K.E + 3.8} cada={1.9} comida="azucar" etiqueta="azúcar" />
+        {fsvg(<g opacity={kprog(T, K.E - 0.2, K.E + 0.3)}>
+          <Platito T={T} x={185} y={960} desde={K.E + 3.4} cada={0.45} comida="baba" etiqueta="baba" />
+          <Platito T={T} x={540} y={960} desde={K.E + 3.6} cada={1.5} comida="estiercol" etiqueta="estiércol" />
+          <Platito T={T} x={895} y={960} desde={K.E + 3.8} cada={1.9} comida="azucar" etiqueta="azúcar" />
         </g>)}
       </Escena>
       {/* 10 · siembra: gotitas con esporas y esporas en las patas */}
       <Escena T={T} a={K.Si} b={K.He} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <PisoBosque y={1150} seed={15} />
-          <Falo T={T} id="si" x={90} y={1160} s={0.6} h={420} />
-          {(() => { const u = kprog(T, K.Si, K.He, (p) => p); const mx = klerp(-80, 1160, u), my = 520 + Math.sin(u * 9) * 60;
+          <PisoBosque y={1400} seed={15} />
+          <Falo T={T} id="si" x={110} y={1410} s={0.9} h={420} />
+          {(() => { const u = kprog(T, K.Si, K.He, (p) => p); const mx = klerp(-80, 1160, u), my = 640 + Math.sin(u * 9) * 60;
             const gotas = [];
             for (let i = 0; i < 9; i++) { const t0 = K.Si + 0.3 + i * 0.42; if (T < t0) break; const ux = kprog(T, K.Si, K.He, (p) => p) ; const gx = klerp(-80, 1160, kprog(t0, K.Si, K.He, (p) => p)); const f = kprog(T, t0, t0 + 0.6);
-              gotas.push(<g key={i}><circle cx={gx} cy={klerp(540, 1140, f * f)} r={9} fill={FL.gleba} stroke={KC.ink} strokeWidth={3} />
-                {f >= 1 && <ellipse cx={gx} cy={1146} rx={18} ry={7} fill={FL.gleba} stroke={KC.ink} strokeWidth={3} />}</g>); }
-            return <>{gotas}<Mosca T={T} x={mx} y={my} s={1.3} ang={0} seed={6} /></>; })()}
+              gotas.push(<g key={i}><circle cx={gx} cy={klerp(660, 1390, f * f)} r={11} fill={FL.gleba} stroke={KC.ink} strokeWidth={3} />
+                {f >= 1 && <ellipse cx={gx} cy={1396} rx={18} ry={7} fill={FL.gleba} stroke={KC.ink} strokeWidth={3} />}</g>); }
+            return <>{gotas}<Mosca T={T} x={mx} y={my} s={1.6} ang={0} seed={6} /></>; })()}
         </>)}
       </Escena>
-      <Lupa T={T} at={K.Si + 2.0} until={K.He - 0.3} x={420} y={860} r={210} fx={() => klerp(-80, 1160, kprog(T, K.Si, K.He, (p) => p))} fy={560} interior={(t, r) => <PataCerca T={t} r={r} />} etiqueta="DE CERCA · pata de mosca" tinte={KC.yellow} />
+      <Lupa T={T} at={K.Si + 2.0} until={K.He - 0.3} x={480} y={1010} r={250} fx={() => klerp(-80, 1160, kprog(T, K.Si, K.He, (p) => p))} fy={680} interior={(t, r) => <PataCerca T={t} r={r} />} etiqueta="DE CERCA · pata de mosca" tinte={KC.yellow} />
       {/* 11 · más hembras que machos */}
       <Escena T={T} a={K.He} b={K.L} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<Balanza T={T} x={400} y={640} inclina={kprog(T, K.He + 0.6, K.He + 1.4, kEase.rebote)} />)}
+        {fsvg(<g transform="translate(540 700) scale(1.35)"><Balanza T={T} x={0} y={0} inclina={kprog(T, K.He + 0.6, K.He + 1.4, kEase.rebote)} /></g>)}
       </Escena>
       {/* 12 · en unas horas, la baba desaparece */}
       <Escena T={T} a={K.L} b={K.Mx} zoom={0.06} origen="35% 40%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <PisoBosque y={1150} seed={6} />
-          <Falo T={T} id="l" x={380} y={1160} h={484} limpio={kprog(T, K.L + 0.2, K.L + 1.8)} />
-          {[0, 1, 2].map((i) => <MoscaOrbita key={i} T={T} cx={380 + kprog(T, K.L + 0.8, K.Mx) * (i - 1) * 700} cy={640 - kprog(T, K.L + 0.8, K.Mx) * 500} rx={110} ry={50} vel={2 + i * 0.4} fase={i * 2} s={0.8} seed={i + 7} />)}
+          <PisoBosque y={1200} seed={6} />
+          <Falo T={T} id="l" x={500} y={1210} s={1.45} h={540} limpio={kprog(T, K.L + 0.2, K.L + 1.8)} />
+          {[0, 1, 2].map((i) => <MoscaOrbita key={i} T={T} cx={500 + kprog(T, K.L + 0.8, K.Mx) * (i - 1) * 700} cy={445 - kprog(T, K.L + 0.8, K.Mx) * 300} rx={160} ry={70} vel={2 + i * 0.4} fase={i * 2} s={1.15} seed={i + 7} />)}
         </>)}
       </Escena>
       {/* 13 · México: parientes con velo de encaje */}
       <Escena T={T} a={K.Mx} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <MapaMexico x={0} y={580} ancho={820} color="#ffe9a8" />
+          <MapaMexico x={0} y={400} ancho={820} color="#ffe9a8" />
           <g opacity={kprog(T, K.Mx + 0.8, K.Mx + 1.3)}>
-            <ellipse cx={910} cy={1165} rx={150} ry={24} fill="rgba(0,0,0,.25)" />
-            <Falo T={T} id="v" x={910} y={1160} s={0.9} h={20 + 330 * kprog(T, K.Mx + 0.8, K.Mx + 2.0, kEase.suave)} velo={kprog(T, K.Mx + 1.8, K.Mx + 3.0, kEase.sale)} />
+            <ellipse cx={820} cy={1525} rx={250} ry={36} fill="rgba(0,0,0,.25)" />
+            <Falo T={T} id="v" x={820} y={1520} s={1.55} h={20 + 330 * kprog(T, K.Mx + 0.8, K.Mx + 2.0, kEase.suave)} velo={kprog(T, K.Mx + 1.8, K.Mx + 3.0, kEase.sale)} />
           </g>
         </>)}
       </Escena>
@@ -336,50 +345,51 @@ function FaloShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.06} origen="30% 60%">
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <PisoBosque y={1110} />
-          <Falo T={T} id="c" x={300} y={1120} s={1.35} h={340} limpio={1} />
-          {[[620, 1118, 0.6], [820, 1122, 0.75], [120, 1124, 0.55], [960, 1116, 0.5]].map(([x, y, s], i) => { const t0 = K.C + 1.2 + i * 0.5; const k = kprog(T, t0, t0 + 0.5, kEase.rebote);
+          <PisoBosque y={1420} />
+          <Falo T={T} id="c" x={540} y={1430} s={2.1} h={340} limpio={1} />
+          {[[800, 1428, 0.95], [960, 1432, 1.15], [160, 1434, 0.85], [320, 1426, 0.8]].map(([x, y, s], i) => { const t0 = K.C + 1.2 + i * 0.5; const k = kprog(T, t0, t0 + 0.5, kEase.rebote);
             return k > 0 ? <Huevo key={i} T={T} x={x} y={y} s={s * k} cordon={0} /> : null; })}
-          {[0, 1].map((i) => <MoscaOrbita key={i} T={T} cx={700} cy={600} rx={260} ry={90} vel={1.6 + i * 0.5} fase={i * 3} s={0.8} seed={i + 11} />)}
+          {[0, 1].map((i) => <MoscaOrbita key={i} T={T} cx={600} cy={640} rx={300} ry={110} vel={1.6 + i * 0.5} fase={i * 3} s={0.8} seed={i + 11} />)}
         </>)}
       </Escena>
 
       {/* textos (no tapan el subtítulo, que vive en bottom 560) */}
-      <Chip T={T} at={K.G + 1.5} until={K.G + 3.6} texto="¿un animal muerto? ✗" x={330} y={440} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.G + 2.4} until={K.Hu - 0.3} x={410} y={960} texto="falo hediondo" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.G + 2.8} until={K.Hu - 0.3} x={410} y={1010} texto="Phallus impudicus" it tam={36} color={KC.ink} />
-      <Chip T={T} at={K.Hu + 1.6} until={K.So - 0.2} texto="hasta 6 cm" x={420} y={690} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.Hu + 2.2} until={K.B - 0.3} x={520} y={1160} texto="cordón de micelio" tam={28} />
-      <Etq T={T} at={K.Hu + 2.8} until={K.B - 0.3} x={860} y={1430} texto="madera enterrada" lado="izq" tam={26} />
+      <Chip T={T} at={K.G + 1.5} until={K.G + 3.6} texto="¿un animal muerto? ✗" x={480} y={520} tam={36} borde={KC.red} />
+      <Etq T={T} at={K.G + 2.4} until={K.Hu - 0.3} x={620} y={1060} texto="falo hediondo" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.G + 2.8} until={K.Hu - 0.3} x={620} y={1110} texto="Phallus impudicus" it tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Hu + 1.6} until={K.So - 0.2} texto="hasta 6 cm" x={420} y={620} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.Hu + 2.2} until={K.B - 0.3} x={430} y={1270} texto="cordón de micelio" tam={28} />
+      <Etq T={T} at={K.Hu + 2.8} until={K.B - 0.3} x={860} y={1465} texto="madera enterrada" lado="izq" tam={26} />
       <Chip T={T} at={K.So + 0.4} until={K.B - 0.2} texto="huevo: sin olor feo ✓" x={360} y={480} tam={38} borde={KC.leaf} />
-      <Chip T={T} at={K.B + 0.8} until={K.Ba - 0.3} texto="⏩ cámara rápida: unas horas" x={380} y={440} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.B + 3.2} until={K.Ba - 0.3} x={440} y={1000} texto="tallo hueco y esponjoso" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.B + 4.2} until={K.Ba - 0.3} x={440} y={640} texto="sombrero con baba" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Ba + 0.2} until={K.Ba + 1.4} x={310} y={600} texto="gleba" lado="izq" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.B + 0.8} until={K.Ba - 0.3} texto="⏩ cámara rápida: unas horas" x={800} y={720} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.B + 3.2} until={K.Ba - 0.3} x={560} y={880} texto="tallo hueco y esponjoso" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.B + 4.2} until={K.Ba - 0.3} x={580} y={440} texto="sombrero con baba" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Ba + 0.2} until={K.Ba + 1.4} x={420} y={445} texto="gleba" lado="izq" tam={30} color={KC.ink} />
       <Chip T={T} at={K.Az + 0.6} until={K.P - 0.3} texto="gases con azufre: lo que más apesta" x={390} y={440} tam={28} borde={KC.yellow} />
       <Etq T={T} at={K.Az + 1.0} until={K.P - 0.3} x={60} y={540} texto="trisulfuro de dimetilo" tam={28} color={KC.yellow} />
       <Chip T={T} at={K.En + 2.9} until={K.E - 0.3} texto="¡caíste! solo hay baba" x={420} y={440} tam={38} borde={KC.red} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.8} anio="1997" quien="University College Cork, Irlanda" revista="Sleeman y col., J. Nat. Hist." y={600} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.8} anio="1997" quien="University College Cork, Irlanda" revista="Sleeman y col., J. Nat. Hist." y={420} />
       <Chip T={T} at={K.E + 4.6} until={K.Si - 0.3} texto="con la baba: popó más rápido" x={350} y={480} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Si + 0.4} until={K.Si + 2.2} texto="gotitas con esporas" x={380} y={440} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.He + 0.4} until={K.L - 0.3} texto="llegan más hembras" x={400} y={440} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.L + 1.4} until={K.Mx - 0.3} texto="queda su red de huecos" x={400} y={440} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Mx + 0.3} until={K.C - 0.3} texto="10 estados · Guzmán y col., 1990" x={420} y={470} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Mx + 2.4} until={K.C - 0.3} x={770} y={1000} texto="velo de encaje" lado="izq" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Mx + 2.8} until={K.C - 0.3} x={770} y={1050} texto="Phallus (antes Dictyophora)" it lado="izq" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Si + 0.4} until={K.Si + 2.2} texto="gotitas con esporas" x={540} y={440} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.He + 0.4} until={K.L - 0.3} texto="llegan más hembras" x={540} y={420} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.L + 1.4} until={K.Mx - 0.3} texto="queda su red de huecos" x={760} y={330} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Mx + 0.3} until={K.C - 0.3} texto="10 estados · Guzmán y col., 1990" x={420} y={320} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.Mx + 2.4} until={K.C - 0.3} x={630} y={1250} texto="velo de encaje" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Mx + 2.8} until={K.C - 0.3} x={630} y={1300} texto="Phallus (antes Dictyophora)" it lado="izq" tam={28} color={KC.ink} />
       <Chip T={T} at={K.C + 1.4} until={K.Ou} texto="lo sembraron las moscas" x={360} y={440} tam={38} borde={KC.leaf} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Hu} texto="10 cm" largo={270} />
-      <BarraEscala T={T} at={K.Hu} until={K.B} texto="5 cm" largo={250} />
-      <BarraEscala T={T} at={K.B} until={K.Az} texto="10 cm" largo={200} />
+      <BarraEscala T={T} at={K.G} until={K.Hu} texto="10 cm" largo={420} />
+      <BarraEscala T={T} at={K.Hu} until={K.B} texto="5 cm" largo={340} />
+      <BarraEscala T={T} at={K.B} until={K.Ba} texto="10 cm" largo={290 * kBr} />
+      <BarraEscala T={T} at={K.Ba} until={K.Az} texto="10 cm" largo={290} />
       <BarraEscala T={T} at={K.Az} until={K.P} texto="1 nm" largo={400} />
-      <BarraEscala T={T} at={K.P} until={K.E} texto="10 cm" largo={200} />
+      <BarraEscala T={T} at={K.P} until={K.E} texto="10 cm" largo={320} />
       <BarraEscala T={T} at={K.E} until={K.Si} texto="5 cm" largo={180} />
-      <BarraEscala T={T} at={K.Si} until={K.He} texto="10 cm" largo={120} />
-      <BarraEscala T={T} at={K.L} until={K.Mx} texto="10 cm" largo={200} />
+      <BarraEscala T={T} at={K.Si} until={K.He} texto="10 cm" largo={180} />
+      <BarraEscala T={T} at={K.L} until={K.Mx} texto="10 cm" largo={290} />
       <BarraEscala T={T} at={K.Mx} until={K.C} texto="500 km" largo={93} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={270} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={420} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Hu - 0.1} texto="No es un muerto: *es este hongo.*" />
