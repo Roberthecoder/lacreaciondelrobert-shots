@@ -80,8 +80,8 @@ function Medalla({ x, y, r = 160, T = 0, p = 1 }) {
     <path d={`M ${-r * 0.7} ${-r * 1.7} L ${-r * 0.15} ${-r * 0.8} L ${r * 0.15} ${-r * 0.8} L ${r * 0.7} ${-r * 1.7} L ${r * 0.3} ${-r * 1.7} L 0 ${-r * 1.1} L ${-r * 0.3} ${-r * 1.7} Z`} fill={KC.blue} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <circle r={r} fill={KC.gold} stroke={KC.ink} strokeWidth={10} />
     <circle r={r * 0.8} fill="none" stroke={KC.gold2} strokeWidth={10} />
-    <text y={-r * 0.06} textAnchor="middle" style={{ font:`400 ${r * 0.42}px ${KF.titulo}` }} fill={KC.ink}>NOBEL</text>
-    <text y={r * 0.4} textAnchor="middle" style={{ font:`900 ${r * 0.19}px ${KF.texto}` }} fill={KC.ink}>ECONOMÍA</text>
+    <text y={-r * 0.06} textAnchor="middle" style={{ font:`400 ${r * 0.42}px ${KF.titulo}` }} fill="#0b1020">NOBEL</text>
+    <text y={r * 0.4} textAnchor="middle" style={{ font:`900 ${r * 0.19}px ${KF.texto}` }} fill="#0b1020">ECONOMÍA</text>
     <path d={`M ${-r * 0.5} ${-r * 0.55} A ${r * 0.75} ${r * 0.75} 0 0 1 ${-r * 0.1} ${-r * 0.73}`} stroke="#fff" strokeWidth={9} fill="none" strokeLinecap="round" opacity=".7" />
   </g>;
 }
@@ -102,11 +102,11 @@ function Pupila() {
   const pupM = 0.32 + 0.3 * kprog(T, K.Mente + 1.0, K.Mente + 2.4, kEase.suave);
   // resultado
   const fR = kprog(T, K.Resultado + 0.4, K.Resultado + 6.3), vR = curvaPupila(fR);
-  const G = { x0: 150, x1: 960, y0: 1040, y1: 740 };
+  const G = { x0: 150, x1: 960, y0: 1330, y1: 900 };
   const ptsR = []; for (let i = 0; i <= 160; i++) { const f = i / 160; if (f > fR) break; ptsR.push(`${klerp(G.x0, G.x1, f).toFixed(1)},${klerp(G.y0 - 20, G.y1 + 10, curvaPupila(f) * 0.9 + 0.05).toFixed(1)}`); }
   const cxR = klerp(G.x0, G.x1, fR), cyR = klerp(G.y0 - 20, G.y1 + 10, vR * 0.9 + 0.05);
   // locus
-  const CH = { x: 430, y: 840, s: 1.7 };
+  const CH = { x: 440, y: 1010, s: 2.1 };
   const cp = (lx, ly) => [CH.x + lx * CH.s, CH.y + ly * CH.s];
   const SPOT = [0, 88], spotG = cp(...SPOT), ojoCab = cp(110, -30);
   const enciende = kprog(T, K.Locus + 1.4, K.Locus + 2.0), senal = kprog(T, K.Locus + 3.0, K.Locus + 3.6);
@@ -124,47 +124,47 @@ function Pupila() {
       <Escena T={T} a={K.Gancho} b={K.Pupila} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <Foco x={240} y={470} s={0.8} T={T} />
-          <g transform={`translate(470 850) scale(${klerp(0.5, 1, gEntra)}) translate(-470 -850)`}>
-            <OjoPupila x={470} y={850} s={1.3} pup={pupG} parp={parpadeo(T, K.Gancho + 0.15)} id="g" />
+          <Foco x={200} y={430} s={1.1} T={T} />
+          <g transform={`translate(540 900) scale(${klerp(0.5, 1, gEntra)}) translate(-540 -900)`}>
+            <OjoPupila x={540} y={900} s={1.85} pup={pupG} parp={parpadeo(T, K.Gancho + 0.15)} id="g" />
           </g>
-          <Digitos T={T} at={K.Gancho + 0.4} x={540} y={1110} lista={DIG_G} sep={130} />
+          <Digitos T={T} at={K.Gancho + 0.4} x={540} y={1340} lista={DIG_G} sep={150} tam={124} />
         </Lienzo>
-        <Chip T={T} at={K.Gancho + 0.6} until={K.Pupila - 0.1} texto="misma luz" x={450} y={470} tam={36} borde={KC.ink} />
+        <Chip T={T} at={K.Gancho + 0.6} until={K.Pupila - 0.1} texto="misma luz" x={450} y={430} tam={38} borde={KC.ink} />
       </Escena>
       {/* 1 · la pupila: el hoyo por donde entra la luz */}
-      <Escena T={T} a={K.Pupila} b={K.Luz} fondo={KC.mint} zoom={0.05}>
+      <Escena T={T} a={K.Pupila} b={K.Luz} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <OjoPupila x={540} y={820} s={1.6} pup={0.42} parp={parpadeo(T, K.Pupila + 3.4)} id="p" />
-          {rayosP > 0 && <g opacity={rayosP}>{[-1, 0, 1].map((j) => <line key={j} x1={540 + j * 300} y1={460} x2={540 + j * 20} y2={820} stroke={KC.yellow} strokeWidth={14} strokeDasharray="34 18" strokeDashoffset={-T * 120} strokeLinecap="round" />)}
-            <circle cx={540} cy={820} r={0.62 * 150 * 1.6 * 0.42 + 10} fill="none" stroke={KC.yellow} strokeWidth={8} strokeDasharray="14 10" transform={`rotate(${T * 50} 540 820)`} /></g>}
+          <OjoPupila x={540} y={900} s={1.8} pup={0.42} parp={parpadeo(T, K.Pupila + 3.4)} id="p" />
+          {rayosP > 0 && <g opacity={rayosP}>{[-1, 0, 1].map((j) => <line key={j} x1={540 + j * 330} y1={450} x2={540 + j * 22} y2={900} stroke={KC.yellow} strokeWidth={14} strokeDasharray="34 18" strokeDashoffset={-T * 120} strokeLinecap="round" />)}
+            <circle cx={540} cy={900} r={0.62 * 150 * 1.8 * 0.42 + 10} fill="none" stroke={KC.yellow} strokeWidth={8} strokeDasharray="14 10" transform={`rotate(${T * 50} 540 900)`} /></g>}
         </Lienzo>
-        <Etq T={T} at={K.Pupila + 0.4} until={K.Luz - 0.2} x={590} y={1060} texto="pupila" lado="der" color={KC.texto} tam={44} />
-        <Etq T={T} at={K.Pupila + 1.0} until={K.Luz - 0.2} x={830} y={640} texto="iris" lado="der" color={KC.texto} tam={40} />
-        <Chip T={T} at={K.Pupila + 1.9} until={K.Luz - 0.1} texto="el hoyo por donde entra la luz" x={540} y={420} tam={40} borde={KC.yellow} />
+        <Etq T={T} at={K.Pupila + 0.4} until={K.Luz - 0.2} x={560} y={1170} texto="pupila" lado="der" color={KC.texto} tam={44} />
+        <Etq T={T} at={K.Pupila + 1.0} until={K.Luz - 0.2} x={866} y={690} texto="iris" lado="der" color={KC.texto} tam={40} />
+        <Chip T={T} at={K.Pupila + 1.9} until={K.Luz - 0.1} texto="el hoyo por donde entra la luz" x={540} y={400} tam={40} borde={KC.yellow} />
       </Escena>
       {/* 2 · luz: con sol se cierra, en la oscuridad se abre */}
-      <Escena T={T} a={K.Luz} b={K.Mente} fondo={KC.yellow} zoom={0.03}>
+      <Escena T={T} a={K.Luz} b={K.Mente} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         <div style={{ position:'absolute', left:540, top:0, width:540, height:KH, background:KC.noche, opacity:luna }}></div>
         <Lienzo>
-          <g transform={`translate(270 580) scale(${sol})`}><SolDibujo x={0} y={0} r={80} T={T} /></g>
-          <g transform={`translate(810 580) scale(${luna})`}>
+          <g transform={`translate(270 590) scale(${sol * 1.4})`}><SolDibujo x={0} y={0} r={80} T={T} /></g>
+          <g transform={`translate(810 590) scale(${luna * 1.4})`}>
             <path d="M 40 -90 A 95 95 0 1 0 60 80 A 75 75 0 1 1 40 -90 Z" fill="#f4efe4" stroke={KC.ink} strokeWidth={8} />
             {[[-160, -60], [-110, 80], [120, -40]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={7} fill="#fff" opacity={0.4 + 0.6 * Math.abs(Math.sin(T * 2 + i))} />)}
           </g>
-          <OjoPupila x={270} y={900} s={0.6} pup={pupSol} id="ls" />
-          <g opacity={luna}><OjoPupila x={810} y={900} s={0.6} pup={pupLuna} id="ll" /></g>
-          <TextoSvg x={270} y={1110} tam={66} color={KC.pink} o={kprog(T, K.Luz + 1.0, K.Luz + 1.3)} s={klerp(0.5, 1, kprog(T, K.Luz + 1.0, K.Luz + 1.4, kEase.rebote))}>SE CIERRA</TextoSvg>
-          <TextoSvg x={810} y={1110} tam={66} color={KC.mint} o={kprog(T, K.Luz + 2.6, K.Luz + 2.9)} s={klerp(0.5, 1, kprog(T, K.Luz + 2.6, K.Luz + 3.0, kEase.rebote))}>SE ABRE</TextoSvg>
+          <OjoPupila x={270} y={1010} s={0.95} pup={pupSol} id="ls" />
+          <g opacity={luna}><OjoPupila x={810} y={1010} s={0.95} pup={pupLuna} id="ll" /></g>
+          <TextoSvg x={270} y={1300} tam={84} color={KC.pink} o={kprog(T, K.Luz + 1.0, K.Luz + 1.3)} s={klerp(0.5, 1, kprog(T, K.Luz + 1.0, K.Luz + 1.4, kEase.rebote))}>SE CIERRA</TextoSvg>
+          <TextoSvg x={810} y={1300} tam={84} color={KC.mint} o={kprog(T, K.Luz + 2.6, K.Luz + 2.9)} s={klerp(0.5, 1, kprog(T, K.Luz + 2.6, K.Luz + 3.0, kEase.rebote))}>SE ABRE</TextoSvg>
         </Lienzo>
       </Escena>
       {/* 3 · mente: lo que pasa dentro de tu cabeza también la mueve */}
-      <Escena T={T} a={K.Mente} b={K.Estudio} fondo={KC.lilac} zoom={0.04}>
+      <Escena T={T} a={K.Mente} b={K.Estudio} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <CabezaPerfil x={360} y={960} s={1.2}>
+          <CabezaPerfil x={400} y={1080} s={1.75}>
             <g opacity={kprog(T, K.Mente + 0.3, K.Mente + 0.7)}>
               <circle cx={-10} cy={-70} r={120} fill="rgba(255,255,255,.35)" />
               <Engrane x={-40} y={-80} r={52} rot={T * 70} />
@@ -172,28 +172,29 @@ function Pupila() {
               <Engrane x={20} y={-140} r={26} n={6} rot={-T * 140} color={KC.cyan} />
             </g>
           </CabezaPerfil>
-          <path d={`M ${360 + 130 * 1.2} ${960 - 36} Q 700 820 700 760`} fill="none" stroke={KC.ink} strokeWidth={7} strokeDasharray="16 12" opacity={kprog(T, K.Mente + 0.8, K.Mente + 1.1)} />
-          <circle cx={810} cy={700} r={150} fill="#fff" stroke={KC.ink} strokeWidth={9} opacity={kprog(T, K.Mente + 0.6, K.Mente + 0.9)} />
-          <g opacity={kprog(T, K.Mente + 0.6, K.Mente + 0.9)}><OjoPupila x={810} y={700} s={0.5} pup={pupM} id="m" /></g>
+          <path d={`M ${400 + 130 * 1.75} ${1080 - 36 * 1.75} Q 770 900 775 735`} fill="none" stroke={KC.ink} strokeWidth={7} strokeDasharray="16 12" opacity={kprog(T, K.Mente + 0.8, K.Mente + 1.1)} />
+          <circle cx={800} cy={520} r={210} fill="#fff" stroke={KC.ink} strokeWidth={9} opacity={kprog(T, K.Mente + 0.6, K.Mente + 0.9)} />
+          <g opacity={kprog(T, K.Mente + 0.6, K.Mente + 0.9)}><OjoPupila x={800} y={520} s={0.7} pup={pupM} id="m" /></g>
         </Lienzo>
-        <Chip T={T} at={K.Mente + 1.2} until={K.Estudio - 0.1} texto="dentro de tu cabeza" x={540} y={420} tam={40} borde={KC.ink} />
+        <Chip T={T} at={K.Mente + 1.2} until={K.Estudio - 0.1} texto="dentro de tu cabeza" x={300} y={560} tam={40} borde={KC.ink} />
       </Escena>
       {/* 4 · el estudio de 1966: listas de números cada vez más largas */}
-      <Escena T={T} a={K.Estudio} b={K.Resultado} fondo={KC.orange} zoom={0.03}>
+      <Escena T={T} a={K.Estudio} b={K.Resultado} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
+          <CabezaPerfil x={400} y={1080} s={1.75} />
           {['4 9 1', '8 3 6 2', '5 0 7 2 9', '3 8 1 6 4 7'].map((fila, i) => { const t0 = K.Estudio + 2.4 + i * 0.9, e = kprog(T, t0, t0 + 0.35, kEase.rebote);
-            return e > 0 && <g key={i} transform={`translate(540 ${860 + i * 92}) scale(${e})`}>
+            return e > 0 && <g key={i} transform={`translate(818 ${450 + i * 84}) scale(${e * 0.7})`}>
               <rect x={-(fila.length * 22 + 50)} y={-50} width={2 * (fila.length * 22 + 50)} height={80} rx={20} fill={KC.paper} stroke={KC.ink} strokeWidth={6} />
               <text y={14} textAnchor="middle" style={{ font:`700 54px ${KF.mono}` }} fill={KC.ink}>{fila}</text></g>; })}
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Resultado - 0.2} anio="1966" quien="Daniel Kahneman y Jackson Beatty" revista="psicólogos · memorizar números" x={540} y={600} />
+        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Resultado - 0.2} anio="1966" quien="Daniel Kahneman y Jackson Beatty" revista="psicólogos · memorizar números" x={368} y={395} />
       </Escena>
       {/* 5 · resultado: la pupila sube con cada número y baja al decirlos */}
-      <Escena T={T} a={K.Resultado} b={K.Pregunta} fondo={KC.pink} zoom={0.02}>
+      <Escena T={T} a={K.Resultado} b={K.Pregunta} zoom={0.02}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
-          <rect x={100} y={690} width={900} height={420} rx={30} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
+          <rect x={100} y={830} width={900} height={570} rx={30} fill="rgba(14,15,18,.85)" stroke={KC.ink} strokeWidth={8} />
           <line x1={G.x0} y1={G.y0} x2={G.x1} y2={G.y0} stroke={KC.texto} strokeWidth={5} />
           <line x1={G.x0} y1={G.y0} x2={G.x0} y2={G.y1 - 10} stroke={KC.texto} strokeWidth={5} />
           <line x1={klerp(G.x0, G.x1, 0.55)} y1={G.y1 - 10} x2={klerp(G.x0, G.x1, 0.55)} y2={G.y0} stroke="rgba(255,255,255,.35)" strokeWidth={4} strokeDasharray="12 10" />
@@ -202,10 +203,10 @@ function Pupila() {
           <text x={G.x0 + 14} y={G.y1 + 10} style={{ font:`700 28px ${KF.mono}` }} fill={KC.texto}>tamaño de la pupila</text>
           {ptsR.length > 1 && <polyline points={ptsR.join(' ')} fill="none" stroke={fR < 0.55 ? KC.yellow : KC.mint} strokeWidth={10} strokeLinejoin="round" strokeLinecap="round" />}
           {fR > 0 && <circle cx={cxR} cy={cyR} r={14} fill="#fff" stroke={KC.ink} strokeWidth={5} />}
-          <circle cx={540} cy={510} r={150} fill="#fff" stroke={KC.ink} strokeWidth={9} />
-          <OjoPupila x={540} y={510} s={0.52} pup={0.3 + 0.5 * vR} id="r" />
+          <circle cx={540} cy={530} r={215} fill="#fff" stroke={KC.ink} strokeWidth={9} />
+          <OjoPupila x={540} y={530} s={0.72} pup={0.3 + 0.5 * vR} id="r" />
         </Lienzo>
-        <Chip T={T} at={K.Resultado + 0.5} until={K.Pregunta - 0.1} texto="dibujo exagerado" x={850} y={420} tam={30} borde={KC.ink} />
+        <Chip T={T} at={K.Resultado + 0.5} until={K.Pregunta - 0.1} texto="dibujo exagerado" x={860} y={330} tam={30} borde={KC.ink} />
       </Escena>
       {/* 6 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Locus} color={KC.cyan} />
@@ -222,35 +223,39 @@ function Pupila() {
             <circle cx={SPOT[0]} cy={SPOT[1]} r={9 + 9 * enciende * (0.6 + 0.4 * Math.sin(T * 8))} fill={KC.cyan} opacity={enciende * 0.45} />
             <circle cx={SPOT[0]} cy={SPOT[1]} r={7} fill={enciende > 0.5 ? KC.cyan : '#c98aa0'} stroke={KC.ink} strokeWidth={3} />
           </CabezaPerfil>
-          <path d={`M ${ojoCab[0] + 20} ${ojoCab[1] - 20} Q 820 720 840 650`} fill="none" stroke={KC.yellow} strokeWidth={6} strokeDasharray="14 10" opacity={senal} />
+          <path d={`M ${ojoCab[0] + 20} ${ojoCab[1] - 20} Q 830 740 850 575`} fill="none" stroke={KC.yellow} strokeWidth={6} strokeDasharray="14 10" opacity={senal} />
           <g opacity={kprog(T, K.Locus + 3.2, K.Locus + 3.6)}>
-            <circle cx={840} cy={520} r={130} fill="#fff" stroke={KC.ink} strokeWidth={8} />
-            <OjoPupila x={840} y={520} s={0.42} pup={pupL} id="lo" />
+            <circle cx={850} cy={400} r={170} fill="#fff" stroke={KC.ink} strokeWidth={8} />
+            <OjoPupila x={850} y={400} s={0.56} pup={pupL} id="lo" />
           </g>
+          {/* placas oscuras bajo las etiquetas que caen sobre la piel, para que se lean */}
+          <rect x={spotG[0] + 100} y={spotG[1] - 30} width={318} height={60} rx={14} fill="rgba(11,16,32,.82)" opacity={kprog(T, K.Locus + 1.6, K.Locus + 1.9) * (1 - kprog(T, K.Pequeno - 0.2, K.Pequeno))} />
+          <rect x={spotG[0] + 122} y={1394} width={334} height={62} rx={14} fill="rgba(11,16,32,.82)" opacity={kprog(T, K.Locus + 0.9, K.Locus + 1.2) * (1 - kprog(T, K.Pequeno - 0.2, K.Pequeno))} />
+          <rect x={CH.x - 2} y={672} width={338} height={60} rx={14} fill="rgba(11,16,32,.82)" opacity={kprog(T, K.Locus + 4.5, K.Locus + 4.8) * (1 - kprog(T, K.Pequeno - 0.2, K.Pequeno))} />
         </Lienzo>
-        <Chip T={T} at={K.Locus + 0.3} until={K.Pequeno - 0.1} texto="se cree" x={260} y={400} tam={44} borde={KC.gold} />
-        <Etq T={T} at={K.Locus + 0.9} until={K.Pequeno - 0.2} x={spotG[0] + 40} y={1115} texto="tallo cerebral" lado="der" color="#f7b7c8" tam={36} />
+        <Chip T={T} at={K.Locus + 0.3} until={K.Pequeno - 0.1} texto="se cree" x={240} y={430} tam={44} borde={KC.gold} />
+        <Etq T={T} at={K.Locus + 0.9} until={K.Pequeno - 0.2} x={spotG[0] + 52} y={1425} texto="tallo cerebral" lado="der" color="#f7b7c8" tam={36} />
         <Etq T={T} at={K.Locus + 1.6} until={K.Pequeno - 0.2} x={spotG[0] + 30} y={spotG[1]} texto="zona pequeñita" lado="der" color={KC.cyan} tam={34} />
-        <Etq T={T} at={K.Locus + 4.5} until={K.Pequeno - 0.2} x={CH.x - 60} y={CH.y - 250} texto="esfuerzo mental" lado="der" color={KC.gold2} tam={34} />
+        <Etq T={T} at={K.Locus + 4.5} until={K.Pequeno - 0.2} x={CH.x - 72} y={702} texto="esfuerzo mental" lado="der" color={KC.gold2} tam={34} />
       </Escena>
       {/* 8 · el cambio es pequeño, pero una cámara lo mide */}
-      <Escena T={T} a={K.Pequeno} b={K.Uso} fondo={KC.mint} zoom={0.04}>
+      <Escena T={T} a={K.Pequeno} b={K.Uso} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <polygon points="420,800 640,700 640,940" fill="rgba(255,255,255,.45)" opacity={kprog(T, K.Pequeno + 1.6, K.Pequeno + 2.0)} />
-          <CamaraVideo x={250} y={820} s={0.95} T={T} rec={kprog(T, K.Pequeno + 1.6, K.Pequeno + 1.8)} />
-          <OjoPupila x={800} y={820} s={0.62} pup={pupP} id="pq" />
-          {T > K.Pequeno + 2.0 && <circle cx={800} cy={820} r={0.62 * 150 * 0.62 * pupP + 8} fill="none" stroke={KC.red} strokeWidth={5} strokeDasharray="10 7" />}
-          {T > K.Pequeno + 2.0 && <g stroke={KC.red} strokeWidth={4}><line x1={800} y1={720} x2={800} y2={760} /><line x1={800} y1={880} x2={800} y2={920} /><line x1={700} y1={820} x2={740} y2={820} /><line x1={860} y1={820} x2={900} y2={820} /></g>}
+          <polygon points="440,900 650,780 650,1020" fill="rgba(255,255,255,.45)" opacity={kprog(T, K.Pequeno + 1.6, K.Pequeno + 2.0)} />
+          <CamaraVideo x={230} y={900} s={1.2} T={T} rec={kprog(T, K.Pequeno + 1.6, K.Pequeno + 1.8)} />
+          <OjoPupila x={810} y={900} s={0.85} pup={pupP} id="pq" />
+          {T > K.Pequeno + 2.0 && <circle cx={810} cy={900} r={0.62 * 150 * 0.85 * pupP + 9} fill="none" stroke={KC.red} strokeWidth={6} strokeDasharray="10 7" />}
+          {T > K.Pequeno + 2.0 && <g stroke={KC.red} strokeWidth={5}><line x1={810} y1={763} x2={810} y2={818} /><line x1={810} y1={982} x2={810} y2={1037} /><line x1={673} y1={900} x2={728} y2={900} /><line x1={892} y1={900} x2={947} y2={900} /></g>}
         </Lienzo>
-        <Chip T={T} at={K.Pequeno + 0.2} until={K.Pequeno + 1.6} texto="cambio pequeño" x={540} y={420} tam={44} borde={KC.ink} />
-        <Chip T={T} at={K.Pequeno + 1.7} until={K.Uso - 0.1} texto="✓ una cámara lo mide" x={540} y={420} tam={44} borde={KC.red} />
-        <Etq T={T} at={K.Pequeno + 1.8} until={K.Uso - 0.2} x={200} y={600} texto="cámara" lado="der" color={KC.ink} tam={36} />
+        <Chip T={T} at={K.Pequeno + 0.2} until={K.Pequeno + 1.6} texto="cambio pequeño" x={540} y={500} tam={44} borde={KC.ink} />
+        <Chip T={T} at={K.Pequeno + 1.7} until={K.Uso - 0.1} texto="✓ una cámara lo mide" x={540} y={500} tam={44} borde={KC.red} />
+        <Etq T={T} at={K.Pequeno + 1.8} until={K.Uso - 0.2} x={130} y={700} texto="cámara" lado="der" color={KC.ink} tam={36} />
       </Escena>
       {/* 9 · uso: científicos miden la pupila para saber cuánto esfuerzo cuesta una tarea */}
-      <Escena T={T} a={K.Uso} b={K.Nobel} fondo={KC.cyan} zoom={0.03}>
+      <Escena T={T} a={K.Uso} b={K.Nobel} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        <Lienzo>
+        <Lienzo><g transform="translate(540 960) scale(1.12) translate(-560 -810)">
           <BarraH x={140} y={560} ancho={800} alto={64} v={0.12 + 0.75 * esf} color={esf > 0.6 ? KC.pink : KC.yellow} etiqueta="esfuerzo" />
           <CabezaPerfil x={280} y={860} s={1.05} gesto={esf > 0.3 ? 'mueca' : 'normal'} />
           <rect x={600} y={640} width={400} height={260} rx={24} fill="#22252e" stroke={KC.ink} strokeWidth={9} />
@@ -260,36 +265,36 @@ function Pupila() {
           <rect x={770} y={900} width={60} height={60} fill="#3a3f5c" stroke={KC.ink} strokeWidth={7} />
           <CamaraVideo x={830} y={1000} s={0.42} dir={-1} T={T} tripie={false} />
           <polygon points="755,1000 420,820 420,880" fill="rgba(255,255,255,.4)" opacity={kprog(T, K.Uso + 1.0, K.Uso + 1.4)} />
-        </Lienzo>
-        <Chip T={T} at={K.Uso + 0.3} until={K.Uso + 2.0} texto="científicos miden la pupila" x={540} y={420} tam={40} borde={KC.ink} />
-        <Etq T={T} at={K.Uso + 1.2} until={K.Nobel - 0.2} x={740} y={1080} texto="cámara" lado="izq" color={KC.ink} tam={34} />
+        </g></Lienzo>
+        <Chip T={T} at={K.Uso + 0.3} until={K.Uso + 2.0} texto="científicos miden la pupila" x={540} y={520} tam={40} borde={KC.ink} />
+        <Etq T={T} at={K.Uso + 1.2} until={K.Nobel - 0.2} x={742} y={1262} texto="cámara" lado="izq" color={KC.ink} tam={34} />
       </Escena>
       {/* 10 · por cierto: Kahneman, Nobel de Economía 2002 */}
-      <Escena T={T} a={K.Nobel} b={K.Cierre} fondo={KC.yellow} zoom={0.04}>
+      <Escena T={T} a={K.Nobel} b={K.Cierre} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
           <g opacity={kprog(T, K.Nobel + 1.0, K.Nobel + 1.4)}>
-            <TextoSvg x={300} y={810} tam={72} color={KC.orange}>1966</TextoSvg>
-            <FlechaRecta x1={410} y1={785} x2={650} y2={785} p={kprog(T, K.Nobel + 1.2, K.Nobel + 1.8)} color={KC.pink} />
-            <TextoSvg x={780} y={810} tam={72} color={KC.gold} o={kprog(T, K.Nobel + 1.7, K.Nobel + 1.9)}>2002</TextoSvg>
+            <TextoSvg x={250} y={745} tam={100} color={KC.orange}>1966</TextoSvg>
+            <FlechaRecta x1={400} y1={710} x2={680} y2={710} p={kprog(T, K.Nobel + 1.2, K.Nobel + 1.8)} color={KC.pink} />
+            <TextoSvg x={830} y={745} tam={100} color={KC.gold} o={kprog(T, K.Nobel + 1.7, K.Nobel + 1.9)}>2002</TextoSvg>
           </g>
-          <Medalla x={540} y={1050} r={115} T={T} p={kprog(T, K.Nobel + 1.6, K.Nobel + 2.2, kEase.rebote)} />
+          <Medalla x={540} y={1200} r={210} T={T} p={kprog(T, K.Nobel + 0.15, K.Nobel + 0.75, kEase.rebote)} />
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Nobel + 0.2} until={K.Cierre - 0.2} anio="NOBEL" quien="Daniel Kahneman" revista="Premio Nobel de Economía 2002" x={540} y={500} />
+        <TarjetaEstudio T={T} at={K.Nobel + 0.2} until={K.Cierre - 0.2} anio="NOBEL" quien="Daniel Kahneman" revista="Premio Nobel de Economía 2002" x={540} y={400} />
       </Escena>
       {/* 11 · cierre: el ojo del inicio, con números; ahora una cámara lo mira */}
       <Escena T={T} a={K.Cierre} b={FIN} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <Foco x={240} y={470} s={0.8} T={T} />
-          <polygon points="290,830 560,720 560,940" fill="rgba(255,255,255,.45)" opacity={camC} />
-          <g transform={`translate(${klerp(-300, 0, camC)} 0)`}><CamaraVideo x={150} y={830} s={0.8} T={T} /></g>
-          <OjoPupila x={700} y={830} s={1.0} pup={pupC} parp={parpadeo(T, K.Cierre + 0.5)} id="c" />
-          {T > K.Cierre + 1.0 && <circle cx={700} cy={830} r={0.62 * 150 * pupC + 10} fill="none" stroke={KC.red} strokeWidth={6} strokeDasharray="12 8" />}
-          <Digitos T={T} at={K.Cierre + 1.4} x={540} y={1110} lista={DIG_G} sep={130} />
+          <Foco x={200} y={430} s={1.1} T={T} />
+          <polygon points="290,930 540,790 540,1070" fill="rgba(255,255,255,.45)" opacity={camC} />
+          <g transform={`translate(${klerp(-300, 0, camC)} 0)`}><CamaraVideo x={152} y={930} s={0.85} T={T} /></g>
+          <OjoPupila x={710} y={930} s={1.2} pup={pupC} parp={parpadeo(T, K.Cierre + 0.5)} id="c" />
+          {T > K.Cierre + 1.0 && <circle cx={710} cy={930} r={0.62 * 150 * 1.2 * pupC + 10} fill="none" stroke={KC.red} strokeWidth={6} strokeDasharray="12 8" />}
+          <Digitos T={T} at={K.Cierre + 1.4} x={540} y={1340} lista={DIG_G} sep={150} tam={124} />
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 3.4} until={K.Outro - 0.1} texto="tu esfuerzo se puede medir" x={560} y={600} tam={46} borde={KC.red} />
-        <Chip T={T} at={K.Cierre + 0.4} until={K.Cierre + 3.2} texto="dibujo exagerado" x={560} y={600} tam={30} borde={KC.ink} />
+        <Chip T={T} at={K.Cierre + 3.4} until={K.Outro - 0.1} texto="tu esfuerzo se puede medir" x={620} y={610} tam={46} borde={KC.red} />
+        <Chip T={T} at={K.Cierre + 0.4} until={K.Cierre + 3.2} texto="dibujo exagerado" x={700} y={610} tam={30} borde={KC.ink} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Pupila - 0.1} texto="Piensas fuerte: tu *pupila se agranda.*" />
