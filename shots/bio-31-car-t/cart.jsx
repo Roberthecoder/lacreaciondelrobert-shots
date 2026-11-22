@@ -21,8 +21,8 @@ function Bolsa({ T, x, y, s = 1, nivel = 0.8, color = '#ffd6e4', etiqueta = 'PAC
       {nivel > 0.05 && Array.from({ length: 14 }, (_, i) => <circle key={i} cx={-90 + (i * 47) % 180} cy={h / 2 - 20 - ((i * 53 + T * 30) % Math.max(liq - 20, 1))} r={9} fill={LT} stroke={LT_NUC} strokeWidth={3} opacity={0.75} />)}
     </g>
     <rect x={-92} y={top + 40} width={184} height={92} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={5} />
-    <text x={0} y={top + 80} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.ink}>{etiqueta}</text>
-    {etq2 && <text x={0} y={top + 114} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.pink}>{etq2}</text>}
+    <text x={0} y={top + 80} textAnchor="middle" style={{ font:`700 24px ${KF.mono}`, stroke:'none' }} fill="#0b1020">{etiqueta}</text>
+    {etq2 && <text x={0} y={top + 114} textAnchor="middle" style={{ font:`700 24px ${KF.mono}`, stroke:'none' }} fill="#b3125c">{etq2}</text>}
     <path d={`M -20 ${h / 2 - 8} L 20 ${h / 2 - 8} L 12 ${h / 2 + 30} L -12 ${h / 2 + 30} Z`} fill="#dfe6ef" stroke={KC.ink} strokeWidth={5} />
   </g>;
 }
@@ -99,7 +99,7 @@ function Aferesis({ T, x, y, s = 1, gira = 1 }) {
       <circle r={40} fill="#ffe08a" />
       {[0, 120, 240].map((d) => <circle key={d} cx={Math.cos(d * Math.PI / 180) * 52} cy={Math.sin(d * Math.PI / 180) * 52} r={12} fill={LT} stroke={KC.ink} strokeWidth={3} />)}
     </g>
-    <rect x={-120} y={120} width={240} height={40} rx={10} fill={KC.ink} />
+    <rect x={-120} y={120} width={240} height={40} rx={10} fill="#0b1020" />
     <circle cx={-80} cy={140} r={9} fill={KC.mint} /><circle cx={-50} cy={140} r={9} fill={KC.yellow} />
   </g>;
 }
@@ -122,9 +122,9 @@ function Nina({ x, y, s = 1, color = KC.violet }) {
     <path d="M -90 -80 Q 0 -110 90 -80 L 130 160 L -130 160 Z" fill={color} />
   </g>;
 }
-function TermometroT({ x, y, v = 0.3 }) {
+function TermometroT({ x, y, v = 0.3, s = 1 }) {
   const h = 420;
-  return <g transform={`translate(${x} ${y})`}>
+  return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-34} y={-h} width={68} height={h} rx={34} fill="#fff" stroke={KC.ink} strokeWidth={8} />
     <rect x={-16} y={-h * v} width={32} height={h * v} fill={mixHex('#ff8a1f', '#ff2d2d', v)} />
     <circle cx={0} cy={30} r={56} fill={mixHex('#ff8a1f', '#ff2d2d', v)} stroke={KC.ink} strokeWidth={8} />
@@ -132,9 +132,9 @@ function TermometroT({ x, y, v = 0.3 }) {
   </g>;
 }
 // Flecha de presión que cae.
-function FlechaPresion({ x, y, p = 0 }) {
-  const yy = y + p * 260;
-  return <g>
+function FlechaPresion({ x: x0, y: y0, p = 0, s = 1 }) {
+  const x = 0, y = 0, yy = y + p * 260;
+  return <g transform={`translate(${x0} ${y0}) scale(${s})`}>
     <line x1={x} y1={y} x2={x} y2={yy} stroke={KC.ink} strokeWidth={22} strokeLinecap="round" />
     <line x1={x} y1={y} x2={x} y2={yy} stroke={KC.cyan} strokeWidth={12} strokeLinecap="round" />
     <path d={`M ${x - 50} ${yy - 10} L ${x} ${yy + 60} L ${x + 50} ${yy - 10} Z`} fill={KC.cyan} stroke={KC.ink} strokeWidth={7} />
@@ -149,8 +149,8 @@ function Citocinas({ T, n = 40, f = 1, seed = 9, y0 = 560, y1 = 1400, bloqueadas
     return <g key={i} transform={`translate(${x + Math.sin(T * 2 + i) * 12} ${y})`}><circle r={13} fill={CITO} stroke={KC.ink} strokeWidth={3} opacity={1 - bloqueadas * 0.4} /><circle r={5} cx={-3} cy={-3} fill="#fff" opacity={0.6} /></g>; })}</g>;
 }
 // Receptor de IL-6 en la superficie (cerradura) y el tapón de tocilizumab.
-function ReceptorIL6({ x, y, tapon = 0, il6 = 0, T }) {
-  return <g transform={`translate(${x} ${y})`}>
+function ReceptorIL6({ x, y, tapon = 0, il6 = 0, T, s = 1 }) {
+  return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <path d="M -30 0 L -30 -60 Q -30 -80 -14 -80 L -14 -40 L 14 -40 L 14 -80 Q 30 -80 30 -60 L 30 0 Z" fill={KC.lilac} stroke={KC.ink} strokeWidth={5} />
     {il6 > 0 && tapon < 0.5 && <circle cx={0} cy={-56 - (1 - il6) * 80} r={13} fill={CITO} stroke={KC.ink} strokeWidth={3} />}
     {tapon > 0 && <g transform={`translate(0 ${-70 - (1 - tapon) * 160})`}>
@@ -159,8 +159,8 @@ function ReceptorIL6({ x, y, tapon = 0, il6 = 0, T }) {
     </g>}
   </g>;
 }
-function Sello({ x, y, p = 1, T }) {
-  const s = klerp(2.2, 1, kEase.rebote(p));
+function Sello({ x, y, p = 1, T, k = 1 }) {
+  const s = k * klerp(2.2, 1, kEase.rebote(p));
   return <g transform={`translate(${x} ${y}) scale(${s}) rotate(-10)`} opacity={kprog(p, 0, 0.3)}>
     <circle r={170} fill="none" stroke={KC.red} strokeWidth={14} />
     <circle r={140} fill="rgba(255,59,47,.08)" stroke={KC.red} strokeWidth={5} strokeDasharray="12 9" />
@@ -170,11 +170,27 @@ function Sello({ x, y, p = 1, T }) {
   </g>;
 }
 
+// La infusión (gancho, regreso a la vena y cierre: la misma imagen): poste, bolsa grande, manguera y brazo que cruza el cuadro.
+const NINA = '#5a3fb0';   // silueta: violeta un poco más claro para que se lea sobre el fondo oscuro
+const INF = { bx: 330, by: 710, bs: 1.5, ax: 430, ay: 1270, as: 1.2 };
+function Infusion({ T, nivel = 0.85, etiqueta, etq2, by = INF.by, manguera = true, children }) {
+  return <g>
+    <line x1={INF.bx} y1={305} x2={INF.bx} y2={1660} stroke="#9aa3b5" strokeWidth={22} />
+    <line x1={INF.bx - 120} y1={305} x2={INF.bx + 120} y2={305} stroke="#9aa3b5" strokeWidth={18} strokeLinecap="round" />
+    <Bolsa T={T} x={INF.bx} y={by} s={INF.bs} nivel={nivel} etiqueta={etiqueta} etq2={etq2} />
+    {manguera && <path d={`M ${INF.bx} 1020 Q ${INF.bx} 1160 400 1190 Q 446 1206 442 1266`} stroke="#dfe6ef" strokeWidth={16} fill="none" strokeLinecap="round" />}
+    {children}
+    <Brazo x={INF.ax} y={INF.ay} s={INF.as} T={T} />
+  </g>;
+}
+
 function CarT() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Sa: CUES.Saca, Vi: CUES.Virus, Re: CUES.Receptor, Ba: CUES.Bandera, Mu: CUES.Multiplica, Pr: CUES.Pregunta, Ca: CUES.Caza, Em: CUES.Emily, To: CUES.Tormenta, Ar: CUES.Artritis, Fd: CUES.FDA, Ho: CUES.Hoy, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
-  const PXMM = 220 / 0.007;           // linfocito T de ~7 µm dibujado con 220 px de diámetro
+  const LR1 = 165;                    // radio del linfocito T de la aféresis (pase cine: 1.5× más grande)
+  const PXMM = 2 * LR1 / 0.007;       // linfocito T de ~7 µm dibujado con 2·LR1 px de diámetro
+  const KCZ = 1.35;                   // la caza, agrandada (la barra de escala usa el mismo factor)
   // Multiplica: duplicaciones en el frasco
   const dup = Math.floor(kprog(T, K.Mu + 0.2, K.Mu + 2.8) * 6);
   // Caza: tiempos
@@ -188,40 +204,37 @@ function CarT() {
       <Escena T={T} a={K.G} b={K.Sa} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         <Capa>
-          <line x1={380} y1={470} x2={380} y2={1220} stroke="#9aa3b5" strokeWidth={18} />
-          <line x1={300} y1={470} x2={460} y2={470} stroke="#9aa3b5" strokeWidth={14} strokeLinecap="round" />
-          <Bolsa T={T} x={380} y={720} s={1.0} nivel={0.85} />
-          <path d={`M 380 930 Q 380 1000 470 1010 Q 560 1020 570 1060`} stroke="#dfe6ef" strokeWidth={14} fill="none" />
-          <Goteo T={T} x={380} y0={915} y1={965} cada={0.5} color="#ffd6e4" desde={K.G} hasta={K.Sa} r={10} />
-          <Brazo x={640} y={1090} s={0.8} T={T} />
+          <Infusion T={T} nivel={0.85} etiqueta="PACIENTE: TÚ">
+            <Goteo T={T} x={INF.bx} y0={1020} y1={1110} cada={0.5} color="#ffd6e4" desde={K.G} hasta={K.Sa} r={14} />
+          </Infusion>
         </Capa>
       </Escena>
       {/* 1 · te sacan sangre y separan los linfocitos T */}
       <Escena T={T} a={K.Sa} b={K.Vi} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          <Aferesis T={T} x={330} y={920} s={1.05} gira={1.4} />
-          <path d={`M 520 860 Q 640 820 700 900`} stroke={SANG} strokeWidth={14} fill="none" strokeDasharray="22 12" strokeDashoffset={-T * 80} />
-          <LinfocitoT T={T} x={800} y={1040} r={110} seed={1} o={kprog(T, K.Sa + 1.2, K.Sa + 1.8)} />
-          {[[640, 830], [880, 900]].map(([x, y], i) => <LinfocitoT key={i} T={T} x={x} y={y} r={60} seed={i + 3} o={kprog(T, K.Sa + 1.6 + i * 0.3, K.Sa + 2.2 + i * 0.3)} />)}
+          <Aferesis T={T} x={300} y={860} s={1.5} gira={1.4} />
+          <path d={`M 560 800 Q 700 900 760 1000`} stroke={SANG} strokeWidth={16} fill="none" strokeDasharray="22 12" strokeDashoffset={-T * 80} />
+          <LinfocitoT T={T} x={790} y={1150} r={LR1} seed={1} o={kprog(T, K.Sa + 0.5, K.Sa + 1.1)} />
+          {[[690, 640], [930, 800]].map(([x, y], i) => <LinfocitoT key={i} T={T} x={x} y={y} r={LR1 * 60 / 110} seed={i + 3} o={kprog(T, K.Sa + 1.6 + i * 0.3, K.Sa + 2.2 + i * 0.3)} />)}
         </Capa>
       </Escena>
       {/* 2 · un virus modificado les mete un gen */}
       <Escena T={T} a={K.Vi} b={K.Re} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          <LinfocitoT T={T} x={560} y={1000} r={170} seed={1} />
-          {(() => { const p = kprog(T, K.Vi + 0.2, K.Vi + 1.4, kEase.sale); const vx = klerp(1000, 780, p), vy = klerp(640, 840, p);
-            return <g><Lentivirus T={T} x={vx} y={vy} r={58} rot={T * 30} o={1 - kprog(T, K.Vi + 2.6, K.Vi + 3.2)} />
-              <TiraARN x0={vx - 30} y0={vy + 30} x1={600} y1={980} p={kprog(T, K.Vi + 1.5, K.Vi + 2.8)} /></g>; })()}
+          <LinfocitoT T={T} x={490} y={1030} r={260} seed={1} />
+          {(() => { const p = kprog(T, K.Vi + 0.2, K.Vi + 1.4, kEase.sale); const vx = klerp(960, 790, p), vy = klerp(560, 770, p);
+            return <g><Lentivirus T={T} x={vx} y={vy} r={92} rot={T * 30} o={1 - kprog(T, K.Vi + 2.6, K.Vi + 3.2)} />
+              <TiraARN x0={vx - 50} y0={vy + 50} x1={540} y1={1010} p={kprog(T, K.Vi + 1.5, K.Vi + 2.8)} /></g>; })()}
         </Capa>
       </Escena>
       {/* 3 · el receptor CAR · 4 · CD19, la bandera */}
       <Escena T={T} a={K.Re} b={K.Mu} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         <Capa>
-          <LinfocitoT T={T} x={T < K.Ba ? 540 : klerp(540, 330, kprog(T, K.Ba, K.Ba + 0.8, kEase.suave))} y={1000} r={T < K.Ba ? 170 : klerp(170, 130, kprog(T, K.Ba, K.Ba + 0.8))} seed={1} car={kprog(T, K.Re + 0.4, K.Re + 2.6)} brillo={kprog(T, K.Re + 2.4, K.Re + 3)} />
-          {T > K.Ba - 0.2 && <CelulaLeucemia T={T} x={klerp(1200, 790, kprog(T, K.Ba, K.Ba + 0.9, kEase.sale))} y={960} r={135} cd19={kprog(T, K.Ba + 0.6, K.Ba + 1.8)} />}
+          <LinfocitoT T={T} x={T < K.Ba ? 540 : klerp(540, 270, kprog(T, K.Ba, K.Ba + 0.8, kEase.suave))} y={980} r={T < K.Ba ? 250 : klerp(250, 175, kprog(T, K.Ba, K.Ba + 0.8))} seed={1} car={kprog(T, K.Re + 0.4, K.Re + 2.6)} brillo={kprog(T, K.Re + 2.4, K.Re + 3)} />
+          {T > K.Ba - 0.2 && <CelulaLeucemia T={T} x={klerp(1320, 800, kprog(T, K.Ba, K.Ba + 0.9, kEase.sale))} y={980} r={185} cd19={kprog(T, K.Ba + 0.6, K.Ba + 1.8)} />}
         </Capa>
         <Ambiente T={T} n={30} />
       </Escena>
@@ -229,21 +242,17 @@ function CarT() {
       <Escena T={T} a={K.Mu} b={K.Pr} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <Capa>
-          {T < K.Mu + 3.0 ? <Frasco T={T} x={520} y={980} s={1.25} n={2 * Math.pow(2, dup) + 2} />
-            : <g transform={`translate(0 ${-kprog(T, K.Mu + 3.0, K.Mu + 3.8, kEase.suave) * 0})`}>
-              <line x1={380} y1={470} x2={380} y2={1220} stroke="#9aa3b5" strokeWidth={18} />
-              <Bolsa T={T} x={380} y={klerp(1300, 720, kprog(T, K.Mu + 3.0, K.Mu + 3.7, kEase.sale))} s={1.05} nivel={0.85} etiqueta="TUS CÉLULAS" etq2="CAR-T" />
-              <Brazo x={700} y={1090} s={0.7} T={T} />
-            </g>}
+          {T < K.Mu + 3.0 ? <Frasco T={T} x={500} y={1000} s={1.7} n={2 * Math.pow(2, dup) + 2} />
+            : <Infusion T={T} nivel={0.85} etiqueta="TUS CÉLULAS" etq2="CAR-T" manguera={T > K.Mu + 3.6} by={klerp(1560, INF.by, kprog(T, K.Mu + 3.0, K.Mu + 3.7, kEase.sale))} />}
         </Capa>
       </Escena>
       {/* 6 · re-gancho: la Lupa entra a la vena */}
       <Escena T={T} a={K.Pr} b={K.Ca} zoom={0.03}>
         <FondoLunares color={KC.pink} />
-        <Capa><Brazo x={560} y={1060} s={1.0} T={T} /></Capa>
+        <Capa><Brazo x={INF.ax} y={INF.ay} s={INF.as} T={T} /></Capa>
       </Escena>
-      <Lupa T={T} at={K.Pr + 0.1} until={K.Ca + 0.1} x={420} y={720} r={230} fx={500} fy={1070} tinte={KC.mint} etiqueta="POR DENTRO · TU VENA"
-        interior={(t, r) => <svg width={r * 2} height={r * 2}>
+      <Lupa T={T} at={K.Pr + 0.1} until={K.Ca + 0.1} x={640} y={690} r={320} fx={442} fy={1276} tinte={KC.mint} etiqueta="POR DENTRO · TU VENA"
+        interior={(t, R2, r = 230) => <svg width={R2 * 2} height={R2 * 2} viewBox="0 0 460 460">
           <rect width={r * 2} height={r * 2} fill={KC.noche} />
           {[[90, 120], [400, 380], [380, 90]].map(([x, y], i) => <ellipse key={i} cx={x + Math.sin(t + i) * 10} cy={y} rx={50} ry={30} fill={SANG} opacity={0.6} />)}
           <LinfocitoT T={t} x={klerp(80, 170, kprog(t, K.Pr, K.Pr + 2))} y={r} r={70} car={1} seed={1} />
@@ -254,6 +263,7 @@ function CarT() {
         <FondoMarca patron="oscuro" />
         <Capa>
           {fondoCelulas.map(([x, y], i) => <ellipse key={i} cx={x + Math.sin(T * 0.8 + i) * 20} cy={y} rx={70} ry={42} fill={SANG} opacity={0.35} />)}
+          <g transform={`translate(540 980) scale(${KCZ}) translate(-540 -980)`}>
           <CelulaLeucemia T={T} x={720} y={980} r={135} rompe={rompe} />
           {divide < 0.05 ? <LinfocitoT T={T} x={klerp(260, 450, engancha)} y={980} r={120} car={1} seed={1} brillo={engancha} />
             : <g>
@@ -262,14 +272,15 @@ function CarT() {
               {T > K.Ca + 3.2 && <LinfocitoT T={T} x={760} y={820} r={kprog(T, K.Ca + 3.2, K.Ca + 3.8) * 90} car={1} seed={3} />}
             </g>}
           {engancha > 0.95 && rompe < 0.2 && <text x={590} y={850} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={5}>¡CLIC!</text>}
+          </g>
         </Capa>
         <Ambiente T={T} n={26} />
       </Escena>
       {/* 8 · Emily, 2012 */}
       <Escena T={T} a={K.Em} b={K.To} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        <Capa><Nina x={540} y={1150} s={1.3} color={KC.violet} />
-          <circle cx={540} cy={910} r={240 + Math.sin(T * 2) * 6} fill="none" stroke="#fff" strokeWidth={6} strokeDasharray="16 14" strokeDashoffset={T * 30} opacity={0.6} /></Capa>
+        <Capa><Nina x={540} y={1180} s={1.7} color={NINA} />
+          <circle cx={540} cy={866} r={310 + Math.sin(T * 2) * 6} fill="none" stroke="#fff" strokeWidth={6} strokeDasharray="16 14" strokeDashoffset={T * 30} opacity={0.6} /></Capa>
       </Escena>
       {/* 9 · la tormenta de citocinas · 10 · el tocilizumab */}
       <Escena T={T} a={K.To} b={K.Fd} zoom={0.03}>
@@ -277,13 +288,15 @@ function CarT() {
         <Capa>
           <Citocinas T={T} n={46} f={kprog(T, K.To + 0.2, K.To + 2.0) * (1 - baja * 0.4)} />
           {T < K.Ar ? <g>
-              <TermometroT x={220} y={1130} v={klerp(0.35, 0.95, fiebre)} />
-              <FlechaPresion x={560} y={760} p={kprog(T, K.To + 1.2, K.To + 3.0, kEase.suave)} />
+              {/* (pase cine: la paciente sigue en cuadro, atenuada, entre la fiebre y la presión) */}
+              <g opacity={0.4}><Nina x={540} y={1180} s={1.7} color={NINA} /></g>
+              <TermometroT x={170} y={1260} s={1.6} v={klerp(0.35, 0.95, fiebre)} />
+              <FlechaPresion x={860} y={720} s={1.5} p={kprog(T, K.To + 1.2, K.To + 3.0, kEase.suave)} />
             </g>
             : <g>
-              <rect x={60} y={1100} width={960} height={70} rx={30} fill={KC.lilac} opacity={0.35} stroke={KC.ink} strokeWidth={5} />
-              {[160, 340, 520, 700, 880].map((x, i) => <ReceptorIL6 key={i} T={T} x={x} y={1100} tapon={kprog(T, K.Ar + 0.3 + i * 0.15, K.Ar + 0.8 + i * 0.15, kEase.sale)} il6={1} />)}
-              <TermometroT x={900} y={960} v={klerp(0.95, 0.4, baja)} />
+              <rect x={-100} y={1320} width={1280} height={110} rx={30} fill={KC.lilac} opacity={0.35} stroke={KC.ink} strokeWidth={5} />
+              {[100, 280, 460, 640, 820].map((x, i) => <ReceptorIL6 key={i} T={T} x={x} y={1320} s={1.9} tapon={kprog(T, K.Ar + 0.3 + i * 0.15, K.Ar + 0.8 + i * 0.15, kEase.sale)} il6={1} />)}
+              <TermometroT x={950} y={850} s={1.4} v={klerp(0.95, 0.4, baja)} />
             </g>}
         </Capa>
       </Escena>
@@ -291,68 +304,66 @@ function CarT() {
       <Escena T={T} a={K.Fd} b={K.Ho} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <Capa>
-          {[[200, 1080, 1], [400, 1150, 2], [600, 1060, 3]].map(([x, y, s], i) => <CelulaLeucemia key={i} T={T} x={x} y={y} r={70} seed={s} rompe={kprog(T, K.Fd + 0.2 + i * 0.25, K.Fd + 1.0 + i * 0.25)} />)}
-          <Sello T={T} x={300} y={800} p={kprog(T, K.Fd + 1.6, K.Fd + 2.2)} />
+          {/* (pase cine: lo que se aprueba es la terapia; la bolsa de células CAR-T está en cuadro toda la escena) */}
+          <Bolsa T={T} x={300} y={900} s={1.45} nivel={0.85} etiqueta="TUS CÉLULAS" etq2="CAR-T" />
+          {[[650, 740, 1], [870, 930, 2], [680, 1120, 3]].map(([x, y, s], i) => <CelulaLeucemia key={i} T={T} x={x} y={y} r={100} seed={s} rompe={kprog(T, K.Fd + 0.2 + i * 0.25, K.Fd + 1.0 + i * 0.25)} />)}
+          <Sello T={T} x={730} y={930} k={1.35} p={kprog(T, K.Fd + 1.6, K.Fd + 2.2)} />
         </Capa>
       </Escena>
       {/* 12 · 2012 → 2025 */}
       <Escena T={T} a={K.Ho} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <Capa>
-          {(() => { const p = kprog(T, K.Ho + 0.3, K.Ho + 2.4, kEase.suave); const x0 = 120, x1 = 960; return <g>
-            <line x1={x0} y1={1060} x2={x1} y2={1060} stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
-            <line x1={x0} y1={1060} x2={klerp(x0, x1, p)} y2={1060} stroke={KC.mint} strokeWidth={10} strokeLinecap="round" />
-            {Array.from({ length: 14 }, (_, i) => { const x = klerp(x0, x1, i / 13); return <circle key={i} cx={x} cy={1060} r={i / 13 <= p ? 16 : 10} fill={i / 13 <= p ? KC.mint : '#fff'} stroke={KC.ink} strokeWidth={4} />; })}
-            <text x={x0} y={1150} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink}>2012</text>
-            <text x={x1} y={1150} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(p, 0.9, 1)}>2025</text>
-            <Nina x={klerp(x0, x1, p)} y={985} s={0.35} color={KC.violet} />
+          {(() => { const p = kprog(T, K.Ho + 0.3, K.Ho + 2.4, kEase.suave); const x0 = 140, x1 = 940, yl = 1250; return <g>
+            <line x1={x0} y1={yl} x2={x1} y2={yl} stroke={KC.ink} strokeWidth={20} strokeLinecap="round" />
+            <line x1={x0} y1={yl} x2={klerp(x0, x1, p)} y2={yl} stroke={KC.mint} strokeWidth={12} strokeLinecap="round" />
+            {Array.from({ length: 14 }, (_, i) => { const x = klerp(x0, x1, i / 13); return <circle key={i} cx={x} cy={yl} r={i / 13 <= p ? 20 : 13} fill={i / 13 <= p ? KC.mint : '#fff'} stroke={KC.ink} strokeWidth={4} />; })}
+            <text x={x0 + 20} y={yl + 120} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink}>2012</text>
+            <text x={x1 - 20} y={yl + 120} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(p, 0.9, 1)}>2025</text>
+            <Nina x={klerp(x0, x1, p)} y={yl - 152} s={0.8} color={NINA} />
           </g>; })()}
         </Capa>
-        <NumeroGigante T={T} at={K.Ho + 0.6} until={K.Ci - 0.2} valor={13} dur={1.8} sufijo=" años" etiqueta="sin cáncer (dato de 2025)" y={800} tam={190} color={KC.mint} />
+        <NumeroGigante T={T} at={K.Ho + 0.6} until={K.Ci - 0.2} valor={13} dur={1.8} sufijo=" años" etiqueta="sin cáncer (dato de 2025)" y={620} tam={210} color={KC.mint} />
       </Escena>
       {/* 13 · cierre: la bolsa del inicio, ya vacía */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         <Capa>
-          <line x1={380} y1={470} x2={380} y2={1220} stroke="#9aa3b5" strokeWidth={18} />
-          <line x1={300} y1={470} x2={460} y2={470} stroke="#9aa3b5" strokeWidth={14} strokeLinecap="round" />
-          <Bolsa T={T} x={380} y={720} s={1.0} nivel={klerp(0.5, 0.04, kprog(T, K.Ci, K.Ci + 3))} etiqueta="TUS CÉLULAS" etq2="CAR-T" />
-          <path d={`M 380 930 Q 380 1000 470 1010 Q 560 1020 570 1060`} stroke="#dfe6ef" strokeWidth={14} fill="none" />
-          <Brazo x={640} y={1090} s={0.8} T={T} />
-          <LinfocitoT T={T} x={760} y={860} r={70} car={1} seed={2} brillo={0.6} o={kprog(T, K.Ci + 0.8, K.Ci + 1.4)} />
+          <Infusion T={T} nivel={klerp(0.5, 0.04, kprog(T, K.Ci, K.Ci + 3))} etiqueta="TUS CÉLULAS" etq2="CAR-T" />
+          <LinfocitoT T={T} x={800} y={850} r={130} car={1} seed={2} brillo={0.6} o={kprog(T, K.Ci + 0.3, K.Ci + 0.9)} />
         </Capa>
       </Escena>
 
       {/* textos y etiquetas */}
-      <Chip T={T} at={K.G + 2.4} until={K.Sa - 0.3} texto="terapia CAR-T" x={380} y={420} tam={48} borde={KC.mint} />
-      <Etq T={T} at={K.Sa + 1.4} until={K.Vi - 0.3} x={680} y={1180} texto="linfocito T" lado="izq" tam={36} color={KC.ink} />
-      <Chip T={T} at={K.Sa + 0.4} until={K.Vi - 0.3} texto="aféresis: separa la sangre" x={330} y={1500} tam={34} borde={SANG} />
-      {T > K.Sa && T < K.Vi && <Escala T={T} z={1} pxPorMm={PXMM * 110 / 110} x={720} y={1440} color={KC.ink} />}
-      {T > K.Ca && T < K.Em && <Escala T={T} z={1} pxPorMm={240 / 0.007} x={60} y={1440} />}
-      <Etq T={T} at={K.Vi + 0.6} until={K.Re - 0.3} x={1040} y={560} texto="lentivirus (no a escala)" lado="izq" tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Vi + 1.2} until={K.Re - 0.2} texto="virus modificado: ya no enferma" x={540} y={1500} tam={36} borde={KC.orange} />
-      <Chip T={T} at={K.Vi + 1.2} until={K.Re - 0.2} texto="solo entrega el gen" x={540} y={1600} tam={36} borde={KC.orange} />
-      <Etq T={T} at={K.Re + 1.4} until={K.Ba - 0.2} x={560} y={740} texto="CAR: receptor quimérico" lado="der" tam={26} color={CARC} />
-      <Etq T={T} at={K.Ba + 1.2} until={K.Mu - 0.2} x={700} y={760} texto="CD19" lado="der" tam={40} color={CD19C} />
-      <Etq T={T} at={K.Ba + 0.8} until={K.Mu - 0.2} x={60} y={800} texto="linfocito T con CAR" lado="der" tam={30} color={CARC} />
-      <Chip T={T} at={K.Ba + 0.9} until={K.Mu - 0.2} texto="célula de leucemia B" x={540} y={1500} tam={38} borde={LEU} />
-      <Chip T={T} at={K.Ba + 1.8} until={K.Mu - 0.2} texto="también la tienen los linfocitos B sanos" x={540} y={1610} tam={28} borde={CD19C} />
-      {T > K.Mu + 0.2 && T < K.Mu + 3.0 && <div style={{ position:'absolute', left:540, top:1500, transform:'translate(-50%,-50%)', zIndex:41, textAlign:'center',
-        font:`900 40px ${KF.texto}`, color:KC.ink, background:'rgba(255,255,255,.85)', border:`4px solid ${KC.ink}`, borderRadius:24, padding:'10px 28px', whiteSpace:'nowrap' }}>
+      <Chip T={T} at={K.G + 2.4} until={K.Sa - 0.3} texto="terapia CAR-T" x={800} y={590} tam={48} borde={KC.mint} />
+      <Etq T={T} at={K.Sa + 1.4} until={K.Vi - 0.3} x={640} y={1290} texto="linfocito T" lado="izq" tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Sa + 0.4} until={K.Vi - 0.3} texto="aféresis: separa la sangre" x={330} y={1440} tam={34} borde={SANG} />
+      {T > K.Sa && T < K.Vi && <Escala T={T} z={1} pxPorMm={PXMM} x={720} y={1440} color={KC.ink} />}
+      {T > K.Ca && T < K.Em && <Escala T={T} z={1} pxPorMm={240 * KCZ / 0.007} x={60} y={1440} />}
+      <Etq T={T} at={K.Vi + 0.6} until={K.Re - 0.3} x={1040} y={400} texto="lentivirus (no a escala)" lado="izq" tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Vi + 1.2} until={K.Re - 0.2} texto="virus modificado: ya no enferma" x={540} y={1440} tam={36} borde={KC.orange} />
+      <Chip T={T} at={K.Vi + 1.2} until={K.Re - 0.2} texto="solo entrega el gen" x={540} y={1535} tam={36} borde={KC.orange} />
+      <Etq T={T} at={K.Re + 1.4} until={K.Ba - 0.2} x={585} y={640} texto="CAR: receptor quimérico" lado="der" tam={28} color={CARC} />
+      <Etq T={T} at={K.Ba + 1.2} until={K.Mu - 0.2} x={810} y={705} texto="CD19" lado="der" tam={40} color={CD19C} />
+      <Etq T={T} at={K.Ba + 0.8} until={K.Mu - 0.2} x={60} y={705} texto="linfocito T con CAR" lado="der" tam={30} color={CARC} />
+      <Chip T={T} at={K.Ba + 0.9} until={K.Mu - 0.2} texto="célula de leucemia B" x={540} y={1410} tam={38} borde={LEU} />
+      <Chip T={T} at={K.Ba + 1.8} until={K.Mu - 0.2} texto="también la tienen los linfocitos B sanos" x={540} y={1510} tam={28} borde={CD19C} />
+      {T > K.Mu + 0.2 && T < K.Mu + 3.0 && <div style={{ position:'absolute', left:540, top:1480, transform:'translate(-50%,-50%)', zIndex:41, textAlign:'center',
+        font:`900 40px ${KF.texto}`, color:KC.texto, background:'rgba(16,23,40,.9)', border:`4px solid ${KC.mint}`, borderRadius:24, padding:'10px 28px', whiteSpace:'nowrap' }}>
         tus linfocitos T → {T < K.Mu + 2.6 ? '×2 ×2 ×2…' : 'cientos de millones'}</div>}
-      <Chip T={T} at={K.Mu + 2.8} until={K.Pr - 0.2} texto="cientos de millones de células" x={540} y={1500} tam={36} borde={KC.mint} />
-      <Chip T={T} at={K.Ca + 3.0} until={K.Em - 0.2} texto="fármaco vivo" x={540} y={1500} tam={54} borde={KC.mint} />
-      <Etq T={T} at={K.Ca + 0.4} until={K.Ca + 1.4} x={720} y={760} texto="CD19" lado="der" tam={36} color={CD19C} />
-      <TarjetaEstudio T={T} at={K.Em + 0.2} until={K.To - 0.3} anio="2012" quien="Hospital de Niños de Filadelfia" revista="ensayo clínico fase 1/2 · Emily, 6 años" y={560} />
-      <Chip T={T} at={K.Em + 2.8} until={K.To - 0.3} texto="leucemia linfoblástica aguda que regresó" x={540} y={1500} tam={30} borde={LEU} />
-      <Chip T={T} at={K.Em + 4.4} until={K.To - 0.3} texto="silueta esquemática" x={540} y={1600} tam={26} borde="#ffffff" mono />
-      <Chip T={T} at={K.To + 0.6} until={K.Ar - 0.2} texto="síndrome de liberación de citocinas" x={540} y={1500} tam={32} borde={CITO} />
-      <Etq T={T} at={K.To + 1.0} until={K.Ar - 0.2} x={300} y={620} texto="citocinas" lado="der" tam={34} color={CITO} />
+      <Chip T={T} at={K.Mu + 2.8} until={K.Pr - 0.2} texto="cientos de millones de células" x={540} y={1560} tam={36} borde={KC.mint} />
+      <Chip T={T} at={K.Ca + 3.0} until={K.Em - 0.2} texto="fármaco vivo" x={540} y={1480} tam={54} borde={KC.mint} />
+      <Etq T={T} at={K.Ca + 0.4} until={K.Ca + 1.4} x={790} y={690} texto="CD19" lado="der" tam={36} color={CD19C} />
+      <TarjetaEstudio T={T} at={K.Em + 0.2} until={K.To - 0.3} anio="2012" quien="Hospital de Niños de Filadelfia" revista="ensayo clínico fase 1/2 · Emily, 6 años" y={420} />
+      <Chip T={T} at={K.Em + 2.8} until={K.To - 0.3} texto="leucemia linfoblástica aguda que regresó" x={540} y={1520} tam={30} borde={LEU} />
+      <Chip T={T} at={K.Em + 4.4} until={K.To - 0.3} texto="silueta esquemática" x={540} y={1605} tam={26} borde="#ffffff" mono />
+      <Chip T={T} at={K.To + 0.6} until={K.Ar - 0.2} texto="síndrome de liberación de citocinas" x={540} y={1520} tam={32} borde={CITO} />
+      <Etq T={T} at={K.To + 1.0} until={K.Ar - 0.2} x={330} y={600} texto="citocinas" lado="der" tam={34} color={CITO} />
       <Chip T={T} at={K.Ar + 0.4} until={K.Fd - 0.2} texto="tocilizumab · bloquea el receptor de la IL-6" x={540} y={1500} tam={28} borde="#7ad7ff" />
-      <Chip T={T} at={K.Ar + 0.4} until={K.Fd - 0.2} texto="(un medicamento para la artritis)" x={540} y={1600} tam={28} borde="#7ad7ff" />
-      <Etq T={T} at={K.Ar + 1.0} until={K.Fd - 0.2} x={130} y={880} texto="IL-6 sin dónde engancharse" lado="der" tam={28} color={CITO} />
-      <Chip T={T} at={K.Fd + 2.2} until={K.Ho - 0.2} texto="Kymriah (tisagenlecleucel)" x={540} y={1500} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="tus células, cazando" x={540} y={1500} tam={46} borde={KC.mint} />
+      <Chip T={T} at={K.Ar + 0.4} until={K.Fd - 0.2} texto="(un medicamento para la artritis)" x={540} y={1585} tam={28} borde="#7ad7ff" />
+      <Etq T={T} at={K.Ar + 1.0} until={K.Fd - 0.2} x={70} y={1010} texto="IL-6 sin dónde engancharse" lado="der" tam={28} color={CITO} />
+      <Chip T={T} at={K.Fd + 2.2} until={K.Ho - 0.2} texto="Kymriah (tisagenlecleucel)" x={540} y={1440} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="tus células, cazando" x={540} y={1560} tam={46} borde={KC.mint} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Sa - 0.1} texto="No es un medicamento común: *son tus células.*" />
