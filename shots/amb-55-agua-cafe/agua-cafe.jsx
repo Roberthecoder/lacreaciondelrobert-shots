@@ -147,86 +147,89 @@ function AguaCafeShot() {
   const capasFin = [{ f: fV, color: VERDE }, { f: fA, color: AZUL, min: 8 }, { f: fGr, color: GRIS }];
   // Gotas: 30 × 34 = 1,020 gotitas que aparecen en 2 s
   const nGotas = Math.floor(1020 * kprog(T, K.Go + 0.2, K.Go + 2.2, kEase.suave));
-  const mapaS = 0.64, mx = (lon, lat) => { const [a, b] = mxProy(lon, lat); return [300 + a * mapaS, 340 + b * mapaS]; };
+  const mapaS = 0.82, mx = (lon, lat) => { const [a, b] = mxProy(lon, lat); return [130 + a * mapaS, 300 + b * mapaS]; };
   const poli = (pts) => pts.map(([a, b]) => mx(a, b).map((v) => v.toFixed(1)).join(',')).join(' ');
-  const lit = (l) => 380 * l / 200; // alto de garrafón por litros (Mexico)
+  const lit = (l) => 470 * l / 200; // alto de garrafón por litros (Mexico)
+  // mesa oscura donde se apoyan la taza y el garrafón (gancho y cierre)
+  const mesa = <><rect x={-200} y={1400} width={KW + 400} height={KH} fill="#2b1d14" /><path d={`M -200 1400 L ${KW + 200} 1400`} stroke="#6b4a2b" strokeWidth={8} />
+    {[1500, 1640, 1800].map((yy, i) => <path key={i} d={`M -200 ${yy} Q 400 ${yy - 18 + i * 10} ${KW + 200} ${yy + 6}`} stroke="#3a281b" strokeWidth={6} fill="none" />)}</>;
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: la taza de 125 mL y el garrafón de 130 L detrás */}
       <Escena T={T} a={K.G} b={K.Gr}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Garrafon x={430} y={1170} w={320} h={600} capas={[{ f: 0.9, color: AZUL }]} lleno={llenoG} id="gg" />
-          <Taza T={T} x={170} y={1170} s={0.75} /></>)}
+        {svg(<>{mesa}<Garrafon x={670} y={1440} w={560} h={940} capas={[{ f: 0.9, color: AZUL }]} lleno={llenoG} id="gg" />
+          <Taza T={T} x={330} y={1470} s={1.4} /></>)}
       </Escena>
       {/* 2 · los 7 g de café y la rama del cafeto */}
       <Escena T={T} a={K.Gr} b={K.Ll}>
         <FondoLunares color={KC.mint} />
         {svg(<>
           {Array.from({ length: 9 }, (_, i) => { const t0 = K.Gr + 0.2 + i * 0.12, u = kprog(T, t0, t0 + 0.5, (p) => p * p);
-            return <Grano key={i} x={150 + (i % 3) * 40} y={klerp(380, 1000 - Math.floor(i / 3) * 26, u)} rot={i * 47 + T * 30 * (1 - u)} s={0.9} />; })}
-          <Taza T={T} x={190} y={1170} s={0.6} vapor={false} />
-          <Rama T={T} x={330} y={900} largo={720} crece={kprog(T, K.Gr + 2.0, K.Gr + 4.0, kEase.sale)} nudos={4} hoja={140} />
+            return <Grano key={i} x={190 + (i % 3) * 62} y={klerp(520, 1195 - Math.floor(i / 3) * 40, u)} rot={i * 47 + T * 30 * (1 - u)} s={1.45} />; })}
+          <Taza T={T} x={250} y={1440} s={1.1} vapor={false} />
+          <g transform="translate(340 800) scale(1.9)"><Rama T={T} x={0} y={0} largo={440} crece={kprog(T, K.Gr + 2.0, K.Gr + 4.0, kEase.sale)} nudos={3} hoja={150} /></g>
         </>)}
       </Escena>
       {/* 3 · la lluvia: el cafetal la toma del suelo y la devuelve al aire */}
       <Escena T={T} a={K.Ll} b={K.Ri}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <rect x={0} y={1060} width={KW} height={300} fill="#4a3428" />
-          <path d={`M 0 1060 Q 270 1040 540 1060 T 1080 1060`} fill="none" stroke={KC.ink} strokeWidth={8} />
-          <Nube T={T} x={690} y={430} s={1} llueve={kprog(T, K.Ll + 0.2, K.Ll + 0.6)} largo={260} />
-          <Cafeto T={T} x={700} y={1060} s={1.05} />
-          {[0, 0.33, 0.66].map((f, i) => <Vapor key={i} T={T} x={560 + i * 140} y={720} fase={f} />)}
-          <Garrafon x={200} y={1170} w={260} h={520} capas={[{ f: fV, color: VERDE }]} lleno={llenoV} id="gl" />
+          <rect x={-200} y={1250} width={KW + 400} height={KH} fill="#4a3428" />
+          <path d={`M -200 1250 Q 270 1230 540 1250 T 1280 1250`} fill="none" stroke={KC.ink} strokeWidth={8} />
+          <Nube T={T} x={740} y={440} s={1.5} llueve={kprog(T, K.Ll + 0.2, K.Ll + 0.6)} largo={190} />
+          <Cafeto T={T} x={740} y={1250} s={1.6} />
+          {[0, 0.33, 0.66].map((f, i) => <g key={i} transform={`translate(${490 + i * 250} 760) scale(1.4)`}><Vapor T={T} x={0} y={0} fase={f} /></g>)}
+          <Garrafon x={192} y={1362} w={325} h={650} capas={[{ f: fV, color: VERDE }]} lleno={llenoV} id="gl" />
         </>)}
       </Escena>
       {/* 4 · menos de 1 L de riego y unos 4 L de agua gris */}
       <Escena T={T} a={K.Ri} b={K.P}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<>
-          <path d="M 420 820 L 1080 980 L 1080 1200 L 420 1200 Z" fill="#a0703f" stroke={KC.ink} strokeWidth={7} />
-          <path d="M 420 1150 Q 700 1120 1080 1160 L 1080 1200 L 420 1200 Z" fill={mixHex(AZUL, GRIS, gris * 0.6)} stroke={KC.ink} strokeWidth={6} />
-          {Array.from({ length: 10 }, (_, i) => { const u = kclamp((T - K.Ri - 2.4 - i * 0.12) / 1.4, 0, 1); const xx = 480 + i * 55 + u * 60;
-            return <circle key={i} cx={xx} cy={klerp(830 + i * 14, 1140, u)} r={9} fill="#fff" stroke={KC.ink} strokeWidth={3} opacity={T > K.Ri + 2.4 ? 1 : 0} />; })}
+        {svg(<g transform="translate(-82.5 -100) scale(1.25)">
+          <path d="M 420 820 L 1280 1028 L 1280 1200 L 420 1200 Z" fill="#a0703f" stroke={KC.ink} strokeWidth={7} />
+          <path d="M 420 1150 Q 700 1120 1080 1160 L 1280 1165 L 1280 1200 L 420 1200 Z" fill={mixHex(AZUL, GRIS, gris * 0.6)} stroke={KC.ink} strokeWidth={6} />
+          {Array.from({ length: 10 }, (_, i) => { const u = kclamp((T - K.Ri - 2.4 - i * 0.12) / 1.4, 0, 1); const xx = 480 + i * 42 + u * 50;
+            return <circle key={i} cx={xx} cy={klerp(830 + i * 10.2, 1140, u)} r={9} fill="#fff" stroke={KC.ink} strokeWidth={3} opacity={T > K.Ri + 2.4 ? 1 : 0} />; })}
           <Garrafon x={220} y={1170} w={260} h={520} capas={[{ f: fV, color: VERDE }, { f: fA * azul, color: AZUL, min: 8 * azul }, { f: fGr * gris, color: GRIS }]} lleno={1} id="gr" />
           <path d={`M 560 700 L 560 ${700 + 110 * azul}`} stroke={AZUL} strokeWidth={14} strokeLinecap="round" opacity={azul} />
           <g opacity={azul}><rect x={500} y={660} width={120} height={46} rx={10} fill="#7d8792" stroke={KC.ink} strokeWidth={6} /></g>
-        </>)}
+        </g>)}
         <EscalaFija texto="esquema (franjas aumentadas)" largo={0} y={1440} color={KC.ink} />
       </Escena>
       {/* 5 · pregunta: ¿y el café de México? */}
       <Escena T={T} a={K.P} b={K.M} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><MapaMexico x={40} y={760} ancho={560} conCA={false} />
-          <text x={260} y={760} textAnchor="middle" style={{ font:`400 380px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 260 620)`}>?</text></>)}
+        {svg(<><MapaMexico x={130} y={300} ancho={820} conCA={false} />
+          <text x={840} y={590} textAnchor="middle" style={{ font:`400 330px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 840 470)`}>?</text></>)}
       </Escena>
       {/* 6 · Chiapas y Veracruz: casi 200 litros por taza */}
       <Escena T={T} a={K.M} b={K.Re}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
-          <MapaMexico x={300} y={340} ancho={640} conCA={false} />
+          <MapaMexico x={130} y={300} ancho={820} conCA={false} />
           <polygon points={poli(VERACRUZ)} fill={KC.orange} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.M + 0.4, K.M + 0.9)} />
           <polygon points={poli(CHIAPAS)} fill={KC.pink} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.M + 0.2, K.M + 0.7)} />
-          <Garrafon x={330} y={1180} w={200} h={lit(130) * kprog(T, K.M + 2.4, K.M + 3.0, kEase.sale) + 1} capas={[{ f: 0.92, color: VERDE }]} lleno={1} id="gm1" />
-          <Garrafon x={720} y={1180} w={200} h={lit(197) * kprog(T, K.M + 3.4, K.M + 4.2, kEase.sale) + 1} capas={[{ f: 0.92, color: VERDE }]} lleno={1} id="gm2" />
+          <Garrafon x={330} y={1370} w={270} h={lit(130) * kprog(T, K.M + 2.4, K.M + 3.0, kEase.sale) + 1} capas={[{ f: 0.92, color: VERDE }]} lleno={1} id="gm1" />
+          <Garrafon x={750} y={1370} w={270} h={lit(197) * kprog(T, K.M + 3.4, K.M + 4.2, kEase.sale) + 1} capas={[{ f: 0.92, color: VERDE }]} lleno={1} id="gm2" />
         </>)}
       </Escena>
       {/* 7 · menos café por hectárea: la misma agua entre menos granos */}
       <Escena T={T} a={K.Re} b={K.E}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <Nube T={T} x={280} y={720} s={0.7} largo={140} />
-          <Nube T={T} x={780} y={720} s={0.7} largo={140} />
-          <Parcela x={280} y={980} /><Parcela x={780} y={980} />
-          <Costal x={280} y={1195} s={kprog(T, K.Re + 1.6, K.Re + 2.4, kEase.rebote) * 0.95 + 0.01} etiqueta="0.80 t/ha" />
-          <Costal x={780} y={1195} s={kprog(T, K.Re + 2.4, K.Re + 3.2, kEase.rebote) * 0.95 * Math.sqrt(0.46 / 0.80) + 0.01} etiqueta="0.46 t/ha" />
+          <Nube T={T} x={275} y={520} s={0.9} largo={215} />
+          <Nube T={T} x={805} y={520} s={0.9} largo={215} />
+          <g transform="translate(275 900) scale(1.3)"><Parcela x={0} y={0} /></g><g transform="translate(805 900) scale(1.3)"><Parcela x={0} y={0} /></g>
+          <Costal x={275} y={1310} s={kprog(T, K.Re + 1.6, K.Re + 2.4, kEase.rebote) * 1.35 + 0.01} etiqueta="0.80 t/ha" />
+          <Costal x={805} y={1310} s={kprog(T, K.Re + 2.4, K.Re + 3.2, kEase.rebote) * 1.35 * Math.sqrt(0.46 / 0.80) + 0.01} etiqueta="0.46 t/ha" />
         </>)}
         <EscalaFija texto="esquema" largo={0} y={1440} color={KC.ink} />
       </Escena>
       {/* 8 · el estudio: el mundo en cuadritos, datos 1996–2005 */}
       <Escena T={T} a={K.E} b={K.Go}>
         <FondoLunares color={KC.cyan} />
-        {svg(<g transform="translate(330 350) scale(0.8)">
+        {svg(<g transform="translate(85 770) scale(1)">
           <rect x={-10} y={-10} width={920} height={395} rx={18} fill="#0d1424" stroke={KC.ink} strokeWidth={7} />
           {MUNDO.map((fila, r) => fila.split('').map((c, k) => { const on = c === '#'; const t0 = K.E + 0.3 + k * 0.05; const p = kprog(T, t0, t0 + 0.4);
             return <rect key={r + '-' + k} x={k * 25 + 1} y={r * 25 + 1} width={23} height={23} rx={3}
@@ -237,43 +240,43 @@ function AguaCafeShot() {
       <Escena T={T} a={K.Go} b={K.C}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {svg(<>
-          <path d="M 0 -70 Q 52 0 0 52 Q -52 0 0 -70 Z" transform="translate(190 820) scale(1.6)" fill={CAFE} stroke={KC.ink} strokeWidth={5} />
+          <path d="M 0 -70 Q 52 0 0 52 Q -52 0 0 -70 Z" transform="translate(300 1350) scale(1.9)" fill={CAFE} stroke={KC.ink} strokeWidth={5} />
           {Array.from({ length: nGotas }, (_, i) => { const c = i % 30, r = Math.floor(i / 30);
-            return <path key={i} d="M 0 -9 Q 7 0 0 7 Q -7 0 0 -9 Z" transform={`translate(${380 + c * 21} ${420 + r * 22})`} fill={AZUL} />; })}
+            return <path key={i} d="M 0 -9 Q 7 0 0 7 Q -7 0 0 -9 Z" transform={`translate(${76 + c * 32} ${300 + r * 26}) scale(1.3)`} fill={AZUL} />; })}
         </>)}
       </Escena>
       {/* 10 · cierre: la misma taza, ahora con lluvia encima */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><Garrafon x={430} y={1170} w={320} h={600} capas={capasFin} lleno={1} id="gc" />
-          <Nube T={T} x={190} y={640} s={0.6} llueve={kprog(T, K.C + 0.5, K.C + 1.0)} largo={180} />
-          <Taza T={T} x={170} y={1170} s={0.75} /></>)}
+        {svg(<>{mesa}<Garrafon x={670} y={1440} w={560} h={940} capas={capasFin} lleno={1} id="gc" />
+          <Nube T={T} x={300} y={610} s={1.05} llueve={kprog(T, K.C + 0.5, K.C + 1.0)} largo={260} />
+          <Taza T={T} x={330} y={1470} s={1.4} /></>)}
       </Escena>
 
       {/* datos y etiquetas */}
-      <Chip T={T} at={K.G + 0.1} until={K.Gr - 0.2} texto="125 mL" x={170} y={1080} tam={36} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.G + 1.0} until={K.Gr - 0.2} valor={130} dur={2.0} prefijo="≈" sufijo=" L" etiqueta="agua detrás:" x={300} y={470} tam={150} color={KC.cyan} />
-      <Chip T={T} at={K.Gr + 0.4} until={K.Ll - 0.2} texto="7 g de café tostado" x={330} y={470} tam={36} borde={CAFE} />
-      <Etq T={T} at={K.Gr + 3.2} until={K.Ll - 0.2} x={600} y={720} texto="cafeto" lado="der" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Gr + 3.6} until={K.Ll - 0.2} x={600} y={1060} texto="Coffea arabica" it lado="der" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Ll + 2.4} until={K.Ri - 0.2} texto="127 L · agua de lluvia" x={330} y={470} tam={36} borde={VERDE} />
-      <Etq T={T} at={K.Ri + 0.8} until={K.P - 0.2} x={630} y={683} texto="< 1 L · riego" lado="der" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.Ri + 2.8} until={K.P - 0.2} x={600} y={605} texto="≈ 4 L · agua gris" lado="izq" tam={34} color={KC.ink} />
-      <Chip T={T} at={K.Ri + 3.4} until={K.P - 0.2} texto="diluir el fertilizante" x={330} y={430} tam={30} borde={GRIS} />
-      <Etq T={T} at={K.M + 0.8} until={K.Re - 0.2} x={mx(-96.4, 20.6)[0]} y={mx(-96.4, 20.6)[1] - 45} texto="Veracruz 24 %" lado="der" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.G + 0.1} until={K.Gr - 0.2} texto="125 mL" x={330} y={1310} tam={40} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.G + 1.0} until={K.Gr - 0.2} valor={130} dur={2.0} prefijo="≈" sufijo=" L" etiqueta="agua detrás:" x={640} y={330} tam={170} color={KC.cyan} />
+      <Chip T={T} at={K.Gr + 0.4} until={K.Ll - 0.2} texto="7 g de café tostado" x={330} y={420} tam={38} borde={CAFE} />
+      <Etq T={T} at={K.Gr + 3.2} until={K.Ll - 0.2} x={560} y={520} texto="cafeto" lado="der" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Gr + 3.6} until={K.Ll - 0.2} x={600} y={1085} texto="Coffea arabica" it lado="der" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Ll + 2.4} until={K.Ri - 0.2} texto="127 L · agua de lluvia" x={290} y={625} tam={36} borde={VERDE} />
+      <Etq T={T} at={K.Ri + 0.8} until={K.P - 0.2} x={700} y={745} texto="< 1 L · riego" lado="der" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.Ri + 2.8} until={K.P - 0.2} x={40} y={640} texto="≈ 4 L · agua gris" lado="der" tam={34} color={KC.ink} />
+      <Chip T={T} at={K.Ri + 3.4} until={K.P - 0.2} texto="diluir el fertilizante" x={730} y={610} tam={32} borde={GRIS} />
+      <Etq T={T} at={K.M + 0.8} until={K.Re - 0.2} x={mx(-97.9, 22.2)[0]} y={mx(-97.9, 22.2)[1] - 40} texto="Veracruz 24 %" lado="der" tam={30} color={KC.ink} />
       <Etq T={T} at={K.M + 1.2} until={K.Re - 0.2} x={mx(-93.2, 15.9)[0]} y={mx(-93.2, 15.9)[1] + 30} texto="Chiapas 41 %" lado="izq" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.M + 1.4} until={K.Re - 0.2} texto="% del café del país (2017–2021)" x={600} y={712} tam={26} borde={KC.ink} />
-      <Etq T={T} at={K.M + 2.8} until={K.Re - 0.2} x={200} y={905} texto="mundo ≈ 130 L" lado="der" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.M + 4.0} until={K.Re - 0.2} x={590} y={785} texto="≈ 194–199 L" lado="der" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.M + 4.2} until={K.Re - 0.2} texto="Chiapas y Veracruz · datos 1996–2005" x={540} y={1460} tam={26} borde={KC.pink} />
-      <Chip T={T} at={K.Re + 0.3} until={K.E - 0.2} texto="misma lluvia, menos granos" x={360} y={430} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Re + 2.2} until={K.E - 0.2} x={60} y={850} texto="promedio" lado="der" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Re + 3.0} until={K.E - 0.2} x={560} y={850} texto="México" lado="der" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.M + 1.4} until={K.Re - 0.2} texto="% del café del país (2017–2021)" x={720} y={330} tam={26} borde={KC.ink} />
+      <Etq T={T} at={K.M + 2.8} until={K.Re - 0.2} x={195} y={1030} texto="mundo ≈ 130 L" lado="der" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.M + 4.0} until={K.Re - 0.2} x={615} y={870} texto="≈ 194–199 L" lado="der" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.M + 4.2} until={K.Re - 0.2} texto="Chiapas y Veracruz · datos 1996–2005" x={540} y={1510} tam={26} borde={KC.pink} />
+      <Chip T={T} at={K.Re + 0.3} until={K.E - 0.2} texto="misma lluvia, menos granos" x={540} y={330} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Re + 2.2} until={K.E - 0.2} x={40} y={940} texto="promedio" lado="der" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Re + 3.0} until={K.E - 0.2} x={570} y={940} texto="México" lado="der" tam={28} color={KC.ink} />
       <Chip T={T} at={K.Re + 3.6} until={K.E - 0.2} texto="café verde por hectárea · 1995–99" x={540} y={1460} tam={26} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.6} until={K.Go - 0.2} anio="2010–2011" quien="Mekonnen y Hoekstra" revista="U. de Twente, Países Bajos · datos 1996–2005" y={930} />
-      <NumeroGigante T={T} at={K.Go + 0.2} until={K.C - 0.2} valor={1000} dur={2.0} prefijo="×" sufijo="+" x={680} y={1060} tam={150} color={KC.cyan} />
-      <Etq T={T} at={K.Go + 0.4} until={K.C - 0.2} x={120} y={1000} texto="1 gota de café" lado="der" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou - 0.1} texto="≈ 96 % lluvia" x={330} y={470} tam={40} borde={VERDE} />
+      <TarjetaEstudio T={T} at={K.E + 0.6} until={K.Go - 0.2} anio="2010–2011" quien="Mekonnen y Hoekstra" revista="U. de Twente, Países Bajos · datos 1996–2005" y={500} />
+      <NumeroGigante T={T} at={K.Go + 0.2} until={K.C - 0.2} valor={1000} dur={2.0} prefijo="×" sufijo="+" x={720} y={1350} tam={170} color={KC.cyan} />
+      <Etq T={T} at={K.Go + 0.4} until={K.C - 0.2} x={40} y={1500} texto="1 gota de café" lado="der" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou - 0.1} texto="≈ 96 % lluvia" x={670} y={410} tam={44} borde={VERDE} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Gr - 0.1} texto="125 mL en la taza… *130 litros detrás.*" />
