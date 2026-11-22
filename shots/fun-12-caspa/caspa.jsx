@@ -128,7 +128,7 @@ function CaspaShot() {
   const FIN = K.Ou + 4;
   // lipasas: tres cortes uno tras otro
   const corte = (i) => kprog(T, K.Li + 1.3 + i * 0.7, K.Li + 1.8 + i * 0.7, kEase.sale);
-  const TRI = [[640, 780], [830, 930], [600, 1010]];
+  const TRI = [[620, 900], [750, 1130], [480, 1230]];
   // sebo que sube por el folículo
   const sebo = kprog(T, K.Se + 0.4, K.Se + 2.6);
   // escamas: velocidad de la piel (se acelera)
@@ -152,9 +152,9 @@ function CaspaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
-          <rect x={0} y={640} width={KW} height={700} fill="#7d6459" stroke={KC.ink} strokeWidth={8} />
-          <rect x={0} y={640} width={KW} height={60} fill="#827976" stroke={KC.ink} strokeWidth={5} />
-          <rect x={0} y={700} width={KW} height={130} fill="#806c62" />
+          <rect x={-60} y={640} width={KW + 120} height={700} fill="#33241f" stroke="#8a6a5c" strokeWidth={5} />
+          <rect x={-60} y={640} width={KW + 120} height={60} fill="#55463f" stroke="#8a6a5c" strokeWidth={4} />
+          <rect x={-60} y={700} width={KW + 120} height={130} fill="#3f2e28" />
           <path d="M 470 640 L 470 1250 Q 540 1300 610 1250 L 610 640 Z" fill="#d98f6b" stroke={KC.ink} strokeWidth={7} />
           <rect x={506} y={330} width={68} height={940} rx={30} fill={CP.pelo2} stroke={KC.ink} strokeWidth={7} transform={`rotate(4 540 640)`} />
           <ellipse cx={540} cy={1250} rx={95} ry={70} fill="#a45d3e" stroke={KC.ink} strokeWidth={7} />
@@ -172,14 +172,14 @@ function CaspaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
         {fsvg(<>
-          <Malassezia x={250} y={880 + Math.sin(T * 1.4) * 8} r={140} ang={-50} brote={0.55 + 0.1 * Math.sin(T)} />
-          {TRI.map(([x, y], i) => { const c = corte(i); const sale = kprog(T, K.Ol + 0.2, K.Ol + 1.2); return <g key={i} opacity={1 - sale * (i === 0 ? 0 : 0.75)}><Triglicerido x={x + Math.sin(T + i) * 6} y={y + Math.cos(T * 0.8 + i) * 6} s={i === 0 ? 1.35 : 1.1} corte={c} rot={i * 25 - 10} kinkIdx={i === 0 ? 1 : -1} /></g>; })}
+          <Malassezia x={300} y={680 + Math.sin(T * 1.4) * 8} r={190} ang={-50} brote={0.55 + 0.1 * Math.sin(T)} />
+          {TRI.map(([x, y], i) => { const c = corte(i); const sale = kprog(T, K.Ol + 0.2, K.Ol + 1.2); return <g key={i} opacity={1 - sale * (i === 0 ? 0 : 0.75)}><Triglicerido x={x + Math.sin(T + i) * 6} y={y + Math.cos(T * 0.8 + i) * 6} s={i === 0 ? 1.7 : 1.35} corte={c} rot={i * 25 - 10} kinkIdx={i === 0 ? 1 : -1} /></g>; })}
           {TRI.map(([x, y], i) => { const t0 = K.Li + 0.5 + i * 0.7, t1 = K.Li + 1.4 + i * 0.7; const u = kprog(T, t0, t1, kEase.suave); if (T < t0 || T > K.Ol + 0.4) return null;
-            const va = kprog(T, t1 + 0.6, t1 + 1.4, kEase.suave); return <g key={i} opacity={1 - va}><Lipasa x={klerp(390, x + 30 * Math.cos((i * 25 - 10) * Math.PI / 180), u)} y={klerp(860, y + 30 * Math.sin((i * 25 - 10) * Math.PI / 180), u) - va * 120} s={0.85} abre={u < 1 ? 0.6 : 0.5 + 0.5 * Math.sin(T * 14)} rot={-90 + i * 25} /></g>; })}
+            const va = kprog(T, t1 + 0.6, t1 + 1.4, kEase.suave); return <g key={i} opacity={1 - va}><Lipasa x={klerp(500, x + 38 * Math.cos((i * 25 - 10) * Math.PI / 180), u)} y={klerp(780, y + 38 * Math.sin((i * 25 - 10) * Math.PI / 180), u) - va * 120} s={1.25} abre={u < 1 ? 0.6 : 0.5 + 0.5 * Math.sin(T * 14)} rot={-90 + i * 25} /></g>; })}
           {(() => { const p = kprog(T, K.Ol + 0.6, K.Ol + 1.6, kEase.sale); return p > 0 ? <g opacity={p}>
-            <g transform={`translate(${klerp(800, 620, p)} ${klerp(760, 1010, p)})`}><Cola x={0} y={0} n={11} paso={22} alto={11} kink color={CP.oleico} ancho={9} /></g>
+            <g transform={`translate(${klerp(800, 440, p)} ${klerp(900, 1230, p)}) scale(1.45)`}><Cola x={0} y={0} n={11} paso={22} alto={11} kink color={CP.oleico} ancho={9} /></g>
           </g> : null; })()}
-          {(() => { const p = kprog(T, K.Ol + 1.4, K.Ol + 2.2, kEase.rebote); return p > 0 ? <g transform={`translate(880 960) scale(${p})`}>
+          {(() => { const p = kprog(T, K.Ol + 1.4, K.Ol + 2.2, kEase.rebote); return p > 0 ? <g transform={`translate(905 710) scale(${p * 1.1})`}>
             <path d="M -60 -150 L -40 -210 L 40 -210 L 60 -150 L 70 140 Q 0 165 -70 140 Z" fill="#c9d65a" stroke={KC.ink} strokeWidth={7} opacity=".95" />
             <rect x={-26} y={-260} width={52} height={54} rx={10} fill="#3b6b2c" stroke={KC.ink} strokeWidth={6} />
             <ellipse cx={0} cy={20} rx={46} ry={22} fill="#7aa63a" stroke={KC.ink} strokeWidth={4} />
@@ -191,25 +191,25 @@ function CaspaShot() {
       <Escena T={T} a={K.P} b={K.Tr} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Busto T={T} x={170} y={390} s={0.38} caspa={1} cae={1} />
-          <Busto T={T} x={410} y={390} s={0.38} caspa={0} />
-          <Interrogacion T={T} x={300} y={1170} tam={440} />
+          <Busto T={T} x={290} y={330} s={0.62} caspa={1} cae={1} />
+          <Busto T={T} x={790} y={330} s={0.62} caspa={0} />
+          <Interrogacion T={T} x={540} y={1330} tam={400} />
         </>)}
       </Escena>
       {/* 7 · tres cosas: grasa + levadura + piel sensible */}
       <Escena T={T} a={K.Tr} b={K.Es} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          {[0, 1, 2].map((i) => { const t0 = i === 0 ? K.Tr + 0.2 : K.Tr + 0.6 + i * 0.75; /* modo cine: el primer círculo entra al empezar la escena */ const p = kprog(T, t0, t0 + 0.5, kEase.rebote); if (p <= 0) return null; const x = 200 + i * 340, y = 780;
-            return <g key={i} transform={`translate(${x} ${y}) scale(${p})`}>
+          {[0, 1, 2].map((i) => { const t0 = i === 0 ? K.Tr + 0.2 : K.Tr + 0.6 + i * 0.75; /* modo cine: el primer círculo entra al empezar la escena */ const p = kprog(T, t0, t0 + 0.5, kEase.rebote); if (p <= 0) return null; const x = 200 + i * 340, y = 800;
+            return <g key={i} transform={`translate(${x} ${y}) scale(${p * 1.08})`}>
               <circle r={130} fill={['#fff3c4', '#1b2033', '#ffd9c2'][i]} stroke={KC.ink} strokeWidth={10} />
               {i === 0 && <Gota x={0} y={20} r={58} />}
               {i === 1 && <Malassezia x={-10} y={14} r={56} ang={-45} brote={0.6} />}
               {i === 2 && <g><rect x={-90} y={-20} width={180} height={70} rx={16} fill={CP.capa} stroke={KC.ink} strokeWidth={6} />
                 {[-60, -10, 40].map((dx, k) => <path key={k} d={`M ${dx} -30 l 14 -26 l 14 26`} stroke={KC.red} strokeWidth={7} fill="none" strokeLinecap="round" transform={`translate(0 ${Math.sin(T * 8 + k) * 4})`} />)}</g>}
             </g>; })}
-          {[0, 1].map((i) => <text key={i} x={370 + i * 340} y={805} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Tr + 1.1 + i * 0.75, K.Tr + 1.3 + i * 0.75)}>+</text>)}
-          {(() => { const p = kprog(T, K.Tr + 3.0, K.Tr + 3.5, kEase.rebote); return p > 0 ? <g transform={`translate(520 1080) scale(${p * 1.5})`}>
+          {[0, 1].map((i) => <text key={i} x={370 + i * 340} y={828} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Tr + 1.1 + i * 0.75, K.Tr + 1.3 + i * 0.75)}>+</text>)}
+          {(() => { const p = kprog(T, K.Tr + 3.0, K.Tr + 3.5, kEase.rebote); return p > 0 ? <g transform={`translate(440 1250) scale(${p * 2.6})`}>
             <text x={-130} y={30} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={KC.ink}>=</text>
             {[[0, 0, 26, 10], [40, -20, 18, 70], [-10, 30, 16, 130], [60, 20, 22, 200], [100, -5, 14, 40]].map(([dx, dy, r, rot], k) => <Escama key={k} x={dx} y={dy} r={r} rot={rot} />)}
           </g> : null; })()}
@@ -220,7 +220,8 @@ function CaspaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <rect x={0} y={640} width={KW} height={620} fill="#6a443d" stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(540 1000) scale(1.2) translate(-540 -950)">
+          <rect x={0} y={640} width={KW} height={620} fill="#3d2622" stroke="#8a6a5c" strokeWidth={5} />
           {Array.from({ length: 7 }, (_, row) => { const H = 560, yy = 1240 - ((row * 80 + (T - K.Es) * vel) % H); const u = (1240 - yy) / H; const ch = klerp(70, 20, u), cw = klerp(100, 170, u);
             return Array.from({ length: 8 }, (_, c) => <rect key={row + '-' + c} x={c * 150 - (row % 2) * 75 - 20 + (150 - cw) / 2} y={yy - ch / 2} width={cw} height={ch} rx={ch / 2.5}
               fill={mixHex(CP.basal, '#fdf3e6', u)} stroke={KC.ink} strokeWidth={4} opacity={u > 0.97 ? 0 : 1} />); })}
@@ -229,16 +230,17 @@ function CaspaShot() {
               {[0, 1, 2, 3].map((j) => <rect key={j} x={-90 + j * 12} y={-j * 16} width={180} height={20} rx={8} fill={CP.escama} stroke={KC.ink} strokeWidth={4} />)}
             </g>; })}
           {[[150, 618, 10], [480, 622, -40], [860, 616, 160]].map(([x, y, a], i) => <Malassezia key={i} x={x} y={y} r={18} ang={a} brote={0.5} sw={3} />)}
+          </g>
         </>)}
       </Escena>
       {/* 9–10 · el estudio de 2005: ácido oleico en voluntarios */}
       <Escena T={T} a={K.Est} b={K.Ge} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Busto T={T} x={290} y={540} s={0.46} caspa={0.15 + 0.85 * kprog(T, K.Re + 0.3, K.Re + 1.6)} cae={kprog(T, K.Re + 0.3, K.Re + 0.8)} />
-          <Busto T={T} x={790} y={540} s={0.46} caspa={0} />
+          <Busto T={T} x={290} y={380} s={0.6} caspa={0.15 + 0.85 * kprog(T, K.Re + 0.3, K.Re + 1.6)} cae={kprog(T, K.Re + 0.3, K.Re + 0.8)} />
+          <Busto T={T} x={790} y={380} s={0.6} caspa={0} />
           {[290, 790].map((x, i) => { const p = kprog(T, K.Est + 2.4, K.Est + 3.2, kEase.sale); if (p <= 0) return null; const fuera = kprog(T, K.Re - 0.2, K.Re + 0.3);
-            return <g key={i} transform={`translate(${x} ${klerp(480, 610, p) - fuera * 400})`} opacity={1 - fuera}>
+            return <g key={i} transform={`translate(${x} ${klerp(470, 610, p) - fuera * 400}) scale(1.3)`} opacity={1 - fuera}>
               <rect x={-14} y={-130} width={28} height={110} rx={8} fill="#e8f6ff" stroke={KC.ink} strokeWidth={5} />
               <rect x={-26} y={-170} width={52} height={50} rx={18} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
               <path d="M -8 -20 L 0 0 L 8 -20 Z" fill="#e8f6ff" stroke={KC.ink} strokeWidth={4} />
@@ -252,17 +254,17 @@ function CaspaShot() {
         <Ambiente T={T} n={20} />
         {fsvg(<>
           {(() => { const p = kprog(T, K.Ge + 0.2, K.Ge + 1.4); const cols = [KC.cyan, KC.pink, KC.mint, KC.yellow, KC.lilac, KC.orange, KC.cyan, KC.mint];
-            return <g>
+            return <g transform="translate(0 180)">
               <rect x={60} y={940} width={960 * p} height={16} rx={8} fill="#8fa3c8" />
               {cols.map((c, i) => { const x = 80 + i * 118; if (x > 60 + 960 * p) return null; return i === 4
                 ? <g key={i}><rect x={x} y={895} width={100} height={106} rx={14} fill="none" stroke={KC.red} strokeWidth={6} strokeDasharray="14 9" />
                     <path d={`M ${x + 22} 920 L ${x + 78} 976 M ${x + 78} 920 L ${x + 22} 976`} stroke={KC.red} strokeWidth={12} strokeLinecap="round" opacity={kprog(T, K.Ge + 1.6, K.Ge + 1.9)} /></g>
                 : <rect key={i} x={x} y={900} width={100} height={96} rx={14} fill={c} stroke={KC.ink} strokeWidth={6} />; })}
             </g>; })()}
-          <Malassezia x={330} y={640 + Math.sin(T * 1.3) * 8} r={120} ang={-35} brote={0.6} />
+          <Malassezia x={340} y={680 + Math.sin(T * 1.3) * 8} r={180} ang={-35} brote={0.6} />
           {(() => { const p = kprog(T, K.Ge + 3.4, K.Ge + 5.4); return <g>
-            <Gota x={700} y={740} r={78 * (1 - 0.55 * p)} />
-            {p > 0 && Array.from({ length: 4 }, (_, k) => { const u = (p * 2 + k / 4) % 1; return <g key={k} opacity={Math.sin(u * Math.PI)}><Cola x={klerp(660, 470, u)} y={690 + k * 22 - u * 60} n={5} paso={10} alto={5} ang={180} color={k === 1 ? CP.oleico : CP.acido} ancho={4} kink={k === 1} /></g>; })}
+            <Gota x={790} y={740} r={115 * (1 - 0.55 * p)} />
+            {p > 0 && Array.from({ length: 4 }, (_, k) => { const u = (p * 2 + k / 4) % 1; return <g key={k} opacity={Math.sin(u * Math.PI)}><Cola x={klerp(730, 560, u)} y={720 + k * 30 - u * 60} n={5} paso={15} alto={7} ang={180} color={k === 1 ? CP.oleico : CP.acido} ancho={6} kink={k === 1} /></g>; })}
           </g>; })()}
         </>)}
       </Escena>
@@ -270,13 +272,13 @@ function CaspaShot() {
       <Escena T={T} a={K.Ch} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Champu x={230} y={930} s={1.05} inclina={-8 + Math.sin(T * 2) * 2} />
-          <Burbujas T={T} x={240} y={760} n={9} area={220} desde={K.Ch} />
+          <Champu x={260} y={1090} s={1.7} inclina={-8 + Math.sin(T * 2) * 2} />
+          <Burbujas T={T} x={280} y={760} n={9} area={300} desde={K.Ch} />
         </>)}
-        <Lupa T={T} at={K.Ch + 1.0} until={K.C - 0.2} x={700} y={860} r={210} fx={320} fy={720} tinte={KC.cyan} etiqueta="AL MICROSCOPIO"
+        <Lupa T={T} at={K.Ch + 1.0} until={K.C - 0.2} x={725} y={850} r={285} fx={335} fy={800} tinte={KC.cyan} etiqueta="AL MICROSCOPIO"
           interior={(T2, r) => { const k = kprog(T2, K.Ch + 1.8, K.Ch + 4.2); return <div style={{ position:'absolute', inset:0 }}>
             <MicroCuero T={T2} w={r * 2} h={r * 2} levaduras={1 - 0.75 * k} />
-            {fsvg(<g>{Array.from({ length: 7 }, (_, i) => { const u = ((T2 - K.Ch) * 0.4 + i / 7) % 1; return <circle key={i} cx={30 + i * 55} cy={klerp(r * 2 + 20, -20, u)} r={14 + (i % 3) * 6} fill="rgba(255,255,255,.35)" stroke="#fff" strokeWidth={3} opacity={k > 0 ? 0.9 : 0.4} />; })}</g>)}
+            {fsvg(<g>{Array.from({ length: 7 }, (_, i) => { const u = ((T2 - K.Ch) * 0.4 + i / 7) % 1; return <circle key={i} cx={40 + i * 80} cy={klerp(r * 2 + 20, -20, u)} r={18 + (i % 3) * 8} fill="rgba(255,255,255,.35)" stroke="#fff" strokeWidth={3} opacity={k > 0 ? 0.9 : 0.4} />; })}</g>)}
           </div>; }} />
       </Escena>
       {/* 13 · cierre: la misma cabeza; ahora sabes lo que hay en la caspa */}
@@ -285,9 +287,9 @@ function CaspaShot() {
         {fsvg(<Busto T={T} x={400} y={60} s={1} caspa={1} cae={0.6} />)}
       </Escena>
       {/* lupas del cuero cabelludo (inicio y cierre) */}
-      <Lupa T={T} at={K.Ma + 0.1} until={K.Se - 0.2} x={590} y={790} r={230} fx={402} fy={540} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · cuero cabelludo"
+      <Lupa T={T} at={K.Ma + 0.1} until={K.Se - 0.2} x={650} y={880} r={290} fx={402} fy={520} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · cuero cabelludo"
         interior={(T2, r) => <MicroCuero T={T2} w={r * 2} h={r * 2} levaduras={kprog(T2, K.Ma + 0.4, K.Ma + 1.2)} />} />
-      <Lupa T={T} at={K.C + 0.6} until={K.Ou - 0.1} x={600} y={860} r={230} fx={360} fy={1060} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · una escama"
+      <Lupa T={T} at={K.C + 0.6} until={K.Ou - 0.1} x={670} y={740} r={285} fx={350} fy={1065} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · una escama"
         interior={(T2, r) => <MicroCuero T={T2} w={r * 2} h={r * 2} colas={kprog(T2, K.C + 1.2, K.C + 2.0)} />} />
 
       {/* textos */}
@@ -295,48 +297,48 @@ function CaspaShot() {
       <Chip T={T} at={K.G + 2.3} until={K.Ma - 0.2} texto="hay una levadura" x={790} y={440} tam={40} borde={KC.pink} />
       <Etq T={T} at={K.Ma + 1.0} until={K.Se - 0.3} x={60} y={320} texto="levadura de la piel" tam={34} color={KC.ink} />
       <Etq T={T} at={K.Ma + 1.4} until={K.Se - 0.3} x={60} y={375} texto="Malassezia" it tam={40} color={KC.ink} />
-      <Chip T={T} at={K.Ma + 2.0} until={K.Se - 0.3} texto="en la mayoría de los adultos" x={330} y={1200} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.Ma + 2.0} until={K.Se - 0.3} texto="en la mayoría de los adultos" x={420} y={1330} tam={30} borde={KC.ink} />
       <Etq T={T} at={K.Se + 0.5} until={K.Li - 0.3} x={1030} y={1160} texto="glándula sebácea" lado="izq" tam={28} color={CP.sebo2} />
       <Etq T={T} at={K.Se + 1.2} until={K.Li - 0.3} x={60} y={500} texto="sebo: una grasa natural" tam={32} color={CP.sebo2} />
       <Etq T={T} at={K.Se + 0.8} until={K.Li - 0.3} x={60} y={1120} texto="pelo" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.Li + 0.4} until={K.Ol - 0.2} x={60} y={470} texto="Malassezia globosa" it tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Li + 0.9} until={K.Ol - 0.2} x={440} y={700} texto="célula hija" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.Li + 1.3} until={K.Ol - 0.2} texto="lipasas = tijeras químicas" x={560} y={1175} tam={34} borde={CP.lipasa} />
-      <Etq T={T} at={K.Li + 1.0} until={K.Ol - 0.2} x={1030} y={1100} texto="grasa del sebo" lado="izq" tam={26} color={CP.sebo2} />
-      <Etq T={T} at={K.Ol + 0.4} until={K.P - 0.2} x={60} y={520} texto="ácidos grasos sueltos" tam={32} color={CP.acido} />
-      <Etq T={T} at={K.Ol + 1.2} until={K.P - 0.2} x={60} y={1100} texto="ácido oleico (doblado)" tam={32} color={CP.oleico} />
-      <Etq T={T} at={K.Ol + 2.0} until={K.P - 0.2} x={1030} y={1150} texto="aceite de oliva" lado="izq" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.P + 0.3} until={K.Tr - 0.2} texto="con caspa" x={170} y={490} tam={26} borde={KC.ink} />
-      <Chip T={T} at={K.P + 0.5} until={K.Tr - 0.2} texto="sin caspa" x={410} y={490} tam={26} borde={KC.ink} />
-      {['grasa', 'levadura', 'piel sensible'].map((t, i) => <Chip key={i} T={T} at={K.Tr + 0.9 + i * 0.75} until={K.Es - 0.2} texto={t} x={200 + i * 340} y={970} tam={32} borde={KC.ink} />)}
-      <Chip T={T} at={K.Tr + 0.2} until={K.Es - 0.2} texto="al menos tres cosas" x={540} y={500} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.Tr + 3.3} until={K.Es - 0.2} texto="caspa" x={780} y={1080} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.Es + 0.6} until={K.Est - 0.2} texto="se multiplican de más" x={400} y={1180} tam={34} borde={KC.coral} />
+      <Etq T={T} at={K.Li + 0.4} until={K.Ol - 0.2} x={60} y={350} texto="Malassezia globosa" it tam={36} color={KC.texto} />
+      <Etq T={T} at={K.Li + 0.9} until={K.Ol - 0.2} x={550} y={470} texto="célula hija" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.Li + 1.3} until={K.Ol - 0.2} texto="lipasas = tijeras químicas" x={785} y={640} tam={30} borde={CP.lipasa} />
+      <Etq T={T} at={K.Li + 1.0} until={K.Ol - 0.2} x={1030} y={1395} texto="grasa del sebo" lado="izq" tam={26} color={CP.sebo2} />
+      <Etq T={T} at={K.Ol + 0.4} until={K.P - 0.2} x={60} y={990} texto="ácidos grasos sueltos" tam={32} color={CP.acido} />
+      <Etq T={T} at={K.Ol + 1.2} until={K.P - 0.2} x={60} y={1420} texto="ácido oleico (doblado)" tam={32} color={CP.oleico} />
+      <Etq T={T} at={K.Ol + 2.0} until={K.P - 0.2} x={1030} y={372} texto="aceite de oliva" lado="izq" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.P + 0.3} until={K.Tr - 0.2} texto="con caspa" x={290} y={520} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.P + 0.5} until={K.Tr - 0.2} texto="sin caspa" x={790} y={520} tam={34} borde={KC.ink} />
+      {['grasa', 'levadura', 'piel sensible'].map((t, i) => <Chip key={i} T={T} at={K.Tr + 0.9 + i * 0.75} until={K.Es - 0.2} texto={t} x={200 + i * 340} y={1010} tam={32} borde={KC.ink} />)}
+      <Chip T={T} at={K.Tr + 0.2} until={K.Es - 0.2} texto="al menos tres cosas" x={540} y={540} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.Tr + 3.3} until={K.Es - 0.2} texto="caspa" x={830} y={1260} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.Es + 0.6} until={K.Est - 0.2} texto="se multiplican de más" x={540} y={1440} tam={34} borde={KC.coral} />
       <Etq T={T} at={K.Es + 1.6} until={K.Est - 0.2} x={60} y={430} texto="escama = células pegadas" tam={28} color={KC.texto} />
       <TarjetaEstudio T={T} at={K.Est + 0.2} until={K.Re - 0.3} anio="2005" quien="investigadores de Cincinnati, EE. UU." revista="DeAngelis y col. · J Investig Dermatol Symp Proc" y={410} />
-      <Chip T={T} at={K.Est + 3.0} until={K.Re - 0.3} texto="ácido oleico" x={540} y={700} tam={32} borde={CP.oleico} />
-      <Chip T={T} at={K.Re + 0.1} until={K.Ge - 0.2} texto="con caspa" x={290} y={680} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Re + 0.3} until={K.Ge - 0.2} texto="sin caspa" x={790} y={680} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Re + 1.4} until={K.Ge - 0.2} texto="✓ se descamó" x={290} y={1165} tam={32} borde={KC.leaf} />
-      <Chip T={T} at={K.Re + 2.2} until={K.Ge - 0.2} texto="nada visible" x={790} y={1165} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Ge + 0.5} until={K.Ch - 0.2} x={60} y={440} texto="Malassezia globosa" it tam={36} color={KC.texto} />
-      <Chip T={T} at={K.Ge + 0.8} until={K.Ch - 0.2} texto="su genoma (leído en 2007)" x={400} y={830} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.Ge + 1.8} until={K.Ch - 0.2} texto="✗ el gen para fabricar ácidos grasos" x={540} y={1090} tam={30} borde={KC.red} />
-      <Etq T={T} at={K.Ge + 3.6} until={K.Ch - 0.2} x={1030} y={800} texto="tu sebo" lado="izq" tam={30} color={CP.sebo2} />
-      <Chip T={T} at={K.Ch + 0.4} until={K.C - 0.2} texto="antifúngicos" x={300} y={470} tam={38} borde={KC.ink} />
-      <Chip T={T} at={K.Ch + 2.2} until={K.C - 0.2} texto="ketoconazol" x={250} y={560} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.Ch + 2.9} until={K.C - 0.2} texto="piritiona de zinc" x={290} y={640} tam={30} borde={KC.cyan} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="grasa + levadura + tu piel" x={300} y={480} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Est + 3.0} until={K.Re - 0.3} texto="ácido oleico" x={540} y={760} tam={32} borde={CP.oleico} />
+      <Chip T={T} at={K.Re + 0.1} until={K.Ge - 0.2} texto="con caspa" x={290} y={570} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Re + 0.3} until={K.Ge - 0.2} texto="sin caspa" x={790} y={570} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Re + 1.4} until={K.Ge - 0.2} texto="✓ se descamó" x={290} y={1260} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.Re + 2.2} until={K.Ge - 0.2} texto="nada visible" x={790} y={1260} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.Ge + 0.5} until={K.Ch - 0.2} x={60} y={390} texto="Malassezia globosa" it tam={36} color={KC.texto} />
+      <Chip T={T} at={K.Ge + 0.8} until={K.Ch - 0.2} texto="su genoma (leído en 2007)" x={400} y={1010} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.Ge + 1.8} until={K.Ch - 0.2} texto="✗ el gen para fabricar ácidos grasos" x={540} y={1275} tam={30} borde={KC.red} />
+      <Etq T={T} at={K.Ge + 3.6} until={K.Ch - 0.2} x={1030} y={900} texto="tu sebo" lado="izq" tam={30} color={CP.sebo2} />
+      <Chip T={T} at={K.Ch + 0.4} until={K.C - 0.2} texto="antifúngicos" x={300} y={390} tam={38} borde={KC.ink} />
+      <Chip T={T} at={K.Ch + 2.2} until={K.C - 0.2} texto="ketoconazol" x={230} y={475} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.Ch + 2.9} until={K.C - 0.2} texto="piritiona de zinc" x={270} y={550} tam={30} borde={KC.cyan} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="grasa + levadura + tu piel" x={330} y={335} tam={34} borde={KC.ink} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Se} texto="10 cm" largo={270} />
       <BarraEscala T={T} at={K.Se} until={K.Li} texto="100 µm" largo={180} />
-      <BarraEscala T={T} at={K.Li} until={K.P} texto="2 µm" largo={110} />
-      <BarraEscala T={T} at={K.P} until={K.Tr} texto="10 cm" largo={115} color={KC.ink} />
-      <BarraEscala T={T} at={K.Es} until={K.Est} texto="20 µm" largo={160} />
-      <BarraEscala T={T} at={K.Est} until={K.Ge} texto="10 cm" largo={125} />
-      <BarraEscala T={T} at={K.Ge} until={K.Ch} texto="2 µm" largo={90} />
-      <BarraEscala T={T} at={K.Ch} until={K.C} texto="5 cm" largo={150} color={KC.ink} />
+      <BarraEscala T={T} at={K.Li} until={K.P} texto="2 µm" largo={149} />
+      <BarraEscala T={T} at={K.P} until={K.Tr} texto="10 cm" largo={167} color={KC.ink} />
+      <BarraEscala T={T} at={K.Es} until={K.Est} texto="20 µm" largo={192} />
+      <BarraEscala T={T} at={K.Est} until={K.Ge} texto="10 cm" largo={162} />
+      <BarraEscala T={T} at={K.Ge} until={K.Ch} texto="2 µm" largo={135} />
+      <BarraEscala T={T} at={K.Ch} until={K.C} texto="5 cm" largo={243} color={KC.ink} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="10 cm" largo={270} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

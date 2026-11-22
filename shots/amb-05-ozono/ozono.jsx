@@ -11,9 +11,9 @@ function Cocina({ T, a }) {
     nubes.push(<g key={k} transform={`translate(${de[0] + Math.sin(u * 6 + k) * 40} ${de[1] - u * 520})`} opacity={1 - u}>
       <circle r={48} fill="#e9e3ff" stroke={KC.ink} strokeWidth={4} /><text y={12} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>CFC</text></g>); }
   return <g>
-    <rect x={160} y={680} width={300} height={560} rx={30} fill="#f4f8ff" stroke={KC.ink} strokeWidth={9} />
-    <line x1={160} y1={860} x2={460} y2={860} stroke={KC.ink} strokeWidth={7} />
-    <rect x={410} y={740} width={20} height={80} rx={8} fill={KC.ink} /><rect x={410} y={900} width={20} height={120} rx={8} fill={KC.ink} />
+    <rect x={160} y={680} width={300} height={560} rx={30} fill="#b9c4d6" stroke={KC.ink} strokeWidth={9} />
+    <line x1={160} y1={860} x2={460} y2={860} stroke="#0b1020" strokeWidth={7} />
+    <rect x={410} y={740} width={20} height={80} rx={8} fill="#0b1020" /><rect x={410} y={900} width={20} height={120} rx={8} fill="#0b1020" />
     <text x={310} y={1290} textAnchor="middle" style={{ font:`900 36px ${KF.texto}` }} fill={KC.ink}>refrigerador</text>
     <g transform={`translate(760 ${1000 + Math.sin(T * 8) * 4})`}>
       <rect x={-70} y={-150} width={140} height={330} rx={26} fill={KC.red} stroke={KC.ink} strokeWidth={9} />
@@ -34,22 +34,22 @@ function BanoLab({ T, a }) {
     {burb(0, 30, k)}
   </g>;
   return <g>
-    <rect x={0} y={1080} width={KW} height={300} fill="#6c7c7e" />
-    {Array.from({ length: 10 }, (_, i) => <line key={i} x1={i * 120} y1={1080} x2={i * 120} y2={1380} stroke="#9cc9bb" strokeWidth={4} />)}
-    <path d="M 120 900 L 960 900 Q 960 1120 800 1140 L 280 1140 Q 120 1120 120 900 Z" fill="#fff" stroke={KC.ink} strokeWidth={10} />
-    <rect x={100} y={880} width={880} height={36} rx={18} fill="#fff" stroke={KC.ink} strokeWidth={9} />
+    <rect x={-60} y={1080} width={KW + 120} height={300} fill="#1f2a2c" />
+    {Array.from({ length: 11 }, (_, i) => <line key={i} x1={i * 120 - 60} y1={1080} x2={i * 120 - 60} y2={1380} stroke="#3f5a55" strokeWidth={4} />)}
+    <path d="M 120 900 L 960 900 Q 960 1120 800 1140 L 280 1140 Q 120 1120 120 900 Z" fill="#c3ccd8" stroke={KC.ink} strokeWidth={10} />
+    <rect x={100} y={880} width={880} height={36} rx={18} fill="#d3dae4" stroke={KC.ink} strokeWidth={9} />
     {matraz(300, KC.pink, 0)}{matraz(540, KC.leaf, 1)}{matraz(780, KC.cyan, 2)}
   </g>;
 }
 // Vista de lado: suelo, cielo y la capa de ozono entre 15 y 40 km, con regla de altura. Escala: 14 px por km.
-const OZ_Y0 = 1150, OZ_PXKM = 14;
+const OZ_Y0 = 1400, OZ_PXKM = 20;   // pase a mano 2ª vuelta: de 14 a 20 px por km (la barra «10 km» usa OZ_PXKM * 10)
 const ozY = (km) => OZ_Y0 - km * OZ_PXKM;
 function CieloLado({ T, a, rayos = true, oscuro = 0 }) {
   return <g>
     <defs><linearGradient id="cielo" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stopColor={mixHex('#9fdcff', '#1d2b6a', oscuro)} /><stop offset="100%" stopColor={mixHex('#2346ff', '#070b1d', oscuro)} /></linearGradient></defs>
     <rect x={0} y={0} width={KW} height={KH} fill="url(#cielo)" />
     <rect x={0} y={ozY(40)} width={KW} height={ozY(15) - ozY(40)} fill={cineMix(KC.mint, CINE.fondo, 0.55)} opacity={0.28 + 0.06 * Math.sin(T * 2)} />
-    {Array.from({ length: 40 }, (_, i) => { const r = krng(i + 7); const x = r() * KW, y = ozY(15 + r() * 25); return <Ozono key={i} x={x + Math.sin(T + i) * 6} y={y} s={0.32} rot={r() * 360} />; })}
+    {Array.from({ length: 40 }, (_, i) => { const r = krng(i + 7); const x = r() * KW, y = ozY(15 + r() * 25); return <Ozono key={i} x={x + Math.sin(T + i) * 6} y={y} s={0.44} rot={r() * 360} />; })}
     <path d={`M 0 ${OZ_Y0} Q 540 ${OZ_Y0 - 50} ${KW} ${OZ_Y0} L ${KW} ${KH} L 0 ${KH} Z`} fill={mixHex('#58b85c', '#143a22', oscuro)} stroke={KC.ink} strokeWidth={8} />
     {/* regla de altura */}
     <line x1={70} y1={ozY(0)} x2={70} y2={ozY(50)} stroke="#fff" strokeWidth={5} />
@@ -94,41 +94,41 @@ function OzonoShot() {
   const sube = kprog(T, K.S + 0.1, K.S + 1.4, kEase.suave), rompe = kprog(T, K.S + 1.4, K.S + 2.0, kEase.sale);
   // Cloro que atraviesa la nube de ozono y rompe moléculas (escena "Cloro").
   const clT = kprog(T, K.Cl + 0.2, K.E - 0.2);
-  const clX = klerp(120, 960, clT), clY = 760 + Math.sin(clT * Math.PI * 4) * 220;
-  const MOLS = Array.from({ length: 16 }, (_, i) => { const r = krng(30 + i); return { x: 140 + (i % 4) * 250 + r() * 60, y: 520 + Math.floor(i / 4) * 125 + r() * 30, rot: r() * 360 }; });
+  const clX = klerp(120, 960, clT), clY = 800 + Math.sin(clT * Math.PI * 4) * 300;
+  const MOLS = Array.from({ length: 16 }, (_, i) => { const r = krng(30 + i); return { x: 140 + (i % 4) * 250 + r() * 60, y: 500 + Math.floor(i / 4) * 195 + r() * 30, rot: r() * 360 }; });
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: el agujero (vista desde el polo sur) se encoge */}
       <Escena T={T} a={K.G} b={K.Ca}>
         <FondoEspacio T={T} />
-        {svg(<><g transform={`rotate(${T * 4} 540 840)`}><TierraPolo T={T} x={540} y={840} r={320} hueco={huecoG} etiqueta={false} /></g>
+        {svg(<><g transform={`rotate(${T * 4} 540 880)`}><TierraPolo T={T} x={540} y={880} r={400} hueco={huecoG} etiqueta={false} /></g>
           {/* modo cine: antes del segundo 3 ya asoman, atenuadas, las moléculas de ozono de las que va la historia */}
-          <g opacity={0.5 * kprog(T, K.G + 1.8, K.G + 2.6)}>{[[130, 640, 20], [960, 560, 140], [920, 1130, 260], [170, 1120, 80]].map(([x, y, r], i) => <Ozono key={i} x={x + Math.sin(T + i) * 8} y={y + Math.cos(T * 0.8 + i) * 8} s={0.7} rot={r + T * 10} />)}</g></>)}
-        <EscalaFija texto="2,000 km (aprox.)" largo={100} />
+          <g opacity={0.5 * kprog(T, K.G + 1.8, K.G + 2.6)}>{[[120, 400, 20], [960, 380, 140], [965, 1240, 260], [115, 1215, 80]].map(([x, y, r], i) => <Ozono key={i} x={x + Math.sin(T + i) * 8} y={y + Math.cos(T * 0.8 + i) * 8} s={0.7} rot={r + T * 10} />)}</g></>)}
+        <EscalaFija texto="2,000 km (aprox.)" largo={125} x={150} y={1330} />
       </Escena>
       {/* 2 · la capa (vista de lado, regla de altura) */}
       <Escena T={T} a={K.Ca} b={K.Cf}>
-        {svg(<><CieloLado T={T} a={K.Ca} oscuro={0.6} /><Sol T={T} x={900} y={200} r={70} /></>)}
-        <EscalaFija texto="10 km" largo={OZ_PXKM * 10} y={1480} />
+        {svg(<><CieloLado T={T} a={K.Ca} oscuro={0.86} /><Sol T={T} x={900} y={200} r={70} /></>)}
+        <EscalaFija texto="10 km" largo={OZ_PXKM * 10} x={110} y={1470} />
       </Escena>
       {/* 3 · refrigeradores y aerosoles */}
       <Escena T={T} a={K.Cf} b={K.M}>
         <FondoLunares color={KC.yellow} />
-        {svg(<g transform="translate(0 -170)"><Cocina T={T} a={K.Cf} /></g>)}
-        <EscalaFija texto="1 m" largo={330} y={1480} color={KC.ink} />
+        {svg(<g transform="translate(540 960) scale(1.35) translate(-490 -970)"><Cocina T={T} a={K.Cf} /></g>)}
+        <EscalaFija texto="1 m" largo={446} x={110} y={1450} color={KC.ink} />
       </Escena>
       {/* 4 · Mario Molina: un baño convertido en laboratorio */}
       <Escena T={T} a={K.M} b={K.S}>
         <FondoLunares color={KC.mint} />
-        {svg(<BanoLab T={T} a={K.M} />)}
-        <EscalaFija texto="1 m" largo={330} y={1480} color={KC.ink} />
+        {svg(<g transform="translate(540 1010) scale(1.08) translate(-540 -920)"><BanoLab T={T} a={K.M} /></g>)}
+        <EscalaFija texto="1 m" largo={356} x={110} y={1450} color={KC.ink} />
       </Escena>
       {/* 5 · suben, el sol los rompe y sueltan cloro */}
       <Escena T={T} a={K.S} b={K.P}>
-        {svg(<><CieloLado T={T} a={K.S} rayos={false} oscuro={0.6} /><Sol T={T} x={880} y={190} r={70} />
+        {svg(<><CieloLado T={T} a={K.S} rayos={false} oscuro={0.86} /><Sol T={T} x={880} y={190} r={70} />
           {rompe > 0 && <line x1={860} y1={260} x2={klerp(860, 560, rompe)} y2={klerp(260, ozY(27), rompe)} stroke={KC.yellow} strokeWidth={10} strokeDasharray="22 12" />}
-          <CFC x={540} y={klerp(ozY(2), ozY(27), sube)} s={1.1} rot={T * 30} suelta={rompe} /></>)}
-        <EscalaFija texto="10 km" largo={OZ_PXKM * 10} y={1480} />
+          <CFC x={540} y={klerp(ozY(2), ozY(27), sube)} s={1.5} rot={T * 30} suelta={rompe} /></>)}
+        <EscalaFija texto="10 km" largo={OZ_PXKM * 10} x={110} y={1470} />
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.Cl} zoom={0.1}>
@@ -140,59 +140,59 @@ function OzonoShot() {
       <Escena T={T} a={K.Cl} b={K.E}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }} />
         <Ambiente T={T} n={30} color="rgba(127,227,255,.25)" />
-        {svg(<>{MOLS.map((m, i) => { const d = Math.hypot(m.x - clX, m.y - clY), roto = T > K.Cl + 0.2 && (m.x < clX - 20 || d < 70);
-          return <Ozono key={i} x={m.x} y={m.y} s={0.9} rot={m.rot + Math.sin(T + i) * 8} rompe={roto ? 1 : 0} o={roto ? 0.55 : 1} />; })}
-          <g transform={`translate(${clX} ${clY})`}><circle r={90} fill={KC.leaf} opacity={0.18 + 0.1 * Math.sin(T * 10)} /><Atomo x={0} y={0} r={44} color={KC.leaf} letra="Cl" /></g></>)}
-        <EscalaFija texto="0.1 nm (aprox.)" largo={30} color={KC.cyan} />
+        {svg(<>{MOLS.map((m, i) => { const d = Math.hypot(m.x - clX, m.y - clY), roto = T > K.Cl + 0.2 && (m.x < clX - 20 || d < 90);
+          return <Ozono key={i} x={m.x} y={m.y} s={1.15} rot={m.rot + Math.sin(T + i) * 8} rompe={roto ? 1 : 0} o={roto ? 0.55 : 1} />; })}
+          <g transform={`translate(${clX} ${clY})`}><circle r={115} fill={KC.leaf} opacity={0.18 + 0.1 * Math.sin(T * 10)} /><Atomo x={0} y={0} r={56} color={KC.leaf} letra="Cl" /></g></>)}
+        <EscalaFija texto="0.1 nm (aprox.)" largo={38} x={110} y={1440} color={KC.cyan} />
       </Escena>
       {/* 8 · el estudio y el Nobel */}
       <Escena T={T} a={K.E} b={K.Mo}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
         {/* modo cine: el sujeto sigue en pantalla (las moléculas de ozono y el átomo de cloro de la escena anterior, quietos y atenuados) */}
-        {svg(<><g opacity={0.5 * kprog(T, K.E, K.E + 0.5) * (1 - 0.5 * kprog(T, K.E + 2.8, K.E + 3.3))}>{MOLS.map((m, i) => <Ozono key={i} x={m.x} y={m.y + 100} s={0.9} rot={m.rot + Math.sin(T + i) * 8} rompe={i % 3 === 0 ? 1 : 0} o={i % 3 === 0 ? 0.55 : 1} />)}
-          <Atomo x={930} y={690} r={44} color={KC.leaf} letra="Cl" /></g>
-          <Medalla T={T} at={K.E + 3.0} x={540} y={1070} /></>)}
+        {svg(<><g opacity={0.5 * kprog(T, K.E, K.E + 0.5) * (1 - 0.5 * kprog(T, K.E + 2.8, K.E + 3.3))}>{MOLS.map((m, i) => <Ozono key={i} x={m.x} y={m.y + 60} s={1.15} rot={m.rot + Math.sin(T + i) * 8} rompe={i % 3 === 0 ? 1 : 0} o={i % 3 === 0 ? 0.55 : 1} />)}
+          <Atomo x={930} y={690} r={56} color={KC.leaf} letra="Cl" /></g>
+          <g transform="translate(540 1100) scale(1.5)"><Medalla T={T} at={K.E + 3.0} x={0} y={0} /></g></>)}
       </Escena>
       {/* 9 · Protocolo de Montreal */}
       <Escena T={T} a={K.Mo} b={K.N}>
         <FondoLunares color={KC.cyan} />
-        {svg(<Protocolo T={T} a={K.Mo} />)}
+        {svg(<g transform="translate(540 900) scale(1.2) translate(-540 -860)"><Protocolo T={T} a={K.Mo} /></g>)}
       </Escena>
       {/* 10 · casi el 99 % ya no se usa (CFC tachados = dejan de usarse, no que el gas ya se fue) */}
       <Escena T={T} a={K.N} b={K.F}>
         <FondoLunares color={KC.mint} />
-        {svg(<g transform="translate(540 960)">{Array.from({ length: 10 }, (_, i) => { const tachado = T > K.N + 1.2 + i * 0.25;
-          return <g key={i} transform={`translate(${(i % 5) * 170 - 340} ${Math.floor(i / 5) * 150 - 60}) scale(0.7)`}><CFC x={0} y={0} o={tachado ? 0.35 : 1} />
+        {svg(<g transform="translate(540 1040)">{Array.from({ length: 10 }, (_, i) => { const tachado = T > K.N + 1.2 + i * 0.25;
+          return <g key={i} transform={`translate(${(i % 5) * 180 - 360} ${Math.floor(i / 5) * 230 - 60}) scale(0.85)`}><CFC x={0} y={0} o={tachado ? 0.35 : 1} />
             {tachado && <path d="M -70 -70 L 70 70 M 70 -70 L -70 70" stroke={KC.red} strokeWidth={14} strokeLinecap="round" />}</g>; })}</g>)}
       </Escena>
       {/* 11–12 · se cierra el agujero y regreso a la imagen del inicio */}
       <Escena T={T} a={K.F} b={FIN}>
         <FondoEspacio T={T} />
-        {svg(<><g transform={`rotate(${T * 4} 540 840)`}><TierraPolo T={T} x={540} y={840} r={320} hueco={T < K.C ? huecoF : 0.05} etiqueta={false} /></g>{T < K.C - 1.5 && huecoF > 0.25 && <text x={540} y={840 - 175 * huecoF * 0.84 - 26} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={6} paintOrder="stroke">agujero de ozono</text>}</>)}
-        <EscalaFija texto="2,000 km (aprox.)" largo={100} />
+        {svg(<><g transform={`rotate(${T * 4} 540 880)`}><TierraPolo T={T} x={540} y={880} r={400} hueco={T < K.C ? huecoF : 0.05} etiqueta={false} /></g>{T < K.C - 1.5 && huecoF > 0.25 && <text x={540} y={880 - 175 * huecoF * (400 / 380) - 26} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={6} paintOrder="stroke">agujero de ozono</text>}</>)}
+        <EscalaFija texto="2,000 km (aprox.)" largo={125} x={110} y={1345} />
       </Escena>
 
       {/* datos y etiquetas */}
-      <Chip T={T} at={K.G + 0.3} until={K.Ca - 0.2} texto="se está cerrando" x={300} y={430} tam={42} borde={KC.lilac} />
-      <Etq T={T} at={K.G + 0.6} until={K.Ca - 0.2} x={60} y={1530} texto="la Antártida, vista desde el polo sur" tam={26} />
+      <Chip T={T} at={K.G + 0.3} until={K.Ca - 0.2} texto="se está cerrando" x={300} y={285} tam={42} borde={KC.lilac} />
+      <Etq T={T} at={K.G + 0.6} until={K.Ca - 0.2} x={60} y={1495} texto="la Antártida, vista desde el polo sur" tam={26} />
       <Chip T={T} at={K.Ca + 0.3} until={K.Cf - 0.2} texto="capa de ozono · 15 a 40 km" y={ozY(27.5)} tam={38} borde={KC.mint} />
       <Etq T={T} at={K.Ca + 1.8} until={K.Cf - 0.2} x={640} y={ozY(44)} texto="luz ultravioleta" lado="izq" color="#e2c4ff" tam={30} />
-      <Chip T={T} at={K.Cf + 1.6} until={K.M - 0.2} texto="gases CFC: «inofensivos»" y={430} tam={40} borde={KC.ink} />
-      <Chip T={T} at={K.M + 0.3} until={K.S - 0.2} texto="Mario Molina · Ciudad de México" x={650} y={430} tam={32} borde={KC.leaf} />
-      <Chip T={T} at={K.M + 1.6} until={K.S - 0.2} texto="de niño: su laboratorio en un baño" x={650} y={520} tam={30} borde={KC.pink} />
+      <Chip T={T} at={K.Cf + 1.6} until={K.M - 0.2} texto="gases CFC: «inofensivos»" y={330} tam={40} borde={KC.ink} />
+      <Chip T={T} at={K.M + 0.3} until={K.S - 0.2} texto="Mario Molina · Ciudad de México" x={540} y={400} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.M + 1.6} until={K.S - 0.2} texto="de niño: su laboratorio en un baño" x={540} y={490} tam={30} borde={KC.pink} />
       <Etq T={T} at={K.S + 1.6} until={K.P - 0.1} x={620} y={ozY(30) - 150} texto="se suelta el cloro" tam={32} />
-      <Chip T={T} at={K.S + 0.2} until={K.P - 0.2} texto="el sol rompe los CFC" x={620} y={430} tam={40} borde={KC.yellow} />
+      <Chip T={T} at={K.S + 0.2} until={K.P - 0.2} texto="el sol rompe los CFC" x={470} y={310} tam={40} borde={KC.yellow} />
       <Chip T={T} at={K.P + 0.2} until={K.Cl - 0.1} texto="¿qué daño hace un poquito de cloro?" x={540} y={430} tam={34} borde={KC.leaf} />
-      <Chip T={T} at={K.Cl + 0.3} until={K.E - 0.2} texto="1 átomo de cloro" y={430} tam={40} borde={KC.leaf} />
-      <NumeroGigante T={T} at={K.Cl + 0.8} until={K.E - 0.2} valor={100000} dur={2.4} prefijo="+" etiqueta="moléculas de ozono destruidas" y={1075} tam={120} color={KC.cyan} />
+      <Chip T={T} at={K.Cl + 0.3} until={K.E - 0.2} texto="1 átomo de cloro" y={340} tam={40} borde={KC.leaf} />
+      <NumeroGigante T={T} at={K.Cl + 0.8} until={K.E - 0.2} valor={100000} dur={2.4} prefijo="+" etiqueta="moléculas de ozono destruidas" y={1340} tam={120} color={KC.cyan} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Mo - 0.3} anio="1974" quien="Molina y Rowland" revista="Nature 249: 810–812" x={540} y={400} />
       <Chip T={T} at={K.E + 3.2} until={K.Mo - 0.3} texto="Nobel de Química 1995" y={1440} tam={40} borde={KC.gold} />
       <Chip T={T} at={K.Mo + 2.4} until={K.N - 0.2} texto="recortar y luego prohibir los CFC" y={1440} tam={34} borde={KC.red} />
-      <NumeroGigante T={T} at={K.N + 0.3} until={K.F - 0.2} valor={99} dur={1.6} sufijo=" %" etiqueta="gases prohibidos que ya no se usan (2023)" x={420} y={620} tam={200} color={KC.yellow} />
-      <Chip T={T} at={K.F + 0.4} until={K.C - 0.2} texto="como antes del agujero (1980)" x={650} y={420} tam={32} borde={KC.mint} />
-      <Chip T={T} at={K.F + 2.2} until={K.C - 0.2} texto="2040 · casi todo el mundo" x={660} y={1440} tam={34} borde={KC.cyan} />
-      <Chip T={T} at={K.F + 4.6} until={K.C - 0.2} texto="2066 · la Antártida" x={660} y={1530} tam={34} borde={KC.lilac} />
-      <Chip T={T} at={K.C + 0.3} until={K.Ou - 0.1} texto="si le hacemos caso a la ciencia" x={400} y={430} tam={32} borde={KC.gold} />
+      <NumeroGigante T={T} at={K.N + 0.3} until={K.F - 0.2} valor={99} dur={1.6} sufijo=" %" etiqueta="gases prohibidos que ya no se usan (2023)" x={540} y={600} tam={200} color={KC.yellow} />
+      <Chip T={T} at={K.F + 0.4} until={K.C - 0.2} texto="como antes del agujero (1980)" x={650} y={330} tam={32} borde={KC.mint} />
+      <Chip T={T} at={K.F + 2.2} until={K.C - 0.2} texto="2040 · casi todo el mundo" x={680} y={1415} tam={34} borde={KC.cyan} />
+      <Chip T={T} at={K.F + 4.6} until={K.C - 0.2} texto="2066 · la Antártida" x={680} y={1495} tam={34} borde={KC.lilac} />
+      <Chip T={T} at={K.C + 0.3} until={K.Ou - 0.1} texto="si le hacemos caso a la ciencia" x={400} y={330} tam={32} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ca - 0.1} texto="No se agranda: *se está cerrando.*" />
