@@ -120,7 +120,7 @@ function SalShot() {
           return <g transform="translate(540 980) scale(1.15) translate(-512 -836)">
             <MedidorSal T={T} x={110} y={420} alto={760} valor={val} marcas={T < K.Sa ? kprog(T, K.Mi + 0.5, K.Mi + 3.0) * 0.66 : 0.66 + kprog(T, K.Sa + 1.2, K.Sa + 1.8) * 0.34} />
             <g opacity={kprog(val, 0.34, 0.385)}><Racimo2 T={T} x={170} y={420 + 760 - val * 760 + 62} s={0.62} n={6} pared={6} seed={4} /></g>
-            <g opacity={kprog(T, K.Sa + 0.5, K.Sa + 1.0)}><Vaso x={790} y={1110} s={0.85} cristales={kprog(T, K.Sa + 0.8, K.Sa + 2.2)} /></g>
+            <g opacity={kprog(T, K.Sa + 0.5, K.Sa + 1.0)}><Vaso x={790} y={1110} s={1.05} cristales={kprog(T, K.Sa + 0.8, K.Sa + 2.2)} /></g>
           </g>; })())}
       </Escena>
       {/* 5 · la sal jala el agua: la célula se arruga; cecina y bacalao */}
