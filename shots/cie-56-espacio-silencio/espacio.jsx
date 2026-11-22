@@ -3,7 +3,7 @@
 // Datos: NASA Science (sonido = onda mecánica, no viaja en el vacío; radio = onda electromagnética, familia de la luz),
 // Boyle 1660 (reloj en el recipiente vacío), NASA 2022 (sonificación del cúmulo de Perseo). Ver guion.md y verificacion.md.
 
-const PANT = { x: 60, y: 690, w: 960, h: 450 };          // la "pantalla de cine" del gancho y del cierre
+const PANT = { x: 60, y: 520, w: 960, h: 960 };          // la "pantalla de cine" del gancho y del cierre
 const AIRE = '#ffffff';
 
 // Nave de película (mira a la derecha).
@@ -105,12 +105,12 @@ function OndaRadio({ x1, y1, x2, y2, T, p = 1, amp = 34, ciclos = 6, color = KC.
 // Interior de un módulo de la Estación Espacial (esquemático).
 function ModuloEstacion({ T }) {
   return <g>
-    <rect x={40} y={420} width={1000} height={740} rx={120} fill="#e9eef5" stroke={KC.ink} strokeWidth={12} />
-    <rect x={110} y={490} width={860} height={600} rx={80} fill="#cfd9e6" stroke={KC.ink} strokeWidth={7} />
-    {[0, 1, 2].map((i) => <rect key={i} x={150 + i * 280} y={530} width={220} height={120} rx={14} fill="#f6f8fb" stroke={KC.ink} strokeWidth={6} />)}
-    {[0, 1, 2, 3].map((i) => <rect key={'b' + i} x={150 + i * 205} y={990} width={170} height={70} rx={12} fill="#f6f8fb" stroke={KC.ink} strokeWidth={6} />)}
+    <rect x={40} y={420} width={1000} height={740} rx={120} fill="#2a3446" stroke={KC.ink} strokeWidth={12} />
+    <rect x={110} y={490} width={860} height={600} rx={80} fill="#172030" stroke={KC.ink} strokeWidth={7} />
+    {[0, 1, 2].map((i) => <rect key={i} x={150 + i * 280} y={530} width={220} height={120} rx={14} fill="#34425a" stroke={KC.ink} strokeWidth={6} />)}
+    {[0, 1, 2, 3].map((i) => <rect key={'b' + i} x={150 + i * 205} y={990} width={170} height={70} rx={12} fill="#34425a" stroke={KC.ink} strokeWidth={6} />)}
     {[0, 1, 2].map((i) => <g key={'l' + i}><circle cx={190 + i * 280} cy={590} r={10} fill={[KC.mint, KC.red, KC.yellow][i]} stroke={KC.ink} strokeWidth={3} />
-      <rect x={215 + i * 280} y={575} width={110} height={12} rx={6} fill="#9fb0c6" /><rect x={215 + i * 280} y={600} width={80} height={12} rx={6} fill="#9fb0c6" /></g>)}
+      <rect x={215 + i * 280} y={575} width={110} height={12} rx={6} fill="#6f83a0" /><rect x={215 + i * 280} y={600} width={80} height={12} rx={6} fill="#6f83a0" /></g>)}
     <line x1={150} y1={700} x2={930} y2={700} stroke={KC.gold} strokeWidth={14} strokeLinecap="round" />
     <line x1={150} y1={950} x2={930} y2={950} stroke={KC.gold} strokeWidth={14} strokeLinecap="round" />
     <circle cx={900} cy={820} r={60} fill="#0a1024" stroke={KC.ink} strokeWidth={10} />
@@ -209,7 +209,7 @@ function Espacio() {
   const K = CUES, FIN = K.Outro + 4;
   const habla = (a, b) => (T > a && T < b ? 0.5 + 0.5 * Math.sin(T * 17) : 0);
   // gancho: la nave cruza y explota en +0.6
-  const naveX = klerp(160, 520, kprog(T, K.Gancho - 0.5, K.Gancho + 0.6));
+  const naveX = klerp(150, 520, kprog(T, K.Gancho - 0.5, K.Gancho + 0.6));
   const boom = kprog(T, K.Gancho + 0.6, K.Gancho + 1.1, kEase.sale);
   return (
     <div style={{ position:'absolute', inset:0, overflow:'hidden', background:KC.dark }}>
@@ -218,57 +218,58 @@ function Espacio() {
         <FondoLunares color={KC.pink} />
         <Lienzo>
           <PantallaCine T={T} id="cine0" sacude={kprog(T, K.Gancho + 0.6, K.Gancho + 0.75) * (1 - kprog(T, K.Gancho + 1.0, K.Gancho + 1.6))}>
-            {boom < 0.3 && <Nave x={naveX} y={PANT.y + 240} s={1} rot={-6} />}
-            <Explosion x={540} y={PANT.y + 230} r={190} p={boom} T={T} />
+            {boom < 0.3 && <Nave x={naveX} y={PANT.y + 490} s={1.8} rot={-6} />}
+            <Explosion x={540} y={PANT.y + 480} r={360} p={boom} T={T} />
           </PantallaCine>
           {T > K.Gancho + 0.6 && <g>
-            <TextoSvg x={330} y={PANT.y - 60} tam={150} color={KC.yellow} rot={-6} s={klerp(0.3, 1, kprog(T, K.Gancho + 0.6, K.Gancho + 0.9, kEase.rebote))}
+            <TextoSvg x={340} y={PANT.y - 60} tam={170} color={KC.yellow} rot={-6} s={klerp(0.3, 1, kprog(T, K.Gancho + 0.6, K.Gancho + 0.9, kEase.rebote))}
               o={1 - 0.55 * kprog(T, K.Gancho + 2.6, K.Gancho + 3.0)}>¡BOOM!</TextoSvg>
             {(() => { const q = kprog(T, K.Gancho + 2.5, K.Gancho + 2.9, kEase.sale); return q > 0 && <g>
               <line x1={110} y1={PANT.y - 170} x2={110 + 460 * q} y2={PANT.y - 170 + 130 * q} stroke={KC.ink} strokeWidth={34} strokeLinecap="round" />
               <line x1={110} y1={PANT.y - 170} x2={110 + 460 * q} y2={PANT.y - 170 + 130 * q} stroke={KC.red} strokeWidth={20} strokeLinecap="round" /></g>; })()}
           </g>}
-          {T > K.Gancho + 3.2 && <g transform={`translate(${PANT.x + PANT.w - 110} ${PANT.y + 110}) scale(${klerp(0.3, 1, kprog(T, K.Gancho + 3.2, K.Gancho + 3.6, kEase.rebote))})`}><Mudo x={0} y={0} /></g>}
+          {T > K.Gancho + 3.2 && <g transform={`translate(${PANT.x + PANT.w - 180} ${PANT.y + 180}) scale(${klerp(0.3, 1.5, kprog(T, K.Gancho + 3.2, K.Gancho + 3.6, kEase.rebote))})`}><Mudo x={0} y={0} /></g>}
         </Lienzo>
-        <Chip T={T} at={K.Gancho + 0.2} until={K.Gancho + 3.0} texto="en la película" x={290} y={420} tam={40} borde={KC.yellow} />
-        <Chip T={T} at={K.Gancho + 3.2} until={K.Sonido - 0.1} texto="en el espacio: sin sonido" x={340} y={420} tam={40} borde={KC.red} />
+        <Chip T={T} at={K.Gancho + 0.2} until={K.Gancho + 3.0} texto="en la película" x={300} y={250} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Gancho + 3.2} until={K.Sonido - 0.1} texto="en el espacio: sin sonido" x={540} y={250} tam={40} borde={KC.red} />
       </Escena>
 
       {/* 1 · el sonido = vibración que empuja partículas (aire, agua, sólido) */}
       <Escena T={T} a={K.Sonido} b={K.Cadena} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <rect x={60} y={470} width={960} height={300} rx={40} fill="rgba(14,15,18,.82)" stroke={KC.ink} strokeWidth={9} />
+          <rect x={40} y={380} width={1000} height={470} rx={46} fill="rgba(14,15,18,.82)" stroke={KC.ink} strokeWidth={9} />
           {/* bocina que vibra a la izquierda */}
-          <g transform={`translate(${110 + Math.sin(T * 30) * 6} 620)`}>
+          <g transform={`translate(${112 + Math.sin(T * 30) * 6} 615) scale(1.5)`}>
             <path d="M -40 -50 L 0 -50 L 40 -100 L 40 100 L 0 50 L -40 50 Z" fill={KC.gold2} stroke={KC.ink} strokeWidth={7} strokeLinejoin="round" />
           </g>
-          <OndaBolitas T={T} x={170} y={490} w={820} h={260} cols={12} filas={4} amp={24} lambda={300} vel={1.1} r={17} o={kprog(T, K.Sonido, K.Sonido + 0.4)} />
-          {[['aire', 5, 3, 14, 0], ['agua', 8, 5, 12, 1], ['sólido', 10, 7, 10, 2]].map(([nom, c, f, r, i]) => { const at = K.Sonido + 3.0 + i * 0.6, e = kprog(T, at, at + 0.4, kEase.rebote);
-            if (e <= 0) return null; const bx = 70 + i * 320;
-            return <g key={nom} transform={`translate(${bx + 145} 920) scale(${e}) translate(${-(bx + 145)} -920)`}>
-              <rect x={bx} y={810} width={290} height={230} rx={28} fill={['#e8f9ff', '#3aa0ff', '#c9a27a'][i]} stroke={KC.ink} strokeWidth={8} />
-              <OndaBolitas T={T} x={bx + 10} y={850} w={270} h={180} cols={c} filas={f} amp={i === 2 ? 6 : 12} lambda={180} vel={1.4} r={r} />
-              <text x={bx + 145} y={844} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>{nom}</text>
+          <OndaBolitas T={T} x={190} y={405} w={820} h={420} cols={12} filas={6} amp={26} lambda={300} vel={1.1} r={20} o={kprog(T, K.Sonido, K.Sonido + 0.4)} />
+          {[['aire', 5, 6, 14, 0], ['agua', 8, 9, 12, 1], ['sólido', 10, 12, 10, 2]].map(([nom, c, f, r, i]) => { const at = K.Sonido + 3.0 + i * 0.6, e = kprog(T, at, at + 0.4, kEase.rebote);
+            // los tres medios están desde el inicio (atenuados) y se encienden cuando la voz los nombra
+            const bx = 50 + i * 335, k = klerp(0.94, 1, e);
+            return <g key={nom} opacity={Math.min(1, klerp(0.3, 1, e))} transform={`translate(${bx + 155} 1110) scale(${k}) translate(${-(bx + 155)} -1110)`}>
+              <rect x={bx} y={900} width={310} height={420} rx={30} fill={['#14323c', '#0f2f5e', '#3b2a1b'][i]} stroke={KC.ink} strokeWidth={8} />
+              <OndaBolitas T={T} x={bx + 10} y={965} w={290} h={340} cols={c} filas={f} amp={i === 2 ? 6 : 12} lambda={180} vel={1.4} r={r} />
+              <text x={bx + 155} y={948} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.ink}>{nom}</text>
             </g>; })}
         </Lienzo>
-        <Chip T={T} at={K.Sonido + 0.4} until={K.Cadena - 0.1} texto="sonido = vibración que empuja" x={540} y={420} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Sonido + 0.4} until={K.Cadena - 0.1} texto="sonido = vibración que empuja" x={540} y={300} tam={40} borde={KC.yellow} />
       </Escena>
 
       {/* 2 · la cadena: tu voz empuja el aire hasta un oído */}
       <Escena T={T} a={K.Cadena} b={K.Vacio} fondo={KC.yellow}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <CabezaPerfil x={190} y={760} s={0.95} boca={habla(K.Cadena + 0.2, K.Cadena + 2.4)} />
-          <g transform="translate(900 760) scale(-0.95 0.95)"><CabezaPerfil x={0} y={0} s={1} /></g>
-          <CadenaBolitas x1={360} x2={820} y={850} n={8} p={(T - K.Cadena - 0.4) / 3.2 % 1.15} />
-          <OndasArco x={340} y={850} ang={0} T={T} color={KC.pink} largo={90} n={3} o={1 - kprog(T, K.Cadena + 3.5, K.Cadena + 4)} />
+          <CabezaPerfil x={90} y={900} s={1.35} boca={habla(K.Cadena + 0.2, K.Cadena + 2.4)} />
+          <g transform="translate(870 900) scale(-1.35 1.35)"><CabezaPerfil x={0} y={0} s={1} /></g>
+          <CadenaBolitas x1={352} x2={757} y={1028} n={8} r={24} p={(T - K.Cadena - 0.4) / 3.2 % 1.15} />
+          <OndasArco x={330} y={1028} ang={0} T={T} color={KC.pink} largo={110} n={3} o={1 - kprog(T, K.Cadena + 3.5, K.Cadena + 4)} />
           {/* el oído que recibe */}
-          {T > K.Cadena + 3.3 && <circle cx={900 + 75 * 0.95} cy={760 + 10 * 0.95} r={60 + ((T * 1.5) % 1) * 50} fill="none" stroke={KC.pink} strokeWidth={8} opacity={1 - ((T * 1.5) % 1)} />}
+          {T > K.Cadena + 3.3 && <circle cx={870 + 75 * 1.35} cy={900 + 10 * 1.35} r={80 + ((T * 1.5) % 1) * 65} fill="none" stroke={KC.pink} strokeWidth={8} opacity={1 - ((T * 1.5) % 1)} />}
         </Lienzo>
-        <Chip T={T} at={K.Cadena + 0.3} until={K.Vacio - 0.1} texto="empuja · empuja · empuja" x={540} y={420} tam={40} borde={KC.pink} />
-        <Etq T={T} at={K.Cadena + 1.2} until={K.Vacio - 0.2} x={400} y={1000} texto="aire" lado="der" color={KC.ink} />
-        <Etq T={T} at={K.Cadena + 3.3} until={K.Vacio - 0.2} x={975} y={600} texto="oído" lado="izq" color={KC.ink} />
+        <Chip T={T} at={K.Cadena + 0.3} until={K.Vacio - 0.1} texto="empuja · empuja · empuja" x={540} y={470} tam={40} borde={KC.pink} />
+        <Etq T={T} at={K.Cadena + 1.2} until={K.Vacio - 0.2} x={440} y={1160} texto="aire" lado="der" color={KC.ink} />
+        <Etq T={T} at={K.Cadena + 3.3} until={K.Vacio - 0.2} x={990} y={590} texto="oído" lado="izq" color={KC.ink} />
       </Escena>
 
       {/* 3 · el espacio entre planetas: casi vacío */}
@@ -276,24 +277,24 @@ function Espacio() {
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 40%, #1d1f5e 0%, ${KC.noche} 75%)` }}></div>
         <Lienzo>
           <EstrellasFondo T={T} n={60} />
-          <Planeta x={170} y={1060} r={110} color={KC.blue} sombra={KC.ink} />
-          <Planeta x={900} y={1080} r={80} color={KC.orange} sombra={KC.ink} />
+          <Planeta x={130} y={1420} r={200} color={KC.blue} sombra={KC.ink} />
+          <Planeta x={950} y={1400} r={135} color={KC.orange} sombra={KC.ink} />
           {/* en el Vacío: 3 partículas muy separadas; en Nada: la onda se apaga */}
-          {T < K.Nada + 0.2 && [[420, 640], [700, 880], [560, 1060]].map(([px, py], i) => <circle key={i} cx={px + Math.sin(T + i) * 18} cy={py + Math.cos(T * 0.8 + i) * 14} r={14}
+          {T < K.Nada + 0.2 && [[150, 600], [900, 1130], [420, 1300]].map(([px, py], i) => <circle key={i} cx={px + Math.sin(T + i) * 18} cy={py + Math.cos(T * 0.8 + i) * 14} r={16}
             fill={AIRE} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Vacio + 1.2 + i * 0.3, K.Vacio + 1.6 + i * 0.3)} />)}
-          {T > K.Nada - 0.2 && <g>
+          {T > K.Nada - 0.2 && <g transform="translate(130 900) scale(1.7) translate(-190 -760)">
             <CadenaBolitas x1={190} x2={320} y={760} n={3} p={((T - K.Nada) / 1.2) % 1.3} />
             {[0, 1, 2, 3].map((i) => { const f = ((T - K.Nada) * 0.5 + i / 4) % 1; return <path key={i} d={`M ${360 + f * 520} ${700 - 60 * (1 - f)} Q ${400 + f * 520} 760 ${360 + f * 520} ${820 + 60 * (1 - f)}`}
               fill="none" stroke={KC.cyan} strokeWidth={10} strokeLinecap="round" opacity={(1 - f) * (1 - f) * 0.9} />; })}
           </g>}
         </Lienzo>
-        <Lupa T={T} at={K.Vacio + 0.5} until={K.Nada - 0.2} x={540} y={760} r={210} fx={560} fy={860} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · ENTRE PLANETAS"
+        <Lupa T={T} at={K.Vacio + 0.5} until={K.Nada - 0.2} x={540} y={820} r={330} fx={900} fy={1130} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · ENTRE PLANETAS"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#070b1c" />
-            {[[0.3, 0.35], [0.72, 0.6]].map(([u, v], i) => <circle key={i} cx={u * r * 2 + Math.sin(t + i) * 10} cy={v * r * 2 + Math.cos(t + i) * 10} r={16} fill="#fff" stroke={KC.ink} strokeWidth={5} />)}</svg>} />
-        <Chip T={T} at={K.Vacio + 0.3} until={K.Nada - 0.1} texto="casi vacío" x={300} y={420} tam={44} borde={KC.cyan} />
-        <Chip T={T} at={K.Vacio + 2.0} until={K.Nada - 0.1} texto="poquísimas partículas" x={400} y={520} tam={38} borde={KC.cyan} />
-        <Chip T={T} at={K.Nada + 0.4} until={K.Pregunta - 0.1} texto="sin nada que empujar" x={340} y={420} tam={40} borde={KC.red} />
-        <Etq T={T} at={K.Nada + 1.0} until={K.Pregunta - 0.2} x={330} y={900} texto="el sonido se apaga" lado="der" color={KC.texto} />
+            {[[0.3, 0.35], [0.72, 0.6]].map(([u, v], i) => <circle key={i} cx={u * r * 2 + Math.sin(t + i) * 10} cy={v * r * 2 + Math.cos(t + i) * 10} r={24} fill="#fff" stroke={KC.ink} strokeWidth={5} />)}</svg>} />
+        <Chip T={T} at={K.Vacio + 0.3} until={K.Nada - 0.1} texto="casi vacío" x={300} y={290} tam={44} borde={KC.cyan} />
+        <Chip T={T} at={K.Vacio + 2.0} until={K.Nada - 0.1} texto="poquísimas partículas" x={420} y={390} tam={38} borde={KC.cyan} />
+        <Chip T={T} at={K.Nada + 0.4} until={K.Pregunta - 0.1} texto="sin nada que empujar" x={540} y={520} tam={40} borde={KC.red} />
+        <Etq T={T} at={K.Nada + 1.0} until={K.Pregunta - 0.2} x={380} y={1170} texto="el sonido se apaga" lado="der" color={KC.texto} />
       </Escena>
 
       {/* 5 · pregunta */}
@@ -304,12 +305,12 @@ function Espacio() {
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 55%, #2b0f63 0%, ${KC.noche} 80%)` }}></div>
         <Lienzo>
           <EstrellasFondo T={T} n={60} seed={4} />
-          <AstroRadio x={200} y={1000} s={0.95} rot={-12} T={T} />
-          <AstroRadio x={880} y={900} s={0.95} rot={10} T={T} voltea />
-          <OndaRadio x1={150} y1={810} x2={950} y2={700} T={T} p={kprog(T, K.Radio + 0.4, K.Radio + 1.6, kEase.sale)} color={KC.yellow} />
+          <AstroRadio x={300} y={1120} s={1.5} rot={-12} T={T} />
+          <AstroRadio x={770} y={960} s={1.5} rot={10} T={T} voltea />
+          <OndaRadio x1={90} y1={880} x2={975} y2={715} T={T} amp={44} p={kprog(T, K.Radio + 0.4, K.Radio + 1.6, kEase.sale)} color={KC.yellow} />
           {/* familia: radio … luz */}
           {(() => { const e = kprog(T, K.Radio + 2.0, K.Radio + 2.5, kEase.sale); if (e <= 0) return null;
-            return <g opacity={e} transform={`translate(0 ${(1 - e) * 30})`}>
+            return <g opacity={e} transform={`translate(0 ${(1 - e) * 30 - 120})`}>
               <rect x={90} y={500} width={900} height={110} rx={55} fill="rgba(14,15,18,.85)" stroke={KC.white} strokeWidth={5} />
               <polyline points={Array.from({ length: 60 }, (_, i) => `${130 + i * 6},${555 + 30 * Math.sin(i / 60 * Math.PI * 3 - T * 4)}`).join(' ')} fill="none" stroke={KC.yellow} strokeWidth={8} strokeLinecap="round" />
               <defs><linearGradient id="arco56"><stop offset="0" stopColor="#ff3b2f" /><stop offset=".2" stopColor="#ff8a1f" /><stop offset=".4" stopColor="#ffe11a" /><stop offset=".6" stopColor="#2fe0a8" /><stop offset=".8" stopColor="#2346ff" /><stop offset="1" stopColor="#b18cff" /></linearGradient></defs>
@@ -319,41 +320,43 @@ function Espacio() {
               <text x={555} y={570} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.texto}>=</text>
             </g>; })()}
         </Lienzo>
-        <Chip T={T} at={K.Radio + 0.3} until={K.Radio + 2.0} texto="por radio" x={260} y={420} tam={44} borde={KC.yellow} />
-        <Chip T={T} at={K.Radio + 2.2} until={K.Estacion - 0.1} texto="misma familia que la luz" x={540} y={420} tam={40} borde={KC.yellow} />
-        <Chip T={T} at={K.Radio + 3.5} until={K.Estacion - 0.1} texto="sí cruzan el vacío" x={540} y={1170} tam={38} borde={KC.mint} />
+        <Chip T={T} at={K.Radio + 0.3} until={K.Radio + 2.0} texto="por radio" x={260} y={290} tam={44} borde={KC.yellow} />
+        <Chip T={T} at={K.Radio + 2.2} until={K.Estacion - 0.1} texto="misma familia que la luz" x={540} y={290} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Radio + 3.5} until={K.Estacion - 0.1} texto="sí cruzan el vacío" x={540} y={1470} tam={38} borde={KC.mint} />
       </Escena>
 
       {/* 7 · dentro de la Estación Espacial: hay aire, sí se oye */}
       <Escena T={T} a={K.Estacion} b={K.Boyle} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
+          <g transform="translate(540 930) scale(1.2) translate(-540 -790)">
           <ModuloEstacion T={T} />
           <OndaBolitas T={T} x={130} y={710} w={700} h={230} cols={11} filas={4} amp={14} lambda={260} vel={0.9} r={11} color="rgba(255,255,255,.9)" resalta={KC.yellow} o={kprog(T, K.Estacion + 1.0, K.Estacion + 1.6)} />
           <Flotador x={330} y={720} rot={-18} s={0.62} color={KC.pink} boca={habla(K.Estacion + 0.4, K.Estacion + 2.5)} T={T} />
           <Flotador x={720} y={700} rot={14} s={0.62} color={KC.orange} T={T} />
           <OndasArco x={400} y={640} ang={-10} T={T} color={KC.pink} largo={220} o={kprog(T, K.Estacion + 0.4, K.Estacion + 0.8)} />
+          </g>
         </Lienzo>
-        <Chip T={T} at={K.Estacion + 0.2} until={K.Boyle - 0.1} texto="Estación Espacial" x={300} y={360} tam={38} borde={KC.ink} />
-        <Chip T={T} at={K.Estacion + 1.2} until={K.Boyle - 0.1} texto="llena de aire: sí se oye" x={540} y={1110} tam={40} borde={KC.mint} />
+        <Chip T={T} at={K.Estacion + 0.2} until={K.Boyle - 0.1} texto="Estación Espacial" x={300} y={400} tam={38} borde={KC.ink} />
+        <Chip T={T} at={K.Estacion + 1.2} until={K.Boyle - 0.1} texto="llena de aire: sí se oye" x={540} y={1318} tam={40} borde={KC.mint} />
       </Escena>
 
       {/* 8 · 1660: Boyle saca el aire del frasco y el tic tac se hace chiquito */}
       <Escena T={T} a={K.Boyle} b={K.Galaxias} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          {T > K.Boyle + 2.0 && (() => { const aire = 1 - kprog(T, K.Boyle + 3.0, K.Boyle + 6.8), bom = Math.abs(Math.sin((T - K.Boyle) * Math.PI * 1.6)) * kprog(T, K.Boyle + 2.6, K.Boyle + 3.0) * (aire > 0.02 ? 1 : 0);
+          {(() => { const aire = 1 - kprog(T, K.Boyle + 3.0, K.Boyle + 6.8), bom = Math.abs(Math.sin((T - K.Boyle) * Math.PI * 1.6)) * kprog(T, K.Boyle + 2.6, K.Boyle + 3.0) * (aire > 0.02 ? 1 : 0);
             const tam = klerp(18, 96, aire);
-            return <g opacity={kprog(T, K.Boyle + 2.0, K.Boyle + 2.4)}>
+            return <g opacity={kprog(T, K.Boyle, K.Boyle + 0.4) * klerp(0.45, 1, kprog(T, K.Boyle + 2.0, K.Boyle + 2.4))} transform="translate(530 1010) scale(1.25) translate(-500 -888)">
               <Boyle1660 T={T} aire={aire} bombeo={bom} x={370} y={1150} />
               {[0, 1].map((i) => { const ph = (T * 2 + i * 0.5) % 1; return <text key={i} x={370 + (i ? 120 : -120)} y={640 - ph * 60} textAnchor="middle" opacity={(1 - ph) * (0.25 + 0.75 * aire)}
                 style={{ font:`400 ${tam}px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={tam / 9} paintOrder="stroke">{i ? 'TAC' : 'TIC'}</text>; })}
             </g>; })()}
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Boyle + 0.2} until={K.Boyle + 2.1} anio="1660" quien="Robert Boyle" revista="frasco · reloj · bomba de aire" x={540} y={760} />
+        <TarjetaEstudio T={T} at={K.Boyle + 0.2} until={K.Boyle + 2.1} anio="1660" quien="Robert Boyle" revista="frasco · reloj · bomba de aire" x={540} y={330} />
         <Chip T={T} at={K.Boyle + 2.6} until={K.Boyle + 5.6} texto="saca el aire" x={760} y={420} tam={40} borde={KC.ink} />
         <Chip T={T} at={K.Boyle + 5.7} until={K.Galaxias - 0.1} texto="tic tac… casi no se oye" x={540} y={420} tam={40} borde={KC.ink} />
-        <Etq T={T} at={K.Boyle + 2.4} until={K.Galaxias - 0.3} x={880} y={1110} texto="bomba de aire" lado="izq" color={KC.ink} tam={30} />
+        <Etq T={T} at={K.Boyle + 2.4} until={K.Galaxias - 0.3} x={1000} y={1440} texto="bomba de aire" lado="izq" color={KC.ink} tam={32} />
       </Escena>
 
       {/* 9 · NASA 2022: ondas del gas de un cúmulo de galaxias, subidas muchísimas octavas */}
@@ -362,16 +365,16 @@ function Espacio() {
         <Lienzo>
           <EstrellasFondo T={T} n={50} seed={12} />
           {(() => { const q = kprog(T, K.Galaxias + 3.6, K.Galaxias + 4.4, kEase.suave);
-            return <Cumulo T={T} x={klerp(540, 290, q)} y={klerp(800, 600, q)} s={klerp(1, 0.48, q)} ondas={kprog(T, K.Galaxias + 1.0, K.Galaxias + 1.6)} />; })()}
+            return <Cumulo T={T} x={klerp(540, 300, q)} y={klerp(900, 600, q)} s={klerp(1.25, 0.52, q)} ondas={kprog(T, K.Galaxias + 1.0, K.Galaxias + 1.6)} />; })()}
           {T > K.Galaxias + 4.2 && <g opacity={kprog(T, K.Galaxias + 4.2, K.Galaxias + 4.6)}>
-            <EscaleraOctavas x={70} y={1150} p={kprog(T, K.Galaxias + 4.6, K.Galaxias + 7.4)} T={T} alto={350} ancho={420} pasos={9} />
-            <OrejaIcono x={470} y={760} s={0.6} />
+            <EscaleraOctavas x={240} y={1400} p={kprog(T, K.Galaxias + 4.6, K.Galaxias + 7.4)} T={T} alto={620} ancho={560} pasos={9} />
+            <OrejaIcono x={740} y={610} s={1.15} />
           </g>}
         </Lienzo>
-        <Chip T={T} at={K.Galaxias + 0.3} until={K.Cierre - 0.1} texto="NASA 2022" x={260} y={420} tam={46} borde={KC.lilac} />
-        <Etq T={T} at={K.Galaxias + 1.2} until={K.Galaxias + 3.8} x={1020} y={1150} texto="cúmulo de galaxias" lado="izq" color={KC.texto} tam={32} />
-        <Etq T={T} at={K.Galaxias + 1.8} until={K.Galaxias + 3.8} x={620} y={560} texto="ondas en el gas" lado="der" color="#ffd6f4" tam={32} />
-        <Chip T={T} at={K.Galaxias + 4.6} until={K.Cierre - 0.1} texto="↑ muchísimas octavas" x={300} y={760} tam={36} borde={KC.yellow} />
+        <Chip T={T} at={K.Galaxias + 0.3} until={K.Cierre - 0.1} texto="NASA 2022" x={260} y={290} tam={46} borde={KC.lilac} />
+        <Etq T={T} at={K.Galaxias + 1.2} until={K.Galaxias + 3.8} x={1010} y={1420} texto="cúmulo de galaxias" lado="izq" color={KC.texto} tam={32} />
+        <Etq T={T} at={K.Galaxias + 1.8} until={K.Galaxias + 3.8} x={650} y={560} texto="ondas en el gas" lado="der" color="#ffd6f4" tam={32} />
+        <Chip T={T} at={K.Galaxias + 4.6} until={K.Cierre - 0.1} texto="↑ muchísimas octavas" x={520} y={1475} tam={36} borde={KC.yellow} />
       </Escena>
 
       {/* 10 · cierre: la misma explosión, enorme… y en silencio */}
@@ -379,14 +382,14 @@ function Espacio() {
         <FondoLunares color={KC.pink} />
         <Lienzo>
           <PantallaCine T={T} id="cine1">
-            <Explosion x={540} y={PANT.y + 230} r={190} p={0.35 + 0.65 * kprog(T, K.Cierre + 0.2, K.Cierre + 1.6, kEase.sale)} T={T} />
+            <Explosion x={540} y={PANT.y + 480} r={360} p={0.35 + 0.65 * kprog(T, K.Cierre + 0.2, K.Cierre + 1.6, kEase.sale)} T={T} />
           </PantallaCine>
           {/* se sale de la pantalla: enorme */}
-          <g opacity={kprog(T, K.Cierre + 1.2, K.Cierre + 1.8)}><Explosion x={540} y={PANT.y + 230} r={430} p={kprog(T, K.Cierre + 1.2, K.Cierre + 3.2, kEase.sale)} T={T} seed={5} /></g>
-          {T > K.Cierre + 3.0 && <g transform={`translate(540 ${PANT.y + 230}) scale(${klerp(0.3, 1.5, kprog(T, K.Cierre + 3.0, K.Cierre + 3.4, kEase.rebote))})`}><Mudo x={0} y={0} /></g>}
+          <g opacity={kprog(T, K.Cierre + 1.2, K.Cierre + 1.8)}><Explosion x={540} y={PANT.y + 480} r={680} p={kprog(T, K.Cierre + 1.2, K.Cierre + 3.2, kEase.sale)} T={T} seed={5} /></g>
+          {T > K.Cierre + 3.0 && <g transform={`translate(540 ${PANT.y + 480}) scale(${klerp(0.3, 2.2, kprog(T, K.Cierre + 3.0, K.Cierre + 3.4, kEase.rebote))})`}><Mudo x={0} y={0} /></g>}
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 1.4} until={K.Outro - 0.1} texto="enorme…" x={260} y={420} tam={46} borde={KC.yellow} />
-        <Chip T={T} at={K.Cierre + 3.0} until={K.Outro - 0.1} texto="…y en silencio" x={340} y={520} tam={46} borde={KC.red} />
+        <Chip T={T} at={K.Cierre + 1.4} until={K.Outro - 0.1} texto="enorme…" x={260} y={270} tam={46} borde={KC.yellow} />
+        <Chip T={T} at={K.Cierre + 3.0} until={K.Outro - 0.1} texto="…y en silencio" x={340} y={375} tam={46} borde={KC.red} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Sonido - 0.1} texto="En las películas suena… *es un error.*" />
