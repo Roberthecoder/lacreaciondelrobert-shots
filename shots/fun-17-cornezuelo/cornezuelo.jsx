@@ -272,24 +272,28 @@ function CornezueloShot() {
       <Escena T={T} a={K.F} b={K.Po} zoom={0.06}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
+          <g transform="translate(540 1000) scale(1.25) translate(-540 -1000)">
           <Florecita T={T} x={600} y={1060} s={1.5} />
           {(() => { const u = kprog(T, K.F + 0.6, K.F + 2.0, kEase.suave); return <g transform={`translate(${klerp(-40, 560, u)} ${klerp(380, 610, u) + Math.sin(T * 5) * 10 * (1 - u)}) rotate(${70 + u * 20})`}>
             <ellipse rx={34} ry={7} fill="#fff" stroke={KC.ink} strokeWidth={4} /><path d="M -50 0 L -120 0" stroke="#fff" strokeWidth={4} strokeDasharray="8 10" opacity={1 - u} /></g>; })()}
+          </g>
         </>)}
       </Escena>
       {/* 2–3a · micro: la hifa sigue el camino del polen y llena el ovario */}
       <Escena T={T} a={K.Po} b={ES2} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
-        {fsvg(<CorteFlor T={T} polen={kprog(T, K.Po + 0.2, K.Po + 0.8)} hifa={kprog(T, K.Po + 0.6, K.Es - 0.2, kEase.suave)} invade={kprog(T, K.Es - 0.3, ES2 - 0.2, kEase.sale)} />)}
+        {fsvg(<g transform="translate(540 950) scale(1.25) translate(-540 -950)"><CorteFlor T={T} polen={kprog(T, K.Po + 0.2, K.Po + 0.8)} hifa={kprog(T, K.Po + 0.6, K.Es - 0.2, kEase.suave)} invade={kprog(T, K.Es - 0.3, ES2 - 0.2, kEase.sale)} /></g>)}
       </Escena>
       {/* 3b · macro: la gota de mielecilla con esporas y el insecto que la lleva */}
       <Escena T={T} a={ES2} b={K.Cu} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
+          <g transform="translate(540 1000) scale(1.2) translate(-540 -1000)">
           <Florecita T={T} x={420} y={1060} s={1.5} ovario={1} gota={kprog(T, ES2, ES2 + 0.6, kEase.sale)} />
           {(() => { const u = kprog(T, ES2 + 0.4, K.Cu - 0.2); const xx = u < 0.45 ? klerp(1100, 560, u / 0.45) : u < 0.65 ? 560 : klerp(560, 1150, (u - 0.65) / 0.35); const yy = u < 0.45 ? klerp(700, 840, u / 0.45) : u < 0.65 ? 840 : klerp(840, 620, (u - 0.65) / 0.35);
             return <g><Mosca T={T} x={xx} y={yy} rot={u < 0.65 ? -8 : -20} />{u > 0.55 && <circle cx={xx - 6} cy={yy + 34} r={9} fill={CZ.miel} stroke={KC.ink} strokeWidth={2} />}</g>; })()}
+          </g>
         </>)}
       </Escena>
       {/* 4 · donde iba el grano crece el cornezuelo */}
@@ -301,41 +305,46 @@ function CornezueloShot() {
       <Escena T={T} a={K.P} b={K.V} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
+          <g transform="translate(190 60) translate(430 980) scale(1.25) translate(-430 -980)">
           <Molino T={T} x={270} y={560} s={0.95} />
           {Array.from({ length: 7 }, (_, i) => { const u = ((T - K.P) * 1.4 + i / 7) % 1; return T > K.P ? (i % 3 === 1 ? <Cuerno key={i} x={230 + (i % 3) * 30} y={klerp(380, 470, u) + 40} largo={50} ancho={14} rot={90 + i * 30} /> : <ellipse key={i} cx={230 + (i % 3) * 35} cy={klerp(380, 470, u)} rx={14} ry={8} fill={CZ.grano} stroke={KC.ink} strokeWidth={2} />) : null; })}
           <path d="M 270 680 L 270 800" stroke={KC.ink} strokeWidth={10} strokeDasharray="16 12" strokeDashoffset={-T * 50} />
           <g opacity={kprog(T, K.P + 0.5, K.P + 1.0)}><Pan x={270} y={960} s={kprog(T, K.P + 0.5, K.P + 1.0, kEase.rebote)} /></g>
           {T > K.P + 1.2 && <Interrogacion T={T} x={430} y={1180} tam={260} />}
+          </g>
         </>)}
       </Escena>
       {/* 6 · los vasos se cierran y los dedos se mueren */}
       <Escena T={T} a={K.V} b={K.SA} zoom={0.04}>
         <FondoLunares color={KC.coral} />
-        {fsvg(<Mano x={560} y={1480} s={1.25} necro={necro} />)}
-        <Lupa T={T} at={K.V + 0.4} until={K.SA - 0.3} x={360} y={560} r={210} fx={610} fy={1040} tinte={KC.red} etiqueta="POR DENTRO · vaso sanguíneo" interior={(TT, r) => <VasoInterior T={TT} r={r} cierra={cierraV} />} />
+        {fsvg(<Mano x={560} y={1520} s={1.45} necro={necro} />)}
+        <Lupa T={T} at={K.V + 0.4} until={K.SA - 0.3} x={360} y={560} r={210} fx={618} fy={990} tinte={KC.red} etiqueta="POR DENTRO · vaso sanguíneo" interior={(TT, r) => <VasoInterior T={TT} r={r} cierra={cierraV} />} />
       </Escena>
       {/* 7 · fuego de San Antonio (Edad Media) */}
       <Escena T={T} a={K.SA} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
+          <g transform="translate(400 960) scale(1.3) translate(-400 -960)">
           <rect x={90} y={590} width={600} height={640} rx={18} fill={CZ.papel} stroke={KC.ink} strokeWidth={9} transform="rotate(-2 390 910)" />
           <rect x={120} y={620} width={540} height={580} rx={10} fill="none" stroke="#9c6b3b" strokeWidth={4} strokeDasharray="10 8" transform="rotate(-2 390 910)" />
           <FiguraFuego T={T} x={390} y={1000} s={0.85} />
           <text x={390} y={680} textAnchor="middle" transform="rotate(-2 390 910)" style={{ font:`700 34px ${KF.mono}` }} fill="#6b3a1b">“fuego de San Antonio”</text>
+          </g>
         </>)}
       </Escena>
       {/* 8 · el estudio: Arsi, Etiopía, 2001 */}
       <Escena T={T} a={K.E} b={K.Cul} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <MapaEtiopia X={60} Y={800} k={27} T={T} at={K.E + 1.0} />
-          {Array.from({ length: 18 }, (_, i) => { const on = kprog(T, K.E + 1.6 + i * 0.08, K.E + 1.9 + i * 0.08, kEase.rebote); return on > 0 ? <Persona key={i} x={560 + (i % 6) * 80} y={930 + Math.floor(i / 6) * 110} s={0.62 * on} color={KC.blue} apagada={i < 3 ? kprog(T, K.E + 4.0 + i * 0.25, K.E + 4.4 + i * 0.25) : 0} /> : null; })}
+          <MapaEtiopia X={40} Y={820} k={36} T={T} at={K.E + 1.0} />
+          {Array.from({ length: 18 }, (_, i) => { const on = kprog(T, K.E + 1.6 + i * 0.08, K.E + 1.9 + i * 0.08, kEase.rebote); return on > 0 ? <Persona key={i} x={600 + (i % 6) * 84} y={1000 + Math.floor(i / 6) * 135} s={0.85 * on} color={KC.blue} apagada={i < 3 ? kprog(T, K.E + 4.0 + i * 0.25, K.E + 4.4 + i * 0.25) : 0} /> : null; })}
         </>)}
       </Escena>
       {/* 9 · el culpable: avena silvestre con cornezuelo en la cebada */}
       <Escena T={T} a={K.Cul} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
+          <g transform="translate(540 1050) scale(1.3) translate(-540 -1050)">
           <MontonCebada T={T} x={430} y={1180} s={1.05} avenas={kprog(T, K.Cul + 0.8, K.Cul + 1.4)} />
           {(() => { const u = kprog(T, K.Cul + 1.0, K.Cul + 2.0, kEase.sale), gx = klerp(900, 440, u), gy = klerp(560, 760, u); return <g transform={`translate(${gx} ${gy})`}>
             <circle r={150} fill="rgba(220,245,255,.92)" stroke={KC.ink} strokeWidth={14} />
@@ -346,32 +355,35 @@ function CornezueloShot() {
             </g>
             <line x1={105} y1={105} x2={200} y2={200} stroke={KC.ink} strokeWidth={28} strokeLinecap="round" />
           </g>; })()}
+          </g>
         </>)}
       </Escena>
       {/* 10 · de veneno a medicina */}
       <Escena T={T} a={K.M} b={K.H} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          {(() => { const u = kprog(T, K.M + 0.4, K.M + 1.3, kEase.suave); return <>
+          {(() => { const u = kprog(T, K.M + 0.4, K.M + 1.3, kEase.suave); return <g transform="translate(540 900) scale(2.0) translate(-540 -900)">
             {/* modo cine: el cornezuelo no se apaga; queda atenuado junto al frasco que sale de él */}
-            <g opacity={1 - 0.5 * u}><Cuerno x={klerp(420, 310, u)} y={900} largo={260} ancho={60} rot={-12} /></g>
+            <g opacity={1 - 0.5 * u}><Cuerno x={klerp(470, 390, u)} y={920} largo={260} ancho={60} rot={-12} /></g>
             <g opacity={u} transform={`translate(${klerp(420, 610, u)} ${klerp(900, 820, u)}) scale(${klerp(0.4, 1.25, u)})`}><Frasco x={0} y={0} /></g>
             {u > 0.7 && Array.from({ length: 8 }, (_, i) => { const a = i * Math.PI / 4 + T * 0.6, rr = 210 + Math.sin(T * 4 + i) * 10; return <circle key={i} cx={610 + Math.cos(a) * rr} cy={790 + Math.sin(a) * rr} r={8} fill="#fff" opacity=".8" />; })}
-          </>; })()}
+          </g>; })()}
         </>)}
       </Escena>
       {/* 11 · 1938: Albert Hofmann */}
       <Escena T={T} a={K.H} b={K.Mo} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
+          <g transform="translate(100 0) translate(540 950) scale(1.7) translate(-540 -950)">
           <Matraz T={T} x={280} y={980} s={1.0} />
           <Ergolina x={520} y={860} s={1.1} p={kprog(T, K.H + 0.5, K.H + 1.8)} />
+          </g>
         </>)}
       </Escena>
       {/* 12 · hoy: el molino lo separa */}
       <Escena T={T} a={K.Mo} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Banda T={T} a={K.Mo} y={860} />)}
+        {fsvg(<g transform="translate(540 920) scale(1.4) translate(-540 -920)"><Banda T={T} a={K.Mo} y={860} /></g>)}
       </Escena>
       {/* 13 · cierre: la misma espiga, ahora con su frasquito de medicina */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.06} origen="35% 45%">
@@ -402,8 +414,8 @@ function CornezueloShot() {
       <Chip T={T} at={K.V + 2.4} until={K.SA - 0.3} texto="gangrena" x={830} y={950} tam={40} borde={KC.red} />
       <Chip T={T} at={K.SA + 0.3} until={K.E - 0.3} texto="Edad Media · ergotismo" x={400} y={470} tam={34} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Cul - 0.3} anio="2001" quien="Arsi, Etiopía · 18 casos" revista="Urga et al., Ethiop. J. Health Dev., 2002" x={380} y={530} />
-      <Chip T={T} at={K.E + 2.8} until={K.Cul - 0.3} texto="de 5 a 30 años" x={790} y={800} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.E + 4.3} until={K.Cul - 0.3} x={60} y={1160} texto="3 murieron" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.E + 2.8} until={K.Cul - 0.3} texto="de 5 a 30 años" x={790} y={830} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.E + 4.3} until={K.Cul - 0.3} x={60} y={1330} texto="3 murieron" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Cul + 0.4} until={K.M - 0.3} x={800} y={1100} texto="cebada" tam={30} color={KC.ink} />
       <Etq T={T} at={K.Cul + 2.0} until={K.M - 0.3} x={60} y={470} texto="avena silvestre" tam={32} color={KC.ink} />
       <Etq T={T} at={K.Cul + 2.3} until={K.M - 0.3} x={60} y={520} texto="+ cornezuelo" tam={32} color={KC.ink} />
@@ -417,18 +429,18 @@ function CornezueloShot() {
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.F} texto="2 cm" largo={210} />
-      <BarraEscala T={T} at={K.F} until={K.Po} texto="1 mm" largo={160} />
-      <BarraEscala T={T} at={K.Po} until={ES2} texto="1 mm" largo={200} />
-      <BarraEscala T={T} at={ES2} until={K.Cu} texto="1 mm" largo={140} />
+      <BarraEscala T={T} at={K.F} until={K.Po} texto="1 mm" largo={200} />
+      <BarraEscala T={T} at={K.Po} until={ES2} texto="1 mm" largo={250} />
+      <BarraEscala T={T} at={ES2} until={K.Cu} texto="1 mm" largo={168} />
       <BarraEscala T={T} at={K.Cu} until={K.P} texto="1 cm" largo={160} />
-      <BarraEscala T={T} at={K.P} until={K.V} texto="10 cm" largo={190} />
-      <BarraEscala T={T} at={K.V} until={K.SA} texto="2 cm" largo={150} />
-      <BarraEscala T={T} at={K.SA} until={K.E} texto="50 cm" largo={150} />
-      <BarraEscala T={T} at={K.E} until={K.Cul} texto="500 km" largo={130} />
-      <BarraEscala T={T} at={K.Cul} until={K.M} texto="1 cm" largo={100} />
-      <BarraEscala T={T} at={K.M} until={K.H} texto="1 cm" largo={110} />
-      <BarraEscala T={T} at={K.H} until={K.Mo} texto="10 cm" largo={150} />
-      <BarraEscala T={T} at={K.Mo} until={K.C} texto="1 cm" largo={110} />
+      <BarraEscala T={T} at={K.P} until={K.V} texto="10 cm" largo={247} />
+      <BarraEscala T={T} at={K.V} until={K.SA} texto="2 cm" largo={174} />
+      <BarraEscala T={T} at={K.SA} until={K.E} texto="50 cm" largo={195} />
+      <BarraEscala T={T} at={K.E} until={K.Cul} texto="500 km" largo={173} />
+      <BarraEscala T={T} at={K.Cul} until={K.M} texto="1 cm" largo={130} />
+      <BarraEscala T={T} at={K.M} until={K.H} texto="1 cm" largo={220} />
+      <BarraEscala T={T} at={K.H} until={K.Mo} texto="10 cm" largo={254} />
+      <BarraEscala T={T} at={K.Mo} until={K.C} texto="1 cm" largo={154} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="2 cm" largo={210} />
 
       {/* subtítulos (idx = línea de narracion.json) */}

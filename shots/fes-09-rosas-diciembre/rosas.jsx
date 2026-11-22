@@ -269,9 +269,11 @@ function Rosas() {
       <Escena T={T} a={K.G} b={K.Te} zoom={0.06}>
         <FondoLunares color={KC.pink} />
         {svg(<>
+          <g transform="translate(0 150) translate(480 1250) scale(1.38) translate(-480 -1250)">
           <Florero x={400} y={880} s={1.2} />
           <RosaTallo T={T} x={400} y={940} alto={330} s={1.25} abre={kprog(T, K.G + 0.05, K.G + 0.75, kEase.sale)} />
-          <HojaCalendario x={klerp(1300, 800, kprog(T, K.G + 0.25, K.G + 0.9, kEase.rebote))} y={1590} rot={klerp(30, 6, kprog(T, K.G + 0.25, K.G + 1.0))} s={0.95} />
+          </g>
+          <HojaCalendario x={klerp(1300, 860, kprog(T, K.G + 0.25, K.G + 0.9, kEase.rebote))} y={1500} rot={klerp(30, 6, kprog(T, K.G + 0.25, K.G + 1.0))} s={0.95} />
           {T > K.G + 0.8 && Array.from({ length: 10 }, (_, i) => { const u = kprog(T, K.G + 0.8, K.G + 1.6), a = (i / 10) * Math.PI * 2; return <circle key={i} cx={400 + Math.cos(a) * (80 + 220 * u)} cy={490 + Math.sin(a) * (80 + 220 * u)} r={12 * (1 - u)} fill="#fff" />; })}
         </>)}
       </Escena>
@@ -280,14 +282,14 @@ function Rosas() {
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(#283b53, #3d4757 55%, #4a4749)' }}></div>
         {svg(<>
           <Copos T={T} o={1 - kprog(T, K.Te + 3.5, K.Te + 5.5) * 0.5} />
-          <Tepeyac T={T} flor={kprog(T, K.Te + 1.4, K.Te + 3.6)} hielo={1} />
+          <g transform="translate(540 1150) scale(1.18) translate(-540 -1150)"><Tepeyac T={T} flor={kprog(T, K.Te + 1.4, K.Te + 3.6)} hielo={1} /></g>
         </>)}
       </Escena>
       {/* 2 · la rosa silvestre florece solo en primavera */}
       <Escena T={T} a={K.Si} b={K.Fr}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <RosalSilvestre T={T} x={560} y={1120} s={1.1} flor={kprog(T, K.Si + 0.8, K.Si + 2.0)} />
+          <RosalSilvestre T={T} x={540} y={1240} s={1.45} flor={kprog(T, K.Si + 0.8, K.Si + 2.0)} />
           <TiraMeses y={1480} luz={(i) => (i >= 2 && i <= 4 ? kprog(T, K.Si + 0.8, K.Si + 1.6) : 0)} />
         </>)}
       </Escena>
@@ -295,24 +297,24 @@ function Rosas() {
       <Escena T={T} a={K.Fr} b={K.Ho} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={26} color="rgba(120,200,255,.22)" />
-        {svg(<>
+        {svg(<g transform="translate(540 980) scale(1.55) translate(-540 -980)">
           <Gen T={T} y={980} ksn={kprog(T, K.Fr + 0.4, K.Fr + 1.0)} o={kprog(T, K.Fr - 0.3, K.Fr + 0.3)} />
           <path d={`M ${KS0} 1060 L ${KS0} 1080 L ${KS1} 1080 L ${KS1} 1060`} stroke={KSNC} strokeWidth={6} fill="none" opacity={kprog(T, K.Fr + 0.5, K.Fr + 0.9)} />
           <text x={KMID} y={1135} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KSNC} opacity={kprog(T, K.Fr + 0.5, K.Fr + 0.9)}>GEN KSN</text>
-          <Alto x={KMID} y={klerp(560, 720, kprog(T, K.Fr + 1.1, K.Fr + 1.6, kEase.rebote))} s={0.9} o={kprog(T, K.Fr + 1.1, K.Fr + 1.4)} />
-        </>)}
+          <Alto x={KMID} y={klerp(600, 740, kprog(T, K.Fr + 1.1, K.Fr + 1.6, kEase.rebote))} s={0.9} o={kprog(T, K.Fr + 1.1, K.Fr + 1.4)} />
+        </g>)}
       </Escena>
       {/* 4 · con el freno puesto: el brote echa hojas, pero no flor */}
       <Escena T={T} a={K.Ho} b={K.Pr}>
         <FondoLunares color={KC.yellow} />
         {svg((() => { const c = kprog(T, K.Ho + 0.1, K.Ho + 3.2), alto = klerp(220, 600, c);
-          return <>
+          return <g transform="translate(540 1180) scale(1.35) translate(-540 -1180)">
             <Tallo x={540} y={1240} alto={alto} curva={30} espinas={Math.round(2 + c * 3)} />
             {[[0.28, -55], [0.48, 52], [0.66, -50], [0.84, 48]].map(([u, r], i) => <Hoja key={i} x={540 + (r < 0 ? -6 : 6)} y={1240 - 600 * u} rot={r} s={0.85} e={kclamp((alto / 600 - u) * 6, 0, 1)} />)}
             {/* yema de la punta: sigue haciendo hojas */}
             <g transform={`translate(540 ${1240 - alto - 10})`}><path d="M 0 -40 C -22 -20 -22 10 0 16 C 22 10 22 -20 0 -40 Z" fill={HOJA} stroke={KC.ink} strokeWidth={4} /></g>
-            <Alto x={250} y={900} s={0.7} rot={Math.sin(T * 3) * 4} />
-          </>; })())}
+            <Alto x={250} y={960} s={0.7} rot={Math.sin(T * 3) * 4} />
+          </g>; })())}
       </Escena>
       {/* 5 · en primavera el freno se afloja: su única floración */}
       <Escena T={T} a={K.Pr} b={K.P}>
@@ -320,7 +322,7 @@ function Rosas() {
         {svg(<>
           <TiraMeses y={480} cursor={klerp(0, 4.99, kprog(T, K.Pr + 0.1, K.Pr + 1.2))} luz={(i) => (i >= 2 && i <= 4 ? kprog(T, K.Pr + 0.9, K.Pr + 1.4) : 0)} />
           <Alto x={klerp(870, 1250, kprog(T, K.Pr + 1.2, K.Pr + 1.9, kEase.suave))} y={850} s={0.75} rot={klerp(0, 40, kprog(T, K.Pr + 1.2, K.Pr + 1.9))} />
-          <RosalSilvestre T={T} x={520} y={1130} s={1.1} flor={kprog(T, K.Pr + 1.4, K.Pr + 2.8)} caen={kprog(T, K.Pr + 3.6, K.Pr + 4.8)} />
+          <RosalSilvestre T={T} x={520} y={1250} s={1.4} flor={kprog(T, K.Pr + 1.4, K.Pr + 2.8)} caen={kprog(T, K.Pr + 3.6, K.Pr + 4.8)} />
         </>)}
       </Escena>
       {/* 6 · re-gancho: ¿y si el freno se rompe? */}
@@ -337,16 +339,16 @@ function Rosas() {
         <Ambiente T={T} n={26} color="rgba(255,120,230,.2)" />
         {svg((() => { const v = kprog(T, K.Sa + 0.3, K.Sa + 2.0, kEase.suave), h = kprog(T, K.Sa + 1.5, K.Sa + 2.2, kEase.suave);
           const ix = klerp(150, KMID + LARGO_INS / 2 * h, v), iy = klerp(520, 950, v) - Math.sin(v * Math.PI) * 220, rot = (1 - v) * 360;
-          return <>
+          return <g transform="translate(540 980) scale(1.55) translate(-540 -980)">
             <Gen T={T} y={950} hueco={h} inserto={{ x: v >= 1 ? KMID + LARGO_INS / 2 : ix, y: v >= 1 ? 950 : iy, rot }} />
             <text x={KMID + 100 * h} y={1110} textAnchor="middle" style={{ font:`400 52px ${KF.titulo}` }} fill={KSNC}>GEN KSN</text>
-          </>; })())}
+          </g>; })())}
       </Escena>
       {/* 8 · el gen ya no se lee → sin freno → flor en cada temporada buena */}
       <Escena T={T} a={K.Ap} b={K.E} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         {svg((() => { const lx = klerp(80, KMID - 70, kprog(T, K.Ap + 0.2, K.Ap + 1.3, kEase.suave)), at = kprog(T, K.Ap + 1.3, K.Ap + 1.5);
-          return <g opacity={1 - kprog(T, K.Ap + 2.2, K.Ap + 2.7)}>
+          return <g opacity={1 - kprog(T, K.Ap + 2.2, K.Ap + 2.7)} transform="translate(540 980) scale(1.55) translate(-540 -980)">
             <Gen T={T} y={950} hueco={1} inserto={{ x: KMID + LARGO_INS / 2, y: 950 }} />
             <Lector T={T} x={lx} y={950} atorado={at} />
             {at > 0 && <g transform={`translate(${KMID - 70} 820) scale(${kEase.rebote(at)})`}><path d="M -34 -34 L 34 34 M 34 -34 L -34 34" stroke={KC.red} strokeWidth={16} strokeLinecap="round" /></g>}
@@ -355,6 +357,7 @@ function Rosas() {
         <div style={{ position:'absolute', inset:0, opacity:kprog(T, K.Ap + 2.2, K.Ap + 2.7) }}>
           <FondoLunares color={KC.yellow} />
           {svg(<>
+            <g transform="translate(500 1200) scale(1.35) translate(-500 -1200)">
             <Tallo x={460} y={1240} alto={520} curva={-20} />
             <Hoja x={454} y={1060} rot={-55} s={0.85} /><Hoja x={466} y={900} rot={50} s={0.8} />
             <RosaFlor x={460} y={690} s={0.95} abre={kprog(T, K.Ap + 2.6, K.Ap + 3.4, kEase.sale)} T={T} />
@@ -364,13 +367,14 @@ function Rosas() {
               <path d={`M 462 980 Q ${klerp(470, 640, c)} ${klerp(970, 900, c)} ${klerp(470, 700, c)} ${klerp(970, 820, c)}`} stroke={TALLO} strokeWidth={12} fill="none" strokeLinecap="round" />
               <RosaFlor x={klerp(470, 708, c)} y={klerp(960, 790, c)} s={0.7 * c} abre={kprog(T, K.Ap + 4.0, K.Ap + 4.8, kEase.sale)} rot={15} />
             </g> : null; })()}
+            </g>
           </>)}
         </div>
       </Escena>
       {/* 9 · el estudio: 2012, seis pares de rosas */}
       <Escena T={T} a={K.E} b={K.Ch}>
         <FondoLunares color={KC.cyan} />
-        {svg(<>
+        {svg(<g transform="translate(-40 0) translate(540 1050) scale(1.08) translate(-540 -1050)">
           <g opacity={kprog(T, K.E + 0.5, K.E + 0.9)}>
             <text x={270} y={740} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>1 vez al año</text>
             <text x={810} y={740} textAnchor="middle" style={{ font:`900 38px ${KF.texto}` }} fill={KC.ink}>cada temporada buena</text>
@@ -382,7 +386,7 @@ function Rosas() {
               <text x={540} y={yy + 12} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={KC.ink} opacity={e}>vs</text>
             </g>; })}
           {T > K.E + 3.4 && <g>{Array.from({ length: 6 }, (_, i) => <circle key={i} cx={650 + 260 * 0.51} cy={795 + i * 62} r={30 + 6 * Math.sin(T * 6 + i)} fill="none" stroke={KC.red} strokeWidth={5} opacity={kprog(T, K.E + 3.4, K.E + 3.8)} />)}</g>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 10 · rosas de China; a fines del siglo XVIII se cruzan en Europa */}
       <Escena T={T} a={K.Ch} b={K.In}>
@@ -466,10 +470,12 @@ function Rosas() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {svg(<>
+          <g transform="translate(0 150) translate(480 1250) scale(1.38) translate(-480 -1250)">
           <Florero x={400} y={880} s={1.2} />
           {ramo(kprog(T, K.Ci + 0.2, K.Ci + 1.2, kEase.sale))}
           <RosaTallo T={T} x={400} y={940} alto={330} s={1.25} abre={1} />
-          {(() => { const m = kprog(T, K.Ci + 1.5, K.Ci + 2.1, kEase.suave); return <HojaCalendario x={klerp(800, 915, m)} y={klerp(1590, 1680, m)} rot={6} s={klerp(0.95, 0.62, m)} />; })()}
+          </g>
+          {(() => { const m = kprog(T, K.Ci + 1.5, K.Ci + 2.1, kEase.suave); return <HojaCalendario x={klerp(860, 950, m)} y={klerp(1500, 1560, m)} rot={6} s={klerp(0.95, 0.62, m)} />; })()}
         </>)}
         <Lupa T={T} at={K.Ci + 1.0} until={K.Ou - 0.2} x={820} y={900} r={160} fx={400} fy={760} tinte={KC.yellow} etiqueta="POR DENTRO · KSN"
           interior={(Tl, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill={KC.noche} /><g transform={`translate(${r} ${r}) scale(.62) translate(-640 -950)`}><Gen T={Tl} y={950} hueco={1} inserto={{ x: KMID + LARGO_INS / 2, y: 950 }} /></g></svg>} />
@@ -484,7 +490,7 @@ function Rosas() {
       <Chip T={T} at={K.Te + 2.0} until={K.Si - 0.3} texto="diciembre: rosas de Castilla" x={540} y={1500} tam={40} borde={KC.cyan} />
       <Etq T={T} at={K.Si + 0.3} until={K.Fr - 0.3} x={420} y={540} texto="rosa silvestre" tam={38} color={KC.ink} />
       <Etq T={T} at={K.Fr + 1.4} until={K.Ho - 0.3} x={680} y={640} texto="= freno" tam={40} color={KC.texto} />
-      {((T > K.Fr - 0.3 && T < K.Ho - 0.1) || (T > K.Sa - 0.3 && T < K.Ap + 2.4)) && <Escala T={T} z={1} pxPorMm={4e7} x={60} y={1430} />}
+      {((T > K.Fr - 0.3 && T < K.Ho - 0.1) || (T > K.Sa - 0.3 && T < K.Ap + 2.4)) && <Escala T={T} z={1.55} pxPorMm={4e7} x={60} y={1430} />}
       <Etq T={T} at={K.Ho + 0.4} until={K.Pr - 0.3} x={330} y={700} texto="hoja, hoja, hoja…" tam={34} color={KC.ink} lado="izq" />
       <MitoTachado T={T} at={K.Ho + 1.2} tacharEn={K.Ho + 2.0} until={K.Pr - 0.3} texto="¿flor?" x={760} y={800} tam={50} />
       <Chip T={T} at={K.Pr + 2.4} until={K.P - 0.2} texto="una vez al año" x={540} y={1500} tam={46} borde={SILV} />
