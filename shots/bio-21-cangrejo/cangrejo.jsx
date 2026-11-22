@@ -2,6 +2,7 @@
 // Shot Biotecnológico #21 · La sangre azul que revisa tus vacunas (cangrejo herradura, prueba LAL y factor C recombinante).
 // NARRADO · formato N1 "Por dentro" + N5 "El experimento". Guion y fuentes: guion.md · verificación: verificacion.md.
 // El dibujo es esquemático y no está a escala entre sí.
+const ARENA = mixHex('#7e7253', '#0b1020', 0.55), MAR = mixHex('#1f8fd6', '#0b1020', 0.45);
 const AZUL = '#2f6bff', AZUL_CL = '#7fb2ff', CAPA = '#8a7642', CAPA_OSC = '#5e4f28', CAPA_CL = '#b39a5c', ENDO = '#ff6b5a', GEL = '#cfe3ff';
 
 function SvgCapa({ children, z }) {
@@ -194,10 +195,10 @@ function Matraz({ T = 0, x, y, s = 1, brillo = 0 }) {
   </g>;
 }
 // Olas (franja de mar).
-function Mar({ T, y, color = '#1f8fd6', alto = 400 }) {
+function Mar({ T, y, color = MAR, alto = 400 }) {
   const d = Array.from({ length: 13 }, (_, i) => `Q ${i * 90 + 45} ${y - 24 + Math.sin(T * 2 + i) * 10} ${i * 90 + 90} ${y}`).join(' ');
   return <g><path d={`M 0 ${y} ${d} L 1080 ${y + alto} L 0 ${y + alto} Z`} fill={color} stroke={KC.ink} strokeWidth={7} />
-    <path d={`M 0 ${y + 40} ${Array.from({ length: 13 }, (_, i) => `Q ${i * 90 + 45} ${y + 24 + Math.cos(T * 2 + i) * 8} ${i * 90 + 90} ${y + 40}`).join(' ')}`} stroke="rgba(255,255,255,.5)" strokeWidth={6} fill="none" /></g>;
+    <path d={`M 0 ${y + 40} ${Array.from({ length: 13 }, (_, i) => `Q ${i * 90 + 45} ${y + 24 + Math.cos(T * 2 + i) * 8} ${i * 90 + 90} ${y + 40}`).join(' ')}`} stroke="rgba(255,255,255,.3)" strokeWidth={6} fill="none" /></g>;
 }
 
 function Cangrejo21() {
@@ -205,11 +206,11 @@ function Cangrejo21() {
   const K = { G: CUES.Gancho, A: CUES.Animal, Az: CUES.Azul, En: CUES.Endotoxina, Pe: CUES.Peligro, Co: CUES.Coagulo, Es: CUES.Estudio, Pr: CUES.Pregunta,
     Sa: CUES.Sangrado, Mo: CUES.Mortalidad, Fc: CUES.FactorC, Fa: CUES.Farmacopea, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4, ES2 = K.Es + 4.75;
-  const llena = kprog(T, K.G + 0.15, K.G + 1.4, kEase.sale);
+  const llena = 0.08 + 0.92 * kprog(T, K.G, K.G + 1.3, kEase.sale);
   const R = krng(11);
   const endos = Array.from({ length: 9 }, () => [R() * 6.28, 0.6 + R() * 0.8, R() * 360]);
   const amebos = [[230, 760, 1], [540, 650, 2], [850, 780, 3], [360, 1010, 4], [740, 1030, 5]];
-  const crias = Array.from({ length: 20 }, (_, i) => [150 + (i % 5) * 195, 860 + Math.floor(i / 5) * 105]);
+  const crias = Array.from({ length: 20 }, (_, i) => [150 + (i % 5) * 195, 700 + Math.floor(i / 5) * 165]);
   const muertos = [3, 9, 16];
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
@@ -217,10 +218,10 @@ function Cangrejo21() {
       <Escena T={T} a={K.G} b={K.A} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Goteo T={T} x={370} y0={560} y1={830} cada={0.22} color={AZUL} desde={K.G} hasta={K.G + 1.3} r={16} />
-          <Frasco T={T} x={370} y={1000} s={1.1} nivel={llena} />
-          <Vacuna x={720} y={1040} s={1.05} />
-          <g transform={`translate(190 ${700 + Math.sin(T * 2) * 10})`} opacity={1 - kprog(T, K.G + 1.9, K.G + 2.3)}>
+          <Goteo T={T} x={330} y0={420} y1={800} cada={0.22} color={AZUL} desde={K.G} hasta={K.G + 1.3} r={22} />
+          <Frasco T={T} x={330} y={1000} s={1.6} nivel={llena} />
+          <Vacuna x={740} y={1070} s={1.35} />
+          <g transform={`translate(190 ${540 + Math.sin(T * 2) * 10})`} opacity={1 - kprog(T, K.G + 1.9, K.G + 2.3)}>
             <circle r={70} fill={KC.lilac} stroke={KC.ink} strokeWidth={7} /><ellipse rx={120} ry={26} fill="none" stroke={KC.ink} strokeWidth={7} transform="rotate(-15)" />
             <text y={26} textAnchor="middle" style={{ font:`400 80px ${KF.titulo}` }} fill={KC.ink}>?</text></g>
         </SvgCapa>
@@ -229,28 +230,28 @@ function Cangrejo21() {
       <Escena T={T} a={K.A} b={K.Az} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <rect x={0} y={1180} width={KW} height={740} fill="#7e7253" />
-          <Cangrejo T={T} x={klerp(-200, 560, kprog(T, K.A - 0.3, K.A + 1.6, kEase.sale))} y={720} s={0.46} rot={8 * Math.sin(T * 2)} patas={1 - kprog(T, K.A + 1.4, K.A + 1.8)} />
-          <g opacity={kprog(T, K.A + 1.8, K.A + 2.3)}>
-            <Arana T={T} x={190} y={1080} s={0.85} />
-            <Escorpion T={T} x={900} y={1050} s={0.75} />
+          <rect x={0} y={1180} width={KW} height={740} fill={ARENA} />
+          <Cangrejo T={T} x={klerp(180, 540, kprog(T, K.A - 0.45, K.A + 1.4, kEase.sale))} y={760} s={1.0} rot={8 * Math.sin(T * 2)} patas={1 - kprog(T, K.A + 1.4, K.A + 1.8)} />
+          <g opacity={kprog(T, K.A + 1.6, K.A + 2.1)}>
+            <Arana T={T} x={150} y={1220} s={1.05} />
+            <Escorpion T={T} x={930} y={1200} s={0.95} />
           </g>
         </SvgCapa>
-        <Escala T={T} z={1} pxPorMm={0.92} y={1440} color={KC.ink} />
+        <Escala T={T} z={1} pxPorMm={2.0} y={1440} color={KC.ink} />
       </Escena>
       {/* 2 · azul: cobre en vez de hierro */}
       <Escena T={T} a={K.Az} b={K.En} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <Gota x={290} y={880} s={1} color="#e0262f" />
-          <Gota x={790} y={880} s={1} color={mixHex('#eef3f8', AZUL, kprog(T, K.Az + 0.8, K.Az + 1.8))} />
+          <Gota x={290} y={930} s={1.4} color="#e0262f" />
+          <Gota x={790} y={930} s={1.4} color={mixHex('#eef3f8', AZUL, kprog(T, K.Az + 0.8, K.Az + 1.8))} />
           {Array.from({ length: 8 }, (_, i) => { const t0 = K.Az + 0.6 + i * 0.15, u = kprog(T, t0, t0 + 0.8);
-            return u > 0 && u < 1 ? <g key={i} transform={`translate(${klerp(980, 790 + (i % 3 - 1) * 40, u)} ${klerp(1100, 900 + (i % 4) * 20, u)})`} opacity={1 - u * 0.6}>
+            return u > 0 && u < 1 ? <g key={i} transform={`translate(${klerp(980, 790 + (i % 3 - 1) * 40, u)} ${klerp(1200, 960 + (i % 4) * 20, u)})`} opacity={1 - u * 0.6}>
               <circle r={22} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={3} /><text y={8} textAnchor="middle" style={{ font:`700 20px ${KF.mono}` }} fill={KC.ink}>O₂</text></g> : null; })}
-          <text x={290} y={940} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill="#fff" stroke={KC.ink} strokeWidth={4}>Fe</text>
-          <text x={790} y={940} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill="#fff" stroke={KC.ink} strokeWidth={4}>Cu</text>
-          <text x={290} y={620} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>tu sangre</text>
-          <text x={790} y={620} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>la del cangrejo</text>
+          <text x={290} y={1010} textAnchor="middle" style={{ font:`400 124px ${KF.titulo}` }} fill="#fff" stroke={KC.ink} strokeWidth={4}>Fe</text>
+          <text x={790} y={1010} textAnchor="middle" style={{ font:`400 124px ${KF.titulo}` }} fill="#fff" stroke={KC.ink} strokeWidth={4}>Cu</text>
+          <text x={290} y={600} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>tu sangre</text>
+          <text x={790} y={600} textAnchor="middle" style={{ font:`900 44px ${KF.texto}` }} fill={KC.ink}>la del cangrejo</text>
         </SvgCapa>
       </Escena>
       {/* 3 · endotoxinas: Lupa sobre la vacuna */}
@@ -271,10 +272,10 @@ function Cangrejo21() {
       <Escena T={T} a={K.Pe} b={K.Co} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Persona T={T} x={470} y={820} s={1} fiebre={kprog(T, K.Pe + 1.0, K.Pe + 2.6)} />
-          <Vacuna x={150} y={1080} s={0.7} sucia={1} T={T} />
+          <Persona T={T} x={510} y={790} s={1.4} fiebre={kprog(T, K.Pe + 1.0, K.Pe + 2.6)} />
+          <Vacuna x={130} y={1150} s={0.85} sucia={1} T={T} />
         </SvgCapa>
-        <Termometro x={860} y={790} alto={300} valor={klerp(36, 41, kprog(T, K.Pe + 0.9, K.Pe + 2.6, kEase.sale))} max={42} marcas={[]} />
+        <Termometro x={900} y={660} alto={440} valor={klerp(36, 41, kprog(T, K.Pe + 0.9, K.Pe + 2.6, kEase.sale))} max={42} marcas={[]} />
       </Escena>
       {/* 5 · amebocitos y coágulo */}
       <Escena T={T} a={K.Co} b={K.Es} zoom={0.05}>
@@ -289,43 +290,43 @@ function Cangrejo21() {
       <Escena T={T} a={K.Es} b={ES2} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Mar T={T} y={1250} />
-          <g transform="translate(120 520)">
+          <Mar T={T} y={1200} />
+          <g transform="translate(90 600) scale(1.65)">
             <rect x={0} y={60} width={300} height={200} fill="#f4efe4" stroke={KC.ink} strokeWidth={8} />
             <path d="M -20 70 L 150 -20 L 320 70 Z" fill={KC.red} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
             <rect x={40} y={110} width={70} height={60} fill="#bfe8ff" stroke={KC.ink} strokeWidth={6} /><rect x={190} y={110} width={70} height={60} fill="#bfe8ff" stroke={KC.ink} strokeWidth={6} />
             <rect x={125} y={180} width={50} height={80} fill={CAPA_OSC} stroke={KC.ink} strokeWidth={6} />
           </g>
-          <Cangrejo T={T} x={800} y={1330} s={0.28} rot={-70} patas={1} />
+          <Cangrejo T={T} x={820} y={1250} s={0.5} rot={-70} patas={1} />
         </SvgCapa>
       </Escena>
       {/* 6b · el experimento: gota de endotoxina → gel que no se cae */}
       <Escena T={T} a={ES2} b={K.Pr} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Goteo T={T} x={540} y0={480} y1={760} cada={1} color={ENDO} desde={ES2 + 0.3} hasta={ES2 + 0.4} r={18} />
-          <Tubo x={540} y={950} s={1} gel={kprog(T, ES2 + 1.0, ES2 + 2.0)} rot={180 * kprog(T, ES2 + 2.3, ES2 + 2.9, kEase.suave)} />
-          <Conejo T={T} x={klerp(190, -200, kprog(T, ES2 + 1.6, ES2 + 3.6))} y={1120} s={0.8} salto={kprog(T, ES2 + 1.6, ES2 + 1.8)} />
-          <Sello x={860} y={700} texto="1977" sub="FDA" p={kprog(T, ES2 + 0.6, ES2 + 1.0)} />
+          <Goteo T={T} x={540} y0={420} y1={760} cada={1} color={ENDO} desde={ES2 + 0.3} hasta={ES2 + 0.4} r={22} />
+          <Tubo x={540} y={960} s={1.4} gel={kprog(T, ES2 + 1.0, ES2 + 2.0)} rot={180 * kprog(T, ES2 + 2.3, ES2 + 2.9, kEase.suave)} />
+          <Conejo T={T} x={klerp(200, -220, kprog(T, ES2 + 1.6, ES2 + 3.6))} y={1220} s={1.05} salto={kprog(T, ES2 + 1.6, ES2 + 1.8)} />
+          <Sello x={850} y={640} texto="1977" sub="FDA" p={kprog(T, ES2 + 0.6, ES2 + 1.0)} />
         </SvgCapa>
       </Escena>
       {/* 7 · pregunta */}
       <Escena T={T} a={K.Pr} b={K.Sa} zoom={0.08}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
-          <Cangrejo T={T} x={300} y={840} s={0.4} rot={-10} patas={0.6} />
-          <text x={300} y={640} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 300 540)`}>?</text>
+          <Cangrejo T={T} x={440} y={880} s={0.78} rot={-10} patas={0.6} />
+          <text x={830} y={860} textAnchor="middle" style={{ font:`400 360px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 830 740)`}>?</text>
         </SvgCapa>
       </Escena>
       {/* 8 · sangrado y regreso al mar */}
       <Escena T={T} a={K.Sa} b={K.Mo} zoom={0.03}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <Mar T={T} y={klerp(1700, 1120, kprog(T, K.Sa + 2.3, K.Sa + 3.0, kEase.suave))} />
-          <Cangrejo T={T} x={klerp(380, 420, kprog(T, K.Sa + 2.4, K.Sa + 3.6))} y={klerp(880, 1120, kprog(T, K.Sa + 2.4, K.Sa + 3.8, kEase.suave))} s={0.5} rot={-6}
+          <Mar T={T} y={klerp(1960, 1220, kprog(T, K.Sa + 2.1, K.Sa + 3.0, kEase.suave))} alto={300} />
+          <Cangrejo T={T} x={klerp(340, 400, kprog(T, K.Sa + 2.4, K.Sa + 3.6))} y={klerp(860, 1060, kprog(T, K.Sa + 2.4, K.Sa + 3.8, kEase.suave))} s={0.82} rot={-6}
             aguja={1 - kprog(T, K.Sa + 2.1, K.Sa + 2.4)} patas={kprog(T, K.Sa + 2.4, K.Sa + 2.6)} />
-          {T < K.Sa + 2.4 && <path d={`M 380 906 C 520 980 640 760 780 740`} stroke={AZUL} strokeWidth={10} fill="none" strokeDasharray="18 12" strokeDashoffset={-T * 60} />}
-          <Frasco T={T} x={800} y={880} s={0.75} nivel={kprog(T, K.Sa + 0.2, K.Sa + 2.2)} />
+          {T < K.Sa + 2.4 && <path d={`M 340 903 C 500 990 560 780 690 790`} stroke={AZUL} strokeWidth={10} fill="none" strokeDasharray="18 12" strokeDashoffset={-T * 60} />}
+          <Frasco T={T} x={830} y={820} s={1.05} nivel={kprog(T, K.Sa + 0.2, K.Sa + 2.2)} />
         </SvgCapa>
         <Medidor T={T} at={K.Sa + 0.2} until={K.Sa + 2.6} valor={(t) => 0.3 * kprog(t, K.Sa + 0.2, K.Sa + 2.0)} etiqueta="sangre extraída" color={AZUL_CL} y={450} />
       </Escena>
@@ -333,17 +334,17 @@ function Cangrejo21() {
       <Escena T={T} a={K.Mo} b={K.Fc} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <rect x={0} y={780} width={KW} height={500} fill="#7e7253" />
-          <Mar T={T} y={1290} />
-          {crias.map(([x, y], i) => <Cangrejo key={i} T={T} x={x} y={y + (muertos.includes(i) ? 0 : 30 * kprog(T, K.Mo + 0.4, K.Mo + 3.5))} s={0.12} rot={180}
+          <rect x={0} y={480} width={KW} height={790} fill={ARENA} />
+          <Mar T={T} y={1270} alto={300} />
+          {crias.map(([x, y], i) => <Cangrejo key={i} T={T} x={x} y={y + (muertos.includes(i) ? 0 : 30 * kprog(T, K.Mo + 0.4, K.Mo + 3.5))} s={0.21} rot={180}
             patas={muertos.includes(i) && T > K.Mo + 1.4 ? 0 : 1} gris={muertos.includes(i) ? kprog(T, K.Mo + 1.3, K.Mo + 1.9) : 0} />)}
         </SvgCapa>
-        <NumeroGigante T={T} at={K.Mo + 1.5} until={K.Fc - 0.3} valor={15} dur={0.9} sufijo=" %" x={380} y={560} tam={220} color={KC.yellow} />
+        <NumeroGigante T={T} at={K.Mo + 1.5} until={K.Fc - 0.3} valor={15} dur={0.9} sufijo=" %" x={540} y={340} tam={180} color={KC.yellow} />
       </Escena>
       {/* 10 · factor C recombinante */}
       <Escena T={T} a={K.Fc} b={K.Fa} zoom={0.04}>
         <FondoMarca patron="oscuro" />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 960) scale(1.15) translate(-540 -960)">
           {[0, 1, 2, 3, 4].map((i) => <Ficha key={i} x={190 + i * 150} y={800} cae={kprog(T, K.Fc + 0.4 + i * 0.25, K.Fc + 0.7 + i * 0.25)} texto={i === 0 ? 'C' : ''} color={i === 0 ? KC.gold2 : i === 4 ? GEL : KC.paper} />)}
           <ADNHebra T={T} x={80} y={1060} largo={560} alto={60} vueltas={3} resalta={(u) => u > 0.3 && u < 0.62 && T > K.Fc + 1.6} />
           {(() => { const u = kprog(T, K.Fc + 2.2, K.Fc + 3.2, kEase.suave); return u > 0 && u < 1 ? <g transform={`translate(${klerp(360, 800, u)} ${klerp(1060, 980, u) - Math.sin(u * Math.PI) * 140})`}>
@@ -351,52 +352,52 @@ function Cangrejo21() {
           <Matraz T={T} x={820} y={1000} s={0.85} brillo={kprog(T, K.Fc + 3.2, K.Fc + 3.8)} />
           {Array.from({ length: 6 }, (_, i) => { const t0 = K.Fc + 3.4 + i * 0.25, u = kprog(T, t0, t0 + 1.2); return u > 0 && u < 1 ? <g key={i} transform={`translate(${820 + (i - 2.5) * 40} ${klerp(940, 700, u)})`} opacity={1 - u}>
             <circle r={20} fill={KC.gold2} stroke={KC.ink} strokeWidth={3} /><text y={8} textAnchor="middle" style={{ font:`400 26px ${KF.titulo}` }} fill={KC.ink}>C</text></g> : null; })}
-        </SvgCapa>
+        </g></SvgCapa>
       </Escena>
       {/* 11 · farmacopeas */}
       <Escena T={T} a={K.Fa} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <Libro x={290} y={920} s={0.95} color={KC.blue} titulo="Ph. Eur." sub="cap. 2.6.32" />
-          <Libro x={790} y={920} s={0.95} color={KC.red} titulo="USP" sub="cap. <86>" />
-          <Sello x={330} y={1060} texto="2020" sub="Europa" color={KC.ink} p={kprog(T, K.Fa + 0.5, K.Fa + 0.9)} rot={-10} />
-          <Sello x={830} y={1060} texto="2025" sub="EE. UU." color={KC.ink} p={kprog(T, K.Fa + 2.3, K.Fa + 2.7)} rot={8} />
+          <Libro x={290} y={930} s={1.25} color={KC.blue} titulo="Ph. Eur." sub="cap. 2.6.32" />
+          <Libro x={790} y={930} s={1.25} color={KC.red} titulo="USP" sub="cap. <86>" />
+          <Sello x={340} y={1120} texto="2020" sub="Europa" color={KC.ink} p={kprog(T, K.Fa + 0.5, K.Fa + 0.9)} rot={-10} />
+          <Sello x={840} y={1120} texto="2025" sub="EE. UU." color={KC.ink} p={kprog(T, K.Fa + 2.3, K.Fa + 2.7)} rot={8} />
         </SvgCapa>
       </Escena>
       {/* 12 · cierre: el frasco del inicio, ahora con el tubo de rFC */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <Frasco T={T} x={300} y={1000} s={1.0} nivel={1} />
-          <Vacuna x={560} y={1050} s={0.9} jeringa={false} />
-          <g opacity={kprog(T, K.Ci + 0.8, K.Ci + 1.3)}><Tubo x={820} y={1000} s={0.55} color="#ffe9a8" />
-            <text x={820} y={1200} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>rFC</text></g>
-          <Cangrejo T={T} x={klerp(560, 1250, kprog(T, K.Ci + 1.0, K.Ou + 2))} y={1560} s={0.22} rot={80} patas={1} />
+          <Frasco T={T} x={260} y={960} s={1.4} nivel={1} />
+          <Vacuna x={585} y={1030} s={1.2} jeringa={false} />
+          <g opacity={kprog(T, K.Ci + 0.8, K.Ci + 1.3)}><Tubo x={865} y={960} s={0.78} color="#ffe9a8" />
+            <text x={865} y={1250} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.ink}>rFC</text></g>
+          <Cangrejo T={T} x={klerp(560, 1250, kprog(T, K.Ci + 1.0, K.Ou + 2))} y={1350} s={0.3} rot={80} patas={1} />
         </SvgCapa>
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 2.6} texto="¿de otro planeta?" x={300} y={470} tam={44} />
-      <Chip T={T} at={K.G + 2.7} until={K.A - 0.3} texto="sangre de cangrejo herradura" x={540} y={1530} tam={38} borde={AZUL_CL} />
-      <MitoTachado T={T} at={K.A + 0.6} tacharEn={K.A + 1.6} until={K.Az - 0.3} texto="¿cangrejo?" x={700} y={470} tam={44} />
-      <Etq T={T} at={K.A + 1.0} until={K.Az - 0.3} x={300} y={1620} texto="Limulus polyphemus" it tam={38} color={KC.ink} />
-      <Chip T={T} at={K.A + 2.0} until={K.Az - 0.3} texto="parientes: arañas y escorpiones" x={540} y={1530} tam={36} borde={KC.lilac} />
-      <Chip T={T} at={K.Az + 1.2} until={K.En - 0.2} texto="hemocianina: cobre → azul" x={540} y={1530} tam={40} borde={AZUL_CL} />
-      <Chip T={T} at={K.En + 1.6} until={K.Pe - 0.3} texto="endotoxina = restos de la pared" x={540} y={1530} tam={36} borde={ENDO} />
-      <Chip T={T} at={K.Pe + 1.4} until={K.Co - 0.3} texto="fiebre · choque" x={540} y={1530} tam={44} borde={KC.red} />
+      <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 1.8} until={K.G + 2.6} texto="¿de otro planeta?" x={560} y={330} tam={44} />
+      <Chip T={T} at={K.G + 2.7} until={K.A - 0.3} texto="sangre de cangrejo herradura" x={540} y={1470} tam={38} borde={AZUL_CL} />
+      <MitoTachado T={T} at={K.A + 0.6} tacharEn={K.A + 1.6} until={K.Az - 0.3} texto="¿cangrejo?" x={540} y={330} tam={44} />
+      <Etq T={T} at={K.A + 1.0} until={K.Az - 0.3} x={515} y={1395} lado="izq" texto="Limulus polyphemus" it tam={32} color={KC.ink} />
+      <Chip T={T} at={K.A + 2.0} until={K.Az - 0.3} texto="parientes: arañas y escorpiones" x={540} y={1470} tam={36} borde={KC.lilac} />
+      <Chip T={T} at={K.Az + 1.2} until={K.En - 0.2} texto="hemocianina: cobre → azul" x={540} y={1470} tam={40} borde={AZUL_CL} />
+      <Chip T={T} at={K.En + 1.6} until={K.Pe - 0.3} texto="endotoxina = restos de la pared" x={540} y={1470} tam={36} borde={ENDO} />
+      <Chip T={T} at={K.Pe + 1.4} until={K.Co - 0.3} texto="fiebre · choque" x={540} y={1470} tam={44} borde={KC.red} />
       <Chip T={T} at={K.Co + 0.2} until={K.Es - 0.3} texto="AL MICROSCOPIO · AMEBOCITOS" x={540} y={430} tam={32} mono borde={KC.cyan} />
       <Etq T={T} at={K.Co + 0.6} until={K.Co + 2.0} x={640} y={560} texto="amebocito" tam={34} color={KC.texto} />
-      <Chip T={T} at={K.Co + 2.6} until={K.Es - 0.3} texto="¡coágulo!" x={540} y={1530} tam={50} borde={GEL} />
-      <TarjetaEstudio T={T} at={K.Es + 0.3} until={ES2 - 0.3} anio="WOODS HOLE" quien="Bang (años 50) y Levin (años 60)" revista="Massachusetts, EE. UU. · junto al mar" y={870} />
-      <Chip T={T} at={ES2 + 1.7} until={K.Pr - 0.3} texto="antes: prueba con conejos" x={300} y={1530} tam={34} borde={KC.paper} />
+      <Chip T={T} at={K.Co + 2.6} until={K.Es - 0.3} texto="¡coágulo!" x={540} y={1470} tam={50} borde={GEL} />
+      <TarjetaEstudio T={T} at={K.Es + 0.3} until={ES2 - 0.3} anio="WOODS HOLE" quien="Bang (años 50) y Levin (años 60)" revista="Massachusetts, EE. UU. · junto al mar" x={560} y={330} />
+      <Chip T={T} at={ES2 + 1.7} until={K.Pr - 0.3} texto="antes: prueba con conejos" x={300} y={1470} tam={34} borde={KC.paper} />
       <Chip T={T} at={ES2 + 2.9} until={K.Pr - 0.3} texto="gel = hay endotoxina" x={540} y={430} tam={38} borde={ENDO} />
-      <Chip T={T} at={K.Sa + 2.6} until={K.Mo - 0.2} texto="de regreso al mar" x={540} y={1530} tam={42} borde={KC.cyan} />
-      <Chip T={T} at={K.Mo + 2.2} until={K.Fc - 0.3} texto="estimación ASMFC, 2023" x={540} y={1530} tam={38} borde={KC.gold} />
-      <Etq T={T} at={K.Fc + 0.4} until={K.Fc + 2.2} x={150} y={680} texto="factor C: la primera ficha" tam={32} color={KC.gold2} />
-      <Etq T={T} at={K.Fc + 1.8} until={K.Fa - 0.3} x={640} y={1160} texto="gen del factor C" lado="izq" tam={30} color={KC.gold2} />
-      <Chip T={T} at={K.Fc + 3.4} until={K.Fa - 0.3} texto="factor C recombinante (rFC)" x={540} y={1530} tam={38} borde={KC.gold2} />
-      <Chip T={T} at={K.Fa + 0.3} until={K.Ci - 0.3} texto="las farmacopeas: los libros oficiales" x={540} y={1530} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Ci + 1.3} until={K.Ou} texto="LAL con sangre · rFC sin cangrejos" x={540} y={1530} tam={34} borde={AZUL_CL} />
+      <Chip T={T} at={K.Sa + 2.6} until={K.Mo - 0.2} texto="de regreso al mar" x={540} y={1470} tam={42} borde={KC.cyan} />
+      <Chip T={T} at={K.Mo + 2.2} until={K.Fc - 0.3} texto="estimación ASMFC, 2023" x={540} y={1470} tam={38} borde={KC.gold} />
+      <Etq T={T} at={K.Fc + 0.4} until={K.Fc + 2.2} x={95} y={640} texto="factor C: la primera ficha" tam={32} color={KC.gold2} />
+      <Etq T={T} at={K.Fc + 1.8} until={K.Fa - 0.3} x={655} y={1192} texto="gen del factor C" lado="izq" tam={30} color={KC.gold2} />
+      <Chip T={T} at={K.Fc + 3.4} until={K.Fa - 0.3} texto="factor C recombinante (rFC)" x={540} y={1470} tam={38} borde={KC.gold2} />
+      <Chip T={T} at={K.Fa + 0.3} until={K.Ci - 0.3} texto="las farmacopeas: los libros oficiales" x={540} y={1470} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Ci + 1.3} until={K.Ou} texto="LAL con sangre · rFC sin cangrejos" x={540} y={1470} tam={34} borde={AZUL_CL} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.A - 0.1} texto="No es de otro planeta: *revisa tus vacunas.*" />
