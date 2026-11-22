@@ -140,7 +140,7 @@ function Tronar() {
   const { T, CUES } = useComposition();
   const K = CUES, FIN = K.Outro + 4;
   // mano principal (gancho y cierre)
-  const MX = 400, MY = 950, MS = 1.2, NUD = tfNudillo(MX, MY, MS);
+  const MX = 420, MY = 870, MS = 1.45, NUD = tfNudillo(MX, MY, MS);
   const crac0 = K.Gancho + 0.55, crac1 = K.Cierre + 1.1;
   const jal = (t0, t1) => kprog(T, t0, t1, kEase.suave);
   // mano chica de la Lupa
@@ -167,10 +167,10 @@ function Tronar() {
       <Escena T={T} a={K.Liquido} b={K.Jalas} fondo={KC.mint}>
         <FondoLunares color={KC.mint} />
         <Lienzo><Mano x={hx} y={hy} s={hs} T={T} brillo={0.8} /></Lienzo>
-        <Lupa T={T} at={K.Liquido + 0.3} until={K.Jalas - 0.2} x={620} y={740} r={300} fx={HN[0]} fy={HN[1]} tinte={KC.gold2} etiqueta="POR DENTRO · ARTICULACIÓN"
+        <Lupa T={T} at={K.Liquido + 0.1} until={K.Jalas - 0.2} x={610} y={760} r={340} fx={HN[0]} fy={HN[1]} tinte={KC.gold2} etiqueta="POR DENTRO · ARTICULACIÓN"
           interior={(t, r) => { const L = (a, b) => kprog(t, K.Liquido + a, K.Liquido + b);
             return <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0b1a2c" />
-              <Articulacion x={r - 30} y={r} s={0.64} T={t} gas={0.6} />
+              <Articulacion x={r - 30} y={r} s={0.725} T={t} gas={0.6} />
               <EtqSvg o={L(1.0, 1.3)} x={r - 30} y={r - 170} tx={r + 90} ty={r - 200} texto="hueso" tam={30} />
               <EtqSvg o={L(1.6, 1.9)} x={r + 30} y={r + 22} tx={r + 110} ty={r + 60} texto="cartílago" tam={30} />
               <EtqSvg o={L(2.6, 2.9)} x={r - 60} y={r + 40} tx={r - 120} ty={r + 190} texto="líquido sinovial" ancla="start" tam={28} />
@@ -184,22 +184,22 @@ function Tronar() {
         <Lienzo>
           {(() => { const sep = kprog(T, K.Jalas + 1.0, K.Jalas + 2.4, kEase.sale), cav = T > crCav ? kprog(T, crCav, crCav + 0.15, kEase.rebote) : 0;
             const tiembla = T > crCav && T < crCav + 0.4 ? Math.sin(T * 90) * 6 : 0;
-            return <g transform={`translate(${tiembla} 0)`}><Articulacion x={470} y={810} s={1} sep={sep} cav={cav} gas={1} T={T} /></g>; })()}
+            return <g transform={`translate(${tiembla} 0)`}><Articulacion x={470} y={830} s={1.25} sep={sep} cav={cav} gas={1} T={T} /></g>; })()}
           <FlechaRecta x1={150} y1={640} x2={150} y2={430} p={kprog(T, K.Jalas + 0.9, K.Jalas + 1.5, kEase.sale)} color={KC.cyan} />
           <FlechaRecta x1={150} y1={980} x2={150} y2={1180} p={kprog(T, K.Jalas + 0.9, K.Jalas + 1.5, kEase.sale)} color={KC.cyan} />
           <Onomato T={T} at={crCav} dur={1.3} x={800} y={1000} texto="¡crac!" tam={130} rot={8} />
         </Lienzo>
         <Medidor T={T} at={K.Jalas + 1.6} until={K.Cavidad + 1.0} y={1440} etiqueta="presión del líquido" valor={(t) => klerp(0.85, 0.12, kprog(t, K.Jalas + 2.0, K.Jalas + 3.6, kEase.suave))}
           texto={(v) => (v > 0.5 ? 'normal' : 'baja ↓')} color={T > K.Jalas + 2.8 ? KC.red : KC.mint} />
-        <Etq T={T} at={K.Jalas + 2.4} until={K.Cavidad - 0.1} x={660} y={810} texto="se separan" lado="der" color={KC.cyan} />
-        <Etq T={T} at={K.Cavidad + 0.2} until={crCav - 0.1} x={660} y={700} texto="gas disuelto" lado="der" color={KC.texto} />
-        <Etq T={T} at={crCav + 0.5} until={K.Estudio - 0.1} x={570} y={806} texto="hueco de gas" lado="der" color={KC.gold2} tam={38} />
+        <Etq T={T} at={K.Jalas + 2.4} until={K.Cavidad - 0.1} x={730} y={830} texto="se separan" lado="der" color={KC.cyan} />
+        <Etq T={T} at={K.Cavidad + 0.2} until={crCav - 0.1} x={730} y={690} texto="gas disuelto" lado="der" color={KC.texto} />
+        <Etq T={T} at={crCav + 0.5} until={K.Estudio - 0.1} x={610} y={826} texto="hueco de gas" lado="der" color={KC.gold2} tam={38} />
       </Escena>
       {/* 4 · el estudio de 2015: dedo en la resonancia, jalado con un cable */}
       <Escena T={T} a={K.Estudio} b={K.Video} fondo={KC.cyan}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <g opacity={kprog(T, K.Estudio + 2.4, K.Estudio + 2.9)}>
+          <g opacity={0.35 + 0.65 * kprog(T, K.Estudio + 2.4, K.Estudio + 2.9)}>
             {(() => { const j = kprog(T, K.Estudio + 3.2, crRM, kEase.suave) * (1 - 0.5 * kprog(T, crRM + 0.1, crRM + 0.6)), tip = 230 + 0.8 * (288 + 46 * j);
               return <g>
                 <Resonador x={650} y={846} />
@@ -213,21 +213,21 @@ function Tronar() {
           </g>
           <Onomato T={T} at={crRM} dur={0.9} x={560} y={700} texto="¡crac!" tam={110} rot={-6} />
         </Lienzo>
-        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 2.4} anio="2015" quien="Canadá · resonancia magnética" revista="Kawchuk et al. · PLOS ONE" x={540} y={760} />
+        <TarjetaEstudio T={T} at={K.Estudio + 0.2} until={K.Estudio + 2.4} anio="2015" quien="Canadá · resonancia magnética" revista="Kawchuk et al. · PLOS ONE" x={540} y={400} />
       </Escena>
       {/* 5 · el video: aparece el hueco oscuro */}
       <Escena T={T} a={K.Video} b={K.Pregunta} fondo={KC.noche}>
         <FondoMarca patron="oscuro" />
-        <Lienzo>
+        <Lienzo><g transform="translate(0 190)">
           <MonitorRM x={540} y={800} T={T} hueco={kprog(T, huecoRM, huecoRM + 0.12, kEase.rebote)} flash={kprog(T, huecoRM, huecoRM + 0.05) * (1 - kprog(T, huecoRM + 0.05, huecoRM + 0.4))} />
           <rect x={160} y={1150} width={760} height={14} rx={7} fill="#444" />
           <rect x={160} y={1150} width={760 * kprog(T, K.Video, K.Pregunta)} height={14} rx={7} fill={KC.cyan} />
           {(() => { const xm = 160 + 760 * (huecoRM - K.Video) / (K.Pregunta - K.Video);
             return <g opacity={kprog(T, huecoRM, huecoRM + 0.2)}><rect x={xm - 4} y={1130} width={8} height={54} fill={KC.yellow} />
               <text x={xm} y={1215} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.yellow}>tronido</text></g>; })()}
-        </Lienzo>
-        <Etq T={T} at={huecoRM + 0.4} until={K.Pregunta - 0.1} x={620} y={736} texto="hueco oscuro" lado="der" color={KC.yellow} tam={38} />
-        <Chip T={T} at={K.Video + 0.3} until={K.Pregunta - 0.1} texto="el video de la resonancia" x={540} y={420} tam={40} borde={KC.cyan} />
+        </g></Lienzo>
+        <Etq T={T} at={huecoRM + 0.4} until={K.Pregunta - 0.1} x={620} y={926} texto="hueco oscuro" lado="der" color={KC.yellow} tam={38} />
+        <Chip T={T} at={K.Video + 0.3} until={K.Pregunta - 0.1} texto="el video de la resonancia" x={540} y={560} tam={40} borde={KC.cyan} />
       </Escena>
       {/* 6 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Espera} />
@@ -246,9 +246,9 @@ function Tronar() {
               <g opacity={kprog(T, K.Espera + 4.3, K.Espera + 4.6)}><TextoSvg x={0} y={215} tam={70} color={KC.pink}>20 MIN</TextoSvg></g>
             </g>; })()}
         </Lienzo>
-        <Lupa T={T} at={K.Espera + 0.3} until={K.Debate - 0.2} x={680} y={850} r={240} fx={HN[0]} fy={HN[1]} tinte={KC.pink} etiqueta="POR DENTRO · ESQUEMA"
+        <Lupa T={T} at={K.Espera + 0.1} until={K.Debate - 0.2} x={650} y={880} r={300} fx={HN[0]} fy={HN[1]} tinte={KC.pink} etiqueta="POR DENTRO · ESQUEMA"
           interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0b1a2c" />
-            <Articulacion x={r} y={r} s={0.52} sep={1} cav={1} burb={burbEsp} T={t} />
+            <Articulacion x={r} y={r} s={0.65} sep={1} cav={1} burb={burbEsp} T={t} />
             <text x={r} y={r * 2 - 40} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={5} paintOrder="stroke">el gas se disuelve</text></svg>} />
         <Chip T={T} at={K.Espera + 0.4} until={K.Debate - 0.1} texto="se cree" x={800} y={430} tam={40} borde={KC.pink} />
       </Escena>
@@ -256,18 +256,18 @@ function Tronar() {
       <Escena T={T} a={K.Debate} b={K.Unger} fondo={KC.orange}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
-          <g opacity={kprog(T, K.Debate + 2.4, K.Debate + 2.8)}><Mano x={hx} y={hy} s={hs} T={T} brillo={0.6} /></g>
+          <g opacity={kprog(T, K.Debate - 0.2, K.Debate + 0.2)}><Mano x={hx} y={hy} s={hs} T={T} brillo={0.6} /></g>
           {T > K.Debate + 2.6 && [0, 1, 2].map((i) => <text key={i} x={[120, 860, 900][i]} y={[1180, 470, 1200][i]} textAnchor="middle" opacity={0.55}
             transform={`rotate(${Math.sin(T + i) * 6} ${[120, 860, 900][i]} ${[1180, 470, 1200][i]})`} style={{ font:`700 ${[44, 40, 40][i]}px ${KF.mono}` }} fill={KC.ink}>{['?', '¿?', '?'][i]}</text>)}
         </Lienzo>
-        <Lupa T={T} at={K.Debate + 2.6} until={K.Unger - 0.2} x={570} y={820} r={280} fx={HN[0]} fy={HN[1]} tinte={KC.yellow} etiqueta="MODELO 2018 · ESQUEMA"
+        <Lupa T={T} at={K.Debate + 0.1} until={K.Unger - 0.2} x={590} y={860} r={320} fx={HN[0]} fy={HN[1]} tinte={KC.yellow} etiqueta="MODELO 2018 · ESQUEMA"
           interior={(t, r) => { const c = kprog(t, colap, colap + 0.25, kEase.sale);
             return <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0b1a2c" />
-              <Articulacion x={r} y={r} s={0.6} sep={1} cav={1} colapso={c} T={t} />
+              <Articulacion x={r} y={r} s={0.686} sep={1} cav={1} colapso={c} T={t} />
               {t > colap && <OndasArco x={r + 40} y={r - 4} ang={0} T={t} color={KC.yellow} largo={160} n={3} o={1 - kprog(t, colap + 2.2, colap + 3)} />}
               {t > colap && <OndasArco x={r - 40} y={r - 4} ang={180} T={t} color={KC.yellow} largo={160} n={3} o={1 - kprog(t, colap + 2.2, colap + 3)} />}
               <text x={r} y={r * 2 - 46} textAnchor="middle" opacity={kprog(t, colap + 0.3, colap + 0.6)} style={{ font:`700 26px ${KF.mono}` }} fill={KC.texto} stroke={KC.ink} strokeWidth={5} paintOrder="stroke">se colapsa en parte</text></svg>; }} />
-        <TarjetaEstudio T={T} at={K.Debate + 0.2} until={K.Debate + 2.5} anio="2018" quien="modelo matemático" revista="Chandran Suja y Barakat · Sci. Rep." x={540} y={760} />
+        <TarjetaEstudio T={T} at={K.Debate + 0.2} until={K.Debate + 2.5} anio="2018" quien="modelo matemático" revista="Chandran Suja y Barakat · Sci. Rep." x={540} y={380} />
         <Chip T={T} at={K.Debate + 4.6} until={K.Unger - 0.1} texto="¿? se sigue discutiendo" x={690} y={440} tam={40} borde={KC.ink} />
       </Escena>
       {/* 9–10 · Unger: la izquierda truena por décadas; ninguna mano con artritis; Ig Nobel */}
@@ -309,7 +309,7 @@ function Tronar() {
             return <line key={i} x1={NUD[0] + Math.cos(a) * rr} y1={NUD[1] + Math.sin(a) * rr} x2={NUD[0] + Math.cos(a) * (rr + 30)} y2={NUD[1] + Math.sin(a) * (rr + 30)} stroke={KC.yellow} strokeWidth={8} strokeLinecap="round" opacity={0.8} />; })}
         </Lienzo>
         <Etq T={T} at={crac1 + 0.5} until={K.Outro - 0.1} x={NUD[0] + 110} y={NUD[1] + 80} texto="solo gas" lado="der" color={KC.texto} tam={40} />
-        <Chip T={T} at={K.Cierre + 2.0} until={K.Outro - 0.1} texto="no se rompe nada" x={760} y={1130} tam={44} borde={KC.gold} />
+        <Chip T={T} at={K.Cierre + 2.0} until={K.Outro - 0.1} texto="no se rompe nada" x={790} y={1250} tam={44} borde={KC.gold} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Liquido - 0.1} texto="No es un hueso: *es una burbuja de gas.*" />

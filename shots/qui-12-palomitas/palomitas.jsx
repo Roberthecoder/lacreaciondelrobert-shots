@@ -193,12 +193,14 @@ function Palomitas() {
       <Escena T={T} a={K.G} b={K.Gr} zoom={0.06}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(560 1050) scale(1.35) translate(-560 -1000)">
           <Palomera T={T} x={560} y={1010} s={0.95} llena={0.12 + 0.1 * kprog(T, K.G, K.Gr)} />
           {T < popG ? <Grano x={270 + Math.sin(T * 60) * 4} y={780} s={2.2} rot={-12} />
             : <g><Palomita x={270} y={770 - 40 * kprog(T, popG, popG + 0.4, kEase.sale)} r={klerp(40, 95, kprog(T, popG, popG + 0.3, kEase.sale))} rot={-10} />
               <Vapor T={T} x={270} y={720} f={kprog(T, popG, popG + 1.4)} r={90} seed={3} /></g>}
           <Pop T={T} at={popG} x={290} y={620} tam={110} />
           {[0, 1, 2].map((i) => { const t0 = K.G + 1.4 + i * 1.0; return T > t0 && T < t0 + 1.0 ? <Palomita key={i} x={420 + i * 120} y={850 - 260 * Math.sin(Math.PI * kprog(T, t0, t0 + 1.0))} r={34} rot={T * 200} /> : null; })}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 1 · el grano por dentro (rayos X) */}
@@ -229,6 +231,7 @@ function Palomitas() {
       <Escena T={T} a={K.Es} b={K.Pr} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         <SvgCapa>
+          <g transform="translate(560 900) scale(1.45) translate(-600 -880)">
           {T < rompe ? <Grano x={600 + Math.sin(T * 70) * 5} y={900} s={2.4} grietas={kprog(T, K.Es, rompe)} />
             : <g>
               <Grano x={600 - 220 * crece} y={900 + 200 * crece} s={2.4} rot={-60 * crece} o={1 - kprog(T, rompe + 0.8, rompe + 1.2)} />
@@ -243,6 +246,7 @@ function Palomitas() {
                 <text x={600} y={1155} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>palomita: ×2 de ancho</text>
               </g>
             </g>}
+          </g>
         </SvgCapa>
       </Escena>
       {/* 5 · re-gancho */}
@@ -270,7 +274,7 @@ function Palomitas() {
       <Escena T={T} a={K.Te} b={K.Br} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <rect x={80} y={735} width={650} height={350} rx={30} fill="#fff8e0" stroke={KC.ink} strokeWidth={7} />
+          <rect x={80} y={735} width={650} height={350} rx={30} fill={cineMix('#fff8e0', '#0a0f1c', 0.6)} stroke={KC.ink} strokeWidth={7} />
           {Array.from({ length: 50 }, (_, i) => { const cx = 140 + (i % 10) * 59, cy = 790 + Math.floor(i / 10) * 62, tp = nPop(i);
             return T >= tp ? <Palomita key={i} x={cx} y={cy} r={klerp(12, 21, kprog(T, tp, tp + 0.2, kEase.rebote))} rot={i * 40} cascara={false} /> : <Grano key={i} x={cx} y={cy} s={0.46} rot={(i * 23) % 40 - 20} />; })}
           <Termometro x={920} y={560} alto={560} valor={tempTe} />
@@ -281,11 +285,11 @@ function Palomitas() {
       {/* 8 · el brinco: la patita de almidón */}
       <Escena T={T} a={K.Br} b={K.So} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        <SvgCapa>
+        <SvgCapa><g transform="translate(540 1300) scale(1.15) translate(-540 -1090)">
           <Placa x={540} y={1090} ancho={720} />
-          {T < bCrack ? <Grano x={540 + Math.sin(T * 50) * 3} y={1035} s={1.5} rot={80} grietas={kprog(T, K.Br + 0.4, bCrack)} />
-            : (() => { const L = 95 * pata * (1 - aplasta * 0.5), r = klerp(40, 62, kprog(T, bCrack, bCrack + 0.4, kEase.sale)), yy = 1090 - L - r * 0.9 - 330 * salto;
-              return <g transform={`translate(540 ${yy})`}>
+          {T < bCrack ? <Grano x={540 + Math.sin(T * 50) * 3} y={966} s={2.25} rot={80} grietas={kprog(T, K.Br + 0.4, bCrack)} />
+            : (() => { const L = 95 * pata * (1 - aplasta * 0.5), r = klerp(40, 62, kprog(T, bCrack, bCrack + 0.4, kEase.sale)), yy = 1090 - L - r * 0.9 - 330 * salto, base = 1090 - 330 * salto;
+              return <g transform={`translate(540 ${base}) scale(1.5) translate(0 ${yy - base})`}>
                 {pata > 0 && <g>
                   <rect x={-(24 + aplasta * 16) - 6} y={r * 0.5} width={2 * (24 + aplasta * 16) + 12} height={L + r * 0.4 + 6} rx={24} fill={KC.ink} />
                   <rect x={-(24 + aplasta * 16)} y={r * 0.5} width={2 * (24 + aplasta * 16)} height={L + r * 0.4} rx={20} fill={CREMA} />
@@ -296,11 +300,11 @@ function Palomitas() {
             <path d="M 300 1060 L 300 620" stroke={KC.ink} strokeWidth={12} strokeDasharray="26 18" />
             <path d="M 270 660 L 300 600 L 330 660" fill="none" stroke={KC.ink} strokeWidth={12} strokeLinejoin="round" />
           </g>
-          <text x={540} y={1215} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>placa caliente</text>
-        </SvgCapa>
-        {T > K.Br + 0.2 && T < K.So + 0.2 && <div style={{ position:'absolute', left:540, top:420, zIndex:42, transform:'translate(-50%,-50%)', textAlign:'center', opacity:kprog(T, K.Br + 0.2, K.Br + 0.5) * (1 - kprog(T, K.So - 0.3, K.So + 0.1)) }}>
+          <text x={540} y={1160} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>placa caliente</text>
+        </g></SvgCapa>
+        {T > K.Br + 0.2 && T < K.So + 0.2 && <div style={{ position:'absolute', left:870, top:600, zIndex:42, transform:'translate(-50%,-50%)', textAlign:'center', opacity:kprog(T, K.Br + 0.2, K.Br + 0.5) * (1 - kprog(T, K.So - 0.3, K.So + 0.1)) }}>
           <div style={{ font:`700 24px ${KF.mono}`, color:KC.ink, letterSpacing:'.12em', marginBottom:4 }}>CÁMARA LENTA</div>
-          <div style={{ font:`700 64px ${KF.mono}`, color:KC.texto, background:'rgba(0,0,0,.7)', border:`3px solid ${KC.texto}`, borderRadius:14, padding:'4px 22px' }}>{kformato(T < bAplasta ? 13.8 * kprog(T, bCrack, bAplasta) : klerp(13.8, 20.7, kprog(T, bAplasta, bSalta)), 1)} ms</div>
+          <div style={{ whiteSpace:'nowrap', font:`700 64px ${KF.mono}`, color:KC.texto, background:'rgba(0,0,0,.7)', border:`3px solid ${KC.texto}`, borderRadius:14, padding:'4px 22px' }}>{kformato(T < bAplasta ? 13.8 * kprog(T, bCrack, bAplasta) : klerp(13.8, 20.7, kprog(T, bAplasta, bSalta)), 1)} ms</div>
         </div>}
       </Escena>
       {/* 9 · el sonido: grietas en silencio, pop con el vapor (hipótesis) */}
@@ -328,14 +332,16 @@ function Palomitas() {
       <Escena T={T} a={K.Vi} b={K.Ci} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <path d="M 330 840 L 870 840 L 845 1120 Q 840 1150 810 1150 L 390 1150 Q 360 1150 355 1120 Z" fill="#d7dce6" stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
+          <g transform="translate(590 1060) scale(1.2) translate(-560 -1000)">
+          <path d="M 330 840 L 870 840 L 845 1120 Q 840 1150 810 1150 L 390 1150 Q 360 1150 355 1120 Z" fill={cineMix('#d7dce6', '#0a0f1c', 0.4)} stroke={KC.ink} strokeWidth={10} strokeLinejoin="round" />
           {Array.from({ length: 16 }, (_, i) => <Palomita key={i} x={390 + (i % 8) * 60 + (Math.floor(i / 8) % 2) * 28} y={1000 - Math.floor(i / 8) * 70} r={30} rot={i * 47} cascara={false} />)}
           {[[450, 1110, 20], [560, 1118, -30], [700, 1112, 60], [770, 1120, 10]].map(([x, y, r], i) => <Grano key={i} x={x} y={y} s={0.42} rot={r} color={mixHex(ORO, '#8a5a12', 0.3)} />)}
           <g opacity={kprog(T, K.Vi + 1.0, K.Vi + 1.5)}>
             <line x1={560} y1={1100} x2={330} y2={760} stroke={KC.ink} strokeWidth={6} />
-            <circle cx={260} cy={640} r={180} fill="#fff8e0" stroke={KC.ink} strokeWidth={9} />
+            <circle cx={260} cy={640} r={180} fill={cineMix('#fff8e0', '#0a0f1c', 0.6)} stroke={KC.ink} strokeWidth={9} />
             <Grano x={260} y={650} s={1.7} rot={-20} grietas={1} color={mixHex(ORO, '#8a5a12', 0.3)} />
             {[0, 1, 2].map((i) => <Voluta key={i} T={T} x={300 + i * 22} y={580 + i * 30} h={90} fase={i * 2} color="rgba(77,184,255,.9)" ancho={6} o={kprog(T, K.Vi + 1.6 + i * 0.3, K.Vi + 2.0 + i * 0.3)} />)}
+          </g>
           </g>
         </SvgCapa>
       </Escena>
@@ -343,10 +349,12 @@ function Palomitas() {
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
+          <g transform="translate(560 1070) scale(1.35) translate(-560 -1020)">
           <Palomera T={T} x={560} y={1030} s={0.95} llena={klerp(0.6, 1, kprog(T, K.Ci, K.Ci + 2.5, kEase.sale))} />
           {T < K.Ci + 0.6 ? <Grano x={250 + Math.sin(T * 60) * 4} y={800} s={2.0} rot={-12} />
             : <g><Palomita x={250} y={790} r={klerp(36, 85, kprog(T, K.Ci + 0.6, K.Ci + 0.9, kEase.sale))} rot={-10} /><Vapor T={T} x={250} y={740} f={kprog(T, K.Ci + 0.6, K.Ci + 2.0)} r={80} seed={5} /></g>}
           <Pop T={T} at={K.Ci + 0.6} x={270} y={640} tam={100} />
+          </g>
         </SvgCapa>
       </Escena>
 
@@ -354,7 +362,7 @@ function Palomitas() {
       <Capitulo T={T} x={175} y={205} hasta={K.Vi} caps={[{ at: K.Gr + 0.2, titulo: 'El grano' }, { at: K.Pe + 0.1, titulo: 'La olla exprés' }, { at: K.Es + 0.1, titulo: 'El estallido' }, { at: K.Et + 0.1, titulo: 'El laboratorio' }]} />
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.9} until={K.Gr - 0.3} texto="¿se quemó?" x={300} y={470} tam={50} />
+      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.9} until={K.Gr - 0.3} texto="¿se quemó?" x={300} y={330} tam={50} />
       <Chip T={T} at={K.G + 2.1} until={K.Gr - 0.3} texto="trae agua adentro" y={1500} tam={46} borde={AGUA} />
       <Etq T={T} at={K.Gr + 1.1} until={K.Ca - 0.3} x={790} y={760} texto="pericarpio" tam={32} color={KC.ink} />
       <Etq T={T} at={K.Gr + 1.6} until={K.Ca - 0.3} x={600} y={930} texto="almidón" tam={28} color={KC.ink} />
@@ -364,7 +372,7 @@ function Palomitas() {
       <Chip T={T} at={K.Pe + 1.0} until={K.Es - 0.3} texto="≈ 10 veces la presión del aire (estimación)" y={1500} tam={32} borde={KC.red} />
       <Chip T={T} at={rompe + 1.3} until={K.Pr - 0.2} texto="ancho ×2" x={290} y={1500} tam={46} borde={KC.yellow} />
       <Chip T={T} at={rompe + 1.9} until={K.Pr - 0.2} texto="densidad ÷8" x={780} y={1500} tam={46} borde={KC.cyan} />
-      <TarjetaEstudio T={T} at={K.Et + 0.3} until={K.Et + 2.7} anio="2015" quien="Virot y Ponomarenko · Francia" revista="J. R. Soc. Interface" x={540} y={770} />
+      <TarjetaEstudio T={T} at={K.Et + 0.3} until={K.Et + 2.7} anio="2015" quien="Virot y Ponomarenko · Francia" revista="J. R. Soc. Interface" x={540} y={430} />
       <Etq T={T} at={K.Et + 3.0} until={K.Te - 0.3} x={110} y={740} texto="horno" tam={32} color={KC.ink} />
       <Chip T={T} at={K.Et + 3.2} until={K.Te - 0.3} texto="cámara: 2900 cuadros por segundo" y={1500} tam={36} borde={KC.ink} fondo="rgba(14,15,18,.85)" />
       <Chip T={T} at={t180 + 0.4} until={K.Br - 0.3} texto="temperatura crítica ≈ 180 °C" x={600} y={650} tam={32} borde={KC.red} />
@@ -373,8 +381,8 @@ function Palomitas() {
       <Chip T={T} at={K.So + 0.6} until={soA + soPop * 4 - 0.1} texto="grietas: sin ruido" y={1500} tam={42} borde={KC.red} />
       <Chip T={T} at={soA + soPop * 4} until={K.Vi - 0.3} texto="POP · vapor (hipótesis)" y={1500} tam={42} borde={KC.mint} />
       <Chip T={T} at={K.Vi + 0.5} until={K.Vi + 1.9} texto="las que no reventaron" y={1500} tam={42} borde={ORO} />
-      <TarjetaEstudio T={T} at={K.Vi + 2.0} until={K.Ci - 0.3} anio="2005" quien="Tandjung et al." revista="Biomacromolecules · la cáscara y el agua" y={1580} />
-      <MitoTachado T={T} at={K.Ci + 0.2} tacharEn={K.Ci + 0.9} until={K.Ou - 0.2} texto="¿se quemó?" x={300} y={420} tam={50} />
+      <TarjetaEstudio T={T} at={K.Vi + 2.0} until={K.Ci - 0.3} anio="2005" quien="Tandjung et al." revista="Biomacromolecules · la cáscara y el agua" y={268} />
+      <MitoTachado T={T} at={K.Ci + 0.2} tacharEn={K.Ci + 0.9} until={K.Ou - 0.2} texto="¿se quemó?" x={300} y={330} tam={50} />
       <Chip T={T} at={K.Ci + 1.4} until={K.Ou} texto="agua → vapor → presión → ¡revienta!" y={1500} tam={34} borde={AGUA} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
