@@ -258,17 +258,17 @@ function Avianca() {
       {/* 3 · paso 2: pídele casos a ChatGPT */}
       <Escena T={T} a={K.P2} b={K.P3}>
         <FondoLunares color={KC.lilac} />
-        {svg(<g opacity={klerp(0.28, 1, kprog(T, K.P2 + 2.6, K.P2 + 3.0))}><HojaFalsa x={805} y={900} s={1.08} T={T} falta={kprog(T, K.P2 + 3.6, K.P2 + 4.2)} /></g>)}
+        {svg(<g opacity={klerp(0.28, 1, kprog(T, K.P2 + 2.6, K.P2 + 3.0))}><HojaFalsa x={805} y={1010} s={1.2} T={T} falta={kprog(T, K.P2 + 3.6, K.P2 + 4.2)} /></g>)}
       </Escena>
       {T > K.P2 - 0.45 && T < K.P3 + 0.45 && <div style={{ opacity: kprog(T, K.P2 - 0.45, K.P2 + 0.05) * (1 - kprog(T, K.P3 - 0.05, K.P3 + 0.45)) }}>
-        <CelularChat T={T} x={300} y={1010} s={0.84} tam={40} mensajes={[
+        <CelularChat T={T} x={300} y={1080} s={0.9} tam={40} mensajes={[
           { at: K.P2 + 0.6, yo: true, texto: 'Dame casos que apoyen mi demanda' },
           { at: K.P2 + 1.5, texto: 'Varghese v. China Southern Airlines (2019)' },
           { at: K.P2 + 2.1, texto: 'Shaboon v. Egyptair (2013)' },
           { at: K.P2 + 2.6, texto: 'Petersen v. Iran Air (2012)…' }]} escribe={[K.P2 + 1.0, K.P2 + 1.5]} />
       </div>}
       <PasoN T={T} at={K.P2 + 0.05} until={K.P3 - 0.25} n={2} texto="Pídele casos a ChatGPT" />
-      <Chip T={T} at={K.P2 + 3.9} until={K.P3 - 0.25} texto="texto completo: ✗" x={805} y={1250} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.P2 + 3.9} until={K.P3 - 0.25} texto="texto completo: ✗" x={805} y={1390} tam={36} borde={KC.red} />
 
       {/* 4 · paso 3: no retires nada */}
       <Escena T={T} a={K.P3} b={K.Q}>
@@ -293,16 +293,16 @@ function Avianca() {
       <Escena T={T} a={K.R} b={K.M}>
         <FondoCircuito T={T} />
         {svg(<>
-          <Expediente x={855} y={740} s={1.25} rot={3} nombre={CASOS[0][0]} contra={CASOS[0][1]} sello={0} />
-          <PalomitaTache x={855} y={1020} s={1.05 * kprog(T, K.R + 2.3, K.R + 2.7, kEase.rebote)} v={kprog(T, K.R + 4.0, K.R + 4.4, kEase.sale)} />
+          <Expediente x={835} y={860} s={1.25} rot={3} nombre={CASOS[0][0]} contra={CASOS[0][1]} sello={0} />
+          <PalomitaTache x={855} y={1160} s={1.05 * kprog(T, K.R + 2.3, K.R + 2.7, kEase.rebote)} v={kprog(T, K.R + 4.0, K.R + 4.4, kEase.sale)} />
         </>)}
       </Escena>
       {T > K.R - 0.45 && T < K.M + 0.45 && <div style={{ opacity: kprog(T, K.R - 0.45, K.R + 0.05) * (1 - kprog(T, K.M - 0.05, K.M + 0.45)) }}>
-        <CelularChat T={T} x={345} y={960} s={0.94} tam={42} mensajes={[
+        <CelularChat T={T} x={345} y={1060} s={0.94} tam={42} mensajes={[
           { at: K.R + 0.4, yo: true, texto: '¿Varghese es un caso real?' },
           { at: K.R + 1.9, texto: 'Sí, existe. Lo encuentras en bases de datos legales.' }]} escribe={[K.R + 0.9, K.R + 1.9]} />
       </div>}
-      <Nota T={T} at={K.R + 2.6} until={K.M - 0.2} x={690} y={1250} ancho={330} tam={22} borde={KC.cyan} texto="paráfrasis · las capturas reales están en la orden del juez" />
+      <Nota T={T} at={K.R + 2.6} until={K.M - 0.2} x={690} y={1400} ancho={330} tam={22} borde={KC.cyan} texto="paráfrasis · las capturas reales están en la orden del juez" />
 
       {/* 7 · paso 4: la sentencia y la multa */}
       <Escena T={T} a={K.M} b={K.Co}>
