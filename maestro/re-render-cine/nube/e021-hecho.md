@@ -1,1 +1,2 @@
 - fun-118-mango-antracnosis: marcaba Manchas y Estudio ARRIBA; bajé mangos, corte y etiquetas de Manchas (+170 px) y mapa, número, lista de especies y chip de Estudio (+150 px). Encuadre bien, sin láminas.
+- qui-43-monoxido: ya cumplía (encuadre bien).
