@@ -179,9 +179,10 @@ function Hospital({ T, x, y, s = 1 }) {
   </g>;
 }
 // Calendario de días (los que pasan después de dejarla).
-function Calendario({ T, at, x, y, dias = 5 }) {
+function Calendario({ T, at, x, y, dias = 5, pos, k = 1 }) {
   return <g>{Array.from({ length: dias }, (_, i) => { const on = kprog(T, at + i * 0.3, at + i * 0.3 + 0.35, kEase.rebote); if (on <= 0) return null; const quedan = Math.max(0, 4 - i);
-    return <g key={i} transform={`translate(${x + i * 180} ${y}) scale(${on})`}>
+    const [px, py] = pos ? pos[i] : [x + i * 180, y];
+    return <g key={i} transform={`translate(${px} ${py}) scale(${on * k})`}>
       <rect x={-78} y={-110} width={156} height={220} rx={16} fill="#fff" stroke={KC.ink} strokeWidth={6} />
       <rect x={-78} y={-110} width={156} height={50} rx={14} fill={KC.red} stroke={KC.ink} strokeWidth={6} />
       <text y={-72} textAnchor="middle" style={{ font:`700 26px ${KF.mono}` }} fill="#fff">día {i + 1}</text>
@@ -189,14 +190,19 @@ function Calendario({ T, at, x, y, dias = 5 }) {
     </g>; })}</g>;
 }
 // Cuadrícula de 100 personas (10×10); casos con decimal: el último se llena en parte.
-function Cien({ T, at, x, y, casos, color = KC.red, paso = 40 }) {
+function Cien({ T, at, ver = at, x, y, casos, color = KC.red, paso = 40 }) {
   return <g transform={`translate(${x} ${y})`}>{Array.from({ length: 100 }, (_, i) => {
-    const c = i % 10, r = Math.floor(i / 10), u = kprog(T, at + i * 0.012, at + i * 0.012 + 0.3);
+    const c = i % 10, r = Math.floor(i / 10), u = kprog(T, ver + i * 0.012, ver + i * 0.012 + 0.3);
     const frac = kclamp(casos - i, 0, 1), on = kprog(T, at + 1.4 + i * 0.04, at + 1.6 + i * 0.04);
     return <g key={i} opacity={u}>
       <circle cx={c * paso} cy={r * paso} r={paso * 0.38} fill="rgba(255,255,255,.85)" stroke={KC.ink} strokeWidth={3} />
       {frac > 0 && on > 0 && <circle cx={c * paso} cy={r * paso} r={paso * 0.38 * Math.sqrt(frac) * on} fill={color} stroke={KC.ink} strokeWidth={frac < 1 ? 2 : 3} />}
     </g>; })}</g>;
+}
+
+// Acercamiento: lleva el punto `de` al punto `a` y agranda k veces (pase a mano del estilo cine).
+function DZ({ k = 1, de = [0, 0], a = [0, 0], children }) {
+  return <g transform={`translate(${a[0]} ${a[1]}) scale(${k}) translate(${-de[0]} ${-de[1]})`}>{children}</g>;
 }
 
 function BoulardiiShot() {
@@ -212,63 +218,63 @@ function BoulardiiShot() {
       {/* 1 · gancho: el sobrecito rotulado se abre y cae polvo; la lupa muestra levaduras */}
       <Escena T={T} a={K.G} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<>
+        {fsvg(<DZ k={1.55} de={[330, 950]} a={[360, 960]}>
           <ManoAtras x={330} y={960} />
           <Sobre T={T} x={330} y={820} s={1} abre={abre} rot={-4} />
           <PulgarDelante x={330} y={960} />
           <Polvo T={T} x={330} y0={640} y1={1170} desde={K.G + 0.6} />
           <Monton x={330} y={1190} k={kprog(T, K.G + 1.2, K.G + 2.6)} />
-        </>)}
-        <Lupa T={T} at={K.G + 2.2} x={760} y={930} r={160} fx={330} fy={1170} interior={interiorLevaduras} tinte={KC.gold2} etiqueta="AL MICROSCOPIO" />
+        </DZ>)}
+        <Lupa T={T} at={K.G + 2.2} x={805} y={1010} r={190} fx={360} fy={1336} interior={interiorLevaduras} tinte={KC.gold2} etiqueta="AL MICROSCOPIO" />
       </Escena>
       {/* 2 · al microscopio: Saccharomyces boulardii, misma especie que la del pan */}
       <Escena T={T} a={K.E} b={K.H} zoom={0.06}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={22} />
         {fsvg(<>
-          {[[260, 820, 1.1, 15, 1], [520, 700, 0.9, -20, 0], [430, 1000, 1.0, 40, 0.8], [180, 1080, 0.8, -50, 0]].map(([x, y, k, r, ym], i) =>
+          {[[290, 720, 1.54, 15, 1], [700, 560, 1.26, -20, 0], [400, 1020, 1.4, 40, 0.8], [230, 1330, 1.12, -50, 0]].map(([x, y, k, r, ym], i) =>
             <Levadura key={i} x={x + Math.sin(T + i) * 8} y={y} s={k * kprog(T, K.E + i * 0.15, K.E + i * 0.15 + 0.4, kEase.rebote)} rot={r} yema={ym * kprog(T, K.E + 0.6, K.E + 2.4)} />)}
           {T > K.E + 1.6 && <g opacity={kprog(T, K.E + 1.6, K.E + 2.0)}>
-            <circle cx={820} cy={1010} r={170} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
-            <Bolillo x={820} y={1020} s={0.85} rot={-6} />
-            <path d="M 560 900 Q 620 860 660 900" stroke={KC.gold2} strokeWidth={8} fill="none" strokeLinecap="round" />
+            <circle cx={790} cy={1160} r={225} fill={KC.yellow} stroke={KC.ink} strokeWidth={8} />
+            <Bolillo x={790} y={1173} s={1.12} rot={-6} />
+            <path d="M 540 960 Q 590 900 640 950" stroke={KC.gold2} strokeWidth={8} fill="none" strokeLinecap="round" />
           </g>}
         </>)}
       </Escena>
       {/* 3 · la historia: té de cáscara de lichi y mangostán */}
       <Escena T={T} a={K.H} b={K.Ca}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<DZ k={1.4} de={[530, 950]} a={[540, 1000]}>
           <Lichi x={klerp(260, 430, kprog(T, K.H + 1.6, K.H + 2.6, kEase.suave))} y={klerp(700, 860, kprog(T, K.H + 1.6, K.H + 2.6, kEase.suave))} s={1.2 * kprog(T, K.H, K.H + 0.4, kEase.rebote) * (1 - 0.6 * kprog(T, K.H + 2.3, K.H + 2.7))} />
           <Mangostan x={klerp(800, 600, kprog(T, K.H + 1.8, K.H + 2.8, kEase.suave))} y={klerp(720, 860, kprog(T, K.H + 1.8, K.H + 2.8, kEase.suave))} s={1.1 * kprog(T, K.H + 0.5, K.H + 0.9, kEase.rebote) * (1 - 0.6 * kprog(T, K.H + 2.5, K.H + 2.9))} />
           <Tetera T={T} x={520} y={1080} s={1} vapor={kprog(T, K.H + 2.6, K.H + 3.2)} />
-        </>)}
+        </DZ>)}
       </Escena>
       {/* 4 · 37 °C */}
       <Escena T={T} a={K.Ca} b={K.Ac}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<>
+        {fsvg(<DZ k={1.2} de={[560, 950]} a={[540, 1010]}>
           <Silueta x={240} y={1150} s={0.95} />
           <Termometro x={420} y={1120} valor={0.8 * kprog(T, K.Ca + 0.3, K.Ca + 1.6, kEase.sale)} marca={T > K.Ca + 1.4 ? '37 °C' : null} />
           <Bolillo x={790} y={1100} s={0.75} />
           <Termometro x={930} y={1120} alto={360} valor={0.6 * kprog(T, K.Ca + 1.4, K.Ca + 2.6, kEase.sale)} color={KC.orange} />
-        </>)}
+        </DZ>)}
       </Escena>
       {/* 5 · pH 2: experimento de laboratorio */}
       <Escena T={T} a={K.Ac} b={K.P}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<DZ k={1.5} de={[540, 950]} a={[540, 1000]}>
           <Tubo T={T} x={330} y={1150} vivas={1} />
           <Tubo T={T} x={750} y={1150} n={30} vivas={1 - 0.967 * kprog(T, K.Ac + 0.8, K.Ac + 1.8)} seed={5} />
           <text x={540} y={920} textAnchor="middle" style={{ font:`400 110px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={6}>pH 2</text>
-        </>)}
+        </DZ>)}
       </Escena>
       {/* 6 · pregunta */}
       <Escena T={T} a={K.P} b={K.An} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Interrogacion T={T} x={300} y={1080} />
-          <Capsula x={200} y={1140} s={1.3} rot={-15 + Math.sin(T * 3) * 6} />
+          <Interrogacion T={T} x={360} y={1290} tam={820} />
+          <Capsula x={740} y={1150} s={3} rot={-15 + Math.sin(T * 3) * 6} />
         </>)}
       </Escena>
       {/* 7–8 · en tu intestino: los antibióticos apagan bacterias; la levadura sigue */}
@@ -276,24 +282,26 @@ function BoulardiiShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} color="rgba(255,200,220,.25)" />
         {fsvg(<>
+          <DZ k={1.3} de={[540, 870]} a={[540, 960]}>
           <path d="M 0 500 Q 540 440 1080 500 L 1080 520 Q 540 470 0 520 Z" fill="#c25b6a" opacity=".6" />
           <path d="M 0 1220 Q 540 1260 1080 1220 L 1080 1240 Q 540 1290 0 1240 Z" fill="#c25b6a" opacity=".6" />
           {BACT.map((b, i) => { const v = b.muere ? 1 - kprog(T, K.An + 1.8 + b.d * 1.6, K.An + 2.4 + b.d * 1.6) : 1;
             return <Bacteria key={i} T={T} seed={i} x={b.x + Math.sin(T * 0.8 + i) * 14} y={b.y + Math.cos(T * 0.7 + i) * 10} rot={b.r} s={0.35} color={b.c} vida={v} flagelo={false} />; })}
           {Array.from({ length: 5 }, (_, i) => { const u = kprog(T, K.An + 1.0 + i * 0.15, K.An + 2.4 + i * 0.15, kEase.suave); return u > 0 && u < 1 ? <Capsula key={i} x={klerp(-80, 300 + i * 160, u)} y={600 + i * 120} rot={u * 200} s={0.8} /> : null; })}
           {LEV.map(([x, y, r], i) => { const on = kprog(T, K.L + 0.2 + i * 0.2, K.L + 0.6 + i * 0.2, kEase.rebote); return on > 0 ? <Levadura key={i} x={x} y={y + Math.sin(T + i) * 8} s={1.33 * on} rx={75} ry={58} rot={r} brillo={0.8} yema={i === 1 ? 0.7 : 0} /> : null; })}
+          </DZ>
         </>)}
       </Escena>
       {/* 9 · el estudio: 21 ensayos, 18.7 → 8.5 de cada 100 */}
       <Escena T={T} a={K.Es} b={K.Li}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Cien T={T} at={K.Es + 2.6} x={140} y={740} casos={18.7} color={KC.red} paso={34} />
-          <Cien T={T} at={K.Es + 3.6} x={640} y={740} casos={8.5} color={KC.orange} paso={34} />
-          {T > K.Es + 2.6 && <text x={293} y={695} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>sin S. boulardii</text>}
-          {T > K.Es + 3.6 && <text x={793} y={695} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>con S. boulardii</text>}
-          {T > K.Es + 4.4 && <text x={293} y={1130} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={3}>18.7 de 100</text>}
-          {T > K.Es + 5.2 && <text x={793} y={1130} textAnchor="middle" style={{ font:`400 70px ${KF.titulo}` }} fill={KC.orange} stroke={KC.ink} strokeWidth={3}>8.5 de 100</text>}
+          <Cien T={T} at={K.Es + 2.6} ver={K.Es + 0.2} x={90} y={860} casos={18.7} color={KC.red} paso={44} />
+          <Cien T={T} at={K.Es + 3.6} ver={K.Es + 0.4} x={594} y={860} casos={8.5} color={KC.orange} paso={44} />
+          {T > K.Es + 2.6 && <text x={288} y={810} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>sin S. boulardii</text>}
+          {T > K.Es + 3.6 && <text x={792} y={810} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink}>con S. boulardii</text>}
+          {T > K.Es + 4.4 && <text x={288} y={1360} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={3}>18.7 de 100</text>}
+          {T > K.Es + 5.2 && <text x={792} y={1360} textAnchor="middle" style={{ font:`400 84px ${KF.titulo}` }} fill={KC.orange} stroke={KC.ink} strokeWidth={3}>8.5 de 100</text>}
         </>)}
       </Escena>
       {/* 10 · lo que no: C. difficile en adultos */}
@@ -301,78 +309,80 @@ function BoulardiiShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={16} />
         {fsvg(<>
-          <Cdiff x={400 + Math.sin(T) * 10} y={680} s={kprog(T, K.Li, K.Li + 0.5, kEase.rebote)} rot={-6} />
-          <Intervalo T={T} at={K.Li + 1.4} x={160} y={950} />
+          <Cdiff x={540 + Math.sin(T) * 10} y={700} s={1.7 * kprog(T, K.Li, K.Li + 0.5, kEase.rebote)} rot={-6} />
+          <DZ k={1.15} de={[540, 950]} a={[540, 1110]}><Intervalo T={T} at={K.Li + 1.4} x={160} y={950} /></DZ>
         </>)}
       </Escena>
       {/* 11 · el riesgo raro: pacientes graves con catéter; abrir un sobre deja levadura en las manos */}
       <Escena T={T} a={K.R} b={K.N}>
         <FondoLunares color="#bfe9ff" />
         {fsvg(<>
-          <Hospital T={T} x={560} y={1040} s={0.95} />
-          {[[90, 700], [250, 700]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y})`}><ellipse rx={62} ry={44} fill={BC.piel} stroke={KC.ink} strokeWidth={6} />
+          <DZ k={1.2} de={[560, 800]} a={[540, 1000]}><Hospital T={T} x={560} y={1040} s={0.95} /></DZ>
+          {[[130, 560], [300, 560]].map(([x, y], i) => <g key={i} transform={`translate(${x} ${y}) scale(1.2)`}><ellipse rx={62} ry={44} fill={BC.piel} stroke={KC.ink} strokeWidth={6} />
             {T > K.R + 3.0 && [0, 1, 2, 3].map((k) => <circle key={k} cx={-26 + k * 17} cy={-10 + (k % 2) * 14} r={7} fill={BC.levadura2} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.R + 3.0 + k * 0.2, K.R + 3.3 + k * 0.2)} />)}</g>)}
-          <g transform={`translate(170 540) rotate(-6)`}><Sobre T={T} x={0} y={0} s={0.55} abre={kprog(T, K.R + 2.2, K.R + 2.8, kEase.sale)} /></g>
+          <g transform={`translate(215 370) rotate(-6)`}><Sobre T={T} x={0} y={0} s={0.66} abre={kprog(T, K.R + 2.2, K.R + 2.8, kEase.sale)} /></g>
           {T > K.R + 2.6 && Array.from({ length: 20 }, (_, i) => { const gg = krng(i + 40); const u = kprog(T, K.R + 2.6 + gg() * 0.8, K.R + 4.4 + gg() * 0.8, kEase.suave);
-            const al = i % 4 === 0, tx = al ? 617 : 60 + gg() * 230, ty = al ? 878 : 670 + gg() * 30;
-            return <circle key={i} cx={klerp(170, tx, u) + Math.sin(T * 3 + i) * 14 * (1 - u)} cy={klerp(430, ty, u) - Math.sin(u * Math.PI) * (al ? 200 : 60)} r={6} fill={BC.levadura2} stroke={KC.ink} strokeWidth={2} />; })}
+            const al = i % 4 === 0, tx = al ? 608 : 80 + gg() * 270, ty = al ? 1094 : 525 + gg() * 30;
+            return <circle key={i} cx={klerp(215, tx, u) + Math.sin(T * 3 + i) * 14 * (1 - u)} cy={klerp(240, ty, u) - Math.sin(u * Math.PI) * (al ? 200 : 60)} r={6} fill={BC.levadura2} stroke={KC.ink} strokeWidth={2} />; })}
         </>)}
       </Escena>
       {/* 12 · no se queda */}
       <Escena T={T} a={K.N} b={K.C}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Calendario T={T} at={K.N + 0.2} x={180} y={900} />)}
+        {fsvg(<Calendario T={T} at={K.N + 0.2} x={180} y={900} k={1.5} pos={[[220, 800], [540, 800], [860, 800], [380, 1170], [700, 1170]]} />)}
       </Escena>
       {/* 13 · cierre: la misma mano y el mismo sobrecito, ahora con el pan y los 37 °C */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
+          <DZ k={1.55} de={[330, 950]} a={[360, 960]}>
           <ManoAtras x={330} y={960} />
           <Sobre T={T} x={330} y={820} s={1} abre={1} extra={kprog(T, K.C + 0.8, K.C + 1.6, kEase.rebote)} rot={-4} />
           <PulgarDelante x={330} y={960} />
           <Monton x={330} y={1190} k={1} />
-          <Levadura x={760} y={1000} s={1.4} yema={0.8} brillo={1} />
+          </DZ>
+          <Levadura x={750} y={1040} s={1.8} yema={0.8} brillo={1} />
         </>)}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.6} until={K.E - 0.3} texto="¿bacterias?" x={260} y={470} tam={46} />
-      <Etq T={T} at={K.E + 0.6} until={K.H - 0.3} x={60} y={500} texto="levadura probiótica" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.E + 0.9} until={K.H - 0.3} x={60} y={550} texto="Saccharomyces boulardii" it tam={36} color={KC.gold2} />
-      <Etq T={T} at={K.E + 2.0} until={K.H - 0.3} x={1040} y={1220} lado="izq" texto="misma especie: S. cerevisiae" it tam={30} color={KC.yellow} />
-      <Chip T={T} at={K.H + 0.4} until={K.Ca - 0.3} texto="dicen que… (años 20, Indochina)" x={400} y={470} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.H + 0.6} until={K.H + 2.2} x={330} y={580} texto="lichi" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.H + 1.0} until={K.H + 2.4} x={900} y={580} lado="izq" texto="mangostán" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.H + 3.0} until={K.Ca - 0.3} x={60} y={1220} texto="té de cáscara" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 1.2} until={K.Ac - 0.3} x={60} y={560} texto="S. boulardii" it tam={32} color={KC.ink} />
-      <Chip T={T} at={K.Ca + 2.2} until={K.Ac - 0.3} texto="otras cepas: 30–33 °C" x={760} y={1150} tam={30} borde={KC.orange} />
-      <Chip T={T} at={K.Ac + 0.2} until={K.P - 0.3} texto="experimento de laboratorio, 1 h a 37 °C" x={540} y={1160} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.Ac + 0.5} until={K.P - 0.3} x={60} y={560} texto="S. boulardii: casi igual" it tam={26} color={KC.ink} />
-      <Etq T={T} at={K.Ac + 1.2} until={K.P - 0.3} x={1040} y={1060} lado="izq" texto="otra cepa: < 4 %" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.An + 0.5} until={K.L - 0.3} x={60} y={460} texto="POR DENTRO · bacterias de tu intestino" tam={28} />
-      <Chip T={T} at={K.An + 2.6} until={K.L - 0.3} texto="se desbalancean" x={400} y={1140} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.L + 0.8} until={K.Es - 0.3} texto="hongo ≠ bacteria" x={400} y={450} tam={40} borde={KC.gold2} />
-      <Etq T={T} at={K.L + 1.4} until={K.Es - 0.3} x={60} y={1150} texto="levadura ≈ 5 µm · bacteria ≈ 1 µm" tam={28} color={KC.gold2} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2015" quien="Szajewska y Kołodziej · Varsovia" revista="21 ensayos · 4,780 personas · Aliment Pharmacol Ther" y={760} />
-      <Chip T={T} at={K.Es + 2.6} until={K.Li - 0.3} texto="en gente con antibióticos" x={400} y={470} tam={34} borde={KC.ink} />
-      <Etq T={T} at={K.Li + 0.5} until={K.R - 0.3} x={60} y={520} texto="Clostridium difficile" it tam={34} color={KC.texto} />
-      <Chip T={T} at={K.Li + 2.2} until={K.R - 0.3} texto="adultos: sin efecto claro" x={540} y={1130} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.R + 0.5} until={K.R + 3.0} texto="rara vez · pacientes graves" x={400} y={1150} tam={34} borde={KC.red} />
-      <Etq T={T} at={K.R + 1.0} until={K.R + 3.0} x={640} y={830} texto="catéter en la vena" tam={26} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.R + 3.3} until={K.N - 0.3} anio="2000" quien="París · 4 casos" revista="Hennequin et al. · Eur J Clin Microbiol Infect Dis" y={480} />
-      <Chip T={T} at={K.N + 0.2} until={K.C - 0.3} texto="3–5 días después de dejarla" x={400} y={470} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="no es consejo médico" x={330} y={470} tam={30} borde={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.6} until={K.E - 0.3} texto="¿bacterias?" x={800} y={620} tam={46} />
+      <Etq T={T} at={K.E + 0.6} until={K.H - 0.3} x={60} y={380} texto="levadura probiótica" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.E + 0.9} until={K.H - 0.3} x={60} y={430} texto="Saccharomyces boulardii" it tam={36} color={KC.gold2} />
+      <Etq T={T} at={K.E + 2.0} until={K.H - 0.3} x={1040} y={1450} lado="izq" texto="misma especie: S. cerevisiae" it tam={30} color={KC.yellow} />
+      <Chip T={T} at={K.H + 0.4} until={K.Ca - 0.3} texto="dicen que… (años 20, Indochina)" x={540} y={380} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.H + 0.6} until={K.H + 2.2} x={240} y={470} texto="lichi" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.H + 1.0} until={K.H + 2.4} x={940} y={470} lado="izq" texto="mangostán" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.H + 3.0} until={K.Ca - 0.3} x={60} y={1460} texto="té de cáscara" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 1.2} until={K.Ac - 0.3} x={60} y={640} texto="S. boulardii" it tam={32} color={KC.ink} />
+      <Chip T={T} at={K.Ca + 2.2} until={K.Ac - 0.3} texto="otras cepas: 30–33 °C" x={780} y={1340} tam={30} borde={KC.orange} />
+      <Chip T={T} at={K.Ac + 0.2} until={K.P - 0.3} texto="experimento de laboratorio, 1 h a 37 °C" x={540} y={1430} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.Ac + 0.5} until={K.P - 0.3} x={60} y={580} texto="S. boulardii: casi igual" it tam={26} color={KC.ink} />
+      <Etq T={T} at={K.Ac + 1.2} until={K.P - 0.3} x={1040} y={580} lado="izq" texto="otra cepa: < 4 %" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.An + 0.5} until={K.L - 0.3} x={60} y={400} texto="POR DENTRO · bacterias de tu intestino" tam={28} />
+      <Chip T={T} at={K.An + 2.6} until={K.L - 0.3} texto="se desbalancean" x={540} y={1490} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.L + 0.8} until={K.Es - 0.3} texto="hongo ≠ bacteria" x={540} y={400} tam={40} borde={KC.gold2} />
+      <Etq T={T} at={K.L + 1.4} until={K.Es - 0.3} x={60} y={1490} texto="levadura ≈ 5 µm · bacteria ≈ 1 µm" tam={28} color={KC.gold2} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.4} anio="2015" quien="Szajewska y Kołodziej · Varsovia" revista="21 ensayos · 4,780 personas · Aliment Pharmacol Ther" y={560} />
+      <Chip T={T} at={K.Es + 2.6} until={K.Li - 0.3} texto="en gente con antibióticos" x={540} y={700} tam={34} borde={KC.ink} />
+      <Etq T={T} at={K.Li + 0.5} until={K.R - 0.3} x={60} y={470} texto="Clostridium difficile" it tam={34} color={KC.texto} />
+      <Chip T={T} at={K.Li + 2.2} until={K.R - 0.3} texto="adultos: sin efecto claro" x={540} y={1320} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.R + 0.5} until={K.R + 3.0} texto="rara vez · pacientes graves" x={540} y={1460} tam={34} borde={KC.red} />
+      <Etq T={T} at={K.R + 1.0} until={K.R + 3.0} x={640} y={1040} texto="catéter en la vena" tam={26} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.R + 3.3} until={K.N - 0.3} anio="2000" quien="París · 4 casos" revista="Hennequin et al. · Eur J Clin Microbiol Infect Dis" x={650} y={460} />
+      <Chip T={T} at={K.N + 0.2} until={K.C - 0.3} texto="3–5 días después de dejarla" x={540} y={500} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="no es consejo médico" x={760} y={760} tam={30} borde={KC.ink} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.E} texto="5 cm" largo={180} />
-      <BarraEscala T={T} at={K.E} until={K.H} texto="10 µm" largo={300} />
-      <BarraEscala T={T} at={K.H} until={K.Ca} texto="5 cm" largo={150} />
-      <BarraEscala T={T} at={K.Ca} until={K.Ac} texto="50 cm" largo={160} />
-      <BarraEscala T={T} at={K.Ac} until={K.P} texto="2 cm" largo={110} />
-      <BarraEscala T={T} at={K.An} until={K.Es} texto="5 µm" largo={200} />
+      <BarraEscala T={T} at={K.G} until={K.E} texto="5 cm" largo={279} />
+      <BarraEscala T={T} at={K.E} until={K.H} texto="10 µm" largo={420} />
+      <BarraEscala T={T} at={K.H} until={K.Ca} texto="5 cm" largo={210} />
+      <BarraEscala T={T} at={K.Ca} until={K.Ac} texto="50 cm" largo={192} />
+      <BarraEscala T={T} at={K.Ac} until={K.P} texto="2 cm" largo={165} />
+      <BarraEscala T={T} at={K.An} until={K.Es} texto="5 µm" largo={260} />
       {/* sin barra en la escena de C. difficile: el bacilo y la gráfica son esquemáticos, no a escala */}
-      <BarraEscala T={T} at={K.R} until={K.N} texto="50 cm" largo={190} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={180} />
+      <BarraEscala T={T} at={K.R} until={K.N} texto="50 cm" largo={228} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={279} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.E - 0.1} texto="No trae bacterias: *trae una levadura.*" />
