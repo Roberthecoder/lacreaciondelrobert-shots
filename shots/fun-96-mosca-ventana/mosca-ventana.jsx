@@ -252,8 +252,8 @@ function MoscaVentanaShot() {
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
           {/* pase a mano: la mosca de la pose sigue detrás (capa cine); el signo y el reloj van al hueco de arriba a la derecha, sin taparla */}
-          <Interrogacion T={T} x={800} y={840} tam={380} />
-          <g transform="translate(800 400)"><circle r={84} fill="#e9edf5" stroke="#0b1020" strokeWidth={8} />
+          <Interrogacion T={T} x={840} y={800} tam={380} />
+          <g transform="translate(820 1455)"><circle r={84} fill="#e9edf5" stroke="#0b1020" strokeWidth={8} />
             <line x1={0} y1={0} x2={0} y2={-58} stroke="#0b1020" strokeWidth={8} strokeLinecap="round" transform={`rotate(${T * 120})`} />
             <line x1={0} y1={0} x2={40} y2={0} stroke="#0b1020" strokeWidth={8} strokeLinecap="round" transform={`rotate(${T * 12})`} /></g>
         </>)}
@@ -263,14 +263,14 @@ function MoscaVentanaShot() {
         <FondoLunares color={KC.pink} />
         {fsvg(<g>
           {/* cerebro de mosca esquemático con las neuronas del reloj (pase a mano: en pantalla desde que empieza la escena, grande y al centro) */}
-          <g transform="translate(540 800) scale(1.7)">
+          <g transform="translate(540 900) scale(1.7)">
             <path d="M -230 0 Q -250 -110 -140 -120 Q -60 -126 0 -80 Q 60 -126 140 -120 Q 250 -110 230 0 Q 200 90 90 70 Q 0 110 -90 70 Q -200 90 -230 0 Z" fill="#7d4c61" stroke={KC.ink} strokeWidth={5} />
             <ellipse cx={-150} cy={-10} rx={60} ry={70} fill="#9a5d75" stroke={KC.ink} strokeWidth={4} /><ellipse cx={150} cy={-10} rx={60} ry={70} fill="#9a5d75" stroke={KC.ink} strokeWidth={4} />
             {[[-40, -60], [-20, -72], [20, -72], [40, -60]].map(([nx, ny], i) => { const b = 0.5 + 0.5 * Math.sin(T * 6 + i); return <g key={i}>
               <circle cx={nx} cy={ny} r={16 + 6 * b} fill={KC.yellow} opacity={0.5} /><circle cx={nx} cy={ny} r={11} fill={KC.gold} stroke="#0b1020" strokeWidth={3} /></g>; })}
           </g>
           {/* gráfica: movimiento de la mosca vs. horas antes de morir */}
-          <g transform="translate(90 1150) scale(1.12)">
+          <g transform="translate(90 1240) scale(1.12)">
             <line x1={0} y1={170} x2={800} y2={170} stroke={KC.ink} strokeWidth={6} /><line x1={0} y1={170} x2={0} y2={0} stroke={KC.ink} strokeWidth={6} />
             <path d={(() => { let d = 'M 0 150'; const n = Math.floor(60 * graf); for (let i = 1; i <= n; i++) { const xx = i * (760 / 60), h = xx < 430 ? 150 - 6 * Math.sin(i * 1.7) : 150 - Math.min(130, (xx - 430) * 0.42) - 6 * Math.sin(i * 1.7); d += ` L ${xx} ${h}`; } return d; })()} stroke={KC.blue} strokeWidth={8} fill="none" strokeLinejoin="round" />
             {graf > 0.55 && <line x1={430} y1={176} x2={430} y2={10} stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" />}
@@ -389,7 +389,7 @@ function MoscaVentanaShot() {
       <Paso T={T} at={K.Po + 1.3} until={K.P - 0.3} x={50} y={580} n="3" texto="levanta las alas" />
       <BarraEscala T={T} at={K.Po} until={K.P} texto="esquemático" largo={160} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.2} anio="2023" quien="Harvard" revista="Elya y de Bivort · eLife" x={540} y={400} />
-      <Etq T={T} at={K.E + 2.8} until={K.Sa - 0.3} x={560} y={548} texto="neuronas del reloj (DN1p)" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.E + 2.8} until={K.Sa - 0.3} x={560} y={650} texto="neuronas del reloj (DN1p)" tam={28} color={KC.ink} />
       <Chip T={T} at={K.E + 4.2} until={K.Sa - 0.3} texto="empieza ~2.5 h antes de morir" x={540} y={420} tam={30} borde={KC.blue} />
       <Chip T={T} at={K.Sa + 0.2} until={K.B - 0.3} texto="transfusión de hemolinfa" x={540} y={440} tam={32} borde={KC.ink} />
       <Etq T={T} at={K.Sa + 4.0} until={K.B - 0.3} x={1000} y={980} lado="izq" texto="caminó más" tam={30} color={KC.ink} />
