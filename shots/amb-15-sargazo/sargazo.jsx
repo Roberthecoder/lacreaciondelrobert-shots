@@ -49,14 +49,16 @@ function Monton({ x, y, s = 1, T, podrido = 0, llega = 1 }) {
 // Playa caribeña: cielo, mar turquesa con olas y arena blanca. ola 0..1 = la ola que deja el sargazo.
 function Playa({ T, mar = 760, ola = 1, cielo = '#7fdcff' }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
-    <rect width={KW} height={mar - 200} fill={cielo} />
+    <defs><linearGradient id={'sgCielo' + mar} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0d1a2e" /><stop offset="1" stopColor={mixHex(cielo, '#0d1a2e', 0.72)} /></linearGradient>
+      <linearGradient id={'sgArena' + mar} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#6e5c3c" /><stop offset="1" stopColor="#2a2216" /></linearGradient></defs>
+    <rect width={KW} height={mar - 200} fill={`url(#sgCielo${mar})`} />
     <circle cx={160} cy={420} r={70} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
-    <rect y={mar - 200} width={KW} height={260} fill="#126972" />
-    <rect y={mar - 200} width={KW} height={60} fill="#0c4f6a" />
-    {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${((i * 190 + T * 40) % 1240) - 120} ${mar - 120 + (i % 3) * 50} q 30 -14 60 0 t 60 0`} stroke="#d9fbff" strokeWidth={6} fill="none" strokeLinecap="round" />)}
-    <path d={`M 0 ${mar + 60} Q 270 ${mar + 30} 540 ${mar + 60} T 1080 ${mar + 60} L 1080 1920 L 0 1920 Z`} fill="#f6e7bf" stroke={KC.ink} strokeWidth={6} />
-    {ola < 1 && <path d={`M 0 ${mar + 60 + ola * 260} Q 270 ${mar + 20 + ola * 260} 540 ${mar + 60 + ola * 260} T 1080 ${mar + 60 + ola * 260} L 1080 ${mar + 40} L 0 ${mar + 40} Z`} fill="#bff6f2" opacity={0.85 * (1 - ola * 0.6)} stroke="#fff" strokeWidth={8} />}
-    {Array.from({ length: 22 }, (_, i) => { const r = krng(i + 3); return <circle key={i} cx={r() * KW} cy={mar + 120 + r() * 1000} r={3 + r() * 3} fill="#e2cf9c" />; })}
+    <rect y={mar - 200} width={KW} height={260} fill="#0c4650" />
+    <rect y={mar - 200} width={KW} height={60} fill="#09334a" />
+    {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${((i * 190 + T * 40) % 1240) - 120} ${mar - 120 + (i % 3) * 50} q 30 -14 60 0 t 60 0`} stroke="#9fd6e0" strokeWidth={6} fill="none" strokeLinecap="round" opacity=".7" />)}
+    <path d={`M 0 ${mar + 60} Q 270 ${mar + 30} 540 ${mar + 60} T 1080 ${mar + 60} L 1080 1920 L 0 1920 Z`} fill={`url(#sgArena${mar})`} stroke={KC.ink} strokeWidth={6} />
+    {ola < 1 && <path d={`M 0 ${mar + 60 + ola * 260} Q 270 ${mar + 20 + ola * 260} 540 ${mar + 60 + ola * 260} T 1080 ${mar + 60 + ola * 260} L 1080 ${mar + 40} L 0 ${mar + 40} Z`} fill="#5fa8b0" opacity={0.75 * (1 - ola * 0.6)} stroke="#fff" strokeWidth={8} />}
+    {Array.from({ length: 22 }, (_, i) => { const r = krng(i + 3); return <circle key={i} cx={r() * KW} cy={mar + 120 + r() * 1000} r={3 + r() * 3} fill="#8a7650" />; })}
   </svg>;
 }
 // Líneas de olor (verdes, onduladas) que suben.
@@ -84,12 +86,12 @@ function MapaAtlantico({ T, cinta = 1, regla = 0, sat = -1 }) {
   return <g>
     <defs><clipPath id="sgMapa"><rect x={-10} y={AT.y0 - 20} width={KW + 20} height={AT.ky * 34} /></clipPath></defs>
     <g clipPath="url(#sgMapa)">
-    <rect x={-10} y={AT.y0 - 20} width={KW + 20} height={AT.ky * 34} fill="#2b7fd0" />
+    <rect x={-10} y={AT.y0 - 20} width={KW + 20} height={AT.ky * 34} fill="#173f63" />
     {Array.from({ length: 4 }, (_, i) => <line key={i} x1={0} x2={KW} y1={AT.y0 + 100 + i * 110} y2={AT.y0 + 100 + i * 110} stroke="rgba(255,255,255,.12)" strokeWidth={3} />)}
-    <path d={atPath(AT_AMER)} fill="#9fdc84" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
-    <path d={atPath(AT_CUBA)} fill="#9fdc84" stroke={KC.ink} strokeWidth={4} />
-    <path d={atPath(AT_ESP)} fill="#9fdc84" stroke={KC.ink} strokeWidth={4} />
-    <path d={atPath(AT_AFR)} fill="#f2cf7a" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
+    <path d={atPath(AT_AMER)} fill="#3f6f3e" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
+    <path d={atPath(AT_CUBA)} fill="#3f6f3e" stroke={KC.ink} strokeWidth={4} />
+    <path d={atPath(AT_ESP)} fill="#3f6f3e" stroke={KC.ink} strokeWidth={4} />
+    <path d={atPath(AT_AFR)} fill="#7d6435" stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
     {blobs}
     {reglaPts.length > 1 && <polyline points={reglaPts.join(' ')} fill="none" stroke={KC.yellow} strokeWidth={10} strokeDasharray="22 12" strokeLinecap="round" />}
     {sat >= 0 && <g transform={`translate(${sx} ${sy - 150})`}>
@@ -114,7 +116,7 @@ function CoralCorte({ x, y, T, p = 1 }) {
 // Columna de océano con surgencia en el ecuador: agua profunda que sube con fósforo (P).
 function Surgencia({ x, y, w = 440, h = 470, T, p = 1 }) {
   return <g transform={`translate(${x} ${y})`}>
-    <defs><linearGradient id="sgOc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#3fb3e8" /><stop offset="1" stopColor="#0c2b5c" /></linearGradient></defs>
+    <defs><linearGradient id="sgOc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#1b5f88" /><stop offset="1" stopColor="#0a1d3c" /></linearGradient></defs>
     <rect x={0} y={0} width={w} height={h} rx={24} fill="url(#sgOc)" stroke={KC.ink} strokeWidth={7} />
     <path d={`M 0 40 q ${w / 8} -16 ${w / 4} 0 t ${w / 4} 0 t ${w / 4} 0 t ${w / 4} 0`} stroke="#d9fbff" strokeWidth={5} fill="none" />
     {[0.3, 0.5, 0.7].map((q, i) => <path key={i} d={`M ${w * q} ${h - 30} Q ${w * q + (i - 1) * 40} ${h / 2} ${w * q} 70`} stroke="#bfe9ff" strokeWidth={8} fill="none" strokeDasharray="18 14" strokeDashoffset={T * 60} opacity={p} markerEnd="" />)}
@@ -196,13 +198,13 @@ function SargazoShot() {
       {/* 1 · gancho: la playa de Quintana Roo con el montón de sargazo que apesta */}
       <Escena T={T} a={K.G - 1} b={K.Ci}>
         <Playa T={T} ola={ola} />
-        {svg(<><Monton x={420} y={1040} s={1.1} T={T} llega={ola} /><Olor T={T} x={420} y={960} o={kprog(T, K.G + 0.4, K.G + 1.0)} /></>, 2)}
+        {svg(<><Monton x={540} y={1110} s={1.75} T={T} llega={ola} /><Olor T={T} x={540} y={880} o={kprog(T, K.G + 0.4, K.G + 1.0)} /></>, 2)}
       </Escena>
-      <Lupa T={T} at={K.Al + 0.1} until={K.Ci - 0.25} x={420} y={790} r={270} fx={420} fy={1000} tinte={KC.yellow}
+      <Lupa T={T} at={K.Al + 0.1} until={K.Ci - 0.25} x={450} y={700} r={320} fx={540} fy={1040} tinte={KC.yellow}
         interior={(t, r) => <svg width={r * 2} height={r * 2}><rect width={r * 2} height={r * 2} fill="#0f4d7a" />
-          <Sargazo x={r - 10} y={r * 2 - 20} s={1.55} seed={5} T={T} />
+          <Sargazo x={r - 10} y={r * 2 - 20} s={1.9} seed={5} T={T} />
 </svg>} />
-      <Etq T={T} at={K.Al + 0.7} until={K.Ci - 0.2} x={680} y={640} texto="vesícula de gas" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Al + 0.7} until={K.Ci - 0.2} x={768} y={560} texto="vesícula de gas" tam={24} color={KC.ink} />
 
       {/* 2–3 · el cinturón en el mapa del Atlántico (esquema) */}
       <Escena T={T} a={K.Ci} b={K.H}>
@@ -213,7 +215,7 @@ function SargazoShot() {
       {/* 4 · 2018 vs 2025 */}
       <Escena T={T} a={K.H} b={K.P}>
         <FondoLunares color={KC.yellow} />
-        {svg(<>
+        {svg(<g transform="translate(540 1230) scale(1.15) translate(-540 -1080)">
           <line x1={90} y1={1080} x2={990} y2={1080} stroke={KC.ink} strokeWidth={8} />
           <rect x={170} y={1080 - 274 * g18} width={240} height={274 * g18} rx={16} fill={SG_CAFE} stroke={KC.ink} strokeWidth={7} />
           <rect x={620} y={1080 - 520 * g25} width={240} height={520 * g25} rx={16} fill={SG_CAFE2} stroke={KC.ink} strokeWidth={7} />
@@ -223,45 +225,45 @@ function SargazoShot() {
           <text x={740} y={1130} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>jul 2025 · todo el Atlántico</text>
           {g18 > 0.6 && <text x={290} y={1080 - 274 - 26} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>+20 mill. t</text>}
           {g25 > 0.6 && <text x={740} y={1080 - 520 - 26} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>~38 mill. t</text>}
-        </>)}
+        </g>)}
       </Escena>
       {/* 5 · pregunta */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><text x={290} y={1000} textAnchor="middle" style={{ font:`400 480px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 290 820)`}>?</text>
-          <Sargazo x={300} y={1180} s={0.6} seed={8} T={T} /></>)}
+        {svg(<><text x={380} y={1020} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 380 830)`}>?</text>
+          <Sargazo x={720} y={1370} s={1.45} seed={8} T={T} /></>)}
       </Escena>
       {/* 6 · el estudio: corales del Caribe y fósforo que sube en el ecuador (hipótesis) */}
       <Escena T={T} a={K.E} b={K.N}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><g opacity={kprog(T, K.E + 2.1, K.E + 2.6)}><CoralCorte x={280} y={920} T={T} p={kprog(T, K.E + 2.2, K.E + 3.4)} /></g>
-          <text x={280} y={1130} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>coral en corte (esquema)</text>
-          <g opacity={kprog(T, K.E + 2.6, K.E + 3.2)}><Surgencia x={560} y={680} T={T} />
-            <text x={780} y={1190} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>Atlántico ecuatorial</text></g></>)}
+        {svg(<g transform="translate(540 1000) scale(1.2) translate(-540 -930)"><g opacity={kprog(T, K.E - 0.3, K.E + 0.2)}><CoralCorte x={290} y={920} T={T} p={kprog(T, K.E + 2.2, K.E + 3.4)} /></g>
+          <text x={290} y={1130} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>coral en corte (esquema)</text>
+          <g opacity={kprog(T, K.E - 0.3, K.E + 0.2)}><Surgencia x={545} y={680} T={T} p={kprog(T, K.E + 2.6, K.E + 3.2)} />
+            <text x={765} y={1190} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>Atlántico ecuatorial</text></g></g>)}
       </Escena>
-      <TarjetaEstudio T={T} at={K.E + 0.1} until={K.E + 2.3} anio="2025" quien="corales del Caribe" revista="Nature Geoscience · hipótesis" x={540} y={850} />
+      <TarjetaEstudio T={T} at={K.E + 0.1} until={K.E + 2.3} anio="2025" quien="corales del Caribe" revista="Nature Geoscience · hipótesis" x={540} y={420} />
       {/* 7 · microbios del alga que fijan nitrógeno (fondo oscuro, esquema) */}
       <Escena T={T} a={K.N} b={K.Pl}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 50%, #12305a 0%, ${KC.noche} 75%)` }}></div>
-        {svg(<>
+        {svg(<g transform="translate(0 140)">
           <g transform="translate(60 960)"><path d={sgHoja(960, 120)} fill={SG_CAFE} stroke={KC.ink} strokeWidth={8} /><line x1={30} y1={0} x2={930} y2={0} stroke={SG_CAFE2} strokeWidth={8} /></g>
           {Array.from({ length: 7 }, (_, i) => <Microbio key={i} x={170 + i * 120} y={850 + (i % 2) * 10} rot={-10 + (i % 3) * 8} T={T} seed={i} />)}
           {Array.from({ length: 6 }, (_, i) => { const u = kclamp(((T - K.N) * 0.5 + i / 6) % 1, 0, 1); return <N2 key={i} x={210 + i * 130} y={560 + u * 260} s={0.9} o={Math.sin(Math.PI * u)} />; })}
           {Array.from({ length: 8 }, (_, i) => { const u = ((T * 0.7 + i / 8) % 1); return <g key={'n' + i} opacity={kprog(T, K.N + 1.0, K.N + 1.5) * Math.sin(Math.PI * u)}>
             <circle cx={200 + i * 100} cy={880 + u * 120} r={14} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} />
             <text x={200 + i * 100} y={886 + u * 120} textAnchor="middle" style={{ font:`900 16px ${KF.texto}` }} fill={KC.ink}>N</text></g>; })}
-        </>)}
+        </g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.texto} />
       </Escena>
       {/* 8 · de regreso a la playa: 48 h pudriéndose → ácido sulfhídrico */}
       <Escena T={T} a={K.Pl} b={K.M}>
         <Playa T={T} />
-        {svg(<><Monton x={420} y={1040} s={1.1} T={T} podrido={pod} />
-          <Olor T={T} x={420} y={960} n={5} o={0.4 + pod * 0.6} color={mixHex('#7fbf3a', '#5a7a20', pod)} />
-          {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.45 + i / 6) % 1); return <g key={i} opacity={pod * Math.sin(Math.PI * u)} transform={`translate(${250 + i * 70} ${920 - u * 280})`}>
+        {svg(<><Monton x={540} y={1110} s={1.6} T={T} podrido={pod} />
+          <Olor T={T} x={540} y={880} n={5} o={0.4 + pod * 0.6} color={mixHex('#7fbf3a', '#5a7a20', pod)} />
+          {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.45 + i / 6) % 1); return <g key={i} opacity={pod * Math.sin(Math.PI * u)} transform={`translate(${300 + i * 90} ${900 - u * 300})`}>
             <circle r={34} fill="rgba(200,230,120,.85)" stroke={KC.ink} strokeWidth={4} /><text y={9} textAnchor="middle" style={{ font:`900 22px ${KF.texto}` }} fill={KC.ink}>H₂S</text></g>; })}
-          <g opacity={kprog(T, K.Pl + 3.2, K.Pl + 3.8)}><Huevo x={850} y={980} s={1} T={T} /></g>
-          {(() => { const c = kprog(T, K.Pl + 0.3, K.Pl + 3.5); return <g transform="translate(540 470)"><circle r={95} fill="#fff" stroke={KC.ink} strokeWidth={8} />
+          <g opacity={kprog(T, K.Pl + 3.2, K.Pl + 3.8)}><Huevo x={880} y={1360} s={1} T={T} /></g>
+          {(() => { const c = kprog(T, K.Pl + 0.3, K.Pl + 3.5); return <g transform="translate(540 520)"><circle r={95} fill="#fff" stroke={KC.ink} strokeWidth={8} />
             <path d={`M 0 0 L 0 -80 A 80 80 0 ${c > 0.5 ? 1 : 0} 1 ${80 * Math.sin(c * 2 * Math.PI)} ${-80 * Math.cos(c * 2 * Math.PI)} Z`} fill={KC.orange} opacity=".7" />
             <line x1={0} y1={0} x2={70 * Math.sin(c * 12 * Math.PI)} y2={-70 * Math.cos(c * 12 * Math.PI)} stroke={KC.ink} strokeWidth={7} strokeLinecap="round" />
             <text y={150} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{kformato(48 * c, 0)} h</text></g>; })()}
@@ -269,21 +271,21 @@ function SargazoShot() {
       </Escena>
       {/* 9 · el agua de la orilla: poco oxígeno, 78 especies muertas (2018) */}
       <Escena T={T} a={K.M} b={K.C}>
-        <div style={{ position:'absolute', inset:0, background:`linear-gradient(${mixHex('#3fb3c8', '#6b5528', 1 - ox * 0.6)}, ${mixHex('#1d6b80', '#3a2c14', 1 - ox * 0.5)})` }}></div>
-        {svg(<>
-          <g transform="translate(150 1080)"><rect x={-60} y={-480} width={120} height={480} rx={20} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={7} />
+        <div style={{ position:'absolute', inset:0, background:`linear-gradient(${mixHex('#1a5566', '#3d3018', 1 - ox * 0.6)}, ${mixHex('#0b2a36', '#1a1409', 1 - ox * 0.5)})` }}></div>
+        {svg(<g transform="translate(540 1020) scale(1.18) translate(-540 -840)">
+          <g transform="translate(200 1080)"><rect x={-60} y={-480} width={120} height={480} rx={20} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={7} />
             <rect x={-50} y={-470 * (0.15 + 0.85 * ox)} width={100} height={470 * (0.15 + 0.85 * ox) - 10} rx={14} fill={ox > 0.4 ? '#4fc3ff' : KC.red} />
             <text y={-500} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={5} paintOrder="stroke">oxígeno</text></g>
           {[[400, 760, 0], [640, 700, 1], [860, 800, 2], [470, 960, 3], [760, 980, 4]].map(([px, py, i]) => { const m = kprog(T, K.M + 1.2 + i * 0.45, K.M + 1.8 + i * 0.45, kEase.suave);
             return i === 3 ? <Cangrejo key={i} x={px} y={py + m * 60} s={1} muerto={m} /> : <Pez key={i} x={px} y={py - m * 40} s={1.1} muerto={m} color={['#ffb03a', '#ff6fb1', '#ffe11a', '', '#7affc4'][i]} />; })}
           {Array.from({ length: 10 }, (_, i) => { const r = krng(i + 70); return <circle key={'p' + i} cx={300 + r() * 760} cy={600 + ((r() * 600 + T * 30) % 600)} r={4 + r() * 6} fill="rgba(60,40,15,.55)" />; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 10 · cierre: la misma imagen del inicio, ahora con el mar abierto donde es refugio */}
       <Escena T={T} a={K.C} b={FIN}>
-        <Playa T={T} mar={1000} cielo="#9be6ff" />
-        {svg(<>
-          <rect x={0} y={560} width={KW} height={300} fill="#144f76" stroke={KC.ink} strokeWidth={6} />
+        <Playa T={T} mar={1150} cielo="#9be6ff" />
+        {svg(<g transform="translate(0 150)">
+          <rect x={0} y={560} width={KW} height={300} fill="#0f3b58" stroke={KC.ink} strokeWidth={6} />
           <path d="M 0 560 q 60 -14 120 0 t 120 0 t 120 0 t 120 0 t 120 0 t 120 0 t 120 0 t 120 0 t 120 0" stroke="#d9fbff" strokeWidth={6} fill="none" />
           {[0, 1, 2, 3, 4].map((i) => <Sargazo key={i} x={210 + i * 70} y={600} s={0.3} rot={180} seed={50 + i} T={T} />)}
           <rect x={170} y={548} width={380} height={26} rx={13} fill={SG_CAFE} stroke={KC.ink} strokeWidth={4} />
@@ -291,17 +293,17 @@ function SargazoShot() {
           <Tortuga x={430 + Math.sin(T * 0.8) * 30} y={680} s={0.8} T={T} />
           <Ave x={250} y={430} s={0.8} T={T} /><Ave x={420} y={380} s={0.6} T={T + 1} />
           <text x={700} y={840} style={{ font:`900 32px ${KF.texto}` }} fill="#fff" stroke={KC.ink} strokeWidth={5} paintOrder="stroke">mar abierto</text>
-          <Monton x={420} y={1130} s={0.8} T={T} podrido={0.6} />
+          <Monton x={420} y={1140} s={0.95} T={T} podrido={0.6} />
           <Olor T={T} x={420} y={1070} n={3} o={0.7} />
           <text x={780} y={1160} style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>tu playa</text>
-        </>, 2)}
+        </g>, 2)}
       </Escena>
 
       {/* datos y etiquetas */}
       <MitoTachado T={T} at={K.G + 0.3} tacharEn={K.G + 2.4} until={K.Al - 0.2} texto="BASURA" x={330} y={470} tam={60} />
       <Chip T={T} at={K.G + 3.0} until={K.Al - 0.2} texto="un alga viajera" x={330} y={590} tam={40} borde={KC.yellow} />
-      <Etq T={T} at={K.G + 3.4} until={K.Al - 0.2} x={120} y={1200} texto="Quintana Roo" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Al + 0.6} until={K.Ci - 0.2} x={90} y={1150} texto="Sargassum natans · S. fluitans" it tam={30} color={KC.texto} />
+      <Etq T={T} at={K.G + 3.4} until={K.Al - 0.2} x={120} y={1370} texto="Quintana Roo" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Al + 0.6} until={K.Ci - 0.2} x={90} y={1360} texto="Sargassum natans · S. fluitans" it tam={30} color={KC.texto} />
       <Chip T={T} at={K.Al + 0.8} until={K.Ci - 0.2} texto="flota con vesículas de gas" y={1440} x={540} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.Ci + 0.3} until={K.Cf - 0.2} texto="satélites: desde 2011" y={470} x={360} tam={34} borde={KC.cyan} />
       <Etq T={T} at={K.Ci + 1.0} until={K.Cf - 0.2} x={1000} y={1010} texto="África Occidental" lado="izq" tam={28} color={KC.texto} />
@@ -311,11 +313,11 @@ function SargazoShot() {
       <Chip T={T} at={K.Cf + 2.8} until={K.H - 0.2} texto="+20 millones de toneladas · jun 2018" y={1440} x={540} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.H + 2.8} until={K.P - 0.2} texto="áreas medidas distintas" y={430} x={360} tam={30} borde={KC.ink} />
       <Chip T={T} at={K.E + 0.3} until={K.Pl - 0.2} texto="propuesta (hipótesis): fósforo + nitrógeno" y={1440} x={540} tam={30} borde={KC.pink} />
-      <Etq T={T} at={K.N + 0.4} until={K.Pl - 0.2} x={760} y={1110} texto="hoja del alga" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.N + 0.8} until={K.Pl - 0.2} x={80} y={780} texto="microbios (esquema)" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.N + 0.6} until={K.Pl - 0.2} x={80} y={500} texto="N₂ del aire" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.N + 0.4} until={K.Pl - 0.2} x={760} y={1250} texto="hoja del alga" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.N + 0.8} until={K.Pl - 0.2} x={80} y={920} texto="microbios (esquema)" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.N + 0.6} until={K.Pl - 0.2} x={80} y={640} texto="N₂ del aire" tam={28} color={KC.texto} />
       <Chip T={T} at={K.Pl + 1.2} until={K.M - 0.2} texto="H₂S · ácido sulfhídrico" y={1440} x={540} tam={34} borde={KC.leaf} />
-      <NumeroGigante T={T} at={K.M + 1.2} until={K.C - 0.2} valor={78} dur={2.2} sufijo=" especies" x={380} y={470} tam={100} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.M + 1.2} until={K.C - 0.2} valor={78} dur={2.2} sufijo=" especies" x={420} y={540} tam={100} color={KC.yellow} />
       <Chip T={T} at={K.M + 0.5} until={K.C - 0.2} texto="Caribe mexicano · 2018" y={1440} x={540} tam={34} borde={KC.ink} />
       <Chip T={T} at={K.C + 0.6} until={K.Ou - 0.1} texto="mar: refugio · playa: problema" y={1440} x={540} tam={36} borde={KC.yellow} />
 
