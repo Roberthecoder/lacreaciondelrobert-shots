@@ -61,15 +61,17 @@ function Pez({ x, y, s = 1, color = KC.yellow, dir = 1, T = 0 }) {
 function Arrecife({ T, blanco = 0 }) {
   const pez = (i, y0, vel, color, s) => { const u = ((T * vel + i * 0.37) % 1.4) - 0.2; return <Pez key={i} T={T + i} x={u * KW} y={y0 + Math.sin(T * 2 + i) * 14} s={s} color={color} />; };
   return <>
-    <div style={{ position:'absolute', inset:0, background:`linear-gradient(${mixHex('#29c6ee', '#8fb3c4', blanco * 0.6)}, ${mixHex('#0f8fd0', '#5d7f92', blanco * 0.6)})` }}></div>
+    <div style={{ position:'absolute', inset:0, background:`linear-gradient(${mixHex('#143f58', '#3a4e58', blanco * 0.6)}, ${mixHex('#082a44', '#253640', blanco * 0.6)})` }}></div>
     <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0 }}>
       {Array.from({ length: 7 }, (_, i) => <polygon key={i} points={`${80 + i * 160},0 ${150 + i * 160},0 ${40 + i * 170 + Math.sin(T * 0.6 + i) * 30},1200 ${-40 + i * 170},1200`} fill="#fff" opacity={0.07} />)}
       {pez(0, 610, 0.09, KC.yellow, 0.7)}{pez(1, 960, 0.07, KC.orange, 0.55)}
-      <path d="M 0 1050 Q 270 1000 540 1040 T 1080 1030 L 1080 1920 L 0 1920 Z" fill={mixHex('#f2d58e', '#e6dcc4', blanco)} stroke={KC.ink} strokeWidth={8} />
-      <CoralMesa x={150} y={1070} w={250} blanco={blanco} />
-      <CoralRamas x={850} y={1070} h={360} blanco={blanco} />
-      <CoralCerebro x={440} y={1085} r={260} blanco={blanco} />
-      {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.35 + i / 6) % 1); return <circle key={i} cx={560 + i * 30 + Math.sin(T * 3 + i) * 8} cy={820 - u * 340} r={6 + (i % 3) * 3} fill="none" stroke="#fff" strokeWidth={3} opacity={1 - u} />; })}
+      <g transform="translate(540 1170) scale(1.3) translate(-520 -1060)">
+      <path d="M -200 1050 Q 270 1000 540 1040 T 1280 1030 L 1280 1700 L -200 1700 Z" fill={mixHex('#5c4b2c', '#46443c', blanco)} stroke={KC.ink} strokeWidth={8} />
+      <CoralMesa x={175} y={1070} w={250} blanco={blanco} />
+      <CoralRamas x={830} y={1070} h={360} blanco={blanco} />
+      <CoralCerebro x={470} y={1085} r={260} blanco={blanco} />
+      {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.35 + i / 6) % 1); return <circle key={i} cx={590 + i * 30 + Math.sin(T * 3 + i) * 8} cy={820 - u * 340} r={6 + (i % 3) * 3} fill="none" stroke="#fff" strokeWidth={3} opacity={1 - u} />; })}
+      </g>
     </svg>
   </>;
 }
@@ -169,11 +171,11 @@ function Globo({ T, x, y, r = 280, blancos = 0 }) {
 // Barras de los 4 eventos globales (porcentaje del área de arrecifes con calor de blanqueamiento).
 function Barras({ T, at, x = 140, base = 1075, alto = 440 }) {
   const datos = [['1998', 21], ['2010', 37], ['2014–17', 68], ['2023–25', 84]];
-  return <g>{datos.map(([a, v], i) => { const k = kprog(T, at + i * 0.35, at + i * 0.35 + 0.5, kEase.sale), h = (alto * v / 100) * k, bx = x + i * 215;
+  return <g>{datos.map(([a, v], i) => { const k = kprog(T, at + i * 0.35, at + i * 0.35 + 0.5, kEase.sale), h = (alto * v / 100) * k, bx = x + i * 225;
     return <g key={i} opacity={kprog(T, at + i * 0.35, at + i * 0.35 + 0.15)}>
-      <rect x={bx} y={base - h} width={150} height={h} rx={12} fill={i === 3 ? '#ffffff' : '#f4c9b8'} stroke={KC.ink} strokeWidth={6} />
-      <text x={bx + 75} y={base - h - 18} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink}>{v} %</text>
-      <text x={bx + 75} y={base + 44} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{a}</text>
+      <rect x={bx} y={base - h} width={170} height={h} rx={12} fill={i === 3 ? '#ffffff' : '#f4c9b8'} stroke={KC.ink} strokeWidth={6} />
+      <text x={bx + 85} y={base - h - 18} textAnchor="middle" style={{ font:`400 56px ${KF.titulo}` }} fill={KC.ink}>{v} %</text>
+      <text x={bx + 85} y={base + 44} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{a}</text>
     </g>; })}</g>;
 }
 // Franja del Arrecife Mesoamericano (Quintana Roo → Belice → Islas de la Bahía, Honduras). esquemático.
@@ -198,60 +200,61 @@ function CoralesShot() {
       {/* 2 · pólipos vistos desde arriba, abriendo sus 12 tentáculos */}
       <Escena T={T} a={K.Po} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.mint} />
-        {svg(<><rect x={60} y={450} width={960} height={650} rx={60} fill="#d9b27a" stroke={KC.ink} strokeWidth={8} />
+        {svg(<g transform="translate(0 170)"><rect x={60} y={450} width={960} height={650} rx={60} fill="#4d3b25" stroke={KC.ink} strokeWidth={8} />
           {[0, 1, 2].map((fi) => [0, 1, 2, 3].map((ci) => { const i = fi * 4 + ci, x = 180 + ci * 240 + (fi % 2) * 50, y = 565 + fi * 210;
-            return <PolipoArriba key={i} x={x} y={y} r={78} T={T} seed={i} abre={kprog(T, K.Po + 0.2 + i * 0.12, K.Po + 0.8 + i * 0.12, kEase.rebote)} />; }))}</>)}
+            return <PolipoArriba key={i} x={x} y={y} r={78} T={T} seed={i} abre={kprog(T, K.Po + 0.2 + i * 0.12, K.Po + 0.8 + i * 0.12, kEase.rebote)} />; }))}</g>)}
         <EscalaFija texto="esquema" largo={0} y={1440} color={KC.ink} />
       </Escena>
       {/* 3 · un pólipo de lado sobre su esqueleto de caliza */}
       <Escena T={T} a={K.E} b={K.A}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><rect x={0} y={1060} width={KW} height={860} fill="#6c6c6a" /><line x1={0} y1={1060} x2={KW} y2={1060} stroke={KC.ink} strokeWidth={8} />
-          <PolipoLado x={360} y={1080} s={1.05} T={T} piel={1 - 0.55 * kprog(T, K.E + 1.2, K.E + 2.0)} /></>)}
+        {svg(<><rect x={0} y={1240} width={KW} height={680} fill="#2c2e33" /><line x1={0} y1={1240} x2={KW} y2={1240} stroke={KC.ink} strokeWidth={8} />
+          <PolipoLado x={360} y={1255} s={1.3} T={T} piel={1 - 0.55 * kprog(T, K.E + 1.2, K.E + 2.0)} /></>)}
       </Escena>
-      <Lupa T={T} at={K.E + 1.4} until={K.A - 0.2} x={790} y={930} r={160} fx={360} fy={960} tinte={KC.cyan} etiqueta="CALIZA" interior={(t, r) => <CopaArriba r={r} />} />
+      <Lupa T={T} at={K.E + 1.4} until={K.A - 0.2} x={810} y={900} r={175} fx={360} fy={1130} tinte={KC.cyan} etiqueta="CALIZA" interior={(t, r) => <CopaArriba r={r} />} />
       {/* 4–5 · adentro: una célula con zooxantelas; le pasan azúcar */}
       <Escena T={T} a={K.A} b={K.P}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 45%, #13303a 0%, #0E0F12 75%)' }}></div>
         {svg(<>{Array.from({ length: 5 }, (_, i) => <polygon key={i} points={`${620 + i * 90},0 ${660 + i * 90},0 ${420 + i * 110},1200 ${360 + i * 110},1200`} fill="#ffe9a0" opacity={0.07 + 0.04 * Math.sin(T * 1.5 + i)} />)}
-          <Celula T={T} x={540} y={800} h={580} palidez={0} entra={kprog(T, K.A + 0.2, K.A + 1.6)} azucar={kprog(T, K.Co + 0.2, K.Co + 0.8)} /></>)}
-        <EscalaFija texto="10 µm (esquema)" largo={104} y={1440} />
+          <g transform="translate(540 940) scale(1.1) translate(-540 -800)"><Celula T={T} x={540} y={800} h={580} palidez={0} entra={kprog(T, K.A + 0.2, K.A + 1.6)} azucar={kprog(T, K.Co + 0.2, K.Co + 0.8)} /></g></>)}
+        <EscalaFija texto="10 µm (esquema)" largo={114} y={1440} />
       </Escena>
       {/* 6 · pregunta: ¿por qué hay corales blancos? */}
       <Escena T={T} a={K.P} b={K.Ca} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<><CoralCerebro x={270} y={820} r={190} blanco={0} /><CoralCerebro x={270} y={1180} r={190} blanco={1} />
-          <text x={560} y={520} textAnchor="middle" style={{ font:`400 300px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 560 420)`}>?</text></>)}
+        {svg(<><CoralCerebro x={295} y={1200} r={235} blanco={0} /><CoralCerebro x={785} y={1200} r={235} blanco={1} />
+          <text x={540} y={900} textAnchor="middle" style={{ font:`400 340px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={12} transform={`rotate(${Math.sin(T * 3) * 6} 540 780)`}>?</text></>)}
       </Escena>
       {/* 7 · calor: el coral expulsa a sus algas */}
       <Escena T={T} a={K.Ca} b={K.H}>
         <div style={{ position:'absolute', inset:0, background:`radial-gradient(circle at 50% 45%, ${mixHex('#13303a', '#3a1414', kprog(T, K.Ca, K.Ca + 2))} 0%, #0E0F12 75%)` }}></div>
-        {svg(<><Celula T={T} x={600} y={800} w={720} h={540} palidez={kprog(T, K.Ca + 1.2, K.Ca + 3.4)} expulsa={kprog(T, K.Ca + 1.0, K.Ca + 3.6, kEase.suave)} />
-          <Termometro x={120} y={1040} valor={klerp(0.35, 0.92, kprog(T, K.Ca + 0.2, K.Ca + 1.4, kEase.sale))} /></>)}
+        {svg(<><Celula T={T} x={600} y={940} w={790} h={600} palidez={kprog(T, K.Ca + 1.2, K.Ca + 3.4)} expulsa={kprog(T, K.Ca + 1.0, K.Ca + 3.6, kEase.suave)} />
+          <Termometro x={120} y={1210} alto={600} valor={klerp(0.35, 0.92, kprog(T, K.Ca + 0.2, K.Ca + 1.4, kEase.sale))} /></>)}
       </Escena>
       {/* 8 · blanqueado no es muerto (pero sin comida) */}
       <Escena T={T} a={K.H} b={K.M}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><path d="M 0 1050 Q 270 1000 540 1040 T 1080 1030 L 1080 1920 L 0 1920 Z" fill="#e6dcc4" stroke={KC.ink} strokeWidth={8} />
+        {svg(<><path d="M 0 1230 Q 270 1180 540 1220 T 1080 1210 L 1080 1920 L 0 1920 Z" fill="#5e5848" stroke={KC.ink} strokeWidth={8} />
+          <g transform="translate(540 1260) scale(1.3) translate(-450 -1080)">
           <CoralCerebro x={400} y={1080} r={300} blanco={1} muerto={kprog(T, K.H + 3.4, K.H + 5.0)} />
-          {[[300, 890], [420, 860], [540, 920], [360, 990], [480, 1000], [230, 990]].map(([px, py], i) => <PolipoArriba key={i} x={px} y={py} r={34} T={T} seed={i} blanco={1} abre={1 - kprog(T, K.H + 3.4, K.H + 5.0)} />)}</>)}
+          {[[300, 890], [420, 860], [540, 920], [360, 990], [480, 1000], [230, 990]].map(([px, py], i) => <PolipoArriba key={i} x={px} y={py} r={34} T={T} seed={i} blanco={1} abre={1 - kprog(T, K.H + 3.4, K.H + 5.0)} />)}</g></>)}
       </Escena>
       <Medidor T={T} at={K.H + 1.6} until={K.M - 0.3} valor={(t) => klerp(0.9, 0.12, kprog(t, K.H + 1.8, K.H + 4.4, kEase.suave))} etiqueta="comida del coral" texto={() => ''} x={90} y={1410} color={KC.yellow} />
       {/* 9 · el mundo: 84 % (2023 – mediados de 2025) y los eventos anteriores */}
       <Escena T={T} a={K.M} b={K.Mx}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<><g opacity={1 - kprog(T, K.M + 5.0, K.M + 5.5)}><Globo T={T} x={470} y={900} r={270} blancos={0.84 * kprog(T, K.M + 0.8, K.M + 3.6)} /></g>
-          <Barras T={T} at={K.M + 5.4} /></>)}
+        {svg(<><g opacity={1 - kprog(T, K.M + 5.0, K.M + 5.5)}><Globo T={T} x={540} y={980} r={340} blancos={0.84 * kprog(T, K.M + 0.8, K.M + 3.6)} /></g>
+          <Barras T={T} at={K.M + 5.4} x={117} base={1230} alto={560} /></>)}
       </Escena>
       {/* 10 · Arrecife Mesoamericano */}
       <Escena T={T} a={K.Mx} b={K.C}>
-        <div style={{ position:'absolute', inset:0, background:'#7fd6f5' }}></div>
-        {svg(<><MapaMexico x={MX0} y={MY0} ancho={1000 * MS} />
+        <div style={{ position:'absolute', inset:0, background:'#0f3a55' }}></div>
+        {svg(<><MapaMexico x={MX0} y={MY0} ancho={1000 * MS} color="#6d6040" centro="#3f5c40" />
           <path d={marD} stroke={KC.ink} strokeWidth={30} fill="none" strokeLinecap="round" strokeLinejoin="round" />
           <path d={marD} stroke={mixHex(KC.coral, '#ffffff', marBl)} strokeWidth={18} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="2400" strokeDashoffset={2400 * (1 - kprog(T, K.Mx + 0.3, K.Mx + 1.6, kEase.suave))} />
           {[['MÉXICO', -89.6, 19.6], ['BELICE', -89.3, 17.2], ['GUATEMALA', -90.4, 15.6], ['HONDURAS', -87.2, 14.9]].map(([n, a, b]) => { const [px, py] = mp(a, b);
             return <text key={n} x={px} y={py} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink} opacity={kprog(T, K.Mx + 0.8, K.Mx + 1.3)}>{n}</text>; })}
-          <text x={mp(-84.6, 19.2)[0]} y={mp(-84.6, 19.2)[1]} textAnchor="middle" style={{ font:`700 italic 34px ${KF.mono}` }} fill="#0b4f7a">Mar Caribe</text></>)}
+          <text x={mp(-84.6, 19.2)[0]} y={mp(-84.6, 19.2)[1]} textAnchor="middle" style={{ font:`700 italic 34px ${KF.mono}` }} fill="#8fdcf7">Mar Caribe</text></>)}
         <EscalaFija texto="esquema" largo={0} y={1440} color={KC.ink} />
       </Escena>
       {/* 11 · cierre: el mismo arrecife del inicio, ahora blanco */}
@@ -263,18 +266,18 @@ function CoralesShot() {
       <MitoTachado T={T} at={K.G + 0.15} tacharEn={K.G + 1.1} until={K.Po - 0.2} texto="¿una roca?" x={300} y={470} />
       <MitoTachado T={T} at={K.G + 0.9} tacharEn={K.G + 1.8} until={K.Po - 0.2} texto="¿una planta?" x={300} y={580} />
       <Chip T={T} at={K.G + 2.2} until={K.Po - 0.2} texto="ES UN ANIMAL" x={300} y={700} tam={56} borde={KC.yellow} />
-      <Chip T={T} at={K.Po + 0.3} until={K.E - 0.2} texto="pólipos: cientos a miles por coral" y={335} x={540} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Po + 1.6} until={K.E - 0.2} x={1050} y={410} texto="12 tentáculos" lado="izq" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.E + 0.6} until={K.A - 0.2} x={30} y={470} texto="pólipo (blando)" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.Po + 0.3} until={K.E - 0.2} texto="pólipos: cientos a miles por coral" y={480} x={540} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.Po + 1.6} until={K.E - 0.2} x={1050} y={565} texto="12 tentáculos" lado="izq" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.E + 0.6} until={K.A - 0.2} x={30} y={530} texto="pólipo (blando)" tam={30} color={KC.ink} />
       <Chip T={T} at={K.E + 2.2} until={K.A - 0.2} texto="esqueleto de carbonato de calcio" y={1440} x={540} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.A + 1.0} until={K.Co - 0.2} x={60} y={440} texto="célula del coral" tam={30} />
-      <Etq T={T} at={K.A + 1.8} until={K.Co + 1.3} x={1040} y={440} texto="zooxantela (alga)" lado="izq" tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.A + 2.6} until={K.Co - 0.2} x={1040} y={488} texto="Symbiodiniaceae" it lado="izq" tam={26} color={KC.gold2} />
+      <Etq T={T} at={K.A + 1.0} until={K.Co - 0.2} x={60} y={540} texto="célula del coral" tam={30} />
+      <Etq T={T} at={K.A + 1.8} until={K.Co + 1.3} x={1040} y={540} texto="zooxantela (alga)" lado="izq" tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.A + 2.6} until={K.Co - 0.2} x={1040} y={588} texto="Symbiodiniaceae" it lado="izq" tam={26} color={KC.gold2} />
       <NumeroGigante T={T} at={K.Co + 0.3} until={K.P - 0.2} valor={90} dur={1.0} prefijo="hasta " sufijo=" %" etiqueta="de lo que fabrican, al coral" x={330} y={400} tam={125} color={KC.yellow} />
       <Chip T={T} at={K.Co + 2.8} until={K.P - 0.2} texto="su color = sus algas" y={1440} x={540} tam={34} borde={KC.gold} />
-      <Chip T={T} at={K.Ca + 0.5} until={K.H - 0.2} texto="agua demasiado caliente" y={430} x={560} tam={36} borde={KC.red} />
-      <Chip T={T} at={K.H + 0.3} until={K.M - 0.2} texto="blanqueado ≠ muerto" y={470} x={360} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.H + 3.4} until={K.M - 0.2} texto="si el calor sigue: se muere" y={590} x={360} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.Ca + 0.5} until={K.H - 0.2} texto="agua demasiado caliente" y={520} x={600} tam={36} borde={KC.red} />
+      <Chip T={T} at={K.H + 0.3} until={K.M - 0.2} texto="blanqueado ≠ muerto" y={520} x={540} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.H + 3.4} until={K.M - 0.2} texto="si el calor sigue: se muere" y={630} x={540} tam={32} borde={KC.red} />
       <NumeroGigante T={T} at={K.M + 0.8} until={K.Mx - 0.2} valor={84} dur={1.4} sufijo=" %" etiqueta="de los arrecifes del mundo" x={340} y={420} tam={150} color={KC.coral} />
       <Chip T={T} at={K.M + 2.0} until={K.Mx - 0.2} texto="NOAA · calor de blanqueamiento · 2023 – mediados de 2025" y={1440} x={540} tam={24} borde={KC.coral} />
       <Chip T={T} at={K.Mx + 0.3} until={K.C - 0.2} texto="Arrecife Mesoamericano" y={430} x={660} tam={36} borde={KC.coral} />
