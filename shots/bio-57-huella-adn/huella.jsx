@@ -1,8 +1,12 @@
 // cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #57 · La huella de ADN: tú contra el de al lado — NARRADO (N2 el número + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático (bandas, bloques y letras no son la secuencia real).
-const PIEL = '#f1b48f', BANDA = '#16233a', PELICULA = '#bcd3e6', ORO = KC.gold2;
+const PIEL = '#f1b48f', BANDA = '#16233a', PELICULA = '#7d93a8', ORO = KC.gold2, BANDA_CLARA = '#cfe0ff';
 
+// Acerca y recoloca un grupo: el punto c (coordenadas originales) queda en a, agrandado k veces.
+function Zm({ c, a, k = 1, children }) {
+  return <g transform={`translate(${a[0]} ${a[1]}) scale(${k}) translate(${-c[0]} ${-c[1]})`}>{children}</g>;
+}
 function SvgH({ children, z }) {
   return <svg width={KW} height={KH} style={{ position:'absolute', left:0, top:0, zIndex:z }}>{children}</svg>;
 }
@@ -42,7 +46,7 @@ function Carril({ x, y, w = 96, h = 560, bandas, p = 1, fondo = 'rgba(255,255,25
   </g>;
 }
 // Código de barras horizontal (bandas como barras verticales) — tu huella.
-function Barras({ x, y, w = 360, h = 110, bandas, p = 1, color = KC.ink, fondo = '#fff' }) {
+function Barras({ x, y, w = 360, h = 110, bandas, p = 1, color = KC.ink, fondo = '#142036' }) {
   return <g>
     <rect x={x - w / 2} y={y} width={w} height={h} rx={12} fill={fondo} stroke={KC.ink} strokeWidth={6} />
     {bandas.map((b, i) => <rect key={i} x={x - w / 2 + 14 + b * (w - 40)} y={y + 14} width={12} height={h - 28} fill={color} opacity={kclamp(p * bandas.length - i, 0, 1)} />)}
@@ -83,7 +87,7 @@ function Tijeras({ x, y, s = 1, abre = 0, rot = 0 }) {
 function Tubo({ x, y, s = 1, sangre = 1, etq, tapa = KC.violet, glow = 0 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
     {glow > 0 && <rect x={-46} y={-190} width={92} height={260} rx={40} fill={KC.white} opacity={0.5 * glow} />}
-    <rect x={-26} y={-150} width={52} height={200} rx={24} fill="rgba(255,255,255,.7)" stroke={KC.ink} strokeWidth={6} />
+    <rect x={-26} y={-150} width={52} height={200} rx={24} fill="rgba(200,220,255,.28)" stroke={KC.ink} strokeWidth={6} />
     <rect x={-20} y={50 - 150 * sangre} width={40} height={150 * sangre - 6} rx={18} fill="#c81d3a" />
     <rect x={-32} y={-178} width={64} height={36} rx={8} fill={tapa} stroke={KC.ink} strokeWidth={6} />
     {etq && <g><rect x={-30} y={-110} width={60} height={60} rx={6} fill={KC.paper} stroke={KC.ink} strokeWidth={4} />{etq}</g>}
@@ -109,7 +113,7 @@ function Picos({ x, y, w = 820, h = 300, p = 1 }) {
   const R = krng(8), cols = [KC.blue, KC.mint, KC.yellow, KC.red];
   const picos = Array.from({ length: 16 }, (_, i) => ({ u: 0.04 + (i / 16) * 0.92 + R() * 0.03, a: 0.45 + R() * 0.55, c: cols[i % 4] }));
   return <g>
-    <rect x={x} y={y} width={w} height={h} rx={14} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+    <rect x={x} y={y} width={w} height={h} rx={14} fill="#121b2e" stroke={KC.ink} strokeWidth={6} />
     <line x1={x + 20} x2={x + w - 20} y1={y + h - 30} y2={y + h - 30} stroke={KC.ink} strokeWidth={3} opacity=".4" />
     {picos.map((k, i) => { const g = kclamp(p * 16 - i, 0, 1), ph = (h - 60) * k.a * kEase.sale(g), px = x + 20 + k.u * (w - 40);
       return <path key={i} d={`M ${px - 22} ${y + h - 30} Q ${px - 6} ${y + h - 30} ${px} ${y + h - 30 - ph} Q ${px + 6} ${y + h - 30} ${px + 22} ${y + h - 30}`} fill={k.c} fillOpacity=".55" stroke={k.c} strokeWidth={5} />; })}
@@ -134,7 +138,7 @@ function MilCuadros({ T, x, y, w = 900, at = 0, vuela = 0, destino = [540, 900] 
       const late = 0.5 + 0.5 * Math.sin(T * 9 + i);
       const px = klerp(cx, destino[0] + (DISTINTOS.indexOf(i) - 1.5) * 40, vuela), py = klerp(cy, destino[1], vuela);
       out.push(<rect key={i} x={px - 2} y={py - 2} width={cw + 4} height={cw + 4} rx={4} fill={KC.pink} stroke={KC.ink} strokeWidth={3} opacity={0.7 + 0.3 * late} />);
-    } else out.push(<rect key={i} x={cx + 2} y={cy + 2} width={cw - 4} height={cw - 4} rx={3} fill="rgba(22,18,15,.28)" opacity={1 - vuela * 0.7} />);
+    } else out.push(<rect key={i} x={cx + 2} y={cy + 2} width={cw - 4} height={cw - 4} rx={3} fill="rgba(170,192,236,.42)" opacity={1 - vuela * 0.7} />);
   }
   return <g>{out}</g>;
 }
@@ -142,7 +146,7 @@ function MilCuadros({ T, x, y, w = 900, at = 0, vuela = 0, destino = [540, 900] 
 function CajaLuz({ x, y, w, h, luz = 1, children }) {
   return <g>
     <rect x={x - 26} y={y - 26} width={w + 52} height={h + 52} rx={20} fill="#6b7280" stroke={KC.ink} strokeWidth={10} />
-    <rect x={x} y={y} width={w} height={h} fill={mixHex('#3a4150', '#fffbe8', luz)} />
+    <rect x={x} y={y} width={w} height={h} fill={mixHex('#3a4150', '#c8cdb8', luz)} />
     {children}
     <rect x={x - 26} y={y + h + 26} width={w + 52} height={40} rx={10} fill="#4b5563" stroke={KC.ink} strokeWidth={8} />
   </g>;
@@ -169,31 +173,32 @@ function Huella() {
       {/* 0 · gancho: tú y el de al lado */}
       <Escena T={T} a={K.G} b={K.Cl} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgH>
-          <Persona x={300} y={1180} s={0.78} ropa={KC.pink} mece={respira(0)} />
-          <Persona x={790} y={1180} s={0.78} ropa={KC.blue} pelo="#7a4a22" mece={respira(2)} />
-          {(() => { const p = kprog(T, K.G + 1.2, K.G + 3.0, kEase.suave), lx = klerp(860, 300, p), ly = 820 + Math.sin(p * Math.PI) * -60;
+        <SvgH><Zm c={[545, 1180]} a={[545, 1475]} k={1.32}>
+          <Persona x={330} y={1180} s={0.78} ropa={KC.pink} mece={respira(0)} />
+          <Persona x={760} y={1180} s={0.78} ropa={KC.blue} pelo="#7a4a22" mece={respira(2)} />
+          {(() => { const p = kprog(T, K.G + 1.2, K.G + 3.0, kEase.suave), lx = klerp(760, 330, p), ly = 820 + Math.sin(p * Math.PI) * -60;
             return <g opacity={kprog(T, K.G + 1.0, K.G + 1.3)}><circle cx={lx} cy={ly} r={90} fill="rgba(255,255,255,.35)" stroke={KC.ink} strokeWidth={14} />
               <line x1={lx + 64} y1={ly + 64} x2={lx + 140} y2={ly + 140} stroke={KC.ink} strokeWidth={26} strokeLinecap="round" /></g>; })()}
-          {T > K.G + 3.0 && <circle cx={300} cy={840} r={150 + 20 * Math.sin(T * 14)} fill="none" stroke={KC.red} strokeWidth={12} opacity={0.5 + 0.5 * Math.sin(T * 14)} />}
-          <text x={300} y={1080} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={3}>TÚ</text>
-          <text x={790} y={1070} textAnchor="middle" style={{ font:`400 34px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={2}>EL DE AL LADO</text>
-        </SvgH>
+          {T > K.G + 3.0 && <circle cx={330} cy={840} r={150 + 20 * Math.sin(T * 14)} fill="none" stroke={KC.red} strokeWidth={12} opacity={0.5 + 0.5 * Math.sin(T * 14)} />}
+          <text x={330} y={1080} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={3}>TÚ</text>
+          <text x={760} y={1040} textAnchor="middle" style={{ font:`400 36px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={2}>EL DE</text>
+          <text x={760} y={1082} textAnchor="middle" style={{ font:`400 36px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={2}>AL LADO</text>
+        </Zm></SvgH>
       </Escena>
       {/* 1 · la clave: 4 de cada 1000 */}
       <Escena T={T} a={K.Cl} b={K.Pl} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        <SvgH><MilCuadros T={T} x={90} y={420} at={K.Cl} /></SvgH>
+        <SvgH><MilCuadros T={T} x={90} y={650} at={K.Cl} /></SvgH>
       </Escena>
       {/* 2–3 · 1984: la película en la caja de luz y las bandas de una familia */}
       <Escena T={T} a={K.Pl} b={K.Mi} zoom={0.04} origen="40% 50%">
         <FondoLunares color={KC.yellow} />
-        <SvgH>
+        <SvgH><Zm c={[420, 860]} a={[440, 970]} k={1.2}>
           <CajaLuz x={film.x} y={film.y} w={film.w} h={film.h} luz={kprog(T, K.Pl + 1.4, K.Pl + 1.8)}>
             <g transform={`translate(0 ${(1 - pelBaja) * -900})`}>
               <rect x={film.x + 20} y={film.y + 20} width={film.w - 40} height={film.h - 40} rx={8} fill={PELICULA} opacity={0.92} />
               {lanes.map(([n, b, lx], i) => <Carril key={i} x={lx} y={film.y + 60} w={110} h={film.h - 150} bandas={b} p={revela} fondo="rgba(255,255,255,.18)"
-                resalta={T > K.Ba + 0.8 ? (k, bb) => (n === 'hija' ? true : B_HIJA.includes(bb)) : null} etq={T > K.Ba ? n : null} />)}
+                resalta={T > K.Ba + 0.8 ? (k, bb) => (n === 'hija' ? true : B_HIJA.includes(bb)) : null} etq={T > K.Ba ? n : null} etqColor="#0b1020" />)}
               {T > K.Ba + 1.2 && B_HIJA.map((bb, i) => { const deMama = B_MAMA.includes(bb), lx0 = film.x + 280, lx1 = deMama ? film.x + 120 : film.x + 440, yy = film.y + 60 + bb * (film.h - 150);
                 const p = kprog(T, K.Ba + 1.2 + i * 0.18, K.Ba + 1.6 + i * 0.18);
                 return <line key={i} x1={lx0} y1={yy} x2={klerp(lx0, lx1, p)} y2={yy} stroke={deMama ? KC.pink : KC.blue} strokeWidth={6} strokeDasharray="10 8" />; })}
@@ -201,20 +206,20 @@ function Huella() {
           </CajaLuz>
           {/* gotas del revelador */}
           {T < K.Pl + 1.8 && [0, 1, 2].map((i) => { const ph = ((T - K.Pl) * 1.4 + i / 3) % 1; return <circle key={i} cx={film.x + 120 + i * 160} cy={film.y + 40 + ph * 300} r={10} fill="#7fc8ff" opacity={(1 - ph) * pelBaja} />; })}
-        </SvgH>
+        </Zm></SvgH>
       </Escena>
       {/* 4 · la gota de sangre y, por dentro, los minisatélites */}
       <Escena T={T} a={K.Mi} b={K.Re} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        <SvgH>
+        <SvgH><Zm c={[225, 970]} a={[230, 1170]} k={1.5}>
           <g transform={`translate(230 1040) rotate(-20)`}>
             <rect x={-70} y={-40} width={140} height={230} rx={70} fill={PIEL} stroke={KC.ink} strokeWidth={10} />
             <path d="M -40 -10 Q 0 -30 40 -10" stroke="#d98f6b" strokeWidth={6} fill="none" />
           </g>
           <path d="M 225 920 Q 180 980 225 1010 Q 270 980 225 920 Z" fill="#c81d3a" stroke={KC.ink} strokeWidth={6} />
-        </SvgH>
+        </Zm></SvgH>
       </Escena>
-      <Lupa T={T} at={K.Mi + 0.4} until={K.Re - 0.2} x={560} y={690} r={300} fx={225} fy={970} tinte={KC.gold2} etiqueta="AL MICROSCOPIO · ADN"
+      <Lupa T={T} at={K.Mi + 0.4} until={K.Re - 0.2} x={600} y={740} r={340} fx={230} fy={1170} tinte={KC.gold2} etiqueta="AL MICROSCOPIO · ADN"
         interior={(t, r) => {
           const zoomIn = kprog(t, K.Mi + 1.6, K.Mi + 2.6, kEase.suave);
           return <svg width={r * 2} height={r * 2}>
@@ -251,7 +256,7 @@ function Huella() {
       {/* 6 · el patrón: pedazos de distinto largo corren por el gel */}
       <Escena T={T} a={K.Pa + 0.9} b={K.Pr} zoom={0.02}>
         <FondoMarca patron="oscuro" />
-        <SvgH>
+        <SvgH><Zm c={[540, 900]} a={[540, 930]} k={1.35}>
           <rect x={250} y={600} width={580} height={600} rx={20} fill="rgba(180,220,255,.16)" stroke="#9ec9ff" strokeWidth={6} />
           <text x={540} y={1240} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#9ec9ff">GEL</text>
           <text x={270} y={1185} style={{ font:`700 28px ${KF.mono}` }} fill="#9ec9ff">+</text>
@@ -265,7 +270,7 @@ function Huella() {
               </g>
               <text x={gx} y={570} textAnchor="middle" style={{ font:`400 40px ${KF.titulo}` }} fill={c}>{n}</text>
             </g>; })}
-        </SvgH>
+        </Zm></SvgH>
       </Escena>
       {/* 7 · re-gancho: ¿sirve para atrapar a alguien? */}
       <Escena T={T} a={K.Pr} b={K.In} zoom={0.08}>
@@ -278,49 +283,49 @@ function Huella() {
       {/* 8 · 1985: el niño que iba a ser deportado */}
       <Escena T={T} a={K.In} b={K.Io} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
-        <SvgH>
+        <SvgH><Zm c={[540, 800]} a={[560, 930]} k={1.18}>
           <Persona x={800} y={1180} s={0.72} ropa={KC.violet} pelo={KC.ink} mece={respira(1)} />
           <Persona x={330} y={1180} s={0.5} ropa={KC.yellow} pelo={KC.ink} mece={respira(3)} />
           <Maleta x={190} y={1180} s={0.8} />
-          <text x={330} y={1110} textAnchor="middle" style={{ font:`400 36px ${KF.titulo}` }} fill={KC.ink}>NIÑO</text>
+          <text x={330} y={1110} textAnchor="middle" style={{ font:`400 36px ${KF.titulo}` }} fill="#0b1020">NIÑO</text>
           <text x={800} y={1090} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.white} stroke={KC.ink} strokeWidth={2}>MAMÁ</text>
           {T > K.In + 1.6 && <g>
-            <Carril x={470} y={560} w={90} h={300} bandas={B_HIJA} p={kprog(T, K.In + 1.6, K.In + 2.6)} fondo="rgba(255,255,255,.7)" resalta={T > K.In + 2.8 ? (k, b) => B_MAMA.includes(b) : null} />
-            <Carril x={630} y={560} w={90} h={300} bandas={B_MAMA} p={kprog(T, K.In + 1.8, K.In + 2.8)} fondo="rgba(255,255,255,.7)" resalta={T > K.In + 2.8 ? (k, b) => B_HIJA.includes(b) : null} />
+            <Carril x={470} y={560} w={90} h={300} bandas={B_HIJA} p={kprog(T, K.In + 1.6, K.In + 2.6)} fondo="rgba(190,210,240,.16)" color={BANDA_CLARA} resalta={T > K.In + 2.8 ? (k, b) => B_MAMA.includes(b) : null} />
+            <Carril x={630} y={560} w={90} h={300} bandas={B_MAMA} p={kprog(T, K.In + 1.8, K.In + 2.8)} fondo="rgba(190,210,240,.16)" color={BANDA_CLARA} resalta={T > K.In + 2.8 ? (k, b) => B_HIJA.includes(b) : null} />
           </g>}
           <Sello x={540} y={460} texto="DEPORTACIÓN" p={kprog(T, K.In + 0.3, K.In + 0.7)} rot={-10} tam={60} />
           {T > K.In + 3.0 && <line x1={280} y1={520} x2={800} y2={400} stroke={KC.red} strokeWidth={16 * kprog(T, K.In + 3.0, K.In + 3.3)} strokeLinecap="round" />}
-        </SvgH>
+        </Zm></SvgH>
       </Escena>
       {/* 9 · el sospechoso que confesó era inocente */}
       <Escena T={T} a={K.Io} b={K.Pi} zoom={0.03}>
         <FondoLunares color={KC.lilac} />
-        <SvgH>
-          <Carril x={380} y={620} w={130} h={500} bandas={B_CRIMEN} p={kprog(T, K.Io + 1.2, K.Io + 2.2)} fondo="rgba(255,255,255,.75)" etq="muestra del crimen" />
-          <Carril x={700} y={620} w={130} h={500} bandas={B_SOSP} p={kprog(T, K.Io + 1.6, K.Io + 2.6)} fondo="rgba(255,255,255,.75)" etq="sospechoso" />
+        <SvgH><Zm c={[540, 870]} a={[540, 950]} k={1.2}>
+          <Carril x={380} y={620} w={130} h={500} bandas={B_CRIMEN} p={kprog(T, K.Io + 1.2, K.Io + 2.2)} fondo="rgba(190,210,240,.16)" color={BANDA_CLARA} etq="muestra del crimen" />
+          <Carril x={700} y={620} w={130} h={500} bandas={B_SOSP} p={kprog(T, K.Io + 1.6, K.Io + 2.6)} fondo="rgba(190,210,240,.16)" color={BANDA_CLARA} etq="sospechoso" />
           {T > K.Io + 2.8 && <text x={540} y={920} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill={KC.red} stroke={KC.ink} strokeWidth={6}>≠</text>}
-          <Sello x={560} y={500} texto="INOCENTE" color="#0a7d4a" p={kprog(T, K.Io + 3.3, K.Io + 3.7)} rot={-8} tam={70} />
-        </SvgH>
+          <Sello x={560} y={500} texto="INOCENTE" color="#2fd08a" p={kprog(T, K.Io + 3.3, K.Io + 3.7)} rot={-8} tam={70} />
+        </Zm></SvgH>
       </Escena>
       {/* 10 · 1988: Pitchfork y el amigo que dio sangre por él */}
       <Escena T={T} a={K.Pi} b={K.St} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
-        <SvgH>
+        <SvgH><Zm c={[540, 880]} a={[540, 960]} k={1.12}>
           {T < K.Pi + 3.9 && Array.from({ length: 10 }, (_, i) => { const t0 = K.Pi + 0.2 + i * 0.12, o = kprog(T, t0, t0 + 0.25, kEase.sale), esp = i === 6;
             return <g key={i} opacity={o * (1 - kprog(T, K.Pi + 3.5, K.Pi + 3.9))}><Tubo x={130 + i * 92} y={940 + (1 - o) * 60} s={0.8} glow={esp ? kprog(T, K.Pi + 1.6, K.Pi + 2.0) : 0}
               etq={esp && T > K.Pi + 1.6 ? <g><circle cx={0} cy={-80} r={20} fill="#c98b5e" stroke={KC.ink} strokeWidth={4} /><path d="M -14 -84 l 28 0" stroke={KC.ink} strokeWidth={4} /></g> : null} /></g>; })}
           {T > K.Pi + 1.6 && T < K.Pi + 3.9 && <g opacity={1 - kprog(T, K.Pi + 3.5, K.Pi + 3.9)}>
-            <rect x={590} y={580} width={340} height={70} rx={14} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
+            <rect x={590} y={580} width={340} height={70} rx={14} fill="#142036" stroke={KC.ink} strokeWidth={5} />
             <text x={760} y={628} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink}>«C. Pitchfork»</text>
             <line x1={600} y1={615} x2={920} y2={612} stroke={KC.red} strokeWidth={8 * kprog(T, K.Pi + 2.4, K.Pi + 2.7)} />
             <line x1={720} y1={650} x2={682} y2={760} stroke={KC.ink} strokeWidth={5} strokeDasharray="10 8" />
           </g>}
           {T > K.Pi + 3.7 && <g opacity={kprog(T, K.Pi + 3.7, K.Pi + 4.1)}>
-            <Carril x={380} y={600} w={130} h={520} bandas={B_CRIMEN} p={kprog(T, K.Pi + 3.8, K.Pi + 4.6)} fondo="rgba(255,255,255,.75)" etq="muestra del crimen" resalta={T > K.Pi + 4.9 ? () => true : null} />
-            <Carril x={700} y={600} w={130} h={520} bandas={B_CRIMEN} p={kprog(T, K.Pi + 4.0, K.Pi + 4.8)} fondo="rgba(255,255,255,.75)" etq="Pitchfork" resalta={T > K.Pi + 4.9 ? () => true : null} />
-            {T > K.Pi + 4.9 && <text x={540} y={910} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill="#0a7d4a" stroke={KC.ink} strokeWidth={6}>=</text>}
+            <Carril x={380} y={600} w={130} h={520} bandas={B_CRIMEN} p={kprog(T, K.Pi + 3.8, K.Pi + 4.6)} fondo="rgba(190,210,240,.16)" color={BANDA_CLARA} etq="muestra del crimen" resalta={T > K.Pi + 4.9 ? () => true : null} />
+            <Carril x={700} y={600} w={130} h={520} bandas={B_CRIMEN} p={kprog(T, K.Pi + 4.0, K.Pi + 4.8)} fondo="rgba(190,210,240,.16)" color={BANDA_CLARA} etq="Pitchfork" resalta={T > K.Pi + 4.9 ? () => true : null} />
+            {T > K.Pi + 4.9 && <text x={540} y={910} textAnchor="middle" style={{ font:`400 150px ${KF.titulo}` }} fill="#2fd08a" stroke={KC.ink} strokeWidth={6}>=</text>}
           </g>}
-        </SvgH>
+        </Zm></SvgH>
       </Escena>
       {/* 11 · hoy: STR copiados con PCR, hasta con rastros */}
       <Escena T={T} a={K.St} b={K.Ge} zoom={0.03}>
@@ -337,50 +342,50 @@ function Huella() {
       {/* 12 · tu gemelo idéntico: la misma huella */}
       <Escena T={T} a={K.Ge} b={K.Ci} zoom={0.03}>
         <FondoLunares color={KC.orange} />
-        <SvgH>
+        <SvgH><Zm c={[290, 875]} a={[540, 940]} k={1.45}>
           <Persona x={170} y={1250} s={0.55} ropa={KC.mint} mece={respira(0)} />
           <Persona x={410} y={1250} s={0.55} ropa={KC.mint} mece={respira(0.3)} />
           <Barras x={290} y={500} w={420} h={110} bandas={B_GEMELO} p={kprog(T, K.Ge + 0.4, K.Ge + 1.2)} />
           <Barras x={290} y={680} w={420} h={110} bandas={B_GEMELO} p={kprog(T, K.Ge + 0.8, K.Ge + 1.6)} />
           {T > K.Ge + 1.8 && <text x={290} y={668} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>=</text>}
-        </SvgH>
+        </Zm></SvgH>
       </Escena>
       {/* 13 · cierre: las mismas dos personas, cada una con su huella */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        <SvgH>
-          <Persona x={300} y={1180} s={0.78} ropa={KC.pink} mece={respira(0)} />
-          <Persona x={790} y={1180} s={0.78} ropa={KC.blue} pelo="#7a4a22" mece={respira(2)} />
-          <Barras x={300} y={980} w={250} h={80} bandas={B_TU} p={kprog(T, K.Ci + 0.6, K.Ci + 1.6)} />
-          <Barras x={790} y={980} w={250} h={80} bandas={B_LADO} p={kprog(T, K.Ci + 0.9, K.Ci + 1.9)} />
+        <SvgH><Zm c={[545, 1180]} a={[545, 1475]} k={1.32}>
+          <Persona x={330} y={1180} s={0.78} ropa={KC.pink} mece={respira(0)} />
+          <Persona x={760} y={1180} s={0.78} ropa={KC.blue} pelo="#7a4a22" mece={respira(2)} />
+          <Barras x={330} y={980} w={250} h={80} bandas={B_TU} p={kprog(T, K.Ci + 0.6, K.Ci + 1.6)} />
+          <Barras x={760} y={980} w={250} h={80} bandas={B_LADO} p={kprog(T, K.Ci + 0.9, K.Ci + 1.9)} />
           {DISTINTOS.map((d, i) => { const p = kprog(T, K.Ci + 1.8 + i * 0.12, K.Ci + 2.6 + i * 0.12, kEase.sale);
-            return <rect key={i} x={klerp(120 + i * 230, 250 + i * 28, p)} y={klerp(440, 1080, p)} width={22} height={22} rx={4} fill={KC.pink} stroke={KC.ink} strokeWidth={3} />; })}
-          {T > K.Ci + 2.7 && <g opacity={kprog(T, K.Ci + 2.7, K.Ci + 3.0)}><rect x={230} y={1070} width={140} height={56} rx={14} fill={KC.pink} stroke={KC.ink} strokeWidth={6} />
-            <text x={300} y={1113} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>TÚ</text></g>}
-        </SvgH>
+            return <rect key={i} x={klerp(120 + i * 230, 280 + i * 28, p)} y={klerp(440, 1080, p)} width={22} height={22} rx={4} fill={KC.pink} stroke={KC.ink} strokeWidth={3} />; })}
+          {T > K.Ci + 2.7 && <g opacity={kprog(T, K.Ci + 2.7, K.Ci + 3.0)}><rect x={260} y={1070} width={140} height={56} rx={14} fill={KC.pink} stroke={KC.ink} strokeWidth={6} />
+            <text x={330} y={1113} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill="#0b1020">TÚ</text></g>}
+        </Zm></SvgH>
       </Escena>
 
       {/* textos */}
-      <NumeroGigante T={T} at={K.G} until={K.Cl - 0.3} valor={99.6} desde={90} dur={1.0} dec={1} sufijo=" %" etiqueta="igual al de al lado" x={310} y={520} tam={190} color={KC.yellow} />
-      <Chip T={T} at={K.G + 1.0} until={K.Cl - 0.3} texto="NHGRI · 2023" x={310} y={700} tam={30} mono borde={KC.ink} />
-      <Chip T={T} at={K.Cl + 0.4} until={K.Pl - 0.2} texto="1000 cuadritos · 4 distintos = 0.4 %" y={1050} tam={36} borde={KC.pink} />
-      <Chip T={T} at={K.Pl + 2.2} until={K.Mi - 0.2} texto="autorradiografía" x={420} y={395} tam={28} mono borde={KC.ink} />
-      <Chip T={T} at={K.Pl + 0.6} until={K.Ba - 0.2} texto="1984 · Universidad de Leicester" y={1480} tam={36} borde={KC.ink} />
-      <Etiqueta T={T} at={K.Ba + 1.6} until={K.Mi - 0.2} x={film.x + film.w + 40} y={film.y + 450} texto="de mamá" color={KC.pink} tam={34} />
-      <Etiqueta T={T} at={K.Ba + 1.9} until={K.Mi - 0.2} x={film.x + film.w + 40} y={film.y + 520} texto="de papá" color={KC.blue} tam={34} />
-      <Chip T={T} at={K.Mi + 2.8} until={K.Re - 0.2} texto="minisatélite = una frase repetida" y={1480} tam={36} borde={KC.gold} />
-            <Etiqueta T={T} at={K.Pa + 2.6} until={K.Pr - 0.1} x={470} y={1140} texto="corto: llega lejos" color={KC.pink} tam={30} />
-      <Etiqueta T={T} at={K.Pa + 2.9} until={K.Pr - 0.1} x={760} y={880} texto="largo: se queda" color={KC.cyan} tam={26} />
+      <NumeroGigante T={T} at={K.G} until={K.Cl - 0.3} valor={99.6} desde={90} dur={1.0} dec={1} sufijo=" %" etiqueta="igual al de al lado" x={320} y={620} tam={190} color={KC.yellow} />
+      <Chip T={T} at={K.G + 1.0} until={K.Cl - 0.3} texto="NHGRI · 2023" x={320} y={800} tam={30} mono borde={KC.ink} />
+      <Chip T={T} at={K.Cl + 0.4} until={K.Pl - 0.2} texto="1000 cuadritos · 4 distintos = 0.4 %" y={1290} tam={36} borde={KC.pink} />
+      <Chip T={T} at={K.Pl + 2.2} until={K.Mi - 0.2} texto="autorradiografía" x={440} y={385} tam={28} mono borde={KC.ink} />
+      <Chip T={T} at={K.Pl + 0.6} until={K.Ba - 0.2} texto="1984 · Universidad de Leicester" y={290} tam={36} borde={KC.ink} />
+      <Etiqueta T={T} at={K.Ba + 1.6} until={K.Mi - 0.2} x={860} y={1042} texto="de mamá" color={KC.pink} tam={30} />
+      <Etiqueta T={T} at={K.Ba + 1.9} until={K.Mi - 0.2} x={860} y={1126} texto="de papá" color={KC.blue} tam={30} />
+      <Chip T={T} at={K.Mi + 2.8} until={K.Re - 0.2} texto="minisatélite = una frase repetida" y={300} tam={36} borde={KC.gold} />
+            <Etiqueta T={T} at={K.Pa + 2.6} until={K.Pr - 0.1} x={440} y={1290} texto="corto: llega lejos" color={KC.pink} tam={30} />
+      <Etiqueta T={T} at={K.Pa + 2.9} until={K.Pr - 0.1} x={597} y={943} lado="izq" texto="largo: se queda" color={KC.cyan} tam={28} />
       <Chip T={T} at={K.In + 3.2} until={K.Io - 0.2} texto="1985 · primer caso resuelto con ADN" y={1480} tam={34} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.Io + 0.1} until={K.Io + 1.0} anio="1986" quien="Leicestershire, Inglaterra" revista="primer uso de ADN en un crimen" y={760} />
+      <TarjetaEstudio T={T} at={K.Io + 0.1} until={K.Io + 1.0} anio="1986" quien="Leicestershire, Inglaterra" revista="primer uso de ADN en un crimen" y={330} />
       <Chip T={T} at={K.Io + 1.2} until={K.Pi - 0.2} texto="Leicestershire · 1986" y={1480} tam={34} borde={KC.ink} />
-      <Etiqueta T={T} at={K.Pi + 2.6} until={K.Pi + 3.6} x={560} y={1060} texto="sangre de un amigo" color={KC.ink} tam={30} />
+      <Etiqueta T={T} at={K.Pi + 2.6} until={K.Pi + 3.6} x={562} y={1168} texto="sangre de un amigo" color={KC.ink} tam={30} />
       <Chip T={T} at={K.Pi + 4.9} until={K.St - 0.2} texto="1988 · primera condena por asesinato con ADN" y={1480} tam={30} borde={KC.ink} />
       <Etiqueta T={T} at={K.St + 0.4} until={K.Ge - 0.2} x={260} y={760} texto="un rastro" color={KC.ink} tam={30} />
       <Chip T={T} at={K.St + 1.0} until={K.Ge - 0.2} texto="STR = repeticiones cortas · PCR las copia" y={1480} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Ge + 2.0} until={K.Ci - 0.2} texto="gemelos idénticos = misma huella" x={300} y={420} tam={30} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Ci} until={K.Ou} valor={99.6} desde={99.6} dur={0.1} dec={1} sufijo=" %" etiqueta="igual… pero" x={310} y={520} tam={190} color={KC.yellow} />
-      <Chip T={T} at={K.Ci + 2.9} until={K.Ou} texto="tu 0.4 % = tu huella" y={1480} tam={40} borde={KC.pink} />
+      <Chip T={T} at={K.Ge + 2.0} until={K.Ci - 0.2} texto="gemelos idénticos = misma huella" x={540} y={300} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Ci} until={K.Ou} valor={99.6} desde={99.6} dur={0.1} dec={1} sufijo=" %" etiqueta="igual… pero" x={320} y={620} tam={190} color={KC.yellow} />
+      <Chip T={T} at={K.Ci + 2.9} until={K.Ou} texto="tu 0.4 % = tu huella" x={700} y={800} tam={40} borde={KC.pink} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Cl - 0.1} texto="99.6 % igual… *y te delata.*" />
