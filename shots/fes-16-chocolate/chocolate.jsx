@@ -356,7 +356,8 @@ function Chocolate() {
         <FondoLunares color={KC.orange} />
         {svg((() => {
           const vs = kprog(T, K.Ca + 2.3, K.Ca + 2.9, kEase.suave), muere = kprog(T, K.Ca + 3.6, K.Ca + 4.2);
-          return <>
+          // bajado 110 px para centrar el conjunto en el cuadro (también se ve detrás de la «Pregunta»)
+          return <g transform="translate(0 110)">
             <Termo x={160} y={1060} temp={temp} />
             <g opacity={1 - vs}><Monton T={T} x={640} y={1010} s={0.85} cubre={1} vapor={kprog(T, K.Ca + 0.6, K.Ca + 1.6)} /></g>
             <g opacity={vs}>
@@ -365,15 +366,15 @@ function Chocolate() {
               {Array.from({ length: 10 }, (_, i) => { const a = (i / 10) * Math.PI * 2, u = kprog(T, K.Ca + 2.7 + i * 0.05, K.Ca + 3.7 + i * 0.05);
                 return <GotaQ key={i} x={650 + Math.cos(a) * klerp(470, 195, u)} y={900 + Math.sin(a) * klerp(340, 117, u)} color={KC.yellow} s={1.1} o={(u > 0 ? 1 : 0) * (1 - kprog(T, K.Ca + 3.9, K.Ca + 4.3))} />; })}
             </g>
-          </>;
+          </g>;
         })())}
       </Escena>
       {/* 9 · pregunta */}
       <Escena T={T} a={K.P} b={K.Pi} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {svg(<>
-          <text x={260} y={1080} textAnchor="middle" style={{ font:`400 560px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 260 880)`}>?</text>
-          <Semilla x={270} y={1100} s={0.7} rot={-12} color={MORADO2} germen={1} germenVivo={0} />
+          <text x={300} y={1260} textAnchor="middle" style={{ font:`400 600px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 1050)`}>?</text>
+          <Semilla x={300} y={1300} s={0.8} rot={-12} color={MORADO2} germen={1} germenVivo={0} />
         </>)}
       </Escena>
       {/* 10a · dentro de la semilla: enzimas cortan proteínas y azúcares → piezas del sabor */}
@@ -467,8 +468,8 @@ function Chocolate() {
       <Etq T={T} at={K.Ba + 1.1} until={K.Ca - 0.3} x={380} y={560} texto="ácido láctico" tam={32} color={KC.mint} />
       <Etq T={T} at={K.Ba + 3.6} until={K.Ca - 0.3} x={60} y={1300} texto="alcohol → ácido acético" tam={32} color={KC.yellow} />
       <Chip T={T} at={K.Ba + 4.0} until={K.Ca - 0.3} texto="el del vinagre" x={540} y={1400} tam={40} borde={KC.yellow} />
-      <Chip T={T} at={K.Ca + 1.4} until={K.Ca + 2.4} texto="más de 40 °C" x={640} y={560} tam={52} borde={KC.red} />
-      <Chip T={T} at={K.Ca + 3.9} until={K.P - 0.2} texto="la semilla muere" x={650} y={1310} tam={46} borde={KC.ink} />
+      <Chip T={T} at={K.Ca + 1.4} until={K.Ca + 2.4} texto="más de 40 °C" x={640} y={660} tam={52} borde={KC.red} />
+      <Chip T={T} at={K.Ca + 3.9} until={K.P - 0.2} texto="la semilla muere" x={650} y={1410} tam={46} borde={KC.ink} />
       {T > K.Pi - 0.3 && T < K.Pi + 4.4 && <Escala T={T} z={1} pxPorMm={1.3e8} x={60} y={1440} />}
       <Etq T={T} at={K.Pi + 0.4} until={K.Pi + 4.0} x={60} y={395} texto="proteína" tam={32} />
       <Etq T={T} at={K.Pi + 1.9} until={K.Pi + 4.0} x={60} y={335} texto="enzimas de la semilla" tam={30} color={KC.orange} />

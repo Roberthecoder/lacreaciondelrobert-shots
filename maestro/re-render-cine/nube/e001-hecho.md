@@ -1,3 +1,4 @@
 # e001 · vuelta de encuadre
 - ia-16-programadores-lentos: marcaba Contraste ARRIBA y Giro ARRIBA; Contraste: barras 161/71 min bajadas y alargadas (y 470→640, alto 640→700) con sus chips encima; Giro: calendario 2026 bajado y agrandado (y 760→930, escala 1.7→1.9), flecha bajada, chips de METR arriba del calendario. Ahora: encuadre bien, sin láminas.
 - fun-45-ciclosporina: marcaba Noruega ARRIBA; mapa de Noruega bajado y agrandado 1.2 (pin, «muestra de suelo» y «NORUEGA» acompañan; barra 200 km 107→128 px) y campo del microscopio de Tolypocladium agrandado 1.4 y bajado (etiquetas reacomodadas; barra 10 µm 100→140 px). Ahora: encuadre bien, sin láminas.
+- fes-16-chocolate: marcaba Pregunta ARRIBA; la escena Calor (termómetro y semilla grande, que es la que se ve a media luz detrás de la pregunta) bajó 110 px con sus chips, y el signo y la semilla chica de la Pregunta bajaron y crecieron un poco. Ahora: encuadre bien, sin láminas.
