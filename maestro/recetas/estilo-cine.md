@@ -59,3 +59,20 @@ angostas, pero muchos shots dibujan piezas fuera de la `Escena` y esas no se mue
 la mayoría de las escenas y tarda unos 2 minutos por shot. Queda como herramienta opcional. Lo que sí funciona es el encargo
 del pase a mano: agrandar el sujeto 1.4 a 2.3 veces escena por escena y recalcular las barras de escala (ejemplos: qui-08-cebolla,
 fun-22-arrieras, amb-08-vaquita, cie-07-esponja).
+
+## Segunda revisión de la referencia, segundo a segundo (22 nov 2026, admin maestro)
+Videos (copias internas en el repo PRIVADO `lacreaciondelrobert-archivo`, `referencias/videos/`; no se publican): 1Cell1Life
+«óvulo y chispa de zinc» (4.2 M en YouTube), «la hormona de la barba te deja calvo» (2.7 M), «el piojo» (2.1 M); 1Bit1Pixel
+«tu vida en una pantalla» (2.4 M en TikTok), «ir a 120» (2.2 M), «el granjero» (1.3 M). Lo que se vio:
+- **Segundo 0 ya es acción a mitad de escena** (el espermatozoide entrando, la barba creciendo cuadro a cuadro, la franja que
+  barre la cuadrícula, los coches avanzando). Algo cambia cada segundo en los primeros 10 s; cero texto en ese tramo salvo la barra.
+- **Paleta apagada y corta:** 2–3 colores por video; fondo casi negro o un escenario propio (pelo y piel café oscuro, río verde).
+  Aplicado: `saturate(0.8)` en todo el dibujo (`CINE_REF.saturacion`).
+- **Barra de escala siempre abajo a la izquierda**, chica, con su unidad, y cambia con el zoom. Aplicado (`CINE_REF.escalaX/Y`).
+- **Etiquetas:** palabra corta en mayúsculas o monoespaciada chica con línea fina; chips de 1Bit1Pixel con borde de 2 px y texto
+  monoespaciado, sin píldoras gordas ni sombra. Aplicado: `Chip` y `Etiqueta` se redefinen en `cine.jsx`.
+- **Número grande:** blanco, sans gruesa, sin contorno, con una línea chica monoespaciada abajo («2-3 mm / como una semilla de
+  ajonjolí»). Aplicado: `NumeroGigante` se redefine en `cine.jsx`.
+- Sin subtítulos ni logo durante el video (el logo pequeño sí va por decisión de Robert); cierre con el nombre del canal en chico.
+- Pendiente por shot (no se puede desde la capa general): el «?» gigante amarillo de las escenas «Pregunta» está dibujado dentro
+  de cada `.jsx`; la referencia usa a lo más un «?» chico sobre el personaje. Y la riqueza del dibujo (sombreado, pelo trazo a trazo).
