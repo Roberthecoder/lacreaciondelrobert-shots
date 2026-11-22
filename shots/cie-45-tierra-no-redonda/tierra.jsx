@@ -56,8 +56,8 @@ function MontanaOrilla({ cx, cy, a, b, phi, alto, ancho, color, p = 1 }) {
   return <g transform={`translate(${cx + Math.cos(q) * r} ${cy - Math.sin(q) * r}) rotate(${90 - phi}) scale(1 ${Math.max(0.01, p)})`}><Montana x={0} y={6} ancho={ancho} alto={alto} color={color} /></g>;
 }
 // Báscula con carátula de aguja. aguja: grados.
-function Bascula({ x, y, aguja = 0 }) {
-  return <g transform={`translate(${x} ${y})`}>
+function Bascula({ x, y, aguja = 0, s = 1 }) {
+  return <g transform={`translate(${x} ${y}) scale(${s})`}>
     <rect x={-170} y={0} width={340} height={70} rx={20} fill="#e9edf3" stroke={KC.ink} strokeWidth={8} />
     <path d="M -46 62 A 46 46 0 0 1 46 62 Z" fill="#fff" stroke={KC.ink} strokeWidth={6} />
     {[-50, -25, 0, 25, 50].map((a) => <line key={a} x1={0} y1={62} x2={0} y2={26} stroke={KC.ink} strokeWidth={3} transform={`rotate(${a} 0 62)`} strokeDasharray="0 26 10 0" />)}
@@ -72,8 +72,8 @@ function TierraNoRedonda() {
   const apG = kprog(T, K.Gancho + 0.3, K.Gancho + 2.2, kEase.sale);
   const GR = 270;
   // corte para Chimborazo / Panza
-  const C = { x: 300, y: 860, a: 500, b: 360 };
-  const PH_EV = 28, PH_CH = -1.5, H_EV = 78, H_CH = 55;
+  const C = { x: 300, y: 1000, a: 560, b: 403 };
+  const PH_EV = 28, PH_CH = -1.5, H_EV = 87, H_CH = 62;
   const dEv = rElipse(C.a, C.b, PH_EV) + H_EV, dCh = rElipse(C.a, C.b, PH_CH) + H_CH;
   const punta = (phi, d) => [C.x + Math.cos(phi * Math.PI / 180) * d, C.y - Math.sin(phi * Math.PI / 180) * d];
   const EV = punta(PH_EV, dEv), CH = punta(PH_CH, dCh);
@@ -86,89 +86,92 @@ function TierraNoRedonda() {
       <Escena T={T} a={K.Gancho} b={K.Gira}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
+          <EstrellasFondo T={T} n={70} />
+          <g transform="translate(540 960) scale(1.45) translate(-380 -860)">
           <Globo id="g0" x={380} y={860} rx={GR * (1 + 0.1 * apG)} ry={GR * (1 - 0.16 * apG)} T={T} gira={0.6} ecuador={kprog(T, K.Gancho + 1.6, K.Gancho + 2.2)} />
-          {apG > 0.05 && apG < 0.99 && [-1, 1].map((s) => <FlechaRecta key={s} x1={380 + s * (GR + 20)} y1={860} x2={380 + s * (GR + 110)} y2={860} p={apG} color={KC.yellow} />)}
+          {apG > 0.05 && apG < 0.99 && [-1, 1].map((s) => <FlechaRecta key={s} x1={380 + s * (GR + 20)} y1={860} x2={380 + s * (GR + 95)} y2={860} p={apG} color={KC.yellow} />)}
+          </g>
           <g opacity={1 - kprog(T, K.Gancho + 4.0, K.Gancho + 4.4)}>
-            <TextoSvg x={330} y={470} tam={92} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.05, K.Gancho + 0.45, kEase.rebote))}>¿PELOTA</TextoSvg>
-            <TextoSvg x={330} y={570} tam={92} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.15, K.Gancho + 0.55, kEase.rebote))}>PERFECTA?</TextoSvg>
+            <TextoSvg x={540} y={330} tam={104} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.05, K.Gancho + 0.45, kEase.rebote))}>¿PELOTA</TextoSvg>
+            <TextoSvg x={540} y={442} tam={104} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, K.Gancho + 0.15, K.Gancho + 0.55, kEase.rebote))}>PERFECTA?</TextoSvg>
           </g>
         </Lienzo>
-        <Chip T={T} at={K.Gancho + 2.0} until={K.Gira - 0.1} texto="exagerado para que se vea" x={380} y={1150} tam={32} borde={KC.yellow} />
-        <MitoTachado T={T} at={K.Gancho + 4.4} tacharEn={K.Gancho + 5.6} until={K.Gira - 0.1} texto="¿lo más lejano del centro: el Everest?" x={540} y={470} tam={40} />
+        <Chip T={T} at={K.Gancho + 2.0} until={K.Gira - 0.1} texto="exagerado para que se vea" x={540} y={1400} tam={34} borde={KC.yellow} />
+        <MitoTachado T={T} at={K.Gancho + 4.4} tacharEn={K.Gancho + 5.6} until={K.Gira - 0.1} texto="¿lo más lejano del centro: el Everest?" x={540} y={400} tam={42} />
       </Escena>
       {/* 1 · gira: se ensancha en el ecuador, se aplana en los polos */}
-      <Escena T={T} a={K.Gira} b={K.Medida} fondo={KC.cyan}>
+      <Escena T={T} a={K.Gira} b={K.Medida}>
         <FondoLunares color={KC.cyan} />
         <Lienzo>
-          <Globo id="g1" x={540} y={820} rx={330} ry={252} T={T} gira={0.9} ecuador={1} eje={kprog(T, K.Gira + 0.1, K.Gira + 0.6)} />
-          {[-1, 1].map((s) => <FlechaRecta key={s} x1={540 + s * 345} y1={820} x2={540 + s * 470 * pulso(K.Gira)} y2={820} p={kprog(T, K.Gira + 0.8, K.Gira + 1.4, kEase.sale)} color={KC.yellow} />)}
-          <FlechaRecta x1={720} y1={420} x2={620} y2={560} p={kprog(T, K.Gira + 2.0, K.Gira + 2.6, kEase.sale)} color={KC.pink} />
-          <FlechaRecta x1={720} y1={1200} x2={620} y2={1080} p={kprog(T, K.Gira + 2.2, K.Gira + 2.8, kEase.sale)} color={KC.pink} />
+          <Globo id="g1" x={540} y={960} rx={400} ry={305} T={T} gira={0.9} ecuador={1} eje={kprog(T, K.Gira + 0.1, K.Gira + 0.6)} />
+          {[-1, 1].map((s) => <FlechaRecta key={s} x1={540 + s * 415} y1={960} x2={540 + s * 500 * pulso(K.Gira)} y2={960} p={kprog(T, K.Gira + 0.8, K.Gira + 1.4, kEase.sale)} color={KC.yellow} />)}
+          <FlechaRecta x1={740} y1={500} x2={630} y2={648} p={kprog(T, K.Gira + 2.0, K.Gira + 2.6, kEase.sale)} color={KC.pink} />
+          <FlechaRecta x1={740} y1={1420} x2={630} y2={1272} p={kprog(T, K.Gira + 2.2, K.Gira + 2.8, kEase.sale)} color={KC.pink} />
         </Lienzo>
-        <Etq T={T} at={K.Gira + 1.0} until={K.Medida - 0.2} x={560} y={860} texto="ecuador" color={KC.yellow} />
-        <Etq T={T} at={K.Gira + 2.4} until={K.Medida - 0.2} x={735} y={410} texto="polos" color={KC.texto} />
-        <Chip T={T} at={K.Gira + 0.3} until={K.Medida - 0.1} texto="exagerado para que se vea" x={640} y={300} tam={32} borde={KC.yellow} />
+        <Etq T={T} at={K.Gira + 1.0} until={K.Medida - 0.2} x={560} y={1005} texto="ecuador" color={KC.yellow} />
+        <Etq T={T} at={K.Gira + 2.4} until={K.Medida - 0.2} x={755} y={488} texto="polos" color={KC.texto} />
+        <Chip T={T} at={K.Gira + 0.3} until={K.Medida - 0.1} texto="exagerado para que se vea" x={540} y={330} tam={34} borde={KC.yellow} />
       </Escena>
       {/* 2 · medida: 43 km más de ecuador a ecuador */}
-      <Escena T={T} a={K.Medida} b={K.Poco} fondo={KC.yellow}>
+      <Escena T={T} a={K.Medida} b={K.Poco}>
         <FondoLunares color={KC.yellow} />
         <Lienzo>
-          <Globo id="g2" x={540} y={840} rx={330} ry={252} T={T} gira={0.25} />
+          <Globo id="g2" x={540} y={1000} rx={420} ry={321} T={T} gira={0.25} />
           {(() => { const p1 = kprog(T, K.Medida + 0.4, K.Medida + 1.4, kEase.sale), p2 = kprog(T, K.Medida + 1.6, K.Medida + 2.6, kEase.sale);
             return <g>
-              <line x1={210} y1={840} x2={klerp(210, 870, p1)} y2={840} stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
-              <line x1={210} y1={840} x2={klerp(210, 870, p1)} y2={840} stroke={KC.orange} strokeWidth={8} strokeLinecap="round" />
-              <line x1={540} y1={588} x2={540} y2={klerp(588, 1092, p2)} stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
-              <line x1={540} y1={588} x2={540} y2={klerp(588, 1092, p2)} stroke={KC.pink} strokeWidth={8} strokeLinecap="round" />
-              <TextoSvg x={380} y={800} tam={46} color={KC.orange} o={kprog(T, K.Medida + 1.2, K.Medida + 1.5)}>12,756 km</TextoSvg>
-              <TextoSvg x={555} y={1000} tam={46} color={KC.pink} ancla="start" o={kprog(T, K.Medida + 2.4, K.Medida + 2.7)}>12,714 km</TextoSvg>
+              <line x1={120} y1={1000} x2={klerp(120, 960, p1)} y2={1000} stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
+              <line x1={120} y1={1000} x2={klerp(120, 960, p1)} y2={1000} stroke={KC.orange} strokeWidth={8} strokeLinecap="round" />
+              <line x1={540} y1={679} x2={540} y2={klerp(679, 1321, p2)} stroke={KC.ink} strokeWidth={16} strokeLinecap="round" />
+              <line x1={540} y1={679} x2={540} y2={klerp(679, 1321, p2)} stroke={KC.pink} strokeWidth={8} strokeLinecap="round" />
+              <TextoSvg x={330} y={950} tam={58} color={KC.orange} o={kprog(T, K.Medida + 1.2, K.Medida + 1.5)}>12,756 km</TextoSvg>
+              <TextoSvg x={562} y={1200} tam={58} color={KC.pink} ancla="start" o={kprog(T, K.Medida + 2.4, K.Medida + 2.7)}>12,714 km</TextoSvg>
             </g>; })()}
         </Lienzo>
-        <Etq T={T} at={K.Medida + 0.9} until={K.Poco - 0.2} x={240} y={885} texto="ecuador a ecuador" color={KC.texto} tam={28} />
-        <Etq T={T} at={K.Medida + 2.1} until={K.Poco - 0.2} x={555} y={640} texto="polo a polo" color={KC.texto} tam={28} />
-        <NumeroGigante T={T} at={K.Medida + 2.9} until={K.Poco - 0.1} valor={43} desde={0} prefijo="≈ " sufijo=" km más" etiqueta="de ecuador a ecuador" y={420} tam={150} />
-        <Chip T={T} at={K.Medida + 0.2} until={K.Poco - 0.1} texto="dibujo exagerado" x={300} y={1150} tam={30} borde={KC.ink} />
+        <Etq T={T} at={K.Medida + 0.9} until={K.Poco - 0.2} x={120} y={1052} texto="ecuador a ecuador" color={KC.texto} tam={28} />
+        <Etq T={T} at={K.Medida + 2.1} until={K.Poco - 0.2} x={562} y={745} texto="polo a polo" color={KC.texto} tam={30} />
+        <NumeroGigante T={T} at={K.Medida + 2.9} until={K.Poco - 0.1} valor={43} desde={0} prefijo="≈ " sufijo=" km más" etiqueta="de ecuador a ecuador" y={400} tam={150} />
+        <Chip T={T} at={K.Medida + 0.2} until={K.Poco - 0.1} texto="dibujo exagerado" x={540} y={1410} tam={32} borde={KC.ink} />
       </Escena>
       {/* 3 · poco: sin exagerar, desde el espacio se ve redonda */}
       <Escena T={T} a={K.Poco} b={K.Pregunta} fondo={KC.noche}>
         <Lienzo><EstrellasFondo T={T} n={90} />
-          <Globo id="g3" x={540} y={860} rx={klerp(330, 300 * 1.0017, rel)} ry={klerp(252, 300 * 0.9983, rel)} T={T} gira={0.3} />
+          <Globo id="g3" x={540} y={1000} rx={klerp(420, 400 * 1.0017, rel)} ry={klerp(321, 400 * 0.9983, rel)} T={T} gira={0.3} />
         </Lienzo>
-        <Chip T={T} at={K.Poco + 1.4} until={K.Pregunta - 0.1} texto="apenas un tercio de 1 %" x={540} y={320} tam={40} borde={KC.cyan} />
-        <Chip T={T} at={K.Poco + 0.4} until={K.Pregunta - 0.1} texto="sin exagerar" x={540} y={1150} tam={40} borde={KC.cyan} />
-        <NumeroGigante T={T} at={K.Poco + 1.6} until={K.Pregunta - 0.1} valor={0.3} dec={1} prefijo="≈ " sufijo=" %" x={540} y={470} tam={150} color={KC.cyan} />
+        <Chip T={T} at={K.Poco + 1.4} until={K.Pregunta - 0.1} texto="apenas un tercio de 1 %" x={540} y={290} tam={40} borde={KC.cyan} />
+        <Chip T={T} at={K.Poco + 0.4} until={K.Pregunta - 0.1} texto="sin exagerar" x={540} y={1465} tam={40} borde={KC.cyan} />
+        <NumeroGigante T={T} at={K.Poco + 1.6} until={K.Pregunta - 0.1} valor={0.3} dec={1} prefijo="≈ " sufijo=" %" x={540} y={440} tam={150} color={KC.cyan} />
       </Escena>
       {/* 4 · pregunta */}
       <EscenaPregunta T={T} a={K.Pregunta} b={K.Everest} />
       {/* 5 · Everest: medido desde el nivel del mar */}
-      <Escena T={T} a={K.Everest} b={K.Chimborazo} fondo={KC.mint}>
+      <Escena T={T} a={K.Everest} b={K.Chimborazo}>
         <FondoLunares color={KC.mint} />
         <Lienzo>
-          <g transform={`translate(0 ${(1 - kprog(T, K.Everest + 0.1, K.Everest + 0.9, kEase.sale)) * 700})`}>
-            <Montana x={480} y={1100} ancho={820} alto={600} color="#8a7b9e" />
-            <path d="M 476 500 L 476 430 L 540 448 L 476 466" fill={KC.red} stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
+          <g transform={`translate(0 ${(1 - kprog(T, K.Everest + 0.1, K.Everest + 0.9, kEase.sale)) * 950})`}>
+            <Montana x={480} y={1400} ancho={900} alto={800} color="#8a7b9e" />
+            <path d="M 476 600 L 476 520 L 548 540 L 476 562" fill={KC.red} stroke={KC.ink} strokeWidth={5} strokeLinejoin="round" />
           </g>
-          <rect x={0} y={1090} width={1080} height={200} fill={OCEANO} stroke={KC.ink} strokeWidth={8} />
-          {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M ${i * 130 + ((T * 30) % 130) - 60} 1130 q 25 -18 50 0 t 50 0`} stroke="#fff" strokeWidth={5} fill="none" opacity=".6" />)}
+          <rect x={-60} y={1390} width={1200} height={600} fill="#143a6b" stroke={KC.ink} strokeWidth={8} />
+          {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M ${i * 130 + ((T * 30) % 130) - 60} 1432 q 25 -18 50 0 t 50 0`} stroke="#fff" strokeWidth={5} fill="none" opacity=".6" />)}
           {(() => { const p = kprog(T, K.Everest + 1.4, K.Everest + 2.6, kEase.sale); return p > 0 && <g>
-            <line x1={880} y1={1090} x2={880} y2={klerp(1090, 500, p)} stroke={KC.ink} strokeWidth={18} strokeLinecap="round" />
-            <line x1={880} y1={1090} x2={880} y2={klerp(1090, 500, p)} stroke={KC.yellow} strokeWidth={10} strokeLinecap="round" />
-            <line x1={820} y1={1090} x2={940} y2={1090} stroke={KC.ink} strokeWidth={8} />
-            {p > 0.98 && <><line x1={820} y1={500} x2={940} y2={500} stroke={KC.ink} strokeWidth={8} /><line x1={540} y1={500} x2={820} y2={500} stroke={KC.ink} strokeWidth={4} strokeDasharray="12 10" /></>}
+            <line x1={965} y1={1390} x2={965} y2={klerp(1390, 600, p)} stroke={KC.ink} strokeWidth={18} strokeLinecap="round" />
+            <line x1={965} y1={1390} x2={965} y2={klerp(1390, 600, p)} stroke={KC.yellow} strokeWidth={10} strokeLinecap="round" />
+            <line x1={905} y1={1390} x2={1025} y2={1390} stroke={KC.ink} strokeWidth={8} />
+            {p > 0.98 && <><line x1={905} y1={600} x2={1025} y2={600} stroke={KC.ink} strokeWidth={8} /><line x1={540} y1={600} x2={905} y2={600} stroke={KC.ink} strokeWidth={4} strokeDasharray="12 10" /></>}
           </g>; })()}
         </Lienzo>
         <Chip T={T} at={K.Everest + 0.3} until={K.Chimborazo - 0.1} texto="desde el nivel del mar" x={540} y={300} tam={36} borde={KC.cyan} />
-        <Chip T={T} at={K.Everest + 2.6} until={K.Chimborazo - 0.1} texto="≈ 8,849 m (medición 2020)" x={560} y={390} tam={46} borde={KC.yellow} />
-        <Etq T={T} at={K.Everest + 1.0} until={K.Chimborazo - 0.2} x={470} y={640} texto="Everest" lado="izq" color={KC.texto} />
-        <Etq T={T} at={K.Everest + 1.3} until={K.Chimborazo - 0.2} x={40} y={1160} texto="nivel del mar" color={KC.texto} tam={30} />
+        <Chip T={T} at={K.Everest + 2.6} until={K.Chimborazo - 0.1} texto="≈ 8,849 m (medición 2020)" x={540} y={392} tam={46} borde={KC.yellow} />
+        <Etq T={T} at={K.Everest + 1.0} until={K.Chimborazo - 0.2} x={440} y={770} texto="Everest" lado="izq" color={KC.texto} />
+        <Etq T={T} at={K.Everest + 1.3} until={K.Chimborazo - 0.2} x={40} y={1470} texto="nivel del mar" color={KC.texto} tam={32} />
       </Escena>
       {/* 6–7 · Chimborazo: medido desde el centro de la Tierra (corte, exagerado) */}
-      <Escena T={T} a={K.Chimborazo} b={K.Peso} fondo={KC.orange} zoom={0.03}>
+      <Escena T={T} a={K.Chimborazo} b={K.Peso} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         <Lienzo>
           <Globo id="g6" x={C.x} y={C.y} rx={C.a} ry={C.b} T={T} gira={0} ecuador={0.7} centro={kprog(T, K.Chimborazo + 0.2, K.Chimborazo + 0.6)} />
-          <MontanaOrilla cx={C.x} cy={C.y} a={C.a} b={C.b} phi={PH_EV} alto={H_EV} ancho={110} color="#8a7b9e" />
-          <MontanaOrilla cx={C.x} cy={C.y} a={C.a} b={C.b} phi={PH_CH} alto={H_CH} ancho={110} color="#9a6b52" p={kprog(T, K.Chimborazo + 0.6, K.Chimborazo + 1.2, kEase.rebote)} />
+          <MontanaOrilla cx={C.x} cy={C.y} a={C.a} b={C.b} phi={PH_EV} alto={H_EV} ancho={123} color="#8a7b9e" />
+          <MontanaOrilla cx={C.x} cy={C.y} a={C.a} b={C.b} phi={PH_CH} alto={H_CH} ancho={123} color="#9a6b52" p={kprog(T, K.Chimborazo + 0.6, K.Chimborazo + 1.2, kEase.rebote)} />
           <FlechaRecta x1={C.x} y1={C.y} x2={CH[0]} y2={CH[1]} p={kprog(T, K.Chimborazo + 1.2, K.Chimborazo + 2.2, kEase.sale)} color={KC.yellow} />
           {T > K.Panza && <>
             <FlechaRecta x1={C.x} y1={C.y} x2={EV[0]} y2={EV[1]} p={kprog(T, K.Panza + 0.2, K.Panza + 1.1, kEase.sale)} color={KC.cyan} />
@@ -179,41 +182,44 @@ function TierraNoRedonda() {
           </>}
         </Lienzo>
         <Etq T={T} at={K.Chimborazo + 0.6} until={K.Peso - 0.2} x={C.x - 10} y={C.y + 60} texto="centro" lado="der" color={KC.texto} tam={30} />
-        <Etq T={T} at={K.Chimborazo + 1.4} until={K.Peso - 0.2} x={840} y={950} texto="Chimborazo" lado="izq" color={KC.yellow} />
-        <Etq T={T} at={K.Chimborazo + 2.0} until={K.Peso - 0.2} x={840} y={995} texto="volcán de Ecuador" lado="izq" color={KC.texto} tam={28} />
+        <Etq T={T} at={K.Chimborazo + 1.4} until={K.Peso - 0.2} x={880} y={C.y + 98} texto="Chimborazo" lado="izq" color={KC.yellow} />
+        <Etq T={T} at={K.Chimborazo + 2.0} until={K.Peso - 0.2} x={880} y={C.y + 146} texto="volcán de Ecuador" lado="izq" color={KC.texto} tam={30} />
         <Etq T={T} at={K.Panza + 0.8} until={K.Peso - 0.2} x={EV[0] - 20} y={EV[1] - 40} texto="Everest" lado="izq" color={KC.texto} />
-        <Chip T={T} at={K.Chimborazo + 0.3} until={K.Panza - 0.1} texto="desde el centro de la Tierra" x={600} y={330} tam={38} borde={KC.yellow} />
-        <Chip T={T} at={K.Panza + 0.3} until={K.Peso - 0.1} texto="casi sobre el ecuador: la parte más ancha" x={540} y={330} tam={32} borde={KC.yellow} />
-        <Chip T={T} at={K.Panza + 2.6} until={K.Peso - 0.1} texto="su cima: ≈ 2 km más lejos del centro" x={540} y={410} tam={34} borde={KC.cyan} />
-        <Chip T={T} at={K.Chimborazo + 0.3} until={K.Peso - 0.1} texto="dibujo exagerado" x={300} y={1150} tam={28} borde={KC.ink} />
+        <Chip T={T} at={K.Chimborazo + 0.3} until={K.Panza - 0.1} texto="desde el centro de la Tierra" x={540} y={300} tam={40} borde={KC.yellow} />
+        <Chip T={T} at={K.Panza + 0.3} until={K.Peso - 0.1} texto="casi sobre el ecuador: la parte más ancha" x={540} y={290} tam={34} borde={KC.yellow} />
+        <Chip T={T} at={K.Panza + 2.6} until={K.Peso - 0.1} texto="su cima: ≈ 2 km más lejos del centro" x={540} y={372} tam={36} borde={KC.cyan} />
+        <Chip T={T} at={K.Chimborazo + 0.3} until={K.Peso - 0.1} texto="dibujo exagerado" x={300} y={1470} tam={30} borde={KC.ink} />
       </Escena>
       {/* 8 · peso: en el ecuador pesas un poquito menos */}
-      <Escena T={T} a={K.Peso} b={K.Cierre} fondo={KC.lilac}>
+      <Escena T={T} a={K.Peso} b={K.Cierre}>
         <FondoLunares color={KC.lilac} />
         <Lienzo>
-          <Globo id="g8a" x={280} y={540} rx={95} ry={80} T={T} gira={0.8} ecuador={1} />
-          <Globo id="g8b" x={800} y={540} rx={95} ry={80} T={T} gira={0.8} />
-          <circle cx={280 + 95} cy={540} r={16} fill={KC.red} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Peso + 0.4, K.Peso + 0.6)} />
-          <circle cx={800} cy={540 - 80} r={16} fill={KC.red} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Peso + 0.6, K.Peso + 0.8)} />
-          {[[280, -8], [800, 8]].map(([x, ag], i) => { const e = kprog(T, K.Peso + 0.5 + i * 0.25, K.Peso + 1.0 + i * 0.25, kEase.rebote);
+          <Globo id="g8a" x={290} y={570} rx={175} ry={147} T={T} gira={0.8} ecuador={1} />
+          <Globo id="g8b" x={790} y={570} rx={175} ry={147} T={T} gira={0.8} />
+          <circle cx={290 + 175} cy={570} r={24} fill={KC.red} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Peso + 0.4, K.Peso + 0.6)} />
+          <circle cx={790} cy={570 - 147} r={24} fill={KC.red} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Peso + 0.6, K.Peso + 0.8)} />
+          {[[290, -8], [790, 8]].map(([x, ag], i) => { const e = kprog(T, K.Peso + 0.5 + i * 0.25, K.Peso + 1.0 + i * 0.25, kEase.rebote);
             const ang = klerp(-50, ag, kprog(T, K.Peso + 3.0, K.Peso + 3.8, kEase.rebote));
-            return <g key={i} transform={`translate(0 ${(1 - e) * 800})`}><PersonaSimple x={x} yPies={1050} alto={300} color={i ? KC.cyan : KC.yellow} cara={i ? 'normal' : 'sonrie'} /><Bascula x={x} y={1040} aguja={ang} /></g>; })}
+            return <g key={i} transform={`translate(0 ${(1 - e) * 1000})`}><PersonaSimple x={x} yPies={1345} alto={450} color={i ? KC.cyan : KC.yellow} cara={i ? 'normal' : 'sonrie'} /><Bascula x={x} y={1330} aguja={ang} s={1.22} /></g>; })}
         </Lienzo>
-        <Etq T={T} at={K.Peso + 0.7} until={K.Cierre - 0.2} x={180} y={655} texto="ecuador" color={KC.texto} tam={30} />
-        <Etq T={T} at={K.Peso + 0.9} until={K.Cierre - 0.2} x={700} y={655} texto="polo" color={KC.texto} tam={30} />
-        <Chip T={T} at={K.Peso + 0.4} until={K.Peso + 3.2} texto="1 · el giro" x={430} y={300} tam={36} borde={KC.yellow} />
-        <Chip T={T} at={K.Peso + 1.4} until={K.Peso + 3.2} texto="2 · la panza" x={720} y={380} tam={36} borde={KC.pink} />
-        <Chip T={T} at={K.Peso + 3.6} until={K.Cierre - 0.1} texto="en el ecuador: ≈ 0.5 % menos" x={540} y={340} tam={42} borde={KC.yellow} />
+        <Etq T={T} at={K.Peso + 0.7} until={K.Cierre - 0.2} x={150} y={775} texto="ecuador" color={KC.texto} tam={32} />
+        <Etq T={T} at={K.Peso + 0.9} until={K.Cierre - 0.2} x={670} y={775} texto="polo" color={KC.texto} tam={32} />
+        <Chip T={T} at={K.Peso + 0.4} until={K.Peso + 3.2} texto="1 · el giro" x={400} y={250} tam={36} borde={KC.yellow} />
+        <Chip T={T} at={K.Peso + 1.4} until={K.Peso + 3.2} texto="2 · la panza" x={700} y={330} tam={36} borde={KC.pink} />
+        <Chip T={T} at={K.Peso + 3.6} until={K.Cierre - 0.1} texto="en el ecuador: ≈ 0.5 % menos" x={540} y={290} tam={42} borde={KC.yellow} />
       </Escena>
       {/* 9 · cierre: la misma pelota del inicio, ahora panzona y simpática */}
       <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.pink} />
         <Lienzo>
+          <EstrellasFondo T={T} n={70} />
+          <g transform="translate(540 960) scale(1.45) translate(-380 -860)">
           <Globo id="g9" x={380} y={860} rx={GR * 1.1 * (1 + 0.02 * Math.sin(T * 4))} ry={GR * 0.84} T={T} gira={0.6} cara={kprog(T, K.Cierre + 0.4, K.Cierre + 1.0)} cinta={kprog(T, K.Cierre + 1.6, K.Cierre + 2.2)} />
-          <TextoSvg x={330} y={470} tam={84} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, K.Cierre + 2.4, K.Cierre + 2.8, kEase.rebote))} o={kprog(T, K.Cierre + 2.4, K.Cierre + 2.5)}>UN POQUITO</TextoSvg>
-          <TextoSvg x={330} y={565} tam={96} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, K.Cierre + 2.6, K.Cierre + 3.0, kEase.rebote))} o={kprog(T, K.Cierre + 2.6, K.Cierre + 2.7)}>PANZONA</TextoSvg>
+          </g>
+          <TextoSvg x={540} y={345} tam={92} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, K.Cierre + 2.4, K.Cierre + 2.8, kEase.rebote))} o={kprog(T, K.Cierre + 2.4, K.Cierre + 2.5)}>UN POQUITO</TextoSvg>
+          <TextoSvg x={540} y={452} tam={106} color={KC.yellow} rot={-4} s={klerp(0.5, 1, kprog(T, K.Cierre + 2.6, K.Cierre + 3.0, kEase.rebote))} o={kprog(T, K.Cierre + 2.6, K.Cierre + 2.7)}>PANZONA</TextoSvg>
         </Lienzo>
-        <Chip T={T} at={K.Cierre + 0.3} until={K.Outro - 0.1} texto="exagerado para que se vea" x={380} y={1150} tam={32} borde={KC.yellow} />
+        <Chip T={T} at={K.Cierre + 0.3} until={K.Outro - 0.1} texto="exagerado para que se vea" x={540} y={1400} tam={34} borde={KC.yellow} />
       </Escena>
 
       <Subtitulo T={T} idx={0} at={K.Gancho + 0.1} until={K.Gira - 0.1} texto="No es pelota: *está aplastada.*" />
