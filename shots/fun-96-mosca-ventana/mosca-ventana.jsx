@@ -6,7 +6,7 @@
 // tienen forma de campana ("campanulate") y salen a ~10 m/s. El halo del vidrio: UW–Madison Extension. Todo es esquemático.
 
 const MC = { cuerpo:'#5d6168', cuerpo2:'#3a3d43', raya:'#202227', ojo:'#b8362b', ojo2:'#7d2019', ala:'rgba(225,240,255,.55)', venas:'rgba(40,50,70,.55)',
-  pata:'#25272c', banda:'#fbf6e6', banda2:'#e9dfc2', vidrio:'#bfe9ff', marco:'#f4efe4', marco2:'#d8cfbd', hemo:'#3a1d22', grasa:'#f1cf6a',
+  pata:'#25272c', banda:'#fbf6e6', banda2:'#e9dfc2', vidrio:'#2f6f8f', marco:'#d8d0bf', marco2:'#b3a993', hemo:'#3a1d22', grasa:'#f1cf6a',
   celula:'#f6efd8', cuti:'#b0793a', cuti2:'#7c4f22', nervio:'#7ad8ff' };
 
 /* ---------- la mosca ---------- */
@@ -100,7 +100,7 @@ function Conidioforo({ x, y, alto = 90, ancho = 22, ang = -90, crece = 1, conidi
 /* ---------- la ventana ---------- */
 // Ventana de casa vista desde adentro: marco claro, vidrio con cielo (tarde: 0 = de día, 1 = atardecer).
 function Ventana({ T, tarde = 0, sol = 0 }) {
-  const cielo1 = mixHex('#7fd8ff', '#ff9a4a', tarde), cielo2 = mixHex('#c9efff', '#ffd27a', tarde);
+  const cielo1 = mixHex('#3f93c9', '#d97a3c', tarde), cielo2 = mixHex('#8cc9e6', '#e9b566', tarde);
   return <g>
     <defs><linearGradient id="cieloV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={cielo1} /><stop offset="1" stopColor={cielo2} /></linearGradient>
       <clipPath id="vidrioV"><rect x={90} y={330} width={900} height={1040} /></clipPath></defs>
@@ -108,8 +108,8 @@ function Ventana({ T, tarde = 0, sol = 0 }) {
     <g clipPath="url(#vidrioV)">
       <circle cx={760} cy={klerp(470, 1120, sol)} r={110} fill={mixHex('#fff6c0', '#ffb347', tarde)} opacity={0.9} />
       {[[200, 520, 1], [620, 640, 0.8], [380, 760, 0.7]].map(([cx, cy, k], i) => <g key={i} opacity={0.85 - tarde * 0.3} transform={`translate(${(cx + T * 6 * k) % 1100 - 60} ${cy}) scale(${k})`}>
-        <ellipse cx={0} cy={0} rx={120} ry={40} fill="#fff" /><ellipse cx={-50} cy={-26} rx={60} ry={40} fill="#fff" /><ellipse cx={40} cy={-34} rx={70} ry={48} fill="#fff" /></g>)}
-      <path d={`M 90 1220 Q 300 1150 520 1200 Q 760 1250 990 1170 L 990 1370 L 90 1370 Z`} fill={mixHex('#3fbf4a', '#7a4a3a', tarde * 0.6)} />
+        <ellipse cx={0} cy={0} rx={120} ry={40} fill="#e6eef6" /><ellipse cx={-50} cy={-26} rx={60} ry={40} fill="#e6eef6" /><ellipse cx={40} cy={-34} rx={70} ry={48} fill="#e6eef6" /></g>)}
+      <path d={`M 90 1220 Q 300 1150 520 1200 Q 760 1250 990 1170 L 990 1370 L 90 1370 Z`} fill={mixHex('#2f9440', '#6a4434', tarde * 0.6)} />
       {/* reflejo del vidrio */}
       <path d="M 180 330 L 330 330 L 140 900 L 90 900 L 90 600 Z" fill="rgba(255,255,255,.18)" />
     </g>
@@ -130,8 +130,8 @@ function HaloVidrio({ x, y, k = 1, seed = 96, n = 220, r0 = 120, r1 = 300 }) {
 function Caja({ T, at, until, x, y, texto, it = false, tam = 34, ancho }) {
   if (!kvisible(T, at, until)) return null;
   const e = kentrada(T, at, until, 'sube');
-  return <div style={{ position:'absolute', left:x, top:y, zIndex:42, opacity:e.o, transform:`translateY(${e.y * 0.4}px)`, background:'rgba(244,239,228,.95)', border:`4px solid ${KC.ink}`,
-    borderRadius:14, padding:'6px 18px', font:`700 ${tam}px/1.25 ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color:KC.ink, whiteSpace: ancho ? 'normal' : 'nowrap', width:ancho, boxShadow:`6px 6px 0 ${KC.ink}` }}>{texto}</div>;
+  return <div style={{ position:'absolute', left:x, top:y, zIndex:42, opacity:e.o, transform:`translateY(${e.y * 0.4}px)`, background:'rgba(232,226,212,.96)', border:'4px solid #0b1020',
+    borderRadius:14, padding:'6px 18px', font:`700 ${tam}px/1.25 ${KF.mono}`, fontStyle: it ? 'italic' : 'normal', color:'#0b1020', whiteSpace: ancho ? 'normal' : 'nowrap', width:ancho, boxShadow:'6px 6px 0 rgba(0,0,0,.55)' }}>{texto}</div>;
 }
 // Paso numerado (1, 2, 3) que se enciende.
 function Paso({ T, at, until, x, y, n, texto }) {
@@ -142,6 +142,9 @@ function Paso({ T, at, until, x, y, n, texto }) {
     <div style={{ background:'rgba(14,15,18,.85)', color:KC.texto, borderRadius:14, padding:'8px 18px', font:`900 34px ${KF.texto}`, whiteSpace:'nowrap' }}>{texto}</div>
   </div>;
 }
+
+// Pase a mano (cine): la ventana llena el cuadro de borde a borde y queda centrada en vertical.
+const VW = 'translate(540 960) scale(1.12) translate(-540 -880)';
 
 /* ---------- el shot ---------- */
 function MoscaVentanaShot() {
@@ -177,30 +180,31 @@ function MoscaVentanaShot() {
       <Escena T={T} a={K.G} b={K.Es} zoom={0.06} origen="45% 48%">
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
+          <g transform={VW}>
           <Ventana T={T} tarde={0} sol={0} />
           <g transform={`translate(${470 - 470 * (1 + 0.14 * pista)} ${900 - 900 * (1 + 0.14 * pista)}) scale(${1 + 0.14 * pista})`}>
             <HaloVidrio x={470} y={930} k={1} r0={170} r1={330} />
             <MoscaArriba x={470} y={880} s={1.55} ang={-4} alas={1} bandas={1} panza={1} />
           </g>
           {vuela < 1 && <MoscaArriba T={T} x={klerp(120, 1180, vuela)} y={klerp(660, 600, vuela) + Math.sin(T * 9) * 24} s={0.55} ang={80} alas={0.6} zumba={1} />}
-          {/* fichas de las dos moscas (Nombre) */}
+          </g>
         </>)}
       </Escena>
       {/* 3 · al microscopio: la espora pegajosa cae, perfora la cutícula y entra a la hemolinfa */}
       <Escena T={T} a={K.Es} b={K.A} zoom={0.05}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
-        {fsvg(<>
-          <rect x={-20} y={880} width={1120} height={26} fill={MC.cuti2} stroke={KC.ink} strokeWidth={5} />
-          <rect x={-20} y={906} width={1120} height={150} fill={MC.cuti} stroke={KC.ink} strokeWidth={5} />
-          {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M -20 ${930 + i * 14} L 1100 ${930 + i * 14}`} stroke={MC.cuti2} strokeWidth={2} opacity={0.5} />)}
-          <rect x={-20} y={1056} width={1120} height={260} fill={MC.hemo} stroke={KC.ink} strokeWidth={5} />
-          {Array.from({ length: 10 }, (_, i) => { const g = krng(i + 3); return <circle key={i} cx={60 + g() * 960} cy={1100 + g() * 160 + Math.sin(T * 2 + i) * 8} r={10 + g() * 10} fill={MC.grasa} opacity={0.75} stroke={KC.ink} strokeWidth={3} />; })}
+        {fsvg(<g transform="translate(540 1000) scale(1.5) translate(-540 -1000)">
+          <rect x={-240} y={880} width={1560} height={26} fill={MC.cuti2} stroke={KC.ink} strokeWidth={5} />
+          <rect x={-240} y={906} width={1560} height={150} fill={MC.cuti} stroke={KC.ink} strokeWidth={5} />
+          {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M -240 ${930 + i * 14} L 1320 ${930 + i * 14}`} stroke={MC.cuti2} strokeWidth={2} opacity={0.5} />)}
+          <rect x={-240} y={1056} width={1560} height={260} fill={MC.hemo} stroke={KC.ink} strokeWidth={5} />
+          {Array.from({ length: 10 }, (_, i) => { const g = krng(i + 3); return <circle key={i} cx={200 + g() * 680} cy={1100 + g() * 160 + Math.sin(T * 2 + i) * 8} r={10 + g() * 10} fill={MC.grasa} opacity={0.75} stroke={KC.ink} strokeWidth={3} />; })}
           {/* tubito de germinación que atraviesa la cutícula */}
           {tubo > 0 && <path d={`M 540 878 L 540 ${878 + tubo * 260}`} stroke={MC.celula} strokeWidth={16} strokeLinecap="round" />}
           {tubo > 0.92 && <ellipse cx={540} cy={1146} rx={26 * kprog(T, K.Es + 2.8, K.Es + 3.2)} ry={20 * kprog(T, K.Es + 2.8, K.Es + 3.2)} fill={MC.celula} stroke={KC.ink} strokeWidth={4} />}
-          <Conidio x={540} y={klerp(380, 822, cae)} r={62} ang={0} halo={1} />
-        </>)}
+          <Conidio x={540} y={klerp(660, 822, cae)} r={62} ang={0} halo={1} />
+        </g>)}
       </Escena>
       {/* 4 · por dentro: células del hongo llenan la hemolinfa y comen la grasa; al día 2 llegan al sistema nervioso */}
       <Escena T={T} a={K.A} b={K.Su} zoom={0.05}>
@@ -226,10 +230,12 @@ function MoscaVentanaShot() {
       <Escena T={T} a={K.Su} b={K.Po} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
+          <g transform={VW}>
           <Ventana T={T} tarde={tarde} sol={tarde * 0.55} />
-          <path d={`M 470 1240 L 470 ${klerp(1240, 640, sube) + 60}`} stroke="rgba(255,255,255,.7)" strokeWidth={6} strokeDasharray="10 16" />
-          <path d="M 470 560 l -40 60 l 80 0 Z" fill={KC.yellow} stroke={KC.ink} strokeWidth={5} opacity={kprog(T, K.Su + 1, K.Su + 1.4)} />
-          <MoscaArriba T={T} x={470 + Math.sin(T * 7) * 10 * (1 - sube * 0.5)} y={klerp(1180, 720, sube)} s={0.95} ang={Math.sin(T * 5) * 8} alas={0} camina={1} paso={T * 2.4} />
+          <path d={`M 470 1335 L 470 ${Math.min(1335, klerp(1100, 800, sube) + 240)}`} stroke="rgba(255,255,255,.7)" strokeWidth={6} strokeDasharray="10 16" />
+          <path d="M 470 590 l -40 60 l 80 0 Z" fill={KC.yellow} stroke="#0b1020" strokeWidth={5} opacity={kprog(T, K.Su + 1, K.Su + 1.4)} />
+          <MoscaArriba T={T} x={470 + Math.sin(T * 7) * 10 * (1 - sube * 0.5)} y={klerp(1100, 800, sube)} s={1.5} ang={Math.sin(T * 5) * 8} alas={0} camina={1} paso={T * 2.4} />
+          </g>
         </>)}
       </Escena>
       {/* 6 · la pose: estira la trompa, se pega, levanta las alas y muere (de perfil) */}
@@ -237,34 +243,34 @@ function MoscaVentanaShot() {
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           <rect x={-20} y={1150} width={1120} height={200} fill={MC.vidrio} stroke={KC.ink} strokeWidth={7} />
-          <path d="M 120 1180 L 260 1180 M 640 1210 L 860 1210" stroke="#fff" strokeWidth={8} strokeLinecap="round" opacity={0.7} />
-          <MoscaPerfil T={T} x={480} y={1150} s={2.2} trompa={tr} pegada={peg} alas={alasPose} bandas={0} />
+          <path d="M 120 1180 L 260 1180 M 640 1210 L 860 1210" stroke="#fff" strokeWidth={8} strokeLinecap="round" opacity={0.35} />
+          <MoscaPerfil T={T} x={540} y={1150} s={2.6} trompa={tr} pegada={peg} alas={alasPose} bandas={0} />
         </>)}
       </Escena>
       {/* 7 · re-gancho: ¿cómo le dice un hongo a una mosca cuándo moverse? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Interrogacion T={T} x={290} y={1060} tam={460} />
-          <g transform="translate(420 520)"><circle r={80} fill="#fff" stroke={KC.ink} strokeWidth={8} />
-            <line x1={0} y1={0} x2={0} y2={-56} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" transform={`rotate(${T * 120})`} />
-            <line x1={0} y1={0} x2={38} y2={0} stroke={KC.ink} strokeWidth={8} strokeLinecap="round" transform={`rotate(${T * 12})`} /></g>
-          <MoscaArriba T={T} x={140} y={760} s={0.5} ang={30} alas={0} />
+          {/* pase a mano: la mosca de la pose sigue detrás (capa cine); el signo y el reloj van al hueco de arriba a la derecha, sin taparla */}
+          <Interrogacion T={T} x={800} y={840} tam={380} />
+          <g transform="translate(800 400)"><circle r={84} fill="#e9edf5" stroke="#0b1020" strokeWidth={8} />
+            <line x1={0} y1={0} x2={0} y2={-58} stroke="#0b1020" strokeWidth={8} strokeLinecap="round" transform={`rotate(${T * 120})`} />
+            <line x1={0} y1={0} x2={40} y2={0} stroke="#0b1020" strokeWidth={8} strokeLinecap="round" transform={`rotate(${T * 12})`} /></g>
         </>)}
       </Escena>
       {/* 8 · Harvard 2023: la subida necesita neuronas del reloj; la actividad empieza a subir ~2.5 h antes de morir */}
       <Escena T={T} a={K.E} b={K.Sa} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        {fsvg(T > K.E + 2.2 && <g opacity={kprog(T, K.E + 2.2, K.E + 2.6)}>
-          {/* cerebro de mosca esquemático con las neuronas del reloj */}
-          <g transform="translate(330 760)">
-            <path d="M -230 0 Q -250 -110 -140 -120 Q -60 -126 0 -80 Q 60 -126 140 -120 Q 250 -110 230 0 Q 200 90 90 70 Q 0 110 -90 70 Q -200 90 -230 0 Z" fill="#ffe3ec" stroke={KC.ink} strokeWidth={7} />
-            <ellipse cx={-150} cy={-10} rx={60} ry={70} fill="#ffc6d8" stroke={KC.ink} strokeWidth={5} /><ellipse cx={150} cy={-10} rx={60} ry={70} fill="#ffc6d8" stroke={KC.ink} strokeWidth={5} />
+        {fsvg(<g>
+          {/* cerebro de mosca esquemático con las neuronas del reloj (pase a mano: en pantalla desde que empieza la escena, grande y al centro) */}
+          <g transform="translate(540 800) scale(1.7)">
+            <path d="M -230 0 Q -250 -110 -140 -120 Q -60 -126 0 -80 Q 60 -126 140 -120 Q 250 -110 230 0 Q 200 90 90 70 Q 0 110 -90 70 Q -200 90 -230 0 Z" fill="#7d4c61" stroke={KC.ink} strokeWidth={5} />
+            <ellipse cx={-150} cy={-10} rx={60} ry={70} fill="#9a5d75" stroke={KC.ink} strokeWidth={4} /><ellipse cx={150} cy={-10} rx={60} ry={70} fill="#9a5d75" stroke={KC.ink} strokeWidth={4} />
             {[[-40, -60], [-20, -72], [20, -72], [40, -60]].map(([nx, ny], i) => { const b = 0.5 + 0.5 * Math.sin(T * 6 + i); return <g key={i}>
-              <circle cx={nx} cy={ny} r={16 + 6 * b} fill={KC.yellow} opacity={0.5} /><circle cx={nx} cy={ny} r={11} fill={KC.gold} stroke={KC.ink} strokeWidth={4} /></g>; })}
+              <circle cx={nx} cy={ny} r={16 + 6 * b} fill={KC.yellow} opacity={0.5} /><circle cx={nx} cy={ny} r={11} fill={KC.gold} stroke="#0b1020" strokeWidth={3} /></g>; })}
           </g>
           {/* gráfica: movimiento de la mosca vs. horas antes de morir */}
-          <g transform="translate(110 1000)">
+          <g transform="translate(90 1150) scale(1.12)">
             <line x1={0} y1={170} x2={800} y2={170} stroke={KC.ink} strokeWidth={6} /><line x1={0} y1={170} x2={0} y2={0} stroke={KC.ink} strokeWidth={6} />
             <path d={(() => { let d = 'M 0 150'; const n = Math.floor(60 * graf); for (let i = 1; i <= n; i++) { const xx = i * (760 / 60), h = xx < 430 ? 150 - 6 * Math.sin(i * 1.7) : 150 - Math.min(130, (xx - 430) * 0.42) - 6 * Math.sin(i * 1.7); d += ` L ${xx} ${h}`; } return d; })()} stroke={KC.blue} strokeWidth={8} fill="none" strokeLinejoin="round" />
             {graf > 0.55 && <line x1={430} y1={176} x2={430} y2={10} stroke={KC.ink} strokeWidth={4} strokeDasharray="10 8" />}
@@ -279,20 +285,20 @@ function MoscaVentanaShot() {
       <Escena T={T} a={K.Sa} b={K.B} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <MoscaArriba T={T} x={190} y={730} s={0.62} ang={0} alas={0} />
-          <text x={190} y={880} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>la que sube</text>
+          <MoscaArriba T={T} x={220} y={660} s={1.05} ang={0} alas={0} />
+          <text x={220} y={885} textAnchor="middle" style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>la que sube</text>
           {/* jeringa esquemática */}
-          <g transform="translate(300 640) rotate(12)">
-            <rect x={0} y={-24} width={260} height={48} rx={10} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+          <g transform="translate(410 590) rotate(12) scale(1.5)">
+            <rect x={0} y={-24} width={260} height={48} rx={10} fill="#dfe5ee" stroke={KC.ink} strokeWidth={5} />
             <rect x={6} y={-18} width={248 * (1 - iny)} height={36} fill="#b8c95a" />
             <line x1={260} y1={0} x2={360} y2={0} stroke={KC.ink} strokeWidth={6} /><rect x={-40} y={-10} width={40} height={20} fill={KC.ink} />
           </g>
           {/* pistas: receptora (más larga) vs. control */}
-          {[['con su hemolinfa', 1, 1000, KC.coral], ['control', 0.62, 1160, '#8a8f99']].map(([lab, L, yy, col], i) => { const k = rastro * L;
+          {[['con su hemolinfa', 1, 1120, KC.coral], ['control', 0.62, 1400, '#8a8f99']].map(([lab, L, yy, col], i) => { const k = rastro * L;
             return <g key={i}>
               <line x1={140} y1={yy} x2={140 + 760 * k} y2={yy} stroke={col} strokeWidth={10} strokeDasharray="4 22" strokeLinecap="round" />
-              <MoscaArriba T={T} x={140 + 760 * k} y={yy} s={0.45} ang={90} alas={0} camina={rastro < 1 ? 1 : 0} paso={T * 3 + i} />
-              <text x={140} y={yy - 50} style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>{lab}</text></g>; })}
+              <MoscaArriba T={T} x={140 + 760 * k} y={yy} s={0.8} ang={90} alas={0} camina={rastro < 1 ? 1 : 0} paso={T * 3 + i} />
+              <text x={60} y={yy - 128} style={{ font:`900 32px ${KF.texto}` }} fill={KC.ink}>{lab}</text></g>; })}
         </>)}
       </Escena>
       {/* 10 · ya muerta: bandas blancas de conidióforos entre los segmentos; disparan conidios (campana) a ~10 m/s */}
@@ -300,41 +306,47 @@ function MoscaVentanaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} />
         {fsvg(<>
+          <g transform="translate(500 1180) scale(1.35) translate(-500 -1180)">
           {/* tres segmentos del abdomen (placas) con las membranas entre ellos */}
           {[0, 1, 2, 3].map((i) => <path key={i} d={`M ${-40 + i * 290} 1180 Q ${100 + i * 290} 1020 ${210 + i * 290} 1180 Z`} fill={MC.cuerpo} stroke={KC.ink} strokeWidth={6} />)}
-          <rect x={-20} y={1176} width={1120} height={140} fill={MC.cuerpo2} stroke={KC.ink} strokeWidth={6} />
+          <rect x={-200} y={1176} width={1400} height={140} fill={MC.cuerpo2} stroke={KC.ink} strokeWidth={6} />
           {[1, 2, 3].map((i) => { const bx = -40 + i * 290 - 40; return <g key={i}>
             {Array.from({ length: 7 }, (_, k) => { const g = krng(i * 10 + k); const cx = bx - 30 + k * 12 + g() * 6; const t0 = 0.05 * k + g() * 0.2;
               return <Conidioforo key={k} x={cx} y={1190} alto={170 + g() * 90} ancho={22} ang={-90 + (k - 3) * 7} crece={kprog(salen, t0, t0 + 0.5, kEase.sale)} conidio={kprog(T, K.B + 1.6 + g() * 0.6, K.B + 2.0 + g() * 0.6)} />; })}
           </g>; })}
+          </g>
           {/* conidios disparados */}
           {Array.from({ length: 14 }, (_, i) => { const g = krng(i + 300); const t0 = K.B + 2.4 + i * 0.2; const u = kprog(T, t0, t0 + 0.55, kEase.sale);
-            const sx = 210 + (i % 3) * 290, sy = 940; const ex = sx + (g() - 0.3) * 500, ey = 420 + g() * 160;
+            const sx = 108 + (i % 3) * 392, sy = 856; const ex = Math.max(60, Math.min(1020, sx + (g() - 0.4) * 520)), ey = 620 + g() * 150;
             return u > 0 ? <g key={i}>
               <line x1={klerp(sx, ex, Math.max(0, u - 0.15))} y1={klerp(sy, ey, Math.max(0, u - 0.15))} x2={klerp(sx, ex, u)} y2={klerp(sy, ey, u)} stroke="rgba(255,250,220,.5)" strokeWidth={6} strokeLinecap="round" />
-              <Conidio x={klerp(sx, ex, u)} y={klerp(sy, ey, u)} r={14} ang={Math.atan2(ey - sy, ex - sx) * 57.3 + 90} halo={1} /></g> : null; })}
+              <Conidio x={klerp(sx, ex, u)} y={klerp(sy, ey, u)} r={19} ang={Math.atan2(ey - sy, ex - sx) * 57.3 + 90} halo={1} /></g> : null; })}
         </>)}
       </Escena>
       {/* 11 · el halo blanco en el vidrio alrededor de la mosca */}
       <Escena T={T} a={K.H} b={K.M} zoom={0.05} origen="45% 48%">
         <FondoLunares color={KC.orange} />
         {fsvg(<>
+          <g transform={VW}>
           <Ventana T={T} tarde={0.8} sol={0.6} />
+          <g transform={`translate(${470 - 470 * 1.14} ${900 - 900 * 1.14}) scale(1.14)`}>
           <HaloVidrio x={470} y={930} k={halo} r0={170} r1={330} />
           <MoscaArriba x={470} y={880} s={1.55} ang={-4} alas={1} bandas={1} panza={1} />
           {Array.from({ length: 16 }, (_, i) => { const t0 = K.H + 0.1 + i * 0.14; const u = kprog(T, t0, t0 + 0.4, kEase.sale); const a = i * 2.4;
             return u > 0 && u < 1 ? <circle key={i} cx={470 + Math.cos(a) * klerp(60, 280, u)} cy={980 + Math.sin(a) * klerp(60, 280, u)} r={6} fill="#fff" /> : null; })}
+          </g></g>
         </>)}
       </Escena>
       {/* 12 · Copenhague 2022: el olor de la hembra muerta atrae a machos sanos, que se contagian */}
       <Escena T={T} a={K.M} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(T > K.M + 2.2 && <g opacity={kprog(T, K.M + 2.2, K.M + 2.6)}>
+        {fsvg(<g>
+          {/* pase a mano: la hembra muerta está en pantalla desde que empieza la escena, grande; el macho ya ronda a la derecha */}
           <rect x={-20} y={1150} width={1120} height={200} fill={MC.vidrio} stroke={KC.ink} strokeWidth={7} />
-          <MoscaPerfil x={360} y={1150} s={1.6} trompa={1} pegada={1} alas={1} bandas={1} />
-          {Array.from({ length: 4 }, (_, i) => { const u = ((T - K.M) * 0.6 + i / 4) % 1; return <path key={i} d={`M ${420 + u * 380} ${980 - u * 300} q 30 -30 0 -60 q -30 -30 0 -60`} stroke={KC.violet} strokeWidth={8} fill="none" strokeLinecap="round" opacity={(1 - u) * 0.8} />; })}
-          <g transform={`translate(${klerp(1020, 600, llega)} ${klerp(820, 1085, llega)})`}>
-            <MoscaPerfil x={0} y={0} s={1.3} alas={llega < 1 ? 0.35 + 0.25 * Math.sin(T * 80) : 0.1} camina={0} />
+          <MoscaPerfil x={400} y={1150} s={2.3} trompa={1} pegada={1} alas={1} bandas={1} />
+          {Array.from({ length: 4 }, (_, i) => { const u = ((T - K.M) * 0.6 + i / 4) % 1; return <path key={i} d={`M ${560 + u * 360} ${860 - u * 300} q 40 -40 0 -80 q -40 -40 0 -80`} stroke={KC.violet} strokeWidth={10} fill="none" strokeLinecap="round" opacity={(1 - u) * 0.8} />; })}
+          <g transform={`translate(${klerp(1060, 720, llega)} ${klerp(640 + Math.sin(T * 3) * 18, 1060, llega)})`}>
+            <MoscaPerfil x={0} y={0} s={1.9} alas={llega < 1 ? 0.35 + 0.25 * Math.sin(T * 80) : 0.1} camina={0} />
           </g>
         </g>)}
       </Escena>
@@ -342,54 +354,56 @@ function MoscaVentanaShot() {
       <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="45% 48%">
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
+          <g transform={VW}>
           <Ventana T={T} tarde={0.9} sol={0.75} />
           <g transform={`translate(${470 - 470 * 1.14} ${900 - 900 * 1.14}) scale(1.14)`}>
             <HaloVidrio x={470} y={930} k={1} r0={170} r1={330} />
             <MoscaArriba x={470} y={880} s={1.55} ang={-4} alas={1} bandas={1} panza={1} />
           </g>
+          </g>
         </>)}
       </Escena>
 
       {/* textos en pantalla */}
-      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 2.0} until={K.G + 3.6} texto="murió de vieja" x={330} y={470} tam={50} />
-      <Chip T={T} at={K.G + 2.5} until={K.N - 0.2} texto="la mató un hongo" x={330} y={470} tam={42} borde={KC.red} />
-      <Etq T={T} at={K.G + 3.0} until={K.N - 0.2} x={660} y={1060} texto="bandas del hongo" tam={32} color={KC.ink} />
-      <Caja T={T} at={K.N + 0.2} until={K.Es - 0.3} x={50} y={410} texto="Entomophthora muscae" it tam={40} />
-      <Caja T={T} at={K.N + 0.7} until={K.Es - 0.3} x={50} y={492} texto="hongo que mata moscas" tam={30} />
-      <Caja T={T} at={K.N + 1.3} until={K.Es - 0.3} x={50} y={574} texto={<>mosca casera · <i>Musca domestica</i></>} tam={24} />
-      <Caja T={T} at={K.N + 1.7} until={K.Es - 0.3} x={50} y={636} texto={<>mosca de la fruta · <i>Drosophila</i></>} tam={24} />
-      <Chip T={T} at={K.Es + 0.1} until={K.A - 0.3} texto="AL MICROSCOPIO · esquemático" x={400} y={470} tam={30} borde={KC.gold} mono />
-      <Etq T={T} at={K.Es + 0.9} until={K.A - 0.3} x={640} y={790} texto="espora (conidio)" tam={30} color={MC.celula} />
-      <Etq T={T} at={K.Es + 1.0} until={K.A - 0.3} x={440} y={790} lado="izq" texto="capa pegajosa" tam={28} color={KC.gold2} />
-      <Etq T={T} at={K.Es + 1.5} until={K.A - 0.3} x={60} y={980} texto="cutícula (su cubierta)" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.Es + 2.4} until={K.A - 0.3} x={60} y={1110} texto="hemolinfa (su sangre)" tam={30} color={KC.texto} />
+      <MitoTachado T={T} at={K.G + 0.4} tacharEn={K.G + 2.0} until={K.G + 3.6} texto="murió de vieja" x={330} y={480} tam={50} />
+      <Chip T={T} at={K.G + 2.5} until={K.N - 0.2} texto="la mató un hongo" x={330} y={480} tam={42} borde={KC.red} />
+      <Etq T={T} at={K.G + 3.0} until={K.N - 0.2} x={690} y={1165} texto="bandas del hongo" tam={32} color={KC.ink} />
+      <Caja T={T} at={K.N + 0.2} until={K.Es - 0.3} x={90} y={420} texto="Entomophthora muscae" it tam={40} />
+      <Caja T={T} at={K.N + 0.7} until={K.Es - 0.3} x={90} y={502} texto="hongo que mata moscas" tam={30} />
+      <Caja T={T} at={K.N + 1.3} until={K.Es - 0.3} x={90} y={584} texto={<>mosca casera · <i>Musca domestica</i></>} tam={24} />
+      <Caja T={T} at={K.N + 1.7} until={K.Es - 0.3} x={90} y={646} texto={<>mosca de la fruta · <i>Drosophila</i></>} tam={24} />
+      <Chip T={T} at={K.Es + 0.1} until={K.A - 0.3} texto="AL MICROSCOPIO · esquemático" x={400} y={250} tam={30} borde={KC.gold} mono />
+      <Etq T={T} at={K.Es + 0.9} until={K.A - 0.3} x={700} y={690} texto="espora (conidio)" tam={30} color={MC.celula} />
+      <Etq T={T} at={K.Es + 1.0} until={K.A - 0.3} x={385} y={600} lado="izq" texto="capa pegajosa" tam={28} color={KC.gold2} />
+      <Etq T={T} at={K.Es + 1.5} until={K.A - 0.3} x={40} y={970} texto="cutícula (su cubierta)" tam={27} color={KC.texto} />
+      <Etq T={T} at={K.Es + 2.4} until={K.A - 0.3} x={60} y={1300} texto="hemolinfa (su sangre)" tam={30} color={KC.texto} />
       <Chip T={T} at={K.A + 0.1} until={K.Su - 0.3} texto="POR DENTRO · esquemático" x={380} y={470} tam={30} borde={KC.gold} mono />
       {T < K.Su - 0.2 && T > K.A + 0.4 && <div style={{ position:'absolute', left:60, top:560, zIndex:41, font:`700 54px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA }}>{T < K.A + 2.0 ? 'día 1' : 'día 2'}</div>}
       <Etq T={T} at={K.A + 0.9} until={K.Su - 0.3} x={1040} y={700} lado="izq" texto="células del hongo" tam={28} color={MC.celula} />
       <Etq T={T} at={K.A + 1.4} until={K.Su - 0.3} x={1040} y={770} lado="izq" texto="grasa (se acaba)" tam={28} color={MC.grasa} />
       <Etq T={T} at={K.A + 2.2} until={K.Su - 0.3} x={250} y={1040} texto="sistema nervioso" tam={30} color={MC.nervio} />
-      <Chip T={T} at={K.Su + 0.2} until={K.Po - 0.3} texto="día 4 a 7" x={330} y={470} tam={44} borde={KC.ink} />
-      <Chip T={T} at={K.Su + 1.0} until={K.Po - 0.3} texto="antes del atardecer" x={380} y={560} tam={34} borde={KC.orange} />
-      <Paso T={T} at={K.Po + 0.2} until={K.P - 0.3} x={50} y={430} n="1" texto="estira la trompa" />
-      <Paso T={T} at={K.Po + 0.85} until={K.P - 0.3} x={50} y={520} n="2" texto="se pega" />
-      <Paso T={T} at={K.Po + 1.3} until={K.P - 0.3} x={50} y={610} n="3" texto="levanta las alas" />
+      <Chip T={T} at={K.Su + 0.2} until={K.Po - 0.3} texto="día 4 a 7" x={300} y={480} tam={44} borde={KC.ink} />
+      <Chip T={T} at={K.Su + 1.0} until={K.Po - 0.3} texto="antes del atardecer" x={350} y={572} tam={34} borde={KC.orange} />
+      <Paso T={T} at={K.Po + 0.2} until={K.P - 0.3} x={50} y={400} n="1" texto="estira la trompa" />
+      <Paso T={T} at={K.Po + 0.85} until={K.P - 0.3} x={50} y={490} n="2" texto="se pega" />
+      <Paso T={T} at={K.Po + 1.3} until={K.P - 0.3} x={50} y={580} n="3" texto="levanta las alas" />
       <BarraEscala T={T} at={K.Po} until={K.P} texto="esquemático" largo={160} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.2} anio="2023" quien="Harvard" revista="Elya y de Bivort · eLife" x={420} y={700} />
-      <Etq T={T} at={K.E + 2.8} until={K.Sa - 0.3} x={330} y={885} texto="neuronas del reloj (DN1p)" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.E + 4.2} until={K.Sa - 0.3} texto="empieza ~2.5 h antes de morir" x={400} y={470} tam={30} borde={KC.blue} />
-      <Chip T={T} at={K.Sa + 0.2} until={K.B - 0.3} texto="transfusión de hemolinfa" x={360} y={470} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Sa + 4.0} until={K.B - 0.3} x={890} y={935} lado="izq" texto="caminó más" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.B + 0.2} until={K.H - 0.3} texto="AL MICROSCOPIO · esquemático" x={400} y={470} tam={30} borde={KC.gold} mono />
-      <Etq T={T} at={K.B + 1.2} until={K.H - 0.3} x={60} y={1380} texto="conidióforos (bandas blancas)" tam={28} color={MC.banda} />
-      <Chip T={T} at={K.B + 2.6} until={K.H - 0.3} texto="≈ 10 m/s" x={300} y={600} tam={56} borde={KC.yellow} />
-      <Etq T={T} at={K.H + 1.2} until={K.M - 0.3} x={140} y={600} texto="halo de esporas en el vidrio" tam={30} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.M + 0.2} until={K.M + 2.2} anio="2022" quien="Univ. de Copenhague" revista="Naundrup y De Fine Licht · ISME J." x={440} y={700} />
-      <Etq T={T} at={K.M + 2.7} until={K.C - 0.3} x={30} y={900} texto="hembra muerta" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.M + 3.0} until={K.C - 0.3} x={690} y={860} lado="izq" texto="olor" tam={30} color={KC.violet} />
-      <Caja T={T} at={K.M + 4.4} until={K.C - 0.3} x={40} y={420} ancho={600} texto="73 % de los machos se infectaron (cadáveres de 25–30 h)" tam={28} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="la hora" x={200} y={470} tam={36} borde={KC.orange} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="el lugar" x={200} y={560} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="la pose" x={200} y={650} tam={36} borde={KC.mint} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.2} anio="2023" quien="Harvard" revista="Elya y de Bivort · eLife" x={540} y={400} />
+      <Etq T={T} at={K.E + 2.8} until={K.Sa - 0.3} x={560} y={548} texto="neuronas del reloj (DN1p)" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.E + 4.2} until={K.Sa - 0.3} texto="empieza ~2.5 h antes de morir" x={540} y={420} tam={30} borde={KC.blue} />
+      <Chip T={T} at={K.Sa + 0.2} until={K.B - 0.3} texto="transfusión de hemolinfa" x={540} y={440} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.Sa + 4.0} until={K.B - 0.3} x={1000} y={980} lado="izq" texto="caminó más" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.B + 0.2} until={K.H - 0.3} texto="AL MICROSCOPIO · esquemático" x={400} y={400} tam={30} borde={KC.gold} mono />
+      <Etq T={T} at={K.B + 1.2} until={K.H - 0.3} x={60} y={1415} texto="conidióforos (bandas blancas)" tam={28} color={MC.banda} />
+      <Chip T={T} at={K.B + 2.6} until={K.H - 0.3} texto="≈ 10 m/s" x={300} y={510} tam={56} borde={KC.yellow} />
+      <Etq T={T} at={K.H + 1.2} until={K.M - 0.3} x={110} y={560} texto="halo de esporas en el vidrio" tam={30} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.M + 0.2} until={K.M + 2.2} anio="2022" quien="Univ. de Copenhague" revista="Naundrup y De Fine Licht · ISME J." x={540} y={400} />
+      <Etq T={T} at={K.M + 2.7} until={K.C - 0.3} x={30} y={850} texto="hembra muerta" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.M + 3.0} until={K.C - 0.3} x={900} y={520} lado="izq" texto="olor" tam={32} color="#c9a8ff" />
+      <Caja T={T} at={K.M + 4.4} until={K.C - 0.3} x={60} y={330} ancho={600} texto="73 % de los machos se infectaron (cadáveres de 25–30 h)" tam={28} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto="la hora" x={210} y={480} tam={36} borde={KC.orange} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="el lugar" x={210} y={570} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto="la pose" x={210} y={660} tam={36} borde={KC.mint} />
 
       {/* barras de escala */}
       <BarraEscala T={T} at={K.G} until={K.Es} texto="esquemático" largo={160} />
@@ -398,7 +412,7 @@ function MoscaVentanaShot() {
       <BarraEscala T={T} at={K.Su} until={K.Po} texto="esquemático" largo={160} />
       <BarraEscala T={T} at={K.E} until={K.Sa} texto="esquemático" largo={160} />
       <BarraEscala T={T} at={K.Sa} until={K.B} texto="esquemático" largo={160} />
-      <BarraEscala T={T} at={K.B} until={K.H} texto="50 µm · esquemático" largo={100} x={640} />
+      <BarraEscala T={T} at={K.B} until={K.H} texto="50 µm · esquemático" largo={135} x={640} />
       <BarraEscala T={T} at={K.H} until={K.M} texto="esquemático" largo={160} />
       <BarraEscala T={T} at={K.M} until={K.C} texto="esquemático" largo={160} />
       <BarraEscala T={T} at={K.C} until={K.Ou} texto="esquemático" largo={160} />
