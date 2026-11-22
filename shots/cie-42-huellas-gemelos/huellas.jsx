@@ -59,7 +59,7 @@ function Huella({ x = 0, y = 0, s = 1, sx = 1, rot = 0, tipo = 'remolino', seed 
 }
 
 // Útero (esquema) con un bebé de pocos meses enroscado. mano = punto de la yema del dedo (para la lupa).
-const UTERO = { x: 540, y: 820 }, MANO_BEBE = [624, 852];   // la yema ya con el útero agrandado 1.2× (pase a mano cine)
+const UTERO = { x: 540, y: 820 }, MANO_BEBE = [630, 979];   // la yema ya con el útero agrandado 1.28× y bajado (vuelta de encuadre)
 function Utero({ T }) {
   const { x, y } = UTERO, lat = 1 + 0.015 * Math.sin(T * 4);
   return <g>
@@ -187,7 +187,7 @@ function HuellasGemelos() {
       {/* 2 · las huellas se forman antes de nacer: útero (esquema) y zoom a la yema del dedo */}
       <Escena T={T} a={K.Formacion} b={K.Presion} zoom={0.12} origen={`${MANO_BEBE[0]}px ${MANO_BEBE[1]}px`}>
         <FondoLunares color={KC.lilac} />
-        <Lienzo><g transform={`translate(0 ${(1 - sube(K.Formacion - 0.2, 0.6)) * 200})`}><g transform="translate(540 900) scale(1.2) translate(-540 -820)"><Utero T={T} /></g></g></Lienzo>
+        <Lienzo><g transform={`translate(0 ${(1 - sube(K.Formacion - 0.2, 0.6)) * 200})`}><g transform="translate(540 1030) scale(1.28) translate(-540 -820)"><Utero T={T} /></g></g></Lienzo>
         <Chip T={T} at={K.Formacion + 0.3} until={K.Formacion + 1.3} texto="antes de nacer" x={540} y={320} tam={44} borde={KC.pink} />
         <Chip T={T} at={K.Formacion + 1.5} until={K.Formacion + 2.9} texto="primeros meses del embarazo" x={540} y={320} tam={38} borde={KC.gold} />
       </Escena>
@@ -294,7 +294,7 @@ function HuellasGemelos() {
       {/* 9 · cierre: los mismos gemelos dejan huellas distintas en un vidrio */}
       <Escena T={T} a={K.Cierre} b={FIN}>
         <FondoLunares color={KC.pink} />
-        <Lienzo><g transform="translate(540 960) scale(1.4) translate(-410 -770)">
+        <Lienzo><g transform="translate(540 1050) scale(1.38) translate(-410 -800)">
           <Vidrio x={90} y={360} w={640} h={420} />
           <Huella id="c1" x={260} y={570} s={0.62 * kprog(T, K.Cierre + 0.7, K.Cierre + 1.1, kEase.rebote)} tipo="remolino" seed={3} fondo="rgba(255,255,255,.35)" tinta="#3a3f5c" borde={false} brillo={kprog(T, K.Cierre + 1.0, K.Cierre + 1.6)} />
           <Huella id="c2" x={560} y={570} s={0.62 * kprog(T, K.Cierre + 1.1, K.Cierre + 1.5, kEase.rebote)} tipo="remolino" seed={11} fondo="rgba(255,255,255,.35)" tinta="#3a3f5c" borde={false} brillo={kprog(T, K.Cierre + 1.4, K.Cierre + 2.0)} />

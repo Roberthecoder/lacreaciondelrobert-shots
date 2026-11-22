@@ -1,0 +1,1 @@
+- cie-42-huellas-gemelos: marcaba Formacion ARRIBA y Cierre ARRIBA; útero bajado y agrandado (1.2→1.28×, centro y≈1030) con la yema de la lupa recalculada, y vidrio+gemelos bajados (centro y≈1050, 1.38×); ahora «encuadre bien» y «sin láminas»
