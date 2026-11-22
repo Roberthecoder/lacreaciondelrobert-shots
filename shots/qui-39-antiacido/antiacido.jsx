@@ -246,9 +246,10 @@ function Antiacido() {
       <Escena T={T} a={K.Pr} b={K.O} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <text x={280} y={1030} textAnchor="middle" style={{ font:`400 470px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 280 850)`}>?</text>
-          <Pastilla x={130} y={1130} s={2.1} rot={Math.sin(T * 2) * 10} />
-          <CapsulaOmep x={410} y={1130} s={1.6} rot={-20 + Math.sin(T * 2.4) * 10} />
+          {/* detrás queda a media luz la escena anterior (ácido, CaCO₃ y CO₂): la pone cine.jsx */}
+          <text x={540} y={1075} textAnchor="middle" style={{ font:`400 470px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 900)`}>?</text>
+          <Pastilla x={290} y={1330} s={2.3} rot={Math.sin(T * 2) * 10} />
+          <CapsulaOmep x={790} y={1330} s={1.8} rot={-20 + Math.sin(T * 2.4) * 10} />
         </SvgCapa>
       </Escena>
       {/* 7 · antiácido (arriba) vs. omeprazol (abajo): cada mitad 1.3x */}
