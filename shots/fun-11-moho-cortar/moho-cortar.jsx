@@ -168,10 +168,10 @@ function FrutaMitad({ T, tipo, x, y, r = 260, p = 0, regla = 0 }) {
       const o = manz ? 1 - 0.75 * (dz / lim) : 1;
       return <circle key={i} cx={q.x} cy={q.y} r={9 * k} fill={MC.toxina} stroke={KC.ink} strokeWidth={3} opacity={o} />; })}
     {regla > 0 && <g opacity={regla}>
-      <line x1={x - r * 0.5} y1={y - r * 0.55} x2={x - r * 0.5 + lim * regla} y2={y - r * 0.55} stroke={KC.ink} strokeWidth={14} strokeLinecap="round" />
+      <line x1={x - r * 0.5} y1={y - r * 0.55} x2={x - r * 0.5 + lim * regla} y2={y - r * 0.55} stroke="#0b1020" strokeWidth={14} strokeLinecap="round" />
       <line x1={x - r * 0.5} y1={y - r * 0.55} x2={x - r * 0.5 + lim * regla} y2={y - r * 0.55} stroke={KC.yellow} strokeWidth={8} strokeLinecap="round" />
-      <text x={x - r * 0.5 + lim * 0.5} y={y - r * 0.55 - 22} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={kprog(regla, 0.6, 1)}>2 cm</text>
-      <line x1={x - r * 0.5 + lim} y1={y - r * 0.9} x2={x - r * 0.5 + lim} y2={y + r * 0.9} stroke={KC.ink} strokeWidth={6} strokeDasharray="16 12" opacity={kprog(regla, 0.8, 1)} />
+      <text x={x - r * 0.5 + lim * 0.5} y={y - r * 0.55 - 22} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#0b1020" opacity={kprog(regla, 0.6, 1)}>2 cm</text>
+      <line x1={x - r * 0.5 + lim} y1={y - r * 0.9} x2={x - r * 0.5 + lim} y2={y + r * 0.9} stroke="#0b1020" strokeWidth={6} strokeDasharray="16 12" opacity={kprog(regla, 0.8, 1)} />
     </g>}
   </g>;
 }
@@ -202,13 +202,19 @@ function QuesoGrande({ T, x, y, caja = 0, corte = 0, hilos = 1 }) {
   </g>;
 }
 
+// Segunda vuelta del modo cine: agranda un dibujo k veces llevando el punto (cx, cy) a (tx, ty).
+const ZM = (k, cx, cy, tx, ty, c) => <g transform={`translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`}>{c}</g>;
+// Mesa de madera oscura que llega hasta abajo del cuadro.
+const MesaMC = () => <g><rect x={-140} y={1400} width={KW + 280} height={760} fill="#4d3120" /><rect x={-140} y={1400} width={KW + 280} height={10} fill="#8a5c3a" />
+  {[1500, 1640, 1800].map((yy, i) => <path key={i} d={`M -140 ${yy} Q 300 ${yy + 14 - i * 9} 620 ${yy + 3} T 1220 ${yy + 8}`} stroke="#3b2516" strokeWidth={5} fill="none" />)}</g>;
+
 function MohoCortarShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, R: CUES.Raices, X: CUES.Toxinas, H: CUES.Hilos, P: CUES.Pregunta, Ti: CUES.Tira, D: CUES.Debajo, C: CUES.Corta, E: CUES.Estudio, M: CUES.Manzana, J: CUES.Jitomate, O: CUES.Oler, Ci: CUES.Cierre, Ou: CUES.Outro };
   const FIN = K.Ou + 4;
   // gancho: el cuchillo raspa la mancha
   const rasp = kprog(T, K.G + 0.25, K.G + 1.3, kEase.suave);
-  const knifeX = klerp(980, 420, kprog(T, K.G + 0.1, K.G + 0.6, kEase.sale)) + Math.sin(rasp * Math.PI * 4) * 70 * (rasp < 1 ? 1 : 0);
+  const knifeX = klerp(1240, 590, kprog(T, K.G + 0.1, K.G + 0.6, kEase.sale)) + Math.sin(rasp * Math.PI * 4) * 100 * (rasp < 1 ? 1 : 0);
   const knifeOut = kprog(T, K.G + 1.4, K.G + 1.9, kEase.suave);
   const TIRA = ['pan', 'mermelada', 'yogur', 'jitomate', 'quesocrema'];
   const CORTA = ['quesoduro', 'zanahoria', 'pimiento'];
@@ -222,16 +228,16 @@ function MohoCortarShot() {
       <Escena T={T} a={K.G} b={K.R} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <rect x={-20} y={1190} width={KW + 40} height={300} fill="#a8693a" stroke={KC.ink} strokeWidth={8} />
-          <PanFrente T={T} x={400} y={830} s={0.78} mancha={1 - rasp} raspado={rasp} rx={kprog(T, K.G + 2.6, K.G + 3.6)} />
-          <g opacity={1 - knifeOut}><Cuchillo x={knifeX} y={kprog(T, K.G + 0.1, K.G + 0.6) > 0 ? 690 - knifeOut * 200 : 690} ang={-8} s={0.9} /></g>
-          <Sello T={T} at={K.G + 3.4} x={250} y={560} texto="NO" color={KC.red} r={100} />
+          <MesaMC />
+          <PanFrente T={T} x={540} y={900} s={1.15} mancha={1 - rasp} raspado={rasp} rx={kprog(T, K.G + 2.6, K.G + 3.6)} />
+          <g opacity={1 - knifeOut}><Cuchillo x={knifeX} y={kprog(T, K.G + 0.1, K.G + 0.6) > 0 ? 705 - knifeOut * 260 : 705} ang={-8} s={1.3} /></g>
+          <Sello T={T} at={K.G + 3.4} x={270} y={470} texto="NO" color={KC.red} r={130} />
         </>)}
       </Escena>
       {/* 1 · esporas arriba, hilos que se meten (corte de lado) */}
       <Escena T={T} a={K.R} b={K.X} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<PanCorte T={T} g={kprog(T, K.R + 1.6, K.R + 4.2)} rx={kprog(T, K.R + 1.2, K.R + 1.9)} esporas={kprog(T, K.R + 0.2, K.R + 1.0, kEase.rebote)} />)}
+        {fsvg(ZM(1.5, 540, 900, 540, 960, <PanCorte T={T} g={kprog(T, K.R + 1.6, K.R + 4.2)} rx={kprog(T, K.R + 1.2, K.R + 1.9)} esporas={kprog(T, K.R + 0.2, K.R + 1.0, kEase.rebote)} />))}
       </Escena>
       {/* 2 · de cerca: algunos mohos sueltan micotoxinas */}
       <Escena T={T} a={K.X} b={K.H} zoom={0.06}>
@@ -249,15 +255,15 @@ function MohoCortarShot() {
       {/* 3 · están en los hilos y alrededor; a veces, en toda la comida */}
       <Escena T={T} a={K.H} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<PanCorte T={T} g={1} rx={1} toxinas={{ cerca: kprog(T, K.H + 0.2, K.H + 1.6), toda: kprog(T, K.H + 2.0, K.H + 3.6) }} />)}
+        {fsvg(ZM(1.5, 540, 900, 540, 960, <PanCorte T={T} g={1} rx={1} toxinas={{ cerca: kprog(T, K.H + 0.2, K.H + 1.6), toda: kprog(T, K.H + 2.0, K.H + 3.6) }} />))}
       </Escena>
       {/* 4 · ¿cuándo se corta y cuándo se tira? */}
       <Escena T={T} a={K.P} b={K.Ti} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Interrogacion T={T} x={270} y={1000} />
-          <Bote x={150} y={1100} s={0.6} tapa={0.5 + 0.5 * Math.sin(T * 5)} />
-          <Cuchillo x={330} y={1150} ang={-20 + Math.sin(T * 4) * 6} s={0.5} />
+          <Interrogacion T={T} x={540} y={900} tam={620} />
+          <Bote x={230} y={1180} s={1.05} tapa={0.5 + 0.5 * Math.sin(T * 5)} />
+          <Cuchillo x={600} y={1260} ang={-20 + Math.sin(T * 4) * 6} s={0.95} />
         </>)}
       </Escena>
       {/* 5–6 · SE TIRA: blando, húmedo o poroso; el moho llega por debajo y puede traer bacterias */}
@@ -265,22 +271,22 @@ function MohoCortarShot() {
         <FondoLunares color={KC.pink} />
         {fsvg(<>
           <g opacity={1 - kprog(T, K.D - 0.2, K.D + 0.3)}>
-            <Bote x={540} y={1100} s={0.6} tapa={0.6 * kprog(T, K.Ti + 0.6, K.Ti + 1.0)} />
+            <Bote x={540} y={1345} s={1} tapa={0.6 * kprog(T, K.Ti + 0.6, K.Ti + 1.0)} />
             {TIRA.map((t, i) => { const k = kprog(T, tiraAt(i), tiraAt(i) + 0.4, kEase.rebote); if (k <= 0) return null;
-              const xx = 140 + i * 200, yy = i % 2 ? 800 : 700;
-              return <g key={t}><Alimento tipo={t} x={xx} y={yy} s={0.9 * k} seed={i} />
-                <text x={xx} y={yy + 120} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink} opacity={k}>{NOMBRES[t]}</text></g>; })}
+              const xx = [200, 540, 880, 330, 750][i], yy = i < 3 ? 650 : 960;
+              return <g key={t}><Alimento tipo={t} x={xx} y={yy} s={1.5 * k} seed={i} />
+                <text x={xx} y={yy + 165} textAnchor="middle" style={{ font:`700 34px ${KF.mono}` }} fill={KC.ink} opacity={k}>{NOMBRES[t]}</text></g>; })}
           </g>
           {T > K.D - 0.3 && <g opacity={kprog(T, K.D - 0.3, K.D + 0.2)}>
             {/* jitomate y yogur por dentro: hilos debajo de la superficie */}
-            <g transform="translate(300 900)">
+            <g transform="translate(370 720) scale(1.4)">
               <ellipse cx={0} cy={0} rx={190} ry={170} fill={MC.jito} stroke={KC.ink} strokeWidth={9} />
               <ellipse cx={0} cy={6} rx={168} ry={148} fill="#f2635a" />
               <ellipse cx={0} cy={6} rx={168} ry={148} fill={MC.rayos} opacity=".55" />
               <Mancha x={-20} y={-150} r={50} seed={9} />
               <RedHifas T={T} x={-20} y={-138} g={kprog(T, K.D, K.D + 2.2)} seed={6} n={220} escala={0.075} color={MC.hifa} ancho={5} />
             </g>
-            <g transform="translate(790 900)">
+            <g transform="translate(710 1190) scale(1.4)">
               <path d="M -150 -150 L 150 -150 L 112 170 L -112 170 Z" fill="#fff" stroke={KC.ink} strokeWidth={9} strokeLinejoin="round" />
               <path d="M -138 -120 L 138 -120 L 106 156 L -106 156 Z" fill="#fbf6ea" />
               <path d="M -138 -120 L 138 -120 L 106 156 L -106 156 Z" fill={MC.rayos} opacity=".5" />
@@ -297,14 +303,15 @@ function MohoCortarShot() {
         {fsvg(<>
           <g opacity={1 - kprog(T, K.C + 4.0, K.C + 4.5)}>
             {CORTA.map((t, i) => { const k = kprog(T, cortaAt(i), cortaAt(i) + 0.4, kEase.rebote); if (k <= 0) return null;
-              const xx = 220 + i * 320, yy = 880;
-              return <g key={t}><Alimento tipo={t} x={xx} y={yy} s={1.25 * k} seed={i + 5} />
-                <text x={xx} y={yy + 160} textAnchor="middle" style={{ font:`700 32px ${KF.mono}` }} fill={KC.ink} opacity={k}>{NOMBRES[t]}</text></g>; })}
+              const xx = [330, 800, 330][i], yy = [730, 930, 1190][i];
+              return <g key={t}><Alimento tipo={t} x={xx} y={yy} s={2 * k} seed={i + 5} />
+                <text x={xx} y={yy + [205, 250, 235][i]} textAnchor="middle" style={{ font:`700 36px ${KF.mono}` }} fill={KC.ink} opacity={k}>{NOMBRES[t]}</text></g>; })}
           </g>
           {T > K.C + 4.0 && <g opacity={kprog(T, K.C + 4.0, K.C + 4.5)}>
+            {ZM(1.6, 540, 940, 540, 980, <>
             <QuesoGrande T={T} x={540} y={940} caja={cajaQ} corte={corteQ} />
             {cuchQ > 0 && <Cuchillo x={klerp(1100, 470, cuchQ)} y={klerp(700, 880, cuchQ)} ang={-30 + cuchQ * 20} s={0.8} />}
-            
+            </>)}
           </g>}
         </>)}
       </Escena>
@@ -312,88 +319,88 @@ function MohoCortarShot() {
       <Escena T={T} a={K.E} b={K.M} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <g opacity={kprog(T, K.E + 1.2, K.E + 1.5)} transform={`translate(0 ${(1 - kprog(T, K.E + 1.2, K.E + 1.8, kEase.sale)) * 300})`}>
-            <g transform="translate(280 1010) scale(0.5) translate(-280 -1010)"><FrutaMitad T={T} tipo="manzana" x={280} y={1010} r={260} /></g>
-            <g transform="translate(800 1010) scale(0.5) translate(-800 -1010)"><FrutaMitad T={T} tipo="jitomate" x={800} y={1010} r={260} /></g>
+          <g opacity={kprog(T, K.E + 0.15, K.E + 0.75)} transform={`translate(0 ${(1 - kprog(T, K.E + 0.15, K.E + 0.9, kEase.sale)) * 160})`}>
+            <g transform="translate(290 1020) scale(0.78) translate(-280 -1010)"><FrutaMitad T={T} tipo="manzana" x={280} y={1010} r={260} /></g>
+            <g transform="translate(800 1020) scale(0.78) translate(-800 -1010)"><FrutaMitad T={T} tipo="jitomate" x={800} y={1010} r={260} /></g>
           </g>
         </>)}
       </Escena>
       {/* 9 · manzana: a más de 2 cm de la zona con moho, ya no aparecía */}
       <Escena T={T} a={K.M} b={K.J} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<FrutaMitad T={T} tipo="manzana" x={470} y={900} r={250} p={kprog(T, K.M + 0.3, K.M + 2.2)} regla={kprog(T, K.M + 2.2, K.M + 3.0, kEase.sale)} />)}
+        {fsvg(ZM(1.6, 470, 900, 570, 950, <FrutaMitad T={T} tipo="manzana" x={470} y={900} r={250} p={kprog(T, K.M + 0.3, K.M + 2.2)} regla={kprog(T, K.M + 2.2, K.M + 3.0, kEase.sale)} />))}
       </Escena>
       {/* 10 · jitomate: llegó a todo el fruto */}
       <Escena T={T} a={K.J} b={K.O} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<FrutaMitad T={T} tipo="jitomate" x={470} y={900} r={250} p={kprog(T, K.J + 0.2, K.J + 2.4)} />)}
+        {fsvg(ZM(1.6, 470, 900, 570, 950, <FrutaMitad T={T} tipo="jitomate" x={470} y={900} r={250} p={kprog(T, K.J + 0.2, K.J + 2.4)} />))}
       </Escena>
       {/* 11 · no lo huelas */}
       <Escena T={T} a={K.O} b={K.Ci} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <rect x={-20} y={1190} width={KW + 40} height={300} fill="#a8693a" stroke={KC.ink} strokeWidth={8} />
-          <PanFrente T={T} x={300} y={860} s={0.62} mancha={1} />
+          <MesaMC />
+          <PanFrente T={T} x={540} y={900} s={1.15} mancha={1} />
           {Array.from({ length: 36 }, (_, i) => { const t0 = K.O + 0.3 + (i % 12) * 0.08, u = T - t0; if (u < 0) return null; const a = -Math.PI / 2 + (((i * 37) % 100) / 100 - 0.5) * 2.2, v = 60 + (i % 7) * 22;
-            return <circle key={i} cx={340 + Math.cos(a) * v * u * 1.4} cy={650 + Math.sin(a) * v * u - 20 * u} r={5} fill={i % 2 ? MC.moho2 : MC.moho} opacity={Math.max(0, 1 - u / 3.2)} />; })}
-          <Sello T={T} at={K.O + 1.4} x={300} y={570} texto="NO" color={KC.red} r={90} />
+            return <circle key={i} cx={609 + Math.cos(a) * v * u * 2.4} cy={700 + Math.sin(a) * v * u * 1.7 - 34 * u} r={9} fill={i % 2 ? MC.moho2 : MC.moho} opacity={Math.max(0, 1 - u / 3.2)} />; })}
+          <Sello T={T} at={K.O + 1.4} x={270} y={470} texto="NO" color={KC.red} r={130} />
         </>)}
       </Escena>
       {/* 12 · cierre: la misma rebanada y el mismo cuchillo; el pan al bote, el queso duro con margen */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <rect x={-20} y={1190} width={KW + 40} height={300} fill="#a8693a" stroke={KC.ink} strokeWidth={8} />
+          <MesaMC />
           {(() => { const va = kprog(T, K.Ci + 1.4, K.Ci + 2.4, kEase.suave);
-            return <g opacity={1 - kprog(T, K.Ci + 2.2, K.Ci + 2.5)}><PanFrente T={T} x={klerp(400, 230, va)} y={klerp(830, 1060, va)} s={klerp(0.78, 0.2, va)} mancha={1} rx={kprog(T, K.Ci, K.Ci + 0.8)} /></g>; })()}
-          <Bote x={230} y={1100} s={0.7} tapa={kprog(T, K.Ci + 1.0, K.Ci + 1.4) * (1 - kprog(T, K.Ci + 2.6, K.Ci + 3.0))} />
-          {T > K.Ci + 2.4 && <g opacity={kprog(T, K.Ci + 2.4, K.Ci + 2.9)} transform="translate(700 940) scale(0.62) translate(-540 -940)"><QuesoGrande T={T} x={540} y={940} caja={1} corte={1} /></g>}
-          <g opacity={1 - kprog(T, K.Ci + 1.2, K.Ci + 1.6)}><Cuchillo x={600} y={690} ang={-8} s={0.9} /></g>
+            return <g opacity={1 - kprog(T, K.Ci + 2.2, K.Ci + 2.5)}><PanFrente T={T} x={klerp(540, 178, va)} y={klerp(900, 1190, va)} s={klerp(1.15, 0.26, va)} mancha={1} rx={kprog(T, K.Ci, K.Ci + 0.8)} /></g>; })()}
+          <Bote x={178} y={1258} s={1.15} tapa={kprog(T, K.Ci + 1.0, K.Ci + 1.4) * (1 - kprog(T, K.Ci + 2.6, K.Ci + 3.0))} />
+          {T > K.Ci + 2.4 && <g opacity={kprog(T, K.Ci + 2.4, K.Ci + 2.9)} transform="translate(692 1188) scale(1.3) translate(-540 -940)"><QuesoGrande T={T} x={540} y={940} caja={1} corte={1} /></g>}
+          <g opacity={1 - kprog(T, K.Ci + 1.2, K.Ci + 1.6)}><Cuchillo x={590} y={705} ang={-8} s={1.3} /></g>
         </>)}
       </Escena>
 
       {/* textos */}
-      <Chip T={T} at={K.G + 1.4} until={K.G + 3.3} texto="¿ya quedó?" x={300} y={470} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.R + 0.6} until={K.X - 0.3} x={40} y={575} texto="esporas = el color que ves" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.R + 2.0} until={K.X - 0.3} x={600} y={1070} texto="hifas: los «hilos»" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.R + 2.6} until={K.X - 0.3} texto="esquemático, sin proporción" x={360} y={470} tam={28} borde={KC.ink} mono />
+      <Chip T={T} at={K.G + 1.4} until={K.G + 3.3} texto="¿ya quedó?" x={540} y={262} tam={40} borde={KC.ink} />
+      <Etq T={T} at={K.R + 0.6} until={K.X - 0.3} x={260} y={450} texto="esporas = el color que ves" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.R + 2.0} until={K.X - 0.3} x={610} y={1275} texto="hifas: los «hilos»" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.R + 2.6} until={K.X - 0.3} texto="esquemático, sin proporción" x={540} y={1450} tam={28} borde={KC.ink} mono />
       <Etq T={T} at={K.X + 1.6} until={K.H - 0.3} x={60} y={560} texto="micotoxinas" tam={36} color={MC.toxina} />
       <Chip T={T} at={K.X + 2.2} until={K.H - 0.3} texto="solo algunos mohos" x={400} y={470} tam={34} borde={MC.toxina} />
       <Chip T={T} at={K.X + 0.6} until={K.H - 0.3} texto="esquemático, no a escala" x={540} y={1440} tam={26} borde={KC.texto} mono />
-      <Chip T={T} at={K.H + 0.4} until={K.H + 1.9} texto="en los hilos y alrededor" x={400} y={480} tam={34} borde={MC.toxina} />
-      <Chip T={T} at={K.H + 2.1} until={K.P - 0.3} texto="a veces: en toda la comida" x={400} y={480} tam={34} borde={MC.toxina} />
-      <Chip T={T} at={K.P + 0.3} until={K.Ti - 0.3} texto="¿se corta o se tira?" x={290} y={470} tam={38} borde={KC.yellow} />
-      <Chip T={T} at={K.Ti + 0.2} until={K.D - 0.3} texto="SE TIRA: blando, húmedo o poroso" x={370} y={470} tam={32} borde={KC.red} />
-      <Etq T={T} at={K.D + 0.4} until={K.C - 0.3} x={60} y={640} texto="hilos bajo la superficie" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.D + 1.3} until={K.C - 0.3} texto="+ bacterias" x={790} y={1130} tam={30} borde={KC.lilac} />
-      <Chip T={T} at={K.D + 1.3} until={K.C - 0.3} texto="esquemático, no a escala" x={540} y={1440} tam={26} borde={KC.texto} mono />
-      <Chip T={T} at={K.C + 0.2} until={K.C + 4.3} texto="SE CORTA: duro y mancha chica" x={370} y={470} tam={32} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 4.5} until={K.E - 0.3} texto="al menos 2.5 cm (1 pulgada)" x={370} y={470} tam={32} borde={KC.leaf} />
-      <Chip T={T} at={K.C + 5.3} until={K.E - 0.3} texto="alrededor y por debajo" x={370} y={565} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.C + 5.9} until={K.E - 0.3} texto="el cuchillo no toca el moho" x={540} y={1440} tam={28} borde={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.M - 0.3} anio="2001" quien="Universidad Técnica de Múnich" revista="Rychlik y Schieberle · Eur. Food Res. Technol." y={600} />
-      <Etq T={T} at={K.E + 2.4} until={K.M - 0.3} x={60} y={845} texto="patulina: una toxina de moho" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.M + 0.8} until={K.J - 0.3} x={60} y={560} texto="Penicillium expansum" it tam={32} color={KC.ink} />
-      <Etq T={T} at={K.M + 1.2} until={K.J - 0.3} x={60} y={610} texto="zona con moho" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.M + 2.6} until={K.J - 0.3} texto="a más de 2 cm: no detectable" x={460} y={1440} tam={30} borde={KC.ink} />
-      <Etq T={T} at={K.M + 1.0} until={K.J - 0.3} x={560} y={1000} texto="patulina" tam={30} color={MC.toxina} />
-      <Chip T={T} at={K.J + 1.4} until={K.O - 0.3} texto="jitomate: en todo el fruto" x={380} y={470} tam={36} borde={MC.toxina} />
-      <Chip T={T} at={K.O + 1.6} until={K.Ci - 0.3} texto="no lo huelas" x={300} y={400} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="pan: se tira" x={250} y={470} tam={38} borde={KC.red} />
-      <Chip T={T} at={K.Ci + 2.6} until={K.Ou} texto="queso duro: con margen" x={680} y={760} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.H + 0.4} until={K.H + 1.9} texto="en los hilos y alrededor" x={540} y={400} tam={34} borde={MC.toxina} />
+      <Chip T={T} at={K.H + 2.1} until={K.P - 0.3} texto="a veces: en toda la comida" x={540} y={400} tam={34} borde={MC.toxina} />
+      <Chip T={T} at={K.P + 0.3} until={K.Ti - 0.3} texto="¿se corta o se tira?" x={540} y={380} tam={38} borde={KC.yellow} />
+      <Chip T={T} at={K.Ti + 0.2} until={K.D - 0.3} texto="SE TIRA: blando, húmedo o poroso" x={540} y={390} tam={32} borde={KC.red} />
+      <Etq T={T} at={K.D + 0.4} until={K.C - 0.3} x={500} y={450} texto="hilos bajo la superficie" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.D + 1.3} until={K.C - 0.3} texto="+ bacterias" x={250} y={1250} tam={30} borde={KC.lilac} />
+      <Chip T={T} at={K.D + 1.3} until={K.C - 0.3} texto="esquemático, no a escala" x={235} y={1440} tam={24} borde={KC.texto} mono />
+      <Chip T={T} at={K.C + 0.2} until={K.C + 4.3} texto="SE CORTA: duro y mancha chica" x={540} y={390} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 4.5} until={K.E - 0.3} texto="al menos 2.5 cm (1 pulgada)" x={540} y={390} tam={32} borde={KC.leaf} />
+      <Chip T={T} at={K.C + 5.3} until={K.E - 0.3} texto="alrededor y por debajo" x={540} y={485} tam={30} borde={KC.ink} />
+      <Chip T={T} at={K.C + 5.9} until={K.E - 0.3} texto="el cuchillo no toca el moho" x={540} y={1410} tam={28} borde={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.M - 0.3} anio="2001" quien="Universidad Técnica de Múnich" revista="Rychlik y Schieberle · Eur. Food Res. Technol." y={440} />
+      <Etq T={T} at={K.E + 2.4} until={K.M - 0.3} x={60} y={690} texto="patulina: una toxina de moho" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.M + 0.8} until={K.J - 0.3} x={60} y={420} texto="Penicillium expansum" it tam={32} color={KC.ink} />
+      <Etq T={T} at={K.M + 1.2} until={K.J - 0.3} x={60} y={470} texto="zona con moho" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.M + 2.6} until={K.J - 0.3} texto="a más de 2 cm: no detectable" x={540} y={1465} tam={30} borde={KC.ink} />
+      <Etq T={T} at={K.M + 1.0} until={K.J - 0.3} x={330} y={1200} texto="patulina" tam={30} color={MC.toxina} />
+      <Chip T={T} at={K.J + 1.4} until={K.O - 0.3} texto="jitomate: en todo el fruto" x={540} y={400} tam={36} borde={MC.toxina} />
+      <Chip T={T} at={K.O + 1.6} until={K.Ci - 0.3} texto="no lo huelas" x={540} y={262} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Ci + 0.6} until={K.Ou} texto="pan: se tira" x={215} y={950} tam={38} borde={KC.red} />
+      <Chip T={T} at={K.Ci + 2.6} until={K.Ou} texto="queso duro: con margen" x={690} y={900} tam={32} borde={KC.leaf} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.R} texto="5 cm" largo={180} />
-      <BarraEscala T={T} at={K.R} until={K.X} texto="1 cm" largo={110} />
-      <BarraEscala T={T} at={K.H} until={K.P} texto="1 cm" largo={110} />
-      <BarraEscala T={T} at={K.Ti} until={K.D} texto="10 cm" largo={180} />
-      <BarraEscala T={T} at={K.D} until={K.C} texto="5 cm" largo={190} />
-      <BarraEscala T={T} at={K.C} until={K.C + 4.1} texto="10 cm" largo={160} />
-      <BarraEscala T={T} at={K.C + 4.1} until={K.E} texto="2.5 cm" largo={130} />
-      <BarraEscala T={T} at={K.E} until={K.M} texto="5 cm" largo={160} />
-      <BarraEscala T={T} at={K.M} until={K.O} texto="2 cm" largo={145} />
-      <BarraEscala T={T} at={K.O} until={K.Ci} texto="5 cm" largo={150} />
-      <BarraEscala T={T} at={K.Ci} until={K.Ou} texto="5 cm" largo={180} />
+      <BarraEscala T={T} at={K.G} until={K.R} texto="5 cm" largo={265} />
+      <BarraEscala T={T} at={K.R} until={K.X} texto="1 cm" largo={165} />
+      <BarraEscala T={T} at={K.H} until={K.P} texto="1 cm" largo={165} />
+      <BarraEscala T={T} at={K.Ti} until={K.D} texto="10 cm" largo={300} />
+      <BarraEscala T={T} at={K.D} until={K.C} texto="5 cm" largo={266} />
+      <BarraEscala T={T} at={K.C} until={K.C + 4.1} texto="10 cm" largo={256} />
+      <BarraEscala T={T} at={K.C + 4.1} until={K.E} texto="2.5 cm" largo={208} />
+      <BarraEscala T={T} at={K.E} until={K.M} texto="5 cm" largo={250} />
+      <BarraEscala T={T} at={K.M} until={K.O} texto="2 cm" largo={232} />
+      <BarraEscala T={T} at={K.O} until={K.Ci} texto="5 cm" largo={265} />
+      <BarraEscala T={T} at={K.Ci} until={K.Ou} texto="5 cm" largo={265} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.R - 0.1} texto="Esa mancha es *solo lo que se ve.*" />

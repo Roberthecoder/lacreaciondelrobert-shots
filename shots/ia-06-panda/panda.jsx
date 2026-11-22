@@ -125,63 +125,63 @@ function Panda() {
       <Escena T={T} a={K.G} b={K.Ru}>
         <FondoLunares color={K.A <= T ? KC.mint : KC.yellow} />
         {svg(<>
-          <FotoPanda T={T} x={400} y={880} s={0.9} />
-          {T < K.A && <g transform={`translate(870 965) scale(${kprog(T, K.G + 1.2, K.G + 1.7, kEase.rebote)})`}>
+          <FotoPanda T={T} x={540} y={960} s={1.22} />
+          {T < K.A && <g transform={`translate(790 540) scale(${kprog(T, K.G + 1.2, K.G + 1.7, kEase.rebote)})`}>
             <circle cx={-170} cy={150} r={16} fill="#fff" stroke={KC.ink} strokeWidth={5} /><circle cx={-140} cy={110} r={24} fill="#fff" stroke={KC.ink} strokeWidth={5} />
             <ellipse cx={0} cy={0} rx={150} ry={130} fill="#fff" stroke={KC.ink} strokeWidth={7} />
             <GibonDib x={0} y={20} s={0.62} T={T} />
           </g>}
           {/* escaneo de la IA */}
-          <rect x={103} y={583 + ((T * 260) % 594)} width={594} height={8} fill={KC.cyan} opacity={T < K.Ru ? 0.7 : 0} />
+          <rect x={174} y={594 + ((T * 320) % 732)} width={732} height={10} fill={KC.cyan} opacity={T < K.Ru ? 0.7 : 0} />
         </>)}
       </Escena>
       {/* 3 · el ruido: foto + 0.007 × ruido = foto */}
       <Escena T={T} a={K.Ru} b={K.P}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <FotoPanda T={T} x={240} y={830} s={0.42} />
-          <text x={520} y={860} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Ru + 0.3, K.Ru + 0.6)}>+</text>
-          {T > K.Ru + 0.4 && <Ruido T={T} x={810} y={830} lado={270} o={kprog(T, K.Ru + 0.4, K.Ru + 0.9)} />}
-          <text x={810} y={665} textAnchor="middle" style={{ font:`700 44px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Ru + 0.6, K.Ru + 1.0)}>0.007 ×</text>
-          {T > K.Ru + 1.6 && <text x={330} y={1120} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={KC.ink}>=</text>}
-          {T > K.Ru + 1.7 && <g opacity={kprog(T, K.Ru + 1.7, K.Ru + 2.2)}><FotoPanda T={T} x={570} y={1085} s={0.36} tinte={1} /></g>}
+          <FotoPanda T={T} x={255} y={720} s={0.62} />
+          <text x={540} y={765} textAnchor="middle" style={{ font:`400 140px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Ru + 0.3, K.Ru + 0.6)}>+</text>
+          {T > K.Ru + 0.4 && <Ruido T={T} x={800} y={720} lado={350} o={kprog(T, K.Ru + 0.4, K.Ru + 0.9)} />}
+          <text x={800} y={500} textAnchor="middle" style={{ font:`700 56px ${KF.mono}` }} fill={KC.ink} opacity={kprog(T, K.Ru + 0.6, K.Ru + 1.0)}>0.007 ×</text>
+          {T > K.Ru + 1.6 && <text x={270} y={1245} textAnchor="middle" style={{ font:`400 140px ${KF.titulo}` }} fill={KC.ink}>=</text>}
+          {T > K.Ru + 1.7 && <g opacity={kprog(T, K.Ru + 1.7, K.Ru + 2.2)}><FotoPanda T={T} x={640} y={1200} s={0.72} tinte={1} /></g>}
         </>)}
       </Escena>
       {/* 4 · pregunta */}
       <Escena T={T} a={K.P} b={K.S} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
-        {svg(<text x={300} y={1080} textAnchor="middle" style={{ font:`400 520px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 300 900)`}>?</text>)}
+        {svg(<text x={540} y={1150} textAnchor="middle" style={{ font:`400 620px ${KF.titulo}` }} fill={KC.yellow} stroke={KC.ink} strokeWidth={14} transform={`rotate(${Math.sin(T * 3) * 6} 540 950)`}>?</text>)}
       </Escena>
       {/* 5 · por dentro: suma de números */}
       <Escena T={T} a={K.S} b={K.E}>
         <FondoCircuito T={T} />
         {svg(<>
-          {Array.from({ length: 60 }, (_, i) => { const r = krng(40 + i), x0 = 90 + r() * 860, y0 = 560 + r() * 230, at = K.S + 0.2 + r() * 1.0;
-            return <text key={i} x={x0} y={y0} style={{ font:`700 ${26 + r() * 12}px ${KF.mono}` }} fill={i % 3 ? KC.cyan : KC.mint} opacity={kprog(T, at, at + 0.3) * 0.85}>{(r() * 0.99).toFixed(2)}</text>; })}
-          <Aguja x={540} y={1180} v={vAguja} r={330} />
+          {Array.from({ length: 60 }, (_, i) => { const r = krng(40 + i), x0 = 70 + r() * 880, y0 = 590 + r() * 270, at = K.S + 0.2 + r() * 1.0;
+            return <text key={i} x={x0} y={y0} style={{ font:`700 ${32 + r() * 14}px ${KF.mono}` }} fill={i % 3 ? KC.cyan : KC.mint} opacity={kprog(T, at, at + 0.3) * 0.85}>{(r() * 0.99).toFixed(2)}</text>; })}
+          <Aguja x={540} y={1330} v={vAguja} r={395} />
           {Array.from({ length: empujes }, (_, i) => { const t0 = K.S + 1.4 + i * 0.25, u = kprog(T, t0 - 0.4, t0);
             if (T < t0 - 0.4 || T > t0 + 0.15) return null;
-            return <path key={i} d="M 0 0 l 46 0 m -16 -14 l 16 14 l -16 14" transform={`translate(${klerp(120, 470, u)} ${980 - (i % 5) * 26})`} stroke={KC.yellow} strokeWidth={8} fill="none" strokeLinecap="round" />; })}
+            return <path key={i} d="M 0 0 l 46 0 m -16 -14 l 16 14 l -16 14" transform={`translate(${klerp(120, 470, u)} ${1110 - (i % 5) * 30}) scale(1.4)`} stroke={KC.yellow} strokeWidth={8} fill="none" strokeLinecap="round" />; })}
         </>)}
       </Escena>
       {/* 6 · el estudio */}
       <Escena T={T} a={K.E} b={K.Al}>
         <FondoLunares color={KC.yellow} />
-        {svg(<g opacity={0.9}><FotoPanda T={T} x={230} y={1080} s={0.3} /><Ruido T={T} x={540} y={1080} lado={170} /><FotoPanda T={T} x={850} y={1080} s={0.3} /></g>)}
+        {svg(<g opacity={0.9}><FotoPanda T={T} x={210} y={1160} s={0.4} /><Ruido T={T} x={540} y={1160} lado={225} /><FotoPanda T={T} x={870} y={1160} s={0.4} /></g>)}
       </Escena>
       {/* 7 · el alto con estampas */}
       <Escena T={T} a={K.Al} b={K.Au}>
         <FondoLunares color={KC.pink} />
-        {svg(<SenalAlto T={T} x={540} y={820} s={1.1} pegaDesde={K.Al + 1.6} />)}
+        {svg(<SenalAlto T={T} x={540} y={910} s={1.7} pegaDesde={K.Al + 1.6} />)}
       </Escena>
       {/* 8 · desde el auto */}
       <Escena T={T} a={K.Au} b={K.D} zoom={0}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#2d4257 0%, #3c4857 45%, #243d2c 45%, #1f3627 100%)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0c1524 0%, #18243a 45%, #12281b 45%, #0d1f15 100%)' }}></div>
         {svg(<>
-          <polygon points={`540,864 ${540 - 40},864 -200,1920 1280,1920 ${540 + 40},864`} fill="#3d4250" />
+          <polygon points={`540,864 ${540 - 40},864 -200,1920 1280,1920 ${540 + 40},864`} fill="#262a36" />
           {Array.from({ length: 6 }, (_, i) => { const u = ((T * 0.8 + i / 6) % 1), yy = 870 + Math.pow(u, 2.2) * 1050, w = 6 + u * 40, h = 20 + u * 140; return <rect key={i} x={540 - w / 2} y={yy} width={w} height={h} fill={KC.yellow} />; })}
-          <g transform={`translate(${klerp(640, 880, acerca)} ${klerp(780, 660, acerca)})`}><SenalAlto T={T} x={0} y={0} s={klerp(0.18, 0.62, acerca)} pegaDesde={-99} /></g>
-          {T > K.Au + 1.0 && (() => { const sx = klerp(640, 880, acerca), sy = klerp(780, 660, acerca), w = klerp(0.18, 0.62, acerca) * 520, parp = Math.sin(T * 10) > -0.6;
+          <g transform={`translate(${klerp(640, 765, acerca)} ${klerp(780, 640, acerca)})`}><SenalAlto T={T} x={0} y={0} s={klerp(0.22, 0.8, acerca)} pegaDesde={-99} /></g>
+          {T > K.Au + 1.0 && (() => { const sx = klerp(640, 765, acerca), sy = klerp(780, 640, acerca), w = klerp(0.22, 0.8, acerca) * 520, parp = Math.sin(T * 10) > -0.6;
             return <g opacity={parp ? 1 : 0.4}><rect x={sx - w / 2 - 10} y={sy - w / 2 - 10} width={w + 20} height={w + 20} fill="none" stroke="#00ff6a" strokeWidth={8} />
               <rect x={sx + w / 2 + 10 - 360} y={sy - w / 2 - 80} width={360} height={70} fill="#00ff6a" />
               <text x={sx + w / 2 - 340} y={sy - w / 2 - 30} style={{ font:`700 48px ${KF.mono}` }} fill="#0b1020">LÍMITE 45</text></g>; })()}
@@ -193,29 +193,29 @@ function Panda() {
       {/* 9 · la defensa (MNIST: números escritos a mano) */}
       <Escena T={T} a={K.D} b={K.C}>
         <FondoLunares color={KC.mint} />
-        {svg(<>{['3', '7', '1', '5', '0', '9'].map((d, i) => <text key={i} x={140 + i * 160} y={640 + (i % 2) * 30} textAnchor="middle" style={{ font:`italic 700 120px ${KF.mono}` }} fill={KC.ink} opacity={0.85 * kprog(T, K.D + 0.2 + i * 0.12, K.D + 0.5 + i * 0.12)} transform={`rotate(${(i % 2 ? 8 : -7)} ${140 + i * 160} 640)`}>{d}</text>)}</>)}
+        {svg(<>{['3', '7', '1', '5', '0', '9'].map((d, i) => <text key={i} x={150 + i * 156} y={780 + (i % 2) * 40} textAnchor="middle" style={{ font:`italic 700 180px ${KF.mono}` }} fill={KC.ink} opacity={0.85 * kprog(T, K.D + 0.2 + i * 0.12, K.D + 0.5 + i * 0.12)} transform={`rotate(${(i % 2 ? 8 : -7)} ${150 + i * 156} 740)`}>{d}</text>)}</>)}
       </Escena>
       {/* 10 · cierre: el mismo panda */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.yellow} />
-        {svg(<FotoPanda T={T} x={400} y={880} s={0.9} />)}
+        {svg(<FotoPanda T={T} x={540} y={960} s={1.22} />)}
       </Escena>
 
       {/* datos y textos */}
-      <EtiquetaIA T={T} at={K.G + 0.05} until={K.A - 0.2} x={330} y={430} texto="gibón" pct="99.3 %" color={KC.orange} />
-      <EtiquetaIA T={T} at={K.A + 0.3} until={K.Ru - 0.2} x={400} y={430} texto="panda" pct="57.7 %" color={KC.mint} />
-      <Chip T={T} at={K.A + 0.8} until={K.Ru - 0.2} texto="antes del truco" x={400} y={1170} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Ru + 2.0} until={K.P - 0.2} texto="cada pixel: ±1 tono de 256" x={370} y={440} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.Ru + 2.2} until={K.P - 0.2} x={700} y={1085} texto="¡se ve igual!" color={KC.ink} />
+      <EtiquetaIA T={T} at={K.G + 0.05} until={K.A - 0.2} x={350} y={330} texto="gibón" pct="99.3 %" color={KC.orange} />
+      <EtiquetaIA T={T} at={K.A + 0.3} until={K.Ru - 0.2} x={350} y={330} texto="panda" pct="57.7 %" color={KC.mint} />
+      <Chip T={T} at={K.A + 0.8} until={K.Ru - 0.2} texto="antes del truco" x={830} y={330} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Ru + 2.0} until={K.P - 0.2} texto="cada pixel: ±1 tono de 256" x={400} y={330} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.Ru + 2.2} until={K.P - 0.2} x={40} y={1010} texto="¡se ve igual!" color={KC.ink} />
       <NumeroGigante T={T} at={K.S + 0.3} until={K.E - 0.2} valor={150528} dur={1.0} etiqueta="224 × 224 × 3 números" y={420} tam={110} color={KC.cyan} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Al - 0.3} anio="2014" quien="Google" revista="Goodfellow, Shlens y Szegedy" y={700} />
-      <Chip T={T} at={K.E + 2.4} until={K.Al - 0.3} texto="«ejemplo adversario»" y={950} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.Al + 0.3} until={K.Au - 0.2} texto="2017 · estampas blancas y negras" y={430} tam={36} borde={KC.ink} />
-      <BarrasPct T={T} at={K.Au + 3.4} until={K.D - 0.2} top={1380} filas={[{ valor: 100, dec: 0, etiqueta: 'fotos de laboratorio', color: KC.orange }, { valor: 84.8, etiqueta: 'cuadros desde un auto en marcha', color: KC.red, at: K.Au + 5.0 }]} />
-      <BarrasPct T={T} at={K.D + 1.6} until={K.C - 0.2} top={760} filas={[{ valor: 89.4, etiqueta: 'errores · sin entrenar con engaños', color: KC.red }, { valor: 17.9, etiqueta: 'errores · entrenada con engaños', color: AZUL, at: K.D + 3.2 }]} />
-      <Chip T={T} at={K.D + 0.4} until={K.C - 0.2} texto="prueba: números escritos a mano" y={460} tam={36} borde={KC.ink} />
-      <MitoTachado T={T} at={K.C + 0.2} tacharEn={K.C + 2.2} until={K.Ou} texto="IA: gibón 99.3 %" x={560} y={430} tam={46} />
-      <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="tú: panda ✔" x={850} y={760} tam={54} borde={KC.leaf} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Al - 0.3} anio="2014" quien="Google" revista="Goodfellow, Shlens y Szegedy" y={540} />
+      <Chip T={T} at={K.E + 2.4} until={K.Al - 0.3} texto="«ejemplo adversario»" y={860} tam={44} borde={KC.red} />
+      <Chip T={T} at={K.Al + 0.3} until={K.Au - 0.2} texto="2017 · estampas blancas y negras" y={370} tam={36} borde={KC.ink} />
+      <BarrasPct T={T} at={K.Au + 3.4} until={K.D - 0.2} top={1170} filas={[{ valor: 100, dec: 0, etiqueta: 'fotos de laboratorio', color: KC.orange }, { valor: 84.8, etiqueta: 'cuadros desde un auto en marcha', color: KC.red, at: K.Au + 5.0 }]} />
+      <BarrasPct T={T} at={K.D + 1.6} until={K.C - 0.2} top={990} filas={[{ valor: 89.4, etiqueta: 'errores · sin entrenar con engaños', color: KC.red }, { valor: 17.9, etiqueta: 'errores · entrenada con engaños', color: AZUL, at: K.D + 3.2 }]} />
+      <Chip T={T} at={K.D + 0.4} until={K.C - 0.2} texto="prueba: números escritos a mano" y={440} tam={36} borde={KC.ink} />
+      <MitoTachado T={T} at={K.C + 0.2} tacharEn={K.C + 2.2} until={K.Ou} texto="IA: gibón 99.3 %" x={540} y={330} tam={46} />
+      <Chip T={T} at={K.C + 2.6} until={K.Ou} texto="tú: panda ✔" x={540} y={1395} tam={54} borde={KC.leaf} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.A - 0.1} texto="Para la IA no es un panda: *es un gibón.*" />

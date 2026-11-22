@@ -29,7 +29,7 @@ function Botella({ x, y, s = 1, ang = 0, nivel = 0.8, fantasma = 0, T = 0 }) {
 // Plato con sushi y platito de soya. lleno 0..1 = charquito de salsa.
 function PlatoSushi({ T, lleno = 1 }) {
   return <g>
-    <rect x={110} y={1080} width={860} height={86} rx={40} fill="#ffffff" stroke={KC.ink} strokeWidth={8} />
+    <rect x={110} y={1080} width={860} height={86} rx={40} fill="#dfe3ea" stroke={KC.ink} strokeWidth={8} />
     <ellipse cx={260} cy={1086} rx={118} ry={38} fill="#f2f2f2" stroke={KC.ink} strokeWidth={6} />
     {lleno > 0 && <ellipse cx={260} cy={1088} rx={96 * lleno} ry={26 * lleno} fill={KJ.soya} />}
     {lleno > 0 && <ellipse cx={240} cy={1082} rx={40 * lleno} ry={8 * lleno} fill="#8a4a24" opacity=".6" />}
@@ -205,14 +205,14 @@ function Calendario({ T, at, x, y }) {
     <rect x={-110} y={-120} width={220} height={240} rx={18} fill="#fff" stroke={KC.ink} strokeWidth={7} />
     <rect x={-110} y={-120} width={220} height={60} rx={18} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
     <text y={-72} textAnchor="middle" style={{ font:`400 44px ${KF.titulo}` }} fill="#fff">{MES[i]}</text>
-    <text y={60} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.ink}>{i + 1}</text>
+    <text y={60} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill="#0b1020">{i + 1}</text>
     {f > 0 && <rect x={-110} y={-60} width={220} height={180 * (1 - f)} fill="#f4efe4" stroke={KC.ink} strokeWidth={4} transform={`skewX(${-f * 20})`} />}
   </g>;
 }
 // Tubito de cepa.
 function Tubo({ x, y, on = 1 }) {
   if (on <= 0) return null;
-  return <g transform={`translate(${x} ${y}) scale(${on})`}><circle r={15} fill="#eaf6ff" stroke={KC.ink} strokeWidth={4} /><circle r={9} fill={KJ.koji} /></g>;
+  return <g transform={`translate(${x} ${y}) scale(${on * 1.45})`}><circle r={15} fill="#eaf6ff" stroke={KC.ink} strokeWidth={4} /><circle r={9} fill={KJ.koji} /></g>;
 }
 
 // Hifas finas que crecen sobre/dentro del grano (en la lupa). p 0..1
@@ -231,6 +231,9 @@ function InteriorKoji({ T, r, a, enz }) {
   </svg>;
 }
 
+// Segunda vuelta del modo cine: agranda un dibujo k veces llevando el punto (cx, cy) a (tx, ty).
+const ZK = (k, cx, cy, tx, ty, c) => <g transform={`translate(${tx} ${ty}) scale(${k}) translate(${-cx} ${-cy})`}>{c}</g>;
+
 function KojiShot() {
   const { T, CUES } = useComposition();
   const K = { G: CUES.Gancho, Si: CUES.Siembra, Cr: CUES.Crece, Pr: CUES.Proteinas, Al: CUES.Almidon, Sa: CUES.Salmuera, P: CUES.Pregunta, Mo: CUES.Moromi, Co: CUES.Color, E: CUES.Estudio, Pm: CUES.Primo, N: CUES.Nacional, C: CUES.Cierre, Ou: CUES.Outro };
@@ -239,8 +242,8 @@ function KojiShot() {
   const chorro = kprog(T, K.G + 0.6, K.G + 0.8) * (1 - kprog(T, K.G + 3.2, K.G + 3.5));
   const lleno = kprog(T, K.G + 0.8, K.G + 3.0);
   const ang = -105 * inclina, boca = [450 + 200 * Math.sin(ang * Math.PI / 180), 760 - 200 * Math.cos(ang * Math.PI / 180)];
-  const PROT = Array.from({ length: 13 }, (_, i) => [130 + i * 68, 820 + Math.sin(i * 0.9) * 50]);
-  const ALM = [...Array.from({ length: 9 }, (_, i) => [160 + i * 80, 860]), [480, 780, 4], [530, 710, 9], [590, 650, 10]];
+  const PROT = Array.from({ length: 13 }, (_, i) => [112 + i * 71, 940 + Math.sin(i * 0.9) * 130]);
+  const ALM = [...Array.from({ length: 9 }, (_, i) => [150 + i * 90, 1000]), [545, 895, 4], [605, 800, 9], [675, 720, 10]];
   const CADM = Array.from({ length: 6 }, (_, i) => [220 + i * 60, 1000 + Math.sin(i) * 20]);
   const mueren = kprog(T, K.Sa + 1.4, K.Sa + 2.6);
   const caida = kprog(T, K.Sa + 0.1, K.Sa + 0.8, (x) => x * x);
@@ -250,20 +253,20 @@ function KojiShot() {
       {/* 0 · gancho: la botella sirve salsa sobre el sushi */}
       <Escena T={T} a={K.G} b={K.Si} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(ZK(1.15, 540, 920, 540, 990, <>
           <PlatoSushi T={T} lleno={lleno} />
           {chorro > 0 && <path d={`M ${boca[0]} ${boca[1]} Q ${boca[0] + 6} ${(boca[1] + 1080) / 2} ${262} ${klerp(boca[1], 1080, chorro)}`} stroke={KJ.soya} strokeWidth={14 * chorro} fill="none" strokeLinecap="round" />}
           <Botella x={450} y={760} ang={ang} nivel={0.8 - lleno * 0.25} />
-        </>)}
+        </>))}
       </Escena>
       {/* 1–2 · siembra y crecimiento del koji en la charola, con lupa al microscopio */}
       <Escena T={T} a={K.Si} b={K.Pr} zoom={0.06}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<Charola T={T} mezcla={kprog(T, K.Si + 2.4, K.Si + 3.2, kEase.suave)} tost={kprog(T, K.Si + 1.2, K.Si + 2.2)} parte={kprog(T, K.Si + 1.8, K.Si + 2.2, kEase.rebote)}
+        {fsvg(ZK(1.15, 540, 950, 540, 1000, <Charola T={T} mezcla={kprog(T, K.Si + 2.4, K.Si + 3.2, kEase.suave)} tost={kprog(T, K.Si + 1.2, K.Si + 2.2)} parte={kprog(T, K.Si + 1.8, K.Si + 2.2, kEase.rebote)}
           infla={kprog(T, K.Si, K.Si + 1.2, kEase.sale)} vapor={1 - kprog(T, K.Si + 1.4, K.Si + 2.0)} esporas={1 - kprog(T, K.Cr + 0.4, K.Cr + 1.2)} at={K.Si + 3.0}
-          pelusa={kprog(T, K.Cr + 0.2, K.Cr + 2.0, kEase.suave)} />)}
+          pelusa={kprog(T, K.Cr + 0.2, K.Cr + 2.0, kEase.suave)} />))}
       </Escena>
-      <Lupa T={T} at={K.Cr + 2.0} until={K.Pr - 0.35} x={560} y={820} r={290} fx={420} fy={930} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · HIFAS Y ESPORAS"
+      <Lupa T={T} at={K.Cr + 2.0} until={K.Pr - 0.35} x={540} y={890} r={340} fx={402} fy={977} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · HIFAS Y ESPORAS"
         interior={(t, r) => <InteriorKoji T={t} r={r} a={K.Cr + 2.2} enz={kprog(t, K.Cr + 4.0, K.Cr + 4.4)} />} />
       {/* 3–4 · las enzimas cortan proteínas y almidón (fondo oscuro, moléculas) */}
       <Escena T={T} a={K.Pr} b={K.Sa}>
@@ -271,10 +274,10 @@ function KojiShot() {
         <Ambiente T={T} n={22} />
         {fsvg(<>
           {T < K.Al + 0.3 && <g opacity={1 - kprog(T, K.Al - 0.2, K.Al + 0.3)}>
-            <CadenaCorta T={T} pts={PROT} t0={K.Pr + 0.9} paso={0.16} colores={[KC.pink, KC.cyan, KC.orange, KC.lilac, KC.mint]} r={32} brillaIdx={6} brilla={kprog(T, K.Pr + 3.0, K.Pr + 3.5)} seed={4} dispersa={110} />
+            <CadenaCorta T={T} pts={PROT} t0={K.Pr + 0.9} paso={0.16} colores={[KC.pink, KC.cyan, KC.orange, KC.lilac, KC.mint]} r={36} brillaIdx={6} brilla={kprog(T, K.Pr + 3.0, K.Pr + 3.5)} seed={4} dispersa={140} />
           </g>}
           {T > K.Al - 0.3 && <g opacity={kprog(T, K.Al - 0.3, K.Al + 0.2)}>
-            <CadenaCorta T={T} pts={ALM} t0={K.Al + 0.6} paso={0.15} hex colores={[KC.yellow]} r={30} seed={9} dispersa={90} />
+            <CadenaCorta T={T} pts={ALM} t0={K.Al + 0.6} paso={0.15} hex colores={[KC.yellow]} r={34} seed={9} dispersa={120} />
           </g>}
         </>)}
       </Escena>
@@ -282,6 +285,7 @@ function KojiShot() {
       <Escena T={T} a={K.Sa} b={K.Mo} zoom={0.04}>
         <FondoLunares color={T < K.P ? KC.cyan : KC.lilac} />
         {fsvg(<>
+          {ZK(1.3, 540, 960, 540, 1020, <>
           <Cuba T={T} y={960}>
             {caida > 0 && <g transform={`translate(0 ${klerp(-700, -290, caida)})`}>
               <path d="M -170 0 Q -180 -60 -90 -70 Q 0 -100 90 -70 Q 180 -60 170 0 Q 0 30 -170 0 Z" fill={mixHex(KJ.koji2, '#a9acb2', mueren)} stroke={KC.ink} strokeWidth={6} />
@@ -289,118 +293,119 @@ function KojiShot() {
             </g>}
             {caida >= 1 && T < K.Sa + 1.4 && Array.from({ length: 10 }, (_, i) => { const u = kprog(T, K.Sa + 0.8, K.Sa + 1.4); const an = -Math.PI * (0.1 + i * 0.09); return <circle key={i} cx={Math.cos(an) * 200 * u} cy={-290 + Math.sin(an) * 160 * u + u * u * 120} r={14} fill={KJ.salmuera} stroke={KC.ink} strokeWidth={3} opacity={1 - u} />; })}
           </Cuba>
-          {T > K.P - 0.2 && <g opacity={kprog(T, K.P - 0.2, K.P + 0.2)}><Interrogacion T={T} x={300} y={1000} /></g>}
+          </>)}
+          {T > K.P - 0.2 && <g opacity={kprog(T, K.P - 0.2, K.P + 0.2)}><Interrogacion T={T} x={540} y={1150} tam={620} /></g>}
         </>)}
       </Escena>
       {/* 7 · dentro de la cuba: enzimas, bacterias lácticas y levaduras, meses */}
       <Escena T={T} a={K.Mo} b={K.Co}>
         <div style={{ position:'absolute', inset:0, background:'#1a120c' }}></div>
         <Ambiente T={T} n={26} color="rgba(255,220,160,.25)" />
-        {fsvg(<>
+        {fsvg(ZK(1.12, 540, 860, 550, 930, <>
           <CadenaCorta T={T} pts={CADM} t0={K.Mo + 0.3} paso={0.25} colores={[KC.pink, KC.cyan, KC.orange]} r={20} seed={12} dispersa={70} />
           {[[640, 1020, 1], [820, 820, 2], [720, 1110, 3], [900, 1060, 4], [560, 840, 5], [940, 780, 6]].map(([x, y, sd], i) => { /* modo cine: entran al empezar la escena */ const on = kprog(T, K.Mo + 0.15 + i * 0.08, K.Mo + 0.45 + i * 0.08, kEase.rebote); return on > 0 ? <Tetrada key={i} T={T} x={x} y={y} s={on} seed={sd} /> : null; })}
           {[[300, 760, 1], [520, 640, 2]].map(([x, y, sd], i) => { const on = kprog(T, K.Mo + 0.3 + i * 0.2, K.Mo + 0.7 + i * 0.2, kEase.rebote); return on > 0 ? <Levadura key={i} T={T} x={x} y={y} s={on} seed={sd} brote={kprog(T, K.Mo + 2.2, K.Mo + 3.4)} /> : null; })}
-          <Calendario T={T} at={K.Mo + 2.4} x={170} y={1000} />
+          <Calendario T={T} at={K.Mo + 2.4} x={215} y={1000} />
           {Array.from({ length: 10 }, (_, i) => { const u = ((T * 0.5 + i / 10) % 1); return T > K.Mo + 2.0 ? <circle key={i} cx={260 + (i % 5) * 70 + Math.sin(T * 3 + i) * 8} cy={600 - u * 160} r={6 + (i % 3) * 3} fill="none" stroke="#fff" strokeWidth={3} opacity={(1 - u) * 0.7} /> : null; })}
-        </>)}
+        </>))}
       </Escena>
       {/* 8 · el color: azúcares + aminoácidos oscurecen el líquido */}
       <Escena T={T} a={K.Co} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
-          <path d="M 300 560 L 300 520 L 780 520 L 780 560 Q 840 600 840 680 L 840 1120 Q 840 1170 790 1170 L 290 1170 Q 240 1170 240 1120 L 240 680 Q 240 600 300 560 Z" fill="rgba(240,248,255,.55)" stroke={KC.ink} strokeWidth={9} />
+        {fsvg(ZK(1.3, 540, 845, 540, 960, <>
+          <path d="M 300 560 L 300 520 L 780 520 L 780 560 Q 840 600 840 680 L 840 1120 Q 840 1170 790 1170 L 290 1170 Q 240 1170 240 1120 L 240 680 Q 240 600 300 560 Z" fill="rgba(200,220,240,.22)" stroke={KC.ink} strokeWidth={9} />
           <path d="M 252 700 L 828 700 L 828 1118 Q 828 1158 788 1158 L 292 1158 Q 252 1158 252 1118 Z" fill={mixHex(KJ.salmuera, KJ.soya, oscuro)} />
           {[0, 1, 2].map((i) => { const j = kprog(T, K.Co + 0.4 + i * 0.6, K.Co + 1.0 + i * 0.6, kEase.sale); const cx = 360 + i * 170, cy = 860 + (i % 2) * 120;
             return <g key={i}><Cuenta x={cx - 40 * (1 - j)} y={cy} r={24} color={KC.pink} /><Cuenta x={cx + 40 + 40 * (1 - j)} y={cy} r={26} hex color={KC.yellow} />
               {j >= 1 && <circle cx={cx + 20} cy={cy} r={58} fill="none" stroke={KC.gold2} strokeWidth={5} opacity={0.6 + 0.4 * Math.sin(T * 5 + i)} />}</g>; })}
           <path d="M 270 600 L 270 680" stroke="#fff" strokeWidth={14} strokeLinecap="round" opacity=".5" />
-        </>)}
+        </>))}
       </Escena>
       {/* 9 · el estudio de 2006: 210 cepas */}
       <Escena T={T} a={K.E} b={K.Pm} zoom={0.04}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          {Array.from({ length: 210 }, (_, i) => { const col = i % 21, row = Math.floor(i / 21); const t0 = K.E + 0.2 + i * 0.009; /* modo cine: las cepas entran al empezar */ return <Tubo key={i} x={110 + col * 43} y={880 + row * 36} on={kprog(T, t0, t0 + 0.25, kEase.rebote)} />; })}</>)}
+          {Array.from({ length: 210 }, (_, i) => { const col = i % 14, row = Math.floor(i / 14); const t0 = K.E + 0.2 + i * 0.009; /* modo cine: las cepas entran al empezar */ return <Tubo key={i} x={124 + col * 64} y={690 + row * 52} on={kprog(T, t0, t0 + 0.25, kEase.rebote)} />; })}</>)}
       </Escena>
       {/* 10 · el primo con veneno y el koji con los genes apagados (al microscopio) */}
       <Escena T={T} a={K.Pm} b={K.N}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<>
-          <Conidioforo x={290} y={1010} alto={150} rv={40} p={kprog(T, K.Pm - 0.1, K.Pm + 1.0)} color="#b9d23a" n={13} cad={6} T={T} />
-          <Conidioforo x={790} y={1010} alto={150} rv={40} p={kprog(T, K.Pm, K.Pm + 1.2)} color={KJ.koji} n={13} cad={6} T={T} />
-          <TiraGenes x={108} y={1070} p={kprog(T, K.Pm + 1.2, K.Pm + 2.0)} />
-          <TiraGenes x={608} y={1070} p={kprog(T, K.Pm + 1.6, K.Pm + 2.4)} huecos={T > K.Pm + 3.3 ? [1, 4] : []} rotos={[2, 5]} apagado={kprog(T, K.Pm + 3.6, K.Pm + 4.2)} />
-          {[[110, 610, 0], [230, 570, 1], [350, 610, 2], [170, 690, 3]].map(([x, y, i]) => { const on = kprog(T, K.Pm + 2.2 + i * 0.15, K.Pm + 2.6 + i * 0.15, kEase.rebote); return on > 0 ? <Aflatoxina key={i} x={x} y={y + Math.sin(T * 2 + i) * 8} s={on} rot={T * 20 + i * 30} /> : null; })}
-          {T > K.Pm + 3.4 && <g transform="translate(985 960) scale(0.75)"><Interruptor x={0} y={0} off={kprog(T, K.Pm + 3.6, K.Pm + 4.0)} /></g>}
-          <Sello T={T} at={K.Pm + 5.0} x={560} y={630} texto="0" color={KC.mint} r={80} />
-          {T > K.Pm + 5.2 && <text x={560} y={755} textAnchor="middle" opacity={kprog(T, K.Pm + 5.2, K.Pm + 5.5)} style={{ font:`700 30px ${KF.mono}` }} fill={KC.mint}>aflatoxinas</text>}
+          {ZK(1.5, 290, 1010, 290, 1130, <Conidioforo x={290} y={1010} alto={150} rv={40} p={kprog(T, K.Pm - 0.1, K.Pm + 1.0)} color="#b9d23a" n={13} cad={6} T={T} />)}
+          {ZK(1.5, 790, 1010, 790, 1130, <Conidioforo x={790} y={1010} alto={150} rv={40} p={kprog(T, K.Pm, K.Pm + 1.2)} color={KJ.koji} n={13} cad={6} T={T} />)}
+          <TiraGenes x={108} y={1195} p={kprog(T, K.Pm + 1.2, K.Pm + 2.0)} />
+          <TiraGenes x={608} y={1195} p={kprog(T, K.Pm + 1.6, K.Pm + 2.4)} huecos={T > K.Pm + 3.3 ? [1, 4] : []} rotos={[2, 5]} apagado={kprog(T, K.Pm + 3.6, K.Pm + 4.2)} />
+          {[[120, 500, 0], [250, 455, 1], [380, 500, 2], [190, 590, 3]].map(([x, y, i]) => { const on = kprog(T, K.Pm + 2.2 + i * 0.15, K.Pm + 2.6 + i * 0.15, kEase.rebote); return on > 0 ? <Aflatoxina key={i} x={x} y={y + Math.sin(T * 2 + i) * 8} s={on * 1.25} rot={T * 20 + i * 30} /> : null; })}
+          {T > K.Pm + 3.4 && <g transform="translate(948 1060) scale(0.8)"><Interruptor x={0} y={0} off={kprog(T, K.Pm + 3.6, K.Pm + 4.0)} /></g>}
+          <Sello T={T} at={K.Pm + 5.0} x={800} y={470} texto="0" color={KC.mint} r={90} />
+          {T > K.Pm + 5.2 && <text x={800} y={610} textAnchor="middle" opacity={kprog(T, K.Pm + 5.2, K.Pm + 5.5)} style={{ font:`700 30px ${KF.mono}` }} fill={KC.mint}>aflatoxinas</text>}
         </>)}
       </Escena>
       {/* 11 · sake, miso y soya: hongo nacional */}
       <Escena T={T} a={K.N} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          {kprog(T, K.N + 0.2, K.N + 0.6) > 0 && <g transform={`translate(230 1080) scale(${kprog(T, K.N + 0.2, K.N + 0.6, kEase.rebote)}) translate(-230 -1080)`}><Tokkuri x={230} y={1080} s={1.0} /></g>}
-          {kprog(T, K.N + 0.7, K.N + 1.1) > 0 && <g transform={`translate(540 1080) scale(${kprog(T, K.N + 0.7, K.N + 1.1, kEase.rebote)}) translate(-540 -1080)`}><Miso x={540} y={1080} T={T} /></g>}
-          {kprog(T, K.N + 1.2, K.N + 1.6) > 0 && <g transform={`translate(840 1000) scale(${kprog(T, K.N + 1.2, K.N + 1.6, kEase.rebote) * 0.62}) translate(-840 -1000)`}><Botella x={840} y={1000} /></g>}
-          <Medalla T={T} at={K.N + 2.0} x={400} y={640} r={140} />
+          {kprog(T, K.N + 0.2, K.N + 0.6) > 0 && <g transform={`translate(215 1150) scale(${1.3 * kprog(T, K.N + 0.2, K.N + 0.6, kEase.rebote)}) translate(-230 -1080)`}><Tokkuri x={230} y={1080} s={1.0} /></g>}
+          {kprog(T, K.N + 0.7, K.N + 1.1) > 0 && <g transform={`translate(540 1140) scale(${1.3 * kprog(T, K.N + 0.7, K.N + 1.1, kEase.rebote)}) translate(-540 -1080)`}><Miso x={540} y={1080} T={T} /></g>}
+          {kprog(T, K.N + 1.2, K.N + 1.6) > 0 && <g transform={`translate(865 1050) scale(${kprog(T, K.N + 1.2, K.N + 1.6, kEase.rebote) * 0.8}) translate(-840 -1000)`}><Botella x={840} y={1000} /></g>}
+          <Medalla T={T} at={K.N + 2.0} x={540} y={590} r={175} />
         </>)}
       </Escena>
       {/* 12 · cierre: la misma botella y el mismo sushi; adentro, el fantasma del hongo */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<><PlatoSushi T={T} lleno={1} /><Botella x={450} y={760} T={T} nivel={0.55} fantasma={kprog(T, K.C + 0.6, K.C + 1.6)} /></>)}
+        {fsvg(ZK(1.15, 540, 920, 540, 990, <><PlatoSushi T={T} lleno={1} /><Botella x={450} y={760} T={T} nivel={0.55} fantasma={kprog(T, K.C + 0.6, K.C + 1.6)} /></>))}
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.9} tacharEn={K.G + 2.2} until={K.Si - 0.2} texto="solo soya" x={300} y={470} tam={50} />
-      <Chip T={T} at={K.G + 2.6} until={K.Si - 0.2} texto="la cocinó un hongo" x={300} y={590} tam={40} borde={KC.leaf} />
-      <Chip T={T} at={K.Si + 0.3} until={K.Si + 2.3} texto="soya cocida al vapor" x={330} y={470} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Si + 1.3} until={K.Si + 2.3} texto="trigo tostado" x={330} y={560} tam={36} borde={KC.orange} />
-      <Chip T={T} at={K.Si + 2.5} until={K.Si + 3.4} texto="mitad y mitad" x={330} y={470} tam={36} borde={KC.ink} />
-      <Etq T={T} at={K.Si + 3.2} until={K.Cr + 1.9} x={60} y={520} texto="koji" tam={44} color={KC.texto} />
-      <Etq T={T} at={K.Si + 3.5} until={K.Cr + 1.9} x={60} y={590} texto="Aspergillus oryzae" it tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Si + 3.8} until={K.Cr + 1.9} x={60} y={650} texto="o Aspergillus sojae" it tam={32} color={KC.texto} />
-      <Chip T={T} at={K.Cr + 0.2} until={K.Pr - 0.3} texto="2–3 días · 30 °C" x={720} y={430} tam={40} borde={KC.ink} mono />
-      <Etq T={T} at={K.Pr + 0.3} until={K.Pr + 1.6} x={60} y={680} texto="proteína" tam={36} color={KC.texto} />
-      <Etq T={T} at={K.Pr + 0.9} until={K.Al - 0.3} x={60} y={1060} texto="proteasas (las tijeras)" tam={32} color={KC.cyan} />
-      <Etq T={T} at={K.Pr + 2.0} until={K.Al - 0.3} x={60} y={680} texto="aminoácidos" tam={36} color={KC.texto} />
-      <Chip T={T} at={K.Pr + 3.0} until={K.Al - 0.3} texto="glutamato → umami" x={340} y={470} tam={44} borde={KC.gold2} />
+      <MitoTachado T={T} at={K.G + 0.9} tacharEn={K.G + 2.2} until={K.Si - 0.2} texto="solo soya" x={540} y={320} tam={50} />
+      <Chip T={T} at={K.G + 2.6} until={K.Si - 0.2} texto="la cocinó un hongo" x={540} y={425} tam={40} borde={KC.leaf} />
+      <Chip T={T} at={K.Si + 0.3} until={K.Si + 2.3} texto="soya cocida al vapor" x={540} y={380} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Si + 1.3} until={K.Si + 2.3} texto="trigo tostado" x={540} y={470} tam={36} borde={KC.orange} />
+      <Chip T={T} at={K.Si + 2.5} until={K.Si + 3.4} texto="mitad y mitad" x={540} y={380} tam={36} borde={KC.ink} />
+      <Etq T={T} at={K.Si + 3.2} until={K.Cr + 1.9} x={60} y={400} texto="koji" tam={44} color={KC.texto} />
+      <Etq T={T} at={K.Si + 3.5} until={K.Cr + 1.9} x={60} y={465} texto="Aspergillus oryzae" it tam={36} color={KC.texto} />
+      <Etq T={T} at={K.Si + 3.8} until={K.Cr + 1.9} x={60} y={522} texto="o Aspergillus sojae" it tam={32} color={KC.texto} />
+      <Chip T={T} at={K.Cr + 0.2} until={K.Pr - 0.3} texto="2–3 días · 30 °C" x={770} y={400} tam={40} borde={KC.ink} mono />
+      <Etq T={T} at={K.Pr + 0.3} until={K.Pr + 1.6} x={60} y={640} texto="proteína" tam={36} color={KC.texto} />
+      <Etq T={T} at={K.Pr + 0.9} until={K.Al - 0.3} x={60} y={1230} texto="proteasas (las tijeras)" tam={32} color={KC.cyan} />
+      <Etq T={T} at={K.Pr + 2.0} until={K.Al - 0.3} x={60} y={640} texto="aminoácidos" tam={36} color={KC.texto} />
+      <Chip T={T} at={K.Pr + 3.0} until={K.Al - 0.3} texto="glutamato → umami" x={540} y={440} tam={44} borde={KC.gold2} />
       <Etq T={T} at={K.Al + 0.2} until={K.Sa - 0.3} x={60} y={600} texto="almidón del trigo" tam={34} color={KC.yellow} />
-      <Etq T={T} at={K.Al + 0.6} until={K.Sa - 0.3} x={60} y={1040} texto="amilasas → glucosa" tam={34} color={KC.cyan} />
-      <Chip T={T} at={K.Sa + 0.4} until={K.P - 0.2} texto="salmuera: 22–23 % de sal" x={340} y={430} tam={36} borde={KC.cyan} />
-      <Chip T={T} at={K.Sa + 1.8} until={K.P - 0.2} texto="el koji muere" x={300} y={520} tam={40} borde={KC.red} />
-      <Etq T={T} at={K.Mo + 0.5} until={K.Co - 0.3} x={540} y={930} texto="enzimas (siguen)" tam={30} color={KC.cyan} />
-      <Etq T={T} at={K.Mo + 1.0} until={K.Co - 0.3} x={1040} y={1200} texto="Tetragenococcus halophilus" lado="izq" it tam={30} color={KC.mint} />
-      <Etq T={T} at={K.Mo + 1.8} until={K.Co - 0.3} x={60} y={470} texto="Zygosaccharomyces rouxii" it tam={30} color="#ffd98a" />
+      <Etq T={T} at={K.Al + 0.6} until={K.Sa - 0.3} x={60} y={1190} texto="amilasas → glucosa" tam={34} color={KC.cyan} />
+      <Chip T={T} at={K.Sa + 0.4} until={K.P - 0.2} texto="salmuera: 22–23 % de sal" x={540} y={330} tam={36} borde={KC.cyan} />
+      <Chip T={T} at={K.Sa + 1.8} until={K.P - 0.2} texto="el koji muere" x={540} y={420} tam={40} borde={KC.red} />
+      <Etq T={T} at={K.Mo + 0.5} until={K.Co - 0.3} x={330} y={1250} texto="enzimas (siguen)" tam={30} color={KC.cyan} />
+      <Etq T={T} at={K.Mo + 1.0} until={K.Co - 0.3} x={1040} y={1300} texto="Tetragenococcus halophilus" lado="izq" it tam={30} color={KC.mint} />
+      <Etq T={T} at={K.Mo + 1.8} until={K.Co - 0.3} x={60} y={500} texto="Zygosaccharomyces rouxii" it tam={30} color="#ffd98a" />
       <Chip T={T} at={K.Mo + 2.4} until={K.Co - 0.3} texto="6–8 meses (método tradicional)" x={540} y={1420} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Co + 0.6} until={K.E - 0.3} texto="azúcar + aminoácido = color" x={360} y={430} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Co + 1.8} until={K.E - 0.3} texto="reacción de Maillard" x={360} y={1240 - 140} tam={36} borde={KC.gold2} />
-      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.Pm - 0.2} anio="2006" quien="Higashi-Hiroshima, Japón · 210 cepas" revista="Tominaga et al., Appl. Environ. Microbiol." y={600} />
-      <Chip T={T} at={K.Pm + 0.3} until={K.N - 0.3} texto="primos: misma sección Flavi" x={360} y={430} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.Pm + 1.0} until={K.N - 0.3} x={60} y={1120} texto="Aspergillus flavus" it tam={28} color="#d6ea6a" />
-      <Etq T={T} at={K.Pm + 1.4} until={K.N - 0.3} x={600} y={1120} texto="A. oryzae (koji)" it tam={28} color={KJ.koji2} />
-      <Etq T={T} at={K.Pm + 2.4} until={K.N - 0.3} x={60} y={488} texto="aflatoxinas" tam={34} color={KC.red} />
-      <Chip T={T} at={K.Pm + 3.8} until={K.N - 0.3} texto="genes apagados o incompletos" x={560} y={1196} tam={26} borde={KC.mint} />
-      <Chip T={T} at={K.N + 2.4} until={K.C - 0.3} texto="Brewing Society of Japan" x={400} y={840} tam={32} borde={KC.ink} />
-      <Etq T={T} at={K.N + 0.4} until={K.C - 0.3} x={230} y={1170} texto="sake" lado="izq" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.N + 0.9} until={K.C - 0.3} x={540} y={1170} texto="miso" lado="izq" tam={30} color={KC.texto} />
-      <Etq T={T} at={K.N + 1.4} until={K.C - 0.3} x={1000} y={1170} texto="soya" lado="izq" tam={30} color={KC.texto} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="la cocinó un hongo" x={300} y={470} tam={42} borde={KC.leaf} />
+      <Chip T={T} at={K.Co + 0.6} until={K.E - 0.3} texto="azúcar + aminoácido = color" x={540} y={400} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 1.8} until={K.E - 0.3} texto="reacción de Maillard" x={540} y={1480} tam={36} borde={KC.gold2} />
+      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.Pm - 0.2} anio="2006" quien="Higashi-Hiroshima, Japón · 210 cepas" revista="Tominaga et al., Appl. Environ. Microbiol." y={440} />
+      <Chip T={T} at={K.Pm + 0.3} until={K.N - 0.3} texto="primos: misma sección Flavi" x={390} y={268} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.Pm + 1.0} until={K.N - 0.3} x={60} y={1250} texto="Aspergillus flavus" it tam={28} color="#d6ea6a" />
+      <Etq T={T} at={K.Pm + 1.4} until={K.N - 0.3} x={600} y={1250} texto="A. oryzae (koji)" it tam={28} color={KJ.koji2} />
+      <Etq T={T} at={K.Pm + 2.4} until={K.N - 0.3} x={60} y={350} texto="aflatoxinas" tam={34} color={KC.red} />
+      <Chip T={T} at={K.Pm + 3.8} until={K.N - 0.3} texto="genes apagados o incompletos" x={640} y={1340} tam={30} borde={KC.mint} />
+      <Chip T={T} at={K.N + 2.4} until={K.C - 0.3} texto="Brewing Society of Japan" x={540} y={815} tam={32} borde={KC.ink} />
+      <Etq T={T} at={K.N + 0.4} until={K.C - 0.3} x={255} y={1260} texto="sake" lado="izq" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.N + 0.9} until={K.C - 0.3} x={585} y={1260} texto="miso" lado="izq" tam={30} color={KC.texto} />
+      <Etq T={T} at={K.N + 1.4} until={K.C - 0.3} x={915} y={1260} texto="soya" lado="izq" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="la cocinó un hongo" x={540} y={400} tam={42} borde={KC.leaf} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Si} texto="5 cm" largo={200} />
-      <BarraEscala T={T} at={K.Si} until={K.Cr + 2.0} texto="1 cm" largo={110} />
-      <BarraEscala T={T} at={K.Cr + 2.0} until={K.Pr} texto="lupa: 50 µm" largo={200} />
-      <BarraEscala T={T} at={K.Pr} until={K.Sa} texto="3 nm (moléculas)" largo={200} />
-      <BarraEscala T={T} at={K.Sa} until={K.Mo} texto="20 cm" largo={140} />
-      <BarraEscala T={T} at={K.Mo} until={K.Co} texto="5 µm" largo={180} />
-      <BarraEscala T={T} at={K.Co} until={K.E} texto="5 cm" largo={170} />
-      <BarraEscala T={T} at={K.E} until={K.Pm} texto="5 cm" largo={130} />
-      <BarraEscala T={T} at={K.Pm} until={K.N} texto="50 µm" largo={200} />
-      <BarraEscala T={T} at={K.N} until={K.C} texto="10 cm" largo={160} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={200} />
+      <BarraEscala T={T} at={K.G} until={K.Si} texto="5 cm" largo={230} />
+      <BarraEscala T={T} at={K.Si} until={K.Cr + 2.0} texto="1 cm" largo={127} />
+      <BarraEscala T={T} at={K.Cr + 2.0} until={K.Pr} texto="lupa: 50 µm" largo={234} />
+      <BarraEscala T={T} at={K.Pr} until={K.Sa} texto="3 nm (moléculas)" largo={226} />
+      <BarraEscala T={T} at={K.Sa} until={K.Mo} texto="20 cm" largo={182} />
+      <BarraEscala T={T} at={K.Mo} until={K.Co} texto="5 µm" largo={202} />
+      <BarraEscala T={T} at={K.Co} until={K.E} texto="5 cm" largo={221} />
+      <BarraEscala T={T} at={K.E} until={K.Pm} texto="5 cm" largo={189} />
+      <BarraEscala T={T} at={K.Pm} until={K.N} texto="50 µm" largo={300} />
+      <BarraEscala T={T} at={K.N} until={K.C} texto="10 cm" largo={208} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={230} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Si - 0.1} texto="¿Solo soya? *Un hongo.*" />

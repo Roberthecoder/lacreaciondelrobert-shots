@@ -10,7 +10,7 @@ const angSuelo = (esc) => ANG_BASE + esc * ANG_PASO;
 function Angel({ T, x = 540, esc = 0 }) {
   const pb = ANG_BASE, top = pb - 200;
   return <g transform={`translate(${x} 0)`}>
-    <rect x={-560} y={angSuelo(esc)} width={1120} height={1000} fill="#9a9aa2" stroke={KC.ink} strokeWidth={6} />
+    <rect x={-560} y={angSuelo(esc)} width={1120} height={1400} fill="#262b38" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 14 }, (_, i) => i < esc ? <rect key={i} x={-160 - i * 7} y={pb + i * ANG_PASO} width={320 + i * 14} height={ANG_PASO} fill={i % 2 ? '#d9d3c6' : '#ebe5d8'} stroke={KC.ink} strokeWidth={3} /> : null)}
     <rect x={-150} y={top} width={300} height={200} fill="#ebe5d8" stroke={KC.ink} strokeWidth={7} />
     <rect x={-45} y={top - 470} width={90} height={470} fill="#f2ede2" stroke={KC.ink} strokeWidth={7} />
@@ -30,21 +30,21 @@ function Subsuelo({ T, aplasta = 0, bombea = 0, pozo = true }) {
   const r = krng(5);
   const granos = Array.from({ length: 60 }, () => ({ x: r() * KW, y: r(), s: 8 + r() * 10 }));
   return <g>
-    <rect x={0} y={0} width={KW} height={KH} fill="#54768e" />
+    <rect x={0} y={0} width={KW} height={KH} fill="#0e1626" />
     {/* edificios */}
     {[[60, 160, 300], [250, 140, 220], [420, 180, 360], [640, 150, 260], [820, 200, 320]].map(([bx, w, h], i) =>
       <g key={i}><rect x={bx} y={top - h} width={w} height={h} fill={[KC.pink, KC.yellow, KC.lilac, KC.orange, KC.mint][i]} stroke={KC.ink} strokeWidth={6} />
         {Array.from({ length: Math.floor(h / 70) }, (_, k) => <rect key={k} x={bx + 22} y={top - h + 22 + k * 70} width={w - 44} height={30} fill="#fff" opacity=".55" />)}</g>)}
     {/* lodo del antiguo lago */}
-    <rect x={0} y={top} width={KW} height={1300 - top} fill="#4a3c33" stroke={KC.ink} strokeWidth={6} />
-    {granos.map((g, i) => <circle key={i} cx={g.x} cy={top + 30 + g.y * (1240 - top)} r={g.s * (1 - aplasta * 0.15)} fill="#6d523a" />)}
+    <rect x={0} y={top} width={KW} height={1360 - top} fill="#4a3c33" stroke={KC.ink} strokeWidth={6} />
+    {granos.map((g, i) => <circle key={i} cx={g.x} cy={top + 30 + g.y * (1300 - top)} r={g.s * (1 - aplasta * 0.15)} fill="#6d523a" />)}
     {/* agua entre los granos: se va vaciando */}
-    {Array.from({ length: 30 }, (_, i) => { const rr = krng(50 + i), yy = top + 40 + rr() * (1220 - top);
+    {Array.from({ length: 30 }, (_, i) => { const rr = krng(50 + i), yy = top + 40 + rr() * (1280 - top);
       return <circle key={i} cx={rr() * KW} cy={yy} r={7} fill="#3aa0ff" opacity={Math.max(0, 0.9 - bombea * 0.8)} />; })}
     {pozo && <g>
-      <rect x={950} y={top - 140} width={36} height={1240 - top + 140} fill="#c7ccd6" stroke={KC.ink} strokeWidth={5} />
+      <rect x={950} y={top - 140} width={36} height={1300 - top + 140} fill="#c7ccd6" stroke={KC.ink} strokeWidth={5} />
       <rect x={920} y={top - 170} width={96} height={50} rx={10} fill={KC.red} stroke={KC.ink} strokeWidth={5} />
-      {bombea > 0 && Array.from({ length: 6 }, (_, k) => { const u = ((T * 1.2 + k / 6) % 1); return <circle key={k} cx={968} cy={klerp(1220, top - 130, u)} r={10} fill="#3aa0ff" stroke={KC.ink} strokeWidth={2} />; })}
+      {bombea > 0 && Array.from({ length: 6 }, (_, k) => { const u = ((T * 1.2 + k / 6) % 1); return <circle key={k} cx={968} cy={klerp(1280, top - 130, u)} r={10} fill="#3aa0ff" stroke={KC.ink} strokeWidth={2} />; })}
     </g>}
   </g>;
 }
@@ -62,13 +62,13 @@ function Satelite({ T, x, y, s = 1 }) {
 // Mapa esquemático del valle: manchas azules = zonas que bajan más de 2 cm por mes (según NISAR).
 function MapaValle({ T, a }) {
   const manchas = [[-180, -60, 120, 70], [60, 40, 160, 90], [190, -120, 90, 60], [-60, 160, 110, 60]];
-  return <g transform="translate(560 910) scale(0.8)">
-    <path d="M -400 -300 Q -100 -380 200 -320 Q 420 -260 410 0 Q 430 260 180 330 Q -120 380 -360 260 Q -460 0 -400 -300 Z" fill="#f4e6c8" stroke={KC.ink} strokeWidth={8} />
-    {Array.from({ length: 9 }, (_, i) => <line key={'h' + i} x1={-380} y1={-280 + i * 70} x2={400} y2={-280 + i * 70} stroke="#d8c8a6" strokeWidth={3} />)}
-    {Array.from({ length: 11 }, (_, i) => <line key={'v' + i} x1={-380 + i * 78} y1={-300} x2={-380 + i * 78} y2={330} stroke="#d8c8a6" strokeWidth={3} />)}
+  return <g transform="translate(555 1040) scale(1.04)">
+    <path d="M -400 -300 Q -100 -380 200 -320 Q 420 -260 410 0 Q 430 260 180 330 Q -120 380 -360 260 Q -460 0 -400 -300 Z" fill="#1b2a3f" stroke={KC.ink} strokeWidth={8} />
+    {Array.from({ length: 9 }, (_, i) => <line key={'h' + i} x1={-380} y1={-280 + i * 70} x2={400} y2={-280 + i * 70} stroke="#34486a" strokeWidth={3} />)}
+    {Array.from({ length: 11 }, (_, i) => <line key={'v' + i} x1={-380 + i * 78} y1={-300} x2={-380 + i * 78} y2={330} stroke="#34486a" strokeWidth={3} />)}
     {manchas.map(([mx, my, rx, ry], i) => { const e = kprog(T, a + 0.6 + i * 0.35, a + 1.2 + i * 0.35, kEase.sale);
-      return <ellipse key={i} cx={mx} cy={my} rx={rx * e} ry={ry * e} fill="#1238c4" opacity={0.55 + 0.15 * Math.sin(T * 3 + i)} stroke="#0a1f73" strokeWidth={4} />; })}
-    <rect x={40} y={10} width={150} height={40} rx={8} fill="#bbb" stroke={KC.ink} strokeWidth={4} transform="rotate(-20 115 30)" />
+      return <ellipse key={i} cx={mx} cy={my} rx={rx * e} ry={ry * e} fill="#2f6dff" opacity={0.7 + 0.15 * Math.sin(T * 3 + i)} stroke="#9fc0ff" strokeWidth={4} />; })}
+    <rect x={40} y={10} width={150} height={40} rx={8} fill="#8f98a8" stroke={KC.ink} strokeWidth={4} transform="rotate(-20 115 30)" />
     <text x={115} y={-20} textAnchor="middle" style={{ font:`900 28px ${KF.texto}` }} fill={KC.ink}>aeropuerto</text>
     <circle cx={-170} cy={-150} r={14} fill={KC.gold} stroke={KC.ink} strokeWidth={4} />
     <text x={-170} y={-175} textAnchor="middle" style={{ font:`900 28px ${KF.texto}` }} fill={KC.ink}>Ángel</text>
@@ -79,7 +79,7 @@ function Grietas({ T, a }) {
   const g = kprog(T, a + 0.2, a + 2.2, kEase.sale);
   const crack = (x0, y0, pts) => <polyline points={pts.map(([dx, dy], i) => `${x0 + dx * Math.min(1, g * pts.length / (i + 1))},${y0 + dy * Math.min(1, g * pts.length / (i + 1))}`).join(' ')} fill="none" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />;
   return <g>
-    <rect x={0} y={0} width={KW} height={KH} fill="#847c62" />
+    <rect x={-300} y={-300} width={KW + 600} height={KH + 600} fill="#141824" />
     <rect x={0} y={1000} width={KW} height={300} fill="#4c4f59" stroke={KC.ink} strokeWidth={6} />
     {Array.from({ length: 6 }, (_, i) => <rect key={i} x={40 + i * 180} y={1140} width={100} height={16} fill="#fff" />)}
     {crack(200, 1000, [[30, 60], [-10, 120], [40, 200], [10, 300]])}
@@ -109,8 +109,8 @@ function HundimientoShot() {
       {/* 1 · gancho: el Ángel y sus escalones */}
       <Escena T={T} a={K.G} b={K.L}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Angel T={T} esc={escG} />
-          <line x1={150} y1={ANG_BASE} x2={930} y2={ANG_BASE} stroke={KC.red} strokeWidth={5} strokeDasharray="16 10" opacity={escG > 0 ? 1 : 0} /></>)}
+        {svg(<g transform="translate(0 190)"><Angel T={T} esc={escG} />
+          <line x1={150} y1={ANG_BASE} x2={930} y2={ANG_BASE} stroke={KC.red} strokeWidth={5} strokeDasharray="16 10" opacity={escG > 0 ? 1 : 0} /></g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 2–4 · el lago, el pozo y el lodo que se aplasta (corte del subsuelo) */}
@@ -131,11 +131,11 @@ function HundimientoShot() {
       {/* 6 · el satélite NISAR con su radar */}
       <Escena T={T} a={K.Sa} b={K.Ci}>
         <FondoEspacio T={T} />
-        {svg(<><path d="M 0 1300 Q 540 1150 1080 1300 L 1080 1920 L 0 1920 Z" fill="#3a8f5a" stroke={KC.ink} strokeWidth={6} />
+        {svg(<><path d="M -120 1330 Q 540 1150 1200 1330 L 1200 2100 L -120 2100 Z" fill="#12402c" stroke="#7fd6a6" strokeWidth={6} />
           {[[200, 1000], [520, 1060], [820, 980]].map(([cx, cy], i) => <g key={i} transform={`translate(${cx + Math.sin(T * 0.6 + i) * 20} ${cy})`}><ellipse rx={130} ry={50} fill="#fff" opacity=".85" /><ellipse cx={-60} cy={-20} rx={70} ry={40} fill="#fff" opacity=".85" /></g>)}
-          {kprog(T, K.Sa + 1.6, K.Sa + 2.2) > 0 && [0, 1, 2].map((k) => { const u = ((T * 0.9 + k / 3) % 1); return <path key={k} d={`M ${840 - 120 * u} ${560 + u * 640} Q 840 ${560 + u * 660} ${840 + 120 * u} ${560 + u * 640}`} stroke={KC.yellow} strokeWidth={8} fill="none" opacity={1 - u} />; })}
-          <Satelite T={T} x={640} y={460} s={1} /></>)}
-        <EscalaFija texto="12 m (reflector)" largo={260} color={KC.texto} />
+          {kprog(T, K.Sa + 1.6, K.Sa + 2.2) > 0 && [0, 1, 2].map((k) => { const u = ((T * 0.9 + k / 3) % 1); return <path key={k} d={`M ${800 - 150 * u} ${760 + u * 480} Q 800 ${760 + u * 506} ${800 + 150 * u} ${760 + u * 480}`} stroke={KC.yellow} strokeWidth={8} fill="none" opacity={1 - u} />; })}
+          <Satelite T={T} x={540} y={600} s={1.3} /></>)}
+        <EscalaFija texto="12 m (reflector)" largo={338} color={KC.texto} />
       </Escena>
       {/* 7 · la cifra en el mapa */}
       <Escena T={T} a={K.Ci} b={K.U}>
@@ -146,7 +146,7 @@ function HundimientoShot() {
       {/* 8 · tus uñas contra el suelo */}
       <Escena T={T} a={K.U} b={K.H}>
         <FondoLunares color={KC.mint} />
-        <EscalaFija texto="1 cm (barras)" largo={210} y={1480} color={KC.ink} />
+        <EscalaFija texto="1 cm (barras)" largo={380} y={1440} color={KC.ink} />
       </Escena>
       {/* 9 · la historia */}
       <Escena T={T} a={K.H} b={K.Gr}>
@@ -156,34 +156,34 @@ function HundimientoShot() {
       </Escena>
       {/* 10 · grietas */}
       <Escena T={T} a={K.Gr} b={K.C}>
-        {svg(<Grietas T={T} a={K.Gr} />)}
+        {svg(<g transform="translate(515 980) scale(1.1) translate(-540 -930)"><Grietas T={T} a={K.Gr} /></g>)}
       </Escena>
       {/* 11 · cierre: regreso al Ángel con sus 14 escalones */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><Angel T={T} esc={escC} />
-          <line x1={150} y1={ANG_BASE} x2={930} y2={ANG_BASE} stroke={KC.red} strokeWidth={5} strokeDasharray="16 10" /></>)}
+        {svg(<g transform="translate(0 190)"><Angel T={T} esc={escC} />
+          <line x1={150} y1={ANG_BASE} x2={930} y2={ANG_BASE} stroke={KC.red} strokeWidth={5} strokeDasharray="16 10" /></g>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
 
       {/* datos y etiquetas */}
-      <NumeroGigante T={T} at={K.G + 0.1} until={K.L - 0.2} valor={14} dur={3.1} etiqueta="escalones agregados" x={275} y={720} tam={120} color={KC.yellow} />
-      <Etq T={T} at={K.G + 1.0} until={K.L - 0.2} x={140} y={ANG_BASE} texto="suelo de antes" lado="izq" color={KC.red} tam={24} />
-      <Chip T={T} at={K.L + 0.3} until={K.B - 0.2} texto="fondo de un antiguo lago" y={430} x={420} tam={38} borde={KC.cyan} />
-      <Chip T={T} at={K.B + 0.3} until={K.Es - 0.2} texto="≈ 20 millones de personas" y={430} x={640} tam={38} borde={KC.yellow} />
-      <Etq T={T} at={K.B + 1.2} until={K.Es - 0.2} x={940} y={1180} texto="agua del subsuelo" lado="izq" tam={28} />
-      <Chip T={T} at={K.Es + 0.3} until={K.P - 0.2} texto="se aplasta como esponja" y={1420} x={540} tam={36} borde={KC.ink} />
-      <Chip T={T} at={K.Sa + 0.3} until={K.Ci - 0.2} texto="NISAR · NASA + India" y={760} x={540} tam={40} borde={KC.gold} />
-      <Etq T={T} at={K.Sa + 2.2} until={K.Ci - 0.2} x={300} y={1150} texto="radar: atraviesa las nubes" tam={28} />
-      <Chip T={T} at={K.Ci + 0.2} until={K.U - 0.2} texto="oct 2025 – ene 2026 · preliminar" y={400} x={640} tam={30} borde={KC.ink} />
-      <NumeroGigante T={T} at={K.Ci + 2.0} until={K.U - 0.2} valor={2} dur={0.6} prefijo="+" sufijo=" cm / mes" etiqueta="zonas azules: bajan más de" x={640} y={560} tam={84} color="#2f6dff" />
-      <Comparativa T={T} at={K.U + 0.1} until={K.H - 0.2} max={20} y={560} alto={420}
+      <NumeroGigante T={T} at={K.G + 0.1} until={K.L - 0.2} valor={14} dur={3.1} etiqueta="escalones agregados" x={240} y={800} tam={150} color={KC.yellow} />
+      <Etq T={T} at={K.G + 1.0} until={K.L - 0.2} x={705} y={ANG_BASE + 160} texto="suelo de antes" color={KC.red} tam={28} />
+      <Chip T={T} at={K.L + 0.3} until={K.B - 0.2} texto="fondo de un antiguo lago" y={320} x={540} tam={38} borde={KC.cyan} />
+      <Chip T={T} at={K.B + 0.3} until={K.Es - 0.2} texto="≈ 20 millones de personas" y={320} x={540} tam={38} borde={KC.yellow} />
+      <Etq T={T} at={K.B + 1.2} until={K.Es - 0.2} x={940} y={1235} texto="agua del subsuelo" lado="izq" tam={28} />
+      <Chip T={T} at={K.Es + 0.3} until={K.P - 0.2} texto="se aplasta como esponja" y={320} x={390} tam={36} borde={KC.ink} />
+      <Chip T={T} at={K.Sa + 0.3} until={K.Ci - 0.2} texto="NISAR · NASA + India" y={380} x={540} tam={40} borde={KC.gold} />
+      <Etq T={T} at={K.Sa + 2.2} until={K.Ci - 0.2} x={250} y={1190} texto="radar: atraviesa las nubes" tam={28} />
+      <Chip T={T} at={K.Ci + 0.2} until={K.U - 0.2} texto="oct 2025 – ene 2026 · preliminar" y={300} x={540} tam={30} borde={KC.ink} />
+      <NumeroGigante T={T} at={K.Ci + 2.0} until={K.U - 0.2} valor={2} dur={0.6} prefijo="+" sufijo=" cm / mes" etiqueta="zonas azules: bajan más de" x={540} y={455} tam={96} color="#2f6dff" />
+      <Comparativa T={T} at={K.U + 0.1} until={K.H - 0.2} max={20} y={520} alto={760}
         izq={{ valor: 3.47, texto: '3.5 mm', etiqueta: 'tus uñas', color: KC.pink }} der={{ valor: 20, texto: '+20 mm', etiqueta: 'el suelo', color: '#2f6dff' }} />
-      <Chip T={T} at={K.U + 0.5} until={K.H - 0.2} texto="por mes" y={470} x={540} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.U + 0.5} until={K.H - 0.2} texto="por mes" y={400} x={540} tam={34} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.H + 0.2} until={K.Gr - 0.3} anio="1925" quien="un ingeniero lo documenta" y={255} x={640} />
-      <Chip T={T} at={K.H + 3.6} until={K.Gr - 0.3} texto="años 90: ≈ 35 cm por año" y={1430} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Gr + 0.3} until={K.C - 0.2} texto="calles · edificios · tuberías · Metro" y={430} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="el Ángel no creció: la ciudad bajó" y={1440} tam={34} borde={KC.gold} />
+      <Chip T={T} at={K.H + 3.6} until={K.Gr - 0.3} texto="años 90: ≈ 35 cm por año" y={1475} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Gr + 0.3} until={K.C - 0.2} texto="calles · edificios · tuberías · Metro" y={380} tam={32} borde={KC.ink} />
+      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="el Ángel no creció: la ciudad bajó" y={1400} tam={34} borde={KC.gold} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.L - 0.1} texto="Le agregaron *14 escalones:* la ciudad se hunde." />
