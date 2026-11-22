@@ -312,10 +312,12 @@ function MangoShot() {
       <Escena T={T} a={K.M} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <Capa>
+          <g transform="translate(0 170)">{/* encuadre: mangos bajados al centro del cuadro */}
           <Mango x={340} y={770} s={1.4} rot={-12} madurez={1} manchas={kprog(T, K.M + 0.2, K.M + 2.2, kEase.sale)} id="ma" />
           <Mango x={835} y={810} s={0.95} rot={8} madurez={0.9} lagrimas={kprog(T, K.M + 1.6, K.M + 3.0, kEase.sale)} id="mb" />
+          </g>
           {/* corte: etapa avanzada, la pulpa ennegrecida bajo la mancha */}
-          {(() => { const o = kprog(T, K.M + 3.4, K.M + 3.9); if (o <= 0) return null; return <g opacity={o} transform="translate(520 1330) scale(1.4)">
+          {(() => { const o = kprog(T, K.M + 3.4, K.M + 3.9); if (o <= 0) return null; return <g opacity={o} transform="translate(520 1380) scale(1.4)">
             <path d="M -230 0 A 230 125 0 0 1 230 0 Z" fill="#e8a21c" stroke={KC.ink} strokeWidth={7} />
             <path d="M -214 0 A 214 112 0 0 1 214 0 Z" fill={MG.pulpa} />
             <path d="M -120 0 A 120 34 0 0 1 120 0 Z" fill="#f3e3b0" stroke="#c9b27a" strokeWidth={4} />
@@ -329,7 +331,7 @@ function MangoShot() {
       <Escena T={T} a={K.E} b={K.Ex} zoom={0.03} origen="45% 50%">
         <FondoLunares color={KC.cyan} />
         <Capa>
-          <MapaMexico x={60} y={560} ancho={900} conCA={false}>
+          <MapaMexico x={60} y={710} ancho={900} conCA={false}>
             {HUERTAS.map(([lo, la], i) => { const k = kprog(T, K.E + 2.6 + i * 0.03, K.E + 2.9 + i * 0.03, kEase.rebote); if (k <= 0) return null; const [px, py] = mxProy(lo, la);
               return <circle key={i} cx={px} cy={py} r={9 * k} fill={MG.mancha} stroke="#fff" strokeWidth={3} />; })}
           </MapaMexico>
@@ -407,15 +409,15 @@ function MangoShot() {
       <Medidor T={T} at={K.De + 0.6} until={K.M - 0.3} valor={(t) => 1 - kprog(t, K.De + 0.6, K.De + 3.2) * 0.75} etiqueta="defensas de la cáscara" texto={() => ''} x={632} y={480} ancho={418} color={KC.pink} />
       <Medidor T={T} at={K.De + 1.2} until={K.M - 0.3} valor={(t) => 1 - kprog(t, K.De + 1.2, K.De + 3.4) * 0.7} etiqueta="firmeza de la fruta" texto={() => ''} x={632} y={620} ancho={418} color={KC.cyan} />
       <Chip T={T} at={K.De + 3.5} until={K.M - 0.3} texto="¡despierta!" x={540} y={1490} tam={44} borde={KC.gold2} />
-      <Etq T={T} at={K.M + 1.0} until={K.E - 0.3} x={60} y={470} texto="manchas negras y hundidas" tam={32} color={KC.ink} />
-      <Etq T={T} at={K.M + 2.0} until={K.E - 0.3} x={1030} y={590} texto="rayas «de lágrima»" lado="izq" tam={30} color={KC.ink} />
-      <Chip T={T} at={K.M + 3.6} until={K.E - 0.3} texto="si avanza: llega a la pulpa" x={540} y={1455} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.M + 1.0} until={K.E - 0.3} x={60} y={640} texto="manchas negras y hundidas" tam={32} color={KC.ink} />
+      <Etq T={T} at={K.M + 2.0} until={K.E - 0.3} x={1030} y={760} texto="rayas «de lágrima»" lado="izq" tam={30} color={KC.ink} />
+      <Chip T={T} at={K.M + 3.6} until={K.E - 0.3} texto="si avanza: llega a la pulpa" x={540} y={1480} tam={38} borde={KC.ink} />
       <TarjetaEstudio T={T} at={K.E + 0.2} until={K.E + 2.4} anio="2020" quien="CIAD · Colegio de Postgraduados · Chapingo" revista="Plant Disease 104: 137–146 · con colaboradores de Brasil y Argentina" y={330} />
-      <NumeroGigante T={T} at={K.E + 2.6} until={K.Ex - 0.3} valor={59} dur={1.7} etiqueta="huertas (2010–2012)" x={790} y={500} tam={150} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.E + 2.6} until={K.Ex - 0.3} valor={59} dur={1.7} etiqueta="huertas (2010–2012)" x={790} y={650} tam={150} color={KC.yellow} />
       {ESPECIES.map((sp, i) => { const fuerte = sp === 'C. siamense' || sp === 'C. asianum'; const on = T > K.E + 5.6;
-        return <Etq key={sp} T={T} at={K.E + 4.0 + i * 0.25} until={K.Ex - 0.3} x={140} y={1120 + i * 52} texto={(fuerte && on ? '★ ' : '• ') + sp} it tam={fuerte && on ? 36 : 30} color={fuerte && on ? KC.red : KC.ink} />; })}
-      <Chip T={T} at={K.E + 5.6} until={K.Ex - 0.3} texto={<>más agresivas: <i>C. siamense</i> y <i>C. asianum</i></>} x={420} y={1480} tam={32} borde={KC.red} />
-      <Etq T={T} at={K.E + 3.0} until={K.Ex - 0.3} x={60} y={1050} texto="posición de los puntos: ilustrativa" tam={20} color={KC.ink} />
+        return <Etq key={sp} T={T} at={K.E + 4.0 + i * 0.25} until={K.Ex - 0.3} x={140} y={1270 + i * 52} texto={(fuerte && on ? '★ ' : '• ') + sp} it tam={fuerte && on ? 36 : 30} color={fuerte && on ? KC.red : KC.ink} />; })}
+      <Chip T={T} at={K.E + 5.6} until={K.Ex - 0.3} texto={<>más agresivas: <i>C. siamense</i> y <i>C. asianum</i></>} x={420} y={1545} tam={32} borde={KC.red} />
+      <Etq T={T} at={K.E + 3.0} until={K.Ex - 0.3} x={60} y={1200} texto="posición de los puntos: ilustrativa" tam={20} color={KC.ink} />
       <Chip T={T} at={K.Ex + 0.3} until={K.B - 0.3} texto="el mayor exportador de mango" x={430} y={440} tam={40} borde={KC.leaf} />
       <NumeroGigante T={T} at={K.Ex + 0.9} until={K.B - 0.3} valor={450000} dur={1.6} prefijo="≈" sufijo=" t" etiqueta="exportación de mango de México, 2025" x={540} y={640} tam={150} color={KC.yellow} />
       <Etq T={T} at={K.Ex + 1.6} until={K.B - 0.3} x={60} y={790} texto="FAO, 2026" tam={26} color={KC.ink} />
