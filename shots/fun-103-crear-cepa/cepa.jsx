@@ -29,7 +29,7 @@ const TX = {
 // Mano que sostiene algo desde abajo (palma + pulgar), centro de la palma en (x, y).
 function Mano({ x, y, s = 1 }) {
   return <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <path d="M -150 260 L -120 40 Q -110 -10 -60 -20 L 80 -24 Q 130 -20 140 20 L 150 260 Z" fill={CP.piel} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
+    <path d="M -166 1400 L -150 260 L -120 40 Q -110 -10 -60 -20 L 80 -24 Q 130 -20 140 20 L 150 260 L 166 1400 Z" fill={CP.piel} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     {[-70, -20, 30, 80].map((dx, i) => <path key={i} d={`M ${dx - 26} -14 Q ${dx - 30} -78 ${dx} -84 Q ${dx + 30} -78 ${dx + 24} -14`} fill={CP.piel} stroke={KC.ink} strokeWidth={7} />)}
     <path d="M -110 60 Q -190 20 -200 -40 Q -196 -76 -160 -60 Q -120 -20 -70 10" fill={CP.piel} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     <path d="M -60 120 Q 10 140 90 112" stroke={CP.piel2} strokeWidth={6} fill="none" />
@@ -185,7 +185,11 @@ const Tag = ({ x, y, texto, s = 1, rot = 8 }) => <g transform={`translate(${x} $
 </g>;
 
 // 56 cajitas del estudio (8 × 7).
-const H56 = Array.from({ length: 56 }, (_, i) => [130 + (i % 8) * 117, 935 + Math.floor(i / 8) * 37]);
+const H56 = Array.from({ length: 56 }, (_, i) => [137 + (i % 8) * 115, 790 + Math.floor(i / 8) * 86]);
+// Pase a mano (estilo cine): agranda y recoloca un grupo de dibujo; un punto p queda en k·p + (dx, dy).
+const Zm = ({ k = 1, dx = 0, dy = 0, children }) => <g transform={`translate(${dx} ${dy}) scale(${k})`}>{children}</g>;
+// Polvo de esporas tenue al fondo de las escenas al microscopio (para que el cuadro no quede vacío).
+const POLVO = (() => { const g = krng(31); return Array.from({ length: 18 }, () => [60 + g() * 960, 330 + g() * 1130, 1.1 + g() * 1.1, g() * 180]); })();
 
 function CepaShot() {
   const { T, CUES } = useComposition();
@@ -193,12 +197,12 @@ function CepaShot() {
   const FIN = K.Ou + 4;
   const racimo = (abre = 1) => <><Mano x={430} y={1010} s={0.85} /><RacimoOstra T={T} x={440} y={950} s={1.55} abre={abre} n={7} seed={4} /></>;
   // hifas monocarióticas (escena Monocarion) — se reutilizan en Dicarion
-  const pMonoA = kprog(T, K.M + 0.5, K.M + 3.2), pMonoB = kprog(T, K.M + 0.9, K.M + 3.6);
+  const pMonoA = kprog(T, K.M + 0.2, K.M + 3.2), pMonoB = kprog(T, K.M + 0.5, K.M + 3.6);
   // dicarión
   const fus = kprog(T, K.D + 0.2, K.D + 1.0, kEase.sale);
   const pDi = kprog(T, K.D + 1.0, K.D + 3.6);
   // colonias
-  const rH = klerp(16, 200, kprog(T, K.H + 0.2, K.H + 3.8, kEase.suave));
+  const rH = klerp(22, 275, kprog(T, K.H + 0.2, K.H + 3.8, kEase.suave));
   const tapaA = kprog(T, K.A + 1.2, K.A + 1.8) * (1 - kprog(T, K.A + 2.8, K.A + 3.4));
   const caeCubo = kprog(T, K.A + 1.6, K.A + 2.6, kEase.suave), flamea = kprog(T, K.A + 0.2, K.A + 0.5) * (1 - kprog(T, K.A + 1.3, K.A + 1.6));
   const dia = 1 + Math.floor(6 * kprog(T, K.H + 0.2, K.H + 3.8));
@@ -211,55 +215,55 @@ function CepaShot() {
       <Escena T={T} a={-1} b={K.Co} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <g transform={`rotate(${Math.sin(T * 2.2) * 4} 440 950)`}>{racimo(klerp(0.75, 1, kprog(T, 0, 0.8)))}</g>
-          <Semilla x={170} y={600} s={1.1} />
-          <Tache x={170} y={600} p={kprog(T, K.G + 0.6, K.G + 1.0, kEase.rebote)} r={70} />
+          <Zm k={1.4} dx={-180} dy={-218}><g transform={`rotate(${Math.sin(T * 2.2) * 4} 440 950)`}>{racimo(klerp(0.75, 1, kprog(T, 0, 0.8)))}</g></Zm>
+          <Semilla x={200} y={470} s={1.5} />
+          <Tache x={200} y={470} p={kprog(T, K.G + 0.6, K.G + 1.0, kEase.rebote)} r={96} />
           {T > K.G + 1.8 && <g opacity={kprog(T, K.G + 1.8, K.G + 2.2)}>
-            <PlacaPetri x={420} y={560} r={60} agar={CP.agar} id="pG0"><ColoniaHifas r={44} seed={2} color="#fbd3de" /></PlacaPetri>
-            <path d="M 420 600 Q 430 700 430 780" stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="14 10" strokeDashoffset={-T * 40} />
-            <path d="M 410 760 L 430 800 L 452 762" stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" />
+            <PlacaPetri x={640} y={450} r={84} agar={CP.agar} id="pG0"><ColoniaHifas r={62} seed={2} color="#fbd3de" /></PlacaPetri>
+            <path d="M 640 540 Q 652 590 646 640" stroke={KC.ink} strokeWidth={8} fill="none" strokeDasharray="14 10" strokeDashoffset={-T * 40} />
+            <path d="M 624 622 L 646 664 L 668 624" stroke={KC.ink} strokeWidth={8} fill="none" strokeLinecap="round" />
           </g>}
         </>)}
       </Escena>
       {/* 1 · corte: se abre la seta y las pinzas toman tejido de adentro */}
       <Escena T={T} a={K.Co} b={K.A} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>
+        {fsvg(<Zm k={1.25} dx={-56} dy={-170}>
           <SetaPartida x={400} y={900} s={1.2} abre={kprog(T, K.Co + 0.2, K.Co + 1.2, kEase.sale)} hueco={kprog(T, K.Co + 2.4, K.Co + 2.6)} />
           {/* polvo y microbios en la superficie de afuera */}
           {T > K.Co + 1.6 && [[180, 700], [260, 640], [700, 620], [820, 700], [150, 820], [860, 820], [330, 600]].map(([a, b], i) => <circle key={i} cx={a} cy={b} r={7 + (i % 3) * 3} fill={i % 2 ? '#6b8f3a' : '#8a6a4a'} stroke={KC.ink} strokeWidth={2} opacity={kprog(T, K.Co + 1.6 + i * 0.06, K.Co + 1.9 + i * 0.06)} />)}
           {(() => { const ent = kprog(T, K.Co + 1.3, K.Co + 2.2, kEase.sale), sale = kprog(T, K.Co + 2.6, K.Co + 3.6, kEase.suave);
             const px = klerp(980, 448, ent) + sale * 200, py = klerp(560, 802, ent) - sale * 260;
             return <>{T > K.Co + 2.4 && <Cubito x={px - 2} y={py} s={1} />}<Pinzas x={px} y={py} ang={-35} a={T > K.Co + 2.4 ? 0 : 1 - ent * 0.6} s={1} /></>; })()}
-        </>)}
+        </Zm>)}
       </Escena>
       {/* 2 · agar: flama, campana de flujo y la caja Petri */}
       <Escena T={T} a={K.A} b={K.H} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
           {/* campana de flujo laminar: filtro arriba y aire que baja */}
-          <rect x={300} y={360} width={720} height={70} rx={14} fill="#dfe7ee" stroke={KC.ink} strokeWidth={7} />
-          {Array.from({ length: 10 }, (_, i) => <line key={i} x1={330 + i * 70} y1={374} x2={330 + i * 70} y2={416} stroke="#9aa4ae" strokeWidth={5} />)}
-          {Array.from({ length: 6 }, (_, i) => { const yy = 460 + ((T * 160 + i * 60) % 300); return <g key={i} opacity=".6"><line x1={380 + i * 110} y1={yy} x2={380 + i * 110} y2={yy + 50} stroke="#fff" strokeWidth={6} strokeLinecap="round" /><path d={`M ${368 + i * 110} ${yy + 38} L ${380 + i * 110} ${yy + 54} L ${392 + i * 110} ${yy + 38}`} stroke="#fff" strokeWidth={5} fill="none" /></g>; })}
-          <Mechero T={T} x={150} y={1170} s={0.85} />
-          {flamea > 0 && <g opacity={flamea}><Pinzas x={150} y={880} ang={-150} a={0.2} /><circle cx={150} cy={880} r={26} fill={KC.orange} opacity={0.4 + 0.2 * Math.sin(T * 20)} /></g>}
-          <PlacaPetri x={640} y={930} r={250} agar={CP.agar} id="pA" tapa={0}>
-            {caeCubo >= 1 && <Cubito x={0} y={0} s={1.2} />}
+          <rect x={300} y={400} width={720} height={70} rx={14} fill="#dfe7ee" stroke={KC.ink} strokeWidth={7} />
+          {Array.from({ length: 10 }, (_, i) => <line key={i} x1={330 + i * 70} y1={414} x2={330 + i * 70} y2={456} stroke="#9aa4ae" strokeWidth={5} />)}
+          {Array.from({ length: 6 }, (_, i) => { const yy = 500 + ((T * 160 + i * 60) % 300); return <g key={i} opacity=".6"><line x1={380 + i * 110} y1={yy} x2={380 + i * 110} y2={yy + 50} stroke="#fff" strokeWidth={6} strokeLinecap="round" /><path d={`M ${368 + i * 110} ${yy + 38} L ${380 + i * 110} ${yy + 54} L ${392 + i * 110} ${yy + 38}`} stroke="#fff" strokeWidth={5} fill="none" /></g>; })}
+          <Mechero T={T} x={150} y={1360} s={1.1} />
+          {flamea > 0 && <g opacity={flamea}><Pinzas x={150} y={990} ang={-150} a={0.2} /><circle cx={150} cy={990} r={30} fill={KC.orange} opacity={0.4 + 0.2 * Math.sin(T * 20)} /></g>}
+          <PlacaPetri x={600} y={1010} r={330} agar={CP.agar} id="pA" tapa={0}>
+            {caeCubo >= 1 && <Cubito x={0} y={0} s={1.6} />}
           </PlacaPetri>
           {/* tapa que se levanta apenas */}
-          {tapaA > 0 && <ellipse cx={640 + tapaA * 330} cy={930 - tapaA * 20} rx={262} ry={262} fill="rgba(220,240,246,.35)" stroke={KC.ink} strokeWidth={6} />}
-          {caeCubo > 0 && caeCubo < 1 && <><Cubito x={klerp(860, 640, caeCubo)} y={klerp(600, 930, caeCubo)} s={1.2} /><Pinzas x={klerp(860, 640, caeCubo) + 6} y={klerp(600, 930, caeCubo)} ang={-40} a={caeCubo > 0.9 ? 1 : 0} /></>}
+          {tapaA > 0 && <ellipse cx={600 + tapaA * 420} cy={1010 - tapaA * 26} rx={346} ry={346} fill="rgba(220,240,246,.35)" stroke={KC.ink} strokeWidth={6} />}
+          {caeCubo > 0 && caeCubo < 1 && <><Cubito x={klerp(890, 600, caeCubo)} y={klerp(640, 1010, caeCubo)} s={1.6} /><Pinzas x={klerp(890, 600, caeCubo) + 8} y={klerp(640, 1010, caeCubo)} ang={-40} a={caeCubo > 0.9 ? 1 : 0} /></>}
         </>)}
       </Escena>
       {/* 3 · hifas: la colonia crece en círculo; Lupa en la orilla */}
       <Escena T={T} a={K.H} b={K.Pa} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<PlacaPetri x={560} y={990} r={240} agar={CP.agar} id="pH"><ColoniaHifas r={rH} seed={3} /><Cubito x={0} y={0} s={0.9} /></PlacaPetri>)}
+        {fsvg(<PlacaPetri x={560} y={1060} r={330} agar={CP.agar} id="pH"><ColoniaHifas r={rH} seed={3} /><Cubito x={0} y={0} s={1.25} /></PlacaPetri>)}
       </Escena>
       {/* 4 · pasar: la contaminada se tira; de la limpia, un cuadrito de micelio nuevo a otra caja */}
       <Escena T={T} a={K.Pa} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<>
+        {fsvg(<Zm k={1.15} dx={-35} dy={-92}>
           {/* bote */}
           <path d="M 90 1060 L 110 1230 L 300 1230 L 320 1060 Z" fill="#5a5f6b" stroke={KC.ink} strokeWidth={7} /><rect x={74} y={1040} width={262} height={30} rx={10} fill="#777e8a" stroke={KC.ink} strokeWidth={6} />
           <g transform={`translate(${klerp(250, 205, tira)} ${klerp(760, 1080, tira)}) scale(${klerp(1, 0.45, tira)}) rotate(${tira * 40})`} opacity={1 - kprog(T, K.Pa + 1.1, K.Pa + 1.3)}>
@@ -271,15 +275,15 @@ function CepaShot() {
           {(() => { const bx = klerp(760, 560, lleva), by = klerp(614, 1090, lleva);
             return <>{lleva > 0 && <rect x={bx - 14} y={by - 14} width={28} height={28} rx={4} fill={CP.micelio} stroke={KC.ink} strokeWidth={3} />}
               {T > K.Pa + 0.9 && T < K.Pa + 2.7 && <Bisturi x={bx + 10} y={by} ang={-40} />}</>; })()}
-        </>)}
+        </Zm>)}
       </Escena>
       {/* 5 · re-gancho: dos clones y un signo de interrogación */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.08}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <RacimoOstra T={T} x={170} y={1130} s={1.15} n={6} seed={4} />
-          <RacimoOstra T={T} x={400} y={1130} s={1.15} n={6} seed={4} />
-          <Interrogacion T={T} x={290} y={880} tam={380} color={KC.pink} />
+          <RacimoOstra T={T} x={300} y={1230} s={1.45} n={6} seed={4} />
+          <RacimoOstra T={T} x={780} y={1230} s={1.45} n={6} seed={4} />
+          <Interrogacion T={T} x={540} y={880} tam={420} color={KC.pink} />
         </>)}
       </Escena>
       {/* 6 · esporas: sombrero boca abajo, tazón, impresión; Lupa con esporas oblongas */}
@@ -300,8 +304,9 @@ function CepaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={20} />
         {fsvg(<>
+          {POLVO.map(([ex, ey, es, er], i) => <g key={i} opacity=".15"><Espora x={ex + Math.sin(T * 0.5 + i) * 8} y={ey + Math.cos(T * 0.4 + i * 2) * 6} s={es} rot={er + T * 3} /></g>)}
           {(() => { const f = 1 - fus;   // los monocariones se desvanecen al fusionarse
-            return <g opacity={T < K.D ? 1 : klerp(1, 0.0, kprog(T, K.D + 0.9, K.D + 1.5))}>
+            return <Zm k={1.4} dx={-25} dy={-150}><g opacity={T < K.D ? 1 : klerp(1, 0.0, kprog(T, K.D + 0.9, K.D + 1.5))}>
               <Espora x={110} y={620} s={1.6} rot={0} />
               <Hifa x0={140} y={620} largo={470 + 60 * fus} p={pMonoA} nucleos={[CP.azul]} T={T} paso={200} />
               <Espora x={110} y={880} s={1.6} rot={0} />
@@ -310,112 +315,117 @@ function CepaShot() {
               {fus > 0 && <path d={`M 660 620 Q ${720} ${750} 660 880`} stroke="#eaf6ff" strokeWidth={46} fill="none" opacity={fus} strokeLinecap="round" />}
               {fus > 0.8 && <circle cx={705} cy={750} r={40 + 10 * Math.sin(T * 8)} fill="#fff" opacity={0.5 * (1 - kprog(T, K.D + 1.0, K.D + 1.6))} style={{ filter:'drop-shadow(0 0 20px #fff)' }} />}
               {void f}
-            </g>; })()}
+            </g></Zm>; })()}
           {/* dicarión: hifa con un núcleo azul y uno dorado por compartimento y fíbulas en cada tabique */}
-          {T > K.D + 0.9 && <Hifa x0={60} y={900} largo={960} p={pDi} nucleos={[CP.azul, CP.oro]} fibulas T={T} paso={300} ancho={80} />}
-          {T > K.D + 3.4 && <g opacity={kprog(T, K.D + 3.4, K.D + 3.9)}><SetaOstra x={860} y={1130} s={1.1} abre={kprog(T, K.D + 3.4, K.D + 4.4)} /></g>}
+          {T > K.D + 0.9 && <Zm k={1.5} dx={-50} dy={-450}><Hifa x0={60} y={900} largo={960} p={pDi} nucleos={[CP.azul, CP.oro]} fibulas T={T} paso={300} ancho={80} /></Zm>}
+          {T > K.D + 3.4 && <g opacity={kprog(T, K.D + 3.4, K.D + 3.9)}><SetaOstra x={620} y={1390} s={1.7} abre={kprog(T, K.D + 3.4, K.D + 4.4)} /></g>}
         </>)}
       </Escena>
       {/* 9 · estudio: Oaxaca, dos cepas silvestres, 56 híbridas */}
       <Escena T={T} a={K.Es} b={K.Gu} zoom={0.03}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <g opacity={kprog(T, K.Es + 1.6, K.Es + 2.0) * (1 - kprog(T, K.Es + 4.4, K.Es + 4.8))}>
-            <MapaMexico x={30} y={380} ancho={600} conCA={false}>
-              {(() => { const [hx, hy] = mxProy(-97.78, 17.81); const k = kprog(T, K.Es + 2.0, K.Es + 2.4, kEase.rebote); return <g transform={`translate(${hx} ${hy}) scale(${1 / 0.6})`}><circle r={18 * k} fill={KC.red} stroke={KC.ink} strokeWidth={5} /><circle r={34 * k + 6 * Math.sin(T * 5)} fill="none" stroke={KC.red} strokeWidth={4} opacity=".6" /></g>; })()}
+          <g opacity={klerp(1, 0.14, kprog(T, K.Es + 3.1, K.Es + 3.5))}>
+            <MapaMexico x={110} y={740} ancho={1100} conCA={false}>
+              {(() => { const [hx, hy] = mxProy(-97.78, 17.81); const k = kprog(T, K.Es + 2.0, K.Es + 2.4, kEase.rebote); return <g transform={`translate(${hx} ${hy}) scale(${1 / 1.1})`}><circle r={18 * k} fill={KC.red} stroke={KC.ink} strokeWidth={5} /><circle r={Math.max(0, 34 * k + 6 * Math.sin(T * 5) * k)} fill="none" stroke={KC.red} strokeWidth={4} opacity=".6" /></g>; })()}
             </MapaMexico>
           </g>
           {/* las dos cepas silvestres (padres) */}
+          <Zm k={1.3} dx={-340} dy={-176}>
           {[[700, CP.micelio, 'pDj'], [940, '#fbd3de', 'pRo']].map(([px, col, id], i) => { const k = kprog(T, K.Es + 2.4 + i * 0.3, K.Es + 2.8 + i * 0.3, kEase.rebote);
             return k > 0 ? <g key={id} transform={`translate(${px} 520) scale(${k})`}><PlacaPetri x={0} y={0} r={62} agar={CP.agar} id={id}><ColoniaHifas r={48} seed={11 + i} color={col} /></PlacaPetri></g> : null; })}
           {T > K.Es + 2.7 && <g opacity={kprog(T, K.Es + 2.7, K.Es + 3.0)} style={{ font:`700 24px ${KF.mono}` }}><text x={700} y={612} textAnchor="middle" fontStyle="italic" fill={KC.ink}>{TX.varDj}</text><text x={940} y={612} textAnchor="middle" fontStyle="italic" fill={KC.ink}>{TX.varRo}</text><text x={820} y={438} textAnchor="middle" fill={KC.ink}>{TX.padres}</text></g>}
           {T > K.Es + 3.0 && <text x={820} y={540} textAnchor="middle" style={{ font:`400 60px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(T, K.Es + 3.0, K.Es + 3.3)}>×</text>}
+          </Zm>
           {H56.map(([hx, hy], i) => { const k = kprog(T, K.Es + 3.2 + i * 0.03, K.Es + 3.45 + i * 0.03, kEase.rebote); if (k <= 0) return null;
-            return <g key={i} transform={`translate(${hx} ${hy}) scale(${k})`}><circle r={17} fill="#dfeef2" stroke={KC.ink} strokeWidth={4} /><circle r={12} fill={CP.agar} /><rect x={-9} y={-4} width={8} height={8} fill={CP.micelio} stroke={KC.ink} strokeWidth={1.5} /><rect x={1} y={-4} width={8} height={8} fill="#f59ab0" stroke={KC.ink} strokeWidth={1.5} /></g>; })}
+            return <g key={i} transform={`translate(${hx} ${hy}) scale(${k * 2.1})`}><circle r={17} fill="#dfeef2" stroke={KC.ink} strokeWidth={4} /><circle r={12} fill={CP.agar} /><rect x={-9} y={-4} width={8} height={8} fill={CP.micelio} stroke={KC.ink} strokeWidth={1.5} /><rect x={1} y={-4} width={8} height={8} fill="#f59ab0" stroke={KC.ink} strokeWidth={1.5} /></g>; })}
         </>)}
       </Escena>
       {/* 10 · guardar: código y tres formas */}
       <Escena T={T} a={K.Gu} b={K.R} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <PlacaPetri x={280} y={630} r={140} agar={CP.agar} id="pG"><ColoniaHifas r={112} seed={13} color="#fbd3de" /></PlacaPetri>
-          {T > K.Gu + 0.4 && <g opacity={kprog(T, K.Gu + 0.4, K.Gu + 0.7)}><Tag x={530} y={560} texto={TX.codigo} s={0.9} rot={10} /></g>}
-          <g opacity={kprog(T, K.Gu + 2.8, K.Gu + 3.1)}><PlacaPetri x={200} y={1010} r={80} agar={CP.agar} id="pR1"><ColoniaHifas r={60} seed={21} color="#fbd3de" /></PlacaPetri><path d="M 290 1010 L 330 1010" stroke={KC.ink} strokeWidth={6} /></g>
-          <TuboAgua x={540} y={1100} s={0.75} on={kprog(T, K.Gu + 1.2, K.Gu + 1.5)} />
-          <VialFrio x={880} y={1100} s={0.75} T={T} on={kprog(T, K.Gu + 1.9, K.Gu + 2.2)} />
+          <PlacaPetri x={310} y={650} r={200} agar={CP.agar} id="pG"><ColoniaHifas r={160} seed={13} color="#fbd3de" /></PlacaPetri>
+          {T > K.Gu + 0.4 && <g opacity={kprog(T, K.Gu + 0.4, K.Gu + 0.7)}><Tag x={700} y={600} texto={TX.codigo} s={1.25} rot={10} /></g>}
+          <g opacity={kprog(T, K.Gu + 2.8, K.Gu + 3.1)}><PlacaPetri x={210} y={1230} r={120} agar={CP.agar} id="pR1"><ColoniaHifas r={90} seed={21} color="#fbd3de" /></PlacaPetri></g>
+          <TuboAgua x={560} y={1400} s={1.15} on={kprog(T, K.Gu + 1.2, K.Gu + 1.5)} />
+          <VialFrio x={870} y={1400} s={1.15} T={T} on={kprog(T, K.Gu + 1.9, K.Gu + 2.2)} />
         </>)}
       </Escena>
       {/* 11 · Robert: su impresión de esporas y su tupper */}
       <Escena T={T} a={K.R} b={K.C} zoom={0.04}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<>
+        {fsvg(<Zm k={1.75} dx={68} dy={-520}>
           <rect x={70} y={520} width={400} height={300} rx={14} fill={CP.papel} stroke={KC.ink} strokeWidth={7} />
           <Impresion x={270} y={790} s={0.6} />
           <Tupper x={270} y={1080} s={0.95} col={kprog(T, K.R + 1.2, K.R + 3.0)} />
-        </>)}
+        </Zm>)}
       </Escena>
       {/* 12 · cierre: la misma seta del inicio, ahora con su código */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <g transform={`rotate(${Math.sin(T * 2.2) * 4} 440 950)`}>{racimo(1)}</g>
-          {T > K.C + 0.5 && <g opacity={kprog(T, K.C + 0.5, K.C + 0.9)}><Tag x={600} y={900} texto={TX.codigo} s={0.85} rot={-8} /></g>}
+          <Zm k={1.4} dx={-180} dy={-218}><g transform={`rotate(${Math.sin(T * 2.2) * 4} 440 950)`}>{racimo(1)}</g>
+          {T > K.C + 0.5 && <g opacity={kprog(T, K.C + 0.5, K.C + 0.9)}><Tag x={600} y={900} texto={TX.codigo} s={0.85} rot={-8} /></g>}</Zm>
         </>)}
       </Escena>
 
       {/* textos */}
-      <Etq T={T} at={K.G + 0.5} until={K.Co - 0.3} x={600} y={1090} texto={TX.etqSeta} tam={36} color={KC.ink} />
-      <Etq T={T} at={K.G + 0.8} until={K.Co - 0.3} x={600} y={1140} texto={TX.etqSetaCi} it tam={36} color={KC.ink} />
-      <Chip T={T} at={K.G + 0.9} until={K.Co - 0.3} texto={TX.semilla} x={170} y={720} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.G + 2.0} until={K.Co - 0.3} texto={TX.pedacito} x={420} y={460} tam={30} borde={KC.ink} />
-      <Chip T={T} at={K.Co + 1.4} until={K.A - 0.3} texto={TX.adentro} x={470} y={1170} tam={34} borde={KC.mint} />
-      <Chip T={T} at={K.Co + 1.9} until={K.A - 0.3} texto={TX.afuera} x={470} y={480} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.Co + 2.6} until={K.A - 0.3} texto={TX.mm} x={800} y={1060} tam={32} borde={KC.gold} mono />
-      <Etq T={T} at={K.A + 0.4} until={K.A + 1.8} x={40} y={720} texto={TX.flama} tam={26} color={KC.ink} />
-      <Chip T={T} at={K.A + 1.0} until={K.H - 0.3} texto={TX.sinAire} x={660} y={560} tam={24} borde={KC.ink} />
-      <Chip T={T} at={K.A + 0.6} until={K.H - 0.3} texto={TX.flujo} x={660} y={485} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.A + 2.2} until={K.H - 0.3} texto={TX.pda} x={640} y={1215} tam={30} borde={KC.gold} />
-      {T > K.H + 0.2 && T < K.Pa - 0.2 && <div style={{ position:'absolute', left:880, top:800, transform:'translate(-50%,-50%)', zIndex:42, font:`700 52px ${KF.mono}`, color:KC.texto, background:'rgba(0,0,0,.6)', border:`3px solid ${KC.texto}`, borderRadius:14, padding:'2px 22px', opacity:kprog(T, K.H + 0.2, K.H + 0.5) }}>{TX.dia} {dia}</div>}
-      <Lupa T={T} at={K.H + 0.8} until={K.Pa - 0.4} x={300} y={540} r={170} fx={560 - 0.7 * (rH + 4)} fy={990 - 0.7 * (rH + 4)} interior={(t, r) => LupaHifas(t, r, K.H + 0.9)} etiqueta={TX.lupaHifas} tinte={KC.mint} />
-      <Chip T={T} at={K.Pa + 0.3} until={K.P - 0.3} texto={TX.tirar} x={250} y={540} tam={30} borde={KC.red} />
-      <Etq T={T} at={K.Pa + 1.0} until={K.P - 0.3} x={940} y={560} texto={TX.nuevo} lado="izq" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Pa + 2.6} until={K.P - 0.3} texto={TX.clon} x={540} y={430} tam={38} borde={KC.gold} />
+      <Etq T={T} at={K.G + 0.5} until={K.Co - 0.3} x={625} y={1300} texto={TX.etqSeta} tam={30} color={KC.ink} />
+      <Etq T={T} at={K.G + 0.8} until={K.Co - 0.3} x={625} y={1346} texto={TX.etqSetaCi} it tam={30} color={KC.ink} />
+      <Chip T={T} at={K.G + 0.9} until={K.Co - 0.3} texto={TX.semilla} x={200} y={236} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.G + 2.0} until={K.Co - 0.3} texto={TX.pedacito} x={545} y={240} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Co + 1.4} until={K.A - 0.3} texto={TX.adentro} x={560} y={1365} tam={34} borde={KC.mint} />
+      <Chip T={T} at={K.Co + 1.9} until={K.A - 0.3} texto={TX.afuera} x={330} y={420} tam={30} borde={KC.red} />
+      <Chip T={T} at={K.Co + 2.6} until={K.A - 0.3} texto={TX.mm} x={780} y={1200} tam={32} borde={KC.gold} mono />
+      <Etq T={T} at={K.A + 0.4} until={K.A + 1.8} x={40} y={690} texto={TX.flama} tam={24} color={KC.ink} />
+      <Chip T={T} at={K.A + 1.0} until={K.H - 0.3} texto={TX.sinAire} x={660} y={615} tam={24} borde={KC.ink} />
+      <Chip T={T} at={K.A + 0.6} until={K.H - 0.3} texto={TX.flujo} x={660} y={545} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.A + 2.2} until={K.H - 0.3} texto={TX.pda} x={600} y={1410} tam={30} borde={KC.gold} />
+      {T > K.H + 0.2 && T < K.Pa - 0.2 && <div style={{ position:'absolute', left:850, top:600, transform:'translate(-50%,-50%)', zIndex:42, font:`700 52px ${KF.mono}`, color:KC.texto, background:'rgba(0,0,0,.6)', border:`3px solid ${KC.texto}`, borderRadius:14, padding:'2px 22px', opacity:kprog(T, K.H + 0.2, K.H + 0.5) }}>{TX.dia} {dia}</div>}
+      <Lupa T={T} at={K.H + 0.8} until={K.Pa - 0.4} x={300} y={520} r={175} fx={560 - 0.7 * (rH + 4)} fy={1060 - 0.7 * (rH + 4)} interior={(t, r) => LupaHifas(t, r, K.H + 0.9)} etiqueta={TX.lupaHifas} tinte={KC.mint} />
+      <Chip T={T} at={K.Pa + 0.3} until={K.P - 0.3} texto={TX.tirar} x={255} y={505} tam={30} borde={KC.red} />
+      <Etq T={T} at={K.Pa + 1.0} until={K.P - 0.3} x={1010} y={540} texto={TX.nuevo} lado="izq" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Pa + 2.6} until={K.P - 0.3} texto={TX.clon} x={540} y={390} tam={38} borde={KC.gold} />
       <Chip T={T} at={K.E + 0.3} until={K.M - 0.3} texto={TX.impresion} x={540} y={470} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.E + 0.8} until={K.E + 1.9} texto={TX.horas} x={540} y={570} tam={30} borde={KC.ink} mono />
       <Lupa T={T} at={K.E + 2.4} until={K.M - 0.35} x={800} y={560} r={150} fx={600} fy={900} interior={(t, r) => LupaEsporas(t, r)} etiqueta={TX.lupaEsporas} tinte={KC.yellow} />
-      <Etq T={T} at={K.M + 1.2} until={K.D - 0.2} x={60} y={500} texto={TX.mono} tam={30} color={CP.azul} />
-      <Chip T={T} at={K.M + 2.4} until={K.D - 0.2} texto={TX.sinGrapas} x={360} y={1010} tam={30} borde={KC.lilac} mono />
-      <Etq T={T} at={K.D + 1.6} until={K.Es - 0.3} x={60} y={760} texto={TX.fibula} tam={30} color={KC.gold2} />
-      <Etq T={T} at={K.D + 1.2} until={K.Es - 0.3} x={60} y={500} texto={TX.di} tam={34} color={KC.texto} />
-      <Chip T={T} at={K.D + 2.6} until={K.Es - 0.3} texto={TX.reparte} x={430} y={1060} tam={30} borde={KC.gold} />
-      <Etq T={T} at={K.D + 3.6} until={K.Es - 0.3} x={820} y={1120} texto={TX.daSetas} lado="izq" tam={30} color={KC.pink} />
-      <TarjetaEstudio T={T} at={K.Es + 0.1} until={K.Es + 1.7} anio="2014" quien="U. Tecnológica de la Mixteca · IPN · UNAM" revista="Brazilian Journal of Microbiology, 2014" x={540} y={680} />
-      <Etq T={T} at={K.Es + 2.2} until={K.Es + 4.4} x={60} y={720} texto={TX.oaxaca} tam={28} color={KC.ink} />
-      <NumeroGigante T={T} at={K.Es + 4.4} until={K.Gu - 0.3} valor={56} dur={1.2} etiqueta={TX.hibridas} x={270} y={640} tam={130} color={KC.yellow} />
-      <Chip T={T} at={K.Es + 5.3} until={K.Gu - 0.3} texto={TX.masRapido} x={540} y={860} tam={28} borde={KC.ink} />
-      <Chip T={T} at={K.Es + 2.8} until={K.Es + 5.1} texto={TX.sinEsporas} x={540} y={860} tam={27} borde={KC.lilac} />
-      <Chip T={T} at={K.Gu + 2.9} until={K.R - 0.3} texto={TX.resembrar} x={200} y={880} tam={28} borde={KC.cyan} />
-      <Chip T={T} at={K.Gu + 3.3} until={K.R - 0.3} texto={TX.tropical} x={560} y={440} tam={26} borde={KC.red} />
-      <Chip T={T} at={K.Gu + 2.1} until={K.R - 0.3} texto={TX.agua} x={540} y={790} tam={28} borde={KC.cyan} />
-      <Chip T={T} at={K.Gu + 2.1} until={K.R - 0.3} texto={TX.congelada} x={880} y={790} tam={28} borde={KC.cyan} />
-      <Chip T={T} at={K.Gu + 0.9} until={K.Gu + 3.1} texto={TX.liofilizar} x={560} y={440} tam={24} borde={KC.red} />
-      <Chip T={T} at={K.R + 0.3} until={K.C - 0.3} texto={TX.casero} x={270} y={450} tam={32} borde={KC.gold} />
-      <Etq T={T} at={K.R + 0.8} until={K.C - 0.3} x={70} y={860} texto={TX.impresion} tam={24} color={KC.ink} />
-      <Etq T={T} at={K.R + 1.4} until={K.C - 0.3} x={70} y={950} texto={TX.tupperEtq} tam={24} color={KC.ink} />
-      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto={TX.copia} x={250} y={480} tam={30} borde={KC.mint} />
-      <Chip T={T} at={K.C + 1.5} until={K.Ou} texto={TX.cruza} x={250} y={790} tam={30} borde={KC.gold} />
-      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto={TX.noSemilla} x={540} y={1200} tam={32} borde={KC.red} />
+      <Etq T={T} at={K.M + 1.2} until={K.D - 0.2} x={60} y={640} texto={TX.mono} tam={30} color={CP.azul} />
+      <Chip T={T} at={K.M + 2.4} until={K.D - 0.2} texto={TX.sinGrapas} x={360} y={1200} tam={30} borde={KC.lilac} mono />
+      <Etq T={T} at={K.D + 1.6} until={K.Es - 0.3} x={120} y={750} texto={TX.fibula} tam={30} color={KC.gold2} />
+      <Etq T={T} at={K.D + 1.2} until={K.Es - 0.3} x={60} y={640} texto={TX.di} tam={34} color={KC.texto} />
+      <Chip T={T} at={K.D + 2.6} until={K.Es - 0.3} texto={TX.reparte} x={400} y={1080} tam={30} borde={KC.gold} />
+      <Etq T={T} at={K.D + 3.6} until={K.Es - 0.3} x={590} y={1320} texto={TX.daSetas} lado="izq" tam={30} color={KC.pink} />
+      <TarjetaEstudio T={T} at={K.Es + 0.1} until={K.Es + 1.7} anio="2014" quien="U. Tecnológica de la Mixteca · IPN · UNAM" revista="Brazilian Journal of Microbiology, 2014" x={540} y={420} />
+      <Etq T={T} at={K.Es + 2.2} until={K.Es + 4.4} x={60} y={1392} texto={TX.oaxaca} tam={28} color={KC.ink} />
+      <NumeroGigante T={T} at={K.Es + 4.4} until={K.Gu - 0.3} valor={56} dur={1.2} etiqueta={TX.hibridas} x={250} y={560} tam={130} color={KC.yellow} />
+      <Chip T={T} at={K.Es + 5.3} until={K.Gu - 0.3} texto={TX.masRapido} x={540} y={1455} tam={28} borde={KC.ink} />
+      <Chip T={T} at={K.Es + 2.8} until={K.Es + 5.1} texto={TX.sinEsporas} x={540} y={1455} tam={27} borde={KC.lilac} />
+      <Chip T={T} at={K.Gu + 2.9} until={K.R - 0.3} texto={TX.resembrar} x={210} y={1050} tam={28} borde={KC.cyan} />
+      <Chip T={T} at={K.Gu + 3.3} until={K.R - 0.3} texto={TX.tropical} x={540} y={350} tam={26} borde={KC.red} />
+      <Chip T={T} at={K.Gu + 2.1} until={K.R - 0.3} texto={TX.agua} x={560} y={990} tam={28} borde={KC.cyan} />
+      <Chip T={T} at={K.Gu + 2.1} until={K.R - 0.3} texto={TX.congelada} x={870} y={990} tam={28} borde={KC.cyan} />
+      <Chip T={T} at={K.Gu + 0.9} until={K.Gu + 3.1} texto={TX.liofilizar} x={540} y={350} tam={24} borde={KC.red} />
+      <Chip T={T} at={K.R + 0.3} until={K.C - 0.3} texto={TX.casero} x={540} y={320} tam={32} borde={KC.gold} />
+      <Etq T={T} at={K.R + 0.8} until={K.C - 0.3} x={190} y={965} texto={TX.impresion} tam={28} color={KC.ink} />
+      <Etq T={T} at={K.R + 1.4} until={K.C - 0.3} x={190} y={1060} texto={TX.tupperEtq} tam={28} color={KC.ink} />
+      <Chip T={T} at={K.C + 1.0} until={K.Ou} texto={TX.copia} x={290} y={320} tam={30} borde={KC.mint} />
+      <Chip T={T} at={K.C + 1.5} until={K.Ou} texto={TX.cruza} x={770} y={320} tam={30} borde={KC.gold} />
+      <Chip T={T} at={K.C + 2.2} until={K.Ou} texto={TX.noSemilla} x={540} y={1440} tam={32} borde={KC.red} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.Co} texto="5 cm" largo={150} />
-      <BarraEscala T={T} at={K.Co} until={K.A} texto="1 cm" largo={110} />
-      <BarraEscala T={T} at={K.A} until={K.P} texto="1 cm" largo={60} />
-      <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={90} />
+      <BarraEscala T={T} at={K.G} until={K.Co} texto="5 cm" largo={210} />
+      <BarraEscala T={T} at={K.Co} until={K.A} texto="1 cm" largo={138} />
+      <BarraEscala T={T} at={K.A} until={K.H} texto="1 cm" largo={79} />
+      <BarraEscala T={T} at={K.H} until={K.Pa} texto="1 cm" largo={83} />
+      <BarraEscala T={T} at={K.Pa} until={K.P} texto="1 cm" largo={69} />
+      <BarraEscala T={T} at={K.P} until={K.E} texto="5 cm" largo={113} />
       <BarraEscala T={T} at={K.E} until={K.M} texto="1 cm" largo={100} />
       <BarraEscala T={T} at={K.M} until={K.Es} texto={TX.esquema} largo={0} />
       <BarraEscala T={T} at={K.Es} until={K.Gu} texto="mapa esquemático" largo={0} />
-      <BarraEscala T={T} at={K.Gu} until={K.C} texto="1 cm" largo={70} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={150} />
+      <BarraEscala T={T} at={K.Gu} until={K.R} texto="1 cm" largo={100} />
+      <BarraEscala T={T} at={K.R} until={K.C} texto="1 cm" largo={122} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={210} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.05} until={K.Co - 0.1} texto="No nació de una semilla: *nació de una cepa.*" />
