@@ -98,8 +98,9 @@ function AcH2CO3({ x, y, s = 1, o = 1 }) {
 // El mar visto de lado: cielo cian, olas y agua. tope = y de la superficie.
 function AcMar({ T, tope = 880 }) {
   const ola = (y0, amp, fase, color) => { let d = `M 0 ${KH} L 0 ${y0}`; for (let x = 0; x <= KW; x += 30) d += ` L ${x} ${y0 + Math.sin(x / 90 + T * 2 + fase) * amp}`; return <path d={d + ` L ${KW} ${KH} Z`} fill={color} />; };
-  return <>{ola(tope - 14, 16, 0, AC_AGUA2)}{ola(tope + 10, 12, 1.7, AC_AGUA)}
-    {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${80 + i * 170} ${tope + 120 + (i % 2) * 90} q 25 ${-10 + Math.sin(T * 2 + i) * 5} 50 0`} stroke="#bfe7ff" strokeWidth={6} fill="none" />)}</>;
+  // pase a mano cine: agua azul noche (antes azul saturado a media pantalla); la superficie conserva un borde claro
+  return <>{ola(tope - 14, 16, 0, '#2a6aa3')}{ola(tope + 10, 12, 1.7, '#0f2c4a')}
+    {Array.from({ length: 6 }, (_, i) => <path key={i} d={`M ${80 + i * 170} ${tope + 120 + (i % 2) * 90} q 25 ${-10 + Math.sin(T * 2 + i) * 5} 50 0`} stroke="#4f86b5" strokeWidth={6} fill="none" opacity={0.7} />)}</>;
 }
 // Fábrica con chimeneas en la orilla
 function AcFabrica({ x, y }) {
@@ -163,7 +164,7 @@ function AcCoral({ x, y, s = 1, T = 0 }) {
 // Antártida (esquema) con el océano Austral alrededor
 function AcAntartida({ x, y, r = 150, T = 0 }) {
   return <g transform={`translate(${x} ${y})`}>
-    <circle r={r * 1.55} fill={AC_AGUA} stroke={KC.ink} strokeWidth={7} />
+    <circle r={r * 1.55} fill="#17507f" stroke={KC.ink} strokeWidth={7} />
     <path d={`M ${-r} 0 C ${-r} ${-r * 0.8} ${-r * 0.3} ${-r} ${r * 0.2} ${-r * 0.9} C ${r * 0.9} ${-r * 0.8} ${r * 1.05} ${-r * 0.1} ${r * 0.8} ${r * 0.4} C ${r * 0.6} ${r * 0.9} ${-r * 0.2} ${r * 0.95} ${-r * 0.6} ${r * 0.7} C ${-r * 0.75} ${r * 0.5} ${-r * 1.3} ${r * 0.4} ${-r} 0 Z`} fill="#f4fbff" stroke={KC.ink} strokeWidth={7} />
     <circle cx={-r * 1.1} cy={-r * 0.9} r={16 + 4 * Math.sin(T * 6)} fill={KC.red} stroke={KC.ink} strokeWidth={4} />
   </g>;
@@ -178,7 +179,7 @@ function AcidificacionShot() {
   const phG = klerp(8.2, 8.1, kprog(T, K.G + 0.2, K.G + 2.6, kEase.suave)) + Math.sin(T * 7) * 0.05 * (1 - kprog(T, K.G, K.G + 1));
   const flota = (t) => Math.sin(t * 1.6) * 14;
   // absorbe: 4 nubes, la cuarta se hunde en el mar
-  const nubeX = [190, 400, 610, 820];
+  const nubeX = [170, 400, 630, 860];
   // ácido: el CO2 y el agua chocan
   const choque = kprog(T, K.Ac + 0.3, K.Ac + 1.5, kEase.suave), forma = kprog(T, K.Ac + 1.5, K.Ac + 1.9), suelta = kprog(T, K.Ac + 2.2, K.Ac + 3.2, kEase.sale);
   // medición: 8.11 → 8.04
@@ -193,66 +194,72 @@ function AcidificacionShot() {
       {/* 1 · gancho: el mar, el medidor de pH y una mariposa de mar */}
       <Escena T={T} a={K.G} b={K.Ab}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><AcMar T={T} tope={960} /><AcMedidor x={320} y={740} r={240} ph={phG} />
-          <AcPteropodo x={760} y={1000 + flota(T)} s={0.6} dis={0.18 * kprog(T, K.G + 2.8, K.G + 5)} T={T} rot={-10} /></>)}
+        {/* pase a mano cine: medidor 1.2× al centro y la mariposa de mar 1.8× bajo el agua */}
+        {svg(<><AcMar T={T} tope={960} /><AcMedidor x={540} y={720} r={290} ph={phG} />
+          <AcPteropodo x={500} y={1240 + flota(T)} s={1.08} dis={0.18 * kprog(T, K.G + 2.8, K.G + 5)} T={T} rot={-10} /></>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 2 · el mar se traga ~1/4 del CO2 que emitimos */}
       <Escena T={T} a={K.Ab} b={K.Ac}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><path d="M 0 900 L 380 900 L 440 1000 L 0 1000 Z" fill="#c9b48a" stroke={KC.ink} strokeWidth={6} />
-          <AcMar T={T} tope={960} />
-          <AcFabrica x={170} y={900} />
+        {/* pase a mano cine: fábrica 1.3× y nubes más grandes; arena oscurecida */}
+        {svg(<><path d="M 0 1180 L 420 1180 L 480 1280 L 0 1280 Z" fill="#6e6048" stroke={KC.ink} strokeWidth={6} />
+          <AcMar T={T} tope={1240} />
+          <g transform="translate(220 1180) scale(1.3) translate(-170 -900)"><AcFabrica x={170} y={900} /></g>
           {nubeX.map((nx, i) => { const t0 = K.Ab + 0.2 + i * 0.45, ap = kprog(T, t0, t0 + 0.4, kEase.rebote);
             const baja = i === 3 ? kprog(T, K.Ab + 2.2, K.Ab + 3.4, kEase.suave) : 0, sube = i < 3 ? kprog(T, K.Ab + 2.2, K.Ab + 4.5) * 60 : 0;
-            return <AcNube key={i} x={nx + (i === 3 ? -40 * baja : 0)} y={600 - sube + baja * 520} s={0.8 * ap} o={i === 3 ? 1 - 0.6 * kprog(T, K.Ab + 3.0, K.Ab + 3.6) : 1} color={i === 3 ? '#4f8fd0' : '#8f98a3'} />; })}
-          <path d={`M 820 690 L 820 ${690 + 180 * kprog(T, K.Ab + 2.0, K.Ab + 2.6)}`} stroke={KC.ink} strokeWidth={10} strokeDasharray="20 14" opacity={1 - kprog(T, K.Ab + 3.4, K.Ab + 3.8)} /></>)}
+            return <AcNube key={i} x={nx + (i === 3 ? -40 * baja : 0)} y={700 - sube + baja * 640} s={1.1 * ap} o={i === 3 ? 1 - 0.6 * kprog(T, K.Ab + 3.0, K.Ab + 3.6) : 1} color={i === 3 ? '#4f8fd0' : '#8f98a3'} />; })}
+          <path d={`M 860 820 L 860 ${820 + 300 * kprog(T, K.Ab + 2.0, K.Ab + 2.6)}`} stroke={KC.ink} strokeWidth={10} strokeDasharray="20 14" opacity={1 - kprog(T, K.Ab + 3.4, K.Ab + 3.8)} /></>)}
         <EscalaFija texto="esquema (no a escala)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 3 · por dentro del agua: CO2 + H2O → H2CO3 → H+ + HCO3- */}
       <Escena T={T} a={K.Ac} b={K.Es} zoom={0.12}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 45%, #13305a 0%, #0d1424 75%)' }}></div>
         <Ambiente T={T} n={36} color="rgba(150,210,255,.25)" />
-        {svg(<>{forma < 1 && <><AcCO2 x={klerp(190, 440, choque)} y={790} s={1.4} o={1 - forma} rot={Math.sin(T * 2) * 8} /><AcH2O x={klerp(880, 650, choque)} y={760} s={1.4} o={1 - forma} /></>}
+        {/* pase a mano cine: moléculas 1.2× y bajadas al centro */}
+        {svg(<g transform="translate(540 960) scale(1.2) translate(-540 -900)">{forma < 1 && <><AcCO2 x={klerp(190, 440, choque)} y={790} s={1.4} o={1 - forma} rot={Math.sin(T * 2) * 8} /><AcH2O x={klerp(880, 650, choque)} y={760} s={1.4} o={1 - forma} /></>}
           {forma > 0 && <><AcH2CO3 x={540} y={790} o={forma * (1 - suelta)} s={1.5} />
             {suelta > 0 && <><g opacity={suelta}><AcCO3 x={540 + 120 * suelta} y={820 + 60 * suelta} s={1.4} atrapado={1} /></g><AcHmas x={540 - 250 * suelta} y={790 - 200 * suelta} s={1.6} T={T} o={suelta} /></>}</>}
-          <text x={540} y={1090} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.texto} opacity={kprog(T, K.Ac + 0.4, K.Ac + 0.8)}>CO₂ + H₂O → H₂CO₃ → H⁺ + HCO₃⁻</text></>)}
+          <text x={540} y={1090} textAnchor="middle" style={{ font:`700 40px ${KF.mono}` }} fill={KC.texto} opacity={kprog(T, K.Ac + 0.4, K.Ac + 0.8)}>CO₂ + H₂O → H₂CO₃ → H⁺ + HCO₃⁻</text></g>)}
         <EscalaFija texto="esquema de moléculas" largo={0} y={1480} />
       </Escena>
-      <Etq T={T} at={K.Ac + 0.4} until={K.Ac + 1.4} x={60} y={900} texto="dióxido de carbono" tam={30} />
-      <Etq T={T} at={K.Ac + 0.4} until={K.Ac + 1.4} x={1000} y={900} texto="agua" lado="izq" tam={30} />
-      <Etq T={T} at={K.Ac + 1.7} until={K.Ac + 2.4} x={300} y={950} texto="ácido carbónico" tam={30} />
-      <Etq T={T} at={K.Ac + 2.8} until={K.Es - 0.1} x={340} y={700} texto="ion de hidrógeno" tam={30} color={AC_H} />
+      <Etq T={T} at={K.Ac + 0.4} until={K.Ac + 1.4} x={40} y={960} texto="dióxido de carbono" tam={30} />
+      <Etq T={T} at={K.Ac + 0.4} until={K.Ac + 1.4} x={1030} y={960} texto="agua" lado="izq" tam={30} />
+      <Etq T={T} at={K.Ac + 1.7} until={K.Ac + 2.4} x={300} y={1030} texto="ácido carbónico" tam={30} />
+      <Etq T={T} at={K.Ac + 2.8} until={K.Es - 0.1} x={330} y={600} texto="ion de hidrógeno" tam={30} color={AC_H} />
       {/* 4 · la escala de pH: 7 neutro; antes de la Revolución Industrial, 8.2 */}
       <Escena T={T} a={K.Es} b={K.Me}>
         <FondoLunares color={KC.paper} punto="rgba(0,0,0,.06)" />
-        {svg(<><AcRegla y={820} />
-          <text x={180} y={760} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill="#b8231c">ÁCIDO</text>
-          <text x={900} y={760} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill="#1d36c9">BÁSICO</text>
-          <AcMarca x={540} y={1010} texto="7 = neutro" arriba={false} o={kprog(T, K.Es + 0.4, K.Es + 0.8)} />
-          <AcMarca x={90 + 8.2 / 14 * 900} y={800} texto="8.2" color={KC.blue} tam={52} o={kprog(T, K.Es + 2.4, K.Es + 2.8)} /></>)}
+        {/* pase a mano cine: regla más alta (110) y bajada al centro; etiquetas más grandes */}
+        {svg(<><AcRegla y={860} alto={120} />
+          <text x={180} y={790} textAnchor="middle" style={{ font:`900 48px ${KF.texto}` }} fill="#ff5a4e">ÁCIDO</text>
+          <text x={900} y={790} textAnchor="middle" style={{ font:`900 48px ${KF.texto}` }} fill="#6f86ff">BÁSICO</text>
+          <AcMarca x={540} y={1090} texto="7 = neutro" arriba={false} tam={38} o={kprog(T, K.Es + 0.4, K.Es + 0.8)} />
+          <AcMarca x={90 + 8.2 / 14 * 900} y={840} texto="8.2" color={KC.blue} tam={60} o={kprog(T, K.Es + 2.4, K.Es + 2.8)} /></>)}
       </Escena>
-      <Chip T={T} at={K.Es + 2.8} until={K.Me - 0.2} texto="el mar antes de la Revolución Industrial" y={1130} x={540} tam={30} borde={KC.blue} />
+      <Chip T={T} at={K.Es + 2.8} until={K.Me - 0.2} texto="el mar antes de la Revolución Industrial" y={1250} x={540} tam={32} borde={KC.blue} />
       {/* 5 · 1985: 8.11 → 2024: 8.04 */}
       <Escena T={T} a={K.Me} b={K.P}>
         <FondoLunares color={KC.yellow} />
-        {svg(<><AcRegla x0={140} x1={940} y={820} desde={8.0} hasta={8.2} paso={0.05} dec={2} />
-          <AcMarca x={pxM(8.2)} y={800} texto="antes" tam={28} o={0.6} />
-          <AcMarca x={pxM(8.11)} y={800} texto="1985" tam={36} o={kprog(T, K.Me + 0.3, K.Me + 0.7) * (T > K.Me + 2.6 ? 0.45 : 1)} />
-          {T > K.Me + 1.2 && <AcMarca x={pxM(phM)} y={1010} texto={`${phM.toFixed(2)}`} arriba={false} color={KC.red} tam={48} />}
-          {T > K.Me + 2.6 && <text x={pxM(8.04)} y={1140} textAnchor="middle" style={{ font:`900 40px ${KF.texto}` }} fill={KC.red}>2024</text>}</>)}
+        {/* pase a mano cine: regla más alta y bajada al centro; marcas más grandes */}
+        {svg(<><AcRegla x0={140} x1={940} y={860} alto={120} desde={8.0} hasta={8.2} paso={0.05} dec={2} />
+          <AcMarca x={pxM(8.2)} y={840} texto="antes" tam={32} o={0.6} />
+          <AcMarca x={pxM(8.11)} y={840} texto="1985" tam={44} o={kprog(T, K.Me + 0.3, K.Me + 0.7) * (T > K.Me + 2.6 ? 0.45 : 1)} />
+          {T > K.Me + 1.2 && <AcMarca x={pxM(phM)} y={1090} texto={`${phM.toFixed(2)}`} arriba={false} color={KC.red} tam={60} />}
+          {T > K.Me + 2.6 && <text x={pxM(8.04)} y={1240} textAnchor="middle" style={{ font:`900 48px ${KF.texto}` }} fill={KC.red}>2024</text>}</>)}
         <EscalaFija texto="pH promedio de la superficie del mar (EEA 2026)" largo={0} y={1480} color={KC.ink} />
       </Escena>
       {/* 6 · re-gancho: 0.07 y la escala ×10 */}
       <Escena T={T} a={K.P} b={K.Po} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {svg(<>{[[8, 1], [7, 10], [6, 100]].map(([ph, n], i) => { const x0 = 50 + i * 155, o = kprog(T, K.P + 1.6 + i * 0.5, K.P + 2.0 + i * 0.5);
+        {/* pase a mano cine: los tres frascos 1.6× y al centro */}
+        {svg(<g transform="translate(540 1010) scale(1.6) translate(-268 -965)">{[[8, 1], [7, 10], [6, 100]].map(([ph, n], i) => { const x0 = 50 + i * 155, o = kprog(T, K.P + 1.6 + i * 0.5, K.P + 2.0 + i * 0.5);
           return <g key={i} opacity={o}><rect x={x0} y={820} width={140} height={260} rx={18} fill="rgba(255,255,255,.75)" stroke={KC.ink} strokeWidth={6} />
             {Array.from({ length: n }, (_, k) => <circle key={k} cx={n === 1 ? x0 + 70 : x0 + 16 + (k % 10) * 12.2} cy={n === 1 ? 950 : n === 10 ? 950 : 850 + Math.floor(k / 10) * 22} r={n === 100 ? 5 : 9} fill={AC_H} stroke={KC.ink} strokeWidth={n === 100 ? 1.5 : 3} />)}
             <text x={x0 + 70} y={1130} textAnchor="middle" style={{ font:`400 46px ${KF.titulo}` }} fill={KC.ink}>pH {ph}</text>
-            {i > 0 && <text x={x0 - 8} y={800} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>×10</text>}</g>; })}</>)}
+            {i > 0 && <text x={x0 - 8} y={800} textAnchor="middle" style={{ font:`900 34px ${KF.texto}` }} fill={KC.ink}>×10</text>}</g>; })}</g>)}
       </Escena>
-      <NumeroGigante T={T} at={K.P + 0.1} until={K.Po - 0.2} valor={0.07} desde={0.07} dec={2} sufijo="?" x={290} y={560} tam={190} color={KC.yellow} />
+      <NumeroGigante T={T} at={K.P + 0.1} until={K.Po - 0.2} valor={0.07} desde={0.07} dec={2} sufijo="?" x={540} y={470} tam={200} color={KC.yellow} />
       {/* 7 · +18 % de acidez (1985 → 2024) */}
       <Escena T={T} a={K.Po} b={K.Ca}>
         <FondoLunares color={KC.mint} />
@@ -265,7 +272,8 @@ function AcidificacionShot() {
       <Escena T={T} a={K.Ca} b={K.Et}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%, #12305a 0%, #0d1424 75%)' }}></div>
         <Ambiente T={T} n={30} color="rgba(150,210,255,.22)" />
-        {svg(<><AcOstion x={290} y={1040} s={1.1} /><AcCoral x={790} y={1090} s={1.0} T={T} />
+        {/* pase a mano cine: ostión, coral e iones 1.25× y bajados al centro */}
+        {svg(<g transform="translate(570 960) scale(1.25) translate(-540 -900)"><AcOstion x={290} y={1040} s={1.1} /><AcCoral x={790} y={1090} s={1.0} T={T} />
           {iones.map(([ix, d, atrapa], i) => { const t0 = K.Ca + d, p = kprog(T, t0, t0 + 2.4, kEase.suave);
             const destino = ix < 540 ? 290 : 790, AJ = 0, at = atrapa ? kprog(T, t0 + 1.0, t0 + 1.4) : 0;
             const pp = atrapa ? Math.min(p, 0.42) : p;
@@ -273,12 +281,12 @@ function AcidificacionShot() {
             const hx = klerp(ix + (ix < 540 ? -260 : 260), xx, kprog(T, t0 + 0.3, t0 + 1.0, kEase.suave));
             return <g key={i} opacity={kprog(T, t0, t0 + 0.3) * (atrapa ? 1 - 0.4 * kprog(T, t0 + 2.0, t0 + 3) : 1 - kprog(T, t0 + 2.3, t0 + 2.6))}>
               <AcCO3 x={xx} y={yy} s={1.05} atrapado={at} />
-              {atrapa && at < 1 && <AcHmas x={hx} y={yy - 90} T={T} s={1.1} />}</g>; })}</>)}
+              {atrapa && at < 1 && <AcHmas x={hx} y={yy - 90} T={T} s={1.1} />}</g>; })}</g>)}
         <EscalaFija texto="esquema de moléculas" largo={0} y={1480} />
       </Escena>
-      <Etq T={T} at={K.Ca + 0.6} until={K.Et - 0.2} x={120} y={920} texto="ostión" tam={30} />
-      <Etq T={T} at={K.Ca + 1.0} until={K.Et - 0.2} x={1010} y={1000} texto="coral" lado="izq" tam={30} />
-      <Chip T={T} at={K.Ca + 0.3} until={K.Et - 0.2} texto="el H⁺ atrapa al carbonato (CO₃²⁻)" y={470} x={400} tam={30} borde={AC_H} />
+      <Etq T={T} at={K.Ca + 0.6} until={K.Et - 0.2} x={60} y={1290} texto="ostión" tam={32} />
+      <Etq T={T} at={K.Ca + 1.0} until={K.Et - 0.2} x={1040} y={1290} texto="coral" lado="izq" tam={32} />
+      <Chip T={T} at={K.Ca + 0.3} until={K.Et - 0.2} texto="el H⁺ atrapa al carbonato (CO₃²⁻)" y={380} x={540} tam={32} borde={AC_H} />
       {/* 9 · el estudio de 2012: mariposas de mar vivas cerca de la Antártida */}
       <Escena T={T} a={K.Et} b={K.Ex}>
         <FondoLunares color={KC.cyan} />
@@ -294,28 +302,30 @@ function AcidificacionShot() {
       {/* 10 · el experimento: agua como la esperada para 2100, 45 días */}
       <Escena T={T} a={K.Ex} b={K.C}>
         <FondoLunares color={KC.orange} />
-        {svg(<><rect x={0} y={1120} width={KW} height={800} fill="#523d30" stroke={KC.ink} strokeWidth={8} />
+        {/* pase a mano cine: frasco 1.25× y bajado al centro; mesa oscurecida */}
+        {svg(<g transform="translate(540 1260) scale(1.25) translate(-540 -1120)"><rect x={-200} y={1120} width={KW + 400} height={800} fill="#2b2119" stroke={KC.ink} strokeWidth={8} />
           <rect x={300} y={560} width={480} height={560} rx={40} fill="rgba(95,182,239,.6)" stroke={KC.ink} strokeWidth={9} />
           <rect x={340} y={520} width={400} height={54} rx={12} fill="#e9eef5" stroke={KC.ink} strokeWidth={7} />
           <rect x={360} y={1000} width={360} height={70} rx={10} fill={KC.paper} stroke={KC.ink} strokeWidth={5} />
           <text x={540} y={1046} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>agua «año 2100»</text>
           <text x={540} y={640} textAnchor="middle" style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>concha de mariposa de mar</text>
-          <AcPteropodo x={540} y={810 + flota(T) * 0.5} s={0.85} dis={disE} alas={0} T={T} seed={11} /></>)}
+          <AcPteropodo x={540} y={810 + flota(T) * 0.5} s={0.85} dis={disE} alas={0} T={T} seed={11} /></g>)}
       </Escena>
       {kvisible(T, K.Ex, K.C) && (() => { const d = Math.round(45 * kprog(T, K.Ex + 0.8, K.Ex + 6.6)); return <div style={{ position:'absolute', left:760, top:430, zIndex:41, transform:'translate(-50%,-50%)', font:`700 80px ${KF.mono}`, color:KC.texto, textShadow:KSOMBRA, whiteSpace:'nowrap', opacity:kprog(T, K.Ex, K.Ex + 0.4) * (1 - kprog(T, K.C, K.C + 0.4)) }}>{d} {d === 1 ? 'día' : 'días'}</div>; })()}
-            <Chip T={T} at={K.Ex + 2.0} until={K.C - 0.2} texto="experimento que muestra la NOAA" y={1170} x={540} tam={28} borde={KC.ink} />
+            <Chip T={T} at={K.Ex + 2.0} until={K.C - 0.2} texto="experimento que muestra la NOAA" y={1350} x={540} tam={30} borde={KC.ink} />
       {/* 11 · cierre: el mismo mar y el mismo medidor, la concha ya picada */}
       <Escena T={T} a={K.C} b={FIN}>
         <FondoLunares color={KC.cyan} />
-        {svg(<><AcMar T={T} tope={960} /><AcMedidor x={320} y={740} r={240} ph={8.04} />
-          <AcPteropodo x={760} y={1000 + flota(T)} s={0.6} dis={0.7} T={T} rot={-10} /></>)}
+        {/* pase a mano cine: el mismo encuadre del gancho */}
+        {svg(<><AcMar T={T} tope={960} /><AcMedidor x={540} y={720} r={290} ph={8.04} />
+          <AcPteropodo x={500} y={1240 + flota(T)} s={1.08} dis={0.7} T={T} rot={-10} /></>)}
         <EscalaFija texto="esquema" largo={0} y={1480} color={KC.ink} />
       </Escena>
 
       {/* chips del gancho y el cierre */}
-      <Chip T={T} at={K.G + 1.2} until={K.Ab - 0.2} texto="pH arriba de 7 = básico" y={420} x={330} tam={32} borde={KC.ink} />
-      <Chip T={T} at={K.Ab + 0.3} until={K.Ac - 0.2} texto="≈ 1/4 del CO₂ que emitimos" y={420} x={540} tam={38} borde={AC_AGUA} />
-      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="básico… pero menos" y={420} x={330} tam={36} borde={KC.yellow} />
+      <Chip T={T} at={K.G + 1.2} until={K.Ab - 0.2} texto="pH arriba de 7 = básico" y={330} x={540} tam={34} borde={KC.ink} />
+      <Chip T={T} at={K.Ab + 0.3} until={K.Ac - 0.2} texto="≈ 1/4 del CO₂ que emitimos" y={500} x={540} tam={40} borde={AC_AGUA} />
+      <Chip T={T} at={K.C + 0.4} until={K.Ou - 0.1} texto="básico… pero menos" y={330} x={540} tam={38} borde={KC.yellow} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Ab - 0.1} texto="No se vuelve ácido: *se vuelve menos básico.*" />
