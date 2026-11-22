@@ -231,14 +231,16 @@ function OlorShot() {
           {T < K.Gr + 0.6 && <g opacity={kprog(T, K.Co + 1.1, K.Co + 1.3) * (1 - kprog(T, K.Gr, K.Gr + 0.6))}>
             <path d="M 470 900 L 510 950 L 480 990 L 530 1040" stroke={KC.red} strokeWidth={10} fill="none" strokeLinejoin="round" />
             <path d="M 600 860 L 570 920 L 620 960" stroke={KC.red} strokeWidth={10} fill="none" strokeLinejoin="round" /></g>}
+          <g transform="translate(0 100)">
           {T > K.Gr - 0.3 && <g opacity={kprog(T, K.Gr - 0.3, K.Gr + 0.3)}>
-            <Linoleico T={T} x={150} y={980} a={58} gr={13} p={kprog(T, K.Gr, K.Gr + 1.4)} ox={kprog(T, K.Ox + 0.3, K.Ox + 1.0, kEase.rebote)} corte={kprog(T, K.Li + 1.0, K.Li + 2.0, kEase.sale)} />
+            <Linoleico T={T} x={204} y={980} dx={45} a={76} gr={16} p={kprog(T, K.Gr, K.Gr + 1.4)} ox={kprog(T, K.Ox + 0.3, K.Ox + 1.0, kEase.rebote)} corte={kprog(T, K.Li + 1.0, K.Li + 2.0, kEase.sale)} />
           </g>}
           {/* dioxigenasa */}
-          {T > K.Gr + 1.6 && <Enzima T={T} x={klerp(1200, 620, kprog(T, K.Gr + 1.6, K.Ox + 0.2, kEase.sale)) + 700 * kprog(T, K.Li, K.Li + 0.8, kEase.suave)} y={775} r={120} color={KC.lilac} rot={180} arriba texto="dioxigenasa" abre={kprog(T, K.Ox, K.Ox + 0.4)} />}
+          {T > K.Gr + 1.6 && <Enzima T={T} x={klerp(1200, 620, kprog(T, K.Gr + 1.6, K.Ox + 0.2, kEase.sale)) + 700 * kprog(T, K.Li, K.Li + 0.8, kEase.suave)} y={760} r={140} color={KC.lilac} rot={180} arriba texto="dioxigenasa" abre={kprog(T, K.Ox, K.Ox + 0.4)} />}
           {/* liasa */}
-          {T > K.Li - 0.2 && <Enzima T={T} x={klerp(1300, 690, kprog(T, K.Li - 0.2, K.Li + 0.9, kEase.sale))} y={1160} r={125} color={KC.mint} rot={-150} texto="liasa" abre={1 - kprog(T, K.Li + 0.9, K.Li + 1.1)} />}
+          {T > K.Li - 0.2 && <Enzima T={T} x={klerp(1300, 690, kprog(T, K.Li - 0.2, K.Li + 0.9, kEase.sale))} y={1160} r={145} color={KC.mint} rot={-150} texto="liasa" abre={1 - kprog(T, K.Li + 0.9, K.Li + 1.1)} />}
           {T > K.Li + 1.1 && <text x={820} y={720} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={OH.oro} stroke={KC.ink} strokeWidth={4} opacity={kprog(T, K.Li + 1.6, K.Li + 2.0)}>8 C</text>}
+          </g>
         </>)}
       </Escena>
       {/* 8 · umbral: una molécula entre mil millones (en agua) */}
@@ -322,10 +324,10 @@ function OlorShot() {
       <Etq T={T} at={K.Co + 0.6} until={K.Gr - 0.2} x={420} y={520} texto="hifas del champiñón" tam={32} color={KC.mint} />
       <Etq T={T} at={K.Co + 0.9} until={K.Gr - 0.2} x={420} y={570} texto="Agaricus bisporus" it tam={30} color={KC.texto} />
       <Chip T={T} at={K.Co + 1.3} until={K.Gr - 0.2} texto="¡células rotas!" x={720} y={660} tam={38} borde={KC.red} />
-      <Etq T={T} at={K.Gr + 0.4} until={K.U - 0.3} x={60} y={520} texto="ácido linoleico · 18 carbonos" tam={32} color="#eafff7" />
-      <Etq T={T} at={K.Gr + 0.9} until={K.U - 0.3} x={60} y={570} texto="un ácido graso de la célula" tam={26} color={KC.texto} />
-      <Chip T={T} at={K.Ox + 0.3} until={K.Li + 1.0} texto="+ O₂ en el carbono 10" x={290} y={1140} tam={36} borde={OH.ox} />
-      <Chip T={T} at={K.Li + 1.6} until={K.U - 0.3} texto="sale un pedazo de 8 carbonos" x={400} y={660} tam={34} borde={KC.gold} />
+      <Etq T={T} at={K.Gr + 0.4} until={K.U - 0.3} x={60} y={570} texto="ácido linoleico · 18 carbonos" tam={32} color="#eafff7" />
+      <Etq T={T} at={K.Gr + 0.9} until={K.U - 0.3} x={60} y={620} texto="un ácido graso de la célula" tam={26} color={KC.texto} />
+      <Chip T={T} at={K.Ox + 0.3} until={K.Li + 1.0} texto="+ O₂ en el carbono 10" x={290} y={1250} tam={36} borde={OH.ox} />
+      <Chip T={T} at={K.Li + 1.6} until={K.U - 0.3} texto="sale un pedazo de 8 carbonos" x={400} y={760} tam={34} borde={KC.gold} />
       <NumeroGigante T={T} at={K.U + 1.4} until={K.P - 0.3} valor={1} dur={0.2} sufijo=" en 1,000,000,000" etiqueta="≈ (en agua)" x={540} y={530} tam={84} color={OH.oro} />
       <Chip T={T} at={K.E + 0.2} until={K.F - 0.2} texto="dos formas en espejo" x={540} y={470} tam={40} borde={KC.cyan} />
       <Etq T={T} at={K.F + 0.4} until={K.Es - 0.3} x={70} y={1410} texto="R: más a hongo" tam={36} color={OH.oro} />
