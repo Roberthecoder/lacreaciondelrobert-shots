@@ -1,0 +1,1 @@
+- fun-94-hongo-antartida: marcaba Estudio y Marte ABAJO (la Tierra enorme abajo pesaba más que la estación); Tierra atenuada a media luz y un poco más abajo, estación bajada a y≈930 y etiqueta «como en Marte» a 1150. Auditores: sin láminas, encuadre bien.
