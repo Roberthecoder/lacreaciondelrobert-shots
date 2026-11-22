@@ -67,7 +67,13 @@ jobs:
           python3 calendario/fecha.py horas > horas.json
           HHMM=$(TZ=America/Mexico_City date +%H:%M)
           git fetch -q origin refs/estado/publicaciones 2>/dev/null && git show FETCH_HEAD:publicaciones.json > bit.json 2>/dev/null || echo '[]' > bit.json
-          pausado() { grep -v '^#' publicar/pausa.txt 2>/dev/null | grep -qxF "$1"; }
+          # Candado de versión final (Robert, 22 nov 2026: «que se publiquen puras versiones finales»): si existe
+          # publicar/finales.txt, solo se publica un shot que esté en esa lista (el admin lo agrega tras revisar su render final).
+          pausado() {
+            grep -v '^#' publicar/pausa.txt 2>/dev/null | grep -qxF "$1" && return 0
+            if [ -f publicar/finales.txt ] && ! grep -v '^#' publicar/finales.txt | grep -qxF "$1"; then
+              echo "- $1: todavía no es versión final; no se publica" >> "$GITHUB_STEP_SUMMARY"; return 0; fi
+            return 1; }
           completo() {  # ¿ya salió en todas las redes? (en TikTok, el borrador cuenta como hecho)
             for RED in $(jq -r '.redes[]' $CFG); do
               jq -e --arg k "$1" --arg r "$RED" '[.[] | select(.clave==$k and .red==$r and .modo=="real" and .ok==true)] | length > 0' bit.json >/dev/null || return 1
