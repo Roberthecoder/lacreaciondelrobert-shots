@@ -114,48 +114,49 @@ function EsporoShot() {
       {/* 0 · gancho: la espina pica el dedo */}
       <Escena T={T} a={K.G} b={K.N} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Rosal x={380} y={900} s={1.25} T={T} /><Mano x={manoX} y={960} s={0.9} gota={kprog(T, K.G + 0.6, K.G + 1.6)} /></>)}
+        {fsvg(<g transform="translate(560 1010) scale(1.5) translate(-500 -950)"><path d="M -60 1340 Q 120 1250 400 1262 Q 700 1250 900 1330 L 900 1380 L -60 1380 Z" fill="#4a3019" stroke="#9a6c40" strokeWidth={6} />{[[150, 1300], [610, 1296], [760, 1318]].map(([px, py], i) => <ellipse key={i} cx={px} cy={py} rx={16} ry={9} fill="#7a5a3a" />)}<Rosal x={380} y={900} s={1.25} T={T} /><Mano x={manoX} y={960} s={0.9} gota={kprog(T, K.G + 0.6, K.G + 1.6)} />
+          <HifaFlor x={522} y={934} s={0.42} rot={8} p={kprog(T, K.G + 2.0, K.G + 3.3)} /></g>)}
       </Escena>
       {/* 1 · dónde vive: tierra, musgo, paja, rosales */}
       <Escena T={T} a={K.N} b={K.En} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
-        {fsvg(<>{[['tierra', 290, 650, '#7a4a24'], ['musgo esfagno', 790, 650, '#6fbf5a'], ['paja', 290, 960, '#e8c25a'], ['rosales', 790, 960, SP.rosa]].map(([n, x, y, c], i) => { const p = kprog(T, K.N + 0.3 + i * 0.5, K.N + 0.8 + i * 0.5, kEase.rebote);
-          return p > 0 ? <g key={i} transform={`translate(${x} ${y}) scale(${p})`}>
-            <circle r={100} fill="#fff" stroke={KC.ink} strokeWidth={8} />
+        {fsvg(<>{[['tierra', 290, 760, '#7a4a24'], ['musgo esfagno', 790, 760, '#6fbf5a'], ['paja', 290, 1190, '#e8c25a'], ['rosales', 790, 1190, SP.rosa]].map(([n, x, y, c], i) => { const p = kprog(T, K.N + 0.3 + i * 0.5, K.N + 0.8 + i * 0.5, kEase.rebote);
+          return p > 0 ? <g key={i} transform={`translate(${x} ${y}) scale(${1.6 * p})`}>
+            <circle r={100} fill="#1c2638" stroke={KC.ink} strokeWidth={6} />
             {i === 0 && <path d="M -110 30 Q 0 -20 110 30 L 110 90 L -110 90 Z" fill={c} stroke={KC.ink} strokeWidth={5} />}
             {i === 1 && Array.from({ length: 9 }, (_, k) => <path key={k} d={`M ${-80 + k * 20} 80 q -6 -60 ${(k % 2 ? 10 : -10)} -110`} stroke={c} strokeWidth={12} fill="none" strokeLinecap="round" />)}
             {i === 2 && Array.from({ length: 8 }, (_, k) => <line key={k} x1={-90 + k * 10} y1={70} x2={-40 + k * 18} y2={-70} stroke={c} strokeWidth={9} strokeLinecap="round" />)}
             {i === 3 && <g><path d="M 0 90 L 0 -40" stroke={SP.tallo} strokeWidth={12} /><circle cy={-60} r={42} fill={c} stroke={KC.ink} strokeWidth={5} /></g>}
             <path d="M -100 -30 Q -40 -70 20 -40 T 100 -60" stroke={SP.hifa} strokeWidth={4} fill="none" opacity=".9" />
-            <text y={138} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>{n}</text>
+            <text y={132} textAnchor="middle" style={{ font:`700 22px ${KF.mono}` }} fill={KC.ink}>{n}</text>
           </g> : null; })}</>)}
       </Escena>
       {/* 2 · entra por una cortada; con tu calor cambia */}
       <Escena T={T} a={K.En} b={K.Di} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<><Mano x={700} y={980} s={0.9} gota={0.4} />
-          <g transform="translate(150 820)"><rect x={-26} y={-220} width={52} height={330} rx={26} fill="#fff" stroke={KC.ink} strokeWidth={6} />
+        {fsvg(<><Mano x={760} y={1330} s={1.2} gota={0.4} />
+          <g transform="translate(130 800) scale(1.3)"><rect x={-26} y={-220} width={52} height={330} rx={26} fill="#fff" stroke={KC.ink} strokeWidth={6} />
             <circle cy={140} r={50} fill={KC.red} stroke={KC.ink} strokeWidth={6} /><rect x={-12} y={100 - (tmp - 20) * 16} width={24} height={(tmp - 20) * 16 + 40} fill={KC.red} />
-            <text x={50} y={-140} style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{`${Math.round(tmp)} °C`}</text></g></>)}
-        <Lupa T={T} at={K.En + 0.3} until={K.Di - 0.2} x={600} y={720} r={200} fx={502} fy={952} interior={interiorPiel} tinte={KC.gold2} etiqueta="POR DENTRO · piel" />
+            <text x={0} y={-250} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={KC.ink}>{`${Math.round(tmp)} °C`}</text></g></>)}
+        <Lupa T={T} at={K.En + 0.3} until={K.Di - 0.2} x={630} y={830} r={280} fx={516} fy={1284} interior={interiorPiel} tinte={KC.gold2} etiqueta="POR DENTRO · piel" />
       </Escena>
       {/* 3 · afuera moho, adentro levadura en forma de puro */}
       <Escena T={T} a={K.Di} b={K.Bu} zoom={0.03}>
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={14} />
-        {fsvg(<>
+        {fsvg(<g transform="translate(540 940) scale(1.3) translate(-540 -900)">
           <line x1={540} y1={600} x2={540} y2={1200} stroke="rgba(255,255,255,.3)" strokeWidth={4} strokeDasharray="14 10" />
-          {[[90, 760, -10], [120, 900, 15], [70, 1040, -5]].map(([x, y, a], i) => <HifaFlor key={i} x={x} y={y} s={1.15} rot={a} p={kprog(T, K.Di + 0.2 + i * 0.3, K.Di + 1.6 + i * 0.3)} />)}
-          {[[680, 740, 20, 0], [860, 800, -30, 1], [720, 920, 60, 0], [900, 970, 10, 1], [760, 1060, -20, 0]].map(([x, y, a, yv], i) => { const p = kprog(T, K.Di + 2.0 + i * 0.2, K.Di + 2.5 + i * 0.2, kEase.rebote);
+          {[[150, 760, -10], [180, 900, 15], [130, 1040, -5]].map(([x, y, a], i) => <HifaFlor key={i} x={x} y={y} s={1.15} rot={a} p={kprog(T, K.Di - 1.0 + i * 0.15, K.Di + 0.3 + i * 0.15)} />)}
+          {[[660, 740, 20, 0], [830, 800, -30, 1], [700, 920, 60, 0], [860, 970, 10, 1], [740, 1060, -20, 0]].map(([x, y, a, yv], i) => { const p = kprog(T, K.Di + 2.0 + i * 0.2, K.Di + 2.5 + i * 0.2, kEase.rebote);
             return p > 0 ? <Puro key={i} x={x} y={y} s={1.5 * p} rot={a} yema={yv * (0.5 + 0.5 * Math.sin(T * 2 + i))} /> : null; })}
-        </>)}
+        </g>)}
       </Escena>
       {/* 4 · 1–12 semanas: bultito donde te picaste */}
       <Escena T={T} a={K.Bu} b={K.Ca} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Brazo x={560} y={940} s={1.0} n={kprog(T, K.Bu + 2.2, K.Bu + 2.8)} />
-          <g transform="translate(260 680)"><rect x={-150} y={-120} width={300} height={220} rx={20} fill="#fff" stroke={KC.ink} strokeWidth={7} />
+          <Brazo x={600} y={1040} s={1.25} n={kprog(T, K.Bu + 2.2, K.Bu + 2.8)} />
+          <g transform="translate(300 700) scale(1.3)"><rect x={-150} y={-120} width={300} height={220} rx={20} fill="#fff" stroke={KC.ink} strokeWidth={7} />
             <rect x={-150} y={-120} width={300} height={60} rx={20} fill={KC.red} stroke={KC.ink} strokeWidth={7} />
             <text y={60} textAnchor="middle" style={{ font:`400 100px ${KF.titulo}` }} fill={KC.ink}>{Math.max(1, Math.round(12 * kprog(T, K.Bu + 0.3, K.Bu + 2.2)))}</text>
             <text y={-78} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#fff">SEMANAS</text></g>
@@ -164,85 +165,85 @@ function EsporoShot() {
       {/* 5 · en fila, subiendo por el brazo (vasos linfáticos) */}
       <Escena T={T} a={K.Ca} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<Brazo x={560} y={940} s={1.0} n={1 + nB * 0.75} linfa={kprog(T, K.Ca + 0.2, K.Ca + 1.6)} />)}
+        {fsvg(<Brazo x={600} y={1040} s={1.25} n={1 + nB * 0.75} linfa={kprog(T, K.Ca + 0.2, K.Ca + 1.6)} />)}
       </Escena>
       {/* 6 · re-gancho */}
       <Escena T={T} a={K.P} b={K.Ga} zoom={0.08}>
         <FondoLunares color={KC.lilac} />
-        {fsvg(<Interrogacion T={T} x={250} y={1080} tam={460} />)}
+        {fsvg(<><g opacity={0.5}><Rosal x={720} y={1040} s={1.25} T={T} /></g><Interrogacion T={T} x={320} y={1300} tam={720} /></>)}
       </Escena>
       {/* 7 · Brasil: de gatos a personas */}
       <Escena T={T} a={K.Ga} b={K.E} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<><Gato x={560} y={960} s={1.2} T={T} zarpa={kprog(T, K.Ga + 1.4, K.Ga + 1.7, kEase.rebote) * (1 - kprog(T, K.Ga + 2.6, K.Ga + 3.0))} />
-          <Brasil x={880} y={720} s={0.6} /></>)}
+        {fsvg(<><Gato x={500} y={1060} s={1.7} T={T} zarpa={kprog(T, K.Ga + 1.4, K.Ga + 1.7, kEase.rebote) * (1 - kprog(T, K.Ga + 2.6, K.Ga + 3.0))} />
+          <Brasil x={850} y={640} s={0.75} /></>)}
       </Escena>
       {/* 8 · Fiocruz: 4,188 casos humanos (1997–2011) */}
       <Escena T={T} a={K.E} b={K.Mx} zoom={0.03}>
         <FondoLunares color={KC.orange} />
-        {fsvg(<><Brasil x={540} y={880} s={1.15} />
-          <text x={540} y={1150} textAnchor="middle" style={{ font:`400 120px ${KF.titulo}` }} fill={KC.ink}>{kformato(nCas)}</text></>)}
+        {fsvg(<><Brasil x={540} y={980} s={2.0} />
+          <text x={520} y={1130} textAnchor="middle" style={{ font:`400 160px ${KF.titulo}` }} fill={KC.ink}>{kformato(nCas)}</text></>)}
       </Escena>
       {/* 9 · México: Jalisco con más casos publicados (hasta 2019) */}
       <Escena T={T} a={K.Mx} b={K.Mi} zoom={0.03}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <MapaMexico x={60} y={560} ancho={520} conCA={false}>
+          <MapaMexico x={90} y={600} ancho={900} conCA={false}>
             {(() => { const [jx, jy] = mxProy(-103.4, 20.7); return <circle cx={jx} cy={jy} r={22 + 5 * Math.sin(T * 4)} fill={KC.red} stroke={KC.ink} strokeWidth={5} />; })()}
           </MapaMexico>
-          {[['Jalisco', 1698, KC.red], ['CDMX', 162, KC.orange], ['Puebla', 123, KC.orange]].map(([n, v, c], i) => { const p = kprog(T, K.Mx + 1.0 + i * 0.4, K.Mx + 2.2 + i * 0.4, kEase.sale), w = v / 1698 * 250 * p;
-            return <g key={i}><rect x={620} y={720 + i * 130} width={Math.max(4, w)} height={80} rx={10} fill={c} stroke={KC.ink} strokeWidth={5} />
-              <text x={620} y={706 + i * 130} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>{n}</text>
-              {p > 0 && <text x={630 + Math.max(4, w)} y={775 + i * 130} style={{ font:`400 48px ${KF.titulo}` }} fill={KC.ink}>{kformato(Math.round(v * p))}</text>}</g>; })}
+          {[['Jalisco', 1698, KC.red], ['CDMX', 162, KC.orange], ['Puebla', 123, KC.orange]].map(([n, v, c], i) => { const p = kprog(T, K.Mx + 1.0 + i * 0.4, K.Mx + 2.2 + i * 0.4, kEase.sale), w = v / 1698 * 560 * p;
+            return <g key={i}><rect x={200} y={1160 + i * 110} width={Math.max(4, w)} height={66} rx={10} fill={c} stroke={KC.ink} strokeWidth={5} />
+              <text x={200} y={1148 + i * 110} style={{ font:`700 28px ${KF.mono}` }} fill={KC.ink}>{n}</text>
+              {p > 0 && <text x={214 + Math.max(4, w)} y={1210 + i * 110} style={{ font:`400 48px ${KF.titulo}` }} fill={KC.ink}>{kformato(Math.round(v * p))}</text>}</g>; })}
         </>)}
       </Escena>
       {/* 10 · mineros de oro en Sudáfrica, años 40 */}
       <Escena T={T} a={K.Mi} b={K.C} zoom={0.04}>
         <div style={{ position:'absolute', inset:0, background:'#1a120c' }}></div>
-        {fsvg(<Mina T={T} />)}
+        {fsvg(<g transform="translate(540 960) scale(1.25) translate(-540 -910)"><Mina T={T} /></g>)}
       </Escena>
       {/* 11 · cierre: el mismo rosal, ahora con guante y manga larga */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
         <FondoLunares color={KC.pink} />
-        {fsvg(<><Rosal x={380} y={900} s={1.25} T={T} /><Mano x={klerp(980, 700, kprog(T, K.C + 0.6, K.C + 1.2, kEase.sale))} y={960} s={0.9} guante={1} manga={1} /></>)}
-        <Lupa T={T} at={K.C + 0.8} until={K.Ou} x={760} y={620} r={160} fx={520} fy={935} interior={interiorCierre} tinte={KC.mint} etiqueta="POR DENTRO · guante" />
+        {fsvg(<g transform="translate(560 1010) scale(1.5) translate(-500 -950)"><path d="M -60 1340 Q 120 1250 400 1262 Q 700 1250 900 1330 L 900 1380 L -60 1380 Z" fill="#4a3019" stroke="#9a6c40" strokeWidth={6} />{[[150, 1300], [610, 1296], [760, 1318]].map(([px, py], i) => <ellipse key={i} cx={px} cy={py} rx={16} ry={9} fill="#7a5a3a" />)}<Rosal x={380} y={900} s={1.25} T={T} /><Mano x={klerp(980, 700, kprog(T, K.C + 0.6, K.C + 1.2, kEase.sale))} y={960} s={0.9} guante={1} manga={1} /></g>)}
+        <Lupa T={T} at={K.C + 0.8} until={K.Ou} x={820} y={570} r={200} fx={590} fy={988} interior={interiorCierre} tinte={KC.mint} etiqueta="POR DENTRO · guante" />
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.6} until={K.N - 0.2} texto="¿solo un piquete?" x={290} y={470} tam={42} />
-      <Chip T={T} at={K.G + 1.8} until={K.N - 0.2} texto="un hongo" x={290} y={560} tam={44} borde={KC.gold} />
-      <Etq T={T} at={K.N + 0.4} until={K.En - 0.3} x={60} y={520} texto="Sporothrix" it tam={44} color={KC.ink} />
-      <Etq T={T} at={K.En + 1.0} until={K.Di - 0.3} x={60} y={1120} texto="cortada o raspón" tam={30} color={KC.ink} />
+      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 1.6} until={K.N - 0.2} texto="¿solo un piquete?" x={290} y={330} tam={42} />
+      <Chip T={T} at={K.G + 1.8} until={K.N - 0.2} texto="un hongo" x={290} y={420} tam={44} borde={KC.gold} />
+      <Etq T={T} at={K.N + 0.4} until={K.En - 0.3} x={60} y={500} texto="Sporothrix" it tam={44} color={KC.ink} />
+      <Etq T={T} at={K.En + 1.0} until={K.Di - 0.3} x={60} y={1290} texto="cortada o raspón" tam={30} color={KC.ink} />
       <Chip T={T} at={K.En + 2.2} until={K.Di - 0.3} texto="con tu calor, cambia de forma" x={540} y={470} tam={34} borde={KC.ink} />
-      <Chip T={T} at={K.Di + 0.2} until={K.Bu - 0.3} texto="afuera · 25 °C · moho" x={280} y={640} tam={28} borde={SP.hifa} />
-      <Chip T={T} at={K.Di + 1.9} until={K.Bu - 0.3} texto="adentro · 37 °C · levadura" x={800} y={640} tam={28} borde={SP.lev} />
-      <Etq T={T} at={K.Di + 1.2} until={K.Bu - 0.3} x={60} y={1130} texto="conidios agrupados en flor" tam={24} color={SP.hifa} />
-      <Etq T={T} at={K.Di + 2.8} until={K.Bu - 0.3} x={1030} y={1130} lado="izq" texto="forma de puro" tam={26} color={SP.lev} />
-      <Etq T={T} at={K.Bu + 2.6} until={K.Ca - 0.3} x={60} y={1060} texto="donde te picaste" tam={30} color={KC.ink} />
-      <Etq T={T} at={K.Ca + 1.2} until={K.P - 0.3} x={60} y={1060} texto="vaso linfático" tam={30} color="#147a4a" />
-      <Chip T={T} at={K.Ca + 2.0} until={K.P - 0.3} texto="en fila, subiendo" x={540} y={760} tam={38} borde={KC.ink} />
-      <Etq T={T} at={K.Ga + 0.5} until={K.E - 0.3} x={60} y={560} texto="Sporothrix brasiliensis" it tam={36} color={KC.ink} />
+      <Chip T={T} at={K.Di + 0.2} until={K.Bu - 0.3} texto="afuera · 25 °C · moho" x={280} y={500} tam={28} borde={SP.hifa} />
+      <Chip T={T} at={K.Di + 1.9} until={K.Bu - 0.3} texto="adentro · 37 °C · levadura" x={800} y={500} tam={28} borde={SP.lev} />
+      <Etq T={T} at={K.Di + 1.2} until={K.Bu - 0.3} x={60} y={1380} texto="conidios agrupados en flor" tam={24} color={SP.hifa} />
+      <Etq T={T} at={K.Di + 2.8} until={K.Bu - 0.3} x={1030} y={1380} lado="izq" texto="forma de puro" tam={26} color={SP.lev} />
+      <Etq T={T} at={K.Bu + 2.6} until={K.Ca - 0.3} x={60} y={1190} texto="donde te picaste" tam={30} color={KC.ink} />
+      <Etq T={T} at={K.Ca + 1.2} until={K.P - 0.3} x={60} y={1190} texto="vaso linfático" tam={30} color="#147a4a" />
+      <Chip T={T} at={K.Ca + 2.0} until={K.P - 0.3} texto="en fila, subiendo" x={540} y={800} tam={38} borde={KC.ink} />
+      <Etq T={T} at={K.Ga + 0.5} until={K.E - 0.3} x={60} y={1370} texto="Sporothrix brasiliensis" it tam={36} color={KC.ink} />
       <Chip T={T} at={K.Ga + 1.8} until={K.E - 0.3} texto="arañazos y mordidas" x={400} y={470} tam={36} borde={KC.red} />
-      <Etq T={T} at={K.Ga + 0.8} until={K.E - 0.3} x={1020} y={880} lado="izq" texto="Brasil" tam={28} color={KC.ink} />
-      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.4} anio="1997–2011" quien="Fiocruz · Río de Janeiro" revista="Gremião et al., PLoS Pathogens, 2017" y={470} />
+      <Etq T={T} at={K.Ga + 0.8} until={K.E - 0.3} x={700} y={560} lado="izq" texto="Brasil" tam={28} color={KC.ink} />
+      <TarjetaEstudio T={T} at={K.E + 0.15} until={K.E + 2.4} anio="1997–2011" quien="Fiocruz · Río de Janeiro" revista="Gremião et al., PLoS Pathogens, 2017" y={390} />
             <Chip T={T} at={K.E + 2.5} until={K.Mx - 0.3} texto="casos humanos registrados" x={540} y={520} tam={32} borde={KC.ink} />
       <Chip T={T} at={K.Mx + 0.2} until={K.Mi - 0.3} texto="una de las micosis bajo la piel más frecuentes" x={540} y={470} tam={28} borde={KC.ink} />
-      <Etq T={T} at={K.Mx + 1.4} until={K.Mi - 0.3} x={60} y={1110} texto="casos publicados 1914–2019 · Toriello et al., 2020" tam={22} color={KC.ink} />
-      <Chip T={T} at={K.Mx + 2.8} until={K.Mi - 0.3} texto="hasta 2019" x={800} y={610} tam={32} borde={KC.gold} />
+      <Etq T={T} at={K.Mx + 1.4} until={K.Mi - 0.3} x={60} y={1490} texto="casos publicados 1914–2019 · Toriello et al., 2020" tam={22} color={KC.ink} />
+      <Chip T={T} at={K.Mx + 2.8} until={K.Mi - 0.3} texto="hasta 2019" x={880} y={1110} tam={32} borde={KC.gold} />
       <Chip T={T} at={K.Mi + 0.4} until={K.C - 0.3} texto="Sudáfrica · años 40" x={300} y={470} tam={36} borde={KC.gold} />
       <Chip T={T} at={K.Mi + 1.4} until={K.C - 0.3} texto="+3,000 mineros de oro" x={300} y={560} tam={36} borde={KC.gold} />
-      <Etq T={T} at={K.Mi + 2.2} until={K.C - 0.3} x={60} y={680} texto="el hongo estaba en la madera" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.C + 0.3} until={K.Ou} texto="tiene tratamiento (antifúngicos)" x={360} y={470} tam={32} borde={KC.mint} />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="guantes y manga larga" x={360} y={560} tam={36} borde={KC.gold} />
+      <Etq T={T} at={K.Mi + 2.2} until={K.C - 0.3} x={115} y={900} texto="el hongo estaba en la madera" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.C + 0.3} until={K.Ou} texto="tiene tratamiento (antifúngicos)" x={340} y={300} tam={32} borde={KC.mint} />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="guantes y manga larga" x={340} y={390} tam={36} borde={KC.gold} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={K.En} until={K.Di} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={K.Di} until={K.Bu} texto="5 µm" largo={100} />
-      <BarraEscala T={T} at={K.Bu} until={K.P} texto="10 cm" largo={130} />
-      <BarraEscala T={T} at={K.Ga} until={K.E} texto="10 cm" largo={110} />
-      <BarraEscala T={T} at={K.Mx} until={K.Mi} texto="500 km" largo={80} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={110} />
+      <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={166} />
+      <BarraEscala T={T} at={K.En} until={K.Di} texto="5 cm" largo={147} />
+      <BarraEscala T={T} at={K.Di} until={K.Bu} texto="5 µm" largo={130} />
+      <BarraEscala T={T} at={K.Bu} until={K.P} texto="10 cm" largo={163} />
+      <BarraEscala T={T} at={K.Ga} until={K.E} texto="10 cm" largo={156} />
+      <BarraEscala T={T} at={K.Mx} until={K.Mi} texto="500 km" largo={138} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={166} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="Te pudo meter *un hongo*" />
