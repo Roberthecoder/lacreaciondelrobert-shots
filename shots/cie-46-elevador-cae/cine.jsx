@@ -12,7 +12,7 @@
 const CINE = { fondo: '#0a0f1c', borde: '#070a12', linea: '#dfe7ff', texto: '#f3f6ff', acento: '#ffd166' };
 // Interruptores (22 nov 2026, tras revisar tres videos de la referencia cuadro por cuadro: no llevan subtítulo quemado ni
 // logo durante el video, y sus trazos tienen un resplandor suave). Cambiar aquí afecta a todos los shots al re-renderizar.
-const CINE_OPC = { subtitulos: false, logo: false, resplandor: true, volumen: true };
+const CINE_OPC = { subtitulos: false, logo: true, resplandor: true, volumen: true };
 const CINE_ENC = { max: 1.7, ancho: 0.93, alto: 0.72, centroY: 0.47, bajar: 0.17 };
 const CINE_VOL = { suave: 8, relieve: 9, brillo: 0.5, halo: 12, haloFuerza: 0.5 };
 
