@@ -136,9 +136,9 @@ function Bucardo({ T, x, y, s = 1, cria = false, o = 1, echado = 0 }) {
 // Montañas de los Pirineos (fondo).
 function Montanas({ o = 1 }) {
   return <g opacity={o}>
-    <path d="M 0 900 L 220 560 L 380 760 L 600 480 L 820 760 L 960 600 L 1080 720 L 1080 1920 L 0 1920 Z" fill="#7fb7a6" stroke={KC.ink} strokeWidth={8} />
-    <path d="M 600 480 L 660 570 L 620 560 L 580 600 L 550 555 Z M 220 560 L 270 640 L 200 620 Z" fill="#fff" />
-    <rect x={0} y={1080} width={KW} height={840} fill="#345c43" />
+    <path d="M 0 900 L 220 560 L 380 760 L 600 480 L 820 760 L 960 600 L 1080 720 L 1080 1920 L 0 1920 Z" fill="#1f4a45" stroke={KC.ink} strokeWidth={8} />
+    <path d="M 600 480 L 660 570 L 620 560 L 580 600 L 550 555 Z M 220 560 L 270 640 L 200 620 Z" fill="#cfe6ee" />
+    <rect x={0} y={1080} width={KW} height={840} fill="#12281c" />
   </g>;
 }
 // Pulmones por dentro: uno normal y uno chico y deforme.
@@ -199,10 +199,16 @@ function Calendario({ x, y, n, s = 1 }) {
     <rect x={-120} y={-110} width={240} height={240} rx={18} fill="#fff" stroke={KC.ink} strokeWidth={8} />
     <rect x={-120} y={-110} width={240} height={60} rx={18} fill={KC.red} stroke={KC.ink} strokeWidth={8} />
     <text x={0} y={-66} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill="#fff">MES</text>
-    <text x={0} y={90} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={KC.ink}>{n}</text>
+    <text x={0} y={90} textAnchor="middle" style={{ font:`400 130px ${KF.titulo}` }} fill={OSC}>{n}</text>
     {[-70, 0, 70].map((dx, i) => <rect key={i} x={dx - 8} y={-130} width={16} height={40} rx={6} fill={KC.ink} />)}
   </g>;
 }
+
+// Pase a mano cine: agranda un grupo alrededor de (cx, cy) y lo lleva a (x, y).
+function Zm({ cx, cy, k = 1, x = cx, y = cy, children }) {
+  return <g transform={`translate(${x} ${y}) scale(${k}) translate(${-cx} ${-cy})`}>{children}</g>;
+}
+const OSC = '#0b1020';
 
 function Mamut() {
   const { T, CUES } = useComposition();
@@ -221,8 +227,8 @@ function Mamut() {
       <Escena T={T} a={K.G} b={K.P1} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <BloqueHielo T={T} x={560} y={1000} s={1.15} grieta={kprog(T, K.G + 0.3, K.G + 1.4)} />
-          <Manual x={60} y={klerp(-560, 330, cae)} s={1} rot={klerp(-20, -4, cae)} estados={[]} />
+          <BloqueHielo T={T} x={545} y={1030} s={1.4} grieta={kprog(T, K.G + 0.3, K.G + 1.4)} />
+          <Manual x={60} y={klerp(-560, 250, cae)} s={1} rot={klerp(-20, -4, cae)} estados={[]} />
         </SvgCapa>
         <Ambiente T={T} n={30} color="rgba(255,255,255,.6)" />
       </Escena>
@@ -230,30 +236,30 @@ function Mamut() {
       <Escena T={T} a={K.P1} b={K.Ro} zoom={0.06}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <BloqueHielo T={T} x={540} y={1020} s={1.1} grieta={1} />
-          <g transform={`translate(${klerp(900, 640, kprog(T, K.P1 + 0.2, K.P1 + 1.0, kEase.sale))} ${klerp(560, 880, kprog(T, K.P1 + 0.2, K.P1 + 1.0, kEase.sale))}) rotate(35)`}>
+          <BloqueHielo T={T} x={540} y={1060} s={1.4} grieta={1} />
+          <g transform={`translate(${klerp(960, 667, kprog(T, K.P1 + 0.2, K.P1 + 1.0, kEase.sale))} ${klerp(520, 882, kprog(T, K.P1 + 0.2, K.P1 + 1.0, kEase.sale))}) rotate(35) scale(1.3)`}>
             <path d="M 0 0 L -14 -320 L 14 -320 Z" fill="#cfd6de" stroke={KC.ink} strokeWidth={6} /><path d="M 10 0 L 40 -320 L 60 -316 Z" fill="#cfd6de" stroke={KC.ink} strokeWidth={6} /></g>
           <Marca x={590} y={380} s={0.6} tipo="no" s={1} o={kprog(T, K.P1 + 2.6, K.P1 + 3.0)} />
         </SvgCapa>
-        <Lupa T={T} at={K.P1 + 1.1} until={K.Ro - 0.3} x={300} y={850} r={190} fx={600} fy={960} interior={(Tl, r) => <CelulasRotas T={Tl} r={r} />} etiqueta="AL MICROSCOPIO · tejido" tinte={KC.cyan} />
+        <Lupa T={T} at={K.P1 + 1.1} until={K.Ro - 0.3} x={290} y={770} r={200} fx={667} fy={900} interior={(Tl, r) => <CelulasRotas T={Tl} r={r} />} etiqueta="AL MICROSCOPIO · tejido" tinte={KC.cyan} />
       </Escena>
       {/* 2 · el ADN roto en pedacitos (micro, fondo oscuro) */}
       <Escena T={T} a={K.Ro} b={K.P2} zoom={0.05}>
         <FondoMarca patron="oscuro" />
-        <SvgCapa>
+        <SvgCapa><Zm cx={540} cy={840} k={1.25} x={540} y={960}>
           <g opacity={1 - kprog(T, K.Ro + 0.6, K.Ro + 1.2)}><Pedacito T={T} x={540} y={840} largo={720} rot={0} seed={1} /></g>
           {trozos.map(([x, y, l, r], i) => { const k = kprog(T, K.Ro + 0.6, K.Ro + 1.6, kEase.sale);
             return <g key={i} opacity={k}><Pedacito T={T} x={klerp(180 + i * 60, x, k)} y={klerp(840, y, k)} largo={l} rot={r * k} seed={i + 2} /></g>; })}
-        </SvgCapa>
+        </Zm></SvgCapa>
         <Ambiente T={T} n={30} color="rgba(160,210,255,.35)" />
       </Escena>
       {/* 3 · paso 2: armar el rompecabezas */}
       <Escena T={T} a={K.P2} b={K.P3} zoom={0.04}>
         <FondoMarca patron="oscuro" />
-        <SvgCapa>
+        <SvgCapa><Zm cx={540} cy={840} k={klerp(1.25, 1.05, armado)} x={540} y={960}>
           {trozos.map(([x, y, l, r], i) => { const fila = i % 3, col = Math.floor(i / 3), tx = 130 + col * 210, ty = 700 + fila * 150, k = kprog(T, K.P2 + 0.3 + i * 0.18, K.P2 + 1.2 + i * 0.18, kEase.suave);
             return <g key={i}><Pedacito T={T * (1 - k)} x={klerp(x, tx + 100, k)} y={klerp(y, ty, k)} largo={klerp(l, 190, k)} rot={klerp(r, 0, k)} seed={i + 2} /></g>; })}
-          <rect x={90} y={620} width={900} height={480} rx={24} fill="none" stroke={KC.gold} strokeWidth={6} strokeDasharray="20 14" opacity={armado} />
+          <rect x={90} y={620} width={900} height={480} rx={24} fill="none" stroke={KC.gold} strokeWidth={6} strokeDasharray="20 14" opacity={armado} /></Zm>
           <Marca x={590} y={380} s={0.6} tipo="ok" o={kprog(T, K.P2 + 3.0, K.P2 + 3.4)} />
         </SvgCapa>
       </Escena>
@@ -261,10 +267,10 @@ function Mamut() {
       <Escena T={T} a={K.P3} b={K.P4} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgCapa>
-          <ElefanteAsiatico T={T} x={300} y={840} s={0.72} />
-          <MamutLanudo T={T} x={790} y={840} s={0.72} o={kprog(T, K.P3 + 0.5, K.P3 + 1.0)} />
-          <TiraGenoma T={T} x={130} y={1040} n={16} w={54} f={kprog(T, K.P3 + 1.4, K.P3 + 2.4)} seed={3} difs={[3, 9, 13]} brilla={kprog(T, K.P3 + 3.0, K.P3 + 3.2)} />
-          <TiraGenoma T={T} x={130} y={1110} n={16} w={54} f={kprog(T, K.P3 + 1.6, K.P3 + 2.6)} seed={3} difs={[3, 9, 13]} brilla={kprog(T, K.P3 + 3.0, K.P3 + 3.2)} cambia={{ 3: 'T', 9: 'A', 13: 'C' }} />
+          <ElefanteAsiatico T={T} x={215} y={900} s={0.8} />
+          <MamutLanudo T={T} x={725} y={900} s={0.8} o={kprog(T, K.P3 + 0.5, K.P3 + 1.0)} />
+          <TiraGenoma T={T} x={90} y={1160} n={16} w={60} f={kprog(T, K.P3 + 1.4, K.P3 + 2.4)} seed={3} difs={[3, 9, 13]} brilla={kprog(T, K.P3 + 3.0, K.P3 + 3.2)} />
+          <TiraGenoma T={T} x={90} y={1232} n={16} w={60} f={kprog(T, K.P3 + 1.6, K.P3 + 2.6)} seed={3} difs={[3, 9, 13]} brilla={kprog(T, K.P3 + 3.0, K.P3 + 3.2)} cambia={{ 3: 'T', 9: 'A', 13: 'C' }} />
           <Marca x={590} y={380} s={0.6} tipo="ok" o={kprog(T, K.P3 + 3.6, K.P3 + 4.0)} />
         </SvgCapa>
       </Escena>
@@ -272,9 +278,9 @@ function Mamut() {
       <Escena T={T} a={K.P4} b={K.Pr} zoom={0.04}>
         <FondoLunares color={KC.mint} />
         <SvgCapa>
-          <ElefanteAsiatico T={T} x={540} y={760} s={0.62} color={mixHex(ELEF, '#8a6440', kprog(T, K.P4 + 2.4, K.P4 + 3.8))} />
-          <TiraGenoma T={T} x={130} y={1060} n={16} w={54} f={1} seed={3} difs={[3, 9, 13]} brilla={corta} cambia={corta >= 1 ? { 3: 'T', 9: 'A', 13: 'C' } : {}} />
-          <Tijeras x={klerp(-100, 300, kprog(T, K.P4 + 0.2, K.P4 + 1.0, kEase.sale))} y={990} abre={Math.abs(Math.sin(T * 6))} s={0.9} />
+          <ElefanteAsiatico T={T} x={430} y={880} s={1.15} color={mixHex(ELEF, '#8a6440', kprog(T, K.P4 + 2.4, K.P4 + 3.8))} />
+          <TiraGenoma T={T} x={90} y={1240} n={16} w={60} f={1} seed={3} difs={[3, 9, 13]} brilla={corta} cambia={corta >= 1 ? { 3: 'T', 9: 'A', 13: 'C' } : {}} />
+          <Tijeras x={klerp(-100, 290, kprog(T, K.P4 + 0.2, K.P4 + 1.0, kEase.sale))} y={1165} abre={Math.abs(Math.sin(T * 6))} s={1.0} />
           <Marca x={590} y={380} s={0.6} tipo="espera" o={kprog(T, K.P4 + 3.4, K.P4 + 3.8)} />
         </SvgCapa>
       </Escena>
@@ -287,38 +293,38 @@ function Mamut() {
       <Escena T={T} a={K.Ra} b={K.P5} zoom={0.04}>
         <FondoLunares color={KC.orange} />
         <SvgCapa>
-          <ellipse cx={540} cy={1070} rx={360} ry={50} fill="rgba(0,0,0,.18)" />
-          <Raton T={T} x={520} y={960} s={1.25} lana={lana} />
-          {lana > 0 && lana < 1 && Array.from({ length: 8 }, (_, i) => { const a = i * 0.8, d = 240 + lana * 120; return <circle key={i} cx={520 + Math.cos(a) * d} cy={940 + Math.sin(a) * d * 0.6} r={10 * (1 - lana)} fill="#fff" />; })}
+          <ellipse cx={540} cy={1130} rx={420} ry={56} fill="rgba(0,0,0,.18)" />
+          <Raton T={T} x={560} y={1000} s={1.45} lana={lana} />
+          {lana > 0 && lana < 1 && Array.from({ length: 8 }, (_, i) => { const a = i * 0.8, d = 290 + lana * 140; return <circle key={i} cx={560 + Math.cos(a) * d} cy={980 + Math.sin(a) * d * 0.6} r={10 * (1 - lana)} fill="#fff" />; })}
         </SvgCapa>
       </Escena>
       {/* 9 · paso 5: óvulos, mamá elefanta y 22 meses */}
       <Escena T={T} a={K.P5} b={K.Bu} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <ElefanteAsiatico T={T} x={420} y={880} s={0.75} panza={kprog(T, K.P5 + 0.8, K.P5 + 3.3)} />
-          <Calendario x={850} y={1010} n={mes} s={0.8} />
+          <ElefanteAsiatico T={T} x={380} y={920} s={1.1} panza={kprog(T, K.P5 + 0.8, K.P5 + 3.3)} />
+          <Calendario x={890} y={1000} n={mes} s={0.95} />
           <Marca x={590} y={380} s={0.6} tipo="espera" o={kprog(T, K.P5 + 3.6, K.P5 + 4.0)} />
         </SvgCapa>
       </Escena>
       {/* 10–11 · el bucardo de 2003 */}
       <Escena T={T} a={K.Bu} b={K.Ci} zoom={0.03}>
-        <div style={{ position:'absolute', inset:0, background:'#bfe6f2' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'#0c1a2a' }}></div>
         <SvgCapa>
           <Montanas />
-          <Bucardo T={T} x={820} y={880} s={0.85} o={0.35 * (1 - kprog(T, K.Pu, K.Pu + 0.6))} />
-          <Bucardo T={T} x={540} y={1150} s={1.0} cria echado={kprog(T, K.Pu + 0.8, K.Pu + 1.8, kEase.suave)} />
+          <Bucardo T={T} x={720} y={740} s={1.3} o={0.35 * (1 - kprog(T, K.Pu, K.Pu + 0.6))} />
+          <Bucardo T={T} x={500} y={1150} s={1.7} cria echado={kprog(T, K.Pu + 0.8, K.Pu + 1.8, kEase.suave)} />
           <rect x={0} y={0} width={KW} height={KH} fill="#0c1220" opacity={0.45 * kprog(T, K.Pu, K.Pu + 0.8)} />
         </SvgCapa>
-        <Lupa T={T} at={K.Pu + 0.4} until={K.Ci - 0.3} x={320} y={760} r={190} fx={560} fy={1130} interior={(Tl, r) => <Pulmones T={Tl} r={r} />} etiqueta="POR DENTRO · pulmones" tinte={KC.pink} />
+        <Lupa T={T} at={K.Pu + 0.4} until={K.Ci - 0.3} x={300} y={690} r={210} fx={500} fy={1150} interior={(Tl, r) => <Pulmones T={Tl} r={r} />} etiqueta="POR DENTRO · pulmones" tinte={KC.pink} />
       </Escena>
       {/* 12 · cierre: el hielo del inicio, con el ratón lanudo */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <BloqueHielo T={T} x={560} y={1020} s={1.15} grieta={1} />
-          <Manual x={60} y={330} rot={-4} estados={['no', 'ok', 'ok', 'espera', 'espera'].map((e, i) => (T > K.Ci + 0.6 + i * 0.35 ? e : null))} />
-          <Raton T={T} x={700} y={klerp(600, 740, kprog(T, K.Ci + 2.0, K.Ci + 2.6, kEase.rebote))} s={0.55} lana={1} />
+          <BloqueHielo T={T} x={545} y={1030} s={1.4} grieta={1} />
+          <Manual x={60} y={250} rot={-4} estados={['no', 'ok', 'ok', 'espera', 'espera'].map((e, i) => (T > K.Ci + 0.6 + i * 0.35 ? e : null))} />
+          <Raton T={T} x={770} y={klerp(470, 618, kprog(T, K.Ci + 2.0, K.Ci + 2.6, kEase.rebote))} s={0.8} lana={1} />
         </SvgCapa>
         <Ambiente T={T} n={30} color="rgba(255,255,255,.6)" />
       </Escena>
@@ -333,25 +339,25 @@ function Mamut() {
       {/* textos */}
       <Chip T={T} at={K.G + 1.2} until={K.P1 - 0.3} texto="5 pasos (de verdad)" x={540} y={1500} tam={44} borde={KC.red} />
       <Chip T={T} at={K.P1 + 3.0} until={K.Ro - 0.2} texto="2019: núcleos de 28 000 años no se dividieron" x={540} y={1500} tam={30} borde={KC.red} />
-      <Chip T={T} at={K.Ro + 0.2} until={K.P2 - 0.2} texto="AL MICROSCOPIO · ADN de mamut" x={540} y={620} tam={36} borde={KC.cyan} mono />
-      <Etq T={T} at={K.Ro + 1.4} until={K.P2 - 0.2} x={60} y={1480} texto="pedacitos de 40 a 500 letras" tam={34} color={KC.texto} />
-      <Etq T={T} at={K.Ro + 1.6} until={K.P2 - 0.2} x={60} y={1540} texto="(dibujo no a escala)" tam={26} color="rgba(246,243,236,.7)" />
-      <Chip T={T} at={K.P2 + 2.6} until={K.P3 - 0.2} texto="2015 · genomas completos de 2 mamuts" x={540} y={1500} tam={34} borde={KC.mint} />
-      <Etq T={T} at={K.P2 + 2.8} until={K.P3 - 0.2} x={540} y={1570} texto="Current Biology" it tam={28} lado="der" color={KC.texto} />
+      <Chip T={T} at={K.Ro + 0.2} until={K.P2 - 0.2} texto="AL MICROSCOPIO · ADN de mamut" x={540} y={570} tam={36} borde={KC.cyan} mono />
+      <Etq T={T} at={K.Ro + 1.4} until={K.P2 - 0.2} x={60} y={1410} texto="pedacitos de 40 a 500 letras" tam={34} color={KC.texto} />
+      <Etq T={T} at={K.Ro + 1.6} until={K.P2 - 0.2} x={60} y={1466} texto="(dibujo no a escala)" tam={26} color="rgba(246,243,236,.7)" />
+      <Chip T={T} at={K.P2 + 2.6} until={K.P3 - 0.2} texto="2015 · genomas completos de 2 mamuts" x={540} y={1390} tam={34} borde={KC.mint} />
+      <Etq T={T} at={K.P2 + 2.8} until={K.P3 - 0.2} x={540} y={1460} texto="Current Biology" it tam={28} lado="der" color={KC.texto} />
       <Etq T={T} at={K.P3 + 0.4} until={K.P4 - 0.2} x={60} y={620} texto="elefante asiático" lado="der" tam={30} color={KC.ink} />
       <Etq T={T} at={K.P3 + 0.6} until={K.P4 - 0.2} x={60} y={660} texto="Elephas maximus" it lado="der" tam={26} color={KC.ink} />
       <Etq T={T} at={K.P3 + 1.0} until={K.P4 - 0.2} x={1040} y={620} texto="mamut lanudo" lado="izq" tam={30} color={KC.ink} />
       <Etq T={T} at={K.P3 + 1.2} until={K.P4 - 0.2} x={1040} y={660} texto="Mammuthus primigenius" it lado="izq" tam={26} color={KC.ink} />
-      <Chip T={T} at={K.P3 + 3.2} until={K.P4 - 0.2} texto="su pariente vivo más cercano" x={540} y={1500} tam={38} borde={KC.yellow} />
-      {['pelo', 'grasa', 'frío'].map((t, i) => <Chip key={t} T={T} at={K.P4 + 1.8 + i * 0.4} until={K.Pr - 0.2} texto={t} x={900} y={720 + i * 84} tam={36} borde={[KC.orange, KC.yellow, KC.cyan][i]} />)}
-      <Chip T={T} at={K.P4 + 3.0} until={K.Pr - 0.2} texto="plan: aún no nace ningún elefante editado" x={480} y={1500} tam={30} borde={KC.orange} />
-      <TarjetaEstudio T={T} at={K.Ra + 0.9} until={K.Ra + 2.6} anio="2025" quien="Colossal · Texas" revista="ratón lanudo · preprint bioRxiv" x={420} y={620} />
-      <Chip T={T} at={K.Ra + 2.8} until={K.Oj - 0.2} texto="ediciones en 7 genes · preprint" x={540} y={1500} tam={36} borde={LANA} />
-      <MitoTachado T={T} at={K.Oj + 0.2} tacharEn={K.Oj + 1.4} until={K.P5 - 0.2} texto="ratón con ADN de mamut" x={380} y={500} tam={38} />
-      <Chip T={T} at={K.Oj + 1.6} until={K.P5 - 0.2} texto="cambios en genes del propio ratón · cero genes de mamut" x={540} y={1500} tam={27} borde={KC.mint} />
-      <NumeroGigante T={T} at={K.P5 + 2.6} until={K.Bu - 0.2} valor={22} desde={1} dur={1.0} sufijo=" meses" etiqueta="embarazo de una elefanta" x={540} y={1530} tam={120} color={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.Bu + 1.0} until={K.Bu + 3.6} anio="2003" quien="España y Francia" revista="bucardo clonado · Theriogenology 2009" x={400} y={640} />
-      <Etq T={T} at={K.Bu + 0.3} until={K.Pu - 0.2} x={590} y={990} texto="Capra pyrenaica pyrenaica" it lado="der" tam={24} color={KC.ink} />
+      <Chip T={T} at={K.P3 + 3.2} until={K.P4 - 0.2} texto="su pariente vivo más cercano" x={540} y={1400} tam={38} borde={KC.yellow} />
+      {['pelo', 'grasa', 'frío'].map((t, i) => <Chip key={t} T={T} at={K.P4 + 1.8 + i * 0.4} until={K.Pr - 0.2} texto={t} x={920} y={690 + i * 84} tam={36} borde={[KC.orange, KC.yellow, KC.cyan][i]} />)}
+      <Chip T={T} at={K.P4 + 3.0} until={K.Pr - 0.2} texto="plan: aún no nace ningún elefante editado" x={540} y={1410} tam={30} borde={KC.orange} />
+      <TarjetaEstudio T={T} at={K.Ra + 0.9} until={K.Ra + 2.6} anio="2025" quien="Colossal · Texas" revista="ratón lanudo · preprint bioRxiv" x={540} y={520} />
+      <Chip T={T} at={K.Ra + 2.8} until={K.Oj - 0.2} texto="ediciones en 7 genes · preprint" x={540} y={1400} tam={36} borde={LANA} />
+      <MitoTachado T={T} at={K.Oj + 0.2} tacharEn={K.Oj + 1.4} until={K.P5 - 0.2} texto="ratón con ADN de mamut" x={540} y={600} tam={38} />
+      <Chip T={T} at={K.Oj + 1.6} until={K.P5 - 0.2} texto="cambios en genes del propio ratón · cero genes de mamut" x={540} y={1400} tam={27} borde={KC.mint} />
+      <NumeroGigante T={T} at={K.P5 + 2.6} until={K.Bu - 0.2} valor={22} desde={1} dur={1.0} sufijo=" meses" etiqueta="embarazo de una elefanta" x={540} y={1400} tam={120} color={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.Bu + 1.0} until={K.Bu + 3.6} anio="2003" quien="España y Francia" revista="bucardo clonado · Theriogenology 2009" x={300} y={520} />
+      <Etq T={T} at={K.Bu + 0.3} until={K.Pu - 0.2} x={60} y={900} texto="Capra pyrenaica pyrenaica" it lado="der" tam={24} color={KC.ink} />
       <Chip T={T} at={K.Bu + 3.7} until={K.Pu - 0.2} texto="óvulos de cabra doméstica" x={540} y={1500} tam={36} borde={KC.mint} />
       <Chip T={T} at={K.Bu + 0.4} until={K.Bu + 3.5} texto="el último bucardo murió en 2000" x={540} y={1500} tam={34} borde={KC.red} />
       <Chip T={T} at={K.Pu + 0.8} until={K.Ci - 0.2} texto="vivió solo unos minutos" x={540} y={1500} tam={38} borde={KC.pink} />
