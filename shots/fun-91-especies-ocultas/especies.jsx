@@ -7,16 +7,35 @@ const EO = { gris:'#9a958c', gris2:'#c9c3b8', dorado:'#F4C25A', tierra:'#6b4a32'
 const SETAS10 = Array.from({ length: 10 }, (_, i) => ({ x: 100 + i * 98, s: 0.42 + ((i * 37) % 5) * 0.04, c: ['#c98b2b', '#e85a3a', '#f4c25a', '#a8743c', '#d9668a'][i % 5] }));
 const CON_NOMBRE = 4;   // la única a color (posición ilustrativa)
 
-// Fila de 10 setas que brotan; las 9 sin nombre se vuelven siluetas grises con «?».
-function FilaSetas({ T, at, y = 1060, gris = 0, brilla = 0 }) {
+// 10 setas que brotan; las 9 sin nombre se vuelven siluetas grises con «?».
+// modo 'dos' (gancho): dos filas de 5 que llenan el cuadro, sobre el suelo del bosque. modo 'fila' (cierre): una fila sobre la
+// superficie, con pies cortos y largos alternados para que no se tapen. k = factor de tamaño (la barra de 5 cm se alarga igual).
+const ORDEN_DOS = [0, 1, 2, 3, 5, 6, 7, 4, 8, 9];   // la que sí tiene nombre queda al frente y al centro
+function lugarSeta(i, modo, y) {
+  if (modo === 'dos') { const j = ORDEN_DOS.indexOf(i); return j < 5 ? { x: 130 + j * 205, y: y - 430, alto: 150 } : { x: 110 + (j - 5) * 215, y, alto: 150 }; }
+  return { x: 75 + i * 103.3, y, alto: i % 2 ? 150 : 230 };
+}
+function FilaSetas({ T, at, y = 1060, gris = 0, brilla = 0, k = 1, modo = 'fila' }) {
+  const orden = modo === 'dos' ? ORDEN_DOS : SETAS10.map((_, i) => i);
   return <g>
-    {SETAS10.map((st, i) => { const c = kprog(T, at + i * 0.08, at + 0.5 + i * 0.08); if (c <= 0) return null;
-      const g = i === CON_NOMBRE ? 0 : gris;
+    {orden.map((i) => { const st = SETAS10[i], c = kprog(T, at + i * 0.08, at + 0.5 + i * 0.08); if (c <= 0) return null;
+      const g = i === CON_NOMBRE ? 0 : gris, L = lugarSeta(i, modo, y), s = st.s * k, tope = L.y - s * (L.alto + 100);
       return <g key={i}>
-        <Seta x={st.x} y={y} s={st.s} crece={c} sombrero={mixHex(st.c, EO.gris, g)} pie={mixHex('#f3e6c4', EO.gris2, g)} escamas={false} anillo={i % 3 === 0} />
-        {g > 0.5 && <text x={st.x} y={y - st.s * 300} textAnchor="middle" style={{ font:`400 ${60}px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(g, 0.5, 1)}>?</text>}
-        {i === CON_NOMBRE && brilla > 0 && <circle cx={st.x} cy={y - st.s * 160} r={110} fill="none" stroke={KC.gold2} strokeWidth={8} opacity={brilla} />}
+        {modo === 'dos' && <ellipse cx={L.x} cy={L.y + 4} rx={s * 62} ry={s * 13} fill="rgba(0,0,0,.5)" />}
+        <Seta x={L.x} y={L.y} s={s} alto={L.alto} crece={c} sombrero={mixHex(st.c, EO.gris, g)} pie={mixHex('#f3e6c4', EO.gris2, g)} escamas={false} anillo={i % 3 === 0} />
+        {g > 0.5 && <text x={L.x} y={tope - 6} textAnchor="middle" style={{ font:`400 ${Math.round(46 + 26 * k)}px ${KF.titulo}` }} fill={KC.ink} opacity={kprog(g, 0.5, 1)}>?</text>}
+        {i === CON_NOMBRE && brilla > 0 && <circle cx={L.x} cy={L.y - s * (L.alto + 20) * 0.62} r={s * 150} fill="none" stroke={KC.gold2} strokeWidth={8} opacity={brilla} />}
       </g>; })}
+  </g>;
+}
+// Suelo del bosque para el gancho: tierra oscura que llena el cuadro de borde a borde, con hojarasca.
+function SueloBosque() {
+  const r = krng(5), hojas = Array.from({ length: 26 }, () => ({ x: r() * 1080, y: 900 + r() * 900, s: 0.8 + r() * 0.9, a: r() * 60 - 30, c: ['#5a3a1c', '#6b4a22', '#4a2f18', '#70481e'][Math.floor(r() * 4)] }));
+  return <g>
+    <path d="M -100 920 Q 540 860 1180 920 L 1180 2100 L -100 2100 Z" fill="#2a1b12" />
+    <path d="M -100 1330 Q 540 1280 1180 1330 L 1180 2100 L -100 2100 Z" fill="#1d120b" />
+    <path d="M -100 920 Q 540 860 1180 920" stroke="#6b4a32" strokeWidth={6} fill="none" opacity=".7" />
+    {hojas.map((h, i) => <ellipse key={i} cx={h.x} cy={h.y} rx={30 * h.s} ry={9 * h.s} transform={`rotate(${h.a} ${h.x} ${h.y})`} fill={h.c} opacity=".75" />)}
   </g>;
 }
 // Cuadrícula 10 × 10 (1 cuadrito ≈ 25,000 especies). gris 0..1 = cuántos se pintan gris; oro 0..1 = los 6 dorados;
@@ -27,6 +46,9 @@ function Cuad({ T, x = 190, y = 470, c = 70, gris = 1, oro = 0, franjas = 0 }) {
     const col = i % 10, fil = Math.floor(i / 10), on = kclamp(gris * 100 - i, 0, 1), dor = i < 6 ? kclamp(oro * 6 - i, 0, 1) : 0;
     out.push(<rect key={i} x={x + col * c + 4} y={y + fil * c + 4} width={c - 8} height={c - 8} rx={8} fill={dor > 0 ? mixHex(EO.gris2, EO.dorado, dor) : (on > 0 ? mixHex('#ffffff', EO.gris2, on) : 'rgba(255,255,255,.35)')} stroke={KC.ink} strokeWidth={4} />);
   }
+  // cada cuadrito lleva una seta chica: la cuadrícula es de hongos, no solo de cuadros
+  for (let i = 0; i < 100; i++) { const col = i % 10, fil = Math.floor(i / 10), lit = kclamp(gris * 100 - i, 0, 1) > 0;
+    out.push(<g key={'s' + i} transform={`translate(${x + col * c + c / 2} ${y + fil * c + c / 2}) scale(${c / 70})`} fill={lit ? 'rgba(11,16,32,.55)' : 'rgba(255,255,255,.3)'}><path d="M -17 -2 Q -17 -22 0 -22 Q 17 -22 17 -2 Z" /><rect x={-5} y={-3} width={10} height={21} rx={3} /></g>); }
   // franjitas del 7.º cuadrito en adelante (1/10 de cuadrito cada año)
   for (let k = 0; k < Math.floor(franjas); k++) { const cel = 6 + Math.floor(k / 10), sub = k % 10, col = cel % 10, fil = Math.floor(cel / 10);
     out.push(<rect key={'f' + k} x={x + col * c + 4 + sub * (c - 8) / 10} y={y + fil * c + 4} width={(c - 8) / 10} height={c - 8} fill={KC.orange} />); }
@@ -54,9 +76,9 @@ function SueloMicro({ T, g = 1, pelo = 0, brillo = 0, seed = 11 }) {
 function SinSetaIcons({ T, p = 1 }) {
   const a = kprog(p, 0, 0.35), b = kprog(p, 0.3, 0.65), c = kprog(p, 0.6, 1);
   return <g>
-    {a > 0 && <g opacity={a} transform="translate(230 1020)">{Array.from({ length: 9 }, (_, i) => <g key={i}><line x1={-80 + i * 20} y1={0} x2={-80 + i * 20 + Math.sin(T * 2 + i) * 6} y2={-90 - (i % 3) * 20} stroke="#e8f0e0" strokeWidth={5} /><circle cx={-80 + i * 20 + Math.sin(T * 2 + i) * 6} cy={-96 - (i % 3) * 20} r={9} fill="#5aa65a" stroke={KC.ink} strokeWidth={3} /></g>)}</g>}
-    {b > 0 && <g opacity={b}><Levadura x={520} y={960} r={46} brote={0.6} T={T} /><Levadura x={600} y={1020} r={38} brote={0.3} T={T} seed={2} /></g>}
-    {c > 0 && <g opacity={c} transform="translate(860 860)"><path d="M 0 -120 Q -10 0 20 200" stroke="#c9a46a" strokeWidth={30} fill="none" strokeLinecap="round" />
+    {a > 0 && <g opacity={a} transform="translate(250 1180) scale(2.1)">{Array.from({ length: 9 }, (_, i) => <g key={i}><line x1={-80 + i * 20} y1={0} x2={-80 + i * 20 + Math.sin(T * 2 + i) * 6} y2={-90 - (i % 3) * 20} stroke="#e8f0e0" strokeWidth={5} /><circle cx={-80 + i * 20 + Math.sin(T * 2 + i) * 6} cy={-96 - (i % 3) * 20} r={9} fill="#5aa65a" stroke={KC.ink} strokeWidth={3} /></g>)}</g>}
+    {b > 0 && <g opacity={b} transform="translate(470 1470) scale(2.1) translate(-560 -990)"><Levadura x={520} y={960} r={46} brote={0.6} T={T} /><Levadura x={600} y={1020} r={38} brote={0.3} T={T} seed={2} /></g>}
+    {c > 0 && <g opacity={c} transform="translate(850 1070) scale(2)"><path d="M 0 -120 Q -10 0 20 200" stroke="#c9a46a" strokeWidth={30} fill="none" strokeLinecap="round" />
       {[-60, 0, 60, 120].map((yy, i) => <path key={i} d={`M ${10 + yy * 0.05} ${yy} q ${-50} ${20} ${-90} ${-10} M ${10 + yy * 0.05} ${yy} q 50 20 90 -10`} stroke={EO.hifa} strokeWidth={6} fill="none" />)}</g>}
   </g>;
 }
@@ -113,12 +135,12 @@ function EspeciesShot() {
       {/* 1 · gancho: 10 setas, 9 sin nombre */}
       <Escena T={T} a={K.G} b={K.To} zoom={0.05}>
         <FondoLunares color={KC.mint} />
-        {fsvg(<FilaSetas T={T} at={K.G} gris={kprog(T, K.G + 1.4, K.G + 2.4)} brilla={kprog(T, K.G + 2.4, K.G + 2.9)} />)}
+        {fsvg(<><SueloBosque /><FilaSetas T={T} at={K.G - 0.9} y={1440} k={2.6} modo="dos" gris={kprog(T, K.G + 1.4, K.G + 2.4)} brilla={kprog(T, K.G + 2.4, K.G + 2.9)} /></>)}
       </Escena>
       {/* 2–3 · la cuadrícula: 2.5 millones estimadas, 155,000 con nombre */}
       <Escena T={T} a={K.To} b={K.Mi} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<Cuad T={T} gris={kprog(T, K.To + 0.4, K.To + 2.8)} oro={kprog(T, K.N + 0.6, K.N + 1.6)} />)}
+        {fsvg(<Cuad T={T} x={120} y={550} c={84} gris={kprog(T, K.To + 0.4, K.To + 2.8)} oro={kprog(T, K.N + 0.6, K.N + 1.6)} />)}
       </Escena>
       {/* 4 · por dentro del suelo: hilos más delgados que un pelo */}
       <Escena T={T} a={K.Mi} b={K.S} zoom={0.05}>
@@ -127,7 +149,9 @@ function EspeciesShot() {
       </Escena>
       {/* 5 · sin seta visible */}
       <Escena T={T} a={K.S} b={K.A} zoom={0.04}>
-        <MundoSuelo T={T} red={1} sup={660} cielo={KC.yellow} escala={0.12}>
+        <MundoSuelo T={T} red={1} sup={660} cielo={KC.yellow} escala={0.2}>
+          <rect x={-2000} y={-2000} width={5080} height={2644} fill="#0a1220" opacity=".8" />
+          <rect x={-2000} y={670} width={5080} height={3000} fill="#0E0F12" opacity=".35" />
           <g transform="translate(0 -170)"><SinSetaIcons T={T} p={kprog(T, K.S + 0.4, K.S + 2.4)} /></g>
         </MundoSuelo>
       </Escena>
@@ -135,79 +159,82 @@ function EspeciesShot() {
       <Escena T={T} a={K.A} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <g opacity={1 - kprog(T, K.A + 1.6, K.A + 2.0)}><ManoTierra T={T} x={klerp(540, 300, kprog(T, K.A + 0.6, K.A + 1.4))} y={900} /></g>
-          <g opacity={kprog(T, K.A + 1.0, K.A + 1.4)}><Tubo x={200} y={900} lleno={kprog(T, K.A + 1.2, K.A + 1.8)} /></g>
-          <g opacity={kprog(T, K.A + 1.8, K.A + 2.2)}><ADNHebra T={T} x={330} y={700} largo={640} alto={70} /></g>
+          <g opacity={1 - kprog(T, K.A + 1.6, K.A + 2.0)}><ManoTierra T={T} x={klerp(540, 380, kprog(T, K.A + 0.6, K.A + 1.4))} y={1000} s={1.7} /></g>
+          <g opacity={kprog(T, K.A + 1.0, K.A + 1.4)}><Tubo x={210} y={1000} s={1.7} lleno={kprog(T, K.A + 1.2, K.A + 1.8)} /></g>
+          <g opacity={kprog(T, K.A + 1.8, K.A + 2.2)}><ADNHebra T={T} x={350} y={700} largo={660} alto={150} grosor={10} /></g>
           {Array.from({ length: 40 }, (_, i) => { const on = kprog(T, K.A + 3.0 + i * 0.05, K.A + 3.3 + i * 0.05, kEase.rebote); if (on <= 0) return null;
-            const r = krng(i + 3); const px = 320 + r() * 680, py = 820 + r() * 340;
-            return <circle key={i} cx={px} cy={py} r={14 * on} fill={[KC.pink, KC.yellow, KC.mint, KC.cyan, KC.orange][i % 5]} stroke={KC.ink} strokeWidth={3} />; })}
+            const r = krng(i + 3); const px = 350 + r() * 660, py = 880 + r() * 430;
+            return <circle key={i} cx={px} cy={py} r={22 * on} fill={[KC.pink, KC.yellow, KC.mint, KC.cyan, KC.orange][i % 5]} stroke={KC.ink} strokeWidth={3} />; })}
         </>)}
       </Escena>
       {/* 7 · re-gancho: ¿cuánto tardaríamos? */}
       <Escena T={T} a={K.P} b={K.E} zoom={0.06}>
-        <div style={{ position:'absolute', inset:0, background:cineMix(KC.pink, CINE.fondo, 0.8) }}></div>
-        {fsvg(<><g opacity=".45"><Cuad T={T} x={120} y={520} c={60} gris={1} oro={1} /></g><RelojArena T={T} x={300} y={900} s={0.9} p={kprog(T, K.P, K.E + 1)} /></>)}
+        <div style={{ position:'absolute', inset:0, background:cineMix(KC.pink, CINE.fondo, 0.9) }}></div>
+        {fsvg(<><g opacity=".3"><Cuad T={T} x={120} y={550} c={84} gris={1} oro={1} /></g><RelojArena T={T} x={540} y={960} s={1.9} p={kprog(T, K.P, K.E + 1)} /></>)}
       </Escena>
       {/* 8–10 · el reporte de Kew: +2,500 al año, 750–1,000 años */}
       <Escena T={T} a={K.E} b={K.Po} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        {fsvg(<g opacity={kprog(T, K.Ri, K.Ri + 0.4)}><Cuad T={T} x={190} y={560} c={70} gris={1} oro={1} franjas={kprog(T, K.Ri + 0.8, K.Mil + 3.5) * 24} /></g>)}
-        {fsvg(<g opacity={kprog(T, K.Mil, K.Mil + 0.4)}><RelojArena T={T} x={870} y={430} s={0.5} p={kprog(T, K.Mil, K.Po)} /></g>)}
+        {fsvg(<Cuad T={T} x={120} y={550} c={84} gris={1} oro={1} franjas={kprog(T, K.Ri + 0.8, K.Mil + 3.5) * 24} />)}
+        {fsvg(<g opacity={kprog(T, K.Mil, K.Mil + 0.4)}><RelojArena T={T} x={905} y={437} s={0.5} p={kprog(T, K.Mil, K.Po)} /></g>)}
       </Escena>
       {/* 11 · el paquete de hongos secos */}
       <Escena T={T} a={K.Po} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.yellow} />
         {fsvg(<>
-          <Paquete T={T} x={300} y={980} s={0.95} abre={kprog(T, K.Po + 0.6, K.Po + 1.2, kEase.sale)} />
+          <Paquete T={T} x={310} y={1090} s={1.58} abre={kprog(T, K.Po + 0.6, K.Po + 1.2, kEase.sale)} />
           {[0, 1, 2].map((i) => { const q = kprog(T, K.Po + 1.4 + i * 0.4, K.Po + 2.2 + i * 0.4, kEase.sale); if (q <= 0) return null;
             const nueva = T > K.Po + 4.4 + i * 0.3;
-            return <g key={i}><Rebanada x={klerp(300, 610 + i * 150, q)} y={klerp(760, 900 + (i % 2) * 120, q)} s={0.75} rot={q * (i - 1) * 20} />
-              <text x={610 + i * 150} y={760 + (i % 2) * 120} textAnchor="middle" style={{ font:`400 64px ${KF.titulo}` }} fill={nueva ? '#118a3a' : KC.ink} opacity={q}>{nueva ? '✓' : '?'}</text></g>; })}
+            const rx = [760, 900, 760][i], ry = [720, 990, 1260][i];
+            return <g key={i}><Rebanada x={klerp(310, rx, q)} y={klerp(760, ry, q)} s={1.25} rot={q * (i - 1) * 14} />
+              <text x={rx} y={ry - 165} textAnchor="middle" style={{ font:`400 90px ${KF.titulo}` }} fill={nueva ? '#3ddc84' : KC.ink} opacity={q}>{nueva ? '✓' : '?'}</text></g>; })}
         </>)}
       </Escena>
       {/* 12 · cierre: las mismas setas, el suelo se enciende con hongos sin nombre */}
       <Escena T={T} a={K.C} b={FIN} zoom={0.05}>
-        <MundoSuelo T={T} red={1} sup={1060} cielo={KC.mint} escala={0.16} brillo={kprog(T, K.C + 0.8, K.C + 1.8)}>
-          <FilaSetas T={T} at={K.C - 2} y={1066} gris={1} />
+        <MundoSuelo T={T} red={1} sup={800} cielo={KC.mint} escala={0.45} brillo={kprog(T, K.C + 0.8, K.C + 1.8)}>
+          <rect x={-2000} y={-2000} width={5080} height={2784} fill="#0a1220" opacity=".8" />
+          <FilaSetas T={T} at={K.C - 2} y={806} k={1.8} gris={1} />
           {Array.from({ length: 30 }, (_, i) => { const on = kprog(T, K.C + 1.2 + i * 0.05, K.C + 1.5 + i * 0.05, kEase.rebote); if (on <= 0) return null; const r = krng(i + 40);
-            return <circle key={i} cx={40 + r() * 1000} cy={1100 + r() * 120} r={9 * on} fill={[KC.pink, KC.yellow, KC.cyan, KC.orange][i % 4]} stroke={KC.ink} strokeWidth={2} />; })}
+            return <circle key={i} cx={40 + r() * 1000} cy={850 + r() * 560} r={15 * on} fill={[KC.pink, KC.yellow, KC.cyan, KC.orange][i % 4]} stroke={KC.ink} strokeWidth={2} />; })}
         </MundoSuelo>
       </Escena>
 
       {/* textos */}
-      <NumeroGigante T={T} at={K.G + 2.3} until={K.To - 0.3} valor={9} dur={0.4} sufijo=" de 10" etiqueta="sin nombre" x={540} y={560} tam={150} color={KC.gold2} />
-      <NumeroGigante T={T} at={K.To + 0.5} until={K.N - 0.2} valor={2500000} dur={2} prefijo="≈ " etiqueta="especies de hongos (estimadas)" x={540} y={330} tam={96} color={KC.texto} />
-      <Chip T={T} at={K.To + 2.4} until={K.Mi - 0.3} texto="1 cuadrito ≈ 25,000 especies" x={540} y={1230} tam={30} borde={KC.ink} mono />
-      <NumeroGigante T={T} at={K.N + 0.5} until={K.Mi - 0.3} valor={155000} dur={1.2} prefijo="≈ " etiqueta="con nombre (2023)" x={540} y={330} tam={96} color={KC.gold2} />
+      <NumeroGigante T={T} at={K.G + 2.3} until={K.To - 0.3} valor={9} dur={0.4} sufijo=" de 10" etiqueta="sin nombre" x={540} y={335} tam={150} color={KC.gold2} />
+      <NumeroGigante T={T} at={K.To + 0.5} until={K.N - 0.2} valor={2500000} dur={2} prefijo="≈ " etiqueta="especies de hongos (estimadas)" x={540} y={370} tam={96} color={KC.texto} />
+      <Chip T={T} at={K.To + 2.4} until={K.Mi - 0.3} texto="1 cuadrito ≈ 25,000 especies" x={540} y={1450} tam={30} borde={KC.ink} mono />
+      <NumeroGigante T={T} at={K.N + 0.5} until={K.Mi - 0.3} valor={155000} dur={1.2} prefijo="≈ " etiqueta="con nombre (2023)" x={540} y={370} tam={96} color={KC.gold2} />
       <Chip T={T} at={K.Mi + 0.2} until={K.S - 0.3} texto="POR DENTRO · EL SUELO" x={540} y={400} tam={32} borde={KC.mint} mono />
       <Etq T={T} at={K.Mi + 1.4} until={K.S - 0.3} x={60} y={1130} texto="hilos de hongo (hifas) · 3–6 µm" tam={28} color={EO.hifa} />
       <Etq T={T} at={K.Mi + 2.8} until={K.S - 0.3} x={60} y={500} texto="un pelo tuyo · 50–120 µm" tam={30} color={KC.texto} />
       <Chip T={T} at={K.S + 0.5} until={K.A - 0.3} texto="sin seta visible" x={540} y={470} tam={40} borde={KC.ink} />
-      <Etq T={T} at={K.S + 0.8} until={K.A - 0.3} x={140} y={990} texto="moho" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.S + 1.4} until={K.A - 0.3} x={440} y={990} texto="levaduras" tam={28} color={KC.texto} />
-      <Etq T={T} at={K.S + 2.0} until={K.A - 0.3} x={700} y={1060} texto="en raíces" tam={28} color={KC.texto} />
-      <Chip T={T} at={K.A + 2.0} until={K.A + 3.2} texto="leyendo su ADN…" x={660} y={600} tam={34} borde={KC.cyan} mono />
-      <Chip T={T} at={K.A + 3.4} until={K.P - 0.3} texto="solo conocidos por su ADN" x={600} y={600} tam={36} borde={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ri - 0.2} anio="2023" quien="Real Jardín Botánico de Kew" revista="State of the World's Plants and Fungi" x={540} y={800} />
-      <Chip T={T} at={K.Ri + 0.3} until={K.Mil - 0.2} texto="+2,500 especies nombradas al año" x={540} y={400} tam={34} borde={KC.orange} />
-      <Chip T={T} at={K.Ri + 1.2} until={K.Mil - 0.2} texto="1 año = 1 franjita naranja (1/10 de cuadrito)" x={540} y={485} tam={24} borde={KC.orange} mono />
-      <div style={{ position:'absolute', left:540, top:440, transform:'translate(-50%,-50%)', zIndex:41, opacity:kprog(T, K.Mil + 0.4, K.Mil + 0.8) * (1 - kprog(T, K.Po - 0.3, K.Po)), font:`400 120px ${KF.titulo}`, color:KC.gold2, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}`, whiteSpace:'nowrap', display: T > K.Mil && T < K.Po + 0.2 ? 'block' : 'none' }}>750–1,000 AÑOS</div>
-      <TarjetaEstudio T={T} at={K.Po + 2.6} until={K.C - 0.3} anio="2014" quien="Dentinger y Suz · comprado en 2013" revista="PeerJ, 2014" x={540} y={480} />
-      <Etq T={T} at={K.Po + 1.0} until={K.Po + 2.5} x={460} y={660} texto="hongos secos de China · Londres" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.Po + 4.6} until={K.C - 0.3} texto="3 especies sin nombre" x={680} y={1180} tam={36} borde="#118a3a" />
-      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="9 de 10 sin nombre" x={330} y={480} tam={44} borde={KC.gold} />
+      <Etq T={T} at={K.S + 0.8} until={K.A - 0.3} x={100} y={1060} texto="moho" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.S + 1.4} until={K.A - 0.3} x={130} y={1445} texto="levaduras" tam={28} color={KC.texto} />
+      <Etq T={T} at={K.S + 2.0} until={K.A - 0.3} x={700} y={1350} texto="en raíces" tam={28} color={KC.texto} />
+      <Chip T={T} at={K.A + 2.0} until={K.A + 3.2} texto="leyendo su ADN…" x={660} y={500} tam={34} borde={KC.cyan} mono />
+      <Chip T={T} at={K.A + 3.4} until={K.P - 0.3} texto="solo conocidos por su ADN" x={640} y={500} tam={36} borde={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Ri - 0.2} anio="2023" quien="Real Jardín Botánico de Kew" revista="State of the World's Plants and Fungi" x={450} y={370} />
+      <Chip T={T} at={K.Ri + 0.3} until={K.Mil - 0.2} texto="+2,500 especies nombradas al año" x={540} y={355} tam={34} borde={KC.orange} />
+      <Chip T={T} at={K.Ri + 1.2} until={K.Mil - 0.2} texto="1 año = 1 franjita naranja (1/10 de cuadrito)" x={540} y={445} tam={24} borde={KC.orange} mono />
+      <div style={{ position:'absolute', left:440, top:400, transform:'translate(-50%,-50%)', zIndex:41, opacity:kprog(T, K.Mil + 0.4, K.Mil + 0.8) * (1 - kprog(T, K.Po - 0.3, K.Po)), font:`400 104px ${KF.titulo}`, color:KC.gold2, WebkitTextStroke:`4px ${KC.ink}`, textShadow:`5px 5px 0 ${KC.ink}`, whiteSpace:'nowrap', display: T > K.Mil && T < K.Po + 0.2 ? 'block' : 'none' }}>750–1,000 AÑOS</div>
+      <TarjetaEstudio T={T} at={K.Po + 2.6} until={K.C - 0.3} anio="2014" quien="Dentinger y Suz · comprado en 2013" revista="PeerJ, 2014" x={450} y={345} />
+      <Etq T={T} at={K.Po + 1.0} until={K.Po + 2.5} x={60} y={400} texto="hongos secos de China · Londres" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.Po + 4.6} until={K.C - 0.3} texto="3 especies sin nombre" x={760} y={1470} tam={36} borde="#3ddc84" />
+      <Chip T={T} at={K.C + 1.6} until={K.Ou} texto="9 de 10 sin nombre" x={540} y={310} tam={44} borde={KC.gold} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.To} texto="5 cm" largo={90} />
+      <BarraEscala T={T} at={K.G} until={K.To} texto="5 cm" largo={234} />
       <BarraEscala T={T} at={K.To} until={K.Mi} texto="1 cuadrito ≈ 25,000 especies" largo={0} />
       <BarraEscala T={T} at={K.Mi} until={K.S} texto="100 µm" largo={150} />
       <BarraEscala T={T} at={K.S} until={K.A} texto="esquema" largo={0} />
       <BarraEscala T={T} at={K.A} until={K.P} texto="esquema" largo={0} />
       <BarraEscala T={T} at={K.Ri} until={K.Po} texto="1 cuadrito ≈ 25,000 especies" largo={0} />
-      <BarraEscala T={T} at={K.Po} until={K.C} texto="5 cm" largo={110} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={90} y={1600} />
+      <BarraEscala T={T} at={K.Po} until={K.C} texto="5 cm" largo={183} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={162} y={1600} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
+      {CINE_OPC.subtitulos && <>
       <Sub T={T} idx={0} at={K.G + 0.1} until={K.To - 0.1} texto="De cada 10 hongos, *9 no tienen nombre.*" />
       <Sub T={T} idx={1} at={K.To + 0.1} until={K.N - 0.1} texto="Mejor estimación: *unos 2.5 millones.*" />
       <Sub T={T} idx={2} at={K.N + 0.1} until={K.Mi - 0.1} texto="Con nombre, hasta 2023: *unas 155,000.*" />
@@ -220,6 +247,7 @@ function EspeciesShot() {
       <Sub T={T} idx={9} at={K.Mil + 0.1} until={K.Po - 0.1} texto="Terminar: *750 a 1,000 años.*" />
       <Sub T={T} idx={10} at={K.Po + 0.1} until={K.C - 0.1} texto="En un paquete de hongos secos: *3 sin nombre.*" />
       <Sub T={T} idx={11} at={K.C + 0.1} until={K.Ou - 0.1} texto="Bajo tus pies, *hongos sin nombre.*" />
+      </>}
 
       <Robert T={T} apariciones={[
         [K.G - 0.45, K.G + 2.1, 'avatar_11_sorprendido', 'gancho'],
