@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #20 · El glutamato de tu sopa lo hace una bacteria — NARRADO (N1 por dentro + N2 el número).
 // Guion y fuentes: guion.md · verificación: verificacion.md. Todos los dibujos son esquemáticos.
 // Corynebacterium glutamicum: bastón con forma de mazo (un extremo más grueso), SIN flagelo (no se mueve sola),
@@ -349,7 +350,7 @@ function Glutamato() {
       <Escena T={T} a={K.Cc} b={K.Nu} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         <SvgCapa>
-          <rect x={0} y={1060} width={KW} height={900} fill="#8b5a2b" />
+          <rect x={0} y={1060} width={KW} height={900} fill="#4a3424" />
           <path d="M 0 1060 Q 270 1030 540 1060 T 1080 1060" fill="#6b4220" stroke={KC.ink} strokeWidth={8} />
           {Array.from({ length: 16 }, (_, i) => <circle key={i} cx={(i * 137) % 1080} cy={1110 + (i * 53) % 120} r={10 + (i % 3) * 6} fill="#6b4220" />)}
           <Pajaro T={T} x={pajX} y={560} s={1} />

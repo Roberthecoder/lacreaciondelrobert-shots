@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #24 · Ese humo no es humo (hielo seco y sublimación) — NARRADO (N1 por dentro + mito peligroso).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 // Regla de la verificación (opción A): el hielo seco va SIEMPRE en un vaso VACÍO (sin agua): la niebla sale de la humedad del aire.
@@ -239,7 +240,7 @@ function HieloSeco() {
             {centros.map(([cx, cy], i) => <g key={i} opacity={gota}><circle cx={cx} cy={cy} r={70 * gota} fill="rgba(255,255,255,.88)" stroke="#bfe8ff" strokeWidth={5} /><circle cx={cx - 22} cy={cy - 24} r={14 * gota} fill="#fff" /></g>)}
           </g>
           {aleja > 0 && <g opacity={aleja}>
-            <rect x={0} y={0} width={KW} height={KH} fill={KC.mint} />
+            <rect x={0} y={0} width={KW} height={KH} fill={cineMix(KC.mint, CINE.fondo, 0.55)} />
             <Mesa /><VasoVacio /><TrozosVaso /><Niebla T={T} f={1} />
             <circle cx={VX + 150} cy={VB - VH - 10} r={70} fill="none" stroke={KC.ink} strokeWidth={6} strokeDasharray="12 10" />
           </g>}
@@ -285,7 +286,7 @@ function HieloSeco() {
       <Escena T={T} a={K.Es} b={K.Th}>
         <FondoLunares color={KC.lilac} />
         <SvgCapa>
-          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#4a4a52" />
+          <rect x={0} y={1150} width={KW} height={KH - 1150} fill="#2a2c37" />
           {Array.from({ length: 8 }, (_, i) => <rect key={i} x={((i * 260 - maneja) % 2080 + 2080) % 2080 - 300} y={1200} width={140} height={16} fill="#ffe11a" />)}
           <Pickup x={540} y={1050} giro={maneja * 0.8} puerta={abre} cabeza={desmayo} T={T} aire={abre * (1 - kprog(T, K.Th - 0.6, K.Th))} />
           {desmayo > 0.5 && <text x={480} y={820} style={{ font:`400 60px ${KF.titulo}` }} fill={KC.ink} opacity={desmayo}>z z z</text>}

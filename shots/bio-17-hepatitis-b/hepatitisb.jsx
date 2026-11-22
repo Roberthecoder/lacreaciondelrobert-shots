@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #17 · La vacuna que hizo una levadura (hepatitis B) — NARRADO (N1 por dentro + medidores N3).
 // Guion y fuentes: guion.md · verificación: verificacion.md. Todos los dibujos son esquemáticos.
 // Morfología: virión de hepatitis B ~42 nm (envoltura con HBsAg + núcleo con ADN circular);

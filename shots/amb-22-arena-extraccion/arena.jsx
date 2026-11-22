@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #22 · Tu casa está hecha de arena: el sólido más extraído del mundo — NARRADO (N2 el número + N1 por dentro).
 // Datos: PNUMA/UNEP 2019 y 2022 (comunicado del 26 abr 2022), Neumann y Curbach 2018, Hackney et al. 2020. Ver guion.md y verificacion.md.
 // Todo el dibujo es esquemático (granos, mapa, balanza y corte del río).

@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #19 · Lo espeso de tu aderezo también es obra de una bacteria (goma xantana) — NARRADO (N1 por dentro + N5 experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const XB = '#8fd46a', XBACT = '#f2c94c', BABA = 'rgba(200,245,255,.55)', ADEREZO = '#f7f0dc', VIDRIO = 'rgba(220,240,255,.35)';

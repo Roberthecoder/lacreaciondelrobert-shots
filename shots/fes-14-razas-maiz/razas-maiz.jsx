@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Festivo #14 · Candelaria · Ambiental: las razas de maíz de México — NARRADO (N4 la imagen que se llena + N1 por dentro).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático: las mazorcas por raza muestran solo rasgos
 // generales descritos por Wellhausen et al. 1951 (Cacahuacintle: grano blanco, grande, redondeado; Palomero Toluqueño: mazorca corta y cónica de grano puntiagudo blanco grisáceo;
@@ -179,7 +180,7 @@ function GranoCorte({ T, x, y, s = 1, peri = 0, aleu = 0 }) {
 // Montaña en corte: del mar a la sierra (0 → 3,400 m)
 function Montana({ T, sube = 1 }) {
   return <g>
-    <rect x={0} y={1240} width={KW} height={700} fill="#2d8fd6" />
+    <rect x={0} y={1240} width={KW} height={700} fill="#1c4f79" />
     {[0, 1, 2].map((i) => <path key={i} d={`M 0 ${1250 + i * 26} Q 60 ${1240 + i * 26 + 8 * Math.sin(T * 2 + i)} 120 ${1250 + i * 26} T 240 ${1250 + i * 26}`} stroke="#bfe6ff" strokeWidth={5} fill="none" opacity=".7" />)}
     <path d="M 0 1250 L 200 1250 C 330 1220 420 1100 520 950 C 600 830 680 640 780 520 C 820 470 860 460 900 470 L 1080 520 L 1080 1920 L 0 1920 Z" fill="#7fb85a" stroke={KC.ink} strokeWidth={7} />
     <path d="M 640 760 C 700 640 760 560 800 520 C 830 490 870 480 900 490 L 1080 540 L 1080 800 Z" fill="#5f9a46" opacity=".8" />
@@ -253,7 +254,7 @@ function RazasMaiz() {
       <Escena T={T} a={K.Pl} b={K.Se} zoom={0.03}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <rect x={0} y={1460} width={KW} height={460} fill="#8a5a33" />
+          <rect x={0} y={1460} width={KW} height={460} fill="#4a3428" />
           <Planta T={T} x={200} y={1470} h={760} color="#f4c94a" seed={1} />
           <Planta T={T} x={540} y={1470} h={820} color="#3f57a8" seed={2} />
           <Planta T={T} x={880} y={1470} h={740} color="#c9352f" seed={3} />

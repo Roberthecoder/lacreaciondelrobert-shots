@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #28 · Dolly: la oveja que salió de una célula de ubre — NARRADO (N1 por dentro + N5 el experimento).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático y no está a escala.
 const LANA = '#f8f4ea', LANA_S = '#e4dccb', CARA_B = '#f1e6d6', CARA_N = '#2b2523', ROSA = '#f59ab4', CITO = '#ffe2b8', NUCL = '#7b3fb8', ZONA = 'rgba(190,230,255,.35)';
@@ -271,7 +272,7 @@ function Dolly() {
           <Electrodo x={170} y={860} on={flash} />
           <Electrodo x={910} y={860} on={flash} />
           {flash > 0.05 && <Rayo x1={186} y1={860} x2={894} y2={860} T={T} o={flash} />}
-          {flash > 0.05 && <rect x={0} y={0} width={KW} height={KH} fill={KC.white} opacity={0.35 * flash} />}
+          {flash > 0.05 && <rect x={0} y={0} width={KW} height={KH} fill={cineMix(KC.white, CINE.fondo, 0.55)} opacity={0.35 * flash} />}
         </SvgCapa>
       </Escena>
       {/* 6 · re-gancho: ¿cómo vuelve a empezar de cero? */}

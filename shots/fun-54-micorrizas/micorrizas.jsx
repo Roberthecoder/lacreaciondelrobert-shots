@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #54 · Ese hilito blanco no es el internet del bosque: es un mercado — NARRADO (N6 mito vs dato + N1 macro → micro → macro).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático.
 
@@ -44,7 +45,7 @@ function Toldo({ x, y, w = 300, s = 1, alto = 170 }) {
 function PieDeArbol({ T, hif = 1 }) {
   return <g>
     <rect x={0} y={700} width={KW} height={KH - 700} fill={MZ.suelo} />
-    <rect x={0} y={700} width={KW} height={22} fill="#4f3520" />
+    <rect x={0} y={700} width={KW} height={22} fill="#2c221e" />
     {Array.from({ length: 26 }, (_, i) => { const g = krng(i + 40); return <ellipse key={i} cx={g() * KW} cy={760 + g() * 700} rx={8 + g() * 16} ry={6 + g() * 9} fill={i % 3 ? '#80603f' : '#5a3d24'} />; })}
     <path d="M 210 -40 L 460 -40 L 470 560 Q 490 680 560 730 L 110 730 Q 180 680 200 560 Z" fill={MZ.corteza} stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
     {[[250, 40, 320], [330, 120, 260], [410, 60, 380], [290, 420, 140]].map(([x, y, h], i) => <path key={i} d={`M ${x} ${y} q 10 ${h / 2} 0 ${h}`} stroke={MZ.corteza2} strokeWidth={8} fill="none" strokeLinecap="round" />)}

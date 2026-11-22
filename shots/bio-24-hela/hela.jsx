@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #24 · Esas células no son de un laboratorio: son de Henrietta Lacks (células HeLa) — NARRADO (N1 por dentro + N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático y no está a escala.
 const MEDIO = '#ff8fb1', MEDIO_OSC = '#e9608a', CIT = '#ffb3c7', NUC = '#7b3fb8', VPH = KC.gold2, PIEL_H = '#6b4330';

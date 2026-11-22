@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #25 · Ese calentador no trae pilas: es hierro oxidándose a propósito — NARRADO (N1 por dentro + toque de N5).
 // Guion y fuentes: guion.md · verificación: verificacion.md (APROBADO). El dibujo es esquemático.
 const FE = '#8d939c', OXI = '#c4561c', PIEL = '#f1b48f', PLATA = '#c9ced6', TELA = '#f7f4ee';

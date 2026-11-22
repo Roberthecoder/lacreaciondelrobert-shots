@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #28 · Novecientos litros por metro cuadrado: la lluvia de la CDMX que se va a la coladera — NARRADO (N4 la imagen que se llena + N2).
 // Datos: SEGIAGUA (925.38 mm, 1 ene – 30 sep 2026), Gaceta Oficial CDMX 2025 (284 colonias con tandeo), Sedema (73 mil sistemas desde 2019),
 // estudio Tellman et al. con Isla Urbana y la UNAM (2020), fichas técnicas de Isla Urbana. Ver guion.md y verificacion.md.
@@ -221,8 +222,8 @@ function LluviaShot() {
         <FondoLunares color={KC.mint} />
         {svg(<g>
           <Lluvia T={T} x0={20} x1={1060} y0={300} y1={900} n={44} seed={9} />
-          <rect x={0} y={900} width={KW} height={330} fill="#5b3a22" />
-          <rect x={0} y={880} width={KW} height={24} fill="#8f9399" stroke={KC.ink} strokeWidth={5} />
+          <rect x={0} y={900} width={KW} height={330} fill="#32241f" />
+          <rect x={0} y={880} width={KW} height={24} fill="#4c515a" stroke={KC.ink} strokeWidth={5} />
           <Casa x={60} y={880} w={330} h={260} pared={KC.yellow} tinaco={false} />
           <rect x={400} y={640} width={26} height={240} fill="#9aa3ad" stroke={KC.ink} strokeWidth={5} />
           <line x1={413} y1={640} x2={413} y2={876} stroke={AGUA} strokeWidth={10} strokeDasharray="18 16" strokeDashoffset={-T * 70} />

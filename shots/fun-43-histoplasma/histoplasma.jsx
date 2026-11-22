@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Fungi Mati #43 · La enfermedad de las cuevas: Histoplasma capsulatum — NARRADO (gancho 1 "Esto no es X: es Y" + N1 Por dentro).
 // Guion y fuentes: guion.md · verificacion.md. El dibujo es esquemático. No es consejo médico.
 // Escala del mundo micro: 10 µm = 150 px (15 px por µm). Microconidias 2–4 µm (r ≈ 22 px), macroconidias 8–15 µm (r ≈ 85 px),

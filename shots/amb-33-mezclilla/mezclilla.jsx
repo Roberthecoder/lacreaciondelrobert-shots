@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #33 · Tu pantalón de mezclilla lleva 189 garrafones de agua — NARRADO (N4 la imagen que se llena + N2 el número).
 // Datos: Levi Strauss & Co. (2015), "The Life Cycle of a Jean" (estudio de la propia empresa) y Chapagain et al. (2006),
 // Ecological Economics 60. Ver guion.md y verificacion.md. Todo el dibujo es esquemático.
@@ -140,7 +141,7 @@ function Algodonero({ T, x, y, s = 1, abre = 1 }) {
 function Surco({ T, y, agua = 1 }) {
   const f = (T * 120) % 120;
   return <g>
-    <rect x={0} y={y} width={KW} height={260} fill="#a8743e" />
+    <rect x={0} y={y} width={KW} height={260} fill="#59422d" />
     <path d={`M 0 ${y + 40} L ${KW} ${y + 40}`} stroke="#7a5228" strokeWidth={8} />
     <rect x={0} y={y + 70} width={KW} height={46} fill={AGUA} opacity={agua} stroke={KC.ink} strokeWidth={4} />
     {Array.from({ length: 11 }, (_, i) => <path key={i} d={`M ${i * 120 - f} ${y + 93} q 20 -8 40 0`} stroke="#e6f6ff" strokeWidth={4} fill="none" opacity={agua} />)}

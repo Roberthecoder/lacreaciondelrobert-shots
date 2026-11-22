@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Biotecnológico #31 · CAR-T: tus propias células, entrenadas para cazar cáncer — NARRADO (N1 "Por dentro").
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático y los virus no están a escala.
 const LT = '#8f6bff', LT_NUC = '#4b2aa8', LEU = '#ff8fb1', LEU_NUC = '#c23a6e', CD19C = KC.yellow, CARC = KC.mint, CITO = '#ffb347', SANG = '#d7263d';

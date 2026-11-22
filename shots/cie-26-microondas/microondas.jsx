@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Científico #26 · Tu microondas no calienta de adentro hacia afuera — NARRADO (N1 "Por dentro": la comida en corte con su mapa de calor).
 // Datos: FDA "Microwave Ovens"; NC State Extension 2024; Tang 2015 (J. Food Sci.); USDA FSIS. Ver guion.md y verificacion.md.
 // El dibujo es esquemático: las ondas no se ven y los colores del corte son un mapa de calor ilustrativo.

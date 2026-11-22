@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Químico #27 · Esas bolitas de «no comer» no son veneno (sílica gel) — NARRADO (N1 por dentro + mito).
 // Guion y fuentes: guion.md · verificación: verificacion.md. El dibujo es esquemático.
 const AGUA = '#7fc8ff', AZUL_CO = '#2a6bff', ROSA_CO = '#ff8fc0', GEL = '#eef6ff', ARENA = '#e3b971', PARED = '#5d6b86';

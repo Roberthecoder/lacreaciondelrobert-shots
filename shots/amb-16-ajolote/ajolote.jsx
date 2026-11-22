@@ -1,3 +1,4 @@
+// cine:oscurecido — fondos de este archivo ya adaptados por motor/kit/aplicar-cine.py (no volver a oscurecer)
 // Shot Ambiental #16 · Hay ajolotes en todo el mundo, menos en su casa (Xochimilco) — NARRADO (N4 la imagen que se llena, al revés).
 // Datos: Gaceta UNAM (2024), Voss, Woodcock y Zambrano (2015, BioScience), Zambrano et al. (2010, Biological Invasions), AP (2025).
 // Ver guion.md y verificacion.md. Todo el dibujo es esquemático (canales, cuadrícula, canchas y peces no van a escala).
@@ -343,7 +344,7 @@ function AjoloteShot() {
       </Escena>
       {/* 8 · bajo el agua: los peces se comen huevos y crías */}
       <Escena T={T} a={K.Pe} b={K.R}>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#1c4b52, #0d1f24)' }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#0f1f2a, #0b131e)' }}></div>
         {svg(<>
           <path d={`M 200 1200 Q ${200 + mece(T, 2, 0.3) * 12} 1000 ${190 + mece(T, 3, 0.3) * 20} 760`} stroke="#3f8a3a" strokeWidth={14} fill="none" strokeLinecap="round" />
           {[[180, 1120], [220, 1060], [176, 990], [224, 930], [182, 860], [214, 800]].map(([a, b], i) => <ellipse key={'h' + i} cx={a} cy={b} rx={36} ry={12} fill="#4f9a44" stroke={KC.ink} strokeWidth={3} transform={`rotate(${i % 2 ? -30 : 30} ${a} ${b})`} />)}
@@ -359,7 +360,7 @@ function AjoloteShot() {
       <Escena T={T} a={K.R} b={K.Rd}>
         <FondoLunares color={KC.mint} />
         {svg(<>
-          <rect x={0} y={760} width={KW} height={60} fill="#9a7a4a" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={760} width={KW} height={60} fill="#524433" stroke={KC.ink} strokeWidth={6} />
           {Array.from({ length: 9 }, (_, i) => <path key={i} d={`M ${520 + i * 60} 760 q 6 -40 0 -70`} stroke="#3f8a3a" strokeWidth={9} fill="none" strokeLinecap="round" />)}
           <text x={560} y={682} textAnchor="middle" style={{ font:`900 30px ${KF.texto}` }} fill={KC.ink}>chinampa</text>
           <rect x={0} y={820} width={440} height={380} fill="#6f7a3e" stroke={KC.ink} strokeWidth={6} />
@@ -391,7 +392,7 @@ function AjoloteShot() {
       <Escena T={T} a={K.Rd} b={K.C}>
         <FondoLunares color={KC.cyan} />
         {svg(<>
-          <rect x={0} y={1000} width={KW} height={200} fill="#4f8f8f" stroke={KC.ink} strokeWidth={6} />
+          <rect x={0} y={1000} width={KW} height={200} fill="#2c4f56" stroke={KC.ink} strokeWidth={6} />
           <g transform={`translate(${-560 * kprog(T, K.Rd + 2.8, K.Rd + 3.6, kEase.suave)} 0)`}><Red x={260} y={740} sube={kprog(T, K.Rd + 0.3, K.Rd + 1.6, kEase.sale)} T={T} /></g>
           <Frasco x={620} y={900} p={kprog(T, K.Rd + 3.2, K.Rd + 3.7)} />
           {T > K.Rd + 3.6 && <Helice x={330} y={790} alto={300} T={T} brillo={kprog(T, K.Rd + 3.8, K.Rd + 4.4)} />}</>)}
