@@ -198,18 +198,18 @@ function MacetaShot() {
   return (
     <div style={{ position:'absolute', left:0, top:0, width:KW, height:KH, overflow:'hidden', background:KC.dark }}>
       {/* 1 · gancho: brotan hongos amarillos en tu maceta */}
-      <Escena T={T} a={K.G} b={K.N} zoom={0.06} origen="40% 50%">
+      <Escena T={T} a={K.G} b={K.N} zoom={0.06} origen="50% 50%">
         <FondoLunares color={KC.yellow} punto="rgba(255,255,255,.4)" />
-        {fsvg(<Maceta T={T} x={400} y={900} s={1.2}>{tres(K.G + 0.25)}</Maceta>)}
+        {fsvg(<Maceta T={T} x={540} y={1060} s={1.45}>{tres(K.G + 0.25)}</Maceta>)}
       </Escena>
       {/* 2 · su nombre: Leucocoprinus birnbaumii */}
       <Escena T={T} a={K.N} b={K.L} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <rect x={0} y={1180} width={KW} height={800} fill={MC.tierra} stroke={KC.ink} strokeWidth={8} />
-          <path d="M 560 1186 Q 600 1170 640 1188 Q 600 1200 560 1186 Z" fill={MC.seca} stroke={KC.ink} strokeWidth={3} />
-          <Leuco x={430} y={1184} s={1.6} crece={kprog(T, K.N - 0.3, K.N + 0.6)} abre={0.7} rot={mece(T, 3, 0.3) * 1.2} />
-          <Leuco x={720} y={1184} s={0.9} crece={kprog(T, K.N + 0.5, K.N + 1.3)} abre={0.15} rot={6} />
+          <rect x={0} y={1400} width={KW} height={600} fill={MC.tierra2} stroke={KC.ink} strokeWidth={8} />
+          <path d="M 610 1406 Q 660 1386 710 1408 Q 660 1422 610 1406 Z" fill={MC.seca} stroke={KC.ink} strokeWidth={3} />
+          <Leuco x={400} y={1404} s={2.6} crece={kprog(T, K.N - 0.3, K.N + 0.4)} abre={0.7} rot={mece(T, 3, 0.3) * 1.2} />
+          <Leuco x={830} y={1404} s={1.46} crece={kprog(T, K.N + 0.1, K.N + 0.6)} abre={0.15} rot={6} />
         </>)}
       </Escena>
       {/* 3 · cómo llegó: en la tierra que compraste o como espora por el aire */}
@@ -217,26 +217,26 @@ function MacetaShot() {
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
           {/* ventana */}
-          <g transform="translate(700 420)">
+          <g transform="translate(800 330) scale(0.8)">
             <rect x={0} y={0} width={300} height={300} rx={10} fill="#bfefff" stroke={KC.ink} strokeWidth={9} />
             <line x1={150} y1={0} x2={150} y2={300} stroke={KC.ink} strokeWidth={8} /><line x1={0} y1={150} x2={300} y2={150} stroke={KC.ink} strokeWidth={8} />
             <circle cx={230} cy={70} r={34} fill={KC.yellow} stroke={KC.ink} strokeWidth={5} />
           </g>
           {/* costal de tierra que se vacía */}
           {(() => { const v = kprog(T, K.L + 0.2, K.L + 0.7, kEase.sale), cae = kprog(T, K.L + 0.5, K.L + 2.4); return <g>
-            <g transform={`translate(${klerp(-200, 170, v)} 470) rotate(${klerp(0, 55, v)})`}>
+            <g transform={`translate(${klerp(-200, 170, v)} 440) rotate(${klerp(0, 55, v)})`}>
               <path d="M -110 -150 L 110 -150 L 130 150 Q 0 170 -130 150 Z" fill="#c9a26a" stroke={KC.ink} strokeWidth={8} strokeLinejoin="round" />
               <rect x={-80} y={-60} width={160} height={90} rx={12} fill="#fff" stroke={KC.ink} strokeWidth={5} />
               <text x={0} y={-6} textAnchor="middle" style={{ font:`700 30px ${KF.mono}` }} fill={KC.ink}>TIERRA</text>
             </g>
-            {cae > 0 && cae < 1 && Array.from({ length: 26 }, (_, i) => { const q = krng(i + 7); const u = ((T * 1.4 + q()) % 1); return <circle key={i} cx={300 + (q() - 0.5) * 70 + u * 90} cy={600 + u * 280} r={6 + q() * 9} fill={MC.tierra} />; })}
-            {cae > 0 && cae < 1 && Array.from({ length: 5 }, (_, i) => { const u = ((T * 1.1 + i / 5) % 1); return <path key={i} d={`M 0 0 q 10 -14 20 0 t 20 0 t 20 0`} transform={`translate(${280 + u * 90} ${620 + u * 260}) rotate(${40 + i * 20})`} stroke={MC.hifa} strokeWidth={4} fill="none" />; })}
+            {cae > 0 && cae < 1 && Array.from({ length: 26 }, (_, i) => { const q = krng(i + 7); const u = ((T * 1.4 + q()) % 1); return <circle key={i} cx={290 + (q() - 0.5) * 70 + u * 120} cy={580 + u * 400} r={6 + q() * 9} fill={MC.tierra} />; })}
+            {cae > 0 && cae < 1 && Array.from({ length: 5 }, (_, i) => { const u = ((T * 1.1 + i / 5) % 1); return <path key={i} d={`M 0 0 q 10 -14 20 0 t 20 0 t 20 0`} transform={`translate(${270 + u * 120} ${600 + u * 370}) rotate(${40 + i * 20})`} stroke={MC.hifa} strokeWidth={4} fill="none" />; })}
           </g>; })()}
-          <Maceta T={T} x={480} y={900} s={0.9} />
+          <Maceta T={T} x={540} y={1000} s={1.35} />
           {/* la espora entra flotando por la ventana */}
           {(() => { const u = kprog(T, K.L + 2.0, K.Mi - 0.1, kEase.suave); return u > 0 ? <g>
-            <path d={`M 850 570 Q 760 ${700} ${klerp(850, 560, u)} ${klerp(570, 890, u)}`} stroke="rgba(255,255,255,.7)" strokeWidth={5} strokeDasharray="10 12" fill="none" opacity={u < 1 ? 1 : 0} />
-            <Espora x={klerp(850, 560, u) + Math.sin(T * 5) * 14} y={klerp(570, 890, u)} px={50} rot={T * 60} brillo />
+            <path d={`M 880 510 Q 760 ${720} ${klerp(880, 600, u)} ${klerp(510, 990, u)}`} stroke="rgba(255,255,255,.7)" strokeWidth={5} strokeDasharray="10 12" fill="none" opacity={u < 1 ? 1 : 0} />
+            <Espora x={klerp(880, 600, u) + Math.sin(T * 5) * 14} y={klerp(510, 990, u)} px={50} rot={T * 60} brillo />
           </g> : null; })()}
         </>)}
       </Escena>
@@ -250,9 +250,9 @@ function MacetaShot() {
       <Escena T={T} a={K.Ca} b={K.A} zoom={0.05}>
         <FondoLunares color={KC.orange} />
         {fsvg(<>
-          <Termometro x={130} y={1080} nivel={klerp(0.25, 0.85, kprog(T, K.Ca + 0.1, K.Ca + 1.4, kEase.sale))} />
-          <Goteo T={T} x={560} y0={420} y1={760} cada={0.35} color="#7fd3ff" desde={K.Ca + 0.6} hasta={K.Ca + 2.4} r={14} />
-          <Maceta T={T} x={560} y={780} s={1.25} planta={1} secas={false} corte={1}
+          <g transform="translate(150 1230) scale(1.3) translate(-150 -1230)"><Termometro x={150} y={1230} nivel={klerp(0.25, 0.85, kprog(T, K.Ca + 0.1, K.Ca + 1.4, kEase.sale))} /></g>
+          <Goteo T={T} x={600} y0={380} y1={880} cada={0.35} color="#7fd3ff" desde={K.Ca + 0.6} hasta={K.Ca + 2.4} r={14} />
+          <Maceta T={T} x={600} y={900} s={1.25} planta={1} secas={false} corte={1}
             dentro={<g>
               <RedHifas T={T} x={0} y={170} g={1} seed={11} n={260} escala={0.13} color={MC.hifa} ancho={2.6} circ />
               {[[-90, 70], [10, 60], [100, 74]].map(([px, py], i) => { const p = kprog(T, K.Ca + 1.6 + i * 0.25, K.Ca + 2.1 + i * 0.25, kEase.rebote); return p > 0 ? <ellipse key={i} cx={px} cy={py} rx={13 * p} ry={17 * p} fill={KC.yellow} stroke={KC.ink} strokeWidth={3} /> : null; })}
@@ -265,15 +265,15 @@ function MacetaShot() {
       <Escena T={T} a={K.A} b={K.P} zoom={0.04}>
         <FondoLunares color={KC.yellow} punto="rgba(255,255,255,.4)" />
         {fsvg(<>
-          <rect x={0} y={1120} width={KW} height={800} fill={MC.tierra} stroke={KC.ink} strokeWidth={8} />
-          <Leuco x={330} y={1124} s={2.0} crece={1} abre={abreA} palido={kprog(T, K.A + 1.6, K.A + 3.4) * 0.55} alto={230} />
-          {abreA > 0.75 && Array.from({ length: 14 }, (_, i) => { const q = krng(i + 3); const u = ((T - K.A) * 0.5 + q()) % 1; return <circle key={i} cx={330 + (q() - 0.5) * 300 + Math.sin(T * 2 + i) * 10} cy={680 + u * 420} r={3.5} fill="#fff" opacity={(1 - u) * kprog(abreA, 0.75, 1)} />; })}
+          <rect x={0} y={1330} width={KW} height={700} fill={MC.tierra2} stroke={KC.ink} strokeWidth={8} />
+          <Leuco x={370} y={1334} s={3.0} crece={1} abre={abreA} palido={kprog(T, K.A + 1.6, K.A + 3.4) * 0.55} alto={230} />
+          {abreA > 0.75 && Array.from({ length: 14 }, (_, i) => { const q = krng(i + 3); const u = ((T - K.A) * 0.5 + q()) % 1; return <circle key={i} cx={370 + (q() - 0.5) * 450 + Math.sin(T * 2 + i) * 10} cy={680 + u * 640} r={5} fill="#fff" opacity={(1 - u) * kprog(abreA, 0.75, 1)} />; })}
           {/* recuadro al microscopio: esporas */}
           {(() => { const o = kprog(T, K.A + 2.6, K.A + 3.0); return o > 0 ? <g opacity={o}>
-            <circle cx={800} cy={960} r={175} fill={KC.noche} stroke={KC.white} strokeWidth={9} />
-            {[[-80, -60, 20], [30, -90, -30], [90, 10, 60], [-30, 30, -10], [-100, 80, 40], [40, 100, 15], [110, -60, -50]].map(([dx, dy, r], i) => <Espora key={i} x={800 + dx * 0.9} y={960 + dy * 0.9} px={60} rot={r + Math.sin(T + i) * 4} />)}
-            <line x1={720} y1={1095} x2={780} y2={1095} stroke="#fff" strokeWidth={7} />
-            <text x={750} y={1078} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#fff">10 µm</text>
+            <circle cx={820} cy={1060} r={175} fill={KC.noche} stroke={KC.white} strokeWidth={9} />
+            {[[-80, -60, 20], [30, -90, -30], [90, 10, 60], [-30, 30, -10], [-100, 80, 40], [40, 100, 15], [110, -60, -50]].map(([dx, dy, r], i) => <Espora key={i} x={820 + dx * 0.9} y={1060 + dy * 0.9} px={60} rot={r + Math.sin(T + i) * 4} />)}
+            <line x1={740} y1={1195} x2={800} y2={1195} stroke="#fff" strokeWidth={7} />
+            <text x={770} y={1178} textAnchor="middle" style={{ font:`700 24px ${KF.mono}` }} fill="#fff">10 µm</text>
           </g> : null; })()}
         </>)}
       </Escena>
@@ -281,23 +281,23 @@ function MacetaShot() {
       <Escena T={T} a={K.P} b={K.Tx} zoom={0.1}>
         <FondoLunares color={KC.lilac} />
         {fsvg(<>
-          <Interrogacion T={T} x={300} y={900} tam={460} />
-          <Maceta T={T} x={290} y={1060} s={0.55}>{tres(K.P - 1)}</Maceta>
+          <Interrogacion T={T} x={230} y={700} tam={420} />
+          <Maceta T={T} x={590} y={1030} s={1.1}>{tres(K.P - 1)}</Maceta>
         </>)}
       </Escena>
       {/* 8 · tóxico si se come: con niños o mascotas, quítalo */}
       <Escena T={T} a={K.Tx} b={K.E} zoom={0.05}>
         <FondoLunares color={KC.pink} />
         {fsvg(<>
-          <Maceta T={T} x={520} y={1000} s={0.95}>
+          <Maceta T={T} x={540} y={1020} s={1.3}>
             {TRES.map(([dx, dy, k, r], i) => { const yo = i === 0 ? -quita * 900 : 0, xo = i === 0 ? quita * 500 : 0; return (i === 0 && quita >= 1) ? null : <Leuco key={i} x={dx + xo} y={dy + yo} s={k} rot={r + quita * 30} abre={1} />; })}
           </Maceta>
           {(() => { const u = kprog(T, K.Tx + 3.0, K.Tx + 3.8, kEase.sale); return u > 0 ? <>
-            <Nino x={klerp(-120, 150, u)} y={1180} s={1.1} />
-            <Perrito T={T} x={klerp(1200, 900, u)} y={1180} s={1.1} />
+            <Nino x={klerp(-120, 130, u)} y={1440} s={1.3} />
+            <Perrito T={T} x={klerp(1200, 940, u)} y={1440} s={1.3} />
           </> : null; })()}
-          {(() => { const baja = kprog(T, K.Tx + 3.4, K.Tx + 4.0, kEase.sale); return baja > 0 ? <Mano x={406 + quita * 600} y={klerp(-200, 960, baja) - quita * 1080} s={1.1} rot={-10 + quita * 30} /> : null; })()}
-          {T >= K.Tx + 0.6 && (() => { const k = kprog(T, K.Tx + 0.6, K.Tx + 0.95, kEase.rebote); return <g transform={`translate(330 500) rotate(-10) scale(${klerp(2.2, 1, k)})`} opacity={kprog(T, K.Tx + 0.6, K.Tx + 0.75)}>
+          {(() => { const baja = kprog(T, K.Tx + 3.4, K.Tx + 4.0, kEase.sale); return baja > 0 ? <Mano x={384 + quita * 650} y={klerp(-200, 1000, baja) - quita * 1170} s={1.4} rot={-10 + quita * 30} /> : null; })()}
+          {T >= K.Tx + 0.6 && (() => { const k = kprog(T, K.Tx + 0.6, K.Tx + 0.95, kEase.rebote); return <g transform={`translate(300 290) rotate(-8) scale(${klerp(2.2, 1, k)})`} opacity={kprog(T, K.Tx + 0.6, K.Tx + 0.75)}>
             <rect x={-200} y={-62} width={400} height={124} rx={22} fill="rgba(255,255,255,.85)" stroke={KC.red} strokeWidth={12} />
             <text y={26} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.red}>NO SE COME</text>
           </g>; })()}
@@ -307,8 +307,9 @@ function MacetaShot() {
       <Escena T={T} a={K.E} b={K.Pg} zoom={0.05}>
         <FondoLunares color={KC.cyan} />
         {fsvg(<>
-          <Matraz T={T} x={250} y={1140} s={1.0} lleno={kprog(T, K.E + 1.2, K.E + 3.0, kEase.suave)} />
-          {Array.from({ length: 3 }, (_, i) => { const u = kprog(T, K.E + 1.0 + i * 0.4, K.E + 1.8 + i * 0.4, kEase.suave); return u > 0 && u < 1 ? <g key={i} transform={`translate(${250 + (i - 1) * 30} ${klerp(560, 1050, u)}) rotate(${u * 200})`}><ellipse rx={30} ry={14} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /></g> : null; })}
+          <Leuco x={290} y={1330} s={1.6} abre={1} rot={mece(T, 4, 0.3) * 1.2} />
+          <Matraz T={T} x={730} y={1330} s={1.5} lleno={kprog(T, K.E + 1.2, K.E + 3.0, kEase.suave)} />
+          {Array.from({ length: 3 }, (_, i) => { const u = kprog(T, K.E + 1.0 + i * 0.4, K.E + 1.8 + i * 0.4, kEase.suave); return u > 0 && u < 1 ? <g key={i} transform={`translate(${730 + (i - 1) * 40} ${klerp(560, 1220, u)}) rotate(${u * 200})`}><ellipse rx={42} ry={20} fill={KC.yellow} stroke={KC.ink} strokeWidth={4} /></g> : null; })}
         </>)}
       </Escena>
       {/* 10 · los pigmentos: birnbauminas (por dentro, fondo oscuro) */}
@@ -316,14 +317,15 @@ function MacetaShot() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={18} color="rgba(255,225,26,.25)" />
         {fsvg(<>
-          <Birnbaumina T={T} x={130} y={680} s={1.15 * kprog(T, K.Pg + 0.1, K.Pg + 0.6, kEase.rebote)} brilla={0.6 + 0.4 * Math.sin(T * 4)} />
-          <Birnbaumina T={T} x={130} y={980} oh7 s={1.15 * kprog(T, K.Pg + 0.6, K.Pg + 1.1, kEase.rebote)} brilla={0.6 + 0.4 * Math.sin(T * 4 + 1.5)} />
+          <Birnbaumina T={T} x={110} y={650} s={1.6 * kprog(T, K.Pg - 0.1, K.Pg + 0.4, kEase.rebote)} brilla={0.6 + 0.4 * Math.sin(T * 4)} />
+          <Birnbaumina T={T} x={110} y={1100} oh7 s={1.6 * kprog(T, K.Pg + 0.3, K.Pg + 0.8, kEase.rebote)} brilla={0.6 + 0.4 * Math.sin(T * 4 + 1.5)} />
         </>)}
       </Escena>
       {/* 11 · el truco: una noche sobre papel negro */}
       <Escena T={T} a={K.Tr} b={K.Q} zoom={0.04}>
         <FondoLunares color={mixHex('#6f5bb5', '#b18cff', luz)} />
         {fsvg(<>
+          <g transform="translate(540 1110) scale(1.2) translate(-540 -935)">
           <rect x={150} y={720} width={780} height={430} rx={14} fill="#15151a" stroke={KC.ink} strokeWidth={8} transform="rotate(-3 540 935)" />
           {levanta > 0 && <g transform="translate(540 930)" opacity={levanta}>
             {Array.from({ length: 48 }, (_, i) => { const a = (i / 48) * Math.PI * 2; return <line key={i} x1={Math.cos(a) * 24} y1={Math.sin(a) * 24 * 0.55} x2={Math.cos(a) * 175} y2={Math.sin(a) * 175 * 0.55} stroke="#f7f4ea" strokeWidth={5} strokeLinecap="round" opacity={0.85} />; })}
@@ -335,32 +337,33 @@ function MacetaShot() {
             <ellipse cx={0} cy={-112} rx={24} ry={9} fill="#c9a000" />
             {Array.from({ length: 9 }, (_, i) => { const u = (i - 4) / 4.4; return <line key={i} x1={u * 182} y1={-4} x2={u * 140} y2={-46} stroke="#c9a000" strokeWidth={3} />; })}
           </g>; })()}
-          <LunaSol T={T} x={180} y={500} u={luz} />
+          </g>
+          <LunaSol T={T} x={180} y={620} u={luz} />
         </>)}
       </Escena>
       {/* 12 · arrancarlo no lo elimina: el micelio sigue abajo */}
       <Escena T={T} a={K.Q} b={K.C} zoom={0.05}>
         <FondoLunares color={KC.mint} />
         {fsvg(<>
-          <Maceta T={T} x={420} y={860} s={1.1}>
+          <Maceta T={T} x={470} y={960} s={1.4}>
             {TRES.map(([dx, dy, k, r], i) => <Leuco key={i} x={dx + arranca * (180 + i * 40)} y={dy - arranca * (700 + i * 60)} s={k} rot={r + arranca * 40} abre={1} />)}
           </Maceta>
           {(() => { const f = kprog(T, K.Q + 2.6, K.Q + 3.1, kEase.rebote); return f > 0 ? <g>
-            <Frasco x={890} y={1150} s={f} />
-            {kprog(T, K.Q + 3.3, K.Q + 3.6) > 0 && <path d="M 820 900 L 960 1040 M 960 900 L 820 1040" stroke={KC.red} strokeWidth={18} strokeLinecap="round" opacity={kprog(T, K.Q + 3.3, K.Q + 3.6)} />}
+            <Frasco x={950} y={1330} s={f} />
+            {kprog(T, K.Q + 3.3, K.Q + 3.6) > 0 && <path d="M 880 1080 L 1020 1220 M 1020 1080 L 880 1220" stroke={KC.red} strokeWidth={18} strokeLinecap="round" opacity={kprog(T, K.Q + 3.3, K.Q + 3.6)} />}
           </g> : null; })()}
         </>)}
       </Escena>
-      <Lupa T={T} at={K.Q + 1.1} until={K.C - 0.3} x={420} y={890} r={200} fx={420} fy={1000} tinte={KC.yellow} etiqueta="el micelio sigue abajo"
+      <Lupa T={T} at={K.Q + 1.1} until={K.C - 0.3} x={470} y={1110} r={250} fx={470} fy={1140} tinte={KC.yellow} etiqueta="el micelio sigue abajo"
         interior={(t, r) => <svg width={r * 2} height={r * 2} style={{ position:'absolute', left:0, top:0 }}>
           <rect width={r * 2} height={r * 2} fill="#2a1a10" />
           {Array.from({ length: 22 }, (_, i) => { const q = krng(i + 60); return <circle key={i} cx={q() * r * 2} cy={q() * r * 2} r={5 + q() * 10} fill="#4d321c" />; })}
           <RedHifas T={t} x={r} y={r} g={1} seed={11} n={300} escala={0.5} color={MC.hifa} ancho={2.6} circ brillo={0.5 + 0.3 * Math.sin(t * 3)} />
         </svg>} />
       {/* 13 · cierre: la misma maceta del inicio; el hongo no la mata, recicla su tierra */}
-      <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="40% 50%">
+      <Escena T={T} a={K.C} b={FIN} zoom={0.05} origen="50% 50%">
         <FondoLunares color={KC.yellow} punto="rgba(255,255,255,.4)" />
-        {fsvg(<Maceta T={T} x={400} y={900} s={1.2} secas={false}>
+        {fsvg(<Maceta T={T} x={540} y={1060} s={1.45} secas={false}>
           {tres(K.C - 2)}
           {kprog(T, K.C + 0.6, K.C + 1.0) > 0 && <g opacity={kprog(T, K.C + 0.6, K.C + 1.0)}>
             <FlechaCirculo x={120} y={8} r={34} rot={T * 90} />
@@ -370,48 +373,48 @@ function MacetaShot() {
       </Escena>
 
       {/* textos */}
-      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 2.2} until={K.G + 3.3} texto="está matando a tu planta" x={340} y={380} tam={38} />
-      <Chip T={T} at={K.G + 3.4} until={K.N - 0.3} texto="se come lo que ya está muerto" x={320} y={380} tam={32} borde={KC.leaf} />
-      <Etq T={T} at={K.N + 0.6} until={K.L - 0.3} x={60} y={410} texto="Leucocoprinus birnbaumii" it tam={34} color={KC.ink} />
-      <Etq T={T} at={K.N + 1.0} until={K.L - 0.3} x={60} y={466} texto="hongo amarillo de las macetas" tam={27} color={KC.ink} />
-      <Etq T={T} at={K.N + 1.6} until={K.L - 0.3} x={260} y={610} texto="sombrero" lado="izq" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.N + 2.0} until={K.L - 0.3} x={560} y={700} texto="laminillas libres" tam={26} color={KC.ink} />
-      <Etq T={T} at={K.N + 2.4} until={K.L - 0.3} x={470} y={790} texto="anillo" tam={28} color={KC.ink} />
-      <Chip T={T} at={K.L + 0.9} until={K.L + 2.4} texto="en la tierra que compraste" x={330} y={790} tam={30} borde={MC.tierra} />
-      <Chip T={T} at={K.L + 2.4} until={K.Mi - 0.3} texto="o por el aire" x={820} y={790} tam={32} borde={KC.white} />
+      <MitoTachado T={T} at={K.G + 0.5} tacharEn={K.G + 2.2} until={K.G + 3.3} texto="está matando a tu planta" x={420} y={240} tam={38} />
+      <Chip T={T} at={K.G + 3.4} until={K.N - 0.3} texto="se come lo que ya está muerto" x={420} y={240} tam={32} borde={KC.leaf} />
+      <Etq T={T} at={K.N + 0.6} until={K.L - 0.3} x={60} y={300} texto="Leucocoprinus birnbaumii" it tam={34} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.0} until={K.L - 0.3} x={60} y={356} texto="hongo amarillo de las macetas" tam={27} color={KC.ink} />
+      <Etq T={T} at={K.N + 1.6} until={K.L - 0.3} x={232} y={530} texto="sombrero" lado="izq" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.N + 2.0} until={K.L - 0.3} x={610} y={660} texto="laminillas libres" tam={26} color={KC.ink} />
+      <Etq T={T} at={K.N + 2.4} until={K.L - 0.3} x={440} y={770} texto="anillo" tam={28} color={KC.ink} />
+      <Chip T={T} at={K.L + 0.9} until={K.L + 2.4} texto="en la tierra que compraste" x={540} y={1480} tam={30} borde={MC.tierra} />
+      <Chip T={T} at={K.L + 2.4} until={K.Mi - 0.3} texto="o por el aire" x={540} y={1480} tam={32} borde={KC.white} />
       <Etq T={T} at={K.Mi + 0.8} until={K.Ca - 0.3} x={600} y={900} texto="micelio" tam={36} color={KC.texto} />
       <Etq T={T} at={K.Mi + 1.5} until={K.Ca - 0.3} x={60} y={1100} texto="restos muertos" tam={30} color={KC.gold2} />
-      <Chip T={T} at={K.Ca + 0.3} until={K.Ca + 1.9} texto="calor + humedad" x={540} y={420} tam={40} borde={KC.red} />
-      <Chip T={T} at={K.Ca + 2.4} until={K.A - 0.3} texto="el hongo: su parte para reproducirse" x={540} y={420} tam={32} borde={KC.yellow} />
-      <Etq T={T} at={K.A + 0.1} until={K.A + 1.2} x={370} y={780} texto="huevito" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.A + 1.2} until={K.A + 2.2} x={370} y={780} texto="campana" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.A + 2.2} until={K.P - 0.3} x={370} y={780} texto="abierto" tam={34} color={KC.ink} />
-      <Etq T={T} at={K.A + 3.0} until={K.P - 0.3} x={560} y={1150} texto="esporas blancas" tam={30} color={KC.texto} />
-      <Chip T={T} at={K.Tx + 1.4} until={K.Tx + 3.0} texto="comerlo: puede caer muy mal" x={540} y={760} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.Tx + 3.2} until={K.E - 0.3} texto="niños o mascotas: quítalo" x={360} y={345} tam={32} borde={KC.yellow} />
-      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Pg - 0.3} anio="2005" quien="Múnich, Alemania" revista="Bartsch y col. · Angewandte Chemie" x={600} y={760} />
-      <Etq T={T} at={K.E + 2.0} until={K.Pg - 0.3} x={380} y={1080} texto="¿de dónde sale el amarillo?" tam={28} color={KC.ink} />
-      <Etq T={T} at={K.Pg + 0.4} until={K.Tr - 0.3} x={120} y={505} texto="birnbaumina A" tam={34} color={KC.yellow} />
-      <Etq T={T} at={K.Pg + 0.9} until={K.Tr - 0.3} x={120} y={805} texto="birnbaumina B" tam={34} color={KC.yellow} />
-      <Etq T={T} at={K.Pg + 1.4} until={K.Tr - 0.3} x={120} y={1120} texto="pigmentos (esquema)" tam={26} color={KC.texto} />
-      <Chip T={T} at={K.Tr + 0.9} until={K.Tr + 3.0} texto="1 noche" x={400} y={430} tam={40} borde={KC.yellow} />
-      <Etq T={T} at={K.Tr + 3.5} until={K.Q - 0.3} x={60} y={640} texto="dibujo blanco de esporas" tam={30} color={KC.texto} />
-      <Chip T={T} at={K.Q + 3.2} until={K.C - 0.3} texto="fungicidas: casi no sirven" x={380} y={440} tam={32} borde={KC.red} />
-      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="no la mata: recicla su tierra" x={340} y={430} tam={34} borde={KC.leaf} />
+      <Chip T={T} at={K.Ca + 0.3} until={K.Ca + 1.9} texto="calor + humedad" x={420} y={240} tam={40} borde={KC.red} />
+      <Chip T={T} at={K.Ca + 2.4} until={K.A - 0.3} texto="el hongo: su parte para reproducirse" x={410} y={240} tam={32} borde={KC.yellow} />
+      <Etq T={T} at={K.A + 0.1} until={K.A + 1.2} x={560} y={420} texto="huevito" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.A + 1.2} until={K.A + 2.2} x={600} y={500} texto="campana" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.A + 2.2} until={K.P - 0.3} x={680} y={560} texto="abierto" tam={34} color={KC.ink} />
+      <Etq T={T} at={K.A + 3.0} until={K.P - 0.3} x={640} y={1275} texto="esporas blancas" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Tx + 1.4} until={K.Tx + 3.0} texto="comerlo: puede caer muy mal" x={540} y={1480} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.Tx + 3.2} until={K.E - 0.3} texto="niños o mascotas: quítalo" x={540} y={1490} tam={32} borde={KC.yellow} />
+      <TarjetaEstudio T={T} at={K.E + 0.2} until={K.Pg - 0.3} anio="2005" quien="Múnich, Alemania" revista="Bartsch y col. · Angewandte Chemie" x={460} y={390} />
+      <Etq T={T} at={K.E + 2.0} until={K.Pg - 0.3} x={460} y={1450} texto="¿de dónde sale el amarillo?" lado="der" tam={28} color={KC.ink} />
+      <Etq T={T} at={K.Pg + 0.4} until={K.Tr - 0.3} x={120} y={470} texto="birnbaumina A" tam={34} color={KC.yellow} />
+      <Etq T={T} at={K.Pg + 0.9} until={K.Tr - 0.3} x={120} y={920} texto="birnbaumina B" tam={34} color={KC.yellow} />
+      <Etq T={T} at={K.Pg + 1.4} until={K.Tr - 0.3} x={120} y={1300} texto="pigmentos (esquema)" tam={26} color={KC.texto} />
+      <Chip T={T} at={K.Tr + 0.9} until={K.Tr + 3.0} texto="1 noche" x={400} y={560} tam={40} borde={KC.yellow} />
+      <Etq T={T} at={K.Tr + 3.5} until={K.Q - 0.3} x={60} y={770} texto="dibujo blanco de esporas" tam={30} color={KC.texto} />
+      <Chip T={T} at={K.Q + 3.2} until={K.C - 0.3} texto="fungicidas: casi no sirven" x={420} y={225} tam={32} borde={KC.red} />
+      <Chip T={T} at={K.C + 1.2} until={K.Ou} texto="no la mata: recicla su tierra" x={420} y={240} tam={34} borde={KC.leaf} />
 
       {/* barras de escala */}
-      <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={160} />
-      <BarraEscala T={T} at={K.N} until={K.L} texto="2 cm" largo={160} />
-      <BarraEscala T={T} at={K.L} until={K.Mi} texto="5 cm" largo={120} />
+      <BarraEscala T={T} at={K.G} until={K.N} texto="5 cm" largo={193} />
+      <BarraEscala T={T} at={K.N} until={K.L} texto="2 cm" largo={260} />
+      <BarraEscala T={T} at={K.L} until={K.Mi} texto="5 cm" largo={180} />
       <BarraEscala T={T} at={K.Mi} until={K.Ca} texto="1 mm" largo={180} />
       <BarraEscala T={T} at={K.Ca} until={K.A} texto="5 cm" largo={170} />
-      <BarraEscala T={T} at={K.A} until={K.P} texto="2 cm" largo={200} />
-      <BarraEscala T={T} at={K.P} until={K.Tx} texto="5 cm" largo={80} />
-      <BarraEscala T={T} at={K.Tx} until={K.E} texto="5 cm" largo={130} />
-      <BarraEscala T={T} at={K.E} until={K.Pg} texto="5 cm" largo={140} />
-      <BarraEscala T={T} at={K.Tr} until={K.Q} texto="5 cm" largo={210} />
-      <BarraEscala T={T} at={K.Q} until={K.C} texto="5 cm" largo={150} />
-      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={160} />
+      <BarraEscala T={T} at={K.A} until={K.P} texto="2 cm" largo={300} />
+      <BarraEscala T={T} at={K.P} until={K.Tx} texto="5 cm" largo={160} />
+      <BarraEscala T={T} at={K.Tx} until={K.E} texto="5 cm" largo={178} />
+      <BarraEscala T={T} at={K.E} until={K.Pg} texto="5 cm" largo={210} />
+      <BarraEscala T={T} at={K.Tr} until={K.Q} texto="5 cm" largo={252} />
+      <BarraEscala T={T} at={K.Q} until={K.C} texto="5 cm" largo={191} />
+      <BarraEscala T={T} at={K.C} until={K.Ou} texto="5 cm" largo={193} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.N - 0.1} texto="No mata a tu planta: *come lo que ya está muerto.*" />
