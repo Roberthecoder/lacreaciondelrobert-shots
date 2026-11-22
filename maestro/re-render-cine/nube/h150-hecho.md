@@ -1,0 +1,3 @@
+# Grupo h150 — pase a mano del estilo cine
+
+- fes-05-fotos-ofrenda: las 12 escenas. Gancho y Cierre: el retrato ya está en cuadro desde el cuadro 0, centrado y a 1.5–1.6×; Pierde 1.4×, Adivina 1.5× y Color 1.5× centrados (ya no se recargan a un lado por el sticker); Aprendió: red neuronal a todo el ancho y retrato de salida visible desde el inicio; Estudio (la que marcó el auditor): la foto pixeleada y el hueco punteado de la cara están desde que empieza y la tarjeta 2020 entra al segundo 0.3, chica y arriba; Estudio y Obama en diagonal a 1.4×; Sesgo: caras 1.3× que entran desde el inicio; Dañada: caras y foto borrosa más grandes y centradas; Original: los dos retratos a 1.5×; etiquetas y chips reacomodados para no tapar nada. Auditor: sin láminas; pendiente: nada.
