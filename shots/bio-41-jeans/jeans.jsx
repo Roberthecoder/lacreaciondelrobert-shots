@@ -198,7 +198,7 @@ function Jeans41() {
   const cae = kprog(T, K.G + 0.05, K.G + 0.9, kEase.entra || ((p) => p * p));
   const rebota = kprog(T, K.G + 0.9, K.G + 1.6, kEase.sale);
   const hongo = kprog(T, K.G + 1.7, K.G + 2.8, kEase.sale);
-  const rodilla = { x: 300, y: 1010 };
+  const rodilla = { x: 433, y: 1080 };
   const mordida = kprog(T, K.Mo + 0.4, K.Gr - 0.3);
   const corta = (k) => kprog(T, K.Ce + 2.6 + k * 0.5, K.Ce + 3.2 + k * 0.5, kEase.sale);
   const enzX = (k) => klerp(-80, 330 + k * 184, kprog(T, K.Ce + 1.0 + k * 0.3, K.Ce + 2.6 + k * 0.5, kEase.suave));
@@ -208,40 +208,41 @@ function Jeans41() {
       <Escena T={T} a={K.G} b={K.An} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgJ>
-          <Tendedero y={470} />
-          <Jeans T={T} x={380} y={470} s={0.9} desgaste={klerp(0.15, 0.9, hongo)} id="j0" />
-          <HongoTricho T={T} x={rodilla.x} y={rodilla.y} s={0.9} crece={hongo} />
-          {rebota < 1 && <Pomez x={klerp(rodilla.x + 40, rodilla.x, cae) + rebota * 420} y={klerp(260, rodilla.y - 30, cae) - Math.sin(rebota * Math.PI) * 220 + rebota * 300} s={1.1} rot={T * 200} o={1 - rebota} seed={5} />}
+          <Tendedero y={360} />
+          <Jeans T={T} x={540} y={360} s={1.2} desgaste={klerp(0.15, 0.9, hongo)} id="j0" />
+          <HongoTricho T={T} x={rodilla.x} y={rodilla.y} s={1.2} crece={hongo} />
+          {rebota < 1 && <Pomez x={klerp(rodilla.x + 200, rodilla.x, cae) + rebota * 420} y={klerp(250, rodilla.y - 30, cae) - Math.sin(rebota * Math.PI) * 220 + rebota * 300} s={1.5} rot={T * 200} o={1 - rebota} seed={5} />}
         </SvgJ>
-        <Escala T={T} pxPorMm={0.9} x={60} y={1640} color={KC.ink} />
+        <Escala T={T} pxPorMm={1.2} x={60} y={1640} color={KC.ink} />
       </Escena>
-      <Lupa T={T} at={K.Hi + 0.05} until={K.An - 0.2} x={640} y={760} r={260} fx={rodilla.x} fy={rodilla.y} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · la mezclilla"
+      <Lupa T={T} at={K.Hi + 0.05} until={K.An - 0.2} x={700} y={800} r={300} fx={rodilla.x} fy={rodilla.y} tinte={KC.cyan} etiqueta="AL MICROSCOPIO · la mezclilla"
         interior={(t, r) => <Sarga T={t} w={2 * r} h={2 * r} />} />
 
       {/* 2 · el hilo por dentro: anillo azul, centro blanco */}
       <Escena T={T} a={K.An} b={K.Pi} zoom={0.05}>
         <FondoMarca patron="oscuro" />
         <Ambiente T={T} n={26} color="rgba(120,170,255,.25)" />
-        <SvgJ><HiloCorte T={T} cx={540} cy={800} R={330} anillo={0.34} pinta={kprog(T, K.An + 0.3, K.An + 2.2, kEase.sale)} /></SvgJ>
-        <Escala T={T} pxPorMm={2000} x={60} y={1640} />
+        <SvgJ><HiloCorte T={T} cx={540} cy={900} R={400} anillo={0.34} pinta={kprog(T, K.An + 0.3, K.An + 2.2, kEase.sale)} />
+          <rect x={404} y={868} width={470} height={64} rx={32} fill="rgba(11,16,32,.88)" opacity={kprog(T, K.An + 2.2, K.An + 2.5)} /></SvgJ>
+        <Escala T={T} pxPorMm={2000 * 400 / 330} x={60} y={1640} />
       </Escena>
 
       {/* 3–4 · Capítulo 1: la piedra pómez en la lavadora */}
       <Escena T={T} a={K.Pi} b={K.Pr} zoom={0.04}>
         <FondoLunares color={KC.cyan} />
-        <SvgJ><Lavadora T={T} cx={540} cy={960} r={270} golpes={kprog(T, K.Pb + 0.2, K.Pb + 1.6)} polvo={kprog(T, K.Pb + 1.4, K.Pr - 0.2)} /></SvgJ>
-        <Escala T={T} pxPorMm={0.6} x={60} y={1640} color={KC.ink} />
+        <SvgJ><Lavadora T={T} cx={540} cy={930} r={330} golpes={kprog(T, K.Pb + 0.2, K.Pb + 1.6)} polvo={kprog(T, K.Pb + 1.4, K.Pr - 0.2)} /></SvgJ>
+        <Escala T={T} pxPorMm={0.6 * 330 / 270} x={60} y={1640} color={KC.ink} />
       </Escena>
 
       {/* 5 · re-gancho: ¿y si algo mordiera solo la orilla? */}
       <Escena T={T} a={K.Pr} b={K.Ce} zoom={0.06}>
         <FondoMarca patron="oscuro" />
         <SvgJ>
-          <HiloCorte T={T} cx={320} cy={860} R={240} anillo={0.34} />
-          <circle cx={320} cy={860} r={240 * 0.83} fill="none" stroke={KC.gold2} strokeWidth={8} strokeDasharray="22 16" strokeDashoffset={-T * 60} />
-          <text x={320} y={600} textAnchor="middle" style={{ font:`400 230px ${KF.titulo}` }} fill={KC.gold2} stroke={KC.ink} strokeWidth={8} transform={`rotate(${Math.sin(T * 3) * 7} 320 520)`}>?</text>
+          <HiloCorte T={T} cx={540} cy={970} R={330} anillo={0.34} />
+          <circle cx={540} cy={970} r={330 * 0.83} fill="none" stroke={KC.gold2} strokeWidth={8} strokeDasharray="22 16" strokeDashoffset={-T * 60} />
+          <text x={540} y={525} textAnchor="middle" style={{ font:`400 200px ${KF.titulo}` }} fill={KC.gold2} stroke="#0b1020" strokeWidth={8} transform={`rotate(${Math.sin(T * 3) * 7} 540 460)`}>?</text>
         </SvgJ>
-        <Escala T={T} pxPorMm={2000 * 240 / 330} x={60} y={1640} />
+        <Escala T={T} pxPorMm={2000} x={60} y={1640} />
       </Escena>
 
       {/* 6 · Capítulo 2: el hongo suelta celulasas que cortan la celulosa */}
@@ -249,9 +250,11 @@ function Jeans41() {
         <div style={{ position:'absolute', inset:0, background:KC.noche }}></div>
         <Ambiente T={T} n={30} color="rgba(155,93,229,.25)" />
         <SvgJ>
+          <g transform="translate(540 860) scale(1.25) translate(-540 -860)">
           <g transform="translate(-60 640) scale(1.5)"><Hifas T={T} x={0} y={0} g={kprog(T, K.Ce, K.Ce + 1.4)} /></g>
           <Celulosa T={T} x={150} y={1010} n={9} paso={96} cortes={[{ i: 1, p: corta(0) }, { i: 4, p: corta(1) }, { i: 6, p: corta(2) }]} />
           {[0, 1, 2].map((k) => T > K.Ce + 1.0 + k * 0.3 && <Enzima key={k} x={enzX(k)} y={klerp(680, 940, kprog(T, K.Ce + 1.0 + k * 0.3, K.Ce + 2.6 + k * 0.5))} s={0.9} boca={Math.abs(Math.sin(T * 9 + k))} rot={30} />)}
+          </g>
         </SvgJ>
       </Escena>
 
@@ -259,27 +262,31 @@ function Jeans41() {
       <Escena T={T} a={K.Mo} b={K.Gr} zoom={0.04}>
         <FondoMarca patron="oscuro" />
         <SvgJ>
+          <g transform="translate(540 910) scale(1.6) translate(-540 -910)">
           <FibraLado T={T} y0={770} y1={1050} p={mordida} />
           {GRANOS.filter((g, i) => i % 4 === 1).map((g, k) => { const t0 = g.sale, vis = mordida > t0 - 0.12 && mordida < t0 + 0.2;
             return vis && <Enzima key={k} x={g.x} y={712} s={0.75} rot={90} boca={Math.abs(Math.sin(T * 10 + k))} />; })}
+          </g>
         </SvgJ>
-        <Escala T={T} pxPorMm={18600} x={60} y={1640} />
+        <Escala T={T} pxPorMm={18600 * 1.6} x={60} y={1640} />
       </Escena>
 
       {/* 8 · gramos de enzima en lugar de kilos de piedra */}
       <Escena T={T} a={K.Gr} b={K.Ay} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgJ>
-          <Vial x={290} y={830} s={1.6} contenido="#e9c46a" tapa={CEL} />
-          <FlechaCurva x1={420} y1={820} x2={600} y2={820} p={kprog(T, K.Gr + 0.4, K.Gr + 1.0)} color={KC.ink} curva={-60} T={T} />
+          <Vial x={270} y={800} s={2.3} contenido="#e9c46a" tapa={CEL} />
+          <FlechaCurva x1={390} y1={760} x2={560} y2={760} p={kprog(T, K.Gr + 0.4, K.Gr + 1.0)} color={KC.ink} curva={-60} T={T} />
+          <g transform="translate(790 900) scale(1.2) translate(-820 -900)">
           <g opacity={1 - 0.55 * kprog(T, K.Gr + 1.4, K.Gr + 1.9)}>
             {Array.from({ length: 11 }, (_, i) => <Pomez key={i} x={680 + (i % 4) * 80 + (Math.floor(i / 4) % 2) * 40} y={985 - Math.floor(i / 4) * 70} s={0.75} rot={i * 33} seed={i + 11} />)}
           </g>
           <g opacity={kprog(T, K.Gr + 1.4, K.Gr + 1.7)}><line x1={640} y1={740} x2={1010} y2={1040} stroke={KC.red} strokeWidth={22} strokeLinecap="round" /><line x1={1010} y1={740} x2={640} y2={1040} stroke={KC.red} strokeWidth={22} strokeLinecap="round" /></g>
-          <text x={290} y={1100} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.ink}>GRAMOS</text>
-          <text x={290} y={1150} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink}>de enzima</text>
-          <text x={820} y={1150} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink}>de piedra</text>
-          <text x={820} y={1100} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.ink}>KILOS</text>
+          </g>
+          <text x={270} y={1190} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.ink}>GRAMOS</text>
+          <text x={270} y={1245} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink}>de enzima</text>
+          <text x={790} y={1245} textAnchor="middle" style={{ font:`700 38px ${KF.mono}` }} fill={KC.ink}>de piedra</text>
+          <text x={790} y={1190} textAnchor="middle" style={{ font:`400 76px ${KF.titulo}` }} fill={KC.ink}>KILOS</text>
         </SvgJ>
       </Escena>
 
@@ -289,17 +296,17 @@ function Jeans41() {
         <SvgJ>
           {(() => { const ax = klerp(80, 1000, kprog(T, K.Ay + 0.4, K.Ay + 2.6));
             return <g>
-              <rect x={60} y={720} width={960} height={90} rx={45} fill={INDIGO} stroke={KC.ink} strokeWidth={7} />
-              {Array.from({ length: 11 }, (_, i) => 120 + i * 82).map((cx, i) => cx > ax && <ellipse key={i} cx={cx} cy={i % 2 ? 724 : 806} rx={40} ry={20} fill="#f7f4ea" stroke="#c9c2b4" strokeWidth={3} />)}
-              <Enzima x={ax} y={680} s={0.8} color={AMI} rot={90} boca={Math.abs(Math.sin(T * 10))} />
+              <rect x={50} y={620} width={980} height={150} rx={75} fill={INDIGO} stroke={KC.ink} strokeWidth={7} />
+              {Array.from({ length: 11 }, (_, i) => 120 + i * 82).map((cx, i) => cx > ax && <ellipse key={i} cx={cx} cy={i % 2 ? 626 : 764} rx={44} ry={26} fill="#f7f4ea" stroke="#c9c2b4" strokeWidth={3} />)}
+              <Enzima x={ax} y={560} s={1.2} color={AMI} rot={90} boca={Math.abs(Math.sin(T * 10))} />
             </g>; })()}
-          {(() => { const lp = kprog(T, K.Ay + 2.0, K.Es - 0.3, kEase.suave), lx = klerp(160, 920, lp);
+          {(() => { const lp = kprog(T, K.Ay + 2.0, K.Es - 0.3, kEase.suave), lx = klerp(110, 970, lp);
             return <g>
-              <rect x={160} y={950} width={760} height={190} rx={18} fill={INDIGO} stroke={KC.ink} strokeWidth={7} />
-              <rect x={160} y={950} width={Math.max(0, lx - 160)} height={190} rx={18} fill={DESL} />
-              <rect x={160} y={950} width={760} height={190} rx={18} fill="none" stroke={KC.ink} strokeWidth={7} />
-              {Array.from({ length: 9 }, (_, i) => <line key={i} x1={160 + i * 90} y1={950} x2={250 + i * 90} y2={1140} stroke="rgba(0,0,0,.18)" strokeWidth={10} />)}
-              {lp > 0 && <Enzima x={lx} y={910} s={0.8} color={LAC} rot={90} boca={Math.abs(Math.sin(T * 8))} />}
+              <rect x={110} y={960} width={860} height={330} rx={18} fill={INDIGO} stroke={KC.ink} strokeWidth={7} />
+              <rect x={110} y={960} width={Math.max(0, lx - 110)} height={330} rx={18} fill={DESL} />
+              <rect x={110} y={960} width={860} height={330} rx={18} fill="none" stroke={KC.ink} strokeWidth={7} />
+              {Array.from({ length: 9 }, (_, i) => <line key={i} x1={110 + i * 95} y1={960} x2={205 + i * 95} y2={1290} stroke="rgba(0,0,0,.18)" strokeWidth={10} />)}
+              {lp > 0 && <Enzima x={lx} y={895} s={1.2} color={LAC} rot={90} boca={Math.abs(Math.sin(T * 8))} />}
             </g>; })()}
         </SvgJ>
       </Escena>
@@ -308,59 +315,59 @@ function Jeans41() {
       <Escena T={T} a={K.Es} b={K.Ti} zoom={0.04}>
         <FondoLunares color={KC.lilac} />
         <SvgJ>
-          {T > K.Es + 3.0 && <Indigo T={T} x={540} y={770} s={1.3} parte={kprog(T, K.Es + 4.0, K.Es + 5.0, kEase.sale)} />}
-          {T > K.Es + 3.0 && <Enzima x={klerp(130, 400, kprog(T, K.Es + 3.0, K.Es + 4.0))} y={700} s={0.8} color={LAC} boca={Math.abs(Math.sin(T * 8))} />}
-          {T > K.Es + 3.0 && <rect x={390} y={950} width={300} height={140} rx={14} fill={mixHex(INDIGO, DESL, kprog(T, K.Es + 4.4, K.Es + 6.2))} stroke={KC.ink} strokeWidth={7} />}
+          <g opacity={klerp(0.6, 1, kprog(T, K.Es + 2.6, K.Es + 3.0))}><Indigo T={T} x={540} y={880} s={1.75} parte={kprog(T, K.Es + 4.0, K.Es + 5.0, kEase.sale)} /></g>
+          {T > K.Es + 3.0 && <Enzima x={klerp(40, 350, kprog(T, K.Es + 3.0, K.Es + 4.0))} y={786} s={1.2} color={LAC} boca={Math.abs(Math.sin(T * 8))} />}
+          <rect x={240} y={1110} width={600} height={260} rx={14} fill={mixHex(INDIGO, DESL, kprog(T, K.Es + 4.4, K.Es + 6.2))} stroke={KC.ink} strokeWidth={7} />
         </SvgJ>
       </Escena>
 
       {/* 11 · Trichoderma reesei y las tiendas de la Segunda Guerra Mundial */}
       <Escena T={T} a={K.Ti} b={K.Ci} zoom={0.04}>
-        <div style={{ position:'absolute', inset:0, background:`linear-gradient(${KC.cyan} 0%, #8fe9ff 55%, #2b8fd6 55%, #2b8fd6 64%, #f1d27a 64%)` }}></div>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(#081226 0%, #1b2f55 55%, #0f2c4d 55%, #0f2c4d 64%, #3b331f 64%)' }}></div>
         <SvgJ>
-          <circle cx={900} cy={420} r={80} fill={KC.yellow} stroke={KC.ink} strokeWidth={6} />
-          <Palmera T={T} x={1010} y={1240} s={1.1} />
-          <Tienda T={T} x={790} y={1180} w={440} h={360} moho={kprog(T, K.Ti + 0.8, K.Ti + 4.5)} hoyos={kprog(T, K.Ti + 3.0, K.Ti + 6.0)} />
+          <circle cx={880} cy={430} r={80} fill="#e8c64a" opacity={0.85} />
+          <Palmera T={T} x={1000} y={1400} s={1.6} />
+          <Tienda T={T} x={500} y={1340} w={700} h={573} moho={kprog(T, K.Ti + 0.8, K.Ti + 4.5)} hoyos={kprog(T, K.Ti + 3.0, K.Ti + 6.0)} />
         </SvgJ>
-        <Escala T={T} pxPorMm={0.12} x={60} y={1640} color={KC.ink} />
+        <Escala T={T} pxPorMm={0.12 * 700 / 440} x={60} y={1640} color={KC.ink} />
       </Escena>
 
       {/* 12 · cierre: los jeans del inicio, ya deslavados */}
       <Escena T={T} a={K.Ci} b={FIN} zoom={0.04}>
         <FondoLunares color={KC.yellow} />
         <SvgJ>
-          <Tendedero y={470} />
-          <Jeans T={T} x={380} y={470} s={0.9} desgaste={1} id="j1" />
-          <HongoTricho T={T} x={rodilla.x} y={rodilla.y} s={0.9} crece={1} />
+          <Tendedero y={360} />
+          <Jeans T={T} x={540} y={360} s={1.2} desgaste={1} id="j1" />
+          <HongoTricho T={T} x={rodilla.x} y={rodilla.y} s={1.2} crece={1} />
         </SvgJ>
-        <Escala T={T} pxPorMm={0.9} x={60} y={1640} color={KC.ink} />
+        <Escala T={T} pxPorMm={1.2} x={60} y={1640} color={KC.ink} />
       </Escena>
 
       {/* textos */}
       <Capitulo T={T} x={185} y={196} hasta={K.Es} caps={[{ at: K.Pi, titulo: 'La piedra' }, { at: K.Ce, titulo: 'La celulasa' }, { at: K.Ay, titulo: 'Las ayudantes' }]} />
-      <MitoTachado T={T} at={K.G + 0.15} tacharEn={K.G + 1.5} until={K.G + 2.6} texto="¿piedra pómez?" x={330} y={370} tam={44} />
-      <Chip T={T} at={K.G + 2.7} until={K.Hi - 0.2} texto="enzima de hongo" x={330} y={370} tam={40} borde={CEL} />
-      <Chip T={T} at={K.Hi + 0.5} until={K.An - 0.2} texto="azul: urdimbre · blanco: trama" y={1500} tam={34} borde={KC.cyan} />
-      <Etiqueta T={T} at={K.An + 1.6} until={K.Pi - 0.3} x={880} y={500} texto="índigo" lado="izq" tam={36} color={DESL} />
-      <Etiqueta T={T} at={K.An + 2.2} until={K.Pi - 0.3} x={560} y={800} texto="centro sin teñir" lado="der" tam={32} />
+      <MitoTachado T={T} at={K.G + 0.15} tacharEn={K.G + 1.5} until={K.G + 2.6} texto="¿piedra pómez?" x={300} y={240} tam={44} />
+      <Chip T={T} at={K.G + 2.7} until={K.Hi - 0.2} texto="enzima de hongo" x={300} y={240} tam={40} borde={CEL} />
+      <Chip T={T} at={K.Hi + 0.5} until={K.An - 0.2} texto="azul: urdimbre · blanco: trama" y={1530} tam={34} borde={KC.cyan} />
+      <Etiqueta T={T} at={K.An + 1.6} until={K.Pi - 0.3} x={440} y={446} texto="índigo" lado="der" tam={36} color={DESL} />
+      <Etiqueta T={T} at={K.An + 2.2} until={K.Pi - 0.3} x={424} y={900} texto="centro sin teñir" lado="der" tam={34} />
       <Chip T={T} at={K.An + 2.6} until={K.Pi - 0.3} texto="el índigo se queda por fuera" y={1500} tam={38} borde={INDIGO} />
       <Chip T={T} at={K.Pi + 0.8} until={K.Pb - 0.2} texto="jeans + piedra pómez" y={1500} tam={40} borde={PIEDRA} />
       <Chip T={T} at={K.Pb + 0.6} until={K.Pr - 0.2} texto="golpes + polvo" y={1500} tam={44} borde={KC.red} />
-      <Chip T={T} at={K.Pr + 0.4} until={K.Ce - 0.2} texto="solo la orilla" x={320} y={1180} tam={36} borde={KC.gold2} />
-      <Etiqueta T={T} at={K.Ce + 0.6} until={K.Mo - 0.3} x={60} y={510} texto="Trichoderma" it lado="der" tam={36} color="#bfe9d6" />
-      <Etiqueta T={T} at={K.Ce + 1.4} until={K.Mo - 0.3} x={560} y={740} texto="celulasa" lado="der" tam={34} color={CEL} />
-      <Etiqueta T={T} at={K.Ce + 2.0} until={K.Mo - 0.3} x={150} y={1110} texto="celulosa del algodón" lado="der" tam={32} color={ALGODON} />
+      <Chip T={T} at={K.Pr + 0.4} until={K.Ce - 0.2} texto="solo la orilla" x={540} y={1400} tam={36} borde={KC.gold2} />
+      <Etiqueta T={T} at={K.Ce + 0.6} until={K.Mo - 0.3} x={60} y={372} texto="Trichoderma" it lado="der" tam={36} color="#bfe9d6" />
+      <Etiqueta T={T} at={K.Ce + 1.4} until={K.Mo - 0.3} x={800} y={880} texto="celulasa" lado="der" tam={34} color={CEL} />
+      <Etiqueta T={T} at={K.Ce + 2.0} until={K.Mo - 0.3} x={70} y={1175} texto="celulosa del algodón" lado="der" tam={32} color={ALGODON} />
       <Chip T={T} at={K.Ce + 2.8} until={K.Mo - 0.3} texto="celulasa corta la celulosa" y={1500} tam={38} borde={CEL} />
       <Medidor T={T} at={K.Mo + 0.3} until={K.Gr - 0.2} valor={(t) => 1 - 0.6 * kprog(t, K.Mo + 0.4, K.Gr - 0.3)} etiqueta="azul en la orilla de la fibra" x={90} y={1460} ancho={900} color={DESL} />
-      <Etiqueta T={T} at={K.Ay + 0.6} until={K.Es - 0.3} x={60} y={620} texto="amilasa · quita el almidón" lado="der" tam={32} color={AMI} />
-      <Etiqueta T={T} at={K.Ay + 2.2} until={K.Es - 0.3} x={60} y={1200} texto="lacasa · aclara el azul" lado="der" tam={32} color={LAC} />
-      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.8} anio="2001" quien="Univ. do Minho · Portugal" revista="J. Biotechnol. · lacasas de hongos" y={760} />
-      <Etiqueta T={T} at={K.Es + 3.2} until={K.Es + 4.0} x={700} y={900} texto="índigo" lado="der" tam={36} color={KC.blue} />
-      <Etiqueta T={T} at={K.Es + 4.8} until={K.Ti - 0.3} x={700} y={900} texto="isatina" lado="der" tam={36} color={KC.ink} />
-      <Etiqueta T={T} at={K.Es + 4.6} until={K.Ti - 0.3} x={700} y={1020} texto="tela más clara" lado="der" tam={30} color={KC.ink} />
-      <Etiqueta T={T} at={K.Ti + 1.0} until={K.Ci - 0.3} x={600} y={640} texto="Trichoderma reesei" it lado="der" tam={34} color={KC.ink} />
+      <Etiqueta T={T} at={K.Ay + 0.6} until={K.Es - 0.3} x={60} y={450} texto="amilasa · quita el almidón" lado="der" tam={32} color={AMI} />
+      <Etiqueta T={T} at={K.Ay + 2.2} until={K.Es - 0.3} x={60} y={1350} texto="lacasa · aclara el azul" lado="der" tam={32} color={LAC} />
+      <TarjetaEstudio T={T} at={K.Es + 0.2} until={K.Es + 2.8} anio="2001" quien="Univ. do Minho · Portugal" revista="J. Biotechnol. · lacasas de hongos" y={420} />
+      <Etiqueta T={T} at={K.Es + 3.2} until={K.Es + 4.0} x={640} y={1020} texto="índigo" lado="der" tam={36} color={DESL} />
+      <Etiqueta T={T} at={K.Es + 4.8} until={K.Ti - 0.3} x={770} y={1030} texto="isatina" lado="der" tam={36} color={KC.ink} />
+      <Etiqueta T={T} at={K.Es + 4.6} until={K.Ti - 0.3} x={300} y={1455} texto="tela más clara" lado="der" tam={30} color={KC.ink} />
+      <Etiqueta T={T} at={K.Ti + 1.0} until={K.Ci - 0.3} x={60} y={630} texto="Trichoderma reesei" it lado="der" tam={34} color={KC.ink} />
       <Chip T={T} at={K.Ti + 1.6} until={K.Ci - 0.3} texto="Islas Salomón · 2.ª Guerra Mundial" y={1500} tam={36} borde={TRICHO} />
-      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="biostoning = deslavado con enzimas" y={1500} tam={34} borde={CEL} />
+      <Chip T={T} at={K.Ci + 1.0} until={K.Ou} texto="biostoning = deslavado con enzimas" y={1530} tam={34} borde={CEL} />
 
       {/* subtítulos (idx = línea de narracion.json) */}
       <Subtitulo T={T} idx={0} at={K.G + 0.1} until={K.Hi - 0.1} texto="¿Piedra? *Quizá un hongo.*" />
